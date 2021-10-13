@@ -186,12 +186,12 @@ var/list/_client_preferences_by_type
 	description = "Autohiss"
 	key = "AUTOHISS"
 	options = list(GLOB.PREF_OFF, GLOB.PREF_BASIC, GLOB.PREF_FULL)
-
+/*		Commented out to slim down unused features -Breaks
 /datum/client_preference/hardsuit_activation
 	description = "Hardsuit Module Activation Key"
 	key = "HARDSUIT_ACTIVATION"
 	options = list(GLOB.PREF_MIDDLE_CLICK, GLOB.PREF_CTRL_CLICK, GLOB.PREF_ALT_CLICK, GLOB.PREF_CTRL_SHIFT_CLICK)
-
+*/
 /datum/client_preference/holster_on_intent
 	description = "Draw gun based on intent"
 	key = "HOLSTER_ON_INTENT"
