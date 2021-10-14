@@ -3244,8 +3244,9 @@
 #include "maps\random_ruins\exoplanet_ruins\tar_anomaly\tar_anomaly.dm"
 #include "maps\random_ruins\exoplanet_ruins\trash_heap\trash_heap.dm"
 #include "maps\random_ruins\space_ruins\space_ruins.dm"
-#include "maps\torch\torch.dm"
-#include "maps\torch\torch_define.dm"
+#include "maps\site53\site53.dm"
+#include "maps\site53\site53_define.dm"
+#include "maps\site53\items\projectiles.dm"
 #include "maps\~mapsystem\map_preferences.dm"
 #include "maps\~mapsystem\map_ranks.dm"
 #include "maps\~mapsystem\maps.dm"
@@ -3254,6 +3255,5 @@
 #include "maps\~mapsystem\maps_jobs.dm"
 #include "maps\~mapsystem\maps_unit_testing.dm"
 #include "maps\~unit_tests\unit_testing.dm"
-#include "packs\scp\defines\subsystem.dm"
 #include "~code\global_init.dm"
 // END_INCLUDE

@@ -1,0 +1,11 @@
+/*********************
+* Deep Space Site 90 *
+*********************/
+
+
+// GO FROM 200, EACH DEPARTMENT SHOULD START FROM 50 INCREMENTS. I.E: 250 - MEDICAL, 300 - ENGINEERING, ETC. USE 251-299 FOR SUB ACCESS, LIKE EQUIPMENT ROOMS ETC. ~LION
+// USE THE FOLLOWING TO INDICATE NEW DEPARTMENTS BEFORE THEY START.
+
+/*######################
+###UNNAMED DEPARTMENT###
+######################*/

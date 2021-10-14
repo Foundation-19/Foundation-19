@@ -1,0 +1,46 @@
+################################
+# Example Changelog File
+#
+# Note: This file, and files beginning with ".", and files that don't end in ".yml" will not be read. If you change this file, you will look really dumb.
+#
+# Your changelog will be merged with a master changelog. (New stuff added only, and only on the date entry for the day it was merged.)
+# When it is, any changes listed below will disappear.
+#
+# Valid Prefixes: 
+#   bugfix
+#   wip (For works in progress)
+#   tweak
+#   soundadd
+#   sounddel
+#   rscadd (general adding of nice things)
+#   rscdel (general deleting of nice things)
+#   imageadd
+#   imagedel
+#   maptweak
+#   spellcheck (typo fixes)
+#   experiment
+#################################
+
+# Your name.  
+author: TheLion1675
+
+# Optional: Remove this file after generating master changelog.  Useful for PR changelogs that won't get used again.
+delete-after: True
+
+# Any changes you've made.  See valid prefix list above.
+# INDENT WITH TWO SPACES.  NOT TABS.  SPACES.
+# SCREW THIS UP AND IT WON'T WORK.
+# Also, all entries are changed into a single [] after a master changelog generation. Just remove the brackets when you add new entries.
+# Please surround your changes in  double quotes ("), as certain characters otherwise screws up compiling. The quotes will not show up in the changelog.
+changes: 
+  - rscdel: "Removed hacked supply beacons from traitor uplinks due to design philosophy not linking with it."
+  - rscdel: "Removes zombie powder from Traitor uplink as a possibility when selecting random toxin."
+  - rscdel: "Removes toxin damage from the energy crossbow."
+  - rscadd: "Adds headsets to the medical department."
+  - spellcheck: "Tweaked description of energy crossbow to match new features."
+  - tweak: "Changed GoI Operative to C.I. Operative."
+  - tweak: "Added Sanitation Technician to the alternative title list for Janitor."
+  - tweak: "Removed Pharmacist as an alt title for Chemist."
+  - tweak: "Removed Communications Dispatcher alt title from Communication Technicians."
+  - tweak: "Removes movement penalty to all types of guard armor."
+  - iconadd: "New hud icons for Security. If a job has been forgotten, or does not show up, report it on the GitHub please."
