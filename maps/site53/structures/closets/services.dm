@@ -6,7 +6,6 @@
 	name = "chef's closet"
 	desc = "It's a storage unit for foodservice equipment."
 	icon_state = "black"
-	icon_closed = "black"
 
 /obj/structure/closet/chefcloset_torch/WillContain()
 	return list(

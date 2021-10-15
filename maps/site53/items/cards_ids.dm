@@ -183,18 +183,18 @@
 */
 /obj/item/card/id/torch/stowaway/New()
 	..()
-	var/species = SPECIES_HUMAN
-	if(prob(10))
-		species = pick(SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_IPC)
-	var/datum/species/S = all_species[species]
+//	var/species = SPECIES_HUMAN
+//	if(prob(10))
+//		species = pick(SPECIES_SKRELL, SPECIES_IPC)
+//	var/datum/species/S = all_species[species]
 	var/gender = pick(MALE,FEMALE)
-	registered_name = S.get_random_name(gender)
+//	registered_name = S.get_random_name(gender)
 	sex = capitalize(gender)
 	age = rand(19,25)
 	fingerprint_hash = md5(registered_name)
 	dna_hash = md5(fingerprint_hash)
 	blood_type = RANDOM_BLOOD_TYPE
-	update_name()
+//	update_name()
 
 /obj/item/card/id/scp13/
 	desc = "A golden identification card belonging to the Commanding Officer."

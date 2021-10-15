@@ -38,7 +38,7 @@
 	desc = "The headset of the chief box pusher."
 	icon_state = "cargo_headset"
 	item_state = "headset"
-	ks2type = /obj/item/device/encryptionkey/heads/qm
+//	ks2type = /obj/item/device/encryptionkey/heads/qm
 
 /obj/item/storage/box/headset/torchxo
 	name = "box of spare executive officer headsets"

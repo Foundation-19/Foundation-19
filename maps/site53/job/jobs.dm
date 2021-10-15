@@ -35,7 +35,7 @@
 	if(istype(H.wear_id, /obj/item/card/id))
 		var/obj/item/card/id/ID = H.wear_id
 		ID.registered_name = "D-[used_numbers[used_numbers.len]]"
-		ID.update_name()
+//		ID.update_name()
 
 
 

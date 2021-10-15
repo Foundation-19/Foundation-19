@@ -334,13 +334,13 @@
 	icon_state = "helmet_command"
 	icon = 'maps/torch/icons/obj/solgov-head.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
-	accessories = list(/obj/item/clothing/accessory/armor/helmcover/green)
+//	accessories = list(/obj/item/clothing/accessory/armor/helmcover/green)
 
 /obj/item/clothing/head/helmet/site53/guard/mtf_epsilon/leader
-	accessories = list(/obj/item/clothing/accessory/armor/helmcover/saare)
+//	accessories = list(/obj/item/clothing/accessory/armor/helmcover/saare)
 
 /obj/item/clothing/head/helmet/site53/guard/mtf_epsilon/medic
-	accessories = list(/obj/item/clothing/accessory/armor/helmcover/nt)
+//	accessories = list(/obj/item/clothing/accessory/armor/helmcover/nt)
 
 /obj/item/clothing/head/helmet/site53/guardcomm
 	name = "guard commander's helmet"

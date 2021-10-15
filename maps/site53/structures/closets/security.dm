@@ -237,7 +237,7 @@
 				if(!src.close())
 					return
 			src.locked = 1
-			src.icon_state = src.icon_locked
+//			src.icon_state = src.icon_locked
 			src.registered_name = null
 			src.SetName(initial(name))
 			src.desc = initial(desc)

@@ -4,7 +4,7 @@
 	path = "site53"
 	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
 
-	lobby_icon = 'icons/lobby.dmi'
+//	lobby_icon = 'icons/lobby.dmi'
 
 	station_levels = list(1,2,3,4)
 	contact_levels = list(1,2,3,4)
@@ -39,7 +39,7 @@
 	emergency_shuttle_called_message = "An emergency evacuation has been ordered for this facility. All authorized evacuees must proceed to the outbound Train Station within %ETA%."
 	emergency_shuttle_recall_message = "The emergency evacuation has been cancelled. Return to your post."
 
-	evac_controller_type = /datum/evacuation_controller/site
+//	evac_controller_type = /datum/evacuation_controller/site
 
 	default_law_type = /datum/ai_laws/solgov
 	use_overmap = 0

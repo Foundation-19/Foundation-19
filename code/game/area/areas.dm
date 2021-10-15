@@ -7,6 +7,7 @@
 	var/global/global_uid = 0
 	var/uid
 	var/area_flags
+	var/ambience_crb = null
 
 /area/New()
 	icon_state = ""

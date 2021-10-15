@@ -430,7 +430,7 @@ ranks - ec
 	on_rolled = list("down" = "none")
 	slot = ACCESSORY_SLOT_RANK
 	gender = PLURAL
-	high_visibility = 1
+//	high_visibility = 1
 
 /obj/item/clothing/accessory/solgov/rank/get_fibers()
 	return null

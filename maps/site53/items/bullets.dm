@@ -325,7 +325,7 @@
 
 /obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
 	name = "rubber bullet"
-	check_armour = "melee"
+//	check_armour = "melee"
 	damage = 5
 	agony = 30
 	embed = 0
@@ -344,7 +344,7 @@
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
-	check_armour = "melee"
+//	check_armour = "melee"
 	damage = 25
 	agony = 60
 	embed = 0
@@ -462,7 +462,7 @@
 	icon_state = "rock"
 	damage = 40
 	armor_penetration = 25
-	kill_count = 255
+//	kill_count = 255
 
 /obj/item/projectile/bullet/rock/New()
 	icon_state = "rock[rand(1,3)]"

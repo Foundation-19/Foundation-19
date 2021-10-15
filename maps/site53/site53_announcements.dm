@@ -28,7 +28,7 @@
 	unidentified_lifesigns_message = "Unidentified lifesigns detected within fifteen miles of %STATION_NAME%, security please stand-by."
 	unidentified_lifesigns_sound = sound('sound/AI/torch/aliens.ogg', volume = 45)
 
-	xenomorph_spawn_sound = sound('sound/AI/torch/aliens.ogg', volume = 45)
+//	xenomorph_spawn_sound = sound('sound/AI/torch/aliens.ogg', volume = 45)
 
 	electrical_storm_moderate_sound = sound('sound/AI/torch/electricalstormmoderate.ogg', volume = 45)
 	electrical_storm_major_sound = sound('sound/AI/torch/electricalstormmajor.ogg', volume = 45)

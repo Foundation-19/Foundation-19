@@ -47,7 +47,7 @@
 /obj/item/weapon/storage/box/encryptionkey/exploration
 	name = "box of spare exploration radio keys"
 	desc = "A box full of exploration department radio keys."
-	startswith = list(/obj/item/screwdriver, /obj/item/device/encryptionkey/exploration = 5)
+//	startswith = list(/obj/item/screwdriver, /obj/item/device/encryptionkey/exploration = 5)
 
 /obj/item/device/encryptionkey/pathfinder
 	name = "pathfinder's encryption key"

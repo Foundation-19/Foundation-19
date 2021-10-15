@@ -209,7 +209,7 @@
 
 /obj/item/folder/envelope/captain/Initialize()
 	. = ..()
-	var/obj/effect/overmap/torch = map_sectors["[z]"]
+/*	var/obj/effect/overmap/torch = map_sectors["[z]"]
 	var/memo = {"
 	<tt><center><b><font color='red'>SECRET - CODE WORDS: TORCH</font></b>
 	<h3>SOL CENTRAL GOVERNMENT EXPEDITIONARY COMMAND</h3>
@@ -240,8 +240,8 @@
 
 	<i>ADM Lau.</i></tt>
 	<i>This paper has been stamped with the stamp of SCG Expeditionary Command.</i>
-	"}
-	new/obj/item/paper(src, memo, "Standing Orders")
+	"}*/
+//	new/obj/item/paper(src, memo, "Standing Orders")
 
 	new/obj/item/paper/umbra(src)
 
