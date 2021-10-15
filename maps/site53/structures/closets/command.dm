@@ -9,7 +9,7 @@
 
 /obj/structure/closet/secure_closet/administration/facilityadmin/WillContain()
 	return list(
-		/obj/item/clothing/under/scp/suittie,
+//		/obj/item/clothing/under/suittie,
 		/obj/item/clothing/shoes/dress,
 		/obj/item/device/radio,
 		/obj/item/clothing/suit/storage/toggle/suit/black,
@@ -28,7 +28,7 @@
 		/obj/item/device/megaphone,
 		/obj/item/storage/box/headset,
 		/obj/item/clothing/gloves/foundation_service,
-		/obj/item/clipboard,
+//		/obj/item/clipboard,
 		/obj/item/folder/blue,
 		/obj/item/storage/box/encryptionkeys/sci,
 		/obj/item/storage/box/encryptionkeys/med,
@@ -37,7 +37,7 @@
 		/obj/item/storage/box/encryptionkeys/eng,
 		/obj/item/storage/box/encryptionkeys/sec,
 		/obj/item/clothing/shoes/dutyboots,
-		/obj/item/device/radio/headset/heads/commsofficer
+//		/obj/item/device/radio/headset/heads/commsofficer
 	)
 
 /obj/structure/closet/secure_closet/administration/commstech
@@ -49,8 +49,8 @@
 	return list(
 		/obj/item/device/radio,
 		/obj/item/clothing/gloves/foundation_service,
-		/obj/item/clipboard,
+//		/obj/item/clipboard,
 		/obj/item/folder/blue,
 		/obj/item/clothing/shoes/dutyboots,
-		/obj/item/device/radio/headset/commsdispatcher
+//		/obj/item/device/radio/headset/commsdispatcher
 	)

@@ -199,7 +199,7 @@
 /area/site53/surface/tramhubhallwayentry
 	name = "\improper Tram Hub"
 	icon_state = "hallC1"
-	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
+//	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/surface/bunker
@@ -221,24 +221,24 @@
 /area/site53/upper_surface/maincontrolroom
 	name = "\improper Main Control Room"
 	icon_state = "bridge"
-	holomap_color = HOLOMAP_AREACOLOR_COMMAND
+//	holomap_color = HOLOMAP_AREACOLOR_COMMAND
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/upper_surface/maincontrolroomstairs
 	name = "\improper Main Control Room Stairs"
 	icon_state = "bridge"
-	holomap_color = HOLOMAP_AREACOLOR_COMMAND
+//	holomap_color = HOLOMAP_AREACOLOR_COMMAND
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/upper_surface/commstower
 	name = "\improper Communications Tower"
 	icon_state = "checkpoint1"
-	holomap_color = HOLOMAP_AREACOLOR_SECURITY
+//	holomap_color = HOLOMAP_AREACOLOR_SECURITY
 
 /area/site53/upper_surface/commstower1
 	name = "\improper Communications Tower"
 	icon_state = "checkpoint1"
-	holomap_color = HOLOMAP_AREACOLOR_SECURITY
+//	holomap_color = HOLOMAP_AREACOLOR_SECURITY
 
 /area/site53/lowertram/archive
 	name = "\improper Archive"

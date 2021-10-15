@@ -6,7 +6,6 @@
 	name = "chief medical officer's locker"
 	req_access = list(access_s53cmo)
 	icon_state = "cmosecure1"
-	icon_closed = "cmosecure"
 
 /obj/structure/closet/secure_closet/site53/cmo/WillContain()
 	return list(
@@ -17,20 +16,20 @@
 		/obj/item/clothing/suit/storage/toggle/labcoat/cmoalt,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
-		/obj/item/weapon/reagent_containers/hypospray/vial,
-		/obj/item/weapon/storage/fancy/vials,
-		/obj/item/device/healthanalyzer,
+		/obj/item/reagent_containers/hypospray/vial,
+		/obj/item/storage/fancy/vials,
+//		/obj/item/device/healthanalyzer,
 		/obj/item/clothing/accessory/stethoscope,
 		/obj/item/device/flashlight/pen,
-		/obj/item/weapon/storage/belt/medical/emt,
-		/obj/item/weapon/defibrillator/loaded,
+		/obj/item/storage/belt/medical/emt,
+		/obj/item/defibrillator/loaded,
 		/obj/item/clothing/glasses/hud/health,
-		/obj/item/weapon/storage/firstaid/adv,
-		/obj/item/weapon/storage/box/armband/med,
-		/obj/item/weapon/gun/projectile/pistol,
-		/obj/item/ammo_magazine/mc9mm,
-		/obj/item/ammo_magazine/mc9mm,
-		/obj/item/clothing/accessory/holster/thigh,
+		/obj/item/storage/firstaid/adv,
+		/obj/item/storage/box/armband/med,
+//		/obj/item/weapon/gun/projectile/pistol,
+//		/obj/item/ammo_magazine/mc9mm,
+//		/obj/item/ammo_magazine/mc9mm,
+//		/obj/item/clothing/accessory/holster/thigh,
 		/obj/item/clothing/under/rank/medical/scrubs/navyblue
 	)
 

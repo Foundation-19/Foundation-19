@@ -98,7 +98,7 @@
 	#include "../away/icarus/icarus.dm"
 	#include "../away/errant_pisces/errant_pisces.dm"
 	#include "../away/lar_maria/lar_maria.dm"*/
-
+/*
 	#include "../../code/modules/lobby_music/Perdition.dm"
 	#include "../../code/modules/lobby_music/hie.dm"
 	#include "../../code/modules/lobby_music/std.dm"
@@ -106,7 +106,7 @@
 	#include "../../code/modules/lobby_music/humanity.dm"
 	#include "../../code/modules/lobby_music/days.dm"
 	#include "../../code/modules/lobby_music/lithium.dm"
-
+*/
 
 	#define using_map_DATUM /datum/map/site53
 

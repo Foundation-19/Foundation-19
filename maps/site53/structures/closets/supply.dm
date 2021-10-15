@@ -11,18 +11,18 @@
 	return list(
 		/obj/item/device/radio/headset/headset_cargo,
 		/obj/item/clothing/gloves/thick,
-		/obj/item/weapon/cartridge/quartermaster,
+//		/obj/item/cartridge/quartermaster,
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/accessory/storage/webbing_large,
-		/obj/item/weapon/storage/belt/utility/atmostech,
-		/obj/item/weapon/hand_labeler,
-		/obj/item/weapon/clipboard,
-		/obj/item/weapon/folder/yellow,
-		/obj/item/weapon/packageWrap,
-		/obj/item/weapon/marshalling_wand,
-		/obj/item/weapon/marshalling_wand,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack = 75, /obj/item/weapon/storage/backpack/satchel/grey = 25)),
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/messenger = 75, /obj/item/weapon/storage/backpack/dufflebag = 25))
+//		/obj/item/storage/belt/utility/atmostech,
+//		/obj/item/hand_labeler,
+//		/obj/item/clipboard,
+//		/obj/item/folder/yellow,
+//		/obj/item/packageWrap,
+		/obj/item/marshalling_wand,
+		/obj/item/marshalling_wand,
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack = 75, /obj/item/storage/backpack/satchel/grey = 25)),
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/messenger = 75, /obj/item/storage/backpack/dufflebag = 25))
 	)
 
 /obj/structure/closet/secure_closet/deckofficer
@@ -34,23 +34,23 @@
 	return list(
 		/obj/item/device/radio/headset/headset_cargo,
 		/obj/item/clothing/gloves/thick,
-		/obj/item/weapon/cartridge/quartermaster,
+//		/obj/item/cartridge/quartermaster,
 		/obj/item/clothing/glasses/meson,
 		/obj/item/clothing/glasses/sunglasses,
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/accessory/storage/brown_vest,
-		/obj/item/weapon/storage/belt/utility/full,
-		/obj/item/weapon/hand_labeler,
-		/obj/item/weapon/clipboard,
-		/obj/item/weapon/folder/yellow,
-		/obj/item/weapon/packageWrap,
+		/obj/item/storage/belt/utility/full,
+		/obj/item/hand_labeler,
+//		/obj/item/clipboard,
+		/obj/item/folder/yellow,
+//		/obj/item/packageWrap,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
 		/obj/item/device/holowarrant,
 		/obj/item/clothing/suit/armor/pcarrier/light/sol,
 		/obj/item/device/binoculars,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack = 75, /obj/item/weapon/storage/backpack/satchel/grey = 25)),
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/messenger = 75, /obj/item/weapon/storage/backpack/dufflebag = 25))
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack = 75, /obj/item/storage/backpack/satchel/grey = 25)),
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/messenger = 75, /obj/item/storage/backpack/dufflebag = 25))
 	)
 
 /obj/structure/closet/secure_closet/logistics/officer
@@ -67,16 +67,16 @@
 		/obj/item/clothing/glasses/sunglasses,
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/accessory/storage/brown_vest,
-		/obj/item/weapon/storage/belt/utility/full,
-		/obj/item/weapon/hand_labeler,
-		/obj/item/weapon/clipboard,
-		/obj/item/weapon/folder/yellow,
-		/obj/item/weapon/packageWrap,
+		/obj/item/storage/belt/utility/full,
+		/obj/item/hand_labeler,
+//		/obj/item/clipboard,
+		/obj/item/folder/yellow,
+//		/obj/item/packageWrap,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
 		/obj/item/device/binoculars,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack = 75, /obj/item/weapon/storage/backpack/satchel/grey = 25)),
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/messenger = 75, /obj/item/weapon/storage/backpack/dufflebag = 25))
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack = 75, /obj/item/storage/backpack/satchel/grey = 25)),
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/messenger = 75, /obj/item/storage/backpack/dufflebag = 25))
 	)
 
 /obj/structure/closet/secure_closet/logistics/specialist
@@ -88,17 +88,17 @@
 	return list(
 		/obj/item/device/radio/headset/headset_cargo,
 		/obj/item/clothing/gloves/thick,
-		/obj/item/weapon/cartridge/quartermaster,
+		/obj/item/cartridge/quartermaster,
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/accessory/storage/webbing_large,
-		/obj/item/weapon/storage/belt/utility/atmostech,
-		/obj/item/weapon/hand_labeler,
-		/obj/item/weapon/clipboard,
-		/obj/item/weapon/folder/yellow,
-		/obj/item/weapon/packageWrap,
-		/obj/item/weapon/marshalling_wand,
-		/obj/item/weapon/marshalling_wand,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack = 75, /obj/item/weapon/storage/backpack/satchel/grey = 25)),
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/messenger = 75, /obj/item/weapon/storage/backpack/dufflebag = 25))
+		/obj/item/storage/belt/utility/atmostech,
+		/obj/item/hand_labeler,
+		/obj/item/clipboard,
+		/obj/item/folder/yellow,
+		/obj/item/packageWrap,
+		/obj/item/marshalling_wand,
+		/obj/item/marshalling_wand,
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack = 75, /obj/item/storage/backpack/satchel/grey = 25)),
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/messenger = 75, /obj/item/storage/backpack/dufflebag = 25))
 	)
 */

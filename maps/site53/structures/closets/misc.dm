@@ -12,20 +12,20 @@
 /obj/structure/closet/secure_closet/liaison/WillContain()
 	return list(
 		/obj/item/device/flash,
-		/obj/item/weapon/hand_labeler,
+		/obj/item/hand_labeler,
 		/obj/item/device/camera,
 		/obj/item/device/camera_film = 2,
-		/obj/item/weapon/clipboard,
-		/obj/item/weapon/folder,
+		/obj/item/clipboard,
+		/obj/item/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
-		/obj/item/weapon/storage/secure/briefcase,
+		/obj/item/storage/secure/briefcase,
 		/obj/item/clothing/shoes/laceup,
 		/obj/item/clothing/under/rank/internalaffairs/plain/nt,
 		/obj/item/clothing/suit/storage/toggle/suit/black,
 		/obj/item/clothing/glasses/sunglasses/big,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack, /obj/item/weapon/storage/backpack/satchel)),
-		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/messenger, 50)
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack, /obj/item/storage/backpack/satchel)),
+		new /datum/atom_creator/simple(/obj/item/storage/backpack/messenger, 50)
 	)
 
 /obj/structure/closet/secure_closet/representative
@@ -40,21 +40,21 @@
 /obj/structure/closet/secure_closet/representative/WillContain()
 	return list(
 		/obj/item/device/flash,
-		/obj/item/weapon/hand_labeler,
+		/obj/item/hand_labeler,
 		/obj/item/device/camera,
 		/obj/item/device/camera_film = 2,
-		/obj/item/weapon/clipboard,
-		/obj/item/weapon/folder,
+		/obj/item/clipboard,
+		/obj/item/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
-		/obj/item/weapon/storage/secure/briefcase,
+		/obj/item/storage/secure/briefcase,
 		/obj/item/device/radio/headset/headset_com,
 		/obj/item/clothing/shoes/laceup,
 		/obj/item/clothing/under/rank/internalaffairs/plain/solgov,
 		/obj/item/clothing/suit/storage/toggle/suit/black,
 		/obj/item/clothing/glasses/sunglasses/big,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack, /obj/item/weapon/storage/backpack/satchel)),
-		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/messenger, 50)
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack, /obj/item/storage/backpack/satchel)),
+		new /datum/atom_creator/simple(/obj/item/storage/backpack/messenger, 50)
 	)
 
 //equipment closets that everyone on the crew or in research can access, for storing things securely
@@ -71,9 +71,9 @@
 /obj/structure/closet/secure_closet/crew/WillContain()
 	return list(
 		/obj/item/device/radio,
-		/obj/item/weapon/crowbar,
+		/obj/item/crowbar,
 		/obj/item/device/flashlight,
-		/obj/item/weapon/storage/box
+		/obj/item/storage/box
 	)
 
 /obj/structure/closet/secure_closet/crew/research
@@ -93,24 +93,24 @@
 /obj/structure/closet/secure_closet/guncabinet/sidearm/WillContain()
 	return list(
 			/obj/item/clothing/accessory/holster/thigh = 2,
-			/obj/item/weapon/gun/energy/gun = 3,
+			/obj/item/gun/energy/gun = 3,
 	)
 
 /obj/structure/closet/secure_closet/guncabinet/sidearm/small
 	name = "personal sidearm cabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sidearm/small/WillContain()
-	return list(/obj/item/weapon/gun/energy/gun/small = 4)
+	return list(/obj/item/gun/energy/gun/small = 4)
 
 /obj/structure/closet/secure_closet/guncabinet/sidearm/combined
 	name = "combined sidearm cabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sidearm/combined/WillContain()
 	return list(
-		/obj/item/weapon/gun/energy/gun/small = 2,
+		/obj/item/gun/energy/gun/small = 2,
 		/obj/item/clothing/accessory/holster/thigh = 2,
-		/obj/item/weapon/gun/energy/gun = 2,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/gun/energy/gun, /obj/item/weapon/gun/energy/gun/small))
+		/obj/item/gun/energy/gun = 2,
+		new /datum/atom_creator/weighted(list(/obj/item/gun/energy/gun, /obj/item/gun/energy/gun/small))
 	)
 
 */
@@ -125,11 +125,11 @@
 		/obj/item/clothing/gloves/thick,
 		/obj/item/clothing/head/soft/purple,
 		/obj/item/clothing/head/beret/purple,
-		/obj/item/weapon/caution = 4,
+		/obj/item/caution = 4,
 		/obj/item/device/lightreplacer,
-		/obj/item/weapon/storage/bag/trash,
+		/obj/item/storage/bag/trash,
 		/obj/item/clothing/shoes/galoshes,
-		/obj/item/weapon/soap)
+		/obj/item/soap)
 
 // D-CLASS MINING
 
@@ -141,7 +141,7 @@
 /obj/structure/closet/secure_closet/site53/dmining/WillContain()
 	return list(
 		/obj/item/clothing/gloves/thick,
-		/obj/item/device/analyzer,
+//		/obj/item/device/analyzer,
 		/obj/item/storage/ore,
 		/obj/item/device/flashlight/lantern,
 		/obj/item/shovel,

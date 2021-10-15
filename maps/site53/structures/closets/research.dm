@@ -14,11 +14,11 @@
 		/obj/item/clothing/under/rank/research_director,
 		/obj/item/clothing/under/rank/research_director/rdalt,
 		/obj/item/clothing/under/rank/research_director/dress_rd,
-		/obj/item/clothing/under/suit_jacket/nt,
+//		/obj/item/clothing/under/suit_jacket/nt,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/suit/storage/toggle/labcoat/science,
 		/obj/item/clothing/suit/storage/toggle/labcoat/rd,
-		/obj/item/cartridge/rd,
+//		/obj/item/cartridge/rd,
 		/obj/item/clothing/shoes/white,
 		/obj/item/clothing/gloves/latex,
 		/obj/item/clothing/glasses/science,
@@ -27,7 +27,7 @@
 		/obj/item/clothing/mask/gas,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
-		/obj/item/clipboard,
+//		/obj/item/clipboard,
 		/obj/item/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
@@ -37,7 +37,7 @@
 		/obj/item/device/holowarrant,
 		/obj/item/clothing/suit/armor/pcarrier/light,
 		/obj/item/storage/box/secret_project_disks/science,
-		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/toxins, /obj/item/storage/backpack/satchel_tox)),
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/toxins)),
 		new /datum/atom_creator/simple(/obj/item/storage/backpack/messenger/tox, 50)
 	)
 
@@ -52,22 +52,22 @@
 		/obj/item/clothing/suit/storage/toggle/labcoat/science,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/white,
-		/obj/item/cartridge/signal/science,
+//		/obj/item/cartridge/signal/science,
 		/obj/item/device/radio/headset/torchnanotrasen,
 		/obj/item/clothing/mask/gas,
-		/obj/item/clipboard,
+//		/obj/item/clipboard,
 		/obj/item/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
 		/obj/item/device/camera,
-		/obj/item/device/analyzer,
+//		/obj/item/device/analyzer,
 		/obj/item/taperoll/research,
 		/obj/item/clothing/gloves/latex,
 		/obj/item/clothing/glasses/science,
 		/obj/item/clothing/glasses/meson,
 		/obj/item/device/radio,
 		/obj/item/device/flashlight/lantern,
-		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/toxins, /obj/item/storage/backpack/satchel_tox)),
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/toxins)),
 		new /datum/atom_creator/simple(/obj/item/storage/backpack/dufflebag, 50)
 	)
 
@@ -82,20 +82,20 @@
 		/obj/item/clothing/suit/storage/toggle/labcoat/science,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/white,
-		/obj/item/cartridge/signal/science,
+//		/obj/item/cartridge/signal/science,
 		/obj/item/device/radio/headset/torchnanotrasen,
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/tank/emergency/oxygen/engi,
-		/obj/item/clipboard,
+//		/obj/item/clipboard,
 		/obj/item/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
 		/obj/item/device/camera,
-		/obj/item/device/analyzer,
+//		/obj/item/device/analyzer,
 		/obj/item/taperoll/research,
 		/obj/item/clothing/gloves/latex,
 		/obj/item/clothing/glasses/science,
-		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/toxins, /obj/item/storage/backpack/satchel_tox)),
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/toxins)),
 		new /datum/atom_creator/simple(/obj/item/storage/backpack/messenger/tox, 50)
 	)
 
@@ -111,7 +111,7 @@
 		/obj/item/clothing/accessory/storage/webbing,
 		/obj/item/clothing/gloves/thick,
 		/obj/item/clothing/shoes/workboots,
-		/obj/item/device/analyzer,
+//		/obj/item/device/analyzer,
 		/obj/item/storage/ore,
 		/obj/item/device/flashlight/lantern,
 		/obj/item/shovel,
@@ -119,7 +119,7 @@
 		/obj/item/crowbar,
 		/obj/item/clothing/glasses/material,
 		/obj/item/clothing/glasses/meson,
-		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/industrial, /obj/item/storage/backpack/satchel_eng)),
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/industrial)),
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag/eng, /obj/item/storage/backpack/messenger/engi))
 	)
 
@@ -138,7 +138,7 @@
 		/obj/item/clothing/accessory/armband/whitered,
 		/obj/item/device/radio/headset/torchnanotrasen,
 		/obj/item/clothing/mask/gas/half,
-		/obj/item/clipboard,
+//		/obj/item/clipboard,
 		/obj/item/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
@@ -154,12 +154,12 @@
 		/obj/item/taperoll/research,
 		/obj/item/device/hailer,
 		/obj/item/clothing/accessory/storage/black_vest,
-		/obj/item/clothing/accessory/holster/thigh,
+//		/obj/item/clothing/accessory/holster/thigh,
 		/obj/item/clothing/accessory/badge/holo/NT,
 		/obj/item/device/megaphone,
 		/obj/item/gun/energy/stunrevolver,
 		/obj/item/clothing/shoes/jackboots,
-		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/security, /obj/item/storage/backpack/satchel_sec)),
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/security)),
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag/sec, /obj/item/storage/backpack/messenger/sec))
 	)
 
@@ -171,11 +171,11 @@
 /obj/structure/closet/secure_closet/scpscience/directorofscience/WillContain()
 	return list(
 		/obj/item/storage/backpack/dufflebag,
-		/obj/item/clothing/under/scp/suittie,
+//		/obj/item/clothing/under/scp/suittie,
 		/obj/item/clothing/suit/storage/toggle/labcoat/rd,
 		/obj/item/clothing/shoes/white,
 		/obj/item/clothing/mask/gas,
-		/obj/item/clipboard
+//		/obj/item/clipboard
 	)
 
 
