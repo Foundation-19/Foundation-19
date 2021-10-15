@@ -3249,6 +3249,7 @@
 #include "maps\site53\items\bullets.dm"
 #include "maps\site53\items\projectiles.dm"
 #include "maps\site53\items\clothing\platecarriers.dm"
+#include "maps\site53\structures\turfs.dm"
 #include "maps\~mapsystem\map_preferences.dm"
 #include "maps\~mapsystem\map_ranks.dm"
 #include "maps\~mapsystem\maps.dm"
