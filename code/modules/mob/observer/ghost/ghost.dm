@@ -562,3 +562,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		M.respawned_time = world.time
 	M.key = key
 	log_and_message_admins("has respawned.", M)
+
+/* FOUNDATION 19 EDITS*/
+/mob/observer/ghost/proc/reenter_corpse_p()
+	stop_following()
+	mind.current.key = key
+	mind.current.reload_fullscreen()
+	QDEL_NULL(mind.current.teleop)

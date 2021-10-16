@@ -32,16 +32,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 	..()
 	GLOB.scp173s += src
 	verbs += /mob/living/carbon/human/proc/door_open
-	add_language(LANGUAGE_GALCOM, 1) // it's a fucking magical statue
 	add_language(LANGUAGE_EAL, 1)
-	add_language(LANGUAGE_SOL_COMMON, 1)
-	add_language(LANGUAGE_UNATHI, 1)
-	add_language(LANGUAGE_SIIK_MAAS, 1)
 	add_language(LANGUAGE_SKRELLIAN, 1)
-	add_language(LANGUAGE_LUNAR, 1)
 	add_language(LANGUAGE_GUTTER, 1)
 	add_language(LANGUAGE_SIGN, 0)
-	add_language(LANGUAGE_INDEPENDENT, 1)
 	add_language(LANGUAGE_SPACER, 1)
 
 /mob/living/scp_173/Destroy()
@@ -85,11 +79,11 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 
 /mob/living/scp_173/proc/IsBeingWatched()
-	// Am I being watched by eye pals?
+/*	// Am I being watched by eye pals?
 	for (var/mob/living/M in view(src, 7))
 		if ((istype(M, /mob/living/simple_animal/scp_131)) && (InCone(M, M.dir)))
 			return TRUE
-
+*/
 	// Am I being watched by anyone else?
 	for(var/mob/living/carbon/human/H in view(src, 7))
 		if(H.SCP)

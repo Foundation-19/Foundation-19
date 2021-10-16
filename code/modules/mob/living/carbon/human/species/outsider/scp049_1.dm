@@ -2,7 +2,7 @@
 	name = "SCP-049-1"
 	name_plural = "SCP-049-1s"
 
-	darksight = 8
+//	darksight = 8
 	has_organ = list()
 	siemens_coefficient = 0
 
@@ -13,10 +13,10 @@
 	spawn_flags = SPECIES_IS_RESTRICTED
 
 	// immune to viruses
-	virus_immune = TRUE
+//	virus_immune = TRUE
 
 	// fists
-	unarmed_types = list(/datum/unarmed_attack/claw)
+//	unarmed_types = list(/datum/unarmed_attack/claw)
 
 	// damage overrides
 	brute_mod =      0.5                    // 50% physical damage

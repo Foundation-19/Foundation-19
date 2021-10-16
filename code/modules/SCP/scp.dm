@@ -42,8 +42,8 @@
 			SCP = GLOB.SCP_list[A]
 		else
 			return
-	if(ispath(SCP))
-		SCP = new SCP()
+//	if(ispath(c))
+//		SCP = new SCP()
 	if(!isdatum(SCP) || !canBeSCP(SCP)) //One last isdatum to check if someone didnt fuck the path
 		qdel(SCP)
 		return

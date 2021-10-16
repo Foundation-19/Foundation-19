@@ -2,7 +2,7 @@
 	name = "SCP-106"
 	name_plural = "SCP-106s"
 
-	darksight = 8
+//	darksight = 8
 	has_organ = list()
 	siemens_coefficient = 0
 
@@ -15,7 +15,7 @@
 	genders = list(MALE)
 
 	// immune to viruses
-	virus_immune = TRUE
+//	virus_immune = TRUE
 
 	// icon overrides
 	icobase = null
@@ -44,7 +44,7 @@
 	if (!H.pursueTarget() || H.loc in GLOB.scp106_floors)
 		var/turf/T = step_rand(H)
 		H.Move(get_dir(H, T))
-	#else 
+	#else
 	if (prob(25))
 		var/turf/T = step_rand(H)
 		H.Move(get_dir(H, T))

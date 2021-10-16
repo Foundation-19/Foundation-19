@@ -9,10 +9,10 @@ GLOBAL_LIST_EMPTY(scp529s)
 	item_state = "cat"
 	icon_living = "cat"
 	icon_dead = "cat_dead"
-	speak = list("Meow!","Esp!","Purr!","HSSSSS")
+//	speak = list("Meow!","Esp!","Purr!","HSSSSS")
 	speak_emote = list("purrs", "meows")
-	emote_hear = list("meows","mews")
-	emote_see = list("shakes her head", "shivers")
+//	emote_hear = list("meows","mews")
+//	emote_see = list("shakes her head", "shivers")
 	response_help = "strokes"
 	response_disarm = "gently pushes aside"
 	response_harm = "kicks"

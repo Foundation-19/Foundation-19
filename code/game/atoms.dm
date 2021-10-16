@@ -14,6 +14,7 @@
 	var/list/climbers
 	var/climb_speed_mult = 1
 	var/init_flags = EMPTY_BITFIELD
+	var/datum/scp/SCP //For SCP's
 
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
@@ -64,6 +65,9 @@
 	if (health_max)
 		health_current = health_max
 		update_icon()
+
+	if(SCP)
+		makeSCP()
 
 	return INITIALIZE_HINT_NORMAL
 

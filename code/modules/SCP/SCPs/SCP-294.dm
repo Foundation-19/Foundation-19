@@ -68,11 +68,11 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 
 	sleep(10)
 	if(product)
-		var/obj/item/weapon/reagent_containers/food/drinks/sillycup/D = new /obj/item/weapon/reagent_containers/food/drinks/sillycup(loc)
+		var/obj/item/reagent_containers/food/drinks/sillycup/D = new /obj/item/reagent_containers/food/drinks/sillycup(loc)
 		D.reagents.add_reagent(product, 30)
 		visible_message("<span class='notice'>[src] dispenses a small paper cup.</span>")
 	else if (victim)
-		var/obj/item/weapon/reagent_containers/food/drinks/sillycup/D = new /obj/item/weapon/reagent_containers/food/drinks/sillycup(loc)
+		var/obj/item/reagent_containers/food/drinks/sillycup/D = new /obj/item/reagent_containers/food/drinks/sillycup(loc)
 		product = victim.take_blood(D,30)
 		D.reagents.reagent_list += product
 		D.reagents.update_total()

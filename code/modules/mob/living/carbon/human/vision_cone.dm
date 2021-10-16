@@ -75,25 +75,25 @@
 			for(var/living in cone(src, OPPOSITE_DIR(dir), oviewers(src), /mob/living))
 
 				var/mob/living/L = living
-			
+
 				var/list/things = L.vis_contents+L
-				
+
 				for (var/thing in things)
 					I = image("split", thing)
 					I.override = TRUE
-						
+
 					client.images += I
 					client.hidden_images += I
 					hidden_atoms += thing
-					
+
 					if (thing == things[1])
 						hidden_mobs += L
 
 						if(pulling == L)//If we're pulling them we don't want them to be invisible, too hard to play like that.
 							I.override = FALSE
-						else if (L.footstep >= 1)
+/*						else if (L.footstep >= 1)
 							L.in_vision_cones[client] = TRUE
-
+*/
 			// items are invisible too
 			for(var/item in cone(src, OPPOSITE_DIR(dir), oview(get_turf(src)), /obj/item)) // http://www.byond.com/docs/ref/info.html#/proc/view
 				I = image("split", item)
@@ -115,11 +115,11 @@
 		client.hidden_images.Cut()
 		hidden_atoms.Cut()
 		hidden_mobs.Cut()
-		return TRUE 
+		return TRUE
 	return FALSE
 
 /mob/living/carbon/human/proc/delete_image(image, delay)
-	set waitfor = FALSE 
+	set waitfor = FALSE
 	sleep(delay)
 	qdel(image)
 

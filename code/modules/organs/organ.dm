@@ -32,6 +32,11 @@ var/list/organ_cache = list()
 	var/can_be_printed = TRUE
 	var/print_cost
 
+	// SCP-13
+	var/scp106_affected = FALSE
+	var/scp106_vulnerable = TRUE
+
+
 /obj/item/organ/Destroy()
 	owner = null
 	dna = null
@@ -120,7 +125,7 @@ var/list/organ_cache = list()
 	if(is_preserved())
 		return
 
-	if(!owner && reagents)
+	if((!owner||scp106_affected)&&reagents)
 		var/datum/reagent/blood/B = locate(/datum/reagent/blood) in reagents.reagent_list
 		if(B && prob(40))
 			reagents.remove_reagent(/datum/reagent/blood,0.1)

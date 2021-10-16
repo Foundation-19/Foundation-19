@@ -83,8 +83,41 @@
 
 		if(!client && !mind)
 			species.handle_npc(src)
+	//Foundation 19 edits
+	if(client)
+		// spooky SCP-106 music
+		var/scp106_music = FALSE
+		for (var/scp106 in GLOB.scp106s)
+			var/atom/A = scp106
+			if (A != src && abs(x - A.x) <= 5 && abs(y - A.y) <= 5 && !abs(z - A.z))
+				scp106_music = TRUE
+				if (world.time >= client.next_scp106_sound)
+					src << sound('sound/scp/chase/scp106chase.ogg', channel = 106, volume = 100)
+					client.next_scp106_sound = world.time + 1500 // a bit longer than the ogg itself
+					break
 
+		if (!scp106_music && client.next_scp106_sound != -1 && client.next_scp106_sound > world.time)
+			src << sound(null, channel = 106)
+			client.next_scp106_sound = -1
 
+		// spooky SCP-012 ambience
+		var/scp012_music = FALSE
+
+		if (is_scp012_affected())
+
+			scp012_music = TRUE
+			if (world.time >= client.next_scp012_sound)
+				src << sound('sound/scp/012.ogg', channel = 12, volume = 100)
+				client.next_scp012_sound = world.time + 230
+
+		if (!scp012_music && client.next_scp012_sound != -1 && client.next_scp012_sound > world.time)
+			src << sound(null, channel = 12)
+			client.next_scp012_sound = -1
+
+  	// SCP-049 stuff: don't change the order of these checks, they short circuit
+	if (prob(2) && type == /mob/living/carbon/human && !isscp049_1(src) && !pestilence && !isscp343(src)) /// test change - lestat
+		pestilence = TRUE
+/////////End of Edits/////
 	if(!handle_some_updates())
 		return											//We go ahead and process them 5 times for HUD images and other stuff though.
 

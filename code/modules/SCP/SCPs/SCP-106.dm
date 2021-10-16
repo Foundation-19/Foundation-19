@@ -184,7 +184,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 
 	if (!(target in orange(1, src)))
 		// moves slightly faster than humans
-		walk_to(src, target, 1, 0+config.run_speed)
+		walk_to(src, target, 1/*, 0+config.run_speed*/)
 		return TRUE
 
 	walk(src, null)
@@ -205,13 +205,13 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 				G.upgrade(TRUE)
 		else
 			if (G)
-				G.locked = TRUE
+				G.affecting = TRUE
 
 		target.Weaken(1)
 		// NPC stuff
 		if (!client)
 			spawn (20)
-				if (G && !G.locked)
+				if (G && !G.affecting)
 					G.last_upgrade = -1
 					G.upgrade(FALSE)
 
@@ -418,6 +418,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		visible_message("<span class = 'danger'>[L] is warped away!</span>")
 		L.forceMove(pick(GLOB.scp106_floors))
 
+/*  RECODE FEMUR BREAKER TO USE FREQUENCIES
 // the femur breaker
 /obj/structure/femur_breaker
 	icon = 'icons/obj/femurbreaker.dmi'
@@ -526,3 +527,4 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	if(_wifi_id)
 		wifi_sender = new/datum/wifi/sender/femur_breaker(_wifi_id, src)
 	. = ..()
+*/

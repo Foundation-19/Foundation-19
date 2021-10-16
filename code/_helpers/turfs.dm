@@ -70,6 +70,9 @@
 /proc/is_not_open_space(turf/T)
 	return !isopenspace(T)
 
+/proc/isfloor(turf/T)
+	return (istype(T, /turf/simulated/floor) || istype(T, /turf/unsimulated/floor))
+
 /proc/is_holy_turf(var/turf/T)
 	return T && T.holy
 

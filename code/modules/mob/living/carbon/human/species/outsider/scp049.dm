@@ -2,7 +2,7 @@
 	name = "SCP-049"
 	name_plural = "SCP-049s"
 
-	darksight = 8
+//	darksight = 8
 	has_organ = list()
 	siemens_coefficient = 0
 
@@ -15,7 +15,7 @@
 	genders = list(MALE)
 
 	// immune to viruses
-	virus_immune = TRUE
+//	virus_immune = TRUE
 
 	// icon overrides
 	icobase = null

@@ -94,15 +94,15 @@
 					if(STAGE_SLEEP)
 						if(prob(4))
 							M.sleeping = 500
-					if(STAGE_DAMAGE)
+/*					if(STAGE_DAMAGE)
 						var/obj/item/organ/internal/brain = M.internal_organs_by_name[BP_BRAIN]
 						if(brain)
 							brain.take_damage(rand(4,6))
-
+*/
 /obj/item/scp513/proc/display_513_1(turf/spot, mob/living/target, length = 20, fade=TRUE)
 	var/image/img = image('icons/SCP/32x64.dmi', spot, "scp_513_1")
 	img.layer = ABOVE_OBJ_LAYER + 0.1
-	img.plane = OBJ_PLANE
+//	img.plane = OBJ_PLANE
 	target.client.images |= img
 	spawn(length)
 		target.client.images -= img
