@@ -94,7 +94,7 @@
 /datum/gear/accessory/armband_emt
 	display_name = "EMT armband"
 	path = /obj/item/clothing/accessory/armband/medgreen
-	allowed_roles = list(/datum/job/doctor)
+	allowed_roles = list(/datum/job/medicaldoctor)
 
 
 /datum/gear/accessory/armband_engineering

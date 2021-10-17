@@ -78,7 +78,7 @@
 	uniform = /obj/item/clothing/under/rank/geneticist
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/genetics
 	r_pocket = /obj/item/device/flashlight/pen
-	id_types = list(/obj/item/card/id/medical/geneticist)
+	id_types = list(/obj/item/card/id/medical/surgeon)
 	pda_type = /obj/item/modular_computer/pda/medical
 
 /decl/hierarchy/outfit/job/medical/geneticist/New()
@@ -100,7 +100,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_hand = /obj/item/storage/firstaid/adv
 	belt = /obj/item/storage/belt/medical/emt
-	id_types = list(/obj/item/card/id/medical/paramedic)
+	id_types = list(/obj/item/card/id/medical/emt)
 	flags = OUTFIT_FLAGS_JOB_DEFAULT | OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/medical/paramedic/emt

@@ -40,8 +40,8 @@
 					if (!cooldown[H] || (world.time >= (cooldown[H] + MESSAGE_COOLDOWN)))
 						cooldown[H] = world.time
 						to_chat(H, "<span class='danger'><B>You see unimaginable horrors within \the [src]...</B></span>")
-					if((time >= 10) && ((time % 2) == 0))
-						var/obj/item/organ/internal/brain = H.internal_organs_by_name[BP_BRAIN]
+//					if((time >= 10) && ((time % 2) == 0))
+//						var/obj/item/organ/internal/brain = H.internal_organs_by_name[BP_BRAIN]
 /*						if(brain)
 							brain.take_damage(15)*/
 				break

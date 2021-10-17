@@ -19,7 +19,7 @@
 	minimal_access = list()	//See /datum/job/assistant/get_access()
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/classd
 	allowed_ranks = list(/datum/mil_rank/civ/classd)
-	var/static/list/used_numbers = list()
+
 
 
 
