@@ -130,7 +130,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/scp/donor/ierichon
 	name = "Jericho-114 Pistol "
-	desc = "Специальная разработка фонда для борьбы с бронированными целями, выдающаяся за особые заслуги старшему составу сотрудников безопастности."
+	desc = "Jericho-114 Pistol, a boss of a pistol"
 	icon_state = "ierichon"
 	item_state = "ierichon"
 	w_class = ITEM_SIZE_NORMAL
@@ -156,7 +156,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/scp/donor/rpk
 	name = "RPK-74"
-	desc = "Стандартный армейский Ручный Пулемёт Калашникова с установленными сошками и увеличенным магазином. Деревянные компоненты были заменены на пластиковые."
+	desc = "This is a modification of the traditional AK-47 to be a machinegun."
 	icon_state = "rpk"
 	item_state = "rpk"
 	w_class = ITEM_SIZE_HUGE
@@ -183,7 +183,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/scp/donor/svd
 	name = "SVD"
-	desc = "Самозарядная снайперская винтовка, разработанная в 1957—1963 годах группой конструкторов под руководством Евгения Драгунова."
+	desc = "A Russian Made Sniper-Rifle."
 	icon_state = "svd"
 	item_state = "svd"
 	w_class = ITEM_SIZE_HUGE
