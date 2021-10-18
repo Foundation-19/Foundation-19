@@ -1543,6 +1543,8 @@
 // Similar to get_pulse, but returns only integer numbers instead of text.
 /mob/living/carbon/human/proc/get_pulse_as_number()
 	var/obj/item/organ/internal/heart/heart_organ = internal_organs_by_name[BP_HEART]
+	if(scp173_killed)
+		return PULSE_NONE
 	if(!heart_organ)
 		return 0
 
@@ -1625,6 +1627,8 @@
 	return (species && species.has_organ[organ_check])
 
 /mob/living/carbon/human/can_feel_pain(var/obj/item/organ/check_organ)
+	if(isscp106(src) || isscp049(src) || isscp049_1(src))
+		return 0
 	if(isSynthetic())
 		return 0
 	if(check_organ)

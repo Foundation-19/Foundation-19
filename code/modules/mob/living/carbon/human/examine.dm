@@ -331,7 +331,10 @@
 	if(show_descs)
 		msg += "<span class='notice'>[jointext(show_descs, "<br>")]</span>"
 	to_chat(user, jointext(msg, null))
-
+/*Foundation 19 Edits*/
+	if (scp173_killed)
+		msg += "<span class='danger'>[T.His] neck is bent in an awkward angle.</span>\n"
+////End of Edits////
 //Helper procedure. Called by /mob/living/carbon/human/examine() and /mob/living/carbon/human/Topic() to determine HUD access to security and medical records.
 /proc/hasHUD(mob/M as mob, hudtype)
 	if(istype(M, /mob/living/carbon/human))

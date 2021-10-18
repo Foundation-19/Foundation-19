@@ -15,6 +15,7 @@
 	relative_size = 85
 	damage_reduction = 0
 	can_be_printed = FALSE
+	scp106_vulnerable = FALSE
 
 	var/can_use_mmi = TRUE
 	var/mob/living/carbon/brain/brainmob = null

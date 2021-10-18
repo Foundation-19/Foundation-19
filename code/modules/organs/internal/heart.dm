@@ -13,6 +13,7 @@
 	max_damage = 45
 	var/open
 	var/list/external_pump
+	scp106_vulnerable = FALSE
 
 /obj/item/organ/internal/heart/open
 	open = 1

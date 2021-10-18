@@ -30,4 +30,4 @@ GLOBAL_LIST_EMPTY(scp_whitelist)
 
 		GLOB.scp_whitelist[ckey] |= scp
 
-	WRITE_LOG(world.log, "FINISHED LOADING THE SCP WHITELIST")
+//	WRITE_LOG(world.log, "FINISHED LOADING THE SCP WHITELIST")
