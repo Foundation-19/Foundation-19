@@ -122,10 +122,30 @@
 
 /* short-casing projectiles, like the kind used in pistols or SMGs */
 
-/obj/item/projectile/bullet/pistol
+/obj/item/projectile/bullet/pistol //.45
 	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
 	damage = 45
-	distance_falloff = 3
+
+
+/obj/item/projectile/bullet/pistol/9mm //9mm
+	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
+	damage = 32.5
+
+	armor_penetration = 17.5
+
+/obj/item/projectile/bullet/pistol/medium/smg
+	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
+	damage = 30 //10mm/5.7x28
+	armor_penetration = 30
+
+
+/obj/item/projectile/bullet/pistol/medium/smg/rubber
+	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
+	damage = 0.5 //10mm rubber
+	armor_penetration = 10
+	agony = 30
+	embed = 0
+	sharp = 0
 
 /obj/item/projectile/bullet/pistol/holdout
 	damage = 40

@@ -12,14 +12,16 @@
 	throw_range = 5
 	origin_tech = list(TECH_BIO = 3)
 	attack_verb = list("attacked", "slapped", "whacked")
-	relative_size = 85
+	relative_size = 75
 	damage_reduction = 0
 	can_be_printed = FALSE
 	scp106_vulnerable = FALSE
+	min_bruised_damage = 10
+	min_broken_damage = 20
 
 	var/can_use_mmi = TRUE
 	var/mob/living/carbon/brain/brainmob = null
-	var/const/damage_threshold_count = 10
+	var/const/damage_threshold_count = 20
 	var/damage_threshold_value
 	var/healed_threshold = 1
 	var/oxygen_reserve = 6
@@ -248,15 +250,15 @@
 	if(is_bruised() && prob(1) && owner.eye_blurry <= 0)
 		to_chat(owner, "<span class='warning'>It becomes hard to see for some reason.</span>")
 		owner.eye_blurry = 10
-	if(damage >= 0.5*max_damage && prob(1) && owner.get_active_hand())
+	if(damage >= 0.06*max_damage && prob(1) && owner.get_active_hand())
 		to_chat(owner, "<span class='danger'>Your hand won't respond properly, and you drop what you are holding!</span>")
 		owner.unequip_item()
-	if(damage >= 0.6*max_damage)
+	if(damage >= 0.08*max_damage)
 		owner.slurring = max(owner.slurring, 2)
 	if(is_broken())
 		if(!owner.lying)
 			to_chat(owner, "<span class='danger'>You black out!</span>")
-		owner.Paralyse(10)
+		owner.Paralyse(100)
 
 /obj/item/organ/internal/brain/surgical_fix(mob/user)
 	var/blood_volume = owner.get_blood_oxygenation()
