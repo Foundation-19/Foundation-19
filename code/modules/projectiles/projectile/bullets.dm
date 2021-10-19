@@ -127,11 +127,6 @@
 	damage = 45
 
 
-/obj/item/projectile/bullet/pistol/9mm //9mm
-	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
-	damage = 32.5
-
-	armor_penetration = 17.5
 
 /obj/item/projectile/bullet/pistol/medium/smg
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
