@@ -1,11 +1,10 @@
 /obj/structure/sign/double/barsign
 	desc = "A jumbo-sized LED sign. This one seems to be showing its age."
-	description_info = "If your ID has bar access, you may swipe it on this sign to alter its display."
 	icon = 'icons/obj/barsigns.dmi'
 	icon_state = "empty"
 	appearance_flags = 0
 	anchored = 1
-	var/cult = 0
+//	var/cult = 0
 	var/toolate = 0
 	var/toolate_on = 0
 
@@ -20,7 +19,7 @@
 
 /obj/structure/sign/double/barsign/scp_078
 	name = "SCP-078"
-	description_info = "If your ID has science access, you may swipe it on this sign to alter its display."
+	desc = "If your ID has science access, you may swipe it on this sign to alter its display."
 	icon = 'icons/obj/barsigns.dmi'
 	icon_state = "Off"
 	appearance_flags = 0
@@ -60,7 +59,7 @@
 	if(cult)
 		return ..()
 
-	var/obj/item/weapon/card/id/card = I.GetIdCard()
+	var/obj/item/card/id/card = I.GetIdCard()
 	if(istype(card))
 
 		if(toolate == 1)

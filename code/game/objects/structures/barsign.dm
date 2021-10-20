@@ -5,7 +5,7 @@
 	appearance_flags = DEFAULT_APPEARANCE_FLAGS
 	anchored = TRUE
 	var/cult = 0
-
+/*
 /obj/structure/sign/double/barsign/proc/get_valid_states(initial=1)
 	. = icon_states(icon)
 	. -= "on"
@@ -13,7 +13,7 @@
 	. -= "empty"
 	if(initial)
 		. -= "Off"
-
+*/
 /obj/structure/sign/double/barsign/examine(mob/user)
 	. = ..()
 	switch(icon_state)
