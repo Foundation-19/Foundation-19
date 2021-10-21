@@ -16,11 +16,11 @@
 
 	New()
 		..()
-		new /obj/item/weapon/paper/scp/safe/scp013(src)
-		new /obj/item/weapon/paper/scp/safe/scp113(src)
-		new /obj/item/weapon/paper/scp/safe/scp131(src)
-		new /obj/item/weapon/paper/scp/safe/scp500(src)
-		new /obj/item/weapon/paper/scp/safe/scp999(src)
+		new /obj/item/paper/scp/safe/scp013(src)
+		new /obj/item/paper/scp/safe/scp113(src)
+		new /obj/item/paper/scp/safe/scp131(src)
+		new /obj/item/paper/scp/safe/scp500(src)
+		new /obj/item/paper/scp/safe/scp999(src)
 		update_icon()
 
 /obj/structure/filingcabinet/scp/safe/scp1000to1999
@@ -35,7 +35,7 @@
 
 /*	New()
 		..()
-		new /obj/item/weapon/paper/scp999(src)
+		new /obj/item/paper/scp999(src)
 		update_icon()
 */
 
@@ -51,7 +51,7 @@
 
 /*	New()
 		..()
-		new /obj/item/weapon/paper/scp999(src)
+		new /obj/item/paper/scp999(src)
 		update_icon()
 */
 
@@ -67,7 +67,7 @@
 
 /*	New()
 		..()
-		new /obj/item/weapon/paper/scp999(src)
+		new /obj/item/paper/scp999(src)
 		update_icon()
 */
 
@@ -85,18 +85,18 @@
 
 	New()
 		..()
-		new /obj/item/weapon/paper/scp/euclid/scp012(src)
-		new /obj/item/weapon/paper/scp/euclid/scp049(src)
-		new /obj/item/weapon/paper/scp/euclid/scp078(src)
-		new /obj/item/weapon/paper/scp/euclid/scp096(src)
-		new /obj/item/weapon/paper/scp/euclid/scp096/addendum1(src)
-		new /obj/item/weapon/paper/scp/euclid/scp151(src)
-		new /obj/item/weapon/paper/scp/euclid/scp151/addendum1(src)
-		new /obj/item/weapon/paper/scp/euclid/scp153(src)
-		new /obj/item/weapon/paper/scp/euclid/scp153/addendum1(src)
-		new /obj/item/weapon/paper/scp/euclid/scp173(src)
-		new /obj/item/weapon/paper/scp/euclid/scp513(src)
-		new /obj/item/weapon/paper/scp/euclid/scp895(src)
+		new /obj/item/paper/scp/euclid/scp012(src)
+		new /obj/item/paper/scp/euclid/scp049(src)
+		new /obj/item/paper/scp/euclid/scp078(src)
+		new /obj/item/paper/scp/euclid/scp096(src)
+		new /obj/item/paper/scp/euclid/scp096/addendum1(src)
+		new /obj/item/paper/scp/euclid/scp151(src)
+		new /obj/item/paper/scp/euclid/scp151/addendum1(src)
+		new /obj/item/paper/scp/euclid/scp153(src)
+		new /obj/item/paper/scp/euclid/scp153/addendum1(src)
+		new /obj/item/paper/scp/euclid/scp173(src)
+		new /obj/item/paper/scp/euclid/scp513(src)
+		new /obj/item/paper/scp/euclid/scp895(src)
 		update_icon()
 
 /obj/structure/filingcabinet/scp/euclid/scp1000to1999
@@ -111,7 +111,7 @@
 
 /*	New()
 		..()
-		new /obj/item/weapon/paper/scp999(src)
+		new /obj/item/paper/scp999(src)
 		update_icon()
 */
 
@@ -127,7 +127,7 @@
 
 /*	New()
 		..()
-		new /obj/item/weapon/paper/scp999(src)
+		new /obj/item/paper/scp999(src)
 		update_icon()
 */
 
@@ -161,8 +161,8 @@
 
 	New()
 		..()
-		new /obj/item/weapon/paper/scp/keter/scp106(src)
-		new /obj/item/weapon/paper/scp/keter/scp939(src)
+		new /obj/item/paper/scp/keter/scp106(src)
+		new /obj/item/paper/scp/keter/scp939(src)
 		update_icon()
 
 
@@ -178,7 +178,7 @@
 
 /*	New()
 		..()
-		new /obj/item/weapon/paper/scp999(src)
+		new /obj/item/paper/scp999(src)
 		update_icon()
 */
 
@@ -194,7 +194,7 @@
 
 /*	New()
 		..()
-		new /obj/item/weapon/paper/scp999(src)
+		new /obj/item/paper/scp999(src)
 		update_icon()
 */
 

@@ -53,7 +53,7 @@
 	ammo_type = /obj/item/ammo_casing/rub10mm
 	max_ammo = 50
 	multiple_sprites = 1
-	
+
 /obj/item/ammo_magazine/scp/m16_mag
 	name = "magazine (5.56)"
 	icon_state = "m16"
@@ -95,3 +95,33 @@
 	ammo_type = /obj/item/ammo_casing/a762
 	max_ammo = 10
 	multiple_sprites = 1
+
+
+/* AMMO 7.62 ROUNDS*/
+/obj/item/ammo_magazine/box/a762
+	name = "ammunition box (7.62)"
+	icon_state = "csla_box"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = "a762"
+	matter = list(DEFAULT_WALL_MATERIAL = 2250)
+	ammo_type = /obj/item/ammo_casing/a762
+	max_ammo = 150
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/a762
+	name = "magazine (7.62mm)"
+	icon_state = "5.56"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	caliber = "a762"
+	matter = list(DEFAULT_WALL_MATERIAL = 1800)
+	ammo_type = /obj/item/ammo_casing/a762
+	max_ammo = 15 //if we lived in a world where normal mags had 30 rounds, this would be a 20 round mag
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/a762/empty
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/a762/practice
+	name = "magazine (7.62mm, practice)"
+	ammo_type = /obj/item/ammo_casing/a762/practice

@@ -1297,6 +1297,7 @@
 #include "code\game\objects\items\weapons\SCP\barsign.dm"
 #include "code\game\objects\items\weapons\SCP\boxes.dm"
 #include "code\game\objects\items\weapons\SCP\clothing.dm"
+#include "code\game\objects\items\weapons\SCP\filingcabinets.dm"
 #include "code\game\objects\items\weapons\SCP\guns.dm"
 #include "code\game\objects\items\weapons\SCP\helmet.dm"
 #include "code\game\objects\items\weapons\SCP\misc.dm"
