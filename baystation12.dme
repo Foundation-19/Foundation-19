@@ -1301,6 +1301,7 @@
 #include "code\game\objects\items\weapons\SCP\guns.dm"
 #include "code\game\objects\items\weapons\SCP\helmet.dm"
 #include "code\game\objects\items\weapons\SCP\misc.dm"
+#include "code\game\objects\items\weapons\SCP\paint_stripe.dm"
 #include "code\game\objects\items\weapons\storage\backpack.dm"
 #include "code\game\objects\items\weapons\storage\bags.dm"
 #include "code\game\objects\items\weapons\storage\belt.dm"
