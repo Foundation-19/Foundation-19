@@ -125,3 +125,18 @@
 /obj/item/ammo_magazine/a762/practice
 	name = "magazine (7.62mm, practice)"
 	ammo_type = /obj/item/ammo_casing/a762/practice
+/* MTF AMMO STUFFS */
+/obj/item/storage/box/mtf/pelletammo
+	name = "pellet ammunition"
+	desc = "Contains pellet ammunition for a shotgun."
+	startswith = list(/obj/item/ammo_casing/shotgun/pellet = 7)
+
+/obj/item/storage/box/mtf/empammo
+	name = "emp ammunition"
+	desc = "Contains EMP ammunition for a shotgun."
+	startswith = list(/obj/item/ammo_casing/shotgun/emp = 7)
+
+/obj/item/storage/box/mtf/beanbag
+	name = "non-lethal ammunition"
+	desc = "Contains beanbag ammunition for a shotgun."
+	startswith = list(/obj/item/ammo_casing/shotgun/beanbag = 7)
