@@ -11,10 +11,7 @@
 	//TODO: fix husking
 	if(((maxHealth - getFireLoss()) < config.health_threshold_dead) && stat == DEAD)
 		ChangeToHusk()
-
-	if (isscp049_1(src))
-		if ((getBruteLoss() + getFireLoss()) > 200)
-			death()
+	return
 
 /mob/living/carbon/human/adjustBrainLoss(var/amount)
 	if(status_flags & GODMODE)	return 0	//godmode

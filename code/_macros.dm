@@ -92,12 +92,18 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 #define isvirtualmob(A) istype(A, /mob/observer/virtual)
 
 #define isweakref(A) istype(A, /weakref)
-///////////////////FOUNDATION 19 EDITS////////////
-#define isstructure(A) istype(A, /obj/structure)
 
-#define ismachinery(A) istype(A, /obj/machinery)
+#define attack_animation(A) if(istype(A)) A.do_attack_animation(src)
 
-#define isdatum(A) istype(A, /datum)
+#define isopenspace(A) istype(A, /turf/simulated/open)
+
+#define isPlunger(A) istype(A, /obj/item/clothing/mask/plunger) || istype(A, /obj/item/device/plunger/robot)
+
+#define isadmin(X) (check_rights(R_ADMIN, 0, (X)) != 0)
+
+#define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)
+
+#define random_id(key,min_id,max_id) uniqueness_repository.Generate(/datum/uniqueness_generator/id_random, key, min_id, max_id)
 
 #define isscp106(A) istype(A, /mob/living/carbon/human/scp106)
 
@@ -114,19 +120,12 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 #define isscp529(A) istype(A, /mob/living/simple_animal/cat/fluff/scp_529)
 
 #define isscp173(A) istype(A, /mob/living/scp_173)
-/////////////////////////////////////////////////////
 
-#define attack_animation(A) if(istype(A)) A.do_attack_animation(src)
+#define isstructure(A) istype(A, /obj/structure)
 
-#define isopenspace(A) istype(A, /turf/simulated/open)
+#define ismachinery(A) istype(A, /obj/machinery)
 
-#define isPlunger(A) istype(A, /obj/item/clothing/mask/plunger) || istype(A, /obj/item/device/plunger/robot)
-
-#define isadmin(X) (check_rights(R_ADMIN, 0, (X)) != 0)
-
-#define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)
-
-#define random_id(key,min_id,max_id) uniqueness_repository.Generate(/datum/uniqueness_generator/id_random, key, min_id, max_id)
+#define isdatum(A) istype(A, /datum)
 
 /// General I/O helpers
 #define to_target(target, payload)            target << (payload)

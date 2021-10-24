@@ -21,24 +21,6 @@
 	)
 
 
-
-
-/datum/job/assistant/equip(mob/living/carbon/human/H)
-	..()
-
-	var/r = rand(100,9000)
-	while (used_numbers.Find(r))
-		r = rand(100,9000)
-	used_numbers += r
-	H.name = random_name(H.gender, H.species.name)
-	H.real_name = H.name
-	if(istype(H.wear_id, /obj/item/card/id))
-		var/obj/item/card/id/ID = H.wear_id
-		ID.registered_name = "D-[used_numbers[used_numbers.len]]"
-//		ID.update_name()
-
-
-
 /datum/job/captain
 
 	title = "Site Director"

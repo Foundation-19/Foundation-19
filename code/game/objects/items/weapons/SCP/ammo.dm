@@ -140,3 +140,105 @@
 	name = "non-lethal ammunition"
 	desc = "Contains beanbag ammunition for a shotgun."
 	startswith = list(/obj/item/ammo_casing/shotgun/beanbag = 7)
+
+/* Ammo Casing */
+
+/obj/item/ammo_casing/a762
+	desc = "A 7.62mm bullet casing."
+	caliber = "a762"
+	projectile_type = /obj/item/projectile/bullet/rifle/a762
+	icon_state = "rifle-casing"
+	spent_icon = "rifle-casing-spent"
+
+/obj/item/ammo_casing/a762/practice
+	desc = "A 7.62mm practice bullet casing."
+	projectile_type = /obj/item/projectile/bullet/rifle/a762/practice
+
+/obj/item/ammo_casing/a556
+	desc = "A 5.56mm bullet casing."
+	caliber = "a556"
+	projectile_type = /obj/item/projectile/bullet/rifle/a556
+	icon_state = "rifle-casing"
+	spent_icon = "rifle-casing-spent"
+
+/obj/item/ammo_casing/a10mm
+	desc = "A 5.7x28mm bullet casing."
+	caliber = "10mm"
+	projectile_type = /obj/item/projectile/bullet/pistol/medium/smg
+
+/obj/item/ammo_casing/rub10mm
+	desc = "A rubber 10mm bullet casing."
+	caliber = "10mm"
+	projectile_type = /obj/item/projectile/bullet/pistol/medium/smg/rubber
+	icon_state = "10mm-hollowpoint"
+	spent_icon = "r-casing-spent"
+
+/obj/item/ammo_casing/ap10mm
+	desc = "A armor piercing 10mm bullet casing."
+	caliber = "10mm"
+	projectile_type = /obj/item/projectile/bullet/pistol/medium/smg/ap
+	icon_state = "10mm-hardentry"
+	spent_icon = "r-casing-spent" //temporary until the spriters make a better spent case
+
+/obj/item/ammo_casing/c45
+	desc = "A .45 bullet casing."
+	caliber = ".45"
+	projectile_type = /obj/item/projectile/bullet/pistol/medium
+
+/obj/item/ammo_casing/c45/practice
+	desc = "A .45 practice bullet casing."
+	projectile_type = /obj/item/projectile/bullet/pistol/practice
+
+/obj/item/ammo_casing/c45/rubber
+	desc = "A .45 rubber bullet casing."
+	projectile_type = /obj/item/projectile/bullet/pistol/rubber
+	icon_state = "r-casing"
+	spent_icon = "r-casing-spent"
+
+/obj/item/ammo_casing/c45/flash
+	desc = "A .45 flash shell casing."
+	projectile_type = /obj/item/projectile/energy/flash
+
+
+/* Bullets */
+
+/obj/item/projectile/bullet/rifle/a556
+	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
+	damage = 50
+	armor_penetration = 35
+	agony = 25
+
+/obj/item/projectile/bullet/rifle/a762
+	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	damage = 60
+	armor_penetration = 40
+	agony = 25
+
+/obj/item/projectile/bullet/pistol/medium/smg
+	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
+	damage = 30 //10mm/5.7x28
+	armor_penetration = 35
+	agony = 15
+
+/obj/item/projectile/bullet/pistol/medium/smg/rubber
+	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
+	damage = 0.5 //10mm rubber
+	armor_penetration = 12
+	agony = 35
+	embed = 0
+	sharp = 0
+
+/obj/item/projectile/bullet/pistol/medium/smg/hollowpoint
+	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
+	damage = 45 //10mm hollowpoint
+	armor_penetration = 5
+	agony = 20
+
+/obj/item/projectile/bullet/pistol/medium/smg/ap
+	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
+	damage = 22.5 //10mm AP
+	armor_penetration = 65
+	agony = 10
+
+/obj/item/projectile/bullet/rifle/a762/practice
+	damage = 5

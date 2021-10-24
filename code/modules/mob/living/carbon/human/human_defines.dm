@@ -112,32 +112,3 @@
 	var/list/descriptors
 
 	var/last_smelt = 0
-
-/* 		Foundation 19 Edits*/
-
-	var/obj/screen/fov = null
-	var/usefov = 1
-
-
-	// SCP-049
-	var/pre_scp049_name = ""
-	var/pre_scp049_real_name = ""
-	var/pre_scp049_species = "Human"
-	var/pestilence = FALSE
-
-	// SCP-013
-	var/is_blue_lady = 0
-	var/blue_lady_transitioned = 0
-	var/pre_scp013_name = ""
-	var/pre_scp013_real_name = ""
-	var/pre_scp013_gender = null
-	var/pre_scp013_species = "Human"
-
-	// SCP-173
-	var/scp173_killed = FALSE
-
-	// SCP-078
-	var/dies_young = 0
-
-	// SCP-106
-	var/pocket_dimension_decay = 0

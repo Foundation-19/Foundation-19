@@ -39,6 +39,31 @@
 	var/temperature_alert = 0
 	var/heartbeat = 0
 	var/stamina = 100
+	// SCP-049
+	var/pre_scp049_name = ""
+	var/pre_scp049_real_name = ""
+	var/pre_scp049_species = "Human"
+	var/pestilence = FALSE
+
+	// SCP-013
+	var/is_blue_lady = 0
+	var/blue_lady_transitioned = 0
+	var/pre_scp013_name = ""
+	var/pre_scp013_real_name = ""
+	var/pre_scp013_gender = null
+	var/pre_scp013_species = "Human"
+
+	// SCP-173
+	var/scp173_killed = FALSE
+
+	// SCP-078
+	var/dies_young = 0
+
+	// SCP-106
+	var/pocket_dimension_decay = 0
+
+	var/obj/screen/fov = null//The screen object because I can't figure out how the hell TG does their screen objects so I'm just using legacy code.
+	var/usefov = 1
 
 /mob/living/carbon/human/Life()
 	set invisibility = 0
@@ -83,8 +108,10 @@
 
 		if(!client && !mind)
 			species.handle_npc(src)
-	//Foundation 19 edits
-	if(client)
+
+
+	if (client)
+
 		// spooky SCP-106 music
 		var/scp106_music = FALSE
 		for (var/scp106 in GLOB.scp106s)
@@ -117,15 +144,12 @@
   	// SCP-049 stuff: don't change the order of these checks, they short circuit
 	if (prob(2) && type == /mob/living/carbon/human && !isscp049_1(src) && !pestilence && !isscp343(src)) /// test change - lestat
 		pestilence = TRUE
-/////////End of Edits/////
+
 	if(!handle_some_updates())
 		return											//We go ahead and process them 5 times for HUD images and other stuff though.
 
 	//Update our name based on whether our face is obscured/disfigured
-	if (name != real_name && isscp049_1(src))
-		SetName(real_name)
-	else
-		SetName(get_visible_name())
+	SetName(get_visible_name())
 
 /mob/living/carbon/human/get_stamina()
 	return stamina

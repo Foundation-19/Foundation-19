@@ -149,7 +149,6 @@
 	var/overlay_alarm
 	var/overlay_status_display
 	var/alert_border
-	var/crb = FALSE
 
 	var/up_description
 	var/down_description

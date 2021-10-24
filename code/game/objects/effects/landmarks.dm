@@ -58,31 +58,6 @@
 			endgame_safespawns += loc
 			delete_me = 1
 			return
-		if ("scp106")
-			new /mob/living/carbon/human/scp106 (loc)
-			GLOB.scp106_spawnpoints += loc
-			delete_me = 1
-			return
-		if ("scp049")
-			new /mob/living/carbon/human/scp049 (loc)
-			delete_me = 1
-			return
-		if ("scp173")
-			new /mob/living/scp_173 (loc)
-			delete_me = 1
-			return
-		if ("scp999")
-			new /mob/living/simple_animal/scp_999 (loc)
-			delete_me = 1
-			return
-		if ("scp343")
-			new /mob/living/carbon/human/scp343 (loc)
-			delete_me = 1
-			return
-		if("scp420j")
-			GLOB.possible_420j += loc
-			delete_me = 1
-			return
 		if("bluespacerift")
 			endgame_exits += loc
 			delete_me = 1

@@ -6,7 +6,7 @@
 	throwforce = 10.0
 	throw_range = 15
 	throw_speed = 3
-	candrop = 0
+//	candrop = 0
 	SCP = /datum/scp/SCP_113
 
 /obj/item/device/scp113/examine(mob/user)
@@ -34,10 +34,10 @@
 
 	var/mob/living/carbon/human/H = user
 	if (istype(H) && H.gloves)
-		return 
+		return
 
 	var/obj/item/I = owner
-	I.candrop = 0 //reset candrop for new pickup
+//	I.candrop = 0 //reset candrop for new pickup
 
 	var/which_hand = BP_L_HAND //determine hand to burn
 	if(!user.hand)
@@ -79,5 +79,5 @@
 	spawn(350)
 		to_chat(user, "<span class='warning'>The burning begins to fade, and you feel your hand relax it's grip on the [I.name].</span>")
 	spawn(360)
-		I.candrop = 1 //transformation finished, you can let go now
+//		I.candrop = 1 //transformation finished, you can let go now
 		victims[user] = world.time

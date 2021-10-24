@@ -12,6 +12,7 @@
 	desc = "That looks like it doesn't open easily."
 	icon = 'icons/obj/doors/rapid_pdoor.dmi'
 	icon_state = null
+	var/id = 1.0
 
 	// Icon states for different shutter types. Simply change this instead of rewriting the update_icon proc.
 	var/icon_state_open = null
@@ -36,7 +37,6 @@
 
 	var/begins_closed = TRUE
 	var/material/implicit_material
-	var/id = 1.0
 	autoset_access = FALSE // Uses different system with buttons.
 	pry_mod = 1.35
 

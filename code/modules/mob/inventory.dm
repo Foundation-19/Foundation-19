@@ -15,8 +15,6 @@
 /mob/proc/equip_to_slot(obj/item/I, slot)
 	return
 
-/mob/proc/canDrop(obj/item/I)
-	return (I && I.candrop)
 
 /// Attempt to place I into this mob's inventory at slot. See TRYEQUIP_* flags for behavior modifiers.
 /mob/proc/equip_to_slot_if_possible(obj/item/I, slot, equip_flags = TRYEQUIP_REDRAW)

@@ -283,12 +283,3 @@ var/global/list/sparring_attack_cache = list()
 	edge = TRUE
 	attack_name = "light hit"
 	should_attack_log = FALSE
-
-// clawing for SCP-049-1
-/datum/unarmed_attack/claw
-	attack_verb = list("claws")
-	attack_sound = 'sound/weapons/slice.ogg'
-	shredding = 0
-	damage = 8
-	sharp = 1
-	edge = 1

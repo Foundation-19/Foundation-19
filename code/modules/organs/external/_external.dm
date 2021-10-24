@@ -800,6 +800,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 			   DISMEMBERMENT
 ****************************************************/
 /obj/item/organ/external/proc/get_droplimb_messages_for(var/droptype, var/clean)
+
 	if(BP_IS_CRYSTAL(src))
 		playsound(src, "shatter", 70, 1)
 		return list(
@@ -835,15 +836,6 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 //Handles dismemberment
 /obj/item/organ/external/proc/droplimb(var/clean, var/disintegrate = DROPLIMB_EDGE, var/ignore_children, var/silent)
-/* Foundation 19 Edits*/
-	if(isscp049(owner))
-		return
-
-	if(isscp106(owner))
-		return
-
-	if(isscp343(owner))
-		return
 
 	if(!(limb_flags & ORGAN_FLAG_CAN_AMPUTATE) || !owner)
 		return
@@ -1032,12 +1024,6 @@ obj/item/organ/external/proc/remove_clamps()
 			I.exposed()
 
 /obj/item/organ/external/proc/fracture()
-	if(isscp106(owner))
-		return
-	if(isscp049(owner))
-		return
-	if(isscp343(owner))
-		return
 	if(!config.bones_can_break)
 		return
 	if(BP_IS_ROBOTIC(src))

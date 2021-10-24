@@ -33,8 +33,6 @@
 		return
 	if(!istype(target))
 		return
-	if (isscp106(target) || isscp049(target))
-		return
 	if(target.buckled)
 		occupant_message("[target] will not fit into the sleeper because they are buckled to [target.buckled].")
 		return

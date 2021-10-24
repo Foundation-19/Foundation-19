@@ -5,7 +5,7 @@
   <link rel="stylesheet" type="text/css" href="changelog.css">
   <base target="_blank" />
   <script type='text/javascript'>
-  
+
 	function changeText(tagID, newText, linkTagID){
 		var tag = document.getElementById(tagID);
 		tag.innerHTML = newText;
@@ -13,8 +13,8 @@
 		linkTag.removeAttribute("href");
 		linkTag.removeAttribute("onclick");
 	}
-	
-  </script>  
+
+  </script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
@@ -25,8 +25,8 @@
 		<td valign='top'>
 			<div align='center'><font size='3'><b>Baystation 12</b></font></div>
 			<div align='center'><font size='3'><b><i>A Space Station 13 Project</i></b></font></div>
-			
-			<p><div align='center'><font size='3'><a href="http://wiki.baystation12.net/">Wiki</a> | <a href="https://github.com/Baystation12/Baystation12/">Source code</a></font></div></p>
+
+			<p><div align='center'><font size='3'><a href="https://baydoc.ss13.me/">Wiki</a> | <a href="https://github.com/Baystation12/Baystation12/">Source code</a></font></div></p>
             <font size='2'>Code licensed under <a href="http://www.gnu.org/licenses/agpl.html">AGPLv3</a>. Content licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.<br><br>
 			<font size='2'><b>Visit our IRC channels:</b> #bs12 and #codershuttle on irc.sorcery.net</font><br>
 			<font size='2'><b>Join our Discord server:</b> <a href='https://discord.gg/DrtRFxs'>-Click Here-</a><br></font>
@@ -49,13 +49,78 @@
 </table>
 
 		<!--
-		
-		TO ADD AN ENTRY, ADD AND MAINTAIN YOUR OWN changelog/USERNAME.yml FILE. 
-		
+
+		TO ADD AN ENTRY, ADD AND MAINTAIN YOUR OWN changelog/USERNAME.yml FILE.
+
 		*** DO NOT MODIFY THIS FILE OR YOU WILL CAUSE MERGE CONFLICTS. ***
-		
+
 		-->
 		<div class="commit sansserif">
+
+			<h2 class="date">24 October 2021</h2>
+			<h3 class="author">CrimsonShrike updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Added exosuit heat gauges. They report a variety of useful data.</li>
+			</ul>
+			<h3 class="author">Ryan180602 updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Add Robotic Analyser to Roboticist PDA</li>
+				<li class="tweak">Add yes/no button to generate nanoui map verb</li>
+			</ul>
+
+			<h2 class="date">23 October 2021</h2>
+			<h3 class="author">AzlanOnPc, Ryan180602 updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Add new sprites for wristblade, popout shotgun.</li>
+				<li class="rscadd">Add new sprites for fluff head augments.</li>
+				<li class="rscadd">Add new sprites for UV and skeletal bracings.</li>
+				<li class="rscadd">Add new sprites for backup battery, leukobreeder/recycler.</li>
+			</ul>
+			<h3 class="author">Jux updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">Reduced ling spawning relative to pop.</li>
+			</ul>
+			<h3 class="author">Mucker updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Added descriptions for the mountain and featureless planet types to sensor scan results.</li>
+				<li class="bugfix">Fixed some tech-level readouts in the protolathe console being wrong.</li>
+			</ul>
+			<h3 class="author">SierraKomodo updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">The teleporter beacons found in the teleporters are no longer permanently anchored to the giga beacons.</li>
+			</ul>
+
+			<h2 class="date">20 October 2021</h2>
+			<h3 class="author">Jux updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">The med visor is now med goggles.</li>
+			</ul>
+			<h3 class="author">Mucker updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">Lowered the number of mobs that spawn via Exo awakening events.</li>
+				<li class="admin">Commanding a mob to move in AI buildmode now removes their follower target.</li>
+				<li class="admin">Changing the hostile status of a mob now resets its target, so it stops attacking if made passive.</li>
+			</ul>
+
+			<h2 class="date">19 October 2021</h2>
+			<h3 class="author">Jux updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Replaces the unused CTI voidsuit with a new one, for nerds.</li>
+				<li class="rscadd">The new Retro Voidsuit can now spawn in the random spawners.</li>
+			</ul>
+			<h3 class="author">Mucker updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="maptweak">Renamed Petrov Security Checkpoint to 'Petrov Control Room', gave science players access, along with other minor tweaks.</li>
+				<li class="rscadd">Adds a search menu and tech-level readouts to the protolathe and circuit imprinter menus</li>
+				<li class="rscadd">Added the arc-welder to the protolathe</li>
+			</ul>
+
+			<h2 class="date">09 October 2021</h2>
+			<h3 class="author">Mucker updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">Rogue drones will no longer target FBP's or Adherent.</li>
+				<li class="bugfix">Fixed mobs being able to move in space</li>
+			</ul>
 
 			<h2 class="date">07 October 2021</h2>
 			<h3 class="author">Jux updated:</h3>
@@ -402,85 +467,6 @@
 			<h3 class="author">Mucker updated:</h3>
 			<ul class="changes bgimages16">
 				<li class="bugfix">Fixed mobs not trying to break through solid turfs when attacking a target.</li>
-			</ul>
-
-			<h2 class="date">19 August 2021</h2>
-			<h3 class="author">Ithalan updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="bugfix">PDA scanners can now save their results again</li>
-			</ul>
-			<h3 class="author">MeetSimmio updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">Adds religious banner that can have their symbol switched by the Chaplain.</li>
-				<li class="maptweak">Adds two banners to the deck 3 Chapel.</li>
-			</ul>
-			<h3 class="author">SierraKomodo updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="admin">Eyedroppers now only show attack logs for dangerous chemicals, matching the logging behavior of syringes.</li>
-				<li class="tweak">Shuttle pilots now have maintenance access, just like explorers.</li>
-				<li class="admin">Removed the 'Supermatter is approaching unsafe temperatures' warning because it's basically useless and spam-floods chat.</li>
-			</ul>
-
-			<h2 class="date">16 August 2021</h2>
-			<h3 class="author">Mucker updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="bugfix">Fixed the oxygen and nitrogen artifact triggers.</li>
-			</ul>
-
-			<h2 class="date">14 August 2021</h2>
-			<h3 class="author">SierraKomodo updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="tweak">The font used for fancy pens is now a more readable font, for people like me that may or may not be dyslexic.</li>
-			</ul>
-
-			<h2 class="date">11 August 2021</h2>
-			<h3 class="author"> updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="tweak">Anyone can select the colour select scarf in loadout now.</li>
-			</ul>
-			<h3 class="author">BlueNexus updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="maptweak">The deck one and deck three nacelles now match, as intended. As such, it should be safe to use burn mode.</li>
-			</ul>
-			<h3 class="author">Imienny, RustingWithYou updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">Adds new emote to Vox Armalis *ashriek, *shriek but cooler.</li>
-				<li class="rscadd">Adds two new Vox plants - the resin plant and the breather. The breather produces nitrogen gas, and the resin produces a new material, Vox bioresin. Adds seeds for both of them to the Vox offship.</li>
-				<li class="rscadd">Adds seed extractor to Vox ship</li>
-				<li class="rscadd">Vox Armalis can now use *shriek emote</li>
-				<li class="imageadd">Adds sprites for Vox Armalis wearing the two types of Vox clothing</li>
-			</ul>
-			<h3 class="author">Ithalan updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">Newly-added access_network_admin has replaced access_network, and access_network is now used to give a lesser degree of access to NTNet through terminal commands than admins have. Jobs that previously had access_network now have access_network_admin as well, and access_network has been added to engineers, roboticists and forensic investigators.</li>
-				<li class="rscadd">Several new terminal commands have been added and some existing ones have been revised. Details on available commands can be accessed through the 'man' command as usual.</li>
-				<li class="rscadd">Individual files or programs on a hard drive or portable drive can be flagged as invisible through terminal-usage, hiding them from view in most NTOS applications.</li>
-				<li class="rscadd">Entire drives can be made read-only through terminal-usage. Files on read-only drives cannot be edited or deleted, and new files cannot be created.</li>
-				<li class="tweak">Network cards can be given custom identifiers through terminal-usage, for easier recognition on NTNet.</li>
-				<li class="tweak">Programs set to autorun can now have autorun toggled off by clicking the autorun button again.</li>
-				<li class="tweak">When wireless access for specific NTNet functions is disabled, the connection is only rejected if the last device in a proxy chain is a wireless device.</li>
-				<li class="balance">access restrictions are now bypassed for the ssh terminal command when used from an emagged computer. Antag hackers rejoice!</li>
-				<li class="bugfix">The number of programs that a modular computer can run simultaneously is once again limited by the installed CPU.</li>
-			</ul>
-			<h3 class="author">Tennessee116 updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="tweak">Captain's can now only select the captain's dress cover from the uniform vendor.</li>
-			</ul>
-			<h3 class="author">Yvesza updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="tweak">Accessories are now included in Siemens calculations</li>
-			</ul>
-
-			<h2 class="date">07 August 2021</h2>
-			<h3 class="author">Yvesza updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="balance">Set the base parry of most common weapons to a baseline of 15 / 30</li>
-				<li class="balance">improved the wielded bonus of two-handed weapons to 20, from 15.</li>
-				<li class="balance">Reduces the effectiveness of CQC</li>
-				<li class="tweak">You can no longer parry attacks with unsuitable weapons</li>
-				<li class="balance">Spears & Harpoons will cause their targets to stagger backwards and potentially be impaled to walls.</li>
-				<li class="balance">Spears & Harpoons hurt more when they collide with their victims.</li>
-				<li class="balance">Harpoons will no longer fit into bags</li>
 			</ul>
 		</div>
 

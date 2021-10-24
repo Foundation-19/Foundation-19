@@ -130,7 +130,7 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/emag/Initialize()
 	. = ..()
 	set_extension(src,/datum/extension/chameleon/emag)
-
+	
 /obj/item/card/emag/get_antag_info()
 	. = ..()
 	. += "You can use this cryptographic sequencer in order to subvert electronics or forcefully open doors you don't have access to. These actions are irreversible and the card only has a limited number of charges!"
@@ -337,7 +337,7 @@ var/const/NO_EMAG_ACT = -50
 				id.military_branch = new_branch
 				id.military_rank = null
 			return
-
+	
 	to_chat(client, SPAN_WARNING("Input, must be an existing branch - [var_value] is invalid"))
 
 /decl/vv_set_handler/id_card_military_rank
@@ -366,7 +366,7 @@ var/const/NO_EMAG_ACT = -50
 		if(new_rank)
 			id.military_rank = new_rank
 			return
-
+	
 	to_chat(client, SPAN_WARNING("Input must be an existing rank belonging to military_branch - [var_value] is invalid"))
 
 /obj/item/card/id/silver
@@ -493,23 +493,23 @@ var/const/NO_EMAG_ACT = -50
 	..()
 
 // Department-flavor IDs
-/obj/item/card/id/medicaldoctor
+/obj/item/card/id/medical
 	name = "identification card"
 	desc = "A card issued to medical staff."
-	job_access_type = /datum/job/medicaldoctor
+	job_access_type = /datum/job/doctor
 	detail_color = COLOR_PALE_BLUE_GRAY
 
 /obj/item/card/id/medical/chemist
 	job_access_type = /datum/job/chemist
 
-/obj/item/card/id/medical/surgeon
-	job_access_type = /datum/job/surgeon
+/obj/item/card/id/medical/geneticist
+	job_access_type = /datum/job/geneticist
 
 /obj/item/card/id/medical/psychiatrist
 	job_access_type = /datum/job/psychiatrist
 
-/obj/item/card/id/medical/emt
-	job_access_type = /datum/job/emt
+/obj/item/card/id/medical/paramedic
+	job_access_type = /datum/job/Paramedic
 
 /obj/item/card/id/medical/head
 	name = "identification card"
@@ -520,15 +520,15 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/id/security
 	name = "identification card"
 	desc = "A card issued to security staff."
-//	job_access_type = /datum/job/officer
+	job_access_type = /datum/job/officer
 	color = COLOR_OFF_WHITE
 	detail_color = COLOR_MAROON
 
 /obj/item/card/id/security/warden
-//	job_access_type = /datum/job/warden
+	job_access_type = /datum/job/warden
 
 /obj/item/card/id/security/detective
-//	job_access_type = /datum/job/detective
+	job_access_type = /datum/job/detective
 
 /obj/item/card/id/security/head
 	name = "identification card"
@@ -553,13 +553,13 @@ var/const/NO_EMAG_ACT = -50
 	desc = "A card issued to science staff."
 	job_access_type = /datum/job/scientist
 	detail_color = COLOR_PALE_PURPLE_GRAY
-/*
+
 /obj/item/card/id/science/xenobiologist
 	job_access_type = /datum/job/xenobiologist
 
 /obj/item/card/id/science/roboticist
 	job_access_type = /datum/job/roboticist
-*/
+
 /obj/item/card/id/science/head
 	name = "identification card"
 	desc = "A card which represents knowledge and reasoning."

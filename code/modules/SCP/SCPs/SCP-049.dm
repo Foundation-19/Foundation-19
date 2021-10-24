@@ -233,7 +233,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 			qdel(G)
 			return
 		visible_message("<span class = 'danger'>[src] begins to perform surgery on [target].</span>")
-		if (do_mob(src, target, 150))
+		if (do_after(src, target, 150))
 			visible_message("<span class = 'danger'>[src] performs surgery on [target].</span>")
 			attempted_surgery_on += target
 			spawn (50)
@@ -246,7 +246,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 							foundclient = FALSE
 							for (var/mob/observer/ghost/ghost in GLOB.ghost_mob_list)
 								if (ghost.mind.current == H)
-									ghost.reenter_corpse_p()
+									ghost.reenter_corpse()
 									foundclient = TRUE
 
 						if (foundclient)

@@ -208,13 +208,13 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if (isscp173(dropping))
 		visible_message("<span class = \"danger\">[user] starts to put SCP-173 into the cage.</span>")
 		var/oloc = loc
-		if (do_mob(user, dropping, 5 SECONDS) && loc == oloc) // shitty but there's no good alternative
+		if (do_after(user, dropping, 5 SECONDS) && loc == oloc) // shitty but there's no good alternative
 			dropping.forceMove(src)
 			underlays = list(dropping)
 			visible_message("<span class = \"good\">[user] puts SCP-173 in the cage.</span>")
 			name = "SCP-173 Cage"
-	else if (isliving(dropping))
-		to_chat(user, "<span class = \"warning\">\The [dropping] won't fit in the cage.</span>")
+		if (isliving(dropping))
+			to_chat(user, "<span class = \"warning\">\The [dropping] won't fit in the cage.</span>")
 
 /obj/structure/scp173_cage/attack_hand(mob/living/carbon/human/H)
 	if (locate(/mob/living/scp_173) in contents)

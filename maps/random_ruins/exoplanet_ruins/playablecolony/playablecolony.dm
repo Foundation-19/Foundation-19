@@ -1,7 +1,7 @@
 #include "playablecolony_radio.dm"
 
 /datum/map_template/ruin/exoplanet/playablecolony
-	name = "Global Occult Coalition"
+	name = "established colony"
 	id = "playablecolony"
 	description = "a fully functional colony on the frontier of settled space"
 	suffixes = list("playablecolony/colony.dmm")
@@ -16,7 +16,7 @@
 	spawn_weight = 0.2
 
 /decl/submap_archetype/playablecolony
-	descriptor = "Global Occult Coalition"
+	descriptor = "established colony"
 	crew_jobs = list(/datum/job/submap/colonist)
 
 /datum/job/submap/colonist

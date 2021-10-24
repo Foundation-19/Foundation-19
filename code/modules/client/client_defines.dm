@@ -27,7 +27,6 @@
 	var/next_scp106_sound = -1
 	var/next_scp012_sound = -1
 
-
 		////////////
 		//SECURITY//
 		////////////

@@ -94,7 +94,7 @@
 /datum/gear/accessory/armband_emt
 	display_name = "EMT armband"
 	path = /obj/item/clothing/accessory/armband/medgreen
-	allowed_roles = list(/datum/job/medicaldoctor)
+	allowed_roles = list(/datum/job/doctor)
 
 
 /datum/gear/accessory/armband_engineering
@@ -167,6 +167,7 @@
 	options["she/her badge"] = /obj/item/clothing/accessory/pronouns/sheher
 	options["he/they badge"] = /obj/item/clothing/accessory/pronouns/hethey
 	options["she/they badge"] = /obj/item/clothing/accessory/pronouns/shethey
+	options["he/she badge"] = /obj/item/clothing/accessory/pronouns/heshe
 	options["ze/hir badge"] = /obj/item/clothing/accessory/pronouns/zehir
 	options["ask me badge"] = /obj/item/clothing/accessory/pronouns/ask
 	gear_tweaks += new /datum/gear_tweak/path (options)
