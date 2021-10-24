@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/projectile/automatic/scp/p90
+/obj/item/gun/projectile/automatic/scp/p90
 	name = "P90 SMG"
 	desc = "A submachine gun sample of the 2010s, with a scope mounted on top"
 	icon_state = "p90"
@@ -19,25 +19,25 @@
 		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=4,    one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.5, 0.5, 0.7, 0.9, 1.0)),
 		)
 
-/obj/item/weapon/gun/projectile/automatic/scp/p90/update_icon()
+/obj/item/gun/projectile/automatic/scp/p90/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "p90"
 	else
 		icon_state = "p90-empty"
 	return
-
-/obj/item/weapon/gun/projectile/automatic/scp/p90/verb/scope()
+/*
+/obj/item/gun/projectile/automatic/scp/p90/verb/scope()
 	set category = "Object"
 	set name = "Use Scope"
 	set popup_menu = 1
 
 	toggle_scope(usr, 1.0)
-
-/obj/item/weapon/gun/projectile/automatic/scp/p90
+*/
+/obj/item/gun/projectile/automatic/scp/p90
 	magazine_type = /obj/item/ammo_magazine/scp/p90_mag/rubber
 
-/obj/item/weapon/gun/projectile/automatic/scp/m16
+/obj/item/gun/projectile/automatic/scp/m16
 	name = "M16"
 	desc = "A automatic rifle sample of the 1960s, with a scope mounted on top"
 	icon_state = "m16"
@@ -57,7 +57,7 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.5, 0.8)),
 		)
 
-/obj/item/weapon/gun/projectile/automatic/scp/m16/update_icon()
+/obj/item/gun/projectile/automatic/scp/m16/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "m16"
@@ -65,7 +65,7 @@
 		icon_state = "m16-empty"
 	return
 
-/obj/item/weapon/gun/projectile/automatic/scp/donor/ak74
+/obj/item/gun/projectile/automatic/scp/donor/ak74
 	name = "AK-103"
 	desc = "Автомат Калашникова сотой серии под патрон 7,62х39."
 	icon_state = "ak74"
@@ -85,22 +85,22 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0)),
 		)
 
-/obj/item/weapon/gun/projectile/automatic/scp/donor/ak74/update_icon()
+/obj/item/gun/projectile/automatic/scp/donor/ak74/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "ak74"
 	else
 		icon_state = "ak74-empty"
 	return
-
-/obj/item/weapon/gun/projectile/automatic/scp/donor/ak74/verb/scope()
+/*
+/obj/item/gun/projectile/automatic/scp/donor/ak74/verb/scope()
 	set category = "Object"
 	set name = "Use Scope"
 	set popup_menu = 1
 
 	toggle_scope(usr, 1.0)
-
-/obj/item/weapon/gun/projectile/automatic/scp/donor/ak742
+*/
+/obj/item/gun/projectile/automatic/scp/donor/ak742
 	name = "AK-19"
 	desc = "Модификация АК-12. На нижней планке установлена вертикальная рукоять."
 	icon_state = "ak742"
@@ -120,7 +120,7 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0)),
 		)
 
-/obj/item/weapon/gun/projectile/automatic/scp/donor/ak742/update_icon()
+/obj/item/gun/projectile/automatic/scp/donor/ak742/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "ak742"
@@ -128,7 +128,7 @@
 		icon_state = "ak742-empty"
 	return
 
-/obj/item/weapon/gun/projectile/automatic/scp/donor/ierichon
+/obj/item/gun/projectile/automatic/scp/donor/ierichon
 	name = "Jericho-114 Pistol "
 	desc = "Jericho-114 Pistol, a boss of a pistol"
 	icon_state = "ierichon"
@@ -147,14 +147,14 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=1, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
 		)
 
-/obj/item/weapon/gun/projectile/automatic/scp/donor/ierichon/update_icon()
+/obj/item/gun/projectile/automatic/scp/donor/ierichon/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "ierichon"
 	else
 		icon_state = "ierichon-empty"
 
-/obj/item/weapon/gun/projectile/automatic/scp/donor/rpk
+/obj/item/gun/projectile/automatic/scp/donor/rpk
 	name = "RPK-74"
 	desc = "This is a modification of the traditional AK-47 to be a machinegun."
 	icon_state = "rpk"
@@ -173,7 +173,7 @@
 		list(mode_name="long bursts",	burst=8, move_delay=15, one_hand_penalty=9, burst_accuracy = list(0,-1,-1,-2,-2,-2,-3,-3), dispersion = list(1.0, 1.0, 1.0, 1.0, 1.2)),
 		)
 
-/obj/item/weapon/gun/projectile/automatic/scp/donor/rpk/update_icon()
+/obj/item/gun/projectile/automatic/scp/donor/rpk/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "rpk"
@@ -181,7 +181,7 @@
 		icon_state = "rpk-empty"
 	return
 
-/obj/item/weapon/gun/projectile/automatic/scp/donor/svd
+/obj/item/gun/projectile/automatic/scp/donor/svd
 	name = "SVD"
 	desc = "A Russian Made Sniper-Rifle."
 	icon_state = "svd"
@@ -199,17 +199,18 @@
 		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, use_launcher=null, one_hand_penalty=5, burst_accuracy=null, dispersion=null)
 		)
 
-/obj/item/weapon/gun/projectile/automatic/scp/donor/svd/update_icon()
+/obj/item/gun/projectile/automatic/scp/donor/svd/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "svd"
 	else
 		icon_state = "svd-empty"
 	return
-
-/obj/item/weapon/gun/projectile/automatic/scp/donor/svd/verb/scope()
+/*
+/obj/item/gun/projectile/automatic/scp/donor/svd/verb/scope()
 	set category = "Object"
 	set name = "Use Scope"
 	set popup_menu = 1
 
 	toggle_scope(usr, 2.0)
+*/

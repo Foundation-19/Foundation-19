@@ -36,6 +36,7 @@
 
 	var/begins_closed = TRUE
 	var/material/implicit_material
+	var/id = 1.0
 	autoset_access = FALSE // Uses different system with buttons.
 	pry_mod = 1.35
 

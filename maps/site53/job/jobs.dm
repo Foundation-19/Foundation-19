@@ -1,8 +1,3 @@
-/////////////
-//READ THIS//
-/////////////
-// WARNING: DO NOT ADD INTEGER VALUES ABOVE 20 FOR ANY STAT OR SKILL OTHER THAN INTELLIGENCE, MEDICAL AND ENGINEERING. - LION
-
 /datum/map/site_ds90
 /datum/map/site_ds90/setup_map()
 
@@ -18,7 +13,12 @@
 	access = list()			//See /datum/job/assistant/get_access()
 	minimal_access = list()	//See /datum/job/assistant/get_access()
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/classd
-	allowed_ranks = list(/datum/mil_rank/civ/classd)
+	allowed_branches = list(
+		/datum/mil_branch/civilian
+	)
+	allowed_ranks = list(
+		/datum/mil_rank/civ/classd
+	)
 
 
 

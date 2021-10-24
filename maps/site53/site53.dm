@@ -66,6 +66,11 @@
 	#include "loadout/loadout_uniform.dm"
 	#include "loadout/loadout_xeno.dm"*/
 //	#include "loadout/~defines.dm"
+
+
+	#include "EZ-Level-1.dmm"
+	#include "EZ-Level-2.dmm"
+
 /*
 	#include "site53-1.dmm"
 	#include "site53-2.dmm"
