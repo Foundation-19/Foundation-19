@@ -993,3 +993,32 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	requires_power = 0
 	dynamic_lighting = 1
+
+//Site 53's science areas
+/area/site53/science/fabricationlab
+	name = "\improper Fabrication Lab"
+	icon_state = "research"
+
+/area/site53/science/xenobiology
+	name = "\improper Xenobiology"
+	icon_state = "research"
+
+/area/site53/science/aicobservation
+	name = "\improper AIC Observation"
+	icon_state = "research"
+
+/area/site53/science/aiccore
+	name = "\improper AIC Server Room"
+	icon_state = "research"
+
+/area/site53/science/robotics
+	name = "\improper Robotics"
+	icon_state = "research"
+
+/area/site53/science/lockerroom
+	name = "\improper Research Locker Room"
+	icon_state = "research"
+
+/area/site53/science/xenoarchaeology
+	name = "\improper Xenoarchaeology"
+	icon_state = "research"
