@@ -11,7 +11,7 @@
 //	uniform = /obj/item/clothing/under/scp/suittie
 	shoes = /obj/item/clothing/shoes/dress
 	suit = /obj/item/clothing/suit/storage/toggle/suit/black
-//	//id_type = /obj/item/card/id/adminlvl5
+//	id_types = /obj/item/card/id/adminlvl5
 	l_ear = /obj/item/device/radio/headset/heads/captain
 //	back = /obj/item/storage/backpack/satchel
 
@@ -20,7 +20,7 @@
 //	uniform = /obj/item/clothing/under/scp/suittie
 	shoes = /obj/item/clothing/shoes/dress
 	suit = /obj/item/clothing/suit/storage/toggle/suit/black
-//	//id_type = /obj/item/card/id/adminlvl4
+//	id_types = /obj/item/card/id/adminlvl4
 	l_ear = /obj/item/device/radio/headset/heads/hop
 //	back = /obj/item/storage/backpack/satchel/pocketbook
 
@@ -29,7 +29,7 @@
 	uniform = /obj/item/clothing/under/scp/utility/communications/officer
 	gloves = /obj/item/clothing/gloves/foundation_service
 	shoes = /obj/item/clothing/shoes/dutyboots
-//	//id_type = /obj/item/card/id/commslvl4
+//	id_types = /obj/item/card/id/commslvl4
 //	l_ear = /obj/item/device/radio/headset/heads/commsofficer
 //	back = /obj/item/storage/backpack/satchel/pocketbook
 
@@ -39,7 +39,7 @@
 	name = OUTFIT_JOB_NAME("Communications Technician")
 	uniform = /obj/item/clothing/under/scp/utility/communications/tech
 	shoes = /obj/item/clothing/shoes/dutyboots
-//	//id_type = /obj/item/card/id/commslvl1
+//	id_types = /obj/item/card/id/commslvl1
 //	belt = /obj/item/storage/belt/utility/full
 //	l_ear = /obj/item/device/radio/headset/commsdispatcher
 //	back = /obj/item/storage/backpack/satchel/pocketbook
@@ -49,7 +49,7 @@
 	name = OUTFIT_JOB_NAME("Chief Engineer")
 	uniform = /obj/item/clothing/under/scp/utility/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/seclvl4
+	id_types = /obj/item/card/id/seclvl4
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/heads/ce
@@ -62,7 +62,7 @@
 	name = OUTFIT_JOB_NAME("Cell Warden")
 	uniform = /obj/item/clothing/under/rank/security2
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/seclvl4
+	id_types = /obj/item/card/id/seclvl4
 	l_ear = /obj/item/device/radio/headset/heads/cw
 	back = null
 
@@ -70,7 +70,7 @@
 	name = OUTFIT_JOB_NAME("Cell Guard")
 	uniform = /obj/item/clothing/under/rank/security2
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/seclvl2
+	id_types = /obj/item/card/id/seclvl2
 	l_ear = /obj/item/device/radio/headset/headset_sec
 	l_pocket = /obj/item/book/manual/scp/secsop
 	back = null
@@ -80,7 +80,7 @@
 	name = OUTFIT_JOB_NAME("Guard Commander")
 //	uniform = /obj/item/clothing/under/scp/whiteuniform
 	shoes = /obj/item/clothing/shoes/dutyboots
-//	//id_type = /obj/item/card/id/gcseclvl5
+//	id_types = /obj/item/card/id/gcseclvl5
 //	r_pocket = /obj/item/book/manual/scp/secsop
 	l_ear = /obj/item/device/radio/headset/heads/cos
 //	l_pocket = /obj/item/book/manual/scp/secsop
@@ -92,7 +92,7 @@
 	name = OUTFIT_JOB_NAME("HCZ Zone Commander")
 //	uniform = /obj/item/clothing/under/scp/whiteuniform
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/zcseclvl4hcz
+	id_types = /obj/item/card/id/zcseclvl4hcz
 	l_ear = /obj/item/device/radio/headset/headset_com
 	l_pocket = /obj/item/book/manual/scp/secsop
 	back = /obj/item/storage/backpack/dufflebag/sec
@@ -101,7 +101,7 @@
 	name = OUTFIT_JOB_NAME("LCZ Zone Commander")
 	uniform = /obj/item/clothing/under/scp/utility/security/zc
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/zcseclvl3lcz
+	id_types = /obj/item/card/id/zcseclvl3lcz
 	l_ear = /obj/item/device/radio/headset/headset_com
 	l_pocket = /obj/item/book/manual/scp/secsop
 	back = null
@@ -111,7 +111,7 @@
 	name = OUTFIT_JOB_NAME("EZ Senior Agent")
 	uniform = /obj/item/clothing/under/scp/utility/security/zc
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/zcseclvl4ez
+	id_types = /obj/item/card/id/zcseclvl4ez
 	l_ear = /obj/item/device/radio/headset/headset_com
 	l_pocket = /obj/item/book/manual/scp/secsop
 	back = null
@@ -120,7 +120,7 @@
 	name = OUTFIT_JOB_NAME("LCZ Guard")
 	uniform = /obj/item/clothing/under/scp/utility/security
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/seclvl2lcz
+	id_types = /obj/item/card/id/seclvl2lcz
 	l_ear = /obj/item/device/radio/headset/headset_sec
 	l_pocket = /obj/item/book/manual/scp/secsop
 	back = null
@@ -129,7 +129,7 @@
 	name = OUTFIT_JOB_NAME("HCZ Guard")
 //	uniform = /obj/item/clothing/under/scp/whiteuniform
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/seclvl3hcz
+	id_types = /obj/item/card/id/seclvl3hcz
 	l_ear = /obj/item/device/radio/headset/headset_sec
 	l_pocket = /obj/item/book/manual/scp/secsop
 	back = /obj/item/storage/backpack/satchel
@@ -138,7 +138,7 @@
 	name = OUTFIT_JOB_NAME("EZ Agent")
 	uniform = /obj/item/clothing/under/scp/utility/security
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/seclvl3ez
+	id_types = /obj/item/card/id/seclvl3ez
 	l_ear = /obj/item/device/radio/headset/headset_sec
 	l_pocket = /obj/item/book/manual/scp/secsop
 	back = null
@@ -147,7 +147,7 @@
 	name = OUTFIT_JOB_NAME("EZ Junior Agent")
 	uniform = /obj/item/clothing/under/scp/utility/security
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/junseclvl2ez
+	id_types = /obj/item/card/id/junseclvl2ez
 	l_ear = /obj/item/device/radio/headset/headset_sec
 	l_pocket = /obj/item/book/manual/scp/secsop
 	back = null
@@ -157,7 +157,7 @@
 	name = OUTFIT_JOB_NAME("LCZ Junior Guard")
 //	uniform = /obj/item/clothing/under/scp/whiteuniform
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/junseclvl1
+	id_types = /obj/item/card/id/junseclvl1
 	l_ear = /obj/item/device/radio/headset/headset_sec
 	l_pocket = /obj/item/book/manual/scp/secsop
 	back = /obj/item/storage/backpack/satchel
@@ -166,7 +166,7 @@
 	name = OUTFIT_JOB_NAME("HCZ Junior Guard")
 	uniform = /obj/item/clothing/under/scp/utility/security
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/junseclvl3hcz
+	id_types = /obj/item/card/id/junseclvl3hcz
 	l_ear = /obj/item/device/radio/headset/headset_sec
 	l_pocket = /obj/item/book/manual/scp/secsop
 	back = null
@@ -177,7 +177,7 @@
 //	uniform = /obj/item/clothing/under/scp/suittie
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	shoes = /obj/item/clothing/shoes/laceup
-	//id_type = /obj/item/card/id/sciencelvl1
+	id_types = /obj/item/card/id/sciencelvl1
 	gloves = /obj/item/clothing/gloves/latex
 	l_ear = /obj/item/device/radio/headset/headset_sci
 	back = /obj/item/storage/backpack/satchel
@@ -187,7 +187,7 @@
 //	uniform = /obj/item/clothing/under/scp/suittie
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/genetics
 	shoes = /obj/item/clothing/shoes/laceup
-	//id_type = /obj/item/card/id/sciencelvl2
+	id_types = /obj/item/card/id/sciencelvl2
 	gloves = /obj/item/clothing/gloves/latex
 	l_ear = /obj/item/device/radio/headset/headset_sci
 	l_pocket = /obj/item/book/manual/scp/scisop
@@ -197,7 +197,7 @@
 //	uniform = /obj/item/clothing/under/scp/suittie
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
 	shoes = /obj/item/clothing/shoes/laceup
-	//id_type = /obj/item/card/id/sciencelvl4
+	id_types = /obj/item/card/id/sciencelvl4
 	gloves = /obj/item/clothing/gloves/latex/nitrile
 	l_pocket = /obj/item/book/manual/scp/scisop
 	l_ear = /obj/item/device/radio/headset/headset_sci
@@ -208,7 +208,7 @@
 //	uniform = /obj/item/clothing/under/scp/suittie
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/rd
 	shoes = /obj/item/clothing/shoes/laceup
-	//id_type = /obj/item/card/id/sciencelvl5
+	id_types = /obj/item/card/id/sciencelvl5
 	gloves = /obj/item/clothing/gloves/latex/nitrile
 	l_ear = /obj/item/device/radio/headset/heads/rd
 	l_pocket = /obj/item/book/manual/scp/scisop
@@ -236,7 +236,7 @@
 	uniform = /obj/item/clothing/under/rank/janitor
 	shoes = /obj/item/clothing/shoes/workboots
 	l_pocket = /obj/item/device/radio
-	//id_type = /obj/item/card/id/sciencelvl1
+	id_types = /obj/item/card/id/sciencelvl1
 	back = /obj/item/storage/backpack/satchel
 	l_ear = /obj/item/device/radio/headset/headset_service
 
@@ -245,7 +245,7 @@
 	uniform = /obj/item/clothing/under/color/white
 	shoes = /obj/item/clothing/shoes/white
 	l_pocket = /obj/item/device/radio
-	//id_type = /obj/item/card/id/chef
+	id_types = /obj/item/card/id/chef
 	back = /obj/item/storage/backpack/satchel
 	l_ear = /obj/item/device/radio/headset/headset_service
 
@@ -254,7 +254,7 @@
 	uniform = /obj/item/clothing/under/suit_jacket/tan
 	shoes = /obj/item/clothing/shoes/laceup
 	l_pocket = /obj/item/device/radio
-	//id_type = /obj/item/card/id/bartender
+	id_types = /obj/item/card/id/bartender
 	l_ear = /obj/item/device/radio/headset/headset_service
 	back = /obj/item/storage/backpack/satchel/pocketbook
 
@@ -263,7 +263,7 @@
 	uniform = /obj/item/clothing/under/suit_jacket/really_black
 	shoes = /obj/item/clothing/shoes/laceup
 	l_pocket = /obj/item/device/radio
-	//id_type = /obj/item/card/id/archivist
+	id_types = /obj/item/card/id/archivist
 	back = /obj/item/storage/backpack/satchel
 	l_ear = /obj/item/device/radio/headset/headset_com
 
@@ -272,7 +272,7 @@
 	uniform = /obj/item/clothing/under/suit_jacket/really_black
 	shoes = /obj/item/clothing/shoes/laceup
 	l_pocket = /obj/item/device/radio
-	//id_type = /obj/item/card/id/adminlvl5
+	id_types = /obj/item/card/id/adminlvl5
 	l_ear = /obj/item/device/radio/headset/heads/hop
 	back = /obj/item/storage/backpack/satchel/pocketbook
 
@@ -282,7 +282,7 @@
 	name = OUTFIT_JOB_NAME("Junior Engineer")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/seclvl2
+	id_types = /obj/item/card/id/seclvl2
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_eng
@@ -291,7 +291,7 @@
 	name = OUTFIT_JOB_NAME("Engineer")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/seclvl3
+	id_types = /obj/item/card/id/seclvl3
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_eng
@@ -300,7 +300,7 @@
 	name = OUTFIT_JOB_NAME("Senior Engineer")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/seclvl4
+	id_types = /obj/item/card/id/seclvl4
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/heads/ce
@@ -310,7 +310,7 @@
 	name = OUTFIT_JOB_NAME("Containment Engineer")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/seclvl4
+	id_types = /obj/item/card/id/seclvl4
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/heads/ce
@@ -321,7 +321,7 @@
 	name = OUTFIT_JOB_NAME("Brig Officer")
 //	uniform = /obj/item/clothing/under/scp/whiteuniform
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = /obj/item/card/id/seclvl2
+	id_types = /obj/item/card/id/seclvl2
 	l_ear = /obj/item/device/radio/headset/headset_com
 	back = /obj/item/storage/backpack/satchel/
 
@@ -332,7 +332,7 @@
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/purple
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	shoes = /obj/item/clothing/shoes/white
-	//id_type = /obj/item/card/id/chiefmedicalofficer
+	id_types = /obj/item/card/id/chiefmedicalofficer
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/heads/cmo
 	back = /obj/item/storage/backpack/medic
@@ -342,7 +342,7 @@
 	uniform = /obj/item/clothing/under/suit_jacket/tan
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
-	//id_type = /obj/item/card/id/psychiatrist
+	id_types = /obj/item/card/id/psychiatrist
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_med
 
@@ -351,7 +351,7 @@
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/navyblue
 	shoes = /obj/item/clothing/shoes/white
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
-	//id_type = /obj/item/card/id/chemist
+	id_types = /obj/item/card/id/chemist
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_med
 	back = /obj/item/storage/backpack/medic
@@ -361,7 +361,7 @@
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/blue
 	shoes = /obj/item/clothing/shoes/white
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
-	//id_type = /obj/item/card/id/doctor
+	id_types = /obj/item/card/id/doctor
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_med
 	back = /obj/item/storage/backpack/medic
@@ -371,7 +371,7 @@
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/teal
 	shoes = /obj/item/clothing/shoes/white
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
-	//id_type = /obj/item/card/id/virologist
+	id_types = /obj/item/card/id/virologist
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_med
 	back = /obj/item/storage/backpack/medic
@@ -381,7 +381,7 @@
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/green
 	shoes = /obj/item/clothing/shoes/white
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
-	//id_type = /obj/item/card/id/doctor
+	id_types = /obj/item/card/id/doctor
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_med
 	back = /obj/item/storage/backpack/satchel/pocketbook
@@ -390,7 +390,7 @@
 	name = OUTFIT_JOB_NAME("Emergency Medical Technician")
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/black
 	shoes = /obj/item/clothing/shoes/white
-	//id_type = /obj/item/card/id/emt
+	id_types = /obj/item/card/id/emt
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_med
 	back = /obj/item/storage/backpack/medic
@@ -403,7 +403,7 @@
 	uniform = /obj/item/clothing/under/scp/utility/logistics/officer
 	gloves = /obj/item/clothing/gloves/thick
 	shoes = /obj/item/clothing/shoes/dutyboots
-//	//id_type = /obj/item/card/id/logoff
+//	id_types = /obj/item/card/id/logoff
 	l_ear = /obj/item/device/radio/headset/headset_deckofficer
 //	back = /obj/item/storage/backpack/satchel/pocketbook
 
@@ -412,7 +412,7 @@
 	uniform = /obj/item/clothing/under/scp/utility/logistics
 	gloves = /obj/item/clothing/gloves/thick
 	shoes = /obj/item/clothing/shoes/dutyboots
-//	//id_type = /obj/item/card/id/logspec
+//	id_types = /obj/item/card/id/logspec
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_cargo
 //	back = /obj/item/storage/backpack/satchel/pocketbook
@@ -426,7 +426,7 @@
 	glasses = /obj/item/clothing/glasses/night
 //	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/jackboots
-//	//id_type = /obj/item/card/id/adminlvl5
+//	id_types = /obj/item/card/id/adminlvl5
 //	suit_store = /obj/item/gun/projectile/automatic/scp/p90
 //	r_hand = /obj/item/crowbar/red
 //	l_hand = /obj/item/material/hatchet/tacknife
@@ -446,7 +446,7 @@
 	glasses = /obj/item/clothing/glasses/night
 //	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/jackboots
-//	//id_type = /obj/item/card/id/adminlvl5
+//	id_types = /obj/item/card/id/adminlvl5
 //	suit_store = /obj/item/gun/projectile/shotgun/pump/combat
 //	r_hand = /obj/item/crowbar/red
 //	l_hand = /obj/item/material/hatchet
@@ -466,7 +466,7 @@
 	glasses = /obj/item/clothing/glasses/night
 //	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/jackboots
-//	//id_type = /obj/item/card/id/adminlvl5
+//	id_types = /obj/item/card/id/adminlvl5
 //	suit_store = /obj/item/gun/projectile/automatic/scp/m16
 	r_hand = /obj/item/storage/box/syndie_kit/spy
 	l_hand = null
@@ -486,7 +486,7 @@
 	glasses = /obj/item/clothing/glasses/night
 //	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/jackboots
-//	//id_type = /obj/item/card/id/adminlvl5
+//	id_types = /obj/item/card/id/adminlvl5
 //	suit_store = /obj/item/gun/projectile/automatic/scp/p90
 	r_hand = /obj/item/storage/firstaid/surgery
 	l_hand = /obj/item/crowbar/red
@@ -506,7 +506,7 @@
 	glasses = /obj/item/clothing/glasses/night
 //	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/dutyboots
-//	//id_type = null
+//	id_types = null
 //	suit_store = /obj/item/gun/projectile/automatic/scp/p90
 	r_hand = null
 //	l_hand = /obj/item/material/hatchet/tacknife
@@ -526,7 +526,7 @@
 	glasses = /obj/item/clothing/glasses/night
 //	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = null
+	id_types = null
 	suit_store = /obj/item/gun/projectile/automatic/l6_saw
 //	r_hand = /obj/item/ammo_magazine/box/a556
 //	l_hand = /obj/item/ammo_magazine/box/a556
@@ -546,7 +546,7 @@
 	glasses = /obj/item/clothing/glasses/night
 //	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/dutyboots
-	//id_type = null
+	id_types = null
 //	suit_store = /obj/item/gun/projectile/revolver/donor
 	r_hand = null
 //	l_hand = /obj/item/material/hatchet/tacknife
