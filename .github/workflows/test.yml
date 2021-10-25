@@ -3,10 +3,10 @@ name: Run Tests
 on:
   push:
     branches:
-      - dev
+      - main
   pull_request:
     branches:
-      - dev
+      - main
 env:
   BYOND_MAJOR: "514"
   BYOND_MINOR: "1568"
@@ -67,7 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        map_path: [example, torch, away_sites_testing]
+        map_path: [example, site_ds90, site13, site19, site53, away_sites_testing]
     steps:
       - uses: actions/checkout@1e204e9a9253d643386038d443f96446fa156a97
       - name: Setup Cache
