@@ -4,7 +4,7 @@ GLOBAL_DATUM_INIT(renegades, /datum/antagonist/renegade, new)
 	role_text = "Renegade"
 	role_text_plural = "Renegades"
 	blacklisted_jobs = list(/datum/job/ai, /datum/job/submap)
-	restricted_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/captain, /datum/job/hop, /datum/job/hos, /datum/job/chief_engineer, /datum/job/rd, /datum/job/cmo)
+//	restricted_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/captain, /datum/job/hop, /datum/job/hos, /datum/job/chief_engineer, /datum/job/rd, /datum/job/cmo)
 	welcome_text = "Something's going to go wrong today, you can just feel it. You're paranoid, you've got a gun, and you're going to survive."
 	antag_text = {"\
 	<p>You are a <b>minor</b> antagonist! Make sure <b>you</b> survive the round at any cost.</p> \

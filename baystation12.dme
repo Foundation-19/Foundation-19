@@ -1724,7 +1724,6 @@
 #include "code\modules\client\preference_setup\loadout\lists\tactical.dm"
 #include "code\modules\client\preference_setup\loadout\lists\uniforms.dm"
 #include "code\modules\client\preference_setup\loadout\lists\utility.dm"
-#include "code\modules\client\preference_setup\loadout\lists\xenowear.dm"
 #include "code\modules\client\preference_setup\occupation\occupation.dm"
 #include "code\modules\client\preference_setup\occupation\skill_selection.dm"
 #include "code\modules\clothing\_clothing.dm"

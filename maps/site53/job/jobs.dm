@@ -25,7 +25,6 @@
 
 	title = "Site Director"
 	supervisors = "the SCP Foundation and O5 Council"
-//	duties = "<big><b>As the Site Director you are responsible for the operations happening in the Site that you manage.<br>You won't have access to SCP's, or the D-Class area.<br> As Site Director, you should worry about making sure all SOP and safety procedures are followed by delegating to the heads of staff.<br><span style = 'color:red'>It is not your job to jump in where necessary! Consistently bad roleplay will be punished under the CoHoS rule!</span>"
 	minimal_player_age = 20
 	economic_power = 15
 	ideal_character_age = 50
@@ -46,6 +45,21 @@
 	)
 	minimal_access = list()
 
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_SCIENCE     = SKILL_ADEPT,
+	                    SKILL_PILOT       = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
+	skill_points = 30
+
+/datum/job/captain/get_description_blurb()
+	return "<big><b>As the Site Director you are responsible for the operations happening in the Site that you manage.<br>You won't have access to SCP's, or the D-Class area.<br> As Site Director, you should worry about making sure all SOP and safety procedures are followed by delegating to the heads of staff.<br><span style = 'color:red'>It is not your job to jump in where necessary! Consistently bad roleplay will be punished under the CoHoS rule!</span>"
+
+/datum/job/captain/post_equip_rank(var/mob/person, var/alt_title)
+	var/sound/announce_sound = (GAME_STATE <= RUNLEVEL_SETUP)? null : sound('sound/misc/boatswain.ogg', volume=20)
+	captain_announcement.Announce("All hands, [alt_title || title] [person.real_name] on deck!", new_sound = announce_sound)
+	..()
 
 /datum/job/hop
 
@@ -78,6 +92,14 @@
 	)
 	minimal_access = list()
 
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_PILOT       = SKILL_BASIC)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
+	skill_points = 30
+
 // COMMUNICATIONS
 
 /datum/job/commsofficer
@@ -88,7 +110,6 @@
 	department_flag = COM
 	total_positions = 1
 	spawn_positions = 1
-//	duties = "<big><b>As the Communications Officer it is your job to monitor the radio, help coordinate departments, and dispatch help where it is needed. Keep sensitive communications off the Common channel.<br>You should not ever leave your tower unless under specific circumstances."
 	minimal_player_age = 15
 	economic_power = 10
 	ideal_character_age = 45
@@ -124,13 +145,23 @@
 	)
 	minimal_access = list()
 
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_PILOT       = SKILL_BASIC)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
+	skill_points = 30
+
+/datum/job/commsofficer/get_description_blurb()
+	return "<big><b>As the Communications Officer it is your job to monitor the radio, help coordinate departments, and dispatch help where it is needed. Keep sensitive communications off the Common channel.<br>You should not ever leave your tower unless under specific circumstances."
+
 /datum/job/commeng
 
 	selection_color = "#5b4d20"
 	title = "Communications Technician"
 	total_positions = 2
 	spawn_positions = 2
-//	duties = "<big><b>As a member of the Communications team it is your job to maintain long-range comms, monitor the happenings on the Telecomms servers and assess situations by mere observation. Your job may entail being a dispatch center of the likes.<br>You should not ever leave your tower unless under specific circumstances."
 	department_flag = ENG
 	supervisors = "the Communications Officer"
 	economic_power = 5
@@ -162,6 +193,18 @@
 	access_telecommsgen,
 	access_servers,
 	access_commtower)
+
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_PILOT       = SKILL_BASIC)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
+	skill_points = 30
+
+/datum/job/commeng/get_description_blurb()
+	return "<big><b>As a member of the Communications team it is your job to maintain long-range comms, monitor the happenings on the Telecomms servers and assess situations by mere observation. Your job may entail being a dispatch center of the likes.<br>You should not ever leave your tower unless under specific circumstances."
+
 /*
 ## END OF GENERIC COMMAND ##
 */
@@ -238,7 +281,6 @@
 	supervisors = "The Facility Director"
 	department = "Command"
 	department_flag = SEC|COM
-//	duties = "<big><b>As the Guard Commander, you have direct say over the Security department. You're not assigned to any zone, but instead should jump in where necessary or requested. You are to speak with your Zone Commanders oftenly, and assign new guards to the right zone, or where it's needed mostly.</span>"
 	economic_power = 8
 	minimal_player_age = 15
 	ideal_character_age = 55
@@ -269,6 +311,21 @@
 		access_keyauth
 	)
 	minimal_access = list()
+
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_WEAPONS     = SKILL_ADEPT,
+	                    SKILL_FORENSICS   = SKILL_BASIC)
+
+	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
+	                    SKILL_WEAPONS     = SKILL_MAX,
+	                    SKILL_FORENSICS   = SKILL_MAX)
+	skill_points = 28
+
+/datum/job/hos/get_description_blurb()
+	return "<big><b>As the Guard Commander, you have direct say over the Security department. You're not assigned to any zone, but instead should jump in where necessary or requested. You are to speak with your Zone Commanders oftenly, and assign new guards to the right zone, or where it's needed mostly.</span>"
+
 //##
 //ZONE COMMANDERS
 //##
@@ -283,7 +340,6 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Guard Commander"
-//	duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You also carry the responsibility of guarding the D-Cells. You should not leave your zone under usual SoP</span>"
 	economic_power = 4
 	minimal_player_age = 10
 	ideal_character_age = 45
@@ -301,6 +357,23 @@
 	access = list(access_sec_comms, access_mtflvl1, access_mtflvl2, access_mtflvl3, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3)
 	minimal_access = list()
 
+	min_skill = list(   SKILL_EVA        = SKILL_BASIC,
+	                    SKILL_COMBAT     = SKILL_BASIC,
+	                    SKILL_WEAPONS    = SKILL_BASIC)
+
+	max_skill = list(	SKILL_PILOT        = SKILL_ADEPT,
+	                    SKILL_COMBAT       = SKILL_EXPERT,
+	                    SKILL_WEAPONS      = SKILL_EXPERT,
+	                    SKILL_CONSTRUCTION = SKILL_MAX,
+	                    SKILL_ELECTRICAL   = SKILL_MAX,
+	                    SKILL_ENGINES      = SKILL_MAX,
+	                    SKILL_ATMOS        = SKILL_MAX)
+	skill_points = 28
+
+/datum/job/ltofficerlcz/get_description_blurb()
+	return "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You also carry the responsibility of guarding the D-Cells. You should not leave your zone under usual SoP</span>"
+
+
 /datum/job/ltofficerhcz
 
 	title = "HCZ Zone Commander"
@@ -309,7 +382,6 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Guard Commander"
-//	duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You should not leave your zone under usual SoP</span>"
 	economic_power = 4
 	minimal_player_age = 10
 	ideal_character_age = 45
@@ -327,6 +399,22 @@
 	access = list(access_sec_comms, access_mtflvl1, access_mtflvl2, access_mtflvl3, access_mtflvl4, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3, access_sciencelvl4)
 	minimal_access = list()
 
+	min_skill = list(   SKILL_EVA        = SKILL_BASIC,
+	                    SKILL_COMBAT     = SKILL_BASIC,
+	                    SKILL_WEAPONS    = SKILL_BASIC)
+
+	max_skill = list(	SKILL_PILOT        = SKILL_ADEPT,
+	                    SKILL_COMBAT       = SKILL_EXPERT,
+	                    SKILL_WEAPONS      = SKILL_EXPERT,
+	                    SKILL_CONSTRUCTION = SKILL_MAX,
+	                    SKILL_ELECTRICAL   = SKILL_MAX,
+	                    SKILL_ENGINES      = SKILL_MAX,
+	                    SKILL_ATMOS        = SKILL_MAX)
+	skill_points = 28
+
+/datum/job/ltofficerhcz/get_description_blurb()
+	return "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You should not leave your zone under usual SoP</span>"
+
 /datum/job/ltofficerez
 
 	title = "EZ Senior Agent"
@@ -335,7 +423,6 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the O5 Council"
-//	duties = "<big><b>As the Entrance Zone Senior Agent, you and your team work independently from the guard commander and regular security structure. In this zone, you are tasked with the protection of administrative personnel, together with the agents stationed here. You should not leave your zone under usual SoP, or allow administration to go without protection detail into the facility.</span>"
 	economic_power = 4
 	minimal_player_age = 10
 	ideal_character_age = 45
@@ -353,6 +440,21 @@
 	access = list(access_sec_comms, access_mtflvl1, access_mtflvl2, access_mtflvl3, access_mtflvl4, access_adminlvl1, access_adminlvl2, access_adminlvl3, access_adminlvl4, access_sciencelvl1, access_medicalgen)
 	minimal_access = list()
 
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_WEAPONS     = SKILL_ADEPT,
+	                    SKILL_FORENSICS   = SKILL_BASIC)
+
+	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
+	                    SKILL_WEAPONS     = SKILL_MAX,
+	                    SKILL_FORENSICS   = SKILL_EXPERT)
+
+
+/datum/job/ltofficerez/get_description_blurb()
+	return "<big><b>As the Entrance Zone Senior Agent, you and your team work independently from the guard commander and regular security structure. In this zone, you are tasked with the protection of administrative personnel, together with the agents stationed here. You should not leave your zone under usual SoP, or allow administration to go without protection detail into the facility.</span>"
+
+
 //##
 // OFFICERS
 //##
@@ -364,7 +466,6 @@
 	department_flag = SEC
 	total_positions = 4
 	spawn_positions = 4
-//	duties = "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
 	supervisors = "the Guard/Zone Commander"
 	economic_power = 4
 	minimal_player_age = 5
@@ -386,6 +487,20 @@
 	access = list(access_sec_comms, access_mtflvl1, access_mtflvl2, access_sciencelvl1, access_sciencelvl2)
 	minimal_access = list()
 
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_WEAPONS     = SKILL_ADEPT,
+	                    SKILL_FORENSICS   = SKILL_BASIC)
+
+	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
+	                    SKILL_WEAPONS     = SKILL_MAX,
+	                    SKILL_FORENSICS   = SKILL_EXPERT)
+
+
+/datum/job/ncoofficerlcz/get_description_blurb()
+	return "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
+
 /datum/job/ncoofficerhcz
 
 	title = "HCZ Guard"
@@ -393,7 +508,6 @@
 	department_flag = SEC
 	total_positions = 3
 	spawn_positions = 3
-//	duties = "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
 	supervisors = "the Guard/Zone Commander"
 	economic_power = 4
 	minimal_player_age = 5
@@ -414,6 +528,20 @@
 	access = list(access_sec_comms, access_mtflvl1, access_mtflvl2, access_mtflvl3, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3)
 	minimal_access = list()
 
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_WEAPONS     = SKILL_ADEPT,
+	                    SKILL_FORENSICS   = SKILL_BASIC)
+
+	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
+	                    SKILL_WEAPONS     = SKILL_MAX,
+	                    SKILL_FORENSICS   = SKILL_EXPERT)
+
+
+/datum/job/ncoofficerlcz/get_description_blurb()
+	return "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
+
 /datum/job/ncoofficerez
 
 	title = "EZ Agent"
@@ -421,7 +549,6 @@
 	department_flag = SEC
 	total_positions = 2
 	spawn_positions = 2
-//	duties = "<big><b>As the Agent you have more access than a Junior Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
 	supervisors = "the Senior Agent"
 	economic_power = 4
 	minimal_player_age = 5
@@ -441,6 +568,20 @@
 	access = list(access_sciencelvl1, access_sec_comms, access_mtflvl1, access_mtflvl2, access_mtflvl3, access_adminlvl1, access_adminlvl2, access_adminlvl3, access_medicalgen)
 	minimal_access = list()
 
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_WEAPONS     = SKILL_ADEPT,
+	                    SKILL_FORENSICS   = SKILL_BASIC)
+
+	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
+	                    SKILL_WEAPONS     = SKILL_MAX,
+	                    SKILL_FORENSICS   = SKILL_EXPERT)
+
+
+/datum/job/ncoofficerez/get_description_blurb()
+	return "<big><b>As the Agent you have more access than a Junior Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
+
 //##
 //JUNIOR OFFICER
 //##
@@ -452,7 +593,6 @@
 	department_flag = SEC
 	total_positions = 10
 	spawn_positions = 10
-//	duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
 	supervisors = "the Guard/Zone Commander"
 	economic_power = 4
 //	minimal_player_age = 0
@@ -472,6 +612,9 @@
 	access = list(access_sec_comms, access_mtflvl1, access_sciencelvl1)
 	minimal_access = list()
 
+/datum/job/enlistedofficerlcz/get_description_blurb()
+	return "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
+
 /datum/job/enlistedofficerhcz
 
 	title = "HCZ Junior Guard"
@@ -479,7 +622,6 @@
 	department_flag = SEC
 	total_positions = 2
 	spawn_positions = 2
-//	duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP."
 	supervisors = "the Guard/Zone Commander"
 	economic_power = 4
 //	minimal_player_age = 0
@@ -499,6 +641,9 @@
 	access = list(access_sec_comms, access_mtflvl1, access_mtflvl2, access_mtflvl3, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3)
 	minimal_access = list()
 
+/datum/job/enlistedofficerhcz/get_description_blurb()
+	return "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP."
+
 /datum/job/enlistedofficerez
 
 	title = "EZ Junior Agent"
@@ -506,7 +651,6 @@
 	department_flag = SEC
 	total_positions = 2
 	spawn_positions = 2
-//	duties = "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP."
 	supervisors = "the Senior Agent"
 	economic_power = 4
 	minimal_player_age = 0
@@ -525,6 +669,9 @@
 
 	access = list(access_sciencelvl1, access_sec_comms, access_mtflvl1, access_mtflvl2, access_adminlvl1, access_adminlvl2, access_medicalgen)
 	minimal_access = list()
+
+/datum/job/enlistedofficerez/get_description_blurb()
+	return "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP."
 
 // SCIENCE
 
@@ -571,6 +718,21 @@
 	access = list(access_sci_comms, access_sciencelvl1, access_sciencelvl2)
 	minimal_access = list()
 
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_FINANCE     = SKILL_BASIC,
+	                    SKILL_BOTANY      = SKILL_BASIC,
+	                    SKILL_ANATOMY     = SKILL_BASIC,
+	                    SKILL_DEVICES     = SKILL_ADEPT,
+	                    SKILL_SCIENCE     = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_ANATOMY     = SKILL_MAX,
+	                    SKILL_DEVICES     = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
+	skill_points = 20
+	possible_goals = list(/datum/goal/achievement/notslimefodder)
+
+
 /datum/job/seniorscientist
 
 	title = "Senior Scientist"
@@ -593,6 +755,21 @@
 
 	access = list(access_sci_comms, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3, access_sciencelvl4)
 	minimal_access = list()
+
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_FINANCE     = SKILL_BASIC,
+	                    SKILL_BOTANY      = SKILL_BASIC,
+	                    SKILL_ANATOMY     = SKILL_BASIC,
+	                    SKILL_DEVICES     = SKILL_ADEPT,
+	                    SKILL_SCIENCE     = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_ANATOMY     = SKILL_MAX,
+	                    SKILL_DEVICES     = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
+	skill_points = 20
+	possible_goals = list(/datum/goal/achievement/notslimefodder)
+
 
 /datum/job/rd
 
@@ -620,6 +797,19 @@
 	access_sciencelvl1,
 	access_keyauth)
 	minimal_access = list()
+
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_FINANCE     = SKILL_ADEPT,
+	                    SKILL_BOTANY      = SKILL_BASIC,
+	                    SKILL_ANATOMY     = SKILL_BASIC,
+	                    SKILL_DEVICES     = SKILL_BASIC,
+	                    SKILL_SCIENCE     = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_ANATOMY     = SKILL_MAX,
+	                    SKILL_DEVICES     = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
+	skill_points = 30
 
 
 // ENGINEERING
@@ -717,6 +907,21 @@
 	access = list(access_eng_comms, access_mtflvl1, access_mtflvl2, access_mtflvl3, access_mtflvl4)
 	minimal_access = list()
 
+	min_skill = list(   SKILL_BUREAUCRACY  = SKILL_BASIC,
+	                    SKILL_COMPUTER     = SKILL_ADEPT,
+	                    SKILL_EVA          = SKILL_ADEPT,
+	                    SKILL_CONSTRUCTION = SKILL_ADEPT,
+	                    SKILL_ELECTRICAL   = SKILL_ADEPT,
+	                    SKILL_ATMOS        = SKILL_ADEPT,
+	                    SKILL_ENGINES      = SKILL_EXPERT)
+
+	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
+	                    SKILL_ELECTRICAL   = SKILL_MAX,
+	                    SKILL_ATMOS        = SKILL_MAX,
+	                    SKILL_ENGINES      = SKILL_MAX)
+	skill_points = 30
+
+
 /datum/job/conteng
 
 	title = "Containment Engineer"
@@ -743,6 +948,19 @@
 	access = list(access_eng_comms, access_mtflvl1, access_mtflvl2, access_mtflvl3, access_mtflvl4, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3, access_sciencelvl4)
 	minimal_access = list()
 
+	min_skill = list(   SKILL_BUREAUCRACY  = SKILL_BASIC,
+	                    SKILL_COMPUTER     = SKILL_ADEPT,
+	                    SKILL_EVA          = SKILL_ADEPT,
+	                    SKILL_CONSTRUCTION = SKILL_ADEPT,
+	                    SKILL_ELECTRICAL   = SKILL_ADEPT,
+	                    SKILL_ATMOS        = SKILL_ADEPT,
+	                    SKILL_ENGINES      = SKILL_EXPERT)
+
+	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
+	                    SKILL_ELECTRICAL   = SKILL_MAX,
+	                    SKILL_ATMOS        = SKILL_MAX,
+	                    SKILL_ENGINES      = SKILL_MAX)
+	skill_points = 30
 
 
 /datum/job/chief_engineer
@@ -765,6 +983,21 @@
 
 	access = list(access_eng_comms, access_mtflvl1, access_mtflvl2, access_mtflvl3, access_mtflvl4, access_mtflvl4, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3, access_sciencelvl4, access_keyauth)
 	minimal_access = list()
+
+	min_skill = list(   SKILL_BUREAUCRACY  = SKILL_BASIC,
+	                    SKILL_COMPUTER     = SKILL_ADEPT,
+	                    SKILL_EVA          = SKILL_ADEPT,
+	                    SKILL_CONSTRUCTION = SKILL_ADEPT,
+	                    SKILL_ELECTRICAL   = SKILL_ADEPT,
+	                    SKILL_ATMOS        = SKILL_ADEPT,
+	                    SKILL_ENGINES      = SKILL_EXPERT)
+
+	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
+	                    SKILL_ELECTRICAL   = SKILL_MAX,
+	                    SKILL_ATMOS        = SKILL_MAX,
+	                    SKILL_ENGINES      = SKILL_MAX)
+	skill_points = 30
+
 
 // MEDICAL JOBS.
 
@@ -789,6 +1022,18 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_MEDICAL     = SKILL_EXPERT,
+	                    SKILL_ANATOMY     = SKILL_EXPERT,
+	                    SKILL_CHEMISTRY   = SKILL_BASIC,
+						SKILL_DEVICES     = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
+	                    SKILL_ANATOMY     = SKILL_MAX,
+	                    SKILL_CHEMISTRY   = SKILL_MAX)
+	skill_points = 26
+
+
 /datum/job/chemist
 
 	title = "Chemist"
@@ -810,6 +1055,15 @@
 	minimal_access = list()
 	equip(var/mob/living/carbon/human/H)
 		..()
+
+	min_skill = list(   SKILL_MEDICAL   = SKILL_BASIC,
+	                    SKILL_CHEMISTRY = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_MEDICAL     = SKILL_BASIC,
+						SKILL_ANATOMY	  = SKILL_BASIC,
+	                    SKILL_CHEMISTRY   = SKILL_MAX)
+	skill_points = 16
+
 
 /datum/job/psychiatrist
 
@@ -833,6 +1087,15 @@
 
 	access = list(access_med_comms, access_medicalgen, access_medicalpsych, access_medicalequip)
 	minimal_access = list()
+
+	min_skill = list(
+		SKILL_BUREAUCRACY = SKILL_BASIC,
+		SKILL_MEDICAL     = SKILL_BASIC
+	)
+	max_skill = list(
+		SKILL_MEDICAL     = SKILL_MAX
+	)
+
 
 /datum/job/medicaldoctor
 
@@ -859,6 +1122,14 @@
 	access = list(access_med_comms, access_medicalgen, access_medicalequip, access_mtflvl1, access_mtflvl2)
 	minimal_access = list()
 
+	min_skill = list(   SKILL_EVA     = SKILL_BASIC,
+	                    SKILL_MEDICAL = SKILL_BASIC,
+	                    SKILL_ANATOMY = SKILL_BASIC)
+
+	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
+	                    SKILL_CHEMISTRY   = SKILL_MAX)
+
+
 /datum/job/virologist
 
 	title = "Virologist"
@@ -883,6 +1154,14 @@
 	access = list(access_med_comms, access_medicalgen, access_medicalequip, access_medicalviro)
 	minimal_access = list()
 
+	min_skill = list(   SKILL_EVA     = SKILL_BASIC,
+	                    SKILL_MEDICAL = SKILL_BASIC,
+	                    SKILL_ANATOMY = SKILL_BASIC)
+
+	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
+	                    SKILL_CHEMISTRY   = SKILL_MAX)
+
+
 /datum/job/surgeon
 
 	title = "Surgeon"
@@ -906,6 +1185,18 @@
 
 	access = list(access_med_comms, access_medicalgen, access_medicalequip, access_mtflvl1, access_mtflvl2)
 	minimal_access = list()
+
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_MEDICAL     = SKILL_EXPERT,
+	                    SKILL_ANATOMY     = SKILL_EXPERT,
+	                    SKILL_CHEMISTRY   = SKILL_BASIC,
+						SKILL_DEVICES     = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
+	                    SKILL_ANATOMY     = SKILL_MAX,
+	                    SKILL_CHEMISTRY   = SKILL_MAX)
+	skill_points = 20
+
 
 /datum/job/emt
 
@@ -934,6 +1225,14 @@
 
 	access = list(access_med_comms, access_medicalgen, access_medicalequip, access_mtflvl1)
 	minimal_access = list()
+
+	min_skill = list(
+		SKILL_BUREAUCRACY = SKILL_BASIC,
+		SKILL_MEDICAL     = SKILL_BASIC
+	)
+	max_skill = list(
+		SKILL_MEDICAL     = SKILL_MAX
+	)
 
 
 //LOGISTICS
@@ -965,6 +1264,15 @@
 	access = list(access_log_comms, access_logofficer, access_logistics)
 	minimal_access = list()
 
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	                    SKILL_FINANCE     = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_BASIC,
+	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_PILOT       = SKILL_BASIC)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
+	skill_points = 18
+
 
 /datum/job/cargo_tech
 
@@ -989,6 +1297,12 @@
 	/datum/mil_rank/security/e5,
 	/datum/mil_rank/security/e6
 	)
+
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_FINANCE     = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_BASIC)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
 
 	access = list(access_log_comms, access_logistics)
 	minimal_access = list()
@@ -1018,6 +1332,10 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
+	min_skill = list(   SKILL_HAULING = SKILL_BASIC)
+
+
+
 /datum/job/chef
 
 	title = "Chef"
@@ -1041,6 +1359,12 @@
 	access = list(access_civ_comms, access_s53bar, access_s53kitchen, access_dclasskitchen, access_dclassbotany)// Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 	minimal_access = list()
 
+	min_skill = list(   SKILL_COOKING   = SKILL_ADEPT,
+	                    SKILL_BOTANY    = SKILL_BASIC,
+	                    SKILL_CHEMISTRY = SKILL_BASIC)
+
+
+
 /datum/job/bartender
 
 	title = "Bartender"
@@ -1063,6 +1387,11 @@
 		..()
 	access = list(access_civ_comms, access_s53bar, access_s53kitchen, access_dclasskitchen, access_dclassbotany) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 	minimal_access = list()
+
+	min_skill = list(   SKILL_COOKING   = SKILL_BASIC,
+	                    SKILL_BOTANY    = SKILL_BASIC,
+	                    SKILL_CHEMISTRY = SKILL_BASIC)
+
 
 /datum/job/archivist
 
@@ -1116,3 +1445,7 @@
 
 	access = list(access_com_comms, access_adminlvl1, access_adminlvl2, access_adminlvl3, access_adminlvl4, access_adminlvl5)
 	minimal_access = list()
+
+	min_skill = list(   SKILL_BUREAUCRACY	= SKILL_EXPERT,
+	                    SKILL_FINANCE		= SKILL_BASIC)
+	skill_points = 20
