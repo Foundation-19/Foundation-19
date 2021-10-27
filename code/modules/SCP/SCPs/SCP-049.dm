@@ -11,6 +11,8 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	var/next_emote = -1
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
+	icon = 'icons/mob/scp049.dmi'
+	icon_state = ""
 
 /mob/living/carbon/human/scp049/examine(mob/user)
 	user << "<b><span class = 'euclid'><big>SCP-049</big></span></b> - [desc]"
@@ -20,23 +22,17 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	designation = "049"
 	classification = EUCLID
 
-/obj/sprite_helper/scp049
-	icon = 'icons/mob/scp049.dmi'
-
 /mob/living/carbon/human/scp049/IsAdvancedToolUser()
 	return FALSE
 
 /mob/living/carbon/human/scp049/New()
 	..()
 
-	spawn (20)
-		fix_icons()
-
-		// fix names
-		real_name = "SCP-049"
-		SetName(real_name)
-		if(mind)
-			mind.name = real_name
+	// fix names
+	real_name = "SCP-049"
+	SetName(real_name)
+	if(mind)
+		mind.name = real_name
 
 	set_species("SCP-049")
 	GLOB.scp049s += src
@@ -59,48 +55,16 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049/Life()
 	..()
+	addtimer(CALLBACK(src, .proc/see_disease) 15)
+
+/mob/living/carbon/human/scp049/see_disease()
 	if (client)
 		client.images -= pestilence_images
 		pestilence_images.Cut()
-		for (var/mob/living/carbon/human/H in view(world.view, src))
+		for(var/mob/living/carbon/human/H in view(15, src))
 			if (H.pestilence)
 				pestilence_images += image('icons/mob/scp049.dmi', H, "pestilence", MOB_LAYER+0.01)
 		client.images |= pestilence_images
-	if (BRUTE >= 600)
-		sleeping += 1
-		adjustBruteLoss(BRUTE - 30, 0)
-
-/mob/living/carbon/human/scp049/Move()
-	..()
-	update_stuff()
-
-/mob/living/carbon/human/scp049/forceMove(destination)
-	. = ..(destination)
-	update_stuff()
-
-/mob/living/carbon/human/scp049/proc/update_stuff()
-	// stand_icon tends to come back after movement
-	fix_icons()
-
-/mob/living/carbon/human/scp049/proc/fix_icons()
-	icon = null
-	icon_state = null
-	stand_icon = null
-	lying_icon = null
-	update_icon = FALSE
-
-	if (!vis_contents.len)
-		vis_contents += new /obj/sprite_helper/scp049
-
-	// we're lying, turn right
-	var/obj/sprite_helper/scp049/SH = vis_contents[vis_contents.len]
-
-	if (lying || resting)
-		SH.icon = turn(icon('icons/mob/scp049.dmi'), 90)
-	else
-		SH.icon = 'icons/mob/scp049.dmi'
-
-	SH.dir = dir
 
 /mob/living/carbon/human/scp049/get_pressure_weakness()
 	return 0
@@ -110,63 +74,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049/movement_delay()
 	return 3.0
-
-// NPC stuff
-/mob/living/carbon/human/scp049/proc/getTarget()
-
-	// stupid hack
-	if (client)
-		target = null
-		return target
-
-	/* if we have no target, or our target is dead, or our target is not human, or our target is out of view,
-	 * try to find a better one. Failing to do so just makes us continue to go after the old target */
-	if (!target || target.stat == DEAD || !ishuman(target) || (ishuman(target) && !target:pestilence) || !(src in viewers(world.view, target)))
-
-		// add all living mobs, and humans with the Pestilence
-		. = list()
-		for (var/mob/living/L in oview(world.view, src))
-			if (L.stat != DEAD)
-				if (!ishuman(L))
-					. += L
-				else if (ishuman(L))
-					var/mob/living/carbon/human/H = L
-					if (H.pestilence)
-						. += H
-
-		// if there is at least one human in this list, remove all non-human candidates
-		for (var/mob/living/carbon/human/H in .)
-			for (var/mob/living/L in .)
-				if (!ishuman(L))
-					. -= L
-			break
-
-		// pick a random candidate
-		if (length(.))
-			target = pick(.)
-
-	return target
-
-// NPC stuff
-/mob/living/carbon/human/scp049/proc/pursueTarget()
-
-	getTarget()
-
-	if (!target)
-		walk(src, null)
-		return FALSE
-
-	if (!(target in orange(1, src)))
-		// moves slightly faster than humans
-		walk_to(src, target, 1/*, 0.2+config.run_speed*/)
-		return TRUE
-
-	walk(src, null)
-
-	if (!locate(/obj/item/grab) in src)
-		scp049_attack(target)
-
-	return TRUE
 
 /mob/living/carbon/human/attack_hand(mob/living/carbon/M)
 	if (!isscp049(M) || isscp049_1(src) || src == M)
@@ -219,11 +126,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		visible_message("<span class = 'danger '><i>[name] grabs [target]!</i></danger>")
 		G = make_grab(src, target)
 		target.Weaken(1)
-		// NPC stuff
-		if (!client)
-			spawn (20)
-				if (G)
-					scp049_attack_2(target)
 
 /mob/living/carbon/human/scp049/proc/scp049_attack_2(var/mob/living/target)
 	var/obj/item/grab/G = locate() in src
@@ -236,11 +138,10 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		if (do_after(src, target, 150))
 			visible_message("<span class = 'danger'>[src] performs surgery on [target].</span>")
 			attempted_surgery_on += target
-			spawn (50)
+			do_after(25)
 				if (target)
 					if (ishuman(target))
 						var/mob/living/carbon/human/H = target
-
 						var/foundclient = TRUE
 						if (!H.client)
 							foundclient = FALSE
@@ -248,7 +149,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 								if (ghost.mind.current == H)
 									ghost.reenter_corpse()
 									foundclient = TRUE
-
 						if (foundclient)
 							H.rejuvenate()
 							H.visible_message("<span class = 'danger'><big>[H] rises up again.</big></span>")
@@ -300,7 +200,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		return
 
 	A.do_animate("spark")
-	sleep(9)
+	do_after(10)
 	A.stat |= BROKEN
 	var/check = A.open(1)
 	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
