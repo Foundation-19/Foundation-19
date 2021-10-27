@@ -66,9 +66,6 @@
 		health_current = health_max
 		update_icon()
 
-	if(SCP)
-		makeSCP()
-
 	return INITIALIZE_HINT_NORMAL
 
 //called if Initialize returns INITIALIZE_HINT_LATELOAD

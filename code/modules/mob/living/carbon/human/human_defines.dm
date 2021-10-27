@@ -112,3 +112,4 @@
 	var/list/descriptors
 
 	var/last_smelt = 0
+	var/scp_013_stage = 0 //for scp-013

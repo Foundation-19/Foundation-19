@@ -11,6 +11,14 @@
 	var/datum/component/scp/component //You don't have to use this, but it's really nice for smaller SCP's so you can make them SCP whenever you want
 	var/atom/owner
 
+/datum/scp/New(atom/creation)
+	creation.makeSCP()
+
+/datum/scp/Destroy()
+	. = ..()
+	if(GLOB.SCP_list.len)
+		GLOB.SCP_list -= src
+
 /datum/scp/proc/SCPinit(atom/A)
 	if(!isatom(A))
 		return
@@ -36,17 +44,10 @@
 
 /datum/scp/proc/onLose()
 
-/atom/proc/makeSCP(var/A)
-	if(A && !ispath(A))
-		if(ispath(GLOB.SCP_list[A]))
-			SCP = GLOB.SCP_list[A]
-		else
-			return
+/atom/proc/makeSCP()
+	GLOB.SCP_list += src
 //	if(ispath(c))
 //		SCP = new SCP()
-	if(!isdatum(SCP) || !canBeSCP(SCP)) //One last isdatum to check if someone didnt fuck the path
-		qdel(SCP)
-		return
 	SCP.SCPinit(src)
 	SCP.onGain()
 	return 1

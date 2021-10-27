@@ -553,3 +553,17 @@
 	item_state = "cobpipeoff"
 	icon_on = "cobpipeon"  //Note - these are in masks.dmi
 	chem_volume = 35
+
+
+/obj/item/clothing/mask/smokable/cigarette/bluelady
+	name = "'blue lady' cigarette"
+	brand = "\improper Blue Lady"
+	desc = "The words 'Blue Lady' are written on this deftly-rolled cigarette in blue ink."
+	filling = list(/datum/reagent/tobacco/fine = 1)
+
+/obj/item/clothing/mask/smokable/cigarette/bluelady/Initialize()
+	. = ..()
+
+/obj/item/clothing/mask/smokable/cigarette/bluelady/light()
+	for(var/mob/living/carbon/human/affected in range(2, src))
+		affected.update_013_status()

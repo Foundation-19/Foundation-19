@@ -214,7 +214,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 	H.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
 	if (target)
-		if (target.is_species(SPECIES_ZOMBIE))
+		if (target.is_species(SPECIES_ZOMBIE) || istype(target, /mob/living/carbon/human/scp049))
 			target = null
 			return
 
