@@ -13,6 +13,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	icon_state = ""
 	var/contained = TRUE
 	var/curing = FALSE //we doing gods work or nah?
+	var/chasing = FALSE
 
 /mob/living/carbon/human/scp049/examine(mob/user)
 	. = ..()
@@ -57,7 +58,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/scp049/Life()
 	..()
 	if(prob(50) && contained)
-		addtimer(CALLBACK(src, .proc/see_disease), 15) //only occasionally see the disease, less deadly. TODO: containment mechanics
+		addtimer(CALLBACK(src, .proc/see_disease), 5 SECONDS) //only occasionally see the disease, less deadly. TODO: containment mechanics
 
 /mob/living/carbon/human/scp049/proc/see_disease()
 	if (client)
@@ -70,8 +71,8 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 
 /mob/living/carbon/human/scp049/proc/Attack_Voice_Line() //for when we're up to no good!
-	var/voiceline = list('sound/scp/voice/SCP049_2.ogg','sound/scp/voice/SCP049_4.ogg','sound/scp/voice/SCP049_5.ogg')
-	playsound(src, pick(voiceline), 30)
+	var/voiceline = "'sound/scp/voice/SCP049_[rand(1,5)].ogg'"
+	playsound(src, voiceline, 30)
 
 /mob/living/carbon/human/scp049/proc/getTarget()
 	if(target == src)
@@ -110,12 +111,17 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049/proc/pursueTarget()
 
-	addtimer(CALLBACK(src, .proc/getTarget), 3)
+	addtimer(CALLBACK(src, .proc/getTarget), 3 SECONDS)
 
 	if(!target)
 		return FALSE
 
+	//human nearby? wander up to them
 	if (!(target in orange(1, src)))
+		if(target.pestilence && !chasing)
+			chasing = TRUE
+			target.playsound_local(src, 'sound/scp/chase/049_chase.ogg', 50, 0)
+			addtimer(CALLBACK(src, .proc/SCP049_Chase_Music), 25 SECONDS)
 		walk_to(src, target, 1,10,0.1)
 		CHECK_TICK
 		return TRUE
@@ -127,7 +133,25 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		target = null
 		return FALSE
 
+	//below is the part where they're being chased with lethal intent and him running up to them is to do his good work
+	//SCP049_Chase_Music()
+
+	if(check_nearby())
+		to_chat(target, "<span class = 'danger'>You feel the life draining from your body! You can't move!</span>")
+		scp049_attack(target)
+
+
+	CHECK_TICK
+
 	return TRUE
+
+/mob/living/carbon/human/scp049/proc/SCP049_Chase_Music(mob/living/carbon/human/target)
+	if(!target)
+		chasing = FALSE
+		return
+	chasing = FALSE
+	target.playsound_local(src, 'sound/scp/chase/049_chase.ogg', 50, 0)
+	addtimer(CALLBACK(src, .proc/SCP049_Chase_Music), 25 SECONDS)
 
 /mob/living/carbon/human/scp049/proc/check_nearby()
 	if(!target)
@@ -149,16 +173,16 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 			return
 		if(curing)
 			return
-		var/obj/item/grab/G = src.get_active_hand()
+
 		visible_message("<span class = 'danger'><i>[src] reaches towards [target.real_name]!</i></danger>")
-		addtimer(CALLBACK(src, .proc/Attack_Voice_Line), 5)
-		if(G)
-			target.Paralyse(60)
+		addtimer(CALLBACK(src, .proc/Attack_Voice_Line), 5 SECONDS)
+
+		target.Weaken(10)
+		if(prob(75)) //do you feel lucky, punk?
+			target.Stun(60)
+			target.emote("collapse")
 			cure_action()
-		else
-			target.Paralyse(60)
-			cure_action()
-		addtimer(CALLBACK(src, .proc/check_nearby), 10)
+		addtimer(CALLBACK(src, .proc/check_nearby), 2 SECONDS)
 
 /mob/living/carbon/human/scp049/get_pressure_weakness()
 	return 0
@@ -326,6 +350,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		switch(stage)
 			if(1)
 				to_chat(src, "<span class='notice'>The disease has taken hold. We must work quickly...</span>")
+				target.adjustBruteLoss(25)
 			if(2)
 				to_chat(src, "<span class='notice'>You gather your tools.</span>")
 				src.visible_message("<span class='warning'>[src] draws a rolled set of surgical equipment from their bag!</span>")
@@ -335,7 +360,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 				src.visible_message("<span class='danger'>[src] begins slicing open [target] with a scalpel!</span>")
 				to_chat(target, "<span class='danger'>You feel a sharp stabbing pain as your life begins to wane.</span>")
 				new /obj/effect/decal/cleanable/blood/splatter(get_turf(target), target.species.blood_color)
-				target.adjustBruteLoss(10)
 			if(4)
 				to_chat(src, "<span class='notice'>You spend a great deal of time expertly curing this victim's disease.</span>")
 				src.visible_message("<span class='danger'>[src] begins performing a horrifying procedure on [target]!</span>")
@@ -352,6 +376,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	target.pre_scp049_name = target.name
 	target.pre_scp049_real_name = target.real_name
 	target.pre_scp049_species = target.species.name
+	target.is_scp_instance = TRUE
 	target.scp_049_instance = TRUE
 	target.zombify()
 	target.visible_message("<span class = 'danger'><big>The lifeless corpse of [target.pre_scp049_name] begins to convulse violently!</big></span>")

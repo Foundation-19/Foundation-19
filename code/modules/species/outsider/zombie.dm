@@ -420,8 +420,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	species.handle_post_spawn(src)
 
 	if(scp_049_instance)
-		species.name = "SCP-049-1"
-		species.name_plural = "SCP-049-1s"
+		name = "SCP-049-[GLOB.scp049_1s.len]"
 		real_name = "SCP-049-[GLOB.scp049_1s.len]"
 
 	var/turf/T = get_turf(src)

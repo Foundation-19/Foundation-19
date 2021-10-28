@@ -8,6 +8,14 @@
 	var/skipears = 0
 	var/skipeyes = 0
 	var/skipface = 0
+	var/scp_instance_type = "Unknown"
+
+	//are we an scp instance?
+	if(is_scp_instance)
+		if(scp_049_instance)
+			scp_instance_type = "SCP-049-1"
+		if(scp_013_instance)
+			scp_instance_type = "SCP-013-1"
 
 	//exosuits and helmets obscure our view and stuff.
 	if(wear_suit)
@@ -54,6 +62,8 @@
 		var/species_name = "\improper "
 		if(is_synth && species.cyborg_noun)
 			species_name += "[species.cyborg_noun] [species.get_bodytype(src)]"
+		else if(is_scp_instance)
+			species_name += "[scp_instance_type]"
 		else
 			species_name += "[species.name]"
 		msg += ", <b><font color='[species.get_flesh_colour(src)]'>\a [species_name]!</font></b>[(user.can_use_codex() && SScodex.get_codex_entry(get_codex_value())) ?  SPAN_NOTICE(" \[<a href='?src=\ref[SScodex];show_examined_info=\ref[src];show_to=\ref[user]'>?</a>\]") : ""]"
