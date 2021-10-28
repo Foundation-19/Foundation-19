@@ -553,7 +553,7 @@
 	item_state = "cobpipeoff"
 	icon_on = "cobpipeon"  //Note - these are in masks.dmi
 	chem_volume = 35
-
+	SCP = /datum/scp/scp_013
 
 /obj/item/clothing/mask/smokable/cigarette/bluelady
 	name = "'blue lady' cigarette"
@@ -567,4 +567,4 @@
 /obj/item/clothing/mask/smokable/cigarette/bluelady/light()
 	. = ..()
 	for(var/mob/living/carbon/human/affected in range(1, src))
-		affected.update_013_status()
+		affected?.update_013_status()

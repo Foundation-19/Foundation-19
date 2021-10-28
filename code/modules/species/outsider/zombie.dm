@@ -101,10 +101,6 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	H.default_run_intent = H.move_intent
 	H.default_walk_intent = H.move_intent
 
-	H.set_sight(H.sight | SEE_MOBS | SEE_OBJS | SEE_TURFS) //X-Ray vis
-	H.set_see_in_dark(8)
-	H.set_see_invisible(SEE_INVISIBLE_LEVEL_TWO)
-
 	H.languages = list()
 	H.add_language(LANGUAGE_ZOMBIE)
 
@@ -420,8 +416,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	species.handle_post_spawn(src)
 
 	if(scp_049_instance)
-		species.name = "SCP-049-1"
-		species.name_plural = "SCP-049-1s"
+		name = "SCP-049-[GLOB.scp049_1s.len]"
 		real_name = "SCP-049-[GLOB.scp049_1s.len]"
 
 	var/turf/T = get_turf(src)
@@ -487,6 +482,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 				to_chat(src,SPAN_WARNING("You've scraped \the [target] down to the bones already!."))
 				target.zombify()
 				if(src.scp_049_instance) //are we an 049_1? if so we should make more 049_1s
+					target.is_scp_instance = TRUE
 					target.scp_049_instance = TRUE
 			else
 				to_chat(src,SPAN_DANGER("You shred and rip apart \the [target]'s remains!."))
