@@ -1,27 +1,45 @@
+#define SPECIES_SCP049_1 "SCP-049-1"
+
 /datum/species/scp049_1
 	name = "SCP-049-1"
 	name_plural = "SCP-049-1s"
-
-//	darksight = 8
-	has_organ = list()
-	siemens_coefficient = 0
-
+	slowdown = 15
 	blood_color = "#622a37"
 	flesh_color = "#442A37"
-
-	species_flags = SPECIES_FLAG_NO_SLIP | SPECIES_FLAG_NO_POISON
+	death_message = "writhes and twitches before falling motionless."
+	species_flags = SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_SCAN
 	spawn_flags = SPECIES_IS_RESTRICTED
-
-	// immune to viruses
-//	virus_immune = TRUE
-
-	// fists
-//	unarmed_types = list(/datum/unarmed_attack/claw)
-
-	// damage overrides
-	brute_mod =      0.5                    // 50% physical damage
-	burn_mod =       0.5                    // 50% burn damage
-	oxy_mod =        0.0                    // No oxygen damage
-	toxins_mod =     0.0                    // No toxin damage
-	radiation_mod =  0.0                    // No radiation damage
-	flash_mod =      0.0                    // Unflashable
+	brute_mod = 1
+	burn_mod = 2.5 //Vulnerable to fire
+	oxy_mod = 0
+	stun_mod = 0.05
+	weaken_mod = 0.05
+	paralysis_mod = 0.2
+	show_ssd = null
+	show_coma = null
+	warning_low_pressure = 0
+	hazard_low_pressure = 0
+	body_temperature = null
+	cold_level_1 = -1
+	cold_level_2 = -1
+	cold_level_3 = -1
+	hidden_from_codex = TRUE
+	has_fine_manipulation = FALSE
+	unarmed_types = list(/datum/unarmed_attack/bite/sharp/zombie)
+	move_intents = list(/decl/move_intent/creep)
+	var/heal_rate = 1 // Regen.
+	var/mob/living/carbon/human/target = null
+	var/list/obstacles = list(
+		/obj/structure/window,
+		/obj/structure/closet,
+		/obj/machinery/door/airlock,
+		/obj/structure/table,
+		/obj/structure/grille,
+		/obj/structure/barricade,
+		/obj/structure/wall_frame,
+		/obj/structure/railing,
+		/obj/structure/girder,
+		/turf/simulated/wall,
+		/obj/machinery/door/blast/shutters,
+		/obj/machinery/door
+	)

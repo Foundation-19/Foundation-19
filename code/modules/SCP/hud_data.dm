@@ -1,15 +1,15 @@
 /datum/hud_data/scp049
 	has_a_intent = 1
-	has_m_intent = 0
-	has_warnings = 0
-	has_pressure = 0
+	has_m_intent = 2
+	has_warnings = 1
+	has_pressure = 1
 	has_nutrition = 0
-	has_bodytemp = 0
+	has_bodytemp = 1
 	has_hands = 1
 	has_drop = 1
 	has_throw = 1
 	has_resist = 1
-	has_internals = 0
+	has_internals = 1
 	gear = list()
 
 /datum/hud_data/scp343

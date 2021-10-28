@@ -3,7 +3,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 
 /mob/living/carbon/human/scp106
 	desc = "A rotting, elderly old man."
-	SCP = /datum/scp/SCP_106
+	SCP = /datum/scp/scp_106
 	var/mob/living/target = null
 	var/last_x = -1
 	var/last_y = -1
@@ -15,7 +15,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 /mob/living/carbon/human/scp106/examine(mob/user)
 	user << "<b><span class = 'keter'><big>SCP-106</big></span></b> - [desc]"
 
-/datum/scp/SCP_106
+/datum/scp/scp_106
 	name = "SCP-106"
 	designation = "106"
 	classification = KETER

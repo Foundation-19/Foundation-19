@@ -3,7 +3,7 @@
 #define STAGE_SLEEP		2
 #define STAGE_DAMAGE	3
 
-/datum/scp/SCP_513
+/datum/scp/scp_513
 	name = "SCP-513"
 	designation = "513"
 	classification = EUCLID
@@ -13,7 +13,7 @@
 	desc = "An old cowbell, covered in immense amounts of rust."
 	icon = 'icons/SCP/item.dmi'
 	icon_state = "mindfuckcowbell"
-	SCP = /datum/scp/SCP_513
+	SCP = /datum/scp/scp_513
 	var/global/mob/living/carbon/list/victims = list()
 	var/global/mob/living/carbon/list/next_braindamage_stage = list()
 	var/global/mob/living/carbon/list/braindamage_stage = list()

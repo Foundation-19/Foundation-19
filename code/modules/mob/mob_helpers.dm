@@ -584,7 +584,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 	return 1
 
 /mob/proc/ssd_check()
-	return !client && !teleop
+	return !client && !teleop &&!ignore_ssd_check
 
 /mob/proc/jittery_damage()
 	return //Only for living/carbon/human/

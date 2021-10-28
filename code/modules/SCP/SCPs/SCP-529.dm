@@ -1,7 +1,7 @@
 GLOBAL_LIST_EMPTY(scp529s)
 
 /mob/living/simple_animal/cat/fluff/scp_529
-	SCP = /datum/scp/SCP_529
+	SCP = /datum/scp/scp_529
 	name = "SCP-529"
 	desc = "A friendly tabby cat that seems to be missing half of her body."
 	icon = 'icons/SCP/josie.dmi'
@@ -26,7 +26,7 @@ GLOBAL_LIST_EMPTY(scp529s)
 	user << "<b><span class = 'safe'><big>SCP-529</big></span></b> - [desc]"
 
 
-/datum/scp/SCP_529
+/datum/scp/scp_529
 	name = "SCP-529"
 	designation = "529"
 	classification = SAFE
