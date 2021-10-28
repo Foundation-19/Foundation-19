@@ -1,4 +1,4 @@
-/mob/living/simple_animal/scp096
+/mob/living/simple_animal/hostile/scp096
 	name = "???"
 	desc = "No, no, you know not to look closely at it" //for non-targets
 	var/target_desc_1 = "A pale, emanciated figure. It looks almost human, but its limbs are long and skinny, and its face is......<span class='danger'>no. NO. NO</span>" //for targets
@@ -13,7 +13,6 @@
 
 	health = 600
 	maxHealth = 600
-	var/move_to_delay = 2
 
 	var/murder_sound = list('sound/voice/scream_horror2.ogg')
 	var/scare_sound = list('sound/scp/scare1.ogg','sound/scp/scare2.ogg','sound/scp/scare3.ogg','sound/scp/scare4.ogg')	//Boo
@@ -40,7 +39,7 @@
 	emote_hear = list("makes a faint groaning sound")
 	emote_see = list("shuffles around aimlessly", "shivers")
 
-/mob/living/simple_animal/scp096/Life()
+/mob/living/simple_animal/hostile/scp096/Life()
 	if(hibernate)
 		return
 
@@ -81,7 +80,7 @@
 		handle_idle()
 
 //Check if any carbon mob can see us
-/mob/living/simple_animal/scp096/proc/check_los()
+/mob/living/simple_animal/hostile/scp096/proc/check_los()
 
 	for(var/mob/living/carbon/H in viewers(src, null))
 		if(H in shitlist)
@@ -121,7 +120,7 @@
 
 	return
 
-/mob/living/simple_animal/scp096/proc/add_examine_urge(var/mob/living/carbon/H)
+/mob/living/simple_animal/hostile/scp096/proc/add_examine_urge(var/mob/living/carbon/H)
 
 	var/index
 	var/examine_urge
@@ -142,17 +141,14 @@
 			to_chat(H, "<span class='alert'>It is becoming difficult to resist the urge to examine it ...</span>")
 		if(5)
 			to_chat(H, "<span class='alert'>Unable to resist the urge, you look closely...</span>")
-			spawn(10)
-				examine(H)
+			addtimer(CALLBACK(H, examine(H)), 5 SECONDS)
 
 	examine_urge = min(examine_urge+1, 5)
 	examine_urge_values[index] = examine_urge
 
-	spawn(300)
-		if(H)
-			reduce_examine_urge(H)
+	addtimer(CALLBACK(H, reduce_examine_urge(H)), 300 SECONDS)
 
-/mob/living/simple_animal/scp096/proc/reduce_examine_urge(var/mob/living/carbon/H)
+/mob/living/simple_animal/hostile/scp096/proc/reduce_examine_urge(var/mob/living/carbon/H)
 	var/index
 	var/examine_urge
 
@@ -168,7 +164,7 @@
 
 	examine_urge_values[index] = examine_urge
 
-/mob/living/simple_animal/scp096/examine(var/userguy)
+/mob/living/simple_animal/hostile/scp096/examine(var/userguy)
 	if (istype(userguy, /mob/living/carbon))
 		if (!(userguy in shitlist))
 			to_chat(userguy, target_desc_1)
@@ -199,7 +195,7 @@
 	..()
 
 
-/mob/living/simple_animal/scp096/proc/handle_target(var/mob/living/carbon/target)
+/mob/living/simple_animal/hostile/scp096/proc/handle_target(var/mob/living/carbon/target)
 
 	if(!target || chasing) //Sanity
 		return
@@ -267,7 +263,7 @@
 			sleep(move_to_delay + round(staggered/8))
 		chasing = 0
 
-/mob/living/simple_animal/scp096/proc/is_different_level(var/turf/target_turf)
+/mob/living/simple_animal/hostile/scp096/proc/is_different_level(var/turf/target_turf)
 	if(target_turf.z != z)
 		return 1
 
@@ -280,7 +276,7 @@
 	return 0
 
 //This performs an immediate murder check, meant to avoid people cheesing us by just running faster than Life() refresh
-/mob/living/simple_animal/scp096/proc/check_murder()
+/mob/living/simple_animal/hostile/scp096/proc/check_murder()
 
 	//See if we're able to murder anyone
 	for(var/mob/living/carbon/M in get_turf(src))
@@ -288,12 +284,12 @@
 			murder(M)
 			break
 
-/mob/living/simple_animal/scp096/forceMove(atom/destination, var/no_tp = 0)
+/mob/living/simple_animal/hostile/scp096/forceMove(atom/destination, var/no_tp = 0)
 
 	..()
 	check_murder()
 
-/mob/living/simple_animal/scp096/proc/murder(var/mob/living/T)
+/mob/living/simple_animal/hostile/scp096/proc/murder(var/mob/living/T)
 
 	if(T)
 		T.loc = src.loc
@@ -330,7 +326,7 @@
 			chasing_message_played = 0
 			doom_message_played = 0
 
-/mob/living/simple_animal/scp096/proc/handle_idle()
+/mob/living/simple_animal/hostile/scp096/proc/handle_idle()
 	//Movement
 	if(!client  && !anchored)
 		if(isturf(src.loc) && !resting && !buckled)		//This is so it only moves if it's not inside a closet, gentics machine, etc.
@@ -407,7 +403,7 @@
 		else
 			entry_vent = null
 
-/mob/living/simple_animal/scp096/bullet_act(var/obj/item/projectile/Proj)
+/mob/living/simple_animal/hostile/scp096/bullet_act(var/obj/item/projectile/Proj)
 	if(!Proj || Proj.damage <= 0)
 		return 0
 
@@ -415,7 +411,7 @@
 	adjustBruteLoss(Proj.damage)
 	return 1
 
-/mob/living/simple_animal/scp096/adjustBruteLoss(var/damage)
+/mob/living/simple_animal/hostile/scp096/adjustBruteLoss(var/damage)
 
 	health = max(health - damage, 0, maxHealth)
 
@@ -432,14 +428,14 @@
 
 
 
-/mob/living/simple_animal/scp096/Bump(atom/movable/AM as mob)
+/mob/living/simple_animal/hostile/scp096/Bump(atom/movable/AM as mob)
 	..()
 
-/mob/living/simple_animal/scp096/Bumped(atom/movable/AM as mob, yes)
+/mob/living/simple_animal/hostile/scp096/Bumped(atom/movable/AM as mob, yes)
 	..()
 
 //You cannot destroy us, fool!
-/mob/living/simple_animal/scp096/ex_act(var/severity)
+/mob/living/simple_animal/hostile/scp096/ex_act(var/severity)
 	var/damage = 0
 	switch (severity)
 		if (1.0)
@@ -452,7 +448,7 @@
 	adjustBruteLoss(damage)
 	return 1
 
-/mob/living/simple_animal/attackby(var/obj/item/O as obj, var/mob/user as mob)  //Marker -Agouri
+/mob/living/simple_animal/hostile/attackby(var/obj/item/O as obj, var/mob/user as mob)  //Marker -Agouri
 	..()
 	if(O.force)
 		visible_message("<span class='danger'>[src] is staggered by [O]!</span>")
