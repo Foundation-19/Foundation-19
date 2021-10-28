@@ -8,9 +8,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	var/list/pestilence_images = list()
 	var/mob/living/carbon/human/target = null
 	var/next_emote = -1
-	see_in_dark = SEE_IN_DARK_DEFAULT
-	see_invisible = SEE_INVISIBLE_LIVING
-	sight = SEE_SELF
 	icon_state = ""
 	var/contained = TRUE
 	var/curing = FALSE //we doing gods work or nah?
@@ -38,7 +35,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 	set_species("SCP-049")
 	GLOB.scp049s += src
-
 	verbs += /mob/living/carbon/human/proc/SCP_049_talk
 	verbs += /mob/living/carbon/human/proc/door_049
 
@@ -58,8 +54,24 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049/Life()
 	..()
-	if(prob(50) && contained)
+	if(prob(50) && !contained)
 		addtimer(CALLBACK(src, .proc/see_disease), 5 SECONDS) //only occasionally see the disease, less deadly. TODO: containment mechanics
+
+/mob/living/carbon/human/scp049/Login()
+	. = ..()
+	if(client)
+		mutations |= MUTATION_XRAY
+	if(target)
+		target = null
+/mob/living/carbon/human/scp049/Logout()
+	. = ..()
+	if(mind)
+		mind = null
+	if(target)
+		target = null
+	if(!client)
+		if(mutations && MUTATION_XRAY)
+			mutations -= MUTATION_XRAY
 
 /mob/living/carbon/human/scp049/proc/see_disease()
 	if (client)
@@ -76,6 +88,9 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	playsound(src, pick(voiceline), 30)
 
 /mob/living/carbon/human/scp049/proc/getTarget()
+	if(client)
+		target = null
+		return target
 	if(target == src)
 		target = null
 		return target
@@ -113,19 +128,21 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	return target
 
 /mob/living/carbon/human/scp049/proc/pursueTarget()
-
+	walk(src, null)
+	if(client)
+		return FALSE
 	addtimer(CALLBACK(src, .proc/getTarget), 3 SECONDS)
 
 	if(!target)
 		return FALSE
 
 	//human nearby? well are they infected? if so make them regret it
-	if(target.pestilence && !chasing_sound)
+	if(target.pestilence && !chasing_sound && !contained)
 		chasing_sound = TRUE
 		target.playsound_local(src, 'sound/scp/chase/049_chase.ogg', 50, 0)
 		addtimer(CALLBACK(src, .proc/SCP049_Chase_Music), 23 SECONDS)
 	//human nearby? wander up to them
-	if (!(target in orange(1, src)))
+	if (target && !(target in orange(1, src)))
 		walk_to(src, target, 1,10,0.1)
 		CHECK_TICK
 		return TRUE
@@ -152,7 +169,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		chasing_sound = FALSE
 		return
 	chasing_sound = FALSE
-	if(target.pestilence && !chasing_sound)
+	if(target.pestilence && !chasing_sound && !contained)
 		chasing_sound = TRUE
 		target.playsound_local(src, 'sound/scp/chase/049_chase.ogg', 50, 0)
 		addtimer(CALLBACK(src, .proc/SCP049_Chase_Music), 25 SECONDS)
@@ -356,6 +373,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		switch(stage)
 			if(1)
 				to_chat(src, "<span class='notice'>The disease has taken hold. We must work quickly...</span>")
+				src.visible_message("<span class='danger'>[src] looms over [target]!</span>")
 				target.adjustBruteLoss(25)
 			if(2)
 				to_chat(src, "<span class='notice'>You gather your tools.</span>")
@@ -369,10 +387,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 			if(4)
 				to_chat(src, "<span class='notice'>You spend a great deal of time expertly curing this victim's disease.</span>")
 				src.visible_message("<span class='danger'>[src] begins performing a horrifying procedure on [target]!</span>")
-				if(!target.client)
-					for(var/mob/observer/ghost/ghost in GLOB.ghost_mob_list)
-						if(ghost.mind.current == target)
-							ghost.reenter_corpse()
 
 		if(!do_after(src, 15 SECONDS, target))
 			to_chat(src, "<span class='warning'>Our curing of [target] has been interrupted!</span>")
@@ -391,6 +405,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	target.verbs += /mob/living/carbon/human/proc/SCP_049_talk
 	GLOB.scp049_1s += target
 	target.pestilence = FALSE
+	to_chat(target, "<span class='danger'>You feel the last of your mind drift away...</span>")
 	to_chat(src, "<span class='notice'>You have cured [target].</span>")
 	curing = FALSE
 	getTarget()

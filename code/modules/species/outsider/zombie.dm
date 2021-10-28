@@ -101,10 +101,6 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	H.default_run_intent = H.move_intent
 	H.default_walk_intent = H.move_intent
 
-	H.set_sight(H.sight | SEE_MOBS) //X-Ray vis
-	H.see_in_dark = SEE_IN_DARK_DEFAULT
-	H.see_invisible = SEE_INVISIBLE_LIVING
-
 	H.languages = list()
 	H.add_language(LANGUAGE_ZOMBIE)
 
