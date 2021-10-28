@@ -8,12 +8,13 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	var/list/pestilence_images = list()
 	var/mob/living/carbon/human/target = null
 	var/next_emote = -1
-	see_invisible = SEE_INVISIBLE_NOLIGHTING
-	see_in_dark = 7
+	see_in_dark = SEE_IN_DARK_DEFAULT
+	see_invisible = SEE_INVISIBLE_LIVING
+	sight = SEE_SELF
 	icon_state = ""
 	var/contained = TRUE
 	var/curing = FALSE //we doing gods work or nah?
-	var/chasing = FALSE
+	var/chasing_sound = FALSE
 
 /mob/living/carbon/human/scp049/examine(mob/user)
 	. = ..()
@@ -71,17 +72,19 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 
 /mob/living/carbon/human/scp049/proc/Attack_Voice_Line() //for when we're up to no good!
-	var/voiceline = "'sound/scp/voice/SCP049_[rand(1,5)].ogg'"
-	playsound(src, voiceline, 30)
+	var/voiceline = list('sound/scp/voice/SCP049_1.ogg','sound/scp/voice/SCP049_2.ogg','sound/scp/voice/SCP049_3.ogg','sound/scp/voice/SCP049_4.ogg','sound/scp/voice/SCP049_5.ogg')
+	playsound(src, pick(voiceline), 30)
 
 /mob/living/carbon/human/scp049/proc/getTarget()
 	if(target == src)
 		target = null
 		return target
-
+	if(target && !(target in view(10, src))) //if they get away, they get away
+		target = null
+		return target
 	if (!target || target.stat == DEAD)
 		var/list/possible_targets = list()
-		for(var/mob/living/carbon/human/L in view(15, src))
+		for(var/mob/living/carbon/human/L in view(10, src))
 			if(!(istype(L, /mob/living/carbon/human/scp049)) && !(L.scp_049_instance))
 				if(L.stat != DEAD)
 					possible_targets += L
@@ -116,19 +119,18 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	if(!target)
 		return FALSE
 
+	//human nearby? well are they infected? if so make them regret it
+	if(target.pestilence && !chasing_sound)
+		chasing_sound = TRUE
+		target.playsound_local(src, 'sound/scp/chase/049_chase.ogg', 50, 0)
+		addtimer(CALLBACK(src, .proc/SCP049_Chase_Music), 23 SECONDS)
 	//human nearby? wander up to them
 	if (!(target in orange(1, src)))
-		if(target.pestilence && !chasing)
-			chasing = TRUE
-			target.playsound_local(src, 'sound/scp/chase/049_chase.ogg', 50, 0)
-			addtimer(CALLBACK(src, .proc/SCP049_Chase_Music), 25 SECONDS)
 		walk_to(src, target, 1,10,0.1)
 		CHECK_TICK
 		return TRUE
 
 	walk(src, null)
-	if(check_nearby())
-		scp049_attack(target)
 	if(!target.pestilence)
 		target = null
 		return FALSE
@@ -147,11 +149,13 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049/proc/SCP049_Chase_Music(mob/living/carbon/human/target)
 	if(!target)
-		chasing = FALSE
+		chasing_sound = FALSE
 		return
-	chasing = FALSE
-	target.playsound_local(src, 'sound/scp/chase/049_chase.ogg', 50, 0)
-	addtimer(CALLBACK(src, .proc/SCP049_Chase_Music), 25 SECONDS)
+	chasing_sound = FALSE
+	if(target.pestilence && !chasing_sound)
+		chasing_sound = TRUE
+		target.playsound_local(src, 'sound/scp/chase/049_chase.ogg', 50, 0)
+		addtimer(CALLBACK(src, .proc/SCP049_Chase_Music), 25 SECONDS)
 
 /mob/living/carbon/human/scp049/proc/check_nearby()
 	if(!target)
@@ -215,6 +219,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		if (ishuman(M))
 			var/mob/living/carbon/human/H = M
 			if (H != src)
+				target = H
 				H.pestilence = TRUE
 		return ..(M)
 	to_chat(M, "<span class = 'danger'><big>You cannot attack your master.</big></span>")
@@ -223,6 +228,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	if (P.damage && !P.nodamage && ishuman(P.firer))
 		var/mob/living/carbon/human/H = P.firer
 		if (H != src)
+			target = H
 			H.pestilence = TRUE
 	return ..(P, def_zone)
 
