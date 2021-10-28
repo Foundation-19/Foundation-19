@@ -63,7 +63,7 @@
 	build_type = /obj/item/stack/tile/grass
 	can_engrave = FALSE
 	floor_smooth = SMOOTH_NONE
-	wall_smooth = SMOOTH_ALL
+	wall_smooth = SMOOTH_NONE
 	space_smooth = SMOOTH_NONE
 	decal_layer = ABOVE_WIRE_LAYER
 

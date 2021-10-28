@@ -51,5 +51,7 @@
 		H.set_species(subspecies)
 
 	if(delete_old_mob)
+		if(istype(src, /mob/observer))
+			return M
 		QDEL_IN(src, 1)
 	return M
