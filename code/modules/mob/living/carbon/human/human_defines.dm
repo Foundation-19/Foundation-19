@@ -117,4 +117,3 @@
 	var/scp_049_instance = FALSE
 	var/scp_013_instance = FALSE
 	var/scp_013_stage = 0
-	//true or false if we are an 049 instance

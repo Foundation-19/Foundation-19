@@ -26,7 +26,8 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049/New()
 	..()
-	src.add_language(/datum/language/zombie)
+	add_language(/datum/language/zombie)
+	add_language(/datum/language/spacer)
 	// fix names
 	real_name = "SCP-049"
 	SetName(real_name)
@@ -60,7 +61,10 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/scp049/Login()
 	. = ..()
 	if(client)
-		mutations |= MUTATION_XRAY
+		if(!(MUTATION_XRAY in mutations))
+			mutations.Add(MUTATION_XRAY)
+			update_mutations()
+			update_sight()
 	if(target)
 		target = null
 /mob/living/carbon/human/scp049/Logout()
@@ -69,9 +73,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		mind = null
 	if(target)
 		target = null
-	if(!client)
-		if(mutations && MUTATION_XRAY)
-			mutations -= MUTATION_XRAY
 
 /mob/living/carbon/human/scp049/proc/see_disease()
 	if (client)
@@ -91,6 +92,10 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	if(client)
 		target = null
 		return target
+	if(MUTATION_XRAY in mutations) //dont let the ai see through walls
+		mutations.Remove(MUTATION_XRAY)
+		update_mutations()
+		update_sight()
 	if(target == src)
 		target = null
 		return target
