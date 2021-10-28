@@ -6,8 +6,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	SCP = /datum/scp/scp_049
 	var/list/attempted_surgery_on = list()
 	var/list/pestilence_images = list()
-	var/mob/living/target = null
-	var/zombies = 0
+	var/mob/living/carbon/human/target = null
 	var/next_emote = -1
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
@@ -82,7 +81,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	if (!target || target.stat == DEAD)
 		var/list/possible_targets = list()
 		for(var/mob/living/carbon/human/L in view(15, src))
-			if(!(istype(L, /mob/living/carbon/human/scp049)) && !(istype(L.species, SPECIES_SCP049_1)))
+			if(!(istype(L, /mob/living/carbon/human/scp049)) && !(L.scp_049_instance))
 				if(L.stat != DEAD)
 					possible_targets += L
 		CHECK_TICK
@@ -113,8 +112,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 	addtimer(CALLBACK(src, .proc/getTarget), 3)
 
-	if (!target)
-		walk(src, null)
+	if(!target)
 		return FALSE
 
 	if (!(target in orange(1, src)))
@@ -125,19 +123,31 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	walk(src, null)
 	if(check_nearby())
 		scp049_attack(target)
+	if(!target.pestilence)
+		target = null
+		return FALSE
 
 	return TRUE
 
 /mob/living/carbon/human/scp049/proc/check_nearby()
+	if(!target)
+		curing = FALSE
+		return FALSE
 	if(target.Adjacent(src))
 		return TRUE
 	else
 		curing = FALSE
+		target = null
 		return FALSE
 
 /mob/living/carbon/human/scp049/proc/scp049_attack(var/mob/living/carbon/human/target)
 	if(check_nearby() && !curing)
-		if(target.is_species(SPECIES_SCP049_1))
+		if(isscp049_1(target))
+			return
+		if(!target.pestilence)
+			to_chat(src, "<span class = 'danger'>They are not infected with the Pestilence.</span>")
+			return
+		if(curing)
 			return
 		var/obj/item/grab/G = src.get_active_hand()
 		visible_message("<span class = 'danger'><i>[src] reaches towards [target.real_name]!</i></danger>")
@@ -176,14 +186,14 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		if(I_GRAB)
 			scp049_attack(target)
 
-/mob/living/carbon/human/scp049/attack_hand(mob/living/carbon/M)
+/mob/living/carbon/human/scp049/attack_hand(mob/living/carbon/human/M)
 	if (!isscp049_1(M) || M.a_intent == I_HELP)
 		if (ishuman(M))
 			var/mob/living/carbon/human/H = M
 			if (H != src)
 				H.pestilence = TRUE
 		return ..(M)
-	M << "<span class = 'danger'><big>You cannot attack your master.</big></span>"
+	to_chat(M, "<span class = 'danger'><big>You cannot attack your master.</big></span>")
 
 /mob/living/carbon/human/scp049/bullet_act(var/obj/item/projectile/P, var/def_zone)
 	if (P.damage && !P.nodamage && ishuman(P.firer))
@@ -243,7 +253,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	if (isscp049(src) || isscp049_1(src))
 		var/say = sanitize(input(src, "Communicate what?") as text)
 		for (var/M in GLOB.scp049s|GLOB.scp049_1s)
-			M << "<em><strong>[real_name]</strong>: [say]</em>"
+			to_chat(M,"<em><strong>[real_name]</strong>: [say]</em>")
 
 // SCP-049 emotes
 /mob/living/carbon/human/scp049/proc/greetings()
@@ -285,113 +295,71 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	set category = "SCP-049"
 	set name = "Cure Victim"
 
-	if(!client)
-		if(!check_nearby())
-			return
 
-		var/mob/living/carbon/human/T = target
-		//if(!G.affecting.pestilence)
-		//	return
-		if(T.is_species(SPECIES_SCP049_1))
-			return
-		if(!(istype(T, /mob/living/carbon/human)))
-			to_chat(src, "<span class='warning'>This is not human, and is therefore free from the disease.</span>")
-			return
+	//if(!G.affecting.pestilence)
+	//	return
+	curing = TRUE
+	conversion_act(target)
 
-		for(var/stage = 4, stage<=4, stage++)
-			switch(stage)
-				if(1)
-					to_chat(src, "<span class='notice'>The disease has taken hold. We must work quickly...</span>")
-				if(2)
-					to_chat(src, "<span class='notice'>You gather your tools.</span>")
-					src.visible_message("<span class='warning'>[src] draws a rolled set of surgical equipment from their robe!</span>")
-					Attack_Voice_Line()
-				if(3)
-					to_chat(src, "<span class='notice'>You create your first incision.</span>")
-					src.visible_message("<span class='danger'>[src] begins slicing open [T] with a scalpel!</span>")
-					to_chat(T, "<span class='danger'>You feel a sharp stabbing pain as your life begins to wane.</span>")
-					new /obj/effect/decal/cleanable/blood/splatter(get_turf(T), T.species.blood_color)
-				if(4)
-					to_chat(src, "<span class='notice'>You spend a great deal of time expertly curing this victim's disease.</span>")
-					src.visible_message("<span class='danger'>[src] begins performing a horrifying procedure on [T]!</span>")
-					if(!T.client)
-						for(var/mob/observer/ghost/ghost in GLOB.ghost_mob_list)
-							if(ghost.mind.current == T)
-								ghost.reenter_corpse()
-
-			if(!do_after(src, 15 SECONDS, T))
-				to_chat(src, "<span class='warning'>Our curing of [T] has been interrupted!</span>")
-				curing = FALSE
-				return
-
-		T.visible_message("<span class = 'danger'><big>The [T] instance slowly shambles to it's feet.</big></span>")
-		T.pre_scp049_name = T.name
-		T.pre_scp049_real_name = T.real_name
-		T.pre_scp049_species = T.species.name
-		T.scp049_zombify()
-		T.species.name = "SCP-049-1"
-		T.real_name = "SCP-049-[++zombies]"
-		T.name = T.real_name
-		T.rejuvenate()
-		T.verbs += /mob/living/carbon/human/proc/SCP_049_talk
-		GLOB.scp049_1s += T
-		T.species.update_skin()
-		T.pestilence = FALSE
-		to_chat(src, "<span class='notice'>You have cured [T].</span>")
-		curing = FALSE
-	else
+/mob/living/carbon/human/scp049/proc/conversion_act(mob/living/carbon/human/target)
+	if(client)
 		var/obj/item/grab/G = src.get_active_hand()
 		if(!G)
 			to_chat(src, "<span class='warning'>We must take hold of a victim to cure their disease.</span>")
 			return
 
-		var/mob/living/carbon/human/T = G.affecting
-		//if(!G.affecting.pestilence)
-		//	return
+		target = G.affecting
 
-		if(!(istype(T, /mob/living/carbon/human)))
-			to_chat(src, "<span class='warning'>This is not human, and is therefore free from the disease.</span>")
+	if(!(istype(target, /mob/living/carbon/human)))
+		to_chat(src, "<span class='warning'>This is not human, and is therefore free from the disease.</span>")
+		return
+	if(!target.pestilence)
+		to_chat(src, "<span class = 'danger'>They are not infected with the Pestilence.</span>")
+		return
+	if(isscp049_1(target))
+		return
+	if(!(istype(target, /mob/living/carbon/human)))
+		to_chat(src, "<span class='warning'>This is not human, and is therefore free from the disease.</span>")
+		return
+
+	for(var/stage = 1, stage<=4, stage++)
+		switch(stage)
+			if(1)
+				to_chat(src, "<span class='notice'>The disease has taken hold. We must work quickly...</span>")
+			if(2)
+				to_chat(src, "<span class='notice'>You gather your tools.</span>")
+				src.visible_message("<span class='warning'>[src] draws a rolled set of surgical equipment from their bag!</span>")
+				Attack_Voice_Line()
+			if(3)
+				to_chat(src, "<span class='notice'>You create your first incision.</span>")
+				src.visible_message("<span class='danger'>[src] begins slicing open [target] with a scalpel!</span>")
+				to_chat(target, "<span class='danger'>You feel a sharp stabbing pain as your life begins to wane.</span>")
+				new /obj/effect/decal/cleanable/blood/splatter(get_turf(target), target.species.blood_color)
+				target.adjustBruteLoss(10)
+			if(4)
+				to_chat(src, "<span class='notice'>You spend a great deal of time expertly curing this victim's disease.</span>")
+				src.visible_message("<span class='danger'>[src] begins performing a horrifying procedure on [target]!</span>")
+				if(!target.client)
+					for(var/mob/observer/ghost/ghost in GLOB.ghost_mob_list)
+						if(ghost.mind.current == target)
+							ghost.reenter_corpse()
+
+		if(!do_after(src, 15 SECONDS, target))
+			to_chat(src, "<span class='warning'>Our curing of [target] has been interrupted!</span>")
+			curing = FALSE
 			return
 
-		for(var/stage = 1, stage<=4, stage++)
-			switch(stage)
-				if(1)
-					to_chat(src, "<span class='notice'>The disease has taken hold. We must work quickly...</span>")
-				if(2)
-					to_chat(src, "<span class='notice'>You gather your tools.</span>")
-					src.visible_message("<span class='warning'>[src] draws a rolled set of surgical equipment from their robe!</span>")
-					Attack_Voice_Line()
-				if(3)
-					to_chat(src, "<span class='notice'>You create your first incision.</span>")
-					src.visible_message("<span class='danger'>[src] begins slicing open [T] with a scalpel!</span>")
-					to_chat(T, "<span class='danger'>You feel a sharp stabbing pain as your life begins to wane.</span>")
-					new /obj/effect/decal/cleanable/blood/splatter(get_turf(T), T.species.blood_color)
-				if(4)
-					to_chat(src, "<span class='notice'>You spend a great deal of time expertly curing this victim's disease.</span>")
-					src.visible_message("<span class='danger'>[src] begins performing a horrifying procedure on [T]!</span>")
-					if(!T.client)
-						for(var/mob/observer/ghost/ghost in GLOB.ghost_mob_list)
-							if(ghost.mind.current == T)
-								ghost.reenter_corpse()
-
-			if(!do_after(src, 15 SECONDS, T))
-				to_chat(src, "<span class='warning'>Our curing of [T] has been interrupted!</span>")
-				curing = FALSE
-				return
-
-		if(!T.client)
-			T.ignore_ssd_check = 1
-		T.pre_scp049_name = T.name
-		T.pre_scp049_real_name = T.real_name
-		T.pre_scp049_species = T.species.name
-		T.scp049_zombify()
-		T.real_name = "SCP-049-[++zombies]"
-		T.name = T.real_name
-		T.rejuvenate()
-		T.visible_message("<span class = 'danger'><big>The [T] instance slowly shambles to it's feet.</big></span>")
-		T.verbs += /mob/living/carbon/human/proc/SCP_049_talk
-		GLOB.scp049_1s += T
-		T.pestilence = FALSE
-		to_chat(src, "<span class='notice'>You have cured [T].</span>")
-		target = null
-		curing = FALSE
+	target.pre_scp049_name = target.name
+	target.pre_scp049_real_name = target.real_name
+	target.pre_scp049_species = target.species.name
+	target.scp_049_instance = TRUE
+	target.zombify()
+	target.visible_message("<span class = 'danger'><big>The lifeless corpse of [target.pre_scp049_name] begins to convulse violently!</big></span>")
+	target.name = target.real_name
+	target.rejuvenate()
+	target.verbs += /mob/living/carbon/human/proc/SCP_049_talk
+	GLOB.scp049_1s += target
+	target.pestilence = FALSE
+	to_chat(src, "<span class='notice'>You have cured [target].</span>")
+	curing = FALSE
+	getTarget()

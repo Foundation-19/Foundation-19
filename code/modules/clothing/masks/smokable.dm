@@ -565,5 +565,6 @@
 	. = ..()
 
 /obj/item/clothing/mask/smokable/cigarette/bluelady/light()
-	for(var/mob/living/carbon/human/affected in range(2, src))
+	. = ..()
+	for(var/mob/living/carbon/human/affected in range(1, src))
 		affected.update_013_status()

@@ -39,7 +39,7 @@ GLOBAL_LIST_INIT(zombie_messages, list(
 GLOBAL_LIST_INIT(zombie_species, list(\
 	SPECIES_HUMAN, SPECIES_DIONA, SPECIES_UNATHI, SPECIES_VOX, SPECIES_VOX_ARMALIS,\
 	SPECIES_SKRELL, SPECIES_PROMETHEAN, SPECIES_ALIEN, SPECIES_YEOSA, SPECIES_VATGROWN,\
-	SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_MULE, SPECIES_MONKEY
+	SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_MULE, SPECIES_MONKEY, SPECIES_SCP049_1
 ))
 
 
@@ -94,7 +94,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	H.mutations |= MUTATION_FERAL
 	H.mutations |= MUTATION_XRAY
 	H.mutations |= mNobreath //Byond doesn't like adding them all in one OR statement :(
-	H.verbs += /mob/living/carbon/proc/consume
+	H.verbs += /mob/living/carbon/human/proc/consume
 	H.move_intents = list(/decl/move_intent/creep) //Zooming days are over
 	H.a_intent = "harm"
 	H.move_intent = new /decl/move_intent/creep
@@ -130,11 +130,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 /datum/species/zombie/handle_environment_special(mob/living/carbon/human/H)
 	if (H.stat == CONSCIOUS)
 		if (prob(5))
-			playsound(H.loc, 'sound/hallucinations/far_noise.ogg', 15, 1)
-		else if (prob(5))
-			playsound(H.loc, 'sound/hallucinations/veryfar_noise.ogg', 15, 1)
-		else if (prob(5))
-			playsound(H.loc, 'sound/hallucinations/wail.ogg', 15, 1)
+			playsound(H.loc, "zombie_sound", 15, 1)
 
 	for(var/obj/item/organ/I in H.internal_organs)
 		if (I.damage > 0)
@@ -199,8 +195,8 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 /datum/species/zombie/proc/handle_action(mob/living/carbon/human/H)
 	var/dist = 128
-	for(var/mob/living/M in hearers(H, 15))
-		if ((ishuman(M) || istype(M, /mob/living/exosuit)) && !M.is_species(SPECIES_ZOMBIE) && !M.is_species(SPECIES_DIONA)) //Don't attack fellow zombies, or diona
+	for(var/mob/living/carbon/human/M in hearers(H, 15))
+		if ((ishuman(M) || istype(M, /mob/living/exosuit)) && !M.is_species(SPECIES_ZOMBIE) && !M.is_species(SPECIES_DIONA) && !M.scp_049_instance) //Don't attack fellow zombies, or diona
 			if (istype(M, /mob/living/exosuit))
 				var/mob/living/exosuit/MC = M
 				if (!LAZYLEN(MC.pilots))
@@ -249,10 +245,10 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 		target = null //Target lost
 
 	else
-		if (!H.lying)
-			walk(H, 0) //Clear walking
-			if (prob(33) && isturf(H.loc) && !H.pulledby)
-				H.SelfMove(pick(GLOB.cardinal))
+		if(!H.lying)
+			if(prob(33))
+				var/turf/T = step_rand(H)
+				H.Move(get_dir(H, T))
 
 
 /datum/language/zombie
@@ -423,11 +419,16 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	species = all_species[SPECIES_ZOMBIE]
 	species.handle_post_spawn(src)
 
+	if(scp_049_instance)
+		species.name = "SCP-049-1"
+		species.name_plural = "SCP-049-1s"
+		real_name = "SCP-049-[GLOB.scp049_1s.len]"
+
 	var/turf/T = get_turf(src)
-	playsound(T, 'sound/hallucinations/wail.ogg', 25, 1)
+	playsound(T, "zombie_sound", 25, 1)
 
 
-/mob/living/carbon/proc/consume()
+/mob/living/carbon/human/proc/consume()
 	set name = "Consume"
 	set desc = "Regain life and infect others by feeding upon them."
 	set category = "Abilities"
@@ -470,7 +471,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	last_special = world.time + 5 SECONDS
 
 	src.visible_message(SPAN_DANGER("\The [src] hunkers down over \the [target], tearing into their flesh."))
-	playsound(loc, 'sound/effects/bonebreak3.ogg', 20, 1)
+	playsound(loc, 'sound/scp/voice/049_1/zombiescratch.ogg', 20, 1)
 
 	target.adjustHalLoss(50)
 
@@ -485,6 +486,8 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 			if (target.stat != DEAD)
 				to_chat(src,SPAN_WARNING("You've scraped \the [target] down to the bones already!."))
 				target.zombify()
+				if(src.scp_049_instance) //are we an 049_1? if so we should make more 049_1s
+					target.scp_049_instance = TRUE
 			else
 				to_chat(src,SPAN_DANGER("You shred and rip apart \the [target]'s remains!."))
 				target.gib()
@@ -507,7 +510,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 		src.adjustBrainLoss(-5)
 		src.adjust_nutrition(40)
 
-		playsound(loc, 'sound/effects/splat.ogg', 20, 1)
+		playsound(loc, 'sound/scp/voice/049_1/zombiescratch.ogg', 20, 1)
 		new /obj/effect/decal/cleanable/blood/splatter(get_turf(src), target.species.blood_color)
 		if (target.getBruteLoss() > target.maxHealth*0.75)
 			if (prob(50))

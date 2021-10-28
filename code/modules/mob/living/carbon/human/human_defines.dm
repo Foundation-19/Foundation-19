@@ -112,4 +112,7 @@
 	var/list/descriptors
 
 	var/last_smelt = 0
-	var/scp_013_stage = 0 //for scp-013
+	//various stages of becoming an instance of an SCP
+	var/scp_013_stage = 0
+	//true or false if we are an 049 instance
+	var/scp_049_instance = FALSE
