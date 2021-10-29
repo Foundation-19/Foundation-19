@@ -191,8 +191,8 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 /datum/species/zombie/proc/handle_action(mob/living/carbon/human/H)
 	var/dist = 128
-	for(var/mob/living/carbon/human/M in hearers(H, 15))
-		if ((ishuman(M) || istype(M, /mob/living/exosuit)) && !M.is_species(SPECIES_ZOMBIE) && !M.is_species(SPECIES_DIONA) && !M.scp_049_instance) //Don't attack fellow zombies, or diona
+	for(var/mob/living/M in hearers(H, 15))
+		if ((ishuman(M) || istype(M, /mob/living/exosuit)) && !M.is_species(SPECIES_ZOMBIE) && !M.is_species(SPECIES_DIONA)) //Don't attack fellow zombies, or diona
 			if (istype(M, /mob/living/exosuit))
 				var/mob/living/exosuit/MC = M
 				if (!LAZYLEN(MC.pilots))
@@ -271,6 +271,8 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	. = ..()
 	if (!.)
 		return FALSE
+	if(isscp049(target))
+		return
 	if (target.is_species(SPECIES_ZOMBIE))
 		to_chat(usr, SPAN_WARNING("They don't look very appetizing!"))
 		return FALSE
@@ -306,7 +308,8 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	if (!ishuman(M))
 		return
 	var/mob/living/carbon/human/H = M
-
+	if(isscp049(H))
+		return
 	if (!(H.species.name in GLOB.zombie_species) || H.is_species(SPECIES_DIONA) || H.isSynthetic())
 		remove_self(volume)
 		return
@@ -357,6 +360,8 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 
 /mob/living/carbon/human/proc/zombify()
+	if(isscp049(src))
+		return
 	if (!(species.name in GLOB.zombie_species) || is_species(SPECIES_DIONA) || is_species(SPECIES_ZOMBIE) || isSynthetic())
 		return
 
@@ -439,7 +444,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 			if (L.is_species(SPECIES_ZOMBIE))
 				to_chat(src, SPAN_WARNING("\The [L] isn't fresh anymore!"))
 				continue
-			if (!(L.species.name in GLOB.zombie_species) || L.is_species(SPECIES_DIONA) || L.isSynthetic())
+			if (!(L.species.name in GLOB.zombie_species) || L.is_species(SPECIES_DIONA) || L.isSynthetic() || isscp049(L))
 				to_chat(src, SPAN_WARNING("You'd break your teeth on \the [L]!"))
 				continue
 			victims += L

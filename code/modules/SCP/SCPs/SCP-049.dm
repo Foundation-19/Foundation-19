@@ -244,7 +244,10 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 				target = H
 				H.pestilence = TRUE
 		return ..(M)
-	to_chat(M, "<span class = 'danger'><big>You cannot attack your master.</big></span>")
+
+	if(isscp049_1(M))
+		to_chat(M, "<span class = 'danger'><big>You cannot attack your master.</big></span>")
+		return
 
 /mob/living/carbon/human/scp049/bullet_act(var/obj/item/projectile/P, var/def_zone)
 	if (P.damage && !P.nodamage && ishuman(P.firer))
