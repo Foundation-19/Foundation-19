@@ -1,18 +1,21 @@
+//sculpture
+//SCP-096, nothing more need be said
 /mob/living/simple_animal/hostile/scp096
 	name = "???"
 	desc = "No, no, you know not to look closely at it" //for non-targets
 	var/target_desc_1 = "A pale, emanciated figure. It looks almost human, but its limbs are long and skinny, and its face is......<span class='danger'>no. NO. NO</span>" //for targets
 	var/target_desc_2 = "<span class='danger'>NO</span>" //on second examine
-	icon = 'icons/SCP/scp096.dmi'
-	icon_state = "scp-096"
-	icon_living = "scp-096"
-	icon_dead = "scp-096"
+	icon = 'icons/SCP/096.dmi'
+	icon_state = "scp"
+	icon_living = "scp"
+	icon_dead = "scp-dead"
 	response_help  = "touches the"
 	response_disarm = "pushes the"
 	response_harm   = "hits the"
 
 	health = 600
 	maxHealth = 600
+	move_to_delay = 2
 
 	var/murder_sound = list('sound/voice/scream_horror2.ogg')
 	var/scare_sound = list('sound/scp/scare1.ogg','sound/scp/scare2.ogg','sound/scp/scare3.ogg','sound/scp/scare4.ogg')	//Boo
@@ -141,12 +144,13 @@
 			to_chat(H, "<span class='alert'>It is becoming difficult to resist the urge to examine it ...</span>")
 		if(5)
 			to_chat(H, "<span class='alert'>Unable to resist the urge, you look closely...</span>")
-			addtimer(CALLBACK(H, examine(H)), 5 SECONDS)
+			spawn(10)
+				examine(H)
 
 	examine_urge = min(examine_urge+1, 5)
 	examine_urge_values[index] = examine_urge
 
-	addtimer(CALLBACK(H, reduce_examine_urge(H)), 300 SECONDS)
+	CALLBACK( addtimer(H, .proc/reduce_examine_urge), 200 SECONDS)
 
 /mob/living/simple_animal/hostile/scp096/proc/reduce_examine_urge(var/mob/living/carbon/H)
 	var/index
@@ -169,12 +173,10 @@
 		if (!(userguy in shitlist))
 			to_chat(userguy, target_desc_1)
 			shitlist += userguy
-			spawn(20)
-				if(userguy)
-					to_chat(userguy, "<span class='alert'>That was a mistake. Run</span>")
-			spawn(30)
-				if(userguy)
-					to_chat(userguy, "<span class='danger'>RUN</span>")
+			if(userguy)
+				CALLBACK(addtimer( to_chat(userguy, "<span class='alert'>That was a mistake. Run</span>"), 20 SECONDS))
+			if(userguy)
+				CALLBACK(addtimer( to_chat(userguy, "<span class='danger'>RUN</span>"), 30 SECONDS))
 		else
 			to_chat(userguy, target_desc_2)
 		if(will_scream)
@@ -204,6 +206,10 @@
 		target = null
 		return
 
+	if(buckled)
+		visible_message("<span class='danger'>[src] breaks out of its restraints!</span>")
+//		buckled.resist()
+
 	var/turf/target_turf
 
 	//Send the warning that we are is homing in
@@ -230,6 +236,9 @@
 
 				for(var/obj/structure/window/W in next_turf)
 					W.health -= 1000
+					sleep(5)
+				for(var/turf/simulated/wall/E in next_turf)
+					E.ex_act(1)
 					sleep(5)
 				for(var/obj/structure/table/O in next_turf)
 					O.ex_act(1)
@@ -317,6 +326,7 @@
 
 		T.gib()
 
+		//Logging stuff
 		log_admin("[T] ([T.ckey]) has been torn apart by an active [src].")
 		message_admins("ALERT: <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[T.x];Y=[T.y];Z=[T.z]'>[T.real_name]</a> has been torn apart by an active [src].")
 		shitlist -= T
@@ -327,13 +337,13 @@
 			doom_message_played = 0
 
 /mob/living/simple_animal/hostile/scp096/proc/handle_idle()
+
 	//Movement
-	if(!client  && !anchored)
+	if(!client && !anchored)
 		if(isturf(src.loc) && !resting && !buckled)		//This is so it only moves if it's not inside a closet, gentics machine, etc.
 			turns_since_move++
 			if(turns_since_move >= turns_per_move)
 				if(!(pulledby)) //Soma animals don't move when pulled
-					Move()
 					turns_since_move = 0
 
 	//Speaking
