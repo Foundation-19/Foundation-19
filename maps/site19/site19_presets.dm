@@ -11,27 +11,13 @@ var/const/NETWORK_895			= "SCP-895 CCTV Network (CAUTION!)"
 
 /datum/map/site53/get_network_access(var/network)
 	switch(network)
-		if(NETWORK_ENGINE)
+		if(NETWORK_ENGINE, NETWORK_ENTRANCE, NETWORK_LCZ, NETWORK_HCZ)
 			return access_mtflvl1
-		if(NETWORK_ENTRANCE)
-			return access_mtflvl1
-		if(NETWORK_LCZ)
-			return access_mtflvl1
-		if(NETWORK_HCZ)
-			return access_mtflvl1
-		if(NETWORK_513)
-			return access_sciencelvl1
-		if(NETWORK_049)
-			return access_sciencelvl1
-		if(NETWORK_106)
-			return access_sciencelvl1
-		if(NETWORK_173)
-			return access_sciencelvl1
-		if(NETWORK_012)
+		if(NETWORK_513, NETWORK_049, NETWORK_106, NETWORK_173, NETWORK_012)
 			return access_sciencelvl1
 		if(NETWORK_895)
 			return access_sciencelvl3
-	return get_shared_network_access(network) || ..()
+	return ..()
 
 /datum/map/site53
 	// Networks that will show up as options in the camera monitor program
@@ -84,16 +70,14 @@ var/const/NETWORK_895			= "SCP-895 CCTV Network (CAUTION!)"
 	network = list(NETWORK_895)
 
 // Substation SMES
-/obj/machinery/power/smes/buildable/preset/ds90/substation/configure_and_install_coils()
-	component_parts += new /obj/item/weapon/smes_coil(src)
-	component_parts += new /obj/item/weapon/smes_coil(src)
+/obj/machinery/power/smes/buildable/preset/ds90/substation
+	uncreated_component_parts = list(/obj/item/stock_parts/smes_coil = 1) // Note that it gets one more from construction
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 
 // Substation SMES (charged and with full I/O setting)
-/obj/machinery/power/smes/buildable/preset/ds90/substation_full/configure_and_install_coils()
-	component_parts += new /obj/item/weapon/smes_coil(src)
-	component_parts += new /obj/item/weapon/smes_coil(src)
+/obj/machinery/power/smes/buildable/preset/ds90/substation_full
+	uncreated_component_parts = list(/obj/item/stock_parts/smes_coil = 1)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE
@@ -101,11 +85,11 @@ var/const/NETWORK_895			= "SCP-895 CCTV Network (CAUTION!)"
 	_fully_charged = TRUE
 
 // Main Engine output SMES
-/obj/machinery/power/smes/buildable/preset/ds90/engine_main/configure_and_install_coils()
-	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
-	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
-	component_parts += new /obj/item/weapon/smes_coil/super_capacity(src)
-	component_parts += new /obj/item/weapon/smes_coil/super_capacity(src)
+/obj/machinery/power/smes/buildable/preset/ds90/engine_main
+	uncreated_component_parts = list(
+		/obj/item/weapon/smes_coil/super_io = 2,
+		/obj/item/weapon/smes_coil/super_capacity = 2
+	)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE
@@ -113,8 +97,8 @@ var/const/NETWORK_895			= "SCP-895 CCTV Network (CAUTION!)"
 	_fully_charged = TRUE
 
 // Shuttle SMES
-/obj/machinery/power/smes/buildable/preset/ds90/shuttle/configure_and_install_coils()
-	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
+/obj/machinery/power/smes/buildable/preset/ds90/shuttle
+	uncreated_component_parts = list(/obj/item/stock_parts/smes_coil/super_io = 1)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE
@@ -122,16 +106,10 @@ var/const/NETWORK_895			= "SCP-895 CCTV Network (CAUTION!)"
 	_fully_charged = TRUE
 
 // Hangar SMES. Charges the shuttles so needs a pretty big throughput.
-/obj/machinery/power/smes/buildable/preset/ds90/hangar/configure_and_install_coils()
-	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
-	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
+/obj/machinery/power/smes/buildable/preset/ds90/hangar
+	uncreated_component_parts = list(/obj/item/stock_parts/smes_coil/super_io = 2)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
-
-/datum/map/proc/get_shared_network_access(var/network)
-	switch(network)
-		if(NETWORK_ENGINE)
-			return access_mtflvl1

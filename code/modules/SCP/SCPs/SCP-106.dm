@@ -3,6 +3,8 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 
 /mob/living/carbon/human/scp106
 	desc = "A rotting, elderly old man."
+	icon = 'icons/mob/scp106.dmi'
+	icon_state = null
 	SCP = /datum/scp/SCP_106
 	var/mob/living/target = null
 	var/last_x = -1
@@ -13,30 +15,23 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	see_in_dark = 7
 
 /mob/living/carbon/human/scp106/examine(mob/user)
-	user << "<b><span class = 'keter'><big>SCP-106</big></span></b> - [desc]"
+	to_chat(user, "<b><span class = 'keter'><big>SCP-106</big></span></b> - [desc]")
 
 /datum/scp/SCP_106
 	name = "SCP-106"
 	designation = "106"
 	classification = KETER
 
-/obj/sprite_helper/scp106
-	icon = 'icons/mob/scp106.dmi'
-
 /mob/living/carbon/human/scp106/IsAdvancedToolUser()
 	return FALSE
 
-/mob/living/carbon/human/scp106/New()
-	..()
+/mob/living/carbon/human/scp106/Initialize()
+	. = ..()
 
-	spawn (20)
-		fix_icons()
+	// fix names
+	fully_replace_character_name("SCP-106")
 
-		// fix names
-		real_name = "SCP-106"
-		SetName(real_name)
-		if(mind)
-			mind.name = real_name
+	GLOB.moved_event.register(src, src, /mob/living/carbon/human/scp106/proc/update_stuff_PD)
 
 	verbs += /mob/living/carbon/human/scp106/proc/phase_through_airlock
 	if (!(loc in GLOB.scp106_floors))
@@ -45,23 +40,13 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	verbs += /mob/living/carbon/human/scp106/proc/confuse_victims
 
 	set_species("SCP-106")
-	GLOB.scp106s += src
+	GLOB.scp106s |= src
 
 /mob/living/carbon/human/scp106/Destroy()
 	GLOB.scp106s -= src
 	..()
 
-/mob/living/carbon/human/scp106/Move()
-	..()
-	update_stuff_PD()
-
-
-/mob/living/carbon/human/scp106/forceMove(destination)
-	. = ..(destination)
-	update_stuff_PD()
-
 /mob/living/carbon/human/scp106/proc/update_stuff_PD()
-
 	if (loc in GLOB.scp106_floors)
 		species.brute_mod = 0.1
 		species.burn_mod = 0.1
@@ -69,28 +54,16 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		species.brute_mod = 0.5
 		species.burn_mod = 0.5
 
-	// stand_icon tends to come back after movement
-	fix_icons()
+/mob/living/carbon/human/scp106/update_icons()
+	return
 
-/mob/living/carbon/human/scp106/proc/fix_icons()
-	icon = null
-	icon_state = null
-	stand_icon = null
-	lying_icon = null
-	update_icon = FALSE
-
-	if (!vis_contents.len)
-		vis_contents += new /obj/sprite_helper/scp106
-
-	// we're lying, turn right
-	var/obj/scp106_sprite_helper = vis_contents[vis_contents.len]
-
+/mob/living/carbon/human/scp106/on_update_icon()
 	if (lying || resting)
-		scp106_sprite_helper.icon = turn(icon('icons/mob/scp106.dmi'), 90)
+		var/matrix/M =  matrix()
+		transform = M.Turn(90)
 	else
-		scp106_sprite_helper.icon = 'icons/mob/scp106.dmi'
-
-	scp106_sprite_helper.dir = dir
+		transform = null
+	return
 
 /mob/living/carbon/human/scp106/get_pressure_weakness()
 	return 0
@@ -102,7 +75,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	return 2.0
 
 /mob/living/carbon/human/scp106/say(var/message, var/datum/language/speaking = null, whispering)
-	src << "<span class = 'notice'>You cannot speak.</span>"
+	to_chat(src, "<span class = 'notice'>You cannot speak.</span>")
 	return 0
 
 /mob/living/carbon/human/scp106/attack_hand(var/mob/living/L)
@@ -220,7 +193,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		return ..(M)
 	var/mob/living/carbon/human/scp106/H = M
 	if (isscp049(src))
-		H << "<span class = \"danger\">You cannot attack SCP-049.</span>"
+		to_chat(H, "<span class = 'danger'>You cannot attack SCP-049.</span>")
 	else
 		H.scp106_attack(src)
 
@@ -291,49 +264,29 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 
 		visible_message("<span class = 'danger'>[src] starts to phase through \the [O].</span>")
 
-		phase_cooldown = world.time + PHASE_TIME + 5
-
-		var/initial_loc = loc
-		var/atom/sprite = null
+		phase_cooldown = world.time + PHASE_TIME + 0.5 SECONDS
 
 		alpha = 128
-		for (var/atom in vis_contents)
-			var/atom/a = atom
-			a.alpha = 128
-			a.layer = 5.1
-			sprite = a
+		layer = OBSERVER_LAYER
 
-		if (sprite)
-			for (var/v in 1 to 58)
-				spawn (round(v * 0.5, 0.1))
-					if (!src || !O || loc != initial_loc)
-						goto __fixsprite__
-					else
-						switch (get_dir(src, O))
-							if (NORTH, NORTHEAST, NORTHWEST)
-								++sprite.pixel_y
-							if (SOUTH, SOUTHEAST, SOUTHWEST)
-								--sprite.pixel_y
-							if (EAST)
-								++sprite.pixel_x
-							if (WEST)
-								--sprite.pixel_x
+		switch(dir)
+			if (NORTH, NORTHEAST, NORTHWEST)
+				animate(src, pixel_y = 58, time = PHASE_TIME)
+			if (SOUTH, SOUTHEAST, SOUTHWEST)
+				animate(src, pixel_y = -58, time = PHASE_TIME)
+			if (EAST)
+				animate(src, pixel_x = 58, time = PHASE_TIME)
+			if (WEST)
+				animate(src, pixel_x = -58, time = PHASE_TIME)
 
 		if (do_after(src, PHASE_TIME, O))
 			forceMove(get_step(src, dir))
-			forceMove(get_step(src, dir))
 			visible_message("<span class = 'danger'>[src] phases through \the [O].</span>")
 
-		__fixsprite__
-
 		alpha = 255
-		for (var/atom in vis_contents)
-			var/atom/a = atom
-			a.alpha = 255
-			a.layer = MOB_LAYER + 0.1
-			a.pixel_x = 0
-			a.pixel_y = 0
-
+		layer = MOB_LAYER + 0.1
+		pixel_x = 0
+		pixel_y = 0
 		break
 #undef PHASE_TIME
 
@@ -354,11 +307,11 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	confusing = !confusing
 	to_chat(src, "You are [confusing ? "now confusing" : "no longer confusing"] your victims.")
 
-/mob/living/carbon/human/scp106/apply_damage(var/damage = 0, var/damagetype = BRUTE, var/def_zone = null, var/blocked = 0, var/damage_flags = 0, var/obj/used_weapon = null, var/obj/item/organ/external/given_organ = null)
+/mob/living/carbon/human/scp106/apply_damage(var/damage = 0, var/damagetype = BRUTE, var/def_zone = null, var/blocked = 0, var/damage_flags = 0, var/obj/used_weapon = null, var/armor_pen, var/silent = FALSE, var/obj/item/organ/external/given_organ = null)
 	. = ..(damage, damagetype, def_zone, blocked, damage_flags, used_weapon, given_organ)
 	if (getBruteLoss() + getFireLoss() + getToxLoss() + getCloneLoss() >= 200)
 		if (!(loc in GLOB.scp106_floors))
-			src << "<span class = 'danger'><i>You flee back to your pocket dimension!</i></danger>"
+			to_chat(src, "<span class='danger'><i>You flee back to your pocket dimension!</i></span>")
 			forceMove(pick(GLOB.scp106_floors))
 			verbs -= /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
 			verbs += /mob/living/carbon/human/scp106/proc/go_back

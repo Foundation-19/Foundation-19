@@ -167,10 +167,10 @@
 		return
 	if(!mob)
 		return // Moved here to avoid nullrefs below
-	return mob.SelfMove(direction)
-
 	if (mob.is_scp012_affected(n))
 		return
+	return mob.SelfMove(direction)
+
 
 // Checks whether this mob is allowed to move in space
 // Return 1 for movement, 0 for none,

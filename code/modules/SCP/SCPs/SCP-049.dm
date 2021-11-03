@@ -3,6 +3,8 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049
 	desc = "A mysterious plague doctor."
+	icon = 'icons/mob/scp049.dmi'
+	icon_state = null
 	SCP = /datum/scp/SCP_049
 	var/list/attempted_surgery_on = list()
 	var/list/pestilence_images = list()
@@ -13,30 +15,32 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	see_in_dark = 7
 
 /mob/living/carbon/human/scp049/examine(mob/user)
-	user << "<b><span class = 'euclid'><big>SCP-049</big></span></b> - [desc]"
+	to_chat(user, "<b><span class = 'euclid'><big>SCP-049</big></span></b> - [desc]")
 
 /datum/scp/SCP_049
 	name = "SCP-049"
 	designation = "049"
 	classification = EUCLID
 
-/obj/sprite_helper/scp049
-	icon = 'icons/mob/scp049.dmi'
-
 /mob/living/carbon/human/scp049/IsAdvancedToolUser()
 	return FALSE
 
-/mob/living/carbon/human/scp049/New()
-	..()
+/mob/living/carbon/human/scp049/update_icons()
+	return
 
-	spawn (20)
-		fix_icons()
+/mob/living/carbon/human/scp049/on_update_icon()
+	if (lying || resting)
+		var/matrix/M =  matrix()
+		transform = M.Turn(90)
+	else
+		transform = null
+	return
 
-		// fix names
-		real_name = "SCP-049"
-		SetName(real_name)
-		if(mind)
-			mind.name = real_name
+/mob/living/carbon/human/scp049/Initialize()
+	. = ..()
+
+	// fix names
+	fully_replace_character_name("SCP-049")
 
 	set_species("SCP-049")
 	GLOB.scp049s += src
@@ -55,52 +59,22 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049/Destroy()
 	GLOB.scp049s -= src
-	..()
+	. = ..()
 
 /mob/living/carbon/human/scp049/Life()
-	..()
+	. = ..()
 	if (client)
 		client.images -= pestilence_images
+		for (var/image in pestilence_images)
+			qdel(image)
 		pestilence_images.Cut()
 		for (var/mob/living/carbon/human/H in view(world.view, src))
 			if (H.pestilence)
 				pestilence_images += image('icons/mob/scp049.dmi', H, "pestilence", MOB_LAYER+0.01)
 		client.images |= pestilence_images
-	if (BRUTE >= 600)
+	if (getBruteLoss() >= 600)
 		sleeping += 1
 		adjustBruteLoss(BRUTE - 30, 0)
-
-/mob/living/carbon/human/scp049/Move()
-	..()
-	update_stuff()
-
-/mob/living/carbon/human/scp049/forceMove(destination)
-	. = ..(destination)
-	update_stuff()
-
-/mob/living/carbon/human/scp049/proc/update_stuff()
-	// stand_icon tends to come back after movement
-	fix_icons()
-
-/mob/living/carbon/human/scp049/proc/fix_icons()
-	icon = null
-	icon_state = null
-	stand_icon = null
-	lying_icon = null
-	update_icon = FALSE
-
-	if (!vis_contents.len)
-		vis_contents += new /obj/sprite_helper/scp049
-
-	// we're lying, turn right
-	var/obj/sprite_helper/scp049/SH = vis_contents[vis_contents.len]
-
-	if (lying || resting)
-		SH.icon = turn(icon('icons/mob/scp049.dmi'), 90)
-	else
-		SH.icon = 'icons/mob/scp049.dmi'
-
-	SH.dir = dir
 
 /mob/living/carbon/human/scp049/get_pressure_weakness()
 	return 0
@@ -121,11 +95,12 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 	/* if we have no target, or our target is dead, or our target is not human, or our target is out of view,
 	 * try to find a better one. Failing to do so just makes us continue to go after the old target */
-	if (!target || target.stat == DEAD || !ishuman(target) || (ishuman(target) && !target:pestilence) || !(src in viewers(world.view, target)))
+	var/mob/living/carbon/human/targethuman = target
+	if (!target || target.stat == DEAD || !ishuman(target) || (ishuman(target) && !targethuman.pestilence) || !(src in viewers(world.view, target)))
 
 		// add all living mobs, and humans with the Pestilence
 		. = list()
-		for (var/mob/living/L in oview(world.view, src))
+		for (var/mob/living/L in view(world.view, src))
 			if (L.stat != DEAD)
 				if (!ishuman(L))
 					. += L
@@ -135,11 +110,10 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 						. += H
 
 		// if there is at least one human in this list, remove all non-human candidates
-		for (var/mob/living/carbon/human/H in .)
+		if (locate(/mob/living/carbon/human) in .)
 			for (var/mob/living/L in .)
 				if (!ishuman(L))
 					. -= L
-			break
 
 		// pick a random candidate
 		if (length(.))
@@ -156,7 +130,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		walk(src, null)
 		return FALSE
 
-	if (!(target in orange(1, src)))
+	if (!(target in range(1, src)))
 		// moves slightly faster than humans
 		walk_to(src, target, 1/*, 0.2+config.run_speed*/)
 		return TRUE
@@ -175,15 +149,15 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	if (H.a_intent == I_HELP)
 		to_chat(H, "<span class='warning'>You refrain from curing as your intent is set to help.</span>")
 		return
-	if (H.client && !pestilence)
-		H << "<span class = 'danger'>They are not infected with the Pestilence.</span>"
+	if (!pestilence)
+		to_chat(H, "<span class='danger'>They are not infected with the Pestilence!</span>")
 		return
 	if (isscp343(src))
-		to_chat(H, "<span class='warning'> You refrain from curing god.</span>")
+		to_chat(H, "<span class='warning'>You refrain from curing God.</span>")
 		return
 	switch (stat)
 		if (CONSCIOUS, UNCONSCIOUS)
-			visible_message("<span class = 'danger'><big>[H] touches [src], killing them instantly!</big></span>")
+			visible_message("<span class='danger'><big>[H] touches [src], killing them instantly!</big></span>")
 			mutations |= MUTATION_HUSK
 			regenerate_icons()
 			death()
@@ -197,7 +171,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 			if (H != src)
 				H.pestilence = TRUE
 		return ..(M)
-	M << "<span class = 'danger'><big>You cannot attack your master.</big></span>"
+	to_chat(M, "<span class = 'danger'><big>You cannot attack your master.</big></span>")
 
 /mob/living/carbon/human/scp049/bullet_act(var/obj/item/projectile/P, var/def_zone)
 	if (P.damage && !P.nodamage && ishuman(P.firer))
@@ -229,7 +203,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	var/obj/item/grab/G = locate() in src
 	if (G)
 		if (target in attempted_surgery_on)
-			src << "<span class = 'danger'>This cadaver is already spent.</span>"
+			to_chat(src, "<span class = 'danger'>This cadaver is already spent.</span>")
 			qdel(G)
 			return
 		visible_message("<span class = 'danger'>[src] begins to perform surgery on [target].</span>")
@@ -263,7 +237,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 						else
 							H.visible_message("<span class = 'notice'>The surgery seems to have been unsucessful.</span>")
 						H.pestilence = FALSE
-						src << "<span class = 'good'><big>You have cured [H].</big></span>"
+						to_chat(src, "<span class = 'good'><big>You have cured [H].</big></span>")
 					else
 						target.visible_message("<span class = 'notice'>The surgery seems to have been unsucessful.</span>")
 			qdel(G)
@@ -312,7 +286,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	if (isscp049(src) || isscp049_1(src))
 		var/say = sanitize(input(src, "Communicate what?") as text)
 		for (var/M in GLOB.scp049s|GLOB.scp049_1s)
-			M << "<em><strong>[real_name]</strong>: [say]</em>"
+			to_chat(M, "<em><strong>[real_name]</strong>: [say]</em>")
 
 // SCP-049 emotes
 /mob/living/carbon/human/scp049/proc/greetings()

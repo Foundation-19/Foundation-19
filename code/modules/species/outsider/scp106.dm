@@ -1,6 +1,6 @@
-/datum/species/scp049
-	name = "SCP-049"
-	name_plural = "SCP-049s"
+/datum/species/scp106
+	name = "SCP-106"
+	name_plural = "SCP-106s"
 
 //	darksight = 8
 	has_organ = list()
@@ -9,7 +9,7 @@
 	blood_color = "#622a37"
 	flesh_color = "#442A37"
 
-	species_flags = SPECIES_FLAG_NO_SLIP | SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_EMBED | SPECIES_FLAG_NO_TANGLE | SPECIES_FLAG_NO_PAIN
+	species_flags = SPECIES_FLAG_NO_SLIP | SPECIES_FLAG_NO_POISON
 	spawn_flags = SPECIES_IS_RESTRICTED
 
 	genders = list(MALE)
@@ -34,16 +34,14 @@
 	radiation_mod =  0.0                    // No radiation damage
 	flash_mod =      0.0                    // Unflashable
 
-	hud_type = /datum/hud_data/scp049
-
-// #define 049AI
-/datum/species/scp049/handle_npc(var/mob/living/carbon/human/scp049/H)
+// #define AI_106
+/datum/species/scp106/handle_npc(var/mob/living/carbon/human/scp106/H)
 	// sanity check, apparently its needed
 	if (!H || H.client)
 		return
 	// walk around randomly if we don't have a target
-	#ifdef 049AI
-	if (!H.pursueTarget())
+	#ifdef AI_106
+	if (!H.pursueTarget() || (H.loc in GLOB.scp106_floors))
 		var/turf/T = step_rand(H)
 		H.Move(get_dir(H, T))
 	#else

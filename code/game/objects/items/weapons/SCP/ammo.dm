@@ -18,7 +18,7 @@
 	max_ammo = 20
 	multiple_sprites = 1
 
-	/obj/item/ammo_magazine/scp/p90_mag
+/obj/item/ammo_magazine/scp/p90_mag
 	name = "magazine (5.7x28mm)"
 	icon_state = "p90"
 	origin_tech = list(TECH_COMBAT = 2)
