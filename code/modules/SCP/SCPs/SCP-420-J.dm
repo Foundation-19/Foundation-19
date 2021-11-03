@@ -1,6 +1,6 @@
 GLOBAL_LIST_EMPTY(possible_420j)
 
-/datum/scp/SCP_420_J
+/datum/scp/scp_420_j
 	name = "SCP-420-J"
 	designation = "420-J"
 	classification = "Radical"
@@ -16,7 +16,7 @@ GLOBAL_LIST_EMPTY(possible_420j)
 	chem_volume = 100
 //	can_be_put_out = 0
 	filling = list()
-	SCP = /datum/scp/SCP_420_J
+	SCP = /datum/scp/scp_420_j
 
 /obj/item/clothing/mask/smokable/cigarette/scp_420_j/Process()
 	. = ..()
@@ -25,9 +25,5 @@ GLOBAL_LIST_EMPTY(possible_420j)
 	if(!reagents.has_reagent(/datum/reagent/nicotine))
 		reagents.add_reagent(/datum/reagent/nicotine, 10)
 
-/hook/roundstart/proc/spawn420()
-	var/T = pick(GLOB.possible_420j)
-	if(!T || !istype(T, /atom))
-		return
-	new /obj/item/clothing/mask/smokable/cigarette/scp_420_j(T)
-	return TRUE // so the hook doesn't "fail" - Kachnov
+/obj/item/clothing/mask/smokable/cigarette/scp_420_j/Destroy()
+	. = ..()

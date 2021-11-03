@@ -193,3 +193,4 @@
 
 
 	var/list/additional_vision_handlers = list() //Basically a list of atoms from which additional vision data is retrieved
+	var/ignore_ssd_check = 0

@@ -1,6 +1,6 @@
 GLOBAL_LIST_EMPTY(scp173s)
 
-/datum/scp/SCP_173
+/datum/scp/scp_173
 	name = "SCP-173"
 	designation = "173"
 	classification = EUCLID
@@ -10,7 +10,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	desc = "A statue, constructed from concrete and rebar with traces of Krylon brand spray paint"
 	icon = 'icons/SCP/scp-173.dmi'
 	icon_state = "173"
-	SCP = /datum/scp/SCP_173
+	SCP = /datum/scp/scp_173
 
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING

@@ -2,7 +2,7 @@
 #define IMMOBILIZING 2
 GLOBAL_LIST_EMPTY(scp999s)
 
-/datum/scp/SCP_999
+/datum/scp/scp_999
 	name = "SCP-999"
 	designation = "999"
 	classification = SAFE
@@ -14,7 +14,7 @@ GLOBAL_LIST_EMPTY(scp999s)
 	icon_living = "SCP-999"
 	icon_dead = "SCP-999_d"
 	alpha = 200
-	SCP = /datum/scp/SCP_999
+	SCP = /datum/scp/scp_999
 	maxHealth = 1500
 	health = 1500
 	hud_type = /datum/hud/slime

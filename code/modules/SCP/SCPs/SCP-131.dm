@@ -1,6 +1,6 @@
 GLOBAL_LIST_EMPTY(scp131s)
 
-/datum/scp/SCP_131
+/datum/scp/scp_131
 	name = "SCP-131"
 	designation = "131"
 	classification = SAFE
@@ -12,7 +12,7 @@ GLOBAL_LIST_EMPTY(scp131s)
 	icon_living = "SCP-131A"
 	// icon_dead = "SCP-131A_d"
 	icon_state = "SCP-131A"
-	SCP = /datum/scp/SCP_131
+	SCP = /datum/scp/scp_131
 	maxHealth = 150
 	health = 150
 	pass_flags = PASS_FLAG_TABLE

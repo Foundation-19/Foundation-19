@@ -280,23 +280,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	name = "dark cigarette"
 	brand = "\improper Carcinoma Angel"
 	color = "#869286"
-
-/obj/item/clothing/mask/smokable/cigarette/bluelady
-	name = "'blue lady' cigarette"
-	brand = "\improper Blue Lady"
-	desc = "The words 'Blue Lady' are written on this deftly-rolled cigarette in blue ink."
-	icon_state = "cigbluelady"
-	type_butt = /obj/item/weapon/cigbutt/bluelady
-	filling = list(/datum/reagent/tobacco/bluelady = 1)
-
-/obj/item/weapon/cigbutt/bluelady
-	icon_state = "cigbuttbluelady"
-
-/obj/item/clothing/mask/smokable/cigarette/bluelady/Initialize()
-	. = ..()
-	set_extension(src, /datum/extension/appearance, /datum/extension/appearance/bluelady)
-
-
 /obj/item/clothing/mask/smokable/cigarette/professionals
 	name = "thin cigarette"
 	brand = "\improper Professional"

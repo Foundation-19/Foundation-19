@@ -1,4 +1,4 @@
-GLOBAL_LIST_EMPTY(simulated_turfs_scp106)
+//GLOBAL_LIST_EMPTY(simulated_turfs_scp106)
 
 /turf/simulated/floor/tiled/monotile
 	name = "floor"
