@@ -983,7 +983,7 @@
 /obj/machinery/computer/shuttle_control{
 	name = "MTF Helicopter";
 	req_access = list();
-	req_one_access = list(402,302);
+
 	shuttle_tag = "MTF Helicopter"
 	},
 /turf/simulated/floor/shuttle/darkred,
@@ -1084,7 +1084,7 @@
 /area/centcom/evac)
 "cx" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
+
 	icon_state = "closed";
 	id_tag = "escape_pod_1_recovery_hatch";
 	locked = 1;
@@ -1098,7 +1098,7 @@
 /area/centcom/evac)
 "cy" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
+
 	icon_state = "closed";
 	id_tag = "escape_pod_2_recovery_hatch";
 	locked = 1;
@@ -1330,11 +1330,11 @@
 /area/centcom/evac)
 "da" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+
 	id_tag = "escape_pod_1_recovery";
 	pixel_x = 25;
 	pixel_y = 30;
-	req_one_access = list(13,80);
+
 	tag_door = "escape_pod_1_recovery_hatch"
 	},
 /turf/unsimulated/floor{
@@ -1344,11 +1344,11 @@
 /area/centcom/evac)
 "de" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+
 	id_tag = "escape_pod_2_recovery";
 	pixel_x = -25;
 	pixel_y = 30;
-	req_one_access = list(13,80);
+
 	tag_door = "escape_pod_2_recovery_hatch"
 	},
 /turf/unsimulated/floor{
@@ -1950,7 +1950,7 @@
 /area/site53/lhcz/scp1102entrance)
 "fa" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
+
 	icon_state = "closed";
 	id_tag = "escape_pod_5_recovery_hatch";
 	locked = 1;
@@ -1964,11 +1964,11 @@
 /area/centcom/evac)
 "fb" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+
 	id_tag = "escape_pod_5_recovery";
 	pixel_x = -25;
 	pixel_y = 25;
-	req_one_access = list(13,80);
+
 	tag_door = "escape_pod_5_recovery_hatch"
 	},
 /turf/unsimulated/floor{
@@ -1987,11 +1987,11 @@
 /area/centcom/evac)
 "fd" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+
 	id_tag = "escape_pod_3_recovery";
 	pixel_x = 25;
 	pixel_y = -25;
-	req_one_access = list(13,80);
+
 	tag_door = "escape_pod_3_recovery_hatch"
 	},
 /turf/unsimulated/floor{
@@ -2001,7 +2001,7 @@
 /area/centcom/evac)
 "fe" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
+
 	icon_state = "closed";
 	id_tag = "escape_pod_3_recovery_hatch";
 	locked = 1;
@@ -3643,8 +3643,8 @@
 /area/space)
 "ld" = (
 /obj/structure/closet{
-	icon_closed = "syndicate1";
-	icon_opened = "syndicate1open";
+
+
 	icon_state = "syndicate1";
 	name = "emergency response team wardrobe"
 	},
@@ -3657,8 +3657,8 @@
 /area/space)
 "lf" = (
 /obj/structure/closet{
-	icon_closed = "syndicate1";
-	icon_opened = "syndicate1open";
+
+
 	icon_state = "syndicate1";
 	name = "emergency response team wardrobe"
 	},
@@ -3718,8 +3718,8 @@
 /area/space)
 "lq" = (
 /obj/structure/closet{
-	icon_closed = "syndicate1";
-	icon_opened = "syndicate1open";
+
+
 	icon_state = "syndicate1";
 	name = "emergency response team wardrobe"
 	},
@@ -3729,8 +3729,8 @@
 /area/space)
 "lr" = (
 /obj/structure/closet{
-	icon_closed = "syndicate1";
-	icon_opened = "syndicate1open";
+
+
 	icon_state = "syndicate1";
 	name = "emergency response team wardrobe"
 	},
@@ -3746,8 +3746,8 @@
 /area/space)
 "ls" = (
 /obj/structure/closet{
-	icon_closed = "syndicate1";
-	icon_opened = "syndicate1open";
+
+
 	icon_state = "syndicate1";
 	name = "emergency response team wardrobe"
 	},
@@ -3761,8 +3761,8 @@
 /area/space)
 "lt" = (
 /obj/structure/closet{
-	icon_closed = "syndicate1";
-	icon_opened = "syndicate1open";
+
+
 	icon_state = "syndicate1";
 	name = "emergency response team wardrobe"
 	},
@@ -5507,7 +5507,7 @@
 /area/space)
 "sR" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1331;
+
 	id_tag = "ninja_shuttle";
 	pixel_x = -8;
 	pixel_y = 25;
@@ -5525,7 +5525,7 @@
 "sS" = (
 /obj/machinery/door/airlock/external{
 	density = 1;
-	frequency = 1331;
+
 	id_tag = "ninja_shuttle_outer";
 	name = "Ship External Access";
 	req_access = list(150)
@@ -5556,7 +5556,7 @@
 	},
 /obj/machinery/access_button{
 	command = "cycle_interior";
-	frequency = 1331;
+
 	master_tag = "ninja_shuttle";
 	name = "interior access button";
 	pixel_x = 25;
@@ -5573,7 +5573,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external{
-	frequency = 1331;
+
 	id_tag = "ninja_shuttle_inner";
 	name = "Ship External Access";
 	req_access = list(150)
@@ -5585,14 +5585,14 @@
 /area/space)
 "tb" = (
 /obj/machinery/airlock_sensor{
-	frequency = 1331;
+
 	id_tag = "ninja_shuttle_sensor";
 	pixel_x = 8;
 	pixel_y = -25
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 8;
-	frequency = 1331;
+
 	id_tag = "ninja_shuttle_pump"
 	},
 /turf/unsimulated/floor{
@@ -6059,7 +6059,7 @@
 /area/shuttle/administration/centcom)
 "uy" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+
 	id_tag = "admin_shuttle_bay";
 	name = "shuttle bay controller";
 	pixel_x = 25;
@@ -6142,7 +6142,7 @@
 /area/shuttle/administration/centcom)
 "uO" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
+
 	icon_state = "closed";
 	id_tag = "admin_shuttle_bay_door";
 	locked = 1
@@ -6442,11 +6442,11 @@
 /area/shuttle/administration/centcom)
 "wi" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+
 	id_tag = "admin_shuttle";
 	pixel_x = -25;
 	pixel_y = 0;
-	req_one_access = list(101);
+
 	tag_door = "admin_shuttle_hatch"
 	},
 /turf/simulated/floor/plating,
@@ -6511,7 +6511,7 @@
 /area/shuttle/administration/centcom)
 "ws" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
+
 	icon_state = "closed";
 	id_tag = "admin_shuttle_hatch";
 	locked = 1;
@@ -8141,7 +8141,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+//	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/unsimulated/floor{
 	icon_state = "cult";
@@ -8461,8 +8461,8 @@
 /area/centcom/specops)
 "Ca" = (
 /obj/structure/closet{
-	icon_closed = "syndicate1";
-	icon_opened = "syndicate1open";
+
+
 	icon_state = "syndicate1";
 	name = "emergency response team wardrobe"
 	},
@@ -8692,11 +8692,11 @@
 "CD" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
-	frequency = 1331;
+
 	id_tag = "merc_shuttle_pump"
 	},
 /obj/machinery/airlock_sensor{
-	frequency = 1331;
+
 	id_tag = "merc_shuttle_sensor";
 	pixel_x = 0;
 	pixel_y = 25
@@ -8711,7 +8711,7 @@
 	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1331;
+
 	id_tag = "merc_shuttle";
 	pixel_x = 0;
 	pixel_y = 25;
@@ -8721,7 +8721,7 @@
 /area/space)
 "CH" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1331;
+
 	id_tag = "merc_base";
 	pixel_x = -25;
 	pixel_y = -5
@@ -8916,7 +8916,6 @@
 /area/space)
 "De" = (
 /obj/machinery/flasher{
-	id = "syndieflash";
 	name = "Floor mounted flash";
 	pixel_x = 0
 	},
@@ -8947,7 +8946,7 @@
 "Di" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
-	frequency = 1331;
+
 	id_tag = "merc_shuttle_pump"
 	},
 /turf/simulated/floor/shuttle/darkred,
@@ -8962,7 +8961,7 @@
 "Dk" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 8;
-	frequency = 1331;
+
 	id_tag = "merc_shuttle_pump"
 	},
 /turf/simulated/floor/shuttle/darkred,
@@ -8970,7 +8969,7 @@
 "Dl" = (
 /obj/machinery/door/airlock/external{
 	density = 1;
-	frequency = 1331;
+
 	id_tag = "merc_shuttle_outer";
 	name = "Ship External Access";
 	req_access = list(150)
@@ -8987,7 +8986,7 @@
 /area/space)
 "Dm" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1331;
+
 	id_tag = "merc_base_hatch";
 	req_access = list(150)
 	},
@@ -9282,7 +9281,7 @@
 /area/space)
 "DS" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1331;
+
 	id_tag = "merc_shuttle_inner";
 	name = "Ship External Access";
 	req_access = list(150)
@@ -9379,7 +9378,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+//	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/space)
@@ -9388,7 +9387,6 @@
 	dir = 8
 	},
 /obj/machinery/button/flasher{
-	id = "syndieflash";
 	name = "Flasher";
 	pixel_x = 27;
 	pixel_y = 5
@@ -9405,7 +9403,7 @@
 "Em" = (
 /obj/machinery/access_button{
 	command = "cycle_interior";
-	frequency = 1331;
+
 	master_tag = "merc_shuttle";
 	name = "interior access button";
 	pixel_x = 25;
@@ -9651,7 +9649,7 @@
 /area/shuttle/specops/centcom)
 "Fb" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+
 	id_tag = "specops_shuttle_port";
 	name = "port docking hatch controller";
 	pixel_x = 24;
@@ -9822,7 +9820,7 @@
 /area/shuttle/specops/centcom)
 "Fv" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
+
 	icon_state = "closed";
 	id_tag = "specops_shuttle_port_hatch";
 	locked = 1;
@@ -9835,7 +9833,7 @@
 /area/shuttle/specops/centcom)
 "Fw" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
+
 	icon_state = "closed";
 	id_tag = "specops_centcom_dock_door";
 	locked = 1
@@ -10123,7 +10121,7 @@
 /area/space)
 "Gh" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+
 	id_tag = "specops_shuttle_fore";
 	name = "forward docking hatch controller";
 	pixel_x = 0;
@@ -10359,7 +10357,7 @@
 /area/space)
 "GL" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
+
 	icon_state = "closed";
 	id_tag = "specops_shuttle_fore_hatch";
 	locked = 1;
@@ -10572,8 +10570,8 @@
 /area/space)
 "Ht" = (
 /obj/structure/closet{
-	icon_closed = "cabinet_closed";
-	icon_opened = "cabinet_open";
+
+
 	icon_state = "cabinet_closed";
 	name = "Clothing Storage"
 	},
@@ -10587,8 +10585,8 @@
 /area/centcom/holding)
 "Hu" = (
 /obj/structure/closet{
-	icon_closed = "cabinet_closed";
-	icon_opened = "cabinet_open";
+
+
 	icon_state = "cabinet_closed";
 	name = "Clothing Storage"
 	},
@@ -12069,7 +12067,6 @@
 /area/tdome)
 "Mp" = (
 /obj/machinery/flasher{
-	id = "flash";
 	name = "Thunderdome Flash"
 	},
 /turf/unsimulated/floor{
@@ -12206,7 +12203,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+//	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/unsimulated/floor{
 	icon_state = "plating";

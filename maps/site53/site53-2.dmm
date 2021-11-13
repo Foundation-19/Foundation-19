@@ -354,7 +354,7 @@
 	dir = 5
 	},
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},
@@ -663,7 +663,7 @@
 "abZ" = (
 /obj/structure/bed/chair,
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},
@@ -936,7 +936,7 @@
 /obj/machinery/computer/shuttle_control{
 	name = "Heavy Containment Zone";
 	req_access = list();
-	req_one_access = list(402,302);
+
 	shuttle_tag = "Heavy Containment Tram"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -1226,7 +1226,7 @@
 /area/site53/ulcz/maintenance)
 "adD" = (
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},
@@ -1624,7 +1624,7 @@
 /obj/machinery/computer/shuttle_control{
 	name = "Heavy Containment Zone";
 	req_access = list();
-	req_one_access = list(402,302);
+
 	shuttle_tag = "Heavy Containment Tram"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -3505,7 +3505,7 @@
 /obj/machinery/computer/shuttle_control{
 	name = "Light Containment Tram control console";
 	req_access = list();
-	req_one_access = list(300,400,930);
+
 	shuttle_tag = "Light Containment Tram"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -3795,7 +3795,7 @@
 	dir = 5
 	},
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},
@@ -4643,7 +4643,7 @@
 	},
 /obj/structure/closet/radiation,
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},
@@ -4686,7 +4686,7 @@
 	icon_state = "computer";
 	name = "Light Containment Tram control console";
 	req_access = list();
-	req_one_access = list(300,400,930);
+
 	shuttle_tag = "Light Containment Tram"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -4919,7 +4919,7 @@
 	},
 /obj/structure/closet/radiation,
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},
@@ -5527,7 +5527,7 @@
 	pixel_x = 0
 	},
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},
@@ -5726,7 +5726,7 @@
 	icon_state = "corner_white"
 	},
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},
@@ -5844,7 +5844,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},
@@ -6742,7 +6742,7 @@
 	pixel_y = 0
 	},
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},
@@ -7842,7 +7842,7 @@
 /obj/machinery/keycard_auth{
 	pixel_x = 0;
 	pixel_y = 28;
-	req_one_access = list(304,504,303)
+
 	},
 /turf/simulated/floor/tiled,
 /area/site53/engineering/controlroom)
@@ -8563,7 +8563,7 @@
 "asP" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},
@@ -8731,7 +8731,7 @@
 "atf" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 8;
-	frequency = 1441;
+
 	icon_state = "map_injector";
 	id = "co2_in";
 	pixel_y = 1;
@@ -9115,7 +9115,7 @@
 	dir = 8;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1441;
+
 	icon_state = "map_vent_in";
 	id_tag = "co2_out";
 	initialize_directions = 1;
@@ -9127,7 +9127,7 @@
 	use_power = 1
 	},
 /obj/machinery/air_sensor{
-	frequency = 1441;
+
 	id_tag = "co2_sensor"
 	},
 /turf/simulated/floor/reinforced/carbon_dioxide,
@@ -9451,7 +9451,7 @@
 	icon_state = "tube1"
 	},
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},
@@ -9964,7 +9964,7 @@
 "avC" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 8;
-	frequency = 1441;
+
 	icon_state = "map_injector";
 	id = "h2_in";
 	pixel_y = 1;
@@ -10331,7 +10331,7 @@
 	dir = 8;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1441;
+
 	icon_state = "map_vent_in";
 	id_tag = "h2_out";
 	initialize_directions = 1;
@@ -10343,7 +10343,7 @@
 	use_power = 1
 	},
 /obj/machinery/air_sensor{
-	frequency = 1441;
+
 	id_tag = "tox_sensor"
 	},
 /turf/simulated/floor/reinforced/hydrogen,
@@ -10371,7 +10371,7 @@
 "aws" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 4;
-	frequency = 1441;
+
 	icon_state = "map_injector";
 	id = "n2_in";
 	use_power = 1
@@ -10717,7 +10717,7 @@
 	dir = 4;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1441;
+
 	icon_state = "map_vent_in";
 	id_tag = "n2_out";
 	initialize_directions = 1;
@@ -10729,7 +10729,7 @@
 	use_power = 1
 	},
 /obj/machinery/air_sensor{
-	frequency = 1441;
+
 	id_tag = "n2_sensor"
 	},
 /turf/simulated/floor/reinforced/nitrogen,
@@ -11003,7 +11003,7 @@
 "axC" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 8;
-	frequency = 1441;
+
 	icon_state = "map_injector";
 	id = "n2o_in";
 	pixel_y = 1;
@@ -11069,7 +11069,7 @@
 	icon_state = "corner_white"
 	},
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},
@@ -11465,7 +11465,7 @@
 "ayv" = (
 /obj/structure/bed/chair,
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},
@@ -11593,7 +11593,7 @@
 	dir = 8
 	},
 /obj/item/device/radio/intercom{
-	frequency = 1017;
+
 	name = "intercom (Control Room)";
 	pixel_y = 32
 	},
@@ -11718,7 +11718,7 @@
 	dir = 8;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1441;
+
 	icon_state = "map_vent_in";
 	id_tag = "n2o_out";
 	initialize_directions = 1;
@@ -11730,7 +11730,7 @@
 	use_power = 1
 	},
 /obj/machinery/air_sensor{
-	frequency = 1441;
+
 	id_tag = "n2o_sensor"
 	},
 /turf/simulated/floor/reinforced/n20,
@@ -13870,7 +13870,7 @@
 "aDr" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 1;
-	frequency = 1441;
+
 	icon_state = "map_injector";
 	id = "o2_in";
 	use_power = 1
@@ -13882,7 +13882,7 @@
 	dir = 1;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1441;
+
 	icon_state = "map_vent_in";
 	id_tag = "o2_out";
 	initialize_directions = 1;
@@ -13894,7 +13894,7 @@
 	use_power = 1
 	},
 /obj/machinery/air_sensor{
-	frequency = 1441;
+
 	id_tag = "o2_sensor"
 	},
 /turf/simulated/floor/reinforced/oxygen,
@@ -14796,7 +14796,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
-	frequency = 1017;
+
 	name = "intercom (Control Rooml)";
 	pixel_x = -22
 	},
@@ -15526,7 +15526,7 @@
 	icon_state = "computer";
 	name = "Heavy Containment Zone";
 	req_access = list();
-	req_one_access = list(402,302);
+
 	shuttle_tag = "Heavy Containment Tram"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -15566,7 +15566,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},
@@ -15881,7 +15881,7 @@
 /area/site53/ulcz/hallways)
 "aHJ" = (
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},
@@ -17245,7 +17245,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/device/radio/intercom/locked{
 	dir = 1;
-	frequency = 173;
+
 	icon_state = "intercom";
 	name = "intercom (SCP-173)"
 	},
@@ -17842,7 +17842,7 @@
 "aLZ" = (
 /obj/item/device/radio/intercom/locked{
 	dir = 8;
-	frequency = 173;
+
 	icon_state = "intercom";
 	name = "intercom (SCP-173)";
 	pixel_x = -32
@@ -17864,7 +17864,7 @@
 "aMc" = (
 /obj/item/device/radio/intercom/locked{
 	dir = 4;
-	frequency = 173;
+
 	icon_state = "intercom";
 	name = "intercom (SCP-173)";
 	pixel_x = 32
@@ -18730,7 +18730,7 @@
 	icon_state = "computer";
 	name = "Light Containment Tram control console";
 	req_access = list();
-	req_one_access = list(300,400,930);
+
 	shuttle_tag = "Light Containment Tram"
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -18792,7 +18792,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
-	frequency = 1017;
+
 	name = "intercom (Control Rooml)";
 	pixel_x = -22
 	},
@@ -20205,7 +20205,7 @@
 	icon_state = "alarm0";
 	pixel_x = -32;
 	pixel_y = 0;
-	req_one_access = list(201);
+
 	target_temperature = 273.15
 	},
 /turf/simulated/floor/tiled/techfloor/grid{
@@ -25636,7 +25636,7 @@
 /area/janitor)
 "bdu" = (
 /obj/machinery/alarm{
-	frequency = 1439;
+
 	pixel_y = 23;
 	req_one_access = list(201)
 	},

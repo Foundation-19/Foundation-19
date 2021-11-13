@@ -7,6 +7,7 @@
 
 	var/spawn_weight = 1
 	var/spawn_cost = 0
+	var/cost = 0
 	var/player_cost = 0
 
 	var/prefix = null

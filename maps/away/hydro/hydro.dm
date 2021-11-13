@@ -7,11 +7,11 @@
 	icon_state = "object"
 	known = 0
 
-	generic_waypoints = list(
+/*	generic_waypoints = list(
 		"nav_hydro_1",
 		"nav_hydro_2",
 		"nav_hydro_3")
-
+*/
 /obj/effect/shuttle_landmark/nav_hydro/nav1
 	name = "Navpoint Fore"
 	landmark_tag = "nav_hydro_1"
@@ -53,8 +53,8 @@
 	desc = "An impressive goat, in size and coat. His horns look pretty serious!"
 	health = 350
 	maxHealth = 350
-	melee_damage_lower = 20
-	melee_damage_upper = 45
+//	melee_damage_lower = 20
+//	melee_damage_upper = 45
 	faction = "farmbots"
 
 /mob/living/simple_animal/hostile/retaliate/malf_drone/hydro
@@ -86,8 +86,9 @@
 	projectiletype = initial(projectiletype)
 	walk(src,0)
 
-/mob/living/simple_animal/hostile/retaliate/malf_drone/hydro/ListTargets()
+/*/mob/living/simple_animal/hostile/retaliate/malf_drone/hydro/ListTargets()
 	if(hostile_drone)
 		return view(src, 3)
 	else
 		return ..()
+*/

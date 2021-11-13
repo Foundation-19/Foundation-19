@@ -14,7 +14,7 @@
 
 	var/open_layer = OPEN_DOOR_LAYER
 	var/closed_layer = CLOSED_DOOR_LAYER
-
+	var/req_one_access = list()
 	var/visible = 1
 	var/p_open = 0
 	var/operating = 0

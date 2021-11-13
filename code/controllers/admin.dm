@@ -2,6 +2,7 @@
 /obj/effect/statclick
 	name = "Initializing..."
 	var/target
+	var/in_space = 0
 
 INITIALIZE_IMMEDIATE(/obj/effect/statclick)
 

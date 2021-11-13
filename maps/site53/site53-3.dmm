@@ -2228,7 +2228,7 @@
 /area/site53/entrancezone/hallway)
 "gk" = (
 /obj/machinery/button/crematorium{
-	id = "medicalcrema";
+
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -2609,7 +2609,7 @@
 /area/site53/medical/morgue)
 "gY" = (
 /obj/machinery/button/windowtint{
-	id = "op1";
+
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -2642,7 +2642,7 @@
 /area/site53/medical/surgery/op2)
 "hd" = (
 /obj/machinery/button/windowtint{
-	id = "op2";
+
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -2795,7 +2795,7 @@
 "hy" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/button/holosign{
-	id = "sur1";
+
 	pixel_x = 32
 	},
 /obj/item/stack/nanopaste,
@@ -2804,7 +2804,7 @@
 "hz" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/button/holosign{
-	id = "sur2";
+
 	pixel_x = -32
 	},
 /obj/item/stack/nanopaste,
@@ -3013,7 +3013,7 @@
 /area/site53/medical/infirmary)
 "hZ" = (
 /obj/machinery/holosign{
-	id = "sur1"
+
 	},
 /obj/machinery/door/airlock/medical{
 	name = "Operating Theatre #1";
@@ -3044,7 +3044,7 @@
 /area/site53/surface/surface)
 "id" = (
 /obj/machinery/holosign{
-	id = "sur2"
+
 	},
 /obj/machinery/door/airlock/medical{
 	name = "Operating Theatre #2";
@@ -4254,7 +4254,7 @@
 /area/site53/medical/chemistry)
 "kB" = (
 /obj/machinery/door/airlock/multi_tile/medical{
-	id_tag = "medicalentry";
+
 	req_access = list(930)
 	},
 /obj/structure/disposalpipe/segment,
@@ -7142,7 +7142,7 @@
 /area/site53/uez/o5repoffice)
 "rG" = (
 /obj/machinery/button/windowtint{
-	id = "o5rep";
+
 	pixel_x = 32;
 	pixel_y = 0
 	},

@@ -68,10 +68,10 @@
 //	#include "loadout/~defines.dm"
 
 
-	#include "EZ-Level-1.dmm"
+//	#include "EZ-Level-1.dmm"
 //	#include "EZ-Level-2.dmm"
 
-/*
+
 	#include "site53-1.dmm"
 	#include "site53-2.dmm"
 	#include "site53-3.dmm"
@@ -80,12 +80,13 @@
 //	#include "site53-7.dmm"
 	#include "site53-8.dmm"
 	#include "site53-9.dmm"
-	#include "away_mission-1.dmm"
+//	#include "away_mission-1.dmm"
 //	#include "torch-3.dmm"
 //	#include "torch-4.dmm"
 //	#include "torch-5.dmm"
 //	#include "torch-6.dmm"
 //	#include "torch-7.dmm"
+/*
 	#include "../away/empty.dmm"
 	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
@@ -102,7 +103,8 @@
 	#include "../away/mobius_rift/mobius_rift.dm"
 	#include "../away/icarus/icarus.dm"
 	#include "../away/errant_pisces/errant_pisces.dm"
-	#include "../away/lar_maria/lar_maria.dm"*/
+	#include "../away/lar_maria/lar_maria.dm"
+*/
 /*
 	#include "../../code/modules/lobby_music/Perdition.dm"
 	#include "../../code/modules/lobby_music/hie.dm"

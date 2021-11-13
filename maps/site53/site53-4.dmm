@@ -243,7 +243,7 @@
 /obj/machinery/computer/shuttle_control{
 	name = "Heavy Containment Zone";
 	req_access = list();
-	req_one_access = list(402,302);
+
 	shuttle_tag = "Heavy Containment Zone"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -252,7 +252,7 @@
 /obj/machinery/computer/shuttle_control{
 	name = "Light Containment Tram control console";
 	req_access = list();
-	req_one_access = list(300,400);
+
 	shuttle_tag = "Light Containment Tram"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -2585,7 +2585,7 @@
 /obj/machinery/keycard_auth{
 	pixel_x = 28;
 	pixel_y = 0;
-	req_one_access = list(304,504,303)
+
 	},
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/heads/office/cos)
@@ -2594,7 +2594,7 @@
 	pixel_x = 0;
 	pixel_y = -28;
 	req_access = newlist();
-	req_one_access = list(304,504,303)
+
 	},
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/cmooffice)
@@ -2603,7 +2603,7 @@
 	pixel_x = 0;
 	pixel_y = -28;
 	req_access = newlist();
-	req_one_access = list(304,504,303)
+
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/ceoffice)
@@ -2616,7 +2616,7 @@
 /obj/machinery/keycard_auth{
 	pixel_x = -28;
 	pixel_y = 0;
-	req_one_access = list(304,504,303)
+
 	},
 /turf/simulated/floor/carpet,
 /area/site53/uez/rdoffice)
@@ -2624,7 +2624,7 @@
 /obj/machinery/keycard_auth{
 	pixel_x = 0;
 	pixel_y = 28;
-	req_one_access = list(304,504,303)
+
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/sdoffice)

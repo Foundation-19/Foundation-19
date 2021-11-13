@@ -5,13 +5,13 @@
 	desc = "Sensors detect anomalous radiation area with the presence of artificial structures."
 	icon_state = "globe"
 	known = 0
-	in_space = 0
-	generic_waypoints = list(
+//	in_space = 0
+/*	generic_waypoints = list(
 		"nav_icarus_1",
 		"nav_icarus_2",
 		"nav_icarus_antag"
 	)
-
+*/
 /obj/effect/overmap/sector/icarus/New(nloc, max_x, max_y)
 	name = "[generate_planet_name()], \a [name]"
 	..()
@@ -30,7 +30,7 @@ obj/effect/icarus/irradiate/Initialize()
 	S.decay = FALSE
 	S.source_turf = get_turf(src)
 	S.update_rad_power(radiation_power)
-	radiation_repository.add_source(S)
+//	radiation_repository.add_source(S)
 
 obj/effect/icarus/irradiate/Destroy()
 	. = ..()
@@ -110,7 +110,7 @@ obj/structure/icarus/broken_cryo/attack_hand(mob/user)
 
 /obj/item/weapon/paper/icarus/log
 	name = "Printed piece of paper"
-	info = "\[LOG\]: Orbit stabilized. Next correction burst, est.: 2 hrs 12 m<br>\
+/*	info = "\[LOG\]: Orbit stabilized. Next correction burst, est.: 2 hrs 12 m<br>\
 			\[LOG\]: Orbit stabiliztion. Announcing...<br>\
 			\[ANN\]: Attention all hands, SEV Icarus is stabilizing orbit in 30 seconds. Prepare for possible gravitational spikes.<br>\
 			\[LOG\]: Announcing complete.<br>\
@@ -138,11 +138,11 @@ obj/structure/icarus/broken_cryo/attack_hand(mob/user)
 			\[WARN\]: Impact imminent... Preparing blackbox backup... Ready.<br>\
 			\[LOG\]: Emergency shutdown!<br>\
 			\[LOG\]: Now you can you safely turn off your computer.<br>"
-
+*/
 
 /obj/item/weapon/paper/icarus/crew_roster
 	name = "Printed piece of paper"
-	info = "<center>\[solcrest]<BR>\
+	/*info = "<center>\[solcrest]<BR>\
 			<b>SEV Icarus</b><br>\
 			Crew roster</center><br>\
 			<b>Command</b><br>\
@@ -179,7 +179,7 @@ obj/structure/icarus/broken_cryo/attack_hand(mob/user)
 			\[*]Expl. Yuri Meadows\
 			\[*]Dr. Tetha-12-Beta\
 			\[list]"
-
+*/
 /obj/item/toy/ship_model
 	name = "table-top SEV Icarus model"
 	desc = "A small model of a spaceship mounted on a wooden stand. On the stand is engraved: \"SEV Icarus 1:278th scale\". The small lights on the hull and the engine exhaust still light up and blink."
