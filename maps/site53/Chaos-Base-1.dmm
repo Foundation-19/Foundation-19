@@ -1,0 +1,149 @@
+"a" = (/turf/space,/area/space)
+"b" = (/obj/structure/table/rack/dark,/obj/item/gun/projectile/automatic/l6_saw,/obj/item/ammo_magazine/box/machinegun,/obj/item/ammo_magazine/box/machinegun,/obj/effect/floor_decal/industrial/hatch/orange,/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_armory)
+"c" = (/obj/machinery/door/airlock/autoname,/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_food)
+"d" = (/obj/structure/table/steel_reinforced,/obj/item/clothing/under/scp/utility/chaos,/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos)
+"f" = (/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_brief)
+"g" = (/obj/machinery/door/blast/regular,/turf/space,/area/site53/offsite/chaos_deploy)
+"h" = (/obj/machinery/light,/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos)
+"j" = (/obj/structure/closet/gimmick/tacticool,/obj/item/storage/belt/holster/security/tactical,/obj/item/clothing/accessory/storage/black_vest,/obj/item/clothing/suit/storage/vest/tactical,/obj/item/gun/projectile/pistol/holdout,/obj/item/gun/projectile/automatic/scp/donor/ak74,/obj/item/clothing/head/helmet/nt{name = "temp chaos helm"},/obj/item/ammo_magazine/pistol/small,/obj/item/ammo_magazine/pistol/small,/obj/item/ammo_magazine/scp/ak,/obj/item/ammo_magazine/scp/ak,/obj/item/ammo_magazine/scp/ak,/obj/item/clothing/mask/balaclava/tactical,/obj/item/storage/backpack/rucksack/tan,/obj/effect/floor_decal/industrial/hatch/orange,/obj/effect/floor_decal/industrial/warning/full,/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_armory)
+"k" = (/obj/machinery/door/airlock/autoname{name = "Briefing"},/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_brief)
+"l" = (/obj/machinery/cryopod,/obj/machinery/light{dir = 4},/turf/simulated/floor/shuttle/red,/area/site53/offsite/chaos)
+"n" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_brief)
+"o" = (/obj/structure/closet/gimmick/tacticool,/obj/item/storage/belt/holster/security/tactical,/obj/item/clothing/accessory/storage/black_vest,/obj/item/clothing/suit/storage/vest/tactical,/obj/item/gun/projectile/pistol/holdout,/obj/item/gun/projectile/automatic/scp/donor/ak74,/obj/item/clothing/head/helmet/nt{name = "temp chaos helm"},/obj/item/ammo_magazine/pistol/small,/obj/item/ammo_magazine/pistol/small,/obj/item/ammo_magazine/scp/ak,/obj/item/ammo_magazine/scp/ak,/obj/item/ammo_magazine/scp/ak,/obj/item/clothing/mask/balaclava/tactical,/obj/item/storage/backpack/rucksack/tan,/obj/effect/floor_decal/industrial/hatch/orange,/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_armory)
+"p" = (/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_food)
+"q" = (/turf/simulated/wall/titanium,/area/site53/offsite/chaos_deploy)
+"r" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos)
+"s" = (/obj/structure/table/rack/dark,/obj/item/gun/projectile/automatic/scp/donor/svd,/obj/item/ammo_magazine/scp/svd,/obj/item/ammo_magazine/scp/svd,/obj/item/ammo_magazine/scp/svd,/obj/item/ammo_magazine/scp/svd,/obj/effect/floor_decal/industrial/hatch/orange,/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_armory)
+"u" = (/turf/simulated/wall/concrete,/area/site53/offsite/chaos_deploy)
+"v" = (/turf/simulated/wall/concrete,/area/site53/offsite/chaos)
+"x" = (/turf/simulated/wall/concrete,/area/site53/offsite/chaos_armory)
+"y" = (/obj/machinery/door/airlock/autoname{name = "Cyro"},/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_brief)
+"z" = (/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_medbay)
+"A" = (/obj/structure/table/steel_reinforced,/obj/item/device/megaphone,/turf/simulated/floor/shuttle/darkred,/area/site53/offsite/chaos_brief)
+"B" = (/obj/machinery/door/airlock/autoname{name = "Squad Leader"},/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_armory)
+"C" = (/obj/structure/table/steel_reinforced,/turf/simulated/floor/shuttle/darkred,/area/site53/offsite/chaos_brief)
+"D" = (/obj/machinery/cryopod,/obj/item/clothing/under/scp/utility/chaos,/turf/simulated/floor/shuttle/darkred,/area/site53/offsite/chaos_brief)
+"E" = (/obj/structure/table/rack/dark,/obj/item/gun/projectile/heavysniper,/obj/effect/floor_decal/industrial/hatch/orange,/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_armory)
+"F" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_brief)
+"G" = (/obj/machinery/door/airlock/autoname,/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_medbay)
+"H" = (/obj/machinery/door/airlock/autoname,/turf/simulated/floor/reinforced,/area/site53/offsite/chaos_deploy)
+"I" = (/turf/simulated/floor/shuttle/darkred,/area/site53/offsite/chaos_brief)
+"J" = (/obj/structure/table/steel_reinforced,/obj/item/pen/red,/turf/simulated/floor/shuttle/darkred,/area/site53/offsite/chaos_brief)
+"K" = (/obj/structure/table/rack/dark,/obj/item/gun/projectile/automatic/scp/donor/rpk,/obj/item/ammo_magazine/scp/ak,/obj/item/ammo_magazine/scp/ak,/obj/item/ammo_magazine/scp/ak,/obj/effect/floor_decal/industrial/hatch/orange,/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_armory)
+"L" = (/turf/simulated/wall/concrete,/area/site53/offsite/chaos_food)
+"M" = (/obj/structure/table/steel_reinforced,/obj/item/material/clipboard,/turf/simulated/floor/shuttle/darkred,/area/site53/offsite/chaos_brief)
+"N" = (/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_armory)
+"P" = (/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_brief)
+"Q" = (/obj/structure/closet{name = "Anti-Material Ammo"},/obj/item/storage/box,/obj/item/ammo_casing/shell,/obj/item/ammo_casing/shell,/obj/item/ammo_casing/shell,/obj/item/ammo_casing/shell,/obj/item/ammo_casing/shell,/obj/item/ammo_casing/shell,/obj/item/ammo_casing/shell,/obj/item/ammo_casing/shell,/obj/item/ammo_casing/shell,/obj/item/ammo_casing/shell,/obj/item/ammo_casing/shell,/obj/item/ammo_casing/shell,/obj/item/ammo_casing/shell,/obj/item/ammo_casing/shell,/obj/item/ammo_casing/shell,/obj/item/ammo_casing/shell,/obj/effect/floor_decal/industrial/hatch/orange,/obj/effect/floor_decal/industrial/warning/full,/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_armory)
+"R" = (/obj/machinery/cryopod{dir = 4},/obj/machinery/light{dir = 8},/turf/simulated/floor/shuttle/red,/area/site53/offsite/chaos)
+"S" = (/obj/structure/table/rack/dark,/obj/item/gun/projectile/automatic/scp/donor/ak742,/obj/item/ammo_magazine/scp/ak,/obj/item/ammo_magazine/scp/ak,/obj/item/ammo_magazine/scp/ak,/obj/effect/floor_decal/industrial/hatch/orange,/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_armory)
+"T" = (/obj/machinery/door/airlock/autoname{name = "Armory"},/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_armory)
+"U" = (/turf/simulated/wall/concrete,/area/site53/offsite/chaos_medbay)
+"V" = (/turf/simulated/wall/concrete,/area/site53/offsite/chaos_brief)
+"W" = (/turf/simulated/floor/exoplanet/concrete/reinforced/road,/area/site53/offsite/chaos_deploy)
+"X" = (/obj/structure/table/steel_reinforced,/obj/item/paper_bin,/turf/simulated/floor/shuttle/darkred,/area/site53/offsite/chaos_brief)
+"Y" = (/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos)
+"Z" = (/obj/machinery/light,/turf/simulated/floor/shuttle/darkred,/area/site53/offsite/chaos_brief)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaavvvvvvvvvvaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaavRYrYYrYlvaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaavYYYddYYYvaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaavRYYddYYlvaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaavYYYddYYYvaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaavRYhYYhYlvaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaxxxxxxxxxxvvVVVVVVyyVVVVVVvvxxxxxxxxxxxaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaxNjoooooNxYYVfffFffffFfffVYYxNNNNNNNNNxaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaxNNNNNNNNxYYVnffffffffffPVYYxNNNNNNNNNxaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaxNNNNNNNNTYYkffffffffffffkYYBNNNNNNNNNxaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaxNNNNNNNNxYYVnffCMAJXCffPVYYxNNNNNNNNNxaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaxNKsSSbEQxYYVfffZIIIIZffDVYYxNNNNNNNNNxaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaUUUUUUUUUUYYVVVVVVVVVVVVVVYYxxxxxxxxxxxaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaUzzzzzzzzUYYuWWWWWWWWWWWWuYYLpppppppppLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaUzzzzzzzzUYYuWWWWWWWWWWWWuYYLpppppppppLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaUzzzzzzzzUYYuWWWWWWWWWWWWuYYLpppppppppLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaUzzzzzzzzUYYuWWWWWWWWWWWWuYYLpppppppppLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaUzzzzzzzzGYYHWWWWWWWWWWWWHYYcpppppppppLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaUzzzzzzzzUYYuWWWWWWWWWWWWuYYLpppppppppLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaUzzzzzzzzUYYuWWWWWWWWWWWWuYYLpppppppppLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaUzzzzzzzzUYYuWWWWWWWWWWWWuYYLpppppppppLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaUUUUUUUUUUYYuWWWWWWWWWWWWuYYLLLLLLLLLLLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaavYYuWWWWWWWWWWWWuYYvaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaavYYuWWWWWWWWWWWWuYYvaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaavvvuuugggggggguuuvvvaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaqqqqqqqqqqaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+"}
