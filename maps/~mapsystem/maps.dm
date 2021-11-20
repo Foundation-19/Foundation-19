@@ -93,8 +93,8 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/current_lobby_screen
 	var/decl/audio/track/lobby_track                     // The track that will play in the lobby screen.
 	var/list/lobby_tracks = list()                  // The list of lobby tracks to pick() from. If left unset will randomly select among all available decl/audio/track subtypes.
-	var/welcome_sound = 'sound/AI/welcome.ogg'		// Sound played on roundstart
-
+	var/welcome_sound = 'sound/scp/Blue_Feather_60s.ogg'		// Sound played on roundstart
+	var/list/announcement_roundstart = list('sound/scp/Announcement1.ogg','sound/scp/Announcement2.ogg','sound/scp/Announcement3.ogg','sound/scp/Announcement4.ogg','sound/scp/Announcement5.ogg','sound/scp/Announcement6.ogg','sound/scp/Announcement7.ogg')
 	var/default_law_type = /datum/ai_laws/nanotrasen  // The default lawset use by synth units, if not overriden by their laws var.
 	var/security_state = /decl/security_state/default // The default security state system to use.
 
@@ -295,6 +295,10 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	return
 
 /datum/map/proc/send_welcome()
+	return
+
+/datum/map/proc/roundstart_announcement()
+	sound_to(world, sound(pick(GLOB.using_map.announcement_roundstart)))
 	return
 
 /datum/map/proc/perform_map_generation()
