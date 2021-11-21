@@ -3,6 +3,9 @@
  // New source code should be placed in .dm files: choose File/New --> Code File.
 // BEGIN_INTERNALS
 // END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
 // BEGIN_PREFERENCES
 #define DEBUG
 // END_PREFERENCES
