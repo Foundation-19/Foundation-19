@@ -10,14 +10,8 @@
 	selection_color = "#8e2929"
 	req_admin_notify = 1
 	economic_power = 10
-	access = list(access_security, access_eva, access_sec_doors, access_brig, access_armory,
-			            access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
-			            access_research, access_engine, access_mining, access_medical, access_construction, access_mailsorting,
-			            access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_external_airlocks)
-	minimal_access = list(access_security, access_eva, access_sec_doors, access_brig, access_armory,
-			            access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
-			            access_research, access_engine, access_mining, access_medical, access_construction, access_mailsorting,
-			            access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_external_airlocks)
+	access = list(level_4)
+	minimal_access = list(level_4)
 	minimal_player_age = 14
 	outfit_type = /decl/hierarchy/outfit/job/security/hos
 
@@ -48,8 +42,8 @@
 		/datum/mil_rank/security/w5
 	)
 
-	access = list(access_mtflvl1, access_mtflvl2, access_mtflvl3, access_mtflvl4, access_adminlvl1, access_adminlvl2, access_adminlvl3, access_adminlvl4)
-	minimal_access = list()
+	access = list(level_3)
+	minimal_access = list(level_3)
 
 /datum/job/ncoofficerez
 
@@ -74,8 +68,8 @@
 		/datum/mil_rank/security/e8
 	)
 
-	access = list(access_mtflvl1, access_mtflvl2, access_mtflvl3, access_adminlvl1, access_adminlvl2, access_adminlvl3)
-	minimal_access = list()
+	access = list(level_3)
+	minimal_access = list(level_3)
 
 /datum/job/enlistedofficerez
 
@@ -100,8 +94,8 @@
 		/datum/mil_rank/security/e5
 	)
 
-	access = list(access_mtflvl1, access_mtflvl2, access_adminlvl1, access_adminlvl2)
-	minimal_access = list()
+	access = list(level_3)
+	minimal_access = list(level_3)
 
 /datum/job/ltofficerhcz
 
@@ -125,8 +119,8 @@
 		/datum/mil_rank/security/o2
 	)
 
-	access = list(access_mtflvl1, access_mtflvl2, access_mtflvl3, access_mtflvl4, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3, access_sciencelvl4)
-	minimal_access = list()
+	access = list(level_3)
+	minimal_access = list(level_3)
 
 /datum/job/ncoofficerhcz
 
@@ -152,8 +146,8 @@
 		/datum/mil_rank/security/e6
 	)
 
-	access = list(access_mtflvl1, access_mtflvl2, access_mtflvl3, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3)
-	minimal_access = list()
+	access = list(level_3)
+	minimal_access = list(level_3)
 
 /datum/job/enlistedofficerhcz
 
@@ -178,8 +172,8 @@
 		/datum/mil_rank/security/e4
 	)
 
-	access = list(access_mtflvl1, access_sciencelvl1)
-	minimal_access = list()
+	access = list(level_3)
+	minimal_access = list(level_3)
 
 /datum/job/ltofficerlcz
 
@@ -203,8 +197,8 @@
 		/datum/mil_rank/security/o1
 	)
 
-	access = list(access_mtflvl1, access_mtflvl2, access_mtflvl3, access_mtflvl4, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3, access_sciencelvl4)
-	minimal_access = list()
+	access = list(level_3)
+	minimal_access = list(level_3)
 
 /datum/job/ncoofficerlcz
 
@@ -231,8 +225,8 @@
 		/datum/mil_rank/security/e5
 	)
 
-	access = list(access_mtflvl1, access_mtflvl2, access_sciencelvl1, access_sciencelvl2)
-	minimal_access = list()
+	access = list(level_3)
+	minimal_access = list(level_3)
 
 /datum/job/enlistedofficerlcz
 
@@ -257,5 +251,5 @@
 		/datum/mil_rank/security/e2
 	)
 
-	access = list(access_mtflvl1, access_sciencelvl1)
-	minimal_access = list()
+	access = list(level_3)
+	minimal_access = list(level_3)
