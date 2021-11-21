@@ -6,10 +6,7 @@ export NODE_VERSION=12
 # For the scripts in tools
 export PHP_VERSION=7.2
 # byond version
-# Extracted from the Dockerfile. Change by editing Dockerfile's FROM command.
-LIST=($(sed -n 's/.*byond:\([0-9]\+\)\.\([0-9]\+\).*/\1 \2/p' Dockerfile))
-export BYOND_MAJOR=${LIST[0]}
-export BYOND_MINOR=${LIST[1]}
-unset LIST
+export BYOND_MAJOR=514
+export BYOND_MINOR=1557
 # Macro Count
 export MACRO_COUNT=4
