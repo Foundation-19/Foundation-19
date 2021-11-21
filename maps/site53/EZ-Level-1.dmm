@@ -262,9 +262,8 @@
 /area/hallway/primary/firstdeck/aft)
 "bc" = (
 /obj/machinery/door/airlock/medical{
-	autoset_access = 0;
-	name = "Therapy Lounge";
-	req_access = list(932)
+	autoset_access = 1;
+	name = "Therapy Lounge"
 	},
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -289,9 +288,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/medical{
-	autoset_access = 0;
-	name = "Operating Room";
-	req_access = list(930)
+	autoset_access = 1;
+	name = "Operating Room"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/medical/surgery2)
@@ -1695,9 +1693,8 @@
 /area/site53/engineering/controlroom)
 "fU" = (
 /obj/machinery/door/airlock/medical{
-	autoset_access = 0;
-	name = "Operating Room";
-	req_access = list(930)
+	autoset_access = 1;
+	name = "Operating Room"
 	},
 /obj/machinery/holosign/surgery{
 	id_tag = "surgeryone"
@@ -2345,7 +2342,7 @@
 	dir = 4
 	},
 /obj/machinery/door/window/westright{
-	req_access = list(400)
+	req_access = list(level_2)
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/science/xenoarchaeology)
@@ -3521,17 +3518,16 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/glass/medical{
-	autoset_access = 0;
-	name = "Emergency Treatment Center";
-	req_access = list(930)
+	autoset_access = 1;
+	name = "Emergency Treatment Center"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/medical/sleeper)
 "mk" = (
 /obj/machinery/door/airlock/glass/medical{
-	autoset_access = 0;
+	autoset_access = 1;
 	name = "Chemistry";
-	req_access = list(934)
+	req_access = list("level_2")
 	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -4748,9 +4744,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/glass/medical{
-	autoset_access = 0;
-	name = "Medical Bay";
-	req_access = list(930)
+	autoset_access = 1;
+	name = "Medical Bay"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/medical/staging)
@@ -5530,7 +5525,7 @@
 	},
 /obj/machinery/door/window/eastright{
 	name = "Patient Seating";
-	req_access = list(931)
+	req_access = list("level_2")
 	},
 /mob/living/carbon/human/monkey,
 /turf/simulated/floor/tiled/white,
@@ -5574,7 +5569,7 @@
 	dir = 8
 	},
 /obj/machinery/door/window/eastright{
-	req_access = list(400)
+	req_access = list("level_2")
 	},
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 8
@@ -7118,7 +7113,7 @@
 	dir = 6
 	},
 /obj/machinery/door/window/westright{
-	req_access = list(400)
+	req_access = list("level_2")
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/science/xenoarchaeology)
@@ -8464,7 +8459,7 @@
 "DB" = (
 /obj/machinery/computer/fusion/core_control{
 	initial_id_tag = "aux_fusion_plant";
-	req_access = list("ACCESS_ENGINE_EQUIP")
+	req_access = list("level_2")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/controlroom)
@@ -8522,9 +8517,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/glass/medical{
-	autoset_access = 0;
-	name = "Medical Bay";
-	req_access = list(930)
+	autoset_access = 1;
+	name = "Medical Bay"
 	},
 /obj/machinery/door/blast/shutters/open{
 	icon_state = "shutter0";
@@ -9793,9 +9787,8 @@
 /area/site53/logistics/logistics)
 "HL" = (
 /obj/machinery/door/airlock/glass/medical{
-	autoset_access = 0;
-	name = "Medical Bay";
-	req_access = list(930)
+	autoset_access = 1;
+	name = "Medical Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -9947,7 +9940,7 @@
 /area/medical/morgue)
 "Il" = (
 /obj/machinery/door/airlock/glass/medical{
-	autoset_access = 0;
+	autoset_access = 1;
 	name = "Medical Waiting Room"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -10112,7 +10105,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/glass/medical{
-	autoset_access = 0;
+	autoset_access = 1;
 	name = "Medical Waiting Room"
 	},
 /obj/machinery/door/blast/shutters/open{
@@ -10952,9 +10945,9 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/medical{
-	autoset_access = 0;
+	autoset_access = 1;
 	name = "Therapy Office";
-	req_access = list(932)
+	req_access = list("level_2")
 	},
 /turf/simulated/floor/wood,
 /area/medical/counselor)
@@ -11264,7 +11257,7 @@
 "MI" = (
 /obj/machinery/computer/fusion/gyrotron{
 	initial_id_tag = "aux_fusion_plant";
-	req_access = list("ACCESS_ENGINE_EQUIP")
+	req_access = list("level_2")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/controlroom)
@@ -13432,7 +13425,7 @@
 	dir = 8
 	},
 /obj/machinery/door/window/eastright{
-	req_access = list(400)
+	req_access = list("level_2")
 	},
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 8
@@ -13586,7 +13579,7 @@
 "UR" = (
 /obj/machinery/computer/fusion/fuel_control{
 	initial_id_tag = "aux_fusion_plant";
-	req_access = list("ACCESS_ENGINE_EQUIP")
+	req_access = list("level_2")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/controlroom)
@@ -13614,9 +13607,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/glass/medical{
-	autoset_access = 0;
-	name = "Emergency Treatment Center";
-	req_access = list(930)
+	autoset_access = 1;
+	name = "Emergency Treatment Center"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/medical/sleeper)

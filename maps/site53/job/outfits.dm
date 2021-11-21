@@ -3,7 +3,20 @@
 
 //SITE DS90 OUTFITS
 //Keeping them simple for now, just spawning with basic uniforms, and pretty much no gear. Gear instead goes in lockers. Keep this in mind if editing.
+/decl/hierarchy/outfit/job/ds90/medical
+	l_pocket = /obj/item/card/id/level_2
 
+/decl/hierarchy/outfit/job/site90/crew/command
+	l_pocket = /obj/item/card/id/level_5
+
+/decl/hierarchy/outfit/job/site90/crew/security
+	l_pocket = /obj/item/card/id/level_3
+
+/decl/hierarchy/outfit/job/ds90/science
+	l_pocket = /obj/item/card/id/level_2
+
+/decl/hierarchy/outfit/job/ds90/civ
+	l_pocket = /obj/item/card/id/level_1
 
 // SCP COMMAND OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/command/facilitydir
@@ -123,6 +136,7 @@
 	id_types = /obj/item/card/id/seclvl2lcz
 	l_ear = /obj/item/device/radio/headset/headset_sec
 	l_pocket = /obj/item/book/manual/scp/secsop
+	r_pocket = /obj/item/card/id/level_4
 	back = null
 
 /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerhcz
