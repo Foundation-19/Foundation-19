@@ -3,8 +3,9 @@
 import os
 import sys
 
-folders = ["_maps/RandomRuins", "_maps/RandomZLevels", "_maps/shuttles",
-           "_maps/templates"]
+# folders = ["_maps/submaps", "_maps/map_levels", "_maps/submaps"]
+# haha let's just get the whole dir..
+folders = ["_maps"]
 
 generated = "_maps/templates.dm"
 

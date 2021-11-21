@@ -6,6 +6,10 @@ shopt -s globstar
 
 st=0
 
+if git grep -P "\r\n"; then
+    echo "ERROR: CRLF line endings detected. Please stop using the webeditor, and fix it using a desktop Git client."
+	st = 1
+fi;
 if grep -El '^\".+\" = \(.+\)' _maps/**/*.dmm;	then
     echo "ERROR: Non-TGM formatted map detected. Please convert it using Map Merger!"
     st=1
@@ -44,10 +48,10 @@ if grep -P '\W\/turf\s*[,\){]' _maps/**/*.dmm; then
     echo "ERROR: base /turf path use detected in maps, please replace with proper paths."
     st=1
 fi;
-if grep -P '^/*var/' code/**/*.dm; then
-    echo "ERROR: Unmanaged global var use detected in code, please use the helpers."
-    st=1
-fi;
+# if grep -P '^/*var/' code/**/*.dm; then
+#     echo "ERROR: Unmanaged global var use detected in code, please use the helpers."
+#     st=1
+# fi;
 # echo "Checking for space indentation"
 # if grep -P '(^ {2})|(^ [^ * ])|(^    +)' code/**/*.dm; then
 #     echo "space indentation detected"
@@ -72,14 +76,14 @@ done < <(find . -type f -name '*.dm')
 #     echo "changed files contains proc argument starting with 'var'"
 #     st=1
 # fi;
-if grep -i 'centcomm' code/**/*.dm; then
-    echo "ERROR: Misspelling(s) of CENTCOM detected in code, please remove the extra M(s)."
-    st=1
-fi;
-if grep -i 'centcomm' _maps/**/*.dmm; then
-    echo "ERROR: Misspelling(s) of CENTCOM detected in maps, please remove the extra M(s)."
-    st=1
-fi;
+# if grep -i 'centcomm' code/**/*.dm; then
+#     echo "ERROR: Misspelling(s) of CENTCOM detected in code, please remove the extra M(s)."
+#     st=1
+# fi;
+# if grep -i 'centcomm' _maps/**/*.dmm; then
+#     echo "ERROR: Misspelling(s) of CENTCOM detected in maps, please remove the extra M(s)."
+#     st=1
+# fi;
 if grep -ni 'nanotransen' code/**/*.dm; then
     echo "Misspelling(s) of nanotrasen detected in code, please remove the extra N(s)."
     st=1

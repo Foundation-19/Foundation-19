@@ -1,12 +1,24 @@
-# This file has all the information on what versions of libraries are thrown into the code
-# For dreamchecker
-export SPACEMANDMM_TAG=suite-1.4
-# For NanoUI + TGUI
-export NODE_VERSION=12
-# For the scripts in tools
-export PHP_VERSION=7.2
+#!/bin/sh
+
+#Project dependencies file
+#Final authority on what's required to fully build the project
+
 # byond version
 export BYOND_MAJOR=514
 export BYOND_MINOR=1557
-# Macro Count
-export MACRO_COUNT=4
+
+#rust_g git tag
+export RUST_G_VERSION=0.4.7
+
+#node version
+export NODE_VERSION=12
+export NODE_VERSION_PRECISE=12.20.0
+
+# SpacemanDMM git tag
+export SPACEMAN_DMM_VERSION=suite-1.6
+
+# Extools git tag
+# export EXTOOLS_VERSION=v0.0.7
+
+# Python version for mapmerge and other tools
+export PYTHON_VERSION=3.6.8
