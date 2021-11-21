@@ -36,7 +36,6 @@ body {
     right: 12px;
     width: 42px;
     height: 24px;
-    background: url(uiTitleFluff.png) 50% 50% no-repeat;
 }
 
 #uiStatusIcon {
@@ -124,5 +123,3 @@ body {
     padding: 3px 4px 3px 4px;
     margin: 4px 0 4px 0;
 }
-
-

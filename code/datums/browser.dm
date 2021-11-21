@@ -92,6 +92,9 @@
 
 /datum/browser/proc/get_footer()
 	return {"
+			<div class="wrapper"></div>
+			<div class="scanline"></div>
+			<div class="overlay"></div>
 			</div>
 		</div>
 	</body>
