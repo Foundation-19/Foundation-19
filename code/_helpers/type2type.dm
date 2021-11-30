@@ -192,5 +192,7 @@
 	return atomtypes2nameassoclist(typesof(atom_type))
 
 //Splits the text of a file at seperator and returns them in a list.
+//most of the below is tgcode ported because buffy hates baycodes utter lack of utility
+
 /world/proc/file2list(filename, seperator="\n")
 	return splittext(file2text(filename), seperator)
