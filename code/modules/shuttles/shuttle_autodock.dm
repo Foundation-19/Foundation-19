@@ -22,7 +22,7 @@
 	..(_name, start_waypoint)
 
 	//Initial dock
-	#warn "Uncomment the annoying shuttle CRASH procs before pushing to live."
+	//#warn "Uncomment the annoying shuttle CRASH procs before pushing to live."
 	/*
 	if(!current_location)
 		CRASH("Shuttle landmark connection failed!")
