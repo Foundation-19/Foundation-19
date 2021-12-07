@@ -352,7 +352,8 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	set desc = "Confuse your victims by making them see upside-down."
 	confusing = !confusing
 	to_chat(src, "You are [confusing ? "now confusing" : "no longer confusing"] your victims.")
-
+//mess. rewrite
+/*
 /mob/living/carbon/human/scp106/apply_damage(damage = 0, damagetype = BRUTE, def_zone = null, blocked = 0, damage_flags = 0, used_weapon = null)
 	. = ..()
 	if (getBruteLoss() + getFireLoss() + getToxLoss() + getCloneLoss() >= 200)
@@ -361,7 +362,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 			forceMove(pick(GLOB.scp106_floors))
 			verbs -= /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
 			verbs += /mob/living/carbon/human/scp106/proc/go_back
-
+*/
 // special objects
 /obj/scp106_exit
 	icon = 'icons/mob/screen1.dmi'
