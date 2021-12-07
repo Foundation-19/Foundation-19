@@ -153,3 +153,4 @@ var/const/NETWORK_895			= "SCP-895 CCTV Network (CAUTION!)"
 // Override and implement to customize the SMES's loadout
 /obj/machinery/power/smes/buildable/preset/proc/configure_and_install_coils()
 	CRASH("configure_and_install_coils() not implemented for type [type]!")
+
