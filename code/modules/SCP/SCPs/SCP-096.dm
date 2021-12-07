@@ -80,7 +80,7 @@
 		murdering = 0
 		chasing = 0
 		will_scream = 1
-		handle_idle()
+		src.handle_idle()
 
 //Check if any carbon mob can see us
 /mob/living/simple_animal/hostile/scp096/proc/check_los()

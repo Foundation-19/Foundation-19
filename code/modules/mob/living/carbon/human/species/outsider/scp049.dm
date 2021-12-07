@@ -38,7 +38,6 @@
 /datum/species/scp049/handle_post_spawn(mob/living/carbon/human/H)
 	. = ..()
 
-// #define 049AI
 /datum/species/scp049/handle_npc(var/mob/living/carbon/human/scp049/H)
 	if (!H || H.client)
 		if(H.target)
@@ -51,15 +50,12 @@
 	H.pursueTarget()
 
 	// walk around randomly if we don't have a target
-	#ifdef 049AI
 	if(!H.pursueTarget())
 		var/turf/T = step_rand(H)
 		H.Move(get_dir(H, T))
-	#else
 	if(!H.target && prob(25))
 		var/turf/T = step_rand(H)
 		H.Move(get_dir(H, T))
-	#endif
 
 /datum/species/scp049/handle_vision(var/mob/living/carbon/human/scp049/H)
 	var/list/vision = H.get_accumulated_vision_handlers()

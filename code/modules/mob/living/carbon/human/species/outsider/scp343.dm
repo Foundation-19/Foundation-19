@@ -42,12 +42,7 @@
 	if (!H || H.client)
 		return
 	// walk around randomly if we don't have a target
-	#ifdef 343AI
-	if (!H.pursueTarget())
-		var/turf/T = step_rand(H)
-		H.Move(get_dir(H, T))
-	#else
+
 	if (prob(25))
 		var/turf/T = step_rand(H)
 		H.Move(get_dir(H, T))
-	#endif
