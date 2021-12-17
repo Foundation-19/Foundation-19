@@ -67,7 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        map_path: [example, site53, away_sites_testing]
+        map_path: [site53]
     steps:
       - uses: actions/checkout@v2
       - name: Setup Cache
