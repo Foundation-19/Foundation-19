@@ -80,7 +80,6 @@
 		murdering = 0
 		chasing = 0
 		will_scream = 1
-		handle_idle()
 
 //Check if any carbon mob can see us
 /mob/living/simple_animal/hostile/scp096/proc/check_los()
@@ -335,8 +334,8 @@
 			target = null
 			chasing_message_played = 0
 			doom_message_played = 0
-
-/mob/living/simple_animal/hostile/scp096/proc/handle_idle()
+/*
+/mob/living/simple_animal/hostile/scp096/handle_idle()
 
 	//Movement
 	if(!client && !anchored)
@@ -412,7 +411,7 @@
 					visible_message("<span class='danger'>\The [src] suddenly appears from the vent!</span>")
 		else
 			entry_vent = null
-
+*/
 /mob/living/simple_animal/hostile/scp096/bullet_act(var/obj/item/projectile/Proj)
 	if(!Proj || Proj.damage <= 0)
 		return 0

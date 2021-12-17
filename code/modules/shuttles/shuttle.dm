@@ -48,7 +48,7 @@
 		current_location = initial_location
 	else
 		current_location = SSshuttle.get_landmark(current_location)
-	#warning "Uncomment the annoying shuttle CRASH procs before pushing to live."
+	//#warn "Uncomment the annoying shuttle CRASH procs before pushing to live."
 	/*if(!istype(current_location))
 		CRASH("Shuttle \"[name]\" could not find its starting location.")
 	*/
