@@ -218,6 +218,7 @@ var/global/list/additional_antag_types = list()
 	var/welcome_delay = rand(waittime_l, waittime_h)
 	addtimer(CALLBACK(GLOB.using_map, /datum/map/proc/send_welcome), welcome_delay)
 	addtimer(CALLBACK(src, .proc/announce_ert_disabled), welcome_delay + 10 SECONDS)
+	addtimer(CALLBACK(GLOB.using_map, /datum/map/proc/roundstart_announcement), 35 SECONDS)
 
 	//Assign all antag types for this game mode. Any players spawned as antags earlier should have been removed from the pending list, so no need to worry about those.
 	for(var/datum/antagonist/antag in antag_templates)

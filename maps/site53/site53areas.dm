@@ -152,6 +152,8 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 // SITE 53 SURFACE AREA'S
+/area/site53
+	req_access = list(level_1)
 
 /area/site53/surface/surface
 	name = "Surface"
@@ -187,6 +189,7 @@
 	icon_state = "Sleep"
 	requires_power = 0
 	dynamic_lighting = 1
+	req_access = list(level_1)
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/surface/cryogenicsaux
@@ -194,6 +197,7 @@
 	icon_state = "Sleep"
 	requires_power = 0
 	dynamic_lighting = 1
+	req_access = list(level_1)
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/surface/tramhubhallwayentry
@@ -290,6 +294,7 @@
 	icon_state = "hallC1"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = LARGE_ENCLOSED
+
 
 /area/site53/maintenance
 	area_flags = AREA_FLAG_RAD_SHIELDED

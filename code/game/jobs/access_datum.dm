@@ -10,6 +10,39 @@
 /*****************
 * Station access *
 *****************/
+/var/const/level_1 = "LEVEL_1" //1
+/var/const/level_2 = "LEVEL_2" //2
+/var/const/level_3 = "LEVEL_3" //3
+/var/const/level_4 = "LEVEL_4" //4
+/var/const/level_5 = "LEVEL_5" //5
+
+
+/datum/access/level_1
+	id = level_1
+	desc = "Level 1 Access"
+	region = ACCESS_REGION_LEVEL_1
+
+/datum/access/level_2
+	id = level_2
+	desc = "Level 2 Access"
+	region = ACCESS_REGION_LEVEL_2
+
+/datum/access/level_3
+	id = level_3
+	desc = "Level 3 Access"
+	region = ACCESS_REGION_LEVEL_3
+
+/datum/access/level_4
+	id = level_4
+	desc = "Level 4 Access"
+	region = ACCESS_REGION_LEVEL_4
+
+/datum/access/level_5
+	id = level_5
+	desc = "Level 5 Access"
+	region = ACCESS_REGION_LEVEL_5
+
+//most everything below is depreciated
 /var/const/access_security = "ACCESS_SECURITY" //1
 /datum/access/security
 	id = access_security

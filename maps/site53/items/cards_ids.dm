@@ -212,29 +212,29 @@
 // TEMP CARDS
 
 /obj/item/card/id/seclvl1
-	name = "level one security keycard"
+	name = " security ID"
 	desc = "A light blue card. Seems almost as unimportant as the person itself."
 	icon_state = "securitylvl1"
 	item_state = "Sec_ID1"
 //	job_access_type = /datum/job/enlistedofficer
 
 /obj/item/card/id/seclvl2
-	name = "level two security keycard"
-	desc = "A dark purple keycard. Looks important. The person wearing it, not at all."
+	name = " security ID"
+	desc = "A dark purple ID. Looks important. The person wearing it, not at all."
 	icon_state = "securitylvl2"
 	item_state = "Sec_ID2"
 	job_access_type = /datum/job/juneng
 
 /obj/item/card/id/seclvl3
-	name = "level three security keycard"
-	desc = "A dark blue keycard. Looks important. The person wearing it not so much."
+	name = " security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	icon_state = "securitylvl3"
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/eng
 
 /obj/item/card/id/seclvl4
-	name = "level four security keycard"
-	desc = "A teal keycard. Looks cool."
+	name = " security ID"
+	desc = "A teal ID. Looks cool."
 	icon_state = "securitylvl4"
 	item_state = "Sec_ID4"
 	job_access_type = /datum/job/seneng
@@ -244,44 +244,44 @@
 // JUNIOR GUARD ID'S
 
 /obj/item/card/id/junseclvl1
-	name = "level one security keycard"
+	name = " security ID"
 	desc = "A light blue card. Seems almost as unimportant as the person itself."
 	icon_state = "securitylvl1"
 	item_state = "Sec_ID1"
 	job_access_type = /datum/job/enlistedofficerlcz
 
 /obj/item/card/id/junseclvl2ez
-	name = "level two security keycard"
-	desc = "A dark purple keycard. Looks important. The person wearing it, not at all."
+	name = " security ID"
+	desc = "A dark purple ID. Looks important. The person wearing it, not at all."
 	icon_state = "securitylvl2"
 	item_state = "Sec_ID2"
 	job_access_type = /datum/job/enlistedofficerez
 
 /obj/item/card/id/junseclvl3hcz
-	name = "level three security keycard"
-	desc = "A dark blue keycard. Looks important. The person wearing it not so much."
+	name = " security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	icon_state = "securitylvl3"
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/enlistedofficerhcz
 
 // GUARD ID'S.
 /obj/item/card/id/seclvl2lcz
-	name = "level two security keycard"
-	desc = "A dark purple keycard. Looks important. The person wearing it, not at all."
+	name = " security ID"
+	desc = "A dark purple ID. Looks important. The person wearing it, not at all."
 	icon_state = "securitylvl2"
 	item_state = "Sec_ID2"
 	job_access_type = /datum/job/ncoofficerlcz
 
 /obj/item/card/id/seclvl3ez
-	name = "level three security keycard"
-	desc = "A dark blue keycard. Looks important. The person wearing it not so much."
+	name = " security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	icon_state = "securitylvl3"
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/ncoofficerez
 
 /obj/item/card/id/seclvl3hcz
-	name = "level three security keycard"
-	desc = "A dark blue keycard. Looks important. The person wearing it not so much."
+	name = " security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	icon_state = "securitylvl3"
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/ncoofficerhcz
@@ -289,22 +289,22 @@
 // ZC ID'S
 
 /obj/item/card/id/zcseclvl4hcz
-	name = "level four security keycard"
-	desc = "A teal keycard. Looks cool."
+	name = " security ID"
+	desc = "A teal ID. Looks cool."
 	icon_state = "securitylvl4"
 	item_state = "Sec_ID4"
 	job_access_type = /datum/job/ltofficerhcz
 
 /obj/item/card/id/zcseclvl3lcz
-	name = "level three security keycard"
-	desc = "A teal keycard. A dark blue keycard. Looks important. The person wearing it not so much."
+	name = " security ID"
+	desc = "A teal ID. A dark blue ID. Looks important. The person wearing it not so much."
 	icon_state = "securitylvl3"
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/ltofficerlcz
 
 /obj/item/card/id/zcseclvl4ez
-	name = "level four security keycard"
-	desc = "A teal keycard. Looks cool."
+	name = " security ID"
+	desc = "A teal ID. Looks cool."
 	icon_state = "securitylvl4"
 	item_state = "Sec_ID4"
 	job_access_type = /datum/job/ltofficerez
@@ -312,8 +312,8 @@
 // GC ID.
 
 /obj/item/card/id/gcseclvl5
-	name = "level five security keycard"
-	desc = "A dark purple keycard. Looks important."
+	name = " security ID"
+	desc = "A dark purple ID. Looks important."
 	icon_state = "securitylvl5"
 	item_state = "Sec_ID5"
 	job_access_type = /datum/job/hos
@@ -321,72 +321,72 @@
 // SCIENCE
 
 /obj/item/card/id/sciencelvl1
-	name = "level one science keycard"
-	desc = "A light blue keycard. Haven't you seen a janitor with this before?"
+	name = " science ID"
+	desc = "A light blue ID. Haven't you seen a janitor with this before?"
 	icon_state = "sciencelvl1"
 	item_state = "Science_ID1"
 	job_access_type = /datum/job/juniorscientist
 
 /obj/item/card/id/sciencelvl2
-	name = "level two science keycard"
-	desc = "A bright yellow keycard. Looks ordinary?"
+	name = " science ID"
+	desc = "A bright yellow ID. Looks ordinary?"
 	icon_state = "sciencelvl2"
 	item_state = "Science_ID2"
 	job_access_type = /datum/job/scientist
 
 /obj/item/card/id/sciencelvl3
-	name = "level three science keycard"
-	desc = "A dark yellow keycard. Looks cool, the person wearing it, not so much."
+	name = " science ID"
+	desc = "A dark yellow ID. Looks cool, the person wearing it, not so much."
 	icon_state = "sciencelvl3"
 	item_state = "Science_ID3"
 	job_access_type = /datum/job/scientist
 
 /obj/item/card/id/sciencelvl4
-	name = "level four science keycard"
-	desc = "An orange keycard. Looks important."
+	name = " science ID"
+	desc = "An orange ID. Looks important."
 	icon_state = "sciencelvl4"
 	item_state = "Science_ID4"
 	job_access_type = /datum/job/seniorscientist
 
 /obj/item/card/id/sciencelvl5
-	name = "level five science keycard"
-	desc = "A red keycard. Looks like the person wearing this won't give it up easy."
+	name = " science ID"
+	desc = "A red ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "sciencelvl5"
 	item_state = "Science_ID5"
 	job_access_type = /datum/job/rd
 
 // ADMIN
 /obj/item/card/id/adminlvl1
-	name = "level one administration keycard"
-	desc = "A black keycard. Looks like the person wearing this won't give it up easy."
+	name = " administration ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "adminlvl1"
 	item_state = "Admin_ID"
 //	job_access_type = /datum/job/rd
 
 /obj/item/card/id/adminlvl2
-	name = "level two administration keycard"
-	desc = "A black keycard. Looks like the person wearing this won't give it up easy."
+	name = " administration ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "adminlvl2"
 	item_state = "Admin_ID"
 //	job_access_type = /datum/job/rd
 
 /obj/item/card/id/adminlvl3
-	name = "level three administration keycard"
-	desc = "A black keycard. Looks like the person wearing this won't give it up easy."
+	name = " administration ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "adminlvl3"
 	item_state = "Admin_ID"
 //	job_access_type = /datum/job/rd
 
 /obj/item/card/id/adminlvl4
-	name = "level four administration keycard"
-	desc = "A black keycard. Looks like the person wearing this won't give it up easy."
+	name = " administration ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "adminlvl4"
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/hop
 
 /obj/item/card/id/adminlvl5
-	name = "level five administration keycard"
-	desc = "A black keycard. Looks like the person wearing this won't give it up easy."
+	name = " administration ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "adminlvl5"
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/captain
@@ -394,15 +394,15 @@
 // COMMS CARDS
 
 /obj/item/card/id/commslvl1
-	name = "level one administration keycard"
-	desc = "A black keycard. A black keycard. Looks like the person wearing this won't give it up easy."
+	name = " administration ID"
+	desc = "A black ID. A black ID. Looks like the person wearing this won't give it up easy."
 	job_access_type = /datum/job/commeng
 	icon_state = "adminlvl1"
 	item_state = "Admin_ID"
 
 /obj/item/card/id/commslvl4
-	name = "level four administration keycard"
-	desc = "A black keycard. A black keycard. Looks like the person wearing this won't give it up easy."
+	name = " administration ID"
+	desc = "A black ID. A black ID. Looks like the person wearing this won't give it up easy."
 	job_access_type = /datum/job/commsofficer
 	icon_state = "adminlvl4"
 	item_state = "Admin_ID"
@@ -410,42 +410,42 @@
 // MEDICAL CARDS
 
 /obj/item/card/id/emt
-	name = "level one security keycard"
+	name = " security ID"
 	desc = "A light blue card. Seems almost as unimportant as the person itself."
 	icon_state = "securitylvl1"
 	item_state = "Sec_ID1"
 	job_access_type = /datum/job/emt
 
 /obj/item/card/id/chemist
-	name = "level two security keycard"
+	name = " security ID"
 	desc = "A light blue card. Seems almost as unimportant as the person itself."
 	icon_state = "securitylvl2"
 	item_state = "Sec_ID2"
 	job_access_type = /datum/job/chemist
 
 /obj/item/card/id/doctor
-	name = "level two security keycard"
+	name = " security ID"
 	desc = "A light blue card. Seems almost as unimportant as the person itself."
 	icon_state = "securitylvl2"
 	item_state = "Sec_ID2"
 	job_access_type = /datum/job/medicaldoctor
 
 /obj/item/card/id/chiefmedicalofficer
-	name = "level five security keycard"
-	desc = "A dark purple keycard. Looks important."
+	name = " security ID"
+	desc = "A dark purple ID. Looks important."
 	icon_state = "securitylvl5"
 	item_state = "Sec_ID5"
 	job_access_type = /datum/job/cmo
 
 /obj/item/card/id/virologist
-	name = "level two security keycard"
+	name = " security ID"
 	desc = "A light blue card. Seems almost as unimportant as the person itself."
 	icon_state = "adminlvl2"
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/virologist
 
 /obj/item/card/id/psychiatrist
-	name = "level three administration keycard"
+	name = " administration ID"
 	desc = "A light blue card. Seems important."
 	icon_state = "adminlvl3"
 	item_state = "Admin_ID"
@@ -455,8 +455,8 @@
 // ARCHIVE
 
 /obj/item/card/id/archivist
-	name = "level five administration keycard"
-	desc = "A black keycard. Looks like the person wearing this won't give it up easy."
+	name = " administration ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "adminlvl5"
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/archivist
@@ -464,8 +464,8 @@
 // RESEARCH
 
 /obj/item/card/id/rd
-	name = "level five science keycard"
-	desc = "A red keycard. Looks like the person wearing this won't give it up easy."
+	name = " science ID"
+	desc = "A red ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "sciencelvl5"
 	item_state = "Science_ID5"
 	job_access_type = /datum/job/rd
@@ -473,15 +473,15 @@
 // MISC
 
 /obj/item/card/id/chef
-	name = "level five science keycard"
-	desc = "A light blue keycard. Haven't you seen a janitor with this before?"
+	name = " science ID"
+	desc = "A light blue ID. Haven't you seen a janitor with this before?"
 	icon_state = "sciencelvl1"
 	item_state = "Science_ID1"
 	job_access_type = /datum/job/chef
 
 /obj/item/card/id/bartender
-	name = "level one science keycard"
-	desc = "A light blue keycard. Haven't you seen a janitor with this before?"
+	name = " science ID"
+	desc = "A light blue ID. Haven't you seen a janitor with this before?"
 	icon_state = "sciencelvl1"
 	item_state = "Science_ID1"
 	job_access_type = /datum/job/bartender
@@ -490,16 +490,16 @@
 
 
 /obj/item/card/id/logoff
-	name = "level three security keycard"
-	desc = "A dark blue keycard. Looks important. The person wearing it not so much."
+	name = " security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	icon_state = "securitylvl3"
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/qm
 
 
 /obj/item/card/id/logspec
-	name = "level three security keycard"
-	desc = "A dark blue keycard. Looks important. The person wearing it not so much."
+	name = " security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	icon_state = "securitylvl3"
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/cargo_tech

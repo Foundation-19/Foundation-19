@@ -16,9 +16,9 @@ jobs:
   DreamChecker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@1e204e9a9253d643386038d443f96446fa156a97
+      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
       - name: Setup Cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353
+        uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed
         with:
           path: $HOME/spaceman_dmm/$SPACEMAN_DMM_VERSION
           key: ${{ runner.os }}-spacemandmm-${{ env.SPACEMAN_DMM_VERSION }}
@@ -40,9 +40,9 @@ jobs:
   Code:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@1e204e9a9253d643386038d443f96446fa156a97
+      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
       - name: Setup Cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353
+        uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed
         with:
           path: $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}
           key: ${{ runner.os }}-byond-${{ env.BYOND_MAJOR }}-${{ env.BYOND_MINOR }}
@@ -51,34 +51,6 @@ jobs:
       - name: Run Tests
         env:
           TEST: CODE
-        run: test/run-test.sh
-      - name: Run Failure Webhook
-        env:
-          JOB_STATUS: ${{ job.status }}
-          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-          HOOK_OS_NAME: ${{ runner.os }}
-          WORKFLOW_NAME: ${{ github.workflow }}
-        if: ${{ failure() }}
-        run: |
-          wget https://raw.githubusercontent.com/DiscordHooks/github-actions-discord-webhook/master/send.sh
-          chmod +x send.sh
-          ./send.sh failure $WEBHOOK_URL
-  Maps:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        map_path: [example, site_ds90, site13, site19, site53, away_sites_testing]
-    steps:
-      - uses: actions/checkout@1e204e9a9253d643386038d443f96446fa156a97
-      - name: Setup Cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353
-        with:
-          path: $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}
-          key: ${{ runner.os }}-byond-${{ env.BYOND_MAJOR }}-${{ env.BYOND_MINOR }}
-      - name: Run Tests
-        env:
-          TEST: MAP
-          MAP_PATH: ${{ matrix.map_path }}
         run: test/run-test.sh
       - name: Run Failure Webhook
         env:
