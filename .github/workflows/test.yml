@@ -16,7 +16,7 @@ jobs:
   DreamChecker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - name: Setup Cache
         uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed
         with:
@@ -40,7 +40,7 @@ jobs:
   Code:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - name: Setup Cache
         uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed
         with:
