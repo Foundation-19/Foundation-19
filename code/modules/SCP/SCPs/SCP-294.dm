@@ -1,6 +1,6 @@
 GLOBAL_LIST_EMPTY(scp294_reagents)
 
-/obj/machinery/scp294
+/obj/machinery/scp294/
 	name = "SCP-294"
 	desc = "A standard coffee vending machine. This one seems to have a QWERTY keyboard."
 	icon = 'icons/obj/scp294.dmi'
@@ -11,22 +11,22 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 	var/uses_left = 12
 	var/last_use = 0
 	var/restocking_timer = 0
-	SCP = /datum/scp/SCP_294
+	SCP = /datum/scp/scp_294
+	var/list/player_names = list()
+	var/player_attack
+	var/mob/living/carbon/victim
 
-/obj/machinery/scp294/New()
+/obj/machinery/scp294/New(atom/holder)
 	..()
+	//get the names of all players at roundstart to save on cpu.
+	//yes this may lead to names not working if they join midround but it adds to the mystery of its 'randomness' lol
 
-	if(!GLOB.scp294_reagents.len)
-		//Chemical Reagents - Initialises all /datum/reagent into a list indexed by reagent id
-		var/paths = subtypesof(/datum/reagent) - /datum/reagent/adminordrazine
-		for(var/path in paths)
-			var/datum/reagent/D = new path
-			GLOB.scp294_reagents[D.name] = D
+	player_names += GLOB.player_list
 
-/obj/machinery/scp294/examine(mob/user)
-	user << "<b><span class = 'euclid'><big>SCP-294</big></span></b> - [desc]"
+/obj/machinery/scp294/Destroy()
+	. = ..()
 
-/datum/scp/SCP_294
+/datum/scp/scp_294
 	name = "SCP-294"
 	designation = "294"
 	classification = EUCLID
@@ -40,56 +40,33 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 	last_use = world.time
 	if(uses_left < 1)
 		visible_message("<span class='notice'>[src] displays RESTOCKING, PLEASE WAIT message.</span>")
+		addtimer(CALLBACK(src, .proc/update_uses), 60 SECONDS)
 		return
 
-	var/product = null
-	var/mob/living/carbon/victim = null
-	var/input_reagent = lowertext(input("Enter the name of any liquid", "What would you like to drink?") as text)
-	for(var/mob/living/carbon/M in GLOB.living_mob_list_)
-		if (lowertext(M.name) == input_reagent)
-			if (istype(M, /mob/living/carbon/))
-				victim = M
-				if(victim)
-					to_chat(M, "You feel a sharp stabbing pain in your insides!")
-					var/i
-					var/pain = rand(1, 6)
-					for(i=1; i<=pain; i++)
-						M.adjustBruteLoss(5)
+	var/valid_id
+	while(!valid_id)
+		var/chosen_id = input(user, "Enter the name of any liquid!", "SCP 294") as null|text
+		if(isnull(chosen_id))
+			break
 
-	if(!victim)
-		product = find_reagent(input_reagent)
+		if(!ispath(text2path(chosen_id)))
+			chosen_id = pick_closest_path(chosen_id, subtypesof(/datum/reagent), TRUE)
+			if(ispath(chosen_id))
+				valid_id = TRUE
+		else
+			valid_id = TRUE
 
-	// use one use
-	if (product || victim)
-		--uses_left
-		if (!uses_left)
-			spawn(2000)
-				uses_left = initial(uses_left)
-
-	sleep(10)
-	if(product)
+		if(!valid_id)
+			to_chat(user, "<span class='warning'>A strange substance wheezes out of the dispenser and evaporates.</span>")
+			return
 		var/obj/item/reagent_containers/food/drinks/sillycup/D = new /obj/item/reagent_containers/food/drinks/sillycup(loc)
-		D.reagents.add_reagent(product, 30)
-		visible_message("<span class='notice'>[src] dispenses a small paper cup.</span>")
-	else if (victim)
-		var/obj/item/reagent_containers/food/drinks/sillycup/D = new /obj/item/reagent_containers/food/drinks/sillycup(loc)
-		product = victim.take_blood(D,30)
-		D.reagents.reagent_list += product
+		D.reagents.add_reagent(chosen_id, 30)
 		D.reagents.update_total()
 		D.on_reagent_change()
 		visible_message("<span class='notice'>[src] dispenses a small paper cup.</span>")
-	else
-		visible_message("<span class='notice'>[src]'s OUT OF RANGE light flashes rapidly.</span>")
 
-/obj/machinery/scp294/proc/find_reagent(input)
-	. = FALSE
-	if(GLOB.scp294_reagents[input])
-		var/datum/reagent/R = GLOB.scp294_reagents[input]
-		if(R)
-			return R.type
-	else
-		for(var/X in GLOB.scp294_reagents)
-			var/datum/reagent/R = GLOB.scp294_reagents[X]
-			if (ckey(input) == ckey(R.name))
-				return R.type
 
+/obj/machinery/scp294/proc/update_uses()
+	if(uses_left < 12)
+		uses_left += 1
+		addtimer(CALLBACK(src, .proc/update_uses), 60 SECONDS)

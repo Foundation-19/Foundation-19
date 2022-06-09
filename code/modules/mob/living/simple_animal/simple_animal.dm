@@ -26,6 +26,12 @@
 	var/turns_per_move = 1
 	var/turns_since_move = 0
 	//Interaction
+
+	var/list/speak = list()
+	var/speak_chance = 0
+	var/list/emote_hear = list()	//Hearable emotes
+	var/list/emote_see = list()		//Unlike speak_emote, the list of things in this variable only show by themselves with no spoken text. IE: Ian barks, Ian yaps
+
 	var/response_help   = "tries to help"
 	var/response_disarm = "tries to disarm"
 	var/response_harm   = "tries to hurt"

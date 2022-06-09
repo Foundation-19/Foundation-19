@@ -6,6 +6,12 @@
 		mloc = mloc.loc
 	return mloc
 
+/proc/iswall(turf/T)
+	return (istype(T, /turf/simulated/wall) || istype(T, /turf/unsimulated/wall) || istype(T, /turf/simulated/shuttle/wall))
+
+/proc/isfloor(turf/T)
+	return (istype(T, /turf/simulated/floor) || istype(T, /turf/unsimulated/floor))
+
 /proc/turf_clear(turf/T)
 	for(var/atom/A in T)
 		if(A.simulated)
@@ -69,9 +75,6 @@
 
 /proc/is_not_open_space(turf/T)
 	return !isopenspace(T)
-
-/proc/isfloor(turf/T)
-	return (istype(T, /turf/simulated/floor) || istype(T, /turf/unsimulated/floor))
 
 /proc/is_holy_turf(var/turf/T)
 	return T && T.holy

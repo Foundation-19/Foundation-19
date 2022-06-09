@@ -95,16 +95,6 @@
 		/datum/computer_file/program/forceauthorization
 	)
 
-/obj/machinery/computer/modular/preset/cardslot/dassignments
-	default_software = list(
-		/datum/computer_file/program/camera_monitor,
-		/datum/computer_file/program/email_client,
-		/datum/computer_file/program/records,
-		/datum/computer_file/program/wordprocessor,
-		/datum/computer_file/program/digitalwarrant,
-		/datum/computer_file/program/forceauthorization
-	)
-
 /obj/machinery/computer/modular/preset/security
 	default_software = list(
 		/datum/computer_file/program/digitalwarrant,

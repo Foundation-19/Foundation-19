@@ -1,57 +1,57 @@
 var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
+
 /datum/job/captain
+	title = "Captain"
+	department = "Command"
+	head_position = 1
+	department_flag = COM
 
-	title = "Site Director"
-	supervisors = "the SCP Foundation and O5 Council"
-//	duties = "<big><b>As the Site Director you are responsible for the operations happening in the Site that you manage.<br>You won't have access to SCP's, or the D-Class area.<br> As Site Director, you should worry about making sure all SOP and safety procedures are followed by delegating to the heads of staff.<br><span style = 'color:red'>It is not your job to jump in where necessary! Consistently bad roleplay will be punished under the CoHoS rule!</span>"
-	minimal_player_age = 20
-	economic_power = 15
-	ideal_character_age = 50
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/facilitydir
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classa)
-	equip(var/mob/living/carbon/human/H)
-		..()
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "company officials and Corporate Regulations"
+	selection_color = "#1d1d4f"
+	req_admin_notify = 1
+	access = list() 			//See get_access()
+	minimal_access = list() 	//See get_access()
+	minimal_player_age = 14
+	economic_power = 20
 
-	access = list(
-	access_com_comms, // SD and HoP do not want to hear all the details, either meet your Commander in person or talk to the Tower
-	access_adminlvl5,
-	access_adminlvl4,
-	access_adminlvl3,
-	access_adminlvl2,
-	access_adminlvl1,
-	access_keyauth
-	)
-	minimal_access = list()
+	ideal_character_age = 70 // Old geezer captains ftw
+	outfit_type = /decl/hierarchy/outfit/job/captain
 
+/datum/job/captain/equip(var/mob/living/carbon/human/H)
+	. = ..()
+	if(.)
+		H.implant_loyalty(src)
+
+/datum/job/captain/get_access()
+	return get_all_station_access()
 
 /datum/job/hop
-
 	title = "Head of Personnel"
-	supervisors = "the Facility Director"
-	department = "Command"
-	department_flag = COM
-	total_positions = 0
-	spawn_positions = 0
-//	duties = "<big><b>As the Head of Personnel, you're the right hand of the Site Director.<br>You can go to places he, or she couldn't, but still won't have access to SCP's, or the D-Class Cells.<br>Your job is to be the Site Director's eyes and ears, as well as being in charge of personnel outside of the Security branch.<br>You reserve the right to promote and demote people in cases of emergencies, otherwise, approval of the Site Director is needed.<br><span style = 'color:red'>It is not your job to jump in where necessary! Bad roleplay will be punished!</span>"
-	minimal_player_age = 15
+	head_position = 1
+	department_flag = COM|CIV
+
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the captain"
+	selection_color = "#2f2f7f"
+	req_admin_notify = 1
+	minimal_player_age = 14
 	economic_power = 10
-	ideal_character_age = 45
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/headofhr
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classa)
-	alt_titles = list("Personnel Director")
-	equip(var/mob/living/carbon/human/H)
-		..()
+	ideal_character_age = 50
 
+	access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers, access_heads,
+			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_bridge,
+			            access_all_personal_lockers, access_maint_tunnels, access_bar, access_janitor, access_construction, access_morgue,
+			            access_crematorium, access_kitchen, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_hydroponics, access_lawyer,
+			            access_chapel_office, access_library, access_research, access_mining, access_heads_vault, access_mining_station,
+			            access_hop, access_RC_announce, access_keycard_auth, access_gateway)
+	minimal_access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers, access_heads,
+			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_bridge,
+			            access_all_personal_lockers, access_maint_tunnels, access_bar, access_janitor, access_construction, access_morgue,
+			            access_crematorium, access_kitchen, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_hydroponics, access_lawyer,
+			            access_chapel_office, access_library, access_research, access_mining, access_heads_vault, access_mining_station,
+			            access_hop, access_RC_announce, access_keycard_auth, access_gateway)
 
-	access = list(
-	access_com_comms,
-	access_civ_comms,
-	access_adminlvl4,
-	access_adminlvl3,
-	access_adminlvl2,
-	access_adminlvl1,
-	access_keyauth
-	)
-	minimal_access = list()
+	outfit_type = /decl/hierarchy/outfit/job/hop

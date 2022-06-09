@@ -22,7 +22,13 @@
 	..(_name, start_waypoint)
 
 	//Initial dock
+	//#warn "Uncomment the annoying shuttle CRASH procs before pushing to live."
+	/*
+	if(!current_location)
+		CRASH("Shuttle landmark connection failed!")
+
 	active_docking_controller = current_location.docking_controller
+	*/
 	update_docking_target(current_location)
 	if(active_docking_controller)
 		set_docking_codes(active_docking_controller.docking_codes)

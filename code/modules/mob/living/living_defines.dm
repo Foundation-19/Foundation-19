@@ -60,8 +60,6 @@
 
 	var/ghosted = 0 //For checks as to why a player has disconnected (can AI take over? etc.)
 	var/admin_paralyzed = FALSE
-/* FOUNDATION 19 EDIT */
-	var/list/in_vision_cones = list()
 
 	// var/nutrition = 400
 	// var/max_nutrition = MAX_NUTRITION

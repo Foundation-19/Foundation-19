@@ -1,0 +1,1 @@
+GLOBAL_LIST_EMPTY(SCP_list)

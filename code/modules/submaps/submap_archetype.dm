@@ -15,7 +15,7 @@
 
 // Generic ships to populate the list.
 /decl/submap_archetype/derelict
-	descriptor = "Chaos Insurgancy"
+	descriptor = "drifting wreck"
 
 /decl/submap_archetype/abandoned_ship
-	descriptor = "Chaos Insurgancy"
+	descriptor = "abandoned ship"

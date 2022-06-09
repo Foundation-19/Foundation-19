@@ -1,9 +1,9 @@
 #include "playablecolony2_radio.dm"
 
 /datum/map_template/ruin/exoplanet/playablecolony2
-	name = "Outskirts City"
+	name = "Landed Colony Ship"
 	id = "playablecolony2"
-	description = "The Outskirts of the City"
+	description = "a recently landed colony ship"
 	suffixes = list("playablecolony2/colony2.dmm")
 	spawn_cost = 2
 	player_cost = 4
@@ -16,11 +16,11 @@
 	spawn_weight = 0.4
 
 /decl/submap_archetype/playablecolony2
-	descriptor = "Outskirts City"
+	descriptor = "landed colony ship"
 	crew_jobs = list(/datum/job/submap/colonist2)
 
 /datum/job/submap/colonist2
-	title = "City Dweller"
+	title = "Ship Colonist"
 	supervisors = "the trust of your fellow Colonists"
 	info = "You are a Colonist, living on the rim of explored, let alone inhabited, space in a recently landed colony ship."
 	total_positions = 3

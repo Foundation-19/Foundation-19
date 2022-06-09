@@ -801,16 +801,6 @@ Note that amputating the affected organ does in fact remove the infection from t
 ****************************************************/
 /obj/item/organ/external/proc/get_droplimb_messages_for(var/droptype, var/clean)
 
-/* Foundation 19 Edits*/
-	if(isscp049(owner))
-		return
-
-	if(isscp106(owner))
-		return
-
-	if(isscp343(owner))
-		return
-
 	if(BP_IS_CRYSTAL(src))
 		playsound(src, "shatter", 70, 1)
 		return list(

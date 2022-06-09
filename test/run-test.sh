@@ -73,7 +73,7 @@ FAILED_BYNAME=()
 PASSED=0
 
 # Version of Node to install for tgui
-NODE_VERSION=4
+NODE_VERSION=12
 
 function msg {
     echo -e "\t\e[34mtest\e[0m: $*"

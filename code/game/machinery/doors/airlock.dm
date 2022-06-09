@@ -75,7 +75,7 @@ var/list/airlock_overlays = list()
 	var/window_color = null
 	var/init_material_window = MATERIAL_GLASS
 	var/material/window_material
-
+	req_access = level_1
 	var/fill_file = 'icons/obj/doors/station/fill_steel.dmi'
 	var/color_file = 'icons/obj/doors/station/color.dmi'
 	var/color_fill_file = 'icons/obj/doors/station/fill_color.dmi'
@@ -109,26 +109,23 @@ var/list/airlock_overlays = list()
 
 /obj/machinery/door/airlock/command
 	door_color = COLOR_COMMAND_BLUE
-
+	req_access = level_3
 /obj/machinery/door/airlock/security
 	door_color = COLOR_NT_RED
-
-/obj/machinery/door/airlock/security/research
-	door_color = COLOR_WHITE
-	stripe_color = COLOR_NT_RED
+	req_access = level_3
 
 /obj/machinery/door/airlock/engineering
 	name = "Maintenance Hatch"
 	door_color = COLOR_AMBER
-
+	req_access = level_2
 /obj/machinery/door/airlock/medical
 	door_color = COLOR_WHITE
 	stripe_color = COLOR_DEEP_SKY_BLUE
-
+	req_access = level_1
 /obj/machinery/door/airlock/virology
 	door_color = COLOR_WHITE
 	stripe_color = COLOR_GREEN
-
+	req_access = level_1
 /obj/machinery/door/airlock/mining
 	name = "Mining Airlock"
 	door_color = COLOR_PALE_ORANGE
@@ -243,7 +240,7 @@ var/list/airlock_overlays = list()
 /obj/machinery/door/airlock/external/inherit_access_from_area()
 	..()
 	if(is_station_area(get_area(src)))
-		add_access_requirement(req_access, access_external_airlocks)
+		add_access_requirement(req_access, level_2)
 
 /obj/machinery/door/airlock/external/escapepod
 	name = "Escape Pod"

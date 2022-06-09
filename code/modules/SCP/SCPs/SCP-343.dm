@@ -2,14 +2,14 @@ GLOBAL_LIST_EMPTY(scp343s)
 
 /mob/living/carbon/human/scp343
 	desc = "A mysterious powerful man."
-	SCP = /datum/scp/SCP_343
+	SCP = /datum/scp/scp_343
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 
 /mob/living/carbon/human/scp343/examine(mob/user)
 	user << "<b><span class = 'euclid'><big>SCP-343</big></span></b> - [desc]"
 
-/datum/scp/SCP_343
+/datum/scp/scp_343
 	name = "SCP-343"
 	designation = "343"
 	classification = SAFE
@@ -23,14 +23,13 @@ GLOBAL_LIST_EMPTY(scp343s)
 /mob/living/carbon/human/scp343/New()
 	..()
 
-	spawn (20)
-		fix_icons()
+	fix_icons()
 
-		// fix names
-		real_name = "SCP-343"
-		SetName(real_name)
-		if(mind)
-			mind.name = real_name
+	// fix names
+	real_name = "SCP-343"
+	SetName(real_name)
+	if(mind)
+		mind.name = real_name
 
 	set_species("SCP-343")
 	GLOB.scp343s += src
@@ -165,7 +164,7 @@ GLOBAL_LIST_EMPTY(scp343s)
 			for (var/v in 1 to 58)
 				spawn (round(v * 0.5, 0.1))
 					if (!src || !O || loc != initial_loc)
-						goto __fixsprite__
+						return
 					else
 						switch (get_dir(src, O))
 							if (NORTH, NORTHEAST, NORTHWEST)
@@ -182,7 +181,6 @@ GLOBAL_LIST_EMPTY(scp343s)
 			forceMove(get_step(src, dir))
 			visible_message("<span class = 'danger'>[src] phases through \the [O].</span>")
 
-		__fixsprite__
 
 		alpha = 255
 		for (var/atom in vis_contents)

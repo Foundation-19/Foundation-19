@@ -1,11 +1,12 @@
 /datum/species/scp049
 	name = "SCP-049"
 	name_plural = "SCP-049s"
-
-//	darksight = 8
+	icon_template = 'icons/mob/scp049.dmi'
 	has_organ = list()
 	siemens_coefficient = 0
-
+	species_flags = SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_SCAN
+	show_ssd = null
+	show_coma = null
 	blood_color = "#622a37"
 	flesh_color = "#442A37"
 
@@ -34,20 +35,30 @@
 	radiation_mod =  0.0                    // No radiation damage
 	flash_mod =      0.0                    // Unflashable
 
-	hud_type = /datum/hud_data/scp049
+/datum/species/scp049/handle_post_spawn(mob/living/carbon/human/H)
+	. = ..()
 
-// #define 049AI
 /datum/species/scp049/handle_npc(var/mob/living/carbon/human/scp049/H)
-	// sanity check, apparently its needed
 	if (!H || H.client)
+		if(H.target)
+			H.target = null
 		return
+	H.resting = FALSE
+	H.lying = FALSE
+	if(!H.target)
+		H.getTarget()
+	H.pursueTarget()
+
 	// walk around randomly if we don't have a target
-	#ifdef 049AI
-	if (!H.pursueTarget())
+	if(!H.pursueTarget())
 		var/turf/T = step_rand(H)
 		H.Move(get_dir(H, T))
-	#else
-	if (prob(25))
+	if(!H.target && prob(25))
 		var/turf/T = step_rand(H)
 		H.Move(get_dir(H, T))
-	#endif
+
+/datum/species/scp049/handle_vision(var/mob/living/carbon/human/scp049/H)
+	var/list/vision = H.get_accumulated_vision_handlers()
+	H.update_sight()
+	H.set_sight(H.sight|get_vision_flags(H)|H.equipment_vision_flags|vision[1])
+	H.change_light_colour(H.getDarkvisionTint())

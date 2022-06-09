@@ -8,15 +8,6 @@
 	var/toolate = 0
 	var/toolate_on = 0
 
-/obj/structure/sign/double/barsign/proc/get_valid_states(initial=1)
-	. = icon_states(icon)
-	. -= "on"
-	. -= "narsiebistro"
-	. -= "toolate"
-	. -= "empty"
-	if(initial)
-		. -= "Off"
-
 /obj/structure/sign/double/barsign/scp_078
 	name = "SCP-078"
 	desc = "If your ID has science access, you may swipe it on this sign to alter its display."

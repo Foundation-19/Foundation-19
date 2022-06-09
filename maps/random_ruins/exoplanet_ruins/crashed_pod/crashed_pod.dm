@@ -1,7 +1,7 @@
 GLOBAL_LIST_INIT(crashed_pod_areas, new)
 
 /datum/map_template/ruin/exoplanet/crashed_pod
-	name = "Escaped D Class"
+	name = "crashed survival pod"
 	id = "crashed_pod"
 	description = "A crashed survival pod from a destroyed ship."
 	suffixes = list("crashed_pod/crashed_pod.dmm")
@@ -16,7 +16,7 @@ GLOBAL_LIST_INIT(crashed_pod_areas, new)
 	icon_state = "blue"
 
 /decl/submap_archetype/crashed_pod
-	descriptor = "Escaped D Class"
+	descriptor = "crashed survival pod"
 	crew_jobs = list(/datum/job/submap/pod)
 
 /datum/submap/crashed_pod/sync_cell(var/obj/effect/overmap/visitable/cell)

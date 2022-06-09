@@ -3,7 +3,7 @@
 #define STAGE_SLEEP		2
 #define STAGE_DAMAGE	3
 
-/datum/scp/SCP_513
+/datum/scp/scp_513
 	name = "SCP-513"
 	designation = "513"
 	classification = EUCLID
@@ -13,11 +13,11 @@
 	desc = "An old cowbell, covered in immense amounts of rust."
 	icon = 'icons/SCP/item.dmi'
 	icon_state = "mindfuckcowbell"
-	SCP = /datum/scp/SCP_513
-	var/global/mob/living/carbon/list/victims = list()
-	var/global/mob/living/carbon/list/next_braindamage_stage = list()
-	var/global/mob/living/carbon/list/braindamage_stage = list()
-	var/global/mob/living/carbon/list/wake_up_timing = list()
+	SCP = /datum/scp/scp_513
+	var/list/mob/living/carbon/victims = list()
+	var/list/mob/living/carbon/next_braindamage_stage = list()
+	var/list/mob/living/carbon/braindamage_stage = list()
+	var/list/mob/living/carbon/wake_up_timing = list()
 	var/static/list/paranoia_messages = list("You feel as if something is watching you...", "It feels as if something is stalking you")
 	var/static/list/assault_messages = list("A horrifying monster attacks you, before running off!", "You are bolted awake by a horrifying entity attacking you!")
 	var/static/list/spook_messages = list("You see a disturbing entity lingering in your peripheral vision", "You swear you can see an abomination lurking...",

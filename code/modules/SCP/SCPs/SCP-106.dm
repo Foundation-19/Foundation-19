@@ -1,9 +1,10 @@
+//todo: clean this the hell up oh my god is this terrible
 GLOBAL_LIST_EMPTY(scp106s)
 GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 
 /mob/living/carbon/human/scp106
 	desc = "A rotting, elderly old man."
-	SCP = /datum/scp/SCP_106
+	SCP = /datum/scp/scp_106
 	var/mob/living/target = null
 	var/last_x = -1
 	var/last_y = -1
@@ -15,7 +16,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 /mob/living/carbon/human/scp106/examine(mob/user)
 	user << "<b><span class = 'keter'><big>SCP-106</big></span></b> - [desc]"
 
-/datum/scp/SCP_106
+/datum/scp/scp_106
 	name = "SCP-106"
 	designation = "106"
 	classification = KETER
@@ -307,7 +308,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 			for (var/v in 1 to 58)
 				spawn (round(v * 0.5, 0.1))
 					if (!src || !O || loc != initial_loc)
-						goto __fixsprite__
+						return
 					else
 						switch (get_dir(src, O))
 							if (NORTH, NORTHEAST, NORTHWEST)
@@ -323,8 +324,6 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 			forceMove(get_step(src, dir))
 			forceMove(get_step(src, dir))
 			visible_message("<span class = 'danger'>[src] phases through \the [O].</span>")
-
-		__fixsprite__
 
 		alpha = 255
 		for (var/atom in vis_contents)
@@ -353,16 +352,17 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	set desc = "Confuse your victims by making them see upside-down."
 	confusing = !confusing
 	to_chat(src, "You are [confusing ? "now confusing" : "no longer confusing"] your victims.")
-
-/mob/living/carbon/human/scp106/apply_damage(var/damage = 0, var/damagetype = BRUTE, var/def_zone = null, var/blocked = 0, var/damage_flags = 0, var/obj/used_weapon = null, var/obj/item/organ/external/given_organ = null)
-	. = ..(damage, damagetype, def_zone, blocked, damage_flags, used_weapon, given_organ)
+//mess. rewrite
+/*
+/mob/living/carbon/human/scp106/apply_damage(damage = 0, damagetype = BRUTE, def_zone = null, blocked = 0, damage_flags = 0, used_weapon = null)
+	. = ..()
 	if (getBruteLoss() + getFireLoss() + getToxLoss() + getCloneLoss() >= 200)
 		if (!(loc in GLOB.scp106_floors))
 			src << "<span class = 'danger'><i>You flee back to your pocket dimension!</i></danger>"
 			forceMove(pick(GLOB.scp106_floors))
 			verbs -= /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
 			verbs += /mob/living/carbon/human/scp106/proc/go_back
-
+*/
 // special objects
 /obj/scp106_exit
 	icon = 'icons/mob/screen1.dmi'

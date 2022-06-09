@@ -48,8 +48,7 @@ when portals are shortly lived, or when portals are made to be obvious with spec
 	name = "portal subtype"
 	invisibility = 0
 	opacity = TRUE
-	plane = TURF_PLANE
-	layer = ABOVE_TURF_LAYER
+	layer = ABOVE_WIRE_LAYER
 	appearance_flags = PIXEL_SCALE|KEEP_TOGETHER // Removed TILE_BOUND so things not visible on the other side stay hidden from the viewer.
 
 	var/obj/effect/map_effect/portal/counterpart = null // The portal line or master that this is connected to, on the 'other side'.
@@ -71,8 +70,6 @@ when portals are shortly lived, or when portals are made to be obvious with spec
 
 // Called when something touches the portal, and usually teleports them to the other side.
 /obj/effect/map_effect/portal/Crossed(atom/movable/AM)
-	if(AM.is_incorporeal())
-		return
 	..()
 	if(!AM)
 		return

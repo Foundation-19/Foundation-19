@@ -75,9 +75,6 @@
 		CtrlClickOn(A)
 		return 1
 
-	if (is_scp012_affected())
-		return
-
 	if(stat || paralysis || stunned || weakened || sleeping)
 		return
 

@@ -169,9 +169,6 @@
 		return // Moved here to avoid nullrefs below
 	return mob.SelfMove(direction)
 
-	if (mob.is_scp012_affected(n))
-		return
-
 // Checks whether this mob is allowed to move in space
 // Return 1 for movement, 0 for none,
 // -1 to allow movement but with a chance of slipping
