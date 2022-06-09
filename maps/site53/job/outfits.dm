@@ -91,19 +91,19 @@
 // SECURITY OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/command/cos
 	name = OUTFIT_JOB_NAME("Guard Commander")
-//	uniform = /obj/item/clothing/under/scp/whiteuniform
+	uniform = /obj/item/clothing/under/scp/whiteuniform
 	shoes = /obj/item/clothing/shoes/dutyboots
-//	id_types = /obj/item/card/id/gcseclvl5
-//	r_pocket = /obj/item/book/manual/scp/secsop
+	id_types = /obj/item/card/id/gcseclvl5
+	r_pocket = /obj/item/book/manual/scp/secsop
 	l_ear = /obj/item/device/radio/headset/heads/cos
-//	l_pocket = /obj/item/book/manual/scp/secsop
-//	back = /obj/item/storage/backpack/dufflebag/sec
+	l_pocket = /obj/item/book/manual/scp/secsop
+	back = /obj/item/storage/backpack/dufflebag/sec
 
 // ZONE COMMANDER OUTFITS.
 
 /decl/hierarchy/outfit/job/site90/crew/security/ltofficerhcz
 	name = OUTFIT_JOB_NAME("HCZ Zone Commander")
-//	uniform = /obj/item/clothing/under/scp/whiteuniform
+	uniform = /obj/item/clothing/under/scp/whiteuniform
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = /obj/item/card/id/zcseclvl4hcz
 	l_ear = /obj/item/device/radio/headset/headset_com
@@ -141,7 +141,7 @@
 
 /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerhcz
 	name = OUTFIT_JOB_NAME("HCZ Guard")
-//	uniform = /obj/item/clothing/under/scp/whiteuniform
+	uniform = /obj/item/clothing/under/scp/whiteuniform
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = /obj/item/card/id/seclvl3hcz
 	l_ear = /obj/item/device/radio/headset/headset_sec
@@ -169,7 +169,7 @@
 // JUNIOR GUARD OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerlcz
 	name = OUTFIT_JOB_NAME("LCZ Junior Guard")
-//	uniform = /obj/item/clothing/under/scp/whiteuniform
+	uniform = /obj/item/clothing/under/scp/whiteuniform
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = /obj/item/card/id/junseclvl1
 	l_ear = /obj/item/device/radio/headset/headset_sec
@@ -188,7 +188,7 @@
 
 /decl/hierarchy/outfit/job/site90/crew/science/juniorscientist
 	name = OUTFIT_JOB_NAME("Scientist Associate")
-//	uniform = /obj/item/clothing/under/scp/suittie
+	uniform = /obj/item/clothing/under/scp/suittie
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	shoes = /obj/item/clothing/shoes/laceup
 	id_types = /obj/item/card/id/sciencelvl1
@@ -198,7 +198,7 @@
 
 /decl/hierarchy/outfit/job/site90/crew/science/scientist
 	name = OUTFIT_JOB_NAME("Scientist")
-//	uniform = /obj/item/clothing/under/scp/suittie
+	uniform = /obj/item/clothing/under/scp/suittie
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/genetics
 	shoes = /obj/item/clothing/shoes/laceup
 	id_types = /obj/item/card/id/sciencelvl2
@@ -208,7 +208,7 @@
 
 /decl/hierarchy/outfit/job/site90/crew/science/seniorscientist
 	name = OUTFIT_JOB_NAME("Senior Scientist")
-//	uniform = /obj/item/clothing/under/scp/suittie
+	uniform = /obj/item/clothing/under/scp/suittie
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
 	shoes = /obj/item/clothing/shoes/laceup
 	id_types = /obj/item/card/id/sciencelvl4
@@ -219,7 +219,7 @@
 
 /decl/hierarchy/outfit/job/site90/crew/science/researchdirector
 	name = OUTFIT_JOB_NAME("Research Director")
-//	uniform = /obj/item/clothing/under/scp/suittie
+	uniform = /obj/item/clothing/under/scp/suittie
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/rd
 	shoes = /obj/item/clothing/shoes/laceup
 	id_types = /obj/item/card/id/sciencelvl5
@@ -233,7 +233,7 @@
 
 /decl/hierarchy/outfit/job/site90/crew/civ/classd
 	name = OUTFIT_JOB_NAME("Class D")
-//	uniform = /obj/item/clothing/under/scp/dclass
+	uniform = /obj/item/clothing/under/scp/dclass
 	shoes = /obj/item/clothing/shoes/workboots
 	l_ear = null
 	back = null
@@ -333,7 +333,7 @@
 // BRIG OFFICER
 /decl/hierarchy/outfit/job/torch/crew/security/brig_officer
 	name = OUTFIT_JOB_NAME("Brig Officer")
-//	uniform = /obj/item/clothing/under/scp/whiteuniform
+	uniform = /obj/item/clothing/under/scp/whiteuniform
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = /obj/item/card/id/seclvl2
 	l_ear = /obj/item/device/radio/headset/headset_com
@@ -417,19 +417,19 @@
 	uniform = /obj/item/clothing/under/scp/utility/logistics/officer
 	gloves = /obj/item/clothing/gloves/thick
 	shoes = /obj/item/clothing/shoes/dutyboots
-//	id_types = /obj/item/card/id/logoff
+	id_types = /obj/item/card/id/logoff
 	l_ear = /obj/item/device/radio/headset/headset_deckofficer
-//	back = /obj/item/storage/backpack/satchel/pocketbook
+	back = /obj/item/storage/backpack/satchel/pocketbook
 
 /decl/hierarchy/outfit/job/site90/crew/command/logisticspecialist
 	name = OUTFIT_JOB_NAME("Logistics Specialist")
 	uniform = /obj/item/clothing/under/scp/utility/logistics
 	gloves = /obj/item/clothing/gloves/thick
 	shoes = /obj/item/clothing/shoes/dutyboots
-//	id_types = /obj/item/card/id/logspec
+	id_types = /obj/item/card/id/logspec
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_cargo
-//	back = /obj/item/storage/backpack/satchel/pocketbook
+	back = /obj/item/storage/backpack/satchel/pocketbook
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/mtf_epsilon1
 	name = OUTFIT_JOB_NAME("MTF Epsilon-6 Agent Beta")
