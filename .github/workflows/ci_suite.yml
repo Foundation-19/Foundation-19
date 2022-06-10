@@ -12,9 +12,9 @@ jobs:
     name: Run Linters
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - name: Setup cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.4
         with:
           path: $HOME/SpacemanDMM
           key: ${{ runner.os }}-spacemandmm
@@ -52,9 +52,9 @@ jobs:
           - 3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - name: Setup cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.4
         with:
           path: $HOME/BYOND
           key: ${{ runner.os }}-byond
@@ -85,7 +85,7 @@ jobs:
     name: Windows Build
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - name: Compile
         run: pwsh tools/ci/build.ps1
         env:
@@ -95,7 +95,7 @@ jobs:
           md deploy
           bash tools/deploy.sh ./deploy
       - name: Deploy artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: deploy
           path: deploy
