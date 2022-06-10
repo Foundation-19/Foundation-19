@@ -1,7 +1,7 @@
 /obj/item/clothing/under/scp/whiteuniform
 	name = "white security uniform"
 	desc = "A sterile white uniform. Commonly issued to lower ranked security personnel."
-	icon_state = "white"
+	icon_state = "white_lcz"
 
 
 /obj/item/clothing/under/scp/donor

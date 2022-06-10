@@ -21,30 +21,30 @@
 // SCP COMMAND OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/command/facilitydir
 	name = OUTFIT_JOB_NAME("Facility Director")
-//	uniform = /obj/item/clothing/under/scp/suittie
+	uniform = /obj/item/clothing/under/scp/suittie
 	shoes = /obj/item/clothing/shoes/dress
 	suit = /obj/item/clothing/suit/storage/toggle/suit/black
-//	id_types = /obj/item/card/id/adminlvl5
+	id_types = /obj/item/card/id/adminlvl5
 	l_ear = /obj/item/device/radio/headset/heads/captain
-//	back = /obj/item/storage/backpack/satchel
+	back = /obj/item/storage/backpack/satchel
 
 /decl/hierarchy/outfit/job/site90/crew/command/headofhr
 	name = OUTFIT_JOB_NAME("Head of Human Resources")
-//	uniform = /obj/item/clothing/under/scp/suittie
+	uniform = /obj/item/clothing/under/scp/suittie
 	shoes = /obj/item/clothing/shoes/dress
 	suit = /obj/item/clothing/suit/storage/toggle/suit/black
-//	id_types = /obj/item/card/id/adminlvl4
+	id_types = /obj/item/card/id/adminlvl4
 	l_ear = /obj/item/device/radio/headset/heads/hop
-//	back = /obj/item/storage/backpack/satchel/pocketbook
+	back = /obj/item/storage/backpack/satchel/pocketbook
 
 /decl/hierarchy/outfit/job/site90/crew/command/commsofficer
 	name = OUTFIT_JOB_NAME("Communications Officer")
 	uniform = /obj/item/clothing/under/scp/utility/communications/officer
 	gloves = /obj/item/clothing/gloves/foundation_service
 	shoes = /obj/item/clothing/shoes/dutyboots
-//	id_types = /obj/item/card/id/commslvl4
+	id_types = /obj/item/card/id/commslvl4
 //	l_ear = /obj/item/device/radio/headset/heads/commsofficer
-//	back = /obj/item/storage/backpack/satchel/pocketbook
+	back = /obj/item/storage/backpack/satchel/pocketbook
 
 // END OF COMMAND OUTFITS
 
@@ -52,10 +52,10 @@
 	name = OUTFIT_JOB_NAME("Communications Technician")
 	uniform = /obj/item/clothing/under/scp/utility/communications/tech
 	shoes = /obj/item/clothing/shoes/dutyboots
-//	id_types = /obj/item/card/id/commslvl1
-//	belt = /obj/item/storage/belt/utility/full
+	id_types = /obj/item/card/id/commslvl1
+	belt = /obj/item/storage/belt/utility/full
 //	l_ear = /obj/item/device/radio/headset/commsdispatcher
-//	back = /obj/item/storage/backpack/satchel/pocketbook
+	back = /obj/item/storage/backpack/satchel/pocketbook
 
 
 /decl/hierarchy/outfit/job/ds90/crew/command/chief_engineer
