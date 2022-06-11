@@ -1,5 +1,5 @@
 /obj/item/ammo_casing/scp
-	icon = /obj/ammo.dmi
+	icon = 'icons/obj/ammo.dmi'
 
 /obj/item/ammo_magazine/scp/ierichon
 	name = "Jericho-114 magazine (.45)"
