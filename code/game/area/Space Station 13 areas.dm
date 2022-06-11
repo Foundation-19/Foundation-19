@@ -118,14 +118,14 @@ area/space/atmosalert()
 
 /area/hallway
 	name = "hallway"
-	req_access = list(level_1)
+
 
 /area/medical
-	req_access = list(level_1)
+	req_access = list(access_medical)
 	lighting_tone = AREA_LIGHTING_COOL
 
 /area/security
-	req_access = list(level_3)
+	req_access = list(access_sec_doors)
 
 /area/security/brig
 	name = "\improper Security - Brig"
@@ -142,10 +142,10 @@ area/space/atmosalert()
 	sound_env = TUNNEL_ENCLOSED
 	turf_initializer = /decl/turf_initializer/maintenance
 	forced_ambience = list('sound/ambience/maintambience.ogg')
-	req_access = list(level_1)
+	req_access = list(access_maint_tunnels)
 
 /area/rnd
-	req_access = list(level_2)
+	req_access = list(access_research)
 	lighting_tone = AREA_LIGHTING_COOL
 
 /area/rnd/xenobiology
@@ -182,7 +182,7 @@ area/space/atmosalert()
 /area/supply
 	name = "Supply Shuttle"
 	icon_state = "shuttle3"
-	req_access = list(level_1)
+	req_access = list(access_cargo)
 
 /area/syndicate_elite_squad
 	name = "\improper Elite Mercenary Squad"

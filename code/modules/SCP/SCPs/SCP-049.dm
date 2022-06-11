@@ -24,15 +24,23 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/scp049/IsAdvancedToolUser()
 	return FALSE
 
-/mob/living/carbon/human/scp049/New()
+/mob/living/carbon/human/scp049/update_icons()
+	return
+
+/mob/living/carbon/human/scp049/on_update_icon()
+	if (lying || resting)
+		var/matrix/M =  matrix()
+		transform = M.Turn(90)
+	else
+		transform = null
+	return
+
+/mob/living/carbon/human/scp049/Initialize()
 	..()
 	add_language(/datum/language/zombie)
 	add_language(/datum/language/spacer)
 	// fix names
-	real_name = "SCP-049"
-	SetName(real_name)
-	if(mind)
-		mind.name = real_name
+	fully_replace_character_name("SCP-049")
 
 	set_species("SCP-049")
 	GLOB.scp049s += src
@@ -51,7 +59,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049/Destroy()
 	GLOB.scp049s -= src
-	..()
+	. = ..()
 
 /mob/living/carbon/human/scp049/Life()
 	..()
@@ -77,6 +85,8 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/scp049/proc/see_disease()
 	if (client)
 		client.images -= pestilence_images
+		for (var/image in pestilence_images)
+			qdel(image)
 		pestilence_images.Cut()
 		for(var/mob/living/carbon/human/H in view(15, src))
 			if(H.pestilence)

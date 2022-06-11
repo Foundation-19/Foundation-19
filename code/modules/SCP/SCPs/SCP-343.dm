@@ -138,57 +138,36 @@ GLOBAL_LIST_EMPTY(scp343s)
 		if (istype(O, /obj/machinery/power/terminal))
 			continue
 
-		for (var/obj/OO in get_turf(O))
-			if (OO.density && OO != O)
-				continue
-
-		var/turf/target = get_step(O, dir)
+		var/turf/target = get_turf(O)
 		if (target.density)
-			continue
+			return
 
 		visible_message("<span class = 'danger'>[src] starts to phase through \the [O].</span>")
 
-		phase_cooldown = world.time + PHASE_TIME + 5
-
-		var/initial_loc = loc
-		var/atom/sprite = null
+		phase_cooldown = world.time + PHASE_TIME + 0.5 SECONDS
 
 		alpha = 128
-		for (var/atom in vis_contents)
-			var/atom/a = atom
-			a.alpha = 128
-			a.layer = 5.1
-			sprite = a
 
-		if (sprite)
-			for (var/v in 1 to 58)
-				spawn (round(v * 0.5, 0.1))
-					if (!src || !O || loc != initial_loc)
-						return
-					else
-						switch (get_dir(src, O))
-							if (NORTH, NORTHEAST, NORTHWEST)
-								++sprite.pixel_y
-							if (SOUTH, SOUTHEAST, SOUTHWEST)
-								--sprite.pixel_y
-							if (EAST)
-								++sprite.pixel_x
-							if (WEST)
-								--sprite.pixel_x
+		layer = OBSERVER_LAYER
+
+		switch(dir)
+			if (NORTH, NORTHEAST, NORTHWEST)
+				animate(src, pixel_y = 58, time = PHASE_TIME)
+			if (SOUTH, SOUTHEAST, SOUTHWEST)
+				animate(src, pixel_y = -58, time = PHASE_TIME)
+			if (EAST)
+				animate(src, pixel_x = 58, time = PHASE_TIME)
+			if (WEST)
+				animate(src, pixel_x = -58, time = PHASE_TIME)
 
 		if (do_after(src, PHASE_TIME, O))
-			forceMove(get_step(src, dir))
 			forceMove(get_step(src, dir))
 			visible_message("<span class = 'danger'>[src] phases through \the [O].</span>")
 
 
 		alpha = 255
-		for (var/atom in vis_contents)
-			var/atom/a = atom
-			a.alpha = 255
-			a.layer = MOB_LAYER + 0.1
-			a.pixel_x = 0
-			a.pixel_y = 0
-
+		layer = MOB_LAYER + 0.1
+		pixel_x = 0
+		pixel_y = 0
 		break
 #undef PHASE_TIME
