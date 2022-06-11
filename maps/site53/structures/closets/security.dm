@@ -28,16 +28,16 @@
 /obj/structure/closet/secure_closet/mtf/enlisted/WillContain()
 	return list(
 		/obj/item/clothing/under/scp/utility/security,
-//		/obj/item/clothing/head/helmet/scp/security,
+		/obj/item/clothing/head/helmet/scp/security,
 		/obj/item/device/flashlight/maglight,
 		/obj/item/clothing/accessory/storage/black_vest,
-//		/obj/item/clothing/suit/armor/vest/scp/medarmor,
+		/obj/item/clothing/suit/armor/vest/scp/medarmor,
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-//		/obj/item/storage/belt/security/tactical,
+		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/gun/projectile/automatic/scp/p90,
 		/obj/item/ammo_magazine/scp/p90_mag = 2,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
-//		/obj/item/ammo_magazine/box/a10mm,
+		/obj/item/ammo_magazine/box/a10mm,
 		/obj/item/melee/telebaton,
 		/obj/item/handcuffs = 2,
 		/obj/item/reagent_containers/spray/pepper,
@@ -47,9 +47,9 @@
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/clothing/mask/balaclava,
 //		/obj/item/storage/box/bloodtypes,
-//		/obj/item/ammo_magazine/box/c9mm,
-		/obj/item/gun/projectile/pistol,
-//		/obj/item/ammo_magazine/mc9mm = 4
+		/obj/item/gun/projectile/pistol/mk9,
+		/obj/item/ammo_magazine/scp/mk9 = 4,
+		/obj/item/ammo_magazine/box/mk9 =
 	)
 
 /obj/structure/closet/secure_closet/mtf/commander
@@ -60,14 +60,14 @@
 /obj/structure/closet/secure_closet/mtf/commander/WillContain()
 	return list(
 		/obj/item/clothing/under/scp/utility/security/gc,
-//		/obj/item/clothing/head/helmet/scp/security,
-//		/obj/item/clothing/suit/armor/vest/scp/pizdeckakoyarmor,
+		/obj/item/clothing/head/helmet/scp/security,
+		/obj/item/clothing/suit/armor/vest/scp/russcom,
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-//		/obj/item/storage/belt/security/tactical,
+		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/gun/projectile/automatic/scp/p90,
 		/obj/item/ammo_magazine/scp/p90_mag = 2,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
-//		/obj/item/ammo_magazine/box/a10mm,
+		/obj/item/ammo_magazine/box/a10mm,
 		/obj/item/melee/telebaton,
 		/obj/item/handcuffs = 2,
 		/obj/item/device/flashlight/maglight,
@@ -82,9 +82,9 @@
 //		/obj/item/gun/projectile/revolver/mateba,
 //		/obj/item/ammo_magazine/box/a50donor,
 //		/obj/item/ammo_magazine/c50 = 2,
-//		/obj/item/ammo_magazine/box/c9mm,
-		/obj/item/gun/projectile/pistol,
-//		/obj/item/ammo_magazine/mc9mm = 2
+		/obj/item/gun/projectile/pistol/mk9,
+		/obj/item/ammo_magazine/scp/mk9 = 2,
+		/obj/item/ammo_magazine/box/mk9
 	)
 
 /obj/structure/closet/secure_closet/mtf/nco
@@ -95,16 +95,16 @@
 /obj/structure/closet/secure_closet/mtf/nco/WillContain()
 	return list(
 		/obj/item/clothing/under/scp/utility/security,
-//		/obj/item/clothing/head/helmet/scp/security,
-//		/obj/item/clothing/suit/armor/vest/scp/medarmor,
+		/obj/item/clothing/head/helmet/scp/security,
+		/obj/item/clothing/suit/armor/vest/scp/medarmor,
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-//		/obj/item/storage/belt/security/tactical,
+		/obj/item/storage/belt/holster/security/tactical,
 //		/obj/item/gun/projectile/sec/sec,
 //		/obj/item/ammo_magazine/c45m = 4,
 		/obj/item/gun/projectile/automatic/scp/p90,
 		/obj/item/ammo_magazine/scp/p90_mag = 2,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
-//		/obj/item/ammo_magazine/box/a10mm,
+		/obj/item/ammo_magazine/box/a10mm,
 		/obj/item/melee/telebaton,
 		/obj/item/handcuffs = 2,
 //		/obj/item/ammo_magazine/box/c45donor,
@@ -119,8 +119,8 @@
 //		/obj/item/clothing/accessory/holster/thigh,
 		/obj/item/clothing/mask/balaclava,
 //		/obj/item/storage/box/bloodtypes,
-		/obj/item/gun/projectile/pistol,
-//		/obj/item/ammo_magazine/mc9mm = 2
+		/obj/item/gun/projectile/pistol/mk9,
+		/obj/item/ammo_magazine/scp/mk9 = 2
 	)
 
 /obj/structure/closet/secure_closet/mtf/co
@@ -131,16 +131,16 @@
 /obj/structure/closet/secure_closet/mtf/co/WillContain()
 	return list(
 		/obj/item/clothing/under/scp/utility/security/zc,
-//		/obj/item/clothing/head/helmet/scp/security,
-//		/obj/item/clothing/suit/armor/vest/scp/pizdeckakoyarmor,
-//		/obj/item/storage/belt/security/tactical,
-//		/obj/item/gun/projectile/automatic/scp/m16,
+		/obj/item/clothing/head/helmet/scp/security,
+		/obj/item/clothing/suit/armor/vest/scp/russcom,
+		/obj/item/storage/belt/holster/security/tactical,
+		/obj/item/gun/projectile/automatic/scp/m16,
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
 		/obj/item/ammo_magazine/scp/m16_mag = 3,
 		/obj/item/gun/projectile/automatic/scp/p90,
 		/obj/item/ammo_magazine/scp/p90_mag = 2,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
-//		/obj/item/ammo_magazine/box/a10mm,
+		/obj/item/ammo_magazine/box/a10mm,
 		/obj/item/clothing/accessory/storage/webbing_large,
 		/obj/item/melee/telebaton,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
@@ -156,7 +156,7 @@
 //		/obj/item/ammo_magazine/box/a50donor,
 //		/obj/item/ammo_magazine/c50 = 4,
 		/obj/item/gun/projectile/pistol,
-//		/obj/item/ammo_magazine/mc9mm = 2
+		/obj/item/ammo_magazine/scp/mk9 = 2
 	)
 
 /obj/structure/closet/secure_closet/mtf/breachautomatics
@@ -166,9 +166,9 @@
 
 /obj/structure/closet/secure_closet/mtf/breachautomatics/WillContain()
 	return list(
-//		/obj/item/gun/projectile/automatic/scp/m16,
-//		/obj/item/gun/projectile/automatic/scp/m16,
-//		/obj/item/gun/projectile/automatic/scp/m16,
+		/obj/item/gun/projectile/automatic/scp/m16,
+		/obj/item/gun/projectile/automatic/scp/m16,
+		/obj/item/gun/projectile/automatic/scp/m16,
 		/obj/item/ammo_magazine/scp/m16_mag = 9
 	)
 
@@ -251,7 +251,7 @@
 	return list(
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/head/bio_hood/security,
-//		/obj/item/storage/belt/security/tactical,
+		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/storage/backpack/satchel,
 		/obj/item/storage/backpack/dufflebag,
 		/obj/item/grenade/frag = 2,
@@ -277,7 +277,7 @@
 	return list(
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/head/bio_hood/security,
-//		/obj/item/storage/belt/security/tactical,
+		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/material/hatchet/machete = 5,
 //		/obj/item/storage/pill_bottle/amnesticsb,
 		/obj/item/storage/backpack/satchel,

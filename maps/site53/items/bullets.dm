@@ -100,7 +100,7 @@
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/pistol/medium/smg/ap
 	icon_state = "10mm-hardentry"
-	spent_icon = "r-casing-spent" //temporary until the spriters make a better spent case
+	spent_icon = "r-casing-spent"
 
 /obj/item/ammo_casing/h10mm
 	desc = "A hollowpoint 10mm bullet casing."

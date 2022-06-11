@@ -24,6 +24,26 @@
 		else
 			overlays += image(icon, "ammo_ok")
 
+/obj/item/gun/projectile/pistol/mk9
+	name = "MK9 Standard"
+	desc = "Standard issue .45 ACP pistol of the SCP Foundation, based on the Makarov."
+	icon_state = "MK9"
+	w_class = ITEM_SIZE_NORMAL
+	caliber = ".45"
+	silenced = 0
+	fire_delay = 1
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/scp/mk9
+	allowed_magazines = list(/obj/item/ammo_magazine/scp/mk9, /obj/item/ammo_magazine/scp/mk9/rubber)
+
+/obj/item/weapon/gun/projectile/pistol/update_icon()
+	..()
+	if(ammo_magazine && ammo_magazine.stored_ammo.len)
+		icon_state = "MK9"
+	else
+		icon_state = "MK9-e"
+
 /obj/item/gun/projectile/pistol/military
 	name = "military pistol"
 	desc = "The Hephaestus Industries P20 - a mass produced kinetic sidearm in widespread service with the SCGDF."
