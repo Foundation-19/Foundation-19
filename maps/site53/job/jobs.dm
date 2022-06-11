@@ -449,7 +449,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
 	                    SKILL_WEAPONS     = SKILL_MAX,
 	                    SKILL_FORENSICS   = SKILL_EXPERT)
-
+	skill_points = 20
 
 /datum/job/ltofficerez/get_description_blurb()
 	return "<big><b>As the Entrance Zone Senior Agent, you and your team work independently from the guard commander and regular security structure. In this zone, you are tasked with the protection of administrative personnel, together with the agents stationed here. You should not leave your zone under usual SoP, or allow administration to go without protection detail into the facility.</span>"
@@ -496,7 +496,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
 	                    SKILL_WEAPONS     = SKILL_MAX,
 	                    SKILL_FORENSICS   = SKILL_EXPERT)
-
+	skill_points = 20
 
 /datum/job/ncoofficerlcz/get_description_blurb()
 	return "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
@@ -538,7 +538,7 @@
 	                    SKILL_WEAPONS     = SKILL_MAX,
 	                    SKILL_FORENSICS   = SKILL_EXPERT)
 
-
+	skill_points = 20
 /datum/job/ncoofficerlcz/get_description_blurb()
 	return "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
 
@@ -577,7 +577,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
 	                    SKILL_WEAPONS     = SKILL_MAX,
 	                    SKILL_FORENSICS   = SKILL_EXPERT)
-
+	skill_points = 20
 
 /datum/job/ncoofficerez/get_description_blurb()
 	return "<big><b>As the Agent you have more access than a Junior Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
@@ -611,7 +611,7 @@
 
 	access = list(access_sec_comms, access_mtflvl1, access_sciencelvl1)
 	minimal_access = list()
-
+	skill_points = 20
 /datum/job/enlistedofficerlcz/get_description_blurb()
 	return "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
 
@@ -669,7 +669,7 @@
 
 	access = list(access_sciencelvl1, access_sec_comms, access_mtflvl1, access_mtflvl2, access_adminlvl1, access_adminlvl2, access_medicalgen)
 	minimal_access = list()
-
+	skill_points = 20
 /datum/job/enlistedofficerez/get_description_blurb()
 	return "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP."
 
@@ -694,7 +694,7 @@
 	equip(var/mob/living/carbon/human/H)
 	access = list(access_sci_comms, access_sciencelvl1)
 	minimal_access = list()
-
+	skill_points = 20
 /datum/job/scientist
 
 	title = "Scientist"
@@ -844,6 +844,7 @@
 
 	access = list(access_eng_comms, access_mtflvl1, access_mtflvl2)
 	minimal_access = list()
+	skill_points = 20
 
 /datum/job/eng
 
@@ -875,6 +876,7 @@
 
 	access = list(access_eng_comms, access_mtflvl1, access_mtflvl2, access_mtflvl3)
 	minimal_access = list()
+	skill_points = 20
 
 /datum/job/seneng
 
@@ -1095,7 +1097,7 @@
 	max_skill = list(
 		SKILL_MEDICAL     = SKILL_MAX
 	)
-
+	skill_points = 20
 
 /datum/job/medicaldoctor
 
@@ -1122,12 +1124,16 @@
 	access = list(access_med_comms, access_medicalgen, access_medicalequip, access_mtflvl1, access_mtflvl2)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_EVA     = SKILL_BASIC,
-	                    SKILL_MEDICAL = SKILL_BASIC,
-	                    SKILL_ANATOMY = SKILL_BASIC)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_MEDICAL     = SKILL_EXPERT,
+	                    SKILL_ANATOMY     = SKILL_EXPERT,
+	                    SKILL_CHEMISTRY   = SKILL_BASIC,
+						SKILL_DEVICES     = SKILL_ADEPT)
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
+	                    SKILL_ANATOMY     = SKILL_MAX,
 	                    SKILL_CHEMISTRY   = SKILL_MAX)
+	skill_points = 20
 
 
 /datum/job/virologist
@@ -1154,12 +1160,16 @@
 	access = list(access_med_comms, access_medicalgen, access_medicalequip, access_medicalviro)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_EVA     = SKILL_BASIC,
-	                    SKILL_MEDICAL = SKILL_BASIC,
-	                    SKILL_ANATOMY = SKILL_BASIC)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_MEDICAL     = SKILL_EXPERT,
+	                    SKILL_ANATOMY     = SKILL_EXPERT,
+	                    SKILL_CHEMISTRY   = SKILL_BASIC,
+						SKILL_DEVICES     = SKILL_ADEPT)
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
+	                    SKILL_ANATOMY     = SKILL_MAX,
 	                    SKILL_CHEMISTRY   = SKILL_MAX)
+	skill_points = 20
 
 
 /datum/job/surgeon
@@ -1226,13 +1236,16 @@
 	access = list(access_med_comms, access_medicalgen, access_medicalequip, access_mtflvl1)
 	minimal_access = list()
 
-	min_skill = list(
-		SKILL_BUREAUCRACY = SKILL_BASIC,
-		SKILL_MEDICAL     = SKILL_BASIC
-	)
-	max_skill = list(
-		SKILL_MEDICAL     = SKILL_MAX
-	)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_MEDICAL     = SKILL_EXPERT,
+	                    SKILL_ANATOMY     = SKILL_EXPERT,
+	                    SKILL_CHEMISTRY   = SKILL_BASIC,
+						SKILL_DEVICES     = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
+	                    SKILL_ANATOMY     = SKILL_MAX,
+	                    SKILL_CHEMISTRY   = SKILL_MAX)
+	skill_points = 20
 
 
 //LOGISTICS
@@ -1306,7 +1319,7 @@
 
 	access = list(access_log_comms, access_logistics)
 	minimal_access = list()
-
+	skill_points = 20
 // MISC JOBS
 
 /datum/job/janitor
@@ -1333,7 +1346,7 @@
 		..()
 
 	min_skill = list(   SKILL_HAULING = SKILL_BASIC)
-
+	skill_points = 20
 
 
 /datum/job/chef
@@ -1363,7 +1376,7 @@
 	                    SKILL_BOTANY    = SKILL_BASIC,
 	                    SKILL_CHEMISTRY = SKILL_BASIC)
 
-
+	skill_points = 20
 
 /datum/job/bartender
 
@@ -1391,7 +1404,7 @@
 	min_skill = list(   SKILL_COOKING   = SKILL_BASIC,
 	                    SKILL_BOTANY    = SKILL_BASIC,
 	                    SKILL_CHEMISTRY = SKILL_BASIC)
-
+	skill_points = 20
 
 /datum/job/archivist
 
