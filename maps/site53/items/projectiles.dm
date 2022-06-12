@@ -45,6 +45,26 @@
 	max_ammo = 20
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/scp/mk9
+	name = "MK9 magazine"
+	icon_state = "9mmds"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/c45
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = ".45"
+	max_ammo = 14
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/mk9/rubber
+	name = "MK9 rubber magazine"
+	icon_state = "R9mmds"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/c45/rubber
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = ".45"
+	max_ammo = 14
+	multiple_sprites = 1
+
 /obj/item/ammo_magazine/scp/p90_mag
 	name = "magazine (5.7x28mm)"
 	icon_state = "p90"

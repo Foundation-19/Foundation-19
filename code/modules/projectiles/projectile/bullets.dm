@@ -129,6 +129,14 @@
 	agony = 8
 	embed = 0
 
+/obj/item/projectile/bullet/pistol/holdout
+	damage = 15
+	penetration_modifier = 1.2
+	distance_falloff = 4
+
+/obj/item/projectile/bullet/pistol/holdout/rubber
+	agony = 20
+
 /obj/item/projectile/bullet/pistol/medium
 	damage = 25 //.45
 	armor_penetration = 8
@@ -137,7 +145,6 @@
 
 /obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
 	name = "rubber bullet"
-	check_armour = "melee"
 	damage = 2
 	armor_penetration = 2
 	agony = 35
@@ -207,6 +214,13 @@
 	agony = 40
 	embed = 0
 
+/obj/item/projectile/bullet/flechette
+	fire_sound = 'sound/weapons/gunshot/gunshot_4mm.ogg'
+	damage = 23
+	penetrating = 1
+	armor_penetration = 70
+	embed = FALSE
+	distance_falloff = 2
 
 /* shotgun projectiles */
 
@@ -220,7 +234,6 @@
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
-	check_armour = "melee"
 	damage = 25
 	agony = 60
 	embed = 0
@@ -230,13 +243,25 @@
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
+	icon_state = "pellet"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
-	damage = 35
+	damage = 30
 	pellets = 6
 	range_step = 1
-	spread_step = 10
-	agony = 10
-	embed = 0
+	spread_step = 50
+
+/obj/item/projectile/bullet/pellet/shotgun/flechette
+	name = "flechette"
+	icon_state = "flechette"
+	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
+	damage = 30
+	armor_penetration = 25
+	pellets = 3
+	range_step = 3
+	base_spread = 99
+	spread_step = 2
+	penetration_modifier = 0.5
+	hitchance_mod = 5
 
 /* "Rifle" rounds */
 
@@ -245,6 +270,29 @@
 	penetrating = 1
 	agony = 35
 	embed = 0
+
+/obj/item/projectile/bullet/rifle/military
+	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	damage = 40
+	armor_penetration = 35
+	penetration_modifier = 1
+
+/obj/item/projectile/bullet/rifle/shell
+	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
+	damage = 80
+	stun = 3
+	weaken = 3
+	penetrating = 3
+	armor_penetration = 70
+	penetration_modifier = 1.2
+	distance_falloff = 0.5
+
+/obj/item/projectile/bullet/rifle/shell/apds
+	damage = 70
+	penetrating = 5
+	armor_penetration = 80
+	penetration_modifier = 1.5
+
 /obj/item/projectile/bullet/rifle/a556
 	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
 	damage = 50
@@ -320,6 +368,9 @@
 /obj/item/projectile/bullet/pistol/practice
 	damage = 5
 
+/obj/item/projectile/bullet/rifle/military/practice
+	damage = 5
+
 /obj/item/projectile/bullet/rifle/a762/practice
 	damage = 5
 
@@ -346,7 +397,6 @@
 	icon_state = "rock"
 	damage = 40
 	armor_penetration = 25
-	kill_count = 255
 
 /obj/item/projectile/bullet/rock/New()
 	icon_state = "rock[rand(1,3)]"

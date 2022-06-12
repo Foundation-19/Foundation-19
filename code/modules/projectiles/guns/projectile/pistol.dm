@@ -1,5 +1,5 @@
-
 /obj/item/gun/projectile/pistol
+	icon = 'icons/obj/gun.dmi'
 	load_method = MAGAZINE
 	caliber = CALIBER_PISTOL
 	magazine_type = /obj/item/ammo_magazine/pistol
@@ -36,13 +36,6 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/mk9
 	allowed_magazines = list(/obj/item/ammo_magazine/scp/mk9, /obj/item/ammo_magazine/scp/mk9/rubber)
-
-/obj/item/weapon/gun/projectile/pistol/update_icon()
-	..()
-	if(ammo_magazine && ammo_magazine.stored_ammo.len)
-		icon_state = "MK9"
-	else
-		icon_state = "MK9-e"
 
 /obj/item/gun/projectile/pistol/military
 	name = "military pistol"

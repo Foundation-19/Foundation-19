@@ -49,7 +49,7 @@
 //		/obj/item/storage/box/bloodtypes,
 		/obj/item/gun/projectile/pistol/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 4,
-		/obj/item/ammo_magazine/box/mk9 =
+		/obj/item/ammo_magazine/box/mk9
 	)
 
 /obj/structure/closet/secure_closet/mtf/commander

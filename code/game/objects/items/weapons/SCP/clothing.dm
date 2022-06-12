@@ -3,7 +3,6 @@
 	desc = "A sterile white uniform. Commonly issued to lower ranked security personnel."
 	icon_state = "white_lcz"
 
-
 /obj/item/clothing/under/scp/donor
 	name = "grey uniform"
 	desc = "A grey uniform."

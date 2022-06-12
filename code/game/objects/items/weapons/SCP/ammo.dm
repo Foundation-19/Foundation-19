@@ -1,5 +1,5 @@
 /obj/item/ammo_casing/scp
-	icon = /obj/ammo.dmi
+	icon = 'icons/obj/ammo.dmi'
 
 /obj/item/ammo_magazine/scp/ierichon
 	name = "Jericho-114 magazine (.45)"
@@ -22,7 +22,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/mk9
-	name = "MK9 magazine (.45)"
+	name = "MK9 magazine"
 	icon_state = "9mmds"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/c45
@@ -32,7 +32,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/mk9/rubber
-	name = "MK9 rubber magazine (.45)"
+	name = "MK9 rubber magazine"
 	icon_state = "R9mmds"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/c45/rubber
@@ -142,7 +142,7 @@
 
 // .45 ACP
 /obj/item/ammo_magazine/box/mk9
-	name = "ammunition box (.45)"
+	name = "ammunition box"
 	icon_state = "9mm"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = ".45"

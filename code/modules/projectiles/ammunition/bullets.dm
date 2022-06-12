@@ -1,4 +1,4 @@
-
+/////////////// DOESN'T WORK WITH SITE 53 //////////////////////////
 /obj/item/ammo_casing/pistol
 	desc = "A pistol bullet casing."
 	caliber = CALIBER_PISTOL
@@ -25,7 +25,7 @@
 
 /obj/item/ammo_casing/pistol/small/rubber
 	desc = "A small pistol rubber bullet casing."
-	projectile_type = /obj/item/projectile/bullet/pistol/rubber/holdout
+	projectile_type = /obj/item/projectile/bullet/pistol/holdout/rubber
 	icon_state = "pistolcasing_r"
 
 /obj/item/ammo_casing/pistol/small/practice
@@ -61,8 +61,8 @@
 /obj/item/ammo_casing/shotgun
 	name = "shotgun slug"
 	desc = "A shotgun slug."
-	icon_state = "slshell"
-	spent_icon = "slshell-spent"
+	icon_state = "shell-slug"
+	spent_icon = "shell-slug-spent"
 	caliber = CALIBER_SHOTGUN
 	projectile_type = /obj/item/projectile/bullet/shotgun
 	matter = list(MATERIAL_STEEL = 360)
@@ -71,8 +71,8 @@
 /obj/item/ammo_casing/shotgun/pellet
 	name = "shotgun shell"
 	desc = "A shotshell."
-	icon_state = "gshell"
-	spent_icon = "gshell-spent"
+	icon_state = "shell-pellet"
+	spent_icon = "shell-pellet-spent"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun
 	matter = list(MATERIAL_STEEL = 360)
 
@@ -85,24 +85,24 @@
 /obj/item/ammo_casing/shotgun/blank
 	name = "shotgun shell"
 	desc = "A blank shell."
-	icon_state = "blshell"
-	spent_icon = "blshell-spent"
+	icon_state = "shell-blank"
+	spent_icon = "shell-blank-spent"
 	projectile_type = /obj/item/projectile/bullet/blank
 	matter = list(MATERIAL_STEEL = 90)
 
 /obj/item/ammo_casing/shotgun/practice
 	name = "shotgun shell"
 	desc = "A practice shell."
-	icon_state = "pshell"
-	spent_icon = "pshell-spent"
+	icon_state = "shell-practise"
+	spent_icon = "shell-practise-spent"
 	projectile_type = /obj/item/projectile/bullet/shotgun/practice
 	matter = list(MATERIAL_STEEL = 90)
 
 /obj/item/ammo_casing/shotgun/beanbag
 	name = "beanbag shell"
 	desc = "A beanbag shell."
-	icon_state = "bshell"
-	spent_icon = "bshell-spent"
+	icon_state = "shell-beanbag"
+	spent_icon = "shell-beanbag-spent"
 	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag
 	matter = list(MATERIAL_STEEL = 180)
 
@@ -111,8 +111,8 @@
 /obj/item/ammo_casing/shotgun/stunshell
 	name = "stun shell"
 	desc = "An energy stun cartridge."
-	icon_state = "stunshell"
-	spent_icon = "stunshell-spent"
+	icon_state = "shell-stun"
+	spent_icon = "shell-stun-spent"
 	projectile_type = /obj/item/projectile/energy/electrode/stunshot
 	leaves_residue = FALSE
 	matter = list(MATERIAL_STEEL = 360, MATERIAL_GLASS = 720)
@@ -125,8 +125,8 @@
 /obj/item/ammo_casing/shotgun/flash
 	name = "flash shell"
 	desc = "A chemical shell used to signal distress or provide illumination."
-	icon_state = "fshell"
-	spent_icon = "fshell-spent"
+	icon_state = "shell-flash"
+	spent_icon = "shell-flash-spent"
 	projectile_type = /obj/item/projectile/energy/flash/flare
 	matter = list(MATERIAL_STEEL = 90, MATERIAL_GLASS = 90)
 
