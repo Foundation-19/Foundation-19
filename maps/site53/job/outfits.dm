@@ -201,7 +201,7 @@
 	uniform = /obj/item/clothing/under/lawyer/bluesuit
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/genetics
 	shoes = /obj/item/clothing/shoes/laceup
-//	id_types = list(obj/item/card/id/level_2)
+	id_types = list(/obj/item/card/id/sciencelvl2)
 	gloves = /obj/item/clothing/gloves/latex
 	l_ear = /obj/item/device/radio/headset/headset_sci
 	l_pocket = /obj/item/book/manual/scp/scisop
@@ -441,7 +441,7 @@
 //	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/jackboots
 //	id_types = list( = /obj/item/card/id/adminlvl5
-//	suit_store = /obj/item/gun/projectile/automatic/scp/p90
+	suit_store = /obj/item/gun/projectile/automatic/scp/p90
 //	r_hand = /obj/item/crowbar/red
 //	l_hand = /obj/item/material/hatchet/tacknife
 //	l_pocket = /obj/item/grenade/flashbang
@@ -570,3 +570,61 @@
 	belt = /obj/item/material/sword/katana
 	back = /obj/item/storage/backpack/satchel
 //	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/clothing/mask/gas = 1,/obj/item/ammo_magazine/a127 = 8,/obj/item/grenade/smokebomb = 3)
+
+
+
+
+// FULLY GEARED (mostly for zombie's)
+
+/decl/hierarchy/outfit/job/site90/crew/security/lczguardgear
+	name = OUTFIT_JOB_NAME("Junior Guard")
+	uniform = /obj/item/clothing/under/scp/whiteuniform
+	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor
+	head = /obj/item/clothing/head/helmet/scp/security
+	back = null
+	shoes = /obj/item/clothing/shoes/dutyboots
+	belt = /obj/item/storage/belt/holster/security/tactical
+	id_types = list(/obj/item/card/id/seclvl2lcz)
+	l_pocket = /obj/item/device/radio
+	r_pocket = /obj/item/ammo_magazine/scp/p90_mag
+	suit_store = /obj/item/gun/projectile/automatic/scp/p90
+	l_hand = null
+	r_hand = null
+
+/decl/hierarchy/outfit/job/site90/crew/science/juniorscientistgear
+	name = OUTFIT_JOB_NAME("Scientist Associate")
+	uniform = /obj/item/clothing/under/lawyer/bluesuit
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat
+	shoes = /obj/item/clothing/shoes/laceup
+	id_types = list(/obj/item/card/id/sciencelvl1)
+	gloves = /obj/item/clothing/gloves/latex
+	l_ear = /obj/item/device/radio/headset/headset_sci
+	back = /obj/item/storage/backpack/satchel
+
+/decl/hierarchy/outfit/job/site90/crew/science/scientistgear
+	name = OUTFIT_JOB_NAME("Scientist")
+	uniform = /obj/item/clothing/under/lawyer/bluesuit
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/genetics
+	shoes = /obj/item/clothing/shoes/laceup
+	id_types = list(/obj/item/card/id/sciencelvl2)
+	gloves = /obj/item/clothing/gloves/latex
+	l_ear = /obj/item/device/radio/headset/headset_sci
+
+/decl/hierarchy/outfit/job/ds90/medical/medicaldoctorgear
+	name = OUTFIT_JOB_NAME("Medical Doctor")
+	uniform = /obj/item/clothing/under/rank/medical/scrubs/blue
+	shoes = /obj/item/clothing/shoes/white
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat
+	id_types = list(/obj/item/card/id/doctor)
+	l_pocket = /obj/item/device/radio
+	l_ear = /obj/item/device/radio/headset/headset_med
+	back = /obj/item/storage/backpack/medic
+
+/decl/hierarchy/outfit/job/site90/crew/civ/classdgear
+	name = OUTFIT_JOB_NAME("Class D")
+	uniform = /obj/item/clothing/under/scp/dclass
+	shoes = /obj/item/clothing/shoes/workboots
+	belt = /obj/item/gun/projectile/pistol/mk9
+	l_pocket = /obj/item/ammo_magazine/scp/mk9
+	l_ear = null
+	back = null

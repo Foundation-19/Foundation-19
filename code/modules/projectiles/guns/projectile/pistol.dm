@@ -1,5 +1,5 @@
-
 /obj/item/gun/projectile/pistol
+	icon = 'icons/obj/gun.dmi'
 	load_method = MAGAZINE
 	caliber = CALIBER_PISTOL
 	magazine_type = /obj/item/ammo_magazine/pistol
@@ -23,6 +23,19 @@
 			return
 		else
 			overlays += image(icon, "ammo_ok")
+
+/obj/item/gun/projectile/pistol/mk9
+	name = "MK9 Standard"
+	desc = "Standard issue .45 ACP pistol of the SCP Foundation, based on the Makarov."
+	icon_state = "MK9"
+	w_class = ITEM_SIZE_NORMAL
+	caliber = ".45"
+	silenced = 0
+	fire_delay = 1
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/scp/mk9
+	allowed_magazines = list(/obj/item/ammo_magazine/scp/mk9, /obj/item/ammo_magazine/scp/mk9/rubber)
 
 /obj/item/gun/projectile/pistol/military
 	name = "military pistol"
