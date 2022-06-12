@@ -62,6 +62,7 @@
 /obj/effect/shuttle_landmark/engineering/start
 	name = "Tram Hub"
 	landmark_tag = "nav_engineering_start"
+	docking_controller = "Engineering"
 	base_turf = /turf/simulated/floor/reinforced
 
 /obj/effect/shuttle_landmark/engineering/out
