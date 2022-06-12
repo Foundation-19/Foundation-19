@@ -4,8 +4,8 @@
 /obj/item/gun/projectile/automatic/scp/p90
 	name = "P90 SMG"
 	desc = "A submachine gun sample of the 2010s, with a scope mounted on top"
-	icon_state = "p90-wielded"
-	item_state = "p90"
+	icon_state = "p90"
+	item_state = "p90-wielded"
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	caliber = "10mm"
