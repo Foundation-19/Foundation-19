@@ -1,3 +1,6 @@
+/obj/item/ammo_casing/scp
+	icon = 'icons/obj/ammo.dmi'
+
 /obj/item/ammo_magazine/scp/ierichon
 	name = "Jericho-114 magazine (.45)"
 	icon_state = "9mmds"

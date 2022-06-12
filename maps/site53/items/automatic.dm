@@ -1,6 +1,7 @@
 /obj/item/gun/projectile/automatic/scp/p90
 	name = "P90 SMG"
 	desc = "A submachine gun sample of the 2010s, with a scope mounted on top"
+	icon = 'icons/obj/gun.dmi'
 	icon_state = "p90"
 	item_state = "p90"
 	w_class = ITEM_SIZE_HUGE
