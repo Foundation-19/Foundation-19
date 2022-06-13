@@ -53,7 +53,7 @@
 	number = 7
 
 /datum/shuttle/autodock/ferry/engineering
-	name = "Engineering Tram"
+	name = "Engineering"
 	warmup_time = 10
 	shuttle_area = list(/area/site53/tram/engineering)
 	waypoint_station = "nav_engineering_start"
