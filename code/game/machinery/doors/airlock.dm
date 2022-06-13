@@ -1337,7 +1337,7 @@ About the new airlock wires panel:
 
 		//update the door's access to match the electronics'
 		if(electronics.autoset)
-			autoset_access = TRUE
+			autoset_access = FALSE
 		else
 			req_access = electronics.conf_access
 			if(electronics.one_access)

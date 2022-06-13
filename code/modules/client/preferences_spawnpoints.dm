@@ -60,7 +60,7 @@ GLOBAL_VAR(spawntypes)
 /datum/spawnpoint/cryo
 	display_name = "Cryogenic Storage"
 	msg = "has completed cryogenic revival"
-	disallow_job = list("Robot")
+	disallow_job = list("Robot", "Class D")
 
 /datum/spawnpoint/cryo/New()
 	..()
@@ -90,3 +90,70 @@ GLOBAL_VAR(spawntypes)
 	display_name = DEFAULT_SPAWNPOINT_ID
 	msg = "has arrived on the station"
 	always_visible = TRUE
+
+/datum/spawnpoint/comms
+	display_name = "Comms Tower"
+	msg = "has started a shift in the Comms Tower"
+	restrict_job = list("Communications Officer", "Communications Technician")
+	disallow_job = list(
+	"Class D",
+	"Cell Guard",
+	"Chief Engineer",
+	"Senior Engineer",
+	"Containment Engineer",
+	"Junior Engineer",
+	"Engineer",
+	"Chief Medical Officer",
+	"Surgeon",
+	"Virologist",
+	"Medical Doctor",
+	"Chemist"
+	)
+
+/datum/spawnpoint/comms/New()
+	..()
+	turfs = GLOB.latejoin_comms
+
+/datum/spawnpoint/dclass
+	display_name = "D-Cells"
+	msg = "has been delivered to the Class D Area"
+	restrict_job = list("Class D", "Assistant")
+
+/datum/spawnpoint/dclass/New()
+	..()
+	turfs = GLOB.latejoin_dclass
+
+/datum/spawnpoint/lcz
+	display_name = "Light Containment Zone"
+	msg = "has entered the light containment zone"
+
+/datum/spawnpoint/lcz/New()
+	..()
+	turfs = GLOB.latejoin_lcz
+
+/datum/spawnpoint/security
+	display_name = "Security Base"
+	msg = "has started the shift in the Security Base dorms"
+	restrict_job = list(
+	"Security Commander",
+	"Security Lieutenant",
+	"Security Officer",
+	"Junior Security Officer")
+	disallow_job = list(
+	"Class D",
+	"Cell Guard",
+	"Chief Engineer",
+	"Senior Engineer",
+	"Containment Engineer",
+	"Junior Engineer",
+	"Engineer",
+	"Chief Medical Officer",
+	"Surgeon",
+	"Virologist",
+	"Medical Doctor",
+	"Chemist"
+	)
+
+/datum/spawnpoint/security/New()
+	..()
+	turfs = GLOB.latejoin_security
