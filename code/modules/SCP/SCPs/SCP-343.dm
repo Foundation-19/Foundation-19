@@ -20,10 +20,10 @@ GLOBAL_LIST_EMPTY(scp343s)
 /mob/living/carbon/human/scp343/IsAdvancedToolUser()
 	return FALSE
 
-/mob/living/carbon/human/scp343/New()
+/mob/living/carbon/human/scp343/Initialize()
 	..()
 
-	fix_icons()
+	update_icons()
 
 	// fix names
 	real_name = "SCP-343"
@@ -39,39 +39,30 @@ GLOBAL_LIST_EMPTY(scp343s)
 
 /mob/living/carbon/human/scp343/Destroy()
 	GLOB.scp343s -= src
-	..()
+	. = ..()
 
 /mob/living/carbon/human/scp343/Move()
-	..()
-	update_stuff()
+	. = ..()
+
 
 /mob/living/carbon/human/scp343/forceMove(destination)
 	. = ..(destination)
-	update_stuff()
+
 
 /mob/living/carbon/human/scp343/proc/update_stuff()
 	// stand_icon tends to come back after movement
-	fix_icons()
+	update_icons()
 
-/mob/living/carbon/human/scp343/proc/fix_icons()
-	icon = null
-	icon_state = null
-	stand_icon = null
-	lying_icon = null
-	update_icon = FALSE
+/mob/living/carbon/human/scp343/update_icons()
+	return
 
-	if (!vis_contents.len)
-		vis_contents += new /obj/sprite_helper/scp343
-
-	// we're lying, turn right
-	var/obj/sprite_helper/scp343/SH = vis_contents[vis_contents.len]
-
+/mob/living/carbon/human/scp343/on_update_icon()
 	if (lying || resting)
-		SH.icon = turn(icon('icons/mob/scp343.dmi'), 90)
+		var/matrix/M =  matrix()
+		transform = M.Turn(90)
 	else
-		SH.icon = 'icons/mob/scp343.dmi'
-
-	SH.dir = dir
+		transform = null
+	return
 
 /mob/living/carbon/human/scp343/get_pressure_weakness()
 	return 0
