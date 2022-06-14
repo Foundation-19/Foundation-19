@@ -6,12 +6,6 @@
 	name = CULTURE_HUMAN
 	description = "You are from one of various planetary cultures of humankind."
 	secondary_langs = list(
-		LANGUAGE_HUMAN_EURO,
-		LANGUAGE_HUMAN_CHINESE,
-		LANGUAGE_HUMAN_ARABIC,
-		LANGUAGE_HUMAN_INDIAN,
-		LANGUAGE_HUMAN_IBERIAN,
-		LANGUAGE_HUMAN_RUSSIAN,
 		LANGUAGE_ENGLISH,
 		LANGUAGE_SIGN
 	)
@@ -96,11 +90,7 @@
 
 /decl/cultural_info/culture/human/earthling
 	name = CULTURE_HUMAN_EARTH
-	description = "You are from Earth, home of humanity. Earth culture is much as it has been for centuries, with the old nation states, while no longer politically important, still \
-	culturally significant to many humans across the galaxy, as all trace their roots to somewhere on the planet. While not as geographically diverse as they were in the past, most \
-	countries have at least two arcologies which make up much of the population, with the remaining humans living in small villages or from one of the many nature preserve communes. \
-	The long recovery period of Earth has resulted in much of the population being environmentally aware and heavily conservationist, eager to avoid past mistakes. Most Earthers are \
-	a content folk who see themselves as close to nature and keepers of the heritage of humanity."
+	description = "You are from Earth, home of humanity. As of currently no other planets are inhabited by humans, what did you expect?"
 	economic_power = 1.1
 
 /decl/cultural_info/culture/human/ceti

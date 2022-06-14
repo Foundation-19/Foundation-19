@@ -1,6 +1,6 @@
 /datum/language/english
 	name = LANGUAGE_ENGLISH
-	desc = "A rough, informal language used infrequently by humans as a last resort when attempts to establish dialogue in more proper languages fail and no autotranslators are available."
+	desc = "A common language spoken on Earth with it roots coming down to England. It is so commonly spoken that it is a international language and the foundation's number one way of comunication."
 	warning = "Automatically given if spawning with no languages."
 	key = "j"
 	shorthand = "Eng"
