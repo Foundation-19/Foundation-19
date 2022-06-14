@@ -431,6 +431,16 @@ proc/TextPreview(var/string,var/len=40)
 	t = replacetext(t, "\[fleetlogo\]", "<img src = fleetlogo.png>")
 	t = replacetext(t, "\[sfplogo\]", "<img src = sfplogo.png>")
 	t = replacetext(t, "\[editorbr\]", "")
+	t = replacetext(t, "\[ethics\]", "<img src = ethics.png>")
+	t = replacetext(t, "\[eng\]", "<img src = eng.png>")
+	t = replacetext(t, "\[mtf\]", "<img src = mtf.png>")
+	t = replacetext(t, "\[log\]", "<img src = log.png>")
+	t = replacetext(t, "\[sec\]", "<img src = sec.png>")
+	t = replacetext(t, "\[scplogo\]", "<img src = scplogo.png>")
+	t = replacetext(t, "\[o5\]", "<img src = o5.png>")
+	t = replacetext(t, "\[isd\]", "<img src = isd.png>")
+	t = replacetext(t, "\[ecd\]", "<img src = ecd.png>")
+	t = replacetext(t, "\[goc\]", "<img src = ungoc.png>")
 	return t
 
 //pencode translation to html for tags exclusive to digital files (currently email, nanoword, report editor fields,
