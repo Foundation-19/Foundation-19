@@ -572,11 +572,11 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 		var/list/scps = list()
 
-/*		// no whitelist required
+		// no whitelist required
 		for (var/scp106 in GLOB.scp106s)
 			var/mob/M = scp106
 			if (!M.client)
-				scps += M*/
+				scps += M
 
 		// whitelist required
 		for (var/scp049 in GLOB.scp049s)
