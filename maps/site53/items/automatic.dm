@@ -5,7 +5,7 @@
 	name = "P90 SMG"
 	desc = "A submachine gun sample of the 2010s, with a scope mounted on top"
 	icon_state = "p90"
-	item_state = "p90-wielded"
+	item_state = "p90"
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	caliber = "10mm"
@@ -14,6 +14,7 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/p90_mag
 	allowed_magazines = /obj/item/ammo_magazine/scp/p90_mag
+	wielded_item_state = "p90-wielded"
 
 	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
 	firemodes = list(
