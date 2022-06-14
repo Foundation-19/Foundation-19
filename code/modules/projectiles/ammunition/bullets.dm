@@ -1,4 +1,3 @@
-/////////////// DOESN'T WORK WITH SITE 53 //////////////////////////
 /obj/item/ammo_casing/pistol
 	desc = "A pistol bullet casing."
 	caliber = CALIBER_PISTOL

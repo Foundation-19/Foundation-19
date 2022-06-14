@@ -1,4 +1,4 @@
-/obj/item/ammo_casing/scp
+/obj/item/ammo_magazine/scp
 	icon = 'icons/obj/ammo.dmi'
 
 /obj/item/ammo_magazine/scp/ierichon
@@ -21,13 +21,23 @@
 	max_ammo = 20
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/scp
+	name = "MK3 magazine"
+	icon_state = "45"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/c9mm
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = "9mm"
+	max_ammo = 10
+	multiple_sprites = 1
+
 /obj/item/ammo_magazine/scp/mk9
 	name = "MK9 magazine"
 	icon_state = "9mmds"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/c45
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = ".45"
+	caliber = "9mm"
 	max_ammo = 14
 	multiple_sprites = 1
 
@@ -37,7 +47,7 @@
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/c45/rubber
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = ".45"
+	caliber = "9mm"
 	max_ammo = 14
 	multiple_sprites = 1
 
@@ -140,14 +150,14 @@
 
 // BOXES //
 
-// .45 ACP
+// 9mm
 /obj/item/ammo_magazine/box/mk9
 	name = "ammunition box"
 	icon_state = "9mm"
 	origin_tech = list(TECH_COMBAT = 2)
-	caliber = ".45"
+	caliber = "9mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
-	ammo_type = /obj/item/ammo_casing/c45
+	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 100
 
 

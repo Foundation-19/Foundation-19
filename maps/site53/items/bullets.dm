@@ -38,10 +38,8 @@
 	desc = "A 9mm bullet casing."
 	caliber = "9mm"
 	projectile_type = /obj/item/projectile/bullet/pistol
-
-/obj/item/ammo_casing/c9mm/flash
-	desc = "A 9mm flash shell casing."
-	projectile_type = /obj/item/projectile/energy/flash
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/c9mm/rubber
 	desc = "A 9mm rubber bullet casing."
@@ -49,9 +47,17 @@
 	icon_state = "pistol-casing-rubber"
 	spent_icon = "pistol-casing-spent"
 
+/obj/item/ammo_casing/c9mm/flash
+	desc = "A 9mm flash shell casing."
+	projectile_type = /obj/item/projectile/energy/flash
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
+
 /obj/item/ammo_casing/c9mm/practice
 	desc = "A 9mm practice bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/practice
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/c44
 	desc = "A .44 magnum bullet casing."
@@ -270,26 +276,26 @@
 
 /obj/item/projectile/bullet/pistol
 	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
-	damage = 40 //9mm, .38, etc
+	damage = 20 //9mm, .38, etc
 	armor_penetration = 34
-	agony = 34
+	agony = 20
 
 /obj/item/projectile/bullet/pistol/medium
-	damage = 50 //.45
+	damage = 25 //.45
 	armor_penetration = 15
-	agony = 45
+	agony = 25
 
 /obj/item/projectile/bullet/pistol/medium/smg
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
 	damage = 40 //10mm
 	armor_penetration = 30
-	agony = 35
+	agony = 30
 
 /obj/item/projectile/bullet/pistol/medium/smg/rubber
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
 	damage = 0.5 //10mm rubber
 	armor_penetration = 12
-	agony = 35
+	agony = 40
 	embed = 0
 	sharp = 0
 
