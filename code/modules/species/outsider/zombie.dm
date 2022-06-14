@@ -256,7 +256,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	exclaim_verb = "wails"
 	partial_understanding = list(
 		LANGUAGE_HUMAN_EURO = 30,
-		LANGUAGE_SPACER = 35
+		LANGUAGE_ENGLISH = 35
 	)
 	syllables = list("mhh..", "grr..", "nnh..")
 	shorthand = "ZM"

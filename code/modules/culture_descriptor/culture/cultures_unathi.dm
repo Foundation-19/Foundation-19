@@ -10,7 +10,7 @@
 		LANGUAGE_UNATHI_YEOSA,
 		LANGUAGE_SIGN,
 		LANGUAGE_HUMAN_EURO,
-		LANGUAGE_SPACER
+		LANGUAGE_ENGLISH
 	)
 
 /decl/cultural_info/culture/unathi_polar
@@ -23,7 +23,7 @@
 		LANGUAGE_UNATHI_YEOSA,
 		LANGUAGE_SIGN,
 		LANGUAGE_HUMAN_EURO,
-		LANGUAGE_SPACER
+		LANGUAGE_ENGLISH
 	)
 
 /decl/cultural_info/culture/unathi_desert
@@ -36,7 +36,7 @@
 		LANGUAGE_UNATHI_YEOSA,
 		LANGUAGE_SIGN,
 		LANGUAGE_HUMAN_EURO,
-		LANGUAGE_SPACER
+		LANGUAGE_ENGLISH
 	)
 
 /decl/cultural_info/culture/unathi_savannah
@@ -48,9 +48,9 @@
 		LANGUAGE_UNATHI_YEOSA,
 		LANGUAGE_SIGN,
 		LANGUAGE_HUMAN_EURO,
-		LANGUAGE_SPACER
+		LANGUAGE_ENGLISH
 	)
-	
+
 /decl/cultural_info/culture/unathi_salt_swamp
 	name = CULTURE_UNATHI_SALT_SWAMP
 	description = "Combining assorted elements of various cultures with an adventurous spirit and resolve, salt swamp unathi are noted for their friendliness and openness to outsiders, \
@@ -61,7 +61,7 @@
 		LANGUAGE_UNATHI_YEOSA,
 		LANGUAGE_SIGN,
 		LANGUAGE_HUMAN_EURO,
-		LANGUAGE_SPACER
+		LANGUAGE_ENGLISH
 	)
 
 /decl/cultural_info/culture/unathi_space
@@ -75,7 +75,7 @@
 		LANGUAGE_UNATHI_YEOSA,
 		LANGUAGE_SIGN,
 		LANGUAGE_HUMAN_EURO,
-		LANGUAGE_SPACER
+		LANGUAGE_ENGLISH
 	)
 
 /decl/cultural_info/culture/unathi_tersten
@@ -90,7 +90,7 @@
 		LANGUAGE_UNATHI_YEOSA,
 		LANGUAGE_SIGN,
 		LANGUAGE_HUMAN_EURO,
-		LANGUAGE_SPACER
+		LANGUAGE_ENGLISH
 	)
 
 /decl/cultural_info/culture/unathi_yeosa
@@ -110,7 +110,7 @@
 		LANGUAGE_UNATHI_SINTA,
 		LANGUAGE_SIGN,
 		LANGUAGE_HUMAN_EURO,
-		LANGUAGE_SPACER
+		LANGUAGE_ENGLISH
 	)
 
 /decl/cultural_info/culture/unathi_yeosa_abyss
@@ -125,5 +125,5 @@
 		LANGUAGE_UNATHI_SINTA,
 		LANGUAGE_SIGN,
 		LANGUAGE_HUMAN_EURO,
-		LANGUAGE_SPACER
+		LANGUAGE_ENGLISH
 	)

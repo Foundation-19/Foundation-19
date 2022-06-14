@@ -228,10 +228,10 @@
 	else
 		return capitalize(pick(GLOB.first_names_male))
 
-/datum/language/spacer
-	name = LANGUAGE_SPACER
+/datum/language/english
+	name = LANGUAGE_ENGLISH
 	desc = "A pidgin language spoken by haulers, merchants, traders, travellers, and cocky fly-boys across the galaxy."
-	colour = "spacer"
+	colour = ""
 	key = "v"
 	syllables = list ("die", "en", "skei", "van", "son", "der", "aar", "ch", "op", "ruk", "aa", "be", "ne", "het",
  	"ek", "ras", "ver", "zan", "das", "waa", "geb", "vol", "lu", "min", "breh", "rus", "stv", "ee", "goe", "sk",

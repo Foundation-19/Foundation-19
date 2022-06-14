@@ -1,9 +1,9 @@
-/datum/language/spacer
-	name = LANGUAGE_SPACER
+/datum/language/english
+	name = LANGUAGE_ENGLISH
 	desc = "A rough, informal language used infrequently by humans as a last resort when attempts to establish dialogue in more proper languages fail and no autotranslators are available."
 	warning = "Automatically given if spawning with no languages."
 	key = "j"
-	shorthand = "Spc"
+	shorthand = "Eng"
 	partial_understanding = list(
 		LANGUAGE_HUMAN_EURO = 25,
 		LANGUAGE_HUMAN_CHINESE = 25,
@@ -17,5 +17,5 @@
 	syllables = list(
 		"ada", "zir", "bian", "ach", "usk", "ado", "ich", "cuan", "iga", "qing", "le", "que", "ki", "qaf", "dei", "eta"
 	)
-	colour = "spacer"
+	colour = ""
 	has_written_form = TRUE

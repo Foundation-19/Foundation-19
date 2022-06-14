@@ -13,7 +13,7 @@
 		LANGUAGE_HUMAN_IBERIAN = 30,
 		LANGUAGE_HUMAN_RUSSIAN = 30,
 		LANGUAGE_HUMAN_SELENIAN = 15,
-		LANGUAGE_SPACER = 35,
+		LANGUAGE_ENGLISH = 35,
 	)
 	syllables = list (
 		"yayo", "aiya", "chiksa", "tikat", "bazar","oi", "yo", "meit", "grok", "ken", "berk", "cohon", "pendeo"

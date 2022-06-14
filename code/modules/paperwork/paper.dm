@@ -560,7 +560,7 @@
  * Premade paper
  */
 /obj/item/paper/spacer
-	language = LANGUAGE_SPACER
+	language = LANGUAGE_ENGLISH
 
 /obj/item/paper/Court
 	name = "Judgement"
