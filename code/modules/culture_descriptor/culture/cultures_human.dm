@@ -102,7 +102,6 @@
 	The long recovery period of Earth has resulted in much of the population being environmentally aware and heavily conservationist, eager to avoid past mistakes. Most Earthers are \
 	a content folk who see themselves as close to nature and keepers of the heritage of humanity."
 	economic_power = 1.1
-	language = LANGUAGE_ENGLISH
 
 /decl/cultural_info/culture/human/ceti
 	name = CULTURE_HUMAN_CETI
