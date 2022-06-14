@@ -22,7 +22,7 @@
 		LANGUAGE_HUMAN_IBERIAN = 30,
 		LANGUAGE_HUMAN_RUSSIAN = 5,
 		LANGUAGE_HUMAN_SELENIAN = 85,
-		LANGUAGE_SPACER = 20
+		LANGUAGE_ENGLISH = 20
 	)
 	syllables = list(
 		"al", "an", "ar", "as", "at", "ea", "ed", "en", "er", "es", "ha", "he", "hi", "in", "is", "it",

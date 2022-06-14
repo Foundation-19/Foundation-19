@@ -36,7 +36,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	add_language(LANGUAGE_SKRELLIAN, 1)
 	add_language(LANGUAGE_GUTTER, 1)
 	add_language(LANGUAGE_SIGN, 0)
-	add_language(LANGUAGE_SPACER, 1)
+	add_language(LANGUAGE_ENGLISH, 1)
 
 /mob/living/scp_173/Destroy()
 	GLOB.scp173s -= src

@@ -22,7 +22,6 @@
 
 /obj/effect/shuttle_landmark/escape_pod/start/New()
 	landmark_tag = "escape_pod_[number]_start"
-	docking_controller = "escape_pod_[number]_berth"
 	..()
 
 /obj/effect/shuttle_landmark/escape_pod/transit
@@ -53,7 +52,7 @@
 	number = 7
 
 /datum/shuttle/autodock/ferry/engineering
-	name = "Engineering Tram"
+	name = "Engineering"
 	warmup_time = 10
 	shuttle_area = list(/area/site53/tram/engineering)
 	waypoint_station = "nav_engineering_start"

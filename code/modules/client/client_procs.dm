@@ -363,17 +363,21 @@
 		'html/panels.css',
 		'html/spacemag.css',
 		'html/images/loading.gif',
-		'html/images/ntlogo.png',
-		'html/images/bluentlogo.png',
-		'html/images/sollogo.png',
-		'html/images/terralogo.png',
-		'html/images/talisman.png',
-		'html/images/exologo.png',
-		'html/images/xynlogo.png',
-		'html/images/daislogo.png',
-		'html/images/eclogo.png',
-		'html/images/fleetlogo.png',
-		'html/images/sfplogo.png'
+		'html/images/eng.png',
+		'html/images/sec.png',
+		'html/images/med.png',
+		'html/images/sci.png',
+		'html/images/ethics.png',
+		'html/images/log.png',
+		'html/images/isd.png',
+		'html/images/admin.png',
+		'html/images/o5.png',
+		'html/images/ecd.png',
+		'html/images/int.png',
+		'html/images/mtf.png',
+		'html/images/trib.png',
+		'html/images/scplogo.png',
+		'html/images/ungoc.png'
 		)
 	addtimer(CALLBACK(src, .proc/after_send_resources), 1 SECOND)
 

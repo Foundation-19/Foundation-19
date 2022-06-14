@@ -1,6 +1,6 @@
 /decl/cultural_info/religion/other
 	name = RELIGION_OTHER
-	description = "One of the many, many niche or relatively unknown religions of the galaxy."
+	description = "One of the many, many little or relatively unknown religions."
 
 /decl/cultural_info/religion/unstated
 	name = RELIGION_UNSTATED

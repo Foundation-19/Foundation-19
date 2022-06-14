@@ -654,7 +654,7 @@ other types of metals and chemistry for reagents).
 
 /datum/design/item/weapon/ammunition/stunshell
 	desc = "A stunning shell for a shotgun."
-	id = "stunshell"
+	id = "shell-stun"
 	req_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	materials = list(DEFAULT_WALL_MATERIAL = 4000)
 	build_path = /obj/item/ammo_casing/shotgun/stunshell

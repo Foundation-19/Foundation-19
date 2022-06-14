@@ -381,7 +381,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		visible_message("<span class = 'danger'>[L] is warped away!</span>")
 		L.forceMove(pick(GLOB.scp106_floors))
 
-/*  RECODE FEMUR BREAKER TO USE FREQUENCIES
+
 // the femur breaker
 /obj/structure/femur_breaker
 	icon = 'icons/obj/femurbreaker.dmi'
@@ -389,17 +389,13 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	anchored = TRUE
 	buckle_lying = 1
 	var/spent_mobs = list()
-	var/_wifi_id = "femurbreaker"
-	var/datum/wifi/receiver/button/femur_breaker/wifi_receiver = null
+	var/frequency = "femurbreaker"
 
 /obj/structure/femur_breaker/Initialize()
 	. = ..()
-	if(_wifi_id)
-		wifi_receiver = new(_wifi_id, src)
 
 /obj/structure/femur_breaker/Destroy()
-	qdel(wifi_receiver)
-	wifi_receiver = null
+	qdel()
 	return ..()
 
 /obj/structure/femur_breaker/attackby(obj/item/W, mob/user)
@@ -412,13 +408,13 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 			to_chat(user, "It is already in use.")
 		else if (target && user && ishuman(target))
 			visible_message("<span class = 'warning'>[user] starts to put [target] onto the femur breaker...</span>")
-			if (do_mob(user, target, 3 SECONDS))
+/*			if (do_mob(user, target, 3 SECONDS))
 				visible_message("<span class = 'danger'>[user] puts [target] onto the femur breaker.</span>")
 				var/mob/living/carbon/human/H = target
 				H.forceMove(get_turf(src))
 				H.buckled = src
 				buckled_mob = H
-
+*/
 		qdel(G)
 
 /obj/structure/femur_breaker/attack_hand(mob/user)
@@ -483,11 +479,9 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 /obj/machinery/button/femur_breaker
 	name = "Femur Breaker Button"
 	icon = 'icons/obj/objects.dmi'
-	_wifi_id = "femurbreaker"
-	sleep_time = 90 SECONDS
+//	frequency = "femurbreaker"
+//	sleep_time = 90 SECONDS
 
 /obj/machinery/button/femur_breaker/Initialize()
-	if(_wifi_id)
-		wifi_sender = new/datum/wifi/sender/femur_breaker(_wifi_id, src)
 	. = ..()
-*/
+

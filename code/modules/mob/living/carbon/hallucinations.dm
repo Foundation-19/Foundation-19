@@ -234,7 +234,7 @@
 		I.color = COLOR_BLOOD_HUMAN
 		return I
 	else
-		var/image/I = image('icons/obj/ammo.dmi', "s-casing-spent", layer = BELOW_TABLE_LAYER)
+		var/image/I = image('icons/obj/ammo.dmi', "pistol-casing-spent", layer = BELOW_TABLE_LAYER)
 		I.layer = BELOW_TABLE_LAYER
 		I.dir = pick(GLOB.alldirs)
 		I.pixel_x = rand(-10,10)

@@ -54,20 +54,23 @@
 
 /obj/structure/closet/jcloset_torch
 	name = "custodial closet"
-	desc = "It's a storage unit for janitorial equipment."
-	icon_state = "mixed"
+	desc = "It's a storage unit for janitorial clothes and gear."
+	closet_appearance = /decl/closet_appearance/wardrobe/mixed
 
 /obj/structure/closet/jcloset_torch/WillContain()
 	return list(
+		/obj/item/clothing/under/rank/janitor,
 		/obj/item/device/radio/headset/headset_service,
-//		/obj/item/cartridge/janitor,
 		/obj/item/clothing/gloves/thick,
+		/obj/item/clothing/head/soft/purple,
+		/obj/item/clothing/head/beret/purple,
 		/obj/item/device/flashlight,
 		/obj/item/caution = 4,
 		/obj/item/device/lightreplacer,
 		/obj/item/storage/bag/trash,
 		/obj/item/clothing/shoes/galoshes,
-//		/obj/item/soap/nanotrasen
+		/obj/item/soap,
+		/obj/item/storage/belt/janitor
 	)
 
 /obj/structure/closet/secure_closet/bar_torch

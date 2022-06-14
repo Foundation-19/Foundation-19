@@ -175,7 +175,7 @@
 
 /datum/design/item/weapon/ammunition/stunshell
 	desc = "A stunning shell for a shotgun."
-	id = "stunshell"
+	id = "shell-stun"
 	req_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	materials = list(MATERIAL_STEEL = 4000)
 	build_path = /obj/item/ammo_casing/shotgun/stunshell

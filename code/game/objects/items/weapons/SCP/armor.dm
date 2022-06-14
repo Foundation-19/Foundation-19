@@ -11,6 +11,9 @@
 /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
 	accessories = list(/obj/item/clothing/accessory/storage/pouches/green)
 
+/obj/item/clothing/suit/armor/vest/scp
+	icon = 'icons/obj/clothing/suits.dmi'
+
 /obj/item/clothing/suit/armor/vest/scp/medarmor
 	name = "armored vest"
 	desc = "A synthetic armor vest."

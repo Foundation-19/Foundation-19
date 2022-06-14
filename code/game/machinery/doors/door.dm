@@ -35,7 +35,7 @@
 	var/list/connections = list("0", "0", "0", "0")
 	var/list/blend_objects = list(/obj/structure/wall_frame, /obj/structure/window, /obj/structure/grille) // Objects which to blend with
 
-	var/autoset_access = TRUE // Determines whether the door will automatically set its access from the areas surrounding it. Can be used for mapping.
+	var/autoset_access = FALSE // Determines whether the door will automatically set its access from the areas surrounding it. Can be used for mapping.
 
 	//Multi-tile doors
 	dir = SOUTH
