@@ -22,7 +22,6 @@
 
 /obj/effect/shuttle_landmark/escape_pod/start/New()
 	landmark_tag = "escape_pod_[number]_start"
-	docking_controller = "escape_pod_[number]_berth"
 	..()
 
 /obj/effect/shuttle_landmark/escape_pod/transit
