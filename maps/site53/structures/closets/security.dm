@@ -12,8 +12,13 @@
 
 /obj/structure/closet/secure_closet/mtf
 	name = "MTF Locker - NO USE, ONLY FOR CODE."
+	icon = 'icons/obj/sec-lockers.dmi'
+	icon_state = "enlisted-locked"
+	//icon_closed = "enlisted-unlocked"
+	//icon_locked = "enlisted-locked"
+	//icon_opened = "hossecureopen"
+	//icon_off = "hossecureoff"
 	req_access = list(access_mtflvl1)
-	icon_state = "enlistedlocked"
 	var/registered_name = null
 
 /obj/structure/closet/secure_closet/mtf/WillContain()
@@ -23,7 +28,7 @@
 /obj/structure/closet/secure_closet/mtf/enlisted
 	name = "Junior Guard's Locker"
 	req_access = list(access_mtflvl1)
-	icon_state = "enlistedlocked"
+	icon_state = "junior-locked"
 
 /obj/structure/closet/secure_closet/mtf/enlisted/WillContain()
 	return list(
@@ -41,56 +46,21 @@
 		/obj/item/melee/telebaton,
 		/obj/item/handcuffs = 2,
 		/obj/item/reagent_containers/spray/pepper,
-//		/obj/item/clothing/gloves/tactical/scp,
-//		/obj/item/clothing/accessory/holster/thigh,
+		/obj/item/clothing/gloves/tactical/scp,
+		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/device/flash,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/clothing/mask/balaclava,
 //		/obj/item/storage/box/bloodtypes,
 		/obj/item/gun/projectile/pistol/mk9,
-		/obj/item/ammo_magazine/scp/mk9 = 4,
-		/obj/item/ammo_magazine/box/mk9
-	)
-
-/obj/structure/closet/secure_closet/mtf/commander
-	name = "Guard Commander Locker"
-	req_access = list(access_mtflvl5)
-	icon_state = "cmlocked"
-
-/obj/structure/closet/secure_closet/mtf/commander/WillContain()
-	return list(
-		/obj/item/clothing/under/scp/utility/security/gc,
-		/obj/item/clothing/head/helmet/scp/security,
-		/obj/item/clothing/suit/armor/vest/scp/russcom,
-		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/storage/belt/holster/security/tactical,
-		/obj/item/gun/projectile/automatic/scp/p90,
-		/obj/item/ammo_magazine/scp/p90_mag = 2,
-		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
-		/obj/item/ammo_magazine/box/a10mm,
-		/obj/item/melee/telebaton,
-		/obj/item/handcuffs = 2,
-		/obj/item/device/flashlight/maglight,
-//		/obj/item/clothing/gloves/tactical/scp,
-		/obj/item/device/flash,
-		/obj/item/clothing/accessory/storage/black_vest,
-//		/obj/item/clothing/accessory/holster/thigh,
-		/obj/item/reagent_containers/spray/pepper,
-		/obj/item/clothing/accessory/solgov/department/security/marine,
-		/obj/item/clothing/mask/balaclava,
-//		/obj/item/storage/box/bloodtypes,
-//		/obj/item/gun/projectile/revolver/mateba,
-//		/obj/item/ammo_magazine/box/a50donor,
-//		/obj/item/ammo_magazine/c50 = 2,
-		/obj/item/gun/projectile/pistol/mk9,
-		/obj/item/ammo_magazine/scp/mk9 = 2,
+		/obj/item/ammo_magazine/scp/mk9 = 3,
 		/obj/item/ammo_magazine/box/mk9
 	)
 
 /obj/structure/closet/secure_closet/mtf/nco
 	name = "Guard's Locker"
 	req_access = list(access_mtflvl3)
-	icon_state = "nlocked"
+	icon_state = "guard-locked"
 
 /obj/structure/closet/secure_closet/mtf/nco/WillContain()
 	return list(
@@ -109,24 +79,59 @@
 		/obj/item/handcuffs = 2,
 //		/obj/item/ammo_magazine/box/c45donor,
 //		/obj/item/ammo_magazine/box/c45donor/rubber,
-//		/obj/item/storage/box/ifak,
-//		/obj/item/clothing/gloves/tactical/scp,
+		/obj/item/storage/box/ifak,
+		/obj/item/clothing/gloves/tactical/scp,
 		/obj/item/device/flash,
 		/obj/item/device/flashlight/maglight,
 		/obj/item/reagent_containers/spray/pepper,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
-//		/obj/item/clothing/accessory/holster/thigh,
+		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/mask/balaclava,
 //		/obj/item/storage/box/bloodtypes,
 		/obj/item/gun/projectile/pistol/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 2
 	)
 
+/obj/structure/closet/secure_closet/mtf/commander
+	name = "Guard Commander Locker"
+	req_access = list(access_mtflvl5)
+	icon_state = "gc-locked"
+
+/obj/structure/closet/secure_closet/mtf/commander/WillContain()
+	return list(
+		/obj/item/clothing/under/scp/utility/security/gc,
+		/obj/item/clothing/head/helmet/scp/security,
+		/obj/item/clothing/suit/armor/vest/scp/russcom,
+		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
+		/obj/item/storage/belt/holster/security/tactical,
+		/obj/item/gun/projectile/automatic/scp/p90,
+		/obj/item/ammo_magazine/scp/p90_mag = 2,
+		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
+		/obj/item/ammo_magazine/box/a10mm,
+		/obj/item/melee/telebaton,
+		/obj/item/handcuffs = 2,
+		/obj/item/device/flashlight/maglight,
+		/obj/item/clothing/gloves/tactical/scp,
+		/obj/item/device/flash,
+		/obj/item/clothing/accessory/storage/black_vest,
+		/obj/item/clothing/accessory/storage/holster/thigh,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/clothing/accessory/solgov/department/security/marine,
+		/obj/item/clothing/mask/balaclava,
+//		/obj/item/storage/box/bloodtypes,
+//		/obj/item/gun/projectile/revolver/mateba,
+//		/obj/item/ammo_magazine/box/a50donor,
+//		/obj/item/ammo_magazine/c50 = 2,
+		/obj/item/gun/projectile/pistol/mk9,
+		/obj/item/ammo_magazine/scp/mk9 = 2,
+		/obj/item/ammo_magazine/box/mk9
+	)
+
 /obj/structure/closet/secure_closet/mtf/co
 	name = "Zone Commander's Locker"
 	req_access = list(access_mtflvl4)
-	icon_state = "colocked"
+	icon_state = "zc-locked"
 
 /obj/structure/closet/secure_closet/mtf/co/WillContain()
 	return list(
@@ -148,8 +153,8 @@
 		/obj/item/reagent_containers/spray/pepper,
 		/obj/item/device/flash,
 		/obj/item/device/flashlight/maglight,
-//		/obj/item/clothing/gloves/tactical/scp,
-//		/obj/item/clothing/accessory/holster/thigh,
+		/obj/item/clothing/gloves/tactical/scp,
+		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/mask/balaclava,
 //		/obj/item/storage/box/bloodtypes,
 //		/obj/item/gun/projectile/revolver/mateba,
@@ -162,7 +167,7 @@
 /obj/structure/closet/secure_closet/mtf/breachautomatics
 	name = "automatic weapons locker"
 	req_access = list(access_mtflvl2)
-	icon_state = "sec1"
+	icon_state = "gun-locked"
 
 /obj/structure/closet/secure_closet/mtf/breachautomatics/WillContain()
 	return list(
@@ -176,26 +181,28 @@
 /obj/structure/closet/secure_closet/mtf/breachshotguns
 	name = "tactical shotgun locker"
 	req_access = list(access_mtflvl2)
-	icon_state = "sec1"
+	icon_state = "gun-locked"
 
 /obj/structure/closet/secure_closet/mtf/breachshotguns/WillContain()
 	return list(
-//		/obj/item/gun/projectile/shotgun/tactical,
-//		/obj/item/gun/projectile/shotgun/tactical,
-//		/obj/item/gun/projectile/shotgun/tactical,
-//		/obj/item/storage/box/mtf/empammo = 6,
-//		/obj/item/storage/box/mtf/pelletammo = 6
+		/obj/item/gun/projectile/shotgun/pump/combat,
+		/obj/item/gun/projectile/shotgun/pump/combat,
+		/obj/item/gun/projectile/shotgun/pump/combat,
+		/obj/item/storage/box/mtf/empammo = 6,
+		/obj/item/storage/box/mtf/pelletammo = 6
 	)
 
 /obj/structure/closet/secure_closet/mtf/riotshotguns
 	name = "riot shotgun locker"
 	req_access = list(access_mtflvl1)
-	icon_state = "sec1"
+	icon_state = "gun-locked"
 
 /obj/structure/closet/secure_closet/mtf/riotshotguns/WillContain()
 	return list(
-//		/obj/item/gun/projectile/shotgun/tactical/beanbag = 3,
-//		/obj/item/storage/box/mtf/beanbag = 6,
+		/obj/item/gun/projectile/shotgun/tactical/beanbag,
+		/obj/item/gun/projectile/shotgun/tactical/beanbag,
+		/obj/item/gun/projectile/shotgun/tactical/beanbag,
+		/obj/item/storage/box/mtf/beanbag = 12,
 //		/obj/item/clothing/accessory/storage/bandolier/beanbag = 3
 	)
 
@@ -245,7 +252,7 @@
 /obj/structure/closet/secure_closet/mtf/exp
 	name = "Scout's Locker"
 	req_access = list(access_mtflvl3)
-	icon_state = "nlocked"
+	icon_state = "agent-locked"
 
 /obj/structure/closet/secure_closet/mtf/exp/WillContain()
 	return list(
@@ -271,7 +278,7 @@
 /obj/structure/closet/secure_closet/mtf/expl
 	name = "Scout's Leader Locker"
 	req_access = list(access_mtflvl5)
-	icon_state = "cmlocked"
+	icon_state = "cm-locked"
 
 /obj/structure/closet/secure_closet/mtf/expl/WillContain()
 	return list(

@@ -268,8 +268,8 @@
 /obj/item/ammo_casing/shotgun/emp
 	name = "haywire slug"
 	desc = "A 12-gauge shotgun slug fitted with a single-use ion pulse generator."
-	icon_state = "empshell"
-	spent_icon = "empshell-spent"
+	icon_state = "shell-emp"
+	spent_icon = "shell-emp-spent"
 	projectile_type  = /obj/item/projectile/ion
 	matter = list(DEFAULT_WALL_MATERIAL = 260, "uranium" = 200)
 //////////////////////////Bullets////////////////
@@ -280,12 +280,41 @@
 	armor_penetration = 34
 	agony = 20
 
+/obj/item/projectile/bullet/pistol/rubber
+	damage = 2 //Pistol rubber
+	agony = 30
+	embed = 0
+	sharp = 0
+	armor_penetration = 2.5
+
 /obj/item/projectile/bullet/pistol/medium
 	damage = 25 //.45
 	armor_penetration = 15
 	agony = 25
 
-/obj/item/projectile/bullet/pistol/medium/smg
+/obj/item/projectile/bullet/pistol/medium/revolver
+	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	damage = 60 //.44 magnum or something
+	agony = 45
+
+/obj/item/projectile/bullet/pistol/strong //matebas
+	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	damage = 65 //.50AE
+	armor_penetration = 30
+	agony = 45
+
+/obj/item/projectile/bullet/pistol/vstrong //tacrevolver
+	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	damage = 70 //.500 S&W Magnum
+	armor_penetration = 35
+	agony = 45
+
+/obj/item/projectile/bullet/pistol/strong/revolver //revolvers
+	damage = 60 //Revolvers get snowflake bullets, to keep them relevant
+	armor_penetration = 20
+	agony = 45
+
+/obj/item/projectile/bullet/pistol/medium/smg //P90
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
 	damage = 40 //10mm
 	armor_penetration = 30
@@ -317,37 +346,6 @@
 	armor_penetration = 18
 	agony = 30
 
-/obj/item/projectile/bullet/pistol/medium/revolver
-	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 60 //.44 magnum or something
-	agony = 45
-
-/obj/item/projectile/bullet/pistol/strong //matebas
-	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 65 //.50AE
-	armor_penetration = 30
-	agony = 45
-
-/obj/item/projectile/bullet/pistol/vstrong //tacrevolver
-	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 70 //.500 S&W Magnum
-	armor_penetration = 35
-	agony = 45
-
-/obj/item/projectile/bullet/pistol/strong/revolver //revolvers
-	damage = 60 //Revolvers get snowflake bullets, to keep them relevant
-	armor_penetration = 20
-	agony = 45
-
-/obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
-	name = "rubber bullet"
-//	check_armour = "melee"
-	damage = 5
-	agony = 30
-	embed = 0
-	sharp = 0
-	armor_penetration = 2.5
-
 
 /* shotgun projectiles */
 
@@ -360,9 +358,8 @@
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
-//	check_armour = "melee"
-	damage = 25
-	agony = 60
+	damage = 10
+	agony = 70
 	embed = 0
 	sharp = 0
 
