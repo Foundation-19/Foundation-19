@@ -40,7 +40,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/scp049/Initialize()
 	..()
 	add_language(/datum/language/zombie)
-	add_language(/datum/language/spacer)
+	add_language(/datum/language/english)
 	// fix names
 	fully_replace_character_name("SCP-049")
 

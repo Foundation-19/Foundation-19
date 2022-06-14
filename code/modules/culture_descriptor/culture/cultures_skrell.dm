@@ -14,7 +14,7 @@
 	secondary_langs = list(
 		LANGUAGE_SIGN,
 		LANGUAGE_HUMAN_EURO,
-		LANGUAGE_SPACER
+		LANGUAGE_ENGLISH
 	)
 
 /decl/cultural_info/culture/skrell/caste_malish
