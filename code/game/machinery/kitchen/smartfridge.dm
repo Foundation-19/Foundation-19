@@ -63,7 +63,7 @@
 	name = "\improper Slime Extract Storage"
 	desc = "A refrigerated storage unit for slime extracts."
 	icon_contents = "slime"
-	req_access = list(access_research)
+	req_access = list(access_sciencelvl1)
 
 /obj/machinery/smartfridge/secure/extract/accept_check(var/obj/item/O as obj)
 	if(istype(O,/obj/item/slime_extract))
@@ -74,7 +74,7 @@
 	name = "\improper Refrigerated Medicine Storage"
 	desc = "A refrigerated storage unit for storing medicine and chemicals."
 	icon_contents = "chem"
-	req_access = list(list(access_medical,access_chemistry))
+	req_access = list(access_mtflvl1)
 
 /obj/machinery/smartfridge/secure/medbay/accept_check(var/obj/item/O as obj)
 	if(istype(O,/obj/item/reagent_containers/glass/))

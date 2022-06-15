@@ -15,3 +15,4 @@
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/mounted/taser
 		)
+
