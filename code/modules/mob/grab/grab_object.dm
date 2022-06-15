@@ -238,6 +238,21 @@
 		leave_forensic_traces()
 		current_grab.enter_as_up(src)
 
+		if (!bypass_cooldown && isscp106(loc) && !(loc.loc in GLOB.scp106_floors) && !(affecting.loc in GLOB.scp106_floors))
+			var/mob/living/carbon/human/scp106/H = loc
+			affecting.forceMove(pick(GLOB.scp106_floors))
+			H.set_last_xyz()
+			H.forceMove(get_turf(affecting))
+			H.verbs -= /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
+			H.verbs += /mob/living/carbon/human/scp106/proc/go_back
+			qdel(src)
+		else if (!bypass_cooldown && isscp049(loc))
+			var/mob/living/carbon/human/scp049/H = loc
+			H.scp049_attack_2(affecting)
+			qdel(src)
+
+
+
 /obj/item/grab/proc/downgrade()
 	var/datum/grab/downgrab = current_grab.downgrade(src)
 	if(downgrab)

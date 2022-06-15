@@ -114,3 +114,14 @@
 	desc = "A rigid polymer sheath which you can strap on your leg."
 	icon_state = "sheath_polymer"
 	body_location = LEGS
+
+/obj/item/clothing/accessory/holster/thigh
+	name = "thigh holster"
+	desc = "A drop leg holster made of a durable synthetic fiber."
+	icon_state = "holster_thigh"
+
+/obj/item/clothing/accessory/holster/donor
+	name = "thigh holster"
+	desc = "A drop leg holster made of a durable synthetic fiber."
+	icon_state = "holster_thigh"
+//	can_hold = list(/obj/item/weapon/gun/projectile/automatic/scp/donor/ierichon)

@@ -110,7 +110,7 @@
 //		/obj/item/ammo_magazine/box/c45donor,
 //		/obj/item/ammo_magazine/box/c45donor/rubber,
 //		/obj/item/storage/box/ifak,
-//		/obj/item/clothing/gloves/tactical/scp,
+		/obj/item/clothing/gloves/tactical/scp,
 		/obj/item/device/flash,
 		/obj/item/device/flashlight/maglight,
 		/obj/item/reagent_containers/spray/pepper,
@@ -148,8 +148,8 @@
 		/obj/item/reagent_containers/spray/pepper,
 		/obj/item/device/flash,
 		/obj/item/device/flashlight/maglight,
-//		/obj/item/clothing/gloves/tactical/scp,
-//		/obj/item/clothing/accessory/holster/thigh,
+		/obj/item/clothing/gloves/tactical/scp,
+		/obj/item/clothing/accessory/holster/thigh,
 		/obj/item/clothing/mask/balaclava,
 //		/obj/item/storage/box/bloodtypes,
 //		/obj/item/gun/projectile/revolver/mateba,
@@ -180,11 +180,11 @@
 
 /obj/structure/closet/secure_closet/mtf/breachshotguns/WillContain()
 	return list(
-//		/obj/item/gun/projectile/shotgun/tactical,
-//		/obj/item/gun/projectile/shotgun/tactical,
-//		/obj/item/gun/projectile/shotgun/tactical,
-//		/obj/item/storage/box/mtf/empammo = 6,
-//		/obj/item/storage/box/mtf/pelletammo = 6
+		/obj/item/gun/projectile/shotgun/tactical,
+		/obj/item/gun/projectile/shotgun/tactical,
+		/obj/item/gun/projectile/shotgun/tactical,
+		/obj/item/storage/box/mtf/empammo = 6,
+		/obj/item/storage/box/mtf/pelletammo = 6
 	)
 
 /obj/structure/closet/secure_closet/mtf/riotshotguns
@@ -194,8 +194,8 @@
 
 /obj/structure/closet/secure_closet/mtf/riotshotguns/WillContain()
 	return list(
-//		/obj/item/gun/projectile/shotgun/tactical/beanbag = 3,
-//		/obj/item/storage/box/mtf/beanbag = 6,
+		/obj/item/gun/projectile/shotgun/tactical/beanbag = 3,
+		/obj/item/storage/box/mtf/beanbag = 6,
 //		/obj/item/clothing/accessory/storage/bandolier/beanbag = 3
 	)
 
@@ -264,7 +264,7 @@
 //		/obj/item/gun/projectile/colt/officer,
 //		/obj/item/gun/projectile/automatic/tactical,
 //		/obj/item/ammo_magazine/tac9mm = 6,
-//		/obj/item/storage/pill_bottle/amnesticsb,
+		/obj/item/storage/pill_bottle/amnesticsb,
 		/obj/item/storage/box/freezer
 	)
 
@@ -293,3 +293,44 @@
 //		/obj/item/ammo_magazine/a762 = 6,
 		/obj/item/material/hatchet/machete/deluxe
 	)
+
+/obj/item/clothing/gloves/tactical
+	desc = "These brown tactical gloves are made from a durable synthetic, and have hardened knuckles."
+	name = "tactical gloves"
+	icon_state = "work"
+	item_state = "wgloves"
+	force = 5
+	siemens_coefficient = 0.50
+	permeability_coefficient = 0.05
+	armor = list(melee = 80, bullet = 80, laser = 60,energy = 25, bomb = 50, bio = 10, rad = 0)
+
+/obj/item/clothing/gloves/tactical/scp
+	desc = "These grey tactical gloves are made from a durable synthetic, and have hardened knuckles."
+	name = "tactical gloves"
+	icon_state = "scpgloves"
+	item_state = "scpgloves"
+	force = 5
+	siemens_coefficient = 0.50
+	permeability_coefficient = 0.05
+	armor = list(melee = 80, bullet = 80, laser = 60,energy = 25, bomb = 50, bio = 10, rad = 0)
+
+/obj/item/clothing/gloves/tactical/donor
+	desc = "Перчатки из синтетической кожи, вставки из сплавов на костяшках и запястьях."
+	name = "combat gloves"
+	icon_state = "donorsec"
+	item_state = "donorsec"
+	force = 5
+	siemens_coefficient = 0.50
+	permeability_coefficient = 0.05
+	armor = list(melee = 80, bullet = 80, laser = 60,energy = 25, bomb = 50, bio = 10, rad = 0)
+
+/obj/item/clothing/gloves/guards
+	desc = "A pair of synthetic gloves and arm pads reinforced with armor plating."
+	name = "arm guards"
+	icon_state = "guards"
+	item_state = "guards"
+	body_parts_covered = HANDS|ARMS
+	w_class = ITEM_SIZE_NORMAL
+	siemens_coefficient = 0.7
+	permeability_coefficient = 0.03
+	armor = list(melee = 80, bullet = 80, laser = 60,energy = 25, bomb = 50, bio = 10, rad = 0)
