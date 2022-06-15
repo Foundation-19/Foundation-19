@@ -73,7 +73,7 @@ GLOBAL_LIST_EMPTY(scp343s)
 	return 1
 
 /mob/living/carbon/human/scp343/movement_delay()
-	return 1.0
+	return 3.0
 
 /mob/living/carbon/human/attack_hand(mob/living/carbon/M)
 	if (!isscp343(M) || src == M)

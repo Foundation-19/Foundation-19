@@ -26,6 +26,18 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 /mob/living/carbon/human/scp106/IsAdvancedToolUser()
 	return FALSE
 
+/mob/living/carbon/human/scp106/update_icons()
+	return
+
+/mob/living/carbon/human/scp106/on_update_icon()
+	if (lying || resting)
+		var/matrix/M =  matrix()
+		transform = M.Turn(90)
+	else
+		transform = null
+	return
+
+
 /mob/living/carbon/human/scp106/Initialize()
 	. = ..()
 
@@ -68,7 +80,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	return 1
 
 /mob/living/carbon/human/scp106/movement_delay()
-	return 2.0
+	return 4.0
 
 /mob/living/carbon/human/scp106/say(var/message, var/datum/language/speaking = null, whispering)
 	src << "<span class = 'notice'>You cannot speak.</span>"
@@ -79,14 +91,6 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		return ..(L)
 	visible_message("<span class = 'danger'>[L] is warped away!</span>")
 	L.forceMove(pick(GLOB.scp106_floors))
-
-/mob/living/carbon/human/scp106/on_update_icon()
-	if (lying || resting)
-		var/matrix/M =  matrix()
-		transform = M.Turn(90)
-	else
-		transform = null
-	return
 
 /mob/living/carbon/human/scp106/Life()
 	. = ..()
