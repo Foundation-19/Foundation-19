@@ -71,7 +71,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	var/imprinter_show_tech = TRUE
 	var/imprinter_search = ""
 
-	req_access = list(access_research)	//Data and setting manipulation requires scientist access.
+	req_access = list(access_sciencelvl1)	//Data and setting manipulation requires scientist access.	//Data and setting manipulation requires scientist access.
 
 /obj/machinery/computer/rdconsole/proc/CallMaterialName(var/ID)
 	var/return_name = ID
@@ -968,12 +968,13 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 /obj/machinery/computer/rdconsole/robotics
 	name = "robotics fabrication console"
 	id = 2
-	req_access = list(access_robotics)
+	req_access = list(access_sciencelvl1)
 	can_analyze = FALSE
 
 /obj/machinery/computer/rdconsole/core
 	name = "core fabricator console"
 	id = 1
+	req_access = list(access_sciencelvl1)
 
 
 #undef CHECK_LATHE

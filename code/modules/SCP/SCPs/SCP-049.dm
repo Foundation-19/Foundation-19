@@ -170,7 +170,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		return FALSE
 
 	//below is the part where they're being chased with lethal intent and him running up to them is to do his good work
-	//SCP049_Chase_Music()
+	SCP049_Chase_Music()
 
 	if(check_nearby())
 		to_chat(target, "<span class = 'danger'>You feel the life draining from your body! You can't move!</span>")
@@ -262,6 +262,8 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		return
 
 /mob/living/carbon/human/scp049/bullet_act(var/obj/item/projectile/P, var/def_zone)
+	if (getBruteLoss() + getFireLoss() + getToxLoss() + getCloneLoss() >= 200)
+		return
 	if (P.damage && !P.nodamage && ishuman(P.firer))
 		var/mob/living/carbon/human/H = P.firer
 		if (H != src)
