@@ -246,10 +246,6 @@
 			H.verbs -= /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
 			H.verbs += /mob/living/carbon/human/scp106/proc/go_back
 			qdel(src)
-		else if (!bypass_cooldown && isscp049(loc))
-			var/mob/living/carbon/human/scp049/H = loc
-			H.scp049_attack_2(affecting)
-			qdel(src)
 
 
 

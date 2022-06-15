@@ -408,13 +408,13 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 			to_chat(user, "It is already in use.")
 		else if (target && user && ishuman(target))
 			visible_message("<span class = 'warning'>[user] starts to put [target] onto the femur breaker...</span>")
-/*			if (do_mob(user, target, 3 SECONDS))
+			if (buckle_mob(user, target, 3 SECONDS))
 				visible_message("<span class = 'danger'>[user] puts [target] onto the femur breaker.</span>")
 				var/mob/living/carbon/human/H = target
 				H.forceMove(get_turf(src))
 				H.buckled = src
 				buckled_mob = H
-*/
+
 		qdel(G)
 
 /obj/structure/femur_breaker/attack_hand(mob/user)
