@@ -24,7 +24,7 @@
 	much as they have been for hundreds of years, and are generally content with their lot in life. From a variety of ancient cultures, the people of \
 	Earth are as diverse as they have always been."
 	distance = "1AU"
-	capital = "Geneva"
+	capital = "Unknown"
 	economic_power = 1.2
 	language = LANGUAGE_ENGLISH
 

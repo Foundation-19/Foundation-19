@@ -1,16 +1,10 @@
 /decl/cultural_info/faction/scg
 	name = FACTION_SOL_CENTRAL
-	description = "The Sol Central Government, commonly referred to as SolGov or the SCG, is a federal republic \
-	composed of numerous human member states spanning many systems.\
-	Based in the Sol System and with most seats of Government on Olympus, Mars,\
-	the SCG governs the majority of human space. Currently engaged in a cold war with the Confederation of Gilgamesh \
-	Its primary governing bodies are the Assemblies which are led by an Assembly-elected secretary general. \
-	Member states have a great degree of freedom in their actions, though the SCG manages sapient rights, \
-	domestic security, economic policy, and diplomacy for humanity as a whole. The SCG's population is diverse \
-	including many non-humans (though they are not citizens) and encompassing a wide range of systems, territories \
-	habitats, and celestial bodies. However, it is large, cumbersome, divided and slow to respond to issues due to \
-	its massive bureaucracy and the distance between worlds. Through its member states, the SCG governs as one of the \
-	most advanced and powerful civilisations in the known galaxy."
+	description = "The SCP Foundation, or commonly referred to as the Foundation or SCP,\
+	is a high secretive group of people foccused around Securing Containing and Protecting anomalous objects or instances refered to as SCP's.\
+	As it currenlty stands the public does not know of the Foundation and it's duty to protect the public against these SCP's.\
+	Though these SCP's have breached their containment multiple times resulting in a tragic loss of life and the public \
+	needing to undergo serious amnestic treatment."
 
 /decl/cultural_info/faction/scg/fleet
 	name = FACTION_FLEET
