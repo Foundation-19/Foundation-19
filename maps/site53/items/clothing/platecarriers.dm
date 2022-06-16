@@ -44,3 +44,18 @@
 	permeability_coefficient = 0
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	armor = list(melee = 80, bullet = 85, laser = 65, energy = 15, bomb = 80, bio = 40, rad = 60)
+
+/obj/item/reagent_containers/pill/scp500
+	name = "SCP-500"
+	desc = "A pill supposedly curing everything."
+	icon_state = "pill9"
+
+/obj/item/reagent_containers/pill/scp500/New()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/adminordrazine, 50)
+
+/obj/item/storage/fancy/cigarettes/bluelady
+	name = "pack of SCP-013s"
+	desc = "A packet of six Blue Lady cigarettes. The SCP logo is stamped on the paper."
+	icon_state = "BLpacket"
+	startswith = list(/obj/item/clothing/mask/smokable/cigarette/bluelady = 6)
