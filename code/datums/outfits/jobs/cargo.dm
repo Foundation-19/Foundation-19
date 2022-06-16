@@ -20,7 +20,7 @@
 /decl/hierarchy/outfit/job/cargo/mining
 	name = OUTFIT_JOB_NAME("Shaft miner")
 	uniform = /obj/item/clothing/under/rank/miner
-	id_types = list(/obj/item/card/id/cargo/mining)
+//	id_types = list(/obj/item/card/id/cargo/mining)
 	pda_type = /obj/item/modular_computer/pda/science
 	backpack_contents = list(/obj/item/crowbar = 1, /obj/item/storage/ore = 1)
 	flags = OUTFIT_FLAGS_JOB_DEFAULT | OUTFIT_EXTENDED_SURVIVAL

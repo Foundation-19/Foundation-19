@@ -1,12 +1,19 @@
 /obj/item/gun/projectile/pistol
 	icon = 'icons/obj/gun.dmi'
+	name = "MK3 Prologue"
+	desc = "A somewhat outdated 9mm pistol of the SCP Foundation, based on the Makarov."
+	icon_state = "pistol"
+	caliber = "9mm"
+	silenced = 0
+	fire_delay = 5 //making it pretty shit
 	load_method = MAGAZINE
-	caliber = CALIBER_PISTOL
-	magazine_type = /obj/item/ammo_magazine/pistol
-	allowed_magazines = /obj/item/ammo_magazine/pistol
+	w_class = ITEM_SIZE_NORMAL
+	magazine_type = /obj/item/ammo_magazine/scp
+	allowed_magazines = /obj/item/ammo_magazine/scp
 	accuracy_power = 7
 	var/empty_icon = TRUE  //If it should change icon when empty
 	var/ammo_indicator = FALSE
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
 
 /obj/item/gun/projectile/pistol/on_update_icon()
 	..()
@@ -25,13 +32,13 @@
 			overlays += image(icon, "ammo_ok")
 
 /obj/item/gun/projectile/pistol/mk9
-	name = "MK9 Standard"
-	desc = "Standard issue .45 ACP pistol of the SCP Foundation, based on the Makarov."
+	name = "MK9 Envy"
+	desc = "Standard issue 9mm pistol of the SCP Foundation, based on the Makarov."
 	icon_state = "MK9"
 	w_class = ITEM_SIZE_NORMAL
-	caliber = ".45"
+	caliber = "9mm"
 	silenced = 0
-	fire_delay = 1
+	fire_delay = 4
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/mk9

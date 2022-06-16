@@ -734,6 +734,43 @@
 	else if( lying != lying_prev )
 		update_icons()
 
+	var/isscp106 = isscp106(src)
+	var/isscp049 = isscp049(src)
+
+	if ((isscp106 || isscp049) && !incapacitated(INCAPACITATION_RESTRAINED|INCAPACITATION_BUCKLED_FULLY|INCAPACITATION_BUCKLED_PARTIALLY))
+		lying = 0
+		density = 1
+
+	// update SCP-106's vis_contents icon
+	if (isscp106)
+		var/mob/living/carbon/human/scp106/H = src
+//		H.fix_icons()
+		if (lying)
+			H.reset_vision_cone()
+		else
+			H.update_vision_cone()
+
+	// update SCP-049's vis_contents icon
+	else if (isscp049)
+		var/mob/living/carbon/human/scp049/H = src
+// not needed		H.fix_icons()
+		if (lying)
+			H.reset_vision_cone()
+		else
+			H.update_vision_cone()
+
+	if( update_icon )	//forces a full overlay update
+		update_icon = 0
+		regenerate_icons()
+	else if( lying != lying_prev )
+		update_icons()
+		if (ishuman(src))
+			var/mob/living/carbon/human/H = src
+			if (lying)
+				H.reset_vision_cone()
+			else
+				H.update_vision_cone()
+
 /mob/proc/reset_layer()
 	if(lying)
 		plane = DEFAULT_PLANE

@@ -1,3 +1,6 @@
+/obj/item/clothing/gloves
+	icon = 'icons/obj/clothing/gloves.dmi'
+
 /obj/item/clothing/gloves/captain
 	desc = "Regal blue gloves, with a nice gold trim. Swanky."
 	name = "captain's gloves"
@@ -185,3 +188,14 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+
+/obj/item/clothing/gloves/tactical/scp
+	desc = "These grey tactical gloves are made from a durable synthetic, and have hardened knuckles."
+	name = "tactical gloves"
+	icon_state = "scpgloves"
+	item_state = "scpgloves"
+	force = 5
+	body_parts_covered = HANDS
+	siemens_coefficient = 0.50
+	permeability_coefficient = 0.05
+	armor = list(melee = 80, bullet = 80, laser = 60, energy = 25, bomb = 50, bio = 10, rad = 0)

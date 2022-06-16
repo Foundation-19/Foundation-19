@@ -17,7 +17,7 @@ GLOBAL_LIST_EMPTY(scp131s)
 	health = 150
 	pass_flags = PASS_FLAG_TABLE
 	// language = LANGUAGE_EYEPOD
-	species_language = LANGUAGE_EYEPOD
+//	species_language = LANGUAGE_EYEPOD
 	only_species_language = 1
 	density = 0
 	universal_speak = 0
@@ -60,7 +60,7 @@ GLOBAL_LIST_EMPTY(scp131s)
 
 /mob/living/simple_animal/scp_131/New()
 	..()
-	add_language(LANGUAGE_EYEPOD, 1)
+//	add_language(LANGUAGE_EYEPOD, 1)
 	GLOB.scp131s += src
 	verbs += /mob/living/proc/ventcrawl
 	verbs += /mob/living/proc/hide
@@ -124,7 +124,7 @@ GLOBAL_LIST_EMPTY(scp131s)
 				turns_since_scan = 0
 
 				//walk to friend
-				stop_automated_movement = 1
+				set_AI_busy(FALSE)
 				movement_target = friend
 				walk_to(src, movement_target, near_dist, 4)
 
@@ -132,7 +132,7 @@ GLOBAL_LIST_EMPTY(scp131s)
 			else if (current_dist <= near_dist)
 				walk_to(src,0)
 				movement_target = null
-				stop_automated_movement = 0
+				set_AI_busy(FALSE)
 
 	if (!friend || movement_target != friend)
 		//if our target is neither inside a turf or inside a human(???), stop
@@ -142,12 +142,12 @@ GLOBAL_LIST_EMPTY(scp131s)
 			set_dir(get_dir(src, movement_target))
 			study_target = movement_target
 			movement_target = null
-			stop_automated_movement = 0
+			set_AI_busy(FALSE)
 
 		//if we have no target or our current one is out of sight/too far away
 		if(!study_target && ( !movement_target || !(movement_target.loc in oview(src, 4))))
 			movement_target = null
-			stop_automated_movement = 0
+			set_AI_busy(FALSE)
 			for(var/mob/living/subject in oview(src)) //search for a new target to study
 				if(isturf(subject.loc) && !subject.stat)
 					movement_target = subject
@@ -161,19 +161,19 @@ GLOBAL_LIST_EMPTY(scp131s)
 					if(prob(50)) study_target = null
 
 		if(movement_target)
-			stop_automated_movement = 1
+			set_AI_busy(FALSE)
 			walk_to(src,movement_target,0,3)
 
 /mob/living/simple_animal/scp_131/proc/handle_flee_target()
 	//see if we should stop fleeing
 	if (flee_target && !(flee_target.loc in view(src)))
 		flee_target = null
-		stop_automated_movement = 0
+		set_AI_busy(FALSE)
 
 	if (flee_target)
 		if(prob(10)) say("Eeeeee!")
 		else if(prob(10)) visible_emote(pick("flees from [flee_target].","anxiously avoids [flee_target].","cowers from [flee_target]."))
-		stop_automated_movement = 1
+		set_AI_busy(FALSE)
 		walk_away(src, flee_target, 7, 2)
 
 /mob/living/simple_animal/scp_131/proc/set_flee_target(atom/A)
@@ -201,7 +201,7 @@ GLOBAL_LIST_EMPTY(scp131s)
 
 /mob/living/simple_animal/scp_131/hitby(atom/movable/AM)
 	. = ..()
-	set_flee_target(AM.thrower? AM.thrower : src.loc)
+
 
 /mob/living/simple_animal/scp_131/Life()
 	..()

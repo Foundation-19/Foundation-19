@@ -47,7 +47,7 @@
 	gloves = /obj/item/clothing/gloves/foundation_service
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/commslvl4)
-//	l_ear = /obj/item/device/radio/headset/heads/commsofficer
+	l_ear = /obj/item/device/radio/headset/heads/commsofficer
 	back = /obj/item/storage/backpack/satchel/pocketbook
 
 // END OF COMMAND OUTFITS
@@ -58,7 +58,7 @@
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/commslvl1)
 	belt = /obj/item/storage/belt/utility/full
-//	l_ear = /obj/item/device/radio/headset/commsdispatcher
+	l_ear = /obj/item/device/radio/headset/commsdispatcher
 	back = /obj/item/storage/backpack/satchel/pocketbook
 
 
@@ -241,7 +241,7 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	l_ear = null
 	back = null
-//	l_pocket = /obj/item/paper/dclass_orientation
+	l_pocket = /obj/item/paper/dclass_orientation
 
 /decl/hierarchy/outfit/job/site90/crew/civ/classd/post_equip(var/mob/living/carbon/human/H)
 	..()
@@ -442,7 +442,7 @@
 	head = /obj/item/clothing/head/helmet/site53/guard/mtf_epsilon
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	glasses = /obj/item/clothing/glasses/night
-//	gloves = /obj/item/clothing/gloves/tactical/scp
+	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/jackboots
 //	id_types = list( = /obj/item/card/id/adminlvl5
 	suit_store = /obj/item/gun/projectile/automatic/scp/p90
@@ -462,10 +462,10 @@
 	head = /obj/item/clothing/head/helmet/site53/guard/mtf_epsilon
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	glasses = /obj/item/clothing/glasses/night
-//	gloves = /obj/item/clothing/gloves/tactical/scp
+	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/jackboots
 //	id_types = list( = /obj/item/card/id/adminlvl5
-//	suit_store = /obj/item/gun/projectile/shotgun/pump/combat
+	suit_store = /obj/item/gun/projectile/shotgun/pump/combat
 //	r_hand = /obj/item/crowbar/red
 //	l_hand = /obj/item/material/hatchet
 	l_pocket = /obj/item/grenade/flashbang
@@ -482,7 +482,7 @@
 	head = /obj/item/clothing/head/helmet/site53/guard/mtf_epsilon/leader
 	mask = /obj/item/clothing/mask/balaclava
 	glasses = /obj/item/clothing/glasses/night
-//	gloves = /obj/item/clothing/gloves/tactical/scp
+	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/jackboots
 //	id_types = list( = /obj/item/card/id/adminlvl5
 //	suit_store = /obj/item/gun/projectile/automatic/scp/m16
@@ -502,7 +502,7 @@
 	head = /obj/item/clothing/head/helmet/site53/guard/mtf_epsilon/medic
 	mask = /obj/item/clothing/mask/balaclava
 	glasses = /obj/item/clothing/glasses/night
-//	gloves = /obj/item/clothing/gloves/tactical/scp
+	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/jackboots
 //	id_types = list( = /obj/item/card/id/adminlvl5
 //	suit_store = /obj/item/gun/projectile/automatic/scp/p90
@@ -522,7 +522,7 @@
 //	head = /obj/item/clothing/head/helmet/scp/chaos
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	glasses = /obj/item/clothing/glasses/night
-//	gloves = /obj/item/clothing/gloves/tactical/scp
+	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/dutyboots
 //	id_types = list( = null
 //	suit_store = /obj/item/gun/projectile/automatic/scp/p90
@@ -542,7 +542,7 @@
 //	head = /obj/item/clothing/head/helmet/scp/chaos
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	glasses = /obj/item/clothing/glasses/night
-//	gloves = /obj/item/clothing/gloves/tactical/scp
+	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list()
 	suit_store = /obj/item/gun/projectile/automatic/l6_saw
@@ -562,7 +562,7 @@
 	head = /obj/item/clothing/head/beret/solgov/fleet/security
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	glasses = /obj/item/clothing/glasses/night
-//	gloves = /obj/item/clothing/gloves/tactical/scp
+	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list()
 //	suit_store = /obj/item/gun/projectile/revolver/donor

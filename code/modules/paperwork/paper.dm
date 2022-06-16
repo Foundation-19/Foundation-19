@@ -43,7 +43,7 @@
 	var/list/metadata
 	var/readable = TRUE  //Paper will not be able to be written on and will not bring up a window upon examine if FALSE
 	var/is_memo = FALSE  //If TRUE, paper will act the same as readable = FALSE, but will also be unrenameable.
-	var/datum/language/language = LANGUAGE_HUMAN_EURO // Language the paper was written in. Editable by users up until something's actually written
+	var/datum/language/language = LANGUAGE_ENGLISH // Language the paper was written in. Editable by users up until something's actually written
 
 	var/const/deffont = "Verdana"
 	var/const/signfont = "Times New Roman"
@@ -583,6 +583,11 @@
 /obj/item/paper/exodus_cmo
 	name = "outgoing CMO's notes"
 	info = "<I><center>To the incoming CMO of Exodus:</I></center><BR><BR>I wish you and your crew well. Do take note:<BR><BR><BR>The Medical Emergency Red Phone system has proven itself well. Take care to keep the phones in their designated places as they have been optimised for broadcast. The two handheld green radios (I have left one in this office, and one near the Emergency Entrance) are free to be used. The system has proven effective at alerting Medbay of important details, especially during power outages.<BR><BR>I think I may have left the toilet cubicle doors shut. It might be a good idea to open them so the staff and patients know they are not engaged.<BR><BR>The new syringe gun has been stored in secondary storage. I tend to prefer it stored in my office, but 'guidelines' are 'guidelines'.<BR><BR>Also in secondary storage is the grenade equipment crate. I've just realised I've left it open - you may wish to shut it.<BR><BR>There were a few problems with their installation, but the Medbay Quarantine shutters should now be working again  - they lock down the Emergency and Main entrances to prevent travel in and out. Pray you shan't have to use them.<BR><BR>The new version of the Medical Diagnostics Manual arrived. I distributed them to the shelf in the staff break room, and one on the table in the corner of this room.<BR><BR>The exam/triage room has the walking canes in it. I'm not sure why we'd need them - but there you have it.<BR><BR>Emergency Cryo bags are beside the emergency entrance, along with a kit.<BR><BR>Spare paper cups for the reception are on the left side of the reception desk.<BR><BR>I've fed Runtime. She should be fine.<BR><BR><BR><center>That should be all. Good luck!</center>"
+
+/obj/item/paper/dclass_orientation
+	name = "Class-D Orientation Letter"
+	info = "<small>Greetings,<br><br>On behalf of all staff within The Foundation, we welcome you to Site-53. You have chosen, or been chosen for the honor of joining the Foundation Rehabilitation Program. During your thirty day stay within this facility, you will be known as Class-D personnel, and be given a unique numerical designation for ease of access, which has been printed on your new ID card. <br><br>Over the course of your stay here, you will undergo various programs to ensure that you are ready to re-enter the world again. You will be given the opportunity to select a job within your block, in order to assist your fellow D-Class. From working the kitchen, to digging out objects within our mining area. On top of this, you may be selected for various medical or research tests to assist in our projects. What are those projects? Unfortunately, we can't tell you that.<br><br>Given that you are cooperative with our staff for the entirety of your stay here, you will be released back into the world, and have your criminal record erased completely. With that being said, we hope that you enjoy your stay here.<br><br>Sincerely,<br>The Administrator</small>"
+	desc = "A laminated piece of paper given to D-Class personnel upon their arrival."
 
 /obj/item/paper/exodus_bartender
 	name = "shotgun permit"

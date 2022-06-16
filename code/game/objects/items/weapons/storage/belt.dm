@@ -507,10 +507,6 @@
 	item_state = "swatbelt"
 	storage_slots = 10
 
-/obj/item/storage/belt/holster/security/tactical/Initialize()
-	.=..()
-	slowdown_per_slot[slot_belt] = 1
-
 /obj/item/storage/belt/waistpack
 	name = "waist pack"
 	desc = "A small bag designed to be worn on the waist. May make your butt look big."

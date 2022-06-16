@@ -20,6 +20,16 @@
 	max_ammo = 6
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/c50
+	name = "speed loader (.50)"
+	desc = "A speed loader for revolvers."
+	icon_state = "38"
+	caliber = ".50"
+	ammo_type = /obj/item/ammo_casing/a50
+	matter = list(DEFAULT_WALL_MATERIAL = 1260)
+	max_ammo = 6
+	multiple_sprites = 1
+
 /obj/item/ammo_magazine/speedloader/small
 	name = "speed loader"
 	icon_state = "spdloader_small"

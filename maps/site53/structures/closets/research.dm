@@ -4,7 +4,7 @@
 
 /obj/structure/closet/secure_closet/RD_torch
 	name = "research director's locker"
-//	req_access = list(access_rd)
+	req_access = list(access_sciencelvl5)
 	icon_state = "rdsecure1"
 
 /obj/structure/closet/secure_closet/RD_torch/WillContain()
@@ -43,7 +43,7 @@
 
 /obj/structure/closet/secure_closet/secure_closet/xenoarchaeologist_torch
 	name = "xenoarchaeologist's locker"
-//	req_access = list(access_xenoarch)
+	req_access = list(access_sciencelvl3)
 	icon_state = "secureres1"
 
 /obj/structure/closet/secure_closet/secure_closet/xenoarchaeologist_torch/WillContain()
@@ -73,7 +73,7 @@
 
 /obj/structure/closet/secure_closet/scientist_torch
 	name = "researcher's locker"
-//	req_one_access = list(access_research)
+//	req_one_access = list(access_sciencelvl2)
 	icon_state = "secureres1"
 
 /obj/structure/closet/secure_closet/scientist_torch/WillContain()
@@ -101,7 +101,7 @@
 
 /obj/structure/closet/secure_closet/prospector
 	name = "prospector's locker"
-//	req_access = list(access_mining)
+	req_access = list(access_sciencelvl2)
 	icon_state = "miningsec1"
 
 /obj/structure/closet/secure_closet/prospector/WillContain()
@@ -125,7 +125,7 @@
 
 /obj/structure/closet/secure_closet/guard
 	name = "security guard's locker"
-//	req_access = list(access_sec_guard)
+	req_access = list(access_securitylvl2)
 	icon_state = "guard1"
 
 /obj/structure/closet/secure_closet/guard/WillContain()
@@ -182,7 +182,7 @@
 
 /obj/structure/closet/secure_closet/scientist
 	name = "scientist's locker"
-//	req_one_access = list(access_tox,access_tox_storage)
+//	req_one_access = list(access_sciencelvl2)
 	icon_state = "secureres1"
 
 /obj/structure/closet/secure_closet/scientist/WillContain()

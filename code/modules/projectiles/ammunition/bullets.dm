@@ -1,4 +1,3 @@
-/////////////// DOESN'T WORK WITH SITE 53 //////////////////////////
 /obj/item/ammo_casing/pistol
 	desc = "A pistol bullet casing."
 	caliber = CALIBER_PISTOL
@@ -79,6 +78,7 @@
 /obj/item/ammo_casing/shotgun/flechette
 	name = "flechette shell"
 	desc = "A flechette shell."
+
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun/flechette
 	matter = list(MATERIAL_STEEL = 360)
 
@@ -134,8 +134,8 @@
 	desc = "A rifle bullet casing."
 	caliber = CALIBER_RIFLE
 	projectile_type = /obj/item/projectile/bullet/rifle
-	icon_state = "riflecasing"
-	spent_icon = "riflecasing-spent"
+	icon_state = "rifle-casing"
+	spent_icon = "rifle-casing-spent"
 
 /obj/item/ammo_casing/shell
 	name = "shell casing"
@@ -155,13 +155,13 @@
 	desc = "A military rifle bullet casing."
 	caliber = CALIBER_RIFLE_MILITARY
 	projectile_type = /obj/item/projectile/bullet/rifle/military
-	icon_state = "rifle_mil"
-	spent_icon = "rifle_mil-spent"
+	icon_state = "rifle-casing"
+	spent_icon = "rifle-casing-spent"
 
 /obj/item/ammo_casing/rifle/military/practice
 	desc = "A military rifle practice bullet casing."
 	projectile_type = /obj/item/projectile/bullet/rifle/military/practice
-	icon_state = "rifle_mil_p"
+	icon_state = "rifle-casing-rubber"
 
 /obj/item/ammo_casing/rocket
 	name = "rocket shell"
@@ -182,19 +182,19 @@
 	name = "haywire round"
 	desc = "A pistol bullet casing fitted with a single-use ion pulse generator."
 	projectile_type = /obj/item/projectile/ion/small
-	icon_state = "pistolcasing_h"
+	icon_state = "pistol-casing-emp"
 	matter = list(MATERIAL_STEEL = 130, MATERIAL_URANIUM = 100)
 
 /obj/item/ammo_casing/pistol/small/emp
 	name = "small haywire round"
 	desc = "A small bullet casing fitted with a single-use ion pulse generator."
 	projectile_type = /obj/item/projectile/ion/tiny
-	icon_state = "smallcasing_h"
+	icon_state = "pistol-casing-emp"
 
 /obj/item/ammo_casing/shotgun/emp
 	name = "haywire slug"
 	desc = "A 12-gauge shotgun slug fitted with a single-use ion pulse generator."
-	icon_state = "empshell"
-	spent_icon = "empshell-spent"
+	icon_state = "shell-emp"
+	spent_icon = "shell-emp-spent"
 	projectile_type  = /obj/item/projectile/ion
 	matter = list(MATERIAL_STEEL = 260, MATERIAL_URANIUM = 200)
