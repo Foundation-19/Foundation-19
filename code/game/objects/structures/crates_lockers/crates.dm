@@ -1,6 +1,10 @@
 /obj/structure/closet/crate
 	name = "crate"
 	desc = "A rectangular steel crate."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "crate"
+	icon_opened = "crateopen"
+	icon_closed = "crate"
 	closet_appearance = /decl/closet_appearance/crate
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 	setup = 0
@@ -62,6 +66,13 @@
 /obj/structure/closet/crate/secure
 	desc = "A secure crate."
 	name = "Secure crate"
+	icon_state = "securecrate"
+	icon_opened = "securecrateopen"
+	icon_closed = "securecrate"
+	var/redlight = "securecrater"
+	var/greenlight = "securecrateg"
+	var/sparks = "securecratesparks"
+	var/emag = "securecrateemag"
 	closet_appearance = /decl/closet_appearance/crate/secure
 	setup = CLOSET_HAS_LOCK
 	locked = TRUE
@@ -90,6 +101,9 @@
 /obj/structure/closet/crate/trashcart
 	name = "trash cart"
 	desc = "A heavy, metal trashcart with wheels."
+	icon_state = "trashcart"
+	icon_opened = "trashcartopen"
+	icon_closed = "trashcart"
 	closet_appearance = /decl/closet_appearance/cart/trash
 
 /obj/structure/closet/crate/medical
@@ -170,6 +184,9 @@
 /obj/structure/closet/crate/bin
 	name = "large bin"
 	desc = "A large bin."
+	icon_state = "largebin"
+	icon_opened = "largebinopen"
+	icon_closed = "largebin"
 
 /obj/structure/closet/crate/radiation
 	name = "radioactive crate"
@@ -255,6 +272,9 @@
 	desc = "A heavy cart with extensive sealing. You shouldn't eat things you find in it."
 	open_sound = 'sound/items/Deconstruct.ogg'
 	close_sound = 'sound/items/Deconstruct.ogg'
+	icon_state = "biohazard"
+	icon_opened = "biohazardopen"
+	icon_closed = "biohazard"
 	req_access = list(access_xenobiology)
 	closet_appearance = /decl/closet_appearance/cart/biohazard
 	storage_capacity = 2 * MOB_LARGE
