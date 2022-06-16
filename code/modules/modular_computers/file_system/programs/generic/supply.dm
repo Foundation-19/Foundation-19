@@ -188,7 +188,7 @@
 		print_summary(user)
 
 	// Items requiring cargo access go below this entry. Other items go above.
-	if(!check_access(access_cargo))
+	if(!check_access(access_logistics))
 		return 1
 
 	if(href_list["launch_shuttle"])
