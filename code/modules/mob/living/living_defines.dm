@@ -65,3 +65,5 @@
 	// var/max_nutrition = MAX_NUTRITION
 
 	var/image/selected_image = null // Used for buildmode AI control stuff.
+
+	var/list/in_vision_cones = list()

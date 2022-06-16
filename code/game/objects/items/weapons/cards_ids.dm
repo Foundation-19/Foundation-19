@@ -575,8 +575,8 @@ var/const/NO_EMAG_ACT = -50
 	job_access_type = /datum/job/cargo_tech
 	detail_color = COLOR_BROWN
 
-/obj/item/card/id/cargo/mining
-	job_access_type = /datum/job/mining
+//obj/item/card/id/cargo/mining
+//	job_access_type = /datum/job/mining
 
 /obj/item/card/id/cargo/head
 	name = "identification card"
@@ -596,8 +596,8 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/id/civilian/chef
 	job_access_type = /datum/job/chef
 
-/obj/item/card/id/civilian/botanist
-	job_access_type = /datum/job/hydro
+//obj/item/card/id/civilian/botanist
+//	job_access_type = /datum/job/hydro
 
 /obj/item/card/id/civilian/janitor
 	job_access_type = /datum/job/janitor

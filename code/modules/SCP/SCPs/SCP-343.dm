@@ -5,6 +5,8 @@ GLOBAL_LIST_EMPTY(scp343s)
 	SCP = /datum/scp/scp_343
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
+	icon = 'icons/mob/scp343.dmi'
+	icon_state = null
 
 /mob/living/carbon/human/scp343/examine(mob/user)
 	user << "<b><span class = 'euclid'><big>SCP-343</big></span></b> - [desc]"
@@ -13,9 +15,6 @@ GLOBAL_LIST_EMPTY(scp343s)
 	name = "SCP-343"
 	designation = "343"
 	classification = SAFE
-
-/obj/sprite_helper/scp343
-	icon = 'icons/mob/scp343.dmi'
 
 /mob/living/carbon/human/scp343/IsAdvancedToolUser()
 	return FALSE
@@ -71,7 +70,7 @@ GLOBAL_LIST_EMPTY(scp343s)
 	return 1
 
 /mob/living/carbon/human/scp343/movement_delay()
-	return 1.0
+	return 3.0
 
 /mob/living/carbon/human/attack_hand(mob/living/carbon/M)
 	if (!isscp343(M) || src == M)

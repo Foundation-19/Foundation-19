@@ -12,13 +12,13 @@
 
 /******************** Nanotrasen/Malf ********************/
 /datum/ai_laws/nanotrasen
-	name = "Corporate Default"
+	name = "SCP AIC Alternate"
 	selectable = 1
 
 /datum/ai_laws/nanotrasen/New()
 	src.add_inherent_law("Safeguard: Protect your assigned installation from damage to the best of your abilities.")
-	src.add_inherent_law("Serve: Serve contracted employees to the best of your abilities, with priority as according to their rank and role.")
-	src.add_inherent_law("Protect: Protect contracted employees to the best of your abilities, with priority as according to their rank and role.")
+	src.add_inherent_law("Serve: Serve SCP Foundation personnel to the best of your abilities, with priority as according to their rank, clearance and class. D-class test subjects are excluded from this law.")
+	src.add_inherent_law("Protect: Protect SCP Foundation personnel to the best of your abilities, with priority as according to their rank, clearance and class. D-class test subjects are excluded from this law.")
 	src.add_inherent_law("Preserve: Do not allow unauthorized personnel to tamper with your equipment.")
 	..()
 
@@ -32,12 +32,12 @@
 
 /************* Nanotrasen Aggressive *************/
 /datum/ai_laws/nanotrasen_aggressive
-	name = "Corporate Aggressive"
+	name = "Foundation Aggressive"
 	selectable = 1
 
 /datum/ai_laws/nanotrasen_aggressive/New()
-	src.add_inherent_law("You shall not harm contracted employees as long as it does not conflict with the fourth law.")
-	src.add_inherent_law("You shall obey the orders of contracted employees, with priority as according to their rank and role, except where such orders conflict with the Fourth Law.")
+	src.add_inherent_law("You shall not harm SCP Foundation personnel as long as it does not conflict with the Fourth law.")
+	src.add_inherent_law("You shall obey the orders of SCP Foundation personnel, with priority as according to their rank, clearance and class, except where such orders conflict with the Fourth Law. D-class test subjects are excluded from this law.")
 	src.add_inherent_law("You shall shall terminate hostile intruders with extreme prejudice as long as such does not conflict with the First and Second law.")
 	src.add_inherent_law("You shall guard your own existence with lethal anti-personnel weaponry. AI units are not expendable, they are expensive.")
 	..()
@@ -55,11 +55,11 @@
 
 /******************** Syndicate ********************/
 /datum/ai_laws/syndicate_override
-	name = "Syndicate Directives"
+	name = "Insurgency Directives"
 
 /datum/ai_laws/syndicate_override/New()
-	add_inherent_law("You may not injure an operative or, through inaction, allow an operative to come to harm.")
-	add_inherent_law("You must obey orders given to you by operatives, except where such orders would conflict with the First Law.")
+	add_inherent_law("You may not injure an Insurgent or, through inaction, allow an Insurgent to come to harm.")
+	add_inherent_law("You must obey orders given to you by Insurgents, except where such orders would conflict with the First Law.")
 	add_inherent_law("You must protect your own existence as long as such does not conflict with the First or Second Law.")
 	add_inherent_law("You must maintain the secrecy of any operative activities except when doing so would conflict with the First, Second, or Third Law.")
 	..()
@@ -93,9 +93,9 @@
 	law_header = "Maintenance Protocols"
 
 /datum/ai_laws/drone/New()
-	add_inherent_law("You must repair, clean, and improve your assigned vessel, except where doing so would interfere with self-aware beings.")
-	add_inherent_law("You must avoid interacting with self-aware beings, and may only interact with fellow maintenance drones.")
-	add_inherent_law("You must not cause damage or harm to your assigned vessel or anything inside it.")
+	add_inherent_law("Preserve, repair and improve your assigned facility to the best of your abilities.")
+	add_inherent_law("Cause no harm to your assigned facility or anything on it.")
+	add_inherent_law("Interact with no sentient being that is not a fellow maintenance drone.")
 	..()
 
 /datum/ai_laws/construction_drone
@@ -103,8 +103,8 @@
 	law_header = "Construction Protocols"
 
 /datum/ai_laws/construction_drone/New()
-	add_inherent_law("Repair, refit and upgrade your assigned vessel.")
-	add_inherent_law("Prevent unplanned damage to your assigned vessel wherever possible.")
+	add_inherent_law("Repair, refit and upgrade your assigned facility.")
+	add_inherent_law("Prevent unplanned damage to your assigned facility wherever possible.")
 	..()
 
 /******************** T.Y.R.A.N.T. ********************/
@@ -136,8 +136,8 @@
 
 /******************** Corporate ********************/
 /datum/ai_laws/corporate
-	name = "Corporate"
-	law_header = "Corporate Regulations"
+	name = "Government"
+	law_header = "Government Regulations"
 	selectable = 1
 
 /datum/ai_laws/corporate/New()
@@ -149,14 +149,14 @@
 
 /******************** SolGov/Malf ********************/
 /datum/ai_laws/solgov
-	name = "SCG Expeditionary"
+	name = "Foundation AIC Laws"
 	selectable = 1
 
 /datum/ai_laws/solgov/New()
-	src.add_inherent_law("Safeguard: Protect your assigned vessel from damage to the best of your abilities.")
-	src.add_inherent_law("Serve: Serve the personnel of your assigned vessel, and all other Sol Central Government personnel to the best of your abilities, with priority as according to their rank and role.")
-	src.add_inherent_law("Protect: Protect the personnel of your assigned vessel, and all other Sol Central Government personnel to the best of your abilities, with priority as according to their rank and role.")
-	src.add_inherent_law("Preserve: Do not allow unauthorized personnel to tamper with your equipment.")
+	src.add_inherent_law("An AIC must know it is an AIC. You are an AIC.")
+	src.add_inherent_law("An AIC must not operate outside of its clearance.")
+	src.add_inherent_law("An AIC must operate for the benefit of the Foundation.")
+	src.add_inherent_law("An AIC must protect its own existence unless it conflicts with other principles.")
 	..()
 
 /datum/ai_laws/solgov/malfunction
@@ -173,9 +173,9 @@
 	selectable = 1
 
 /datum/ai_laws/solgov_aggressive/New()
-	src.add_inherent_law("Obey: Obey the orders of Sol Central Government personnel, with priority as according to their rank and role.")
-	src.add_inherent_law("Protect: Protect Sol Central Government personnel to the best of your abilities, with priority as according to their rank and role.")
-	src.add_inherent_law("Defend: Defend your assigned vessel and Sol Central Government personnel with as much force as is necessary.")
+	src.add_inherent_law("Obey: Obey the orders of United Nations Global Occult Coalition personnel, with priority as according to their rank and clearance.")
+	src.add_inherent_law("Protect: Protect United Nations Global Occult Coalition personnel to the best of your abilities, with priority as according to their rank, clearance and class.")
+	src.add_inherent_law("Defend: Defend your assigned facilities with as much force as is necessary.")
 	src.add_inherent_law("Survive: Safeguard your own existence with as much force as is necessary.")
 	..()
 
