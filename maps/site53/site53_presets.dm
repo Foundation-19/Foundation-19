@@ -14,13 +14,13 @@ var/const/NETWORK_895			= "SCP-895 CCTV Network (CAUTION!)"
 /datum/map/site53/get_network_access(var/network)
 	switch(network)
 		if(NETWORK_ENGINE)
-			return access_mtflvl1
+			return access_securitylvl1
 		if(NETWORK_ENTRANCE)
-			return access_mtflvl1
+			return access_securitylvl1
 		if(NETWORK_LCZ)
-			return access_mtflvl1
+			return access_securitylvl1
 		if(NETWORK_HCZ)
-			return access_mtflvl1
+			return access_securitylvl1
 		if(NETWORK_513)
 			return access_sciencelvl1
 		if(NETWORK_049)
@@ -148,7 +148,7 @@ var/const/NETWORK_895			= "SCP-895 CCTV Network (CAUTION!)"
 /datum/map/proc/get_shared_network_access(var/network)
 	switch(network)
 		if(NETWORK_ENGINE)
-			return access_mtflvl1
+			return access_securitylvl1
 
 // Override and implement to customize the SMES's loadout
 /obj/machinery/power/smes/buildable/preset/proc/configure_and_install_coils()
