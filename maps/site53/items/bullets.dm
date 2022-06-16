@@ -7,6 +7,8 @@
 	desc = "A .50AE bullet casing."
 	caliber = ".50"
 	projectile_type = /obj/item/projectile/bullet/pistol/strong
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/a127
 	desc = "A 12,7x50mm bullet casing."
@@ -295,6 +297,7 @@
 /obj/item/projectile/bullet/pistol/medium/revolver
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
 	damage = 60 //.44 magnum or something
+	armor_penetration = 10
 	agony = 45
 
 /obj/item/projectile/bullet/pistol/strong //matebas

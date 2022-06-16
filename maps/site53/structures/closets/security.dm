@@ -14,10 +14,10 @@
 	name = "MTF Locker - NO USE, ONLY FOR CODE."
 	icon = 'icons/obj/sec-lockers.dmi'
 	icon_state = "enlisted-locked"
-	//icon_closed = "enlisted-unlocked"
-	//icon_locked = "enlisted-locked"
-	//icon_opened = "hossecureopen"
-	//icon_off = "hossecureoff"
+	icon_closed = "enlisted-unlocked"
+	icon_locked = "enlisted-locked"
+	icon_opened = "enlisted-open"
+	icon_off = "enlisted-off"
 	req_access = list(access_mtflvl1)
 	var/registered_name = null
 
@@ -29,6 +29,10 @@
 	name = "Junior Guard's Locker"
 	req_access = list(access_mtflvl1)
 	icon_state = "junior-locked"
+	icon_closed = "junior-unlocked"
+	icon_locked = "junior-locked"
+	icon_opened = "junior-open"
+	icon_off = "junior-off"
 
 /obj/structure/closet/secure_closet/mtf/enlisted/WillContain()
 	return list(
@@ -61,6 +65,10 @@
 	name = "Guard's Locker"
 	req_access = list(access_mtflvl3)
 	icon_state = "guard-locked"
+	icon_closed = "guard-unlocked"
+	icon_locked = "guard-locked"
+	icon_opened = "guard-open"
+	icon_off = "guard-off"
 
 /obj/structure/closet/secure_closet/mtf/nco/WillContain()
 	return list(
@@ -96,7 +104,11 @@
 /obj/structure/closet/secure_closet/mtf/commander
 	name = "Guard Commander Locker"
 	req_access = list(access_mtflvl5)
-	icon_state = "gc-locked"
+	icon_state = "cm-locked"
+	icon_closed = "cm-unlocked"
+	icon_locked = "cm-locked"
+	icon_opened = "cm-open"
+	icon_off = "cm-off"
 
 /obj/structure/closet/secure_closet/mtf/commander/WillContain()
 	return list(
@@ -106,28 +118,25 @@
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
 		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/gun/projectile/automatic/scp/p90,
-		/obj/item/ammo_magazine/scp/p90_mag = 2,
-		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
+		/obj/item/ammo_magazine/scp/p90_mag = 3,
+		/obj/item/ammo_magazine/scp/p90_mag/rubber = 1,
 		/obj/item/ammo_magazine/box/a10mm,
 		/obj/item/melee/telebaton,
 		/obj/item/handcuffs = 2,
-//		/obj/item/ammo_magazine/box/c45donor,
-//		/obj/item/ammo_magazine/box/c45donor/rubber,
-//		/obj/item/storage/box/ifak,
+		/obj/item/storage/box/ifak,
 		/obj/item/clothing/gloves/tactical/scp,
 		/obj/item/device/flash,
 		/obj/item/device/flashlight/maglight,
 		/obj/item/clothing/gloves/tactical/scp,
-		/obj/item/device/flash,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/reagent_containers/spray/pepper,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/clothing/mask/balaclava,
 //		/obj/item/storage/box/bloodtypes,
-//		/obj/item/gun/projectile/revolver/mateba,
-//		/obj/item/ammo_magazine/box/a50donor,
-//		/obj/item/ammo_magazine/c50 = 2,
+		/obj/item/gun/projectile/revolver/mateba,
+		/obj/item/ammo_magazine/box/a50,
+		/obj/item/ammo_magazine/c50 = 2,
 		/obj/item/gun/projectile/pistol/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 2,
 		/obj/item/ammo_magazine/box/mk9
@@ -136,7 +145,11 @@
 /obj/structure/closet/secure_closet/mtf/co
 	name = "Zone Commander's Locker"
 	req_access = list(access_mtflvl4)
-	icon_state = "zc-locked"
+	icon_state = "co-locked"
+	icon_closed = "co-unlocked"
+	icon_locked = "co-locked"
+	icon_opened = "co-open"
+	icon_off = "co-off"
 
 /obj/structure/closet/secure_closet/mtf/co/WillContain()
 	return list(
@@ -162,9 +175,9 @@
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/mask/balaclava,
 //		/obj/item/storage/box/bloodtypes,
-//		/obj/item/gun/projectile/revolver/mateba,
-//		/obj/item/ammo_magazine/box/a50donor,
-//		/obj/item/ammo_magazine/c50 = 4,
+		/obj/item/gun/projectile/revolver/mateba,
+		/obj/item/ammo_magazine/box/a50,
+		/obj/item/ammo_magazine/c50 = 4,
 		/obj/item/gun/projectile/pistol,
 		/obj/item/ammo_magazine/scp/mk9 = 2
 	)
@@ -173,6 +186,10 @@
 	name = "automatic weapons locker"
 	req_access = list(access_mtflvl2)
 	icon_state = "gun-locked"
+	icon_closed = "gun-unlocked"
+	icon_locked = "gun-locked"
+	icon_opened = "gun-open"
+	icon_off = "gun-off"
 
 /obj/structure/closet/secure_closet/mtf/breachautomatics/WillContain()
 	return list(
@@ -187,6 +204,10 @@
 	name = "tactical shotgun locker"
 	req_access = list(access_mtflvl2)
 	icon_state = "gun-locked"
+	icon_closed = "gun-unlocked"
+	icon_locked = "gun-locked"
+	icon_opened = "gun-open"
+	icon_off = "gun-off"
 
 /obj/structure/closet/secure_closet/mtf/breachshotguns/WillContain()
 	return list(
@@ -201,6 +222,10 @@
 	name = "riot shotgun locker"
 	req_access = list(access_mtflvl1)
 	icon_state = "gun-locked"
+	icon_closed = "gun-unlocked"
+	icon_locked = "gun-locked"
+	icon_opened = "gun-open"
+	icon_off = "gun-off"
 
 /obj/structure/closet/secure_closet/mtf/riotshotguns/WillContain()
 	return list(
@@ -258,6 +283,10 @@
 	name = "Scout's Locker"
 	req_access = list(access_mtflvl3)
 	icon_state = "agent-locked"
+	icon_closed = "agent-unlocked"
+	icon_locked = "agent-locked"
+	icon_opened = "agent-open"
+	icon_off = "agent-off"
 
 /obj/structure/closet/secure_closet/mtf/exp/WillContain()
 	return list(
@@ -284,6 +313,10 @@
 	name = "Scout's Leader Locker"
 	req_access = list(access_mtflvl5)
 	icon_state = "cm-locked"
+	icon_closed = "cm-unlocked"
+	icon_locked = "cm-locked"
+	icon_opened = "cm-open"
+	icon_off = "cm-off"
 
 /obj/structure/closet/secure_closet/mtf/expl/WillContain()
 	return list(
@@ -305,44 +338,3 @@
 //		/obj/item/ammo_magazine/a762 = 6,
 		/obj/item/material/hatchet/machete/deluxe
 	)
-
-/obj/item/clothing/gloves/tactical
-	desc = "These brown tactical gloves are made from a durable synthetic, and have hardened knuckles."
-	name = "tactical gloves"
-	icon_state = "work"
-	item_state = "wgloves"
-	force = 5
-	siemens_coefficient = 0.50
-	permeability_coefficient = 0.05
-	armor = list(melee = 80, bullet = 80, laser = 60,energy = 25, bomb = 50, bio = 10, rad = 0)
-
-/obj/item/clothing/gloves/tactical/scp
-	desc = "These grey tactical gloves are made from a durable synthetic, and have hardened knuckles."
-	name = "tactical gloves"
-	icon_state = "scpgloves"
-	item_state = "scpgloves"
-	force = 5
-	siemens_coefficient = 0.50
-	permeability_coefficient = 0.05
-	armor = list(melee = 80, bullet = 80, laser = 60,energy = 25, bomb = 50, bio = 10, rad = 0)
-
-/obj/item/clothing/gloves/tactical/donor
-	desc = "Перчатки из синтетической кожи, вставки из сплавов на костяшках и запястьях."
-	name = "combat gloves"
-	icon_state = "donorsec"
-	item_state = "donorsec"
-	force = 5
-	siemens_coefficient = 0.50
-	permeability_coefficient = 0.05
-	armor = list(melee = 80, bullet = 80, laser = 60,energy = 25, bomb = 50, bio = 10, rad = 0)
-
-/obj/item/clothing/gloves/guards
-	desc = "A pair of synthetic gloves and arm pads reinforced with armor plating."
-	name = "arm guards"
-	icon_state = "guards"
-	item_state = "guards"
-	body_parts_covered = HANDS|ARMS
-	w_class = ITEM_SIZE_NORMAL
-	siemens_coefficient = 0.7
-	permeability_coefficient = 0.03
-	armor = list(melee = 80, bullet = 80, laser = 60,energy = 25, bomb = 50, bio = 10, rad = 0)
