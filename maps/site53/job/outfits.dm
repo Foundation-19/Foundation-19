@@ -47,7 +47,7 @@
 	gloves = /obj/item/clothing/gloves/foundation_service
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/commslvl4)
-//	l_ear = /obj/item/device/radio/headset/heads/commsofficer
+	l_ear = /obj/item/device/radio/headset/heads/commsofficer
 	back = /obj/item/storage/backpack/satchel/pocketbook
 
 // END OF COMMAND OUTFITS
@@ -58,7 +58,7 @@
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/commslvl1)
 	belt = /obj/item/storage/belt/utility/full
-//	l_ear = /obj/item/device/radio/headset/commsdispatcher
+	l_ear = /obj/item/device/radio/headset/commsdispatcher
 	back = /obj/item/storage/backpack/satchel/pocketbook
 
 
@@ -241,7 +241,7 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	l_ear = null
 	back = null
-//	l_pocket = /obj/item/paper/dclass_orientation
+	l_pocket = /obj/item/paper/dclass_orientation
 
 /decl/hierarchy/outfit/job/site90/crew/civ/classd/post_equip(var/mob/living/carbon/human/H)
 	..()
