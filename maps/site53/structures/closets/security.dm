@@ -12,7 +12,7 @@
 
 /obj/structure/closet/secure_closet/mtf
 	name = "MTF Locker - NO USE, ONLY FOR CODE."
-	req_access = list(access_mtflvl1)
+	req_access = list(access_securitylvl1)
 	icon_state = "enlistedlocked"
 	var/registered_name = null
 
@@ -22,7 +22,7 @@
 
 /obj/structure/closet/secure_closet/mtf/enlisted
 	name = "Junior Guard's Locker"
-	req_access = list(access_mtflvl1)
+	req_access = list(access_securitylvl1)
 	icon_state = "enlistedlocked"
 
 /obj/structure/closet/secure_closet/mtf/enlisted/WillContain()
@@ -54,7 +54,7 @@
 
 /obj/structure/closet/secure_closet/mtf/commander
 	name = "Guard Commander Locker"
-	req_access = list(access_mtflvl5)
+	req_access = list(access_securitylvl5)
 	icon_state = "cmlocked"
 
 /obj/structure/closet/secure_closet/mtf/commander/WillContain()
@@ -89,7 +89,7 @@
 
 /obj/structure/closet/secure_closet/mtf/nco
 	name = "Guard's Locker"
-	req_access = list(access_mtflvl3)
+	req_access = list(access_securitylvl3)
 	icon_state = "nlocked"
 
 /obj/structure/closet/secure_closet/mtf/nco/WillContain()
@@ -125,7 +125,7 @@
 
 /obj/structure/closet/secure_closet/mtf/co
 	name = "Zone Commander's Locker"
-	req_access = list(access_mtflvl4)
+	req_access = list(access_securitylvl4)
 	icon_state = "colocked"
 
 /obj/structure/closet/secure_closet/mtf/co/WillContain()
@@ -161,7 +161,7 @@
 
 /obj/structure/closet/secure_closet/mtf/breachautomatics
 	name = "automatic weapons locker"
-	req_access = list(access_mtflvl2)
+	req_access = list(access_securitylvl2)
 	icon_state = "sec1"
 
 /obj/structure/closet/secure_closet/mtf/breachautomatics/WillContain()
@@ -175,7 +175,7 @@
 
 /obj/structure/closet/secure_closet/mtf/breachshotguns
 	name = "tactical shotgun locker"
-	req_access = list(access_mtflvl2)
+	req_access = list(access_securitylvl2)
 	icon_state = "sec1"
 
 /obj/structure/closet/secure_closet/mtf/breachshotguns/WillContain()
@@ -189,7 +189,7 @@
 
 /obj/structure/closet/secure_closet/mtf/riotshotguns
 	name = "riot shotgun locker"
-	req_access = list(access_mtflvl1)
+	req_access = list(access_securitylvl1)
 	icon_state = "sec1"
 
 /obj/structure/closet/secure_closet/mtf/riotshotguns/WillContain()
@@ -244,7 +244,7 @@
 
 /obj/structure/closet/secure_closet/mtf/exp
 	name = "Scout's Locker"
-	req_access = list(access_mtflvl3)
+	req_access = list(access_securitylvl3)
 	icon_state = "nlocked"
 
 /obj/structure/closet/secure_closet/mtf/exp/WillContain()
@@ -270,7 +270,7 @@
 
 /obj/structure/closet/secure_closet/mtf/expl
 	name = "Scout's Leader Locker"
-	req_access = list(access_mtflvl5)
+	req_access = list(access_securitylvl5)
 	icon_state = "cmlocked"
 
 /obj/structure/closet/secure_closet/mtf/expl/WillContain()

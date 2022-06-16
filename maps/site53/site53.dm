@@ -2,7 +2,6 @@
 
 	#include "site53_announcements.dm"
 	#include "site53areas.dm"
-	#include "../torch/torch_areas.dm"
 //	#include "torch_elevator.dm"
 	#include "site53elevators.dm"
 //	#include "torch_holodecks.dm"

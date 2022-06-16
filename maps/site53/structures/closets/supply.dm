@@ -55,7 +55,7 @@
 
 /obj/structure/closet/secure_closet/logistics/officer
 	name = "logistics officer's footlocker"
-	req_access = list(access_logofficer)
+	req_access = list(access_adminlvl2)
 	icon_state = "lolocked"
 
 /obj/structure/closet/secure_closet/logistics/officer/WillContain()
@@ -81,7 +81,7 @@
 
 /obj/structure/closet/secure_closet/logistics/specialist
 	name = "logistics specialist's footlocker"
-	req_access = list(access_logistics)
+	req_access = list(access_adminlvl1)
 	icon_state = "lslocked"
 /*
 /obj/structure/closet/secure_closet/logistics/specialist/WillContain()

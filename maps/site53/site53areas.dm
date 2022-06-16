@@ -151,6 +151,20 @@
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/shuttle/escape_pod7/station
+	name = "Transfer Tram"
+	icon_state = "Sleep"
+	requires_power = 0
+	dynamic_lighting = 1
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/supply/dock
+	name = "Supply Dock"
+	icon_state = "Sleep"
+	requires_power = 0
+	dynamic_lighting = 1
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 // SITE 53 SURFACE AREA'S
 /area/site53
 
@@ -302,6 +316,14 @@
 
 /area/site53/maintenance/surface
 	name = "\improper Tram Hub Maintenance"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/maintenance/surfacewest
+	name = "\improper Surface Maintenance West"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/maintenance/surfaceeast
+	name = "\improper Surface Maintenance East"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/ulcz/scp151
@@ -482,6 +504,12 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "head_quarters"
 
+/area/site53/uez/guardcommander
+	name = "\improper Guard Commander's Office"
+	sound_env = MEDIUM_SOFTFLOOR
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "head_quarters"
+
 /area/site53/uez/o5repoffice
 	name = "\improper O5 Representative's Office"
 	sound_env = MEDIUM_SOFTFLOOR
@@ -527,6 +555,10 @@
 	name = "\improper Conference Room A"
 	icon_state = "bar"
 	sound_env = LARGE_SOFTFLOOR
+
+/area/site53/uez/janitor
+	name = "\improper Janitor's Office"
+	icon_state = "janitor"
 
 /area/site53/uez/maintenance
 	name = "Upper Entrance Zone Maintenance"
@@ -769,6 +801,16 @@
 /area/site53/engineering/primaryhallway
 	name = "\improper Engineering Hallway"
 	icon_state = "engineering_foyer"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/vacant/prototype/engine
+	name = "\improper Prototype Engine"
+	icon_state = "engineering"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/vacant/prototype/control
+	name = "\improper Prototype Engine Control"
+	icon_state = "engineering"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/centcom/telecomms
@@ -1031,3 +1073,14 @@
 /area/site53/science/xenoarchaeology
 	name = "\improper Xenoarchaeology"
 	icon_state = "research"
+
+//Logistics
+/area/quartermaster/hangar
+	name ="\improper Logistics Hangar"
+	icon_state = "quart"
+
+//SCP-106's realm
+/area/pocketdimension
+	name = "Pocket Dimension"
+	requires_power = 0
+	dynamic_lighting = 0
