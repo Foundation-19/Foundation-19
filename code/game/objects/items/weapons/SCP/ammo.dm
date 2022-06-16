@@ -1,4 +1,4 @@
-/obj/item/ammo_casing/scp
+/obj/item/ammo_magazine/scp
 	icon = 'icons/obj/ammo.dmi'
 
 /obj/item/ammo_magazine/scp/ierichon
@@ -12,7 +12,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/ierichon/rubber
-	name = "Jericho-114 rubber magazine (.45)"
+	name = "Jericho-114 magazine (.45 rubber)"
 	icon_state = "R9mmds"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/c45/rubber
@@ -21,23 +21,33 @@
 	max_ammo = 20
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/scp
+	name = "MK3 magazine (9mm)"
+	icon_state = "45"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/c9mm
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = "9mm"
+	max_ammo = 10
+	multiple_sprites = 1
+
 /obj/item/ammo_magazine/scp/mk9
-	name = "MK9 magazine"
+	name = "MK9 magazine (9mm)"
 	icon_state = "9mmds"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/c45
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = ".45"
+	caliber = "9mm"
 	max_ammo = 14
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/mk9/rubber
-	name = "MK9 rubber magazine"
+	name = "MK9 magazine (9mm rubber)"
 	icon_state = "R9mmds"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/c45/rubber
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = ".45"
+	caliber = "9mm"
 	max_ammo = 14
 	multiple_sprites = 1
 
@@ -140,16 +150,24 @@
 
 // BOXES //
 
-// .45 ACP
+// 9mm
 /obj/item/ammo_magazine/box/mk9
-	name = "ammunition box"
+	name = "ammunition box (9mm)"
 	icon_state = "9mm"
 	origin_tech = list(TECH_COMBAT = 2)
-	caliber = ".45"
+	caliber = "9mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
-	ammo_type = /obj/item/ammo_casing/c45
+	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 100
 
+/obj/item/ammo_magazine/box/a50
+	name = "ammunition box (.50)"
+	icon_state = "357"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = ".50"
+	matter = list(DEFAULT_WALL_MATERIAL = 2250)
+	ammo_type = /obj/item/ammo_casing/a50
+	max_ammo = 30
 
 // 10mm
 /obj/item/ammo_magazine/box/a10mm
@@ -159,7 +177,7 @@
 	caliber = "10mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
 	ammo_type = /obj/item/ammo_casing/a10mm
-	max_ammo = 50
+	max_ammo = 200
 	multiple_sprites = 1
 
 // 5.56

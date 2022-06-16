@@ -7,6 +7,8 @@
 	desc = "A .50AE bullet casing."
 	caliber = ".50"
 	projectile_type = /obj/item/projectile/bullet/pistol/strong
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/a127
 	desc = "A 12,7x50mm bullet casing."
@@ -38,10 +40,8 @@
 	desc = "A 9mm bullet casing."
 	caliber = "9mm"
 	projectile_type = /obj/item/projectile/bullet/pistol
-
-/obj/item/ammo_casing/c9mm/flash
-	desc = "A 9mm flash shell casing."
-	projectile_type = /obj/item/projectile/energy/flash
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/c9mm/rubber
 	desc = "A 9mm rubber bullet casing."
@@ -49,9 +49,17 @@
 	icon_state = "pistol-casing-rubber"
 	spent_icon = "pistol-casing-spent"
 
+/obj/item/ammo_casing/c9mm/flash
+	desc = "A 9mm flash shell casing."
+	projectile_type = /obj/item/projectile/energy/flash
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
+
 /obj/item/ammo_casing/c9mm/practice
 	desc = "A 9mm practice bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/practice
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/c44
 	desc = "A .44 magnum bullet casing."
@@ -262,34 +270,64 @@
 /obj/item/ammo_casing/shotgun/emp
 	name = "haywire slug"
 	desc = "A 12-gauge shotgun slug fitted with a single-use ion pulse generator."
-	icon_state = "empshell"
-	spent_icon = "empshell-spent"
+	icon_state = "shell-emp"
+	spent_icon = "shell-emp-spent"
 	projectile_type  = /obj/item/projectile/ion
 	matter = list(DEFAULT_WALL_MATERIAL = 260, "uranium" = 200)
 //////////////////////////Bullets////////////////
 
 /obj/item/projectile/bullet/pistol
 	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
-	damage = 40 //9mm, .38, etc
+	damage = 20 //9mm, .38, etc
 	armor_penetration = 34
-	agony = 34
+	agony = 20
+
+/obj/item/projectile/bullet/pistol/rubber
+	damage = 2 //Pistol rubber
+	agony = 30
+	embed = 0
+	sharp = 0
+	armor_penetration = 2.5
 
 /obj/item/projectile/bullet/pistol/medium
-	damage = 50 //.45
+	damage = 25 //.45
 	armor_penetration = 15
+	agony = 25
+
+/obj/item/projectile/bullet/pistol/medium/revolver
+	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	damage = 60 //.44 magnum or something
+	armor_penetration = 10
 	agony = 45
 
-/obj/item/projectile/bullet/pistol/medium/smg
+/obj/item/projectile/bullet/pistol/strong //matebas
+	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	damage = 65 //.50AE
+	armor_penetration = 30
+	agony = 45
+
+/obj/item/projectile/bullet/pistol/vstrong //tacrevolver
+	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	damage = 70 //.500 S&W Magnum
+	armor_penetration = 35
+	agony = 45
+
+/obj/item/projectile/bullet/pistol/strong/revolver //revolvers
+	damage = 60 //Revolvers get snowflake bullets, to keep them relevant
+	armor_penetration = 20
+	agony = 45
+
+/obj/item/projectile/bullet/pistol/medium/smg //P90
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
 	damage = 40 //10mm
 	armor_penetration = 30
-	agony = 35
+	agony = 30
 
 /obj/item/projectile/bullet/pistol/medium/smg/rubber
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
 	damage = 0.5 //10mm rubber
 	armor_penetration = 12
-	agony = 35
+	agony = 40
 	embed = 0
 	sharp = 0
 
@@ -311,37 +349,6 @@
 	armor_penetration = 18
 	agony = 30
 
-/obj/item/projectile/bullet/pistol/medium/revolver
-	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 60 //.44 magnum or something
-	agony = 45
-
-/obj/item/projectile/bullet/pistol/strong //matebas
-	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 65 //.50AE
-	armor_penetration = 30
-	agony = 45
-
-/obj/item/projectile/bullet/pistol/vstrong //tacrevolver
-	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 70 //.500 S&W Magnum
-	armor_penetration = 35
-	agony = 45
-
-/obj/item/projectile/bullet/pistol/strong/revolver //revolvers
-	damage = 60 //Revolvers get snowflake bullets, to keep them relevant
-	armor_penetration = 20
-	agony = 45
-
-/obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
-	name = "rubber bullet"
-//	check_armour = "melee"
-	damage = 5
-	agony = 30
-	embed = 0
-	sharp = 0
-	armor_penetration = 2.5
-
 
 /* shotgun projectiles */
 
@@ -354,9 +361,8 @@
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
-//	check_armour = "melee"
-	damage = 25
-	agony = 60
+	damage = 10
+	agony = 70
 	embed = 0
 	sharp = 0
 
