@@ -16,9 +16,6 @@ GLOBAL_LIST_EMPTY(scp343s)
 	designation = "343"
 	classification = SAFE
 
-/obj/sprite_helper/scp343
-	icon = 'icons/mob/scp343.dmi'
-
 /mob/living/carbon/human/scp343/IsAdvancedToolUser()
 	return FALSE
 
