@@ -10,8 +10,14 @@
 	selection_color = "#8e2929"
 	req_admin_notify = 1
 	economic_power = 10
-	access = list(level_4)
-	minimal_access = list(level_4)
+	access = list(access_security, access_eva, access_sec_doors, access_brig, access_armory,
+			            access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
+			            access_research, access_engine, access_mining, access_medical, access_construction, access_mailsorting,
+			            access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_external_airlocks)
+	minimal_access = list(access_security, access_eva, access_sec_doors, access_brig, access_armory,
+			            access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
+			            access_research, access_engine, access_mining, access_medical, access_construction, access_mailsorting,
+			            access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_external_airlocks)
 	minimal_player_age = 14
 	outfit_type = /decl/hierarchy/outfit/job/security/hos
 
@@ -41,9 +47,11 @@
 	allowed_ranks = list(
 		/datum/mil_rank/security/w5
 	)
+	equip(var/mob/living/carbon/human/H)
+		..()
 
-	access = list(level_3)
-	minimal_access = list(level_3)
+	access = list(access_securitylvl1, access_securitylvl2, access_securitylvl3, access_securitylvl4, access_adminlvl1, access_adminlvl2, access_adminlvl3, access_adminlvl4)
+	minimal_access = list()
 
 /datum/job/ncoofficerez
 
@@ -67,9 +75,11 @@
 		/datum/mil_rank/security/e7,
 		/datum/mil_rank/security/e8
 	)
+	equip(var/mob/living/carbon/human/H)
+		..()
 
-	access = list(level_3)
-	minimal_access = list(level_3)
+	access = list(access_securitylvl1, access_securitylvl2, access_securitylvl3, access_adminlvl1, access_adminlvl2, access_adminlvl3)
+	minimal_access = list()
 
 /datum/job/enlistedofficerez
 
@@ -93,9 +103,11 @@
 		/datum/mil_rank/security/e4,
 		/datum/mil_rank/security/e5
 	)
+	equip(var/mob/living/carbon/human/H)
+		..()
 
-	access = list(level_3)
-	minimal_access = list(level_3)
+	access = list(access_securitylvl1, access_securitylvl2, access_adminlvl1, access_adminlvl2)
+	minimal_access = list()
 
 /datum/job/ltofficerhcz
 
@@ -118,9 +130,11 @@
 	allowed_ranks = list(
 		/datum/mil_rank/security/o2
 	)
+	equip(var/mob/living/carbon/human/H)
+		..()
 
-	access = list(level_3)
-	minimal_access = list(level_3)
+	access = list(access_securitylvl1, access_securitylvl2, access_securitylvl3, access_securitylvl4, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3, access_sciencelvl4)
+	minimal_access = list()
 
 /datum/job/ncoofficerhcz
 
@@ -145,9 +159,11 @@
 		/datum/mil_rank/security/e5,
 		/datum/mil_rank/security/e6
 	)
+	equip(var/mob/living/carbon/human/H)
+		..()
 
-	access = list(level_3)
-	minimal_access = list(level_3)
+	access = list(access_securitylvl1, access_securitylvl2, access_securitylvl3, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3)
+	minimal_access = list()
 
 /datum/job/enlistedofficerhcz
 
@@ -171,9 +187,11 @@
 		/datum/mil_rank/security/e3,
 		/datum/mil_rank/security/e4
 	)
+	equip(var/mob/living/carbon/human/H)
+		..()
 
-	access = list(level_3)
-	minimal_access = list(level_3)
+	access = list(access_securitylvl1, access_sciencelvl1)
+	minimal_access = list()
 
 /datum/job/ltofficerlcz
 
@@ -196,9 +214,11 @@
 	allowed_ranks = list(
 		/datum/mil_rank/security/o1
 	)
+	equip(var/mob/living/carbon/human/H)
+		..()
 
-	access = list(level_3)
-	minimal_access = list(level_3)
+	access = list(access_securitylvl1, access_securitylvl2, access_securitylvl3, access_securitylvl4, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3, access_sciencelvl4)
+	minimal_access = list()
 
 /datum/job/ncoofficerlcz
 
@@ -224,9 +244,11 @@
 		/datum/mil_rank/security/e4,
 		/datum/mil_rank/security/e5
 	)
+	equip(var/mob/living/carbon/human/H)
+		..()
 
-	access = list(level_3)
-	minimal_access = list(level_3)
+	access = list(access_securitylvl1, access_securitylvl2, access_sciencelvl1, access_sciencelvl2)
+	minimal_access = list()
 
 /datum/job/enlistedofficerlcz
 
@@ -250,6 +272,8 @@
 		/datum/mil_rank/security/e1,
 		/datum/mil_rank/security/e2
 	)
+	equip(var/mob/living/carbon/human/H)
+		..()
 
-	access = list(level_3)
-	minimal_access = list(level_3)
+	access = list(access_securitylvl1, access_sciencelvl1)
+	minimal_access = list()

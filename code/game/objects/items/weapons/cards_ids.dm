@@ -499,20 +499,20 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/id/medical
 	name = "identification card"
 	desc = "A card issued to medical staff."
-	job_access_type = /datum/job/doctor
+//	job_access_type = /datum/job/doctor
 	detail_color = COLOR_PALE_BLUE_GRAY
 
 /obj/item/card/id/medical/chemist
 	job_access_type = /datum/job/chemist
 
 /obj/item/card/id/medical/geneticist
-	job_access_type = /datum/job/geneticist
+//	job_access_type = /datum/job/geneticist
 
 /obj/item/card/id/medical/psychiatrist
 	job_access_type = /datum/job/psychiatrist
 
 /obj/item/card/id/medical/paramedic
-	job_access_type = /datum/job/Paramedic
+//	job_access_type = /datum/job/Paramedic
 
 /obj/item/card/id/medical/head
 	name = "identification card"
@@ -542,7 +542,7 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/id/engineering
 	name = "identification card"
 	desc = "A card issued to engineering staff."
-	job_access_type = /datum/job/engineer
+//	job_access_type = /datum/job/engineer
 	detail_color = COLOR_SUN
 
 /obj/item/card/id/engineering/head
@@ -558,10 +558,10 @@ var/const/NO_EMAG_ACT = -50
 	detail_color = COLOR_PALE_PURPLE_GRAY
 
 /obj/item/card/id/science/xenobiologist
-	job_access_type = /datum/job/xenobiologist
+//	job_access_type = /datum/job/xenobiologist
 
 /obj/item/card/id/science/roboticist
-	job_access_type = /datum/job/roboticist
+//	job_access_type = /datum/job/roboticist
 
 /obj/item/card/id/science/head
 	name = "identification card"
@@ -603,10 +603,10 @@ var/const/NO_EMAG_ACT = -50
 	job_access_type = /datum/job/janitor
 
 /obj/item/card/id/civilian/librarian
-	job_access_type = /datum/job/librarian
+//	job_access_type = /datum/job/librarian
 
 /obj/item/card/id/civilian/internal_affairs_agent
-	job_access_type = /datum/job/lawyer
+//	job_access_type = /datum/job/lawyer
 	detail_color = COLOR_NAVY_BLUE
 
 /obj/item/card/id/civilian/chaplain
