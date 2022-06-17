@@ -6,6 +6,10 @@
 	name = "research director's locker"
 	req_access = list(access_sciencelvl5)
 	icon_state = "rdsecure1"
+	icon_closed = "rdsecure"
+	icon_locked = "rdsecure1"
+	icon_opened = "rdsecureopen"
+	icon_off = "rdsecureoff"
 
 /obj/structure/closet/secure_closet/RD_torch/WillContain()
 	return list(
@@ -27,7 +31,7 @@
 		/obj/item/clothing/mask/gas,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
-//		/obj/item/clipboard,
+		/obj/item/material/clipboard,
 		/obj/item/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
@@ -45,6 +49,10 @@
 	name = "xenoarchaeologist's locker"
 	req_access = list(access_sciencelvl3)
 	icon_state = "secureres1"
+	icon_closed = "secureres"
+	icon_locked = "secureres1"
+	icon_opened = "secureresopen"
+	icon_off = "secureresoff"
 
 /obj/structure/closet/secure_closet/secure_closet/xenoarchaeologist_torch/WillContain()
 	return list(
@@ -55,7 +63,7 @@
 //		/obj/item/cartridge/signal/science,
 		/obj/item/device/radio/headset/torchnanotrasen,
 		/obj/item/clothing/mask/gas,
-//		/obj/item/clipboard,
+		/obj/item/material/clipboard,
 		/obj/item/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
@@ -75,6 +83,10 @@
 	name = "researcher's locker"
 //	req_one_access = list(access_sciencelvl2)
 	icon_state = "secureres1"
+	icon_closed = "secureres"
+	icon_locked = "secureres1"
+	icon_opened = "secureresopen"
+	icon_off = "secureresoff"
 
 /obj/structure/closet/secure_closet/scientist_torch/WillContain()
 	return list(
@@ -86,7 +98,7 @@
 		/obj/item/device/radio/headset/torchnanotrasen,
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/tank/emergency/oxygen/engi,
-//		/obj/item/clipboard,
+		/obj/item/material/clipboard,
 		/obj/item/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
@@ -103,6 +115,10 @@
 	name = "prospector's locker"
 	req_access = list(access_sciencelvl2)
 	icon_state = "miningsec1"
+	icon_closed = "miningsec"
+	icon_locked = "miningsec1"
+	icon_opened = "miningsecopen"
+	icon_off = "miningsecoff"
 
 /obj/structure/closet/secure_closet/prospector/WillContain()
 	return list(
@@ -127,6 +143,10 @@
 	name = "security guard's locker"
 	req_access = list(access_securitylvl2)
 	icon_state = "guard1"
+	icon_closed = "guard"
+	icon_locked = "guard1"
+	icon_opened = "guardopen"
+	icon_off = "guardoff"
 
 /obj/structure/closet/secure_closet/guard/WillContain()
 	return list(
@@ -138,7 +158,7 @@
 		/obj/item/clothing/accessory/armband/whitered,
 		/obj/item/device/radio/headset/torchnanotrasen,
 		/obj/item/clothing/mask/gas/half,
-//		/obj/item/clipboard,
+		/obj/item/material/clipboard,
 		/obj/item/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
@@ -167,6 +187,11 @@
 	name = "Research Director's Locker"
 	req_access = list(access_sciencelvl5)
 	icon_state = "dslocked"
+	icon_closed = "dsunlocked"
+	icon_locked = "dslocked"
+	icon_opened = "dsopen"
+	icon_broken = "dsbroken"
+	icon_off = "dsoff"
 
 /obj/structure/closet/secure_closet/scpscience/directorofscience/WillContain()
 	return list(
@@ -175,15 +200,19 @@
 		/obj/item/clothing/suit/storage/toggle/labcoat/rd,
 		/obj/item/clothing/shoes/white,
 		/obj/item/clothing/mask/gas,
-//		/obj/item/clipboard
+		/obj/item/material/clipboard
 	)
 
 
 
 /obj/structure/closet/secure_closet/scientist
 	name = "scientist's locker"
-//	req_one_access = list(access_sciencelvl2)
+	req_access = list(access_sciencelvl2)
 	icon_state = "secureres1"
+	icon_closed = "secureres"
+	icon_locked = "secureres1"
+	icon_opened = "secureresopen"
+	icon_off = "secureresoff"
 
 /obj/structure/closet/secure_closet/scientist/WillContain()
 	return list(
@@ -193,5 +222,5 @@
 		/obj/item/clothing/shoes/white,
 		/obj/item/device/radio/headset/headset_sci,
 		/obj/item/clothing/mask/gas,
-//		/obj/item/clipboard
+		/obj/item/material/clipboard
 	)
