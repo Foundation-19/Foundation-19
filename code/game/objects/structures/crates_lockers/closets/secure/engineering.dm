@@ -1,7 +1,12 @@
 /obj/structure/closet/secure_closet/engineering_chief
 	name = "chief engineer's locker"
+	icon_state = "securece1"
+	icon_closed = "securece"
+	icon_locked = "securece1"
+	icon_opened = "secureceopen"
+	icon_off = "secureceoff"
 	closet_appearance = /decl/closet_appearance/secure_closet/engineering/ce
-	req_access = list(access_mtflvl4)
+	req_access = list(access_securitylvl4)
 
 /obj/structure/closet/secure_closet/engineering_chief/WillContain()
 	return list(
@@ -26,7 +31,7 @@
 
 /obj/structure/closet/secure_closet/engineering_electrical
 	name = "electrical supplies"
-	req_access = list(access_mtflvl2)
+	req_access = list(access_securitylvl2)
 	closet_appearance = /decl/closet_appearance/secure_closet/engineering/electrical
 
 /obj/structure/closet/secure_closet/engineering_electrical/WillContain()
@@ -40,7 +45,7 @@
 
 /obj/structure/closet/secure_closet/engineering_welding
 	name = "welding supplies"
-	req_access = list(access_mtflvl2)
+	req_access = list(access_securitylvl2)
 	closet_appearance = /decl/closet_appearance/secure_closet/engineering/welding
 
 /obj/structure/closet/secure_closet/engineering_welding/WillContain()
@@ -54,7 +59,7 @@
 
 /obj/structure/closet/secure_closet/engineering_personal
 	name = "engineer's locker"
-	req_access = list(access_mtflvl2)
+	req_access = list(access_securitylvl2)
 	closet_appearance = /decl/closet_appearance/secure_closet/engineering
 
 /obj/structure/closet/secure_closet/engineering_personal/WillContain()
