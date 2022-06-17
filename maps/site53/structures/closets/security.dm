@@ -338,3 +338,22 @@
 //		/obj/item/ammo_magazine/a762 = 6,
 		/obj/item/material/hatchet/machete/deluxe
 	)
+
+/obj/structure/closet/secure_closet/mtf/ntf
+	name = "NTF Agent's locker"
+	req_access = list(access_securitylvl3)
+	icon_state = "agent-locked"
+	icon_closed = "agent-unlocked"
+	icon_locked = "agent-locked"
+	icon_opened = "agent-open"
+	icon_off = "agent-off"
+
+/obj/structure/closet/secure_closet/mtf/ntf/WillContain()
+	return list(
+		/obj/item/clothing/accessory/storage/bandolier,
+		/obj/item/device/flashlight/maglight,
+		/obj/item/clothing/mask/balaclava,
+		/obj/item/clothing/glasses/night,
+		/obj/item/clothing/accessory/ubac,
+		/obj/item/storage/backpack/rucksack,
+	)
