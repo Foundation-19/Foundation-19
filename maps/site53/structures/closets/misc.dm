@@ -15,7 +15,7 @@
 		/obj/item/hand_labeler,
 		/obj/item/device/camera,
 		/obj/item/device/camera_film = 2,
-		/obj/item/clipboard,
+		/obj/item/material/clipboard,
 		/obj/item/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
@@ -43,7 +43,7 @@
 		/obj/item/hand_labeler,
 		/obj/item/device/camera,
 		/obj/item/device/camera_film = 2,
-		/obj/item/clipboard,
+		/obj/item/material/clipboard,
 		/obj/item/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
@@ -120,8 +120,11 @@
 	name = "custodial closet"
 	desc = "It's a storage unit for janitorial clothes and gear."
 	icon_state = "mixed"
+	icon_closed = "mixed"
 /obj/structure/closet/djcloset/WillContain()
 	return list(
+		/obj/item/mop,
+		/obj/item/reagent_containers/glass/bucket,
 		/obj/item/clothing/gloves/thick,
 		/obj/item/clothing/head/soft/purple,
 		/obj/item/clothing/head/beret/purple,
@@ -136,6 +139,11 @@
 /obj/structure/closet/secure_closet/site53/dmining
 	name = "miner's equipment"
 	icon_state = "miningsec1"
+	icon_closed = "miningsec"
+	icon_locked = "miningsec1"
+	icon_opened = "miningsecopen"
+	icon_broken = "miningsecbroken"
+	icon_off = "miningsecoff"
 	req_access = list(access_dclassmining)
 
 /obj/structure/closet/secure_closet/site53/dmining/WillContain()

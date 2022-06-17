@@ -452,7 +452,7 @@
 //	r_pocket = /obj/item/grenade/flashbang
 	l_ear = /obj/item/device/radio/headset/ert
 //	belt = /obj/item/gun/projectile/silenced
-//	back = /obj/item/storage/backpack/satchel
+	back = /obj/item/storage/backpack/satchel
 //	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 2,/obj/item/grenade/frag = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/ammo_magazine/c45m = 2,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/mtf_epsilon2
