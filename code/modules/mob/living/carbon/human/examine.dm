@@ -148,6 +148,10 @@
 	if(buckled)
 		msg += "<span class='warning'>[T.He] [T.is] [icon2html(buckled, user)] buckled to [buckled]!</span>\n"
 
+	if (scp173_killed)
+		msg += "<span class='danger'>[T.His] neck is bent in an awkward angle.</span>\n"
+
+
 	//Jitters
 	if(is_jittery)
 		if(jitteriness >= 300)

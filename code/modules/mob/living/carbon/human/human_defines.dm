@@ -117,3 +117,26 @@
 	var/scp_049_instance = FALSE
 	var/scp_013_instance = FALSE
 	var/scp_013_stage = 0
+
+	// SCP-173
+	var/scp173_killed = FALSE
+
+	// SCP-049
+	var/pre_scp049_name = ""
+	var/pre_scp049_real_name = ""
+	var/pre_scp049_species = "Human"
+	var/pestilence = FALSE
+
+	// SCP-013
+	var/is_blue_lady = 0
+	var/blue_lady_transitioned = 0
+	var/pre_scp013_name = ""
+	var/pre_scp013_real_name = ""
+	var/pre_scp013_gender = null
+	var/pre_scp013_species = "Human"
+
+	// SCP-078
+	var/dies_young = 0
+
+	// SCP-106
+	var/pocket_dimension_decay = 0
