@@ -503,3 +503,23 @@
 	icon_state = "securitylvl3"
 	item_state = "Sec_ID3"
 	job_access_type = /datum/job/cargo_tech
+
+
+
+/obj/item/card/id/dmining
+	name = " security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	access = access_dclassmining
+/obj/item/card/id/dbotany
+	name = " security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	access = access_dclassbotany
+/obj/item/card/id/dkitchen
+	name = " security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	access = access_dclasskitchen
+/obj/item/card/id/djanitorial
+	name = " security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	access = access_dclassjanitorial
+

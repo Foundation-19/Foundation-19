@@ -1,14 +1,14 @@
 /obj/item/device/radio/headset/heads/commsofficer
 	name = "communication officer's headset"
 	desc = "The headset of the creepy guy behind the consoles."
-	icon_state = "comm_headset"
+	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/comms_admin
 
 /obj/item/device/radio/headset/commsdispatcher
 	name = "communication dispatcher's headset"
 	desc = "The headset of the calm voice of certainty."
-	icon_state = "comm_headset"
+	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/comms_dispatcher
 
