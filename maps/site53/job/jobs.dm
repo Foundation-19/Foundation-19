@@ -356,6 +356,7 @@
 		access_securitylvl1,
 		access_securitylvl2,
 		access_securitylvl3,
+		access_securitylvl4,
 		access_adminlvl1,
 		access_sciencelvl1,
 		access_sciencelvl2,
@@ -454,16 +455,23 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_sec_comms,
-	access_securitylvl1,
-	access_securitylvl2,
-	access_securitylvl3,
-	access_securitylvl4,
-	access_adminlvl1,
-	access_adminlvl2,
-	access_adminlvl3,
-	access_adminlvl4,
-	access_sciencelvl1
+	access = list(
+		access_sec_comms,
+		access_securitylvl1,
+		access_securitylvl2,
+		access_securitylvl3,
+		access_securitylvl4,
+		access_adminlvl1,
+		access_adminlvl2,
+		access_adminlvl3,
+		access_adminlvl4,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3,
+		access_medicallvl1,
+		access_medicallvl2,
+		access_medicallvl3,
+		access_medicallvl4
 	)
 	minimal_access = list()
 
@@ -616,7 +624,10 @@
 		access_adminlvl2,
 		access_adminlvl3,
 		access_sciencelvl1,
-		access_sciencelvl2
+		access_sciencelvl2,
+		access_medicallvl1,
+		access_medicallvl2,
+		access_medicallvl3
 	)
 	minimal_access = list()
 
@@ -737,7 +748,9 @@
 		access_securitylvl2,
 		access_adminlvl1,
 		access_adminlvl2,
-		access_sciencelvl1
+		access_sciencelvl1,
+		access_medicallvl1,
+		access_medicallvl2
 	)
 	minimal_access = list()
 	skill_points = 20
@@ -765,7 +778,8 @@
 	equip(var/mob/living/carbon/human/H)
 	access = list(
 		access_sci_comms,
-		access_sciencelvl1
+		access_sciencelvl1,
+		access_sciencelvl2
 	)
 	minimal_access = list()
 	skill_points = 20
@@ -778,7 +792,7 @@
 	spawn_positions = 6
 	supervisors = "the Research Director and anyone in a higher position than you"
 	economic_power = 4
-	alt_titles = list("Xenobiologist", "Xenoarcheologist")
+	alt_titles = list("Researcher", "Xenoarcheologist")
 	minimal_player_age = 5
 	ideal_character_age = 22
 	alt_titles = null
@@ -792,7 +806,8 @@
 	access = list(
 		access_sci_comms,
 		access_sciencelvl1,
-		access_sciencelvl2
+		access_sciencelvl2,
+		access_sciencelvl3
 	)
 	minimal_access = list()
 
@@ -937,7 +952,8 @@
 	access = list(
 		access_eng_comms,
 		access_securitylvl1,
-		access_securitylvl2
+		access_securitylvl2,
+		access_engineeringlvl1
 	)
 	minimal_access = list()
 	skill_points = 20
@@ -1205,7 +1221,12 @@
 	allowed_ranks = list(
 		/datum/mil_rank/security/o1)
 
-	access = list(access_med_comms, access_sciencelvl1)
+	access = list(
+		access_med_comms,
+		access_sciencelvl1,
+		access_medicallvl1,
+		access_medicallvl2
+	)
 	minimal_access = list()
 	equip(var/mob/living/carbon/human/H)
 		..()
@@ -1417,7 +1438,9 @@
 		access_med_comms,
 		access_medicallvl1,
 		access_medicallvl2,
-		access_securitylvl1
+		access_securitylvl1,
+		access_engineeringlvl1,
+		access_sciencelvl1
 	)
 	minimal_access = list()
 
@@ -1629,7 +1652,15 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 	access = list(
-	access_civ_comms)
+		access_civ_comms,
+		access_adminlvl1,
+		access_adminlvl2,
+		access_adminlvl3,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3,
+		access_sciencelvl4
+	)
 	minimal_access = list()
 
 /datum/job/o5rep
@@ -1656,7 +1687,11 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_com_comms, access_adminlvl1, access_adminlvl2, access_adminlvl3, access_adminlvl4, access_adminlvl5)
+	access = list(
+		access_com_comms,
+		access_adminlvl1,
+		access_adminlvl2
+		)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY	= SKILL_EXPERT,
