@@ -1,11 +1,9 @@
 /obj/structure/closet/secure_closet/personal
 	name = "personal closet"
 	desc = "It's a secure locker for personnel."
-	icon_state = "secure"
-	icon_closed = "secure"
-	icon_locked = "secure1"
-	icon_opened = "secureopen"
-	icon_off = "secureoff"
+	icon_state = "closed"
+	icon_closed = "closed"
+	icon_locked = "open"
 	req_access = list(access_all_personal_lockers)
 	locked = FALSE
 	var/registered_name = null
