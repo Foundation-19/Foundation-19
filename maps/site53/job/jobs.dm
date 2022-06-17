@@ -697,7 +697,9 @@
 	access = list(
 		access_sec_comms,
 		access_securitylvl1,
-		access_sciencelvl1
+		access_securitylvl2,
+		access_sciencelvl1,
+		access_sciencelvl2
 	)
 	minimal_access = list()
 	skill_points = 20
@@ -1409,7 +1411,6 @@
 		access_medicallvl4,
 		access_medicallvl5,
 		access_securitylvl1,
-		access_securitylvl2,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3
