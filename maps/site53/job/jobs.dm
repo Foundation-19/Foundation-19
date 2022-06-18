@@ -121,20 +121,21 @@
 
 
 	access = list(
-	access_com_comms,
-	access_sci_comms,
-	access_civ_comms,
-	access_log_comms,
-	access_med_comms,
-	access_eng_comms,
-	access_sec_comms,
-	access_adminlvl4,
-	access_adminlvl3,
-	access_adminlvl2,
-	access_adminlvl1,
-	access_sciencelvl1,
-	access_sciencelvl3,
-
+		access_com_comms,
+		access_sci_comms,
+		access_civ_comms,
+		access_log_comms,
+		access_med_comms,
+		access_eng_comms,
+		access_sec_comms,
+		access_adminlvl4,
+		access_adminlvl3,
+		access_adminlvl2,
+		access_adminlvl1,
+		access_engineeringlvl1,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3
 	)
 	minimal_access = list()
 
@@ -427,7 +428,23 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_sec_comms, access_securitylvl1, access_securitylvl2, access_securitylvl3, access_securitylvl4, access_adminlvl1, access_adminlvl2, access_adminlvl3, access_adminlvl4, access_sciencelvl1)
+	access = list(
+		access_sec_comms,
+		access_securitylvl1,
+		access_securitylvl2,
+		access_securitylvl3,
+		access_securitylvl4,
+		access_adminlvl1,
+		access_adminlvl2,
+		access_adminlvl3,
+		access_adminlvl4,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_medicallvl1,
+		access_medicallvl2
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -551,7 +568,18 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_sciencelvl1, access_sec_comms, access_securitylvl1, access_securitylvl2, access_securitylvl3, access_adminlvl1, access_adminlvl2, access_adminlvl3)
+	access = list(
+		access_sec_comms,
+		access_sciencelvl1,
+		access_medicallvl1,
+		access_engineeringlvl1,
+		access_securitylvl1,
+		access_securitylvl2,
+		access_securitylvl3,
+		access_adminlvl1,
+		access_adminlvl2,
+		access_adminlvl3
+		)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -670,7 +698,16 @@
 	)
 	equip(var/mob/living/carbon/human/H)
 		..()
-	access = list(access_sciencelvl1, access_sec_comms, access_securitylvl1, access_securitylvl2, access_adminlvl1, access_adminlvl2)
+	access = list(
+		access_sciencelvl1,
+		access_sec_comms,
+		access_securitylvl1,
+		access_securitylvl2,
+		access_engineeringlvl1,
+		access_medicallvl1,
+		access_adminlvl1,
+		access_adminlvl2
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -689,7 +726,7 @@
 
 /datum/job/juniorscientist
 	//has_email = TRUE
-	title = "Scientist Associate"
+	title = "Researcher Associate"
 	department = "Science"
 	department_flag = SCI
 	total_positions = 6
@@ -722,7 +759,7 @@
 
 /datum/job/scientist
 	//has_email = TRUE
-	title = "Scientist"
+	title = "Researcher"
 	department = "Science"
 	department_flag = SCI
 	total_positions = 6
@@ -755,7 +792,7 @@
 
 /datum/job/seniorscientist
 	//has_email = TRUE
-	title = "Senior Scientist"
+	title = "Senior Researcher"
 	department = "Science"
 	department_flag = SCI
 	total_positions = 6
@@ -804,14 +841,15 @@
 		..()
 
 	access = list(
-	access_com_comms,
-	access_sci_comms,
-	access_sciencelvl5,
-	access_sciencelvl4,
-	access_sciencelvl3,
-	access_sciencelvl2,
-	access_sciencelvl1,
-	access_keyauth)
+		access_com_comms,
+		access_sci_comms,
+		access_sciencelvl5,
+		access_sciencelvl4,
+		access_sciencelvl3,
+		access_sciencelvl2,
+		access_sciencelvl1,
+		access_keyauth
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
