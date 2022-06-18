@@ -23,7 +23,7 @@
 
 /obj/item/weapon/rig/ce/site13/equipped/
 
-	req_access = list(access_mtflvl4)
+	req_access = list(access_securitylvl4)
 
 	initial_modules = list(
 		/obj/item/rig_module/mounted/plasmacutter,
@@ -56,7 +56,7 @@
 
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/storage/toolbox,/obj/item/weapon/storage/briefcase/inflatable,/obj/item/weapon/inflatable_dispenser,/obj/item/device/t_scanner,/obj/item/weapon/rcd)
 
-	req_access = list(access_mtflvl3)
+	req_access = list(access_securitylvl3)
 	req_one_access = list()
 
 /obj/item/clothing/head/helmet/space/rig/eva/site13
@@ -70,7 +70,7 @@
 
 /obj/item/weapon/rig/eva/site13/equipped
 
-	req_access = list(access_mtflvl3)
+	req_access = list(access_securitylvl3)
 
 	initial_modules = list(
 		/obj/item/rig_module/mounted/plasmacutter,

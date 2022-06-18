@@ -28,7 +28,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 /mob/living/scp_173/examine(mob/user)
 	user << "<b><span class = 'euclid'><big>SCP-173</big></span></b> - [desc]"
 
-/mob/living/scp_173/New()
+/mob/living/scp_173/Initialize()
 	..()
 	GLOB.scp173s += src
 	verbs += /mob/living/carbon/human/proc/door_open
@@ -79,11 +79,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 
 /mob/living/scp_173/proc/IsBeingWatched()
-/*	// Am I being watched by eye pals?
 	for (var/mob/living/M in view(src, 7))
 		if ((istype(M, /mob/living/simple_animal/scp_131)) && (InCone(M, M.dir)))
 			return TRUE
-*/
+
 	// Am I being watched by anyone else?
 	for(var/mob/living/carbon/human/H in view(src, 7))
 		if(H.SCP)
@@ -136,7 +135,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 				continue
 			H.visible_message("<span class='notice'>[H] blinks.</span>")
 			H.eye_blind += 2
-			next_blinks[H] = 10+world.time+rand(25 SECONDS, 45 SECONDS)
+			next_blinks[H] = 10+world.time+rand(15 SECONDS, 25 SECONDS)
 	if(client)
 		return
 	if(IsBeingWatched())

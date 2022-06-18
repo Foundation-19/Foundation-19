@@ -39,29 +39,6 @@
 	var/temperature_alert = 0
 	var/heartbeat = 0
 	var/stamina = 100
-	// SCP-049
-	var/pre_scp049_name = ""
-	var/pre_scp049_real_name = ""
-	var/pre_scp049_species = "Human"
-	var/pestilence = FALSE
-
-	// SCP-013
-	var/is_blue_lady = 0
-	var/blue_lady_transitioned = 0
-	var/pre_scp013_name = ""
-	var/pre_scp013_real_name = ""
-	var/pre_scp013_gender = null
-	var/pre_scp013_species = "Human"
-
-	// SCP-173
-	var/scp173_killed = FALSE
-
-	// SCP-078
-	var/dies_young = 0
-
-	// SCP-106
-	var/pocket_dimension_decay = 0
-
 	var/obj/screen/fov = null//The screen object because I can't figure out how the hell TG does their screen objects so I'm just using legacy code.
 	var/usefov = 1
 

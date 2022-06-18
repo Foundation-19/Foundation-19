@@ -10,14 +10,16 @@
 	flags_inv = HIDEEARS
 	action_button_name = "Toggle Visor"
 
-/obj/item/clothing/head/helmet/scp/security/attack_self(mob/user as mob)
-	if(src.icon_state == initial(icon_state))
-		src.icon_state = "[icon_state]_up"
-		to_chat(user, "You raise the visor on the [src].")
-	else
-		src.icon_state = initial(icon_state)
-		to_chat(user, "You lower the visor on the [src].")
+/obj/item/clothing/head/helmet/scp/security/attack_self(mob/user)
+	body_parts_covered ^= EYES|FACE
+	icon_state = initial(icon_state)
+	var/action = "lowers"
+	if (~body_parts_covered & EYES)
+		icon_state += "_up"
+		action = "raises"
+	visible_message(SPAN_ITALIC("\The [user] [action] the visor on \the [src]."), range = 3)
 	update_clothing_icon()
+
 
 /obj/item/clothing/head/helmet/scp/chaos
 	name = "\improper chaos helmet"

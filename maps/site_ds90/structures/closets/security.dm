@@ -159,7 +159,7 @@
 
 /obj/structure/closet/secure_closet/mtf/enlisted
 	name = "MTF Enlisted Locker"
-	req_access = list(access_mtflvl1)
+	req_access = list(access_securitylvl1)
 	icon_state = "enlistedlocked"
 	icon_closed = "enlistedunlocked"
 	icon_locked = "enlistedlocked"
@@ -212,7 +212,7 @@
 
 /obj/structure/closet/secure_closet/mtf/nco
 	name = "MTF NCO Locker"
-	req_access = list(access_mtflvl2)
+	req_access = list(access_securitylvl2)
 	icon_state = "nlocked"
 	icon_closed = "nunlocked"
 	icon_locked = "nlocked"
@@ -238,7 +238,7 @@
 
 /obj/structure/closet/secure_closet/mtf/co
 	name = "MTF CO Locker"
-	req_access = list(access_mtflvl4)
+	req_access = list(access_securitylvl4)
 	icon_state = "colocked"
 	icon_closed = "counlocked"
 	icon_locked = "colocked"
@@ -284,7 +284,7 @@
 
 /obj/structure/closet/secure_closet/mtf/breachautomatics
 	name = "automatic weapons locker"
-	req_access = list(access_mtflvl2)
+	req_access = list(access_securitylvl2)
 	icon_state = "sec1"
 	icon_closed = "sec"
 	icon_locked = "sec1"
@@ -308,7 +308,7 @@
 
 /obj/structure/closet/secure_closet/mtf/breachshotguns
 	name = "tactical shotgun locker"
-	req_access = list(access_mtflvl2)
+	req_access = list(access_securitylvl2)
 	icon_state = "sec1"
 	icon_closed = "sec"
 	icon_locked = "sec1"

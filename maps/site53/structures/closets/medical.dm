@@ -6,6 +6,10 @@
 	name = "chief medical officer's locker"
 	req_access = list(access_medicallvl5)
 	icon_state = "cmosecure1"
+	icon_closed = "cmosecure"
+	icon_locked = "cmosecure1"
+	icon_opened = "cmosecureopen"
+	icon_off = "cmosecureoff"
 
 /obj/structure/closet/secure_closet/site53/cmo/WillContain()
 	return list(
