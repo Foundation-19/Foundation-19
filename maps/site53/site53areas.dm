@@ -302,6 +302,11 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = MEDIUM_SOFTFLOOR
 
+/area/site53/lowertrams/janitoroffice
+	name = "\improper Primary Janitor's Office"
+	icon_state = "janitor"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/lowertrams/hub
 	name = "\improper Tram Hub"
 	icon_state = "hallC1"
@@ -1072,6 +1077,14 @@
 
 /area/site53/science/xenoarchaeology
 	name = "\improper Xenoarchaeology"
+	icon_state = "research"
+
+/area/site53/science/seniorresearchera
+	name = "\improper Senior Researcher's Office A"
+	icon_state = "research"
+
+/area/site53/science/seniorresearcherb
+	name = "\improper Senior Researcher's Office B"
 	icon_state = "research"
 
 //Logistics

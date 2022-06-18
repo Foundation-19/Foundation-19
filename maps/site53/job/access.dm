@@ -80,26 +80,31 @@
 /datum/access/medicallvl1
 	id = access_medicallvl1
 	desc = "Medical Level 1"
+	region =  ACCESS_REGION_MEDBAY
 
 /var/const/access_medicallvl2 = 402 //Paramedic, Chemist
 /datum/access/medicallvl2
 	id = access_medicallvl2
 	desc = "Medical Level 2"
+	region =  ACCESS_REGION_MEDBAY
 
 /var/const/access_medicallvl3 = 403 //Doctor, Surgeon
 /datum/access/medicallvl3
 	id = access_medicallvl3
 	desc = "Medical Level 3"
+	region =  ACCESS_REGION_MEDBAY
 
 /var/const/access_medicallvl4 = 404 //Virologist
 /datum/access/medicallvl4
 	id = access_medicallvl4
 	desc = "Medical Level 4"
+	region =  ACCESS_REGION_MEDBAY
 
 /var/const/access_medicallvl5 = 405 //Chief Medical Officer
 /datum/access/medicallvl5
 	id = access_medicallvl5
 	desc = "Medical Level 5"
+	region =  ACCESS_REGION_MEDBAY
 
 // ENGINEERING
 

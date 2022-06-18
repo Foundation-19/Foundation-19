@@ -593,7 +593,7 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_sec_comms, access_securitylvl1, access_sciencelvl1)
+  access = list(access_sec_comms, access_securitylvl1, access_securitylvl2, access_sciencelvl1, access_sciencelvl2)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -1213,8 +1213,7 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-
-	access = list(access_med_comms,  access_medical_equip)
+	access = list(access_med_comms, access_medicallvl1, access_medicallvl2, access_medicallvl3, access_medicallvl4, access_medicallvl5, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
