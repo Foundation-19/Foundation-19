@@ -145,6 +145,12 @@ var/const/SHUTTLE_AIR_FREQ  = 1331 // Used by shuttles and shuttle-related atmos
 var/const/AIRLOCK_AIR_FREQ  = 1379 // Used by some airlocks for atmos devices.
 var/const/EXTERNAL_AIR_FREQ = 1380 // Used by some external airlocks.
 
+//Foundation 19 Edits
+
+var/const/SEC_HCZ_FREQ = 1479
+var/const/SEC_LCZ_FREQ = 1471
+var/const/SEC_ECZ_FREQ = 1473
+
 var/list/radiochannels = list(
 	"Common"		= PUB_FREQ,
 	"Hailing"		= HAIL_FREQ,
@@ -163,7 +169,9 @@ var/list/radiochannels = list(
 	"AI Private"	= AI_FREQ,
 	"Entertainment" = ENT_FREQ,
 	"Medical (I)"	= MED_I_FREQ,
-	"Security (I)"	= SEC_I_FREQ
+	"HCZ-Security"	= SEC_HCZ_FREQ,
+	"LCZ-Security"	= SEC_LCZ_FREQ,
+	"ECZ-Security"	= SEC_ECZ_FREQ
 )
 
 var/list/channel_color_presets = list(
@@ -194,7 +202,7 @@ var/list/CENT_FREQS = list(ERT_FREQ, DTH_FREQ)
 var/list/ANTAG_FREQS = list(SYND_FREQ, RAID_FREQ)
 
 //Department channels, arranged lexically
-var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_FREQ, SCI_FREQ, SRV_FREQ, SUP_FREQ, EXP_FREQ, ENT_FREQ, MED_I_FREQ, SEC_I_FREQ)
+var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_ECZ_FREQ, SEC_FREQ, SEC_HCZ_FREQ, SEC_LCZ_FREQ, SCI_FREQ, SRV_FREQ, SUP_FREQ, EXP_FREQ, ENT_FREQ)
 
 #define TRANSMISSION_WIRE	0
 #define TRANSMISSION_RADIO	1
@@ -237,6 +245,13 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_FREQ, SCI
 		return "hailradio"
 	if(frequency in DEPT_FREQS)
 		return "deptradio"
+
+	if(frequency == SEC_HCZ_FREQ) //HCZ sec
+		return "hczradio"
+	if(frequency == SEC_LCZ_FREQ) //LCZ sec
+		return "lczradio"
+	if(frequency == SEC_ECZ_FREQ) //ECZ sec
+		return "eczradio"
 
 	// Away site channels
 	for (var/channel in AWAY_FREQS_ASSIGNED)
