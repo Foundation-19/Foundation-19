@@ -209,22 +209,23 @@
 	magazine_type = /obj/item/ammo_magazine/c45m
 	allowed_magazines = /obj/item/ammo_magazine/c45m
 
-/obj/item/gun/projectile/gyropistol
+/obj/item/gun/projectile/pistol/gyropistol
 	name = "prototype pistol"
 	desc = "A bulky foundation prototype pistol designed to fire self propelled rounds."
+	icon = 'icons/obj/gun.dmi'
 	icon_state = "gyropistol"
 	max_shells = 8
-	caliber = "75"
+	caliber = "20mmG"
 	origin_tech = list(TECH_COMBAT = 3)
-	ammo_type = /obj/item/ammo_casing/a75
 	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/a75
+	magazine_type = /obj/item/ammo_magazine/gyro
+	allowed_magazines = /obj/item/ammo_magazine/gyro
 	fire_delay = 25
 	slot_flags = SLOT_BELT
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 
-/obj/item/gun/projectile/gyropistol/update_icon()
+/obj/item/gun/projectile/pistol/gyropistol/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "gyropistolloaded"

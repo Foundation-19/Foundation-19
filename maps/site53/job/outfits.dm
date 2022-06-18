@@ -12,10 +12,10 @@
 	shoes = /obj/item/clothing/shoes/dress
 	suit = /obj/item/clothing/suit/storage/toggle/suit/black
 	id_types = list(/obj/item/card/id/adminlvl5)
-	belt = /obj/item/gun/projectile/gyropistol
+	belt = /obj/item/gun/projectile/pistol/gyropistol
 	l_ear = /obj/item/device/radio/headset/heads/captain
 	back = /obj/item/storage/backpack/satchel/pocketbook
-	backpack_contents = list(/obj/item/ammo_magazine/a75 = 3)
+	backpack_contents = list(/obj/item/ammo_magazine/gyro = 3)
 
 /decl/hierarchy/outfit/job/site90/crew/command/headofhr
 	name = OUTFIT_JOB_NAME("Head of Human Resources")
@@ -290,9 +290,9 @@
 	l_pocket = /obj/item/device/radio
 	id_types = list(/obj/item/card/id/adminlvl5)
 	l_ear = /obj/item/device/radio/headset/heads/hop
-	belt = /obj/item/gun/projectile/gyropistol
+	belt = /obj/item/gun/projectile/pistol/gyropistol
 	back = /obj/item/storage/backpack/satchel/pocketbook
-	backpack_contents = list(/obj/item/ammo_magazine/a75 = 3)
+	backpack_contents = list(/obj/item/ammo_magazine/gyro = 3)
 
 // ENGINEERING STUFF
 
