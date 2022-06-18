@@ -139,7 +139,7 @@
 	desc = "A 12 gauge slug."
 	icon_state = "shell-slug"
 	spent_icon = "shell-slug-spent"
-	caliber = "shotgun"
+	caliber = CALIBER_SHOTGUN
 	projectile_type = /obj/item/projectile/bullet/shotgun
 	matter = list(DEFAULT_WALL_MATERIAL = 360)
 

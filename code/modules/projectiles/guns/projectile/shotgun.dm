@@ -2,16 +2,16 @@
 	icon = 'icons/obj/gun.dmi'
 
 /obj/item/gun/projectile/shotgun/pump
-	name = "shotgun"
+	name = CALIBER_SHOTGUN
 	desc = "The mass-produced W-T Remmington 29x shotgun is a favourite of police and security forces on many worlds. Useful for sweeping alleys."
-	icon_state = "shotgun"
-	item_state = "shotgun"
+	icon_state = CALIBER_SHOTGUN
+	item_state = CALIBER_SHOTGUN
 	max_shells = 4
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	obj_flags =  OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BACK
-	caliber = "12g"
+	caliber = CALIBER_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	load_method = SINGLE_CASING
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
@@ -79,7 +79,7 @@
 	desc = "A fully automatic shotgun, This one has a orange stripe."
 	icon_state = "tac_shotgun"
 	item_state = "cshotgun"
-	caliber = "12g"
+	caliber = CALIBER_SHOTGUN
 	load_method = SINGLE_CASING|SPEEDLOADER
 	max_shells = 7
 	w_class = ITEM_SIZE_HUGE
@@ -111,7 +111,7 @@
 	force = 10
 	obj_flags =  OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BACK
-	caliber = "12g"
+	caliber = CALIBER_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 1)
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	one_hand_penalty = 2
@@ -183,7 +183,7 @@
 	force = 10
 	obj_flags =  OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BACK
-	caliber = "shotgun"
+	caliber = CALIBER_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 1)
 	ammo_type = /obj/item/ammo_casing/shotgun
 	one_hand_penalty = 2
