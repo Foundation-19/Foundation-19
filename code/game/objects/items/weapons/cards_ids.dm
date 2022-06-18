@@ -662,3 +662,11 @@ var/const/NO_EMAG_ACT = -50
 	color = COLOR_RED
 	detail_color = COLOR_WHITE
 	keycard = 1
+
+/obj/item/card/id/proc/update_name()
+	var/final_name = "[registered_name]'s ID Card"
+	if(military_rank && military_rank.name_short)
+		final_name = military_rank.name_short + " " + final_name
+	if(assignment)
+		final_name = final_name + " ([assignment])"
+	SetName(final_name)

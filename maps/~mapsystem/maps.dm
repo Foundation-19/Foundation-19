@@ -449,6 +449,9 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		num2text(SUP_FREQ)   = list(access_cargo),
 		num2text(SRV_FREQ)   = list(access_janitor, access_hydroponics),
 		num2text(HAIL_FREQ)  = list(),
+		num2text(SEC_HCZ_FREQ)   = list(access_sec_comms),
+		num2text(SEC_LCZ_FREQ)   = list(access_sec_comms),
+		num2text(SEC_ECZ_FREQ)   = list(access_sec_comms)
 	)
 
 /datum/map/proc/show_titlescreen(client/C)
