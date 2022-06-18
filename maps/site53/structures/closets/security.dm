@@ -356,4 +356,5 @@
 		/obj/item/clothing/glasses/night,
 		/obj/item/clothing/accessory/ubac,
 		/obj/item/storage/backpack/rucksack,
+		/obj/item/storage/belt/holster/security/tactical,
 	)
