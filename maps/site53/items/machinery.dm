@@ -1,15 +1,7 @@
-//Shouldn't be a lot in here, only torch versions of existing machines that need a different access req or something along those lines.
+//Commendeering this file for  Site 53 instead of the torch, that was it's use, anyway.
 
-/obj/machinery/vending/medical/torch
-	req_access = list(access_medical)
-
-/obj/machinery/drone_fabricator/torch
-	fabricator_tag = "SEV Torch Maintenance"
-
-/obj/machinery/drone_fabricator/torch/adv
-	name = "advanced drone fabricator"
-	fabricator_tag = "SFV Arrow Maintenance"
-	drone_type = /mob/living/silicon/robot/drone/construction
+/obj/machinery/vending/medical/scp
+	req_access = list(access_medicallvl1)
 
 //telecommunications gubbins for torch-specific networks
 
@@ -37,24 +29,6 @@
 	freq_listening = list(EXP_FREQ)
 	autolinkers = list("Exploration")
 
-// Suit cyclers and storage
-/obj/machinery/suit_cycler/exploration
-	name = "Exploration suit cycler"
-	model_text = "Exploration"
-	req_access = list(access_explorer)
-	departments = list("Exploration")
-	species = list(SPECIES_HUMAN,SPECIES_TAJARA,SPECIES_SKRELL)
-
-/obj/machinery/suit_storage_unit/explorer
-	name = "Exploration Voidsuit Storage Unit"
-	suit_type = /obj/item/clothing/suit/space/void/exploration
-	helmet_type = /obj/item/clothing/head/helmet/space/void/exploration
-	boots_type = /obj/item/clothing/shoes/magboots
-	tank_type = /obj/item/weapon/tank/oxygen
-	mask_type = /obj/item/clothing/mask/breath
-	req_access = list(access_explorer)
-	islocked = 1
-
 /obj/machinery/vending/security
 	name = "SecTech"
 	desc = "A security equipment vendor."
@@ -63,7 +37,7 @@
 	icon_deny = "sec-deny"
 	icon_vend = "sec-vend"
 	vend_delay = 14
-	req_access = list(access_security)
+	req_access = list(access_securitylvl2)
 	products = list(/obj/item/weapon/handcuffs = 8,/obj/item/weapon/grenade/flashbang = 4,/obj/item/weapon/grenade/chem_grenade/teargas = 4,/obj/item/device/flash = 5,
 					/obj/item/weapon/reagent_containers/food/snacks/donut/normal = 12,/obj/item/weapon/storage/box/evidence = 6,/obj/item/clothing/accessory/badge/solgov/security = 6)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,/obj/item/weapon/storage/box/donut = 2)
