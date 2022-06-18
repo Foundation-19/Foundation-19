@@ -7,6 +7,10 @@
 	name = "pathfinder's locker"
 	req_access = list(access_pathfinder)
 	icon_state = "pathsecure1"
+	icon_closed = "pathsecure"
+	icon_locked = "pathsecure1"
+	icon_opened = "pathsecureopen"
+	icon_off = "pathsecureoff"
 
 /obj/structure/closet/secure_closet/pathfinder/WillContain()
 	return list(
@@ -42,6 +46,10 @@
 	name = "explorer's locker"
 	req_access = list(access_explorer)
 	icon_state = "exp1"
+	icon_closed = "exp"
+	icon_locked = "exp1"
+	icon_opened = "expopen"
+	icon_off = "expoff"
 
 /obj/structure/closet/secure_closet/explorer/WillContain()
 	return list(

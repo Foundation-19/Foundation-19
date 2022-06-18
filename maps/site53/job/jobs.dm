@@ -1571,7 +1571,7 @@
 		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
-	/datum/mil_rank/civ/classd
+	/datum/mil_rank/civ/classc
 	)
 
 	access = list(access_civ_comms, access_sciencelvl1, access_dclassjanitorial) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
@@ -1599,7 +1599,7 @@
 		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
-	/datum/mil_rank/civ/classd
+	/datum/mil_rank/civ/civ
 	)
 	equip(var/mob/living/carbon/human/H)
 		..()
@@ -1632,7 +1632,7 @@
 		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
-	/datum/mil_rank/civ/classd
+	/datum/mil_rank/civ/civ
 	)
 	equip(var/mob/living/carbon/human/H)
 		..()

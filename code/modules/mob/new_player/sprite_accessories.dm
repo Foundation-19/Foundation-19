@@ -844,7 +844,7 @@ May God have mercy.
 /  =---------------------------=  /
 ///////////////////////////////////
 */
-
+/*
 /datum/sprite_accessory/hair/una_spines_long
 	name = "Long Unathi Spines"
 	icon_state = "soghun_longspines"
@@ -1036,7 +1036,7 @@ May God have mercy.
 	icon_state = "default"
 	icon = 'icons/mob/human_races/r_skrell.dmi'
 	species_allowed = list(SPECIES_SKRELL)
-
+*/
 /*
 ////////////////////////////
 /  =--------------------=  /
@@ -1091,7 +1091,7 @@ May God have mercy.
 	icon_state = "tat_tiger"
 	body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_CHEST,BP_GROIN)
 	species_allowed = list(SPECIES_HUMAN)
-
+/*
 /datum/sprite_accessory/marking/taj_paw_socks
 	name = "Socks Coloration (Taj)"
 	icon_state = "taj_pawsocks"
@@ -1221,3 +1221,4 @@ May God have mercy.
 	icon_state = "taj_all"
 	body_parts = list(BP_HEAD)
 	species_allowed = list(SPECIES_TAJARA)
+*/

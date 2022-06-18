@@ -68,7 +68,7 @@
 	boots_type = /obj/item/clothing/shoes/magboots
 	tank_type = /obj/item/weapon/tank/oxygen
 	mask_type = /obj/item/clothing/mask/breath
-	req_access = list(access_mtflvl2)
+	req_access = list(access_securitylvl2)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/engineering/alt

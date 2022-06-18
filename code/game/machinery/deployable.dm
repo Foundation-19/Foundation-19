@@ -157,7 +157,7 @@ for reference:
 	var/health = 100.0
 	var/maxhealth = 100.0
 	var/locked = 0.0
-	req_access = list(access_mtflvl1)
+	req_access = list(access_securitylvl1)
 
 	New()
 		..()
