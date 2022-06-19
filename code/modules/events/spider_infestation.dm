@@ -16,7 +16,7 @@
 	sent_spiders_to_station = 0
 
 /datum/event/spider_infestation/announce()
-	GLOB.using_map.unidentified_lifesigns_announcement()
+	command_announcement.Announce("Containment breach of object class Euclid SCP-525 detected. Multiple instances detected.", "Biohazard Alert")
 
 /datum/event/spider_infestation/start()
 	var/list/vents = list()

@@ -700,7 +700,7 @@
 	minimal_player_age = 0
 	ideal_character_age = 22
 	alt_titles = null
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/juniorscientist
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/scientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	equip(var/mob/living/carbon/human/H)
