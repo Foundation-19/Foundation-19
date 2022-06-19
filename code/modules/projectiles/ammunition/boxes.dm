@@ -288,18 +288,6 @@
 	max_ammo = 40
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/gyrojet
-	name = "microrocket magazine"
-	icon_state = "gyrojet"
-	mag_type = MAGAZINE
-	caliber = CALIBER_GYROJET
-	ammo_type = /obj/item/ammo_casing/gyrojet
-	multiple_sprites = 1
-	max_ammo = 4
-
-/obj/item/ammo_magazine/gyrojet/empty
-	initial_ammo = 0
-
 /obj/item/ammo_magazine/box/machinegun
 	name = "magazine box"
 	icon_state = "machinegun"

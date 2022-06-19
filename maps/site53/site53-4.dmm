@@ -165,7 +165,7 @@
 "dD" = (/obj/effect/wallframe_spawn/reinforced/titanium,/obj/machinery/door/blast/regular/open{id_tag = "sitedirect"},/turf/simulated/floor/plating,/area/site53/uez/hopoffice)
 "dE" = (/obj/effect/paint_stripe/blue,/turf/simulated/wall/prepainted,/area/site53/uez/rdoffice)
 "dF" = (/obj/effect/paint_stripe/blue,/turf/simulated/wall/titanium,/area/site53/uez/rdoffice)
-"dG" = (/obj/machinery/door/airlock/highsecurity{req_access = list(404)},/obj/machinery/door/blast/regular{id_tag = "sitedirect"},/obj/machinery/door/airlock/highsecurity{req_access = list(604)},/turf/simulated/floor/plating,/area/site53/uez/rdoffice)
+"dG" = (/obj/machinery/door/blast/regular{id_tag = "sitedirect"},/obj/machinery/door/airlock/highsecurity{req_access = list(604)},/turf/simulated/floor/plating,/area/site53/uez/rdoffice)
 "dH" = (/obj/machinery/light{dir = 1},/obj/structure/cable/green{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/structure/coatrack,/turf/simulated/floor/carpet/purple,/area/site53/uez/rdoffice)
 "dI" = (/obj/machinery/door/blast/regular/open{dir = 1; icon_state = "pdoor0"; id_tag = "bridgecorelockdown"},/turf/simulated/floor/lino,/area/site53/uez/hallway)
 "dJ" = (/obj/machinery/camera/autoname{network = list("Entrance Zone Network")},/turf/simulated/floor/tiled/monotile/white,/area/site53/uez/rdoffice)

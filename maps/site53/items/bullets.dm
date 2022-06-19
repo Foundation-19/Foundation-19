@@ -2,6 +2,8 @@
 	desc = "A .357 bullet casing."
 	caliber = "357"
 	projectile_type = /obj/item/projectile/bullet/pistol/strong/revolver
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/a50
 	desc = "A .50AE bullet casing."
@@ -19,16 +21,22 @@
 	desc = "A .500 S&W Magnum bullet casing."
 	caliber = ".500 Magnum"
 	projectile_type = /obj/item/projectile/bullet/pistol/vstrong
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
 
-/obj/item/ammo_casing/a75
+/obj/item/ammo_casing/gyro
 	desc = "A 20mm bullet casing."
-	caliber = "75"
+	caliber = "20mmG"
 	projectile_type = /obj/item/projectile/bullet/gyro
+	icon_state = "lcasing"
+	spent_icon = "lcasing-spent"
 
 /obj/item/ammo_casing/c38
 	desc = "A .38 bullet casing."
 	caliber = "38"
 	projectile_type = /obj/item/projectile/bullet/pistol
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/c38/rubber
 	desc = "A .38 rubber bullet casing."
@@ -578,16 +586,16 @@
 /obj/item/ammo_magazine/a50/empty
 	initial_ammo = 0
 
-/obj/item/ammo_magazine/a75
-	name = "ammo magazine (20mm)"
+/obj/item/ammo_magazine/gyro
+	name = "gyropistol magazine (20mm)"
 	icon_state = "75"
 	mag_type = MAGAZINE
-	caliber = "75"
-	ammo_type = /obj/item/ammo_casing/a75
+	caliber = "20mmG"
+	ammo_type = /obj/item/ammo_casing/gyro
 	multiple_sprites = 1
 	max_ammo = 4
 
-/obj/item/ammo_magazine/a75/empty
+/obj/item/ammo_magazine/gyro/empty
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/a127
