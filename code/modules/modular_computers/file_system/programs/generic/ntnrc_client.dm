@@ -1,11 +1,10 @@
 /datum/computer_file/program/chatclient
-	filename = "ntnrc_client"
-	filedesc = "NTNet Relay Chat Client"
+	filename = "scprc_client"
+	filedesc = "Foundation Relay Chat Client"
 	program_icon_state = "command"
 	program_key_state = "med_key"
 	program_menu_icon = "comment"
-	extended_desc = "This program allows communication over NTNRC network"
-	size = 8
+	extended_desc = "This program allows communication over SCPRC network"
 	requires_ntnet = TRUE
 	requires_ntnet_feature = NTNET_COMMUNICATION
 	network_destination = "NTNRC server"
@@ -91,7 +90,7 @@
 		var/mob/living/user = usr
 		if(can_run(usr, TRUE, access_network_admin))
 			if(channel)
-				var/response = alert(user, "Really engage admin-mode? You will be disconnected from your current channel!", "NTNRC Admin mode", "Yes", "No")
+				var/response = alert(user, "Really engage admin-mode? You will be disconnected from your current channel!", "SCPRC Admin mode", "Yes", "No")
 				if(response == "Yes")
 					if(channel)
 						channel.remove_client(src)

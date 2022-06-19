@@ -3,7 +3,7 @@ datum/event/wallrot/setup()
 	endWhen = announceWhen + 1
 
 datum/event/wallrot/announce()
-	command_announcement.Announce("Harmful fungi detected on [location_name()]. Structures may be contaminated.", "[location_name()] Biologic Sensor Network", zlevels = affecting_z)
+	command_announcement.Announce("Containment breach of object class Keter detected. Structures may be contaminated with SCP-020.", "Biohazard Alert", zlevels = affecting_z)
 
 datum/event/wallrot/start()
 	spawn()

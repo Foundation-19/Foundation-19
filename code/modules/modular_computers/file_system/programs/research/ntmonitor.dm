@@ -1,6 +1,6 @@
 /datum/computer_file/program/ntnetmonitor
-	filename = "ntmonitor"
-	filedesc = "NTNet Diagnostics and Monitoring"
+	filename = "scpmonitor"
+	filedesc = "Foundation Diagnostics and Monitoring"
 	program_icon_state = "comm_monitor"
 	program_key_state = "generic_key"
 	program_menu_icon = "wrench"

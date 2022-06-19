@@ -1,6 +1,6 @@
 /datum/computer_file/program/ntnetdownload
-	filename = "ntndownloader"
-	filedesc = "NTNet Software Download Tool"
+	filename = "scpdownloadtool"
+	filedesc = "Foundation Software Download Tool"
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
 	program_menu_icon = "arrowthickstop-1-s"

@@ -700,7 +700,7 @@
 	minimal_player_age = 0
 	ideal_character_age = 22
 	alt_titles = null
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/juniorscientist
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/scientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	equip(var/mob/living/carbon/human/H)
@@ -1041,7 +1041,7 @@
 	/datum/mil_rank/security/o5
 	)
 
-	access = list(access_com_comms, access_med_comms,  access_medical_equip, access_keyauth)
+	access = list(access_com_comms, access_med_comms,  access_medical_equip, access_keyauth, access_medicallvl1, access_medicallvl2, access_medicallvl3, access_medicallvl4, access_medicallvl5)
 	minimal_access = list()
 	equip(var/mob/living/carbon/human/H)
 		..()
@@ -1074,7 +1074,7 @@
 	allowed_ranks = list(
 		/datum/mil_rank/security/o1)
 
-	access = list(access_med_comms, access_medical_equip)
+	access = list(access_med_comms, access_medical_equip, access_medicallvl1, access_medicallvl2, access_medicallvl3, access_medicallvl4)
 	minimal_access = list()
 	equip(var/mob/living/carbon/human/H)
 		..()
@@ -1110,7 +1110,7 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_med_comms, access_medical_equip)
+	access = list(access_med_comms, access_medical_equip, access_medicallvl1, access_medicallvl2, access_medicallvl3, access_medicallvl4)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -1145,7 +1145,7 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_med_comms,  access_medical_equip)
+	access = list(access_med_comms,  access_medical_equip, access_medicallvl1, access_medicallvl2, access_medicallvl3)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -1179,7 +1179,7 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_med_comms,  access_medical_equip)
+	access = list(access_med_comms,  access_medical_equip, access_medicallvl1, access_medicallvl2, access_medicallvl3, access_medicallvl4)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -1213,7 +1213,7 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_med_comms, access_medicallvl1, access_medicallvl2, access_medicallvl3, access_medicallvl4, access_medicallvl5, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3)
+	access = list(access_med_comms, access_medicallvl1, access_medicallvl2, access_medicallvl3, access_medicallvl4, access_medicallvl5, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3, access_medical_equip)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -1252,7 +1252,7 @@
 		..()
 
 
-	access = list(access_med_comms,  access_medical_equip)
+	access = list(access_med_comms,  access_medical_equip,access_medicallvl1, access_medicallvl2)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -1292,7 +1292,7 @@
 
 	)
 
-	access = list(access_log_comms, access_maint_tunnels, access_emergency_storage, access_cargo
+	access = list(access_log_comms, access_maint_tunnels, access_emergency_storage, access_cargo, access_adminlvl1, access_adminlvl2
 	)
 	minimal_access = list()
 
@@ -1336,7 +1336,7 @@
 	)
 
 	access = list(access_log_comms, access_maint_tunnels, access_emergency_storage, access_cargo,
-		access_cargo_bot, access_mailsorting
+		access_cargo_bot, access_mailsorting, access_adminlvl1
 	)
 	minimal_access = list()
 
