@@ -93,7 +93,7 @@
 //		for(var/mob/living/simple_animal/hostile/scp_263/S in hear(7, get_turf(src)))
 //			S << pick('sound/scp/263/263-cursed.ogg')
 
-
+/*
 /mob/living/simple_animal/hostile/scp263/proc/check_los()
 
     for(var/mob/living/carbon/H in viewers(src, null))
@@ -130,4 +130,4 @@
             to_chat(H, "<span class='alert'>Welcome to the game show!</span>")
             game_show_start(H)
 
-    return
+    return */

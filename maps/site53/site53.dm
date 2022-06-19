@@ -2,6 +2,7 @@
 
 	#include "site53_announcements.dm"
 	#include "site53areas.dm"
+	#include "../torch/torch_areas.dm"
 //	#include "torch_elevator.dm"
 	#include "site53elevators.dm"
 //	#include "torch_holodecks.dm"
@@ -66,11 +67,6 @@
 	#include "loadout/loadout_xeno.dm"*/
 //	#include "loadout/~defines.dm"
 
-/*
-	#include "EZ-Level-1.dmm"
-	#include "EZ-Level-2.dmm"
-*/
-
 	#include "site53-1.dmm"
 	#include "site53-2.dmm"
 	#include "site53-3.dmm"
@@ -79,7 +75,7 @@
 //	#include "site53-7.dmm"
 	#include "site53-8.dmm"
 	#include "site53-9.dmm"
-//	#include "away_mission-1.dmm"
+	#include "away_mission-1.dmm"
 //	#include "torch-3.dmm"
 //	#include "torch-4.dmm"
 //	#include "torch-5.dmm"
@@ -102,15 +98,7 @@
 	#include "../away/icarus/icarus.dm"
 	#include "../away/errant_pisces/errant_pisces.dm"
 	#include "../away/lar_maria/lar_maria.dm"*/
-/*
-	#include "../../code/modules/lobby_music/Perdition.dm"
-	#include "../../code/modules/lobby_music/hie.dm"
-	#include "../../code/modules/lobby_music/std.dm"
-	#include "../../code/modules/lobby_music/foundation.dm"
-	#include "../../code/modules/lobby_music/humanity.dm"
-	#include "../../code/modules/lobby_music/days.dm"
-	#include "../../code/modules/lobby_music/lithium.dm"
-*/
+
 
 	#define using_map_DATUM /datum/map/site53
 
