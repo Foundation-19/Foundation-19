@@ -10,7 +10,6 @@
 	worlds tumultous at best."
 	num_alternate_languages = 2
 	secondary_langs = list(LANGUAGE_SOL_COMMON)
-	slowdown = 15
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
 	max_age = 70
