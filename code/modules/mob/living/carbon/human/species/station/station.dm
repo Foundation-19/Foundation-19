@@ -1,3 +1,5 @@
+// Don't think any of this is being used
+
 /datum/species/human
 	name = SPECIES_HUMAN
 	name_plural = "Humans"

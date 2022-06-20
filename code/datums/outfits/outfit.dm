@@ -174,7 +174,7 @@ var/list/outfits_decls_by_type_
 		H.put_in_l_hand(new l_hand(H))
 	if(r_hand)
 		H.put_in_r_hand(new r_hand(H))
-
+	/*
 	if((flags & OUTFIT_HAS_BACKPACK) && !(OUTFIT_ADJUSTMENT_SKIP_BACKPACK & equip_adjustments))
 		var/decl/backpack_outfit/bo
 		var/metadata
@@ -184,7 +184,6 @@ var/list/outfits_decls_by_type_
 			metadata = H.backpack_setup.metadata
 		else
 			bo = get_default_outfit_backpack()
-
 		var/override_type = backpack_overrides[bo.type]
 		var/backpack = bo.spawn_backpack(H, metadata, override_type)
 
@@ -194,7 +193,7 @@ var/list/outfits_decls_by_type_
 					H.equip_to_appropriate_slot(backpack)
 			else
 				H.equip_to_slot_or_del(backpack, slot_back)
-
+	*/ // FUCK YEAH FIXED SPAWNING WITH AN EXTRA BACKPACK WHOOOOO -Bierkraan
 	if(H.species && !(OUTFIT_ADJUSTMENT_SKIP_SURVIVAL_GEAR & equip_adjustments))
 		H.species.equip_survival_gear(H, flags&OUTFIT_EXTENDED_SURVIVAL)
 	check_and_try_equip_xeno(H)
