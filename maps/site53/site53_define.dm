@@ -4,7 +4,7 @@
 	path = "site53"
 	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
 
-//	lobby_icon = 'icons/lobby.dmi'
+	lobby_screens = list('icons/lobby.dmi')
 
 	station_levels = list(1,2,3,4)
 	contact_levels = list(1,2,3,4)

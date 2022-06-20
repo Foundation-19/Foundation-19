@@ -27,6 +27,7 @@
 	name = "suit and tie"
 	desc = "A rather sterile looking suit and tie."
 	icon_state = "suit"
+	worn_state = "suit_s"
 	accessories = list(/obj/item/clothing/accessory/red)
 
 /obj/item/clothing/under/scp/dclass

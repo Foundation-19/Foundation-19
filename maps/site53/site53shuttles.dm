@@ -61,7 +61,6 @@
 /obj/effect/shuttle_landmark/engineering/start
 	name = "Tram Hub"
 	landmark_tag = "nav_engineering_start"
-	docking_controller = "Engineering"
 	base_turf = /turf/simulated/floor/reinforced
 
 /obj/effect/shuttle_landmark/engineering/out
@@ -90,6 +89,7 @@
 	name = "Site 53"
 	landmark_tag = "nav_mtf_out"
 	base_turf = /turf/simulated/floor/reinforced
+	base_area = /area/site53/surface/surface
 
 /obj/effect/shuttle_landmark/heli/mtf
 	name = "In transit"
@@ -150,6 +150,7 @@
 	name = "Site 53"
 	landmark_tag = "car1_out"
 	base_turf = /turf/simulated/floor/exoplanet/snow
+	base_area = /area/site53/surface/surface
 
 /datum/shuttle/autodock/ferry/chaos2
 	name = "Chaos Car 2"
@@ -271,10 +272,10 @@
 	landmark_tag = "nav_cargo_start"
 
 /obj/effect/shuttle_landmark/supply/station
-	name = "Landing Pad"
+	name = "Hangar"
 	landmark_tag = "nav_cargo_station"
-	base_area = /area/site53/logistics/logistics
-	base_turf = /turf/simulated/floor/tiled/monotile
+	base_area = /area/quartermaster/hangar
+	base_turf = /turf/simulated/floor/plating
 
 /datum/shuttle/autodock/ferry/exploring
 	name = "Car 1"

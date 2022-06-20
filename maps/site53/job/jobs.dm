@@ -1,15 +1,9 @@
-/////////////
-//READ THIS//
-/////////////
-// WARNING: DO NOT ADD INTEGER VALUES ABOVE 20 FOR ANY STAT OR SKILL OTHER THAN INTELLIGENCE, MEDICAL AND ENGINEERING. - LION
-
 /datum/map/site_ds90
 /datum/map/site_ds90/setup_map()
 
 /datum/job/assistant
 	title = "Class D"
 	department = "Civilian"
-	//supervisors = "Foundation Personnel"
 	selection_color = "#E55700"
 	economic_power = 1
 	total_positions = 999
@@ -40,9 +34,7 @@
 
 
 /datum/job/captain
-	//has_email = TRUE
 	title = "Site Director"
-	//supervisors = "the SCP Foundation and O5 Council"
 	//duties = "<big><b>As the Site Director you are responsible for the operations happening in the Site that you manage.<br>You won't have access to SCP's, or the D-Class area.<br> As Site Director, you should worry about making sure all SOP and safety procedures are followed by delegating to the heads of staff.<br><span style = 'color:red'>It is not your job to jump in where necessary! Consistently bad roleplay will be punished under the CoHoS rule!</span>"
 	minimal_player_age = 20
 	economic_power = 15
@@ -67,9 +59,7 @@
 
 
 /datum/job/hop
-	//has_email = TRUE
 	title = "Head of Personnel"
-	//supervisors = "the Facility Director"
 	department = "Command"
 	department_flag = COM
 	total_positions = 0
@@ -99,9 +89,7 @@
 // COMMUNICATIONS
 
 /datum/job/commsofficer
-	//has_email = TRUE
 	title = "Communications Officer"
-	//supervisors = "the Guard Commander"
 	department = "Command"
 	department_flag = COM
 	total_positions = 1
@@ -153,14 +141,12 @@
 	skill_points = 30
 
 /datum/job/commeng
-	//has_email = TRUE
 	selection_color = "#5b4d20"
 	title = "Communications Technician"
 	total_positions = 2
 	spawn_positions = 2
 	//duties = "<big><b>As a member of the Communications team it is your job to maintain long-range comms, monitor the happenings on the Telecomms servers and assess situations by mere observation. Your job may entail being a dispatch center of the likes.<br>You should not ever leave your tower unless under specific circumstances."
 	department_flag = ENG
-	//supervisors = "the Communications Officer"
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 30
@@ -273,9 +259,7 @@
 */
 // SECURITY
 /datum/job/hos
-	//has_email = TRUE
 	title = "Guard Commander"
-	//supervisors = "The Facility Director"
 	department = "Command"
 	department_flag = SEC|COM
 	//duties = "<big><b>As the Guard Commander, you have direct say over the Security department. You're not assigned to any zone, but instead should jump in where necessary or requested. You are to speak with your Zone Commanders oftenly, and assign new guards to the right zone, or where it's needed mostly.</span>"
@@ -329,13 +313,11 @@
 
 
 /datum/job/ltofficerlcz
-	//has_email = TRUE
 	title = "LCZ Zone Commander"
 	department = "Light Containment Personnel"
 	department_flag = SEC
 	total_positions = 1
 	spawn_positions = 1
-	//supervisors = "the Guard Commander"
 	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You also carry the responsibility of guarding the D-Cells. You should not leave your zone under usual SoP</span>"
 	economic_power = 4
 	minimal_player_age = 10
@@ -367,13 +349,11 @@
 	skill_points = 20
 
 /datum/job/ltofficerhcz
-	//has_email = TRUE
 	title = "HCZ Zone Commander"
 	department = "Heavy Containment Personnel"
 	department_flag = SEC
 	total_positions = 1
 	spawn_positions = 1
-	//supervisors = "the Guard Commander"
 	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You should not leave your zone under usual SoP</span>"
 	economic_power = 4
 	minimal_player_age = 10
@@ -405,13 +385,11 @@
 	skill_points = 20
 
 /datum/job/ltofficerez
-	//has_email = TRUE
 	title = "EZ Senior Agent"
 	department = "Entrance Personnel"
 	department_flag = SEC
 	total_positions = 1
 	spawn_positions = 1
-	//supervisors = "the O5 Council"
 	//duties = "<big><b>As the Entrance Zone Senior Agent, you and your team work independently from the guard commander and regular security structure. In this zone, you are tasked with the protection of administrative personnel, together with the agents stationed here. You should not leave your zone under usual SoP, or allow administration to go without protection detail into the facility.</span>"
 	economic_power = 4
 	minimal_player_age = 10
@@ -454,7 +432,6 @@
 	total_positions = 4
 	spawn_positions = 4
 	//duties = "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
-	//supervisors = "the Guard/Zone Commander"
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 25
@@ -488,14 +465,12 @@
 	skill_points = 20
 
 /datum/job/ncoofficerhcz
-	//has_email = TRUE
 	title = "HCZ Guard"
 	department = "Heavy Containment Personnel"
 	department_flag = SEC
 	total_positions = 3
 	spawn_positions = 3
 	//duties = "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
-	//supervisors = "the Guard/Zone Commander"
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 25
@@ -528,14 +503,12 @@
 	skill_points = 20
 
 /datum/job/ncoofficerez
-	//has_email = TRUE
 	title = "EZ Agent"
 	department = "Entrance Zone Personnel"
 	department_flag = SEC
 	total_positions = 2
 	spawn_positions = 2
 	//duties = "<big><b>As the Agent you have more access than a Junior Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
-	//supervisors = "the Senior Agent"
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
@@ -570,7 +543,6 @@
 //##
 
 /datum/job/enlistedofficerlcz
-
 	title = "LCZ Junior Guard"
 	department = "Light Containment Personnel"
 	department_flag = SEC
@@ -579,7 +551,6 @@
 	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
 	//supervisors = "the Guard/Zone Commander"
 	economic_power = 4
-//	minimal_player_age = 0
 	ideal_character_age = 25
 	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerlcz
@@ -609,16 +580,13 @@
 	skill_points = 15
 
 /datum/job/enlistedofficerhcz
-	//has_email = TRUE
 	title = "HCZ Junior Guard"
 	department = "Heavy Containment Personnel"
 	department_flag = SEC
 	total_positions = 2
 	spawn_positions = 2
 	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP."
-	//supervisors = "the Guard/Zone Commander"
 	economic_power = 4
-//	minimal_player_age = 0
 	ideal_character_age = 25
 	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerhcz
@@ -648,14 +616,12 @@
 	skill_points = 15
 
 /datum/job/enlistedofficerez
-	//has_email = TRUE
 	title = "EZ Junior Agent"
 	department = "Entrance Personnel"
 	department_flag = SEC
 	total_positions = 2
 	spawn_positions = 2
 	//duties = "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP."
-	//supervisors = "the Senior Agent"
 	economic_power = 4
 	minimal_player_age = 0
 	ideal_character_age = 27
@@ -688,13 +654,11 @@
 // SCIENCE
 
 /datum/job/juniorscientist
-	//has_email = TRUE
 	title = "Scientist Associate"
 	department = "Science"
 	department_flag = SCI
 	total_positions = 6
 	spawn_positions = 6
-	//supervisors = "the Research Director and anyone in a higher position than you"
 	economic_power = 4
 	alt_titles = list("Xenobiologist Associate", "Xenoarcheologist Associate")
 	minimal_player_age = 0
@@ -721,13 +685,11 @@
 	skill_points = 10
 
 /datum/job/scientist
-	//has_email = TRUE
 	title = "Scientist"
 	department = "Science"
 	department_flag = SCI
 	total_positions = 6
 	spawn_positions = 6
-	//supervisors = "the Research Director and anyone in a higher position than you"
 	economic_power = 4
 	alt_titles = list("Xenobiologist", "Xenoarcheologist")
 	minimal_player_age = 5
@@ -754,13 +716,11 @@
 	skill_points = 15
 
 /datum/job/seniorscientist
-	//has_email = TRUE
 	title = "Senior Scientist"
 	department = "Science"
 	department_flag = SCI
 	total_positions = 6
 	spawn_positions = 6
-	//supervisors = "the Research Director and anyone in a higher position than you"
 	economic_power = 4
 	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist")
 	minimal_player_age = 10
@@ -788,9 +748,7 @@
 	skill_points = 20
 
 /datum/job/rd
-	//has_email = TRUE
 	title = "Research Director"
-	//supervisors = "Facility Director and the Head of Human Resources"
 	total_positions = 1
 	spawn_positions = 1
 	economic_power = 20
@@ -829,12 +787,10 @@
 
 
 /datum/job/juneng
-	//has_email = TRUE
 	title = "Junior Engineer"
 	total_positions = 4
 	spawn_positions = 4
 	department_flag = ENG
-	//supervisors = "the Chief Engineer"
 	economic_power = 5
 	minimal_player_age = 2
 	ideal_character_age = 30
@@ -863,12 +819,10 @@
 	                    SKILL_SCIENCE     = SKILL_MAX)
 
 /datum/job/eng
-	//has_email = TRUE
 	title = "Engineer"
 	total_positions = 3
 	spawn_positions = 3
 	department_flag = ENG
-	//supervisors = "the Chief Engineer"
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 30
@@ -907,12 +861,10 @@
 	                    SKILL_ENGINES      = SKILL_MAX)
 
 /datum/job/seneng
-	//has_email = TRUE
 	title = "Senior Engineer"
 	total_positions = 2
 	spawn_positions = 2
 	department_flag = ENG
-	//supervisors = "the Chief Engineer"
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 30
@@ -951,12 +903,10 @@
 	                    SKILL_ENGINES      = SKILL_MAX)
 
 /datum/job/conteng
-	//has_email = TRUE
 	title = "Containment Engineer"
 	total_positions = 1
 	spawn_positions = 1
 	department_flag = ENG
-	//supervisors = "the Chief Engineer"
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 30
@@ -990,9 +940,7 @@
 	                    SKILL_ENGINES      = SKILL_MAX)
 
 /datum/job/chief_engineer
-	//has_email = TRUE
 	title = "Chief Engineer"
-	//supervisors = "the Security Commander and Facility Director"
 	total_positions = 1
 	spawn_positions = 1
 	economic_power = 9
@@ -1026,9 +974,7 @@
 // MEDICAL JOBS.
 
 /datum/job/cmo
-	//has_email = TRUE
 	title = "Chief Medical Officer"
-	//supervisors = "the Security Commander"
 	economic_power = 10
 	minimal_player_age = 15
 	ideal_character_age = 48
@@ -1058,14 +1004,12 @@
 	skill_points = 20
 
 /datum/job/chemist
-	//has_email = TRUE
 	title = "Chemist"
 	department = "Medical"
 	department_flag = MED
 	minimal_player_age = 3
 	total_positions = 2
 	spawn_positions = 2
-	//supervisors = "the Chief Medical Officer"
 	selection_color = "#013d3b"
 	economic_power = 4
 	ideal_character_age = 30
@@ -1091,7 +1035,6 @@
 	skill_points = 10
 
 /datum/job/psychiatrist
-	//has_email = TRUE
 	title = "Psychiatrist"
 	department = "Medical"
 	department_flag = MED
@@ -1100,7 +1043,6 @@
 	spawn_positions = 1
 	ideal_character_age = 40
 	economic_power = 5
-	//supervisors = "the Chief Medical Officer"
 	alt_titles = list("Counselor")
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/psychiatrist
 	allowed_branches = list(
@@ -1125,7 +1067,6 @@
 	skill_points = 10
 
 /datum/job/medicaldoctor
-	//has_email = TRUE
 	title = "Medical Doctor"
 	department = "Medical"
 	department_flag = MED
@@ -1135,7 +1076,6 @@
 	ideal_character_age = 40
 	minimal_player_age = 3
 	economic_power = 5
-	//supervisors = "the Chief Medical Officer"
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/medicaldoctor
 	allowed_branches = list(
 	/datum/mil_branch/security)
@@ -1160,7 +1100,6 @@
 	skill_points = 10
 
 /datum/job/virologist
-	//has_email = TRUE
 	title = "Virologist"
 	department = "Medical"
 	department_flag = MED
@@ -1170,7 +1109,6 @@
 	minimal_player_age = 3
 	ideal_character_age = 40
 	economic_power = 5
-	//supervisors = "the Chief Medical Officer"
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/virologist
 	allowed_branches = list(
 	/datum/mil_branch/civilian)
@@ -1194,7 +1132,6 @@
 	skill_points = 25
 
 /datum/job/surgeon
-	//has_email = TRUE
 	title = "Surgeon"
 	department = "Medical"
 	department_flag = MED
@@ -1203,7 +1140,6 @@
 	spawn_positions = 2
 	ideal_character_age = 40
 	economic_power = 5
-	//supervisors = "the Chief Medical Officer"
 	minimal_player_age = 3
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/surgeon
 	allowed_branches = list(
@@ -1228,7 +1164,7 @@
 	skill_points = 10
 
 /datum/job/emt
-	//has_email = TRUE
+
 	title = "Emergency Medical Technician"
 	department = "Medical"
 	department_flag = MED
@@ -1238,7 +1174,6 @@
 	ideal_character_age = 40
 	economic_power = 5
 	//duties = "<big><b>As the EMT it is your job to man the medical post near the Class D cell block, and treat any injuries there of the guards or Class D's. You only have limited supplies, so it's best to make them count."
-	//supervisors = "the Chief Medical Officer"
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/emt
 	allowed_branches = list(
 	/datum/mil_branch/security)
@@ -1275,7 +1210,6 @@
 	department_flag = SUP
 	total_positions = 1
 	spawn_positions = 1
-	//supervisors = "the Site Director"
 	selection_color = "#515151"
 	economic_power = 5
 	minimal_player_age = 7
@@ -1292,7 +1226,7 @@
 
 	)
 
-	access = list(access_log_comms, access_maint_tunnels, access_emergency_storage, access_cargo, access_adminlvl1, access_adminlvl2
+	access = list(access_log_comms, access_maint_tunnels, access_emergency_storage, access_cargo, access_adminlvl1, access_adminlvl2, access_mailsorting
 	)
 	minimal_access = list()
 
@@ -1312,14 +1246,12 @@
 
 
 /datum/job/cargo_tech
-	//has_email = TRUE
 	title = "Logistics Specialist"
 	department = "Logistics"
 	department_flag = SUP
 	total_positions = 2
 	spawn_positions = 2
 	selection_color = "B4802B"
-	//supervisors = "the Logistics Officer"
 	minimal_player_age = 3
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/logisticspecialist
@@ -1358,13 +1290,11 @@
 // MISC JOBS
 
 /datum/job/janitor
-	//has_email = TRUE
 	title = "Janitor"
 	department = "Civilian"
 	department_flag = CIV
 	total_positions = 3
 	spawn_positions = 3
-	//supervisors = "the Head of Personnel"
 	ideal_character_age = 24
 	alt_titles = list("Interior caretaker")
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/janitor
@@ -1383,13 +1313,11 @@
 	min_skill = list(   SKILL_HAULING = SKILL_BASIC)
 
 /datum/job/chef
-	//has_email = TRUE
 	title = "Chef"
 	department = "Civilian"
 	department_flag = CIV
 	total_positions = 1
 	spawn_positions = 1
-	//supervisors = "the Head of Personnel"
 	selection_color = "#515151"
 	ideal_character_age = 24
 	alt_titles = list("Cook")
@@ -1411,13 +1339,11 @@
 
 
 /datum/job/bartender
-	//has_email = TRUE
 	title = "Bartender"
 	department = "Civilian"
 	department_flag = CIV
 	total_positions = 1
 	spawn_positions = 1
-	//supervisors = "the Head of Personnel"
 	selection_color = "#515151"
 	ideal_character_age = 24
 	alt_titles = list("Waiter")
@@ -1439,7 +1365,6 @@
 
 
 /datum/job/archivist
-	//has_email = TRUE
 	title = "Archivist"
 	department = "Civilian"
 	department_flag = CIV
@@ -1447,7 +1372,6 @@
 	spawn_positions = 1
 	minimal_player_age = 9
 	//duties = "<big><b>As the Archivist, it is your job to make sure the proper test logs are digitalized and saved in the digital archive, thus safekeeping them forever. You must be picky and selective, and only get those with great quality out! <span style = 'color:red'>REMEMBER!</span> If you put in nonsensical things, or copypasta's such as Woody's got Wood, you will be permanently job banned WITHOUT chance to appeal.</span>"
-	//supervisors = "the Research Director"
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
@@ -1466,14 +1390,12 @@
 	minimal_access = list()
 
 /datum/job/o5rep
-	//has_email = TRUE
 	title = "Global Occult Coalition Representative"
 	department = "Civilian"
 	department_flag = COM
 	total_positions = 1
 	spawn_positions = 1
 //	//duties = "<big><b>As the GOC Representative, your task is to assess the facility and generally advocate for hardline approaches in regards to anomalies and their containment, or destruction. You value human lives far over any anomaly, as does the Global Occult Coalition, and should see to it that lives are preserved where possible, even D-Class ones. Though combat is not your duty, you are issued a revolver to defend yourself with. This job is heavy roleplay: you're expected to be well-versed in actually talking to people on the matters described. Containment of SCPs and direct site matters are not your matters, so don't get involved."
-//	//supervisors = "Global Occult Coalition Regional Command"
 	economic_power = 5
 	minimal_player_age = 5
 	minimal_player_age = 9

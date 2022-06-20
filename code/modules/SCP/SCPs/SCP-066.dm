@@ -95,4 +95,3 @@
 //			if(istype(M.l_ear, /obj/item/clothing/ears/earmuffs) || istype(M.r_ear, /obj/item/clothing/ears/earmuffs))
 //				M << pick('sound/scp/066/066-1-rapeE.ogg', 'sound/scp/066/066-2-rapeE.ogg', 'sound/scp/066/066-3-rapeE.ogg', 'sound/scp/066/066-4-rapeE.ogg', 'sound/scp/066/066-5-rapeE.ogg', 'sound/scp/066/066-ericrapeE.ogg')
 
-#warning NEEDS SOUNDS
