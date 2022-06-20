@@ -9,7 +9,6 @@
 #define CALIBER_ANTIMATERIAL    "15mmR"
 
 #define CALIBER_SHOTGUN			"12g"
-#define CALIBER_GYROJET			"20mmG"
 #define CALIBER_CAPS			"caps"
 #define CALIBER_DART			"darts"
 

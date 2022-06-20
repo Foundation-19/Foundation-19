@@ -43,13 +43,6 @@
 	desc = "An antique pistol bullet casing. Somewhere between 9 and 11 mm in caliber."
 	caliber = CALIBER_PISTOL_ANTIQUE
 
-/obj/item/ammo_casing/gyrojet
-	desc = "A minirocket casing."
-	caliber = CALIBER_GYROJET
-	projectile_type = /obj/item/projectile/bullet/gyro
-	icon_state = "lcasing"
-	spent_icon = "lcasing-spent"
-
 /obj/item/ammo_casing/flechette
 	desc = "A flechette casing."
 	caliber = CALIBER_PISTOL_FLECHETTE

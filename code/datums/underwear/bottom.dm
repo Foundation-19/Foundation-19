@@ -1,5 +1,4 @@
 /datum/category_item/underwear/bottom
-	underwear_gender = PLURAL
 	underwear_name = "underwear"
 	underwear_type = /obj/item/underwear/bottom
 

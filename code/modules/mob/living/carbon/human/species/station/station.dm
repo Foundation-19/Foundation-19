@@ -13,8 +13,8 @@
 	num_alternate_languages = 2
 	secondary_langs = list(LANGUAGE_SOL_COMMON)
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
-	min_age = 17
-	max_age = 100
+	min_age = 18
+	max_age = 70
 	gluttonous = GLUT_TINY
 
 	spawn_flags = SPECIES_CAN_JOIN
