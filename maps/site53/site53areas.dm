@@ -391,6 +391,17 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
 
+/area/site53/llcz/scp263
+	name = "\improper SCP-263"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
+
+/area/site53/llcz/scp263research
+	name = "\improper SCP-263 Research Chamber"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/llcz/genstorage1
 	name = "\improper General Storage #1"
 	icon_state = "research"
@@ -493,6 +504,18 @@
 
 /area/site53/llcz/scp513
 	name = "\improper SCP-513"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
+
+/area/site53/llcz/scp066
+	name = "\improper SCP-066"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
+
+/area/site53/llcz/scp263
+	name = "\improper SCP-263"
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
@@ -770,6 +793,18 @@
 
 /area/site53/uhcz/scp106containment
 	name = "\improper SCP-106 Containment Chamber"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/uhcz/scp247containment
+	name = "\improper SCP-247 Enclosure"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	requires_power = 0
+	dynamic_lighting = 0
+
+/area/site53/uhcz/scp247observation
+	name = "\improper SCP-247 Observation"
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
