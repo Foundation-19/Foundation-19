@@ -70,6 +70,9 @@
 		interpreter.SetVar("$security",	SEC_FREQ)
 		interpreter.SetVar("$supply",	SUP_FREQ)
 		interpreter.SetVar("$exploration",	EXP_FREQ)
+		interpretor.SetVar("$hczsecurity", HCZ_FREQ)
+		interpretor.SetVar("$eczsecurity", LCZ_FREQ)
+		interpretor.SetVar("$lczsecurity", ECZ_FREQ)
 
 		// Signal data
 
@@ -272,4 +275,3 @@ datum/signal
 		var/pass = S.relay_information(newsign, /obj/machinery/telecomms/hub)
 		if(!pass)
 			S.relay_information(newsign, /obj/machinery/telecomms/broadcaster) // send this simple message to broadcasters
-

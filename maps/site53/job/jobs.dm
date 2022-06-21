@@ -339,7 +339,7 @@
 	skill_points = 20
 
 /datum/job/ltofficerez
-	title = "EZ Senior Agent"
+	title = "EZ Supervisor"
 	department = "Entrance Personnel"
 	department_flag = SEC
 	total_positions = 1
@@ -483,7 +483,7 @@
 	skill_points = 20
 
 /datum/job/ncoofficerez
-	title = "EZ Agent"
+	title = "EZ Senior Agent"
 	department = "Entrance Zone Personnel"
 	department_flag = SEC
 	total_positions = 2
@@ -619,10 +619,10 @@
 	                    SKILL_WEAPONS     = SKILL_EXPERT,
 	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 15
-/*
+
 /datum/job/enlistedofficerez
 	//has_email = TRUE
-	title = "EZ Junior Agent"
+	title = "EZ Agent"
 	department = "Entrance Personnel"
 	department_flag = SEC
 	total_positions = 2
@@ -666,7 +666,6 @@
 	                    SKILL_WEAPONS     = SKILL_EXPERT,
 	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 20
-*/
 // SCIENCE
 
 /datum/job/juniorscientist
@@ -679,7 +678,6 @@
 	//supervisors = "the Research Director and anyone in a higher position than you"
 	economic_power = 4
 	alt_titles = list("Xenobiologist Associate", "Xenoarcheologist Associate")
-	minimal_player_age = 0
 	ideal_character_age = 22
 	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/juniorscientist
@@ -819,7 +817,6 @@
 	department_flag = ENG
 	//supervisors = "the Chief Engineer"
 	economic_power = 5
-	minimal_player_age = 2
 	ideal_character_age = 30
 	alt_titles = list(
 		"Junior Maintenance Technician",
