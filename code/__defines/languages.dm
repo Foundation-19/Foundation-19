@@ -1,10 +1,10 @@
 //Human
 #define LANGUAGE_HUMAN_EURO      "Zurich Accord Common"
-#define LANGUAGE_HUMAN_CHINESE   "Yangyu"
-#define LANGUAGE_HUMAN_ARABIC    "Prototype Standard Arabic"
-#define LANGUAGE_HUMAN_INDIAN    "New Dehlavi"
-#define LANGUAGE_HUMAN_IBERIAN   "Iberian"
-#define LANGUAGE_HUMAN_RUSSIAN   "Pan-Slavic"
+#define LANGUAGE_HUMAN_CHINESE   "Mandarin"
+#define LANGUAGE_HUMAN_ARABIC    "Arabic"
+#define LANGUAGE_HUMAN_INDIAN    "Hindustani"
+#define LANGUAGE_HUMAN_IBERIAN   "Spanish"
+#define LANGUAGE_HUMAN_RUSSIAN   "Russian"
 #define LANGUAGE_HUMAN_SELENIAN  "Selenian"
 
 //Human misc

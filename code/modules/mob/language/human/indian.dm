@@ -5,11 +5,11 @@
 
 /datum/language/human/indian
 	name = LANGUAGE_HUMAN_INDIAN
-	desc = "Billed as a reunification of the Hindustani languages of Hindi and Urdu in the Latin script, New Dehlavi enjoyed very rapid adoption rates among the common populace, \
-			compared to the other great Earth commons."
+	desc = "A pluricentric language, widely used as the lingua franca in Northern India and Pakistan.\
+			 Also known as 'Hindi-Urdu', it can be seen as a 'unifying' or 'fusion language' derived from both."
 	colour = "indian"
 	key = "3"
-	shorthand = "Dehv"
+	shorthand = "Hindi"
 	space_chance = 30
 	partial_understanding = list(
 		LANGUAGE_HUMAN_EURO = 5,
