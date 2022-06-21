@@ -396,7 +396,7 @@
 
 /datum/job/ncoofficerlcz
 
-	title = "LCZ Guard"
+	title = "LCZ Sergeant"
 	department = "Light Containment Personnel"
 	department_flag = SEC
 	total_positions = 4
@@ -445,7 +445,7 @@
 	skill_points = 20
 
 /datum/job/ncoofficerhcz
-	title = "HCZ Guard"
+	title = "HCZ Sergeant"
 	department = "Heavy Containment Personnel"
 	department_flag = SEC
 	total_positions = 3
@@ -535,7 +535,7 @@
 
 /datum/job/enlistedofficerlcz
 
-	title = "LCZ Junior Guard"
+	title = "LCZ Guard"
 	department = "Light Containment Personnel"
 	department_flag = SEC
 	total_positions = 10
@@ -583,7 +583,7 @@
 
 /datum/job/enlistedofficerhcz
 	//has_email = TRUE
-	title = "HCZ Junior Guard"
+	title = "HCZ Guard"
 	department = "Heavy Containment Personnel"
 	department_flag = SEC
 	total_positions = 2
@@ -619,7 +619,7 @@
 	                    SKILL_WEAPONS     = SKILL_EXPERT,
 	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 15
-
+/*
 /datum/job/enlistedofficerez
 	//has_email = TRUE
 	title = "EZ Junior Agent"
@@ -666,7 +666,7 @@
 	                    SKILL_WEAPONS     = SKILL_EXPERT,
 	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 20
-
+*/
 // SCIENCE
 
 /datum/job/juniorscientist

@@ -649,4 +649,4 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			to_chat(src, "<span class='warning'>Someone has already taken control of this SCP.</span>")
 	else
 		to_chat(src, "<span class='warning'>All playable Safe SCPs are currently being played.</span>")
-#warning Clean this section up
+#warnClean this section up
