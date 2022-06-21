@@ -1413,7 +1413,12 @@
 	)
 	equip(var/mob/living/carbon/human/H)
 		..()
-	access = list(access_civ_comms,access_dclasskitchen, access_dclassbotany) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
+	access = list(
+	access_civ_comms,
+	access_dclasskitchen,
+	access_dclassbotany
+	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
+
 	minimal_access = list()
 
 	min_skill = list(   SKILL_COOKING   = SKILL_ADEPT,
@@ -1445,12 +1450,17 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_civ_comms)
+	access = list(
+	access_civ_comms,
+	access_adminlvl1,
+	access_adminlvl2,
+	access_adminlvl3
+	)
 	minimal_access = list()
 
 /datum/job/o5rep
 	//has_email = TRUE
-	title = "Global Occult Coalition Representative"
+	title = "O5 Representative"
 	department = "Civilian"
 	department_flag = COM
 	total_positions = 1
@@ -1461,8 +1471,8 @@
 	minimal_player_age = 5
 	minimal_player_age = 9
 	ideal_character_age = 30
-	alt_titles = list("O5 Representative" = /decl/hierarchy/outfit/job/site90/crew/civ/o5rep)
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/gocrep
+	alt_titles = list("Global Occult Coalition Representative" = /decl/hierarchy/outfit/job/site90/crew/civ/gocrep)
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
