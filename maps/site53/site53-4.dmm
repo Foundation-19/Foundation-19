@@ -178,7 +178,7 @@
 "dR" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/carpet/purple,/area/site53/uez/rdoffice)
 "dT" = (/obj/effect/paint/ocean,/turf/simulated/wall/prepainted,/area/site53/uez/cmooffice)
 "dU" = (/obj/effect/paint/sun,/turf/simulated/wall/prepainted,/area/site53/uez/ceoffice)
-"dV" = (/obj/structure/closet/secure_closet/scpscience/directorofscience,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled/monotile/white,/area/site53/uez/rdoffice)
+"dV" = (/obj/structure/closet/secure_closet/scpscience/directorofscience,/obj/effect/floor_decal/industrial/outline/yellow,/obj/item/storage/pill_bottle/amnesticsc,/turf/simulated/floor/tiled/monotile/white,/area/site53/uez/rdoffice)
 "dW" = (/turf/simulated/floor/carpet/green,/area/site53/uez/cmooffice)
 "dX" = (/obj/structure/cable/green{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/tiled/monotile/white,/area/site53/uez/cmooffice)
 "dY" = (/obj/structure/cable/green{d2 = 8; icon_state = "0-8"},/obj/machinery/power/apc{dir = 1; name = "north bump"; pixel_x = 0; pixel_y = 24; req_access = list(201)},/obj/structure/coatrack,/turf/simulated/floor/tiled/monotile/white,/area/site53/uez/cmooffice)
