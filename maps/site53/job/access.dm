@@ -170,6 +170,17 @@
 	desc = "Admin Level 5"
 	region = ACCESS_REGION_COMMAND
 
+//LOGISTICS
+// /var/const/access_cargo = 951
+// /datum/access/cargo
+//	id = access_cargo
+//	desc = "Logistics General"
+
+// /var/const/access_mailsorting = 952
+// /datum/access/mailsorting
+//	id = access_mailsorting
+//	desc = "Logistics Mail Sorting"
+
 // D-CLASS WORK
 
 /var/const/access_dclasskitchen = 701

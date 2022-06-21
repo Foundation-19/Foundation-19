@@ -9,7 +9,6 @@
 /datum/job/assistant
 	title = "Class D"
 	department = "Civilian"
-	//supervisors = "Foundation Personnel"
 	selection_color = "#E55700"
 	economic_power = 1
 	total_positions = 999
@@ -40,9 +39,7 @@
 
 
 /datum/job/captain
-	//has_email = TRUE
 	title = "Site Director"
-	//supervisors = "the SCP Foundation and O5 Council"
 	//duties = "<big><b>As the Site Director you are responsible for the operations happening in the Site that you manage.<br>You won't have access to SCP's, or the D-Class area.<br> As Site Director, you should worry about making sure all SOP and safety procedures are followed by delegating to the heads of staff.<br><span style = 'color:red'>It is not your job to jump in where necessary! Consistently bad roleplay will be punished under the CoHoS rule!</span>"
 	minimal_player_age = 20
 	economic_power = 15
@@ -67,9 +64,7 @@
 
 
 /datum/job/hop
-	//has_email = TRUE
 	title = "Head of Personnel"
-	//supervisors = "the Facility Director"
 	department = "Command"
 	department_flag = COM
 	total_positions = 0
@@ -99,9 +94,7 @@
 // COMMUNICATIONS
 
 /datum/job/commsofficer
-	//has_email = TRUE
 	title = "Communications Officer"
-	//supervisors = "the Guard Commander"
 	department = "Command"
 	department_flag = COM
 	total_positions = 1
@@ -154,14 +147,12 @@
 	skill_points = 30
 
 /datum/job/commeng
-	//has_email = TRUE
 	selection_color = "#5b4d20"
 	title = "Communications Technician"
 	total_positions = 2
 	spawn_positions = 2
 	//duties = "<big><b>As a member of the Communications team it is your job to maintain long-range comms, monitor the happenings on the Telecomms servers and assess situations by mere observation. Your job may entail being a dispatch center of the likes.<br>You should not ever leave your tower unless under specific circumstances."
 	department_flag = ENG
-	//supervisors = "the Communications Officer"
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 30
@@ -207,76 +198,9 @@
 ## END OF GENERIC COMMAND ##
 */
 
-// CELLS
-/* CANDIDATE FOR REMOVAL
-/datum/job/cellguardlieutenant
-	//has_email = TRUE
-	title = "Cell Warden"
-	department = "Security"
-	department_flag = SEC
-	total_positions = 1
-	spawn_positions = 1
-	//supervisors = "the Security Commander"
-	economic_power = 4
-	alt_titles = null
-	//duties = "<big><b>As the Cell Warden, it is your job to coordinate the cell guards, prevent riots and breakouts. <br>It's also important to note that if you're an asshole or intentionally trying to be one, Class D's are more likely to riot.<br> If a Class D is requested for testing it is not your, or the Cell Guard's job to deliver them to the tests. Hand them over to one of the zone guards, instead.</span>"
-	minimal_player_age = 7
-	ideal_character_age = 30
-	alt_titles = null
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/cellguardlieutenant
-
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/o1,
-		/datum/mil_rank/security/o2
-	)
-
-
-	access = list(access_securitylvl1, access_securitylvl2, access_securitylvl3, access_securitylvl4, access_dclassjanitorial, access_dclassmining, access_dclasskitchen, access_dclassbotany)
-	minimal_access = list()
-	equip(var/mob/living/carbon/human/H)
-		..()
-		H.add_stats(rand(12,15), rand(10), rand(15,20)) // Str, Dex, Int.
-		H.add_skills(rand(70,90), rand(70,90), rand(15,30), rand(5,10)) // Melee, Ranged, Medical, Engineering.
-
-
-/datum/job/brigofficer
-	//has_email = TRUE
-	title = "Cell Guard"
-	department = "Security"
-	department_flag = SEC
-	total_positions = 7
-	spawn_positions = 7
-	//supervisors = "the Cell Warden"
-	//duties = "<big><b>As the Cell Guard, it is your job to prevent riots and breakouts. <br>It's also important to note that if you're an asshole or intentionally trying to be one, Class D's are more likely to riot.<br> If a Class D is requested for testing it is not your, or the Cell Guard's job to deliver them to the tests. Hand them over to one of the zone guards, instead.</span>"
-	economic_power = 4
-	alt_titles = null
-	minimal_player_age = 5
-	ideal_character_age = 23
-	alt_titles = null
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/brigofficer
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-	/datum/mil_rank/security/e7,
-	/datum/mil_rank/security/e8
-
-	)
-	equip(var/mob/living/carbon/human/H)
-		..()
-		H.add_stats(rand(11,15), rand(10), rand(15,20)) // Str, Dex, Int.
-		H.add_skills(rand(60,80), rand(60,80), rand(15,30), rand(5,10)) // Melee, Ranged, Medical, Engineering.
-	access = list(access_securitylvl1, access_securitylvl2, access_dclassjanitorial, access_dclassmining, access_dclasskitchen, access_dclassbotany)
-	minimal_access = list()
-*/
 // SECURITY
 /datum/job/hos
-	//has_email = TRUE
 	title = "Guard Commander"
-	//supervisors = "The Facility Director"
 	department = "Command"
 	department_flag = SEC|COM
 	//duties = "<big><b>As the Guard Commander, you have direct say over the Security department. You're not assigned to any zone, but instead should jump in where necessary or requested. You are to speak with your Zone Commanders oftenly, and assign new guards to the right zone, or where it's needed mostly.</span>"
@@ -303,6 +227,10 @@
 		access_securitylvl3,
 		access_securitylvl4,
 		access_securitylvl5,
+		access_adminlvl1,
+		access_adminlvl2,
+		access_adminlvl3,
+		access_adminlvl4,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,
@@ -336,7 +264,6 @@
 	department_flag = SEC
 	total_positions = 1
 	spawn_positions = 1
-	//supervisors = "the Guard Commander"
 	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You also carry the responsibility of guarding the D-Cells. You should not leave your zone under usual SoP</span>"
 	economic_power = 4
 	minimal_player_age = 10
@@ -352,7 +279,15 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_sec_comms, access_securitylvl1, access_securitylvl2, access_securitylvl3, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3)
+	access = list(
+		access_sec_comms,
+		access_securitylvl1,
+		access_securitylvl2,
+		access_securitylvl3,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -368,13 +303,11 @@
 	skill_points = 20
 
 /datum/job/ltofficerhcz
-	//has_email = TRUE
 	title = "HCZ Zone Commander"
 	department = "Heavy Containment Personnel"
 	department_flag = SEC
 	total_positions = 1
 	spawn_positions = 1
-	//supervisors = "the Guard Commander"
 	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You should not leave your zone under usual SoP</span>"
 	economic_power = 4
 	minimal_player_age = 10
@@ -406,13 +339,11 @@
 	skill_points = 20
 
 /datum/job/ltofficerez
-	//has_email = TRUE
 	title = "EZ Senior Agent"
 	department = "Entrance Personnel"
 	department_flag = SEC
 	total_positions = 1
 	spawn_positions = 1
-	//supervisors = "the O5 Council"
 	//duties = "<big><b>As the Entrance Zone Senior Agent, you and your team work independently from the guard commander and regular security structure. In this zone, you are tasked with the protection of administrative personnel, together with the agents stationed here. You should not leave your zone under usual SoP, or allow administration to go without protection detail into the facility.</span>"
 	economic_power = 4
 	minimal_player_age = 10
@@ -471,7 +402,6 @@
 	total_positions = 4
 	spawn_positions = 4
 	//duties = "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
-	//supervisors = "the Guard/Zone Commander"
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 25
@@ -489,7 +419,17 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_sec_comms, access_securitylvl1, access_securitylvl2, access_sciencelvl1, access_sciencelvl2)
+	access = list(
+		access_sec_comms,
+		access_securitylvl1,
+		access_securitylvl2,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_dclasskitchen,
+		access_dclassbotany,
+		access_dclassmining,
+		access_dclassjanitorial
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -505,14 +445,12 @@
 	skill_points = 20
 
 /datum/job/ncoofficerhcz
-	//has_email = TRUE
 	title = "HCZ Guard"
 	department = "Heavy Containment Personnel"
 	department_flag = SEC
 	total_positions = 3
 	spawn_positions = 3
 	//duties = "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
-	//supervisors = "the Guard/Zone Commander"
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 25
@@ -545,14 +483,12 @@
 	skill_points = 20
 
 /datum/job/ncoofficerez
-	//has_email = TRUE
 	title = "EZ Agent"
 	department = "Entrance Zone Personnel"
 	department_flag = SEC
 	total_positions = 2
 	spawn_positions = 2
 	//duties = "<big><b>As the Agent you have more access than a Junior Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
-	//supervisors = "the Senior Agent"
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
@@ -605,7 +541,6 @@
 	total_positions = 10
 	spawn_positions = 10
 	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
-	//supervisors = "the Guard/Zone Commander"
 	economic_power = 4
 //	minimal_player_age = 0
 	ideal_character_age = 25
@@ -621,7 +556,17 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-  access = list(access_sec_comms, access_securitylvl1, access_securitylvl2, access_sciencelvl1, access_sciencelvl2)
+	access = list(
+		access_sec_comms,
+		access_securitylvl1,
+		access_securitylvl2,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_dclasskitchen,
+		access_dclassbotany,
+		access_dclassmining,
+		access_dclassjanitorial
+		)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
