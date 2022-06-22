@@ -307,18 +307,18 @@
 
 /obj/machinery/telecomms/server/presets/securityhcz
 	id = "HCZ Security Server"
-	channel_tags = list(list(SEC_HCZ_FREQ, "HCZ Security", COMMS_COLOR_SECURITY))
+	channel_tags = list(list(SEC_HCZ_FREQ, "HCZ Security", COMMS_COLOR_EXPLORER))
 	freq_listening = list(SEC_HCZ_FREQ)
 	autolinkers = list("hcz-security")
 
 /obj/machinery/telecomms/server/presets/securitylcz
 	id = "LCZ Security Server"
-	channel_tags = list(list(SEC_LCZ_FREQ, "LCZ Security", COMMS_COLOR_SECURITY))
+	channel_tags = list(list(SEC_LCZ_FREQ, "LCZ Security", COMMS_COLOR_COMMAND))
 	freq_listening = list(SEC_LCZ_FREQ)
 	autolinkers = list("lcz-security")
 
 /obj/machinery/telecomms/server/presets/securityecz
 	id = "ECZ Security Server"
-	channel_tags = list(list(SEC_ECZ_FREQ, "ECZ Security", COMMS_COLOR_SECURITY))
+	channel_tags = list(list(SEC_ECZ_FREQ, "ECZ Security", COMMS_COLOR_SECURITY /*determines color */))
 	freq_listening = list(SEC_ECZ_FREQ)
 	autolinkers = list("ecz-security")

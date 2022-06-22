@@ -41,10 +41,10 @@ var/list/department_radio_keys = list(
 
 	  ":x" = "LCZ-Security",		".x" = "LCZ-Security",
 	  ":k" = "HCZ-Security",		".k" = "HCZ-Security",
-	  ":n" = "ECZ-Security",		".n" = "ECZ-Security",
+	  ":z" = "ECZ-Security",		".z" = "ECZ-Security",
 	  ":X" = "LCZ-Security",		".X" = "LCZ-Security",
 	  ":K" = "HCZ-Security",		".K" = "HCZ-Security",
-	  ":Q" = "ECZ-Security",		".Q" = "ECZ-Security",
+	  ":Z" = "ECZ-Security",		".Z" = "ECZ-Security",
 
 	  //kinda localization -- rastaf0
 	  //same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
