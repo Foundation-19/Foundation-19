@@ -32,6 +32,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	..()
 	GLOB.scp173s += src
 	verbs += /mob/living/carbon/human/proc/door_open
+//	verbs += /mob/living/carbon/human/proc/corrosive_acid
 	add_language(LANGUAGE_EAL, 1)
 	add_language(LANGUAGE_SKRELLIAN, 1)
 	add_language(LANGUAGE_GUTTER, 1)
@@ -44,6 +45,41 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/say(var/message)
 	return // lol you can't talk
+
+/mob/living/carbon/human/proc/corrosive_acid(O as obj|turf in oview(1)) //If they right click to corrode, an error will flash if its an invalid target./N
+	set name = "Corrosive Acid"
+	set desc = "Drench an object in acid, destroying it over time."
+	set category = "SCP"
+
+	if(!O in oview(1))
+		to_chat(src, "<span class='euclid'>[O] is too far away.</span>")
+		return
+
+	// OBJ CHECK
+	var/cannot_melt
+	if(isobj(O))
+		var/obj/I = O
+		if(I.unacidable)
+			cannot_melt = 1
+	else
+		if(istype(O, /turf/simulated/wall))
+			var/turf/simulated/wall/W = O
+			if(W.material.flags & MATERIAL_UNMELTABLE)
+				cannot_melt = 1
+		else if(istype(O, /turf/simulated/floor))
+			var/turf/simulated/floor/F = O
+			if(F.flooring && (F.flooring.flags & TURF_ACID_IMMUNE))
+				cannot_melt = 1
+
+	if(cannot_melt)
+		to_chat(src, "<span class='euclid'>You cannot dissolve this object.</span>")
+		return
+
+
+//	new /obj/effect/acid(get_turf(O), O)
+	visible_message("<span class='euclid'><B>[src] vomits globs of vile stuff all over [O]. It begins to sizzle and melt under the bubbling mess of acid!</B></span>")
+
+	return
 
 /mob/living/carbon/human/proc/door_open(obj/machinery/door/A in filter_list(oview(1), /obj/machinery/door))
 	set name = "Pry Open Airlock"
@@ -233,3 +269,60 @@ GLOBAL_LIST_EMPTY(scp173s)
 		name = initial(name)
 	else
 		visible_message("<span class = \"warning\">The cage is empty; there's nothing to take out.</span>")
+
+/*
+ * Acid
+ */
+ #define ACID_STRONG     2
+ #define ACID_MODERATE   1.5
+ #define ACID_WEAK       1
+
+/obj/effect/acid
+	name = "acid"
+	desc = "Burbling corrosive stuff. Probably a bad idea to roll around in it."
+	icon_state = "acid"
+	icon = 'icons/mob/alien.dmi'
+
+	density = 0
+	opacity = 0
+	anchored = 1
+
+	var/atom/target
+	var/acid_strength = ACID_WEAK
+	var/melt_time = 10 SECONDS
+	var/last_melt = 0
+
+/obj/effect/acid/New(loc, supplied_target)
+	..(loc)
+	target = supplied_target
+	melt_time = melt_time / acid_strength
+	START_PROCESSING(SSprocessing, src)
+
+/obj/effect/acid/Destroy()
+	STOP_PROCESSING(SSprocessing, src)
+	target = null
+	. = ..()
+
+/obj/effect/acid/Process()
+	if(QDELETED(target))
+		qdel(src)
+	else if(world.time > last_melt + melt_time)
+		var/done_melt = target.acid_melt()
+		last_melt = world.time
+		if(done_melt)
+			qdel(src)
+
+/atom/var/acid_melted = 0
+
+/atom/proc/acid_melt()
+	. = FALSE
+	switch(acid_melted)
+		if(0)
+			visible_message("<span class='euclid'>Acid hits \the [src] with a sizzle!</span>")
+		if(1 to 3)
+			visible_message("<span class='euclid'>The acid melts \the [src]!</span>")
+		if(4)
+			visible_message("<span class='euclid'>The acid melts \the [src] away into nothing!</span>")
+			. = TRUE
+			qdel(src)
+	acid_melted++

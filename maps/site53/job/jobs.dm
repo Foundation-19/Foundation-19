@@ -258,7 +258,7 @@
 
 
 /datum/job/ltofficerlcz
-	//has_email = TRUE
+
 	title = "LCZ Zone Commander"
 	department = "Light Containment Personnel"
 	department_flag = SEC
@@ -284,6 +284,7 @@
 		access_securitylvl1,
 		access_securitylvl2,
 		access_securitylvl3,
+		access_securitylvl4,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3
@@ -323,7 +324,17 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_sec_comms, access_securitylvl1, access_securitylvl2, access_securitylvl3, access_securitylvl4, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3, access_sciencelvl4)
+	access = list(
+	access_sec_comms,
+	access_securitylvl1,
+	access_securitylvl2,
+	access_securitylvl3,
+	access_securitylvl4,
+	access_sciencelvl1,
+	access_sciencelvl2,
+	access_sciencelvl3,
+	access_sciencelvl4
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -582,7 +593,7 @@
 	skill_points = 15
 
 /datum/job/enlistedofficerhcz
-	//has_email = TRUE
+
 	title = "HCZ Guard"
 	department = "Heavy Containment Personnel"
 	department_flag = SEC
@@ -621,14 +632,13 @@
 	skill_points = 15
 
 /datum/job/enlistedofficerez
-	//has_email = TRUE
+
 	title = "EZ Agent"
 	department = "Entrance Personnel"
 	department_flag = SEC
 	total_positions = 2
 	spawn_positions = 2
 	//duties = "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP."
-	//supervisors = "the Senior Agent"
 	economic_power = 4
 	minimal_player_age = 0
 	ideal_character_age = 27
@@ -669,7 +679,7 @@
 // SCIENCE
 
 /datum/job/juniorscientist
-	//has_email = TRUE
+
 	title = "Researcher Associate"
 	department = "Science"
 	department_flag = SCI
@@ -701,7 +711,7 @@
 	skill_points = 10
 
 /datum/job/scientist
-	//has_email = TRUE
+
 	title = "Researcher"
 	department = "Science"
 	department_flag = SCI
@@ -734,7 +744,7 @@
 	skill_points = 15
 
 /datum/job/seniorscientist
-	//has_email = TRUE
+
 	title = "Senior Researcher"
 	department = "Science"
 	department_flag = SCI
@@ -768,7 +778,7 @@
 	skill_points = 20
 
 /datum/job/rd
-	//has_email = TRUE
+
 	title = "Research Director"
 	//supervisors = "Facility Director and the Head of Human Resources"
 	total_positions = 1
@@ -810,7 +820,7 @@
 
 
 /datum/job/juneng
-	//has_email = TRUE
+
 	title = "Junior Engineer"
 	total_positions = 4
 	spawn_positions = 4
@@ -835,7 +845,18 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_eng_comms, access_securitylvl1, access_securitylvl2)
+	access = list(
+	access_eng_comms,
+	access_securitylvl1,
+	access_securitylvl2,
+	access_securitylvl3,
+	access_sciencelvl1,
+	access_sciencelvl2,
+	access_sciencelvl3,
+	access_engineeringlvl1,
+	access_engineeringlvl2,
+	access_engineeringlvl3
+	)
 	minimal_access = list()
 
 	max_skill = list(   SKILL_ANATOMY     = SKILL_MAX,
@@ -843,7 +864,7 @@
 	                    SKILL_SCIENCE     = SKILL_MAX)
 
 /datum/job/eng
-	//has_email = TRUE
+
 	title = "Engineer"
 	total_positions = 3
 	spawn_positions = 3
@@ -870,7 +891,18 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_eng_comms, access_securitylvl1, access_securitylvl2, access_securitylvl3)
+	access = list(
+	access_eng_comms,
+	access_securitylvl1,
+	access_securitylvl2,
+	access_securitylvl3,
+	access_sciencelvl1,
+	access_sciencelvl2,
+	access_sciencelvl3,
+	access_engineeringlvl1,
+	access_engineeringlvl2,
+	access_engineeringlvl3
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
@@ -887,7 +919,7 @@
 	                    SKILL_ENGINES      = SKILL_MAX)
 
 /datum/job/seneng
-	//has_email = TRUE
+
 	title = "Senior Engineer"
 	total_positions = 2
 	spawn_positions = 2
@@ -914,7 +946,21 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_eng_comms, access_securitylvl1, access_securitylvl2, access_securitylvl3, access_securitylvl4)
+	access = list(
+	access_eng_comms,
+	access_securitylvl1,
+	access_securitylvl2,
+	access_securitylvl3,
+	access_securitylvl4,
+	access_sciencelvl1,
+	access_sciencelvl2,
+	access_sciencelvl3,
+	access_sciencelvl4,
+	access_engineeringlvl1,
+	access_engineeringlvl2,
+	access_engineeringlvl3,
+	access_engineeringlvl4
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
@@ -931,7 +977,7 @@
 	                    SKILL_ENGINES      = SKILL_MAX)
 
 /datum/job/conteng
-	//has_email = TRUE
+
 	title = "Containment Engineer"
 	total_positions = 1
 	spawn_positions = 1
@@ -953,7 +999,21 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_eng_comms, access_securitylvl1, access_securitylvl2, access_securitylvl3, access_securitylvl4, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3, access_sciencelvl4)
+	access = list(
+	access_eng_comms,
+	access_securitylvl1,
+	access_securitylvl2,
+	access_securitylvl3,
+	access_securitylvl4,
+	access_sciencelvl1,
+	access_sciencelvl2,
+	access_sciencelvl3,
+	access_sciencelvl4,
+	access_engineeringlvl1,
+	access_engineeringlvl2,
+	access_engineeringlvl3,
+	access_engineeringlvl4
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
@@ -970,7 +1030,7 @@
 	                    SKILL_ENGINES      = SKILL_MAX)
 
 /datum/job/chief_engineer
-	//has_email = TRUE
+
 	title = "Chief Engineer"
 	//supervisors = "the Security Commander and Facility Director"
 	total_positions = 1
@@ -987,7 +1047,24 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_eng_comms, access_securitylvl1, access_securitylvl2, access_securitylvl3, access_securitylvl4, access_securitylvl4, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3, access_sciencelvl4, access_keyauth)
+	access = list(
+	access_eng_comms,
+	access_securitylvl1,
+	access_securitylvl2,
+	access_securitylvl3,
+	access_securitylvl4,
+	access_securitylvl4,
+	access_sciencelvl1,
+	access_sciencelvl2,
+	access_sciencelvl3,
+	access_sciencelvl4,
+	access_keyauth,
+	access_engineeringlvl1,
+	access_engineeringlvl2,
+	access_engineeringlvl3,
+	access_engineeringlvl4,
+	access_engineeringlvl5
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
@@ -1006,7 +1083,7 @@
 // MEDICAL JOBS.
 
 /datum/job/cmo
-	//has_email = TRUE
+
 	title = "Chief Medical Officer"
 	//supervisors = "the Security Commander"
 	economic_power = 10
@@ -1021,7 +1098,16 @@
 	/datum/mil_rank/security/o5
 	)
 
-	access = list(access_com_comms, access_med_comms,  access_medical_equip, access_keyauth)
+	access = list(access_com_comms,
+	access_med_comms,
+	access_medical_equip,
+	access_keyauth,
+	access_medicallvl1,
+	access_medicallvl2,
+	access_medicallvl3,
+	access_medicallvl4,
+	access_medicallvl5
+	)
 	minimal_access = list()
 	equip(var/mob/living/carbon/human/H)
 		..()
@@ -1038,7 +1124,7 @@
 	skill_points = 20
 
 /datum/job/chemist
-	//has_email = TRUE
+
 	title = "Chemist"
 	department = "Medical"
 	department_flag = MED
@@ -1054,7 +1140,12 @@
 	allowed_ranks = list(
 		/datum/mil_rank/security/o1)
 
-	access = list(access_med_comms, access_medical_equip)
+	access = list(
+	access_med_comms,
+	access_medical_equip,
+	access_medicallvl1,
+	access_medicallvl2
+	)
 	minimal_access = list()
 	equip(var/mob/living/carbon/human/H)
 		..()
@@ -1071,7 +1162,7 @@
 	skill_points = 10
 
 /datum/job/psychiatrist
-	//has_email = TRUE
+
 	title = "Psychiatrist"
 	department = "Medical"
 	department_flag = MED
@@ -1090,7 +1181,11 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_med_comms, access_medical_equip)
+	access = list(
+	access_med_comms,
+	access_medical_equip,
+	access_medicallvl1
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -1105,7 +1200,7 @@
 	skill_points = 10
 
 /datum/job/medicaldoctor
-	//has_email = TRUE
+
 	title = "Medical Doctor"
 	department = "Medical"
 	department_flag = MED
@@ -1115,7 +1210,6 @@
 	ideal_character_age = 40
 	minimal_player_age = 3
 	economic_power = 5
-	//supervisors = "the Chief Medical Officer"
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/medicaldoctor
 	allowed_branches = list(
 	/datum/mil_branch/security)
@@ -1125,7 +1219,13 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_med_comms,  access_medical_equip)
+	access = list(
+	access_med_comms,
+	access_medical_equip,
+	access_medicallvl1,
+	access_medicallvl2,
+	access_medicallvl3
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -1140,7 +1240,7 @@
 	skill_points = 10
 
 /datum/job/virologist
-	//has_email = TRUE
+
 	title = "Virologist"
 	department = "Medical"
 	department_flag = MED
@@ -1159,7 +1259,14 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_med_comms,  access_medical_equip)
+	access = list(
+	access_med_comms,
+	access_medical_equip,
+	access_medicallvl1,
+	access_medicallvl2,
+	access_medicallvl3,
+	access_medicallvl4
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -1174,7 +1281,7 @@
 	skill_points = 25
 
 /datum/job/surgeon
-	//has_email = TRUE
+
 	title = "Surgeon"
 	department = "Medical"
 	department_flag = MED
@@ -1193,7 +1300,17 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_med_comms, access_medicallvl1, access_medicallvl2, access_medicallvl3, access_medicallvl4, access_medicallvl5, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3)
+	access = list(
+	access_med_comms,
+	access_medicallvl1,
+	access_medicallvl2,
+	access_medicallvl3,
+	access_medicallvl4,
+	access_medicallvl5,
+	access_sciencelvl1,
+	access_sciencelvl2,
+	access_sciencelvl3
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -1208,7 +1325,7 @@
 	skill_points = 10
 
 /datum/job/emt
-	//has_email = TRUE
+
 	title = "Emergency Medical Technician"
 	department = "Medical"
 	department_flag = MED
@@ -1232,7 +1349,14 @@
 		..()
 
 
-	access = list(access_med_comms,  access_medical_equip)
+	access = list(
+	access_med_comms,
+	access_medical_equip,
+	access_medicallvl1,
+	access_medicallvl2,
+	access_medicallvl3,
+	access_medicallvl4
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -1272,7 +1396,13 @@
 
 	)
 
-	access = list(access_log_comms, access_maint_tunnels, access_emergency_storage, access_cargo
+	access = list(
+	access_log_comms,
+	access_maint_tunnels,
+	access_emergency_storage,
+	access_cargo,
+	access_adminlvl1,
+	access_adminlvl2
 	)
 	minimal_access = list()
 
@@ -1292,7 +1422,7 @@
 
 
 /datum/job/cargo_tech
-	//has_email = TRUE
+
 	title = "Logistics Specialist"
 	department = "Logistics"
 	department_flag = SUP
@@ -1315,8 +1445,14 @@
 	/datum/mil_rank/security/e6
 	)
 
-	access = list(access_log_comms, access_maint_tunnels, access_emergency_storage, access_cargo,
-		access_cargo_bot, access_mailsorting
+	access = list(
+	access_log_comms,
+	access_maint_tunnels,
+	access_emergency_storage,
+	access_cargo,
+	access_cargo_bot,
+	access_adminlvl1,
+	access_mailsorting
 	)
 	minimal_access = list()
 
@@ -1338,7 +1474,7 @@
 // MISC JOBS
 
 /datum/job/janitor
-	//has_email = TRUE
+
 	title = "Janitor"
 	department = "Civilian"
 	department_flag = CIV
@@ -1363,7 +1499,7 @@
 	min_skill = list(   SKILL_HAULING = SKILL_BASIC)
 
 /datum/job/chef
-	//has_email = TRUE
+
 	title = "Chef"
 	department = "Civilian"
 	department_flag = CIV
@@ -1391,7 +1527,7 @@
 
 
 /datum/job/bartender
-	//has_email = TRUE
+
 	title = "Bartender"
 	department = "Civilian"
 	department_flag = CIV
@@ -1424,7 +1560,7 @@
 
 
 /datum/job/archivist
-	//has_email = TRUE
+
 	title = "Archivist"
 	department = "Civilian"
 	department_flag = CIV
@@ -1456,7 +1592,7 @@
 	minimal_access = list()
 
 /datum/job/o5rep
-	//has_email = TRUE
+
 	title = "O5 Representative"
 	department = "Civilian"
 	department_flag = COM
