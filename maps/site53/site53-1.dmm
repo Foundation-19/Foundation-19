@@ -28,7 +28,7 @@
 "aB" = (/obj/machinery/camera/network/lcz,/turf/simulated/floor/tiled/monotile/white,/area/site53/llcz/dclass/checkequip{name = "\improper Primary Checkpoint Cryo"})
 "aC" = (/obj/effect/paint_stripe/yellow,/turf/simulated/wall/titanium,/area/site53/llcz/hallways)
 "aD" = (/obj/effect/paint_stripe/yellow,/turf/simulated/wall/titanium,/area/site53/llcz/dclass/prep)
-"aE" = (/obj/structure/table/standard,/obj/structure/table/standard,/obj/item/paper_bin,/obj/item/pen,/turf/simulated/floor/wood/walnut,/area/site53/lowertram/archive)
+"aE" = (/obj/structure/table/standard,/obj/item/paper_bin,/obj/item/pen,/turf/simulated/floor/wood/walnut,/area/site53/lowertram/archive)
 "aF" = (/obj/structure/table/reinforced,/obj/item/card/id/dmining,/obj/item/card/id/dmining,/obj/item/card/id/dmining,/obj/item/card/id/dmining,/obj/item/card/id/dmining,/turf/simulated/floor/tiled/monotile,/area/site53/llcz/dclass/assignmentbubble)
 "aG" = (/obj/machinery/button/alternate/door/bolts{pixel_y = 23; id_tag = "106cycle"; name = "Chamberlock Door Cycle button"; req_access = list(list(203,304))},/obj/effect/floor_decal/industrial/warning/fulltile,/turf/simulated/floor/tiled/techmaint,/area/site53/lhcz/hallway)
 "aH" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/structure/bed/chair/comfy/brown{icon_state = "comfychair_preview"; dir = 8},/turf/simulated/floor/wood/walnut,/area/site53/lowertram/archive)

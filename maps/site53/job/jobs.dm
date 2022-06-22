@@ -126,6 +126,7 @@
 		access_adminlvl2,
 		access_adminlvl1,
 		access_engineeringlvl1,
+		access_securitylvl1,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3
@@ -285,6 +286,7 @@
 		access_securitylvl2,
 		access_securitylvl3,
 		access_securitylvl4,
+		access_adminlvl1,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3
@@ -330,6 +332,7 @@
 	access_securitylvl2,
 	access_securitylvl3,
 	access_securitylvl4,
+	access_adminlvl1,
 	access_sciencelvl1,
 	access_sciencelvl2,
 	access_sciencelvl3,
@@ -1587,7 +1590,11 @@
 	access_civ_comms,
 	access_adminlvl1,
 	access_adminlvl2,
-	access_adminlvl3
+	access_adminlvl3,
+	access_sciencelvl1,
+	access_sciencelvl2,
+	access_sciencelvl3,
+	access_sciencelvl4
 	)
 	minimal_access = list()
 
