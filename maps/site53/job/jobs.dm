@@ -51,13 +51,13 @@
 		..()
 
 	access = list(
-	access_com_comms, // SD and HoP do not want to hear all the details, either meet your Commander in person or talk to the Tower
-	access_adminlvl5,
-	access_adminlvl4,
-	access_adminlvl3,
-	access_adminlvl2,
-	access_adminlvl1,
-	access_keyauth
+		access_com_comms, // SD and HoP do not want to hear all the details, either meet your Commander in person or talk to the Tower
+		access_adminlvl5,
+		access_adminlvl4,
+		access_adminlvl3,
+		access_adminlvl2,
+		access_adminlvl1,
+		access_keyauth
 	)
 	minimal_access = list()
 
@@ -327,16 +327,16 @@
 		..()
 
 	access = list(
-	access_sec_comms,
-	access_securitylvl1,
-	access_securitylvl2,
-	access_securitylvl3,
-	access_securitylvl4,
-	access_adminlvl1,
-	access_sciencelvl1,
-	access_sciencelvl2,
-	access_sciencelvl3,
-	access_sciencelvl4
+		access_sec_comms,
+		access_securitylvl1,
+		access_securitylvl2,
+		access_securitylvl3,
+		access_securitylvl4,
+		access_adminlvl1,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3,
+		access_sciencelvl4
 	)
 	minimal_access = list()
 
@@ -766,7 +766,13 @@
 		..()
 
 
-	access = list(access_sci_comms, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3, access_sciencelvl4)
+	access = list(
+		access_sci_comms,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3,
+		access_sciencelvl4
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -804,6 +810,7 @@
 		access_sciencelvl3,
 		access_sciencelvl2,
 		access_sciencelvl1,
+		access_adminlvl1,
 		access_keyauth
 	)
 	minimal_access = list()
@@ -849,16 +856,16 @@
 		..()
 
 	access = list(
-	access_eng_comms,
-	access_securitylvl1,
-	access_securitylvl2,
-	access_securitylvl3,
-	access_sciencelvl1,
-	access_sciencelvl2,
-	access_sciencelvl3,
-	access_engineeringlvl1,
-	access_engineeringlvl2,
-	access_engineeringlvl3
+		access_eng_comms,
+		access_securitylvl1,
+		access_securitylvl2,
+		access_securitylvl3,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3
 	)
 	minimal_access = list()
 
@@ -897,8 +904,6 @@
 	access = list(
 	access_eng_comms,
 	access_securitylvl1,
-	access_securitylvl2,
-	access_securitylvl3,
 	access_sciencelvl1,
 	access_sciencelvl2,
 	access_sciencelvl3,
@@ -952,9 +957,6 @@
 	access = list(
 	access_eng_comms,
 	access_securitylvl1,
-	access_securitylvl2,
-	access_securitylvl3,
-	access_securitylvl4,
 	access_sciencelvl1,
 	access_sciencelvl2,
 	access_sciencelvl3,
@@ -1003,19 +1005,19 @@
 		..()
 
 	access = list(
-	access_eng_comms,
-	access_securitylvl1,
-	access_securitylvl2,
-	access_securitylvl3,
-	access_securitylvl4,
-	access_sciencelvl1,
-	access_sciencelvl2,
-	access_sciencelvl3,
-	access_sciencelvl4,
-	access_engineeringlvl1,
-	access_engineeringlvl2,
-	access_engineeringlvl3,
-	access_engineeringlvl4
+		access_eng_comms,
+		access_securitylvl1,
+		access_securitylvl2,
+		access_securitylvl3,
+		access_securitylvl4,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3,
+		access_sciencelvl4,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3,
+		access_engineeringlvl4
 	)
 	minimal_access = list()
 
@@ -1062,6 +1064,7 @@
 	access_sciencelvl3,
 	access_sciencelvl4,
 	access_keyauth,
+	access_adminlvl1,
 	access_engineeringlvl1,
 	access_engineeringlvl2,
 	access_engineeringlvl3,
@@ -1109,7 +1112,8 @@
 	access_medicallvl2,
 	access_medicallvl3,
 	access_medicallvl4,
-	access_medicallvl5
+	access_medicallvl5,
+	access_adminlvl1
 	)
 	minimal_access = list()
 	equip(var/mob/living/carbon/human/H)
@@ -1227,7 +1231,9 @@
 	access_medical_equip,
 	access_medicallvl1,
 	access_medicallvl2,
-	access_medicallvl3
+	access_medicallvl3,
+	access_securitylvl1,
+	access_sciencelvl1
 	)
 	minimal_access = list()
 
@@ -1263,12 +1269,12 @@
 		..()
 
 	access = list(
-	access_med_comms,
-	access_medical_equip,
-	access_medicallvl1,
-	access_medicallvl2,
-	access_medicallvl3,
-	access_medicallvl4
+		access_med_comms,
+		access_medical_equip,
+		access_medicallvl1,
+		access_medicallvl2,
+		access_medicallvl3,
+		access_medicallvl4
 	)
 	minimal_access = list()
 
@@ -1304,15 +1310,15 @@
 		..()
 
 	access = list(
-	access_med_comms,
-	access_medicallvl1,
-	access_medicallvl2,
-	access_medicallvl3,
-	access_medicallvl4,
-	access_medicallvl5,
-	access_sciencelvl1,
-	access_sciencelvl2,
-	access_sciencelvl3
+		access_med_comms,
+		access_medicallvl1,
+		access_medicallvl2,
+		access_medicallvl3,
+		access_medicallvl4,
+		access_medicallvl5,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3
 	)
 	minimal_access = list()
 
@@ -1350,15 +1356,15 @@
 		)
 	equip(var/mob/living/carbon/human/H)
 		..()
-
-
 	access = list(
 	access_med_comms,
 	access_medical_equip,
+	access_securitylvl1,
+	access_sciencelvl1,
+	access_engineeringlvl1,
+	access_adminlvl1,
 	access_medicallvl1,
-	access_medicallvl2,
-	access_medicallvl3,
-	access_medicallvl4
+	access_medicallvl2
 	)
 	minimal_access = list()
 
