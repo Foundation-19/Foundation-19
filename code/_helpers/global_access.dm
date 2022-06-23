@@ -1,6 +1,8 @@
 // THIS FILE IS AUTOMATICALLY CREATED BY tools/gen_globals.py
 /proc/readglobal(which)
 	switch(which)
+		if("floating_chat_colors")
+			return global.floating_chat_colors;
 		if("ANTAG_FREQS")
 			return global.ANTAG_FREQS;
 		if("AWAY_FREQS_ASSIGNED")
@@ -875,9 +877,11 @@
 			return global.z_levels;
 		if("zone_blocked")
 			return global.zone_blocked;
-		
+
 /proc/writeglobal(which, newval)
 	switch(which)
+		if("floating_chat_colors")
+			global.floating_chat_colors=newval;
 		if("ANTAG_FREQS")
 			global.ANTAG_FREQS=newval;
 		if("AWAY_FREQS_ASSIGNED")
@@ -1752,7 +1756,7 @@
 			global.z_levels=newval;
 		if("zone_blocked")
 			global.zone_blocked=newval;
-		
+
 /var/list/_all_globals=list(
 	"ANTAG_FREQS",
 	"AWAY_FREQS_ASSIGNED",
@@ -1972,6 +1976,7 @@
 	"follow_repository",
 	"forced_ambiance_list",
 	"fruit_icon_cache",
+	"floating_chat_colors",
 	"fusion_reactions",
 	"game_id",
 	"gas_data",

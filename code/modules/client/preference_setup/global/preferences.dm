@@ -248,6 +248,11 @@ var/list/_client_preferences_by_type
 	description = "Use Goon Chat"
 	key = "USE_GOONCHAT"
 
+/datum/client_preference/floating_messages
+	description ="Floating chat messages"
+	key = "FLOATING_CHAT"
+	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
+
 /datum/client_preference/goonchat/changed(var/mob/preference_mob, var/new_value)
 	if(preference_mob && preference_mob.client)
 		var/client/C = preference_mob.client
