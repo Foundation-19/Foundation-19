@@ -32,7 +32,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	..()
 	GLOB.scp173s += src
 	verbs += /mob/living/carbon/human/proc/door_open
-//	verbs += /mob/living/carbon/human/proc/corrosive_acid
+	verbs += /mob/living/carbon/human/proc/corrosive_acid
 	add_language(LANGUAGE_EAL, 1)
 	add_language(LANGUAGE_SKRELLIAN, 1)
 	add_language(LANGUAGE_GUTTER, 1)
@@ -76,7 +76,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 
 
-//	new /obj/effect/acid(get_turf(O), O)
+	new /obj/effect/acid(get_turf(O), O)
 	visible_message("<span class='euclid'><B>[src] vomits globs of vile stuff all over [O]. It begins to sizzle and melt under the bubbling mess of acid!</B></span>")
 
 	return
@@ -292,7 +292,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/melt_time = 10 SECONDS
 	var/last_melt = 0
 
-/obj/effect/acid/New(loc, supplied_target)
+/obj/effect/acid/Initialize(loc, supplied_target)
 	..(loc)
 	target = supplied_target
 	melt_time = melt_time / acid_strength

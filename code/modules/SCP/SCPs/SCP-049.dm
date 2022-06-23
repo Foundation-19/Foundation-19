@@ -74,10 +74,9 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	..()
 	if(prob(50) && !contained)
 		addtimer(CALLBACK(src, .proc/see_disease), 5 SECONDS) //only occasionally see the disease, less deadly. TODO: containment mechanics
-	if(!angry)
-		anger+5+world.time
-	if(anger = 100)
+	if(anger=100)
 		angry = TRUE
+
 
 #warn work on anger system
 
@@ -107,6 +106,8 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 			if(H.pestilence)
 				pestilence_images += image('icons/mob/scp049.dmi', H, "pestilence", MOB_LAYER+0.01)
 		client.images |= pestilence_images
+		if(!angry)
+			anger += 5
 
 
 /mob/living/carbon/human/scp049/proc/Attack_Voice_Line() //for when we're up to no good!
