@@ -1,5 +1,5 @@
 //Human
-#define LANGUAGE_HUMAN_EURO      "Zurich Accord Common"
+#define LANGUAGE_HUMAN_EURO      "German"
 #define LANGUAGE_HUMAN_CHINESE   "Mandarin"
 #define LANGUAGE_HUMAN_ARABIC    "Arabic"
 #define LANGUAGE_HUMAN_INDIAN    "Hindustani"
