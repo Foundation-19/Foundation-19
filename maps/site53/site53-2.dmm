@@ -275,7 +275,7 @@
 "afo" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/effect/floor_decal/corner/yellow{dir = 9},/obj/effect/floor_decal/corner/yellow{icon_state = "corner_white"; dir = 10},/obj/machinery/computer/fusion/core_control{dir = 4; id_tag = "fusion_core2"; initial_id_tag = "fusion_core2"},/turf/simulated/floor/tiled/dark,/area/vacant/prototype/control)
 "afp" = (/obj/effect/catwalk_plated/white,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor,/area/site53/ulcz/hallways)
 "afq" = (/obj/machinery/robotics_fabricator,/turf/simulated/floor/tiled/monotile,/area/site53/reswing/robotics)
-"afr" = (/obj/machinery/power/fusion_core/mapped{id_tag = "fusion_core2"; initial_id_tag = "fusion_core2"},/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/turf/simulated/floor/reinforced/airless,/area/vacant/prototype/engine)
+"afr" = (/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/obj/machinery/power/fusion_core/mapped{initial_id_tag = "fusion_core2"},/turf/simulated/floor/reinforced/airless,/area/vacant/prototype/engine)
 "afs" = (/obj/machinery/door/airlock/research{name = "Surgical Theatre"; req_access = list(303)},/turf/simulated/floor/tiled/monotile,/area/site53/reswing/robotics)
 "aft" = (/obj/item/device/radio,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/structure/table/standard,/turf/simulated/floor/tiled/monotile,/area/site53/engineering/storage)
 "afu" = (/obj/machinery/light,/obj/effect/floor_decal/corner/brown/mono,/turf/simulated/floor/tiled/monotile,/area/site53/lowertrams/brownline)
