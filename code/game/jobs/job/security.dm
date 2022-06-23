@@ -247,7 +247,13 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_securitylvl1, access_securitylvl2, access_sciencelvl1, access_sciencelvl2)
+	access = list(
+		access_sec_comms,
+		access_securitylvl1,
+		access_securitylvl2,
+		access_sciencelvl1,
+		access_sciencelvl2
+	)
 	minimal_access = list()
 
 /datum/job/enlistedofficerlcz
@@ -275,5 +281,8 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_securitylvl1, access_sciencelvl1)
+	access = list(
+		access_securitylvl1,
+		access_sciencelvl1
+	)
 	minimal_access = list()
