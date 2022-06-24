@@ -64,7 +64,7 @@
 
 /obj/item/gun/projectile/automatic/scp/ak47
 	name = "AK-47"
-	desc = "The most produced rifle in the world, used in almost every conflict since 1946."
+	desc = "The MOST produced rifle in the world. Used in almost every conflict since 1950."
 	icon_state = "ak47"
 	item_state = "ak47"
 	w_class = ITEM_SIZE_HUGE
@@ -82,7 +82,7 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,0,-1), dispersion=list(0.1, 0.6, 1.0)),
 		)
 
-/obj/item/gun/projectile/automatic/scp/ak74/update_icon()
+/obj/item/gun/projectile/automatic/scp/ak47/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "ak47"
