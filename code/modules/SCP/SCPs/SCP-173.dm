@@ -79,7 +79,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 	new /obj/effect/acid(get_turf(O), O)
 	visible_message("<span class='euclid'><B>[src] vomits globs of vile stuff all over [O]. It begins to sizzle and melt under the bubbling mess of acid!</B></span>")
 	command_announcement.Announce("SCP-173 Containment suffering from acidic degradation.... 60 Seconds until Breach")
-	set hidden = 1
 	return
 
 /mob/living/carbon/human/proc/door_open(obj/machinery/door/A in filter_list(oview(1), /obj/machinery/door))
