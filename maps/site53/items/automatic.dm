@@ -62,7 +62,35 @@
 		icon_state = "m16-empty"
 	return
 
-/obj/item/gun/projectile/automatic/scp/donor/ak74
+/obj/item/gun/projectile/automatic/scp/ak47
+	name = "AK-47"
+	desc = "The most produced rifle in the world, used in almost every conflict since 1946."
+	icon_state = "ak47"
+	item_state = "ak47"
+	w_class = ITEM_SIZE_HUGE
+	force = 10
+	slot_flags = SLOT_BACK
+	caliber = "a762"
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 1, TECH_ILLEGAL = 4)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/scp/ak
+	allowed_magazines = /obj/item/ammo_magazine/scp/ak
+
+	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,0,-1), dispersion=list(0.1, 0.6, 1.0)),
+		)
+
+/obj/item/gun/projectile/automatic/scp/ak74/update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "ak47"
+	else
+		icon_state = "ak47-empty"
+	return
+
+/obj/item/gun/projectile/automatic/scp/ak74
 	name = "AK-103"
 	desc = "A 7.62х39mm modernized variant of the original AK-47, exported from Russia."
 	icon_state = "ak74"
@@ -82,7 +110,7 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0)),
 		)
 
-/obj/item/gun/projectile/automatic/scp/donor/ak74/update_icon()
+/obj/item/gun/projectile/automatic/scp/ak74/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "ak74"
@@ -90,7 +118,7 @@
 		icon_state = "ak74-empty"
 	return
 
-/obj/item/gun/projectile/automatic/scp/donor/ak742
+/obj/item/gun/projectile/automatic/scp/ak742
 	name = "AK-19"
 	desc = "A 7.62х39mm modernized variant of the original AK-47, exported from Russia. This one has a front grip and updated internals to fire quite a bit faster than it's brother."
 	icon_state = "ak742"
@@ -110,7 +138,7 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0)),
 		)
 
-/obj/item/gun/projectile/automatic/scp/donor/ak742/update_icon()
+/obj/item/gun/projectile/automatic/scp/ak742/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "ak742"
@@ -118,7 +146,7 @@
 		icon_state = "ak742-empty"
 	return
 
-/obj/item/gun/projectile/automatic/scp/donor/ierichon
+/obj/item/gun/projectile/automatic/scp/ierichon
 	name = "Jericho-114 Pistol "
 	desc = "A strange Brazillian export pistol sporting automatic fire and a lightweight .45 caliber frame."
 	icon_state = "ierichon"
@@ -137,7 +165,7 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=1, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
 		)
 
-/obj/item/gun/projectile/automatic/scp/donor/ierichon/update_icon()
+/obj/item/gun/projectile/automatic/scp/ierichon/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "ierichon"

@@ -589,7 +589,7 @@
 	gloves = /obj/item/clothing/gloves/thick/combat
 	shoes = /obj/item/clothing/shoes/combat
 	id_types = null
-	suit_store = /obj/item/gun/projectile/automatic/scp/donor/ak74
+	suit_store = /obj/item/gun/projectile/automatic/scp/ak74
 	r_hand = null
 	l_hand = /obj/item/material/hatchet/tacknife
 	l_pocket = /obj/item/grenade/frag
@@ -648,7 +648,7 @@
 //	glasses = /obj/item/clothing/glasses/thermal/plain/augmented
 	shoes = /obj/item/clothing/shoes/combat
 	id_types = null
-	suit_store = /obj/item/gun/projectile/automatic/scp/donor/ak742
+	suit_store = /obj/item/gun/projectile/automatic/scp/ak742
 	r_hand = null
 	l_hand = /obj/item/material/hatchet/tacknife
 	l_pocket = /obj/item/grenade/frag
