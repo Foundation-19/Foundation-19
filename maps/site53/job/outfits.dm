@@ -122,7 +122,7 @@
 	name = OUTFIT_JOB_NAME("LCZ Guard")
 	uniform = /obj/item/clothing/under/scp/lczwhiteuniform
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_types = list(/obj/item/card/id/seclvl3)
+	id_types = list(/obj/item/card/id/seclvl2lcz)
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
 	l_pocket = /obj/item/book/manual/scp/secsop
 	back = null
@@ -159,7 +159,7 @@
 	name = OUTFIT_JOB_NAME("LCZ Junior Guard")
 	uniform = /obj/item/clothing/under/lczwhitejunioruniform
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_types = list(/obj/item/card/id/seclvl3)
+	id_types = list(/obj/item/card/id/junseclvl1)
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
 	l_pocket = /obj/item/book/manual/scp/secsop
 	back = null

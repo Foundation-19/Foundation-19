@@ -216,7 +216,7 @@
 	desc = "A light blue card. Seems almost as unimportant as the person itself."
 	icon_state = "securitylvl1"
 	item_state = "Sec_ID1"
-//	job_access_type = /datum/job/enlistedofficer
+	job_access_type = /datum/job/enlistedofficerlcz
 
 /obj/item/card/id/seclvl2
 	name = " security ID"
