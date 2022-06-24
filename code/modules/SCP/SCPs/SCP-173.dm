@@ -32,7 +32,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	..()
 	GLOB.scp173s += src
 	verbs += /mob/living/carbon/human/proc/door_open
-	verbs += /mob/living/carbon/human/proc/corrosive_acid
+//	verbs += /mob/living/carbon/human/proc/corrosive_acid
 	add_language(LANGUAGE_EAL, 1)
 	add_language(LANGUAGE_SKRELLIAN, 1)
 	add_language(LANGUAGE_GUTTER, 1)
