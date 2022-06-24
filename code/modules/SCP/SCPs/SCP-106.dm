@@ -393,7 +393,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	anchored = TRUE
 	buckle_lying = 1
 	var/spent_mobs = list()
-	var/frequency = "femurbreaker"
+	var/id = 2
 
 /obj/structure/femur_breaker/Initialize()
 	. = ..()
@@ -412,7 +412,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 			to_chat(user, "It is already in use.")
 		else if (target && user && ishuman(target))
 			visible_message("<span class = 'warning'>[user] starts to put [target] onto the femur breaker...</span>")
-			if (buckle_mob(user, target, 3 SECONDS))
+			if (do_after(user, target, 3 SECONDS))
 				visible_message("<span class = 'danger'>[user] puts [target] onto the femur breaker.</span>")
 				var/mob/living/carbon/human/H = target
 				H.forceMove(get_turf(src))
@@ -439,6 +439,11 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 
 		buckled_mob.anchored = FALSE
 		buckled_mob = null
+
+/decl/public_access/public_method/femurbreaker
+	name = "spark"
+	desc = "Creates sparks to ignite nearby gases."
+	call_proc = /obj/structure/femur_breaker/proc/activate
 
 /obj/structure/femur_breaker/proc/activate()
 	set waitfor = FALSE
@@ -483,9 +488,13 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 /obj/machinery/button/femur_breaker
 	name = "Femur Breaker Button"
 	icon = 'icons/obj/objects.dmi'
-//	frequency = "femurbreaker"
-//	sleep_time = 90 SECONDS
+	id_tag = 2
+
 
 /obj/machinery/button/femur_breaker/Initialize()
 	. = ..()
 
+/obj/machinery/button/femur_breaker/activate(mob/user)
+	for(var/obj/structure/femur_breaker/C in range())
+		if (C.id == id_tag)
+			C.activate(user)

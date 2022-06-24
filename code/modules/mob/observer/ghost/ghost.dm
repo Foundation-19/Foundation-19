@@ -571,25 +571,25 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if (world.time - timeofdeath >= 10 MINUTES)
 
 		var/list/scps = list()
-
+/*
 		// no whitelist required
 		for (var/scp106 in GLOB.scp106s)
 			var/mob/M = scp106
 			if (!M.client)
 				scps += M
-
+*/
 		// whitelist required
 		for (var/scp049 in GLOB.scp049s)
 			var/mob/M = scp049
 			if (!M.client)
 				scps += M
-
+/*
 		// no whitelist required
 		for (var/scp173 in GLOB.scp173s)
 			var/mob/M = scp173
 			if (!M.client)
 				scps += M
-
+*/
 		// add new humanoid SCPs here or they won't be playable - Kachnov
 		if (scps.len)
 			var/mob/living/scp = input(src, "Which Euclid/Keter SCP do you want to take control of?") as null|anything in scps
@@ -649,4 +649,4 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			to_chat(src, "<span class='warning'>Someone has already taken control of this SCP.</span>")
 	else
 		to_chat(src, "<span class='warning'>All playable Safe SCPs are currently being played.</span>")
-#warning Clean this section up
+#warnClean this section up

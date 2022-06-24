@@ -60,6 +60,9 @@ em						{font-style: normal;font-weight: bold;}
 .expradio				{color: #929820;}
 .seciradio				{color: #935050;}
 .mediradio				{color: #509190;}
+.hczradio				{color: #935050;}
+.lczradio				{color: #935050;}
+.eczradio				{color: #935050;}
 
 .hailradio				{color: #cc00aa;}
 .exampleradio			{color: #ff00ff;}

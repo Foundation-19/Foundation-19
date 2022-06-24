@@ -92,6 +92,15 @@
 	name = CULTURE_HUMAN_EARTH
 	description = "You are from Earth, home of humanity. As of currently no other planets are inhabited by humans, what did you expect?"
 	economic_power = 1.1
+	secondary_langs = list(
+		LANGUAGE_HUMAN_ARABIC,
+		LANGUAGE_HUMAN_CHINESE,
+		LANGUAGE_HUMAN_IBERIAN,
+		LANGUAGE_HUMAN_INDIAN,
+		LANGUAGE_HUMAN_RUSSIAN,
+		LANGUAGE_SIGN,
+		LANGUAGE_ENGLISH
+	)
 
 /decl/cultural_info/culture/human/ceti
 	name = CULTURE_HUMAN_CETI

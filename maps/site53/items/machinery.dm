@@ -13,7 +13,7 @@
  	"receiverA", "broadcasterA")
 
 /obj/machinery/telecomms/receiver/preset_right
-	freq_listening = list(AI_FREQ, SCI_FREQ, MED_FREQ, SUP_FREQ, SRV_FREQ, COMM_FREQ, ENG_FREQ, SEC_FREQ, ENT_FREQ, EXP_FREQ)
+	freq_listening = list(AI_FREQ, SCI_FREQ, MED_FREQ, SUP_FREQ, SRV_FREQ, COMM_FREQ, ENG_FREQ, ENT_FREQ, EXP_FREQ, SEC_ECZ_FREQ, SEC_FREQ, SEC_HCZ_FREQ, SEC_LCZ_FREQ)
 
 /obj/machinery/telecomms/bus/preset_two
 	freq_listening = list(SUP_FREQ, SRV_FREQ, EXP_FREQ)

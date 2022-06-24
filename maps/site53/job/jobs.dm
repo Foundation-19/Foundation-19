@@ -1,3 +1,8 @@
+/////////////
+//READ THIS//
+/////////////
+// WARNING: DO NOT ADD INTEGER VALUES ABOVE 20 FOR ANY STAT OR SKILL OTHER THAN INTELLIGENCE, MEDICAL AND ENGINEERING. - LION
+
 /datum/map/site_ds90
 /datum/map/site_ds90/setup_map()
 
@@ -48,11 +53,11 @@
 	access = list(
 		access_com_comms, // SD and HoP do not want to hear all the details, either meet your Commander in person or talk to the Tower
 		access_sci_comms,
-		access_adminlvl5,
-		access_adminlvl4,
-		access_adminlvl3,
-		access_adminlvl2,
 		access_adminlvl1,
+		access_adminlvl2,
+		access_adminlvl3,
+		access_adminlvl4,
+		access_adminlvl5,
 		access_keyauth
 	)
 	minimal_access = list()
@@ -112,10 +117,6 @@
 	access = list(
 		access_sciencelvl1,
 		access_sciencelvl3,
-		access_adminlvl1,
-		access_adminlvl2,
-		access_adminlvl3,
-		access_adminlvl4,
 		access_com_comms,
 		access_sci_comms,
 		access_civ_comms,
@@ -123,7 +124,16 @@
 		access_med_comms,
 		access_eng_comms,
 		access_sec_comms,
-		access_keyauth
+		access_adminlvl4,
+		access_adminlvl3,
+		access_adminlvl2,
+		access_adminlvl1,
+		access_engineeringlvl1,
+		access_securitylvl1,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3
+>>>>>>> main
 	)
 	minimal_access = list()
 
@@ -193,71 +203,6 @@
 ## END OF GENERIC COMMAND ##
 */
 
-// CELLS
-/* CANDIDATE FOR REMOVAL
-/datum/job/cellguardlieutenant
-	//has_email = TRUE
-	title = "Cell Warden"
-	department = "Security"
-	department_flag = SEC
-	total_positions = 1
-	spawn_positions = 1
-	//supervisors = "the Security Commander"
-	economic_power = 4
-	alt_titles = null
-	//duties = "<big><b>As the Cell Warden, it is your job to coordinate the cell guards, prevent riots and breakouts. <br>It's also important to note that if you're an asshole or intentionally trying to be one, Class D's are more likely to riot.<br> If a Class D is requested for testing it is not your, or the Cell Guard's job to deliver them to the tests. Hand them over to one of the zone guards, instead.</span>"
-	minimal_player_age = 7
-	ideal_character_age = 30
-	alt_titles = null
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/cellguardlieutenant
-
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/o1,
-		/datum/mil_rank/security/o2
-	)
-
-
-	access = list(access_securitylvl1, access_securitylvl2, access_securitylvl3, access_securitylvl4, access_dclassjanitorial, access_dclassmining, access_dclasskitchen, access_dclassbotany)
-	minimal_access = list()
-	equip(var/mob/living/carbon/human/H)
-		..()
-		H.add_stats(rand(12,15), rand(10), rand(15,20)) // Str, Dex, Int.
-		H.add_skills(rand(70,90), rand(70,90), rand(15,30), rand(5,10)) // Melee, Ranged, Medical, Engineering.
-
-
-/datum/job/brigofficer
-	//has_email = TRUE
-	title = "Cell Guard"
-	department = "Security"
-	department_flag = SEC
-	total_positions = 7
-	spawn_positions = 7
-	//supervisors = "the Cell Warden"
-	//duties = "<big><b>As the Cell Guard, it is your job to prevent riots and breakouts. <br>It's also important to note that if you're an asshole or intentionally trying to be one, Class D's are more likely to riot.<br> If a Class D is requested for testing it is not your, or the Cell Guard's job to deliver them to the tests. Hand them over to one of the zone guards, instead.</span>"
-	economic_power = 4
-	alt_titles = null
-	minimal_player_age = 5
-	ideal_character_age = 23
-	alt_titles = null
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/brigofficer
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-	/datum/mil_rank/security/e7,
-	/datum/mil_rank/security/e8
-
-	)
-	equip(var/mob/living/carbon/human/H)
-		..()
-		H.add_stats(rand(11,15), rand(10), rand(15,20)) // Str, Dex, Int.
-		H.add_skills(rand(60,80), rand(60,80), rand(15,30), rand(5,10)) // Melee, Ranged, Medical, Engineering.
-	access = list(access_securitylvl1, access_securitylvl2, access_dclassjanitorial, access_dclassmining, access_dclasskitchen, access_dclassbotany)
-	minimal_access = list()
-*/
 // SECURITY
 /datum/job/hos
 	title = "Guard Commander"
@@ -287,6 +232,10 @@
 		access_securitylvl3,
 		access_securitylvl4,
 		access_securitylvl5,
+		access_adminlvl1,
+		access_adminlvl2,
+		access_adminlvl3,
+		access_adminlvl4,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,
@@ -314,6 +263,7 @@
 
 
 /datum/job/ltofficerlcz
+
 	title = "LCZ Zone Commander"
 	department = "Light Containment Personnel"
 	department_flag = SEC
@@ -339,6 +289,8 @@
 		access_securitylvl1,
 		access_securitylvl2,
 		access_securitylvl3,
+		access_securitylvl4,
+		access_adminlvl1,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3
@@ -384,6 +336,7 @@
 		access_securitylvl2,
 		access_securitylvl3,
 		access_securitylvl4,
+		access_adminlvl1,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,
@@ -404,7 +357,7 @@
 	skill_points = 20
 
 /datum/job/ltofficerez
-	title = "EZ Senior Agent"
+	title = "EZ Supervisor"
 	department = "Entrance Personnel"
 	department_flag = SEC
 	total_positions = 1
@@ -434,7 +387,12 @@
 		access_adminlvl2,
 		access_adminlvl3,
 		access_adminlvl4,
-		access_sciencelvl1
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_medicallvl1,
+		access_medicallvl2
 	)
 	minimal_access = list()
 
@@ -456,7 +414,7 @@
 
 /datum/job/ncoofficerlcz
 
-	title = "LCZ Guard"
+	title = "LCZ Sergeant"
 	department = "Light Containment Personnel"
 	department_flag = SEC
 	total_positions = 4
@@ -484,7 +442,11 @@
 		access_securitylvl1,
 		access_securitylvl2,
 		access_sciencelvl1,
-		access_sciencelvl2
+		access_sciencelvl2,
+		access_dclasskitchen,
+		access_dclassbotany,
+		access_dclassmining,
+		access_dclassjanitorial
 	)
 	minimal_access = list()
 
@@ -501,7 +463,7 @@
 	skill_points = 20
 
 /datum/job/ncoofficerhcz
-	title = "HCZ Guard"
+	title = "HCZ Sergeant"
 	department = "Heavy Containment Personnel"
 	department_flag = SEC
 	total_positions = 3
@@ -547,7 +509,7 @@
 	skill_points = 20
 
 /datum/job/ncoofficerez
-	title = "EZ Agent"
+	title = "EZ Senior Agent"
 	department = "Entrance Zone Personnel"
 	department_flag = SEC
 	total_positions = 2
@@ -569,8 +531,10 @@
 		..()
 
 	access = list(
-		access_sciencelvl1,
 		access_sec_comms,
+		access_sciencelvl1,
+		access_medicallvl1,
+		access_engineeringlvl1,
 		access_securitylvl1,
 		access_securitylvl2,
 		access_securitylvl3,
@@ -596,14 +560,15 @@
 //##
 
 /datum/job/enlistedofficerlcz
-	title = "LCZ Junior Guard"
+
+	title = "LCZ Guard"
 	department = "Light Containment Personnel"
 	department_flag = SEC
 	total_positions = 10
 	spawn_positions = 10
 	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
-	//supervisors = "the Guard/Zone Commander"
 	economic_power = 4
+//	minimal_player_age = 0
 	ideal_character_age = 25
 	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerlcz
@@ -617,12 +582,16 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
- 	access = list(
+	access = list(
 		access_sec_comms,
 		access_securitylvl1,
 		access_securitylvl2,
 		access_sciencelvl1,
-		access_sciencelvl2
+		access_sciencelvl2,
+		access_dclasskitchen,
+		access_dclassbotany,
+		access_dclassmining,
+		access_dclassjanitorial
 	)
 	minimal_access = list()
 
@@ -639,13 +608,16 @@
 	skill_points = 15
 
 /datum/job/enlistedofficerhcz
-	title = "HCZ Junior Guard"
+
+	title = "HCZ Guard"
 	department = "Heavy Containment Personnel"
 	department_flag = SEC
 	total_positions = 2
 	spawn_positions = 2
 	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP."
+	//supervisors = "the Guard/Zone Commander"
 	economic_power = 4
+//	minimal_player_age = 0
 	ideal_character_age = 25
 	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerhcz
@@ -683,7 +655,8 @@
 	skill_points = 15
 
 /datum/job/enlistedofficerez
-	title = "EZ Junior Agent"
+
+	title = "EZ Agent"
 	department = "Entrance Personnel"
 	department_flag = SEC
 	total_positions = 2
@@ -708,6 +681,8 @@
 		access_sec_comms,
 		access_securitylvl1,
 		access_securitylvl2,
+		access_engineeringlvl1,
+		access_medicallvl1,
 		access_adminlvl1,
 		access_adminlvl2
 	)
@@ -724,21 +699,21 @@
 	                    SKILL_WEAPONS     = SKILL_EXPERT,
 	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 20
-
 // SCIENCE
 
 /datum/job/juniorscientist
-	title = "Scientist Associate"
+
+	title = "Researcher Associate"
 	department = "Science"
 	department_flag = SCI
 	total_positions = 6
 	spawn_positions = 6
+	//supervisors = "the Research Director and anyone in a higher position than you"
 	economic_power = 4
 	alt_titles = list("Xenobiologist Associate", "Xenoarcheologist Associate")
-	minimal_player_age = 0
 	ideal_character_age = 22
 	alt_titles = null
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/scientist
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/juniorscientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	equip(var/mob/living/carbon/human/H)
@@ -762,11 +737,13 @@
 	skill_points = 10
 
 /datum/job/scientist
-	title = "Scientist"
+
+	title = "Researcher"
 	department = "Science"
 	department_flag = SCI
 	total_positions = 6
 	spawn_positions = 6
+	//supervisors = "the Research Director and anyone in a higher position than you"
 	economic_power = 4
 	alt_titles = list("Xenobiologist", "Xenoarcheologist")
 	minimal_player_age = 5
@@ -793,11 +770,13 @@
 	skill_points = 15
 
 /datum/job/seniorscientist
-	title = "Senior Scientist"
+
+	title = "Senior Researcher"
 	department = "Science"
 	department_flag = SCI
 	total_positions = 6
 	spawn_positions = 6
+	//supervisors = "the Research Director and anyone in a higher position than you"
 	economic_power = 4
 	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist")
 	minimal_player_age = 10
@@ -831,7 +810,9 @@
 	skill_points = 20
 
 /datum/job/rd
+
 	title = "Research Director"
+	//supervisors = "Facility Director and the Head of Human Resources"
 	total_positions = 1
 	spawn_positions = 1
 	economic_power = 20
@@ -852,6 +833,7 @@
 		access_sciencelvl3,
 		access_sciencelvl2,
 		access_sciencelvl1,
+		access_adminlvl1,
 		access_keyauth
 	)
 	minimal_access = list()
@@ -871,12 +853,13 @@
 
 
 /datum/job/juneng
+
 	title = "Junior Engineer"
 	total_positions = 4
 	spawn_positions = 4
 	department_flag = ENG
+	//supervisors = "the Chief Engineer"
 	economic_power = 5
-	minimal_player_age = 2
 	ideal_character_age = 30
 	alt_titles = list(
 		"Junior Maintenance Technician",
@@ -898,7 +881,8 @@
 	access = list(
 		access_eng_comms,
 		access_engineeringlvl1,
-		access_engineeringlvl2
+		access_engineeringlvl2,
+		access_sciencelvl1
 	)
 	minimal_access = list()
 
@@ -907,10 +891,12 @@
 	                    SKILL_SCIENCE     = SKILL_MAX)
 
 /datum/job/eng
+
 	title = "Engineer"
 	total_positions = 3
 	spawn_positions = 3
 	department_flag = ENG
+	//supervisors = "the Chief Engineer"
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 30
@@ -937,6 +923,7 @@
 		access_engineeringlvl1,
 		access_engineeringlvl2,
 		access_engineeringlvl3
+		access_sciencelvl1,
 	)
 	minimal_access = list()
 
@@ -954,10 +941,12 @@
 	                    SKILL_ENGINES      = SKILL_MAX)
 
 /datum/job/seneng
+
 	title = "Senior Engineer"
 	total_positions = 2
 	spawn_positions = 2
 	department_flag = ENG
+	//supervisors = "the Chief Engineer"
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 30
@@ -981,6 +970,9 @@
 
 	access = list(
 		access_eng_comms,
+		access_securitylvl1,
+		access_sciencelvl1,
+		access_sciencelvl2,
 		access_engineeringlvl1,
 		access_engineeringlvl2,
 		access_engineeringlvl3,
@@ -1002,10 +994,12 @@
 	                    SKILL_ENGINES      = SKILL_MAX)
 
 /datum/job/conteng
+
 	title = "Containment Engineer"
 	total_positions = 1
 	spawn_positions = 1
 	department_flag = ENG
+	//supervisors = "the Chief Engineer"
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 30
@@ -1025,6 +1019,8 @@
 	access = list(
 		access_eng_comms,
 		access_securitylvl1,
+		access_securitylvl2,
+		access_securitylvl3,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,
@@ -1050,7 +1046,9 @@
 	                    SKILL_ENGINES      = SKILL_MAX)
 
 /datum/job/chief_engineer
+
 	title = "Chief Engineer"
+	//supervisors = "the Security Commander and Facility Director"
 	total_positions = 1
 	spawn_positions = 1
 	economic_power = 9
@@ -1076,6 +1074,12 @@
 		access_sciencelvl2,
 		access_sciencelvl3,
 		access_sciencelvl4,
+		access_adminlvl1,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3,
+		access_engineeringlvl4,
+		access_engineeringlvl5,
 		access_keyauth
 	)
 	minimal_access = list()
@@ -1096,7 +1100,9 @@
 // MEDICAL JOBS.
 
 /datum/job/cmo
+
 	title = "Chief Medical Officer"
+	//supervisors = "the Security Commander"
 	economic_power = 10
 	minimal_player_age = 15
 	ideal_character_age = 48
@@ -1109,6 +1115,7 @@
 	/datum/mil_rank/security/o5
 	)
 
+<<<<<<< HEAD
 	access = list(
 		access_com_comms,
 		access_med_comms,
@@ -1118,7 +1125,8 @@
 		access_medicallvl2,
 		access_medicallvl3,
 		access_medicallvl4,
-		access_medicallvl5
+		access_medicallvl5,
+		access_adminlvl1
 	)
 	minimal_access = list()
 	equip(var/mob/living/carbon/human/H)
@@ -1136,12 +1144,14 @@
 	skill_points = 20
 
 /datum/job/chemist
+
 	title = "Chemist"
 	department = "Medical"
 	department_flag = MED
 	minimal_player_age = 3
 	total_positions = 2
 	spawn_positions = 2
+	//supervisors = "the Chief Medical Officer"
 	selection_color = "#013d3b"
 	economic_power = 4
 	ideal_character_age = 30
@@ -1151,12 +1161,19 @@
 		/datum/mil_rank/security/o1)
 
 	access = list(
+<<<<<<< HEAD
 		access_med_comms,
 		access_medical_equip,
 		access_medicallvl1,
 		access_medicallvl2,
 		access_medicallvl3,
 		access_medicallvl4
+=======
+	access_med_comms,
+	access_medical_equip,
+	access_medicallvl1,
+	access_medicallvl2
+>>>>>>> main
 	)
 	minimal_access = list()
 	equip(var/mob/living/carbon/human/H)
@@ -1174,6 +1191,7 @@
 	skill_points = 10
 
 /datum/job/psychiatrist
+
 	title = "Psychiatrist"
 	department = "Medical"
 	department_flag = MED
@@ -1182,6 +1200,7 @@
 	spawn_positions = 1
 	ideal_character_age = 40
 	economic_power = 5
+	//supervisors = "the Chief Medical Officer"
 	alt_titles = list("Counselor")
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/psychiatrist
 	allowed_branches = list(
@@ -1192,12 +1211,18 @@
 		..()
 
 	access = list(
+<<<<<<< HEAD
 		access_med_comms,
 		access_medical_equip,
 		access_medicallvl1,
 		access_medicallvl2,
 		access_medicallvl3,
 		access_medicallvl4
+=======
+	access_med_comms,
+	access_medical_equip,
+	access_medicallvl1
+>>>>>>> main
 	)
 	minimal_access = list()
 
@@ -1213,6 +1238,7 @@
 	skill_points = 10
 
 /datum/job/medicaldoctor
+
 	title = "Medical Doctor"
 	department = "Medical"
 	department_flag = MED
@@ -1232,11 +1258,21 @@
 		..()
 
 	access = list(
+<<<<<<< HEAD
 		access_med_comms,
 		access_medical_equip,
 		access_medicallvl1,
 		access_medicallvl2,
 		access_medicallvl3
+=======
+	access_med_comms,
+	access_medical_equip,
+	access_medicallvl1,
+	access_medicallvl2,
+	access_medicallvl3,
+	access_securitylvl1,
+	access_sciencelvl1
+>>>>>>> main
 	)
 	minimal_access = list()
 
@@ -1252,6 +1288,7 @@
 	skill_points = 10
 
 /datum/job/virologist
+
 	title = "Virologist"
 	department = "Medical"
 	department_flag = MED
@@ -1261,6 +1298,7 @@
 	minimal_player_age = 3
 	ideal_character_age = 40
 	economic_power = 5
+	//supervisors = "the Chief Medical Officer"
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/virologist
 	allowed_branches = list(
 	/datum/mil_branch/civilian)
@@ -1291,6 +1329,7 @@
 	skill_points = 25
 
 /datum/job/surgeon
+
 	title = "Surgeon"
 	department = "Medical"
 	department_flag = MED
@@ -1299,6 +1338,7 @@
 	spawn_positions = 2
 	ideal_character_age = 40
 	economic_power = 5
+	//supervisors = "the Chief Medical Officer"
 	minimal_player_age = 3
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/surgeon
 	allowed_branches = list(
@@ -1317,8 +1357,12 @@
 		access_medicallvl5,
 		access_sciencelvl1,
 		access_sciencelvl2,
+<<<<<<< HEAD
 		access_sciencelvl3,
 		access_medical_equip
+=======
+		access_sciencelvl3
+>>>>>>> main
 	)
 	minimal_access = list()
 
@@ -1344,6 +1388,7 @@
 	ideal_character_age = 40
 	economic_power = 5
 	//duties = "<big><b>As the EMT it is your job to man the medical post near the Class D cell block, and treat any injuries there of the guards or Class D's. You only have limited supplies, so it's best to make them count."
+	//supervisors = "the Chief Medical Officer"
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/emt
 	allowed_branches = list(
 	/datum/mil_branch/security)
@@ -1355,6 +1400,7 @@
 		)
 	equip(var/mob/living/carbon/human/H)
 		..()
+<<<<<<< HEAD
 
 
 	access = list(
@@ -1362,6 +1408,17 @@
 		access_medical_equip,
 		access_medicallvl1,
 		access_medicallvl2
+=======
+	access = list(
+	access_med_comms,
+	access_medical_equip,
+	access_securitylvl1,
+	access_sciencelvl1,
+	access_engineeringlvl1,
+	access_adminlvl1,
+	access_medicallvl1,
+	access_medicallvl2
+>>>>>>> main
 	)
 	minimal_access = list()
 
@@ -1385,6 +1442,7 @@
 	department_flag = SUP
 	total_positions = 1
 	spawn_positions = 1
+	//supervisors = "the Site Director"
 	selection_color = "#515151"
 	economic_power = 5
 	minimal_player_age = 7
@@ -1402,6 +1460,7 @@
 	)
 
 	access = list(
+<<<<<<< HEAD
 		access_adminlvl1,
 		access_adminlvl2,
 		access_log_comms,
@@ -1409,6 +1468,14 @@
 		access_emergency_storage,
 		access_cargo,
 		access_mailsorting
+=======
+	access_log_comms,
+	access_maint_tunnels,
+	access_emergency_storage,
+	access_cargo,
+	access_adminlvl1,
+	access_adminlvl2
+>>>>>>> main
 	)
 	minimal_access = list()
 
@@ -1428,12 +1495,14 @@
 
 
 /datum/job/cargo_tech
+
 	title = "Logistics Specialist"
 	department = "Logistics"
 	department_flag = SUP
 	total_positions = 2
 	spawn_positions = 2
 	selection_color = "B4802B"
+	//supervisors = "the Logistics Officer"
 	minimal_player_age = 3
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/logisticspecialist
@@ -1450,6 +1519,7 @@
 	)
 
 	access = list(
+<<<<<<< HEAD
 		access_log_comms,
 		access_maint_tunnels,
 		access_emergency_storage,
@@ -1457,6 +1527,15 @@
 		access_cargo_bot,
 		access_mailsorting,
 		access_adminlvl1
+=======
+	access_log_comms,
+	access_maint_tunnels,
+	access_emergency_storage,
+	access_cargo,
+	access_cargo_bot,
+	access_adminlvl1,
+	access_mailsorting
+>>>>>>> main
 	)
 	minimal_access = list()
 
@@ -1478,11 +1557,13 @@
 // MISC JOBS
 
 /datum/job/janitor
+
 	title = "Janitor"
 	department = "Civilian"
 	department_flag = CIV
 	total_positions = 3
 	spawn_positions = 3
+	//supervisors = "the Head of Personnel"
 	ideal_character_age = 24
 	alt_titles = list("Interior caretaker")
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/janitor
@@ -1506,11 +1587,13 @@
 	min_skill = list(   SKILL_HAULING = SKILL_BASIC)
 
 /datum/job/chef
+
 	title = "Chef"
 	department = "Civilian"
 	department_flag = CIV
 	total_positions = 1
 	spawn_positions = 1
+	//supervisors = "the Head of Personnel"
 	selection_color = "#515151"
 	ideal_character_age = 24
 	alt_titles = list("Cook")
@@ -1536,11 +1619,13 @@
 
 
 /datum/job/bartender
+
 	title = "Bartender"
 	department = "Civilian"
 	department_flag = CIV
 	total_positions = 1
 	spawn_positions = 1
+	//supervisors = "the Head of Personnel"
 	selection_color = "#515151"
 	ideal_character_age = 24
 	alt_titles = list("Waiter")
@@ -1554,10 +1639,18 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 	access = list(
+<<<<<<< HEAD
 		access_civ_comms,
 		access_dclasskitchen,
 		access_dclassbotany
 	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
+=======
+	access_civ_comms,
+	access_dclasskitchen,
+	access_dclassbotany
+	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
+
+>>>>>>> main
 	minimal_access = list()
 
 	min_skill = list(   SKILL_COOKING   = SKILL_ADEPT,
@@ -1566,6 +1659,7 @@
 
 
 /datum/job/archivist
+
 	title = "Archivist"
 	department = "Civilian"
 	department_flag = CIV
@@ -1573,6 +1667,7 @@
 	spawn_positions = 1
 	minimal_player_age = 9
 	//duties = "<big><b>As the Archivist, it is your job to make sure the proper test logs are digitalized and saved in the digital archive, thus safekeeping them forever. You must be picky and selective, and only get those with great quality out! <span style = 'color:red'>REMEMBER!</span> If you put in nonsensical things, or copypasta's such as Woody's got Wood, you will be permanently job banned WITHOUT chance to appeal.</span>"
+	//supervisors = "the Research Director"
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
@@ -1588,23 +1683,36 @@
 		..()
 
 	access = list(
+<<<<<<< HEAD
 		access_civ_comms
+=======
+	access_civ_comms,
+	access_adminlvl1,
+	access_adminlvl2,
+	access_adminlvl3,
+	access_sciencelvl1,
+	access_sciencelvl2,
+	access_sciencelvl3,
+	access_sciencelvl4
+>>>>>>> main
 	)
 	minimal_access = list()
 
 /datum/job/o5rep
-	title = "Global Occult Coalition Representative"
+
+	title = "O5 Representative"
 	department = "Civilian"
 	department_flag = COM
 	total_positions = 1
 	spawn_positions = 1
 //	//duties = "<big><b>As the GOC Representative, your task is to assess the facility and generally advocate for hardline approaches in regards to anomalies and their containment, or destruction. You value human lives far over any anomaly, as does the Global Occult Coalition, and should see to it that lives are preserved where possible, even D-Class ones. Though combat is not your duty, you are issued a revolver to defend yourself with. This job is heavy roleplay: you're expected to be well-versed in actually talking to people on the matters described. Containment of SCPs and direct site matters are not your matters, so don't get involved."
+//	//supervisors = "Global Occult Coalition Regional Command"
 	economic_power = 5
 	minimal_player_age = 5
 	minimal_player_age = 9
 	ideal_character_age = 30
-	alt_titles = list("O5 Representative" = /decl/hierarchy/outfit/job/site90/crew/civ/o5rep)
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/gocrep
+	alt_titles = list("Global Occult Coalition Representative" = /decl/hierarchy/outfit/job/site90/crew/civ/gocrep)
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)

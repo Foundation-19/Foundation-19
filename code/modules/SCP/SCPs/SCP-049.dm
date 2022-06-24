@@ -16,6 +16,8 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	var/contained = TRUE
 	var/curing = FALSE //we doing gods work or nah?
 	var/chasing_sound = FALSE
+	var/anger = 0
+	var/angry = FALSE
 
 /mob/living/carbon/human/scp049/examine(mob/user)
 	. = ..()
@@ -41,7 +43,10 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049/Initialize()
 	..()
-	add_language(LANGUAGE_ZOMBIE, 1)
+	add_language(LANGUAGE_EAL, 1)
+	add_language(LANGUAGE_SKRELLIAN, 1)
+	add_language(LANGUAGE_GUTTER, 1)
+	add_language(LANGUAGE_SIGN, 0)
 	add_language(LANGUAGE_ENGLISH, 1)
 	// fix names
 	fully_replace_character_name("SCP-049")
@@ -69,6 +74,11 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	..()
 	if(prob(50) && !contained)
 		addtimer(CALLBACK(src, .proc/see_disease), 5 SECONDS) //only occasionally see the disease, less deadly. TODO: containment mechanics
+	if(anger=100)
+		angry = TRUE
+
+
+#warn work on anger system
 
 /mob/living/carbon/human/scp049/Login()
 	. = ..()
@@ -96,6 +106,8 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 			if(H.pestilence)
 				pestilence_images += image('icons/mob/scp049.dmi', H, "pestilence", MOB_LAYER+0.01)
 		client.images |= pestilence_images
+		if(!angry)
+			anger += 5
 
 
 /mob/living/carbon/human/scp049/proc/Attack_Voice_Line() //for when we're up to no good!
