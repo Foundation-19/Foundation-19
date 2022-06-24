@@ -378,6 +378,7 @@ var/list/gear_datums = list()
 /datum/gear/proc/spawn_in_storage_or_drop(mob/living/carbon/human/subject, metadata)
 	var/obj/item/item = spawn_item(subject, subject, metadata)
 	item.add_fingerprint(subject)
+	/*
 	if (istype(item, /obj/item/organ/internal/augment))
 		var/obj/item/organ/internal/augment/augment = item
 		var/obj/item/organ/external/parent = augment.get_valid_parent_organ(subject)
@@ -394,6 +395,7 @@ var/list/gear_datums = list()
 		augment.replaced(subject, parent)
 		augment.onRoundstart()
 		return
+	*/
 	var/atom/container = subject.equip_to_storage(item)
 	if (container)
 		to_chat(subject, SPAN_NOTICE("Placing \the [item] in your [container.name]!"))
