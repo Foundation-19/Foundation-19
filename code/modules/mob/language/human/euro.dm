@@ -7,14 +7,14 @@
 
 /datum/language/human/euro
 	name = LANGUAGE_HUMAN_EURO
-	desc = "A constructed language established by a conference of European and African research universities convening in Zurich, Switzerland starting in 2119, \
-			later adopted with little controversy as the lingua franca of the entirety of Sol space following the establishment of the SCG."
+	desc = "A west germanic language, mainly spoken in central europe, as the official language in Germany, Austria, Switzerland to name a few. \
+			It has been influental in a variety of scientific fields."
 	speech_verb = "says"
 	whisper_verb = "whispers"
 	colour = ""
 	key = "1"
 	flags = WHITELISTED
-	shorthand = "ZAC"
+	shorthand = "Ger"
 	partial_understanding = list(
 		LANGUAGE_HUMAN_CHINESE = 5,
 		LANGUAGE_HUMAN_ARABIC = 5,

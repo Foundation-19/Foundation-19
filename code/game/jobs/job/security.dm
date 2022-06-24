@@ -282,7 +282,14 @@
 		..()
 
 	access = list(
+		access_sec_comms,
 		access_securitylvl1,
-		access_sciencelvl1
+		access_securitylvl2,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_dclasskitchen,
+		access_dclassbotany,
+		access_dclassmining,
+		access_dclassjanitorial
 	)
 	minimal_access = list()
