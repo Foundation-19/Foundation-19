@@ -262,6 +262,14 @@
 	item_state = "Sec_ID4"
 	job_access_type = /datum/job/seneng
 
+
+/obj/item/card/id/seclvl5eng
+	name = " security ID"
+	desc = "A teal ID. Looks cool."
+	icon_state = "securitylvl5"
+	item_state = "Sec_ID5"
+	job_access_type = /datum/job/chief_engineer
+
 // JUNIOR GUARD ID'S
 
 /obj/item/card/id/junseclvl2lcz

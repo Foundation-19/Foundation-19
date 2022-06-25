@@ -7,7 +7,7 @@
 	in the depths of space. Your job on the Survey team is simple; pilot the SRV Verne and the SRV Venerable Catfish; protect the students; and assist in their studies. Your Survey team has awoken \
  	to find the Verne running at low capacity, under-staffed, with much of the automated life support systems doing the heavy lifting."
 	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN)
-	required_language = LANGUAGE_HUMAN_EURO
+	required_language = LANGUAGE_HUMAN_GERMAN
 	min_skill = list(
 		SKILL_EVA     = SKILL_BASIC,
 		SKILL_WEAPONS = SKILL_TRAINED,
@@ -29,7 +29,7 @@
  	in the depths of space. Your job on the Survey team is simple: Handle engineering work on the SRV Verne and the SRV Venerable Catfish, protect the students, and assist in their studies. Your Survey team has awoken \
 	to find the Verne running at low capacity, under-staffed, with much of the automated life support systems doing the heavy lifting."
 	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN)
-	required_language = LANGUAGE_HUMAN_EURO
+	required_language = LANGUAGE_HUMAN_GERMAN
 	min_skill = list(
 		SKILL_COMPUTER     = SKILL_BASIC,
 		SKILL_EVA          = SKILL_BASIC,
@@ -56,7 +56,7 @@
 	in the depths of space. A survey team will be accompanying you, on hand to assist your studies on the exoplanets in this system. Your team has awoken \
 	to find the Verne running at low capacity, under-staffed, with much of the automated life support systems doing the heavy lifting."
 	whitelisted_species = list(SPECIES_HUMAN,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN)
-	required_language = LANGUAGE_HUMAN_EURO
+	required_language = LANGUAGE_HUMAN_GERMAN
 	min_skill = list(
 		SKILL_BUREAUCRACY = SKILL_BASIC,
 		SKILL_COMPUTER    = SKILL_BASIC,

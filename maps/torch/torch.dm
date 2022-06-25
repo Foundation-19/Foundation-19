@@ -102,8 +102,8 @@
 	#include "job/outfits/supply_outfits.dm"
 	#include "job/outfits/unused_outfits.dm"
 
-	#include "language/human/euro.dm"
-	#include "language/human/misc/spacer.dm"
+	#include "language/human/german.dm"
+	#include "language/human/misc/english.dm"
 
 	#include "machinery/apc_shuttle.dm"
 	#include "machinery/faxmachine.dm"

@@ -255,7 +255,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	speech_verb = "growls"
 	exclaim_verb = "wails"
 	partial_understanding = list(
-		LANGUAGE_HUMAN_EURO = 30,
+		LANGUAGE_HUMAN_GERMAN = 30,
 		LANGUAGE_ENGLISH = 35
 	)
 	syllables = list("mhh..", "grr..", "nnh..")
