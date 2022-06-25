@@ -152,6 +152,7 @@ GLOBAL_LIST_EMPTY(scp343s)
 
 		if (do_after(src, PHASE_TIME, O))
 			forceMove(get_step(src, dir))
+			forceMove(get_step(src, dir))
 			visible_message("<span class = 'danger'>[src] phases through \the [O].</span>")
 
 
