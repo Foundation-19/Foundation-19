@@ -9,7 +9,7 @@
 	var/stored_paper = 50
 	var/max_paper = 50
 	var/last_print
-	var/print_language = LANGUAGE_HUMAN_EURO
+	var/print_language = LANGUAGE_ENGLISH
 
 /obj/item/stock_parts/computer/nano_printer/diagnostics()
 	. = ..()

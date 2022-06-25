@@ -79,7 +79,7 @@
 		icon_state = "ash"
 		next_emote = world.time + 30
 		gaming = 0
-		target.gib()
+		target.dust()
 
 /mob/living/simple_animal/hostile/scp_263/proc/Cursed()
 	set category = "SCP-263"

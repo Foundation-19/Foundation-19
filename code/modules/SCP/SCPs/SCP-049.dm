@@ -74,7 +74,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	..()
 	if(prob(50) && !contained)
 		addtimer(CALLBACK(src, .proc/see_disease), 5 SECONDS) //only occasionally see the disease, less deadly. TODO: containment mechanics
-	if(anger=100)
+	if(anger==100)
 		angry = TRUE
 
 

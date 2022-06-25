@@ -153,6 +153,7 @@
 	var/up_description
 	var/down_description
 	var/psionic_control_level = PSI_IMPLANT_WARN
+	var/crb = FALSE
 
 // Called when we're switching from a lower security level to this one.
 /decl/security_level/proc/switching_up_to()

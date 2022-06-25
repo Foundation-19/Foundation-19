@@ -65,9 +65,9 @@
 		icon_state = "m16-empty"
 	return
 
-/obj/item/gun/projectile/automatic/scp/donor/ak74
+/obj/item/gun/projectile/automatic/scp/ak74
 	name = "AK-103"
-	desc = "Автомат Калашникова сотой серии под патрон 7,62х39."
+	desc = "A 7.62х39mm modernized variant of the original AK-47, exported from Russia."
 	icon_state = "ak74"
 	item_state = "ak74"
 	w_class = ITEM_SIZE_HUGE
@@ -85,7 +85,7 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0)),
 		)
 
-/obj/item/gun/projectile/automatic/scp/donor/ak74/update_icon()
+/obj/item/gun/projectile/automatic/scp/ak74/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "ak74"
@@ -93,16 +93,16 @@
 		icon_state = "ak74-empty"
 	return
 /*
-/obj/item/gun/projectile/automatic/scp/donor/ak74/verb/scope()
+/obj/item/gun/projectile/automatic/scp/ak74/verb/scope()
 	set category = "Object"
 	set name = "Use Scope"
 	set popup_menu = 1
 
 	toggle_scope(usr, 1.0)
 */
-/obj/item/gun/projectile/automatic/scp/donor/ak742
+/obj/item/gun/projectile/automatic/scp/ak742
 	name = "AK-19"
-	desc = "Модификация АК-12. На нижней планке установлена вертикальная рукоять."
+	desc = "A 7.62х39mm modernized variant of the original AK-47, exported from Russia. This one has a front grip and updated internals to fire quite a bit faster than it's brother."
 	icon_state = "ak742"
 	item_state = "ak742"
 	w_class = ITEM_SIZE_HUGE
@@ -120,7 +120,7 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0)),
 		)
 
-/obj/item/gun/projectile/automatic/scp/donor/ak742/update_icon()
+/obj/item/gun/projectile/automatic/scp/ak742/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "ak742"
@@ -128,7 +128,7 @@
 		icon_state = "ak742-empty"
 	return
 
-/obj/item/gun/projectile/automatic/scp/donor/ierichon
+/obj/item/gun/projectile/automatic/scp/ierichon
 	name = "Jericho-114 Pistol "
 	desc = "Jericho-114 Pistol, a boss of a pistol"
 	icon_state = "ierichon"
@@ -147,7 +147,7 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=1, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
 		)
 
-/obj/item/gun/projectile/automatic/scp/donor/ierichon/update_icon()
+/obj/item/gun/projectile/automatic/scp/ierichon/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "ierichon"

@@ -52,11 +52,12 @@
 
 	access = list(
 		access_com_comms, // SD and HoP do not want to hear all the details, either meet your Commander in person or talk to the Tower
-		access_adminlvl5,
-		access_adminlvl4,
-		access_adminlvl3,
-		access_adminlvl2,
+		access_sci_comms,
 		access_adminlvl1,
+		access_adminlvl2,
+		access_adminlvl3,
+		access_adminlvl4,
+		access_adminlvl5,
 		access_keyauth
 	)
 	minimal_access = list()
@@ -81,13 +82,13 @@
 		..()
 
 	access = list(
-	access_com_comms,
-	access_civ_comms,
-	access_adminlvl4,
-	access_adminlvl3,
-	access_adminlvl2,
-	access_adminlvl1,
-	access_keyauth
+		access_adminlvl1,
+		access_adminlvl2,
+		access_adminlvl3,
+		access_adminlvl4,
+		access_com_comms,
+		access_civ_comms,
+		access_keyauth
 	)
 	minimal_access = list()
 
@@ -114,6 +115,8 @@
 
 
 	access = list(
+		access_sciencelvl1,
+		access_sciencelvl3,
 		access_com_comms,
 		access_sci_comms,
 		access_civ_comms,
@@ -130,6 +133,7 @@
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3
+
 	)
 	minimal_access = list()
 
@@ -172,14 +176,14 @@
 		..()
 
 	access = list(
-	access_com_comms,
-	access_sci_comms,
-	access_civ_comms,
-	access_log_comms,
-	access_med_comms,
-	access_eng_comms,
-	access_sec_comms,
-	access_adminlvl1
+		access_com_comms,
+		access_sci_comms,
+		access_civ_comms,
+		access_log_comms,
+		access_med_comms,
+		access_eng_comms,
+		access_sec_comms,
+		access_adminlvl1
 	)
 
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
@@ -481,7 +485,15 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_sec_comms, access_securitylvl1, access_securitylvl2, access_securitylvl3, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3)
+	access = list(
+		access_sec_comms,
+		access_securitylvl1,
+		access_securitylvl2,
+		access_securitylvl3,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -529,7 +541,7 @@
 		access_adminlvl1,
 		access_adminlvl2,
 		access_adminlvl3
-		)
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -580,7 +592,7 @@
 		access_dclassbotany,
 		access_dclassmining,
 		access_dclassjanitorial
-		)
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -619,7 +631,15 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_sec_comms, access_securitylvl1, access_securitylvl2, access_securitylvl3, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3)
+	access = list(
+		access_sec_comms,
+		access_securitylvl1,
+		access_securitylvl2,
+		access_securitylvl3,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -699,7 +719,10 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_sci_comms, access_sciencelvl1)
+	access = list(
+		access_sci_comms,
+		access_sciencelvl1
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -857,15 +880,9 @@
 
 	access = list(
 		access_eng_comms,
-		access_securitylvl1,
-		access_securitylvl2,
-		access_securitylvl3,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3,
 		access_engineeringlvl1,
 		access_engineeringlvl2,
-		access_engineeringlvl3
+		access_sciencelvl1
 	)
 	minimal_access = list()
 
@@ -902,14 +919,11 @@
 		..()
 
 	access = list(
-	access_eng_comms,
-	access_securitylvl1,
-	access_sciencelvl1,
-	access_sciencelvl2,
-	access_sciencelvl3,
-	access_engineeringlvl1,
-	access_engineeringlvl2,
-	access_engineeringlvl3
+		access_eng_comms,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3,
+		access_sciencelvl1
 	)
 	minimal_access = list()
 
@@ -955,16 +969,14 @@
 		..()
 
 	access = list(
-	access_eng_comms,
-	access_securitylvl1,
-	access_sciencelvl1,
-	access_sciencelvl2,
-	access_sciencelvl3,
-	access_sciencelvl4,
-	access_engineeringlvl1,
-	access_engineeringlvl2,
-	access_engineeringlvl3,
-	access_engineeringlvl4
+		access_eng_comms,
+		access_securitylvl1,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3,
+		access_engineeringlvl4
 	)
 	minimal_access = list()
 
@@ -1009,7 +1021,6 @@
 		access_securitylvl1,
 		access_securitylvl2,
 		access_securitylvl3,
-		access_securitylvl4,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,
@@ -1053,23 +1064,23 @@
 		..()
 
 	access = list(
-	access_eng_comms,
-	access_securitylvl1,
-	access_securitylvl2,
-	access_securitylvl3,
-	access_securitylvl4,
-	access_securitylvl4,
-	access_sciencelvl1,
-	access_sciencelvl2,
-	access_sciencelvl3,
-	access_sciencelvl4,
-	access_keyauth,
-	access_adminlvl1,
-	access_engineeringlvl1,
-	access_engineeringlvl2,
-	access_engineeringlvl3,
-	access_engineeringlvl4,
-	access_engineeringlvl5
+		access_eng_comms,
+		access_securitylvl1,
+		access_securitylvl2,
+		access_securitylvl3,
+		access_securitylvl4,
+		access_securitylvl4,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3,
+		access_sciencelvl4,
+		access_adminlvl1,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3,
+		access_engineeringlvl4,
+		access_engineeringlvl5,
+		access_keyauth
 	)
 	minimal_access = list()
 
@@ -1104,16 +1115,17 @@
 	/datum/mil_rank/security/o5
 	)
 
-	access = list(access_com_comms,
-	access_med_comms,
-	access_medical_equip,
-	access_keyauth,
-	access_medicallvl1,
-	access_medicallvl2,
-	access_medicallvl3,
-	access_medicallvl4,
-	access_medicallvl5,
-	access_adminlvl1
+	access = list(
+		access_com_comms,
+		access_med_comms,
+		access_medical_equip,
+		access_keyauth,
+		access_medicallvl1,
+		access_medicallvl2,
+		access_medicallvl3,
+		access_medicallvl4,
+		access_medicallvl5,
+		access_adminlvl1
 	)
 	minimal_access = list()
 	equip(var/mob/living/carbon/human/H)
@@ -1148,10 +1160,15 @@
 		/datum/mil_rank/security/o1)
 
 	access = list(
-	access_med_comms,
-	access_medical_equip,
-	access_medicallvl1,
-	access_medicallvl2
+		access_med_comms,
+		access_medical_equip,
+		access_medicallvl1,
+		access_medicallvl2,
+		access_medicallvl3,
+		access_medicallvl4,
+		access_medical_equip,
+		access_medicallvl1,
+		access_medicallvl2
 	)
 	minimal_access = list()
 	equip(var/mob/living/carbon/human/H)
@@ -1189,9 +1206,12 @@
 		..()
 
 	access = list(
-	access_med_comms,
-	access_medical_equip,
-	access_medicallvl1
+		access_med_comms,
+		access_medical_equip,
+		access_medicallvl1,
+		access_medicallvl2,
+		access_medicallvl3,
+		access_medicallvl4
 	)
 	minimal_access = list()
 
@@ -1317,8 +1337,7 @@
 		access_medicallvl4,
 		access_medicallvl5,
 		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3
+		access_sciencelvl2
 	)
 	minimal_access = list()
 
@@ -1356,6 +1375,8 @@
 		)
 	equip(var/mob/living/carbon/human/H)
 		..()
+
+
 	access = list(
 	access_med_comms,
 	access_medical_equip,
@@ -1406,12 +1427,13 @@
 	)
 
 	access = list(
-	access_log_comms,
-	access_maint_tunnels,
-	access_emergency_storage,
-	access_cargo,
-	access_adminlvl1,
-	access_adminlvl2
+		access_adminlvl1,
+		access_adminlvl2,
+		access_log_comms,
+		access_maint_tunnels,
+		access_emergency_storage,
+		access_cargo,
+		access_mailsorting
 	)
 	minimal_access = list()
 
@@ -1500,7 +1522,12 @@
 	/datum/mil_rank/civ/classd
 	)
 
-	access = list(access_civ_comms, access_sciencelvl1, access_dclassjanitorial) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
+	access = list(
+		access_civ_comms,
+		access_sciencelvl1,
+		access_dclassjanitorial
+	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
+
 	minimal_access = list()
 	equip(var/mob/living/carbon/human/H)
 		..()
@@ -1527,7 +1554,11 @@
 	)
 	equip(var/mob/living/carbon/human/H)
 		..()
-	access = list(access_civ_comms, access_dclasskitchen, access_dclassbotany)// Limited internal D-Block access e.g. when training D-Class or unlocking their crates
+	access = list(
+		access_civ_comms,
+		access_dclasskitchen,
+		access_dclassbotany
+	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 	minimal_access = list()
 
 	min_skill = list(   SKILL_COOKING   = SKILL_ADEPT,
@@ -1556,11 +1587,10 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 	access = list(
-	access_civ_comms,
-	access_dclasskitchen,
-	access_dclassbotany
+		access_civ_comms,
+		access_dclasskitchen,
+		access_dclassbotany
 	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
-
 	minimal_access = list()
 
 	min_skill = list(   SKILL_COOKING   = SKILL_ADEPT,
@@ -1628,5 +1658,12 @@
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_com_comms, access_adminlvl1, access_adminlvl2, access_adminlvl3, access_adminlvl4, access_adminlvl5)
+	access = list(
+		access_com_comms,
+		access_adminlvl1,
+		access_adminlvl2,
+		access_adminlvl3,
+		access_adminlvl4,
+		access_adminlvl5
+	)
 	minimal_access = list()
