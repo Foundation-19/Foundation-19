@@ -2035,6 +2035,7 @@
 #include "code\modules\mob\language\human\arabic.dm"
 #include "code\modules\mob\language\human\chinese.dm"
 #include "code\modules\mob\language\human\euro.dm"
+#include "code\modules\mob\language\human\french.dm"
 #include "code\modules\mob\language\human\human.dm"
 #include "code\modules\mob\language\human\indian.dm"
 #include "code\modules\mob\language\human\russian.dm"
