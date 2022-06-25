@@ -54,7 +54,7 @@
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	armor = list(melee = 40, bullet = 80, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
 
-/obj/item/clothing/suit/storage/vest/scp/medarmorchaos
+/obj/item/clothing/suit/armor/vest/scp/medarmorchaos
 	name = "armored vest"
 	desc = "A synthetic armor vest."
 	icon_state = "chaos-armor"

@@ -180,7 +180,7 @@
 /area/space)
 "K" = (
 /obj/structure/table/rack/dark,
-/obj/item/gun/projectile/automatic/scp/donor/rpk,
+/obj/item/gun/projectile/automatic/scp/rpk,
 /obj/item/ammo_magazine/scp/ak,
 /obj/item/ammo_magazine/scp/ak,
 /obj/item/ammo_magazine/scp/ak,
