@@ -292,6 +292,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 
 		if (do_after(src, PHASE_TIME, O))
 			forceMove(get_step(src, dir))
+			forceMove(get_step(src, dir))
 			visible_message("<span class = 'danger'>[src] phases through \the [O].</span>")
 
 		alpha = 255
@@ -313,6 +314,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		verbs -= /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
 		verbs += /mob/living/carbon/human/scp106/proc/go_back
 
+/*
 /mob/living/carbon/human/scp106/proc/confuse_victims()
 	set name = "Confuse Victims"
 	set category = "SCP"
@@ -320,7 +322,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	confusing = !confusing
 	to_chat(src, "You are [confusing ? "now confusing" : "no longer confusing"] your victims.")
 //mess. rewrite
-
+*/
 /mob/living/carbon/human/scp106/apply_damage(var/damage = 0, var/damagetype = BRUTE, var/def_zone = null, var/blocked = 0, var/damage_flags = 0, var/obj/used_weapon = null, var/armor_pen, var/silent = FALSE, var/obj/item/organ/external/given_organ = null)
 	. = ..()
 	if (getBruteLoss() + getFireLoss() + getToxLoss() + getCloneLoss() >= 200)
