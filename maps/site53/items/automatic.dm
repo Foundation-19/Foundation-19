@@ -64,7 +64,7 @@
 
 /obj/item/gun/projectile/automatic/scp/ak47
 	name = "AK-47"
-	desc = "The MOST produced rifle in the world. Used in almost every conflict since 1950."
+	desc = "The most produced rifle in the world. Used in almost every conflict since 1950."
 	icon_state = "ak47"
 	item_state = "ak47"
 	w_class = ITEM_SIZE_HUGE
@@ -172,7 +172,7 @@
 	else
 		icon_state = "ierichon-empty"
 
-/obj/item/gun/projectile/automatic/scp/donor/rpk
+/obj/item/gun/projectile/automatic/scp/rpk
 	name = "RPK-74"
 	desc = "A heavy modification of the AK platform sporting a far more machinegun-oriented style and larger burst potential."
 	icon_state = "rpk"
@@ -191,7 +191,7 @@
 		list(mode_name="long bursts",	burst=8, move_delay=15, one_hand_penalty=9, burst_accuracy = list(0,-1,-1,-2,-2,-2,-3,-3), dispersion = list(1.0, 1.0, 1.0, 1.0, 1.2)),
 		)
 
-/obj/item/gun/projectile/automatic/scp/donor/rpk/update_icon()
+/obj/item/gun/projectile/automatic/scp/rpk/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "rpk"
