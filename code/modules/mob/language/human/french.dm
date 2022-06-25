@@ -7,11 +7,8 @@
 	name = LANGUAGE_HUMAN_FRENCH
 	desc = "A descendant of gallo-romance, the latin spoken in northern gaul, influenced by different celtic languages.\
 			Someone who speaks french is called a francophone."
-	speech_verb = "says"
-	whisper_verb = "whispers"
-	colour = ""
+	colour = "french"
 	key = "8"
-	flags = WHITELISTED
 	shorthand = "Fr"
 	partial_understanding = list(
 		LANGUAGE_HUMAN_IBERIAN = 30,
