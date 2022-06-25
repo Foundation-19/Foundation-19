@@ -173,17 +173,17 @@ proc/get_radio_key_from_channel(var/channel)
 			return say_dead(message)
 		return
 
-	var/prefix = copytext_char(message, 1, 2)
+	var/prefix = copytext(message,1,2)
 	if(prefix == get_prefix_key(/decl/prefix/custom_emote))
-		return emote(copytext_char(message, 2))
+		return emote(copytext(message,2))
 	if(prefix == get_prefix_key(/decl/prefix/visible_emote))
-		return custom_emote(1, copytext_char(message, 2))
+		return custom_emote(1, copytext(message,2))
 
 	//parse the language code and consume it
 	if(!speaking)
 		speaking = parse_language(message)
 		if(speaking)
-			message = copytext_char(message, 2 + length_char(speaking.key))
+			message = copytext(message,2+length(speaking.key))
 		else
 			speaking = get_default_language()
 
@@ -191,9 +191,9 @@ proc/get_radio_key_from_channel(var/channel)
 	var/message_mode = parse_message_mode(message, "headset")
 	if (message_mode)
 		if (message_mode == "headset")
-			message = copytext_char(message, 2)	//it would be really nice if the parse procs could do this for us.
+			message = copytext(message,2)	//it would be really nice if the parse procs could do this for us.
 		else
-			message = copytext_char(message, 3)
+			message = copytext(message,3)
 
 	message = trim_left(message)
 
@@ -329,6 +329,7 @@ proc/get_radio_key_from_channel(var/channel)
 			spawn(0)
 				if(O) //It's possible that it could be deleted in the meantime.
 					O.hear_talk(src, stars(message), verb, speaking)
+	INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, message, speaking, italics, speech_bubble_recipients)
 
 	if(whispering)
 		log_whisper("[name]/[key] : [message]")
