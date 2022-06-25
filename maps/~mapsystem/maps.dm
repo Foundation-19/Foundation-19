@@ -1,4 +1,4 @@
-#define DEFAULT_GAME_YEAR_OFFSET 288
+#define DEFAULT_GAME_YEAR_OFFSET -10
 
 GLOBAL_DATUM_INIT(using_map, /datum/map, new using_map_DATUM)
 GLOBAL_LIST_EMPTY(all_maps)
