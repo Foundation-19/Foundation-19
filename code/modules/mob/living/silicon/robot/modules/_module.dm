@@ -78,7 +78,7 @@
 	finalize_synths(R)
 
 	R.set_module_sprites(sprites)
-	R.choose_icon(R.module_sprites.len + 1, R.module_sprites)
+	R.choose_icon()
 
 /obj/item/robot_module/proc/build_equipment()
 	var/list/created_equipment = list()
@@ -134,7 +134,7 @@
 
 	if(R.silicon_radio)
 		R.silicon_radio.recalculateChannels()
-	R.choose_icon(0, R.set_module_sprites(list("Default" = initial(R.icon_state))))
+	R.choose_icon()
 
 /obj/item/robot_module/Destroy()
 	QDEL_NULL_LIST(equipment)
