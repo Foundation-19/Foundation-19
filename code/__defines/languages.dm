@@ -6,6 +6,7 @@
 #define LANGUAGE_HUMAN_IBERIAN   "Spanish"
 #define LANGUAGE_HUMAN_RUSSIAN   "Russian"
 #define LANGUAGE_HUMAN_SELENIAN  "Selenian"
+#define LANGUAGE_HUMAN_FRENCH	 "French"
 
 //Human misc
 #define LANGUAGE_GUTTER         "Gutter"

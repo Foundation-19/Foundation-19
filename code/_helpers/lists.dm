@@ -180,6 +180,12 @@ Checks if a list has the same entries and values as an element of big.
 		return picked
 	return null
 
+// Removes the first element of a list, a la pops the left-most element.
+/proc/popleft(list/L)
+	if(L.len)
+		. = L[1]
+		L.Cut(1,2)
+
 //Returns the next element in parameter list after first appearance of parameter element. If it is the last element of the list or not present in list, returns first element.
 /proc/next_in_list(element, list/L)
 	for(var/i=1, i<L.len, i++)
@@ -348,6 +354,12 @@ Checks if a list has the same entries and values as an element of big.
 		return (result + L.Copy(Li, 0))
 	return (result + R.Copy(Ri, 0))
 
+// Macros to test for bits in a bitfield. Note, that this is for use with indexes, not bit-masks!
+#define BITTEST(bitfield,index)  ((bitfield)  &   (1 << (index)))
+#define BITSET(bitfield,index)   (bitfield)  |=  (1 << (index))
+#define BITRESET(bitfield,index) (bitfield)  &= ~(1 << (index))
+#define BITFLIP(bitfield,index)  (bitfield)  ^=  (1 << (index))
+
 //Converts a bitfield to a list of numbers (or words if a wordlist is provided)
 /proc/bitfield2list(bitfield = 0, list/wordlist)
 	var/list/r = list()
@@ -357,9 +369,9 @@ Checks if a list has the same entries and values as an element of big.
 		for(var/i=1, i<=max, i++)
 			if(bitfield & bit)
 				r += wordlist[i]
-			bit = SHIFTL(bit, 1)
+			bit = bit << 1
 	else
-		for(var/bit=1, bit<=65535, bit = SHIFTL(bit, 1))
+		for(var/bit=1, bit<=65535, bit = bit << 1)
 			if(bitfield & bit)
 				r += bit
 
@@ -734,3 +746,18 @@ proc/dd_sortedTextList(list/incoming)
 					for(var/T in typesof(P))
 						L[T] = TRUE
 		return L
+
+/**
+ * Returns a list of strings from a file. Ignores #
+ */
+/proc/file_to_list(path)
+	if(fexists(path))
+		var/list/lines = file2list(path)
+		var/list/output = list()
+		for(var/line in lines)
+			if(!length(line))
+				continue
+			if(copytext(line, 1, 2) == "#")
+				continue
+			output += line
+		return output
