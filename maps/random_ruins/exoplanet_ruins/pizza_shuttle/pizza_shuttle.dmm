@@ -1,0 +1,576 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/template_noop,
+/area/template_noop)
+"b" = (
+/obj/effect/paint/red,
+/turf/simulated/wall/titanium,
+/area/template_noop)
+"c" = (
+/turf/simulated/floor/tiled/dark,
+/area/map_template/pizza_shuttle)
+"d" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"e" = (
+/obj/structure/wall_frame/titanium,
+/obj/effect/paint/black,
+/obj/item/stack/material/rods,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"f" = (
+/obj/item/stack/material/titanium,
+/obj/structure/girder,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"g" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/freezer,
+/obj/item/pizzabox/meat,
+/obj/item/pizzabox/vegetable,
+/obj/item/pizzabox/mushroom,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"h" = (
+/obj/item/stack/material/titanium,
+/obj/machinery/power/smes/buildable/power_shuttle,
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"j" = (
+/obj/structure/wall_frame/titanium,
+/obj/effect/paint/black,
+/obj/item/material/shard,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"k" = (
+/obj/structure/wall_frame/titanium,
+/obj/effect/paint/black,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"l" = (
+/obj/structure/wall_frame/titanium,
+/obj/effect/paint/black,
+/obj/item/material/shard,
+/obj/item/stack/material/rods,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"n" = (
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/pizza_shuttle)
+"o" = (
+/obj/structure/closet/crate/freezer,
+/obj/item/pizzabox/mushroom,
+/obj/item/pizzabox/meat,
+/obj/item/pizzabox/margherita,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/pizza_shuttle)
+"p" = (
+/obj/machinery/constructable_frame/computerframe,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/pizza_shuttle)
+"q" = (
+/obj/effect/landmark/scorcher,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"r" = (
+/obj/item/stack/material/titanium,
+/turf/template_noop,
+/area/template_noop)
+"s" = (
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"t" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/black,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"u" = (
+/obj/effect/paint/red,
+/obj/structure/fuel_port,
+/turf/simulated/wall/titanium,
+/area/template_noop)
+"v" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/shuttle/engine/heater,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"w" = (
+/obj/machinery/door/airlock,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"y" = (
+/obj/effect/landmark/scorcher,
+/turf/template_noop,
+/area/template_noop)
+"z" = (
+/obj/machinery/constructable_frame/computerframe{
+	dir = 4
+	},
+/obj/item/material/shard,
+/obj/item/stock_parts/circuitboard/broken,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/pizza_shuttle)
+"A" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/freezer,
+/obj/item/pizzabox/margherita,
+/obj/item/pizzabox/margherita,
+/obj/item/pizzabox/meat,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"B" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/item/stack/material/titanium,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"C" = (
+/obj/item/material/shard,
+/obj/structure/bed/chair/comfy/teal{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/pizza_shuttle)
+"D" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/freezer,
+/obj/item/pizzabox/margherita,
+/obj/item/pizzabox/meat,
+/obj/item/pizzabox/mushroom,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"E" = (
+/obj/effect/landmark/scorcher,
+/obj/structure/girder/displaced,
+/obj/item/stack/material/titanium,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"F" = (
+/obj/item/stack/material/rods,
+/turf/template_noop,
+/area/template_noop)
+"G" = (
+/obj/item/stack/material/titanium,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"H" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/pizza_shuttle)
+"I" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/freezer,
+/obj/item/pizzabox/mushroom,
+/obj/item/pizzabox/meat,
+/obj/item/pizzabox/margherita,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"J" = (
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 6
+	},
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"K" = (
+/obj/machinery/constructable_frame/computerframe{
+	dir = 8
+	},
+/obj/item/stock_parts/circuitboard/broken,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/pizza_shuttle)
+"L" = (
+/obj/machinery/atmospherics/unary/engine{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/template_noop)
+"M" = (
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"N" = (
+/obj/effect/paint/red,
+/turf/simulated/wall/titanium,
+/area/map_template/pizza_shuttle)
+"O" = (
+/obj/effect/paint/black,
+/turf/simulated/wall/titanium,
+/area/map_template/pizza_shuttle)
+"P" = (
+/obj/machinery/door/blast/shutters{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"Q" = (
+/obj/machinery/door/blast/shutters/open{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"R" = (
+/obj/effect/landmark/scorcher,
+/obj/structure/girder,
+/obj/item/stack/material/titanium,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"S" = (
+/obj/item/pizzabox,
+/obj/item/reagent_containers/food/snacks/sliceable/pizza/margherita,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/pizza_shuttle)
+"T" = (
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 10
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"U" = (
+/obj/item/stock_parts/circuitboard/broken,
+/obj/effect/landmark/corpse/mbill_pizza_pilot,
+/obj/item/material/shard,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/pizza_shuttle)
+"V" = (
+/obj/item/material/shard,
+/obj/item/storage/toolbox/emergency,
+/obj/item/clothing/suit/space/emergency,
+/obj/item/clothing/head/helmet/space/emergency,
+/obj/item/clothing/mask/breath/emergency,
+/obj/item/tank/emergency/oxygen/double,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/pizza_shuttle)
+"W" = (
+/obj/effect/landmark/clear,
+/turf/template_noop,
+/area/template_noop)
+"X" = (
+/obj/machinery/door/airlock,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/pizza_shuttle)
+"Y" = (
+/obj/item/stack/cable_coil,
+/turf/simulated/floor/plating,
+/area/map_template/pizza_shuttle)
+"Z" = (
+/obj/item/frame/apc,
+/obj/item/module/power_control,
+/obj/item/cell/crap/empty,
+/obj/structure/cable/cyan{
+	d2 = 2;
+	dir = 1;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/pizza_shuttle)
+
+(1,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+r
+a
+a
+a
+a
+a
+"}
+(2,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+r
+a
+F
+a
+a
+a
+"}
+(3,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+y
+a
+a
+a
+r
+a
+a
+"}
+(4,1,1) = {"
+a
+a
+a
+a
+O
+O
+O
+O
+P
+Q
+q
+y
+y
+a
+a
+a
+a
+F
+"}
+(5,1,1) = {"
+a
+k
+t
+O
+O
+A
+g
+d
+c
+c
+R
+q
+O
+N
+b
+a
+a
+a
+"}
+(6,1,1) = {"
+e
+l
+z
+S
+O
+D
+d
+d
+c
+o
+q
+E
+J
+v
+L
+y
+y
+y
+"}
+(7,1,1) = {"
+j
+p
+C
+U
+X
+c
+c
+c
+s
+H
+w
+T
+M
+v
+L
+y
+y
+y
+"}
+(8,1,1) = {"
+j
+e
+K
+V
+O
+d
+d
+B
+n
+Z
+O
+h
+Y
+v
+L
+y
+y
+F
+"}
+(9,1,1) = {"
+a
+t
+t
+O
+q
+q
+I
+d
+c
+c
+O
+q
+q
+R
+u
+a
+a
+a
+"}
+(10,1,1) = {"
+a
+a
+a
+W
+q
+q
+G
+f
+Q
+P
+O
+y
+y
+y
+a
+r
+a
+a
+"}
+(11,1,1) = {"
+a
+a
+a
+W
+W
+W
+W
+W
+a
+a
+a
+a
+a
+a
+F
+F
+a
+a
+"}
+(12,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+r
+a
+a
+a
+a
+a
+"}
+(13,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+r
+a
+a
+a
+a
+"}
+(14,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+r
+a
+a
+a
+"}

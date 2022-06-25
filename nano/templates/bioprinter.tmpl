@@ -1,0 +1,28 @@
+<div class='item'>
+	{{if data.special_data}}
+		{{:data.special_data}}<br>
+	{{/if}}
+	<b>Stored matter:</b> {{:data.stored_matter}}/{{:data.max_matter}}<br>
+	<b>Time to print:</b> {{:data.print_time}} seconds
+</div>
+<hr>
+<div class='item'>
+	{{if data.printing}}
+		<font color='cc5555'>Machine is currently operating. Please wait...</font>
+	{{else}}
+		<div class="itemContent" style="width:100%;">
+			<table>
+			{{for data.product_list}}
+				<tr>
+				{{if value.can_print}}
+					<td>{{:helper.link('Print', null, {"to_print" : value.product}, null)}}
+					<td>{{:value.parsed_name}} - {{:value.req_matter}}/{{:value.req_matter}}
+				{{else}}
+					<td>{{:helper.link('Print', null, {"to_print" : value.product}, 'disabled')}}
+					<td>{{:value.parsed_name}} - {{:data.stored_matter}}/{{:value.req_matter}}
+				{{/if}}
+			{{/for}}
+			</table>
+		</div>
+	{{/if}}
+</div>
