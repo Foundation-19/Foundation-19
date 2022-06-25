@@ -22,25 +22,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/scp049/examine(mob/user)
 	. = ..()
 
-/datum/scp/scp_049
-	name = "SCP-049"
-	designation = "049"
-	classification = EUCLID
-
-/mob/living/carbon/human/scp049/IsAdvancedToolUser()
-	return FALSE
-
-/mob/living/carbon/human/scp049/update_icons()
-	return
-
-/mob/living/carbon/human/scp049/on_update_icon()
-	if (lying || resting)
-		var/matrix/M =  matrix()
-		transform = M.Turn(90)
-	else
-		transform = null
-	return
-
 /mob/living/carbon/human/scp049/Initialize()
 	..()
 	add_language(LANGUAGE_EAL, 1)
@@ -65,6 +46,25 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		/mob/living/carbon/human/scp049/proc/Im_here_to_cure_you,
 		/mob/living/carbon/human/scp049/proc/cure_action
 	)
+
+/datum/scp/scp_049
+	name = "SCP-049"
+	designation = "049"
+	classification = EUCLID
+
+/mob/living/carbon/human/scp049/IsAdvancedToolUser()
+	return FALSE
+
+/mob/living/carbon/human/scp049/update_icons()
+	return
+
+/mob/living/carbon/human/scp049/on_update_icon()
+	if (lying || resting)
+		var/matrix/M =  matrix()
+		transform = M.Turn(90)
+	else
+		transform = null
+	return
 
 /mob/living/carbon/human/scp049/Destroy()
 	GLOB.scp049s -= src
