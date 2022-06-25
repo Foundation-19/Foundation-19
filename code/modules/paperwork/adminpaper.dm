@@ -49,7 +49,6 @@
 	var/text = null
 	//TODO change logo based on who you're contacting.
 	text = "<center><img src = [logo]></br>"
-	text += "<b>[origin] Quantum Uplink Signed Message</b><br>"
 	text += "<font size = \"1\">Encryption key: [originhash]<br>"
 	text += "Challenge: [challengehash]<br></font></center><hr>"
 
