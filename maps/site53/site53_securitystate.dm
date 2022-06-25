@@ -32,11 +32,12 @@
 	name = "code yellow"
 	icon = 'icons/misc/security_state.dmi'
 
+
 	light_max_bright = 0.5
 	light_inner_range = 1
 	light_outer_range = 2
-	light_color_alarm = COLOR_BLUE
-	light_color_status_display = COLOR_BLUE
+	light_color_alarm = COLOR_VIOLET
+	light_color_status_display = COLOR_VIOLET
 	overlay_alarm = "alarm_yellow"
 	overlay_status_display = "status_display_yellow"
 
@@ -70,7 +71,7 @@
 	overlay_alarm = "alarm_orange"
 	overlay_status_display = "status_display_orange"
 
-//	crb = TRUE
+	crb = TRUE
 
 	var/static/datum/announcement/priority/security/security_announcement_orange = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codered.ogg'))
 
@@ -86,15 +87,15 @@
 	name = "code red"
 	icon = 'icons/misc/security_state.dmi'
 
-	light_max_bright = 0.5
+	light_max_bright = 0.75
 	light_inner_range = 1
-	light_outer_range = 2
+	light_outer_range = 3
 	light_color_alarm = COLOR_RED
 	light_color_status_display = COLOR_RED
 	overlay_alarm = "alarm_red"
 	overlay_status_display = "status_display_red"
 
-//	crb = TRUE
+	crb = TRUE
 
 	var/static/datum/announcement/priority/security/security_announcement_red = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codered.ogg'))
 
@@ -109,16 +110,16 @@
 /decl/security_level/default/site53/code_black
 	name = "code black"
 
-	light_max_bright = 0.5
-	light_inner_range = 1
-	light_outer_range = 2
+	light_max_bright = 0.75
+	light_inner_range = 0.1
+	light_outer_range = 3
 	light_color_alarm = COLOR_RED
 	light_color_status_display = COLOR_NAVY_BLUE
 
 	overlay_alarm = "black_alarm"
 	overlay_status_display = "status_display_black"
 
-//	crb = TRUE
+	crb = TRUE
 
 	var/static/datum/announcement/priority/security/security_announcement_black = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codeblack.ogg'))
 
@@ -133,9 +134,9 @@
 /decl/security_level/default/site53/code_gray
 	name = "code gray"
 
-	light_max_bright = 0.5
-	light_inner_range = 1
-	light_outer_range = 2
+	light_max_bright = 0.75
+	light_inner_range = 0.1
+	light_outer_range = 3
 	light_color_alarm = COLOR_GRAY
 	light_color_status_display = COLOR_GRAY
 

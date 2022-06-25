@@ -62,7 +62,7 @@
 	var/old_language = language
 	if (!set_language(language, TRUE))
 		log_debug("[src] ([type]) initialized with invalid or missing language `[old_language]` defined.")
-		set_language(LANGUAGE_HUMAN_EURO, TRUE)
+		set_language(LANGUAGE_ENGLISH, TRUE)
 
 /obj/item/paper/proc/set_content(text, title, parse_pencode = TRUE)
 	if(title)
@@ -555,11 +555,12 @@
 //For supply.
 /obj/item/paper/manifest
 	name = "supply manifest"
+	language = LANGUAGE_ENGLISH
 	var/is_copy = 1
 /*
  * Premade paper
  */
-/obj/item/paper/spacer
+/obj/item/paper/english
 	language = LANGUAGE_ENGLISH
 
 /obj/item/paper/Court

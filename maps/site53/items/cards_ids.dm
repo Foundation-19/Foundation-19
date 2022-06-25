@@ -216,7 +216,7 @@
 	desc = "A light blue card. Seems almost as unimportant as the person itself."
 	icon_state = "securitylvl1"
 	item_state = "Sec_ID1"
-//	job_access_type = /datum/job/enlistedofficer
+	job_access_type = /datum/job/enlistedofficerlcz
 
 /obj/item/card/id/seclvl2
 	name = " security ID"
@@ -239,11 +239,32 @@
 	item_state = "Sec_ID4"
 	job_access_type = /datum/job/seneng
 
+//ENGINEERING
 
+/obj/item/card/id/seclvl2eng
+	name = " security ID"
+	desc = "A dark purple ID. Looks important. The person wearing it, not at all."
+	icon_state = "securitylvl2"
+	item_state = "Sec_ID2"
+	job_access_type = /datum/job/juneng
+
+/obj/item/card/id/seclvl3eng
+	name = " security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	job_access_type = /datum/job/eng
+
+/obj/item/card/id/seclvl4eng
+	name = " security ID"
+	desc = "A teal ID. Looks cool."
+	icon_state = "securitylvl4"
+	item_state = "Sec_ID4"
+	job_access_type = /datum/job/seneng
 
 // JUNIOR GUARD ID'S
 
-/obj/item/card/id/junseclvl1
+/obj/item/card/id/junseclvl2lcz
 	name = " security ID"
 	desc = "A light blue card. Seems almost as unimportant as the person itself."
 	icon_state = "securitylvl1"
@@ -265,7 +286,7 @@
 	job_access_type = /datum/job/enlistedofficerhcz
 
 // GUARD ID'S.
-/obj/item/card/id/seclvl2lcz
+/obj/item/card/id/seclvl3lcz
 	name = " security ID"
 	desc = "A dark purple ID. Looks important. The person wearing it, not at all."
 	icon_state = "securitylvl2"
@@ -514,12 +535,13 @@
 	name = " Botany Assignment Card"
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	access = access_dclassbotany
+
 /obj/item/card/id/dkitchen
 	name = " Kitchen Assignment Card"
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	access = access_dclasskitchen
+
 /obj/item/card/id/djanitorial
 	name = " Janitorial Assignment Card"
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	access = access_dclassjanitorial
-

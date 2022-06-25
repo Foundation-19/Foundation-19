@@ -359,4 +359,5 @@
 		/obj/item/gun/projectile/pistol/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 		/obj/item/storage/belt/holster/security/tactical,
+		/obj/item/melee/telebaton,
 	)
