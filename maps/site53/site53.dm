@@ -16,6 +16,21 @@
 //	#include "torch_npcs.dm"
 	#include "site53_securitystate.dm"
 
+//Reports :DDDD
+	#include "datums\reports\admin.dm"
+	#include "datums\reports\engineering.dm"
+	#include "datums\reports\ethics.dm"
+	#include "datums\reports\intel.dm"
+	#include "datums\reports\isd.dm"
+	#include "datums\reports\medical.dm"
+	#include "datums\reports\mtf.dm"
+	#include "datums\reports\o5.dm"
+	#include "datums\reports\science.dm"
+	#include "datums\reports\scp.dm"
+	#include "datums\reports\security.dm"
+	#include "datums\reports\tribunal.dm"
+	#include "datums\reports\ungoc.dm"
+
 	#include "items/cards_ids.dm"
 	#include "items/encryption_keys.dm"
 	#include "items/headsets.dm"
