@@ -93,11 +93,7 @@
 "abO" = (/obj/machinery/light{dir = 4; icon_state = "tube1"; pixel_x = 0},/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/monotile,/area/site53/lowertrams/hub)
 "abP" = (/obj/machinery/light{icon_state = "tube1"; dir = 8; pixel_x = 0},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/corner/yellow/border{icon_state = "bordercolor"; dir = 8},/turf/simulated/floor/tiled/monotile,/area/site53/lowertrams/hub)
 "abQ" = (/obj/effect/floor_decal/corner/orange/mono,/turf/simulated/floor/tiled/monotile,/area/site53/lowertrams/hub)
-<<<<<<< Updated upstream
-"abR" = (/obj/structure/closet/crate/secure/large,/obj/effect/floor_decal/industrial/hatch/red,/mob/living/simple_animal/cat/scp_066,/obj/machinery/light{dir = 1; pixel_x = 0; pixel_y = 0},/turf/simulated/floor/tiled/monotile/white,/area/site53/llcz/scp066)
-=======
 "abR" = (/obj/machinery/robotics_fabricator{req_access = list(301)},/turf/simulated/floor/tiled/monotile,/area/site53/reswing/robotics)
->>>>>>> Stashed changes
 "abS" = (/obj/machinery/computer/modular/preset/aislot/research{dir = 8},/turf/simulated/floor/tiled/techfloor,/area/site53/science/aicobservation)
 "abT" = (/obj/machinery/light{icon_state = "tube1"; dir = 1; pixel_x = 0},/obj/structure/table/standard,/obj/effect/floor_decal/corner/brown/mono,/turf/simulated/floor/tiled/monotile,/area/site53/lowertrams/brownline)
 "abU" = (/obj/effect/wallframe_spawn/reinforced,/turf/simulated/floor/plating,/area/site53/lowertrams/restaurant)
@@ -120,11 +116,7 @@
 "acl" = (/turf/simulated/floor/tiled/dark,/area/site53/lowertrams/redline)
 "acm" = (/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/monotile/white,/area/site53/lowertrams/restaurantkitchenarea)
 "acn" = (/obj/effect/paint_stripe/yellow,/turf/simulated/wall/prepainted,/area/site53/ulcz/maintenance)
-<<<<<<< Updated upstream
-"aco" = (/obj/structure/dogbed,/mob/living/simple_animal/scp_131/a,/turf/simulated/floor/tiled/monotile,/area/site53/llcz/scp131)
-=======
 "aco" = (/obj/machinery/robotic_fabricator{req_access = list(301)},/obj/structure/sign/warning/moving_parts{pixel_y = 32},/turf/simulated/floor/tiled/monotile,/area/site53/reswing/robotics)
->>>>>>> Stashed changes
 "acp" = (/turf/simulated/floor/reinforced,/area/site53/lowertrams/brownline)
 "acq" = (/obj/machinery/vending/cigarette,/obj/effect/floor_decal/corner/brown/mono,/turf/simulated/floor/tiled/monotile,/area/site53/lowertrams/brownline)
 "acr" = (/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 9},/turf/simulated/floor/reinforced,/area/site53/lowertrams/brownline)
@@ -135,13 +127,8 @@
 "acw" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/site53/ulcz/maintenance)
 "acx" = (/obj/machinery/power/breakerbox/activated{RCon_tag = "Tram Hub Bypass"},/turf/simulated/floor/tiled/techfloor/grid,/area/site53/ulcz/maintenance)
 "acy" = (/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 9},/turf/simulated/floor/reinforced,/area/site53/ulcz/tram)
-<<<<<<< Updated upstream
 "acz" = (/obj/machinery/light,/obj/structure/dogbed,/mob/living/simple_animal/scp_131/b,/turf/simulated/floor/tiled/monotile,/area/site53/llcz/scp131)
 "acA" = (/obj/machinery/fusion_fuel_injector/mapped{anchored = 0; id_tag = "fusion_injector2"; initial_id_tag = "fusion_injector2"},/turf/simulated/floor/reinforced,/area/vacant/prototype/engine)
-=======
-"acz" = (/obj/structure/closet/crate/secure/large,/obj/effect/floor_decal/industrial/hatch/red,/mob/living/simple_animal/cat/scp_066,/turf/simulated/floor/tiled/monotile/white,/area/site53/llcz/scp066)
-"acA" = (/obj/structure/dogbed,/mob/living/simple_animal/scp_131/a,/turf/simulated/floor/tiled/monotile,/area/site53/llcz/scp131)
->>>>>>> Stashed changes
 "acB" = (/obj/effect/paint_stripe/brown,/turf/simulated/wall/prepainted,/area/site53/tram/lcz)
 "acC" = (/obj/machinery/vending/coffee,/obj/effect/floor_decal/corner/brown/mono,/turf/simulated/floor/tiled/monotile,/area/site53/lowertrams/brownline)
 "acD" = (/obj/structure/closet/crate/bin{anchored = 1; name = "trash bin"},/obj/machinery/light{dir = 1; pixel_x = 0; pixel_y = 0},/turf/simulated/floor/tiled/monotile,/area/site53/lowertrams/restaurant)
@@ -179,20 +166,12 @@
 "adj" = (/obj/structure/sign/warning/high_voltage{pixel_y = 32},/obj/effect/floor_decal/corner/brown/mono,/turf/simulated/floor/tiled/monotile,/area/site53/lowertrams/brownline)
 "adk" = (/obj/machinery/light{icon_state = "tube1"; dir = 1; pixel_x = 0},/obj/machinery/atmospherics/unary/vent_pump/on,/obj/structure/closet/crate/bin{anchored = 1; name = "trash bin"},/obj/effect/floor_decal/corner/brown/mono,/turf/simulated/floor/tiled/monotile,/area/site53/lowertrams/brownline)
 "adl" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/monotile,/area/site53/lowertrams/restaurant)
-<<<<<<< Updated upstream
 "adm" = (/obj/effect/floor_decal/corner/yellow{icon_state = "corner_white"; dir = 9},/obj/machinery/computer/fusion/fuel_control{dir = 4; id_tag = "fusion_injector2"; initial_id_tag = "fusion_injector2"},/turf/simulated/floor/tiled/dark,/area/vacant/prototype/control)
-=======
-"adm" = (/obj/machinery/light,/obj/structure/dogbed,/mob/living/simple_animal/scp_131/b,/turf/simulated/floor/tiled/monotile,/area/site53/llcz/scp131)
->>>>>>> Stashed changes
 "adn" = (/obj/structure/table/standard{name = "plastic table frame"},/obj/machinery/chemical_dispenser/bar_alc/full{pixel_y = 7},/turf/simulated/floor/tiled/monotile,/area/site53/lowertrams/restaurant)
 "ado" = (/obj/machinery/door/airlock/glass/research{name = "Brown Line"},/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/door/firedoor,/turf/simulated/floor/tiled/monotile,/area/site53/lowertrams/brownline)
 "adp" = (/obj/structure/bed/chair,/turf/simulated/floor/lino,/area/site53/lowertrams/restaurant)
 "adq" = (/obj/structure/table/standard{name = "plastic table frame"},/obj/item/reagent_containers/food/drinks/shaker,/obj/machinery/reagent_temperature/cooler,/turf/simulated/floor/tiled,/area/site53/lowertrams/restaurant)
-<<<<<<< Updated upstream
 "adr" = (/obj/effect/floor_decal/corner/yellow{dir = 9},/obj/machinery/computer/fusion/gyrotron{dir = 4; id_tag = "fusion_gyrotron2"; initial_id_tag = "fusion_gyrotron2"},/turf/simulated/floor/tiled/dark,/area/vacant/prototype/control)
-=======
-"adr" = (/obj/machinery/camera/network/entrance{c_tag = "Communications Tower Basement"; dir = 4; icon_state = "camera"},/turf/simulated/floor/tiled/monotile,/area/site53/upper_surface/commstower{name = "\improper Server Farm Basement"})
->>>>>>> Stashed changes
 "ads" = (/obj/machinery/botany/extractor,/turf/simulated/floor/tiled/techfloor,/area/site53/lowertrams/restaurantkitchenarea)
 "adt" = (/obj/structure/cable/green{icon_state = "4-8"; pixel_z = 0; d1 = 4; d2 = 8},/turf/simulated/floor/lino,/area/site53/lowertrams/restaurant)
 "adu" = (/obj/machinery/door/firedoor{dir = 8},/obj/structure/table/reinforced,/turf/simulated/floor/tiled,/area/site53/lowertrams/restaurant)
