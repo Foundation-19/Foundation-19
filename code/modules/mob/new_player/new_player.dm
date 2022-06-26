@@ -171,6 +171,10 @@
 		var/datum/species/S = all_species[client.prefs.species]
 		if(!check_species_allowed(S))
 			return 0
+		if(client.prefs.organ_data[BP_CHEST] == "cyborg")
+			if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
+				to_chat(usr, "No FBP without whitelist")
+				return 0
 
 		AttemptLateSpawn(job, client.prefs.spawnpoint)
 		return
@@ -338,6 +342,11 @@
 
 /mob/new_player/proc/create_character(var/turf/spawn_turf)
 	spawning = 1
+	if(client.prefs.organ_data[BP_CHEST] == "cyborg")
+		if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
+			to_chat(src, "No PPT without whitelist.")
+			spawning = 0
+			return
 	close_spawn_windows()
 
 	var/mob/living/carbon/human/new_character

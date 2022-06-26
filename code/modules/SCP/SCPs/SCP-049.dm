@@ -78,8 +78,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		angry = TRUE
 
 
-#warn work on anger system
-
 /mob/living/carbon/human/scp049/Login()
 	. = ..()
 	if(client)
