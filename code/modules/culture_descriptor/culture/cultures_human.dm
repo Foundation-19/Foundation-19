@@ -78,11 +78,11 @@
 	the planet has led to the people of Pluto having something of a seedy reputation, its citizens being viewed with disrepute. The people themselves, however, are usually \
 	just happy to get off the rock and to healthier locales. Unfortunately, despite the efforts of the wider SCG, many Plutonians tend to maintain criminal ties, even offworld."
 	economic_power = 0.8
-	secondary_langs = list (LANGUAGE_HUMAN_EURO,
+	secondary_langs = list (LANGUAGE_HUMAN_GERMAN,
 		LANGUAGE_HUMAN_CHINESE,
 		LANGUAGE_HUMAN_ARABIC,
 		LANGUAGE_HUMAN_INDIAN,
-		LANGUAGE_HUMAN_IBERIAN,
+		LANGUAGE_HUMAN_SPANISH,
 		LANGUAGE_HUMAN_RUSSIAN,
 		LANGUAGE_ENGLISH,
 		LANGUAGE_GUTTER,
@@ -95,12 +95,12 @@
 	secondary_langs = list(
 		LANGUAGE_HUMAN_ARABIC,
 		LANGUAGE_HUMAN_CHINESE,
-		LANGUAGE_HUMAN_IBERIAN,
+		LANGUAGE_HUMAN_SPANISH,
 		LANGUAGE_HUMAN_INDIAN,
 		LANGUAGE_HUMAN_RUSSIAN,
 		LANGUAGE_SIGN,
 		LANGUAGE_ENGLISH,
-		LANGUAGE_HUMAN_EURO,
+		LANGUAGE_HUMAN_GERMAN,
 		LANGUAGE_HUMAN_FRENCH,
 	)
 
@@ -144,11 +144,11 @@
 	name = CULTURE_HUMAN_OTHER
 	description = "Some people are from places no one has ever heard of or places too wild and fantastical to make it into Encyclopedia Galactica. You are one of these. "
 	economic_power = 1
-	secondary_langs = list (LANGUAGE_HUMAN_EURO,
+	secondary_langs = list (LANGUAGE_HUMAN_GERMAN,
 		LANGUAGE_HUMAN_CHINESE,
 		LANGUAGE_HUMAN_ARABIC,
 		LANGUAGE_HUMAN_INDIAN,
-		LANGUAGE_HUMAN_IBERIAN,
+		LANGUAGE_HUMAN_SPANISH,
 		LANGUAGE_HUMAN_RUSSIAN,
 		LANGUAGE_ENGLISH,
 		LANGUAGE_GUTTER,

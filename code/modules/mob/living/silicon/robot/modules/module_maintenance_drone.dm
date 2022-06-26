@@ -6,7 +6,7 @@
 		NETWORK_ENGINEERING
 	)
 	languages = list(
-		LANGUAGE_HUMAN_EURO = FALSE
+		LANGUAGE_HUMAN_GERMAN = FALSE
 	)
 	equipment = list(
 		/obj/item/weldingtool,

@@ -18,6 +18,7 @@
 	icon_locked = "enlisted-locked"
 	icon_opened = "enlisted-open"
 	icon_off = "enlisted-off"
+	anchored = 1
 	req_access = list(access_securitylvl1)
 	var/registered_name = null
 
@@ -211,16 +212,14 @@
 
 /obj/structure/closet/secure_closet/mtf/breachshotguns/WillContain()
 	return list(
-		/obj/item/gun/projectile/shotgun/pump/combat,
-		/obj/item/gun/projectile/shotgun/pump/combat,
-		/obj/item/gun/projectile/shotgun/pump/combat,
+		/obj/item/gun/projectile/shotgun/pump/combat = 3,
 		/obj/item/storage/box/mtf/empammo = 6,
 		/obj/item/storage/box/mtf/pelletammo = 6
 	)
 
 /obj/structure/closet/secure_closet/mtf/riotshotguns
 	name = "riot shotgun locker"
-	req_access = list(access_securitylvl1)
+	req_access = list(access_securitylvl2)
 	icon_state = "gun-locked"
 	icon_closed = "gun-unlocked"
 	icon_locked = "gun-locked"
@@ -229,11 +228,27 @@
 
 /obj/structure/closet/secure_closet/mtf/riotshotguns/WillContain()
 	return list(
-		/obj/item/gun/projectile/shotgun/tactical/beanbag,
-		/obj/item/gun/projectile/shotgun/tactical/beanbag,
-		/obj/item/gun/projectile/shotgun/tactical/beanbag,
+		/obj/item/gun/projectile/shotgun/pump = 3,
 		/obj/item/storage/box/mtf/beanbag = 12,
-//		/obj/item/clothing/accessory/storage/bandolier/beanbag = 3
+		/obj/item/clothing/accessory/storage/bandolier/beanbag = 3
+    )
+
+/obj/structure/closet/secure_closet/mtf/riotgear
+    name = "riot gear locker"
+    req_access = list(access_securitylvl2)
+    icon_state = "gun-locked"
+    icon_closed = "gun-unlocked"
+    icon_locked = "gun-locked"
+    icon_opened = "gun-open"
+    icon_off = "gun-off"
+
+/obj/structure/closet/secure_closet/mtf/riotgear/WillContain()
+    return list(
+        /obj/item/clothing/head/helmet/riot = 3,
+        /obj/item/clothing/suit/armor/riot = 3,
+        /obj/item/shield/riot = 3,
+        /obj/item/melee/telebaton = 3,
+
 	)
 
 /obj/structure/closet/secure_closet/mtf/attackby(var/obj/item/W, var/mob/user)
