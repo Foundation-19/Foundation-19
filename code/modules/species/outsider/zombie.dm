@@ -2,7 +2,6 @@
 //// Zombie Defines
 
 #define SPECIES_ZOMBIE "Zombie"
-#define LANGUAGE_ZOMBIE "Zombie"
 #define ANTAG_ZOMBIE "Zombie"
 
 //// Zombie Globals
