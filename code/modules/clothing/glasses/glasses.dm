@@ -166,6 +166,22 @@
 	. = ..()
 	overlay = GLOB.global_hud.nvg
 
+/obj/item/clothing/glasses/scramble
+	name = "SCRAMBLE goggles"
+	desc = "State-of-the-art SCRAMBLE goggles. These things cost a fortune and apperantly make you able to view SCP-096!"
+	icon_state = "scramble"
+	item_state = "glasses"
+	origin_tech = list(TECH_MAGNET = 4)
+	action_button_name = "Toggle Goggles"
+	toggleable = TRUE
+	see_invisible = SEE_INVISIBLE_NOLIGHTING
+	off_state = "denight"
+	electric = TRUE
+
+/obj/item/clothing/glasses/scramble/Initialize()
+	. = ..()
+	overlay = GLOB.global_hud.scramble
+
 /obj/item/clothing/glasses/tacgoggles
 	name = "tactical goggles"
 	desc = "Self-polarizing goggles with light amplification for dark environments. Made from durable synthetic."

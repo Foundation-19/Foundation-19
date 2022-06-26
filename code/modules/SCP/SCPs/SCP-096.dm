@@ -55,7 +55,7 @@
 
 	//Pick the next target
 	if(shitlist.len)
-		var/mob/living/carbon/H
+		var/mob/living/carbon/human/H
 		for(var/i = 1, i <= shitlist.len, i++) //start from the first guy
 			H = shitlist[1]
 			if(!H || H.stat == DEAD)
@@ -84,10 +84,10 @@
 //Check if any carbon mob can see us
 /mob/living/simple_animal/hostile/scp096/proc/check_los()
 
-	for(var/mob/living/carbon/H in viewers(src, null))
+	for(var/mob/living/carbon/human/H in viewers(src, null))
 		if(H in shitlist)
 			continue
-		if(H.stat || is_blind(H))
+		if(H.stat || H.equipment_tint_total == 3)
 			continue
 
 		var/observed = 0
@@ -122,7 +122,7 @@
 
 	return
 
-/mob/living/simple_animal/hostile/scp096/proc/add_examine_urge(var/mob/living/carbon/H)
+/mob/living/simple_animal/hostile/scp096/proc/add_examine_urge(var/mob/living/carbon/human/H)
 
 	var/index
 	var/examine_urge
@@ -151,7 +151,7 @@
 
 	CALLBACK( addtimer(H, .proc/reduce_examine_urge), 200 SECONDS)
 
-/mob/living/simple_animal/hostile/scp096/proc/reduce_examine_urge(var/mob/living/carbon/H)
+/mob/living/simple_animal/hostile/scp096/proc/reduce_examine_urge(var/mob/living/carbon/human/H)
 	var/index
 	var/examine_urge
 
@@ -181,16 +181,10 @@
 		if(will_scream)
 			if(!buckled) dir = 2
 			visible_message("<span class='danger'>[src] SCREAMS!</span>")
-			playsound(get_turf(src), 'sound/voice/scream_horror1.ogg', 50, 1)
+			playsound(get_turf(src), 'sound/voice/scream_horror1.ogg', 100)
 			screaming = 1
 			will_scream = 0
-			spawn(100)
-				visible_message("<span class='danger'>[src] SCREAMS!</span>")
-				playsound(get_turf(src), 'sound/voice/scream_horror1.ogg', 50, 1)
-			spawn(200)
-				visible_message("<span class='danger'>[src] SCREAMS!</span>")
-				playsound(get_turf(src), 'sound/voice/scream_horror1.ogg', 50, 1)
-			spawn(300)
+			spawn(290)
 				screaming = 0
 		return
 	..()
@@ -317,7 +311,7 @@
 		T.pixel_y = original_y
 		if(ishuman(T))
 			T.emote("scream")
-		playsound(T.loc, pick(murder_sound), 50, 1)
+		playsound(T.loc, pick(murder_sound), 100)
 		murdering = 0
 
 		//Warn everyone

@@ -6,7 +6,7 @@
 
 /mob/living/simple_animal/cat/scp_066
 	name = "SCP-066"
-	desc = "A mysterious plague doctor."
+	desc = "An amorphous red mass of braided yarn and ribbon."
 	SCP = /datum/scp/scp_066
 	var/next_emote = -1
 	var/global/mob/living/carbon/list/victims = list()
@@ -28,14 +28,14 @@
 	add_language(/datum/language/english)
 
 
-		// emotes
+	// emotes
 	verbs += list(
 		/mob/living/simple_animal/cat/scp_066/proc/Eric,
 		/mob/living/simple_animal/cat/scp_066/proc/EarRape,
 		/mob/living/simple_animal/cat/scp_066/proc/Noise
 	)
 
-	// SCP-066 emotes
+// SCP-066 emotes
 /* /mob/living/simple_animal/cat/scp_066/proc/Eric()
 	set category = "SCP-066"
 	set name = "Eric?"
@@ -57,7 +57,7 @@
 			playsound(src, 'sound/scp/066/066-eric5.ogg', 30)
 			next_emote = world.time + 10 */
 
-		// SCP-066 emotes
+// SCP-066 emotes
 /mob/living/simple_animal/cat/scp_066/proc/Eric()
 	set category = "SCP-066"
 	set name = "Eric?"
@@ -94,4 +94,3 @@
 			M.ear_deaf = max(M.ear_deaf,15)
 //			if(istype(M.l_ear, /obj/item/clothing/ears/earmuffs) || istype(M.r_ear, /obj/item/clothing/ears/earmuffs))
 //				M << pick('sound/scp/066/066-1-rapeE.ogg', 'sound/scp/066/066-2-rapeE.ogg', 'sound/scp/066/066-3-rapeE.ogg', 'sound/scp/066/066-4-rapeE.ogg', 'sound/scp/066/066-5-rapeE.ogg', 'sound/scp/066/066-ericrapeE.ogg')
-
