@@ -141,7 +141,7 @@
 	display_name = "Press tag"
 	path = /obj/item/clothing/accessory/armor_tag/press
 	allowed_roles = list(/datum/job/assistant)
-/*
+
 /datum/gear/tactical/helm_covers
 	allowed_roles = ARMORED_ROLES
 
@@ -197,7 +197,7 @@
 
 /datum/gear/accessory/ftu_pin
 	allowed_branches = CIVILIAN_BRANCHES
-*/
+
 /*********************
  tactical accessories
 *********************/
