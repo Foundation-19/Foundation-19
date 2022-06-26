@@ -5,8 +5,8 @@
 						https://www.sttmedia.com/syllablefrequency-german
 *///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/datum/language/human/euro
-	name = LANGUAGE_HUMAN_EURO
+/datum/language/human/german
+	name = LANGUAGE_HUMAN_GERMAN
 	desc = "A west germanic language, mainly spoken in central europe, as the official language in Germany, Austria, Switzerland to name a few. \
 			It has been influental in a variety of scientific fields."
 	speech_verb = "says"
@@ -19,7 +19,7 @@
 		LANGUAGE_HUMAN_CHINESE = 5,
 		LANGUAGE_HUMAN_ARABIC = 5,
 		LANGUAGE_HUMAN_INDIAN = 5,
-		LANGUAGE_HUMAN_IBERIAN = 30,
+		LANGUAGE_HUMAN_SPANISH = 30,
 		LANGUAGE_HUMAN_RUSSIAN = 5,
 		LANGUAGE_HUMAN_SELENIAN = 85,
 		LANGUAGE_ENGLISH = 20

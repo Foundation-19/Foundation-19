@@ -5,14 +5,14 @@
 *///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /datum/language/human/iberian
-	name = LANGUAGE_HUMAN_IBERIAN
+	name = LANGUAGE_HUMAN_SPANISH
 	desc = "An indo-european language spoken primarly in the Americas and Spain.\
 			 It evolved from the colloquial Latin of the Iberian Peninsula and is the official Language in 20 countries."
 	colour = "iberian"
 	key = "5"
 	shorthand = "Spain"
 	partial_understanding = list(
-		LANGUAGE_HUMAN_EURO = 30,
+		LANGUAGE_HUMAN_GERMAN = 30,
 		LANGUAGE_HUMAN_SELENIAN = 15,
 		LANGUAGE_ENGLISH = 20
 	)

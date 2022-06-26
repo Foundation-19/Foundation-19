@@ -6,7 +6,7 @@
 	shorthand = "Arab"
 	space_chance = 35
 	partial_understanding = list(
-		LANGUAGE_HUMAN_EURO = 5,
+		LANGUAGE_HUMAN_GERMAN = 5,
 		LANGUAGE_HUMAN_CHINESE = 5,
 		LANGUAGE_HUMAN_INDIAN = 10,
 		LANGUAGE_HUMAN_SELENIAN = 5,

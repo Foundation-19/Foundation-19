@@ -11,9 +11,9 @@
 	key = "8"
 	shorthand = "Fr"
 	partial_understanding = list(
-		LANGUAGE_HUMAN_IBERIAN = 30,
+		LANGUAGE_HUMAN_SPANISH = 30,
 		LANGUAGE_ENGLISH = 20,
-		LANGUAGE_HUMAN_EURO = 15,
+		LANGUAGE_HUMAN_GERMAN = 15,
 	)
 	syllables = list(
 		"ai", "an", "ar", "au", "ce", "ch", "co", "de", "em", "en", "er", "es", "et", "eu", "ie", "il", "in", "is",

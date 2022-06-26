@@ -1144,11 +1144,15 @@
 
 	access = list(
 		access_eng_comms,
+		access_adminlvl1,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3,
+		access_engineeringlvl4,
+		access_engineeringlvl5,
 		access_securitylvl1,
 		access_securitylvl2,
 		access_securitylvl3,
-		access_securitylvl4,
-		access_securitylvl4,
 		access_adminlvl1,
 		access_adminlvl2,
 		access_sciencelvl1,

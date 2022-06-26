@@ -24,7 +24,7 @@
 	Krri'gli is mostly concerned with the design and construction of bluespace drives, and is one of the largest providers in the human side \
 	of Skrell space. Their participation in the Torch project is their first human venture, and has resulted in their sending science staff \
 	as a part of the Expeditionary Corps Organization to provide expertise and gather mission data firsthand."
-	additional_langs = list(LANGUAGE_HUMAN_EURO)
+	additional_langs = list(LANGUAGE_HUMAN_GERMAN)
 	economic_power = 1.5
 	subversive_potential = 60
 
@@ -34,6 +34,6 @@
 	security services to a variety of Skrell vessels, traders and organisations, and, more recently, human corporations. Unofficially, it is rumoured that \
 	Qonn'prri is a for-profit offshoot of Qala'oa tasked with information gathering in human space and along the frontier.So far such claims have been \
 	unfounded, and Qonn'prri is known for offering a professional, reliable and able service to Humans and Skrell alike."
-	additional_langs = list(LANGUAGE_HUMAN_EURO)
+	additional_langs = list(LANGUAGE_HUMAN_GERMAN)
 	economic_power = 1.4
 	subversive_potential = 60

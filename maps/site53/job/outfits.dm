@@ -51,7 +51,7 @@
 	name = OUTFIT_JOB_NAME("Chief Engineer")
 	uniform = /obj/item/clothing/under/scp/utility/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_types = list(/obj/item/card/id/seclvl4)
+	id_types = list(/obj/item/card/id/seclvl5eng)
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/heads/ce
