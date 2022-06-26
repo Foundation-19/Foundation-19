@@ -684,6 +684,40 @@
 	name = "\improper D-Class Cell Area"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "Sleep"
+
+/area/site53/llcz/dclass/isolation
+	name = "\improper D-Class Isolation"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "Sleep"
+
+/area/site53/llcz/dclass/briefing
+	name = "\improper D-Class Briefing Center"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "conference"
+	sound_env = LARGE_ENCLOSED
+
+/area/site53/llcz/dclass/primaryhallway
+	name = "\improper D-Class Cell Hallway"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "hallwayC1"
+	sound_env = LARGE_ENCLOSED
+
+/area/site53/llcz/dclass/luxurysleep
+	name = "\improper D-Class Luxury Barracks"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "hallwayC1"
+	sound_env = LARGE_ENCLOSED
+
+/area/site53/llcz/dclass/luxuryhall
+	name = "\improper D-Class Luxury Barracks Hallway"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "hallwayC1"
+	sound_env = LARGE_ENCLOSED
+
+/area/site53/llcz/dclass/luxurylibrary
+	name = "\improper D-Class Luxury Library"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "sleep"
 	sound_env = LARGE_ENCLOSED
 
 /area/site53/llcz/dclass/shower
