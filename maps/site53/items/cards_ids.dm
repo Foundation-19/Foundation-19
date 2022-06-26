@@ -319,8 +319,8 @@
 /obj/item/card/id/zcseclvl3lcz
 	name = " security ID"
 	desc = "A teal ID. A dark blue ID. Looks important. The person wearing it not so much."
-	icon_state = "securitylvl3"
-	item_state = "Sec_ID3"
+	icon_state = "securitylvl4"
+	item_state = "Sec_ID4"
 	job_access_type = /datum/job/ltofficerlcz
 
 /obj/item/card/id/zcseclvl4ez

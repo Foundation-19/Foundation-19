@@ -158,7 +158,11 @@
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,
-		access_securitylvl1
+		access_securitylvl1,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3,
+		access_keyauth
 	)
 	minimal_access = list()
 
@@ -209,7 +213,8 @@
 		access_engineeringlvl1,
 		access_engineeringlvl2,
 		access_engineeringlvl3,
-		access_adminlvl1
+		access_adminlvl1,
+		access_adminlvl2
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
@@ -327,7 +332,7 @@
 		access_sciencelvl4,
 		access_adminlvl1,
 		access_adminlvl2,
-		access_keyauth
+		access_keyauth,
 	)
 	minimal_access = list()
 
@@ -381,7 +386,8 @@
 		access_adminlvl2,
 		access_sciencelvl1,
 		access_sciencelvl2,
-		access_sciencelvl3
+		access_sciencelvl3,
+		access_keyauth
 	)
 	minimal_access = list()
 
@@ -435,7 +441,8 @@
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,
-		access_sciencelvl4
+		access_sciencelvl4,
+		access_keyauth
 	)
 	minimal_access = list()
 
@@ -457,7 +464,7 @@
 
 /datum/job/ltofficerez
 
-	title = "EZ Senior Agent"
+	title = "EZ Supervisor"
 	department = "Entrance Personnel"
 	department_flag = SEC
 	total_positions = 1
@@ -493,7 +500,8 @@
 		access_medicallvl1,
 		access_medicallvl2,
 		access_medicallvl3,
-		access_medicallvl4
+		access_medicallvl4,
+		access_keyauth
 	)
 	minimal_access = list()
 
@@ -546,7 +554,11 @@
 		access_securitylvl1,
 		access_securitylvl2,
 		access_sciencelvl1,
-		access_sciencelvl2
+		access_sciencelvl2,
+		access_dclasskitchen,
+		access_dclassbotany,
+		access_dclassmining,
+		access_dclassjanitorial
 	)
 	minimal_access = list()
 
@@ -615,12 +627,12 @@
 
 /datum/job/ncoofficerez
 
-	title = "EZ Agent"
+	title = "EZ Senior Agent"
 	department = "Entrance Zone Personnel"
 	department_flag = SEC
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Senior Agent"
+	supervisors = "the EZ Supervisor"
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
@@ -665,7 +677,7 @@
 	skill_points = 20
 
 /datum/job/ncoofficerez/get_description_blurb()
-	return "<big><b>As the Agent you have more access than a Junior Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
+	return "<big><b>As a Senior Agent you have more access than an Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP."
 
 //##
 //JUNIOR OFFICER
@@ -743,7 +755,7 @@
 
 /datum/job/enlistedofficerez
 
-	title = "EZ Junior Agent"
+	title = "EZ Agent"
 	department = "Entrance Personnel"
 	department_flag = SEC
 	total_positions = 2
@@ -777,13 +789,13 @@
 	minimal_access = list()
 	skill_points = 20
 /datum/job/enlistedofficerez/get_description_blurb()
-	return "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP."
+	return "<big><b>As an EZ Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP."
 
 // SCIENCE
 
 /datum/job/juniorscientist
 
-	title = "Scientist Associate"
+	title = "Researcher Associate"
 	department = "Science"
 	department_flag = SCI
 	total_positions = 6
@@ -807,7 +819,7 @@
 	skill_points = 20
 /datum/job/scientist
 
-	title = "Scientist"
+	title = "Researcher"
 	department = "Science"
 	department_flag = SCI
 	total_positions = 6
@@ -829,7 +841,8 @@
 		access_sci_comms,
 		access_sciencelvl1,
 		access_sciencelvl2,
-		access_sciencelvl3
+		access_sciencelvl3,
+		access_robotics
 	)
 	minimal_access = list()
 
@@ -850,7 +863,7 @@
 
 /datum/job/seniorscientist
 
-	title = "Senior Scientist"
+	title = "Senior Researcher"
 	department = "Science"
 	department_flag = SCI
 	total_positions = 6
@@ -876,7 +889,8 @@
 		access_sciencelvl4,
 		access_adminlvl1,
 		access_adminlvl2,
-		access_adminlvl3
+		access_adminlvl3,
+		access_robotics
 	)
 	minimal_access = list()
 
@@ -923,7 +937,8 @@
 	access_adminlvl2,
 	access_adminlvl3,
 	access_adminlvl4,
-	access_keyauth
+	access_keyauth,
+	access_robotics
 	)
 	minimal_access = list()
 
@@ -1011,6 +1026,7 @@
 		access_engineeringlvl1,
 		access_engineeringlvl2,
 		access_sciencelvl1,
+		access_sciencelvl2,
 		access_securitylvl1
 	)
 	minimal_access = list()
@@ -1049,7 +1065,11 @@
 		access_engineeringlvl1,
 		access_engineeringlvl2,
 		access_engineeringlvl3,
+		access_engineeringlvl4,
 		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3,
+		access_sciencelvl4,
 		access_securitylvl1
 	)
 	minimal_access = list()
@@ -1155,7 +1175,13 @@
 		access_sciencelvl2,
 		access_sciencelvl3,
 		access_sciencelvl4,
-		access_keyauth
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3,
+		access_engineeringlvl4,
+		access_engineeringlvl5,
+		access_keyauth,
+		access_robotics
 	)
 	minimal_access = list()
 
@@ -1195,11 +1221,8 @@
 	access = list(
 	access_com_comms,
 	access_med_comms,
+	access_medical_equip,
 	access_keyauth,
-	access_securitylvl1,
-	access_securitylvl2,
-	access_securitylvl3,
-	access_securitylvl4,
 	access_adminlvl1,
 	access_adminlvl2,
 	access_sciencelvl1,
@@ -1242,7 +1265,7 @@
 
 	access = list(
 		access_med_comms,
-		access_sciencelvl1,
+		access_medical_equip,
 		access_medicallvl1,
 		access_medicallvl2
 	)
@@ -1281,6 +1304,7 @@
 
 	access = list(
 		access_med_comms,
+		access_medical_equip,
 		access_medicallvl1
 	)
 	minimal_access = list()
@@ -1321,8 +1345,7 @@
 		access_medicallvl1,
 		access_medicallvl2,
 		access_medicallvl3,
-		access_securitylvl1,
-		access_securitylvl2
+		access_securitylvl1
 	)
 	minimal_access = list()
 
@@ -1361,6 +1384,7 @@
 
 	access = list(
 		access_med_comms,
+		access_medical_equip,
 		access_medicallvl1,
 		access_medicallvl2,
 		access_medicallvl3,
@@ -1408,8 +1432,6 @@
 		access_medicallvl3,
 		access_medicallvl4,
 		access_medicallvl5,
-		access_securitylvl1,
-		access_securitylvl2,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3
@@ -1455,11 +1477,14 @@
 
 	access = list(
 		access_med_comms,
+		access_medical_equip,
 		access_medicallvl1,
 		access_medicallvl2,
 		access_securitylvl1,
 		access_engineeringlvl1,
-		access_sciencelvl1
+		access_sciencelvl1,
+		access_engineeringlvl1,
+		access_adminlvl1
 	)
 	minimal_access = list()
 
@@ -1502,6 +1527,10 @@
 	)
 
 	access = list(
+		access_log_comms,
+		access_maint_tunnels,
+		access_emergency_storage,
+		access_cargo,
 		access_adminlvl1,
 		access_adminlvl2
 	)
@@ -1548,8 +1577,13 @@
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
 
 	access = list(
-		access_adminlvl1,
-		access_adminlvl2
+	access_log_comms,
+	access_maint_tunnels,
+	access_emergency_storage,
+	access_cargo,
+	access_cargo_bot,
+	access_adminlvl1,
+	access_mailsorting
 	)
 	minimal_access = list()
 	skill_points = 20
@@ -1573,7 +1607,11 @@
 	/datum/mil_rank/civ/classc
 	)
 
-	access = list(access_civ_comms, access_sciencelvl1, access_dclassjanitorial) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
+	access = list(
+	access_civ_comms,
+	access_sciencelvl1,
+	access_dclassjanitorial // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
+	)
 	minimal_access = list()
 	equip(var/mob/living/carbon/human/H)
 		..()
@@ -1678,7 +1716,8 @@
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,
-		access_sciencelvl4
+		access_sciencelvl4,
+		access_keyauth
 	)
 	minimal_access = list()
 
@@ -1709,7 +1748,11 @@
 	access = list(
 		access_com_comms,
 		access_adminlvl1,
-		access_adminlvl2
+		access_adminlvl2,
+		access_adminlvl3,
+		access_adminlvl4,
+		access_adminlvl5,
+		access_keyauth
 		)
 	minimal_access = list()
 
