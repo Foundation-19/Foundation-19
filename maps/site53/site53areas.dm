@@ -23,6 +23,7 @@
 
 /area/turbolift/entrancezone
 	name = "\improper Entrance Zone"
+	icon_state = "security"
 	base_turf = /turf/simulated/open
 
 // SITE 53 ELEVATOR AREA'S
@@ -883,6 +884,11 @@
 /area/site53/entrancezone/substation
 	name = "\improper Entrance Zone Substation"
 	icon_state = "substation"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/entrancezone/forensics
+	name = "\improper Forensics Laboratory"
+	icon_state = "detective"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/medical/infirmreception
