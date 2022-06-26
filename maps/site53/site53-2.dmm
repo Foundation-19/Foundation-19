@@ -1827,14 +1827,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/escape)
 "aeK" = (
-/obj/machinery/camera/network/entrance{
-	c_tag = "Server Farm Control";
-	network = list("Engineering Network")
+/obj/machinery/door/airlock/highsecurity{
+	name = "Red Line";
+	req_access = list(list(203, 304))
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm Basement"
-	})
+/turf/simulated/floor/plating,
+/area/site53/tram/hcz)
 "aeL" = (
 /turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod7/station)
@@ -2045,9 +2043,11 @@
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
 "afq" = (
-/obj/machinery/robotics_fabricator,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/reswing/robotics)
+/obj/machinery/telecomms/server/presets/engineering,
+/turf/simulated/floor/bluegrid,
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "afr" = (
 /obj/structure/cable/yellow{
 	d2 = 4;
@@ -7419,6 +7419,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
+	},
+/obj/machinery/camera/autoname{
+	dir = 4;
+	network = list("Engineering Network");
+	c_tag = "Comms Tower Basement"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
@@ -19743,6 +19748,11 @@
 	icon_state = "techfloororange_edges";
 	dir = 8
 	},
+/obj/machinery/camera/autoname{
+	dir = 4;
+	network = list("Engineering Network");
+	c_tag = "Server Farm #1"
+	},
 /turf/simulated/floor/tiled/techfloor/grid{
 	temperature = 273.15
 	},
@@ -20324,6 +20334,11 @@
 /obj/effect/floor_decal/techfloor/orange{
 	icon_state = "techfloororange_edges";
 	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("Engineering Network");
+	c_tag = "Server Farm #2"
 	},
 /turf/simulated/floor/bluegrid,
 /area/site53/upper_surface/commstower{
@@ -26811,6 +26826,15 @@
 /area/site53/reswing/robotics{
 	name = "\improper General Laboratory"
 	})
+"ecq" = (
+/obj/machinery/door/airlock/engineering{
+	name = "Communication Engineers";
+	req_access = list(503)
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "eel" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -26901,6 +26925,17 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/controlroom)
+"eBf" = (
+/obj/effect/floor_decal/techfloor/orange{
+	icon_state = "techfloororange_edges";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid{
+	temperature = 273.15
+	},
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "eBT" = (
 /obj/effect/floor_decal/corner/green/mono,
 /obj/structure/bed/chair{
@@ -27224,6 +27259,16 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/engineering/primaryhallway)
+"gpg" = (
+/obj/machinery/camera/autoname{
+	dir = 4;
+	network = list("Engineering Network");
+	c_tag = "Server Farm Entrance"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "gpO" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/camera/autoname{
@@ -28712,6 +28757,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp263)
+"nvb" = (
+/obj/machinery/robotics_fabricator,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp066)
 "nvk" = (
 /obj/machinery/light,
 /obj/structure/cable/green{
@@ -28734,6 +28783,15 @@
 	},
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/uhcz/scp247containment)
+"nxO" = (
+/obj/machinery/camera/autoname{
+	network = list("Engineering Network");
+	c_tag = "Server Farm Control"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "nyh" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/computer/shuttle_control/engineering{
@@ -29164,6 +29222,16 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
+"pze" = (
+/obj/machinery/camera/autoname{
+	dir = 4;
+	network = list("Entrance Zone Network");
+	c_tag = "Comms Tower Basement"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "pEO" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
@@ -29323,7 +29391,8 @@
 /area/site53/engineering/primaryhallway)
 "qEi" = (
 /obj/machinery/door/airlock/highsecurity{
-	name = "Red Line"
+	name = "Red Line";
+	req_access = list(list(203, 304))
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
@@ -29605,6 +29674,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
+"rYh" = (
+/obj/machinery/robotics_fabricator,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp131)
 "rYU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/structure/table/standard,
@@ -29910,17 +29983,14 @@
 /area/site53/uhcz/scp096)
 "ugg" = (
 /obj/machinery/door/airlock/highsecurity{
-	name = "Red Line"
+	name = "Red Line";
+	req_access = list(list(203, 304))
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
 "ulE" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Underground Storage";
-	req_access = list(601)
-	},
-/turf/unsimulated/mineral,
+/turf/space,
 /area/space)
 "uoR" = (
 /obj/machinery/camera/network/lcz,
@@ -59628,7 +59698,7 @@ aQL
 aRx
 aAc
 aRH
-adr
+pze
 aRH
 aAc
 aYJ
@@ -61711,7 +61781,7 @@ aAc
 aSn
 aSm
 aSm
-afr
+gpg
 aqS
 aAc
 aYs
@@ -62747,7 +62817,7 @@ aQj
 aQB
 aQS
 aRd
-afJ
+eBf
 aRr
 aRA
 aQo
@@ -63252,7 +63322,7 @@ azA
 aAc
 aAc
 aAc
-agl
+ecq
 aAc
 aAc
 aAc
@@ -63766,7 +63836,7 @@ azA
 azA
 azA
 aAc
-aQP
+nxO
 aQP
 aQP
 aRX
@@ -64023,7 +64093,7 @@ azA
 azA
 azA
 aAc
-aeK
+aQP
 aRI
 aRS
 aRX
@@ -64282,7 +64352,7 @@ azA
 aAc
 aSm
 aQP
-afo
+ulE
 aRX
 aOS
 aQz
@@ -64539,7 +64609,7 @@ azA
 aAc
 aRG
 aRJ
-ajw
+aQP
 aRX
 aPw
 aQA
@@ -65184,7 +65254,7 @@ azA
 azA
 azA
 aIh
-abR
+nvb
 aaR
 afa
 aaR
@@ -65580,7 +65650,7 @@ alc
 azA
 azA
 azA
-ulE
+azA
 azA
 azA
 azA
@@ -65961,7 +66031,7 @@ agx
 aeU
 czT
 aIh
-aco
+rYh
 aaW
 afD
 cDv
@@ -67300,9 +67370,9 @@ acQ
 aec
 aec
 aec
-aix
+aeK
 aec
-aix
+aeK
 acQ
 aec
 aec

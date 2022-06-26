@@ -3609,7 +3609,7 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/upper_surface/commstower)
 "js" = (
 /obj/structure/table/standard,
@@ -3626,7 +3626,7 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/upper_surface/commstower)
 "ju" = (
 /obj/structure/table/reinforced,
@@ -5021,6 +5021,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"Ny" = (
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/upper_surface/commstower)
 "NJ" = (
 /obj/structure/bed/chair/comfy/blue{
 	dir = 1;
@@ -33940,7 +33944,7 @@ hZ
 eH
 jr
 kr
-eH
+kr
 aY
 jO
 jO
@@ -34195,9 +34199,9 @@ hZ
 hZ
 hZ
 eH
-eH
+Ny
 Wk
-jJ
+eH
 aY
 jO
 jO
@@ -34454,7 +34458,7 @@ hZ
 eH
 js
 kr
-jY
+jJ
 aY
 jO
 jO
@@ -34711,7 +34715,7 @@ hZ
 eH
 jq
 kT
-kk
+jY
 aY
 aY
 aY
@@ -34968,7 +34972,7 @@ hZ
 eH
 jp
 kr
-kX
+kk
 eH
 jN
 jN
@@ -35225,7 +35229,7 @@ hZ
 eH
 gI
 kr
-jD
+kX
 eH
 jN
 jN
@@ -35996,7 +36000,7 @@ hZ
 eH
 ju
 kr
-jK
+kr
 kr
 kr
 kr
@@ -36253,7 +36257,7 @@ hZ
 eH
 jv
 jW
-eH
+jK
 jT
 jZ
 jU
@@ -36510,7 +36514,7 @@ hZ
 jH
 eH
 eH
-hZ
+eH
 eH
 eH
 eH
@@ -38052,7 +38056,7 @@ hZ
 hZ
 hZ
 hZ
-ag
+hZ
 hZ
 hZ
 hZ
@@ -38309,7 +38313,7 @@ ag
 ag
 ag
 ag
-hk
+ag
 ag
 ag
 ag

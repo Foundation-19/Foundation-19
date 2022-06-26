@@ -9774,7 +9774,7 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/door/window/brigdoor/eastleft{
-	req_access = list(202)
+	req_access = list(list(202,402))
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
