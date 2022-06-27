@@ -843,6 +843,11 @@
 	requires_power = 0
 	dynamic_lighting = 0
 
+/area/site53/uhcz/scp8containment
+	name = "\improper SCP-008 Containment Chamber"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/uhcz/scp247observation
 	name = "\improper SCP-247 Observation"
 	icon_state = "research"
