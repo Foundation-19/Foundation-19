@@ -344,7 +344,7 @@
 	spawning = 1
 	if(client.prefs.organ_data[BP_CHEST] == "cyborg")
 		if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
-			to_chat(src, "No PPT without whitelist.")
+			to_chat(src, "No FBP without whitelist.")
 			spawning = 0
 			return
 	close_spawn_windows()
