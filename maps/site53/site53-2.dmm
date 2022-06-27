@@ -1829,7 +1829,7 @@
 "aeK" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Red Line";
-	req_access = list(list(203, 304))
+	req_access = list(list(203,304))
 	},
 /turf/simulated/floor/plating,
 /area/site53/tram/hcz)
@@ -1933,8 +1933,6 @@
 	pixel_x = 0
 	},
 /obj/structure/table/rack,
-/obj/item/device/mmi,
-/obj/item/device/mmi,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/robotics)
 "afc" = (
@@ -5396,9 +5394,6 @@
 /obj/structure/bed/chair{
 	icon_state = "chair_preview";
 	dir = 4
-	},
-/obj/effect/landmark{
-	name = "JoinLateCryo"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod7/station)
@@ -20932,8 +20927,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/structure/closet,
-/obj/item/device/mmi,
+/obj/effect/landmark/start,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
 "aSE" = (
@@ -21621,9 +21615,6 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/obj/effect/landmark{
-	name = "JoinLateCryo"
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod7/station)
 "aUm" = (
@@ -21949,9 +21940,6 @@
 	dir = 4
 	},
 /obj/machinery/light,
-/obj/effect/landmark{
-	name = "JoinLateCryo"
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod7/station)
 "aUV" = (
@@ -21959,9 +21947,6 @@
 	dir = 8
 	},
 /obj/machinery/light,
-/obj/effect/landmark{
-	name = "JoinLateCryo"
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod7/station)
 "aUW" = (
@@ -21971,9 +21956,6 @@
 	},
 /obj/machinery/light{
 	dir = 1
-	},
-/obj/effect/landmark{
-	name = "JoinLateCryo"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod7/station)
@@ -22080,9 +22062,6 @@
 	},
 /obj/machinery/light{
 	dir = 1
-	},
-/obj/effect/landmark{
-	name = "JoinLateCryo"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod7/station)
@@ -28760,7 +28739,7 @@
 "nvb" = (
 /obj/machinery/robotics_fabricator,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp066)
+/area/site53/reswing/robotics)
 "nvk" = (
 /obj/machinery/light,
 /obj/structure/cable/green{
@@ -29392,7 +29371,7 @@
 "qEi" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Red Line";
-	req_access = list(list(203, 304))
+	req_access = list(list(203,304))
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
@@ -29674,10 +29653,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
-"rYh" = (
-/obj/machinery/robotics_fabricator,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp131)
 "rYU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/structure/table/standard,
@@ -29984,7 +29959,7 @@
 "ugg" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Red Line";
-	req_access = list(list(203, 304))
+	req_access = list(list(203,304))
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
@@ -66031,7 +66006,7 @@ agx
 aeU
 czT
 aIh
-rYh
+nvb
 aaW
 afD
 cDv

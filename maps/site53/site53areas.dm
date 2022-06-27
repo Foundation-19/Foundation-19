@@ -699,25 +699,25 @@
 /area/site53/llcz/dclass/primaryhallway
 	name = "\improper D-Class Cell Hallway"
 	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "hallwayC1"
+	icon_state = "hallC1"
 	sound_env = LARGE_ENCLOSED
 
 /area/site53/llcz/dclass/luxurysleep
 	name = "\improper D-Class Luxury Barracks"
 	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "hallwayC1"
+	icon_state = "hallC1"
 	sound_env = LARGE_ENCLOSED
 
 /area/site53/llcz/dclass/luxuryhall
 	name = "\improper D-Class Luxury Barracks Hallway"
 	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "hallwayC1"
+	icon_state = "hallC1"
 	sound_env = LARGE_ENCLOSED
 
 /area/site53/llcz/dclass/luxurylibrary
 	name = "\improper D-Class Luxury Library"
 	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "sleep"
+	icon_state = "Sleep"
 	sound_env = LARGE_ENCLOSED
 
 /area/site53/llcz/dclass/shower
@@ -758,6 +758,11 @@
 
 /area/site53/llcz/dclass/medicalstorage
 	name = "\improper D-Class Medical Storage"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "exam_room"
+
+/area/site53/llcz/dclass/dshop
+	name = "\improper D-Class Commissary"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "exam_room"
 
