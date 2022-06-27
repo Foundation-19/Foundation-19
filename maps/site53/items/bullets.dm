@@ -286,7 +286,7 @@
 
 /obj/item/projectile/bullet/pistol
 	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
-	damage = 20 //9mm, .38, etc
+	damage = 8 //9mm, .38, etc
 	armor_penetration = 34
 	agony = 20
 
@@ -298,25 +298,25 @@
 	armor_penetration = 2.5
 
 /obj/item/projectile/bullet/pistol/medium
-	damage = 25 //.45
+	damage = 10 //.45
 	armor_penetration = 15
 	agony = 25
 
 /obj/item/projectile/bullet/pistol/medium/revolver
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 60 //.44 magnum or something
+	damage = 40 //.44 magnum or something
 	armor_penetration = 10
 	agony = 45
 
 /obj/item/projectile/bullet/pistol/strong //matebas
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 65 //.50AE
+	damage = 45 //.50AE
 	armor_penetration = 30
 	agony = 45
 
 /obj/item/projectile/bullet/pistol/vstrong //tacrevolver
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 70 //.500 S&W Magnum
+	damage = 50 //.500 S&W Magnum
 	armor_penetration = 35
 	agony = 45
 
@@ -327,9 +327,9 @@
 
 /obj/item/projectile/bullet/pistol/medium/smg //P90
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 40 //10mm
-	armor_penetration = 30
-	agony = 30
+	damage = 20 //10mm
+	armor_penetration = 20
+	agony = 10
 
 /obj/item/projectile/bullet/pistol/medium/smg/rubber
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
@@ -341,9 +341,10 @@
 
 /obj/item/projectile/bullet/pistol/medium/smg/hollowpoint
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 60 //10mm hollowpoint
+	damage = 30 //10mm hollowpoint
 	armor_penetration = 8
-	agony = 40
+	agony = 20
+	embed = 1
 
 /obj/item/projectile/bullet/pistol/medium/smg/ap
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
@@ -353,9 +354,9 @@
 
 /obj/item/projectile/bullet/pistol/medium/smg/silver
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 40 //10mm but i have no idea what bimmer wanted for classifaction, so i made it just better normal ammo
+	damage = 30 //10mm but i have no idea what bimmer wanted for classifaction, so i made it just better normal ammo
 	armor_penetration = 18
-	agony = 30
+	agony = 10
 
 
 /* shotgun projectiles */
@@ -394,15 +395,15 @@
 
 /obj/item/projectile/bullet/rifle/a556
 	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
-	damage = 50
+	damage = 40
 	armor_penetration = 34
 	agony = 40
 
 /obj/item/projectile/bullet/rifle/a762
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
-	damage = 50
+	damage = 40
 	armor_penetration = 40
-	agony = 25
+	agony = 45
 
 /obj/item/projectile/bullet/rifle/a145
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
