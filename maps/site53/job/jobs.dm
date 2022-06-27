@@ -21,10 +21,12 @@ var/global/list/DclassUsedNames = list()
 
 /datum/job/assistant/equip(mob/living/carbon/human/H)
 	..()
-
 	var/r = rand(100,9000)
-	while (DclassUsedNames.Find(r))
-		r = rand(100,9000)
+	if(H.client.prefs.dnumber == 0)
+		while (DclassUsedNames.Find(r))
+			r = rand(100,9000)
+	else
+		r = H.client.prefs.dnumber
 	DclassUsedNames += r
 	H.name = random_name(H.gender, H.species.name)
 	H.real_name = H.name
