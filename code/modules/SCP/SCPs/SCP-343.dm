@@ -5,7 +5,7 @@ GLOBAL_LIST_EMPTY(scp343s)
 	SCP = /datum/scp/scp_343
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
-	icon = 'icons/mob/scp343.dmi'
+	icon = 'icons/SCP/scp-343.dmi'
 	icon_state = null
 
 /mob/living/carbon/human/scp343/examine(mob/user)

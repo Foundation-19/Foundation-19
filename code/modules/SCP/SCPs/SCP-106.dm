@@ -12,7 +12,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	var/confusing = FALSE
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
-	icon = 'icons/mob/scp106.dmi'
+	icon = 'icons/SCP/scp-106.dmi'
 	icon_state = null
 
 /mob/living/carbon/human/scp106/examine(mob/user)

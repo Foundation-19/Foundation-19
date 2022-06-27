@@ -10,7 +10,7 @@
 	SCP = /datum/scp/scp_066
 	var/next_emote = -1
 	var/global/mob/living/carbon/list/victims = list()
-	icon = 'icons/SCP/066.dmi'
+	icon = 'icons/SCP/scp-066.dmi'
 	icon_state = "066"
 	icon_living = "066"
 	icon_dead = "dead"
