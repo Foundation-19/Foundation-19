@@ -1380,6 +1380,7 @@
 
 	access = list(
 		access_med_comms,
+		access_medical_equip,
 		access_medicallvl1,
 		access_medicallvl2,
 		access_medicallvl3,
