@@ -31509,7 +31509,7 @@
 "uza" = (
 /obj/structure/crematorium{
 	dir = 8;
-	id_tag = "scp8crem";
+	id = "scp8crem";
 	name = "incinerator"
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
