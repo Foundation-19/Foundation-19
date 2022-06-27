@@ -368,6 +368,7 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "aba" = (
 /obj/machinery/vending/dinnerware,
+/obj/machinery/camera/network/entrance,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurantkitchenarea)
 "abb" = (
@@ -1985,6 +1986,9 @@
 "afl" = (
 /obj/effect/landmark/start{
 	name = "HCZ Zone Commander"
+	},
+/obj/structure/bed/chair/office/comfy{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/zonecommanderoffice{
@@ -4997,7 +5001,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/machinery/photocopier/faxmachine{
 	department = "Containment Engineer's Office";
-	req_access = list(303)
+	send_access = list(303)
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/contengoff)
@@ -6486,7 +6490,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "Engineering Monitoring";
-	req_access = list(502)
+	send_access = list(502)
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/controlroom)
@@ -11263,6 +11267,7 @@
 "ayt" = (
 /obj/machinery/vending/fitness,
 /obj/effect/floor_decal/corner/orange/mono,
+/obj/machinery/camera/network/entrance,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/orangeline)
 "ayu" = (
@@ -13828,7 +13833,7 @@
 "aDK" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Heavy Containment Zone Commander";
-	req_access = list(303)
+	send_access = list(204)
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techfloor,
@@ -14287,7 +14292,7 @@
 	},
 /obj/machinery/photocopier/faxmachine{
 	department = "HCZ Security Center";
-	req_access = list(203)
+	send_access = list(203)
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -15021,12 +15026,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "aGk" = (
-/obj/item/device/flashlight/pen,
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice{
-	name = "\improper Heavy Containment Zone Commander's Office"
-	})
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment)
 "aGm" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -17571,6 +17572,7 @@
 	},
 /obj/item/book/manual/barman_recipes,
 /obj/item/clothing/gloves/thick,
+/obj/machinery/camera/network/entrance,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurant)
 "aLP" = (
@@ -26303,6 +26305,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
+"buu" = (
+/obj/machinery/portable_atmospherics/hydroponics,
+/obj/machinery/camera/network/entrance{
+	icon_state = "camera";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/lowertrams/restaurantkitchenarea)
 "buV" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -26496,7 +26506,7 @@
 /obj/effect/paint_stripe/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
 /turf/simulated/wall/titanium,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "cnz" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/mask/muzzle,
@@ -26563,7 +26573,7 @@
 "cxV" = (
 /obj/structure/bed/chair/office,
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "czj" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -26672,7 +26682,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "dep" = (
 /obj/structure/bed/chair/office/light{
 	icon_state = "officechair_white_preview";
@@ -26737,6 +26747,11 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"dtm" = (
+/obj/structure/table/standard,
+/obj/machinery/camera/network/entrance,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/lowertrams/restaurantkitchenarea)
 "dBn" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/glass/fifty,
@@ -26870,10 +26885,10 @@
 /obj/structure/virology/centrifuge,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "elL" = (
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "emA" = (
 /obj/effect/floor_decal/industrial/firstaid{
 	dir = 8
@@ -26883,7 +26898,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "eqH" = (
 /obj/machinery/door/airlock/science{
 	name = "Tranqilizer Storage";
@@ -26923,7 +26938,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "ewB" = (
 /obj/machinery/button/blast_door{
 	pixel_y = 24;
@@ -26999,13 +27014,13 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "eEC" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "eED" = (
 /obj/structure/bed/chair/office{
 	dir = 8
@@ -27070,7 +27085,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "feu" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	dir = 1;
@@ -27082,7 +27097,7 @@
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/steel_grid,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "ffp" = (
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/r_wall/prepainted,
@@ -27274,7 +27289,7 @@
 	dir = 4
 	},
 /turf/simulated/wall/titanium,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "fUv" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
@@ -27365,7 +27380,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "gqv" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -27535,7 +27550,7 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "hmB" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-247 Staff Training";
@@ -27556,7 +27571,7 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "hrJ" = (
 /obj/machinery/door/blast/regular{
 	id_tag = "lczgate2"
@@ -27646,7 +27661,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "hJy" = (
 /obj/machinery/light{
 	dir = 1;
@@ -27746,7 +27761,7 @@
 	},
 /obj/effect/floor_decal/industrial/firstaid,
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "ipm" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -27828,7 +27843,7 @@
 /obj/item/reagent_containers/glass/beaker/vial,
 /obj/item/reagent_containers/glass/beaker/vial,
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "iDU" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled,
@@ -27880,7 +27895,7 @@
 "iKy" = (
 /obj/machinery/atmospherics/unary/tank/air,
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "iKH" = (
 /obj/machinery/camera/autoname{
 	network = list("SCP-247 CCTV Network")
@@ -27895,7 +27910,7 @@
 "iQY" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "iRn" = (
 /obj/machinery/computer/upload/robot{
 	dir = 4
@@ -27966,6 +27981,7 @@
 /area/site53/uhcz/scp106observ)
 "jfh" = (
 /obj/machinery/seed_extractor,
+/obj/machinery/camera/network/entrance,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
 "jgJ" = (
@@ -28118,14 +28134,16 @@
 /area/site53/uhcz/scp247containment)
 "jPM" = (
 /obj/machinery/button/crematorium{
-	pixel_y = -24
+	pixel_y = -24;
+	id_tag = "scp8crem";
+	req_access = list(304)
 	},
 /obj/effect/floor_decal/industrial/loading{
 	icon_state = "loadingarea";
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "jQs" = (
 /obj/structure/table/standard,
 /obj/item/clothing/gloves/latex,
@@ -28191,7 +28209,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/chemical_dispenser/full,
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "kcV" = (
 /obj/effect/landmark/start{
 	name = "Bartender"
@@ -28284,7 +28302,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "kHQ" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -28304,7 +28322,7 @@
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/steel_grid,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "kLz" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -28356,7 +28374,7 @@
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/steel_grid,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "lbd" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -28383,7 +28401,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-247 Observation";
-	req_access = list(303)
+	send_access = list(303)
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
@@ -28482,7 +28500,7 @@
 /obj/machinery/light,
 /obj/machinery/chem_master,
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "lwQ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -28561,7 +28579,7 @@
 	id_tag = "scp8panic"
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "lLr" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -28664,7 +28682,7 @@
 /obj/effect/paint_stripe/red,
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/wall/titanium,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "mhU" = (
 /obj/machinery/power/smes/buildable/max_cap_in_out,
 /obj/structure/cable{
@@ -28854,7 +28872,7 @@
 /obj/structure/table/standard,
 /obj/machinery/microscope,
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "nbP" = (
 /obj/machinery/light{
 	dir = 4
@@ -28925,16 +28943,16 @@
 	req_access = list(304)
 	},
 /obj/item/reagent_containers/glass/beaker/vial{
-	reagents = list(/datum/reagent/zombie = 10)
+	reagents = list(/datum/reagent/zombie=10)
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "nlO" = (
 /obj/structure/table/standard,
 /obj/item/folder/red,
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "nmy" = (
 /obj/machinery/light/spot{
 	dir = 4
@@ -28959,7 +28977,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "nsr" = (
 /obj/effect/floor_decal/corner/orange/border{
 	icon_state = "bordercolor";
@@ -29030,7 +29048,7 @@
 	dir = 5
 	},
 /turf/simulated/wall/titanium,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "nzv" = (
 /obj/structure/bed/chair/office{
 	dir = 8
@@ -29057,7 +29075,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "nNb" = (
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp096)
@@ -29074,7 +29092,7 @@
 "nSy" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "nTc" = (
 /obj/effect/floor_decal/corner/red/bordercorner,
 /turf/simulated/floor/tiled/monotile,
@@ -29142,7 +29160,7 @@
 	req_access = list(list(203,304))
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "ome" = (
 /obj/structure/sign/warning/secure_area{
 	pixel_y = 32
@@ -29307,6 +29325,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"oQi" = (
+/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/machinery/camera/network/entrance,
+/turf/simulated/floor/tiled/freezer,
+/area/site53/lowertrams/restaurantkitchenarea)
 "oSz" = (
 /obj/structure/bed/chair/office,
 /turf/simulated/floor/tiled/monotile,
@@ -29321,7 +29344,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "oVq" = (
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/tiled/monotile,
@@ -29409,6 +29432,18 @@
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper LCZ Security Center"
 	})
+"pin" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/camera/network/entrance{
+	icon_state = "camera";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lowertrams/orangeline)
 "piX" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -29509,7 +29544,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "pEO" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
@@ -29567,7 +29602,7 @@
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "pYh" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
@@ -29671,7 +29706,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
-/area/site53/uhcz/hallways)
+/area/site53/uhcz/scp8containment)
 "qCb" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
@@ -29811,7 +29846,7 @@
 "qWM" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "qYi" = (
 /obj/effect/floor_decal/industrial/fire{
 	dir = 1
@@ -29875,7 +29910,7 @@
 	req_access = list(list(203,304))
 	},
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "rjr" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -29909,7 +29944,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "rBa" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/button/alternate/door/bolts{
@@ -29940,7 +29975,7 @@
 	name = "SCP-008 Lockdown shutter"
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "rCk" = (
 /obj/effect/floor_decal/corner/orange/border{
 	icon_state = "bordercolor";
@@ -30187,7 +30222,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "ttE" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -30279,7 +30314,7 @@
 "tPz" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "tUq" = (
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp247observation)
@@ -30342,8 +30377,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
 "ulE" = (
-/turf/space,
-/area/space)
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/machinery/camera/network/entrance{
+	icon_state = "camera";
+	dir = 8
+	},
+/turf/simulated/floor/grass,
+/area/site53/lowertrams/brownline)
 "uoR" = (
 /obj/machinery/camera/network/lcz,
 /turf/simulated/open,
@@ -30364,10 +30404,15 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "urY" = (
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -25;
+	req_access = list(201)
+	},
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "uum" = (
 /obj/machinery/camera/autoname{
 	network = list("SCP-247 CCTV Network");
@@ -30393,11 +30438,13 @@
 /area/site53/uhcz/scp096)
 "uza" = (
 /obj/structure/crematorium{
-	dir = 8
+	dir = 8;
+	id_tag = "scp8crem";
+	name = "incinerator"
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/white,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "uAr" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurantkitchenarea)
@@ -30458,6 +30505,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/hallways)
+"uTP" = (
+/obj/structure/table/standard,
+/obj/machinery/camera/autoname{
+	network = list("Heavy Containment Zone Network")
+	},
+/obj/item/paper/scp/keter/scp106,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp106observ)
 "uWI" = (
 /obj/effect/floor_decal/corner/orange/border{
 	icon_state = "bordercolor";
@@ -30653,7 +30708,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "vGY" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4
@@ -30701,7 +30756,7 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "vKY" = (
 /obj/effect/floor_decal/corner/green/mono,
 /obj/structure/table/standard,
@@ -30770,7 +30825,7 @@
 	d2 = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "vXh" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -30806,7 +30861,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "vZy" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
@@ -31241,7 +31296,10 @@
 	pixel_y = 0
 	},
 /obj/structure/table/standard,
-/obj/item/paper/scp/keter/scp106,
+/obj/machinery/photocopier/faxmachine{
+	department = "SCP-106 Containment Unit";
+	send_access = list(203)
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
 "xwF" = (
@@ -31265,13 +31323,14 @@
 "xzN" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
-	department = "SCP-008 Observation"
+	department = "SCP-008 Observation";
+	send_access = list(204)
 	},
 /obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "xzQ" = (
 /obj/machinery/camera/autoname{
 	network = list("Heavy Containment Zone Network");
@@ -31390,14 +31449,14 @@
 	pixel_y = 16
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "xZe" = (
 /obj/effect/paint_stripe/red,
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 6
 	},
 /turf/simulated/wall/titanium,
-/area/space)
+/area/site53/uhcz/scp8containment)
 "ybu" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -57027,7 +57086,7 @@ aoG
 acs
 aXt
 aXQ
-aXt
+ulE
 aXt
 aXQ
 aXt
@@ -61884,7 +61943,7 @@ ayE
 ayH
 ayE
 ayE
-ayE
+pin
 ayE
 ayE
 ayE
@@ -62915,7 +62974,7 @@ ajY
 ayq
 azA
 aav
-abe
+oQi
 abj
 abu
 aav
@@ -64803,7 +64862,7 @@ azA
 aAc
 aSm
 aQP
-ulE
+aQP
 aRX
 aOS
 aQz
@@ -66768,7 +66827,7 @@ azA
 ayq
 ajY
 ayq
-aLR
+dtm
 aLR
 abf
 abq
@@ -67547,7 +67606,7 @@ ahQ
 abq
 abf
 aLR
-abq
+buu
 abq
 aLK
 jfh
@@ -75533,7 +75592,7 @@ ajR
 ajR
 ajR
 aBA
-aBo
+qWM
 qWM
 qWM
 qWM
@@ -76047,7 +76106,7 @@ ajR
 ybu
 ajR
 aBA
-aBo
+qWM
 qWM
 qWM
 qWM
@@ -76316,9 +76375,9 @@ cxV
 iQY
 pVt
 eEC
-urY
+aGk
 vXr
-urY
+aGk
 urY
 qWM
 azA
@@ -82707,7 +82766,7 @@ azA
 azA
 azA
 aBs
-kmK
+uTP
 ahS
 arr
 aBf
@@ -88388,7 +88447,7 @@ azA
 azA
 aGV
 lzu
-aGk
+aEq
 aEl
 aEq
 aGV
