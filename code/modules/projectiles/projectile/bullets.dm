@@ -302,9 +302,9 @@
 
 /obj/item/projectile/bullet/rifle/a762
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
-	damage = 60
+	damage = 650
 	armor_penetration = 40
-	agony = 35
+	agony = 25
 	embed = 0
 
 /obj/item/projectile/bullet/rifle/a145
