@@ -2,7 +2,7 @@
 //READ THIS//
 /////////////
 // WARNING: DO NOT ADD INTEGER VALUES ABOVE 20 FOR ANY STAT OR SKILL OTHER THAN INTELLIGENCE, MEDICAL AND ENGINEERING. - LION
-
+var/global/list/DclassUsedNames = list()
 /datum/map/site_ds90
 /datum/map/site_ds90/setup_map()
 
@@ -18,22 +18,19 @@
 	minimal_access = list()	//See /datum/job/assistant/get_access()
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/classd
 	allowed_ranks = list(/datum/mil_rank/civ/classd)
-	var/static/list/used_numbers = list()
-
-
 
 /datum/job/assistant/equip(mob/living/carbon/human/H)
 	..()
 
 	var/r = rand(100,9000)
-	while (used_numbers.Find(r))
+	while (DclassUsedNames.Find(r))
 		r = rand(100,9000)
-	used_numbers += r
+	DclassUsedNames += r
 	H.name = random_name(H.gender, H.species.name)
 	H.real_name = H.name
 	if(istype(H.wear_id, /obj/item/card/id))
 		var/obj/item/card/id/ID = H.wear_id
-		ID.registered_name = "D-[used_numbers[used_numbers.len]]"
+		ID.registered_name = "D-[DclassUsedNames[DclassUsedNames.len]]"
 		ID.update_name()
 
 
