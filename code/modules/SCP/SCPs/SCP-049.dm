@@ -102,7 +102,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		pestilence_images.Cut()
 		for(var/mob/living/carbon/human/H in view(15, src))
 			if(H.pestilence)
-				pestilence_images += image('icons/mob/scp049.dmi', H, "pestilence", MOB_LAYER+0.01)
+				pestilence_images += image('icons/SCP/scp-049.dmi', H, "pestilence", MOB_LAYER+0.01)
 		client.images |= pestilence_images
 		if(!angry)
 			anger += 5

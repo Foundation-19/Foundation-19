@@ -16,7 +16,7 @@
 	name = "plate carrier"
 
 /obj/item/clothing/suit/armor/pcarrier/scp/medium
-	accessoires = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor_tag/scp)
+	accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor_tag/scp)
 
 
 /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
