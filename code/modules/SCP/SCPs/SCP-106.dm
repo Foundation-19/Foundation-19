@@ -50,7 +50,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	if (!(loc in GLOB.scp106_floors))
 		verbs += /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
 
-	verbs += /mob/living/carbon/human/scp106/proc/confuse_victims
+//	verbs += /mob/living/carbon/human/scp106/proc/confuse_victims	//doesn't work
 
 	set_species("SCP-106")
 	GLOB.scp106s |= src
@@ -291,6 +291,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 				animate(src, pixel_x = -58, time = PHASE_TIME)
 
 		if (do_after(src, PHASE_TIME, O))
+			forceMove(get_step(src, dir))
 			forceMove(get_step(src, dir))
 			visible_message("<span class = 'danger'>[src] phases through \the [O].</span>")
 

@@ -5,7 +5,7 @@
 	key = "r"
 	shorthand = "Russ"
 	partial_understanding = list(
-		LANGUAGE_HUMAN_EURO = 5,
+		LANGUAGE_HUMAN_GERMAN = 5,
 		LANGUAGE_HUMAN_SELENIAN = 10,
 		LANGUAGE_ENGLISH = 20
 	)

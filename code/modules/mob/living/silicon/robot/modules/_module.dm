@@ -10,13 +10,14 @@
 	var/channels = list()
 	var/networks = list()
 	var/languages = list(
-		LANGUAGE_HUMAN_EURO     = TRUE,
+		LANGUAGE_HUMAN_GERMAN   = TRUE,
 		LANGUAGE_HUMAN_CHINESE  = TRUE,
 		LANGUAGE_HUMAN_ARABIC   = TRUE,
 		LANGUAGE_HUMAN_INDIAN   = TRUE,
-		LANGUAGE_HUMAN_IBERIAN  = TRUE,
+		LANGUAGE_HUMAN_SPANISH  = TRUE,
 		LANGUAGE_HUMAN_RUSSIAN  = TRUE,
 		LANGUAGE_HUMAN_SELENIAN = TRUE,
+		LANGUAGE_HUMAN_FRENCH	= TRUE,
 		LANGUAGE_GUTTER         = TRUE,
 		LANGUAGE_ENGLISH        = TRUE,
 		LANGUAGE_EAL            = TRUE,
@@ -78,7 +79,7 @@
 	finalize_synths(R)
 
 	R.set_module_sprites(sprites)
-	R.choose_icon(R.module_sprites.len + 1, R.module_sprites)
+	R.choose_icon()
 
 /obj/item/robot_module/proc/build_equipment()
 	var/list/created_equipment = list()
@@ -134,7 +135,7 @@
 
 	if(R.silicon_radio)
 		R.silicon_radio.recalculateChannels()
-	R.choose_icon(0, R.set_module_sprites(list("Default" = initial(R.icon_state))))
+	R.choose_icon()
 
 /obj/item/robot_module/Destroy()
 	QDEL_NULL_LIST(equipment)

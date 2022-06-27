@@ -94,7 +94,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	total_positions = 1
 	spawn_positions = 1
 
-	supervisors = "the Research Director"
+	supervisors = "O-5 Council or the Site Director"
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30

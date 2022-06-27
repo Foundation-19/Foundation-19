@@ -12,7 +12,7 @@
 	shorthand = "Mand"
 	space_chance = 30
 	partial_understanding = list(
-		LANGUAGE_HUMAN_EURO = 5,
+		LANGUAGE_HUMAN_GERMAN = 5,
 		LANGUAGE_HUMAN_ARABIC = 5,
 		LANGUAGE_HUMAN_INDIAN = 5,
 		LANGUAGE_HUMAN_SELENIAN = 10,

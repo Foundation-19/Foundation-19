@@ -5,7 +5,7 @@
 	description = "You have been trained to Xynergy Grade PLACEHOLDER."
 	language = LANGUAGE_NABBER
 	secondary_langs = list(
-		LANGUAGE_HUMAN_EURO,
+		LANGUAGE_HUMAN_GERMAN,
 		LANGUAGE_ENGLISH,
 	)
 	var/list/valid_jobs = list()

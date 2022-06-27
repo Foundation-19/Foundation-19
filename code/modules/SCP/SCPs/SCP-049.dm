@@ -22,25 +22,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/scp049/examine(mob/user)
 	. = ..()
 
-/datum/scp/scp_049
-	name = "SCP-049"
-	designation = "049"
-	classification = EUCLID
-
-/mob/living/carbon/human/scp049/IsAdvancedToolUser()
-	return FALSE
-
-/mob/living/carbon/human/scp049/update_icons()
-	return
-
-/mob/living/carbon/human/scp049/on_update_icon()
-	if (lying || resting)
-		var/matrix/M =  matrix()
-		transform = M.Turn(90)
-	else
-		transform = null
-	return
-
 /mob/living/carbon/human/scp049/Initialize()
 	..()
 	add_language(LANGUAGE_EAL, 1)
@@ -66,6 +47,25 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		/mob/living/carbon/human/scp049/proc/cure_action
 	)
 
+/datum/scp/scp_049
+	name = "SCP-049"
+	designation = "049"
+	classification = EUCLID
+
+/mob/living/carbon/human/scp049/IsAdvancedToolUser()
+	return FALSE
+
+/mob/living/carbon/human/scp049/update_icons()
+	return
+
+/mob/living/carbon/human/scp049/on_update_icon()
+	if (lying || resting)
+		var/matrix/M =  matrix()
+		transform = M.Turn(90)
+	else
+		transform = null
+	return
+
 /mob/living/carbon/human/scp049/Destroy()
 	GLOB.scp049s -= src
 	. = ..()
@@ -77,8 +77,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	if(anger==100)
 		angry = TRUE
 
-
-#warn work on anger system
 
 /mob/living/carbon/human/scp049/Login()
 	. = ..()
@@ -454,7 +452,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	speech_verb = "growls"
 	exclaim_verb = "wails"
 	partial_understanding = list(
-		LANGUAGE_HUMAN_EURO = 30,
+		LANGUAGE_HUMAN_GERMAN = 30,
 		LANGUAGE_ENGLISH = 35
 	)
 	syllables = list("mhh..", "grr..", "nnh..")

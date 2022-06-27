@@ -3,7 +3,7 @@
 [Website](https://baystation12.net/) - [Code](https://github.com/Baystation12/Baystation12/) - [Discord](https://discord.baystation12.net/) - [IRC](https://kiwiirc.com/client/irc.sorcery.net/codershuttle): irc://irc.sorcery.net/#codershuttle
 
 ---
-
+# DONT USE BYOND MAP MAKER. ITS BREAKS MAP FILES. USE STRONGDMM
 ### CONTRIBUTING GUIDELINES
 
 **Please refrain from making non code related comments in pull requests on GitHub.** See the Code of Conduct on where you may provide feedback to users.

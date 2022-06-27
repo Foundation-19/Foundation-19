@@ -5,6 +5,7 @@
 var/datum/global_hud/global_hud = new()
 var/list/global_huds = list(
 		global_hud.nvg,
+		global_hud.scramble,
 		global_hud.thermal,
 		global_hud.meson,
 		global_hud.science,
@@ -12,6 +13,7 @@ var/list/global_huds = list(
 
 /datum/global_hud
 	var/obj/screen/nvg
+	var/obj/screen/scramble
 	var/obj/screen/thermal
 	var/obj/screen/meson
 	var/obj/screen/science
@@ -28,6 +30,7 @@ var/list/global_huds = list(
 
 /datum/global_hud/New()
 	nvg = setup_overlay("nvg_hud")
+	scramble = setup_overlay("scramble_hud")
 	thermal = setup_overlay("thermal_hud")
 	meson = setup_overlay("meson_hud")
 	science = setup_overlay("science_hud")

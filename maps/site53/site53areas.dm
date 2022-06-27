@@ -23,6 +23,7 @@
 
 /area/turbolift/entrancezone
 	name = "\improper Entrance Zone"
+	icon_state = "security"
 	base_turf = /turf/simulated/open
 
 // SITE 53 ELEVATOR AREA'S
@@ -683,6 +684,40 @@
 	name = "\improper D-Class Cell Area"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "Sleep"
+
+/area/site53/llcz/dclass/isolation
+	name = "\improper D-Class Isolation"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "Sleep"
+
+/area/site53/llcz/dclass/briefing
+	name = "\improper D-Class Briefing Center"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "conference"
+	sound_env = LARGE_ENCLOSED
+
+/area/site53/llcz/dclass/primaryhallway
+	name = "\improper D-Class Cell Hallway"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "hallC1"
+	sound_env = LARGE_ENCLOSED
+
+/area/site53/llcz/dclass/luxurysleep
+	name = "\improper D-Class Luxury Barracks"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "hallC1"
+	sound_env = LARGE_ENCLOSED
+
+/area/site53/llcz/dclass/luxuryhall
+	name = "\improper D-Class Luxury Barracks Hallway"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "hallC1"
+	sound_env = LARGE_ENCLOSED
+
+/area/site53/llcz/dclass/luxurylibrary
+	name = "\improper D-Class Luxury Library"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "Sleep"
 	sound_env = LARGE_ENCLOSED
 
 /area/site53/llcz/dclass/shower
@@ -723,6 +758,11 @@
 
 /area/site53/llcz/dclass/medicalstorage
 	name = "\improper D-Class Medical Storage"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "exam_room"
+
+/area/site53/llcz/dclass/dshop
+	name = "\improper D-Class Commissary"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "exam_room"
 
@@ -802,6 +842,11 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	requires_power = 0
 	dynamic_lighting = 0
+
+/area/site53/uhcz/scp8containment
+	name = "\improper SCP-008 Containment Chamber"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/uhcz/scp247observation
 	name = "\improper SCP-247 Observation"
@@ -883,6 +928,11 @@
 /area/site53/entrancezone/substation
 	name = "\improper Entrance Zone Substation"
 	icon_state = "substation"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/entrancezone/forensics
+	name = "\improper Forensics Laboratory"
+	icon_state = "detective"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/medical/infirmreception

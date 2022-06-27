@@ -312,18 +312,34 @@
 /obj/item/clothing/head/helmet/solgov
 	accessories = list(/obj/item/clothing/accessory/armor/helmcover/blue/sol)
 
-/obj/item/clothing/head/helmet/site53/zonecomm
-	name = "zone commander's helmet"
-	desc = "A helmet with 'ZONE COMMANDER' printed on the back in silver lettering."
-	icon_state = "helmet_security"
-	icon = 'maps/torch/icons/obj/solgov-head.dmi'
-	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
-	accessories = null
-
+//FOUNDATION
 /obj/item/clothing/head/helmet/site53/guard
 	name = "guard's helmet"
 	desc = "A helmet with 'GUARD' printed on the back in red lettering."
 	icon_state = "helmet_pcrc"
+	icon = 'maps/torch/icons/obj/solgov-head.dmi'
+	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
+	accessories = null
+
+/obj/item/clothing/head/helmet/site53/guardcomm
+	name = "guard commander's helmet"
+	desc = "A helmet with 'GUARD COMMANDER' printed on the back in gold lettering."
+	icon_state = "helmet_command"
+	icon = 'maps/torch/icons/obj/solgov-head.dmi'
+	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
+	accessories = null
+
+/obj/item/clothing/head/solgov/service/site53
+	name = "service cap"
+	desc = "A grey garrison cap, with the SCP Foundation logo in the interior. A purple insignia is on it's crest."
+	icon_state = "service_co_cap"
+	item_state = "service_co_cap_om"
+
+//MTF
+/obj/item/clothing/head/helmet/site53/zonecomm
+	name = "zone commander's helmet"
+	desc = "A helmet with 'ZONE COMMANDER' printed on the back in silver lettering."
+	icon_state = "helmet_security"
 	icon = 'maps/torch/icons/obj/solgov-head.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
 	accessories = null
@@ -342,16 +358,22 @@
 /obj/item/clothing/head/helmet/site53/guard/mtf_epsilon/medic
 //	accessories = list(/obj/item/clothing/accessory/armor/helmcover/nt)
 
-/obj/item/clothing/head/helmet/site53/guardcomm
-	name = "guard commander's helmet"
-	desc = "A helmet with 'GUARD COMMANDER' printed on the back in gold lettering."
-	icon_state = "helmet_command"
-	icon = 'maps/torch/icons/obj/solgov-head.dmi'
-	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
-	accessories = null
 
-/obj/item/clothing/head/solgov/service/site53
-	name = "service cap"
-	desc = "A grey garrison cap, with the SCP Foundation logo in the interior. A purple insignia is on it's crest."
-	icon_state = "service_co_cap"
-	item_state = "service_co_cap_om"
+//GOC
+/obj/item/clothing/head/helmet/scp/goc
+	name = "GOC helmet"
+	desc = "A light blue, open face helmet with GOC writen on the side."
+	icon_state = "goc-helmet"
+	item_state = "goc-helmet"
+	body_parts_covered = HEAD
+	armor = list(melee = 40, bullet = 90, laser = 50,energy = 25, bomb = 40)
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/beret/scp
+	icon = 'icons/obj/clothing/hats.dmi'
+
+/obj/item/clothing/head/beret/scp/goc
+	name = "GOC beret"
+	desc = "A light blue beret with a officer's rank emblem. For officers that are more inclined towards style than safety."
+	icon_state = "goc-beret"
+	item_state = "goc-beret"

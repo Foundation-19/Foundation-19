@@ -1,3 +1,4 @@
+//MTF
 /obj/item/clothing/accessory/armorplate/medium
 	name = "medium armor plate"
 	desc = "A plasteel-reinforced synthetic armor plate, providing good protection. Attaches to a plate carrier."
@@ -45,6 +46,18 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	armor = list(melee = 80, bullet = 85, laser = 65, energy = 15, bomb = 80, bio = 40, rad = 60)
 
+//GOC
+/obj/item/clothing/suit/armor/goc
+	icon = 'icons/obj/clothing/suits.dmi'
+	name = "GOC armored vest"
+	desc = "A standard issue lightweight armored vest given to soldiers of the GOC."
+	icon_state = "goc-vest"
+	item_state = "goc-vest"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	armor = list(melee = 90, bullet = 90, laser = 65, energy = 15, bomb = 80)
+
+
+//SCP
 /obj/item/reagent_containers/pill/scp500
 	name = "SCP-500"
 	desc = "A pill supposedly curing everything."
