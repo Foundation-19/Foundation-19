@@ -68,13 +68,13 @@ var/global/list/sparring_attack_cache = list()
 				if (target.l_hand)
 					// Disarm left hand
 					//Urist McAssistant dropped the macguffin with a scream just sounds odd.
-					if(target.drop_l_hand())
-						target.visible_message(SPAN_DANGER("\The [target.l_hand] was knocked right out of \the [target]'s grasp!"))
+					target.visible_message("<span class='danger'>\The [target.l_hand] was knocked right out of [target]'s grasp!</span>")
+					target.drop_l_hand()
 			if(BP_R_ARM, BP_R_HAND)
 				if (target.r_hand)
 					// Disarm right hand
-					if(target.drop_r_hand())
-						target.visible_message(SPAN_DANGER("\The [target.r_hand] was knocked right out of \the [target]'s grasp!"))
+					target.visible_message("<span class='danger'>\The [target.r_hand] was knocked right out of [target]'s grasp!</span>")
+					target.drop_r_hand()
 			if(BP_CHEST)
 				if(!target.lying)
 					var/turf/T = get_step(get_turf(target), get_dir(get_turf(user), get_turf(target)))
@@ -155,6 +155,7 @@ var/global/list/sparring_attack_cache = list()
 	var/organ = affecting.name
 
 	attack_damage = Clamp(attack_damage, 1, 5) // We expect damage input of 1 to 5 for this proc. But we leave this check juuust in case.
+	playsound(user.loc, attack_sound, 25, 1, -1)
 
 	if(target == user)
 		user.visible_message("<span class='danger'>[user] [pick(attack_verb)] \himself in the [organ]!</span>")
@@ -222,6 +223,7 @@ var/global/list/sparring_attack_cache = list()
 	var/organ = affecting.name
 
 	attack_damage = Clamp(attack_damage, 1, 5)
+	playsound(user.loc, attack_sound, 25, 1, -1)
 
 	switch(attack_damage)
 		if(1 to 2)	user.visible_message("<span class='danger'>[user] threw [target] a glancing [pick(attack_noun)] to the [organ]!</span>") //it's not that they're kicking lightly, it's that the kick didn't quite connect
@@ -262,6 +264,7 @@ var/global/list/sparring_attack_cache = list()
 	var/obj/item/clothing/shoes = user.shoes
 
 	attack_damage = Clamp(attack_damage, 1, 5)
+	playsound(user.loc, attack_sound, 25, 1, -1)
 
 	var/shoe_text = shoes ? copytext(shoes.name, 1, -1) : "foot"
 	switch(attack_damage)

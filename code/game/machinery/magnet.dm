@@ -271,7 +271,9 @@
 		dat += "Moving: <a href='?src=\ref[src];operation=togglemoving'>[moving ? "Enabled":"Disabled"]</a>"
 
 
-		show_browser(user, dat, "window=magnet;size=400x500")
+		var/datum/browser/popup = new(user, "magnet", "Magnet", 400, 500)
+		popup.set_content(dat)
+		popup.open()
 		onclose(user, "magnet")
 
 	Topic(href, href_list)

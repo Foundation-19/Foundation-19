@@ -61,6 +61,7 @@
 	if(hud_data.has_a_intent)
 
 		using = new /obj/screen/intent()
+		using.icon_state = "intent_[mymob.a_intent]"
 		src.adding += using
 		action_intent = using
 
@@ -86,6 +87,17 @@
 		using.color = ui_color
 		using.alpha = ui_alpha
 		src.hotkeybuttons += using
+
+	if(hud_data.has_rest)
+		using = new /obj/screen()
+		using.SetName("rest")
+		using.icon = ui_style
+		using.icon_state = "rest_[mymob.resting]"
+		using.screen_loc = ui_rest_act
+		using.color = ui_color
+		using.alpha = ui_alpha
+		src.adding += using
+		rest_button = using
 
 	if(hud_data.has_hands)
 
@@ -282,7 +294,6 @@
 	mymob.radio_use_icon.color = ui_color
 	mymob.radio_use_icon.alpha = ui_alpha
 
-
 	if(ishuman(mymob))
 		var/mob/living/carbon/human/H = mymob
 		H.fov = new /obj/screen()
@@ -293,7 +304,6 @@
 		H.fov.mouse_opacity = 0
 		H.fov.layer = UNDER_HUD_LAYER
 		hud_elements |= H.fov
-
 
 	mymob.client.screen = list()
 

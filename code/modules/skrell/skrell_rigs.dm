@@ -165,9 +165,9 @@
 	interface_name = "skrellian medical injector"
 	interface_desc = "A sleek medical injector of skrellian design."
 	charges = list(
-		list("tramadol",            "tramadol",            /datum/reagent/tramadol,      20),
-		list("dexalinp",            "dexalinp",            /datum/reagent/dexalinp,      20),
-		list("inaprovaline",        "inaprovaline",        /datum/reagent/inaprovaline,  20)
+		list("tramadol",            "tramadol",            /datum/reagent/medicine/painkiller/tramadol,      20),
+		list("dexalinp",            "dexalinp",            /datum/reagent/medicine/dexalin_plus,      20),
+		list("inaprovaline",        "inaprovaline",        /datum/reagent/medicine/inaprovaline,  20)
 	)
 
 // Skrell combat dispenser
@@ -178,12 +178,12 @@
 	interface_name = "skrellian combat injector"
 	interface_desc = "A sleek combat injector of skrellian design."
 	charges = list(
-		list("tramadol",            "tramadol",            /datum/reagent/tramadol,      20),
-		list("dexalinp",            "dexalinp",            /datum/reagent/dexalinp,      20),
-		list("inaprovaline",        "inaprovaline",        /datum/reagent/inaprovaline,  20),
-		list("synaptizine",         "synaptizine",         /datum/reagent/synaptizine,        20),
-		list("hyperzine",           "hyperzine",           /datum/reagent/hyperzine,          20),
-		list("oxycodone",           "oxycodone",           /datum/reagent/tramadol/oxycodone, 20),
+		list("tramadol",            "tramadol",            /datum/reagent/medicine/painkiller/tramadol,      20),
+		list("dexalinp",            "dexalinp",            /datum/reagent/medicine/dexalin_plus,      20),
+		list("inaprovaline",        "inaprovaline",        /datum/reagent/medicine/inaprovaline,  20),
+		list("synaptizine",         "synaptizine",         /datum/reagent/medicine/stimulant/synaptizine,        20),
+		list("hyperzine",           "hyperzine",           /datum/reagent/medicine/stimulant/hyperzine,          20),
+		list("oxycodone",           "oxycodone",           /datum/reagent/medicine/painkiller/tramadol/oxycodone, 20),
 		list("glucose",             "glucose",             /datum/reagent/nutriment/glucose,  20)
 	)
 
@@ -228,6 +228,8 @@
 /obj/item/cell/skrell
 	name = "skrellian microfusion cell"
 	desc = "An impossibly tiny fusion power engine of Skrell design."
+	icon = 'icons/obj/ascent.dmi'
+	icon_state = "plant"
 	maxcharge = 1500
 	w_class = ITEM_SIZE_NORMAL
 	var/recharge_amount = 12

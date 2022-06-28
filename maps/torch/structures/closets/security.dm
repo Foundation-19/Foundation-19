@@ -145,6 +145,7 @@
 		/obj/item/clothing/suit/armor/pcarrier/medium/security,
 		/obj/item/gun/energy/gun/small/secure,
 		/obj/item/device/flash,
+		/obj/item/melee/baton/loaded,
 		/obj/item/reagent_containers/spray/pepper,
 		/obj/item/taperoll/police,
 		/obj/item/clothing/accessory/storage/black_vest,
@@ -161,10 +162,4 @@
 		/obj/item/material/knife/folding/swiss/sec,
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/security, /obj/item/storage/backpack/satchel/sec)),
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag/sec, /obj/item/storage/backpack/messenger/sec))
-	)
-
-/obj/structure/closet/bombclosetsecurity/WillContain()
-	return list(
-		/obj/item/clothing/suit/bomb_suit/security,
-		/obj/item/clothing/head/bomb_hood/security
 	)

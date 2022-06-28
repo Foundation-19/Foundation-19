@@ -63,8 +63,6 @@
 	#include "items/mecha.dm"
 	#include "items/memos.dm"
 
-	#include "../../packs/faction_iccgn/_pack.dm"
-
 	#include "items/clothing/ec_skillbadges.dm"
 	#include "items/clothing/solgov-accessory.dm"
 	#include "items/clothing/solgov-armor.dm"
@@ -73,6 +71,12 @@
 	#include "items/clothing/solgov-head.dm"
 	#include "items/clothing/solgov-suit.dm"
 	#include "items/clothing/solgov-under.dm"
+	#include "items/clothing/terran-accessory.dm"
+	#include "items/clothing/terran-feet.dm"
+	#include "items/clothing/terran-hands.dm"
+	#include "items/clothing/terran-head.dm"
+	#include "items/clothing/terran-suit.dm"
+	#include "items/clothing/terran-under.dm"
 
 	#include "items/weapon/storage/wallets.dm"
 
@@ -102,11 +106,10 @@
 	#include "job/outfits/supply_outfits.dm"
 	#include "job/outfits/unused_outfits.dm"
 
-	#include "language/human/german.dm"
-	#include "language/human/misc/english.dm"
+	#include "language/human/euro.dm"
+	#include "language/human/misc/spacer.dm"
 
 	#include "machinery/apc_shuttle.dm"
-	#include "machinery/faxmachine.dm"
 	#include "machinery/keycard authentication.dm"
 	#include "machinery/suit_storage.dm"
 
@@ -127,6 +130,7 @@
 
 	#include "loadout/_defines.dm"
 	#include "loadout/loadout_accessories.dm"
+	#include "loadout/loadout_augments.dm"
 	#include "loadout/loadout_ec_skillbadges.dm"
 	#include "loadout/loadout_eyes.dm"
 	#include "loadout/loadout_gloves.dm"
@@ -166,7 +170,9 @@
 	#include "../away/miningstation/miningstation.dm"
 	#include "../away/mininghome/mininghome.dm"
 	#include "../away/scavver/scavver_gantry.dm"
-
+	#include "../away/verne/verne.dm"
+	#include "../away/rawl/rawl.dm"
+	#include "../away/ascent_caulship/_ascent_caulship.dm"
 
 	#define using_map_DATUM /datum/map/torch
 

@@ -31,7 +31,7 @@ GLOBAL_LIST_EMPTY(scp131s)
 	response_help  = "pets"
 	response_disarm = "gently nudges aside"
 	response_harm   = "kicks"
-	emote_see = list("whirrs around", "swivels in place")
+//	emote_see = list("whirrs around", "swivels in place")
 	var/turns_since_scan = 0
 	var/mob/movement_target
 	var/mob/study_target

@@ -1,7 +1,7 @@
 // Power component for machines. Handles power interactions.
 
-/// List of all machine components that are of the `power` subtype. This is an optimization, as power code is expensive.
-/obj/machinery/var/list/power_components = list()
+/obj/machinery
+	var/list/power_components = list() // this is an optimization, as power code is expensive.
 
 /obj/item/stock_parts/power
 	part_flags = PART_FLAG_QDEL // For integrated components, which are built from uncreated_component_parts. Use subtypes with this off for buildable ones.

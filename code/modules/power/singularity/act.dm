@@ -12,6 +12,8 @@
 	return 20
 
 /mob/living/singularity_pull(S, current_size)
+	if(Check_Shoegrip()) // Magboots prevent it from happening
+		return
 	step_towards(src, S)
 	apply_damage(current_size * 3, IRRADIATE, damage_flags = DAM_DISPERSED)
 
@@ -78,7 +80,7 @@
 	log_and_message_admins("New super singularity made by eating a SM crystal [prints]. Last touched by [src.fingerprintslast].")
 	src.forceMove(null)
 	qdel(src)
-	return 50000
+	return 500000 // Exactly enough for final stage
 
 /obj/item/projectile/beam/emitter/singularity_pull()
 	return

@@ -11,6 +11,7 @@
 #define TURF_ACID_IMMUNE        1024
 #define TURF_IS_WET             2048
 #define TURF_HAS_RANDOM_BORDER	4096
+#define TURF_DISALLOW_BLOB		8192
 
 //Used for floor/wall smoothing
 #define SMOOTH_NONE 0	//Smooth only with itself

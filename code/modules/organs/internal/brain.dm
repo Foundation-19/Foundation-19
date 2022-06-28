@@ -15,7 +15,6 @@
 	relative_size = 85
 	damage_reduction = 0
 	can_be_printed = FALSE
-	scp106_vulnerable = FALSE
 
 	var/can_use_mmi = TRUE
 	var/mob/living/carbon/brain/brainmob = null
@@ -23,6 +22,7 @@
 	var/damage_threshold_value
 	var/healed_threshold = 1
 	var/oxygen_reserve = 6
+	scp106_vulnerable = FALSE
 
 /obj/item/organ/internal/brain/robotize()
 	replace_self_with(/obj/item/organ/internal/posibrain)
@@ -130,16 +130,16 @@
 	healed_threshold = 0
 	to_chat(owner, "<span class = 'notice' font size='10'><B>Where am I...?</B></span>")
 	sleep(5 SECONDS)
-	if (!owner || owner.stat == DEAD || (status & ORGAN_DEAD))
+	if(!owner)
 		return
 	to_chat(owner, "<span class = 'notice' font size='10'><B>What's going on...?</B></span>")
 	sleep(10 SECONDS)
-	if (!owner || owner.stat == DEAD || (status & ORGAN_DEAD))
+	if(!owner)
 		return
 	to_chat(owner, "<span class = 'notice' font size='10'><B>What happened...?</B></span>")
 	alert(owner, "You have taken massive brain damage! You will not be able to remember the events leading up to your injury.", "Brain Damaged")
-	if (owner.psi)
-		owner.psi.check_latency_trigger(20, "physical trauma")
+	if(owner.psi)
+		owner.psi.check_latency_trigger(40, "physical trauma")
 
 /obj/item/organ/internal/brain/Process()
 	if(owner)
@@ -206,21 +206,19 @@
 /obj/item/organ/internal/brain/take_internal_damage(var/damage, var/silent)
 	set waitfor = 0
 	..()
-	if(damage >= 20) //This probably won't be triggered by oxyloss or mercury. Probably.
+	if(damage >= 10) //This probably won't be triggered by oxyloss or mercury. Probably.
 		var/damage_secondary = damage * 0.20
-		if (owner)
-			owner.flash_eyes()
-			owner.eye_blurry += damage_secondary
-			owner.confused += damage_secondary * 2
-			owner.Paralyse(damage_secondary)
-			owner.Weaken(round(damage, 1))
-			if (prob(30))
-				addtimer(CALLBACK(src, .proc/brain_damage_callback, damage), rand(6, 20) SECONDS, TIMER_UNIQUE)
+		owner.flash_eyes()
+		owner.eye_blurry += damage_secondary
+		owner.confused += damage_secondary
+		if(damage >= 25)
+			owner.Weaken(round(damage_secondary*0.5, 1))
+		if(prob(30))
+			addtimer(CALLBACK(src, .proc/brain_damage_callback, damage), rand(6, 20) SECONDS, TIMER_UNIQUE)
 
 /obj/item/organ/internal/brain/proc/brain_damage_callback(var/damage) //Confuse them as a somewhat uncommon aftershock. Side note: Only here so a spawn isn't used. Also, for the sake of a unique timer.
-	if (!owner || owner.stat == DEAD || (status & ORGAN_DEAD))
+	if (!owner)
 		return
-
 	to_chat(owner, "<span class = 'notice' font size='10'><B>I can't remember which way is forward...</B></span>")
 	owner.confused += damage
 
@@ -260,8 +258,8 @@
 
 /obj/item/organ/internal/brain/surgical_fix(mob/user)
 	var/blood_volume = owner.get_blood_oxygenation()
-	if(blood_volume < BLOOD_VOLUME_BAD)
-		to_chat(user, SPAN_DANGER("Parts of [src] didn't survive the procedure due to lack of air supply!"))
+	if(blood_volume < BLOOD_VOLUME_SURVIVE)
+		to_chat(user, "<span class='danger'>Parts of [src] didn't survive the procedure due to lack of air supply!</span>")
 		set_max_damage(Floor(max_damage - 0.25*damage))
 	heal_damage(damage)
 

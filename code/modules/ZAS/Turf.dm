@@ -11,8 +11,7 @@
 		vis_contents -= graphic_remove
 
 /turf/proc/update_air_properties()
-	var/block
-	ATMOS_CANPASS_TURF(block, src, src)
+	var/block = c_airblock(src)
 	if(block & AIR_BLOCKED)
 		//dbg(blocked)
 		return 1
@@ -95,8 +94,7 @@
 		c_copy_air() //not very efficient :(
 		zone = null //Easier than iterating through the list at the zone.
 
-	var/s_block
-	ATMOS_CANPASS_TURF(s_block, src, src)
+	var/s_block = c_airblock(src)
 	if(s_block & AIR_BLOCKED)
 		#ifdef ZASDBG
 		if(verbose) log_debug("Self-blocked.")

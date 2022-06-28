@@ -33,7 +33,7 @@ SUBSYSTEM_DEF(event)
 				EVENT_LEVEL_MUNDANE 	= new/datum/event_container/mundane,
 				EVENT_LEVEL_MODERATE	= new/datum/event_container/moderate,
 				EVENT_LEVEL_MAJOR 		= new/datum/event_container/major,
-				EVENT_LEVEL_EXO         = new/datum/event_container/exo
+				EVENT_LEVEL_EXO			= new/datum/event_container/exo
 			)
 
 	if(GLOB.using_map.use_overmap)

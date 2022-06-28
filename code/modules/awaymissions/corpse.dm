@@ -4,18 +4,18 @@
 
 //To do: Allow corpses to appear mangled, bloody, etc. Allow customizing the bodies appearance (they're all bald and white right now).
 
-#define CORPSE_SPAWNER_RANDOM_NAME       FLAG(0)
-#define CORPSE_SPAWNER_CUT_SURVIVAL      FLAG(1)
-#define CORPSE_SPAWNER_CUT_ID_PDA        (CORPSE_SPAWNER_RANDOM_NAME | CORPSE_SPAWNER_CUT_SURVIVAL)
-#define CORPSE_SPAWNER_PLAIN_HEADSET     FLAG(2)
+#define CORPSE_SPAWNER_RANDOM_NAME       0x0001
+#define CORPSE_SPAWNER_CUT_SURVIVAL      0x0002
+#define CORPSE_SPAWNER_CUT_ID_PDA        0x0003
+#define CORPSE_SPAWNER_PLAIN_HEADSET     0x0004
 
-#define CORPSE_SPAWNER_RANDOM_SKIN_TONE    FLAG(3)
-#define CORPSE_SPAWNER_RANDOM_SKIN_COLOR   FLAG(4)
-#define CORPSE_SPAWNER_RANDOM_HAIR_COLOR   FLAG(5)
-#define CORPSE_SPAWNER_RANDOM_HAIR_STYLE   FLAG(6)
-#define CORPSE_SPAWNER_RANDOM_FACIAL_STYLE FLAG(7)
-#define CORPSE_SPAWNER_RANDOM_EYE_COLOR    FLAG(8)
-#define CORPSE_SPAWNER_RANDOM_GENDER       FLAG(9)
+#define CORPSE_SPAWNER_RANDOM_SKIN_TONE    0x0008
+#define CORPSE_SPAWNER_RANDOM_SKIN_COLOR   0x0010
+#define CORPSE_SPAWNER_RANDOM_HAIR_COLOR   0x0020
+#define CORPSE_SPAWNER_RANDOM_HAIR_STYLE   0x0040
+#define CORPSE_SPAWNER_RANDOM_FACIAL_STYLE 0x0080
+#define CORPSE_SPAWNER_RANDOM_EYE_COLOR    0x0100
+#define CORPSE_SPAWNER_RANDOM_GENDER       0x0200
 
 #define CORPSE_SPAWNER_NO_RANDOMIZATION ~(CORPSE_SPAWNER_RANDOM_NAME|CORPSE_SPAWNER_RANDOM_SKIN_TONE|CORPSE_SPAWNER_RANDOM_SKIN_COLOR|CORPSE_SPAWNER_RANDOM_HAIR_COLOR|CORPSE_SPAWNER_RANDOM_HAIR_STYLE|CORPSE_SPAWNER_RANDOM_FACIAL_STYLE|CORPSE_SPAWNER_RANDOM_EYE_COLOR)
 
@@ -34,25 +34,11 @@
 	var/facial_styles_per_species = list() // Custom facial hair styles, per species -type-, if any. See above as to why
 	var/genders_per_species       = list() // For gender biases per species -type-
 
-
 /obj/effect/landmark/corpse/Initialize()
 	..()
-	return INITIALIZE_HINT_LATELOAD
-
-
-/obj/effect/landmark/corpse/LateInitialize()
-	var/new_species = pickweight(species)
-	var/mob/living/carbon/human/corpse = new (loc, new_species)
-	corpse.adjustOxyLoss(corpse.maxHealth)
-	corpse.setBrainLoss(corpse.maxHealth)
-	var/obj/item/organ/internal/heart/heart = corpse.internal_organs_by_name[BP_HEART]
-	if (heart)
-		heart.pulse = PULSE_NONE
-	randomize_appearance(corpse, new_species)
-	equip_outfit(corpse)
-	corpse.update_icon()
-	qdel(src)
-
+	var/species_choice = pickweight(species)
+	new/mob/living/carbon/human/corpse (loc, species_choice, src)
+	return INITIALIZE_HINT_QDEL
 
 #define HEX_COLOR_TO_RGB_ARGS(X) arglist(GetHexColors(X))
 /obj/effect/landmark/corpse/proc/randomize_appearance(var/mob/living/carbon/human/M, species_choice)

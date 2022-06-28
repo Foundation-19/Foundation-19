@@ -69,10 +69,7 @@
 	path = /obj/item/reagent_containers/ecig_cartridge/blank
 
 /datum/fabricator_recipe/device_component/conveyor_construct
-	path = /obj/item/conveyor_construct
+	path = /obj/item/construct/conveyor
 
 /datum/fabricator_recipe/device_component/conveyor_switch_construct
-	path = /obj/item/conveyor_switch_construct
-
-/datum/fabricator_recipe/device_component/conveyor_switch_oneway_construct
-	path = /obj/item/conveyor_switch_construct/oneway
+	path = /obj/item/construct/conveyor_switch

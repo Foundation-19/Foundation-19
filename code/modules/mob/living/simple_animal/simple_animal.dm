@@ -26,12 +26,6 @@
 	var/turns_per_move = 1
 	var/turns_since_move = 0
 	//Interaction
-
-	var/list/speak = list()
-	var/speak_chance = 0
-	var/list/emote_hear = list()	//Hearable emotes
-	var/list/emote_see = list()		//Unlike speak_emote, the list of things in this variable only show by themselves with no spoken text. IE: Ian barks, Ian yaps
-
 	var/response_help   = "tries to help"
 	var/response_disarm = "tries to disarm"
 	var/response_harm   = "tries to hurt"
@@ -76,7 +70,7 @@
 	var/attack_sound = null				// Sound to play when I attack
 	var/attack_armor_pen = 0			// How much armor pen this attack has.
 
-	var/melee_attack_delay = 4			// If set, the mob will do a windup animation and can miss if the target moves out of the way.
+	var/melee_attack_delay = 2			// If set, the mob will do a windup animation and can miss if the target moves out of the way.
 	var/ranged_attack_delay = null
 	var/special_attack_delay = null
 
@@ -196,29 +190,12 @@
 		stat(null, "Health: [round((health / maxHealth) * 100)]%")
 
 /mob/living/simple_animal/death(gibbed, deathmessage = "dies!", show_dead_message)
+	. = ..(gibbed,deathmessage,show_dead_message)
 	icon_state = icon_dead
 	update_icon()
 	density = FALSE
 	adjustBruteLoss(maxHealth) //Make sure dey dead.
 	walk_to(src,0)
-	return ..(gibbed,deathmessage,show_dead_message)
-
-/mob/living/simple_animal/ex_act(severity)
-	if(!blinded)
-		flash_eyes()
-
-	var/damage
-	switch (severity)
-		if (1)
-			damage = 500
-
-		if (2)
-			damage = 120
-
-		if(3)
-			damage = 30
-
-	apply_damage(damage, BRUTE, damage_flags = DAM_EXPLODE)
 
 /mob/living/simple_animal/adjustBruteLoss(damage)
 	..()
@@ -235,6 +212,11 @@
 /mob/living/simple_animal/adjustOxyLoss(damage)
 	..()
 	updatehealth()
+
+/mob/living/simple_animal/updatehealth()
+	..()
+	if(stat != DEAD && health <= 0)
+		death()
 
 /mob/living/simple_animal/say(var/message)
 	var/verb = "says"
@@ -360,6 +342,9 @@
 		. *= 1.5
 
 	 . += ..()
+
+/mob/living/simple_animal/get_inventory_slot(obj/item/I)
+	return -1
 
 /mob/living/simple_animal/proc/pry_door(var/mob/user, var/delay, var/obj/machinery/door/pesky_door)
 	visible_message(SPAN_WARNING("\The [user] begins [pry_desc] at \the [pesky_door]!"))

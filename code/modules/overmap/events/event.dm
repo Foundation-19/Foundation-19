@@ -249,7 +249,7 @@
 /obj/effect/overmap/event/gravity
 	name = "dark matter influx"
 	weaknesses = OVERMAP_WEAKNESS_EXPLOSIVE
-	events = list(/datum/event/gravity)
+//	events = list(/datum/event/gravity)
 	event_icon_states = list("grav1", "grav2", "grav3", "grav4")
 	opacity = 0
 	color = "#321945"

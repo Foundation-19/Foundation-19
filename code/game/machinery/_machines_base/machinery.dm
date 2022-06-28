@@ -83,70 +83,42 @@ Class Procs:
 	layer = STRUCTURE_LAYER // Layer under items
 	init_flags = INIT_MACHINERY_PROCESS_SELF
 
-	/// Bitflag. Machine's base status. Can include `BROKEN`, `NOPOWER`, etc.
-	var/stat = EMPTY_BITFIELD
-	/// Bitflag. Reason the machine is 'broken'. Can be any combination of `MACHINE_BROKEN_*`. Do not modify directly - Use `set_broken()` instead.
-	var/reason_broken = EMPTY_BITFIELD
-	/// Bitflag. The machine will never set stat to these flags.
-	var/stat_immune = NOSCREEN | NOINPUT
-	/// Boolean. Whether or not the machine has been emagged.
+	var/stat = 0
+	var/reason_broken = 0
+	var/stat_immune = NOSCREEN | NOINPUT // The machine will never set stat to these flags.
 	var/emagged = FALSE
-	/// Boolean. Whether or not the machine has been upgrade by a malfunctioning AI.
-	var/malf_upgraded = FALSE
-	/// Wire datum, if any. If you place a type path, it will be autoinitialized.
-	var/datum/wires/wires
-	/// One of `POWER_USE_*`. The power usage state of the machine. Use `update_use_power()` to modify this during runtime.
+	var/malf_upgraded = 0
+	var/datum/wires/wires //wire datum, if any. If you place a type path, it will be autoinitialized.
 	var/use_power = POWER_USE_IDLE
-	/// Power usage for idle machinery. Used if `use_power` is set to `POWER_USE_IDLE`. Use `change_power_consumption()` to modify this during runtime.
+		//0 = dont run the auto
+		//1 = run auto, use idle
+		//2 = run auto, use active
 	var/idle_power_usage = 0
-	/// Power usage for active machinery. Used if `use_power` is set to `POWER_USE_ACTIVE`. Use `change_power_consumption()` to modify this during runtime.
 	var/active_power_usage = 0
-	/// Power channel the machine draws from in APCs. `EQUIP`, `ENVIRON`, or `LIGHT`. Use `update_power_channel()` to modify this during runtime.
-	var/power_channel = EQUIP
-	/// Helps with bookkeeping when initializing atoms. Don't modify.
-	var/power_init_complete = FALSE
-	/// List of component instances. Expected type: `/obj/item/stock_parts.`
-	var/list/component_parts
-	/// List of component paths which have delayed init. Indeces = number of components.
-	var/list/uncreated_component_parts = list(/obj/item/stock_parts/power/apc)
-	/// List of componant paths and the maximum number of that specific path that can be inserted into the machine. `null` - no max. `list(type part = number max)`.
-	var/list/maximum_component_parts = list(/obj/item/stock_parts = 10)
-	/// Numeric unique ID number. Set to the value of `gl_uid++` when used.
+	var/power_channel = EQUIP //EQUIP, ENVIRON or LIGHT
+	var/power_init_complete = FALSE // Helps with bookkeeping when initializing atoms. Don't modify.
+	var/list/component_parts           //List of component instances. Expected type: /obj/item/stock_parts
+	var/list/uncreated_component_parts = list(/obj/item/stock_parts/power/apc) //List of component paths which have delayed init. Indeces = number of components.
+	var/list/maximum_component_parts = list(/obj/item/stock_parts = 10)         //null - no max. list(type part = number max).
 	var/uid
-	/// Boolean. Whether or not the maintenance panel is open.
-	var/panel_open = FALSE
-	/// Numeric unique ID number tracker. Used for ensuring `uid` is unique.
+	var/panel_open = 0
 	var/global/gl_uid = 1
-	/// Boolean. Can the machine be interacted with while de-powered.
-	var/interact_offline = FALSE
-	/// Sound played on succesful interface use by a carbon lifeform.
-	var/clicksound
-	/// Sound played on succesful interface use.
-	var/clickvol = 40
-	/// Value to compare with `world.time` for whether to play `clicksound` according to `CLICKSOUND_INTERVAL`.
-	var/next_clicksound = 0
-	/// The skill used for skill checks for this machine (mostly so subtypes can use different skills).
-	var/core_skill = SKILL_DEVICES
-	/// Machines often do all operations on `Process()`. This caches the user's skill while the operations are running.
-	var/operator_skill
-	/// For mapped buildable types, set this to be the base type actually buildable.
-	var/base_type
-	/// This generic variable is to be used by mappers to give related machines a string key. In principle used by radio stock parts.
-	var/id_tag
-	/// What is created when the machine is dismantled.
-	var/frame_type = /obj/machinery/constructable_frame/machine_frame/deconstruct
+	var/interact_offline = 0 // Can the machine be interacted with while de-powered.
+	var/clicksound			// sound played on succesful interface use by a carbon lifeform
+	var/clickvol = 40		// sound played on succesful interface use
+	var/next_clicksound = 0 // value to compare with world.time for whether to play clicksound according to CLICKSOUND_INTERVAL
+	var/core_skill = SKILL_DEVICES //The skill used for skill checks for this machine (mostly so subtypes can use different skills).
+	var/operator_skill      // Machines often do all operations on Process(). This caches the user's skill while the operations are running.
+	var/base_type           // For mapped buildable types, set this to be the base type actually buildable.
+	var/id_tag              // This generic variable is to be used by mappers to give related machines a string key. In principle used by radio stock parts.
+	var/frame_type = /obj/machinery/constructable_frame/machine_frame/deconstruct // what is created when the machine is dismantled.
 
-	/// Component parts queued for processing by the machine. Expected type: `/obj/item/stock_parts`
-	var/list/processing_parts
-	/// Bitflag. What is being processed. One of `MACHINERY_PROCESS_*`.
-	var/processing_flags
-	/// One of the `STATUS_*` flags. If set, will force the given status flag if a silicon tries to access the machine.
-	var/silicon_restriction = null
+	var/list/processing_parts // Component parts queued for processing by the machine. Expected type: /obj/item/stock_parts
+	var/processing_flags         // What is being processed
+	var/silicon_restriction = FALSE // FALSE or one of the STATUS_* flags. If set, will force the given status flag if a silicon tries to access the machine.
 
-	/// The human-readable name of this machine, shown when examining circuit boards.
-	var/machine_name = null
-	/// A simple description of what this machine does, shown on examine for circuit boards.
-	var/machine_desc = null
+	var/machine_name = null // The human-readable name of this machine, shown when examining circuit boards.
+	var/machine_desc = null // A simple description of what this machine does, shown on examine for circuit boards.
 
 /obj/machinery/Initialize(mapload, d=0, populate_parts = TRUE)
 	. = ..()
@@ -169,8 +141,7 @@ Class Procs:
 	STOP_PROCESSING_MACHINE(src, MACHINERY_PROCESS_ALL)
 	. = ..()
 
-/// Part of the machinery subsystem's process stack. Processes everything defined by `processing_flags`.
-/obj/machinery/proc/ProcessAll(wait)
+/obj/machinery/proc/ProcessAll(var/wait)
 	if(processing_flags & MACHINERY_PROCESS_COMPONENTS)
 		for(var/thing in processing_parts)
 			var/obj/item/stock_parts/part = thing
@@ -184,7 +155,7 @@ Class Procs:
 	return PROCESS_KILL // Only process if you need to.
 
 /obj/machinery/emp_act(severity)
-	if(use_power && stat == EMPTY_BITFIELD)
+	if(use_power && stat == 0)
 		use_power_oneoff(7500/severity)
 
 		var/obj/effect/overlay/pulse2 = new /obj/effect/overlay(loc)
@@ -194,21 +165,21 @@ Class Procs:
 		pulse2.anchored = TRUE
 		pulse2.set_dir(pick(GLOB.cardinal))
 
-		addtimer(CALLBACK(GLOBAL_PROC, /proc/qdel, pulse2), 1 SECOND)
+		spawn(10)
+			qdel(pulse2)
 	..()
 
 /obj/machinery/ex_act(severity)
 	switch(severity)
-		if(1)
+		if(1.0)
 			qdel(src)
-		if(2)
+		if(2.0)
 			if (prob(50))
 				qdel(src)
-		if(3)
+		if(3.0)
 			if (prob(25))
 				qdel(src)
 
-/// Toggles the `BROKEN` flag on the machine's `stat` variable. Includes immunity and other checks. `cause` can be any of `MACHINE_BROKEN_*`.
 /obj/machinery/proc/set_broken(new_state, cause = MACHINE_BROKEN_GENERIC)
 	if(stat_immune & BROKEN)
 		return FALSE
@@ -221,7 +192,6 @@ Class Procs:
 		queue_icon_update()
 		return TRUE
 
-/// Toggles the `NOSCREEN` flag on the machine's `stat` variable. Includes immunity checks.
 /obj/machinery/proc/set_noscreen(new_state)
 	if(stat_immune & NOSCREEN)
 		return FALSE
@@ -229,7 +199,6 @@ Class Procs:
 		stat ^= NOSCREEN                // so flip it
 		return TRUE
 
-/// Toggles the `NOINPUT` flag on the machine's `stat` variable. Includes immunity checks.
 /obj/machinery/proc/set_noinput(new_state)
 	if(stat_immune & NOINPUT)
 		return FALSE
@@ -237,27 +206,22 @@ Class Procs:
 		stat ^= NOINPUT
 		return TRUE
 
-/// Checks whether or not the machine `M` can be operated by `user`.
-/proc/is_operable(obj/machinery/M, mob/user)
+/proc/is_operable(var/obj/machinery/M, var/mob/user)
 	return istype(M) && M.operable()
 
-/// Checks whether or not the machine's stat variable has the `BROKEN` flag, or any of the provided `additional_flags`. Returns `TRUE` if any of the flags match.
-/obj/machinery/proc/is_broken(additional_flags = EMPTY_BITFIELD)
+/obj/machinery/proc/is_broken(var/additional_flags = 0)
 	return (stat & (BROKEN|additional_flags))
 
-/// Checks whether or not the machine's stat variable has the `NOPOWER` flag, or any of the provided `additional_flags`. Returns `FALSE` if any of the flags match.
-/obj/machinery/proc/is_powered(additional_flags = EMPTY_BITFIELD)
+/obj/machinery/proc/is_powered(var/additional_flags = 0)
 	return !(stat & (NOPOWER|additional_flags))
 
-/// Inverse of `inoperable()`.
-/obj/machinery/proc/operable(additional_flags = EMPTY_BITFIELD)
+/obj/machinery/proc/operable(var/additional_flags = 0)
 	return !inoperable(additional_flags)
 
-/// Checks whether or not the machine's state variable has the `BROKEN` or `NOPOWER` flags, or any of the provided `additional_flags`. Returns `TRUE` if any of the flags match.
-/obj/machinery/proc/inoperable(additional_flags = EMPTY_BITFIELD)
+/obj/machinery/proc/inoperable(var/additional_flags = 0)
 	return (stat & (NOPOWER|BROKEN|additional_flags))
 
-/obj/machinery/CanUseTopic(mob/user)
+/obj/machinery/CanUseTopic(var/mob/user)
 	if(stat & BROKEN)
 		return STATUS_CLOSE
 
@@ -280,7 +244,6 @@ Class Procs:
 		return min(..(), STATUS_UPDATE)
 	return ..()
 
-/// Whether or not the mob can directly interact with the machine regardless of screen and input status. Checked in `CanUseTopic()`.
 /mob/proc/direct_machine_interface(obj/machinery/machine)
 	return FALSE
 
@@ -290,17 +253,17 @@ Class Procs:
 /mob/observer/ghost/direct_machine_interface(obj/machinery/machine)
 	return TRUE
 
-/obj/machinery/CanUseTopicPhysical(mob/user)
+/obj/machinery/CanUseTopicPhysical(var/mob/user)
 	if(stat & BROKEN)
 		return STATUS_CLOSE
 
 	return GLOB.physical_state.can_use_topic(nano_host(), user)
 
-/obj/machinery/CouldUseTopic(mob/user)
+/obj/machinery/CouldUseTopic(var/mob/user)
 	..()
 	user.set_machine(src)
 
-/obj/machinery/CouldNotUseTopic(mob/user)
+/obj/machinery/CouldNotUseTopic(var/mob/user)
 	user.unset_machine()
 
 /obj/machinery/Topic(href, href_list, datum/topic_state/state)
@@ -342,15 +305,15 @@ Class Procs:
 	if(!CanPhysicallyInteract(user))
 		return FALSE // The interactions below all assume physical access to the machine. If this is not the case, we let the machine take further action.
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, SPAN_WARNING("You don't have the dexterity to do this!"))
+		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
 		return TRUE
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.getBrainLoss() >= 55)
-			visible_message(SPAN_WARNING("\The [H] stares cluelessly at \the [src]."))
+			visible_message("<span class='warning'>[H] stares cluelessly at \the [src].</span>")
 			return TRUE
 		else if(prob(H.getBrainLoss()))
-			to_chat(user, SPAN_WARNING("You momentarily forget how to use \the [src]."))
+			to_chat(user, "<span class='warning'>You momentarily forget how to use \the [src].</span>")
 			return TRUE
 	if((. = component_attack_hand(user)))
 		return
@@ -361,23 +324,18 @@ Class Procs:
 	if(CanUseTopic(user, DefaultTopicState()) > STATUS_CLOSE)
 		return interface_interact(user)
 
-/**
- * If you want to have interface interactions handled for you conveniently, use this.
- * Return `TRUE` for handled.
- * If you perform direct interactions in here, you are responsible for ensuring that full interactivity checks have been made (i.e `CanInteract()`).
- * The checks leading in to here only guarantee that the user should be able to view a UI.
- */
+// If you want to have interface interactions handled for you conveniently, use this.
+// Return TRUE for handled.
+// If you perform direct interactions in here, you are responsible for ensuring that full interactivity checks have been made (i.e CanInteract).
+// The checks leading in to here only guarantee that the user should be able to view a UI.
 /obj/machinery/proc/interface_interact(user)
 	return FALSE
 
-/**
- * If you want a physical interaction which happens after all relevant checks but preempts the UI interactions, do it here.
- * Return `TRUE` for handled.
- */
+// If you want a physical interaction which happens after all relevant checks but preempts the UI interactions, do it here.
+// Return TRUE for handled.
 /obj/machinery/proc/physical_attack_hand(user)
 	return FALSE
 
-/// Refreshes the machines parts-related `stat` flags, and calls `on_refresh()` on each component.
 /obj/machinery/proc/RefreshParts()
 	set_noinput(TRUE)
 	set_noscreen(TRUE)
@@ -387,25 +345,22 @@ Class Procs:
 	var/list/missing = missing_parts()
 	set_broken(!!missing, MACHINE_BROKEN_NO_PARTS)
 
-/// Displays a message for mobs in range.
-/obj/machinery/proc/state(msg)
+/obj/machinery/proc/state(var/msg)
 	for(var/mob/O in hearers(src, null))
-		O.show_message("[icon2html(src, O)] " + SPAN_NOTICE(msg), AUDIBLE_MESSAGE)
+		O.show_message("[icon2html(src, O)] <span class = 'notice'>[msg]</span>", 2)
 
-/// Displays a ping message and sound effect.
-/obj/machinery/proc/ping(text)
+/obj/machinery/proc/ping(text=null)
 	if (!text)
 		text = "\The [src] pings."
 
-	state(text)
-	playsound(loc, 'sound/machines/ping.ogg', 50, 0)
+	state(text, "blue")
+	playsound(src.loc, 'sound/machines/ping.ogg', 50, 0)
 
-/// Electrocutes the mob `user` based on probability `prb`, if the machine is in a state capable of doing so. Returns `TRUE` if the user was shocked.
 /obj/machinery/proc/shock(mob/user, prb)
 	if(inoperable())
-		return FALSE
+		return 0
 	if(!prob(prb))
-		return FALSE
+		return 0
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(5, 1, src)
 	s.start()
@@ -418,10 +373,9 @@ Class Procs:
 			if(terminal && terminal.powernet)
 				terminal.powernet.trigger_warning()
 		if(user.stunned)
-			return TRUE
-	return FALSE
+			return 1
+	return 0
 
-/// Deconstructs the machine into its base frame and ejects all of its components. Returns boolean.
 /obj/machinery/proc/dismantle()
 	playsound(loc, 'sound/items/Crowbar.ogg', 50, 1)
 	var/obj/item/stock_parts/circuitboard/circuit = get_component_of_type(/obj/item/stock_parts/circuitboard)
@@ -440,115 +394,60 @@ Class Procs:
 		O.dropInto(loc)
 
 	qdel(src)
-	return TRUE
+	return 1
 
 /obj/machinery/InsertedContents()
 	return (contents - component_parts)
 
-/// Applies visual overlays relating to viewing through a specific datum, i.e. cameras.
 /datum/proc/apply_visual(mob/M)
 	return
 
-/// Removes visual overlays relating to viewing through a specific datum, i.e. cameras.
 /datum/proc/remove_visual(mob/M)
 	return
 
-/// Handles updgrading the machine for a malfunctioning AI. Return `TRUE` if the machine was successfully upgraded.
-/obj/machinery/proc/malf_upgrade(mob/living/silicon/ai/user)
-	return FALSE
+/obj/machinery/proc/malf_upgrade(var/mob/living/silicon/ai/user)
+	return 0
 
-/obj/machinery/CouldUseTopic(mob/user)
+/obj/machinery/CouldUseTopic(var/mob/user)
 	..()
 	if(clicksound && world.time > next_clicksound && istype(user, /mob/living/carbon))
 		next_clicksound = world.time + CLICKSOUND_INTERVAL
 		playsound(src, clicksound, clickvol)
 
-/// Displays all components in the machine to the user.
 /obj/machinery/proc/display_parts(mob/user)
-	to_chat(user, SPAN_NOTICE("Following parts detected in the machine:"))
+	to_chat(user, "<span class='notice'>Following parts detected in the machine:</span>")
 	for(var/obj/item/C in component_parts)
-		to_chat(user, SPAN_NOTICE("	[C.name]"))
+		to_chat(user, "<span class='notice'>	[C.name]</span>")
 	for(var/path in uncreated_component_parts)
 		var/obj/item/thing = path
-		to_chat(user, SPAN_NOTICE("	[initial(thing.name)] ([uncreated_component_parts[path] || 1])"))
+		to_chat(user, "<span class='notice'>	[initial(thing.name)] ([uncreated_component_parts[path] || 1])</span>")
 
 /obj/machinery/examine(mob/user)
 	. = ..()
 	if (panel_open)
-		to_chat(user, SPAN_NOTICE("The service panel is open."))
+		to_chat(user, "The service panel is open.")
 	if(component_parts && hasHUD(user, HUD_SCIENCE))
 		display_parts(user)
 	if(stat & NOSCREEN)
-		to_chat(user, SPAN_WARNING("It is missing a screen, making it hard to interact with."))
+		to_chat(user, "It is missing a screen, making it hard to interact with.")
 	else if(stat & NOINPUT)
-		to_chat(user, SPAN_WARNING("It is missing any input device."))
+		to_chat(user, "It is missing any input device.")
 	else if((stat & NOPOWER) && !interact_offline)
-		to_chat(user, SPAN_WARNING("It is not receiving power."))
+		to_chat(user, "It is not receiving power.")
 	if(construct_state && construct_state.mechanics_info())
-		to_chat(user, SPAN_NOTICE("It can be <a href='?src=\ref[src];mechanics_text=1'>manipulated</a> using tools."))
+		to_chat(user, "It can be <a href='?src=\ref[src];mechanics_text=1'>manipulated</a> using tools.")
 	var/list/missing = missing_parts()
 	if(missing)
 		var/list/parts = list()
 		for(var/type in missing)
 			var/obj/item/fake_thing = type
 			parts += "[num2text(missing[type])] [initial(fake_thing.name)]"
-		to_chat(user, SPAN_WARNING("\The [src] is missing [english_list(parts)], rendering it inoperable."))
-	if (user.skill_check(SKILL_CONSTRUCTION, SKILL_BASIC) || isobserver(user))
+		to_chat(user, "\The [src] is missing [english_list(parts)], rendering it inoperable.")
+	if (machine_desc && (user.skill_check(SKILL_CONSTRUCTION, SKILL_BASIC) || isobserver(user)))
 		to_chat(user, SPAN_NOTICE(machine_desc))
 
-/obj/machinery/get_mechanics_info()
-	. = ..()
-	if (maximum_component_parts)
-		var/component_parts_list
-		for (var/atom/item as anything in maximum_component_parts)
-			var/count = maximum_component_parts[item]
-			if (isnull(count))
-				component_parts_list += "<li>Infinite [initial(item.name)]</li>"
-			else
-				component_parts_list += "<li>[count] [initial(item.name)]\s</li>"
-		. += {"
-			<p>It can hold the following component types:</p>
-			<ul>
-				[component_parts_list]
-			</ul>
-		"}
-
-	if (silicon_restriction)
-		switch (silicon_restriction)
-			if (STATUS_UPDATE)
-				. += "<p>Silicons are blocked from controlling it.</p>"
-			if (STATUS_DISABLED || STATUS_CLOSE)
-				. += "<p>Silicons are blocked from viewing or controlling it.</p>"
-
-	var/power_channel_name
-	switch (initial(power_channel))
-		if (EQUIP)
-			power_channel_name = "Equipment"
-		if (LIGHT)
-			power_channel_name = "Lighting"
-		if (ENVIRON)
-			power_channel_name = "Environment"
-		if (LOCAL)
-			power_channel_name = "Local"
-	. += "<p>By default, it draws power from the [power_channel_name] channel.</p>"
-
-	if (idle_power_usage && active_power_usage)
-		. += "<p>It draws [idle_power_usage] watts while idle, and [active_power_usage] watts while active."
-	else if (idle_power_usage)
-		. += "<p>It draws [idle_power_usage] watts while idle.</p>"
-	else if (active_power_usage)
-		. += "<p>It draws [active_power_usage] watts while active.</p>"
-
-	if (core_skill)
-		var/decl/hierarchy/skill/core_skill_decl = core_skill
-		. += "<p>It utilizes the [initial(core_skill_decl.name)] skill.</p>"
-
-	var/wire_mechanics = wires?.get_mechanics_info()
-	if (wire_mechanics)
-		. += "<hr><h5>Wiring</h5>[wire_mechanics]"
-
 // This is really pretty crap and should be overridden for specific machines.
-/obj/machinery/water_act(depth)
+/obj/machinery/water_act(var/depth)
 	..()
 	if(!(stat & (NOPOWER|BROKEN)) && !waterproof && (depth > FLUID_DEEP))
 		ex_act(3)
@@ -562,7 +461,3 @@ Class Procs:
 	var/obj/item/stock_parts/power/battery/battery = get_component_of_type(/obj/item/stock_parts/power/battery)
 	if(battery)
 		return battery.get_cell()
-
-/// Called by `/mob/Login()` if the mob has an associated `machine`.
-/obj/machinery/proc/on_user_login(mob/M)
-	return

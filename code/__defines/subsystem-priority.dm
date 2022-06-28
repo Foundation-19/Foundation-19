@@ -5,7 +5,6 @@
 
 #define SS_PRIORITY_DEFAULT 50          // Default priority for all processes levels
 
-
 // SS_TICKER
 #define SS_PRIORITY_OVERLAY        100 // Applies overlays. May cause overlay pop-in if it gets behind.
 #define SS_PRIORITY_TIMER          20
@@ -18,6 +17,7 @@
 #define SS_PRIORITY_AIR            80  // ZAS processing.
 #define SS_PRIORITY_CHEMISTRY      60  // Multi-tick chemical reactions.
 #define SS_PRIORITY_CHAT           40  // Chat
+#define SS_PRIORITY_INPUT          20  // Input things.
 #define SS_PRIORITY_ALARM          20  // Alarm processing.
 #define SS_PRIORITY_EVENT          20  // Event processing and queue handling.
 #define SS_PRIORITY_SHUTTLE        20  // Shuttle movement.
@@ -27,12 +27,13 @@
 #define SS_PRIORITY_OPEN_SPACE     20  // Open turf updates.
 #define SS_PRIORITY_AIRFLOW        15  // Object movement from ZAS airflow.
 #define SS_PRIORITY_AI             15  // Mob AI
+#define SS_PRIORITY_ORBIT          10  // Orbit management.
 #define SS_PRIORITY_VOTE           10  // Vote management.
-#define SS_PRIORITY_INACTIVITY     10  // Idle kicking.
 #define SS_PRIORITY_SUPPLY         10  // Supply point accumulation.
 #define SS_PRIORITY_TRADE          10  // Adds/removes traders.
 #define SS_PRIORITY_GHOST_IMAGES   10  // Updates ghost client images.
 #define SS_PRIORITY_ZCOPY          10  // Builds appearances for Z-Mimic.
+#define SS_PRIORITY_PROJECTILES    10  // Projectile processing!
 
 // SS_BACKGROUND
 #define SS_PRIORITY_OBJECTS       100  // processing_objects processing.
@@ -46,7 +47,9 @@
 #define SS_PRIORITY_CIRCUIT       30   // Processing Circuit's ticks and all that
 #define SS_PRIORITY_GRAPH         30   // Merging and splitting of graphs
 #define SS_PRIORITY_CHAR_SETUP    25   // Writes player preferences to savefiles.
+#define SS_PRIORITY_DBCORE        23   // Handles database
 #define SS_PRIORITY_GARBAGE       20   // Garbage collection.
+#define SS_PRIORITY_INACTIVITY    10   // Idle kicking.
 #define SS_PRIORITY_KV            10   // \ref based arbitrary storage.
 
 // Subsystem fire priority, from lowest to highest priority

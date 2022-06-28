@@ -237,6 +237,10 @@
 		if(!istype(Proj ,/obj/item/projectile/beam/lastertag) && !istype(Proj ,/obj/item/projectile/beam/practice) )
 			explode()
 
+/obj/structure/reagent_dispensers/fueltank/ex_act(severity)
+	explode()
+	return
+
 /obj/structure/reagent_dispensers/fueltank/proc/explode()
 	for(var/datum/reagent/R in reagents.reagent_list)
 		R.ex_act(src, 1)
@@ -334,4 +338,4 @@
 	icon_state = "acidtank"
 	amount_per_transfer_from_this = 10
 	anchored = TRUE
-	initial_reagent_types = list(/datum/reagent/acid = 1)
+	initial_reagent_types = list(/datum/reagent/acid/sulphuric = 1)

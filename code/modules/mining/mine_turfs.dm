@@ -4,11 +4,15 @@ var/list/mining_floors = list()
 /**********************Mineral deposits**************************/
 /turf/unsimulated/mineral
 	name = "impassable rock"
+	desc = "Hard, dense bedrock. It would take a missile blast to get through this."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "rock-dark"
-	blocks_air = 1
+	blocks_air = TRUE
 	density = TRUE
-	opacity = 1
+	opacity = TRUE
+
+/turf/unsimulated/mineral/attackby(obj/item/W, mob/user)
+	to_chat(user, SPAN_WARNING("\The [src] is too strong to break using any tool that you know of, handheld or not."))
 
 /turf/simulated/mineral //wall piece
 	name = "rock"
@@ -20,6 +24,7 @@ var/list/mining_floors = list()
 	blocks_air = 1
 	temperature = T0C
 	color = COLOR_ASTEROID_ROCK
+	turf_flags = TURF_DISALLOW_BLOB
 	var/mined_turf = /turf/simulated/floor/asteroid
 	var/material/mineral
 	var/mined_ore = 0

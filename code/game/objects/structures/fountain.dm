@@ -51,7 +51,7 @@
 	else               //become younger
 		to_chat(user, "<span class='cultannounce'>You touch the fountain. Everything stops - then reverses. You relive in an instant the events of your life. The fountain, yesterday's lunch, your first love, your first kiss. It all feels as though it just happened moments ago. Then it feels like it never happened at all. Time reverses back into normality and continues its advance. You feel great, but why are you here?</span>")
 		user.became_younger = TRUE
-		user.age = round(rand(15,17))
+		user.age = round(rand(18,min(20, user.age)))
 	used = TRUE
 	desc = "The water flows beautifully from the spout, but the water in the pool does not ripple."
 

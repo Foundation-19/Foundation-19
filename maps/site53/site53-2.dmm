@@ -19619,12 +19619,10 @@
 "aQs" = (
 /obj/machinery/telecomms/bus/preset_four,
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
+	dir = 8
 	},
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 9;
@@ -19637,8 +19635,7 @@
 "aQt" = (
 /obj/machinery/telecomms/bus/preset_two,
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 5;
@@ -19782,8 +19779,7 @@
 	})
 "aQD" = (
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -19800,8 +19796,7 @@
 	})
 "aQE" = (
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -19921,8 +19916,7 @@
 	})
 "aQR" = (
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -20095,8 +20089,7 @@
 	})
 "aRd" = (
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -20761,8 +20754,7 @@
 "aSg" = (
 /obj/machinery/telecomms/bus/preset_three,
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
+	dir = 8
 	},
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 10;
@@ -21568,8 +21560,7 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/table/reinforced,
@@ -21579,8 +21570,7 @@
 	})
 "aUh" = (
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/reinforced,
@@ -21590,8 +21580,7 @@
 	})
 "aUi" = (
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 4;
@@ -23988,8 +23977,7 @@
 	icon_state = "rwindow"
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 4;
@@ -24425,8 +24413,7 @@
 /area/site53/lhcz/scp343entrance)
 "baS" = (
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -25333,8 +25320,7 @@
 /obj/structure/closet/secure_closet/personal,
 /obj/structure/window/reinforced{
 	dir = 4;
-	icon_state = "rwindow";
-	maxhealth = 100
+	icon_state = "rwindow"
 	},
 /obj/item/clothing/mask/gas/sexyclown,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -25362,8 +25348,7 @@
 /obj/structure/closet/secure_closet/personal,
 /obj/structure/window/reinforced{
 	dir = 4;
-	icon_state = "rwindow";
-	maxhealth = 100
+	icon_state = "rwindow"
 	},
 /obj/item/clothing/shoes/swimmingfins,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -25565,8 +25550,7 @@
 /obj/structure/table/glass,
 /obj/item/clothing/head/cakehat,
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
@@ -25577,8 +25561,7 @@
 "bew" = (
 /obj/structure/flora/pottedplant/stoutbush,
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/hub)
@@ -25605,8 +25588,7 @@
 /obj/machinery/washing_machine,
 /obj/structure/window/reinforced{
 	dir = 4;
-	icon_state = "rwindow";
-	maxhealth = 100
+	icon_state = "rwindow"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/hub)
@@ -26048,8 +26030,7 @@
 "bgb" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
+	dir = 8
 	},
 /obj/effect/floor_decal/corner/orange/mono,
 /obj/item/device/flashlight/pen,
@@ -26092,8 +26073,7 @@
 "bgi" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
+	dir = 8
 	},
 /obj/structure/window/reinforced,
 /obj/effect/floor_decal/corner/orange/mono,
@@ -26654,8 +26634,7 @@
 "czT" = (
 /obj/machinery/mech_recharger,
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
+	dir = 8
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/reswing/robotics)

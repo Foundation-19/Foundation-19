@@ -178,21 +178,23 @@
 	agony = 10
 	armor_penetration = 5
 
-	muzzle_type = /obj/effect/projectile/meatstation/muzzle
-	tracer_type = /obj/effect/projectile/meatstation/tracer
-	impact_type = /obj/effect/projectile/meatstation/impact
+	muzzle_type = /obj/effect/projectile/muzzle/laser/meatstation
+	tracer_type = /obj/effect/projectile/tracer/laser/meatstation
+	impact_type = /obj/effect/projectile/impact/laser/meatstation
 
-/obj/effect/projectile/meatstation/
+/obj/effect/projectile/tracer/laser/meatstation
 	light_color = COLOR_RED_LIGHT
 	icon = 'maps/away/meatstation/meatstation_sprites.dmi'
-
-/obj/effect/projectile/meatstation/tracer
 	icon_state = "redstun"
 
-/obj/effect/projectile/meatstation/muzzle
+/obj/effect/projectile/muzzle/laser/meatstation
+	light_color = COLOR_RED_LIGHT
+	icon = 'maps/away/meatstation/meatstation_sprites.dmi'
 	icon_state = "muzzle_redstun"
 
-/obj/effect/projectile/meatstation/impact
+/obj/effect/projectile/impact/laser/meatstation
+	light_color = COLOR_RED_LIGHT
+	icon = 'maps/away/meatstation/meatstation_sprites.dmi'
 	icon_state = "impact_redstun"
 
 //items

@@ -92,7 +92,7 @@
 				H.visible_message("<span class='notice'>\The [H] performs CPR on \the [src]!</span>")
 
 				if(is_asystole())
-					if(prob(5 + 5 * (SKILL_EXPERT - pumping_skill)))
+					if(prob(5 + 5 * (SKILL_EXPERIENCED - pumping_skill)))
 						var/obj/item/organ/external/chest = get_organ(BP_CHEST)
 						if(chest)
 							chest.fracture()
@@ -232,7 +232,8 @@
 			else
 				H.visible_message("<span class='danger'>[attack_message]</span>")
 
-			playsound(loc, ((miss_type) ? (miss_type == 1 ? attack.miss_sound : 'sound/weapons/thudswoosh.ogg') : attack.attack_sound), 25, 1, -1)
+			if(miss_type)
+				playsound(loc, (attack.miss_sound ? attack.miss_sound : 'sound/weapons/thudswoosh.ogg'), 25, 1, -1)
 			if (attack.should_attack_log)
 				admin_attack_log(H, src, "[miss_type ? (miss_type == 1 ? "Has missed" : "Was blocked by") : "Has [pick(attack.attack_verb)]"] their victim.", "[miss_type ? (miss_type == 1 ? "Missed" : "Blocked") : "[pick(attack.attack_verb)]"] their attacker", "[miss_type ? (miss_type == 1 ? "has missed" : "was blocked by") : "has [pick(attack.attack_verb)]"]")
 

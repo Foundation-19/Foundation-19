@@ -110,7 +110,7 @@
 
 //Subtype that calls explosion on init to clear space for shuttles
 /obj/effect/shuttle_landmark/automatic/clearing
-	var/radius = LANDING_ZONE_RADIUS
+	var/radius = 15
 
 /obj/effect/shuttle_landmark/automatic/clearing/Initialize()
 	..()

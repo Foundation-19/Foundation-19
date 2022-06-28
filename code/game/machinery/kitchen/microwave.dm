@@ -1,7 +1,7 @@
 
 /obj/machinery/microwave
 	name = "microwave"
-	desc = "A possibly occult device capable of perfectly preparing many types of food."
+	desc = "A possibly occult device capable of perfectly preparing many types of simple food."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "mw"
 	layer = BELOW_OBJ_LAYER
@@ -13,9 +13,9 @@
 	construct_state = /decl/machine_construction/default/panel_closed
 	uncreated_component_parts = null
 	stat_immune = 0
-	
+
 	machine_name = "microwave"
-	machine_desc = "Required for preparing any dish more complicated than a slice of bread. In the future, <i>everything</i> is microwaved."
+	machine_desc = "Used to cook simple ingredients en masse so that they can be used in complex recipes."
 
 	var/operating = FALSE // Is it on?
 	var/dirtiness = 0 // Ranges from 0 to 100, increasing a little with failed recipes and emptying reagents
@@ -33,10 +33,6 @@
 /*********************************
 *   Initialization, part logic
 **********************************/
-
-/obj/machinery/microwave/Initialize()
-	. = ..()
-	create_reagents(100)
 
 /obj/machinery/microwave/RefreshParts()
 	// Microwaves use a manipulator, micro lasers, and matter bin.
@@ -129,7 +125,7 @@
 
 	else if(is_type_in_list(O, SScuisine.microwave_accepts_items))
 
-		if (LAZYLEN(ingredients) >= SScuisine.microwave_maximum_item_storage)
+		if (LAZYLEN(ingredients) >= SScuisine.stove_maximum_item_storage)
 			to_chat(user, "<span class='warning'>This [src] is full of ingredients - you can't fit any more.</span>")
 
 		else if(istype(O, /obj/item/stack)) // This is bad, but I can't think of how to change it
@@ -153,26 +149,15 @@
 
 		return
 
-	else if(istype(O,/obj/item/reagent_containers/glass) || \
-	        istype(O,/obj/item/reagent_containers/food/drinks) || \
-	        istype(O,/obj/item/reagent_containers/food/condiment) \
-		)
-		if (!O.reagents)
-			return
-		for (var/datum/reagent/R in O.reagents.reagent_list)
-			if (!(R.type in SScuisine.microwave_accepts_reagents))
-				to_chat(user, SPAN_WARNING("Your [O] contains components unsuitable for cookery."))
-		return
-
 	else if(istype(O, /obj/item/storage))
-		if (LAZYLEN(ingredients) >= SScuisine.microwave_maximum_item_storage)
+		if (LAZYLEN(ingredients) >= SScuisine.stove_maximum_item_storage)
 			to_chat(user, SPAN_WARNING("[src] is completely full!"))
 			return
 
 		var/obj/item/storage/bag/P = O
 		var/objects_loaded = 0
 		for(var/obj/G in P.contents)
-			if(is_type_in_list(G, SScuisine.microwave_accepts_items) && LAZYLEN(ingredients) < SScuisine.microwave_maximum_item_storage && P.remove_from_storage(G, src, 1))
+			if(is_type_in_list(G, SScuisine.stove_accepts_items) && LAZYLEN(ingredients) < SScuisine.stove_maximum_item_storage && P.remove_from_storage(G, src, 1))
 				objects_loaded++
 				LAZYADD(ingredients, G)
 		P.finish_bulk_removal()
@@ -198,15 +183,15 @@
 
 	else if(isWrench(O))
 		user.visible_message( \
-			"<span class='notice'>\The [user] begins [anchored ? "securing" : "unsecuring"] the microwave.</span>", \
-			"<span class='notice'>You attempt to [anchored ? "secure" : "unsecure"] the microwave.</span>"
+			"<span class='notice'>\The [user] begins [anchored ? "unsecuring" : "securing"] the microwave.</span>", \
+			"<span class='notice'>You attempt to [anchored ? "unsecure" : "secure"] the microwave.</span>"
 			)
 		if (do_after(user,20, src))
-			anchored = !anchored
 			user.visible_message( \
-			"<span class='notice'>\The [user] [anchored ? "secures" : "unsecures"] the microwave.</span>", \
-			"<span class='notice'>You [anchored ? "secure" : "unsecure"] the microwave.</span>"
+			"<span class='notice'>\The [user] [anchored ? "unsecures" : "secures"] the microwave.</span>", \
+			"<span class='notice'>You [anchored ? "unsecure" : "secure"] the microwave.</span>"
 			)
+			anchored = !anchored
 
 	else
 		to_chat(user, "<span class='warning'>You have no idea what you can cook with this [O].</span>")
@@ -242,7 +227,7 @@
 
 /obj/machinery/microwave/interact(mob/user as mob) // The microwave Menu
 	user.set_machine(src)
-	var/dat = list()
+	var/dat
 	if(broken > 0)
 		dat += "<TT><b><i>This microwave is very broken. You'll need to fix it before you can use it again.</i></b></TT>"
 	else if(operating)
@@ -251,7 +236,7 @@
 		dat += "<TT><b><i>This microwave is covered in muck. You'll need to wipe it down or clean it out before you can use it again.</i></b></TT>"
 	else
 		playsound(loc, 'sound/machines/pda_click.ogg', 50, 1)
-		if (!LAZYLEN(ingredients) && !reagents.reagent_list.len)
+		if (!LAZYLEN(ingredients))
 			dat += "<B>The microwave is empty.</B>"
 		else
 			dat += "<b>Ingredients:</b><br>"
@@ -269,10 +254,6 @@
 				if (istype(O,/obj/item/reagent_containers/food/snacks/meat)) //any meat
 					items_measures[display_name] = "slab of meat"
 					items_measures_p[display_name] = "slabs of meat"
-				if (istype(O,/obj/item/reagent_containers/food/snacks/donkpocket))
-					display_name = "Turnovers"
-					items_measures[display_name] = "turnover"
-					items_measures_p[display_name] = "turnovers"
 				if (istype(O,/obj/item/reagent_containers/food/snacks/fish))
 					items_measures[display_name] = "fillet of fish"
 					items_measures_p[display_name] = "fillets of fish"
@@ -287,19 +268,12 @@
 					else
 						dat += "<B>[capitalize(O)]:</B> [N] [items_measures_p[O]]"
 
-			for (var/datum/reagent/R in reagents.reagent_list)
-				var/display_name = R.name
-				if (R.type == /datum/reagent/capsaicin)
-					display_name = "Hotsauce"
-				if (R.type == /datum/reagent/frostoil)
-					display_name = "Coldsauce"
-				dat += "<B>[display_name]:</B> [R.volume] unit\s"
+		dat += "<HR><A href='?src=\ref[src];action=cook'>Turn on!</a><br><A href='?src=\ref[src];action=dispose'>Eject ingredients!</a>"
 
-		dat += "<HR><BR><A href='?src=\ref[src];action=cook'>Turn on!<BR><A href='?src=\ref[src];action=dispose'>Eject ingredients!"
-
-	show_browser(user, "<HEAD><TITLE>Microwave Controls</TITLE></HEAD><TT>[jointext(dat,"<br>")]</TT>", "window=microwave")
+	var/datum/browser/popup = new(user, "microwave", "Microwave Controls")
+	popup.set_content(dat)
+	popup.open()
 	onclose(user, "microwave")
-	return
 
 
 
@@ -311,59 +285,20 @@
 	if(stat & (NOPOWER|BROKEN))
 		return
 	start()
-	if (reagents.total_volume == 0 && !LAZYLEN(ingredients)) //dry run
+	if (!LAZYLEN(ingredients)) //dry run
 		if (!wzhzhzh(10))
 			abort()
 			return
 		stop()
 		return
-
-	var/datum/recipe/recipe = select_recipe(SScuisine.microwave_recipes, src)
-	var/obj/cooked
-	if (!recipe)
-		dirtiness += 1
-		if (prob(max(10, dirtiness * 5) / break_multiplier))
-			if (!wzhzhzh(4))
-				abort()
-				return
-			muck_start()
-			wzhzhzh(4)
-			muck_finish()
-			cooked = fail()
+	wzhzhzh(10)
+	for (var/obj/item/I in ingredients)
+		var/obj/item/cooked = I.microwave_act()
+		if (cooked)
 			cooked.dropInto(loc)
-			return
-		else if (has_extra_item())
-			if (!wzhzhzh(4))
-				abort()
-				return
-			broke()
-			cooked = fail()
-			cooked.dropInto(loc)
-			return
-		else
-			if (!wzhzhzh(10))
-				abort()
-				return
-			stop()
-			cooked = fail()
-			cooked.dropInto(loc)
-			return
-	else
-		var/halftime = round(recipe.time/10/2)
-		if (!wzhzhzh(halftime))
-			abort()
-			return
-		if (!wzhzhzh(halftime))
-			abort()
-			cooked = fail()
-			cooked.dropInto(loc)
-			return
-		cooked = recipe.make_food(src)
-		LAZYCLEARLIST(ingredients)
-		stop()
-		if(cooked)
-			cooked.dropInto(loc)
-		return
+		if (QDELETED(I))
+			LAZYREMOVE(ingredients, I)
+	stop()
 
 // Behold: the worst proc name in the codebase.
 /obj/machinery/microwave/proc/wzhzhzh(var/seconds)
@@ -403,10 +338,6 @@
 		for (var/obj/O in ingredients)
 			O.dropInto(loc)
 		LAZYCLEARLIST(ingredients)
-		disposed = TRUE
-	if (reagents?.total_volume)
-		reagents.clear_reagents()
-		++dirtiness
 		disposed = TRUE
 	if (disposed)
 		to_chat(usr, "<span class='notice'>You dispose of the microwave contents.</span>")
@@ -465,7 +396,6 @@
 		qdel(O)
 
 	LAZYCLEARLIST(ingredients)
-	reagents.clear_reagents()
 	var/obj/item/reagent_containers/food/snacks/badrecipe/ffuu = new(src)
 	ffuu.reagents.add_reagent(/datum/reagent/carbon, amount)
 	ffuu.reagents.add_reagent(/datum/reagent/toxin, amount / 10)

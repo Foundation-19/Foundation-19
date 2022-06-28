@@ -63,7 +63,7 @@
 	build_type = /obj/item/stack/tile/grass
 	can_engrave = FALSE
 	floor_smooth = SMOOTH_NONE
-	wall_smooth = SMOOTH_NONE
+	wall_smooth = SMOOTH_ALL
 	space_smooth = SMOOTH_NONE
 	decal_layer = ABOVE_WIRE_LAYER
 
@@ -86,10 +86,10 @@
 	can_engrave = FALSE
 
 /decl/flooring/carpet
-	name = "brown carpet"
+	name = "carpet"
 	desc = "Comfy and fancy carpeting."
 	icon = 'icons/turf/flooring/carpet.dmi'
-	icon_base = "brown"
+	icon_base = "carpet"
 	build_type = /obj/item/stack/tile/carpet
 	damage_temperature = T0C+200
 	flags = TURF_HAS_CORNERS | TURF_HAS_INNER_CORNERS | TURF_REMOVE_CROWBAR | TURF_CAN_BURN
@@ -98,6 +98,11 @@
 	floor_smooth = SMOOTH_NONE
 	wall_smooth = SMOOTH_NONE
 	space_smooth = SMOOTH_NONE
+
+/decl/flooring/carpet/brown
+	name = "brown carpet"
+	icon_base = "brown"
+	build_type = /obj/item/stack/tile/carpetbrown
 
 /decl/flooring/carpet/blue
 	name = "blue carpet"
@@ -138,6 +143,11 @@
 	name = "red carpet"
 	icon_base = "red"
 	build_type = /obj/item/stack/tile/carpetred
+
+/decl/flooring/carpet/black
+	name = "black carpet"
+	icon_base = "black"
+	build_type = /obj/item/stack/tile/carpetblack
 
 /decl/flooring/linoleum
 	name = "linoleum"

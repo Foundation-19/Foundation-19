@@ -1,11 +1,11 @@
-/spell/aoe_turf/drain_blood
+/datum/spell/aoe_turf/drain_blood
 	name = "Drain Blood"
 	desc = "this spell allows the caster to borrow blood from those around them. Sharing is caring!"
 	feedback = "DB"
 	school = "transmutation"
 	charge_max = 600
 	invocation = "whispers something darkly"
-	invocation_type = SpI_EMOTE
+	invocation_type = INVOKE_EMOTE
 	range = 3
 	inner_radius = 0
 
@@ -14,7 +14,7 @@
 	cast_sound = 'sound/effects/squelch2.ogg'
 	hud_state = "const_rune"
 
-/spell/aoe_turf/drain_blood/cast(var/list/targets, var/mob/user)
+/datum/spell/aoe_turf/drain_blood/cast(var/list/targets, var/mob/user)
 	for(var/t in targets)
 		for(var/mob/living/L in t)
 			if(L.stat == DEAD || L == user)

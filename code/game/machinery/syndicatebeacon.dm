@@ -39,7 +39,9 @@
 			if(!selfdestructing)
 				dat += "<br><br><A href='?src=\ref[src];betraitor=1;traitormob=\ref[user]'>\"[pick("I want to switch teams.", "I want to work for you.", "Let me join you.", "I can be of use to you.", "You want me working for you, and here's why...", "Give me an objective.", "How's the 401k over at the Syndicate?")]\"</A><BR>"
 	dat += temptext
-	show_browser(user, dat, "window=syndbeacon")
+	var/datum/browser/popup = new(user, "syndbeacon", "Syndicate Beacon")
+	popup.set_content(dat)
+	popup.open()
 	onclose(user, "syndbeacon")
 
 /obj/machinery/syndicate_beacon/Topic(href, href_list)
@@ -60,8 +62,6 @@
 				temptext = "<font color=red><i><b>Double-crosser. You planned to betray us from the start. Allow us to repay the favor in kind.</b></i></font>"
 				src.updateUsrDialog()
 				spawn(rand(50,200)) selfdestruct()
-				return
-			if(2)
 				return
 		if(istype(M, /mob/living/carbon/human))
 			var/mob/living/carbon/human/N = M

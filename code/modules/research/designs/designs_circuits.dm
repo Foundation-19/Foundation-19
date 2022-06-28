@@ -2,7 +2,7 @@
 	build_type = IMPRINTER
 	req_tech = list(TECH_DATA = 2)
 	materials = list(MATERIAL_PLASTIC = 1000, MATERIAL_ALUMINIUM = 1000)
-	chemicals = list(/datum/reagent/acid = 20)
+	chemicals = list(/datum/reagent/acid/sulphuric = 20)
 	time = 5
 
 /datum/design/circuit/AssembleDesignName()
@@ -302,6 +302,13 @@
 	req_tech = list(TECH_DATA = 2, TECH_POWER = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/mech_recharger
 	sort_string = "HACAA"
+
+/datum/design/circuit/recharger
+	name = "recharger"
+	id = "recharger"
+	req_tech = list(TECH_DATA = 2, TECH_POWER = 2, TECH_ENGINEERING = 2)
+	build_path = /obj/item/stock_parts/circuitboard/recharger
+	sort_string = "HACAB"
 
 /datum/design/circuit/recharge_station
 	name = "cyborg recharge station"
@@ -731,6 +738,20 @@
 	build_path = /obj/item/stock_parts/circuitboard/microwave
 	sort_string = "WAAAT"
 
+/datum/design/circuit/stove
+	name = "stove"
+	id = "stove"
+	req_tech = list(TECH_BIO = 2, TECH_ENGINEERING = 2)
+	build_path = /obj/item/stock_parts/circuitboard/stove
+	sort_string = "WAAST"
+
+/datum/design/circuit/hotplate
+	name = "hotplate"
+	id = "hotplate"
+	req_tech = list(TECH_BIO = 2, TECH_ENGINEERING = 2)
+	build_path = /obj/item/stock_parts/circuitboard/hotplate
+	sort_string = "WAASH"
+
 /datum/design/circuit/gibber
 	name = "meat gibber"
 	id = "gibber"
@@ -825,3 +846,10 @@
 	)
 	build_path = /obj/item/stock_parts/circuitboard/tele_beacon
 	sort_string = "XAAAF"
+
+/datum/design/circuit/shipmap
+	name = "ship holomap"
+	id = "shipmap"
+	req_tech = list(TECH_ENGINEERING = 1)
+	build_path = /obj/item/stock_parts/circuitboard/shipmap
+	sort_string = "SAAAT"

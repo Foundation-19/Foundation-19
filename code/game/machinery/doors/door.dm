@@ -19,6 +19,7 @@
 	var/p_open = 0
 	var/operating = 0
 	var/autoclose = 0
+	var/animation_time = 10 // Time it takes for door to fully close/open
 	var/glass = 0
 	var/normalspeed = 1
 	var/heat_proof = 0 // For glass airlocks/opacity firedoors
@@ -83,16 +84,15 @@
 	if (turf_hand_priority)
 		set_extension(src, /datum/extension/turf_hand, turf_hand_priority)
 
-/obj/machinery/door/Initialize()
-	set_extension(src, /datum/extension/penetration, /datum/extension/penetration/proc_call, .proc/CheckPenetration)
-	. = ..()
-
 	health = maxhealth
 	update_connections(1)
 	update_icon()
 
 	update_nearby_tiles(need_rebuild=1)
 
+/obj/machinery/door/Initialize()
+	set_extension(src, /datum/extension/penetration, /datum/extension/penetration/proc_call, .proc/CheckPenetration)
+	. = ..()
 	if(autoset_access)
 #ifdef UNIT_TEST
 		if(length(req_access))
@@ -350,7 +350,7 @@
 	else if(src.health < src.maxhealth * 3/4)
 		to_chat(user, "\The [src] shows signs of damage!")
 
-	if (emagged && ishuman(user) && user.skill_check(SKILL_COMPUTER, SKILL_ADEPT))
+	if (emagged && ishuman(user) && user.skill_check(SKILL_COMPUTER, SKILL_TRAINED))
 		to_chat(user, SPAN_WARNING("\The [src]'s control panel looks fried."))
 
 
@@ -430,10 +430,10 @@
 	do_animate("opening")
 	icon_state = "door0"
 	set_opacity(0)
-	sleep(3)
+	sleep(animation_time*0.3)
 	src.set_density(0)
 	update_nearby_tiles()
-	sleep(7)
+	sleep(animation_time*0.7)
 	src.layer = open_layer
 	update_icon()
 	set_opacity(0)
@@ -455,11 +455,11 @@
 
 	close_door_at = 0
 	do_animate("closing")
-	sleep(3)
+	sleep(animation_time*0.3)
 	src.set_density(1)
 	src.layer = closed_layer
 	update_nearby_tiles()
-	sleep(7)
+	sleep(animation_time*0.7)
 	update_icon()
 	if(visible && !glass)
 		set_opacity(1)	//caaaaarn!

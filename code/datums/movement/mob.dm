@@ -136,9 +136,12 @@
 	var/next_move
 
 /datum/movement_handler/mob/delay/DoMove(var/direction, var/mover, var/is_external)
-	if(is_external)
-		return
-	next_move = world.time + max(1, mob.movement_delay())
+	if(!is_external)
+		var/delay = max(1, mob.movement_delay())
+		if(direction & (direction - 1)) //moved diagonally successfully
+			delay *= sqrt(2)
+		next_move = world.time + delay
+		mob.glide_size = ADJUSTED_GLIDE_SIZE(delay)
 
 /datum/movement_handler/mob/delay/MayMove(var/mover, var/is_external)
 	if(IS_NOT_SELF(mover) && is_external)
@@ -177,14 +180,14 @@
 
 // Is anything physically preventing movement?
 /datum/movement_handler/mob/physically_restrained/MayMove(var/mob/mover)
-	if(mob.anchored)
-		if(mover == mob)
-			to_chat(mob, "<span class='notice'>You're anchored down!</span>")
-		return MOVEMENT_STOP
-
 	if(istype(mob.buckled) && !mob.buckled.buckle_movable)
 		if(mover == mob)
-			to_chat(mob, "<span class='notice'>You're buckled to \the [mob.buckled]!</span>")
+			to_chat(mob, SPAN_WARNING("You're buckled to \the [mob.buckled]!"))
+		return MOVEMENT_STOP
+
+	if(mob.anchored)
+		if(mover == mob)
+			to_chat(mob, SPAN_WARNING("You're anchored down!"))
 		return MOVEMENT_STOP
 
 	if(LAZYLEN(mob.pinned))
@@ -248,6 +251,9 @@
 	// Something with pulling things
 	var/extra_delay = HandleGrabs(direction, old_turf)
 	mob.ExtraMoveCooldown(extra_delay)
+
+	var/moved_to = get_dir(old_turf, get_turf(mob))
+	mob.set_dir(moved_to)
 
 	for (var/obj/item/grab/G in mob)
 		if (G.assailant_reverse_facing())

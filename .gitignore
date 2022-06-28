@@ -23,7 +23,7 @@ sql/test_db
 
 # VisualStudioCode
 .vscode/*
-!.vscode/settings.json
+.vscode/settings.json
 *.code-workspace
 .history
 

@@ -14,17 +14,17 @@ GLOBAL_LIST_INIT(exo_event_mob_count,list())// a list of all mobs currently spaw
 	var/datum/mob_list/chosen_mob_list //the chosen list of mobs we will pick from when spawning, also based on severity
 	var/delay_time // Amount of time between the event starting and mobs beginning spawns
 	var/spawning = FALSE // Set to TRUE once the initial delay passes
+	var/exo_severity = EVENT_LEVEL_MODERATE
 
 /datum/event/exo_awakening/setup()
 	announceWhen = rand(15, 45)
 	affecting_z = list()
-	if (prob(25))
-		severity = EVENT_LEVEL_MAJOR
-
-		chosen_mob_list = pick(typesof(/datum/mob_list/major) - /datum/mob_list/major)
+	if ((GLOB.player_list.len > 12) && prob(50))
+		exo_severity = EVENT_LEVEL_MAJOR
+		chosen_mob_list = pick(subtypesof(/datum/mob_list/major))
 	else
-		severity = EVENT_LEVEL_MODERATE
-		chosen_mob_list = pick(typesof(/datum/mob_list/moderate) - /datum/mob_list/moderate)
+		exo_severity = EVENT_LEVEL_MODERATE
+		chosen_mob_list = pick(subtypesof(/datum/mob_list/moderate))
 
 	for (var/area/A in world)
 		if (A.planetary_surface)
@@ -33,15 +33,15 @@ GLOBAL_LIST_INIT(exo_event_mob_count,list())// a list of all mobs currently spaw
 	chosen_mob_list = new chosen_mob_list
 	target_mob_count = chosen_mob_list.limit
 	endWhen = chosen_mob_list.length
-	endWhen += severity*25
+	endWhen += exo_severity*25
 
 	apply_spawn_delay()
 
 /datum/event/exo_awakening/proc/apply_spawn_delay()
 	delay_time = chosen_mob_list.delay_time
 	var/delay_mod = delay_time / 6
-	var/delay_max = (EVENT_LEVEL_MAJOR - severity) * delay_mod
-	var/delay_min = -1 * severity * delay_mod
+	var/delay_max = (EVENT_LEVEL_MAJOR - exo_severity) * delay_mod
+	var/delay_min = -1 * exo_severity * delay_mod
 	delay_mod = max(rand(delay_min, delay_max), 0)
 	delay_time += delay_mod
 	endWhen += delay_time
@@ -115,7 +115,7 @@ GLOBAL_LIST_INIT(exo_event_mob_count,list())// a list of all mobs currently spaw
 //Notify all players on the planet that the event is beginning.
 /datum/event/exo_awakening/proc/notify_players()
 	for (var/mob/M in players_on_site[chosen_area])
-		if (severity > EVENT_LEVEL_MODERATE)
+		if (exo_severity > EVENT_LEVEL_MODERATE)
 			to_chat(M, SPAN_DANGER(chosen_mob_list.arrival_message))
 		else
 			to_chat(M, SPAN_WARNING(chosen_mob_list.arrival_message))
@@ -130,8 +130,8 @@ GLOBAL_LIST_INIT(exo_event_mob_count,list())// a list of all mobs currently spaw
 
 /datum/event/exo_awakening/announce()
 	var/announcement = ""
-	if (severity > EVENT_LEVEL_MODERATE)
-		announcement = "Extreme biological activity spike detected on [location_name()]."
+	if (exo_severity > EVENT_LEVEL_MODERATE)
+		announcement = "Extreme biological activity spike detected on [location_name()]. Recommend away team evacuation."
 	else
 		announcement = "Anomalous biological activity detected on [location_name()]."
 
@@ -154,7 +154,7 @@ GLOBAL_LIST_INIT(exo_event_mob_count,list())// a list of all mobs currently spaw
 		return
 
 	var/list/area_turfs = get_area_turfs(chosen_area)
-	var/n = rand(severity-1, severity*2)
+	var/n = rand(exo_severity-1, exo_severity*2)
 	var/I = 0
 	while (I < n)
 		var/turf/T
@@ -215,7 +215,7 @@ GLOBAL_LIST_INIT(exo_event_mob_count,list())// a list of all mobs currently spaw
 		return
 
 	QDEL_NULL(chosen_mob_list)
-	log_debug("Exoplanet Awakening event spawned [spawned_mobs] mobs. It was a level [severity] out of 3 severity.")
+	log_debug("Exoplanet Awakening event spawned [spawned_mobs] mobs. It was a level [exo_severity] out of 3 severity.")
 
 	for (var/mob/M in GLOB.player_list)
 		if (M && M.z == chosen_area.z)

@@ -22,11 +22,11 @@ decl/surgery_step/robotics/get_skill_reqs(mob/living/user, mob/living/carbon/hum
 	. = ..()
 	//Compensating for anatomy skill req in base proc
 	. += 10
-	if(!user.skill_check(SKILL_DEVICES, SKILL_ADEPT))
+	if(!user.skill_check(SKILL_DEVICES, SKILL_TRAINED))
 		. -= 20
 	if(user.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
 		. += 10
-	if(user.skill_check(SKILL_DEVICES, SKILL_PROF))
+	if(user.skill_check(SKILL_DEVICES, SKILL_MASTER))
 		. += 20
 
 //////////////////////////////////////////////////////////////////
@@ -458,7 +458,7 @@ decl/surgery_step/robotics/get_skill_reqs(mob/living/user, mob/living/carbon/hum
 		return FALSE
 	var/obj/item/organ/internal/augment/A = organ_to_replace
 	if(istype(A))
-		if(!(A.augment_flags & AUGMENT_MECHANICAL))
+		if(!(A.augment_flags & AUGMENTATION_MECHANIC))
 			to_chat(user, SPAN_WARNING("\the [A] cannot function within a robotic limb"))
 			return FALSE
 	return organ_to_replace

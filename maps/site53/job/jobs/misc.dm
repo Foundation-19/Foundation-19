@@ -13,8 +13,8 @@
 	allowed_ranks = list(/datum/mil_rank/civ/classd)
 	var/static/list/used_numbers = list()
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_ADEPT,
-	                    SKILL_WEAPONS     = SKILL_ADEPT)
+	max_skill = list(   SKILL_COMBAT      = SKILL_TRAINED,
+	                    SKILL_WEAPONS     = SKILL_TRAINED)
 
 /datum/job/assistant/equip(mob/living/carbon/human/H)
 	..()
@@ -65,13 +65,13 @@
 	minimal_access = list()
 
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_EXPERT,
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_EXPERIENCED,
 	                    SKILL_FINANCE     = SKILL_BASIC,
 	                    SKILL_HAULING     = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_PILOT       = SKILL_BASIC)
 
-	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
+	max_skill = list(   SKILL_PILOT       = SKILL_MASTER)
 	skill_points = 18
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
@@ -114,13 +114,13 @@
 	minimal_access = list()
 
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_EXPERT,
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_EXPERIENCED,
 	                    SKILL_FINANCE     = SKILL_BASIC,
 	                    SKILL_HAULING     = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_PILOT       = SKILL_BASIC)
 
-	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
+	max_skill = list(   SKILL_PILOT       = SKILL_MASTER)
 	skill_points = 18
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
@@ -182,7 +182,7 @@
 	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 	minimal_access = list()
 
-	min_skill = list(   SKILL_COOKING   = SKILL_EXPERT,
+	min_skill = list(   SKILL_COOKING   = SKILL_EXPERIENCED,
 	                    SKILL_BOTANY    = SKILL_BASIC,
 	                    SKILL_CHEMISTRY = SKILL_BASIC)
 
@@ -212,7 +212,7 @@
 	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 	minimal_access = list()
 
-	min_skill = list(   SKILL_COOKING   = SKILL_EXPERT,
+	min_skill = list(   SKILL_COOKING   = SKILL_EXPERIENCED,
 	                    SKILL_BOTANY    = SKILL_BASIC,
 	                    SKILL_CHEMISTRY = SKILL_BASIC)
 

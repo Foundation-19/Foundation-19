@@ -117,8 +117,8 @@ var/list/artefact_feedback = list(/obj/structure/closet/wizard/armor = 		"HS",
 				var/obj/O = spellbook.spells[i]
 				name = "Artefact: [capitalize(initial(O.name))]" //because 99.99% of objects don't have capitals in them and it makes it look weird.
 				desc = initial(O.desc)
-			else if(ispath(spellbook.spells[i],/spell))
-				var/spell/S = spellbook.spells[i]
+			else if(ispath(spellbook.spells[i], /datum/spell))
+				var/datum/spell/S = spellbook.spells[i]
 				name = initial(S.name)
 				desc = initial(S.desc)
 				var/testing = initial(S.spell_flags)
@@ -126,11 +126,11 @@ var/list/artefact_feedback = list(/obj/structure/closet/wizard/armor = 		"HS",
 					info = "<font color='#ff33cc'>W</font>"
 				var/type = ""
 				switch(initial(S.charge_type))
-					if(Sp_RECHARGE)
+					if(SPELL_RECHARGE)
 						type = "R"
-					if(Sp_HOLDVAR)
+					if(SPELL_HOLDVAR)
 						type = "S"
-					if(Sp_CHARGES)
+					if(SPELL_CHARGES)
 						type = "C"
 				info += "<font color='#33cc33'>[type]</font>"
 			dat += "<A href='byond://?src=\ref[src];path=\ref[spellbook.spells[i]]'>[name]</a>"
@@ -151,7 +151,9 @@ var/list/artefact_feedback = list(/obj/structure/closet/wizard/armor = 		"HS",
 			dat += "<center><A href='byond://?src=\ref[src];book=1'>Choose different spellbook.</a></center>"
 		if(!(spellbook.book_flags & NO_LOCKING))
 			dat += "<center><A href='byond://?src=\ref[src];lock=1'>[spellbook.book_flags & LOCKED ? "Unlock" : "Lock"] the spellbook.</a></center>"
-	show_browser(user, dat,"window=spellbook")
+	var/datum/browser/popup = new(user, "spellbook", "Spell Book")
+	popup.set_content(dat)
+	popup.open()
 
 /obj/item/spellbook/CanUseTopic(var/mob/living/carbon/human/H)
 	if(!istype(H))
@@ -206,7 +208,7 @@ var/list/artefact_feedback = list(/obj/structure/closet/wizard/armor = 		"HS",
 				var/obj/O = new /obj/item/contract/boon(get_turf(user),path)
 				temp = "You have purchased \the [O]."
 			else
-				if(ispath(path,/spell))
+				if(ispath(path, /datum/spell))
 					temp = src.add_spell(user,path)
 					if(temp)
 						uses -= spellbook.spells[path]
@@ -263,19 +265,19 @@ var/list/artefact_feedback = list(/obj/structure/closet/wizard/armor = 		"HS",
 	if(ispath(path,/datum/spellbook))
 		var/datum/spellbook/S = path
 		SSstatistics.add_field_details("wizard_spell_learned","[initial(S.feedback)]")
-	else if(ispath(path,/spell))
-		var/spell/S = path
+	else if(ispath(path, /datum/spell))
+		var/datum/spell/S = path
 		SSstatistics.add_field_details("wizard_spell_learned","[initial(S.feedback)]")
 	else if(ispath(path,/obj))
 		SSstatistics.add_field_details("wizard_spell_learned","[artefact_feedback[path]]")
 
 
 /obj/item/spellbook/proc/add_spell(var/mob/user, var/spell_path)
-	for(var/spell/S in user.mind.learned_spells)
+	for(var/datum/spell/S in user.mind.learned_spells)
 		if(istype(S,spell_path))
 			if(!S.can_improve())
 				return
-			if(S.can_improve(Sp_SPEED) && S.can_improve(Sp_POWER))
+			if(S.can_improve(UPGRADE_SPEED) && S.can_improve(UPGRADE_POWER))
 				switch(alert(user, "Do you want to upgrade this spell's speed or power?", "Spell upgrade", "Speed", "Power", "Cancel"))
 					if("Speed")
 						return S.quicken_spell()
@@ -283,12 +285,12 @@ var/list/artefact_feedback = list(/obj/structure/closet/wizard/armor = 		"HS",
 						return S.empower_spell()
 					else
 						return
-			else if(S.can_improve(Sp_POWER))
+			else if(S.can_improve(UPGRADE_POWER))
 				return S.empower_spell()
-			else if(S.can_improve(Sp_SPEED))
+			else if(S.can_improve(UPGRADE_SPEED))
 				return S.quicken_spell()
 
-	var/spell/S = new spell_path()
+	var/datum/spell/S = new spell_path()
 	user.add_spell(S)
 	return "You learn the spell [S]"
 

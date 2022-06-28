@@ -48,7 +48,6 @@
 
 
 /mob/proc/death(gibbed,deathmessage="seizes up and falls limp...", show_dead_message = "You have died.")
-
 	if(stat == DEAD)
 		return 0
 

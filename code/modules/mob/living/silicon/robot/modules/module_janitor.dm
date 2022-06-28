@@ -25,8 +25,8 @@
 
 /obj/item/robot_module/janitor/finalize_emag()
 	. = ..()
-	emag.reagents.add_reagent(/datum/reagent/oil, 250)
-	emag.SetName("Oil spray")
+	emag.reagents.add_reagent(/datum/reagent/slippery_oil, 250)
+	emag.SetName("Slippery oil spray")
 
 /obj/item/robot_module/janitor/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	..()
@@ -34,4 +34,4 @@
 	LR.Charge(R, amount)
 	if(emag)
 		var/obj/item/reagent_containers/spray/S = emag
-		S.reagents.add_reagent(/datum/reagent/oil, 20 * amount)
+		S.reagents.add_reagent(/datum/reagent/slippery_oil, 20 * amount)

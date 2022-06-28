@@ -47,7 +47,9 @@
 <BR>
 <B>No Patient Detected</B>
 "}
-	show_browser(user, dat, "window=op")
+	var/datum/browser/popup = new(user, "op", "Patient Monitoring System")
+	popup.set_content(dat)
+	popup.open()
 	onclose(user, "op")
 
 /obj/machinery/computer/operating/Process()

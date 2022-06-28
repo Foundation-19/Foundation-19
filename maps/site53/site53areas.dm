@@ -425,11 +425,11 @@
 	'sound/ambience/lcz/general/Ambient8.ogg',
 	'sound/ambience/lcz/general/Ambient9.ogg'
 	)
-	ambience_crb = list(
-	'sound/ambience/lcz/crb/Commotion15.ogg',
-	'sound/ambience/lcz/crb/Commotion19.ogg',
-	'sound/ambience/lcz/crb/Commotion21.ogg'
-	)
+//	ambience_crb = list(
+//	'sound/ambience/lcz/crb/Commotion15.ogg',
+//	'sound/ambience/lcz/crb/Commotion19.ogg',
+//	'sound/ambience/lcz/crb/Commotion21.ogg'
+//	)
 
 /area/site53/ulcz/hallways
 	name = "\improper Upper Light Containment Hallway"
@@ -447,7 +447,7 @@
 	'sound/ambience/lcz/general/Ambient8.ogg',
 	'sound/ambience/lcz/general/Ambient9.ogg'
 	)
-	ambience_crb = list(
+/*	ambience_crb = list(
 	'sound/ambience/lcz/crb/EmilyScream.ogg',
 	'sound/ambience/lcz/crb/AnnouncAfter1.ogg',
 	'sound/ambience/lcz/crb/alarm.ogg',
@@ -459,7 +459,7 @@
 	'sound/ambience/lcz/crb/Ambient3.ogg',
 	'sound/ambience/lcz/crb/Ambient8.ogg'
 	)
-
+*/
 /area/site53/ulcz/tram
 	name = "\improper Upper Light Containment Tram Station"
 	icon_state = "hallC1"
@@ -858,7 +858,7 @@
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	ambience = list('sound/ambience/hcz/049/Room049.ogg')
-	ambience_crb = list('sound/ambience/hcz/049/Room049.ogg')
+//	ambience_crb = list('sound/ambience/hcz/049/Room049.ogg')
 
 /area/site53/lhcz/hallway
 	name = "\improper Lower Heavy Containment Hallways"

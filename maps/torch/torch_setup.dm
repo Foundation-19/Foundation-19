@@ -51,6 +51,14 @@
 			welcome_text += "<br><b>Distress calls logged:</b><br>[jointext(distress_calls, "<br>")]<br>"
 		else
 			welcome_text += "<br>No distress calls logged.<br />"
+
+		if(SSstation.station_traits.len)
+			welcome_text += "<hr><b>Identified shift divergencies:</b><BR>"
+			for(var/i in SSstation.station_traits)
+				var/datum/station_trait/station_trait_iterator = i
+				if(!station_trait_iterator.show_in_report)
+					return
+				welcome_text += "[station_trait_iterator.get_report()]<BR>"
 		welcome_text += "<hr>"
 
 	post_comm_message("SEV Torch Sensor Readings", welcome_text)

@@ -16,7 +16,7 @@
 	matter = list(MATERIAL_STEEL = 250, MATERIAL_GLASS = 100, MATERIAL_PLASTIC = 75)
 	var/mode = 1;
 
-/proc/roboscan(mob/living/M, mob/living/user)
+/obj/item/device/robotanalyzer/attack(mob/living/M as mob, mob/living/user as mob)
 	if((MUTATION_CLUMSY in user.mutations) && prob(50))
 		to_chat(user, text("<span class='warning'>You try to analyze the floor's vitals!</span>"))
 		for(var/mob/O in viewers(M, null))
@@ -90,12 +90,9 @@
 				if(!BP_IS_ROBOTIC(O))
 					continue
 				organ_found = 1
-				to_chat(user, "[O.name]: <font color='red'>[(O.status & ORGAN_DEAD) ? "DESTROYED" : O.damage]</font>")
+				to_chat(user, "[O.name]: <font color='red'>[O.damage]</font>")
 			if(!organ_found)
 				to_chat(user, "No prosthetics located.")
-	return
 
-/obj/item/device/robotanalyzer/attack(mob/living/M, mob/living/user)
-	roboscan(M, user)
 	src.add_fingerprint(user)
 	return

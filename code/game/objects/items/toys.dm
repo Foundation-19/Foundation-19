@@ -62,7 +62,7 @@
 			if(O.reagents.total_volume < 1)
 				to_chat(user, "The [O] is empty.")
 			else if(O.reagents.total_volume >= 1)
-				if(O.reagents.has_reagent(/datum/reagent/acid/polyacid, 1))
+				if(O.reagents.has_reagent(/datum/reagent/acid/polytrinic, 1))
 					to_chat(user, "The acid chews through the balloon!")
 					O.reagents.splash(user, reagents.total_volume)
 					qdel(src)
@@ -289,7 +289,7 @@
 		return
 
 /obj/item/toy/katana
-	name = "replica katana"
+	name = "katana"
 	desc = "Woefully underpowered in D20."
 	icon = 'icons/obj/weapons/melee_physical.dmi'
 	icon_state = "katana"

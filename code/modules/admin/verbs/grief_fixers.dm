@@ -1,3 +1,29 @@
+/client/proc/fix_air(turf/simulated/T in world)
+	set name = "Fix Air"
+	set category = "Admin"
+	set desc = "Fixes air in specified radius."
+
+	if(!check_rights(R_ADMIN))
+		return
+	var/range=input("Enter range:","Num",2) as num
+	if(range >= 17)
+		to_chat(usr, SPAN_DANGER("Do not input range above 16! If you need to reset entire ship - use Fix-Atmospherics-Grief verb instead."))
+		return
+	var/list/changed_zones = new() // List of zones that have been already reset
+	for(var/turf/simulated/F in range(range,T))
+		if(F.blocks_air || (F.zone in changed_zones) || !F.initial_gas)
+		//skip turfs that block air, don't have initial_gas or zones that have been updated.
+			continue
+		if(!F.zone || !F.zone.air || !F.zone.air.gas || !F.zone.air.temperature)
+		//all required variables should be in place
+			continue
+		F.zone.air.gas = F.initial_gas.Copy()
+		F.zone.air.temperature = F.temperature
+		SSair.mark_zone_update(F.zone)
+		changed_zones.Add(F.zone)
+	if(changed_zones)
+		log_and_message_admins("[usr] fixed air with range [range] in area [T.loc.name]. [changed_zones.len] [(changed_zones.len) > 1 ? "zones have" : "zone has"] been affected.")
+
 /client/proc/fixatmos()
 	set category = "Admin"
 	set name = "Fix Atmospherics Grief"

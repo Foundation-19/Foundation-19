@@ -10,7 +10,7 @@
 	path = /obj/item/ammo_casing/shotgun/blank
 
 /datum/fabricator_recipe/arms_ammo/flaregun
-	name = "flare gun"
+	name = "flare launcher"
 	path = /obj/item/gun/projectile/flare
 
 /datum/fabricator_recipe/arms_ammo/hidden
@@ -96,10 +96,6 @@
 	name = "ammunition (shell, shotgun)"
 	path = /obj/item/ammo_casing/shotgun/pellet
 
-/datum/fabricator_recipe/arms_ammo/hidden/shotgun_flechette
-	name = "ammunition (flechette, shotgun)"
-	path = /obj/item/ammo_casing/shotgun/flechette
-
 /datum/fabricator_recipe/arms_ammo/hidden/tacknife
 	path = /obj/item/material/knife/combat
 
@@ -124,13 +120,5 @@
 	path = /obj/item/ammo_magazine/speedloader/clip
 
 /datum/fabricator_recipe/arms_ammo/hidden/pistolstripperclip
-	name = "ammunition (magnum pistol stripper clip)"
+	name = "ammunition (pistol stripper clip)"
 	path = /obj/item/ammo_magazine/speedloader/pclip
-
-/datum/fabricator_recipe/arms_ammo/hidden/broomstickstripperclip
-	name = "ammunition (holdout pistol stripper clip)"
-	path = /obj/item/ammo_magazine/speedloader/hpclip
-
-/datum/fabricator_recipe/arms_ammo/hidden/rifleinternalclip
-	name = "ammunition (rifle internal clip)"
-	path = /obj/item/ammo_magazine/iclipr

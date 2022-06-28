@@ -139,9 +139,9 @@ default behaviour is:
 		spawn(0)
 			..()
 			var/saved_dir = AM.dir
-			if ((confused || (MUTATION_CLUMSY in mutations)) && !MOVING_DELIBERATELY(src))
-				AM.slam_into(src)
 			if (!istype(AM, /atom/movable) || AM.anchored)
+				if ((confused || (MUTATION_CLUMSY in mutations)) && !weakened && !MOVING_DELIBERATELY(src))
+					AM.slam_into(src)
 				return
 			if (!now_pushing)
 				now_pushing = 1
@@ -151,6 +151,7 @@ default behaviour is:
 					for(var/obj/structure/window/win in get_step(AM,t))
 						now_pushing = 0
 						return
+				AM.glide_size = glide_size
 				step(AM, t)
 				if (istype(AM, /mob/living))
 					var/mob/living/tmob = AM
@@ -197,7 +198,7 @@ default behaviour is:
 
 /mob/living/proc/updatehealth()
 	if(status_flags & GODMODE)
-		health = 100
+		health = maxHealth
 		set_stat(CONSCIOUS)
 	else
 		health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - getHalLoss()
@@ -406,9 +407,9 @@ default behaviour is:
 		if (C.handcuffed && !initial(C.handcuffed))
 			C.drop_from_inventory(C.handcuffed)
 		C.handcuffed = initial(C.handcuffed)
-	SET_BIT(hud_updateflag, HEALTH_HUD)
-	SET_BIT(hud_updateflag, STATUS_HUD)
-	SET_BIT(hud_updateflag, LIFE_HUD)
+	BITSET(hud_updateflag, HEALTH_HUD)
+	BITSET(hud_updateflag, STATUS_HUD)
+	BITSET(hud_updateflag, LIFE_HUD)
 	ExtinguishMob()
 	fire_stacks = 0
 
@@ -458,9 +459,9 @@ default behaviour is:
 	// make the icons look correct
 	regenerate_icons()
 
-	SET_BIT(hud_updateflag, HEALTH_HUD)
-	SET_BIT(hud_updateflag, STATUS_HUD)
-	SET_BIT(hud_updateflag, LIFE_HUD)
+	BITSET(hud_updateflag, HEALTH_HUD)
+	BITSET(hud_updateflag, STATUS_HUD)
+	BITSET(hud_updateflag, LIFE_HUD)
 
 	failed_last_breath = 0 //So mobs that died of oxyloss don't revive and have perpetual out of breath.
 	reload_fullscreen()
@@ -479,9 +480,9 @@ default behaviour is:
 	stat = CONSCIOUS
 	regenerate_icons()
 
-	SET_BIT(hud_updateflag, HEALTH_HUD)
-	SET_BIT(hud_updateflag, STATUS_HUD)
-	SET_BIT(hud_updateflag, LIFE_HUD)
+	BITSET(hud_updateflag, HEALTH_HUD)
+	BITSET(hud_updateflag, STATUS_HUD)
+	BITSET(hud_updateflag, LIFE_HUD)
 
 	failed_last_breath = 0 //So mobs that died of oxyloss don't revive and have perpetual out of breath.
 	reload_fullscreen()
@@ -505,6 +506,11 @@ default behaviour is:
 	if (buckled)
 		return
 
+	if(is_shifted)
+		is_shifted = FALSE
+		pixel_x = default_pixel_x
+		pixel_y = default_pixel_y
+
 	if(get_dist(src, pulling) > 1)
 		stop_pulling()
 
@@ -521,17 +527,11 @@ default behaviour is:
 	if(update_slimes)
 		for(var/mob/living/carbon/slime/M in view(1,src))
 			M.UpdateFeed()
-
-	for(var/mob in oviewers(src))
-		var/mob/M = mob
-		M.update_vision_cone()
-
 	update_vision_cone()
 
 /mob/living/set_dir()
 	. = ..()
 	update_vision_cone()
-
 
 /mob/living/proc/can_pull()
 	if(!moving)
@@ -699,6 +699,8 @@ default behaviour is:
 
 	resting = !resting
 	to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"]</span>")
+	if(hud_used)
+		hud_used.rest_button.icon_state = "rest_[resting]"
 
 //called when the mob receives a bright flash
 /mob/living/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
@@ -823,6 +825,9 @@ default behaviour is:
 		for(var/a in auras)
 			remove_aura(a)
 
+	if(ranged_ability)
+		ranged_ability.remove_ranged_ability(src)
+
 	qdel(selected_image)
 	return ..()
 
@@ -830,14 +835,12 @@ default behaviour is:
 	. = 0
 	if(incapacitated(INCAPACITATION_UNRESISTING))
 		. += 100
-	if(confused)
-		. += 15
-	if(weakened)
-		. += 15
+	if(eye_blind)
+		. += 75
 	if(eye_blurry)
 		. += 15
-	if(eye_blind)
-		. += 60
+	if(confused)
+		. += 30
 	if(MUTATION_CLUMSY in mutations)
 		. += 40
 

@@ -24,9 +24,10 @@
 				TRADER_BRIBE_FAILURE     = "Uh... thanks for the cash, sir. As long as you're in the area, we'll be here...",
 				)
 
-/datum/trader/pizzaria/trade_quantity(quantity, list/offers, num, turf/location)
+/datum/trader/pizzaria/trade(var/list/offers, var/num, var/turf/location)
 	. = ..()
-	for (var/atom/movable/M in .)
+	if(.)
+		var/atom/movable/M = .
 		var/obj/item/pizzabox/box = new(location)
 		M.forceMove(box)
 		box.pizza = M
@@ -79,9 +80,8 @@
 				TRADER_BRIBE_SUCCESS      = "Oh yes! I think I'll stay a few more minutes, then.",
 				)
 
-/datum/trader/ship/chinese/trade_quantity(quantity, list/offers, num, turf/location)
+/datum/trader/ship/chinese/trade(var/list/offers, var/num, var/turf/location)
 	. = ..()
-	quantity = 1
 	if(.)
 		var/obj/item/reagent_containers/food/snacks/fortunecookie/cookie = new(location)
 		var/obj/item/paper/paper = new(cookie)
@@ -164,5 +164,5 @@
 								/obj/item/reagent_containers/food/snacks/sliceable/xenomeatbread         = TRADER_BLACKLIST,
 								/obj/item/reagent_containers/food/snacks/sliceable/flatdough             = TRADER_BLACKLIST,
 								/obj/item/reagent_containers/food/snacks/sliceable/braincake             = TRADER_BLACKLIST,
-								/obj/item/reagent_containers/food/snacks/pie                             = TRADER_THIS_TYPE,
+								/obj/item/reagent_containers/food/snacks/bananapie                       = TRADER_THIS_TYPE,
 								/obj/item/reagent_containers/food/snacks/applepie                        = TRADER_THIS_TYPE)

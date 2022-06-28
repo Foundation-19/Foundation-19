@@ -40,7 +40,7 @@ Single Use Emergency Pouches
 	overlays.Cut()
 	if(!cross_overlay)
 		cross_overlay = image(icon, "cross")
-		cross_overlay.appearance_flags = DEFAULT_APPEARANCE_FLAGS | RESET_COLOR
+		cross_overlay.appearance_flags = RESET_COLOR
 	overlays += cross_overlay
 	icon_state = "pack[opened]"
 
@@ -175,16 +175,16 @@ Single Use Emergency Pouches
 	var/chem_amount = 15
 
 /obj/item/reagent_containers/pill/pouch_pill/inaprovaline
-	chem_type = /datum/reagent/inaprovaline
+	chem_type = /datum/reagent/medicine/inaprovaline
 
 /obj/item/reagent_containers/pill/pouch_pill/dylovene
-	chem_type = /datum/reagent/dylovene
+	chem_type = /datum/reagent/medicine/dylovene
 
 /obj/item/reagent_containers/pill/pouch_pill/dexalin
-	chem_type = /datum/reagent/dexalin
+	chem_type = /datum/reagent/medicine/dexalin
 
 /obj/item/reagent_containers/pill/pouch_pill/paracetamol
-	chem_type = /datum/reagent/paracetamol
+	chem_type = /datum/reagent/medicine/painkiller/paracetamol
 
 /obj/item/reagent_containers/pill/pouch_pill/New()
 	..()
@@ -198,21 +198,21 @@ Single Use Emergency Pouches
 
 /obj/item/reagent_containers/hypospray/autoinjector/pouch_auto/inaprovaline
 	name = "emergency inaprovaline autoinjector"
-	starts_with = list(/datum/reagent/inaprovaline = 5)
+	starts_with = list(/datum/reagent/medicine/inaprovaline = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/pouch_auto/deletrathol
 	name = "emergency deletrathol autoinjector"
-	starts_with = list(/datum/reagent/deletrathol = 5)
+	starts_with = list(/datum/reagent/medicine/painkiller/deletrathol = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/pouch_auto/dylovene
 	name = "emergency dylovene autoinjector"
-	starts_with = list(/datum/reagent/dylovene = 5)
+	starts_with = list(/datum/reagent/medicine/dylovene = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/pouch_auto/dexalin
 	name = "emergency dexalin autoinjector"
-	starts_with = list(/datum/reagent/dexalin = 5)
+	starts_with = list(/datum/reagent/medicine/dexalin = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/pouch_auto/adrenaline
 	name = "emergency adrenaline autoinjector"
 	amount_per_transfer_from_this = 8
-	starts_with = list(/datum/reagent/adrenaline = 8)
+	starts_with = list(/datum/reagent/medicine/adrenaline = 8)

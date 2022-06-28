@@ -27,7 +27,7 @@
 	if(istype(A, /obj/item/storage) || istype(A, /obj/structure/table) || istype(A, /obj/structure/closet) || istype(A, /obj/item/reagent_containers) || istype(A, /obj/structure/hygiene/sink) || istype(A, /obj/structure/janitorialcart))
 		return
 
-	if(istype(A, /spell))
+	if(istype(A, /datum/spell))
 		return
 
 	if(proximity)
@@ -109,7 +109,7 @@
 
 /obj/item/reagent_containers/spray/sterilizine/New()
 	..()
-	reagents.add_reagent(/datum/reagent/sterilizine, volume)
+	reagents.add_reagent(/datum/reagent/medicine/sterilizine, volume)
 
 /obj/item/reagent_containers/spray/hair_remover
 	name = "hair remover"
@@ -206,7 +206,7 @@
 
 /obj/item/reagent_containers/spray/plantbgone/New()
 	..()
-	reagents.add_reagent(/datum/reagent/toxin/plantbgone, 100)
+	reagents.add_reagent(/datum/reagent/toxin/plant_b_gone, 100)
 
 /obj/item/reagent_containers/spray/plantbgone/afterattack(atom/A as mob|obj, mob/user as mob, proximity)
 	if(!proximity) return

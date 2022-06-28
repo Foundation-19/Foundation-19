@@ -31,6 +31,7 @@ var/list/department_radio_keys = list(
 	  ":S" = "Security",	".S" = "Security",
 	  ":W" = "whisper",		".W" = "whisper",
 	  ":T" = "Mercenary",	".T" = "Mercenary",
+	  ":X" = "Raider",		".X" = "Raider",
 	  ":U" = "Supply",		".U" = "Supply",
 	  ":V" = "Service",		".V" = "Service",
 	  ":P" = "AI Private",	".P" = "AI Private",
@@ -38,13 +39,6 @@ var/list/department_radio_keys = list(
 	  ":Y" = "Exploration",		".Y" = "Exploration",
 	  ":O" = "Response Team", ".O" = "Response Team",
 	  ":J" = "Hailing", ".J" = "Hailing",
-
-	  ":x" = "LCZ-Security",		".x" = "LCZ-Security",
-	  ":k" = "HCZ-Security",		".k" = "HCZ-Security",
-	  ":z" = "ECZ-Security",		".z" = "ECZ-Security",
-	  ":X" = "LCZ-Security",		".X" = "LCZ-Security",
-	  ":K" = "HCZ-Security",		".K" = "HCZ-Security",
-	  ":Z" = "ECZ-Security",		".Z" = "ECZ-Security",
 
 	  //kinda localization -- rastaf0
 	  //same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
@@ -60,6 +54,13 @@ var/list/department_radio_keys = list(
 	  ":ö" = "whisper",		".ö" = "whisper",
 	  ":å" = "Mercenary",	".å" = "Mercenary",
 	  ":é" = "Supply",		".é" = "Supply",
+
+	  ":x" = "LCZ-Security",		".x" = "LCZ-Security",
+	  ":k" = "HCZ-Security",		".k" = "HCZ-Security",
+	  ":z" = "ECZ-Security",		".z" = "ECZ-Security",
+	  ":X" = "LCZ-Security",		".X" = "LCZ-Security",
+	  ":K" = "HCZ-Security",		".K" = "HCZ-Security",
+	  ":Z" = "ECZ-Security",		".Z" = "ECZ-Security",
 )
 
 
@@ -156,7 +157,7 @@ proc/get_radio_key_from_channel(var/channel)
 
 	message = html_decode(message)
 
-	var/end_char = copytext_char(message, -1)
+	var/end_char = copytext(message, length(message), length(message) + 1)
 	if(!(end_char in list(".", "?", "!", "-", "~", ":")))
 		message += "."
 

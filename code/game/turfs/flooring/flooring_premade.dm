@@ -76,10 +76,16 @@
 	initial_flooring = /decl/flooring/grass
 
 /turf/simulated/floor/carpet
+	name = "carpet"
+	icon = 'icons/turf/flooring/carpet.dmi'
+	icon_state = "carpet"
+	initial_flooring = /decl/flooring/carpet
+
+/turf/simulated/floor/carpet/brown
 	name = "brown carpet"
 	icon = 'icons/turf/flooring/carpet.dmi'
 	icon_state = "brown"
-	initial_flooring = /decl/flooring/carpet
+	initial_flooring = /decl/flooring/carpet/brown
 
 /turf/simulated/floor/carpet/blue
 	name = "blue carpet"

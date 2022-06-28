@@ -6,14 +6,13 @@
 	var/highest_faculty
 	var/highest_rank = 0
 	var/combined_rank = 0
+	latencies = list()
 	for(var/faculty in ranks)
 		var/check_rank = get_rank(faculty)
 		if(check_rank == 1)
 			LAZYADD(latencies, faculty)
-		else
-			if(check_rank <= 0)
-				ranks -= faculty
-			LAZYREMOVE(latencies, faculty)
+		else if(check_rank <= 0)
+			ranks -= faculty
 		combined_rank += check_rank
 		if(!highest_faculty || highest_rank < check_rank)
 			highest_faculty = faculty

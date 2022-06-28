@@ -3,7 +3,7 @@
 
 /decl/hierarchy/supply_pack/flooring/carpetbrown
 	name = "Brown carpet"
-	contains = list(/obj/item/stack/tile/carpet/fifty)
+	contains = list(/obj/item/stack/tile/carpetbrown/fifty)
 	cost = 15
 	containername = "brown carpet crate"
 

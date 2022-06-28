@@ -138,7 +138,7 @@
 			return
 		to_chat(user, "You fit \the [I] into the suit cycler.")
 		helmet = I
-		
+
 		updateUsrDialog()
 		return
 
@@ -223,9 +223,10 @@
 		dat += "<b>Target product:</b> <A href='?src=\ref[src];select_department=1'>[target_modification.name]</a>, <A href='?src=\ref[src];select_species=1'>[target_species]</a>."
 		dat += "<A href='?src=\ref[src];apply_paintjob=1'><br>\[apply customisation routine\]</a><br><hr>"
 
-	show_browser(user, JOINTEXT(dat), "window=suit_cycler")
+	var/datum/browser/popup = new(user, "suit_cycler", "Suit Cycler")
+	popup.set_content(JOINTEXT(dat))
+	popup.open()
 	onclose(user, "suit_cycler")
-	return
 
 /obj/machinery/suit_cycler/Topic(href, href_list)
 	if((. = ..()))

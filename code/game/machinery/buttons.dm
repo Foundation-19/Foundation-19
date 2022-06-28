@@ -29,6 +29,9 @@
 	return attack_hand(user)
 
 /obj/machinery/button/interface_interact(user)
+	if(!allowed(user))
+		to_chat(user, SPAN_WARNING("Access denied."))
+		return FALSE
 	if(!CanInteract(user, DefaultTopicState()))
 		return FALSE
 	if(istype(user, /mob/living/carbon))

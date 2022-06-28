@@ -33,6 +33,11 @@
 /datum/proc/get_view_variables_options()
 	return ""
 
+/atom/get_view_variables_options()
+	if (!reagents)
+		return ""
+	return "<option value='?_src_=vars;addreagent=\ref[src]'>Add reagent</option>"
+
 /mob/get_view_variables_options()
 	return ..() + {"
 		<option value='?_src_=vars;mob_player_panel=\ref[src]'>Show player panel</option>
@@ -135,7 +140,7 @@
 /datum/proc/VV_secluded()
 	return list()
 
-/configuration/VV_secluded()
+/datum/configuration/VV_secluded()
 	return vars
 
 // The following vars cannot be edited by anyone

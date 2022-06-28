@@ -91,17 +91,17 @@
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY  = SKILL_BASIC,
-	                    SKILL_COMPUTER     = SKILL_EXPERT,
-	                    SKILL_EVA          = SKILL_EXPERT,
-	                    SKILL_CONSTRUCTION = SKILL_EXPERT,
-	                    SKILL_ELECTRICAL   = SKILL_EXPERT,
-	                    SKILL_ATMOS        = SKILL_EXPERT,
-	                    SKILL_ENGINES      = SKILL_ADEPT)
+	                    SKILL_COMPUTER     = SKILL_EXPERIENCED,
+	                    SKILL_EVA          = SKILL_EXPERIENCED,
+	                    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
+	                    SKILL_ELECTRICAL   = SKILL_EXPERIENCED,
+	                    SKILL_ATMOS        = SKILL_EXPERIENCED,
+	                    SKILL_ENGINES      = SKILL_TRAINED)
 
-	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
-	                    SKILL_ELECTRICAL   = SKILL_MAX,
-	                    SKILL_ATMOS        = SKILL_MAX,
-	                    SKILL_ENGINES      = SKILL_MAX)
+	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MASTER,
+	                    SKILL_ELECTRICAL   = SKILL_MASTER,
+	                    SKILL_ATMOS        = SKILL_MASTER,
+	                    SKILL_ENGINES      = SKILL_MASTER)
 	skill_points = 30
 
 /datum/job/commeng
@@ -139,15 +139,15 @@
 
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
 	                    SKILL_EVA          = SKILL_BASIC,
-	                    SKILL_CONSTRUCTION = SKILL_EXPERT,
+	                    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
 	                    SKILL_ELECTRICAL   = SKILL_BASIC,
 	                    SKILL_ATMOS        = SKILL_BASIC,
 	                    SKILL_ENGINES      = SKILL_BASIC)
 
-	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
-	                    SKILL_ELECTRICAL   = SKILL_MAX,
-	                    SKILL_ATMOS        = SKILL_MAX,
-	                    SKILL_ENGINES      = SKILL_MAX)
+	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MASTER,
+	                    SKILL_ELECTRICAL   = SKILL_MASTER,
+	                    SKILL_ATMOS        = SKILL_MASTER,
+	                    SKILL_ENGINES      = SKILL_MASTER)
 	skill_points = 20
 
 // MISC

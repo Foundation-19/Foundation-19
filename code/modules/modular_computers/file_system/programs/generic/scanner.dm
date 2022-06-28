@@ -11,61 +11,58 @@
 	nanomodule_path = /datum/nano_module/program/scanner
 	category = PROG_UTIL
 
-	/// Whether or not the program is synched with the scanner module.
-	var/using_scanner = FALSE
-	/// Buffers scan output for saving/viewing.
-	var/data_buffer = ""
-	/// The type of file the data will be saved to.
-	var/scan_file_type = /datum/computer_file/data/text
+	var/using_scanner = 0	//Whether or not the program is synched with the scanner module.
+	var/data_buffer = ""	//Buffers scan output for saving/viewing.
+	var/scan_file_type = /datum/computer_file/data/text		//The type of file the data will be saved to.
 	var/list/metadata_buffer = list()
 	var/paper_type
 
-/datum/computer_file/program/scanner/proc/connect_scanner()
+/datum/computer_file/program/scanner/proc/connect_scanner()	//If already connected, will reconnect.
 	if(!computer)
-		return FALSE
+		return 0
 	var/obj/item/stock_parts/computer/scanner/scanner = computer.get_component(PART_SCANNER)
 	if(scanner && istype(src, scanner.driver_type))
-		using_scanner = TRUE
+		using_scanner = 1
 		scanner.driver = src
-		return TRUE
-	return FALSE
+		return 1
+	return 0
 
 /datum/computer_file/program/scanner/proc/disconnect_scanner()
-	using_scanner = FALSE
+	using_scanner = 0
 	if(computer)
 		var/obj/item/stock_parts/computer/scanner/scanner = computer.get_component(PART_SCANNER)
 		if(scanner && (src == scanner.driver))
 			scanner.driver = null
 	data_buffer = null
 	metadata_buffer.Cut()
-	return TRUE
+	return 1
 
 /datum/computer_file/program/scanner/proc/save_scan(name)
 	if(!data_buffer)
-		return FALSE
-	if(!computer.create_data_file(name, data_buffer, scan_file_type, metadata_buffer.Copy()))
-		return FALSE
-	return TRUE
+		return 0
+	if(!create_file(name, data_buffer, scan_file_type, metadata_buffer.Copy()))
+		return 0
+	return 1
 
 /datum/computer_file/program/scanner/proc/check_scanning()
 	if(!computer)
-		return FALSE
+		return 0
 	var/obj/item/stock_parts/computer/scanner/scanner = computer.get_component(PART_SCANNER)
 	if(!scanner)
-		return FALSE
+		return 0
 	if(!scanner.can_run_scan)
-		return FALSE
+		return 0
 	if(!scanner.check_functionality())
-		return FALSE
+		return 0
 	if(!using_scanner)
-		return FALSE
+		return 0
 	if(src != scanner.driver)
-		return FALSE
-	return TRUE
+		return 0
+	return 1
 
 /datum/computer_file/program/scanner/Topic(href, href_list)
 	if(..())
-		return TOPIC_HANDLED
+		return 1
 
 	if(href_list["connect_scanner"])
 		if(text2num(href_list["connect_scanner"]))
@@ -73,20 +70,19 @@
 				to_chat(usr, "Scanner installation failed.")
 		else
 			disconnect_scanner()
-		return TOPIC_HANDLED
+		return 1
 
 	if(href_list["scan"])
 		if(check_scanning())
 			metadata_buffer.Cut()
 			var/obj/item/stock_parts/computer/scanner/scanner = computer.get_component(PART_SCANNER)
 			scanner.run_scan(usr, src)
-		return TOPIC_HANDLED
+		return 1
 
 	if(href_list["save"])
 		var/name = sanitize(input(usr, "Enter file name:", "Save As") as text|null)
 		if(!save_scan(name))
 			to_chat(usr, "Scan save failed.")
-		return TOPIC_HANDLED
 
 	if(.)
 		SSnano.update_uis(NM)
@@ -94,7 +90,7 @@
 /datum/nano_module/program/scanner
 	name = "Scanner"
 
-/datum/nano_module/program/scanner/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/scanner/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
 	var/datum/computer_file/program/scanner/prog = program
 	if(!prog.computer)

@@ -7,10 +7,10 @@
 	off_state = "blindfoldup"
 	tint = TINT_BLIND
 	flash_protection = FLASH_PROTECTION_MAJOR
-	item_flags = ITEM_FLAG_WASHER_ALLOWED
 	darkness_view = -1
 	toggleable = TRUE
 	activation_sound = null
+	species_restricted = list("exclude", SPECIES_DIONA)
 
 /obj/item/clothing/glasses/blindfold/Initialize()
 	. = ..()
@@ -35,6 +35,5 @@
 	action_button_name = null
 	icon_state = "tape_cross"
 	item_state = null
-	item_flags = null
 	w_class = ITEM_SIZE_TINY
 	toggleable = FALSE

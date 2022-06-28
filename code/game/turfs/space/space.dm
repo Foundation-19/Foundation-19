@@ -7,15 +7,29 @@
 	dynamic_lighting = 0
 	temperature = T20C
 	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT
+	var/static/list/dust_cache
 	permit_ao = FALSE
+	turf_flags = TURF_DISALLOW_BLOB
 
 	z_eventually_space = TRUE
 
+/turf/space/proc/build_dust_cache()
+	LAZYINITLIST(dust_cache)
+	for (var/i in 0 to 25)
+		var/image/im = image('icons/turf/space_dust.dmi',"[i]")
+		im.plane = DUST_PLANE
+		im.alpha = 80
+		im.blend_mode = BLEND_ADD
+		dust_cache["[i]"] = im
+
+
 /turf/space/Initialize()
 	. = ..()
+	icon_state = "white"
 	update_starlight()
-
-	appearance = SSskybox.space_appearance_cache[(((x + y) ^ ~(x * y) + z) % 25) + 1]
+	if (!dust_cache)
+		build_dust_cache()
+	overlays += dust_cache["[((x + y) ^ ~(x * y) + z) % 25]"]
 
 	if(!HasBelow(z))
 		return

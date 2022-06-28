@@ -63,7 +63,7 @@ var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","
 	return msg
 
 /client/verb/adminhelp(msg as text)
-	set category = "Admin"
+	set category = "Staffhelp"
 	set name = "Adminhelp"
 
 	//handle muting and automuting
@@ -136,4 +136,3 @@ var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","
 
 	SSstatistics.add_field_details("admin_verb","AH") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
-

@@ -16,7 +16,6 @@
 	health = 300
 	maxHealth = 300
 	speed = 8
-	base_attack_cooldown = 2 SECONDS
 	move_to_delay = 6
 	projectiletype = /obj/item/projectile/beam/drone
 	projectilesound = 'sound/weapons/laser3.ogg'
@@ -29,7 +28,7 @@
 	skin_material = null
 	skin_amount =   0
 
-	ai_holder_type = /datum/ai_holder/simple_animal/ranged/pointblank/malf_drone
+	ai_holder_type = /datum/ai_holder/simple_animal/ranged/malf_drone
 
 	var/datum/effect/effect/system/trail/ion_trail
 
@@ -170,6 +169,9 @@
 
 //ion rifle!
 /mob/living/simple_animal/hostile/retaliate/malf_drone/emp_act(severity)
+	if(status_flags & GODMODE)
+		return
+
 	health -= rand(3,15) * (severity + 1)
 	disabled = rand(150, 600)
 	hostile_drone = 0
@@ -290,7 +292,7 @@
 
 	..()
 
-/datum/ai_holder/simple_animal/ranged/pointblank/malf_drone
+/datum/ai_holder/simple_animal/ranged/malf_drone
 	speak_chance = 5
 
 /datum/say_list/malf_drone

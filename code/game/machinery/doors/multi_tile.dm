@@ -16,7 +16,7 @@
 	welded_file = 'icons/obj/doors/double/welded.dmi'
 	emag_file = 'icons/obj/doors/double/emag.dmi'
 	width = 2
-	appearance_flags = DEFAULT_APPEARANCE_FLAGS
+	appearance_flags = 0
 	opacity = 1
 	assembly_type = /obj/structure/door_assembly/multi_tile
 

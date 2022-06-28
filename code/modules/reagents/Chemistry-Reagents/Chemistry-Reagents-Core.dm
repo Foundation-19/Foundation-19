@@ -90,8 +90,12 @@
 	glass_desc = "The father of all refreshments."
 	chilling_products = list(/datum/reagent/drink/ice)
 	chilling_point = T0C
+	chilling_message = null
+	chilling_sound = null
 	heating_products = list(/datum/reagent/water/boiling)
 	heating_point = T100C
+	heating_message = null
+	heating_sound = null
 	value = 0
 
 /datum/reagent/water/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
@@ -194,7 +198,7 @@
 	glass_desc = "Generally, you're supposed to put something else in there too..."
 	glass_icon = DRINK_ICON_NOISY
 
-	heating_message = "cracks and melts."
+	heating_message = null
 	heating_products = list(/datum/reagent/water)
 	heating_point = 299 // This is about 26C, higher than the actual melting point of ice but allows drinks to be made properly without weird workarounds.
 

@@ -11,7 +11,6 @@
 	throw_speed = 2
 	throw_range = 10
 	force = 10.0
-	base_parry_chance = 15
 	matter = list(MATERIAL_STEEL = 90)
 	attack_verb = list("slammed", "whacked", "bashed", "thunked", "battered", "bludgeoned", "thrashed")
 

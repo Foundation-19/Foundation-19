@@ -1,25 +1,15 @@
 /datum/computer_file/report
 	filename = "report"
 	filetype = "RPT"
-
-	/// The name of this report type.
-	var/title = "Generic Report"
-	/// Form code, for maximum bureaucracy.
-	var/form_name = "AB1"
-	/// The name of the mob that made the report.
-	var/creator
-	/// Time submitted.
-	var/file_time
-	/// The access required to submit the report. See documentation below.
-	var/list/access_edit = list(list())
-	/// The access required to view the report.
-	var/list/access = list(list())
-	/// A list of fields the report comes with, in order that they should be displayed.
-	var/list/datum/report_field/fields = list()
-	/// Whether this report type should show up on NTNet.
-	var/available_on_ntnet = FALSE
-	/// Can be set to a pencode logo for use with some display methods.
-	var/logo
+	var/title = "Generic Report"                           //The name of this report type.
+	var/form_name = "AB1"                                  //Form code, for maximum bureaucracy.
+	var/creator                                            //The name of the mob that made the report.
+	var/file_time                                          //Time submitted.
+	var/list/access_edit = list(list())                    //The access required to submit the report. See documentation below.
+	var/list/access = list(list())                         //The access required to view the report.
+	var/list/datum/report_field/fields = list()            //A list of fields the report comes with, in order that they should be displayed.
+	var/available_on_ntnet = FALSE                             //Whether this report type should show up on NTNet.
+	var/logo                                               //Can be set to a pencode logo for use with some display methods.
 
 /datum/computer_file/report/New()
 	..()
@@ -29,20 +19,20 @@
 	QDEL_NULL_LIST(fields)
 	. = ..()
 
-/**
-  * Access stuff. The report's access/access_edit should control whether it can be opened/submitted.
-  * For field editing or viewing, use the field's access/access_edit permission instead.
-  * The access system is based on "access patterns", lists of access values.
-  * A user needs all access values in a pattern to be granted access.
-  * A user needs to only match one of the potentially several stored access patterns to be granted access.
-  * You must have access to have edit access.
-  *
-  * This proc resets the access to the report, resulting in just one access pattern for access/edit.
-  * Arguments can be access values (numbers) or lists of access values.
-  * If null is passed to one of the arguments, that access type is left alone. Pass list() to reset to no access needed instead.
-  * The recursive option resets access to all fields in the report as well.
-  * If the override option is set to FALSE, the access supplied will instead be added as another access pattern, rather than resetting the access.
-  */
+/*
+Access stuff. The report's access/access_edit should control whether it can be opened/submitted.
+For field editing or viewing, use the field's access/access_edit permission instead.
+The access system is based on "access patterns", lists of access values. 
+A user needs all access values in a pattern to be granted access.
+A user needs to only match one of the potentially several stored access patterns to be granted access.
+You must have access to have edit access.
+
+This proc resets the access to the report, resulting in just one access pattern for access/edit.
+Arguments can be access values (numbers) or lists of access values.
+If null is passed to one of the arguments, that access type is left alone. Pass list() to reset to no access needed instead.
+The recursive option resets access to all fields in the report as well.
+If the override option is set to 0, the access supplied will instead be added as another access pattern, rather than resetting the access.
+*/
 /datum/computer_file/report/proc/set_access(access, access_edit, recursive = 1, override = 1)
 	if(access)
 		if(!islist(access))
@@ -56,7 +46,7 @@
 		for(var/datum/report_field/field in fields)
 			field.set_access(access, access_edit, override)
 
-/// Strongly recommended to use these procs to check for access. They can take access values (numbers) or lists of values.
+//Strongly recommended to use these procs to check for access. They can take access values (numbers) or lists of values.
 /datum/computer_file/report/proc/verify_access(given_access)
 	return has_access_pattern(access, given_access)
 
@@ -65,7 +55,7 @@
 		return //Need access for access_edit
 	return has_access_pattern(access_edit, given_access)
 
-/// Looking up fields. Names might not be unique unless you ensure otherwise.
+//Looking up fields. Names might not be unique unless you ensure otherwise.
 /datum/computer_file/report/proc/field_from_ID(ID)
 	for(var/datum/report_field/field in fields)
 		if(field.ID == ID)
@@ -76,7 +66,7 @@
 		if(field.display_name() == name)
 			return field
 
-/// The place to enter fields for report subtypes, via add_field.
+//The place to enter fields for report subtypes, via add_field.
 /datum/computer_file/report/proc/generate_fields()
 	return
 
@@ -95,12 +85,9 @@
 /datum/computer_file/report/proc/rename_file(append)
 	append = append || time_stamp()
 	append = replacetext(append, ":", "_")
-	if(istype(holder, /obj/item/stock_parts/computer/hard_drive))
-		holder.rename_file(src, "[form_name]_[append]")
-	else
-		filename = "[form_name]_[append]"
+	filename = "[form_name]_[append]"
 
-/// Don't add fields except through this proc.
+//Don't add fields except through this proc.
 /datum/computer_file/report/proc/add_field(field_type, name, value = null, required = 0)
 	var/datum/report_field/field = new field_type(src)
 	field.name = name
@@ -128,7 +115,7 @@
 /datum/computer_file/report/proc/display_name()
 	return "Form [form_name]: [title]"
 
-/// If access is given, will include access information by performing checks against it.
+//if access is given, will include access information by performing checks against it.
 /datum/computer_file/report/proc/generate_nano_data(list/given_access)
 	. = list()
 	.["name"] = display_name()
@@ -141,11 +128,11 @@
 		.["access_edit"] = verify_access_edit(given_access)
 	for(var/datum/report_field/field in fields)
 		.["fields"] += list(field.generate_nano_data(given_access))
-/**
-  * This formats the report into pencode for use with paper and printing. Setting access to null will bypass access checks.
-  * with_fields will include a field link after the field value (useful to print fillable forms).
-  * no_html will strip any html, possibly killing useful formatting in the process.
-  */
+/*
+This formats the report into pencode for use with paper and printing. Setting access to null will bypass access checks.
+with_fields will include a field link after the field value (useful to print fillable forms).
+no_html will strip any html, possibly killing useful formatting in the process.
+*/
 /datum/computer_file/report/proc/generate_pencode(access, with_fields, no_html)
 	. = list()
 	. += "\[center\][logo]\[/center\]"
@@ -158,7 +145,7 @@
 	if(no_html)
 		. = html2pencode(.)
 
-/// Recipient reports have a designated recipients field, for receiving submitted reports.
+//recipient reports have a designated recipients field, for receiving submitted reports.
 /datum/computer_file/report/recipient
 	var/datum/report_field/people/list_from_manifest/recipients
 

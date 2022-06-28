@@ -34,8 +34,8 @@ em						{font-style: normal;font-weight: bold;}
 .pm  .other				{color: #0000ff;}
 
 /* Admin: Channels */
-.mod_channel			{color: #735638;	font-weight: bold;}
-.mod_channel .admin		{color: #b82e00;	font-weight: bold;}
+.mentor_channel			{color: #735638;	font-weight: bold;}
+.mentor_channel .admin	{color: #b82e00;	font-weight: bold;}
 .admin_channel			{color: #9611d4;	font-weight: bold;}
 
 /* Radio: Misc */
@@ -60,9 +60,6 @@ em						{font-style: normal;font-weight: bold;}
 .expradio				{color: #929820;}
 .seciradio				{color: #935050;}
 .mediradio				{color: #509190;}
-.hczradio				{color: #935050;}
-.lczradio				{color: #935050;}
-.eczradio				{color: #935050;}
 
 .hailradio				{color: #cc00aa;}
 .exampleradio			{color: #ff00ff;}
@@ -96,6 +93,7 @@ h1.alert, h2.alert		{color: #000080;}
 .rose					{color: #ff5050;}
 .info					{color: #0000cc;}
 .debug					{color: #ff00ff;}
+.mentor                 {color: #e236d8;}
 .notice					{color: #000099;}
 .subtle					{color: #000099; font-size: 75%; font-style: italic;}
 .alium					{color: #00ff00;}
@@ -125,8 +123,7 @@ h1.alert, h2.alert		{color: #000080;}
 .russian				{color: #9c250b;}
 .arabic					{color: #128b11;}
 .spacer					{color: #9c660b;}
-.selenian       		{color: #22228b;}
-.french					{color: #0d3058;}
+.selenian       {color: #22228b;}
 
 .interface				{color: #330033;}
 

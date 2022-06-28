@@ -33,11 +33,19 @@
 		src.amount = amount
 	..()
 
-/obj/item/stack/Initialize()
+/obj/item/stack/Initialize(mapload)
 	. = ..()
 	if(!plural_name)
 		plural_name = "[singular_name]s"
+	if (!mapload && isturf(loc))
+		addtimer(CALLBACK(src, .proc/stack_new), 0)
 
+/obj/item/stack/proc/stack_new()
+	for (var/obj/item/stack/S in loc)
+		if (S == src)
+			continue
+		if (S.stacktype == stacktype)
+			transfer_to(S)
 
 /obj/item/stack/Destroy()
 	if(uses_charge)
@@ -110,7 +118,9 @@
 					t1 += " <A href='?src=\ref[src];make=[i];multiplier=[max_multiplier]'>[max_multiplier*R.res_amount]x</A>"
 
 	t1 += "</TT></body></HTML>"
-	show_browser(user, JOINTEXT(t1), "window=stack")
+	var/datum/browser/popup = new(user, "stack", "Recipes")
+	popup.set_content(JOINTEXT(t1))
+	popup.open()
 	onclose(user, "stack")
 
 /obj/item/stack/proc/produce_recipe(datum/stack_recipe/recipe, var/quantity, mob/user)
@@ -311,6 +321,15 @@
 	. = ..()
 	if (amount < max_amount)
 		. = ceil(. * amount / max_amount)
+
+/obj/item/stack/Crossed(obj/o)
+	addtimer(CALLBACK(src, .proc/stack_crossed, o), 0)
+	. = ..()
+
+/obj/item/stack/proc/stack_crossed(obj/o)
+	if (!o.throwing && loc == o.loc && isturf(loc) && istype(o, /obj/item/stack))
+		var/obj/item/stack/S = o
+		transfer_to(S)
 
 /obj/item/stack/attack_hand(mob/user as mob)
 	if (user.get_inactive_hand() == src)

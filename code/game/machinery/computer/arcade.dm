@@ -126,9 +126,10 @@
 
 	dat += "</b></center>"
 
-	show_browser(user, dat, "window=arcade")
+	var/datum/browser/popup = new(user, "arcade", "Arcade")
+	popup.set_content(dat)
+	popup.open()
 	onclose(user, "arcade")
-	return
 
 /obj/machinery/computer/arcade/battle/CanUseTopic(var/mob/user, var/datum/topic_state/state, var/href_list)
 	if((blocked || gameover) && href_list && (href_list["attack"] || href_list["heal"] || href_list["charge"]))
@@ -150,7 +151,7 @@
 			turtle--
 		src.enemy_hp -= attackamt
 
-		. = TOPIC_REFRESH
+		updateDialog()
 		sleep(10)
 		src.arcade_action(user)
 
@@ -165,7 +166,7 @@
 		src.player_hp += healamt
 		src.blocked = 1
 
-		. = TOPIC_REFRESH
+		updateDialog()
 		sleep(10)
 		src.arcade_action(user)
 
@@ -177,7 +178,7 @@
 		if(turtle > 0)
 			turtle--
 
-		. = TOPIC_REFRESH
+		updateDialog()
 		sleep(10)
 		src.arcade_action(user)
 
@@ -192,7 +193,7 @@
 		if(emagged)
 			emagged = FALSE
 			SetupGame()
-		. = TOPIC_REFRESH
+		updateDialog()
 
 /obj/machinery/computer/arcade/battle/proc/arcade_action(var/user)
 	if ((src.enemy_mp <= 0) || (src.enemy_hp <= 0))
@@ -251,6 +252,7 @@
 		else
 			SSstatistics.add_field("arcade_loss_hp_normal")
 
+	updateDialog()
 	src.blocked = 0
 
 /obj/machinery/computer/arcade/proc/explode()

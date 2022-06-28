@@ -230,31 +230,10 @@
 
 /datum/language/english
 	name = LANGUAGE_ENGLISH
-	desc = "A common language spoken on Earth with it roots coming down to England. It is so commonly spoken that it is a international language and the foundation's number one way of comunication."
+	desc = "A pidgin language spoken by haulers, merchants, traders, travellers, and cocky fly-boys across the galaxy."
 	colour = ""
 	key = "v"
-	syllables = list (
-		"al", "an", "ar", "as", "at", "ea", "ed", "en", "er", "es", "ha", "he", "hi", "in", "is", "it", "le", "me",
-		"nd", "ne", "ng", "nt", "on", "or", "ou", "re", "se", "st", "te", "th", "ti", "to", "ve", "wa",
-		"all", "and", "are", "but", "ent", "era", "ere", "eve", "for", "had", "hat", "hen", "her", "hin", "his",
-		"ing", "ion", "ith", "not", "ome", "oul", "our", "sho", "ted", "ter", "tha", "the", "thi", "tio", "uld",
-		"ver", "was", "wit", "you",
-	)
-	flags = RESTRICTED
-
-/datum/language/french
-	name = LANGUAGE_HUMAN_FRENCH
-	desc = "A descendant of gallo-romance, the latin spoken in northern gaul, influenced by different celtic languages.\
-			Someone who speaks french is called a francophone."
-	colour = "french"
-	key = "8"
-	syllables = list (
-		"ai", "an", "ar", "au", "ce", "ch", "co", "de", "em", "en", "er", "es", "et", "eu", "ie", "il", "in", "is",
-		"it", "la", "le", "ma", "me", "ne", "ns", "nt", "on", "ou", "pa", "qu", "ra", "re", "se", "te", "ti", "tr",
-		"ue", "un", "ur", "us", "ve",
-		"ain", "ais", "ait", "ans", "ant", "ati", "ava", "ave", "cha", "che", "com", "con", "dan", "des", "ell",
-		"eme", "ent", "est", "éta", "eur", "eux", "fai", "ien", "ion", "ire", "les", "lle", "lus" ,"mai", "men",
-		"mme", "nte", "omm", "ont", "our", "ous", "out", "ouv", "par", "pas", "plu", "pou", "que", "res", "son",
-		"sur", "tai", "tio", "tou", "tre", "une", "ure", "ver", "vou",
-	)
+	syllables = list ("die", "en", "skei", "van", "son", "der", "aar", "ch", "op", "ruk", "aa", "be", "ne", "het",
+ 	"ek", "ras", "ver", "zan", "das", "waa", "geb", "vol", "lu", "min", "breh", "rus", "stv", "ee", "goe", "sk",
+ 	"la", "ver", "we", "ge", "luk", "an", "ar", "at", "es", "et", "bel", "du", "jaa", "ch", "kk", "gh", "ll", "uu", "wat")
 	flags = RESTRICTED

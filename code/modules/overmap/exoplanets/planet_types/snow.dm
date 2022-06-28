@@ -1,6 +1,8 @@
 /obj/effect/overmap/visitable/sector/exoplanet/snow
 	name = "snow exoplanet"
 	desc = "Cold planet with limited plant life."
+	scan_summary = "Frigid, mountainous exoplanet with a snowy surface. Large poles are covered in glacial ice, and most of the planet is uninhabitable to known life. Conditions within the planet's warmer equatorial regions may support sparse plant and animal life."
+	scan_assessment = "Pressure suits or other cold protection are required to safely explore the surface."
 	color = "#dcdcdc"
 	planetary_area = /area/exoplanet/snow
 	rock_colors = list(COLOR_DARK_BLUE_GRAY, COLOR_GUNMETAL, COLOR_GRAY80, COLOR_DARK_GRAY)

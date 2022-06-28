@@ -1,3 +1,5 @@
+
+
 /obj/item/organ/internal/augment/active/polytool/engineer
 	name = "\improper Engineering toolset"
 	action_button_name = "Deploy Engineering Tool"
@@ -11,7 +13,6 @@
 		/obj/item/device/multitool/finger
 	)
 
-
 /obj/item/weldingtool/finger
 	name = "digital welder"
 	desc = "A precise, high quality welding tool."
@@ -22,7 +23,6 @@
 /obj/item/weldingtool/finger/on_update_icon()
 	icon_state = welding ? "welder_finger_on" : "welder_finger"
 
-
 /obj/item/wirecutters/finger
 	name = "digital splicer"
 	desc = "A small embedded cutter in your finger."
@@ -30,12 +30,10 @@
 	icon = 'icons/obj/augment_tools.dmi'
 	build_from_parts = FALSE
 
-
 /obj/item/wirecutters/finger/Initialize()
 	. = ..()
 	icon_state = initial(icon_state)
 	item_state = initial(item_state)
-
 
 /obj/item/screwdriver/finger
 	name = "digital screwdriver"
@@ -44,12 +42,10 @@
 	icon = 'icons/obj/augment_tools.dmi'
 	build_from_parts = FALSE
 
-
 /obj/item/screwdriver/finger/Initialize()
 	. = ..()
 	icon_state = initial(icon_state)
 	item_state = initial(item_state)
-
 
 /obj/item/crowbar/finger
 	name = "digital prybar"
@@ -57,12 +53,10 @@
 	icon_state = "prybar_finger"
 	icon = 'icons/obj/augment_tools.dmi'
 
-
 /obj/item/crowbar/finger/Initialize()
 	. = ..()
 	icon_state = initial(icon_state)
 	item_state = initial(item_state)
-
 
 /obj/item/wrench/finger
 	name = "digital wrench"
@@ -70,12 +64,10 @@
 	icon_state = "wrench_finger"
 	icon = 'icons/obj/augment_tools.dmi'
 
-
 /obj/item/wrench/finger/Initialize()
 	. = ..()
 	icon_state = initial(icon_state)
 	item_state = initial(item_state)
-
 
 /obj/item/device/multitool/finger
 	name = "digital multitool"

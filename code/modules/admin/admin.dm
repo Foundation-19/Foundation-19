@@ -93,7 +93,8 @@ var/global/floorIsLava = 0
 			<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_AOOC]'><font color='[(muted & MUTE_AOOC)?"red":"blue"]'>AOOC</font></a> |
 			<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_PRAY]'><font color='[(muted & MUTE_PRAY)?"red":"blue"]'>PRAY</font></a> |
 			<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_ADMINHELP]'><font color='[(muted & MUTE_ADMINHELP)?"red":"blue"]'>ADMINHELP</font></a> |
-			<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_DEADCHAT]'><font color='[(muted & MUTE_DEADCHAT)?"red":"blue"]'>DEADCHAT</font></a>\]
+			<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_DEADCHAT]'><font color='[(muted & MUTE_DEADCHAT)?"red":"blue"]'>DEADCHAT</font></a>\] |
+			<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_MENTOR]'><font_color='[(muted & MUTE_MENTOR)?"red":"blue"]'MENTOR</font></a>\]
 			(<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_ALL]'><font color='[(muted & MUTE_ALL)?"red":"blue"]'>toggle all</font></a>)
 		"}
 		body += "<br><br><b>Staff Warning:</b> [M.client.staffwarn ? M.client.staffwarn : "No"]<br>"
@@ -222,8 +223,7 @@ var/global/floorIsLava = 0
 	body += {"<br><br>
 			<b>Other actions:</b>
 			<br>
-			<A href='?src=\ref[src];forcespeech=\ref[M]'>Forcesay</A> |
-			<a href='?src=\ref[src];cloneother=\ref[M]'>Clone Other</a>
+			<A href='?src=\ref[src];forcespeech=\ref[M]'>Forcesay</A>
 			"}
 	if (M.client)
 		body += {" |
@@ -783,6 +783,22 @@ var/global/floorIsLava = 0
 	SSstatistics.add_field_details("admin_verb","TLOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
+/datum/admins/proc/endnow()
+	set category = "Server"
+	set desc = "round goes bye bye"
+	set name = "End Round"
+
+	var/check = alert("This will immediately end the round. Are you sure about this?", "End Game", "Yes", "No") == "Yes"
+
+	if (!check)
+		return
+
+	if (GAME_STATE > RUNLEVEL_LOBBY)
+		SSticker.forced_end = TRUE
+		log_and_message_admins("has ended the round.")
+	else
+		to_chat(usr,FONT_LARGE(SPAN_WARNING("You cannot end the round before it's begun!")))
+
 /datum/admins/proc/toggledsay()
 	set category = "Server"
 	set desc="Globally Toggles DSAY"
@@ -859,22 +875,6 @@ var/global/floorIsLava = 0
 	else
 		to_chat(usr, "<span class='bigwarning'>Error: Start Now: Game has already started.</span>")
 		return 0
-
-/datum/admins/proc/endnow()
-	set category = "Server"
-	set desc = "End the round immediately."
-	set name = "End Round"
-
-	var/check = alert("This will immediately end the current round. Are you sure?", "End Game", "Yes", "No") == "Yes"
-
-	if (!check)
-		return
-
-	if (GAME_STATE > RUNLEVEL_LOBBY)
-		SSticker.forced_end = TRUE
-		log_and_message_admins("has ended the round.")
-	else
-		to_chat(usr, FONT_LARGE(SPAN_WARNING("You cannot end the round before it's begun!")))
 
 /datum/admins/proc/toggleenter()
 	set category = "Server"
@@ -1137,8 +1137,6 @@ var/global/floorIsLava = 0
 	var/datum/artifact_effect/secondary_effect
 	var/datum/artifact_trigger/secondary_trigger
 
-	var/damage_type
-
 	if (ispath(effect))
 		primary_trigger = input(usr, "Choose a trigger", "Choose a trigger") as null | anything in subtypesof(/datum/artifact_trigger)
 
@@ -1158,29 +1156,16 @@ var/global/floorIsLava = 0
 			if (!ispath(secondary_trigger))
 				return
 
-		var/damage_types = list("Sharp" = DAM_SHARP, "Bullet" = DAM_BULLET, "Edge" = DAM_EDGE, "Laser" = DAM_LASER)
-		choice = input(usr, "Choose a damage effect", "Choose Damage Effect") as null | anything in damage_types | "Invincible"
-
-		if (!choice)
-			return
-
-		if (choice != "Invincible")
-			damage_type = damage_types[choice]
-
 
 		A = new(usr.loc)
 		A.my_effect = new effect(A)
 		A.my_effect.trigger = new primary_trigger(A.my_effect)
-		A.damage_type = damage_type
-		A.set_damage_description(damage_type)
 
 		if (secondary_effect)
 			A.secondary_effect = new secondary_effect
 			A.secondary_effect.trigger = new secondary_trigger
 		else
 			QDEL_NULL(A.secondary_effect)
-
-		log_and_message_admins("spawned an artifact with effects [english_list(A.my_effect, A.secondary_effect)].")
 
 /datum/admins/proc/show_traitor_panel(var/mob/M in SSmobs.mob_list)
 	set category = "Admin"
@@ -1332,7 +1317,7 @@ var/global/floorIsLava = 0
 	if(!istype(M))
 		return
 	var/datum/nano_module/skill_ui/NM = /datum/nano_module/skill_ui
-	if(isadmin(usr))
+	if(is_admin(usr))
 		NM = /datum/nano_module/skill_ui/admin //They get the fancy version that lets you change skills and debug stuff.
 	NM = new NM(usr, override = M.skillset)
 	NM.ui_interact(usr)
@@ -1492,26 +1477,38 @@ var/global/floorIsLava = 0
 	set category = "Special Verbs"
 	set name = "Send Fax"
 	set desc = "Sends a fax to this machine"
-	var/department = input("Choose a fax", "Fax") as null|anything in GLOB.alldepartments
-	for(var/obj/machinery/photocopier/faxmachine/sendto in GLOB.allfaxes)
-		if(sendto.department == department)
 
-			if (!istype(src,/datum/admins))
-				src = usr.client.holder
-			if (!istype(src,/datum/admins))
-				to_chat(usr, "Error: you are not an admin!")
-				return
+	// Admin status checks
+	if (!istype(src,/datum/admins))
+		src = usr.client.holder
+	if (!istype(src,/datum/admins))
+		to_chat(usr, "Error: you are not an admin!")
+		return
 
-			var/replyorigin = input(src.owner, "Please specify who the fax is coming from", "Origin") as text|null
+	// Origin
+	var/list/option_list = GLOB.admin_departments.Copy() + GLOB.alldepartments.Copy() + "(Custom)" + "(Cancel)"
+	var/replyorigin = input(owner, "Please specify who the fax is coming from. Choose '(Custom)' to enter a custom department or '(Cancel) to cancel.", "Fax Origin") as null|anything in option_list
+	if (!replyorigin || replyorigin == "(Cancel)")
+		return
+	if (replyorigin == "(Custom)")
+		replyorigin = input(owner, "Please specify who the fax is coming from.", "Fax Machine Department Tag") as text|null
+		if (!replyorigin)
+			return
+	if (replyorigin == "Unknown" || replyorigin == "(Custom)" || replyorigin == "(Cancel)")
+		to_chat(owner, SPAN_WARNING("Invalid origin selected."))
+		return
 
-			var/obj/item/paper/admin/P = new /obj/item/paper/admin( null ) //hopefully the null loc won't cause trouble for us
-			faxreply = P
+	// Destination
+	var/department = input("Choose a destination fax", "Fax Target") as null|anything in GLOB.alldepartments
 
-			P.admindatum = src
-			P.origin = replyorigin
-			P.destination = sendto
-
-			P.adminbrowse()
+	// Generate the fax
+	var/obj/item/paper/admin/P = new /obj/item/paper/admin( null ) //hopefully the null loc won't cause trouble for us
+	faxreply = P
+	P.admindatum = src
+	P.origin = replyorigin
+	P.department = department
+	P.destinations = get_fax_machines_by_department(department)
+	P.adminbrowse()
 
 
 /client/proc/check_fax_history()
@@ -1528,19 +1525,18 @@ var/global/floorIsLava = 0
 		data += "<center>No faxes yet.</center>"
 	show_browser(usr, "<HTML><HEAD><TITLE>Fax History</TITLE></HEAD><BODY>[data]</BODY></HTML>", "window=FaxHistory;size=450x400")
 
-datum/admins/var/obj/item/paper/admin/faxreply // var to hold fax replies in
+/datum/admins/var/obj/item/paper/admin/faxreply // var to hold fax replies in
 
-/datum/admins/proc/faxCallback(var/obj/item/paper/admin/P, var/obj/machinery/photocopier/faxmachine/destination)
+/datum/admins/proc/faxCallback(obj/item/paper/admin/P)
 	var/customname = input(src.owner, "Pick a title for the report", "Title") as text|null
 
-	P.SetName("[P.origin] - [customname]")
-	P.desc = "This is a paper titled '" + P.name + "'."
+	P.SetName("[customname]")
 
-	var/shouldStamp = 1
+	var/shouldStamp = TRUE
 	if(!P.sender) // admin initiated
-		switch(alert("Would you like the fax stamped?",, "Yes", "No"))
-			if("No")
-				shouldStamp = 0
+		var/need_stamp = alert(src.owner, "Would you like the fax stamped?", "Stamp", "Yes", "No")
+		if(need_stamp != "Yes")
+			shouldStamp = FALSE
 
 	if(shouldStamp)
 		P.stamps += "<hr><i>This paper has been stamped by the [P.origin] Quantum Relay.</i>"
@@ -1566,13 +1562,13 @@ datum/admins/var/obj/item/paper/admin/faxreply // var to hold fax replies in
 		P.overlays += stampoverlay
 
 	var/obj/item/rcvdcopy
-	rcvdcopy = destination.copy(P)
+	var/obj/machinery/photocopier/faxmachine/destination = P.destinations[1]
+	rcvdcopy = destination.copy(P, FALSE)
 	rcvdcopy.forceMove(null) //hopefully this shouldn't cause trouble
 	GLOB.adminfaxes += rcvdcopy
+	var/success = send_fax_loop(P, P.department, P.origin)
 
-
-
-	if(destination.recievefax(P))
+	if(success)
 		to_chat(src.owner, "<span class='notice'>Message reply to transmitted successfully.</span>")
 		if(P.sender) // sent as a reply
 			log_admin("[key_name(src.owner)] replied to a fax message from [key_name(P.sender)]")
@@ -1580,10 +1576,10 @@ datum/admins/var/obj/item/paper/admin/faxreply // var to hold fax replies in
 				if((R_INVESTIGATE) & C.holder.rights)
 					to_chat(C, "<span class='log_message'><span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] replied to a fax message from [key_name_admin(P.sender)] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
 		else
-			log_admin("[key_name(src.owner)] has sent a fax message to [destination.department]")
+			log_admin("[key_name(src.owner)] has sent a fax message to [P.department]")
 			for(var/client/C in GLOB.admins)
 				if((R_INVESTIGATE) & C.holder.rights)
-					to_chat(C, "<span class='log_message'><span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] has sent a fax message to [destination.department] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
+					to_chat(C, "<span class='log_message'><span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] has sent a fax message to [P.department] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
 
 	else
 		to_chat(src.owner, "<span class='warning'>Message reply failed.</span>")
@@ -1592,32 +1588,3 @@ datum/admins/var/obj/item/paper/admin/faxreply // var to hold fax replies in
 		qdel(P)
 		faxreply = null
 	return
-
-/datum/admins/proc/setroundlength()
-	set category = "Server"
-	set desc = "Set the time the round-end vote will start in minutes."
-	set name = "Set Round Length"
-
-	if (GAME_STATE > RUNLEVEL_LOBBY)
-		to_chat(usr, SPAN_WARNING("You cannot change the round length after the game has started!"))
-		return
-
-	var/time = input("Set the time until the round-end vote occurs (IN MINUTES). Default is [config.vote_autotransfer_initial / 600]", "Set Round Length", 0) as null | num
-
-	if (!time || !isnum(time) || time < 0)
-		return
-
-	transfer_controller.timerbuffer = time MINUTES
-	log_and_message_admins("set the initial round-end vote time to [time] minutes after round-start.")
-
-/datum/admins/proc/toggleroundendvote()
-	set category = "Server"
-	set desc = "Toggle the continue vote on/off. Toggling off will cause round-end to occur when the next continue vote time would be."
-	set name = "Toggle Continue Vote"
-
-	if (GAME_STATE > RUNLEVEL_GAME)
-		to_chat(usr, SPAN_WARNING("The game is already ending!"))
-		return
-
-	transfer_controller.do_continue_vote = !transfer_controller.do_continue_vote
-	log_and_message_admins("toggled the continue vote [transfer_controller.do_continue_vote ? "ON" : "OFF"]")

@@ -82,9 +82,6 @@
 	desc = "They seem to pulse slightly with an inner life."
 	icon_state = "eggs"
 	var/amount_grown = 0
-	var/spiders_min = 6
-	var/spiders_max = 12
-	var/spider_type = /obj/effect/spider/spiderling
 
 /obj/effect/spider/eggcluster/Initialize(mapload, atom/parent)
 	. = ..()
@@ -104,28 +101,25 @@
 	if(prob(70))
 		amount_grown += rand(0,2)
 	if(amount_grown >= 100)
-		var/num = rand(spiders_min, spiders_max)
+		var/num = rand(3,9)
 		var/obj/item/organ/external/O = null
 		if(istype(loc, /obj/item/organ/external))
 			O = loc
 
 		for(var/i=0, i<num, i++)
-			var/spiderling = new spider_type(src.loc, src)
+			var/spiderling = new /obj/effect/spider/spiderling(loc, src)
 			if(O)
 				O.implants += spiderling
 		qdel(src)
 
-/obj/effect/spider/eggcluster/small
-	spiders_min = 1
-	spiders_max = 3
 
-/obj/effect/spider/eggcluster/small/frost
-	spider_type = /obj/effect/spider/spiderling/frost
+/obj/effect/spider/spiderling/growing
+	growth_chance = 100
 
 /obj/effect/spider/spiderling
 	name = "spiderling"
 	desc = "It never stays still for long."
-	icon_state = "green"
+	icon_state = "guard"
 	anchored = FALSE
 	layer = BELOW_OBJ_LAYER
 	health = 3
@@ -138,27 +132,15 @@
 	var/growth_chance = 50 // % chance of beginning growth, and eventually become a beautiful death machine
 
 	var/shift_range = 6
-	var/castes = list(/mob/living/simple_animal/hostile/giant_spider/lurker = 0.1,
-						/mob/living/simple_animal/hostile/giant_spider/tunneler = 0.08,
-						/mob/living/simple_animal/hostile/giant_spider/pepper = 0.5,
-						/mob/living/simple_animal/hostile/giant_spider/webslinger = 1,
-						/mob/living/simple_animal/hostile/giant_spider/electric = 0.5,
-						/mob/living/simple_animal/hostile/giant_spider/thermic = 0.5,
-						/mob/living/simple_animal/hostile/giant_spider/frost = 0.5,
-						/mob/living/simple_animal/hostile/giant_spider/carrier = 2,
-						/mob/living/simple_animal/hostile/giant_spider/phorogenic = 0.01,
-						/mob/living/simple_animal/hostile/giant_spider = 2,
+	var/castes = list(/mob/living/simple_animal/hostile/giant_spider = 2,
 						/mob/living/simple_animal/hostile/giant_spider/guard = 2,
 						/mob/living/simple_animal/hostile/giant_spider/nurse = 2,
 						/mob/living/simple_animal/hostile/giant_spider/spitter = 2,
 						/mob/living/simple_animal/hostile/giant_spider/hunter = 1)
 
-
-/obj/effect/spider/spiderling/frost
-	castes = list(/mob/living/simple_animal/hostile/giant_spider/frost = 1)
-
 /obj/effect/spider/spiderling/Initialize(var/mapload, var/atom/parent)
 	greater_form = pickweight(castes)
+	icon_state = initial(greater_form.icon_state)
 	pixel_x = rand(-shift_range, shift_range)
 	pixel_y = rand(-shift_range, shift_range)
 
@@ -179,9 +161,6 @@
 
 /obj/effect/spider/spiderling/mundane/dormant
 	dormant = TRUE    // It lies in wait, hoping you will walk face first into its web
-
-/obj/effect/spider/spiderling/growing
-	growth_chance = 100
 
 /obj/effect/spider/spiderling/Destroy()
 	if(dormant)
@@ -232,7 +211,7 @@
 	if(check_vent(exit_vent))
 		return
 	if(prob(50))
-		audible_message(SPAN_NOTICE("You hear something squeezing through the ventilation ducts."))
+		src.visible_message("<span class='notice'>You hear something squeezing through the ventilation ducts.</span>",2)
 	forceMove(exit_vent)
 	addtimer(CALLBACK(src, .proc/end_vent_moving, exit_vent), travel_time)
 

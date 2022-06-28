@@ -1,40 +1,74 @@
-//trees
+/* Trees */
 /obj/structure/flora/tree
 	name = "tree"
 	anchored = TRUE
 	density = TRUE
 	pixel_x = -16
 	layer = ABOVE_HUMAN_LAYER
+	var/list/icon_states = list()
+
+/obj/structure/flora/tree/Initialize()
+	. = ..()
+	if(icon_states.len)
+		icon_state = pick(icon_states)
 
 /obj/structure/flora/tree/pine
 	name = "pine tree"
 	icon = 'icons/obj/flora/pinetrees.dmi'
 	icon_state = "pine_1"
+	icon_states = list("pine_1", "pine_2", "pine_3")
 
-/obj/structure/flora/tree/pine/New()
-	..()
-	icon_state = "pine_[rand(1, 3)]"
+/* Christmas trees */
 
 /obj/structure/flora/tree/pine/xmas
 	name = "\improper Christmas tree"
 	desc = "O Christmas tree, O Christmas tree..."
 	icon = 'icons/obj/flora/pinetrees.dmi'
 	icon_state = "pine_c"
+	icon_states = list()
 
-/obj/structure/flora/tree/pine/xmas/New()
-	..()
-	icon_state = "pine_c"
+/obj/structure/flora/tree/pine/xmas/presents
+	desc = "A wondrous decorated Christmas tree. It has presents!"
+	icon_state = "pine_p"
+	var/gift_type = /obj/item/a_gift
+	var/unlimited = FALSE
+	var/static/list/took_presents //shared between all xmas trees
+
+/obj/structure/flora/tree/pine/xmas/presents/Initialize()
+	. = ..()
+	if(!took_presents)
+		took_presents = list()
+
+/obj/structure/flora/tree/pine/xmas/presents/attack_hand(mob/living/user)
+	. = ..()
+	if(.)
+		return
+	if(!user.ckey)
+		return
+
+	if(took_presents[user.ckey] && !unlimited)
+		to_chat(user, "<span class='warning'>There are no presents with your name on.</span>")
+		return
+	to_chat(user, "<span class='warning'>After a bit of rummaging, you locate a gift with your name on it!</span>")
+
+	if(!unlimited)
+		took_presents[user.ckey] = TRUE
+
+	var/obj/item/G = new gift_type(src)
+	user.put_in_hands(G)
+
+/obj/structure/flora/tree/pine/xmas/presents/anything // Can contain pretty much anything. Do not place it outside of admemery.
+	desc = "A wondrous decorated Christmas tree. It has all sorts of presents!"
+	gift_type = /obj/item/a_gift/anything
+
+/* Dead Trees */
 
 /obj/structure/flora/tree/dead
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	icon_state = "tree_1"
+	icon_states = list("tree_1", "tree_2", "tree_3", "tree_4", "tree_5", "tree_6")
 
-/obj/structure/flora/tree/dead/New()
-	..()
-	icon_state = "tree_[rand(1, 6)]"
-
-
-//grass
+/* Grass */
 /obj/structure/flora/grass
 	name = "grass"
 	icon = 'icons/obj/flora/snowflora.dmi'
@@ -63,7 +97,7 @@
 	icon_state = "snowgrassall[rand(1, 3)]"
 
 
-//bushes
+/* Bushes */
 /obj/structure/flora/bush
 	name = "bush"
 	icon = 'icons/obj/flora/snowflora.dmi'

@@ -1320,7 +1320,6 @@
 /obj/structure/table/standard,
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/structure/window/basic/full{
-	health = 1;
 	name = "Safety Glass"
 	},
 /turf/simulated/floor/tiled,
@@ -4867,7 +4866,6 @@
 /obj/structure/window/basic/full{
 	anchored = 0;
 	health_current = 5;
-	maxhealth = 5;
 	name = "Safety Glass"
 	},
 /obj/effect/floor_decal/industrial/warning/full,

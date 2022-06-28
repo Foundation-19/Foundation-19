@@ -23,24 +23,26 @@
 		/obj/item/disk,
 		/obj/item/implant,
 		/obj/item/implanter,
-		/obj/item/reagent_containers/syringe,
-		/obj/item/reagent_containers/hypospray/autoinjector,
-		/obj/item/reagent_containers/glass/beaker/vial,
 		/obj/item/flame,
 		/obj/item/paper,
+		/obj/item/paper_bundle,
 		/obj/item/pen,
 		/obj/item/photo,
+		/obj/item/reagent_containers/dropper,
+		/obj/item/reagent_containers/syringe,
 		/obj/item/reagent_containers/pill,
+		/obj/item/reagent_containers/hypospray/autoinjector,
+		/obj/item/reagent_containers/glass/beaker/vial,
 		/obj/item/device/radio/headset,
-		/obj/item/device/encryptionkey,
+		/obj/item/device/paicard,
+		/obj/item/stamp,
 		/obj/item/key,
 		/obj/item/clothing/accessory/badge,
 		/obj/item/clothing/accessory/medal,
-		/obj/item/clothing/accessory/armor_tag,
+		/obj/item/clothing/accessory/armor/tag,
 		/obj/item/clothing/ring,
 		/obj/item/passport
 	)
-
 	slot_flags = SLOT_ID
 
 	var/obj/item/card/id/front_id = null
@@ -76,7 +78,7 @@
 		if(("id-"+front_id.icon_state) in icon_states(icon))
 			tiny_state = "id-"+front_id.icon_state
 		var/image/tiny_image = new/image(icon, icon_state = tiny_state)
-		tiny_image.appearance_flags = DEFAULT_APPEARANCE_FLAGS | RESET_COLOR
+		tiny_image.appearance_flags = RESET_COLOR
 		overlays += tiny_image
 
 /obj/item/storage/wallet/GetIdCard()

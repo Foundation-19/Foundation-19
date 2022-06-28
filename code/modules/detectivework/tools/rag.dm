@@ -121,25 +121,7 @@
 			user.do_attack_animation(src)
 			admin_attack_log(user, M, "used \the [src] (ignited) to attack", "was attacked using \the [src] (ignited)", "attacked with \the [src] (ignited)")
 			M.IgniteMob()
-		else if (reagents.total_volume)
-			if (iscarbon(target) && user.a_intent == I_HELP && flag == BP_HEAD)
-				var/mob/living/carbon/C = target
-				var/obj/item/organ/external/head/H = C.organs_by_name[BP_HEAD]
-				if (istype(H) && H.forehead_graffiti)
-					var/datum/reagent/R = /datum/reagent/acetone
-					var/wash_amount = 5
-					if (reagents.has_reagent(R, wash_amount))
-						H.forehead_graffiti = null
-						reagents.remove_reagent(R, wash_amount)
-						if (user == target)
-							var/datum/gender/G = gender_datums[M.get_gender()]
-							user.visible_message(SPAN_NOTICE("\The [user] scrubs the ink off [G.his] forehead."), SPAN_NOTICE("You scrub the ink off your forehead."))
-						else
-							user.visible_message(SPAN_NOTICE("\The [user] scrubs the ink off \the [M]'s forehead."), SPAN_NOTICE("You scrub the ink off \the [M]'s forehead."))
-					else
-						to_chat(user, SPAN_WARNING("You need to wet the rag with [wash_amount] units of [initial(R.name)] to get the ink off!"))
-					return
-
+		else if(reagents.total_volume)
 			if(user.zone_sel.selecting == BP_MOUTH)
 				if (!M.has_danger_grab(user))
 					to_chat(user, SPAN_WARNING("You need to have a firm grip on \the [target] before you can use \the [src] on them!"))
@@ -153,7 +135,7 @@
 				)
 
 				var/grab_time = 6 SECONDS
-				if (user.skill_check(SKILL_COMBAT, SKILL_ADEPT))
+				if (user.skill_check(SKILL_COMBAT, SKILL_TRAINED))
 					grab_time = 3 SECONDS
 
 				if (do_after(user, grab_time, target, DO_DEFAULT | DO_USER_UNIQUE_ACT | DO_PUBLIC_PROGRESS))
@@ -204,14 +186,11 @@
 		new /obj/effect/decal/cleanable/ash(get_turf(src))
 		qdel(src)
 
-
+//rag must have a minimum of 2 units welder fuel and at least 80% of the reagents must be welder fuel.
+//maybe generalize flammable reagents someday
 /obj/item/reagent_containers/glass/rag/proc/can_ignite()
-	var/fuel = 0
-	FOR_BLIND(datum/reagent/R, reagents?.reagent_list)
-		if (R.gas_flags & XGM_GAS_FUEL)
-			fuel += R.volume
-	return (fuel >= 2 && fuel >= reagents?.total_volume * 0.8)
-
+	var/fuel = reagents.get_reagent_amount(/datum/reagent/fuel)
+	return (fuel >= 2 && fuel >= reagents.total_volume*0.8)
 
 /obj/item/reagent_containers/glass/rag/proc/ignite()
 	if(on_fire)

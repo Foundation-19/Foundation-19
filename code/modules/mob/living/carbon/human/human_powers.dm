@@ -97,13 +97,13 @@
 		to_chat(src, SPAN_WARNING("You don't possess an innate healing ability."))
 		return
 	if(!aura.can_toggle())
-		to_chat(src, SPAN_WARNING("You can't toggle the healing at this time!"))
+		to_chat(src, SPAN_WARNING("Your body can't alter its healing processes at this time!"))
 		return
 	aura.toggle()
 	if (aura.innate_heal)
-		to_chat(src, "<span class='alium'>You are now using nutrients to regenerate.</span>")
+		to_chat(src, SPAN_CLASS("alium", "You shift your body's healing processes to use nutrients to regenerate."))
 	else
-		to_chat(src, "<span class='alium'>You are no longer using nutrients to regenerate.</span>")
+		to_chat(src, SPAN_CLASS("alium", "You shift your body's healing processes to no longer use nutrients to regenerate."))
 
 /mob/living/carbon/human/proc/change_colour()
 	set category = "Abilities"

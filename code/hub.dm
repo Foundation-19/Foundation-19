@@ -3,7 +3,7 @@
  * You can also toggle visibility from in-game with toggle-hub-visibility; be aware that it takes a few minutes for the hub go
  */
 	hub = "Exadv1.spacestation13"
-	name = "SCP13 - Foundation 19"
+	name = "Space Station 13 - TeguStation"
 
 /world/proc/update_hub_visibility(new_status)
 	if (isnull(new_status))

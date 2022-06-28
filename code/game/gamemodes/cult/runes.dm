@@ -262,8 +262,8 @@
 	anchored = TRUE
 	density = TRUE
 	unacidable = TRUE
-	var/obj/effect/rune/wall/rune
 	health_max = 200
+	var/obj/effect/rune/wall/rune
 
 /obj/effect/cultwall/New(var/loc, var/bcolor)
 	..()
@@ -292,11 +292,8 @@
 	if(istype(I, /obj/item/nullrod))
 		user.visible_message("<span class='notice'>\The [user] touches \the [src] with \the [I], and it disappears.</span>", "<span class='notice'>You disrupt the vile magic with the deadening field of \the [I].</span>")
 		qdel(src)
-	else if(I.force)
-		user.visible_message("<span class='notice'>\The [user] hits \the [src] with \the [I].</span>", "<span class='notice'>You hit \the [src] with \the [I].</span>")
-		damage_health(I.force, I.damtype)
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-		user.do_attack_animation(src)
+		return
+	..()
 
 /obj/effect/cultwall/bullet_act(var/obj/item/projectile/Proj)
 	damage_health(Proj.get_structure_damage(), Proj.damage_type)

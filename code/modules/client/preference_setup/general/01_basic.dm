@@ -5,7 +5,7 @@ datum/preferences
 	var/metadata = ""
 	var/real_name						//our character's name
 	var/be_random_name = 0				//whether we are a random name every round
-	var/dnumber = 0
+
 /datum/category_item/player_setup_item/physical/basic
 	name = "Basic"
 	sort_order = 1
@@ -52,7 +52,6 @@ datum/preferences
 	. += "<b>Gender:</b> <a href='?src=\ref[src];gender=1'><b>[gender2text(pref.gender)]</b></a><br>"
 	. += "<b>Age:</b> <a href='?src=\ref[src];age=1'>[pref.age]</a><br>"
 	. += "<b>Spawn Point</b>: <a href='?src=\ref[src];spawnpoint=1'>[pref.spawnpoint]</a>"
-	. += "<b> D number (For D-class)</b>: <a href='?src=\ref[src];dnumber=1'>[pref.dnumber]</a>"
 	. = jointext(.,null)
 
 /datum/category_item/player_setup_item/physical/basic/OnTopic(var/href,var/list/href_list, var/mob/user)
@@ -94,13 +93,6 @@ datum/preferences
 			pref.age = max(min(round(text2num(new_age)), S.max_age), S.min_age)
 			pref.skills_allocated = pref.sanitize_skills(pref.skills_allocated)		// The age may invalidate skill loadouts
 			return TOPIC_REFRESH
-
-	else if(href_list["dnumber"])
-		var/new_number = input(user, "Choose your character's D-class number)", CHARACTER_PREFERENCE_INPUT_TITLE, pref.dnumber) as num|null
-		if(new_number <= 9999 && new_number >= 100)
-			if(new_number && CanUseTopic(user))
-				pref.dnumber = new_number		// The age may invalidate skill loadouts
-				return TOPIC_REFRESH
 
 	else if(href_list["spawnpoint"])
 		var/list/spawnkeys = list()

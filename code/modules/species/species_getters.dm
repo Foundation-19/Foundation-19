@@ -44,10 +44,6 @@
 	return ((H && H.isSynthetic()) ? "gives one shrill beep before falling lifeless." : death_message)
 
 /datum/species/proc/get_ssd(var/mob/living/carbon/human/H)
-	if(!H.key && H.ignore_ssd_check)
-		show_ssd = null
-		show_coma = null
-		return
 	if (H.key)
 		return ((H && H.isSynthetic()) ? "flashing a 'system offline' glyph on their monitor" : show_ssd)
 	else

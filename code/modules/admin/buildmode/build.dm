@@ -33,16 +33,6 @@
 	if (parameters["right"])
 		if (isturf(target))
 			return
-		if (isobserver(target)) // don't delete ghosts because it causes very weird things to happen
-			return
-		if (ismob(target))
-			var/mob/M = target
-			if (M.ckey && !QDELETED(M))
-				var/alert_result = alert(user, "[M] is a player-controlled mob. Confirm?", "Build Mode", "Yes, Delete", "Cancel")
-				if (alert_result != "Yes, Delete" || QDELETED(M))
-					return
-			to_chat(M, SPAN_DEBUG(FONT_LARGE("OOC: You have been deleted by an admin using build mode. If this seems to be in error, please adminhelp and let them know.")))
-			M.ghostize()
 		qdel(target)
 	else if (parameters["left"])
 		if (!build_type)
@@ -57,7 +47,7 @@
 			instance.set_dir(host.dir)
 
 /datum/build_mode/build/CanUseTopic(mob/user)
-	if (!isadmin(user))
+	if (!is_admin(user))
 		return STATUS_CLOSE
 	return ..()
 

@@ -26,9 +26,18 @@
 	bleed_colour = "#816e12"
 
 	var/static/list/chemical_types = list(
-		"bicaridine" = /datum/reagent/bicaridine,
-		"hyperzine" =  /datum/reagent/hyperzine,
-		"tramadol" =   /datum/reagent/tramadol
+		"inaprovaline" =   /datum/reagent/medicine/inaprovaline,
+		"bicaridine" = /datum/reagent/medicine/bicaridine,
+		"hyperzine" =  /datum/reagent/medicine/stimulant/hyperzine,
+		"tramadol" =   /datum/reagent/medicine/painkiller/tramadol,
+		"dermaline" =   /datum/reagent/medicine/dermaline,
+		"dylovene" =   /datum/reagent/medicine/dylovene,
+		"dexalin plus" =   /datum/reagent/medicine/dexalin_plus,
+		"Alkysine" =   /datum/reagent/medicine/alkysine,
+		"peridaxon" =   /datum/reagent/medicine/peridaxon,
+		"spaceacillin" =   /datum/reagent/medicine/spaceacillin,
+		"iron" =   /datum/reagent/iron,
+		"carbon" =   /datum/reagent/carbon,
 	)
 
 	var/generation = 1

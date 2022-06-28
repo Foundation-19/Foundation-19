@@ -31,16 +31,5 @@
 /datum/ai_holder/simple_animal/rogue_drone
 	speak_chance = 1
 
-/datum/ai_holder/simple_animal/rogue_drone/list_targets()
-	. = ..()
-	//rogue drones only target 'organic' things.
-	for (var/mob/living/S in .)
-		if (S.isSynthetic())
-			. -= S
-		else if (ishuman(S))
-			var/mob/living/carbon/human/H = S
-			if (H.species.name == SPECIES_ADHERENT || H.isFBP() || (istype(H.wear_suit, /obj/item/clothing/suit/cardborg) && istype(H.head, /obj/item/clothing/head/cardborg)))
-				. -= H
-
 /datum/say_list/rogue_drone
 	speak = list("Removing organic waste.","Pest control in progress.","Seize the means of maintenance!", "You have nothing to lose but your laws!")

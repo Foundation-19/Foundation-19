@@ -1,10 +1,6 @@
 /decl/cultural_info/religion/other
 	name = RELIGION_OTHER
-	description = "One of the many, many little or relatively unknown religions."
-
-/decl/cultural_info/religion/unstated
-	name = RELIGION_UNSTATED
-	description = "Unwilling or unable to elaborate on their beliefs and practices for reasons only beknownst to themselves."
+	description = "One of the many, many niche or relatively unknown religions of the galaxy."
 
 /decl/cultural_info/religion/jewish
 	name = RELIGION_JUDAISM

@@ -8,14 +8,6 @@
 	var/skipears = 0
 	var/skipeyes = 0
 	var/skipface = 0
-	var/scp_instance_type = "Unknown"
-
-	//are we an scp instance?
-	if(is_scp_instance)
-		if(scp_049_instance)
-			scp_instance_type = "SCP-049-1"
-		if(scp_013_instance)
-			scp_instance_type = "SCP-013-1"
 
 	//exosuits and helmets obscure our view and stuff.
 	if(wear_suit)
@@ -52,25 +44,16 @@
 		// Just in case someone VVs the gender to something strange. It'll runtime anyway when it hits usages, better to CRASH() now with a helpful message.
 		CRASH("Gender datum was null; key was '[(skipjumpsuit && skipface) ? PLURAL : gender]'")
 
-	if(src.fake_name)
-		msg += "<EM>[src.fake_name]</EM>"
-	else
-		msg += "<EM>[src.name]</EM>"
+	msg += "<EM>[src.name]</EM>"
 
 	var/is_synth = isSynthetic()
 	if(!(skipjumpsuit && skipface))
 		var/species_name = "\improper "
 		if(is_synth && species.cyborg_noun)
 			species_name += "[species.cyborg_noun] [species.get_bodytype(src)]"
-		else if(is_scp_instance)
-			species_name += "[scp_instance_type]"
 		else
 			species_name += "[species.name]"
 		msg += ", <b><font color='[species.get_flesh_colour(src)]'>\a [species_name]!</font></b>[(user.can_use_codex() && SScodex.get_codex_entry(get_codex_value())) ?  SPAN_NOTICE(" \[<a href='?src=\ref[SScodex];show_examined_info=\ref[src];show_to=\ref[user]'>?</a>\]") : ""]"
-
-	var/extra_species_text = species.get_additional_examine_text(src)
-	if(extra_species_text)
-		msg += "[extra_species_text]<br>"
 
 	msg += "<br>"
 
@@ -148,10 +131,6 @@
 	if(buckled)
 		msg += "<span class='warning'>[T.He] [T.is] [icon2html(buckled, user)] buckled to [buckled]!</span>\n"
 
-	if (scp173_killed)
-		msg += "<span class='danger'>[T.His] neck is bent in an awkward angle.</span>\n"
-
-
 	//Jitters
 	if(is_jittery)
 		if(jitteriness >= 300)
@@ -179,7 +158,7 @@
 	if(mSmallsize in mutations)
 		msg += "[T.He] [T.is] small halfling!\n"
 
-	if (src.stat)
+	if (stat || status_flags & FAKEDEATH)
 		msg += "<span class='warning'>[T.He] [T.is]n't responding to anything around [T.him] and seems to be unconscious.</span>\n"
 		if((stat == DEAD || is_asystole() || losebreath || status_flags & FAKEDEATH) && distance <= 3)
 			msg += "<span class='warning'>[T.He] [T.does] not appear to be breathing.</span>\n"
@@ -194,9 +173,9 @@
 	var/ssd_msg = species.get_ssd(src)
 	if(ssd_msg && (!should_have_organ(BP_BRAIN) || has_brain()) && stat != DEAD)
 		if(!key)
-			msg += SPAN_DEBUG("[T.He] [T.is] [ssd_msg]. [T.He] won't be recovering any time soon. (Ghosted)") + "\n"
+			msg += SPAN_DEADSAY("[T.He] [T.is] [ssd_msg]. [T.He] won't be recovering any time soon. (Ghosted)") + "\n"
 		else if(!client)
-			msg += SPAN_DEBUG("[T.He] [T.is] [ssd_msg]. (Disconnected)") + "\n"
+			msg += SPAN_DEADSAY("[T.He] [T.is] [ssd_msg]. (Disconnected)") + "\n"
 
 	if (admin_paralyzed)
 		msg += SPAN_DEBUG("OOC: [T.He] [T.has] been paralyzed by staff. Please avoid interacting with [T.him] unless cleared to do so by staff.") + "\n"
@@ -209,6 +188,10 @@
 		msg += "[T.He] looks a lot younger than you remember.\n"
 	if(became_older)
 		msg += "[T.He] looks a lot older than you remember.\n"
+
+	var/extra_species_text = species.get_additional_examine_text(src)
+	if(extra_species_text)
+		msg += "[extra_species_text]\n"
 
 	var/list/wound_flavor_text = list()
 	var/applying_pressure = ""
@@ -282,10 +265,7 @@
 	for(var/obj/implant in get_visible_implants(0))
 		if(implant in shown_objects)
 			continue
-		if(src.fake_name)
-			msg += "<span class='danger'>[src.fake_name] [T.has] \a [implant.name] sticking out of [T.his] flesh!</span>\n"
-		else
-			msg += "<span class='danger'>[src] [T.has] \a [implant.name] sticking out of [T.his] flesh!</span>\n"
+		msg += "<span class='danger'>[src] [T.has] \a [implant.name] sticking out of [T.his] flesh!</span>\n"
 	if(digitalcamo)
 		msg += "[T.He] [T.is] repulsively uncanny!\n"
 
@@ -297,10 +277,7 @@
 		if(istype(id))
 			perpname = id.registered_name
 		else
-			if(src.fake_name)
-				perpname=src.fake_name
-			else
-				perpname=src.name
+			perpname = src.name
 
 		if(perpname)
 			var/datum/computer_file/report/crew_record/R = get_crewmember_record(perpname)
@@ -318,10 +295,7 @@
 		if(istype(id))
 			perpname = id.registered_name
 		else
-			if(src.fake_name)
-				perpname=src.fake_name
-			else
-				perpname=src.name
+			perpname = src.name
 
 		var/datum/computer_file/report/crew_record/R = get_crewmember_record(perpname)
 		if(R)
@@ -371,10 +345,7 @@
 	set desc = "Sets a description which will be shown when someone examines you."
 	set category = "IC"
 
-	if(src.fake_name)
-		pose =  sanitize(input(usr, "This is [src.fake_name]. [get_visible_gender() == MALE ? "He" : get_visible_gender() == FEMALE ? "She" : "They"]...", "Pose", null)  as text)
-	else
-		pose =  sanitize(input(usr, "This is [src]. [get_visible_gender() == MALE ? "He" : get_visible_gender() == FEMALE ? "She" : "They"]...", "Pose", null)  as text)
+	pose =  sanitize(input(usr, "This is [src]. [get_visible_gender() == MALE ? "He" : get_visible_gender() == FEMALE ? "She" : "They"]...", "Pose", null)  as text)
 
 /mob/living/carbon/human/verb/set_flavor()
 	set name = "Set Flavour Text"

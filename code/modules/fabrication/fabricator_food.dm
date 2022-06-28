@@ -12,7 +12,7 @@
 	machine_name = "replicator"
 	machine_desc = "A voice-operated machine that dispenses bland food from raw nutriment."
 
-/obj/machinery/fabricator/replicator/replicator/Initialize()
+/obj/machinery/fabricator/replicator/Initialize()
 	. = ..()
 	if (prob(1))
 		machine_desc = "\
@@ -27,7 +27,7 @@
 		addtimer(CALLBACK(src, /obj/machinery/fabricator/replicator/proc/state_status), 2 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
 	else if(findtext(true_text, "menu"))
 		addtimer(CALLBACK(src, /obj/machinery/fabricator/replicator/proc/state_menu), 2 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
-	else 
+	else
 		for(var/datum/fabricator_recipe/recipe in SSfabrication.get_recipes(fabricator_class))
 			if(recipe.hidden && !(fab_status_flags & FAB_HACKED))
 				continue

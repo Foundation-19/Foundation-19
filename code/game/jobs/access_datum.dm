@@ -10,39 +10,6 @@
 /*****************
 * Station access *
 *****************/
-/var/const/level_1 = "LEVEL_1" //1
-/var/const/level_2 = "LEVEL_2" //2
-/var/const/level_3 = "LEVEL_3" //3
-/var/const/level_4 = "LEVEL_4" //4
-/var/const/level_5 = "LEVEL_5" //5
-
-
-/datum/access/level_1
-	id = level_1
-	desc = "Level 1 Access"
-	region = ACCESS_REGION_LEVEL_1
-
-/datum/access/level_2
-	id = level_2
-	desc = "Level 2 Access"
-	region = ACCESS_REGION_LEVEL_2
-
-/datum/access/level_3
-	id = level_3
-	desc = "Level 3 Access"
-	region = ACCESS_REGION_LEVEL_3
-
-/datum/access/level_4
-	id = level_4
-	desc = "Level 4 Access"
-	region = ACCESS_REGION_LEVEL_4
-
-/datum/access/level_5
-	id = level_5
-	desc = "Level 5 Access"
-	region = ACCESS_REGION_LEVEL_5
-
-//most everything below is depreciated
 /var/const/access_security = "ACCESS_SECURITY" //1
 /datum/access/security
 	id = access_security
@@ -286,13 +253,7 @@
 /var/const/access_network = "ACCESS_NETWORK" //42
 /datum/access/network
 	id = access_network
-	desc = "Network Operations"
-	region = ACCESS_REGION_RESEARCH
-
-/var/const/access_network_admin = "ACCESS_NETWORK_ADMIN"
-/datum/access/network_admin
-	id = access_network_admin
-	desc = "Network Administration"
+	desc = "Primary Network"
 	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_surgery = "ACCESS_SURGERY" //45
@@ -500,4 +461,18 @@
 /datum/access/merchant
 	id = access_merchant
 	desc = "Merchant"
+	access_type = ACCESS_TYPE_NONE
+
+/var/const/access_psiadvisor = "ACCESS_PSIADVISOR"
+/datum/access/psiadvisor
+	id = access_psiadvisor
+	desc = "Foundation Advisor"
+	region = ACCESS_REGION_COMMAND
+	access_type = ACCESS_TYPE_NONE
+
+// Ascent access.
+/var/const/access_ascent = "ACCESS_ASCENT"
+/datum/access/ascent
+	id = access_ascent
+	desc = "Ascent Materiel"
 	access_type = ACCESS_TYPE_NONE

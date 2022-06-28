@@ -24,7 +24,7 @@
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/torch/silver)
 	pda_type = /obj/item/modular_computer/pda/heads/hop
-	
+
 /decl/hierarchy/outfit/job/torch/crew/command/XO/New()
 	..()
 	BACKPACK_OVERRIDE_COMMAND
@@ -113,6 +113,18 @@
 	l_ear = /obj/item/device/radio/headset/sea
 	id_types = list(/obj/item/card/id/torch/crew/sea)
 	pda_type = /obj/item/modular_computer/pda/heads
+
+/decl/hierarchy/outfit/job/torch/crew/command/psiadvisor
+	name = OUTFIT_JOB_NAME("Foundation Advisor")
+	uniform = /obj/item/clothing/under/det/grey
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/foundation
+	gloves = /obj/item/clothing/gloves/white
+	shoes = /obj/item/clothing/shoes/dress
+	pda_type = /obj/item/modular_computer/pda/heads
+	id_types = list(
+		/obj/item/card/id/torch/crew/psiadvisor,
+		/obj/item/card/id/foundation_civilian
+		)
 
 /decl/hierarchy/outfit/job/torch/crew/command/bridgeofficer
 	name = OUTFIT_JOB_NAME("Bridge Officer")

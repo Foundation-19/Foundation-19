@@ -1,12 +1,12 @@
 #! /usr/bin/awk -f
 
-# Finds incorrect indentation of absolute path definitions in DM code
+# Finds incorrect indentation of absolute path definitions in DM code, as well as incorrect indentations
 # For example, the following fails on the indicated line:
 
 #/datum/path/foo
 #	x = "foo"
 # /datum/path/bar // FAIL
-#	x = "bar"
+#	 x = "bar"
 
 {
 	if ( comma != 1 ) { # No comma/'list('/etc at the end of the previous line
@@ -14,6 +14,11 @@
 			print FILENAME, ":", $0
 			fail = 1
 		}
+	}
+
+	if ( $0 ~ /^( {4,})/ ) { # We have incorrect indentationing
+		print FILENAME, ":", $0
+		fail = 1
 	}
 
 	if ($0 ~ /,[\t ]*\\?\r?$/ || # comma at EOL

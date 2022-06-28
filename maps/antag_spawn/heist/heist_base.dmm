@@ -37,6 +37,7 @@
 /area/map_template/syndicate_mothership/raider_base)
 "ai" = (
 /obj/structure/table/standard,
+/obj/machinery/stove/hotplate,
 /turf/unsimulated/floor{
 	icon_state = "white"
 	},
@@ -876,7 +877,7 @@
 /obj/item/clothing/head/helmet/space/vox/stealth,
 /obj/item/clothing/shoes/magboots/vox,
 /obj/item/clothing/gloves/vox,
-/obj/random/glasses,
+/obj/item/clothing/glasses/thermal/plain/monocle,
 /obj/item/clothing/under/vox/vox_robes,
 /obj/item/gun/projectile/dartgun/vox/medical,
 /turf/unsimulated/floor{
@@ -1279,10 +1280,9 @@
 "cT" = (
 /obj/structure/table/rack,
 /obj/random/raider/hardsuit,
-/obj/random/glasses,
+/obj/item/clothing/glasses/thermal/plain/monocle,
 /obj/item/device/suit_cooling_unit,
 /obj/item/device/suit_cooling_unit,
-/obj/random/glasses,
 /turf/simulated/floor/shuttle/red,
 /area/map_template/skipjack_station/start)
 "cU" = (
@@ -1560,7 +1560,7 @@
 /obj/structure/table/rack,
 /obj/item/grenade/empgrenade,
 /obj/item/grenade/flashbang,
-/obj/item/grenade/spawnergrenade/manhacks,
+/obj/item/grenade/spawnergrenade/viscerator,
 /obj/random/raider/biggun,
 /turf/simulated/floor/shuttle/red,
 /area/map_template/skipjack_station/start)
@@ -1635,7 +1635,6 @@
 "dN" = (
 /obj/structure/table/steel,
 /obj/random/maintenance,
-/obj/item/clothing/glasses/thermal,
 /turf/simulated/floor/shuttle/red,
 /area/map_template/skipjack_station/start)
 "dO" = (

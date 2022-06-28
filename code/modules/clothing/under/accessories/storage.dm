@@ -3,13 +3,12 @@
 	icon_state = "webbing"
 	slot = ACCESSORY_SLOT_UTILITY
 	w_class = ITEM_SIZE_NORMAL
-	accessory_flags = ACCESSORY_REMOVABLE | ACCESSORY_HIGH_VISIBILITY
+	high_visibility = 1
 	on_rolled = list("down" = "none")
 
 	var/obj/item/storage/internal/container
 	var/max_w_class = ITEM_SIZE_SMALL
 	var/slots
-
 
 /obj/item/clothing/accessory/storage/Initialize()
 	. = ..()
@@ -23,30 +22,25 @@
 	else
 		container = new /obj/item/storage/internal/pockets (src, slots, max_w_class)
 
-
 /obj/item/clothing/accessory/storage/attack_hand(mob/user)
 	if (container)
-		if (parent)
+		if (has_suit)
 			container.open(user)
 		else if (container.handle_attack_hand(user))
 			..(user)
 
-
 /obj/item/clothing/accessory/storage/MouseDrop(obj/over_object)
-	if (!parent && container?.handle_mousedrop(usr, over_object))
+	if (!has_suit && container?.handle_mousedrop(usr, over_object))
 		..(over_object)
-
 
 /obj/item/clothing/accessory/storage/attackby(obj/item/I, mob/user)
 	if (container)
 		return container.attackby(I, user)
 
-
 /obj/item/clothing/accessory/storage/emp_act(severity)
 	if (container)
 		container.emp_act(severity)
 	..()
-
 
 /obj/item/clothing/accessory/storage/attack_self(mob/user)
 	add_fingerprint(user)
@@ -64,22 +58,12 @@
 	container.finish_bulk_removal()
 	visible_message("\The [user] empties \the [src].", range = 5)
 
-
-/obj/item/clothing/accessory/storage/pockets
-	name = "pockets"
-	desc = "A bag-like receptacle fastened to an article of clothing to hold small items."
-	icon_state = ""
-	slots = 2 STORAGE_FREEFORM
-	accessory_flags = ACCESSORY_HIGH_VISIBILITY | ACCESSORY_HIDDEN
-
-
 /obj/item/clothing/accessory/storage/webbing
 	name = "webbing"
 	desc = "A sturdy mess of straps and buckles you can clip things to."
 	icon_state = "webbing"
 	slots = 3 STORAGE_SLOTS
 	body_location = UPPER_TORSO
-
 
 /obj/item/clothing/accessory/storage/webbing_large
 	name = "large webbing"
@@ -88,14 +72,12 @@
 	slots = 4 STORAGE_FREEFORM
 	body_location = UPPER_TORSO
 
-
 /obj/item/clothing/accessory/storage/black_vest
 	name = "black webbing vest"
 	desc = "A robust black vest with lots of small pockets and pouches."
 	icon_state = "vest_black"
 	slots = 5 STORAGE_FREEFORM
 	body_location = UPPER_TORSO
-
 
 /obj/item/clothing/accessory/storage/brown_vest
 	name = "brown webbing vest"
@@ -104,14 +86,12 @@
 	slots = 5 STORAGE_FREEFORM
 	body_location = UPPER_TORSO
 
-
 /obj/item/clothing/accessory/storage/white_vest
 	name = "white webbing vest"
 	desc = "A stoic white vest with lots of small pockets and pouches."
 	icon_state = "vest_white"
 	slots = 5 STORAGE_FREEFORM
 	body_location = UPPER_TORSO
-
 
 /obj/item/clothing/accessory/storage/black_drop
 	name = "black drop bag"
@@ -120,14 +100,12 @@
 	slots = 5 STORAGE_FREEFORM
 	body_location = LEGS
 
-
 /obj/item/clothing/accessory/storage/brown_drop
 	name = "brown drop bag"
 	desc = "A sturdy brown leg bag with plenty of room inside."
 	icon_state = "thigh_brown"
 	slots = 5 STORAGE_FREEFORM
 	body_location = LEGS
-
 
 /obj/item/clothing/accessory/storage/white_drop
 	name = "white drop bag"
@@ -136,14 +114,12 @@
 	slots = 5 STORAGE_FREEFORM
 	body_location = LEGS
 
-
 /obj/item/clothing/accessory/storage/knifeharness
 	name = "decorated harness"
 	desc = "A heavily decorated harness of sinew and leather with two knife loops."
 	icon_state = "unathiharness2"
 	slots = 2 STORAGE_SLOTS
 	max_w_class = ITEM_SIZE_NORMAL
-
 
 /obj/item/clothing/accessory/storage/knifeharness/Initialize()
 	. = ..()
@@ -156,14 +132,12 @@
 		for (var/i = 1 to abs(slots))
 			new /obj/item/material/knife/table/unathi (container)
 
-
 /obj/item/clothing/accessory/storage/bandolier
 	name = "bandolier"
 	desc = "A lightweight bandolier with straps for holding ammunition or other small objects."
 	icon_state = "bandolier"
 	slots = 10 STORAGE_SLOTS
 	max_w_class = ITEM_SIZE_NORMAL
-
 
 /obj/item/clothing/accessory/storage/bandolier/Initialize()
 	. = ..()
@@ -195,17 +169,9 @@
 			/obj/item/storage/pill_bottle
 		)
 
-
 /obj/item/clothing/accessory/storage/bandolier/safari/Initialize()
 	. = ..()
 	INIT_SKIP_QDELETED
 	if (container)
 		for(var/i = 1 to abs(slots))
 			new /obj/item/net_shell (container)
-
-/obj/item/clothing/accessory/storage/bandolier/beanbag/Initialize()
-    . = ..()
-    INIT_SKIP_QDELETED
-    if (container)
-        for(var/i = 1 to abs(slots))
-            new /obj/item/ammo_magazine/shotholder/beanbag (container)

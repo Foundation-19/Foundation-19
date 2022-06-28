@@ -5,7 +5,7 @@
 /datum/vote/custom/can_run(mob/creator, automatic)
 	if(automatic)
 		return FALSE
-	if(!isadmin(creator))
+	if(!is_admin(creator))
 		return FALSE
 	if(abort)
 		return FALSE

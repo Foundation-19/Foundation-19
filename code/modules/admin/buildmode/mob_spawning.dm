@@ -89,7 +89,7 @@ GLOBAL_LIST_INIT(mob_spawners, list())
 		ui.set_auto_update(1)
 
 /datum/build_mode/mob_mode/CanUseTopic(mob/user)
-	if (!isadmin(user))
+	if (!is_admin(user))
 		return STATUS_CLOSE
 	return ..()
 

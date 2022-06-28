@@ -47,6 +47,13 @@
 	if(!isrobot(occupant) && !ishuman(occupant))
 		return
 
+	var/obj/item/cell/cell = get_cell()
+	if(!cell || (cell.charge <= 0))
+		go_out()
+		visible_message(SPAN_WARNING("\The [src] has ran out of charge!"))
+		playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 50, 1)
+		return
+
 	// If we have repair capabilities, repair any damage.
 	if(weld_rate && occupant.getBruteLoss())
 		var/repair = weld_rate - use_power_oneoff(weld_power_use * weld_rate, LOCAL) / weld_power_use
@@ -146,8 +153,41 @@
 			return "statn_c60"
 		if(80 to 98)
 			return "statn_c80"
-		if(90 to 110)
+		if(98 to 110)
 			return "statn_c100"
+
+/obj/machinery/recharge_station/attack_ghost(mob/user)
+	return
+
+/obj/machinery/recharge_station/attack_hand(mob/user)
+	if(occupant)
+		go_out()
+	return TRUE
+
+/obj/machinery/recharge_station/attack_robot(mob/user)
+	return attack_hand(user)
+
+/obj/machinery/recharge_station/attack_ai(mob/user)
+	return attack_hand(user)
+
+/obj/machinery/recharge_station/MouseDrop_T(var/mob/target, var/mob/user)
+	if(!CanMouseDrop(target, user))
+		return
+	if(!istype(target))
+		return
+	if(target.buckled)
+		to_chat(user, SPAN_WARNING("Unbuckle the subject before attempting to move them."))
+		return
+	if(panel_open)
+		to_chat(user, SPAN_WARNING("Close the maintenance panel before attempting to place the subject in the sleeper."))
+		return
+	if(occupant)
+		to_chat(user, SPAN_WARNING("\The [src] is already occupied."))
+		return
+	if(target != user)
+		if(!do_after(user, 20, target))
+			return
+	go_in(target)
 
 /obj/machinery/recharge_station/on_update_icon()
 	..()
@@ -166,16 +206,18 @@
 	last_overlay_state = overlay_state()
 	overlays = list(image(overlay_icon, overlay_state()))
 
-/obj/machinery/recharge_station/Bumped(var/mob/living/silicon/robot/R)
-	go_in(R)
-
 /obj/machinery/recharge_station/proc/go_in(var/mob/M)
-
-
 	if(occupant)
 		return
 
 	if(!hascell(M))
+		playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 50, 1)
+		return
+
+	var/obj/item/cell/cell = get_cell()
+	if(!cell || (cell.charge <= 0))
+		visible_message(SPAN_WARNING("\The [src] is out of charge!"))
+		playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 50, 1)
 		return
 
 	add_fingerprint(M)
@@ -207,24 +249,3 @@
 	occupant.reset_view()
 	occupant = null
 	update_icon()
-
-/obj/machinery/recharge_station/verb/move_eject()
-	set category = "Object"
-	set name = "Eject Recharger"
-	set src in oview(1)
-
-	if(usr.incapacitated())
-		return
-
-	go_out()
-	add_fingerprint(usr)
-	return
-
-/obj/machinery/recharge_station/verb/move_inside()
-	set category = "Object"
-	set name = "Enter Recharger"
-	set src in oview(1)
-	if (usr.buckled())
-		return
-
-	go_in(usr)

@@ -70,10 +70,13 @@ GLOBAL_VAR(spawntypes)
 	if(!istype(victim))
 		return
 	var/area/A = get_area(victim)
-	for(var/obj/machinery/cryopod/C in A)
+	var/list/cryopods = list()
+	for(var/obj/machinery/cryopod/CR in A)
+		cryopods += CR
+	for(var/obj/machinery/cryopod/C in shuffle(cryopods))
 		if(!C.occupant)
 			C.set_occupant(victim, 1)
-			victim.Sleeping(rand(1,3))
+			victim.Sleeping(2)
 			to_chat(victim,SPAN_NOTICE("You are slowly waking up from the cryostasis aboard [GLOB.using_map.full_name]. It might take a few seconds."))
 			return
 
@@ -130,30 +133,3 @@ GLOBAL_VAR(spawntypes)
 /datum/spawnpoint/lcz/New()
 	..()
 	turfs = GLOB.latejoin_lcz
-
-/datum/spawnpoint/security
-	display_name = "Security Base"
-	msg = "has started the shift in the Security Base dorms"
-	restrict_job = list(
-	"Security Commander",
-	"Security Lieutenant",
-	"Security Officer",
-	"Junior Security Officer")
-	disallow_job = list(
-	"Class D",
-	"Cell Guard",
-	"Chief Engineer",
-	"Senior Engineer",
-	"Containment Engineer",
-	"Junior Engineer",
-	"Engineer",
-	"Chief Medical Officer",
-	"Surgeon",
-	"Virologist",
-	"Medical Doctor",
-	"Chemist"
-	)
-
-/datum/spawnpoint/security/New()
-	..()
-	turfs = GLOB.latejoin_security

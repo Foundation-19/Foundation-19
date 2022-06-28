@@ -69,7 +69,6 @@ FLOOR SAFES
 
 
 /obj/structure/safe/attack_hand(mob/user as mob)
-	user.set_machine(src)
 	var/dat = "<center>"
 	dat += "<a href='?src=\ref[src];open=1'>[open ? "Close" : "Open"] [src]</a> | <a href='?src=\ref[src];decrement=1'>-</a> [dial * 5] <a href='?src=\ref[src];increment=1'>+</a>"
 	if(open)
@@ -78,8 +77,9 @@ FLOOR SAFES
 			var/obj/item/P = contents[i]
 			dat += "<tr><td><a href='?src=\ref[src];retrieve=\ref[P]'>[P.name]</a></td></tr>"
 		dat += "</table></center>"
-	show_browser(user, "<html><head><title>[name]</title></head><body>[dat]</body></html>", "window=safe;size=350x300")
-
+	var/datum/browser/popup = new(user, "safe", "Safe", 350, 300)
+	popup.set_content(dat)
+	popup.open()
 
 /obj/structure/safe/Topic(href, href_list)
 	if(!ishuman(usr))	return
@@ -94,7 +94,7 @@ FLOOR SAFES
 			to_chat(user, "<span class='notice'>You [open ? "close" : "open"] [src].</span>")
 			open = !open
 			update_icon()
-			updateUsrDialog()
+			attack_hand(user)
 			return
 		else
 			to_chat(user, "<span class='notice'>You can't [open ? "close" : "open"] [src], the lock is engaged!</span>")
@@ -111,7 +111,7 @@ FLOOR SAFES
 				if(canhear)
 					to_chat(user, "<span class='notice'>You hear a [pick("click", "chink", "clink")] from [src].</span>")
 			check_unlocked(user, canhear)
-		updateUsrDialog()
+		attack_hand(user)
 		return
 
 	if(href_list["increment"])
@@ -125,17 +125,15 @@ FLOOR SAFES
 				if(canhear)
 					to_chat(user, "<span class='notice'>You hear a [pick("click", "chink", "clink")] from [src].</span>")
 			check_unlocked(user, canhear)
-		updateUsrDialog()
+		attack_hand(user)
 		return
 
 	if(href_list["retrieve"])
-		show_browser(user, "", "window=safe") // Close the menu
-
 		var/obj/item/P = locate(href_list["retrieve"]) in src
 		if(open)
 			if(P && in_range(src, user))
 				user.put_in_hands(P)
-				updateUsrDialog()
+				attack_hand(user)
 
 
 /obj/structure/safe/attackby(obj/item/I as obj, mob/user as mob)
@@ -145,7 +143,7 @@ FLOOR SAFES
 				return
 			space += I.w_class
 			to_chat(user, "<span class='notice'>You put [I] in [src].</span>")
-			updateUsrDialog()
+			attack_hand(user)
 			return
 		else
 			to_chat(user, "<span class='notice'>[I] won't fit in [src].</span>")
@@ -156,7 +154,7 @@ FLOOR SAFES
 			return
 
 
-obj/structure/safe/ex_act(severity)
+/obj/structure/safe/ex_act(severity)
 	return
 
 //FLOOR SAFES

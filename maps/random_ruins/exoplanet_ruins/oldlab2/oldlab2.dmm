@@ -349,7 +349,7 @@
 	pixel_x = -5;
 	pixel_y = 9
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/oldlab2/recandlockers)
 "cs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -666,7 +666,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/oldlab2/recandlockers)
 "dT" = (
 /obj/machinery/smartfridge/secure/medbay{
@@ -1134,7 +1134,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/spline/fancy/wood,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/oldlab2/recandlockers)
 "fR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -1399,7 +1399,7 @@
 /obj/machinery/chemical_dispenser/bar_soft/full{
 	pixel_y = 10
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/oldlab2/recandlockers)
 "hG" = (
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -6514,7 +6514,7 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/oldlab2/recandlockers)
 "HT" = (
 /obj/structure/bed/padded,
@@ -7098,7 +7098,7 @@
 /area/map_template/oldlab2/server)
 "KW" = (
 /obj/structure/reagent_dispensers/water_cooler,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/oldlab2/recandlockers)
 "KY" = (
 /obj/machinery/radiocarbon_spectrometer,
@@ -8088,7 +8088,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/oldlab2/recandlockers)
 "Qh" = (
 /obj/machinery/light/small{
@@ -9294,7 +9294,7 @@
 /area/map_template/oldlab2/mess)
 "Xc" = (
 /obj/machinery/light,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/oldlab2/recandlockers)
 "Xe" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -9556,7 +9556,7 @@
 /turf/simulated/floor/tiled/white,
 /area/map_template/oldlab2/mess)
 "Yi" = (
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/oldlab2/recandlockers)
 "Yl" = (
 /obj/structure/table/steel_reinforced,
@@ -9820,7 +9820,7 @@
 /obj/machinery/chemical_dispenser/bar_coffee/full{
 	pixel_y = 12
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/oldlab2/recandlockers)
 "ZH" = (
 /obj/structure/table/steel_reinforced,

@@ -27,7 +27,6 @@
 	max_storage_space = DEFAULT_BOX_STORAGE
 	use_sound = 'sound/effects/storage/box.ogg'
 	var/foldable = /obj/item/stack/material/cardboard	// BubbleWrap - if set, can be folded (when empty) into a sheet of cardboard
-	allow_slow_dump = TRUE
 
 /obj/item/storage/box/large
 	name = "large box"
@@ -78,7 +77,7 @@
 	..()
 	foldable = null //special form fitted boxes should not be foldable.
 
-/obj/item/storage/box/survival/
+/obj/item/storage/box/survival
 	name = "crew survival kit"
 	desc = "A box decorated in warning colors that contains a limited supply of survival tools. The panel and white stripe indicate this one contains oxygen."
 	icon_state = "survival"
@@ -90,18 +89,41 @@
 					/obj/item/reagent_containers/food/snacks/proteinbar = 1,
 					/obj/item/device/oxycandle = 1)
 
-/obj/item/storage/box/vox/
+/obj/item/storage/box/survival/Initialize()
+	if(has_station_trait(/datum/station_trait/premium_crewbox))
+		startswith = list(/obj/item/clothing/mask/breath/scba = 1,
+						/obj/item/tank/emergency/oxygen = 1,
+						/obj/item/reagent_containers/hypospray/autoinjector/pouch_auto/inaprovaline = 1,
+						/obj/item/reagent_containers/hypospray/autoinjector/pain = 1,
+						/obj/item/stack/medical/advanced/bruise_pack = 1,
+						/obj/item/device/flashlight/flare/glowstick = 1,
+						/obj/item/reagent_containers/food/snacks/proteinbar = 1,
+						/obj/item/device/oxycandle = 1)
+	. = ..()
+
+/obj/item/storage/box/vox
 	name = "vox survival kit"
 	desc = "A box decorated in warning colors that contains a limited supply of survival tools. The panel and black stripe indicate this one contains nitrogen."
 	icon_state = "survivalvox"
 	startswith = list(/obj/item/clothing/mask/breath = 1,
-					/obj/item/tank/emergency/nitrogen = 1,
+					/obj/item/tank/emergency/nitrogen/double = 2,
 					/obj/item/reagent_containers/hypospray/autoinjector/pouch_auto/inaprovaline = 1,
 					/obj/item/stack/medical/bruise_pack = 1,
 					/obj/item/device/flashlight/flare/glowstick = 1,
 					/obj/item/reagent_containers/food/snacks/proteinbar = 1)
 
-/obj/item/storage/box/engineer/
+/obj/item/storage/box/vox/Initialize()
+	if(has_station_trait(/datum/station_trait/premium_crewbox))
+		startswith = list(/obj/item/clothing/mask/breath = 1,
+						/obj/item/tank/emergency/nitrogen/double = 2,
+						/obj/item/reagent_containers/hypospray/autoinjector/pouch_auto/inaprovaline = 1,
+						/obj/item/reagent_containers/hypospray/autoinjector/pain = 1,
+						/obj/item/stack/medical/advanced/bruise_pack = 1,
+						/obj/item/device/flashlight/flare/glowstick = 1,
+						/obj/item/reagent_containers/food/snacks/proteinbar = 1)
+	. = ..()
+
+/obj/item/storage/box/engineer
 	name = "engineer survival kit"
 	desc = "A box decorated in warning colors that contains a limited supply of survival tools. The panel and orange stripe indicate this one as the engineering variant."
 	icon_state = "survivaleng"
@@ -113,6 +135,19 @@
 					/obj/item/device/flashlight/flare/glowstick = 1,
 					/obj/item/reagent_containers/food/snacks/proteinbar = 1,
 					/obj/item/device/oxycandle = 1)
+
+/obj/item/storage/box/engineer/Initialize()
+	if(has_station_trait(/datum/station_trait/premium_crewbox))
+		startswith = list(/obj/item/clothing/mask/breath/scba = 1,
+						/obj/item/tank/emergency/oxygen/engi = 1,
+						/obj/item/reagent_containers/hypospray/autoinjector/pouch_auto/inaprovaline = 1,
+						/obj/item/reagent_containers/hypospray/autoinjector/antirad = 1,
+						/obj/item/reagent_containers/hypospray/autoinjector/pain = 1,
+						/obj/item/stack/medical/advanced/bruise_pack = 1,
+						/obj/item/device/flashlight/flare/glowstick = 1,
+						/obj/item/reagent_containers/food/snacks/proteinbar = 1,
+						/obj/item/device/oxycandle = 1)
+	. = ..()
 
 /obj/item/storage/box/gloves
 	name = "box of sterile gloves"
@@ -139,18 +174,6 @@
 	desc = "A box full of compressed gas cartridges."
 	icon_state = "syringe"
 	startswith = list(/obj/item/syringe_cartridge = 7)
-
-/obj/item/storage/box/ifak
-	name = "first-aid kit"
-	desc = "A box decorated in warning colors that contains a limited supply of survival tools. The panel and orange stripe indicate this one as the security variant."
-	icon_state = "survivaleng"
-	startswith = list(
-		/obj/item/storage/pill_bottle/tramadol = 1,
-		///obj/item/weapon/reagent_containers/pill/amnestics/classa = 1,
-		///obj/item/weapon/reagent_containers/hypospray/autoinjector/combatpain = 1,
-		/obj/item/stack/medical/bruise_pack = 1,
-		/obj/item/stack/medical/ointment = 1,
-		/obj/item/stack/medical/splint/ghetto = 1)
 
 
 /obj/item/storage/box/beakers
@@ -188,10 +211,6 @@
 /obj/item/storage/box/ammo/shotgunshells
 	name = "box of shotgun shells"
 	startswith = list(/obj/item/ammo_magazine/shotholder/shell = 2)
-
-/obj/item/storage/box/ammo/flechetteshells
-	name = "box of flechette shells"
-	startswith = list(/obj/item/ammo_magazine/shotholder/flechette = 2)
 
 /obj/item/storage/box/ammo/flashshells
 	name = "box of illumination shells"
@@ -273,6 +292,16 @@
 	startswith = list(/obj/item/implantcase/chem = 5,
 					/obj/item/implanter = 1,
 					/obj/item/implantpad = 1)
+
+/obj/item/storage/box/psiimp
+	name = "boxed psi dampeners kit"
+	desc = "Box of stuff used to implant psionic monitoring software."
+	icon_state = "implant"
+	item_state = "syringe_kit"
+	startswith = list(
+				/obj/item/implanter/psi = 1,
+				/obj/item/implantcase/psi_control = 6,
+				)
 
 /obj/item/storage/box/rxglasses
 	name = "box of prescription glasses"

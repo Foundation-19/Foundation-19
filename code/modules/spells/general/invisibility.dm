@@ -1,19 +1,19 @@
-/spell/invisibility
+/datum/spell/invisibility
 	name = "invisibility"
 	desc = "A simple spell of invisibility, for when you really just can't afford a paper bag."
 	feedback = "IV"
 	spell_flags = 0
 	charge_max = 100
 	invocation = "Ror Rim Or!"
-	invocation_type = SpI_SHOUT
+	invocation_type = INVOKE_SHOUT
 	var/on = 0
 	hud_state = "invisibility"
 
-/spell/invisibility/choose_targets()
+/datum/spell/invisibility/choose_targets(mob/user = usr)
 	if(istype(holder, /mob/living/carbon/human))
-		return holder
+		perform(user, holder)
 
-/spell/invisibility/cast(var/mob/living/carbon/human/H, var/mob/user)
+/datum/spell/invisibility/cast(mob/living/carbon/human/H, mob/user)
 	on = !on
 	if(on)
 		if(H.add_cloaking_source(src))

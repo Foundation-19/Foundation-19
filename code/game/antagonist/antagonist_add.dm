@@ -81,7 +81,7 @@
 		update_icons_removed(player)
 
 		if(player.current)
-			SET_BIT(player.current.hud_updateflag, SPECIALROLE_HUD)
+			BITSET(player.current.hud_updateflag, SPECIALROLE_HUD)
 			player.current.reset_skillset() //Reset their skills to be job-appropriate.
 
 		if(!is_special_character(player))

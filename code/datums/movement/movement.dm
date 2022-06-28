@@ -1,8 +1,8 @@
-var/const/MOVEMENT_HANDLED = FLAG(0) // If no further movement handling should occur after this
-var/const/MOVEMENT_REMOVE  = FLAG(1)
+var/const/MOVEMENT_HANDLED = 0x0001 // If no further movement handling should occur after this
+var/const/MOVEMENT_REMOVE  = 0x0002
 
-var/const/MOVEMENT_PROCEED = FLAG(2)
-var/const/MOVEMENT_STOP    = FLAG(3)
+var/const/MOVEMENT_PROCEED = 0x0004
+var/const/MOVEMENT_STOP    = 0x0008
 
 #define INIT_MOVEMENT_HANDLERS \
 if(LAZYLEN(movement_handlers) && ispath(movement_handlers[1])) { \
@@ -87,7 +87,7 @@ if(LAZYLEN(movement_handlers) && ispath(movement_handlers[1])) { \
 	for(var/mh in movement_handlers)
 		var/datum/movement_handler/movement_handler = mh
 		if(movement_handler.MayMove(mover, is_external) & MOVEMENT_STOP)
-			return MOVEMENT_HANDLED
+			return MOVEMENT_STOP
 
 		. = movement_handler.DoMove(direction, mover, is_external)
 		if(. & MOVEMENT_REMOVE)

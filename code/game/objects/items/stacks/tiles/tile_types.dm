@@ -222,12 +222,18 @@
  * Carpets
  */
 /obj/item/stack/tile/carpet
+	name = "carpet"
+	singular_name = "carpet"
+	desc = "A piece of carpet."
+	icon_state = "tile_carpet"
+
+/obj/item/stack/tile/carpetbrown
 	name = "brown carpet"
 	singular_name = "brown carpet"
 	desc = "A piece of brown carpet."
 	icon_state = "tile_carpetbrown"
 
-/obj/item/stack/tile/carpet/fifty
+/obj/item/stack/tile/carpetbrown/fifty
 	amount = 50
 
 /obj/item/stack/tile/carpetblue
@@ -300,6 +306,15 @@
 	icon_state = "tile_carpetred"
 
 /obj/item/stack/tile/carpetred/fifty
+	amount = 50
+
+/obj/item/stack/tile/carpetblack
+	name = "black carpet"
+	desc = "A piece of black carpet."
+	singular_name = "red carpet"
+	icon_state = "tile_carpetblack"
+
+/obj/item/stack/tile/carpetblack/fifty
 	amount = 50
 
 /obj/item/stack/tile/pool

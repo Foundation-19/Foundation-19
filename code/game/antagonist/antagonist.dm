@@ -12,6 +12,7 @@
 	var/loss_text                           // As above for loss.
 	var/victory_feedback_tag                // Used by the database for end of round loss.
 	var/loss_feedback_tag                   // Used by the database for end of round loss.
+	var/codex_key                           // Can be provided for a non-intrusive "click here for more info" bit.
 
 	// Role data.
 	var/id = "traitor"                      // Unique datum identifier. Also preferences option for this role.
@@ -114,30 +115,27 @@
 /datum/antagonist/proc/tick()
 	return 1
 
-/// Get the raw list of potential players.
+// Get the raw list of potential players.
 /datum/antagonist/proc/build_candidate_list(datum/game_mode/mode, ghosts_only)
 	candidates = list() // Clear.
 
 	// Prune restricted status. Broke it up for readability.
 	// Note that this is done before jobs are handed out.
 	for(var/datum/mind/player in mode.get_players_for_role(id))
-		if (ghosts_only && !(isghostmind(player) || isnewplayer(player.current)))
+		if(ghosts_only && !(isghostmind(player) || isnewplayer(player.current)))
 			log_debug("[key_name(player)] is not eligible to become a [role_text]: Only ghosts may join as this role!")
-			continue
-		if (player.special_role)
+		else if(config.use_age_restriction_for_antags && player.current.client.player_age < minimum_player_age)
+			log_debug("[key_name(player)] is not eligible to become a [role_text]: Is only [player.current.client.player_age] day\s old, has to be [minimum_player_age] day\s!")
+		else if(player.special_role)
 			log_debug("[key_name(player)] is not eligible to become a [role_text]: They already have a special role ([player.special_role])!")
-			continue
-		if (player in pending_antagonists)
+		else if (player in pending_antagonists)
 			log_debug("[key_name(player)] is not eligible to become a [role_text]: They have already been selected for this role!")
-			continue
-		if (player_is_antag(player))
+		else if(!can_become_antag(player))
+			log_debug("[key_name(player)] is not eligible to become a [role_text]: They are blacklisted for this role!")
+		else if(player_is_antag(player))
 			log_debug("[key_name(player)] is not eligible to become a [role_text]: They are already an antagonist!")
-			continue
-		var/result = can_become_antag_detailed(player)
-		if (result)
-			log_debug("[key_name(player)] is not eligible to become a [role_text]: [result]")
-			continue
-		candidates |= player
+		else
+			candidates |= player
 
 	return candidates
 
@@ -216,21 +214,20 @@
 
 	return 1
 
-/datum/antagonist/proc/draft_antagonist(datum/mind/player)
+/datum/antagonist/proc/draft_antagonist(var/datum/mind/player)
 	//Check if the player can join in this antag role, or if the player has already been given an antag role.
+	if(!can_become_antag(player))
+		log_debug("[player.key] was selected for [role_text] by lottery, but is not allowed to be that role.")
+		return 0
 	if(player.special_role)
 		log_debug("[player.key] was selected for [role_text] by lottery, but they already have a special role.")
-		return FALSE
+		return 0
 	if(!(flags & ANTAG_OVERRIDE_JOB) && (!player.current || istype(player.current, /mob/new_player)))
 		log_debug("[player.key] was selected for [role_text] by lottery, but they have not joined the game.")
-		return FALSE
+		return 0
 	if(GAME_STATE >= RUNLEVEL_GAME && (isghostmind(player) || isnewplayer(player.current)) && !(player in SSticker.antag_pool))
 		log_debug("[player.key] was selected for [role_text] by lottery, but they are a ghost not in the antag pool.")
-		return FALSE
-	var/result = can_become_antag_detailed(player)
-	if (result)
-		log_debug("[player.key] was selected for [role_text] by lottery, but is not allowed: [result].")
-		return FALSE
+		return 0
 
 	pending_antagonists |= player
 	log_debug("[player.key] has been selected for [role_text] by lottery.")
@@ -243,7 +240,7 @@
 	//Ensure that a player cannot be drafted for multiple antag roles, taking up slots for antag roles that they will not fill.
 	player.special_role = role_text
 
-	return TRUE
+	return 1
 
 //Spawns all pending_antagonists. This is done separately from attempt_spawn in case the game mode setup fails.
 /datum/antagonist/proc/finalize_spawn()

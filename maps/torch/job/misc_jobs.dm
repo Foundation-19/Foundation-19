@@ -13,8 +13,7 @@ Synthetic
 
 /datum/job/ai
 	minimal_player_age = 7
-	total_positions = 0
-	spawn_positions = 0
+	require_whitelist = "AI"
 	allowed_ranks = list(
 		/datum/mil_rank/civ/synthetic
 	)
@@ -48,8 +47,10 @@ Civilian
 		/datum/mil_rank/civ/civ,
 		/datum/mil_rank/civ/contractor
 	)
-	min_goals = 2
-	max_goals = 7
+
+	lowpop_access = list(
+		access_maint_tunnels
+	)
 
 /datum/job/merchant
 	title = "Merchant"
@@ -65,7 +66,7 @@ Civilian
 	outfit_type = /decl/hierarchy/outfit/job/torch/merchant
 	allowed_branches = list(
 		/datum/mil_branch/civilian,
-		/datum/mil_branch/alien
+		/datum/mil_branch/alien = /decl/hierarchy/outfit/job/torch/merchant/vox
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/civ,
@@ -74,7 +75,7 @@ Civilian
 	latejoin_at_spawnpoints = 1
 	access = list(access_merchant)
 	announced = FALSE
-	min_skill = list(   SKILL_FINANCE = SKILL_ADEPT,
+	min_skill = list(   SKILL_FINANCE = SKILL_TRAINED,
 	                    SKILL_PILOT	  = SKILL_BASIC)
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX)

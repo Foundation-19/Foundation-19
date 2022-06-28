@@ -25,7 +25,6 @@
 	name = "\improper chaos helmet"
 	desc = "A helmet with 'CHAOS INSURGENCY' symbol printed on the back lettering."
 	icon_state = "chaos-helm"
-	item_state = "chaos-helm"
 	body_parts_covered = HEAD //face shield
 	armor = list(melee = 50, bullet = 83, laser = 50,energy = 25, bomb = 40, bio = 10, rad = 10)
 	flags_inv = HIDEEARS

@@ -38,6 +38,9 @@
 #define RUST_G (__rust_g || __detect_rust_g())
 #endif
 
+/// Gets the version of rust_g
+/proc/rustg_get_version() return call(RUST_G, "get_version")()
+
 /**
  * This proc generates a cellular automata noise grid which can be used in procedural generation methods.
  *
@@ -52,7 +55,7 @@
  * * height: The height of the grid.
  */
 #define rustg_cnoise_generate(percentage, smoothing_iterations, birth_limit, death_limit, width, height) \
-    call(RUST_G, "cnoise_generate")(percentage, smoothing_iterations, birth_limit, death_limit, width, height)
+	call(RUST_G, "cnoise_generate")(percentage, smoothing_iterations, birth_limit, death_limit, width, height)
 
 #define rustg_dmi_strip_metadata(fname) call(RUST_G, "dmi_strip_metadata")(fname)
 #define rustg_dmi_create_png(path, width, height, data) call(RUST_G, "dmi_create_png")(path, width, height, data)
@@ -64,8 +67,8 @@
 #define rustg_file_append(text, fname) call(RUST_G, "file_append")(text, fname)
 
 #ifdef RUSTG_OVERRIDE_BUILTINS
-    #define file2text(fname) rustg_file_read("[fname]")
-    #define text2file(text, fname) rustg_file_append(text, "[fname]")
+	#define file2text(fname) rustg_file_read("[fname]")
+	#define text2file(text, fname) rustg_file_append(text, "[fname]")
 #endif
 
 #define rustg_git_revparse(rev) call(RUST_G, "rg_git_revparse")(rev)
@@ -77,8 +80,8 @@
 #define RUSTG_HTTP_METHOD_PATCH "patch"
 #define RUSTG_HTTP_METHOD_HEAD "head"
 #define RUSTG_HTTP_METHOD_POST "post"
-#define rustg_http_request_blocking(method, url, body, headers) call(RUST_G, "http_request_blocking")(method, url, body, headers)
-#define rustg_http_request_async(method, url, body, headers) call(RUST_G, "http_request_async")(method, url, body, headers)
+#define rustg_http_request_blocking(method, url, body, headers, options) call(RUST_G, "http_request_blocking")(method, url, body, headers, options)
+#define rustg_http_request_async(method, url, body, headers, options) call(RUST_G, "http_request_async")(method, url, body, headers, options)
 #define rustg_http_check_request(req_id) call(RUST_G, "http_check_request")(req_id)
 
 #define RUSTG_JOB_NO_RESULTS_YET "NO RESULTS YET"
@@ -87,7 +90,7 @@
 
 #define rustg_json_is_valid(text) (call(RUST_G, "json_is_valid")(text) == "true")
 
-#define rustg_log_write(fname, text) call(RUST_G, "log_write")(fname, text)
+#define rustg_log_write(fname, text, format) call(RUST_G, "log_write")(fname, text, format)
 /proc/rustg_log_close_all() return call(RUST_G, "log_close_all")()
 
 #define rustg_noise_get_at_coordinates(seed, x, y) call(RUST_G, "noise_get_at_coordinates")(seed, x, y)
@@ -98,3 +101,4 @@
 #define rustg_sql_connected(handle) call(RUST_G, "sql_connected")(handle)
 #define rustg_sql_disconnect_pool(handle) call(RUST_G, "sql_disconnect_pool")(handle)
 #define rustg_sql_check_query(job_id) call(RUST_G, "sql_check_query")("[job_id]")
+

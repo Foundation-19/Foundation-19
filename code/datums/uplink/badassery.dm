@@ -35,12 +35,6 @@
 	item_cost = 32
 	path = /obj/item/storage/box/large/foam_gun/revolver/tampered
 
-/datum/uplink_item/item/badassery/fortune
-	name = "A Fortune Cookie"
-	desc = "Why would you buy this?"
-	item_cost = DEFAULT_TELECRYSTAL_AMOUNT
-	path = /obj/item/reagent_containers/food/snacks/fortunecookie
-
 /**************
 * Random Item *
 **************/

@@ -5,6 +5,7 @@
 	anchored = TRUE
 	var/maintain_cost = 3
 	var/mob/living/owner
+	var/silent_drop = FALSE
 
 /obj/item/psychic_power/New(var/mob/living/_owner)
 	owner = _owner
@@ -25,7 +26,6 @@
 	return ITEM_SIZE_NO_CONTAINER
 
 /obj/item/psychic_power/attack_self(var/mob/user)
-	sound_to(owner, 'sound/effects/psi/power_fail.ogg')
 	user.drop_from_inventory(src)
 
 /obj/item/psychic_power/attack(var/mob/living/M, var/mob/living/user, var/target_zone)
@@ -42,6 +42,8 @@
 
 /obj/item/psychic_power/dropped()
 	..()
+	if(!silent_drop)
+		sound_to(owner, 'sound/effects/psi/power_fail.ogg')
 	qdel(src)
 
 /obj/item/psychic_power/Process()

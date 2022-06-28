@@ -3,9 +3,9 @@
 	name_plural = "Adherents"
 
 	description = "The Vigil is a relatively loose association of machine-servitors, Adherents, \
-	built by an extinct culture. They are devoted to the memory of their long-dead creators, \
+	built by an extinct culture. They are devoted to the memory of their long-dead Creators, \
 	whose home system and burgeoning stellar empire was scoured to bedrock by a solar flare. \
-	Physically, they are large, floating squidlike machines made of a crystalline composite."
+	Physically, they are large, floating, squidlike machines that made of a crystalline composite."
 	hidden_from_codex = FALSE
 	silent_steps = TRUE
 
@@ -120,32 +120,32 @@
 	)
 	..()
 
-/datum/species/adherent/can_overcome_gravity(var/mob/living/carbon/human/H)
+/datum/species/adherent/can_overcome_gravity(mob/living/carbon/human/H)
 	. = FALSE
-	if(H && H.stat == CONSCIOUS)
-		for(var/obj/item/organ/internal/powered/float/float in H.internal_organs)
-			if(float.active && float.is_usable())
+	if (H && H.stat == CONSCIOUS)
+		for (var/obj/item/organ/internal/powered/float/float in H.internal_organs)
+			if (float.active && float.is_usable())
 				. = TRUE
 				break
 
-/datum/species/adherent/can_fall(var/mob/living/carbon/human/H)
+/datum/species/adherent/can_fall(mob/living/carbon/human/H)
 	. = !can_overcome_gravity(H)
 
-/datum/species/adherent/can_float(var/mob/living/carbon/human/H)
+/datum/species/adherent/can_float(mob/living/carbon/human/H)
 	return FALSE
 
-/datum/species/adherent/get_slowdown(var/mob/living/carbon/human/H)
+/datum/species/adherent/get_slowdown(mob/living/carbon/human/H)
 	return slowdown
 
-/datum/species/adherent/handle_fall_special(var/mob/living/carbon/human/H, var/turf/landing)
+/datum/species/adherent/handle_fall_special(mob/living/carbon/human/H, var/turf/landing)
 	var/float_is_usable = FALSE
-	if(H && H.stat == CONSCIOUS)
-		for(var/obj/item/organ/internal/powered/float/float in H.internal_organs)
-			if(float.is_usable())
+	if (H && H.stat == CONSCIOUS)
+		for (var/obj/item/organ/internal/powered/float/float in H.internal_organs)
+			if (float.is_usable())
 				float_is_usable = TRUE
 				break
-	if(float_is_usable)
-		if(istype(landing, /turf/simulated/open))
+	if (float_is_usable)
+		if (istype(landing, /turf/simulated/open))
 			H.visible_message("\The [H] descends from \the [landing].", "You descend regally.")
 		else
 			H.visible_message("\The [H] floats gracefully down from \the [landing].", "You land gently on \the [landing].")
@@ -157,23 +157,15 @@
 
 /datum/species/adherent/skills_from_age(age)
 	switch(age)
-		if(0 to 1000)    . = -4
-		if(1000 to 2000) . =  0
-		if(2000 to 8000) . =  4
+		if (0 to 1000)    . = -4
+		if (1000 to 2000) . =  0
+		if (2000 to 8000) . =  4
 		else             . =  8
 
-/datum/species/adherent/get_additional_examine_text(var/mob/living/carbon/human/H)
-	if(can_overcome_gravity(H)) return "\nThey are floating on a cloud of shimmering distortion."
+/datum/species/adherent/get_additional_examine_text(mob/living/carbon/human/H)
+	if (can_overcome_gravity(H))
+		var/datum/gender/T = gender_datums[H.get_gender()]
+		return SPAN_NOTICE("<i>[T.He] [T.is] floating on a cloud of shimmering distortion.</i>")
 
-/datum/hud_data/adherent
-	has_internals = FALSE
-	gear = list(
-		"l_ear" = list("loc" = ui_iclothing, "name" = "Aux Port", "slot" = slot_l_ear,   "state" = "ears", "toggle" = 1),
-		"head" =  list("loc" = ui_glasses,   "name" = "Hat",      "slot" = slot_head,    "state" = "hair", "toggle" = 1),
-		"back" =  list("loc" = ui_back,      "name" = "Back",     "slot" = slot_back,    "state" = "back"),
-		"id" =    list("loc" = ui_id,        "name" = "ID",       "slot" = slot_wear_id, "state" = "id"),
-		"belt" =  list("loc" = ui_belt,      "name" = "Belt",     "slot" = slot_belt,    "state" = "belt")
-	)
-
-/datum/species/adherent/post_organ_rejuvenate(var/obj/item/organ/org, var/mob/living/carbon/human/H)
+/datum/species/adherent/post_organ_rejuvenate(obj/item/organ/org, mob/living/carbon/human/H)
 	org.status |= (ORGAN_BRITTLE|ORGAN_CRYSTAL|ORGAN_ROBOTIC)

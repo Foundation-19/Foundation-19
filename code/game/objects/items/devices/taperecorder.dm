@@ -348,9 +348,8 @@
 		if (findtextEx(printedmessage,"*",1,2)) //replace action sounds
 			printedmessage = "\[[time2text(mytape.timestamp[i]*10,"mm:ss")]\] (Unrecognized sound)"
 		t1 += "[printedmessage]<BR>"
-	P.set_content(t1, "Transcript", FALSE)
-	usr.put_in_hands(P)
-	playsound(src, "sound/machines/dotprinter.ogg", 30)
+	P.info = t1
+	P.SetName("Transcript")
 	canprint = 0
 	sleep(300)
 	canprint = 1
@@ -542,5 +541,5 @@
 	. = ..()
 	if(distance <= 1)
 		to_chat(user, "<span class='notice'>It looks long enough to hold [max_capacity] seconds worth of recording.</span>")
-		if(doctored && user.skill_check(SKILL_FORENSICS, SKILL_PROF))
+		if(doctored && user.skill_check(SKILL_FORENSICS, SKILL_MASTER))
 			to_chat(user, "<span class='notice'>It has been tampered with...</span>")
