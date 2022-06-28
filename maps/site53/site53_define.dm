@@ -50,6 +50,30 @@
 
 	id_hud_icons = 'maps/site53/icons/assignment_hud.dmi'
 	lobby_screens = list("title","title2")
+
+	available_cultural_info = list(
+		TAG_HOMEWORLD = list(HOME_SYSTEM_EARTH),
+		TAG_FACTION = list(FACTION_SOL_CENTRAL),
+		TAG_CULTURE = list(CULTURE_HUMAN_EARTH),
+		TAG_RELIGION = list(
+			RELIGION_OTHER,
+			RELIGION_JUDAISM,
+			RELIGION_HINDUISM,
+			RELIGION_BUDDHISM,
+			RELIGION_ISLAM,
+			RELIGION_CHRISTIANITY,
+			RELIGION_AGNOSTICISM,
+			RELIGION_ATHEISM,
+		),
+	)
+
+	default_cultural_info = list(
+		TAG_HOMEWORLD = HOME_SYSTEM_EARTH,
+		TAG_FACTION =   FACTION_SOL_CENTRAL,
+		TAG_CULTURE =   CULTURE_HUMAN_EARTH,
+		TAG_RELIGION =  RELIGION_AGNOSTICISM
+	)
+
 /*
 /datum/map/torch/setup_map()
 	..()

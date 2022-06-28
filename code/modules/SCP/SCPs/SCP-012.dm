@@ -11,7 +11,7 @@ GLOBAL_LIST_EMPTY(scp012s)
 	var/ticks = 0
 
 /obj/item/paper/scp012/examine(mob/user)
-	user << "<b><span class = 'euclid'><big>SCP-012</big></span></b> - [desc]"
+	to_chat(user, "<b><span class = 'euclid'><big>SCP-012</big></span></b> - [desc]")
 
 /datum/scp/scp_012
 	name = "SCP-012"

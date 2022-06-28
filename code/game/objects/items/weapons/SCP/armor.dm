@@ -7,6 +7,17 @@
 	icon_state = "armor_medium"
 	armor = list(melee = 40, bullet = 80, laser = 40, energy = 25, bomb = 30, bio = 0, rad = 0)
 
+/obj/item/clothing/accessory/armor_tag/scp
+	name = "\improper SCP tag"
+	desc = "An armor tag with the word SCP printed in white lettering on it."
+	icon_state = "presstag"
+
+/obj/item/clothing/suit/armor/pcarrier/scp
+	name = "plate carrier"
+
+/obj/item/clothing/suit/armor/pcarrier/scp/medium
+	accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor_tag/scp)
+
 
 /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
 	accessories = list(/obj/item/clothing/accessory/storage/pouches/green)
