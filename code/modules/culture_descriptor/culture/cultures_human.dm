@@ -92,7 +92,6 @@
 	name = CULTURE_HUMAN_EARTH
 	description = "You are from Earth, home of humanity. As of currently no other planets are inhabited by humans, what did you expect?"
 	economic_power = 1.1
-	language = LANGUAGE_ENGLISH
 	secondary_langs = list(
 		LANGUAGE_HUMAN_ARABIC,
 		LANGUAGE_HUMAN_CHINESE,
