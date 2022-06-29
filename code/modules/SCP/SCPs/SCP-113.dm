@@ -9,9 +9,6 @@
 //	candrop = 0
 	SCP = /datum/scp/scp_113
 
-/obj/item/device/scp113/examine(mob/user)
-	user << "<b><span class = 'safe'><big>SCP-113</big></span></b> - [desc]"
-
 /datum/scp/scp_113
 	name = "SCP-113"
 	designation = "113"

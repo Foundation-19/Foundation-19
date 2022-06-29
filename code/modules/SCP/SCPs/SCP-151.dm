@@ -9,9 +9,6 @@
 	var/gen_time = 100 //how long we wait between hurting victims
 	var/list/victims = list()
 
-/obj/structure/scp151/examine(mob/user)
-	user << "<b><span class = 'euclid'><big>SCP-151</big></span></b> - [desc]"
-
 /obj/structure/scp151/proc/hurt_victims() //simulate drowning
 	for(var/mob/living/user in victims)
 		user.apply_damage(30, OXY)

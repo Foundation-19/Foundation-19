@@ -27,6 +27,9 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/scp049/IsAdvancedToolUser()
 	return FALSE
 
+/mob/living/carbon/human/scp049/update_icons()
+	return
+
 /mob/living/carbon/human/scp049/on_update_icon()
 	if (lying || resting)
 		var/matrix/M =  matrix()

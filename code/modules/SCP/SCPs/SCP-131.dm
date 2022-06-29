@@ -65,8 +65,6 @@ GLOBAL_LIST_EMPTY(scp131s)
 	verbs += /mob/living/proc/ventcrawl
 	verbs += /mob/living/proc/hide
 
-/mob/living/simple_animal/scp_131/examine(mob/user)
-	user << "<b><span class = 'success'><big>SCP-131</big></span></b> - [desc]"
 
 /mob/living/simple_animal/scp_131/update_icon()
 	if(stat != DEAD && resting)

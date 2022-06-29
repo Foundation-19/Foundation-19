@@ -15,9 +15,6 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	icon = 'icons/mob/scp106.dmi'
 	icon_state = null
 
-/mob/living/carbon/human/scp106/examine(mob/user)
-	to_chat(user, "<b><span class = 'keter'><big>SCP-106</big></span></b> - [desc]")
-
 /datum/scp/scp_106
 	name = "SCP-106"
 	designation = "106"
