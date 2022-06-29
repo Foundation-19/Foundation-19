@@ -471,7 +471,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
 "bn" = (
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "bo" = (
 /turf/simulated/floor/tiled,
@@ -480,7 +480,7 @@
 /obj/machinery/camera/autoname{
 	network = list("Entrance Zone Network")
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "bq" = (
 /obj/structure/table/woodentable,
@@ -674,7 +674,7 @@
 /area/site53/uez/mcrsubstation)
 "bH" = (
 /obj/structure/table/woodentable,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "bI" = (
 /obj/machinery/light{
@@ -682,7 +682,7 @@
 	icon_state = "tube1";
 	pixel_x = 0
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "bJ" = (
 /obj/structure/cable/green{
@@ -723,13 +723,13 @@
 "bQ" = (
 /obj/structure/table/woodentable,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "bR" = (
 /obj/effect/landmark/start{
 	name = "Head of Personnel"
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "bS" = (
 /obj/machinery/light/small/red,
@@ -765,7 +765,7 @@
 	icon_state = "tube1";
 	pixel_x = 0
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "bX" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
@@ -1178,10 +1178,6 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
-	},
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
 	},
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/carpet/blue,
@@ -4888,7 +4884,7 @@
 /obj/structure/table/woodentable,
 /obj/item/paper_bin,
 /obj/item/pen,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "Gc" = (
 /obj/effect/floor_decal/corner/blue/bordercorner{

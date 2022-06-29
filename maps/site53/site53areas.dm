@@ -460,6 +460,12 @@
 	'sound/ambience/lcz/crb/Ambient8.ogg'
 	)
 */
+
+/area/site53/ulcz/medicalpost
+	name = "\improper LCZ Medical Post"
+	icon_state = "medbay3"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/ulcz/tram
 	name = "\improper Upper Light Containment Tram Station"
 	icon_state = "hallC1"
@@ -818,6 +824,11 @@
 /area/site53/uhcz/tramstation
 	name = "\improper HCZ Tram Station"
 	icon_state = "fpmaint"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/uhcz/medicalpost
+	name = "\improper HCZ Medical Post"
+	icon_state = "medbay3"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/uhcz/hallways
