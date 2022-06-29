@@ -243,12 +243,13 @@
 			dismantle_sound = "sparks"
 			dismantle_verb = "slicing"
 			cut_delay *= 0.5
+		/*
 		else if(istype(W,/obj/item/pickaxe))
 			var/obj/item/pickaxe/P = W
 			dismantle_verb = P.drill_verb
 			dismantle_sound = P.drill_sound
 			cut_delay -= P.digspeed
-
+		*/
 		if(dismantle_verb && !dismantling)
 
 			dismantling = TRUE
