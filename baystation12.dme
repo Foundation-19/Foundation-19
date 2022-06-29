@@ -547,7 +547,6 @@
 #include "code\game\antagonist\antagonist_print.dm"
 #include "code\game\antagonist\antagonist_update.dm"
 #include "code\game\antagonist\alien\borer.dm"
-#include "code\game\antagonist\outsider\actors.dm"
 #include "code\game\antagonist\outsider\chorus.dm"
 #include "code\game\antagonist\outsider\commando.dm"
 #include "code\game\antagonist\outsider\deathsquad.dm"
