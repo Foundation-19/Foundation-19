@@ -12,7 +12,6 @@ LINEN BINS
 	item_state = "bedsheet"
 	randpixel = 0
 	slot_flags = SLOT_BACK
-	item_flags = ITEM_FLAG_WASHER_ALLOWED
 	layer = BASE_ABOVE_OBJ_LAYER
 	throwforce = 1
 	throw_speed = 1

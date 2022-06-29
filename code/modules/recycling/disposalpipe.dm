@@ -10,7 +10,7 @@
 	level = 1			// underfloor only
 	var/dpdir = 0		// bitmask of pipe directions
 	dir = 0				// dir will contain dominant direction for junction pipes
-	var/health = 10 	// health points 0-10
+	health_max = 10
 	alpha = 192 // Plane and alpha modified for mapping, reset to normal on spawn.
 	layer = ABOVE_TILE_LAYER
 	var/base_icon_state	// initial icon state on map
@@ -48,6 +48,11 @@ obj/structure/disposalpipe/Destroy()
 		if(H)
 			expel(H, T, 0)
 	. = ..()
+
+/obj/structure/disposalpipe/examine(mob/user)
+	. = ..()
+	if(health_damaged())
+		to_chat(user, SPAN_WARNING("\The [src] is leaking pressure."))
 
 /obj/structure/disposalpipe/proc/on_build()
 	update()
@@ -194,67 +199,58 @@ obj/structure/disposalpipe/Destroy()
 	spawn(2)	// delete pipe after 2 ticks to ensure expel proc finished
 		qdel(src)
 
-
-// pipe affected by explosion
-/obj/structure/disposalpipe/ex_act(severity)
-
-	switch(severity)
-		if(1.0)
-			broken(0)
-			return
-		if(2.0)
-			health -= rand(5,15)
-			healthcheck()
-			return
-		if(3.0)
-			health -= rand(0,15)
-			healthcheck()
-			return
-
-
-	// test health for brokenness
-/obj/structure/disposalpipe/proc/healthcheck()
-	if(health < -2)
-		broken(0)
-	else if(health<1)
-		broken(1)
-	return
+/obj/structure/disposalpipe/handle_death_change(new_death_state)
+	if(new_death_state)
+		broken(prob(0.5))
 
 //attack by item
 //weldingtool: unfasten and convert to obj/disposalconstruct
 
-/obj/structure/disposalpipe/attackby(var/obj/item/I, var/mob/user)
-
-	var/turf/T = src.loc
+/obj/structure/disposalpipe/attackby(obj/item/I, mob/user)
+	var/turf/T = get_turf(src)
 	if(!T.is_plating())
 		return		// prevent interaction with T-scanner revealed pipes
-	src.add_fingerprint(user, 0, I)
-	if(istype(I, /obj/item/weldingtool))
-		var/obj/item/weldingtool/W = I
-		if(W.remove_fuel(0,user))
-			playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
-			// check if anything changed over 2 seconds
-			var/turf/uloc = user.loc
-			var/atom/wloc = W.loc
-			to_chat(user, "Slicing the disposal pipe.")
-			sleep(30)
-			if(!W.isOn()) return
-			if(user.loc == uloc && wloc == W.loc)
-				welded()
-			else
-				to_chat(user, "You must stay still while welding the pipe.")
-		else
-			to_chat(user, "You need more welding fuel to cut the pipe.")
-			return
+	add_fingerprint(user, 0, I)
 
-	// called when pipe is cut with welder
+	if(user.a_intent == I_HURT)
+		..()
+		return
+
+	if (isWelder(I))
+		var/obj/item/weldingtool/WT = I
+		if (!WT.isOn())
+			to_chat(user, SPAN_WARNING("Turn \the [WT] on first."))
+			return
+		else if (WT.remove_fuel(0, user))
+			user.visible_message(
+				SPAN_NOTICE("\The [user] starts cutting \the [src] free."),
+				SPAN_NOTICE("Slicing \the [src]..."),
+				SPAN_ITALIC("You hear the sound of welding.")
+			)
+			playsound(src, 'sound/items/Welder.ogg', 50, TRUE)
+			if (!do_after(user, 3 SECONDS, src))
+				return
+			user.visible_message(
+				SPAN_NOTICE("\The [user] cuts \the [src] free from the floor."),
+				SPAN_NOTICE("You cut \the [src] free from the floor."),
+				SPAN_ITALIC("You hear the sound of welding.")
+			)
+			playsound(src, 'sound/items/Welder2.ogg', 50, TRUE)
+			welded()
+			return
+		else
+			to_chat(user, SPAN_WARNING("You need more fuel to cut \the [src] free."))
+		return
+
+	..()
+
+/// Called when this pipe is cut free with a welding tool.
 /obj/structure/disposalpipe/proc/welded()
-	var/obj/structure/disposalconstruct/C = new (src.loc, src)
-	src.transfer_fingerprints_to(C)
-	C.set_density(0)
+	var/obj/structure/disposalconstruct/C = new (loc, src)
+	transfer_fingerprints_to(C)
+	C.set_density(FALSE)
 	C.anchored = TRUE
 	C.update()
-
 	qdel(src)
 
 // pipe is deleted
@@ -794,8 +790,12 @@ obj/structure/disposalpipe/Destroy()
 			var/atom/wloc = W.loc
 			to_chat(user, "Slicing the disposal pipe.")
 			sleep(30)
-			if(!W.isOn()) return
+			if(!W.isOn())
+				return
 			if(user.loc == uloc && wloc == W.loc)
+				if(linked && istype(linked,/obj/machinery/disposal))
+					var/obj/machinery/disposal/D = linked
+					D.trunk = null
 				welded()
 			else
 				to_chat(user, "You must stay still while welding the pipe.")

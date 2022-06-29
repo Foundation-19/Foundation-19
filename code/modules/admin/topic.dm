@@ -172,7 +172,7 @@
 		else if(task == "permissions")
 			if(!D)	return
 			var/list/permissionlist = list()
-			for(var/i=1, i<=R_MAXPERMISSION, i = SHIFTL(i, 1))
+			for(var/i=1, i<=R_MAXPERMISSION, i<<=1)		//that <<= is shorthand for i = i << 1. Which is a left bitshift
 				permissionlist[rights2text(i)] = i
 			var/new_permission = input("Select a permission to turn on/off", "Permission toggle", null, null) as null|anything in permissionlist
 			if(!new_permission)	return
@@ -237,10 +237,10 @@
 			if("slime")				M.change_mob_type( /mob/living/carbon/slime , null, null, delmob )
 			if("monkey")			M.change_mob_type( /mob/living/carbon/human/monkey , null, null, delmob )
 			if("robot")				M.change_mob_type( /mob/living/silicon/robot , null, null, delmob )
-			if("cat")				M.change_mob_type( /mob/living/simple_animal/passive/cat , null, null, delmob )
-			if("runtime")			M.change_mob_type( /mob/living/simple_animal/passive/cat/fluff/Runtime , null, null, delmob )
-			if("corgi")				M.change_mob_type( /mob/living/simple_animal/passive/corgi , null, null, delmob )
-			if("ian")				M.change_mob_type( /mob/living/simple_animal/passive/corgi/Ian , null, null, delmob )
+			if("cat")				M.change_mob_type( /mob/living/simple_animal/friendly/cat , null, null, delmob )
+			if("runtime")			M.change_mob_type( /mob/living/simple_animal/friendly/cat/fluff/Runtime , null, null, delmob )
+			if("corgi")				M.change_mob_type( /mob/living/simple_animal/friendly/corgi , null, null, delmob )
+			if("ian")				M.change_mob_type( /mob/living/simple_animal/friendly/corgi/Ian , null, null, delmob )
 			if("crab")				M.change_mob_type( /mob/living/simple_animal/crab , null, null, delmob )
 			if("coffee")			M.change_mob_type( /mob/living/simple_animal/crab/Coffee , null, null, delmob )
 			if("parrot")			M.change_mob_type( /mob/living/simple_animal/hostile/retaliate/parrot , null, null, delmob )
@@ -1073,25 +1073,6 @@
 			return
 		P.copy_to(H)
 
-	else if (href_list["cloneother"])
-		if (!check_rights(R_DEBUG))
-			return
-		var/mob/living/carbon/human/H = locate(href_list["cloneother"])
-		if (!istype(H))
-			to_chat(usr, SPAN_WARNING("\The [H] is not a valid type to apply preferences to."))
-			return
-		var/client/C = select_client()
-		var/datum/preferences/P = C?.prefs
-		if (!P)
-			return
-		var/confirm = alert(usr, "This will replace \the [H] with the design of \"[P.real_name]\"!", "Clone Other", "Okay", "Cancel")
-		if (confirm != "Okay")
-			return
-		if (QDELETED(P) || QDELETED(H))
-			to_chat(usr, SPAN_WARNING("\The [H] or the preferences of [C] are no longer valid."))
-			return
-		P.copy_to(H)
-
 	else if(href_list["sendtoprison"])
 		if(!check_rights(R_ADMIN))	return
 
@@ -1574,7 +1555,6 @@
 		return
 
 	else if(href_list["FaxReply"])
-		var/mob/sender = locate(href_list["FaxReply"])
 		var/obj/machinery/photocopier/faxmachine/fax = locate(href_list["originfax"])
 		var/replyorigin = href_list["replyorigin"]
 
@@ -1584,9 +1564,8 @@
 
 		P.admindatum = src
 		P.origin = replyorigin
-		P.destination = fax
-		P.sender = sender
-
+		P.department = fax.department
+		P.destinations = get_fax_machines_by_department(fax.department)
 		P.adminbrowse()
 
 	else if(href_list["jumpto"])
@@ -1710,45 +1689,40 @@
 			obj_dir = 2
 		var/obj_name = sanitize(href_list["object_name"])
 		var/where = href_list["object_where"]
-		if (!( where in list("onfloor","inhand","inmarked") ))
+		if(!(where in list("onfloor", "inhand", "inmarked")))
 			where = "onfloor"
 
-		if( where == "inhand" )
-			to_chat(usr, "Support for inhand not available yet. Will spawn on floor.")
-			where = "onfloor"
-
-		if ( where == "inhand" )	//Can only give when human or monkey
-			if ( !( ishuman(usr) || issmall(usr) ) )
+		if(where == "inhand")	//Can only give when human or monkey
+			if(!(ishuman(usr) || issmall(usr)))
 				to_chat(usr, "Can only spawn in hand when you're a human or a monkey.")
 				where = "onfloor"
-			else if ( usr.get_active_hand() )
-				to_chat(usr, "Your active hand is full. Spawning on floor.")
-				where = "onfloor"
 
-		if ( where == "inmarked" )
+		if(where == "inmarked")
 			var/marked_datum = marked_datum()
-			if ( !marked_datum )
+			if(!marked_datum)
 				to_chat(usr, "You don't have any object marked. Abandoning spawn.")
 				return
 			else
-				if ( !istype(marked_datum,/atom) )
+				if(!istype(marked_datum, /atom))
 					to_chat(usr, "The object you have marked cannot be used as a target. Target must be of type /atom. Abandoning spawn.")
 					return
 
 		var/atom/target //Where the object will be spawned
-		switch ( where )
-			if ( "onfloor" )
+		switch(where)
+			if("onfloor")
 				switch (href_list["offset_type"])
-					if ("absolute")
+					if("absolute")
 						target = locate(0 + X,0 + Y,0 + Z)
-					if ("relative")
+					if("relative")
 						target = locate(loc.x + X,loc.y + Y,loc.z + Z)
-			if ( "inmarked" )
+			if("inmarked")
 				target = marked_datum()
+			if("inhand")
+				target = usr.loc
 
 		if(target)
-			for (var/path in paths)
-				for (var/i = 0; i < number; i++)
+			for(var/path in paths)
+				for(var/i = 0; i < number; i++)
 					if(path in typesof(/turf))
 						var/turf/O = target
 						var/turf/N = O.ChangeTurf(path)
@@ -1761,9 +1735,12 @@
 							O.set_dir(obj_dir)
 							if(obj_name)
 								O.SetName(obj_name)
-								if(istype(O,/mob))
+								if(istype(O, /mob))
 									var/mob/M = O
 									M.real_name = obj_name
+							if(istype(O, /obj/item) && where == "inhand")
+								var/obj/item/W = O
+								usr.put_in_any_hand_if_possible(W)
 
 		log_and_message_admins("created [number] [english_list(paths)]")
 		return

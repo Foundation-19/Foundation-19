@@ -4,12 +4,10 @@
 	icon_state = "wristwatch_black"
 	body_location = HANDS
 
-
 /obj/item/clothing/accessory/wristwatches/leather
 	name = "leather wrist watch"
 	desc = "A simple time keeping device. Its leather strap is quite fashionable."
 	icon_state = "wristwatch_leather"
-
 
 /obj/item/clothing/accessory/wristwatches/fancy
 	name = "fancy wrist watch"

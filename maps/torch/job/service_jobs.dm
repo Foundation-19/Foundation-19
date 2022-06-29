@@ -88,7 +88,7 @@
 		/datum/mil_rank/fleet/e3,
 		/datum/mil_rank/fleet/e4
 	)
-	min_skill = list(   SKILL_COOKING   = SKILL_ADEPT,
+	min_skill = list(   SKILL_COOKING   = SKILL_TRAINED,
 	                    SKILL_BOTANY    = SKILL_BASIC,
 	                    SKILL_CHEMISTRY = SKILL_BASIC)
 
@@ -146,4 +146,8 @@
 	access = list(
 		access_maint_tunnels, access_emergency_storage,
 		access_solgov_crew, access_radio_serv
+	)
+
+	lowpop_access = list(
+		access_tech_storage, access_construction
 	)

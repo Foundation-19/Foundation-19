@@ -4,10 +4,13 @@
 		atmosphere.adjust_gas(GAS_OXYGEN, MOLES_O2STANDARD, 0)
 		atmosphere.adjust_gas(GAS_NITROGEN, MOLES_N2STANDARD)
 	else //let the fuckery commence
+		var/prob_modifier = 1
+		if(has_station_trait(/datum/station_trait/unnatural_atmosphere))
+			prob_modifier = 0.1 // Let the madness flow
 		var/list/newgases = gas_data.gases.Copy()
-		if (prob(90)) //all phoron planet should be rare
+		if (prob(90 * prob_modifier)) //all phoron planet should be rare
 			newgases -= GAS_PHORON
-		if (prob(50)) //alium gas should be slightly less common than mundane shit
+		if (prob(50 * prob_modifier)) //alium gas should be slightly less common than mundane shit
 			newgases -= GAS_ALIEN
 		newgases -= GAS_STEAM
 
@@ -22,7 +25,7 @@
 
 		var/gasnum = rand(1,4)
 		var/i = 1
-		var/sanity = prob(99.9)
+		var/sanity = prob(99.9 * prob_modifier)
 		while (i <= gasnum && total_moles && newgases.len)
 			if (badflag && sanity)
 				for(var/g in newgases)

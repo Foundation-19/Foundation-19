@@ -4,11 +4,11 @@ This ring has an outer radius (range) and an inner radius (inner_radius)
 Aoe turf spells have two useful flags: IGNOREDENSE and IGNORESPACE. These are explained in setup.dm
 */
 
-/spell/aoe_turf //affects all turfs in view or range (depends)
+/datum/spell/aoe_turf //affects all turfs in view or range (depends)
 	spell_flags = IGNOREDENSE
 	var/inner_radius = -1 //for all your ring spell needs
 
-/spell/aoe_turf/choose_targets(mob/user = usr)
+/datum/spell/aoe_turf/choose_targets(mob/user = usr)
 	var/list/targets = list()
 
 	for(var/turf/target in view_or_range(range, holder, selection_type))
@@ -22,4 +22,4 @@ Aoe turf spells have two useful flags: IGNOREDENSE and IGNORESPACE. These are ex
 	if(!targets.len) //doesn't waste the spell
 		return
 
-	return targets
+	perform(user, targets)

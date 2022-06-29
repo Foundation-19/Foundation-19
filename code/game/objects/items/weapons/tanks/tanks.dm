@@ -33,7 +33,7 @@ var/list/global/tank_gauge_cache = list()
 	var/failure_temp = 173 //173 deg C Borate seal (yes it should be 153 F, but that's annoying)
 
 
-	var/tank_flags = EMPTY_BITFIELD
+	var/tank_flags = 0x000000
 
 	var/list/starting_pressure //list in format 'xgm gas id' = 'desired pressure at start'
 
@@ -72,7 +72,7 @@ var/list/global/tank_gauge_cache = list()
 		if (GET_FLAGS(tank_flags, TANK_FLAG_WIRED))
 			mods += "some wires"
 		if (proxyassembly.assembly)
-			mods += user.skill_check(SKILL_DEVICES, SKILL_ADEPT) ? "an ignition assembly" : "a device"
+			mods += user.skill_check(SKILL_DEVICES, SKILL_TRAINED) ? "an ignition assembly" : "a device"
 		if (length(mods))
 			to_chat(user, "[english_list(mods)] are attached.")
 	else
@@ -655,4 +655,3 @@ var/list/global/tank_gauge_cache = list()
 /obj/item/projectile/bullet/pellet/fragment/tank/big
 	name = "large metal fragment"
 	damage = 17
-

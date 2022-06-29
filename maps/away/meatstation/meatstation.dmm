@@ -3513,8 +3513,7 @@
 "hL" = (
 /obj/structure/table/rack/dark,
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
+	dir = 8
 	},
 /obj/machinery/door/window/southright,
 /obj/item/reagent_containers/glass/beaker/vial/random,
@@ -4416,8 +4415,7 @@
 	icon_state = "pipe-c"
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -4648,8 +4646,7 @@
 "kt" = (
 /obj/structure/table/rack/dark,
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
+	dir = 8
 	},
 /obj/machinery/door/window/southright,
 /obj/random/single/meatstation/cell,
@@ -4671,8 +4668,7 @@
 "kw" = (
 /obj/structure/table/rack/dark,
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
+	dir = 8
 	},
 /obj/machinery/door/window/northright,
 /obj/item/reagent_containers/glass/beaker/vial/random,
@@ -4682,8 +4678,7 @@
 "kx" = (
 /obj/structure/table/rack/dark,
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
+	dir = 8
 	},
 /obj/machinery/door/window/northright,
 /obj/random/single/meatstation/low/biocell,
@@ -8776,8 +8771,8 @@
 "uI" = (
 /obj/structure/table/rack,
 /obj/random/trash,
-/obj/item/clothing/accessory/arm_guards/riot,
-/obj/item/clothing/accessory/leg_guards/riot,
+/obj/item/clothing/accessory/armguards/riot,
+/obj/item/clothing/accessory/legguards/riot,
 /obj/item/shield/riot,
 /obj/effect/floor_decal/corner/grey/border{
 	dir = 1;
@@ -9375,7 +9370,6 @@
 /area/meatstation/hydroponics)
 "vU" = (
 /obj/machinery/conveyor_switch/oneway{
-	convdir = -1;
 	id = "trashconveyor"
 	},
 /obj/effect/floor_decal/corner/b_green/border,

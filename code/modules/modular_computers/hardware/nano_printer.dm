@@ -3,21 +3,20 @@
 	desc = "Small integrated printer with paper recycling module."
 	power_usage = 50
 	origin_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
-	critical = FALSE
+	critical = 0
 	icon_state = "printer"
 	hardware_size = 1
 	var/stored_paper = 50
 	var/max_paper = 50
 	var/last_print
-	var/print_language = LANGUAGE_ENGLISH
+	var/print_language = LANGUAGE_HUMAN_GERMAN
 
 /obj/item/stock_parts/computer/nano_printer/diagnostics()
 	. = ..()
 	. += "Paper buffer level: [stored_paper]/[max_paper]"
 	. += "Printer language: [print_language]"
 
-/obj/item/stock_parts/computer/nano_printer/proc/print_text(text_to_print, paper_title = null, paper_type = /obj/item/paper, list/md = null)
-	. = FALSE
+/obj/item/stock_parts/computer/nano_printer/proc/print_text(var/text_to_print, var/paper_title = null, var/paper_type = /obj/item/paper, var/list/md = null)
 	if(printer_ready())
 		last_print = world.time
 		// Damaged printer causes the resulting paper to be somewhat harder to read.
@@ -28,18 +27,18 @@
 		stored_paper--
 		playsound(T, "sound/machines/dotprinter.ogg", 30)
 		T.visible_message("<span class='notice'>\The [src] prints out a paper.</span>")
-		return TRUE
+		return 1
 
 /obj/item/stock_parts/computer/nano_printer/proc/printer_ready()
 	if(!stored_paper)
-		return FALSE
+		return 0
 	if(!enabled)
-		return FALSE
+		return 0
 	if(!check_functionality())
-		return FALSE
+		return 0
 	if(world.time < last_print + 1 SECOND)
-		return FALSE
-	return TRUE
+		return 0
+	return 1
 
 /obj/item/stock_parts/computer/nano_printer/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/paper))

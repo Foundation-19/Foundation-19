@@ -14,6 +14,7 @@
 	var/list/climbers
 	var/climb_speed_mult = 1
 	var/init_flags = EMPTY_BITFIELD
+	var/list/orbiters = null
 	var/datum/scp/SCP //For SCP's
 
 /atom/New(loc, ...)
@@ -62,9 +63,8 @@
 		if(istype(T))
 			T.RecalculateOpacity()
 
-	if (health_max)
+	if(health_max)
 		health_current = health_max
-		update_icon()
 
 	return INITIALIZE_HINT_NORMAL
 
@@ -146,12 +146,6 @@
 /atom/proc/set_density(var/new_density)
 	if(density != new_density)
 		density = !!new_density
-		if (isturf(loc))
-			var/turf/T = loc
-			if (density)
-				T.has_dense_atom = TRUE
-			else
-				T.has_dense_atom = null
 
 /atom/proc/bullet_act(obj/item/projectile/P, def_zone)
 	P.on_hit(src, 0, def_zone)
@@ -277,7 +271,7 @@ its easier to just keep the beam vertical.
 
 	to_chat(user, "[icon2html(src, user)] That's [f_name] [suffix]")
 	to_chat(user, desc)
-	if (health_max)
+	if(health_max)
 		examine_damage_state(user)
 	return TRUE
 

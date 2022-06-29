@@ -564,6 +564,39 @@
 		var/mob/living/L = locate(href_list["debug_mob_ai"])
 		log_debug("AI Debugging toggled [L.ai_holder.debug() ? "ON" : "OFF"] for \the [L]")
 
+	else if (href_list["addreagent"])
+		if (!check_rights(R_DEBUG|R_ADMIN|R_FUN))
+			return
+		var/atom/A = locate(href_list["addreagent"])
+		if (!istype(A))
+			return
+		var/choice = input("Enter the name or typepath of a reagent to add.", "Add Reagent", null) as null|text
+		if (!choice || QDELETED(A) || !A.reagents)
+			return
+		var/datum/reagent/to_add
+		var/list/candidates
+		for (var/V in subtypesof(/datum/reagent))
+			var/datum/reagent/R = V
+			if (lowertext(initial(R.name)) == lowertext(choice))
+				LAZYADD(candidates, R)
+			var/possible_path = text2path(choice)
+			if (ispath(possible_path) && possible_path == R)
+				LAZYADD(candidates, R)
+		if (!LAZYLEN(candidates))
+			to_chat(usr, SPAN_WARNING("No reagent exists with the path or name \"[choice]\"!"))
+			return
+		else if (LAZYLEN(candidates) == 1)
+			to_add = candidates[1]
+		else
+			to_add = input("Multiple reagents exist with this name. Choose one.", "Add Reagent", null) as null|anything in candidates
+		if (!to_add || QDELETED(A) || !A.reagents)
+			return
+		choice = input("Choose how many units to add to \the [A].", "Add Reagent - [initial(to_add.name)]", null) as null|num
+		if (!choice || QDELETED(A) || !A.reagents)
+			return
+		A.reagents.add_reagent(to_add, choice)
+		log_and_message_admins("added [choice] units of [to_add] ([initial(to_add.name)]) to \the [A]")
+
 	if(href_list["datumrefresh"])
 		var/datum/DAT = locate(href_list["datumrefresh"])
 		if(istype(DAT, /datum) || istype(DAT, /client))

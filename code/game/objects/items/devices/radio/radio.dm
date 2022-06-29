@@ -103,8 +103,7 @@
 	if(b_stat)
 		wires.Interact(user)
 
-	else
-		ui_interact(user)
+	return ui_interact(user)
 
 /obj/item/device/radio/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, datum/nanoui/master_ui = null, datum/topic_state/state = GLOB.default_state)
 	var/data[0]
@@ -270,7 +269,7 @@
 		return TRUE
 
 	if(href_list["remove_cell"])
-		if(cell && b_stat)
+		if(cell)
 			var/mob/user = usr
 			user.put_in_hands(cell)
 			to_chat(user, "<span class='notice'>You remove [cell] from \the [src].</span>")
@@ -362,6 +361,7 @@
 		return 0
 
 	var/turf/position = get_turf(src)
+	playsound(src, 'sound/effects/radiohiss.ogg', 10)
 
 	//#### Tagging the signal with all appropriate identity values ####//
 

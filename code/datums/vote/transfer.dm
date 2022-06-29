@@ -11,7 +11,7 @@
 		return
 	if(!evacuation_controller || !evacuation_controller.should_call_autotransfer_vote())
 		return FALSE
-	if(!automatic && !config.allow_vote_restart && !isadmin(creator))
+	if(!automatic && !config.allow_vote_restart && !is_admin(creator))
 		return FALSE // Admins and autovotes bypass the config setting.
 	if(check_rights(R_INVESTIGATE, 0, creator))
 		return //Mods bypass further checks.
@@ -45,7 +45,7 @@
 		else
 			factor = 1.4
 	choices[CHOICE_TRANSFER] = round(choices[CHOICE_TRANSFER] * factor)
-	to_world("<font color='purple'>Crew Transfer Factor: [factor]</font>")
+	to_world("<font color='purple'>Transfer Vote Multiplier: [factor]</font>")
 
 /datum/vote/transfer/report_result()
 	if(..())
@@ -59,13 +59,13 @@
 	if((. = ..()))
 		return
 	if(config.vote_no_dead_crew_transfer)
-		return !isliving(user) || ismouse(user) || is_drone(user) || user.stat == DEAD
+		return !isliving(user) || ismouse(user) || is_drone(user)
 
 /datum/vote/transfer/check_toggle()
 	return config.allow_vote_restart ? "Allowed" : "Disallowed"
 
 /datum/vote/transfer/toggle(mob/user)
-	if(isadmin(user))
+	if(is_admin(user))
 		config.allow_vote_restart = !config.allow_vote_restart
 
 #undef CHOICE_TRANSFER

@@ -1,5 +1,7 @@
 /datum/random_map/noise/ore
 	descriptor = "ore distribution map"
+	/// Displayed by running sensor scans over a map template with this distribution type, if available.
+	var/scan_info = null
 	var/deep_val = 0.8              // Threshold for deep metals, set in new as percentage of cell_range.
 	var/rare_val = 0.7              // Threshold for rare metal, set in new as percentage of cell_range.
 	var/chunk_size = 4              // Size each cell represents on map
@@ -104,13 +106,16 @@
 /datum/random_map/noise/ore/filthy_rich
 	deep_val = 0.6
 	rare_val = 0.4
+	scan_info = "Extremely rich."
 
 /datum/random_map/noise/ore/rich
 	deep_val = 0.7
 	rare_val = 0.5
-	
+	scan_info = "High."
+
 /datum/random_map/noise/ore/poor
 	deep_val = 0.8
 	rare_val = 0.7
 	min_rare_ratio = 0.02
 	min_rare_ratio = 0.01
+	scan_info = "Low."

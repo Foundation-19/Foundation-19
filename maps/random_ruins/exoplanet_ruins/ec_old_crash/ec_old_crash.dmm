@@ -33,7 +33,6 @@
 /area/map_template/ecship/cockpit)
 "ag" = (
 /obj/structure/grille,
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/template_noop)
 "ak" = (
@@ -494,7 +493,6 @@
 "bi" = (
 /obj/structure/catwalk,
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "bj" = (
@@ -517,7 +515,6 @@
 	icon_state = "1-4"
 	},
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "bl" = (
@@ -638,7 +635,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "bx" = (
@@ -740,7 +736,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "bD" = (
@@ -782,8 +777,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced{
-	dir = 2;
-	health = 1e+007
+	dir = 2
 	},
 /obj/effect/floor_decal/corner/purple{
 	dir = 6;
@@ -933,7 +927,6 @@
 	dir = 4;
 	icon_state = "1-2"
 	},
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "bW" = (
@@ -965,7 +958,6 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "bZ" = (
@@ -1100,14 +1092,12 @@
 	icon_state = "1-4"
 	},
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "cj" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "ck" = (
@@ -1567,7 +1557,6 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "dd" = (
@@ -1651,7 +1640,6 @@
 /obj/structure/catwalk,
 /obj/structure/handrail,
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "dm" = (
@@ -1662,7 +1650,6 @@
 	icon_state = "intact"
 	},
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "dn" = (
@@ -1808,7 +1795,6 @@
 	icon_state = "intact"
 	},
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "dw" = (
@@ -1818,14 +1804,12 @@
 	icon_state = "intact"
 	},
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "dx" = (
 /obj/structure/catwalk,
 /obj/effect/landmark/scorcher,
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "dy" = (
@@ -1855,7 +1839,6 @@
 	pixel_y = 0
 	},
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "dA" = (
@@ -1911,7 +1894,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "dH" = (
@@ -1933,7 +1915,6 @@
 	icon_state = "intact"
 	},
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/map_template/ecship/engine)
 "dJ" = (
@@ -1968,7 +1949,6 @@
 	icon_state = "1-4"
 	},
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/simulated/floor/airless,
 /area/map_template/ecship/engine)
 "dR" = (
@@ -1978,7 +1958,6 @@
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/simulated/floor/airless,
 /area/map_template/ecship/engine)
 "dT" = (
@@ -2009,7 +1988,6 @@
 	icon_state = "intact"
 	},
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/simulated/floor/airless,
 /area/map_template/ecship/engine)
 "dY" = (
@@ -2108,7 +2086,6 @@
 /area/map_template/ecship/engine)
 "ei" = (
 /obj/structure/catwalk,
-/obj/effect/landmark/clear,
 /turf/simulated/floor/airless,
 /area/map_template/ecship/engine)
 "ej" = (
@@ -2174,7 +2151,6 @@
 "yZ" = (
 /obj/structure/grille,
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/template_noop,
 /area/template_noop)
 "NM" = (
@@ -2201,7 +2177,6 @@
 "YW" = (
 /obj/structure/catwalk,
 /obj/effect/landmark/scorcher,
-/obj/effect/landmark/clear,
 /turf/simulated/floor/airless,
 /area/map_template/ecship/engine)
 "ZF" = (

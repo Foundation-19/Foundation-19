@@ -16,12 +16,11 @@
 	same_tile = 0
 	can_throw = 1
 	force_danger = 1
-	breakability = 4
+	breakability = 3
 
 	icon_state = "reinforce1"
 
-	break_chance_table = list(25, 30, 35, 40, 45, 50, 55)
-
+	break_chance_table = list(5, 20, 40, 80, 100)
 /datum/grab/normal/aggressive/process_effect(var/obj/item/grab/G)
 	var/mob/living/carbon/human/affecting = G.affecting
 

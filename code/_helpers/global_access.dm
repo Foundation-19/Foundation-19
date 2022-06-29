@@ -1,8 +1,6 @@
 // THIS FILE IS AUTOMATICALLY CREATED BY tools/gen_globals.py
 /proc/readglobal(which)
 	switch(which)
-		if("floating_chat_colors")
-			return global.floating_chat_colors;
 		if("ANTAG_FREQS")
 			return global.ANTAG_FREQS;
 		if("AWAY_FREQS_ASSIGNED")
@@ -67,6 +65,8 @@
 			return global.SSculture;
 		if("SScustomitems")
 			return global.SScustomitems;
+		if("SSdbcore")
+			return global.SSdbcore;
 		if("SSdisposals")
 			return global.SSdisposals;
 		if("SSevac")
@@ -93,6 +93,8 @@
 			return global.SSicon_update;
 		if("SSinactivity")
 			return global.SSinactivity;
+		if("SSinput")
+			return global.SSinput;
 		if("SSjobs")
 			return global.SSjobs;
 		if("SSkv")
@@ -105,6 +107,8 @@
 			return global.SSmapping;
 		if("SSmaterials")
 			return global.SSmaterials;
+		if("SSminimap")
+			return global.SSminimap;
 		if("SSmisc")
 			return global.SSmisc;
 		if("SSmisc_late")
@@ -115,14 +119,18 @@
 			return global.SSnano;
 		if("SSobj")
 			return global.SSobj;
+		if("SSorbit")
+			return global.SSorbit;
+		if("SSoverlays")
+			return global.SSoverlays;
 		if("SSpersistence")
 			return global.SSpersistence;
-		if("SSping")
-			return global.SSping;
 		if("SSplants")
 			return global.SSplants;
 		if("SSprocessing")
 			return global.SSprocessing;
+		if("SSprojectiles")
+			return global.SSprojectiles;
 		if("SSpsi")
 			return global.SSpsi;
 		if("SSradiation")
@@ -133,6 +141,8 @@
 			return global.SSshuttle;
 		if("SSskybox")
 			return global.SSskybox;
+		if("SSstation")
+			return global.SSstation;
 		if("SSstatistics")
 			return global.SSstatistics;
 		if("SSsun")
@@ -171,6 +181,8 @@
 			return global.Tier4Runes;
 		if("WALLITEMS")
 			return global.WALLITEMS;
+		if("__rust_g")
+			return global.__rust_g;
 		if("_all_globals")
 			return global._all_globals;
 		if("_client_preferences")
@@ -179,6 +191,10 @@
 			return global._client_preferences_by_key;
 		if("_client_preferences_by_type")
 			return global._client_preferences_by_type;
+		if("_kbMap")
+			return global._kbMap;
+		if("_kbMap_reverse")
+			return global._kbMap_reverse;
 		if("account_hack_attempted")
 			return global.account_hack_attempted;
 		if("additional_antag_types")
@@ -203,6 +219,8 @@
 			return global.admin_verbs_fun;
 		if("admin_verbs_hideable")
 			return global.admin_verbs_hideable;
+		if("admin_verbs_mentors")
+			return global.admin_verbs_mentors;
 		if("admin_verbs_mod")
 			return global.admin_verbs_mod;
 		if("admin_verbs_paranoid_debug")
@@ -287,8 +305,6 @@
 			return global.assigned;
 		if("assigned_blocks")
 			return global.assigned_blocks;
-		if("atmosphere_alarm")
-			return global.atmosphere_alarm;
 		if("attack_log_repository")
 			return global.attack_log_repository;
 		if("base_miss_chance")
@@ -305,8 +321,6 @@
 			return global.cached_icons;
 		if("cached_space")
 			return global.cached_space;
-		if("camera_alarm")
-			return global.camera_alarm;
 		if("camera_range_display_status")
 			return global.camera_range_display_status;
 		if("camera_repository")
@@ -343,12 +357,6 @@
 			return global.config;
 		if("contamination_overlay")
 			return global.contamination_overlay;
-		if("create_mob_html")
-			return global.create_mob_html;
-		if("create_object_html")
-			return global.create_object_html;
-		if("create_turf_html")
-			return global.create_turf_html;
 		if("created")
 			return global.created;
 		if("crew_repository")
@@ -419,10 +427,10 @@
 			return global.file_uid;
 		if("finds_as_strings")
 			return global.finds_as_strings;
-		if("fire_alarm")
-			return global.fire_alarm;
 		if("flesh_hud_colours")
 			return global.flesh_hud_colours;
+		if("floating_chat_colors")
+			return global.floating_chat_colors;
 		if("floorIsLava")
 			return global.floorIsLava;
 		if("floor_decals")
@@ -443,6 +451,8 @@
 			return global.fusion_reactions;
 		if("game_id")
 			return global.game_id;
+		if("gamemode_cache")
+			return global.gamemode_cache;
 		if("gas_data")
 			return global.gas_data;
 		if("gear_datums")
@@ -465,10 +475,10 @@
 			return global.gzn_check;
 		if("hadevent")
 			return global.hadevent;
-		if("hivemind_bank")
-			return global.hivemind_bank;
 		if("holder_mob_icon_cache")
 			return global.holder_mob_icon_cache;
+		if("hotkey_keybinding_list_by_key")
+			return global.hotkey_keybinding_list_by_key;
 		if("human_icon_cache")
 			return global.human_icon_cache;
 		if("id_card_states")
@@ -489,6 +499,8 @@
 			return global.jobban_keylist;
 		if("jobban_runonce")
 			return global.jobban_runonce;
+		if("keybindings_by_name")
+			return global.keybindings_by_name;
 		if("landmarks_list")
 			return global.landmarks_list;
 		if("language_keys")
@@ -579,8 +591,6 @@
 			return global.mob_hat_cache;
 		if("mob_repository")
 			return global.mob_repository;
-		if("motion_alarm")
-			return global.motion_alarm;
 		if("moving_levels")
 			return global.moving_levels;
 		if("multi_point_spawns")
@@ -645,14 +655,6 @@
 			return global.plant_seed_sprites;
 		if("playable_species")
 			return global.playable_species;
-		if("possible_changeling_IDs")
-			return global.possible_changeling_IDs;
-		if("power_alarm")
-			return global.power_alarm;
-		if("powerinstances")
-			return global.powerinstances;
-		if("powers")
-			return global.powers;
 		if("priority_air_alarms")
 			return global.priority_air_alarms;
 		if("priority_announcement")
@@ -731,6 +733,8 @@
 			return global.skin_styles_female_list;
 		if("skipped_unit_tests")
 			return global.skipped_unit_tests;
+		if("slot_equipment_priority")
+			return global.slot_equipment_priority;
 		if("slot_flags_enumeration")
 			return global.slot_flags_enumeration;
 		if("solar_gen_rate")
@@ -877,11 +881,9 @@
 			return global.z_levels;
 		if("zone_blocked")
 			return global.zone_blocked;
-
+		
 /proc/writeglobal(which, newval)
 	switch(which)
-		if("floating_chat_colors")
-			global.floating_chat_colors=newval;
 		if("ANTAG_FREQS")
 			global.ANTAG_FREQS=newval;
 		if("AWAY_FREQS_ASSIGNED")
@@ -946,6 +948,8 @@
 			global.SSculture=newval;
 		if("SScustomitems")
 			global.SScustomitems=newval;
+		if("SSdbcore")
+			global.SSdbcore=newval;
 		if("SSdisposals")
 			global.SSdisposals=newval;
 		if("SSevac")
@@ -972,6 +976,8 @@
 			global.SSicon_update=newval;
 		if("SSinactivity")
 			global.SSinactivity=newval;
+		if("SSinput")
+			global.SSinput=newval;
 		if("SSjobs")
 			global.SSjobs=newval;
 		if("SSkv")
@@ -984,6 +990,8 @@
 			global.SSmapping=newval;
 		if("SSmaterials")
 			global.SSmaterials=newval;
+		if("SSminimap")
+			global.SSminimap=newval;
 		if("SSmisc")
 			global.SSmisc=newval;
 		if("SSmisc_late")
@@ -994,14 +1002,18 @@
 			global.SSnano=newval;
 		if("SSobj")
 			global.SSobj=newval;
+		if("SSorbit")
+			global.SSorbit=newval;
+		if("SSoverlays")
+			global.SSoverlays=newval;
 		if("SSpersistence")
 			global.SSpersistence=newval;
-		if("SSping")
-			global.SSping=newval;
 		if("SSplants")
 			global.SSplants=newval;
 		if("SSprocessing")
 			global.SSprocessing=newval;
+		if("SSprojectiles")
+			global.SSprojectiles=newval;
 		if("SSpsi")
 			global.SSpsi=newval;
 		if("SSradiation")
@@ -1012,6 +1024,8 @@
 			global.SSshuttle=newval;
 		if("SSskybox")
 			global.SSskybox=newval;
+		if("SSstation")
+			global.SSstation=newval;
 		if("SSstatistics")
 			global.SSstatistics=newval;
 		if("SSsun")
@@ -1050,6 +1064,8 @@
 			global.Tier4Runes=newval;
 		if("WALLITEMS")
 			global.WALLITEMS=newval;
+		if("__rust_g")
+			global.__rust_g=newval;
 		if("_all_globals")
 			global._all_globals=newval;
 		if("_client_preferences")
@@ -1058,6 +1074,10 @@
 			global._client_preferences_by_key=newval;
 		if("_client_preferences_by_type")
 			global._client_preferences_by_type=newval;
+		if("_kbMap")
+			global._kbMap=newval;
+		if("_kbMap_reverse")
+			global._kbMap_reverse=newval;
 		if("account_hack_attempted")
 			global.account_hack_attempted=newval;
 		if("additional_antag_types")
@@ -1082,6 +1102,8 @@
 			global.admin_verbs_fun=newval;
 		if("admin_verbs_hideable")
 			global.admin_verbs_hideable=newval;
+		if("admin_verbs_mentors")
+			global.admin_verbs_mentors=newval;
 		if("admin_verbs_mod")
 			global.admin_verbs_mod=newval;
 		if("admin_verbs_paranoid_debug")
@@ -1166,8 +1188,6 @@
 			global.assigned=newval;
 		if("assigned_blocks")
 			global.assigned_blocks=newval;
-		if("atmosphere_alarm")
-			global.atmosphere_alarm=newval;
 		if("attack_log_repository")
 			global.attack_log_repository=newval;
 		if("base_miss_chance")
@@ -1184,8 +1204,6 @@
 			global.cached_icons=newval;
 		if("cached_space")
 			global.cached_space=newval;
-		if("camera_alarm")
-			global.camera_alarm=newval;
 		if("camera_range_display_status")
 			global.camera_range_display_status=newval;
 		if("camera_repository")
@@ -1222,12 +1240,6 @@
 			global.config=newval;
 		if("contamination_overlay")
 			global.contamination_overlay=newval;
-		if("create_mob_html")
-			global.create_mob_html=newval;
-		if("create_object_html")
-			global.create_object_html=newval;
-		if("create_turf_html")
-			global.create_turf_html=newval;
 		if("created")
 			global.created=newval;
 		if("crew_repository")
@@ -1298,10 +1310,10 @@
 			global.file_uid=newval;
 		if("finds_as_strings")
 			global.finds_as_strings=newval;
-		if("fire_alarm")
-			global.fire_alarm=newval;
 		if("flesh_hud_colours")
 			global.flesh_hud_colours=newval;
+		if("floating_chat_colors")
+			global.floating_chat_colors=newval;
 		if("floorIsLava")
 			global.floorIsLava=newval;
 		if("floor_decals")
@@ -1322,6 +1334,8 @@
 			global.fusion_reactions=newval;
 		if("game_id")
 			global.game_id=newval;
+		if("gamemode_cache")
+			global.gamemode_cache=newval;
 		if("gas_data")
 			global.gas_data=newval;
 		if("gear_datums")
@@ -1344,10 +1358,10 @@
 			global.gzn_check=newval;
 		if("hadevent")
 			global.hadevent=newval;
-		if("hivemind_bank")
-			global.hivemind_bank=newval;
 		if("holder_mob_icon_cache")
 			global.holder_mob_icon_cache=newval;
+		if("hotkey_keybinding_list_by_key")
+			global.hotkey_keybinding_list_by_key=newval;
 		if("human_icon_cache")
 			global.human_icon_cache=newval;
 		if("id_card_states")
@@ -1368,6 +1382,8 @@
 			global.jobban_keylist=newval;
 		if("jobban_runonce")
 			global.jobban_runonce=newval;
+		if("keybindings_by_name")
+			global.keybindings_by_name=newval;
 		if("landmarks_list")
 			global.landmarks_list=newval;
 		if("language_keys")
@@ -1458,8 +1474,6 @@
 			global.mob_hat_cache=newval;
 		if("mob_repository")
 			global.mob_repository=newval;
-		if("motion_alarm")
-			global.motion_alarm=newval;
 		if("moving_levels")
 			global.moving_levels=newval;
 		if("multi_point_spawns")
@@ -1524,14 +1538,6 @@
 			global.plant_seed_sprites=newval;
 		if("playable_species")
 			global.playable_species=newval;
-		if("possible_changeling_IDs")
-			global.possible_changeling_IDs=newval;
-		if("power_alarm")
-			global.power_alarm=newval;
-		if("powerinstances")
-			global.powerinstances=newval;
-		if("powers")
-			global.powers=newval;
 		if("priority_air_alarms")
 			global.priority_air_alarms=newval;
 		if("priority_announcement")
@@ -1610,6 +1616,8 @@
 			global.skin_styles_female_list=newval;
 		if("skipped_unit_tests")
 			global.skipped_unit_tests=newval;
+		if("slot_equipment_priority")
+			global.slot_equipment_priority=newval;
 		if("slot_flags_enumeration")
 			global.slot_flags_enumeration=newval;
 		if("solar_gen_rate")
@@ -1756,7 +1764,7 @@
 			global.z_levels=newval;
 		if("zone_blocked")
 			global.zone_blocked=newval;
-
+		
 /var/list/_all_globals=list(
 	"ANTAG_FREQS",
 	"AWAY_FREQS_ASSIGNED",
@@ -1790,6 +1798,7 @@
 	"SScuisine",
 	"SSculture",
 	"SScustomitems",
+	"SSdbcore",
 	"SSdisposals",
 	"SSevac",
 	"SSevent",
@@ -1803,26 +1812,31 @@
 	"SSgraphs_update",
 	"SSicon_update",
 	"SSinactivity",
+	"SSinput",
 	"SSjobs",
 	"SSkv",
 	"SSlighting",
 	"SSmachines",
 	"SSmapping",
 	"SSmaterials",
+	"SSminimap",
 	"SSmisc",
 	"SSmisc_late",
 	"SSmobs",
 	"SSnano",
 	"SSobj",
+	"SSorbit",
+	"SSoverlays",
 	"SSpersistence",
-	"SSping",
 	"SSplants",
 	"SSprocessing",
+	"SSprojectiles",
 	"SSpsi",
 	"SSradiation",
 	"SSrobots",
 	"SSshuttle",
 	"SSskybox",
+	"SSstation",
 	"SSstatistics",
 	"SSsun",
 	"SSsupply",
@@ -1842,10 +1856,13 @@
 	"Tier3Runes",
 	"Tier4Runes",
 	"WALLITEMS",
+	"__rust_g",
 	"_all_globals",
 	"_client_preferences",
 	"_client_preferences_by_key",
 	"_client_preferences_by_type",
+	"_kbMap",
+	"_kbMap_reverse",
 	"account_hack_attempted",
 	"additional_antag_types",
 	"admin_datums",
@@ -1858,6 +1875,7 @@
 	"admin_verbs_default",
 	"admin_verbs_fun",
 	"admin_verbs_hideable",
+	"admin_verbs_mentors",
 	"admin_verbs_mod",
 	"admin_verbs_paranoid_debug",
 	"admin_verbs_permissions",
@@ -1900,7 +1918,6 @@
 	"asset_datums",
 	"assigned",
 	"assigned_blocks",
-	"atmosphere_alarm",
 	"attack_log_repository",
 	"base_miss_chance",
 	"basic_robolimb",
@@ -1909,7 +1926,6 @@
 	"cable_list",
 	"cached_icons",
 	"cached_space",
-	"camera_alarm",
 	"camera_range_display_status",
 	"camera_repository",
 	"cameranet",
@@ -1928,9 +1944,6 @@
 	"common_tools",
 	"config",
 	"contamination_overlay",
-	"create_mob_html",
-	"create_object_html",
-	"create_turf_html",
 	"created",
 	"crew_repository",
 	"csrfz_check",
@@ -1966,8 +1979,8 @@
 	"failed_unit_tests",
 	"file_uid",
 	"finds_as_strings",
-	"fire_alarm",
 	"flesh_hud_colours",
+	"floating_chat_colors",
 	"floorIsLava",
 	"floor_decals",
 	"floor_light_cache",
@@ -1976,9 +1989,9 @@
 	"follow_repository",
 	"forced_ambiance_list",
 	"fruit_icon_cache",
-	"floating_chat_colors",
 	"fusion_reactions",
 	"game_id",
+	"gamemode_cache",
 	"gas_data",
 	"gear_datums",
 	"gear_tweak_free_color_choice_",
@@ -1990,8 +2003,8 @@
 	"global_vars_",
 	"gzn_check",
 	"hadevent",
-	"hivemind_bank",
 	"holder_mob_icon_cache",
+	"hotkey_keybinding_list_by_key",
 	"human_icon_cache",
 	"id_card_states",
 	"image_repository",
@@ -2002,6 +2015,7 @@
 	"jobMax",
 	"jobban_keylist",
 	"jobban_runonce",
+	"keybindings_by_name",
 	"landmarks_list",
 	"language_keys",
 	"last_chew",
@@ -2047,7 +2061,6 @@
 	"minor_announcement",
 	"mob_hat_cache",
 	"mob_repository",
-	"motion_alarm",
 	"moving_levels",
 	"multi_point_spawns",
 	"narsie_behaviour",
@@ -2080,10 +2093,6 @@
 	"pipe_colors",
 	"plant_seed_sprites",
 	"playable_species",
-	"possible_changeling_IDs",
-	"power_alarm",
-	"powerinstances",
-	"powers",
 	"priority_air_alarms",
 	"priority_announcement",
 	"priv_all_access",
@@ -2123,6 +2132,7 @@
 	"side_effects",
 	"skin_styles_female_list",
 	"skipped_unit_tests",
+	"slot_equipment_priority",
 	"slot_flags_enumeration",
 	"solar_gen_rate",
 	"solars_list",

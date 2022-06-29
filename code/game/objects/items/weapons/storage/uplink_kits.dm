@@ -135,11 +135,11 @@
 	pack.desc += " 'S' has been scribbled on it."
 
 	pack = new /obj/item/storage/fancy/cigarettes(src)
-	fill_cigarre_package(pack, list(/datum/reagent/mindbreaker = 4))
+	fill_cigarre_package(pack, list(/datum/reagent/medicine/dylovene = 1, /datum/reagent/silicon = 1, /datum/reagent/hydrazine = 1))
 	pack.desc += " 'MB' has been scribbled on it."
 
 	pack = new /obj/item/storage/fancy/cigarettes(src)
-	fill_cigarre_package(pack, list(/datum/reagent/tricordrazine = 4))
+	fill_cigarre_package(pack, list(/datum/reagent/medicine/tricordrazine = 4))
 	pack.desc += " 'T' has been scribbled on it."
 
 	new /obj/item/flame/lighter/zippo(src)

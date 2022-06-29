@@ -13,7 +13,7 @@ GLOBAL_LIST_EMPTY(species_icon_template_cache)
 /proc/overlay_image(icon,icon_state,color,flags)
 	var/image/ret = image(icon,icon_state)
 	ret.color = color
-	ret.appearance_flags = DEFAULT_APPEARANCE_FLAGS | flags
+	ret.appearance_flags = flags
 	return ret
 
 	///////////////////////
@@ -189,38 +189,15 @@ Please contact me on #coderbus IRC. ~Carn x
 
 	overlays = overlays_to_apply
 
-	var/matrix/M = new
-	var/list/scale = get_scale()
-	M.Scale(scale[1], scale[2])
-	if (lying)
+	var/matrix/M = matrix()
+	if(lying)
 		M.Turn(90)
-		M.Translate(1, -6 - default_pixel_z)
+		M.Scale(size_multiplier)
+		M.Translate(1, -6-default_pixel_z)
 	else
-		M.Translate(0, 16 * (scale[2] - 1))
+		M.Scale(size_multiplier)
+		M.Translate(0, 16*(size_multiplier-1))
 	animate(src, transform = M, time = ANIM_LYING_TIME)
-
-
-/mob/living/carbon/human/proc/get_scale()
-	var/height_modifier = 0
-	var/height_descriptor = LAZYACCESS(descriptors, "height")
-	if (height_descriptor)
-		var/datum/mob_descriptor/height/H = species.descriptors["height"]
-		if (H)
-			var/list/scale_effect = H.scale_effect[species.name]
-			if (length(scale_effect))
-				height_modifier = 0.01 * scale_effect[height_descriptor]
-	var/build_modifier = 0
-	var/build_descriptor = LAZYACCESS(descriptors, "build")
-	if (build_descriptor)
-		var/datum/mob_descriptor/build/B = species.descriptors["build"]
-		if (B)
-			var/list/scale_effect = B.scale_effect[species.name]
-			if (length(scale_effect))
-				build_modifier = 0.01 * scale_effect[build_descriptor]
-	return list(
-		(1 + build_modifier) * size_multiplier,
-		(1 + height_modifier) * size_multiplier
-	)
 
 var/global/list/damage_icon_parts = list()
 
@@ -453,7 +430,7 @@ var/global/list/damage_icon_parts = list()
 			continue
 
 		var/image/I = image(icon = UW.icon, icon_state = UW.icon_state)
-		I.appearance_flags = DEFAULT_APPEARANCE_FLAGS | RESET_COLOR
+		I.appearance_flags = RESET_COLOR
 		I.color = UW.color
 
 		overlays_standing[HO_UNDERWEAR_LAYER] += I
@@ -572,8 +549,8 @@ var/global/list/damage_icon_parts = list()
 
 	overlays_standing[HO_ID_LAYER]	= id_overlay
 
-	SET_BIT(hud_updateflag, ID_HUD)
-	SET_BIT(hud_updateflag, WANTED_HUD)
+	BITSET(hud_updateflag, ID_HUD)
+	BITSET(hud_updateflag, WANTED_HUD)
 
 	if(update_icons)
 		queue_icon_update()
@@ -879,7 +856,7 @@ var/global/list/damage_icon_parts = list()
 			LAZYADD(overlays_to_add, image(icon = surgery_icon, icon_state = overlay_state, layer = -HO_SURGERY_LAYER))
 		total.overlays |= overlays_to_add
 
-	total.appearance_flags = DEFAULT_APPEARANCE_FLAGS | RESET_COLOR
+	total.appearance_flags = RESET_COLOR
 	overlays_standing[HO_SURGERY_LAYER] = total
 	if(update_icons)
 		queue_icon_update()

@@ -28,7 +28,7 @@
 		bomb = ARMOR_BOMB_RESISTANT,
 		bio = ARMOR_BIO_MINOR
 		)
-	item_flags = ITEM_FLAG_NOSLIP | ITEM_FLAG_WASHER_ALLOWED
+	item_flags = ITEM_FLAG_NOSLIP
 	siemens_coefficient = 0.6
 
 /obj/item/clothing/shoes/combat //Basically SWAT shoes combined with galoshes.
@@ -44,7 +44,7 @@
 		bomb = ARMOR_BOMB_RESISTANT,
 		bio = ARMOR_BIO_MINOR
 		)
-	item_flags = ITEM_FLAG_NOSLIP | ITEM_FLAG_WASHER_ALLOWED
+	item_flags = ITEM_FLAG_NOSLIP
 	siemens_coefficient = 0.6
 
 	cold_protection = FEET
@@ -151,8 +151,8 @@
 	species_restricted = null
 	can_add_hidden_item = FALSE
 
-/obj/item/clothing/shoes/clown_shoes/New()
-	..()
+/obj/item/clothing/shoes/clown_shoes/Initialize()
+	. = ..()
 	slowdown_per_slot[slot_shoes]  = 1
 
 /obj/item/clothing/shoes/clown_shoes/handle_movement(var/turf/walking, var/running)
@@ -183,7 +183,6 @@
 	name = "cyborg boots"
 	desc = "Shoes for a cyborg costume."
 	icon_state = "boots"
-	item_flags = null
 
 /obj/item/clothing/shoes/slippers
 	name = "bunny slippers"
@@ -218,8 +217,8 @@
 	can_add_hidden_item = FALSE
 	can_add_cuffs = FALSE
 
-/obj/item/clothing/shoes/swimmingfins/New()
-	..()
+/obj/item/clothing/shoes/swimmingfins/Initialize()
+	. = ..()
 	slowdown_per_slot[slot_shoes] = 1
 
 /obj/item/clothing/shoes/athletic
@@ -248,14 +247,3 @@ obj/item/clothing/shoes/heels/red
 	name = "red high heels"
 	desc = "A pair of red high heels."
 	color = COLOR_RED
-
-/obj/item/clothing/shoes/foamclog
-	name = "foam clog"
-	desc = "Made from durable foam resin that retains its spongy feel."
-	icon_state = "foamclog"
-	can_add_hidden_item = FALSE
-	can_add_cuffs = FALSE
-
-/obj/item/clothing/shoes/foamclog/random/New()
-	..()
-	color = get_random_colour()

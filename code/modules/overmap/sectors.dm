@@ -109,6 +109,16 @@
 	desc = "Sector with some stuff in it."
 	icon_state = "sector"
 	anchored = TRUE
+	/**
+	 * A detailed summary of this sector based on what a scan report would show.
+	 * These aren't strictly defined, but some things for inspiration might include: topographical scans, energy readings, life signs...
+	 */
+	var/scan_summary = null
+	/**
+	 * This is displayed on sensor scan readouts if non-null, and is used for things like exoplanet classes.
+	 * Keep it brief, with things like "EVA suits required", "high mineral content", etc.
+	 */
+	var/scan_assessment = null
 
 
 /obj/effect/overmap/visitable/sector/Initialize()

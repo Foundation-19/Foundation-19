@@ -1,6 +1,8 @@
 /obj/effect/overmap/visitable/sector/exoplanet/chlorine
 	name = "chlorine exoplanet"
 	desc = "An exoplanet with a chlorine based ecosystem. Large quantities of liquid chlorine are present."
+	scan_summary = "Warm, wet exoplanet characterized by an atmosphere containing high amounts of liquid chlorine. Complex life has developed, presumably utilizing chorine as a biological solvent instead of water; several distinct species of flora and fauna are present."
+	scan_assessment = "Hostile atmosphere necessitates use of internals and possibly pressure suits."
 	color = "#c9df9f"
 	planetary_area = /area/exoplanet/chlorine
 	rock_colors = list(COLOR_GRAY80, COLOR_PALE_GREEN_GRAY, COLOR_PALE_BTL_GREEN)

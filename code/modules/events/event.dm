@@ -1,16 +1,16 @@
 /datum/event_meta
-	var/name 		= ""
-	var/enabled 	= 1	// Whether or not the event is available for random selection at all
-	var/weight 		= 0 // The base weight of this event. A zero means it may never fire, but see get_weight()
-	var/min_weight	= 0 // The minimum weight that this event will have. Only used if non-zero.
-	var/max_weight	= 0 // The maximum weight that this event will have. Only use if non-zero.
-	var/severity 	= 0 // The current severity of this event
-	var/one_shot	= 0	// If true, then the event will not be re-added to the list of available events
-	var/add_to_queue= 1	// If true, add back to the queue of events upon finishing.
+	var/name = ""
+	var/enabled = 1 // Whether or not the event is available for random selection at all
+	var/weight = 0 // The base weight of this event. A zero means it may never fire, but see get_weight()
+	var/min_weight = 0 // The minimum weight that this event will have. Only used if non-zero.
+	var/max_weight = null // The maximum weight that this event will have. Only use if non-zero.
+	var/severity = 0 // The current severity of this event
+	var/one_shot = 0 // If true, then the event will not be re-added to the list of available events
+	var/add_to_queue = 1 // If true, add back to the queue of events upon finishing.
 	var/list/role_weights = list()
 	var/datum/event/event_type
 
-/datum/event_meta/New(var/event_severity, var/event_name, var/datum/event/type, var/event_weight, var/list/job_weights, var/is_one_shot = 0, var/min_event_weight = 0, var/max_event_weight = 0, var/add_to_queue = 1)
+/datum/event_meta/New(event_severity, event_name, datum/event/type, event_weight, list/job_weights, is_one_shot = 0, min_event_weight = 0, max_event_weight = null, add_to_queue = 1)
 	name = event_name
 	severity = event_severity
 	event_type = type
@@ -33,9 +33,11 @@
 
 	var/total_weight = weight + job_weight
 
-	// Only min/max the weight if the values are non-zero
-	if(min_weight && total_weight < min_weight) total_weight = min_weight
-	if(max_weight && total_weight > max_weight) total_weight = max_weight
+	// Only min/max the weight if the values exist
+	if(min_weight != null && total_weight < min_weight)
+		total_weight = min_weight
+	if(max_weight != null && total_weight > max_weight)
+		total_weight = max_weight
 
 	return total_weight
 
@@ -149,8 +151,10 @@
 
 	event_meta = EM
 	severity = event_meta.severity
-	if(severity < EVENT_LEVEL_MUNDANE) severity = EVENT_LEVEL_MUNDANE
-	if(severity > EVENT_LEVEL_MAJOR) severity = EVENT_LEVEL_MAJOR
+	if(severity < EVENT_LEVEL_MUNDANE)
+		severity = EVENT_LEVEL_MUNDANE
+	if(severity > EVENT_LEVEL_EXO)
+		severity = EVENT_LEVEL_EXO
 
 	startedAt = world.time
 

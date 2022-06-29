@@ -932,12 +932,12 @@
 	icon_state = "spline_fancy"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/outpost/abandoned)
 "dj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/outpost/abandoned)
 "dl" = (
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -945,7 +945,7 @@
 	icon_state = "spline_fancy"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/outpost/abandoned)
 "dm" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -997,12 +997,12 @@
 	},
 /obj/structure/table/woodentable,
 /obj/random/loot,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/outpost/abandoned)
 "dx" = (
 /obj/effect/floor_decal/spline/fancy/wood,
 /obj/structure/table/woodentable,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/outpost/abandoned)
 "dA" = (
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -1010,7 +1010,7 @@
 	icon_state = "spline_fancy"
 	},
 /obj/structure/table/woodentable,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/outpost/abandoned)
 "dC" = (
 /obj/machinery/vending/coffee{
@@ -2505,7 +2505,7 @@
 	icon_state = "plant-25"
 	},
 /obj/machinery/light/small,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/outpost/abandoned)
 "nb" = (
 /obj/effect/shuttle_landmark/away/nav5,
@@ -2636,19 +2636,19 @@
 "JD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/spline/fancy/wood/corner,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/outpost/abandoned)
 "Kt" = (
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 8
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/outpost/abandoned)
 "XS" = (
 /obj/effect/floor_decal/spline/fancy/wood,
 /obj/structure/table/woodentable,
 /obj/random/loot,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/outpost/abandoned)
 
 (1,1,1) = {"

@@ -77,7 +77,7 @@
 
 /mob/living/carbon/gib()
 	for(var/mob/M in contents)
-		if(is_species(SPECIES_DIONA) && istype(M, /mob/living/carbon/alien/diona) && (M.stat != DEAD))
+		if(isspecies(src, SPECIES_DIONA) && istype(M, /mob/living/carbon/alien/diona) && (M.stat != DEAD))
 			continue
 		M.dropInto(loc)
 		visible_message(SPAN_DANGER("\The [M] bursts out of \the [src]!"))
@@ -329,6 +329,9 @@
 	item.throw_at(target, throw_range, item.throw_speed * skill_mod, src)
 
 /mob/living/carbon/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+	if(status_flags & GODMODE)
+		return
+
 	..()
 	var/temp_inc = max(min(BODYTEMP_HEATING_MAX*(1-get_heat_protection()), exposed_temperature - bodytemperature), 0)
 	bodytemperature += temp_inc

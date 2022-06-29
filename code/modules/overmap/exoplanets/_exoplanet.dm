@@ -1,4 +1,6 @@
 GLOBAL_VAR(planet_repopulation_disabled)
+/// The number of planetary bodies in this sector, usually exoplanets. We use this when generating names for planets and some away sites.
+GLOBAL_VAR_INIT(number_of_planetoids, 0)
 
 /obj/effect/overmap/visitable/sector/exoplanet
 	name = "exoplanet"
@@ -82,6 +84,7 @@ GLOBAL_VAR(planet_repopulation_disabled)
 	maxx = max_x ? max_x : world.maxx
 	maxy = max_y ? max_y : world.maxy
 
+	GLOB.number_of_planetoids++
 	var/planet_name = generate_planet_name()
 	name = "[planet_name], \a [name]"
 
@@ -241,12 +244,12 @@ GLOBAL_VAR(planet_repopulation_disabled)
 	var/new_type = landmark_type
 	while(num)
 		attempts--
-		var/turf/T = locate(rand(TRANSITIONEDGE + LANDING_ZONE_RADIUS, maxx - TRANSITIONEDGE - LANDING_ZONE_RADIUS), rand(TRANSITIONEDGE + LANDING_ZONE_RADIUS, maxy - TRANSITIONEDGE - LANDING_ZONE_RADIUS),map_z[map_z.len])
+		var/turf/T = locate(rand(20, maxx - 30), rand(20, maxy - 30),map_z[map_z.len])
 		if (!T || (T in places)) // Two landmarks on one turf is forbidden as the landmark code doesn't work with it.
 			continue
 		if (attempts >= 0) // While we have the patience, try to find better spawn points. If out of patience, put them down wherever, so long as there are no repeats.
 			var/valid = TRUE
-			var/list/block_to_check = block(locate(T.x - LANDING_ZONE_RADIUS, T.y - LANDING_ZONE_RADIUS, T.z), locate(T.x + LANDING_ZONE_RADIUS, T.y + LANDING_ZONE_RADIUS, T.z))
+			var/list/block_to_check = block(locate(T.x - 15, T.y - 15, T.z), locate(T.x + 15, T.y + 15, T.z))
 			for (var/turf/check in block_to_check)
 				if (!istype(get_area(check), /area/exoplanet) || check.turf_flags & TURF_FLAG_NORUINS)
 					valid = FALSE
@@ -265,35 +268,66 @@ GLOBAL_VAR(planet_repopulation_disabled)
 		new new_type(T)
 
 /obj/effect/overmap/visitable/sector/exoplanet/get_scan_data(mob/user)
-	. = ..()
-	var/list/extra_data = list("<hr>")
-	if (atmosphere)
-		if (user.skill_check(SKILL_SCIENCE, SKILL_ADEPT))
-			var/list/gases = list()
-			for (var/g in atmosphere.gas)
-				if (atmosphere.gas[g] > atmosphere.total_moles * 0.05)
-					gases += gas_data.name[g]
-			extra_data += "Atmosphere composition: [english_list(gases)]"
-			var/inaccuracy = rand(8,12)/10
-			extra_data += "Atmosphere pressure [atmosphere.return_pressure()*inaccuracy] kPa, temperature [atmosphere.temperature*inaccuracy] K"
-		else if (user.skill_check(SKILL_SCIENCE, SKILL_BASIC))
-			extra_data += "Atmosphere present"
-		extra_data += "<hr>"
+	var/list/extra_data = list("<b>Target:</b> [name]")
+	var/user_skill = user.get_skill_value(SKILL_SCIENCE)
+	// Show a detailed scan summary if we have it
+	if (scan_summary)
+		extra_data += "<br><b>Analysis:</b> [scan_summary]"
+		if (scan_assessment)
+			extra_data += "<br><b>Assessment:</b> [scan_assessment]"
+	// Otherwise, just use the description
+	else
+		extra_data += "<br><b>Description:</b> [desc]"
+	extra_data += "<br><hr>"
 
-	if (seeds.len && user.skill_check(SKILL_SCIENCE, SKILL_BASIC))
-		extra_data += "Xenoflora detected"
+	// Atmosphere
+	if (user_skill >= SKILL_BASIC)
+		if (atmosphere)
+			if (user_skill >= SKILL_TRAINED)
+				var/list/gases = list()
+				for (var/g in atmosphere.gas)
+					if (atmosphere.gas[g] > atmosphere.total_moles * 0.05)
+						gases += gas_data.name[g]
+				extra_data += "<b>Atmosphere composition:</b> [english_list(gases)]"
+				var/inaccuracy = rand(8, 12) / 10
+				extra_data += "<b>Surface pressure:</b> ~[atmosphere.return_pressure() * inaccuracy] kPa"
+				extra_data += "<b>Temperature:</b> ~[atmosphere.temperature * inaccuracy] K"
+			else
+				extra_data += "Atmosphere present. Unable to determine surface conditions."
+		else
+			extra_data += "No atmosphere present."
+		extra_data += "<br><hr>"
 
-	if (animals.len && user.skill_check(SKILL_SCIENCE, SKILL_BASIC))
-		extra_data += "Life traces detected"
+	if (user_skill >= SKILL_BASIC)
+		// Mineral content
+		var/mineral_string = "Normal."
+		for (var/V in map_generators)
+			if (ispath(V, /datum/random_map/noise/ore))
+				var/datum/random_map/noise/ore/O = V
+				mineral_string = initial(O.scan_info)
+				break // we should only ever have one of these, so use the first one we find
+		extra_data += "<b>Mineral content:</b> [mineral_string]"
 
-	if (LAZYLEN(spawned_features) && user.skill_check(SKILL_SCIENCE, SKILL_ADEPT))
+		// Xenoflora and xenofauna
+		var/has_flora = small_flora_types.len || big_flora_types.len
+		if (!has_flora && !animals.len)
+			extra_data += "No life signs detected."
+		else
+			if (has_flora)
+				extra_data += "Plant life detected."
+			if (animals.len)
+				extra_data += "Animal life detected."
+
+	// Artificial ruins
+	if (LAZYLEN(spawned_features) && user_skill >= SKILL_TRAINED)
 		var/ruin_num = 0
 		for (var/datum/map_template/ruin/exoplanet/R in spawned_features)
 			if (!(R.ruin_tags & RUIN_NATURAL))
 				ruin_num++
 		if (ruin_num)
-			extra_data += "<hr>[ruin_num] possible artificial structure\s detected."
+			extra_data += "[ruin_num] notable structure\s detected."
 
+	// Any data from exoplanet themes
 	for (var/datum/exoplanet_theme/T in themes)
 		if (T.get_sensor_data())
 			extra_data += T.get_sensor_data()

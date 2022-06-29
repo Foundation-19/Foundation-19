@@ -173,7 +173,7 @@ proc/age2agedescription(age)
 		if (QDELETED(user))
 			. = DO_MISSING_USER
 			break
-		if (target_type && (QDELETED(target) || target_type != target.type))
+		if (target_type && QDELETED(target))
 			. = DO_MISSING_TARGET
 			break
 		if (user.incapacitated(incapacitation_flags))
@@ -191,7 +191,7 @@ proc/age2agedescription(age)
 		if (target_dir && target_dir != target.dir)
 			. = DO_TARGET_CAN_TURN
 			break
-		if ((do_flags & DO_USER_SAME_HAND) && user_hand != user.hand)
+		if (!isnull(user_hand) && user_hand != user.hand)
 			. = DO_USER_SAME_HAND
 			break
 		if (initial_handle && initial_handle != user.do_unique_user_handle)
@@ -218,7 +218,7 @@ proc/age2agedescription(age)
 			if (DO_USER_SAME_HAND)
 				to_chat(user, SPAN_WARNING("You must remain on the same active hand to perform that action!"))
 			if (DO_USER_UNIQUE_ACT)
-				to_chat(user, SPAN_WARNING("You stop what you're doing with \the [target]."))
+				to_chat(user, SPAN_WARNING("You stop what you're doing with \the [user.do_unique_user_handle]."))
 			if (DO_USER_SAME_ZONE)
 				to_chat(user, SPAN_WARNING("You must remain targeting the same zone to perform that action!"))
 

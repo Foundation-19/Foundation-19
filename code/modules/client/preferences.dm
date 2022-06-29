@@ -1,10 +1,10 @@
 #define SAVE_RESET -1
 
-#define JOB_PRIORITY_HIGH   FLAG(0)
-#define JOB_PRIORITY_MEDIUM FLAG(1)
-#define JOB_PRIORITY_LOW    FLAG(2)
-#define JOB_PRIORITY_LIKELY (JOB_PRIORITY_HIGH | JOB_PRIORITY_MEDIUM)
-#define JOB_PRIORITY_PICKED (JOB_PRIORITY_HIGH | JOB_PRIORITY_MEDIUM | JOB_PRIORITY_LOW)
+#define JOB_PRIORITY_HIGH   0x1
+#define JOB_PRIORITY_MEDIUM 0x2
+#define JOB_PRIORITY_LOW    0x4
+#define JOB_PRIORITY_LIKELY 0x3
+#define JOB_PRIORITY_PICKED 0x7
 
 #define MAX_LOAD_TRIES 5
 
@@ -43,6 +43,10 @@ datum/preferences
 		client = C
 		client_ckey = C.ckey
 		SScharacter_setup.preferences_datums[C.ckey] = src
+
+		// give them default keybinds too
+		key_bindings = deepCopyList(global.hotkey_keybinding_list_by_key)
+
 		if(SScharacter_setup.initialized)
 			setup()
 		else
@@ -151,7 +155,6 @@ datum/preferences
 /datum/preferences/proc/open_setup_window(mob/user)
 	if (!SScharacter_setup.initialized)
 		return
-
 	var/datum/browser/popup = new(user, "preferences_browser", "Character Setup", 1200, 800, src)
 	var/content = {"
 	<script type='text/javascript'>

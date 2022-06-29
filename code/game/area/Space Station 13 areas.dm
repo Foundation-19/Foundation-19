@@ -102,7 +102,6 @@ area/space/atmosalert()
 	requires_power = 0
 	dynamic_lighting = 0
 	req_access = list(access_cent_general)
-	req_access = list(level_5)
 
 /area/centcom/holding
 	name = "\improper Holding Facility"
@@ -110,7 +109,6 @@ area/space/atmosalert()
 /area/chapel
 	name = "\improper Chapel"
 	icon_state = "chapel"
-	lighting_tone = AREA_LIGHTING_WARM
 
 /area/centcom/specops
 	name = "\improper Centcom Special Ops"
@@ -119,10 +117,8 @@ area/space/atmosalert()
 /area/hallway
 	name = "hallway"
 
-
 /area/medical
 	req_access = list(access_medical)
-	lighting_tone = AREA_LIGHTING_COOL
 
 /area/security
 	req_access = list(access_sec_doors)
@@ -146,7 +142,6 @@ area/space/atmosalert()
 
 /area/rnd
 	req_access = list(access_research)
-	lighting_tone = AREA_LIGHTING_COOL
 
 /area/rnd/xenobiology
 	name = "\improper Xenobiology Lab"
@@ -183,11 +178,13 @@ area/space/atmosalert()
 	name = "Supply Shuttle"
 	icon_state = "shuttle3"
 	req_access = list(access_cargo)
+	area_flags = AREA_FLAG_HIDE_FROM_HOLOMAP
 
 /area/syndicate_elite_squad
 	name = "\improper Elite Mercenary Squad"
 	icon_state = "syndie-elite"
 	req_access = list(access_syndicate)
+	area_flags = AREA_FLAG_HIDE_FROM_HOLOMAP
 
 ////////////
 //SHUTTLES//

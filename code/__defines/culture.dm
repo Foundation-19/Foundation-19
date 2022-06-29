@@ -12,7 +12,7 @@
 
 // Cultural IDs.
 #define FACTION_SOL_CENTRAL    "The SCP Foundation"
-#define FACTION_INDIE_CONFED  "Gilgamesh Colonial Confederation"
+#define FACTION_TERRAGOV       "Terran Government"
 #define FACTION_NANOTRASEN     "NanoTrasen"
 #define FACTION_FREETRADE      "Free Trade Union"
 #define FACTION_HEPHAESTUS     "Hephaestus Industries"
@@ -36,6 +36,7 @@
 #define HOME_SYSTEM_TAU_CETI   "Ceti Epsilon"
 #define HOME_SYSTEM_HELIOS	   "Eos"
 #define HOME_SYSTEM_TERRA 	   "Terra"
+#define HOME_SYSTEM_NEW_EARTH  "New Earth"
 #define HOME_SYSTEM_TERSTEN    "Tersten"
 #define HOME_SYSTEM_LORRIMAN   "Lorriman"
 #define HOME_SYSTEM_CINU       "Cinu"
@@ -63,7 +64,7 @@
 #define CULTURE_HUMAN_CETI     "Cetite"
 #define CULTURE_HUMAN_SPACER   "Spacer, Core Systems"
 #define CULTURE_HUMAN_SPAFRO   "Spacer, Frontier Systems"
-#define CULTURE_HUMAN_CONFED   "Terran"
+#define CULTURE_HUMAN_TERRAN   "Terran"
 #define CULTURE_HUMAN_OTHER    "Other, Humanity"
 #define CULTURE_STARLIGHT      "Starlit Realms"
 #define CULTURE_MONKEY         "Monkey Business"
@@ -72,7 +73,6 @@
 #define CULTURE_STOK           "Stok Business"
 #define CULTURE_ALIUM          "Mysterious Aliens"
 #define CULTURE_CULTIST        "Blood Cult"
-
 #define RELIGION_OTHER         "Other Religion"
 #define RELIGION_JUDAISM       "Judaism"
 #define RELIGION_HINDUISM      "Hinduism"
@@ -89,7 +89,6 @@
 #define RELIGION_SPIRITUALISM  "Spiritualism"
 #define RELIGION_SHINTO        "Shinto"
 #define RELIGION_TAOISM        "Taoism"
-#define RELIGION_UNSTATED        "Unstated"
 
 // Skrellian cultures.
 #define CULTURE_SKRELL_QERR     "Qerr-Katish"
@@ -195,3 +194,11 @@
 #define CULTURE_NABBER_AMINUS "Grade A-"
 #define CULTURE_NABBER_A      "Grade A"
 #define CULTURE_NABBER_APLUS  "Grade A+"
+
+// Ascent culture.
+#define CULTURE_ASCENT           "The Ascent"
+#define HOME_SYSTEM_KHARMAANI    "Core"
+#define FACTION_ASCENT_GYNE      "Ascent Gyne"
+#define FACTION_ASCENT_ALATE     "Ascent Alate"
+#define FACTION_ASCENT_SERPENTID "Ascent Serpentid"
+#define RELIGION_KHARMAANI       "Nest-Lineage Veneration"

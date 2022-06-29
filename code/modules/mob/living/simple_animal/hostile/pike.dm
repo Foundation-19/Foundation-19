@@ -30,7 +30,6 @@
 	force = 25
 
 /mob/living/simple_animal/hostile/carp/pike/carp_randomify()
-	return
-
-/mob/living/simple_animal/hostile/carp/pike/on_update_icon()
+	maxHealth = rand(initial(maxHealth), (1.5 * initial(maxHealth)))
+	health = maxHealth
 	return

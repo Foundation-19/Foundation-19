@@ -125,7 +125,6 @@
 								/obj/item/clothing/under/pj               = TRADER_BLACKLIST,
 								/obj/item/clothing/under/rank             = TRADER_BLACKLIST,
 								/obj/item/clothing/under/shorts           = TRADER_BLACKLIST,
-								/obj/item/clothing/under/stripper         = TRADER_BLACKLIST_ALL,
 								/obj/item/clothing/under/swimsuit         = TRADER_BLACKLIST,
 								/obj/item/clothing/under/syndicate        = TRADER_BLACKLIST_ALL,
 								/obj/item/clothing/under/tactical         = TRADER_BLACKLIST,
@@ -261,7 +260,7 @@ Sells devices, odds and ends, and medical stuff
 				TRADER_HAIL_DENY      = "ORIGIN no longer wants to speak to you.",
 
 				TRADER_TRADE_COMPLETE = "I hope you enjoy your new robot!",
-				TRADER_NO_BLACKLISTED= "I work with robots, sir. Not that.",
+				TRADER_NO_BLACKLISTED = "I work with robots, sir. Not that.",
 				TRADER_NO_GOODS = "You gotta buy the robots, sir. I don't do trades.",
 				TRADER_NOT_ENOUGH = "You're coming up short on cash.",
 				TRADER_HOW_MUCH       = "My fine selection of robots will cost you VALUE!",
@@ -301,7 +300,7 @@ Sells devices, odds and ends, and medical stuff
 				)
 
 	possible_wanted_items = list(/mob/living/simple_animal/tindalos    = TRADER_THIS_TYPE,
-								/mob/living/simple_animal/passive/tomato      = TRADER_THIS_TYPE,
+								/mob/living/simple_animal/friendly/tomato      = TRADER_THIS_TYPE,
 								/mob/living/simple_animal/yithian     = TRADER_THIS_TYPE,
 								/mob/living/simple_animal/hostile/retaliate/beast/diyaab = TRADER_THIS_TYPE,
 								/mob/living/simple_animal/hostile/retaliate/beast/shantak= TRADER_THIS_TYPE,

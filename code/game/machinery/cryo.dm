@@ -18,7 +18,7 @@
 	active_power_usage = 200
 	clicksound = 'sound/machines/buttonbeep.ogg'
 	clickvol = 30
-	
+
 	machine_name = "cryo cell"
 	machine_desc = "Uses a supercooled chemical bath to hold living beings in something close to suspended animation. Often paired with specialized medicines to rapidly heal wounds of a patient inside."
 
@@ -249,7 +249,7 @@
 		if(occupant.stat == DEAD)
 			return
 		occupant.set_stat(UNCONSCIOUS)
-		var/has_cryo_medicine = occupant.reagents.has_any_reagent(list(/datum/reagent/cryoxadone, /datum/reagent/clonexadone, /datum/reagent/nanitefluid)) >= REM
+		var/has_cryo_medicine = occupant.reagents.has_any_reagent(list(/datum/reagent/medicine/cryogenic/cryoxadone, /datum/reagent/medicine/cryogenic/clonexadone, /datum/reagent/medicine/cryogenic/nanite_fluid)) >= REM
 		if(beaker && !has_cryo_medicine)
 			beaker.reagents.trans_to_mob(occupant, REM, CHEM_BLOOD)
 		if (prob(2))
@@ -399,4 +399,3 @@
 
 /datum/data/function/proc/display()
 	return
-

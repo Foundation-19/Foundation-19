@@ -1,12 +1,12 @@
 /datum/vote/gamemode
 	name = "game mode"
-	additional_header = "<th>Minimum Players</th>"
+	additional_header = "<th>Required Players / Antags</th>"
 	win_x = 500
 	win_y = 1100
 	result_length = 3
 
 /datum/vote/gamemode/can_run(mob/creator, automatic)
-	if(!automatic && (!config.allow_vote_mode || !isadmin(creator)))
+	if(!automatic && (!config.allow_vote_mode || !is_admin(creator)))
 		return FALSE // Admins and autovotes bypass the config setting.
 	if(GAME_STATE >= RUNLEVEL_GAME)
 		return FALSE
@@ -20,14 +20,23 @@
 
 /datum/vote/gamemode/setup_vote(mob/creator, automatic)
 	..()
-	choices += config.votable_modes
-	for (var/F in choices)
-		var/datum/game_mode/M = config.gamemode_cache[F]
-		if(!M)
+	var/list/lobby_players = SSticker.lobby_players()
+	var/list/skipped = list()
+	for(var/tag in config.votable_modes)
+		var/datum/game_mode/mode = gamemode_cache[tag]
+		var/cause = mode.check_votable(lobby_players)
+		if(cause)
+			skipped[tag] = cause
 			continue
-		display_choices[F] = capitalize(M.name)
-		additional_text[F] ="<td align = 'center'>[M.required_players]</td>"
-	display_choices["secret"] = "Secret"
+		choices += tag
+	for(var/tag in choices)
+		var/datum/game_mode/mode = gamemode_cache[tag]
+		var/text = " / <span style='color:red;font-weight:bold'>[mode.required_enemies]</span>"
+		additional_text[tag] = "<td align='center'><span style='font-weight:bold'>[mode.required_players]</span> [text]</td>"
+		display_choices[tag] = capitalize(mode.name)
+	if(!config.secret_disabled)
+		display_choices["secret"] = "Secret"
+		choices += "secret"
 
 /datum/vote/gamemode/handle_default_votes()
 	var/non_voters = ..()
@@ -53,5 +62,5 @@
 	return config.allow_vote_mode ? "Allowed" : "Disallowed"
 
 /datum/vote/gamemode/toggle(mob/user)
-	if(isadmin(user))
+	if(is_admin(user))
 		config.allow_vote_mode = !config.allow_vote_mode

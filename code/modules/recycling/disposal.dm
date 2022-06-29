@@ -208,7 +208,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 /obj/machinery/disposal/relaymove(mob/user as mob)
 	if (user.incapacitated() || src.flushing)
 		return
-	if (user.loc == src)
+	if(user.loc == src)
 		src.go_out(user)
 	return
 
@@ -481,9 +481,8 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 		return ..(mover, target, height, air_group)
 
 /obj/machinery/disposal/slam_into(mob/living/L)
-	L.forceMove(src)
-	L.Weaken(5)
-	L.visible_message(SPAN_WARNING("\The [L] falls into \the [src]!"))
+	L.Weaken(4)
+	L.visible_message(SPAN_WARNING("\The [L] slammed into \the [src]!"))
 	playsound(L, "punch", 25, 1, FALSE)
 
 /obj/machinery/disposal_switch
@@ -635,7 +634,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 			if(do_after(user,20, src))
 				if(!src || !W.isOn()) return
 				to_chat(user, "You sliced the floorweld off the disposal outlet.")
-				var/obj/structure/disposalconstruct/machine/outlet/C = new (loc, src)
+				var/obj/structure/disposalconstruct/machine/C = new (loc, src)
 				src.transfer_fingerprints_to(C)
 				C.anchored = TRUE
 				C.set_density(1)

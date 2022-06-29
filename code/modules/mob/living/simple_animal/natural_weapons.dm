@@ -3,6 +3,7 @@
 	gender = PLURAL
 	attack_verb = list("attacked")
 	force = 0
+	stun_prob = 0 // No random stuns
 	damtype = BRUTE
 	canremove = FALSE
 	obj_flags = OBJ_FLAG_CONDUCTIBLE //for intent of shocking checks, they're right inside the animal
@@ -29,6 +30,9 @@
 	force = 1
 	attack_verb = list("nibbled")
 	hitsound = null
+
+/obj/item/natural_weapon/bite/medium
+	force = 20
 
 /obj/item/natural_weapon/bite/strong
 	force = 25
@@ -83,3 +87,20 @@
 
 /obj/item/natural_weapon/giant
 	force = 30
+
+/obj/item/natural_weapon/heaven
+	name = "heaven light"
+	attack_verb = list("purged")
+	hitsound = 'sound/magic/mm_hit.ogg'
+	damtype = BURN
+	force = 25
+
+/obj/item/natural_weapon/heaven/resolve_attackby(atom/A, mob/user)
+	if(isliving(A))
+		var/mob/living/L = A
+		if(L.faction == user.faction)
+			return ATTACK_FAILED
+		else if(L.stat == DEAD)
+			L.gib()
+			return
+	..()

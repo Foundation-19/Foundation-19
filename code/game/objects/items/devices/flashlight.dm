@@ -118,8 +118,8 @@
 		if(H.getBrainLoss() > 15)
 			to_chat(user, "<span class='notice'>There's visible lag between left and right pupils' reactions.</span>")
 
-		var/list/pinpoint = list(/datum/reagent/tramadol/oxycodone=1,/datum/reagent/tramadol=5)
-		var/list/dilating = list(/datum/reagent/space_drugs=5,/datum/reagent/mindbreaker=1,/datum/reagent/adrenaline=1)
+		var/list/pinpoint = list(/datum/reagent/medicine/painkiller/tramadol/oxycodone=1,/datum/reagent/medicine/painkiller/tramadol=5)
+		var/list/dilating = list(/datum/reagent/space_drugs=5,/datum/reagent/mindbreaker_toxin=1,/datum/reagent/medicine/adrenaline=1)
 		var/datum/reagents/ingested = H.get_ingested_reagents()
 		if(H.reagents.has_any_reagent(pinpoint) || ingested.has_any_reagent(pinpoint))
 			to_chat(user, "<span class='notice'>\The [H]'s pupils are already pinpoint and cannot narrow any more.</span>")
@@ -166,7 +166,6 @@
 	icon_state = "maglight"
 	item_state = "maglight"
 	force = 10
-	base_parry_chance = 15
 	attack_verb = list ("smacked", "thwacked", "thunked")
 	matter = list(MATERIAL_ALUMINIUM = 200, MATERIAL_GLASS = 50)
 	hitsound = "swing_hit"
@@ -260,7 +259,7 @@
 
 /obj/item/device/flashlight/flare/Initialize()
 	. = ..()
-	fuel = rand(4 MINUTES, 5 MINUTES) // Sorry for changing this so much but I keep under-estimating how long X number of ticks last in seconds.v
+	fuel = rand(800, 1000) // Sorry for changing this so much but I keep under-estimating how long X number of ticks last in seconds.v
 	update_icon()
 
 /obj/item/device/flashlight/flare/Destroy()

@@ -83,15 +83,11 @@
 		/mob/living/carbon/human/proc/diona_heal_toggle
 		)
 
-	has_organ = list(
-		BP_HEART =    /obj/item/organ/internal/heart,
-		BP_STOMACH =  /obj/item/organ/internal/stomach,
-		BP_LUNGS =    /obj/item/organ/internal/lungs,
-		BP_LIVER =    /obj/item/organ/internal/liver,
-		BP_KIDNEYS =  /obj/item/organ/internal/kidneys,
-		BP_EYES =   /obj/item/organ/internal/eyes/unathi,
-		BP_BRAIN =  /obj/item/organ/internal/brain/unathi
-		)
+	override_organ_types = list(
+		BP_EYES = /obj/item/organ/internal/eyes/unathi,
+		BP_BRAIN = /obj/item/organ/internal/brain/unathi,
+		BP_HEART = /obj/item/organ/internal/heart/unathi
+	)
 
 	descriptors = list(
 		/datum/mob_descriptor/height = 2,
@@ -129,8 +125,7 @@
 			RELIGION_UNATHI_LIGHTS,
 			RELIGION_UNATHI_MARKESHELI,
 			RELIGION_UNATHI_ANCESTOR,
-			RELIGION_OTHER,
-			RELIGION_UNSTATED
+			RELIGION_OTHER
 		)
 	)
 	default_cultural_info = list(
@@ -148,7 +143,7 @@
 	exertion_effect_chance = 10
 	exertion_hydration_scale = 1
 	exertion_reagent_scale = 5
-	exertion_reagent_path = /datum/reagent/lactate
+	exertion_reagent_path = /datum/reagent/lactic_acid
 	exertion_emotes_biological = list(
 		/decl/emote/exertion/biological,
 		/decl/emote/exertion/biological/breath,

@@ -3,7 +3,7 @@
 	origin = "UNREGISTERED VESSEL"
 	name_language = LANGUAGE_VOX
 	compliment_increase = 0
-	trade_flags = TRADER_GOODS
+	trade_flags = TRADER_GOODS|TRADER_WANTED_ONLY
 	var/hailed_vox = FALSE //Whether we have been hailed by a vox. negatives mean pariah, positives mean regular.
 	blacklisted_trade_items = null
 
@@ -39,18 +39,25 @@
 		TRADER_INSULT_GOOD       = "Where this come from? Is trade no good?",
 		TRADER_INSULT_BAD        = "If you say all this at home, you be dead!"
 		)
-	possible_wanted_items = list(/obj/item/                  = TRADER_SUBTYPES_ONLY,
+
+	wanted_items = list(
+						/mob/living/carbon/human,
+						)
+
+	possible_wanted_items = list(
+								/obj/item                           = TRADER_SUBTYPES_ONLY,
 								/obj/item/stack/material            = TRADER_SUBTYPES_ONLY,
 								/obj/item/stack/material/cyborg     = TRADER_BLACKLIST_ALL,
 								/obj/item/organ                     = TRADER_SUBTYPES_ONLY,
 								)
 
-	possible_trading_items = list(/obj/item/gun/projectile/dartgun/vox           = TRADER_SUBTYPES_ONLY,
+	possible_trading_items = list(
+								/obj/item/gun/projectile/dartgun/vox                    = TRADER_SUBTYPES_ONLY,
 								/obj/item/trash                                         = TRADER_SUBTYPES_ONLY,
 								/obj/item/remains                                       = TRADER_ALL,
 								/obj/item/clothing/accessory                            = TRADER_ALL,
 								/obj/item/robot_parts                                   = TRADER_SUBTYPES_ONLY,
-								/obj/item/robot_parts/robot_component                   = TRADER_BLACKLIST
+								/obj/item/robot_parts/robot_component                   = TRADER_BLACKLIST,
 								)
 
 	mob_transfer_message = "<span class='danger'>You are transported to the ORIGIN. When the transportation dizziness wears off, you find you are surrounded by cackling Vox...</span>"
@@ -74,11 +81,6 @@
 					hailed_vox = TRUE
 					speech = visited_vox_speech
 	. = ..()
-
-/datum/trader/ship/vox/can_hail()
-	if(hailed_vox >= 0)
-		return ..()
-	return FALSE
 
 /datum/trader/ship/vox/get_item_value(var/trading_num)
 	. = ..()

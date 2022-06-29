@@ -31,7 +31,7 @@
 	var/static/list/eye_overlays
 	var/icontype 				//Persistent icontype tracking allows for cleaner icon updates
 	var/module_sprites[0] 		//Used to store the associations between sprite names and sprite index.
-	var/icon_selected = TRUE		//If icon selection has been completed yet
+	var/icon_selected = TRUE	//If icon selection has been completed yet
 
 //Hud stuff
 
@@ -81,7 +81,7 @@
 	var/datum/effect/effect/system/spark_spread/spark_system //So they can initialize sparks whenever/N
 	var/lawupdate = TRUE //Cyborgs will sync their laws with their AI by default
 	var/lockcharge //If a robot is locked down
-	var/speed = 0
+	var/speed = -1
 	var/scrambledcodes = FALSE // Used to determine if a borg shows up on the robotics console.  Setting to one hides them.
 	var/tracking_entities = 0 //The number of known entities currently accessing the internal camera
 	var/braintype = "Cyborg"
@@ -469,6 +469,9 @@
 	return 0
 
 /mob/living/silicon/robot/bullet_act(var/obj/item/projectile/Proj)
+	if(status_flags & GODMODE)
+		return PROJECTILE_FORCE_MISS
+
 	..(Proj)
 	if(prob(75) && Proj.damage > 0) spark_system.start()
 	return 2
@@ -965,6 +968,7 @@
 		icontype = show_radial_menu(src, src, options, radius = 42)
 	if(!icontype)
 		return
+
 	icon_state = module_sprites[icontype]
 	update_icon()
 	icon_selected = TRUE

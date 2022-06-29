@@ -24,11 +24,11 @@
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_DEVICES     = SKILL_BASIC,
-	                    SKILL_SCIENCE     = SKILL_EXPERT)
+	                    SKILL_SCIENCE     = SKILL_EXPERIENCED)
 
-	max_skill = list(   SKILL_ANATOMY     = SKILL_MAX,
-	                    SKILL_DEVICES     = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
+	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
+	                    SKILL_DEVICES     = SKILL_MASTER,
+	                    SKILL_SCIENCE     = SKILL_MASTER)
 
 	skill_points = 10
 
@@ -54,11 +54,11 @@
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_DEVICES     = SKILL_BASIC,
-	                    SKILL_SCIENCE     = SKILL_EXPERT)
+	                    SKILL_SCIENCE     = SKILL_EXPERIENCED)
 
-	max_skill = list(   SKILL_ANATOMY     = SKILL_MAX,
-	                    SKILL_DEVICES     = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
+	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
+	                    SKILL_DEVICES     = SKILL_MASTER,
+	                    SKILL_SCIENCE     = SKILL_MASTER)
 
 	skill_points = 15
 
@@ -90,11 +90,11 @@
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_DEVICES     = SKILL_BASIC,
-	                    SKILL_SCIENCE     = SKILL_EXPERT)
+	                    SKILL_SCIENCE     = SKILL_EXPERIENCED)
 
-	max_skill = list(   SKILL_ANATOMY     = SKILL_MAX,
-	                    SKILL_DEVICES     = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
+	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
+	                    SKILL_DEVICES     = SKILL_MASTER,
+	                    SKILL_SCIENCE     = SKILL_MASTER)
 
 	skill_points = 20
 
@@ -132,10 +132,10 @@
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_DEVICES     = SKILL_BASIC,
-	                    SKILL_SCIENCE     = SKILL_EXPERT)
+	                    SKILL_SCIENCE     = SKILL_EXPERIENCED)
 
-	max_skill = list(   SKILL_ANATOMY     = SKILL_MAX,
-	                    SKILL_DEVICES     = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
+	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
+	                    SKILL_DEVICES     = SKILL_MASTER,
+	                    SKILL_SCIENCE     = SKILL_MASTER)
 
 	skill_points = 25

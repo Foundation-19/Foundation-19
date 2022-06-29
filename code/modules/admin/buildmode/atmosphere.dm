@@ -57,7 +57,7 @@
 		ui.set_auto_update(1)
 
 /datum/build_mode/atmosphere/CanUseTopic(mob/user)
-	if (!isadmin(user))
+	if (!is_admin(user))
 		return STATUS_CLOSE
 	return ..()
 

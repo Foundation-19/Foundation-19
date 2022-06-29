@@ -58,3 +58,9 @@
 	. = ..()
 	if(species)
 		. *= species.rarity_value
+	switch(src.stat)
+		if(DEAD) // Living mobs would cost more, okay?
+			. *= 0.8
+	if(!key) // Mindless humans cost less
+		. *= 0.2
+	. = round(.)

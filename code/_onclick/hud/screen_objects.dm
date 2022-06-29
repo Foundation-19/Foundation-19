@@ -11,7 +11,7 @@
 	icon = 'icons/mob/screen1.dmi'
 	plane = HUD_PLANE
 	layer = HUD_BASE_LAYER
-	appearance_flags = DEFAULT_APPEARANCE_FLAGS | NO_CLIENT_COLOR
+	appearance_flags = NO_CLIENT_COLOR
 	unacidable = TRUE
 	var/obj/master = null    //A reference to the object in the slot. Grabs or items, generally.
 	var/globalscreen = FALSE //Global screens are not qdeled when the holding mob is destroyed.
@@ -75,9 +75,7 @@
 	if(usr.stat || usr.paralysis || usr.stunned || usr.weakened)
 		return 1
 	if(master)
-		var/obj/item/I = usr.get_active_hand()
-		if(I)
-			usr.ClickOn(master)
+		usr.ClickOn(master)
 	return 1
 
 /obj/screen/zone_sel
@@ -149,11 +147,7 @@
 /obj/screen/zone_sel/proc/set_selected_zone(bodypart)
 	var/old_selecting = selecting
 	selecting = bodypart
-	var/mob/living/carbon/human/user = usr
-	if (istype(user) && (old_selecting == BP_MOUTH || selecting == BP_MOUTH) && user.aiming && user.aiming.active && user.aiming.aiming_at == user)
-		var/obj/aiming_overlay/AO = user.aiming
-		AO.aim_at(user, user.aiming.aiming_with, TRUE)
-	if (old_selecting != selecting)
+	if(old_selecting != selecting)
 		update_icon()
 		return TRUE
 
@@ -208,6 +202,11 @@
 			if(isliving(usr))
 				var/mob/living/L = usr
 				L.resist()
+
+		if("rest")
+			if(isliving(usr))
+				var/mob/living/L = usr
+				L.lay_down()
 
 		if("Reset Machine")
 			usr.unset_machine()
@@ -297,7 +296,7 @@
 			usr.stop_pulling()
 		if("throw")
 			if(!usr.stat && isturf(usr.loc) && !usr.restrained())
-				usr:toggle_throw_mode()
+				usr.toggle_throw_mode()
 		if("drop")
 			if(usr.client)
 				usr.client.drop_item()
@@ -320,11 +319,13 @@
 					to_chat(R, "You haven't selected a module yet.")
 
 		if("radio")
-			if(issilicon(usr))
-				usr:radio_menu()
+			if(isrobot(usr))
+				var/mob/living/silicon/robot/R = usr
+				R.radio_menu()
 		if("panel")
-			if(issilicon(usr))
-				usr:installed_modules()
+			if(isrobot(usr))
+				var/mob/living/silicon/robot/R = usr
+				R.installed_modules()
 
 		if("store")
 			if(isrobot(usr))
@@ -336,16 +337,19 @@
 					to_chat(R, "You haven't selected a module yet.")
 
 		if("module1")
-			if(istype(usr, /mob/living/silicon/robot))
-				usr:toggle_module(1)
+			if(isrobot(usr))
+				var/mob/living/silicon/robot/R = usr
+				R.toggle_module(1)
 
 		if("module2")
-			if(istype(usr, /mob/living/silicon/robot))
-				usr:toggle_module(2)
+			if(isrobot(usr))
+				var/mob/living/silicon/robot/R = usr
+				R.toggle_module(2)
 
 		if("module3")
-			if(istype(usr, /mob/living/silicon/robot))
-				usr:toggle_module(3)
+			if(isrobot(usr))
+				var/mob/living/silicon/robot/R = usr
+				R.toggle_module(3)
 		else
 			return 0
 	return 1

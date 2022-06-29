@@ -76,7 +76,6 @@
 		to_world_log("## DEBUG: transfer_to(): Some idiot has tried to transfer_to() a non mob/living mob. Please inform Carn.")
 	if(current)					//remove ourself from our old body's mind variable
 		if(changeling)
-			current.remove_changeling_powers()
 			current.verbs -= /datum/changeling/proc/EvolutionMenu
 		current.mind = null
 
@@ -131,6 +130,11 @@
 	out += "<b>Ambitions:</b> [ambition ? ambition.description : "None"] <a href='?src=\ref[src];amb_edit=\ref[src]'>\[edit\]</a></br>"
 	show_browser(usr, out, "window=edit_memory[src]")
 
+/datum/mind/proc/get_goal_from_href(var/href)
+	var/ind = isnum(href) ? href : text2num(href)
+	if(ind > 0 && ind <= LAZYLEN(goals))
+		return goals[ind]
+
 /datum/mind/Topic(href, href_list)
 
 	var/is_admin =   FALSE
@@ -141,16 +145,14 @@
 	if(href_list["add_goal"])
 
 		var/mob/caller = locate(href_list["add_goal_caller"])
-		if(!isghost(usr) && caller && caller == current) can_modify = TRUE
+		if(caller && caller == current) can_modify = TRUE
 
 		if(can_modify)
-			var/did_generate_goal = generate_goals(assigned_job, TRUE, 1, bypass_goal_checks = is_admin)
-			if(did_generate_goal && goals)
-				var/datum/goal/goal = goals[LAZYLEN(goals)]
-				to_chat(current, SPAN_NOTICE("<b>You have received a new goal:</b> '[goal.summarize(FALSE, FALSE)]'."))
-				if(usr != current)
-					to_chat(usr, SPAN_NOTICE("<b>You have added a new goal to \the [current]:</b> '[goal.summarize(FALSE, FALSE)]'."))
-					log_admin("[key_name_admin(usr)] added a random goal to [key_name(current)].")
+			if(is_admin)
+				log_admin("[key_name_admin(usr)] added a random goal to [key_name(current)].")
+			var/did_generate_goal = generate_goals(assigned_job, TRUE, 1)
+			if(did_generate_goal)
+				to_chat(current, SPAN_NOTICE("You have received a new goal. Use <b>Show Goals</b> to view it."))
 		return TRUE // To avoid 'you are not an admin' spam.
 
 	if(href_list["remove_memory"])
@@ -159,38 +161,36 @@
 		return TRUE
 
 	if(href_list["abandon_goal"])
-		var/datum/goal/goal = locate(href_list["abandon_goal"])
+		var/datum/goal/goal = get_goal_from_href(href_list["abandon_goal"])
 
 		var/mob/caller = locate(href_list["abandon_goal_caller"])
-		if(!isghost(usr) && caller && caller == current) can_modify = TRUE
+		if(caller && caller == current) can_modify = TRUE
 
-		if(can_modify && goal && (goal in goals))
-			if(delete_goal(assigned_job, goal, is_admin))
-				if(usr == current)
-					to_chat(current, SPAN_NOTICE("<b>You have abandoned your goal:</b> '[goal.summarize(FALSE, FALSE)]'."))
-				else
-					to_chat(usr, SPAN_NOTICE("<b>You have removed a goal from \the [current]:</b> '[goal.summarize(FALSE, FALSE)]'."))
-					to_chat(current, SPAN_NOTICE("<b>A goal has been removed:</b> '[goal.summarize(FALSE, FALSE)]'."))
-					log_admin("[key_name_admin(usr)] removed a goal from [key_name(current)].")
+		if(goal && can_modify)
+			if(usr == current)
+				to_chat(current, SPAN_NOTICE("<b>You have abandoned your goal:</b> '[goal.summarize(FALSE, FALSE)]'."))
+			else
+				to_chat(usr, SPAN_NOTICE("<b>You have removed a goal from \the [current]:</b> '[goal.summarize(FALSE, FALSE)]'."))
+				to_chat(current, SPAN_NOTICE("<b>A goal has been removed:</b> '[goal.summarize(FALSE, FALSE)]'."))
+			qdel(goal)
 		return TRUE
 
 	if(href_list["reroll_goal"])
-		var/datum/goal/goal = locate(href_list["reroll_goal"])
+		var/datum/goal/goal = get_goal_from_href(href_list["reroll_goal"])
 
 		var/mob/caller = locate(href_list["reroll_goal_caller"])
-		if(!isghost(usr) && caller && caller == current) can_modify = TRUE
+		if(caller && caller == current) can_modify = TRUE
 
-		if(can_modify && goal && (goal in goals))
-			if(generate_goals(assigned_job, TRUE, 1, bypass_goal_checks = TRUE))
-				delete_goal(assigned_job, goal, TRUE)
-				if(goals)
-					goal = goals[LAZYLEN(goals)]
-					if(usr == current)
-						to_chat(usr, SPAN_NOTICE("<b>You have re-rolled a goal. Your new goal is:</b> '[goal.summarize(FALSE, FALSE)]'."))
-					else
-						to_chat(usr, SPAN_NOTICE("<b>You have re-rolled a goal for \the [current]. Their new goal is:</b> '[goal.summarize(FALSE, FALSE)]'."))
-						to_chat(current, SPAN_NOTICE("<b>A goal has been re-rolled. Your new goal is:</b> '[goal.summarize(FALSE, FALSE)]'."))
-						log_admin("[key_name_admin(usr)] rerolled a goal for [key_name(current)].")
+		if(goal && (goal in goals) && can_modify)
+			qdel(goal)
+			generate_goals(assigned_job, TRUE, 1)
+			if(goals)
+				goal = goals[LAZYLEN(goals)]
+				if(usr == current)
+					to_chat(usr, SPAN_NOTICE("<b>You have re-rolled a goal. Your new goal is:</b> '[goal.summarize(FALSE, FALSE)]'."))
+				else
+					to_chat(usr, SPAN_NOTICE("<b>You have re-rolled a goal for \the [current]. Their new goal is:</b> '[goal.summarize(FALSE, FALSE)]'."))
+					to_chat(current, SPAN_NOTICE("<b>A goal has been re-rolled. Your new goal is:</b> '[goal.summarize(FALSE, FALSE)]'."))
 		return TRUE
 
 	if(!is_admin) return
@@ -206,20 +206,10 @@
 	if(href_list["add_antagonist"])
 		var/datum/antagonist/antag = GLOB.all_antag_types_[href_list["add_antagonist"]]
 		if(antag)
-			if(!current)
-				to_chat(usr, SPAN_WARNING("\The [src] could not be made into a [antag.role_text]! They do not have a mob."))
-				return
-			if(src in antag.current_antagonists)
-				to_chat(usr, SPAN_WARNING("\The [src] is already a [antag.role_text]!"))
-				return
-			var/result = antag.can_become_antag_detailed(src, TRUE)
-			if(result)
-				to_chat(usr, SPAN_WARNING("\The [src] could not be made into a [antag.role_text]! [result]."))
-				return
 			if(antag.add_antagonist(src, 1, 1, 0, 1, 1)) // Ignore equipment and role type for this.
 				log_admin("[key_name_admin(usr)] made [key_name(src)] into a [antag.role_text].")
 			else
-				to_chat(usr, SPAN_WARNING("\The [src] could not be made into a [antag.role_text]!"))
+				to_chat(usr, "<span class='warning'>[src] could not be made into a [antag.role_text]!</span>")
 
 	else if(href_list["remove_antagonist"])
 		var/datum/antagonist/antag = GLOB.all_antag_types_[href_list["remove_antagonist"]]
@@ -398,7 +388,7 @@
 	else if(href_list["implant"])
 		var/mob/living/carbon/human/H = current
 
-		SET_BIT(H.hud_updateflag, IMPLOYAL_HUD)   // updates that players HUD images so secHUD's pick up they are implanted or not.
+		BITSET(H.hud_updateflag, IMPLOYAL_HUD)   // updates that players HUD images so secHUD's pick up they are implanted or not.
 
 		switch(href_list["implant"])
 			if("remove")
@@ -415,7 +405,7 @@
 				log_admin("[key_name_admin(usr)] has loyalty implanted [current].")
 			else
 	else if (href_list["silicon"])
-		SET_BIT(current.hud_updateflag, SPECIALROLE_HUD)
+		BITSET(current.hud_updateflag, SPECIALROLE_HUD)
 		switch(href_list["silicon"])
 
 			if("unemag")
@@ -584,7 +574,7 @@
 	..()
 	mind.assigned_role = "Animal"
 
-/mob/living/simple_animal/passive/corgi/mind_initialize()
+/mob/living/simple_animal/friendly/corgi/mind_initialize()
 	..()
 	mind.assigned_role = "Corgi"
 

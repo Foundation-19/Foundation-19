@@ -12,7 +12,7 @@
 		if(speaking)
 			message = copytext(message, 2+length(speaking.key))
 		var/verb = "says"
-		var/ending = copytext(message, -1)
+		var/ending = copytext(message, length(message))
 		if (speaking)
 			verb = speaking.get_spoken_verb(ending)
 		else

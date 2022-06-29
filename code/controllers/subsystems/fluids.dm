@@ -36,14 +36,13 @@ SUBSYSTEM_DEF(fluids)
 		active_fluids_copied_yet = FALSE
 		af_index = 1
 
-	var/dry_run = FALSE
 	var/flooded_a_neighbor // Not used, required by FLOOD_TURF_NEIGHBORS.
 	var/list/curr_sources = processing_sources
 	while (curr_sources.len)
 		var/turf/T = curr_sources[curr_sources.len]
 		curr_sources.len--
 
-		FLOOD_TURF_NEIGHBORS(T, dry_run)
+		FLOOD_TURF_NEIGHBORS(T, FALSE)
 
 		if (MC_TICK_CHECK)
 			return

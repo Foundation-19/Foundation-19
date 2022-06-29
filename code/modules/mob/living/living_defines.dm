@@ -66,4 +66,4 @@
 
 	var/image/selected_image = null // Used for buildmode AI control stuff.
 
-	var/list/in_vision_cones = list()
+	var/datum/spell/ranged_ability ///Any ranged ability the mob has, as a click override

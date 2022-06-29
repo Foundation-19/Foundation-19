@@ -91,12 +91,12 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 
 		if(LAZYLEN(R.chilling_products) && temperature <= R.chilling_point)
 			replace_self_with = R.chilling_products
-			replace_message =   "\The [lowertext(R.name)] [R.chilling_message]"
+			replace_message =   R.chilling_message ? "\The [lowertext(R.name)] [R.chilling_message]" : null
 			replace_sound =     R.chilling_sound
 
 		else if(LAZYLEN(R.heating_products) && temperature >= R.heating_point)
 			replace_self_with = R.heating_products
-			replace_message =   "\The [lowertext(R.name)] [R.heating_message]"
+			replace_message =   R.heating_message ? "\The [lowertext(R.name)] [R.heating_message]" : null
 			replace_sound =     R.heating_sound
 
 		// If it is, handle replacing it with the decay product.

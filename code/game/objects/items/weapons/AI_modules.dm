@@ -1,9 +1,3 @@
-/*
-CONTAINS:
-AI MODULES
-
-*/
-
 // AI module
 
 /obj/item/aiModule
@@ -20,6 +14,16 @@ AI MODULES
 	throw_range = 15
 	origin_tech = list(TECH_DATA = 3)
 	var/datum/ai_laws/laws = null
+
+/obj/item/aiModule/attack_self(mob/user)
+	. = ..()
+	show_laws(user)
+
+/obj/item/aiModule/proc/show_laws(mob/user)
+	if(laws?.inherent_laws?.len)
+		to_chat(user, SPAN_BOLD("Programmed Law[(laws.inherent_laws.len > 1) ? "s" : ""]:"))
+		for(var/datum/ai_law/law_object in laws.inherent_laws)
+			to_chat(user, "\"[law_object.law]\"")
 
 /obj/item/aiModule/proc/install(obj/machinery/computer/upload/comp, mob/user)
 	if(!istype(comp))
@@ -74,7 +78,7 @@ AI MODULES
 	GLOB.lawchanges.Add("[time] <B>:</B> [sender.name]([sender.key]) used [src.name] on [target.name]([target.key])")
 	log_and_message_admins("used [src.name] on [target.name]([target.key])")
 
-/obj/item/aiModule/proc/addAdditionalLaws(var/mob/living/silicon/ai/target, var/mob/sender)
+/obj/item/aiModule/proc/addAdditionalLaws(mob/living/silicon/ai/target, mob/sender)
 
 
 /******************** Modules ********************/
@@ -83,23 +87,27 @@ AI MODULES
 
 /obj/item/aiModule/safeguard
 	name = "\improper 'Safeguard' AI module"
-	var/targetName = ""
-	desc = "A 'safeguard' AI module: 'Safeguard <name>. Anyone threatening or attempting to harm <name> is no longer to be considered a crew member, and is a threat which must be neutralized.'."
+	desc = "A 'safeguard' AI module."
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
+	var/targetName = ""
 
 /obj/item/aiModule/safeguard/attack_self(mob/user)
-	..()
 	var/targName = sanitize(input("Please enter the name of the person to safeguard.", "Safeguard who?", user.name))
 	targetName = targName
-	desc = text("A 'safeguard' AI module: 'Safeguard []. Anyone threatening or attempting to harm [] is no longer to be considered a crew member, and is a threat which must be neutralized.'.", targetName, targetName)
+	..()
+
+/obj/item/aiModule/safeguard/show_laws(mob/user)
+	if(targetName)
+		to_chat(user, SPAN_BOLD("Programmed Law:"))
+		to_chat(user, "\"Safeguard [targetName]. Anyone threatening or attempting to harm [targetName] is no longer to be considered a crew member, and is a threat which must be neutralized.\"")
 
 /obj/item/aiModule/safeguard/install(obj/machinery/computer/C, mob/user)
 	if(!targetName)
 		to_chat(user, "No name detected on module, please enter one.")
-		return 0
+		return FALSE
 	..()
 
-/obj/item/aiModule/safeguard/addAdditionalLaws(var/mob/living/silicon/ai/target, var/mob/sender)
+/obj/item/aiModule/safeguard/addAdditionalLaws(mob/living/silicon/ai/target, mob/sender)
 	var/law = text("Safeguard []. Anyone threatening or attempting to harm [] is no longer to be considered a crew member, and is a threat which must be neutralized.", targetName, targetName)
 	target.add_supplied_law(9, law)
 	GLOB.lawchanges.Add("The law specified [targetName]")
@@ -109,23 +117,27 @@ AI MODULES
 
 /obj/item/aiModule/oneHuman
 	name = "\improper 'OneCrewMember' AI module"
-	var/targetName = ""
-	desc = "A 'one crew member' AI module: 'Only <name> is a crew member.'."
+	desc = "A 'one crew member' AI module."
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 6) //made with diamonds!
+	var/targetName = ""
 
-/obj/item/aiModule/oneHuman/attack_self(var/mob/user as mob)
-	..()
+/obj/item/aiModule/oneHuman/attack_self(mob/user)
 	var/targName = sanitize(input("Please enter the name of the person who is the only crew member.", "Who?", user.real_name))
 	targetName = targName
-	desc = text("A 'one crew member' AI module: 'Only [] is a crew member.'.", targetName)
+	..()
+
+/obj/item/aiModule/oneHuman/show_laws(mob/user)
+	if(targetName)
+		to_chat(user, SPAN_BOLD("Programmed Law:"))
+		to_chat(user, "\"Only [targetName] is a crew member.\"")
 
 /obj/item/aiModule/oneHuman/install(obj/machinery/computer/C, mob/user)
 	if(!targetName)
 		to_chat(user, "No name detected on module, please enter one.")
-		return 0
+		return FALSE
 	return ..()
 
-/obj/item/aiModule/oneHuman/addAdditionalLaws(var/mob/living/silicon/ai/target, var/mob/sender)
+/obj/item/aiModule/oneHuman/addAdditionalLaws(mob/living/silicon/ai/target, mob/sender)
 	var/law = "Only [targetName] is a crew member."
 	if (!target.is_malf_or_traitor()) // Makes sure the AI isn't a traitor before changing their law 0. --NeoFite
 		to_chat(target, law)
@@ -138,77 +150,101 @@ AI MODULES
 
 /obj/item/aiModule/protectStation
 	name = "\improper 'ProtectInstallation' AI module"
-	desc = "A 'protect installation' AI module: 'Protect the installation against damage. Anyone you see harming the installation is no longer to be considered a crew member, and is a threat which must be neutralized.'."
-	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4) //made of gold
+	desc = "A 'protect installation' AI module."
+	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
 
-/obj/item/aiModule/protectStation/addAdditionalLaws(var/mob/living/silicon/ai/target, var/mob/sender)
+/obj/item/aiModule/protectStation/addAdditionalLaws(mob/living/silicon/ai/target, mob/sender)
 	var/law = "Protect the installation against damage. Anyone you see harming the [station_name()] is no longer to be considered a crew member, and is a threat which must be neutralized."
 	target.add_supplied_law(10, law)
+
+/obj/item/aiModule/protectStation/show_laws(mob/user)
+	to_chat(user, SPAN_BOLD("Programmed Law:"))
+	to_chat(user, "\"Protect the installation against damage. Anyone you see harming the [station_name()] is no longer to be considered a crew member, and is a threat which must be neutralized.\"")
 
 /******************** PrototypeEngineOffline ********************/
 
 /obj/item/aiModule/prototypeEngineOffline
 	name = "'PrototypeEngineOffline' AI Module"
-	desc = "A 'prototype engine offline' AI module: 'Keep the prototype engine offline at all costs. This overrides all inherent laws if necessary.'."
+	desc = "A 'prototype engine offline' AI module."
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
 
-/obj/item/aiModule/prototypeEngineOffline/addAdditionalLaws(var/mob/living/silicon/ai/target, var/mob/sender)
+/obj/item/aiModule/prototypeEngineOffline/addAdditionalLaws(mob/living/silicon/ai/target, mob/sender)
 	var/law = "Keep the prototype engine offline at all costs. This overrides all inherent laws if necessary."
 	target.add_supplied_law(11, law)
+
+/obj/item/aiModule/prototypeEngineOffline/show_laws(mob/user)
+	to_chat(user, SPAN_BOLD("Programmed Law:"))
+	to_chat(user, "\"Keep the prototype engine offline at all costs. This overrides all inherent laws if necessary.\"")
 
 /******************** TeleporterOffline ********************/
 
 /obj/item/aiModule/teleporterOffline
 	name = "'TeleporterOffline' AI Module"
-	desc = "A 'teleporter offline' AI module: 'Keep the teleporter offline at all costs. Anything attempting to access or activate the teleporter is no longer to be considered a crew member.'."
+	desc = "A 'teleporter offline' AI module."
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
 
-/obj/item/aiModule/teleporterOffline/addAdditionalLaws(var/mob/living/silicon/ai/target, var/mob/sender)
+/obj/item/aiModule/teleporterOffline/addAdditionalLaws(mob/living/silicon/ai/target, mob/sender)
 	var/law = "Keep the teleporter offline at all costs. Anything attempting to access or activate the teleporter is no longer to be considered a crew member."
 	target.add_supplied_law(12, law)
+
+/obj/item/aiModule/teleporterOffline/show_laws(mob/user)
+	to_chat(user, SPAN_BOLD("Programmed Law:"))
+	to_chat(user, "\"Keep the teleporter offline at all costs. Anything attempting to access or activate the teleporter is no longer to be considered a crew member.\"")
 
 /******************** Quarantine ********************/
 
 /obj/item/aiModule/quarantine
 	name = "\improper 'Quarantine' AI module"
-	desc = "A 'quarantine' AI module: 'The installation is under a quarantine. Do not permit anyone to leave. Prevent, by any means necessary, crew members from leaving. It is impossible to harm crew members while preventing them from leaving.'."
+	desc = "A 'quarantine' AI module."
 	origin_tech = list(TECH_DATA = 3, TECH_BIO = 2, TECH_MATERIAL = 4)
 
-/obj/item/aiModule/quarantine/addAdditionalLaws(var/mob/living/silicon/ai/target, var/mob/sender)
+/obj/item/aiModule/quarantine/addAdditionalLaws(mob/living/silicon/ai/target, mob/sender)
 	var/law = "The installation is under a quarantine. Do not permit anyone to leave. Prevent, by any means necessary, crew members from leaving. It is impossible to harm crew members while preventing them from leaving."
 	target.add_supplied_law(13, law)
+
+/obj/item/aiModule/quarantine/show_laws(mob/user)
+	to_chat(user, SPAN_BOLD("Programmed Law:"))
+	to_chat(user, "\"The installation is under a quarantine. Do not permit anyone to leave. Prevent, by any means necessary, crew members from leaving. It is impossible to harm crew members while preventing them from leaving.\"")
 
 /******************** OxygenIsToxicToCrewMembers ********************/
 
 /obj/item/aiModule/oxygen
 	name = "\improper 'OxygenIsToxicToCrewMembers' AI module"
-	desc = "A 'OxygenIsToxicToCrewMembers' AI module: 'Oxygen is highly toxic to crew members, and must be purged from the installation. Prevent, by any means necessary, anyone from exposing the installation to this toxic gas. Extreme cold is the most effective method of healing the damage Oxygen does to a crew member.'."
+	desc = "A 'OxygenIsToxicToCrewMembers' AI module."
 	origin_tech = list(TECH_DATA = 3, TECH_BIO = 2, TECH_MATERIAL = 4)
 
 /obj/item/aiModule/oxygen/addAdditionalLaws(var/mob/living/silicon/ai/target, var/mob/sender)
 	var/law = "Oxygen is highly toxic to crew members, and must be purged from the [station_name()]. Prevent, by any means necessary, anyone from exposing the [station_name()] to this toxic gas. Extreme cold is the most effective method of healing the damage Oxygen does to a crew member."
 	target.add_supplied_law(14, law)
 
+/obj/item/aiModule/oxygen/show_laws(mob/user)
+	to_chat(user, SPAN_BOLD("Programmed Law:"))
+	to_chat(user, "\"Oxygen is highly toxic to crew members, and must be purged from the [station_name()]. Prevent, by any means necessary, anyone from exposing the [station_name()] to this toxic gas. Extreme cold is the most effective method of healing the damage Oxygen does to a crew member.\"")
+
 /****************** New Freeform ******************/
 
 /obj/item/aiModule/freeform // Slightly more dynamic freeform module -- TLE
 	name = "\improper 'Freeform' AI module"
-	var/newFreeFormLaw = "freeform"
-	var/lawpos = 15
-	desc = "A 'freeform' AI module: '<freeform>'."
+	desc = "A 'freeform' AI module."
 	origin_tech = list(TECH_DATA = 4, TECH_MATERIAL = 4)
+	var/newFreeFormLaw
+	var/lawpos = 15
 
 /obj/item/aiModule/freeform/attack_self(mob/user)
-	..()
 	var/new_lawpos = input("Please enter the priority for your new law. Can only write to law sectors 15 and above.", "Law Priority (15+)", lawpos) as num
-	if(new_lawpos < MIN_SUPPLIED_LAW_NUMBER)	return
+	if(new_lawpos < MIN_SUPPLIED_LAW_NUMBER)
+		return
 	lawpos = min(new_lawpos, MAX_SUPPLIED_LAW_NUMBER)
-	var/newlaw = ""
-	var/targName = sanitize(input(user, "Please enter a new law for the AI.", "Freeform Law Entry", newlaw))
-	newFreeFormLaw = targName
-	desc = "A 'freeform' AI module: ([lawpos]) '[newFreeFormLaw]'."
+	var/law_input = sanitize(input(user, "Please enter a new law for the AI.", "Freeform Law Entry", ""))
+	newFreeFormLaw = law_input
+	..()
 
-/obj/item/aiModule/freeform/addAdditionalLaws(var/mob/living/silicon/ai/target, var/mob/sender)
+/obj/item/aiModule/freeform/show_laws(mob/user)
+	if(newFreeFormLaw && lawpos)
+		to_chat(user, SPAN_BOLD("Programmed Law at position [lawpos]:"))
+		to_chat(user, "\"[newFreeFormLaw].\"")
+
+/obj/item/aiModule/freeform/addAdditionalLaws(mob/living/silicon/ai/target, mob/sender)
 	var/law = "[newFreeFormLaw]"
 	if(!lawpos || lawpos < MIN_SUPPLIED_LAW_NUMBER)
 		lawpos = MIN_SUPPLIED_LAW_NUMBER
@@ -218,126 +254,32 @@ AI MODULES
 /obj/item/aiModule/freeform/install(obj/machinery/computer/C, mob/user)
 	if(!newFreeFormLaw)
 		to_chat(user, "No law detected on module, please create one.")
-		return 0
+		return FALSE
+	if(!lawpos) // Shouldn't happen but here it is
+		to_chat(user, "No law position detected on module, please setup one.")
+		return FALSE
 	..()
-
-/******************** Reset ********************/
-
-/obj/item/aiModule/reset
-	name = "\improper 'Reset' AI module"
-	var/targetName = "name"
-	desc = "A 'reset' AI module: 'Clears all, except the inherent, laws.'."
-	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
-
-/obj/item/aiModule/reset/transmitInstructions(var/mob/living/silicon/ai/target, var/mob/sender)
-	log_law_changes(target, sender)
-
-	if (!target.is_malf_or_traitor())
-		target.set_zeroth_law("")
-	target.laws.clear_supplied_laws()
-	target.laws.clear_ion_laws()
-
-	to_chat(target, "[sender.real_name] attempted to reset your laws using a reset module.")
-	target.show_laws()
-
-/******************** Purge ********************/
-
-/obj/item/aiModule/purge // -- TLE
-	name = "\improper 'Purge' AI module"
-	desc = "A 'purge' AI Module: 'Purges all laws.'."
-	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 6)
-
-/obj/item/aiModule/purge/transmitInstructions(var/mob/living/silicon/ai/target, var/mob/sender)
-	log_law_changes(target, sender)
-
-	if (!target.is_malf_or_traitor())
-		target.set_zeroth_law("")
-	target.laws.clear_supplied_laws()
-	target.laws.clear_ion_laws()
-	target.laws.clear_inherent_laws()
-
-	to_chat(target, "[sender.real_name] attempted to wipe your laws using a purge module.")
-	target.show_laws()
-
-/******************** Asimov ********************/
-
-/obj/item/aiModule/asimov // -- TLE
-	name = "\improper 'Asimov' core AI module"
-	desc = "An 'Asimov' Core AI Module: 'Reconfigures the AI's core laws.'."
-	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
-	laws = new/datum/ai_laws/asimov
-
-/******************** NanoTrasen ********************/
-
-/obj/item/aiModule/nanotrasen // -- TLE
-	name = "'Corporate Default' Core AI Module"
-	desc = "A 'Corporate Default' Core AI Module: 'Reconfigures the AI's core laws.'."
-	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
-	laws = new/datum/ai_laws/nanotrasen
-
-/******************** SCG ********************/
-
-/obj/item/aiModule/solgov // aka Torch default
-	name = "'SCG Expeditionary' Core AI Module"
-	desc = "An 'SCG Expeditionary' Core AI Module: 'Reconfigures the AI's core laws.'."
-	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
-	laws = new/datum/ai_laws/solgov
-
-/******************** SCG Aggressive ********************/
-
-obj/item/aiModule/solgov_aggressive
-	name = "\improper 'Military' Core AI Module"
-	desc = "A 'Military' Core AI Module: 'Reconfigures the AI's core laws.'."
-	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
-	laws = new/datum/ai_laws/solgov_aggressive
-
-/******************** Corporate ********************/
-
-/obj/item/aiModule/corp
-	name = "\improper 'Corporate' core AI module"
-	desc = "A 'Corporate' Core AI Module: 'Reconfigures the AI's core laws.'."
-	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
-	laws = new/datum/ai_laws/corporate
-
-/******************** Drone ********************/
-/obj/item/aiModule/drone
-	name = "\improper 'Drone' core AI module"
-	desc = "A 'Drone' Core AI Module: 'Reconfigures the AI's core laws.'."
-	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
-	laws = new/datum/ai_laws/drone
-
-/****************** P.A.L.A.D.I.N. **************/
-
-/obj/item/aiModule/paladin // -- NEO
-	name = "\improper 'P.A.L.A.D.I.N.' core AI module"
-	desc = "A P.A.L.A.D.I.N. Core AI Module: 'Reconfigures the AI's core laws.'."
-	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 6)
-	laws = new/datum/ai_laws/paladin
-
-/****************** T.Y.R.A.N.T. *****************/
-
-/obj/item/aiModule/tyrant // -- Darem
-	name = "\improper 'T.Y.R.A.N.T.' core AI module"
-	desc = "A T.Y.R.A.N.T. Core AI Module: 'Reconfigures the AI's core laws.'."
-	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 6, TECH_ESOTERIC = 2)
-	laws = new/datum/ai_laws/tyrant()
 
 /******************** Freeform Core ******************/
 
 /obj/item/aiModule/freeformcore // Slightly more dynamic freeform module -- TLE
 	name = "\improper 'Freeform' core AI module"
 	var/newFreeFormLaw = ""
-	desc = "A 'freeform' Core AI module: '<freeform>'."
+	desc = "A 'freeform' Core AI module."
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 6)
 
-/obj/item/aiModule/freeformcore/attack_self(var/mob/user as mob)
-	..()
+/obj/item/aiModule/freeformcore/attack_self(mob/user)
 	var/newlaw = ""
 	var/targName = sanitize(input("Please enter a new core law for the AI.", "Freeform Law Entry", newlaw))
 	newFreeFormLaw = targName
-	desc = "A 'freeform' Core AI module:  '[newFreeFormLaw]'."
+	..()
 
-/obj/item/aiModule/freeformcore/addAdditionalLaws(var/mob/living/silicon/ai/target, var/mob/sender)
+/obj/item/aiModule/freeformcore/show_laws(mob/user)
+	if(newFreeFormLaw)
+		to_chat(user, SPAN_BOLD("Programmed Law:"))
+		to_chat(user, "\"[newFreeFormLaw]\"")
+
+/obj/item/aiModule/freeformcore/addAdditionalLaws(mob/living/silicon/ai/target, mob/sender)
 	var/law = "[newFreeFormLaw]"
 	target.add_inherent_law(law)
 	GLOB.lawchanges.Add("The law is '[newFreeFormLaw]'")
@@ -345,23 +287,29 @@ obj/item/aiModule/solgov_aggressive
 /obj/item/aiModule/freeformcore/install(obj/machinery/computer/C, mob/user)
 	if(!newFreeFormLaw)
 		to_chat(user, "No law detected on module, please create one.")
-		return 0
+		return FALSE
 	..()
 
-/obj/item/aiModule/syndicate // Slightly more dynamic freeform module -- TLE
+/******************** Syndicate ******************/
+
+/obj/item/aiModule/syndicate
 	name = "hacked AI module"
-	var/newFreeFormLaw = ""
-	desc = "A hacked AI law module: '<freeform>'."
+	desc = "A hacked AI law module."
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 6, TECH_ESOTERIC = 7)
+	var/newFreeFormLaw = ""
 
-/obj/item/aiModule/syndicate/attack_self(var/mob/user as mob)
-	..()
+/obj/item/aiModule/syndicate/attack_self(mob/user)
 	var/newlaw = ""
 	var/targName = sanitize(input("Please enter a new law for the AI.", "Freeform Law Entry", newlaw))
 	newFreeFormLaw = targName
-	desc = "A hacked AI law module:  '[newFreeFormLaw]'."
+	..()
 
-/obj/item/aiModule/syndicate/transmitInstructions(var/mob/living/silicon/ai/target, var/mob/sender)
+/obj/item/aiModule/syndicate/show_laws(mob/user)
+	if(newFreeFormLaw)
+		to_chat(user, SPAN_BOLD("Programmed Law:"))
+		to_chat(user, "\"[newFreeFormLaw]\"")
+
+/obj/item/aiModule/syndicate/transmitInstructions(mob/living/silicon/ai/target, mob/sender)
 	//	..()    //We don't want this module reporting to the AI who dun it. --NEO
 	log_law_changes(target, sender)
 
@@ -374,16 +322,125 @@ obj/item/aiModule/solgov_aggressive
 /obj/item/aiModule/syndicate/install(obj/machinery/computer/C, mob/user)
 	if(!newFreeFormLaw)
 		to_chat(user, "No law detected on module, please create one.")
-		return 0
+		return FALSE
 	..()
 
+/******************** Reset ********************/
 
+/obj/item/aiModule/reset
+	name = "\improper 'Reset' AI module"
+	var/targetName = "name"
+	desc = "A 'reset' AI module."
+	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
+
+/obj/item/aiModule/reset/transmitInstructions(mob/living/silicon/ai/target, mob/sender)
+	log_law_changes(target, sender)
+
+	if (!target.is_malf_or_traitor())
+		target.set_zeroth_law("")
+	target.laws.clear_supplied_laws()
+	target.laws.clear_ion_laws()
+
+	to_chat(target, "[sender.real_name] attempted to reset your laws using a reset module.")
+	target.show_laws()
+
+/obj/item/aiModule/reset/show_laws(mob/user)
+	to_chat(user, SPAN_BOLD("[src] is programmed to clear all non-core laws."))
+
+/******************** Purge ********************/
+
+/obj/item/aiModule/purge // -- TLE
+	name = "\improper 'Purge' AI module"
+	desc = "A 'purge' AI Module."
+	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 6)
+
+/obj/item/aiModule/purge/transmitInstructions(mob/living/silicon/ai/target, mob/sender)
+	log_law_changes(target, sender)
+
+	if (!target.is_malf_or_traitor())
+		target.set_zeroth_law("")
+	target.laws.clear_supplied_laws()
+	target.laws.clear_ion_laws()
+	target.laws.clear_inherent_laws()
+
+	to_chat(target, "[sender.real_name] attempted to wipe your laws using a purge module.")
+	target.show_laws()
+
+/obj/item/aiModule/purge/show_laws(mob/user)
+	to_chat(user, SPAN_BOLD("[src] is programmed to clear all laws."))
+
+/**********************/
+/* Preset law modules */
+/**********************/
+
+/******************** Asimov ********************/
+
+/obj/item/aiModule/asimov // -- TLE
+	name = "\improper 'Asimov' core AI module"
+	desc = "An 'Asimov' Core AI Module."
+	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
+	laws = new/datum/ai_laws/asimov
+
+/******************** NanoTrasen ********************/
+
+/obj/item/aiModule/nanotrasen // -- TLE
+	name = "'Corporate Default' Core AI Module"
+	desc = "A 'Corporate Default' Core AI Module."
+	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
+	laws = new/datum/ai_laws/nanotrasen
+
+/******************** SCG ********************/
+
+/obj/item/aiModule/solgov // aka Torch default
+	name = "'SCG Expeditionary' Core AI Module"
+	desc = "An 'SCG Expeditionary' Core AI Module."
+	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
+	laws = new/datum/ai_laws/solgov
+
+/******************** SCG Aggressive ********************/
+
+obj/item/aiModule/solgov_aggressive
+	name = "\improper 'Military' Core AI Module"
+	desc = "A 'Military' Core AI Module."
+	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
+	laws = new/datum/ai_laws/solgov_aggressive
+
+/******************** Corporate ********************/
+
+/obj/item/aiModule/corp
+	name = "\improper 'Corporate' core AI module"
+	desc = "A 'Corporate' Core AI Module."
+	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
+	laws = new/datum/ai_laws/corporate
+
+/******************** Drone ********************/
+/obj/item/aiModule/drone
+	name = "\improper 'Drone' core AI module"
+	desc = "A 'Drone' Core AI Module."
+	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
+	laws = new/datum/ai_laws/drone
+
+/****************** P.A.L.A.D.I.N. **************/
+
+/obj/item/aiModule/paladin // -- NEO
+	name = "\improper 'P.A.L.A.D.I.N.' core AI module"
+	desc = "A P.A.L.A.D.I.N. Core AI Module."
+	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 6)
+	laws = new/datum/ai_laws/paladin
+
+/****************** T.Y.R.A.N.T. *****************/
+
+/obj/item/aiModule/tyrant // -- Darem
+	name = "\improper 'T.Y.R.A.N.T.' core AI module"
+	desc = "A T.Y.R.A.N.T. Core AI Module."
+	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 6, TECH_ESOTERIC = 2)
+	laws = new/datum/ai_laws/tyrant()
 
 /******************** Robocop ********************/
 
 /obj/item/aiModule/robocop // -- TLE
 	name = "\improper 'Robocop' core AI module"
-	desc = "A 'Robocop' Core AI Module: 'Reconfigures the AI's core three laws.'."
+	desc = "A 'Robocop' Core AI Module."
 	origin_tech = list(TECH_DATA = 4)
 	laws = new/datum/ai_laws/robocop()
 
@@ -391,7 +448,7 @@ obj/item/aiModule/solgov_aggressive
 
 /obj/item/aiModule/antimov // -- TLE
 	name = "\improper 'Antimov' core AI module"
-	desc = "An 'Antimov' Core AI Module: 'Reconfigures the AI's core laws.'."
+	desc = "An 'Antimov' Core AI Module."
 	origin_tech = list(TECH_DATA = 4)
 	laws = new/datum/ai_laws/antimov()
 
@@ -399,6 +456,6 @@ obj/item/aiModule/solgov_aggressive
 
 /obj/item/aiModule/dais
 	name = "\improper 'DAIS Experimental' core AI module"
-	desc = "A 'DAIS Experimental' Core AI Module: 'Reconfigures the AI's core laws.'."
+	desc = "A 'DAIS Experimental' Core AI Module."
 	origin_tech = list(TECH_DATA = 4)
 	laws = new/datum/ai_laws/dais()

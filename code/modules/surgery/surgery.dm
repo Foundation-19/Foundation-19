@@ -37,7 +37,7 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 
 // Checks if this step applies to the user mob at all
 /decl/surgery_step/proc/is_valid_target(mob/living/carbon/human/target)
-	if(!ishuman(target))
+	if(!hasorgans(target))
 		return 0
 
 	if(allowed_species)
@@ -135,7 +135,7 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 	for(var/skill in skill_reqs)
 		var/penalty = delicate ? 40 : 20
 		. -= max(0, penalty * (skill_reqs[skill] - user.get_skill_value(skill)))
-		if(user.skill_check(skill, SKILL_PROF))
+		if(user.skill_check(skill, SKILL_MASTER))
 			. += 20
 
 	if(ishuman(user))
@@ -233,7 +233,6 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 						handle_post_surgery()
 					else
 						to_chat(user, SPAN_WARNING("The patient lost the target organ before you could finish operating!"))
-
 				else if ((src in user.contents) && user.Adjacent(M))
 					S.fail_step(user, M, zone, src)
 				else

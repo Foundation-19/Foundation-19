@@ -6,6 +6,12 @@
 	name = CULTURE_HUMAN
 	description = "You are from one of various planetary cultures of humankind."
 	secondary_langs = list(
+		LANGUAGE_HUMAN_GERMAN,
+		LANGUAGE_HUMAN_CHINESE,
+		LANGUAGE_HUMAN_ARABIC,
+		LANGUAGE_HUMAN_INDIAN,
+		LANGUAGE_HUMAN_SPANISH,
+		LANGUAGE_HUMAN_RUSSIAN,
 		LANGUAGE_ENGLISH,
 		LANGUAGE_SIGN
 	)
@@ -90,19 +96,12 @@
 
 /decl/cultural_info/culture/human/earthling
 	name = CULTURE_HUMAN_EARTH
-	description = "You are from Earth, home of humanity. As of currently no other planets are inhabited by humans, what did you expect?"
+	description = "You are from Earth, home of humanity. Earth culture is much as it has been for centuries, with the old nation states, while no longer politically important, still \
+	culturally significant to many humans across the galaxy, as all trace their roots to somewhere on the planet. While not as geographically diverse as they were in the past, most \
+	countries have at least two arcologies which make up much of the population, with the remaining humans living in small villages or from one of the many nature preserve communes. \
+	The long recovery period of Earth has resulted in much of the population being environmentally aware and heavily conservationist, eager to avoid past mistakes. Most Earthers are \
+	a content folk who see themselves as close to nature and keepers of the heritage of humanity."
 	economic_power = 1.1
-	secondary_langs = list(
-		LANGUAGE_HUMAN_ARABIC,
-		LANGUAGE_HUMAN_CHINESE,
-		LANGUAGE_HUMAN_SPANISH,
-		LANGUAGE_HUMAN_INDIAN,
-		LANGUAGE_HUMAN_RUSSIAN,
-		LANGUAGE_SIGN,
-		LANGUAGE_ENGLISH,
-		LANGUAGE_HUMAN_GERMAN,
-		LANGUAGE_HUMAN_FRENCH,
-	)
 
 /decl/cultural_info/culture/human/ceti
 	name = CULTURE_HUMAN_CETI
@@ -131,14 +130,16 @@
 	economic_power = 0.9
 	language = LANGUAGE_ENGLISH
 
-/decl/cultural_info/culture/human/confederate
-	name = CULTURE_HUMAN_CONFED
-	description = "You are from Terra (not Earth), in the Gilgamesh system. The capital world of the Gilgamesh Colonial Confederation, your people embody what it means to be a part of the GCC. \
-	Unfortunately, the years since the war have not been easy on Terra and the long period of economic recovery has not made life easy. The people of Terra are typically employed \
-	in the military, industrial, government or service sectors, with an emphasis being placed on military service. Terrans today are generally poor, bitter and a somewhat broken people angry and \
-	resentful about their loss in the Gaia Conflict. An upbringing on Terra emphasises an odd mix of service to the state, liberalism and militarism."
-	language = LANGUAGE_HUMAN_RUSSIAN
-	economic_power = 0.9
+/decl/cultural_info/culture/human/terran
+	name = CULTURE_HUMAN_TERRAN
+	description = "You are from one of the many worlds within Terran government. \
+	Terrans are the embodiment of what it is to be a 'true' human, according to some sources. \
+	The citizens of Terran Government are employed in many various positions, most of which are \
+	closely associated with politics, however. Terrans today are living in decent cities even by \
+	Earth standards, although not quite the same yet. Every human under Terran rule is equal, and, \
+	while same cannot be said about most aliens, not every citizen in TerraGov is violently racist towards \
+	them, especially those who associate themselves with 'PCH' and 'UP' - the most liberal factions within the Terran Senate."
+	economic_power = 1.1
 
 /decl/cultural_info/culture/human/other
 	name = CULTURE_HUMAN_OTHER

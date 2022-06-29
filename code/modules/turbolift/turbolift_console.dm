@@ -128,23 +128,18 @@
 	var/datum/browser/popup = new(user, "turbolift_panel", "Lift Panel", 230, 260)
 	popup.set_content(jointext(dat, null))
 	popup.open()
-	return
 
 /obj/structure/lift/panel/OnTopic(user, href_list)
 	if(href_list["move_to_floor"])
 		lift.queue_move_to(locate(href_list["move_to_floor"]))
-		. = TOPIC_REFRESH
 	if(href_list["open_doors"])
 		lift.open_doors()
-		. = TOPIC_REFRESH
 	if(href_list["close_doors"])
 		lift.close_doors()
-		. = TOPIC_REFRESH
 	if(href_list["emergency_stop"])
 		lift.emergency_stop()
-		. = TOPIC_REFRESH
 
-	if(. == TOPIC_REFRESH)
-		pressed(user)
+	pressed(user)
+	interact(user)
 
 // End panel.

@@ -91,9 +91,9 @@
 	flags = IGNORE_MOB_SIZE
 	value = 2.1
 	var/remove_generic = 1
-	var/list/remove_toxins = list(
-		/datum/reagent/toxin/zombiepowder
-	)
+//	var/list/remove_toxins = list(
+//		/datum/reagent/toxin/zombiepowder
+//	)
 
 /datum/reagent/dylovene/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
@@ -107,11 +107,11 @@
 	var/removing = (4 * removed)
 	var/datum/reagents/ingested = M.get_ingested_reagents()
 	for(var/datum/reagent/R in ingested.reagent_list)
-		if((remove_generic && istype(R, /datum/reagent/toxin)) || (R.type in remove_toxins))
+		if((remove_generic && istype(R, /datum/reagent/toxin)))
 			ingested.remove_reagent(R.type, removing)
 			return
 	for(var/datum/reagent/R in M.reagents.reagent_list)
-		if((remove_generic && istype(R, /datum/reagent/toxin)) || (R.type in remove_toxins))
+		if((remove_generic && istype(R, /datum/reagent/toxin)))
 			M.reagents.remove_reagent(R.type, removing)
 			return
 
@@ -376,7 +376,7 @@
 	M.AdjustParalysis(-1)
 	M.AdjustStunned(-1)
 	M.AdjustWeakened(-1)
-	holder.remove_reagent(/datum/reagent/mindbreaker, 5)
+//	holder.remove_reagent(/datum/reagent/mindbreaker, 5)
 	M.adjust_hallucination(-10)
 	M.add_chemical_effect(CE_MIND, 2)
 	M.adjustToxLoss(5 * removed) // It used to be incredibly deadly due to an oversight. Not anymore!
@@ -391,10 +391,7 @@
 	scannable = 1
 	metabolism = REM * 2
 	remove_generic = 0
-	remove_toxins = list(
-		/datum/reagent/toxin/venom,
-		/datum/reagent/toxin/carpotoxin
-	)
+
 
 /datum/reagent/alkysine
 	name = "Alkysine"

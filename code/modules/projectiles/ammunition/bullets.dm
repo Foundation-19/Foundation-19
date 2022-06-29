@@ -24,7 +24,7 @@
 
 /obj/item/ammo_casing/pistol/small/rubber
 	desc = "A small pistol rubber bullet casing."
-	projectile_type = /obj/item/projectile/bullet/pistol/holdout/rubber
+	projectile_type = /obj/item/projectile/bullet/pistol/rubber/holdout
 	icon_state = "pistolcasing_r"
 
 /obj/item/ammo_casing/pistol/small/practice
@@ -43,6 +43,13 @@
 	desc = "An antique pistol bullet casing. Somewhere between 9 and 11 mm in caliber."
 	caliber = CALIBER_PISTOL_ANTIQUE
 
+/obj/item/ammo_casing/gyrojet
+	desc = "A minirocket casing."
+	caliber = CALIBER_GYROJET
+	projectile_type = /obj/item/projectile/bullet/gyro
+	icon_state = "lcasing"
+	spent_icon = "lcasing-spent"
+
 /obj/item/ammo_casing/flechette
 	desc = "A flechette casing."
 	caliber = CALIBER_PISTOL_FLECHETTE
@@ -50,11 +57,14 @@
 	icon_state = "flechette-casing"
 	spent_icon = "flechette-casing-spent"
 
+/obj/item/ammo_casing/flechette/hp
+	projectile_type = /obj/item/projectile/bullet/flechette/hp
+
 /obj/item/ammo_casing/shotgun
 	name = "shotgun slug"
 	desc = "A shotgun slug."
-	icon_state = "shell-slug"
-	spent_icon = "shell-slug-spent"
+	icon_state = "slshell"
+	spent_icon = "slshell-spent"
 	caliber = CALIBER_SHOTGUN
 	projectile_type = /obj/item/projectile/bullet/shotgun
 	matter = list(MATERIAL_STEEL = 360)
@@ -63,39 +73,32 @@
 /obj/item/ammo_casing/shotgun/pellet
 	name = "shotgun shell"
 	desc = "A shotshell."
-	icon_state = "shell-pellet"
-	spent_icon = "shell-pellet-spent"
+	icon_state = "gshell"
+	spent_icon = "gshell-spent"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun
-	matter = list(MATERIAL_STEEL = 360)
-
-/obj/item/ammo_casing/shotgun/flechette
-	name = "flechette shell"
-	desc = "A flechette shell."
-
-	projectile_type = /obj/item/projectile/bullet/pellet/shotgun/flechette
 	matter = list(MATERIAL_STEEL = 360)
 
 /obj/item/ammo_casing/shotgun/blank
 	name = "shotgun shell"
 	desc = "A blank shell."
-	icon_state = "shell-blank"
-	spent_icon = "shell-blank-spent"
+	icon_state = "blshell"
+	spent_icon = "blshell-spent"
 	projectile_type = /obj/item/projectile/bullet/blank
 	matter = list(MATERIAL_STEEL = 90)
 
 /obj/item/ammo_casing/shotgun/practice
 	name = "shotgun shell"
 	desc = "A practice shell."
-	icon_state = "shell-practise"
-	spent_icon = "shell-practise-spent"
+	icon_state = "pshell"
+	spent_icon = "pshell-spent"
 	projectile_type = /obj/item/projectile/bullet/shotgun/practice
 	matter = list(MATERIAL_STEEL = 90)
 
 /obj/item/ammo_casing/shotgun/beanbag
 	name = "beanbag shell"
 	desc = "A beanbag shell."
-	icon_state = "shell-beanbag"
-	spent_icon = "shell-beanbag-spent"
+	icon_state = "bshell"
+	spent_icon = "bshell-spent"
 	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag
 	matter = list(MATERIAL_STEEL = 180)
 
@@ -104,8 +107,8 @@
 /obj/item/ammo_casing/shotgun/stunshell
 	name = "stun shell"
 	desc = "An energy stun cartridge."
-	icon_state = "shell-stun"
-	spent_icon = "shell-stun-spent"
+	icon_state = "stunshell"
+	spent_icon = "stunshell-spent"
 	projectile_type = /obj/item/projectile/energy/electrode/stunshot
 	leaves_residue = FALSE
 	matter = list(MATERIAL_STEEL = 360, MATERIAL_GLASS = 720)
@@ -118,8 +121,8 @@
 /obj/item/ammo_casing/shotgun/flash
 	name = "flash shell"
 	desc = "A chemical shell used to signal distress or provide illumination."
-	icon_state = "shell-flash"
-	spent_icon = "shell-flash-spent"
+	icon_state = "fshell"
+	spent_icon = "fshell-spent"
 	projectile_type = /obj/item/projectile/energy/flash/flare
 	matter = list(MATERIAL_STEEL = 90, MATERIAL_GLASS = 90)
 
@@ -127,8 +130,8 @@
 	desc = "A rifle bullet casing."
 	caliber = CALIBER_RIFLE
 	projectile_type = /obj/item/projectile/bullet/rifle
-	icon_state = "rifle-casing"
-	spent_icon = "rifle-casing-spent"
+	icon_state = "riflecasing"
+	spent_icon = "riflecasing-spent"
 
 /obj/item/ammo_casing/shell
 	name = "shell casing"
@@ -148,13 +151,17 @@
 	desc = "A military rifle bullet casing."
 	caliber = CALIBER_RIFLE_MILITARY
 	projectile_type = /obj/item/projectile/bullet/rifle/military
-	icon_state = "rifle-casing"
-	spent_icon = "rifle-casing-spent"
+	icon_state = "rifle_mil"
+	spent_icon = "rifle_mil-spent"
 
 /obj/item/ammo_casing/rifle/military/practice
 	desc = "A military rifle practice bullet casing."
 	projectile_type = /obj/item/projectile/bullet/rifle/military/practice
-	icon_state = "rifle-casing-rubber"
+	icon_state = "rifle_mil_p"
+
+/obj/item/ammo_casing/rifle/t12
+	caliber = CALIBER_T12
+	projectile_type = /obj/item/projectile/bullet/rifle/t12
 
 /obj/item/ammo_casing/rocket
 	name = "rocket shell"
@@ -175,19 +182,19 @@
 	name = "haywire round"
 	desc = "A pistol bullet casing fitted with a single-use ion pulse generator."
 	projectile_type = /obj/item/projectile/ion/small
-	icon_state = "pistol-casing-emp"
+	icon_state = "pistolcasing_h"
 	matter = list(MATERIAL_STEEL = 130, MATERIAL_URANIUM = 100)
 
 /obj/item/ammo_casing/pistol/small/emp
 	name = "small haywire round"
 	desc = "A small bullet casing fitted with a single-use ion pulse generator."
 	projectile_type = /obj/item/projectile/ion/tiny
-	icon_state = "pistol-casing-emp"
+	icon_state = "smallcasing_h"
 
 /obj/item/ammo_casing/shotgun/emp
 	name = "haywire slug"
 	desc = "A 12-gauge shotgun slug fitted with a single-use ion pulse generator."
-	icon_state = "shell-emp"
-	spent_icon = "shell-emp-spent"
+	icon_state = "empshell"
+	spent_icon = "empshell-spent"
 	projectile_type  = /obj/item/projectile/ion
 	matter = list(MATERIAL_STEEL = 260, MATERIAL_URANIUM = 200)

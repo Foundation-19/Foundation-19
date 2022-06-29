@@ -12,7 +12,7 @@
 	icon_state = "light1"
 	blend_mode = BLEND_OVERLAY
 
-	appearance_flags = DEFAULT_APPEARANCE_FLAGS
+	appearance_flags = 0
 
 	var/lum_r = 0
 	var/lum_g = 0

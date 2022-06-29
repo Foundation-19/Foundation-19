@@ -120,4 +120,4 @@
 	integrity = 60
 	hardness = MATERIAL_FLEXIBLE
 	weight = 12
-	brute_armor = 1 
+	brute_armor = 1

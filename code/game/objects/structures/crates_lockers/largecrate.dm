@@ -50,15 +50,19 @@
 
 /obj/structure/largecrate/animal/corgi
 	name = "corgi carrier"
-	held_type = /mob/living/simple_animal/passive/corgi
+	held_type = /mob/living/simple_animal/friendly/corgi
 
 /obj/structure/largecrate/animal/cow
 	name = "cow crate"
-	held_type = /mob/living/simple_animal/passive/cow
+	held_type = /mob/living/simple_animal/friendly/cow
 
 /obj/structure/largecrate/animal/goat
 	name = "goat crate"
 	held_type = /mob/living/simple_animal/hostile/retaliate/goat
+
+/obj/structure/largecrate/animal/sheep
+	name = "sheep crate"
+	held_type = /mob/living/simple_animal/friendly/sheep
 
 /obj/structure/largecrate/animal/goose
 	name = "goose containment unit"
@@ -66,12 +70,15 @@
 
 /obj/structure/largecrate/animal/cat
 	name = "cat carrier"
-	held_type = /mob/living/simple_animal/passive/cat
+	held_type = /mob/living/simple_animal/friendly/cat
 
 /obj/structure/largecrate/animal/cat/bones
-	held_type = /mob/living/simple_animal/passive/cat/fluff/bones
+	held_type = /mob/living/simple_animal/friendly/cat/fluff/bones
+
+/obj/structure/largecrate/animal/snek
+	held_type = /mob/living/simple_animal/friendly/snek
 
 /obj/structure/largecrate/animal/chick
 	name = "chicken crate"
 	held_count = 5
-	held_type = /mob/living/simple_animal/passive/chick
+	held_type = /mob/living/simple_animal/friendly/chick

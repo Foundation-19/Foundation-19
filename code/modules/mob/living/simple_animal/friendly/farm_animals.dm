@@ -5,6 +5,7 @@
 	icon_state = "goat"
 	icon_living = "goat"
 	icon_dead = "goat_dead"
+	speak_emote = list("brays")
 	turns_per_move = 5
 	see_in_dark = 6
 	response_help  = "pets"
@@ -29,7 +30,7 @@
 	. = ..()
 
 	if(holder.stat == CONSCIOUS && prob(50))
-		holder.visible_message("<span class='warning'>\The [holder] gets an evil-looking gleam in their eye.</span>")
+		holder.visible_message(SPAN_WARNING("\The [holder] gets an evil-looking gleam in their eye."))
 
 /mob/living/simple_animal/hostile/retaliate/goat/New()
 	udder = new(50, src)
@@ -43,16 +44,15 @@
 	. = ..()
 	if(.)
 		//chance to go crazy and start wacking stuff
-		if (ai_holder)
-			if(!length(ai_holder.attackers) && prob(1))
-				var/list/nearby_stuff = hearers(src, ai_holder.vision_range)
-				if (length(nearby_stuff))
-					ai_holder.react_to_attack(pick(nearby_stuff))
+		if(!length(ai_holder.attackers) && prob(1))
+			var/list/nearby_stuff = hearers(src, ai_holder.vision_range)
+			if (length(nearby_stuff))
+				ai_holder.react_to_attack(pick(nearby_stuff))
 
-			if(length(ai_holder.attackers) && prob(10))
-				ai_holder.attackers = list()
-				ai_holder.lose_target()
-				src.visible_message("<span class='notice'>\The [src] calms down.</span>")
+		if(length(ai_holder.attackers) && prob(10))
+			ai_holder.attackers = list()
+			ai_holder.lose_target()
+			src.visible_message(SPAN_NOTICE("\The [src] calms down."))
 
 		if(stat == CONSCIOUS)
 			if(udder && prob(5))
@@ -61,13 +61,13 @@
 		if(locate(/obj/effect/vine) in loc)
 			var/obj/effect/vine/SV = locate() in loc
 			if(prob(60))
-				src.visible_message("<span class='notice'>\The [src] eats the plants.</span>")
+				src.visible_message(SPAN_NOTICE("\The [src] eats the plants."))
 				SV.die_off(1)
 				if(locate(/obj/machinery/portable_atmospherics/hydroponics/soil/invisible) in loc)
 					var/obj/machinery/portable_atmospherics/hydroponics/soil/invisible/SP = locate() in loc
 					qdel(SP)
 			else if(prob(20))
-				src.visible_message("<span class='notice'>\The [src] chews on the plants.</span>")
+				src.visible_message(SPAN_NOTICE("\The [src] chews on the plants."))
 			return
 
 		if(!pulledby)
@@ -80,17 +80,17 @@
 /mob/living/simple_animal/hostile/retaliate/goat/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	var/obj/item/reagent_containers/glass/G = O
 	if(stat == CONSCIOUS && istype(G) && G.is_open_container())
-		user.visible_message("<span class='notice'>[user] milks [src] using \the [O].</span>")
+		user.visible_message(SPAN_NOTICE("[user] milks [src] using \the [O]."))
 		var/transfered = udder.trans_type_to(G, /datum/reagent/drink/milk, rand(5,10))
 		if(G.reagents.total_volume >= G.volume)
-			to_chat(user, "<span class='warning'>\The [O] is full.</span>")
+			to_chat(user, SPAN_WARNING("\The [O] is full."))
 		if(!transfered)
-			to_chat(user, "<span class='warning'>The udder is dry. Wait a bit longer...</span>")
+			to_chat(user, SPAN_WARNING("The udder is dry. Wait a bit longer..."))
 	else
 		..()
 
 //cow
-/mob/living/simple_animal/passive/cow
+/mob/living/simple_animal/friendly/cow
 	name = "cow"
 	desc = "Known for their milk, just don't tip them over."
 	icon_state = "cow"
@@ -116,32 +116,32 @@
 	ai_holder_type = /datum/ai_holder/simple_animal/passive/cow
 	say_list_type = /datum/say_list/cow
 
-/mob/living/simple_animal/passive/cow/New()
+/mob/living/simple_animal/friendly/cow/New()
 	udder = new(50, src)
 	..()
 
-/mob/living/simple_animal/passive/cow/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/mob/living/simple_animal/friendly/cow/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	var/obj/item/reagent_containers/glass/G = O
 	if(stat == CONSCIOUS && istype(G) && G.is_open_container())
-		user.visible_message("<span class='notice'>[user] milks [src] using \the [O].</span>")
+		user.visible_message(SPAN_NOTICE("[user] milks [src] using \the [O]."))
 		var/transfered = udder.trans_type_to(G, /datum/reagent/drink/milk, rand(5,10))
 		if(G.reagents.total_volume >= G.volume)
-			to_chat(user, "<span class='warning'>\The [O] is full.</span>")
+			to_chat(user, SPAN_WARNING("\The [O] is full."))
 		if(!transfered)
-			to_chat(user, "<span class='warning'>The udder is dry. Wait a bit longer...</span>")
+			to_chat(user, SPAN_WARNING("The udder is dry. Wait a bit longer..."))
 	else
 		..()
 
-/mob/living/simple_animal/passive/cow/Life()
+/mob/living/simple_animal/friendly/cow/Life()
 	. = ..()
 	if(!.)
 		return FALSE
 	if(udder && prob(5))
 		udder.add_reagent(/datum/reagent/drink/milk, rand(5, 10))
 
-/mob/living/simple_animal/passive/cow/attack_hand(mob/living/carbon/M as mob)
+/mob/living/simple_animal/friendly/cow/attack_hand(mob/living/carbon/M as mob)
 	if(!stat && M.a_intent == I_DISARM && icon_state != icon_dead)
-		M.visible_message("<span class='warning'>[M] tips over [src].</span>","<span class='notice'>You tip over [src].</span>")
+		M.visible_message(SPAN_WARNING("[M] tips over [src]."),SPAN_NOTICE("You tip over [src]."))
 		Weaken(30)
 		icon_state = icon_dead
 		spawn(rand(20,50))
@@ -155,7 +155,59 @@
 	else
 		..()
 
-/mob/living/simple_animal/passive/chick
+/mob/living/simple_animal/friendly/sheep
+	name = "sheep"
+	desc = "It's so fluffy! Can't shear it though. Milking is fine."
+	icon_state = "sheep"
+	icon_living = "sheep"
+	icon_dead = "sheep_dead"
+	icon_gib = "cow_gib"
+	speak_emote = list("baas","baas hauntingly")
+	turns_per_move = 5
+	see_in_dark = 6
+	response_help  = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm   = "kicks"
+	health = 50
+
+	meat_type = /obj/item/reagent_containers/food/snacks/meat
+	meat_amount = 4
+	bone_amount = 6
+	skin_material = MATERIAL_SKIN_COWHIDE
+	skin_amount = 4
+
+	var/datum/reagents/udder = null
+
+	ai_holder_type = /datum/ai_holder/simple_animal/passive/sheep
+	say_list_type = /datum/say_list/sheep
+
+/mob/living/simple_animal/friendly/sheep/New()
+	udder = new(50, src)
+	..()
+
+/mob/living/simple_animal/friendly/sheep/attackby(var/obj/item/O as obj, var/mob/user as mob)
+	var/obj/item/reagent_containers/glass/G = O
+	var/transfered = udder.trans_type_to(G, /datum/reagent/drink/milk, rand(5,10))
+	if(stat == CONSCIOUS && istype(G) && G.is_open_container())
+		if(G.reagents.total_volume >= G.volume)
+			to_chat(user, SPAN_WARNING("\The [O] is full."))
+			return
+		if(!transfered)
+			to_chat(user, SPAN_WARNING("The udder is dry. Wait a bit longer..."))
+			return
+		else
+			user.visible_message(SPAN_NOTICE("[user] milks [src] using \the [O]."))
+	else
+		..()
+
+/mob/living/simple_animal/friendly/sheep/Life()
+	. = ..()
+	if(!.)
+		return FALSE
+	if(udder && prob(5))
+		udder.add_reagent(/datum/reagent/drink/milk, rand(5, 10))
+
+/mob/living/simple_animal/friendly/chick
 	name = "\improper chick"
 	desc = "Adorable! They make such a racket though."
 	icon_state = "chick"
@@ -183,24 +235,24 @@
 	ai_holder_type = /datum/ai_holder/simple_animal/passive/chick
 	say_list_type = /datum/say_list/chick
 
-/mob/living/simple_animal/passive/chick/New()
+/mob/living/simple_animal/friendly/chick/New()
 	..()
 	pixel_x = rand(-6, 6)
 	pixel_y = rand(0, 10)
 
-/mob/living/simple_animal/passive/chick/Life()
+/mob/living/simple_animal/friendly/chick/Life()
 	. = ..()
 	if(!.)
 		return FALSE
 	amount_grown += rand(1,2)
 	if(amount_grown >= 100)
-		new /mob/living/simple_animal/passive/chicken(src.loc)
+		new /mob/living/simple_animal/friendly/chicken(src.loc)
 		qdel(src)
 
 var/const/MAX_CHICKENS = 50
 var/global/chicken_count = 0
 
-/mob/living/simple_animal/passive/chicken
+/mob/living/simple_animal/friendly/chicken
 	name = "\improper chicken"
 	desc = "Hopefully the eggs are good this season."
 	icon_state = "chicken"
@@ -226,7 +278,7 @@ var/global/chicken_count = 0
 	ai_holder_type = /datum/ai_holder/simple_animal/passive/chicken
 	say_list_type = /datum/say_list/chicken
 
-/mob/living/simple_animal/passive/chicken/New()
+/mob/living/simple_animal/friendly/chicken/New()
 	..()
 	if(!body_color)
 		body_color = pick( list("brown","black","white") )
@@ -237,26 +289,26 @@ var/global/chicken_count = 0
 	pixel_y = rand(0, 10)
 	chicken_count += 1
 
-/mob/living/simple_animal/passive/chicken/death(gibbed, deathmessage, show_dead_message)
+/mob/living/simple_animal/friendly/chicken/death(gibbed, deathmessage, show_dead_message)
 	..(gibbed, deathmessage, show_dead_message)
 	chicken_count -= 1
 
-/mob/living/simple_animal/passive/chicken/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/mob/living/simple_animal/friendly/chicken/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem chickens
 		var/obj/item/reagent_containers/food/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "wheat")
 			if(!stat && eggsleft < 8)
-				user.visible_message("<span class='notice'>[user] feeds [O] to [name]! It clucks happily.</span>","<span class='notice'>You feed [O] to [name]! It clucks happily.</span>")
+				user.visible_message(SPAN_NOTICE("[user] feeds [O] to [name]! It clucks happily."),SPAN_NOTICE("You feed [O] to [name]! It clucks happily."))
 				qdel(O)
 				eggsleft += rand(1, 4)
 			else
-				to_chat(user, "<span class='notice'>[name] doesn't seem hungry!</span>")
+				to_chat(user, SPAN_NOTICE("[name] doesn't seem hungry!"))
 		else
-			to_chat(user, "[name] doesn't seem interested in that.")
+			to_chat(user, SPAN_WARNING("[name] doesn't seem interested in that."))
 	else
 		..()
 
-/mob/living/simple_animal/passive/chicken/Life()
+/mob/living/simple_animal/friendly/chicken/Life()
 	. = ..()
 	if(!.)
 		return FALSE
@@ -283,7 +335,7 @@ var/global/chicken_count = 0
 		amount_grown += rand(1,2)
 		if(amount_grown >= 100)
 			visible_message("[src] hatches with a quiet cracking sound.")
-			new /mob/living/simple_animal/passive/chick(get_turf(src))
+			new /mob/living/simple_animal/friendly/chick(get_turf(src))
 			STOP_PROCESSING(SSobj, src)
 			qdel(src)
 	else
@@ -303,6 +355,14 @@ var/global/chicken_count = 0
 	speak = list("moo?","moo","MOOOOOO")
 	emote_hear = list("brays")
 	emote_see = list("shakes its head")
+
+/datum/ai_holder/simple_animal/passive/sheep
+	speak_chance = 1
+/datum/say_list/sheep
+	speak = list("baa?","baa...","BAAAAAAAAAAAA")
+	emote_hear = list("baas obnouxiously")
+	emote_see = list("ruffles its wool")
+
 
 /datum/ai_holder/simple_animal/passive/chick
 	speak_chance = 2

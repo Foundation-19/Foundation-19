@@ -24,9 +24,8 @@
 	much as they have been for hundreds of years, and are generally content with their lot in life. From a variety of ancient cultures, the people of \
 	Earth are as diverse as they have always been."
 	distance = "1AU"
-	capital = "Unknown"
+	capital = "Geneva"
 	economic_power = 1.2
-	language = LANGUAGE_ENGLISH
 
 /decl/cultural_info/location/human/luna
 	name = HOME_SYSTEM_LUNA
@@ -122,17 +121,28 @@
 
 /decl/cultural_info/location/human/terra
 	name = HOME_SYSTEM_TERRA
-	description = "Terra, in the Gilgamesh system. Is not the planet Earth as some may be lead to believe. No, Terra is the home of the Gilgamesh Colonial Confederation, and the capital of that \
-	particular superpower. Terra is one of the many affiliated planets in the GCC and the one that is perhaps the most important. Terra, much like most of the GCC, is isolationist, with a minimal \
-	non-human presence. Much of Terra is heavily industrialised, with a lower standard of living than on equivalent SCG planets. Much of the population works in services, industry or the military. \
-	Still recovering from an economic crash toward the end of the Gaia conflict, much of Terra is in decline, with public services and works being minimal and much of the population burdened by \
-	increasingly high taxes. This state of affairs has seen the immigration of many Terran citizens to the SCG in recent years, hoping to escape the poor conditions they found themselves in. Despite this,\
-	the people of Terra are a proud and unbroken people who are heavily patriotic and tend to bring this with them wherever they go."
+	description = "Terra - the capital world of Terran Government, a planet with an atmosphere close to that of Earth and home to many 'true' humans. \
+	Almost 100% of its population is human, with the rare exception of a few Skrell ambassadors, which are arguably the only non-human species that is allowed on Terra. \
+	Terra is also home of the now famous Terran Senate, the main governmental body of Terran Government, and as such, life on Terra usually implies some sort of political \
+	or military service, as most citizens aspire to be a part of the decision-making body of government or the glorious Terran army. \
+	The others, or those who failed in previous categories, are usually working in research, education or medical spheres."
 	capital = "Ameranth"
-	distance = "22.5 light years."
-	economic_power = 0.9
-	ruling_body = "Gilgamesh Colonial Confederation"
-	language = LANGUAGE_HUMAN_RUSSIAN
+	distance = "22 light years"
+	economic_power = 1.2
+	ruling_body = "Terran Government"
+	secondary_langs = list(LANGUAGE_ENGLISH)
+
+/decl/cultural_info/location/human/new_earth
+	name = HOME_SYSTEM_NEW_EARTH
+	description = "New Earth is the second most important planet within TerraGov territories. \
+	Unlike Terra, population of New Earth is usually the least xenophobic towards most species and as such home to the ideas of the most liberal senate factions. \
+	Citizens born on New Earth are usually employed in space exploration and trade, which usually implies contact with the alien species and other human states, such as SolGov. \
+	Despite it all, they still consider themselves 'true' humans and bring the ideas of TerraGov wherever they go, even if those ideas don't correlate well with some factions within the Terran senate."
+	capital = "Liabon"
+	distance = "25 light years"
+	economic_power = 1.1
+	ruling_body = "Terran Government"
+	secondary_langs = list(LANGUAGE_ENGLISH)
 
 /decl/cultural_info/location/human/tersten
 	name = HOME_SYSTEM_TERSTEN
@@ -226,7 +236,7 @@
 /decl/cultural_info/location/human/gaia
 	name = HOME_SYSTEM_GAIA
 	distance = "14 light years"
-	description = "Gaia is the sole planet in the Galilei system, serving as the DMZ between the SCG and the GCC. \
+	description = "Gaia is the sole planet in the Galilei system, serving as the DMZ between the SCG and the TerraGov. \
 	It is an agricultural world, though various conflicts across the planet's surface have left it scarred. The planet is divided into \
 	Sol-Controlled <b>Southern Gaia</b> and Independent-Controlled <b>Northern Gaia</b>, with New Venice remaining a neutral zone inside the DMZ. \
 	The planet's population remain divided even 10 years after the Gaian Conflict. New Venice sits on the edge of Lake Cabot. While Gaia is divided \
@@ -242,7 +252,7 @@
 	Ruled by an authoritarian government heavily associated with the corporations that founded it, Magnitka's recent history is marked by civil war. Even today, a large number of rebel groups populate the planet. \
 	Founded by German companies in the 2300s, the overwhelming majority of Magnitka's population is descended from Eastern European laborers and their German managers. \
 	Unfortunately, Magnitka's economy is in a decline as its principle export, iron, grows cheaper by the day. The primary careers available to Magnitkans are military service, mining, or organized crime.  \
-	Though historically relatively isolationist, today Magnitka finds itself more and more closely associated with the Gilgamesh Colonial Confederation, in an effort to offset its economic decline."
+	Though historically relatively isolationist, today Magnitka finds itself more and more closely associated with the Terran Government, in an effort to offset its economic decline."
 	capital = "Labortown"
 	economic_power = 0.8
 	ruling_body = "Magnitka"

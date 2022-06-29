@@ -130,6 +130,10 @@
 	if(initial_ammo)
 		for(var/i in 1 to initial_ammo)
 			stored_ammo += new ammo_type(src)
+	if(caliber)
+		LAZYINSERT(labels, caliber, 1)
+	if(LAZYLEN(labels))
+		SetName("[name] ([english_list(labels, and_text = ", ")])")
 	update_icon()
 
 /obj/item/ammo_magazine/attackby(obj/item/W as obj, mob/user as mob)
@@ -146,26 +150,6 @@
 		stored_ammo.Add(C)
 		update_icon()
 	else ..()
-
-	if(istype(W, /obj/item/ammo_magazine/box))
-		var/obj/item/ammo_magazine/box/L = W
-		if(L.caliber != caliber)
-			user << "<span class='warning'>The ammo in [L] does not fit into [src].</span>"
-			return
-		if(!L.stored_ammo.len)
-			user << "<span class='warning'>There's no more ammo [L]!</span>"
-			return
-		if(stored_ammo.len >= max_ammo)
-			user << "<span class='warning'>[src] is full!</span>"
-			return
-		var/obj/item/ammo_casing/AC = L.stored_ammo[1] //select the next casing.
-		L.stored_ammo -= AC //Remove this casing from loaded list of the clip.
-		AC.loc = src
-		stored_ammo.Insert(1, AC) //add it to the head of our magazine's list
-		L.update_icon()
-		update_icon()
-		playsound(src.loc, 'sound/weapons/bulletin_mag.wav', 80, 1)
-	update_icon()
 
 /obj/item/ammo_magazine/attack_self(mob/user)
 	if(!stored_ammo.len)
@@ -232,3 +216,4 @@
 
 	magazine_icondata_keys["[M.type]"] = icon_keys
 	magazine_icondata_states["[M.type]"] = ammo_states
+

@@ -13,6 +13,32 @@
 		/obj/item/stock_parts/power/apc/buildable = 1
 	)
 
+/obj/item/stock_parts/circuitboard/stove
+	name = T_BOARD("stove")
+	build_path = /obj/machinery/stove
+	board_type = "machine"
+	origin_tech = list(TECH_BIO = 2, TECH_ENGINEERING = 2)
+	req_components = list(
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stock_parts/micro_laser = 4)
+	additional_spawn_components = list(
+		/obj/item/stock_parts/console_screen = 1,
+		/obj/item/stock_parts/keyboard = 1,
+		/obj/item/stock_parts/power/apc/buildable = 1
+	)
+
+/obj/item/stock_parts/circuitboard/hotplate
+	name = T_BOARD("hot plate")
+	build_path = /obj/machinery/stove/hotplate
+	board_type = "machine"
+	origin_tech = list(TECH_BIO = 2, TECH_ENGINEERING = 2)
+	req_components = list(
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stock_parts/micro_laser = 2)
+	additional_spawn_components = list(
+		/obj/item/stock_parts/power/apc/buildable = 1
+	)
+
 /obj/item/stock_parts/circuitboard/gibber
 	name = T_BOARD("meat gibber")
 	build_path = /obj/machinery/gibber
@@ -93,3 +119,15 @@
 		var/obj/machinery/vending/vendor = path
 		var/base_type = initial(vendor.base_type) || path
 		. |= base_type
+
+/obj/item/stock_parts/circuitboard/shipmap
+	name = T_BOARD("ship holomap")
+	board_type = "machine"
+	build_path = /obj/machinery/ship_map
+	origin_tech = list(TECH_ENGINEERING = 1)
+	req_components = list()
+	additional_spawn_components = list(
+		/obj/item/stock_parts/console_screen = 1,
+		/obj/item/stock_parts/keyboard = 1,
+		/obj/item/stock_parts/power/apc/buildable = 1
+	)

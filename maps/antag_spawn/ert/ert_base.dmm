@@ -664,13 +664,7 @@
 "bx" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/blue/diagonal,
-/obj/item/reagent_containers/food/condiment/small/saltshaker{
-	pixel_x = -3;
-	pixel_y = 0
-	},
-/obj/item/reagent_containers/food/condiment/small/peppermill{
-	pixel_x = 3
-	},
+/obj/machinery/stove/hotplate,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -681,6 +675,13 @@
 /obj/item/storage/box/donkpockets{
 	pixel_x = 3;
 	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/condiment/small/saltshaker{
+	pixel_x = -3;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/food/condiment/small/peppermill{
+	pixel_x = 3
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"

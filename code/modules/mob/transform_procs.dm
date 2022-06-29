@@ -16,7 +16,7 @@
 	animation.icon_state = "blank"
 	animation.icon = 'icons/mob/mob.dmi'
 	flick("h2monkey", animation)
-	sleep(48)
+	sleep(25)
 	//animation = null
 
 	DEL_TRANSFORMATION_MOVEMENT_HANDLER(src)
@@ -189,7 +189,7 @@
 	for(var/t in organs)	//this really should not be necessary
 		qdel(t)
 
-	var/mob/living/simple_animal/passive/corgi/new_corgi = new /mob/living/simple_animal/passive/corgi (loc)
+	var/mob/living/simple_animal/friendly/corgi/new_corgi = new /mob/living/simple_animal/friendly/corgi (loc)
 	new_corgi.a_intent = I_HURT
 	new_corgi.key = key
 
@@ -271,21 +271,21 @@
 		return 0 //Verbs do not appear for players. These constructs should really have their own class simple_animal/construct/subtype
 
 //Good mobs!
-	if(ispath(MP, /mob/living/simple_animal/passive/cat))
+	if(ispath(MP, /mob/living/simple_animal/friendly/cat))
 		return 1
-	if(ispath(MP, /mob/living/simple_animal/passive/corgi))
+	if(ispath(MP, /mob/living/simple_animal/friendly/corgi))
 		return 1
 	if(ispath(MP, /mob/living/simple_animal/crab))
 		return 1
 	if(ispath(MP, /mob/living/simple_animal/hostile/carp))
 		return 1
-	if(ispath(MP, /mob/living/simple_animal/passive/mushroom))
+	if(ispath(MP, /mob/living/simple_animal/friendly/mushroom))
 		return 1
 	if(ispath(MP, /mob/living/simple_animal/shade))
 		return 1
-	if(ispath(MP, /mob/living/simple_animal/passive/tomato))
+	if(ispath(MP, /mob/living/simple_animal/friendly/tomato))
 		return 1
-	if(ispath(MP, /mob/living/simple_animal/passive/mouse))
+	if(ispath(MP, /mob/living/simple_animal/friendly/mouse))
 		return 1 //It is impossible to pull up the player panel for mice (Fixed! - Nodrak)
 	if(ispath(MP, /mob/living/simple_animal/hostile/bear))
 		return 1 //Bears will auto-attack mobs, even if they're player controlled (Fixed! - Nodrak)

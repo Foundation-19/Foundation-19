@@ -49,7 +49,10 @@
 					rating_descriptor = "This indicates the presence of significant psi capabilities of the Grandmaster rank or higher."
 				if(5)
 					use_rating = "<font color = '#FF0000'>[effective_rating]-Alpha</font>"
-					rating_descriptor = "This indicates the presence of major psi capabilities of the Paramount Grandmaster rank or higher."
+					rating_descriptor = "This indicates the presence of major psi capabilities of the Paramount Grandmaster rank."
+				if(6 to INFINITY)
+					use_rating = "<font color = '#FF0000'><b>[effective_rating]-Omega</b></font>"
+					rating_descriptor = "This indicates an abnormal presence of psi capabilities outside of any recorded spectrum, far beyond that of Paramount rank. Approach with care."
 				else
 					use_rating = "[effective_rating]-Lambda"
 					rating_descriptor = "This indicates the presence of trace latent psi capabilities."
@@ -65,7 +68,10 @@
 			for(var/faculty_id in psi.ranks)
 				var/decl/psionic_faculty/faculty = SSpsi.get_faculty(faculty_id)
 				if(psi.ranks[faculty.id] > 0)
-					dat += "[use_He_is] assayed at the rank of <b>[GLOB.psychic_ranks_to_strings[psi.ranks[faculty.id]]]</b> for the <b>[faculty.name] faculty</b>.<br>"
+					if(psi.ranks[faculty.id] < 6) // Within normal levels
+						dat += "[use_He_is] assayed at the rank of <b>[GLOB.psychic_ranks_to_strings[psi.ranks[faculty.id]]]</b> for the <b>[faculty.name] faculty</b>.<br>"
+					else // If someone wants to have a funny adminbus with level 99 psionics
+						dat += "[use_He_is] assayed at the rank of <b>Supreme Master ([psi.ranks[faculty.id]])</b> for the <b>[faculty.name] faculty</b>.<br>"
 				else
 					dat += "[use_He_has] no notable power within the <b>[faculty.name] faculty</b>.<br>"
 			dat += "<hr>"

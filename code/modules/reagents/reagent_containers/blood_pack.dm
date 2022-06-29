@@ -79,7 +79,7 @@
 
 /obj/item/reagent_containers/ivbag/nanoblood/New()
 	..()
-	reagents.add_reagent(/datum/reagent/nanoblood, volume)
+	reagents.add_reagent(/datum/reagent/medicine/nanoblood, volume)
 
 /obj/item/reagent_containers/ivbag/blood
 	name = "blood pack"

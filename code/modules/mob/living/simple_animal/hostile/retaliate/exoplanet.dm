@@ -2,7 +2,7 @@
 /mob/living/simple_animal/hostile/retaliate/beast
 	var/hunger = 0
 	var/list/prey = list()
-	ai_holder_type = /datum/ai_holder/simple_animal/beast
+	// ai_holder_type = /datum/ai_holder/simple_animal/retaliate/beast
 
 /mob/living/simple_animal/hostile/retaliate/beast/Life()
 	. = ..()
@@ -218,11 +218,7 @@
 
 	say_list_type = /datum/say_list/shantak/lava
 
-
 /* AI */
-
-/datum/ai_holder/simple_animal/beast
-	speak_chance = 5
 
 /datum/ai_holder/simple_animal/diyaab/post_melee_attack(atom/A)
 	. = ..()

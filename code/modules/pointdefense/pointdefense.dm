@@ -1,19 +1,20 @@
-//Point defense 
+//Point defense
 /obj/machinery/pointdefense_control
 	name = "fire assist mainframe"
 	desc = "A specialized computer designed to synchronize a variety of weapon systems and a vessel's astronav data."
 	icon = 'icons/obj/artillery.dmi'
 	icon_state = "control"
-	var/ui_template = "pointdefense_control.tmpl"
-	var/initial_id_tag
 	density = TRUE
 	anchored = TRUE
 	base_type =       /obj/machinery/pointdefense_control
 	construct_state = /decl/machine_construction/default/panel_closed
-	var/list/targets = list()
 	atom_flags =  ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 	machine_name = "fire assist mainframe"
 	machine_desc = "A control computer used to synchronize point defense batteries."
+
+	var/ui_template = "pointdefense_control.tmpl"
+	var/initial_id_tag
+	var/list/targets = list()
 
 /obj/machinery/pointdefense_control/Initialize()
 	. = ..()
@@ -110,7 +111,7 @@
 	base_type = /obj/machinery/pointdefense
 	stock_part_presets = list(/decl/stock_part_preset/terminal_setup)
 	uncreated_component_parts = null
-	appearance_flags = DEFAULT_APPEARANCE_FLAGS | PIXEL_SCALE
+	appearance_flags = PIXEL_SCALE | LONG_GLIDE
 	machine_name = "point defense battery"
 	machine_desc = "A mounted turret that locks onto and destroys incoming meteors. Aim away from vessel."
 	var/active = TRUE
@@ -150,7 +151,7 @@
 	rot_matrix.Turn(Angle)
 	addtimer(CALLBACK(src, .proc/finish_shot, target), rotation_speed)
 	animate(src, transform = rot_matrix, rotation_speed, easing = SINE_EASING)
-			
+
 	set_dir(transform.get_angle() > 0 ? NORTH : SOUTH)
 
 /obj/machinery/pointdefense/proc/finish_shot(var/weakref/target)
@@ -163,7 +164,6 @@
 		PC = pointdefense_controllers[1]
 	if(istype(PC))
 		PC.targets -= target
-
 
 	engaging = FALSE
 	last_shot = world.time
@@ -189,7 +189,7 @@
 		set_dir(desiredir)
 	if(engaging || ((world.time - last_shot) < charge_cooldown))
 		return
-	
+
 	if(GLOB.meteor_list.len == 0)
 		return
 	var/datum/extension/local_network_member/pointdefense = get_extension(src, /datum/extension/local_network_member)
@@ -217,8 +217,13 @@
 
 		if(!(M.z in GetConnectedZlevels(z)))
 			continue
+
 		if(get_dist(M, src) > kill_range)
 			continue
+
+		if(!can_see(src, M, kill_range))
+			continue
+
 		if(!emagged && space_los(M))
 			var/weakref/target = weakref(M)
 			PC.targets +=target

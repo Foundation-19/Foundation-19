@@ -29,8 +29,8 @@ CREATE TABLE IF NOT EXISTS `death` (
 CREATE TABLE IF NOT EXISTS `erro_admin` (
   `id` int(11) NOT NULL,
   `ckey` varchar(32) NOT NULL,
-  `rank` varchar(32) NOT NULL DEFAULT 'Administrator',
-  `level` int(2) NOT NULL DEFAULT '0',
+  `adminrank` varchar(32) NOT NULL DEFAULT 'Administrator',
+  `adminlevel` int(2) NOT NULL DEFAULT '0',
   `flags` int(16) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -224,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `population` (
 --
 
 CREATE TABLE IF NOT EXISTS `ranks` (
-  `Rank` int(11) NOT NULL COMMENT 'What Numeric Rank',
+  `Adminrank` int(11) NOT NULL COMMENT 'What Numeric Rank',
   `Desc` text NOT NULL COMMENT 'What is a person with this rank?'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -327,7 +327,7 @@ ALTER TABLE `population`
 -- Indexes for table `ranks`
 --
 ALTER TABLE `ranks`
-  ADD PRIMARY KEY (`Rank`);
+  ADD PRIMARY KEY (`Adminrank`);
 
 --
 -- Indexes for table `whitelist`

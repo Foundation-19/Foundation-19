@@ -237,7 +237,6 @@
 		update_icon()
 		leave_forensic_traces()
 		current_grab.enter_as_up(src)
-
 		if (!bypass_cooldown && isscp106(loc) && !(loc.loc in GLOB.scp106_floors) && !(affecting.loc in GLOB.scp106_floors))
 			var/mob/living/carbon/human/scp106/H = loc
 			affecting.forceMove(pick(GLOB.scp106_floors))
@@ -246,8 +245,6 @@
 			H.verbs -= /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
 			H.verbs += /mob/living/carbon/human/scp106/proc/go_back
 			qdel(src)
-
-
 
 /obj/item/grab/proc/downgrade()
 	var/datum/grab/downgrab = current_grab.downgrade(src)
@@ -335,6 +332,7 @@
 	return current_grab.ladder_carry
 
 /obj/item/grab/proc/assailant_moved()
+	affecting.glide_size = assailant.glide_size
 	current_grab.assailant_moved(src)
 
 /obj/item/grab/proc/restrains()

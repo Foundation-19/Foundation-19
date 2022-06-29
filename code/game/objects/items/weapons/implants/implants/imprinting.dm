@@ -43,7 +43,7 @@
 	var/mob/living/carbon/human/H = M
 	if(!istype(H))
 		return FALSE
-	if(H.reagents.has_reagent(/datum/reagent/mindbreaker))
+	if(H.reagents.has_reagent(/datum/reagent/mindbreaker_toxin))
 		brainwashing = 1
 	var/msg = get_instructions()
 	to_chat(M, msg)
@@ -103,7 +103,7 @@
 	. = ..()
 
 /obj/item/implant/imprinting/can_implant(mob/M, mob/user, target_zone)
-	var/mob/living/carbon/human/H = M	
+	var/mob/living/carbon/human/H = M
 	if(istype(H))
 		var/obj/item/organ/internal/B = H.internal_organs_by_name[BP_BRAIN]
 		if(!B || H.isSynthetic())

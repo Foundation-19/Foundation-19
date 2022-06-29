@@ -156,6 +156,7 @@
 #define COLOR_SABER_SKRELL     "#6600cc"
 #define COLOR_SABER_AXE        "#00ccff"
 #define COLOR_SABER_CUTLASS    "#ff0033"
+#define COLOR_SABER_UNATHI     "#ceca2b"
 
 // Used by fluid system.
 #define COLOR_OCEAN "#99f5ff"
@@ -181,3 +182,7 @@
 #define COLOR_DARKMODE_BACKGROUND "#202020"
 #define COLOR_DARKMODE_DARKBACKGROUND "#171717"
 #define COLOR_DARKMODE_TEXT "#a4bad6"
+
+// Colors for input/hotkey panel.
+#define COLOR_INPUT_DISABLED "#f0f0f0"
+#define COLOR_INPUT_ENABLED "#d3b5b5"

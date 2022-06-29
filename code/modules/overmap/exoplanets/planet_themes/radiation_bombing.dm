@@ -8,7 +8,7 @@
 		E.atmosphere.update_values()
 
 /datum/exoplanet_theme/radiation_bombing/get_sensor_data()
-	return "Hotspots of radiation detected."
+	return "Hotspots of surface radiation detected."
 
 /datum/exoplanet_theme/radiation_bombing/after_map_generation(obj/effect/overmap/visitable/sector/exoplanet/E)
 	var/radiation_power = rand(10, 37.5)

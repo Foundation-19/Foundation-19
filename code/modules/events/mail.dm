@@ -33,7 +33,7 @@
 
 /datum/event/mail/setup()
 	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records)
-		if(prob(25))
+		if(prob(50))
 			to_receive.Add(CR.get_name())
 
 	// Nobody got any mail :(

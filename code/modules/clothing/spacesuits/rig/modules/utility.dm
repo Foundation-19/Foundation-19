@@ -146,12 +146,12 @@
 	interface_desc = "Dispenses loaded chemicals directly into the wearer's bloodstream."
 
 	charges = list(
-		list("dexalin plus",  "dexalin plus",  /datum/reagent/dexalinp,          80),
-		list("inaprovaline",  "inaprovaline",  /datum/reagent/inaprovaline,      80),
-		list("dylovene",      "dylovene",      /datum/reagent/dylovene,          80),
-		list("hyronalin",     "hyronalin",     /datum/reagent/hyronalin,         80),
-		list("spaceacillin",  "spaceacillin",  /datum/reagent/spaceacillin,      80),
-		list("tramadol",      "tramadol",      /datum/reagent/tramadol,          80)
+		list("dexalin plus",  "dexalin plus",  /datum/reagent/medicine/dexalin_plus,          80),
+		list("inaprovaline",  "inaprovaline",  /datum/reagent/medicine/inaprovaline,      80),
+		list("dylovene",      "dylovene",      /datum/reagent/medicine/dylovene,          80),
+		list("hyronalin",     "hyronalin",     /datum/reagent/medicine/hyronalin,         80),
+		list("spaceacillin",  "spaceacillin",  /datum/reagent/medicine/spaceacillin,      80),
+		list("tramadol",      "tramadol",      /datum/reagent/medicine/painkiller/tramadol,          80)
 		)
 
 	var/max_reagent_volume = 80 //Used when refilling.
@@ -161,14 +161,14 @@
 
 	//just over a syringe worth of each. Want more? Go refill. Gives the ninja another reason to have to show their face.
 	charges = list(
-		list("dexalin plus",  "dexalin plus",  /datum/reagent/dexalinp,          20),
-		list("inaprovaline",  "inaprovaline",  /datum/reagent/inaprovaline,      20),
-		list("dylovene",      "dylovene",      /datum/reagent/dylovene,          20),
+		list("dexalin plus",  "dexalin plus",  /datum/reagent/medicine/dexalin_plus,          20),
+		list("inaprovaline",  "inaprovaline",  /datum/reagent/medicine/inaprovaline,      20),
+		list("dylovene",      "dylovene",      /datum/reagent/medicine/dylovene,          20),
 		list("glucose",       "glucose",       /datum/reagent/nutriment/glucose, 80),
-		list("hyronalin",     "hyronalin",     /datum/reagent/hyronalin,         20),
-		list("dermaline",     "dermaline",     /datum/reagent/dermaline,         20),
-		list("spaceacillin",  "spaceacillin",  /datum/reagent/spaceacillin,      20),
-		list("tramadol",      "tramadol",      /datum/reagent/tramadol,          20)
+		list("hyronalin",     "hyronalin",     /datum/reagent/medicine/hyronalin,         20),
+		list("dermaline",     "dermaline",     /datum/reagent/medicine/dermaline,         20),
+		list("spaceacillin",  "spaceacillin",  /datum/reagent/medicine/spaceacillin,      20),
+		list("tramadol",      "tramadol",      /datum/reagent/medicine/painkiller/tramadol,          20)
 		)
 
 /obj/item/rig_module/chem_dispenser/accepts_item(var/obj/item/input_item, var/mob/living/user)
@@ -211,6 +211,9 @@
 
 	var/mob/living/carbon/human/H = holder.wearer
 
+	if(get_dist(H, target) > 1)
+		return 0
+
 	if(!charge_selected)
 		to_chat(H, "<span class='danger'>You have not selected a chemical type.</span>")
 		return 0
@@ -237,8 +240,10 @@
 		target_mob = H
 
 	if(target_mob != H)
-		to_chat(H, "<span class='danger'>You inject [target_mob] with [chems_to_use] unit\s of [charge.display_name].</span>")
-	to_chat(target_mob, "<span class='danger'>You feel a rushing in your veins as [chems_to_use] unit\s of [charge.display_name] [chems_to_use == 1 ? "is" : "are"] injected.</span>")
+		to_chat(H, SPAN_NOTICE("You inject [target_mob] with [chems_to_use] unit\s of [charge.display_name]."))
+		target_mob.custom_pain(SPAN_WARNING("You feel a tiny prick!"), 1, TRUE)
+	else
+		target_mob.custom_pain(SPAN_WARNING("You feel a tiny prick as you inject yourself with [chems_to_use] unit\s of [charge.display_name]!"), 1, TRUE)
 	target_mob.reagents.add_reagent(charge.product_type, chems_to_use)
 
 	charge.charges -= chems_to_use
@@ -252,9 +257,9 @@
 	desc = "A complex web of tubing and needles suitable for hardsuit use."
 
 	charges = list(
-		list("synaptizine", "synaptizine", /datum/reagent/synaptizine,       30),
-		list("hyperzine",   "hyperzine",   /datum/reagent/hyperzine,         30),
-		list("oxycodone",   "oxycodone",   /datum/reagent/tramadol/oxycodone,         30),
+		list("synaptizine", "synaptizine", /datum/reagent/medicine/stimulant/synaptizine,       30),
+		list("hyperzine",   "hyperzine",   /datum/reagent/medicine/stimulant/hyperzine,         30),
+		list("oxycodone",   "oxycodone",   /datum/reagent/medicine/painkiller/tramadol/oxycodone,         30),
 		list("glucose",     "glucose",     /datum/reagent/nutriment/glucose, 80),
 		)
 

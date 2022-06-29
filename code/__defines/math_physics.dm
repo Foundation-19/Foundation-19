@@ -36,9 +36,6 @@
 // Determines the exchange ratio of reagents being converted to gas and vice versa.
 #define REAGENT_GAS_EXCHANGE_FACTOR 10
 
-// Real modulus that handles decimals
-#define MODULUS(x, y) ( (x) - (y) * round((x) / (y)) )
-
 //where a unit turf is 1 on a side, its diagonal is sqrt(2)
 #define UNIT_DIAGONAL      1.41421356237
 #define HALF_UNIT_DIAGONAL 0.70710678118

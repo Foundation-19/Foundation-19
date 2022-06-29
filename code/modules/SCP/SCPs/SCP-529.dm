@@ -22,9 +22,6 @@ GLOBAL_LIST_EMPTY(scp529s)
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 
-/mob/living/simple_animal/cat/fluff/scp_529/examine(mob/user)
-	user << "<b><span class = 'safe'><big>SCP-529</big></span></b> - [desc]"
-
 
 /datum/scp/scp_529
 	name = "SCP-529"

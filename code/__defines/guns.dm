@@ -5,10 +5,12 @@
 #define CALIBER_PISTOL_ANTIQUE	"~10mm"
 
 #define CALIBER_RIFLE			"5mmR"
-#define CALIBER_RIFLE_MILITARY  "7mmR"
-#define CALIBER_ANTIMATERIAL    "15mmR"
+#define CALIBER_RIFLE_MILITARY	"7mmR"
+#define CALIBER_T12				"10x24mmR"
+#define CALIBER_ANTIMATERIAL	"15mmR"
 
 #define CALIBER_SHOTGUN			"12g"
+#define CALIBER_GYROJET			"20mmG"
 #define CALIBER_CAPS			"caps"
 #define CALIBER_DART			"darts"
 

@@ -149,7 +149,7 @@
 			return O
 	return null
 
-/obj/screen/movable/ability_master/proc/get_ability_by_spell(var/spell/s)
+/obj/screen/movable/ability_master/proc/get_ability_by_spell(var/datum/spell/s)
 	for(var/screen in spell_objects)
 		var/obj/screen/ability/spell/S = screen
 		if(S.spell == s)
@@ -313,18 +313,20 @@
 
 // Wizard
 /obj/screen/ability/spell
-	var/spell/spell
+	var/datum/spell/spell
 	var/spell_base
 	var/last_charge = 0
 	var/icon/last_charged_icon
+	var/icon/active_overlay
 
 /obj/screen/ability/spell/Destroy()
 	if(spell)
 		spell.connected_button = null
 		spell = null
+		active_overlay = null
 	return ..()
 
-/obj/screen/movable/ability_master/proc/add_spell(var/spell/spell)
+/obj/screen/movable/ability_master/proc/add_spell(var/datum/spell/spell)
 	if(!spell) return
 
 	if(spell.spell_flags & NO_BUTTON) //no button to add if we don't get one
@@ -359,18 +361,26 @@
 /obj/screen/movable/ability_master/proc/update_spells(var/forced = 0)
 	for(var/obj/screen/ability/spell/spell in spell_objects)
 		spell.update_charge(forced)
+	for(var/obj/screen/ability/changeling/C in ability_objects) // this entire function is unbearably bad
+		C.update_icon()
 
 /obj/screen/ability/spell/proc/update_charge(var/forced_update = 0)
 	if(!spell)
 		qdel(src)
 		return
 
+	if(spell.active)
+		active_overlay = icon(src.icon, "spell_active")
+		overlays += active_overlay
+	else if(active_overlay)
+		overlays -= active_overlay
+
 	if(last_charge == spell.charge_counter && !forced_update)
 		return //nothing to see here
 
 	overlays -= spell.hud_state
 
-	if(spell.charge_type == Sp_RECHARGE || spell.charge_type == Sp_CHARGES)
+	if(spell.charge_type == SPELL_RECHARGE || spell.charge_type == SPELL_CHARGES)
 		if(spell.charge_counter < spell.charge_max)
 			icon_state = "[spell_base]_spell_base"
 			if(spell.charge_counter > 0)
@@ -403,10 +413,68 @@
 	return
 
 /obj/screen/ability/spell/activate()
-	spell.perform(usr)
+	spell.Click(usr)
 
 /obj/screen/movable/ability_master/proc/silence_spells(var/amount)
 	for(var/obj/screen/ability/spell/spell in spell_objects)
 		spell.spell.silenced = amount
 		spell.spell.process()
 		spell.update_charge(1)
+
+// Changeling
+
+/obj/screen/ability/changeling
+	background_base_state = "changeling"
+	var/datum/power/changeling/ability
+	var/icon/last_charged_icon
+	var/icon/last_active_icon
+
+/obj/screen/ability/changeling/can_activate()
+	return ability?.can_activate(usr)
+
+/obj/screen/ability/changeling/activate()
+	if (can_activate())
+		ability.pre_activate(usr)
+	ability_master.update_spells(0) // Immediately update all icons to show the chem consumption
+
+/obj/screen/ability/changeling/on_update_icon()
+	// A lot of this function is taken from /obj/screen/ability/spell's update_charge
+	// The values used in calculation are different enough that it necessitates reuse, alas
+	overlays -= ability_icon_state
+	overlays -= "[background_base_state]_spell_active"
+	if (ability)
+		// We use a "+1" on the effective value here, because chem regen occurs after the icon update, making it otherwise out of sync
+		if (ability.required_chems > ability.mind?.changeling.chem_charges + 1)
+			icon_state = "[background_base_state]_spell_base"
+			if (ability.mind.changeling.chem_charges > 0)
+				var/icon/partial_charge = icon(src.icon, "[background_base_state]_spell_ready")
+				partial_charge.Crop(1, 1, partial_charge.Width(), round(partial_charge.Height() * ability.mind.changeling.chem_charges / ability.required_chems + 1))
+				overlays += partial_charge
+				if (last_charged_icon)
+					overlays -= last_charged_icon
+				last_charged_icon = partial_charge
+			else if (last_charged_icon)
+				overlays -= last_charged_icon
+				last_charged_icon = null
+		else
+			icon_state = "[background_base_state]_spell_ready"
+			if (last_charged_icon)
+				overlays -= last_charged_icon
+				last_charged_icon = null
+		if (ability.is_active())
+			overlays += "[background_base_state]_spell_active"
+	overlays += ability_icon_state
+
+/obj/screen/movable/ability_master/proc/add_changeling_power(datum/power/changeling/C)
+	if (!C)
+		return
+
+	var/obj/screen/ability/changeling/A = new()
+	A.ability_master = src
+	A.ability = C
+	A.ability_icon_state = C.button_icon_state
+	A.SetName("[C.name] ([C.required_chems])")
+
+	ability_objects.Add(A)
+	if(my_mob.client)
+		toggle_open(2)

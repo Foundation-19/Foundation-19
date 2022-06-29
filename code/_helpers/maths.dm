@@ -3,7 +3,15 @@
 #define ceil(x) (-round(-(x)))
 #define CEILING(x, y) ( -round(-(x) / (y)) * (y) )
 #define MULT_BY_RANDOM_COEF(VAR,LO,HI) VAR =  round((VAR * rand(LO * 100, HI * 100))/100, 0.1)
-#define PERCENT(val, max, places) round((val) / (max) * 100, !(places) || 10 ** -(places))
+
+/// The percentage of value in max, rounded to places: 1 = nearest 0.1 , 0 = nearest 1 , -1 = nearest 10, etc
+#define PERCENT(value, max, places) round((value) / (max) * 100, !(places) || 10 ** -(places))
+
+/// Value or the nearest integer in either direction
+#define Round(value) round((value), 1)
+
+/// Value or the nearest multiple of divisor in either direction
+#define Roundm(value, divisor) round((value), (divisor))
 
 // min is inclusive, max is exclusive
 /proc/Wrap(val, min, max)
@@ -135,3 +143,45 @@
 
 /matrix/proc/get_angle()
 	return Atan2(b,a)
+
+/proc/CircularRandomCoordinate(radius = 1, round)
+	var/angle = rand(0, 359)
+	var/x = cos(angle) * radius
+	var/y = sin(angle) * radius
+	if (round)
+		x = Round(x)
+		y = Round(y)
+	return list(x, y)
+
+/proc/BoundedCircularRandomCoordinate(radius, center_x, center_y, low_x, low_y, high_x, high_y, round)
+	var/list/xy = CircularRandomCoordinate(radius, round)
+	var/dx = xy[1]
+	var/dy = xy[2]
+	var/x = center_x + dx
+	var/y = center_y + dy
+	if (x < low_x || x > high_x)
+		x = center_x - dx
+	if (y < low_y || y > high_y)
+		y = center_y - dy
+	return list(
+		clamp(x, low_x, high_x),
+		clamp(y, low_y, high_y)
+	)
+
+
+/// Pick a random turf using BoundedCircularRandomCoordinate about x,y on level z
+/proc/CircularRandomTurf(radius, z, center_x, center_y, low_x = 1, low_y = 1, high_x = world.maxx, high_y = world.maxy)
+	var/list/xy = BoundedCircularRandomCoordinate(radius, center_x, center_y, low_x, low_y, high_x, high_y, TRUE)
+	return locate(xy[1], xy[2], z)
+
+
+/// Pick a random turf using BoundedCircularRandomCoordinate around the turf of target
+/proc/CircularRandomTurfAround(atom/target, radius, low_x = 1, low_y = 1, high_x = world.maxx, high_y = world.maxy)
+	var/turf/turf = get_turf(target)
+	return CircularRandomTurf(radius, turf.z, turf.x, turf.y, low_x, low_y, high_x, high_y)
+
+#define MODULUS_FLOAT(X, Y) ( (X) - (Y) * round((X) / (Y)) )
+
+// Will filter out extra rotations and negative rotations
+// E.g: 540 becomes 180. -180 becomes 180.
+#define SIMPLIFY_DEGREES(degrees) (MODULUS_FLOAT((degrees), 360))

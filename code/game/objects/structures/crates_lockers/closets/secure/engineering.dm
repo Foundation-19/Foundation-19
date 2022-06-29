@@ -1,12 +1,7 @@
 /obj/structure/closet/secure_closet/engineering_chief
 	name = "chief engineer's locker"
-	icon_state = "securece1"
-	icon_closed = "securece"
-	icon_locked = "securece1"
-	icon_opened = "secureceopen"
-	icon_off = "secureceoff"
 	closet_appearance = /decl/closet_appearance/secure_closet/engineering/ce
-	req_access = list(access_securitylvl4)
+	req_access = list(access_ce)
 
 /obj/structure/closet/secure_closet/engineering_chief/WillContain()
 	return list(
@@ -31,17 +26,13 @@
 
 /obj/structure/closet/secure_closet/engineering_electrical
 	name = "electrical supplies"
-	icon_state = "secureengelec1"
-	icon_closed = "secureengelec"
-	icon_locked = "secureengelec1"
-	icon_opened = "toolclosetopen"
-	icon_off = "secureengelecoff"
-	req_access = list(access_securitylvl2)
+	req_access = list(access_engine_equip)
 	closet_appearance = /decl/closet_appearance/secure_closet/engineering/electrical
 
 /obj/structure/closet/secure_closet/engineering_electrical/WillContain()
 	return list(
 		/obj/item/clothing/gloves/nabber = 2,
+		/obj/item/clothing/gloves/vox = 2,
 		/obj/item/clothing/gloves/insulated = 3,
 		/obj/item/storage/toolbox/electrical = 3,
 		/obj/item/module/power_control = 3,
@@ -50,12 +41,7 @@
 
 /obj/structure/closet/secure_closet/engineering_welding
 	name = "welding supplies"
-	icon_state = "secureengweld1"
-	icon_closed = "secureengweld"
-	icon_locked = "secureengweld1"
-	icon_opened = "toolclosetopen"
-	icon_off = "secureengweldoff"
-	req_access = list(access_securitylvl2)
+	req_access = list(access_construction)
 	closet_appearance = /decl/closet_appearance/secure_closet/engineering/welding
 
 /obj/structure/closet/secure_closet/engineering_welding/WillContain()
@@ -69,12 +55,7 @@
 
 /obj/structure/closet/secure_closet/engineering_personal
 	name = "engineer's locker"
-	icon_state = "secureeng1"
-	icon_closed = "secureeng"
-	icon_locked = "secureeng1"
-	icon_opened = "secureengopen"
-	icon_off = "secureengoff"
-	req_access = list(access_securitylvl2)
+	req_access = list(access_engine_equip)
 	closet_appearance = /decl/closet_appearance/secure_closet/engineering
 
 /obj/structure/closet/secure_closet/engineering_personal/WillContain()
@@ -92,11 +73,6 @@
 
 /obj/structure/closet/secure_closet/atmos_personal
 	name = "technician's locker"
-	icon_state = "secureatm1"
-	icon_closed = "secureatm"
-	icon_locked = "secureatm1"
-	icon_opened = "secureatmopen"
-	icon_off = "secureatmoff"
 	req_access = list(access_atmospherics)
 	closet_appearance = /decl/closet_appearance/secure_closet/engineering/atmos
 

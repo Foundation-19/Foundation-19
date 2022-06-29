@@ -1,9 +1,9 @@
-/// System for a shitty terminal emulator.
+// System for a shitty terminal emulator.
 /datum/terminal
 	var/name = "Terminal"
 	var/datum/browser/panel
 	var/list/history = list()
-	var/list/history_max_length = 50
+	var/list/history_max_length = 20
 	var/datum/extension/interactive/ntos/computer
 
 /datum/terminal/New(mob/user, datum/extension/interactive/ntos/computer)
@@ -47,7 +47,7 @@
 		return panel.user
 
 /datum/terminal/proc/show_terminal(mob/user)
-	panel = new(user, "terminal-\ref[computer]", name, 800, 600, src)
+	panel = new(user, "terminal-\ref[computer]", name, 500, 460, src)
 	update_content()
 	panel.open()
 
@@ -59,22 +59,22 @@
 
 /datum/terminal/Topic(href, href_list)
 	if(..())
-		return TOPIC_HANDLED
+		return 1
 	if(!can_use(usr) || href_list["close"])
 		qdel(src)
-		return TOPIC_HANDLED
+		return 1
 	if(href_list["input"])
 		var/input = sanitize(href_list["input"])
 		history += "> [input]"
 		var/output = parse(input, usr)
 		if(QDELETED(src)) // Check for exit.
-			return TOPIC_HANDLED
+			return 1
 		history += output
 		if(length(history) > history_max_length)
 			history.Cut(1, length(history) - history_max_length + 1)
 		update_content()
 		panel.update()
-		return TOPIC_HANDLED
+		return 1
 
 /datum/terminal/proc/parse(text, mob/user)
 	if(user.skill_check(SKILL_COMPUTER, SKILL_BASIC))
@@ -94,5 +94,4 @@
 		if(scf.can_run(user, src))
 			candidates[scf] = scf.weight
 	var/datum/terminal_skill_fail/chosen = pickweight(candidates)
-	if(istype(chosen))
-		return chosen.execute(src)
+	return chosen.execute()

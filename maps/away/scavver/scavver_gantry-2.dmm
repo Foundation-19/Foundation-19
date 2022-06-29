@@ -3026,7 +3026,7 @@
 /obj/item/storage/box/donkpockets,
 /obj/item/material/kitchen/utensil/spork,
 /obj/random/loot,
-/mob/living/simple_animal/passive/mouse/brown/Tom,
+/mob/living/simple_animal/friendly/mouse/brown/Tom,
 /turf/simulated/floor/wood/yew,
 /area/scavver/hab)
 "wQ" = (
@@ -3308,6 +3308,7 @@
 "zR" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/glasses/pint,
+/obj/machinery/stove/hotplate,
 /turf/simulated/floor/wood/yew,
 /area/scavver/hab)
 "zU" = (
@@ -3974,9 +3975,10 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/scavver/harvestpod)
 "FO" = (
+/obj/effect/paint/black,
 /obj/effect/overmap/visitable/ship/scavver_gantry,
-/turf/space,
-/area/space)
+/turf/simulated/wall,
+/area/scavver/gantry/up1)
 "FR" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/blue{
 	dir = 4
@@ -14036,7 +14038,7 @@ eN
 eN
 eN
 eN
-FO
+eN
 eN
 eN
 eN
@@ -17238,7 +17240,7 @@ Rm
 Rm
 vZ
 DK
-fr
+FO
 xQ
 IH
 fr

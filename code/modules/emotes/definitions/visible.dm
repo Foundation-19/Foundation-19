@@ -332,3 +332,12 @@
 /decl/emote/visible/tilt
 	key = "tilt"
 	emote_message_3p = "USER tilts USER_THEIR head."
+
+/decl/emote/visible/spin
+	key = "spin"
+	check_restraints = TRUE
+	emote_message_3p = null
+
+/decl/emote/visible/spin/do_extra(mob/user)
+	if(istype(user))
+		user.spin(20, 1)

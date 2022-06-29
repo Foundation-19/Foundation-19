@@ -48,6 +48,13 @@
 	available_modifications = list(/decl/item_modifier/space_suit/explorer)
 	species = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI)
 
+/obj/machinery/suit_cycler/command
+	name = "Command suit cycler"
+	model_text = "Command"
+	req_access = list(access_bridge, access_keycard_auth)
+	available_modifications = list(/decl/item_modifier/space_suit/command)
+	species = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI)
+
 /obj/machinery/suit_storage_unit/explorer
 	name = "Exploration Voidsuit Storage Unit"
 	suit = /obj/item/clothing/suit/space/void/exploration
@@ -89,4 +96,4 @@
 		/obj/item/device/holowarrant = 4,
 		/obj/item/reagent_containers/food/snacks/donut/normal = 12,
 		/obj/item/storage/box/evidence = 8,
-		/obj/item/clothing/accessory/badge/solgov/security = 6)
+		/obj/item/clothing/accessory/badge/solgov/security = 10)

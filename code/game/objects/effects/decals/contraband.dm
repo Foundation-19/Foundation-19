@@ -87,13 +87,11 @@
 	icon = 'icons/obj/contraband.dmi'
 	anchored = TRUE
 	var/poster_type
+	var/random_poster_type = /decl/poster
 	var/ruined = 0
 
-/obj/structure/sign/poster/bay_9
-	poster_type = /decl/poster/bay_9
-
-/obj/structure/sign/poster/bay_50
-	poster_type = /decl/poster/bay_50
+/obj/structure/sign/poster/tegu_9
+	poster_type = /decl/poster/tegu/t9
 
 /obj/structure/sign/poster/New(var/newloc, var/placement_dir = null, var/give_poster_type = null)
 	..(newloc)
@@ -102,7 +100,7 @@
 		if(give_poster_type)
 			poster_type = give_poster_type
 		else
-			poster_type = pick(subtypesof(/decl/poster))
+			poster_type = pick(subtypesof(random_poster_type))
 	set_poster(poster_type)
 
 	switch (placement_dir)
@@ -158,6 +156,9 @@
 /obj/structure/sign/poster/proc/roll_and_drop(turf/newloc)
 	new/obj/item/contraband/poster(newloc, poster_type)
 	qdel(src)
+
+/obj/structure/sign/poster/tegu_random // Spawns a random tegustation poster
+	random_poster_type = /decl/poster/tegu
 
 /decl/poster
 	// Name suffix. Poster - [name]

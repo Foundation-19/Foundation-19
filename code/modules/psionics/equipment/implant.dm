@@ -73,7 +73,7 @@
 
 		// If we're disrupting psionic attempts at the moment, we might overload.
 		if(disrupts_psionics())
-			var/overload_amount = Floor(stress/10)
+			var/overload_amount = stress
 			if(overload_amount > 0)
 				overload += overload_amount
 				if(overload >= 100)
@@ -106,3 +106,7 @@
 					if(M.psi) M.psi.stunned(5)
 			else if(use_psi_mode == PSI_IMPLANT_WARN)
 				to_chat(imp_in, SPAN_WARNING("Your psi dampener primly informs you it has reported this violation."))
+
+/obj/item/implantcase/psi_control
+	name = "glass case - 'psionic dampener'"
+	imp = /obj/item/implant/psi_control

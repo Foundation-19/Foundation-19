@@ -12,6 +12,7 @@
 #define VERM_MICE 0
 #define VERM_LIZARDS 1
 #define VERM_SPIDERS 2
+#define VERM_SNAKES 3
 
 /datum/event/infestation
 	announceWhen = 10
@@ -35,14 +36,18 @@
 
 	var/list/spawn_types = list()
 	var/max_number
-	vermin = rand(0,2)
+	vermin = rand(0,3)
 	switch(vermin)
 		if(VERM_MICE)
-			spawn_types = list(/mob/living/simple_animal/passive/mouse) // The base mouse type selects a random color for us
+			spawn_types = list(/mob/living/simple_animal/friendly/mouse) // The base mouse type selects a random color for us
 			max_number = 12
 			vermstring = "mice"
+		if(VERM_SNAKES)
+			spawn_types = list(/mob/living/simple_animal/friendly/snek)
+			max_number = 9
+			vermstring = "snakes"
 		if(VERM_LIZARDS)
-			spawn_types = list(/mob/living/simple_animal/passive/lizard)
+			spawn_types = list(/mob/living/simple_animal/friendly/lizard)
 			max_number = 6
 			vermstring = "lizards"
 		if(VERM_SPIDERS)

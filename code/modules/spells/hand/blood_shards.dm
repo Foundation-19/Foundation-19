@@ -1,11 +1,11 @@
-/spell/hand/charges/blood_shard
+/datum/spell/hand/charges/blood_shard
 	name = "Blood Shards"
 	desc = "Invoke a corrupted projectile forward that causes an enemy's blood to fly out in painful shards."
 
 	spell_flags = 0
 	charge_max = 600
 	invocation = "opens their hand, which bursts into vicious red light."
-	invocation_type = SpI_EMOTE
+	invocation_type = INVOKE_EMOTE
 
 	range = 7
 	max_casts = 2
@@ -13,7 +13,7 @@
 	hud_state = "wiz_bshard"
 	cast_sound = 'sound/magic/demon_attack1.ogg'
 
-/spell/hand/charges/blood_shard/cast_hand(var/atom/A,var/mob/user)
+/datum/spell/hand/charges/blood_shard/cast_hand(var/atom/A,var/mob/user)
 	var/obj/item/projectile/blood_shard/B = new(get_turf(user))
 	B.firer = user
 	B.launch(A, BP_CHEST)

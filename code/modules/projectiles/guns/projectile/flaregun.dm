@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/flare
-	name = "flaregun"
-	desc = "A single shot polymer flare gun, the XI-54 \"Sirius\" is a reliable way to launch flares away from yourself."
+	name = "flare launcher"
+	desc = "A single shot polymer flare launcher, the XI-54 \"Sirius\" is a reliable way to launch flares away from yourself."
 	icon = 'icons/obj/guns/flaregun.dmi'
 	icon_state = "flaregun"
 	item_state = "flaregun"

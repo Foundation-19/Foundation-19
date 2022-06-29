@@ -11,7 +11,7 @@
 
 //shows a list of clients we could send PMs to, then forwards our choice to cmd_admin_pm
 /client/proc/cmd_admin_pm_panel()
-	set category = "Admin"
+	set category = "Staffhelp"
 	set name = "Admin PM"
 	if(!holder)
 		to_chat(src, "<span class='warning'>Error: Admin-PM-Panel: Only administrators may use this command.</span>")
@@ -162,9 +162,8 @@
 //		to_chat(src, "<span class='notice'>[msg]</span>")
 //		return
 
-	adminmsg2adminirc(src, sender, html_decode(msg))
-	msg = sanitize(msg)
 	log_admin("PM: [key_name(src)]->IRC-[sender]: [msg]")
+	adminmsg2adminirc(src, sender, html_decode(msg))
 	admin_pm_repository.store_pm(src, "IRC-[sender]", msg)
 
 	to_chat(src, "<span class='pm'><span class='out'>" + create_text_tag("pm_out_alt", "PM", src) + " to <span class='name'>[sender]</span>: <span class='message linkify'>[msg]</span></span></span>")

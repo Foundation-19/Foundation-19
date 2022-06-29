@@ -15,9 +15,6 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	icon = 'icons/SCP/scp-106.dmi'
 	icon_state = null
 
-/mob/living/carbon/human/scp106/examine(mob/user)
-	to_chat(user, "<b><span class = 'keter'><big>SCP-106</big></span></b> - [desc]")
-
 /datum/scp/scp_106
 	name = "SCP-106"
 	designation = "106"
@@ -50,7 +47,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	if (!(loc in GLOB.scp106_floors))
 		verbs += /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
 
-//	verbs += /mob/living/carbon/human/scp106/proc/confuse_victims	//doesn't work
+	verbs += /mob/living/carbon/human/scp106/proc/confuse_victims
 
 	set_species("SCP-106")
 	GLOB.scp106s |= src
@@ -291,7 +288,6 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 				animate(src, pixel_x = -58, time = PHASE_TIME)
 
 		if (do_after(src, PHASE_TIME, O))
-			forceMove(get_step(src, dir))
 			forceMove(get_step(src, dir))
 			visible_message("<span class = 'danger'>[src] phases through \the [O].</span>")
 

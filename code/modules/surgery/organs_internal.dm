@@ -41,7 +41,7 @@
 	user.visible_message("[user] starts treating damage within \the [target]'s [affected.name] with [tool_name].", \
 	"You start treating damage within \the [target]'s [affected.name] with [tool_name]." )
 	for(var/obj/item/organ/internal/I in affected.internal_organs)
-		if(I && I.damage > 0 && !BP_IS_ROBOTIC(I) && (!(I.status & ORGAN_DEAD) || I.can_recover()) && (I.surface_accessible || affected.how_open() >= (affected.encased ? SURGERY_ENCASED : SURGERY_RETRACTED)))
+		if(I && I.damage > 0 && !BP_IS_ROBOTIC(I) && (!I.status & ORGAN_DEAD || I.can_recover()) && (I.surface_accessible || affected.how_open() >= (affected.encased ? SURGERY_ENCASED : SURGERY_RETRACTED)))
 			user.visible_message("[user] starts treating damage to [target]'s [I.name] with [tool_name].", \
 			"You start treating damage to [target]'s [I.name] with [tool_name]." )
 	target.custom_pain("The pain in your [affected.name] is living hell!",100,affecting = affected)
@@ -244,10 +244,6 @@
 	. = FALSE
 	var/obj/item/organ/internal/O = tool
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
-
-	if ((O.status & ORGAN_CONFIGURE) && O.surgery_configure(user, target, affected, tool, src))
-		return
-
 	if(istype(O) && istype(affected))
 		if(BP_IS_CRYSTAL(O) && !BP_IS_CRYSTAL(affected))
 			to_chat(user, SPAN_WARNING("You cannot install a crystalline organ into a non-crystalline bodypart."))
@@ -348,7 +344,7 @@
 
 	if(istype(organ_to_replace, /obj/item/organ/internal/augment))
 		var/obj/item/organ/internal/augment/A = organ_to_replace
-		if(!(A.augment_flags & AUGMENT_BIOLOGICAL))
+		if(!(A.augment_flags & AUGMENTATION_ORGANIC))
 			to_chat(user, SPAN_WARNING("\The [A] cannot function within a non-robotic limb."))
 			return FALSE
 
@@ -407,7 +403,7 @@
 
 /decl/surgery_step/internal/treat_necrosis/pre_surgery_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/reagent_containers/container = tool
-	if(!istype(container) || !container.reagents.has_reagent(/datum/reagent/peridaxon) || !..())
+	if(!istype(container) || !container.reagents.has_reagent(/datum/reagent/medicine/peridaxon) || !..())
 		return FALSE
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 	var/list/obj/item/organ/internal/dead_organs = list()
@@ -447,7 +443,7 @@
 	var/datum/reagents/temp_reagents = new(amount, GLOB.temp_reagents_holder)
 	container.reagents.trans_to_holder(temp_reagents, amount)
 
-	var/rejuvenate = temp_reagents.has_reagent(/datum/reagent/peridaxon)
+	var/rejuvenate = temp_reagents.has_reagent(/datum/reagent/medicine/peridaxon)
 
 	var/trans = temp_reagents.trans_to_mob(target, temp_reagents.total_volume, CHEM_BLOOD) //technically it's contact, but the reagents are being applied to internal tissue
 	if (trans > 0)

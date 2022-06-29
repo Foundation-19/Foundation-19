@@ -43,12 +43,12 @@
 	var/list/metadata
 	var/readable = TRUE  //Paper will not be able to be written on and will not bring up a window upon examine if FALSE
 	var/is_memo = FALSE  //If TRUE, paper will act the same as readable = FALSE, but will also be unrenameable.
-	var/datum/language/language = LANGUAGE_ENGLISH // Language the paper was written in. Editable by users up until something's actually written
+	var/datum/language/language = LANGUAGE_HUMAN_GERMAN // Language the paper was written in. Editable by users up until something's actually written
 
 	var/const/deffont = "Verdana"
 	var/const/signfont = "Times New Roman"
 	var/const/crayonfont = "Comic Sans MS"
-	var/const/fancyfont = "Segoe Print"
+	var/const/fancyfont = "Segoe Script"
 
 	var/scan_file_type = /datum/computer_file/data/text
 
@@ -62,12 +62,13 @@
 	var/old_language = language
 	if (!set_language(language, TRUE))
 		log_debug("[src] ([type]) initialized with invalid or missing language `[old_language]` defined.")
-		set_language(LANGUAGE_ENGLISH, TRUE)
+		set_language(LANGUAGE_HUMAN_GERMAN, TRUE)
 
-/obj/item/paper/proc/set_content(text, title, parse_pencode = TRUE)
+/obj/item/paper/proc/set_content(text,title)
 	if(title)
 		SetName(title)
-	info = parse_pencode ? parsepencode(text) : text
+	info = html_encode(text)
+	info = parsepencode(text)
 	update_icon()
 	update_space(info)
 	updateinfolinks()
@@ -221,27 +222,62 @@
 /obj/item/paper/attack_ai(var/mob/living/silicon/ai/user)
 	show_content(user)
 
-/obj/item/paper/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
-	if(user.zone_sel.selecting == BP_EYES)
-		user.visible_message("<span class='notice'>You show the paper to [M]. </span>", \
-			"<span class='notice'> [user] holds up a paper and shows it to [M]. </span>")
+/obj/item/paper/attack(mob/living/carbon/M, mob/living/carbon/user)
+	if (user.zone_sel.selecting == BP_EYES)
+		user.visible_message(
+			SPAN_NOTICE("You show \the [src] to \the [M]. "), \
+			SPAN_NOTICE("\The [user] holds up \the [src] and shows it to \the [M].")
+		)
 		M.examinate(src)
 
-	else if(user.zone_sel.selecting == BP_MOUTH) // lipstick wiping
-		if(ishuman(M))
-			var/mob/living/carbon/human/H = M
-			if(H == user)
-				to_chat(user, "<span class='notice'>You wipe off the lipstick with [src].</span>")
+	else if (ishuman(M)) // check human-specific interactions
+		var/mob/living/carbon/human/H = M
+
+		if (user.zone_sel.selecting == BP_MOUTH) // lipstick wiping
+			if (H == user)
+				user.visible_message(
+					SPAN_NOTICE("\The [user] wipes off \his lipstick."),
+					SPAN_NOTICE("You wipe off your lipstick.")
+				)
 				H.lip_style = null
 				H.update_body()
 			else
-				user.visible_message("<span class='warning'>[user] begins to wipe [H]'s lipstick off with \the [src].</span>", \
-								 	 "<span class='notice'>You begin to wipe off [H]'s lipstick.</span>")
-				if(do_after(user, 2 SECONDS, H, do_flags = DO_DEFAULT & ~DO_BOTH_CAN_TURN))
-					user.visible_message("<span class='notice'>[user] wipes [H]'s lipstick off with \the [src].</span>", \
-										 "<span class='notice'>You wipe off [H]'s lipstick.</span>")
+				user.visible_message(
+					SPAN_WARNING("\The [user] begins to wipe \the [H]'s lipstick off with \the [src]."), \
+					SPAN_NOTICE("You begin to wipe off \the [H]'s lipstick.")
+				)
+				if (do_after(user, 2 SECONDS, H, do_flags = DO_DEFAULT & ~DO_BOTH_CAN_TURN))
+					user.visible_message(
+						SPAN_NOTICE("\The [user] wipes \the [H]'s lipstick off with \the [src]."), \
+						SPAN_NOTICE("You wipe off \the [H]'s lipstick.")
+					)
 					H.lip_style = null
 					H.update_body()
+
+		else if (user.zone_sel.selecting == BP_HEAD) // graffiti wiping
+			var/obj/item/organ/external/head/head = H.organs_by_name[BP_HEAD]
+			if (!istype(head) || !head.forehead_graffiti)
+				return
+			if (H == user)
+				user.visible_message(
+					SPAN_NOTICE("\The [user] cleans the graffiti off of \his forehead."),
+					SPAN_NOTICE("You clean off your forehead.")
+				)
+				head.forehead_graffiti = null
+				head.graffiti_style = null
+			else
+				user.visible_message(
+					SPAN_NOTICE("\The [user] starts cleaning \the [H]'s forehead with \the [src]."),
+					SPAN_NOTICE("You start wiping the graffiti off of \the [H]'s forehead.")
+				)
+				if (!do_after(user, 2 SECONDS, H, do_flags = DO_DEFAULT & ~DO_BOTH_CAN_TURN) || !head?.forehead_graffiti)
+					return
+				user.visible_message(
+					SPAN_NOTICE("\The [user] wipes the graffiti off of \the [H]'s forehead."),
+					SPAN_NOTICE("You wipe the graffiti off of \the [H]'s forehead.")
+				)
+				head.forehead_graffiti = null
+				head.graffiti_style = null
 
 /obj/item/paper/proc/addtofield(var/id, var/text, var/links = 0)
 	var/locid = 0
@@ -301,14 +337,11 @@
 		return P.get_signature(user)
 	return (user && user.real_name) ? user.real_name : "Anonymous"
 
-/obj/item/paper/proc/parsepencode(t, obj/item/pen/P, mob/user, iscrayon, isfancy, isadmin)
+/obj/item/paper/proc/parsepencode(t, obj/item/pen/P, mob/user, iscrayon, isfancy)
 	if(length(t) == 0)
 		return ""
 
-	if (isadmin) //TODO: let admins sign things again
-		t = replacetext(t, "\[sign\]", "")
-
-	if (findtext(t, "\[sign\]"))
+	if(findtext(t, "\[sign\]"))
 		t = replacetext(t, "\[sign\]", "<font face=\"[signfont]\"><i>[get_signature(P, user)]</i></font>")
 
 	if(iscrayon) // If it is a crayon, and he still tries to use these, make them empty!
@@ -555,12 +588,11 @@
 //For supply.
 /obj/item/paper/manifest
 	name = "supply manifest"
-	language = LANGUAGE_ENGLISH
 	var/is_copy = 1
 /*
  * Premade paper
  */
-/obj/item/paper/english
+/obj/item/paper/spacer
 	language = LANGUAGE_ENGLISH
 
 /obj/item/paper/Court
@@ -584,11 +616,6 @@
 /obj/item/paper/exodus_cmo
 	name = "outgoing CMO's notes"
 	info = "<I><center>To the incoming CMO of Exodus:</I></center><BR><BR>I wish you and your crew well. Do take note:<BR><BR><BR>The Medical Emergency Red Phone system has proven itself well. Take care to keep the phones in their designated places as they have been optimised for broadcast. The two handheld green radios (I have left one in this office, and one near the Emergency Entrance) are free to be used. The system has proven effective at alerting Medbay of important details, especially during power outages.<BR><BR>I think I may have left the toilet cubicle doors shut. It might be a good idea to open them so the staff and patients know they are not engaged.<BR><BR>The new syringe gun has been stored in secondary storage. I tend to prefer it stored in my office, but 'guidelines' are 'guidelines'.<BR><BR>Also in secondary storage is the grenade equipment crate. I've just realised I've left it open - you may wish to shut it.<BR><BR>There were a few problems with their installation, but the Medbay Quarantine shutters should now be working again  - they lock down the Emergency and Main entrances to prevent travel in and out. Pray you shan't have to use them.<BR><BR>The new version of the Medical Diagnostics Manual arrived. I distributed them to the shelf in the staff break room, and one on the table in the corner of this room.<BR><BR>The exam/triage room has the walking canes in it. I'm not sure why we'd need them - but there you have it.<BR><BR>Emergency Cryo bags are beside the emergency entrance, along with a kit.<BR><BR>Spare paper cups for the reception are on the left side of the reception desk.<BR><BR>I've fed Runtime. She should be fine.<BR><BR><BR><center>That should be all. Good luck!</center>"
-
-/obj/item/paper/dclass_orientation
-	name = "Class-D Orientation Letter"
-	info = "<small>Greetings,<br><br>On behalf of all staff within The Foundation, we welcome you to Site-53. You have chosen, or been chosen for the honor of joining the Foundation Rehabilitation Program. During your thirty day stay within this facility, you will be known as Class-D personnel, and be given a unique numerical designation for ease of access, which has been printed on your new ID card. <br><br>Over the course of your stay here, you will undergo various programs to ensure that you are ready to re-enter the world again. You will be given the opportunity to select a job within your block, in order to assist your fellow D-Class. From working the kitchen, to digging out objects within our mining area. On top of this, you may be selected for various medical or research tests to assist in our projects. What are those projects? Unfortunately, we can't tell you that.<br><br>Given that you are cooperative with our staff for the entirety of your stay here, you will be released back into the world, and have your criminal record erased completely. With that being said, we hope that you enjoy your stay here.<br><br>Sincerely,<br>The Administrator</small>"
-	desc = "A laminated piece of paper given to D-Class personnel upon their arrival."
 
 /obj/item/paper/exodus_bartender
 	name = "shotgun permit"

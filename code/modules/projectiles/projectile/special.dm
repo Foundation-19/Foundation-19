@@ -40,42 +40,55 @@
 	damage_type = BURN
 	damage_flags = 0
 	nodamage = TRUE
-	var/firing_temperature = 300
+	var/firing_temperature = -40 // Temperature that will be added to the target
 
-	on_hit(var/atom/target, var/blocked = 0)//These two could likely check temp protection on the mob
-		if(istype(target, /mob/living))
-			var/mob/M = target
-			M.bodytemperature = firing_temperature
-		return 1
+/obj/item/projectile/temp/on_hit(var/atom/target, var/blocked = 0)
+	if(istype(target, /mob/living))
+		var/mob/living/M = target
+		var/thermal_protection = 1
+		if(firing_temperature <= 0)
+			thermal_protection = M.get_cold_protection(M.bodytemperature + firing_temperature) // target temp
+		else
+			thermal_protection = M.get_heat_protection(M.bodytemperature + firing_temperature)
+
+		var/temp_damage = round(firing_temperature*(1-thermal_protection), 1)
+		if(thermal_protection < 1)
+			if((M.bodytemperature + temp_damage) > 3) // So you don't go below arbitrary "minimum" temperature
+				M.bodytemperature += temp_damage
+			else
+				M.bodytemperature = 3
+	return 1
+
+/obj/item/projectile/temp/heat
+	name = "heat beam"
+	icon_state = "heat"
+	firing_temperature = 40
 
 /obj/item/projectile/meteor
 	name = "meteor"
 	icon = 'icons/obj/meteor.dmi'
-	icon_state = "smallf"
+	icon_state = "small"
 	damage = 0
 	damage_type = BRUTE
 	nodamage = TRUE
 
-	Bump(atom/A as mob|obj|turf|area, forced=0)
-		if(A == firer)
-			forceMove(A.loc)
-			return
+/obj/item/projectile/meteor/Initialize()
+	. = ..()
+	SpinAnimation()
 
-		sleep(-1) //Might not be important enough for a sleep(-1) but the sleep/spawn itself is necessary thanks to explosions and metoerhits
-
-		if(src)//Do not add to this if() statement, otherwise the meteor won't delete them
-			if(A)
-
-				A.ex_act(2)
-				playsound(src.loc, 'sound/effects/meteorimpact.ogg', 40, 1)
-
-				for(var/mob/M in range(10, src))
-					if(!M.stat && !istype(M, /mob/living/silicon/ai))\
-						shake_camera(M, 3, 1)
-				qdel(src)
-				return 1
-		else
-			return 0
+/obj/item/projectile/meteor/Bump(atom/A, forced=0)
+	if(!istype(A))
+		return
+	if(A == firer)
+		forceMove(A.loc)
+		return
+	A.ex_act(2)
+	playsound(src.loc, 'sound/effects/meteorimpact.ogg', 40, 1)
+	for(var/mob/M in range(10, src))
+		if(!M.stat && !istype(M, /mob/living/silicon/ai))
+			shake_camera(M, 3, 1)
+	qdel(src)
+	return TRUE
 
 /obj/item/projectile/energy/floramut
 	name = "alpha somatoray"
@@ -85,30 +98,30 @@
 	damage_type = TOX
 	nodamage = TRUE
 
-	on_hit(var/atom/target, var/blocked = 0)
-		var/mob/living/M = target
-		if(ishuman(target))
-			var/mob/living/carbon/human/H = M
-			if((H.species.species_flags & SPECIES_FLAG_IS_PLANT) && (H.nutrition < 500))
-				if(prob(15))
-					H.apply_damage((rand(30,80)),IRRADIATE, damage_flags = DAM_DISPERSED)
-					H.Weaken(5)
-					for (var/mob/V in viewers(src))
-						V.show_message("<span class='warning'>[M] writhes in pain as \his vacuoles boil.</span>", 3, "<span class='warning'>You hear the crunching of leaves.</span>", 2)
-				if(prob(35))
-					if(prob(80))
-						randmutb(M)
-						domutcheck(M,null)
-					else
-						randmutg(M)
-						domutcheck(M,null)
+/obj/item/projectile/energy/floramut/on_hit(var/atom/target, var/blocked = 0)
+	var/mob/living/M = target
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = M
+		if((H.species.species_flags & SPECIES_FLAG_IS_PLANT) && (H.nutrition < 500))
+			if(prob(15))
+				H.apply_damage((rand(30,80)),IRRADIATE, damage_flags = DAM_DISPERSED)
+				H.Weaken(5)
+				for (var/mob/V in viewers(src))
+					V.show_message("<span class='warning'>[M] writhes in pain as \his vacuoles boil.</span>", 3, "<span class='warning'>You hear the crunching of leaves.</span>", 2)
+			if(prob(35))
+				if(prob(80))
+					randmutb(M)
+					domutcheck(M,null)
 				else
-					M.adjustFireLoss(rand(5,15))
-					M.show_message("<span class='danger'>The radiation beam singes you!</span>")
-		else if(istype(target, /mob/living/carbon/))
-			M.show_message("<span class='notice'>The radiation beam dissipates harmlessly through your body.</span>")
-		else
-			return 1
+					randmutg(M)
+					domutcheck(M,null)
+			else
+				M.adjustFireLoss(rand(5,15))
+				M.show_message("<span class='danger'>The radiation beam singes you!</span>")
+	else if(istype(target, /mob/living/carbon/))
+		M.show_message("<span class='notice'>The radiation beam dissipates harmlessly through your body.</span>")
+	else
+		return 1
 
 /obj/item/projectile/energy/floramut/gene
 	name = "gamma somatoray"
@@ -155,46 +168,7 @@
 	nodamage = TRUE
 	damage_type = PAIN
 	damage_flags = 0
-	muzzle_type = /obj/effect/projectile/bullet/muzzle
-
-/obj/item/projectile/bola
-	name = "bola"
-	icon_state = "bola"
-	damage = 5
-	embed = FALSE
-	damage_type = STUN
-	muzzle_type = null
-
-/obj/item/projectile/bola/on_hit(atom/target, blocked = 0)
-	if (isliving(target))
-		var/mob/living/M = target
-		M.Weaken(3)
-		M.visible_message(
-			SPAN_WARNING("\The [M] is hit with a glob of webbing!"),
-			SPAN_DANGER("You are hit with a glob of webbing, causing you to trip!"),
-			SPAN_DANGER("Some sort of sticky substance hits you and causes you to fall over!")
-		)
-	..()
-
-/obj/item/projectile/webball
-	name = "ball of web"
-	icon_state = "bola"
-	damage = 2
-	embed = FALSE
-	damage_type = BRUTE
-	muzzle_type = null
-
-/obj/item/projectile/webball/on_hit(atom/target, blocked = 0)
-	if (isturf(target.loc))
-		var/obj/effect/spider/stickyweb/W = locate() in get_turf(target)
-		if (!W && prob(75))
-			visible_message(SPAN_DANGER("\The [src] splatters a layer of web on \the [target]!"))
-			new /obj/effect/spider/stickyweb(target.loc)
-
-			if (isliving(target))
-				var/mob/living/M = target
-				M.Weaken(1)
-	..()
+	muzzle_type = /obj/effect/projectile/muzzle/bullet
 
 /obj/item/projectile/venom
 	name = "venom bolt"

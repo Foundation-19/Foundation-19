@@ -1,13 +1,8 @@
+//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
+
 /*
  * A large number of misc global procs.
  */
-
-/proc/subtypesof(datum/thing)
-	if (ispath(thing))
-		return typesof(thing) - thing
-	if (istype(thing))
-		return typesof(thing) - thing.type
-	return list()
 
 //Checks if all high bits in req_mask are set in bitfield
 #define BIT_TEST_ALL(bitfield, req_mask) ((~(bitfield) & (req_mask)) == 0)
@@ -40,6 +35,22 @@
 //Returns the middle-most value
 /proc/dd_range(var/low, var/high, var/num)
 	return max(low,min(high,num))
+
+/proc/get_projectile_angle(atom/source, atom/target)
+	var/sx = source.x * world.icon_size
+	var/sy = source.y * world.icon_size
+	var/tx = target.x * world.icon_size
+	var/ty = target.y * world.icon_size
+	var/atom/movable/AM
+	if(ismovable(source))
+		AM = source
+		sx += AM.step_x
+		sy += AM.step_y
+	if(ismovable(target))
+		AM = target
+		tx += AM.step_x
+		ty += AM.step_y
+	return SIMPLIFY_DEGREES(arctan(ty - sy, tx - sx))
 
 //Returns whether or not A is the middle most value
 /proc/InRange(var/A, var/lower, var/upper)
@@ -207,8 +218,8 @@ Turf and target are seperate in case you want to teleport some distance from a t
 	var/dyabs=abs(dy)
 	var/sdx=sign(dx)	//Sign of x distance (+ or -)
 	var/sdy=sign(dy)
-	var/x=SHIFTR(dxabs, 1)	//Counters for steps taken, setting to distance/2
-	var/y=SHIFTR(dyabs, 1)	//Bit-shifting makes me l33t.  It also makes getline() unnessecarrily fast.
+	var/x=dxabs>>1	//Counters for steps taken, setting to distance/2
+	var/y=dyabs>>1	//Bit-shifting makes me l33t.  It also makes getline() unnessecarrily fast.
 	var/j			//Generic integer for counting
 	if(dxabs>=dyabs)	//x distance is greater than y
 		for(j=0;j<dxabs;j++)//It'll take dxabs steps to get there
@@ -358,7 +369,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 /proc/select_active_ai(mob/user, z)
 	var/list/ais = active_ais(z)
 	if(ais.len)
-		if(user?.client)
+		if(user)
 			. = input(user,"AI signals detected:", "AI selection") in ais
 		else
 			. = pick(ais)
@@ -671,7 +682,7 @@ proc/DuplicateObject(obj/original, var/perfectcopy = 0 , var/sameloc = 0)
 	if(perfectcopy)
 		if((O) && (original))
 			for(var/V in original.vars)
-				if(!(V in list("type","loc","locs","vars", "parent", "parent_type","verbs","ckey","key", "group", "ai_holder", "natural_weapon")))
+				if(!(V in list("type","loc","locs","vars", "parent", "parent_type","verbs","ckey","key")))
 					O.vars[V] = original.vars[V]
 	return O
 
@@ -761,7 +772,7 @@ proc/DuplicateObject(obj/original, var/perfectcopy = 0 , var/sameloc = 0)
 
 					for(var/obj/O in T)
 
-						if(!istype(O,/obj) || !O.simulated)
+						if((!istype(O,/obj) || !O.simulated) && !istype(O,/obj/effect/landmark))
 							continue
 
 						objs += O
@@ -842,6 +853,117 @@ proc/get_mob_with_client_list()
 		if (M.client)
 			mobs += M
 	return mobs
+
+//similar function to range(), but with no limitations on the distance; will search spiralling outwards from the center
+/proc/spiral_range(dist=0, center=usr, orange=0)
+	var/list/L = list()
+	var/turf/t_center = get_turf(center)
+	if(!t_center)
+		return list()
+
+	if(!orange)
+		L += t_center
+		L += t_center.contents
+
+	if(!dist)
+		return L
+
+
+	var/turf/T
+	var/y
+	var/x
+	var/c_dist = 1
+
+
+	while( c_dist <= dist )
+		y = t_center.y + c_dist
+		x = t_center.x - c_dist + 1
+		for(x in x to t_center.x+c_dist)
+			T = locate(x,y,t_center.z)
+			if(T)
+				L += T
+				L += T.contents
+
+		y = t_center.y + c_dist - 1
+		x = t_center.x + c_dist
+		for(y in t_center.y-c_dist to y)
+			T = locate(x,y,t_center.z)
+			if(T)
+				L += T
+				L += T.contents
+
+		y = t_center.y - c_dist
+		x = t_center.x + c_dist - 1
+		for(x in t_center.x-c_dist to x)
+			T = locate(x,y,t_center.z)
+			if(T)
+				L += T
+				L += T.contents
+
+		y = t_center.y - c_dist + 1
+		x = t_center.x - c_dist
+		for(y in y to t_center.y+c_dist)
+			T = locate(x,y,t_center.z)
+			if(T)
+				L += T
+				L += T.contents
+		c_dist++
+
+	return L
+
+//similar function to spiral_range, but only turfs
+/proc/spiral_range_turfs(dist=0, center=usr, orange=0, list/outlist = list(), tick_checked)
+	outlist.Cut()
+	if(!dist)
+		outlist += center
+		return outlist
+
+	var/turf/t_center = get_turf(center)
+	if(!t_center)
+		return outlist
+
+	var/list/L = outlist
+	var/turf/T
+	var/y
+	var/x
+	var/c_dist = 1
+
+	if(!orange)
+		L += t_center
+
+	while( c_dist <= dist )
+		y = t_center.y + c_dist
+		x = t_center.x - c_dist + 1
+		for(x in x to t_center.x+c_dist)
+			T = locate(x,y,t_center.z)
+			if(T)
+				L += T
+
+		y = t_center.y + c_dist - 1
+		x = t_center.x + c_dist
+		for(y in t_center.y-c_dist to y)
+			T = locate(x,y,t_center.z)
+			if(T)
+				L += T
+
+		y = t_center.y - c_dist
+		x = t_center.x + c_dist - 1
+		for(x in t_center.x-c_dist to x)
+			T = locate(x,y,t_center.z)
+			if(T)
+				L += T
+
+		y = t_center.y - c_dist + 1
+		x = t_center.x - c_dist
+		for(y in y to t_center.y+c_dist)
+			T = locate(x,y,t_center.z)
+			if(T)
+				L += T
+		c_dist++
+		if(tick_checked)
+			CHECK_TICK
+
+	return L
 
 
 /proc/parse_zone(zone)
@@ -1110,9 +1232,6 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 /proc/crash_at(msg, file, line)
 	CRASH("%% [file],[line] %% [msg]")
 
-/proc/pass()
-	return
-
 //clicking to move pulled objects onto assignee's turf/loc
 /proc/do_pull_click(mob/user, atom/A)
 	if(ismob(user.pulling))
@@ -1123,3 +1242,64 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		M.start_pulling(t)
 	else
 		step(user.pulling, get_dir(user.pulling.loc, A))
+
+/proc/show_blurb(client/C, duration, blurb_text, fade_time = 5)
+	set waitfor = 0
+
+	if(!C)
+		return
+
+	var/style = "font-family: 'Fixedsys'; -dm-text-outline: 1 black; font-size: 11px;"
+	var/text = blurb_text
+	text = uppertext(text)
+
+	var/obj/effect/overlay/T = new()
+	T.maptext_height = 64
+	T.maptext_width = 448
+	T.layer = FLOAT_LAYER
+	T.plane = HUD_PLANE
+	T.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
+	T.screen_loc = "LEFT+1,BOTTOM+2"
+
+	C.screen += T
+	animate(T, alpha = 255, time = 10)
+	for(var/i = 1 to length(text)+1)
+		T.maptext = "<span style=\"[style]\">[copytext(text,1,i)] </span>"
+		sleep(1)
+
+	addtimer(CALLBACK(GLOBAL_PROC, .proc/fade_blurb, C, T, fade_time), duration)
+
+/proc/fade_blurb(client/C, obj/T, fade_time = 5)
+	animate(T, alpha = 0, time = fade_time)
+	sleep(fade_time)
+	C.screen -= T
+	qdel(T)
+
+/proc/show_global_blurb(duration, blurb_text, fade_time = 5) // Shows a blurb to every living player
+	for(var/mob/M in GLOB.player_list)
+		show_blurb(M.client, duration, blurb_text, fade_time)
+
+/proc/flash_color(mob_or_client, flash_color="#960000", flash_time=20)
+	var/client/C
+	if(ismob(mob_or_client))
+		var/mob/M = mob_or_client
+		if(M.client)
+			C = M.client
+		else
+			return
+	else if(istype(mob_or_client, /client))
+		C = mob_or_client
+
+	if(!istype(C))
+		return
+
+	var/animate_color = C.color
+	C.color = flash_color
+	animate(C, color = animate_color, time = flash_time)
+
+// Misc. ported from TG
+
+#define UNTIL(X) while(!(X)) stoplag()
+
+//datum may be null, but it does need to be a typed var
+#define NAMEOF(datum, X) (#X || ##datum.##X)

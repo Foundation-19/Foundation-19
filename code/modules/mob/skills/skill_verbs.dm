@@ -71,7 +71,7 @@ Robots and antags can instruct.
 	if(!..())
 		return
 	for(var/decl/hierarchy/skill/S in GLOB.skills)
-		if(skillset.owner.skill_check(S.type, SKILL_EXPERT))
+		if(skillset.owner.skill_check(S.type, SKILL_EXPERIENCED))
 			return 1
 
 /mob/proc/instruct(mob/living/carbon/human/target as mob in oview(2))
@@ -95,7 +95,7 @@ Robots and antags can instruct.
 
 	var/options = list()
 	for(var/decl/hierarchy/skill/S in GLOB.skills)
-		if(!target.skill_check(S.type, SKILL_BASIC) && skill_check(S.type, SKILL_EXPERT))
+		if(!target.skill_check(S.type, SKILL_BASIC) && skill_check(S.type, SKILL_EXPERIENCED))
 			options[S.name] = S
 	if(!length(options))
 		to_chat(src, "<span class='notice'>There is nothing you can teach \the [target].</span>")
@@ -115,7 +115,7 @@ Robots and antags can instruct.
 	if(target.skill_check(skill.type, SKILL_BASIC))
 		to_chat(src, "<span class='notice'>\The [target] is too skilled to gain any benefit from a short lesson.</span>")
 		return
-	if(!skill_check(skill.type, SKILL_EXPERT))
+	if(!skill_check(skill.type, SKILL_EXPERIENCED))
 		return
 
 	target.buff_skill(list(skill.type = 1), buff_type = /datum/skill_buff/instruct)
@@ -151,7 +151,7 @@ The Appraise verb. Used on objects to estimate their value.
 		return
 	return 1
 
-/mob/proc/appraise(obj/item as obj in get_equipped_items(1))
+/mob/proc/appraise(atom/movable/item in view(1, src.client))
 	set category = "IC"
 	set name = "Appraise"
 	set src = usr
@@ -174,16 +174,16 @@ The Appraise verb. Used on objects to estimate their value.
 			var/high = low + level
 			if(!low && multiple >= 2)
 				low = 10 ** (multiple - 1) //Adjusts the lowball estimate away from 0 if the item has a high upper estimate.
-			message = "You appraise the item to be worth between [low] and [high] [GLOB.using_map.local_currency_name]."
+			message = "You appraise \the [item] to be worth between [low] and [high] [GLOB.using_map.local_currency_name]."
 	to_chat(src, message)
 
 /proc/get_appraise_level(skill)
 	switch(skill)
 		if(SKILL_MAX)
 			return 5
-		if(SKILL_EXPERT)
+		if(SKILL_EXPERIENCED)
 			return 10
-		if(SKILL_ADEPT)
+		if(SKILL_TRAINED)
 			return 20
 		else
 			return 50
@@ -201,7 +201,7 @@ The Appraise verb. Used on objects to estimate their value.
 /datum/skill_verb/noirvision/should_see_verb()
 	if(!..())
 		return
-	if(!skillset.owner.skill_check(SKILL_FORENSICS, SKILL_PROF))
+	if(!skillset.owner.skill_check(SKILL_FORENSICS, SKILL_MASTER))
 		return
 	return 1
 
@@ -219,7 +219,3 @@ The Appraise verb. Used on objects to estimate their value.
 		add_client_color(/datum/client_color/noir)
 	else
 		to_chat(src, "You stop looking for clues.")
-
-
-
-

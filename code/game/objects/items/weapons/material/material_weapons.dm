@@ -16,15 +16,15 @@
 	var/applies_material_name = 1 //if false, does not rename item to 'material item.name'
 	var/furniture_icon  //icon states for non-material colorable overlay, i.e. handles
 
-	var/max_force = 40	 //any damage above this is added to armor penetration value
-	var/force_multiplier = 0.5	// multiplier to material's generic damage value for this specific type of weapon
+	var/max_force = 40 //any damage above this is added to armor penetration value
+	var/max_pen = 100 //any penetration above this value is ignored
+	var/force_multiplier = 0.5 // multiplier to material's generic damage value for this specific type of weapon
 	var/thrown_force_multiplier = 0.5
 
 	var/attack_cooldown_modifier = 0
 	var/unbreakable
 	var/drops_debris = 1
 	var/worth_multiplier = 1
-
 
 /obj/item/material/New(var/newloc, var/material_key)
 	if(!material_key)
@@ -57,11 +57,10 @@
 	if(new_force > max_force)
 		armor_penetration = initial(armor_penetration) + new_force - max_force
 	armor_penetration += 2*max(0, material.brute_armor - 2)
+	armor_penetration = min(max_pen, armor_penetration)
 
 	throwforce = round(material.get_blunt_damage()*thrown_force_multiplier)
 	attack_cooldown = material.get_attack_cooldown() + attack_cooldown_modifier
-	//spawn(1)
-//		log_debug("[src] has force [force] and throwforce [throwforce] when made from default material [material.name]")
 
 /obj/item/material/proc/set_material(var/new_material)
 	material = SSmaterials.get_material_by_name(new_material)
@@ -88,7 +87,7 @@
 		alpha = 100 + material.opacity * 255
 	if(furniture_icon)
 		var/image/I = image(icon, icon_state = furniture_icon)
-		I.appearance_flags = DEFAULT_APPEARANCE_FLAGS | RESET_COLOR
+		I.appearance_flags = RESET_COLOR
 		overlays += I
 
 /obj/item/material/Destroy()
@@ -113,7 +112,7 @@
 
 /obj/item/material/handle_death_change(new_death_state)
 	. = ..()
-	if (new_death_state)
+	if(new_death_state)
 		shatter()
 
 /obj/item/material/proc/shatter()

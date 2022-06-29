@@ -6,7 +6,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	desc = "It's a g-g-g-g-ghooooost!" //jinkies!
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "ghost"
-	appearance_flags = DEFAULT_APPEARANCE_FLAGS | KEEP_TOGETHER
+	appearance_flags = KEEP_TOGETHER | LONG_GLIDE
 	blinded = 0
 	anchored = TRUE	//  don't get pushed around
 	universal_speak = TRUE
@@ -69,6 +69,8 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 		GLOB.cult.add_ghost_magic(src)
 
 	ghost_multitool = new(src)
+
+	update_floating()
 
 	GLOB.ghost_mob_list += src
 
@@ -281,13 +283,29 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		ghost_to_turf(T)
 	else
 		to_chat(src, "<span class='warning'>Invalid coordinates.</span>")
-/mob/observer/ghost/verb/follow(var/datum/follow_holder/fh in get_follow_targets())
+
+/mob/observer/ghost/verb/follow(var/mob/fh in GLOB.player_list)
 	set category = "Ghost"
 	set name = "Follow"
-	set desc = "Follow and haunt a mob."
+	set desc = "Follow a player"
 
-	if(!fh.show_entry()) return
-	start_following(fh.followed_instance)
+	if(!fh)
+		to_chat(src, "<span class='warning'>No active players found.</span>")
+		return
+	start_following(fh)
+
+/mob/observer/ghost/verb/jumptomob(var/mob/M in SSmobs.mob_list)
+	set category = "Ghost"
+	set name = "Jump to Mob"
+	set desc = "Jump to any mob"
+
+	if(!M)
+		return
+	var/turf/T = get_turf(M)
+	if(!T)
+		to_chat(src, "<span class='warning'>Cannot jump to this mob!</span>")
+		return
+	ghost_to_turf(T)
 
 /mob/observer/ghost/proc/ghost_to_turf(var/turf/target_turf)
 	if(check_is_holy_turf(target_turf))
@@ -296,13 +314,29 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	stop_following()
 	forceMove(target_turf)
 
+/mob/observer/ghost/update_floating()
+	if(orbiting)
+		// Starting orbit already resets animation, we only need to update variables.
+		is_floating = 0
+		floatiness = 0
+	else
+		make_floating(1)
+	return
+
 /mob/observer/ghost/start_following(var/atom/a)
 	..()
 	to_chat(src, "<span class='notice'>Now following \the [following].</span>")
+	var/icon/I = icon(a.icon, a.icon_state, a.dir)
+	var/orbit_size = (I.Width() + I.Height()) * 0.5
+	orbit_size -= (orbit_size / WORLD_ICON_SIZE) * (WORLD_ICON_SIZE * 0.25)
+	orbit(a, orbit_size, TRUE, 20)
+	update_floating()
 
 /mob/observer/ghost/stop_following()
 	if(following)
 		to_chat(src, "<span class='notice'>No longer following \the [following]</span>")
+		stop_orbit()
+		update_floating()
 	..()
 
 /mob/observer/ghost/keep_following(var/atom/movable/am, var/old_loc, var/new_loc)
@@ -311,6 +345,12 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		to_chat(src, "<span class='warning'>You cannot follow something standing on holy grounds!</span>")
 		return
 	..()
+
+/mob/observer/ghost/stop_orbit()
+	. = ..()
+	pixel_y = default_pixel_y
+	pixel_x = default_pixel_x
+	transform = null
 
 /mob/observer/ghost/StoreMemory()
 	set hidden = 1
@@ -370,7 +410,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 
 	//find a viable mouse candidate
-	var/mob/living/simple_animal/passive/mouse/host
+	var/mob/living/simple_animal/friendly/mouse/host
 	var/obj/machinery/atmospherics/unary/vent_pump/vent_found
 	var/list/found_vents = list()
 	for(var/obj/machinery/atmospherics/unary/vent_pump/v in SSmachines.machinery)
@@ -378,7 +418,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			found_vents.Add(v)
 	if(found_vents.len)
 		vent_found = pick(found_vents)
-		host = new /mob/living/simple_animal/passive/mouse(vent_found.loc)
+		host = new /mob/living/simple_animal/friendly/mouse(vent_found.loc)
 	else
 		to_chat(src, "<span class='warning'>Unable to find any unwelded vents to spawn mice at.</span>")
 	if(host)

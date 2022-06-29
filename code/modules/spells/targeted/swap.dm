@@ -1,17 +1,17 @@
-/spell/targeted/swap
+/datum/spell/targeted/swap
 	name = "swap"
 	desc = "This spell swaps the positions of the wizard and a target. Causes brain damage."
 	feedback = "SW"
 	school = "conjuration"
 
-	charge_type = Sp_HOLDVAR
+	charge_type = SPELL_HOLDVAR
 	holder_var_type = "brainloss"
 	holder_var_amount = 10
 
 	invocation = "Joyo!"
-	invocation_type = SpI_WHISPER
+	invocation_type = INVOKE_WHISPER
 
-	level_max = list(Sp_TOTAL = 2, Sp_SPEED = 0, Sp_POWER = 2)
+	level_max = list(UPGRADE_TOTAL = 2, UPGRADE_SPEED = 0, UPGRADE_POWER = 2)
 
 	spell_flags = Z2NOCAST
 	range = 6
@@ -22,7 +22,7 @@
 
 	cast_sound = 'sound/magic/mandswap.ogg'
 
-/spell/targeted/swap/cast(var/list/targets, mob/user)
+/datum/spell/targeted/swap/cast(var/list/targets, mob/user)
 	for(var/mob/T in targets)
 		var/turf/aT = get_turf(T)
 		var/turf/bT = get_turf(user)
@@ -32,7 +32,7 @@
 
 		apply_spell_damage(T)
 
-/spell/targeted/swap/empower_spell()
+/datum/spell/targeted/swap/empower_spell()
 	if(!..())
 		return 0
 

@@ -25,7 +25,7 @@
 	suit = /obj/item/clothing/suit/apron
 	gloves = /obj/item/clothing/gloves/thick/botany
 	r_pocket = /obj/item/device/scanner/plant
-//	id_types = list(/obj/item/card/id/civilian/botanist)
+	id_types = list(/obj/item/card/id/civilian/botanist)
 	pda_type = /obj/item/modular_computer/pda
 
 /decl/hierarchy/outfit/job/service/gardener/New()

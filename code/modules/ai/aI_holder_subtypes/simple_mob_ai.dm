@@ -146,6 +146,10 @@
 	hostile = FALSE
 	retaliate = TRUE
 
+// Same as above, but will try to return home after a while.
+/datum/ai_holder/simple_animal/retaliate/guard
+	returns_home = TRUE
+
 // Simple mobs that retaliate and support others in their faction who get attacked.
 /datum/ai_holder/simple_animal/retaliate/cooperative
 	cooperative = TRUE

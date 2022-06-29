@@ -22,14 +22,16 @@
 	var/is_stealthed = C.is_stealthed()
 
 	var/ooc_style = "everyone"
-	if(holder && !is_stealthed)
+	if(holder && !is_stealthed) // You have an admin datum AND not stealth-admined.
 		ooc_style = "elevated"
-		if(holder.rights & R_MOD)
-			ooc_style = "moderator"
-		if(holder.rights & R_DEBUG)
-			ooc_style = "developer"
-		if(holder.rights & R_ADMIN)
+		if(holder.rights & R_ADMIN) // You are an admin first of all.
 			ooc_style = "admin"
+		else if(holder.rights & R_DEBUG) // Not an admin, but have debug? Developer color then.
+			ooc_style = "developer"
+		else if(holder.rights & R_MOD) // None of it applies? Become moderator-colored.
+			ooc_style = "moderator"
+	else if(IS_TRUSTED_PLAYER(C.ckey)) // Don't have admin datum AND belong in the trusted list? Funny color time.
+		ooc_style = "trusted_player"
 
 	var/can_badmin = !is_stealthed && can_select_ooc_color(C) && (C.prefs.ooccolor != initial(C.prefs.ooccolor))
 	var/ooc_color = C.prefs.ooccolor
@@ -37,7 +39,7 @@
 	for(var/client/target in GLOB.clients)
 		if(target.is_key_ignored(C.key)) // If we're ignored by this person, then do nothing.
 			continue
-		var/sent_message = "[create_text_tag("ooc", "OOC:", target)] <EM>[C.key]:</EM> <span class='message linkify'>[message]</span>"
+		var/sent_message = "[create_text_tag("ooc", "OOC:", target)] [text_badge(C)] <EM>[C.key]:</EM> <span class='message linkify'>[message]</span>"
 		if(can_badmin)
 			receive_communication(C, target, "<font color='[ooc_color]'><span class='ooc'>[sent_message]</font></span>")
 		else

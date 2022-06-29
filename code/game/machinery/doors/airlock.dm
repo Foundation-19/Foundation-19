@@ -22,6 +22,7 @@ var/list/airlock_overlays = list()
 	icon_state = "preview"
 	power_channel = ENVIRON
 	interact_offline = FALSE
+	animation_time = 5
 
 	explosion_resistance = 10
 	var/aiControlDisabled = 0 //If 1, AI control is disabled until the AI hacks back in and disables the lock. If 2, the AI has bypassed the lock. If -1, the control is enabled but the AI had bypassed it earlier, so if it is disabled again the AI would have no trouble getting back in.
@@ -52,7 +53,7 @@ var/list/airlock_overlays = list()
 
 	var/open_sound_powered = 'sound/machines/airlock_open.ogg'
 	var/open_sound_unpowered = 'sound/machines/airlock_open_force.ogg'
-	var/open_failure_access_denied = 'sound/machines/buzz-two.ogg'
+	var/open_failure_access_denied = 'sound/machines/deniedboop.ogg'
 
 	var/close_sound_powered = 'sound/machines/airlock_close.ogg'
 	var/close_sound_unpowered = 'sound/machines/airlock_close_force.ogg'
@@ -75,6 +76,7 @@ var/list/airlock_overlays = list()
 	var/window_color = null
 	var/init_material_window = MATERIAL_GLASS
 	var/material/window_material
+
 	var/fill_file = 'icons/obj/doors/station/fill_steel.dmi'
 	var/color_file = 'icons/obj/doors/station/color.dmi'
 	var/color_fill_file = 'icons/obj/doors/station/fill_color.dmi'
@@ -112,6 +114,9 @@ var/list/airlock_overlays = list()
 /obj/machinery/door/airlock/security
 	door_color = COLOR_NT_RED
 
+/obj/machinery/door/airlock/security/research
+	door_color = COLOR_WHITE
+	stripe_color = COLOR_NT_RED
 
 /obj/machinery/door/airlock/engineering
 	name = "Maintenance Hatch"
@@ -763,9 +768,7 @@ About the new airlock wires panel:
 			set_airlock_overlays(AIRLOCK_DENY)
 			if(density && arePowerSystemsOn())
 				flick("deny", src)
-				if(secured_wires && world.time > next_clicksound)
-					next_clicksound = world.time + CLICKSOUND_INTERVAL
-					playsound(loc, open_failure_access_denied, 50, 0)
+				playsound(loc, open_failure_access_denied, 100, 0)
 			update_icon(AIRLOCK_CLOSED)
 		if("emag")
 			set_airlock_overlays(AIRLOCK_EMAG)
@@ -1038,8 +1041,7 @@ About the new airlock wires panel:
 		if(!length(A.req_access) && (alert("\the [A]'s 'Access Not Set' light is flashing. Install it anyway?", "Access not set", "Yes", "No") == "No"))
 			return
 
-		playsound(user, 'sound/machines/lockreset.ogg', 50, 1)
-		if(do_after(user, 6 SECONDS, src) && density && A && user.unEquip(A, src))
+		if(do_after(user, 50, src) && density && A && user.unEquip(A, src))
 			to_chat(user, "<span class='notice'>You successfully install \the [A].</span>")
 			brace = A
 			brace.airlock = src
@@ -1277,6 +1279,10 @@ About the new airlock wires panel:
 
 	for(var/turf/turf in locs)
 		for(var/atom/movable/AM in turf)
+			if(istype(AM, /obj/))
+				var/obj/O = AM
+				if(O.hides_under_flooring()) // Don't damage pipes, cables, and so on.
+					continue
 			if(AM.airlock_crush(door_crush_damage))
 				take_damage(door_crush_damage)
 				use_power_oneoff(door_crush_damage * 100)		// Uses bunch extra power for crushing the target.

@@ -29,7 +29,7 @@
 /obj/item/slime_extract/New()
 	SSstatistics.extracted_slime_cores_amount++
 	create_reagents(100)
-	reagents.add_reagent(/datum/reagent/slimejelly, 30)
+	reagents.add_reagent(/datum/reagent/slime_jelly, 30)
 	..()
 
 /obj/item/slime_extract/grey
@@ -102,7 +102,7 @@
 
 /obj/item/slime_extract/adamantine/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/crystal, 10)
+	reagents.add_reagent(/datum/reagent/crystallizing_agent, 10)
 
 /obj/item/slime_extract/bluespace
 	name = "bluespace slime extract"
@@ -298,4 +298,3 @@
 			var/area/A = get_area(src)
 			if(A)
 				to_chat(G, "Golem rune created in [A.name].")
-

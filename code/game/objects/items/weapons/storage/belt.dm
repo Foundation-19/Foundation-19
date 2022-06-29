@@ -527,7 +527,7 @@
 	max_storage_space = ITEM_SIZE_NORMAL * 4
 
 /obj/item/storage/belt/waistpack/big/Initialize()
-	.=..()
+	. = ..()
 	slowdown_per_slot[slot_belt] = 1
 
 /obj/item/storage/belt/fire_belt

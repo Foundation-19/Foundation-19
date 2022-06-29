@@ -25,10 +25,10 @@
 		/datum/mil_rank/civ/contractor
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_MEDICAL     = SKILL_EXPERT,
-	                    SKILL_ANATOMY     = SKILL_EXPERT,
+	                    SKILL_MEDICAL     = SKILL_EXPERIENCED,
+	                    SKILL_ANATOMY     = SKILL_EXPERIENCED,
 	                    SKILL_CHEMISTRY   = SKILL_BASIC,
-						SKILL_DEVICES     = SKILL_ADEPT)
+						SKILL_DEVICES     = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
 	                    SKILL_ANATOMY     = SKILL_MAX,
@@ -39,6 +39,10 @@
 		access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
 		access_crematorium, access_chemistry, access_surgery,
 		access_medical_equip, access_solgov_crew, access_senmed, access_radio_med
+	)
+
+	lowpop_access = list(
+		access_tox, access_research
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
@@ -68,10 +72,10 @@
 		/datum/mil_rank/civ/contractor
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_MEDICAL     = SKILL_EXPERT,
-	                    SKILL_ANATOMY     = SKILL_EXPERT,
+	                    SKILL_MEDICAL     = SKILL_EXPERIENCED,
+	                    SKILL_ANATOMY     = SKILL_EXPERIENCED,
 	                    SKILL_CHEMISTRY   = SKILL_BASIC,
-						SKILL_DEVICES     = SKILL_ADEPT)
+						SKILL_DEVICES     = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
 	                    SKILL_ANATOMY     = SKILL_MAX,
@@ -82,6 +86,10 @@
 		access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
 		access_crematorium, access_chemistry, access_surgery,
 		access_medical_equip, access_solgov_crew, access_senmed, access_radio_med
+	)
+
+	lowpop_access = list(
+		access_tox, access_research
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
@@ -128,6 +136,10 @@
 		access_solgov_crew, access_hangar, access_radio_med
 	)
 
+	lowpop_access = list(
+		access_tox, access_research
+	)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
@@ -160,9 +172,9 @@
 	skill_points = 4
 	no_skill_buffs = TRUE
 
-	min_skill = list(   SKILL_EVA     = SKILL_ADEPT,
-	                    SKILL_HAULING = SKILL_ADEPT,
-	                    SKILL_MEDICAL = SKILL_EXPERT,
+	min_skill = list(   SKILL_EVA     = SKILL_TRAINED,
+	                    SKILL_HAULING = SKILL_TRAINED,
+	                    SKILL_MEDICAL = SKILL_EXPERIENCED,
 	                    SKILL_ANATOMY = SKILL_BASIC)
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
@@ -201,7 +213,7 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/contractor)
 	min_skill = list(   SKILL_MEDICAL   = SKILL_BASIC,
-	                    SKILL_CHEMISTRY = SKILL_ADEPT)
+	                    SKILL_CHEMISTRY = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_BASIC,
 						SKILL_ANATOMY	  = SKILL_BASIC,
@@ -212,6 +224,10 @@
 		access_medical, access_maint_tunnels, access_emergency_storage,
 		access_medical_equip, access_solgov_crew, access_chemistry,
 	 	access_virology, access_morgue, access_crematorium, access_radio_med
+	)
+
+	lowpop_access = list(
+		access_tox, access_research
 	)
 
 	minimal_access = list()
@@ -230,10 +246,7 @@
 	supervisors = "the Chief Medical Officer"
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/counselor
 	alt_titles = list(
-		"Psychiatrist",
-		"Psionic Counselor" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist,
-		"Mentalist" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist
-
+		"Psychiatrist"
 	)
 
 	allowed_branches = list(
@@ -262,15 +275,6 @@
 		/datum/computer_file/program/suit_sensors,
 		/datum/computer_file/program/camera_monitor
 	)
-	give_psionic_implant_on_join = FALSE
-
-/datum/job/psychiatrist/equip(var/mob/living/carbon/human/H)
-	if(H.mind?.role_alt_title == "Psionic Counselor")
-		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_OPERANT)
-	if(H.mind?.role_alt_title == "Mentalist")
-		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT)
-	return ..()
-
 
 /datum/job/psychiatrist/get_description_blurb()
-		return "You are the Counselor. Your main responsibility is the mental health and wellbeing of the crew. You are subordinate to the Chief Medical Officer."
+	return "You are the Counselor. Your main responsibility is the mental health and wellbeing of the crew. You are subordinate to the Chief Medical Officer."

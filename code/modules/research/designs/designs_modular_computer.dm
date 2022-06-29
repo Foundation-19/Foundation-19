@@ -68,7 +68,7 @@
 	req_tech = list(TECH_DATA = 1, TECH_ENGINEERING = 1)
 	build_type = IMPRINTER
 	materials = list(MATERIAL_STEEL = 250, MATERIAL_GLASS = 100)
-	chemicals = list(/datum/reagent/acid = 20)
+	chemicals = list(/datum/reagent/acid/sulphuric = 20)
 	build_path = /obj/item/stock_parts/computer/network_card
 	sort_string = "VBABA"
 
@@ -78,7 +78,7 @@
 	req_tech = list(TECH_DATA = 3, TECH_ENGINEERING = 2)
 	build_type = IMPRINTER
 	materials = list(MATERIAL_STEEL = 500, MATERIAL_GLASS = 200)
-	chemicals = list(/datum/reagent/acid = 20)
+	chemicals = list(/datum/reagent/acid/sulphuric = 20)
 	build_path = /obj/item/stock_parts/computer/network_card/advanced
 	sort_string = "VBABB"
 
@@ -88,7 +88,7 @@
 	req_tech = list(TECH_DATA = 5, TECH_ENGINEERING = 3)
 	build_type = IMPRINTER
 	materials = list(MATERIAL_STEEL = 2500, MATERIAL_GLASS = 400)
-	chemicals = list(/datum/reagent/acid = 20)
+	chemicals = list(/datum/reagent/acid/sulphuric = 20)
 	build_path = /obj/item/stock_parts/computer/network_card/wired
 	sort_string = "VBABC"
 
@@ -103,7 +103,7 @@
 	req_tech = list(TECH_DATA = 1)
 	build_type = IMPRINTER
 	materials = list(MATERIAL_GLASS = 800)
-	chemicals = list(/datum/reagent/acid = 20)
+	chemicals = list(/datum/reagent/acid/sulphuric = 20)
 	build_path = /obj/item/stock_parts/computer/hard_drive/portable
 	sort_string = "VBACA"
 
@@ -113,7 +113,7 @@
 	req_tech = list(TECH_DATA = 2)
 	build_type = IMPRINTER
 	materials = list(MATERIAL_GLASS = 1600)
-	chemicals = list(/datum/reagent/acid = 20)
+	chemicals = list(/datum/reagent/acid/sulphuric = 20)
 	build_path = /obj/item/stock_parts/computer/hard_drive/portable/advanced
 	sort_string = "VBACB"
 
@@ -123,7 +123,7 @@
 	req_tech = list(TECH_DATA = 4)
 	build_type = IMPRINTER
 	materials = list(MATERIAL_GLASS = 3200)
-	chemicals = list(/datum/reagent/acid = 20)
+	chemicals = list(/datum/reagent/acid/sulphuric = 20)
 	build_path = /obj/item/stock_parts/computer/hard_drive/portable/super
 	sort_string = "VBACC"
 
@@ -158,7 +158,7 @@
 	req_tech = list(TECH_POWER = 2, TECH_DATA = 3)
 	build_type = IMPRINTER
 	materials = list(MATERIAL_STEEL = 2000)
-	chemicals = list(/datum/reagent/acid = 20)
+	chemicals = list(/datum/reagent/acid/sulphuric = 20)
 	build_path = /obj/item/stock_parts/computer/ai_slot
 	sort_string = "VBADC"
 
@@ -218,15 +218,6 @@
 	materials = list(MATERIAL_STEEL = 600, MATERIAL_GLASS = 200)
 	build_path = /obj/item/stock_parts/computer/scanner/medical
 	sort_string = "VBADI"
-
-/datum/design/item/modularcomponent/accessory/robotic_scanner
-	name = "robotic scanner module"
-	id = "scan_robotic"
-	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2, TECH_MAGNET = 2, TECH_BIO = 1)
-	build_type = PROTOLATHE
-	materials = list(MATERIAL_STEEL = 600, MATERIAL_GLASS = 200)
-	build_path = /obj/item/stock_parts/computer/scanner/robotic
-	sort_string = "VBADJ"
 
 // Batteries
 /datum/design/item/modularcomponent/battery/AssembleDesignName()
@@ -298,7 +289,7 @@
 	req_tech = list(TECH_DATA = 3, TECH_ENGINEERING = 2)
 	build_type = IMPRINTER
 	materials = list(MATERIAL_STEEL = 1600)
-	chemicals = list(/datum/reagent/acid = 20)
+	chemicals = list(/datum/reagent/acid/sulphuric = 20)
 	build_path = /obj/item/stock_parts/computer/processor_unit
 	sort_string = "VBAFA"
 
@@ -308,7 +299,7 @@
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_type = IMPRINTER
 	materials = list(MATERIAL_STEEL = 800)
-	chemicals = list(/datum/reagent/acid = 20)
+	chemicals = list(/datum/reagent/acid/sulphuric = 20)
 	build_path = /obj/item/stock_parts/computer/processor_unit/small
 	sort_string = "VBAFB"
 
@@ -318,7 +309,7 @@
 	req_tech = list(TECH_DATA = 5, TECH_ENGINEERING = 4)
 	build_type = IMPRINTER
 	materials = list(MATERIAL_STEEL = 6400, glass = 2000)
-	chemicals = list(/datum/reagent/acid = 40)
+	chemicals = list(/datum/reagent/acid/sulphuric = 40)
 	build_path = /obj/item/stock_parts/computer/processor_unit/photonic
 	sort_string = "VBAFC"
 
@@ -328,6 +319,6 @@
 	req_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 3)
 	build_type = IMPRINTER
 	materials = list(MATERIAL_STEEL = 3200, glass = 1000)
-	chemicals = list(/datum/reagent/acid = 20)
+	chemicals = list(/datum/reagent/acid/sulphuric = 20)
 	build_path = /obj/item/stock_parts/computer/processor_unit/photonic/small
 	sort_string = "VBAFD"

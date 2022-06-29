@@ -155,7 +155,7 @@
 /datum/unarmed_attack/nabber
 	attack_verb = list("mauled", "slashed", "struck", "pierced")
 	attack_noun = list("forelimb")
-	damage = 8
+	damage = 18
 	shredding = TRUE
 	sharp = TRUE
 	edge = TRUE
@@ -163,6 +163,8 @@
 	eye_attack_text = "a forelimb"
 	eye_attack_text_victim = "a forelimb"
 	attack_name = "forelimb slash"
+	attack_sound = 'sound/weapons/slice.ogg'
+	miss_sound = 'sound/weapons/slashmiss.ogg'
 
 /datum/unarmed_attack/punch/starborn
 	attack_verb = list("scorched", "burned", "fried")

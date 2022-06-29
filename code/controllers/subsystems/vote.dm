@@ -67,7 +67,7 @@ SUBSYSTEM_DEF(vote)
 	if(!automatic && (!istype(creator) || !creator.client))
 		return FALSE
 
-	if(last_started_time != null && !(isadmin(creator) || automatic))
+	if(last_started_time != null && !(is_admin(creator) || automatic))
 		var/next_allowed_time = (last_started_time + config.vote_delay)
 		if(next_allowed_time > world.time)
 			return FALSE
@@ -83,7 +83,7 @@ SUBSYSTEM_DEF(vote)
 /datum/controller/subsystem/vote/proc/interface(client/C)
 	if(!C)
 		return
-	var/admin = isadmin(C)
+	var/admin = is_admin(C)
 	voting |= C
 
 	. = list()
@@ -91,7 +91,7 @@ SUBSYSTEM_DEF(vote)
 	if(active_vote)
 		. += active_vote.interface(C.mob)
 		if(admin)
-			. += "(<a href='?src=\ref[src];cancel=1'>Cancel Vote</a>) "
+			. += "<a href='?src=\ref[src];cancel=1'>Cancel Vote</a>"
 	else
 		. += "<h2>Start a vote:</h2><hr><ul>"
 		for(var/vote_type in vote_prototypes)
@@ -104,29 +104,31 @@ SUBSYSTEM_DEF(vote)
 			. += "</a>"
 			var/toggle = vote_datum.check_toggle()
 			if(admin && toggle)
-				. += "\t(<a href='?src=\ref[src];toggle=1;vote=\ref[vote_datum.type]'>toggle; currently [toggle]</a>)"
+				. += "\t"
+				. += "<a href='?src=\ref[src];toggle=1;vote=\ref[vote_datum.type]'>toggle; currently [toggle]</a>"
 			. += "</li>"
 		. += "</ul><hr>"
 
 	. += "<a href='?src=\ref[src];close=1' style='position:absolute;right:50px'>Close</a></body></html>"
 	return JOINTEXT(.)
 
-/datum/controller/subsystem/vote/proc/show_panel(mob/user)
+/datum/controller/subsystem/vote/proc/show_panel(mob/user, force_open)
 	var/win_x = 450
 	var/win_y = 740
 	if(active_vote)
 		win_x = active_vote.win_x
 		win_y = active_vote.win_y
-	show_browser(user, interface(user.client),"window=vote;size=[win_x]x[win_y]")
-	onclose(user, "vote", src)
+	var/datum/browser/popup = new(user, "vote", "Voting Panel", win_x, win_y)
+	popup.set_content(interface(user.client))
+	popup.update(force_open, TRUE)
 
 /datum/controller/subsystem/vote/proc/close_panel(mob/user)
-	show_browser(user, null, "window=vote")
+	close_browser(user, "window=vote")
 	if(user)
 		voting -= user.client
 
 /datum/controller/subsystem/vote/proc/cancel_vote(mob/user)
-	if(!isadmin(user))
+	if(!is_admin(user))
 		return
 	active_vote.report_result() // Will not make announcement, but do any override failure reporting tasks.
 	QDEL_NULL(active_vote)
@@ -137,7 +139,7 @@ SUBSYSTEM_DEF(vote)
 		return	//not necessary but meh...just in-case somebody does something stupid
 
 	if(href_list["vote_panel"])
-		show_panel(usr)
+		show_panel(usr, force_open = TRUE)
 		return
 	if(href_list["cancel"])
 		cancel_vote(usr)
@@ -159,7 +161,8 @@ SUBSYSTEM_DEF(vote)
 			show_panel(usr)
 			return
 
-		initiate_vote(vote_path, usr, 0) // Additional permission checking happens in here.
+		if(initiate_vote(vote_path, usr, 0)) // Additional permission checking happens in here.
+			show_panel(usr)
 
 //Helper for certain votes.
 /datum/controller/subsystem/vote/proc/restart_world()
@@ -180,7 +183,7 @@ SUBSYSTEM_DEF(vote)
 		return 0
 	if(automatic)
 		return (SSticker.mode.addantag_allowed & ADDANTAG_AUTO) && !antag_added
-	if(isadmin(creator))
+	if(is_admin(creator))
 		return SSticker.mode.addantag_allowed & (ADDANTAG_ADMIN|ADDANTAG_PLAYER)
 	else
 		return (SSticker.mode.addantag_allowed & ADDANTAG_PLAYER) && !antag_added
@@ -192,4 +195,4 @@ SUBSYSTEM_DEF(vote)
 	if(GAME_STATE < RUNLEVEL_LOBBY)
 		to_chat(src, "It's too soon to do any voting!")
 		return
-	SSvote.show_panel(src)
+	SSvote.show_panel(src, force_open = TRUE)

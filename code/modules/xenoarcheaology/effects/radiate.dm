@@ -23,9 +23,3 @@
 	if(holder)
 		SSradiation.radiate(holder, radiation_strength * rand(5, 10)) //Need to get feedback on this
 		return 1
-
-/datum/artifact_effect/radiate/destroyed_effect()
-	. = ..()
-
-	if(holder)
-		SSradiation.radiate(holder, radiation_strength * rand(10, 15))

@@ -460,3 +460,15 @@
 /mob/living/simple_animal/hostile/carp/holodeck/death()
 	..(null, "fades away!", "You have been destroyed.")
 	qdel(src)
+
+/* Holodeck landmarks */
+// We use those because area copy proc doesn't copy names.
+
+/obj/effect/landmark/holofish
+	name = "Holocarp Spawn"
+
+/obj/effect/landmark/holofish/random
+	name = "Holocarp Spawn Random"
+
+/obj/effect/landmark/holofire
+	name = "Atmospheric Test Start"

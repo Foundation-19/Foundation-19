@@ -7,8 +7,8 @@
 	has_sensor = 0
 	gender_icons = 1
 	armor = list(
-		melee = ARMOR_MELEE_SMALL, 
-		bullet = ARMOR_BALLISTIC_MINOR, 
+		melee = ARMOR_MELEE_SMALL,
+		bullet = ARMOR_BALLISTIC_MINOR,
 		laser = ARMOR_LASER_MINOR
 		)
 	siemens_coefficient = 0.9
@@ -32,4 +32,10 @@
 	siemens_coefficient = 1
 	has_sensor = SUIT_HAS_SENSORS
 
-
+/obj/item/clothing/under/syndicate/terragov
+	name = "camouflage turtleneck"
+	desc = "A combat uniform with urban camouflage pattern."
+	icon_state = "camo_tgmc"
+	item_state = "bl_suit"
+	worn_state = "camo_tgmc"
+	gender_icons = 0

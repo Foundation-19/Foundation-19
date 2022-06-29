@@ -28,7 +28,7 @@
 	reagents.add_reagent(/datum/reagent/water, 30)
 
 /obj/item/reagent_containers/food/drinks/cans/waterbottle/open(mob/user)
-	playsound(loc,'sound/effects/bonebreak1.ogg', rand(10,50), 1)
+	playsound(loc,'sound/effects/wounds/bonebreak1.ogg', rand(10,50), 1)
 	to_chat(user, "<span class='notice'>You twist open \the [src], destroying the safety seal!</span>")
 	atom_flags |= ATOM_FLAG_OPEN_CONTAINER
 

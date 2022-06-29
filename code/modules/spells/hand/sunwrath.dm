@@ -1,9 +1,9 @@
-/spell/hand/duration/sunwrath
+/datum/spell/hand/duration/sunwrath
 	name = "sun god's wrath"
 	desc = "Your hands become a gateway of fire, shooting hot plasma from your fingertips."
 	spell_flags = 0
 	charge_max = 600
-	invocation_type = SpI_SHOUT
+	invocation_type = INVOKE_SHOUT
 	invocation = "Herald! Bless me with your anger!"
 	show_message = " erupts fire from their hands"
 	school = "Divine"
@@ -13,7 +13,7 @@
 
 	hud_state = "wiz_immolate"
 
-/spell/hand/duration/sunwrath/cast_hand(var/atom/A, var/mob/user)
+/datum/spell/hand/duration/sunwrath/cast_hand(var/atom/A, var/mob/user)
 	var/turf/T = get_turf(user)
 	var/list/turfs = getline(T,A) - T
 	for(var/t in turfs)

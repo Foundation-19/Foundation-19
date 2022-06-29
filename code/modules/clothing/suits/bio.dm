@@ -9,7 +9,7 @@
 	desc = "A hood that protects the head and face from biological comtaminants."
 	permeability_coefficient = 0
 	armor = list(
-		bio = ARMOR_BIO_SHIELDED, 
+		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_MINOR
 		)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
@@ -31,16 +31,16 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	allowed = list(/obj/item/tank/emergency,/obj/item/pen,/obj/item/device/flashlight/pen,/obj/item/device/scanner/health,/obj/item/device/ano_scanner,/obj/item/clothing/head/bio_hood,/obj/item/clothing/mask/gas)
 	armor = list(
-		bio = ARMOR_BIO_SHIELDED, 
+		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_MINOR
 		)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	siemens_coefficient = 0.9
 
-/obj/item/clothing/suit/bio_suit/New()
-	..()
-	slowdown_per_slot[slot_wear_suit] = 1.0
+/obj/item/clothing/suit/bio_suit/Initialize()
+	. = ..()
+	slowdown_per_slot[slot_wear_suit] = 1
 
 //Standard biosuit, orange stripe
 /obj/item/clothing/head/bio_hood/general

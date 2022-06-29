@@ -30,6 +30,7 @@
 	var/obj/screen/action_intent
 	var/obj/screen/move_intent
 	var/obj/screen/stamina/stamina_bar
+	var/obj/screen/rest_button
 
 	var/list/adding
 	var/list/other
@@ -54,6 +55,7 @@
 	adding = null
 	other = null
 	hotkeybuttons = null
+	rest_button = null
 	mymob = null
 
 /datum/hud/proc/update_stamina()
@@ -270,7 +272,7 @@
 
 /obj/screen/stamina
 	name = "stamina"
-	icon = 'icons/effects/progessbar.dmi'
+	icon = 'icons/effects/progressbar.dmi'
 	icon_state = "prog_bar_100"
 	invisibility = INVISIBILITY_MAXIMUM
 	screen_loc = ui_stamina

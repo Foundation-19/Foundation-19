@@ -1,6 +1,8 @@
 /obj/effect/overmap/visitable/sector/exoplanet/barren
 	name = "barren exoplanet"
 	desc = "An exoplanet that couldn't hold its atmosphere."
+	scan_summary = "Rocky exoplanet with an extremely thin atmosphere and no magnetosphere. Surface temperatures are very low. No surface water is present outside of the planet's ice caps, and climate models predict that the planet's only weather comes in the form of periodic dust storms."
+	scan_assessment = "Surface climate completely uninhabitable, requiring pressure protection and internals."
 	color = "#6c6c6c"
 	planetary_area = /area/exoplanet/barren
 	rock_colors = list(COLOR_BEIGE, COLOR_GRAY80, COLOR_BROWN)

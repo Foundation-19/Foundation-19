@@ -82,7 +82,7 @@
 	icon_state = "pill1"
 /obj/item/reagent_containers/pill/antitox/New()
 	..()
-	reagents.add_reagent(/datum/reagent/dylovene, 25)
+	reagents.add_reagent(/datum/reagent/medicine/dylovene, 25)
 	color = reagents.get_color()
 
 
@@ -132,7 +132,7 @@
 	icon_state = "pill2"
 /obj/item/reagent_containers/pill/kelotane/New()
 	..()
-	reagents.add_reagent(/datum/reagent/kelotane, 15)
+	reagents.add_reagent(/datum/reagent/medicine/kelotane, 15)
 	color = reagents.get_color()
 
 
@@ -142,7 +142,7 @@
 	icon_state = "pill3"
 /obj/item/reagent_containers/pill/paracetamol/New()
 	..()
-	reagents.add_reagent(/datum/reagent/paracetamol, 15)
+	reagents.add_reagent(/datum/reagent/medicine/painkiller/paracetamol, 15)
 	color = reagents.get_color()
 
 
@@ -152,7 +152,7 @@
 	icon_state = "pill3"
 /obj/item/reagent_containers/pill/tramadol/New()
 	..()
-	reagents.add_reagent(/datum/reagent/tramadol, 15)
+	reagents.add_reagent(/datum/reagent/medicine/painkiller/tramadol, 15)
 	color = reagents.get_color()
 
 
@@ -162,7 +162,7 @@
 	icon_state = "pill1"
 /obj/item/reagent_containers/pill/inaprovaline/New()
 	..()
-	reagents.add_reagent(/datum/reagent/inaprovaline, 30)
+	reagents.add_reagent(/datum/reagent/medicine/inaprovaline, 30)
 	color = reagents.get_color()
 
 
@@ -172,7 +172,7 @@
 	icon_state = "pill1"
 /obj/item/reagent_containers/pill/dexalin/New()
 	..()
-	reagents.add_reagent(/datum/reagent/dexalin, 15)
+	reagents.add_reagent(/datum/reagent/medicine/dexalin, 15)
 	color = reagents.get_color()
 
 
@@ -182,7 +182,7 @@
 	icon_state = "pill2"
 /obj/item/reagent_containers/pill/dexalin_plus/New()
 	..()
-	reagents.add_reagent(/datum/reagent/dexalinp, 15)
+	reagents.add_reagent(/datum/reagent/medicine/dexalin_plus, 15)
 	color = reagents.get_color()
 
 
@@ -192,7 +192,7 @@
 	icon_state = "pill2"
 /obj/item/reagent_containers/pill/dermaline/New()
 	..()
-	reagents.add_reagent(/datum/reagent/dermaline, 15)
+	reagents.add_reagent(/datum/reagent/medicine/dermaline, 15)
 	color = reagents.get_color()
 
 
@@ -202,7 +202,7 @@
 	icon_state = "pill1"
 /obj/item/reagent_containers/pill/dylovene/New()
 	..()
-	reagents.add_reagent(/datum/reagent/dylovene, 15)
+	reagents.add_reagent(/datum/reagent/medicine/dylovene, 15)
 	color = reagents.get_color()
 
 
@@ -212,7 +212,7 @@
 	icon_state = "pill2"
 /obj/item/reagent_containers/pill/bicaridine/New()
 	..()
-	reagents.add_reagent(/datum/reagent/bicaridine, 20)
+	reagents.add_reagent(/datum/reagent/medicine/bicaridine, 20)
 	color = reagents.get_color()
 
 
@@ -234,8 +234,8 @@
 /obj/item/reagent_containers/pill/zoom/New()
 	..()
 	reagents.add_reagent(/datum/reagent/impedrezene, 10)
-	reagents.add_reagent(/datum/reagent/synaptizine, 5)
-	reagents.add_reagent(/datum/reagent/hyperzine, 5)
+	reagents.add_reagent(/datum/reagent/medicine/stimulant/synaptizine, 5)
+	reagents.add_reagent(/datum/reagent/medicine/stimulant/hyperzine, 5)
 	color = reagents.get_color()
 
 /obj/item/reagent_containers/pill/three_eye
@@ -248,15 +248,25 @@
 	reagents.add_reagent(/datum/reagent/three_eye, 10)
 	color = reagents.get_color()
 
+/obj/item/reagent_containers/pill/jerraman
+	name = "golden pill"
+	desc = "The golden surface of this pill seems to shimmer."
+	icon_state = "pill12"
+
+/obj/item/reagent_containers/pill/jerraman/Initialize()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/jerraman, 4)
+	color = reagents.get_color()
+
 /obj/item/reagent_containers/pill/spaceacillin
 	name = "Spaceacillin (10u)"
 	desc = "Contains antiviral agents."
 	icon_state = "pill3"
+
 /obj/item/reagent_containers/pill/spaceacillin/New()
 	..()
-	reagents.add_reagent(/datum/reagent/spaceacillin, 10)
+	reagents.add_reagent(/datum/reagent/medicine/spaceacillin, 10)
 	color = reagents.get_color()
-
 
 /obj/item/reagent_containers/pill/diet
 	name = "diet pill"
@@ -274,7 +284,7 @@
 	icon_state = "pill4"
 obj/item/reagent_containers/pill/noexcutite/New()
 	..()
-	reagents.add_reagent(/datum/reagent/noexcutite, 15)
+	reagents.add_reagent(/datum/reagent/medicine/noexcutite, 15)
 	color = reagents.get_color()
 
 
@@ -284,9 +294,9 @@ obj/item/reagent_containers/pill/noexcutite/New()
 	icon_state = "pill4"
 /obj/item/reagent_containers/pill/antidexafen/New()
 	..()
-	reagents.add_reagent(/datum/reagent/antidexafen, 10)
+	reagents.add_reagent(/datum/reagent/medicine/fluff/antidexafen, 10)
 	reagents.add_reagent(/datum/reagent/drink/juice/lemon, 5)
-	reagents.add_reagent(/datum/reagent/menthol, REM*0.2)
+	reagents.add_reagent(/datum/reagent/medicine/fluff/menthol, REM*0.2)
 	color = reagents.get_color()
 
 //Psychiatry pills.
@@ -296,7 +306,7 @@ obj/item/reagent_containers/pill/noexcutite/New()
 	icon_state = "pill2"
 /obj/item/reagent_containers/pill/methylphenidate/New()
 	..()
-	reagents.add_reagent(/datum/reagent/methylphenidate, 15)
+	reagents.add_reagent(/datum/reagent/medicine/fluff/methylphenidate, 15)
 	color = reagents.get_color()
 
 
@@ -306,7 +316,7 @@ obj/item/reagent_containers/pill/noexcutite/New()
 	icon_state = "pill4"
 /obj/item/reagent_containers/pill/citalopram/New()
 	..()
-	reagents.add_reagent(/datum/reagent/citalopram, 15)
+	reagents.add_reagent(/datum/reagent/medicine/fluff/citalopram, 15)
 	color = reagents.get_color()
 
 
@@ -316,7 +326,7 @@ obj/item/reagent_containers/pill/noexcutite/New()
 	icon_state = "pill4"
 /obj/item/reagent_containers/pill/paroxetine/New()
 	..()
-	reagents.add_reagent(/datum/reagent/paroxetine, 10)
+	reagents.add_reagent(/datum/reagent/medicine/fluff/paroxetine, 10)
 	color = reagents.get_color()
 
 
@@ -326,7 +336,7 @@ obj/item/reagent_containers/pill/noexcutite/New()
 	icon_state = "pill1"
 /obj/item/reagent_containers/pill/hyronalin/New()
 	..()
-	reagents.add_reagent(/datum/reagent/hyronalin, 7)
+	reagents.add_reagent(/datum/reagent/medicine/hyronalin, 7)
 	color = reagents.get_color()
 
 /obj/item/reagent_containers/pill/antirad
@@ -335,8 +345,8 @@ obj/item/reagent_containers/pill/noexcutite/New()
 	icon_state = "yellow"
 /obj/item/reagent_containers/pill/antirad/New()
 	..()
-	reagents.add_reagent(/datum/reagent/hyronalin, 5)
-	reagents.add_reagent(/datum/reagent/dylovene, 10)
+	reagents.add_reagent(/datum/reagent/medicine/hyronalin, 5)
+	reagents.add_reagent(/datum/reagent/medicine/dylovene, 10)
 
 
 /obj/item/reagent_containers/pill/sugariron

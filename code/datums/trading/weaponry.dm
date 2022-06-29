@@ -28,7 +28,7 @@
 								/obj/item/ammo_magazine                     = TRADER_SUBTYPES_ONLY,
 								/obj/item/ammo_magazine/pistol/empty         = TRADER_BLACKLIST,
 								/obj/item/ammo_magazine/mil_rifle/empty          = TRADER_BLACKLIST,
-								/obj/item/ammo_magazine/gyro/empty           = TRADER_BLACKLIST,
+								/obj/item/ammo_magazine/gyrojet/empty           = TRADER_BLACKLIST,
 								/obj/item/ammo_magazine/pistol/small/empty         = TRADER_BLACKLIST,
 								/obj/item/ammo_magazine/pistol/empty         = TRADER_BLACKLIST,
 								/obj/item/ammo_magazine/box/pistol/empty       = TRADER_BLACKLIST,
@@ -58,17 +58,14 @@
 				TRADER_INSULT_BAD        = "That's... very mean. I won't think twice about blacklisting your channel, so stop."
 				)
 
-	possible_trading_items = list(/obj/item/gun/energy/taser                      = TRADER_THIS_TYPE,
-								/obj/item/gun/energy/stunrevolver                 = TRADER_THIS_TYPE,
-								/obj/item/gun/energy/xray                         = TRADER_THIS_TYPE,
-								/obj/item/gun/energy/laser                        = TRADER_THIS_TYPE,
-								/obj/item/gun/energy/gun                          = TRADER_THIS_TYPE,
-								/obj/item/cell/crap                               = TRADER_THIS_TYPE,
-								/obj/item/cell/standard                           = TRADER_THIS_TYPE,
-								/obj/item/cell/high                               = TRADER_THIS_TYPE,
-								/obj/item/cell/super                              = TRADER_THIS_TYPE,
-								/obj/item/cell/hyper                              = TRADER_THIS_TYPE,
-								/obj/item/clothing/accessory/storage/holster             = TRADER_ALL)
+	possible_trading_items = list(/obj/item/gun/energy/taser					= TRADER_THIS_TYPE,
+								/obj/item/gun/energy/stunrevolver				= TRADER_THIS_TYPE,
+								/obj/item/gun/energy/xray						= TRADER_THIS_TYPE,
+								/obj/item/gun/energy/laser 						= TRADER_THIS_TYPE,
+								/obj/item/gun/energy/gun						= TRADER_THIS_TYPE,
+								/obj/item/gun/energy/gun/small					= TRADER_THIS_TYPE,
+								/obj/item/gun/energy/temperature				= TRADER_THIS_TYPE,
+								/obj/item/clothing/accessory/storage/holster	= TRADER_ALL)
 
 /datum/trader/dogan
 	name = "Dogan"

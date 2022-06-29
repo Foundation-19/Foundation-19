@@ -2,7 +2,7 @@
 	desc = "A jumbo-sized LED sign. This one seems to be showing its age."
 	icon = 'icons/obj/barsigns.dmi'
 	icon_state = "empty"
-	appearance_flags = DEFAULT_APPEARANCE_FLAGS
+	appearance_flags = 0
 	anchored = TRUE
 	var/cult = 0
 
@@ -10,7 +10,6 @@
 	. = icon_states(icon)
 	. -= "on"
 	. -= "narsiebistro"
-	. -= "toolate"
 	. -= "empty"
 	if(initial)
 		. -= "Off"

@@ -169,7 +169,7 @@
 	origin_tech = list(TECH_MATERIAL = 2, TECH_BIO = 2)
 	slot_flags = SLOT_BELT | SLOT_EARS
 	w_class = ITEM_SIZE_TINY
-	var/list/starts_with = list(/datum/reagent/inaprovaline = 5)
+	var/list/starts_with = list(/datum/reagent/medicine/inaprovaline = 5)
 	var/band_color = COLOR_CYAN
 
 /obj/item/reagent_containers/hypospray/autoinjector/New()
@@ -201,27 +201,27 @@
 /obj/item/reagent_containers/hypospray/autoinjector/detox
 	name = "autoinjector (antitox)"
 	band_color = COLOR_GREEN
-	starts_with = list(/datum/reagent/dylovene = 5)
+	starts_with = list(/datum/reagent/medicine/dylovene = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/pain
 	name = "autoinjector (painkiller)"
 	band_color = COLOR_PURPLE
-	starts_with = list(/datum/reagent/tramadol = 5)
+	starts_with = list(/datum/reagent/medicine/painkiller/tramadol = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/combatpain
 	name = "autoinjector (oxycodone)"
 	band_color = COLOR_DARK_GRAY
-	starts_with = list(/datum/reagent/tramadol/oxycodone = 5)
+	starts_with = list(/datum/reagent/medicine/painkiller/tramadol/oxycodone = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/antirad
 	name = "autoinjector (anti-rad)"
 	band_color = COLOR_AMBER
-	starts_with = list(/datum/reagent/hyronalin = 5)
+	starts_with = list(/datum/reagent/medicine/hyronalin = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/mindbreaker
 	name = "autoinjector"
 	band_color = COLOR_DARK_GRAY
-	starts_with = list(/datum/reagent/mindbreaker = 5)
+	starts_with = list(/datum/reagent/mindbreaker_toxin = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/empty
 	name = "autoinjector"
