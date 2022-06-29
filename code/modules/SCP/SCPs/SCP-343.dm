@@ -8,9 +8,6 @@ GLOBAL_LIST_EMPTY(scp343s)
 	icon = 'icons/mob/scp343.dmi'
 	icon_state = null
 
-/mob/living/carbon/human/scp343/examine(mob/user)
-	user << "<b><span class = 'euclid'><big>SCP-343</big></span></b> - [desc]"
-
 /datum/scp/scp_343
 	name = "SCP-343"
 	designation = "343"

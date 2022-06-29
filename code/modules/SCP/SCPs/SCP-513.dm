@@ -94,7 +94,8 @@
 					if(STAGE_SLEEP)
 						if(prob(4))
 							M.sleeping = 500
-/*					if(STAGE_DAMAGE)
+/*
+					if(STAGE_DAMAGE)
 						var/obj/item/organ/internal/brain = M.internal_organs_by_name[BP_BRAIN]
 						if(brain)
 							brain.take_damage(rand(4,6))

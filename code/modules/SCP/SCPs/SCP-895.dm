@@ -53,8 +53,5 @@
 			cooldown -= H
 			H << sound(null, channel = 895)
 
-/obj/structure/closet/coffin/scp895/examine(mob/user)
-	user << "<b><span class = 'euclid'><big>SCP-895</big></span></b> - [desc]"
-
 
 #undef MESSAGE_COOLDOWN

@@ -24,13 +24,10 @@ GLOBAL_LIST_EMPTY(scp999s)
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 
-/mob/living/simple_animal/scp_999/examine(mob/user)
-	user << "<b><span class = 'success'><big>SCP-999</big></span></b> - [desc]"
-
-/mob/living/simple_animal/scp_999/New()
+/mob/living/simple_animal/scp_999/Initialize()
 	..()
 	GLOB.scp999s += src
-//временно
+
 /mob/living/simple_animal/scp_999/say(var/message, var/datum/language/speaking = null, whispering)
 	src << "<span class = 'notice'>You cannot speak.</span>"
 	return 0
