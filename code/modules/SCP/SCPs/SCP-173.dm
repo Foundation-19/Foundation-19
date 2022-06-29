@@ -25,9 +25,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 	var/last_player_shit = 0
 
-/mob/living/scp_173/examine(mob/user)
-	user << "<b><span class = 'euclid'><big>SCP-173</big></span></b> - [desc]"
-
 /mob/living/scp_173/Initialize()
 	..()
 	GLOB.scp173s += src
@@ -37,7 +34,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 	add_language(LANGUAGE_SKRELLIAN, 1)
 	add_language(LANGUAGE_GUTTER, 1)
 	add_language(LANGUAGE_SIGN, 0)
-	add_language(LANGUAGE_ENGLISH, 1)
+	add_language(/datum/language/english)
+
 
 /mob/living/scp_173/Destroy()
 	GLOB.scp173s -= src

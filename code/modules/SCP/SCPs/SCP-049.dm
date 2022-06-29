@@ -19,9 +19,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	var/anger = 0
 	var/angry = FALSE
 
-/mob/living/carbon/human/scp049/examine(mob/user)
-	. = ..()
-
 /datum/scp/scp_049
 	name = "SCP-049"
 	designation = "049"
@@ -29,9 +26,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049/IsAdvancedToolUser()
 	return FALSE
-
-/mob/living/carbon/human/scp049/update_icons()
-	return
 
 /mob/living/carbon/human/scp049/on_update_icon()
 	if (lying || resting)
@@ -43,11 +37,8 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049/Initialize()
 	..()
-	add_language(LANGUAGE_EAL, 1)
-	add_language(LANGUAGE_SKRELLIAN, 1)
-	add_language(LANGUAGE_GUTTER, 1)
-	add_language(LANGUAGE_SIGN, 0)
-	add_language(LANGUAGE_ENGLISH, 1)
+	add_language(/datum/language/english)
+
 	// fix names
 	fully_replace_character_name("SCP-049")
 

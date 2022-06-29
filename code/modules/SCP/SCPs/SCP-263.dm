@@ -16,7 +16,7 @@
 	var/gaming = 0
 	var/mob/living/carbon/human/target
 
-/mob/living/simple_animal/hostile/scp_263/New()
+/mob/living/simple_animal/hostile/scp_263/Initialize()
 
 	..()
 	add_language(/datum/language/english)
