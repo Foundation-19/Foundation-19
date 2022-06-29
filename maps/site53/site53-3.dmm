@@ -565,6 +565,7 @@
 "lw" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/corner/orange/bordercorner,/turf/simulated/floor/tiled/monotile,/area/site53/entrancezone/hallway)
 "lx" = (/obj/machinery/camera/autoname{dir = 1; icon_state = "camera"; network = list("Entrance Zone Network")},/turf/simulated/floor/plating,/area/site53/entrancezone/substation)
 "ly" = (/obj/structure/virology/incubator_off,/obj/effect/floor_decal/corner/green/full,/turf/simulated/floor/tiled/white,/area/site53/medical/virology)
+"lz" = (/obj/structure/crematorium{dir = 4; id = "medicalcrema"},/turf/simulated/floor/tiled/dark/monotile,/area/site53/medical/morgue)
 "lA" = (/obj/effect/paint_stripe/red,/turf/simulated/wall/prepainted,/area/site53/entrancezone/hallway)
 "lB" = (/obj/effect/wallframe_spawn/reinforced,/turf/simulated/floor/plating,/area/site53/entrancezone/hallway)
 "lC" = (/obj/effect/paint_stripe/red,/turf/simulated/wall/prepainted,/area/site53/zonecommanderoffice{name = "Entrance Zone Equipment Room"})

@@ -31506,6 +31506,15 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"uza" = (
+/obj/structure/crematorium{
+	dir = 8;
+	id = "scp8crem";
+	name = "incinerator"
+	},
+/obj/effect/floor_decal/industrial/hatch/red,
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment)
 "uAr" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurantkitchenarea)

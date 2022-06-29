@@ -16,11 +16,11 @@
 	allowed_magazines = /obj/item/ammo_magazine/scp/p90_mag
 	wielded_item_state = "p90-wielded"
 
-	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
+	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty
 	firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=0, move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
-		list(mode_name="3-round bursts", burst=3, fire_delay=0, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.5, 0.7)),
-		list(mode_name="short bursts",   burst=5, fire_delay=1, move_delay=4,    one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.5, 0.5, 0.7, 0.9, 1.0)),
+		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=0, one_hand_penalty=3, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.5, 0.7)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.2, 0.6, 0.8), autofire_enabled=1),
 		)
 
 /obj/item/gun/projectile/automatic/scp/p90/update_icon()
@@ -48,10 +48,11 @@
 	magazine_type = /obj/item/ammo_magazine/scp/m16_mag
 	allowed_magazines = /obj/item/ammo_magazine/scp/m16_mag
 
-	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
+	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty
 	firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=0, move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
-		list(mode_name="3-round bursts", burst=3, fire_delay=1, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.5, 0.8)),
+		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=1, one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.5, 0.8)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.1, 0.6, 0.9), autofire_enabled=1),
 		)
 
 /obj/item/gun/projectile/automatic/scp/m16/update_icon()
@@ -76,10 +77,11 @@
 	magazine_type = /obj/item/ammo_magazine/scp/ak
 	allowed_magazines = /obj/item/ammo_magazine/scp/ak
 
-	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
+	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty
 	firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
-		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-2), dispersion=list(0.1, 0.6, 1.0)),
+		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=3, burst_accuracy=list(0,0,-1), dispersion=list(0.1, 0.6, 1.0)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-2), dispersion=list(0.3, 0.8, 1.2), autofire_enabled=1),
 		)
 
 /obj/item/gun/projectile/automatic/scp/ak47/update_icon()
@@ -104,10 +106,11 @@
 	magazine_type = /obj/item/ammo_magazine/scp/ak
 	allowed_magazines = /obj/item/ammo_magazine/scp/ak
 
-	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
+	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty
 	firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
-		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0)),
+		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-2), dispersion=list(0.1, 0.7, 1.1), autofire_enabled=1),
 		)
 
 /obj/item/gun/projectile/automatic/scp/ak74/update_icon()
@@ -134,8 +137,9 @@
 
 	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
 	firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
-		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0)),
+		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-2), dispersion=list(0.1, 0.7, 1.1), autofire_enabled=1),
 		)
 
 /obj/item/gun/projectile/automatic/scp/ak742/update_icon()
@@ -161,8 +165,9 @@
 	allowed_magazines = /obj/item/ammo_magazine/scp/ierichon //more damage compared to the wt550, smaller mag size
 
 	firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=0, burst_accuracy=null, dispersion=null),
-		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=1, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
+		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=0, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=1, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=2, burst_accuracy=list(0,-1,-2), dispersion=list(0.1, 0.7, 1.1), autofire_enabled=1),
 		)
 
 /obj/item/gun/projectile/automatic/scp/ierichon/update_icon()
@@ -187,8 +192,9 @@
 	allowed_magazines = /obj/item/ammo_magazine/scp/ak
 
 	firemodes = list(
-		list(mode_name="short bursts",	burst=5, move_delay=12, one_hand_penalty=8, burst_accuracy = list(0,-1,-1,-2,-2),          dispersion = list(0.6, 1.0, 1.0, 1.0, 1.2)),
-		list(mode_name="long bursts",	burst=8, move_delay=15, one_hand_penalty=9, burst_accuracy = list(0,-1,-1,-2,-2,-2,-3,-3), dispersion = list(1.0, 1.0, 1.0, 1.0, 1.2)),
+		list(mode_name="short bursts",	burst=5, one_hand_penalty=8, burst_accuracy = list(0,-1,-1,-2,-2),          dispersion = list(0.6, 1.0, 1.0, 1.0, 1.2)),
+		list(mode_name="long bursts",	burst=8, one_hand_penalty=9, burst_accuracy = list(0,-1,-1,-2,-2,-2,-3,-3), dispersion = list(1.0, 1.0, 1.0, 1.0, 1.2)),
+		list(mode_name="full auto",		burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=10, burst_accuracy = list(0,-1,-2,-2,-2,-3,-3,-4), dispersion = list(1.1, 1.2, 1.3, 1.4, 1.5), autofire_enabled=1),
 		)
 
 /obj/item/gun/projectile/automatic/scp/rpk/update_icon()
@@ -224,42 +230,6 @@
 	else
 		icon_state = "svd-empty"
 	return
-
-/obj/item/gun/projectile/silenced
-	name = "silenced pistol"
-	desc = "A handgun with an integral silencer. Uses .45 rounds."
-	icon_state = "silenced_pistol"
-	w_class = ITEM_SIZE_NORMAL
-	caliber = ".45"
-	silenced = 1
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 8)
-	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/c45m
-	allowed_magazines = /obj/item/ammo_magazine/c45m
-
-/obj/item/gun/projectile/pistol/gyropistol
-	name = "prototype pistol"
-	desc = "A bulky foundation prototype pistol designed to fire self propelled rounds."
-	icon = 'icons/obj/gun.dmi'
-	icon_state = "gyropistol"
-	max_shells = 8
-	caliber = "20mmG"
-	origin_tech = list(TECH_COMBAT = 3)
-	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/gyro
-	allowed_magazines = /obj/item/ammo_magazine/gyro
-	fire_delay = 25
-	slot_flags = SLOT_BELT
-	auto_eject = 1
-	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-
-/obj/item/gun/projectile/pistol/gyropistol/update_icon()
-	..()
-	if(ammo_magazine)
-		icon_state = "gyropistolloaded"
-	else
-		icon_state = "gyropistol"
-
 
 /obj/item/material/hatchet/tacknife
 	name = "tactical knife"
