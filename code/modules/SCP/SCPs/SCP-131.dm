@@ -8,7 +8,7 @@ GLOBAL_LIST_EMPTY(scp131s)
 /mob/living/simple_animal/scp_131
 	name = "SCP-131"
 	desc = "A teardrop-shaped creature roughly one foot in height, with a wheel-like protrusion beneath. It stares at things with its curious unblinking eye."
-	icon = 'icons/SCP/SCP-131.dmi'
+	icon = 'icons/SCP/scp-131.dmi'
 	icon_living = "SCP-131A"
 	// icon_dead = "SCP-131A_d"
 	icon_state = "SCP-131A"

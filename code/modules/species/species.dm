@@ -214,7 +214,7 @@
 	// The basic skin colours this species uses
 	var/list/base_skin_colours
 
-	var/list/genders = list(MALE, FEMALE, PLURAL)
+	var/list/genders = list(MALE, FEMALE)
 
 	// Bump vars
 	var/bump_flag = HUMAN	// What are we considered to be when bumped?

@@ -11,7 +11,7 @@
 /obj/item/scp513
 	name = "rusty cowbell"
 	desc = "An old cowbell, covered in immense amounts of rust."
-	icon = 'icons/SCP/item.dmi'
+	icon = 'icons/SCP/scp-513.dmi'
 	icon_state = "mindfuckcowbell"
 	SCP = /datum/scp/scp_513
 	var/global/list/mob/living/carbon/victims = list()
