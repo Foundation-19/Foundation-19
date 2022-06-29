@@ -15,7 +15,6 @@
 	var/armor_penetration = 0
 	var/anchor_fall = FALSE
 	var/holographic = 0 //if the obj is a holographic object spawned by the holodeck
-	var/show_messages
 
 /obj/Destroy()
 	STOP_PROCESSING(SSobj, src)

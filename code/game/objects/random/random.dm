@@ -275,8 +275,7 @@
 
 /obj/random/projectile/spawn_choices()
 	return list(/obj/item/gun/projectile/automatic/battlerifle = 4,
-				/obj/item/gun/projectile/sniper/garand = 4,
-				/obj/item/gun/projectile/sniper/semistrip = 4,
+				/obj/item/gun/projectile/automatic/semistrip = 4,
 				/obj/item/gun/projectile/shotgun/pump = 3,
 				/obj/item/gun/projectile/automatic/merc_smg = 2,
 				/obj/item/gun/projectile/automatic/assault_rifle = 2,
@@ -293,8 +292,7 @@
 				/obj/item/gun/projectile/shotgun/doublebarrel/sawn = 3,
 				/obj/item/gun/projectile/heavysniper = 1,
 				/obj/item/gun/projectile/shotgun/pump/combat = 2,
-				/obj/item/gun/projectile/pistol/throwback = 1,
-				/obj/item/gun/projectile/pistol/broomstick = 1)
+				/obj/item/gun/projectile/pistol/throwback = 1)
 
 /obj/random/handgun
 	name = "Random Handgun"
@@ -308,8 +306,7 @@
 				/obj/item/gun/projectile/pistol/military/alt = 1,
 				/obj/item/gun/projectile/pistol/holdout = 2,
 				/obj/item/gun/energy/retro = 1,
-				/obj/item/gun/projectile/pistol/throwback = 1,
-				/obj/item/gun/projectile/pistol/broomstick = 1)
+				/obj/item/gun/projectile/pistol/throwback = 1)
 
 /obj/random/ammo
 	name = "Random Ammunition"
@@ -321,7 +318,6 @@
 	return list(/obj/item/storage/box/ammo/beanbags = 6,
 				/obj/item/storage/box/ammo/shotgunammo = 2,
 				/obj/item/storage/box/ammo/shotgunshells = 4,
-				/obj/item/storage/box/ammo/flechetteshells = 2,
 				/obj/item/storage/box/ammo/stunshells = 1,
 				/obj/item/ammo_magazine/pistol = 2,
 				/obj/item/ammo_magazine/smg_top = 2,
@@ -437,8 +433,8 @@ obj/random/closet //A couple of random closets to spice up maint
 	icon_state = "base"
 	var/vermin_chance = 5
 	var/list/locker_vermin = list(
-		/mob/living/simple_animal/passive/mouse,
-		/mob/living/simple_animal/passive/opossum,
+		/mob/living/simple_animal/friendly/mouse,
+		/mob/living/simple_animal/friendly/opossum,
 		/mob/living/carbon/alien/diona
 	)
 
@@ -1035,9 +1031,7 @@ something, make sure it's not in one of the other lists.*/
 				/obj/item/clothing/head/helmet/space/void/atmos/alt,
 				/obj/item/clothing/head/helmet/space/void/merc,
 				/obj/item/clothing/head/helmet/space/void/medical,
-				/obj/item/clothing/head/helmet/space/void/medical/alt,
-				/obj/item/clothing/head/helmet/space/void/retro
-			)
+				/obj/item/clothing/head/helmet/space/void/medical/alt)
 
 /obj/random/voidsuit
 	name = "Random Voidsuit"
@@ -1058,9 +1052,7 @@ something, make sure it's not in one of the other lists.*/
 				/obj/item/clothing/suit/space/void/atmos/alt,
 				/obj/item/clothing/suit/space/void/merc,
 				/obj/item/clothing/suit/space/void/medical,
-				/obj/item/clothing/suit/space/void/medical/alt,
-				/obj/item/clothing/suit/space/void/retro
-			)
+				/obj/item/clothing/suit/space/void/medical/alt)
 
 /obj/random/hardsuit
 	name = "Random Hardsuit"

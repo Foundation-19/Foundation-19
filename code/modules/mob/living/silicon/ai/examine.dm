@@ -39,5 +39,5 @@
 	return
 
 /mob/observer/ghost/showLaws(var/mob/living/silicon/S)
-	if(antagHUD || isadmin(src))
+	if(antagHUD || is_admin(src))
 		S.laws.show_laws(src)

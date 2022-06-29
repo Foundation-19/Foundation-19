@@ -124,6 +124,6 @@
 	emote_hear = list("squawks","bawks")
 	emote_see = list("flutters its wings")
 
-/* For Meatbag */
+/* For Meatbag, the raider base parrot */
 /datum/say_list/parrot/heist
- speak = list("Yaaar!","Squaaak!","Fight me Matey!","BAWWWWK Vox trying to eat me!")
+	speak = list("Yaaar!","Squaaak!","Fight me Matey!","BAWWWWK Vox trying to eat me!")

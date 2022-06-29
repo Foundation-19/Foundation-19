@@ -268,8 +268,8 @@ em						{font-style: normal;	font-weight: bold;}
 .pm  .other				{color: #0000ff;}
 
 /* Admin: Channels */
-.mod_channel			{color: #735638;	font-weight: bold;}
-.mod_channel .admin		{color: #b82e00;	font-weight: bold;}
+.mentor_channel			{color: #735638;	font-weight: bold;}
+.mentor_channel .admin		{color: #b82e00;	font-weight: bold;}
 .admin_channel			{color: #9611d4;	font-weight: bold;}
 
 /* Radio: Misc */
@@ -292,9 +292,6 @@ em						{font-style: normal;	font-weight: bold;}
 .supradio				{color: #5f4519;}
 .srvradio				{color: #6eaa2c;}
 .expradio				{color: #a3a332;}
-.hczradio				{color: #935050;}
-.lczradio				{color: #935050;}
-.eczradio				{color: #935050;}
 
 .hailradio				{color: #cc00aa;}
 .exampleradio			{color: #ff00ff;}

@@ -211,3 +211,8 @@
 	job_access_type = /datum/job/merchant
 	color = COLOR_OFF_WHITE
 	detail_color = COLOR_BEIGE
+
+//Psi advisor
+/obj/item/card/id/torch/crew/psiadvisor
+	job_access_type = /datum/job/psiadvisor
+	detail_color = COLOR_COMMAND_BLUE

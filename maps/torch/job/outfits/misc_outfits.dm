@@ -32,6 +32,11 @@
 	pda_type = /obj/item/modular_computer/pda
 	id_types = list(/obj/item/card/id/torch/merchant)
 
+/decl/hierarchy/outfit/job/torch/merchant/vox
+	name = OUTFIT_JOB_NAME("Merchant - Torch (Vox)")
+	shoes = /obj/item/clothing/shoes/jackboots/unathi
+	uniform = /obj/item/clothing/under/vox/vox_robes
+
 /decl/hierarchy/outfit/job/torch/ert
 	name = OUTFIT_JOB_NAME("ERT - Torch")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat

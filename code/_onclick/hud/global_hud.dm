@@ -7,10 +7,10 @@ GLOBAL_DATUM_INIT(global_hud, /datum/global_hud, new())
 
 /datum/global_hud
 	var/obj/screen/nvg
-	var/obj/screen/scramble
 	var/obj/screen/thermal
 	var/obj/screen/meson
 	var/obj/screen/science
+	var/obj/screen/holomap
 
 /datum/global_hud/proc/setup_overlay(var/icon_state)
 	var/obj/screen/screen = new /obj/screen()
@@ -23,7 +23,16 @@ GLOBAL_DATUM_INIT(global_hud, /datum/global_hud, new())
 
 /datum/global_hud/New()
 	nvg = setup_overlay("nvg_hud")
-	scramble = setup_overlay("scramble_hud")
 	thermal = setup_overlay("thermal_hud")
 	meson = setup_overlay("meson_hud")
 	science = setup_overlay("science_hud")
+
+	//Holomap screen object is invisible and work
+	//By setting it as n images location, without icon changes
+	//Make it part of global hud since it's inmutable
+	holomap = new /obj/screen()
+	holomap.name = "holomap"
+	holomap.icon = null
+	holomap.layer = HUD_BASE_LAYER
+	holomap.screen_loc = UI_HOLOMAP
+	holomap.mouse_opacity = 0

@@ -1,4 +1,4 @@
-#define DEFAULT_GAME_YEAR_OFFSET -10
+#define DEFAULT_GAME_YEAR_OFFSET 288
 
 GLOBAL_DATUM_INIT(using_map, /datum/map, new using_map_DATUM)
 GLOBAL_LIST_EMPTY(all_maps)
@@ -93,8 +93,8 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/current_lobby_screen
 	var/decl/audio/track/lobby_track                     // The track that will play in the lobby screen.
 	var/list/lobby_tracks = list()                  // The list of lobby tracks to pick() from. If left unset will randomly select among all available decl/audio/track subtypes.
-	var/welcome_sound = 'sound/scp/Blue_Feather_60s.ogg'		// Sound played on roundstart
-	var/list/announcement_roundstart = list('sound/scp/Announcement1.ogg','sound/scp/Announcement2.ogg','sound/scp/Announcement3.ogg','sound/scp/Announcement4.ogg','sound/scp/Announcement5.ogg','sound/scp/Announcement6.ogg','sound/scp/Announcement7.ogg')
+	var/welcome_sound = 'sound/AI/welcome.ogg'		// Sound played on roundstart
+
 	var/default_law_type = /datum/ai_laws/nanotrasen  // The default lawset use by synth units, if not overriden by their laws var.
 	var/security_state = /decl/security_state/default // The default security state system to use.
 
@@ -123,30 +123,83 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 	var/list/available_cultural_info = list(
 		TAG_HOMEWORLD = list(
-			HOME_SYSTEM_EARTH
+			HOME_SYSTEM_MARS,
+			HOME_SYSTEM_LUNA,
+			HOME_SYSTEM_EARTH,
+			HOME_SYSTEM_VENUS,
+			HOME_SYSTEM_CERES,
+			HOME_SYSTEM_PLUTO,
+			HOME_SYSTEM_TAU_CETI,
+			HOME_SYSTEM_HELIOS,
+			HOME_SYSTEM_TERRA,
+			HOME_SYSTEM_NEW_EARTH,
+			HOME_SYSTEM_TERSTEN,
+			HOME_SYSTEM_LORRIMAN,
+			HOME_SYSTEM_CINU,
+			HOME_SYSTEM_YUKLID,
+			HOME_SYSTEM_LORDANIA,
+			HOME_SYSTEM_KINGSTON,
+			HOME_SYSTEM_GAIA,
+			HOME_SYSTEM_MAGNITKA,
+			HOME_SYSTEM_OTHER
 		),
 		TAG_FACTION = list(
-			FACTION_SOL_CENTRAL
+			FACTION_SOL_CENTRAL,
+			FACTION_TERRAGOV,
+			FACTION_CORPORATE,
+			FACTION_NANOTRASEN,
+			FACTION_FREETRADE,
+			FACTION_XYNERGY,
+			FACTION_HEPHAESTUS,
+			FACTION_DAIS,
+			FACTION_EXPEDITIONARY,
+			FACTION_FLEET,
+			FACTION_PCRC,
+			FACTION_SAARE,
+			FACTION_OTHER
 		),
 		TAG_CULTURE = list(
-			CULTURE_HUMAN_EARTH
+			CULTURE_HUMAN_MARTIAN,
+			CULTURE_HUMAN_MARSTUN,
+			CULTURE_HUMAN_LUNAPOOR,
+			CULTURE_HUMAN_LUNARICH,
+			CULTURE_HUMAN_VENUSIAN,
+			CULTURE_HUMAN_VENUSLOW,
+			CULTURE_HUMAN_BELTER,
+			CULTURE_HUMAN_PLUTO,
+			CULTURE_HUMAN_EARTH,
+			CULTURE_HUMAN_CETI,
+			CULTURE_HUMAN_SPACER,
+			CULTURE_HUMAN_SPAFRO,
+			CULTURE_HUMAN_TERRAN,
+			CULTURE_HUMAN_OTHER,
+			CULTURE_OTHER
 		),
 		TAG_RELIGION = list(
-			RELIGION_UNSTATED,
-			RELIGION_CHRISTIANITY,
+			RELIGION_OTHER,
 			RELIGION_JUDAISM,
 			RELIGION_HINDUISM,
 			RELIGION_BUDDHISM,
+			RELIGION_SIKHISM,
+			RELIGION_JAINISM,
+			RELIGION_ISLAM,
+			RELIGION_CHRISTIANITY,
+			RELIGION_BAHAI_FAITH,
+			RELIGION_AGNOSTICISM,
+			RELIGION_DEISM,
+			RELIGION_ATHEISM,
+			RELIGION_THELEMA,
 			RELIGION_SPIRITUALISM,
-			RELIGION_ATHEISM
+			RELIGION_SHINTO,
+			RELIGION_TAOISM
 		)
 	)
 
 	var/list/default_cultural_info = list(
-		TAG_HOMEWORLD = HOME_SYSTEM_EARTH,
+		TAG_HOMEWORLD = HOME_SYSTEM_MARS,
 		TAG_FACTION =   FACTION_SOL_CENTRAL,
 		TAG_CULTURE =   CULTURE_HUMAN_MARTIAN,
-		TAG_RELIGION =  RELIGION_CHRISTIANITY
+		TAG_RELIGION =  RELIGION_AGNOSTICISM
 	)
 
 	var/access_modify_region = list(
@@ -242,10 +295,6 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	return
 
 /datum/map/proc/send_welcome()
-	return
-
-/datum/map/proc/roundstart_announcement()
-	sound_to(world, sound(pick(GLOB.using_map.announcement_roundstart)))
 	return
 
 /datum/map/proc/perform_map_generation()
@@ -449,9 +498,6 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		num2text(SUP_FREQ)   = list(access_cargo),
 		num2text(SRV_FREQ)   = list(access_janitor, access_hydroponics),
 		num2text(HAIL_FREQ)  = list(),
-		num2text(SEC_HCZ_FREQ)   = list(access_sec_comms),
-		num2text(SEC_LCZ_FREQ)   = list(access_sec_comms),
-		num2text(SEC_ECZ_FREQ)   = list(access_sec_comms)
 	)
 
 /datum/map/proc/show_titlescreen(client/C)

@@ -70,11 +70,11 @@
 	outfit_type = /decl/hierarchy/outfit/job/skrellscoutship
 	info = "Your vessel is scouting through unknown space, working to map out any potential dangers, as well as potential allies."
 	is_semi_antagonist = TRUE
-	min_skill = list(SKILL_EVA = SKILL_ADEPT,
-					SKILL_PILOT = SKILL_ADEPT,
-					SKILL_HAULING = SKILL_ADEPT,
-					SKILL_COMBAT = SKILL_ADEPT,
-					SKILL_WEAPONS = SKILL_ADEPT,
+	min_skill = list(SKILL_EVA = SKILL_TRAINED,
+					SKILL_PILOT = SKILL_TRAINED,
+					SKILL_HAULING = SKILL_TRAINED,
+					SKILL_COMBAT = SKILL_TRAINED,
+					SKILL_WEAPONS = SKILL_TRAINED,
 					SKILL_MEDICAL = SKILL_BASIC)
 
 /datum/job/submap/skrellscoutship_crew
@@ -90,10 +90,10 @@
 	allowed_ranks = list(/datum/mil_rank/skrell_fleet)
 	skill_points = 30
 	is_semi_antagonist = TRUE
-	min_skill = list(SKILL_EVA = SKILL_ADEPT,
-					SKILL_HAULING = SKILL_ADEPT,
-					SKILL_COMBAT = SKILL_ADEPT,
-					SKILL_WEAPONS = SKILL_ADEPT,
+	min_skill = list(SKILL_EVA = SKILL_TRAINED,
+					SKILL_HAULING = SKILL_TRAINED,
+					SKILL_COMBAT = SKILL_TRAINED,
+					SKILL_WEAPONS = SKILL_TRAINED,
 					SKILL_MEDICAL = SKILL_BASIC)
 
 /datum/job/submap/skrellscoutship_crew/equip(var/mob/living/carbon/human/H, var/alt_title, var/datum/mil_branch/branch, var/datum/mil_rank/grade)
@@ -153,7 +153,7 @@
 
 /obj/item/reagent_containers/food/condiment/mindbreaker
 	label_text = "Mindbreaker"
-	starting_reagents = list(/datum/reagent/mindbreaker = 50)
+	starting_reagents = list(/datum/reagent/mindbreaker_toxin = 50)
 
 
 /obj/item/reagent_containers/food/condiment/space_drugs
@@ -255,15 +255,15 @@
 
 /obj/item/light/tube/skrell
 	name = "skrellian light filament"
-	color = LIGHT_COLOUR_SKRELL
-	b_colour = LIGHT_COLOUR_SKRELL
+	color = COLOR_LIGHT_CYAN
+	b_colour = COLOR_LIGHT_CYAN
 	desc = "Some kind of strange alien lightbulb technology."
 	random_tone = FALSE
 
 /obj/item/light/tube/large/skrell
 	name = "skrellian light filament"
-	color = LIGHT_COLOUR_SKRELL
-	b_colour = LIGHT_COLOUR_SKRELL
+	color = COLOR_LIGHT_CYAN
+	b_colour = COLOR_LIGHT_CYAN
 	desc = "Some kind of strange alien lightbulb technology."
 
 

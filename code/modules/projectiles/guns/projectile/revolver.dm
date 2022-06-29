@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/revolver
 	name = "revolver"
-	desc = "The al-Maliki & Mosley Magnum Double Action is a choice revolver for when you absolutely, positively need to put a hole in the other guy."
-	icon = 'icons/obj/gun.dmi'
+	desc = "The SCPF Mk7 Revolver, reminiscent of the Colt Python. This weapon, patented and produced by the SCP Foundation is popular among high-ranking security officers. Uses .357 ammo."
+	icon = 'icons/obj/guns/revolvers.dmi'
 	icon_state = "revolver"
 	item_state = "revolver"
 	caliber = CALIBER_PISTOL_MAGNUM
@@ -44,15 +44,6 @@
 /obj/item/gun/projectile/revolver/load_ammo(var/obj/item/A, mob/user)
 	chamber_offset = 0
 	return ..()
-
-/obj/item/gun/projectile/revolver/mateba
-	name = "mateba"
-	desc = "The Mateba Model 6 Unica or simply Mateba is one of the only few of this type ever produced, you could consider yourself lucky even seeing one."
-	icon_state = "mateba"
-	caliber = ".50"
-	fire_delay = 6
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
-	ammo_type = /obj/item/ammo_casing/a50
 
 /obj/item/gun/projectile/revolver/medium
 	name = "revolver"

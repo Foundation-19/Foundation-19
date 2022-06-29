@@ -15,13 +15,10 @@
 
 	if(player_is_antag(player))
 		to_chat(src, "<span class='warning'>\The [player.current]'s loyalties seem to be elsewhere...</span>")
-		log_debug("\The [src] attempted to convert \the [player.current] to [faction], but failed: Player is already an antagonist.")
 		return
 
-	var/result = faction.can_become_antag_detailed(player, TRUE)
-	if(result)
+	if(!faction.can_become_antag(player, 1))
 		to_chat(src, "<span class='warning'>\The [player.current] cannot be \a [faction.faction_role_text]!</span>")
-		log_debug("\The [src] attempted to convert \the [player.current] to [faction], but failed: [result]")
 		return
 
 	if(world.time < player.rev_cooldown)
@@ -37,12 +34,10 @@
 		var/choice = alert(player.current,"Asked by [src]: Do you want to join the [faction.faction_descriptor]?","Join the [faction.faction_descriptor]?","No!","Yes!")
 		if(choice == "Yes!" && faction.add_antagonist_mind(player, 0, faction.faction_role_text, faction.faction_welcome))
 			to_chat(src, "<span class='notice'>\The [player.current] joins the [faction.faction_descriptor]!</span>")
-			log_debug("\The [src] has successfully converted \the [player.current] to [faction].")
 			return
 		else
 			to_chat(player, "<span class='danger'>You reject this traitorous cause!</span>")
 	to_chat(src, "<span class='danger'>\The [player.current] does not support the [faction.faction_descriptor]!</span>")
-	log_debug("\The [src] attempted to convert \the [player.current] to [faction], but failed: The player refused to join or the faction failed to add them.")
 
 /mob/living/proc/convert_to_loyalist(mob/M as mob in able_mobs_in_oview(src))
 	set name = "Convert"

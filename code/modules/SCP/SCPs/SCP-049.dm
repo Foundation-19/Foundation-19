@@ -19,34 +19,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	var/anger = 0
 	var/angry = FALSE
 
-/mob/living/carbon/human/scp049/examine(mob/user)
-	. = ..()
-
-/mob/living/carbon/human/scp049/Initialize()
-	..()
-	add_language(LANGUAGE_EAL, 1)
-	add_language(LANGUAGE_SKRELLIAN, 1)
-	add_language(LANGUAGE_GUTTER, 1)
-	add_language(LANGUAGE_SIGN, 0)
-	add_language(LANGUAGE_ENGLISH, 1)
-	// fix names
-	fully_replace_character_name("SCP-049")
-
-	set_species("SCP-049")
-	GLOB.scp049s += src
-	verbs += /mob/living/carbon/human/proc/SCP_049_talk
-	verbs += /mob/living/carbon/human/proc/door_049
-
-	// emotes
-	verbs += list(
-		/mob/living/carbon/human/scp049/proc/greetings,
-		/mob/living/carbon/human/scp049/proc/yet_another_victim,
-		/mob/living/carbon/human/scp049/proc/you_are_not_a_doctor,
-		/mob/living/carbon/human/scp049/proc/I_sense_the_disease_in_you,
-		/mob/living/carbon/human/scp049/proc/Im_here_to_cure_you,
-		/mob/living/carbon/human/scp049/proc/cure_action
-	)
-
 /datum/scp/scp_049
 	name = "SCP-049"
 	designation = "049"
@@ -66,6 +38,28 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		transform = null
 	return
 
+/mob/living/carbon/human/scp049/Initialize()
+	..()
+	add_language(/datum/language/english)
+
+	// fix names
+	fully_replace_character_name("SCP-049")
+
+	set_species("SCP-049")
+	GLOB.scp049s += src
+	verbs += /mob/living/carbon/human/proc/SCP_049_talk
+	verbs += /mob/living/carbon/human/proc/door_049
+
+	// emotes
+	verbs += list(
+		/mob/living/carbon/human/scp049/proc/greetings,
+		/mob/living/carbon/human/scp049/proc/yet_another_victim,
+		/mob/living/carbon/human/scp049/proc/you_are_not_a_doctor,
+		/mob/living/carbon/human/scp049/proc/I_sense_the_disease_in_you,
+		/mob/living/carbon/human/scp049/proc/Im_here_to_cure_you,
+		/mob/living/carbon/human/scp049/proc/cure_action
+	)
+
 /mob/living/carbon/human/scp049/Destroy()
 	GLOB.scp049s -= src
 	. = ..()
@@ -78,6 +72,8 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		angry = TRUE
 
 
+#warn work on anger system
+
 /mob/living/carbon/human/scp049/Login()
 	. = ..()
 	if(client)
@@ -87,7 +83,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 			update_sight()
 	if(target)
 		target = null
-
 /mob/living/carbon/human/scp049/Logout()
 	. = ..()
 	if(mind)

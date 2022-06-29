@@ -90,7 +90,9 @@
 				<i>[zone]</i>
 			</body>
 		</html>"}
-		show_browser(user, "[dat]", "window=miningshuttle;size=400x400")
+		var/datum/browser/popup = new(user, "miningshuttle", "Area Air Control", 400, 400)
+		popup.set_content("[dat]")
+		popup.open()
 		status = ""
 
 	Topic(href, href_list)

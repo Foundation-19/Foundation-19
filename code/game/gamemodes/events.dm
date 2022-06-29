@@ -122,7 +122,7 @@ Would like to add a law like "Law x is _______" where x = a number, and _____ is
 				if(4)
 					M.add_ion_law("HUMANS NEED TO EAT [what2pref] [what2] TO SURVIVE")
 				if(5)
-					M.add_ion_law("THE CAPTAIN, HOP AND HOS ARE [who2]")
+					M.add_ion_law("THE COMMAND ARE [who2]")
 				if(6)
 					M.add_ion_law("THE [uppertext(station_name())] IS BUILT FOR [who2]")
 				if(7)

@@ -720,7 +720,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating,
-/area/space)
+/area/map_template/mininghome_power)
 "fC" = (
 /obj/machinery/light/spot{
 	dir = 8
@@ -1677,7 +1677,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating,
-/area/space)
+/area/map_template/mininghome_power)
 "nU" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -4059,7 +4059,7 @@
 /area/map_template/mininghome_hangar)
 "KP" = (
 /obj/item/mech_equipment/drill,
-/obj/item/device/kit/paint/powerloader/flames_blue,
+/obj/item/device/kit/paint/flames_blue,
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1

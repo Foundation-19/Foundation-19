@@ -1,4 +1,4 @@
-/spell/portal_teleport
+/datum/spell/portal_teleport
 	name = "Create Portal"
 	desc = "This spell creates a long lasting portal to an area of your selection."
 	feedback = "TP"
@@ -6,7 +6,7 @@
 	charge_max = 600
 	spell_flags = NEEDSCLOTHES
 	invocation = "Scyar Peranda!"
-	invocation_type = SpI_SHOUT
+	invocation_type = INVOKE_SHOUT
 	charge_max = 30 MINUTES
 	cooldown_min = 25 MINUTES
 
@@ -19,12 +19,12 @@
 
 	hud_state = "wiz_tele"
 
-/spell/portal_teleport/before_cast()
+/datum/spell/portal_teleport/before_cast()
 	return
 
-/spell/portal_teleport/choose_targets()
+/datum/spell/portal_teleport/choose_targets(mob/user = usr)
 	var/area/thearea
-	var/message = alert("Would you like to show station areas?\nNote: it can take up to 5 minutes for the away sites to load in and show up.",, "Yes", "No")
+	var/message = alert("Would you like to only show station areas?\nNote: it can take up to 5 minutes for the away sites to load in and show up.",, "Yes", "No")
 	switch(message)
 		if("Yes")
 			select_areas = stationlocs
@@ -32,11 +32,12 @@
 			select_areas = (stationlocs) ^ (wizportallocs)
 
 	thearea = input("Area to teleport to", "Teleport") as null|anything in select_areas
-	if(!thearea) return
+	if(!thearea)
+		return
 
-	return list(select_areas[thearea])
+	perform(user, list(select_areas[thearea]))
 
-/spell/portal_teleport/cast(area/thearea, mob/user)
+/datum/spell/portal_teleport/cast(area/thearea, mob/user)
 	playsound(get_turf(user),cast_sound,50,1)
 	var/turf/start = get_turf(user)
 	var/turf/end = user.try_teleport(thearea)
@@ -50,10 +51,10 @@
 
 	return
 
-/spell/portal_teleport/after_cast()
+/datum/spell/portal_teleport/after_cast()
 	return
 
-/spell/portal_teleport/invocation(mob/user, area/chosenarea)
+/datum/spell/portal_teleport/invocation(mob/user, area/chosenarea)
 	if(!chosenarea || !istype(chosenarea))
 		..()
 	else

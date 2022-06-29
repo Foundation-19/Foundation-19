@@ -67,7 +67,7 @@ var/datum/species/shapeshifter/promethean/prometheans
 		/mob/living/carbon/human/proc/shapeshifter_select_gender
 		)
 
-	valid_transform_species = list(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_DIONA, SPECIES_MONKEY)
+	valid_transform_species = list(SPECIES_HUMAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_DIONA, SPECIES_MANTID_ALATE, SPECIES_MONKEY)
 	monochromatic = 1
 
 	var/heal_rate = 5 // Temp. Regen per tick.
@@ -138,17 +138,16 @@ var/datum/species/shapeshifter/promethean/prometheans
 	return (H ? rgb(H.r_skin, H.g_skin, H.b_skin) : ..())
 
 /datum/species/shapeshifter/promethean/get_additional_examine_text(var/mob/living/carbon/human/H)
-
 	if(!stored_shock_by_ref["\ref[H]"])
 		return
 	var/datum/gender/G = gender_datums[H.gender]
 
 	switch(stored_shock_by_ref["\ref[H]"])
 		if(1 to 10)
-			return "[G.He] [G.is] flickering gently with a little electrical activity."
+			return SPAN_NOTICE("<i>[G.He] [G.is] flickering gently with a little electrical activity.</i>")
 		if(11 to 20)
-			return "[G.He] [G.is] glowing gently with moderate levels of electrical activity.\n"
+			return SPAN_NOTICE("<i>[G.He] [G.is] glowing gently with moderate levels of electrical activity.</i>")
 		if(21 to 35)
-			return "<span class='warning'>[G.He] [G.is] glowing brightly with high levels of electrical activity.</span>"
+			return SPAN_WARNING("[G.He] [G.is] glowing brightly with high levels of electrical activity.")
 		if(35 to INFINITY)
-			return "<span class='danger'>[G.He] [G.is] radiating massive levels of electrical activity!</span>"
+			return SPAN_DANGER("[G.He] [G.is] radiating massive levels of electrical activity!")

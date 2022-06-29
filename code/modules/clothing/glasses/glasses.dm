@@ -109,7 +109,7 @@
 			off_state = citem.additional_data["icon_off"]
 
 /obj/item/clothing/glasses/meson
-	name = "meson goggles"
+	name = "optical meson scanner"
 	desc = "Used for seeing walls, floors, and stuff through anything."
 	gender = NEUTER
 	icon_state = "meson"
@@ -120,15 +120,16 @@
 	vision_flags = SEE_TURFS
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	electric = TRUE
+	species_restricted = list("exclude", SPECIES_DIONA)
 
 /obj/item/clothing/glasses/meson/Initialize()
 	. = ..()
 	overlay = GLOB.global_hud.meson
 
 /obj/item/clothing/glasses/meson/prescription
-	name = "meson goggles"
-	desc = "Used for seeing walls, floors, and stuff through anything. This set has corrective lenses."
-	prescription = 5
+	name = "prescription mesons"
+	desc = "Optical meson scanner with prescription lenses."
+	prescription = 6
 
 /obj/item/clothing/glasses/science
 	name = "science goggles"
@@ -143,7 +144,7 @@
 /obj/item/clothing/glasses/science/prescription
 	name = "prescription science goggles"
 	desc = "Science goggles with prescription lenses."
-	prescription = 5
+	prescription = 6
 
 /obj/item/clothing/glasses/science/Initialize()
 	. = ..()
@@ -161,26 +162,11 @@
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	off_state = "denight"
 	electric = TRUE
+	species_restricted = list("exclude", SPECIES_DIONA)
 
 /obj/item/clothing/glasses/night/Initialize()
 	. = ..()
 	overlay = GLOB.global_hud.nvg
-
-/obj/item/clothing/glasses/scramble
-	name = "SCRAMBLE goggles"
-	desc = "State-of-the-art SCRAMBLE goggles. These things cost a fortune and apperantly make you able to view SCP-096!"
-	icon_state = "scramble"
-	item_state = "glasses"
-	origin_tech = list(TECH_MAGNET = 4)
-	action_button_name = "Toggle Goggles"
-	toggleable = TRUE
-	see_invisible = SEE_INVISIBLE_NOLIGHTING
-	off_state = "denight"
-	electric = TRUE
-
-/obj/item/clothing/glasses/scramble/Initialize()
-	. = ..()
-	overlay = GLOB.global_hud.scramble
 
 /obj/item/clothing/glasses/tacgoggles
 	name = "tactical goggles"
@@ -193,6 +179,7 @@
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	siemens_coefficient = 0.6
 	electric = TRUE
+	species_restricted = list("exclude", SPECIES_DIONA)
 
 /obj/item/clothing/glasses/monocle
 	name = "monocle"
@@ -200,7 +187,6 @@
 	icon_state = "monocle"
 	item_state = "headset" // lol
 	body_parts_covered = 0
-	prescription = 5
 
 /obj/item/clothing/glasses/material
 	name = "optical material scanner"

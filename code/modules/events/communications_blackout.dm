@@ -1,9 +1,9 @@
 /datum/event/communications_blackout/announce()
-	var/alert = pick(	"Warning! System failure, local telecommunications tower power net undergoing failure, please remain calm as the system reboots.", \
-						"Warn*w7ng! System ###lure, local telecommunications tower {39810} undergoing fail----ure, please remain calm as the system )(*$%¨$#.", \
-						"Warn*w7ng! System failure, local tel&%$#%¨$@", \
-						"Failu341241re, local telecommunications tower'fZ\\kg5_0-BZZZZZT", \
-						"teleco:%£ MCayj^j<.3-BZZZZZZT", \
+	var/alert = pick(	"Ionospheric anomalies detected. Temporary telecommunication failure imminent. Please contact you*%fj00)`5vc-BZZT", \
+						"Ionospheric anomalies detected. Temporary telecommunication failu*3mga;b4;'1v¬-BZZZT", \
+						"Ionospheric anomalies detected. Temporary telec#MCi46:5.;@63-BZZZZT", \
+						"Ionospheric anomalies dete'fZ\\kg5_0-BZZZZZT", \
+						"Ionospheri:%£ MCayj^j<.3-BZZZZZZT", \
 						"#4nd%;f4y6,>£%-BZZZZZZZT")
 
 	for(var/mob/living/silicon/ai/A in GLOB.player_list)	//AIs are always aware of communication blackouts.

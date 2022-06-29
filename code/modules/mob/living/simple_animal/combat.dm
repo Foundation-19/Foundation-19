@@ -13,6 +13,9 @@
 		. = ATTACK_SUCCESSFUL //Shoving this in here as a 'best guess' since this proc is about to sleep and return and we won't be able to know the real value
 		handle_attack_delay(A, melee_attack_delay) // This will sleep this proc for a bit, which is why waitfor is false.
 
+	if(stat == DEAD) // In case you died during that attack_delay
+		return
+
 	// Cooldown testing is done at click code (for players) and interface code (for AI).
 	setClickCooldown(get_attack_speed(get_natural_weapon()))
 
@@ -31,7 +34,7 @@
 	var/missed = FALSE
 	if (get_dir(src, A) == facing_dir && get_dist(src, A) <= 1) // Turfs don't contain themselves so checking contents is pointless if we're targeting a turf.
 		missed = TRUE
-	else if (!T.AdjacentQuick(src))
+	else if(!T.AdjacentQuick(src))
 		missed = TRUE
 
 	if(missed) // Most likely we have a slow attack and they dodged it or we somehow got moved.
@@ -40,9 +43,7 @@
 		return FALSE
 
 	var/obj/item/natural_weapon/weapon = get_natural_weapon()
-
-	if (weapon.resolve_attackby(A, src))
-		apply_melee_effects(A)
+	weapon?.resolve_attackby(A, src)
 
 	return TRUE
 
@@ -71,6 +72,9 @@
 		if(reload_count >= reload_max)
 			try_reload()
 			return FALSE
+
+	if(stat == DEAD) // In case you died during that attack_delay
+		return
 
 	visible_message("<span class='danger'><b>\The [src]</b> fires at \the [A]!</span>")
 	shoot(A)
@@ -103,7 +107,8 @@
 	// P.accuracy += calculate_accuracy()
 	P.dispersion += calculate_dispersion()
 
-	P.launch(target = A)
+	var/selected_zone = pick(BP_ALL_LIMBS) // Random limb targeting.
+	P.launch(A, selected_zone, src)
 	if(needs_reload)
 		reload_count++
 
@@ -161,6 +166,7 @@
 // Special attacks, like grenades or blinding spit or whatever.
 // Don't override this, override do_special_attack() for your blinding spit/etc.
 /mob/living/simple_animal/proc/special_attack_target(atom/A)
+	set waitfor = FALSE
 	face_atom(A)
 
 	if(special_attack_delay)

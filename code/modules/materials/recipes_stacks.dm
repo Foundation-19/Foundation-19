@@ -100,5 +100,5 @@
 	result_type = /obj/item/stack/tile/walnut
 
 /datum/stack_recipe/tile/metal/pool
-	title = "pool floor tile"
+	title = "pool floot tile"
 	result_type = /obj/item/stack/tile/pool

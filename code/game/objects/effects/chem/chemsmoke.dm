@@ -7,7 +7,7 @@
 	layer = ABOVE_PROJECTILE_LAYER
 	time_to_live = 300
 	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GRILLE | PASS_FLAG_GLASS //PASS_FLAG_GLASS is fine here, it's just so the visual effect can "flow" around glass
-	var/splash_amount = 5 //atoms moving through a smoke cloud get splashed with up to 10 units of reagent
+	var/splash_amount = 5 //atoms moving through a smoke cloud get splashed with up to 5 units of reagent
 	var/turf/destination
 
 /obj/effect/effect/smoke/chem/New(var/newloc, smoke_duration, turf/dest_turf = null, icon/cached_icon = null)
@@ -213,7 +213,7 @@
 				continue
 			if(T in targetTurfs)
 				spawn(0)
-					spawnSmoke(T, I, smoke_duration, range)
+					spawnSmoke(T, smoke_duration, range)
 
 //------------------------------------------
 // Randomizes and spawns the smoke effect.

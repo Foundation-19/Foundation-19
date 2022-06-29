@@ -9,7 +9,6 @@
 	var/chewtime = 0
 	var/brand
 	var/list/filling = list()
-	item_flags = null
 
 obj/item/clothing/mask/chewable/New()
 	..()
@@ -84,12 +83,12 @@ obj/item/clothing/mask/chewable/Destroy()
 /obj/item/clothing/mask/chewable/tobacco/lenni
 	name = "chewing tobacco"
 	desc = "A chewy wad of tobacco. Cut in long strands and treated with syrups so it tastes less like a ash-tray when you stuff it into your face."
-	filling = list(/datum/reagent/tobacco = 2)
+	filling = list(/datum/reagent/medicine/fluff/tobacco = 2)
 
 /obj/item/clothing/mask/chewable/tobacco/redlady
 	name = "chewing tobacco"
 	desc = "A chewy wad of fine tobacco. Cut in long strands and treated with syrups so it doesn't taste like a ash-tray when you stuff it into your face."
-	filling = list(/datum/reagent/tobacco/fine = 2)
+	filling = list(/datum/reagent/medicine/fluff/tobacco/fine = 2)
 
 /obj/item/clothing/mask/chewable/tobacco/nico
 	name = "nicotine gum"
@@ -98,7 +97,7 @@ obj/item/clothing/mask/chewable/Destroy()
 	type_butt = /obj/item/trash/cigbutt/spitgum
 /obj/item/clothing/mask/chewable/tobacco/nico/New()
 	..()
-	reagents.add_reagent(/datum/reagent/nicotine, 2)
+	reagents.add_reagent(/datum/reagent/medicine/fluff/nicotine, 2)
 	color = reagents.get_color()
 
 /obj/item/clothing/mask/chewable/candy
@@ -174,16 +173,16 @@ obj/item/clothing/mask/chewable/Destroy()
 /obj/item/clothing/mask/chewable/candy/lolli/meds/New()
 	..()
 	reagents.add_reagent(pick(list(
-				/datum/reagent/dexalinp,
-				/datum/reagent/tricordrazine,
-				/datum/reagent/hyperzine,
-				/datum/reagent/hyronalin,
-				/datum/reagent/methylphenidate,
-				/datum/reagent/citalopram,
-				/datum/reagent/dylovene,
-				/datum/reagent/bicaridine,
-				/datum/reagent/kelotane,
-				/datum/reagent/inaprovaline)), 10)
+				/datum/reagent/medicine/dexalin_plus,
+				/datum/reagent/medicine/tricordrazine,
+				/datum/reagent/medicine/stimulant/hyperzine,
+				/datum/reagent/medicine/hyronalin,
+				/datum/reagent/medicine/fluff/methylphenidate,
+				/datum/reagent/medicine/fluff/citalopram,
+				/datum/reagent/medicine/dylovene,
+				/datum/reagent/medicine/bicaridine,
+				/datum/reagent/medicine/kelotane,
+				/datum/reagent/medicine/inaprovaline)), 10)
 	color = reagents.get_color()
 
 /obj/item/clothing/mask/chewable/candy/lolli/weak_meds
@@ -194,11 +193,11 @@ obj/item/clothing/mask/chewable/Destroy()
 /obj/item/clothing/mask/chewable/candy/lolli/weak_meds/New()
 	..()
 	var/datum/reagent/payload = pick(list(
-				/datum/reagent/antidexafen,
-				/datum/reagent/paracetamol,
-				/datum/reagent/tricordrazine,
-				/datum/reagent/dylovene,
-				/datum/reagent/inaprovaline))
+				/datum/reagent/medicine/fluff/antidexafen,
+				/datum/reagent/medicine/painkiller/paracetamol,
+				/datum/reagent/medicine/tricordrazine,
+				/datum/reagent/medicine/dylovene,
+				/datum/reagent/medicine/inaprovaline))
 	reagents.add_reagent(payload, 15)
 	color = reagents.get_color()
 	desc = "[desc]. This one is labeled '[initial(payload.name)]'"

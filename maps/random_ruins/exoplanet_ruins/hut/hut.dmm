@@ -23,7 +23,7 @@
 /area/template_noop)
 "g" = (
 /obj/structure/curtain/black,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/template_noop)
 "h" = (
 /obj/structure/inflatable/door,
@@ -83,7 +83,7 @@
 /obj/item/bedsheet/rainbow,
 /obj/random/drinkbottle,
 /obj/random/trash,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/template_noop)
 "u" = (
 /obj/structure/table/rack,

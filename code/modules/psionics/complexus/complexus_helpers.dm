@@ -1,5 +1,6 @@
-/datum/psi_complexus/proc/cancel()
-	sound_to(owner, sound('sound/effects/psi/power_fail.ogg'))
+/datum/psi_complexus/proc/cancel(var/play_sound = TRUE)
+	if(play_sound)
+		sound_to(owner, sound('sound/effects/psi/power_fail.ogg'))
 	if(LAZYLEN(manifested_items))
 		for(var/thing in manifested_items)
 			owner.drop_from_inventory(thing)
@@ -75,6 +76,9 @@
 	// Can't backblast if you're controlling your power.
 	if(!owner || suppressed)
 		return FALSE
+
+	owner.psi.cancel(FALSE)
+	owner.psi.hide_auras()
 
 	sound_to(owner, sound('sound/effects/psi/power_feedback.ogg'))
 	to_chat(owner, "<span class='danger'><font size=3>Wild energistic feedback blasts across your psyche!</font></span>")

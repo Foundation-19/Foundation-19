@@ -4,7 +4,7 @@ the HUD updates properly! */
 
 // hud overlay image type, used for clearing client.images precisely
 /image/hud_overlay
-	appearance_flags = DEFAULT_APPEARANCE_FLAGS | RESET_COLOR|RESET_TRANSFORM|KEEP_APART
+	appearance_flags = RESET_COLOR|RESET_TRANSFORM|KEEP_APART
 	layer = ABOVE_HUMAN_LAYER
 	plane = DEFAULT_PLANE
 
@@ -39,7 +39,7 @@ proc/process_sec_hud(var/mob/M, var/advanced_mode, var/mob/Alt)
 			continue
 
 		P.Client.images += perp.hud_list[ID_HUD]
-		if(advanced_mode && !perp.fake_name)
+		if(advanced_mode)
 			P.Client.images += perp.hud_list[WANTED_HUD]
 			P.Client.images += perp.hud_list[IMPTRACK_HUD]
 			P.Client.images += perp.hud_list[IMPLOYAL_HUD]
@@ -48,8 +48,7 @@ proc/process_sec_hud(var/mob/M, var/advanced_mode, var/mob/Alt)
 proc/process_jani_hud(var/mob/M, var/mob/Alt)
 	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.jani_hud_users)
 	for (var/obj/effect/decal/cleanable/dirtyfloor in view(P.Mob))
-		if(P.Client)
-			P.Client.images += dirtyfloor.hud_overlay
+		P.Client.images += dirtyfloor.hud_overlay
 
 datum/arranged_hud_process
 	var/client/Client

@@ -13,7 +13,7 @@
 	var/panel_file = 'icons/obj/doors/hazard/panel.dmi'
 	var/welded_file = 'icons/obj/doors/hazard/welded.dmi'
 	icon_state = "open"
-	req_access = list(access_engineeringlvl1)
+	req_access = list(list(access_atmospherics, access_engine_equip))
 	autoset_access = FALSE
 	opacity = FALSE
 	density = FALSE
@@ -62,7 +62,7 @@
 	blend_objects = list(/obj/machinery/door/firedoor, /obj/structure/wall_frame, /turf/unsimulated/wall, /obj/structure/window) // Objects which to blend with
 
 /obj/machinery/door/firedoor/autoset
-	autoset_access = TRUE	//subtype just to make mapping away sites with custom access usage
+	autoset_access = FALSE	//subtype just to make mapping away sites with custom access usage
 	req_access = list()
 
 /obj/machinery/door/firedoor/Initialize()
@@ -518,7 +518,7 @@
 			for(var/d=1; d<=4; d++)
 				var/cdir = GLOB.cardinal[d]
 				for(var/i=1; i<=ALERT_STATES.len; i++)
-					if(dir_alerts[d] & SHIFTL(1, (i - 1)))
+					if(dir_alerts[d] & (1 << (i - 1)))
 						overlays += new/icon(icon, "alert_[ALERT_STATES[i]]", dir = cdir)
 						do_set_light = TRUE
 	else

@@ -23,46 +23,22 @@
 	light_inner_range = 1
 	light_outer_range = 13
 	light_color = "#3e0000"
-	var/health = 20
-	var/maxhealth = 20
+	health_max = 20
+	health_min_damage = 4
+	damage_hitsound = 'sound/effects/Glasshit.ogg'
 
 /obj/structure/cult/pylon/attackby(obj/item/W, mob/user)
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	if (istype(W, /obj/item/natural_weapon/cult_builder))
-		if (health >= maxhealth)
+	if(istype(W, /obj/item/natural_weapon/cult_builder))
+		if(!health_damaged())
 			to_chat(user, SPAN_WARNING("\The [src] is fully repaired."))
 		else
 			user.visible_message(
 				SPAN_NOTICE("\The [user] mends some of the cracks on \the [src]."),
 				SPAN_NOTICE("You repair some of \the [src]'s damage.")
 			)
-			health = min(maxhealth, health + 5)
+			restore_health(5)
 		return
-	user.do_attack_animation(src)
-	if (W.force < 4)
-		user.visible_message(
-			SPAN_DANGER("\The [user] hits \the [src], but they bounce off!"),
-			SPAN_DANGER("You hit \the [src], but bounce off!"),
-			SPAN_WARNING("You hear thick glass being struck with something.")
-		)
-		playsound(get_turf(src), 'sound/effects/Glasshit.ogg', 50, TRUE)
-		return
-	health = max(0, health - W.force)
-	if(!health)
-		user.visible_message(
-			SPAN_DANGER("\The [user] smashes \the [src]!"),
-			SPAN_DANGER("You smash \the [src] into pieces!"),
-			SPAN_WARNING("You hear glass shattering, and a tinkle of shards.")
-		)
-		playsound(get_turf(src), 'sound/effects/Glassbr3.ogg', 75, TRUE)
-		qdel(src)
-	else
-		user.visible_message(
-			SPAN_DANGER("\The [user] hits \the [src]!"),
-			SPAN_DANGER("You hit \the [src]!"),
-			SPAN_WARNING("You hear thick glass being struck with something.")
-		)
-		playsound(get_turf(src), 'sound/effects/Glasshit.ogg', 75, TRUE)
+	..()
 
 /obj/structure/cult/tome
 	name = "Desk"
@@ -147,7 +123,7 @@
 				if(istype(W, /obj/item/implant))
 					qdel(W)
 
-		var/mob/living/new_mob = new /mob/living/simple_animal/passive/corgi(A.loc)
+		var/mob/living/new_mob = new /mob/living/simple_animal/friendly/corgi(A.loc)
 		new_mob.a_intent = I_HURT
 		if(M.mind)
 			M.mind.transfer_to(new_mob)
@@ -155,3 +131,4 @@
 			new_mob.key = M.key
 
 		to_chat(new_mob, "<B>Your form morphs into that of a corgi.</B>")//Because we don't have cluwnes
+

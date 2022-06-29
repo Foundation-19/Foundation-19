@@ -95,15 +95,15 @@
 // Torch only items off torch
 
 /obj/item/mininghome_passport_iccg
-	name = "\improper Old ICCG passport"
+	name = "\improper Old TerraGov passport"
 	icon = 'icons/obj/passport.dmi'
-	icon_state = "passport_iccg"
+	icon_state = "passport_terragov"
 	w_class = ITEM_SIZE_SMALL
-	desc = "A passport from the Gilgamesh Confederation. This one belongs to a man named Ivan Gregorich."
+	desc = "A passport from the Terran Government. This one belongs to a man named Ivan Gregorich."
 
 /obj/item/clothing/head/beret/mininghome_iccg
 	name = "faded Drop Trooper beret"
-	desc = "An old ICCG Navy beret with a drop troopers crest."
+	desc = "An old TerraGov Navy beret with a drop troopers crest."
 	icon = 'maps/away/mininghome/icons.dmi'
 	item_icons = list(slot_head_str = 'maps/away/mininghome/onmob_icons.dmi')
 	icon_state = "terranberet-grey"

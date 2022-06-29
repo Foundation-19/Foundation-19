@@ -185,3 +185,19 @@ obj/item/gun/energy/retro
 	item_state = "redtag"
 	projectile_type = /obj/item/projectile/beam/lastertag/red
 	required_vest = /obj/item/clothing/suit/redtag
+
+/obj/item/gun/energy/laser/assault
+	name = "assault laser rifle"
+	desc = "An advanced fully automatic laser rifle, dubbed ALR-1. Capable of firing in several firemodes."
+	icon_state = "lasersec"
+	item_state = "lasersec"
+	wielded_item_state = "lasersec-wielded"
+	max_shots = 18
+	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 3)
+	matter = list(MATERIAL_STEEL = 4000)
+
+	firemodes = list(
+		list(mode_name="single fire", fire_delay=4, burst=1, one_hand_penalty = 2, dispersion=list(0, 0.2, 0.4)),
+		list(mode_name="short bursts", fire_delay=4, burst=3, burst_delay = 2, one_hand_penalty=6, dispersion=list(0.6, 0.8, 1.0, 1.2, 1.4), burst_accuracy=list(0,-1,-1,-2,-3)),
+		list(mode_name="full auto", fire_delay=2, burst=1, burst_delay=1, one_hand_penalty=4, dispersion=list(0.4, 0.6, 0.8, 1.0), burst_accuracy=list(0,-1,-1,-2), autofire_enabled=1),
+		)

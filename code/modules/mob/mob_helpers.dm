@@ -13,14 +13,8 @@
 		return FALSE //M is too small to wield this
 	return TRUE
 
-
-/mob/proc/isSynthetic()
-	return FALSE
-
-
-/mob/living/silicon/isSynthetic()
-	return TRUE
-
+/mob/living/proc/isSynthetic()
+	return 0
 
 /mob/living/carbon/human/isSynthetic()
 	if(isnull(full_prosthetic))
@@ -36,16 +30,14 @@
 	return istype(internal_organs_by_name[BP_BRAIN], /obj/item/organ/internal/mmi_holder)
 
 
-/// Determine if the mob is the supplied species by text name, species path, or species instance name
-/mob/proc/is_species(datum/species/S)
-	return FALSE
+/mob/living/silicon/isSynthetic()
+	return 1
 
+/mob/proc/isMonkey()
+	return 0
 
-/mob/living/carbon/is_species(datum/species/S)
-	if (!S) return FALSE
-	if (istext(S)) return species.name == S
-	if (ispath(S)) return species.name == initial(S.name)
-	return species.name == S.name
+/mob/living/carbon/human/isMonkey()
+	return istype(species, /datum/species/monkey)
 
 
 /**
@@ -60,23 +52,43 @@
 			return TRUE
 
 
-/proc/isdeaf(mob/living/M)
-	return istype(M) && (M.ear_deaf || M.sdisabilities & DEAFENED)
+proc/isdeaf(A)
+	if(isliving(A))
+		var/mob/living/M = A
+		return (M.sdisabilities & DEAFENED) || M.ear_deaf
+	return 0
 
-/proc/iscuffed(mob/living/carbon/C)
-	return istype(C) && C.handcuffed
+proc/hasorgans(A) // Fucking really??
+	return ishuman(A)
+
+proc/iscuffed(A)
+	if(istype(A, /mob/living/carbon))
+		var/mob/living/carbon/C = A
+		if(C.handcuffed)
+			return 1
+	return 0
+
+proc/hassensorlevel(A, var/level)
+	var/mob/living/carbon/human/H = A
+	if(istype(H) && istype(H.w_uniform, /obj/item/clothing/under))
+		var/obj/item/clothing/under/U = H.w_uniform
+		return U.sensor_mode >= level
+	return 0
+
+proc/getsensorlevel(A)
+	var/mob/living/carbon/human/H = A
+	if(istype(H) && istype(H.w_uniform, /obj/item/clothing/under))
+		var/obj/item/clothing/under/U = H.w_uniform
+		return U.sensor_mode
+	return SUIT_SENSOR_OFF
 
 
-/proc/getsensorlevel(mob/living/carbon/human/H)
-	if (!istype(H) || !istype(H.w_uniform, /obj/item/clothing/under))
-		return SUIT_SENSOR_OFF
-	var/obj/item/clothing/under/U = H.w_uniform
-	return U.sensor_mode
+/proc/is_admin(var/mob/user)
+	return check_rights(R_ADMIN, 0, user) != 0
 
 
-/proc/hassensorlevel(mob/living/carbon/human/H, level)
-	return getsensorlevel(H) >= level
-
+/proc/hsl2rgb(h, s, l)
+	return //TODO: Implement
 
 /*
 	Miss Chance
@@ -86,31 +98,31 @@
 
 //The base miss chance for the different defence zones
 var/list/global/base_miss_chance = list(
-	BP_HEAD = 70,
-	BP_CHEST = 10,
-	BP_GROIN = 20,
-	BP_L_LEG = 60,
-	BP_R_LEG = 60,
-	BP_L_ARM = 30,
-	BP_R_ARM = 30,
-	BP_L_HAND = 50,
-	BP_R_HAND = 50,
-	BP_L_FOOT = 70,
-	BP_R_FOOT = 70,
+	BP_HEAD =   50,
+	BP_CHEST =  10,
+	BP_GROIN =  15,
+	BP_L_ARM =  20,
+	BP_R_ARM =  20,
+	BP_L_HAND = 35,
+	BP_R_HAND = 35,
+	BP_L_LEG =  20,
+	BP_R_LEG =  20,
+	BP_L_FOOT = 35,
+	BP_R_FOOT = 35,
 )
 
 //Used to weight organs when an organ is hit randomly (i.e. not a directed, aimed attack).
 //Also used to weight the protection value that armour provides for covering that body part when calculating protection from full-body effects.
 var/list/global/organ_rel_size = list(
-	BP_HEAD = 25,
-	BP_CHEST = 70,
-	BP_GROIN = 30,
-	BP_L_LEG = 25,
-	BP_R_LEG = 25,
-	BP_L_ARM = 25,
-	BP_R_ARM = 25,
+	BP_HEAD =   25,
+	BP_CHEST =  70,
+	BP_GROIN =  30,
+	BP_L_ARM =  25,
+	BP_R_ARM =  25,
 	BP_L_HAND = 10,
 	BP_R_HAND = 10,
+	BP_L_LEG =  25,
+	BP_R_LEG =  25,
 	BP_L_FOOT = 10,
 	BP_R_FOOT = 10,
 )
@@ -170,18 +182,16 @@ var/list/global/organ_rel_size = list(
 				return zone
 
 	var/miss_chance = 10
-	var/scatter_chance
-	if (zone in base_miss_chance)
+	if(zone in base_miss_chance)
 		miss_chance = base_miss_chance[zone]
 	miss_chance = max(miss_chance + miss_chance_mod, 0)
-	scatter_chance = min(95, miss_chance + 60)
 	if(prob(miss_chance))
-		if(ranged_attack && prob(scatter_chance))
-			return null
-		else if(prob(70))
-			return null
-		return (ran_zone())
-	return zone
+		return null
+	else
+		if(prob(miss_chance))
+			return (ran_zone())
+		else
+			return zone
 
 //Replaces some of the characters with *, used in whispers. pr = probability of no star.
 //Will try to preserve HTML formatting. re_encode controls whether the returned text is HTML encoded outside tags.
@@ -194,8 +204,8 @@ var/list/global/organ_rel_size = list(
 	var/intag = 0
 	var/block = list()
 	. = list()
-	for(var/i = 1, i <= length_char(n), i++)
-		var/char = copytext_char(n, i, i+1)
+	for(var/i = 1, i <= length(n), i++)
+		var/char = copytext(n, i, i+1)
 		if(!intag && (char == "<"))
 			intag = 1
 			. += stars_no_html(JOINTEXT(block), pr, re_encode) //stars added here
@@ -212,8 +222,8 @@ var/list/global/organ_rel_size = list(
 /proc/stars_no_html(text, pr, re_encode)
 	text = html_decode(text) //We don't want to screw up escaped characters
 	. = list()
-	for(var/i = 1, i <= length_char(text), i++)
-		var/char = copytext_char(text, i, i+1)
+	for(var/i = 1, i <= length(text), i++)
+		var/char = copytext(text, i, i+1)
 		if(char == " " || prob(pr))
 			. += char
 		else
@@ -224,12 +234,12 @@ var/list/global/organ_rel_size = list(
 
 proc/slur(phrase)
 	phrase = html_decode(phrase)
-	var/leng = length_char(phrase)
-	var/counter = length_char(phrase)
+	var/leng=length(phrase)
+	var/counter=length(phrase)
 	var/newphrase=""
 	var/newletter=""
 	while(counter>=1)
-		newletter=copytext_char(phrase,(leng-counter)+1,(leng-counter)+2)
+		newletter=copytext(phrase,(leng-counter)+1,(leng-counter)+2)
 		if(rand(1,3)==3)
 			if(lowertext(newletter)=="o")	newletter="u"
 			if(lowertext(newletter)=="s")	newletter="ch"
@@ -248,11 +258,11 @@ proc/slur(phrase)
 /proc/stutter(n)
 	var/te = html_decode(n)
 	var/t = ""//placed before the message. Not really sure what it's for.
-	n = length_char(n)//length of the entire word
+	n = length(n)//length of the entire word
 	var/p = null
 	p = 1//1 is the start of any word
 	while(p <= n)//while P, which starts at 1 is less or equal to N which is the length.
-		var/n_letter = copytext_char(te, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
+		var/n_letter = copytext(te, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
 		if (prob(80) && (ckey(n_letter) in list("b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z")))
 			if (prob(10))
 				n_letter = text("[n_letter]-[n_letter]-[n_letter]-[n_letter]")//replaces the current letter with this instead.
@@ -272,9 +282,9 @@ proc/slur(phrase)
 proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 for p will cause letters to be replaced instead of added
 	/* Turn text into complete gibberish! */
 	var/returntext = ""
-	for(var/i = 1, i <= length_char(t), i++)
+	for(var/i = 1, i <= length(t), i++)
 
-		var/letter = copytext_char(t, i, i+1)
+		var/letter = copytext(t, i, i+1)
 		if(prob(50))
 			if(p >= 70)
 				letter = ""
@@ -285,6 +295,35 @@ proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 fo
 		returntext += letter
 
 	return returntext
+
+
+/proc/ninjaspeak(n)
+/*
+The difference with stutter is that this proc can stutter more than 1 letter
+The issue here is that anything that does not have a space is treated as one word (in many instances). For instance, "LOOKING," is a word, including the comma.
+It's fairly easy to fix if dealing with single letters but not so much with compounds of letters./N
+*/
+	var/te = html_decode(n)
+	var/t = ""
+	n = length(n)
+	var/p = 1
+	while(p <= n)
+		var/n_letter
+		var/n_mod = rand(1,4)
+		if(p+n_mod>n+1)
+			n_letter = copytext(te, p, n+1)
+		else
+			n_letter = copytext(te, p, p+n_mod)
+		if (prob(50))
+			if (prob(30))
+				n_letter = text("[n_letter]-[n_letter]-[n_letter]")
+			else
+				n_letter = text("[n_letter]-[n_letter]")
+		else
+			n_letter = text("[n_letter]")
+		t = text("[t][n_letter]")
+		p=p+n_mod
+	return sanitize(t)
 
 
 /proc/shake_camera(mob/M, duration, strength=1)
@@ -314,6 +353,13 @@ proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 fo
 		M.shakecamera = 0
 
 
+/proc/findname(msg)
+	for(var/mob/M in SSmobs.mob_list)
+		if (M.real_name == text("[msg]"))
+			return 1
+	return 0
+
+
 /mob/proc/abiotic(var/full_body = FALSE)
 	if(full_body && ((src.l_hand && src.l_hand.simulated) || (src.r_hand && src.r_hand.simulated) || (src.back || src.wear_mask)))
 		return TRUE
@@ -340,7 +386,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 			else			return I_HURT
 
 //change a mob's act-intent. Input the intent as a string such as "help" or use "right"/"left
-/mob/verb/a_intent_change(input as text)
+/mob/proc/a_intent_change(input)
 	set name = "a-intent"
 	set hidden = 1
 
@@ -508,7 +554,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 			perpname = id.registered_name
 
 		var/datum/computer_file/report/crew_record/CR = get_crewmember_record(perpname)
-		if(check_records && !CR && !is_species(SPECIES_MONKEY))
+		if(check_records && !CR && !isMonkey())
 			threatcount += 4
 
 		if(check_arrest && CR && (CR.get_criminalStatus() == GLOB.arrest_security_status))
@@ -584,7 +630,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 	return 1
 
 /mob/proc/ssd_check()
-	return !client && !teleop &&!ignore_ssd_check
+	return !client && !teleop
 
 /mob/proc/jittery_damage()
 	return //Only for living/carbon/human/

@@ -40,8 +40,10 @@ SUBSYSTEM_DEF(trade)
 	else
 		if(prob(5))
 			possible += subtypesof(/datum/trader/ship/unique)
+		else if(prob(5))
+			possible += subtypesof(/datum/trader/ship/illegal)
 		else
-			possible += subtypesof(/datum/trader/ship) - typesof(/datum/trader/ship/unique)
+			possible += subtypesof(/datum/trader/ship) - typesof(/datum/trader/ship/unique) - typesof(/datum/trader/ship/illegal)
 
 	for(var/i in 1 to 10)
 		var/type = pick(possible)

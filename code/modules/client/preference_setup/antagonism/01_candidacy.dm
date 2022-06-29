@@ -1,5 +1,4 @@
 /datum/preferences
-	var/list/may_be_special_role
 	var/list/be_special_role
 
 /datum/category_item/player_setup_item/antagonism/candidacy
@@ -8,27 +7,19 @@
 
 /datum/category_item/player_setup_item/antagonism/candidacy/load_character(datum/pref_record_reader/R)
 	pref.be_special_role = R.read("be_special")
-	pref.may_be_special_role = R.read("may_be_special")
 
 /datum/category_item/player_setup_item/antagonism/candidacy/save_character(datum/pref_record_writer/W)
 	W.write("be_special", pref.be_special_role)
-	W.write("may_be_special", pref.may_be_special_role)
 
 /datum/category_item/player_setup_item/antagonism/candidacy/sanitize_character()
 	if(!istype(pref.be_special_role))
 		pref.be_special_role = list()
-	if(!istype(pref.may_be_special_role))
-		pref.may_be_special_role = list()
 
 	var/special_roles = valid_special_roles()
 	var/old_be_special_role = pref.be_special_role.Copy()
-	var/old_may_be_special_role = pref.may_be_special_role.Copy()
 	for(var/role in old_be_special_role)
 		if(!(role in special_roles))
 			pref.be_special_role -= role
-	for(var/role in old_may_be_special_role)
-		if(!(role in special_roles))
-			pref.may_be_special_role -= role
 
 /datum/category_item/player_setup_item/antagonism/candidacy/content(var/mob/user)
 	. = list()
@@ -41,11 +32,9 @@
 		if(jobban_isbanned(preference_mob(), antag.id) || (antag.id == MODE_MALFUNCTION && jobban_isbanned(preference_mob(), "AI")))
 			. += "<span class='danger'>\[BANNED\]</span><br>"
 		else if(antag.id in pref.be_special_role)
-			. += "<span class='linkOn'>High</span> <a href='?src=\ref[src];add_maybe=[antag.id]'>Low</a> <a href='?src=\ref[src];del_special=[antag.id]'>Never</a></br>"
-		else if(antag.id in pref.may_be_special_role)
-			. += "<a href='?src=\ref[src];add_special=[antag.id]'>High</a> <span class='linkOn'>Low</span> <a href='?src=\ref[src];del_special=[antag.id]'>Never</a></br>"
+			. += "<span class='linkOn'>Yes</span> <a href='?src=\ref[src];del_special=[antag.id]'>No</a></br>"
 		else
-			. += "<a href='?src=\ref[src];add_special=[antag.id]'>High</a> <a href='?src=\ref[src];add_maybe=[antag.id]'>Low</a> <span class='linkOn'>Never</span></br>"
+			. += "<a href='?src=\ref[src];add_special=[antag.id]'>Yes</a> <span class='linkOn'>No</span></br>"
 
 		. += "</td></tr>"
 	. += "</table>"
@@ -64,14 +53,12 @@
 			var/datum/species/S = new ghost_trap.species_whitelist()
 			. += "[SPAN_DANGER("\[WHITELIST RESTRICTED - [S]\]")]<br />"
 		else if(ghost_trap.pref_check in pref.be_special_role)
-			. += "<span class='linkOn'>High</span> <a href='?src=\ref[src];add_maybe=[ghost_trap.pref_check]'>Low</a> <a href='?src=\ref[src];del_special=[ghost_trap.pref_check]'>Never</a></br>"
-		else if(ghost_trap.pref_check in pref.may_be_special_role)
-			. += "<a href='?src=\ref[src];add_special=[ghost_trap.pref_check]'>High</a> <span class='linkOn'>Low</span> <a href='?src=\ref[src];del_special=[ghost_trap.pref_check]'>Never</a></br>"
+			. += "<span class='linkOn'>Yes</span> <a href='?src=\ref[src];del_special=[ghost_trap.pref_check]'>No</a></br>"
 		else
-			. += "<a href='?src=\ref[src];add_special=[ghost_trap.pref_check]'>High</a> <a href='?src=\ref[src];add_maybe=[ghost_trap.pref_check]'>Low</a> <span class='linkOn'>Never</span></br>"
+			. += "<a href='?src=\ref[src];add_special=[ghost_trap.pref_check]'>Yes</a> <span class='linkOn'>No</span></br>"
 
 		. += "</td></tr>"
-	. += "<tr><td>Select All: </td><td><a href='?src=\ref[src];select_all=2'>High</a> <a href='?src=\ref[src];select_all=1'>Low</a> <a href='?src=\ref[src];select_all=0'>Never</a></td></tr>"
+	. += "<tr><td>Select All: </td><td><a href='?src=\ref[src];select_all=1'>Yes</a> <a href='?src=\ref[src];select_all=0'>No</a></td></tr>"
 	. += "</table>"
 	. = jointext(.,null)
 
@@ -86,19 +73,12 @@
 		if(!(href_list["add_special"] in valid_special_roles(FALSE)))
 			return TOPIC_HANDLED
 		pref.be_special_role |= href_list["add_special"]
-		pref.may_be_special_role -= href_list["add_special"]
 		return TOPIC_REFRESH
 
 	if(href_list["del_special"])
 		if(!(href_list["del_special"] in valid_special_roles(FALSE)))
 			return TOPIC_HANDLED
 		pref.be_special_role -= href_list["del_special"]
-		pref.may_be_special_role -= href_list["del_special"]
-		return TOPIC_REFRESH
-
-	if(href_list["add_maybe"])
-		pref.be_special_role -= href_list["add_maybe"]
-		pref.may_be_special_role |= href_list["add_maybe"]
 		return TOPIC_REFRESH
 
 	if(href_list["select_all"])
@@ -109,13 +89,8 @@
 			switch(selection)
 				if(0)
 					pref.be_special_role -= id
-					pref.may_be_special_role -= id
 				if(1)
-					pref.be_special_role -= id
-					pref.may_be_special_role |= id
-				if(2)
 					pref.be_special_role |= id
-					pref.may_be_special_role -= id
 		return TOPIC_REFRESH
 
 	return ..()
@@ -148,7 +123,5 @@
 	if(!prefs)
 		return FALSE
 	if(role in prefs.be_special_role)
-		return 2
-	if(role in prefs.may_be_special_role)
 		return 1
 	return FALSE	//Default to "never" if they don't opt-in.

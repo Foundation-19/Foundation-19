@@ -128,7 +128,7 @@
 	id = "decloner"
 	req_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 7, TECH_BIO = 5, TECH_POWER = 6)
 	materials = list(MATERIAL_GOLD = 5000,MATERIAL_URANIUM = 10000)
-	chemicals = list(/datum/reagent/mutagen = 40)
+	chemicals = list(/datum/reagent/unstable_mutagen = 40)
 	build_path = /obj/item/gun/energy/decloner
 	sort_string = "TAJAB"
 
@@ -175,7 +175,7 @@
 
 /datum/design/item/weapon/ammunition/stunshell
 	desc = "A stunning shell for a shotgun."
-	id = "shell-stun"
+	id = "stunshell"
 	req_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	materials = list(MATERIAL_STEEL = 4000)
 	build_path = /obj/item/ammo_casing/shotgun/stunshell

@@ -1,6 +1,8 @@
 /obj/effect/overmap/visitable/sector/exoplanet/shrouded
 	name = "shrouded exoplanet"
 	desc = "An exoplanet shrouded in a perpetual storm of bizzare, light absorbing particles."
+	scan_summary = "Cold, rocky exoplanet with a dense atmospheric layer of light-absorbing particulates that block all sunlight from reaching the surface. Vast stretches of empty desert are interspersed with warmer, low-elevation valleys and depressions in the surface."
+	scan_assessment = "No surface light. Xenofauna may present a hazard to away teams."
 	color = "#783ca4"
 	planetary_area = /area/exoplanet/shrouded
 	rock_colors = list(COLOR_INDIGO, COLOR_DARK_BLUE_GRAY, COLOR_NAVY_BLUE)

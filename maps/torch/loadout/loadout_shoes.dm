@@ -32,6 +32,3 @@
 
 /datum/gear/shoes/boots
 	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/shoes/foamclog
-	allowed_branches = CIVILIAN_BRANCHES

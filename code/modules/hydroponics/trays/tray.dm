@@ -10,7 +10,7 @@
 	construct_state = /decl/machine_construction/default/panel_closed
 	uncreated_component_parts = null
 	stat_immune = 0
-	
+
 	machine_name = "hydroponics tray"
 	machine_desc = "These are waist-high trays that can grow a vast variety of plants in a nutrient bath. Also comes with a sealable lid for plants that don't grow in a surrounding atmosphere. A cornerstone of self-sufficient spaceships across the galaxy."
 
@@ -51,15 +51,15 @@
 	// Reagent information for process(), consider moving this to a controller along
 	// with cycle information under 'mechanical concerns' at some point.
 	var/global/list/toxic_reagents = list(
-		/datum/reagent/dylovene =         -2,
+		/datum/reagent/medicine/dylovene =         -2,
 		/datum/reagent/toxin =             2,
 		/datum/reagent/hydrazine =         2.5,
 		/datum/reagent/acetone =	       1,
-		/datum/reagent/acid =              1.5,
+		/datum/reagent/acid/sulphuric =    1.5,
 		/datum/reagent/acid/hydrochloric = 1.5,
-		/datum/reagent/acid/polyacid =     3,
-		/datum/reagent/toxin/plantbgone =  3,
-		/datum/reagent/cryoxadone =       -3,
+		/datum/reagent/acid/polytrinic =     3,
+		/datum/reagent/toxin/plant_b_gone =  3,
+		/datum/reagent/medicine/cryogenic/cryoxadone =       -3,
 		/datum/reagent/radium =            2,
 		/datum/reagent/three_eye =         2
 		)
@@ -73,18 +73,18 @@
 		/datum/reagent/diethylamine =                   2,
 		/datum/reagent/nutriment =                      1,
 		/datum/reagent/adminordrazine =                 1,
-		/datum/reagent/toxin/fertilizer/eznutrient =    1,
-		/datum/reagent/toxin/fertilizer/robustharvest = 1,
-		/datum/reagent/toxin/fertilizer/left4zed =      1
+		/datum/reagent/toxin/fertilizer/ez_nutrient =    1,
+		/datum/reagent/toxin/fertilizer/robust_harvest = 1,
+		/datum/reagent/toxin/fertilizer/left_4_zed =      1
 		)
 	var/global/list/weedkiller_reagents = list(
 		/datum/reagent/hydrazine =          -4,
 		/datum/reagent/phosphorus =         -2,
 		/datum/reagent/sugar =               2,
-		/datum/reagent/acid =               -2,
+		/datum/reagent/acid/sulphuric =               -2,
 		/datum/reagent/acid/hydrochloric =  -2,
-		/datum/reagent/acid/polyacid =      -4,
-		/datum/reagent/toxin/plantbgone =   -8,
+		/datum/reagent/acid/polytrinic =      -4,
+		/datum/reagent/toxin/plant_b_gone =   -8,
 		/datum/reagent/adminordrazine =     -5
 		)
 	var/global/list/pestkiller_reagents = list(
@@ -111,18 +111,18 @@
 		/datum/reagent/hydrazine =                       list( -2,    0,   0  ),
 		/datum/reagent/phosphorus =                      list( -0.75, 0,   0  ),
 		/datum/reagent/drink/sodawater =                 list(  0.1,  0,   0  ),
-		/datum/reagent/acid =                            list( -1,    0,   0  ),
+		/datum/reagent/acid/sulphuric =                            list( -1,    0,   0  ),
 		/datum/reagent/acid/hydrochloric =               list( -1,    0,   0  ),
-		/datum/reagent/acid/polyacid =                   list( -2,    0,   0  ),
-		/datum/reagent/toxin/plantbgone =                list( -2,    0,   0.2),
-		/datum/reagent/cryoxadone =                      list(  3,    0,   0  ),
+		/datum/reagent/acid/polytrinic =                   list( -2,    0,   0  ),
+		/datum/reagent/toxin/plant_b_gone =                list( -2,    0,   0.2),
+		/datum/reagent/medicine/cryogenic/cryoxadone =                      list(  3,    0,   0  ),
 		/datum/reagent/ammonia =                         list(  0.5,  0,   0  ),
 		/datum/reagent/diethylamine =                    list(  1,    0,   0  ),
 		/datum/reagent/nutriment =                       list(  0.5,  0.1, 0  ),
 		/datum/reagent/radium =                          list( -1.5,  0,   0.2),
 		/datum/reagent/adminordrazine =                  list(  1,    1,   1  ),
-		/datum/reagent/toxin/fertilizer/robustharvest =  list(  0,    0.2, 0  ),
-		/datum/reagent/toxin/fertilizer/left4zed =       list(  0,    0,   0.2),
+		/datum/reagent/toxin/fertilizer/robust_harvest =  list(  0,    0.2, 0  ),
+		/datum/reagent/toxin/fertilizer/left_4_zed =       list(  0,    0,   0.2),
 		/datum/reagent/three_eye =                       list(  -1  , 0,   0.5)
 		)
 
@@ -130,8 +130,8 @@
 	// than a bound as the lists above specify.
 	var/global/list/mutagenic_reagents = list(
 		/datum/reagent/radium =  8,
-		/datum/reagent/mutagen = 15,
-		/datum/reagent/toxin/fertilizer/left4zed = 30)
+		/datum/reagent/unstable_mutagen = 15,
+		/datum/reagent/toxin/fertilizer/left_4_zed = 30)
 
 /obj/machinery/portable_atmospherics/hydroponics/AltClick()
 	if(mechanical && !usr.incapacitated() && Adjacent(usr))
@@ -431,7 +431,7 @@
 			to_chat(user, SPAN_WARNING("The plant is dead."))
 			return
 
-		var/needed_skill = seed.mysterious ? SKILL_ADEPT : SKILL_BASIC
+		var/needed_skill = seed.mysterious ? SKILL_TRAINED : SKILL_BASIC
 		if(prob(user.skill_fail_chance(SKILL_BOTANY, 90, needed_skill)))
 			to_chat(user, SPAN_WARNING("You failed to get a usable sample."))
 		else
@@ -477,7 +477,7 @@
 			user.visible_message("<span class='notice'>[user] starts uprooting the weeds.</span>", "<span class='notice'>You remove the weeds from the [src].</span>")
 			weedlevel = 0
 			if(seed)
-				var/needed_skill = seed.mysterious ? SKILL_ADEPT : SKILL_BASIC
+				var/needed_skill = seed.mysterious ? SKILL_TRAINED : SKILL_BASIC
 				if(!user.skill_check(SKILL_BOTANY, needed_skill))
 					health -= rand(40,60)
 					check_health(1)
@@ -546,7 +546,7 @@
 	health = (istype(S, /obj/item/seeds/cutting) ? round(seed.get_trait(TRAIT_ENDURANCE)/rand(2,5)) : seed.get_trait(TRAIT_ENDURANCE))
 	lastcycle = world.time
 
-	var/needed_skill = seed.mysterious ? SKILL_ADEPT : SKILL_BASIC
+	var/needed_skill = seed.mysterious ? SKILL_TRAINED : SKILL_BASIC
 	if(prob(user.skill_fail_chance(SKILL_BOTANY, 40, needed_skill)))
 		dead = 1
 		health = 0
@@ -643,4 +643,3 @@
 	else if(harvest)
 		harvest()
 	return TRUE
-

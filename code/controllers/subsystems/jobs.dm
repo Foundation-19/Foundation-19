@@ -1,15 +1,15 @@
-var/const/ENG = FLAG(0)
-var/const/SEC = FLAG(1)
-var/const/MED = FLAG(2)
-var/const/SCI = FLAG(3)
-var/const/CIV = FLAG(4)
-var/const/COM = FLAG(5)
-var/const/MSC = FLAG(6)
-var/const/SRV = FLAG(7)
-var/const/SUP = FLAG(8)
-var/const/SPT = FLAG(9)
-var/const/EXP = FLAG(10)
-var/const/ROB = FLAG(11)
+var/const/ENG               =(1<<0)
+var/const/SEC               =(1<<1)
+var/const/MED               =(1<<2)
+var/const/SCI               =(1<<3)
+var/const/CIV               =(1<<4)
+var/const/COM               =(1<<5)
+var/const/MSC               =(1<<6)
+var/const/SRV               =(1<<7)
+var/const/SUP               =(1<<8)
+var/const/SPT               =(1<<9)
+var/const/EXP               =(1<<10)
+var/const/ROB               =(1<<11)
 
 SUBSYSTEM_DEF(jobs)
 	name = "Jobs"
@@ -537,14 +537,20 @@ SUBSYSTEM_DEF(jobs)
 	if(job.req_admin_notify)
 		to_chat(H, "<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>")
 
-	if (H.disabilities & NEARSIGHTED) //Try to give glasses to the vision impaired
-		H.equip_to_slot_or_del(new /obj/item/clothing/glasses/prescription(H), slot_glasses)
+	//Gives glasses to the vision impaired
+	if(H.disabilities & NEARSIGHTED)
+		var/equipped = H.equip_to_slot_or_del(new /obj/item/clothing/glasses/prescription(H), slot_glasses)
+		if(equipped)
+			var/obj/item/clothing/glasses/G = H.glasses
+			G.prescription = 7
 
-	SET_BIT(H.hud_updateflag, ID_HUD)
-	SET_BIT(H.hud_updateflag, IMPLOYAL_HUD)
-	SET_BIT(H.hud_updateflag, SPECIALROLE_HUD)
+	BITSET(H.hud_updateflag, ID_HUD)
+	BITSET(H.hud_updateflag, IMPLOYAL_HUD)
+	BITSET(H.hud_updateflag, SPECIALROLE_HUD)
 
 	job.post_equip_rank(H, alt_title || rank)
+
+	INVOKE_ASYNC(GLOBAL_PROC, .proc/show_location_blurb, H.client, 30)
 
 	return H
 
@@ -559,3 +565,8 @@ SUBSYSTEM_DEF(jobs)
 			continue
 		empty_playable_ai_cores += new /obj/structure/AIcore/deactivated(get_turf(S))
 	return 1
+
+/proc/show_location_blurb(client/C, duration)
+	var/area/A = get_area(C.mob)
+	var/blurb_text = "[stationdate2text()], [stationtime2text()]\n[station_name()], [A.name]"
+	show_blurb(C, duration, blurb_text, 5)

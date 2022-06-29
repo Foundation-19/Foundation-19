@@ -1,7 +1,3 @@
-
-
-
-
 var/list/explosion_turfs = list()
 
 var/explosion_in_progress = 0
@@ -111,25 +107,20 @@ proc/explosion_rec(turf/epicenter, power, shaped)
 	for(var/obj/O in src)
 		. += O.get_explosion_resistance()
 
-/turf/space
-	explosion_resistance = 3
+/turf/space/explosion_resistance = 3
 
 /turf/simulated/floor/get_explosion_resistance()
 	. = ..()
 	if(is_below_sound_pressure(src))
 		. *= 3
 
-/turf/simulated/floor
-	explosion_resistance = 1
+/turf/simulated/floor/explosion_resistance = 1
 
-/turf/simulated/mineral
-	explosion_resistance = 2
+/turf/simulated/mineral/explosion_resistance = 2
 
-/turf/simulated/shuttle/wall
-	explosion_resistance = 10
+/turf/simulated/shuttle/wall/explosion_resistance = 10
 
-/turf/simulated/wall
-	explosion_resistance = 10
+/turf/simulated/wall/explosion_resistance = 10
 
 /obj/machinery/door/get_explosion_resistance()
 	if(!density)

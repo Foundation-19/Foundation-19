@@ -1,6 +1,8 @@
 /obj/effect/overmap/visitable/sector/exoplanet/volcanic
 	name = "volcanic exoplanet"
 	desc = "A tectonically unstable planet, extremely rich in minerals."
+	scan_summary = "Tectonically unstable planet with an extremely hot atmosphere. Surface predictions indicate many surface lava flows as well as oceans of molten rock, and the atmospheric conditions are dominated by frequent ash storms."
+	scan_assessment = "Surface lava presents an extreme hazard for away crews. Use heavy caution."
 	color = "#9c2020"
 	planetary_area = /area/exoplanet/volcanic
 	rock_colors = list(COLOR_DARK_GRAY)
@@ -91,6 +93,7 @@
 	icon_state = "lava"
 	movement_delay = 4
 	dirt_color = COLOR_GRAY20
+	turf_flags = TURF_DISALLOW_BLOB
 	var/list/victims
 
 /turf/simulated/floor/exoplanet/lava/on_update_icon()

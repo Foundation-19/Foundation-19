@@ -165,7 +165,7 @@ ARMCHAIR(yellow)
 	time = 15
 
 /datum/stack_recipe/furniture/canister
-	title = "canister"
+	title = "gas canister"
 	result_type = /obj/machinery/portable_atmospherics/canister
 	req_amount = 10
 	time = 10

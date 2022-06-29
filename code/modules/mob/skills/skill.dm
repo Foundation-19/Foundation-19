@@ -13,14 +13,14 @@ GLOBAL_LIST_EMPTY(skills)
 							"Experienced"		= "Experienced Description",
 							"Master"		= "Professional Description")
 	var/difficulty = SKILL_AVERAGE         //Used to compute how expensive the skill is
-	var/default_max = SKILL_ADEPT          //Makes the skill capped at this value in selection unless overriden at job level.
+	var/default_max = SKILL_TRAINED          //Makes the skill capped at this value in selection unless overriden at job level.
 	var/prerequisites                      // A list of skill prerequisites, if needed.
 
 /decl/hierarchy/skill/proc/get_cost(var/level)
 	switch(level)
-		if(SKILL_BASIC, SKILL_ADEPT)
+		if(SKILL_BASIC, SKILL_TRAINED)
 			return difficulty
-		if(SKILL_EXPERT, SKILL_PROF)
+		if(SKILL_EXPERIENCED, SKILL_MASTER)
 			return 2*difficulty
 		else
 			return 0
@@ -115,7 +115,7 @@ GLOBAL_LIST_EMPTY(skills)
 	desc = "Allows you to operate exosuits well."
 	levels = list("Untrained" = "You are unfamiliar with exosuit controls, and if you attempt to use them you are liable to make mistakes.",
 		"Trained" = "You are proficient in exosuit operation and safety, and can use them without penalties.")
-	prerequisites = list(SKILL_EVA = SKILL_ADEPT)
+	prerequisites = list(SKILL_EVA = SKILL_TRAINED)
 	default_max = SKILL_BASIC
 	difficulty = SKILL_AVERAGE
 
@@ -129,7 +129,7 @@ GLOBAL_LIST_EMPTY(skills)
 						"Experienced"		= "You are an experienced pilot, and can safely take the helm of many types of craft. You could probably live in a spacecraft, and you're very well versed in essentially everything related to space-faring vessels. Not only can you fly a ship, but you can perform difficult maneuvers, and make most calculations related to piloting a spacecraft. You can maintain a ship. Skills of this level are typical for very experienced pilots. You have received formal piloting training.<br>- You can somewhat avoid meteors on normal speed while using tiny shuttlecrafts.",
 						"Master"		= "Not only are you an exceptional pilot, but you have mastered peripheral functions such as stellar navigation and bluespace jump plotting. You have experience performing complex maneuvers, managing squadrons of small craft, and operating in hostile environments.<br>- You can mostly avoid meteors on normal speed using any shuttlecrafts.<br>- Less meteors will hit the ship while passing through meteor fields.")
 	difficulty = SKILL_AVERAGE
-	default_max = SKILL_ADEPT
+	default_max = SKILL_TRAINED
 
 /decl/hierarchy/skill/general/hauling
 	ID = "hauling"
@@ -167,9 +167,9 @@ GLOBAL_LIST_EMPTY(skills)
 	ID = "cooking"
 	name = "Cooking"
 	desc = "Describes a character's skill at preparing meals and other consumable goods. This includes mixing alcoholic beverages."
-	levels = list( "Unskilled"			= "You barely know anything about cooking, and stick to vending machines when you can. The microwave is a device of black magic to you, and you avoid it when possible.",
+	levels = list( "Unskilled"			= "You barely know anything about cooking, and stick to vending machines when you can. The stove is a device of black magic to you, and you avoid it when possible.<br>- You can use the stove safely. Its speed increases with level.",
 						"Basic"				= "You can make simple meals and do the cooking for your family. Things like spaghetti, grilled cheese, or simple mixed drinks are your usual fare.<br>- You can safely use the blender.",
-						"Trained"			= "You can make most meals while following instructions, and they generally turn out well. You have some experience with hosting, catering, and/or bartending.<br>- You can fully operate the drink dispensers.",
+						"Trained"			= "You can make most meals while following instructions, and they generally turn out well. You have some experience with hosting, catering, and/or bartending.<br>- You can fully operate the drink dispensers.<br>- You can examine some foods to see what they turn into when microwaved.",
 						"Experienced"		= "You can cook professionally, keeping an entire crew fed easily. Your food is tasty and you don't have a problem with tricky or complicated dishes. You can be depended on to make just about any commonly-served drink.",
 						"Master"		= "Not only are you good at cooking and mixing drinks, but you can manage a kitchen staff and cater for special events. You can safely prepare exotic foods and drinks that would be poisonous if prepared incorrectly.")
 
@@ -189,9 +189,9 @@ GLOBAL_LIST_EMPTY(skills)
 	switch(level)
 		if(SKILL_BASIC)
 			return difficulty
-		if(SKILL_ADEPT, SKILL_EXPERT)
+		if(SKILL_TRAINED, SKILL_EXPERIENCED)
 			return 2*difficulty
-		if(SKILL_PROF)
+		if(SKILL_MASTER)
 			return 4*difficulty
 		else
 			return 0
@@ -210,11 +210,11 @@ GLOBAL_LIST_EMPTY(skills)
 	switch(level)
 		if(SKILL_BASIC)
 			return difficulty
-		if(SKILL_ADEPT)
+		if(SKILL_TRAINED)
 			return 2*difficulty
-		if(SKILL_EXPERT)
+		if(SKILL_EXPERIENCED)
 			return 3*difficulty
-		if(SKILL_PROF)
+		if(SKILL_MASTER)
 			return 4*difficulty
 		else
 			return 0
@@ -232,9 +232,9 @@ GLOBAL_LIST_EMPTY(skills)
 
 /decl/hierarchy/skill/security/forensics/get_cost(var/level)
 	switch(level)
-		if(SKILL_BASIC, SKILL_ADEPT, SKILL_EXPERT)
+		if(SKILL_BASIC, SKILL_TRAINED, SKILL_EXPERIENCED)
 			return difficulty * 2
-		if(SKILL_PROF)
+		if(SKILL_MASTER)
 			return 3 * difficulty
 		else
 			return 0

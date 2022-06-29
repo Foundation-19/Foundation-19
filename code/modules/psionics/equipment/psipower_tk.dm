@@ -1,7 +1,8 @@
 /obj/item/psychic_power/telekinesis
 	name = "telekinetic grip"
-	maintain_cost = 6
+	maintain_cost = 1
 	icon_state = "telekinesis"
+	silent_drop = TRUE
 	var/atom/movable/focus
 
 /obj/item/psychic_power/telekinesis/Destroy()
@@ -34,7 +35,9 @@
 		. = attack_self(owner)
 		if(!.)
 			to_chat(owner, SPAN_WARNING("\The [_focus] is too hefty for you to get a mind-grip on."))
-		qdel(src)
+		else
+			owner.visible_message("<span class='notice'>\The [owner] makes a strange gesture.</span>")
+		owner.drop_from_inventory(src)
 		return FALSE
 
 	focus = _focus
@@ -52,11 +55,13 @@
 
 /obj/item/psychic_power/telekinesis/afterattack(var/atom/target, var/mob/living/user, var/proximity)
 
-	if(!target || !user || (isobj(target) && !isturf(target.loc)) || !user.psi || !user.psi.can_use() || !user.psi.spend_power(8))
+	if(!target || !user || (isobj(target) && !isturf(target.loc)) || !user.psi || !user.psi.can_use() || !user.psi.spend_power(5))
 		return
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN * 2)
-	user.psi.set_cooldown(8)
+	var/user_rank = owner.psi.get_rank(PSI_PSYCHOKINESIS) // Can only be above/equal to 4
+
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN * (8 / user_rank))
+	user.psi.set_cooldown((32 / user_rank))
 
 	var/user_psi_leech = user.do_psionics_check(5, user)
 	if(user_psi_leech)
@@ -79,16 +84,19 @@
 		sparkle()
 		if(!istype(target, /turf) && istype(focus,/obj/item) && target.Adjacent(focus))
 			var/obj/item/I = focus
-			var/resolved = target.attackby(I, user, user:get_organ_target())
+			var/resolved = target.attackby(I, user, user.get_organ_target())
 			if(!resolved && target && I)
 				I.afterattack(target,user,1) // for splashing with beakers
 		else
 			if(!focus.anchored)
-				var/user_rank = owner.psi.get_rank(PSI_PSYCHOKINESIS)
-				focus.throw_at(target, user_rank*2, user_rank*3, owner)
+				focus.throw_at(target, min(user_rank, 10), min(round(user_rank*0.8), 8), owner)
 			sleep(1)
 			sparkle()
-		owner.drop_from_inventory(src)
+		if(user_rank < PSI_RANK_PARAMOUNT) // Memes
+			owner.drop_from_inventory(src)
+
+	if(!user.psi.spend_power(2)) // So you can't spam-click kill everything that moves
+		return FALSE
 
 /obj/item/psychic_power/telekinesis/proc/sparkle()
 	set waitfor = 0

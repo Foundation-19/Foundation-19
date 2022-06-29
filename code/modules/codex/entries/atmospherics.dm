@@ -167,10 +167,14 @@
 /datum/codex_entry/atmos_canister
 	display_name = "gas canister" // because otherwise it shows up as 'canister: [caution]'
 	associated_paths = list(/obj/machinery/portable_atmospherics/canister)
-	mechanics_text = "The canister can be connected to a connector port with a wrench.  Tanks of gas (the kind you can hold in your hand) \
-	can be filled by the canister, by using the tank on the canister, increasing the release pressure, then opening the valve until it is full, and then close it.  \
-	*DO NOT* remove the tank until the valve is closed.  A gas analyzer can be used to check the contents of the canister."
-	antag_text = "Canisters can be damaged, spilling their contents into the air, or you can just leave the release valve open."
+	mechanics_text = "These metal canisters hold large amounts of gas under pressure. Tanks of gas (the kind you can hold in your hand) \
+	can be filled by the canister, by using the tank on the canister, increasing the release pressure, then opening the valve until it is full, and then closing it. \
+	*DO NOT* remove the tank until the valve is closed!<br><br>\
+	A wrench can be used to connect a canister to a port, or disconnect it. \
+	A gas analyzer, or a PDA with a gas analyzer program, can be used to check the contents of the canister. \
+	Duct tape can be used to repair damage, or a welding tool can be used to deconstruct it, as long as it's mostly empty (or has been destroyed.)"
+	antag_text = "Canisters take damage from attacks, bullets, and extreme temperatures, and can rupture, instantly spilling all their contents into the air. \
+	You can also just leave the release valve open. Fires can also occur <i>inside</i> of canisters, which can be hilariously terrifying."
 
 //Portable pumps
 /datum/codex_entry/atmos_power_pump

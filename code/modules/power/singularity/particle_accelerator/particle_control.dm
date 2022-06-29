@@ -50,7 +50,7 @@
 		update_use_power(POWER_USE_IDLE)
 		active = 0
 		connected_parts = list()
-
+	power_change()
 	return
 
 /obj/machinery/particle_accelerator/control_box/on_update_icon()

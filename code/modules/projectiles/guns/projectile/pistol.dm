@@ -1,19 +1,12 @@
+
 /obj/item/gun/projectile/pistol
-	icon = 'icons/obj/gun.dmi'
-	name = "MK3 Prologue"
-	desc = "A somewhat outdated 9mm pistol of the SCP Foundation, based on the Makarov."
-	icon_state = "pistol"
-	caliber = "9mm"
-	silenced = 0
-	fire_delay = 5 //making it pretty shit
 	load_method = MAGAZINE
-	w_class = ITEM_SIZE_NORMAL
-	magazine_type = /obj/item/ammo_magazine/scp
-	allowed_magazines = /obj/item/ammo_magazine/scp
+	caliber = CALIBER_PISTOL
+	magazine_type = /obj/item/ammo_magazine/pistol
+	allowed_magazines = /obj/item/ammo_magazine/pistol
 	accuracy_power = 7
 	var/empty_icon = TRUE  //If it should change icon when empty
 	var/ammo_indicator = FALSE
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
 
 /obj/item/gun/projectile/pistol/on_update_icon()
 	..()
@@ -30,20 +23,7 @@
 			return
 		else
 			overlays += image(icon, "ammo_ok")
-
-/obj/item/gun/projectile/pistol/mk9
-	name = "MK9 Envy"
-	desc = "Standard issue 9mm pistol of the SCP Foundation, based on the Makarov."
-	icon_state = "MK9"
-	w_class = ITEM_SIZE_NORMAL
-	caliber = "9mm"
-	silenced = 0
-	fire_delay = 4
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
-	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/scp/mk9
-	allowed_magazines = list(/obj/item/ammo_magazine/scp/mk9, /obj/item/ammo_magazine/scp/mk9/rubber)
-
+	
 /obj/item/gun/projectile/pistol/military
 	name = "military pistol"
 	desc = "The Hephaestus Industries P20 - a mass produced kinetic sidearm in widespread service with the SCGDF."
@@ -124,6 +104,31 @@
 	else
 		icon_state = "[base_icon]-e"
 
+/obj/item/gun/projectile/pistol/gyropistol
+	name = "gyrojet pistol"
+	desc = "A bulky pistol designed to fire self propelled rounds."
+	icon = 'icons/obj/guns/gyropistol.dmi'
+	icon_state = "gyropistol"
+	max_shells = 8
+	caliber = CALIBER_GYROJET
+	origin_tech = list(TECH_COMBAT = 3)
+	magazine_type = /obj/item/ammo_magazine/gyrojet
+	allowed_magazines = /obj/item/ammo_magazine/gyrojet
+	handle_casings = CLEAR_CASINGS	//the projectile is the casing
+	fire_delay = 25
+	auto_eject = 1
+	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
+	mag_insert_sound = 'sound/weapons/guns/interaction/hpistol_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/hpistol_magout.ogg'
+	empty_icon = FALSE
+
+/obj/item/gun/projectile/pistol/gyropistol/on_update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "gyropistolloaded"
+	else
+		icon_state = "gyropistol"
+
 /obj/item/gun/projectile/pistol/holdout
 	name = "holdout pistol"
 	desc = "The Lumoco Arms P3 Whisper. A small, easily concealable gun."
@@ -187,39 +192,3 @@
 	icon = 'icons/obj/guns/holdout_pistol.dmi'
 	icon_state = "silencer"
 	w_class = ITEM_SIZE_SMALL
-
-/obj/item/gun/projectile/pistol/broomstick
-	name = "broomstick"
-	desc = "An antique gun that makes you want to yell 'IT BELONGS IN A MUSEUM!'. There appears to be some thing scratched next to the fireselector, though you cant make it out."
-	icon = 'icons/obj/guns/broomstick.dmi'
-	icon_state = "broomstick"
-	accuracy_power = 6
-	one_hand_penalty = 3
-	fire_delay = 5
-	caliber = CALIBER_PISTOL_SMALL
-	origin_tech = list(
-						TECH_COMBAT = 2,
-						TECH_MATERIAL = 2
-						)
-	load_method = SINGLE_CASING|SPEEDLOADER
-	max_shells = 10
-
-	firemodes = list(
-		list(
-			mode_name="semi auto",
-			burst=1,
-			fire_delay=5,
-			move_delay=null,
-			one_hand_penalty=5,
-			burst_accuracy=null,
-			dispersion=null
-			),
-		list(
-			mode_name="scratched out option",
-			burst=10,
-			fire_delay=1,
-			one_hand_penalty=8,
-			burst_accuracy = list(0,-1,-2,-3,-4,-4,-4,-4,-4),
-			dispersion = list(1.0, 1.0, 1.0, 1.0, 1.2)
-			)
-		)

@@ -14,11 +14,11 @@
 	machine_name = "sleeper"
 	machine_desc = "Sleepers are high-powered, full-body beds that can synthesize and inject simple chemicals, as well as dialyze substances from a patient's blood and slow down their body functions."
 	var/mob/living/carbon/human/occupant = null
-	var/list/base_chemicals = list("Inaprovaline" = /datum/reagent/inaprovaline, "Paracetamol" = /datum/reagent/paracetamol, "Dylovene" = /datum/reagent/dylovene, "Dexalin" = /datum/reagent/dexalin)
+	var/list/base_chemicals = list("Inaprovaline" = /datum/reagent/medicine/inaprovaline, "Paracetamol" = /datum/reagent/medicine/painkiller/paracetamol, "Dylovene" = /datum/reagent/medicine/dylovene, "Dexalin" = /datum/reagent/medicine/dexalin)
 	var/list/available_chemicals = list()
-	var/list/upgrade_chemicals = list("Kelotane" = /datum/reagent/kelotane)
-	var/list/upgrade2_chemicals = list("Hyronalin" = /datum/reagent/hyronalin)
-	var/list/antag_chemicals = list("Hair Remover" = /datum/reagent/toxin/hair_remover, "Chloral Hydrate" = /datum/reagent/chloralhydrate)
+	var/list/upgrade_chemicals = list("Imidazoline" = /datum/reagent/medicine/imidazoline, "Alkysine" = /datum/reagent/medicine/alkysine, "Hyronalin" = /datum/reagent/medicine/hyronalin)
+	var/list/upgrade2_chemicals = list("Bicaridine" = /datum/reagent/medicine/bicaridine, "Kelotane" = /datum/reagent/medicine/kelotane)
+	var/list/antag_chemicals = list("Hair Remover" = /datum/reagent/toxin/hair_remover, "Chloral Hydrate" = /datum/reagent/chloral_hydrate)
 	var/obj/item/reagent_containers/glass/beaker = null
 	var/filtering = 0
 	var/pump
@@ -44,12 +44,14 @@
 			to_chat(user, "It is loaded with a beaker.")
 		if(occupant)
 			occupant.examine(arglist(args))
-		if (emagged && user.skill_check(SKILL_MEDICAL, SKILL_EXPERT))
+		if (emagged && user.skill_check(SKILL_MEDICAL, SKILL_EXPERIENCED))
 			to_chat(user, "The sleeper chemical synthesis controls look tampered with.")
 
 
 /obj/machinery/sleeper/Process()
 	if(stat & (NOPOWER|BROKEN))
+		if(occupant)
+			go_out()
 		return
 
 	if(filtering > 0)
@@ -108,7 +110,7 @@
 	data["reagents"] = reagents.Copy()
 
 	if(istype(occupant))
-		var/scan = user.skill_check(SKILL_MEDICAL, SKILL_ADEPT) ? medical_scan_results(occupant) : "<span class='white'><b>Contains: \the [occupant]</b></span>"
+		var/scan = user.skill_check(SKILL_MEDICAL, SKILL_TRAINED) ? medical_scan_results(occupant) : "<span class='white'><b>Contains: \the [occupant]</b></span>"
 		scan = replacetext(scan,"'scan_notice'","'white'")
 		scan = replacetext(scan,"'scan_warning'","'average'")
 		scan = replacetext(scan,"'scan_danger'","'bad'")

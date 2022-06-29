@@ -13,7 +13,6 @@
 	desc = "Blue Pride, Galaxy Wide."
 	icon_state = "bluetag"
 	blood_overlay_type = "armor"
-	item_flags = null
 	body_parts_covered = UPPER_TORSO
 	allowed = list (/obj/item/gun/energy/lasertag/blue)
 	siemens_coefficient = 3.0
@@ -23,7 +22,6 @@
 	desc = "Reputed to go faster."
 	icon_state = "redtag"
 	blood_overlay_type = "armor"
-	item_flags = null
 	body_parts_covered = UPPER_TORSO
 	allowed = list (/obj/item/gun/energy/lasertag/red)
 	siemens_coefficient = 3.0
@@ -110,7 +108,6 @@
 	icon_state = "syndicate"
 	desc = "A plastic replica of the syndicate space suit, you'll look just like a real murderous syndicate agent in this! This is a toy, it is not made for use in space!"
 	w_class = ITEM_SIZE_NORMAL
-	item_flags = null
 	allowed = list(/obj/item/device/flashlight,/obj/item/tank/emergency,/obj/item/toy)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|HANDS|LEGS|FEET
@@ -161,7 +158,6 @@
 	name = "cardborg suit"
 	desc = "An ordinary cardboard box with holes cut in the sides."
 	icon_state = "cardborg"
-	item_flags = null
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	flags_inv = HIDEJUMPSUIT
 
@@ -227,48 +223,14 @@
 	desc = "A flowing, black coat."
 	icon_state = "neocoat"
 
-//stripper
-/obj/item/clothing/under/stripper
-	body_parts_covered = 0
-
-/obj/item/clothing/under/stripper/stripper_pink
-	name = "pink swimsuit"
-	desc = "A rather skimpy pink swimsuit."
-	icon_state = "stripper_p_under"
-	siemens_coefficient = 1
-
-/obj/item/clothing/under/stripper/stripper_green
-	name = "green swimsuit"
-	desc = "A rather skimpy green swimsuit."
-	icon_state = "stripper_g_under"
-	siemens_coefficient = 1
-
-/obj/item/clothing/suit/stripper/stripper_pink
-	name = "pink skimpy dress"
-	desc = "A rather skimpy pink dress."
-	icon_state = "stripper_p_over"
-	siemens_coefficient = 1
-
-/obj/item/clothing/suit/stripper/stripper_green
-	name = "green skimpy dress"
-	desc = "A rather skimpy green dress."
-	icon_state = "stripper_g_over"
-	siemens_coefficient = 1
-
-/obj/item/clothing/under/stripper/mankini
-	name = "mankini"
-	desc = "No honest man would wear this abomination."
-	icon_state = "mankini"
-	siemens_coefficient = 1
-
 /obj/item/clothing/suit/xenos
 	name = "xenos suit"
 	desc = "A suit made out of chitinous alien hide."
 	icon_state = "xenos"
-	item_flags = null
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	siemens_coefficient = 2.0
+
 //swimsuit
 /obj/item/clothing/under/swimsuit/
 	siemens_coefficient = 1
@@ -338,6 +300,8 @@
 	name = "bomber jacket"
 	desc = "A thick, well-worn WW2 leather bomber jacket."
 	icon_state = "bomber"
+	icon_open = "bomber_open"
+	icon_closed = "bomber"
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20
@@ -359,17 +323,23 @@
 	name = "leather jacket"
 	desc = "A brown leather coat."
 	icon_state = "brown_jacket"
+	icon_open = "brown_jacket_open"
+	icon_closed = "brown_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/toggle/brown_jacket/nanotrasen
 	name = "\improper NanoTrasen leather jacket"
 	desc = "A brown leather coat. The NanoTrasen logo is proudly displayed on the back."
 	icon_state = "brown_jacket_nt"
+	icon_open = "brown_jacket_nt_open"
+	icon_closed = "brown_jacket_nt"
 
 /obj/item/clothing/suit/storage/toggle/agent_jacket
 	name = "agent jacket"
 	desc = "A black leather jacket belonging to an agent of the Sol Federal Police."
 	icon_state = "agent_jacket"
+	icon_open = "agent_jacket_open"
+	icon_closed = "agent_jacket"
 	valid_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA)
 	body_parts_covered = UPPER_TORSO|ARMS
 
@@ -377,6 +347,8 @@
 	name = "hoodie"
 	desc = "A warm sweatshirt."
 	icon_state = "hoodie"
+	icon_open = "hoodie_open"
+	icon_closed = "hoodie"
 	min_cold_protection_temperature = T0C - 20
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
 
@@ -384,21 +356,29 @@
 	name = "\improper CTI hoodie"
 	desc = "A warm, black sweatshirt.  It bears the letters 'CTI' on the back, a lettering to the prestigious university in Tau Ceti, Ceti Technical Institute.  There is a blue supernova embroidered on the front, the emblem of CTI."
 	icon_state = "cti_hoodie"
+	icon_open = "cti_hoodie_open"
+	icon_closed = "cti_hoodie"
 
 /obj/item/clothing/suit/storage/toggle/hoodie/mu
 	name = "\improper Mariner University hoodie"
 	desc = "A warm, gray sweatshirt.  It bears the letters 'MU' on the front, a lettering to the well-known public college, Mariner University."
 	icon_state = "mu_hoodie"
+	icon_open = "mu_hoodie_open"
+	icon_closed = "mu_hoodie"
 
 /obj/item/clothing/suit/storage/toggle/hoodie/nt
 	name = "\improper NanoTrasen hoodie"
 	desc = "A warm, blue sweatshirt. It proudly bears the NanoTrasen logo on the back. The edges are trimmed with silver."
 	icon_state = "nt_hoodie"
+	icon_open = "nt_hoodie_open"
+	icon_closed = "nt_hoodie"
 
 /obj/item/clothing/suit/storage/toggle/hoodie/smw
 	name = "\improper Space Mountain Wind hoodie"
 	desc = "A warm, black sweatshirt.  It has the logo for the popular softdrink Space Mountain Wind on both the front and the back."
 	icon_state = "smw_hoodie"
+	icon_open = "smw_hoodie_open"
+	icon_closed = "smw_hoodie"
 
 /obj/item/clothing/suit/storage/toggle/hoodie/black
 	name = "black hoodie"
@@ -452,31 +432,43 @@
 	name = "track jacket"
 	desc = "A track jacket, for the athletic."
 	icon_state = "trackjacket"
+	icon_open = "trackjacket_open"
+	icon_closed = "trackjacket"
 
 /obj/item/clothing/suit/storage/toggle/track/blue
 	name = "blue track jacket"
 	desc = "A blue track jacket, for the athletic."
 	icon_state = "trackjacketblue"
+	icon_open = "trackjacketblue_open"
+	icon_closed = "trackjacketblue"
 
 /obj/item/clothing/suit/storage/toggle/track/green
 	name = "green track jacket"
 	desc = "A green track jacket, for the athletic."
 	icon_state = "trackjacketgreen"
+	icon_open = "trackjacketgreen_open"
+	icon_closed = "trackjacketgreen"
 
 /obj/item/clothing/suit/storage/toggle/track/red
 	name = "red track jacket"
 	desc = "A red track jacket, for the athletic."
 	icon_state = "trackjacketred"
+	icon_open = "trackjacketred_open"
+	icon_closed = "trackjacketred"
 
 /obj/item/clothing/suit/storage/toggle/track/white
 	name = "white track jacket"
 	desc = "A white track jacket, for the athletic."
 	icon_state = "trackjacketwhite"
+	icon_open = "trackjacketwhite_open"
+	icon_closed = "trackjacketwhite"
 
 /obj/item/clothing/suit/storage/toggle/track/gcc
 	name = "GCC track jacket"
 	desc = "An Independent track jacket, for the truly cheeki breeki."
 	icon_state = "trackjackettcc"
+	icon_open = "trackjackettcc_open"
+	icon_closed = "trackjackettcc"
 
 /obj/item/clothing/suit/rubber
 	name = "human suit"
@@ -513,15 +505,3 @@
 
 /obj/item/clothing/suit/hospital/pink
 	color = "#ffb7db"
-
-
-/obj/item/clothing/suit/storage/toggle/zipper
-	name = "zip up sweater"
-	desc = "A black sweater that zips up in the front."
-	icon_state = "zipperjacket"
-
-
-/obj/item/clothing/suit/storage/pullover
-	name = "pullover sweater"
-	desc = "A sweater made of a soft material with a short zipper on the collar."
-	icon_state = "pullover"

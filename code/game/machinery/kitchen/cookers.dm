@@ -1,7 +1,7 @@
 
 #define MAX_FOOD_COOK_COUNT 3
 
-#define COOKER_STRIP_RAW FLAG(0)
+#define COOKER_STRIP_RAW 0x1
 
 /obj/item/reagent_containers/food/snacks/var/list/cooked_with
 
@@ -67,6 +67,7 @@
 	icon_state = "[initial(icon_state)]_on"
 	started = world.time
 	threshold = 0
+	playsound(src, 'sound/machines/quiet_beep.ogg', 50, FALSE)
 
 /obj/machinery/cooker/proc/disable()
 	update_use_power(idle_power_usage)
@@ -78,46 +79,69 @@
 		I.dropInto(loc)
 	cooking.Cut()
 
-/obj/machinery/cooker/attack_hand(mob/user)
-	. = ..()
-	if (.)
-		return
+/obj/machinery/cooker/interface_interact(mob/living/user)
+	var/dat = ""
+	if (stat)
+		dat += UI_FONT_BAD("\The [src] is in no condition to operate.")
+	else
+		dat += "[UIBUTTON("empty_cooker", "Empty Ingredients", null)]<br>"
+		dat += "[UIBUTTON("toggle_state", "Turn [is_processing ? "Off" : "On"]", null)]<br>"
+		if (cook_modes.len > 1)
+			dat += "[UIBUTTON("cook_mode", "Change Cook Mode", null)] (current: [cook_mode])"
+		dat += "<br><hr>"
+		dat += "<b>Contents[is_processing ? UI_FONT_BAD(" (<i>Cooking!</i>)") : ""]:</b><br>"
+		if (!LAZYLEN(cooking))
+			dat += UI_FONT_BAD("None!")
+		else
+			var/list/item_counts = list()
+			for (var/obj/item/I in cooking)
+				item_counts[I.name]++
+			for (var/V in item_counts)
+				var/N = item_counts[V]
+				dat += "[N] [V]\s<br>"
+
+	var/datum/browser/popup = new(user, "cooker", name, 350, 300, src)
+	popup.set_content(dat)
+	popup.open()
+
+/obj/machinery/cooker/OnTopic(mob/user, href_list, datum/topic_state/state)
 	if (stat)
 		to_chat(user, SPAN_WARNING("\The [src] is in no condition to operate."))
 		return
-	var/option = alert(user, "", "[src] Options", "Empty", "Turn [is_processing ? "Off" : "On"]", cook_modes.len > 1 ? "Cook Mode" : null)
-	if (!option || QDELETED(src) || stat)
-		return
-	if (!Adjacent(user) || user.stat)
-		to_chat(user, SPAN_WARNING("You're not able to do that to \the [src] right now."))
-		return
-	switch (option)
-		if ("Empty")
-			if (is_processing)
-				to_chat(user, SPAN_WARNING("Turn off \the [src] first."))
-				return
-			if (!length(cooking))
-				to_chat(user, SPAN_WARNING("\The [src] is already empty."))
-				return
+	else if (href_list["empty_cooker"])
+		if (is_processing)
+			to_chat(user, SPAN_WARNING("Turn off \the [src] first."))
+			return
+		else if(length(cooking))
 			empty()
-		if ("Turn Off")
+		interface_interact(user)
+	else if (href_list["toggle_state"])
+		if (is_processing)
+			user.visible_message(
+				SPAN_NOTICE("\The [user] turns off \the [src]."),
+				SPAN_NOTICE("You turn off \the [src].")
+			)
 			disable()
-			visible_message(SPAN_NOTICE("\The [user] turns off \the [src]."), SPAN_NOTICE("You turn off \the [src]."), range = 5)
-		if ("Turn On")
+		else
+			user.visible_message(
+				SPAN_NOTICE("\The [user] turns on \the [src]."),
+				SPAN_NOTICE("You turn on \the [src].")
+			)
 			enable()
-			visible_message(SPAN_NOTICE("\The [user] turns on \the [src]."), SPAN_NOTICE("You turn on \the [src]."), range = 5)
-		if ("Cook Mode")
-			if (is_processing)
-				to_chat(user, SPAN_WARNING("Turn off \the [src] first."))
-				return
-			var/mode = input(user, "", "[src] Cook Modes") as null|anything in cook_modes
-			if (!mode || QDELETED(src) || stat)
-				return
-			if (!Adjacent(user) || user.stat)
-				to_chat(user, SPAN_WARNING("You're not able to do that to \the [src] right now."))
-				return
-			cook_mode = mode
-			to_chat(user, "The contents of \the [src] will now be [cook_modes[mode]["desc"]].")
+		interface_interact(user)
+	else if (href_list["cook_mode"])
+		if (is_processing)
+			to_chat(user, SPAN_WARNING("Turn off \the [src] first."))
+			return
+		var/mode = input(user, "", "[src] Cook Modes") as null|anything in cook_modes
+		if (!mode || QDELETED(src) || !operable())
+			return
+		if (!CanDefaultInteract(user))
+			to_chat(user, SPAN_WARNING("You're not able to do that to \the [src] right now."))
+			return
+		cook_mode = mode
+		to_chat(user, "The contents of \the [src] will now be [cook_modes[mode]["desc"]].")
+		interface_interact(user)
 
 /obj/machinery/cooker/attackby(obj/item/I, mob/user)
 	if (is_processing)
@@ -140,6 +164,7 @@
 	user.visible_message("\The [user] puts \the [I] into \the [src].")
 	I.forceMove(src)
 	cooking += I
+	interface_interact(user)
 
 /obj/machinery/cooker/Process()
 	if (!cooking.len)
@@ -155,8 +180,8 @@
 			cooking += cook_item(source[index])
 			--index
 		QDEL_NULL_LIST(source)
-		audible_message(SPAN_ITALIC("\The [src] lets out a happy ding."))
-		playsound(src, 'sound/machines/ding.ogg', 0.5)
+		audible_message(SPAN_NOTICE("\The [src] lets out a happy ding."))
+		playsound(src, 'sound/machines/ding.ogg', 50, FALSE)
 		threshold = 1
 	if (!burn_time)
 		empty()
@@ -217,7 +242,7 @@
 	result.filling_color = BlendRGB(source.color || "#ffffff", result.color || "#ffffff", 0.5)
 	if (result.type != /obj/item/reagent_containers/food/snacks/variable && istype(result, /obj/item/reagent_containers/food/snacks/variable))
 		var/image/I = image(result.icon, result, "[result.icon_state]_filling")
-		I.appearance_flags = DEFAULT_APPEARANCE_FLAGS | RESET_COLOR
+		I.appearance_flags = RESET_COLOR
 		I.color = result.filling_color
 		result.overlays += I
 
@@ -255,7 +280,7 @@
 			"desc" = "made into jelly"
 		)
 	)
-	
+
 	machine_name = "modular cooker"
 	machine_desc = "Can prepare nearly any kind of food a certain way, such as making pies, cookies, or candy bars."
 

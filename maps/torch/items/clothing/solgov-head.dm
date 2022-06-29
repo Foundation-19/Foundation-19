@@ -30,6 +30,18 @@
 	desc = "It's a black ballcap bearing the Expeditonary Corps crest. The brim has gold trim."
 	icon_state = "expeditioncomsoft"
 
+/obj/item/clothing/head/soft/solgov/fleet/hijab
+	name = "fleet hijab"
+	desc = "It's a veil which is wrapped to cover the head and chest.  This one is tighter fitting and has a Fleet insignia embroidered into it."
+	icon_state = "hijab_fleet"
+	flags_inv = HIDEEARS|BLOCKHEADHAIR
+
+/obj/item/clothing/head/soft/solgov/fleet/turban
+	name = "fleet turban"
+	desc = "It's a sturdy cloth, worn around the head.  This one is tighter fitting and has a Fleet insignia embroidered into it."
+	icon_state = "turban_fleet"
+	flags_inv = BLOCKHEADHAIR
+
 /obj/item/clothing/head/soft/solgov/fleet
 	name = "fleet cap"
 	desc = "It's a navy blue field cap with the SCG Fleet crest in a silver colour."
@@ -378,7 +390,7 @@
 //helmets and other such trash
 
 /obj/item/clothing/head/helmet/solgov
-	accessories = list(/obj/item/clothing/accessory/helmet_cover/blue/sol)
+	starting_accessories = list(/obj/item/clothing/accessory/armor/helmcover/blue/sol)
 
 /obj/item/clothing/head/helmet/solgov/security
 	name = "security helmet"
@@ -386,7 +398,7 @@
 	icon_state = "helmet_security"
 	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
-	accessories = null
+	starting_accessories = null
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_head_helmet_unathi.dmi'
 		)
@@ -397,13 +409,13 @@
 	icon_state = "helmet_command"
 	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
-	accessories = null
+	starting_accessories = null
 
 /obj/item/clothing/head/helmet/solgov/pilot
 	name = "pilot's helmet"
 	desc = "A pilot's helmet for operating the cockpit in style. For when you want to protect your noggin AND look stylish."
 	icon_state = "pilotgov"
-	accessories = null
+	starting_accessories = null
 
 /obj/item/clothing/head/helmet/solgov/pilot/fleet
 	name = "fleet pilot's helmet"
@@ -411,7 +423,7 @@
 	icon_state = "pilotfleet"
 	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
-	accessories = null
+	starting_accessories = null
 
 /obj/item/clothing/head/helmet/space/void/exploration
 	camera = /obj/machinery/camera/network/exploration

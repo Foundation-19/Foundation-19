@@ -16,7 +16,6 @@
 	max_w_class = ITEM_SIZE_SMALL
 	max_storage_space = DEFAULT_BOX_STORAGE
 	use_sound = 'sound/effects/storage/box.ogg'
-	allow_slow_dump = TRUE
 
 /obj/item/storage/firstaid/empty
 	icon_state = "firstaid"
@@ -45,7 +44,7 @@
 
 /obj/item/storage/firstaid/trauma/New()
 	..()
-	icon_state = pick("radfirstaid", "radfirstaid2", "radfirstaid3")
+	icon_state = pick("radfirstaid", "radfirstaid2")
 
 /obj/item/storage/firstaid/fire
 	name = "fire first-aid kit"
@@ -73,7 +72,7 @@
 
 /obj/item/storage/firstaid/toxin/New()
 	..()
-	icon_state = pick("antitoxin","antitoxfirstaid","antitoxfirstaid2","antitoxfirstaid3")
+	icon_state = pick("antitoxin","antitoxfirstaid")
 
 /obj/item/storage/firstaid/o2
 	name = "oxygen deprivation first aid"
@@ -88,7 +87,7 @@
 /obj/item/storage/firstaid/adv
 	name = "advanced first-aid kit"
 	desc = "Contains advanced medical treatments."
-	icon_state = "purplefirstaid"
+	icon_state = "doctor-kit"
 	item_state = "firstaid-advanced"
 
 	startswith = list(

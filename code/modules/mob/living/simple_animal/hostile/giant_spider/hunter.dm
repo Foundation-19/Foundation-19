@@ -5,18 +5,20 @@
 /mob/living/simple_animal/hostile/giant_spider/hunter
 	desc = "Furry and black, it makes you shudder to look at it. This one has sparkling purple eyes."
 
-	icon_state = "hunter"
-	icon_living = "hunter"
-	icon_dead = "hunter_dead"
+	icon_state = "black"
+	icon_living = "black"
+	icon_dead = "black_dead"
+
+
 
 	maxHealth = 120
 	health = 120
 
-	poison_per_bite = 5
+	// poison_per_bite = 5
 
 	movement_cooldown = 0 // Hunters are FAST.
 
-	ai_holder_type = /datum/ai_holder/simple_animal/melee/evasive/hunter_spider
+	ai_holder_type = /datum/ai_holder/simple_animal/melee
 
 	// Leaping is a special attack, so these values determine when leap can happen.
 	// Leaping won't occur if its on cooldown.
@@ -35,6 +37,12 @@
 			return damage_amount * 1.5
 	return ..()
 
+
+/mob/living/simple_animal/hostile/giant_spider/hunter/can_special_attack(atom/A)
+	. = ..()
+	if(.)
+		return check_solid_ground()
+	return FALSE
 
 // The actual leaping attack.
 /mob/living/simple_animal/hostile/giant_spider/hunter/do_special_attack(atom/A)
@@ -81,6 +89,3 @@
 		. = TRUE
 
 	set_AI_busy(FALSE)
-
-/datum/ai_holder/simple_animal/melee/evasive/hunter_spider
-	can_flee = TRUE

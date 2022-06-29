@@ -54,14 +54,11 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 	holder = null
 	return ..()
 
-/datum/wires/proc/get_mechanics_info()
-	return
-
 /datum/wires/proc/GenerateWires()
 	var/list/colours_to_pick = wireColours.Copy() // Get a copy, not a reference.
 	var/list/indexes_to_pick = list()
 	//Generate our indexes
-	for(var/i = 1; i < MAX_FLAG && i < SHIFTL(1, wire_count); i += i)
+	for(var/i = 1; i < MAX_FLAG && i < (1 << wire_count); i += i)
 		indexes_to_pick += i
 	colours_to_pick.len = wire_count // Downsize it to our specifications.
 
@@ -105,7 +102,7 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 
 	var/list/wires_used = list()
 	for(var/colour in wires)
-		wires_used += prob(user.skill_fail_chance(SKILL_ELECTRICAL, 20, SKILL_ADEPT)) ? pick(wires) : colour
+		wires_used += prob(user.skill_fail_chance(SKILL_ELECTRICAL, 20, SKILL_TRAINED)) ? pick(wires) : colour
 	if(!user.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
 		wires_used = shuffle(wires_used)
 
@@ -149,7 +146,7 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 					else
 						message = SPAN_NOTICE("You cut the [colour] wire.")
 
-					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 20, SKILL_ADEPT)))
+					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 20, SKILL_TRAINED)))
 						RandomCut()
 						message = SPAN_DANGER("You accidentally nick another wire in addition to the [colour] wire!")
 					else if(!L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
@@ -162,7 +159,7 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 			else if(href_list["pulse"])
 				if(isMultitool(I) || isMultitool(offhand_item))
 					var/colour = href_list["pulse"]
-					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 30, SKILL_ADEPT)))
+					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 30, SKILL_TRAINED)))
 						RandomPulse()
 						to_chat(L, "<span class='danger'>You accidentally pulse another wire instead of the [colour] wire!</span>")
 						if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 60, SKILL_BASIC)))
@@ -179,7 +176,7 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 			else if(href_list["attach"])
 				var/colour = href_list["attach"]
 				var/failed = 0
-				if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 80, SKILL_EXPERT)))
+				if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 80, SKILL_EXPERIENCED)))
 					colour = pick(wires)
 					to_chat(L, "<span class='danger'>Are you sure you got the right wire?</span>")
 					failed = 1
@@ -363,21 +360,21 @@ var/const/POWER = 8
 	CutWireColour(wires[r])
 
 /datum/wires/proc/RandomCutAll(var/probability = 10)
-	for(var/i = 1; i < MAX_FLAG && i < SHIFTL(1, wire_count); i += i)
+	for(var/i = 1; i < MAX_FLAG && i < (1 << wire_count); i += i)
 		if(prob(probability))
 			CutWireIndex(i)
 
 /datum/wires/proc/CutAll()
-	for(var/i = 1; i < MAX_FLAG && i < SHIFTL(1, wire_count); i += i)
+	for(var/i = 1; i < MAX_FLAG && i < (1 << wire_count); i += i)
 		CutWireIndex(i)
 
 /datum/wires/proc/IsAllCut()
-	if(wires_status == SHIFTL(1, wire_count) - 1)
+	if(wires_status == (1 << wire_count) - 1)
 		return 1
 	return 0
 
 /datum/wires/proc/MendAll()
-	for(var/i = 1; i < MAX_FLAG && i < SHIFTL(1, wire_count); i += i)
+	for(var/i = 1; i < MAX_FLAG && i < (1 << wire_count); i += i)
 		if(IsIndexCut(i))
 			CutWireIndex(i)
 

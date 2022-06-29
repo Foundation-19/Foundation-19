@@ -57,7 +57,9 @@
 				dat += "********************************<BR>"
 			dat += "<HR><A href='?src=\ref[src];lock=1'>Lock Console</A>"
 
-		show_browser(user, dat, "window=computer;size=400x500")
+		var/datum/browser/popup = new(user, "computer", "Prisoner Implant Management System", 400, 500)
+		popup.set_content(dat)
+		popup.open()
 		onclose(user, "computer")
 		return
 

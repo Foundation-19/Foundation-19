@@ -1,9 +1,9 @@
-var/const/TELEBEACON_WIRE_POWER     = 1
-var/const/TELEBEACON_WIRE_RELAY     = 2
-var/const/TELEBEACON_WIRE_SIGNALLER = 4
+#define TELEBEACON_WIRE_POWER       1
+#define TELEBEACON_WIRE_RELAY       2
+#define TELEBEACON_WIRE_SIGNALLER   4
 
 
-// Targetable beacon used by teleporters
+/// Targetable beacon used by teleporters.
 /obj/machinery/tele_beacon
 	name = "teleporter beacon"
 	desc = "A beacon used by a teleporter."
@@ -12,6 +12,7 @@ var/const/TELEBEACON_WIRE_SIGNALLER = 4
 	idle_power_usage = 10
 	active_power_usage = 50
 	anchored = TRUE
+	layer = EXPOSED_WIRE_TERMINAL_LAYER
 	level = 1
 
 	machine_name = "teleporter beacon"
@@ -56,20 +57,22 @@ var/const/TELEBEACON_WIRE_SIGNALLER = 4
 				return FALSE
 
 			user.visible_message(
-				SPAN_NOTICE("\The [user] starts to [anchored ? "disconnect" : "connect"] \the [src] [anchored ? "to" : "from"] \the [T]."),
-				SPAN_NOTICE("You start to [anchored ? "disconnect" : "connect"] \the [src] [anchored ? "to" : "from"] \the [T].")
+				SPAN_NOTICE("\The [user] starts to [anchored ? "disconnect" : "connect"] \the [src] [anchored ? "from" : "to"] \the [T]."),
+				SPAN_NOTICE("You start to [anchored ? "disconnect" : "connect"] \the [src] [anchored ? "from" : "to"] \the [T].")
 			)
+			playsound(loc, 'sound/items/Ratchet.ogg', 75, TRUE)
 
 			if (!do_after(user, 3 SECONDS, src, DO_DEFAULT | DO_BOTH_UNIQUE_ACT | DO_PUBLIC_PROGRESS))
 				return TRUE
 
 			anchored = !anchored
+			layer = anchored ? EXPOSED_WIRE_TERMINAL_LAYER : OBJ_LAYER
 			level = anchored ? 1 : 2
 			user.visible_message(
 				SPAN_NOTICE("\The [user] [anchored ? "connects" : "disconnects"] \the [src] [anchored ? "to" : "from"] \the [T] with \the [I]."),
 				SPAN_NOTICE("You [anchored ? "connect" : "disconnect"] \the [src] [anchored ? "to" : "from"] \the [T] with \the [I].")
 			)
-			playsound(loc, 'sound/items/Ratchet.ogg', 75, 1)
+			playsound(loc, 'sound/items/Deconstruct.ogg', 75, TRUE)
 			update_icon()
 			update_use_power(anchored ? POWER_USE_IDLE : POWER_USE_OFF)
 			if (!anchored)
@@ -79,7 +82,7 @@ var/const/TELEBEACON_WIRE_SIGNALLER = 4
 
 			return TRUE
 
-		if (isMultitool(I))
+		else if (isMultitool(I))
 			var/new_name = input(user, "What label would you like to set this beacon to? Leave empty to enable automatic naming based on area.", "Set Beacon Label", beacon_name) as text|null
 			if (QDELETED(src))
 				return TRUE
@@ -98,7 +101,10 @@ var/const/TELEBEACON_WIRE_SIGNALLER = 4
 					SPAN_NOTICE("You reconfigure \the [src]'s relay label to \"[beacon_name]\" with \the [I].")
 				)
 			return TRUE
-
+	else
+		if (isWirecutter(I) || isMultitool(I))
+			wires?.Interact(user)
+			return TRUE
 	. = ..()
 
 
@@ -129,7 +135,7 @@ var/const/TELEBEACON_WIRE_SIGNALLER = 4
 			to_chat(user, SPAN_WARNING("It appears to be offline or disabled."))
 		return
 
-	if (user.skill_check(SKILL_DEVICES, SKILL_ADEPT))
+	if (user.skill_check(SKILL_DEVICES, SKILL_TRAINED))
 		if (wires.IsIndexCut(TELEBEACON_WIRE_SIGNALLER))
 			to_chat(user, SPAN_WARNING("The signal lights appear to be disabled."))
 		else if (LAZYLEN(connected_computers))
@@ -202,7 +208,7 @@ var/const/TELEBEACON_WIRE_SIGNALLER = 4
 	if (wires.IsIndexCut(TELEBEACON_WIRE_SIGNALLER))
 		return
 	audible_message(SPAN_NOTICE("\The [src] beeps as a new teleporter links to it."))
-	playsound(loc, 'sound/machines/twobeep.ogg', 75, 1)
+	playsound(loc, 'sound/machines/twobeep.ogg', 75, TRUE)
 
 
 /// Disconnects a single hub from the beacon.
@@ -274,9 +280,9 @@ var/const/TELEBEACON_WIRE_SIGNALLER = 4
 	wire_count = 3
 	window_y = 500
 	descriptions = list(
-		new /datum/wire_description(TELEBEACON_WIRE_POWER, "This wire is connected to the power supply unit.", SKILL_EXPERT),
-		new /datum/wire_description(TELEBEACON_WIRE_RELAY, "This wire is connected to the remote relay device.", SKILL_PROF),
-		new /datum/wire_description(TELEBEACON_WIRE_SIGNALLER, "This wire is connected to a speaker and several indicator lights.", SKILL_EXPERT)
+		new /datum/wire_description(TELEBEACON_WIRE_POWER, "This wire is connected to the power supply unit.", SKILL_EXPERIENCED),
+		new /datum/wire_description(TELEBEACON_WIRE_RELAY, "This wire is connected to the remote relay device.", SKILL_MASTER),
+		new /datum/wire_description(TELEBEACON_WIRE_SIGNALLER, "This wire is connected to a speaker and several indicator lights.", SKILL_EXPERIENCED)
 	)
 
 
@@ -295,7 +301,7 @@ var/const/TELEBEACON_WIRE_SIGNALLER = 4
 		. += "<li>The panel seems to be completely unpowered or disabled.</li>"
 	else
 		. += "<li>The panel is powered.</li>"
-		if (user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
+		if (user.skill_check(SKILL_ELECTRICAL, SKILL_TRAINED))
 			. += "<li>The remote relay chip is [IsIndexCut(TELEBEACON_WIRE_RELAY) ? "disconnected" : "connected"].</li>"
 			. += "<li>The connection signaller circuitry is [IsIndexCut(TELEBEACON_WIRE_SIGNALLER) ? "disconnected" : "connected"].</li>"
 		else
@@ -332,3 +338,8 @@ var/const/TELEBEACON_WIRE_SIGNALLER = 4
 			if (IsIndexCut(TELEBEACON_WIRE_POWER))
 				return
 			tele_beacon.set_power_cut(FALSE)
+
+
+#undef TELEBEACON_WIRE_POWER
+#undef TELEBEACON_WIRE_RELAY
+#undef TELEBEACON_WIRE_SIGNALLER

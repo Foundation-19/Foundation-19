@@ -2,10 +2,9 @@
 Public vars at /obj/machinery level. Just because they are here does not mean that every machine exposes them; you must add them to the appropriate list.
 */
 
-/// Stores the on/off state of an input toggle. Used for the `input_toggle` public variable.
-/obj/machinery/var/input_toggle = FALSE
-/// Stores the identifier string of an input toggle. Used for the `input_toggle` public variable.
-/obj/machinery/var/identifier = ""
+/obj/machinery
+	var/input_toggle = FALSE
+	var/identifier = ""
 
 /decl/public_access/public_variable/input_toggle
 	expected_type = /obj/machinery
@@ -27,7 +26,6 @@ Public vars at /obj/machinery level. Just because they are here does not mean th
 	desc = "Toggles the input toggle variable."
 	call_proc = /obj/machinery/proc/toggle_input_toggle
 
-/// Handles toggling the machine's toggle variable. Used by the `toggle_input_toggle` public method.
 /obj/machinery/proc/toggle_input_toggle()
 	var/decl/public_access/public_variable/variable = decls_repository.get_decl(/decl/public_access/public_variable/input_toggle)
 	variable.write_var(src, !input_toggle)
@@ -43,7 +41,6 @@ Public vars at /obj/machinery level. Just because they are here does not mean th
 /decl/public_access/public_variable/area_uid/access_var(obj/machinery/machine)
 	return machine.area_uid()
 
-/// Retrieves the unique id of the machine's current area.
 /obj/machinery/proc/area_uid()
 	var/area/A = get_area(src)
 	return A ? A.uid : "NONE"
@@ -103,7 +100,6 @@ Public vars at /obj/machinery level. Just because they are here does not mean th
 	desc = "Turns the machine on or off."
 	call_proc = /obj/machinery/proc/toggle_power
 
-/// Toggles the machine's power state. Used by the `toggle_power` public method.
 /obj/machinery/proc/toggle_power()
 	update_use_power(!use_power)
 
@@ -112,6 +108,5 @@ Public vars at /obj/machinery level. Just because they are here does not mean th
 	desc = "Attempts to refresh the machine's status. Implementation may vary."
 	call_proc = /obj/machinery/proc/refresh
 
-/// Refreshes the machine's status. Used by the `refresh` public method.
 /obj/machinery/proc/refresh()
 	queue_icon_update()

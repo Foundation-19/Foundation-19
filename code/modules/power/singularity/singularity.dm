@@ -22,6 +22,8 @@
 	var/move_self = 1 //Do we move on our own?
 	var/grav_pull = 4 //How many tiles out do we pull?
 	var/consume_range = 0 //How many tiles out do we eat.
+	var/emp_weak_range = 5 // Light EMP radius
+	var/emp_strong_range = 3 // Heavy EMP radius
 	var/event_chance = 15 //Prob for event each tick.
 	var/target = null //Its target. Moves towards the target if it has one.
 	var/last_failed_movement = 0 //Will not move in the same dir if it couldn't before, will help with the getting stuck on fields thing.
@@ -133,9 +135,9 @@
 			dissipate_delay = 10
 			dissipate_track = 0
 			dissipate_strength = 1
+			emp_weak_range = 4
+			emp_strong_range = 3
 			overlays.Cut()
-			if(chained)
-				overlays = list("chain_s1")
 			visible_message("<span class='notice'>The singularity has shrunk to a rather pitiful size.</span>")
 		if (STAGE_TWO) //1 to 3 does not check for the turfs if you put the gens right next to a 1x1 then its going to eat them.
 			SetName("gravitational singularity")
@@ -150,9 +152,11 @@
 			dissipate_delay = 5
 			dissipate_track = 0
 			dissipate_strength = 5
+			emp_weak_range = 6
+			emp_strong_range = 4
 			overlays.Cut()
 			if(chained)
-				overlays = list("chain_s3")
+				overlays = list("emfield_s3")
 			if(growing)
 				visible_message("<span class='notice'>The singularity noticeably grows in size.</span>")
 			else
@@ -171,9 +175,11 @@
 				dissipate_delay = 4
 				dissipate_track = 0
 				dissipate_strength = 20
+				emp_weak_range = 7
+				emp_strong_range = 5
 				overlays.Cut()
 				if(chained)
-					overlays = list("chain_s5")
+					overlays = list("emfield_s5")
 				if(growing)
 					visible_message("<span class='notice'>The singularity expands to a reasonable size.</span>")
 				else
@@ -192,9 +198,11 @@
 				dissipate_delay = 10
 				dissipate_track = 0
 				dissipate_strength = 10
+				emp_weak_range = 9
+				emp_strong_range = 7
 				overlays.Cut()
 				if(chained)
-					overlays = list("chain_s7")
+					overlays = list("emfield_s7")
 				if(growing)
 					visible_message("<span class='warning'>The singularity expands to a dangerous size.</span>")
 				else
@@ -210,9 +218,11 @@
 			grav_pull = 10
 			consume_range = 4
 			dissipate = 0 //It can't go smaller due to e loss.
+			emp_weak_range = 11
+			emp_strong_range = 9
 			overlays.Cut()
 			if(chained)
-				overlays = list("chain_s9")
+				overlays = list("emfield_s9")
 			if(growing)
 				visible_message("<span class='danger'><font size='2'>The singularity has grown out of control!</font></span>")
 			else
@@ -229,8 +239,10 @@
 			consume_range = 5
 			dissipate = 0 //It can't go smaller due to e loss
 			event_chance = 25 //Events will fire off more often.
+			emp_weak_range = 13
+			emp_strong_range = 11
 			if(chained)
-				overlays = list("chain_s9")
+				overlays = list("emfield_s11")
 			visible_message("<span class='sinister'><font size='3'>You witness the creation of a destructive force that cannot possibly be stopped by human hands.</font></span>")
 
 	if (current_size == allowed_size)
@@ -248,17 +260,17 @@
 		return 0
 
 	switch (energy) //Some of these numbers might need to be changed up later -Mport.
-		if (1 to 199)
+		if (1 to 399)
 			allowed_size = STAGE_ONE
-		if (200 to 499)
+		if (400 to 799)
 			allowed_size = STAGE_TWO
-		if (500 to 999)
+		if (800 to 1199)
 			allowed_size = STAGE_THREE
-		if (1000 to 1999)
+		if (1200 to 2499)
 			allowed_size = STAGE_FOUR
-		if(2000 to 49999)
+		if(2500 to 499999)
 			allowed_size = STAGE_FIVE
-		if(50000 to INFINITY)
+		if(500000 to INFINITY)
 			allowed_size = STAGE_SUPER
 
 	if (current_size != allowed_size && current_size != STAGE_SUPER)
@@ -296,6 +308,11 @@
 
 	if(target && prob(60))
 		movement_dir = get_dir(src,target) //moves to a singulo beacon, if there is one
+
+	if(!target && (current_size >= STAGE_FIVE) && prob(5)) // Random chance to move through z-levels at later stages
+		var/turf/destination
+		destination = pick(GetAbove(src), GetBelow(src))
+		forceMove(destination)
 
 	if(current_size >= 9)//The superlarge one does not care about things in its way
 		spawn(0)
@@ -390,8 +407,8 @@
 	switch (numb)
 		if (1) //EMP.
 			emp_area()
-		if (2, 3) //Tox damage all carbon mobs in area.
-			toxmob()
+		if (2, 3) //Irradiate area
+			irradiate()
 		if (4) //Stun mobs who lack optic scanners.
 			mezzer()
 		else
@@ -401,18 +418,11 @@
 	return 1
 
 
-/obj/singularity/proc/toxmob()
-	var/toxrange = 10
-	var/toxdamage = 4
+/obj/singularity/proc/irradiate()
 	var/radiation = 15
 	if (src.energy>200)
-		toxdamage = round(((src.energy-150)/50)*4,1)
 		radiation = round(((src.energy-150)/50)*5,1)
-	SSradiation.radiate(src, radiation) //Always radiate at max, so a decent dose of radiation is applied
-	for(var/mob/living/M in view(toxrange, src.loc))
-		if(M.status_flags & GODMODE)
-			continue
-		M.apply_damage(toxdamage, TOX, null, damage_flags = DAM_DISPERSED)
+	SSradiation.radiate(src, radiation)
 
 /obj/singularity/proc/mezzer()
 	for(var/mob/living/carbon/M in oviewers(8, src))
@@ -434,10 +444,7 @@
 			O.show_message(text("<span class='danger'>[] stares blankly at The []!</span>", M, src), 1)
 
 /obj/singularity/proc/emp_area()
-	if(current_size != 11)
-		empulse(src, 8, 10)
-	else
-		empulse(src, 12, 16)
+	empulse(src, emp_strong_range, emp_weak_range)
 
 /obj/singularity/proc/smwave()
 	for(var/mob/living/M in view(10, src.loc))
@@ -448,7 +455,7 @@
 			to_chat(M, "<span class=\"danger\">You hear an unearthly ringing, then what sounds like a shrilling kettle as you are washed with a wave of heat.</span>")
 			to_chat(M, "<span class=\"danger\">You don't even have a moment to react as you are reduced to ashes by the intense radiation.</span>")
 			M.dust()
-	SSradiation.radiate(src, rand(energy))
+	irradiate()
 	return
 
 /obj/singularity/proc/pulse()
@@ -461,16 +468,16 @@
 	overlays.Cut()
 	move_self = 0
 	switch (current_size)
-		if(1)
-			overlays += image('icons/obj/singularity.dmi',"chain_s1")
 		if(3)
-			overlays += image('icons/effects/96x96.dmi',"chain_s3")
+			overlays += image('icons/effects/96x96.dmi',"emfield_s3")
 		if(5)
-			overlays += image('icons/effects/160x160.dmi',"chain_s5")
+			overlays += image('icons/effects/160x160.dmi',"emfield_s5")
 		if(7)
-			overlays += image('icons/effects/224x224.dmi',"chain_s7")
+			overlays += image('icons/effects/224x224.dmi',"emfield_s7")
 		if(9)
-			overlays += image('icons/effects/288x288.dmi',"chain_s9")
+			overlays += image('icons/effects/288x288.dmi',"emfield_s9")
+		if(11)
+			overlays += image('icons/effects/352x352.dmi',"emfield_s11")
 
 /obj/singularity/proc/on_release()
 	chained = 0

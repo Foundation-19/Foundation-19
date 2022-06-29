@@ -8,7 +8,7 @@
 	requires_ntnet = FALSE
 	available_on_ntnet = TRUE
 	nanomodule_path = /datum/nano_module/program/computer_wordprocessor/
-	var/browsing = FALSE
+	var/browsing
 	var/open_file
 	var/loaded_data
 	var/error
@@ -16,103 +16,91 @@
 	usage_flags = PROGRAM_ALL
 	category = PROG_OFFICE
 
-/datum/computer_file/program/wordprocessor/proc/open_file(filename)
-	var/datum/computer_file/data/F = computer.get_file(filename)
-	if(istype(F))
+/datum/computer_file/program/wordprocessor/proc/open_file(var/filename)
+	var/datum/computer_file/data/F = get_file(filename)
+	if(F)
 		open_file = F.filename
 		loaded_data = F.stored_data
-		is_edited = FALSE
-		return TRUE
-	return FALSE
+		return 1
 
-/datum/computer_file/program/wordprocessor/proc/create_file(filename, data = "")
-	. = computer.save_data_file(filename, data, /datum/computer_file/data/text)
+/datum/computer_file/program/wordprocessor/proc/save_file(var/filename)
+	. = computer.save_file(filename, loaded_data, /datum/computer_file/data/text)
 	if(.)
-		is_edited = FALSE
-
-/datum/computer_file/program/wordprocessor/proc/save_file(filename)
-	. = computer.save_data_file(filename, loaded_data, /datum/computer_file/data/text)
-	if(.)
-		is_edited = FALSE
+		is_edited = 0
 
 /datum/computer_file/program/wordprocessor/Topic(href, href_list)
 	if(..())
-		return TOPIC_HANDLED
+		return 1
 
 	if(href_list["PRG_txtrpeview"])
 		show_browser(usr,"<HTML><HEAD><TITLE>[open_file]</TITLE></HEAD>[digitalPencode2html(loaded_data)]</BODY></HTML>", "window=[open_file]")
-		return TOPIC_HANDLED
+		return 1
 
-	if(href_list["PRG_taghelp"])
+	if(href_list["PRG_taghelp"])		
 		var/datum/codex_entry/entry = SScodex.get_codex_entry("pen")
 		if(entry)
 			SScodex.present_codex_entry(usr, entry)
-		return TOPIC_HANDLED
+		return 1
 
 	if(href_list["PRG_closebrowser"])
-		browsing = FALSE
-		return TOPIC_HANDLED
+		browsing = 0
+		return 1
 
 	if(href_list["PRG_backtomenu"])
 		error = null
-		return TOPIC_HANDLED
+		return 1
 
 	if(href_list["PRG_loadmenu"])
-		browsing = TRUE
-		return TOPIC_HANDLED
+		browsing = 1
+		return 1
 
 	if(href_list["PRG_openfile"])
-		. = TOPIC_HANDLED
+		. = 1
 		if(is_edited)
 			if(alert("Would you like to save your changes first?",,"Yes","No") == "Yes")
-				if(!save_file(open_file))
-					error = "I/O error: Unable to save file '[open_file]'."
-					browsing = FALSE
-					return
-		browsing = FALSE
+				save_file(open_file)
+		browsing = 0
 		if(!open_file(href_list["PRG_openfile"]))
 			error = "I/O error: Unable to open file '[href_list["PRG_openfile"]]'."
-		return
 
 	if(href_list["PRG_newfile"])
-		. = TOPIC_HANDLED
+		. = 1
 		if(is_edited)
 			if(alert("Would you like to save your changes first?",,"Yes","No") == "Yes")
-				if(!save_file(open_file))
-					error = "I/O error: Unable to save file '[open_file]'."
-					return
+				save_file(open_file)
+
 		var/newname = sanitize(input(usr, "Enter file name:", "New File") as text|null)
 		if(!newname)
-			return
-		var/datum/computer_file/data/F = create_file(newname)
-		if(!istype(F))
-			error = "I/O error: Unable to create file '[newname]'."
-			return
-		open_file = F.filename
-		loaded_data = ""
-		return
+			return 1
+		var/datum/computer_file/data/F = create_file(newname, "", /datum/computer_file/data/text)
+		if(F)
+			open_file = F.filename
+			loaded_data = ""
+			return 1
+		else
+			error = "I/O error: Unable to create file '[href_list["PRG_saveasfile"]]'."
 
 	if(href_list["PRG_saveasfile"])
-		. = TOPIC_HANDLED
+		. = 1
 		var/newname = sanitize(input(usr, "Enter file name:", "Save As") as text|null)
 		if(!newname)
-			return
-		var/datum/computer_file/data/F = create_file(newname, loaded_data)
-		if(!istype(F))
-			error = "I/O error: Unable to create file '[newname]'."
-			return
-		open_file = F.filename
-		return
+			return 1
+		var/datum/computer_file/data/F = create_file(newname, loaded_data, /datum/computer_file/data/text)
+		if(F)
+			open_file = F.filename
+		else
+			error = "I/O error: Unable to create file '[href_list["PRG_saveasfile"]]'."
+		return 1
 
 	if(href_list["PRG_savefile"])
-		. = TOPIC_HANDLED
+		. = 1
 		if(!open_file)
 			open_file = sanitize(input(usr, "Enter file name:", "Save As") as text|null)
 			if(!open_file)
-				return
+				return 0
 		if(!save_file(open_file))
 			error = "I/O error: Unable to save file '[open_file]'."
-		return
+		return 1
 
 	if(href_list["PRG_editfile"])
 		var/oldtext = html_decode(loaded_data)
@@ -122,19 +110,19 @@
 		if(!newtext)
 			return
 		loaded_data = newtext
-		is_edited = TRUE
-		return TOPIC_HANDLED
+		is_edited = 1
+		return 1
 
 	if(href_list["PRG_printfile"])
-		. = TOPIC_HANDLED
+		. = 1
 		if(!computer.print_paper(digitalPencode2html(loaded_data)))
 			error = "Hardware error: Printer missing or out of paper."
-		return
+			return 1
 
 /datum/nano_module/program/computer_wordprocessor
 	name = "Word Processor"
 
-/datum/nano_module/program/computer_wordprocessor/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/computer_wordprocessor/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
 	var/datum/computer_file/program/wordprocessor/PRG
 	PRG = program
@@ -157,9 +145,9 @@
 
 			var/obj/item/stock_parts/computer/hard_drive/portable/RHDD = PRG.computer.get_component(PART_DRIVE)
 			if(RHDD)
-				data["usbconnected"] = TRUE
+				data["usbconnected"] = 1
 				var/list/usbfiles[0]
-				for(var/datum/computer_file/F in PRG.computer.get_all_files(disk = RHDD))
+				for(var/datum/computer_file/F in PRG.computer.get_all_files(RHDD))
 					if(F.filetype == "TXT")
 						usbfiles.Add(list(list(
 							"name" = F.filename,

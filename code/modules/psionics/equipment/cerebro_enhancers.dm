@@ -24,7 +24,7 @@
 	flags_inv = 0
 	body_parts_covered = 0
 
-	max_boosted_faculties = 1
+	max_boosted_faculties = 2
 	boosted_rank = PSI_RANK_MASTER
 	unboosted_rank = PSI_RANK_OPERANT
 	boosted_psipower = 50
@@ -34,7 +34,6 @@
 	verbs += /obj/item/clothing/head/helmet/space/psi_amp/proc/integrate
 
 /obj/item/clothing/head/helmet/space/psi_amp/attack_self(var/mob/user)
-
 	if(operating)
 		return
 
@@ -68,7 +67,6 @@
 	to_chat(user, SPAN_NOTICE("You [removed ? "remove" : "install"] the [choice] brainboard [removed ? "from" : "in"] \the [src]. There [slots_left!=1 ? "are" : "is"] [slots_left] slot\s left."))
 
 /obj/item/clothing/head/helmet/space/psi_amp/proc/deintegrate()
-
 	set name = "Remove Psi-Amp"
 	set desc = "Enhance your brainpower."
 	set category = "Abilities"
@@ -91,7 +89,7 @@
 
 	sleep(80)
 
-	if(H.psi) 
+	if(H.psi)
 		H.psi.reset()
 
 	to_chat(H, SPAN_NOTICE("\The [src] chimes quietly as it finishes removing the slave-minds from your brain."))
@@ -119,7 +117,6 @@
 			canremove = TRUE
 
 /obj/item/clothing/head/helmet/space/psi_amp/proc/integrate()
-
 	set name = "Integrate Psionic Amplifier"
 	set desc = "Enhance your brainpower."
 	set category = "Abilities"

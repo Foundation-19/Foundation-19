@@ -14,9 +14,9 @@
 	mechanics_text = "This device disrupts shields on directly adjacent tiles (in a + shaped pattern). They are commonly installed around exterior airlocks to prevent shields from blocking EVA access."
 
 /datum/codex_entry/conveyor_construct
-	associated_paths = list(/obj/machinery/conveyor, /obj/item/conveyor_construct)
+	associated_paths = list(/obj/machinery/conveyor, /obj/item/construct/conveyor)
 	mechanics_text = "This device must be connected to a switch assembly before placement by clicking the switch on the conveyor belt assembly. When active it will move objects on top of it to the adjacent space based on its direction and if it is running in forward or reverse mode. Can be removed with a crowbar."
 
-/datum/codex_entry/conveyor_construct
-	associated_paths = list(/obj/machinery/conveyor_switch,/obj/machinery/conveyor_switch/oneway,/obj/item/conveyor_switch_construct,/obj/item/conveyor_switch_construct/oneway)
+/datum/codex_entry/conveyor_switch_construct
+	associated_paths = list(/obj/machinery/conveyor_switch,/obj/machinery/conveyor_switch/oneway,/obj/item/construct/conveyor_switch)
 	mechanics_text = "This device can connect to a number of conveyor belts and control their movement. A two-way switch will allow you to make the conveyors run in forward and reverse mode, the one-way switch will only allow one direction. Can be removed with a crowbar."

@@ -8,9 +8,6 @@ GLOBAL_LIST_EMPTY(scp343s)
 	icon = 'icons/mob/scp343.dmi'
 	icon_state = null
 
-/mob/living/carbon/human/scp343/examine(mob/user)
-	user << "<b><span class = 'euclid'><big>SCP-343</big></span></b> - [desc]"
-
 /datum/scp/scp_343
 	name = "SCP-343"
 	designation = "343"
@@ -151,7 +148,6 @@ GLOBAL_LIST_EMPTY(scp343s)
 				animate(src, pixel_x = -58, time = PHASE_TIME)
 
 		if (do_after(src, PHASE_TIME, O))
-			forceMove(get_step(src, dir))
 			forceMove(get_step(src, dir))
 			visible_message("<span class = 'danger'>[src] phases through \the [O].</span>")
 

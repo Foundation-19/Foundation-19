@@ -258,7 +258,6 @@
 /area/space)
 "aw" = (
 /obj/machinery/conveyor_switch/oneway{
-	convdir = -1;
 	id = "garbage";
 	name = "disposal conveyor"
 	},
@@ -315,14 +314,13 @@
 /turf/simulated/floor/airless,
 /area/solar/auxstarboard)
 "aB" = (
-/obj/machinery/conveyor{
-	dir = 2;
-	id = "garbage"
-	},
 /obj/random/junk,
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"
+	},
+/obj/machinery/conveyor/north{
+	id = "garbage2"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/disposal)
@@ -664,13 +662,13 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/vacant/prototype/control)
 "bm" = (
-/obj/machinery/conveyor{
-	dir = 9;
-	id = "garbage2"
-	},
 /obj/structure/plasticflaps,
 /obj/random/junk,
 /obj/item/handcuffs/cable,
+/obj/machinery/conveyor/north{
+	dir = 6;
+	id = "garbage2"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/disposal)
 "bn" = (
@@ -1680,13 +1678,12 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/locker_room)
 "da" = (
-/obj/machinery/conveyor{
-	dir = 2;
-	id = "garbage"
-	},
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 0
+	},
+/obj/machinery/conveyor/north{
+	id = "garbage2"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/disposal)
@@ -4361,14 +4358,26 @@
 	dir = 8
 	},
 /obj/item/aiModule/reset,
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/bluegrid,
 /area/synth/borg_upload)
 "iW" = (
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -24
 	},
-/turf/simulated/floor/bluegrid,
+/obj/machinery/flasher{
+	dir = 4;
+	pixel_x = -24;
+	pixel_y = -24
+	},
+/obj/machinery/flasher{
+	dir = 4;
+	pixel_x = -24;
+	pixel_y = 24
+	},
+/obj/machinery/porta_turret,
+/obj/effect/floor_decal/industrial/hatch/red,
+/turf/simulated/floor/tiled/techfloor,
 /area/synth/borg_upload)
 "iX" = (
 /obj/machinery/status_display,
@@ -4518,20 +4527,6 @@
 /obj/effect/shuttle_landmark/lift/robotics_bottom,
 /turf/simulated/floor/plating,
 /area/assembly/robotics)
-"ju" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/synth/borg_upload)
 "jv" = (
 /obj/structure/lattice,
 /obj/structure/disposaloutlet{
@@ -4585,7 +4580,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engineering_bay)
 "jB" = (
-/obj/structure/table/standard,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22
@@ -4594,16 +4588,19 @@
 	c_tag = "Cyborg Upload";
 	dir = 4
 	},
-/obj/machinery/recharger,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/machinery/computer/upload/ai{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/bluegrid,
 /area/synth/borg_upload)
 "jC" = (
 /obj/structure/table/standard,
-/obj/random/maintenance/solgov,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
 /obj/machinery/light,
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/synth/borg_upload)
 "jD" = (
@@ -4617,7 +4614,7 @@
 	},
 /obj/item/aiModule/purge,
 /obj/item/aiModule/quarantine,
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/bluegrid,
 /area/synth/borg_upload)
 "jE" = (
 /obj/structure/window/reinforced{
@@ -4630,7 +4627,7 @@
 	},
 /obj/item/aiModule/robocop,
 /obj/item/aiModule/solgov_aggressive,
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/bluegrid,
 /area/synth/borg_upload)
 "jH" = (
 /obj/machinery/door/airlock/hatch{
@@ -5072,6 +5069,18 @@
 /obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/storage)
+"kC" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister/helium{
+	start_pressure = 14999
+	},
+/obj/structure/window/phoronreinforced,
+/obj/machinery/door/window/brigdoor/westright,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/vacant/prototype/engine)
 "kD" = (
 /turf/simulated/wall/prepainted,
 /area/hallway/primary/seconddeck/center)
@@ -5446,7 +5455,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/tiled/techfloor,
 /area/synth/borg_upload)
 "lx" = (
 /obj/structure/cable/green{
@@ -6126,7 +6135,7 @@
 /obj/structure/table/standard,
 /obj/item/device/robotanalyzer,
 /obj/item/storage/toolbox/mechanical,
-/obj/item/circular_saw,
+/obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics/surgery)
 "ne" = (
@@ -7350,6 +7359,18 @@
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/seconddeck/fore)
+"qn" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister/hydrogen{
+	start_pressure = 14999
+	},
+/obj/machinery/door/window/brigdoor/westleft,
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/vacant/prototype/engine)
 "qo" = (
 /obj/machinery/power/shield_generator,
 /obj/structure/cable{
@@ -8329,6 +8350,9 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/structure/sign/warning/lethal_turrets{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/drone_fabrication)
 "sE" = (
@@ -8739,7 +8763,7 @@
 "tD" = (
 /obj/machinery/computer/upload/robot,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/bluegrid,
 /area/synth/borg_upload)
 "tE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/black,
@@ -9716,9 +9740,12 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/foreport)
 "wu" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/portable_atmospherics/canister/helium{
-	start_pressure = 14999
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/obj/structure/sign/warning/compressed_gas{
+	pixel_y = 32
 	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
@@ -10276,10 +10303,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
 "yj" = (
-/obj/machinery/conveyor{
-	dir = 2;
-	id = "garbage2"
-	},
 /obj/random/junk,
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -10287,6 +10310,9 @@
 	id_tag = "RubbishOuter";
 	name = "Disposal Maintenance";
 	opacity = 1
+	},
+/obj/machinery/conveyor/north{
+	id = "garbage2"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/disposal)
@@ -10957,9 +10983,13 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/atmos)
 "Aj" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/portable_atmospherics/canister/hydrogen{
-	start_pressure = 14999
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/obj/structure/sign/warning/compressed_gas{
+	dir = 1;
+	pixel_y = -32
 	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
@@ -11081,7 +11111,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/tiled/techfloor,
 /area/synth/borg_upload)
 "Aw" = (
 /obj/structure/reagent_dispensers/fueltank,
@@ -13517,7 +13547,6 @@
 /area/maintenance/seconddeck/aftport)
 "GI" = (
 /obj/machinery/conveyor_switch/oneway{
-	convdir = -1;
 	id = "garbage2";
 	name = "disposal conveyor"
 	},
@@ -13842,9 +13871,8 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "HE" = (
-/obj/machinery/conveyor{
-	dir = 2;
-	id = "garbage"
+/obj/machinery/conveyor/north{
+	id = "garbage2"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/disposal)
@@ -14078,6 +14106,16 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/highsecurity{
+	icon_state = "closed";
+	locked = 1;
+	name = "AI Upload Access"
+	},
+/obj/machinery/turretid/stun{
+	dir = 1;
+	pixel_x = 44;
+	pixel_y = -26
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/synth/borg_upload)
@@ -15009,6 +15047,20 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/foyer)
+"LL" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister/hydrogen{
+	start_pressure = 14999
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/vacant/prototype/engine)
 "LM" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -15145,6 +15197,9 @@
 "Mg" = (
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
 "Mh" = (
@@ -16345,6 +16400,8 @@
 /obj/structure/closet/crate/freezer,
 /obj/item/device/mmi,
 /obj/item/device/mmi,
+/obj/item/reagent_containers/ivbag/nanoblood,
+/obj/item/reagent_containers/ivbag/nanoblood,
 /obj/machinery/alarm{
 	dir = 8;
 	icon_state = "alarm0";
@@ -16536,7 +16593,7 @@
 "Qv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/tele_beacon,
+/obj/machinery/bluespace_beacon,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -16996,7 +17053,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/bluegrid,
 /area/synth/borg_upload)
 "RO" = (
 /obj/structure/table/rack,
@@ -17989,6 +18046,20 @@
 	},
 /turf/simulated/floor/plating,
 /area/assembly/robotics/surgery)
+"VF" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister/helium{
+	start_pressure = 14999
+	},
+/obj/structure/window/phoronreinforced{
+	dir = 4
+	},
+/obj/structure/window/phoronreinforced,
+/obj/structure/window/phoronreinforced{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/vacant/prototype/engine)
 "VK" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -18374,7 +18445,6 @@
 	},
 /obj/item/reagent_containers/spray/sterilizine,
 /obj/item/stack/nanopaste,
-/obj/item/hemostat,
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics/surgery)
 "WI" = (
@@ -18847,6 +18917,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/effect/floor_decal/industrial/warning/corner,
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
 "Yn" = (
@@ -28888,7 +28959,7 @@ PP
 PP
 PP
 qw
-wu
+me
 me
 Se
 Vg
@@ -28898,7 +28969,7 @@ Tk
 Vg
 Se
 me
-Aj
+me
 qw
 MQ
 MQ
@@ -29292,7 +29363,7 @@ hz
 ac
 fU
 qw
-mb
+kC
 mb
 Ve
 Gh
@@ -29302,7 +29373,7 @@ Uh
 Kj
 Qi
 mb
-mb
+qn
 qw
 vt
 ol
@@ -29494,7 +29565,7 @@ eB
 io
 fU
 qw
-mb
+VF
 mb
 Sg
 Hh
@@ -29504,7 +29575,7 @@ Zi
 Lj
 Uj
 mb
-mb
+LL
 qw
 vt
 wi
@@ -32735,7 +32806,7 @@ AI
 XA
 Lp
 iT
-ju
+Au
 jE
 Lp
 dX

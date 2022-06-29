@@ -11,9 +11,9 @@ GLOBAL_DATUM_INIT(borers, /datum/antagonist/borer, new)
 	antag_indicator = "hudborer"
 	antaghud_indicator = "hudborer"
 
-	faction_role_text = "Borer Thrall"
+	faction_role_text = "a Borer Host"
 	faction_descriptor = "Unity"
-	faction_welcome = "You are now a thrall to a cortical borer. Please listen to what they have to say; they're in your head."
+	faction_welcome = "You are now a host to a cortical borer. Please listen to what they have to say; they're in your head."
 	faction = "borer"
 	faction_indicator = "hudalien"
 
@@ -32,8 +32,6 @@ GLOBAL_DATUM_INIT(borers, /datum/antagonist/borer, new)
 	if(!..())
 		return
 	player.objectives += new /datum/objective/borer_survive()
-	player.objectives += new /datum/objective/borer_reproduce()
-	player.objectives += new /datum/objective/escape()
 
 /datum/antagonist/borer/place_mob(var/mob/living/mob)
 	var/mob/living/simple_animal/borer/borer = mob

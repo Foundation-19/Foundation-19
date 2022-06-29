@@ -111,10 +111,10 @@
 		return
 
 	if(!istype(target))
-		if(istype(target, /mob/living/simple_animal/passive/mouse))
+		if(istype(target, /mob/living/simple_animal/friendly/mouse))
 			new /obj/item/remains/mouse(get_turf(target))
 			qdel(target)
-		else if(istype(target, /mob/living/simple_animal/passive/lizard))
+		else if(istype(target, /mob/living/simple_animal/friendly/lizard))
 			new /obj/item/remains/lizard(get_turf(target))
 			qdel(target)
 		return
@@ -339,7 +339,7 @@
 			health_change += rand(1,3) * HYDRO_SPEED_MULTIPLIER
 
 	for(var/obj/effect/effect/smoke/chem/smoke in range(1, current_turf))
-		if(smoke.reagents.has_reagent(/datum/reagent/toxin/plantbgone))
+		if(smoke.reagents.has_reagent(/datum/reagent/toxin/plant_b_gone))
 			return 100
 
 	// Pressure and temperature are needed as much as water and light.
@@ -468,15 +468,14 @@
 		var/list/banned_chems = list(
 			/datum/reagent/adminordrazine,
 			/datum/reagent/nutriment,
-			/datum/reagent/nanites,
 			/datum/reagent/water/holywater,
-			/datum/reagent/toxin/plantbgone,
-			/datum/reagent/chloralhydrate/beer2,
+			/datum/reagent/toxin/plant_b_gone,
+			/datum/reagent/chloral_hydrate/beer,
 			/datum/reagent/zombie
 			)
 		banned_chems += subtypesof(/datum/reagent/ethanol)
 		banned_chems += subtypesof(/datum/reagent/zombie)
-		banned_chems += subtypesof(/datum/reagent/tobacco)
+		banned_chems += subtypesof(/datum/reagent/medicine/fluff/tobacco)
 		banned_chems += typesof(/datum/reagent/drink)
 		banned_chems += typesof(/datum/reagent/nutriment)
 		banned_chems += typesof(/datum/reagent/toxin/fertilizer)
@@ -784,8 +783,8 @@
 			if(istype(product,/mob/living))
 				product.visible_message("<span class='notice'>The pod disgorges [product]!</span>")
 				handle_living_product(product)
-				if(istype(product,/mob/living/simple_animal/passive/mushroom)) // Gross.
-					var/mob/living/simple_animal/passive/mushroom/mush = product
+				if(istype(product,/mob/living/simple_animal/friendly/mushroom)) // Gross.
+					var/mob/living/simple_animal/friendly/mushroom/mush = product
 					mush.seed = src
 
 // When the seed in this machine mutates/is modified, the tray seed value
@@ -858,7 +857,7 @@
 	if(leaves)
 		var/image/I = image(res.icon, "[plant_icon]-[growth_stage]-leaves")
 		I.color = leaves
-		I.appearance_flags = DEFAULT_APPEARANCE_FLAGS | RESET_COLOR
+		I.appearance_flags = RESET_COLOR
 		res.overlays += I
 
 	return res

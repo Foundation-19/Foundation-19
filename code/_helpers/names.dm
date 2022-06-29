@@ -1,11 +1,14 @@
 /proc/generate_system_name()
 	return "[pick("Gilese","GSC", "Luyten", "GJ", "HD", "SCGECO")][prob(10) ? " Eridani" : ""] [rand(100,999)]"
 
+/**
+ * Returns a planet name equal to (system name) (lowercase letter in order) based on the number of planetoids - for instance, "GSC 103 b" is the second planetoid in a system.
+ * If too many planetoids are present to assign a letter, it'll use (random last name)-(greek letter) instead, such as "Caldwell-Theta".
+ */
 /proc/generate_planet_name()
-	return "[capitalize(pick(GLOB.last_names))]-[pick(GLOB.greek_letters)]"
-
-/proc/generate_planet_type()
-	return pick("terrestial planet", "ice planet", "dwarf planet", "desert planet", "ocean planet", "lava planet", "gas giant", "forest planet")
+	if (GLOB.number_of_planetoids > 26) // We should absolutely never have this many planetoids, but it's best to future-proof just in case
+		return "[capitalize(pick(GLOB.last_names))]-[pick(GLOB.greek_letters)]"
+	return "[GLOB.using_map.system_name] [ascii2text(Clamp(96 + GLOB.number_of_planetoids, 97, 122))]"
 
 /proc/station_name()
 	if(!GLOB.using_map)

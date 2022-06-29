@@ -1,4 +1,4 @@
-/spell/aoe_turf/conjure/grove
+/datum/spell/aoe_turf/conjure/grove
 	name = "Grove"
 	desc = "Creates a sanctuary of nature around the wizard as well as creating a healing plant."
 
@@ -9,7 +9,7 @@
 	range = 1
 	cooldown_min = 600
 
-	level_max = list(Sp_TOTAL = 3, Sp_SPEED = 3, Sp_POWER = 1)
+	level_max = list(UPGRADE_TOTAL = 3, UPGRADE_SPEED = 3, UPGRADE_POWER = 1)
 
 	summon_amt = 47
 	summon_type = list(/turf/simulated/floor/grass)
@@ -18,35 +18,36 @@
 	var/seed_type = /datum/seed/merlin_tear
 	cast_sound = 'sound/magic/repulse.ogg'
 
-/spell/aoe_turf/conjure/grove/New()
+/datum/spell/aoe_turf/conjure/grove/New()
 	..()
 	if(seed_type)
 		seed = new seed_type()
 	else
 		seed = SSplants.create_random_seed(1)
 
-/spell/aoe_turf/conjure/grove/before_cast()
+/datum/spell/aoe_turf/conjure/grove/before_cast()
 	var/turf/T = get_turf(holder)
 	var/obj/effect/vine/P = new(T,seed)
 	P.spread_chance = spread
 
 
-/spell/aoe_turf/conjure/grove/sanctuary
+/datum/spell/aoe_turf/conjure/grove/sanctuary
 	name = "Sanctuary"
 	desc = "Creates a sanctuary of nature around the wizard as well as creating a healing plant."
 	feedback = "SY"
 	invocation = "Bo K'Iitan!"
-	invocation_type = SpI_SHOUT
+	invocation_type = INVOKE_SHOUT
 	spell_flags = IGNOREDENSE | IGNORESPACE | NEEDSCLOTHES | Z2NOCAST | IGNOREPREV
 	cooldown_min = 600
 
-	level_max = list(Sp_TOTAL = 3, Sp_SPEED = 3, Sp_POWER = 1)
+	level_max = list(UPGRADE_TOTAL = 3, UPGRADE_SPEED = 3, UPGRADE_POWER = 1)
 
 	seed_type = /datum/seed/merlin_tear
 	newVars = list("name" = "sanctuary", "desc" = "This grass makes you feel comfortable. Peaceful.","blessed" = 1)
 
 	hud_state = "wiz_grove"
-/spell/aoe_turf/conjure/grove/sanctuary/empower_spell()
+
+/datum/spell/aoe_turf/conjure/grove/sanctuary/empower_spell()
 	if(!..())
 		return 0
 
@@ -58,7 +59,7 @@
 	name = "merlin tears"
 	seed_name = "merlin tears"
 	display_name = "merlin tears"
-	chems = list(/datum/reagent/bicaridine = list(3,7), /datum/reagent/dermaline = list(3,7), /datum/reagent/dylovene = list(3,7), /datum/reagent/tricordrazine = list(3,7), /datum/reagent/alkysine = list(1,2), /datum/reagent/imidazoline = list(1,2), /datum/reagent/peridaxon = list(4,5))
+	chems = list(/datum/reagent/medicine/bicaridine = list(3,7), /datum/reagent/medicine/dermaline = list(3,7), /datum/reagent/medicine/dylovene = list(3,7), /datum/reagent/medicine/tricordrazine = list(3,7), /datum/reagent/medicine/alkysine = list(1,2), /datum/reagent/medicine/imidazoline = list(1,2), /datum/reagent/medicine/peridaxon = list(4,5))
 	kitchen_tag = "berries"
 
 /datum/seed/merlin_tear/New()

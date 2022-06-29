@@ -53,9 +53,7 @@ DM version compatibility macros & procs
 			if (0) . = "0[.]"
 			if (1 to 9) . = "[num & 0xf][.]"
 			else . = "[ascii2text((num & 0xf) + 87)][.]"
-		num = SHIFTR(num, 4)
-
-#define Clamp(value, low, high) (value <= low ? low : (value >= high ? high : value))
+		num >>= 4
 
 
 #else //513+
@@ -68,7 +66,6 @@ DM version compatibility macros & procs
 
 #define hex2num(hex) (text2num(hex, 16) || 0)
 #define num2hex(num) num2text(num, 1, 16)
-#define Clamp(value, low, high) clamp(value, low, high)
 
 
 #endif
@@ -76,8 +73,8 @@ DM version compatibility macros & procs
 
 #if DM_VERSION < 514
 
-/// Create the list(R, G, B[, A]) for inputs "#RGB", "#RGBA", "#RRGGBB", or "#RRGGBBAA". IGNORES color space.
-/proc/rgb2num(T)
+
+/proc/rgb2num(T) //Take "#RGB" or "#RGBA" or "#RRGGBB" or "#RRGGBBAA" and turn it into list(R, G, B[, A]). Ignores color space.
 	var/static/regex/allowed = new(@"^#[0-9a-fA-F]{3,8}$")
 	if (findtext(T, allowed))
 		switch (length(T))
@@ -88,20 +85,4 @@ DM version compatibility macros & procs
 	crash_with("bad color '[T]'")
 
 
-#endif
-
-
-/**
-	FOR_BLIND provides a common pattern for a typed for..in that SKIPS type checking.
-	This kind of loop provides a decent performance improvement but is best reserved
-	for hotspot code where the type of the members of the collection is never in doubt.
-	"as anything" became valid syntax in build 513.1540: <http://byond.com/docs/notes/513.html>
-	eg:
-	FOR_BLIND(client/C, GLOB.clients)
-		to_chat(C, "Hello [C].")
-*/
-#if DM_BUILD < 1540
-#define FOR_BLIND(V, C) for (var/V as() in C)
-#else
-#define FOR_BLIND(V, C) for (var/V as anything in C)
 #endif

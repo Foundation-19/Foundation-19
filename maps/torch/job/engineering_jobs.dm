@@ -22,11 +22,11 @@
 		/datum/mil_rank/fleet/e8,
 	)
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
-	                    SKILL_EVA          = SKILL_ADEPT,
-	                    SKILL_CONSTRUCTION = SKILL_ADEPT,
-	                    SKILL_ELECTRICAL   = SKILL_ADEPT,
+	                    SKILL_EVA          = SKILL_TRAINED,
+	                    SKILL_CONSTRUCTION = SKILL_TRAINED,
+	                    SKILL_ELECTRICAL   = SKILL_TRAINED,
 	                    SKILL_ATMOS        = SKILL_BASIC,
-	                    SKILL_ENGINES      = SKILL_ADEPT)
+	                    SKILL_ENGINES      = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
 	                    SKILL_ELECTRICAL   = SKILL_MAX,
@@ -37,7 +37,12 @@
 	access = list(
 		access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 		access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor, access_construction,
-		access_tcomsat, access_solgov_crew, access_seneng, access_hangar, access_network, access_network_admin, access_radio_eng
+		access_tcomsat, access_solgov_crew, access_seneng, access_hangar, access_network, access_radio_eng
+	)
+
+	lowpop_access = list(
+		access_tox, access_research,
+		access_expedition_shuttle, access_guppy
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
@@ -82,7 +87,7 @@
 	)
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
 	                    SKILL_EVA          = SKILL_BASIC,
-	                    SKILL_CONSTRUCTION = SKILL_ADEPT,
+	                    SKILL_CONSTRUCTION = SKILL_TRAINED,
 	                    SKILL_ELECTRICAL   = SKILL_BASIC,
 	                    SKILL_ATMOS        = SKILL_BASIC,
 	                    SKILL_ENGINES      = SKILL_BASIC)
@@ -96,10 +101,15 @@
 	access = list(
 		access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 		access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor, access_construction,
-		access_solgov_crew, access_hangar, access_network, access_radio_eng
+		access_solgov_crew, access_hangar, access_radio_eng
 	)
 
 	minimal_access = list()
+
+	lowpop_access = list(
+		access_tox, access_research,
+		access_expedition_shuttle, access_guppy
+	)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
 							 /datum/computer_file/program/supermatter_monitor,
@@ -137,12 +147,12 @@
 	no_skill_buffs = TRUE
 
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
-	                    SKILL_HAULING      = SKILL_ADEPT,
-	                    SKILL_EVA          = SKILL_ADEPT,
-	                    SKILL_CONSTRUCTION = SKILL_ADEPT,
-	                    SKILL_ELECTRICAL   = SKILL_ADEPT,
-	                    SKILL_ATMOS        = SKILL_ADEPT,
-	                    SKILL_ENGINES      = SKILL_ADEPT)
+	                    SKILL_HAULING      = SKILL_TRAINED,
+	                    SKILL_EVA          = SKILL_TRAINED,
+	                    SKILL_CONSTRUCTION = SKILL_TRAINED,
+	                    SKILL_ELECTRICAL   = SKILL_TRAINED,
+	                    SKILL_ATMOS        = SKILL_TRAINED,
+	                    SKILL_ENGINES      = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
 	                    SKILL_ELECTRICAL   = SKILL_MAX,
@@ -153,6 +163,10 @@
 		access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 		access_eva, access_tech_storage, access_janitor, access_construction,
 		access_solgov_crew, access_hangar, access_radio_eng
+	)
+
+	lowpop_access = list(
+		access_tox, access_research
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
@@ -191,28 +205,34 @@
 		/datum/mil_rank/ec/e5,
 		/datum/mil_rank/civ/contractor
 	)
-	min_skill = list(   SKILL_COMPUTER		= SKILL_ADEPT,
-	                    SKILL_DEVICES		= SKILL_ADEPT,
-	                    SKILL_EVA           = SKILL_ADEPT,
-	                    SKILL_ANATOMY       = SKILL_ADEPT,
+	min_skill = list(   SKILL_COMPUTER		= SKILL_TRAINED,
+	                    SKILL_DEVICES		= SKILL_TRAINED,
+	                    SKILL_EVA           = SKILL_TRAINED,
+	                    SKILL_ANATOMY       = SKILL_TRAINED,
 						SKILL_CONSTRUCTION  = SKILL_BASIC,
 						SKILL_ELECTRICAL    = SKILL_BASIC,
 	                    SKILL_MECH          = HAS_PERK)
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
 	                    SKILL_ELECTRICAL   = SKILL_MAX,
-	                    SKILL_ATMOS        = SKILL_EXPERT,
-	                    SKILL_ENGINES      = SKILL_EXPERT,
+	                    SKILL_ATMOS        = SKILL_EXPERIENCED,
+	                    SKILL_ENGINES      = SKILL_EXPERIENCED,
 	                    SKILL_DEVICES      = SKILL_MAX,
-	                    SKILL_MEDICAL      = SKILL_EXPERT,
-	                    SKILL_ANATOMY      = SKILL_EXPERT)
+	                    SKILL_MEDICAL      = SKILL_EXPERIENCED,
+	                    SKILL_ANATOMY      = SKILL_EXPERIENCED)
 	skill_points = 20
 
 	access = list(
-		access_robotics, access_engine, access_solgov_crew, access_network, access_radio_eng
+		access_robotics, access_engine, access_solgov_crew, access_radio_eng
 	)
 
 	minimal_access = list()
+
+	lowpop_access = list(
+		access_engine_equip, access_tech_storage, access_maint_tunnels,
+		access_tox, access_research,
+		access_medical
+	)
 
 /datum/job/roboticist/get_description_blurb()
 	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics (like robots). You are also responsible for the production of exosuits(mechs) and bots for various departments. You answer to the Chief Engineer."

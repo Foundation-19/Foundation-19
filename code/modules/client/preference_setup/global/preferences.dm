@@ -84,11 +84,6 @@ var/list/_client_preferences_by_type
 * Player Preferences *
 *********************/
 
-/datum/client_preference/floating_messages
-	description = "Floating chat messages"
-	key = "FLOATING_CHAT"
-	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
-
 /datum/client_preference/play_admin_midis
 	description = "Play admin midis"
 	key = "SOUND_MIDI"
@@ -244,14 +239,14 @@ var/list/_client_preferences_by_type
 	key = "EXAMINE_MESSAGES"
 	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
 
-/datum/client_preference/goonchat
-	description = "Use Goon Chat"
-	key = "USE_GOONCHAT"
-
 /datum/client_preference/floating_messages
 	description ="Floating chat messages"
 	key = "FLOATING_CHAT"
 	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
+
+/datum/client_preference/goonchat
+	description = "Use Goon Chat"
+	key = "USE_GOONCHAT"
 
 /datum/client_preference/goonchat/changed(var/mob/preference_mob, var/new_value)
 	if(preference_mob && preference_mob.client)

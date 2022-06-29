@@ -37,14 +37,12 @@
 	..()
 
 /obj/structure/dispenser/attack_hand(mob/user as mob)
-	user.set_machine(src)
 	var/dat = "[src]<br><br>"
 	dat += "Oxygen tanks: [oxygentanks] - [oxygentanks ? "<A href='?src=\ref[src];oxygen=1'>Dispense</A>" : "empty"]<br>"
 	dat += "Phoron tanks: [phorontanks] - [phorontanks ? "<A href='?src=\ref[src];phoron=1'>Dispense</A>" : "empty"]"
-	show_browser(user, dat, "window=dispenser")
-	onclose(user, "dispenser")
-	return
-
+	var/datum/browser/popup = new(user, "dispenser", "Tank Dispenser")
+	popup.set_content(dat)
+	popup.open()
 
 /obj/structure/dispenser/attackby(obj/item/I as obj, mob/user as mob)
 	if(istype(I, /obj/item/tank/oxygen) || istype(I, /obj/item/tank/air) || istype(I, /obj/item/tank/anesthetic))
@@ -58,7 +56,7 @@
 				update_icon()
 		else
 			to_chat(user, "<span class='notice'>[src] is full.</span>")
-		updateUsrDialog()
+		attack_hand(usr)
 		return
 	if(istype(I, /obj/item/tank/phoron))
 		if(phorontanks < 10)
@@ -71,7 +69,7 @@
 				update_icon()
 		else
 			to_chat(user, "<span class='notice'>[src] is full.</span>")
-		updateUsrDialog()
+		attack_hand(usr)
 		return
 	if(isWrench(I))
 		if(anchored)
@@ -86,7 +84,6 @@
 	if(usr.stat || usr.restrained())
 		return
 	if(Adjacent(usr))
-		usr.set_machine(src)
 		if(href_list["oxygen"])
 			if(oxygentanks > 0)
 				var/obj/item/tank/oxygen/O
@@ -112,8 +109,7 @@
 				phorontanks--
 				update_icon()
 		add_fingerprint(usr)
-		updateUsrDialog()
+		attack_hand(usr)
 	else
 		close_browser(usr, "window=dispenser")
-		return
 	return

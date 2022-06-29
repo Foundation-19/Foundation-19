@@ -20,6 +20,6 @@
 	if(!.)
 		try_change_state(machine, down_state)
 
-/decl/machine_construction/default/panel_closed/mechanics_info()
+/decl/machine_construction/default/item_chassis/mechanics_info()
 	. = list()
 	. += "Use a wrench to deconstruct the machine"

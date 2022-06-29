@@ -2,6 +2,10 @@
 	var/moving           = FALSE
 
 /mob/proc/SelfMove(var/direction)
+	if(direction == UP || direction == DOWN)
+		if(buckled)
+			to_chat(src, SPAN_WARNING("You can't do that while buckled down!"))
+			return
 	if(DoMove(direction, src) & MOVEMENT_HANDLED)
 		return TRUE // Doesn't necessarily mean the mob physically moved
 
@@ -165,8 +169,13 @@
 /client/Move(n, direction)
 	if(!user_acted(src))
 		return
+
 	if(!mob)
 		return // Moved here to avoid nullrefs below
+
+	if (mob.is_scp012_affected(n))
+		return
+
 	return mob.SelfMove(direction)
 
 // Checks whether this mob is allowed to move in space
@@ -222,7 +231,7 @@
 
 //return 1 if slipped, 0 otherwise
 /mob/proc/handle_spaceslipping()
-	if(prob(skill_fail_chance(SKILL_EVA, slip_chance(10), SKILL_EXPERT)))
+	if(prob(skill_fail_chance(SKILL_EVA, slip_chance(10), SKILL_EXPERIENCED)))
 		to_chat(src, "<span class='warning'>You slipped!</span>")
 		src.inertia_dir = src.last_move
 		step(src, src.inertia_dir)

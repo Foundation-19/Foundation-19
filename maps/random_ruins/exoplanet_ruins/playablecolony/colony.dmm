@@ -181,7 +181,7 @@
 /obj/structure/closet/shipping_wall{
 	pixel_y = -28
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/colony/command)
 "aD" = (
 /obj/structure/flora/pottedplant/unusual{
@@ -446,7 +446,7 @@
 	dir = 8;
 	icon_state = "bulb1"
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/colony/command)
 "bh" = (
 /turf/simulated/wall/r_wall,
@@ -1271,7 +1271,7 @@
 	dir = 8;
 	icon_state = "bulb1"
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/colony/dorms)
 "cH" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
@@ -1288,7 +1288,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/colony/dorms)
 "cJ" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
@@ -1546,7 +1546,7 @@
 /obj/item/device/radio/map_preset/playablecolony,
 /obj/structure/closet/cabinet,
 /obj/item/device/radio/headset/map_preset/playablecolony,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/colony/dorms)
 "dk" = (
 /obj/machinery/gibber,
@@ -1703,7 +1703,7 @@
 /obj/effect/submap_landmark/spawnpoint/colonist_spawn,
 /obj/structure/bed/padded,
 /obj/item/bedsheet/hos,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/colony/dorms)
 "dC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -2309,6 +2309,7 @@
 "eC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/table/marble,
+/obj/machinery/stove/hotplate,
 /turf/simulated/floor/lino,
 /area/map_template/colony/messhall)
 "eD" = (
@@ -2585,7 +2586,7 @@
 	pixel_y = 34
 	},
 /obj/item/device/radio/headset/map_preset/playablecolony,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/colony/dorms)
 "eY" = (
 /obj/machinery/sleeper{
@@ -3071,7 +3072,7 @@
 /obj/item/device/radio/map_preset/playablecolony,
 /obj/structure/closet/cabinet,
 /obj/item/device/radio/headset/map_preset/playablecolony,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/map_template/colony/dorms)
 "fN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -3885,8 +3886,7 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/map_template/colony/atmospherics)
@@ -3895,8 +3895,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -5807,8 +5806,7 @@
 /area/map_template/colony)
 "kc" = (
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -6393,7 +6391,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/mob/living/simple_animal/passive/cow,
+/mob/living/simple_animal/friendly/cow,
 /turf/simulated/floor/grass,
 /area/map_template/colony/hydroponics)
 "lf" = (
@@ -6493,7 +6491,7 @@
 /turf/simulated/floor/exoplanet/concrete,
 /area/map_template/colony/mineralprocessing)
 "lo" = (
-/mob/living/simple_animal/passive/cow,
+/mob/living/simple_animal/friendly/cow,
 /turf/simulated/floor/grass,
 /area/map_template/colony/hydroponics)
 "lp" = (
@@ -7685,7 +7683,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/mob/living/simple_animal/passive/chicken,
+/mob/living/simple_animal/friendly/chicken,
 /turf/simulated/floor/grass,
 /area/map_template/colony/hydroponics)
 "nm" = (
@@ -8263,8 +8261,7 @@
 /obj/item/storage/backpack/dufflebag/eng,
 /obj/machinery/door/window/northright,
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
+	dir = 8
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -8708,7 +8705,7 @@
 /turf/simulated/floor/exoplanet/concrete,
 /area/template_noop)
 "vt" = (
-/mob/living/simple_animal/passive/chicken,
+/mob/living/simple_animal/friendly/chicken,
 /turf/simulated/floor/grass,
 /area/map_template/colony/hydroponics)
 "vJ" = (

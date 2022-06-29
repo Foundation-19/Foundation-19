@@ -10,6 +10,7 @@
 	vision_flags = SEE_MOBS
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	electric = TRUE
+	species_restricted = list("exclude", SPECIES_DIONA)
 
 /obj/item/clothing/glasses/thermal/Initialize()
 	. = ..()
@@ -38,6 +39,7 @@
 	icon_state = "eyepatch"
 	item_state = "eyepatch"
 	body_parts_covered = 0
+	species_restricted = null
 
 /obj/item/clothing/glasses/thermal/plain/jensen
 	name = "adhesive thermal lenses"

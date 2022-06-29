@@ -9,8 +9,7 @@
 	var/flipped = 0
 	siemens_coefficient = 0.9
 	body_parts_covered = 0
-	species_restricted = list("exclude")
-
+	species_restricted = list("exclude", SPECIES_MONARCH_QUEEN, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE)
 
 /obj/item/clothing/head/soft/New()
 	..()

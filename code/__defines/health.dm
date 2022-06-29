@@ -27,10 +27,34 @@
 #define DAMAGE_OXY       "oxy"
 /// Brain damage
 #define DAMAGE_BRAIN     "brain"
-
 /// Common, basic damage types
 #define DAMAGE_STANDARD   list(DAMAGE_BRUTE, DAMAGE_BURN)
 /// Damage types that should specifically affect electrical systems
 #define DAMAGE_ELECTRICAL list(DAMAGE_SHOCK, DAMAGE_EMP)
 /// All damage flags
 #define DAMAGE_ALL        list(DAMAGE_BRUTE, DAMAGE_BURN, DAMAGE_STUN, DAMAGE_SHOCK, DAMAGE_EMP, DAMAGE_EXPLODE, DAMAGE_FIRE, DAMAGE_RADIATION, DAMAGE_BIO, DAMAGE_PAIN, DAMAGE_TOXIN, DAMAGE_GENETIC, DAMAGE_OXY, DAMAGE_BRAIN)
+
+/// Damage resistance preset for physical inorganic objects - Walls, structures, items, etc.
+#define DAMAGE_RESIST_PHYSICAL list(\
+	DAMAGE_STUN = 0,\
+	DAMAGE_EMP = 0,\
+	DAMAGE_RADIATION = 0,\
+	DAMAGE_BIO = 0,\
+	DAMAGE_PAIN = 0,\
+	DAMAGE_TOXIN = 0,\
+	DAMAGE_GENETIC = 0,\
+	DAMAGE_OXY = 0,\
+	DAMAGE_BRAIN = 0\
+)
+
+/// Damage resistance preset for electronic equipment - Computers, machinery, etc.
+#define DAMAGE_RESIST_ELECTRICAL list(\
+	DAMAGE_STUN = 0.5,\
+	DAMAGE_RADIATION = 0,\
+	DAMAGE_BIO = 0,\
+	DAMAGE_PAIN = 0,\
+	DAMAGE_TOXIN = 0,\
+	DAMAGE_GENETIC = 0,\
+	DAMAGE_OXY = 0,\
+	DAMAGE_BRAIN = 0\
+)

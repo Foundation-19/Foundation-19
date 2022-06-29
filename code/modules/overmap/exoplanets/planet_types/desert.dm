@@ -1,6 +1,8 @@
 /obj/effect/overmap/visitable/sector/exoplanet/desert
 	name = "desert exoplanet"
 	desc = "An arid exoplanet with sparse biological resources but rich mineral deposits underground."
+	scan_summary = "Hot, dry exoplanet located near the inner boundary of the system's habitable zone, close to its primary star. Surface water is present, and primarily exists in the form of shallow marshes, mud, and pockets of liquefacted soil."
+	scan_assessment = "Quicksand is posited as a likely hazard to away crews."
 	color = "#a08444"
 	planetary_area = /area/exoplanet/desert
 	rock_colors = list(COLOR_BEIGE, COLOR_PALE_YELLOW, COLOR_GRAY80, COLOR_BROWN)

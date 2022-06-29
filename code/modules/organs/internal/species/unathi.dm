@@ -6,3 +6,14 @@
 
 /obj/item/organ/internal/brain/unathi
 	can_use_mmi = FALSE
+
+/obj/item/organ/internal/heart/unathi
+	name = "separated heart"
+	desc = "A heart separated into two organs, each with their own chambers. Both are much larger than your fist."
+
+/obj/item/organ/internal/heart/unathi/listen()
+	. = ..()
+	if(!pulse || (owner.status_flags & FAKEDEATH))
+		return .
+	var/pulsesound = splittext(., " ")[1]
+	return "\proper two [pulsesound] pulses"

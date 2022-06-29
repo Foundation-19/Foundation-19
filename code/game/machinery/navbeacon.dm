@@ -101,9 +101,10 @@ Transponder Codes:<UL>"}
 		t += "<small><A href='byond://?src=\ref[src];add=1;'>(add new)</A></small><BR>"
 		t+= "<UL></TT>"
 
-	show_browser(user, t, "window=navbeacon")
+	var/datum/browser/popup = new(user, "navbeacon", "Navigation Beacon")
+	popup.set_content(t)
+	popup.open()
 	onclose(user, "navbeacon")
-	return
 
 /obj/machinery/navbeacon/Topic(href, href_list)
 	..()

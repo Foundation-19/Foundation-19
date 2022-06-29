@@ -170,11 +170,21 @@
 
 		var/datum/species/S = all_species[client.prefs.species]
 		if(!check_species_allowed(S))
-			return 0
-		if(client.prefs.organ_data[BP_CHEST] == "cyborg")
-			if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
-				to_chat(usr, "No FBP without whitelist")
-				return 0
+			return FALSE
+
+		var/should_warn = TRUE
+		if(client.prefs.job_high == job.title)
+			should_warn = FALSE
+		else if(job.title in client.prefs.job_medium)
+			should_warn = FALSE
+		else if(job.title in client.prefs.job_low)
+			should_warn = FALSE
+		else if(job.is_restricted(client.prefs))
+			should_warn = FALSE // If it isn't available there will be its own message.
+
+		if(should_warn)
+			if(alert(client, "You don't have any preferences set for [job.title]. Are you sure you want to join as it?", "Confirm Job Selection", "Yes", "No") == "No")
+				return FALSE
 
 		AttemptLateSpawn(job, client.prefs.spawnpoint)
 		return
@@ -182,6 +192,10 @@
 	if(!ready && href_list["preference"])
 		if(client)
 			client.prefs.process_link(src, href_list)
+
+	if(href_list["invalid_jobs"])
+		show_invalid_jobs = !show_invalid_jobs
+		LateChoices() // Update the window
 
 	else if(!href_list["late_join"])
 		new_player_panel()
@@ -288,7 +302,7 @@
 
 	var/list/dat = list()
 	dat += "Choose from the following open/valid positions:<br>"
-	dat += "<a href='byond://?src=\ref[src];invalid_jobs=1'>[show_invalid_jobs ? "Hide":"Show"] unavailable jobs.</a><br>"
+	dat += "<a href='byond://?src=\ref[src];invalid_jobs=1'>[show_invalid_jobs ? "Hide":"Show"] unavailable jobs</a><br>"
 	dat += "<table>"
 	dat += "<tr><td colspan = 3><b>[GLOB.using_map.station_name]:</b></td></tr>"
 
@@ -338,15 +352,12 @@
 		additional_dat += "<br>"
 		dat = additional_dat + dat
 	dat = header + dat
-	show_browser(src, jointext(dat, null), "window=latechoices;size=450x640;can_close=1")
+	var/datum/browser/popup = new(src, "latechoices", "Choose Profession", 450, 640)
+	popup.set_content(jointext(dat, null))
+	popup.open(0)
 
 /mob/new_player/proc/create_character(var/turf/spawn_turf)
 	spawning = 1
-	if(client.prefs.organ_data[BP_CHEST] == "cyborg")
-		if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
-			to_chat(src, "No FBP without whitelist.")
-			spawning = 0
-			return
 	close_spawn_windows()
 
 	var/mob/living/carbon/human/new_character

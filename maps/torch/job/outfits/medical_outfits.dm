@@ -85,7 +85,7 @@
 	shoes = /obj/item/clothing/shoes/white
 	id_types = list(
 		/obj/item/card/id/torch/contractor/medical/counselor,
-		/obj/item/card/id/foundation_civilian)
+		)
 
 /decl/hierarchy/outfit/job/torch/crew/medical/counselor/ec
 	name = OUTFIT_JOB_NAME("Counselor - Expeditionary Corps")
@@ -96,8 +96,3 @@
 	name = OUTFIT_JOB_NAME("Counselor - Fleet")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/medical
 	shoes = /obj/item/clothing/shoes/dutyboots
-
-/decl/hierarchy/outfit/job/torch/crew/medical/counselor/mentalist
-	name = OUTFIT_JOB_NAME("Counselor - Mentalist")
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat
-	shoes = /obj/item/clothing/shoes/laceup

@@ -162,13 +162,12 @@
 /obj/item/melee/energy/sword/purple
 	blade_color = "purple"
 
-/obj/item/melee/energy/sword/dropped(mob/user)
+/obj/item/melee/energy/sword/dropped(var/mob/user)
 	..()
 	if(!istype(loc,/mob))
 		deactivate(user)
 
-/obj/item/melee/energy/sword/handle_shield(mob/user, damage, atom/damage_source = null, mob/attacker = null, def_zone = null, attack_text = "the attack")
-	. = ..()
+/obj/item/melee/energy/sword/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 	if(.)
 		var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 		spark_system.set_up(5, 0, user.loc)
@@ -269,4 +268,22 @@
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MAGNET = 3)
 	active_attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
+	hitsound = 'sound/weapons/blade1.ogg'
+
+/obj/item/melee/energy/knife
+	icon = 'icons/obj/weapons/melee_energy.dmi'
+	icon_state = "knife_unathi_x"
+	active_icon = "knife_unathi"
+	active_force = 20
+	active_throwforce = 24
+	name = "power dagger"
+	desc = "A moderately sharp, extremely hot knife. Not to be confused with a laser scalpel, the only medical use for this knife is euthanasia."
+	lighting_color = COLOR_SABER_UNATHI
+	force = 10
+	throwforce = 12
+	throw_speed = 3
+	throw_range = 7
+	w_class = ITEM_SIZE_SMALL
+	active_attack_verb = list("stabbed", "cut", "seared", "slashed")
+	inactive_attack_verb = list("stabbed", "cut", "slashed")
 	hitsound = 'sound/weapons/blade1.ogg'

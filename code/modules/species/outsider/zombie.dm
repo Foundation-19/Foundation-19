@@ -2,6 +2,7 @@
 //// Zombie Defines
 
 #define SPECIES_ZOMBIE "Zombie"
+#define LANGUAGE_ZOMBIE "Zombie"
 #define ANTAG_ZOMBIE "Zombie"
 
 //// Zombie Globals
@@ -38,7 +39,7 @@ GLOBAL_LIST_INIT(zombie_messages, list(
 GLOBAL_LIST_INIT(zombie_species, list(\
 	SPECIES_HUMAN, SPECIES_DIONA, SPECIES_UNATHI, SPECIES_VOX, SPECIES_VOX_ARMALIS,\
 	SPECIES_SKRELL, SPECIES_PROMETHEAN, SPECIES_ALIEN, SPECIES_YEOSA, SPECIES_VATGROWN,\
-	SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_MULE, SPECIES_MONKEY, SPECIES_SCP049_1
+	SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_MULE, SPECIES_MONKEY
 ))
 
 
@@ -93,12 +94,16 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	H.mutations |= MUTATION_FERAL
 	H.mutations |= MUTATION_XRAY
 	H.mutations |= mNobreath //Byond doesn't like adding them all in one OR statement :(
-	H.verbs += /mob/living/carbon/human/proc/consume
+	H.verbs += /mob/living/carbon/proc/consume
 	H.move_intents = list(/decl/move_intent/creep) //Zooming days are over
 	H.a_intent = "harm"
 	H.move_intent = new /decl/move_intent/creep
 	H.default_run_intent = H.move_intent
 	H.default_walk_intent = H.move_intent
+
+	H.set_sight(H.sight | SEE_MOBS | SEE_OBJS | SEE_TURFS) //X-Ray vis
+	H.set_see_in_dark(8)
+	H.set_see_invisible(SEE_INVISIBLE_LEVEL_TWO)
 
 	H.languages = list()
 	H.add_language(LANGUAGE_ZOMBIE)
@@ -125,7 +130,11 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 /datum/species/zombie/handle_environment_special(mob/living/carbon/human/H)
 	if (H.stat == CONSCIOUS)
 		if (prob(5))
-			playsound(H.loc, "zombie_sound", 15, 1)
+			playsound(H.loc, 'sound/hallucinations/far_noise.ogg', 15, 1)
+		else if (prob(5))
+			playsound(H.loc, 'sound/hallucinations/veryfar_noise.ogg', 15, 1)
+		else if (prob(5))
+			playsound(H.loc, 'sound/hallucinations/wail.ogg', 15, 1)
 
 	for(var/obj/item/organ/I in H.internal_organs)
 		if (I.damage > 0)
@@ -149,18 +158,14 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 /datum/species/zombie/proc/handle_death_infection(mob/living/carbon/human/H)
 	var/list/victims = hearers(rand(1, 2), H)
 	for(var/mob/living/carbon/human/M in victims)
-		if (H == M || M.is_species(SPECIES_ZOMBIE))
+		if (H == M || isspecies(M, SPECIES_ZOMBIE))
 			continue
-		if (M.isSynthetic() || M.is_species(SPECIES_DIONA) || !(M.species.name in GLOB.zombie_species))
+		if (!(M.species.name in GLOB.zombie_species) || isspecies(M,SPECIES_DIONA) || M.isSynthetic())
 			continue
 		if (M.wear_mask && (M.wear_mask.item_flags & ITEM_FLAG_AIRTIGHT)) // If they're protected by a mask
 			continue
 		else if (M.head && (M.head.item_flags & ITEM_FLAG_AIRTIGHT)) // If they're protected by a helmet
 			continue
-
-		var/vuln = 1 - M.get_blocked_ratio(null, TOX, damage_flags = DAM_BIO) //Are they protected by hazmat clothing?
-		if (vuln > 0.10 && prob(10))
-			M.reagents.add_reagent(/datum/reagent/zombie, 0.5) //Infect 'em
 
 	if (H && H.stat != CONSCIOUS)
 		addtimer(CALLBACK(src, .proc/handle_death_infection, H), 1 SECOND)
@@ -191,7 +196,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 /datum/species/zombie/proc/handle_action(mob/living/carbon/human/H)
 	var/dist = 128
 	for(var/mob/living/M in hearers(H, 15))
-		if ((ishuman(M) || istype(M, /mob/living/exosuit)) && !M.is_species(SPECIES_ZOMBIE) && !M.is_species(SPECIES_DIONA)) //Don't attack fellow zombies, or diona
+		if ((ishuman(M) || istype(M, /mob/living/exosuit)) && !isspecies(M, SPECIES_ZOMBIE) && !isspecies(M, SPECIES_DIONA)) //Don't attack fellow zombies, or diona
 			if (istype(M, /mob/living/exosuit))
 				var/mob/living/exosuit/MC = M
 				if (!LAZYLEN(MC.pilots))
@@ -205,7 +210,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 	H.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
 	if (target)
-		if (target.is_species(SPECIES_ZOMBIE) || istype(target, /mob/living/carbon/human/scp049))
+		if (isspecies(target, SPECIES_ZOMBIE))
 			target = null
 			return
 
@@ -240,10 +245,10 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 		target = null //Target lost
 
 	else
-		if(!H.lying)
-			if(prob(33))
-				var/turf/T = step_rand(H)
-				H.Move(get_dir(H, T))
+		if (!H.lying)
+			walk(H, 0) //Clear walking
+			if (prob(33) && isturf(H.loc) && !H.pulledby)
+				H.SelfMove(pick(GLOB.cardinal))
 
 
 /datum/language/zombie
@@ -270,9 +275,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	. = ..()
 	if (!.)
 		return FALSE
-	if(isscp049(target))
-		return
-	if (target.is_species(SPECIES_ZOMBIE))
+	if (isspecies(target, SPECIES_ZOMBIE))
 		to_chat(usr, SPAN_WARNING("They don't look very appetizing!"))
 		return FALSE
 	return TRUE
@@ -280,7 +283,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 /datum/unarmed_attack/bite/sharp/zombie/apply_effects(mob/living/carbon/human/user, mob/living/carbon/human/target, attack_damage, zone)
 	..()
 	admin_attack_log(user, target, "Bit their victim.", "Was bitten.", "bit")
-	if (!(target.species.name in GLOB.zombie_species) || target.is_species(SPECIES_DIONA) || target.isSynthetic()) //No need to check infection for FBPs
+	if (!(target.species.name in GLOB.zombie_species) || isspecies(target, SPECIES_DIONA) || target.isSynthetic()) //No need to check infection for FBPs
 		return
 	target.adjustHalLoss(9) //To help bring down targets in voidsuits
 	var/vuln = 1 - target.get_blocked_ratio(zone, TOX, damage_flags = DAM_BIO) //Are they protected from bites?
@@ -307,9 +310,8 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	if (!ishuman(M))
 		return
 	var/mob/living/carbon/human/H = M
-	if(isscp049(H))
-		return
-	if (!(H.species.name in GLOB.zombie_species) || H.is_species(SPECIES_DIONA) || H.isSynthetic())
+
+	if (!(H.species.name in GLOB.zombie_species) || isspecies(H, SPECIES_DIONA) || H.isSynthetic())
 		remove_self(volume)
 		return
 	var/true_dose = H.chem_doses[type] + volume
@@ -359,9 +361,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 
 /mob/living/carbon/human/proc/zombify()
-	if(isscp049(src))
-		return
-	if (!(species.name in GLOB.zombie_species) || is_species(SPECIES_DIONA) || is_species(SPECIES_ZOMBIE) || isSynthetic())
+	if (!(species.name in GLOB.zombie_species) || isspecies(src, SPECIES_DIONA) || isspecies(src, SPECIES_ZOMBIE) || isSynthetic())
 		return
 
 	if (mind)
@@ -383,7 +383,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	if (QDELETED(src))
 		return
 
-	if (is_species(SPECIES_ZOMBIE)) //Check again otherwise Consume can run this twice at once
+	if (isspecies(src, SPECIES_ZOMBIE)) //Check again otherwise Consume can run this twice at once
 		return
 
 	rejuvenate()
@@ -411,23 +411,19 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	if (skillset && skillset.skill_list)
 		skillset.skill_list = list()
 		for(var/decl/hierarchy/skill/S in GLOB.skills) //Only want trained CQC and athletics
-			skillset.skill_list[S.type] = SKILL_NONE
-		skillset.skill_list[SKILL_HAULING] = SKILL_ADEPT
-		skillset.skill_list[SKILL_COMBAT] = SKILL_ADEPT
+			skillset.skill_list[S.type] = SKILL_UNTRAINED
+		skillset.skill_list[SKILL_HAULING] = SKILL_TRAINED
+		skillset.skill_list[SKILL_COMBAT] = SKILL_TRAINED
 		skillset.on_levels_change()
 
 	species = all_species[SPECIES_ZOMBIE]
 	species.handle_post_spawn(src)
 
-	if(scp_049_instance)
-		name = "SCP-049-[GLOB.scp049_1s.len]"
-		real_name = "SCP-049-[GLOB.scp049_1s.len]"
-
 	var/turf/T = get_turf(src)
-	playsound(T, "zombie_sound", 25, 1)
+	playsound(T, 'sound/hallucinations/wail.ogg', 25, 1)
 
 
-/mob/living/carbon/human/proc/consume()
+/mob/living/carbon/proc/consume()
 	set name = "Consume"
 	set desc = "Regain life and infect others by feeding upon them."
 	set category = "Abilities"
@@ -440,10 +436,10 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	var/list/victims = list()
 	for (var/mob/living/carbon/human/L in get_turf(src))
 		if (L != src && (L.lying || L.stat == DEAD))
-			if (L.is_species(SPECIES_ZOMBIE))
+			if (isspecies(L, SPECIES_ZOMBIE))
 				to_chat(src, SPAN_WARNING("\The [L] isn't fresh anymore!"))
 				continue
-			if (!(L.species.name in GLOB.zombie_species) || L.is_species(SPECIES_DIONA) || L.isSynthetic() || isscp049(L))
+			if (!(L.species.name in GLOB.zombie_species) || isspecies(L, SPECIES_DIONA) || L.isSynthetic())
 				to_chat(src, SPAN_WARNING("You'd break your teeth on \the [L]!"))
 				continue
 			victims += L
@@ -470,7 +466,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	last_special = world.time + 5 SECONDS
 
 	src.visible_message(SPAN_DANGER("\The [src] hunkers down over \the [target], tearing into their flesh."))
-	playsound(loc, 'sound/scp/voice/049_1/zombiescratch.ogg', 20, 1)
+	playsound(loc, 'sound/effects/wounds/bonebreak3.ogg', 20, 1)
 
 	target.adjustHalLoss(50)
 
@@ -485,9 +481,6 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 			if (target.stat != DEAD)
 				to_chat(src,SPAN_WARNING("You've scraped \the [target] down to the bones already!."))
 				target.zombify()
-				if(src.scp_049_instance) //are we an 049_1? if so we should make more 049_1s
-					target.is_scp_instance = TRUE
-					target.scp_049_instance = TRUE
 			else
 				to_chat(src,SPAN_DANGER("You shred and rip apart \the [target]'s remains!."))
 				target.gib()
@@ -497,7 +490,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 		to_chat(target,SPAN_DANGER("\The [src] scrapes your flesh from your bones!"))
 		to_chat(src,SPAN_DANGER("You feed hungrily off \the [target]'s flesh."))
 
-		if (target.is_species(SPECIES_ZOMBIE)) //Just in case they turn whilst being eaten
+		if (isspecies(target, SPECIES_ZOMBIE)) //Just in case they turn whilst being eaten
 			return
 
 		target.apply_damage(rand(50, 60), BRUTE, BP_CHEST)
@@ -510,7 +503,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 		src.adjustBrainLoss(-5)
 		src.adjust_nutrition(40)
 
-		playsound(loc, 'sound/scp/voice/049_1/zombiescratch.ogg', 20, 1)
+		playsound(loc, 'sound/effects/splat.ogg', 20, 1)
 		new /obj/effect/decal/cleanable/blood/splatter(get_turf(src), target.species.blood_color)
 		if (target.getBruteLoss() > target.maxHealth*0.75)
 			if (prob(50))

@@ -120,25 +120,25 @@
 	icon_state = "passport_scg2"
 	desc = "A passport from the southern part of Gaia, under control of the Sol Central Government."
 
-/obj/item/passport/iccg
+/obj/item/passport/terran
 	name = "\improper ICCG passport"
-	icon_state = "passport_iccg"
-	desc = "A passport from the Independent Colonial Confederation of Gilgamesh."
+	icon_state = "passport_terragov"
+	desc = "A passport from the Terran Government."
 
 /obj/item/passport/north_gaia
 	name = "\improper Northern Gaian passport"
-	icon_state = "passport_iccg2"
-	desc = "A passport from the northern part of Gaia, under control of the Independent Colonial Confederation of Gilgamesh."
+	icon_state = "passport_terragov2"
+	desc = "A passport from the northern part of Gaia, under control of the Terran Government."
 
 /obj/item/passport/terra
 	name = "\improper Terran passport"
-	icon_state = "passport_iccg2"
-	desc = "A passport from Terra, within ICCG space."
+	icon_state = "passport_terragov2"
+	desc = "A passport from Terra, within TerraGov space."
 
-/obj/item/passport/novayazemlya
-	name = "\improper Novaya Zemlya passport"
-	icon_state = "passport_iccg2"
-	desc = "A passport from Novaya Zemlya, within ICCG space."
+/obj/item/passport/new_earth
+	name = "\improper New Earth passport"
+	icon_state = "passport_terragov2"
+	desc = "A passport from New Earth, within TerraGov space."
 
 /obj/item/passport/saveel
 	name = "\improper Saveel passport"

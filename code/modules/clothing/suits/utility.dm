@@ -54,7 +54,7 @@
 	w_class = ITEM_SIZE_HUGE//bulky item
 
 /obj/item/clothing/suit/fire/heavy/Initialize()
-	..()
+	. = ..()
 	slowdown_per_slot[slot_wear_suit] = 0.5
 
 /*
@@ -73,7 +73,6 @@
 		)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
-	item_flags = null
 	siemens_coefficient = 0
 
 
@@ -93,12 +92,11 @@
 		)
 	flags_inv = HIDEJUMPSUIT|HIDETAIL
 	heat_protection = UPPER_TORSO|LOWER_TORSO
-	item_flags = null
 	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0
 
-/obj/item/clothing/suit/bomb_suit/New()
-	..()
+/obj/item/clothing/suit/bomb_suit/Initialize()
+	. = ..()
 	slowdown_per_slot[slot_wear_suit] = 2
 
 /obj/item/clothing/head/bomb_hood/security
@@ -144,6 +142,6 @@
 		)
 	flags_inv = HIDEJUMPSUIT|HIDETAIL|HIDEGLOVES|HIDESHOES
 
-/obj/item/clothing/suit/radiation/New()
-	..()
-	slowdown_per_slot[slot_shoes] = 1.5
+/obj/item/clothing/suit/radiation/Initialize()
+	. = ..()
+	slowdown_per_slot[slot_shoes] = 1

@@ -1,5 +1,4 @@
 /obj/item/underwear
-	item_flags = ITEM_FLAG_WASHER_ALLOWED
 	w_class = ITEM_SIZE_TINY
 	var/required_slot_flags
 	var/required_free_body_parts

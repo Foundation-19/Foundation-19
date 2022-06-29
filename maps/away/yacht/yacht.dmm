@@ -285,9 +285,8 @@
 /area/yacht/living)
 "aQ" = (
 /obj/structure/table/marble,
-/obj/item/deck/cards,
-/obj/item/dice,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/stove/hotplate,
 /turf/simulated/floor/wood/yew,
 /area/yacht/living)
 "aR" = (

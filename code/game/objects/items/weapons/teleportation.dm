@@ -39,9 +39,10 @@ Frequency:
 <A href='byond://?src=\ref[src];freq=10'>+</A><BR>
 
 <A href='?src=\ref[src];refresh=1'>Refresh</A>"}
-	show_browser(user, dat, "window=radio")
+	var/datum/browser/popup = new(user, "radio", "Persistent Signal Locator")
+	popup.set_content(dat)
+	popup.open()
 	onclose(user, "radio")
-	return
 
 /obj/item/locator/Topic(href, href_list)
 	..()

@@ -6,8 +6,7 @@ GLOBAL_LIST_INIT(possible_chassis, list(
 		"Rabbit" = "rabbit",
 		"Mushroom" = "mushroom",
 		"Corgi" = "corgi",
-		"Crow" = "crow",
-		"Humanoid" = "humanoid"
+		"Crow" = "crow"
 		))
 
 GLOBAL_LIST_INIT(possible_say_verbs, list(
@@ -128,6 +127,9 @@ GLOBAL_LIST_INIT(possible_say_verbs, list(
 	return !istype(loc, /obj/item/device/paicard) && ..()
 
 /mob/living/silicon/pai/emp_act(severity)
+	if(status_flags & GODMODE)
+		return
+
 	// Silence for 2 minutes
 	// 20% chance to kill
 		// 33% chance to unbind

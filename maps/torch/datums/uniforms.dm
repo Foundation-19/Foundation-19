@@ -43,6 +43,7 @@
 	utility_extra = list(/obj/item/clothing/head/beret/solgov/expedition, /obj/item/clothing/head/ushanka/solgov, /obj/item/clothing/suit/storage/hooded/wintercoat/solgov, /obj/item/clothing/shoes/jackboots/unathi)
 
 	service_over = /obj/item/clothing/suit/storage/solgov/service/expeditionary
+	service_shoes = /obj/item/clothing/shoes/dress
 	service_hat = /obj/item/clothing/head/solgov/service/expedition
 
 	dress_under = /obj/item/clothing/under/solgov/dress/expeditionary
@@ -94,4 +95,4 @@
 	dress_skirt = /obj/item/clothing/under/skirt_c/dress/long/black
 	dress_over = /obj/item/clothing/suit/storage/toggle/suit/black
 	dress_shoes = /obj/item/clothing/shoes/dress
-	dress_extra = list(/obj/item/clothing/accessory/waistcoat/black, /obj/item/clothing/under/skirt_c/dress/long/eggshell, /obj/item/clothing/shoes/flats/black)
+	dress_extra = list(/obj/item/clothing/accessory/wcoat/black, /obj/item/clothing/under/skirt_c/dress/long/eggshell, /obj/item/clothing/shoes/flats/black)

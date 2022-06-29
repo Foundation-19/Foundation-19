@@ -38,7 +38,7 @@
 			continue
 
 		if(floor.density)
-			if(!isnull(seed.chems[/datum/reagent/acid/polyacid]))
+			if(!isnull(seed.chems[/datum/reagent/acid/polytrinic]))
 				spawn(rand(5,25)) floor.ex_act(3)
 			continue
 
@@ -59,7 +59,7 @@
 	adjust_health(-seed.handle_environment(T,T.return_air(),null,1))
 	if(health <= 0)
 		return
-	
+
 	//Vine fight!
 	for(var/obj/effect/vine/other in T)
 		if(other.seed != seed)
@@ -89,7 +89,7 @@
 			var/list/neighbors = get_neighbors()
 			if(neighbors.len)
 				spread_to(pick(neighbors))
-			
+
 		//Try to settle down
 		if(can_spawn_plant())
 			plant = new(T,seed)
@@ -132,7 +132,7 @@
 		child.set_dir(child.calc_dir())
 		child.update_icon()
 		// Some plants eat through plating.
-		if(islist(seed.chems) && !isnull(seed.chems[/datum/reagent/acid/polyacid]))
+		if(islist(seed.chems) && !isnull(seed.chems[/datum/reagent/acid/polytrinic]))
 			target_turf.ex_act(prob(80) ? 3 : 2)
 	else
 		qdel(child)
@@ -151,7 +151,7 @@
 		if(!istype(check_turf))
 			continue
 		for(var/mob/living/M in check_turf.contents)
-			if(prob(5) || !M.skill_check(SKILL_BOTANY, SKILL_PROF))
+			if(prob(5) || !M.skill_check(SKILL_BOTANY, SKILL_MASTER))
 				targets |= M
 	if(targets.len)
 		return targets

@@ -1,3 +1,5 @@
+//Loadout presets
+
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap/install_default_hardware()
 	..()
 	processor_unit = new/obj/item/stock_parts/computer/processor_unit/small(src)
@@ -36,9 +38,7 @@
 	var/mob/living/carbon/human/H = get_holder_of_type(src, /mob)
 	if(!istype(H)) return
 	install_default_programs_by_job(H)
-	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
-	if(os)
-		os.create_file(new/datum/computer_file/program/wordprocessor())
+	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
 
 //Map presets
 
@@ -55,7 +55,5 @@
 
 /obj/item/modular_computer/laptop/preset/records/install_default_programs()
 	..()
-	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
-	if(os)
-		os.create_file(new /datum/computer_file/program/wordprocessor())
-		os.create_file(new /datum/computer_file/program/records())
+	hard_drive.store_file(new/datum/computer_file/program/records())
+	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())

@@ -1,5 +1,3 @@
-// This is definetly being used
-
 /datum/species/human
 	name = SPECIES_HUMAN
 	name_plural = "Humans"
@@ -12,10 +10,9 @@
 	worlds tumultous at best."
 	assisted_langs = list(LANGUAGE_NABBER)
 	min_age = 18
-	max_age = 70
+	max_age = 100
 	hidden_from_codex = FALSE
 	bandages_icon = 'icons/mob/bandage.dmi'
-	genders = list(MALE, FEMALE)
 
 	spawn_flags = SPECIES_CAN_JOIN
 	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_TONE_NORMAL | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
@@ -26,7 +23,20 @@
 
 	available_cultural_info = list(
 		TAG_CULTURE = list(
-			CULTURE_HUMAN_EARTH
+			CULTURE_HUMAN_MARTIAN,
+			CULTURE_HUMAN_MARSTUN,
+			CULTURE_HUMAN_LUNAPOOR,
+			CULTURE_HUMAN_LUNARICH,
+			CULTURE_HUMAN_VENUSIAN,
+			CULTURE_HUMAN_VENUSLOW,
+			CULTURE_HUMAN_BELTER,
+			CULTURE_HUMAN_PLUTO,
+			CULTURE_HUMAN_EARTH,
+			CULTURE_HUMAN_CETI,
+			CULTURE_HUMAN_SPACER,
+			CULTURE_HUMAN_SPAFRO,
+			CULTURE_HUMAN_TERRAN,
+			CULTURE_HUMAN_OTHER
 		)
 	)
 
@@ -34,7 +44,7 @@
 	exertion_hydration_scale = 1
 	exertion_charge_scale = 1
 	exertion_reagent_scale = 5
-	exertion_reagent_path = /datum/reagent/lactate
+	exertion_reagent_path = /datum/reagent/lactic_acid
 	exertion_emotes_biological = list(
 		/decl/emote/exertion/biological,
 		/decl/emote/exertion/biological/breath,
@@ -214,7 +224,7 @@
 	exertion_hydration_scale = 1
 	exertion_charge_scale = 1
 	exertion_reagent_scale = 5
-	exertion_reagent_path = /datum/reagent/lactate
+	exertion_reagent_path = /datum/reagent/lactic_acid
 	exertion_emotes_biological = list(
 		/decl/emote/exertion/biological,
 		/decl/emote/exertion/biological/breath,

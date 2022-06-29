@@ -39,6 +39,18 @@
 	cost = 0
 	allowed_branches = list(/datum/mil_branch/fleet)
 
+/datum/gear/head/fleethijab
+	display_name = "fleet hijab"
+	path = /obj/item/clothing/head/soft/solgov/fleet/hijab
+	cost = 0
+	allowed_branches = list(/datum/mil_branch/fleet)
+
+/datum/gear/head/fleetturban
+	display_name = "fleet turban"
+	path = /obj/item/clothing/head/soft/solgov/fleet/turban
+	cost = 0
+	allowed_branches = list(/datum/mil_branch/fleet)
+
 /datum/gear/head/echat
 	display_name = "EC cap"
 	path = /obj/item/clothing/head/soft/solgov/expedition

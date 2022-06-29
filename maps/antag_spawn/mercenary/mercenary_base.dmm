@@ -166,9 +166,6 @@
 /area/map_template/merc_spawn)
 "aA" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/machinery/computer/cryopod{
-	pixel_y = 25
-	},
 /turf/simulated/floor/tiled/white,
 /area/map_template/merc_spawn)
 "bj" = (
@@ -1080,7 +1077,6 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/item/clothing/glasses/thermal,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/merc_shuttle)
 "lz" = (
@@ -1866,7 +1862,6 @@
 /obj/item/reagent_containers/glass/bottle/dexalin,
 /obj/item/reagent_containers/glass/bottle/kelotane,
 /obj/item/reagent_containers/glass/bottle/kelotane,
-/obj/item/reagent_containers/glass/beaker/cryoxadone,
 /turf/simulated/floor/tiled/white,
 /area/map_template/merc_shuttle)
 "uM" = (
@@ -2270,7 +2265,7 @@
 	},
 /obj/machinery/door/window/brigdoor/eastright{
 	dir = 1;
-	health = 150;
+	health_max = 150;
 	name = "The Box";
 	req_access = list("ACCESS_SYNDICATE")
 	},

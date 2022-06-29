@@ -43,7 +43,7 @@
 /datum/universal_state/bluespace_jump/OnTouchMapEdge(var/atom/A)
 	if((A.z in affected_levels) && (A in bluespaced))
 		if(ismob(A))
-			to_chat(A,"<span class='warning'>You drift away into the shifting expanse, never to be seen again.</span>")
+			to_chat(A,SPAN_WARNING("You drift away into the shifting expanse, never to be seen again."))
 		qdel(A) //lost in bluespace
 		return FALSE
 	return TRUE
@@ -51,14 +51,14 @@
 /datum/universal_state/bluespace_jump/proc/apply_bluespaced(var/mob/living/M)
 	bluespaced += M
 	if(M.client)
-		to_chat(M,"<span class='notice'>You feel oddly light, and somewhat disoriented as everything around you shimmers and warps ever so slightly.</span>")
+		to_chat(M,SPAN_NOTICE("You feel oddly light, and somewhat disoriented as everything around you shimmers and warps ever so slightly."))
 		M.overlay_fullscreen("bluespace", /obj/screen/fullscreen/bluespace_overlay)
 	M.confused = 20
 	bluegoasts += new/obj/effect/bluegoast/(get_turf(M),M)
 
 /datum/universal_state/bluespace_jump/proc/clear_bluespaced(var/mob/living/M)
 	if(M.client)
-		to_chat(M,"<span class='notice'>You feel rooted in material world again.</span>")
+		to_chat(M,SPAN_NOTICE("You feel rooted in material world again."))
 		M.clear_fullscreen("bluespace")
 	M.confused = 0
 	for(var/mob/goast in GLOB.ghost_mob_list)
@@ -72,70 +72,48 @@
 /obj/effect/bluegoast
 	name = "bluespace echo"
 	desc = "It's not going to punch you, is it?"
-	var/mob/living/carbon/human/daddy
+	var/mob/living/carbon/human/real_one
 	anchored = TRUE
 	var/reality = 0
 	simulated = FALSE
 
-/obj/effect/bluegoast/New(nloc, ndaddy)
+/obj/effect/bluegoast/New(nloc, nreal_one)
 	..(nloc)
-	if(!ndaddy)
+	if(!nreal_one)
 		qdel(src)
 		return
-	daddy = ndaddy
-	set_dir(daddy.dir)
-	appearance = daddy.appearance
-	GLOB.moved_event.register(daddy, src, /obj/effect/bluegoast/proc/mirror)
-	GLOB.dir_set_event.register(daddy, src, /obj/effect/bluegoast/proc/mirror_dir)
-	GLOB.destroyed_event.register(daddy, src, /datum/proc/qdel_self)
+	real_one = nreal_one
+	set_dir(real_one.dir)
+	appearance = real_one.appearance
+	GLOB.moved_event.register(real_one, src, /obj/effect/bluegoast/proc/mirror)
+	GLOB.dir_set_event.register(real_one, src, /obj/effect/bluegoast/proc/mirror_dir)
+	GLOB.destroyed_event.register(real_one, src, /datum/proc/qdel_self)
 
 /obj/effect/bluegoast/Destroy()
-	GLOB.destroyed_event.unregister(daddy, src)
-	GLOB.dir_set_event.unregister(daddy, src)
-	GLOB.moved_event.unregister(daddy, src)
-	daddy = null
+	GLOB.destroyed_event.unregister(real_one, src)
+	GLOB.dir_set_event.unregister(real_one, src)
+	GLOB.moved_event.unregister(real_one, src)
+	real_one = null
 	. = ..()
 
 /obj/effect/bluegoast/proc/mirror(var/atom/movable/am, var/old_loc, var/new_loc)
 	var/ndir = get_dir(new_loc,old_loc)
-	appearance = daddy.appearance
+	appearance = real_one.appearance
 	var/nloc = get_step(src, ndir)
 	if(nloc)
 		forceMove(nloc)
 	if(nloc == new_loc)
-		reality++
-		if(reality > 5)
-			to_chat(daddy, "<span class='notice'>Yep, it's certainly the other one. Your existance was a glitch, and it's finally being mended...</span>")
-			blueswitch()
-		else if(reality > 3)
-			to_chat(daddy, "<span class='danger'>Something is definitely wrong. Why do you think YOU are the original?</span>")
-		else
-			to_chat(daddy, "<span class='warning'>You feel a bit less real. Which one of you two was original again?..</span>")
+		to_chat(real_one, SPAN_WARNING("You feel a bit less real. Which one of you two was original again?.."))
+		if(prob(50))
+			real_one.confused = max(real_one.confused, 10)
+		if(prob(20))
+			real_one.drowsyness = max(real_one.drowsyness, 3)
 
 /obj/effect/bluegoast/proc/mirror_dir(var/atom/movable/am, var/old_dir, var/new_dir)
 	set_dir(GLOB.reverse_dir[new_dir])
 
 /obj/effect/bluegoast/examine()
-	return daddy?.examine(arglist(args))
-
-/obj/effect/bluegoast/proc/blueswitch()
-	var/mob/living/carbon/human/H
-	if(ishuman(daddy))
-		H = new(get_turf(src), daddy.species.name)
-		H.dna = daddy.dna.Clone()
-		H.sync_organ_dna()
-		H.UpdateAppearance()
-		for(var/obj/item/entry in daddy.get_equipped_items(TRUE))
-			daddy.remove_from_mob(entry) //steals instead of copies so we don't end up with duplicates
-			H.equip_to_appropriate_slot(entry)
-	else
-		H = new daddy.type(get_turf(src))
-		H.appearance = daddy.appearance
-
-	H.real_name = daddy.real_name
-	H.flavor_text = daddy.flavor_text
-	daddy.dust()
-	qdel(src)
+	return real_one?.examine(arglist(args))
 
 /obj/screen/fullscreen/bluespace_overlay
 	icon = 'icons/effects/effects.dmi'

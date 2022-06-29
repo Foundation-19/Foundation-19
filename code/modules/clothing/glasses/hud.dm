@@ -10,7 +10,7 @@
 	activation_sound = sound('sound/machines/boop1.ogg', volume = 10)
 	deactivation_sound = sound('sound/effects/compbeep1.ogg', volume = 30)
 
-	species_restricted = null
+	species_restricted = list("exclude", SPECIES_DIONA)
 
 /obj/item/clothing/glasses/hud/Initialize()
 	. = ..()
@@ -39,22 +39,18 @@
 /obj/item/clothing/glasses/hud/health/prescription
 	name = "prescription health scanner HUD"
 	desc = "A medical HUD integrated with a set of prescription glasses."
-	prescription = 5
+	prescription = 7
 	icon_state = "healthhudpresc"
 	off_state = "healthhudpresc_off"
 	item_state = "healthhudpresc"
 
-/obj/item/clothing/glasses/hud/health/goggle
+/obj/item/clothing/glasses/hud/health/visor
 	name = "medical HUD visor"
 	desc = "A medical HUD integrated with a wide visor."
-	icon_state = "material"
-	off_state = "degoggles"
-	item_state = "material"
+	icon_state = "medhud_visor"
+	off_state = "medhud_visor_off"
+	item_state = "medhud_visor"
 	body_parts_covered = EYES
-
-/obj/item/clothing/glasses/hud/health/goggle/prescription
-	prescription = 5
-	desc = "A medical HUD integrated with a wide visor. This one has a corrective lense."
 
 /obj/item/clothing/glasses/hud/security
 	name = "security HUD"
@@ -69,7 +65,7 @@
 /obj/item/clothing/glasses/hud/security/prescription
 	name = "prescription security HUD"
 	desc = "A security HUD integrated with a set of prescription glasses."
-	prescription = 5
+	prescription = 7
 	icon_state = "sechudpresc"
 	off_state = "sechudpresc_off"
 	item_state = "sechudpresc"
@@ -102,7 +98,7 @@
 	off_state = "janihudpresc_off"
 	item_state = "janihudpresc"
 	desc = "A janitor HUD integrated with a set of prescription glasses."
-	prescription = 5
+	prescription = 7
 
 /obj/item/clothing/glasses/hud/janitor/process_hud(var/mob/M)
 	process_jani_hud(M)
@@ -121,4 +117,4 @@
 	off_state = "scihudpresc_off"
 	item_state = "scihudpresc"
 	desc = "A science HUD integrated with a set of prescription glasses."
-	prescription = 5
+	prescription = 7

@@ -7,6 +7,7 @@
 
 #define PUBLIC_GAME_MODE SSticker.master_mode
 
+#define Clamp(value, low, high) (value <= low ? low : (value >= high ? high : value))
 #define CLAMP01(x) 		(Clamp(x, 0, 1))
 
 var/const/POSITIVE_INFINITY = 1#INF // win: 1.#INF, lin: inf
@@ -43,7 +44,7 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define isclient(A) istype(A, /client)
 
-#define iscorgi(A) istype(A, /mob/living/simple_animal/passive/corgi)
+#define iscorgi(A) istype(A, /mob/living/simple_animal/friendly/corgi)
 
 #define is_drone(A) istype(A, /mob/living/silicon/robot/drone)
 
@@ -57,7 +58,7 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define isliving(A) istype(A, /mob/living)
 
-#define ismouse(A) istype(A, /mob/living/simple_animal/passive/mouse)
+#define ismouse(A) istype(A, /mob/living/simple_animal/friendly/mouse)
 
 #define isnewplayer(A) istype(A, /mob/new_player)
 
@@ -74,6 +75,8 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 #define isspace(A) istype(A, /area/space)
 
 #define isspaceturf(A) istype(A, /turf/space)
+
+#define isopenturf(A) istype(A, /turf/simulated/open)
 
 #define ispAI(A) istype(A, /mob/living/silicon/pai)
 
@@ -99,33 +102,15 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define isPlunger(A) istype(A, /obj/item/clothing/mask/plunger) || istype(A, /obj/item/device/plunger/robot)
 
-#define isadmin(X) (check_rights(R_ADMIN, 0, (X)) != 0)
+/proc/isspecies(A, B)
+	if(!iscarbon(A))
+		return FALSE
+	var/mob/living/carbon/C = A
+	return C.species?.name == B
 
 #define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)
 
 #define random_id(key,min_id,max_id) uniqueness_repository.Generate(/datum/uniqueness_generator/id_random, key, min_id, max_id)
-
-#define isscp106(A) istype(A, /mob/living/carbon/human/scp106)
-
-#define isscp049(A) istype(A, /mob/living/carbon/human/scp049)
-
-#define isscp343(A) istype(A, /mob/living/carbon/human/scp343)
-
-#define isscp049_1(A) (istype(A, /mob/living/carbon/human) && A.scp_049_instance)
-
-#define isscp999(A) istype(A, /mob/living/simple_animal/scp_999)
-
-#define isscp131(A) istype(A, /mob/living/simple_animal/scp_131)
-
-#define isscp529(A) istype(A, /mob/living/simple_animal/cat/fluff/scp_529)
-
-#define isscp173(A) istype(A, /mob/living/scp_173)
-
-#define isstructure(A) istype(A, /obj/structure)
-
-#define ismachinery(A) istype(A, /obj/machinery)
-
-#define isdatum(A) istype(A, /datum)
 
 /// General I/O helpers
 #define to_target(target, payload)            target << (payload)
@@ -196,6 +181,8 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define SPAN_DANGER(X) "<span class='danger'>[X]</span>"
 
+#define SPAN_USERDANGER(X) "<span class='userdanger'>[X]</span>"
+
 #define SPAN_OCCULT(X) "<span class='cult'>[X]</span>"
 
 #define SPAN_MFAUNA(X) "<span class='mfauna'>[X]</span>"
@@ -206,7 +193,13 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define SPAN_DEBUG(X) "<span class='debug'>[X]</span>"
 
+#define SPAN_DEADSAY(X) "<span class='deadsay'>[X]</span>"
+
+#define SPAN_MENTOR(X) "<span class='mentor'>[X]</span>"
+
 #define SPAN_STYLE(style, X) "<span style=\"[style]\">[X]</span>"
+
+#define SPAN_CLASS(class, X) "<span class=\"[class]\">[X]</span>"
 
 #define FONT_COLORED(color, text) "<font color='[color]'>[text]</font>"
 
@@ -222,58 +215,24 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define crash_with(X) crash_at(X, __FILE__, __LINE__)
 
+#define isscp106(A) istype(A, /mob/living/carbon/human/scp106)
 
-/// Semantic define for a 0 int intended for use as a bitfield
-#define EMPTY_BITFIELD 0
+#define isscp049(A) istype(A, /mob/living/carbon/human/scp049)
 
+#define isscp343(A) istype(A, /mob/living/carbon/human/scp343)
 
-/// Right-shift of INT by BITS
-#define SHIFTR(INT, BITS) ((INT) >> (BITS))
+#define isscp049_1(A) (istype(A, /mob/living/carbon/human) && A.scp_049_instance)
 
+#define isscp999(A) istype(A, /mob/living/simple_animal/scp_999)
 
-/// Left-shift of INT by BITS
-#define SHIFTL(INT, BITS) ((INT) << (BITS))
+#define isscp131(A) istype(A, /mob/living/simple_animal/scp_131)
 
+#define isscp529(A) istype(A, /mob/living/simple_animal/cat/fluff/scp_529)
 
-/// Convenience define for nth-bit flags, 0-indexed
-#define FLAG(BIT) SHIFTL(1, BIT)
+#define isscp173(A) istype(A, /mob/living/scp_173)
 
+#define isstructure(A) istype(A, /obj/structure)
 
-/// Test bit at index BIT is set in FIELD
-#define GET_BIT(FIELD, BIT) ((FIELD) & FLAG(BIT))
+#define ismachinery(A) istype(A, /obj/machinery)
 
-
-/// Test bit at index BIT is set in FIELD; semantic alias of GET_BIT
-#define HAS_BIT(FIELD, BIT) GET_BIT(FIELD, BIT)
-
-
-/// Set bit at index BIT in FIELD
-#define SET_BIT(FIELD, BIT) ((FIELD) |= FLAG(BIT))
-
-
-/// Unset bit at index BIT in FIELD
-#define CLEAR_BIT(FIELD, BIT) ((FIELD) &= ~FLAG(BIT))
-
-
-/// Flip bit at index BIT in FIELD
-#define FLIP_BIT(FIELD, BIT) ((FIELD) ^= FLAG(BIT))
-
-
-/// Test any bits of MASK are set in FIELD
-#define GET_FLAGS(FIELD, MASK) ((FIELD) & (MASK))
-
-
-/// Test all bits of MASK are set in FIELD
-#define HAS_FLAGS(FIELD, MASK) (((FIELD) & (MASK)) == (MASK))
-
-
-/// Set bits of MASK in FIELD
-#define SET_FLAGS(FIELD, MASK) ((FIELD) |= (MASK))
-
-
-/// Unset bits of MASK in FIELD
-#define CLEAR_FLAGS(FIELD, MASK) ((FIELD) &= ~(MASK))
-
-
-/// Flip bits of MASK in FIELD
-#define FLIP_FLAGS(FIELD, MASK) ((FIELD) ^= (MASK))
+#define isdatum(A) istype(A, /datum)

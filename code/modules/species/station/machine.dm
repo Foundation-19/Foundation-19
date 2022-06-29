@@ -68,7 +68,7 @@
 		TAG_FACTION = list(
 			FACTION_POSITRONICS,
 			FACTION_SOL_CENTRAL,
-			FACTION_INDIE_CONFED,
+			FACTION_TERRAGOV,
 			FACTION_NANOTRASEN,
 			FACTION_FREETRADE,
 			FACTION_XYNERGY,
@@ -89,6 +89,7 @@
 		/decl/emote/exertion/synthetic,
 		/decl/emote/exertion/synthetic/creak
 	)
+	special_footstep_sounds = list('sound/effects/footstep/special/servostep.ogg')
 
 /datum/species/machine/handle_death(var/mob/living/carbon/human/H)
 	..()

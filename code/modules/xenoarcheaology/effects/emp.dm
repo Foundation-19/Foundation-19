@@ -11,10 +11,3 @@
 		var/turf/T = get_turf(holder)
 		empulse(T, effectrange/2, effectrange)
 		return 1
-
-/datum/artifact_effect/emp/destroyed_effect()
-	. = ..()
-
-	if(holder)
-		var/turf/T = get_turf(holder)
-		empulse(T, (effectrange * 2), effectrange)

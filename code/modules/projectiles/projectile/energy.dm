@@ -15,7 +15,7 @@
 	damage = 5
 	agony = 20
 	life_span = 15 //if the shell hasn't hit anything after travelling this far it just explodes.
-	muzzle_type = /obj/effect/projectile/bullet/muzzle
+	muzzle_type = /obj/effect/projectile/muzzle/bullet
 	var/flash_range = 1
 	var/brightness = 7
 	var/light_colour = "#ffffff"
@@ -60,7 +60,7 @@
 
 /obj/item/projectile/energy/flash/flare/on_impact(var/atom/A)
 	light_colour = pick("#e58775", "#ffffff", "#faa159", "#e34e0e")
-	set_light(1, 1, 4, 2, light_colour)
+	set_light(1, 2, 6, 1, light_colour)
 	..() //initial flash
 
 	//residual illumination
@@ -75,8 +75,8 @@
 			if(T && (T != TO) && (TO.z == T.z) && !mob.blinded)
 				to_chat(mob, SPAN_NOTICE("You see a bright light to \the [dir2text(get_dir(T,TO))]"))
 			CHECK_TICK
-				
-/obj/item/projectile/energy/electrode	//has more pain than a beam because it's harder to hit 
+
+/obj/item/projectile/energy/electrode //has more pain than a beam because it's harder to hit
 	name = "electrode"
 	icon_state = "spark"
 	fire_sound = 'sound/weapons/Taser.ogg'
@@ -85,6 +85,11 @@
 	damage_type = BURN
 	eyeblur = 1//Some feedback that you've been hit
 	step_delay = 0.7
+	damage_falloff_list = list(
+		list(5, 0.97),
+		list(7, 0.94),
+		list(9, 0.88),
+	)
 
 /obj/item/projectile/energy/electrode/green
 	icon_state = "spark_green"

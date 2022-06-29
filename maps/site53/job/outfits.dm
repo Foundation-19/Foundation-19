@@ -577,7 +577,7 @@
 	l_ear = /obj/item/device/radio/headset/ert
 	belt = /obj/item/material/sword/katana
 	back = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/c50 = 8,/obj/item/grenade/smokebomb = 3)
+	backpack_contents = list(/obj/item/storage/box/ifak = 1, /obj/item/grenade/smokebomb = 3)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/ungoc
 	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Trooper")

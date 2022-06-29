@@ -37,10 +37,20 @@
 	if (config.log_admin)
 		game_log("ADMIN", text)
 
+/proc/log_mentor(text)
+	GLOB.mentor_log.Add(text)
+	if (config.log_mentor)
+		game_log("MENTOR", text)
+
 /proc/log_debug(text)
 	if (config.log_debug)
 		game_log("DEBUG", text)
 	to_debug_listeners(text)
+
+/proc/log_sql(text)
+	if (config.log_sql)
+		game_log("SQL", text)
+	to_debug_listeners(text, "SQL")
 
 /proc/log_error(text)
 	error(text)
@@ -104,6 +114,9 @@
 
 /proc/log_qdel(text)
 	to_file(GLOB.world_qdel_log, "\[[time_stamp()]]QDEL: [text]")
+
+/proc/log_query_debug(text)
+	to_file(GLOB.query_debug_log, "SQL: [text]")
 
 //This replaces world.log so it displays both in DD and the file
 /proc/log_world(text)

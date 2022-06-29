@@ -99,10 +99,9 @@ Public methods machines can expose. Pretty bare-bones; just wraps a proc and giv
 Machinery implementation
 */
 
-/// List of all registered `public_variable` decls.
-/obj/machinery/var/list/public_variables
-/// List of all registered `public_method` decls.
-/obj/machinery/var/list/public_methods
+/obj/machinery
+	var/list/public_variables
+	var/list/public_methods
 
 /obj/machinery/Initialize()
 	for(var/path in public_variables)

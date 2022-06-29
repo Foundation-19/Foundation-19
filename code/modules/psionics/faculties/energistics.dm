@@ -15,7 +15,7 @@
 	min_rank =        PSI_RANK_MASTER
 	use_description = "Target the head, eyes or mouth while on harm intent to use a melee attack that causes a localized electromagnetic pulse."
 
-/decl/psionic_power/energistics/disrupt/invoke(var/mob/living/user, var/mob/living/target)
+/decl/psionic_power/energistics/disrupt/invoke(mob/living/user, mob/living/target)
 	if(user.zone_sel.selecting != BP_HEAD && user.zone_sel.selecting != BP_EYES && user.zone_sel.selecting != BP_MOUTH)
 		return FALSE
 	if(istype(target, /turf))
@@ -34,7 +34,7 @@
 	min_rank =        PSI_RANK_GRANDMASTER
 	use_description = "Target the chest or groin while on harm intent to use a melee attack that electrocutes a victim."
 
-/decl/psionic_power/energistics/electrocute/invoke(var/mob/living/user, var/mob/living/target)
+/decl/psionic_power/energistics/electrocute/invoke(mob/living/user, mob/living/target)
 	if(user.zone_sel.selecting != BP_CHEST && user.zone_sel.selecting != BP_GROIN)
 		return FALSE
 	if(istype(target, /turf))
@@ -59,7 +59,11 @@
 	min_rank =         PSI_RANK_MASTER
 	use_description = "Use this ranged laser attack while on harm intent. Your mastery of Energistics will determine how powerful the laser is. Be wary of overuse, and try not to fry your own brain."
 
-/decl/psionic_power/energistics/zorch/invoke(var/mob/living/user, var/mob/living/target)
+/decl/psionic_power/energistics/zorch/invoke(mob/living/user, mob/living/target)
+	if(!user || !target)
+		return
+	if(target.z != user.z)
+		return
 	. = ..()
 	if(.)
 		user.visible_message("<span class='danger'>\The [user]'s eyes flare with light!</span>")
@@ -69,18 +73,18 @@
 		var/pew_sound
 
 		switch(user_rank)
-			if(PSI_RANK_PARAMOUNT)
+			if(PSI_RANK_PARAMOUNT to INFINITY) // In case of admin edits to faculty level
 				pew = new /obj/item/projectile/beam/heavylaser(get_turf(user))
 				pew.name = "gigawatt mental laser"
 				pew_sound = 'sound/weapons/lasercannonfire.ogg'
 			if(PSI_RANK_GRANDMASTER)
 				pew = new /obj/item/projectile/beam/midlaser(get_turf(user))
 				pew.name = "megawatt mental laser"
-				pew_sound = 'sound/weapons/Laser.ogg'
+				pew_sound = 'sound/weapons/Laser3.ogg'
 			if(PSI_RANK_MASTER)
-				pew = new /obj/item/projectile/beam/stun(get_turf(user))
+				pew = new /obj/item/projectile/beam/smalllaser(get_turf(user))
 				pew.name = "mental laser"
-				pew_sound = 'sound/weapons/Taser.ogg'
+				pew_sound = 'sound/weapons/Laser.ogg'
 
 		if(istype(pew))
 			playsound(pew.loc, pew_sound, 25, 1)
@@ -88,19 +92,24 @@
 			pew.current = target
 			pew.starting = get_turf(user)
 			pew.shot_from = user
-			pew.launch(target, user.zone_sel.selecting, (target.x-user.x), (target.y-user.y))
+			if(istype(target)) // Target is a mob, so we can shoot directly at them
+				pew.launch(target, user.zone_sel.selecting, user)
+			else
+				var/turf/targloc = get_turf(target)
+				pew.launch(targloc, user.zone_sel.selecting, user)
 			return TRUE
 
 /decl/psionic_power/energistics/spark
 	name =            "Spark"
 	cost =            1
-	cooldown =        1
+	cooldown =        5
 	use_melee =       TRUE
 	min_rank =        PSI_RANK_OPERANT
 	use_description = "Target a non-living target in melee range on harm intent to cause some sparks to appear. This can light fires."
 
-/decl/psionic_power/energistics/spark/invoke(var/mob/living/user, var/mob/living/target)
-	if(isnull(target) || istype(target)) return FALSE
+/decl/psionic_power/energistics/spark/invoke(mob/living/user, mob/living/target)
+	if(isnull(target) || istype(target))
+		return FALSE
 	. = ..()
 	if(.)
 		if(istype(target,/obj/item/clothing/mask/smokable/cigarette))

@@ -20,16 +20,6 @@
 	max_ammo = 6
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/c50
-	name = "speed loader (.50)"
-	desc = "A speed loader for revolvers."
-	icon_state = "38"
-	caliber = ".50"
-	ammo_type = /obj/item/ammo_casing/a50
-	matter = list(DEFAULT_WALL_MATERIAL = 1260)
-	max_ammo = 6
-	multiple_sprites = 1
-
 /obj/item/ammo_magazine/speedloader/small
 	name = "speed loader"
 	icon_state = "spdloader_small"
@@ -40,24 +30,14 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/speedloader/pclip
-	name = "magnum pistol stripper clip"
-	desc = "A stripper clip for pistol magnum caliber weapons."
+	name = "pistol stripper clip"
+	desc = "A stripper clip for pistol caliber weapons."
 	icon_state = "pclip"
 	caliber = CALIBER_PISTOL_MAGNUM
 	ammo_type = /obj/item/ammo_casing/pistol/magnum
 	matter = list(MATERIAL_STEEL = 1300)
 	max_ammo = 5
 	multiple_sprites = 1
-
-/obj/item/ammo_magazine/speedloader/hpclip
-	name = "holdout pistol stripper clip"
-	desc = "A stripper clip for pistol holdout caliber weapons."
-	icon_state = "hpclip"
-	caliber = CALIBER_PISTOL_SMALL
-	ammo_type = /obj/item/ammo_casing/pistol/small
-	matter = list(MATERIAL_STEEL = 1800)
-	max_ammo = 10
-	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/speedloader/clip
 	name = "rifle stripper clip"
@@ -102,11 +82,6 @@
 	name = "shotgun shell holder"
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
 	marking_color = COLOR_RED_GRAY
-
-/obj/item/ammo_magazine/shotholder/flechette
-	name = "flechette shell holder"
-	ammo_type = /obj/item/ammo_casing/shotgun/flechette
-	marking_color = COLOR_BLUE
 
 /obj/item/ammo_magazine/shotholder/beanbag
 	name = "beanbag shell holder"
@@ -288,6 +263,22 @@
 	max_ammo = 40
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/proto_smg/hp
+	name = "submachine gun magazine (HP)"
+	ammo_type = /obj/item/ammo_casing/flechette/hp
+
+/obj/item/ammo_magazine/gyrojet
+	name = "microrocket magazine"
+	icon_state = "gyrojet"
+	mag_type = MAGAZINE
+	caliber = CALIBER_GYROJET
+	ammo_type = /obj/item/ammo_casing/gyrojet
+	multiple_sprites = 1
+	max_ammo = 4
+
+/obj/item/ammo_magazine/gyrojet/empty
+	initial_ammo = 0
+
 /obj/item/ammo_magazine/box/machinegun
 	name = "magazine box"
 	icon_state = "machinegun"
@@ -296,7 +287,7 @@
 	caliber = CALIBER_RIFLE
 	matter = list(MATERIAL_STEEL = 4500)
 	ammo_type = /obj/item/ammo_casing/rifle
-	max_ammo = 50
+	max_ammo = 80
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/box/machinegun/empty
@@ -309,7 +300,7 @@
 	caliber = CALIBER_RIFLE
 	matter = list(MATERIAL_STEEL = 1800)
 	ammo_type = /obj/item/ammo_casing/rifle
-	max_ammo = 20
+	max_ammo = 30
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/mil_rifle
@@ -320,7 +311,7 @@
 	caliber = CALIBER_RIFLE_MILITARY
 	matter = list(MATERIAL_STEEL = 1800)
 	ammo_type = /obj/item/ammo_casing/rifle/military
-	max_ammo = 15 //if we lived in a world where normal mags had 30 rounds, this would be a 20 round mag
+	max_ammo = 20
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/mil_rifle/empty
@@ -340,13 +331,12 @@
 	max_ammo = 7
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/iclipr
-	name = "internal rifle magazine"
-	desc = "An internal clip for rifle caliber weapons."
-	icon_state = "iclipr"
-	caliber = CALIBER_RIFLE
+/obj/item/ammo_magazine/t12
+	name = "T12 magazine"
+	icon_state = "t12"
 	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/rifle
-	matter = list(MATERIAL_STEEL = 1500)
-	max_ammo = 8
-	multiple_sprites = TRUE
+	caliber = CALIBER_T12
+	matter = list(MATERIAL_STEEL = 2400)
+	ammo_type = /obj/item/ammo_casing/rifle/t12
+	max_ammo = 50
+	multiple_sprites = 1

@@ -87,8 +87,8 @@
 
 /obj/item/cell/examine(mob/user)
 	. = ..()
-	to_chat(user, "The label states it's capacity is [maxcharge] Wh")
-	to_chat(user, "The charge meter reads [round(src.percent(), 0.1)]%")
+	to_chat(user, "The label places its capacity at [maxcharge] Wh.")
+	to_chat(user, "Its charge meter is at [round(percent(), 0.1)]%.")
 
 /obj/item/cell/emp_act(severity)
 	//remove this once emp changes on dev are merged in
@@ -205,6 +205,12 @@
 /obj/item/cell/hyper/empty
 	charge = 0
 
+/obj/item/cell/hyper/adherent
+	name = "crystal-ceramic grid"
+	desc = "A dense, smooth blue polygon the size of a clenched fist. It's etched with symmetrical facets that are filled with a thick, gelatinous material."
+	icon = 'icons/mob/human_races/species/adherent/organs.dmi'
+	icon_state = "cell"
+
 /obj/item/cell/infinite
 	name = "experimental power cell"
 	desc = "This special experimental power cell has both very large capacity, and ability to recharge itself by draining power from contained bluespace pocket."
@@ -237,3 +243,25 @@
 	icon_state = "yellow slime extract" //"potato_battery"
 	maxcharge = 200
 	matter = null
+
+// Self-charging power cell.
+/obj/item/cell/mantid
+	name = "mantid microfusion plant"
+	desc = "An impossibly tiny fusion reactor of mantid design."
+	icon = 'icons/obj/ascent.dmi'
+	icon_state = "plant"
+	maxcharge = 1500
+	w_class = ITEM_SIZE_NORMAL
+	var/recharge_amount = 12
+
+/obj/item/cell/mantid/Initialize()
+	START_PROCESSING(SSobj, src)
+	. = ..()
+
+/obj/item/cell/mantid/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
+
+/obj/item/cell/mantid/Process()
+	if(charge < maxcharge)
+		give(recharge_amount)

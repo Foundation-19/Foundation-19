@@ -25,9 +25,8 @@
 		faction_friends -= src
 	return ..()
 
-/* Handles everything about that list.
-*  Call on initialization or if something weird happened like the mob switched factions.
-*/
+// Handles everything about that list.
+// Call on initialization or if something weird happened like the mob switched factions.
 /datum/ai_holder/proc/build_faction_friends()
 	if (faction_friends.len) // Already have a list.
 		// Assume we're moving to a new faction.
@@ -47,13 +46,11 @@
 	else // We're the 'founder' (first and/or only member) of this faction.
 		faction_friends |= holder
 
-/// Requests help in combat from other mobs possessing ai_holders.
+// Requests help in combat from other mobs possessing ai_holders.
 /datum/ai_holder/proc/request_help()
 	ai_log("request_help() : Entering.", AI_LOG_DEBUG)
 	if (!cooperative || world.time < next_sent_help_request  || world.time < next_received_help_request)
 		return
-
-
 
 	ai_log("request_help() : Asking for help.", AI_LOG_INFO)
 	next_sent_help_request  = world.time + 10 SECONDS
@@ -72,7 +69,7 @@
 
 	ai_log("request_help() : Exiting.", AI_LOG_DEBUG)
 
-/// What allies receive when someone else is calling for help.
+// What allies receive when someone else is calling for help.
 /datum/ai_holder/proc/help_requested(mob/living/friend)
 	ai_log("help_requested() : Entering.", AI_LOG_DEBUG)
 	if (stance == STANCE_SLEEP)

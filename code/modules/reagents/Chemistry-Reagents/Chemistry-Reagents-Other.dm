@@ -295,6 +295,50 @@
 	M.update_icons()
 	M.clean_blood()
 
+/datum/reagent/medicine/sterilizine
+	name = "Sterilizine"
+	description = "Sterilizes wounds in preparation for surgery and thoroughly removes blood."
+	taste_description = "bitterness"
+	reagent_state = LIQUID
+	color = "#c8a5dc"
+	touch_met = 5
+	value = 2.2
+
+/datum/reagent/medicine/sterilizine/affect_touch(mob/living/carbon/M, alien, removed)
+	if (M.germ_level < INFECTION_LEVEL_TWO) // rest and antibiotics is required to cure serious infections
+		M.germ_level -= min(removed*20, M.germ_level)
+	for (var/obj/item/I in M.contents)
+		I.was_bloodied = null
+	M.was_bloodied = null
+
+/datum/reagent/medicine/sterilizine/touch_obj(var/obj/O)
+	O.germ_level -= min(volume*20, O.germ_level)
+	O.was_bloodied = null
+
+/datum/reagent/medicine/sterilizine/touch_turf(var/turf/T)
+	T.germ_level -= min(volume*20, T.germ_level)
+	for (var/obj/item/I in T.contents)
+		I.was_bloodied = null
+	for (var/obj/effect/decal/cleanable/blood/B in T)
+		qdel(B)
+
+/datum/reagent/slippery_oil
+	name = "Slippery Motor Oil"
+	description = "An extra slippery motor oil. Designed to reduce friction in moving machinery parts."
+	taste_description = "motor oil"
+	reagent_state = LIQUID
+	color = "#009ca8"
+	value = 0.6
+	should_admin_log = TRUE
+	var/overlay_icon = "lubed_floor"
+	var/slip_strength = 30
+
+/datum/reagent/slippery_oil/touch_turf(turf/simulated/T)
+	if(!istype(T))
+		return
+	if(volume >= 1)
+		T.wet_floor(slip_strength, overlay_state = overlay_icon, dissipate_time = 2 SECONDS)
+
 /datum/reagent/oil
 	name = "Oil"
 	description = "A thick greasy industrial lubricant. Commonly found in robotics."
@@ -530,27 +574,27 @@
 /datum/reagent/colored_hair_dye/red
 	name = "Red Hair Dye"
 	color = "#b33636"
-	
+
 /datum/reagent/colored_hair_dye/orange
 	name = "Orange Hair Dye"
 	color = "#b5772f"
-	
+
 /datum/reagent/colored_hair_dye/yellow
 	name = "Yellow Hair Dye"
 	color = "#a6a035"
-		
+
 /datum/reagent/colored_hair_dye/green
 	name = "Green Hair Dye"
 	color = "#61a834"
-	
+
 /datum/reagent/colored_hair_dye/blue
 	name = "Blue Hair Dye"
 	color = "#3470a8"
-	
+
 /datum/reagent/colored_hair_dye/purple
 	name = "Purple Hair Dye"
 	color = "#6d2d91"
-		
+
 /datum/reagent/colored_hair_dye/grey
 	name = "Grey Hair Dye"
 	color = "#696969"
@@ -577,3 +621,37 @@
 
 /datum/reagent/colored_hair_dye/chaos/affect_touch(mob/living/carbon/human/H, alien, removed)
 	apply_dye_color(H, RAND_F(1, 254), RAND_F(1, 254), RAND_F(1, 254))
+
+
+// Sleeping agent, produced by breathing N2O.
+/datum/reagent/nitrous_oxide
+	name = "Nitrous Oxide"
+	description = "An ubiquitous sleeping agent also known as laughing gas."
+	taste_description = "dental surgery"
+	reagent_state = LIQUID
+	color = COLOR_GRAY80
+	metabolism = 0.05 // So that low dosages have a chance to build up in the body.
+	do_giggle = TRUE
+
+/datum/reagent/nitrous_oxide/xenon
+	name = "Xenon"
+	description = "A nontoxic gas used as a general anaesthetic."
+	do_giggle = FALSE
+	taste_description = "nothing"
+	color = COLOR_GRAY80
+
+/datum/reagent/nitrous_oxide/affect_blood(mob/living/carbon/M, alien, removed)
+	if (alien == IS_DIONA)
+		return
+	var/dosage = M.chem_doses[type]
+	if (dosage >= 1)
+		if (prob(5)) M.Sleeping(3)
+		M.dizziness =  max(M.dizziness, 3)
+		M.confused =   max(M.confused, 3)
+	if (dosage >= 0.3)
+		if (prob(5)) M.Paralyse(1)
+		M.drowsyness = max(M.drowsyness, 3)
+		M.slurring =   max(M.slurring, 3)
+	if (do_giggle && prob(20))
+		M.emote(pick("giggle", "laugh"))
+	M.add_chemical_effect(CE_PULSE, -1)

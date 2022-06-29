@@ -2177,6 +2177,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/stove/hotplate,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/crew/kitchen)
 "ek" = (
@@ -5195,8 +5196,7 @@
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/window/reinforced{
-	dir = 2;
-	health = 1e+007
+	dir = 2
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/ship/scrap/maintenance/atmos)

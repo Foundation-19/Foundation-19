@@ -22,8 +22,8 @@ GLOBAL_LIST_EMPTY(possible_420j)
 	. = ..()
 	if(!reagents.has_reagent(/datum/reagent/space_drugs))
 		reagents.add_reagent(/datum/reagent/space_drugs, 10) // Totally never runs out of snoop!
-	if(!reagents.has_reagent(/datum/reagent/nicotine))
-		reagents.add_reagent(/datum/reagent/nicotine, 10)
+//	if(!reagents.has_reagent(/datum/reagent/nicotine))
+//		reagents.add_reagent(/datum/reagent/nicotine, 10)
 
 /obj/item/clothing/mask/smokable/cigarette/scp_420_j/Destroy()
 	. = ..()

@@ -20,7 +20,7 @@
 		"it", "la", "le", "ma", "me", "ne", "ns", "nt", "on", "ou", "pa", "qu", "ra", "re", "se", "te", "ti", "tr",
 		"ue", "un", "ur", "us", "ve",
 		"ain", "ais", "ait", "ans", "ant", "ati", "ava", "ave", "cha", "che", "com", "con", "dan", "des", "ell",
-		"eme", "ent", "est", "Ã©ta", "eur", "eux", "fai", "ien", "ion", "ire", "les", "lle", "lus" ,"mai", "men",
+		"eme", "ent", "est", "éta", "eur", "eux", "fai", "ien", "ion", "ire", "les", "lle", "lus" ,"mai", "men",
 		"mme", "nte", "omm", "ont", "our", "ous", "out", "ouv", "par", "pas", "plu", "pou", "que", "res", "son",
 		"sur", "tai", "tio", "tou", "tre", "une", "ure", "ver", "vou",
 	)

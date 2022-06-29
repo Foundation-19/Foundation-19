@@ -1,14 +1,10 @@
-/**
-  * This device is wrapper for actual power cell. I have decided to not use power
-  * cells directly as even low-end cells available on station have tremendeous capacity
-  * in comparsion. Higher tier cells would provide your device with nearly infinite
-  * battery life, which is something i want to avoid.
-  */
+// This device is wrapper for actual power cell. I have decided to not use power cells directly as even low-end cells available on station
+// have tremendeous capacity in comparsion. Higher tier cells would provide your device with nearly infinite battery life, which is something i want to avoid.
 /obj/item/stock_parts/computer/battery_module
 	name = "standard battery"
 	desc = "A standard power cell, commonly seen in high-end portable microcomputers or low-end laptops. It's rating is 120 Wh."
 	icon_state = "battery_normal"
-	critical = TRUE
+	critical = 1
 	malfunction_probability = 1
 	origin_tech = list(TECH_POWER = 1, TECH_ENGINEERING = 1)
 	var/battery_rating = 120
@@ -60,9 +56,10 @@
 	hardware_size = 1
 	battery_rating = 9000
 
-/obj/item/stock_parts/computer/battery_module/lambda/Initialize()
-	. = ..()
+/obj/item/stock_parts/computer/battery_module/lambda/New()
+	..()
 	battery = new/obj/item/cell/infinite(src)
+
 
 /obj/item/stock_parts/computer/battery_module/diagnostics()
 	. = ..()

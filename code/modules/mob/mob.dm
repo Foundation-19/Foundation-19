@@ -124,6 +124,65 @@
 	if(bound_overlay)
 		bound_overlay.visible_message(message, blind_message, range)
 
+/**
+ * Show a message to all mobs and objects in sight of this one or `causer`
+ * This should be used for messages where two mobs interact - healing, injections, fighting, and so on
+ * message is the message output to anyone who can see, e.g. "[causer] does something to [src]!"
+ * self_message (optional) is what the src mob sees, e.g. "[causer] does something to you!"
+ * causer_message is what the causer mob sees, e.g. "You do something to [src]!"
+ * blind_message (optional) is what blind people will hear, e.g. "You hear something!"
+ * blind_self_message (optional) is what the source mob will hear/feel if blind, e.g. "You feel something done to you!"
+ */
+/mob/proc/interact_message(mob/causer, message, self_message, causer_message, blind_message, blind_self_message, range = world.view, checkghosts = null, mode = VISIBLE_MESSAGE, list/exclude_objs = null, list/exclude_mobs = null)
+	set waitfor = FALSE
+	var/turf/T = get_turf(src)
+	var/list/mobs = list()
+	var/list/objs = list()
+	get_mobs_and_objs_in_view_fast(T, range, mobs, objs, checkghosts)
+	T = get_turf(causer)
+	get_mobs_and_objs_in_view_fast(T, range, mobs, objs, checkghosts) // show the message to atoms that can see either mob
+	mobs = uniquelist(mobs) // clear the inevitable duplicates that'll show up when running the above logic
+	objs = uniquelist(objs)
+
+	for (var/o in objs)
+		var/obj/O = o
+		if (exclude_objs?.len && (O in exclude_objs))
+			exclude_objs -= O
+			continue
+		O.show_message(message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
+
+	for (var/m in mobs)
+		var/mob/M = m
+		if (exclude_mobs?.len && (M in exclude_mobs))
+			exclude_mobs -= M
+			continue
+
+		var/mob_message = message
+
+		if (isghost(M))
+			if(ghost_skip_message(M))
+				continue
+			mob_message = add_ghost_track(mob_message, M)
+
+		if (self_message && (M == src || causer == src))
+			M.show_message(self_message, VISIBLE_MESSAGE, blind_self_message, AUDIBLE_MESSAGE)
+			continue
+
+		if (M == causer)
+			M.show_message(causer_message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
+			continue
+
+		if (!M.is_blind() && M.see_invisible >= src.invisibility)
+			M.show_message(mob_message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
+			continue
+
+		if (blind_message)
+			M.show_message(blind_message, AUDIBLE_MESSAGE)
+			continue
+
+	if (bound_overlay)
+		bound_overlay.visible_message(message, blind_message, range)
+
 // Show a message to all mobs and objects in earshot of this one
 // This would be for audible actions by the src mob
 // message is the message output to anyone who can hear.
@@ -188,6 +247,11 @@
 /atom/proc/drain_power(var/drain_check,var/surge, var/amount = 0)
 	return -1
 
+/mob/proc/findname(msg)
+	for(var/mob/M in SSmobs.mob_list)
+		if (M.real_name == msg)
+			return M
+	return 0
 
 /mob/proc/movement_delay()
 	. = 0
@@ -316,13 +380,19 @@
 
 	if(!isghost(src))
 		if(A.loc != src || A == l_hand || A == r_hand)
+			var/look_target = "at \the [A]"
+			if(isobj(A.loc))
+				look_target = "inside \the [A.loc]"
+			if(A == src)
+				var/datum/gender/T = gender_datums[get_gender()]
+				look_target = "at [T.self]"
 			for(var/mob/M in viewers(4, src))
 				if(M == src)
 					continue
 				if(M.client && M.client.get_preference_value(/datum/client_preference/examine_messages) == GLOB.PREF_SHOW)
 					if(M.is_blind() || is_invisible_to(M))
 						continue
-					to_chat(M, "<span class='subtle'><b>\The [src]</b> looks at \the [A].</span>")
+					to_chat(M, "<span class='subtle'><b>\The [src]</b> looks [look_target].</span>")
 
 	var/distance = INFINITY
 	if(isghost(src) || stat == DEAD)
@@ -351,6 +421,8 @@
 
 	var/obj/P = new /obj/effect/decal/point(tile)
 	P.set_invisibility(invisibility)
+	P.pixel_x = A.pixel_x
+	P.pixel_y = A.pixel_y
 	face_atom(A)
 	return 1
 
@@ -473,7 +545,7 @@
 	. = OnSelfTopic(href_list, CanUseTopic(usr, GLOB.self_state, href_list))
 	if (.)
 		return
-	if (href_list["flavor_change"] && !isadmin(usr) && (usr != src))
+	if (href_list["flavor_change"] && !is_admin(usr) && (usr != src))
 		log_and_message_admins(usr, "is suspected of trying to change flavor text on [key_name_admin(src)] via Topic exploits.")
 	return ..()
 
@@ -585,9 +657,12 @@
 			if(!H.stat)
 				to_chat(H, SPAN_WARNING("\The [src] leans down and grips your [grabtype]."))
 
-		else //Otherwise we're probably just holding their arm to lead them somewhere
+		else //Otherwise we're probably just holding their hand/arm to lead them somewhere
 			var/grabtype
-			if(H.has_organ(BP_L_ARM) || H.has_organ(BP_R_ARM)) //If they have at least one arm
+			if((H.has_organ(BP_L_HAND) && src.zone_sel.selecting == BP_L_HAND) || (H.has_organ(BP_R_HAND) && src.zone_sel.selecting == BP_R_HAND))
+			//If they have a hand and we are targeting it
+				grabtype = "hand"
+			else if(H.has_organ(BP_L_ARM) || H.has_organ(BP_R_ARM)) //If they have at least one arm
 				grabtype = "arm"
 			else //If they have no arms
 				grabtype = "shoulder"
@@ -653,7 +728,7 @@
 		if(client.holder || isghost(client.mob))
 			stat("Location:", "([x], [y], [z]) [loc]")
 
-	if(client.holder)
+	if(client.holder && client.holder.rights != R_MENTOR) //Mentors don't deserve the MC panel
 		if(statpanel("MC"))
 			stat("CPU:","[world.cpu]")
 			stat("Instances:","[world.contents.len]")
@@ -725,15 +800,6 @@
 		if(G.force_stand())
 			lying = 0
 
-	//Temporarily moved here from the various life() procs
-	//I'm fixing stuff incrementally so this will likely find a better home.
-	//It just makes sense for now. ~Carn
-	if( update_icon )	//forces a full overlay update
-		update_icon = 0
-		regenerate_icons()
-	else if( lying != lying_prev )
-		update_icons()
-
 	var/isscp106 = isscp106(src)
 	var/isscp049 = isscp049(src)
 
@@ -753,12 +819,10 @@
 	// update SCP-049's vis_contents icon
 	else if (isscp049)
 		var/mob/living/carbon/human/scp049/H = src
-// not needed		H.fix_icons()
-		if (lying)
-			H.reset_vision_cone()
-		else
-			H.update_vision_cone()
 
+	//Temporarily moved here from the various life() procs
+	//I'm fixing stuff incrementally so this will likely find a better home.
+	//It just makes sense for now. ~Carn
 	if( update_icon )	//forces a full overlay update
 		update_icon = 0
 		regenerate_icons()
@@ -1037,8 +1101,10 @@
 	else
 		return ..()
 
-/mob/proc/set_stat(var/new_stat)
-	. = stat != new_stat
+/mob/proc/set_stat(new_stat)
+	if(new_stat == stat)
+		return
+	. = stat
 	stat = new_stat
 
 /mob/verb/northfaceperm()
@@ -1056,6 +1122,50 @@
 /mob/verb/westfaceperm()
 	set hidden = 1
 	set_face_dir(client.client_dir(WEST))
+
+#define SHIFT_MAX 8
+
+/mob/proc/can_shift()
+	return !(incapacitated() || buckled || grabbed_by.len)
+
+/mob/proc/shift(dir)
+	if(!canface() || !can_shift())
+		return FALSE
+	switch(dir)
+		if (NORTH)
+			if(pixel_y <= SHIFT_MAX)
+				pixel_y++
+		if (EAST)
+			if(pixel_x <= SHIFT_MAX)
+				pixel_x++
+		if (SOUTH)
+			if(pixel_y >= -SHIFT_MAX)
+				pixel_y--
+		if (WEST)
+			if(pixel_x >= -SHIFT_MAX)
+				pixel_x--
+		else
+			CRASH("Invalid argument supplied!")
+	is_shifted = TRUE
+	UPDATE_OO_IF_PRESENT
+
+/mob/verb/shiftnorth()
+	set hidden = TRUE
+	shift(NORTH)
+
+/mob/verb/shiftsouth()
+	set hidden = TRUE
+	shift(SOUTH)
+
+/mob/verb/shiftwest()
+	set hidden = TRUE
+	shift(WEST)
+
+/mob/verb/shifteast()
+	set hidden = TRUE
+	shift(EAST)
+
+#undef SHIFT_MAX
 
 /mob/proc/adjustEarDamage()
 	return
@@ -1178,3 +1288,17 @@
 	if(ear_deaf)
 		return 0
 	return 1
+
+/// Update the mouse pointer of the attached client in this mob.
+/mob/proc/update_mouse_pointer()
+	if(!client)
+		return
+
+	client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
+
+	if(examine_cursor_icon && client.keys_held["Shift"])
+		client.mouse_pointer_icon = examine_cursor_icon
+
+/mob/keybind_face_direction(direction)
+	facedir(direction)
+

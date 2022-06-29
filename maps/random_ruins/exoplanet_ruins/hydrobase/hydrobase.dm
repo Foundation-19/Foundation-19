@@ -4,7 +4,7 @@
 	description = "hydroponics base with random plants and a lot of enemies"
 	suffixes = list("hydrobase/hydrobase.dmm")
 	spawn_cost = 2
-	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_RUIN_STARTS_DISALLOWED
+	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS
 	ruin_tags = RUIN_ALIEN
 	apc_test_exempt_areas = list(
 		/area/map_template/hydrobase = NO_SCRUBBER|NO_VENT|NO_APC,
@@ -115,6 +115,9 @@
 		projectiletype = /obj/item/projectile/beam/drone/weak
 
 /mob/living/simple_animal/hostile/retaliate/malf_drone/hydro/emp_act(severity)
+	if(status_flags & GODMODE)
+		return
+
 	health -= rand(5,10) * (severity + 1)
 	disabled = rand(15, 30)
 	malfunctioning = 1

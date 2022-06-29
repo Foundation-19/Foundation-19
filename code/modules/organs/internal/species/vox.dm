@@ -31,17 +31,18 @@
 	name = "gizzard"
 	color = "#0033cc"
 	var/global/list/gains_nutriment_from_inedible_reagents = list(
-		/datum/reagent/woodpulp =      3,
-		/datum/reagent/ultraglue =     1,
-		/datum/reagent/coolant =       1,
-		/datum/reagent/oil =      1,
-		/datum/reagent/space_cleaner = 1,
-		/datum/reagent/napalm =        1,
-		/datum/reagent/napalm/b =      1,
-		/datum/reagent/thermite =      1,
-		/datum/reagent/foaming_agent = 1,
-		/datum/reagent/surfactant =    1,
-		/datum/reagent/paint =         1
+		/datum/reagent/woodpulp =		3,
+		/datum/reagent/ultraglue =		1,
+		/datum/reagent/coolant =		1,
+		/datum/reagent/slippery_oil =	1,
+		/datum/reagent/oil =			1,
+		/datum/reagent/space_cleaner =	1,
+		/datum/reagent/napalm =			1,
+		/datum/reagent/napalm/b =		1,
+		/datum/reagent/thermite =		1,
+		/datum/reagent/foaming_agent =	1,
+		/datum/reagent/surfactant =		1,
+		/datum/reagent/paint =			1
 	)
 	var/global/list/can_digest_matter = list(
 		MATERIAL_WOOD =        TRUE,
@@ -141,7 +142,7 @@
 						mat_stack.set_amount(mat_stack.amount + taking_sheets)
 						sheets -= taking_sheets
 						updated_stacks = TRUE
-						
+
 				// Create new stacks if needed.
 				while(sheets > 0)
 					var/obj/item/stack/material/mat_stack = new M.stack_type(src)
@@ -185,7 +186,7 @@
 /obj/item/organ/internal/voxstack/examine(mob/user)
 	. = ..()
 
-	var/user_vox = user.is_species(SPECIES_VOX) || user.is_species(SPECIES_VOX_ARMALIS)
+	var/user_vox = isspecies(user, SPECIES_VOX) || isspecies(user, SPECIES_VOX_ARMALIS)
 	if (istype(backup))
 		var/owner_viable = find_dead_player(ownerckey, TRUE)
 		if (user_vox)

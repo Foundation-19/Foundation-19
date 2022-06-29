@@ -61,7 +61,7 @@
 /datum/gear/accessory/pilot_pin
 	display_name = "pilot's qualification pin"
 	path = /obj/item/clothing/accessory/solgov/specialty/pilot
-	allowed_skills = list(SKILL_PILOT = SKILL_ADEPT)
+	allowed_skills = list(SKILL_PILOT = SKILL_TRAINED)
 	allowed_branches = list(
 		/datum/mil_branch/fleet,
 		/datum/mil_branch/expeditionary_corps
@@ -139,7 +139,7 @@
 
 /datum/gear/tactical/press_tag
 	display_name = "Press tag"
-	path = /obj/item/clothing/accessory/armor_tag/press
+	path = /obj/item/clothing/accessory/armor/tag/press
 	allowed_roles = list(/datum/job/assistant)
 
 /datum/gear/tactical/helm_covers
@@ -150,6 +150,8 @@
 	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/clothing/scarf
+	allowed_roles = SEMIANDFORMAL_ROLES
+	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/clothing/flannel
 	allowed_roles = SEMIFORMAL_ROLES
@@ -195,7 +197,7 @@
 /datum/gear/accessory/bowtie
 	allowed_branches = CIVILIAN_BRANCHES
 
-/datum/gear/accessory/ftu_pin
+/datum/gear/accessory/ftupin
 	allowed_branches = CIVILIAN_BRANCHES
 
 /*********************

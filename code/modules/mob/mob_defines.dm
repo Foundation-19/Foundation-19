@@ -3,7 +3,7 @@
 	plane = DEFAULT_PLANE
 	layer = MOB_LAYER
 
-	appearance_flags = DEFAULT_APPEARANCE_FLAGS | PIXEL_SCALE
+	appearance_flags = PIXEL_SCALE | LONG_GLIDE
 	animate_movement = 2
 	movable_flags = MOVABLE_FLAG_PROXMOVE
 
@@ -70,6 +70,9 @@
 	*/
 	var/obj/screen/zone_sel/zone_sel = null
 
+	/// Cursor icon used when holding shift over things.
+	var/examine_cursor_icon = 'icons/effects/mouse_pointers/examine_pointer.dmi'
+
 	var/use_me = 1 //Allows all mobs to use the me verb by default, will have to manually specify they cannot
 	var/damageoverlaytemp = 0
 	var/obj/machinery/machine = null
@@ -82,7 +85,6 @@
 	var/next_move = null
 	var/hand = null
 	var/real_name = null
-	var/fake_name = null
 
 	var/bhunger = 0			//Carbon
 
@@ -90,6 +92,7 @@
 	var/confused = 0		//Carbon
 	var/sleeping = 0		//Carbon
 	var/resting = FALSE			//Carbon
+	var/is_shifted = FALSE
 	var/lying = 0
 	var/lying_prev = 0
 
@@ -193,4 +196,8 @@
 
 
 	var/list/additional_vision_handlers = list() //Basically a list of atoms from which additional vision data is retrieved
-	var/ignore_ssd_check = 0
+
+	var/list/progressbars = null //for stacking do_after bars
+
+	///Allows a datum to intercept all click calls this mob is the source of
+	var/datum/click_intercept

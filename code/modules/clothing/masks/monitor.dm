@@ -11,7 +11,6 @@
 	icon_override = 'icons/mob/monitor_icons.dmi'
 	icon_state = "ipc_blank"
 	item_state = null
-	item_flags = null
 
 	var/monitor_state_index = "blank"
 	var/global/list/monitor_states = list(

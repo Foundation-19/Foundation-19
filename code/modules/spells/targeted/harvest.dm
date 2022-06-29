@@ -1,4 +1,4 @@
-/spell/targeted/harvest
+/datum/spell/targeted/harvest
 	name = "Harvest"
 	desc = "Back to where I come from, and you're coming with me."
 
@@ -6,7 +6,7 @@
 	charge_max = 200
 	spell_flags = Z2NOCAST | CONSTRUCT_CHECK | INCLUDEUSER
 	invocation = ""
-	invocation_type = SpI_NONE
+	invocation_type = INVOKE_NONE
 	range = 0
 	max_targets = 0
 
@@ -17,7 +17,7 @@
 
 	hud_state = "const_harvest"
 
-/spell/targeted/harvest/cast(list/targets, mob/user)//because harvest is already a proc
+/datum/spell/targeted/harvest/cast(list/targets, mob/user)//because harvest is already a proc
 	..()
 
 	var/destination = null

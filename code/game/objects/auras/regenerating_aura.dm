@@ -16,7 +16,7 @@
 	var/regen_message = "<span class='warning'>Your body throbs as you feel your ORGAN regenerate.</span>"
 	var/grow_chance = 0
 	var/grow_threshold = 0
-	var/ignore_tag//organ tag to ignore
+	var/ignore_tag //organ tag to ignore
 	var/last_nutrition_warning = 0
 	var/innate_heal = TRUE // Whether the aura is on, basically.
 
@@ -119,13 +119,15 @@
 	grow_threshold = 150
 	ignore_tag = BP_HEAD
 	var/toggle_blocked_until = 0 // A time
+	var/cold_threshold = 280 //Under this threshold we cannot use healing
 
 /obj/aura/regenerating/human/unathi/toggle()
 	..()
 	toggle_blocked_until = max(world.time + 2 MINUTES, toggle_blocked_until)
 
 /obj/aura/regenerating/human/unathi/can_toggle()
-	if(world.time < toggle_blocked_until)
+	var/mob/living/carbon/human/H = user
+	if(world.time < toggle_blocked_until || H.bodytemperature < cold_threshold)
 		return FALSE
 	return ..()
 
@@ -141,6 +143,9 @@
 
 /obj/aura/regenerating/human/unathi/life_tick()
 	var/mob/living/carbon/human/H = user
+	if(innate_heal && H.bodytemperature < cold_threshold)
+		to_chat(H, SPAN_WARNING("You feel your movements slow and your innate healing ability shut down..."))
+		innate_heal = FALSE
 	if(innate_heal && istype(H) && H.stat != DEAD && H.nutrition < 50)
 		H.apply_damage(5, TOX)
 		H.adjust_nutrition(3)

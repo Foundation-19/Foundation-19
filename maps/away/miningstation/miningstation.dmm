@@ -198,7 +198,6 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/machinery/power/terminal,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/dormhall)
 "aG" = (
@@ -210,9 +209,6 @@
 /turf/simulated/floor/plating,
 /area/miningstation/hangar)
 "aH" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
@@ -460,9 +456,6 @@
 /turf/simulated/floor/plating,
 /area/miningstation/hangar)
 "bj" = (
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/structure/catwalk,
 /obj/structure/cable{
 	d2 = 8;
@@ -481,9 +474,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/hangar)
 "bl" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -502,9 +492,6 @@
 	name = "north bump";
 	pixel_y = 24;
 	req_access = list(list("ACCESS_ENGINE_EQUIP","ACCESS_ATMOS"))
-	},
-/obj/machinery/power/terminal{
-	dir = 1
 	},
 /obj/structure/cable{
 	d2 = 2;
@@ -536,9 +523,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/prep2)
 "bp" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
@@ -743,7 +727,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/hangarhall)
 "bW" = (
-/obj/machinery/power/terminal,
 /obj/structure/cable,
 /obj/effect/gibspawner/human,
 /turf/simulated/floor/tiled/techfloor,
@@ -1647,9 +1630,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/prep)
 "dW" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -1829,9 +1809,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/prep)
 "er" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -1982,9 +1959,6 @@
 /turf/simulated/wall/r_titanium,
 /area/miningstation/vault)
 "eM" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
@@ -2127,9 +2101,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/prep)
 "eY" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -2321,7 +2292,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/prep)
 "fy" = (
-/obj/machinery/power/terminal,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -2665,9 +2635,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/operationshall)
 "gB" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -3089,9 +3056,6 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
@@ -3111,9 +3075,6 @@
 /turf/simulated/floor/tiled/white,
 /area/miningstation/cryo)
 "hr" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -3268,7 +3229,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/operationshall2)
 "hH" = (
-/obj/machinery/power/terminal,
 /obj/machinery/power/apc{
 	name = "south bump";
 	pixel_y = -28
@@ -3352,6 +3312,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/operationshall)
 "hS" = (
@@ -3419,20 +3384,18 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/bridge)
 "ic" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
 	pixel_x = -24
 	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/chief)
 "ie" = (
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
@@ -3453,9 +3416,6 @@
 	},
 /obj/effect/floor_decal/corner/blue{
 	dir = 5
-	},
-/obj/machinery/power/terminal{
-	dir = 1
 	},
 /obj/machinery/power/apc{
 	dir = 1;
@@ -3492,6 +3452,11 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /mob/living/simple_animal/hostile/meat/horrorminer,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/operationshall)
@@ -3503,6 +3468,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/cryo)
@@ -3526,9 +3496,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/janitorcloset)
 "in" = (
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
@@ -3612,7 +3579,6 @@
 /turf/simulated/floor/plating,
 /area/miningstation/atmos)
 "ix" = (
-/obj/machinery/power/terminal,
 /obj/structure/cable{
 	d1 = 32;
 	d2 = 4;
@@ -3641,7 +3607,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/operationshall2)
 "iA" = (
-/obj/machinery/power/terminal,
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
@@ -3670,9 +3635,6 @@
 /area/miningstation/operationshall2)
 "iC" = (
 /obj/item/storage/toolbox/electrical,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -3717,9 +3679,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/operationshall2)
 "iH" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
@@ -3754,7 +3713,6 @@
 /turf/simulated/floor/tiled/white,
 /area/miningstation/physician2)
 "iJ" = (
-/obj/machinery/power/terminal,
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
@@ -3779,9 +3737,6 @@
 	pixel_y = 24;
 	req_access = list(list("ACCESS_ENGINE_EQUIP","ACCESS_ATMOS"))
 	},
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/effect/floor_decal/corner/blue{
 	dir = 4
 	},
@@ -3795,9 +3750,6 @@
 /turf/simulated/floor/tiled/white,
 /area/miningstation/kitchen)
 "iL" = (
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
@@ -3810,7 +3762,6 @@
 /turf/simulated/floor/tiled/freezer,
 /area/miningstation/walkin)
 "iM" = (
-/obj/machinery/power/terminal,
 /obj/machinery/power/apc{
 	name = "south bump";
 	pixel_y = -28
@@ -4062,7 +4013,6 @@
 /turf/simulated/floor/tiled/freezer,
 /area/miningstation/bathroom)
 "js" = (
-/obj/machinery/power/terminal,
 /obj/machinery/power/apc{
 	name = "south bump";
 	pixel_y = -28
@@ -4112,9 +4062,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/chief)
 "jx" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
@@ -4205,9 +4152,6 @@
 /obj/structure/table/steel,
 /obj/item/storage/medical_lolli_jar,
 /obj/item/paper_bin,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/machinery/alarm,
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
@@ -4767,6 +4711,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/firedoor,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/plating,
 /area/miningstation/dorms3)
 "lj" = (
@@ -6198,20 +6147,20 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/miningstation/recroom)
 "oo" = (
 /obj/effect/landmark/corpse/miningstation/deadmineroverallsf,
 /obj/effect/decal/cleanable/blood/splatter,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/miningstation/recroom)
 "op" = (
 /obj/structure/bed/chair/comfy/brown,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/miningstation/recroom)
 "oq" = (
 /obj/random/trash,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/miningstation/recroom)
 "or" = (
 /obj/structure/cable{
@@ -6220,14 +6169,14 @@
 	icon_state = "1-2"
 	},
 /obj/effect/gibspawner/human,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/miningstation/recroom)
 "os" = (
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/miningstation/recroom)
 "ot" = (
 /obj/structure/closet/wardrobe/engineering_yellow,
@@ -6446,37 +6395,32 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/miningstation/recroom)
 "oP" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 4
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/miningstation/recroom)
 "oQ" = (
 /obj/structure/table/woodentable/maple,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/miningstation/recroom)
 "oR" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 8
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/miningstation/recroom)
 "oS" = (
 /obj/random/trash,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/power/terminal,
 /obj/machinery/power/apc{
 	name = "south bump";
 	pixel_y = -28
 	},
-/turf/simulated/floor/carpet,
+/obj/structure/cable,
+/turf/simulated/floor/carpet/brown,
 /area/miningstation/recroom)
 "oT" = (
 /obj/structure/bed/chair/comfy/brown{
@@ -6487,7 +6431,7 @@
 	pixel_x = 25;
 	req_access = list(list("ACCESS_ENGINE_EQUIP","ACCESS_ATMOS"))
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/miningstation/recroom)
 "oU" = (
 /obj/structure/closet/toolcloset,
@@ -7185,9 +7129,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
@@ -7208,7 +7149,6 @@
 /turf/simulated/floor/tiled/white,
 /area/miningstation/intensive)
 "qt" = (
-/obj/machinery/power/terminal,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -7457,12 +7397,7 @@
 	name = "south bump";
 	pixel_y = -28
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/power/terminal,
+/obj/structure/cable,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/dormhall)
 "qU" = (
@@ -7562,14 +7497,14 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/miningstation/mess)
 "ri" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/structure/catwalk,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/miningstation/power)
 "rj" = (
@@ -7609,7 +7544,6 @@
 /turf/simulated/floor/plating,
 /area/miningstation/power)
 "rn" = (
-/obj/machinery/power/terminal,
 /obj/structure/cable,
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -7678,7 +7612,7 @@
 "ru" = (
 /obj/structure/table/woodentable/maple,
 /obj/item/paper_bin,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/miningstation/recroom)
 "rw" = (
 /obj/random/tech_supply,
@@ -7716,6 +7650,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/miningstation/operationshall)
@@ -7819,6 +7758,10 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/tiled/white,
 /area/miningstation/cryo)
 "tf" = (
@@ -7858,6 +7801,9 @@
 "vE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/white,
 /area/miningstation/cryo)
@@ -8279,7 +8225,7 @@
 /area/miningstation/hangar)
 "Jq" = (
 /mob/living/simple_animal/hostile/meat/horror,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/brown,
 /area/miningstation/recroom)
 "Jr" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -8411,6 +8357,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /mob/living/simple_animal/hostile/meat/humansecurity,
 /turf/simulated/floor/tiled/white,
@@ -8681,6 +8632,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/white,
 /area/miningstation/cryo)
 "Yq" = (
@@ -8732,12 +8688,33 @@
 /obj/structure/table/rack,
 /turf/simulated/floor/tiled/white,
 /area/miningstation/cryo)
+"Zu" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/miningstation/dormhall)
 "ZF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/white,
 /area/miningstation/cryo)
@@ -20699,7 +20676,7 @@ jn
 gm
 gm
 ly
-lK
+Zu
 mm
 mT
 mJ

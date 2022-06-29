@@ -829,7 +829,6 @@
 /obj/random/soap,
 /obj/random/soap,
 /obj/item/bodybag,
-/obj/item/stack/tile/carpet/fifty,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/cargo/lower)
 "bG" = (

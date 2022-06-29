@@ -46,17 +46,18 @@ Please wait until completion...</TT><BR>
 	else
 		dat = {"
 <B>Metal Amount:</B> [min(150000, src.metal_amount)] cm<sup>3</sup> (MAX: 150,000)<BR><HR>
-<BR>
-<A href='?src=\ref[src];make=1'>Left Arm (25,000 cc metal.)<BR>
-<A href='?src=\ref[src];make=2'>Right Arm (25,000 cc metal.)<BR>
-<A href='?src=\ref[src];make=3'>Left Leg (25,000 cc metal.)<BR>
-<A href='?src=\ref[src];make=4'>Right Leg (25,000 cc metal).<BR>
-<A href='?src=\ref[src];make=5'>Chest (50,000 cc metal).<BR>
-<A href='?src=\ref[src];make=6'>Head (50,000 cc metal).<BR>
-<A href='?src=\ref[src];make=7'>Robot Frame (75,000 cc metal).<BR>
+<A href='?src=\ref[src];make=1'>Left Arm (25,000 cc metal)</a><BR>
+<A href='?src=\ref[src];make=2'>Right Arm (25,000 cc metal)</a><BR>
+<A href='?src=\ref[src];make=3'>Left Leg (25,000 cc metal)</a><BR>
+<A href='?src=\ref[src];make=4'>Right Leg (25,000 cc metal)</a><BR>
+<A href='?src=\ref[src];make=5'>Chest (50,000 cc metal)</a><BR>
+<A href='?src=\ref[src];make=6'>Head (50,000 cc metal)</a><BR>
+<A href='?src=\ref[src];make=7'>Robot Frame (75,000 cc metal)</a>
 "}
 
-	show_browser(user, "<HEAD><TITLE>Robotic Fabricator Control Panel</TITLE></HEAD><TT>[dat]</TT>", "window=robot_fabricator")
+	var/datum/browser/popup = new(user, "robot_fabricator", "Robotic Fabricator Control Panel")
+	popup.set_content(dat)
+	popup.open()
 	onclose(user, "robot_fabricator")
 	return
 

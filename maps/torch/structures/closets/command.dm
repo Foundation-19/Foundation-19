@@ -131,3 +131,35 @@
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag, /obj/item/storage/backpack/messenger)),
 		new /datum/atom_creator/weighted(list(/obj/item/device/flashlight, /obj/item/device/flashlight/flare, /obj/item/device/flashlight/flare/glowstick/random))
 	)
+
+/obj/structure/closet/secure_closet/psiadvisor
+	name = "foundation advisor's locker"
+	req_access = list(access_psiadvisor)
+	closet_appearance = /decl/closet_appearance/secure_closet/torch/command
+
+/obj/structure/closet/secure_closet/psiadvisor/WillContain()
+	return list(
+		/obj/item/device/radio,
+		/obj/item/pen,
+		/obj/item/device/tape/random,
+		/obj/item/device/taperecorder,
+		/obj/item/device/flash,
+		/obj/item/device/megaphone,
+		/obj/item/material/clipboard,
+		/obj/item/folder/blue,
+		/obj/item/device/radio/headset/headset_com,
+		/obj/item/device/radio/headset/headset_com/alt,
+		/obj/item/storage/belt/general,
+		/obj/item/device/flashlight,
+		/obj/item/storage/box/psiimp,
+		/obj/item/storage/box/psiimp,
+		/obj/item/clothing/suit/storage/toggle/labcoat/foundation,
+		/obj/item/clothing/under/det/grey,
+		/obj/item/clothing/gloves/white,
+		/obj/item/clothing/shoes/dress,
+		/obj/item/storage/box/large/psinullers,
+		/obj/item/storage/briefcase/foundation/revolver,
+		/obj/item/storage/briefcase/foundation/jerraman,
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack, /obj/item/storage/backpack/satchel/grey)),
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag, /obj/item/storage/backpack/messenger))
+	)

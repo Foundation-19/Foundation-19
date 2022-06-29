@@ -40,10 +40,10 @@
 	cold_level_1 = 80
 	cold_level_2 = 50
 	cold_level_3 = -1
-	
+
 	min_age = 1
 	max_age = 100
-	
+
 	gluttonous = GLUT_TINY|GLUT_ITEM_NORMAL
 	stomach_capacity = 12
 
@@ -110,7 +110,7 @@
 	exertion_hydration_scale = 1
 	exertion_charge_scale = 1
 	exertion_reagent_scale = 5
-	exertion_reagent_path = /datum/reagent/lactate
+	exertion_reagent_path = /datum/reagent/lactic_acid
 	exertion_emotes_biological = list(
 		/decl/emote/exertion/biological,
 		/decl/emote/exertion/biological/breath,
@@ -123,11 +123,12 @@
 
 /datum/species/vox/equip_survival_gear(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/mask/gas/vox(H), slot_wear_mask)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal(H),slot_shoes)
 
-	if(istype(H.get_equipped_item(slot_back), /obj/item/storage/backpack))
-		H.equip_to_slot_or_del(new /obj/item/tank/nitrogen(H), slot_r_hand)
+	if(istype(H.get_equipped_item(slot_back), /obj/item/storage/backpack)) // This is mostly for station Vox
+		H.equip_to_slot_or_del(new /obj/item/tank/emergency/nitrogen/double(H), slot_belt)
 		H.equip_to_slot_or_del(new /obj/item/storage/box/vox(H.back), slot_in_backpack)
-		H.set_internals(H.r_hand)
+		H.set_internals(H.belt)
 	else
 		H.equip_to_slot_or_del(new /obj/item/tank/nitrogen(H), slot_back)
 		H.equip_to_slot_or_del(new /obj/item/storage/box/vox(H), slot_r_hand)
@@ -136,7 +137,7 @@
 /datum/species/vox/disfigure_msg(var/mob/living/carbon/human/H)
 	var/datum/gender/T = gender_datums[H.get_gender()]
 	return "<span class='danger'>[T.His] beak-segments are cracked and chipped! [T.He] [T.is] not even recognizable.</span>\n"
-	
+
 /datum/species/vox/skills_from_age(age)
 	. = 8
 
@@ -178,7 +179,6 @@
 		slot_belt_str =   list("[NORTH]" = list("x" = 0, "y" = 8), "[EAST]" = list("x" = -4, "y" = 8), "[SOUTH]" = list("x" = 0, "y" = 8), "[WEST]" = list("x" =  4, "y" = 8)),
 		slot_l_ear_str =  list("[NORTH]" = list("x" = 0, "y" = 8), "[EAST]" = list("x" =  6, "y" = 8), "[SOUTH]" = list("x" = 0, "y" = 8), "[WEST]" = list("x" =  8, "y" = 8)),
 		slot_r_ear_str =  list("[NORTH]" = list("x" = 0, "y" = 8), "[EAST]" = list("x" =  8, "y" = 8), "[SOUTH]" = list("x" = 0, "y" = 8), "[WEST]" = list("x" =  6, "y" = 8))
-
 	)
 
 

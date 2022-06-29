@@ -3,6 +3,8 @@
 	w_class = ITEM_SIZE_NORMAL
 	icon = 'icons/obj/inflatable.dmi'
 	health_max = 10
+	health_min_damage = 10
+	damage_hitsound = 'sound/effects/Glasshit.ogg'
 	var/deploy_path = null
 
 /obj/item/inflatable/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
@@ -70,7 +72,6 @@
 
 	var/undeploy_path = null
 	var/taped
-
 	var/max_pressure_diff = RIG_MAX_PRESSURE
 	var/max_temp = SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 
@@ -112,9 +113,9 @@
 		var/initial_damage_percentage = get_damage_percentage()
 		damage_health(1)
 		var/damage_percentage = get_damage_percentage()
-		if (damage_percentage >= 0.7 && initial_damage_percentage < 0.7)
+		if(initial_damage_percentage < 70 && damage_percentage >= 70)
 			visible_message(SPAN_WARNING("\The [src] is barely holding up!"))
-		else if (damage_percentage >= 0.3 && initial_damage_percentage < 0.3)
+		else if(initial_damage_percentage < 30 && damage_percentage >= 30)
 			visible_message(SPAN_WARNING("\The [src] is taking damage!"))
 
 /obj/structure/inflatable/examine(mob/user)
@@ -125,29 +126,29 @@
 /obj/structure/inflatable/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	return 0
 
-/obj/structure/inflatable/bullet_act(var/obj/item/projectile/Proj)
-	if (damage_health(Proj.get_structure_damage(), Proj.damage_type))
+/obj/structure/inflatable/bullet_act(obj/item/projectile/Proj)
+	. = ..()
+	if(!is_alive())
 		return PROJECTILE_CONTINUE
 
 /obj/structure/inflatable/ex_act(severity)
-	switch(severity)
-		if(1.0)
-			qdel(src)
-			return
-		if(2.0)
-			deflate(1)
-			return
-		if(3.0)
-			if(prob(50))
-				deflate(1)
-				return
+	if(severity == 1)
+		qdel(src)
+		return
+	..()
 
 /obj/structure/inflatable/attack_hand(mob/user as mob)
 	add_fingerprint(user)
 	return
 
 /obj/structure/inflatable/attackby(obj/item/W, mob/user)
-	if(!istype(W) || istype(W, /obj/item/inflatable_dispenser)) return
+	if(!istype(W) || istype(W, /obj/item/inflatable_dispenser))
+		return
+
+	if(user.a_intent == I_HURT)
+		if(W.can_puncture() || W.force > 10)
+			..()
+		return
 
 	if(istype(W, /obj/item/tape_roll) && get_damage_value() >= 3)
 		if(taped)
@@ -158,16 +159,7 @@
 			to_chat(user, SPAN_NOTICE("You patch some damage in \the [src] with \the [W]!"))
 			restore_health(3)
 			return TRUE
-	else if((W.damtype == BRUTE || W.damtype == BURN) && (W.can_puncture() || W.force > 10))
-		..()
-		if(hit(W.force))
-			visible_message("<span class='danger'>[user] pierces [src] with [W]!</span>")
-	return
-
-/obj/structure/inflatable/proc/hit(var/damage, var/sound_effect = 1)
-	if(sound_effect)
-		playsound(loc, 'sound/effects/Glasshit.ogg', 75, 1)
-	return damage_health(damage)
+	..()
 
 /obj/structure/inflatable/handle_death_change(new_death_state)
 	. = ..()
@@ -177,7 +169,7 @@
 /obj/structure/inflatable/CtrlClick()
 	return hand_deflate()
 
-/obj/structure/inflatable/proc/deflate(var/violent=0)
+/obj/structure/inflatable/proc/deflate(violent=0)
 	playsound(loc, 'sound/machines/hiss.ogg', 75, 1)
 	if(violent)
 		visible_message("[src] rapidly deflates!")
@@ -208,7 +200,7 @@
 
 /obj/structure/inflatable/attack_generic(var/mob/user, var/damage, var/attack_verb)
 	attack_animation(user)
-	if (damage_health(damage))
+	if(damage_health(damage))
 		user.visible_message("<span class='danger'>[user] [attack_verb] open the [src]!</span>")
 	else
 		user.visible_message("<span class='danger'>[user] [attack_verb] at [src]!</span>")
