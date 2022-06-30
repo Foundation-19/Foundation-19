@@ -205,7 +205,7 @@
 		icon_state = "rpk-empty"
 	return
 
-/obj/item/gun/projectile/automatic/scp/donor/svd
+/obj/item/gun/projectile/automatic/scp/svd
 	name = "SVD"
 	desc = "Yet another spin on the AK platform, this SVD is a scoped sniper rifle with far greater range thanks to it's longer barrel and updated rifling and profile."
 	icon_state = "svd"
@@ -223,7 +223,7 @@
 		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, use_launcher=null, one_hand_penalty=5, burst_accuracy=null, dispersion=null)
 		)
 
-/obj/item/gun/projectile/automatic/scp/donor/svd/update_icon()
+/obj/item/gun/projectile/automatic/scp/svd/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "svd"
