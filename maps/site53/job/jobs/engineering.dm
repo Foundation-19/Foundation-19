@@ -22,6 +22,7 @@
 		/datum/mil_rank/security/e1,
 		/datum/mil_rank/security/e2
 	)
+	hud_icon = "hudengineertrainee"
 
 	access = list(
 		access_eng_comms,
@@ -59,6 +60,7 @@
 		/datum/mil_rank/security/e4,
 		/datum/mil_rank/security/e5
 	)
+	hud_icon = "hudengineer"
 
 	access = list(
 		access_eng_comms,
@@ -106,6 +108,7 @@
 		/datum/mil_rank/security/e7,
 		/datum/mil_rank/security/e8
 	)
+	hud_icon = "hudseniorengineer"
 
 	access = list(
 		access_eng_comms,
@@ -152,6 +155,7 @@
 		/datum/mil_rank/security/w3,
 		/datum/mil_rank/security/w4
 	)
+	hud_icon = "hudcontainmentengineer"
 
 	access = list(
 		access_eng_comms,
@@ -197,6 +201,7 @@
 	/datum/mil_rank/security/o2,
 	/datum/mil_rank/security/o3
 	)
+	hud_icon = "hudchiefengineer"
 
 	access = list(
 		access_eng_comms,
