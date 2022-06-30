@@ -115,7 +115,8 @@
 		access_engineeringlvl1,
 		access_engineeringlvl2,
 		access_engineeringlvl3,
-		access_engineeringlvl4
+		access_engineeringlvl4,
+		access_engine_equip
 	)
 	minimal_access = list()
 
@@ -164,7 +165,8 @@
 		access_engineeringlvl1,
 		access_engineeringlvl2,
 		access_engineeringlvl3,
-		access_engineeringlvl4
+		access_engineeringlvl4,
+		access_engine_equip
 	)
 	minimal_access = list()
 
