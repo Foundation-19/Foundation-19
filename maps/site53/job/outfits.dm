@@ -628,7 +628,7 @@
 	gloves = /obj/item/clothing/gloves/thick/combat
 	shoes = /obj/item/clothing/shoes/combat
 	id_types = null
-	suit_store = /obj/item/gun/projectile/automatic/scp/donor/svd
+	suit_store = /obj/item/gun/projectile/automatic/scp/svd
 	r_hand = null
 	l_hand = /obj/item/material/hatchet/tacknife
 	l_pocket = /obj/item/ammo_magazine/scp
