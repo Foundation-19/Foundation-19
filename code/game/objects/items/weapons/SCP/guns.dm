@@ -154,7 +154,7 @@
 	else
 		icon_state = "ierichon-empty"
 
-/obj/item/gun/projectile/automatic/scp/donor/rpk
+/obj/item/gun/projectile/automatic/scp/rpk
 	name = "RPK-74"
 	desc = "This is a modification of the traditional AK-47 to be a machinegun."
 	icon_state = "rpk"
@@ -173,7 +173,7 @@
 		list(mode_name="long bursts",	burst=8, move_delay=15, one_hand_penalty=9, burst_accuracy = list(0,-1,-1,-2,-2,-2,-3,-3), dispersion = list(1.0, 1.0, 1.0, 1.0, 1.2)),
 		)
 
-/obj/item/gun/projectile/automatic/scp/donor/rpk/update_icon()
+/obj/item/gun/projectile/automatic/scp/rpk/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "rpk"
@@ -181,7 +181,7 @@
 		icon_state = "rpk-empty"
 	return
 
-/obj/item/gun/projectile/automatic/scp/donor/svd
+/obj/item/gun/projectile/automatic/scp/svd
 	name = "SVD"
 	desc = "A Russian Made Sniper-Rifle."
 	icon_state = "svd"
@@ -199,7 +199,7 @@
 		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, use_launcher=null, one_hand_penalty=5, burst_accuracy=null, dispersion=null)
 		)
 
-/obj/item/gun/projectile/automatic/scp/donor/svd/update_icon()
+/obj/item/gun/projectile/automatic/scp/svd/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "svd"
@@ -207,7 +207,7 @@
 		icon_state = "svd-empty"
 	return
 /*
-/obj/item/gun/projectile/automatic/scp/donor/svd/verb/scope()
+/obj/item/gun/projectile/automatic/scp/svd/verb/scope()
 	set category = "Object"
 	set name = "Use Scope"
 	set popup_menu = 1
