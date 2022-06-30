@@ -9,6 +9,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/facilitydir
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
+	hud_icon = "hudsitedirector"
 
 	access = list(
 		access_com_comms, // SD and HoP do not want to hear all the details, either meet your Commander in person or talk to the Tower
@@ -23,7 +24,7 @@
 	minimal_access = list()
 
 /datum/job/hop
-	title = "Head of Personnel"
+	title = "Human Resources Officer"
 	department = "Command"
 	department_flag = COM
 	total_positions = 0
@@ -35,7 +36,8 @@
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/headofhr
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
-	alt_titles = list("Personnel Director")
+	hud_icon = "hudhumanresources"
+	alt_titles = list("Head of Personnel")
 
 	access = list(
 		access_adminlvl1,
@@ -62,6 +64,7 @@
 	ideal_character_age = 45
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/commsofficer
 	allowed_branches = list(/datum/mil_branch/security)
+	hud_icon = "hudcommsofficer"
 	allowed_ranks = list(
 	/datum/mil_rank/security/w5,
 	/datum/mil_rank/security/w6
@@ -125,6 +128,7 @@
 	allowed_ranks = list(
 		/datum/mil_rank/security/w1
 	)
+	hud_icon = "hudcommsprogrammer"
 
 	access = list(
 		access_com_comms,
@@ -154,7 +158,7 @@
 
 /datum/job/o5rep
 	title = "O5 Representative"
-	department = "Civilian"
+	department = "Command"
 	department_flag = COM
 	total_positions = 1
 	spawn_positions = 1
@@ -164,7 +168,7 @@
 	minimal_player_age = 5
 	minimal_player_age = 9
 	ideal_character_age = 30
-	alt_titles = list("Global Occult Coalition Representative" = /decl/hierarchy/outfit/job/site90/crew/civ/gocrep)
+	alt_titles = list("Ethics Committee Representative")
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
 	allowed_branches = list(
 		/datum/mil_branch/civilian
@@ -172,6 +176,7 @@
 	allowed_ranks = list(
 		/datum/mil_rank/civ/classa
 	)
+	hud_icon = "hud05rep"
 
 	access = list(
 		access_com_comms,
@@ -180,6 +185,34 @@
 		access_adminlvl3,
 		access_adminlvl4,
 		access_adminlvl5
+	)
+	minimal_access = list()
+
+/datum/job/goirep
+	title = "Global Occult Coalition Representative"
+	department = "Command"
+	department_flag = COM
+	total_positions = 1
+	spawn_positions = 1
+//	//duties = "<big><b>As the GOC Representative, your task is to assess the facility and generally advocate for hardline approaches in regards to anomalies and their containment, or destruction. You value human lives far over any anomaly, as does the Global Occult Coalition, and should see to it that lives are preserved where possible, even D-Class ones. Though combat is not your duty, you are issued a revolver to defend yourself with. This job is heavy roleplay: you're expected to be well-versed in actually talking to people on the matters described. Containment of SCPs and direct site matters are not your matters, so don't get involved."
+//	//supervisors = "Global Occult Coalition Regional Command"
+	economic_power = 5
+	minimal_player_age = 5
+	minimal_player_age = 9
+	ideal_character_age = 30
+	alt_titles = list("UIU Relations Agent" = /decl/hierarchy/outfit/job/site90/crew/civ/uiu)
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/gocrep
+	allowed_branches = list(
+		/datum/mil_branch/civilian
+	)
+	allowed_ranks = list(
+		/datum/mil_rank/civ/classa
+	)
+	hud_icon = "hudgoi"
+
+	access = list(
+		access_com_comms,
+		access_adminlvl1
 	)
 	minimal_access = list()
 

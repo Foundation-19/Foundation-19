@@ -11,6 +11,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/classd
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classd)
+	hud_icon = "huddclass"
 	var/static/list/used_numbers = list()
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_TRAINED,
@@ -45,6 +46,7 @@
 	allowed_branches = list(
 		/datum/mil_branch/security,
 	)
+	hud_icon = "huddeckchief"
 	allowed_ranks = list(
 		/datum/mil_rank/security/e7,
 		/datum/mil_rank/security/e8,
@@ -101,6 +103,7 @@
 	/datum/mil_rank/security/e5,
 	/datum/mil_rank/security/e6
 	)
+	hud_icon = "huddecktechnician"
 
 	access = list(
 	access_log_comms,
@@ -144,8 +147,9 @@
 		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
-	/datum/mil_rank/civ/classd
+	/datum/mil_rank/civ/classc
 	)
+	hud_icon = "hudsanitationtechnician"
 
 	access = list(
 		access_civ_comms,
@@ -171,8 +175,9 @@
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
+	hud_icon = "hudcook"
 	allowed_ranks = list(
-	/datum/mil_rank/civ/classd
+	/datum/mil_rank/civ/classc
 	)
 
 	access = list(
@@ -202,8 +207,9 @@
 		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
-	/datum/mil_rank/civ/classd
+	/datum/mil_rank/civ/classc
 	)
+	hud_icon = "hudbartender"
 
 	access = list(
 		access_civ_comms,
@@ -237,6 +243,7 @@
 	allowed_ranks = list(
 		/datum/mil_rank/civ/classa
 	)
+	hud_icon = "hudarchivist"
 
 	access = list(
 		access_civ_comms,

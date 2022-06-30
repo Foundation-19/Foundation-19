@@ -13,7 +13,8 @@
 	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/juniorscientist
 	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	allowed_ranks = list(/datum/mil_rank/civ/classb, /datum/mil_rank/civ/classc)
+	hud_icon = "hudresearchassistant"
 
 	access = list(
 		access_sci_comms,
@@ -47,6 +48,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/scientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	hud_icon = "hudscientist"
 
 	access = list(access_sci_comms,
 	access_sciencelvl1,
@@ -81,6 +83,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/seniorscientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb)
+	hud_icon = "hudseniorresearcher"
 
 	access = list(
 		access_sci_comms,
@@ -115,6 +118,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/researchdirector
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
+	hud_icon = "hudchiefscienceofficer"
 
 	access = list(
 		access_com_comms,
