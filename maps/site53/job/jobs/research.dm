@@ -48,7 +48,11 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 
-	access = list(access_sci_comms, access_sciencelvl1, access_sciencelvl2)
+	access = list(access_sci_comms,
+	access_sciencelvl1,
+	access_sciencelvl2,
+	access_research
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -83,7 +87,8 @@
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,
-		access_sciencelvl4
+		access_sciencelvl4,
+		access_research
 	)
 	minimal_access = list()
 
@@ -125,7 +130,8 @@
 		access_adminlvl2,
 		access_adminlvl3,
 		access_adminlvl4,
-		access_keyauth
+		access_keyauth,
+		access_research
 	)
 	minimal_access = list()
 
