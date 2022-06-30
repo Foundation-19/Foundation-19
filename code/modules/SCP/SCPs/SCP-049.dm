@@ -6,7 +6,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/scp049
 	desc = "A mysterious plague doctor."
 	SCP = /datum/scp/scp_049
-	icon = 'icons/mob/scp049.dmi'
+	icon = 'icons/SCP/scp-049.dmi'
 	icon_state = null
 	var/list/attempted_surgery_on = list()
 	var/list/pestilence_images = list()
@@ -98,7 +98,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		pestilence_images.Cut()
 		for(var/mob/living/carbon/human/H in view(15, src))
 			if(H.pestilence)
-				pestilence_images += image('icons/mob/scp049.dmi', H, "pestilence", MOB_LAYER+0.01)
+				pestilence_images += image('icons/SCP/scp-049.dmi', H, "pestilence", MOB_LAYER+0.01)
 		client.images |= pestilence_images
 		if(!angry)
 			anger += 5

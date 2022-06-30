@@ -1,7 +1,7 @@
 /datum/species/scp049
 	name = "SCP-049"
 	name_plural = "SCP-049s"
-	icon_template = 'icons/mob/scp049.dmi'
+	icon_template = 'icons/SCP/scp-049.dmi'
 	has_organ = list()
 	siemens_coefficient = 0
 	species_flags = SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_SCAN

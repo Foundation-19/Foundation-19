@@ -4,7 +4,7 @@ GLOBAL_LIST_EMPTY(scp529s)
 	SCP = /datum/scp/scp_529
 	name = "SCP-529"
 	desc = "A friendly tabby cat that seems to be missing half of her body."
-	icon = 'icons/SCP/josie.dmi'
+	icon = 'icons/SCP/scp-529.dmi'
 	icon_state = "cat"
 	item_state = "cat"
 	icon_living = "cat"
