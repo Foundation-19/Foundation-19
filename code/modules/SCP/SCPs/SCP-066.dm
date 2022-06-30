@@ -6,7 +6,7 @@
 
 /mob/living/simple_animal/cat/scp_066
 	name = "SCP-066"
-	desc = "A mysterious plague doctor."
+	desc = "An amorphous red mass of braided yarn and ribbon."
 	SCP = /datum/scp/scp_066
 	var/next_emote = -1
 	var/global/mob/living/carbon/list/victims = list()
@@ -94,4 +94,3 @@
 			M.ear_deaf = max(M.ear_deaf,15)
 //			if(istype(M.l_ear, /obj/item/clothing/ears/earmuffs) || istype(M.r_ear, /obj/item/clothing/ears/earmuffs))
 //				M << pick('sound/scp/066/066-1-rapeE.ogg', 'sound/scp/066/066-2-rapeE.ogg', 'sound/scp/066/066-3-rapeE.ogg', 'sound/scp/066/066-4-rapeE.ogg', 'sound/scp/066/066-5-rapeE.ogg', 'sound/scp/066/066-ericrapeE.ogg')
-
