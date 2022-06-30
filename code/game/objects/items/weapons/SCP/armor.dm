@@ -25,6 +25,14 @@
 /obj/item/clothing/suit/armor/vest/scp
 	icon = 'icons/obj/clothing/suits.dmi'
 
+/obj/item/clothing/suit/armor/vest/scp/lightarmor
+	name = "armored anti-stab vest"
+	desc = "A synthetic armor vest, this one works well against cuts and bruises."
+	icon_state = "guard-armor"
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
+	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
+	armor = list(melee = 90, bullet = 40, laser = 30, energy = 35, bomb = 35, bio = 15, rad = 10)
+
 /obj/item/clothing/suit/armor/vest/scp/medarmor
 	name = "armored vest"
 	desc = "A synthetic armor vest."

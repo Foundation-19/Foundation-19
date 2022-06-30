@@ -41,7 +41,7 @@
 		/obj/item/clothing/head/helmet/scp/security,
 		/obj/item/device/flashlight/maglight,
 		/obj/item/clothing/accessory/storage/black_vest,
-		/obj/item/clothing/suit/armor/vest/scp/medarmor,
+		/obj/item/clothing/suit/armor/vest/scp/lightarmor,
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
 		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/gun/projectile/automatic/scp/p90,
@@ -76,7 +76,7 @@
 	return list(
 		/obj/item/clothing/under/scp/utility/security,
 		/obj/item/clothing/head/helmet/scp/security,
-		/obj/item/clothing/suit/armor/vest/scp/medarmor,
+		/obj/item/clothing/suit/armor/vest/scp/lightarmor,
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
 		/obj/item/storage/belt/holster/security/tactical,
 //		/obj/item/gun/projectile/sec/sec,
@@ -118,7 +118,6 @@
 //		/obj/item/ammo_magazine/c45m = 4,
 		/obj/item/gun/projectile/automatic/scp/m16,
 		/obj/item/ammo_magazine/scp/m16_mag = 3,
-		/obj/item/ammo_magazine/box/a10mm,
 		/obj/item/ammo_magazine/box/a556,
 		/obj/item/melee/telebaton,
 		/obj/item/handcuffs = 2,
@@ -190,9 +189,9 @@
 		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
 		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/gun/projectile/automatic/scp/p90,
-		/obj/item/ammo_magazine/scp/p90_mag = 2,
-		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
-		/obj/item/ammo_magazine/box/a10mm,
+		/obj/item/gun/projectile/automatic/scp/m16,
+		/obj/item/ammo_magazine/scp/m16_mag = 4,
+		/obj/item/ammo_magazine/box/a556,
 		/obj/item/melee/telebaton,
 		/obj/item/handcuffs = 2,
 		/obj/item/reagent_containers/spray/pepper,
@@ -218,16 +217,11 @@
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
 		/obj/item/storage/belt/holster/security/tactical,
-//		/obj/item/gun/projectile/sec/sec,
-//		/obj/item/ammo_magazine/c45m = 4,
-		/obj/item/gun/projectile/automatic/scp/p90,
-		/obj/item/ammo_magazine/scp/p90_mag = 2,
-		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
-		/obj/item/ammo_magazine/box/a10mm,
+		/obj/item/gun/projectile/automatic/scp/m16,
+		/obj/item/ammo_magazine/scp/m16_mag = 4,
+		/obj/item/ammo_magazine/box/a556,
 		/obj/item/melee/telebaton,
 		/obj/item/handcuffs = 2,
-//		/obj/item/ammo_magazine/box/c45donor,
-//		/obj/item/ammo_magazine/box/c45donor/rubber,
 		/obj/item/storage/box/ifak,
 		/obj/item/clothing/gloves/tactical/scp,
 		/obj/item/device/flash,
@@ -287,7 +281,7 @@
 	)
 
 /obj/structure/closet/secure_closet/mtf/co
-	name = "Zone Commander's Locker"
+	name = "Zone Commander Locker"
 	req_access = list(access_securitylvl4)
 	icon_state = "co-locked"
 	icon_closed = "co-unlocked"

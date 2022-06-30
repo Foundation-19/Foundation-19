@@ -3,7 +3,7 @@
 "f" = (/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_brief)
 "g" = (/obj/machinery/door/blast/regular,/turf/space,/area/space)
 "h" = (/obj/machinery/light,/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos)
-"j" = (/obj/structure/closet/gimmick/tacticool,/obj/item/storage/belt/holster/security/tactical,/obj/item/clothing/accessory/storage/black_vest,/obj/item/clothing/suit/storage/vest/tactical,/obj/item/gun/projectile/pistol/holdout,/obj/item/gun/projectile/automatic/scp/donor/ak74,/turf/simulated/floor/tiled/dark,/area/space)
+"j" = (/obj/structure/closet/gimmick/tacticool,/obj/item/storage/belt/holster/security/tactical,/obj/item/clothing/accessory/storage/black_vest,/obj/item/clothing/suit/storage/vest/tactical,/obj/item/gun/projectile/pistol/holdout,/obj/item/gun/projectile/automatic/scp/ak74,/turf/simulated/floor/tiled/dark,/area/space)
 "l" = (/obj/machinery/cryopod,/obj/machinery/light{dir = 4},/turf/simulated/floor/shuttle/red,/area/site53/offsite/chaos)
 "n" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_brief)
 "q" = (/turf/simulated/wall/titanium,/area/space)

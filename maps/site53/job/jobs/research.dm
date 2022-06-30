@@ -13,7 +13,8 @@
 	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/juniorscientist
 	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	allowed_ranks = list(/datum/mil_rank/civ/classb, /datum/mil_rank/civ/classc)
+	hud_icon = "hudresearchassistant"
 
 	access = list(
 		access_sci_comms,
@@ -47,8 +48,13 @@
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/scientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	hud_icon = "hudscientist"
 
-	access = list(access_sci_comms, access_sciencelvl1, access_sciencelvl2)
+	access = list(access_sci_comms,
+	access_sciencelvl1,
+	access_sciencelvl2,
+	access_research
+	)
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -77,13 +83,15 @@
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/seniorscientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb)
+	hud_icon = "hudseniorresearcher"
 
 	access = list(
 		access_sci_comms,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,
-		access_sciencelvl4
+		access_sciencelvl4,
+		access_research
 	)
 	minimal_access = list()
 
@@ -110,6 +118,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/researchdirector
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
+	hud_icon = "hudchiefscienceofficer"
 
 	access = list(
 		access_com_comms,
@@ -125,7 +134,8 @@
 		access_adminlvl2,
 		access_adminlvl3,
 		access_adminlvl4,
-		access_keyauth
+		access_keyauth,
+		access_research
 	)
 	minimal_access = list()
 

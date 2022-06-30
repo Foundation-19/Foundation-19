@@ -14,6 +14,7 @@
 	/datum/mil_rank/security/o4,
 	/datum/mil_rank/security/o5
 	)
+	hud_icon = "hudchiefmedicalofficer"
 
 	access = list(
 		access_com_comms,
@@ -57,6 +58,7 @@
 	allowed_branches = list(/datum/mil_branch/security)
 	allowed_ranks = list(
 		/datum/mil_rank/security/o1)
+	hud_icon = "hudpharmacist"
 
 	access = list(
 		access_med_comms,
@@ -93,6 +95,7 @@
 	/datum/mil_branch/civilian)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/classb)
+	hud_icon = "hudcounselor"
 
 	access = list(
 		access_med_comms,
@@ -122,12 +125,14 @@
 	ideal_character_age = 40
 	minimal_player_age = 3
 	economic_power = 5
+	alt_titles = list("Coroner")
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/medicaldoctor
 	allowed_branches = list(
 	/datum/mil_branch/security)
 	allowed_ranks = list(
 		/datum/mil_rank/security/o1,
 		/datum/mil_rank/security/o2)
+	hud_icon = "hudphysician"
 
 	access = list(
 		access_med_comms,
@@ -167,6 +172,7 @@
 	/datum/mil_branch/civilian)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/classb)
+	hud_icon = "hudvirologist"
 
 	access = list(
 		access_med_comms,
@@ -205,6 +211,7 @@
 	/datum/mil_branch/security)
 	allowed_ranks = list(
 		/datum/mil_rank/security/o2)
+	hud_icon = "hudsurgeon"
 
 	access = list(
 		access_med_comms,
@@ -248,6 +255,7 @@
 		/datum/mil_rank/security/e4,
 		/datum/mil_rank/security/e5
 		)
+	hud_icon = "hudemt"
 
 	access = list(
 		access_med_comms,

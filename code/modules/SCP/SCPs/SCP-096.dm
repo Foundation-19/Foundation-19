@@ -3,9 +3,9 @@
 /mob/living/simple_animal/hostile/scp096
 	name = "???"
 	desc = "No, no, you know not to look closely at it" //for non-targets
-	var/target_desc_1 = "A pale, emanciated figure. It looks almost human, but its limbs are long and skinny, and its face is......<span class='danger'>no. NO. NO</span>" //for targets
-	var/target_desc_2 = "<span class='danger'>NO</span>" //on second examine
-	icon = 'icons/SCP/096.dmi'
+	var/target_desc_1 = "A pale, emanciated figure. It looks almost human, but its limbs are long and skinny, and its face is......<span class='danger'>no. NO. NO!</span>" //for targets
+	var/target_desc_2 = "<span class='danger'>NO!</span>" //on second examine
+	icon = 'icons/SCP/scp-096.dmi'
 	icon_state = "scp"
 	icon_living = "scp"
 	icon_dead = "scp-dead"
@@ -17,13 +17,13 @@
 	maxHealth = 600
 	move_to_delay = 2
 
-	var/murder_sound = list('sound/voice/scream_horror2.ogg')
+	var/murder_sound = list('sound/voice/096-kill.ogg')
 	var/scare_sound = list('sound/scp/scare1.ogg','sound/scp/scare2.ogg','sound/scp/scare3.ogg','sound/scp/scare4.ogg')	//Boo
 	var/hibernate = 0 //Disables SCP until toggled back to 0
-	var/scare_played = 0 //Did we rape everyone's ears yet ?
+	var/scare_played = 0 //Did we use the jumpscare sound yet ?
 	var/obj/machinery/atmospherics/unary/vent_pump/entry_vent //Graciously stolen from spider code
 
-	var/list/shitlist = list() //list of folks this guy is about to murder
+	var/list/kill_list = list() //list of people this guy is about to murder
 	var/list/examine_urge_list = list() //tracks urge to examine
 	var/list/examine_urge_values = list()
 	var/target //current dude this guy is targeting
@@ -54,12 +54,12 @@
 		return
 
 	//Pick the next target
-	if(shitlist.len)
-		var/mob/living/carbon/H
-		for(var/i = 1, i <= shitlist.len, i++) //start from the first guy
-			H = shitlist[1]
+	if(kill_list.len)
+		var/mob/living/carbon/human/H
+		for(var/i = 1, i <= kill_list.len, i++) //start from the first guy
+			H = kill_list[1]
 			if(!H || H.stat == DEAD)
-				shitlist -= H
+				kill_list -= H
 				chasing_message_played = 0
 				doom_message_played = 0
 				murdering = 0
@@ -84,10 +84,10 @@
 //Check if any carbon mob can see us
 /mob/living/simple_animal/hostile/scp096/proc/check_los()
 
-	for(var/mob/living/carbon/H in viewers(src, null))
-		if(H in shitlist)
+	for(var/mob/living/carbon/human/H in viewers(src, null))
+		if(H in kill_list)
 			continue
-		if(H.stat || is_blind(H))
+		if(H.stat || H.equipment_tint_total == 3)
 			continue
 
 		var/observed = 0
@@ -122,7 +122,7 @@
 
 	return
 
-/mob/living/simple_animal/hostile/scp096/proc/add_examine_urge(var/mob/living/carbon/H)
+/mob/living/simple_animal/hostile/scp096/proc/add_examine_urge(var/mob/living/carbon/human/H)
 
 	var/index
 	var/examine_urge
@@ -151,7 +151,7 @@
 
 	CALLBACK( addtimer(H, .proc/reduce_examine_urge), 200 SECONDS)
 
-/mob/living/simple_animal/hostile/scp096/proc/reduce_examine_urge(var/mob/living/carbon/H)
+/mob/living/simple_animal/hostile/scp096/proc/reduce_examine_urge(var/mob/living/carbon/human/H)
 	var/index
 	var/examine_urge
 
@@ -160,7 +160,7 @@
 		examine_urge = examine_urge_values[index]
 	else return
 
-	if (examine_urge == 1 && !(H in shitlist))
+	if (examine_urge == 1 && !(H in kill_list))
 		to_chat(H, "<span class='notice'>The urge fades away...</span>")
 
 	examine_urge = max(examine_urge-1, 0)
@@ -169,9 +169,9 @@
 
 /mob/living/simple_animal/hostile/scp096/examine(var/userguy)
 	if (istype(userguy, /mob/living/carbon))
-		if (!(userguy in shitlist))
+		if (!(userguy in kill_list))
 			to_chat(userguy, target_desc_1)
-			shitlist += userguy
+			kill_list += userguy
 			if(userguy)
 				CALLBACK(addtimer( to_chat(userguy, "<span class='alert'>That was a mistake. Run</span>"), 20 SECONDS))
 			if(userguy)
@@ -181,16 +181,10 @@
 		if(will_scream)
 			if(!buckled) dir = 2
 			visible_message("<span class='danger'>[src] SCREAMS!</span>")
-			playsound(get_turf(src), 'sound/voice/scream_horror1.ogg', 50, 1)
+			playsound(get_turf(src), 'sound/voice/096-rage.ogg', 100)
 			screaming = 1
 			will_scream = 0
-			spawn(100)
-				visible_message("<span class='danger'>[src] SCREAMS!</span>")
-				playsound(get_turf(src), 'sound/voice/scream_horror1.ogg', 50, 1)
-			spawn(200)
-				visible_message("<span class='danger'>[src] SCREAMS!</span>")
-				playsound(get_turf(src), 'sound/voice/scream_horror1.ogg', 50, 1)
-			spawn(300)
+			spawn(290)
 				screaming = 0
 		return
 	..()
@@ -288,7 +282,7 @@
 
 	//See if we're able to murder anyone
 	for(var/mob/living/carbon/M in get_turf(src))
-		if(M in shitlist)
+		if(M in kill_list)
 			murder(M)
 			break
 
@@ -317,7 +311,7 @@
 		T.pixel_y = original_y
 		if(ishuman(T))
 			T.emote("scream")
-		playsound(T.loc, pick(murder_sound), 50, 1)
+		playsound(T.loc, pick(murder_sound), 100)
 		murdering = 0
 
 		//Warn everyone
@@ -328,7 +322,7 @@
 		//Logging stuff
 		log_admin("[T] ([T.ckey]) has been torn apart by an active [src].")
 		message_admins("ALERT: <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[T.x];Y=[T.y];Z=[T.z]'>[T.real_name]</a> has been torn apart by an active [src].")
-		shitlist -= T
+		kill_list -= T
 
 		if (target == T)
 			target = null

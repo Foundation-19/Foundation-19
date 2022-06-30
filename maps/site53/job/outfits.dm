@@ -282,10 +282,24 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	gloves = /obj/item/clothing/gloves/thick/combat
 	l_pocket = /obj/item/device/radio
-	id_types = list(/obj/item/card/id/adminlvl5)
+	id_types = list(/obj/item/card/id/adminlvl1)
 	l_ear = /obj/item/device/radio/headset/heads/hos/gock
 	back = /obj/item/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/ammo_magazine/tac50 = 4, /obj/item/clothing/head/helmet/scp/goc = 1)
+
+/decl/hierarchy/outfit/job/site90/crew/civ/uiu
+	name = OUTFIT_JOB_NAME("Unusual Incidents Unit Relations Agent")
+	uniform = /obj/item/clothing/under/rank/head_of_security/navyblue
+	suit = /obj/item/clothing/suit/security/navyhos
+	shoes = /obj/item/clothing/shoes/combat
+	glasses = /obj/item/clothing/glasses/sunglasses
+	gloves = /obj/item/clothing/gloves/thick/combat
+	l_pocket = /obj/item/device/radio
+	id_types = list(/obj/item/card/id/adminlvl1)
+	l_ear = /obj/item/device/radio/headset/heads/hos/gock
+	belt = /obj/item/gun/projectile/pistol/military/alt
+	back = /obj/item/storage/backpack/satchel/pocketbook
+	backpack_contents = list(/obj/item/ammo_magazine/pistol/double = 2)
 
 /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
 	name = OUTFIT_JOB_NAME("O5 Representative")
@@ -628,7 +642,7 @@
 	gloves = /obj/item/clothing/gloves/thick/combat
 	shoes = /obj/item/clothing/shoes/combat
 	id_types = null
-	suit_store = /obj/item/gun/projectile/automatic/scp/donor/svd
+	suit_store = /obj/item/gun/projectile/automatic/scp/svd
 	r_hand = null
 	l_hand = /obj/item/material/hatchet/tacknife
 	l_pocket = /obj/item/ammo_magazine/scp

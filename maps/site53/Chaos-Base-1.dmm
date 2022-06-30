@@ -36,7 +36,7 @@
 /obj/item/clothing/accessory/storage/black_vest,
 /obj/item/clothing/suit/storage/vest/tactical,
 /obj/item/gun/projectile/pistol/holdout,
-/obj/item/gun/projectile/automatic/scp/donor/ak74,
+/obj/item/gun/projectile/automatic/scp/ak74,
 /obj/item/clothing/head/helmet/nt{
 	name = "temp chaos helm"
 	},
@@ -76,7 +76,7 @@
 /obj/item/clothing/accessory/storage/black_vest,
 /obj/item/clothing/suit/storage/vest/tactical,
 /obj/item/gun/projectile/pistol/holdout,
-/obj/item/gun/projectile/automatic/scp/donor/ak74,
+/obj/item/gun/projectile/automatic/scp/ak74,
 /obj/item/clothing/head/helmet/nt{
 	name = "temp chaos helm"
 	},
@@ -104,7 +104,7 @@
 /area/space)
 "s" = (
 /obj/structure/table/rack/dark,
-/obj/item/gun/projectile/automatic/scp/donor/svd,
+/obj/item/gun/projectile/automatic/scp/svd,
 /obj/item/ammo_magazine/scp/svd,
 /obj/item/ammo_magazine/scp/svd,
 /obj/item/ammo_magazine/scp/svd,
@@ -240,7 +240,7 @@
 /area/space)
 "S" = (
 /obj/structure/table/rack/dark,
-/obj/item/gun/projectile/automatic/scp/donor/ak742,
+/obj/item/gun/projectile/automatic/scp/ak742,
 /obj/item/ammo_magazine/scp/ak,
 /obj/item/ammo_magazine/scp/ak,
 /obj/item/ammo_magazine/scp/ak,
