@@ -153,9 +153,9 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	return target
 
 /mob/living/carbon/human/scp049/proc/pursueTarget()
-	walk(src, null)
 	if(client)
 		return FALSE
+	walk(src, null)
 	addtimer(CALLBACK(src, .proc/getTarget), 3 SECONDS)
 
 	if(!target)
