@@ -97,4 +97,4 @@
 	icon_state = "beta-armor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
-	armor = list(melee = 100, bullet = 70, laser = 40, energy = 25, bomb = 30, bio = 60, rad = 80)
+	armor = list(melee = 90, bullet = 70, laser = 40, energy = 25, bomb = 30, bio = 90, rad = 90)

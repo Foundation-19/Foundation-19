@@ -67,4 +67,4 @@
 	icon_state = "beta-helmet"
 	body_parts_covered = HEAD|FACE|EYES
 	cold_protection = HEAD|FACE|EYES
-	armor = list(melee = 100, bullet = 70, laser = 40, energy = 25, bomb = 50, bio = 100, rad = 90)
+	armor = list(melee = 90, bullet = 70, laser = 40, energy = 25, bomb = 50, bio = 90, rad = 90)
