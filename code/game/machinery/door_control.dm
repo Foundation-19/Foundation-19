@@ -212,46 +212,46 @@ obj/machinery/button/remote/blast_door/lockdown_blast_door/proc/glassadder()
 	var/undo = 0
 
 /obj/machinery/lockdownkeyhole/attackby(var/obj/item/W, var/mob/user)
-    if(istype(W, /obj/item/weapon/lockdownkey))
-        if(!rkey)
-            if(!user.unEquip(W))
-                to_chat(user, "<span class='warning'>You can't seem to drop \the [W]!</span>")
-                return
-            rkey = W
-            W.forceMove(src)
-            to_chat(user, "<span class='notice'>You insert \the [W] into \the [src].</span>")
-            update_holeicon()
-        else
-            to_chat(user, "<span class='warning'>\The [src] already has a key inserted.</span>")
-        return
+	if(istype(W, /obj/item/weapon/lockdownkey))
+		if(!rkey)
+			if(!user.unEquip(W))
+				to_chat(user, "<span class='warning'>You can't seem to drop \the [W]!</span>")
+				return
+			rkey = W
+			W.forceMove(src)
+			to_chat(user, "<span class='notice'>You insert \the [W] into \the [src].</span>")
+			update_holeicon()
+		else
+			to_chat(user, "<span class='warning'>\The [src] already has a key inserted.</span>")
+		return
 
-    return ..()
+	return ..()
 
 /obj/machinery/lockdownkeyhole/AltClick(var/mob/user)
-    if(rkey)
-        rkey.dropInto(loc)
-        if(user)
-            to_chat(user, "<span class='notice'>You remove \the [rkey] from \the [src].</span>")
-            user.put_in_hands(rkey)
-        rkey = null
-        update_holeicon()
+	if(rkey)
+		rkey.dropInto(loc)
+		if(user)
+			to_chat(user, "<span class='notice'>You remove \the [rkey] from \the [src].</span>")
+			user.put_in_hands(rkey)
+		rkey = null
+		update_holeicon()
 
 /obj/machinery/lockdownkeyhole/attack_hand(var/mob/user)
-    if(rkey)
-        to_chat(user, "<span class='notice'>You turn the key!</span>")
-        icon_state = "lockdownholekr"
-        for(var/obj/machinery/button/remote/blast_door/lockdown_blast_door/M in SSmachines.all_machinery)
-            if(M.id2 == src.id2)
-                if(undo == 0)
-                    M.glassremover()
-                    undo = 1
-                    playsound(src.loc,'sound/effects/caution.ogg',50,1,5)
-                else
-                    M.glassadder()
-                    icon_state = "lockdownholek"
-                    undo = 0
-    else
-        to_chat(user, "<span class='warning'>There is no key in \the [src]!</span>")
+	if(rkey)
+		to_chat(user, "<span class='notice'>You turn the key!</span>")
+		icon_state = "lockdownholekr"
+		for(var/obj/machinery/button/remote/blast_door/lockdown_blast_door/M in SSmachines.all_machinery)
+			if(M.id2 == src.id2)
+				if(undo == 0)
+					M.glassremover()
+					undo = 1
+					playsound(src.loc,'sound/effects/caution.ogg',50,1,5)
+				else
+					M.glassadder()
+					icon_state = "lockdownholek"
+					undo = 0
+	else
+		to_chat(user, "<span class='warning'>There is no key in \the [src]!</span>")
 
 
 /obj/machinery/lockdownkeyhole/proc/update_holeicon()

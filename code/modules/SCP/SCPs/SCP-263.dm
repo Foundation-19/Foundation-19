@@ -96,38 +96,38 @@
 /*
 /mob/living/simple_animal/hostile/scp263/proc/check_los()
 
-    for(var/mob/living/carbon/H in viewers(src, null))
-        if(H in gameshow)
-            continue
-        if(H.stat || is_blind(H))
-            continue
+	for(var/mob/living/carbon/H in viewers(src, null))
+		if(H in gameshow)
+			continue
+		if(H.stat || is_blind(H))
+			continue
 
-        var/observed = 0
-        var/eye_contact = 0
+		var/observed = 0
+		var/eye_contact = 0
 
-        var/x_diff = H.x - src.x
-        var/y_diff = H.y - src.y
-        if(y_diff != 0) //If we are not on the same vertical plane (up/down), mob is either above or below src
-            if(y_diff < 0 && H.dir == NORTH) //Mob is below src and looking up
-                observed = 1
-                if(dir == SOUTH) //src is looking down
-                    eye_contact = 1
-            else if(y_diff > 0 && H.dir == SOUTH) //Mob is above src and looking down
-                observed = 1
-                if(dir == NORTH) //src is looking up
-                    eye_contact = 1
-        if(x_diff != 0) //If we are not on the same horizontal plane (left/right), mob is either left or right of src
-            if(x_diff < 0 && H.dir == EAST) //Mob is left of src and looking right
-                observed = 1
-                if(dir == WEST) //src is looking left
-                    eye_contact = 1
-            else if(x_diff > 0 && H.dir == WEST) //Mob is right of src and looking left
-                observed = 1
-                if(dir == EAST) //src is looking right
-                    eye_contact = 1
+		var/x_diff = H.x - src.x
+		var/y_diff = H.y - src.y
+		if(y_diff != 0) //If we are not on the same vertical plane (up/down), mob is either above or below src
+			if(y_diff < 0 && H.dir == NORTH) //Mob is below src and looking up
+				observed = 1
+				if(dir == SOUTH) //src is looking down
+					eye_contact = 1
+			else if(y_diff > 0 && H.dir == SOUTH) //Mob is above src and looking down
+				observed = 1
+				if(dir == NORTH) //src is looking up
+					eye_contact = 1
+		if(x_diff != 0) //If we are not on the same horizontal plane (left/right), mob is either left or right of src
+			if(x_diff < 0 && H.dir == EAST) //Mob is left of src and looking right
+				observed = 1
+				if(dir == WEST) //src is looking left
+					eye_contact = 1
+			else if(x_diff > 0 && H.dir == WEST) //Mob is right of src and looking left
+				observed = 1
+				if(dir == EAST) //src is looking right
+					eye_contact = 1
 
-        if(eye_contact)
-            to_chat(H, "<span class='alert'>Welcome to the game show!</span>")
-            game_show_start(H)
+		if(eye_contact)
+			to_chat(H, "<span class='alert'>Welcome to the game show!</span>")
+			game_show_start(H)
 
-    return */
+	return */
