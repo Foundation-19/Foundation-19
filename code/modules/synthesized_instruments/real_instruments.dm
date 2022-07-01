@@ -216,8 +216,10 @@
 
 /obj/structure/synthesized_instrument/Destroy()
 	QDEL_NULL(src.real_instrument)
-	for(var/key in instruments)
-		qdel(instruments[key])
+	if (islist(instruments))
+		var/list/as_list = instruments
+		for (var/key in as_list)
+			qdel(as_list[key])
 	instruments = null
 	. = ..()
 
