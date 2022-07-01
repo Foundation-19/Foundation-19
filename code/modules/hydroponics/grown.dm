@@ -158,7 +158,6 @@
 			M.Stun(8)
 			M.Weaken(5)
 			seed.thrown_at(src,M)
-			sleep(-1)
 			if(src) qdel(src)
 			return
 
