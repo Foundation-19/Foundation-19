@@ -24,11 +24,13 @@
 
 /obj/item/clothing/suit/armor/vest/scp
 	icon = 'icons/obj/clothing/suits.dmi'
+	w_class = ITEM_SIZE_HUGE
 
 /obj/item/clothing/suit/armor/vest/scp/lightarmor
 	name = "armored anti-stab vest"
 	desc = "A synthetic armor vest, this one works well against cuts and bruises."
 	icon_state = "guard-armor"
+	w_class = ITEM_SIZE_NORMAL
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	armor = list(melee = 90, bullet = 40, laser = 30, energy = 35, bomb = 35, bio = 15, rad = 10)
@@ -73,10 +75,26 @@
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	armor = list(melee = 40, bullet = 80, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
 
-/obj/item/clothing/suit/armor/vest/scp/medarmorchaos
+/obj/item/clothing/suit/armor/vest/scp/medarmor/chaos
 	name = "armored vest"
 	desc = "A synthetic armor vest."
 	icon_state = "chaos-armor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	armor = list(melee = 40, bullet = 85, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
+
+/obj/item/clothing/suit/armor/vest/scp/medarmor/eta
+	name = "armored vest"
+	desc = "A synthetic armor vest designed for MTF unit Eta-10."
+	icon_state = "eta-armor"
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
+	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
+	armor = list(melee = 70, bullet = 70, laser = 70, energy = 70, bomb = 30, bio = 15, rad = 10)
+
+/obj/item/clothing/suit/armor/vest/scp/medarmor/beta
+	name = "armored suit"
+	desc = "A synthetic armor vest designed for MTF unit Beta-7."
+	icon_state = "beta-armor"
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
+	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
+	armor = list(melee = 100, bullet = 70, laser = 40, energy = 25, bomb = 30, bio = 60, rad = 80)

@@ -1,10 +1,17 @@
-
 /obj/item/gun/projectile/pistol
-	load_method = MAGAZINE
-	caliber = CALIBER_PISTOL
-	magazine_type = /obj/item/ammo_magazine/pistol
-	allowed_magazines = /obj/item/ammo_magazine/pistol
+	icon = 'icons/obj/gun.dmi'
+	name = "MK3 Prologue"
+	desc = "A somewhat outdated 9mm pistol of the SCP Foundation, based on the Makarov."
+	icon_state = "pistol"
+	caliber = "9mm"
+	silenced = FALSE
+	magazine_type = /obj/item/ammo_magazine/scp
+	allowed_magazines = /obj/item/ammo_magazine/scp
 	accuracy_power = 7
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
+	fire_delay = 5 //making it pretty shit
+	load_method = MAGAZINE
+	w_class = ITEM_SIZE_NORMAL
 	var/empty_icon = TRUE  //If it should change icon when empty
 	var/ammo_indicator = FALSE
 
@@ -23,7 +30,7 @@
 			return
 		else
 			overlays += image(icon, "ammo_ok")
-	
+
 /obj/item/gun/projectile/pistol/military
 	name = "military pistol"
 	desc = "The Hephaestus Industries P20 - a mass produced kinetic sidearm in widespread service with the SCGDF."
