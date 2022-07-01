@@ -158,8 +158,7 @@
 			M.Stun(8)
 			M.Weaken(5)
 			seed.thrown_at(src,M)
-			if(src) qdel(src)
-			return
+			qdel(src)
 
 /obj/item/reagent_containers/food/snacks/grown/throw_impact(atom/hit_atom)
 	if(seed) seed.thrown_at(src,hit_atom)
