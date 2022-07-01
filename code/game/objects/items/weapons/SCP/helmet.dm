@@ -52,3 +52,19 @@
 	body_parts_covered = HEAD|FACE|EYES //face shield
 	armor = list(melee = 50, bullet = 60, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+
+/obj/item/clothing/head/helmet/scp/eta
+	name = "Visored Helmet"
+	desc = "A anti-memetic helmet to deal to visual memetic SCP's. If only you knew how to power it on..."
+	icon_state = "eta-helmet"
+	body_parts_covered = HEAD|FACE|EYES
+	cold_protection = HEAD|FACE|EYES
+	armor = list(melee = 70, bullet = 50, laser = 70, energy = 70, bomb = 30, bio = 15, rad = 10)
+
+/obj/item/clothing/head/helmet/scp/beta
+	name = "Armored Anti-Biological Hood"
+	desc = "A hood combined kevlar and other materials to shield it against biological attacks, radiation and physical harm."
+	icon_state = "beta-helmet"
+	body_parts_covered = HEAD|FACE|EYES
+	cold_protection = HEAD|FACE|EYES
+	armor = list(melee = 100, bullet = 70, laser = 40, energy = 25, bomb = 50, bio = 100, rad = 90)
