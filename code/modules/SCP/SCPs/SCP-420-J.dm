@@ -7,7 +7,7 @@ GLOBAL_LIST_EMPTY(possible_420j)
 
 /obj/item/clothing/mask/smokable/cigarette/scp_420_j
 	name = "SCP-420-J"
-	desc = "<i>Totally radical blunt, dude"
+	desc = "<i>Totally radical blunt, dude</i>"
 	smoketime = INFINITY
 	icon_state = "420off"
 	item_state = "420off"

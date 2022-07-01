@@ -220,7 +220,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		if(curing)
 			return
 
-		visible_message("<span class = 'danger'><i>[src] reaches towards [target.real_name]!</i></danger>")
+		visible_message("<span class = 'danger'><i>[src] reaches towards [target.real_name]!</i></span>")
 		addtimer(CALLBACK(src, .proc/Attack_Voice_Line), 5 SECONDS)
 
 		target.Weaken(10)
