@@ -11,14 +11,12 @@
 	return list(
 		/obj/item/device/radio/headset/headset_cargo,
 		/obj/item/clothing/gloves/thick,
-
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/accessory/storage/webbing_large,
 		/obj/item/storage/belt/utility/atmostech,
 		/obj/item/hand_labeler,
 		/obj/item/material/clipboard,
 		/obj/item/folder/yellow,
-
 		/obj/item/marshalling_wand,
 		/obj/item/marshalling_wand,
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack = 75, /obj/item/storage/backpack/satchel/grey = 25)),
@@ -34,7 +32,6 @@
 	return list(
 		/obj/item/device/radio/headset/headset_cargo,
 		/obj/item/clothing/gloves/thick,
-
 		/obj/item/clothing/glasses/meson,
 		/obj/item/clothing/glasses/sunglasses,
 		/obj/item/clothing/suit/storage/hazardvest,
@@ -43,7 +40,6 @@
 		/obj/item/hand_labeler,
 		/obj/item/material/clipboard,
 		/obj/item/folder/yellow,
-
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
 		/obj/item/device/holowarrant,
@@ -71,7 +67,6 @@
 		/obj/item/hand_labeler,
 		/obj/item/material/clipboard,
 		/obj/item/folder/yellow,
-
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
 		/obj/item/device/binoculars,

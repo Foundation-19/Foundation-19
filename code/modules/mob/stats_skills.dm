@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////////////////////
-//This is the file where all the stats and skills procs are kept.	    //
-//The system is kinda barebones now but I hope to rewrite it to  	    //
-//be betting in the near future. 								 	    //
-//																 	    //
+//This is the file where all the stats and skills procs are kept.		//
+//The system is kinda barebones now but I hope to rewrite it to  		//
+//be betting in the near future. 								 		//
+//																 		//
 //Stats are pretty generic, skills are kind of specific. 				//
 //You should just be able to plop in the proc call wherever you want.   //
 //I tried to make it versitile.											//
@@ -18,13 +18,13 @@
 
 //I am aware this is probably the worst possible way of doing it but I'm using this method till I get a better one. - Matt
 /mob
-	var/str = 10    //strength - used for hitting and lifting.
-	var/dex = 10    //dexterity - used for dodging and parrying.
+	var/str = 10	//strength - used for hitting and lifting.
+	var/dex = 10	//dexterity - used for dodging and parrying.
 	var/int = 10
 	var/mod = 0.1 //hidden modifier for later use
 
-    //skills
-    // When you see the add_skills code in jobs.dm, the random variables are in this order. - Lion
+	//skills
+	// When you see the add_skills code in jobs.dm, the random variables are in this order. - Lion
 	var/melee_skill = 50
 	var/ranged_skill = 50
 	var/medical_skill = 20
