@@ -78,12 +78,12 @@
 		if(dir in list(EAST, WEST))
 			bound_width = width * world.icon_size
 			bound_height = world.icon_size
-			filler = get_step(src, EAST)
+			filler = get_step(src, NORTH)
 			filler.set_opacity(opacity)
 		else
 			bound_width = world.icon_size
 			bound_height = width * world.icon_size
-			filler = get_step(src, NORTH)
+			filler = get_step(src, EAST)
 			filler.set_opacity(opacity)
 
 	if(turf_hand_priority)
