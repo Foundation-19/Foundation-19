@@ -175,7 +175,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 /mob/living/carbon/human/scp106/proc/scp106_attack(var/mob/living/target)
 	var/obj/item/grab/G = locate() in src
 	if (!G)
-		visible_message("<span class = 'danger'><i>[name] reaches towards [target]!</i></danger>")
+		visible_message("<span class = 'danger'><i>[name] reaches towards [target]!</i></span>")
 		G = make_grab(src, target)
 
 		if (!(loc in GLOB.scp106_floors))
