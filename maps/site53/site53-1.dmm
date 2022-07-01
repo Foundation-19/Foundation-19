@@ -1067,7 +1067,7 @@
 "vn" = (/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/disposalpipe/segment{dir = 4},/turf/simulated/floor/tiled/techfloor,/area/site53/uhcz/scp106containment)
 "vo" = (/obj/effect/floor_decal/corner/red/border{icon_state = "bordercolor"; dir = 8},/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/monotile/white,/area/site53/llcz/dclass/medicalpost)
 "vp" = (/obj/item/device/lightreplacer,/obj/machinery/light/small{icon_state = "bulb1"; dir = 1},/obj/structure/table/standard,/turf/simulated/floor/tiled/techfloor,/area/site53/llcz/dclass/medicalpost)
-"vq" = (/obj/structure/bed/chair,/obj/effect/floor_decal/corner/green/border{dir = 9},/turf/simulated/floor/tiled/monotile/white,/area/site53/llcz/dclass/medicalpost)
+"vq" = (/obj/effect/floor_decal/corner/green/border{dir = 9},/obj/structure/bed/chair/wheelchair,/turf/simulated/floor/tiled/monotile/white,/area/site53/llcz/dclass/medicalpost)
 "vr" = (/obj/effect/landmark/start{name = "Class D"},/obj/structure/hygiene/sink{dir = 4; icon_state = "sink"; pixel_x = 11; pixel_y = 0},/obj/item/storage/mirror{dir = 4; pixel_x = 23; pixel_y = 5},/turf/simulated/floor/tiled/monotile/white,/area/site53/llcz/dclass/cells{name = "\improper D-Class Cell"})
 "vs" = (/obj/structure/mopbucket,/obj/machinery/light/small{icon_state = "bulb1"; dir = 1},/turf/simulated/floor/tiled/techfloor,/area/site53/llcz/dclass/medicalpost)
 "vu" = (/turf/simulated/floor/tiled/techfloor,/area/site53/llcz/dclass/medicalpost)
