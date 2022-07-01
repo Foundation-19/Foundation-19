@@ -12,10 +12,10 @@
 	shoes = /obj/item/clothing/shoes/dress
 	suit = /obj/item/clothing/suit/storage/toggle/suit/black
 	id_types = list(/obj/item/card/id/adminlvl5)
-	belt = /obj/item/gun/projectile/pistol/magnum_pistol
+	belt = /obj/item/gun/projectile/revolver/mateba
 	l_ear = /obj/item/device/radio/headset/heads/captain
 	back = /obj/item/storage/backpack/satchel/pocketbook
-	backpack_contents = list(/obj/item/ammo_magazine/magnum = 3)
+	backpack_contents = list(/obj/item/ammo_magazine/c50 = 3)
 	l_hand = /obj/item/storage/briefcase/foundation/jerraman
 
 /decl/hierarchy/outfit/job/site90/crew/command/headofhr
@@ -286,9 +286,9 @@
 	r_pocket = /obj/item/grenade/frag
 	id_types = list(/obj/item/card/id/adminlvl3)
 	l_ear = /obj/item/device/radio/headset/heads/hos/gock
-	belt = /obj/item/gun/projectile/pistol/magnum_pistol
+	belt = /obj/item/gun/projectile/revolver/mateba
 	back = /obj/item/storage/backpack/satchel/pocketbook
-	backpack_contents = list(/obj/item/ammo_magazine/magnum = 3)
+	backpack_contents = list(/obj/item/ammo_magazine/c50 = 3)
 
 /decl/hierarchy/outfit/job/site90/crew/civ/uiu
 	name = OUTFIT_JOB_NAME("Unusual Incidents Unit Relations Agent")
@@ -300,9 +300,9 @@
 	l_pocket = /obj/item/device/radio
 	id_types = list(/obj/item/card/id/adminlvl3)
 	l_ear = /obj/item/device/radio/headset/heads/hos/gock
-	belt = /obj/item/gun/projectile/pistol/magnum_pistol
+	belt = /obj/item/gun/projectile/revolver/mateba
 	back = /obj/item/storage/backpack/satchel/pocketbook
-	backpack_contents = list(/obj/item/ammo_magazine/magnum = 3,/obj/item/clothing/head/helmet/ballistic = 1)
+	backpack_contents = list(/obj/item/ammo_magazine/c50 = 3,/obj/item/clothing/head/helmet/ballistic = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
 	name = OUTFIT_JOB_NAME("O5 Representative")
