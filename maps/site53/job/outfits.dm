@@ -536,7 +536,7 @@
 	back = /obj/item/storage/backpack/satchel
 	backpack_contents = list(/obj/item/ammo_magazine/scp/p90_mag/ap = 3,/obj/item/clothing/mask/gas = 1,/obj/item/reagent_containers/ivbag/blood/OMinus = 2,/obj/item/storage/pill_bottle/zoom = 1)
 
-/decl/hierarchy/outfit/job/site90/crew/command/event/eta_soldier
+/decl/hierarchy/outfit/job/site90/crew/command/event/eta_soldier //See No Evil
 	name = OUTFIT_JOB_NAME("MTF Eta-10 Agent Alpha")
 	uniform = /obj/item/clothing/under/frontier
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/eta
@@ -550,12 +550,31 @@
 	r_hand = /obj/item/crowbar/red
 	l_hand = /obj/item/material/hatchet/tacknife
 	l_pocket = null
-	r_pocket = null
+	r_pocket = /obj/item/ammo_magazine/scp
 	l_ear = /obj/item/device/radio/headset/ert
-	belt = /obj/item/gun/projectile/silenced
+	belt = /obj/item/gun/projectile/pistol
 	back = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 2,/obj/item/grenade/frag = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/ammo_magazine/c45m = 2,/obj/item/clothing/mask/gas = 1)
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 1,/obj/item/grenade/frag = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/clothing/mask/gas = 1)
 
+/decl/hierarchy/outfit/job/site90/crew/command/event/beta_soldier //Maz Hatters
+	name = OUTFIT_JOB_NAME("MTF Beta-7 Agent Alpha")
+	uniform = /obj/item/clothing/under/frontier
+	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/beta
+	head = /obj/item/clothing/head/helmet/scp/beta
+	mask = /obj/item/clothing/mask/balaclava/tactical
+	glasses = /obj/item/clothing/glasses/sunglasses
+	gloves = /obj/item/clothing/gloves/tactical/scp
+	shoes = /obj/item/clothing/shoes/jackboots
+	id_types = list(/obj/item/card/id/adminlvl5)
+	suit_store = /obj/item/gun/projectile/automatic/scp/p90
+	r_hand = /obj/item/crowbar/red
+	l_hand = /obj/item/material/hatchet/tacknife
+	l_pocket = null
+	r_pocket = /obj/item/ammo_magazine/scp
+	l_ear = /obj/item/device/radio/headset/ert
+	belt = /obj/item/gun/projectile/pistol
+	back = /obj/item/storage/backpack/satchel
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/chaos_soldier
 	name = OUTFIT_JOB_NAME("Chaos Insurgency Soldier")

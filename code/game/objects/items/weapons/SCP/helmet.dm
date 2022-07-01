@@ -55,7 +55,7 @@
 
 /obj/item/clothing/head/helmet/scp/eta
 	name = "Visored Helmet"
-	desc = "A anti-memetic helmet to deal to visual memetic SCP's. If only you knew how to power it on..."
+	desc = "A anti-memetic helmet with a special visor to deal to visual memetic SCP's. If only you knew how to power it on..."
 	icon_state = "eta-helmet"
 	body_parts_covered = HEAD|FACE|EYES
 	cold_protection = HEAD|FACE|EYES

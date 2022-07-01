@@ -87,8 +87,8 @@
 	name = "armored vest"
 	desc = "A synthetic armor vest designed for MTF unit Eta-10."
 	icon_state = "eta-armor"
-	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
-	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
+	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
 	armor = list(melee = 70, bullet = 70, laser = 70, energy = 70, bomb = 30, bio = 15, rad = 10)
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/beta
@@ -96,5 +96,5 @@
 	desc = "A synthetic armor vest designed for MTF unit Beta-7."
 	icon_state = "beta-armor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
-	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
+	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
 	armor = list(melee = 100, bullet = 70, laser = 40, energy = 25, bomb = 30, bio = 60, rad = 80)
