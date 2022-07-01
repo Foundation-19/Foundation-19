@@ -17,7 +17,7 @@
 	maxHealth = 600
 	move_to_delay = 2
 
-	var/murder_sound = list('sound/voice/scream_horror2.ogg')
+	var/murder_sound = list('sound/voice/096-kill.ogg')
 	var/scare_sound = list('sound/scp/scare1.ogg','sound/scp/scare2.ogg','sound/scp/scare3.ogg','sound/scp/scare4.ogg')	//Boo
 	var/hibernate = 0 //Disables SCP until toggled back to 0
 	var/scare_played = 0 //Did we use the jumpscare sound yet ?
@@ -87,7 +87,7 @@
 	for(var/mob/living/carbon/human/H in viewers(src, null))
 		if(H in kill_list)
 			continue
-		if(H.stat || is_blind(H))
+		if(H.stat || H.equipment_tint_total == 3)
 			continue
 
 		var/observed = 0
@@ -122,7 +122,7 @@
 
 	return
 
-/mob/living/simple_animal/hostile/scp096/proc/add_examine_urge(var/mob/living/carbon/H)
+/mob/living/simple_animal/hostile/scp096/proc/add_examine_urge(var/mob/living/carbon/human/H)
 
 	var/index
 	var/examine_urge
@@ -151,7 +151,7 @@
 
 	CALLBACK( addtimer(H, .proc/reduce_examine_urge), 200 SECONDS)
 
-/mob/living/simple_animal/hostile/scp096/proc/reduce_examine_urge(var/mob/living/carbon/H)
+/mob/living/simple_animal/hostile/scp096/proc/reduce_examine_urge(var/mob/living/carbon/human/H)
 	var/index
 	var/examine_urge
 
@@ -181,16 +181,10 @@
 		if(will_scream)
 			if(!buckled) dir = 2
 			visible_message("<span class='danger'>[src] SCREAMS!</span>")
-			playsound(get_turf(src), 'sound/voice/scream_horror1.ogg', 50, 1)
+			playsound(get_turf(src), 'sound/voice/096-rage.ogg', 100)
 			screaming = 1
 			will_scream = 0
-			spawn(100)
-				visible_message("<span class='danger'>[src] SCREAMS!</span>")
-				playsound(get_turf(src), 'sound/voice/scream_horror1.ogg', 50, 1)
-			spawn(200)
-				visible_message("<span class='danger'>[src] SCREAMS!</span>")
-				playsound(get_turf(src), 'sound/voice/scream_horror1.ogg', 50, 1)
-			spawn(300)
+			spawn(290)
 				screaming = 0
 		return
 	..()
@@ -317,7 +311,7 @@
 		T.pixel_y = original_y
 		if(ishuman(T))
 			T.emote("scream")
-		playsound(T.loc, pick(murder_sound), 50, 1)
+		playsound(T.loc, pick(murder_sound), 100)
 		murdering = 0
 
 		//Warn everyone

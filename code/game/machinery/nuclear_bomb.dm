@@ -157,7 +157,7 @@ var/bomb_set
 		extended = 1
 		if(!src.lighthack)
 			flick("lock", src)
-			update_icon()	
+			update_icon()
 
 /obj/machinery/nuclearbomb/interface_interact(mob/user as mob)
 	if(extended && !panel_open)
@@ -414,13 +414,13 @@ var/bomb_set
 /obj/item/folder/envelope/nuke_instructions/Initialize()
 	. = ..()
 	var/obj/item/paper/R = new(src)
-	R.set_content("<center><img src=sollogo.png><br><br>\
+	R.set_content("<center><img src=scplogo.png><br><br>\
 	<b>Warning: Classified<br>[GLOB.using_map.station_name] Self-Destruct System - Instructions</b></center><br><br>\
-	In the event of a Delta-level emergency, this document will guide you through the activation of the vessel's \
-	on-board nuclear self-destruct system. Please read carefully.<br><br>\
-	1) (Optional) Announce the imminent activation to any surviving crew members, and begin evacuation procedures.<br>\
+	In the event of a Delta-level emergency, this document will guide you through the activation of the site's \
+	nuclear self-destruct system. Please read carefully.<br><br>\
+	1) (Optional) Announce the imminent activation to any surviving personel, and begin evacuation procedures.<br>\
 	2) Notify two heads of staff, both with ID cards with access to the ship's Keycard Authentication Devices.<br>\
-	3) Proceed to the self-destruct chamber, located on Deck One by the stairwell.<br>\
+	3) Proceed to the self-destruct chamber, located in Engineering by the stairwell.<br>\
 	4) Unbolt the door and enter the chamber.<br>\
 	5) Both heads of staff should stand in front of their own Keycard Authentication Devices. On the KAD interface, select \
 	Grant Nuclear Authentication Code. Both heads of staff should then swipe their ID cards simultaneously.<br>\
@@ -434,11 +434,11 @@ var/bomb_set
 	12) Return to the terminal. Enter the desired countdown time.<br>\
 	13) When ready, disable the safety switch.<br>\
 	14) Start the countdown.<br><br>\
-	This concludes the instructions.", "vessel self-destruct instructions")
+	This concludes the instructions.", "site self-destruct instructions")
 
 	//stamp the paper
 	var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
-	stampoverlay.icon_state = "paper_stamp-hos"
+	stampoverlay.icon_state = "paper_stamp-boss"
 	R.stamped += /obj/item/stamp
 	R.overlays += stampoverlay
 	R.stamps += "<HR><i>This paper has been stamped as 'Top Secret'.</i>"
@@ -459,7 +459,7 @@ var/bomb_set
 	var/announced = 0
 	var/time_to_explosion = 0
 	var/self_destruct_cutoff = 60 //Seconds
-	timeleft = 300 
+	timeleft = 300
 	minTime = 300
 	maxTime = 900
 

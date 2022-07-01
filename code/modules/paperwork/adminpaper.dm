@@ -14,7 +14,7 @@
 	var/department = null
 
 	var/header = null
-	var/headerOn = TRUE
+	var/headerOn = FALSE
 
 	var/footer = null
 	var/footerOn = FALSE

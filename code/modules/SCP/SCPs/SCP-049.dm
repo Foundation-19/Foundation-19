@@ -153,9 +153,9 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	return target
 
 /mob/living/carbon/human/scp049/proc/pursueTarget()
-	walk(src, null)
 	if(client)
 		return FALSE
+	walk(src, null)
 	addtimer(CALLBACK(src, .proc/getTarget), 3 SECONDS)
 
 	if(!target)
@@ -428,7 +428,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	target.pre_scp049_species = target.species.name
 	target.is_scp_instance = TRUE
 	target.scp_049_instance = TRUE
-	target.zombify()
+	target.undead()
 	target.visible_message("<span class = 'danger'><big>The lifeless corpse of [target.pre_scp049_name] begins to convulse violently!</big></span>")
 	target.name = target.real_name
 	target.rejuvenate()

@@ -16,6 +16,7 @@
 		/datum/mil_rank/security/o4,
 		/datum/mil_rank/security/o5
 	)
+	hud_icon = "hudguardcommander"
 
 	access = list(
 		access_com_comms,
@@ -73,6 +74,7 @@
 	allowed_ranks = list(
 		/datum/mil_rank/security/o1
 	)
+	hud_icon = "hudlczcommander"
 
 	access = list(
 		access_sec_comms,
@@ -117,6 +119,7 @@
 	allowed_ranks = list(
 		/datum/mil_rank/security/o2
 	)
+	hud_icon = "hudhczcommander"
 
 	access = list(
 		access_sec_comms,
@@ -162,6 +165,7 @@
 	allowed_ranks = list(
 		/datum/mil_rank/security/w5
 	)
+	hud_icon = "hudezcommander"
 
 	access = list(
 		access_sec_comms,
@@ -221,6 +225,7 @@
 		/datum/mil_rank/security/e4,
 		/datum/mil_rank/security/e5
 	)
+	hud_icon = "hudlczsarge"
 
 	access = list(
 		access_sec_comms,
@@ -267,6 +272,7 @@
 		/datum/mil_rank/security/e5,
 		/datum/mil_rank/security/e6
 	)
+	hud_icon = "hudhczsarge"
 
 	access = list(
 		access_sec_comms,
@@ -310,6 +316,7 @@
 		/datum/mil_rank/security/e7,
 		/datum/mil_rank/security/e8
 	)
+	hud_icon = "hudezsarge"
 
 	access = list(
 		access_sec_comms,
@@ -362,6 +369,7 @@
 		/datum/mil_rank/security/e1,
 		/datum/mil_rank/security/e2
 	)
+	hud_icon = "hudlczsenior"
 
 	access = list(
 		access_sec_comms,
@@ -409,6 +417,7 @@
 		/datum/mil_rank/security/e3,
 		/datum/mil_rank/security/e4
 	)
+	hud_icon = "hudhczsenior"
 
 	access = list(
 		access_sec_comms,
@@ -453,6 +462,7 @@
 		/datum/mil_rank/security/e4,
 		/datum/mil_rank/security/e5
 	)
+	hud_icon = "hudezsenior"
 
 	access = list(
 		access_sciencelvl1,

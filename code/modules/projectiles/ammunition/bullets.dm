@@ -2,42 +2,42 @@
 	desc = "A pistol bullet casing."
 	caliber = CALIBER_PISTOL
 	projectile_type = /obj/item/projectile/bullet/pistol
-	icon_state = "pistolcasing"
-	spent_icon = "pistolcasing-spent"
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/pistol/rubber
 	desc = "A rubber pistol bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/rubber
-	icon_state = "pistolcasing_r"
+	icon_state = "pistol-casing-rubber"
 
 /obj/item/ammo_casing/pistol/practice
 	desc = "A practice pistol bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/practice
-	icon_state = "pistolcasing_p"
+	icon_state = "pistol-casing-rubber"
 
 /obj/item/ammo_casing/pistol/small
 	desc = "A small pistol bullet casing."
 	caliber = CALIBER_PISTOL_SMALL
 	projectile_type = /obj/item/projectile/bullet/pistol/holdout
-	icon_state = "smallcasing"
-	spent_icon = "smallcasing-spent"
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/pistol/small/rubber
 	desc = "A small pistol rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/rubber/holdout
-	icon_state = "pistolcasing_r"
+	icon_state = "pistol-casing-rubber"
 
 /obj/item/ammo_casing/pistol/small/practice
 	desc = "A small pistol practice bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/practice
-	icon_state = "pistolcasing_p"
+	icon_state = "pistol-casing-rubber"
 
 /obj/item/ammo_casing/pistol/magnum
 	desc = "A high-power pistol bullet casing."
 	caliber = CALIBER_PISTOL_MAGNUM
 	projectile_type = /obj/item/projectile/bullet/pistol/strong
-	icon_state = "magnumcasing"
-	spent_icon = "magnumcasing-spent"
+	icon_state = "10mm-casing"
+	spent_icon = "10mm-casing-spent"
 
 /obj/item/ammo_casing/pistol/throwback
 	desc = "An antique pistol bullet casing. Somewhere between 9 and 11 mm in caliber."
@@ -63,8 +63,8 @@
 /obj/item/ammo_casing/shotgun
 	name = "shotgun slug"
 	desc = "A shotgun slug."
-	icon_state = "slshell"
-	spent_icon = "slshell-spent"
+	icon_state = "shell-slug"
+	spent_icon = "shell-slug-spent"
 	caliber = CALIBER_SHOTGUN
 	projectile_type = /obj/item/projectile/bullet/shotgun
 	matter = list(MATERIAL_STEEL = 360)
@@ -73,32 +73,32 @@
 /obj/item/ammo_casing/shotgun/pellet
 	name = "shotgun shell"
 	desc = "A shotshell."
-	icon_state = "gshell"
-	spent_icon = "gshell-spent"
+	icon_state = "shell-pellet"
+	spent_icon = "shell-pellet-spent"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun
 	matter = list(MATERIAL_STEEL = 360)
 
 /obj/item/ammo_casing/shotgun/blank
 	name = "shotgun shell"
 	desc = "A blank shell."
-	icon_state = "blshell"
-	spent_icon = "blshell-spent"
+	icon_state = "shell-blank"
+	spent_icon = "shell-blank-spent"
 	projectile_type = /obj/item/projectile/bullet/blank
 	matter = list(MATERIAL_STEEL = 90)
 
 /obj/item/ammo_casing/shotgun/practice
 	name = "shotgun shell"
 	desc = "A practice shell."
-	icon_state = "pshell"
-	spent_icon = "pshell-spent"
+	icon_state = "shell-practice"
+	spent_icon = "shell-practise-spent"
 	projectile_type = /obj/item/projectile/bullet/shotgun/practice
 	matter = list(MATERIAL_STEEL = 90)
 
 /obj/item/ammo_casing/shotgun/beanbag
 	name = "beanbag shell"
 	desc = "A beanbag shell."
-	icon_state = "bshell"
-	spent_icon = "bshell-spent"
+	icon_state = "shell-beanbag"
+	spent_icon = "shell-beanbag-spent"
 	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag
 	matter = list(MATERIAL_STEEL = 180)
 
@@ -107,8 +107,8 @@
 /obj/item/ammo_casing/shotgun/stunshell
 	name = "stun shell"
 	desc = "An energy stun cartridge."
-	icon_state = "stunshell"
-	spent_icon = "stunshell-spent"
+	icon_state = "shell-stun"
+	spent_icon = "shell-stun-spent"
 	projectile_type = /obj/item/projectile/energy/electrode/stunshot
 	leaves_residue = FALSE
 	matter = list(MATERIAL_STEEL = 360, MATERIAL_GLASS = 720)
@@ -121,8 +121,8 @@
 /obj/item/ammo_casing/shotgun/flash
 	name = "flash shell"
 	desc = "A chemical shell used to signal distress or provide illumination."
-	icon_state = "fshell"
-	spent_icon = "fshell-spent"
+	icon_state = "shell-flash"
+	spent_icon = "shell-flash-spent"
 	projectile_type = /obj/item/projectile/energy/flash/flare
 	matter = list(MATERIAL_STEEL = 90, MATERIAL_GLASS = 90)
 
@@ -130,8 +130,8 @@
 	desc = "A rifle bullet casing."
 	caliber = CALIBER_RIFLE
 	projectile_type = /obj/item/projectile/bullet/rifle
-	icon_state = "riflecasing"
-	spent_icon = "riflecasing-spent"
+	icon_state = "rifle-casing"
+	spent_icon = "rifle-casing-spent"
 
 /obj/item/ammo_casing/shell
 	name = "shell casing"
@@ -151,13 +151,13 @@
 	desc = "A military rifle bullet casing."
 	caliber = CALIBER_RIFLE_MILITARY
 	projectile_type = /obj/item/projectile/bullet/rifle/military
-	icon_state = "rifle_mil"
-	spent_icon = "rifle_mil-spent"
+	icon_state = "rifle-casing"
+	spent_icon = "rifle-casing-spent"
 
 /obj/item/ammo_casing/rifle/military/practice
 	desc = "A military rifle practice bullet casing."
 	projectile_type = /obj/item/projectile/bullet/rifle/military/practice
-	icon_state = "rifle_mil_p"
+	icon_state = "rifle-casing-rubber"
 
 /obj/item/ammo_casing/rifle/t12
 	caliber = CALIBER_T12
@@ -182,19 +182,19 @@
 	name = "haywire round"
 	desc = "A pistol bullet casing fitted with a single-use ion pulse generator."
 	projectile_type = /obj/item/projectile/ion/small
-	icon_state = "pistolcasing_h"
+	icon_state = "pistol-casing-emp"
 	matter = list(MATERIAL_STEEL = 130, MATERIAL_URANIUM = 100)
 
 /obj/item/ammo_casing/pistol/small/emp
 	name = "small haywire round"
 	desc = "A small bullet casing fitted with a single-use ion pulse generator."
 	projectile_type = /obj/item/projectile/ion/tiny
-	icon_state = "smallcasing_h"
+	icon_state = "pistol-casing-emp"
 
 /obj/item/ammo_casing/shotgun/emp
 	name = "haywire slug"
 	desc = "A 12-gauge shotgun slug fitted with a single-use ion pulse generator."
-	icon_state = "empshell"
-	spent_icon = "empshell-spent"
+	icon_state = "shell-emp"
+	spent_icon = "shell-emp-spent"
 	projectile_type  = /obj/item/projectile/ion
 	matter = list(MATERIAL_STEEL = 260, MATERIAL_URANIUM = 200)
