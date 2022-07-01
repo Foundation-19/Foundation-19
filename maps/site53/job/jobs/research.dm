@@ -8,7 +8,7 @@
 	spawn_positions = 6
 	//supervisors = "the Research Director and anyone in a higher position than you"
 	economic_power = 4
-	alt_titles = list("Xenobiologist Associate", "Xenoarcheologist Associate")
+	alt_titles = list("Junior Xenobiologist", "Junior Xenoarcheologist", "Assistant Researcher", "Research Assistant", "Research Intern", "Junior Researcher", "Junior Robotics Technician")
 	ideal_character_age = 22
 	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/juniorscientist
@@ -41,7 +41,7 @@
 	spawn_positions = 6
 	//supervisors = "the Research Director and anyone in a higher position than you"
 	economic_power = 4
-	alt_titles = list("Xenobiologist", "Xenoarcheologist")
+	alt_titles = list("Xenobiologist", "Xenoarcheologist", "Robotics Technician")
 	minimal_player_age = 5
 	ideal_character_age = 22
 	alt_titles = null
@@ -76,7 +76,7 @@
 	spawn_positions = 6
 	//supervisors = "the Research Director and anyone in a higher position than you"
 	economic_power = 4
-	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist")
+	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist", "Senior Robotics Technician")
 	minimal_player_age = 10
 	ideal_character_age = 22
 	alt_titles = null
@@ -97,7 +97,7 @@
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_DEVICES     = SKILL_BASIC,
+	                    SKILL_DEVICES     = SKILL_TRAINED,
 	                    SKILL_SCIENCE     = SKILL_EXPERIENCED)
 
 	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
@@ -140,8 +140,8 @@
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_DEVICES     = SKILL_BASIC,
+	                    SKILL_COMPUTER    = SKILL_TRAINED,
+	                    SKILL_DEVICES     = SKILL_TRAINED,
 	                    SKILL_SCIENCE     = SKILL_EXPERIENCED)
 
 	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
