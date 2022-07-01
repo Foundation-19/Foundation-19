@@ -40,7 +40,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049/Initialize()
 	..()
-	add_language(/datum/language/english)
 
 	// fix names
 	fully_replace_character_name("SCP-049")
@@ -81,8 +80,13 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 			mutations.Add(MUTATION_XRAY)
 			update_mutations()
 			update_sight()
+		add_language(LANGUAGE_ENGLISH)
+		add_language(LANGUAGE_HUMAN_FRENCH)
+		add_language(LANGUAGE_HUMAN_GERMAN)
+		add_language(LANGUAGE_HUMAN_SPANISH)
 	if(target)
 		target = null
+
 /mob/living/carbon/human/scp049/Logout()
 	. = ..()
 	if(mind)
