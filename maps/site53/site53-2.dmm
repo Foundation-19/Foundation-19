@@ -384,16 +384,19 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/sleeproom)
 "abc" = (
-/obj/machinery/telecomms/server/presets/securityecz,
-/turf/simulated/floor/bluegrid,
+/obj/machinery/telecomms/server/presets/common,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "abd" = (
-/obj/machinery/telecomms/server/presets/securityhcz,
-/turf/simulated/floor/bluegrid,
+/obj/structure/inflatable/door,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
+	name = "\improper Server Farm Basement"
 	})
 "abe" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
@@ -531,12 +534,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
-"abA" = (
-/obj/machinery/telecomms/server/presets/securitylcz,
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
 "abB" = (
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/monotile,
@@ -2052,12 +2049,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
-"afq" = (
-/obj/machinery/telecomms/server/presets/engineering,
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
 "afr" = (
 /obj/structure/cable/yellow{
 	d2 = 4;
@@ -5899,11 +5890,9 @@
 /turf/simulated/floor/reinforced,
 /area/site53/lowertrams/escape)
 "anE" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Communication Engineers";
-	req_access = list(503)
+/obj/machinery/computer/telecomms/server{
+	dir = 1
 	},
-/obj/item/taperoll/engineering/applied,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
@@ -6127,21 +6116,14 @@
 	name = "\improper Server Farm Basement"
 	})
 "anZ" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Server Farm";
-	req_access = list(503)
-	},
-/obj/item/taperoll/engineering/applied,
+/obj/machinery/door/airlock/external/glass/bolted,
+/obj/item/tape/engineering,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
 "aoa" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Server Farm";
-	req_access = list(503)
-	},
-/obj/item/taperoll/engineering/applied,
+/obj/machinery/door/airlock/external/glass/bolted,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
@@ -6337,12 +6319,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/engineering/breakroom)
-"aoE" = (
-/obj/machinery/ntnet_relay,
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
 "aoF" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/structure/cable{
@@ -7409,8 +7385,6 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/obj/structure/table/rack,
-/obj/item/clothing/suit/storage/hooded/wintercoat/engineering,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
@@ -11845,8 +11819,8 @@
 /turf/simulated/floor/plating,
 /area/site53/engineering/primaryhallway)
 "azI" = (
-/obj/machinery/telecomms/server,
-/turf/simulated/floor/bluegrid,
+/obj/machinery/telecomms/server/presets/securityhcz,
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
@@ -13933,29 +13907,6 @@
 /area/site53/logistics/logistics{
 	name = "\improper Secure Storage"
 	})
-"aDU" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 9;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
 "aDV" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -14073,19 +14024,6 @@
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
-	})
-"aEf" = (
-/obj/machinery/telecomms/broadcaster/preset_right,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 9;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
 	})
 "aEg" = (
 /obj/structure/cable{
@@ -19049,16 +18987,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
-"aOS" = (
-/obj/machinery/bluespacerelay,
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 1;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
 "aOT" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -19274,16 +19202,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp263)
-"aPw" = (
-/obj/machinery/telecomms/receiver/preset_right,
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 5;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
 "aPx" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -19408,12 +19326,10 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 1;
-	icon_state = "techfloororange_edges"
-	},
 /turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
+	temperature = 273.15;
+	initial_gas = null;
+	name = "airless floor"
 	},
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
@@ -19437,12 +19353,10 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 1;
-	icon_state = "techfloororange_edges"
-	},
 /turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
+	temperature = 273.15;
+	initial_gas = null;
+	name = "airless floor"
 	},
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
@@ -19462,21 +19376,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
-"aPU" = (
-/obj/machinery/telecomms/server/presets/command,
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aPV" = (
-/obj/machinery/telecomms/server/presets/common,
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
 "aPX" = (
-/obj/machinery/telecomms/server/presets/medical,
-/turf/simulated/floor/bluegrid,
+/obj/machinery/telecomms/server/presets/security,
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
@@ -19488,48 +19390,37 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/maintenance)
-"aQb" = (
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 1;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
 "aQc" = (
-/obj/machinery/telecomms/server/presets/common,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 4
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/bluegrid,
+/obj/structure/inflatable/wall,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
+	name = "\improper Server Farm Basement"
 	})
 "aQd" = (
-/obj/machinery/telecomms/hub/preset,
-/turf/simulated/floor/bluegrid,
+/obj/machinery/telecomms/processor/preset_three,
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aQf" = (
-/obj/machinery/r_n_d/server/robotics,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 8;
-	icon_state = "map-supply"
+/obj/structure/backup_server{
+	name = "Auxillary AIC Server"
 	},
-/turf/simulated/floor/bluegrid,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aQg" = (
-/obj/machinery/r_n_d/server/core,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/bluegrid,
+/obj/machinery/telecomms/server/presets/command,
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
@@ -19542,141 +19433,33 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
-"aQi" = (
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 5;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
 "aQj" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 8;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aQk" = (
-/obj/machinery/telecomms/server/presets/science,
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aQl" = (
-/obj/machinery/telecomms/server/presets/security,
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aQm" = (
-/obj/machinery/telecomms/server/presets/supply,
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aQo" = (
-/obj/machinery/telecomms/processor/preset_two,
-/obj/structure/window/reinforced{
+/obj/machinery/light{
 	dir = 1;
-	icon_state = "rwindow"
+	pixel_x = 0;
+	pixel_y = 0
 	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 9;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aQp" = (
 /turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
+	temperature = 273.15;
+	initial_gas = null;
+	name = "airless floor"
 	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aQq" = (
-/obj/effect/floor_decal/techfloor/orange/corner,
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aQr" = (
-/obj/machinery/telecomms/processor/preset_four,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1;
-	icon_state = "rwindow"
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 5;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aQs" = (
-/obj/machinery/telecomms/bus/preset_four,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 9;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aQt" = (
-/obj/machinery/telecomms/bus/preset_two,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 5;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/bluegrid,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aQu" = (
-/obj/machinery/telecomms/processor/preset_one,
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 10;
-	icon_state = "techfloororange_edges"
+/obj/item/tape/engineering,
+/obj/machinery/door/firedoor{
+	dir = 4
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
+	name = "\improper Server Farm Basement"
 	})
 "aQv" = (
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 6;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/obj/machinery/telecomms/hub/preset,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
@@ -19705,128 +19488,36 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
-"aQy" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 10;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
 "aQz" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
-/obj/effect/floor_decal/techfloor/orange,
 /turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
+	temperature = 273.15;
+	initial_gas = null;
+	name = "airless floor"
 	},
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aQA" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
+/obj/machinery/message_server,
+/obj/structure/railing/mapped{
+	dir = 1
 	},
-/obj/machinery/light/small/red{
-	dir = 4;
-	icon_state = "bulb1"
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 6;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aQB" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/light/small/red{
-	dir = 8;
-	icon_state = "bulb1";
-	pixel_x = -11
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 8;
-	icon_state = "techfloororange_edges"
-	},
-/obj/machinery/camera/autoname{
-	dir = 4;
-	network = list("Engineering Network");
-	c_tag = "Server Farm #1"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aQC" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 4;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aQD" = (
-/obj/structure/window/reinforced{
-	dir = 1
+/obj/effect/paint_stripe/red,
+/obj/machinery/door/airlock/engineering{
+	name = "Communication Engineers";
+	req_access = list(503)
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 9;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aQE" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+/obj/machinery/door/firedoor{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 1;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
+	name = "\improper Server Farm Basement"
 	})
 "aQF" = (
 /obj/structure/cable{
@@ -19912,64 +19603,18 @@
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
-"aQQ" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
-	},
-/obj/machinery/door/window/brigdoor/northright,
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 1;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
 "aQR" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 5;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/obj/machinery/telecomms/server/presets/supply,
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aQS" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
+/obj/machinery/telecomms/processor/preset_two,
+/obj/structure/railing/mapped{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 10;
-	icon_state = "techfloororange_edges"
-	},
-/obj/machinery/alarm{
-	dir = 4;
-	icon_state = "alarm0";
-	pixel_x = -32;
-	pixel_y = 0;
-	req_access = list(201);
-	target_temperature = 273.15
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
@@ -19978,80 +19623,38 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "aQU" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/machinery/telecomms/processor/preset_four,
+/obj/structure/railing/mapped{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor/orange,
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aQV" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/machinery/telecomms/bus/preset_four,
+/obj/structure/railing/mapped{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/door/window/brigdoor/eastright,
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 6;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aQW" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 4
+/obj/machinery/telecomms/bus/preset_two,
+/obj/structure/railing/mapped{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 8;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aQX" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 4;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aQY" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
+/obj/machinery/telecomms/server/presets/medical,
+/obj/structure/railing/mapped{
+	dir = 1
 	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 9;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
@@ -20059,16 +19662,11 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/space)
 "aRa" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/machinery/telecomms/server/presets/securityecz,
+/obj/structure/railing/mapped{
+	dir = 1
 	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 1;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
@@ -20079,300 +19677,86 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
+/obj/machinery/alarm{
+	frequency = 1439;
+	pixel_y = 23;
+	req_access = list(201)
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
-"aRc" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
-	},
-/obj/machinery/light/small/red{
-	dir = 4;
-	icon_state = "bulb1"
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 5;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
 "aRd" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 9;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/obj/machinery/telecomms/receiver/preset_right,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aRe" = (
-/obj/structure/window/reinforced{
-	dir = 1;
-	icon_state = "rwindow"
+/obj/machinery/computer/telecomms/monitor{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 1;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aRf" = (
-/obj/structure/window/reinforced{
-	dir = 1;
-	icon_state = "rwindow"
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 5;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
+	name = "\improper Server Farm Basement"
 	})
 "aRg" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 8;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aRh" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+/obj/machinery/computer/rcon{
 	dir = 1
 	},
-/obj/machinery/door/window/brigdoor/eastright,
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 4;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
+	name = "\improper Server Farm Basement"
 	})
 "aRi" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 8;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aRk" = (
-/obj/machinery/telecomms/server/presets/command,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/bluegrid,
+/obj/machinery/telecomms/server/presets/science,
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aRl" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
-/obj/machinery/door/window/brigdoor/eastright,
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 4;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/obj/machinery/telecomms/bus/preset_three,
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aRm" = (
-/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 8;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aRn" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 4;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/obj/machinery/telecomms/bus/preset_one,
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aRo" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 10;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/obj/machinery/telecomms/server/presets/engineering,
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aRp" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor/orange,
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/obj/machinery/telecomms/server/presets/securitylcz,
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aRq" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
-	},
-/obj/machinery/light/small/red{
-	dir = 4;
-	icon_state = "bulb1"
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 6;
-	icon_state = "techfloororange_edges"
-	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aRr" = (
-/obj/structure/window/reinforced,
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 10;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
+	temperature = 273.15;
+	initial_gas = null;
+	name = "airless floor"
 	},
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aRs" = (
-/obj/structure/window/reinforced,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor/orange,
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aRt" = (
-/obj/machinery/message_server,
-/obj/structure/window/reinforced,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/floor_decal/techfloor/orange,
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aRu" = (
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 4;
-	icon_state = "techfloororange_edges"
-	},
-/obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("Engineering Network");
-	c_tag = "Server Farm #2"
-	},
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aRv" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 6;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/obj/machinery/telecomms/server/presets/service,
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
@@ -20395,93 +19779,30 @@
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
-"aRy" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
-/obj/machinery/door/window/brigdoor/southright{
-	req_access = list(702)
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 10;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
 "aRz" = (
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
+/obj/machinery/suit_storage_unit/engineering{
+	req_access = list("502")
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 6;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
+	name = "\improper Server Farm Basement"
 	})
 "aRA" = (
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 1;
-	icon_state = "techfloororange_edges"
-	},
-/obj/effect/floor_decal/techfloor/orange,
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aRB" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 1;
-	icon_state = "techfloororange_edges"
-	},
-/obj/effect/floor_decal/techfloor/orange,
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/obj/machinery/telecomms/broadcaster/preset_right,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aRC" = (
-/obj/machinery/telecomms/server/presets/service,
-/obj/structure/window/reinforced,
-/obj/effect/floor_decal/techfloor/orange,
-/turf/simulated/floor/bluegrid,
+/obj/machinery/alarm{
+	frequency = 1439;
+	pixel_y = 23;
+	req_access = list(201)
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aRD" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 1;
-	icon_state = "techfloororange_edges"
-	},
-/obj/effect/floor_decal/techfloor/orange,
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
+	name = "\improper Server Farm Basement"
 	})
 "aRE" = (
 /obj/structure/cable{
@@ -20573,66 +19894,22 @@
 	name = "\improper Server Farm Basement"
 	})
 "aRO" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/machinery/door/airlock/engineering{
+	name = "Communication Engineers";
+	req_access = list(501)
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 1;
-	icon_state = "techfloororange_edges"
-	},
-/obj/effect/floor_decal/techfloor/orange,
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aRP" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 1;
-	icon_state = "techfloororange_edges"
-	},
-/obj/effect/floor_decal/techfloor/orange,
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aRQ" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 1;
-	icon_state = "techfloororange_edges"
-	},
-/obj/effect/floor_decal/techfloor/orange,
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aRR" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/door/window/brigdoor/northleft,
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 1;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
 /area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
+	name = "\improper Server Farm Basement"
 	})
 "aRS" = (
 /obj/machinery/computer/message_monitor{
@@ -20665,6 +19942,7 @@
 	})
 "aRX" = (
 /obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
@@ -20676,17 +19954,13 @@
 	name = "Underground Helipads"
 	})
 "aRZ" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Communication Engineers";
-	req_access = list(503)
-	},
-/obj/item/taperoll/engineering/applied,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
@@ -20699,10 +19973,14 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/item/tape/engineering,
+/obj/machinery/atmospherics/pipe/cap/hidden/supply{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+/obj/machinery/atmospherics/pipe/cap/hidden/scrubbers{
+	dir = 8
+	},
+/obj/machinery/door/firedoor{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -20731,98 +20009,33 @@
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
-"aSd" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/door/window/brigdoor/northright,
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 1;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aSe" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
-/obj/machinery/light/small/red,
-/obj/effect/floor_decal/techfloor/orange,
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aSf" = (
-/obj/machinery/telecomms/processor/preset_three,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 6;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/bluegrid,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
 "aSg" = (
-/obj/machinery/telecomms/bus/preset_three,
-/obj/structure/window/reinforced{
-	dir = 8
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 10;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/bluegrid,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aSh" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
-/obj/effect/floor_decal/techfloor/orange,
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aSi" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
-/obj/effect/floor_decal/techfloor/orange,
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
+	name = "\improper Server Farm Basement"
 	})
 "aSj" = (
-/obj/machinery/telecomms/bus/preset_one,
-/obj/effect/floor_decal/techfloor/orange{
-	dir = 6;
-	icon_state = "techfloororange_edges"
-	},
-/turf/simulated/floor/bluegrid,
+/obj/machinery/bluespacerelay,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
 "aSk" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
+/obj/machinery/ntnet_relay,
+/obj/structure/railing/mapped{
+	dir = 8
 	},
-/obj/machinery/light/small/red,
-/obj/effect/floor_decal/techfloor/orange,
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
+/obj/machinery/light{
+	dir = 4
 	},
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
@@ -22956,13 +22169,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp131)
 "aXf" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_z = 0
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8;
+	icon_state = "bordercolor"
 	},
-/obj/machinery/light,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "aXg" = (
@@ -23467,22 +22680,13 @@
 	name = "\improper Server Farm Basement"
 	})
 "aYs" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Server Farm";
-	req_access = list(503)
-	},
-/obj/item/taperoll/engineering/applied,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
+/obj/machinery/door/airlock/external/glass/bolted,
+/obj/item/tape/engineering,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
@@ -23537,34 +22741,19 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
+/obj/structure/inflatable/wall,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
 "aYz" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Server Farm";
-	req_access = list(503)
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/item/taperoll/engineering/applied,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
+/obj/machinery/door/airlock/external/glass/bolted,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
@@ -27036,6 +26225,9 @@
 	name = "Communication Engineers";
 	req_access = list(503)
 	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
@@ -27184,13 +26376,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/controlroom)
 "eBf" = (
-/obj/effect/floor_decal/techfloor/orange{
-	icon_state = "techfloororange_edges";
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15
-	},
+/obj/machinery/telecomms/processor/preset_one,
+/turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
@@ -30383,6 +29570,7 @@
 /area/site53/uhcz/medicalpost)
 "oOF" = (
 /obj/structure/table/standard,
+/obj/item/reagent_containers/food/condiment/enzyme,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurantkitchenarea)
 "oPK" = (
@@ -31290,7 +30478,8 @@
 /area/site53/ulcz/generalpurpose)
 "rNe" = (
 /obj/machinery/camera/autoname{
-	network = list("Light Containment Zone Network")
+	network = list("Light Containment Zone Network");
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/tram)
@@ -31928,14 +31117,14 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
 "uza" = (
-/obj/structure/crematorium{
-	dir = 8;
-	id = "scp8crem";
-	name = "incinerator"
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
 	},
-/obj/effect/floor_decal/industrial/hatch/red,
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
+/obj/effect/landmark{
+	name = "JoinLateCyborg"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/reswing/robotics)
 "uzu" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/glass/fifty,
@@ -42168,8 +41357,8 @@ aWJ
 aGH
 aGH
 aGH
+aXh
 aXf
-aGH
 aGH
 aXh
 aXp
@@ -63007,7 +62196,7 @@ amM
 aCT
 amM
 amM
-aYr
+aRO
 anY
 anY
 aqT
@@ -63522,7 +62711,7 @@ azA
 azA
 azA
 aAc
-aQP
+aRC
 aQP
 aRE
 aQP
@@ -63779,10 +62968,10 @@ aAc
 aAc
 aAc
 aAc
-aAc
+aQD
 aAc
 aSa
-aQP
+aQu
 aAc
 azA
 azA
@@ -64294,9 +63483,9 @@ aSm
 aSm
 aSp
 aQP
-anE
-aRE
-aQP
+aAc
+aQc
+abd
 aAc
 azA
 azA
@@ -64550,10 +63739,10 @@ anO
 anP
 anP
 anP
-anP
+aSg
 aRZ
 aYy
-aQP
+abd
 ali
 azA
 azA
@@ -64807,7 +63996,7 @@ aRb
 aQP
 aQP
 aQP
-aQP
+aRz
 aAc
 aYz
 aoa
@@ -64816,10 +64005,10 @@ alc
 alc
 alc
 alc
-alc
-alc
-alc
-alc
+azA
+azA
+azA
+azA
 azA
 aax
 aqt
@@ -65066,17 +64255,17 @@ aQP
 aWm
 aSm
 aRX
-aDU
-aQj
-aQB
+aPP
+aQz
+aQz
 aQS
-aRd
+aRg
 eBf
-aRr
-aRA
-aQo
-aQu
 alc
+azA
+azA
+azA
+azA
 azA
 aax
 aax
@@ -65324,16 +64513,16 @@ aWm
 aRL
 aRX
 aPP
-aQp
-aQp
+aQz
+aQz
 aQU
-aRe
+aRg
 aQd
-aRs
-aRB
-aRR
-aSe
 alc
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -65581,16 +64770,16 @@ aAc
 aAc
 aAc
 aPR
-aQp
-aQp
-aQU
-aRe
-abd
-aRs
-aRD
-aSd
-aSh
+aQz
+aQz
+aQz
+aQz
+aRq
 alc
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -65837,17 +65026,17 @@ aQO
 aQP
 aRM
 aRX
-aQb
-aQq
-aQC
+aQz
+aQz
+aQz
 aQV
-aRf
+aRg
 aRl
-aRv
-aRO
-aQr
-aSf
 alc
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -66092,19 +65281,19 @@ azA
 aAc
 nxO
 aQP
-aQP
+aRe
 aRX
-aQi
-aQv
-aQD
+aQz
+aQz
+aQz
 aQW
 aRg
 aRm
-aRy
-aRO
-aQs
-aSg
 alc
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -66351,17 +65540,17 @@ aQP
 aRI
 aRS
 aRX
-aEf
-aQy
-aQE
-aQc
-aQf
-aRk
-aRt
-aRP
-aRR
-aSi
+aQz
+aQz
+aQz
 alc
+alc
+alc
+alc
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -66606,19 +65795,19 @@ azA
 aAc
 aSm
 aQP
-aQP
+anE
 aRX
-aOS
 aQz
-aQQ
+aQz
+aQz
 abc
 aQg
 aPX
-aRC
-aRQ
-aSd
-aSk
 alc
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -66863,19 +66052,19 @@ azA
 aAc
 aRG
 aRJ
-aQP
-aRX
-aPw
-aQA
-aQR
-aQX
 aRh
-aRn
-aRz
-aRA
-aQt
-aSj
+aRX
+aQz
+aQz
+aQz
+aQz
+aQz
+aRq
 alc
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -67122,17 +66311,17 @@ aAc
 aAc
 aAc
 aAc
-alc
-alc
-aPU
+aQj
+aQz
+aQz
 aQY
 aRi
 aRo
-aQk
 alc
-alc
-alc
-alc
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -67377,16 +66566,16 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
 alc
-aPV
-aRa
-aoE
-aRp
-aQl
+aRA
+aQz
+aQz
+aQz
 alc
+alc
+alc
+alc
+azA
 azA
 azA
 azA
@@ -67634,16 +66823,16 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
 alc
-afq
+aSj
+aQz
+aQz
+aQz
 aRa
 azI
 aRp
-aQm
 alc
+azA
 azA
 azA
 azA
@@ -67766,7 +66955,7 @@ azA
 azA
 aIh
 aan
-abC
+uza
 abC
 obm
 aJd
@@ -67891,16 +67080,16 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
 alc
-aPX
-aRc
-aRu
+aRd
+aQz
+aQz
+aQz
+aQz
+aQz
 aRq
-abA
 alc
+azA
 azA
 azA
 azA
@@ -68148,16 +67337,16 @@ azA
 azA
 azA
 azA
+alc
+aQv
+aQz
+aQz
+aQz
+aQA
+aRs
+aQR
+alc
 azA
-azA
-azA
-alc
-alc
-alc
-alc
-alc
-alc
-alc
 azA
 azA
 azA
@@ -68405,15 +67594,15 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+alc
+alc
+aQf
+aSk
+aQf
+alc
+alc
+alc
+alc
 azA
 azA
 azA
@@ -68663,11 +67852,11 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
+alc
+alc
+alc
+alc
+alc
 azA
 azA
 azA
@@ -71119,7 +70308,7 @@ azA
 azA
 azA
 aIi
-agS
+agV
 ahc
 aCl
 fNo

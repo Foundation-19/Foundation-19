@@ -194,36 +194,36 @@ KEY.set_access(ACCESS, ACCESS_EDIT || ACCESS || access_bridge)}
 /datum/report_field/options/crew_record/##KEY/get_options(){return OPTIONS}
 
 // GENERIC RECORDS
-FIELD_SHORT("Name", name, null, access_change_ids)
-FIELD_SHORT("Formal Name", formal_name, null, access_change_ids)
+FIELD_SHORT("Name", name, null, access_adminlvl5)
+FIELD_SHORT("Formal Name", formal_name, null, access_adminlvl5)
 FIELD_SHORT("Job", job, null, access_change_ids)
-FIELD_LIST("Sex", sex, record_genders(), null, access_change_ids)
+FIELD_LIST("Sex", sex, record_genders(), null, access_adminlvl5)
 FIELD_NUM("Age", age, null, access_change_ids)
-FIELD_LIST_EDIT("Status", status, GLOB.physical_statuses, null, access_medical)
+FIELD_LIST_EDIT("Status", status, GLOB.physical_statuses, null, access_medicallvl2)
 
-FIELD_SHORT("Species",species, null, access_change_ids)
-FIELD_LIST("Branch", branch, record_branches(), null, access_change_ids)
-FIELD_LIST("Rank", rank, record_ranks(), null, access_change_ids)
-FIELD_SHORT("Religion", religion, access_chapel_office, access_change_ids)
+FIELD_SHORT("Species",species, null, access_adminlvl5)
+FIELD_LIST("Branch", branch, record_branches(), null, access_adminlvl5)
+FIELD_LIST("Rank", rank, record_ranks(), null, access_adminlvl5)
+FIELD_SHORT("Religion", religion, access_chapel_office, access_adminlvl5)
 
-FIELD_LONG("General Notes (Public)", public_record, null, access_bridge)
+FIELD_LONG("General Notes (Public)", public_record, null, access_adminlvl2)
 
 // MEDICAL RECORDS
-FIELD_LIST("Blood Type", bloodtype, GLOB.blood_types, access_medical, access_medical)
-FIELD_LONG("Medical Record", medRecord, access_medical, access_medical)
-FIELD_LONG("Known Implants", implants, access_medical, access_medical)
+FIELD_LIST("Blood Type", bloodtype, GLOB.blood_types, access_medical, access_medicallvl2)
+FIELD_LONG("Medical Record", medRecord, access_medical, access_medicallvl2)
+FIELD_LONG("Known Implants", implants, access_medical, access_medicallvl2)
 
 // SECURITY RECORDS
-FIELD_LIST("Criminal Status", criminalStatus, GLOB.security_statuses, access_security, access_security)
-FIELD_LONG("Security Record", secRecord, access_security, access_security)
-FIELD_SHORT("DNA", dna, access_security, access_security)
-FIELD_SHORT("Fingerprint", fingerprint, access_security, access_security)
+FIELD_LIST("Criminal Status", criminalStatus, GLOB.security_statuses, access_securitylvl2, access_securitylvl2)
+FIELD_LONG("Security Record", secRecord, access_securitylvl2, access_securitylvl2)
+FIELD_SHORT("DNA", dna, access_securitylvl2, access_securitylvl2)
+FIELD_SHORT("Fingerprint", fingerprint, access_securitylvl2, access_securitylvl2)
 
 // EMPLOYMENT RECORDS
-FIELD_LONG("Employment Record", emplRecord, access_bridge, access_bridge)
-FIELD_SHORT("Home System", homeSystem, access_bridge, access_change_ids)
-FIELD_SHORT("Faction", faction, access_bridge, access_bridge)
-FIELD_LONG("Qualifications", skillset, access_bridge, access_bridge)
+FIELD_LONG("Employment Record", emplRecord, access_adminlvl2, access_adminlvl2)
+FIELD_SHORT("Home System", homeSystem, access_adminlvl5, access_adminlvl5)
+FIELD_SHORT("Faction", faction, access_adminlvl5, access_adminlvl5)
+FIELD_LONG("Qualifications", skillset, access_adminlvl5, access_adminlvl5)
 
 // ANTAG RECORDS
 FIELD_LONG("Exploitable Information", antagRecord, access_syndicate, access_syndicate)

@@ -1,4 +1,4 @@
-// COMMAND
+ut // COMMAND
 
 /datum/job/captain
 	title = "Site Director"

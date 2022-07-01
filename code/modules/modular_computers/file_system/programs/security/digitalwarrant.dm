@@ -5,14 +5,14 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 /datum/computer_file/program/digitalwarrant
 	filename = "digitalwarrant"
 	filedesc = "Warrant Assistant"
-	extended_desc = "Official NTsec program for creation and handling of warrants."
+	extended_desc = "Official Foundation Security program for creation and handling of warrants."
 	size = 8
 	program_icon_state = "warrant"
 	program_key_state = "security_key"
 	program_menu_icon = "star"
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE
-	required_access = access_security
+	required_access = access_securitylvl2
 	nanomodule_path = /datum/nano_module/program/digitalwarrant/
 	category = PROG_SEC
 
@@ -84,7 +84,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 	if(!istype(user))
 		return
 	var/obj/item/card/id/I = user.GetIdCard()
-	if(!istype(I) || !I.registered_name || !(access_security in I.access))
+	if(!istype(I) || !I.registered_name || !(access_securitylvl2 in I.access))
 		to_chat(user, "Authentication error: Unable to locate ID with apropriate access to allow this operation.")
 		return
 
@@ -150,7 +150,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 					break
 		if(activewarrant)
 			program.computer.print_paper(warranttotext(activewarrant), capitalize(activewarrant.fields["arrestsearch"]) + " Warrant - " + activewarrant.fields["namewarrant"])
-		else 
+		else
 			to_chat(src, SPAN_WARNING("Internal error: Warrant not found."))
 
 
@@ -201,7 +201,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 		// access-granting is only available for arrest warrants
 		if(activewarrant.fields["arrestsearch"] == "search")
 			return
-		if(!(access_change_ids in I.access))
+		if(!(access_adminlvl1 in I.access))
 			to_chat(user, "Authentication error: Unable to locate ID with appropriate access to allow this operation.")
 			return
 
