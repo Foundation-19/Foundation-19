@@ -1,13 +1,13 @@
 /datum/computer_file/program/aidiag
 	filename = "aidiag"
-	filedesc = "AI Maintenance Utility"
+	filedesc = "AIC Maintenance Utility"
 	program_icon_state = "generic"
 	program_key_state = "mining_key"
 	program_menu_icon = "person"
-	extended_desc = "This program is capable of reconstructing damaged AI systems. It can also be used to upload basic laws to the AI. Requires direct AI connection via inteliCard slot."
+	extended_desc = "This program is capable of reconstructing damaged AIC systems. It can also be used to upload basic laws to the AI. Requires direct AI connection via inteliCard slot."
 	size = 12
 	requires_ntnet = FALSE
-	required_access = access_bridge
+	required_access = access_adminlvl4
 	requires_access_to_run = FALSE
 	available_on_ntnet = TRUE
 	nanomodule_path = /datum/nano_module/program/computer_aidiag/

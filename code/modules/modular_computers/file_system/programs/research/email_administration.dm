@@ -9,7 +9,7 @@
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE
 	nanomodule_path = /datum/nano_module/program/email_administration
-	required_access = access_network
+	required_access = access_engineeringlvl4
 	category = PROG_ADMIN
 
 /datum/nano_module/program/email_administration
@@ -83,7 +83,7 @@
 
 	// High security - can only be operated when the user has an ID with access on them.
 	var/obj/item/card/id/I = user.GetIdCard()
-	if(!istype(I) || !(access_network in I.access))
+	if(!istype(I) || !(access_engineeringlvl4 in I.access))
 		return 1
 
 	if(href_list["back"])

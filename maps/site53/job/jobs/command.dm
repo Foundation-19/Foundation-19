@@ -1,4 +1,4 @@
-// COMMAND
+ut // COMMAND
 
 /datum/job/captain
 	title = "Site Director"
@@ -138,7 +138,6 @@
 		access_med_comms,
 		access_eng_comms,
 		access_sec_comms,
-		access_adminlvl2,
 		access_adminlvl1
 	)
 
@@ -214,6 +213,8 @@
 	access = list(
 		access_com_comms,
 		access_adminlvl1,
-		access_adminlvl2
+		access_adminlvl2,
+		access_adminlvl1
 	)
+
 	minimal_access = list()
