@@ -25,6 +25,7 @@
 /obj/item/clothing/suit/armor/vest/scp
 	icon = 'icons/obj/clothing/suits.dmi'
 	w_class = ITEM_SIZE_HUGE
+	valid_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA, ACCESSORY_SLOT_ARMOR_M)
 
 /obj/item/clothing/suit/armor/vest/scp/lightarmor
 	name = "armored anti-stab vest"
