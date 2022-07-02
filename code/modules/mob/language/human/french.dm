@@ -12,6 +12,7 @@
 	shorthand = "Fr"
 	partial_understanding = list(
 		LANGUAGE_HUMAN_SPANISH = 30,
+		LANGUAGE_HUMAN_ITALIAN = 25,
 		LANGUAGE_ENGLISH = 20,
 		LANGUAGE_HUMAN_GERMAN = 15,
 	)

@@ -12,7 +12,8 @@
 	key = "5"
 	shorthand = "Spain"
 	partial_understanding = list(
-		LANGUAGE_HUMAN_GERMAN = 30,
+		LANGUAGE_HUMAN_GERMAN = 15,
+		LANGUAGE_HUMAN_FRENCH = 30,
 		LANGUAGE_HUMAN_SELENIAN = 15,
 		LANGUAGE_ENGLISH = 20
 	)
