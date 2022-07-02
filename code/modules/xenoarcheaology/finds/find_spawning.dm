@@ -158,7 +158,7 @@
 /obj/item/archaeological_find/statuette/spawn_item()
 	var/obj/item/new_item
 	if(prob(25))
-		new_item = new /obj/item/vampiric(loc)
+		//new_item = new /obj/item/vampiric(loc)
 	else
 		new_item = new(loc)
 	new_item.SetName("statuette")
