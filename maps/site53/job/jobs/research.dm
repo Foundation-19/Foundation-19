@@ -50,7 +50,8 @@
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudscientist"
 
-	access = list(access_sci_comms,
+	access = list(
+	access_sci_comms,
 	access_sciencelvl1,
 	access_sciencelvl2,
 	access_research
@@ -91,6 +92,7 @@
 		access_sciencelvl2,
 		access_sciencelvl3,
 		access_sciencelvl4,
+		access_securitylvl1,
 		access_research
 	)
 	minimal_access = list()

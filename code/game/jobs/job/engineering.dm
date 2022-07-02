@@ -10,7 +10,26 @@
 	allowed_branches = list(/datum/mil_branch/security)
 	allowed_ranks = list(/datum/mil_rank/security/o1)
 
-	access = list(access_securitylvl1, access_securitylvl2, access_securitylvl3, access_securitylvl4)
+	access = list(
+		access_eng_comms,
+		access_securitylvl1,
+		access_securitylvl2,
+		access_securitylvl3,
+		access_securitylvl4,
+		access_securitylvl4,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3,
+		access_sciencelvl4,
+		access_adminlvl1,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3,
+		access_engineeringlvl4,
+		access_engineeringlvl5,
+		access_keyauth
+	)
+
 	minimal_access = list()
 
 /datum/job/conteng
@@ -31,7 +50,22 @@
 		/datum/mil_rank/security/w1
 	)
 
-	access = list(access_securitylvl1, access_securitylvl2, access_securitylvl3, access_securitylvl4, access_sciencelvl1, access_sciencelvl2, access_sciencelvl3, access_sciencelvl4)
+	access = list(
+		access_eng_comms,
+		access_securitylvl1,
+		access_securitylvl2,
+		access_securitylvl3,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3,
+		access_sciencelvl4,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3,
+		access_engineeringlvl4,
+		access_engine_equip
+	)
+
 	minimal_access = list()
 
 /datum/job/commeng
@@ -48,14 +82,22 @@
 	alt_titles = list(
 		"Communications Programmer"
 		)
-//	outfit_type = /decl/hierarchy/outfit/job/ds90/crew/engineering/juneng
-//	allowed_branches = list(
-//		/datum/mil_branch/security
-//	)
-//	allowed_ranks = list(
-//		/datum/mil_rank/security/e5,
-//		/datum/mil_rank/security/e6
-//	)
+	outfit_type = /decl/hierarchy/outfit/job/ds90/crew/engineering/juneng
+	allowed_branches = list(
+		/datum/mil_branch/security
+	)
+	allowed_ranks = list(
+		/datum/mil_rank/security/e5,
+		/datum/mil_rank/security/e6
+	)
+	access = list(
+		access_adminlvl1,
+		access_adminlvl2,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3,
+		access_engineeringlvl4,
+	)
 
 /datum/job/seneng
 	title = "Senior Engineer"
@@ -84,7 +126,17 @@
 		/datum/mil_rank/security/e9
 	)
 
-	access = list(access_securitylvl1, access_securitylvl2, access_securitylvl3, access_securitylvl4)
+	access = list(
+		access_securitylvl1,
+		access_securitylvl2,
+		access_securitylvl3,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3,
+		access_engineeringlvl4,
+		access_medicallvl1,
+		access_sciencelvl1
+	)
 	minimal_access = list()
 
 /datum/job/eng
@@ -113,7 +165,12 @@
 		/datum/mil_rank/security/e5
 	)
 
-	access = list(access_securitylvl1, access_securitylvl2, access_securitylvl3)
+	access = list(
+		access_securitylvl1,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3
+	)
 	minimal_access = list()
 
 /datum/job/juneng
@@ -141,42 +198,9 @@
 		/datum/mil_rank/security/e4
 	)
 
-	access = list(access_securitylvl1, access_securitylvl2)
+	access = list(
+		access_securitylvl1,
+		access_engineeringlvl1,
+		access_engineeringlvl2
+	)
 	minimal_access = list()
-
-
-
-
-/*
-/datum/job/engineer
-	title = "Engineer"
-	department = "Engineering"
-	department_flag = ENG
-
-	total_positions = 8
-	spawn_positions = 7
-	supervisors = "the chief engineer"
-	selection_color = "#5b4d20"
-	economic_power = 5
-	minimal_player_age = 7
-	access = list(access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels, access_external_airlocks, access_construction, access_atmospherics, access_emergency_storage)
-	minimal_access = list(access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels, access_external_airlocks, access_construction, access_atmospherics, access_emergency_storage)
-	alt_titles = list("Maintenance Technician","Engine Technician","Electrician",
-		"Atmospheric Technician" = /decl/hierarchy/outfit/job/engineering/atmos)
-	outfit_type = /decl/hierarchy/outfit/job/engineering/engineer
-
-/datum/job/atmos
-	title = "Atmospheric Technician"
-	department = "Engineering"
-	department_flag = ENG
-
-	total_positions = 0
-	spawn_positions = 0
-	supervisors = "the chief engineer"
-	selection_color = "#5b4d20"
-	economic_power = 5
-	minimal_player_age = 7
-	access = list(access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels, access_external_airlocks, access_construction, access_atmospherics, access_emergency_storage)
-	minimal_access = list(access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels, access_external_airlocks, access_construction, access_atmospherics, access_emergency_storage)
-	outfit_type = /decl/hierarchy/outfit/job/engineering/atmos
-*/

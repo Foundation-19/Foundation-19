@@ -1,5 +1,5 @@
 /datum/job/ai
-	title = "AI"
+	title = "AIC"
 	department_flag = MSC
 
 	total_positions = 0 // Not used for AI, see is_position_available below and modules/mob/living/silicon/ai/latejoin.dm
