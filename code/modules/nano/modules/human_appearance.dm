@@ -17,7 +17,7 @@
 	langs = null
 	. = ..()
 
-
+/*
 /datum/nano_module/appearance_changer/New(mob/living/carbon/human/_owner, _flags, _races)
 	..(_owner, null)
 	owner = _owner
@@ -28,7 +28,7 @@
 		else
 			races = owner.generate_valid_species(_races)
 	generate_data()
-
+*/
 
 /datum/nano_module/appearance_changer/proc/generate_data()
 	heads = owner.generate_valid_hairstyles()
