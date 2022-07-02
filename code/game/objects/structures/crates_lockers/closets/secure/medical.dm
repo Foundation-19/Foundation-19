@@ -14,6 +14,11 @@
 /obj/structure/closet/secure_closet/medical1
 	name = "medical equipment closet"
 	desc = "Filled with medical junk."
+	icon_state = "medical1"
+	icon_closed = "medical"
+	icon_locked = "medical1"
+	icon_opened = "medicalopen"
+	icon_off = "medicaloff"
 	closet_appearance = /decl/closet_appearance/secure_closet/medical
 	req_access = list(access_medical_equip)
 
@@ -33,6 +38,11 @@
 /obj/structure/closet/secure_closet/medical2
 	name = "anesthetics closet"
 	desc = "Used to knock people out."
+	icon_state = "medical1"
+	icon_closed = "medical"
+	icon_locked = "medical1"
+	icon_opened = "medicalopen"
+	icon_off = "medicaloff"
 	req_access = list(access_surgery)
 
 /obj/structure/closet/secure_closet/medical2/WillContain()
@@ -43,6 +53,11 @@
 
 /obj/structure/closet/secure_closet/medical3
 	name = "medical doctor's locker"
+	icon_state = "securemed1"
+	icon_closed = "securemed"
+	icon_locked = "securemed1"
+	icon_opened = "securemedopen"
+	icon_off = "securemedoff"
 	req_access = list(access_medical_equip)
 	closet_appearance = /decl/closet_appearance/secure_closet/medical/alt
 
@@ -120,6 +135,11 @@
 /obj/structure/closet/secure_closet/chemical
 	name = "chemical closet"
 	desc = "Store dangerous chemicals in here."
+	icon_state = "medical1"
+	icon_closed = "medical"
+	icon_locked = "medical1"
+	icon_opened = "medicalopen"
+	icon_off = "medicaloff"
 	closet_appearance = /decl/closet_appearance/secure_closet/medical
 	req_access = list(access_chemistry)
 
