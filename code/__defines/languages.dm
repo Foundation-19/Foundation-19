@@ -7,6 +7,8 @@
 #define LANGUAGE_HUMAN_RUSSIAN   "Russian"
 #define LANGUAGE_HUMAN_SELENIAN  "Selenian"
 #define LANGUAGE_HUMAN_FRENCH	 "French"
+#define LANGUAGE_HUMAN_JAPANESE	 "Japanese"
+#define LANGUAGE_HUMAN_ITALIAN	 "Italian"
 
 //Human misc
 #define LANGUAGE_GUTTER         "Gutter"
