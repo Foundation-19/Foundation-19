@@ -19,10 +19,10 @@
 		LANGUAGE_HUMAN_CHINESE = 5,
 		LANGUAGE_HUMAN_ARABIC = 5,
 		LANGUAGE_HUMAN_INDIAN = 5,
-		LANGUAGE_HUMAN_SPANISH = 30,
+		LANGUAGE_HUMAN_SPANISH = 20,
+		LANGUAGE_HUMAN_FRENCH = 20,
 		LANGUAGE_HUMAN_RUSSIAN = 5,
-		LANGUAGE_HUMAN_SELENIAN = 85,
-		LANGUAGE_ENGLISH = 20
+		LANGUAGE_ENGLISH = 30
 	)
 	syllables = list(
 		"al", "an", "ar", "as", "at", "ea", "ed", "en", "er", "es", "ha", "he", "hi", "in", "is", "it",
