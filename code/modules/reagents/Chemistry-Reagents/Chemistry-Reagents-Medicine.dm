@@ -662,7 +662,7 @@
 
 /* Antidepressants */
 
-#define ANTIDEPRESSANT_MESSAGE_DELAY 5*60*10
+#define ANTIDEPRESSANT_MESSAGE_DELAY 5 MINUTES
 
 /datum/reagent/methylphenidate
 	name = "Methylphenidate"
