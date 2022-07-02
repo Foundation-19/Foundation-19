@@ -525,6 +525,8 @@
 /obj/item/clothing/suit/chef/classic,
 /obj/item/clothing/suit/chef,
 /obj/structure/table/standard,
+/obj/item/clothing/head/chefhat,
+/obj/item/clothing/head/chefhat,
 /obj/item/book/manual/chef_recipes,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
@@ -29697,6 +29699,7 @@
 /area/site53/uhcz/medicalpost)
 "oOF" = (
 /obj/structure/table/standard,
+/obj/item/storage/box/beakers,
 /obj/item/reagent_containers/food/condiment/enzyme,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurantkitchenarea)
