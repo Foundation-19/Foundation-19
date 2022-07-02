@@ -1,4 +1,3 @@
-#define ANTIDEPRESSANT_MESSAGE_DELAY 5 MINUTES
 
 // Reagents in this file should have little to no mechanical effect, and instead be focused on roleplay!
 
@@ -171,5 +170,3 @@
 	if (world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY * 0.35)
 		data = world.time
 		to_chat(M, SPAN_NOTICE("You feel faintly sore in the throat."))
-
-#undef ANTIDEPRESSANT_MESSAGE_DELAY
