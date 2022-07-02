@@ -277,6 +277,21 @@
 	<i>This paper has been stamped with the stamp of Office of the General Secretary of SCG.</i>
 	"}
 
+/obj/item/paper/reactor
+	name = "Reactor Startup Procedure"
+	info = {"
+	First, connect up each of the yellow wires. In the image of the R-UST above, you will see red wires connecting the yellow wires from the PACMAN-generator to the SMES, and from the SMES to the fusion core. These are the wires you need to add.<br>
+	The fusion core and gyrotron have a heavy power drain when operational. You will need to use the PACMAN to provide this until the fusion process becomes self-sustaining. Insert some tritium ingots from the radioactive crate and turn on the PACMAN with between 0.1MW and 0.15MW of power.<br>
+	Create five deuterium and one tritium fuel rod using the fuel compressor and insert these into the fuel injectors, one per injector.<br>
+	Return to the control room and raise the chamber containment shutters and ensure that the chamber observation is only down if you are wearing radiation protection gear.<br>
+	Set the gyrotron to fire delay 2, power 50. There can be an initial burst in instability when turning the reactor on - If you have allowed fuel to build up. So we set the gyrotron to a high-power mode for the initial startup. Do not walk infront of the gyrotron while it is active.<br>
+	Turn on the fusion core and adjust the field strength to 20 tesla.<br>
+	Turn on all the fusion fuel injectors.<br>
+	Watch the temperature and power rise on the fusion core console. Make sure that the instability is being managed by the gyrotron (less than 1%).<br>
+	Once the power output is 250kW or higher, return to the R-UST room and turn off the PACMAN-generator. It may explode if you leave it running for too long.<br>
+	You can now adjust the gyrotron power to a lower setting, such as fire delay 3, power output 3. Check that the instability is staying low after adjusting the gyrotron.
+	"}
+
 /////////////
 //SCP BOOKS//
 /////////////

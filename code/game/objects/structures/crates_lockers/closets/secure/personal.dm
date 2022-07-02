@@ -1,8 +1,13 @@
 /obj/structure/closet/secure_closet/personal
 	name = "personal closet"
 	desc = "It's a secure locker for personnel."
+	icon_state = "secure"
+	icon_closed = "secure"
+	icon_locked = "secure1"
+	icon_opened = "secureopen"
+	icon_off = "secureoff"
 	req_access = list(access_all_personal_lockers)
-	locked = FALSE
+	locked = TRUE
 	var/registered_name = null
 
 /obj/structure/closet/secure_closet/personal/WillContain()
@@ -20,6 +25,12 @@
 	return list(/obj/item/clothing/suit/hospital/blue, /obj/item/clothing/suit/hospital/green, /obj/item/clothing/suit/hospital/pink)
 
 /obj/structure/closet/secure_closet/personal/cabinet
+	icon_state = "cabinetdetective"
+	icon_closed = "cabinetdetective"
+	icon_locked = "cabinetdetective_locked"
+	icon_opened = "cabinetdetective_open"
+	icon_broken = "cabinetdetective_sparks"
+	icon_off = "cabinetdetective_broken"
 	closet_appearance = /decl/closet_appearance/cabinet/secure
 
 /obj/structure/closet/secure_closet/personal/cabinet/WillContain()

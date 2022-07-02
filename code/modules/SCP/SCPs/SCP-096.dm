@@ -87,7 +87,7 @@
 	for(var/mob/living/carbon/human/H in viewers(src, null))
 		if(H in kill_list)
 			continue
-		if(H.stat || H.equipment_tint_total == 3)
+		if(H.stat || H.equipment_tint_total == TINT_BLIND)
 			continue
 
 		var/observed = 0

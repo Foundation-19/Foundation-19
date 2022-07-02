@@ -525,6 +525,8 @@
 /obj/item/clothing/suit/chef/classic,
 /obj/item/clothing/suit/chef,
 /obj/structure/table/standard,
+/obj/item/clothing/head/chefhat,
+/obj/item/clothing/head/chefhat,
 /obj/item/book/manual/chef_recipes,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
@@ -885,7 +887,7 @@
 	id_tag = "fusion_injector2";
 	initial_id_tag = "fusion_injector2"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced/airless,
 /area/vacant/prototype/engine)
 "acB" = (
 /obj/effect/paint_stripe/brown,
@@ -2468,16 +2470,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
-"agl" = (
-/obj/machinery/fusion_fuel_injector/mapped{
-	anchored = 0;
-	dir = 1;
-	icon_state = "injector0";
-	id_tag = "fusion_injector2";
-	initial_id_tag = "fusion_injector2"
-	},
-/turf/simulated/floor/reinforced,
-/area/vacant/prototype/engine)
 "agm" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -3591,7 +3583,7 @@
 	id_tag = "fusion_injector2";
 	initial_id_tag = "fusion_injector2"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/reinforced/airless,
 /area/vacant/prototype/engine)
 "aiy" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -6444,8 +6436,11 @@
 	icon_state = "pdoor0";
 	id_tag = "prototype_chamber_blast2"
 	},
-/obj/effect/wallframe_spawn/reinforced_phoron,
-/turf/simulated/floor/plating,
+/obj/machinery/door/airlock/engineering{
+	name = "Main Reactor";
+	req_access = list(502)
+	},
+/turf/simulated/floor/reinforced/airless,
 /area/vacant/prototype/engine)
 "aoU" = (
 /obj/structure/cable{
@@ -6563,7 +6558,7 @@
 	id_tag = "prototype_chamber_blast2"
 	},
 /obj/effect/wallframe_spawn/reinforced_phoron,
-/turf/unsimulated/mineral,
+/turf/simulated/floor/reinforced/airless,
 /area/vacant/prototype/engine)
 "aph" = (
 /obj/machinery/light,
@@ -6815,6 +6810,7 @@
 	icon_state = "corner_white"
 	},
 /obj/structure/table/steel,
+/obj/item/paper/reactor,
 /turf/simulated/floor/tiled/dark,
 /area/vacant/prototype/control)
 "apL" = (
@@ -19095,13 +19091,18 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/ulcz/tram)
 "aPj" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /obj/machinery/door/blast/regular/open{
 	dir = 1;
 	icon_state = "pdoor0";
 	id_tag = "prototype_chamber_blast2"
 	},
 /obj/effect/wallframe_spawn/reinforced_phoron,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/reinforced/airless,
 /area/vacant/prototype/engine)
 "aPk" = (
 /obj/effect/paint_stripe/red,
@@ -29698,6 +29699,7 @@
 /area/site53/uhcz/medicalpost)
 "oOF" = (
 /obj/structure/table/standard,
+/obj/item/storage/box/beakers,
 /obj/item/reagent_containers/food/condiment/enzyme,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurantkitchenarea)
@@ -39758,7 +39760,7 @@ arq
 aml
 aml
 apg
-agl
+aix
 aAB
 aaN
 azA
@@ -41037,9 +41039,9 @@ amh
 aaN
 aaN
 aoT
+apg
+apg
 aPj
-aPj
-aoT
 aoT
 aaN
 aaN

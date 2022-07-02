@@ -26,6 +26,11 @@
 
 /obj/structure/closet/secure_closet/hop
 	name = "head of personnel's locker"
+	icon_state = "hopsecure1"
+	icon_closed = "hopsecure"
+	icon_locked = "hopsecure1"
+	icon_opened = "hopsecureopen"
+	icon_off = "hopsecureoff"
 	closet_appearance = /decl/closet_appearance/secure_closet/command/hop
 	req_access = list(access_hop)
 
