@@ -135,17 +135,17 @@
 	spawn_positions = 2
 	supervisors = "the Head of Personnel"
 	ideal_character_age = 24
-	alt_titles = list("Interior caretaker")
+	alt_titles = list("Interior caretaker", "Custodian")
 	selection_color = "#515151"
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/janitor
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
-	/datum/mil_rank/civ/classd
+	/datum/mil_rank/civ/classc
 	)
 
-	access = list(access_sciencelvl1)
+	access = list()
 	minimal_access = list()
 
 /datum/job/chef
@@ -164,12 +164,13 @@
 		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
-	/datum/mil_rank/civ/classd
+	/datum/mil_rank/civ/classc
 	)
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_sciencelvl1)
+	access = list()
+
 	minimal_access = list()
 
 /datum/job/bartender
@@ -188,10 +189,10 @@
 		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
-	/datum/mil_rank/civ/classd
+	/datum/mil_rank/civ/classc
 	)
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_sciencelvl1)
+	access = list()
 	minimal_access = list()
