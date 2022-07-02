@@ -2089,6 +2089,8 @@
 #include "code\modules\mob\language\human\german.dm"
 #include "code\modules\mob\language\human\human.dm"
 #include "code\modules\mob\language\human\indian.dm"
+#include "code\modules\mob\language\human\italian.dm"
+#include "code\modules\mob\language\human\japanese.dm"
 #include "code\modules\mob\language\human\russian.dm"
 #include "code\modules\mob\language\human\selenian.dm"
 #include "code\modules\mob\language\human\spanish.dm"
