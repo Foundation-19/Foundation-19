@@ -379,6 +379,7 @@ Subjects SCP-131-A and SCP-131-B were found in a cornfield outside ¦¦¦¦¦¦�
 	info = {"
 	<tt><center><b><font color='green'>SAFE: SCP-500</font></b>
 	<h3>FOUNDATION RESEARCH DIVISION</h3>
+	</center>
 
 <b>Item #:</b> SCP-500
 
@@ -812,9 +813,9 @@ You’ve touched it. Now he can see you.<br>
 <br>
 Object Class: Keter
 <br>
-<b>Special Containment Procedures:<b>
+<b>Special Containment Procedures:</b>
 <br>
-<b>REVISION 11-8<b>
+<b>REVISION 11-8</b>
 <br>
 No physical interaction with SCP-106 is allowed at any time. All physical interaction must be approved by no less than a two-thirds vote from O5-Command. Any such interaction must be undertaken in AR-II maximum security sites, after a general non-essential staff evacuation. All staff (Research, Security, Class D, etc.) are to remain at least sixty meters away from the containment cell at all times, except in the event of breach events.
 
@@ -914,5 +915,3 @@ Steps to assign someone to work duty;
 <br>
 Good luck on your shift! For further questions, please defer to your Cell Lieutenant. Return this piece of paper to the Guard Lieutenant, or stash it in the safe if one is not around.
 "}
-
-

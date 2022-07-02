@@ -153,9 +153,9 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	return target
 
 /mob/living/carbon/human/scp049/proc/pursueTarget()
-	walk(src, null)
 	if(client)
 		return FALSE
+	walk(src, null)
 	addtimer(CALLBACK(src, .proc/getTarget), 3 SECONDS)
 
 	if(!target)
@@ -220,7 +220,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		if(curing)
 			return
 
-		visible_message("<span class = 'danger'><i>[src] reaches towards [target.real_name]!</i></danger>")
+		visible_message("<span class = 'danger'><i>[src] reaches towards [target.real_name]!</i></span>")
 		addtimer(CALLBACK(src, .proc/Attack_Voice_Line), 5 SECONDS)
 
 		target.Weaken(10)

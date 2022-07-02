@@ -112,7 +112,7 @@
 			if (D <= dist * 0.5) //Must be significantly closer to change targets
 				target = M //For closest target
 				dist = D
-					H.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
+				H.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
 	if (target)
 		if (isspecies(target, SPECIES_SCP049_1))
 			target = null

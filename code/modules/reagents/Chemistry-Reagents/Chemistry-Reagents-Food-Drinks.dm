@@ -2058,7 +2058,7 @@
 
 	glass_name = "saliva"
 	glass_desc = "This is not for you to drink."
-	
+
 /datum/reagent/drink/lava
 	name = "Lava"
 	description = "Hot."
@@ -2069,18 +2069,18 @@
 
 	glass_name = "Lava"
 	glass_desc = "It looks very hot!"
-	
-	/datum/reagent/drink/lava/affect_touch(var/mob/living/carbon/M)
-		M.take_organ_damage(5)
-		M.adjustFireLoss(rand(50, 100))	
-		M.emote("scream")
-		M.visible_message("<span class='warning'>[M] is burnt badly by the lava!</span>")
 
-	/datum/reagent/drink/lava/affect_ingest(var/mob/living/carbon/M)
-		M.take_organ_damage(15)
-		M.adjustFireLoss(rand(150, 200))
-		M.emote("scream")
-	
+/datum/reagent/drink/lava/affect_touch(var/mob/living/carbon/M)
+	M.take_organ_damage(5)
+	M.adjustFireLoss(rand(50, 100))
+	M.emote("scream")
+	M.visible_message("<span class='warning'>[M] is burnt badly by the lava!</span>")
+
+/datum/reagent/drink/lava/affect_ingest(var/mob/living/carbon/M)
+	M.take_organ_damage(15)
+	M.adjustFireLoss(rand(150, 200))
+	M.emote("scream")
+
 /datum/reagent/drink/erp
 	name = "Shame"
 	description = "You are a very bad person."
@@ -2091,10 +2091,10 @@
 
 	glass_name = "liquid shame"
 	glass_desc = "You feel dirty just looking at this."
-	
-	/datum/reagent/drink/erp/affect_ingest(var/mob/living/carbon/M)
-		M.emote("moan")
-	
+
+/datum/reagent/drink/erp/affect_ingest(var/mob/living/carbon/M)
+	M.emote("moan")
+
 /datum/reagent/drink/dog
 	name = "Dog"
 	description = "Ew..."
@@ -2105,7 +2105,7 @@
 
 	glass_name = "blended puppies"
 	glass_desc = "God, why?!"
-	
+
 /datum/reagent/drink/cat
 	name = "Cat"
 	description = "Ew..."
@@ -2116,7 +2116,7 @@
 
 	glass_name = "blended kittens"
 	glass_desc = "God, why?!"
-	
+
 /datum/reagent/drink/mouse
 	name = "Mouse"
 	description = "Ew..."
@@ -2138,6 +2138,3 @@
 
 	glass_name = "yogurt"
 	glass_desc = "Creamy and fat-free!"
-
-
-

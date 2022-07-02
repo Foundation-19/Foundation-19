@@ -12,7 +12,6 @@
 
 /obj/structure/closet/secure_closet/scientist/site13/WillContain()
 	return list(
-
 		/obj/item/clothing/suit/storage/toggle/labcoat/science,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/laceup,

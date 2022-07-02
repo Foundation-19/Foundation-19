@@ -41,6 +41,7 @@
 	//Multi-tile doors
 	dir = SOUTH
 	var/width = 1
+	var/turf/filler
 
 	//Used for intercepting clicks on our turf. Set 0 to disable click interception
 	var/turf_hand_priority = 3
@@ -77,11 +78,15 @@
 		if(dir in list(EAST, WEST))
 			bound_width = width * world.icon_size
 			bound_height = world.icon_size
+			filler = get_step(src, NORTH)
+			filler.set_opacity(opacity)
 		else
 			bound_width = world.icon_size
 			bound_height = width * world.icon_size
+			filler = get_step(src, EAST)
+			filler.set_opacity(opacity)
 
-	if (turf_hand_priority)
+	if(turf_hand_priority)
 		set_extension(src, /datum/extension/turf_hand, turf_hand_priority)
 
 	health = maxhealth
@@ -106,6 +111,9 @@
 		inherit_access_from_area()
 
 /obj/machinery/door/Destroy()
+	if(filler && width > 1)
+		filler.set_opacity(initial(filler.opacity))
+		filler = null
 	set_density(0)
 	update_nearby_tiles()
 	. = ..()
@@ -181,9 +189,9 @@
 	var/damage = Proj.get_structure_damage()
 
 	// Emitter Blasts - these will eventually completely destroy the door, given enough time.
-	if (damage > 90)
+	if(damage > 90)
 		destroy_hits--
-		if (destroy_hits <= 0)
+		if(destroy_hits <= 0)
 			visible_message("<span class='danger'>\The [src.name] disintegrates!</span>")
 			switch (Proj.damage_type)
 				if(BRUTE)
@@ -237,17 +245,17 @@
 
 		var/obj/item/stack/stack = I
 		var/transfer
-		if (repairing)
+		if(repairing)
 			transfer = stack.transfer_to(repairing, amount_needed - repairing.amount)
-			if (!transfer)
+			if(!transfer)
 				to_chat(user, "<span class='warning'>You must weld or remove \the [repairing] from \the [src] before you can add anything else.</span>")
 		else
 			repairing = stack.split(amount_needed)
-			if (repairing)
+			if(repairing)
 				repairing.forceMove(src)
 				transfer = repairing.amount
 
-		if (transfer)
+		if(transfer)
 			to_chat(user, "<span class='notice'>You fit [transfer] [stack.singular_name]\s to damaged and broken parts on \the [src].</span>")
 
 		return
@@ -262,7 +270,7 @@
 			to_chat(user, "<span class='notice'>You start to fix dents and weld \the [repairing] into place.</span>")
 			playsound(src, 'sound/items/Welder.ogg', 100, 1)
 			if(do_after(user, 5 * repairing.amount, src) && welder && welder.isOn())
-				if (!repairing)
+				if(!repairing)
 					return //the materials in the door have been removed before welding was finished.
 
 				to_chat(user, "<span class='notice'>You finish repairing the damage to \the [src].</span>")
@@ -279,7 +287,7 @@
 		repairing = null
 		return
 
-	if (check_force(I, user))
+	if(check_force(I, user))
 		return
 
 	if(src.operating > 0 || isrobot(user))	return //borgs can't attack doors open because it conflicts with their AI-like interaction with them.
@@ -308,15 +316,15 @@
 		return 1
 
 /obj/machinery/door/proc/check_force(obj/item/I, mob/user)
-	if (!istype(I))
+	if(!istype(I))
 		return FALSE
-	if (!density || user.a_intent != I_HURT)
+	if(!density || user.a_intent != I_HURT)
 		return FALSE
-	if (I.damtype != BRUTE && I.damtype != BURN)
+	if(I.damtype != BRUTE && I.damtype != BURN)
 		return FALSE
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.do_attack_animation(src)
-	if (I.force < min_force)
+	if(I.force < min_force)
 		visible_message(SPAN_WARNING("\The [user] hits \the [src] with \an [I] to no effect."))
 	else
 		visible_message(SPAN_DANGER("\The [user] hits \the [src] with \an [I], causing damage!"))
@@ -350,7 +358,7 @@
 	else if(src.health < src.maxhealth * 3/4)
 		to_chat(user, "\The [src] shows signs of damage!")
 
-	if (emagged && ishuman(user) && user.skill_check(SKILL_COMPUTER, SKILL_TRAINED))
+	if(emagged && ishuman(user) && user.skill_check(SKILL_COMPUTER, SKILL_TRAINED))
 		to_chat(user, SPAN_WARNING("\The [src]'s control panel looks fried."))
 
 
@@ -415,7 +423,7 @@
 		if("deny")
 			if(density && !(stat & (NOPOWER|BROKEN)))
 				flick("door_deny", src)
-				if (world.time > next_clicksound)
+				if(world.time > next_clicksound)
 					next_clicksound = world.time + CLICKSOUND_INTERVAL
 					playsound(src.loc, 'sound/machines/buzz-two.ogg', 50, 0)
 	return
@@ -430,6 +438,8 @@
 	do_animate("opening")
 	icon_state = "door0"
 	set_opacity(0)
+	if(filler)
+		filler.set_opacity(opacity)
 	sleep(animation_time*0.3)
 	src.set_density(0)
 	update_nearby_tiles()
@@ -437,6 +447,8 @@
 	src.layer = open_layer
 	update_icon()
 	set_opacity(0)
+	if(filler)
+		filler.set_opacity(opacity)
 	operating = 0
 
 	if(autoclose)
@@ -462,7 +474,9 @@
 	sleep(animation_time*0.7)
 	update_icon()
 	if(visible && !glass)
-		set_opacity(1)	//caaaaarn!
+		set_opacity(1) 	//caaaaarn!
+		if(filler)
+			filler.set_opacity(opacity)
 	operating = 0
 
 	//I shall not add a check every x ticks if a door has closed over some fire.
@@ -507,9 +521,15 @@
 		if(dir in list(EAST, WEST))
 			bound_width = width * world.icon_size
 			bound_height = world.icon_size
+			filler.set_opacity(initial(filler.opacity))
+			filler = (get_step(src, EAST))
+			filler.set_opacity(opacity)
 		else
 			bound_width = world.icon_size
 			bound_height = width * world.icon_size
+			filler.set_opacity(initial(filler.opacity))
+			filler = (get_step(src, NORTH))
+			filler.set_opacity(opacity)
 
 	if(.)
 		deconstruct(null, TRUE)
@@ -571,7 +591,7 @@
 
 /obj/machinery/door/proc/access_area_by_dir(direction)
 	var/turf/T = get_turf(get_step(src, direction))
-	if (T && !T.density)
+	if(T && !T.density)
 		return get_area(T)
 
 /obj/machinery/door/proc/inherit_access_from_area()
@@ -580,9 +600,9 @@
 	fore = fore || aft
 	aft = aft || fore
 
-	if (!fore && !aft)
+	if(!fore && !aft)
 		req_access = list()
-	else if (fore.secure || aft.secure)
+	else if(fore.secure || aft.secure)
 		req_access = req_access_union(fore, aft)
 	else
 		req_access = req_access_diff(fore, aft)

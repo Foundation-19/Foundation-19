@@ -11,10 +11,8 @@
 	icon_opened = "loopen"
 	icon_off = "looff"
 
-
 /obj/structure/closet/secure_closet/logistics/officer/WillContain()
 	return list(
-
 		/obj/item/clothing/gloves/thick,
 		/obj/item/clothing/glasses/sunglasses,
 		/obj/item/clothing/suit/storage/hazardvest,
