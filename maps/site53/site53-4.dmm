@@ -2754,6 +2754,11 @@
 	icon_state = "bordercolor"
 	},
 /obj/structure/filingcabinet/chestdrawer,
+/obj/machinery/light{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 0
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "gK" = (
@@ -3644,6 +3649,10 @@
 	icon_state = "bordercolor";
 	dir = 8
 	},
+/obj/machinery/camera/autoname{
+	dir = 4;
+	network = list("Entrance Zone Network")
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "jy" = (
@@ -3659,6 +3668,7 @@
 /area/site53/upper_surface/maincontrolroom)
 "jB" = (
 /obj/effect/floor_decal/corner/orange/bordercorner,
+/obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "jC" = (
@@ -3714,13 +3724,13 @@
 "jJ" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/orange/border,
+/obj/item/device/radio/intercom{
+	dir = 1;
+	pixel_y = -31
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "jK" = (
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
-	},
 /obj/machinery/computer/modular/preset/cardslot/command_sec{
 	dir = 8
 	},
@@ -3735,6 +3745,7 @@
 	icon_state = "bordercolorcorner";
 	dir = 8
 	},
+/obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "jM" = (
@@ -3765,19 +3776,17 @@
 	department = "Comms Officer";
 	pixel_x = -32
 	},
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 8;
-	icon_state = "bordercolor"
-	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/plating,
 /area/site53/upper_surface/commstower)
 "jT" = (
-/obj/machinery/papershredder,
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 4;
-	icon_state = "bordercolor"
+/obj/machinery/door/blast/regular/open{
+	dir = 1;
+	icon_state = "pdoor0";
+	id_tag = "commtower"
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
 "jU" = (
 /obj/effect/floor_decal/corner/orange/border{
@@ -3803,6 +3812,10 @@
 	dir = 4;
 	icon_state = "bordercolor"
 	},
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("Entrance Zone Network")
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "jX" = (
@@ -3814,12 +3827,15 @@
 	dir = 1;
 	icon_state = "bordercolor"
 	},
+/obj/machinery/light{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "jY" = (
-/obj/item/device/radio/intercom{
-	pixel_y = -30
-	},
 /obj/machinery/computer/message_monitor{
 	dir = 1
 	},
@@ -3849,6 +3865,10 @@
 /obj/machinery/vending/coffee{
 	dir = 1
 	},
+/obj/machinery/camera/autoname{
+	dir = 1;
+	network = list("Entrance Zone Network")
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "kd" = (
@@ -3857,31 +3877,18 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/upper_surface/commstower)
 "ke" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1";
-	pixel_y = 0
-	},
-/obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "ki" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "kj" = (
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+/obj/structure/bed/chair/office{
+	dir = 4
 	},
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 4;
-	icon_state = "bordercolor"
-	},
-/obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "kk" = (
@@ -3919,6 +3926,10 @@
 /obj/machinery/vending/cola{
 	dir = 1
 	},
+/obj/machinery/camera/autoname{
+	dir = 1;
+	network = list("Entrance Zone Network")
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "kq" = (
@@ -3928,6 +3939,11 @@
 /obj/effect/floor_decal/corner/orange/bordercorner{
 	icon_state = "bordercolorcorner";
 	dir = 4
+	},
+/obj/machinery/button/blast_door{
+	pixel_y = 24;
+	id_tag = "commtower";
+	name = "Communications Tower Blast Door button"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3939,9 +3955,8 @@
 /turf/simulated/floor,
 /area/site53/surface/surface)
 "kB" = (
-/obj/machinery/light,
 /obj/effect/floor_decal/corner/orange/border,
-/obj/structure/table/standard,
+/obj/structure/closet/secure_closet/freezer/fridge,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "kD" = (
@@ -4026,6 +4041,8 @@
 	dir = 6
 	},
 /obj/structure/table/standard,
+/obj/item/clothing/suit/chef/classic,
+/obj/item/material/knife/kitchen,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "kR" = (
@@ -4037,6 +4054,11 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 1;
+	icon_state = "pdoor0";
+	id_tag = "commtower"
 	},
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/commstower)
@@ -4102,6 +4124,21 @@
 /obj/effect/floor_decal/corner/orange/border{
 	icon_state = "bordercolor";
 	dir = 8
+	},
+/obj/structure/table/standard,
+/obj/machinery/button/blast_door{
+	id_tag = "dchecknorth";
+	name = "North CDZ Blastdoors";
+	req_access = list(202);
+	dir = 4;
+	pixel_x = -6
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "dchecksouth";
+	name = "South CDZ Blastdoors";
+	req_access = list(202);
+	dir = 4;
+	pixel_x = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -4183,6 +4220,14 @@
 "nl" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
+"nD" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8;
+	icon_state = "bordercolor"
+	},
+/obj/machinery/papershredder,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/upper_surface/commstower)
 "nH" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/effect/paint_stripe/red,
@@ -4298,6 +4343,16 @@
 "rG" = (
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"rI" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8;
+	icon_state = "bordercolor"
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/upper_surface/commstower)
 "rP" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -4531,15 +4586,12 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
 "AY" = (
-/obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("Entrance Zone Network")
-	},
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4;
 	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
+/obj/machinery/microwave,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "Ba" = (
@@ -4572,6 +4624,24 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
 /area/site53/entrancezone/forensics)
+"Cq" = (
+/obj/effect/floor_decal/corner/orange/border{
+	icon_state = "bordercolor";
+	dir = 8
+	},
+/obj/structure/table/standard,
+/obj/machinery/button/blast_door{
+	id_tag = "controlroom";
+	name = "Control Room Lockdown button";
+	req_access = list(601);
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/upper_surface/commstower)
+"Ct" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/upper_surface/commstower)
 "CH" = (
 /obj/structure/table/standard,
 /obj/item/folder/red,
@@ -4613,6 +4683,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
+"DH" = (
+/obj/effect/floor_decal/corner/orange/border{
+	icon_state = "bordercolor";
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/upper_surface/commstower)
 "DJ" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5;
@@ -4629,6 +4709,18 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
+/area/site53/upper_surface/commstower)
+"EH" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/obj/structure/table/standard,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/item/material/kitchen/rollingpin,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "Fo" = (
 /obj/structure/table/standard,
@@ -4820,6 +4912,11 @@
 	shuttle_tag = "Light Containment Tram"
 	},
 /obj/effect/floor_decal/corner/brown/mono,
+/obj/machinery/light{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 0
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "NJ" = (
@@ -4843,6 +4940,17 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
+"Oc" = (
+/obj/effect/floor_decal/corner/orange/border{
+	icon_state = "bordercolor";
+	dir = 8
+	},
+/obj/structure/table/standard,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/upper_surface/commstower)
 "Od" = (
 /obj/structure/window/reinforced,
 /obj/machinery/papershredder,
@@ -4863,6 +4971,28 @@
 /obj/effect/floor_decal/corner/yellow/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"OX" = (
+/obj/effect/floor_decal/corner/orange/border{
+	icon_state = "bordercolor";
+	dir = 8
+	},
+/obj/structure/table/standard,
+/obj/machinery/button/blast_door{
+	id_tag = "hczeast";
+	req_access = list(203);
+	dir = 4;
+	pixel_x = 4;
+	name = "East HCZ Entry Blast Doors"
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "hczwest";
+	req_access = list(203);
+	dir = 4;
+	pixel_x = -6;
+	name = "West HCZ Entry Blast Doors"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/upper_surface/commstower)
 "PE" = (
 /obj/machinery/light,
 /obj/structure/reagent_dispensers/water_cooler,
@@ -4929,6 +5059,37 @@
 /obj/structure/bed/chair/comfy,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"RU" = (
+/obj/effect/floor_decal/corner/orange/border{
+	icon_state = "bordercolor";
+	dir = 8
+	},
+/obj/machinery/camera/autoname{
+	dir = 4;
+	network = list("Entrance Zone Network")
+	},
+/obj/machinery/button/blast_door{
+	anchored = 0;
+	id_tag = "facilitylockdown";
+	name = "Facility Lockdown button";
+	req_access = list(604);
+	dir = 4
+	},
+/obj/structure/window/basic/full{
+	anchored = 0;
+	health_current = 5;
+	name = "Safety Glass"
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/table/steel,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/upper_surface/commstower)
+"Sv" = (
+/obj/structure/bed/chair/office{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/upper_surface/commstower)
 "SP" = (
 /obj/machinery/light{
 	dir = 8;
@@ -4941,6 +5102,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
+"Tg" = (
+/obj/effect/floor_decal/corner/orange/border,
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/upper_surface/commstower)
 "Tp" = (
 /obj/structure/bed/chair/comfy/red{
 	dir = 1;
@@ -4951,6 +5121,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"Ts" = (
+/obj/machinery/door/airlock/command{
+	name = "Communications Tower";
+	req_access = list(602)
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/upper_surface/commstower)
 "Tw" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -5019,6 +5196,18 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
+"Yr" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/obj/structure/table/standard,
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("Entrance Zone Network")
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/upper_surface/commstower)
 "Ys" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/structure/filingcabinet/chestdrawer,
@@ -31946,15 +32135,15 @@ jH
 jo
 jx
 jC
+eH
+Cq
+jV
+RU
 la
-jV
-jV
-jV
-la
-jV
-ke
+OX
+eH
 mQ
-jV
+Oc
 jy
 jH
 kV
@@ -32203,16 +32392,16 @@ jH
 hQ
 yB
 kr
+Ts
+ke
+ke
+ke
+ke
+ke
+Ts
 kr
 kr
-kr
-kr
-kr
-kr
-kr
-kr
-kr
-kB
+kO
 jH
 kV
 fC
@@ -32460,16 +32649,16 @@ jH
 kT
 kr
 jB
+eH
 jQ
 jQ
+DH
 jQ
 jQ
-jQ
-jQ
-jQ
+eH
 kP
 kr
-kO
+Tg
 jH
 kV
 fC
@@ -33496,7 +33685,7 @@ aY
 aY
 jH
 jp
-kr
+ki
 kK
 jH
 fC
@@ -33751,9 +33940,9 @@ jO
 jO
 jO
 aY
+jT
 ki
-ki
-kr
+kj
 kH
 jH
 hk
@@ -34008,9 +34197,9 @@ jO
 jO
 jO
 jO
+jT
 ki
-ki
-kr
+Ct
 kI
 jH
 hk
@@ -34265,9 +34454,9 @@ jO
 jO
 jO
 aY
+jT
 ki
-ki
-kr
+Sv
 kb
 jH
 hk
@@ -34524,7 +34713,7 @@ aY
 aY
 jH
 kq
-kr
+ki
 jM
 jH
 hk
@@ -35547,13 +35736,13 @@ jL
 jS
 kG
 kG
+rI
 kG
-kG
-kG
-kG
+nD
+eH
 kl
 kr
-kO
+kB
 jH
 hk
 hk
@@ -35801,16 +35990,16 @@ eH
 ju
 EA
 kr
-kr
+Ts
 kr
 EA
 kr
 kr
 kr
+Ts
 kr
 kr
-kr
-kB
+kO
 jH
 hk
 hk
@@ -36058,15 +36247,15 @@ eH
 jv
 jW
 jK
-jT
+eH
 jZ
 kZ
-kZ
+Yr
 jU
 HT
-kj
+eH
 AY
-kZ
+EH
 kQ
 jH
 hk

@@ -1,7 +1,7 @@
 var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 
 /datum/job/captain
-	title = "Captain"
+	title = "Site Director"
 	department = "Command"
 	head_position = 1
 	department_flag = COM
@@ -28,31 +28,30 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	return get_all_station_access()
 
 /datum/job/hop
-	title = "Head of Personnel"
+	title = "Human Resources Officer"
 	head_position = 1
 	department_flag = COM|CIV
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the captain"
+	supervisors = "the site director"
 	selection_color = "#2f2f7f"
 	req_admin_notify = 1
 	minimal_player_age = 14
 	economic_power = 10
 	ideal_character_age = 50
 
-	access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers,
-			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
-			            access_all_personal_lockers, access_maint_tunnels, access_bar, access_janitor, access_construction, access_morgue,
-			            access_crematorium, access_kitchen, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_hydroponics, access_lawyer,
-			            access_chapel_office, access_library, access_research, access_mining, access_heads_vault, access_mining_station,
-			            access_hop, access_RC_announce, access_keycard_auth, access_gateway)
-	minimal_access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers,
-			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
-			            access_all_personal_lockers, access_maint_tunnels, access_bar, access_janitor, access_construction, access_morgue,
-			            access_crematorium, access_kitchen, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_hydroponics, access_lawyer,
-			            access_chapel_office, access_library, access_research, access_mining, access_heads_vault, access_mining_station,
-			            access_hop, access_RC_announce, access_keycard_auth, access_gateway)
+	access = list(
+		access_adminlvl1,
+		access_adminlvl2,
+		access_adminlvl3,
+		access_adminlvl4,
+		access_com_comms,
+		access_civ_comms,
+		access_keyauth
+	)
+
+	minimal_access = list()
 
 	outfit_type = /decl/hierarchy/outfit/job/hop
 
@@ -78,11 +77,27 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 		..()
 
 	access = list(
-	access_securitylvl1,
-	access_securitylvl2,
-	access_securitylvl3,
-	access_securitylvl4
+		access_securitylvl1,
+		access_securitylvl2,
+		access_securitylvl3,
+		access_securitylvl4,
+		access_adminlvl1,
+		access_adminlvl2,
+		access_adminlvl3,
+		access_adminlvl4,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3,
+		access_engineeringlvl4,
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3,
+		access_sciencelvl4,
+		access_medicallvl1,
+		access_medicallvl2,
+		access_medicallvl3
 	)
+
 	minimal_access = list()
 
 /datum/job/o5rep
@@ -98,7 +113,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
-	alt_titles = null
+	alt_titles = list("Ethics Committee Representative")
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
 	allowed_branches = list(
 		/datum/mil_branch/civilian
@@ -109,7 +124,14 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_adminlvl1, access_adminlvl2, access_adminlvl3, access_adminlvl4, access_adminlvl5)
+	access = list(
+		access_adminlvl1,
+		access_adminlvl2,
+		access_adminlvl3,
+		access_adminlvl4,
+		access_adminlvl5
+	)
+
 	minimal_access = list()
 
 /datum/job/archivist
@@ -136,5 +158,46 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	equip(var/mob/living/carbon/human/H)
 		..()
 
-	access = list(access_sciencelvl1, access_sciencelvl2, access_sciencelvl3)
+	access = list(
+		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3,
+		access_sciencelvl4,
+		access_adminlvl1,
+		access_adminlvl2,
+		access_adminlvl3,
+		access_securitylvl1,
+		access_medicallvl1
+	)
+
+	minimal_access = list()
+
+/datum/job/goirep
+	title = "Global Occult Coalition Representative"
+	department = "Command"
+	selection_color = "#2f2f7f"
+	department_flag = COM
+	total_positions = 1
+	spawn_positions = 1
+//	//duties = "<big><b>As the GOC Representative, your task is to assess the facility and generally advocate for hardline approaches in regards to anomalies and their containment, or destruction. You value human lives far over any anomaly, as does the Global Occult Coalition, and should see to it that lives are preserved where possible, even D-Class ones. Though combat is not your duty, you are issued a revolver to defend yourself with. This job is heavy roleplay: you're expected to be well-versed in actually talking to people on the matters described. Containment of SCPs and direct site matters are not your matters, so don't get involved."
+//	//supervisors = "Global Occult Coalition Regional Command"
+	economic_power = 5
+	minimal_player_age = 5
+	minimal_player_age = 9
+	ideal_character_age = 30
+	alt_titles = list("UIU Relations Agent" = /decl/hierarchy/outfit/job/site90/crew/civ/uiu)
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/gocrep
+	allowed_branches = list(
+		/datum/mil_branch/civilian
+	)
+	allowed_ranks = list(
+		/datum/mil_rank/civ/classa
+	)
+	hud_icon = "hudgoi"
+
+	access = list(
+		access_com_comms,
+		access_adminlvl1
+	)
+
 	minimal_access = list()

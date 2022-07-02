@@ -396,17 +396,12 @@
 	name = "\improper Server Farm"
 	})
 "abd" = (
-<<<<<<< Updated upstream
-/obj/structure/inflatable/door,
-/turf/simulated/floor/tiled/monotile,
-=======
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
 	id_tag = "commspump"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
@@ -5911,11 +5906,7 @@
 /obj/machinery/computer/telecomms/server{
 	dir = 1
 	},
-<<<<<<< Updated upstream
-/turf/simulated/floor/tiled/monotile,
-=======
 /turf/simulated/floor/tiled/techfloor,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
@@ -6125,34 +6116,28 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
 "anZ" = (
-<<<<<<< Updated upstream
-/obj/machinery/door/airlock/external/glass/bolted,
-/obj/item/tape/engineering,
-/turf/simulated/floor/tiled/monotile,
-=======
 /obj/machinery/door/airlock/external/glass/bolted{
 	id_tag = "commsinnerdoor"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
 "aoa" = (
-<<<<<<< Updated upstream
-/obj/machinery/door/airlock/external/glass/bolted,
-/turf/simulated/floor/tiled/monotile,
-=======
 /obj/machinery/door/airlock/external/glass/bolted{
 	id_tag = "commsouterdoor"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
@@ -7413,16 +7398,12 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-<<<<<<< Updated upstream
-/turf/simulated/floor/tiled/monotile,
-=======
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techmaint,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
@@ -7437,6 +7418,11 @@
 	dir = 4;
 	network = list("Engineering Network");
 	c_tag = "Comms Tower Basement"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/commstower{
@@ -19352,12 +19338,7 @@
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
-<<<<<<< Updated upstream
-	icon_state = "4-8";
-	pixel_x = 0
-=======
 	icon_state = "4-8"
->>>>>>> Stashed changes
 	},
 /turf/simulated/floor/tiled/techfloor/grid{
 	temperature = 273.15;
@@ -19381,13 +19362,10 @@
 /obj/structure/cable/green{
 	dir = 4
 	},
-<<<<<<< Updated upstream
-=======
 /obj/machinery/power/apc/super/critical{
 	dir = 1;
 	pixel_y = 24
 	},
->>>>>>> Stashed changes
 /turf/simulated/floor/tiled/techfloor/grid{
 	temperature = 273.15;
 	initial_gas = null;
@@ -19426,15 +19404,6 @@
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/maintenance)
 "aQc" = (
-<<<<<<< Updated upstream
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/inflatable/wall,
-/turf/simulated/floor/tiled/monotile,
-=======
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -19452,7 +19421,6 @@
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
@@ -19493,23 +19461,6 @@
 	dir = 1;
 	pixel_x = 0;
 	pixel_y = 0
-<<<<<<< Updated upstream
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15;
-	initial_gas = null;
-	name = "airless floor"
-	},
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm"
-	})
-"aQu" = (
-/obj/item/tape/engineering,
-/obj/machinery/door/firedoor{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-=======
 	},
 /turf/simulated/floor/tiled/techfloor/grid{
 	temperature = 273.15;
@@ -19531,7 +19482,6 @@
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
@@ -19594,16 +19544,12 @@
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
-<<<<<<< Updated upstream
-/turf/simulated/floor/tiled/monotile,
-=======
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techmaint,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
@@ -19765,16 +19711,7 @@
 	pixel_y = 23;
 	req_access = list(201)
 	},
-<<<<<<< Updated upstream
-/obj/machinery/alarm{
-	frequency = 1439;
-	pixel_y = 23;
-	req_access = list(201)
-	},
-/turf/simulated/floor/tiled/monotile,
-=======
 /turf/simulated/floor/tiled/techfloor,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
@@ -19789,11 +19726,7 @@
 /obj/machinery/computer/telecomms/monitor{
 	dir = 1
 	},
-<<<<<<< Updated upstream
-/turf/simulated/floor/tiled/monotile,
-=======
 /turf/simulated/floor/tiled/techfloor,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
@@ -19803,19 +19736,9 @@
 	name = "\improper Server Farm"
 	})
 "aRh" = (
-<<<<<<< Updated upstream
-/obj/machinery/computer/rcon{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/commstower{
-	name = "\improper Server Farm Basement"
-	})
-=======
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_wall/prepainted,
 /area/space)
->>>>>>> Stashed changes
 "aRi" = (
 /obj/machinery/telecomms/server/presets/science,
 /turf/simulated/floor/bluegrid/airless,
@@ -19888,12 +19811,8 @@
 /obj/machinery/suit_storage_unit/engineering{
 	req_access = list("502")
 	},
-<<<<<<< Updated upstream
-/turf/simulated/floor/tiled/monotile,
-=======
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
@@ -19909,10 +19828,6 @@
 	frequency = 1439;
 	pixel_y = 23;
 	req_access = list(201)
-<<<<<<< Updated upstream
-	},
-/turf/simulated/floor/tiled/monotile,
-=======
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -19923,7 +19838,6 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/techmaint,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
@@ -19933,6 +19847,15 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/machinery/power/breakerbox/activated{
+	RCon_tag = "Telecommunications Breaker"
+	},
+/obj/structure/cable/green{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/upper_surface/commstower{
@@ -20005,13 +19928,6 @@
 	name = "\improper Server Farm Basement"
 	})
 "aRM" = (
-<<<<<<< Updated upstream
-/obj/machinery/computer/rdservercontrol{
-	dir = 1;
-	icon_state = "computer"
-	},
-/turf/simulated/floor/tiled/monotile,
-=======
 /obj/structure/flora/pottedplant/minitree,
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -20025,7 +19941,6 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
@@ -20090,9 +20005,6 @@
 	name = "Underground Helipads"
 	})
 "aRZ" = (
-<<<<<<< Updated upstream
-/obj/structure/cable{
-=======
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -20100,17 +20012,16 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
->>>>>>> Stashed changes
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
-<<<<<<< Updated upstream
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/r_wall/prepainted,
-=======
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techmaint,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
@@ -20133,14 +20044,7 @@
 /obj/machinery/atmospherics/pipe/cap/hidden/supply{
 	dir = 8
 	},
-<<<<<<< Updated upstream
-/obj/machinery/atmospherics/pipe/cap/hidden/scrubbers{
-	dir = 8
-	},
-/obj/machinery/door/firedoor{
-=======
 /obj/effect/floor_decal/industrial/warning{
->>>>>>> Stashed changes
 	dir = 4
 	},
 /obj/machinery/access_button/airlock_interior{
@@ -20174,15 +20078,6 @@
 	name = "\improper Server Farm Basement"
 	})
 "aSg" = (
-<<<<<<< Updated upstream
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/monotile,
-=======
 /obj/machinery/light,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -20190,7 +20085,6 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/techmaint,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
@@ -22852,20 +22746,11 @@
 	name = "\improper Server Farm Basement"
 	})
 "aYs" = (
-<<<<<<< Updated upstream
-/obj/structure/cable{
-=======
 /obj/structure/cable/green{
->>>>>>> Stashed changes
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-<<<<<<< Updated upstream
-/obj/machinery/door/airlock/external/glass/bolted,
-/obj/item/tape/engineering,
-/turf/simulated/floor/tiled/monotile,
-=======
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -22873,7 +22758,6 @@
 	id_tag = "commsinnerdoor"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
@@ -22928,15 +22812,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-<<<<<<< Updated upstream
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/inflatable/wall,
-/turf/simulated/floor/tiled/monotile,
-=======
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
 	id_tag = "commspump"
@@ -22946,21 +22821,10 @@
 	pixel_y = 25
 	},
 /turf/simulated/floor/tiled/techfloor,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
 "aYz" = (
-<<<<<<< Updated upstream
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
-/obj/machinery/door/airlock/external/glass/bolted,
-/turf/simulated/floor/tiled/monotile,
-=======
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -22970,7 +22834,6 @@
 	id_tag = "commsouterdoor"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
@@ -26444,11 +26307,7 @@
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
-<<<<<<< Updated upstream
-/turf/simulated/floor/tiled/monotile,
-=======
 /turf/simulated/floor/tiled/techfloor/grid,
->>>>>>> Stashed changes
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
@@ -27375,13 +27234,12 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
 "hrc" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "SCP-008";
-	req_access = list(list(203,304));
-	tag = "scp8exterior"
-	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/door/airlock/external/glass/bolted{
+	tag = "scp8exterior";
+	id_tag = "scp8exterior"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
 "hrk" = (
@@ -29187,6 +29045,11 @@
 "mTV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
@@ -30650,11 +30513,6 @@
 	name = "\improper Heavy Containment Zone Equipment Room"
 	})
 "rBB" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "SCP-008";
-	req_access = list(list(203,304));
-	tag = "scp8interior"
-	},
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
@@ -30669,6 +30527,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/machinery/door/airlock/external/glass/bolted{
+	id_tag = "scp8interior";
+	tag = "scp8interior"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -31391,7 +31253,6 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
-<<<<<<< Updated upstream
 "uza" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -31401,8 +31262,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
-=======
->>>>>>> Stashed changes
 "uzu" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/glass/fifty,
@@ -62492,10 +62351,6 @@ aCT
 amM
 amM
 aRO
-<<<<<<< Updated upstream
-anY
-=======
->>>>>>> Stashed changes
 anY
 mTV
 aqT
@@ -63011,15 +62866,9 @@ azA
 azA
 aAc
 aRC
-<<<<<<< Updated upstream
-aQP
-aRE
-aQP
-=======
 anP
 aRZ
 anO
->>>>>>> Stashed changes
 aAc
 azA
 azA
@@ -63787,17 +63636,10 @@ aSo
 aSm
 aSm
 aSp
-<<<<<<< Updated upstream
-aQP
-aAc
-aQc
-abd
-=======
 ali
 aAc
 aQc
 aQO
->>>>>>> Stashed changes
 aAc
 azA
 azA
@@ -64051,21 +63893,11 @@ anO
 anO
 vOx
 anP
-<<<<<<< Updated upstream
-anP
-anP
-aSg
-aRZ
-aYy
-abd
-ali
-=======
 aSg
 aAc
 aYy
 abd
 aAc
->>>>>>> Stashed changes
 azA
 azA
 azA
@@ -64315,15 +64147,9 @@ aQZ
 aQZ
 aAc
 aRb
-<<<<<<< Updated upstream
-aQP
-aQP
-aQP
-=======
 aWm
 ali
 aWm
->>>>>>> Stashed changes
 aRz
 aAc
 aYz
@@ -64584,11 +64410,7 @@ aWm
 aSm
 aRX
 aPP
-<<<<<<< Updated upstream
-aQz
-=======
 hMV
->>>>>>> Stashed changes
 aQz
 aQS
 aRg
@@ -65609,17 +65431,10 @@ alf
 alf
 azA
 azA
-<<<<<<< Updated upstream
-azA
-aAc
-nxO
-aQP
-=======
 aRh
 jIV
 anO
 anO
->>>>>>> Stashed changes
 aRe
 aRX
 aQz
@@ -65882,17 +65697,10 @@ aRX
 aQz
 aQz
 aQz
-<<<<<<< Updated upstream
 alc
 alc
 alc
 alc
-=======
-alc
-alc
-alc
-alc
->>>>>>> Stashed changes
 azA
 azA
 azA
@@ -66137,17 +65945,10 @@ aSr
 alf
 azA
 azA
-<<<<<<< Updated upstream
-azA
-aAc
-aSm
-aQP
-=======
 aRh
 jIV
 anO
 anO
->>>>>>> Stashed changes
 anE
 aRX
 aQz
@@ -66405,11 +66206,7 @@ aRh
 aAc
 aRG
 aRJ
-<<<<<<< Updated upstream
-aRh
-=======
 aRM
->>>>>>> Stashed changes
 aRX
 aQz
 aQz
