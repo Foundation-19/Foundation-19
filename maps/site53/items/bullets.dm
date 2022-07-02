@@ -286,8 +286,8 @@
 
 /obj/item/projectile/bullet/pistol
 	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
-	damage = 8 //9mm, .38, etc
-	armor_penetration = 34
+	damage = 25 //9mm, .38, etc
+	armor_penetration = 30
 	agony = 20
 
 /obj/item/projectile/bullet/pistol/rubber
@@ -298,7 +298,7 @@
 	armor_penetration = 2.5
 
 /obj/item/projectile/bullet/pistol/medium
-	damage = 10 //.45
+	damage = 30 //.45
 	armor_penetration = 15
 	agony = 25
 
@@ -327,8 +327,8 @@
 
 /obj/item/projectile/bullet/pistol/medium/smg //P90
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 20 //10mm
-	armor_penetration = 20
+	damage = 30 //10mm
+	armor_penetration = 35
 	agony = 10
 
 /obj/item/projectile/bullet/pistol/medium/smg/rubber
@@ -401,7 +401,7 @@
 
 /obj/item/projectile/bullet/rifle/a762
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
-	damage = 40
+	damage = 50
 	armor_penetration = 40
 	agony = 45
 
@@ -574,7 +574,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/a50
-	name = "magazine (.50)"
+	name = "magazine (.50ae)"
 	icon_state = "50ae"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
