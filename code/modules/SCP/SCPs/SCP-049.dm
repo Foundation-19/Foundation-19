@@ -1,8 +1,6 @@
 GLOBAL_LIST_EMPTY(scp049s)
 GLOBAL_LIST_EMPTY(scp049_1s)
 
-#define LANGUAGE_ZOMBIE "Zombie"
-
 /mob/living/carbon/human/scp049
 	desc = "A mysterious plague doctor."
 	SCP = /datum/scp/scp_049
@@ -40,7 +38,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049/Initialize()
 	..()
-	add_language(/datum/language/english)
 
 	// fix names
 	fully_replace_character_name("SCP-049")
@@ -81,8 +78,13 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 			mutations.Add(MUTATION_XRAY)
 			update_mutations()
 			update_sight()
+		add_language(LANGUAGE_ENGLISH)
+		add_language(LANGUAGE_HUMAN_FRENCH)
+		add_language(LANGUAGE_HUMAN_GERMAN)
+		add_language(LANGUAGE_HUMAN_SPANISH)
 	if(target)
 		target = null
+
 /mob/living/carbon/human/scp049/Logout()
 	. = ..()
 	if(mind)
@@ -439,18 +441,3 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	to_chat(src, "<span class='notice'>You have cured [target].</span>")
 	curing = FALSE
 	getTarget()
-
-/datum/language/zombie
-	name = LANGUAGE_ZOMBIE
-	desc = "A crude form of feral communication utilized by the shuffling horrors. The living only hear guttural wails of agony."
-	colour = "cult"
-	key = "a"
-	speech_verb = "growls"
-	exclaim_verb = "wails"
-	partial_understanding = list(
-		LANGUAGE_HUMAN_GERMAN = 30,
-		LANGUAGE_ENGLISH = 35
-	)
-	syllables = list("mhh..", "grr..", "nnh..")
-	shorthand = "ZM"
-	hidden_from_codex = TRUE
