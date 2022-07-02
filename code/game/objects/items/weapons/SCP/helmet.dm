@@ -55,11 +55,25 @@
 
 /obj/item/clothing/head/helmet/scp/eta
 	name = "Visored Helmet"
-	desc = "A anti-memetic helmet with a special visor to deal to visual memetic SCP's. If only you knew how to power it on..."
+	action_button_name = "Adjust Visor"
+	desc = "A anti-memetic helmet with a special visor to deal to visual memetic SCP's."
 	icon_state = "eta-helmet"
 	body_parts_covered = HEAD|FACE|EYES
 	cold_protection = HEAD|FACE|EYES
 	armor = list(melee = 70, bullet = 50, laser = 70, energy = 70, bomb = 30, bio = 15, rad = 10)
+	tint = TINT_NONE
+
+/obj/item/clothing/head/helmet/scp/eta/attack_self(mob/user)
+	var/action
+	if (tint == TINT_BLIND)
+		action = "de-activates"
+		tint = TINT_NONE
+	else if (tint == TINT_NONE)
+		action = "activates"
+		tint = TINT_BLIND
+	visible_message(SPAN_ITALIC("\The [user] [action] the visor on the [src]."), range = 3)
+	update_clothing_icon()
+
 
 /obj/item/clothing/head/helmet/scp/beta
 	name = "Armored Anti-Biological Hood"

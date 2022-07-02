@@ -7,7 +7,7 @@
 	icon_opened = "secureopen"
 	icon_off = "secureoff"
 	req_access = list(access_all_personal_lockers)
-	locked = FALSE
+	locked = TRUE
 	var/registered_name = null
 
 /obj/structure/closet/secure_closet/personal/WillContain()
