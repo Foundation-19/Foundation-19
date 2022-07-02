@@ -7428,9 +7428,9 @@
 	dir = 5
 	},
 /obj/machinery/camera/autoname{
+	c_tag = "Comms Tower Basement";
 	dir = 4;
-	network = list("Engineering Network");
-	c_tag = "Comms Tower Basement"
+	network = list("Engineering Network")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/commstower{
@@ -15246,8 +15246,8 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 9
+	dir = 9;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
@@ -17836,8 +17836,8 @@
 /area/site53/ulcz/hallways)
 "aMA" = (
 /obj/machinery/camera/autoname{
-	network = list("Heavy Containment Zone Network");
-	dir = 4
+	dir = 4;
+	network = list("Heavy Containment Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/tram)
@@ -19360,9 +19360,9 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15;
 	initial_gas = null;
-	name = "airless floor"
+	name = "airless floor";
+	temperature = 273.15
 	},
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
@@ -19389,9 +19389,9 @@
 	icon_state = "apc0"
 	},
 /turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15;
 	initial_gas = null;
-	name = "airless floor"
+	name = "airless floor";
+	temperature = 273.15
 	},
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
@@ -19433,10 +19433,10 @@
 	},
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	pixel_y = 16;
+	tag = "comms";
 	tag_airpump = "commspump";
-	tag_interior_door = "commsouterdoor";
 	tag_exterior_door = "commsinnerdoor";
-	tag = "comms"
+	tag_interior_door = "commsouterdoor"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
@@ -19491,9 +19491,9 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15;
 	initial_gas = null;
-	name = "airless floor"
+	name = "airless floor";
+	temperature = 273.15
 	},
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
@@ -19547,9 +19547,9 @@
 /area/site53/lowertrams/hub)
 "aQz" = (
 /turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15;
 	initial_gas = null;
-	name = "airless floor"
+	name = "airless floor";
+	temperature = 273.15
 	},
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
@@ -19806,9 +19806,9 @@
 "aRq" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15;
 	initial_gas = null;
-	name = "airless floor"
+	name = "airless floor";
+	temperature = 273.15
 	},
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
@@ -20089,8 +20089,8 @@
 	dir = 4
 	},
 /obj/machinery/access_button/airlock_interior{
-	pixel_y = 25;
-	master_tag = "comms"
+	master_tag = "comms";
+	pixel_y = 25
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -25634,8 +25634,8 @@
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/vending/wallmed1{
 	layer = 3.3;
@@ -25794,8 +25794,8 @@
 "bUj" = (
 /obj/item/stool/padded,
 /obj/machinery/camera/network/entrance{
-	icon_state = "camera";
-	dir = 1
+	dir = 1;
+	icon_state = "camera"
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
@@ -25919,8 +25919,8 @@
 "cnb" = (
 /obj/machinery/cryopod,
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 5
+	dir = 5;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
@@ -26408,13 +26408,13 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/button/blast_door{
-	pixel_y = 25;
 	id_tag = "evacbunkerblastdoor";
 	name = "Evacuation Bunker Blast Door button";
+	pixel_y = 25;
 	req_access = list(601)
 	},
 /turf/simulated/floor/tiled/white/monotile,
@@ -26445,8 +26445,8 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	icon_state = "map-scrubbers";
-	dir = 1
+	dir = 1;
+	icon_state = "map-scrubbers"
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -26473,8 +26473,8 @@
 "etJ" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/light/small/red{
-	icon_state = "bulb1";
-	dir = 4
+	dir = 4;
+	icon_state = "bulb1"
 	},
 /turf/simulated/floor,
 /area/site53/surface/bunker)
@@ -26647,10 +26647,12 @@
 /area/site53/science/seniorresearcherb)
 "faE" = (
 /obj/structure/table/standard,
-/obj/item/storage/pill_bottle/amnesticsc,
+/obj/item/reagent_containers/syringe/amnesticsc,
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/item/storage/pill_bottle/amnesticsa,
 /obj/effect/floor_decal/corner/red/mono,
+/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/item/reagent_containers/syringe/amnesticsc,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/zonecommanderoffice{
 	name = "\improper Heavy Containment Zone Equipment Room"
@@ -26676,10 +26678,10 @@
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	dir = 1;
 	pixel_y = -25;
-	tag_interior_door = "scp8interior";
-	tag_exterior_door = "scp8exterior";
 	req_access = list(list(203,304));
-	tag = "scp8"
+	tag = "scp8";
+	tag_exterior_door = "scp8exterior";
+	tag_interior_door = "scp8interior"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -26822,8 +26824,8 @@
 "fEN" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/camera/network/entrance{
-	icon_state = "camera";
-	dir = 8
+	dir = 8;
+	icon_state = "camera"
 	},
 /turf/simulated/floor,
 /area/site53/surface/bunker)
@@ -26973,8 +26975,8 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -27021,9 +27023,9 @@
 /area/site53/surface/bunker)
 "gpg" = (
 /obj/machinery/camera/autoname{
+	c_tag = "Server Farm Entrance";
 	dir = 4;
-	network = list("Engineering Network");
-	c_tag = "Server Farm Entrance"
+	network = list("Engineering Network")
 	},
 /obj/structure/bed/chair{
 	dir = 1;
@@ -27091,8 +27093,8 @@
 "gzY" = (
 /obj/structure/cryofeed,
 /obj/machinery/camera/network/entrance{
-	icon_state = "camera";
-	dir = 8
+	dir = 8;
+	icon_state = "camera"
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
@@ -27111,8 +27113,8 @@
 /area/site53/uhcz/scp247observation)
 "gDo" = (
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -27186,8 +27188,8 @@
 /area/site53/science/seniorresearcherb)
 "gQl" = (
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 1
+	dir = 1;
+	icon_state = "bulb1"
 	},
 /obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/freezer,
@@ -27293,8 +27295,8 @@
 "hld" = (
 /obj/structure/table/standard,
 /obj/machinery/button/holosign{
-	pixel_x = 24;
-	id_tag = "evacbunker"
+	id_tag = "evacbunker";
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -27320,16 +27322,16 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/external/glass/bolted{
-	tag = "scp8exterior";
-	id_tag = "scp8exterior"
+	id_tag = "scp8exterior";
+	tag = "scp8exterior"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
 "hrk" = (
 /obj/structure/table/standard,
 /obj/machinery/camera/autoname{
-	network = list("Engineering Network");
 	c_tag = "Server Farm Control";
+	network = list("Engineering Network");
 	pixel_x = 10
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -27458,14 +27460,14 @@
 /area/site53/surface/bunker)
 "hMV" = (
 /obj/machinery/access_button/airlock_exterior{
-	pixel_y = -25;
+	master_tag = "comms";
 	pixel_x = -25;
-	master_tag = "comms"
+	pixel_y = -25
 	},
 /turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 273.15;
 	initial_gas = null;
-	name = "airless floor"
+	name = "airless floor";
+	temperature = 273.15
 	},
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
@@ -27683,12 +27685,12 @@
 /area/site53/uhcz/scp096)
 "iDm" = (
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 5
+	dir = 5;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/light/small/red{
-	icon_state = "bulb1";
-	dir = 1
+	dir = 1;
+	icon_state = "bulb1"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -27943,8 +27945,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/camera/network/entrance{
-	icon_state = "camera";
-	dir = 1
+	dir = 1;
+	icon_state = "camera"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/surface/surface{
@@ -28082,13 +28084,13 @@
 /area/site53/uhcz/scp247containment)
 "jPM" = (
 /obj/machinery/button/crematorium{
-	pixel_y = -24;
 	id_tag = "scp8crem";
+	pixel_y = -24;
 	req_access = list(304)
 	},
 /obj/effect/floor_decal/industrial/loading{
-	icon_state = "loadingarea";
-	dir = 8
+	dir = 8;
+	icon_state = "loadingarea"
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -28141,8 +28143,8 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 6
+	dir = 6;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
@@ -28236,8 +28238,8 @@
 	name = "trash bin"
 	},
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 10
+	dir = 10;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
@@ -28255,8 +28257,8 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
@@ -28339,8 +28341,8 @@
 /area/site53/engineering/primaryhallway)
 "kJi" = (
 /obj/structure/hygiene/shower{
-	icon_state = "shower";
-	dir = 8
+	dir = 8;
+	icon_state = "shower"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
@@ -28417,8 +28419,8 @@
 /area/site53/uhcz/scp8containment)
 "kXm" = (
 /obj/structure/hygiene/shower{
-	icon_state = "shower";
-	dir = 8
+	dir = 8;
+	icon_state = "shower"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/hidden,
@@ -28428,8 +28430,8 @@
 /obj/structure/bed/roller,
 /obj/structure/iv_drip,
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
@@ -28475,8 +28477,8 @@
 /obj/structure/table/standard,
 /obj/machinery/microwave,
 /obj/machinery/camera/network/entrance{
-	icon_state = "camera";
-	dir = 8
+	dir = 8;
+	icon_state = "camera"
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
@@ -28721,16 +28723,16 @@
 /area/site53/llcz/scp131)
 "lGM" = (
 /obj/machinery/camera/network/entrance{
-	icon_state = "camera";
-	dir = 1
+	dir = 1;
+	icon_state = "camera"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
 "lJk" = (
 /obj/machinery/button/blast_door{
-	pixel_y = 24;
+	id_tag = "scp8panic";
 	name = "Panic button";
-	id_tag = "scp8panic"
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -28917,8 +28919,8 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/camera/network/entrance,
 /turf/simulated/floor/tiled/white/monotile,
@@ -28990,12 +28992,12 @@
 	dir = 4
 	},
 /obj/machinery/button/alternate/door/bolts{
-	pixel_y = 24;
-	id_tag = "evactoilet1"
+	id_tag = "evactoilet1";
+	pixel_y = 24
 	},
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 8
+	dir = 8;
+	icon_state = "bulb1"
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/surface/bunker)
@@ -29043,8 +29045,8 @@
 	dir = 4
 	},
 /obj/machinery/camera/network/entrance{
-	icon_state = "camera";
-	dir = 4
+	dir = 4;
+	icon_state = "camera"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
@@ -29248,14 +29250,14 @@
 /area/site53/uhcz/scp106observ)
 "njl" = (
 /obj/item/reagent_containers/glass/beaker/vial{
-	reagents = list(/datum/reagent/zombie=10);
-	name = "SCP-008"
+	name = "SCP-008";
+	reagents = list(/datum/reagent/zombie=10)
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/structure/closet/secure_closet/freezer{
 	icon = 'icons/obj/closets/fridge.dmi';
-	req_access = list(304);
-	name = "Secure Freezer"
+	name = "Secure Freezer";
+	req_access = list(304)
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -29301,12 +29303,12 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/light/small/red{
-	icon_state = "bulb1";
-	dir = 1
+	dir = 1;
+	icon_state = "bulb1"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -29406,8 +29408,8 @@
 /area/site53/llcz/scp263research)
 "nAG" = (
 /obj/structure/bed/chair{
-	icon_state = "chair_preview";
-	dir = 4
+	dir = 4;
+	icon_state = "chair_preview"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
@@ -29417,10 +29419,10 @@
 /area/site53/ulcz/generalpurpose)
 "nHk" = (
 /obj/structure/cable/green{
-	icon_state = "4-8";
-	pixel_z = 0;
 	d1 = 4;
-	d2 = 8
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_z = 0
 	},
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor,
@@ -29511,8 +29513,8 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -29544,11 +29546,11 @@
 /area/site53/ulcz/scp078)
 "oiT" = (
 /obj/machinery/access_button/airlock_exterior{
+	master_tag = "scp8";
 	pixel_x = 25;
 	pixel_y = -25;
-	master_tag = "scp8";
-	tag = "scp8exteriorbutton";
-	req_access = list(list(203,304))
+	req_access = list(list(203,304));
+	tag = "scp8exteriorbutton"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 6
@@ -29565,8 +29567,8 @@
 	})
 "omz" = (
 /obj/machinery/power/terminal{
-	icon_state = "term";
-	dir = 1
+	dir = 1;
+	icon_state = "term"
 	},
 /obj/structure/cable{
 	d1 = 2;
@@ -29622,8 +29624,8 @@
 /area/site53/uhcz/scp247observation)
 "osz" = (
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 10
+	dir = 10;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/light/small/red{
 	dir = 8
@@ -29684,8 +29686,8 @@
 /area/site53/uhcz/scp096)
 "oBq" = (
 /obj/structure/bed/chair{
-	icon_state = "chair_preview";
-	dir = 4
+	dir = 4;
+	icon_state = "chair_preview"
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
@@ -29732,17 +29734,17 @@
 "oJJ" = (
 /obj/machinery/button/alternate/door/bolts{
 	dir = 4;
-	pixel_x = -25;
 	id_tag = "evaccell";
 	name = "Bunker Brig Cell bolt button";
+	pixel_x = -25;
 	req_access = list(202)
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
 "oJO" = (
 /obj/machinery/camera/autoname{
-	network = list("Heavy Containment Zone Network");
-	dir = 4
+	dir = 4;
+	network = list("Heavy Containment Zone Network")
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/hallways)
@@ -29786,8 +29788,8 @@
 	name = "trash bin"
 	},
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 6
+	dir = 6;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
@@ -30008,9 +30010,9 @@
 /area/site53/uhcz/tramstation)
 "pze" = (
 /obj/machinery/camera/autoname{
+	c_tag = "Comms Tower Basement";
 	dir = 4;
-	network = list("Entrance Zone Network");
-	c_tag = "Comms Tower Basement"
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower{
@@ -30235,12 +30237,12 @@
 "qrk" = (
 /obj/structure/table/standard,
 /obj/machinery/camera/autoname{
-	network = list("Heavy Containment Zone Network");
-	dir = 4
+	dir = 4;
+	network = list("Heavy Containment Zone Network")
 	},
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
@@ -30258,8 +30260,8 @@
 /area/site53/uhcz/scp8containment)
 "qtf" = (
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
@@ -30382,8 +30384,8 @@
 	req_access = list()
 	},
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 5
+	dir = 5;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
@@ -30490,11 +30492,11 @@
 	dir = 1
 	},
 /obj/machinery/access_button/airlock_interior{
-	pixel_y = 25;
-	pixel_x = -25;
 	master_tag = "scp8";
-	tag = "scp8interiorbutton";
-	req_access = list(list(203,304))
+	pixel_x = -25;
+	pixel_y = 25;
+	req_access = list(list(203,304));
+	tag = "scp8interiorbutton"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9;
@@ -30570,8 +30572,8 @@
 /area/site53/uhcz/medicalpost)
 "rvd" = (
 /obj/effect/floor_decal/corner/orange/bordercorner{
-	icon_state = "bordercolorcorner";
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolorcorner"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -30589,8 +30591,8 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 9
+	dir = 9;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
@@ -30686,8 +30688,8 @@
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -30701,8 +30703,8 @@
 /area/site53/ulcz/generalpurpose)
 "rNe" = (
 /obj/machinery/camera/autoname{
-	network = list("Light Containment Zone Network");
-	dir = 8
+	dir = 8;
+	network = list("Light Containment Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/tram)
@@ -30728,8 +30730,8 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
@@ -30743,12 +30745,12 @@
 	dir = 4
 	},
 /obj/machinery/button/alternate/door/bolts{
-	pixel_y = 24;
-	id_tag = "evactoilet2"
+	id_tag = "evactoilet2";
+	pixel_y = 24
 	},
 /obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 8
+	dir = 8;
+	icon_state = "bulb1"
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/surface/bunker)
@@ -30759,8 +30761,8 @@
 "sdX" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/machinery/camera/network/entrance{
-	icon_state = "camera";
-	dir = 8
+	dir = 8;
+	icon_state = "camera"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
@@ -30779,8 +30781,8 @@
 /area/site53/ulcz/generalpurpose)
 "siU" = (
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 6
+	dir = 6;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/light/small/red,
 /turf/simulated/floor/tiled/white/monotile,
@@ -30923,15 +30925,15 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/orange/bordercorner{
-	icon_state = "bordercolorcorner";
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolorcorner"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
 "sQE" = (
 /obj/machinery/camera/network/entrance{
-	icon_state = "camera";
-	dir = 1
+	dir = 1;
+	icon_state = "camera"
 	},
 /turf/simulated/floor,
 /area/site53/surface/bunker)
@@ -30942,8 +30944,8 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
@@ -31093,8 +31095,8 @@
 /area/site53/lowertrams/orangeline)
 "tza" = (
 /obj/machinery/power/apc/hyper{
-	icon_state = "apc0";
 	dir = 1;
+	icon_state = "apc0";
 	req_access = list(501)
 	},
 /obj/structure/cable/green{
@@ -31266,8 +31268,8 @@
 /area/site53/lowertrams/redline)
 "ulE" = (
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -31295,8 +31297,8 @@
 /area/site53/llcz/scp263research)
 "uqB" = (
 /obj/structure/hygiene/shower{
-	icon_state = "shower";
-	dir = 4
+	dir = 4;
+	icon_state = "shower"
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -31309,8 +31311,8 @@
 /area/site53/uhcz/scp8containment)
 "urn" = (
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -31647,15 +31649,15 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/camera/network/entrance{
-	icon_state = "camera";
-	dir = 8
+	dir = 8;
+	icon_state = "camera"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lowertrams/orangeline)
 "vEH" = (
 /obj/structure/hygiene/shower{
-	icon_state = "shower";
-	dir = 8
+	dir = 8;
+	icon_state = "shower"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -31713,8 +31715,8 @@
 /area/site53/llcz/scp263research)
 "vJh" = (
 /obj/machinery/power/apc/high{
-	req_access = list(501);
-	dir = 1
+	dir = 1;
+	req_access = list(501)
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -31816,14 +31818,14 @@
 /area/site53/uhcz/hallways)
 "vTm" = (
 /obj/machinery/firealarm{
-	pixel_y = 17;
-	name = "emergency alarm"
+	name = "emergency alarm";
+	pixel_y = 17
 	},
 /obj/structure/cable/green{
-	icon_state = "4-8";
-	pixel_z = 0;
 	d1 = 4;
-	d2 = 8
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_z = 0
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -31865,8 +31867,8 @@
 /area/site53/uhcz/scp8containment)
 "vYs" = (
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
@@ -31978,8 +31980,8 @@
 /obj/structure/bed/roller,
 /obj/structure/iv_drip,
 /obj/effect/floor_decal/corner/red/border{
-	icon_state = "bordercolor";
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
@@ -32034,8 +32036,8 @@
 /area/site53/lhcz/scp343room)
 "wtF" = (
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white/monotile,
@@ -32155,8 +32157,8 @@
 "wGn" = (
 /obj/structure/table/standard,
 /obj/machinery/camera/network/entrance{
-	icon_state = "camera";
-	dir = 4
+	dir = 4;
+	icon_state = "camera"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -32287,8 +32289,8 @@
 /area/site53/ulcz/scp173)
 "xcy" = (
 /obj/machinery/camera/network/entrance{
-	icon_state = "camera";
-	dir = 4
+	dir = 4;
+	icon_state = "camera"
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
@@ -32569,16 +32571,16 @@
 "xQS" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/machinery/camera/network/entrance{
-	icon_state = "camera";
-	dir = 8
+	dir = 8;
+	icon_state = "camera"
 	},
 /turf/simulated/floor/grass,
 /area/site53/lowertrams/brownline)
 "xRk" = (
 /obj/machinery/door/airlock/glass/security{
-	req_access = list(202);
 	id_tag = "evaccell";
-	name = "Bunker Brig Cell"
+	name = "Bunker Brig Cell";
+	req_access = list(202)
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
@@ -32638,10 +32640,10 @@
 	icon_state = "2-8"
 	},
 /obj/structure/cable/green{
-	icon_state = "4-8";
-	pixel_z = 0;
 	d1 = 4;
-	d2 = 8
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_z = 0
 	},
 /obj/machinery/light{
 	dir = 1;
