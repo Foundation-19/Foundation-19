@@ -4795,7 +4795,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "ali" = (
-<<<<<<< Updated upstream
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -4807,8 +4806,6 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-=======
->>>>>>> Stashed changes
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/commstower)
 "alj" = (
@@ -7386,7 +7383,6 @@
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor/reinforced,
 /area/site53/lowertrams/escape)
-<<<<<<< Updated upstream
 "aqS" = (
 /obj/machinery/light{
 	dir = 8;
@@ -7408,8 +7404,6 @@
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
-=======
->>>>>>> Stashed changes
 "aqT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -19524,7 +19518,6 @@
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
-<<<<<<< Updated upstream
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -19536,8 +19529,6 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-=======
->>>>>>> Stashed changes
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/commstower)
 "aQF" = (
@@ -19729,7 +19720,6 @@
 "aRs" = (
 /obj/machinery/telecomms/server/presets/service,
 /turf/simulated/floor/bluegrid/airless,
-<<<<<<< Updated upstream
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm"
 	})
@@ -19754,9 +19744,6 @@
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
-=======
-/area/site53/upper_surface/commstower)
->>>>>>> Stashed changes
 "aRx" = (
 /obj/turbolift_map_holder/commstower,
 /turf/simulated/floor/tiled,
@@ -20004,7 +19991,6 @@
 /area/site53/upper_surface/commstower)
 "aSg" = (
 /obj/machinery/light,
-<<<<<<< Updated upstream
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
@@ -20015,8 +20001,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-=======
->>>>>>> Stashed changes
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/commstower)
 "aSj" = (
@@ -22694,16 +22678,10 @@
 	dir = 1;
 	icon_state = "bulb1"
 	},
-<<<<<<< Updated upstream
-/obj/machinery/power/smes/buildable/preset/on_full{
-	RCon_tag = "Telecommunications"
-	},
-=======
 /obj/structure/cable/green{
 	dir = 8
 	},
 /obj/machinery/power/smes/buildable/preset/ds90/substation_full,
->>>>>>> Stashed changes
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/upper_surface/commstower)
 "aYw" = (
@@ -30698,7 +30676,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-<<<<<<< Updated upstream
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
@@ -30708,13 +30685,6 @@
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
-=======
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/commstower)
->>>>>>> Stashed changes
 "sJU" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -31571,7 +31541,6 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
 /area/site53/ulcz/medicalpost)
-<<<<<<< Updated upstream
 "vOx" = (
 /obj/structure/cable/green{
 	icon_state = "2-4"
@@ -31585,8 +31554,6 @@
 /area/site53/upper_surface/commstower{
 	name = "\improper Server Farm Basement"
 	})
-=======
->>>>>>> Stashed changes
 "vOO" = (
 /obj/structure/cable/green{
 	d1 = 1;

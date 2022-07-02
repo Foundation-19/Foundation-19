@@ -1,4 +1,4 @@
-d/datum/map/site53
+/datum/map/site53
 
 	post_round_safe_areas = list (
 		/area/centcom,
@@ -263,7 +263,7 @@ d/datum/map/site53
 	icon_state = "checkpoint1"
 //	holomap_color = HOLOMAP_AREACOLOR_SECURITY
 
-/area/site53/upper_surface/serverfarm tunnel
+/area/site53/upper_surface/serverfarmtunnel
 	name = "\improper Server Farm Tunnel"
 	icon_state = "checkpoint1"
 //	holomap_color = HOLOMAP_AREACOLOR_SECURITY
