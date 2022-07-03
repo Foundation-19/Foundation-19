@@ -1,7 +1,7 @@
 /obj/structure/closet/secure_closet/personal
 	name = "personal closet"
 	desc = "It's a secure locker for personnel."
-	icon_state = "secure"
+	icon_state = "secure1"
 	icon_closed = "secure"
 	icon_locked = "secure1"
 	icon_opened = "secureopen"

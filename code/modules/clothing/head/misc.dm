@@ -342,7 +342,7 @@
 
 /obj/item/clothing/head/helmet/facecover
 	name = "face cover"
-	desc = "A helmet made of plastic. It's completely opaque. This will stop the stare."
+	desc = "A bag worn over your head to protect your identity or the one of the man dragging you."
 	icon_state = "facecover"
 	tint = TINT_BLIND
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR

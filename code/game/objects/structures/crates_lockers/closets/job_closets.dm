@@ -34,7 +34,8 @@
 /obj/structure/closet/chefcloset
 	name = "chef's closet"
 	desc = "It's a storage unit for foodservice garments."
-	closet_appearance = /decl/closet_appearance/wardrobe/black
+	icon_state = "black"
+	icon_closed = "black"
 
 /obj/structure/closet/chefcloset/WillContain()
 	return list(
@@ -52,7 +53,8 @@
 /obj/structure/closet/jcloset
 	name = "custodial closet"
 	desc = "It's a storage unit for janitorial clothes and gear."
-	closet_appearance = /decl/closet_appearance/wardrobe/mixed
+	icon_state = "mixed"
+	icon_closed = "mixed"
 
 /obj/structure/closet/jcloset/WillContain()
 	return list(

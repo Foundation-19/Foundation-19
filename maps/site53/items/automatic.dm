@@ -76,6 +76,7 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/ak
 	allowed_magazines = /obj/item/ammo_magazine/scp/ak
+	wielded_item_state = "ak47-wielded"
 
 	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty
 	firemodes = list(
