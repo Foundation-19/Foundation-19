@@ -50,7 +50,7 @@ datum/reagent/amnestics
 			if(M.dizziness <= 200)
 				M.make_dizzy(15) //will make you pretty dizzy to have your memories ripped out.
 				
-/datum/reagent/amnestics/classa/overdose(mob/living/carbon/M, removed)
+/datum/reagent/amnestics/classb/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(20 * removed) //Even bigger brain damage. DO NOT FUCK WITH MEMORIES.
 
 /datum/reagent/amnestics/classc
@@ -80,7 +80,7 @@ datum/reagent/amnestics
 			if(M.dizziness <= 200)
 				M.make_dizzy(15) //will make you pretty dizzy to have your memories ripped out.
 
-/datum/reagent/amnestics/classa/overdose(mob/living/carbon/M, removed)
+/datum/reagent/amnestics/classc/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(25 * removed) //Mega big brain damage. Amnestecize with caution.
 	M.adjustToxLoss(5 * removed) //Also kinda toxic
 
@@ -115,7 +115,7 @@ datum/reagent/amnestics
 			if(M.dizziness <= 200)
 				M.make_dizzy(10) //will make you pretty dizzy to have your memories ripped out.
 
-/datum/reagent/amnestics/classa/overdose(mob/living/carbon/M, removed)
+/datum/reagent/amnestics/classd/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(30 * removed) // OD straight up melts your brain. Get it out ASAP!
 	M.adjustToxLoss(10 * removed) //Very toxic.
 
@@ -143,7 +143,6 @@ datum/reagent/amnestics
 			M.eye_blurry = max(M.eye_blurry, 10)
 		else
 			M.sleeping = max(M.sleeping, 30)
-
 		M.add_chemical_effect(CE_BREATHLOSS, 1.5) //Target will have trouble breathing.
 		if(prob(20))
 			M.adjustBrainLoss(2.5 * removed) //Very minor chance to cause a little bit of brain damage.
