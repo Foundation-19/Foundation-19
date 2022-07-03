@@ -253,8 +253,18 @@
 	icon_state = "checkpoint1"
 //	holomap_color = HOLOMAP_AREACOLOR_SECURITY
 
-/area/site53/upper_surface/commstower1
-	name = "\improper Communications Tower"
+/area/site53/upper_surface/serverfarmcontrol
+	name = "\improper Server Farm Control Room"
+	icon_state = "checkpoint1"
+//	holomap_color = HOLOMAP_AREACOLOR_SECURITY
+
+/area/site53/upper_surface/serverfarminterior
+	name = "\improper Server Farm Interior"
+	icon_state = "checkpoint1"
+//	holomap_color = HOLOMAP_AREACOLOR_SECURITY
+
+/area/site53/upper_surface/serverfarmtunnel
+	name = "\improper Server Farm Tunnel"
 	icon_state = "checkpoint1"
 //	holomap_color = HOLOMAP_AREACOLOR_SECURITY
 

@@ -105,13 +105,13 @@
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/maincontrolroom)
 "ar" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	dir = 1;
 	icon_state = "pdoor0";
 	id_tag = "controlroom";
 	name = "Control Room Lockdown Blast Door"
 	},
+/obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/maincontrolroom)
 "as" = (
@@ -1485,12 +1485,13 @@
 "dE" = (
 /obj/structure/closet/secure_closet/scpscience/directorofscience,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/storage/pill_bottle/amnesticsc,
+/obj/item/reagent_containers/syringe/amnesticsc,
 /obj/item/folder,
 /obj/item/folder/blue,
 /obj/item/folder/red,
 /obj/item/folder/white,
 /obj/item/folder/yellow,
+/obj/item/reagent_containers/syringe/amnesticsc,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/hallway)
 "dF" = (
@@ -3642,12 +3643,12 @@
 	})
 "jx" = (
 /obj/machinery/computer/modular/preset/medical{
-	icon_state = "console";
-	dir = 4
+	dir = 4;
+	icon_state = "console"
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/camera/autoname{
 	dir = 4;
@@ -3681,8 +3682,8 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3742,8 +3743,8 @@
 /area/site53/upper_surface/commstower)
 "jL" = (
 /obj/effect/floor_decal/corner/orange/bordercorner{
-	icon_state = "bordercolorcorner";
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolorcorner"
 	},
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
@@ -3766,8 +3767,8 @@
 /area/site53/upper_surface/maincontrolroom)
 "jQ" = (
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3798,8 +3799,8 @@
 /area/site53/upper_surface/commstower)
 "jV" = (
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
@@ -3937,13 +3938,13 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/orange/bordercorner{
-	icon_state = "bordercolorcorner";
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolorcorner"
 	},
 /obj/machinery/button/blast_door{
-	pixel_y = 24;
 	id_tag = "commtower";
-	name = "Communications Tower Blast Door button"
+	name = "Communications Tower Blast Door button";
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -4122,23 +4123,23 @@
 /area/site53/upper_surface/commstower)
 "la" = (
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
+	dir = 4;
 	id_tag = "dchecknorth";
 	name = "North CDZ Blastdoors";
-	req_access = list(202);
-	dir = 4;
-	pixel_x = -6
+	pixel_x = -6;
+	req_access = list(202)
 	},
 /obj/machinery/button/blast_door{
+	dir = 4;
 	id_tag = "dchecksouth";
 	name = "South CDZ Blastdoors";
-	req_access = list(202);
-	dir = 4;
-	pixel_x = 4
+	pixel_x = 4;
+	req_access = list(202)
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -4201,8 +4202,8 @@
 	network = list("Entrance Zone Network")
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
@@ -4626,15 +4627,15 @@
 /area/site53/entrancezone/forensics)
 "Cq" = (
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
+	dir = 4;
 	id_tag = "controlroom";
 	name = "Control Room Lockdown button";
-	req_access = list(601);
-	dir = 4
+	req_access = list(601)
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -4685,8 +4686,8 @@
 /area/site53/entrancezone/forensics)
 "DH" = (
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/light{
 	dir = 4
@@ -4843,16 +4844,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
-"Li" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular/open{
-	dir = 1;
-	icon_state = "pdoor0";
-	id_tag = "controlroom";
-	name = "Control Room Lockdown Blast Door"
-	},
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/maincontrolroom)
 "LM" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -4942,8 +4933,8 @@
 /area/site53/upper_surface/maincontrolroom)
 "Oc" = (
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -4973,23 +4964,23 @@
 /area/site53/uez/conference)
 "OX" = (
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
-	id_tag = "hczeast";
-	req_access = list(203);
 	dir = 4;
+	id_tag = "hczeast";
+	name = "East HCZ Entry Blast Doors";
 	pixel_x = 4;
-	name = "East HCZ Entry Blast Doors"
+	req_access = list(203)
 	},
 /obj/machinery/button/blast_door{
-	id_tag = "hczwest";
-	req_access = list(203);
 	dir = 4;
+	id_tag = "hczwest";
+	name = "West HCZ Entry Blast Doors";
 	pixel_x = -6;
-	name = "West HCZ Entry Blast Doors"
+	req_access = list(203)
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -5061,8 +5052,8 @@
 /area/site53/uez/conference)
 "RU" = (
 /obj/effect/floor_decal/corner/orange/border{
-	icon_state = "bordercolor";
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/camera/autoname{
 	dir = 4;
@@ -5070,10 +5061,10 @@
 	},
 /obj/machinery/button/blast_door{
 	anchored = 0;
+	dir = 4;
 	id_tag = "facilitylockdown";
 	name = "Facility Lockdown button";
-	req_access = list(604);
-	dir = 4
+	req_access = list(604)
 	},
 /obj/structure/window/basic/full{
 	anchored = 0;
@@ -34421,7 +34412,7 @@ dy
 fZ
 aX
 jP
-Li
+ar
 es
 bg
 aa
@@ -34678,7 +34669,7 @@ dA
 gc
 vq
 jP
-Li
+ar
 bg
 bg
 aa
@@ -34935,7 +34926,7 @@ yv
 gc
 aX
 ge
-Li
+ar
 aa
 aa
 aa
@@ -35192,7 +35183,7 @@ fF
 gc
 bo
 ZL
-Li
+ar
 bg
 bg
 aa
@@ -35449,7 +35440,7 @@ XQ
 gc
 bo
 fF
-Li
+ar
 bg
 bg
 bg
@@ -35706,7 +35697,7 @@ Iz
 gc
 bo
 fF
-Li
+ar
 bg
 bg
 bg
@@ -35963,7 +35954,7 @@ fF
 gc
 bo
 ZL
-Li
+ar
 bg
 bg
 aa
@@ -36220,7 +36211,7 @@ qD
 gc
 aX
 ge
-Li
+ar
 aa
 aa
 aa
@@ -36477,7 +36468,7 @@ cp
 gc
 vq
 jP
-Li
+ar
 bg
 bg
 aa
@@ -36734,7 +36725,7 @@ fG
 gc
 aX
 jP
-Li
+ar
 ew
 bg
 aa

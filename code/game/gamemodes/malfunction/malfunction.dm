@@ -8,7 +8,7 @@
 	end_on_antag_death = FALSE
 	auto_recall_shuttle = FALSE
 	antag_tags = list(MODE_MALFUNCTION)
-	disabled_jobs = list("AI")
+	disabled_jobs = list("AIC")
 	cinematic_icon_states = list(
 		"intro_malf" = 76,
 		"summary_malf",

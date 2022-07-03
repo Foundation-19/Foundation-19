@@ -387,7 +387,7 @@
 
 	// --- AI ---
 	else if (isAI(M))
-		jobname = "AI"
+		jobname = "AIC"
 
 	// --- Cyborg ---
 	else if (isrobot(M))

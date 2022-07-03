@@ -150,7 +150,7 @@ var/global/list/empty_playable_ai_cores = list()
 					to_chat(user, "<span class='warning'>Sticking a dead [P] into the frame would sort of defeat the purpose.</span>")
 					return
 
-				if(jobban_isbanned(B, "AI"))
+				if(jobban_isbanned(B, "AIC"))
 					to_chat(user, "<span class='warning'>This [P] does not seem to fit.</span>")
 					return
 				if(!user.unEquip(P, src))

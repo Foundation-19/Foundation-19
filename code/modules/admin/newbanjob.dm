@@ -127,7 +127,7 @@ var/savefile/Banlistjob
 		return 1
 	if(rank == "AI_Cyborg")
 		AddBanjob(ckey, computerid, reason, bannedby, temp, minutes, "Cyborg")
-		AddBanjob(ckey, computerid, reason, bannedby, temp, minutes, "AI")
+		AddBanjob(ckey, computerid, reason, bannedby, temp, minutes, "AIC")
 		return 1
 	if(rank == "Detective_HoS")
 		AddBanjob(ckey, computerid, reason, bannedby, temp, minutes, "Detective")
