@@ -193,7 +193,10 @@ var/list/channel_color_presets = list(
 	"Raging Red" = COMMS_COLOR_SECURITY,
 	"Spectacular Silver" = COMMS_COLOR_ENTERTAIN,
 	"Tantalizing Turquoise" = COMMS_COLOR_MEDICAL,
-	"Viewable Violet" = COMMS_COLOR_SKRELL
+	"Viewable Violet" = COMMS_COLOR_SKRELL,
+	"Generic Gray" = COMMS_COLOR_HCZ,
+	"Velvet Violet" = COMMS_COLOR_LCZ,
+	"Outstanding Orange" = COMMS_COLOR_ECZ
 )
 
 // central command channels, i.e deathsquid & response teams
