@@ -135,7 +135,7 @@ var/list/ghost_traps
 *********************/
 /datum/ghosttrap/positronic
 	object = "positronic brain"
-	ban_checks = list("AI","Robot")
+	ban_checks = list("AIC","Robot")
 	pref_check = BE_SYNTH
 	ghost_trap_message = "They are occupying a positronic brain now."
 	ghost_trap_role = "Positronic Brain"

@@ -38,8 +38,8 @@ var/list/event_last_fired = list()
 	possibleEvents[/datum/event/rogue_drone] = 5 + 25 * active_with_role["Engineer"] + 25 * active_with_role["Security"]
 	possibleEvents[/datum/event/infestation] = 100 + 100 * active_with_role["Janitor"]
 
-	possibleEvents[/datum/event/communications_blackout] = 50 + 25 * active_with_role["AI"] + active_with_role["Scientist"] * 25
-	possibleEvents[/datum/event/ionstorm] = active_with_role["AI"] * 25 + active_with_role["Robot"] * 25 + active_with_role["Engineer"] * 10 + active_with_role["Scientist"] * 5
+	possibleEvents[/datum/event/communications_blackout] = 50 + 25 * active_with_role["AIC"] + active_with_role["Scientist"] * 25
+	possibleEvents[/datum/event/ionstorm] = active_with_role["AIC"] * 25 + active_with_role["Robot"] * 25 + active_with_role["Engineer"] * 10 + active_with_role["Scientist"] * 5
 	possibleEvents[/datum/event/grid_check] = 25 + 10 * active_with_role["Engineer"]
 	possibleEvents[/datum/event/electrical_storm] = 15 * active_with_role["Janitor"] + 5 * active_with_role["Engineer"]
 	possibleEvents[/datum/event/wallrot] = 30 * active_with_role["Engineer"] + 50 * active_with_role["Gardener"]
@@ -97,7 +97,7 @@ var/list/event_last_fired = list()
 	active_with_role["Medical"] = 0
 	active_with_role["Security"] = 0
 	active_with_role["Scientist"] = 0
-	active_with_role["AI"] = 0
+	active_with_role["AIC"] = 0
 	active_with_role["Robot"] = 0
 	active_with_role["Janitor"] = 0
 	active_with_role["Gardener"] = 0
@@ -132,8 +132,8 @@ var/list/event_last_fired = list()
 		if(M.mind.assigned_role in SSjobs.titles_by_department(SCI))
 			active_with_role["Scientist"]++
 
-		if(M.mind.assigned_role == "AI")
-			active_with_role["AI"]++
+		if(M.mind.assigned_role == "AIC")
+			active_with_role["AIC"]++
 
 		if(M.mind.assigned_role == "Robot")
 			active_with_role["Robot"]++

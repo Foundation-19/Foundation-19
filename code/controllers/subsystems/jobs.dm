@@ -443,7 +443,7 @@ SUBSYSTEM_DEF(jobs)
 		job.setup_account(H)
 
 		// EMAIL GENERATION
-		if(rank != "Robot" && rank != "AI")		//These guys get their emails later.
+		if(rank != "Robot" && rank != "AIC")		//These guys get their emails later.
 			var/domain
 			var/addr = H.real_name
 			var/pass

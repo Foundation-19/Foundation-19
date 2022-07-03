@@ -73,7 +73,7 @@
 
 	// Synthetics don't have actual records, so we will pull them from here.
 	for(var/mob/living/silicon/ai/ai in SSmobs.mob_list)
-		bot[ai.name] = "Artificial Intelligence"
+		bot[ai.name] = "Artificially Intelligent Construct"
 
 	for(var/mob/living/silicon/robot/robot in SSmobs.mob_list)
 		// No combat/syndicate cyborgs, no drones.
@@ -100,7 +100,7 @@
 	for(var/mob/living/silicon/ai/ai in SSmobs.mob_list)
 		filtered_entries.Add(list(list(
 			"name" = ai.name,
-			"rank" = "Artificial Intelligence",
+			"rank" = "Artificially Intelligent Construct",
 			"status" = ""
 		)))
 	for(var/mob/living/silicon/robot/robot in SSmobs.mob_list)

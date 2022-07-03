@@ -146,7 +146,7 @@
 /datum/follow_holder/ai
 	sort_order = 1
 	followed_type = /mob/living/silicon/ai
-	suffix = "AI"
+	suffix = "AIC"
 
 /datum/follow_holder/pai
 	sort_order = 2

@@ -13,7 +13,7 @@ Synthetic
 
 /datum/job/ai
 	minimal_player_age = 7
-	require_whitelist = "AI"
+	require_whitelist = "AIC"
 	allowed_ranks = list(
 		/datum/mil_rank/civ/synthetic
 	)
