@@ -35,10 +35,17 @@
 	desc = "A bright orange jumpsuit, indicative of Class D personnel."
 	icon_state = "d"
 
-/obj/item/clothing/under/ci
+/obj/item/clothing/under/scp/chaos
 	name = "tactical sweatshirt"
 	desc = "A white tactical shirt for tactical operations."
 	icon_state = "tac"
 	has_sensor = 0
-	armor = list(melee = 10, bullet = 10, laser = 10,energy = 0, bomb = 0, bio = 0, rad = 0)
+	armor = list(melee = 10, bullet = 10, laser = 10, energy = 0, bomb = 0, bio = 0, rad = 0)
+	siemens_coefficient = 0.9
+
+/obj/item/clothing/under/scp/alpha
+	name = "Alpha-1 uniform"
+	desc = "A modified uniform made specificly for the MTF unit 'Red Right Handp'."
+	icon_state = "alpha-uniform"
+	armor = list(melee = 30, bullet = 30, laser = 10, energy = 0, bomb = 5, bio = 0, rad = 0)
 	siemens_coefficient = 0.9

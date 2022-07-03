@@ -18,7 +18,18 @@
 	body_parts_covered = HANDS
 	siemens_coefficient = 0.50
 	permeability_coefficient = 0.05
-	armor = list(melee = 80, bullet = 80, laser = 60, energy = 25, bomb = 50, bio = 10, rad = 0)
+	armor = list(melee = 80, bullet = 40, laser = 30, energy = 25, bomb = 30, bio = 10, rad = 0)
+
+/obj/item/clothing/gloves/tactical/alpha
+	desc = "These grey tactical gloves are made from a durable synthetic, and have hardened knuckles."
+	name = "tactical gloves"
+	icon_state = "alpha-gloves"
+	item_state = "alpha-gloves"
+	force = 5
+	body_parts_covered = HANDS
+	siemens_coefficient = 0.50
+	permeability_coefficient = 0.05
+	armor = list(melee = 80, bullet = 80, laser = 60, energy = 30, bomb = 50, bio = 10, rad = 0)
 
 /obj/item/clothing/mask/smokable/cigarette/bluelady
 	name = "'blue lady' cigarette"
