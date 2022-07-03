@@ -231,7 +231,6 @@
 	economic_modifier = 4
 	minimal_player_age = 10
 	ideal_character_age = 25
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/site90/torch/crew/security/enlistedofficer
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -599,7 +598,6 @@
 	economic_modifier = 4
 	minimal_player_age = 10
 	ideal_character_age = 25
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/security/maa
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
