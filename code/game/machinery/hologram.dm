@@ -101,10 +101,10 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 		break
 
 	if(allow_ai && ai_exists)
-		handle_type = alert(user,"Would you like to request an AI's presence or establish communications with another pad?", "Holopad","AI","Holocomms","Cancel")
+		handle_type = alert(user,"Would you like to request an AI's presence or establish communications with another pad?", "Holopad","AIC","Holocomms","Cancel")
 
 	switch(handle_type)
-		if("AI")
+		if("AIC")
 			if(last_request + 200 < world.time) //don't spam the AI with requests you jerk!
 				last_request = world.time
 				to_chat(user, "<span class='notice'>You request an AI's presence.</span>")

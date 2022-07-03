@@ -3367,7 +3367,6 @@
 #include "maps\random_ruins\space_ruins\space_ruins.dm"
 #include "maps\site53\site53.dm"
 #include "maps\site53\site53_define.dm"
-#include "maps\site53\site53_presets.dm"
 #include "maps\site53\items\accesories.dm"
 #include "maps\site53\items\automatic.dm"
 #include "maps\site53\items\bullets.dm"
