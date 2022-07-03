@@ -127,7 +127,7 @@
 			new/obj/item/pen/crayon/mime(src)
 			new/obj/item/reagent_containers/food/drinks/bottle/bottleofnothing(src)
 		if(96)
-			new/obj/item/vampiric(src)
+			//new/obj/item/vampiric(src)
 		if(97)
 			new/obj/item/archaeological_find(src)
 		if(98)

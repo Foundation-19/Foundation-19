@@ -105,13 +105,13 @@
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/maincontrolroom)
 "ar" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	dir = 1;
 	icon_state = "pdoor0";
 	id_tag = "controlroom";
 	name = "Control Room Lockdown Blast Door"
 	},
+/obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/maincontrolroom)
 "as" = (
@@ -4844,16 +4844,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
-"Li" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular/open{
-	dir = 1;
-	icon_state = "pdoor0";
-	id_tag = "controlroom";
-	name = "Control Room Lockdown Blast Door"
-	},
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/maincontrolroom)
 "LM" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -34422,7 +34412,7 @@ dy
 fZ
 aX
 jP
-Li
+ar
 es
 bg
 aa
@@ -34679,7 +34669,7 @@ dA
 gc
 vq
 jP
-Li
+ar
 bg
 bg
 aa
@@ -34936,7 +34926,7 @@ yv
 gc
 aX
 ge
-Li
+ar
 aa
 aa
 aa
@@ -35193,7 +35183,7 @@ fF
 gc
 bo
 ZL
-Li
+ar
 bg
 bg
 aa
@@ -35450,7 +35440,7 @@ XQ
 gc
 bo
 fF
-Li
+ar
 bg
 bg
 bg
@@ -35707,7 +35697,7 @@ Iz
 gc
 bo
 fF
-Li
+ar
 bg
 bg
 bg
@@ -35964,7 +35954,7 @@ fF
 gc
 bo
 ZL
-Li
+ar
 bg
 bg
 aa
@@ -36221,7 +36211,7 @@ qD
 gc
 aX
 ge
-Li
+ar
 aa
 aa
 aa
@@ -36478,7 +36468,7 @@ cp
 gc
 vq
 jP
-Li
+ar
 bg
 bg
 aa
@@ -36735,7 +36725,7 @@ fG
 gc
 aX
 jP
-Li
+ar
 ew
 bg
 aa

@@ -57,7 +57,8 @@
 	name = "Visored Helmet"
 	action_button_name = "Adjust Visor"
 	desc = "A anti-memetic helmet with a special visor to deal to visual memetic SCP's."
-	icon_state = "eta-helmet"
+	icon_state = "eta-helmet-open"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
 	cold_protection = HEAD|FACE|EYES
 	armor = list(melee = 70, bullet = 50, laser = 70, energy = 70, bomb = 30, bio = 15, rad = 10)
@@ -67,9 +68,11 @@
 	var/action
 	if (tint == TINT_BLIND)
 		action = "de-activates"
+		icon_state = "eta-helmet-open"
 		tint = TINT_NONE
 	else if (tint == TINT_NONE)
 		action = "activates"
+		icon_state = "eta-helmet"
 		tint = TINT_BLIND
 	visible_message(SPAN_ITALIC("\The [user] [action] the visor on the [src]."), range = 3)
 	update_clothing_icon()
@@ -79,6 +82,7 @@
 	name = "Armored Anti-Biological Hood"
 	desc = "A hood combined kevlar and other materials to shield it against biological attacks, radiation and physical harm."
 	icon_state = "beta-helmet"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
 	cold_protection = HEAD|FACE|EYES
 	armor = list(melee = 90, bullet = 70, laser = 40, energy = 25, bomb = 50, bio = 90, rad = 90)
