@@ -230,3 +230,17 @@
 	filter_water = TRUE
 	body_parts_covered = FACE
 	w_class = 2
+
+/obj/item/clothing/mask/gas/alpha
+	name = "gas mask"
+	desc = "A face-covering mask that can be connected to an air supply, this one is designed for MTF unit 'Red Right Hand'."
+	icon_state = "alpha-mask"
+	item_state = "alpha-mask"
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	body_parts_covered = FACE|EYES
+	armor = list(
+		melee = ARMOR_MELEE_SMALL,
+		bullet = ARMOR_BALLISTIC_SMALL,
+		bio = ARMOR_BIO_STRONG,
+		rad = ARMOR_RAD_SMALL
+		)
