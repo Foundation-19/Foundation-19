@@ -107,7 +107,7 @@
 #define	COMMS_COLOR_ENGINEER   "#a66300"
 #define	COMMS_COLOR_SECURITY   "#930000"
 #define	COMMS_COLOR_SECURITY_I "#935050"
-#define	COMMS_COLOR_COMMAND    "#204090"
+#define	COMMS_COLOR_COMMAND    "#4160ad"
 #define	COMMS_COLOR_CENTCOMM   "#5c5c7c"
 #define	COMMS_COLOR_SYNDICATE  "#6d3f40"
 #define	COMMS_COLOR_SKRELL     "#7331c4"
@@ -115,6 +115,9 @@
 #define COMMS_COLOR_BEARCAT    "#590e2d"
 #define COMMS_COLOR_COLONY     "#ceaf3e"
 #define COMMS_COLOR_VERNE      "#738465"
+#define COMMS_COLOR_HCZ        "#884a5a"
+#define COMMS_COLOR_LCZ        "#b8a058"
+#define COMMS_COLOR_ECZ        "#545c68"
 
 #define WOOD_COLOR_GENERIC     "#d5a66e"
 #define WOOD_COLOR_RICH        "#792f27"
