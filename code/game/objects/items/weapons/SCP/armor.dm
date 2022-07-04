@@ -16,11 +16,11 @@
 	name = "plate carrier"
 
 /obj/item/clothing/suit/armor/pcarrier/scp/medium
-	accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor_tag/scp)
+	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor_tag/scp)
 
 
 /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
-	accessories = list(/obj/item/clothing/accessory/storage/pouches/green)
+	starting_accessories = list(/obj/item/clothing/accessory/storage/pouches/green)
 
 /obj/item/clothing/suit/armor/vest/scp
 	w_class = ITEM_SIZE_HUGE
