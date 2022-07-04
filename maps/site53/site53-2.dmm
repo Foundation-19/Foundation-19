@@ -6100,13 +6100,15 @@
 /area/site53/upper_surface/serverfarmtunnel)
 "anZ" = (
 /obj/machinery/door/airlock/external/glass/bolted{
-	id_tag = "commsinnerdoor"
+	id_tag = "commsinnerdoor";
+	locked = 0
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/upper_surface/serverfarminterior)
 "aoa" = (
 /obj/machinery/door/airlock/external/glass/bolted{
-	id_tag = "commsouterdoor"
+	id_tag = "commsouterdoor";
+	locked = 0
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/upper_surface/serverfarminterior)
@@ -9593,7 +9595,8 @@
 	icon_state = "corner_white"
 	},
 /obj/machinery/suit_storage_unit/engineering{
-	req_access = list("502")
+	req_access = list("502");
+	islocked = 0
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/storage)
@@ -10379,7 +10382,8 @@
 	icon_state = "corner_white"
 	},
 /obj/machinery/suit_storage_unit/engineering{
-	req_access = list("502")
+	req_access = list("502");
+	islocked = 0
 	},
 /obj/machinery/light{
 	dir = 4;
@@ -19621,7 +19625,8 @@
 /area/site53/upper_surface/serverfarminterior)
 "aRe" = (
 /obj/machinery/computer/telecomms/monitor{
-	dir = 1
+	dir = 1;
+	network = "tcommsat"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/upper_surface/serverfarmcontrol)
@@ -19680,7 +19685,8 @@
 /area/site53/upper_surface/serverfarmtunnel)
 "aRz" = (
 /obj/machinery/suit_storage_unit/engineering{
-	req_access = list("502")
+	req_access = list("502");
+	islocked = 0
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
@@ -19782,6 +19788,8 @@
 	pixel_x = 0
 	},
 /obj/structure/table/standard,
+/obj/item/inflatable/door,
+/obj/item/inflatable/door,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/upper_surface/serverfarmcontrol)
 "aRM" = (
@@ -22578,7 +22586,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external/glass/bolted{
-	id_tag = "commsinnerdoor"
+	id_tag = "commsinnerdoor";
+	locked = 0
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/upper_surface/serverfarminterior)
@@ -22647,7 +22656,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/external/glass/bolted{
-	id_tag = "commsouterdoor"
+	id_tag = "commsouterdoor";
+	locked = 0
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/upper_surface/serverfarminterior)
@@ -26548,6 +26558,12 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
+"fwB" = (
+/obj/structure/table/standard,
+/obj/item/inflatable/door,
+/obj/item/inflatable/door,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/upper_surface/serverfarmcontrol)
 "fwU" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
@@ -64217,7 +64233,7 @@ nxO
 nxO
 ali
 aWm
-aSm
+fwB
 aRX
 aPP
 hMV

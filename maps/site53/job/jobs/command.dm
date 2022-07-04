@@ -85,6 +85,8 @@ ut // COMMAND
 		access_adminlvl2,
 		access_adminlvl1,
 		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3,
 		access_securitylvl1,
 		access_sciencelvl1,
 		access_sciencelvl2,
@@ -138,7 +140,10 @@ ut // COMMAND
 		access_med_comms,
 		access_eng_comms,
 		access_sec_comms,
-		access_adminlvl1
+		access_adminlvl1,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3
 	)
 
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
