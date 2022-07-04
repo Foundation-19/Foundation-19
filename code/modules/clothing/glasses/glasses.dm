@@ -173,7 +173,7 @@
 	desc = "State-of-the-art SCRAMBLE goggles. These things cost a fortune and apperantly make you able to view SCP-096!"
 	icon_state = "scramble"
 	item_state = "glasses"
-	origin_tech = list(TECH_MAGNET = 4)
+	origin_tech = null
 	action_button_name = "Toggle Goggles"
 	toggleable = TRUE
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
