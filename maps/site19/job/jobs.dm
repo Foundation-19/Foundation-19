@@ -192,7 +192,6 @@
 	economic_modifier = 4
 	minimal_player_age = 10
 	ideal_character_age = 45
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site19/crew/security/ltofficerlcz
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -220,7 +219,6 @@
 	economic_modifier = 4
 	minimal_player_age = 10
 	ideal_character_age = 45
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site19/crew/security/ltofficerhcz
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -248,7 +246,6 @@
 	economic_modifier = 4
 	minimal_player_age = 10
 	ideal_character_age = 45
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site19/crew/security/ltofficerez
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -280,7 +277,6 @@
 	economic_modifier = 4
 	minimal_player_age = 5
 	ideal_character_age = 25
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site19/crew/security/ncoofficerlcz
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -311,7 +307,6 @@
 	economic_modifier = 4
 	minimal_player_age = 5
 	ideal_character_age = 25
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site19/crew/security/ncoofficerhcz
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -341,7 +336,6 @@
 	economic_modifier = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site19/crew/security/ncoofficerez
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -374,7 +368,6 @@
 	economic_modifier = 4
 //	minimal_player_age = 0
 	ideal_character_age = 25
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site19/crew/security/enlistedofficerlcz
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -403,7 +396,6 @@
 	economic_modifier = 4
 //	minimal_player_age = 0
 	ideal_character_age = 25
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site19/crew/security/enlistedofficerhcz
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -432,7 +424,6 @@
 	economic_modifier = 4
 	minimal_player_age = 0
 	ideal_character_age = 27
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site19/crew/security/enlistedofficerez
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -463,7 +454,6 @@
 	alt_titles = list("Xenobiologist Associate", "Xenoarcheologist Associate")
 	minimal_player_age = 0
 	ideal_character_age = 22
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site19/crew/science/juniorscientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
@@ -488,7 +478,6 @@
 	alt_titles = list("Xenobiologist", "Xenoarcheologist")
 	minimal_player_age = 5
 	ideal_character_age = 22
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site19/crew/science/scientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
@@ -513,7 +502,6 @@
 	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist")
 	minimal_player_age = 10
 	ideal_character_age = 22
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site19/crew/science/seniorscientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb)
@@ -1033,7 +1021,6 @@
 	economic_modifier = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site19/crew/civ/archivist
 	allowed_branches = list(
 		/datum/mil_branch/civilian
@@ -1062,7 +1049,6 @@
 	minimal_player_age = 5
 	minimal_player_age = 9
 	ideal_character_age = 30
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site19/crew/civ/o5rep
 	allowed_branches = list(
 		/datum/mil_branch/civilian

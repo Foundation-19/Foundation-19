@@ -235,7 +235,6 @@
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/archivist
 	allowed_branches = list(
 		/datum/mil_branch/civilian
