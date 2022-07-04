@@ -404,7 +404,7 @@
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "adminlvl3"
 	item_state = "Admin_ID"
-//	job_access_type = /datum/job/rd
+	job_access_type = /datum/job/goirep
 
 /obj/item/card/id/adminlvl4
 	name = " administration ID"
