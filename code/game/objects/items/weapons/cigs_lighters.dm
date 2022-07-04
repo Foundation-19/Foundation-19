@@ -225,13 +225,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/smokable/cigarette/update_icon()
 	..()
-	overlays.Cut()
+	cut_overlays()
 	if(lit)
 		overlays += overlay_image(icon, "cigon", flags=RESET_COLOR)
 
 /obj/item/clothing/mask/smokable/cigarette/trident/update_icon()
 	..()
-	overlays.Cut()
+	cut_overlays()
 	if(lit)
 		overlays += overlay_image(icon, "cigarello-on", flags=RESET_COLOR)
 

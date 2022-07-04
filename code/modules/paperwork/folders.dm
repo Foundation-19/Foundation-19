@@ -26,7 +26,7 @@
 	icon_state = "folder_nt"
 
 /obj/item/folder/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(contents.len)
 		overlays += "folder_paper"
 	return
@@ -68,7 +68,7 @@
 			if(P && (P.loc == src) && istype(P))
 				usr.put_in_hands(P)
 
-		else if(href_list["read"])			
+		else if(href_list["read"])
 			var/obj/item/paper/P = locate(href_list["read"])
 			if(P && (P.loc == src) && istype(P))
 				if(!(istype(usr, /mob/living/carbon/human) || isghost(usr) || istype(usr, /mob/living/silicon)))

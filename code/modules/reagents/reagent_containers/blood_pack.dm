@@ -30,7 +30,7 @@
 		w_class = ITEM_SIZE_TINY
 
 /obj/item/reagent_containers/ivbag/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	var/percent = round(reagents.total_volume / volume * 100)
 	if(reagents.total_volume)
 		var/image/filling = image('icons/obj/bloodpack.dmi', "[round(percent,25)]")

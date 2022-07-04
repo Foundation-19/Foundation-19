@@ -200,7 +200,7 @@ var/global/list/rad_collectors = list()
 	else
 		icon_state = "ca"
 
-	overlays.Cut()
+	cut_overlays()
 	underlays.Cut()
 
 	if(P)

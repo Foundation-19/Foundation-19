@@ -157,7 +157,7 @@
 		update_icon()
 
 /obj/machinery/smartfridge/drying_rack/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(inoperable())
 		if(contents.len)
 			icon_state = "drying_rack-plant-off"
@@ -217,7 +217,7 @@
 		src.throw_item()
 
 /obj/machinery/smartfridge/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(stat & (BROKEN|NOPOWER))
 		icon_state = "[icon_base]-off"
 	else

@@ -68,7 +68,7 @@
 /obj/item/flame/lighter/on_update_icon()
 	var/datum/extension/base_icon_state/bis = get_extension(src, /datum/extension/base_icon_state)
 
-	overlays.Cut()
+	cut_overlays()
 	if(lit)
 		overlays += overlay_image(icon, "[bis.base_icon_state]_flame", flags=RESET_COLOR)
 	else
@@ -142,7 +142,7 @@
 /obj/item/flame/lighter/zippo/on_update_icon()
 	var/datum/extension/base_icon_state/bis = get_extension(src, /datum/extension/base_icon_state)
 
-	overlays.Cut()
+	cut_overlays()
 	if(lit)
 		icon_state = "[bis.base_icon_state]_open"
 		item_state = "[bis.base_icon_state]_open"

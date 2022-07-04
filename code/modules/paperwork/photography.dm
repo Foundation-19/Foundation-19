@@ -43,7 +43,7 @@ var/global/photo_count = 0
 	user.examinate(src)
 
 /obj/item/photo/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	var/scale = 8/(photo_size*32)
 	var/image/small_img = image(img)
 	small_img.transform *= scale

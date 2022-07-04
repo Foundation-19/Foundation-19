@@ -44,7 +44,7 @@
 	update_icon()
 
 /obj/item/clothing/glasses/eyepatch/hud/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(active)
 		var/image/eye = overlay_image(icon, "[icon_state]_eye", flags=RESET_COLOR)
 		eye.color = eye_color

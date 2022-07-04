@@ -96,7 +96,7 @@
 		qdel(src)
 
 /obj/effect/razorweb/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	web.alpha = 255 * last_light
 	overlays = list(web, gleam)
 

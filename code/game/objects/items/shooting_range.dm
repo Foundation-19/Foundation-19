@@ -19,7 +19,7 @@
 	if(isWelder(W))
 		var/obj/item/weldingtool/WT = W
 		if(WT.remove_fuel(0, user))
-			overlays.Cut()
+			cut_overlays()
 			bulletholes.Cut()
 			hp = initial(hp)
 			to_chat(usr, "<span class='notice'>You slice off [src]'s uneven chunks of aluminium and scorch marks.</span>")

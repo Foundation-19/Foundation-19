@@ -45,7 +45,7 @@
 	if(holding)
 		icon_state = "holding"
 
-	overlays.Cut()
+	cut_overlays()
 	if(cloth)
 		overlays += new /icon(cloth.icon, cloth.icon_state)
 

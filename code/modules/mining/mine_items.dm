@@ -229,7 +229,7 @@
 	update_icon()
 
 /obj/item/stack/flag/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(upright)
 		pixel_x = 0
 		pixel_y = 0
@@ -239,7 +239,7 @@
 		addon.layer = ABOVE_LIGHTING_LAYER
 		addon.plane = EFFECTS_ABOVE_LIGHTING_PLANE
 		overlays += addon
-		set_light(0.5, 0.5, 3) 
+		set_light(0.5, 0.5, 3)
 	else
 		pixel_x = rand(-randpixel, randpixel)
 		pixel_y = rand(-randpixel, randpixel)

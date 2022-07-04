@@ -9,7 +9,7 @@
 	else
 		SetName(initial(name))
 
-	overlays.Cut()
+	cut_overlays()
 	var/new_overlays = list()
 	// Updates the plant overlay.
 	if(seed)

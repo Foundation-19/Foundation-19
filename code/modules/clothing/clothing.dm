@@ -488,7 +488,7 @@ BLIND     // can't see anything
 
 /obj/item/clothing/head/on_update_icon(var/mob/user)
 
-	overlays.Cut()
+	cut_overlays()
 	if(on)
 		// Generate object icon.
 		if(!light_overlay_cache["[light_overlay]_icon"])

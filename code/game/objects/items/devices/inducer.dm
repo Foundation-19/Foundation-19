@@ -159,7 +159,7 @@
 		to_chat(M,"<span class='notice'>Its battery compartment is open.</span>")
 
 /obj/item/inducer/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(opened)
 		if(!get_cell())
 			overlays += image(icon, "inducer-nobat")

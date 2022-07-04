@@ -20,7 +20,7 @@
 
 /obj/item/material/ashtray/on_update_icon()
 	..()
-	overlays.Cut()
+	cut_overlays()
 	if (contents.len == max_butts)
 		overlays |= image('icons/obj/objects.dmi',"ashtray_full")
 	else if (contents.len >= max_butts/2)

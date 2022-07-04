@@ -40,7 +40,7 @@
 /obj/structure/bed/on_update_icon()
 	// Prep icon.
 	icon_state = ""
-	overlays.Cut()
+	cut_overlays()
 	// Base icon.
 	var/cache_key = "[base_icon]-[material.name]"
 	if(isnull(stool_cache[cache_key]))
@@ -196,7 +196,7 @@
 	var/iv_stand = TRUE
 
 /obj/structure/bed/roller/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(density)
 		icon_state = "up"
 	else

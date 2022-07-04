@@ -14,7 +14,7 @@
 	wires =           /datum/wires/fabricator
 	base_type =       /obj/machinery/fabricator
 	construct_state = /decl/machine_construction/default/panel_closed
-	
+
 	machine_name = "autolathe"
 	machine_desc = "Autolathes can produce a very wide array of useful objects from raw materials."
 
@@ -99,7 +99,7 @@
 		update_current_build(wait)
 
 /obj/machinery/fabricator/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(stat & NOPOWER)
 		icon_state = "[base_icon_state]_d"
 	else if(currently_building)

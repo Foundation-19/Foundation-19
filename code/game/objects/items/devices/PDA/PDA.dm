@@ -877,7 +877,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 /obj/item/device/pda/update_icon()
 	..()
 
-	overlays.Cut()
+	cut_overlays()
 	if(new_message || new_news)
 		overlays += image('icons/obj/pda.dmi', "pda-r")
 

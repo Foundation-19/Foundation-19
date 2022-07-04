@@ -19,7 +19,7 @@
 	update_icon()
 
 /obj/machinery/beehive/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	icon_state = "beehive-[closed]"
 	if(closed)
 		overlays += "lid"
@@ -173,7 +173,7 @@
 	construct_state = /decl/machine_construction/default/panel_closed
 	uncreated_component_parts = null
 	stat_immune = 0
-	
+
 	machine_name = "honey extractor"
 	machine_desc = "Extracts liquid honey and solid blocks of wax from filled beehive frames. Requires an attached reagent container to operate."
 
@@ -186,7 +186,7 @@
 /obj/machinery/honey_extractor/cannot_transition_to(state_path, mob/user)
 	if(processing)
 		return SPAN_NOTICE("You must wait for \the [src] to finish first!")
-	return ..()	
+	return ..()
 
 /obj/machinery/honey_extractor/attackby(var/obj/item/I, var/mob/user)
 	if(processing)
@@ -288,14 +288,14 @@ var/global/list/datum/stack_recipe/wax_recipes = list(
 	full = 0
 	name = "empty bee pack"
 	desc = "A stasis pack for moving bees. It's empty."
-	overlays.Cut()
+	cut_overlays()
 	overlays += "beepack-empty"
 
 /obj/item/bee_pack/proc/fill()
 	full = initial(full)
 	SetName(initial(name))
 	desc = initial(desc)
-	overlays.Cut()
+	cut_overlays()
 	overlays += "beepack-full"
 
 /obj/structure/closet/crate/hydroponics/beekeeping

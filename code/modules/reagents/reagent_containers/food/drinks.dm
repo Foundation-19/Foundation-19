@@ -96,7 +96,7 @@
 			return k
 
 /obj/item/reagent_containers/food/drinks/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(reagents.reagent_list.len > 0)
 		if(base_name)
 			var/datum/reagent/R = reagents.get_master_reagent()

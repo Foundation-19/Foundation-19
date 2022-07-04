@@ -738,7 +738,7 @@ About the new airlock wires panel:
 		brace.update_icon()
 		brace_overlay += image(brace.icon, brace.icon_state)
 
-	overlays.Cut()
+	cut_overlays()
 
 	overlays += color_overlay
 	overlays += filling_overlay
@@ -753,7 +753,7 @@ About the new airlock wires panel:
 
 /obj/machinery/door/airlock/do_animate(animation)
 	if(overlays)
-		overlays.Cut()
+		cut_overlays()
 
 	switch(animation)
 		if("opening")

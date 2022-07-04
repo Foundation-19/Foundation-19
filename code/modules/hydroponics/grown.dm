@@ -132,7 +132,7 @@
 /obj/item/reagent_containers/food/snacks/grown/on_update_icon()
 	if(!seed)
 		return
-	overlays.Cut()
+	cut_overlays()
 	icon_state = "[seed.get_trait(TRAIT_PRODUCT_ICON)]-product"
 	color = seed.get_trait(TRAIT_PRODUCT_COLOUR)
 	if("[seed.get_trait(TRAIT_PRODUCT_ICON)]-leaf" in icon_states('icons/obj/hydroponics_products.dmi'))

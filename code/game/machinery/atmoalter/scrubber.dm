@@ -12,7 +12,7 @@
 
 	power_rating = 7500 //7500 W ~ 10 HP
 	power_losses = 150
-	
+
 	machine_name = "portable scrubber"
 	machine_desc = "Portable scrubbers can be freely moved from place to place in order to draw harmful gases out of the air. It runs on a battery backup and can be connected to atmospherics networks."
 
@@ -41,7 +41,7 @@
 	..(severity)
 
 /obj/machinery/portable_atmospherics/powered/scrubber/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 
 	if((use_power == POWER_USE_ACTIVE) && !(stat & (NOPOWER | BROKEN)))
 		icon_state = "pscrubber:1"
@@ -161,7 +161,7 @@
 	maximum_component_parts = list(/obj/item/stock_parts = 15)
 	idle_power_usage = 500		//internal circuitry, friction losses and stuff
 	power_rating = 100000 //100 kW ~ 135 HP
-	
+
 	machine_name = "large portable scrubber"
 	machine_desc = "A heavy-duty scrubbing machine with greatly enhanced filtration power. Typically used around areas where a gas breach could be disastrous."
 
@@ -183,7 +183,7 @@
 	return TRUE
 
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 
 	if((use_power == POWER_USE_ACTIVE) && !(stat & (NOPOWER|BROKEN)))
 		icon_state = "scrubber:1"

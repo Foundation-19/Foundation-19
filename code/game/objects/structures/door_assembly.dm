@@ -183,7 +183,7 @@
 
 	else if(istype(W, /obj/item/stack/material) && !glass)
 		var/obj/item/stack/material/S = W
-		var/material_name = S.get_material_name()		
+		var/material_name = S.get_material_name()
 		if (S)
 			if (S.get_amount() >= 1)
 				if(material_name == MATERIAL_GLASS && S.reinf_material)
@@ -227,7 +227,7 @@
 	update_state()
 
 /obj/structure/door_assembly/proc/update_state()
-	overlays.Cut()
+	cut_overlays()
 	var/image/filling_overlay
 	var/image/panel_overlay
 	var/final_name = ""

@@ -92,7 +92,7 @@
 
 
 /obj/item/device/assembly/prox_sensor/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	attached_overlays = list()
 	if(timing)
 		overlays += "prox_timing"

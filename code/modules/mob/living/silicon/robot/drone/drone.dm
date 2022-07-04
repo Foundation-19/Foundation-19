@@ -159,7 +159,7 @@ var/list/mob_hat_cache = list()
 
 /mob/living/silicon/robot/drone/on_update_icon()
 
-	overlays.Cut()
+	cut_overlays()
 	if(stat == 0)
 		if(emagged)
 			overlays += "eyes-[icon_state]-emag"

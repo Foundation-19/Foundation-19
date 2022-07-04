@@ -58,7 +58,7 @@
 	update_icon(1)
 
 /turf/simulated/floor/exoplanet/on_update_icon(var/update_neighbors)
-	overlays.Cut()
+	cut_overlays()
 	if(LAZYLEN(decals))
 		overlays += decals
 	for(var/direction in GLOB.cardinal)
@@ -196,7 +196,7 @@
 	icon_state = "concrete"
 
 /turf/simulated/floor/exoplanet/concrete/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(burnt)
 		overlays |= get_damage_overlay("burned[(x + y) % 3]", BLEND_MULTIPLY)
 	if(broken)

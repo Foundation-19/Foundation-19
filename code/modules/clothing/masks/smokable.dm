@@ -188,13 +188,13 @@
 
 /obj/item/clothing/mask/smokable/cigarette/on_update_icon()
 	..()
-	overlays.Cut()
+	cut_overlays()
 	if(lit)
 		overlays += overlay_image(icon, "cigon", flags=RESET_COLOR)
 
 /obj/item/clothing/mask/smokable/cigarette/trident/on_update_icon()
 	..()
-	overlays.Cut()
+	cut_overlays()
 	if(lit)
 		overlays += overlay_image(icon, "cigarello-on", flags=RESET_COLOR)
 

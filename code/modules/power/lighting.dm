@@ -234,7 +234,7 @@
 	. = ..()
 
 /obj/machinery/light/on_update_icon(var/trigger = 1)
-	overlays.Cut()
+	cut_overlays()
 	icon_state = "[base_state]_empty" //Never use the initial state. That'll just reset it to the mapping icon.
 	atom_flags = atom_flags & ~ATOM_FLAG_CAN_BE_PAINTED
 	pixel_y = 0

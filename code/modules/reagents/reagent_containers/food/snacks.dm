@@ -161,7 +161,7 @@
 			to_chat(user, SPAN_NOTICE("You scoop up some [src] with \the [U]!"))
 
 			src.bitecount++
-			U.overlays.Cut()
+			U.cut_overlays()
 			U.loaded = "[src]"
 			var/image/I = new(U.icon, "loadedfood")
 			I.color = src.filling_color
@@ -699,7 +699,7 @@
 
 /obj/item/pizzabox/on_update_icon()
 
-	overlays.Cut()
+	cut_overlays()
 
 	// Set appropriate description
 	if( open && pizza )

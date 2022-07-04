@@ -190,7 +190,7 @@
 	return TRUE
 
 /obj/machinery/chemical_dispenser/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(container)
 		var/mutable_appearance/beaker_overlay
 		beaker_overlay = image('icons/obj/chemical.dmi', src, "lil_beaker")

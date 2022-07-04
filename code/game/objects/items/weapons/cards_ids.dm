@@ -59,7 +59,7 @@
 	update_icon()
 /* Create proc to disable overlays ~~ Lestat
 /obj/item/card/data/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	var/image/detail_overlay = image('icons/obj/card.dmi', src,"[icon_state]-color")
 	detail_overlay.color = detail_color
 	overlays += detail_overlay
@@ -189,7 +189,7 @@ var/const/NO_EMAG_ACT = -50
 	return ret
 
 /obj/item/card/id/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	overlays += overlay_image(icon, "[icon_state]_colors", detail_color, RESET_COLOR)
 	for(var/detail in extra_details)
 		overlays += overlay_image(icon, detail, flags=RESET_COLOR)

@@ -90,7 +90,7 @@
 	maptext_y = 38
 
 /obj/screen/chorus_current_building/proc/update_to_building(var/datum/chorus_building/build)
-	overlays.Cut()
+	cut_overlays()
 	if(build)
 		var/image/I = build.get_image()
 		I.pixel_y = 17

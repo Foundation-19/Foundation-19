@@ -69,7 +69,7 @@
 	use_power = POWER_USE_OFF
 	power_channel = EQUIP
 	idle_power_usage = 21600 //6 Wh per tick for default 2 capacitor. Gives them a reason to turn it off, really to nerf backup battery
-	
+
 	machine_name = "gas thruster"
 	machine_desc = "A heavy-duty spaceship thruster that throws gas out of its nozzle to allow propulsion."
 
@@ -103,7 +103,7 @@
 	. = ..()
 
 /obj/machinery/atmospherics/unary/engine/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(is_on())
 		overlays += image_repository.overlay_image(icon, "nozzle_idle", plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
 

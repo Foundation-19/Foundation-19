@@ -126,7 +126,7 @@
 	if(!exposed)
 		return
 	icon_state = "open"
-	overlays.Cut()
+	cut_overlays()
 	if(buckled_mob)
 		overlays += image(icon,icon_state="overlay",layer=ABOVE_HUMAN_LAYER)
 

@@ -163,7 +163,7 @@
 	overlays += item_image
 
 /obj/item/tray/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	for (var/obj/item/carried in carrying)
 		add_item_overlay(carried)
 

@@ -63,7 +63,7 @@ obj/machinery/embedded_controller/radio/Destroy()
 	..()
 
 /obj/machinery/embedded_controller/radio/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(!on || !istype(program))
 		return
 	if(!program.memory["processing"])
@@ -77,7 +77,7 @@ obj/machinery/embedded_controller/radio/Destroy()
 		if(docking_program.override_enabled)
 			overlays += image(icon, "indicator_forced")
 		airlock_program = docking_program.airlock_program
-	
+
 	if(istype(airlock_program) && airlock_program.memory["processing"])
 		if(airlock_program.memory["pump_status"] == "siphon")
 			overlays += image(icon, "screen_drain")

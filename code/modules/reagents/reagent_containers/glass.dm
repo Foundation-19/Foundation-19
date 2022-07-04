@@ -154,7 +154,7 @@
 		update_icon()
 
 	update_icon()
-		overlays.Cut()
+		cut_overlays()
 
 		if(reagents.total_volume)
 			var/image/filling = image('icons/obj/reagentfillings.dmi', src, "[icon_state]10")
@@ -298,7 +298,7 @@
 		return ..()
 
 /obj/item/reagent_containers/glass/bucket/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if (!is_open_container())
 		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
 		overlays += lid

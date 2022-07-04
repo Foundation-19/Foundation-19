@@ -17,7 +17,7 @@
 
 	power_rating = 7500 //7500 W ~ 10 HP
 	power_losses = 150
-	
+
 	machine_name = "portable pump"
 	machine_desc = "Used to equalize the pressure of the atmosphere in a surrounding area with its own contents, or to draw in air from the area around it. Runs on a battery backup; can be connected to atmospherics networks."
 
@@ -31,7 +31,7 @@
 	src.air_contents.adjust_multi(GAS_OXYGEN, air_mix[GAS_OXYGEN], GAS_NITROGEN, air_mix[GAS_NITROGEN])
 
 /obj/machinery/portable_atmospherics/powered/pump/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 
 	if((use_power == POWER_USE_ACTIVE) && !(stat & NOPOWER))
 		icon_state = "psiphon:1"

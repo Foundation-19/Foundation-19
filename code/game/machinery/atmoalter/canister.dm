@@ -256,7 +256,7 @@ update_flag
 */
 
 	if (destroyed)
-		overlays.Cut()
+		cut_overlays()
 		icon_state = text("[]-1", canister_color)
 		return
 
@@ -266,7 +266,7 @@ update_flag
 	if (check_change()) //Returns 1 if no change needed to icons.
 		return
 
-	overlays.Cut()
+	cut_overlays()
 
 	if (update_flag & CANISTER_FLAG_HASTANK)
 		overlays += "can-open"

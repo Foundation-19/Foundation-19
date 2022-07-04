@@ -17,7 +17,7 @@
 	should_be_mapped = 1
 	base_type = /obj/machinery/power/smes/batteryrack
 	maximum_component_parts = list(/obj/item/stock_parts = 15)
-	
+
 	machine_name = "battery rack PSU"
 	machine_desc = "A very simple power storage solution: several power cells on a rack. About as basic as you can get."
 
@@ -47,7 +47,7 @@
 	return ..()
 
 /obj/machinery/power/smes/batteryrack/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	icon_update = 0
 
 	var/cellcount = 0

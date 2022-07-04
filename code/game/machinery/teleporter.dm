@@ -306,7 +306,7 @@
 
 /obj/machinery/teleport/station/New()
 	..()
-	overlays.Cut()
+	cut_overlays()
 	overlays += image('icons/obj/stationobjs.dmi', icon_state = "controller-wires")
 
 /obj/machinery/teleport/station/attackby(var/obj/item/weapon/W)

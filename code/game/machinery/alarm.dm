@@ -930,7 +930,7 @@ FIRE ALARM
 	return overlays_cache[state]
 
 /obj/machinery/firealarm/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 
 	pixel_x = 0
 	pixel_y = 0

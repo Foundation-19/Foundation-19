@@ -72,7 +72,7 @@
 /obj/item/weldpack/on_update_icon()
 	..()
 
-	overlays.Cut()
+	cut_overlays()
 	if(welder)
 		var/image/welder_image = image(welder.icon, icon_state = welder.icon_state)
 		welder_image.pixel_x = 16

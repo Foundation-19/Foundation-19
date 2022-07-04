@@ -61,7 +61,7 @@
 	. = ..()
 
 /obj/machinery/suit_storage_unit/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(panelopen)
 		overlays += ("panel")
 	if(isUV)
@@ -171,7 +171,7 @@
 	data["superuv"] = issuperUV
 	data["safeties"] = safetieson
 	data["helmet"] = helmet
-	data["suit"] = suit 
+	data["suit"] = suit
 	data["boots"] = boots
 	data["tank"] = tank
 	data["mask"] = mask

@@ -25,7 +25,7 @@
 		I.color = string_colour
 		overlays += I
 	else
-		overlays.Cut()
+		cut_overlays()
 
 /obj/item/material/coin/attackby(var/obj/item/W, var/mob/user)
 	if(isCoil(W) && isnull(string_colour))

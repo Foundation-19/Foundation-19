@@ -57,7 +57,7 @@
 	qdel(src)
 
 /mob/living/simple_animal/construct/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	..()
 	add_glow()
 

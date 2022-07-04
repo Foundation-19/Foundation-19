@@ -48,7 +48,7 @@ var/list/tape_roll_applications = list()
 
 /obj/item/tape/on_update_icon()
 	//Possible directional bitflags: 0 (AIRLOCK), 1 (NORTH), 2 (SOUTH), 4 (EAST), 8 (WEST), 3 (VERTICAL), 12 (HORIZONTAL)
-	overlays.Cut()
+	cut_overlays()
 	var/new_state
 	switch (tape_dir)
 		if(0)  // AIRLOCK
@@ -149,7 +149,7 @@ var/list/tape_roll_applications = list()
 	detail_color = COLOR_RED
 
 /obj/item/taperoll/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	var/image/overlay = image(icon = src.icon)
 	overlay.appearance_flags = RESET_COLOR
 	if(ismob(loc))

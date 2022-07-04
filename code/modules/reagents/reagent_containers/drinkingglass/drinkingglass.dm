@@ -147,7 +147,7 @@
 
 /obj/item/reagent_containers/food/drinks/glass2/on_update_icon()
 	underlays.Cut()
-	overlays.Cut()
+	cut_overlays()
 
 	if (length(reagents?.reagent_list))
 		var/datum/reagent/R = reagents.get_master_reagent()

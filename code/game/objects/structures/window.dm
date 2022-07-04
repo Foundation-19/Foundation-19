@@ -516,7 +516,7 @@
 		basestate = reinf_basestate
 	else
 		basestate = initial(basestate)
-	overlays.Cut()
+	cut_overlays()
 	layer = FULL_WINDOW_LAYER
 	if (paint_color)
 		color = paint_color

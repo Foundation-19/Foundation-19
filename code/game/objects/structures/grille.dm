@@ -51,7 +51,7 @@
 /obj/structure/grille/on_update_icon()
 	var/on_frame = is_on_frame()
 
-	overlays.Cut()
+	cut_overlays()
 	if(is_broken())
 		if(on_frame)
 			icon_state = "broken_onframe"

@@ -137,7 +137,7 @@
 			dissipate_strength = 1
 			emp_weak_range = 4
 			emp_strong_range = 3
-			overlays.Cut()
+			cut_overlays()
 			visible_message("<span class='notice'>The singularity has shrunk to a rather pitiful size.</span>")
 		if (STAGE_TWO) //1 to 3 does not check for the turfs if you put the gens right next to a 1x1 then its going to eat them.
 			SetName("gravitational singularity")
@@ -154,7 +154,7 @@
 			dissipate_strength = 5
 			emp_weak_range = 6
 			emp_strong_range = 4
-			overlays.Cut()
+			cut_overlays()
 			if(chained)
 				overlays = list("emfield_s3")
 			if(growing)
@@ -177,7 +177,7 @@
 				dissipate_strength = 20
 				emp_weak_range = 7
 				emp_strong_range = 5
-				overlays.Cut()
+				cut_overlays()
 				if(chained)
 					overlays = list("emfield_s5")
 				if(growing)
@@ -200,7 +200,7 @@
 				dissipate_strength = 10
 				emp_weak_range = 9
 				emp_strong_range = 7
-				overlays.Cut()
+				cut_overlays()
 				if(chained)
 					overlays = list("emfield_s7")
 				if(growing)
@@ -220,7 +220,7 @@
 			dissipate = 0 //It can't go smaller due to e loss.
 			emp_weak_range = 11
 			emp_strong_range = 9
-			overlays.Cut()
+			cut_overlays()
 			if(chained)
 				overlays = list("emfield_s9")
 			if(growing)
@@ -465,7 +465,7 @@
 
 /obj/singularity/proc/on_capture()
 	chained = 1
-	overlays.Cut()
+	cut_overlays()
 	move_self = 0
 	switch (current_size)
 		if(3)
@@ -481,7 +481,7 @@
 
 /obj/singularity/proc/on_release()
 	chained = 0
-	overlays.Cut()
+	cut_overlays()
 	move_self = 1
 
 /obj/singularity/singularity_act(S, size)

@@ -42,7 +42,7 @@
 
 	if(connections) connections.erase_all()
 
-	overlays.Cut()
+	cut_overlays()
 	underlays.Cut()
 	if(istype(src,/turf/simulated))
 		//Yeah, we're just going to rebuild the whole thing.
@@ -54,7 +54,7 @@
 	// Run the Destroy() chain.
 	qdel(src)
 
-	var/old_opaque_counter = opaque_counter 
+	var/old_opaque_counter = opaque_counter
 	var/turf/simulated/W = new N(src)
 
 	if (permit_ao)

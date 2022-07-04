@@ -191,7 +191,7 @@ The megabot
 			icon_living = "megabot_standby"
 			return
 
-		overlays.Cut()
+		cut_overlays()
 		overlays += image(icon, "active_indicator")
 		switch(attack_mode)
 			if(ATTACK_MODE_MELEE)

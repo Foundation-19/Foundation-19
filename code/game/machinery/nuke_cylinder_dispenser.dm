@@ -3,7 +3,7 @@
 	desc = "It's a secure, armored storage unit embeded into the floor for storing the nuclear cylinders."
 	icon = 'icons/obj/machines/self_destruct.dmi'
 	icon_state = "base"
-	anchored = TRUE	
+	anchored = TRUE
 	density = FALSE
 	req_access = list(access_heads_vault)
 
@@ -64,7 +64,7 @@
 		add_fingerprint(usr)
 
 /obj/machinery/nuke_cylinder_dispenser/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(length(cylinders))
 		overlays += "rods_[length(cylinders)]"
 	if(!open)

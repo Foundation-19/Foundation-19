@@ -329,7 +329,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 
 // update the icon & overlays to reflect mode & status
 /obj/machinery/disposal/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(stat & BROKEN)
 		mode = 0
 		flush = 0

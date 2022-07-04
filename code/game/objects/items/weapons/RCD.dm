@@ -116,7 +116,7 @@
 	return 1
 
 /obj/item/rcd/on_update_icon()	//For the fancy "ammo" counter
-	overlays.Cut()
+	cut_overlays()
 	var/ratio = 0
 	ratio = stored_matter / max_stored_matter
 	ratio = max(round(ratio, 0.10) * 100, 10)

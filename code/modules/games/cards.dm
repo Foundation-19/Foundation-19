@@ -289,7 +289,7 @@
 		name = "[P.name]"
 		desc = "[P.desc]"
 
-	overlays.Cut()
+	cut_overlays()
 
 	if(cards.len == 1)
 		var/datum/playingcard/P = cards[1]

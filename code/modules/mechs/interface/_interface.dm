@@ -59,7 +59,7 @@
 		if(H) H.update_system_info()
 	handle_hud_icons_health()
 	var/obj/item/cell/C = get_cell()
-	if(istype(C)) 
+	if(istype(C))
 		hud_power.maptext_x = initial(hud_power.maptext_x)
 		hud_power.maptext_y = initial(hud_power.maptext_y)
 		hud_power.maptext = SPAN_STYLE("font-family: 'Small Fonts'; -dm-text-outline: 1 black; font-size: 7px;",  "[round(get_cell().charge)]/[round(get_cell().maxcharge)]")
@@ -72,7 +72,7 @@
 
 /mob/living/exosuit/handle_hud_icons_health()
 
-	hud_health.overlays.Cut()
+	hud_health.cut_overlays()
 
 	if(!body || !get_cell() || (get_cell().charge <= 0))
 		return
@@ -120,5 +120,5 @@
 		var/obj/screen/exosuit/hardpoint/H = hardpoint_hud_elements[hardpoint]
 		if(H)
 			H.color = "#a03b3b"
-			animate(H, color = COLOR_WHITE, time = timeout, easing = CUBIC_EASING | EASE_IN)	
+			animate(H, color = COLOR_WHITE, time = timeout, easing = CUBIC_EASING | EASE_IN)
 	addtimer(CALLBACK(src, .proc/reset_hardpoint_color), timeout)

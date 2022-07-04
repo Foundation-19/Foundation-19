@@ -151,7 +151,7 @@
 
 /obj/machinery/ship_map/on_update_icon()
 	. = ..()
-	overlays.Cut()
+	cut_overlays()
 	if(stat & BROKEN)
 		icon_state = "station_mapb"
 		set_light(0)
@@ -164,16 +164,16 @@
 
 		// Put the little "map" overlay down where it looks nice
 		if(small_station_map)
-			overlays.Add(small_station_map)
+			add_overlay(small_station_map)
 
 	if(floor_markings)
 		floor_markings.dir = src.dir
 		floor_markings.pixel_x = -src.pixel_x
 		floor_markings.pixel_y = -src.pixel_y
-		src.overlays.Add(floor_markings)
+		src.add_overlay(floor_markings)
 
 	if(panel_open)
-		overlays.Add("station_map-panel")
+		add_overlay("station_map-panel")
 
 /obj/machinery/ship_map/ex_act(severity)
 	switch(severity)
@@ -250,7 +250,7 @@
 /obj/screen/legend/proc/Setup(z_level)
 	has_areas = FALSE
 	//Get the areas for this z level and mark if we're empty
-	overlays.Cut()
+	cut_overlays()
 	for(var/area/A in SSminimap.holomaps[z_level].holomap_areas)
 		if(A.holomap_color == saved_color)
 			var/image/area = image(SSminimap.holomaps[z_level].holomap_areas[A])
@@ -309,16 +309,16 @@
 		if(LAZYLEN(legend))
 			QDEL_NULL_LIST(legend)
 		LAZYINITLIST(legend)
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_COMMAND, "¦ Command"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_SECURITY, "¦ Security"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_MEDICAL, "¦ Medical"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_SCIENCE, "¦ Research"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_EXPLORATION, "¦ Exploration"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_ENGINEERING, "¦ Engineering"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_CARGO, "¦ Supply"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_AIRLOCK, "¦ Airlock"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_ESCAPE, "¦ Escape"))
-		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_CREW, "¦ Crew"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_COMMAND, "ï¿½ Command"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_SECURITY, "ï¿½ Security"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_MEDICAL, "ï¿½ Medical"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_SCIENCE, "ï¿½ Research"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_EXPLORATION, "ï¿½ Exploration"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_ENGINEERING, "ï¿½ Engineering"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_CARGO, "ï¿½ Supply"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_AIRLOCK, "ï¿½ Airlock"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_ESCAPE, "ï¿½ Escape"))
+		LAZYADD(legend, new /obj/screen/legend(null ,HOLOMAP_AREACOLOR_CREW, "ï¿½ Crew"))
 		LAZYADD(legend, new /obj/screen/legend/cursor(null ,HOLOMAP_AREACOLOR_BASE, "You are here"))
 	if(reinit)
 		QDEL_NULL_LIST(maptexts)
@@ -394,7 +394,7 @@
 
 	displayed_level = level
 
-	station_map.overlays.Cut()
+	station_map.cut_overlays()
 	station_map.vis_contents.Cut()
 
 	if(z == z_levels[displayed_level])

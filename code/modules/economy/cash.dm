@@ -71,7 +71,7 @@
 		. += "spacecash1"
 
 /obj/item/spacecash/bundle/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	var/list/images = src.getMoneyImages()
 
 	for(var/A in images)
