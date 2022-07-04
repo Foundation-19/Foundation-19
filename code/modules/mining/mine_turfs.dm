@@ -14,6 +14,9 @@ var/list/mining_floors = list()
 /turf/unsimulated/mineral/attackby(obj/item/W, mob/user)
 	to_chat(user, SPAN_WARNING("\The [src] is too strong to break using any tool that you know of, handheld or not."))
 
+/turf/unsimulated/mineral/is_wall()
+	return TRUE
+
 /turf/simulated/mineral //wall piece
 	name = "rock"
 	icon = 'icons/turf/walls.dmi'
@@ -42,6 +45,9 @@ var/list/mining_floors = list()
 	var/image/ore_overlay
 
 	has_resources = 1
+
+/turf/simulated/mineral/is_wall()
+	return TRUE
 
 /turf/simulated/mineral/Initialize()
 	. = ..()

@@ -5,6 +5,9 @@
 	opacity = 1
 	density = TRUE
 
+/turf/unsimulated/wall/is_wall()
+	return TRUE
+
 /turf/unsimulated/wall/fakeglass
 	name = "window"
 	icon_state = "fakewindows"
