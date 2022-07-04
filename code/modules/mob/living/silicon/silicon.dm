@@ -49,8 +49,8 @@
 	if(silicon_camera)
 		silicon_camera = new silicon_camera(src)
 
-	add_language(LANGUAGE_HUMAN_GERMAN)
-	default_language = all_languages[LANGUAGE_HUMAN_GERMAN]
+	add_language(LANGUAGE_ENGLISH)
+	default_language = all_languages[LANGUAGE_ENGLISH]
 	init_id()
 	init_subsystems()
 

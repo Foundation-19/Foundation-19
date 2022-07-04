@@ -91,7 +91,7 @@ GLOBAL_LIST_INIT(possible_say_verbs, list(
 	card = paicard
 
 	//As a human made device, we'll understand sol common without the need of the translator
-	add_language(LANGUAGE_HUMAN_GERMAN, 1)
+	add_language(LANGUAGE_ENGLISH, 1)
 	verbs -= /mob/living/verb/ghost
 
 	..()
