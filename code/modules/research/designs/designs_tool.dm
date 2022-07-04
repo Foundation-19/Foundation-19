@@ -91,3 +91,10 @@
 	chemicals = list(/datum/reagent/sodiumchloride = 20, /datum/reagent/acetone = 20)
 	build_path = /obj/item/device/oxycandle
 	sort_string = "VAGAJ"
+
+/datum/design/item/tool/rcd
+	id = "rcd"
+	req_tech = list(TECH_ENGINEERING = 6, TECH_MATERIAL = 6)
+	materials = list(MATERIAL_STEEL = 15000, MATERIAL_GLASS = 10000, MATERIAL_SILVER = 2000)
+	build_path = /obj/item/rcd
+	sort_string = "VAGAK"
