@@ -6,7 +6,7 @@
 	name = "triangulating device"
 	desc = "Triangulates approximate co-ordinates using a nearby satellite network."
 	id = "gps"
-	req_tech = list(TECH_MATERIAL = 2, TECH_DATA = 2, TECH_BLUESPACE = 2)
+	req_tech = list(TECH_MATERIAL = 2, TECH_DATA = 2, TECH_BLUESPACE = 1)
 	materials = list(MATERIAL_ALUMINIUM = 250, MATERIAL_STEEL = 250, MATERIAL_GLASS = 50)
 	build_path = /obj/item/device/gps
 	sort_string = "VADAB"
