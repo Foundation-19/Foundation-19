@@ -7367,8 +7367,8 @@
 /area/site53/lowertrams/escape)
 "aqS" = (
 /obj/machinery/power/apc/high{
-	req_access = list(501);
-	dir = 1
+	dir = 1;
+	req_access = list(501)
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -19467,10 +19467,10 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	icon_state = "4-8";
-	pixel_z = 0;
 	d1 = 4;
-	d2 = 8
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_z = 0
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/serverfarmcontrol)
@@ -19702,10 +19702,10 @@
 	icon_state = "2-8"
 	},
 /obj/structure/cable/green{
-	icon_state = "4-8";
-	pixel_z = 0;
 	d1 = 4;
-	d2 = 8
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_z = 0
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/serverfarmtunnel)
@@ -19866,10 +19866,10 @@
 	icon_state = "1-4"
 	},
 /obj/structure/cable/green{
-	icon_state = "4-8";
-	pixel_z = 0;
 	d1 = 4;
-	d2 = 8
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_z = 0
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -19897,8 +19897,8 @@
 	dir = 4
 	},
 /obj/machinery/access_button/airlock_interior{
-	pixel_y = 25;
 	master_tag = "comms";
+	pixel_y = 25;
 	tag = "comms"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -27187,7 +27187,6 @@
 /obj/machinery/access_button/airlock_exterior{
 	master_tag = "comms";
 	pixel_x = -25;
-	master_tag = "comms";
 	tag = "comms"
 	},
 /turf/simulated/floor/tiled/techfloor/grid{
@@ -30311,7 +30310,7 @@
 	name = "HCZ Armory Door bolt";
 	pixel_x = 24;
 	pixel_y = 23;
-	req_access = list(504)
+	req_access = list(203)
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/zonecommanderoffice{
@@ -31508,10 +31507,10 @@
 /area/site53/uhcz/hallways)
 "vSP" = (
 /obj/structure/cable/green{
-	icon_state = "4-8";
-	pixel_z = 0;
 	d1 = 4;
-	d2 = 8
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_z = 0
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/serverfarmcontrol)
