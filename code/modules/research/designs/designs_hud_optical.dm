@@ -56,3 +56,11 @@
 	materials = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 50, MATERIAL_SILVER = 50, MATERIAL_GOLD = 50)
 	build_path = /obj/item/clothing/glasses/tacgoggles
 	sort_string = "GAAAC"
+
+/datum/design/item/optical/scramble
+	name = "scramble"
+	id = "scramble_goggles"
+	req_tech = list(TECH_MAGNET = 4, TECH_ENGINEERING = 4
+	materials = list(MATERIAL_STEEL = 150, MATERIAL_GLASS = 200, MATERIAL_SILVER = 100, MATERIAL_GOLD = 250)
+	build_path = /obj/item/clothing/glasses/scramble
+	sort_string = "GAAAD"

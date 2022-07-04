@@ -383,8 +383,8 @@
 	load_method = SINGLE_CASING|SPEEDLOADER
 	max_shells = 10
 	accuracy = 5
-	scope_zoom = 0
-	scoped_accuracy = 0
+	scope_zoom = 2
+	scoped_accuracy = 20
 	wielded_item_state = "semistrip-wielded"
 
 	firemodes = list(
