@@ -50,7 +50,7 @@
 		AM = target
 		tx += AM.step_x
 		ty += AM.step_y
-	return //SIMPLIFY_DEGREES(arctan(ty - sy, tx - sx))
+	return SIMPLIFY_DEGREES(arctan(ty - sy, tx - sx))
 
 //Returns whether or not A is the middle most value
 /proc/InRange(var/A, var/lower, var/upper)
