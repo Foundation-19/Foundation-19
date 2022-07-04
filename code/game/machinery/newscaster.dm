@@ -194,7 +194,7 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 		icon_state = "newscaster_off"
 		if(stat & BROKEN) //If the thing is smashed, add crack overlay on top of the unpowered sprite.
 			cut_overlays()
-			overlays += image(src.icon, "crack3")
+			add_overlay(image(src.icon, "crack3"))
 		return
 
 	src.cut_overlays() //reset overlays
@@ -204,10 +204,10 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 		return
 
 	if(alert) //new message alert overlay
-		src.overlays += "newscaster_alert"
+		src.add_overlay("newscaster_alert")
 
 	if(hitstaken > 0) //Cosmetic damage overlay
-		src.overlays += image(src.icon, "crack[hitstaken]")
+		src.add_overlay(image(src.icon, "crack[hitstaken]"))
 
 	icon_state = "newscaster_normal"
 	return

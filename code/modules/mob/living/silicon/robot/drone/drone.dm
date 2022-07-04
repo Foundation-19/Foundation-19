@@ -162,11 +162,11 @@ var/list/mob_hat_cache = list()
 	cut_overlays()
 	if(stat == 0)
 		if(emagged)
-			overlays += "eyes-[icon_state]-emag"
+			add_overlay("eyes-[icon_state]-emag")
 		else
-			overlays += "eyes-[icon_state]"
+			add_overlay("eyes-[icon_state]")
 	else
-		overlays -= "eyes"
+		cut_overlay("eyes")
 
 	if(hat) // Let the drones wear hats.
 		overlays |= get_hat_icon(hat, hat_x_offset, hat_y_offset)

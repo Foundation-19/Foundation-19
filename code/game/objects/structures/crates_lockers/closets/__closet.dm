@@ -383,13 +383,13 @@
 	if(!opened)
 		if(broken && icon_off)
 			icon_state = icon_off
-			overlays += icon_broken
+			add_overlay(icon_broken)
 		else if((setup & CLOSET_HAS_LOCK) && locked && icon_locked)
 			icon_state = icon_locked
 		else
 			icon_state = icon_closed
 		if(welded)
-			overlays += "welded"
+			add_overlay("welded")
 	else
 		icon_state = icon_opened
 

@@ -731,19 +731,19 @@
 				eye_overlay.plane = EFFECTS_ABOVE_LIGHTING_PLANE
 				eye_overlay.layer = EYE_GLOW_LAYER
 				eye_overlays[eye_icon_state] = eye_overlay
-			overlays += eye_overlay
+			add_overlay(eye_overlay)
 
 	if(opened)
 		var/panelprefix = custom_sprite ? src.ckey : "ov"
 		if(wiresexposed)
-			overlays += "[panelprefix]-openpanel +w"
+			add_overlay("[panelprefix]-openpanel +w")
 		else if(cell)
-			overlays += "[panelprefix]-openpanel +c"
+			add_overlay("[panelprefix]-openpanel +c")
 		else
-			overlays += "[panelprefix]-openpanel -c"
+			add_overlay("[panelprefix]-openpanel -c")
 
 	if(module_active && istype(module_active,/obj/item/borg/combat/shield))
-		overlays += "[module_sprites[icontype]]-shield"
+		add_overlay("[module_sprites[icontype]]-shield")
 
 	if(modtype == "Combat")
 		if(module_active && istype(module_active,/obj/item/borg/combat/mobility))

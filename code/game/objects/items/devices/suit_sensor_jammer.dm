@@ -68,21 +68,21 @@
 		var/percent = bcell.percent()
 		switch(percent)
 			if(0 to 25)
-				overlays += "forth_quarter"
+				add_overlay("forth_quarter")
 			if(25 to 50)
-				overlays += "one_quarter"
-				overlays += "third_quarter"
+				add_overlay("one_quarter")
+				add_overlay("third_quarter")
 			if(50 to 75)
-				overlays += "two_quarters"
-				overlays += "second_quarter"
+				add_overlay("two_quarters")
+				add_overlay("second_quarter")
 			if(75 to 99)
-				overlays += "three_quarters"
-				overlays += "first_quarter"
+				add_overlay("three_quarters")
+				add_overlay("first_quarter")
 			else
-				overlays += "four_quarters"
+				add_overlay("four_quarters")
 
 		if(active)
-			overlays += "active"
+			add_overlay("active")
 
 /obj/item/device/suit_sensor_jammer/emp_act(var/severity)
 	..()

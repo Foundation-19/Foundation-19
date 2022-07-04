@@ -93,32 +93,32 @@
 		var/screen = get_component_of_type(/obj/item/stock_parts/console_screen)
 		var/keyboard = get_component_of_type(/obj/item/stock_parts/keyboard)
 		if(screen)
-			overlays += "comp_screen"
+			add_overlay("comp_screen")
 		if(keyboard)
-			overlays += icon_keyboard ? "[icon_keyboard]_off" : "keyboard"
+			add_overlay(icon_keyboard ? "[icon_keyboard]_off" : "keyboard")
 		return
 
 	if(stat & NOPOWER)
 		set_light(0)
 		if(icon_keyboard)
-			overlays += image(icon,"[icon_keyboard]_off", overlay_layer)
+			add_overlay(image(icon,"[icon_keyboard]_off", overlay_layer))
 		return
 	else
 		set_light(light_max_bright_on, light_inner_range_on, light_outer_range_on, 2, light_color)
 
 	if(stat & BROKEN)
-		overlays += image(icon,"[icon_state]_broken", overlay_layer)
+		add_overlay(image(icon,"[icon_state]_broken", overlay_layer))
 	else
-		overlays += get_screen_overlay()
+		add_overlay(get_screen_overlay())
 
-	overlays += get_keyboard_overlay()
+	add_overlay(get_keyboard_overlay())
 
 /obj/machinery/computer/proc/get_screen_overlay()
 	return image(icon,icon_screen, overlay_layer)
 
 /obj/machinery/computer/proc/get_keyboard_overlay()
 	if(icon_keyboard)
-		overlays += image(icon, icon_keyboard, overlay_layer)
+		add_overlay(image(icon, icon_keyboard, overlay_layer))
 
 /obj/machinery/computer/proc/decode(text)
 	// Adds line breaks

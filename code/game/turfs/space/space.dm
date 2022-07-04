@@ -29,7 +29,7 @@
 	update_starlight()
 	if (!dust_cache)
 		build_dust_cache()
-	overlays += dust_cache["[((x + y) ^ ~(x * y) + z) % 25]"]
+	add_overlay(dust_cache["[((x + y) ^ ~(x * y) + z) % 25]"])
 
 	if(!HasBelow(z))
 		return

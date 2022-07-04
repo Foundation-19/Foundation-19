@@ -47,7 +47,7 @@
 
 	cut_overlays()
 	if(cloth)
-		overlays += new /icon(cloth.icon, cloth.icon_state)
+		add_overlay(new /icon(cloth.icon, cloth.icon_state))
 
 /obj/structure/bed/roller/ironingboard/attackby(var/obj/item/I, var/mob/user)
 	if(!density)

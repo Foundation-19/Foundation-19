@@ -179,11 +179,11 @@
 		var/image/filling = get_filling_overlay(amnt, R.glass_icon)
 		filling.color = reagents.get_color()
 		if(filling_overlayed)
-			overlays += filling
+			add_overlay(filling)
 		else
 			underlays += filling
 
-		overlays += over_liquid
+		add_overlay(over_liquid)
 
 	else
 		SetName(custom_name || initial(name))

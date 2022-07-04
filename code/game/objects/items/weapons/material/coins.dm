@@ -23,7 +23,7 @@
 		var/image/I = image(icon = icon, icon_state = "coin_string_overlay")
 		I.appearance_flags |= RESET_COLOR
 		I.color = string_colour
-		overlays += I
+		add_overlay(I)
 	else
 		cut_overlays()
 

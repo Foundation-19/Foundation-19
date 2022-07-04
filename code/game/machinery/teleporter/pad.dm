@@ -75,7 +75,7 @@
 		var/image/I = image(icon, src, "[initial(icon_state)]_active_overlay")
 		I.plane = EFFECTS_ABOVE_LIGHTING_PLANE
 		I.layer = ABOVE_LIGHTING_LAYER
-		overlays += I
+		add_overlay(I)
 		set_light(0.4, 1.2, 4, 10)
 	else
 		set_light(0)
@@ -84,4 +84,4 @@
 			var/image/I = image(icon, src, "[initial(icon_state)]_idle_overlay")
 			I.plane = EFFECTS_ABOVE_LIGHTING_PLANE
 			I.layer = ABOVE_LIGHTING_LAYER
-			overlays += I
+			add_overlay(I)

@@ -94,4 +94,4 @@
 /obj/structure/deity/altar/update_icon()
 	cut_overlays()
 	if(target)
-		overlays += image('icons/effects/effects.dmi', icon_state =  "summoning")
+		add_overlay(image('icons/effects/effects.dmi', icon_state =  "summoning"))

@@ -50,16 +50,16 @@
 	..()
 	icon_state = "mpistolen"
 	if(ammo_magazine)
-		overlays += image(icon, "mag")
+		add_overlay(image(icon, "mag"))
 
 	if(!ammo_magazine || !LAZYLEN(ammo_magazine.stored_ammo))
 		icon_state = "mpistolen-empty"
-		overlays += image(icon, "ammo_bad")
+		add_overlay(image(icon, "ammo_bad"))
 	else if(LAZYLEN(ammo_magazine.stored_ammo) <= 0.5 * ammo_magazine.max_ammo)
-		overlays += image(icon, "ammo_warn")
+		add_overlay(image(icon, "ammo_warn"))
 		return
 	else
-		overlays += image(icon, "ammo_ok")
+		add_overlay(image(icon, "ammo_ok"))
 
 /obj/item/gun/projectile/automatic/merc_smg
 	name = "submachine gun"
@@ -164,11 +164,11 @@
 /obj/item/gun/projectile/automatic/sec_smg/on_update_icon()
 	..()
 	if(ammo_magazine)
-		overlays += image(icon, "mag-[round(ammo_magazine.stored_ammo.len,5)]")
+		add_overlay(image(icon, "mag-[round(ammo_magazine.stored_ammo.len,5)]"))
 	if(ammo_magazine && LAZYLEN(ammo_magazine.stored_ammo))
-		overlays += image(icon, "ammo-ok")
+		add_overlay(image(icon, "ammo-ok"))
 	else
-		overlays += image(icon, "ammo-bad")
+		add_overlay(image(icon, "ammo-bad"))
 
 /obj/item/gun/projectile/automatic/bullpup_rifle
 	name = "bullpup assault rifle"

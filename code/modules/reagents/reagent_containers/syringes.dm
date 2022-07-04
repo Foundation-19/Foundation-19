@@ -95,7 +95,7 @@
 				injoverlay = "draw"
 			if (SYRINGE_INJECT)
 				injoverlay = "inject"
-		overlays += injoverlay
+		add_overlay(injoverlay)
 	icon_state = "[initial(icon_state)][rounded_vol]"
 	item_state = "syringe_[rounded_vol]"
 

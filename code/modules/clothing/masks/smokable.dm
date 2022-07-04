@@ -190,13 +190,13 @@
 	..()
 	cut_overlays()
 	if(lit)
-		overlays += overlay_image(icon, "cigon", flags=RESET_COLOR)
+		add_overlay(overlay_image(icon, "cigon", flags=RESET_COLOR))
 
 /obj/item/clothing/mask/smokable/cigarette/trident/on_update_icon()
 	..()
 	cut_overlays()
 	if(lit)
-		overlays += overlay_image(icon, "cigarello-on", flags=RESET_COLOR)
+		add_overlay(overlay_image(icon, "cigarello-on", flags=RESET_COLOR))
 
 /obj/item/clothing/mask/smokable/extinguish(var/mob/user, var/no_message)
 	..()
@@ -357,7 +357,7 @@
 		var/image/ember = overlay_image(res.icon, "cigember", flags=RESET_COLOR)
 		ember.layer = ABOVE_LIGHTING_LAYER
 		ember.plane = EFFECTS_ABOVE_LIGHTING_PLANE
-		res.overlays += ember
+		res.add_overlay(ember)
 	return res
 
 ////////////

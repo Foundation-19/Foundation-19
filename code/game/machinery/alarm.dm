@@ -948,28 +948,28 @@ FIRE ALARM
 
 	icon_state = "casing"
 	if(wiresexposed)
-		overlays += get_cached_overlay("b[buildstage]")
+		add_overlay(get_cached_overlay("b[buildstage]"))
 		set_light(0)
 		return
 
 	if(stat & BROKEN)
-		overlays += get_cached_overlay("broken")
+		add_overlay(get_cached_overlay("broken"))
 		set_light(0)
 	else if(stat & NOPOWER)
-		overlays += get_cached_overlay("unpowered")
+		add_overlay(get_cached_overlay("unpowered"))
 		set_light(0)
 	else
 		if(!detecting)
-			overlays += get_cached_overlay("fire1")
+			add_overlay(get_cached_overlay("fire1"))
 			set_light(0.25, 0.1, 1, 2, COLOR_RED)
 		else if(z in GLOB.using_map.contact_levels)
 			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 			var/decl/security_level/sl = security_state.current_security_level
 
 			set_light(sl.light_max_bright, sl.light_inner_range, sl.light_outer_range, 2, sl.light_color_alarm)
-			overlays += image(sl.icon, sl.overlay_alarm)
+			add_overlay(image(sl.icon, sl.overlay_alarm))
 		else
-			overlays += get_cached_overlay("fire0")
+			add_overlay(get_cached_overlay("fire0"))
 
 /obj/machinery/firealarm/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(src.detecting)

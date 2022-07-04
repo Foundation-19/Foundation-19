@@ -21,7 +21,7 @@
 /obj/item/grenade/supermatter/on_update_icon()
 	cut_overlays()
 	if(implode_at)
-		overlays += image(icon = 'icons/obj/machines/power/fusion.dmi', icon_state = "emfield_s1")
+		add_overlay(image(icon = 'icons/obj/machines/power/fusion.dmi', icon_state = "emfield_s1"))
 
 /obj/item/grenade/supermatter/Process()
 	if(!isturf(loc))

@@ -162,9 +162,9 @@
 	cut_overlays()
 	if(opened)
 		if(!get_cell())
-			overlays += image(icon, "inducer-nobat")
+			add_overlay(image(icon, "inducer-nobat"))
 		else
-			overlays += image(icon,"inducer-bat")
+			add_overlay(image(icon,"inducer-bat"))
 
 /obj/item/inducer/Destroy()
 	. = ..()
@@ -186,7 +186,7 @@
 
 /obj/item/inducer/borg/on_update_icon()
 	. = ..()
-	overlays += image("icons/obj/guns/gui.dmi","safety[safety()]")
+	add_overlay(image("icons/obj/guns/gui.dmi","safety[safety()]"))
 
 /obj/item/inducer/borg/verb/toggle_safety(var/mob/user)
 	set src in usr

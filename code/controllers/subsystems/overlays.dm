@@ -56,7 +56,7 @@ SUBSYSTEM_DEF(overlays)
 	else if(LAZYLEN(po))
 		overlays = po
 	else
-		cut_overlays()
+		overlays.Cut()
 
 	overlay_queued = FALSE
 
@@ -215,7 +215,7 @@ SUBSYSTEM_DEF(overlays)
 	overlays -= x
 
 /image/proc/cut_overlays(x)
-	cut_overlays()
+	overlays.Cut()
 
 /atom
 	var/tmp/list/our_overlays	//our local copy of (non-priority) overlays without byond magic. Use procs in SSoverlays to manipulate

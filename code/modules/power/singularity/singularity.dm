@@ -469,15 +469,15 @@
 	move_self = 0
 	switch (current_size)
 		if(3)
-			overlays += image('icons/effects/96x96.dmi',"emfield_s3")
+			add_overlay(image('icons/effects/96x96.dmi',"emfield_s3"))
 		if(5)
-			overlays += image('icons/effects/160x160.dmi',"emfield_s5")
+			add_overlay(image('icons/effects/160x160.dmi',"emfield_s5"))
 		if(7)
-			overlays += image('icons/effects/224x224.dmi',"emfield_s7")
+			add_overlay(image('icons/effects/224x224.dmi',"emfield_s7"))
 		if(9)
-			overlays += image('icons/effects/288x288.dmi',"emfield_s9")
+			add_overlay(image('icons/effects/288x288.dmi',"emfield_s9"))
 		if(11)
-			overlays += image('icons/effects/352x352.dmi',"emfield_s11")
+			add_overlay(image('icons/effects/352x352.dmi',"emfield_s11"))
 
 /obj/singularity/proc/on_release()
 	chained = 0

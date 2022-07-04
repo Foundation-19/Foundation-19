@@ -65,7 +65,7 @@
 	var/sheet_name = istype(sheet, /obj/item/photo) ? "photo" : "sheet of paper"
 	bundle_name = (bundle_name == name) ? "the [bundle_name]" : name
 	sheet_name = (sheet_name == sheet.name) ? "the [sheet_name]" : sheet.name
-	
+
 	to_chat(user, "<span class='notice'>You add [sheet_name] to [bundle_name].</span>")
 	pages.Insert(index, sheet)
 	if(index <= page)
@@ -228,12 +228,12 @@
 			var/obj/item/photo/Ph = O
 			img = Ph.tiny
 			photo = 1
-			overlays += img
+			add_overlay(img)
 	if(i>1)
 		desc =  "[i] papers clipped to each other."
 	else
 		desc = "A single sheet of paper."
 	if(photo)
 		desc += "\nThere is a photo attached to it."
-	overlays += image('icons/obj/bureaucracy.dmi', "clip")
+	add_overlay(image('icons/obj/bureaucracy.dmi', "clip"))
 	return

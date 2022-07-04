@@ -64,7 +64,7 @@
 		I.color = COLOR_YELLOW
 	else
 		I.color = COLOR_RED
-	overlays += I
+	add_overlay(I)
 
 /obj/structure/closet/body_bag/cryobag/proc/get_saturation()
 	return -155 * (1 - stasis_power/initial(stasis_power))

@@ -146,7 +146,7 @@ obj/structure/net/Initialize(var/mapload)
 	for (var/turf/AT in T.CardinalTurfs(FALSE))
 		if ( (locate(/obj/structure/net) in AT) || (!istype(AT, /turf/simulated/open) && !istype(AT, /turf/space)) || (locate(/obj/structure/lattice) in AT) )//connects to another net objects or walls/floors or lattices
 			var/image/I = image(icon,"[icon_state]_ol_[get_dir(src,AT)]")
-			overlays += I
+			add_overlay(I)
 
 /obj/structure/net/net_wall
 	icon_state = "net_w"
@@ -169,7 +169,7 @@ obj/structure/net/Initialize(var/mapload)
 	for (var/turf/AT in T.CardinalTurfs(FALSE))
 		if ((locate(/obj/structure/net/net_wall) in AT) || istype(AT, /turf/simulated/wall)  || istype(AT, /turf/unsimulated/wall) || istype(AT, /turf/simulated/mineral))//connects to another net-wall objects or walls
 			var/image/I = image(icon,"[icon_state]_ol_[get_dir(src,AT)]")
-			overlays += I
+			add_overlay(I)
 
 /obj/item/stack/net
 	name = "industrial net roll"

@@ -227,13 +227,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	..()
 	cut_overlays()
 	if(lit)
-		overlays += overlay_image(icon, "cigon", flags=RESET_COLOR)
+		add_overlay(overlay_image(icon, "cigon", flags=RESET_COLOR))
 
 /obj/item/clothing/mask/smokable/cigarette/trident/update_icon()
 	..()
 	cut_overlays()
 	if(lit)
-		overlays += overlay_image(icon, "cigarello-on", flags=RESET_COLOR)
+		add_overlay(overlay_image(icon, "cigarello-on", flags=RESET_COLOR))
 
 /obj/item/clothing/mask/smokable/cigarette/die(var/nomessage = 0)
 	..()
@@ -390,7 +390,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		var/image/ember = overlay_image(res.icon, "cigember", flags=RESET_COLOR)
 		ember.layer = ABOVE_LIGHTING_LAYER
 		ember.plane = EFFECTS_ABOVE_LIGHTING_PLANE
-		res.overlays += ember
+		res.add_overlay(ember)
 	return res
 
 ////////////

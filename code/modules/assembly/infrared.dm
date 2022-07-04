@@ -52,7 +52,7 @@
 /obj/item/device/assembly/infra/on_update_icon()
 	cut_overlays()
 	if(on)
-		overlays += "infrared_on"
+		add_overlay("infrared_on")
 	if(holder)
 		holder.update_icon()
 	update_beams()

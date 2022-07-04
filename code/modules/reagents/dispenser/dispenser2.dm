@@ -195,4 +195,4 @@
 		var/mutable_appearance/beaker_overlay
 		beaker_overlay = image('icons/obj/chemical.dmi', src, "lil_beaker")
 		beaker_overlay.pixel_x = rand(-10, 5)
-		overlays += beaker_overlay
+		add_overlay(beaker_overlay)

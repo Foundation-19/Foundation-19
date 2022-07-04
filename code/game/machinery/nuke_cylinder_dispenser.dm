@@ -66,11 +66,11 @@
 /obj/machinery/nuke_cylinder_dispenser/on_update_icon()
 	cut_overlays()
 	if(length(cylinders))
-		overlays += "rods_[length(cylinders)]"
+		add_overlay("rods_[length(cylinders)]")
 	if(!open)
-		overlays += "hatch"
+		add_overlay("hatch")
 	if(is_powered())
 		if(locked)
-			overlays += "red_light"
+			add_overlay("red_light")
 		else
-			overlays += "green_light"
+			add_overlay("green_light")

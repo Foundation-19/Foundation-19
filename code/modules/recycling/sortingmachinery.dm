@@ -86,7 +86,7 @@
 				label_x = rand(-8, 6)
 			I.pixel_x = label_x
 			I.pixel_y = -3
-		overlays += I
+		add_overlay(I)
 	if(src.sortTag)
 		var/image/I = new/image('icons/obj/storage.dmi',"delivery_tag")
 		if(icon_state == "deliverycloset")
@@ -99,7 +99,7 @@
 				tag_x = rand(-8, 6)
 			I.pixel_x = tag_x
 			I.pixel_y = -3
-		overlays += I
+		add_overlay(I)
 
 /obj/structure/bigDelivery/examine(mob/user, distance)
 	. = ..()
@@ -204,7 +204,7 @@
 		var/image/I = new/image('icons/obj/storage.dmi',"delivery_label")
 		if(icon_state == "deliverycrate5")
 			I.pixel_y = -1
-		overlays += I
+		add_overlay(I)
 	if(src.sortTag)
 		var/image/I = new/image('icons/obj/storage.dmi',"delivery_tag")
 		switch(icon_state)
@@ -221,7 +221,7 @@
 				I.pixel_y = 3
 			if("deliverycrate5")
 				I.pixel_y = -3
-		overlays += I
+		add_overlay(I)
 
 /obj/item/smallDelivery/examine(mob/user, distance)
 	. = ..()

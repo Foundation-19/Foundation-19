@@ -227,20 +227,20 @@
 
 	I = image(icon, "pod[on]_top")
 	I.pixel_z = 32
-	overlays += I
+	add_overlay(I)
 
 	if(occupant)
 		var/image/pickle = image(occupant.icon, occupant.icon_state)
 		pickle.overlays = occupant.overlays
 		pickle.pixel_z = 18
-		overlays += pickle
+		add_overlay(pickle)
 
 	I = image(icon, "lid[on]")
-	overlays += I
+	add_overlay(I)
 
 	I = image(icon, "lid[on]_top")
 	I.pixel_z = 32
-	overlays += I
+	add_overlay(I)
 
 /obj/machinery/atmospherics/unary/cryo_cell/proc/process_occupant()
 	if(air_contents.total_moles < 10)

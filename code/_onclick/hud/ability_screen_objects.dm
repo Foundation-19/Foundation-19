@@ -192,7 +192,7 @@
 	cut_overlays()
 	icon_state = "[background_base_state]_spell_base"
 
-	overlays += ability_icon_state
+	add_overlay(ability_icon_state)
 
 /obj/screen/ability/Click()
 	if(!usr)
@@ -371,14 +371,14 @@
 
 	if(spell.active)
 		active_overlay = icon(src.icon, "spell_active")
-		overlays += active_overlay
+		add_overlay(active_overlay)
 	else if(active_overlay)
-		overlays -= active_overlay
+		cut_overlay(active_overlay)
 
 	if(last_charge == spell.charge_counter && !forced_update)
 		return //nothing to see here
 
-	overlays -= spell.hud_state
+	cut_overlay(spell.hud_state)
 
 	if(spell.charge_type == SPELL_RECHARGE || spell.charge_type == SPELL_CHARGES)
 		if(spell.charge_counter < spell.charge_max)
@@ -386,27 +386,27 @@
 			if(spell.charge_counter > 0)
 				var/icon/partial_charge = icon(src.icon, "[spell_base]_spell_ready")
 				partial_charge.Crop(1, 1, partial_charge.Width(), round(partial_charge.Height() * spell.charge_counter / spell.charge_max))
-				overlays += partial_charge
+				add_overlay(partial_charge)
 				if(last_charged_icon)
-					overlays -= last_charged_icon
+					cut_overlay(last_charged_icon)
 				last_charged_icon = partial_charge
 			else if(last_charged_icon)
-				overlays -= last_charged_icon
+				cut_overlay(last_charged_icon)
 				last_charged_icon = null
 		else
 			icon_state = "[spell_base]_spell_ready"
 			if(last_charged_icon)
-				overlays -= last_charged_icon
+				cut_overlay(last_charged_icon)
 	else
 		icon_state = "[spell_base]_spell_ready"
 
-	overlays += spell.hud_state
+	add_overlay(spell.hud_state)
 
 	last_charge = spell.charge_counter
 
-	overlays -= "silence"
+	cut_overlay("silence")
 	if(spell.silenced)
-		overlays += "silence"
+		add_overlay("silence")
 
 /obj/screen/ability/spell/on_update_icon(var/forced = 0)
 	update_charge(forced)
@@ -440,8 +440,8 @@
 /obj/screen/ability/changeling/on_update_icon()
 	// A lot of this function is taken from /obj/screen/ability/spell's update_charge
 	// The values used in calculation are different enough that it necessitates reuse, alas
-	overlays -= ability_icon_state
-	overlays -= "[background_base_state]_spell_active"
+	cut_overlay(ability_icon_state)
+	cut_overlay("[background_base_state]_spell_active")
 	if (ability)
 		// We use a "+1" on the effective value here, because chem regen occurs after the icon update, making it otherwise out of sync
 		if (ability.required_chems > ability.mind?.changeling.chem_charges + 1)
@@ -449,21 +449,21 @@
 			if (ability.mind.changeling.chem_charges > 0)
 				var/icon/partial_charge = icon(src.icon, "[background_base_state]_spell_ready")
 				partial_charge.Crop(1, 1, partial_charge.Width(), round(partial_charge.Height() * ability.mind.changeling.chem_charges / ability.required_chems + 1))
-				overlays += partial_charge
+				add_overlay(partial_charge)
 				if (last_charged_icon)
-					overlays -= last_charged_icon
+					cut_overlay(last_charged_icon)
 				last_charged_icon = partial_charge
 			else if (last_charged_icon)
-				overlays -= last_charged_icon
+				cut_overlay(last_charged_icon)
 				last_charged_icon = null
 		else
 			icon_state = "[background_base_state]_spell_ready"
 			if (last_charged_icon)
-				overlays -= last_charged_icon
+				cut_overlay(last_charged_icon)
 				last_charged_icon = null
 		if (ability.is_active())
-			overlays += "[background_base_state]_spell_active"
-	overlays += ability_icon_state
+			add_overlay("[background_base_state]_spell_active")
+	add_overlay(ability_icon_state)
 
 /obj/screen/movable/ability_master/proc/add_changeling_power(datum/power/changeling/C)
 	if (!C)

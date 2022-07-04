@@ -95,7 +95,7 @@
 		var/image/I = build.get_image()
 		I.pixel_y = 17
 		I.pixel_x = 17
-		overlays += I
+		add_overlay(I)
 		maptext = "<p style=\"font-size:5px\">[build.get_name()]</p>"
 	else
 		maptext = null

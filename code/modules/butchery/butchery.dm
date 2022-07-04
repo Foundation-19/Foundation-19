@@ -143,7 +143,7 @@
 		var/matrix/M = matrix()
 		M.Turn(occupant.butchery_rotation)
 		I.transform = M
-		overlays += I
+		add_overlay(I)
 
 /obj/structure/kitchenspike/mob_breakout(mob/living/escapee)
 	. = ..()

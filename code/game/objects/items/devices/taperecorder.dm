@@ -398,7 +398,7 @@
 /obj/item/device/tape/on_update_icon()
 	cut_overlays()
 	if(ruined && max_capacity)
-		overlays += "ribbonoverlay"
+		add_overlay("ribbonoverlay")
 
 
 /obj/item/device/tape/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)

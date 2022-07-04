@@ -268,7 +268,7 @@
 		if (on)
 			I.plane = EFFECTS_ABOVE_LIGHTING_PLANE
 			I.layer = ABOVE_LIGHTING_LAYER
-		overlays += I
+		add_overlay(I)
 
 	if(on)
 
@@ -733,7 +733,7 @@
 			broken = TRUE
 	var/image/I = image(icon, src, "[base_state]_attachment[broken ? "_broken" : ""]")
 	I.color = null
-	overlays += I
+	add_overlay(I)
 
 /obj/item/light/New(atom/newloc, obj/machinery/light/fixture = null)
 	..()

@@ -519,7 +519,7 @@
 				var/cdir = GLOB.cardinal[d]
 				for(var/i=1; i<=ALERT_STATES.len; i++)
 					if(dir_alerts[d] & (1 << (i - 1)))
-						overlays += new/icon(icon, "alert_[ALERT_STATES[i]]", dir = cdir)
+						add_overlay(new/icon(icon, "alert_[ALERT_STATES[i]]", dir = cdir))
 						do_set_light = TRUE
 	else
 		icon_state = "open"
@@ -530,6 +530,6 @@
 	if(do_set_light)
 		set_light(0.25, 0.1, 1, 2, COLOR_SUN)
 
-	overlays += panel_overlay
-	overlays += weld_overlay
-	overlays += lights_overlay
+	add_overlay(panel_overlay)
+	add_overlay(weld_overlay)
+	add_overlay(lights_overlay)

@@ -232,5 +232,4 @@
 			I.color = S.filling_color
 		if(!I.color)
 			I.color = food_color
-		product.overlays += I
-
+		product.add_overlay(I)

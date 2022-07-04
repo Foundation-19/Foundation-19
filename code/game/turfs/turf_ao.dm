@@ -75,7 +75,7 @@
 
 #define CUT_AO(TARGET, AO_LIST) \
 	if (TARGET && AO_LIST) { \
-		TARGET.overlays -= AO_LIST; \
+		TARGET.cut_overlay(AO_LIST); \
 		AO_LIST.Cut(); \
 	}
 

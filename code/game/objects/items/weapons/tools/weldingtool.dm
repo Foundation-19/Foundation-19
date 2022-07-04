@@ -218,9 +218,9 @@
 	..()
 	cut_overlays()
 	if(tank)
-		overlays += image('icons/obj/tools.dmi', "welder_[tank.icon_state]")
+		add_overlay(image('icons/obj/tools.dmi', "welder_[tank.icon_state]"))
 	if(welding)
-		overlays += image('icons/obj/tools.dmi', "welder_on")
+		add_overlay(image('icons/obj/tools.dmi', "welder_on"))
 		set_light(0.6, 0.5, 2.5, l_color =COLOR_PALE_ORANGE)
 	else
 		set_light(0)

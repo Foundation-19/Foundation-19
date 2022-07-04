@@ -307,7 +307,7 @@
 /obj/machinery/teleport/station/New()
 	..()
 	cut_overlays()
-	overlays += image('icons/obj/stationobjs.dmi', icon_state = "controller-wires")
+	add_overlay(image('icons/obj/stationobjs.dmi', icon_state = "controller-wires"))
 
 /obj/machinery/teleport/station/attackby(var/obj/item/weapon/W)
 	src.attack_hand()

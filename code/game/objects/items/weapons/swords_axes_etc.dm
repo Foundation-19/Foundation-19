@@ -73,7 +73,7 @@
 	if(length(blood_DNA))
 		generate_blood_overlay(TRUE) // Force recheck.
 		cut_overlays()
-		overlays += blood_overlay
+		add_overlay(blood_overlay)
 
 /obj/item/melee/telebaton/attack(mob/target as mob, mob/living/user as mob)
 	if(on)

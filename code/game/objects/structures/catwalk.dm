@@ -38,11 +38,11 @@
 	if(!hatch_open)
 		for(var/i = 1 to 4)
 			I = image('icons/obj/catwalks.dmi', "catwalk[connections[i]]", dir = 1<<(i-1))
-			overlays += I
+			add_overlay(I)
 	if(plated_tile)
 		I = image('icons/obj/catwalks.dmi', "plated")
 		I.color = plated_tile.color
-		overlays += I
+		add_overlay(I)
 
 /obj/structure/catwalk/ex_act(severity)
 	switch(severity)

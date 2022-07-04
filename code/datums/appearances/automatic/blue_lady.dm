@@ -49,8 +49,8 @@
 /decl/appearance_handler/bluelady/proc/get_image_from_bluelady(var/mob/living/carbon/human/H)
 	var/image/I = image('icons/mob/human.dmi', icon_state = "body_f_s", loc = H)
 	I.override = 1
-	I.overlays += image(icon = 'icons/mob/human_face.dmi', icon_state = "hair_emo2_s")
-	I.overlays += image(icon = 'icons/mob/onmob/uniform.dmi', icon_state = "lady_in_blue_s")
-	I.overlays += image(icon = 'icons/mob/onmob/mask.dmi', icon_state = "ccigon")
-	I.overlays += image(icon = 'icons/mob/onmob/feet.dmi', icon_state = "heels")
+	I.add_overlay(image(icon = 'icons/mob/human_face.dmi', icon_state = "hair_emo2_s"))
+	I.add_overlay(image(icon = 'icons/mob/onmob/uniform.dmi', icon_state = "lady_in_blue_s"))
+	I.add_overlay(image(icon = 'icons/mob/onmob/mask.dmi', icon_state = "ccigon"))
+	I.add_overlay(image(icon = 'icons/mob/onmob/feet.dmi', icon_state = "heels"))
 	return I

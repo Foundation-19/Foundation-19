@@ -532,7 +532,7 @@
 		spawn(rand(0, 15))
 			src.icon_state = "[initial(icon_state)]-off"
 	if(panel_open)
-		overlays += image(src.icon, "[initial(icon_state)]-panel")
+		add_overlay(image(src.icon, "[initial(icon_state)]-panel"))
 
 //Oh no we're malfunctioning!  Dump out some product and break.
 /obj/machinery/vending/proc/malfunction()
@@ -712,7 +712,7 @@
 	if(stat & BROKEN && prob(20))
 		icon_state = "[initial(icon_state)]-hellfire"
 	else if(!(stat & NOPOWER))
-		overlays += image(icon, "[initial(icon_state)]-screen")
+		add_overlay(image(icon, "[initial(icon_state)]-screen"))
 
 
 /obj/machinery/vending/snack
@@ -814,7 +814,7 @@
 /obj/machinery/vending/fitness/on_update_icon()
 	..()
 	if(!(stat & NOPOWER))
-		overlays += image(icon, "[initial(icon_state)]-overlay")
+		add_overlay(image(icon, "[initial(icon_state)]-overlay"))
 
 /obj/machinery/vending/cigarette
 	name = "\improper Cigarette machine" //OCD had to be uppercase to look nice with the new formating
@@ -1255,7 +1255,7 @@
 /obj/machinery/vending/props/on_update_icon()
 	..()
 	if(!(stat & NOPOWER))
-		overlays += image(icon, "[initial(icon_state)]-overlay")
+		add_overlay(image(icon, "[initial(icon_state)]-overlay"))
 
 //FOR ACTORS GUILD - Containers
 /obj/machinery/vending/containers
@@ -1364,7 +1364,7 @@
 /obj/machinery/vending/snix/on_update_icon()
 	..()
 	if(!(stat & NOPOWER))
-		overlays += image(icon, "[initial(icon_state)]-fan")
+		add_overlay(image(icon, "[initial(icon_state)]-fan"))
 
 /obj/machinery/vending/sol
 	name = "\improper Mars-Mart"
@@ -1423,7 +1423,7 @@
 /obj/machinery/vending/weeb/on_update_icon()
 	..()
 	if(!(stat & NOPOWER))
-		overlays += image(icon, "[initial(icon_state)]-fan")
+		add_overlay(image(icon, "[initial(icon_state)]-fan"))
 
 /obj/machinery/vending/hotfood
 	name = "\improper Hot Foods"
@@ -1445,7 +1445,7 @@
 /obj/machinery/vending/hotfood/on_update_icon()
 	..()
 	if(!(stat & NOPOWER))
-		overlays += image(icon, "[initial(icon_state)]-heater")
+		add_overlay(image(icon, "[initial(icon_state)]-heater"))
 
 
 /obj/machinery/vending/mredispenser

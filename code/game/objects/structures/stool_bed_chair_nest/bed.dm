@@ -206,12 +206,12 @@
 		var/percentage = round((beaker.reagents.total_volume / beaker.volume) * 100, 25)
 		var/image/filling = image(icon, "iv_filling[percentage]")
 		filling.color = beaker.reagents.get_color()
-		iv.overlays += filling
+		iv.add_overlay(filling)
 		if(percentage < 25)
-			iv.overlays += image(icon, "light_low")
+			iv.add_overlay(image(icon, "light_low"))
 		if(density)
 			iv.pixel_y = 6
-		overlays += iv
+		add_overlay(iv)
 
 /obj/structure/bed/roller/attackby(obj/item/I, mob/user)
 	if(isWrench(I) || istype(I, /obj/item/stack) || isWirecutter(I))

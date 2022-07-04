@@ -35,7 +35,7 @@
 		last_lit = lit
 		cut_overlays()
 		if(lit)
-			overlays += overlay_image(icon, "[icon_state]_lit", flags=RESET_COLOR)
+			add_overlay(overlay_image(icon, "[icon_state]_lit", flags=RESET_COLOR))
 
 /obj/item/flame/candle/attackby(obj/item/W as obj, mob/user as mob)
 	..()

@@ -116,11 +116,11 @@ var/global/list/image/splatter_cache=list()
 			if(!S.blood_DNA)
 				S.blood_DNA = list()
 				S.blood_overlay.color = basecolor
-				S.overlays += S.blood_overlay
+				S.add_overlay(S.blood_overlay)
 			if(S.blood_overlay && S.blood_overlay.color != basecolor)
 				S.blood_overlay.color = basecolor
 				S.cut_overlays()
-				S.overlays += S.blood_overlay
+				S.add_overlay(S.blood_overlay)
 			S.blood_DNA |= blood_DNA.Copy()
 
 	else if (hasfeet)//Or feet
@@ -236,7 +236,7 @@ var/global/list/image/splatter_cache=list()
 
 	icon = blood
 	cut_overlays()
-	overlays += giblets
+	add_overlay(giblets)
 
 /obj/effect/decal/cleanable/blood/gibs/up
 	random_icon_states = list("gib1", "gib2", "gib3", "gib4", "gib5", "gib6","gibup1","gibup1","gibup1")

@@ -92,9 +92,9 @@ var/list/solars_list = list()
 	..()
 	cut_overlays()
 	if(stat & BROKEN)
-		overlays += image('icons/obj/power.dmi', icon_state = "solar_panel-b", layer = ABOVE_HUMAN_LAYER)
+		add_overlay(image('icons/obj/power.dmi', icon_state = "solar_panel-b", layer = ABOVE_HUMAN_LAYER))
 	else
-		overlays += image('icons/obj/power.dmi', icon_state = "solar_panel", layer = ABOVE_HUMAN_LAYER)
+		add_overlay(image('icons/obj/power.dmi', icon_state = "solar_panel", layer = ABOVE_HUMAN_LAYER))
 		src.set_dir(angle2dir(adir))
 	return
 
@@ -375,7 +375,7 @@ var/list/solars_list = list()
 	icon_state = "solar"
 	cut_overlays()
 	if(cdir > -1)
-		overlays += image('icons/obj/computer.dmi', "solcon-o", ABOVE_OBJ_LAYER, angle2dir(cdir))
+		add_overlay(image('icons/obj/computer.dmi', "solcon-o", ABOVE_OBJ_LAYER, angle2dir(cdir)))
 	return
 
 /obj/machinery/power/solar_control/interface_interact(mob/user)

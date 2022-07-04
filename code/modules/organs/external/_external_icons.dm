@@ -9,8 +9,8 @@ var/list/limb_icon_cache = list()
 	for(var/obj/item/organ/external/organ in contents)
 		if(organ.children && organ.children.len)
 			for(var/obj/item/organ/external/child in organ.children)
-				overlays += child.mob_icon
-		overlays += organ.mob_icon
+				add_overlay(child.mob_icon)
+		add_overlay(organ.mob_icon)
 
 /obj/item/organ/external/proc/sync_colour_to_human(var/mob/living/carbon/human/human)
 	s_tone = null
@@ -157,7 +157,7 @@ var/list/robot_hud_colours = list("#ffffff","#cccccc","#aaaaaa","#888888","#6666
 		temp.pixel_x = owner.default_pixel_x
 		temp.pixel_y = owner.default_pixel_y
 		hud_damage_image = image(null)
-		hud_damage_image.overlays += temp
+		hud_damage_image.add_overlay(temp)
 
 	// Calculate the required color index.
 	var/dam_state = min(1,((brute_dam+burn_dam)/max(1,max_damage)))

@@ -561,7 +561,7 @@
 		if(!stamped)
 			stamped = new
 		stamped += P.type
-		overlays += stampoverlay
+		add_overlay(stampoverlay)
 
 		playsound(src, 'sound/effects/stamp.ogg', 50, 1)
 		to_chat(user, "<span class='notice'>You stamp the paper with your [P.name].</span>")

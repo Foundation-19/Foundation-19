@@ -275,7 +275,7 @@
 	cut_overlays()
 
 	if(bolt)
-		overlays += "rxb-bolt"
+		add_overlay("rxb-bolt")
 
 	var/ratio = 0
 	if(stored_matter < boltcost)
@@ -283,7 +283,7 @@
 	else
 		ratio = stored_matter / max_stored_matter
 		ratio = max(round(ratio, 0.25) * 100, 25)
-	overlays += "rxb-[ratio]"
+	add_overlay("rxb-[ratio]")
 
 	if(tension > 1)
 		icon_state = "rxb-drawn"

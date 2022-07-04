@@ -14,7 +14,7 @@
 			icon_state = "wired"
 		if(/decl/machine_construction/frame/awaiting_parts)
 			icon_state = "wired"
-			overlays += "circuit"
+			add_overlay("circuit")
 		else
 			icon_state = "unwired"
 

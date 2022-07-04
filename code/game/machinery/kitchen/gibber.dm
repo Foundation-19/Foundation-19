@@ -36,15 +36,15 @@
 /obj/machinery/gibber/on_update_icon()
 	cut_overlays()
 	if (dirty)
-		src.overlays += image('icons/obj/kitchen.dmi', "grbloody")
+		src.add_overlay(image('icons/obj/kitchen.dmi', "grbloody"))
 	if(stat & (NOPOWER|BROKEN))
 		return
 	if (!occupant)
-		src.overlays += image('icons/obj/kitchen.dmi', "grjam")
+		src.add_overlay(image('icons/obj/kitchen.dmi', "grjam"))
 	else if (operating)
-		src.overlays += image('icons/obj/kitchen.dmi', "gruse")
+		src.add_overlay(image('icons/obj/kitchen.dmi', "gruse"))
 	else
-		src.overlays += image('icons/obj/kitchen.dmi', "gridle")
+		src.add_overlay(image('icons/obj/kitchen.dmi', "gridle"))
 
 /obj/machinery/gibber/relaymove(mob/user as mob)
 	src.go_out()

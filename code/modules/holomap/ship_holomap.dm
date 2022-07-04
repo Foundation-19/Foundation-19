@@ -256,7 +256,7 @@
 			var/image/area = image(SSminimap.holomaps[z_level].holomap_areas[A])
 			area.pixel_x = ((HOLOMAP_ICON_SIZE / 2) - world.maxx / 2) - pixel_x
 			area.pixel_y = ((HOLOMAP_ICON_SIZE / 2) - world.maxy / 2) - pixel_y
-			overlays += area
+			add_overlay(area)
 			has_areas = TRUE
 
 //What happens when we are clicked on / when another is clicked on
@@ -398,9 +398,9 @@
 	station_map.vis_contents.Cut()
 
 	if(z == z_levels[displayed_level])
-		station_map.overlays += cursor
+		station_map.add_overlay(cursor)
 
-	station_map.overlays += levels["[z_levels[displayed_level]]"]
+	station_map.add_overlay(levels["[z_levels[displayed_level]]"])
 	station_map.vis_contents += maptexts["[z_levels[displayed_level]]"]
 
 	//Fix legend position

@@ -128,11 +128,11 @@
 	icon_state = "open"
 	cut_overlays()
 	if(buckled_mob)
-		overlays += buckled_mob
+		add_overlay(buckled_mob)
 		var/image/I = image(icon,icon_state="overlay")
 		I.plane = ABOVE_HUMAN_PLANE
 		I.layer = ABOVE_HUMAN_LAYER
-		overlays += I
+		add_overlay(I)
 
 /obj/structure/quicksand/proc/expose()
 	if(exposed)

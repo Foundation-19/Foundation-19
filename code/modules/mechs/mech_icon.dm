@@ -6,7 +6,7 @@ proc/get_mech_image(var/decal, var/cache_key, var/cache_icon, var/image_colour, 
 			var/image/masked_color = image(icon = cache_icon, icon_state = "[cache_key]_mask")
 			masked_color.color = image_colour
 			masked_color.blend_mode = BLEND_MULTIPLY
-			I.overlays += masked_color
+			I.add_overlay(masked_color)
 		if(decal)
 			var/decal_key = "[decal]-[cache_key]"
 			if(!GLOB.mech_icon_cache[decal_key])
@@ -18,7 +18,7 @@ proc/get_mech_image(var/decal, var/cache_key, var/cache_icon, var/image_colour, 
 				GLOB.mech_icon_cache[decal_key] = decal_icon
 			var/image/decal_image = get_mech_image(null, decal_key, GLOB.mech_icon_cache[decal_key])
 			decal_image.blend_mode = BLEND_MULTIPLY
-			I.overlays += decal_image
+			I.add_overlay(decal_image)
 		I.appearance_flags |= RESET_COLOR
 		I.layer = overlay_layer
 		I.plane = FLOAT_PLANE
@@ -54,7 +54,7 @@ proc/get_mech_images(var/list/components = list(), var/overlay_layer = FLOAT_LAY
 
 /mob/living/exosuit/proc/update_pilots(var/update_overlays = TRUE)
 	if(update_overlays && LAZYLEN(pilot_overlays))
-		overlays -= pilot_overlays
+		cut_overlay(pilot_overlays)
 	pilot_overlays = null
 	if(!body || ((body.pilot_coverage < 100 || body.transparent_cabin) && !body.hide_pilot))
 		for(var/i = 1 to LAZYLEN(pilots))
@@ -73,7 +73,7 @@ proc/get_mech_images(var/list/components = list(), var/overlay_layer = FLOAT_LAY
 				draw_pilot.transform = null
 			LAZYADD(pilot_overlays, draw_pilot)
 		if(update_overlays && LAZYLEN(pilot_overlays))
-			overlays += pilot_overlays
+			add_overlay(pilot_overlays)
 
 /mob/living/exosuit/regenerate_icons()
 	return

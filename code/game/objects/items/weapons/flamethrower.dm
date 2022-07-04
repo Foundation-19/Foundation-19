@@ -45,14 +45,14 @@
 /obj/item/flamethrower/on_update_icon()
 	cut_overlays()
 	if(igniter)
-		overlays += "+igniter[status]"
+		add_overlay("+igniter[status]")
 	if(tank)
 		if(istype(tank, /obj/item/tank/hydrogen))
-			overlays += "+htank"
+			add_overlay("+htank")
 		else
-			overlays += "+ptank"
+			add_overlay("+ptank")
 	if(lit)
-		overlays += "+lit"
+		add_overlay("+lit")
 		item_state = "flamethrower_1"
 	else
 		item_state = "flamethrower_0"

@@ -740,16 +740,16 @@ About the new airlock wires panel:
 
 	cut_overlays()
 
-	overlays += color_overlay
-	overlays += filling_overlay
-	overlays += stripe_overlay
-	overlays += stripe_filling_overlay
-	overlays += panel_overlay
-	overlays += weld_overlay
-	overlays += brace_overlay
-	overlays += lights_overlay
-	overlays += sparks_overlay
-	overlays += damage_overlay
+	add_overlay(color_overlay)
+	add_overlay(filling_overlay)
+	add_overlay(stripe_overlay)
+	add_overlay(stripe_filling_overlay)
+	add_overlay(panel_overlay)
+	add_overlay(weld_overlay)
+	add_overlay(brace_overlay)
+	add_overlay(lights_overlay)
+	add_overlay(sparks_overlay)
+	add_overlay(damage_overlay)
 
 /obj/machinery/door/airlock/do_animate(animation)
 	if(overlays)

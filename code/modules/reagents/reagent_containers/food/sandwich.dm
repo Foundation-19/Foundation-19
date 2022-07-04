@@ -62,12 +62,12 @@
 		I.color = O.filling_color
 		I.pixel_x = pick(list(-1,0,1))
 		I.pixel_y = (i*2)+1
-		overlays += I
+		add_overlay(I)
 
 	var/image/T = new(src.icon, "sandwich_top")
 	T.pixel_x = pick(list(-1,0,1))
 	T.pixel_y = (ingredients.len * 2)+1
-	overlays += T
+	add_overlay(T)
 
 	SetName(lowertext("[fullname] sandwich"))
 	if(length(name) > 80) SetName("[pick(list("absurd","colossal","enormous","ridiculous"))] sandwich")

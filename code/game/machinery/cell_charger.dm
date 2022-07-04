@@ -16,7 +16,7 @@
 		var/newlevel = 	round(charging.percent() * 4.0 / 99)
 		if(chargelevel != newlevel)
 			cut_overlays()
-			overlays += "ccharger-o[newlevel]"
+			add_overlay("ccharger-o[newlevel]")
 			chargelevel = newlevel
 	else
 		cut_overlays()

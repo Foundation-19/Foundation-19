@@ -766,7 +766,7 @@
 						if(trauma_val >= 1)
 							health_images += image('icons/mob/screen1_health.dmi',"hardcrit")
 
-				healths.overlays += health_images
+				healths.add_overlay(health_images)
 
 		if(nutrition_icon)
 			switch(nutrition)

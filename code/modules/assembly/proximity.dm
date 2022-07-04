@@ -95,10 +95,10 @@
 	cut_overlays()
 	attached_overlays = list()
 	if(timing)
-		overlays += "prox_timing"
+		add_overlay("prox_timing")
 		attached_overlays += "prox_timing"
 	if(scanning)
-		overlays += "prox_scanning"
+		add_overlay("prox_scanning")
 		attached_overlays += "prox_scanning"
 	if(holder)
 		holder.update_icon()

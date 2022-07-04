@@ -45,7 +45,7 @@
 		parts += I
 	overlays = parts
 	if(lootleft)
-		overlays += image(icon,"twinkle[rand(1,3)]")
+		add_overlay(image(icon,"twinkle[rand(1,3)]"))
 
 /obj/structure/rubble/attack_hand(mob/user)
 	if(!is_rummaging)

@@ -79,7 +79,7 @@
 			tiny_state = "id-"+front_id.icon_state
 		var/image/tiny_image = new/image(icon, icon_state = tiny_state)
 		tiny_image.appearance_flags = RESET_COLOR
-		overlays += tiny_image
+		add_overlay(tiny_image)
 
 /obj/item/storage/wallet/GetIdCard()
 	return front_id

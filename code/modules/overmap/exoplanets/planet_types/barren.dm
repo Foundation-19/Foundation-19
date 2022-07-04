@@ -40,7 +40,7 @@
 /turf/simulated/floor/exoplanet/barren/on_update_icon()
 	cut_overlays()
 	if(prob(20))
-		overlays += image('icons/turf/flooring/decals.dmi', "asteroid[rand(0,9)]")
+		add_overlay(image('icons/turf/flooring/decals.dmi', "asteroid[rand(0,9)]"))
 
 /turf/simulated/floor/exoplanet/barren/Initialize()
 	. = ..()

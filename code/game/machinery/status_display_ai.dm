@@ -92,4 +92,4 @@ var/list/ai_status_emotions = list(
 	picture_state = state
 	if(overlays.len)
 		cut_overlays()
-	overlays += image('icons/obj/status_display.dmi', icon_state=picture_state)
+	add_overlay(image('icons/obj/status_display.dmi', icon_state=picture_state))

@@ -31,9 +31,9 @@
 /obj/machinery/organ_printer/on_update_icon()
 	cut_overlays()
 	if (panel_open)
-		overlays += "[icon_state]_panel_open"
+		add_overlay("[icon_state]_panel_open")
 	if (printing)
-		overlays += "[icon_state]_working"
+		add_overlay("[icon_state]_working")
 
 /obj/machinery/organ_printer/examine(mob/user)
 	. = ..()

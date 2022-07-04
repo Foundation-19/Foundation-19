@@ -96,9 +96,9 @@
 
 /obj/item/storage/fancy/crayons/on_update_icon()
 	overlays = list() //resets list
-	overlays += image('icons/obj/crayons.dmi',"crayonbox")
+	add_overlay(image('icons/obj/crayons.dmi',"crayonbox"))
 	for(var/obj/item/pen/crayon/crayon in contents)
-		overlays += image('icons/obj/crayons.dmi',crayon.colourName)
+		add_overlay(image('icons/obj/crayons.dmi',crayon.colourName))
 
 /*
  * Pencil Case
@@ -353,11 +353,11 @@
 	src.icon_state = "vialbox[Floor(total_contents/2)]"
 	src.cut_overlays()
 	if (!broken)
-		overlays += image(icon, src, "led[locked]")
+		add_overlay(image(icon, src, "led[locked]"))
 		if(locked)
-			overlays += image(icon, src, "cover")
+			add_overlay(image(icon, src, "cover"))
 	else
-		overlays += image(icon, src, "ledb")
+		add_overlay(image(icon, src, "ledb"))
 	return
 
 /obj/item/storage/lockbox/vials/attackby(obj/item/W as obj, mob/user as mob)
