@@ -343,7 +343,7 @@
 
 /obj/item/ammo_magazine/t12
 	name = "T12 magazine"
-	icon_state = "t12"
+	icon_state = "c762" //untill someone has a better sprite
 	mag_type = MAGAZINE
 	caliber = CALIBER_T12
 	matter = list(MATERIAL_STEEL = 2400)
