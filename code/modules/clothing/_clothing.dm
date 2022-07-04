@@ -59,7 +59,7 @@
 
 	if(accessories.len)
 		for(var/obj/item/clothing/accessory/A in accessories)
-			ret.overlays |= A.get_mob_overlay(user_mob, slot)
+			ret.add_overlay(A.get_mob_overlay(user_mob, slot))
 	return ret
 
 
@@ -420,7 +420,7 @@ BLIND     // can't see anything
 					light_overlay_image = user_human.species.get_offset_overlay_image(FALSE, 'icons/mob/light_overlays.dmi', "[light_overlay]", color, slot)
 			else
 				light_overlay_image = overlay_image('icons/mob/light_overlays.dmi', "[light_overlay]", null, RESET_COLOR)
-		ret.overlays |= light_overlay_image
+		ret.add_overlay(light_overlay_image)
 	return ret
 
 /obj/item/clothing/head/attack_self(mob/user)
@@ -486,7 +486,7 @@ BLIND     // can't see anything
 		// Generate object icon.
 		if(!light_overlay_cache["[light_overlay]_icon"])
 			light_overlay_cache["[light_overlay]_icon"] = image("icon" = 'icons/obj/light_overlays.dmi', "icon_state" = "[light_overlay]")
-		overlays |= light_overlay_cache["[light_overlay]_icon"]
+		add_overlay(light_overlay_cache["[light_overlay]_icon"])
 
 	if(istype(user,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = user

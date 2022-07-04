@@ -52,7 +52,7 @@ var/bomb_set
 		if(auth)
 			if(panel_open == 0)
 				panel_open = 1
-				overlays |= "panel_open"
+				add_overlay("panel_open")
 				to_chat(user, "You unscrew the control panel of [src].")
 				playsound(src, 'sound/items/Screwdriver.ogg', 50, 1)
 			else

@@ -275,7 +275,7 @@
 
 		T.icon = image(M)
 		T.icon_state = M.icon_state
-		T.overlays = M.overlays.Copy()
+		T.copy_overlays(M)
 		T.layer = MOB_LAYER
 		T.set_dir(M.dir)
 

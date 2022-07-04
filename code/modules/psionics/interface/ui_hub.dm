@@ -24,7 +24,7 @@
 
 	icon_state = owner.psi.suppressed ? "psi_suppressed" : "psi_active"
 	if(world.time < owner.psi.next_power_use)
-		overlays |= on_cooldown
+		add_overlay(on_cooldown)
 	else
 		cut_overlays()
 	var/offset = 1

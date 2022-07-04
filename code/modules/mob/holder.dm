@@ -103,7 +103,7 @@ var/list/holder_mob_icon_cache = list()
 	color = M.color
 	name = M.name
 	desc = M.desc
-	overlays |= M.overlays
+	add_overlay(M.overlays)
 	var/mob/living/carbon/human/H = loc
 	last_holder = H
 	register_all_movement(H, M)

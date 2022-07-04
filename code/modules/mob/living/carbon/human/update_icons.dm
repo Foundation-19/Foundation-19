@@ -854,7 +854,7 @@ var/global/list/damage_icon_parts = list()
 		overlay_state = "[base_state]-bones"
 		if(overlay_state in surgery_states)
 			LAZYADD(overlays_to_add, image(icon = surgery_icon, icon_state = overlay_state, layer = -HO_SURGERY_LAYER))
-		total.overlays |= overlays_to_add
+		total.add_overlay(overlays_to_add)
 
 	total.appearance_flags = RESET_COLOR
 	overlays_standing[HO_SURGERY_LAYER] = total

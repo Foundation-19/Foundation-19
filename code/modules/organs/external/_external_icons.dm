@@ -66,7 +66,7 @@ var/list/limb_icon_cache = list()
 			icon_cache_key += "[M.name][color]"
 			ADD_SORTED(sorted, list(list(M.draw_order, I, M)), /proc/cmp_marking_order)
 	for (var/entry in sorted)
-		overlays |= entry[2]
+		add_overlay(entry[2])
 		mob_icon.Blend(entry[2], entry[3]["layer_blend"])
 
 /obj/item/organ/external/var/icon_cache_key
@@ -110,7 +110,7 @@ var/list/limb_icon_cache = list()
 			icon_cache_key += "[M.name][color]"
 			ADD_SORTED(sorted, list(list(M.draw_order, I, M)), /proc/cmp_marking_order)
 	for (var/entry in sorted)
-		overlays |= entry[2]
+		add_overlay(entry[2])
 		mob_icon.Blend(entry[2], entry[3]["layer_blend"])
 
 	if(body_hair && islist(h_col) && h_col.len >= 3)

@@ -22,9 +22,9 @@
 	..()
 	cut_overlays()
 	if (contents.len == max_butts)
-		overlays |= image('icons/obj/objects.dmi',"ashtray_full")
+		add_overlay(image('icons/obj/objects.dmi',"ashtray_full"))
 	else if (contents.len >= max_butts/2)
-		overlays |= image('icons/obj/objects.dmi',"ashtray_half")
+		add_overlay(image('icons/obj/objects.dmi',"ashtray_half"))
 
 /obj/item/material/ashtray/attackby(obj/item/W as obj, mob/user as mob)
 	if(!is_alive())

@@ -64,7 +64,7 @@ var/list/tape_roll_applications = list()
 	if(detail_overlay)
 		var/image/I = overlay_image(icon, "[new_state]_[detail_overlay]", flags=RESET_COLOR)
 		I.color = detail_color
-		overlays |= I
+		add_overlay(I)
 
 /obj/item/taperoll/police
 	name = "police tape"
@@ -311,7 +311,7 @@ var/list/tape_roll_applications = list()
 			tape_roll_applications[F] &= ~direction
 		else
 			user.visible_message("\The [user] applied \the [src] on \the [F] to create area markings.", "You apply \the [src] on \the [F] to create area markings.")
-			F.overlays |= hazard_overlay
+			F.add_overlay(hazard_overlay)
 			tape_roll_applications[F] |= direction
 		return
 
