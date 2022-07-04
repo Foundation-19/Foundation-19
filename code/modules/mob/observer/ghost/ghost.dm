@@ -678,7 +678,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			to_chat(src, "You cannot join as this SCP for [((5 MINUTES) - world.time)/600] more minutes.")
 //		else if (isscp131(scp) && world.time < 5 MINUTES)
 //			to_chat(src, "You cannot join as this SCP for [((5 MINUTES) - world.time)/600] more minutes.")
-		else if (isscp529(scp) && world.time < 5 MINUTES)
+//		else if (isscp529(scp) && world.time < 5 MINUTES)
 			to_chat(src, "You cannot join as this SCP for [((5 MINUTES) - world.time)/600] more minutes.")
 		else if (scp && !scp.client)
 			scp.do_possession(src)
