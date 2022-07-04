@@ -398,7 +398,8 @@
 		'html/images/mtf.png',
 		'html/images/trib.png',
 		'html/images/scplogo.png',
-		'html/images/ungoc.png'
+		'html/images/ungoc.png',
+		'html/images/uiu.png'
 		)
 	addtimer(CALLBACK(src, .proc/after_send_resources), 1 SECOND)
 
