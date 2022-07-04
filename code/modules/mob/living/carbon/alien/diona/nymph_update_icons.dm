@@ -12,4 +12,4 @@
 			adding += flower
 		if(hat)
 			adding += get_hat_icon(hat, 0, -8)
-	overlays = adding
+	set_overlays(adding)

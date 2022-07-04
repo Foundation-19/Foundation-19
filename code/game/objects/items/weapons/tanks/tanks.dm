@@ -425,7 +425,7 @@ var/list/global/tank_gauge_cache = list()
 			LAZYADD(overlays_to_add, tank_gauge_cache[indicator])
 		previous_gauge_pressure = gauge_pressure
 
-	overlays = overlays_to_add
+	set_overlays(overlays_to_add)
 
 //Handle exploding, leaking, and rupturing of the tank
 /obj/item/tank/proc/check_status()

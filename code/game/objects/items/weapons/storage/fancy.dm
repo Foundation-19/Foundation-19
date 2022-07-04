@@ -95,7 +95,7 @@
 		)
 
 /obj/item/storage/fancy/crayons/on_update_icon()
-	overlays = list() //resets list
+	cut_overlays()
 	add_overlay(image('icons/obj/crayons.dmi',"crayonbox"))
 	for(var/obj/item/pen/crayon/crayon in contents)
 		add_overlay(image('icons/obj/crayons.dmi',crayon.colourName))

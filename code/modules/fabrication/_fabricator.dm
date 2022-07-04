@@ -110,7 +110,7 @@
 	var/list/new_overlays = material_overlays.Copy()
 	if(panel_open)
 		new_overlays += panel_image
-	overlays = new_overlays
+	set_overlays(new_overlays)
 
 /obj/machinery/fabricator/proc/remove_mat_overlay(var/mat_overlay)
 	material_overlays -= mat_overlay

@@ -43,7 +43,7 @@
 		M.Turn(rand(0,360))
 		I.transform = M
 		parts += I
-	overlays = parts
+	set_overlays(parts)
 	if(lootleft)
 		add_overlay(image(icon,"twinkle[rand(1,3)]"))
 

@@ -107,4 +107,4 @@
 	if(key_data)
 		add_overlay(image('icons/obj/items.dmi', icon_state = "soap_key_overlay"))
 	else if(decal_name)
-		overlays +=	overlay_image(icon, "decal-[decal_name]")
+		add_overlay( overlay_image(icon, "decal-[decal_name]"))

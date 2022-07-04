@@ -66,10 +66,10 @@
 /obj/item/gun/energy/particle/on_update_icon()
 	. = ..()
 	var/datum/firemode/current_mode = firemodes[sel_mode]
-	overlays = list(
+	set_overlays(list(
 		image(icon, "[charge_state]mode-[istype(current_mode) ? current_mode.name : "lethal"]"),
 		image(icon, "[charge_state]charge-[Floor(power_supply.percent()/20)]")
-	)
+	))
 
 /obj/item/gun/energy/particle/get_mob_overlay(var/mob/living/carbon/human/user, var/slot)
 	if(istype(user) && (slot == slot_l_hand_str || slot == slot_r_hand_str))

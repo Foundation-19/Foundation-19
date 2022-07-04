@@ -156,7 +156,7 @@
 			emp_strong_range = 4
 			cut_overlays()
 			if(chained)
-				overlays = list("emfield_s3")
+				set_overlays(list("emfield_s3"))
 			if(growing)
 				visible_message("<span class='notice'>The singularity noticeably grows in size.</span>")
 			else
@@ -179,7 +179,7 @@
 				emp_strong_range = 5
 				cut_overlays()
 				if(chained)
-					overlays = list("emfield_s5")
+					set_overlays(list("emfield_s5"))
 				if(growing)
 					visible_message("<span class='notice'>The singularity expands to a reasonable size.</span>")
 				else
@@ -202,7 +202,7 @@
 				emp_strong_range = 7
 				cut_overlays()
 				if(chained)
-					overlays = list("emfield_s7")
+					set_overlays(list("emfield_s7"))
 				if(growing)
 					visible_message("<span class='warning'>The singularity expands to a dangerous size.</span>")
 				else
@@ -222,7 +222,7 @@
 			emp_strong_range = 9
 			cut_overlays()
 			if(chained)
-				overlays = list("emfield_s9")
+				set_overlays(list("emfield_s9"))
 			if(growing)
 				visible_message("<span class='danger'><font size='2'>The singularity has grown out of control!</font></span>")
 			else
@@ -242,7 +242,7 @@
 			emp_weak_range = 13
 			emp_strong_range = 11
 			if(chained)
-				overlays = list("emfield_s11")
+				set_overlays(list("emfield_s11"))
 			visible_message("<span class='sinister'><font size='3'>You witness the creation of a destructive force that cannot possibly be stopped by human hands.</font></span>")
 
 	if (current_size == allowed_size)

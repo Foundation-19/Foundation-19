@@ -96,7 +96,7 @@
 	desc = O.desc
 	icon = new_icon
 	icon_state = new_iconstate
-	overlays = new_overlays
+	set_overlays(new_overlays)
 	set_dir(O.dir)
 	M.forceMove(src)
 	master = C

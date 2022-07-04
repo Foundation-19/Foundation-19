@@ -204,7 +204,7 @@
 		icon_state = "borgcharger0"
 
 	last_overlay_state = overlay_state()
-	overlays = list(image(overlay_icon, overlay_state()))
+	set_overlays(list(image(overlay_icon, overlay_state())))
 
 /obj/machinery/recharge_station/proc/go_in(var/mob/M)
 	if(occupant)
