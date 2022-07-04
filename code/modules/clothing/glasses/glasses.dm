@@ -170,7 +170,7 @@
 
 /obj/item/clothing/glasses/scramble
 	name = "SCRAMBLE goggles"
-	desc = "State-of-the-art SCRAMBLE goggles. These things cost a fortune and apperantly make you able to view SCP-096!"
+	desc = "State-of-the-art SCRAMBLE goggles. These things cost a fortune and apparently make you able to view SCP-096!"
 	icon_state = "scramble"
 	item_state = "glasses"
 	origin_tech = list(TECH_MAGNET = 4)
