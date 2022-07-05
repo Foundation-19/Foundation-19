@@ -21739,7 +21739,7 @@
 	name = "cat bed";
 	pixel_y = 9
 	},
-/mob/living/simple_animal/cat/fluff/scp_529{
+/mob/living/simple_animal/friendly/cat/fluff/scp529{
 	dir = 4;
 	icon_state = "cat"
 	},
