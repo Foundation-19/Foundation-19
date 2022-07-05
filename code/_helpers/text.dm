@@ -463,6 +463,7 @@ proc/TextPreview(var/string,var/len=40)
 	t = replacetext(t, "\[isd\]", "<img src = isd.png>")
 	t = replacetext(t, "\[ecd\]", "<img src = ecd.png>")
 	t = replacetext(t, "\[goc\]", "<img src = ungoc.png>")
+	t = replacetext(t, "\[uiu\]", "<img src = uiu.png>")
 	return t
 
 //pencode translation to html for tags exclusive to digital files (currently email, nanoword, report editor fields,
