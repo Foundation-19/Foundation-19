@@ -180,15 +180,16 @@ var/list/gear_datums = list()
 		entry += "<td width = 10% style='vertical-align:top'>[G.cost]</td>"
 		entry += "<td><font size=2>[G.get_description(get_gear_metadata(G,1))]</font>"
 		var/allowed = 1
-		if(allowed && G.allowed_roles)
+		if(allowed && (G.allowed_roles || G.denied_roles))
 			var/good_job = 0
 			var/bad_job = 0
 			entry += "<br><i>"
 			var/list/jobchecks = list()
 			for(var/datum/job/J in jobs)
-				if(J.type in G.allowed_roles)
-					jobchecks += "<font color=55cc55>[J.title]</font>"
-					good_job = 1
+				if(!(J.type in G.denied_roles))
+					if(J.type in G?.allowed_roles)
+						jobchecks += "<font color=55cc55>[J.title]</font>"
+						good_job = 1
 				else
 					jobchecks += "<font color=cc5555>[J.title]</font>"
 					bad_job = 1
@@ -353,6 +354,8 @@ var/list/gear_datums = list()
 	var/custom_setup_proc
 	/// Unused?
 	var/category
+	/// A blacklist of roles that can spawn with this item. If blank, it's valid for all roles.
+	var/list/denied_roles
 	/// A whitelist of roles that can spawn with this item. If blank, it's valid for all roles.
 	var/list/allowed_roles
 	/// A whitelist of service branches that can spawn with this item. If blank, it's valid for all branches.
