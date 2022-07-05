@@ -11168,6 +11168,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/power/port_gen/pacman/super/potato/reactor,
+/obj/structure/sign/scp/explosive{
+	pixel_y = -24
+	},
 /turf/simulated/floor/plating,
 /area/site53/engineering/engine_smes)
 "ayl" = (
@@ -11911,6 +11914,9 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/port_gen/pacman/super/potato/reactor,
+/obj/structure/sign/scp/explosive{
+	pixel_y = -24
+	},
 /turf/simulated/floor/plating,
 /area/site53/engineering/engine_smes)
 "azS" = (
@@ -12387,6 +12393,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp106observ)
@@ -26068,6 +26077,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
+"dTA" = (
+/mob/living/simple_animal/aquatic/fish/judge{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/water/shallow,
+/area/site53/uhcz/scp247containment)
 "dUl" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -26240,6 +26255,10 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/unary/tank,
+/obj/machinery/camera/autoname{
+	dir = 4;
+	network = list("Heavy Containment Zone Network")
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp8containment)
 "ewB" = (
@@ -26780,9 +26799,8 @@
 /area/site53/upper_surface/serverfarmcontrol)
 "gpO" = (
 /obj/effect/catwalk_plated/dark,
-/obj/machinery/camera/autoname{
-	dir = 4;
-	network = list("Heavy Containment Zone Network")
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
@@ -27066,7 +27084,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/external/glass/bolted{
 	id_tag = "scp8exterior";
-	tag = "scp8exterior"
+	tag = "scp8exterior";
+	frequency = 1379
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -27442,6 +27461,10 @@
 /obj/item/reagent_containers/glass/beaker/vial,
 /obj/item/reagent_containers/glass/beaker/vial,
 /obj/item/reagent_containers/glass/beaker/vial,
+/obj/machinery/camera/autoname{
+	dir = 4;
+	network = list("Heavy Containment Zone Network")
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
 "iDU" = (
@@ -27655,6 +27678,9 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/engineering/controlroom)
+"jpa" = (
+/turf/simulated/floor/exoplanet/water/shallow,
+/area/site53/uhcz/scp247containment)
 "jpc" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -27969,6 +27995,19 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
+"ksk" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/camera/autoname{
+	dir = 4;
+	network = list("Heavy Containment Zone Network");
+	pixel_y = 13
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp096)
+"ksu" = (
+/obj/item/trash/fishegg,
+/turf/simulated/mineral,
+/area/site53/uhcz/scp247containment)
 "ksC" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -28172,6 +28211,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
+"lbc" = (
+/mob/living/simple_animal/aquatic/fish{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/water/shallow,
+/area/site53/uhcz/scp247containment)
 "lbd" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -28755,6 +28800,13 @@
 /obj/machinery/light,
 /turf/simulated/floor,
 /area/site53/surface/bunker)
+"mvO" = (
+/obj/machinery/camera/autoname{
+	dir = 1;
+	network = list("SCP-247 CCTV Network")
+	},
+/turf/simulated/floor/exoplanet/water/shallow,
+/area/site53/uhcz/scp247containment)
 "mxN" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -30350,7 +30402,8 @@
 	},
 /obj/machinery/door/airlock/external/glass/bolted{
 	id_tag = "scp8interior";
-	tag = "scp8interior"
+	tag = "scp8interior";
+	frequency = 1379
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -30457,6 +30510,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
+"rWr" = (
+/mob/living/simple_animal/aquatic/fish/grump{
+	dir = 8
+	},
+/turf/simulated/floor/exoplanet/water/shallow,
+/area/site53/uhcz/scp247containment)
 "rYU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/structure/table/standard,
@@ -32235,6 +32294,23 @@
 /obj/machinery/fabricator,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/ulcz/medicalpost)
+"xIG" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	icon_state = "bulb1"
+	},
+/obj/machinery/camera/autoname{
+	dir = 4;
+	network = list("Heavy Containment Zone Network")
+	},
+/turf/simulated/floor,
+/area/site53/uhcz/scp8containment)
 "xJI" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -32344,6 +32420,10 @@
 /obj/structure/hygiene/sink{
 	dir = 1;
 	pixel_y = 16
+	},
+/obj/machinery/camera/autoname{
+	dir = 4;
+	network = list("Heavy Containment Zone Network")
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -75199,7 +75279,7 @@ azA
 bdi
 iCX
 iCX
-ajS
+ksk
 mQq
 bmS
 ajS
@@ -76765,7 +76845,7 @@ akt
 qrq
 rvy
 rvy
-rvy
+xIG
 rvy
 rvy
 eEq
@@ -81710,7 +81790,7 @@ hFj
 kjv
 hFj
 hFj
-tzW
+jPr
 xna
 xna
 bcV
@@ -81967,8 +82047,8 @@ hFj
 hFj
 hFj
 hFj
-hFj
-hFj
+aWc
+jpa
 xna
 bcV
 azA
@@ -82224,8 +82304,8 @@ hFj
 hFj
 hFj
 hFj
-hFj
-uum
+aWc
+mvO
 rno
 bcV
 bcV
@@ -82481,9 +82561,9 @@ hFj
 aXm
 hFj
 aWc
-hFj
-hFj
-xna
+aWc
+jpa
+ksu
 xna
 bcV
 azA
@@ -82738,9 +82818,9 @@ aXm
 aXm
 hFj
 aWc
-hFj
-hFj
-hFj
+aWc
+jpa
+jpa
 xna
 bcV
 azA
@@ -82996,8 +83076,8 @@ hFj
 hFj
 aWc
 aWc
-hFj
-hFj
+jpa
+jpa
 xna
 bcV
 azA
@@ -83252,9 +83332,9 @@ aWc
 aWc
 aWc
 aWc
-aWc
-hFj
-hFj
+jpa
+lbc
+dTA
 xna
 bcV
 azA
@@ -83509,9 +83589,9 @@ jPr
 aWc
 aWc
 aWc
-aWc
-hFj
-hFj
+jpa
+rWr
+jpa
 xna
 bcV
 azA
@@ -83767,8 +83847,8 @@ aWc
 aWc
 aWc
 aWc
-hFj
-hFj
+jpa
+jpa
 xna
 bcV
 azA
@@ -84024,8 +84104,8 @@ aWc
 aWc
 hFj
 aWc
-hFj
-hFj
+jpa
+jpa
 xna
 bcV
 azA
@@ -84280,9 +84360,9 @@ hFj
 hFj
 aWc
 hFj
-hFj
-hFj
-hFj
+aWc
+aWc
+jpa
 xna
 bcV
 azA
@@ -84539,7 +84619,7 @@ aWc
 aWc
 aWc
 hFj
-hFj
+aWc
 xna
 bcV
 azA
