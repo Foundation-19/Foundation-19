@@ -8,9 +8,9 @@
 	var/heartbeat = 0
 	var/beat_sound = 'sound/effects/singlebeat.ogg'
 	var/tmp/next_blood_squirt = 0
-	damage_reduction = 0.7
+	damage_reduction = 0
 	relative_size = 5
-	max_damage = 45
+	max_damage = 20
 	var/open
 	var/list/external_pump
 	scp106_vulnerable = FALSE

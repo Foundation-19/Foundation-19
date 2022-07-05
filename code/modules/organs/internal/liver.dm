@@ -5,9 +5,9 @@
 	w_class = ITEM_SIZE_SMALL
 	organ_tag = BP_LIVER
 	parent_organ = BP_GROIN
-	min_bruised_damage = 25
-	min_broken_damage = 45
-	max_damage = 70
+	min_bruised_damage = 15
+	min_broken_damage = 20
+	max_damage = 25
 	relative_size = 60
 
 /obj/item/organ/internal/liver/robotize()
