@@ -80,7 +80,7 @@
 	boots += /obj/item/clothing/shoes/desertboots
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(boots)
 
-/datum/gear/shoes/color
+/datum/gear/shoes/orange
 	display_name = "orange shoes"
 	path = /obj/item/clothing/shoes/orange
 	allowed_roles = list(/datum/job/assistant)
