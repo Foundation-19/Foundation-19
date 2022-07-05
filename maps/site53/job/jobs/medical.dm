@@ -238,12 +238,14 @@
 	//supervisors = "the Chief Medical Officer"
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/emt
 	allowed_branches = list(
-	/datum/mil_branch/security)
+	/datum/mil_branch/security,
+	/datum/mil_branch/civilian)
 	allowed_ranks = list(
 		/datum/mil_rank/security/e2,
 		/datum/mil_rank/security/e3,
 		/datum/mil_rank/security/e4,
-		/datum/mil_rank/security/e5
+		/datum/mil_rank/security/e5,
+		/datum/mil_rank/civ/classc
 		)
 	hud_icon = "hudemt"
 
