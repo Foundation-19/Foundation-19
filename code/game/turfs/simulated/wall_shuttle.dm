@@ -11,6 +11,9 @@
 	density = TRUE
 	blocks_air = 1
 
+/turf/simulated/shuttle/wall/is_wall()
+	return TRUE
+
 /turf/simulated/shuttle/wall/corner
 	var/corner_overlay_state = "diagonalWall"
 	var/image/corner_overlay

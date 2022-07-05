@@ -2,6 +2,9 @@
 	name = "Beach"
 	icon = 'icons/misc/beach.dmi'
 
+/turf/unsimulated/beach/is_floor()
+	return TRUE
+
 /turf/unsimulated/beach/sand
 	name = "Sand"
 	icon_state = "sand"

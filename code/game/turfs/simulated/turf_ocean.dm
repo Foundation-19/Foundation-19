@@ -8,6 +8,9 @@
 	flooded = TRUE
 	var/detail_decal
 
+/turf/simulated/ocean/is_floor()
+	return TRUE
+
 /turf/simulated/ocean/abyss
 	name = "abyssal silt"
 	desc = "Unfathomably silty."
