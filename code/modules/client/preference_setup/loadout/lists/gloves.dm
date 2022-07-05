@@ -3,6 +3,7 @@
 	slot = slot_gloves
 	sort_category = "Gloves and Handwear"
 	category = /datum/gear/gloves
+	denied_roles = list(/datum/job/assistant)
 
 /datum/gear/gloves/colored
 	display_name = "gloves, colored"
@@ -56,7 +57,6 @@
 	display_name = "gloves, botany"
 	path = /obj/item/clothing/gloves/thick/botany
 	cost = 3
-	denied_roles = list(/datum/job/assistant)
 
 /datum/gear/gloves/work
 	display_name = "gloves, work"

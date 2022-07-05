@@ -4,8 +4,9 @@
 	display_name = "earmuffs"
 	path = /obj/item/clothing/ears/earmuffs
 	sort_category = "Earwear"
+	denied_roles = list(/datum/job/assistant)
 
-/datum/gear/headphones
+/datum/gear/ears/headphones
 	display_name = "headphones"
 	path = /obj/item/clothing/ears/headphones
 	sort_category = "Earwear"

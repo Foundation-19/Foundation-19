@@ -2,6 +2,8 @@
 	sort_category = "Tactical Equipment"
 	category = /datum/gear/tactical/
 	slot = slot_tie
+	denied_roles = list(/datum/job/assistant)
+	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/tactical/armor_deco
 	display_name = "armor customization"
@@ -36,3 +38,7 @@
 	display_name = "tacticool turtleneck"
 	path = /obj/item/clothing/under/syndicate/tacticool
 	slot = slot_w_uniform
+
+/datum/gear/tactical/balaclava
+	display_name = "balaclava"
+	path = /obj/item/clothing/mask/balaclava

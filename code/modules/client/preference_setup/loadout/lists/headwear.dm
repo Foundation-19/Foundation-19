@@ -2,6 +2,7 @@
 	sort_category = "Hats and Headwear"
 	slot = slot_head
 	category = /datum/gear/head
+	denied_roles = list(/datum/job/assistant)
 
 /datum/gear/head/beret
 	display_name = "beret, colour select"
@@ -21,21 +22,30 @@
 	display_name = "beanie, color select"
 	path = /obj/item/clothing/head/beanie
 	flags = GEAR_HAS_COLOR_SELECTION
+	denied_roles = null
 
 /datum/gear/head/bow
 	display_name = "hair bow, colour select"
 	path = /obj/item/clothing/head/hairflower/bow
 	flags = GEAR_HAS_COLOR_SELECTION
+	denied_roles = null
 
 /datum/gear/head/flat_cap
 	display_name = "flat cap, colour select"
 	path = /obj/item/clothing/head/flatcap
 	flags = GEAR_HAS_COLOR_SELECTION
+	denied_roles = null
 
 /datum/gear/head/mariner
 	display_name = "mariner's cap, colour select"
 	path = /obj/item/clothing/head/mariner
 	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/head/orange_cap
+	display_name = "orange cap"
+	path = /obj/item/clothing/head/soft/orange
+	denied_roles = null
+	allowed_roles = list(/datum/job/assistant)
 
 /datum/gear/head/cap
 	display_name = "cap selection"
@@ -61,6 +71,7 @@
 /datum/gear/head/hairflower
 	display_name = "hair flower pin"
 	path = /obj/item/clothing/head/hairflower
+	denied_roles = null
 
 /datum/gear/head/hairflower/New()
 	..()
@@ -167,10 +178,6 @@
 /datum/gear/head/tankccap
 	display_name = "padded cap"
 	path = /obj/item/clothing/head/tank
-
-/datum/gear/tactical/balaclava
-	display_name = "balaclava"
-	path = /obj/item/clothing/mask/balaclava
 
 /datum/gear/head/corporateberet
 	display_name = "corporate beret selection"
