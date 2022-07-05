@@ -40,7 +40,7 @@
 /obj/structure/bed/on_update_icon()
 	// Prep icon.
 	icon_state = ""
-	overlays.Cut()
+	cut_overlays()
 	// Base icon.
 	var/cache_key = "[base_icon]-[material.name]"
 	if(isnull(stool_cache[cache_key]))
@@ -48,7 +48,7 @@
 		if(material_alteration & MATERIAL_ALTERATION_COLOR)
 			I.color = material.icon_colour
 		stool_cache[cache_key] = I
-	overlays |= stool_cache[cache_key]
+	add_overlay(stool_cache[cache_key])
 	// Padding overlay.
 	if(padding_material)
 		var/padding_cache_key = "[base_icon]-padding-[padding_material.name]"
@@ -57,7 +57,7 @@
 			if(material_alteration & MATERIAL_ALTERATION_COLOR)
 				I.color = padding_material.icon_colour
 			stool_cache[padding_cache_key] = I
-		overlays |= stool_cache[padding_cache_key]
+		add_overlay(stool_cache[padding_cache_key])
 
 	// Strings.
 	if(material_alteration & MATERIAL_ALTERATION_NAME)
@@ -196,7 +196,7 @@
 	var/iv_stand = TRUE
 
 /obj/structure/bed/roller/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(density)
 		icon_state = "up"
 	else
@@ -206,12 +206,12 @@
 		var/percentage = round((beaker.reagents.total_volume / beaker.volume) * 100, 25)
 		var/image/filling = image(icon, "iv_filling[percentage]")
 		filling.color = beaker.reagents.get_color()
-		iv.overlays += filling
+		iv.add_overlay(filling)
 		if(percentage < 25)
-			iv.overlays += image(icon, "light_low")
+			iv.add_overlay(image(icon, "light_low"))
 		if(density)
 			iv.pixel_y = 6
-		overlays += iv
+		add_overlay(iv)
 
 /obj/structure/bed/roller/attackby(obj/item/I, mob/user)
 	if(isWrench(I) || istype(I, /obj/item/stack) || isWirecutter(I))

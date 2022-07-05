@@ -102,7 +102,7 @@
 	SetName("cheval-de-frise")
 	desc = "A rather simple [material.display_name] barrier. It menaces with spikes of [rod_material.display_name]."
 	damage = (rod_material.hardness * 0.85)
-	overlays += overlay_image(icon, spike_overlay, color = rod_material.icon_colour, flags = RESET_COLOR)
+	add_overlay(overlay_image(icon, spike_overlay, color = rod_material.icon_colour, flags = RESET_COLOR))
 
 /obj/structure/barricade/spike/Bumped(mob/living/victim)
 	. = ..()

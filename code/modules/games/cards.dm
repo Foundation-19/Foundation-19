@@ -289,14 +289,14 @@
 		name = "[P.name]"
 		desc = "[P.desc]"
 
-	overlays.Cut()
+	cut_overlays()
 
 	if(cards.len == 1)
 		var/datum/playingcard/P = cards[1]
 		var/image/I = P.card_image(concealed, src.icon)
 		I.pixel_x += (-5+rand(10))
 		I.pixel_y += (-5+rand(10))
-		overlays += I
+		add_overlay(I)
 		return
 
 	var/offset = Floor(20/cards.len)
@@ -328,7 +328,7 @@
 			else
 				I.pixel_x = -7+(offset*i)
 		I.transform = M
-		overlays += I
+		add_overlay(I)
 		i++
 
 /obj/item/hand/dropped(mob/user)

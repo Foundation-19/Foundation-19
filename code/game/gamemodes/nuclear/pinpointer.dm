@@ -74,31 +74,31 @@
 		beeping--
 
 /obj/item/pinpointer/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(!active)
 		return
 	if(!target || !target.resolve())
-		overlays += image(icon,"pin_invalid")
+		add_overlay(image(icon,"pin_invalid"))
 		return
 
 	var/turf/here = get_turf(src)
 	var/turf/there = get_turf(target.resolve())
 	if(!istype(there))
-		overlays += image(icon,"pin_invalid")
+		add_overlay(image(icon,"pin_invalid"))
 		return
 
 	if(here == there)
-		overlays += image(icon,"pin_here")
+		add_overlay(image(icon,"pin_here"))
 		return
 
 	if(!(there.z in GetConnectedZlevels(here.z)))
-		overlays += image(icon,"pin_invalid")
+		add_overlay(image(icon,"pin_invalid"))
 		return
 	if(here.z > there.z)
-		overlays += image(icon,"pin_down")
+		add_overlay(image(icon,"pin_down"))
 		return
 	if(here.z < there.z)
-		overlays += image(icon,"pin_up")
+		add_overlay(image(icon,"pin_up"))
 		return
 
 	dir = get_dir(here,there)
@@ -110,7 +110,7 @@
 		pointer.color = COLOR_RED
 	else
 		pointer.color = COLOR_YELLOW
-	overlays += pointer
+	add_overlay(pointer)
 
 //Nuke ops locator
 /obj/item/pinpointer/nukeop

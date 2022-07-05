@@ -224,11 +224,11 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 		field_image.transform = M
 
 	if(on)
-		overlays |= field_image
+		add_overlay(field_image)
 		set_light(0.8, 1, 6, l_color = COLOR_CYAN)
 		icon_state = "core1"
 	else
-		overlays -= field_image
+		cut_overlay(field_image)
 		set_light(0)
 		icon_state = "core0"
 

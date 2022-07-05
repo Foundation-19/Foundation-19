@@ -25,7 +25,7 @@
 	var/sharp_tools = list(SWISSKNF_LBLADE, SWISSKNF_SBLADE, SWISSKNF_GBLADE, SWISSKNF_WBLADE)
 
 /obj/item/material/knife/folding/swiss/attack_self(mob/user)
-	var/choice	
+	var/choice
 	if(user.a_intent != I_HELP && ((SWISSKNF_LBLADE in tools) || (SWISSKNF_SBLADE in tools)) && active_tool == SWISSKNF_CLOSED)
 		open = TRUE
 		if(SWISSKNF_LBLADE in tools)
@@ -38,7 +38,7 @@
 		else
 			choice = SWISSKNF_CLOSED
 			open = FALSE
-	
+
 	if(!choice || !CanPhysicallyInteract(user))
 		return
 	if(choice == SWISSKNF_CLOSED)
@@ -51,7 +51,7 @@
 			playsound(user, 'sound/weapons/flipblade.ogg', 15, 1)
 		else
 			user.visible_message("<span class='notice'>\The [user] opens the [lowertext(choice)].</span>")
-			
+
 	active_tool = choice
 	update_force()
 	update_icon()
@@ -82,13 +82,13 @@
 
 /obj/item/material/knife/folding/swiss/on_update_icon()
 	if(active_tool != null)
-		overlays.Cut()
-		overlays += overlay_image(icon, active_tool, flags=RESET_COLOR)
+		cut_overlays()
+		add_overlay(overlay_image(icon, active_tool, flags=RESET_COLOR))
 		item_state = initial(item_state)
 		if(active_tool == SWISSKNF_LBLADE || active_tool == SWISSKNF_SBLADE)
 			item_state = "knife"
 		if(blood_overlay)
-			overlays += blood_overlay
+			add_overlay(blood_overlay)
 
 /obj/item/material/knife/folding/swiss/iscrowbar()
 	return active_tool == SWISSKNF_CROWBAR && can_use_tools

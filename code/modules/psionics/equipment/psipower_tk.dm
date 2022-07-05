@@ -41,11 +41,11 @@
 		return FALSE
 
 	focus = _focus
-	overlays.Cut()
+	cut_overlays()
 	var/image/I = image(icon = focus.icon, icon_state = focus.icon_state)
 	I.color = focus.color
 	I.overlays = focus.overlays
-	overlays += I
+	add_overlay(I)
 	return TRUE
 
 /obj/item/psychic_power/telekinesis/attack_self(var/mob/user)

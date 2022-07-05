@@ -405,7 +405,7 @@ var/list/global/tank_gauge_cache = list()
 		LAZYADD(overlays_to_add, image(icon,"bomb_assembly"))
 		if(proxyassembly.assembly)
 			var/image/bombthing = image(proxyassembly.assembly.icon, proxyassembly.assembly.icon_state)
-			bombthing.overlays |= proxyassembly.assembly.overlays
+			bombthing.add_overlay(proxyassembly.assembly.overlays)
 			bombthing.pixel_y = -1
 			bombthing.pixel_x = -3
 			LAZYADD(overlays_to_add, bombthing)
@@ -425,7 +425,7 @@ var/list/global/tank_gauge_cache = list()
 			LAZYADD(overlays_to_add, tank_gauge_cache[indicator])
 		previous_gauge_pressure = gauge_pressure
 
-	overlays = overlays_to_add
+	set_overlays(overlays_to_add)
 
 //Handle exploding, leaking, and rupturing of the tank
 /obj/item/tank/proc/check_status()

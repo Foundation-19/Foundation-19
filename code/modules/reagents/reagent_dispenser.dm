@@ -178,7 +178,7 @@
 			usr.visible_message("<span class='notice'>\The [usr] detaches \the [rig] from \the [src].</span>", "<span class='notice'>You detach [rig] from \the [src]</span>")
 			rig.dropInto(usr.loc)
 			rig = null
-			overlays.Cut()
+			cut_overlays()
 
 /obj/structure/reagent_dispensers/fueltank/attackby(obj/item/W as obj, mob/user as mob)
 	src.add_fingerprint(user)
@@ -206,7 +206,7 @@
 			var/icon/test = getFlatIcon(W)
 			test.Shift(NORTH,1)
 			test.Shift(EAST,6)
-			overlays += test
+			add_overlay(test)
 
 	else if(isflamesource(W))
 		if(user.a_intent != I_HURT)

@@ -140,7 +140,7 @@
 	update_icon()
 
 /obj/machinery/station_map/update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(stat & BROKEN)
 		icon_state = "station_mapb"
 	else if((stat & NOPOWER) || !anchored)
@@ -152,7 +152,7 @@
 			holomap_datum.initialize_holomap_bogus()
 		else
 			small_station_map.icon = SSminimap.extra_minimaps["[HOLOMAP_EXTRA_STATIONMAPSMALL]_[original_zLevel]"]
-			overlays += small_station_map
+			add_overlay(small_station_map)
 			holomap_datum.initialize_holomap(get_turf(src))
 
 	// Put the little "map" overlay down where it looks nice
@@ -160,10 +160,10 @@
 		floor_markings.dir = src.dir
 		floor_markings.pixel_x = -src.pixel_x
 		floor_markings.pixel_y = -src.pixel_y
-		overlays += floor_markings
+		add_overlay(floor_markings)
 
 	if(panel_open)
-		overlays += "station_map-panel"
+		add_overlay("station_map-panel")
 	else
 		overlays.Cut("station_map-panel")
 
@@ -212,12 +212,12 @@
 	legend.pixel_x = HOLOMAP_LEGEND_X(T.z)
 	legend.pixel_y = HOLOMAP_LEGEND_Y(T.z)
 
-	station_map.overlays |= cursor
-	station_map.overlays |= legend
+	station_map.add_overlay(cursor)
+	station_map.add_overlay(legend)
 
 /datum/station_holomap/proc/initialize_holomap_bogus()
 	station_map = image('icons/480x480.dmi', "stationmap")
 	legend = image('icons/effects/64x64.dmi', "notfound")
 	legend.pixel_x = 7 * WORLD_ICON_SIZE
 	legend.pixel_y = 7 * WORLD_ICON_SIZE
-	station_map.overlays |= legend
+	station_map.add_overlay(legend)

@@ -244,7 +244,7 @@
 		var/image/I = image(result.icon, result, "[result.icon_state]_filling")
 		I.appearance_flags = RESET_COLOR
 		I.color = result.filling_color
-		result.overlays += I
+		result.add_overlay(I)
 
 
 /obj/machinery/cooker/candy
@@ -434,12 +434,12 @@
 	..(result, source)
 	var/image/I = image(source.icon, source.icon_state)
 	I.color = source.color
-	I.overlays += source.overlays
+	I.add_overlay(source.overlays)
 	I.transform *= 0.5
 	result.icon = 'icons/obj/food.dmi'
 	result.icon_state = "cereal_box"
 	result.color = null
-	result.overlays += I
+	result.add_overlay(I)
 
 
 /obj/item/reagent_containers/food/snacks/variable

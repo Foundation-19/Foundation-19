@@ -86,7 +86,7 @@
 		I.color = eye_colour
 		I.plane = EFFECTS_ABOVE_LIGHTING_PLANE
 		I.appearance_flags = RESET_COLOR
-		overlays += I
+		add_overlay(I)
 
 
 /mob/living/simple_animal/hostile/giant_spider/apply_melee_effects(atom/A)

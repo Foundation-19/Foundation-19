@@ -560,7 +560,7 @@
 /obj/item/rig/on_update_icon(var/update_mob_icon)
 
 	//TODO: Maybe consider a cache for this (use mob_icon as blank canvas, use suit icon overlay).
-	overlays.Cut()
+	cut_overlays()
 	if(!mob_icon || update_mob_icon)
 		var/species_icon = 'icons/mob/onmob/onmob_rig_back.dmi'
 		// Since setting mob_icon will override the species checks in
@@ -572,7 +572,7 @@
 	if(equipment_overlay_icon && LAZYLEN(installed_modules))
 		for(var/obj/item/rig_module/module in installed_modules)
 			if(module.suit_overlay)
-				chest.overlays += image("icon" = equipment_overlay_icon, "icon_state" = "[module.suit_overlay]", "dir" = SOUTH)
+				chest.add_overlay(image("icon" = equipment_overlay_icon, "icon_state" = "[module.suit_overlay]", "dir" = SOUTH))
 
 	if(wearer)
 		wearer.update_inv_shoes()
@@ -592,7 +592,7 @@
 	if(equipment_overlay_icon && LAZYLEN(installed_modules))
 		for(var/obj/item/rig_module/module in installed_modules)
 			if(module.suit_overlay)
-				ret.overlays += image("icon" = equipment_overlay_icon, "icon_state" = "[module.suit_overlay]")
+				ret.add_overlay(image("icon" = equipment_overlay_icon, "icon_state" = "[module.suit_overlay]"))
 	return ret
 
 /obj/item/rig/get_req_access()

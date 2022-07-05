@@ -200,19 +200,19 @@ var/global/list/rad_collectors = list()
 	else
 		icon_state = "ca"
 
-	overlays.Cut()
+	cut_overlays()
 	underlays.Cut()
 
 	if(P)
-		overlays += image(icon, "ptank")
+		add_overlay(image(icon, "ptank"))
 		underlays += image(icon, "ca_filling")
 	underlays += image(icon, "ca_inside")
 	if(stat & (NOPOWER|BROKEN))
 		return
 	if(active)
 		var/rad_power = round(min(100 * last_rads / max_rads, 100), 20)
-		overlays += image(icon, "rads_[rad_power]")
-		overlays += image(icon, "on")
+		add_overlay(image(icon, "rads_[rad_power]"))
+		add_overlay(image(icon, "on"))
 
 /obj/machinery/power/rad_collector/toggle_power()
 	active = !active

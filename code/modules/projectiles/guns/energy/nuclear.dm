@@ -126,4 +126,4 @@
 	new_overlays += get_reactor_overlay()
 	new_overlays += get_mode_overlay()
 
-	overlays = new_overlays
+	set_overlays(new_overlays)

@@ -137,7 +137,7 @@
 			dissipate_strength = 1
 			emp_weak_range = 4
 			emp_strong_range = 3
-			overlays.Cut()
+			cut_overlays()
 			visible_message("<span class='notice'>The singularity has shrunk to a rather pitiful size.</span>")
 		if (STAGE_TWO) //1 to 3 does not check for the turfs if you put the gens right next to a 1x1 then its going to eat them.
 			SetName("gravitational singularity")
@@ -154,9 +154,9 @@
 			dissipate_strength = 5
 			emp_weak_range = 6
 			emp_strong_range = 4
-			overlays.Cut()
+			cut_overlays()
 			if(chained)
-				overlays = list("emfield_s3")
+				set_overlays(list("emfield_s3"))
 			if(growing)
 				visible_message("<span class='notice'>The singularity noticeably grows in size.</span>")
 			else
@@ -177,9 +177,9 @@
 				dissipate_strength = 20
 				emp_weak_range = 7
 				emp_strong_range = 5
-				overlays.Cut()
+				cut_overlays()
 				if(chained)
-					overlays = list("emfield_s5")
+					set_overlays(list("emfield_s5"))
 				if(growing)
 					visible_message("<span class='notice'>The singularity expands to a reasonable size.</span>")
 				else
@@ -200,9 +200,9 @@
 				dissipate_strength = 10
 				emp_weak_range = 9
 				emp_strong_range = 7
-				overlays.Cut()
+				cut_overlays()
 				if(chained)
-					overlays = list("emfield_s7")
+					set_overlays(list("emfield_s7"))
 				if(growing)
 					visible_message("<span class='warning'>The singularity expands to a dangerous size.</span>")
 				else
@@ -220,9 +220,9 @@
 			dissipate = 0 //It can't go smaller due to e loss.
 			emp_weak_range = 11
 			emp_strong_range = 9
-			overlays.Cut()
+			cut_overlays()
 			if(chained)
-				overlays = list("emfield_s9")
+				set_overlays(list("emfield_s9"))
 			if(growing)
 				visible_message("<span class='danger'><font size='2'>The singularity has grown out of control!</font></span>")
 			else
@@ -242,7 +242,7 @@
 			emp_weak_range = 13
 			emp_strong_range = 11
 			if(chained)
-				overlays = list("emfield_s11")
+				set_overlays(list("emfield_s11"))
 			visible_message("<span class='sinister'><font size='3'>You witness the creation of a destructive force that cannot possibly be stopped by human hands.</font></span>")
 
 	if (current_size == allowed_size)
@@ -465,23 +465,23 @@
 
 /obj/singularity/proc/on_capture()
 	chained = 1
-	overlays.Cut()
+	cut_overlays()
 	move_self = 0
 	switch (current_size)
 		if(3)
-			overlays += image('icons/effects/96x96.dmi',"emfield_s3")
+			add_overlay(image('icons/effects/96x96.dmi',"emfield_s3"))
 		if(5)
-			overlays += image('icons/effects/160x160.dmi',"emfield_s5")
+			add_overlay(image('icons/effects/160x160.dmi',"emfield_s5"))
 		if(7)
-			overlays += image('icons/effects/224x224.dmi',"emfield_s7")
+			add_overlay(image('icons/effects/224x224.dmi',"emfield_s7"))
 		if(9)
-			overlays += image('icons/effects/288x288.dmi',"emfield_s9")
+			add_overlay(image('icons/effects/288x288.dmi',"emfield_s9"))
 		if(11)
-			overlays += image('icons/effects/352x352.dmi',"emfield_s11")
+			add_overlay(image('icons/effects/352x352.dmi',"emfield_s11"))
 
 /obj/singularity/proc/on_release()
 	chained = 0
-	overlays.Cut()
+	cut_overlays()
 	move_self = 1
 
 /obj/singularity/singularity_act(S, size)

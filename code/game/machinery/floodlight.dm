@@ -23,14 +23,14 @@
 	var/lamp_outer_range = 4.5
 
 /obj/machinery/floodlight/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	// We build the floodlight's appearance using overlays based on its status
 	if (use_power == POWER_USE_ACTIVE)
-		overlays.Add("floodlight_on")
+		add_overlay("floodlight_on")
 	if (panel_open)
-		overlays.Add("floodlight_open")
+		add_overlay("floodlight_open")
 		if (get_cell())
-			overlays.Add("floodlight_open_cell")
+			add_overlay("floodlight_open_cell")
 
 /obj/machinery/floodlight/power_change()
 	. = ..()

@@ -70,7 +70,7 @@
 		for(var/i = 0 to length(loaded) - 4)
 			var/image/I = image(icon, "shell")
 			I.pixel_x = i * 2
-			overlays += I
+			add_overlay(I)
 
 /obj/item/gun/projectile/shotgun/doublebarrel
 	name = "double-barreled shotgun"

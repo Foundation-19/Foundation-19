@@ -17,7 +17,7 @@
 	var/icon_state_closed = "laptop-closed"
 	interact_sounds = list("keyboard", "keystroke")
 	interact_sound_volume = 20
-	
+
 /obj/item/modular_computer/laptop/Initialize()
 	. = ..()
 	screen_on = anchored
@@ -38,7 +38,7 @@
 	if(anchored)
 		..()
 	else
-		overlays.Cut()
+		cut_overlays()
 		icon_state = icon_state_closed
 
 /obj/item/modular_computer/laptop/preset

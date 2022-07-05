@@ -75,7 +75,7 @@ var/list/mining_floors = list()
 	else
 		SetName("[mineral.ore_name] deposit")
 
-	overlays.Cut()
+	cut_overlays()
 
 	for(var/direction in GLOB.cardinal)
 		var/turf/turf_to_check = get_step(src,direction)
@@ -94,16 +94,16 @@ var/list/mining_floors = list()
 					rock_side.pixel_x += world.icon_size
 				if(WEST)
 					rock_side.pixel_x -= world.icon_size
-			overlays += rock_side
+			add_overlay(rock_side)
 
 	if(ore_overlay)
-		overlays += ore_overlay
+		add_overlay(ore_overlay)
 
 	if(excav_overlay)
-		overlays += excav_overlay
+		add_overlay(excav_overlay)
 
 	if(archaeo_overlay)
-		overlays += archaeo_overlay
+		add_overlay(archaeo_overlay)
 
 /turf/simulated/mineral/ex_act(severity)
 	switch(severity)
@@ -292,7 +292,7 @@ var/list/mining_floors = list()
 		return ..()
 
 /turf/simulated/mineral/proc/clear_ore_effects()
-	overlays -= ore_overlay
+	cut_overlay(ore_overlay)
 	ore_overlay = null
 
 /turf/simulated/mineral/proc/DropMineral()
@@ -528,7 +528,7 @@ var/list/mining_floors = list()
 
 /turf/simulated/floor/asteroid/proc/updateMineralOverlays(var/update_neighbors)
 
-	overlays.Cut()
+	cut_overlays()
 
 	var/list/step_overlays = list("n" = NORTH, "s" = SOUTH, "e" = EAST, "w" = WEST)
 	for(var/direction in step_overlays)
@@ -536,18 +536,18 @@ var/list/mining_floors = list()
 		if(istype(get_step(src, step_overlays[direction]), /turf/space))
 			var/image/aster_edge = image('icons/turf/flooring/asteroid.dmi', "asteroid_edges", dir = step_overlays[direction])
 			aster_edge.turf_decal_layerise()
-			overlays += aster_edge
+			add_overlay(aster_edge)
 
 		if(istype(get_step(src, step_overlays[direction]), /turf/simulated/mineral))
 			var/image/rock_wall = image('icons/turf/walls.dmi', "rock_side", dir = step_overlays[direction])
 			rock_wall.turf_decal_layerise()
-			overlays += rock_wall
+			add_overlay(rock_wall)
 
 	//todo cache
 	if(overlay_detail)
 		var/image/floor_decal = image(icon = 'icons/turf/flooring/decals.dmi', icon_state = overlay_detail)
 		floor_decal.turf_decal_layerise()
-		overlays |= floor_decal
+		add_overlay(floor_decal)
 
 	if(update_neighbors)
 		var/list/all_step_directions = list(NORTH,NORTHEAST,EAST,SOUTHEAST,SOUTH,SOUTHWEST,WEST,NORTHWEST)

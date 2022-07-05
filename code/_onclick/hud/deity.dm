@@ -21,7 +21,7 @@
 
 /obj/screen/intent/deity/New()
 	..()
-	overlays += image('icons/mob/screen_phenomena.dmi', icon_state = "hud", pixel_x = -138, pixel_y = -1)
+	add_overlay(image('icons/mob/screen_phenomena.dmi', icon_state = "hud", pixel_x = -138, pixel_y = -1))
 
 /obj/screen/intent/deity/proc/sync_to_mob(var/mob)
 	var/mob/living/deity/D = mob

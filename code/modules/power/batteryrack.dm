@@ -17,7 +17,7 @@
 	should_be_mapped = 1
 	base_type = /obj/machinery/power/smes/batteryrack
 	maximum_component_parts = list(/obj/item/stock_parts = 15)
-	
+
 	machine_name = "battery rack PSU"
 	machine_desc = "A very simple power storage solution: several power cells on a rack. About as basic as you can get."
 
@@ -47,22 +47,22 @@
 	return ..()
 
 /obj/machinery/power/smes/batteryrack/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	icon_update = 0
 
 	var/cellcount = 0
 	var/charge_level = between(0, round(Percentage() / 12), 7)
 
 
-	overlays += "charge[charge_level]"
+	add_overlay("charge[charge_level]")
 
 	for(var/obj/item/cell/C in internal_cells)
 		cellcount++
-		overlays += "cell[cellcount]"
+		add_overlay("cell[cellcount]")
 		if(C.fully_charged())
-			overlays += "cell[cellcount]f"
+			add_overlay("cell[cellcount]f")
 		else if(!C.charge)
-			overlays += "cell[cellcount]e"
+			add_overlay("cell[cellcount]e")
 
 // Recalculate maxcharge and similar variables.
 /obj/machinery/power/smes/batteryrack/proc/update_maxcharge()

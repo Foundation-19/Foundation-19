@@ -35,9 +35,9 @@
 		set_light(0)
 
 	if(rebuild_overlay)
-		overlays.Cut()
+		cut_overlays()
 		if(panel_open)
-			overlays  += "sheater-open"
+			add_overlay( "sheater-open")
 
 /obj/machinery/space_heater/examine(mob/user)
 	. = ..()

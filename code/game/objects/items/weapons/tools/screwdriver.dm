@@ -24,7 +24,7 @@
 	if(build_from_parts)
 		icon_state = "screwdriver_handle"
 		color = pick(valid_colours)
-		overlays += overlay_image(icon, "screwdriver_hardware", flags=RESET_COLOR)
+		add_overlay(overlay_image(icon, "screwdriver_hardware", flags=RESET_COLOR))
 	if (prob(75))
 		src.pixel_y = rand(0, 16)
 	. = ..()

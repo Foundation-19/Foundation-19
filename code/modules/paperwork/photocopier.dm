@@ -150,7 +150,7 @@
 	var/copy_type = copy.type
 	if (istype(copy, /obj/item/paper/admin) && !copy_admin) // Edge case for admin faxes so that they don't show the editing form
 		copy_type = /obj/item/paper
-	
+
 	var/obj/item/paper/c = new copy_type(loc, copy.text, copy.name, copy.metadata )
 
 	c.color = COLOR_WHITE
@@ -182,7 +182,7 @@
 			img = image('icons/obj/bureaucracy.dmi', "paper_stamp-dots")
 		img.pixel_x = copy.offset_x[j]
 		img.pixel_y = copy.offset_y[j]
-		c.overlays += img
+		c.add_overlay(img)
 	c.updateinfolinks()
 	if(need_toner)
 		toner--

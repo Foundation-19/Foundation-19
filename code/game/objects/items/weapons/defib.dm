@@ -55,7 +55,7 @@
 	else
 		new_overlays += "[initial(icon_state)]-nocell"
 
-	overlays = new_overlays
+	set_overlays(new_overlays)
 
 /obj/item/defibrillator/examine(mob/user)
 	. = ..()

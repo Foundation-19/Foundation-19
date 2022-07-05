@@ -132,15 +132,15 @@ mob
 		underlays += image(icon='old_or_unused.dmi',icon_state="red", pixel_x = -32)
 
 		// Testing image overlays
-		overlays += image(icon='old_or_unused.dmi',icon_state="green", pixel_x = 32, pixel_y = -32)
-		overlays += image(icon='old_or_unused.dmi',icon_state="green", pixel_x = 32, pixel_y = 32)
-		overlays += image(icon='old_or_unused.dmi',icon_state="green", pixel_x = -32, pixel_y = -32)
+		add_overlay(image(icon='old_or_unused.dmi',icon_state="green", pixel_x = 32, pixel_y = -32))
+		add_overlay(image(icon='old_or_unused.dmi',icon_state="green", pixel_x = 32, pixel_y = 32))
+		add_overlay(image(icon='old_or_unused.dmi',icon_state="green", pixel_x = -32, pixel_y = -32))
 
 		// Testing icon file overlays (defaults to mob's state)
-		overlays += '_flat_demoIcons2.dmi'
+		add_overlay('_flat_demoIcons2.dmi')
 
 		// Testing icon_state overlays (defaults to mob's icon)
-		overlays += "white"
+		add_overlay("white")
 
 		// Testing dynamic icon overlays
 		var/icon/I = icon('old_or_unused.dmi', icon_state="aqua")
@@ -182,7 +182,7 @@ mob
 
 		Add_Overlay()
 			set name = "4. Add Overlay"
-			overlays += image(icon='old_or_unused.dmi',icon_state="yellow",pixel_x = rand(-64,32), pixel_y = rand(-64,32))
+			add_overlay(image(icon='old_or_unused.dmi',icon_state="yellow",pixel_x = rand(-64,32), pixel_y = rand(-64,32)))
 
 		Stress_Test()
 			set name = "5. Stress Test"
@@ -824,7 +824,7 @@ proc // Creates a single icon from a given /atom or /image.  Only the first argu
 			if(2)	I.pixel_x++
 			if(3)	I.pixel_y--
 			if(4)	I.pixel_y++
-		overlays += I//And finally add the overlay.
+		add_overlay(I)//And finally add the overlay.
 
 #define HOLOPAD_SHORT_RANGE 1 //For determining the color of holopads based on whether they're short or long range.
 #define HOLOPAD_LONG_RANGE 2
