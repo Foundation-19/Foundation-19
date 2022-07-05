@@ -31298,6 +31298,23 @@
 /area/site53/reswing/robotics{
 	name = "\improper Xenobiology Laboratory"
 	})
+"vhp" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	icon_state = "bulb1"
+	},
+/obj/machinery/camera/autoname{
+	dir = 4;
+	network = list("Heavy Containment Zone Network")
+	},
+/turf/simulated/floor,
+/area/site53/uhcz/scp8containment)
 "vmr" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/beakers,
@@ -32294,23 +32311,6 @@
 /obj/machinery/fabricator,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/ulcz/medicalpost)
-"xIG" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/light/small{
-	dir = 4;
-	icon_state = "bulb1"
-	},
-/obj/machinery/camera/autoname{
-	dir = 4;
-	network = list("Heavy Containment Zone Network")
-	},
-/turf/simulated/floor,
-/area/site53/uhcz/scp8containment)
 "xJI" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -76845,7 +76845,7 @@ akt
 qrq
 rvy
 rvy
-xIG
+vhp
 rvy
 rvy
 eEq
