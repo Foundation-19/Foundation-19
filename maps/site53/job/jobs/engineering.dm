@@ -15,13 +15,8 @@
 		"Junior Electrician"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/ds90/crew/engineering/juneng
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/e1,
-		/datum/mil_rank/security/e2
-	)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudengineertrainee"
 
 	access = list(
@@ -52,14 +47,8 @@
 		"Electrician"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/ds90/crew/engineering/juneng
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/e3,
-		/datum/mil_rank/security/e4,
-		/datum/mil_rank/security/e5
-	)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudengineer"
 
 	access = list(
@@ -100,14 +89,8 @@
 		"Senior Electrician"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/ds90/crew/engineering/seneng
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/e6,
-		/datum/mil_rank/security/e7,
-		/datum/mil_rank/security/e8
-	)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudseniorengineer"
 
 	access = list(

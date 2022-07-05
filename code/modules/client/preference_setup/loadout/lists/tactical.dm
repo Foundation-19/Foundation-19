@@ -2,7 +2,6 @@
 	sort_category = "Tactical Equipment"
 	category = /datum/gear/tactical/
 	slot = slot_tie
-	denied_roles = list(/datum/job/assistant)
 	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/tactical/armor_deco
@@ -18,6 +17,7 @@
 /datum/gear/tactical/kneepads
 	display_name = "kneepads"
 	path = /obj/item/clothing/accessory/kneepads
+	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/tactical/holster
 	display_name = "holster selection"

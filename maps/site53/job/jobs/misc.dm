@@ -43,17 +43,9 @@
 	minimal_player_age = 7
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/logisticsofficer
-	allowed_branches = list(
-		/datum/mil_branch/security,
-	)
 	hud_icon = "huddeckchief"
-	allowed_ranks = list(
-		/datum/mil_rank/security/e7,
-		/datum/mil_rank/security/e8,
-		/datum/mil_rank/security/e9,
-		/datum/mil_rank/security/w1
-
-	)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classb)
 
 	access = list(
 		access_adminlvl1,
@@ -92,17 +84,8 @@
 	minimal_player_age = 3
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/logisticspecialist
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-	/datum/mil_rank/security/e1,
-	/datum/mil_rank/security/e2,
-	/datum/mil_rank/security/e3,
-	/datum/mil_rank/security/e4,
-	/datum/mil_rank/security/e5,
-	/datum/mil_rank/security/e6
-	)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "huddecktechnician"
 
 	access = list(

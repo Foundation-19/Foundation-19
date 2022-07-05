@@ -124,12 +124,8 @@ ut // COMMAND
 		"Communications Dispatcher"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/commstech
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/w1
-	)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudcommsprogrammer"
 
 	access = list(
