@@ -183,7 +183,6 @@ var/list/gear_datums = list()
 		if(allowed && (G.allowed_roles || G.denied_roles))
 			var/good_job = 0
 			var/bad_job = 0
-			entry += "<br><i>"
 			var/list/jobchecks = list()
 			for(var/datum/job/J in jobs)
 				if(!(J.type in G.denied_roles))
@@ -194,7 +193,9 @@ var/list/gear_datums = list()
 					jobchecks += "<font color=cc5555>[J.title]</font>"
 					bad_job = 1
 			allowed = good_job || !bad_job
-			entry += "[english_list(jobchecks)]</i>"
+			if(length(jobchecks))
+				entry += "<br><i>"
+				entry += "[english_list(jobchecks)]</i>"
 
 		if(allowed && G.allowed_branches)
 			var/list/branches = list()
