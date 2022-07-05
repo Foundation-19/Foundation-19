@@ -125,7 +125,7 @@
 	alt_titles = list("Coroner")
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/medicaldoctor
 	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	allowed_ranks = list(/datum/mil_rank/civ/classb)
 	hud_icon = "hudphysician"
 
 	access = list(
