@@ -27,14 +27,14 @@
 
 
 /obj/machinery/jukebox/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if (!anchored || stat & (NOPOWER|BROKEN))
 		icon_state = "[initial(icon_state)]-[stat & BROKEN ? "broken" : "nopower"]"
 		return
 	icon_state = initial(icon_state)
 	if (!jukebox?.playing)
 		return
-	overlays += "[initial(icon_state)]-[emagged ? "emagged" : "running"]"
+	add_overlay("[initial(icon_state)]-[emagged ? "emagged" : "running"]")
 
 
 /obj/machinery/jukebox/powered()

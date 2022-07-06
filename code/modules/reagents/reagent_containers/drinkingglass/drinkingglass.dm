@@ -147,7 +147,7 @@
 
 /obj/item/reagent_containers/food/drinks/glass2/on_update_icon()
 	underlays.Cut()
-	overlays.Cut()
+	cut_overlays()
 
 	if (length(reagents?.reagent_list))
 		var/datum/reagent/R = reagents.get_master_reagent()
@@ -179,11 +179,11 @@
 		var/image/filling = get_filling_overlay(amnt, R.glass_icon)
 		filling.color = reagents.get_color()
 		if(filling_overlayed)
-			overlays += filling
+			add_overlay(filling)
 		else
 			underlays += filling
 
-		overlays += over_liquid
+		add_overlay(over_liquid)
 
 	else
 		SetName(custom_name || initial(name))

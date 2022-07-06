@@ -168,7 +168,7 @@
 
 /obj/item/gun/on_update_icon()
 	var/mob/living/M = loc
-	overlays.Cut()
+	cut_overlays()
 	if(istype(M))
 		if(wielded_item_state)
 			if(M.can_wield_item(src) && src.is_held_twohanded(M))
@@ -178,9 +178,9 @@
 				item_state_slots[slot_l_hand_str] = initial(item_state)
 				item_state_slots[slot_r_hand_str] = initial(item_state)
 		if(M.skill_check(SKILL_WEAPONS,SKILL_BASIC))
-			overlays += image('icons/obj/guns/gui.dmi',"safety[safety()]")
+			add_overlay(image('icons/obj/guns/gui.dmi',"safety[safety()]"))
 	if(safety_icon)
-		overlays += image(icon,"[safety_icon][safety()]")
+		add_overlay(image(icon,"[safety_icon][safety()]"))
 
 //Checks whether a given mob can use the gun
 //Any checks that shouldn't result in handle_click_empty() being called if they fail should go here.

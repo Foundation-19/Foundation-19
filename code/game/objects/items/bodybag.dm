@@ -69,9 +69,9 @@
 	else
 		icon_state = "closed_unlocked"
 
-	src.overlays.Cut()
+	src.cut_overlays()
 	if(has_label)
-		src.overlays += image(src.icon, "bodybag_label")
+		src.add_overlay(image(src.icon, "bodybag_label"))
 
 /obj/structure/closet/body_bag/store_mobs(var/stored_units)
 	contains_body = ..()

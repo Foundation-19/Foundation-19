@@ -103,19 +103,19 @@
 		if(draw_eyes)
 			var/icon/I = get_eyes()
 			if(I)
-				overlays |= I
+				add_overlay(I)
 				mob_icon.Blend(I, ICON_OVERLAY)
 
 			// Floating eyes or other effects.
 			var/image/eye_glow = get_eye_overlay()
-			if(eye_glow) overlays |= eye_glow
+			if(eye_glow) add_overlay(eye_glow)
 
 		if(owner.lip_style && !BP_IS_ROBOTIC(src) && (species && (species.appearance_flags & HAS_LIPS)))
 			var/icon/lip_icon = new/icon('icons/mob/human_races/species/human/lips.dmi', "lips_[owner.lip_style]_s")
-			overlays |= lip_icon
+			add_overlay(lip_icon)
 			mob_icon.Blend(lip_icon, ICON_OVERLAY)
 
-		overlays |= get_hair_icon()
+		add_overlay(get_hair_icon())
 
 	return mob_icon
 
@@ -129,7 +129,7 @@
 					var/icon/facial_s = new/icon("icon" = facial_hair_style.icon, "icon_state" = "[facial_hair_style.icon_state]_s")
 					if(facial_hair_style.do_coloration)
 						facial_s.Blend(rgb(owner.r_facial, owner.g_facial, owner.b_facial), facial_hair_style.blend)
-					res.overlays |= facial_s
+					res.add_overlay(facial_s)
 
 	if (owner.h_style)
 		var/icon/HI
@@ -154,7 +154,7 @@
 					ADD_SORTED(sorted_hair_markings, list(list(M.draw_order, I)), /proc/cmp_marking_order)
 			for (var/entry in sorted_hair_markings)
 				HI.Blend(entry[2], ICON_OVERLAY)
-			res.overlays |= HI
+			res.add_overlay(HI)
 
 	var/list/sorted_head_markings = list()
 	for (var/E in markings)
@@ -173,7 +173,7 @@
 			icon_cache_key += "[M.name][color]"
 			ADD_SORTED(sorted_head_markings, list(list(M.draw_order, I)), /proc/cmp_marking_order)
 	for (var/entry in sorted_head_markings)
-		res.overlays |= entry[2]
+		res.add_overlay(entry[2])
 
 	return res
 

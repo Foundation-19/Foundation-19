@@ -2,18 +2,22 @@
 	sort_category = "Glasses and Eyewear"
 	category = /datum/gear/eyes
 	slot = slot_glasses
+	denied_roles = list(/datum/job/assistant)
 
 /datum/gear/eyes/glasses
 	display_name = "prescription glasses"
 	path = /obj/item/clothing/glasses/prescription
+	denied_roles = null
 
 /datum/gear/eyes/eyepatch
 	display_name = "eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch
+	denied_roles = null
 
 /datum/gear/eyes/fashionglasses
 	display_name = "non-prescription glasses"
 	path = /obj/item/clothing/glasses
+	denied_roles = null
 
 /datum/gear/eyes/fashionglasses/New()
 	..()
@@ -125,6 +129,7 @@
 	display_name = "blindfold"
 	path = /obj/item/clothing/glasses/blindfold
 	flags = GEAR_HAS_COLOR_SELECTION
+	denied_roles = null
 
 /datum/gear/eyes/janitor
 	display_name = "JaniHUD"

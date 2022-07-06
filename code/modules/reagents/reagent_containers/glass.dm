@@ -154,7 +154,7 @@
 		update_icon()
 
 	update_icon()
-		overlays.Cut()
+		cut_overlays()
 
 		if(reagents.total_volume)
 			var/image/filling = image('icons/obj/reagentfillings.dmi', src, "[icon_state]10")
@@ -170,11 +170,11 @@
 				if(91 to INFINITY)	filling.icon_state = "[icon_state]100"
 
 			filling.color = reagents.get_color()
-			overlays += filling
+			add_overlay(filling)
 
 		if (!is_open_container())
 			var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
-			overlays += lid
+			add_overlay(lid)
 
 /obj/item/reagent_containers/glass/beaker/large
 	name = "large beaker"
@@ -298,14 +298,14 @@
 		return ..()
 
 /obj/item/reagent_containers/glass/bucket/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if (!is_open_container())
 		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
-		overlays += lid
+		add_overlay(lid)
 	else if(reagents.total_volume && round((reagents.total_volume / volume) * 100) > 80)
 		var/image/filling = image('icons/obj/reagentfillings.dmi', src, "bucket")
 		filling.color = reagents.get_color()
-		overlays += filling
+		add_overlay(filling)
 
 /*
 /obj/item/reagent_containers/glass/blender_jug

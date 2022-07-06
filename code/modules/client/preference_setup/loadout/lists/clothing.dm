@@ -3,6 +3,7 @@
 	sort_category = "Clothing Pieces"
 	category = /datum/gear/clothing/
 	slot = slot_tie
+	denied_roles = list(/datum/job/assistant)
 
 /datum/gear/clothing/flannel
 	display_name = "flannel (colorable)"
@@ -14,6 +15,7 @@
 	display_name = "scarf"
 	path = /obj/item/clothing/accessory/scarf
 	flags = GEAR_HAS_COLOR_SELECTION
+	denied_roles = null
 
 /datum/gear/clothing/hawaii
 	display_name = "hawaii shirt"
@@ -35,11 +37,13 @@
 /datum/gear/clothing/suspenders
 	display_name = "suspenders"
 	path = /obj/item/clothing/accessory/suspenders
+	denied_roles = null
 
 /datum/gear/clothing/suspenders/colorable
 	display_name = "suspenders, colour select"
 	path = /obj/item/clothing/accessory/suspenders/colorable
 	flags = GEAR_HAS_COLOR_SELECTION
+	denied_roles = null
 
 /datum/gear/clothing/wcoat
 	display_name = "waistcoat, colour select"

@@ -39,24 +39,24 @@ SUBSYSTEM_DEF(skybox)
 
 	if(use_stars)
 		var/image/stars = overlay_image(skybox_icon, star_state, flags = RESET_COLOR)
-		base.overlays += stars
+		base.add_overlay(stars)
 
-	res.overlays += base
+	res.add_overlay(base)
 
 	if(GLOB.using_map.use_overmap && use_overmap_details)
 		var/obj/effect/overmap/visitable/O = map_sectors["[z]"]
 		if(istype(O))
 			var/image/overmap = image(skybox_icon)
-			overmap.overlays += O.generate_skybox()
+			overmap.add_overlay(O.generate_skybox())
 			for(var/obj/effect/overmap/visitable/other in O.loc)
 				if(other != O)
-					overmap.overlays += other.get_skybox_representation()
+					overmap.add_overlay(other.get_skybox_representation())
 			overmap.appearance_flags = RESET_COLOR
-			res.overlays += overmap
+			res.add_overlay(overmap)
 
 	for(var/datum/event/E in SSevent.active_events)
 		if(E.has_skybox_image && E.isRunning && (z in E.affecting_z))
-			res.overlays += E.get_skybox_image()
+			res.add_overlay(E.get_skybox_image())
 
 	return res
 

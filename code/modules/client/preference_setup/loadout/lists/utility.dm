@@ -2,6 +2,7 @@
 /datum/gear/utility
 	sort_category = "Utility"
 	category = /datum/gear/utility
+	denied_roles = list(/datum/job/assistant)
 
 /datum/gear/utility/briefcase
 	display_name = "briefcase"

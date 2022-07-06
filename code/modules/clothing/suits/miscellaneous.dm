@@ -385,6 +385,11 @@
 	desc = "A warm, black sweatshirt."
 	color = COLOR_DARK_GRAY
 
+/obj/item/clothing/suit/storage/toggle/hoodie/orange
+	name = "orange hoodie"
+	desc = "A warm, orange sweatshirt."
+	color = "#D65500"
+
 /obj/item/clothing/suit/storage/mbill
 	name = "shipping jacket"
 	desc = "A green jacket bearing the logo of Major Bill's Shipping."

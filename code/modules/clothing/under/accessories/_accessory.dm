@@ -82,7 +82,7 @@
 		return
 	parent = S
 	forceMove(parent)
-	parent.overlays += get_inv_overlay()
+	parent.add_overlay(get_inv_overlay())
 
 	if(user)
 		to_chat(user, "<span class='notice'>You attach \the [src] to \the [parent].</span>")
@@ -92,7 +92,7 @@
 /obj/item/clothing/accessory/proc/on_removed(var/mob/user)
 	if(!parent)
 		return
-	parent.overlays -= get_inv_overlay()
+	parent.cut_overlay(get_inv_overlay())
 	parent = null
 	if(user)
 		usr.put_in_hands(src)

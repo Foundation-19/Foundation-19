@@ -24,12 +24,12 @@
 			icon_state = "[initial(icon_state)]-e"
 	if(ammo_indicator)
 		if(!ammo_magazine || !LAZYLEN(ammo_magazine.stored_ammo))
-			overlays += image(icon, "ammo_bad")
+			add_overlay(image(icon, "ammo_bad"))
 		else if(LAZYLEN(ammo_magazine.stored_ammo) <= 0.5 * ammo_magazine.max_ammo)
-			overlays += image(icon, "ammo_warn")
+			add_overlay(image(icon, "ammo_warn"))
 			return
 		else
-			overlays += image(icon, "ammo_ok")
+			add_overlay(image(icon, "ammo_ok"))
 
 /obj/item/gun/projectile/pistol/military
 	name = "military pistol"

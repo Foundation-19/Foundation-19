@@ -3,6 +3,7 @@
 	sort_category = "Accessories"
 	category = /datum/gear/accessory
 	slot = slot_tie
+	denied_roles = list(/datum/job/assistant)
 
 /datum/gear/accessory/tie
 	display_name = "tie selection"
@@ -132,6 +133,7 @@
 	path = /obj/item/clothing/accessory/wristwatches
 	cost = 1
 	flags = GEAR_HAS_TYPE_SELECTION
+	denied_roles = null
 
 /datum/gear/accessory/pronouns
 	display_name = "pronoun badge selection"

@@ -18,7 +18,7 @@
 	stat_immune = 0
 	stat = BROKEN         // Should be removed if the terminals initialize fully.
 	reason_broken = MACHINE_BROKEN_GENERIC
-	
+
 	machine_name = "superconductive magnetic energy storage"
 	machine_desc = "The SMES is effectively a giant battery. It stores vast quantities of power for later use, and can be remotely controlled using the RCON system."
 
@@ -97,28 +97,28 @@
 	return 0
 
 /obj/machinery/power/smes/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(stat & BROKEN)	return
 
-	overlays += image(overlay_icon, "smes-op[outputting]")
+	add_overlay(image(overlay_icon, "smes-op[outputting]"))
 
 	if(inputting == 2)
-		overlays += image(overlay_icon, "smes-oc2")
+		add_overlay(image(overlay_icon, "smes-oc2"))
 	else if (inputting == 1)
-		overlays += image(overlay_icon, "smes-oc1")
+		add_overlay(image(overlay_icon, "smes-oc1"))
 	else if (input_attempt)
-		overlays += image(overlay_icon, "smes-oc0")
+		add_overlay(image(overlay_icon, "smes-oc0"))
 
 	var/clevel = chargedisplay()
 	if(clevel)
-		overlays += image(overlay_icon, "smes-og[clevel]")
+		add_overlay(image(overlay_icon, "smes-og[clevel]"))
 
 	if(outputting == 2)
-		overlays += image(overlay_icon, "smes-op2")
+		add_overlay(image(overlay_icon, "smes-op2"))
 	else if (outputting == 1)
-		overlays += image(overlay_icon, "smes-op1")
+		add_overlay(image(overlay_icon, "smes-op1"))
 	else
-		overlays += image(overlay_icon, "smes-op0")
+		add_overlay(image(overlay_icon, "smes-op0"))
 
 /obj/machinery/power/smes/proc/chargedisplay()
 	return round(5.5*charge/(capacity ? capacity : 5e6))
@@ -175,9 +175,9 @@
 		var/is_input_available = FALSE
 		for(var/obj/item/stock_parts/power/terminal/term in power_components)
 			if(!term.terminal || !term.terminal.powernet)
-				continue			
+				continue
 			is_input_available = TRUE
-			term.terminal.powernet.smes_demand += target_load		
+			term.terminal.powernet.smes_demand += target_load
 			term.terminal.powernet.inputting.Add(src)
 		if(!is_input_available)
 			target_load = 0 // We won't input any power without powernet connection.

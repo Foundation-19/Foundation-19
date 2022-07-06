@@ -3,6 +3,9 @@
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "Floor3"
 
+/turf/unsimulated/floor/is_floor()
+	return TRUE
+
 /turf/unsimulated/floor/bluespace //non-doomsday version of bluespace for transit and wizden
 	name = "\improper bluespace"
 	icon = 'icons/turf/space.dmi'
@@ -31,7 +34,7 @@
 
 /turf/unsimulated/floor/grass
 	icon_state = "grass0"
-	
+
 /turf/unsimulated/floor/plating
 	icon_state = "plating"
 
@@ -54,14 +57,14 @@
 	icon_state = "platingdrift"
 
 // Lava Turfs
-	
+
 /turf/unsimulated/floor/lava
 	icon = 'icons/turf/flooring/lava.dmi'
 	icon_state = "lava"
 
 /turf/unsimulated/floor/lava/cold
 	icon_state = "cold"
-	
+
 /turf/unsimulated/floor/lava/moving
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "lava"

@@ -4,13 +4,13 @@ var/list/limb_icon_cache = list()
 	return
 
 /obj/item/organ/external/proc/compile_icon()
-	overlays.Cut()
+	cut_overlays()
 	 // This is a kludge, only one icon has more than one generation of children though.
 	for(var/obj/item/organ/external/organ in contents)
 		if(organ.children && organ.children.len)
 			for(var/obj/item/organ/external/child in organ.children)
-				overlays += child.mob_icon
-		overlays += organ.mob_icon
+				add_overlay(child.mob_icon)
+		add_overlay(organ.mob_icon)
 
 /obj/item/organ/external/proc/sync_colour_to_human(var/mob/living/carbon/human/human)
 	s_tone = null
@@ -66,7 +66,7 @@ var/list/limb_icon_cache = list()
 			icon_cache_key += "[M.name][color]"
 			ADD_SORTED(sorted, list(list(M.draw_order, I, M)), /proc/cmp_marking_order)
 	for (var/entry in sorted)
-		overlays |= entry[2]
+		add_overlay(entry[2])
 		mob_icon.Blend(entry[2], entry[3]["layer_blend"])
 
 /obj/item/organ/external/var/icon_cache_key
@@ -110,7 +110,7 @@ var/list/limb_icon_cache = list()
 			icon_cache_key += "[M.name][color]"
 			ADD_SORTED(sorted, list(list(M.draw_order, I, M)), /proc/cmp_marking_order)
 	for (var/entry in sorted)
-		overlays |= entry[2]
+		add_overlay(entry[2])
 		mob_icon.Blend(entry[2], entry[3]["layer_blend"])
 
 	if(body_hair && islist(h_col) && h_col.len >= 3)
@@ -157,7 +157,7 @@ var/list/robot_hud_colours = list("#ffffff","#cccccc","#aaaaaa","#888888","#6666
 		temp.pixel_x = owner.default_pixel_x
 		temp.pixel_y = owner.default_pixel_y
 		hud_damage_image = image(null)
-		hud_damage_image.overlays += temp
+		hud_damage_image.add_overlay(temp)
 
 	// Calculate the required color index.
 	var/dam_state = min(1,((brute_dam+burn_dam)/max(1,max_damage)))
@@ -198,7 +198,7 @@ var/list/robot_hud_colours = list("#ffffff","#cccccc","#aaaaaa","#888888","#6666
 	return applying
 
 /obj/item/organ/external/proc/bandage_level()
-	if(damage_state_text() == "00") 
+	if(damage_state_text() == "00")
 		return 0
 	if(!is_bandaged())
 		return 0

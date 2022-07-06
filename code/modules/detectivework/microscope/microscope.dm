@@ -55,7 +55,7 @@
 	to_chat(user, "<span class='notice'>Printing findings now...</span>")
 	var/obj/item/paper/report = new(get_turf(src))
 	report.stamped = list(/obj/item/stamp)
-	report.overlays = list("paper_stamped")
+	report.set_overlays(list("paper_stamped"))
 	report_num++
 
 	var/list/evidence = list()

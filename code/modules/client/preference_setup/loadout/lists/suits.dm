@@ -2,6 +2,7 @@
 	slot = slot_wear_suit
 	sort_category = "Suits and Overwear"
 	category = /datum/gear/suit
+	denied_roles = list(/datum/job/assistant)
 
 /datum/gear/suit/poncho
 	display_name = "poncho selection"
@@ -76,6 +77,12 @@
 	hoodies += /obj/item/clothing/suit/storage/toggle/hoodie/nt
 	hoodies += /obj/item/clothing/suit/storage/toggle/hoodie/smw
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(hoodies)
+
+/datum/gear/suit/hoodie_orange
+	display_name = "orange hoodie"
+	path = /obj/item/clothing/suit/storage/toggle/hoodie/orange
+	denied_roles = null
+	allowed_roles = list(/datum/job/assistant)
 
 /datum/gear/suit/labcoat
 	display_name = "labcoat, colour select"

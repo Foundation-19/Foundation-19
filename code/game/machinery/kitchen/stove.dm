@@ -224,7 +224,7 @@
 		LAZYCLEARLIST(tray.carrying)
 		LAZYREMOVE(ingredients, tray)
 		tray.dropInto(loc)
-		tray.overlays.Cut()
+		tray.cut_overlays()
 	recipe = select_recipe(SScuisine.stove_recipes, src)
 	if (recipe)
 		cooked = recipe.make_food(src)

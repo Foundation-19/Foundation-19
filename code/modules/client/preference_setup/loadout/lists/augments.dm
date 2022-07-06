@@ -1,6 +1,7 @@
 /datum/gear/augment
 	sort_category = "Augments"
 	category = /datum/gear/augment
+	denied_roles = list(/datum/job/assistant)
 
 /datum/gear/augment/minor_head
 	display_name = "minor augments selection (head)"

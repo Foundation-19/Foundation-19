@@ -43,13 +43,13 @@ var/global/photo_count = 0
 	user.examinate(src)
 
 /obj/item/photo/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	var/scale = 8/(photo_size*32)
 	var/image/small_img = image(img)
 	small_img.transform *= scale
 	small_img.pixel_x = -32*(photo_size-1)/2 - 3
 	small_img.pixel_y = -32*(photo_size-1)/2
-	overlays |= small_img
+	add_overlay(small_img)
 
 	tiny = image(img)
 	tiny.transform *= 0.5*scale

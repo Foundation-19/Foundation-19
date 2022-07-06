@@ -256,7 +256,7 @@ update_flag
 */
 
 	if (destroyed)
-		overlays.Cut()
+		cut_overlays()
 		icon_state = text("[]-1", canister_color)
 		return
 
@@ -266,20 +266,20 @@ update_flag
 	if (check_change()) //Returns 1 if no change needed to icons.
 		return
 
-	overlays.Cut()
+	cut_overlays()
 
 	if (update_flag & CANISTER_FLAG_HASTANK)
-		overlays += "can-open"
+		add_overlay("can-open")
 	if (update_flag & CANISTER_FLAG_ISCONNECTED)
-		overlays += "can-connector"
+		add_overlay("can-connector")
 	if (update_flag & CANISTER_FLAG_PRESSURE_VERYLOW)
-		overlays += "can-o0"
+		add_overlay("can-o0")
 	if (update_flag & CANISTER_FLAG_PRESSURE_LOW)
-		overlays += "can-o1"
+		add_overlay("can-o1")
 	else if (update_flag & CANISTER_FLAG_PRESSURE_HIGH)
-		overlays += "can-o2"
+		add_overlay("can-o2")
 	else if (update_flag & CANISTER_FLAG_PRESSURE_VERYHIGH)
-		overlays += "can-o3"
+		add_overlay("can-o3")
 	return
 
 /obj/machinery/portable_atmospherics/canister/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
