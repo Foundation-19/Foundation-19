@@ -59,18 +59,30 @@
 		to_chat(src, SPAN_WARNING("The forum URL is not set in the server configuration."))
 	return
 
-#define RULES_FILE "config/rules.html"
 /client/verb/rules()
 	set name = "Rules"
 	set desc = "Show Server Rules."
 	set hidden = 1
-	show_browser(src, file(RULES_FILE), "window=rules;size=480x320")
-#undef RULES_FILE
+	if( config.rulesurl )
+		if(alert("This will open the forum in your browser. Are you sure?",,"Yes","No")=="No")
+			return
+		send_link(src, config.rulesurl)
+	else
+		to_chat(src, SPAN_WARNING("The forum URL is not set in the server configuration."))
+	return
 
-#define LORE_FILE "config/lore.html"
+
+
 /client/verb/lore_splash()
 	set name = "Lore"
 	set desc = "Links to the beginner Lore wiki."
 	set hidden = 1
-	show_browser(src, file(LORE_FILE), "window=lore;size=480x320")
-#undef LORE_FILE
+	if( config.loreurl )
+		if(alert("This will open the forum in your browser. Are you sure?",,"Yes","No")=="No")
+			return
+		send_link(src, config.loreurl)
+	else
+		to_chat(src, SPAN_WARNING("The forum URL is not set in the server configuration."))
+	return
+
+
