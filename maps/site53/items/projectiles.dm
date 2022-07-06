@@ -62,7 +62,7 @@
 	ammo_type = /obj/item/ammo_casing/c9mm
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
-	max_ammo = 14
+	max_ammo = 17
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/mk9/rubber
@@ -72,7 +72,7 @@
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
-	max_ammo = 14
+	max_ammo = 17
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/p90_mag
