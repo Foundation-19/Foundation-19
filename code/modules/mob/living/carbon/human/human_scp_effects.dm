@@ -49,3 +49,12 @@ GLOBAL_LIST_EMPTY(scp_013_1s)
 			to_chat(src, "<span class='warning'>You feel dysphoric about your appearance... Starting to feel more like the woman you truly are inside.</span>")
 			gender = FEMALE
 			addtimer(CALLBACK(src, .proc/update_013_status), 10 SECONDS) //now go to the effects
+
+// SCP-173 manual blinking
+/mob/living/carbon/human/verb/manual_blink()
+	set name = "Blink"
+	set desc = "Your eyes will close for a moment, giving them some rest."
+	set category = "IC"
+
+	for(var/mob/living/scp_173/S in view(7, src))
+		S.CauseBlink(src)
