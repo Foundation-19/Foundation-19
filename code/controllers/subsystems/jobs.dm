@@ -380,6 +380,10 @@ SUBSYSTEM_DEF(jobs)
 				else
 					permitted = 1
 
+				if(permitted && G.denied_roles)
+					if(job.type in G.denied_roles)
+						permitted = 0
+
 				if(permitted)
 					if(G.allowed_roles)
 						if(job.type in G.allowed_roles)

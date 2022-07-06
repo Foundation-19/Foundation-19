@@ -2,6 +2,7 @@
 	sort_category = "Uniforms and Casual Dress"
 	slot = slot_w_uniform
 	category = /datum/gear/uniform
+	denied_roles = list(/datum/job/assistant)
 
 /datum/gear/uniform/jumpsuit
 	display_name = "jumpsuit, colour select"
