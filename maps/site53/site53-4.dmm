@@ -1381,6 +1381,8 @@
 /obj/item/folder/red,
 /obj/item/folder/white,
 /obj/item/folder/yellow,
+/obj/item/implantcase/death_alarm,
+/obj/item/implanter,
 /turf/simulated/floor/tiled,
 /area/site53/uez/hallway)
 "dt" = (
@@ -1545,6 +1547,8 @@
 /obj/item/folder/red,
 /obj/item/folder/white,
 /obj/item/folder/yellow,
+/obj/item/implantcase/death_alarm,
+/obj/item/implanter,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/hallway)
 "dL" = (
