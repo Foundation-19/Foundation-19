@@ -73,7 +73,7 @@
 
 
 
-/client/verb/lore_splash()
+/client/verb/lore()
 	set name = "Lore"
 	set desc = "Links to the beginner Lore wiki."
 	set hidden = 1
