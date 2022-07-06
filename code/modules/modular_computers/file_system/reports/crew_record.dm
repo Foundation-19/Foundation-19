@@ -67,11 +67,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 
 	if(H)
 		if(H.isSynthetic())
-			var/organ_data = list("Fully synthetic body")
-			for(var/obj/item/organ/internal/augment/A in H.internal_organs)
-				organ_data += "installed augment - [A.name]"
-			if (LAZYLEN(organ_data))
-				set_implants(jointext(organ_data, "\[*\]"))
+			set_implants("Fully synthetic body")
 		else
 			var/organ_data = list("\[*\]")
 			for(var/obj/item/organ/external/E in H.organs)
@@ -81,10 +77,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 				if(BP_IS_ASSISTED(I))
 					organ_data += I.get_mechanical_assisted_descriptor()
 				else if (BP_IS_ROBOTIC(I))
-					if (!istype(I, /obj/item/organ/internal/augment)) // Differentiate between augments and prosthetics
-						organ_data += "robotic [I.name] prosthetic"
-					else
-						organ_data += "installed augment - [I.name]"
+					organ_data += "robotic [I.name] prosthetic"
 			set_implants(jointext(organ_data, "\[*\]"))
 
 	// Security record

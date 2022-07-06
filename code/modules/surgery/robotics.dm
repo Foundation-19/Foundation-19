@@ -456,11 +456,6 @@ decl/surgery_step/robotics/get_skill_reqs(mob/living/user, mob/living/carbon/hum
 	var/organ_to_replace = input(user, "Which organ do you want to reattach?") as null|anything in removable_organs
 	if(!organ_to_replace)
 		return FALSE
-	var/obj/item/organ/internal/augment/A = organ_to_replace
-	if(istype(A))
-		if(!(A.augment_flags & AUGMENTATION_MECHANIC))
-			to_chat(user, SPAN_WARNING("\the [A] cannot function within a robotic limb"))
-			return FALSE
 	return organ_to_replace
 
 /decl/surgery_step/robotics/attach_organ_robotic/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)

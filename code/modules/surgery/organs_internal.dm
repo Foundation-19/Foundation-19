@@ -232,7 +232,7 @@
 /decl/surgery_step/internal/replace_organ/get_skill_reqs(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
 	var/obj/item/organ/internal/O = tool
 	var/obj/item/organ/external/affected = target.get_organ(user.zone_sel.selecting)
-	if(BP_IS_ROBOTIC(O) || istype(O, /obj/item/organ/internal/augment))
+	if(BP_IS_ROBOTIC(O))
 		if(BP_IS_ROBOTIC(affected))
 			return SURGERY_SKILLS_ROBOTIC
 		else
@@ -341,12 +341,6 @@
 	if(organ_to_replace.parent_organ != affected.organ_tag)
 		to_chat(user, SPAN_WARNING("You can't find anywhere to attach \the [organ_to_replace] to!"))
 		return FALSE
-
-	if(istype(organ_to_replace, /obj/item/organ/internal/augment))
-		var/obj/item/organ/internal/augment/A = organ_to_replace
-		if(!(A.augment_flags & AUGMENTATION_ORGANIC))
-			to_chat(user, SPAN_WARNING("\The [A] cannot function within a non-robotic limb."))
-			return FALSE
 
 	if(BP_IS_ROBOTIC(organ_to_replace) && target.species.spawn_flags & SPECIES_NO_ROBOTIC_INTERNAL_ORGANS)
 		user.visible_message("<span class='notice'>[target]'s biology has rejected the attempts to attach \the [organ_to_replace].</span>")

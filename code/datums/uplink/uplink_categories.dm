@@ -33,9 +33,6 @@
 /datum/uplink_category/implants
 	name = "Implants"
 
-/datum/uplink_category/augments
-	name = "Augments"
-
 /datum/uplink_category/medical
 	name = "Medical & Food"
 

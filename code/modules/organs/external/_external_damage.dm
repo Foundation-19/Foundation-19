@@ -322,10 +322,7 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 	return FALSE
 
 /obj/item/organ/external/proc/get_brute_mod(var/damage_flags)
-	var/obj/item/organ/internal/augment/armor/A = owner && owner.internal_organs_by_name[BP_AUGMENT_CHEST_ARMOUR]
 	var/B = 1
-	if(A && istype(A))
-		B = A.brute_mult
 	if(!BP_IS_ROBOTIC(src))
 		B *= species.get_brute_mod(owner)
 	var/blunt = !(damage_flags & DAM_EDGE|DAM_SHARP)
@@ -336,10 +333,7 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 	return B + (0.2 * burn_dam/max_damage) //burns make you take more brute damage
 
 /obj/item/organ/external/proc/get_burn_mod(var/damage_flags)
-	var/obj/item/organ/internal/augment/armor/A = owner && owner.internal_organs_by_name[BP_AUGMENT_CHEST_ARMOUR]
 	var/B = 1
-	if(A && istype(A))
-		B = A.burn_mult
 	if(!BP_IS_ROBOTIC(src))
 		B *= species.get_burn_mod(owner)
 	if(BP_IS_CRYSTAL(src))

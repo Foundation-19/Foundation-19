@@ -105,9 +105,6 @@
 			unknown_body++
 		if(unknown_body)
 			. += "Unknown body present"
-	for(var/obj/item/organ/internal/augment/aug in internal_organs)
-		if(istype(aug) && aug.known)
-			. += "[capitalize(aug.name)] implanted"
 
 /obj/item/organ/external/proc/inspect(mob/user)
 	if(is_stump())
@@ -151,11 +148,6 @@
 	else
 		to_chat(user, "<span class='notice'>The [encased ? encased : "bones in the [name]"] seem to be fine.</span>")
 
-	for (var/obj/item/organ/internal/augment/A in internal_organs) // Locate any non-concealed augments
-		if (A.discoverable)
-			to_chat(user, SPAN_WARNING("You feel a foreign object inside of \the [owner]'s [name]!"))
-			owner.custom_pain("Your [name] hurts as your [A.name] is jostled inside it.", 20, affecting = src)
-			break
 	if(status & ORGAN_TENDON_CUT)
 		to_chat(user, "<span class='warning'>The tendons in [name] are severed!</span>")
 	if(dislocated == 2)
