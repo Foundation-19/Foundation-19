@@ -50,9 +50,9 @@
 
 	if(new_overlay_state != overlay_state)
 		overlay_state = new_overlay_state
-		overlays.Cut()
+		cut_overlays()
 		if(overlay_state)
-			overlays += image('icons/obj/power.dmi', overlay_state)
+			add_overlay(image('icons/obj/power.dmi', overlay_state))
 
 /obj/item/cell/proc/percent()		// return % charge of cell
 	return maxcharge && (100.0*charge/maxcharge)

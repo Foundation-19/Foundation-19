@@ -148,10 +148,8 @@
 	spawn_positions = 1
 	supervisors = "the Security Commander"
 	economic_modifier = 4
-	alt_titles = null
 	minimal_player_age = 7
 	ideal_character_age = 30
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/cellguardlieutenant
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -173,10 +171,8 @@
 	spawn_positions = 7
 	supervisors = "the Security Commander"
 	economic_modifier = 4
-	alt_titles = null
 	minimal_player_age = 5
 	ideal_character_age = 23
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/brigofficer
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -227,7 +223,6 @@
 	alt_titles = list("Senior Agent")
 	minimal_player_age = 10
 	ideal_character_age = 45
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ltofficer
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -254,7 +249,6 @@
 	alt_titles = list("Agent")
 	minimal_player_age = 5
 	ideal_character_age = 30
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ncoofficer
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -281,7 +275,6 @@
 	alt_titles = list("Junior Agent")
 	minimal_player_age = 0
 	ideal_character_age = 25
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficer
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -313,7 +306,6 @@
 	alt_titles = list("Junior Xenobiologist", "Junior Xenoarcheologist")
 	minimal_player_age = 0
 	ideal_character_age = 22
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/juniorscientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
@@ -334,7 +326,6 @@
 	alt_titles = list("Xenobiologist", "Xenoarcheologist")
 	minimal_player_age = 5
 	ideal_character_age = 22
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/scientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
@@ -355,7 +346,6 @@
 	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist")
 	minimal_player_age = 10
 	ideal_character_age = 22
-	alt_titles = null
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/seniorscientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb)

@@ -1,1 +1,1 @@
-/datum/antagonist/foundation/required_language = LANGUAGE_HUMAN_GERMAN
+/datum/antagonist/foundation/required_language = LANGUAGE_ENGLISH

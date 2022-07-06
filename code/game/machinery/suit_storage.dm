@@ -61,29 +61,29 @@
 	. = ..()
 
 /obj/machinery/suit_storage_unit/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(panelopen)
-		overlays += ("panel")
+		add_overlay(("panel"))
 	if(isUV)
 		if(issuperUV)
-			overlays += ("super")
+			add_overlay(("super"))
 		else if(occupant)
-			overlays += ("uvhuman")
+			add_overlay(("uvhuman"))
 		else
-			overlays += ("uv")
+			add_overlay(("uv"))
 	else if(isopen)
 		if(is_broken())
-			overlays += ("broken")
+			add_overlay(("broken"))
 		else
-			overlays += ("open")
+			add_overlay(("open"))
 			if(suit)
-				overlays += ("suit")
+				add_overlay(("suit"))
 			if(helmet)
-				overlays += ("helm")
+				add_overlay(("helm"))
 			if(boots || tank || mask)
-				overlays += ("storage")
+				add_overlay(("storage"))
 	else if(occupant)
-		overlays += ("human")
+		add_overlay(("human"))
 
 /obj/machinery/suit_storage_unit/get_req_access()
 	if(!islocked)
@@ -171,7 +171,7 @@
 	data["superuv"] = issuperUV
 	data["safeties"] = safetieson
 	data["helmet"] = helmet
-	data["suit"] = suit 
+	data["suit"] = suit
 	data["boots"] = boots
 	data["tank"] = tank
 	data["mask"] = mask

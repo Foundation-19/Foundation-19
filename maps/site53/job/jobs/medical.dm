@@ -8,12 +8,11 @@
 	ideal_character_age = 48
 	alt_titles = list("Medical Director")
 	outfit_type = /decl/hierarchy/outfit/job/ds90/crew/command/cmo
-	allowed_branches = list(/datum/mil_branch/security)
+	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
-	/datum/mil_rank/security/o3,
-	/datum/mil_rank/security/o4,
-	/datum/mil_rank/security/o5
-	)
+						/datum/mil_rank/civ/classb,
+						/datum/mil_rank/civ/classa
+						)
 	hud_icon = "hudchiefmedicalofficer"
 
 	access = list(
@@ -55,9 +54,8 @@
 	economic_power = 4
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/chemist
-	allowed_branches = list(/datum/mil_branch/security)
-	allowed_ranks = list(
-		/datum/mil_rank/security/o1)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudpharmacist"
 
 	access = list(
@@ -93,8 +91,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/psychiatrist
 	allowed_branches = list(
 	/datum/mil_branch/civilian)
-	allowed_ranks = list(
-		/datum/mil_rank/civ/classb)
+	allowed_ranks = list(/datum/mil_rank/civ/classb)
 	hud_icon = "hudcounselor"
 
 	access = list(
@@ -127,11 +124,8 @@
 	economic_power = 5
 	alt_titles = list("Coroner")
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/medicaldoctor
-	allowed_branches = list(
-	/datum/mil_branch/security)
-	allowed_ranks = list(
-		/datum/mil_rank/security/o1,
-		/datum/mil_rank/security/o2)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classb)
 	hud_icon = "hudphysician"
 
 	access = list(
@@ -168,10 +162,8 @@
 	economic_power = 5
 	//supervisors = "the Chief Medical Officer"
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/virologist
-	allowed_branches = list(
-	/datum/mil_branch/civilian)
-	allowed_ranks = list(
-		/datum/mil_rank/civ/classb)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudvirologist"
 
 	access = list(
@@ -207,10 +199,8 @@
 	//supervisors = "the Chief Medical Officer"
 	minimal_player_age = 3
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/surgeon
-	allowed_branches = list(
-	/datum/mil_branch/security)
-	allowed_ranks = list(
-		/datum/mil_rank/security/o2)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classb)
 	hud_icon = "hudsurgeon"
 
 	access = list(
@@ -248,12 +238,14 @@
 	//supervisors = "the Chief Medical Officer"
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/emt
 	allowed_branches = list(
-	/datum/mil_branch/security)
+	/datum/mil_branch/security,
+	/datum/mil_branch/civilian)
 	allowed_ranks = list(
 		/datum/mil_rank/security/e2,
 		/datum/mil_rank/security/e3,
 		/datum/mil_rank/security/e4,
-		/datum/mil_rank/security/e5
+		/datum/mil_rank/security/e5,
+		/datum/mil_rank/civ/classc
 		)
 	hud_icon = "hudemt"
 

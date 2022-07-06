@@ -27,8 +27,8 @@ ut // COMMAND
 	title = "Human Resources Officer"
 	department = "Command"
 	department_flag = COM
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	//duties = "<big><b>As the Head of Personnel, you're the right hand of the Site Director.<br>You can go to places he, or she couldn't, but still won't have access to SCP's, or the D-Class Cells.<br>Your job is to be the Site Director's eyes and ears, as well as being in charge of personnel outside of the Security branch.<br>You reserve the right to promote and demote people in cases of emergencies, otherwise, approval of the Site Director is needed.<br><span style = 'color:red'>It is not your job to jump in where necessary! Bad roleplay will be punished!</span></b></big>"
 	minimal_player_age = 15
 	economic_power = 10
@@ -85,6 +85,8 @@ ut // COMMAND
 		access_adminlvl2,
 		access_adminlvl1,
 		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3,
 		access_securitylvl1,
 		access_sciencelvl1,
 		access_sciencelvl2,
@@ -122,12 +124,8 @@ ut // COMMAND
 		"Communications Dispatcher"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/commstech
-	allowed_branches = list(
-		/datum/mil_branch/security
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/security/w1
-	)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudcommsprogrammer"
 
 	access = list(
@@ -138,7 +136,10 @@ ut // COMMAND
 		access_med_comms,
 		access_eng_comms,
 		access_sec_comms,
-		access_adminlvl1
+		access_adminlvl1,
+		access_engineeringlvl1,
+		access_engineeringlvl2,
+		access_engineeringlvl3
 	)
 
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,

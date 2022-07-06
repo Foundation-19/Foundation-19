@@ -68,7 +68,7 @@
 
 	species = all_species[SPECIES_DIONA]
 	add_language(LANGUAGE_ROOTGLOBAL)
-	add_language(LANGUAGE_HUMAN_GERMAN, 0)
+	add_language(LANGUAGE_ENGLISH, 0)
 
 	eyes = image(icon = icon, icon_state = "eyes_[icon_state]")
 	eyes.layer = EYE_GLOW_LAYER
@@ -78,7 +78,7 @@
 		flower = image(icon = icon, icon_state = "flower_back")
 		var/image/I = image(icon = icon, icon_state = "flower_fore")
 		I.color = get_random_colour(1)
-		flower.overlays += I
+		flower.add_overlay(I)
 
 	update_icons()
 

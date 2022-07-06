@@ -46,7 +46,7 @@
 	var/image/I = new(icon = 'icons/obj/vehicles.dmi', icon_state = "cargo_engine_overlay")
 	I.plane = plane
 	I.layer = layer
-	overlays += I
+	add_overlay(I)
 	turn_off()	//so engine verbs are correctly set
 
 /obj/vehicle/train/cargo/engine/Move(var/turf/destination)
@@ -308,7 +308,7 @@
 		C.plane = plane
 		C.layer = VEHICLE_LOAD_LAYER
 
-		overlays += C
+		add_overlay(C)
 
 		//we can set these back now since we have already cloned the icon into the overlay
 		C.pixel_x = initial(C.pixel_x)
@@ -321,7 +321,7 @@
 		load = dummy_load.actual_load
 		dummy_load.actual_load = null
 		qdel(dummy_load)
-		overlays.Cut()
+		cut_overlays()
 	..()
 
 //-------------------------------------------

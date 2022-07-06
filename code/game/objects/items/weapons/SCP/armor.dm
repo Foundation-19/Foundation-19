@@ -16,14 +16,13 @@
 	name = "plate carrier"
 
 /obj/item/clothing/suit/armor/pcarrier/scp/medium
-	accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor_tag/scp)
+	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor_tag/scp)
 
 
 /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
-	accessories = list(/obj/item/clothing/accessory/storage/pouches/green)
+	starting_accessories = list(/obj/item/clothing/accessory/storage/pouches/green)
 
 /obj/item/clothing/suit/armor/vest/scp
-	icon = 'icons/obj/clothing/suits.dmi'
 	w_class = ITEM_SIZE_HUGE
 	valid_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA, ACCESSORY_SLOT_ARMOR_M)
 
@@ -99,3 +98,11 @@
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
 	armor = list(melee = 90, bullet = 70, laser = 40, energy = 25, bomb = 30, bio = 90, rad = 90)
+
+/obj/item/clothing/suit/armor/vest/scp/medarmor/alpha
+	name = "armored vest"
+	desc = "A synthetic armor vest designed for MTF unit Alpha-1."
+	icon_state = "alpha-armor"
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS
+	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS
+	armor = list(melee = 100, bullet = 100, laser = 90, energy = 95, bomb = 90, bio = 90, rad = 0)

@@ -523,7 +523,7 @@
 	return anchored && ..()
 
 /obj/machinery/vending/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(stat & BROKEN)
 		icon_state = "[initial(icon_state)]-broken"
 	else if( !(stat & NOPOWER) )
@@ -532,7 +532,7 @@
 		spawn(rand(0, 15))
 			src.icon_state = "[initial(icon_state)]-off"
 	if(panel_open)
-		overlays += image(src.icon, "[initial(icon_state)]-panel")
+		add_overlay(image(src.icon, "[initial(icon_state)]-panel"))
 
 //Oh no we're malfunctioning!  Dump out some product and break.
 /obj/machinery/vending/proc/malfunction()
@@ -712,7 +712,7 @@
 	if(stat & BROKEN && prob(20))
 		icon_state = "[initial(icon_state)]-hellfire"
 	else if(!(stat & NOPOWER))
-		overlays += image(icon, "[initial(icon_state)]-screen")
+		add_overlay(image(icon, "[initial(icon_state)]-screen"))
 
 
 /obj/machinery/vending/snack
@@ -814,7 +814,7 @@
 /obj/machinery/vending/fitness/on_update_icon()
 	..()
 	if(!(stat & NOPOWER))
-		overlays += image(icon, "[initial(icon_state)]-overlay")
+		add_overlay(image(icon, "[initial(icon_state)]-overlay"))
 
 /obj/machinery/vending/cigarette
 	name = "\improper Cigarette machine" //OCD had to be uppercase to look nice with the new formating
@@ -924,19 +924,19 @@
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"
 	req_access = list(access_medical_equip)
 	products = list(
-		/obj/item/reagent_containers/glass/bottle/antitoxin = 4,
-		/obj/item/reagent_containers/glass/bottle/inaprovaline = 4,
-		/obj/item/reagent_containers/glass/bottle/stoxin = 4,
-		/obj/item/reagent_containers/syringe/antiviral = 4,
-		/obj/item/reagent_containers/pill/antitox = 6,
-		/obj/item/reagent_containers/syringe = 12,
+		/obj/item/reagent_containers/glass/bottle/antitoxin = 6,
+		/obj/item/reagent_containers/glass/bottle/inaprovaline = 6,
+		/obj/item/reagent_containers/glass/bottle/stoxin = 6,
+		/obj/item/reagent_containers/syringe/antiviral = 6,
+		/obj/item/reagent_containers/pill/antitox = 12,
+		/obj/item/reagent_containers/syringe = 18,
 		/obj/item/device/scanner/health = 5,
 		/obj/item/reagent_containers/glass/beaker = 4,
 		/obj/item/reagent_containers/dropper = 2,
-		/obj/item/stack/medical/advanced/bruise_pack = 3,
-		/obj/item/stack/medical/advanced/ointment = 3,
-		/obj/item/stack/medical/splint = 2,
-		/obj/item/reagent_containers/hypospray/autoinjector/pain = 4
+		/obj/item/stack/medical/advanced/bruise_pack = 10,
+		/obj/item/stack/medical/advanced/ointment = 10,
+		/obj/item/stack/medical/splint = 5,
+		/obj/item/reagent_containers/hypospray/autoinjector/pain = 15
 	)
 
 	contraband = list(
@@ -1255,7 +1255,7 @@
 /obj/machinery/vending/props/on_update_icon()
 	..()
 	if(!(stat & NOPOWER))
-		overlays += image(icon, "[initial(icon_state)]-overlay")
+		add_overlay(image(icon, "[initial(icon_state)]-overlay"))
 
 //FOR ACTORS GUILD - Containers
 /obj/machinery/vending/containers
@@ -1364,7 +1364,7 @@
 /obj/machinery/vending/snix/on_update_icon()
 	..()
 	if(!(stat & NOPOWER))
-		overlays += image(icon, "[initial(icon_state)]-fan")
+		add_overlay(image(icon, "[initial(icon_state)]-fan"))
 
 /obj/machinery/vending/sol
 	name = "\improper Mars-Mart"
@@ -1423,7 +1423,7 @@
 /obj/machinery/vending/weeb/on_update_icon()
 	..()
 	if(!(stat & NOPOWER))
-		overlays += image(icon, "[initial(icon_state)]-fan")
+		add_overlay(image(icon, "[initial(icon_state)]-fan"))
 
 /obj/machinery/vending/hotfood
 	name = "\improper Hot Foods"
@@ -1445,7 +1445,7 @@
 /obj/machinery/vending/hotfood/on_update_icon()
 	..()
 	if(!(stat & NOPOWER))
-		overlays += image(icon, "[initial(icon_state)]-heater")
+		add_overlay(image(icon, "[initial(icon_state)]-heater"))
 
 
 /obj/machinery/vending/mredispenser

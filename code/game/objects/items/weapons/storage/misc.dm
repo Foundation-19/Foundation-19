@@ -36,10 +36,10 @@
 	startswith = list(/obj/item/reagent_containers/food/snacks/donut/normal = 6)
 
 /obj/item/storage/box/donut/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	var/i = 0
 	for(var/obj/item/reagent_containers/food/snacks/donut/D in contents)
-		overlays += image('icons/obj/food.dmi', "[i][D.overlay_state]")
+		add_overlay(image('icons/obj/food.dmi', "[i][D.overlay_state]"))
 		i++
 
 /obj/item/storage/box/donut/empty

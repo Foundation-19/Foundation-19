@@ -6,6 +6,7 @@
 	name = "chef's closet"
 	desc = "It's a storage unit for foodservice equipment."
 	icon_state = "black"
+	icon_closed = "black"
 
 /obj/structure/closet/chefcloset_torch/WillContain()
 	return list(
@@ -20,6 +21,10 @@
 	name = "hydroponics locker"
 	req_access = list()
 	icon_state = "hydrosecure1"
+	icon_closed = "hydrosecure"
+	icon_locked = "hydrosecure1"
+	icon_opened = "hydrosecureopen"
+	icon_off = "hydrosecureoff"
 
 /obj/structure/closet/secure_closet/hydroponics_torch/WillContain()
 	return list(
@@ -38,6 +43,10 @@
 	name = "hydroponics locker"
 	req_access = list()
 	icon_state = "hydrosecure1"
+	icon_closed = "hydrosecure"
+	icon_locked = "hydrosecure1"
+	icon_opened = "hydrosecureopen"
+	icon_off = "hydrosecureoff"
 
 /obj/structure/closet/secure_closet/hydroponics_dclass/WillContain()
 	return list(
@@ -55,7 +64,8 @@
 /obj/structure/closet/jcloset_torch
 	name = "custodial closet"
 	desc = "It's a storage unit for janitorial clothes and gear."
-	closet_appearance = /decl/closet_appearance/wardrobe/mixed
+	icon_state = "mixed"
+	icon_closed = "mixed"
 
 /obj/structure/closet/jcloset_torch/WillContain()
 	return list(
@@ -80,9 +90,8 @@
 
 /obj/structure/closet/secure_closet/bar_torch/WillContain()
 	return list(
-//		/obj/item/reagent_containers/food/drinks/shaker,
+		/obj/item/reagent_containers/food/drinks/shaker,
 //		/obj/item/book/manual/barman_recipes,
 		/obj/item/clothing/under/rank/bartender,
 		/obj/item/clothing/shoes/laceup
 	)
-

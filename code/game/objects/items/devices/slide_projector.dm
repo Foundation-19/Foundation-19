@@ -39,7 +39,7 @@
 /obj/item/storage/slide_projector/on_item_pre_deletion(obj/item/W)
 	if(W == current_slide)
 		set_slide(null)
-	
+
 /obj/item/storage/slide_projector/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	if(!current_slide)
 		to_chat(user, SPAN_WARNING("\The [src] does not have a slide loaded."))
@@ -78,7 +78,7 @@
 	GLOB.moved_event.unregister(src, src, .proc/check_projections)
 	set_light(0)
 	update_icon()
-	
+
 /obj/item/storage/slide_projector/proc/project_at(turf/target)
 	stop_projecting()
 	if(!current_slide)
@@ -99,13 +99,13 @@
 /obj/item/storage/slide_projector/attack_self(mob/user)
 	interact(user)
 
-/obj/item/storage/slide_projector/interact(mob/user)	
+/obj/item/storage/slide_projector/interact(mob/user)
 	var/data = list()
 	if(projection)
 		data += "<a href='?src=\ref[src];stop_projector=1'>Disable projector</a>"
 	else
 		data += "Projector inactive"
-	
+
 	var/table = list("<table><tr><th>#</th><th>SLIDE</th><th>SHOW</th></tr>")
 	var/i = 1
 	for(var/obj/item/I in contents)
@@ -138,7 +138,7 @@
 			return TOPIC_HANDLED
 		set_slide(contents[index])
 		. = TOPIC_REFRESH
-	
+
 	if(. == TOPIC_REFRESH)
 		interact(user)
 
@@ -166,7 +166,7 @@
 	if(!istype(I))
 		qdel(src)
 		return
-	overlays.Cut()
+	cut_overlays()
 	var/mutable_appearance/MA = new(I)
 	MA.plane = FLOAT_PLANE
 	MA.layer = FLOAT_LAYER
@@ -174,7 +174,7 @@
 	MA.alpha = 170
 	MA.pixel_x = 0
 	MA.pixel_y = 0
-	overlays |= MA
+	add_overlay(MA)
 
 /obj/effect/projection/proc/set_source(obj/item/I)
 	source = weakref(I)
@@ -211,6 +211,6 @@
 	if(!istype(P))
 		qdel(src)
 		return
-	overlays.Cut()
+	cut_overlays()
 	if(P.info)
 		icon_state = "text[rand(1,3)]"

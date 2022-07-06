@@ -263,9 +263,9 @@
 		container.icon_state = "blank"
 		container.layer = HUD_CLICKABLE_LAYER
 
-		container.overlays += stored_start
-		container.overlays += stored_continue
-		container.overlays += stored_end
+		container.add_overlay(stored_start)
+		container.add_overlay(stored_continue)
+		container.add_overlay(stored_end)
 
 		container.SetName(O.name)
 		container.master = O

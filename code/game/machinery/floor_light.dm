@@ -97,7 +97,7 @@ var/list/floor_light_cache = list()
 			set_light(0)
 
 /obj/machinery/floor_light/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if((use_power == POWER_USE_ACTIVE) && !(stat & (NOPOWER | BROKEN)))
 		if(isnull(damaged))
 			var/cache_key = "floorlight-[default_light_colour]"
@@ -107,7 +107,7 @@ var/list/floor_light_cache = list()
 				I.plane = plane
 				I.layer = layer+0.001
 				floor_light_cache[cache_key] = I
-			overlays |= floor_light_cache[cache_key]
+			add_overlay(floor_light_cache[cache_key])
 		else
 			if(damaged == 0) //Needs init.
 				damaged = rand(1,4)
@@ -118,7 +118,7 @@ var/list/floor_light_cache = list()
 				I.plane = plane
 				I.layer = layer+0.001
 				floor_light_cache[cache_key] = I
-			overlays |= floor_light_cache[cache_key]
+			add_overlay(floor_light_cache[cache_key])
 	update_brightness()
 
 /obj/machinery/floor_light/ex_act(severity)

@@ -70,10 +70,10 @@
 	return 1
 
 /obj/item/aicard/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(carded_ai)
 		if (!carded_ai.control_disabled)
-			overlays += image('icons/obj/pda.dmi', "aicard-on")
+			add_overlay(image('icons/obj/pda.dmi', "aicard-on"))
 		if(carded_ai.stat)
 			icon_state = "aicard-404"
 		else

@@ -79,11 +79,11 @@
 /obj/item/modular_computer/on_update_icon()
 	icon_state = icon_state_unpowered
 
-	overlays.Cut()
+	cut_overlays()
 	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
 	if(os)
-		overlays += os.get_screen_overlay()
-		overlays += os.get_keyboard_overlay()
+		add_overlay(os.get_screen_overlay())
+		add_overlay(os.get_keyboard_overlay())
 
 	if(enabled)
 		set_light(0.2, 0.1, light_strength)
@@ -120,7 +120,7 @@
 
 	if(loud)
 		visible_message("\The [src] shuts down.", range = 1)
-		
+
 	enabled = 0
 	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
 	if(os)
@@ -146,4 +146,3 @@
 /obj/item/modular_computer/get_cell()
 	if(battery_module)
 		return battery_module.get_cell()
-

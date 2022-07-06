@@ -581,6 +581,19 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 		s += "Discord"
 		s += "</a>"
 
+	// Discord link
+	if(config && config.rulesurl)
+		s += "<br>"
+		s += "<a href=\"[config.rulesurl]\">"
+		s += "Rules"
+		s += "</a>"
+
+	// Discord link
+	if(config && config.loreurl)
+		s += "<br>"
+		s += "<a href=\"[config.loreurl]\">"
+		s += "Lore"
+		s += "</a>"
 	/* does this help? I do not know */
 	if (src.status != s)
 		src.status = s

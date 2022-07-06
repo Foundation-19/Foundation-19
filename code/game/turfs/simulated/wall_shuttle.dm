@@ -11,6 +11,9 @@
 	density = TRUE
 	blocks_air = 1
 
+/turf/simulated/shuttle/wall/is_wall()
+	return TRUE
+
 /turf/simulated/shuttle/wall/corner
 	var/corner_overlay_state = "diagonalWall"
 	var/image/corner_overlay
@@ -30,12 +33,12 @@
 
 /turf/simulated/shuttle/wall/corner/proc/reset_overlay()
 	if(corner_overlay)
-		overlays -= corner_overlay
+		cut_overlay(corner_overlay)
 	else
 		corner_overlay = image(icon = 'icons/turf/shuttle.dmi', icon_state = corner_overlay_state, dir = src.dir)
 		corner_overlay.plane = plane
 		corner_overlay.layer = layer
-	overlays += corner_overlay
+	add_overlay(corner_overlay)
 
 //Predefined Shuttle Corners
 /turf/simulated/shuttle/wall/corner/smoothwhite

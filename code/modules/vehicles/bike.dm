@@ -195,13 +195,13 @@
 	..()
 
 /obj/vehicle/bike/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 
 	if(on)
 		icon_state = "[bike_icon]_on"
 	else
 		icon_state = "[bike_icon]_off"
-	overlays += image('icons/obj/bike.dmi', "[icon_state]_overlay", MOB_LAYER + 1)
+	add_overlay(image('icons/obj/bike.dmi', "[icon_state]_overlay", MOB_LAYER + 1))
 	..()
 
 

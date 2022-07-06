@@ -44,7 +44,7 @@
 
 /obj/item/reagent_containers/food/snacks/sushi/on_update_icon()
 	name = "[fish_type] sushi"
-	overlays = list("[fish_type]", "nori")
+	set_overlays(list("[fish_type]", "nori"))
 
 /////////////
 // SASHIMI //
@@ -74,7 +74,7 @@
 		I.pixel_x = slice_offset-((slice-1)*4)
 		I.pixel_y = I.pixel_x
 		adding += I
-	overlays = adding
+	set_overlays(adding)
 
 /obj/item/reagent_containers/food/snacks/sashimi/attackby(var/obj/item/I, var/mob/user)
 	if(!(locate(/obj/structure/table) in loc))

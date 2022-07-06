@@ -1,12 +1,11 @@
 /obj/structure/closet/secure_closet/engineering_chief
 	name = "chief engineer's locker"
+	req_access = list(access_ce)
 	icon_state = "securece1"
 	icon_closed = "securece"
 	icon_locked = "securece1"
 	icon_opened = "secureceopen"
 	icon_off = "secureceoff"
-	closet_appearance = /decl/closet_appearance/secure_closet/engineering/ce
-	req_access = list(access_ce)
 
 /obj/structure/closet/secure_closet/engineering_chief/WillContain()
 	return list(
@@ -32,7 +31,11 @@
 /obj/structure/closet/secure_closet/engineering_electrical
 	name = "electrical supplies"
 	req_access = list(access_engine_equip)
-	closet_appearance = /decl/closet_appearance/secure_closet/engineering/electrical
+	icon_state = "secureengelec1"
+	icon_closed = "secureengelec"
+	icon_locked = "secureengelec1"
+	icon_opened = "toolclosetopen"
+	icon_off = "secureengelecoff"
 
 /obj/structure/closet/secure_closet/engineering_electrical/WillContain()
 	return list(
@@ -47,7 +50,11 @@
 /obj/structure/closet/secure_closet/engineering_welding
 	name = "welding supplies"
 	req_access = list(access_construction)
-	closet_appearance = /decl/closet_appearance/secure_closet/engineering/welding
+	icon_state = "secureengweld1"
+	icon_closed = "secureengweld"
+	icon_locked = "secureengweld1"
+	icon_opened = "toolclosetopen"
+	icon_off = "secureengweldoff"
 
 /obj/structure/closet/secure_closet/engineering_welding/WillContain()
 	return list(
@@ -61,7 +68,11 @@
 /obj/structure/closet/secure_closet/engineering_personal
 	name = "engineer's locker"
 	req_access = list(access_engine_equip)
-	closet_appearance = /decl/closet_appearance/secure_closet/engineering
+	icon_state = "secureeng1"
+	icon_closed = "secureeng"
+	icon_locked = "secureeng1"
+	icon_opened = "secureengopen"
+	icon_off = "secureengoff"
 
 /obj/structure/closet/secure_closet/engineering_personal/WillContain()
 	return list(
@@ -79,7 +90,11 @@
 /obj/structure/closet/secure_closet/atmos_personal
 	name = "technician's locker"
 	req_access = list(access_atmospherics)
-	closet_appearance = /decl/closet_appearance/secure_closet/engineering/atmos
+	icon_state = "secureatm1"
+	icon_closed = "secureatm"
+	icon_locked = "secureatm1"
+	icon_opened = "secureatmopen"
+	icon_off = "secureatmoff"
 
 /obj/structure/closet/secure_closet/atmos_personal/WillContain()
 	return list(

@@ -15,11 +15,11 @@
 	if(charging && !(stat & (BROKEN|NOPOWER)) )
 		var/newlevel = 	round(charging.percent() * 4.0 / 99)
 		if(chargelevel != newlevel)
-			overlays.Cut()
-			overlays += "ccharger-o[newlevel]"
+			cut_overlays()
+			add_overlay("ccharger-o[newlevel]")
 			chargelevel = newlevel
 	else
-		overlays.Cut()
+		cut_overlays()
 
 /obj/machinery/cell_charger/examine(var/mob/user, var/distance)
 	. = ..()

@@ -8,7 +8,7 @@
 	active_power_usage = 5000
 	base_type = /obj/machinery/r_n_d/protolathe
 	construct_state = /decl/machine_construction/default/panel_closed
-	
+
 	machine_name = "protolathe"
 	machine_desc = "Uses raw materials to produce prototypes. Part of an R&D network."
 
@@ -123,9 +123,9 @@
 
 	var/image/I = image(icon, "protolathe_stack")
 	I.color = stack.material.icon_colour
-	overlays += I
+	add_overlay(I)
 	spawn(10)
-		overlays -= I
+		cut_overlay(I)
 
 	busy = 1
 	use_power_oneoff(max(1000, (SHEET_MATERIAL_AMOUNT * amount / 10)))

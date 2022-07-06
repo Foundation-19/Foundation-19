@@ -1,1 +1,1 @@
-/datum/antagonist/ert/required_language = LANGUAGE_HUMAN_GERMAN
+/datum/antagonist/ert/required_language = LANGUAGE_ENGLISH

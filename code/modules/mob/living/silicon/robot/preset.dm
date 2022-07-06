@@ -51,7 +51,7 @@
 
 /mob/living/silicon/robot/flying/ascent/Initialize()
 	. = ..()
-	remove_language(LANGUAGE_HUMAN_GERMAN)
+	remove_language(LANGUAGE_ENGLISH)
 	remove_language(LANGUAGE_EAL)
 	remove_language(LANGUAGE_ROBOT_GLOBAL)
 	default_language = all_languages[LANGUAGE_MANTID_NONVOCAL]

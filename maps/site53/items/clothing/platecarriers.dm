@@ -48,7 +48,6 @@
 
 //GOC
 /obj/item/clothing/suit/armor/goc
-	icon = 'icons/obj/clothing/suits.dmi'
 	name = "GOC armored vest"
 	desc = "A standard issue lightweight armored vest given to soldiers of the GOC."
 	icon_state = "goc-vest"

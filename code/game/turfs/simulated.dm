@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(simulated_turfs_scp106)
 	if(!wet)
 		wet = wet_val
 		wet_overlay = image('icons/effects/water.dmi',src,overlay_state)
-		overlays += wet_overlay
+		add_overlay(wet_overlay)
 
 	timer_id = addtimer(CALLBACK(src,/turf/simulated/proc/unwet_floor, TRUE, dissipate_time), dissipate_time, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_NO_HASH_WAIT|TIMER_OVERRIDE)
 
@@ -37,7 +37,7 @@ GLOBAL_LIST_EMPTY(simulated_turfs_scp106)
 
 	wet = 0
 	if(wet_overlay)
-		overlays -= wet_overlay
+		cut_overlay(wet_overlay)
 		wet_overlay = null
 
 /turf/simulated/clean_blood()

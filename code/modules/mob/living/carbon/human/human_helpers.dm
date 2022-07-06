@@ -53,7 +53,7 @@
 
 	if(istype(glasses, /obj/item/clothing/glasses))
 		process_prescription(glasses)
-	
+
 	var/binoc_check
 	if(client)
 		binoc_check = client.view == world.view

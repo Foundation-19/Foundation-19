@@ -3,6 +3,7 @@
 	sort_category = "Shoes and Footwear"
 	slot = slot_shoes
 	category = /datum/gear/shoes
+	denied_roles = list(/datum/job/assistant)
 
 /datum/gear/shoes/athletic
 	display_name = "athletic shoes, colour select"
@@ -64,3 +65,23 @@
 	display_name = "high heels, colour select"
 	path = /obj/item/clothing/shoes/heels
 	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/shoes/restricted_boots
+	display_name = "restricted boot selection"
+	path = /obj/item/clothing/shoes
+	cost = 2
+	allowed_roles = list(/datum/job/assistant)
+	denied_roles = null
+
+/datum/gear/shoes/restricted_boots/New()
+	..()
+	var/boots = list()
+	boots += /obj/item/clothing/shoes/workboots
+	boots += /obj/item/clothing/shoes/desertboots
+	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(boots)
+
+/datum/gear/shoes/orange
+	display_name = "orange shoes"
+	path = /obj/item/clothing/shoes/orange
+	allowed_roles = list(/datum/job/assistant)
+	denied_roles = null

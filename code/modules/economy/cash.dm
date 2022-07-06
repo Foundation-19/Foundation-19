@@ -71,7 +71,7 @@
 		. += "spacecash1"
 
 /obj/item/spacecash/bundle/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	var/list/images = src.getMoneyImages()
 
 	for(var/A in images)
@@ -80,7 +80,7 @@
 		M.Translate(rand(-6, 6), rand(-4, 8))
 		M.Turn(pick(-45, -27.5, 0, 0, 0, 0, 0, 0, 0, 27.5, 45))
 		banknote.transform = M
-		src.overlays += banknote
+		src.add_overlay(banknote)
 
 	src.desc = "They are worth [worth] [GLOB.using_map.local_currency_name]."
 	if(worth in denominations)

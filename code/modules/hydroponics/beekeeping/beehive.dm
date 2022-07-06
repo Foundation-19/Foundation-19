@@ -19,26 +19,26 @@
 	update_icon()
 
 /obj/machinery/beehive/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	icon_state = "beehive-[closed]"
 	if(closed)
-		overlays += "lid"
+		add_overlay("lid")
 	if(frames)
-		overlays += "empty[frames]"
+		add_overlay("empty[frames]")
 	if(honeycombs >= 100)
-		overlays += "full[round(honeycombs / 100)]"
+		add_overlay("full[round(honeycombs / 100)]")
 	if(!smoked)
 		switch(bee_count)
 			if(1 to 20)
-				overlays += "bees1"
+				add_overlay("bees1")
 			if(21 to 40)
-				overlays += "bees2"
+				add_overlay("bees2")
 			if(41 to 60)
-				overlays += "bees3"
+				add_overlay("bees3")
 			if(61 to 80)
-				overlays += "bees4"
+				add_overlay("bees4")
 			if(81 to 100)
-				overlays += "bees5"
+				add_overlay("bees5")
 
 /obj/machinery/beehive/examine(mob/user)
 	. = ..()
@@ -173,7 +173,7 @@
 	construct_state = /decl/machine_construction/default/panel_closed
 	uncreated_component_parts = null
 	stat_immune = 0
-	
+
 	machine_name = "honey extractor"
 	machine_desc = "Extracts liquid honey and solid blocks of wax from filled beehive frames. Requires an attached reagent container to operate."
 
@@ -186,7 +186,7 @@
 /obj/machinery/honey_extractor/cannot_transition_to(state_path, mob/user)
 	if(processing)
 		return SPAN_NOTICE("You must wait for \the [src] to finish first!")
-	return ..()	
+	return ..()
 
 /obj/machinery/honey_extractor/attackby(var/obj/item/I, var/mob/user)
 	if(processing)
@@ -243,7 +243,7 @@
 
 /obj/item/honey_frame/filled/New()
 	..()
-	overlays += "honeycomb"
+	add_overlay("honeycomb")
 
 /obj/item/beehive_assembly
 	name = "beehive assembly"
@@ -282,21 +282,21 @@ var/global/list/datum/stack_recipe/wax_recipes = list(
 
 /obj/item/bee_pack/New()
 	..()
-	overlays += "beepack-full"
+	add_overlay("beepack-full")
 
 /obj/item/bee_pack/proc/empty()
 	full = 0
 	name = "empty bee pack"
 	desc = "A stasis pack for moving bees. It's empty."
-	overlays.Cut()
-	overlays += "beepack-empty"
+	cut_overlays()
+	add_overlay("beepack-empty")
 
 /obj/item/bee_pack/proc/fill()
 	full = initial(full)
 	SetName(initial(name))
 	desc = initial(desc)
-	overlays.Cut()
-	overlays += "beepack-full"
+	cut_overlays()
+	add_overlay("beepack-full")
 
 /obj/structure/closet/crate/hydroponics/beekeeping
 	name = "beekeeping crate"

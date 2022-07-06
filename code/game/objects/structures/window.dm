@@ -516,7 +516,7 @@
 		basestate = reinf_basestate
 	else
 		basestate = initial(basestate)
-	overlays.Cut()
+	cut_overlays()
 	layer = FULL_WINDOW_LAYER
 	if (paint_color)
 		color = paint_color
@@ -554,7 +554,7 @@
 /obj/structure/window/proc/process_icon(basestate, icon_group, damage_group, connections, img_dir, damage_alpha)
 	var/image/I = image(icon, "[basestate][icon_group][connections]", dir = img_dir)
 	I.color = get_color()
-	overlays += I
+	add_overlay(I)
 
 	if (damage_group == "_onframe")
 		process_overlay_damage("window0_damage", damage_alpha, img_dir)
@@ -566,7 +566,7 @@
 	D = image(icon, damage_state, dir = img_dir)
 	D.blend_mode = BLEND_MULTIPLY
 	D.alpha = damage_alpha
-	overlays += D
+	add_overlay(D)
 
 /obj/structure/window/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	var/melting_point = material.melting_point

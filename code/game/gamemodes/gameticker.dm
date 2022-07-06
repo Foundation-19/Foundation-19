@@ -279,7 +279,7 @@ var/global/datum/controller/gameticker/ticker
 	proc/create_characters()
 		for(var/mob/new_player/player in GLOB.player_list)
 			if(player && player.ready && player.mind)
-				if(player.mind.assigned_role=="AI")
+				if(player.mind.assigned_role=="AIC")
 					player.close_spawn_windows()
 					player.AIize()
 				else if(!player.mind.assigned_role)

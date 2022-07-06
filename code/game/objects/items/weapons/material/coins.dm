@@ -23,9 +23,9 @@
 		var/image/I = image(icon = icon, icon_state = "coin_string_overlay")
 		I.appearance_flags |= RESET_COLOR
 		I.color = string_colour
-		overlays += I
+		add_overlay(I)
 	else
-		overlays.Cut()
+		cut_overlays()
 
 /obj/item/material/coin/attackby(var/obj/item/W, var/mob/user)
 	if(isCoil(W) && isnull(string_colour))

@@ -49,6 +49,20 @@
 #define HOME_SYSTEM_OTHER      "Other System"
 #define HOME_SYSTEM_DEEP_SPACE "Deep Space"
 
+/// EARTH CULTURES ///////////////////////////////
+#define CULTURE_HUMAN_EARTH    "American"
+#define CULTURE_HUMAN_LATINAMERICAN    "Latin-American"
+#define CULTURE_HUMAN_BRITISH    "British"
+#define CULTURE_HUMAN_GOIDELIC    "Goidelic"
+#define CULTURE_HUMAN_IBERIAN    "Iberian"
+#define CULTURE_HUMAN_GERMAN    "German"
+#define CULTURE_HUMAN_ITALIAN    "Italian"
+#define CULTURE_HUMAN_FRENCH    "French"
+#define CULTURE_HUMAN_CHINESE    "Chinese"
+#define CULTURE_HUMAN_JAPANESE    "Japanese"
+#define CULTURE_HUMAN_ARABIC    "Arabic"
+#define CULTURE_HUMAN_EASTSLAVIC    "East-Slavic"
+
 #define CULTURE_OTHER          "Other Culture"
 #define CULTURE_HUMAN          "Humankind"
 #define CULTURE_HUMAN_VATGROWN "Nonborn"
@@ -60,7 +74,6 @@
 #define CULTURE_HUMAN_VENUSLOW "Venusian, Surfacer"
 #define CULTURE_HUMAN_BELTER   "Belter, Ceres"
 #define CULTURE_HUMAN_PLUTO    "Plutonian"
-#define CULTURE_HUMAN_EARTH    "Earther"
 #define CULTURE_HUMAN_CETI     "Cetite"
 #define CULTURE_HUMAN_SPACER   "Spacer, Core Systems"
 #define CULTURE_HUMAN_SPAFRO   "Spacer, Frontier Systems"

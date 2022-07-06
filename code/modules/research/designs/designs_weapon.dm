@@ -132,26 +132,40 @@
 	build_path = /obj/item/gun/energy/decloner
 	sort_string = "TAJAB"
 
-/datum/design/item/weapon/wt550
-	id = "wt550"
-	req_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
-	materials = list(MATERIAL_STEEL = 8000, MATERIAL_SILVER = 3000, MATERIAL_DIAMOND = 1500)
+/datum/design/item/weapon/pistol
+	id = "hpistol"
+	req_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3)
+	materials = list(MATERIAL_STEEL = 4000, MATERIAL_SILVER = 3000)
+	build_path = /obj/item/gun/projectile/pistol/magnum_pistol
+	sort_string = "TAPAA"
+
+/datum/design/item/weapon/sec_smg
+	id = "sec_smg"
+	req_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 3)
+	materials = list(MATERIAL_STEEL = 8000, MATERIAL_SILVER = 2000, MATERIAL_DIAMOND = 1500)
 	build_path = /obj/item/gun/projectile/automatic/sec_smg
 	sort_string = "TAPAA"
 
 /datum/design/item/weapon/smg
 	id = "smg"
 	req_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 4)
-	materials = list(MATERIAL_STEEL = 8000, MATERIAL_SILVER = 2000, MATERIAL_DIAMOND = 2000)
+	materials = list(MATERIAL_STEEL = 8000, MATERIAL_SILVER = 3000, MATERIAL_DIAMOND = 2000)
 	build_path = /obj/item/gun/projectile/automatic
 	sort_string = "TAPAB"
 
 /datum/design/item/weapon/bullpup
 	id = "bullpup"
-	req_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 3)
+	req_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 5)
 	materials = list(MATERIAL_STEEL = 10000, MATERIAL_SILVER = 5000, MATERIAL_DIAMOND = 3000)
 	build_path = /obj/item/gun/projectile/automatic/bullpup_rifle
 	sort_string = "TAPAC"
+
+/datum/design/item/weapon/sniper
+	id = "sniper"
+	req_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 5)
+	materials = list(MATERIAL_STEEL = 10000, MATERIAL_SILVER = 5000, MATERIAL_DIAMOND = 3000)
+	build_path = /obj/item/gun/projectile/automatic/semistrip
+	sort_string = "TAPAB"
 
 /datum/design/item/weapon/ammunition/AssembleDesignName()
 	..()
@@ -159,10 +173,9 @@
 
 /datum/design/item/weapon/ammunition/ammo_small
 	id = "ammo_small"
-	desc = "A box of small pistol rounds."
 	req_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3)
-	materials = list(MATERIAL_STEEL = 3750, MATERIAL_SILVER = 100)
-	build_path = /obj/item/ammo_magazine/box/smallpistol
+	materials = list(MATERIAL_STEEL = 1250, MATERIAL_SILVER = 100)
+	build_path = /obj/item/ammo_magazine/magnum
 	sort_string = "TBAAA"
 
 /datum/design/item/weapon/ammunition/ammo_flechette
@@ -172,6 +185,20 @@
 	materials = list(MATERIAL_STEEL = 2000, MATERIAL_SILVER = 500, MATERIAL_DIAMOND = 200)
 	build_path = /obj/item/ammo_magazine/proto_smg
 	sort_string = "TBAAB"
+
+/datum/design/item/weapon/ammunition/ammo_sec
+	id = "ammo_sec"
+	req_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 3)
+	materials = list(MATERIAL_STEEL = 2000, MATERIAL_SILVER = 500, MATERIAL_DIAMOND = 200)
+	build_path = /obj/item/ammo_magazine/smg_top
+	sort_string = "TBAAH"
+
+/datum/design/item/weapon/ammunition/ammo_bullpup
+	id = "ammo_bullpup"
+	req_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 5)
+	materials = list(MATERIAL_STEEL = 3000, MATERIAL_SILVER = 750, MATERIAL_DIAMOND = 300)
+	build_path = /obj/item/ammo_magazine/mil_rifle
+	sort_string = "TBAAI"
 
 /datum/design/item/weapon/ammunition/stunshell
 	desc = "A stunning shell for a shotgun."

@@ -5,4 +5,4 @@
 /obj/effect/decal/medical_decals/New()
 	. = ..()
 
-	loc.overlays += src
+	loc.add_overlay(src)
