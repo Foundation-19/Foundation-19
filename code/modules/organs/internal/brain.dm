@@ -49,7 +49,7 @@
 	if(species)
 		set_max_damage(species.total_health)
 	else
-		set_max_damage(45)
+		set_max_damage(200)
 
 	spawn(5)
 		if(brainmob && brainmob.client)
@@ -129,11 +129,11 @@
 	set waitfor = FALSE
 	healed_threshold = 0
 	to_chat(owner, "<span class = 'notice' font size='10'><B>Where am I...?</B></span>")
-	sleep(50 SECONDS)
+	sleep(5 SECONDS)
 	if(!owner)
 		return
 	to_chat(owner, "<span class = 'notice' font size='10'><B>What's going on...?</B></span>")
-	sleep(100 SECONDS)
+	sleep(10 SECONDS)
 	if(!owner)
 		return
 	to_chat(owner, "<span class = 'notice' font size='10'><B>What happened...?</B></span>")
