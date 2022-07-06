@@ -564,12 +564,6 @@
 	desc = "It's a case, for building small electronics with. This one resembles a PDA."
 	slot_flags = SLOT_BELT | SLOT_ID
 
-/obj/item/device/electronic_assembly/augment
-	name = "augment electronic assembly"
-	icon_state = "setup_augment"
-	desc = "It's a case, for building small electronics with. This one is designed to go inside a cybernetic augment."
-	circuit_flags = IC_FLAG_CAN_FIRE
-
 /obj/item/device/electronic_assembly/medium
 	name = "electronic mechanism"
 	icon_state = "setup_medium"
