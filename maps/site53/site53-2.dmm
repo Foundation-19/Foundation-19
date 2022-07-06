@@ -26729,7 +26729,7 @@
 /obj/structure/closet,
 /obj/item/gun/projectile/automatic/battlerifle,
 /obj/item/gun/projectile/pistol/military{
-	desc = "The Glock 20 - a mass produced ballistic sidearm in widespread service within the GOC.
+	desc = "The Glock 20 - a mass produced ballistic sidearm in widespread service within the GOC."
 	},
 /obj/item/storage/belt/holster/security,
 /obj/item/ammo_magazine/pistol/double,
@@ -30701,7 +30701,7 @@
 	},
 /obj/item/gun/projectile/automatic/battlerifle,
 /obj/item/gun/projectile/pistol/military{
-	desc = "The Glock 20 - a mass produced ballistic sidearm in widespread service within the GOC.
+	desc = "The Glock 20 - a mass produced ballistic sidearm in widespread service within the GOC."
 	},
 /obj/item/storage/belt/holster/security,
 /obj/item/ammo_magazine/pistol/double,
