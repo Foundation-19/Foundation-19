@@ -430,7 +430,7 @@
 	// Delete the mob.
 	var/mob/observer/ghost/g = find_dead_player(occupant.last_ckey, TRUE)
 	occupant.ckey = null
-	if(!g) // Player didn't ghost. Ghost them then delete.
+	if(!g) // Player didn't ghost. Ghost then delete.
 		g = occupant.ghostize(FALSE)
 	g.timeofdeath -= config.respawn_delay MINUTES
 	qdel(occupant)
