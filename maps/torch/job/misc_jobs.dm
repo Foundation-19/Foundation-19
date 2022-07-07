@@ -22,7 +22,7 @@ Synthetic
 Civilian
 *******/
 
-/datum/job/assistant
+/datum/job/classd
 	title = "Passenger"
 	total_positions = 12
 	spawn_positions = 12

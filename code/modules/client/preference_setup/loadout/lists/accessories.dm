@@ -3,7 +3,7 @@
 	sort_category = "Accessories"
 	category = /datum/gear/accessory
 	slot = slot_tie
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/accessory/tie
 	display_name = "tie selection"
@@ -92,7 +92,7 @@
 /datum/gear/accessory/armband_hydro
 	display_name = "hydroponics armband"
 	path = /obj/item/clothing/accessory/armband/hydro
-	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/assistant)
+	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/classd)
 
 /datum/gear/accessory/armband_nt
 	display_name = "corporate armband"

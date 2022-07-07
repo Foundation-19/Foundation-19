@@ -2,7 +2,7 @@
 	sort_category = "Glasses and Eyewear"
 	category = /datum/gear/eyes
 	slot = slot_glasses
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/eyes/glasses
 	display_name = "prescription glasses"

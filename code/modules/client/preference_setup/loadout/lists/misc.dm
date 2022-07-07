@@ -1,12 +1,12 @@
 /datum/gear/cane
 	display_name = "cane"
 	path = /obj/item/cane
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/union_card
 	display_name = "union membership"
 	path = /obj/item/card/union
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/union_card/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
 	. = ..()
@@ -67,7 +67,7 @@
 	display_name = "knives selection"
 	description = "A selection of knives."
 	path = /obj/item/material/knife
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/knives/New()
 	..()
@@ -120,13 +120,13 @@
 	display_name = "work visa"
 	description = "A work visa issued by the Sol Central Government for the purpose of work."
 	path = /obj/item/paper/workvisa
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/travelvisa
 	display_name = "travel visa"
 	description = "A travel visa issued by the Sol Central Government for the purpose of recreation."
 	path = /obj/item/paper/travelvisa
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/passport
 	display_name = "passports selection"
@@ -158,22 +158,22 @@
 /datum/gear/smokingpipe
 	display_name = "pipe, smoking"
 	path = /obj/item/clothing/mask/smokable/pipe
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/cornpipe
 	display_name = "pipe, corn"
 	path = /obj/item/clothing/mask/smokable/pipe/cobpipe
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/matchbook
 	display_name = "matchbook"
 	path = /obj/item/storage/box/matches
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/lighter
 	display_name = "cheap lighter"
 	path = /obj/item/flame/lighter
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/lighter/New()
 	..()
@@ -189,7 +189,7 @@
 /datum/gear/zippo
 	display_name = "zippo"
 	path = /obj/item/flame/lighter/zippo
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/zippo/New()
 	..()
@@ -210,18 +210,18 @@
 	display_name = "fancy cigarette case"
 	path = /obj/item/storage/fancy/cigarettes/case
 	cost = 2
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/cigars
 	display_name = "fancy cigar case"
 	path = /obj/item/storage/fancy/cigar
 	cost = 2
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/cigar
 	display_name = "fancy cigar"
 	path = /obj/item/clothing/mask/smokable/cigarette/cigar
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/cigar/New()
 	..()
@@ -233,7 +233,7 @@
 /datum/gear/ecig
 	display_name = "electronic cigarette"
 	path = /obj/item/clothing/mask/smokable/ecig/util
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/ecig/deluxe
 	display_name = "electronic cigarette, deluxe"
@@ -262,7 +262,7 @@
 	path = /obj/item/material/knife/folding/swiss
 	cost = 4
 	flags = GEAR_HAS_COLOR_SELECTION
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/cross
 	display_name = "cross"

@@ -5,7 +5,7 @@
 	desc = "An identification card issued to personnel aboard the SEV Torch."
 	icon_state = "id"
 	item_state = "card-id"
-	job_access_type = /datum/job/assistant
+	job_access_type = /datum/job/classd
 
 /obj/item/card/id/torch/silver
 	desc = "A silver identification card belonging to heads of staff."
@@ -41,7 +41,7 @@
 /obj/item/card/id/torch/contractor
 	desc = "An identification card issued to private contractors aboard the SEV Torch."
 	icon_state = "civ"
-	job_access_type = /datum/job/assistant
+	job_access_type = /datum/job/classd
 
 
 /obj/item/card/id/torch/silver/medical
@@ -103,7 +103,7 @@
 
 
 /obj/item/card/id/torch/crew/service //unused
-	job_access_type = /datum/job/assistant
+	job_access_type = /datum/job/classd
 
 /obj/item/card/id/torch/crew/service/janitor
 	job_access_type = /datum/job/janitor
@@ -112,7 +112,7 @@
 	job_access_type = /datum/job/chef
 
 /obj/item/card/id/torch/contractor/service //unused
-	job_access_type = /datum/job/assistant
+	job_access_type = /datum/job/classd
 
 /obj/item/card/id/torch/contractor/service/bartender
 	job_access_type = /datum/job/bartender
@@ -138,7 +138,7 @@
 /obj/item/card/id/torch/passenger
 	desc = "A card issued to passengers and off-duty personnel aboard the SEV Torch."
 	icon_state = "id"
-	job_access_type = /datum/job/assistant
+	job_access_type = /datum/job/classd
 
 /obj/item/card/id/torch/passenger/research
 	desc = "A card issued to NanoTrasen personnel aboard the SEV Torch."

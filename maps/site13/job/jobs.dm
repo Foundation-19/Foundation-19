@@ -6,7 +6,7 @@
 /datum/map/site13
 /datum/map/site13/setup_map()
 
-/datum/job/assistant
+/datum/job/classd
 	title = "Class D"
 	department = "Civilian"
 	total_positions = -1
@@ -14,13 +14,13 @@
 	supervisors = "Foundation Personnel"
 	selection_color = "#E55700"
 	economic_modifier = 1
-	access = list()			//See /datum/job/assistant/get_access()
-	minimal_access = list()	//See /datum/job/assistant/get_access()
+	access = list()			//See /datum/job/classd/get_access()
+	minimal_access = list()	//See /datum/job/classd/get_access()
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/classd
 	allowed_ranks = list(/datum/mil_rank/civ/classd)
 	var/static/list/used_numbers = list()
 
-/datum/job/assistant/equip(var/mob/living/carbon/human/H)
+/datum/job/classd/equip(var/mob/living/carbon/human/H)
 	..()
 	var/r = rand(100,9000)
 	while (used_numbers.Find(r))
