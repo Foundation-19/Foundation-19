@@ -39,7 +39,7 @@
 	desc = "Standard issue Foundation revolver based on the Mateba Unica. Chambered in .44 Magnum"
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "mateba"
-	caliber = ".44 magnum"
+	caliber = ".44"
 	fire_delay = 6
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/a50
