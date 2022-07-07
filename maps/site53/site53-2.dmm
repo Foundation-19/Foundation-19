@@ -883,7 +883,7 @@
 	id_tag = "fusion_injector2";
 	initial_id_tag = "fusion_injector2"
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced,
 /area/vacant/prototype/engine)
 "acB" = (
 /obj/effect/paint_stripe/brown,
@@ -3579,7 +3579,7 @@
 	id_tag = "fusion_injector2";
 	initial_id_tag = "fusion_injector2"
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced,
 /area/vacant/prototype/engine)
 "aiy" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -3836,6 +3836,10 @@
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/yellow/half{
 	dir = 1
+	},
+/obj/machinery/camera/autoname{
+	icon_state = "camera";
+	network = list("Engineering Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/breakroom)
@@ -12194,34 +12198,26 @@
 /area/site53/engineering/storage)
 "aAA" = (
 /obj/effect/floor_decal/industrial/warning/corner{
-	dir = 4;
-	icon_state = "warningcorner"
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
 "aAB" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1;
-	icon_state = "warning"
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
 "aAC" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1;
-	icon_state = "warning"
-	},
 /obj/machinery/light,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
 "aAD" = (
 /obj/effect/floor_decal/industrial/warning/corner{
-	dir = 1;
-	icon_state = "warningcorner"
-	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1;
-	icon_state = "warning"
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
@@ -12389,6 +12385,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp106observ)
@@ -15797,6 +15796,11 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
+	},
+/obj/machinery/camera/autoname{
+	dir = 4;
+	icon_state = "camera";
+	network = list("Engineering Network")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/engine_smes)
@@ -27629,6 +27633,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
+"iWR" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/vacant/prototype/engine)
 "iXE" = (
 /obj/machinery/light{
 	dir = 4;
@@ -31545,6 +31555,16 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp8containment)
+"vEP" = (
+/obj/effect/floor_decal/corner/yellow{
+	dir = 5
+	},
+/obj/machinery/camera/autoname{
+	icon_state = "camera";
+	network = list("Engineering Network")
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/engineering/primaryhallway)
 "vEQ" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/glass/beaker/large,
@@ -39477,7 +39497,7 @@ azA
 azA
 aaN
 amd
-ami
+iWR
 aaN
 aml
 aml
@@ -39487,7 +39507,7 @@ aml
 aml
 aml
 aaN
-ami
+iWR
 aAA
 aaN
 azA
@@ -39745,7 +39765,7 @@ aml
 aml
 apg
 aix
-aAB
+anU
 aaN
 azA
 azA
@@ -40259,7 +40279,7 @@ aml
 aml
 apg
 aix
-aAB
+anU
 aaN
 azA
 azA
@@ -40516,7 +40536,7 @@ aml
 aml
 apg
 aix
-aAD
+anU
 aaN
 azA
 azA
@@ -40761,7 +40781,7 @@ azA
 azA
 azA
 aaN
-amh
+aAD
 and
 aaN
 aml
@@ -40773,7 +40793,7 @@ aml
 aml
 aaN
 and
-amh
+aAB
 aaN
 azA
 azA
@@ -50778,7 +50798,7 @@ ajO
 ajO
 aAM
 aAP
-amW
+vEP
 anJ
 aaw
 aaw
