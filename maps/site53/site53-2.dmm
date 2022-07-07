@@ -27185,6 +27185,12 @@
 /obj/item/storage/toolbox/mechanical,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
+"hzS" = (
+/obj/machinery/button/femur_breaker{
+	pixel_y = -22
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp106observ)
 "hBu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -83602,7 +83608,7 @@ ain
 ahS
 arr
 ahS
-ahS
+hzS
 aBs
 xCX
 aBD
@@ -85915,7 +85921,7 @@ hzL
 ahS
 arr
 ahS
-ahS
+hzS
 aBs
 aBD
 aBD
