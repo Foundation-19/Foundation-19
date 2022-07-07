@@ -15,6 +15,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	movement_handlers = list(/datum/movement_handler/mob/multiz_connected, /datum/movement_handler/mob/incorporeal)
 
 	var/is_manifest = FALSE
+	var/skip_respawn_timer = FALSE // Can this ghost skip the respawn timer?
 	var/next_visibility_toggle = 0
 	var/can_reenter_corpse
 	var/bootime = 0
@@ -539,7 +540,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return 0
 
 	var/timedifference = world.time - timeofdeath
-	if(!client.holder && respawn_time && timeofdeath && timedifference < respawn_time MINUTES)
+	if(!client.holder && !skip_respawn_timer && respawn_time && timeofdeath && timedifference < respawn_time MINUTES)
 		var/timedifference_text = time2text(respawn_time MINUTES - timedifference,"mm:ss")
 		to_chat(src, "<span class='warning'>You must have been dead for [respawn_time] minute\s to respawn. You have [timedifference_text] left.</span>")
 		return 0
@@ -608,7 +609,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Become Euclid/Keter SCP"
 	set desc = "Take control of a clientless SCP."
 
-	if (world.time - timeofdeath >= 10 MINUTES)
+	if (world.time - timeofdeath >= 10 MINUTES || skip_respawn_timer)
 
 		var/list/scps = list()
 /*

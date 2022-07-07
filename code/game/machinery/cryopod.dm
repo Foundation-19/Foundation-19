@@ -432,7 +432,7 @@
 	occupant.ckey = null
 	if(!g) // Player didn't ghost. Ghost then delete.
 		g = occupant.ghostize(FALSE)
-	g.timeofdeath -= config.respawn_delay MINUTES
+	g.skip_respawn_timer = TRUE
 	qdel(occupant)
 	set_occupant(null)
 
