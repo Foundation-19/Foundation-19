@@ -750,10 +750,9 @@ About the new airlock wires panel:
 	add_overlay(lights_overlay)
 	add_overlay(sparks_overlay)
 	add_overlay(damage_overlay)
+	compile_overlays()
 
 /obj/machinery/door/airlock/do_animate(animation)
-	if(overlays)
-		cut_overlays()
 
 	switch(animation)
 		if("opening")
