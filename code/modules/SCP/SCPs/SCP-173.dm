@@ -12,124 +12,52 @@ GLOBAL_LIST_EMPTY(scp173s)
 	icon_state = "173"
 	SCP = /datum/scp/scp_173
 
-
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 
 	maxHealth = 5000
 	health = 5000
 
-	var/last_snap = 0
-	var/next_shit = 0
+	/// Reference to the area we were created in
+	var/area/spawn_area
+
+	/// List of people that are under blinking influence
 	var/list/next_blinks = list()
 
-	var/last_player_shit = 0
+	/// Current attack cooldown
+	var/snap_cooldown
+	/// Amount of the attack cooldown
+	var/snap_cooldown_time = 4 SECONDS
+
+	/// Cooldown for defecation...
+	var/defecation_cooldown
+	/// How much time you have to wait before defecating again
+	var/defecation_cooldown_time = 30 SECONDS
+	/// What kind of objects/effects we spawn on defecation. Also used when checking the area
+	var/list/defecation_types = list(/obj/effect/decal/cleanable/blood, /obj/effect/decal/cleanable/blood/xeno, /obj/effect/decal/cleanable/vomit, /obj/effect/decal/cleanable/mucus)
+
+	/// Simple cooldown for warning message for passive breach
+	var/warning_cooldown
+	/// Same, but for breaching effect
+	var/breach_cooldown
 
 /mob/living/scp_173/Initialize()
 	..()
 	GLOB.scp173s += src
-	verbs += /mob/living/carbon/human/proc/door_open
-//	verbs += /mob/living/carbon/human/proc/corrosive_acid
-	add_language(LANGUAGE_EAL, 1)
-	add_language(LANGUAGE_SKRELLIAN, 1)
-	add_language(LANGUAGE_GUTTER, 1)
-	add_language(LANGUAGE_SIGN, 0)
-	add_language(/datum/language/english)
-
+	defecation_cooldown = world.time + 5 MINUTES // Give everyone some time to prepare
+	spawn_area = get_area(src)
+	add_language(LANGUAGE_EAL, FALSE)
+	add_language(LANGUAGE_SKRELLIAN, FALSE)
+	add_language(LANGUAGE_GUTTER, FALSE)
+	add_language(LANGUAGE_SIGN, FALSE)
+	add_language(LANGUAGE_ENGLISH, FALSE)
 
 /mob/living/scp_173/Destroy()
 	GLOB.scp173s -= src
 	..()
 
-/mob/living/scp_173/say(var/message)
+/mob/living/scp_173/say(message)
 	return // lol you can't talk
-
-/mob/living/carbon/human/proc/corrosive_acid(O as obj|turf in oview(1)) //If they right click to corrode, an error will flash if its an invalid target./N
-	set name = "Corrosive Acid"
-	set desc = "Drench an object in acid, destroying it over time."
-	set category = "SCP"
-
-	if((!O) in oview(1))
-		to_chat(src, "<span class='euclid'>[O] is too far away.</span>")
-		return
-
-	// OBJ CHECK
-	var/cannot_melt
-	if(isobj(O))
-		var/obj/I = O
-		if(I.unacidable)
-			cannot_melt = 1
-	else
-		if(istype(O, /turf/simulated/wall))
-			var/turf/simulated/wall/W = O
-			if(W.material.flags & MATERIAL_UNMELTABLE)
-				cannot_melt = 1
-		else if(istype(O, /turf/simulated/floor))
-			var/turf/simulated/floor/F = O
-			if(F.flooring && (F.flooring.flags & TURF_ACID_IMMUNE))
-				cannot_melt = 1
-
-	if(cannot_melt)
-		to_chat(src, "<span class='euclid'>You cannot dissolve this object.</span>")
-		return
-
-
-	new /obj/effect/acid(get_turf(O), O)
-	visible_message("<span class='euclid'><B>[src] vomits globs of vile stuff all over [O]. It begins to sizzle and melt under the bubbling mess of acid!</B></span>")
-	command_announcement.Announce("SCP-173 Containment suffering from acidic degradation.... 60 Seconds until Breach")
-	return
-
-/mob/living/carbon/human/proc/door_open(obj/machinery/door/A in filter_list(oview(1), /obj/machinery/door))
-	set name = "Pry Open Airlock"
-	set category = "SCP"
-
-	if (istype(A, /obj/machinery/door/blast/regular))
-		to_chat(src, "<span class='warning'>\ You cannot open blast doors.</span>")
-		return
-
-	if(!istype(A) || incapacitated())
-		return
-
-	if(!A.Adjacent(src))
-		to_chat(src, "<span class='warning'>\The [A] is too far away.</span>")
-		return
-
-	if(!A.density)
-		return
-
-	src.visible_message("\The [src] begins to pry open \the [A]!")
-
-	if(!do_after(src,120,A))
-		return
-
-	if(!A.density)
-		return
-
-	A.do_animate("spark")
-	sleep(6)
-	A.stat |= BROKEN
-	var/check = A.open(1)
-	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
-
-
-/mob/living/scp_173/proc/IsBeingWatched()
-	for (var/mob/living/M in view(src, 7))
-		if ((istype(M, /mob/living/simple_animal/scp_131)) && (InCone(M, M.dir)))
-			return TRUE
-
-	// Am I being watched by anyone else?
-	for(var/mob/living/carbon/human/H in view(src, 7))
-		if(H.SCP)
-			continue
-		if(is_blind(H) || H.eye_blind > 0)
-			continue
-		if(H.stat != CONSCIOUS)
-			continue
-		if(next_blinks[H] == null)
-			next_blinks[H] = world.time+rand(20 SECONDS, 40 SECONDS)
-		if(InCone(H, H.dir))
-			return TRUE
-	return FALSE
 
 /mob/living/scp_173/Move(a,b,f)
 	if(IsBeingWatched())
@@ -139,8 +67,11 @@ GLOBAL_LIST_EMPTY(scp173s)
 /mob/living/scp_173/movement_delay()
 	return -5
 
-/mob/living/scp_173/UnarmedAttack(var/atom/A)
+/mob/living/scp_173/UnarmedAttack(atom/A)
 	if(!IsBeingWatched() && ishuman(A))
+		if(snap_cooldown > world.time)
+			to_chat(src, "<span class='warning'>You can't attack yet.</span>")
+			return
 		var/mob/living/carbon/human/H = A
 		if(H.SCP)
 			to_chat(src, "<span class='warning'><I>[H] is a fellow SCP!</I></span>")
@@ -148,40 +79,102 @@ GLOBAL_LIST_EMPTY(scp173s)
 		if(H.stat == DEAD)
 			to_chat(src, "<span class='warning'><I>[H] is already dead!</I></span>")
 			return
+		snap_cooldown = world.time + snap_cooldown_time
 		visible_message("<span class='danger'>[src] snaps [H]'s neck!</span>")
 		playsound(loc, pick('sound/scp/spook/NeckSnap1.ogg', 'sound/scp/spook/NeckSnap3.ogg'), 50, 1)
 		H.death()
 		H.scp173_killed = TRUE
+		return
+	if(istype(A, /obj/machinery/door))
+		OpenDoor(A)
+	return
 
 /mob/living/scp_173/Life()
 	. = ..()
-	if (isobj(loc))
+	if(isobj(loc))
 		return
-	var/list/our_view = view(src, 7)
+	var/list/our_view = view(7, src)
 	for(var/A in next_blinks)
 		if(!(A in our_view))
-			next_blinks[A] = null
+			DisableBlinking(A)
 			continue
 		if(world.time >= next_blinks[A])
 			var/mob/living/carbon/human/H = A
 			if(H.stat) // Sleeping or dead people can't blink!
-				next_blinks[A] = null
+				DisableBlinking(H)
 				continue
-			H.visible_message("<span class='notice'>[H] blinks.</span>")
-			H.eye_blind += 2
-			next_blinks[H] = 10+world.time+rand(15 SECONDS, 25 SECONDS)
-	if(client)
+			CauseBlink(H)
+	if(world.time > defecation_cooldown)
+		Defecate()
+	if(IsBeingWatched() || client) // AI controls from here
 		return
-	if(IsBeingWatched())
+	if(world.time > snap_cooldown)
+		AIAttemptAttack()
+
+/mob/living/scp_173/proc/IsBeingWatched()
+	for(var/mob/living/L in view(7, src))
+		if((istype(L, /mob/living/simple_animal/scp_131)) && (InCone(L, L.dir)))
+			return TRUE
+		if(!istype(L, /mob/living/carbon/human))
+			continue
+		var/mob/living/carbon/human/H = L
+		if(H.SCP)
+			continue
+		if(is_blind(H) || H.eye_blind > 0)
+			continue
+		if(H.stat != CONSCIOUS)
+			continue
+		if(InCone(H, H.dir))
+			return TRUE
+	return FALSE
+
+/mob/living/scp_173/proc/OpenDoor(obj/machinery/door/A)
+	if(!istype(A) || incapacitated() || IsBeingWatched())
 		return
-	if(world.time >= next_shit)
-		next_shit = world.time+rand(5 MINUTES, 10 MINUTES)
-		var/feces = pick(/obj/effect/decal/cleanable/blood, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/mucus)
-		new feces(loc)
+
+	if(istype(A, /obj/machinery/door/blast/regular))
+		to_chat(src, "<span class='warning'>You cannot open blast doors.</span>")
 		return
+
+	if(!A.Adjacent(src))
+		to_chat(src, "<span class='warning'>\The [A] is too far away.</span>")
+		return
+
+	if(!A.density)
+		return
+
+	visible_message("\The [src] begins to pry open \the [A]!")
+	if(!do_after(src, 5 SECONDS, A))
+		return
+
+	if(!A.density)
+		return
+
+	if(istype(A, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/AR = A
+		AR.unlock(TRUE) // No more bolting in the SCPs and calling it a day
+	A.stat |= BROKEN
+	var/check = A.open(TRUE)
+	visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
+
+/mob/living/scp_173/proc/DisableBlinking(mob/living/carbon/human/H)
+	next_blinks[H] = null
+	for(var/mob/living/scp_173/S in GLOB.scp173s) // In case you spawned more than one
+		if(S.next_blinks[H]) // Not null
+			return
+	H.verbs -= /mob/living/carbon/human/verb/manual_blink
+
+/mob/living/scp_173/proc/CauseBlink(mob/living/carbon/human/H)
+	H.visible_message("<span class='notice'>[H] blinks.</span>")
+	H.eye_blind += 2
+	H.verbs |= /mob/living/carbon/human/verb/manual_blink
+	next_blinks[H] = world.time + rand(15 SECONDS, 25 SECONDS)
+
+/mob/living/scp_173/proc/AIAttemptAttack()
 	var/mob/living/carbon/human/target
-	var/mob/living/carbon/human/possible_targets = list(null)
-	for(var/mob/living/carbon/human/H in our_view)
+	var/list/possible_targets = list()
+	var/turf/T
+	for(var/mob/living/carbon/human/H in view(7, src))
 		if(H.SCP)
 			continue
 		if(H.stat == DEAD)
@@ -189,39 +182,55 @@ GLOBAL_LIST_EMPTY(scp173s)
 		if(!AStar(loc, H.loc, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=7))
 			continue // We can't reach this person anyways
 		possible_targets += H
-	if(world.time >= last_snap+50)
-		var/turf/spot
+	if(LAZYLEN(possible_targets))
 		target = pick(possible_targets)
-		if (target)
-			var/turf/behind_target = get_step(target.loc, turn(target.dir, 180))
-			if(isfloor(behind_target) && get_dist(behind_target, loc) <= 7)
-				spot = behind_target
-			else
-				var/list/directions = shuffle(GLOB.cardinal.Copy())
-				for(var/D in directions)
-					var/turf/T = get_step(target, D)
-					if(isfloor(T) && get_dist(T, loc) <= 7)
-						spot = T
-						break
-			if(!spot) // We couldn't find a spot to go to!
-				return
-			forceMove(spot)
-			dir = get_dir(src, target)
-			visible_message("<span class='danger'>[src] snaps [target]'s neck!</span>")
-			playsound(loc, pick('sound/scp/spook/NeckSnap1.ogg', 'sound/scp/spook/NeckSnap3.ogg'), 50, 1)
-			target.death()
-			target.scp173_killed = TRUE
-			last_snap = world.time
+	if(target)
+		var/turf/behind_target = get_step(target.loc, turn(target.dir, 180))
+		if(isfloor(behind_target) && get_dist(behind_target, loc) <= 7)
+			T = behind_target
+		else
+			var/list/directions = shuffle(GLOB.cardinal)
+			for(var/D in directions)
+				var/turf/TF = get_step(target, D)
+				if(isfloor(T) && get_dist(T, loc) <= 7)
+					T = TF
+					break
+		if(!T) // We couldn't find a spot to go to!
+			return
+		forceMove(T)
+		UnarmedAttack(target)
 
-
-
-/mob/living/scp_173/verb/get_schwifty() // plz don't kill me for the reference
-	set name = "Shit On Floor"
-	set category = "SCP"
-	if(!isobj(loc) && world.time >= (last_player_shit + (1 MINUTE)))
-		last_player_shit = world.time
-		var/feces = pick(/obj/effect/decal/cleanable/blood, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/mucus)
+/mob/living/scp_173/proc/Defecate()
+	if(!isobj(loc) && world.time > defecation_cooldown)
+		defecation_cooldown = world.time + defecation_cooldown_time
+		var/feces = pick(defecation_types)
 		new feces(loc)
+		if(!client) // So it doesn't spam it in one spot
+			var/Tdir = pick(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST)
+			if(Tdir && !IsBeingWatched())
+				SelfMove(Tdir)
+	// Breach check
+	var/area/A = get_area(src)
+	if(A == spawn_area) // Still in containment area
+		var/feces_amount = 0
+		for(var/obj/O in A)
+			if(O.type in defecation_types)
+				feces_amount += 1
+				continue
+
+		if(feces_amount >= 60) // Breach, gonna take ~30 minutes
+			if(breach_cooldown > world.time)
+				return
+			breach_cooldown = world.time + 10 MINUTES
+			command_announcement.Announce("ALERT! SCP-173 containment zone security measures have shut down due to severe acidic degradation.")
+			BreachEffect()
+		else if((feces_amount >= 40) && world.time > warning_cooldown) // Warning, after ~20 minutes
+			warning_cooldown = world.time + 2 MINUTES
+			command_announcement.Announce("ATTENTION! SCP-173 containment zone is suffering from mild acidic degradation. Janitorial services involvement is required.")
+
+/mob/living/scp_173/proc/BreachEffect()
+	var/area/A = get_area(src)
+	A.full_breach()
 
 // humans
 /mob/living/carbon/human/set_stat(_new)
@@ -233,40 +242,49 @@ GLOBAL_LIST_EMPTY(scp173s)
 /obj/structure/scp173_cage
 	icon = 'icons/SCP/cage.dmi'
 	icon_state = "1"
-	layer = MOB_LAYER + 0.05
 	name = "Empty SCP-173 Cage"
 	density = TRUE
+	layer = MOB_LAYER + 0.05
+	var/resist_cooldown
 
 /obj/structure/scp173_cage/MouseDrop_T(atom/movable/dropping, mob/user)
-	if (isscp173(dropping))
-		visible_message("<span class = \"danger\">[user] starts to put SCP-173 into the cage.</span>")
+	if(isscp173(dropping))
+		visible_message("<span class = 'danger'>[user] starts to put SCP-173 into the cage.</span>")
 		var/oloc = loc
-		if (do_after(user, dropping, 5 SECONDS) && loc == oloc) // shitty but there's no good alternative
+		if(do_after(user, 5 SECONDS, dropping) && loc == oloc) // shitty but there's no good alternative
 			dropping.forceMove(src)
-			underlays = list(dropping)
-			visible_message("<span class = \"good\">[user] puts SCP-173 in the cage.</span>")
+			underlays += image(dropping)
+			visible_message("<span class = 'good'>[user] puts SCP-173 in the cage.</span>")
 			name = "SCP-173 Cage"
-		if (isliving(dropping))
-			to_chat(user, "<span class = \"warning\">\The [dropping] won't fit in the cage.</span>")
+			playsound(loc, 'sound/machines/bolts_down.ogg', 50, 1)
+			return TRUE
+		return FALSE
+	if(isliving(dropping))
+		to_chat(user, "<span class = 'warning'>\The [dropping] won't fit in the cage.</span>")
+	return FALSE
 
 /obj/structure/scp173_cage/attack_hand(mob/living/carbon/human/H)
-	if (locate(/mob/living/scp_173) in contents)
-		visible_message("<span class = \"danger\">[H] releases SCP-173 from the cage.</span>")
-
-		var/mob/living/scp_173/S = contents[1]
-		S.forceMove(get_step(src, dir))
-
-		// move to a nice spot if our current one is too full
-		for (var/dir in list(NORTH, EAST, SOUTH, WEST))
-			if (S.loc.density || (locate(/mob/living) in (S.loc.contents-S)) || (locate(/obj/structure) in (S.loc.contents-S)))
-				S.forceMove(get_step(src, dir))
-			else
-				break
-
+	if(!LAZYLEN(contents))
+		return ..()
+	if(do_after(H, 3 SECONDS, src))
+		visible_message("<span class = 'danger'>[H] opens the cage!</span>")
+		playsound(loc, 'sound/machines/bolts_up.ogg', 50, 1)
+		for(var/mob/living/L in contents)
+			L.forceMove(get_step(src, dir))
 		underlays.Cut()
 		name = initial(name)
-	else
-		visible_message("<span class = \"warning\">The cage is empty; there's nothing to take out.</span>")
+
+/obj/structure/scp173_cage/relaymove(mob/user, direction)
+	if(resist_cooldown > world.time)
+		return
+	resist_cooldown = world.time + 10 SECONDS
+	if(do_after(user, 30 SECONDS, src))
+		visible_message("<span class = 'danger'>[user] opens the cage from the inside!</span>")
+		playsound(loc, 'sound/machines/bolts_up.ogg', 50, 1)
+		for(var/mob/living/L in contents)
+			L.forceMove(get_step(src, dir))
+		underlays.Cut()
+		name = initial(name)
 
 /*
  * Acid
