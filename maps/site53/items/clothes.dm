@@ -1,12 +1,34 @@
 /obj/item/clothing/under/lczwhitejunioruniform
-	name = "LCZ junior security uniform"
-	desc = "A sterile white uniform. Currently issued to LCZ Junior Guard personnel."
+	name = "LCZ Guard security uniform"
+	desc = "A sterile white uniform. Currently issued to LCZ Guard personnel."
 	icon_state = "white_lcz"
 
 /obj/item/clothing/under/scp/lczwhiteuniform
-	name = "LCZ security uniform"
-	desc = "A sterile white uniform. Currently issued to LCZ Guard personnel."
+	name = "LCZ Officer security uniform"
+	desc = "A sterile white uniform. Currently issued to the LCZ officer."
 	icon_state = "white_sergeant_lcz"
+
+/obj/item/clothing/under/scp/lczwhiteuniformarmband
+	name = "LCZ Officer security uniform"
+	desc = "A sterile white uniform. Currently issued to the LCZ officer."
+	icon_state = "white_sergeant_lcz"
+	starting_accessories = list(/obj/item/clothing/accessory/armband)
+
+/obj/item/clothing/under/hczwhitejunioruniform
+	name = "HCZ Guard security uniform"
+	desc = "A sterile white uniform. Currently issued to HCZ Guard personnel."
+	icon_state = "white_hcz"
+
+/obj/item/clothing/under/lczwhitejunioruniformarmband
+	name = "LCZ Guard security uniform"
+	desc = "A sterile white uniform. Currently issued to LCZ Guard personnel."
+	icon_state = "white_lcz"
+	starting_accessories = list(/obj/item/clothing/accessory/armband)
+
+/obj/item/clothing/under/scp/hczwhiteuniform
+	name = "HCZ Officer security uniform"
+	desc = "A sterile white uniform. Currently issued to the HCZ officer."
+	icon_state = "white_sergeant_hcz"
 
 
 /obj/item/clothing/gloves/tactical/scp
