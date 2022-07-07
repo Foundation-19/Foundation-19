@@ -44,11 +44,6 @@ GLOBAL_LIST_EMPTY(scp343s)
 /mob/living/carbon/human/scp343/forceMove(destination)
 	. = ..(destination)
 
-
-/mob/living/carbon/human/scp343/proc/update_stuff()
-	// stand_icon tends to come back after movement
-	update_icons()
-
 /mob/living/carbon/human/scp343/update_icons()
 	return
 
