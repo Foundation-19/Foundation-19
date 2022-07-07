@@ -1,14 +1,14 @@
 /obj/item/gun/projectile/revolver
-	name = "revolver"
+	name = "Mk7 Revolver"
 	desc = "The SCPF Mk7 Revolver, reminiscent of the Colt Python. This weapon, patented and produced by the SCP Foundation is popular among high-ranking security officers. Uses .357 ammo."
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "revolver"
 	item_state = "revolver"
 	caliber = CALIBER_PISTOL_MAGNUM
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
-	handle_casings = EJECT_CASINGS
+	handle_casings = CYCLE_CASINGS
 	max_shells = 6
-	fire_delay = 12 //Revolvers are naturally slower-firing
+	fire_delay = 4 //Revolvers are naturally slower-firing
 	ammo_type = /obj/item/ammo_casing/pistol/magnum
 	var/chamber_offset = 0 //how many empty chambers in the cylinder until you hit a round
 	mag_insert_sound = 'sound/weapons/guns/interaction/rev_magin.ogg'
@@ -47,9 +47,9 @@
 
 /obj/item/gun/projectile/revolver/mateba
 	name = "mateba"
-	desc = "The Mateba Model 6 Unica or simply Mateba is one of the only few of this type ever produced, you could consider yourself lucky even seeing one."
+	desc = "Standard issue Foundation revolver based off the Mateba Unica. Chambered in .44 Magnum"
 	icon_state = "mateba"
-	caliber = ".50"
+	caliber = ".44"
 	fire_delay = 6
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/a50

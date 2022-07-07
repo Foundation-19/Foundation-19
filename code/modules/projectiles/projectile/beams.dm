@@ -5,7 +5,7 @@
 	fire_sound='sound/weapons/Laser.ogg'
 	impact_sounds = list(BULLET_IMPACT_MEAT = SOUNDS_LASER_MEAT, BULLET_IMPACT_METAL = SOUNDS_LASER_METAL)
 	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GLASS | PASS_FLAG_GRILLE
-	damage = 40
+	damage = 50
 	damage_type = BURN
 	sharp = TRUE
 	damage_flags = DAM_LASER
@@ -31,7 +31,7 @@
 	eyeblur = 2
 
 /obj/item/projectile/beam/smalllaser
-	damage = 35
+	damage = 45
 	distance_falloff = 2
 	damage_falloff_list = list(
 		list(3, 0.90),
@@ -53,7 +53,7 @@
 	name = "heavy laser"
 	icon_state = "heavylaser"
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
-	damage = 60
+	damage = 70
 	armor_penetration = 30
 	distance_falloff = 0.5
 	damage_falloff_list = list(
@@ -70,7 +70,7 @@
 	name = "x-ray beam"
 	icon_state = "xray"
 	fire_sound = 'sound/weapons/laser3.ogg'
-	damage = 30
+	damage = 45
 	armor_penetration = 30
 	penetration_modifier = 0.8
 	distance_falloff = 1.5
@@ -85,7 +85,7 @@
 	impact_type = /obj/effect/projectile/impact/xray
 
 /obj/item/projectile/beam/xray/midlaser
-	damage = 30
+	damage = 50
 	armor_penetration = 50
 	distance_falloff = 1
 	damage_falloff_list = list(
@@ -98,7 +98,7 @@
 	name = "pulse"
 	icon_state = "u_laser"
 	fire_sound='sound/weapons/pulse.ogg'
-	damage = 15 //lower damage, but fires in bursts
+	damage = 35 //lower damage, but fires in bursts
 	armor_penetration = 25
 	distance_falloff = 1.5
 	damage_falloff_list = list(
@@ -112,7 +112,7 @@
 	impact_type = /obj/effect/projectile/impact/pulse
 
 /obj/item/projectile/beam/pulse/mid
-	damage = 20
+	damage = 40
 	armor_penetration = 30
 	distance_falloff = 1
 	damage_falloff_list = list(
@@ -122,7 +122,7 @@
 	)
 
 /obj/item/projectile/beam/pulse/heavy
-	damage = 25
+	damage = 45
 	armor_penetration = 35
 	distance_falloff = 0.5
 	damage_falloff_list = list(
@@ -133,7 +133,7 @@
 
 /obj/item/projectile/beam/pulse/destroy
 	name = "destroyer pulse"
-	damage = 50
+	damage = 70
 	armor_penetration = 100
 	damage_falloff_list = list(
 		list(6, 0.99),
@@ -148,16 +148,16 @@
 
 /obj/item/projectile/beam/pulse/skrell
 	icon_state = "pu_laser"
-	damage = 20
+	damage = 45
 	muzzle_type = /obj/effect/projectile/muzzle/pulse
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	impact_type = /obj/effect/projectile/impact/pulse
 
 /obj/item/projectile/beam/pulse/skrell/heavy
-	damage = 30
+	damage = 55
 
 /obj/item/projectile/beam/pulse/skrell/single
-	damage = 50
+	damage = 65
 
 /obj/item/projectile/beam/emitter
 	name = "emitter beam"
@@ -225,7 +225,7 @@
 	name = "sniper beam"
 	icon_state = "xray"
 	fire_sound = 'sound/weapons/marauder.ogg'
-	damage = 50
+	damage = 70
 	armor_penetration = 10
 	stun = 3
 	weaken = 3
@@ -315,7 +315,7 @@
 	name = "plasma arc"
 	icon_state = "omnilaser"
 	fire_sound = 'sound/weapons/plasma_cutter.ogg'
-	damage = 15
+	damage = 30
 	edge = TRUE
 	damage_type = BURN
 	life_span = 5
@@ -372,7 +372,7 @@
 /obj/item/projectile/beam/particle
 	name = "particle lance"
 	icon_state = "particle"
-	damage = 35
+	damage = 50
 	armor_penetration = 40
 	muzzle_type = /obj/effect/projectile/muzzle/particle
 	tracer_type = /obj/effect/projectile/tracer/particle
@@ -381,14 +381,14 @@
 
 /obj/item/projectile/beam/particle/small
 	name = "particle beam"
-	damage = 20
+	damage = 40
 	armor_penetration = 20
 	penetration_modifier = 0.3
 
 /obj/item/projectile/beam/darkmatter
 	name = "dark matter bolt"
 	icon_state = "darkb"
-	damage = 40
+	damage = 50
 	armor_penetration = 35
 	damage_type = BRUTE
 	muzzle_type = /obj/effect/projectile/muzzle/darkmatter
@@ -409,7 +409,7 @@
 /obj/item/projectile/beam/pointdefense
 	name = "point defense salvo"
 	icon_state = "laser"
-	damage = 15
+	damage = 40
 	damage_type = ELECTROCUTE //You should be safe inside a voidsuit
 	sharp = FALSE //"Wide" spectrum beam
 	muzzle_type = /obj/effect/projectile/muzzle/pd
@@ -420,7 +420,7 @@
 	name = "scattered laser blast"
 	icon_state = "beam_incen"
 	fire_sound='sound/weapons/scan.ogg'
-	damage = 12
+	damage = 30
 	agony = 8
 	eyeblur = 8
 	sharp = FALSE

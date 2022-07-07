@@ -2,7 +2,7 @@
 /obj/item/projectile/bullet/magnetic
 	name = "rod"
 	icon_state = "rod"
-	damage = 55
+	damage = 65
 	penetrating = 5
 	armor_penetration = 85
 	penetration_modifier = 1.1
@@ -13,13 +13,13 @@
 	name = "slug"
 	icon_state = "gauss_silenced"
 	stun = 1
-	damage = 75
+	damage = 100
 	armor_penetration = 90
 
 /obj/item/projectile/bullet/magnetic/flechette
 	name = "flechette"
 	icon_state = "flechette"
-	damage = 35
+	damage = 50
 	armor_penetration = 100
 	fire_sound = 'sound/weapons/rapidslice.ogg'
 	distance_falloff = 0.5

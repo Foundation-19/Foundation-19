@@ -6,8 +6,8 @@
 	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/a50
-	desc = "A .50AE bullet casing."
-	caliber = ".50"
+	desc = "A .44 magnum bullet casing."
+	caliber = ".44"
 	projectile_type = /obj/item/projectile/bullet/pistol/strong
 	icon_state = "pistol-casing"
 	spent_icon = "pistol-casing-spent"
@@ -286,77 +286,77 @@
 
 /obj/item/projectile/bullet/pistol
 	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
-	damage = 25 //9mm, .38, etc
-	armor_penetration = 30
-	agony = 20
+	damage = 40 //9mm, .38, etc
+	armor_penetration = 0
+	agony = 0
 
 /obj/item/projectile/bullet/pistol/rubber
-	damage = 2 //Pistol rubber
+	damage = 3 //Pistol rubber
 	agony = 30
 	embed = 0
 	sharp = 0
-	armor_penetration = 2.5
+	armor_penetration = 0
 
 /obj/item/projectile/bullet/pistol/medium
-	damage = 30 //.45
-	armor_penetration = 15
-	agony = 25
+	damage = 45 //.45
+	armor_penetration = 0
+	agony = 0
 
 /obj/item/projectile/bullet/pistol/medium/revolver
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 40 //.44 magnum or something
-	armor_penetration = 10
-	agony = 45
+	damage = 50 //.44 magnum or something
+	armor_penetration = 0
+	agony = 0
 
 /obj/item/projectile/bullet/pistol/strong //matebas
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 45 //.50AE
-	armor_penetration = 30
-	agony = 45
+	damage = 55 //.50AE
+	armor_penetration = 0
+	agony = 0
 
 /obj/item/projectile/bullet/pistol/vstrong //tacrevolver
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 50 //.500 S&W Magnum
-	armor_penetration = 35
-	agony = 45
+	damage = 60 //.500 S&W Magnum
+	armor_penetration = 0
+	agony = 0
 
 /obj/item/projectile/bullet/pistol/strong/revolver //revolvers
-	damage = 60 //Revolvers get snowflake bullets, to keep them relevant
-	armor_penetration = 20
-	agony = 45
+	damage = 50 //Revolvers get snowflake bullets, to keep them relevant
+	armor_penetration = 0
+	agony = 0
 
 /obj/item/projectile/bullet/pistol/medium/smg //P90
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 30 //10mm
-	armor_penetration = 35
-	agony = 10
+	damage = 45 //10mm
+	armor_penetration = 10
+	agony = 0
 
 /obj/item/projectile/bullet/pistol/medium/smg/rubber
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 0.5 //10mm rubber
-	armor_penetration = 12
-	agony = 40
+	damage = 3 //10mm rubber
+	armor_penetration = 0
+	agony = 35
 	embed = 0
 	sharp = 0
 
 /obj/item/projectile/bullet/pistol/medium/smg/hollowpoint
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 30 //10mm hollowpoint
-	armor_penetration = 8
-	agony = 20
+	damage = 50 //10mm hollowpoint
+	armor_penetration = 0
+	agony = 0
 	embed = 1
 
 /obj/item/projectile/bullet/pistol/medium/smg/ap
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 35 //10mm AP
-	armor_penetration = 55
-	agony = 30
+	damage = 40 //10mm AP
+	armor_penetration = 20
+	agony = 0
 
 /obj/item/projectile/bullet/pistol/medium/smg/silver
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 30 //10mm but i have no idea what bimmer wanted for classifaction, so i made it just better normal ammo
-	armor_penetration = 18
-	agony = 10
+	damage = 45 //10mm but i have no idea what bimmer wanted for classifaction, so i made it just better normal ammo
+	armor_penetration = 0
+	agony = 0
 
 
 /* shotgun projectiles */
@@ -364,9 +364,9 @@
 /obj/item/projectile/bullet/shotgun
 	name = "slug"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
-	damage = 60
-	armor_penetration = 24
-	agony = 40
+	damage = 80
+	armor_penetration = 0
+	agony = 0
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
@@ -384,30 +384,30 @@
 	pellets = 6
 	range_step = 1
 	spread_step = 10
-	agony = 15
+	agony = 0
 
 /* "Rifle" rounds */
 
 /obj/item/projectile/bullet/rifle
-	armor_penetration = 25
+	armor_penetration = 0
 	penetrating = 1
 	agony = 35
 
 /obj/item/projectile/bullet/rifle/a556
 	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
-	damage = 40
-	armor_penetration = 34
-	agony = 40
+	damage = 50
+	armor_penetration = 0
+	agony = 0
 
 /obj/item/projectile/bullet/rifle/a762
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
-	damage = 50
-	armor_penetration = 40
-	agony = 45
+	damage = 60
+	armor_penetration = 0
+	agony = 0
 
 /obj/item/projectile/bullet/rifle/a145
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
-	damage = 120
+	damage = 150
 	stun = 3
 	weaken = 3
 	penetrating = 5
@@ -416,32 +416,32 @@
 	penetration_modifier = 1.25
 
 /obj/item/projectile/bullet/rifle/a145/apds
-	damage = 100
+	damage = 125
 	penetrating = 6
 	armor_penetration = 120
 	penetration_modifier = 1.5
-	agony = 25
+	agony = 0
 
 /* Miscellaneous */
 
 /obj/item/projectile/bullet/suffocationbullet//How does this even work?
 	name = "co bullet"
-	damage = 25
+	damage = 45
 	damage_type = OXY
-	agony = 20
+	agony = 11.25
 
 /obj/item/projectile/bullet/cyanideround
 	name = "poison bullet"
 	damage = 45
 	damage_type = TOX
-	agony = 20
+	agony = 11.25
 
 /obj/item/projectile/bullet/burstbullet
 	name = "exploding bullet"
-	damage = 25
+	damage = 45
 	embed = 0
 	edge = 1
-	agony = 20
+	agony = 11.25
 
 /obj/item/projectile/bullet/gyro
 	fire_sound = 'sound/effects/Explosion1.ogg'
@@ -574,11 +574,11 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/a50
-	name = "magazine (.50ae)"
+	name = "magazine (.44 Magnum)"
 	icon_state = "50ae"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	caliber = ".50"
+	caliber = ".44"
 	matter = list(DEFAULT_WALL_MATERIAL = 1260)
 	ammo_type = /obj/item/ammo_casing/a50
 	max_ammo = 7
@@ -613,10 +613,10 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/c50
-	name = "speed loader (.50)"
+	name = "speed loader (.44 magnum)"
 	desc = "A speed loader for revolvers."
 	icon_state = "38"
-	caliber = ".50"
+	caliber = ".44"
 	ammo_type = /obj/item/ammo_casing/a50
 	matter = list(DEFAULT_WALL_MATERIAL = 1260)
 	max_ammo = 6
