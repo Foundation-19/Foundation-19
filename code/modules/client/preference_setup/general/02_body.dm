@@ -514,7 +514,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 
 	else if(href_list["limbs"])
 
-		var/list/limb_selection_list = list("Left Leg","Right Leg","Left Arm","Right Arm","Left Foot","Right Foot","Left Hand","Right Hand" )//removed FBP
+		var/list/limb_selection_list = list("Left Leg","Right Leg","Left Arm","Right Arm","Left Foot","Right Foot","Left Hand","Right Hand")
 
 		// Full prosthetic bodies without a brain are borderline unkillable so make sure they have a brain to remove/destroy.
 		var/datum/species/current_species = all_species[pref.species]

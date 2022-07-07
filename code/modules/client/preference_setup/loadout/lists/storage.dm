@@ -2,6 +2,7 @@
 	sort_category = "Storage Accessories"
 	category = /datum/gear/storage
 	slot = slot_tie
+	denied_roles = list(/datum/job/assistant)
 
 /datum/gear/storage/vest
 	display_name = "webbing vest selection"

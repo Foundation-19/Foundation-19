@@ -19,7 +19,7 @@
 	var/footer = null
 	var/footerOn = FALSE
 
-	var/logo_list = list("admin.png", "o5.png", "isd.png", "ecd.png", "int.png", "log.png", "trib.png", "sec.png", "med.png", "ethics.png", "scplogo.png", "sci.png", "eng.png", "mtf.png", "ungoc.png")
+	var/logo_list = list("admin.png", "o5.png", "isd.png", "ecd.png", "int.png", "log.png", "trib.png", "sec.png", "med.png", "ethics.png", "scplogo.png", "sci.png", "eng.png", "mtf.png", "ungoc.png", "uiu.pgn")
 	var/logo = ""
 
 	var/unformatedText = ""

@@ -116,6 +116,7 @@
 	display_name = "toeless workboots"
 	path = /obj/item/clothing/shoes/workboots/toeless
 	sort_category = "Xenowear"
+	denied_roles = null
 
 // Pre-modified gloves
 

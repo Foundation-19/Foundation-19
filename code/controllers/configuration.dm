@@ -94,6 +94,8 @@ var/list/gamemode_cache = list()
 	var/discordurl
 	var/githuburl
 	var/issuereporturl
+	var/rulesurl
+	var/loreurl
 
 	var/list/chat_markup
 
@@ -459,6 +461,12 @@ var/list/gamemode_cache = list()
 
 				if ("forumurl")
 					config.forumurl = value
+
+				if ("rulesurl")
+					config.rulesurl = value
+
+				if ("loreurl")
+					config.loreurl = value
 
 				if ("discordurl")
 					config.discordurl = value

@@ -22,6 +22,7 @@
 		access_adminlvl2,
 		access_adminlvl3,
 		access_adminlvl4,
+		access_medicallvl1,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,
