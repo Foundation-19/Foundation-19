@@ -179,6 +179,13 @@
 	ks1type = /obj/item/device/encryptionkey/headset_com
 	max_keys = 3
 
+/obj/item/device/radio/headset/headset_arch
+	name = "archivist radio headset"
+	desc = "A headset with a Command, Medical, and Research channel."
+	icon_state = "com_headset"
+	item_state = "headset"
+	ks1type = /obj/item/device/encryptionkey/headset_arch
+
 /obj/item/device/radio/headset/merchant
 	name = "merchant headset"
 	desc = "A headset utilizing the universal hailing frequency."

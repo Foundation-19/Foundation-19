@@ -229,12 +229,21 @@
 
 	access = list(
 		access_civ_comms,
+		access_sci_comms,
+		access_med_comms,
 		access_adminlvl1,
 		access_adminlvl2,
 		access_adminlvl3,
+		access_adminlvl4,
+		access_keyauth,
+		access_research,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,
-		access_sciencelvl4
+		access_sciencelvl4,
+		access_medicallvl1,
+		access_medicallvl2,
+		access_medicallvl3,
+		access_medicallvl4
 	)
 	minimal_access = list()

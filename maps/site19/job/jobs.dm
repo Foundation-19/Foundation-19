@@ -1033,7 +1033,7 @@
 		H.add_stats(rand(1,3), rand(0,3), rand(5,10)) // Str, Dex, Int.
 		H.add_skills(rand(5,10), rand(5,10), rand(5,10), rand(5,10)) // Melee, Ranged, Medical, Engineering.
 
-	access = list(access_med_comms, access_sci_comms, access_medicalgen,access_civ_comms, access_archive,access_medicallvl1,access_medicallvl2)
+	access = list(access_med_comms, access_sci_comms, access_medicalgen,access_civ_comms, access_archive, access_medicallvl1, access_medicallvl2)
 	minimal_access = list()
 
 /datum/job/o5rep
