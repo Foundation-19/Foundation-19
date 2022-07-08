@@ -308,26 +308,33 @@
 //TODO: Many of these tracks in code need proper sources!
 /decl/audio/track/dieinthedark
 	source = 'sound/music/foundation.ogg'
-	author = "Piotr Musial"
 	title = "We Die In The Dark, So You Can Live In The Light"
+	author = "Piotr Musial"
 
 /decl/audio/track/perdition
 	source = 'sound/music/perdition.ogg'
-	author = "Comrade"
 	title = "Site 64 Perdition"
+	author = "Comrade"
 
 /decl/audio/track/ajoura
 	source = 'sound/music/ajoura.ogg'
-	author = "Ajoura"
 	title = "The SCP Foundation Main Theme"
+	author = "Ajoura"
 	url = "https://www.youtube.com/watch?v=YJaeH8ffl_M"
 
 /decl/audio/track/days
 	source = 'sound/music/days.ogg'
-	author = "Buffalowing/Various Artists"
 	title = "30 Days"
+	author = "Buffalowing/Various Artists"
 
 /decl/audio/track/hie
 	source = 'sound/music/howitends.ogg'
-	author = "Atli �rvarsson"
 	title = "How It Ends"
+	author = "Atli �rvarsson"
+
+/decl/audio/track/chaos
+	source = 'sound/music/chaos_insurgency.ogg'
+	title = "The Chaos Insurgency Theme (SCP:SL)"
+	author = "Jacek 'Fragik' Rogal"
+	license = /decl/license/cc_by_sa_4_0
+	url = "https://www.youtube.com/watch?v=hZ3HS_ANyak"
