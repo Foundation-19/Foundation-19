@@ -2,8 +2,8 @@
 	icon = 'icons/obj/clothing/hats.dmi'
 
 /obj/item/clothing/head/helmet/scp/security
-	name = "\improper corporate security helmet"
-	desc = "A helmet with 'CORPORATE SECURITY' printed on the back lettering."
+	name = "\improper foundation security helmet"
+	desc = "A helmet with 'FOUNDATION SECURITY' printed on the back lettering."
 	icon_state = "guard-helm"
 	body_parts_covered = HEAD|FACE|EYES //face shield
 	armor = list(melee = 50, bullet = 70, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
