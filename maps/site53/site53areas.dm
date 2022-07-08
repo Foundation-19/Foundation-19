@@ -149,7 +149,7 @@
 	name = "MTF Heli"
 	icon_state = "Sleep"
 	requires_power = 0
-	dynamic_lighting = 1
+	dynamic_lighting = 0
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape_pod7/station

@@ -2283,10 +2283,6 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/uez/maintenance)
-"fD" = (
-/obj/effect/shuttle_landmark/heli/mtf,
-/turf/simulated/open,
-/area/site53/surface/surface)
 "fE" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
@@ -3691,8 +3687,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
-"jD" = (
-)
 "jE" = (
 /obj/structure/flora/pottedplant/minitree,
 /obj/effect/floor_decal/corner/orange/borderfull,
@@ -40130,7 +40124,7 @@ hZ
 hZ
 hZ
 hZ
-fD
+hZ
 hZ
 hZ
 hZ
@@ -70685,7 +70679,7 @@ hk
 hk
 hk
 hk
-jD
+hk
 hk
 hk
 hk
