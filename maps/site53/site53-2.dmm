@@ -7461,6 +7461,10 @@
 	},
 /obj/structure/table/steel,
 /obj/item/device/flashlight/lamp,
+/obj/machinery/button/blast_door{
+	name = "Reactor Lockdown Blastdoor button";
+	id_tag = "prototype_chamber_blast2"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/vacant/prototype/control)
 "arb" = (
@@ -25836,6 +25840,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"cIo" = (
+/obj/effect/paint_stripe/yellow,
+/obj/machinery/button/blast_door{
+	name = "Reactor Gas Dump Blast Door button";
+	id_tag = "prototype_exhaust2"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/vacant/prototype/control)
 "cIC" = (
 /obj/effect/floor_decal/corner/yellow/border,
 /obj/machinery/camera/autoname{
@@ -28525,6 +28537,14 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp247observation)
+"lFx" = (
+/obj/effect/paint_stripe/yellow,
+/obj/machinery/button/blast_door{
+	name = "Observation Blast Door button";
+	id_tag = "fusion_observation2"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/vacant/prototype/control)
 "lFN" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -43871,7 +43891,7 @@ aqB
 aqB
 aqB
 aty
-aeH
+cIo
 axO
 axW
 aye
@@ -44128,7 +44148,7 @@ are
 arY
 bCi
 atM
-aeH
+lFx
 axP
 aya
 ayf
