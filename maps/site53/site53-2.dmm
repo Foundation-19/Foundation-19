@@ -30710,7 +30710,7 @@
 "sww" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/mono,
-/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a556,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/zonecommanderoffice{
 	name = "\improper Heavy Containment Zone Equipment Room"
