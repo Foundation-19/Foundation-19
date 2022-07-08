@@ -1,7 +1,7 @@
 var/global/datum/controller/occupations/job_master
 
 #define GET_RANDOM_JOB 0
-#define BE_ASSISTANT 1
+#define BE_CLASS_D 1
 #define RETURN_TO_LOBBY 2
 
 /datum/controller/occupations
@@ -21,7 +21,7 @@ var/global/datum/controller/occupations/job_master
 		occupations = list()
 		occupations_by_type = list()
 		occupations_by_title = list()
-		var/list/all_jobs = list(/datum/job/assistant) | GLOB.using_map.allowed_jobs
+		var/list/all_jobs = list(/datum/job/classd) | GLOB.using_map.allowed_jobs
 		if(!all_jobs.len)
 			log_error("<span class='warning'>Error setting up jobs, no job datums found!</span>")
 			return 0
@@ -332,7 +332,7 @@ var/global/datum/controller/occupations/job_master
 
 		// For those who wanted to be assistant if their preferences were filled, here you go.
 		for(var/mob/new_player/player in unassigned)
-			if(player.client.prefs.alternate_option == BE_ASSISTANT)
+			if(player.client.prefs.alternate_option == BE_CLASS_D)
 				Debug("AC2 Assistant located, Player: [player]")
 				if(GLOB.using_map.flags & MAP_HAS_BRANCH)
 					var/datum/mil_branch/branch = mil_branches.get_branch(player.get_branch_pref())

@@ -3,7 +3,7 @@
 	sort_category = "Clothing Pieces"
 	category = /datum/gear/clothing/
 	slot = slot_tie
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/clothing/flannel
 	display_name = "flannel (colorable)"

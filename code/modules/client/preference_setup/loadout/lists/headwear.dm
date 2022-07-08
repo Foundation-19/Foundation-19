@@ -2,7 +2,7 @@
 	sort_category = "Hats and Headwear"
 	slot = slot_head
 	category = /datum/gear/head
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/head/beret
 	display_name = "beret, colour select"
@@ -45,7 +45,7 @@
 	display_name = "orange cap"
 	path = /obj/item/clothing/head/soft/orange
 	denied_roles = null
-	allowed_roles = list(/datum/job/assistant)
+	allowed_roles = list(/datum/job/classd)
 
 /datum/gear/head/cap
 	display_name = "cap selection"

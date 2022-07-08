@@ -1,5 +1,5 @@
-/decl/hierarchy/outfit/job/assistant
-	name = OUTFIT_JOB_NAME("Assistant")
+/decl/hierarchy/outfit/job/classd
+	name = OUTFIT_JOB_NAME("Class D")
 
 /decl/hierarchy/outfit/job/service
 	l_ear = /obj/item/device/radio/headset/headset_service
