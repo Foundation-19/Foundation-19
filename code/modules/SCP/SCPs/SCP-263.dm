@@ -31,6 +31,10 @@
 
 	)
 
+/mob/living/simple_animal/hostile/scp_263/Destroy()
+	target = null
+	return ..()
+
 /mob/living/simple_animal/hostile/scp_263/proc/On()
 	set category = "SCP-263"
 	set name = "On"

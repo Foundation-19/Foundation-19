@@ -32,6 +32,10 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/item/scp513/Destroy()
+	victims = null
+	next_braindamage_stage = null
+	braindamage_stage = null
+	wake_up_timing = null
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
