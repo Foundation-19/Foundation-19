@@ -443,7 +443,7 @@
 	department_flag = ENG
 	supervisors = "the Chief Engineer"
 	economic_modifier = 5
-	minimal_player_age = 7
+	minimal_player_age = 18
 	ideal_character_age = 30
 	alt_titles = list(
 		"Senior Maintenance Technician",
