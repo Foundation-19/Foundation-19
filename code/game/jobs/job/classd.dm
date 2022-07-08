@@ -1,4 +1,4 @@
-/datum/job/assistant
+/datum/job/classd
 	title = "Class D"
 	department = "Civilian"
 	department_flag = CIV
@@ -12,4 +12,4 @@
 	economic_power = 1
 	access = list()			//See /datum/job/assistant/get_access()
 	minimal_access = list()	//See /datum/job/assistant/get_access()
-	outfit_type = /decl/hierarchy/outfit/job/assistant
+	outfit_type = /decl/hierarchy/outfit/job/classd
