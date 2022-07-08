@@ -303,3 +303,31 @@
 	author = "A Drop A Day"
 	license = /decl/license/cc_by_sa_4_0
 	url = "https://ghyti.bandcamp.com/"
+
+// SCPRP Tracks
+//TODO: Many of these tracks in code need proper sources!
+/decl/audio/track/dieinthedark
+	source = 'sound/music/foundation.ogg'
+	author = "Piotr Musial"
+	title = "We Die In The Dark, So You Can Live In The Light"
+
+/decl/audio/track/perdition
+	source = 'sound/music/perdition.ogg'
+	author = "Comrade"
+	title = "Site 64 Perdition"
+
+/decl/audio/track/ajoura
+	source = 'sound/music/ajoura.ogg'
+	author = "Ajoura"
+	title = "The SCP Foundation Main Theme"
+	url = "https://www.youtube.com/watch?v=YJaeH8ffl_M"
+
+/decl/audio/track/days
+	source = 'sound/music/days.ogg'
+	author = "Buffalowing/Various Artists"
+	title = "30 Days"
+
+/decl/audio/track/hie
+	source = 'sound/music/howitends.ogg'
+	author = "Atli �rvarsson"
+	title = "How It Ends"

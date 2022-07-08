@@ -50,6 +50,13 @@
 
 	id_hud_icons = 'maps/site53/icons/assignment_hud.dmi'
 	lobby_screens = list("title","title2")
+	lobby_tracks = list(
+		/decl/audio/track/dieinthedark,
+		/decl/audio/track/perdition,
+		/decl/audio/track/ajoura,
+		/decl/audio/track/days,
+		/decl/audio/track/hie
+	)
 
 	available_cultural_info = list(
 		TAG_HOMEWORLD = list(HOME_SYSTEM_EARTH),
