@@ -392,7 +392,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "abd" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
@@ -400,7 +402,9 @@
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "abe" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /turf/simulated/floor/tiled/freezer,
@@ -883,7 +887,7 @@
 	id_tag = "fusion_injector2";
 	initial_id_tag = "fusion_injector2"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced/airless,
 /area/vacant/prototype/engine)
 "acB" = (
 /obj/effect/paint_stripe/brown,
@@ -3579,7 +3583,7 @@
 	id_tag = "fusion_injector2";
 	initial_id_tag = "fusion_injector2"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced/airless,
 /area/vacant/prototype/engine)
 "aiy" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -3837,10 +3841,6 @@
 /obj/effect/floor_decal/corner/yellow/half{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	icon_state = "camera";
-	network = list("Engineering Network")
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/breakroom)
 "aiW" = (
@@ -4056,14 +4056,12 @@
 /obj/machinery/light/small,
 /obj/item/mop,
 /obj/item/reagent_containers/glass/bucket,
-/obj/item/mop,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "ajx" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
 /obj/item/reagent_containers/glass/bucket,
-/obj/item/mop,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "ajy" = (
@@ -4748,10 +4746,18 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/contengoff)
+"alc" = (
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "ald" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "ale" = (
 /obj/structure/closet/secure_closet/engineering_welding{
 	req_access = list(501)
@@ -4801,8 +4807,21 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "ali" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "alj" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 9;
@@ -5435,7 +5454,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "amH" = (
 /obj/machinery/power/apc/hyper{
 	dir = 1;
@@ -5493,7 +5514,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "amN" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/structure/cable{
@@ -5882,7 +5905,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "anF" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -6004,26 +6029,23 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
 "anO" = (
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
+"anP" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/light/small{
-	dir = 8;
-	icon_state = "bulb1"
-	},
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
-"anP" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "anQ" = (
 /obj/effect/floor_decal/corner/yellow/half{
 	dir = 4
@@ -6103,21 +6125,25 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "anZ" = (
 /obj/machinery/door/airlock/external/glass/bolted{
-	id_tag = "commsinnerdoor";
-	locked = 0
+	id_tag = "commsinnerdoor"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aoa" = (
 /obj/machinery/door/airlock/external/glass/bolted{
-	id_tag = "commsouterdoor";
-	locked = 0
+	id_tag = "commsouterdoor"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aob" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -7374,16 +7400,26 @@
 /turf/simulated/floor/reinforced,
 /area/site53/lowertrams/escape)
 "aqS" = (
-/obj/machinery/power/apc/high{
-	dir = 1;
-	req_access = list(501)
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
 	},
 /obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aqT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -7392,17 +7428,14 @@
 	dir = 5
 	},
 /obj/machinery/camera/autoname{
-	c_tag = "Comms Tower Basement";
 	dir = 4;
-	network = list("Engineering Network")
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	network = list("Engineering Network");
+	c_tag = "Comms Tower Basement"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aqU" = (
 /obj/structure/table/standard,
 /obj/item/device/flashlight/flare,
@@ -8173,6 +8206,10 @@
 "asl" = (
 /obj/structure/sign/scp/electrical,
 /obj/effect/paint_stripe/yellow,
+/obj/machinery/button/blast_door{
+	name = "Dump Core Gasses button";
+	id_tag = "prototype_exhaust2"
+	},
 /turf/simulated/wall/r_wall/prepainted,
 /area/vacant/prototype/control)
 "asm" = (
@@ -9601,7 +9638,6 @@
 	icon_state = "corner_white"
 	},
 /obj/machinery/suit_storage_unit/engineering{
-	islocked = 0;
 	req_access = list("502")
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -10388,7 +10424,6 @@
 	icon_state = "corner_white"
 	},
 /obj/machinery/suit_storage_unit/engineering{
-	islocked = 0;
 	req_access = list("502")
 	},
 /obj/machinery/light{
@@ -11816,7 +11851,9 @@
 "azI" = (
 /obj/machinery/telecomms/server/presets/securityhcz,
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "azJ" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable{
@@ -12024,7 +12061,9 @@
 "aAc" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aAd" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
@@ -12198,26 +12237,34 @@
 /area/site53/engineering/storage)
 "aAA" = (
 /obj/effect/floor_decal/industrial/warning/corner{
-	dir = 4
+	dir = 4;
+	icon_state = "warningcorner"
 	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
 "aAB" = (
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 1
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1;
+	icon_state = "warning"
 	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
 "aAC" = (
-/obj/machinery/light,
 /obj/effect/floor_decal/industrial/warning{
-	dir = 1
+	dir = 1;
+	icon_state = "warning"
 	},
+/obj/machinery/light,
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
 "aAD" = (
 /obj/effect/floor_decal/industrial/warning/corner{
-	dir = 8
+	dir = 1;
+	icon_state = "warningcorner"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1;
+	icon_state = "warning"
 	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
@@ -12385,9 +12432,6 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp106observ)
@@ -13445,9 +13489,22 @@
 /turf/simulated/open,
 /area/site53/uhcz/scp106maintup)
 "aCT" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/upper_surface/serverfarmcontrol)
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb1"
+	},
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aCU" = (
 /obj/structure/bed/chair{
 	dir = 8;
@@ -13894,7 +13951,9 @@
 	},
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aDW" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light{
@@ -13919,7 +13978,9 @@
 "aDY" = (
 /obj/effect/paint/silver,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aDZ" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -13935,7 +13996,9 @@
 	},
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aEa" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light,
@@ -13989,7 +14052,9 @@
 	},
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aEg" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -14152,19 +14217,7 @@
 	name = "\improper LCZ Security Center"
 	})
 "aEx" = (
-/obj/structure/closet/l3closet,
 /obj/item/clothing/suit/bio_suit/general,
-/obj/item/clothing/suit/bio_suit/general,
-/obj/item/clothing/suit/bio_suit/general,
-/obj/item/clothing/suit/bio_suit/general,
-/obj/item/clothing/head/bio_hood/general,
-/obj/item/clothing/head/bio_hood/general,
-/obj/item/clothing/head/bio_hood/general,
-/obj/item/clothing/head/bio_hood/general,
-/obj/item/clothing/shoes/white,
-/obj/item/clothing/shoes/white,
-/obj/item/clothing/shoes/white,
-/obj/item/clothing/shoes/white,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "aEz" = (
@@ -15197,8 +15250,8 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 9
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
@@ -15796,11 +15849,6 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
-	},
-/obj/machinery/camera/autoname{
-	dir = 4;
-	icon_state = "camera";
-	network = list("Engineering Network")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/engine_smes)
@@ -17792,8 +17840,8 @@
 /area/site53/ulcz/hallways)
 "aMA" = (
 /obj/machinery/camera/autoname{
-	dir = 4;
-	network = list("Heavy Containment Zone Network")
+	network = list("Heavy Containment Zone Network");
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/tram)
@@ -19309,12 +19357,20 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	initial_gas = null;
-	name = "airless floor";
-	temperature = 273.15
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
 	},
-/area/site53/upper_surface/serverfarminterior)
+/turf/simulated/floor/tiled/techfloor/grid{
+	temperature = 273.15;
+	initial_gas = null;
+	name = "airless floor"
+	},
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aPQ" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/civilian{
@@ -19326,20 +19382,24 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "aPR" = (
-/obj/machinery/power/apc/critical{
-	dir = 1;
-	pixel_y = 18
-	},
 /obj/structure/cable/green{
-	d2 = 8;
+	dir = 4
+	},
+/obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	initial_gas = null;
-	name = "airless floor";
-	temperature = 273.15
+/obj/machinery/power/apc{
+	dir = 1;
+	icon_state = "apc0"
 	},
-/area/site53/upper_surface/serverfarminterior)
+/turf/simulated/floor/tiled/techfloor/grid{
+	temperature = 273.15;
+	initial_gas = null;
+	name = "airless floor"
+	},
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aPS" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
@@ -19358,7 +19418,9 @@
 "aPX" = (
 /obj/machinery/telecomms/server/presets/security,
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aPZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/monotile,
@@ -19375,21 +19437,31 @@
 	},
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	pixel_y = 16;
-	tag = "comms";
 	tag_airpump = "commspump";
+	tag_interior_door = "commsouterdoor";
 	tag_exterior_door = "commsinnerdoor";
-	tag_interior_door = "commsouterdoor"
+	tag = "comms"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aQd" = (
 /obj/machinery/telecomms/processor/preset_three,
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aQf" = (
 /obj/structure/backup_server{
 	name = "Auxillary AIC Server"
@@ -19398,11 +19470,15 @@
 	dir = 8
 	},
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aQg" = (
 /obj/machinery/telecomms/server/presets/command,
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aQh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -19419,11 +19495,13 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/techfloor/grid{
+	temperature = 273.15;
 	initial_gas = null;
-	name = "airless floor";
-	temperature = 273.15
+	name = "airless floor"
 	},
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aQu" = (
 /obj/machinery/door/firedoor{
 	dir = 4
@@ -19436,12 +19514,16 @@
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aQv" = (
 /obj/machinery/telecomms/hub/preset,
 /obj/structure/railing/mapped,
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aQw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -19456,7 +19538,9 @@
 	},
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aQx" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment{
@@ -19467,18 +19551,22 @@
 /area/site53/lowertrams/hub)
 "aQz" = (
 /turf/simulated/floor/tiled/techfloor/grid{
+	temperature = 273.15;
 	initial_gas = null;
-	name = "airless floor";
-	temperature = 273.15
+	name = "airless floor"
 	},
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aQA" = (
 /obj/machinery/message_server,
 /obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aQD" = (
 /obj/effect/paint_stripe/red,
 /obj/machinery/door/airlock/engineering{
@@ -19491,11 +19579,18 @@
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8";
-	pixel_z = 0
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aQF" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -19551,7 +19646,9 @@
 /area/site53/lowertrams/hub)
 "aQL" = (
 /turf/simulated/floor/tiled,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aQM" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
@@ -19571,21 +19668,29 @@
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aQP" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aQR" = (
 /obj/machinery/telecomms/server/presets/supply,
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aQS" = (
 /obj/machinery/telecomms/processor/preset_two,
 /obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aQT" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
@@ -19596,28 +19701,36 @@
 	dir = 1
 	},
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aQV" = (
 /obj/machinery/telecomms/bus/preset_four,
 /obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aQW" = (
 /obj/machinery/telecomms/bus/preset_two,
 /obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aQY" = (
 /obj/machinery/telecomms/server/presets/medical,
 /obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aQZ" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/space)
@@ -19627,7 +19740,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aRb" = (
 /obj/machinery/alarm{
 	frequency = 1439;
@@ -19635,85 +19750,122 @@
 	req_access = list(201)
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aRd" = (
 /obj/machinery/telecomms/receiver/preset_right,
 /obj/structure/railing/mapped,
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aRe" = (
 /obj/machinery/computer/telecomms/monitor{
-	dir = 1;
-	network = "tcommsat"
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aRg" = (
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aRh" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/space)
 "aRi" = (
 /obj/machinery/telecomms/server/presets/science,
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aRl" = (
 /obj/machinery/telecomms/bus/preset_three,
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aRm" = (
 /obj/machinery/telecomms/bus/preset_one,
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aRo" = (
 /obj/machinery/telecomms/server/presets/engineering,
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aRp" = (
 /obj/machinery/telecomms/server/presets/securitylcz,
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aRq" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techfloor/grid{
+	temperature = 273.15;
 	initial_gas = null;
-	name = "airless floor";
-	temperature = 273.15
+	name = "airless floor"
 	},
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aRs" = (
 /obj/machinery/telecomms/server/presets/service,
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aRw" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/structure/cable/green{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmtunnel)
+/obj/item/stool,
+/obj/effect/landmark/start{
+	name = "Communications Technician"
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	icon_state = "apc0"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aRx" = (
 /obj/turbolift_map_holder/commstower,
 /turf/simulated/floor/tiled,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aRz" = (
 /obj/machinery/suit_storage_unit/engineering{
-	islocked = 0;
 	req_access = list("502")
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aRA" = (
 /obj/machinery/telecomms/broadcaster/preset_right,
 /obj/structure/railing/mapped,
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aRC" = (
 /obj/machinery/alarm{
 	frequency = 1439;
@@ -19721,18 +19873,28 @@
 	req_access = list(201)
 	},
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8";
-	pixel_z = 0
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aRE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -19740,18 +19902,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/power/breakerbox/activated{
-	RCon_tag = "Telecommunications Breaker"
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aRF" = (
 /obj/structure/disposalpipe/up{
 	dir = 1;
@@ -19764,18 +19918,24 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aRH" = (
 /obj/machinery/light/small{
 	dir = 8;
 	icon_state = "bulb1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aRI" = (
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aRJ" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -19787,7 +19947,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aRK" = (
 /obj/item/device/flashlight/pen,
 /obj/item/device/taperecorder,
@@ -19806,10 +19968,10 @@
 	pixel_x = 0
 	},
 /obj/structure/table/standard,
-/obj/item/inflatable/door,
-/obj/item/inflatable/door,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aRM" = (
 /obj/structure/flora/pottedplant/minitree,
 /obj/structure/railing/mapped,
@@ -19824,7 +19986,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aRO" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Communication Engineers";
@@ -19840,14 +20004,18 @@
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aRS" = (
 /obj/machinery/computer/message_monitor{
 	dir = 1;
 	icon_state = "computer"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aRT" = (
 /obj/effect/paint_stripe/blue,
 /turf/simulated/wall/prepainted,
@@ -19856,7 +20024,8 @@
 /obj/machinery/door/airlock/centcom{
 	hackProof = 1;
 	name = "NTF Helipad";
-	req_access = list(205)
+	opacity = 1;
+	req_access = list(299)
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/surface/surface{
@@ -19871,7 +20040,9 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aRY" = (
 /obj/structure/railing/mapped,
 /turf/simulated/floor/reinforced,
@@ -19890,19 +20061,15 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_z = 0
-	},
-/obj/structure/cable/green{
-	d1 = 2;
+/obj/structure/cable{
+	d1 = 1;
 	d2 = 4;
-	icon_state = "2-4"
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aSa" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -19918,19 +20085,27 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/item/tape/engineering,
+/obj/machinery/atmospherics/pipe/cap/hidden/supply{
+	dir = 8
+	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
 /obj/machinery/access_button/airlock_interior{
-	master_tag = "comms";
 	pixel_y = 25;
-	tag = "comms"
+	master_tag = "comms"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aSb" = (
 /obj/structure/bed/chair,
 /obj/effect/floor_decal/corner/brown/mono,
@@ -19950,7 +20125,9 @@
 	},
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aSg" = (
 /obj/machinery/light,
 /obj/structure/cable/green{
@@ -19958,13 +20135,22 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aSj" = (
 /obj/machinery/bluespacerelay,
 /obj/structure/railing/mapped,
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aSk" = (
 /obj/machinery/ntnet_relay,
 /obj/structure/railing/mapped{
@@ -19974,7 +20160,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aSl" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
@@ -19984,25 +20172,33 @@
 "aSm" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aSn" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aSo" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aSp" = (
 /obj/structure/bed/chair{
 	dir = 1;
 	icon_state = "chair_preview"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aSq" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -21703,15 +21899,21 @@
 /obj/structure/closet/secure_closet/administration/commstech,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aWl" = (
 /obj/structure/closet/secure_closet/administration/commstech,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aWm" = (
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aWn" = (
 /obj/structure/cable/green{
 	d2 = 4;
@@ -21756,7 +21958,7 @@
 	name = "cat bed";
 	pixel_y = 9
 	},
-/mob/living/simple_animal/friendly/cat/fluff/scp529{
+/mob/living/simple_animal/cat/fluff/scp_529{
 	dir = 4;
 	icon_state = "cat"
 	},
@@ -22127,15 +22329,15 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "aXi" = (
+/obj/machinery/door/airlock/science{
+	name = "SCP-500";
+	req_access = list(304)
+	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8";
 	pixel_z = 0
-	},
-/obj/machinery/door/airlock/highsecurity{
-	name = "SCP-500";
-	req_access = list(list(204,304))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -22292,19 +22494,6 @@
 /area/site53/ulcz/generalpurpose)
 "aXC" = (
 /obj/machinery/light/small,
-/obj/structure/closet/l3closet,
-/obj/item/clothing/suit/bio_suit/general,
-/obj/item/clothing/suit/bio_suit/general,
-/obj/item/clothing/suit/bio_suit/general,
-/obj/item/clothing/suit/bio_suit/general,
-/obj/item/clothing/head/bio_hood/general,
-/obj/item/clothing/head/bio_hood/general,
-/obj/item/clothing/head/bio_hood/general,
-/obj/item/clothing/head/bio_hood/general,
-/obj/item/clothing/shoes/white,
-/obj/item/clothing/shoes/white,
-/obj/item/clothing/shoes/white,
-/obj/item/clothing/shoes/white,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "aXD" = (
@@ -22576,7 +22765,9 @@
 	},
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aYq" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -22590,7 +22781,9 @@
 	},
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aYr" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Communication Engineers";
@@ -22605,7 +22798,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aYs" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -22616,11 +22811,18 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external/glass/bolted{
-	id_tag = "commsinnerdoor";
-	locked = 0
+	id_tag = "commsinnerdoor"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aYt" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/exoplanet/snow,
@@ -22643,13 +22845,13 @@
 	dir = 1;
 	icon_state = "bulb1"
 	},
-/obj/machinery/power/smes/buildable/preset/ds90/substation_full,
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
+/obj/machinery/power/smes/buildable/preset/on_full{
+	RCon_tag = "Telecommunications"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aYw" = (
 /obj/machinery/door/blast/regular,
 /obj/effect/floor_decal/industrial/warning{
@@ -22677,8 +22879,16 @@
 /obj/structure/sign/warning/vacuum{
 	pixel_y = 25
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aYz" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -22686,11 +22896,18 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/external/glass/bolted{
-	id_tag = "commsouterdoor";
-	locked = 0
+	id_tag = "commsouterdoor"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "aYA" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -22704,7 +22921,8 @@
 /obj/machinery/door/airlock/centcom{
 	hackProof = 1;
 	name = "NTF Helipad";
-	req_access = list(205)
+	opacity = 1;
+	req_access = list(299)
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/lowertrams/escape)
@@ -22712,7 +22930,8 @@
 /obj/machinery/door/airlock/centcom{
 	hackProof = 1;
 	name = "NTF Helipad";
-	req_access = list(205)
+	opacity = 1;
+	req_access = list(299)
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/surface/surface)
@@ -22741,14 +22960,20 @@
 /area/site53/surface/surface)
 "aYJ" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aYK" = (
 /turf/simulated/floor/reinforced,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aYL" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/reinforced,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aYM" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/surface/surface{
@@ -22922,7 +23147,9 @@
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/reinforced,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "aZr" = (
 /obj/machinery/camera/network/entrance{
 	dir = 1;
@@ -24269,16 +24496,19 @@
 	name = "\improper LCZ Security Center"
 	})
 "bdf" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/ulcz/hallways)
-"bdg" = (
-/obj/machinery/door/airlock/glass/security{
-	name = "RIOT CONTROL";
-	req_access = list(201)
+/obj/structure/reagent_dispensers/watertank,
+/obj/machinery/light/small{
+	dir = 1
 	},
+/obj/item/clothing/head/bio_hood/general,
+/obj/item/clothing/head/bio_hood/general,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/hallways)
+/area/site53/ulcz/scp173)
+"bdg" = (
+/obj/item/clothing/suit/bio_suit/general,
+/obj/item/clothing/head/bio_hood/general,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp173)
 "bdh" = (
 /obj/structure/bed/chair{
 	dir = 4;
@@ -24798,7 +25028,9 @@
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/machinery/floodlight,
 /turf/simulated/floor/reinforced,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "beS" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/light/small/red{
@@ -24840,7 +25072,9 @@
 "bfa" = (
 /obj/machinery/floodlight,
 /turf/simulated/floor/reinforced,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "bfb" = (
 /obj/structure/bed/chair/office/light,
 /obj/machinery/light{
@@ -25404,8 +25638,8 @@
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 1;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 1
 	},
 /obj/machinery/vending/wallmed1{
 	layer = 3.3;
@@ -25564,8 +25798,8 @@
 "bUj" = (
 /obj/item/stool/padded,
 /obj/machinery/camera/network/entrance{
-	dir = 1;
-	icon_state = "camera"
+	icon_state = "camera";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
@@ -25689,8 +25923,8 @@
 "cnb" = (
 /obj/machinery/cryopod,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 5
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
@@ -25885,7 +26119,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "cTj" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
@@ -25905,11 +26141,6 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/grass,
 /area/site53/science/aicobservation)
-"cYf" = (
-/obj/machinery/power/apc/high,
-/obj/structure/cable/green,
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmtunnel)
 "dae" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -26156,7 +26387,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "eel" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -26179,13 +26412,13 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 1;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 1
 	},
 /obj/machinery/button/blast_door{
+	pixel_y = 25;
 	id_tag = "evacbunkerblastdoor";
 	name = "Evacuation Bunker Blast Door button";
-	pixel_y = 25;
 	req_access = list(601)
 	},
 /turf/simulated/floor/tiled/white/monotile,
@@ -26210,23 +26443,14 @@
 "elL" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
-"emh" = (
-/obj/structure/table/rack,
-/obj/item/gun/energy/stunrevolver/rifle,
-/obj/item/gun/energy/stunrevolver/rifle,
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/hallways)
 "emA" = (
 /obj/effect/floor_decal/industrial/firstaid{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 1;
-	icon_state = "map-scrubbers"
+	icon_state = "map-scrubbers";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -26253,8 +26477,8 @@
 "etJ" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/light/small/red{
-	dir = 4;
-	icon_state = "bulb1"
+	icon_state = "bulb1";
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/site53/surface/bunker)
@@ -26312,7 +26536,9 @@
 "eBf" = (
 /obj/machinery/telecomms/processor/preset_one,
 /turf/simulated/floor/bluegrid/airless,
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "eBT" = (
 /obj/effect/floor_decal/corner/green/mono,
 /obj/structure/bed/chair{
@@ -26425,12 +26651,10 @@
 /area/site53/science/seniorresearcherb)
 "faE" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/item/storage/pill_bottle/amnesticsc,
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/item/storage/pill_bottle/amnesticsa,
 /obj/effect/floor_decal/corner/red/mono,
-/obj/item/reagent_containers/syringe/amnesticsc,
-/obj/item/reagent_containers/syringe/amnesticsc,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/zonecommanderoffice{
 	name = "\improper Heavy Containment Zone Equipment Room"
@@ -26456,10 +26680,10 @@
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	dir = 1;
 	pixel_y = -25;
-	req_access = list(list(203,304));
-	tag = "scp8";
+	tag_interior_door = "scp8interior";
 	tag_exterior_door = "scp8exterior";
-	tag_interior_door = "scp8interior"
+	req_access = list(list(203,304));
+	tag = "scp8"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -26592,12 +26816,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
-"fwB" = (
-/obj/structure/table/standard,
-/obj/item/inflatable/door,
-/obj/item/inflatable/door,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
 "fwU" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
@@ -26608,8 +26826,8 @@
 "fEN" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/camera/network/entrance{
-	dir = 8;
-	icon_state = "camera"
+	icon_state = "camera";
+	dir = 8
 	},
 /turf/simulated/floor,
 /area/site53/surface/bunker)
@@ -26640,11 +26858,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
-"fPv" = (
-/obj/effect/paint_stripe/brown,
-/obj/effect/paint_stripe/brown,
-/turf/simulated/wall/prepainted,
-/area/site53/ulcz/hallways)
+"fOK" = (
+/obj/effect/paint_stripe/yellow,
+/obj/machinery/button/blast_door{
+	id_tag = "fusion_observation2";
+	name = "Fusion Observation Blast Doors button"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/vacant/prototype/control)
 "fQX" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/table/standard,
@@ -26722,28 +26943,13 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/surface/bunker)
 "gak" = (
+/obj/machinery/power/breakerbox/activated{
+	RCon_tag = "Telecommunications Breaker"
+	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmtunnel)
-"gbS" = (
-/obj/item/clothing/head/helmet/scp/goc,
-/obj/item/clothing/suit/armor/goc,
-/obj/item/device/radio/headset/heads/hos/gock{
-	name = "goc grunt's headset"
-	},
-/obj/structure/closet,
-/obj/item/gun/projectile/automatic/battlerifle,
-/obj/item/gun/projectile/pistol/military{
-	desc = "The Glock 20 - a mass produced ballistic sidearm in widespread service within the GOC."
-	},
-/obj/item/storage/belt/holster/security,
-/obj/item/ammo_magazine/pistol/double,
-/obj/item/ammo_magazine/pistol/double,
-/obj/item/storage/backpack/rucksack/blue,
-/obj/item/clothing/under/solgov/utility/marine/tan,
-/obj/item/clothing/shoes/tactical,
-/obj/item/clothing/gloves/tactical,
-/turf/simulated/floor/reinforced,
-/area/site53/surface/surface)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "gdE" = (
 /obj/structure/hygiene/sink/kitchen{
 	pixel_y = 22
@@ -26779,8 +26985,8 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 4;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -26827,16 +27033,18 @@
 /area/site53/surface/bunker)
 "gpg" = (
 /obj/machinery/camera/autoname{
-	c_tag = "Server Farm Entrance";
 	dir = 4;
-	network = list("Engineering Network")
+	network = list("Engineering Network");
+	c_tag = "Server Farm Entrance"
 	},
 /obj/structure/bed/chair{
 	dir = 1;
 	icon_state = "chair_preview"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "gpO" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/camera/autoname{
@@ -26862,15 +27070,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
-"gqw" = (
-/obj/structure/table/rack,
-/obj/item/gun/energy/taser/carbine,
-/obj/item/gun/energy/taser/carbine,
-/obj/item/gun/energy/taser/carbine,
-/obj/item/gun/energy/taser,
-/obj/item/gun/energy/taser,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/hallways)
 "gry" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
@@ -26904,8 +27103,8 @@
 "gzY" = (
 /obj/structure/cryofeed,
 /obj/machinery/camera/network/entrance{
-	dir = 8;
-	icon_state = "camera"
+	icon_state = "camera";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
@@ -26924,8 +27123,8 @@
 /area/site53/uhcz/scp247observation)
 "gDo" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 1;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 1
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -26999,8 +27198,8 @@
 /area/site53/science/seniorresearcherb)
 "gQl" = (
 /obj/machinery/light/small{
-	dir = 1;
-	icon_state = "bulb1"
+	icon_state = "bulb1";
+	dir = 1
 	},
 /obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/freezer,
@@ -27106,8 +27305,8 @@
 "hld" = (
 /obj/structure/table/standard,
 /obj/machinery/button/holosign{
-	id_tag = "evacbunker";
-	pixel_x = 24
+	pixel_x = 24;
+	id_tag = "evacbunker"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -27133,20 +27332,22 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/external/glass/bolted{
-	id_tag = "scp8exterior";
-	tag = "scp8exterior"
+	tag = "scp8exterior";
+	id_tag = "scp8exterior"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
 "hrk" = (
 /obj/structure/table/standard,
 /obj/machinery/camera/autoname{
-	c_tag = "Server Farm Control";
 	network = list("Engineering Network");
+	c_tag = "Server Farm Control";
 	pixel_x = 10
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "hrJ" = (
 /obj/machinery/door/blast/regular{
 	id_tag = "lczgate2"
@@ -27269,16 +27470,18 @@
 /area/site53/surface/bunker)
 "hMV" = (
 /obj/machinery/access_button/airlock_exterior{
-	master_tag = "comms";
+	pixel_y = -25;
 	pixel_x = -25;
-	tag = "comms"
+	master_tag = "comms"
 	},
 /turf/simulated/floor/tiled/techfloor/grid{
+	temperature = 273.15;
 	initial_gas = null;
-	name = "airless floor";
-	temperature = 273.15
+	name = "airless floor"
 	},
-/area/site53/upper_surface/serverfarminterior)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm"
+	})
 "hNN" = (
 /obj/structure/hygiene/toilet{
 	dir = 4
@@ -27492,12 +27695,12 @@
 /area/site53/uhcz/scp096)
 "iDm" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 5;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 5
 	},
 /obj/machinery/light/small/red{
-	dir = 1;
-	icon_state = "bulb1"
+	icon_state = "bulb1";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -27633,12 +27836,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
-"iWR" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/vacant/prototype/engine)
 "iXE" = (
 /obj/machinery/light{
 	dir = 4;
@@ -27758,8 +27955,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/camera/network/entrance{
-	dir = 1;
-	icon_state = "camera"
+	icon_state = "camera";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/surface/surface{
@@ -27862,7 +28059,9 @@
 "jIV" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "jKR" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4;
@@ -27895,18 +28094,19 @@
 /area/site53/uhcz/scp247containment)
 "jPM" = (
 /obj/machinery/button/crematorium{
-	id_tag = "scp8crem";
 	pixel_y = -24;
+	id_tag = "scp8crem";
 	req_access = list(304)
 	},
 /obj/effect/floor_decal/industrial/loading{
-	dir = 8;
-	icon_state = "loadingarea"
+	icon_state = "loadingarea";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
 "jQs" = (
 /obj/structure/table/standard,
+/obj/item/clothing/gloves/latex,
 /obj/item/clothing/gloves/latex,
 /obj/item/clothing/gloves/latex,
 /obj/item/clothing/gloves/latex,
@@ -27953,8 +28153,8 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 6;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 6
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
@@ -27969,15 +28169,6 @@
 "kao" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
-"kaC" = (
-/obj/structure/table/rack,
-/obj/item/gun/launcher/grenade,
-/obj/item/gun/launcher/grenade,
-/obj/machinery/recharger/wallcharger{
-	pixel_y = 23
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/hallways)
 "kaH" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -28057,8 +28248,8 @@
 	name = "trash bin"
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 10;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 10
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
@@ -28076,8 +28267,8 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 8;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
@@ -28160,8 +28351,8 @@
 /area/site53/engineering/primaryhallway)
 "kJi" = (
 /obj/structure/hygiene/shower{
-	dir = 8;
-	icon_state = "shower"
+	icon_state = "shower";
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
@@ -28238,8 +28429,8 @@
 /area/site53/uhcz/scp8containment)
 "kXm" = (
 /obj/structure/hygiene/shower{
-	dir = 8;
-	icon_state = "shower"
+	icon_state = "shower";
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/hidden,
@@ -28249,8 +28440,8 @@
 /obj/structure/bed/roller,
 /obj/structure/iv_drip,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 4;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
@@ -28296,8 +28487,8 @@
 /obj/structure/table/standard,
 /obj/machinery/microwave,
 /obj/machinery/camera/network/entrance{
-	dir = 8;
-	icon_state = "camera"
+	icon_state = "camera";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
@@ -28542,16 +28733,16 @@
 /area/site53/llcz/scp131)
 "lGM" = (
 /obj/machinery/camera/network/entrance{
-	dir = 1;
-	icon_state = "camera"
+	icon_state = "camera";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
 "lJk" = (
 /obj/machinery/button/blast_door{
-	id_tag = "scp8panic";
+	pixel_y = 24;
 	name = "Panic button";
-	pixel_y = 24
+	id_tag = "scp8panic"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -28738,8 +28929,8 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 1;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 1
 	},
 /obj/machinery/camera/network/entrance,
 /turf/simulated/floor/tiled/white/monotile,
@@ -28811,12 +29002,12 @@
 	dir = 4
 	},
 /obj/machinery/button/alternate/door/bolts{
-	id_tag = "evactoilet1";
-	pixel_y = 24
+	pixel_y = 24;
+	id_tag = "evactoilet1"
 	},
 /obj/machinery/light/small{
-	dir = 8;
-	icon_state = "bulb1"
+	icon_state = "bulb1";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/surface/bunker)
@@ -28864,8 +29055,8 @@
 	dir = 4
 	},
 /obj/machinery/camera/network/entrance{
-	dir = 4;
-	icon_state = "camera"
+	icon_state = "camera";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
@@ -28958,30 +29149,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmtunnel)
-"mVc" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/obj/item/ammo_magazine/mil_rifle,
-/turf/simulated/floor/reinforced,
-/area/site53/surface/surface)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "mVQ" = (
 /obj/structure/table/standard,
 /obj/item/stock_parts/manipulator/pico,
@@ -28995,7 +29169,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "mXU" = (
 /obj/structure/table/standard,
 /obj/item/stock_parts/circuitboard/pacman,
@@ -29084,24 +29260,17 @@
 /area/site53/uhcz/scp106observ)
 "njl" = (
 /obj/item/reagent_containers/glass/beaker/vial{
-	name = "SCP-008";
-	reagents = list(/datum/reagent/zombie=10)
+	reagents = list(/datum/reagent/zombie=10);
+	name = "SCP-008"
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/structure/closet/secure_closet/freezer{
 	icon = 'icons/obj/closets/fridge.dmi';
-	name = "Secure Freezer";
-	req_access = list(304)
+	req_access = list(304);
+	name = "Secure Freezer"
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
-"nks" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/adv,
-/turf/simulated/floor/reinforced,
-/area/site53/surface/surface)
 "nlO" = (
 /obj/structure/table/standard,
 /obj/item/folder/red,
@@ -29144,12 +29313,12 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 1;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 1
 	},
 /obj/machinery/light/small/red{
-	dir = 1;
-	icon_state = "bulb1"
+	icon_state = "bulb1";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -29213,6 +29382,9 @@
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/uhcz/scp247containment)
 "nxO" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /obj/item/stool,
 /obj/effect/landmark/start{
 	name = "Communications Technician"
@@ -29223,7 +29395,9 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "nyh" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/computer/shuttle_control/engineering{
@@ -29244,8 +29418,8 @@
 /area/site53/llcz/scp263research)
 "nAG" = (
 /obj/structure/bed/chair{
-	dir = 4;
-	icon_state = "chair_preview"
+	icon_state = "chair_preview";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
@@ -29255,10 +29429,10 @@
 /area/site53/ulcz/generalpurpose)
 "nHk" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
-	pixel_z = 0
+	pixel_z = 0;
+	d1 = 4;
+	d2 = 8
 	},
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor,
@@ -29349,8 +29523,8 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 8;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -29382,11 +29556,11 @@
 /area/site53/ulcz/scp078)
 "oiT" = (
 /obj/machinery/access_button/airlock_exterior{
-	master_tag = "scp8";
 	pixel_x = 25;
 	pixel_y = -25;
-	req_access = list(list(203,304));
-	tag = "scp8exteriorbutton"
+	master_tag = "scp8";
+	tag = "scp8exteriorbutton";
+	req_access = list(list(203,304))
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 6
@@ -29403,8 +29577,8 @@
 	})
 "omz" = (
 /obj/machinery/power/terminal{
-	dir = 1;
-	icon_state = "term"
+	icon_state = "term";
+	dir = 1
 	},
 /obj/structure/cable{
 	d1 = 2;
@@ -29460,8 +29634,8 @@
 /area/site53/uhcz/scp247observation)
 "osz" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 10;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 10
 	},
 /obj/machinery/light/small/red{
 	dir = 8
@@ -29522,8 +29696,8 @@
 /area/site53/uhcz/scp096)
 "oBq" = (
 /obj/structure/bed/chair{
-	dir = 4;
-	icon_state = "chair_preview"
+	icon_state = "chair_preview";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
@@ -29570,17 +29744,17 @@
 "oJJ" = (
 /obj/machinery/button/alternate/door/bolts{
 	dir = 4;
+	pixel_x = -25;
 	id_tag = "evaccell";
 	name = "Bunker Brig Cell bolt button";
-	pixel_x = -25;
 	req_access = list(202)
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
 "oJO" = (
 /obj/machinery/camera/autoname{
-	dir = 4;
-	network = list("Heavy Containment Zone Network")
+	network = list("Heavy Containment Zone Network");
+	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/hallways)
@@ -29624,8 +29798,8 @@
 	name = "trash bin"
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 6;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 6
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
@@ -29846,22 +30020,14 @@
 /area/site53/uhcz/tramstation)
 "pze" = (
 /obj/machinery/camera/autoname{
-	c_tag = "Comms Tower Basement";
 	dir = 4;
-	network = list("Entrance Zone Network")
+	network = list("Entrance Zone Network");
+	c_tag = "Comms Tower Basement"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/serverfarmtunnel)
-"pzm" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/storage/box/flashbangs,
-/obj/item/storage/box/flashbangs,
-/obj/item/storage/box/flashbangs,
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/hallways)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "pAx" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -30075,16 +30241,18 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "qrk" = (
 /obj/structure/table/standard,
 /obj/machinery/camera/autoname{
-	dir = 4;
-	network = list("Heavy Containment Zone Network")
+	network = list("Heavy Containment Zone Network");
+	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 8;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
@@ -30102,8 +30270,8 @@
 /area/site53/uhcz/scp8containment)
 "qtf" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 1;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
@@ -30115,13 +30283,6 @@
 /obj/item/screwdriver,
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
-"qAo" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/storage/box/teargas,
-/obj/item/storage/box/teargas,
-/obj/item/storage/box/teargas,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/hallways)
 "qAX" = (
 /obj/machinery/door/airlock/command{
 	name = "Command Security Compartment"
@@ -30218,7 +30379,9 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "qOS" = (
 /obj/machinery/camera/network/hcz{
 	dir = 1
@@ -30231,8 +30394,8 @@
 	req_access = list()
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 5
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
@@ -30283,10 +30446,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/uhcz/scp8containment)
-"qXD" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/hallways)
 "qYi" = (
 /obj/effect/floor_decal/industrial/fire{
 	dir = 1
@@ -30343,11 +30502,11 @@
 	dir = 1
 	},
 /obj/machinery/access_button/airlock_interior{
-	master_tag = "scp8";
-	pixel_x = -25;
 	pixel_y = 25;
-	req_access = list(list(203,304));
-	tag = "scp8interiorbutton"
+	pixel_x = -25;
+	master_tag = "scp8";
+	tag = "scp8interiorbutton";
+	req_access = list(list(203,304))
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9;
@@ -30378,15 +30537,6 @@
 "rno" = (
 /turf/simulated/wall/titanium,
 /area/site53/uhcz/scp247containment)
-"rpY" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/device/flashlight/maglight,
-/obj/item/device/flashlight/maglight,
-/obj/item/device/flashlight/maglight,
-/obj/item/crowbar/emergency_forcing_tool,
-/obj/item/crowbar/emergency_forcing_tool,
-/turf/simulated/floor/reinforced,
-/area/site53/surface/surface)
 "rrr" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -30432,8 +30582,8 @@
 /area/site53/uhcz/medicalpost)
 "rvd" = (
 /obj/effect/floor_decal/corner/orange/bordercorner{
-	dir = 8;
-	icon_state = "bordercolorcorner"
+	icon_state = "bordercolorcorner";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -30451,8 +30601,8 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 9
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
@@ -30464,7 +30614,7 @@
 	name = "HCZ Armory Door bolt";
 	pixel_x = 24;
 	pixel_y = 23;
-	req_access = list(203)
+	req_access = list(504)
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/zonecommanderoffice{
@@ -30548,8 +30698,8 @@
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 4;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -30563,8 +30713,8 @@
 /area/site53/ulcz/generalpurpose)
 "rNe" = (
 /obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("Light Containment Zone Network")
+	network = list("Light Containment Zone Network");
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/tram)
@@ -30590,8 +30740,8 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 4;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
@@ -30605,12 +30755,12 @@
 	dir = 4
 	},
 /obj/machinery/button/alternate/door/bolts{
-	id_tag = "evactoilet2";
-	pixel_y = 24
+	pixel_y = 24;
+	id_tag = "evactoilet2"
 	},
 /obj/machinery/light/small{
-	dir = 8;
-	icon_state = "bulb1"
+	icon_state = "bulb1";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/surface/bunker)
@@ -30621,8 +30771,8 @@
 "sdX" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/machinery/camera/network/entrance{
-	dir = 8;
-	icon_state = "camera"
+	icon_state = "camera";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
@@ -30641,8 +30791,8 @@
 /area/site53/ulcz/generalpurpose)
 "siU" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 6;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 6
 	},
 /obj/machinery/light/small/red,
 /turf/simulated/floor/tiled/white/monotile,
@@ -30702,26 +30852,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
-"sAN" = (
-/obj/item/clothing/head/helmet/scp/goc,
-/obj/structure/closet,
-/obj/item/clothing/suit/armor/goc,
-/obj/item/device/radio/headset/heads/hos/gock{
-	name = "goc grunt's headset"
-	},
-/obj/item/gun/projectile/automatic/battlerifle,
-/obj/item/gun/projectile/pistol/military{
-	desc = "The Glock 20 - a mass produced ballistic sidearm in widespread service within the GOC."
-	},
-/obj/item/storage/belt/holster/security,
-/obj/item/ammo_magazine/pistol/double,
-/obj/item/ammo_magazine/pistol/double,
-/obj/item/storage/backpack/rucksack/blue,
-/obj/item/clothing/under/solgov/utility/marine/tan,
-/obj/item/clothing/shoes/tactical,
-/obj/item/clothing/gloves/tactical,
-/turf/simulated/floor/reinforced,
-/area/site53/surface/surface)
 "sGw" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -30761,15 +30891,20 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "sIW" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 8;
+	icon_state = "1-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "sJU" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -30800,15 +30935,15 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/orange/bordercorner{
-	dir = 4;
-	icon_state = "bordercolorcorner"
+	icon_state = "bordercolorcorner";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
 "sQE" = (
 /obj/machinery/camera/network/entrance{
-	dir = 1;
-	icon_state = "camera"
+	icon_state = "camera";
+	dir = 1
 	},
 /turf/simulated/floor,
 /area/site53/surface/bunker)
@@ -30819,8 +30954,8 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 4;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
@@ -30863,7 +30998,9 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "sXP" = (
 /obj/structure/table/standard,
 /obj/item/storage/slide_projector,
@@ -30918,10 +31055,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
-"tsw" = (
-/obj/machinery/acting/changer,
-/turf/simulated/floor/reinforced,
-/area/site53/surface/surface)
 "ttE" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -30972,8 +31105,8 @@
 /area/site53/lowertrams/orangeline)
 "tza" = (
 /obj/machinery/power/apc/hyper{
-	dir = 1;
 	icon_state = "apc0";
+	dir = 1;
 	req_access = list(501)
 	},
 /obj/structure/cable/green{
@@ -31032,18 +31165,6 @@
 /obj/item/storage/firstaid/adv,
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
-"tHT" = (
-/obj/structure/table/rack,
-/obj/item/reagent_containers/spray/chemsprayer,
-/obj/item/reagent_containers/spray/chemsprayer,
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_x = 32
-	},
-/obj/machinery/recharger/wallcharger{
-	pixel_y = 23
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/hallways)
 "tNo" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -31157,8 +31278,8 @@
 /area/site53/lowertrams/redline)
 "ulE" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 8;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -31186,8 +31307,8 @@
 /area/site53/llcz/scp263research)
 "uqB" = (
 /obj/structure/hygiene/shower{
-	dir = 4;
-	icon_state = "shower"
+	icon_state = "shower";
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -31200,8 +31321,8 @@
 /area/site53/uhcz/scp8containment)
 "urn" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 1;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 1
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -31538,15 +31659,15 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/camera/network/entrance{
-	dir = 8;
-	icon_state = "camera"
+	icon_state = "camera";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lowertrams/orangeline)
 "vEH" = (
 /obj/structure/hygiene/shower{
-	dir = 8;
-	icon_state = "shower"
+	icon_state = "shower";
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -31555,16 +31676,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp8containment)
-"vEP" = (
-/obj/effect/floor_decal/corner/yellow{
-	dir = 5
-	},
-/obj/machinery/camera/autoname{
-	icon_state = "camera";
-	network = list("Engineering Network")
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/engineering/primaryhallway)
 "vEQ" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/glass/beaker/large,
@@ -31614,8 +31725,8 @@
 /area/site53/llcz/scp263research)
 "vJh" = (
 /obj/machinery/power/apc/high{
-	dir = 1;
-	req_access = list(501)
+	req_access = list(501);
+	dir = 1
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -31653,8 +31764,18 @@
 /turf/simulated/floor/plating,
 /area/site53/ulcz/medicalpost)
 "vOx" = (
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmtunnel)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "vOO" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -31705,25 +31826,16 @@
 /obj/machinery/light,
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
-"vSP" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_z = 0
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmcontrol)
 "vTm" = (
 /obj/machinery/firealarm{
-	name = "emergency alarm";
-	pixel_y = 17
+	pixel_y = 17;
+	name = "emergency alarm"
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
-	pixel_z = 0
+	pixel_z = 0;
+	d1 = 4;
+	d2 = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -31765,8 +31877,8 @@
 /area/site53/uhcz/scp8containment)
 "vYs" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 1;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
@@ -31878,8 +31990,8 @@
 /obj/structure/bed/roller,
 /obj/structure/iv_drip,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 8;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
@@ -31934,8 +32046,8 @@
 /area/site53/lhcz/scp343room)
 "wtF" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 4;
-	icon_state = "bordercolor"
+	icon_state = "bordercolor";
+	dir = 4
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white/monotile,
@@ -32055,8 +32167,8 @@
 "wGn" = (
 /obj/structure/table/standard,
 /obj/machinery/camera/network/entrance{
-	dir = 4;
-	icon_state = "camera"
+	icon_state = "camera";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -32179,12 +32291,16 @@
 	dir = 4;
 	pixel_y = 8
 	},
+/obj/item/clothing/shoes/white,
+/obj/item/clothing/shoes/white,
+/obj/item/clothing/shoes/white,
+/obj/item/clothing/shoes/white,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "xcy" = (
 /obj/machinery/camera/network/entrance{
-	dir = 4;
-	icon_state = "camera"
+	icon_state = "camera";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
@@ -32262,12 +32378,6 @@
 "xna" = (
 /turf/simulated/mineral,
 /area/site53/uhcz/scp247containment)
-"xoe" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmcontrol)
 "xpD" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile,
@@ -32465,20 +32575,22 @@
 	icon_state = "computer"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmcontrol)
+/area/site53/upper_surface/commstower{
+	name = "\improper Server Farm Basement"
+	})
 "xQS" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/machinery/camera/network/entrance{
-	dir = 8;
-	icon_state = "camera"
+	icon_state = "camera";
+	dir = 8
 	},
 /turf/simulated/floor/grass,
 /area/site53/lowertrams/brownline)
 "xRk" = (
 /obj/machinery/door/airlock/glass/security{
+	req_access = list(202);
 	id_tag = "evaccell";
-	name = "Bunker Brig Cell";
-	req_access = list(202)
+	name = "Bunker Brig Cell"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
@@ -32538,10 +32650,10 @@
 	icon_state = "2-8"
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
-	pixel_z = 0
+	pixel_z = 0;
+	d1 = 4;
+	d2 = 8
 	},
 /obj/machinery/light{
 	dir = 1;
@@ -36849,11 +36961,11 @@ aGr
 aFf
 aGu
 aIS
-bdf
-bdf
-bdf
-bdf
-bdf
+aHf
+aHf
+aHf
+aHf
+aHf
 aGo
 aLv
 aGv
@@ -37105,12 +37217,12 @@ aHf
 aHf
 aVB
 aHf
-bdf
-bdf
-bdf
-bdf
-bdf
-bdf
+aHf
+aHf
+azA
+azA
+azA
+aHf
 aJy
 aLv
 aGv
@@ -37362,12 +37474,12 @@ aHf
 aGj
 aFe
 aJD
-bdf
-kaC
-qAo
-gqw
-bdf
-bdf
+aHf
+azA
+azA
+azA
+azA
+aHf
 aJz
 aLv
 aJR
@@ -37618,13 +37730,13 @@ azA
 aHf
 aNt
 aFe
-aGM
-bdg
-aGM
-aGM
-qXD
+aGv
+aHf
+azA
+azA
+azA
 aeW
-bdf
+aHf
 aHf
 arK
 aHf
@@ -37877,9 +37989,9 @@ aGo
 aFe
 aGv
 aHf
-tHT
-pzm
-emh
+azA
+azA
+azA
 aeW
 agK
 aff
@@ -38137,7 +38249,7 @@ aHf
 aeW
 aeW
 aeW
-fPv
+aeW
 aff
 afG
 aLv
@@ -39497,7 +39609,7 @@ azA
 azA
 aaN
 amd
-iWR
+ami
 aaN
 aml
 aml
@@ -39507,7 +39619,7 @@ aml
 aml
 aml
 aaN
-iWR
+ami
 aAA
 aaN
 azA
@@ -39765,7 +39877,7 @@ aml
 aml
 apg
 aix
-anU
+aAB
 aaN
 azA
 azA
@@ -40279,7 +40391,7 @@ aml
 aml
 apg
 aix
-anU
+aAB
 aaN
 azA
 azA
@@ -40536,7 +40648,7 @@ aml
 aml
 apg
 aix
-anU
+aAD
 aaN
 azA
 azA
@@ -40781,7 +40893,7 @@ azA
 azA
 azA
 aaN
-aAD
+amh
 and
 aaN
 aml
@@ -40793,7 +40905,7 @@ aml
 aml
 aaN
 and
-aAB
+amh
 aaN
 azA
 azA
@@ -43871,7 +43983,7 @@ aqB
 aqB
 aqB
 aty
-aeH
+fOK
 axO
 axW
 aye
@@ -46111,7 +46223,7 @@ azA
 aMB
 aKO
 aJM
-aJM
+bdg
 aJM
 ajx
 aMB
@@ -46623,8 +46735,8 @@ azA
 azA
 azA
 aMB
-aKN
-aJM
+bdf
+aEx
 aJM
 aJM
 aXC
@@ -50798,7 +50910,7 @@ ajO
 ajO
 aAM
 aAP
-vEP
+amW
 anJ
 aaw
 aaw
@@ -61037,16 +61149,16 @@ azA
 azA
 azA
 azA
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
 aYJ
 aYL
 aYP
@@ -61294,16 +61406,16 @@ azA
 azA
 azA
 azA
-aRh
+aAc
 aQL
 aQL
 aQL
 aRx
-aRh
+aAc
 aRH
 pze
 aRH
-aRh
+aAc
 aYJ
 beR
 aYO
@@ -61551,7 +61663,7 @@ azA
 azA
 azA
 azA
-aRh
+aAc
 aQL
 aQL
 aQL
@@ -61560,7 +61672,7 @@ aQP
 aQP
 aQP
 aQP
-aRh
+aAc
 aYJ
 aYK
 aYL
@@ -61577,9 +61689,9 @@ azA
 azA
 azA
 azA
-aRh
+aAc
 mXv
-aRh
+aAc
 azA
 azA
 azA
@@ -61808,16 +61920,16 @@ azA
 azA
 azA
 azA
-aRh
+aAc
 aQL
 aQL
 aQL
 aQL
-aRh
+aAc
 aQP
 aQP
 aQP
-aRh
+aAc
 aYJ
 aYK
 aYK
@@ -61834,9 +61946,9 @@ azA
 azA
 azA
 azA
-aRh
+aAc
 mXv
-aRh
+aAc
 azA
 azA
 azA
@@ -62059,52 +62171,52 @@ azA
 azA
 azA
 azA
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
 aQP
 aQP
 aQP
-aRh
-aRh
-aQP
-aQP
-aQP
-aQP
+aAc
+aAc
 aQP
 aQP
 aQP
 aQP
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
+aQP
+aQP
+aQP
+aQP
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
 mXv
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
 azA
 azA
 azA
@@ -62316,52 +62428,52 @@ azA
 azA
 azA
 azA
-aRh
+aAc
 aQw
-aRw
+amM
 aYq
-aRw
-aRw
-aRw
-aRw
-aRw
-aRw
-anO
+amM
+amM
+amM
+amM
+amM
+amM
+aCT
 aYr
-sIW
-sIW
-sIW
-anO
+amM
+amM
+amM
+aCT
 qLk
-sIW
-sIW
-sIW
+amM
+amM
+amM
 qoe
-sIW
-sIW
-sIW
-sIW
+amM
+amM
+amM
+amM
 qLk
 amM
 amM
 amM
 amM
-anO
+aCT
 amM
-sIW
+amM
 cRR
-sIW
-sIW
-sIW
-anO
-sIW
-sIW
+amM
+amM
+amM
+aCT
+amM
+amM
 aRO
 anY
 mTV
 aqT
-vOx
-aRh
+anO
+aAc
 azA
 azA
 azA
@@ -62573,23 +62685,23 @@ azA
 azA
 azA
 azA
-aRh
+aAc
 aSc
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
 aQP
 aQP
 aQP
@@ -62598,27 +62710,27 @@ aQP
 aQP
 aQP
 aQP
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
 aYv
 gak
 aRE
-vOx
-aRh
+anO
+aAc
 azA
 azA
 azA
@@ -62830,9 +62942,9 @@ azA
 azA
 azA
 azA
-aRh
+aAc
 aSc
-aRh
+aAc
 azA
 aQZ
 aSG
@@ -62870,12 +62982,12 @@ azA
 azA
 azA
 azA
-aRh
+aAc
 aRC
 anP
 aRZ
-cYf
-aRh
+anO
+aAc
 azA
 azA
 azA
@@ -63087,9 +63199,9 @@ azA
 azA
 azA
 azA
-aRh
+aAc
 aSc
-aRh
+aAc
 azA
 aQZ
 aSG
@@ -63123,16 +63235,16 @@ aRW
 aRW
 aRW
 aQZ
-aCT
-aCT
-aCT
-aCT
-aCT
+aAc
+aAc
+aAc
+aAc
+aAc
 aQD
-aCT
+aAc
 aSa
 aQu
-aRh
+aAc
 azA
 azA
 azA
@@ -63325,11 +63437,11 @@ aae
 aOR
 aQK
 amG
-sIW
-anO
-sIW
+amM
+aCT
+amM
 aDV
-aRh
+aAc
 azA
 azA
 azA
@@ -63344,9 +63456,9 @@ azA
 azA
 azA
 azA
-aRh
+aAc
 aSc
-aRh
+aAc
 azA
 aQZ
 aQZ
@@ -63380,13 +63492,13 @@ aRW
 aRW
 aRW
 aQZ
-aCT
+aAc
 aSn
 aSm
 aSm
 gpg
-vSP
-aCT
+aqS
+aAc
 aYs
 anZ
 aAc
@@ -63581,29 +63693,29 @@ aOt
 aae
 aQh
 csb
-aRh
+aAc
 aDY
 aDY
 aDY
 aDZ
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
 aSc
-aRh
+aAc
 azA
 azA
 azA
@@ -63637,13 +63749,13 @@ aRW
 aRW
 aRW
 aQZ
-aCT
+aAc
 aSo
 aSm
 aSm
 aSp
-vSP
-aCT
+ali
+aAc
 aQc
 aQO
 aAc
@@ -63843,24 +63955,24 @@ bdC
 bdC
 aDY
 aEe
-sIW
-anO
-sIW
-sIW
-sIW
-sIW
-sIW
-sIW
-anO
-sIW
-sIW
-sIW
-sIW
-sIW
-sIW
-anO
+amM
+aCT
+amM
+amM
+amM
+amM
+amM
+amM
+aCT
+amM
+amM
+amM
+amM
+amM
+amM
+aCT
 aYp
-aRh
+aAc
 azA
 azA
 azA
@@ -63894,13 +64006,13 @@ aRW
 aRW
 aRW
 aQZ
-aCT
-aqS
-xoe
-xoe
-xoe
+aAc
+anO
+anO
+vOx
+anP
 aSg
-aCT
+aAc
 aYy
 abd
 aAc
@@ -64107,17 +64219,17 @@ aDY
 aDY
 aDY
 aDY
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
-aRh
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
+aAc
 azA
 azA
 azA
@@ -64151,20 +64263,20 @@ alf
 aQZ
 aQZ
 aQZ
-aCT
+aAc
 aRb
 aWm
 ali
 aWm
 aRz
-aCT
+aAc
 aYz
 aoa
-aAc
-aAc
-aAc
-aAc
-aAc
+alc
+alc
+alc
+alc
+alc
 azA
 azA
 azA
@@ -64408,12 +64520,12 @@ alf
 azA
 azA
 azA
-aCT
+aAc
+aRw
 nxO
-nxO
-ali
+sIW
 aWm
-fwB
+aSm
 aRX
 aPP
 hMV
@@ -64421,7 +64533,7 @@ aQz
 aQS
 aRg
 eBf
-aAc
+alc
 azA
 azA
 azA
@@ -64665,10 +64777,10 @@ alf
 azA
 azA
 azA
-aCT
+aAc
 aWk
 aWl
-ali
+anO
 aWm
 aRL
 aRX
@@ -64678,7 +64790,7 @@ aQz
 aQU
 aRg
 aQd
-aAc
+alc
 azA
 azA
 azA
@@ -64922,20 +65034,20 @@ alf
 azA
 azA
 azA
-aCT
-aCT
-aCT
+aAc
+aAc
+aAc
 ecq
-aCT
-aCT
-aCT
+aAc
+aAc
+aAc
 aPR
 aQz
 aQz
 aQz
 aQz
 aRq
-aAc
+alc
 azA
 azA
 azA
@@ -65180,8 +65292,8 @@ aeB
 aeB
 azA
 azA
-aCT
-aCT
+aRh
+aAc
 aRG
 xQK
 aRM
@@ -65192,7 +65304,7 @@ aQz
 aQV
 aRg
 aRl
-aAc
+alc
 azA
 azA
 azA
@@ -65437,10 +65549,10 @@ alf
 alf
 azA
 azA
-aCT
+aRh
 jIV
-ali
-ali
+anO
+anO
 aRe
 aRX
 aQz
@@ -65449,7 +65561,7 @@ aQz
 aQW
 aRg
 aRm
-aAc
+alc
 azA
 azA
 azA
@@ -65694,19 +65806,19 @@ aSI
 alf
 azA
 azA
-aCT
+aRh
 hrk
-ali
+anO
 aRI
 aRS
 aRX
 aQz
 aQz
 aQz
-aAc
-aAc
-aAc
-aAc
+alc
+alc
+alc
+alc
 azA
 azA
 azA
@@ -65951,10 +66063,10 @@ aSr
 alf
 azA
 azA
-aCT
+aRh
 jIV
-ali
-ali
+anO
+anO
 anE
 aRX
 aQz
@@ -65963,7 +66075,7 @@ aQz
 abc
 aQg
 aPX
-aAc
+alc
 azA
 azA
 azA
@@ -66208,8 +66320,8 @@ lPt
 alf
 azA
 azA
-aCT
-aCT
+aRh
+aAc
 aRG
 aRJ
 aRM
@@ -66220,7 +66332,7 @@ aQz
 aQz
 aQz
 aRq
-aAc
+alc
 azA
 azA
 azA
@@ -66466,18 +66578,18 @@ alf
 azA
 azA
 azA
-aCT
-aCT
-aCT
-aCT
-aCT
+aAc
+aAc
+aAc
+aAc
+aAc
 aQj
 aQz
 aQz
 aQY
 aRi
 aRo
-aAc
+alc
 azA
 azA
 azA
@@ -66726,15 +66838,15 @@ azA
 azA
 azA
 azA
-aAc
+alc
 aRA
 aQz
 aQz
 aQz
-aAc
-aAc
-aAc
-aAc
+alc
+alc
+alc
+alc
 azA
 azA
 azA
@@ -66983,7 +67095,7 @@ azA
 azA
 azA
 azA
-aAc
+alc
 aSj
 aQz
 aQz
@@ -66991,7 +67103,7 @@ aQz
 aRa
 azI
 aRp
-aAc
+alc
 azA
 azA
 azA
@@ -67240,7 +67352,7 @@ azA
 azA
 azA
 azA
-aAc
+alc
 aRd
 aQz
 aQz
@@ -67248,7 +67360,7 @@ aQz
 aQz
 aQz
 aRq
-aAc
+alc
 azA
 azA
 azA
@@ -67497,7 +67609,7 @@ azA
 azA
 azA
 azA
-aAc
+alc
 aQv
 aQz
 aQz
@@ -67505,7 +67617,7 @@ aQz
 aQA
 aRs
 aQR
-aAc
+alc
 azA
 azA
 azA
@@ -67754,15 +67866,15 @@ azA
 azA
 azA
 azA
-aAc
-aAc
+alc
+alc
 aQf
 aSk
 aQf
-aAc
-aAc
-aAc
-aAc
+alc
+alc
+alc
+alc
 azA
 azA
 azA
@@ -68012,11 +68124,11 @@ azA
 azA
 azA
 azA
-aAc
-aAc
-aAc
-aAc
-aAc
+alc
+alc
+alc
+alc
+alc
 azA
 azA
 azA
@@ -71299,9 +71411,9 @@ azA
 azA
 azA
 azA
-aSt
-aSt
-aSt
+azA
+azA
+azA
 azA
 azA
 azA
@@ -71554,13 +71666,13 @@ azA
 azA
 azA
 azA
-aSt
-aSt
-aSt
-tsw
-aSt
-aSt
-aSt
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -71811,13 +71923,13 @@ azA
 azA
 azA
 azA
-aSt
-gbS
-aSu
-aSu
-aSu
-gbS
-aSt
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -72068,13 +72180,13 @@ azA
 azA
 azA
 azA
-aSt
-gbS
-aSu
-aSu
-aSu
-sAN
-aSt
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -72325,13 +72437,13 @@ azA
 azA
 azA
 azA
-aSt
-gbS
-aSu
-aSu
-aSu
-gbS
-aSt
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -72582,13 +72694,13 @@ azA
 azA
 azA
 azA
-aSt
-mVc
-rpY
-nks
-rpY
-mVc
-aSt
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -72839,13 +72951,13 @@ azA
 azA
 azA
 azA
-aSt
-aSt
-aSt
-aSt
-aSt
-aSt
-aSt
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 azA
 azA
 azA
