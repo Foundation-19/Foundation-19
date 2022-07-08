@@ -78,6 +78,7 @@
 	warmup_time = 40
 	shuttle_area = list(/area/site53/tram/mtf)
 	waypoint_station = "nav_mtf_start"
+	landmark_transition = "nav_mtf_transition"
 	waypoint_offsite = "nav_mtf_out"
 
 /obj/effect/shuttle_landmark/heli/mtf/start
@@ -94,6 +95,8 @@
 /obj/effect/shuttle_landmark/heli/mtf
 	name = "In transit"
 	landmark_tag = "nav_mtf_transition"
+	base_turf = /turf/simulated/open
+	base_area = /area/site53/surface/surface
 
 /datum/shuttle/autodock/ferry/hcz
 	name = "Heavy Containment Tram"
