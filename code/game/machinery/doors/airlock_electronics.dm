@@ -8,7 +8,7 @@
 
 	matter = list(MATERIAL_STEEL = 50,MATERIAL_GLASS = 50)
 
-	req_access = list(access_engine)
+	req_access = list(access_engineeringlvl2)
 
 	var/secure = 0 //if set, then wires will be randomized and bolts will drop if the door is broken
 	var/list/conf_access = list()
