@@ -28,7 +28,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	caliber = "9mm"
 	silenced = 0
-	fire_delay = 4
+	fire_delay = 2
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/mk9
@@ -36,13 +36,16 @@
 
 /obj/item/gun/projectile/revolver/mateba
 	name = "mateba"
-	desc = "The Mateba Model 6 Unica or simply Mateba is one of the only few of this type ever produced, you could consider yourself lucky even seeing one."
+	desc = "Standard issue Foundation revolver based on the Mateba Unica. Chambered in .44 Magnum"
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "mateba"
-	caliber = ".50"
+	caliber = ".44"
 	fire_delay = 6
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/a50
+	handle_casings = CYCLE_CASINGS
+
+
 
 /obj/item/gun/projectile/silenced
 	name = "silenced pistol"

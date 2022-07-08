@@ -427,10 +427,12 @@
 	var/despawnmessage = replacetext(on_store_visible_message, "$occupant$", occupant.real_name)
 	visible_message(SPAN_NOTICE("\The [initial(name)] " + despawnmessage), range = 3)
 
-	//This should guarantee that ghosts don't spawn.
-	occupant.ckey = null
-
 	// Delete the mob.
+	var/mob/observer/ghost/g = find_dead_player(occupant.last_ckey, TRUE)
+	occupant.ckey = null
+	if(!g) // Player didn't ghost. Ghost then delete.
+		g = occupant.ghostize(FALSE)
+	g.skip_respawn_timer = TRUE
 	qdel(occupant)
 	set_occupant(null)
 

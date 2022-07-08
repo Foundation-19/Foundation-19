@@ -26,6 +26,27 @@
 
 // coloured jumpsuits, male pattern
 
+
+/obj/item/clothing/under/scpguard
+	name = "Security Tactical Jumpsuit"
+	desc = "Issued to SD Rapid Response Teams and high security area guards."
+	icon_state = "jumpsuit"
+	item_state = "jumpsuit"
+	worn_state = "jumpsuit"
+	gender_icons = 1
+	color = "#3d3d3d"
+
+/obj/item/clothing/under/scpguardarmband
+	name = "Security Tactical Jumpsuit"
+	desc = "Issued to SD Rapid Response Teams and high security area guards."
+	icon_state = "jumpsuit"
+	item_state = "jumpsuit"
+	worn_state = "jumpsuit"
+	gender_icons = 1
+	color = "#3d3d3d"
+	starting_accessories = list(/obj/item/clothing/accessory/armband)
+
+
 /obj/item/clothing/under/color
 	name = "jumpsuit"
 	desc = "The latest in space fashion."

@@ -3,7 +3,7 @@
 	sort_category = "Shoes and Footwear"
 	slot = slot_shoes
 	category = /datum/gear/shoes
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/shoes/athletic
 	display_name = "athletic shoes, colour select"
@@ -70,7 +70,7 @@
 	display_name = "restricted boot selection"
 	path = /obj/item/clothing/shoes
 	cost = 2
-	allowed_roles = list(/datum/job/assistant)
+	allowed_roles = list(/datum/job/classd)
 	denied_roles = null
 
 /datum/gear/shoes/restricted_boots/New()
@@ -83,5 +83,5 @@
 /datum/gear/shoes/orange
 	display_name = "orange shoes"
 	path = /obj/item/clothing/shoes/orange
-	allowed_roles = list(/datum/job/assistant)
+	allowed_roles = list(/datum/job/classd)
 	denied_roles = null

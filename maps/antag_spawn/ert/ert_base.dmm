@@ -183,8 +183,8 @@
 /obj/item/aiModule/robocop,
 /obj/item/aiModule/safeguard,
 /obj/structure/table/rack,
-/obj/item/aiModule/solgov,
-/obj/item/aiModule/solgov_aggressive,
+/obj/item/aiModule/foundation,
+/obj/item/aiModule/goc,
 /turf/unsimulated/floor{
 	dir = 1;
 	icon_state = "vault"

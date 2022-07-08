@@ -99,7 +99,7 @@
 	allowed_roles = ENGINEERING_ROLES
 
 /datum/gear/accessory/armband_hydro
-	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/scientist_assistant, /datum/job/assistant)
+	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/scientist_assistant, /datum/job/classd)
 
 /datum/gear/accessory/armband_nt
 	allowed_branches = CIVILIAN_BRANCHES
@@ -140,7 +140,7 @@
 /datum/gear/tactical/press_tag
 	display_name = "Press tag"
 	path = /obj/item/clothing/accessory/armor/tag/press
-	allowed_roles = list(/datum/job/assistant)
+	allowed_roles = list(/datum/job/classd)
 
 /datum/gear/tactical/helm_covers
 	allowed_roles = ARMORED_ROLES

@@ -96,8 +96,8 @@
 	body_parts_covered = 0
 
 /obj/item/clothing/head/beret/sec
-	name = "corporate security beret"
-	desc = "A beret with the security insignia emblazoned on it. For officers that are more inclined towards style than safety."
+	name = "Security Officer Beret"
+	desc = "Usually worn by superior officers of Foundation SD."
 	icon_state = "beret_corporate_red"
 
 /obj/item/clothing/head/beret/sec/navy/officer
@@ -106,28 +106,28 @@
 	icon_state = "beret_corporate_navy_officer"
 
 /obj/item/clothing/head/beret/sec/navy/hos
-	name = "corporate security commander beret"
-	desc = "A navy blue beret with a commander's rank emblem. For officers that are more inclined towards style than safety."
+	name = "Security Officer Beret"
+	desc = "SD issue beret distributed to the officer corps of the Security Department."
 	icon_state = "beret_corporate_navy_hos"
 
 /obj/item/clothing/head/beret/sec/navy/warden
-	name = "corporate security warden beret"
-	desc = "A navy blue beret with a warden's rank emblem. For officers that are more inclined towards style than safety."
+	name = "Security Senior Beret"
+	desc = "SD issue beret distributed to senior agents and guards."
 	icon_state = "beret_corporate_navy_warden"
 
 /obj/item/clothing/head/beret/sec/corporate/officer
-	name = "corporate security officer beret"
-	desc = "A corporate black beret with an officer's rank emblem. For officers that are more inclined towards style than safety."
+	name = "Security Beret"
+	desc = "SD issue beret distributed to agents and guards."
 	icon_state = "beret_corporate_officer"
 
 /obj/item/clothing/head/beret/sec/corporate/hos
-	name = "corporate security commander beret"
-	desc = "A corporate black beret with a commander's rank emblem. For officers that are more inclined towards style than safety."
+	name = "Security Officer Beret"
+	desc = "Issued to SD ranking officers."
 	icon_state = "beret_corporate_hos"
 
 /obj/item/clothing/head/beret/sec/corporate/warden
-	name = "corporate security warden beret"
-	desc = "A corporate black beret with a warden's rank emblem. For officers that are more inclined towards style than safety."
+	name = "Security Senior Beret"
+	desc = "Issued to SD senior guards, agents and NCO's"
 	icon_state = "beret_corporate_warden"
 
 /obj/item/clothing/head/beret/engineering
@@ -155,12 +155,12 @@
 	desc = "An armored red beret adorned with the crest of corporate asset protection. Doesn't sacrifice style or safety."
 	icon_state = "beret_red"
 	armor = list(
-		melee = ARMOR_MELEE_VERY_HIGH, 
-		bullet = ARMOR_BALLISTIC_RIFLE, 
+		melee = ARMOR_MELEE_VERY_HIGH,
+		bullet = ARMOR_BALLISTIC_RIFLE,
 		laser = ARMOR_LASER_HANDGUNS,
-		energy = ARMOR_ENERGY_SMALL, 
-		bomb = ARMOR_BOMB_PADDED, 
-		bio = ARMOR_BIO_RESISTANT, 
+		energy = ARMOR_ENERGY_SMALL,
+		bomb = ARMOR_BOMB_PADDED,
+		bio = ARMOR_BIO_RESISTANT,
 		rad = ARMOR_RAD_MINOR
 	)
 	siemens_coefficient = 0.9

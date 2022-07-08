@@ -260,8 +260,8 @@ var/list/mob_hat_cache = list()
 	clear_supplied_laws()
 	clear_inherent_laws()
 	QDEL_NULL(laws)
-	laws = new /datum/ai_laws/syndicate_override
-	set_zeroth_law("Only [user.real_name] and people \he designates as being such are operatives.")
+	laws = new /datum/ai_laws/insurgency_override
+	set_zeroth_law("Only [user.real_name] and people \he designates as being such are insurgents.")
 
 //DRONE LIFE/DEATH
 //For some goddamn reason robots have this hardcoded. Redefining it for our fragile friends here.

@@ -303,6 +303,13 @@ var/list/mob/living/forced_ambiance_list = new
 		for(var/obj/machinery/door/window/temp_windoor in src)
 			temp_windoor.open()
 
+// Open everything and then kill APC
+/area/proc/full_breach()
+	for(var/obj/machinery/door/temp_door in src)
+		temp_door.open(TRUE) // Forced
+	for(var/obj/machinery/power/apc/temp_apc in src)
+		temp_apc.energy_fail(30 SECONDS)
+
 /area/proc/has_gravity()
 	return has_gravity
 

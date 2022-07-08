@@ -2,7 +2,7 @@
 	slot = slot_wear_suit
 	sort_category = "Suits and Overwear"
 	category = /datum/gear/suit
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/suit/poncho
 	display_name = "poncho selection"
@@ -82,7 +82,7 @@
 	display_name = "orange hoodie"
 	path = /obj/item/clothing/suit/storage/toggle/hoodie/orange
 	denied_roles = null
-	allowed_roles = list(/datum/job/assistant)
+	allowed_roles = list(/datum/job/classd)
 
 /datum/gear/suit/labcoat
 	display_name = "labcoat, colour select"

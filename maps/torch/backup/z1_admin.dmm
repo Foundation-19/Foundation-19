@@ -3170,7 +3170,7 @@
 	},
 /area/centcom/specops)
 "awn" = (
-/obj/item/aiModule/nanotrasen,
+/obj/item/aiModule/foundation_alt,
 /obj/item/aiModule/reset,
 /obj/item/aiModule/freeformcore,
 /obj/item/aiModule/protectStation,

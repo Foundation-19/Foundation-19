@@ -82,6 +82,11 @@
 	icon_state = "com_cypherkey"
 	channels = list("Command" = 1, "Hailing" = 1)
 
+/obj/item/device/encryptionkey/headset_arch
+	name = "archive radio encryption key"
+	icon_state = "com_cypherkey"
+	channels = list("Command" = 1, "Hailing" = 1, "Science" = 1, "Medical" = 1)
+
 /obj/item/device/encryptionkey/merchant
 	name = "merchant encryption key"
 	channels = list("Hailing" = 1)

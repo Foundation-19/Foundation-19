@@ -1,4 +1,4 @@
-/datum/job/assistant
+/datum/job/classd
 	title = "Class D"
 	department = "Civilian"
 	selection_color = "#E55700"
@@ -6,8 +6,8 @@
 	total_positions = 999
 	spawn_positions = 999
 	//duties = "<big><b>As a Class D Foundation Employee, you are most likely a former convict who faced a life sentence or the death penalty. You are extremely grateful to have been offered the chance to participate in the Foundation's rapid rehabilitation program, at a facility which aims to release you into the free world in just 30 days.<br> Find a way to show you're ready to re-integrate into society: work in mining, botany, the kitchens, or volunteer yourself as a participant in scientific studies.<br> <span style = 'color:red'>REMEMBER!</span> Rioting as Class D has been prohibited without staff approval, under rule 15. <br>IMPORTANT! Do not try to break out of your cell at game start. You will break your only way out!</b></big>"
-	access = list()			//See /datum/job/assistant/get_access()
-	minimal_access = list()	//See /datum/job/assistant/get_access()
+	access = list()			//See /datum/job/classd/get_access()
+	minimal_access = list()	//See /datum/job/classd/get_access()
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/classd
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classd)
@@ -17,7 +17,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_TRAINED,
 	                    SKILL_WEAPONS     = SKILL_TRAINED)
 
-/datum/job/assistant/equip(mob/living/carbon/human/H)
+/datum/job/classd/equip(mob/living/carbon/human/H)
 	..()
 	var/r = rand(100,9000)
 	while (used_numbers.Find(r))
@@ -229,12 +229,21 @@
 
 	access = list(
 		access_civ_comms,
+		access_sci_comms,
+		access_med_comms,
 		access_adminlvl1,
 		access_adminlvl2,
 		access_adminlvl3,
+		access_adminlvl4,
+		access_keyauth,
+		access_research,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,
-		access_sciencelvl4
+		access_sciencelvl4,
+		access_medicallvl1,
+		access_medicallvl2,
+		access_medicallvl3,
+		access_medicallvl4
 	)
 	minimal_access = list()

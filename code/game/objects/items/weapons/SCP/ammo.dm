@@ -46,7 +46,7 @@
 	ammo_type = /obj/item/ammo_casing/c45
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
-	max_ammo = 14
+	max_ammo = 17
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/mk9/rubber
@@ -56,7 +56,7 @@
 	ammo_type = /obj/item/ammo_casing/c45/rubber
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
-	max_ammo = 14
+	max_ammo = 17
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/p90_mag
@@ -169,13 +169,13 @@
 	max_ammo = 100
 
 /obj/item/ammo_magazine/box/a50
-	name = "ammunition box (.50)"
+	name = "ammunition box (.44 magnum)"
 	icon_state = "357"
 	origin_tech = list(TECH_COMBAT = 2)
-	caliber = ".50"
+	caliber = ".44"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
 	ammo_type = /obj/item/ammo_casing/a50
-	max_ammo = 30
+	max_ammo = 60
 
 // 10mm
 /obj/item/ammo_magazine/box/a10mm

@@ -183,8 +183,8 @@
 	icon_state = "beret_white"
 
 /obj/item/clothing/head/beret/solgov/marcom
-	name = "\improper MARSCOM beret"
-	desc = "A red beret with a gold insignia, denoting service in the SCGDF Mars Central Command. For brass who are more inclined towards style than safety."
+	name = "\improper Guard Commander Beret"
+	desc = "A red beret with a gold insignia issued to the highest ranked SD commander of a Foundation site or area.."
 	icon_state = "beret_redgold"
 
 /obj/item/clothing/head/beret/solgov/stratcom

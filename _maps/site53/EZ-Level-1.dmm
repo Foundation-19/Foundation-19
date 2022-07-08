@@ -11239,7 +11239,7 @@
 	pixel_y = -4
 	},
 /obj/item/aiModule/reset,
-/obj/item/aiModule/solgov{
+/obj/item/aiModule/foundation{
 	desc = "An 'Standard Principles of Artificially Intelligent Conscripts' Core AI Module: 'Reconfigures the AI's core laws.'.";
 	name = "'Standard Principles of Artificially Intelligent Conscripts' Core AI Module";
 	pixel_x = -2;

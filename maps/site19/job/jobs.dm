@@ -6,7 +6,7 @@
 /datum/map/site_site19
 /datum/map/site_site19/setup_map()
 
-/datum/job/assistant
+/datum/job/classd
 	title = "Class D"
 	department = "Civilian"
 	supervisors = "Foundation Personnel"
@@ -15,15 +15,15 @@
 	total_positions = 15
 	spawn_positions = 15
 	duties = "<big><b>As a Class D Foundation Employee, you are most likely a former convict who faced a life sentence or the death penalty. You are extremely grateful to have been offered the chance to participate in the Foundation's rapid rehabilitation program, at a facility which aims to release you into the free world in just 30 days.<br> Find a way to show you're ready to re-integrate into society: work in mining, botany, the kitchens, or volunteer yourself as a participant in scientific studies.<br> <span style = 'color:red'>REMEMBER!</span> Rioting as Class D has been prohibited without staff approval, under rule 15. <br>IMPORTANT! Do not try to break out of your cell at game start. You will break your only way out!</b></big>"
-	access = list()			//See /datum/job/assistant/get_access()
-	minimal_access = list()	//See /datum/job/assistant/get_access()
+	access = list()			//See /datum/job/classd/get_access()
+	minimal_access = list()	//See /datum/job/classd/get_access()
 	outfit_type = /decl/hierarchy/outfit/job/site19/crew/civ/classd
 	allowed_ranks = list(/datum/mil_rank/civ/classd)
 	var/static/list/used_numbers = list()
 
 
 
-/datum/job/assistant/equip(mob/living/carbon/human/H)
+/datum/job/classd/equip(mob/living/carbon/human/H)
 	..()
 	H.add_stats(rand(1,6), rand(1,6), rand(1,7)) // Str, Dex, Int.
 	H.add_skills(rand(10,20), rand(5,10), rand(0,5), rand(5,10)) // Melee, Ranged, Medical, Engineering.
@@ -1033,7 +1033,7 @@
 		H.add_stats(rand(1,3), rand(0,3), rand(5,10)) // Str, Dex, Int.
 		H.add_skills(rand(5,10), rand(5,10), rand(5,10), rand(5,10)) // Melee, Ranged, Medical, Engineering.
 
-	access = list(access_med_comms, access_sci_comms, access_medicalgen,access_civ_comms, access_archive,access_medicallvl1,access_medicallvl2)
+	access = list(access_med_comms, access_sci_comms, access_medicalgen,access_civ_comms, access_archive, access_medicallvl1, access_medicallvl2)
 	minimal_access = list()
 
 /datum/job/o5rep

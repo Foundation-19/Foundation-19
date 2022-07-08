@@ -1,7 +1,7 @@
 /datum/map/overmap_example
-	allowed_jobs = list(/datum/job/captain, /datum/job/chief_engineer, /datum/job/doctor, /datum/job/hop, /datum/job/cyborg, /datum/job/assistant, /datum/job/engineer)
+	allowed_jobs = list(/datum/job/captain, /datum/job/chief_engineer, /datum/job/doctor, /datum/job/hop, /datum/job/cyborg, /datum/job/classd, /datum/job/engineer)
 	species_to_job_whitelist = list(
-		/datum/species/vox = list(/datum/job/assistant)
+		/datum/species/vox = list(/datum/job/classd)
 	)
 
 /datum/job/captain
@@ -69,7 +69,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/mate
 	hud_icon = "hudheadofpersonnel"
 
-/datum/job/assistant
+/datum/job/classd
 	title = "Deck Hand"
 	supervisors = "literally everyone, you bottom feeder"
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/hand

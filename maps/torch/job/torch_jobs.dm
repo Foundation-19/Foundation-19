@@ -1,7 +1,7 @@
 /datum/map/torch
 	species_to_job_whitelist = list(
 		/datum/species/adherent = list(
-										/datum/job/ai, /datum/job/cyborg, /datum/job/assistant,
+										/datum/job/ai, /datum/job/cyborg, /datum/job/classd,
 										/datum/job/janitor, /datum/job/chef, /datum/job/bartender,
 										/datum/job/cargo_tech, /datum/job/engineer, /datum/job/roboticist,
 										/datum/job/chemist, /datum/job/scientist_assistant, /datum/job/scientist,
@@ -19,7 +19,7 @@
 									/datum/job/scientist, /datum/job/scientist_assistant,
 									/datum/job/janitor, /datum/job/chef, /datum/job/bartender,
 									/datum/job/engineer, /datum/job/roboticist,
-									/datum/job/merchant, /datum/job/assistant,
+									/datum/job/merchant, /datum/job/classd,
 								),
 		/datum/species/human/mule = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant)
 	)
@@ -45,7 +45,7 @@
 						/datum/job/janitor, /datum/job/chef, /datum/job/bartender,
 						/datum/job/senior_scientist, /datum/job/scientist, /datum/job/scientist_assistant,
 						/datum/job/ai, /datum/job/cyborg,
-						/datum/job/crew, /datum/job/assistant,
+						/datum/job/crew, /datum/job/classd,
 						/datum/job/merchant
 						)
 
