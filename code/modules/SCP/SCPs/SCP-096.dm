@@ -294,7 +294,7 @@
 
 /mob/living/simple_animal/hostile/scp096/proc/murder(var/mob/living/T)
 
-	if(T && T in kill_list)
+	if(T in kill_list)
 		T.loc = src.loc
 		visible_message("<span class='danger'>[src] grabs [T]!</span>")
 		dir = 2
