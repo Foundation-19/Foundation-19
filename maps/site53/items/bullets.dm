@@ -335,7 +335,7 @@
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
 	damage = 3 //10mm rubber
 	armor_penetration = 0
-	agony = 35
+	agony = 30
 	embed = 0
 	sharp = 0
 
@@ -370,7 +370,7 @@
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
-	damage = 10
+	damage = 3
 	agony = 70
 	embed = 0
 	sharp = 0

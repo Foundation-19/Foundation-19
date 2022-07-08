@@ -6,9 +6,38 @@
 	desc = "A helmet with 'FOUNDATION SECURITY' printed on the back lettering."
 	icon_state = "guard-helm"
 	body_parts_covered = HEAD|FACE|EYES //face shield
-	armor = list(melee = 50, bullet = 70, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
+	armor = list(melee = 40, bullet = 60, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
 	flags_inv = HIDEEARS
 	action_button_name = "Toggle Visor"
+
+/obj/item/clothing/head/helmet/scp/hczsecurityofficer
+	name = "\improper Tactical Security Officer Helmet"
+	desc = "The markings on this helmet indicate that it belongs to a SD zone commander."
+	icon_state = "helmet_merc"
+	armor = list(melee = 40, bullet = 70, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
+	cold_protection = HEAD
+	body_parts_covered = HEAD
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/helmet/scp/hczsecurityguard
+	name = "\improper Tactical Security Guard Helmet"
+	desc = "A tactical Foundation SD Guard helmet."
+	icon_state = "helmet"
+	armor = list(melee = 40, bullet = 65, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
+	cold_protection = HEAD
+	body_parts_covered = HEAD
+	flags_inv = HIDEEARS
+
+
+
+/obj/item/clothing/head/helmet/scp/securitystab
+	name = "\improper Armored Anti-stab Helmet"
+	desc = "An anti-stab SCP Foundation helmet normally issued to detention facility guards."
+	icon_state = "guard-helm"
+	body_parts_covered = HEAD|FACE|EYES //face shield
+	armor = list(melee = 70, bullet = 40, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
+	flags_inv = HIDEEARS
+
 
 /obj/item/clothing/head/helmet/scp/security/attack_self(mob/user)
 	body_parts_covered ^= EYES|FACE
