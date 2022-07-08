@@ -33,6 +33,7 @@ GLOBAL_LIST_EMPTY(scp999s)
 	return 0
 
 /mob/living/simple_animal/scp_999/Destroy()
+	last_healing = null
 	GLOB.scp999s -= src
 	..()
 

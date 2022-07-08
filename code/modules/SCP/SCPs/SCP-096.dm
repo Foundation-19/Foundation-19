@@ -43,6 +43,11 @@
 	emote_hear = list("makes a faint groaning sound")
 	emote_see = list("shuffles around aimlessly", "shivers")
 
+/mob/living/simple_animal/hostile/scp096/Destroy()
+	kill_list = null
+	examine_urge_list = null
+	return ..()
+
 /mob/living/simple_animal/hostile/scp096/Life()
 	if(hibernate)
 		return
