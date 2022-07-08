@@ -188,7 +188,6 @@
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
 		/obj/item/storage/belt/holster/security/tactical,
-		/obj/item/gun/projectile/automatic/scp/p90,
 		/obj/item/gun/projectile/automatic/scp/m16,
 		/obj/item/ammo_magazine/scp/m16_mag = 4,
 		/obj/item/ammo_magazine/box/a556,
