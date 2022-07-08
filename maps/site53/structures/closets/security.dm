@@ -92,15 +92,11 @@
 /obj/structure/closet/secure_closet/mtf/enlisted/hcz/WillContain()
 	return list(
 		/obj/item/storage/belt/holster/security/tactical,
-//		/obj/item/gun/projectile/sec/sec,
-//		/obj/item/ammo_magazine/c45m = 4,
 		/obj/item/gun/projectile/automatic/scp/m16,
 		/obj/item/ammo_magazine/scp/m16_mag = 3,
-		/obj/item/ammo_magazine/box/a10mm,
+		/obj/item/ammo_magazine/box/a556,
 		/obj/item/melee/telebaton,
 		/obj/item/handcuffs = 4,
-//		/obj/item/ammo_magazine/box/c45donor,
-//		/obj/item/ammo_magazine/box/c45donor/rubber,
 		/obj/item/storage/box/ifak,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/clothing/accessory/storage/holster/thigh,
@@ -118,15 +114,11 @@
 /obj/structure/closet/secure_closet/mtf/nco/hcz/WillContain()
 	return list(
 		/obj/item/storage/belt/holster/security/tactical,
-//		/obj/item/gun/projectile/sec/sec,
-//		/obj/item/ammo_magazine/c45m = 4,
 		/obj/item/gun/projectile/automatic/scp/m16,
 		/obj/item/ammo_magazine/scp/m16_mag = 3,
-		/obj/item/ammo_magazine/box/a10mm,
+		/obj/item/ammo_magazine/box/a556,
 		/obj/item/melee/telebaton,
 		/obj/item/handcuffs = 4,
-//		/obj/item/ammo_magazine/box/c45donor,
-//		/obj/item/ammo_magazine/box/c45donor/rubber,
 		/obj/item/storage/box/ifak,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/clothing/accessory/storage/holster/thigh,
