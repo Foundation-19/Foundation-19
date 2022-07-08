@@ -383,35 +383,35 @@
 
 /******************** NanoTrasen ********************/
 
-/obj/item/aiModule/nanotrasen // -- TLE
-	name = "'Corporate Default' Core AI Module"
-	desc = "A 'Corporate Default' Core AI Module."
+/obj/item/aiModule/foundation_alt // -- TLE
+	name = "'Foundation Alternate' Core AI Module"
+	desc = "A 'Foundation Alternate' Core AI Module."
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
-	laws = new/datum/ai_laws/nanotrasen
+	laws = new/datum/ai_laws/foundation_alt
 
 /******************** SCG ********************/
 
-/obj/item/aiModule/solgov // aka Torch default
-	name = "'SCG Expeditionary' Core AI Module"
-	desc = "An 'SCG Expeditionary' Core AI Module."
+/obj/item/aiModule/foundation // aka Foundation default
+	name = "Foundation' Core AI Module"
+	desc = "An 'Foundation' Core AI Module."
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
-	laws = new/datum/ai_laws/solgov
+	laws = new/datum/ai_laws/foundation
 
 /******************** SCG Aggressive ********************/
 
-obj/item/aiModule/solgov_aggressive
-	name = "\improper 'Military' Core AI Module"
-	desc = "A 'Military' Core AI Module."
+obj/item/aiModule/goc
+	name = "\improper 'GOC' Core AI Module"
+	desc = "A 'Global Occult Coalition' Core AI Module."
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
-	laws = new/datum/ai_laws/solgov_aggressive
+	laws = new/datum/ai_laws/goc
 
 /******************** Corporate ********************/
 
-/obj/item/aiModule/corp
-	name = "\improper 'Corporate' core AI module"
-	desc = "A 'Corporate' Core AI Module."
+/obj/item/aiModule/gov
+	name = "\improper 'Government' core AI module"
+	desc = "A 'Government' Core AI Module."
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
-	laws = new/datum/ai_laws/corporate
+	laws = new/datum/ai_laws/government
 
 /******************** Drone ********************/
 /obj/item/aiModule/drone

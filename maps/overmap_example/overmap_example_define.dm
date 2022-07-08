@@ -13,7 +13,7 @@
 	company_short = "LC"
 	overmap_event_areas = 11
 
-	default_law_type = /datum/ai_laws/corporate
+	default_law_type = /datum/ai_laws/government
 
 	evac_controller_type = /datum/evacuation_controller/site
 	lobby_icon = 'maps/overmap_example/overmap_example_lobby.dmi'

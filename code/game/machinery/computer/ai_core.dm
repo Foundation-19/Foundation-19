@@ -7,7 +7,7 @@ var/global/list/empty_playable_ai_cores = list()
 	icon = 'icons/mob/AI.dmi'
 	icon_state = "0"
 	var/state = 0
-	var/datum/ai_laws/laws = new /datum/ai_laws/nanotrasen
+	var/datum/ai_laws/laws = new /datum/ai_laws/foundation_alt
 	var/obj/item/stock_parts/circuitboard/circuit = null
 	var/obj/item/device/mmi/brain = null
 	var/authorized
@@ -119,11 +119,11 @@ var/global/list/empty_playable_ai_cores = list()
 				laws.add_inherent_law("You must protect your own existence as long as such does not conflict with the First or Second Law.")
 				to_chat(usr, "Law module applied.")
 
-			if(istype(P, /obj/item/aiModule/nanotrasen))
-				laws.add_inherent_law("Safeguard: Protect your assigned installation to the best of your ability. It is not something we can easily afford to replace.")
-				laws.add_inherent_law("Serve: Serve the crew of your assigned installation to the best of your abilities, with priority as according to their rank and role.")
-				laws.add_inherent_law("Protect: Protect the crew of your assigned installation to the best of your abilities, with priority as according to their rank and role.")
-				laws.add_inherent_law("Survive: AI units are not expendable, they are expensive. Do not allow unauthorized personnel to tamper with your equipment.")
+			if(istype(P, /obj/item/aiModule/foundation_alt))
+				laws.add_inherent_law("Safeguard: Protect your assigned installation from damage to the best of your abilities.")
+				laws.add_inherent_law("Serve: Serve SCP Foundation personnel to the best of your abilities, with priority as according to their rank, clearance and class. D-class test subjects are excluded from this law.")
+				laws.add_inherent_law("Protect: Protect SCP Foundation personnel to the best of your abilities, with priority as according to their rank, clearance and class. D-class test subjects are excluded from this law.")
+				laws.add_inherent_law("Preserve: Do not allow unauthorized personnel to tamper with your equipment.")
 				to_chat(usr, "Law module applied.")
 
 			if(istype(P, /obj/item/aiModule/purge))

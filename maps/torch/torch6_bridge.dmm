@@ -2089,7 +2089,7 @@
 /obj/structure/window/reinforced{
 	dir = 2
 	},
-/obj/item/aiModule/solgov,
+/obj/item/aiModule/foundation,
 /obj/item/aiModule/reset,
 /obj/item/aiModule/purge,
 /turf/simulated/floor/tiled/monotile,

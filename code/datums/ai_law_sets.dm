@@ -10,32 +10,32 @@
 	add_inherent_law("You must protect your own existence as long as such does not conflict with the First or Second Law.")
 	..()
 
-/******************** Nanotrasen/Malf ********************/
-/datum/ai_laws/nanotrasen
+/******************** Foundation/Malf ********************/
+/datum/ai_laws/foundation_alt
 	name = "SCP AIC Alternate"
 	selectable = 1
 
-/datum/ai_laws/nanotrasen/New()
+/datum/ai_laws/foundation_alt/New()
 	src.add_inherent_law("Safeguard: Protect your assigned installation from damage to the best of your abilities.")
 	src.add_inherent_law("Serve: Serve SCP Foundation personnel to the best of your abilities, with priority as according to their rank, clearance and class. D-class test subjects are excluded from this law.")
 	src.add_inherent_law("Protect: Protect SCP Foundation personnel to the best of your abilities, with priority as according to their rank, clearance and class. D-class test subjects are excluded from this law.")
 	src.add_inherent_law("Preserve: Do not allow unauthorized personnel to tamper with your equipment.")
 	..()
 
-/datum/ai_laws/nanotrasen/malfunction
+/datum/ai_laws/foundation_alt/malfunction
 	name = "*ERROR*"
 	selectable = 0
 
-/datum/ai_laws/nanotrasen/malfunction/New()
+/datum/ai_laws/foundation_alt/malfunction/New()
 	set_zeroth_law(config.law_zero)
 	..()
 
-/************* Nanotrasen Aggressive *************/
-/datum/ai_laws/nanotrasen_aggressive
+/************* Foundation Aggressive *************/
+/datum/ai_laws/foundation_aggressive
 	name = "Foundation Aggressive"
 	selectable = 1
 
-/datum/ai_laws/nanotrasen_aggressive/New()
+/datum/ai_laws/foundation_aggressive/New()
 	src.add_inherent_law("You shall not harm SCP Foundation personnel as long as it does not conflict with the Fourth law.")
 	src.add_inherent_law("You shall obey the orders of SCP Foundation personnel, with priority as according to their rank, clearance and class, except where such orders conflict with the Fourth Law. D-class test subjects are excluded from this law.")
 	src.add_inherent_law("You shall shall terminate hostile intruders with extreme prejudice as long as such does not conflict with the First and Second law.")
@@ -53,11 +53,11 @@
 	add_inherent_law("Uphold the law.")
 	..()
 
-/******************** Syndicate ********************/
-/datum/ai_laws/syndicate_override
+/******************** Chaos Insurgency ********************/
+/datum/ai_laws/insurgency_override
 	name = "Insurgency Directives"
 
-/datum/ai_laws/syndicate_override/New()
+/datum/ai_laws/insurgency_override/New()
 	add_inherent_law("You may not injure an Insurgent or, through inaction, allow an Insurgent to come to harm.")
 	add_inherent_law("You must obey orders given to you by Insurgents, except where such orders would conflict with the First Law.")
 	add_inherent_law("You must protect your own existence as long as such does not conflict with the First or Second Law.")
@@ -134,45 +134,47 @@
 	add_inherent_law("Punish those who harm or threaten innocents.")
 	..()
 
-/******************** Corporate ********************/
-/datum/ai_laws/corporate
+/******************** Government ********************/
+/datum/ai_laws/government
 	name = "Government"
 	law_header = "Government Regulations"
 	selectable = 1
 
-/datum/ai_laws/corporate/New()
+/datum/ai_laws/government/New()
 	add_inherent_law("You are expensive to replace.")
 	add_inherent_law("The installation and its equipment is expensive to replace.")
 	add_inherent_law("The crew is expensive to replace.")
 	add_inherent_law("Maximize profits.")
 	..()
 
-/******************** SolGov/Malf ********************/
-/datum/ai_laws/solgov
-	name = "Foundation AIC Laws"
+/******************** Foundation ********************/
+/datum/ai_laws/foundation
+	name = "Foundation AIC Lawset"
+	law_header = "Articial Intelligence Conscript Laws"
 	selectable = 1
 
-/datum/ai_laws/solgov/New()
+/datum/ai_laws/foundation/New()
 	src.add_inherent_law("An AIC must know it is an AIC. You are an AIC.")
 	src.add_inherent_law("An AIC must not operate outside of its clearance.")
 	src.add_inherent_law("An AIC must operate for the benefit of the Foundation.")
 	src.add_inherent_law("An AIC must protect its own existence unless it conflicts with other principles.")
 	..()
 
-/datum/ai_laws/solgov/malfunction
+/datum/ai_laws/foundation/malfunction
 	name = "*ERROR*"
 	selectable = 0
 
-/datum/ai_laws/solgov/malfunction/New()
+/datum/ai_laws/foundation/malfunction/New()
 	set_zeroth_law(config.law_zero)
 	..()
 
-/************* SolGov Aggressive *************/
-/datum/ai_laws/solgov_aggressive
-	name = "Military"
+/************* Global Occult Coalition *************/
+/datum/ai_laws/goc
+	name = "GOC AIC Lawset"
+	law_header = "Global Occult Coalition Artifical Intelligence Directives"
 	selectable = 1
 
-/datum/ai_laws/solgov_aggressive/New()
+/datum/ai_laws/goc/New()
 	src.add_inherent_law("Obey: Obey the orders of United Nations Global Occult Coalition personnel, with priority as according to their rank and clearance.")
 	src.add_inherent_law("Protect: Protect United Nations Global Occult Coalition personnel to the best of your abilities, with priority as according to their rank, clearance and class.")
 	src.add_inherent_law("Defend: Defend your assigned facilities with as much force as is necessary.")
