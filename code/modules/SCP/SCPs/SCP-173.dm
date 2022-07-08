@@ -42,7 +42,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/breach_cooldown
 
 /mob/living/scp_173/Initialize()
-	..()
 	GLOB.scp173s += src
 	defecation_cooldown = world.time + 5 MINUTES // Give everyone some time to prepare
 	spawn_area = get_area(src)
@@ -51,8 +50,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 	add_language(LANGUAGE_GUTTER, FALSE)
 	add_language(LANGUAGE_SIGN, FALSE)
 	add_language(LANGUAGE_ENGLISH, FALSE)
+	return ..()
 
 /mob/living/scp_173/Destroy()
+	next_blinks = null
 	GLOB.scp173s -= src
 	..()
 
@@ -118,6 +119,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 		if(!istype(L, /mob/living/carbon/human))
 			continue
 		var/mob/living/carbon/human/H = L
+		if(next_blinks[H] == null)
+			next_blinks[H] = world.time + rand(5 SECONDS, 10 SECONDS) // Just encountered SCP 173
 		if(H.SCP)
 			continue
 		if(is_blind(H) || H.eye_blind > 0)
@@ -270,7 +273,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		visible_message("<span class = 'danger'>[H] opens the cage!</span>")
 		playsound(loc, 'sound/machines/bolts_up.ogg', 50, 1)
 		for(var/mob/living/L in contents)
-			L.forceMove(get_step(src, dir))
+			L.forceMove(get_turf(src))
 		underlays.Cut()
 		name = initial(name)
 
@@ -282,7 +285,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		visible_message("<span class = 'danger'>[user] opens the cage from the inside!</span>")
 		playsound(loc, 'sound/machines/bolts_up.ogg', 50, 1)
 		for(var/mob/living/L in contents)
-			L.forceMove(get_step(src, dir))
+			L.forceMove(get_turf(src))
 		underlays.Cut()
 		name = initial(name)
 

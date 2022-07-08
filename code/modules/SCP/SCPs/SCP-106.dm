@@ -53,8 +53,9 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	GLOB.scp106s |= src
 
 /mob/living/carbon/human/scp106/Destroy()
+	target = null
 	GLOB.scp106s -= src
-	..()
+	return ..()
 
 
 /mob/living/carbon/human/scp106/proc/update_stuff_PD()

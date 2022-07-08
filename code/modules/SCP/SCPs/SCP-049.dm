@@ -62,8 +62,11 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	)
 
 /mob/living/carbon/human/scp049/Destroy()
+	pestilence_images = null
+	attempted_surgery_on = null
+	target = null
 	GLOB.scp049s -= src
-	. = ..()
+	return ..()
 
 /mob/living/carbon/human/scp049/Life()
 	..()
@@ -71,9 +74,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		addtimer(CALLBACK(src, .proc/see_disease), 5 SECONDS) //only occasionally see the disease, less deadly. TODO: containment mechanics
 	if(anger==100)
 		angry = TRUE
-
-
-#warn work on anger system
 
 /mob/living/carbon/human/scp049/Login()
 	. = ..()

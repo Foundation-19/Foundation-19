@@ -43,6 +43,11 @@
 	emote_hear = list("makes a faint groaning sound")
 	emote_see = list("shuffles around aimlessly", "shivers")
 
+/mob/living/simple_animal/hostile/scp096/Destroy()
+	kill_list = null
+	examine_urge_list = null
+	return ..()
+
 /mob/living/simple_animal/hostile/scp096/Life()
 	if(hibernate)
 		return
@@ -294,7 +299,7 @@
 
 /mob/living/simple_animal/hostile/scp096/proc/murder(var/mob/living/T)
 
-	if(T && T in kill_list)
+	if(T in kill_list)
 		T.loc = src.loc
 		visible_message("<span class='danger'>[src] grabs [T]!</span>")
 		dir = 2
