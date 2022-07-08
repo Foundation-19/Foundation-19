@@ -233,6 +233,15 @@
 	possible_transfer_amounts = "5;10;15;30"
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 
+/obj/item/reagent_containers/glass/beaker/vial/scp008
+	name = "SCP-008"
+	desc = "A small glass vial, this one looks rather... violent?"
+
+/obj/item/reagent_containers/glass/beaker/vial/scp008/New()
+	..()
+	reagents.add_reagent(/datum/reagent/zombie, 30)
+	update_icon()
+
 /obj/item/reagent_containers/glass/beaker/insulated
 	name = "insulated beaker"
 	desc = "A glass beaker surrounded with black insulation."
