@@ -46,6 +46,7 @@
 		/obj/item/storage/box/encryptionkeys/sec,
 		/obj/item/clothing/shoes/dutyboots,
 //		/obj/item/device/radio/headset/heads/commsofficer
+		/obj/item/paper/monitorkey,
 	)
 
 /obj/structure/closet/secure_closet/administration/commstech
@@ -66,4 +67,5 @@
 		/obj/item/folder/blue,
 		/obj/item/clothing/shoes/dutyboots,
 //		/obj/item/device/radio/headset/commsdispatcher
+		/obj/item/storage/belt/utility/full,
 	)
