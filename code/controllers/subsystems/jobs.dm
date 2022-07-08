@@ -338,7 +338,7 @@ SUBSYSTEM_DEF(jobs)
 			give_random_job(player, mode)
 	// For those who wanted to be assistant if their preferences were filled, here you go.
 	for(var/mob/new_player/player in unassigned_roundstart)
-		if(player.client.prefs.alternate_option == BE_ASSISTANT)
+		if(player.client.prefs.alternate_option == BE_CLASS_D)
 			var/datum/job/ass = DEFAULT_JOB_TYPE
 			if((GLOB.using_map.flags & MAP_HAS_BRANCH) && player.client.prefs.branches[initial(ass.title)])
 				var/datum/mil_branch/branch = mil_branches.get_branch(player.client.prefs.branches[initial(ass.title)])

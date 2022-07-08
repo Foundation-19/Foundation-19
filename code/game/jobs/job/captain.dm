@@ -143,10 +143,10 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	total_positions = 1
 	spawn_positions = 1
 
-	supervisors = "the Research Director"
+	supervisors = "the Site Director"
 	economic_power = 4
-	minimal_player_age = 5
-	ideal_character_age = 30
+	minimal_player_age = 20
+	ideal_character_age = 45
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/archivist
 	allowed_branches = list(
 		/datum/mil_branch/civilian
@@ -158,15 +158,23 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 		..()
 
 	access = list(
+		access_civ_comms,
+		access_sci_comms,
+		access_med_comms,
+		access_research,
+		access_keyauth,
+		access_adminlvl1,
+		access_adminlvl2,
+		access_adminlvl3,
+		access_adminlvl4,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,
 		access_sciencelvl4,
-		access_adminlvl1,
-		access_adminlvl2,
-		access_adminlvl3,
-		access_securitylvl1,
-		access_medicallvl1
+		access_medicallvl1,
+		access_medicallvl2,
+		access_medicallvl3,
+		access_medicallvl4
 	)
 
 	minimal_access = list()

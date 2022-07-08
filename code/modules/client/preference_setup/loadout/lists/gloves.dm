@@ -3,7 +3,7 @@
 	slot = slot_gloves
 	sort_category = "Gloves and Handwear"
 	category = /datum/gear/gloves
-	denied_roles = list(/datum/job/assistant)
+	denied_roles = list(/datum/job/classd)
 
 /datum/gear/gloves/colored
 	display_name = "gloves, colored"

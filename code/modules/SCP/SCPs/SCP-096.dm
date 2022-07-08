@@ -24,6 +24,7 @@
 	var/obj/machinery/atmospherics/unary/vent_pump/entry_vent //Graciously stolen from spider code
 
 	var/list/kill_list = list() //list of people this guy is about to murder
+	var/list/target_blacklist = list(/mob/living/carbon/human/scp343) //List of mob types exempt from 049s targetting.
 	var/list/examine_urge_list = list() //tracks urge to examine
 	var/list/examine_urge_values = list()
 	var/target //current dude this guy is targeting
@@ -83,13 +84,13 @@
 
 //Check if any carbon mob can see us
 /mob/living/simple_animal/hostile/scp096/proc/check_los()
-
 	for(var/mob/living/carbon/human/H in viewers(src, null))
 		if(H in kill_list)
 			continue
 		if(H.stat || H.equipment_tint_total == TINT_BLIND)
 			continue
-
+		if(H.type in target_blacklist)
+			continue
 		var/observed = 0
 		var/eye_contact = 0
 
@@ -293,7 +294,7 @@
 
 /mob/living/simple_animal/hostile/scp096/proc/murder(var/mob/living/T)
 
-	if(T)
+	if(T && T in kill_list)
 		T.loc = src.loc
 		visible_message("<span class='danger'>[src] grabs [T]!</span>")
 		dir = 2
@@ -441,9 +442,9 @@
 /mob/living/simple_animal/hostile/scp096/ex_act(var/severity)
 	var/damage = 0
 	switch (severity)
-		if (1.0)
+		if(1.0)
 			damage = 500
-		if (2.0)
+		if(2.0)
 			damage = 60
 		if(3.0)
 			damage = 30

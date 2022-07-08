@@ -345,7 +345,7 @@
 	l_pocket = /obj/item/device/radio
 	id_types = list(/obj/item/card/id/archivist)
 	back = /obj/item/storage/backpack/satchel
-	l_ear = /obj/item/device/radio/headset/headset_com
+	l_ear = /obj/item/device/radio/headset/headset_arch
 
 /decl/hierarchy/outfit/job/site90/crew/civ/gocrep
 	name = OUTFIT_JOB_NAME("Global Occult Coalition Representative")

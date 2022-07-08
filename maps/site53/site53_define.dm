@@ -41,7 +41,7 @@
 
 //	evac_controller_type = /datum/evacuation_controller/site
 
-	default_law_type = /datum/ai_laws/solgov
+	default_law_type = /datum/ai_laws/foundation
 	use_overmap = 0
 	num_exoplanets = 0
 	planet_size = list(129,129)

@@ -4626,7 +4626,7 @@
 	dir = 8
 	},
 /obj/item/aiModule/robocop,
-/obj/item/aiModule/solgov_aggressive,
+/obj/item/aiModule/goc,
 /turf/simulated/floor/bluegrid,
 /area/synth/borg_upload)
 "jH" = (
@@ -17049,7 +17049,7 @@
 /obj/structure/table/rack{
 	dir = 8
 	},
-/obj/item/aiModule/solgov,
+/obj/item/aiModule/foundation,
 /obj/structure/window/reinforced{
 	dir = 8
 	},

@@ -4,7 +4,7 @@
 	icon_state = "securityrobot"
 	modtype = "Security"
 	lawchannel = "State"
-	laws = /datum/ai_laws/syndicate_override
+	laws = /datum/ai_laws/insurgency_override
 	idcard = /obj/item/card/id/syndicate
 	module = /obj/item/robot_module/syndicate
 	silicon_radio = /obj/item/device/radio/borg/syndicate
@@ -21,8 +21,8 @@
 	cell = /obj/item/cell/super
 	pitch_toggle = FALSE
 
-/mob/living/silicon/robot/combat/nt
-	laws = /datum/ai_laws/nanotrasen_aggressive
+/mob/living/silicon/robot/combat/foundation
+	laws = /datum/ai_laws/foundation_aggressive
 	idcard = /obj/item/card/id/centcom/ERT
 	silicon_radio = /obj/item/device/radio/borg/ert
 
