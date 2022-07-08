@@ -652,6 +652,7 @@
 #include "code\game\jobs\job\captain.dm"
 #include "code\game\jobs\job\civilian.dm"
 #include "code\game\jobs\job\civilian_chaplain.dm"
+#include "code\game\jobs\job\classd.dm"
 #include "code\game\jobs\job\engineering.dm"
 #include "code\game\jobs\job\job.dm"
 #include "code\game\jobs\job\medical.dm"
