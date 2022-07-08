@@ -12,6 +12,12 @@
 	icon_state = "bluespace"
 	desc = "Looks like infinity."
 
+/turf/unsimulated/floor/sky
+	name = "\improper the sky"
+	icon_state = "sky"
+	desc = "Oh boy, that's high..."
+	density = TRUE
+
 /turf/unsimulated/mask
 	name = "mask"
 	icon = 'icons/turf/walls.dmi'
