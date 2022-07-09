@@ -158,15 +158,15 @@ english_only - whether to use traditional english letters only (for use in NanoU
 					if("s")
 						newletter = "$"
 					if("e")
-						newletter = "�"
+						newletter = "£"
 					if("w")
-						newletter = "�"
+						newletter = "ø"
 					if("y")
-						newletter = "�"
+						newletter = "¡"
 					if("x")
-						newletter = "�"
+						newletter = "æ"
 					if("u")
-						newletter = "�"
+						newletter = "µ"
 		else
 			if(prob(0.2 * distortion))
 				newletter = " *crackle* "
