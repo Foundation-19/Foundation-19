@@ -1,6 +1,6 @@
 //This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:32
 
-proc/Intoxicated(phrase)
+/proc/Intoxicated(phrase)
 	phrase = html_decode(phrase)
 	var/leng=length(phrase)
 	var/counter=length(phrase)
@@ -8,22 +8,29 @@ proc/Intoxicated(phrase)
 	var/newletter=""
 	while(counter>=1)
 		newletter=copytext(phrase,(leng-counter)+1,(leng-counter)+2)
-		if(rand(1,3)==3)
-			if(lowertext(newletter)=="o")	newletter="u"
-			if(lowertext(newletter)=="s")	newletter="ch"
-			if(lowertext(newletter)=="a")	newletter="ah"
-			if(lowertext(newletter)=="c")	newletter="k"
+		if(rand(1,3) == 3)
+			if(lowertext(newletter) == "o")
+				newletter = "u"
+			if(lowertext(newletter) == "s")
+				newletter = "ch"
+			if(lowertext(newletter) == "a")
+				newletter="ah"
+			if(lowertext(newletter) == "c")
+				newletter = "k"
 		switch(rand(1,7))
-			if(1,3,5,8)	newletter="[lowertext(newletter)]"
-			if(2,4,6,15)	newletter="[uppertext(newletter)]"
-			if(7)	newletter+="'"
+			if(1,3,5)
+				newletter = "[lowertext(newletter)]"
+			if(2,4,6)
+				newletter = "[uppertext(newletter)]"
+			if(7)
+				newletter += "'"
 			//if(9,10)	newletter="<b>[newletter]</b>"
 			//if(11,12)	newletter="<big>[newletter]</big>"
 			//if(13)	newletter="<small>[newletter]</small>"
 		newphrase+="[newletter]";counter-=1
 	return newphrase
 
-proc/NewStutter(phrase,stunned)
+/proc/NewStutter(phrase,stunned)
 	phrase = html_decode(phrase)
 
 	var/list/split_phrase = splittext(phrase," ") //Split it up into words.
@@ -59,10 +66,10 @@ proc/NewStutter(phrase,stunned)
 
 	return sanitize(jointext(split_phrase," "))
 
-proc/Stagger(mob/M,d) //Technically not a filter, but it relates to drunkenness.
+/proc/Stagger(mob/M,d) //Technically not a filter, but it relates to drunkenness.
 	step(M, pick(d,turn(d,90),turn(d,-90)))
 
-proc/Ellipsis(original_msg, chance = 50)
+/proc/Ellipsis(original_msg, chance = 50)
 	if(chance <= 0) return "..."
 	if(chance >= 100) return original_msg
 
@@ -89,7 +96,7 @@ distortion_speed - multiplier for the chance increase.
 distortion - starting distortion.
 english_only - whether to use traditional english letters only (for use in NanoUI)
 */
-proc/RadioChat(mob/living/user, message, distortion_chance = 60, distortion_speed = 1, distortion = 1, english_only = 0)
+/proc/RadioChat(mob/living/user, message, distortion_chance = 60, distortion_speed = 1, distortion = 1, english_only = 0)
 	var/datum/language/language
 	if(user)
 		language = user.get_default_language()
@@ -134,14 +141,14 @@ proc/RadioChat(mob/living/user, message, distortion_chance = 60, distortion_spee
 					if(english_only)
 						newletter += "*"
 					else
-						newletter = pick("¯", "–", "%", "Ê", "µ")
+						newletter = pick("√∏", "√ê", "%", "√¶", "¬µ")
 				distortion += 0.5 * distortion_speed
 			else if(prob(0.75 * distortion)) // Incomprehensible
 				newletter = pick("<", ">", "!", "$", "%", "^", "&", "*", "~", "#")
 				distortion += 0.75 * distortion_speed
 			else if(prob(0.05 * distortion)) // Total cut out
 				if(!english_only)
-					newletter = "¶w°ºbª%> -BZZT-"
+					newletter = "¬¶w¬°¬ºb¬ª%> -BZZT-"
 				else
 					newletter = "srgt%$hjc< -BZZT-"
 				new_message += newletter
@@ -151,15 +158,15 @@ proc/RadioChat(mob/living/user, message, distortion_chance = 60, distortion_spee
 					if("s")
 						newletter = "$"
 					if("e")
-						newletter = "£"
+						newletter = "¬£"
 					if("w")
-						newletter = "¯"
+						newletter = "√∏"
 					if("y")
-						newletter = "°"
+						newletter = "¬°"
 					if("x")
-						newletter = "Ê"
+						newletter = "√¶"
 					if("u")
-						newletter = "µ"
+						newletter = "¬µ"
 		else
 			if(prob(0.2 * distortion))
 				newletter = " *crackle* "
@@ -169,4 +176,3 @@ proc/RadioChat(mob/living/user, message, distortion_chance = 60, distortion_spee
 		new_message += newletter
 		lentext += 1
 	return new_message
-
