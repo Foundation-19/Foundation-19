@@ -200,7 +200,7 @@
 			new /obj/structure/bed/nest(loc)
 	return
 
-mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in oview())
+/mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in oview())
 	set name = "Infest (500)"
 	set desc = "Link a victim to the hivemind."
 	set category = "Abilities"

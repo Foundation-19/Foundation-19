@@ -466,7 +466,7 @@
 /mob/new_player/show_message(msg, type, alt, alt_type)
 	return
 
-mob/new_player/MayRespawn()
+/mob/new_player/MayRespawn()
 	return 1
 
 /mob/new_player/touch_map_edge()

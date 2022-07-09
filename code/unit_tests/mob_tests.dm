@@ -235,27 +235,27 @@ proc/damage_check(var/mob/living/M, var/damage_type)
 // Human damage check.
 // =================================================================
 
-datum/unit_test/mob_damage/brute
+/datum/unit_test/mob_damage/brute
 	name = "MOB: Human Brute damage check"
 	damagetype = BRUTE
 
-datum/unit_test/mob_damage/fire
+/datum/unit_test/mob_damage/fire
 	name = "MOB: Human Fire damage check"
 	damagetype = BURN
 
-datum/unit_test/mob_damage/tox
+/datum/unit_test/mob_damage/tox
 	name = "MOB: Human Toxin damage check"
 	damagetype = TOX
 
-datum/unit_test/mob_damage/oxy
+/datum/unit_test/mob_damage/oxy
 	name = "MOB: Human Oxygen damage check"
 	damagetype = OXY
 
-datum/unit_test/mob_damage/clone
+/datum/unit_test/mob_damage/clone
 	name = "MOB: Human Clone damage check"
 	damagetype = CLONE
 
-datum/unit_test/mob_damage/halloss
+/datum/unit_test/mob_damage/halloss
 	name = "MOB: Human Halloss damage check"
 	damagetype = PAIN
 
@@ -618,7 +618,7 @@ datum/unit_test/mob_damage/halloss
 
 	for(var/mobtype in subtypesof(/mob/living))
 
-		// Humans use species for their products and are 
+		// Humans use species for their products and are
 		// difficult to properly unit test because of this.
 		if(ispath(mobtype, /mob/living/carbon/human))
 			continue
