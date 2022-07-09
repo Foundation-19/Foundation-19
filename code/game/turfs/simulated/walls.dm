@@ -77,7 +77,7 @@
 	set_max_health(max_health)
 
 	// Minimum force required to damage the wall
-	health_min_damage = material.hardness * 2.5
+	health_min_damage = material.hardness * 5
 	if (reinf_material)
 		health_min_damage += round(reinf_material.hardness * 1.25)
 	health_min_damage = round(health_min_damage / 10)

@@ -110,7 +110,12 @@
 	lore_text = "A strong, flexible alloy of iron and carbon. Probably the single most fundamentally useful and ubiquitous substance in human space."
 	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/steel
-	brute_armor = 7
+	brute_armor = 10
+	burn_armor = 5
+	integrity = 300
+	melting_point = 2000
+	weight = 18
+	hardness = MATERIAL_VERY_HARD
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
 	icon_colour = COLOR_STEEL
@@ -170,14 +175,14 @@
 	lore_text = "An alloy of steel and platinum. When regular high-tensile steel isn't tough enough to get the job done, the smart consumer turns to frankly absurd alloys of steel and platinum."
 	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/plasteel
-	integrity = 400
+	integrity = 1200
 	melting_point = 6000
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
 	icon_colour = "#a8a9b2"
 	explosion_resistance = 25
-	brute_armor = 8
-	burn_armor = 10
+	brute_armor = 20
+	burn_armor = 20
 	hardness = MATERIAL_VERY_HARD
 	weight = 23
 	stack_origin_tech = list(TECH_MATERIAL = 2)
@@ -192,11 +197,12 @@
 /material/plasteel/titanium
 	name = MATERIAL_TITANIUM
 	lore_text = "A light, strong, corrosion-resistant metal. Perfect for cladding high-velocity ballistic supply pods."
-	brute_armor = 10
-	burn_armor = 8
-	integrity = 200
+	brute_armor = 20
+	burn_armor = 15
+	integrity = 600
 	melting_point = 3000
 	weight = 18
+	hardness = MATERIAL_VERY_HARD
 	stack_type = /obj/item/stack/material/titanium
 	icon_base = "metal"
 	door_icon_base = "metal"

@@ -64,7 +64,7 @@
 
 	var/new_max_health = material.integrity
 	if(reinf_material)
-		new_max_health += 0.5 * reinf_material.integrity
+		new_max_health += 4 * reinf_material.integrity
 	set_max_health(new_max_health)
 
 	if(is_fulltile())
@@ -72,7 +72,7 @@
 
 	health_min_damage = material.hardness * 1.25
 	if (reinf_material)
-		health_min_damage += round(reinf_material.hardness * 0.625)
+		health_min_damage += round(reinf_material.hardness * 0.7)
 	health_min_damage = round(health_min_damage / 10)
 
 	if (constructed)
