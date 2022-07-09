@@ -15,9 +15,6 @@
 
 	genders = list(MALE)
 
-	// immune to viruses
-//	virus_immune = TRUE
-
 	// icon overrides
 	icobase = null
 	deform = null

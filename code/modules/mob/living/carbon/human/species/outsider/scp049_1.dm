@@ -1,9 +1,8 @@
 #define SPECIES_SCP049_1 "SCP-049-1"
 #define ANTAG_SCP049_1 "SCP-049-1"
-#define LANGUAGE_SCP049_1 "Zombie"
 
 /datum/species/scp049_1
-	name = "SCP-049-1"
+	name = SPECIES_049_1
 	name_plural = "SCP-049-1s"
 	slowdown = 15
 	blood_color = "#622a37"
@@ -29,6 +28,7 @@
 	has_fine_manipulation = FALSE
 	unarmed_types = list(/datum/unarmed_attack/bite/sharp/scp049_1)
 	move_intents = list(/decl/move_intent/creep)
+	inherent_verbs = list(/mob/living/carbon/proc/consume2)
 	var/heal_rate = 1 // Regen.
 	var/mob/living/carbon/human/target = null
 	var/list/obstacles = list(
@@ -46,12 +46,11 @@
 		/obj/machinery/door
 	)
 
+
 /datum/species/scp049_1/handle_post_spawn(mob/living/carbon/human/H)
 	H.mutations |= MUTATION_CLUMSY
 	H.mutations |= MUTATION_FERAL
-	H.mutations |= MUTATION_XRAY
 	H.mutations |= mNobreath //Byond doesn't like adding them all in one OR statement :(
-	H.verbs += /mob/living/carbon/proc/consume2
 	H.move_intents = list(/decl/move_intent/creep) //Zooming days are over
 	H.a_intent = "harm"
 	H.move_intent = new /decl/move_intent/creep
@@ -62,19 +61,9 @@
 	H.set_see_in_dark(8)
 	H.set_see_invisible(SEE_INVISIBLE_LEVEL_TWO)
 
-	H.languages = list()
-	H.add_language(LANGUAGE_SCP049_1)
-
-	H.sleeping = 0
-	H.resting = 0
-	H.weakened = 0
-
 	H.move_intent.move_delay = 6
-	H.stat = CONSCIOUS
 
-	if (H.head)
-		qdel(H.head) //Remove helmet so headshots aren't impossible
-	..()
+	return ..()
 
 /datum/species/scp049_1/handle_environment_special(mob/living/carbon/human/H)
 	if (H.stat == CONSCIOUS)
@@ -300,7 +289,6 @@
 			organ.min_broken_damage = Floor(organ.max_damage * 0.75)
 
 	resuscitate()
-	set_stat(CONSCIOUS)
 
 	if (skillset && skillset.skill_list)
 		skillset.skill_list = list()
@@ -310,8 +298,12 @@
 		skillset.skill_list[SKILL_COMBAT] = SKILL_TRAINED
 		skillset.on_levels_change()
 
-	species = all_species[SPECIES_SCP049_1]
-	species.handle_post_spawn(src)
-
+	set_species(SPECIES_049_1)
+	sleeping = FALSE
+	resting = FALSE
+	weakened = FALSE
+	set_stat(CONSCIOUS)
+	add_language(LANGUAGE_SCP049_GLOBAL, TRUE)
+	set_default_language(all_languages[LANGUAGE_SCP049_GLOBAL])
 	var/turf/T = get_turf(src)
 	playsound(T, 'sound/hallucinations/wail.ogg', 25, 1)

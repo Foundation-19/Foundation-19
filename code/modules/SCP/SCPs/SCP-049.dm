@@ -242,7 +242,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	return 3.0
 
 /mob/living/carbon/human/scp049/UnarmedAttack(mob/living/carbon/human/target)
-	if(!isscp049(target) || isscp049_1(src) || src == target)
+	if(!isscp049(target) || isspecies(src, SPECIES_049_1) || src == target)
 		return ..(target)
 	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(!target.pestilence)
@@ -258,17 +258,17 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		if(I_GRAB)
 			scp049_attack(target)
 
-/mob/living/carbon/human/scp049/attack_hand(mob/living/carbon/human/M)
-	if (!isscp049_1(M) || M.a_intent == I_HELP)
-		if (ishuman(M))
-			var/mob/living/carbon/human/H = M
+/mob/living/carbon/human/scp049/attack_hand(mob/living/carbon/human/target)
+	if (!isspecies(target, SPECIES_049_1) || target.a_intent == I_HELP)
+		if (ishuman(target))
+			var/mob/living/carbon/human/H = target
 			if (H != src)
 				target = H
 				H.pestilence = TRUE
-		return ..(M)
+		return ..(target)
 
-	if(isscp049_1(M))
-		to_chat(M, "<span class = 'danger'><big>You cannot attack your master.</big></span>")
+	if(isspecies(target, SPECIES_049_1))
+		to_chat(target, SPAN_DANGER("<big>You cannot attack your master.</big>"))
 		return
 
 /mob/living/carbon/human/scp049/bullet_act(var/obj/item/projectile/P, var/def_zone)
@@ -329,10 +329,10 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/proc/SCP_049_talk()
 	set category = "SCP-049"
 	set name = "Communicate"
-	if (isscp049(src) || isscp049_1(src))
-		var/say = sanitize(input(src, "Communicate what?") as text)
-		for (var/M in GLOB.scp049s|GLOB.scp049_1s)
-			to_chat(M,"<em><strong>[real_name]</strong>: [say]</em>")
+
+	var/say = sanitize(input(src, "Communicate what?") as text)
+	for (var/M in GLOB.scp049s|GLOB.scp049_1s)
+		to_chat(M,"<em><strong>[real_name]</strong>: [say]</em>")
 
 // SCP-049 emotes
 /mob/living/carbon/human/scp049/proc/greetings()
@@ -395,7 +395,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	if(!target.pestilence)
 		to_chat(src, "<span class = 'danger'>They are not infected with the Pestilence.</span>")
 		return
-	if(isscp049_1(target))
+	if(isspecies(target, SPECIES_049_1))
 		return
 	if(!(istype(target, /mob/living/carbon/human)))
 		to_chat(src, "<span class='warning'>This is not human, and is therefore free from the disease.</span>")
@@ -425,18 +425,15 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 			curing = FALSE
 			return
 
-	target.pre_scp049_name = target.name
-	target.pre_scp049_real_name = target.real_name
-	target.pre_scp049_species = target.species.name
-	target.is_scp_instance = TRUE
-	target.scp_049_instance = TRUE
-	target.undead()
+	///target.pre_scp049_name = target.name
+	//target.pre_scp049_real_name = target.real_name
+	//target.pre_scp049_species = target.species.name
+	//target.is_scp_instance = TRUE
+
 	target.visible_message("<span class = 'danger'><big>The lifeless corpse of [target.pre_scp049_name] begins to convulse violently!</big></span>")
-	target.name = target.real_name
-	target.rejuvenate()
-	target.verbs += /mob/living/carbon/human/proc/SCP_049_talk
 	GLOB.scp049_1s += target
 	target.pestilence = FALSE
+	target.undead()
 	to_chat(target, "<span class='danger'>You feel the last of your mind drift away...</span>")
 	to_chat(src, "<span class='notice'>You have cured [target].</span>")
 	curing = FALSE
