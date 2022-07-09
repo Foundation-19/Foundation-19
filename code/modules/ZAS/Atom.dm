@@ -40,20 +40,20 @@
 // AIR_BLOCKED - Blocked
 // ZONE_BLOCKED - Not blocked, but zone boundaries will not cross.
 // BLOCKED - Blocked, zone boundaries will not cross even if opened.
-atom/proc/c_airblock(turf/other)
+/atom/proc/c_airblock(turf/other)
 	#ifdef ZASDBG
 	ASSERT(isturf(other))
 	#endif
 	return (AIR_BLOCKED*!CanPass(null, other, 0, 0))|(ZONE_BLOCKED*!CanPass(null, other, 1.5, 1))
 
 
-turf/c_airblock(turf/other)
+/turf/c_airblock(turf/other)
 	#ifdef ZASDBG
 	ASSERT(isturf(other))
 	#endif
 	if(((blocks_air & AIR_BLOCKED) || (other.blocks_air & AIR_BLOCKED)))
 		return BLOCKED
-	
+
 	//Z-level handling code. Always block if there isn't an open space.
 	#ifdef MULTIZAS
 	if(other.z != src.z)

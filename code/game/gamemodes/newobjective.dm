@@ -1453,7 +1453,7 @@ datum
 					return 0
 				return 1
 
-datum/objective/silence
+/datum/objective/silence
 	explanation_text = "Do not allow anyone to escape the [station_name()].  Only allow the shuttle to be called when everyone is dead and your story is the only one left."
 
 	check_completion()

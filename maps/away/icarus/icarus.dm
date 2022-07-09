@@ -16,12 +16,12 @@
 	name = "[generate_planet_name()], \a [name]"
 	..()
 
-obj/effect/icarus/irradiate
+/obj/effect/icarus/irradiate
 	var/radiation_power = 20//20 Bq. Dangerous but survivable for 10-15 minutes if crew is too lazy to read away map description
 	var/datum/radiation_source/S
 	var/req_range = 100//to cover whole level
 
-obj/effect/icarus/irradiate/Initialize()
+/obj/effect/icarus/irradiate/Initialize()
 	. = ..()
 	S = new()
 	S.flat = TRUE
@@ -32,7 +32,7 @@ obj/effect/icarus/irradiate/Initialize()
 	S.update_rad_power(radiation_power)
 	radiation_repository.add_source(S)
 
-obj/effect/icarus/irradiate/Destroy()
+/obj/effect/icarus/irradiate/Destroy()
 	. = ..()
 	QDEL_NULL(S)
 
@@ -55,7 +55,7 @@ obj/effect/icarus/irradiate/Destroy()
 	name = "Planetary Navpoint #3"
 	landmark_tag = "nav_icarus_antag"
 
-obj/structure/icarus/broken_cryo
+/obj/structure/icarus/broken_cryo
 	name = "destroyed cryo sleeper"
 	desc = "A mangled cryo sleeper with evidence that someone was inside when it was crushed. It looks like you could pry it open with a crowbar."
 	icon = 'maps/away/icarus/icarus_sprites.dmi'
@@ -65,7 +65,7 @@ obj/structure/icarus/broken_cryo
 	var/closed = 1
 	var/busy = 0
 
-obj/structure/icarus/broken_cryo/attack_hand(mob/user)
+/obj/structure/icarus/broken_cryo/attack_hand(mob/user)
 	..()
 	if (closed)
 		to_chat(user, "<span class='notice'>You tug at the glass but can't open it with your hands alone.</span>")

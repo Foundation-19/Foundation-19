@@ -187,10 +187,10 @@
 				antispam = 0
 	else
 		to_chat(user, "<span class='warning'>Unlock the button first!</span>")
-obj/machinery/button/remote/blast_door/lockdown_blast_door/proc/glassremover()
+/obj/machinery/button/remote/blast_door/lockdown_blast_door/proc/glassremover()
 	glass = 0
 	return
-obj/machinery/button/remote/blast_door/lockdown_blast_door/proc/glassadder()
+/obj/machinery/button/remote/blast_door/lockdown_blast_door/proc/glassadder()
 	glass = 1
 	return
 /*

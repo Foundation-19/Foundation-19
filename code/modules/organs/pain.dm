@@ -1,15 +1,15 @@
-mob/proc/flash_pain(var/target)
+/mob/proc/flash_pain(var/target)
 	if(pain)
 		animate(pain, alpha = target, time = 15, easing = ELASTIC_EASING)
 		animate(pain, alpha = 0, time = 20)
 
-mob/var/last_pain_message
-mob/var/next_pain_time = 0
+/mob/var/last_pain_message
+/mob/var/next_pain_time = 0
 
 // message is the custom message to be displayed
 // power decides how much painkillers will stop the message
 // force means it ignores anti-spam timer
-mob/living/carbon/proc/custom_pain(var/message, var/power, var/force, var/obj/item/organ/external/affecting, var/nohalloss)
+/mob/living/carbon/proc/custom_pain(var/message, var/power, var/force, var/obj/item/organ/external/affecting, var/nohalloss)
 	if(!message || stat || !can_feel_pain() || chem_effects[CE_PAINKILLER] > power)
 		return 0
 
@@ -43,7 +43,7 @@ mob/living/carbon/proc/custom_pain(var/message, var/power, var/force, var/obj/it
 				emote(force_emote)
 	next_pain_time = world.time + (100-power)
 
-mob/living/carbon/human/proc/handle_pain()
+/mob/living/carbon/human/proc/handle_pain()
 	if(stat)
 		return
 	if(!can_feel_pain())
@@ -102,3 +102,4 @@ mob/living/carbon/human/proc/handle_pain()
 				custom_pain("Your whole body hurts badly.", getToxLoss())
 			if(100 to INFINITY)
 				custom_pain("Your body aches all over, it's driving you mad.", getToxLoss())
+				

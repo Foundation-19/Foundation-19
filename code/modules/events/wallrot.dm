@@ -1,11 +1,11 @@
-datum/event/wallrot/setup()
+/datum/event/wallrot/setup()
 	announceWhen = rand(0, 300)
 	endWhen = announceWhen + 1
 
-datum/event/wallrot/announce()
+/datum/event/wallrot/announce()
 	command_announcement.Announce("Containment breach of object class Keter detected. Structures may be contaminated with SCP-020.", "Biohazard Alert", zlevels = affecting_z)
 
-datum/event/wallrot/start()
+/datum/event/wallrot/start()
 	spawn()
 		var/turf/simulated/wall/center = null
 
