@@ -51,6 +51,7 @@
 	H.mutations |= MUTATION_CLUMSY
 	H.mutations |= MUTATION_FERAL
 	H.mutations |= mNobreath //Byond doesn't like adding them all in one OR statement :(
+	H.ChangeToHusk()
 	H.move_intents = list(/decl/move_intent/creep) //Zooming days are over
 	H.a_intent = "harm"
 	H.move_intent = new /decl/move_intent/creep
@@ -270,7 +271,6 @@
 		return
 
 	rejuvenate()
-	ChangeToHusk()
 	visible_message(SPAN_DANGER("\The [src]'s skin decays before your very eyes!"), SPAN_DANGER("Your entire body is ripe with pain as it is consumed down to flesh and bones. You ... hunger for flesh and bloods. Comply to your master."))
 	log_admin("[key_name(src)] has transformed into a 049-1!")
 

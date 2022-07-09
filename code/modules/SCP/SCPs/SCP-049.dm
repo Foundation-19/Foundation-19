@@ -1,3 +1,5 @@
+#define NEXT_EMOTE_TIME 5 SECONDS
+
 GLOBAL_LIST_EMPTY(scp049s)
 GLOBAL_LIST_EMPTY(scp049_1s)
 
@@ -6,24 +8,16 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	SCP = /datum/scp/scp_049
 	icon = 'icons/SCP/scp-049.dmi'
 	icon_state = null
-	var/list/attempted_surgery_on = list()
 	var/list/pestilence_images = list()
-	var/mob/living/carbon/human/target = null
-	var/next_emote = -1
 	icon_state = ""
 	var/contained = TRUE
-	var/curing = FALSE //we doing gods work or nah?
-	var/chasing_sound = FALSE
-	var/anger = 0
-	var/angry = FALSE
+	var/list/infected_players = list() // List of players infected with the pestillence
+	var/emote_cooldown = 0 // How long before next emote
 
 /datum/scp/scp_049
 	name = "SCP-049"
 	designation = "049"
 	classification = EUCLID
-
-/mob/living/carbon/human/scp049/IsAdvancedToolUser()
-	return FALSE
 
 /mob/living/carbon/human/scp049/update_icons()
 	return
@@ -38,17 +32,16 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049/Initialize()
 	..()
-	add_language(LANGUAGE_ENGLISH, TRUE)
-	add_language(LANGUAGE_HUMAN_FRENCH, TRUE)
-	add_language(LANGUAGE_HUMAN_GERMAN, TRUE)
-	add_language(LANGUAGE_HUMAN_SPANISH, TRUE)
+	add_language(LANGUAGE_ENGLISH)
+	add_language(LANGUAGE_HUMAN_FRENCH)
+	add_language(LANGUAGE_HUMAN_GERMAN)
+	add_language(LANGUAGE_HUMAN_SPANISH)
 	update_languages()
 	// fix names
 	fully_replace_character_name("SCP-049")
 
 	set_species("SCP-049")
 	GLOB.scp049s += src
-	verbs += /mob/living/carbon/human/proc/SCP_049_talk
 	verbs += /mob/living/carbon/human/proc/door_049
 
 	// emotes
@@ -65,15 +58,17 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	GLOB.scp049s -= src
 	. = ..()
 
+/mob/living/carbon/human/scp049/examininate(var/mob/living/carbon/human/target)
+	. = ..()
+	if(target in infected_players)
+		to_chat(src, SPAN_DANGER("They are infected with the pestilence! I need to cure them."))
+
+/mob/living/carbon/human/scp049/proc/is_valid_curing_target(var/mob/living/carbon/human/target)
+
 /mob/living/carbon/human/scp049/Life()
 	..()
-	if(prob(50) && !contained)
+	if(prob(15) && !contained)
 		addtimer(CALLBACK(src, .proc/see_disease), 5 SECONDS) //only occasionally see the disease, less deadly. TODO: containment mechanics
-	if(anger==100)
-		angry = TRUE
-
-
-#warn work on anger system
 
 /mob/living/carbon/human/scp049/Login()
 	. = ..()
@@ -82,155 +77,25 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 			mutations.Add(MUTATION_XRAY)
 			update_mutations()
 			update_sight()
-	if(target)
-		target = null
 
 /mob/living/carbon/human/scp049/Logout()
 	. = ..()
 	if(mind)
 		mind = null
-	if(target)
-		target = null
 
 /mob/living/carbon/human/scp049/proc/see_disease()
+	for(var/mob/living/carbon/human/H in view(15, src))
+		if(prob(5))
+			infected_players += H
 	if (client)
 		client.images -= pestilence_images
 		for (var/image in pestilence_images)
 			qdel(image)
 		pestilence_images.Cut()
 		for(var/mob/living/carbon/human/H in view(15, src))
-			if(H.pestilence)
+			if(H in infected_players)
 				pestilence_images += image('icons/SCP/scp-049.dmi', H, "pestilence", MOB_LAYER+0.01)
 		client.images |= pestilence_images
-		if(!angry)
-			anger += 5
-
-
-/mob/living/carbon/human/scp049/proc/Attack_Voice_Line() //for when we're up to no good!
-	var/voiceline = list('sound/scp/voice/SCP049_1.ogg','sound/scp/voice/SCP049_2.ogg','sound/scp/voice/SCP049_3.ogg','sound/scp/voice/SCP049_4.ogg','sound/scp/voice/SCP049_5.ogg')
-	playsound(src, pick(voiceline), 30)
-
-/mob/living/carbon/human/scp049/proc/getTarget()
-	if(client)
-		target = null
-		return target
-	if(MUTATION_XRAY in mutations) //dont let the ai see through walls
-		mutations.Remove(MUTATION_XRAY)
-		update_mutations()
-		update_sight()
-	if(target == src)
-		target = null
-		return target
-	if(target && !(target in view(10, src))) //if they get away, they get away
-		target = null
-		return target
-	if (!target || target.stat == DEAD)
-		var/list/possible_targets = list()
-		for(var/mob/living/carbon/human/L in view(10, src))
-			if(!(istype(L, /mob/living/carbon/human/scp049)) && !(L.scp_049_instance))
-				if(L.stat != DEAD)
-					possible_targets += L
-		CHECK_TICK
-		var/attempts = 0
-		while (++attempts <= 3)
-			for (var/living in possible_targets)
-				var/mob/living/L = living
-				switch (attempts)
-					if (1)
-						// pick the best target, a human in our prefered age range
-						if (ishuman(L))
-							var/mob/living/carbon/human/H = L
-							if (H.age >= 10 && H.age <= 25)
-								target = H
-								return target
-					if (2)
-						// pick any human target
-						if (ishuman(L))
-							target = L
-							return target
-					if (3)
-						// pick any target
-						target = L
-						return target
-	return target
-
-/mob/living/carbon/human/scp049/proc/pursueTarget()
-	if(client)
-		return FALSE
-	walk(src, null)
-	addtimer(CALLBACK(src, .proc/getTarget), 3 SECONDS)
-
-	if(!target)
-		return FALSE
-
-	//human nearby? well are they infected? if so make them regret it
-	if(target.pestilence && !chasing_sound && !contained)
-		chasing_sound = TRUE
-		target.playsound_local(src, 'sound/scp/chase/049_chase.ogg', 50, 0)
-		addtimer(CALLBACK(src, .proc/SCP049_Chase_Music), 23 SECONDS)
-	//human nearby? wander up to them
-	if (target && !(target in orange(1, src)))
-		walk_to(src, target, 1,10,0.1)
-		CHECK_TICK
-		return TRUE
-
-	walk(src, null)
-	if(!target.pestilence)
-		target = null
-		return FALSE
-
-	//below is the part where they're being chased with lethal intent and him running up to them is to do his good work
-	SCP049_Chase_Music()
-
-	if(check_nearby())
-		to_chat(target, "<span class = 'danger'>You feel the life draining from your body! You can't move!</span>")
-		scp049_attack(target)
-
-
-	CHECK_TICK
-
-	return TRUE
-
-/mob/living/carbon/human/scp049/proc/SCP049_Chase_Music(mob/living/carbon/human/target)
-	if(!target)
-		chasing_sound = FALSE
-		return
-	chasing_sound = FALSE
-	if(target.pestilence && !chasing_sound && !contained)
-		chasing_sound = TRUE
-		target.playsound_local(src, 'sound/scp/chase/049_chase.ogg', 50, 0)
-		addtimer(CALLBACK(src, .proc/SCP049_Chase_Music), 25 SECONDS)
-
-/mob/living/carbon/human/scp049/proc/check_nearby()
-	if(!target)
-		curing = FALSE
-		return FALSE
-	if(target.Adjacent(src))
-		return TRUE
-	else
-		curing = FALSE
-		target = null
-		return FALSE
-
-/mob/living/carbon/human/scp049/proc/scp049_attack(var/mob/living/carbon/human/target)
-	if(check_nearby() && !curing)
-		if(isscp049_1(target))
-			return
-		if(!target.pestilence)
-			to_chat(src, "<span class = 'danger'>They are not infected with the Pestilence.</span>")
-			return
-		if(curing)
-			return
-
-		visible_message("<span class = 'danger'><i>[src] reaches towards [target.real_name]!</i></span>")
-		addtimer(CALLBACK(src, .proc/Attack_Voice_Line), 5 SECONDS)
-
-		target.Weaken(10)
-		if(prob(75)) //do you feel lucky, punk?
-			target.Stun(60)
-			target.emote("collapse")
-			cure_action()
-		addtimer(CALLBACK(src, .proc/check_nearby), 2 SECONDS)
 
 /mob/living/carbon/human/scp049/get_pressure_weakness()
 	return 0
@@ -245,48 +110,25 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	if(!isscp049(target) || isspecies(src, SPECIES_049_1) || src == target)
 		return ..(target)
 	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	if(!target.pestilence)
-		to_chat(src, "<span class = 'danger'>They are not infected with the Pestilence.</span>")
-		return
 	if(isscp343(target))
 		to_chat(src, "<span class='warning'> You refrain from curing god.</span>")
 		return
-	switch(src.a_intent)
+	switch(a_intent)
 		if(I_HELP)
 			to_chat(src, "<span class='warning'>You refrain from curing as your intent is set to help.</span>")
 			return
 		if(I_GRAB)
-			scp049_attack(target)
-
-/mob/living/carbon/human/scp049/attack_hand(mob/living/carbon/human/target)
-	if (!isspecies(target, SPECIES_049_1) || target.a_intent == I_HELP)
-		if (ishuman(target))
-			var/mob/living/carbon/human/H = target
-			if (H != src)
-				target = H
-				H.pestilence = TRUE
-		return ..(target)
+			//scp049_attack(target)
+			return
 
 	if(isspecies(target, SPECIES_049_1))
-		to_chat(target, SPAN_DANGER("<big>You cannot attack your master.</big>"))
+		to_chat(target, SPAN_DANGER("They are already cured."))
 		return
 
 /mob/living/carbon/human/scp049/bullet_act(var/obj/item/projectile/P, var/def_zone)
 	if (getBruteLoss() + getFireLoss() + getToxLoss() + getCloneLoss() >= 200)
 		return
-	if (P.damage && !P.nodamage && ishuman(P.firer))
-		var/mob/living/carbon/human/H = P.firer
-		if (H != src)
-			target = H
-			H.pestilence = TRUE
 	return ..(P, def_zone)
-
-/mob/living/carbon/human/scp049/attackby(obj/item/W, mob/user)
-	if(W.force > 0 && ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if (H != src)
-			H.pestilence = TRUE
-	return ..(W, user)
 
 /mob/living/carbon/human/proc/door_049(obj/machinery/door/A in filter_list(oview(1), /obj/machinery/door))
 	set name = "Pry Open Airlock"
@@ -325,62 +167,49 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	var/check = A.open(1)
 	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
 
-// special channel that lets SCP-049 and SCP-049-1 communicate
-/mob/living/carbon/human/proc/SCP_049_talk()
-	set category = "SCP-049"
-	set name = "Communicate"
-
-	var/say = sanitize(input(src, "Communicate what?") as text)
-	for (var/M in GLOB.scp049s|GLOB.scp049_1s)
-		to_chat(M,"<em><strong>[real_name]</strong>: [say]</em>")
-
 // SCP-049 emotes
 /mob/living/carbon/human/scp049/proc/greetings()
 	set category = "SCP-049"
 	set name = "Greetings"
-	if (world.time >= next_emote)
+	if (world.time >= emote_cooldown)
 		playsound(src, 'sound/scp/voice/SCP049_1.ogg', 30)
-		next_emote = world.time + 10
+		emote_cooldown = world.time + NEXT_EMOTE_TIME
 
 /mob/living/carbon/human/scp049/proc/yet_another_victim()
 	set category = "SCP-049"
 	set name = "Yet another victim"
-	if (world.time >= next_emote)
+	if (world.time >= emote_cooldown)
 		playsound(src, 'sound/scp/voice/SCP049_2.ogg', 30)
-		next_emote = world.time + 40
+		emote_cooldown = world.time + NEXT_EMOTE_TIME
 
 /mob/living/carbon/human/scp049/proc/you_are_not_a_doctor()
 	set category = "SCP-049"
 	set name = "You are not a doctor"
-	if (world.time >= next_emote)
+	if (world.time >= emote_cooldown)
 		playsound(src, 'sound/scp/voice/SCP049_3.ogg', 30)
-		next_emote = world.time + 20
 
 /mob/living/carbon/human/scp049/proc/I_sense_the_disease_in_you()
 	set category = "SCP-049"
 	set name = "I sense the disease in you"
-	if (world.time >= next_emote)
+	if (world.time >= emote_cooldown)
 		playsound(src, 'sound/scp/voice/SCP049_4.ogg', 30)
-		next_emote = world.time + 20
+		emote_cooldown = world.time + NEXT_EMOTE_TIME
 
 /mob/living/carbon/human/scp049/proc/Im_here_to_cure_you()
 	set category = "SCP-049"
 	set name = "I'm here to cure you"
-	if (world.time >= next_emote)
+	if (world.time >= emote_cooldown)
 		playsound(src, 'sound/scp/voice/SCP049_5.ogg', 30)
-		next_emote = world.time + 40
+		emote_cooldown = world.time + NEXT_EMOTE_TIME
 
 /mob/living/carbon/human/scp049/proc/cure_action()
 	set category = "SCP-049"
 	set name = "Cure Victim"
 
+	conversion_act()
 
-	//if(!G.affecting.pestilence)
-	//	return
-	curing = TRUE
-	conversion_act(target)
-
-/mob/living/carbon/human/scp049/proc/conversion_act(mob/living/carbon/human/target)
+/mob/living/carbon/human/scp049/proc/conversion_act()
+	var/mob/living/carbon/human/target
 	if(client)
 		var/obj/item/grab/G = src.get_active_hand()
 		if(!G)
@@ -392,10 +221,8 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	if(!(istype(target, /mob/living/carbon/human)))
 		to_chat(src, "<span class='warning'>This is not human, and is therefore free from the disease.</span>")
 		return
-	if(!target.pestilence)
-		to_chat(src, "<span class = 'danger'>They are not infected with the Pestilence.</span>")
-		return
 	if(isspecies(target, SPECIES_049_1))
+		to_chat(src, SPAN_WARNING("I've already cured them"))
 		return
 	if(!(istype(target, /mob/living/carbon/human)))
 		to_chat(src, "<span class='warning'>This is not human, and is therefore free from the disease.</span>")
@@ -410,7 +237,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 			if(2)
 				to_chat(src, "<span class='notice'>You gather your tools.</span>")
 				src.visible_message("<span class='warning'>[src] draws a rolled set of surgical equipment from their bag!</span>")
-				Attack_Voice_Line()
+				//Attack_Voice_Line()
 			if(3)
 				to_chat(src, "<span class='notice'>You create your first incision.</span>")
 				src.visible_message("<span class='danger'>[src] begins slicing open [target] with a scalpel!</span>")
@@ -422,19 +249,13 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 		if(!do_after(src, 15 SECONDS, target))
 			to_chat(src, "<span class='warning'>Our curing of [target] has been interrupted!</span>")
-			curing = FALSE
 			return
 
-	///target.pre_scp049_name = target.name
-	//target.pre_scp049_real_name = target.real_name
-	//target.pre_scp049_species = target.species.name
-	//target.is_scp_instance = TRUE
-
-	target.visible_message("<span class = 'danger'><big>The lifeless corpse of [target.pre_scp049_name] begins to convulse violently!</big></span>")
+	target.visible_message("<span class = 'danger'><big>The lifeless corpse of [target.name] begins to convulse violently!</big></span>")
 	GLOB.scp049_1s += target
-	target.pestilence = FALSE
 	target.undead()
+	infected_players -= target
 	to_chat(target, "<span class='danger'>You feel the last of your mind drift away...</span>")
 	to_chat(src, "<span class='notice'>You have cured [target].</span>")
-	curing = FALSE
-	getTarget()
+
+#undef NEXT_EMOTE_TIME
