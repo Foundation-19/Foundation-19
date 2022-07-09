@@ -3,7 +3,7 @@
 // they can only be read by admins and moderators.
 
 // a single admin report
-datum/admin_report/var
+/datum/admin_report/var
 	ID     // the ID of the report
 	body   // the content of the report
 	author // key of the author
@@ -13,7 +13,7 @@ datum/admin_report/var
 	offender_key // store the key of the offender
 	offender_cid // store the cid of the offender
 
-datum/report_topic_handler
+/datum/report_topic_handler
 	Topic(href,href_list)
 		..()
 		var/client/C = locate(href_list["client"])

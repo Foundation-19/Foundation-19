@@ -174,6 +174,7 @@
 	name = "Site 53"
 	landmark_tag = "car2_out"
 	base_turf = /turf/simulated/floor/exoplanet/snow
+	base_area = /area/site53/surface/surface
 /*
 /datum/shuttle/autodock/multi/antag/rescue
 	name = "Rescue"

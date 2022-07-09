@@ -101,7 +101,7 @@ GLOBAL_DATUM_INIT(wizards, /datum/antagonist/wizard, new)
 	for(var/datum/spell/spell_to_remove in mind.learned_spells)
 		remove_spell(spell_to_remove)
 
-obj/item/clothing
+/obj/item/clothing
 	var/wizard_garb = FALSE
 
 // Does this clothing slot count as wizard garb? (Combines a few checks)
@@ -126,3 +126,4 @@ Made a proc so this is not repeated 14 (or more) times.*/
 		to_chat(src, "<span class='warning'>I don't feel strong enough without my hat.</span>")
 		return 0
 	return 1
+	

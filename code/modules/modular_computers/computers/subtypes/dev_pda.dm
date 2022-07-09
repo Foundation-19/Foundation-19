@@ -18,7 +18,7 @@
 	. = ..()
 	enable_computer()
 
-obj/item/modular_computer/pda/CtrlClick(mob/user)
+/obj/item/modular_computer/pda/CtrlClick(mob/user)
 	if(!isturf(loc)) ///If we are dragging the PDA across the ground we don't want to remove the pen
 		remove_pen(user)
 	else
@@ -124,3 +124,4 @@ obj/item/modular_computer/pda/CtrlClick(mob/user)
 /obj/item/modular_computer/pda/roboticist
 	icon_state = "pda-robot"
 	icon_state_unpowered = "pda-robot"
+	
