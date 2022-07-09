@@ -2,9 +2,6 @@
 /turf/simulated/wall/prepainted
 	paint_color = COLOR_GUNMETAL
 
-/turf/simulated/wall/prepainted/New(var/newloc)
-	..(newloc,MATERIAL_STEEL)
-
 /turf/simulated/wall/r_wall/prepainted
 	paint_color = COLOR_GUNMETAL
 
