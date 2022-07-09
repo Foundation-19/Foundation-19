@@ -120,7 +120,7 @@
 
 	var/receiver_message = "<span class='pm'><span class='in'>" + create_text_tag("pm_in", "", C) + " <b>\[[recieve_pm_type] PM\]</b> <span class='name'>[get_options_bar(src, C.holder ? 1 : 0, C.holder ? 1 : 0, 1)]</span>"
 	if(C.holder)
-		receiver_message += " (<a href='?_src_=holder;take_ticket=\ref[ticket]'>[(ticket.status == TICKET_OPEN) ? "TAKE" : "JOIN"]</a>) (<a href='?src=\ref[usr];close_ticket=\ref[ticket]'>CLOSE</a>) (<a href='?_src_=holder;autoresponse=\ref[C.mob]'>AutoResponse...</a>)"
+		receiver_message += " (<a href='?_src_=holder;take_ticket=\ref[ticket]'>[(ticket.status == TICKET_OPEN) ? "TAKE" : "JOIN"]</a>) (<a href='?src=\ref[usr];close_ticket=\ref[ticket]'>CLOSE</a>)"
 		receiver_message += ": <span class='message linkify'>[generate_ahelp_key_words(C.mob, msg)]</span>"
 	else
 		receiver_message += ": <span class='message linkify'>[msg]</span>"
@@ -144,7 +144,7 @@
 		if(X == C || X == src)
 			continue
 		if(X.key != key && X.key != C.key && (X.holder.rights & R_ADMIN|R_MOD))
-			to_chat(X, "<span class='pm'><span class='other'>" + create_text_tag("pm_other", "PM:", X) + " <span class='name'>[key_name(src, X, 0, ticket)]</span> to <span class='name'>[key_name(C, X, 0, ticket)]</span> (<a href='?_src_=holder;take_ticket=\ref[ticket]'>[(ticket.status == TICKET_OPEN) ? "TAKE" : "JOIN"]</a>) (<a href='?src=\ref[usr];close_ticket=\ref[ticket]'>CLOSE</a>) (<a href='?_src_=holder;autoresponse=\ref[C.mob]'>AutoResponse...</a>): <span class='message'>[msg]</span></span></span>")
+			to_chat(X, "<span class='pm'><span class='other'>" + create_text_tag("pm_other", "PM:", X) + " <span class='name'>[key_name(src, X, 0, ticket)]</span> to <span class='name'>[key_name(C, X, 0, ticket)]</span> (<a href='?_src_=holder;take_ticket=\ref[ticket]'>[(ticket.status == TICKET_OPEN) ? "TAKE" : "JOIN"]</a>) (<a href='?src=\ref[usr];close_ticket=\ref[ticket]'>CLOSE</a>): <span class='message linkify'>[msg]</span></span></span>")
 
 /client/proc/cmd_admin_irc_pm(sender)
 	if(prefs.muted & MUTE_ADMINHELP)
