@@ -6,9 +6,9 @@
 	clicksound = "button"
 	clickvol = 20
 
-	var/list/spawn_cartridges = null // Set to a list of types to spawn one of each on New()
+	//var/list/init_disp_reagents = null
 
-	var/list/cartridges = list() // Associative, label -> cartridge
+	var/list/disp_reagents = list() // Associative, label -> reagent
 	var/obj/item/reagent_containers/container = null
 
 	var/ui_title = "Chemical Dispenser"
@@ -25,65 +25,14 @@
 
 /obj/machinery/chemical_dispenser/New()
 	..()
-
-	if(spawn_cartridges)
-		for(var/type in spawn_cartridges)
-			add_cartridge(new type(src))
-
-/obj/machinery/chemical_dispenser/examine(mob/user)
-	. = ..()
-	to_chat(user, "It has [cartridges.len] cartridges installed, and has space for [DISPENSER_MAX_CARTRIDGES - cartridges.len] more.")
-
-/obj/machinery/chemical_dispenser/proc/add_cartridge(obj/item/reagent_containers/chem_disp_cartridge/C, mob/user)
-	if(!istype(C))
-		if(user)
-			to_chat(user, "<span class='warning'>\The [C] will not fit in \the [src]!</span>")
-		return
-
-	if(cartridges.len >= DISPENSER_MAX_CARTRIDGES)
-		if(user)
-			to_chat(user, "<span class='warning'>\The [src] does not have any slots open for \the [C] to fit into!</span>")
-		return
-
-	if(!C.label)
-		if(user)
-			to_chat(user, "<span class='warning'>\The [C] does not have a label!</span>")
-		return
-
-	if(cartridges[C.label])
-		if(user)
-			to_chat(user, "<span class='warning'>\The [src] already contains a cartridge with that label!</span>")
-		return
-
-	if(user)
-		if(user.unEquip(C))
-			to_chat(user, "<span class='notice'>You add \the [C] to \the [src].</span>")
-		else
-			return
-
-	C.forceMove(src)
-	cartridges[C.label] = C
-	cartridges = sortAssoc(cartridges)
-	SSnano.update_uis(src)
-
-/obj/machinery/chemical_dispenser/proc/remove_cartridge(label)
-	. = cartridges[label]
-	cartridges -= label
-	SSnano.update_uis(src)
+	if(init_disp_reagents)
+		for(var/chem in init_disp_reagents)
+			var/datum/reagent/C = new chem //I hate myself C is null cant get it added to the list or disp_reagent index peepee
+			disp_reagents[initial(C.name)] = C
+	disp_reagents = sortAssoc(disp_reagents)
 
 /obj/machinery/chemical_dispenser/attackby(obj/item/W, mob/user)
-	if(istype(W, /obj/item/reagent_containers/chem_disp_cartridge))
-		add_cartridge(W, user)
-
-	else if(isScrewdriver(W))
-		var/label = input(user, "Which cartridge would you like to remove?", "Chemical Dispenser") as null|anything in cartridges
-		if(!label) return
-		var/obj/item/reagent_containers/chem_disp_cartridge/C = remove_cartridge(label)
-		if(C)
-			to_chat(user, "<span class='notice'>You remove \the [C] from \the [src].</span>")
-			C.dropInto(loc)
-
-	else if(istype(W, /obj/item/reagent_containers/glass) || istype(W, /obj/item/reagent_containers/food))
+	if(istype(W, /obj/item/reagent_containers/glass) || istype(W, /obj/item/reagent_containers/food))
 		if(container)
 			to_chat(user, "<span class='warning'>There is already \a [container] on \the [src]!</span>")
 			return
@@ -136,9 +85,9 @@
 		data["beakerMaxVolume"] = null
 
 	var chemicals[0]
-	for(var/label in cartridges)
-		var/obj/item/reagent_containers/chem_disp_cartridge/C = cartridges[label]
-		chemicals[++chemicals.len] = list("label" = label, "amount" = C.reagents.total_volume)
+	for(var/label in disp_reagents)
+		var/datum/reagent/R = disp_reagents[label]
+		chemicals[++chemicals.len] = list("label" = R.name)
 	data["chemicals"] = chemicals
 
 	// update the ui if it exists, returns null if no ui is passed/found
@@ -157,18 +106,18 @@
 
 	if(href_list["dispense"])
 		var/label = href_list["dispense"]
-		if(cartridges[label] && container && container.is_open_container())
-			var/obj/item/reagent_containers/chem_disp_cartridge/C = cartridges[label]
+		if(disp_reagents[label] && container && container.is_open_container())
+			var/datum/reagent/R = disp_reagents[label].type
 			var/mult = 1 + (-0.5 + round(rand(), 0.1))*(user.skill_fail_chance(core_skill, 0.3, SKILL_TRAINED))
-			C.reagents.trans_to(container, amount*mult)
+			container.reagents.add_reagent(R, amount*mult)
 			var/contaminants_left = rand(0, max(SKILL_TRAINED - user.get_skill_value(core_skill), 0)) * can_contaminate
-			var/choices = cartridges.Copy()
+			var/choices = disp_reagents.Copy()
 			while(length(choices) && contaminants_left)
 				var/chosen_label = pick_n_take(choices)
-				var/obj/item/reagent_containers/chem_disp_cartridge/choice = cartridges[chosen_label]
-				if(choice == C)
+				var/datum/reagent/choice = disp_reagents[chosen_label].type
+				if(choice == R)
 					continue
-				choice.reagents.trans_to(container, round(rand()*amount/5, 0.1))
+				container.reagents.add_reagent(choice, round(rand()*amount/5, 0.1))
 				contaminants_left--
 			return TOPIC_REFRESH
 		return TOPIC_HANDLED
