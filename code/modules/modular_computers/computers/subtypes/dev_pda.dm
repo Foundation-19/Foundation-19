@@ -124,3 +124,4 @@
 /obj/item/modular_computer/pda/roboticist
 	icon_state = "pda-robot"
 	icon_state_unpowered = "pda-robot"
+	

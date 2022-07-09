@@ -440,3 +440,4 @@ send an additional command to open the door again.
 #undef TARGET_OUTOPEN
 
 #undef SENSOR_TOLERANCE
+

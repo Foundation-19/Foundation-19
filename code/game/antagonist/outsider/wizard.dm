@@ -126,3 +126,4 @@ Made a proc so this is not repeated 14 (or more) times.*/
 		to_chat(src, "<span class='warning'>I don't feel strong enough without my hat.</span>")
 		return 0
 	return 1
+	

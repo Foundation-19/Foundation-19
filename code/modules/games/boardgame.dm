@@ -225,3 +225,4 @@
 
 /obj/item/reagent_containers/food/snacks/checker/king/red
 	piece_color ="red"
+	

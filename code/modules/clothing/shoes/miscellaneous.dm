@@ -247,3 +247,4 @@
 	name = "red high heels"
 	desc = "A pair of red high heels."
 	color = COLOR_RED
+	

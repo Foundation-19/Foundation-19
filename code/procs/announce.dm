@@ -142,3 +142,4 @@
 	if(job.department_flag & EXP)
 		return "Exploration"
 	return "Common"
+	

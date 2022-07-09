@@ -69,3 +69,4 @@
 /datum/sound_token/instrument/Destroy()
 	. = ..()
 	player = null
+	

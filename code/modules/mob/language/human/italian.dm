@@ -16,3 +16,4 @@
 		 "la", "te", "re", "ge", "de", "ne", "se", "le", "ti", "ri", "gi", "di", "ni", "si"
 	)
 	has_written_form = TRUE
+	
