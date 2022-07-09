@@ -80,8 +80,7 @@
 
 	var chemicals[0]
 	for(var/label in disp_reagents)
-		var/datum/reagent/R = disp_reagents[label]
-		chemicals[++chemicals.len] = list("label" = initial(R.name), "path" = R)
+		chemicals[++chemicals.len] = list("label" = label)
 	data["chemicals"] = chemicals
 
 	// update the ui if it exists, returns null if no ui is passed/found
