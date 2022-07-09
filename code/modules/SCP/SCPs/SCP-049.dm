@@ -1,4 +1,5 @@
 #define NEXT_EMOTE_TIME 5 SECONDS
+#define NEXT_PESTILLENCE_DIAG 5 MINUTES
 
 GLOBAL_LIST_EMPTY(scp049s)
 GLOBAL_LIST_EMPTY(scp049_1s)
@@ -13,6 +14,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	var/contained = TRUE
 	var/list/infected_players = list() // List of players infected with the pestillence
 	var/emote_cooldown = 0 // How long before next emote
+	var/pestillence_cooldown = 0 // How long until another person can be diagnosed with the disease through examining
 
 /datum/scp/scp_049
 	name = "SCP-049"
@@ -31,7 +33,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	return
 
 /mob/living/carbon/human/scp049/Initialize()
-	..()
+	. = ..()
 	add_language(LANGUAGE_ENGLISH)
 	add_language(LANGUAGE_HUMAN_FRENCH)
 	add_language(LANGUAGE_HUMAN_GERMAN)
@@ -39,6 +41,10 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	update_languages()
 	// fix names
 	fully_replace_character_name("SCP-049")
+
+	for(var/mob/living/carbon/human/player in GLOB.player_list)
+		if(istype(player) && prob(1))
+			infected_players += player
 
 	set_species("SCP-049")
 	GLOB.scp049s += src
@@ -54,20 +60,50 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		/mob/living/carbon/human/scp049/proc/cure_action
 	)
 
+
+	var/datum/spell/spl = new /datum/spell/targeted/curepestillence
+	add_spell(spl)
+	mind.learned_spells += spl
+	spl = new /datum/spell/aimed/stopheart
+	add_spell(spl)
+	mind.learned_spells += spl
+
 /mob/living/carbon/human/scp049/Destroy()
 	GLOB.scp049s -= src
 	. = ..()
 
-/mob/living/carbon/human/scp049/examininate(var/mob/living/carbon/human/target)
+/mob/living/carbon/human/scp049/examinate(var/mob/living/carbon/human/target)
 	. = ..()
+	if(prob(1) && !(target in infected_players) && is_valid_curing_target(target) && world.time >= pestillence_cooldown)
+		to_chat(src, SPAN_NOTICE("Examining them closely. You sense that they are infected with the pestilence."))
+		infected_players += target
+		pestillence_cooldown = world.time + NEXT_PESTILLENCE_DIAG
 	if(target in infected_players)
 		to_chat(src, SPAN_DANGER("They are infected with the pestilence! I need to cure them."))
+		see_disease()
 
 /mob/living/carbon/human/scp049/proc/is_valid_curing_target(var/mob/living/carbon/human/target)
+	var/valid = TRUE
+
+	if(isspecies(target, SPECIES_049_1))
+		valid = FALSE
+	if(istype(target, /mob/living/carbon/human/scp049))
+		valid = FALSE
+	if(isscp343(target))
+		valid = FALSE
+	if(!istype(target, /mob/living/carbon/human))
+		valid = FALSE
+	if(target in infected_players)
+		valid = FALSE
+
+	if(!valid)
+		return FALSE
+
+	return TRUE
 
 /mob/living/carbon/human/scp049/Life()
-	..()
-	if(prob(15) && !contained)
+	. = ..()
+	if(prob(50) && !contained)
 		addtimer(CALLBACK(src, .proc/see_disease), 5 SECONDS) //only occasionally see the disease, less deadly. TODO: containment mechanics
 
 /mob/living/carbon/human/scp049/Login()
@@ -84,9 +120,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		mind = null
 
 /mob/living/carbon/human/scp049/proc/see_disease()
-	for(var/mob/living/carbon/human/H in view(15, src))
-		if(prob(5))
-			infected_players += H
 	if (client)
 		client.images -= pestilence_images
 		for (var/image in pestilence_images)
@@ -110,9 +143,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	if(!isscp049(target) || isspecies(src, SPECIES_049_1) || src == target)
 		return ..(target)
 	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	if(isscp343(target))
-		to_chat(src, "<span class='warning'> You refrain from curing god.</span>")
-		return
 	switch(a_intent)
 		if(I_HELP)
 			to_chat(src, "<span class='warning'>You refrain from curing as your intent is set to help.</span>")
@@ -120,10 +150,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		if(I_GRAB)
 			//scp049_attack(target)
 			return
-
-	if(isspecies(target, SPECIES_049_1))
-		to_chat(target, SPAN_DANGER("They are already cured."))
-		return
 
 /mob/living/carbon/human/scp049/bullet_act(var/obj/item/projectile/P, var/def_zone)
 	if (getBruteLoss() + getFireLoss() + getToxLoss() + getCloneLoss() >= 200)
@@ -218,14 +244,11 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 		target = G.affecting
 
-	if(!(istype(target, /mob/living/carbon/human)))
-		to_chat(src, "<span class='warning'>This is not human, and is therefore free from the disease.</span>")
-		return
 	if(isspecies(target, SPECIES_049_1))
-		to_chat(src, SPAN_WARNING("I've already cured them"))
+		to_chat(src, SPAN_WARNING("They are free from the pestillence. I have already cured them."))
 		return
-	if(!(istype(target, /mob/living/carbon/human)))
-		to_chat(src, "<span class='warning'>This is not human, and is therefore free from the disease.</span>")
+
+	if(!is_valid_curing_target(target))
 		return
 
 	for(var/stage = 1, stage<=4, stage++)
@@ -259,3 +282,4 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	to_chat(src, "<span class='notice'>You have cured [target].</span>")
 
 #undef NEXT_EMOTE_TIME
+#undef NEXT_PESTILLENCE_DIAG
