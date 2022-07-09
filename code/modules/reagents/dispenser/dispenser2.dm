@@ -6,9 +6,8 @@
 	clicksound = "button"
 	clickvol = 20
 
-	//var/list/init_disp_reagents = null
+	var/list/disp_reagents = null
 
-	var/list/disp_reagents = list() // Associative, label -> reagent
 	var/obj/item/reagent_containers/container = null
 
 	var/ui_title = "Chemical Dispenser"
@@ -25,11 +24,6 @@
 
 /obj/machinery/chemical_dispenser/New()
 	..()
-	if(init_disp_reagents)
-		for(var/chem in init_disp_reagents)
-			var/datum/reagent/C = new chem //I hate myself C is null cant get it added to the list or disp_reagent index peepee
-			disp_reagents[initial(C.name)] = C
-	disp_reagents = sortAssoc(disp_reagents)
 
 /obj/machinery/chemical_dispenser/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/reagent_containers/glass) || istype(W, /obj/item/reagent_containers/food))
@@ -87,7 +81,7 @@
 	var chemicals[0]
 	for(var/label in disp_reagents)
 		var/datum/reagent/R = disp_reagents[label]
-		chemicals[++chemicals.len] = list("label" = R.name)
+		chemicals[++chemicals.len] = list("label" = initial(R.name), "path" = R)
 	data["chemicals"] = chemicals
 
 	// update the ui if it exists, returns null if no ui is passed/found
@@ -107,14 +101,14 @@
 	if(href_list["dispense"])
 		var/label = href_list["dispense"]
 		if(disp_reagents[label] && container && container.is_open_container())
-			var/datum/reagent/R = disp_reagents[label].type
+			var/datum/reagent/R = disp_reagents[label]
 			var/mult = 1 + (-0.5 + round(rand(), 0.1))*(user.skill_fail_chance(core_skill, 0.3, SKILL_TRAINED))
 			container.reagents.add_reagent(R, amount*mult)
 			var/contaminants_left = rand(0, max(SKILL_TRAINED - user.get_skill_value(core_skill), 0)) * can_contaminate
 			var/choices = disp_reagents.Copy()
 			while(length(choices) && contaminants_left)
 				var/chosen_label = pick_n_take(choices)
-				var/datum/reagent/choice = disp_reagents[chosen_label].type
+				var/datum/reagent/choice = disp_reagents[chosen_label]
 				if(choice == R)
 					continue
 				container.reagents.add_reagent(choice, round(rand()*amount/5, 0.1))
