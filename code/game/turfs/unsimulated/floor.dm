@@ -2,6 +2,7 @@
 	name = "floor"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "Floor3"
+	var/decl/flooring/flooring
 
 /turf/unsimulated/floor/is_floor()
 	return TRUE
