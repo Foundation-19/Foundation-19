@@ -554,7 +554,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 /mob/observer/eye/scp106/New()
 	. = ..()
 	visualnet = new /datum/visualnet/scp106
-	set_sight(H.sight | SEE_MOBS | SEE_OBJS | SEE_TURFS)
+	set_sight(sight | SEE_MOBS | SEE_OBJS | SEE_TURFS)
 	set_see_in_dark(8)
 
 /mob/observer/eye/scp106/EyeMove(direct)
