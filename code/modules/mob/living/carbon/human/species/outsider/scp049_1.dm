@@ -1,8 +1,7 @@
-#define SPECIES_SCP049_1 "SCP-049-1"
 #define ANTAG_SCP049_1 "SCP-049-1"
 
 /datum/species/scp049_1
-	name = SPECIES_049_1
+	name = SPECIES_SCP049_1
 	name_plural = "SCP-049-1s"
 	slowdown = 15
 	blood_color = "#622a37"
@@ -298,12 +297,12 @@
 		skillset.skill_list[SKILL_COMBAT] = SKILL_TRAINED
 		skillset.on_levels_change()
 
-	set_species(SPECIES_049_1)
+	set_species(SPECIES_SCP049_1)
 	sleeping = FALSE
 	resting = FALSE
 	weakened = FALSE
 	set_stat(CONSCIOUS)
-	add_language(LANGUAGE_SCP049_GLOBAL, TRUE)
+	add_language(LANGUAGE_SCP049_GLOBAL)
 	set_default_language(all_languages[LANGUAGE_SCP049_GLOBAL])
 	var/turf/T = get_turf(src)
 	playsound(T, 'sound/hallucinations/wail.ogg', 25, 1)

@@ -60,14 +60,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		/mob/living/carbon/human/scp049/proc/cure_action
 	)
 
-
-	var/datum/spell/spl = new /datum/spell/targeted/curepestillence
-	add_spell(spl)
-	mind.learned_spells += spl
-	spl = new /datum/spell/aimed/stopheart
-	add_spell(spl)
-	mind.learned_spells += spl
-
 /mob/living/carbon/human/scp049/Destroy()
 	GLOB.scp049s -= src
 	. = ..()
@@ -85,7 +77,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/scp049/proc/is_valid_curing_target(var/mob/living/carbon/human/target)
 	var/valid = TRUE
 
-	if(isspecies(target, SPECIES_049_1))
+	if(isspecies(target, SPECIES_SCP049_1))
 		valid = FALSE
 	if(istype(target, /mob/living/carbon/human/scp049))
 		valid = FALSE
@@ -101,11 +93,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 	return TRUE
 
-/mob/living/carbon/human/scp049/Life()
-	. = ..()
-	if(prob(50) && !contained)
-		addtimer(CALLBACK(src, .proc/see_disease), 5 SECONDS) //only occasionally see the disease, less deadly. TODO: containment mechanics
-
 /mob/living/carbon/human/scp049/Login()
 	. = ..()
 	if(client)
@@ -113,11 +100,19 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 			mutations.Add(MUTATION_XRAY)
 			update_mutations()
 			update_sight()
+		var/datum/spell/spl = new /datum/spell/targeted/curepestillence
+		add_spell(spl)
+		//mind.learned_spells += spl
+		spl = new /datum/spell/aimed/stopheart
+		add_spell(spl)
+		//mind.learned_spells += spl
 
 /mob/living/carbon/human/scp049/Logout()
 	. = ..()
 	if(mind)
 		mind = null
+		for(var/datum/spell/spl in mind.learned_spells)
+			remove_spell(spl)
 
 /mob/living/carbon/human/scp049/proc/see_disease()
 	if (client)
@@ -140,7 +135,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	return 3.0
 
 /mob/living/carbon/human/scp049/UnarmedAttack(mob/living/carbon/human/target)
-	if(!isscp049(target) || isspecies(src, SPECIES_049_1) || src == target)
+	if(!isscp049(target) || isspecies(src, SPECIES_SCP049_1) || src == target)
 		return ..(target)
 	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	switch(a_intent)
@@ -236,6 +231,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049/proc/conversion_act()
 	var/mob/living/carbon/human/target
+	var/diseased = FALSE
 	if(client)
 		var/obj/item/grab/G = src.get_active_hand()
 		if(!G)
@@ -244,42 +240,52 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 		target = G.affecting
 
-	if(isspecies(target, SPECIES_049_1))
+	if(isspecies(target, SPECIES_SCP049_1))
 		to_chat(src, SPAN_WARNING("They are free from the pestillence. I have already cured them."))
 		return
 
 	if(!is_valid_curing_target(target))
 		return
 
+	if(target in infected_players)
+		diseased = TRUE
+
 	for(var/stage = 1, stage<=4, stage++)
 		switch(stage)
 			if(1)
-				to_chat(src, "<span class='notice'>The disease has taken hold. We must work quickly...</span>")
+				if(diseased)
+					to_chat(src, "<span class='notice'>The disease has taken hold. We must work quickly...</span>")
 				src.visible_message("<span class='danger'>[src] looms over [target]!</span>")
 				target.adjustBruteLoss(25)
 			if(2)
 				to_chat(src, "<span class='notice'>You gather your tools.</span>")
 				src.visible_message("<span class='warning'>[src] draws a rolled set of surgical equipment from their bag!</span>")
-				//Attack_Voice_Line()
+				Im_here_to_cure_you()
 			if(3)
 				to_chat(src, "<span class='notice'>You create your first incision.</span>")
 				src.visible_message("<span class='danger'>[src] begins slicing open [target] with a scalpel!</span>")
 				to_chat(target, "<span class='danger'>You feel a sharp stabbing pain as your life begins to wane.</span>")
 				new /obj/effect/decal/cleanable/blood/splatter(get_turf(target), target.species.blood_color)
 			if(4)
-				to_chat(src, "<span class='notice'>You spend a great deal of time expertly curing this victim's disease.</span>")
+				if(diseased)
+					to_chat(src, "<span class='notice'>You spend a great deal of time expertly curing this victim's disease.</span>")
 				src.visible_message("<span class='danger'>[src] begins performing a horrifying procedure on [target]!</span>")
 
 		if(!do_after(src, 15 SECONDS, target))
-			to_chat(src, "<span class='warning'>Our curing of [target] has been interrupted!</span>")
+			if(diseased)
+				to_chat(src, "<span class='warning'>Our curing of [target] has been interrupted!</span>")
+			else
+				to_chat(src, SPAN_WARNING("Our surgery on [target] has been interrupted."))
 			return
 
 	target.visible_message("<span class = 'danger'><big>The lifeless corpse of [target.name] begins to convulse violently!</big></span>")
 	GLOB.scp049_1s += target
 	target.undead()
-	infected_players -= target
+	if(diseased)
+		infected_players -= target
+		to_chat(src, "<span class='notice'>You have cured [target].</span>")
 	to_chat(target, "<span class='danger'>You feel the last of your mind drift away...</span>")
-	to_chat(src, "<span class='notice'>You have cured [target].</span>")
+
 
 #undef NEXT_EMOTE_TIME
 #undef NEXT_PESTILLENCE_DIAG

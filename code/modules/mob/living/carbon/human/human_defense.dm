@@ -534,3 +534,4 @@ meteor_act
 	var/obj/item/organ/internal/heart/heart = internal_organs_by_name[BP_HEART]
 	if(heart.pulse == PULSE_NONE)
 		death()
+
