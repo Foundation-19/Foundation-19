@@ -152,7 +152,7 @@
 		to_chat(src, "<span class='warning'>Please wait for server initialization to complete...</span>")
 		return
 
-	if(!config.respawn_delay || client.holder || alert(src,"Are you sure you wish to observe? You will have to wait [config.respawn_delay] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")
+	if(!config.respawn_delay || alert(src,"Are you sure you wish to observe? You will have to wait [config.respawn_delay] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")
 		if(!client)
 			return TRUE
 		var/mob/observer/ghost/observer = new()
