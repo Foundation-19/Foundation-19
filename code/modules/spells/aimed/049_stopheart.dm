@@ -16,7 +16,7 @@
 
 /datum/spell/aimed/stopheart/cast(list/targets, mob/living/user)
 	var/mob/living/carbon/human/target = targets[1]
-	if(isspecies(target, SPECIES_SCP049_1) || isscp343(target) || istype(target))
+	if(isspecies(target, SPECIES_SCP049_1) || isscp343(target) || !istype(target))
 		failed_cast(user)
 		return FALSE
 
