@@ -137,7 +137,7 @@ var/list/flooring_cache = list()
 
 	//If we get here then its a normal floor
 	else if (T.is_floor())
-		if (istype(T,turf/unsimulated))
+		if (istype(T,/turf/unsimulated))
 			return FALSE
 		var/turf/simulated/floor/t = T
 
