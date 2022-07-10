@@ -2697,21 +2697,6 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/hallway)
-"gD" = (
-/obj/structure/table/rack,
-/obj/item/rig/ce/equipped,
-/obj/structure/window/reinforced{
-	dir = 1;
-	icon_state = "rwindow"
-	},
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/window/brigdoor/eastright,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/hallway)
 "gE" = (
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 8
@@ -36157,8 +36142,8 @@ el
 fl
 fl
 fl
+fl
 gu
-gD
 dZ
 ai
 ai
