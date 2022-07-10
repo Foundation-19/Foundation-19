@@ -86,7 +86,7 @@
 /obj/effect/shuttle_landmark/heli/mtf/start
 	name = "MTF Base"
 	landmark_tag = "nav_mtf_start"
-	base_turf = /turf/simulated/floor/tiled/dark
+	base_turf = /turf/unsimulated/floor/reinforced
 
 /obj/effect/shuttle_landmark/heli/mtf/out
 	name = "Site 53"
@@ -276,6 +276,7 @@
 /obj/effect/shuttle_landmark/supply/centcom
 	name = "Offsite"
 	landmark_tag = "nav_cargo_start"
+	base_area = /turf/unsimulated/floor/reinforced
 
 /obj/effect/shuttle_landmark/supply/station
 	name = "Hangar"
