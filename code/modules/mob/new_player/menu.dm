@@ -92,28 +92,23 @@
 
 /obj/screen/new_player/selection/join_game
 	name = "Join Game"
-	icon_state = "join_game"
+	icon_state = "joingame"
 	screen_loc = "RIGHT+2,CENTER-4"
 
-/obj/screen/new_player/selection/join_game/Initialize()
-	. = ..()
-	var/mob/new_player/player = hud.mymob
-
 /obj/screen/new_player/selection/join_game/Click()//no ready system
-	var/mob/new_player/player = usr
+	var/mob/new_player/player = hud.mymob
 	sound_to(player, 'sound/effects/menu_click.ogg')
 
-/mob/new_player/proc/join_game()
 	if(GAME_STATE != RUNLEVEL_GAME)
-		to_chat(usr, SPAN_WARNING("The round has either not started yet or already ended."))
+		to_chat(player, SPAN_WARNING("The round has either not started yet or already ended."))
 		return
 
-	if(!client.holder)
-		var/dsdiff = config.respawn_menu_delay MINUTES - (world.time - respawned_time)
+	if(!player.client.holder)
+		var/dsdiff = config.respawn_menu_delay MINUTES - (world.time - player.respawned_time)
 		if(dsdiff > 0)
-			to_chat(usr, SPAN_WARNING("You must wait [time2text(dsdiff, "mm:ss")] before rejoining."))
+			to_chat(player, SPAN_WARNING("You must wait [time2text(dsdiff, "mm:ss")] before rejoining."))
 			return
-	LateChoices() //show the latejoin job selection menu
+	player.LateChoices() //show the latejoin job selection menu
 
 /obj/screen/new_player/selection/settings
 	name = "Setup"
@@ -121,7 +116,7 @@
 	screen_loc = "RIGHT+2,CENTER-5"
 
 /obj/screen/new_player/selection/settings/Click()
-	var/mob/new_player/player = usr
+	var/mob/new_player/player = hud.mymob
 	sound_to(player, 'sound/effects/menu_click.ogg')
 	player.setupcharacter()
 
@@ -135,7 +130,7 @@
 	screen_loc = "RIGHT+2,CENTER-6"
 
 /obj/screen/new_player/selection/manifest/Click()
-	var/mob/new_player/player = usr
+	var/mob/new_player/player = hud.mymob
 	sound_to(player, 'sound/effects/menu_click.ogg')
 	if(GAME_STATE != (RUNLEVEL_GAME || RUNLEVEL_POSTGAME))
 		to_chat(player, SPAN_WARNING("The game hasn't started yet!"))
@@ -148,7 +143,7 @@
 	screen_loc = "RIGHT+2,CENTER-7"
 
 /obj/screen/new_player/selection/observe/Click()
-	var/mob/new_player/player = usr
+	var/mob/new_player/player = hud.mymob
 	sound_to(player, 'sound/effects/menu_click.ogg')
 	player.new_player_observe()
 
