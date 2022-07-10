@@ -37,6 +37,7 @@
 	latin countries have at least one big city above 1.5 million, with the remaining citizens living in rural agrarian villages. \
 	a carefree folk who see themselves closer to nature and agrarianism then most other countries."
 	economic_power = 0.25
+	language = list(LANGUAGE_HUMAN_SPANISH)
 
 /decl/cultural_info/culture/human/british
 	name = CULTURE_HUMAN_BRITISH
@@ -58,18 +59,21 @@
 	description = "You are from Germany, Austria or Western Poland. German culture is one that has been formed recently in the past 200 years through diplomacy and warfare. \
 	Most Germans are a jolly people who enjoy company with others. The German people have been reunited for a while now since the cold war and they have a very mixed past."
 	economic_power = 0.55
+	language = list(LANGUAGE_HUMAN_GERMAN)
 
 /decl/cultural_info/culture/human/italian
 	name = CULTURE_HUMAN_ITALIAN
 	description = "You are from Italy or Argentina. Italian culture is one that has been formed recently in the past 100 years through diplomacy and warfare during the late 1800's. \
 	Most Italians are expressive with their gestures and they love their family. The Italian people are a very passionate about their history in europe."
 	economic_power = 0.45
+	language = list(LANGUAGE_HUMAN_ITALIAN)
 
 /decl/cultural_info/culture/human/french
 	name = CULTURE_HUMAN_FRENCH
 	description = "You are from Quebec Canada, France or a French colony. French culture is one that is centered around fashion, cuisine, art and cinema. \
 	Most French people are known for having good etiquette but always arriving at their destination late."
 	economic_power = 0.53
+	language = list(LANGUAGE_HUMAN_FRENCH)
 
 /decl/cultural_info/culture/human/arabic
 	name = CULTURE_HUMAN_ARABIC
@@ -77,6 +81,7 @@
 	The history of the Arabic culture is vast as the sahara desert with empires and kingdoms with wealth but in modern day currently many arabic countries reside in the Cradle of Civilization. \
 	Most Middle Eastern people are known for having loyalty, endurance and pride."
 	economic_power = 0.42
+	language = list(LANGUAGE_HUMAN_ARABIC)
 
 /decl/cultural_info/culture/human/eastslavic
 	name = CULTURE_HUMAN_EASTSLAVIC
@@ -84,6 +89,7 @@
 	The history of the East-Slavic culture is one of migration and union with other Slavic states with a cruel climate. \
 	Most East Slavic people are known for having great strength in wars, cautious and conservative defenders of the status quo."
 	economic_power = 0.44
+	language = list(LANGUAGE_HUMAN_RUSSIAN)
 
 /decl/cultural_info/culture/human/chinese
 	name = CULTURE_HUMAN_CHINESE
@@ -93,6 +99,7 @@
 	The long period of industrialization in the mainland China and Taiwan has resulted in much of the population being highly educated and productive putting away the edge that western powers use to have, eager to avoid past mistakes. Most Chinese are \
 	a friendly yet cautious folk who see themselves closer to order and spirits."
 	economic_power = 0.65
+	language = list(LANGUAGE_HUMAN_CHINESE)
 
 /decl/cultural_info/culture/human/japanese
 	name = CULTURE_HUMAN_JAPANESE
@@ -101,6 +108,7 @@
 	central regions have at least one or two megaopolis which make up much of the population, with the remaining citizens living in rural towns. \
 	a issolationist people who see themselves closer to the western powers then to their neighbors."
 	economic_power = 0.70
+	language = list(LANGUAGE_HUMAN_JAPANESE)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 

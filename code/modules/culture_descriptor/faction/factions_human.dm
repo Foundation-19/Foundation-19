@@ -5,6 +5,7 @@
 	As it currenlty stands the public does not know of the Foundation and it's duty to protect the public against these SCP's.\
 	Though these SCP's have breached their containment multiple times resulting in a tragic loss of life and the public \
 	needing to undergo serious amnestic treatment."
+	language = list(LANGUAGE_ENGLISH)
 
 /decl/cultural_info/faction/scg/fleet
 	name = FACTION_FLEET

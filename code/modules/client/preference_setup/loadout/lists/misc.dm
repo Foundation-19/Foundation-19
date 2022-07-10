@@ -128,7 +128,7 @@
 	path = /obj/item/paper/travelvisa
 	denied_roles = list(/datum/job/classd)
 
-/datum/gear/passport
+/datum/gear/passport/earth
 	display_name = "passports selection"
 	description = "A selection of passports."
 	path = /obj/item/passport
