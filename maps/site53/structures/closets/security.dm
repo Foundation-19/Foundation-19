@@ -170,7 +170,9 @@
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/gun/energy/taser,
-		/obj/item/ammo_magazine/scp/mk9 = 3
+		/obj/item/ammo_magazine/scp/mk9 = 3,
+		/obj/item/clothing/head/helmet/ballistic,
+		/obj/item/clothing/suit/armor/bulletproof/vest
 	)
 
 /obj/structure/closet/secure_closet/mtf/commander
