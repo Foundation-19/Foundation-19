@@ -26676,7 +26676,7 @@
 "gbS" = (
 /obj/item/clothing/head/helmet/scp/goc,
 /obj/item/clothing/suit/armor/goc,
-/obj/item/device/radio/headset/heads/hos/gock{
+/obj/item/device/radio/headset/heads/hos/goc{
 	name = "goc grunt's headset"
 	},
 /obj/structure/closet,
@@ -30748,7 +30748,7 @@
 /obj/item/clothing/head/helmet/scp/goc,
 /obj/structure/closet,
 /obj/item/clothing/suit/armor/goc,
-/obj/item/device/radio/headset/heads/hos/gock{
+/obj/item/device/radio/headset/heads/hos/goc{
 	name = "goc grunt's headset"
 	},
 /obj/item/gun/projectile/automatic/battlerifle,
