@@ -40,8 +40,8 @@
 //		/obj/item/gun/projectile/sec/sec,
 //		/obj/item/ammo_magazine/c45m = 4,
 		/obj/item/gun/projectile/automatic/scp/p90,
-		/obj/item/ammo_magazine/scp/p90_mag = 3,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
+		/obj/item/gun/energy/taser/rifle,
 		/obj/item/ammo_magazine/box/a10mm,
 		/obj/item/handcuffs = 4,
 //		/obj/item/ammo_magazine/box/c45donor,
@@ -69,10 +69,9 @@
 	return list(
 //		/obj/item/gun/projectile/sec/sec,
 //		/obj/item/ammo_magazine/c45m = 4,
-		/obj/item/gun/projectile/automatic/scp/p90,
-		/obj/item/ammo_magazine/scp/p90_mag = 3,
+		/obj/item/gun/projectile/automatic/scp/p90
+		/obj/item/gun/energy/stunrevolver/rifle,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
-		/obj/item/ammo_magazine/box/a10mm,
 		/obj/item/handcuffs = 4,
 //		/obj/item/ammo_magazine/box/c45donor,
 //		/obj/item/ammo_magazine/box/c45donor/rubber,
@@ -92,9 +91,11 @@
 /obj/structure/closet/secure_closet/mtf/enlisted/hcz/WillContain()
 	return list(
 		/obj/item/storage/belt/holster/security/tactical,
-		/obj/item/gun/projectile/automatic/scp/m16,
-		/obj/item/ammo_magazine/scp/m16_mag = 3,
-		/obj/item/ammo_magazine/box/a556,
+		/obj/item/gun/projectile/automatic/scp/p90
+		/obj/item/gun/energy/taser/rifle,
+		/obj/item/ammo_magazine/scp/p90_mag/ = 3,
+		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
+		/obj/item/ammo_magazine/box/a10mm,
 		/obj/item/melee/telebaton,
 		/obj/item/handcuffs = 4,
 		/obj/item/storage/box/ifak,
@@ -115,6 +116,7 @@
 	return list(
 		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/gun/projectile/automatic/scp/m16,
+		/obj/item/gun/energy/stunrevolver/rifle,
 		/obj/item/ammo_magazine/scp/m16_mag = 3,
 		/obj/item/ammo_magazine/box/a556,
 		/obj/item/melee/telebaton,
@@ -167,10 +169,13 @@
 		/obj/item/ammo_magazine/box/a556,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/handcuffs = 4,
+		/obj/item/clothing/gloves/tactical/scp,
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/gun/energy/taser,
-		/obj/item/ammo_magazine/scp/mk9 = 3
+		/obj/item/ammo_magazine/scp/mk9 = 3,
+		/obj/item/clothing/head/helmet/ballistic,
+		/obj/item/clothing/suit/armor/bulletproof/vest
 	)
 
 /obj/structure/closet/secure_closet/mtf/commander
