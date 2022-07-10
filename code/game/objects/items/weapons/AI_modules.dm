@@ -399,7 +399,7 @@
 
 /******************** SCG Aggressive ********************/
 
-obj/item/aiModule/goc
+/obj/item/aiModule/goc
 	name = "\improper 'GOC' Core AI Module"
 	desc = "A 'Global Occult Coalition' Core AI Module."
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)

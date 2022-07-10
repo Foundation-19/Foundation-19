@@ -50,7 +50,7 @@ proc/process_jani_hud(var/mob/M, var/mob/Alt)
 	for (var/obj/effect/decal/cleanable/dirtyfloor in view(P.Mob))
 		P.Client.images += dirtyfloor.hud_overlay
 
-datum/arranged_hud_process
+/datum/arranged_hud_process
 	var/client/Client
 	var/mob/Mob
 	var/turf/Turf
@@ -73,7 +73,7 @@ proc/can_process_hud(var/mob/M)
 	return 1
 
 //Deletes the current HUD images so they can be refreshed with new ones.
-mob/proc/handle_hud_glasses() //Used in the life.dm of mobs that can use HUDs.
+/mob/proc/handle_hud_glasses() //Used in the life.dm of mobs that can use HUDs.
 	if(client)
 		for(var/image/hud_overlay/hud in client.images)
 			client.images -= hud
@@ -81,7 +81,7 @@ mob/proc/handle_hud_glasses() //Used in the life.dm of mobs that can use HUDs.
 	GLOB.sec_hud_users -= src
 	GLOB.jani_hud_users -= src
 
-mob/proc/in_view(var/turf/T)
+/mob/proc/in_view(var/turf/T)
 	return view(T)
 
 /mob/observer/eye/in_view(var/turf/T)

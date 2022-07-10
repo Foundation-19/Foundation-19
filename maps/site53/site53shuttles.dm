@@ -75,10 +75,13 @@
 
 /datum/shuttle/autodock/ferry/heli/mtf
 	name = "MTF Helicopter"
-	warmup_time = 40
+	sound_takeoff = 'sound/effects/helicopter.ogg'
+	warmup_time = 14
 	shuttle_area = list(/area/site53/tram/mtf)
 	waypoint_station = "nav_mtf_start"
+	landmark_transition = "nav_mtf_transition"
 	waypoint_offsite = "nav_mtf_out"
+	move_time = 39
 
 /obj/effect/shuttle_landmark/heli/mtf/start
 	name = "MTF Base"
@@ -94,6 +97,8 @@
 /obj/effect/shuttle_landmark/heli/mtf
 	name = "In transit"
 	landmark_tag = "nav_mtf_transition"
+	base_turf = /turf/unsimulated/floor/plating
+	base_area = /area/site53/surface/surface
 
 /datum/shuttle/autodock/ferry/hcz
 	name = "Heavy Containment Tram"
@@ -169,6 +174,7 @@
 	name = "Site 53"
 	landmark_tag = "car2_out"
 	base_turf = /turf/simulated/floor/exoplanet/snow
+	base_area = /area/site53/surface/surface
 /*
 /datum/shuttle/autodock/multi/antag/rescue
 	name = "Rescue"

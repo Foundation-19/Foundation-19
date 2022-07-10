@@ -18,6 +18,9 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/structure/closet/coffin/scp895/Destroy()
+	cooldown = null
+	start = null
+	users = null
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 

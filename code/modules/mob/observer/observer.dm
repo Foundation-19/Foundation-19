@@ -38,7 +38,7 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 		SSghost_images.queue_global_image_update()
 	. = ..()
 
-mob/observer/check_airflow_movable()
+/mob/observer/check_airflow_movable()
 	return FALSE
 
 /mob/observer/CanPass()
@@ -81,4 +81,3 @@ mob/observer/check_airflow_movable()
 		inertia_dir = 0
 		throwing = null
 		to_chat(src, "<span class='notice'>You cannot move further in this direction.</span>")
-

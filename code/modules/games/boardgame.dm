@@ -22,7 +22,7 @@
 	else
 		M.examinate(src)
 
-obj/item/board/attackby(obj/item/I as obj, mob/user as mob)
+/obj/item/board/attackby(obj/item/I as obj, mob/user as mob)
 	if(!addPiece(I,user))
 		..()
 
@@ -225,3 +225,4 @@ obj/item/board/attackby(obj/item/I as obj, mob/user as mob)
 
 /obj/item/reagent_containers/food/snacks/checker/king/red
 	piece_color ="red"
+	

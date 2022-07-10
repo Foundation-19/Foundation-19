@@ -40,6 +40,7 @@ ut // COMMAND
 	alt_titles = list("Head of Personnel")
 
 	access = list(
+		access_hop,
 		access_adminlvl1,
 		access_adminlvl2,
 		access_adminlvl3,

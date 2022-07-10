@@ -1,4 +1,4 @@
-datum/reagent/amnestics
+/datum/reagent/amnestics
 	name = "Amnestics"
 	description = "Amnestics are applied to remove memories from a target, often to different degrees."
 	taste_description = "something you already forgot"
@@ -27,7 +27,7 @@ datum/reagent/amnestics
 		if(prob(35))
 			if(M.dizziness <= 200)
 				M.make_dizzy(15)
-				
+
 /datum/reagent/amnestics/classa/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(14 * removed) //Brain damage. Dont fuck with memories too much.
 
@@ -49,7 +49,7 @@ datum/reagent/amnestics
 		if(prob(35))
 			if(M.dizziness <= 200)
 				M.make_dizzy(15) //will make you pretty dizzy to have your memories ripped out.
-				
+
 /datum/reagent/amnestics/classb/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(20 * removed) //Even bigger brain damage. DO NOT FUCK WITH MEMORIES.
 

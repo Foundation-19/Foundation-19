@@ -1,4 +1,4 @@
-obj/machinery/atmospherics/unary/oxygen_generator
+/obj/machinery/atmospherics/unary/oxygen_generator
 	icon = 'icons/obj/atmospherics/oxygen_generator.dmi'
 	icon_state = "intact_off"
 	density = TRUE
@@ -47,3 +47,4 @@ obj/machinery/atmospherics/unary/oxygen_generator
 				network.update = 1
 
 		return 1
+		

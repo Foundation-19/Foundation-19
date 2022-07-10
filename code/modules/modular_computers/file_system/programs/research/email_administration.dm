@@ -9,7 +9,7 @@
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE
 	nanomodule_path = /datum/nano_module/program/email_administration
-	required_access = access_engineeringlvl4
+	required_access = access_engineeringlvl3
 	category = PROG_ADMIN
 
 /datum/nano_module/program/email_administration
