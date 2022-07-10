@@ -41,7 +41,7 @@
 //		/obj/item/ammo_magazine/c45m = 4,
 		/obj/item/gun/projectile/automatic/scp/p90,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
-		/obj/item/gun/energy/taser/rifle,
+		/obj/item/gun/energy/taser,
 		/obj/item/ammo_magazine/box/a10mm,
 		/obj/item/handcuffs = 4,
 //		/obj/item/ammo_magazine/box/c45donor,
@@ -69,7 +69,7 @@
 	return list(
 //		/obj/item/gun/projectile/sec/sec,
 //		/obj/item/ammo_magazine/c45m = 4,
-		/obj/item/gun/projectile/automatic/scp/p90
+		/obj/item/gun/projectile/automatic/scp/p90,
 		/obj/item/gun/energy/stunrevolver/rifle,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
 		/obj/item/handcuffs = 4,
@@ -91,8 +91,8 @@
 /obj/structure/closet/secure_closet/mtf/enlisted/hcz/WillContain()
 	return list(
 		/obj/item/storage/belt/holster/security/tactical,
-		/obj/item/gun/projectile/automatic/scp/p90
-		/obj/item/gun/energy/taser/rifle,
+		/obj/item/gun/projectile/automatic/scp/p90,
+		/obj/item/gun/energy/taser,
 		/obj/item/ammo_magazine/scp/p90_mag/ = 3,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
 		/obj/item/ammo_magazine/box/a10mm,
