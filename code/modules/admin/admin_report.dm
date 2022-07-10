@@ -31,7 +31,7 @@ world/New()
 	report_topic_handler = new
 
 // add a new news datums
-proc/make_report(body, author, okey, cid)
+/proc/make_report(body, author, okey, cid)
 	var/savefile/Reports = new("data/reports.sav")
 	var/list/reports
 	var/lastID
@@ -56,7 +56,7 @@ proc/make_report(body, author, okey, cid)
 	to_chat(Reports["reports"], reports)
 	to_chat(Reports["lastID"], lastID)
 // load the reports from disk
-proc/load_reports()
+/proc/load_reports()
 	var/savefile/Reports = new("data/reports.sav")
 	var/list/reports
 
