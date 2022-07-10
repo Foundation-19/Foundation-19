@@ -1559,7 +1559,7 @@ var/global/floorIsLava = 0
 		if(!P.stamped)
 			P.stamped = new
 		P.stamped += /obj/item/stamp/boss
-		P.add_overlay(stampoverlay)
+		P.overlays += stampoverlay
 
 	var/obj/item/rcvdcopy
 	var/obj/machinery/photocopier/faxmachine/destination = P.destinations[1]
