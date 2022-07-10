@@ -1,27 +1,24 @@
 //This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:33
 
 /mob/new_player
+	universal_speak = TRUE
+	invisibility = 101
+	density = FALSE
+	stat = DEAD
+	movement_handlers = list()
+	anchored = TRUE	//  don't get pushed around
+	virtual_mob = null // Hear no evil, speak no evil
+
 	var/ready = 0
 	var/respawned_time = 0
 	var/spawning = 0//Referenced when you want to delete the new_player later on in the code.
 	var/totalPlayers = 0		 //Player counts for the Lobby tab
 	var/totalPlayersReady = 0
 	var/show_invalid_jobs = 0
-	universal_speak = TRUE
 
-	invisibility = 101
-
-	density = FALSE
-	stat = DEAD
-
-	movement_handlers = list()
-	anchored = TRUE	//  don't get pushed around
-
-	virtual_mob = null // Hear no evil, speak no evil
-
-/mob/new_player/New()
-	. = ..()
+/mob/new_player/Initialize()
 	verbs += /mob/proc/toggle_antag_pool
+	return ..()
 
 /mob/new_player/Stat()
 	. = ..()
@@ -91,20 +88,20 @@
 		if(client)
 			client.prefs.process_link(src, href_list)
 
-/mob/new_player/proc/AttemptLateSpawn(var/datum/job/job, var/spawning_at)
+/mob/new_player/proc/AttemptLateSpawn(datum/job/job, spawning_at)
 
 	if(src != usr)
-		return 0
+		return FALSE
 	if(GAME_STATE != RUNLEVEL_GAME)
 		to_chat(usr, "<span class='warning'>The round is either not ready, or has already finished...</span>")
-		return 0
+		return FALSE
 	if(!config.enter_allowed)
 		to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
-		return 0
+		return FALSE
 
 	if(!job || !job.is_available(client))
 		alert("[job.title] is not available. Please try another.")
-		return 0
+		return FALSE
 	if(job.is_restricted(client.prefs, src))
 		return
 
@@ -120,13 +117,13 @@
 	// Just in case someone stole our position while we were waiting for input from alert() proc
 	if(!job || !job.is_available(client))
 		to_chat(src, alert("[job.title] is not available. Please try another."))
-		return 0
+		return FALSE
 
 	SSjobs.assign_role(src, job.title, 1)
 
 	var/mob/living/character = create_character(spawn_turf)	//creates the human and transfers vars and mind
 	if(!character)
-		return 0
+		return FALSE
 
 	character = SSjobs.equip_rank(character, job.title, 1)					//equips the human
 	SScustomitems.equip_custom_items(character)
@@ -134,7 +131,7 @@
 	// AIs don't need a spawnpoint, they must spawn at an empty core
 	if(character.mind.assigned_role == "AIC")
 
-		character = character.AIize(move=0) // AIize the character, but don't move them yet
+		character = character.AIize(move = FALSE) // AIize the character, but don't move them yet
 
 		// is_available for AI checks that there is an empty core available in this list
 		var/obj/structure/AIcore/deactivated/C = empty_playable_ai_cores[1]
@@ -168,8 +165,7 @@
 
 	qdel(src)
 
-
-/mob/new_player/proc/AnnounceCyborg(var/mob/living/character, var/rank, var/join_message)
+/mob/new_player/proc/AnnounceCyborg(mob/living/character, rank, join_message)
 	if (GAME_STATE == RUNLEVEL_GAME)
 		if(character.mind.role_alt_title)
 			rank = character.mind.role_alt_title
@@ -247,8 +243,9 @@
 	popup.set_content(jointext(dat, null))
 	popup.open(0)
 
-/mob/new_player/proc/create_character(var/turf/spawn_turf)
-	spawning = 1
+/mob/new_player/proc/create_character(turf/spawn_turf)
+	spawning = TRUE
+	close_spawn_windows()
 
 	var/mob/living/carbon/human/new_character
 
@@ -265,7 +262,7 @@
 
 	if(chosen_species)
 		if(!check_species_allowed(chosen_species))
-			spawning = 0 //abort
+			spawning = FALSE //abort
 			return null
 		new_character = new(spawn_turf, chosen_species.name)
 		if(chosen_species.has_organ[BP_POSIBRAIN] && client && client.prefs.is_shackled)
@@ -282,7 +279,7 @@
 	sound_to(src, sound(null, repeat = 0, wait = 0, volume = 85, channel = GLOB.lobby_sound_channel))// MAD JAMS cant last forever yo
 
 	if(mind)
-		mind.active = 0 //we wish to transfer the key manually
+		mind.active = FALSE //we wish to transfer the key manually
 		mind.original = new_character
 		if(client.prefs.memory)
 			mind.StoreMemory(client.prefs.memory)
@@ -313,18 +310,21 @@
 	popup.open()
 
 /mob/new_player/Move()
-	return 0
+	return FALSE
 
-/mob/new_player/proc/check_species_allowed(datum/species/S, var/show_alert=1)
+/mob/new_player/proc/close_spawn_windows()
+	close_browser(src, "window=latechoices") //closes late choices window
+
+/mob/new_player/proc/check_species_allowed(datum/species/S, show_alert = TRUE)
 	if(!S.is_available_for_join() && !has_admin_rights())
 		if(show_alert)
 			to_chat(src, alert("Your current species, [client.prefs.species], is not available for play."))
-		return 0
+		return FALSE
 	if(!is_alien_whitelisted(src, S))
 		if(show_alert)
 			to_chat(src, alert("You are currently not whitelisted to play [client.prefs.species]."))
-		return 0
-	return 1
+		return FALSE
+	return TRUE
 
 /mob/new_player/get_species()
 	var/datum/species/chosen_species
@@ -337,28 +337,30 @@
 	return chosen_species.name
 
 /mob/new_player/get_gender()
-	if(!client || !client.prefs) ..()
+	if(!client || !client.prefs)
+		return ..()
+
 	return client.prefs.gender
 
 /mob/new_player/is_ready()
 	return ready && ..()
 
-/mob/new_player/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "",var/italics = 0, var/mob/speaker = null)
+/mob/new_player/hear_say(message, verb = "says", datum/language/language = null, alt_name = "",italics = 0, mob/speaker = null)
 	return
 
-/mob/new_player/hear_radio(var/message, var/verb="says", var/datum/language/language=null, var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0)
+/mob/new_player/hear_radio(message, verb="says", datum/language/language=null, part_a, part_b, part_c, mob/speaker = null, hard_to_hear = 0)
 	return
 
 /mob/new_player/show_message(msg, type, alt, alt_type)
 	return
 
 /mob/new_player/MayRespawn()
-	return 1
+	return TRUE
 
 /mob/new_player/touch_map_edge()
 	return
 
-/mob/new_player/say(var/message)
+/mob/new_player/say(message)
 	sanitize_and_communicate(/decl/communication_channel/ooc, client, message)
 
 /mob/new_player/verb/next_lobby_track()

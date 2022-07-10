@@ -292,6 +292,7 @@ Helpers
 		if(player && player.ready && player.mind)
 			if(player.mind.assigned_role=="AIC")
 				player.AIize()
+				player.close_spawn_windows()
 			else if(!player.mind.assigned_role)
 				continue
 			else
