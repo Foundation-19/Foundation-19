@@ -54,7 +54,7 @@ turf: (lighting_turf.dm)
 	  - Create lighting overlays for this turf
 
 
-atom/movable/lighting_overlay: (lighting_overlay.dm)
+/atom/movable/lighting_overlay: (lighting_overlay.dm)
   - var/lum_r, var/lum_g, var/lum_b; lumcounts of each colour
   - var/needs_update; set on update_lumcount, checked by lighting process
 
@@ -65,3 +65,4 @@ atom/movable/lighting_overlay: (lighting_overlay.dm)
   - proc/update_overlay()
 		- Called by the lighting process to update the color of the overlay
 */
+

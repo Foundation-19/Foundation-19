@@ -1,60 +1,60 @@
 /obj/machinery/chemical_dispenser/full
-	spawn_cartridges = list(
-			/obj/item/reagent_containers/chem_disp_cartridge/hydrazine,
-			/obj/item/reagent_containers/chem_disp_cartridge/lithium,
-			/obj/item/reagent_containers/chem_disp_cartridge/carbon,
-			/obj/item/reagent_containers/chem_disp_cartridge/ammonia,
-			/obj/item/reagent_containers/chem_disp_cartridge/acetone,
-			/obj/item/reagent_containers/chem_disp_cartridge/sodium,
-			/obj/item/reagent_containers/chem_disp_cartridge/aluminium,
-			/obj/item/reagent_containers/chem_disp_cartridge/silicon,
-			/obj/item/reagent_containers/chem_disp_cartridge/phosphorus,
-			/obj/item/reagent_containers/chem_disp_cartridge/sulfur,
-			/obj/item/reagent_containers/chem_disp_cartridge/hclacid,
-			/obj/item/reagent_containers/chem_disp_cartridge/potassium,
-			/obj/item/reagent_containers/chem_disp_cartridge/iron,
-			/obj/item/reagent_containers/chem_disp_cartridge/copper,
-			/obj/item/reagent_containers/chem_disp_cartridge/mercury,
-			/obj/item/reagent_containers/chem_disp_cartridge/radium,
-			/obj/item/reagent_containers/chem_disp_cartridge/water,
-			/obj/item/reagent_containers/chem_disp_cartridge/ethanol,
-			/obj/item/reagent_containers/chem_disp_cartridge/sugar,
-			/obj/item/reagent_containers/chem_disp_cartridge/sacid,
-			/obj/item/reagent_containers/chem_disp_cartridge/tungsten
-		)
+	disp_reagents = list(
+		"Acetone" = /datum/reagent/acetone,
+		"Aluminium" = /datum/reagent/aluminium,
+		"Ammonia" = /datum/reagent/ammonia,
+		"Carbon" = /datum/reagent/carbon,
+		"Copper" = /datum/reagent/copper,
+		"Ethanol" = /datum/reagent/ethanol,
+		"Hydrazine" = /datum/reagent/hydrazine,
+		"Hydrochloric Acid" = /datum/reagent/acid/hydrochloric,
+		"Iron" = /datum/reagent/iron,
+		"Lithium" = /datum/reagent/lithium,
+		"Mercury" = /datum/reagent/mercury,
+		"Phosphorus" = /datum/reagent/phosphorus,
+		"Potassium" = /datum/reagent/potassium,
+		"Radium" = /datum/reagent/radium,
+		"Silicon" = /datum/reagent/silicon,
+		"Sodium" = /datum/reagent/sodium,
+		"Sugar" = /datum/reagent/sugar,
+		"Sulfur" = /datum/reagent/sulfur,
+		"Sulphuric Acid" = /datum/reagent/acid/sulphuric,
+		"Tungsten" = /datum/reagent/tungsten,
+		"Water" = /datum/reagent/water
+			)
 
 /obj/machinery/chemical_dispenser/ert
 	name = "medicine dispenser"
-	spawn_cartridges = list(
-			/obj/item/reagent_containers/chem_disp_cartridge/inaprov,
-			/obj/item/reagent_containers/chem_disp_cartridge/ryetalyn,
-			/obj/item/reagent_containers/chem_disp_cartridge/paracetamol,
-			/obj/item/reagent_containers/chem_disp_cartridge/tramadol,
-			/obj/item/reagent_containers/chem_disp_cartridge/oxycodone,
-			/obj/item/reagent_containers/chem_disp_cartridge/sterilizine,
-			/obj/item/reagent_containers/chem_disp_cartridge/leporazine,
-			/obj/item/reagent_containers/chem_disp_cartridge/kelotane,
-			/obj/item/reagent_containers/chem_disp_cartridge/dermaline,
-			/obj/item/reagent_containers/chem_disp_cartridge/dexalin,
-			/obj/item/reagent_containers/chem_disp_cartridge/dexalin_p,
-			/obj/item/reagent_containers/chem_disp_cartridge/tricord,
-			/obj/item/reagent_containers/chem_disp_cartridge/dylovene,
-			/obj/item/reagent_containers/chem_disp_cartridge/synaptizine,
-			/obj/item/reagent_containers/chem_disp_cartridge/hyronalin,
-			/obj/item/reagent_containers/chem_disp_cartridge/arithrazine,
-			/obj/item/reagent_containers/chem_disp_cartridge/alkysine,
-			/obj/item/reagent_containers/chem_disp_cartridge/imidazoline,
-			/obj/item/reagent_containers/chem_disp_cartridge/peridaxon,
-			/obj/item/reagent_containers/chem_disp_cartridge/bicaridine,
-			/obj/item/reagent_containers/chem_disp_cartridge/hyperzine,
-			/obj/item/reagent_containers/chem_disp_cartridge/rezadone,
-			/obj/item/reagent_containers/chem_disp_cartridge/spaceacillin,
-			/obj/item/reagent_containers/chem_disp_cartridge/ethylredox,
-			/obj/item/reagent_containers/chem_disp_cartridge/sleeptox,
-			/obj/item/reagent_containers/chem_disp_cartridge/chloral,
-			/obj/item/reagent_containers/chem_disp_cartridge/cryoxadone,
-			/obj/item/reagent_containers/chem_disp_cartridge/clonexadone
-		)
+	disp_reagents = list(
+		"Alkysine" = /datum/reagent/alkysine,
+		"Arithrazine" = /datum/reagent/arithrazine,
+		"Bicaridine" = /datum/reagent/bicaridine,
+		"Chloral Hydrate" = /datum/reagent/chloral_hydrate,
+		"Clonexadone" = /datum/reagent/clonexadone,
+		"Cryoxadone" = /datum/reagent/cryoxadone,
+		"Dermaline" = /datum/reagent/dermaline,
+		"Dexalin Plus" = /datum/reagent/medicine/dexalin_plus,
+		"Dexalin" = /datum/reagent/dexalin,
+		"Dylovene" = /datum/reagent/dylovene,
+		"Ethylredoxrazine" = /datum/reagent/medicine/ethylredoxrazine,
+		"Hyperzine" = /datum/reagent/hyperzine,
+		"Hyronalin" = /datum/reagent/hyronalin,
+		"Imidazoline" = /datum/reagent/imidazoline,
+		"Inaprovaline" = /datum/reagent/medicine/inaprovaline,
+		"Kelotane" = /datum/reagent/kelotane,
+		"Leporazine" = /datum/reagent/leporazine,
+		"Oxycodone" = /datum/reagent/medicine/painkiller/tramadol/oxycodone,
+		"Paracetamol" = /datum/reagent/paracetamol,
+		"Peridaxon" = /datum/reagent/peridaxon,
+		"Rezadone" = /datum/reagent/rezadone,
+		"Ryetalyn" = /datum/reagent/ryetalyn,
+		"Soporific" = /datum/reagent/soporific,
+		"Spaceacillin" = /datum/reagent/spaceacillin,
+		"Sterilizine" = /datum/reagent/sterilizine,
+		"Synaptizine" = /datum/reagent/synaptizine,
+		"Tramadol" = /datum/reagent/tramadol,
+		"Tricordrazine" = /datum/reagent/medicine/tricordrazine
+			)
 
 /obj/machinery/chemical_dispenser/bar_soft
 	name = "soft drink dispenser"
@@ -66,28 +66,28 @@
 	can_contaminate = FALSE //It's not a complex panel, and I'm fairly sure that most people don't haymaker the control panel on a soft drinks machine. -- Chaoko99
 
 /obj/machinery/chemical_dispenser/bar_soft/full
-	spawn_cartridges = list(
-			/obj/item/reagent_containers/chem_disp_cartridge/water,
-			/obj/item/reagent_containers/chem_disp_cartridge/ice,
-			/obj/item/reagent_containers/chem_disp_cartridge/coffee,
-			/obj/item/reagent_containers/chem_disp_cartridge/hot_coco,
-			/obj/item/reagent_containers/chem_disp_cartridge/cream,
-			/obj/item/reagent_containers/chem_disp_cartridge/tea,
-			/obj/item/reagent_containers/chem_disp_cartridge/green_tea,
-			/obj/item/reagent_containers/chem_disp_cartridge/chai_tea,
-			/obj/item/reagent_containers/chem_disp_cartridge/red_tea,
-			/obj/item/reagent_containers/chem_disp_cartridge/cola,
-			/obj/item/reagent_containers/chem_disp_cartridge/smw,
-			/obj/item/reagent_containers/chem_disp_cartridge/dr_gibb,
-			/obj/item/reagent_containers/chem_disp_cartridge/spaceup,
-			/obj/item/reagent_containers/chem_disp_cartridge/tonic,
-			/obj/item/reagent_containers/chem_disp_cartridge/sodawater,
-			/obj/item/reagent_containers/chem_disp_cartridge/lemon_lime,
-			/obj/item/reagent_containers/chem_disp_cartridge/sugar,
-			/obj/item/reagent_containers/chem_disp_cartridge/orange,
-			/obj/item/reagent_containers/chem_disp_cartridge/lime,
-			/obj/item/reagent_containers/chem_disp_cartridge/watermelon
-		)
+	disp_reagents = list(
+		"Black Tea" = /datum/reagent/drink/tea,
+		"Chai Tea" = /datum/reagent/drink/tea/chai,
+		"Coffee" = /datum/reagent/drink/coffee,
+		"Cream" = /datum/reagent/drink/milk/cream,
+		"Dr. Gibb" = /datum/reagent/drink/dr_gibb,
+		"Green Tea" = /datum/reagent/drink/tea/green,
+		"Hot Chocolate" = /datum/reagent/drink/hot_coco,
+		"Ice" = /datum/reagent/drink/ice,
+		"Lemon Lime" = /datum/reagent/drink/lemon_lime,
+		"Lime Juice" = /datum/reagent/drink/juice/lime,
+		"Mountain Wind" = /datum/reagent/drink/spacemountainwind,
+		"Orange juice" = /datum/reagent/drink/juice/orange,
+		"Rooibos Tea" = /datum/reagent/drink/tea/red,
+		"Soda Water" = /datum/reagent/drink/sodawater,
+		"Space Cola" = /datum/reagent/drink/space_cola,
+		"Space-Up" = /datum/reagent/drink/space_up,
+		"Sugar" = /datum/reagent/sugar,
+		"Tonic Water" = /datum/reagent/drink/tonic,
+		"Watermelon Juice" = /datum/reagent/drink/juice/watermelon,
+		"Water" = /datum/reagent/water
+			)
 
 /obj/machinery/chemical_dispenser/bar_alc
 	name = "booze dispenser"
@@ -99,29 +99,29 @@
 	can_contaminate = FALSE //See above.
 
 /obj/machinery/chemical_dispenser/bar_alc/full
-	spawn_cartridges = list(
-			/obj/item/reagent_containers/chem_disp_cartridge/lemon_lime,
-			/obj/item/reagent_containers/chem_disp_cartridge/sugar,
-			/obj/item/reagent_containers/chem_disp_cartridge/orange,
-			/obj/item/reagent_containers/chem_disp_cartridge/lime,
-			/obj/item/reagent_containers/chem_disp_cartridge/sodawater,
-			/obj/item/reagent_containers/chem_disp_cartridge/tonic,
-			/obj/item/reagent_containers/chem_disp_cartridge/beer,
-			/obj/item/reagent_containers/chem_disp_cartridge/kahlua,
-			/obj/item/reagent_containers/chem_disp_cartridge/whiskey,
-			/obj/item/reagent_containers/chem_disp_cartridge/wine,
-			/obj/item/reagent_containers/chem_disp_cartridge/vodka,
-			/obj/item/reagent_containers/chem_disp_cartridge/gin,
-			/obj/item/reagent_containers/chem_disp_cartridge/rum,
-			/obj/item/reagent_containers/chem_disp_cartridge/tequila,
-			/obj/item/reagent_containers/chem_disp_cartridge/vermouth,
-			/obj/item/reagent_containers/chem_disp_cartridge/cognac,
-			/obj/item/reagent_containers/chem_disp_cartridge/ale,
-			/obj/item/reagent_containers/chem_disp_cartridge/mead,
-			/obj/item/reagent_containers/chem_disp_cartridge/triple_sec,
-			/obj/item/reagent_containers/chem_disp_cartridge/creme_de_cacao,
-			/obj/item/reagent_containers/chem_disp_cartridge/creme_de_menthe
-		)
+	disp_reagents = list(
+		"Ale" = /datum/reagent/ethanol/ale,
+		"Beer" = /datum/reagent/ethanol/beer,
+		"Cognac" = /datum/reagent/ethanol/cognac,
+		"Creme de Cacao" = /datum/reagent/ethanol/creme_de_cacao,
+		"Creme de Menthe" = /datum/reagent/ethanol/creme_de_menthe,
+		"Gin" = /datum/reagent/ethanol/gin,
+		"Kahlua" = /datum/reagent/ethanol/coffee/kahlua,
+		"Lemon Lime" = /datum/reagent/drink/lemon_lime,
+		"Lime Juice" = /datum/reagent/drink/juice/lime,
+		"Mead" = /datum/reagent/ethanol/mead,
+		"Orange juice" = /datum/reagent/drink/juice/orange,
+		"Rum" = /datum/reagent/ethanol/rum,
+		"Soda Water" = /datum/reagent/drink/sodawater,
+		"Sugar" = /datum/reagent/sugar,
+		"Tequila" = /datum/reagent/ethanol/tequilla,
+		"Tonic Water" = /datum/reagent/drink/tonic,
+		"Triple Sec" = /datum/reagent/ethanol/triple_sec,
+		"Vermouth" = /datum/reagent/ethanol/vermouth,
+		"Vodka" = /datum/reagent/ethanol/vodka,
+		"Whiskey" = /datum/reagent/ethanol/whiskey,
+		"Wine" = /datum/reagent/ethanol/wine
+			)
 
 /obj/machinery/chemical_dispenser/bar_coffee
 	name = "coffee dispenser"
@@ -133,23 +133,23 @@
 	can_contaminate = FALSE //See above.
 
 /obj/machinery/chemical_dispenser/bar_coffee/full
-	spawn_cartridges = list(
-			/obj/item/reagent_containers/chem_disp_cartridge/coffee,
-			/obj/item/reagent_containers/chem_disp_cartridge/decaf_cof,
-			/obj/item/reagent_containers/chem_disp_cartridge/espresso,
-			/obj/item/reagent_containers/chem_disp_cartridge/cafe_latte,
-			/obj/item/reagent_containers/chem_disp_cartridge/soy_latte,
-			/obj/item/reagent_containers/chem_disp_cartridge/hot_coco,
-			/obj/item/reagent_containers/chem_disp_cartridge/milk,
-			/obj/item/reagent_containers/chem_disp_cartridge/cream,
-			/obj/item/reagent_containers/chem_disp_cartridge/tea,
-			/obj/item/reagent_containers/chem_disp_cartridge/green_tea,
-			/obj/item/reagent_containers/chem_disp_cartridge/chai_tea,
-			/obj/item/reagent_containers/chem_disp_cartridge/red_tea,
-			/obj/item/reagent_containers/chem_disp_cartridge/decaf_tea,
-			/obj/item/reagent_containers/chem_disp_cartridge/ice,
-			/obj/item/reagent_containers/chem_disp_cartridge/syrup_chocolate,
-			/obj/item/reagent_containers/chem_disp_cartridge/syrup_caramel,
-			/obj/item/reagent_containers/chem_disp_cartridge/syrup_vanilla,
-			/obj/item/reagent_containers/chem_disp_cartridge/syrup_pumpkin
-		)
+	disp_reagents = list(
+		"Black Tea" = /datum/reagent/drink/tea,
+		"Cafe Latte" = /datum/reagent/drink/coffee/cafe_latte,
+		"Caramel Syrup" = /datum/reagent/drink/syrup_caramel,
+		"Chai Tea" = /datum/reagent/drink/tea/chai,
+		"Chocolate Syrup" = /datum/reagent/drink/syrup_chocolate,
+		"Coffee" = /datum/reagent/drink/coffee,
+		"Cream" = /datum/reagent/drink/milk/cream,
+		"Decaffeinated Coffee" = /datum/reagent/drink/decafcoffee,
+		"Decaffeinated Tea" = /datum/reagent/drink/tea/decaf,
+		"Espresso" = /datum/reagent/drink/coffee/espresso,
+		"Green Tea" = /datum/reagent/drink/tea/green,
+		"Hot Chocolate" = /datum/reagent/drink/hot_coco,
+		"Ice" = /datum/reagent/drink/ice,
+		"Milk" = /datum/reagent/drink/milk,
+		"Pumpkin Spice Syrup" = /datum/reagent/drink/syrup_pumpkin,
+		"Rooibos Tea" = /datum/reagent/drink/tea/red,
+		"Soy Latte" = /datum/reagent/drink/coffee/soy_latte,
+		"Vanilla Syrup" = /datum/reagent/drink/syrup_vanilla
+			)

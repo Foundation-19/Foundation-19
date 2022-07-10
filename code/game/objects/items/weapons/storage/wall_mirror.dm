@@ -11,12 +11,10 @@
 	use_sound = 'sound/effects/closet_open.ogg'
 	startswith = list(
 		/obj/item/haircomb/random,
-		/obj/item/haircomb/brush,
 		/obj/random/medical/lite,
 		/obj/item/lipstick/random,
 		/obj/random/soap,
-		/obj/item/reagent_containers/spray/cleaner/deodorant,
-		/obj/item/towel/random
+		/obj/item/reagent_containers/spray/cleaner/deodorant
 	)
 	var/shattered = FALSE
 	var/list/ui_cache

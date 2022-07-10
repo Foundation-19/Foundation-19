@@ -24,7 +24,9 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 	player_names += GLOB.player_list
 
 /obj/machinery/scp294/Destroy()
-	. = ..()
+	player_names = null
+	victim = null
+	return ..()
 
 /datum/scp/scp_294
 	name = "SCP-294"

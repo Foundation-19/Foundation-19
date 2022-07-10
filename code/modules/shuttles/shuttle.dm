@@ -79,7 +79,7 @@
 
 	moving_status = SHUTTLE_WARMUP
 	if(sound_takeoff)
-		playsound(current_location, sound_takeoff, 100, 20, 0.2)
+		playsound(current_location, sound_takeoff, 100)
 	spawn(warmup_time*10)
 		if (moving_status == SHUTTLE_IDLE)
 			return //someone cancelled the launch
@@ -101,7 +101,7 @@
 
 	moving_status = SHUTTLE_WARMUP
 	if(sound_takeoff)
-		playsound(current_location, sound_takeoff, 100, 20, 0.2)
+		playsound(current_location, sound_takeoff, 100)
 		if (!istype(start_location.base_area, /area/space))
 			var/area/A = get_area(start_location)
 
@@ -126,7 +126,7 @@
 			while (world.time < arrive_time)
 				if(!fwooshed && (arrive_time - world.time) < 100)
 					fwooshed = 1
-					playsound(destination, sound_landing, 100, 0, 7)
+					playsound(destination, sound_landing, 100)
 					if (!istype(destination.base_area, /area/space))
 						var/area/A = get_area(destination)
 

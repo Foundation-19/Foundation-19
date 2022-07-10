@@ -151,3 +151,15 @@
 	name = "\improper MIND THE ACCEPTABLE ZONES!"
 	icon_state = "securearea2"
 	desc = "A warning sign which reads: REMEMBER YOUR PLACE. DO NOT MOVE BEYOND THE YELLOW HAZARD MARKINGS IF RED HATCHED MARKINGS ARE PRESENT! IMMEDIATE TERMINATION TO VIOLATIONS!"
+
+/obj/effect/landmark/corpse/classd
+	name = "Class D"
+	corpse_outfits = list(/decl/hierarchy/outfit/job/site90/crew/civ/classd)
+
+/obj/effect/landmark/corpse/classdescaped
+	name = "Class D"
+	corpse_outfits = list(/decl/hierarchy/outfit/job/site90/crew/civ/classd/geared)
+
+/obj/effect/landmark/corpse/scientist
+	name = "Scientist"
+	corpse_outfits = list(/decl/hierarchy/outfit/job/site90/crew/science/scientist, /decl/hierarchy/outfit/job/site90/crew/science/juniorscientist, /decl/hierarchy/outfit/job/site90/crew/science/seniorscientist)

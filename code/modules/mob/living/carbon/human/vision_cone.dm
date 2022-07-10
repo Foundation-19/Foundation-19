@@ -147,7 +147,7 @@
 		fov.alpha = 255
 		usefov = 1
 
-mob/living/carbon/human/proc/hide_cone()
+/mob/living/carbon/human/proc/hide_cone()
 	if(fov)
 		fov.alpha = 0
 		usefov = 0

@@ -15,7 +15,7 @@ GLOBAL_DATUM_INIT(ert, /datum/antagonist/ert, new)
 	landmark_id = "Response Team"
 	id_type = /obj/item/card/id/centcom/ERT
 
-	flags = ANTAG_OVERRIDE_JOB | ANTAG_SET_APPEARANCE | ANTAG_HAS_LEADER | ANTAG_CHOOSE_NAME | ANTAG_RANDOM_EXCEPTED
+	flags = ANTAG_OVERRIDE_JOB | ANTAG_HAS_LEADER | ANTAG_CHOOSE_NAME | ANTAG_RANDOM_EXCEPTED
 	antaghud_indicator = "hudloyalist"
 
 	hard_cap = 5
@@ -43,6 +43,7 @@ GLOBAL_DATUM_INIT(ert, /datum/antagonist/ert, new)
 /datum/antagonist/ert/equip(var/mob/living/carbon/human/player)
 
 	//Special radio setup
+	player.add_language(LANGUAGE_ENGLISH)
 	player.equip_to_slot_or_del(new /obj/item/device/radio/headset/ert(src), slot_l_ear)
 	player.equip_to_slot_or_del(new /obj/item/clothing/under/ert(src), slot_w_uniform)
 	player.equip_to_slot_or_del(new /obj/item/clothing/shoes/swat(src), slot_shoes)

@@ -69,8 +69,11 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	mind.learned_spells += spl
 
 /mob/living/carbon/human/scp049/Destroy()
+	pestilence_images = null
+	attempted_surgery_on = null
+	target = null
 	GLOB.scp049s -= src
-	. = ..()
+	return ..()
 
 /mob/living/carbon/human/scp049/examinate(var/mob/living/carbon/human/target)
 	. = ..()

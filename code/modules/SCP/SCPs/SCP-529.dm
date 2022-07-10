@@ -10,10 +10,7 @@ GLOBAL_LIST_EMPTY(scp529s)
 	icon_living = "cat"
 	icon_dead = "cat_dead"
 	turns_per_move = 5
-//	speak = list("Meow!","Esp!","Purr!","HSSSSS")
 	speak_emote = list("purrs", "meows", "chirps")
-//	emote_hear = list("meows","mews")
-//	emote_see = list("shakes her head", "shivers")
 	response_help = "strokes"
 	response_disarm = "gently pushes aside"
 	response_harm = "kicks"
