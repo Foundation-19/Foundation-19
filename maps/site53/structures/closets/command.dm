@@ -66,6 +66,6 @@
 		/obj/item/material/clipboard,
 		/obj/item/folder/blue,
 		/obj/item/clothing/shoes/dutyboots,
-//		/obj/item/device/radio/headset/commsdispatcher
-		/obj/item/storage/belt/utility/full,
+//		/obj/item/device/radio/headset/commsdispatcher,
+		/obj/item/storage/belt/utility/full
 	)

@@ -60,6 +60,11 @@
 	icon_state = "sec_cypherkey"
 	channels = list("ECZ-Security" = 1)
 
+/obj/item/device/radio/headset/goc
+	name = "GOC headset"
+	desc = "The headset of for a member of the Global Occult Coalision."
+	ks2type = /obj/item/device/encryptionkey/goc
+
 
 /obj/item/device/radio/headset/heads/hos/goc
 	name = "GOC representative's headset"
