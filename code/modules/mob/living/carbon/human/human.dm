@@ -1260,8 +1260,9 @@
 		remove_language(lang.name)
 
 	for(var/thing in free_languages)
-		var/datum/language/lang = thing
-		add_language(lang.name)
+		if(!isnull(thing))
+			var/datum/language/lang = thing
+			add_language(lang.name)
 
 	if(LAZYLEN(default_languages) && isnull(default_language))
 		default_language = default_languages[1]
