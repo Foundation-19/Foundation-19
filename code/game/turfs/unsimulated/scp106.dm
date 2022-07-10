@@ -44,3 +44,6 @@ GLOBAL_LIST_EMPTY(scp106_floors)
 /turf/unsimulated/wall/scp106
 	name = "void wall"
 	color = "#000000"
+
+/turf/unsimulated/wall/scp106/is_phasable()
+	return TRUE

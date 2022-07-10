@@ -11,6 +11,9 @@ var/list/mining_floors = list()
 	density = TRUE
 	opacity = TRUE
 
+/turf/unsimulated/mineral/is_phasable()
+	return TRUE
+
 /turf/unsimulated/mineral/attackby(obj/item/W, mob/user)
 	to_chat(user, SPAN_WARNING("\The [src] is too strong to break using any tool that you know of, handheld or not."))
 
@@ -47,6 +50,9 @@ var/list/mining_floors = list()
 	has_resources = 1
 
 /turf/simulated/mineral/is_wall()
+	return TRUE
+
+/turf/simulated/mineral/is_phasable()
 	return TRUE
 
 /turf/simulated/mineral/Initialize()
