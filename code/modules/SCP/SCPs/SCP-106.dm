@@ -76,14 +76,6 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		species.brute_mod = 0.5
 		species.burn_mod = 0.5
 
-/mob/living/carbon/human/scp106/Login()
-	. = ..()
-	if(client)
-		if(!(MUTATION_XRAY in mutations))
-			mutations.Add(MUTATION_XRAY)
-			update_mutations()
-			update_sight()
-
 /mob/living/carbon/human/scp106/update_icons()
 	return
 
@@ -540,22 +532,20 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		return
 	var/turf/exit = get_turf(WallEye.loc)
 	if(exit.is_phasable())
-		src.forceMove(WallEye.loc)
+		src.forceMove(exit)
 		WallEye.release(src)
 		WallEye.forceMove(src)
 		phasing = FALSE
 
 /mob/observer/eye/scp106
-	name = "SCP-106 pressence"
-	sprint = 20
-	acceleration =  0
-	see_in_dark = 8
+	name = "SCP-106 presence"
+	cooldown = 5
+	see_invisible = SEE_INVISIBLE_NOLIGHTING
+	see_in_dark = 7
 
 /mob/observer/eye/scp106/New()
 	. = ..()
 	visualnet = new /datum/visualnet/scp106
-	set_sight(sight | SEE_MOBS | SEE_OBJS | SEE_TURFS)
-	set_see_in_dark(8)
 
 /mob/observer/eye/scp106/EyeMove(direct)
 	var/turf/step = get_turf(get_step(src, direct))
@@ -569,11 +559,6 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 
 /datum/visualnet/scp106/New()
 	. = ..()
-
-// /datum/chunk/scp106/add_sources(list/sources)
-// 	for(var/entry in sources)
-// 		var/atom/A = entry
-// 		add_source(A)
 
 /datum/chunk/scp106/acquire_visible_turfs(list/visible)
 	for(var/source in sources)

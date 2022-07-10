@@ -62,7 +62,6 @@
 		var/turf/T = step_rand(H)
 		H.Move(get_dir(H, T))
 
-// Slime/xeno limbs.
 /obj/item/organ/external/chest/unbreakable/scp106
 	dislocated = -1
 	arterial_bleed_severity = 0
