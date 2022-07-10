@@ -41,3 +41,4 @@
 		to_chat(usr, SPAN_WARNING("They are already dead."))
 		failed_cast(user)
 		return FALSE
+		
