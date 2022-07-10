@@ -107,9 +107,6 @@ SUBSYSTEM_DEF(ticker)
 		to_world("<span class='info'><B>Enjoy the game!</B></span>")
 		sound_to(world, sound(GLOB.using_map.welcome_sound))
 
-		for (var/mob/new_player/player in GLOB.player_list)
-			player.new_player_panel()
-
 	if(!length(GLOB.admins))
 		send2adminirc("Round has started with no admins online.")
 
@@ -294,7 +291,6 @@ Helpers
 	for(var/mob/new_player/player in GLOB.player_list)
 		if(player && player.ready && player.mind)
 			if(player.mind.assigned_role=="AIC")
-				player.close_spawn_windows()
 				player.AIize()
 			else if(!player.mind.assigned_role)
 				continue
