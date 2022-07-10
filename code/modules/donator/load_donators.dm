@@ -5,7 +5,7 @@ GLOBAL_LIST_EMPTY(donators)
 	load_donators()
 	return 1
 
-proc/load_donators()
+/proc/load_donators()
 	GLOB.donator_keys.Cut()
 
 	for(var/client/C in GLOB.donators)
