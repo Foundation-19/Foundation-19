@@ -2077,16 +2077,12 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "fy" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/machinery/recharger/wallcharger{
-	dir = 8;
-	pixel_x = 20
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/entrancezone/ezarmory)
 "fz" = (
 /obj/structure/table/woodentable/walnut,
@@ -4788,14 +4784,16 @@
 /turf/simulated/floor/grass,
 /area/site53/surface/tramhubhallwayentry)
 "lS" = (
+/obj/structure/closet/secure_closet/mtf/enlisted/ez,
+/obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/gun/energy/taser,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/crowbar/red,
 /obj/machinery/camera/autoname{
 	dir = 1;
 	icon_state = "camera";
 	network = list("Entrance Zone Network")
-	},
-/obj/item/stool/padded,
-/obj/effect/landmark/start{
-	name = "EZ Agent"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/zonecommanderoffice{
@@ -4854,17 +4852,22 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op2)
 "mf" = (
-/obj/machinery/button/alternate/door/bolts{
-	dir = 4;
-	id_tag = "ezguns";
-	name = "EZ Armory Access button";
-	pixel_x = -23;
-	req_access = list(204)
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/machinery/recharger/wallcharger{
+	dir = 8;
+	pixel_x = 20
 	},
-/turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/ezarmory)
 "mh" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/civilian{
@@ -5238,6 +5241,9 @@
 	name = "Entrance Zone Commander's Office"
 	})
 "mY" = (
+/obj/effect/landmark/start{
+	name = "EZ Junior Agent"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/zonecommanderoffice{
 	name = "Entrance Zone Equipment Room"
@@ -5331,13 +5337,13 @@
 	name = "Entrance Zone Commander's Office"
 	})
 "nt" = (
-/obj/machinery/door/airlock/multi_tile/security{
-	id_tag = "ezguns";
-	locked = 1;
-	name = "\improper Entrance Zone Armoury";
-	req_access = list(202);
-	secured_wires = 1
-	},
+/obj/structure/closet/secure_closet/mtf/enlisted/ez,
+/obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/gun/energy/taser,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/crowbar/red,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/zonecommanderoffice{
 	name = "Entrance Zone Equipment Room"
@@ -5345,6 +5351,9 @@
 "nu" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "EZ Senior Agent"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/zonecommanderoffice{
@@ -5391,17 +5400,18 @@
 	name = "\improper Break Room"
 	})
 "nA" = (
-/obj/machinery/light,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/structure/closet/secure_closet/mtf/nco/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/crowbar/red,
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/entrancezone/ezarmory)
 "nE" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
@@ -5418,23 +5428,17 @@
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/surface/surface)
 "nH" = (
-/obj/machinery/power/apc{
-	dir = 2;
-	name = "south bump";
-	operating = 1;
-	pixel_y = -24
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/structure/closet/secure_closet/mtf/nco/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/crowbar/red,
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/zonecommanderoffice{
 	name = "Entrance Zone Equipment Room"
 	})
@@ -5537,14 +5541,22 @@
 /obj/item/gun/energy/taser,
 /obj/item/clothing/accessory/armorplate/tactical,
 /obj/item/crowbar/red,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/head/bio_hood/security,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/zonecommanderoffice{
 	name = "Entrance Zone Commander's Office"
 	})
 "nX" = (
-/obj/item/stool/padded,
-/obj/effect/landmark/start{
-	name = "EZ Junior Agent"
+/obj/structure/closet/secure_closet/mtf/enlisted/ez,
+/obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/gun/energy/taser,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/crowbar/red,
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/zonecommanderoffice{
@@ -7396,23 +7408,15 @@
 	name = "\improper LCZ Zone Commander's Office"
 	})
 "tz" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/obj/machinery/door/airlock/multi_tile/security{
+	id_tag = "ezguns";
+	locked = 1;
+	name = "\improper Entrance Zone Armoury";
+	req_access = list(202);
+	secured_wires = 1
 	},
-/obj/effect/landmark/start{
-	name = "EZ Agent"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/ezarmory)
 "tA" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
@@ -8393,6 +8397,21 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
+"zc" = (
+/obj/machinery/button/alternate/door/bolts{
+	dir = 4;
+	id_tag = "ezguns";
+	name = "EZ Armory Access button";
+	pixel_x = -23;
+	req_access = list(204)
+	},
+/obj/effect/landmark/start{
+	name = "EZ Agent"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/zonecommanderoffice{
+	name = "Entrance Zone Equipment Room"
+	})
 "zf" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/glass/beaker/large,
@@ -9123,12 +9142,16 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "Ho" = (
-/obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/clothing/suit/armor/pcarrier/green,
-/obj/item/clothing/head/helmet,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/ezarmory)
+/obj/structure/closet/secure_closet/mtf/nco/ez,
+/obj/item/crowbar/red,
+/obj/item/gun/energy/taser,
+/obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/head/bio_hood/security,
+/turf/simulated/floor/tiled,
+/area/site53/zonecommanderoffice{
+	name = "Entrance Zone Equipment Room"
+	})
 "Hq" = (
 /obj/structure/hygiene/toilet{
 	dir = 4
@@ -9161,13 +9184,14 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
 "HL" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/landmark/start{
-	name = "EZ Junior Agent"
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/head/bio_hood/security,
+/obj/structure/closet/secure_closet/mtf/nco/ez,
+/obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/gun/energy/taser,
+/obj/item/crowbar/red,
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/site53/zonecommanderoffice{
@@ -9256,8 +9280,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "Jx" = (
-/obj/machinery/light{
-	dir = 8
+/obj/effect/landmark/start{
+	name = "EZ Agent"
 	},
 /turf/simulated/floor/tiled,
 /area/site53/zonecommanderoffice{
@@ -9298,6 +9322,8 @@
 /area/site53/medical/chemistry)
 "KR" = (
 /obj/structure/closet/secure_closet/mtf/breachautomatics,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/ezarmory)
 "Lb" = (
@@ -10096,13 +10122,14 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/equipstorage)
 "WK" = (
-/obj/effect/landmark/start{
-	name = "EZ Senior Agent"
-	},
+/obj/structure/table/rack,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/clothing/suit/armor/pcarrier/green,
+/obj/item/clothing/head/helmet,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/entrancezone/ezarmory)
 "WP" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	dir = 4;
@@ -10155,9 +10182,13 @@
 	name = "Entrance Zone Security Center"
 	})
 "Xv" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/prepainted,
-/area/space)
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/ezarmory)
 "Xy" = (
 /obj/structure/railing/mapped,
 /obj/structure/window/reinforced{
@@ -10208,6 +10239,8 @@
 	pixel_x = 20
 	},
 /obj/structure/closet/secure_closet/mtf/breachautomatics,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/ezarmory)
 "XN" = (
@@ -42360,7 +42393,7 @@ Ak
 tB
 tB
 Tn
-Xv
+tA
 dA
 dA
 dA
@@ -42619,16 +42652,16 @@ Rj
 tA
 tA
 lC
-dA
-dA
-dA
+lC
+lC
+lC
+lC
 kT
 kT
 kT
 kT
 kT
 kT
-dA
 dA
 dA
 fF
@@ -42876,16 +42909,16 @@ tY
 Bf
 tV
 lC
-lC
-lC
-lC
-lC
+Jx
+HL
+Ho
+zc
+kT
 zG
 xW
 Hj
 Vl
 kT
-dA
 dA
 dA
 fF
@@ -43134,15 +43167,15 @@ tB
 tB
 mS
 xg
-Jx
-mf
-nt
+xg
+xg
+xg
+tz
 wO
 PS
 PS
 PS
 kT
-dA
 dA
 dA
 fF
@@ -43390,16 +43423,16 @@ tB
 uf
 ue
 mZ
-HL
 yt
-tz
-mZ
+yt
+yt
+nH
+Xv
 PA
-Ho
+WK
 PS
 KR
 kT
-dA
 dA
 dA
 dA
@@ -43649,14 +43682,14 @@ UE
 lC
 ni
 mY
-nH
-lC
-QJ
-fy
-Ny
-XL
+mY
+nX
 kT
-dA
+fy
+nA
+PS
+KR
+kT
 dA
 fF
 fF
@@ -43904,16 +43937,16 @@ tN
 ub
 tW
 lC
-nX
+ni
+mY
 mY
 lS
-lC
 kT
+QJ
+mf
+Ny
+XL
 kT
-kT
-kT
-kT
-dA
 dA
 fF
 gq
@@ -44162,15 +44195,15 @@ ub
 ui
 py
 ni
-WK
-nA
-lC
-oS
-oS
-oS
-oS
-oS
-dA
+mY
+mY
+nt
+kT
+kT
+kT
+kT
+kT
+kT
 dA
 fF
 gq
@@ -44423,10 +44456,10 @@ lI
 lI
 lG
 lG
-rm
-rm
-rm
-oS
+dA
+dA
+dA
+dA
 dA
 dA
 fF
