@@ -350,7 +350,7 @@
 		to_chat(user, "<span class='warning'>There is already a card in there!</span>")
 		return
 	var/mob/living/L = locate(/mob/living) in card.contents
-	if(L && L.key)
+	if(L?.key)
 		L.forceMove(src)
 		controlling = L
 		user.drop_from_inventory(card)

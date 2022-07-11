@@ -118,7 +118,7 @@
 			if(istype(speaker,/mob/living/simple_animal))
 				var/mob/living/M = speaker
 				var/datum/say_list/S = M.say_list
-				if(S && S.speak && S.speak.len)
+				if(S?.speak && S.speak.len)
 					message = pick(S.speak)
 				else
 					return

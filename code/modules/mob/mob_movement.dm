@@ -116,7 +116,7 @@
 	set hidden = 1
 	if(!isrobot(mob) && mob.stat == CONSCIOUS && isturf(mob.loc))
 		var/obj/item/I = mob.get_active_hand()
-		if(I && I.can_be_dropped_by_client(mob))
+		if(I?.can_be_dropped_by_client(mob))
 			mob.drop_item()
 
 //This proc should never be overridden elsewhere at /atom/movable to keep directions sane.
@@ -163,7 +163,7 @@
 		src.move_speed = world.time - src.l_move_time
 		src.l_move_time = world.time
 		src.m_flag = 1
-		if ((A != src.loc && A && A.z == src.z))
+		if ((A != src.loc && A?.z == src.z))
 			src.last_move = get_dir(A, src.loc)
 
 /client/Move(n, direction)
@@ -221,7 +221,7 @@
 			return 1
 		if(istype(O, /obj/structure/catwalk))
 			return 1
-		if(O && O.density && O.anchored)
+		if(O?.density && O?.anchored)
 			return 1
 
 	return 0

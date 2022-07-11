@@ -85,7 +85,7 @@ var/datum/uplink/uplink = new()
 
 /datum/uplink_item/proc/cost(var/telecrystals, obj/item/device/uplink/U)
 	. = item_cost
-	if(U && U.uplink_owner)
+	if(U?.uplink_owner)
 		for(var/antag_role in antag_costs)
 			var/datum/antagonist/antag = GLOB.all_antag_types_[antag_role]
 			if(antag.is_antagonist(U.uplink_owner))

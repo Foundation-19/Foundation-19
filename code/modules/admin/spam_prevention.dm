@@ -4,7 +4,7 @@ GLOBAL_LIST_EMPTY(ckey_punished_for_spam) // this round; to avoid redundant reco
 
 // Should be checked on all instant client verbs.
 /proc/user_acted(client/C, admin_message = "was kicked due to possible spam abuse.", client_message = "Possible spam abuse detected; you are being kicked from the server.")
-	var/ckey = C && C.ckey
+	var/ckey = C && C?.ckey
 	if(!ckey)
 		return FALSE
 	if (config.do_not_prevent_spam)
