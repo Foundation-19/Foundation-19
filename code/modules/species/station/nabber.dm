@@ -319,9 +319,9 @@
 	if(H.species.get_bodytype() == SPECIES_MONARCH_QUEEN)
 		return ..()
 	if(H.pulling_punches)
-		return SPAN_NOTICE("<i>[H.p_their()] manipulation arms are out and [H.p_they() == "they" ? "look" : "looks"] ready to use complex items.</i>")
+		return SPAN_NOTICE("<i>[H.p_their(TRUE)] manipulation arms are out and [H.p_they() == "they" ? "look" : "looks"] ready to use complex items.</i>")
 	else
-		return SPAN_WARNING("[H.p_their()] deadly upper arms are raised and [H.p_they() == "they" ? "look" : "looks"] looks ready to attack!")
+		return SPAN_WARNING("[H.p_their(TRUE)] deadly upper arms are raised and [H.p_they() == "they" ? "look" : "looks"] looks ready to attack!")
 
 /datum/species/nabber/handle_post_spawn(var/mob/living/carbon/human/H)
 	..()
