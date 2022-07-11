@@ -198,7 +198,7 @@
 /datum/job/proc/is_restricted(var/datum/preferences/prefs, var/feedback)
 	var/datum/species/S
 
-	if (!is_species_whitelist_allowed(prefs.client, use_species_whitelist))
+	if(!is_species_whitelist_allowed(prefs.client, use_species_whitelist))
 		S = all_species[use_species_whitelist]
 		to_chat(feedback, "<span class='boldannounce'>\An [S] species whitelist is required for [title].</span>")
 		return TRUE
@@ -226,14 +226,16 @@
 
 	return FALSE
 
-/datum/job/proc/get_join_link(var/client/caller, var/href_string, var/show_invalid_jobs)
-	if(is_available(caller))
-		if(is_restricted(caller.prefs))
-			if(show_invalid_jobs)
-				return "<tr><td><a style='text-decoration: line-through' href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
-		else
-			return "<tr><td><a href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
-	return ""
+/datum/job/proc/get_join_link(client/caller, href_string, show_invalid_jobs)
+	if(!is_available(caller) && show_invalid_jobs)
+		if(show_invalid_jobs)
+			return "<tr><td><a style='background: #9E4444' href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
+		return ""
+	if(is_restricted(caller.prefs))
+		if(show_invalid_jobs)
+			return "<tr><td><a style='background: #9E4444' href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
+	else
+		return "<tr><td><a href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
 
 // Only players with the job assigned and AFK for less than 10 minutes count as active
 /datum/job/proc/check_is_active(var/mob/M)
