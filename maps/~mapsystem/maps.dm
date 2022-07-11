@@ -89,8 +89,6 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/overmap_z = 0		//If 0 will generate overmap zlevel on init. Otherwise will populate the zlevel provided.
 	var/overmap_event_areas = 0 //How many event "clouds" will be generated
 
-	var/list/lobby_screens = list('icons/default_lobby.png')    // The list of lobby screen images to pick() from.
-	var/current_lobby_screen
 	var/decl/audio/track/lobby_track                     // The track that will play in the lobby screen.
 	var/list/lobby_tracks = list()                  // The list of lobby tracks to pick() from. If left unset will randomly select among all available decl/audio/track subtypes.
 	var/welcome_sound = 'sound/AI/welcome.ogg'		// Sound played on roundstart
@@ -123,57 +121,13 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 	var/list/available_cultural_info = list(
 		TAG_HOMEWORLD = list(
-			HOME_SYSTEM_MARS,
-			HOME_SYSTEM_LUNA,
-			HOME_SYSTEM_EARTH,
-			HOME_SYSTEM_VENUS,
-			HOME_SYSTEM_CERES,
-			HOME_SYSTEM_PLUTO,
-			HOME_SYSTEM_TAU_CETI,
-			HOME_SYSTEM_HELIOS,
-			HOME_SYSTEM_TERRA,
-			HOME_SYSTEM_NEW_EARTH,
-			HOME_SYSTEM_TERSTEN,
-			HOME_SYSTEM_LORRIMAN,
-			HOME_SYSTEM_CINU,
-			HOME_SYSTEM_YUKLID,
-			HOME_SYSTEM_LORDANIA,
-			HOME_SYSTEM_KINGSTON,
-			HOME_SYSTEM_GAIA,
-			HOME_SYSTEM_MAGNITKA,
-			HOME_SYSTEM_OTHER
+			HOME_SYSTEM_EARTH
 		),
 		TAG_FACTION = list(
-			FACTION_SOL_CENTRAL,
-			FACTION_TERRAGOV,
-			FACTION_CORPORATE,
-			FACTION_NANOTRASEN,
-			FACTION_FREETRADE,
-			FACTION_XYNERGY,
-			FACTION_HEPHAESTUS,
-			FACTION_DAIS,
-			FACTION_EXPEDITIONARY,
-			FACTION_FLEET,
-			FACTION_PCRC,
-			FACTION_SAARE,
-			FACTION_OTHER
+			FACTION_SOL_CENTRAL
 		),
 		TAG_CULTURE = list(
-			CULTURE_HUMAN_MARTIAN,
-			CULTURE_HUMAN_MARSTUN,
-			CULTURE_HUMAN_LUNAPOOR,
-			CULTURE_HUMAN_LUNARICH,
-			CULTURE_HUMAN_VENUSIAN,
-			CULTURE_HUMAN_VENUSLOW,
-			CULTURE_HUMAN_BELTER,
-			CULTURE_HUMAN_PLUTO,
-			CULTURE_HUMAN_EARTH,
-			CULTURE_HUMAN_CETI,
-			CULTURE_HUMAN_SPACER,
-			CULTURE_HUMAN_SPAFRO,
-			CULTURE_HUMAN_TERRAN,
-			CULTURE_HUMAN_OTHER,
-			CULTURE_OTHER
+			CULTURE_HUMAN_EARTH
 		),
 		TAG_RELIGION = list(
 			RELIGION_OTHER,
@@ -229,7 +183,6 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 				allowed_jobs += jtype
 	if(!LAZYLEN(planet_size))
 		planet_size = list(world.maxx, world.maxy)
-	current_lobby_screen = pick(lobby_screens)
 	game_year = text2num(time2text(world.timeofday, "YYYY")) + DEFAULT_GAME_YEAR_OFFSET
 
 
@@ -500,16 +453,6 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		num2text(HAIL_FREQ)  = list(),
 	)
 
-/datum/map/proc/show_titlescreen(client/C)
-	winset(C, "lobbybrowser", "is-disabled=false;is-visible=true")
-
-	show_browser(C, current_lobby_screen, "file=titlescreen.png;display=0")
-	show_browser(C, file('html/lobby_titlescreen.html'), "window=lobbybrowser")
-
-/datum/map/proc/hide_titlescreen(client/C)
-	if(C.mob) // Check if the client is still connected to something
-		// Hide title screen, allowing player to see the map
-		winset(C, "lobbybrowser", "is-disabled=true;is-visible=false")
 
 /datum/map/proc/roundend_player_status()
 	for(var/mob/Player in GLOB.player_list)

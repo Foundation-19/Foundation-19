@@ -65,7 +65,7 @@
 
 	for(var/turf/simulated/T in world)
 		T.air = null
-		T.cut_overlay(unsorted_overlays)
+		T.overlays.Remove(unsorted_overlays)
 		T.zone = null
 
 	to_chat(usr, "\[4/5\] - All turfs reset to roundstart values.")

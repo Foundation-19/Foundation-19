@@ -1,6 +1,3 @@
-/obj/item/clothing/head/helmet/scp
-	icon = 'icons/obj/clothing/hats.dmi'
-
 /obj/item/clothing/head/helmet/scp/security
 	name = "\improper foundation security helmet"
 	desc = "A helmet with 'FOUNDATION SECURITY' printed on the back lettering."

@@ -3,7 +3,7 @@
 // they can only be read by admins and moderators.
 
 // a single admin report
-/datum/admin_report/var
+datum/admin_report/var
 	ID     // the ID of the report
 	body   // the content of the report
 	author // key of the author
@@ -13,7 +13,7 @@
 	offender_key // store the key of the offender
 	offender_cid // store the cid of the offender
 
-/datum/report_topic_handler
+datum/report_topic_handler
 	Topic(href,href_list)
 		..()
 		var/client/C = locate(href_list["client"])
@@ -31,7 +31,7 @@ world/New()
 	report_topic_handler = new
 
 // add a new news datums
-proc/make_report(body, author, okey, cid)
+/proc/make_report(body, author, okey, cid)
 	var/savefile/Reports = new("data/reports.sav")
 	var/list/reports
 	var/lastID
@@ -56,7 +56,7 @@ proc/make_report(body, author, okey, cid)
 	to_chat(Reports["reports"], reports)
 	to_chat(Reports["lastID"], lastID)
 // load the reports from disk
-proc/load_reports()
+/proc/load_reports()
 	var/savefile/Reports = new("data/reports.sav")
 	var/list/reports
 

@@ -3,10 +3,6 @@
 	full_name = "Foundation Site 53"
 	path = "site53"
 	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
-
-	lobby_screens = list('maps/site53/icons/lobby.dmi')
-
-
 	station_levels = list(1,2,3,4)
 	contact_levels = list(1,2,3,4)
 	player_levels = list(1,2,3,4)
@@ -50,7 +46,7 @@
 	away_site_budget = 3
 
 	id_hud_icons = 'maps/site53/icons/assignment_hud.dmi'
-	lobby_screens = list("title","title2")
+
 	lobby_tracks = list(
 		/decl/audio/track/dieinthedark,
 		/decl/audio/track/perdition,

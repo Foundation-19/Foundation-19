@@ -310,7 +310,7 @@ proc
 					return 0
 		return 1
 
-proc/isInSight(var/atom/A, var/atom/B)
+/proc/isInSight(var/atom/A, var/atom/B)
 	var/turf/Aturf = get_turf(A)
 	var/turf/Bturf = get_turf(B)
 
