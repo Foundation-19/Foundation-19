@@ -64,7 +64,7 @@
 			return 1
 
 	for(var/obj/O in orange(1, src))
-		if(O && O.density && O.anchored)
+		if(O?.density && O?.anchored)
 			return 1
 
 	return 0

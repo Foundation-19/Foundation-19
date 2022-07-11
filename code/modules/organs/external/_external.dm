@@ -281,7 +281,7 @@
 
 /obj/item/organ/external/proc/is_parent_dislocated()
 	var/obj/item/organ/external/O = parent
-	while(O && O.dislocated != -1)
+	while(O?.dislocated != -1)
 		if(O.dislocated == 1)
 			return 1
 		O = O.parent
@@ -747,7 +747,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		else
 			brute_dam += W.damage
 
-		if(bleeds && W.bleeding() && (H && H.should_have_organ(BP_HEART)))
+		if(bleeds && W.bleeding() && (H?.should_have_organ(BP_HEART)))
 			W.bleed_timer--
 			status |= ORGAN_BLEEDING
 

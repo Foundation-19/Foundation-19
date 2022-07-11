@@ -11,9 +11,9 @@
 /obj/item/integrated_circuit/gps/do_work()
 	var/turf/T = get_turf(src)
 
-	set_pin_data(IC_OUTPUT, 1, T && T.x)
-	set_pin_data(IC_OUTPUT, 2, T && T.y)
-	set_pin_data(IC_OUTPUT, 3, T && T.z)
+	set_pin_data(IC_OUTPUT, 1, T?.x)
+	set_pin_data(IC_OUTPUT, 2, T?.y)
+	set_pin_data(IC_OUTPUT, 3, T?.z)
 
 /obj/item/integrated_circuit/abs_to_rel_coords
 	name = "abs to rel coordinate converter"

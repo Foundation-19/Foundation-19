@@ -54,7 +54,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	set_species(H ? H.get_species() : SPECIES_HUMAN)
 	set_branch(H ? (H.char_branch?.name) : "None")
 	set_rank(H ? (H.char_rank?.name) : "None")
-	set_public_record(H && H.public_record && !jobban_isbanned(H, "Records") ? html_decode(H.public_record) : "No record supplied")
+	set_public_record(H?.public_record && !jobban_isbanned(H, "Records") ? html_decode(H.public_record) : "No record supplied")
 
 	// Medical record
 	set_bloodtype(H ? H.b_type : "Unset")
@@ -86,7 +86,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	set_criminalStatus(GLOB.default_security_status)
 	set_dna(H ? H.dna.unique_enzymes : "")
 	set_fingerprint(H ? md5(H.dna.uni_identity) : "")
-	set_secRecord(H && H.sec_record && !jobban_isbanned(H, "Records") ? html_decode(H.sec_record) : "No record supplied")
+	set_secRecord(H?.sec_record && !jobban_isbanned(H, "Records") ? html_decode(H.sec_record) : "No record supplied")
 
 	// Employment record
 	var/employment_record = "No record supplied"
@@ -119,7 +119,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 		set_skillset(jointext(skills,"\n"))
 
 	// Antag record
-	set_antagRecord(H && H.exploit_record && !jobban_isbanned(H, "Records") ? html_decode(H.exploit_record) : "")
+	set_antagRecord(H?.exploit_record && !jobban_isbanned(H, "Records") ? html_decode(H.exploit_record) : "")
 
 // Global methods
 // Used by character creation to create a record for new arrivals.

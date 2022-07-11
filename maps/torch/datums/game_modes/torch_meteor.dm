@@ -34,7 +34,7 @@
 			nav_status = TRUE
 	var/bsd_status = FALSE
 	var/area/A = locate(/area/engineering/bluespace) in world
-	if(A && A.powered(EQUIP)) //There's no actual machines to check
+	if(A?.powered(EQUIP)) //There's no actual machines to check
 		bsd_status = TRUE
 
 	to_world("<h3>Damage report</h3>")

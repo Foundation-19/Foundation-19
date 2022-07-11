@@ -190,7 +190,7 @@ var/list/tape_roll_applications = list()
 			var/possible_dirs = 0
 			for(var/dir in GLOB.cardinal)
 				T = get_step(start, dir)
-				if(T && T.density)
+				if(T?.density)
 					possible_dirs += dir
 				else
 					for(var/obj/structure/window/W in T)

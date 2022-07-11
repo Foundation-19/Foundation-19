@@ -149,7 +149,7 @@ var/global/list/rad_collectors = list()
 	return ..()
 
 /obj/machinery/power/rad_collector/proc/collector_break()
-	if(P && P.air_contents)
+	if(P?.air_contents)
 		var/turf/T = get_turf(src)
 		if(T)
 			T.assume_air(P.air_contents)

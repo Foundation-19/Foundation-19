@@ -30,7 +30,7 @@
 	if(istype(A, /turf))
 		var/turf/T = A
 		var/obj/effect/fluid/F = locate() in T
-		if(F && F.fluid_amount > 0)
+		if(F?.fluid_amount > 0)
 			if(F.fluid_amount > FLUID_SHALLOW)
 				to_chat(user, SPAN_WARNING("There is too much water here to be mopped up."))
 			else

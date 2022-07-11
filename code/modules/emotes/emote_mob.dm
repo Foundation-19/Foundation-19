@@ -144,10 +144,10 @@
 // Specific mob type exceptions below.
 /mob/living/silicon/ai/emote(var/act, var/type, var/message)
 	var/obj/machinery/hologram/holopad/T = src.holo
-	if(T && T.masters[src]) //Is the AI using a holopad?
+	if(T?.masters[src]) //Is the AI using a holopad?
 		src.holopad_emote(message)
 	else //Emote normally, then.
-		..()
+		return ..()
 
 /mob/living/captive_brain/emote(var/message)
 	return
