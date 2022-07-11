@@ -227,7 +227,7 @@
 	return FALSE
 
 /datum/job/proc/get_join_link(client/caller, href_string, show_invalid_jobs)
-	if(!is_available(caller) && show_invalid_jobs)
+	if(!is_available(caller))
 		if(show_invalid_jobs)
 			return "<tr><td><a style='background: #9E4444' href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
 		return ""
