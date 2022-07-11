@@ -17,8 +17,6 @@
 	if(!list_find(GLOB.player_list, src))
 		ADD_SORTED(GLOB.player_list, src, /proc/cmp_mob_key)
 
-	InitializeHud()
-
 	if(!SScharacter_setup.initialized)
 		SScharacter_setup.newplayers_requiring_init += src
 	else
@@ -40,3 +38,4 @@
 	if(SL.up_description)
 		alert_desc = SL.up_description
 	to_chat(src, "<span class='notice'>The alert level on the [station_name()] is currently: <font color=[SL.light_color_alarm]><B>[SL.name]</B></font>. [alert_desc]</span>")
+	InitializeHud()
