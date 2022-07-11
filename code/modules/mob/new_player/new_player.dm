@@ -11,8 +11,10 @@
 
 	var/ready = 0
 	var/respawned_time = 0
-	var/spawning = 0//Referenced when you want to delete the new_player later on in the code.
-	var/totalPlayers = 0		 //Player counts for the Lobby tab
+	//Referenced when you want to delete the new_player later on in the code.
+	var/spawning = 0
+	///Player counts for the Lobby tab
+	var/totalPlayers = 0
 	var/totalPlayersReady = 0
 	var/show_invalid_jobs = 0
 
@@ -40,11 +42,11 @@
 			totalPlayersReady = 0
 			for(var/mob/new_player/player in GLOB.player_list)
 				var/highjob
-				if (player.client)
+				if(player.client)
 					var/show_ready = player.client.get_preference_value(/datum/client_preference/show_ready) == GLOB.PREF_SHOW
-					if (player.client.prefs?.job_high)
+					if(player.client.prefs?.job_high)
 						highjob = " as [player.client.prefs.job_high]"
-					if (!player.is_stealthed())
+					if(!player.is_stealthed())
 						stat("[player.key]", (player.ready && show_ready)?("(Playing[highjob])"):(null))
 				totalPlayers++
 				if(player.ready)totalPlayersReady++
@@ -84,12 +86,15 @@
 		AttemptLateSpawn(job, client.prefs.spawnpoint)
 		return
 
+	if(href_list["invalid_jobs"])
+		show_invalid_jobs = !show_invalid_jobs
+		LateChoices() // Update the window
+
 	if(!ready && href_list["preference"])
 		if(client)
 			client.prefs.process_link(src, href_list)
 
 /mob/new_player/proc/AttemptLateSpawn(datum/job/job, spawning_at)
-
 	if(src != usr)
 		return FALSE
 	if(GAME_STATE != RUNLEVEL_GAME)
@@ -166,7 +171,7 @@
 	qdel(src)
 
 /mob/new_player/proc/AnnounceCyborg(mob/living/character, rank, join_message)
-	if (GAME_STATE == RUNLEVEL_GAME)
+	if(GAME_STATE == RUNLEVEL_GAME)
 		if(character.mind.role_alt_title)
 			rank = character.mind.role_alt_title
 		// can't use their name here, since cyborg namepicking is done post-spawn, so we'll just say "A new Cyborg has arrived"/"A new Android has arrived"/etc.
@@ -174,8 +179,8 @@
 
 /mob/new_player/proc/LateChoices()
 	var/name = client.prefs.be_random_name ? "friend" : client.prefs.real_name
-
 	var/list/header = list("<html><body><center>")
+
 	header += "<b>Welcome, [name].<br></b>"
 	header += "Round Duration: [roundduration2text()]<br>"
 
