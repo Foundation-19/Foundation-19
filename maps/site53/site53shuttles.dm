@@ -150,6 +150,7 @@
 	name = "Chaos Base"
 	landmark_tag = "car1_start"
 	base_turf = /turf/simulated/floor/exoplanet/snow
+	base_area = /area/site53/surface/surface
 
 /obj/effect/shuttle_landmark/chaos1/out
 	name = "Site 53"
@@ -169,6 +170,7 @@
 	name = "GOC Base"
 	landmark_tag = "goc1_start"
 	base_turf = /turf/simulated/floor/exoplanet/snow
+	base_area = /area/site53/surface/surface
 
 /obj/effect/shuttle_landmark/goc1/out
 	name = "Site 53"
