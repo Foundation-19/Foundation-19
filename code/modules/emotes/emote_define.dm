@@ -49,28 +49,23 @@
 				target = thing
 				break
 
-	if (targetted_emote && !target)
+	if(targetted_emote && !target)
 		to_chat(user, SPAN_WARNING("You can't do that to thin air."))
 		return
 
-	if (target && target != user && check_range)
-		if (get_dist(user, target) > check_range)
+	if(target && target != user && check_range)
+		if(get_dist(user, target) > check_range)
 			to_chat(user, SPAN_WARNING("\The [target] is too far away."))
 			return
-
-	var/datum/gender/user_gender = gender_datums[user.get_visible_gender()]
-	var/datum/gender/target_gender
-	if(target)
-		target_gender = gender_datums[target.get_visible_gender()]
 
 	var/use_3p
 	var/use_1p
 	if(emote_message_1p)
 		if(target && emote_message_1p_target)
 			use_1p = get_emote_message_1p(user, target, extra_params)
-			use_1p = replacetext(use_1p, "TARGET_THEM", target_gender.him)
-			use_1p = replacetext(use_1p, "TARGET_THEIR", target_gender.his)
-			use_1p = replacetext(use_1p, "TARGET_SELF", target_gender.self)
+			use_1p = replacetext(use_1p, "TARGET_THEM", target.p_them())
+			use_1p = replacetext(use_1p, "TARGET_THEIR", target.p_their())
+			use_1p = replacetext(use_1p, "TARGET_SELF", target.p_themself())
 			use_1p = replacetext(use_1p, "TARGET", "<b>\the [target]</b>")
 		else
 			use_1p = get_emote_message_1p(user, null, extra_params)
@@ -79,20 +74,20 @@
 	if(emote_message_3p)
 		if(target && emote_message_3p_target)
 			use_3p = get_emote_message_3p(user, target, extra_params)
-			use_3p = replacetext(use_3p, "TARGET_THEM", target_gender.him)
-			use_3p = replacetext(use_3p, "TARGET_THEIR", target_gender.his)
-			use_3p = replacetext(use_3p, "TARGET_SELF", target_gender.self)
+			use_3p = replacetext(use_3p, "TARGET_THEM", target.p_them())
+			use_3p = replacetext(use_3p, "TARGET_THEIR", target.p_their())
+			use_3p = replacetext(use_3p, "TARGET_SELF", target.p_themself())
 			use_3p = replacetext(use_3p, "TARGET", "<b>\the [target]</b>")
 		else
 			use_3p = get_emote_message_3p(user, null, extra_params)
-		use_3p = replacetext(use_3p, "USER_THEM", user_gender.him)
-		use_3p = replacetext(use_3p, "USER_THEIR", user_gender.his)
-		use_3p = replacetext(use_3p, "USER_SELF", user_gender.self)
+		use_3p = replacetext(use_3p, "USER_THEM", user.p_them())
+		use_3p = replacetext(use_3p, "USER_THEIR", user.p_their())
+		use_3p = replacetext(use_3p, "USER_SELF", user.p_themself())
 		use_3p = replacetext(use_3p, "USER", "<b>\the [user]</b>")
 		use_3p = capitalize(use_3p)
 
 	var/use_range = emote_range
-	if (!use_range)
+	if(!use_range)
 		use_range = world.view
 
 	if(ismob(user))
@@ -104,9 +99,9 @@
 					M.visible_message(message = "[user] opens their mouth silently!", self_message = "You cannot say anything!", blind_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
 					return
 				else
-					M.audible_message(message = use_3p, self_message = use_1p, deaf_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
+					M.audible_message(message = "<<b>\the [user]> [use_3p]", self_message = use_1p, deaf_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
 		else
-			M.visible_message(message = use_3p, self_message = use_1p, blind_message = emote_message_impaired, range = use_range, checkghosts = /datum/client_preference/ghost_sight)
+			M.visible_message(message = "<<b>\the [user]> [use_3p]", self_message = use_1p, blind_message = emote_message_impaired, range = use_range, checkghosts = /datum/client_preference/ghost_sight)
 
 	do_extra(user, target)
 	do_sound(user)
