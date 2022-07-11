@@ -31955,9 +31955,6 @@
 "gbS" = (
 /obj/item/clothing/head/helmet/scp/goc,
 /obj/item/clothing/suit/armor/goc,
-/obj/item/device/radio/headset/heads/hos/gock{
-	name = "goc grunt's headset"
-	},
 /obj/structure/closet,
 /obj/item/gun/projectile/automatic/battlerifle,
 /obj/item/gun/projectile/pistol/military{
@@ -36055,9 +36052,6 @@
 /obj/item/clothing/head/helmet/scp/goc,
 /obj/structure/closet,
 /obj/item/clothing/suit/armor/goc,
-/obj/item/device/radio/headset/heads/hos/gock{
-	name = "goc grunt's headset"
-	},
 /obj/item/gun/projectile/automatic/battlerifle,
 /obj/item/gun/projectile/pistol/military{
 	desc = "The Glock 20 - a mass produced ballistic sidearm in widespread service within the GOC."
