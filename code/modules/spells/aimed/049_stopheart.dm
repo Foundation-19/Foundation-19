@@ -16,28 +16,6 @@
 
 /datum/spell/aimed/stopheart/cast(list/targets, mob/living/user)
 	var/mob/living/carbon/human/target = targets[1]
-	if(isspecies(target, SPECIES_SCP049_1) || isscp343(target) || !istype(target))
-		failed_cast(user)
-		return FALSE
-
-	var/obj/item/organ/internal/heart/heart = target.internal_organs_by_name[BP_HEART]
-	if(heart.pulse != PULSE_NONE)
-		var/targetted_bodypart = user.zone_sel.selecting
-		if(targetted_bodypart == BP_EYES)
-			to_chat(usr, SPAN_WARNING("I can't reach their eyes."))
-			failed_cast(user)
-			return FALSE
-		user.visible_message(SPAN_DANGER("[user.name] presses against [target.name]'s [targetted_bodypart]."))
-		if(target.get_covering_equipped_item_by_zone(targetted_bodypart))
-			to_chat(usr, SPAN_WARNING("Their [targetted_bodypart] is covered."))
-			remove_ranged_ability()
-			on_deactivation(user)
-			return FALSE
-		heart.pulse = PULSE_NONE
-		remove_ranged_ability()
-		on_deactivation(user)
-		return TRUE
-	else
-		to_chat(usr, SPAN_WARNING("They are already dead."))
-		failed_cast(user)
-		return FALSE
+	var/mob/living/carbon/human/scp049/player = user
+	if(!player.stop_heart(target))
+		failed_cast(player)

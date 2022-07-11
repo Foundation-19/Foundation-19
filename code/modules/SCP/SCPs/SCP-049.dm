@@ -1,5 +1,6 @@
 #define NEXT_EMOTE_TIME 5 SECONDS
 #define NEXT_PESTILLENCE_DIAG 5 MINUTES
+#define NEXT_DEATH_TOUCH_AI 1 MINUTES
 
 GLOBAL_LIST_EMPTY(scp049s)
 GLOBAL_LIST_EMPTY(scp049_1s)
@@ -11,10 +12,14 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	icon_state = null
 	var/list/pestilence_images = list()
 	icon_state = ""
+	faction = "scp"
 	var/contained = TRUE
+	ai_holder_type = /datum/ai_holder/humanoid/scp049
+
 	var/list/infected_players = list() // List of players infected with the pestillence
 	var/emote_cooldown = 0 // How long before next emote
 	var/pestillence_cooldown = 0 // How long until another person can be diagnosed with the disease through examining
+	var/ai_death_touch_cooldown = 0 // Cooldown for AI to deathtouch
 
 /datum/scp/scp_049
 	name = "SCP-049"
@@ -34,11 +39,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 /mob/living/carbon/human/scp049/Initialize()
 	. = ..()
-	add_language(LANGUAGE_ENGLISH)
-	add_language(LANGUAGE_HUMAN_FRENCH)
-	add_language(LANGUAGE_HUMAN_GERMAN)
-	add_language(LANGUAGE_HUMAN_SPANISH)
-	update_languages()
 	// fix names
 	fully_replace_character_name("SCP-049")
 
@@ -50,20 +50,20 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	GLOB.scp049s += src
 	verbs += /mob/living/carbon/human/proc/door_049
 
+	if(!zone_sel)
+		zone_sel = new /obj/screen/zone_sel(null)
+
 	// emotes
 	verbs += list(
 		/mob/living/carbon/human/scp049/proc/greetings,
 		/mob/living/carbon/human/scp049/proc/yet_another_victim,
 		/mob/living/carbon/human/scp049/proc/you_are_not_a_doctor,
 		/mob/living/carbon/human/scp049/proc/I_sense_the_disease_in_you,
-		/mob/living/carbon/human/scp049/proc/Im_here_to_cure_you,
-		/mob/living/carbon/human/scp049/proc/cure_action
+		/mob/living/carbon/human/scp049/proc/Im_here_to_cure_you
 	)
 
 /mob/living/carbon/human/scp049/Destroy()
 	pestilence_images = null
-	attempted_surgery_on = null
-	target = null
 	GLOB.scp049s -= src
 	return ..()
 
@@ -78,20 +78,13 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		see_disease()
 
 /mob/living/carbon/human/scp049/proc/is_valid_curing_target(var/mob/living/carbon/human/target)
-	var/valid = TRUE
-
 	if(isspecies(target, SPECIES_SCP049_1))
-		valid = FALSE
+		return FALSE
 	if(istype(target, /mob/living/carbon/human/scp049))
-		valid = FALSE
+		return FALSE
 	if(isscp343(target))
-		valid = FALSE
+		return FALSE
 	if(!istype(target, /mob/living/carbon/human))
-		valid = FALSE
-	if(target in infected_players)
-		valid = FALSE
-
-	if(!valid)
 		return FALSE
 
 	return TRUE
@@ -99,23 +92,12 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/scp049/Login()
 	. = ..()
 	if(client)
+		//Start text
+
 		if(!(MUTATION_XRAY in mutations))
 			mutations.Add(MUTATION_XRAY)
 			update_mutations()
 			update_sight()
-		var/datum/spell/spl = new /datum/spell/targeted/curepestillence
-		add_spell(spl)
-		//mind.learned_spells += spl
-		spl = new /datum/spell/aimed/stopheart
-		add_spell(spl)
-		//mind.learned_spells += spl
-
-/mob/living/carbon/human/scp049/Logout()
-	. = ..()
-	if(mind)
-		mind = null
-		for(var/datum/spell/spl in mind.learned_spells)
-			remove_spell(spl)
 
 /mob/living/carbon/human/scp049/proc/see_disease()
 	if (client)
@@ -137,17 +119,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/scp049/movement_delay()
 	return 3.0
 
-/mob/living/carbon/human/scp049/UnarmedAttack(mob/living/carbon/human/target)
-	if(!isscp049(target) || isspecies(src, SPECIES_SCP049_1) || src == target)
-		return ..(target)
-	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	switch(a_intent)
-		if(I_HELP)
-			to_chat(src, "<span class='warning'>You refrain from curing as your intent is set to help.</span>")
-			return
-		if(I_GRAB)
-			//scp049_attack(target)
-			return
 
 /mob/living/carbon/human/scp049/bullet_act(var/obj/item/projectile/P, var/def_zone)
 	if (getBruteLoss() + getFireLoss() + getToxLoss() + getCloneLoss() >= 200)
@@ -226,29 +197,22 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		playsound(src, 'sound/scp/voice/SCP049_5.ogg', 30)
 		emote_cooldown = world.time + NEXT_EMOTE_TIME
 
-/mob/living/carbon/human/scp049/proc/cure_action()
-	set category = "SCP-049"
-	set name = "Cure Victim"
-
-	conversion_act()
-
 /mob/living/carbon/human/scp049/proc/conversion_act()
 	var/mob/living/carbon/human/target
 	var/diseased = FALSE
-	if(client)
-		var/obj/item/grab/G = src.get_active_hand()
-		if(!G)
-			to_chat(src, "<span class='warning'>We must take hold of a victim to cure their disease.</span>")
-			return
+	var/obj/item/grab/G = src.get_active_hand()
+	if(!G)
+		to_chat(src, "<span class='warning'>We must take hold of a victim to cure their disease.</span>")
+		return FALSE
 
-		target = G.affecting
+	target = G.affecting
 
 	if(isspecies(target, SPECIES_SCP049_1))
 		to_chat(src, SPAN_WARNING("They are free from the pestillence. I have already cured them."))
-		return
+		return FALSE
 
 	if(!is_valid_curing_target(target))
-		return
+		return FALSE
 
 	if(target in infected_players)
 		diseased = TRUE
@@ -279,7 +243,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 				to_chat(src, "<span class='warning'>Our curing of [target] has been interrupted!</span>")
 			else
 				to_chat(src, SPAN_WARNING("Our surgery on [target] has been interrupted."))
-			return
+			return FALSE
 
 	target.visible_message("<span class = 'danger'><big>The lifeless corpse of [target.name] begins to convulse violently!</big></span>")
 	GLOB.scp049_1s += target
@@ -288,7 +252,66 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		infected_players -= target
 		to_chat(src, "<span class='notice'>You have cured [target].</span>")
 	to_chat(target, "<span class='danger'>You feel the last of your mind drift away...</span>")
+	return TRUE
 
+/mob/living/carbon/human/scp049/proc/stop_heart(var/mob/living/carbon/human/target)
+	if(!is_valid_curing_target(target))
+		return FALSE
+
+	var/obj/item/organ/internal/heart/heart = target.internal_organs_by_name[BP_HEART]
+	if(heart.pulse != PULSE_NONE)
+		var/targetted_bodypart = zone_sel.selecting
+		if(targetted_bodypart == BP_EYES || targetted_bodypart == BP_MOUTH)
+			to_chat(src, SPAN_WARNING("This targetted part is too small."))
+			return FALSE
+		visible_message(SPAN_DANGER("[src.name] presses against [target.name]'s [targetted_bodypart]."))
+		if(target.get_covering_equipped_item_by_zone(targetted_bodypart))
+			to_chat(src, SPAN_WARNING("Their [targetted_bodypart] is covered."))
+			return FALSE
+		heart.pulse = PULSE_NONE
+		return TRUE
+	else
+		to_chat(usr, SPAN_WARNING("They are already dead."))
+		return FALSE
+
+/datum/ai_holder/humanoid/scp049
+	use_astar = TRUE
+	retaliate = TRUE
+	hostile = TRUE
+	wander = TRUE
+	intelligence_level = AI_SMART
+
+/mob/living/carbon/human/scp049/IAttack(atom/A) //Grabs target before death touching; then curing.
+	var/mob/living/carbon/human/target = A
+	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	zone_sel.selecting = pick(list(BP_HEAD, BP_CHEST))
+	if(world.time >= ai_death_touch_cooldown)
+		stop_heart(target)
+		ai_death_touch_cooldown = world.time + NEXT_DEATH_TOUCH_AI
+	else
+		if(istype(get_active_hand(), /obj/item/grab))
+			return FALSE
+		a_intent = I_GRAB
+		target.attack_hand(src)
+		return TRUE
+
+/datum/ai_holder/humanoid/scp049/can_attack(atom/movable/the_target, vision_required = TRUE)
+	if(!can_see_target(the_target) && vision_required)
+		return FALSE
+	var/mob/living/carbon/human/scp049/user = holder
+	if(!user.is_valid_curing_target(the_target)) // No targetting God, SCP-049, SCP-049-1, or animals
+		return FALSE
+	if(!(the_target in user.infected_players)) //If target isn't infected, and did not attack. Then do not target. FIX
+		return FALSE
+	return TRUE
+
+/datum/ai_holder/humanoid/scp049/post_melee_attack(atom/A)
+	var/mob/living/carbon/human/scp049/user = holder
+	if(istype(user.get_active_hand(), /obj/item/grab))
+		if(do_after(holder, 6 SECONDS))
+			user.conversion_act()
+			user.drop_item() // Conversion finished. Drop grab.
 
 #undef NEXT_EMOTE_TIME
 #undef NEXT_PESTILLENCE_DIAG
+#undef NEXT_DEATH_TOUCH_AI

@@ -36,3 +36,19 @@
 	H.update_sight()
 	H.set_sight(H.sight|get_vision_flags(H)|H.equipment_vision_flags|vision[1])
 	H.change_light_colour(H.getDarkvisionTint())
+
+/datum/species/scp049/handle_post_spawn(mob/living/carbon/human/H)
+	. = ..()
+	H.mind_initialize()
+	var/datum/spell/spl = new /datum/spell/targeted/curepestillence
+	H.add_spell(spl)
+	//mind.learned_spells += spl
+	spl = new /datum/spell/aimed/stopheart
+	H.add_spell(spl)
+	H.add_language(LANGUAGE_ENGLISH, TRUE)
+	H.add_language(LANGUAGE_HUMAN_FRENCH, TRUE)
+	H.add_language(LANGUAGE_HUMAN_GERMAN, TRUE)
+	H.add_language(LANGUAGE_HUMAN_SPANISH, TRUE)
+	H.update_languages()
+	H.set_default_language(all_languages[LANGUAGE_ENGLISH])
+	//mind.learned_spells += spl
