@@ -553,3 +553,11 @@
 	name = " Janitorial Assignment Card"
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
 	access = access_dclassjanitorial
+
+
+/obj/item/card/id/officeworker
+	name = "Office staff ID"
+	desc = "A low level ID issued to office workers."
+	icon_state = "adminlvl1"
+	item_state = "Admin_ID"
+	job_access_type = /datum/job/officeworker
