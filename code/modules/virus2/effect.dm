@@ -204,7 +204,7 @@
 	badness = VIRUS_COMMON
 	activate(var/mob/living/carbon/human/mob,var/multiplier)
 		var/obj/item/organ/internal/brain/B = mob.internal_organs_by_name[BP_BRAIN]
-		if (B && B.damage < B.min_broken_damage)
+		if(B?.damage < B.min_broken_damage)
 			B.take_damage(5)
 
 /datum/disease2/effect/deaf

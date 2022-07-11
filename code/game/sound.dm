@@ -27,7 +27,7 @@ GLOBAL_LIST_INIT(zombie_sound,list('sound/scp/voice/049_1/zombierand1.ogg','soun
 		if(get_dist(M, turf_source) <= maxdistance)
 			var/turf/T = get_turf(M)
 
-			if(T && T.z == turf_source.z && (!is_ambiance || M.get_preference_value(/datum/client_preference/play_ambiance) == GLOB.PREF_YES))
+			if(T?.z == turf_source.z && (!is_ambiance || M.get_preference_value(/datum/client_preference/play_ambiance) == GLOB.PREF_YES))
 				M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff, is_global, extrarange, ignore_pressure)
 
 var/const/FALLOFF_SOUNDS = 0.5

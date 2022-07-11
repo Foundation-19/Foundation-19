@@ -212,7 +212,7 @@
 					to_chat(usr, "<span class='notice'>You put \the [W] into [src].</span>")
 				else if (M in range(1, src)) //If someone is standing close enough, they can tell what it is... TODO replace with distance check
 					M.show_message("<span class='notice'>\The [usr] puts [W] into [src].</span>", VISIBLE_MESSAGE)
-				else if (W && W.w_class >= ITEM_SIZE_NORMAL) //Otherwise they can only see large or normal items from a distance...
+				else if (W?.w_class >= ITEM_SIZE_NORMAL) //Otherwise they can only see large or normal items from a distance...
 					M.show_message("<span class='notice'>\The [usr] puts [W] into [src].</span>", VISIBLE_MESSAGE)
 
 		if(!NoUpdate)

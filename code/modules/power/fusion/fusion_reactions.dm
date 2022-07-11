@@ -147,7 +147,7 @@ var/list/fusion_reactions
 		if(I.cur_assembly && I.cur_assembly.fuel_type == MATERIAL_SUPERMATTER)
 			explosion(get_turf(I), 1, 2, 3)
 			spawn(5)
-				if(I && I.loc)
+				if(I?.loc)
 					qdel(I)
 
 	sleep(5)

@@ -41,7 +41,7 @@
 	user.visible_message("[user] starts treating damage within \the [target]'s [affected.name] with [tool_name].", \
 	"You start treating damage within \the [target]'s [affected.name] with [tool_name]." )
 	for(var/obj/item/organ/internal/I in affected.internal_organs)
-		if(I && I.damage > 0 && !BP_IS_ROBOTIC(I) && (!(I.status & ORGAN_DEAD) || I.can_recover()) && (I.surface_accessible || affected.how_open() >= (affected.encased ? SURGERY_ENCASED : SURGERY_RETRACTED)))
+		if(I?.damage > 0 && !BP_IS_ROBOTIC(I) && (!(I.status & ORGAN_DEAD) || I.can_recover()) && (I.surface_accessible || affected.how_open() >= (affected.encased ? SURGERY_ENCASED : SURGERY_RETRACTED)))
 			user.visible_message("[user] starts treating damage to [target]'s [I.name] with [tool_name].", \
 			"You start treating damage to [target]'s [I.name] with [tool_name]." )
 	target.custom_pain("The pain in your [affected.name] is living hell!",100,affecting = affected)
@@ -55,7 +55,7 @@
 		tool_name = "the bandaid"
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 	for(var/obj/item/organ/internal/I in affected.internal_organs)
-		if(I && I.damage > 0 && !BP_IS_ROBOTIC(I) && (I.surface_accessible || affected.how_open() >= (affected.encased ? SURGERY_ENCASED : SURGERY_RETRACTED)))
+		if(I?.damage > 0 && !BP_IS_ROBOTIC(I) && (I.surface_accessible || affected.how_open() >= (affected.encased ? SURGERY_ENCASED : SURGERY_RETRACTED)))
 			if(I.status & ORGAN_DEAD && I.can_recover())
 				user.visible_message("<span class='notice'>\The [user] treats damage to [target]'s [I.name] with [tool_name], though it needs to be recovered further.</span>", \
 				"<span class='notice'>You treat damage to [target]'s [I.name] with [tool_name], though it needs to be recovered further.</span>" )
@@ -78,7 +78,7 @@
 		target.adjustToxLoss(10)
 		affected.take_external_damage(dam_amt, 0, (DAM_SHARP|DAM_EDGE), used_weapon = tool)
 	for(var/obj/item/organ/internal/I in affected.internal_organs)
-		if(I && I.damage > 0 && !BP_IS_ROBOTIC(I) && (I.surface_accessible || affected.how_open() >= (affected.encased ? SURGERY_ENCASED : SURGERY_RETRACTED)))
+		if(I?.damage > 0 && !BP_IS_ROBOTIC(I) && (I.surface_accessible || affected.how_open() >= (affected.encased ? SURGERY_ENCASED : SURGERY_RETRACTED)))
 			I.take_internal_damage(dam_amt)
 
 //////////////////////////////////////////////////////////////////

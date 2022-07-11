@@ -682,7 +682,7 @@ GLOBAL_LIST_EMPTY(blood_overlay_cache)
 	set category = "Object"
 
 	var/obj/item/I = get_active_hand()
-	if(I && I.simulated)
+	if(I?.simulated)
 		I.showoff(src)
 
 /*

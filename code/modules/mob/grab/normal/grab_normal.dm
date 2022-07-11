@@ -9,8 +9,7 @@
 	if(affecting != assailant)
 		visible_message("<span class='warning'>[assailant] has grabbed [affecting]'s [O.name]!</span>")
 	else
-		var/datum/gender/T = gender_datums[assailant.get_gender()]
-		visible_message("<span class='notice'>[assailant] has grabbed [T.his] [O.name]!</span>")
+		visible_message("<span class='notice'>[assailant] has grabbed [assailant.p_their()] [O.name]!</span>")
 
 	if(!(affecting.a_intent == I_HELP))
 		upgrade(TRUE)
@@ -256,7 +255,7 @@
 	user.next_move = world.time + 20 //also should prevent user from triggering this repeatedly
 	if(!do_after(user, 20 * user.skill_delay_mult(SKILL_COMBAT), do_flags = DO_DEFAULT & ~DO_SHOW_PROGRESS))
 		return 0
-	if(!(G && G.affecting == affecting)) //check that we still have a grab
+	if(!(G?.affecting == affecting)) //check that we still have a grab
 		return 0
 
 	var/damage_mod = 1
@@ -307,7 +306,7 @@
 
 	if(!do_after(user, 20, do_flags = DO_DEFAULT & ~DO_SHOW_PROGRESS))
 		return 0
-	if(!(G && G.affecting == affecting)) //check that we still have a grab
+	if(!(G?.affecting == affecting)) //check that we still have a grab
 		return 0
 	if(!O || O.is_stump() || !O.sever_tendon())
 		return 0
