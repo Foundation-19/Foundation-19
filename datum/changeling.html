@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;changeling - Space Station 13 - TeguStation</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Space Station 13 - TeguStation</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/changeling.html#var">Var Details</a> - <a href="datum/changeling.html#proc">Proc Details</a></header>
+<main>
+<h1>/<a href="datum.html">datum</a>/<a href="datum/changeling.html">changeling</a>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L5">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 5"/></a></h1>
+
+<p>Stores changeling powers, chemicals, absorbed DNA, and hivemind ID.</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/changeling.html#var/absorbed_count">absorbed_count</a></th><td>The total number of people we've absorbed.</td></tr>
+            <tr><th><a href="datum/changeling.html#var/absorbed_dna">absorbed_dna</a></th><td>A list of all &quot;absorbed DNA&quot; datums we have - these includeactual DNA datums, name, species name, and languages.</td></tr>
+            <tr><th><a href="datum/changeling.html#var/absorbed_languages">absorbed_languages</a></th><td>A list of the languages we've absorbed from others. We can speak and understand these languages fluently.</td></tr>
+            <tr><th><a href="datum/changeling.html#var/changelingID">changelingID</a></th><td>This is a string used when talking over changeling hivemind, instead of the person's current identity.</td></tr>
+            <tr><th><a href="datum/changeling.html#var/chem_charges">chem_charges</a></th><td>Chemicals are used to fuel changeling powers. This var tracks how many we currently have.</td></tr>
+            <tr><th><a href="datum/changeling.html#var/chem_recharge_rate">chem_recharge_rate</a></th><td>This many chemicals will be added every life tick to what we currently have.</td></tr>
+            <tr><th><a href="datum/changeling.html#var/chem_storage">chem_storage</a></th><td>The max chemicals we can store at a time.</td></tr>
+            <tr><th><a href="datum/changeling.html#var/genetic_damage">genetic_damage</a></th><td>Not actually clone loss, this is used to represent a cooldown period on using abilities.</td></tr>
+            <tr><th><a href="datum/changeling.html#var/genetic_points">genetic_points</a></th><td>Genetic points are our resources for buying new abilities and upgrades.</td></tr>
+            <tr><th><a href="datum/changeling.html#var/is_absorbing">is_absorbing</a></th><td>If TRUE, we're currently absorbing another person.</td></tr>
+            <tr><th><a href="datum/changeling.html#var/mimicing">mimicing</a></th><td>If we're mimicking someone else's voice, this value tracks that name and uses it when we speak.</td></tr>
+            <tr><th><a href="datum/changeling.html#var/owner_mind">owner_mind</a></th><td>The mind that owns this changeling datum.</td></tr>
+            <tr><th><a href="datum/changeling.html#var/purchased_powers">purchased_powers</a></th><td>A list of the power datums we've purchased.</td></tr>
+            <tr><th><a href="datum/changeling.html#var/sting_range">sting_range</a></th><td>When using sting powers, they have a range of this many tiles.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/changeling.html#proc/EvolutionMenu">EvolutionMenu</a></th><td>The code for the menu that the changeling uses to unlock new abilities. Totally stolen from the player panel.</td></tr>
+            <tr><th><a href="datum/changeling.html#proc/absorb_DNA">absorb_DNA</a></th><td>Adds a new absorb_dna datum into our stored DNA. Chomp.</td></tr>
+            <tr><th><a href="datum/changeling.html#proc/add_power">add_power</a></th><td>Adds the provided power to this changeling datum's purchased powers.</td></tr>
+            <tr><th><a href="datum/changeling.html#proc/do_transform">do_transform</a></th><td>Transforms the current mob of this mind to match the DNA of the provided absorbed_dna datum.</td></tr>
+            <tr><th><a href="datum/changeling.html#proc/get_DNA">get_DNA</a></th><td>Fetches the absorbed_dna datum from a provided name.</td></tr>
+            <tr><th><a href="datum/changeling.html#proc/regenerate">regenerate</a></th><td>Provides the per-tick regeneration for chemicals and genetic damage.</td></tr>
+            <tr><th><a href="datum/changeling.html#proc/update_languages">update_languages</a></th><td>Updates our parent mob's knowledge of languages based on what we've absorbed.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/absorbed_count"><aside class="declaration">var </aside>absorbed_count
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L11">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 11"/></a></h3>
+        <p>The total number of people we've absorbed.</p><h3 id="var/absorbed_dna"><aside class="declaration">var </aside>absorbed_dna
+            <aside>&ndash; /list/datum/absorbed_dna</aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L7">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 7"/></a></h3>
+        <p>A list of all &quot;absorbed DNA&quot; datums we have - these includeactual DNA datums, name, species name, and languages.</p><h3 id="var/absorbed_languages"><aside class="declaration">var </aside>absorbed_languages
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L9">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 9"/></a></h3>
+        <p>A list of the languages we've absorbed from others. We can speak and understand these languages fluently.</p><h3 id="var/changelingID"><aside class="declaration">var </aside>changelingID
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L33">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 33"/></a></h3>
+        <p>This is a string used when talking over changeling hivemind, instead of the person's current identity.</p><h3 id="var/chem_charges"><aside class="declaration">var </aside>chem_charges
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L16">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 16"/></a></h3>
+        <p>Chemicals are used to fuel changeling powers. This var tracks how many we currently have.</p><h3 id="var/chem_recharge_rate"><aside class="declaration">var </aside>chem_recharge_rate
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L18">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 18"/></a></h3>
+        <p>This many chemicals will be added every life tick to what we currently have.</p><h3 id="var/chem_storage"><aside class="declaration">var </aside>chem_storage
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L20">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 20"/></a></h3>
+        <p>The max chemicals we can store at a time.</p><h3 id="var/genetic_damage"><aside class="declaration">var </aside>genetic_damage
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L26">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 26"/></a></h3>
+        <p>Not actually clone loss, this is used to represent a cooldown period on using abilities.</p><h3 id="var/genetic_points"><aside class="declaration">var </aside>genetic_points
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L28">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 28"/></a></h3>
+        <p>Genetic points are our resources for buying new abilities and upgrades.</p><h3 id="var/is_absorbing"><aside class="declaration">var </aside>is_absorbing
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L13">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 13"/></a></h3>
+        <p>If TRUE, we're currently absorbing another person.</p><h3 id="var/mimicing"><aside class="declaration">var </aside>mimicing
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L35">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 35"/></a></h3>
+        <p>If we're mimicking someone else's voice, this value tracks that name and uses it when we speak.</p><h3 id="var/owner_mind"><aside class="declaration">var </aside>owner_mind
+            <aside>&ndash; /<a href="datum.html">datum</a>/mind</aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L40">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 40"/></a></h3>
+        <p>The mind that owns this changeling datum.</p><h3 id="var/purchased_powers"><aside class="declaration">var </aside>purchased_powers
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L30">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 30"/></a></h3>
+        <p>A list of the power datums we've purchased.</p><h3 id="var/sting_range"><aside class="declaration">var </aside>sting_range
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L23">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 23"/></a></h3>
+        <p>When using sting powers, they have a range of this many tiles.</p><h2 id="proc">Proc Details</h2><h3 id="proc/EvolutionMenu"><aside class="declaration">proc </aside>EvolutionMenu<aside>() 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_powers.dm#L860">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_powers.dm 860"/></a></aside>
+        </h3>
+        <p>The code for the menu that the changeling uses to unlock new abilities. Totally stolen from the player panel.</p><h3 id="proc/absorb_DNA"><aside class="declaration">proc </aside>absorb_DNA<aside>(/<a href="datum.html">datum</a>/absorbed_dna/snacc) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L70">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 70"/></a></aside>
+        </h3>
+        <p>Adds a new absorb_dna datum into our stored DNA. Chomp.</p><h3 id="proc/add_power"><aside class="declaration">proc </aside>add_power<aside>(/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/C, /<a href="datum.html">datum</a>/mind/M, silent, remake_verbs) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_powers.dm#L1175">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_powers.dm 1175"/></a></aside>
+        </h3>
+        <p>Adds the provided power to this changeling datum's purchased powers.</p><h3 id="proc/do_transform"><aside class="declaration">proc </aside>do_transform<aside>(/<a href="datum.html">datum</a>/mind/M, /<a href="datum.html">datum</a>/absorbed_dna/chosen_dna) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L90">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 90"/></a></aside>
+        </h3>
+        <p>Transforms the current mob of this mind to match the DNA of the provided absorbed_dna datum.</p><h3 id="proc/get_DNA"><aside class="declaration">proc </aside>get_DNA<aside>(dna_owner) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L63">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 63"/></a></aside>
+        </h3>
+        <p>Fetches the absorbed_dna datum from a provided name.</p><h3 id="proc/regenerate"><aside class="declaration">proc </aside>regenerate<aside>() 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L57">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 57"/></a></aside>
+        </h3>
+        <p>Provides the per-tick regeneration for chemicals and genetic damage.</p><h3 id="proc/update_languages"><aside class="declaration">proc </aside>update_languages<aside>(new_languages) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_datum.dm#L80">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_datum.dm 80"/></a></aside>
+        </h3>
+        <p>Updates our parent mob's knowledge of languages based on what we've absorbed.</p></main>
+<footer>
+    baystation12.dme
+    <a href="https://github.com/Foundation-19/Foundation-19/tree/ca84e128021d0f8baed1e521defe3db94540a8af">ca84e12</a>
+        (dev) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

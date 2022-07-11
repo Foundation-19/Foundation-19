@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;atom - Space Station 13 - TeguStation</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Space Station 13 - TeguStation</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="atom.html#var">Var Details</a> - <a href="atom.html#proc">Proc Details</a></header>
+<main>
+<h1>/<a href="atom.html">atom</a><aside> inherits /<a href="datum.html">datum</a></aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/__defines/_planes+layers.dm#L200">
+        <img src="git.png" width="16" height="16" title="code&#x2F;__defines&#x2F;_planes+layers.dm 200"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="atom.html#var/damage_hitsound">damage_hitsound</a></th><td>Sound effect played when hit</td></tr>
+            <tr><th><a href="atom.html#var/health_current">health_current</a></th><td>Current health for health processing. Use <code>get_current_health()</code>, <code>damage_health()</code>, or <code>restore_health()</code> for general health references.</td></tr>
+            <tr><th><a href="atom.html#var/health_max">health_max</a></th><td>Maximum health for simple health processing. Use <code>get_max_health()</code> or <code>set_max_health()</code> to reference/modify.</td></tr>
+            <tr><th><a href="atom.html#var/health_min_damage">health_min_damage</a></th><td>Minimum damage required to actually affect health in <code>can_damage_health()</code>.</td></tr>
+            <tr><th><a href="atom.html#var/health_resistances">health_resistances</a></th><td>LAZY List of damage type resistance or weakness multipliers, decimal form. Only applied to health reduction. Use <code>set_damage_resistance()</code>, <code>remove_damage_resistance()</code>, and <code>get_damage_resistance()</code> to reference/modify.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="atom.html#proc/Adjacent">Adjacent</a></th><td>Adjacency proc for determining touch range</td></tr>
+            <tr><th><a href="atom.html#proc/Entered">Entered</a></th><td>Movement Handling</td></tr>
+            <tr><th><a href="atom.html#proc/Exited">Exited</a></th><td>Exited Handling</td></tr>
+            <tr><th><a href="atom.html#proc/SetName">SetName</a></th><td>Name Set Handling</td></tr>
+            <tr><th><a href="atom.html#proc/can_damage_health">can_damage_health</a></th><td>Checks if the atom's health can be damaged.
+Should be called before <code>damage_health()</code> in most cases.
+Returns <code>null</code> if health is not in use.</td></tr>
+            <tr><th><a href="atom.html#proc/can_restore_health">can_restore_health</a></th><td>Checks if the atom's health can be restored.
+Should be called before <code>restore_health()</code> in most cases.
+Returns <code>null</code> if health is not in use.
+NOTE: Does not include a check for death state by default, to allow repairing/healing atoms back to life.</td></tr>
+            <tr><th><a href="atom.html#proc/damage_health">damage_health</a></th><td>Damage's the atom's health by the given value. Returns <code>TRUE</code> if the damage resulted in a death state change.
+Resistance and weakness modifiers are applied here.</td></tr>
+            <tr><th><a href="atom.html#proc/examine_damage_state">examine_damage_state</a></th><td>Handles sending damage state to users on <code>examine()</code>.
+Overrideable to allow for different messages, or restricting when the messages can or cannot appear.</td></tr>
+            <tr><th><a href="atom.html#proc/get_alarm_z">get_alarm_z</a></th><td>Assisting procs</td></tr>
+            <tr><th><a href="atom.html#proc/get_current_health">get_current_health</a></th><td>Retrieves the atom's current health, or <code>null</code> if not using health</td></tr>
+            <tr><th><a href="atom.html#proc/get_damage_percentage">get_damage_percentage</a></th><td>Retrieves the atom's current damage as a percentage where <code>100%</code> is <code>100</code>.
+If <code>use_raw_values</code> is <code>TRUE</code>, uses the raw var values instead of the <code>get_*</code> proc results.</td></tr>
+            <tr><th><a href="atom.html#proc/get_damage_resistance">get_damage_resistance</a></th><td>Fetches the atom's current resistance value for the given damage type.</td></tr>
+            <tr><th><a href="atom.html#proc/get_damage_value">get_damage_value</a></th><td>Retrieves the atom's current damage, or <code>null</code> if not using health.
+If <code>use_raw_values</code> is <code>TRUE</code>, uses the raw var values instead of the <code>get_*</code> proc results.</td></tr>
+            <tr><th><a href="atom.html#proc/get_max_health">get_max_health</a></th><td>Retrieves the atom's maximum health.</td></tr>
+            <tr><th><a href="atom.html#proc/handle_death_change">handle_death_change</a></th><td>Proc called when death state changes.
+Provided for override use.</td></tr>
+            <tr><th><a href="atom.html#proc/health_damaged">health_damaged</a></th><td>Whether or not the atom's health is damaged.</td></tr>
+            <tr><th><a href="atom.html#proc/is_alive">is_alive</a></th><td>Checks if the atom is 'alive' or 'dead'.
+Returns <code>null</code> if health is not in use.</td></tr>
+            <tr><th><a href="atom.html#proc/kill_health">kill_health</a></th><td>Immediately sets health to <code>0</code> then updates <code>death_state</code>, bypassing all other checks and processes.</td></tr>
+            <tr><th><a href="atom.html#proc/mod_health">mod_health</a></th><td>Health modification for the health system. Applies <code>health_mod</code> directly to <code>simple_health</code> via addition and calls <code>handle_death_change</code> as needed.
+Has no pre-modification checks, you should be using <code>damage_health()</code> or <code>restore_health()</code> instead of this.
+<code>skip_death_state_change</code> will skip calling <code>handle_death_change()</code> when applicable. Used for when the originally calling proc needs handle it in a unique way.
+Returns <code>TRUE</code> if the death state changes, <code>null</code> if the atom is not using health, <code>FALSE</code> otherwise.</td></tr>
+            <tr><th><a href="atom.html#proc/post_health_change">post_health_change</a></th><td>Proc called after any health changes made by the system</td></tr>
+            <tr><th><a href="atom.html#proc/remove_damage_resistance">remove_damage_resistance</a></th><td>Removes the atom's resistance/weakness to the given damage type.</td></tr>
+            <tr><th><a href="atom.html#proc/restore_health">restore_health</a></th><td>Restore's the atom's health by the given value. Returns <code>TRUE</code> if the restoration resulted in a death state change.</td></tr>
+            <tr><th><a href="atom.html#proc/revive_health">revive_health</a></th><td>Returns health to full, resetting the death state as well.</td></tr>
+            <tr><th><a href="atom.html#proc/set_damage_resistance">set_damage_resistance</a></th><td>Sets the atom's resistance/weakness to the given damage type.
+Value should be a multiplier that is applied against damage. Values below 1 are a resistance, above 1 are a weakness.
+Value of <code>0</code> is considered immunity.</td></tr>
+            <tr><th><a href="atom.html#proc/set_density">set_density</a></th><td>Density Handling</td></tr>
+            <tr><th><a href="atom.html#proc/set_dir">set_dir</a></th><td>Direction Handling</td></tr>
+            <tr><th><a href="atom.html#proc/set_health">set_health</a></th><td>Sets <code>health_current</code> to the new value, clamped between <code>0</code> and <code>health_max</code>.
+Has no pre-modification checks.
+Returns <code>TRUE</code> if the death state changes, <code>null</code> if the atom is not using health, <code>FALSE</code> otherwise.</td></tr>
+            <tr><th><a href="atom.html#proc/set_invisibility">set_invisibility</a></th><td>Invisibility Set Handling</td></tr>
+            <tr><th><a href="atom.html#proc/set_max_health">set_max_health</a></th><td>Sets the atoms maximum health to the new value.
+If <code>set_current_health</code> is <code>TRUE</code>, also sets the current health to the new value.</td></tr>
+            <tr><th><a href="atom.html#proc/singuloCanEat">singuloCanEat</a></th><td>Nar-Sie Act/Pull</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/damage_hitsound"><aside class="declaration">var </aside>damage_hitsound
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L20">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 20"/></a></h3>
+        <p>Sound effect played when hit</p><h3 id="var/health_current"><aside class="declaration">var </aside>health_current
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 2"/></a></h3>
+        <p>Current health for health processing. Use <code>get_current_health()</code>, <code>damage_health()</code>, or <code>restore_health()</code> for general health references.</p><h3 id="var/health_max"><aside class="declaration">var </aside>health_max
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L5">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 5"/></a></h3>
+        <p>Maximum health for simple health processing. Use <code>get_max_health()</code> or <code>set_max_health()</code> to reference/modify.</p><h3 id="var/health_min_damage"><aside class="declaration">var </aside>health_min_damage
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L17">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 17"/></a></h3>
+        <p>Minimum damage required to actually affect health in <code>can_damage_health()</code>.</p><h3 id="var/health_resistances"><aside class="declaration">var </aside>health_resistances
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L14">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 14"/></a></h3>
+        <p>LAZY List of damage type resistance or weakness multipliers, decimal form. Only applied to health reduction. Use <code>set_damage_resistance()</code>, <code>remove_damage_resistance()</code>, and <code>get_damage_resistance()</code> to reference/modify.</p>
+<p>Index should be one of the <code>DAMAGE_</code> flags.
+Value should be a multiplier that is applied against damage. Values below 1 are a resistance, above 1 are a weakness.
+Value of <code>0</code> is considered immunity.</p><h2 id="proc">Proc Details</h2><h3 id="proc/Adjacent"><aside class="declaration">proc </aside>Adjacent<aside>(/<a href="atom.html">atom</a>/neighbor) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/_onclick/adjacent.dm#L13">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;adjacent.dm 13"/></a></aside>
+        </h3>
+        <p>Adjacency proc for determining touch range</p>
+<p>This is mostly to determine if a user can enter a square for the purposes of touching something.
+Examples include reaching a square diagonally or reaching something on the other side of a glass window.</p>
+<p>This is calculated by looking for border items, or in the case of clicking diagonally from yourself, dense items.
+This proc will NOT notice if you are trying to attack a window on the other side of a dense object in its turf.  There is a window helper for that.</p>
+<p>Note that in all cases the neighbor is handled simply; this is usually the user's mob, in which case it is up to you
+to check that the mob is not inside of something</p><h3 id="proc/Entered"><aside class="declaration">proc </aside>Entered<aside>(/<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a>/am, /<a href="atom.html">atom</a>/old_loc) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/datums/observation/moved.dm#L28">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;observation&#x2F;moved.dm 28"/></a></aside>
+        </h3>
+        <p>Movement Handling</p><h3 id="proc/Exited"><aside class="declaration">proc </aside>Exited<aside>(/<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a>/exitee, /<a href="atom.html">atom</a>/new_loc) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/datums/observation/exited.dm#L22">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;observation&#x2F;exited.dm 22"/></a></aside>
+        </h3>
+        <p>Exited Handling</p><h3 id="proc/SetName"><aside class="declaration">proc </aside>SetName<aside>(new_name) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/datums/observation/name_set.dm#L21">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;observation&#x2F;name_set.dm 21"/></a></aside>
+        </h3>
+        <p>Name Set Handling</p><h3 id="proc/can_damage_health"><aside class="declaration">proc </aside>can_damage_health<aside>(damage, damage_type) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L91">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 91"/></a></aside>
+        </h3>
+        <p>Checks if the atom's health can be damaged.
+Should be called before <code>damage_health()</code> in most cases.
+Returns <code>null</code> if health is not in use.</p><h3 id="proc/can_restore_health"><aside class="declaration">proc </aside>can_restore_health<aside>(damage, damage_type) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L76">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 76"/></a></aside>
+        </h3>
+        <p>Checks if the atom's health can be restored.
+Should be called before <code>restore_health()</code> in most cases.
+Returns <code>null</code> if health is not in use.
+NOTE: Does not include a check for death state by default, to allow repairing/healing atoms back to life.</p><h3 id="proc/damage_health"><aside class="declaration">proc </aside>damage_health<aside>(damage, damage_type, skip_death_state_change, severity, forced) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L167">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 167"/></a></aside>
+        </h3>
+        <p>Damage's the atom's health by the given value. Returns <code>TRUE</code> if the damage resulted in a death state change.
+Resistance and weakness modifiers are applied here.</p>
+<ul>
+<li><code>skip_death_state_change</code> will skip calling <code>handle_death_change()</code> when applicable. Used for when the originally calling proc needs handle it in a unique way.</li>
+<li><code>severity</code> should be a passthrough of <code>severity</code> from <code>ex_act()</code> and <code>emp_act()</code> for <code>DAMAGE_EXPLODE</code> and <code>DAMAGE_EMP</code> types respectively.</li>
+</ul><h3 id="proc/examine_damage_state"><aside class="declaration">proc </aside>examine_damage_state<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L248">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 248"/></a></aside>
+        </h3>
+        <p>Handles sending damage state to users on <code>examine()</code>.
+Overrideable to allow for different messages, or restricting when the messages can or cannot appear.</p><h3 id="proc/get_alarm_z"><aside class="declaration">proc </aside>get_alarm_z<aside>() 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/modules/alarm/alarm.dm#L109">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;alarm&#x2F;alarm.dm 109"/></a></aside>
+        </h3>
+        <p>Assisting procs</p><h3 id="proc/get_current_health"><aside class="declaration">proc </aside>get_current_health<aside>() 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L25">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 25"/></a></aside>
+        </h3>
+        <p>Retrieves the atom's current health, or <code>null</code> if not using health</p><h3 id="proc/get_damage_percentage"><aside class="declaration">proc </aside>get_damage_percentage<aside>(use_raw_values) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L64">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 64"/></a></aside>
+        </h3>
+        <p>Retrieves the atom's current damage as a percentage where <code>100%</code> is <code>100</code>.
+If <code>use_raw_values</code> is <code>TRUE</code>, uses the raw var values instead of the <code>get_*</code> proc results.</p><h3 id="proc/get_damage_resistance"><aside class="declaration">proc </aside>get_damage_resistance<aside>(damage_type) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L237">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 237"/></a></aside>
+        </h3>
+        <p>Fetches the atom's current resistance value for the given damage type.</p><h3 id="proc/get_damage_value"><aside class="declaration">proc </aside>get_damage_value<aside>(use_raw_values) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L52">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 52"/></a></aside>
+        </h3>
+        <p>Retrieves the atom's current damage, or <code>null</code> if not using health.
+If <code>use_raw_values</code> is <code>TRUE</code>, uses the raw var values instead of the <code>get_*</code> proc results.</p><h3 id="proc/get_max_health"><aside class="declaration">proc </aside>get_max_health<aside>() 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L34">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 34"/></a></aside>
+        </h3>
+        <p>Retrieves the atom's maximum health.</p><h3 id="proc/handle_death_change"><aside class="declaration">proc </aside>handle_death_change<aside>(new_death_state) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L203">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 203"/></a></aside>
+        </h3>
+        <p>Proc called when death state changes.
+Provided for override use.</p><h3 id="proc/health_damaged"><aside class="declaration">proc </aside>health_damaged<aside>(use_raw_values) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L41">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 41"/></a></aside>
+        </h3>
+        <p>Whether or not the atom's health is damaged.</p><h3 id="proc/is_alive"><aside class="declaration">proc </aside>is_alive<aside>() 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L112">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 112"/></a></aside>
+        </h3>
+        <p>Checks if the atom is 'alive' or 'dead'.
+Returns <code>null</code> if health is not in use.</p><h3 id="proc/kill_health"><aside class="declaration">proc </aside>kill_health<aside>() 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L188">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 188"/></a></aside>
+        </h3>
+        <p>Immediately sets health to <code>0</code> then updates <code>death_state</code>, bypassing all other checks and processes.</p><h3 id="proc/mod_health"><aside class="declaration">proc </aside>mod_health<aside>(health_mod, damage_type, skip_death_state_change) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L124">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 124"/></a></aside>
+        </h3>
+        <p>Health modification for the health system. Applies <code>health_mod</code> directly to <code>simple_health</code> via addition and calls <code>handle_death_change</code> as needed.
+Has no pre-modification checks, you should be using <code>damage_health()</code> or <code>restore_health()</code> instead of this.
+<code>skip_death_state_change</code> will skip calling <code>handle_death_change()</code> when applicable. Used for when the originally calling proc needs handle it in a unique way.
+Returns <code>TRUE</code> if the death state changes, <code>null</code> if the atom is not using health, <code>FALSE</code> otherwise.</p><h3 id="proc/post_health_change"><aside class="declaration">proc </aside>post_health_change<aside>(health_mod, damage_type) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L182">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 182"/></a></aside>
+        </h3>
+        <p>Proc called after any health changes made by the system</p><h3 id="proc/remove_damage_resistance"><aside class="declaration">proc </aside>remove_damage_resistance<aside>(damage_type) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L230">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 230"/></a></aside>
+        </h3>
+        <p>Removes the atom's resistance/weakness to the given damage type.</p><h3 id="proc/restore_health"><aside class="declaration">proc </aside>restore_health<aside>(damage, damage_type, skip_death_state_change) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L153">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 153"/></a></aside>
+        </h3>
+        <p>Restore's the atom's health by the given value. Returns <code>TRUE</code> if the restoration resulted in a death state change.</p><h3 id="proc/revive_health"><aside class="declaration">proc </aside>revive_health<aside>() 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L195">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 195"/></a></aside>
+        </h3>
+        <p>Returns health to full, resetting the death state as well.</p><h3 id="proc/set_damage_resistance"><aside class="declaration">proc </aside>set_damage_resistance<aside>(damage_type, resistance_value) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L220">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 220"/></a></aside>
+        </h3>
+        <p>Sets the atom's resistance/weakness to the given damage type.
+Value should be a multiplier that is applied against damage. Values below 1 are a resistance, above 1 are a weakness.
+Value of <code>0</code> is considered immunity.</p><h3 id="proc/set_density"><aside class="declaration">proc </aside>set_density<aside>(new_density) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/datums/observation/density_set.dm#L20">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;observation&#x2F;density_set.dm 20"/></a></aside>
+        </h3>
+        <p>Density Handling</p><h3 id="proc/set_dir"><aside class="declaration">proc </aside>set_dir<aside>() 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/datums/observation/dir_set.dm#L28">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;observation&#x2F;dir_set.dm 28"/></a></aside>
+        </h3>
+        <p>Direction Handling</p><h3 id="proc/set_health"><aside class="declaration">proc </aside>set_health<aside>(new_health, skip_death_state_change) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L143">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 143"/></a></aside>
+        </h3>
+        <p>Sets <code>health_current</code> to the new value, clamped between <code>0</code> and <code>health_max</code>.
+Has no pre-modification checks.
+Returns <code>TRUE</code> if the death state changes, <code>null</code> if the atom is not using health, <code>FALSE</code> otherwise.</p><h3 id="proc/set_invisibility"><aside class="declaration">proc </aside>set_invisibility<aside>(new_invisibility) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/datums/observation/set_invisibility.dm#L21">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;observation&#x2F;set_invisibility.dm 21"/></a></aside>
+        </h3>
+        <p>Invisibility Set Handling</p><h3 id="proc/set_max_health"><aside class="declaration">proc </aside>set_max_health<aside>(new_max_health, set_current_health) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/atoms_health.dm#L210">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;atoms_health.dm 210"/></a></aside>
+        </h3>
+        <p>Sets the atoms maximum health to the new value.
+If <code>set_current_health</code> is <code>TRUE</code>, also sets the current health to the new value.</p><h3 id="proc/singuloCanEat"><aside class="declaration">proc </aside>singuloCanEat<aside>() 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/modules/power/singularity/act.dm#L109">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;singularity&#x2F;act.dm 109"/></a></aside>
+        </h3>
+        <p>Nar-Sie Act/Pull</p></main>
+<footer>
+    baystation12.dme
+    <a href="https://github.com/Foundation-19/Foundation-19/tree/ca84e128021d0f8baed1e521defe3db94540a8af">ca84e12</a>
+        (dev) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_powers.dm - Space Station 13 - TeguStation</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Space Station 13 - TeguStation</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+</header>
+<main>
+<h1>code/game/gamemodes/changeling/changeling_powers.dm 
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/game/gamemodes/changeling/changeling_powers.dm">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;gamemodes&#x2F;changeling&#x2F;changeling_powers.dm"/></a></h1>
+
+<table class="summary" cellspacing="0">
+        <tr><th><a href="datum&#x2F;power&#x2F;changeling.html">&#x2F;datum&#x2F;power&#x2F;changeling</a></th><td>The changeling subtype of /datum/power. Contains a lot of custom logic for chemicals, activation checks, and so on.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/evolution_menu</th><td>The power that changelings use to unlock new abilities. Has no effects on its own.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/absorb_dna</th><td>One of the three core changeling powers. After holding someone in a kill grab and channeling for long enough, kills them and absorbs their DNA.</td></tr>
+        <tr><th><a href="datum&#x2F;power&#x2F;changeling&#x2F;transform.html">&#x2F;datum&#x2F;power&#x2F;changeling&#x2F;transform</a></th><td>One of the three core changeling abilities. Transforms the changeling into a simulacrum of a genome they've absorbed.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/regenerative_stasis</th><td>One of the three core changeling abilities. Enters a fake death state that can end with a full regeneration, up to and including actual death.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/hive_upload</th><td>Allows the changeling to share an absorbed_dna datum with other changelings by putting it into a shared list.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/hive_download</th><td>Used to &quot;download&quot; DNA from the shared bank that Hive Channel adds to.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/sting</th><td>Dummy changeling sting type. Has no effects on its own, but contains all the logic required for a sting.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/sting/deaf_sting</th><td>Causes deafness in a target for 15 ticks.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/sting/blind_sting</th><td>Causes blindness in a target for 10 ticks, blurriness for 20 ticks, and nearsightedness for 30 ticks.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/sting/silence_sting</th><td>Silences a target for 30 seconds.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/sting/extract_dna</th><td>Extracts the DNA from a target, giving the changeling their DNA as a disguise without gaining any genome points.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/sting/hallucination_sting</th><td>Causes heavy hallucinations after a short delay.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/sting/death_sting</th><td>Injects someone with a massive dose of lexorin.</td></tr>
+        <tr><th><a href="datum&#x2F;power&#x2F;changeling&#x2F;mimic_voice.html">&#x2F;datum&#x2F;power&#x2F;changeling&#x2F;mimic_voice</a></th><td>Allows the changeling to mimic any voice they choose. Very fun!</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/lesser_form</th><td>Turns the changeling into a monkey. They're able to revert back after a short period.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/boost_range</th><td>Boosts the range of the next sting by one tile.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/epinephrine_sacs</th><td>Immediately removes all stuns and wakes us up if we're unconscious.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/rapid_chemical_synthesis</th><td>Passive, doubles natural chem regen. At time of writing, this means it goes from 0.5 to 1.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/engorged_chemical_glands</th><td>Passive, boosts chem storage by 25 points.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/digital_camouflage</th><td>Makes you untrackable by AI, but gives you unique examine text. Free because the AI currently doesn't exist, making this primarily for RPing.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/power.html">power</a>/<a href="datum/power/changeling.html">changeling</a>/rapid_regeneration</th><td>Heals 10 of brute/fire/tox/oxy damage per second for 10 seconds. Can't be &quot;restarted&quot; while it's already active. (unintentional?)</td></tr></table></main>
+<footer>
+    baystation12.dme
+    <a href="https://github.com/Foundation-19/Foundation-19/tree/ca84e128021d0f8baed1e521defe3db94540a8af">ca84e12</a>
+        (dev) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

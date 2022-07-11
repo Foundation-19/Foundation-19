@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;extension&#x2F;play_sound_on_moved - Space Station 13 - TeguStation</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Space Station 13 - TeguStation</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/extension/play_sound_on_moved.html#var">Var Details</a> - <a href="datum/extension/play_sound_on_moved.html#proc">Proc Details</a></header>
+<main>
+<h1>/<a href="datum.html">datum</a>/<a href="datum/extension/play_sound_on_moved.html">extension/play_sound_on_moved</a>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/datums/extensions/play_sound_on_moved.dm#L2">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;extensions&#x2F;play_sound_on_moved.dm 2"/></a></h1>
+
+<p>This extension allows a movable atom to play a sound for each tile it is moved.</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/extension/play_sound_on_moved.html#var/always_play">always_play</a></th><td>If TRUE, the movement sound will always play. If FALSE, it will only play when dragged over hard surfaces (i.e. not space and carpets).</td></tr>
+            <tr><th><a href="datum/extension/play_sound_on_moved.html#var/atom_holder">atom_holder</a></th><td>A reference to the atom affected by this extension.</td></tr>
+            <tr><th><a href="datum/extension/play_sound_on_moved.html#var/move_sounds">move_sounds</a></th><td>A list of paths to sound files. When <code>atom_holder</code> is moved, one of these will play, picked at random.</td></tr>
+            <tr><th><a href="datum/extension/play_sound_on_moved.html#var/move_volume">move_volume</a></th><td>The volume of the sound to be played.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/extension/play_sound_on_moved.html#proc/DoMoveSound">DoMoveSound</a></th><td>Plays a random sound from <code>move_sounds</code> at volume <code>move_volume</code>, centered at the turf of <code>atom_holder</code>.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/always_play"><aside class="declaration">var </aside>always_play
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/datums/extensions/play_sound_on_moved.dm#L10">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;extensions&#x2F;play_sound_on_moved.dm 10"/></a></h3>
+        <p>If TRUE, the movement sound will always play. If FALSE, it will only play when dragged over hard surfaces (i.e. not space and carpets).</p><h3 id="var/atom_holder"><aside class="declaration">var </aside>atom_holder
+            <aside>&ndash; /<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a></aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/datums/extensions/play_sound_on_moved.dm#L8">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;extensions&#x2F;play_sound_on_moved.dm 8"/></a></h3>
+        <p>A reference to the atom affected by this extension.</p><h3 id="var/move_sounds"><aside class="declaration">var </aside>move_sounds
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/datums/extensions/play_sound_on_moved.dm#L12">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;extensions&#x2F;play_sound_on_moved.dm 12"/></a></h3>
+        <p>A list of paths to sound files. When <code>atom_holder</code> is moved, one of these will play, picked at random.</p><h3 id="var/move_volume"><aside class="declaration">var </aside>move_volume
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/datums/extensions/play_sound_on_moved.dm#L18">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;extensions&#x2F;play_sound_on_moved.dm 18"/></a></h3>
+        <p>The volume of the sound to be played.</p><h2 id="proc">Proc Details</h2><h3 id="proc/DoMoveSound"><aside class="declaration">proc </aside>DoMoveSound<aside>(/<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a>/inst, old_loc, new_loc) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/ca84e128021d0f8baed1e521defe3db94540a8af/code/datums/extensions/play_sound_on_moved.dm#L34">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;extensions&#x2F;play_sound_on_moved.dm 34"/></a></aside>
+        </h3>
+        <p>Plays a random sound from <code>move_sounds</code> at volume <code>move_volume</code>, centered at the turf of <code>atom_holder</code>.</p></main>
+<footer>
+    baystation12.dme
+    <a href="https://github.com/Foundation-19/Foundation-19/tree/ca84e128021d0f8baed1e521defe3db94540a8af">ca84e12</a>
+        (dev) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>
