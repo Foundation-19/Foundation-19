@@ -31,7 +31,12 @@
 	if(istype(buckled, /obj/structure/bed/chair/wheelchair))
 		for(var/organ_name in list(BP_L_HAND, BP_R_HAND, BP_L_ARM, BP_R_ARM))
 			var/obj/item/organ/external/E = get_organ(organ_name)
-			tally += E ? E.movement_delay(4) : 4
+			if(!E || E.is_stump())
+				tally += 4
+			else if(E.splinted)
+				tally += 0.5
+			else if(E.status & ORGAN_BROKEN)
+				tally += 1.5
 	else
 		var/total_item_slowdown = -1
 		for(var/slot = slot_first to slot_last)

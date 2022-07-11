@@ -232,6 +232,33 @@
 		icon_state = "svd-empty"
 	return
 
+/obj/item/gun/projectile/automatic/scp/fnfal
+	name = "FN FAL"
+	desc = "'The Right Arm Of Freedom', the standard issue firearm for the UNGOC and some other countries. This weapon has seen mutliple big conflicts."
+	icon_state = "fnfal"
+	item_state = "fnfal"
+	w_class = ITEM_SIZE_HUGE
+	force = 10
+	slot_flags = SLOT_BACK
+	caliber = "a762nato"
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/scp/fnfal
+	allowed_magazines = /obj/item/ammo_magazine/scp/fnfal
+
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, use_launcher=null, one_hand_penalty=5, burst_accuracy=null, dispersion=null),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.1, 0.6, 0.9), autofire_enabled=1),
+		)
+
+/obj/item/gun/projectile/automatic/scp/fnfal/update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "fnfal"
+	else
+		icon_state = "fnfal-empty"
+	return
+
 /obj/item/material/hatchet/tacknife
 	name = "tactical knife"
 	desc = "You'd be killing loads of people if this was Medal of Valor: Heroes of Space."

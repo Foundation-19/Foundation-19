@@ -356,12 +356,11 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	gloves = /obj/item/clothing/gloves/thick/combat
 	l_pocket = /obj/item/device/radio
-	r_pocket = /obj/item/grenade/frag
 	id_types = list(/obj/item/card/id/adminlvl3)
-	l_ear = /obj/item/device/radio/headset/heads/hos/gock
+	l_ear = /obj/item/device/radio/headset/heads/hos/goc
 	belt = /obj/item/gun/projectile/revolver/mateba
 	back = /obj/item/storage/backpack/satchel/pocketbook
-	backpack_contents = list(/obj/item/ammo_magazine/c50 = 3)
+	backpack_contents = list(/obj/item/ammo_magazine/c50 = 2, /obj/item/clothing/suit/armor/goc = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/civ/uiu
 	name = OUTFIT_JOB_NAME("Unusual Incidents Unit Relations Agent")
@@ -372,7 +371,7 @@
 	gloves = /obj/item/clothing/gloves/thick/combat
 	l_pocket = /obj/item/device/radio
 	id_types = list(/obj/item/card/id/adminlvl3)
-	l_ear = /obj/item/device/radio/headset/heads/hos/gock
+	l_ear = /obj/item/device/radio/headset/heads/hos/uiu
 	belt = /obj/item/gun/projectile/revolver/mateba
 	back = /obj/item/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/ammo_magazine/c50 = 3,/obj/item/clothing/head/helmet/ballistic = 1)
@@ -394,7 +393,7 @@
 	name = OUTFIT_JOB_NAME("Junior Engineer")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_types = list(/obj/item/card/id/seclvl2)
+	id_types = list(/obj/item/card/id/seclvl2eng)
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_eng
@@ -412,7 +411,7 @@
 	name = OUTFIT_JOB_NAME("Senior Engineer")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_types = list(/obj/item/card/id/seclvl4)
+	id_types = list(/obj/item/card/id/seclvl4eng)
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/heads/ce
@@ -422,7 +421,7 @@
 	name = OUTFIT_JOB_NAME("Containment Engineer")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_types = list(/obj/item/card/id/seclvl4)
+	id_types = list(/obj/item/card/id/seclvl4eng)
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/heads/ce
