@@ -12,11 +12,10 @@
 	shoes = /obj/item/clothing/shoes/dress
 	suit = /obj/item/clothing/suit/storage/toggle/suit/black
 	id_types = list(/obj/item/card/id/adminlvl5)
-	belt = /obj/item/gun/projectile/revolver/mateba
+	belt = /obj/item/gun/projectile/pistol/gyropistol
 	l_ear = /obj/item/device/radio/headset/heads/captain
 	back = /obj/item/storage/backpack/satchel/pocketbook
-	backpack_contents = list(/obj/item/ammo_magazine/c50 = 3)
-	l_hand = /obj/item/storage/briefcase/foundation/jerraman
+	backpack_contents = list(/obj/item/ammo_magazine/gyro = 3)
 
 /decl/hierarchy/outfit/job/site90/crew/command/headofhr
 	name = OUTFIT_JOB_NAME("Head of Human Resources")
@@ -35,8 +34,6 @@
 	id_types = list(/obj/item/card/id/commslvl4)
 	l_ear = /obj/item/device/radio/headset/heads/commsofficer
 	back = /obj/item/storage/backpack/satchel/pocketbook
-
-
 
 
 // END OF COMMAND OUTFITS
@@ -85,55 +82,33 @@
 // SECURITY OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/command/cos
 	name = OUTFIT_JOB_NAME("Guard Commander")
-	uniform = /obj/item/clothing/under/rank/head_of_security/corp
+	uniform = /obj/item/clothing/under/scp/whiteuniform
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/gcseclvl5)
 	r_pocket = /obj/item/book/manual/scp/secsop
 	l_ear = /obj/item/device/radio/headset/heads/cos
-	suit = /obj/item/clothing/suit/armor/hos/jensen
-	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
-	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1,/obj/item/clothing/glasses/eyepatch/hud/security = 1,/obj/item/gun/projectile/revolver/mateba = 1,/obj/item/ammo_magazine/c50 = 1,/obj/item/ammo_magazine/box/a50 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
-	head = /obj/item/clothing/head/beret/solgov/marcom
-	mask = /obj/item/clothing/mask/balaclava
-
+	l_pocket = /obj/item/book/manual/scp/secsop
+	back = /obj/item/storage/backpack/dufflebag/sec
 
 
 // ZONE COMMANDER OUTFITS.
 /decl/hierarchy/outfit/job/site90/crew/security/ltofficerhcz
 	name = OUTFIT_JOB_NAME("HCZ Zone Commander")
-	uniform = /obj/item/clothing/under/scpguardarmband
+	uniform = /obj/item/clothing/under/scp/utility/security/zc
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/zcseclvl4hcz)
 	l_ear = /obj/item/device/radio/headset/heads/cos
-	suit = /obj/item/clothing/suit/armor/pcarrier/scp/tactical
-	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
-	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/head/beret/sec = 1,/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/gun/projectile/revolver/mateba = 1,/obj/item/ammo_magazine/c50 = 1,/obj/item/ammo_magazine/box/a50 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
-	head = /obj/item/clothing/head/helmet/scp/hczsecurityofficer
-	mask = /obj/item/clothing/mask/balaclava
-	gloves = /obj/item/clothing/gloves/tactical/scp
+	l_pocket = /obj/item/book/manual/scp/secsop
+	back = null
 
 /decl/hierarchy/outfit/job/site90/crew/security/ltofficerlcz
 	name = OUTFIT_JOB_NAME("LCZ Zone Commander")
-	uniform = /obj/item/clothing/under/scp/lczwhiteuniformarmband
+	uniform = /obj/item/clothing/under/scp/utility/security/zc
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/zcseclvl3lcz)
 	l_ear = /obj/item/device/radio/headset/heads/cos
-	suit = /obj/item/clothing/suit/armor/vest/scp/russcom
-	shoes = /obj/item/clothing/shoes/dutyboots
-	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
-	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/hos = 1,/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/gun/projectile/revolver/mateba = 1,/obj/item/ammo_magazine/c50 = 1,/obj/item/ammo_magazine/box/a50 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
-	head = /obj/item/clothing/head/helmet/scp/security
-	mask = /obj/item/clothing/mask/balaclava
-	gloves = /obj/item/clothing/gloves/tactical/scp
+	l_pocket = /obj/item/book/manual/scp/secsop
+	back = null
 
 /decl/hierarchy/outfit/job/site90/crew/security/ltofficerez
 	name = OUTFIT_JOB_NAME("EZ Senior Agent")
@@ -141,48 +116,28 @@
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/zcseclvl4ez)
 	l_ear = /obj/item/device/radio/headset/heads/cos
-	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
-	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
-	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1,/obj/item/clothing/glasses/eyepatch/hud/security = 1,/obj/item/gun/projectile/revolver/mateba = 1,/obj/item/ammo_magazine/c50 = 1,/obj/item/ammo_magazine/box/a50 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
-	head = /obj/item/clothing/head/beret/sec/corporate/hos
-	mask = /obj/item/clothing/mask/balaclava
+	l_pocket = /obj/item/book/manual/scp/secsop
+	back = null
 
 
 // GUARD OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerlcz
 	name = OUTFIT_JOB_NAME("LCZ Guard")
-	uniform = /obj/item/clothing/under/lczwhitejunioruniformarmband
-	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor
+	uniform = /obj/item/clothing/under/scp/lczwhiteuniform
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/seclvl3lcz)
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
-	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
-	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/gun/projectile/pistol/mk9 = 1,/obj/item/ammo_magazine/scp/mk9 = 1,/obj/item/ammo_magazine/box/mk9 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
-	head = /obj/item/clothing/head/helmet/scp/security
-	mask = /obj/item/clothing/mask/balaclava
-	gloves = /obj/item/clothing/gloves/tactical/scp
+	l_pocket = /obj/item/book/manual/scp/secsop
+	back = null
 
 /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerhcz
 	name = OUTFIT_JOB_NAME("HCZ Guard")
-	uniform = /obj/item/clothing/under/scpguardarmband
-	suit = /obj/item/clothing/suit/armor/pcarrier/scp/tactical
+	uniform = /obj/item/clothing/under/color/black
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/seclvl3hcz)
 	l_ear = /obj/item/device/radio/headset/headset_sec_hcz
-	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
-	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/gun/projectile/pistol/mk9 = 1,/obj/item/ammo_magazine/scp/mk9 = 1,/obj/item/ammo_magazine/box/mk9 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
-	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
-	mask = /obj/item/clothing/mask/balaclava
-	gloves = /obj/item/clothing/gloves/tactical/scp
+	l_pocket = /obj/item/book/manual/scp/secsop
+	back = /obj/item/storage/backpack/satchel
 
 /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerez
 	name = OUTFIT_JOB_NAME("EZ Agent")
@@ -191,14 +146,7 @@
 	id_types = list(/obj/item/card/id/seclvl3ez)
 	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
 	l_pocket = /obj/item/book/manual/scp/secsop
-	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
-	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
-	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1,/obj/item/clothing/glasses/eyepatch/hud/security = 1,/obj/item/gun/projectile/pistol/mk9 = 1,/obj/item/ammo_magazine/scp/mk9 = 1,/obj/item/ammo_magazine/box/mk9 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
-	head = /obj/item/clothing/head/beret/sec/corporate/warden
-	mask = /obj/item/clothing/mask/balaclava
+	back = null
 
 /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerez
 	name = OUTFIT_JOB_NAME("EZ Junior Agent")
@@ -207,49 +155,27 @@
 	id_types = list(/obj/item/card/id/seclvl3ez)
 	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
 	l_pocket = /obj/item/book/manual/scp/secsop
-	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
-	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
-	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1,/obj/item/clothing/glasses/eyepatch/hud/security = 1,/obj/item/gun/projectile/pistol/mk9 = 1,/obj/item/ammo_magazine/scp/mk9 = 1,/obj/item/ammo_magazine/box/mk9 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
-	head = /obj/item/clothing/head/beret/sec/corporate/officer
-	mask = /obj/item/clothing/mask/balaclava
+	back = null
 
 
 // JUNIOR GUARD OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerlcz
 	name = OUTFIT_JOB_NAME("LCZ Junior Guard")
 	uniform = /obj/item/clothing/under/lczwhitejunioruniform
-	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/junseclvl2lcz)
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
-	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
-	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/gun/projectile/pistol/mk9 = 1,/obj/item/ammo_magazine/scp/mk9 = 1,/obj/item/ammo_magazine/box/mk9 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
-	head = /obj/item/clothing/head/helmet/scp/security
-	mask = /obj/item/clothing/mask/balaclava
-	gloves = /obj/item/clothing/gloves/tactical/scp
-
+	l_pocket = /obj/item/book/manual/scp/secsop
+	back = null
 
 /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerhcz
 	name = OUTFIT_JOB_NAME("HCZ Junior Guard")
-	uniform = /obj/item/clothing/under/scpguard
+	uniform = /obj/item/clothing/under/color/black
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/junseclvl3hcz)
 	l_ear = /obj/item/device/radio/headset/headset_sec_hcz
-	suit = /obj/item/clothing/suit/armor/pcarrier/scp/tactical
-	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
-	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/gun/projectile/pistol/mk9 = 1,/obj/item/ammo_magazine/scp/mk9 = 1,/obj/item/ammo_magazine/box/mk9 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
-	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
-	mask = /obj/item/clothing/mask/balaclava
-	gloves = /obj/item/clothing/gloves/tactical/scp
+	l_pocket = /obj/item/book/manual/scp/secsop
+	back = null
 
 
 // SCIENCE OUTFITS
@@ -345,7 +271,7 @@
 	l_pocket = /obj/item/device/radio
 	id_types = list(/obj/item/card/id/archivist)
 	back = /obj/item/storage/backpack/satchel
-	l_ear = /obj/item/device/radio/headset/headset_arch
+	l_ear = /obj/item/device/radio/headset/headset_com
 
 /decl/hierarchy/outfit/job/site90/crew/civ/gocrep
 	name = OUTFIT_JOB_NAME("Global Occult Coalition Representative")
@@ -356,25 +282,10 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	gloves = /obj/item/clothing/gloves/thick/combat
 	l_pocket = /obj/item/device/radio
-	id_types = list(/obj/item/card/id/adminlvl3)
-	l_ear = /obj/item/device/radio/headset/heads/hos/goc
-	belt = /obj/item/gun/projectile/revolver/mateba
-	back = /obj/item/storage/backpack/satchel/pocketbook
-	backpack_contents = list(/obj/item/ammo_magazine/c50 = 2, /obj/item/clothing/suit/armor/goc = 1)
+	id_types = list(/obj/item/card/id/adminlvl5)
 
-/decl/hierarchy/outfit/job/site90/crew/civ/uiu
-	name = OUTFIT_JOB_NAME("Unusual Incidents Unit Relations Agent")
-	uniform = /obj/item/clothing/under/suit_jacket/charcoal
-	shoes = /obj/item/clothing/shoes/dress
-	suit = /obj/item/clothing/suit/armor/bulletproof
-	glasses = /obj/item/clothing/glasses/sunglasses
-	gloves = /obj/item/clothing/gloves/thick/combat
-	l_pocket = /obj/item/device/radio
-	id_types = list(/obj/item/card/id/adminlvl3)
-	l_ear = /obj/item/device/radio/headset/heads/hos/uiu
-	belt = /obj/item/gun/projectile/revolver/mateba
 	back = /obj/item/storage/backpack/satchel/pocketbook
-	backpack_contents = list(/obj/item/ammo_magazine/c50 = 3,/obj/item/clothing/head/helmet/ballistic = 1)
+	backpack_contents = list(/obj/item/ammo_magazine/tac50 = 4, /obj/item/clothing/head/helmet/scp/goc = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
 	name = OUTFIT_JOB_NAME("O5 Representative")
@@ -393,7 +304,7 @@
 	name = OUTFIT_JOB_NAME("Junior Engineer")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_types = list(/obj/item/card/id/seclvl2eng)
+	id_types = list(/obj/item/card/id/seclvl2)
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_eng
@@ -411,7 +322,7 @@
 	name = OUTFIT_JOB_NAME("Senior Engineer")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_types = list(/obj/item/card/id/seclvl4eng)
+	id_types = list(/obj/item/card/id/seclvl4)
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/heads/ce
@@ -421,7 +332,7 @@
 	name = OUTFIT_JOB_NAME("Containment Engineer")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_types = list(/obj/item/card/id/seclvl4eng)
+	id_types = list(/obj/item/card/id/seclvl4)
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/heads/ce
@@ -529,7 +440,7 @@
 	back = /obj/item/storage/backpack/satchel/pocketbook
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/mtf_epsilon1
-	name = OUTFIT_JOB_NAME("MTF Epsilon-6 Agent Alpha")
+	name = OUTFIT_JOB_NAME("MTF Epsilon-6 Agent Beta")
 	uniform = /obj/item/clothing/under/frontier
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
 	head = /obj/item/clothing/head/helmet/site53/guard/mtf_epsilon
@@ -549,7 +460,7 @@
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 2,/obj/item/grenade/frag = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/ammo_magazine/c45m = 2,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/mtf_epsilon2
-	name = OUTFIT_JOB_NAME("MTF Epsilon-6 Agent Bravo")
+	name = OUTFIT_JOB_NAME("MTF Epsilon-6 Agent Gamma")
 	uniform = /obj/item/clothing/under/det/grey
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
 	head = /obj/item/clothing/head/helmet/site53/guard/mtf_epsilon
@@ -569,7 +480,7 @@
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 2,/obj/item/ammo_magazine/c45m = 2,/obj/item/clothing/accessory/storage/bandolier = 1,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/mtf_epsilon3
-	name = OUTFIT_JOB_NAME("MTF Epsilon-6 Agent Charlie")
+	name = OUTFIT_JOB_NAME("MTF Epsilon-6 Agent Alpha")
 	uniform = /obj/item/clothing/under/syndicate/combat
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
 	head = /obj/item/clothing/head/helmet/site53/guard/mtf_epsilon/leader
@@ -589,7 +500,7 @@
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 1,/obj/item/crowbar/red = 1,/obj/item/ammo_magazine/scp/m16_mag = 3,/obj/item/ammo_magazine/c44 = 4,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/mtf_epsilon4
-	name = OUTFIT_JOB_NAME("MTF Epsilon-6 Agent Delta")
+	name = OUTFIT_JOB_NAME("MTF Epsilon-6 Agent Bravo")
 	uniform = /obj/item/clothing/under/rank/psych/turtleneck/sweater
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
 	head = /obj/item/clothing/head/helmet/site53/guard/mtf_epsilon/medic
@@ -607,46 +518,6 @@
 	belt = /obj/item/defibrillator/compact/combat/loaded
 	back = /obj/item/storage/backpack/satchel
 	backpack_contents = list(/obj/item/ammo_magazine/scp/p90_mag/ap = 3,/obj/item/clothing/mask/gas = 1,/obj/item/reagent_containers/ivbag/blood/OMinus = 2,/obj/item/storage/pill_bottle/zoom = 1)
-
-/decl/hierarchy/outfit/job/site90/crew/command/event/eta_soldier //See No Evil
-	name = OUTFIT_JOB_NAME("MTF Eta-10 Agent Alpha")
-	uniform = /obj/item/clothing/under/frontier
-	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/eta
-	head = /obj/item/clothing/head/helmet/scp/eta
-	mask = /obj/item/clothing/mask/balaclava/tactical
-	glasses = /obj/item/clothing/glasses/night
-	gloves = /obj/item/clothing/gloves/tactical/scp
-	shoes = /obj/item/clothing/shoes/jackboots
-	id_types = list(/obj/item/card/id/adminlvl5)
-	suit_store = /obj/item/gun/projectile/automatic/scp/p90
-	r_hand = /obj/item/crowbar/red
-	l_hand = /obj/item/material/hatchet/tacknife
-	l_pocket = null
-	r_pocket = /obj/item/ammo_magazine/scp
-	l_ear = /obj/item/device/radio/headset/ert
-	belt = /obj/item/gun/projectile/pistol
-	back = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 1,/obj/item/grenade/frag = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/clothing/mask/gas = 1)
-
-/decl/hierarchy/outfit/job/site90/crew/command/event/beta_soldier //Maz Hatters
-	name = OUTFIT_JOB_NAME("MTF Beta-7 Agent Alpha")
-	uniform = /obj/item/clothing/under/frontier
-	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/beta
-	head = /obj/item/clothing/head/helmet/scp/beta
-	mask = /obj/item/clothing/mask/balaclava/tactical
-	glasses = /obj/item/clothing/glasses/sunglasses
-	gloves = /obj/item/clothing/gloves/tactical/scp
-	shoes = /obj/item/clothing/shoes/jackboots
-	id_types = list(/obj/item/card/id/adminlvl5)
-	suit_store = /obj/item/gun/projectile/automatic/scp/p90
-	r_hand = /obj/item/crowbar/red
-	l_hand = /obj/item/material/hatchet/tacknife
-	l_pocket = null
-	r_pocket = /obj/item/ammo_magazine/scp
-	l_ear = /obj/item/device/radio/headset/ert
-	belt = /obj/item/gun/projectile/pistol
-	back = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/chaos_soldier
 	name = OUTFIT_JOB_NAME("Chaos Insurgency Soldier")
@@ -706,50 +577,49 @@
 	l_ear = /obj/item/device/radio/headset/ert
 	belt = /obj/item/material/sword/katana
 	back = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/storage/box/ifak = 1, /obj/item/grenade/smokebomb = 3)
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/c50 = 8,/obj/item/grenade/smokebomb = 3)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/ungoc
 	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Trooper")
 	uniform = /obj/item/clothing/under/syndicate/combat
-	suit = /obj/item/clothing/suit/storage/vest
-	head = /obj/item/clothing/head/helmet/merc
+	suit = /obj/item/clothing/suit/armor/goc
+	head = /obj/item/clothing/head/helmet/scp/goc
 	mask = /obj/item/clothing/mask/gas
 	glasses = /obj/item/clothing/glasses/night
 	gloves = /obj/item/clothing/gloves/thick/combat
 	shoes = /obj/item/clothing/shoes/combat
-	id_types = list(/obj/item/card/id/adminlvl4)
-	suit_store = /obj/item/gun/projectile/automatic/scp/ak74
+	id_types = null
+	suit_store = /obj/item/gun/projectile/automatic/scp/p90
 	r_hand = null
-	l_hand = /obj/item/grenade/frag
+	l_hand = /obj/item/material/hatchet/tacknife
 	l_pocket = /obj/item/ammo_magazine/scp
 	r_pocket = /obj/item/card/emag
 	l_ear = /obj/item/device/radio/headset/ert
-	belt = /obj/item/gun/energy/stunrevolver/rifle
-	back = /obj/item/storage/backpack/rucksack
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/handcuffs = 1,/obj/item/ammo_magazine/scp/ak = 5,/obj/item/clothing/accessory/ubac/green = 1,/obj/item/clothing/accessory/armor/helmcover/blue/sol = 1)
+	belt = /obj/item/gun/projectile/pistol
+	back = /obj/item/storage/backpack/rucksack/blue
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/a50 = 3,/obj/item/ammo_magazine/scp/p90_mag/ap = 4,/obj/item/clothing/accessory/ubac/green = 1)
 
-/decl/hierarchy/outfit/job/site90/crew/command/event/ungoc/gunner
+/decl/hierarchy/outfit/job/site90/crew/command/event/ungocgunner
 	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Machinegunner")
 	uniform = /obj/item/clothing/under/syndicate/combat
-	suit = /obj/item/clothing/suit/storage/vest
-	head = /obj/item/clothing/head/helmet/merc
+	suit = /obj/item/clothing/suit/armor/goc
+	head = /obj/item/clothing/head/helmet/scp/goc
 	mask = /obj/item/clothing/mask/gas
 	glasses = /obj/item/clothing/glasses/night
 	gloves = /obj/item/clothing/gloves/thick/combat
 	shoes = /obj/item/clothing/shoes/combat
-	id_types = list(/obj/item/card/id/adminlvl4)
+	id_types = null
 	suit_store = /obj/item/gun/projectile/automatic/l6_saw
 	r_hand = /obj/item/ammo_magazine/box/a556
 	l_hand = /obj/item/ammo_magazine/box/a556
 	l_pocket = /obj/item/grenade/frag
 	r_pocket = /obj/item/card/emag
 	l_ear = /obj/item/device/radio/headset/ert
-	belt = /obj/item/gun/energy/stunrevolver/rifle
-	back = /obj/item/storage/backpack/rucksack
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/handcuffs = 1,/obj/item/ammo_magazine/box/machinegun = 5,/obj/item/clothing/accessory/ubac/green = 1,/obj/item/clothing/accessory/armor/helmcover/blue/sol = 1)
+	back = /obj/item/storage/backpack/rucksack/blue
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/clothing/accessory/ubac/green = 1)
 
-/decl/hierarchy/outfit/job/site90/crew/command/event/ungoc/grenadier
-	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Grenadier")
+/decl/hierarchy/outfit/job/site90/crew/command/event/ungocsniper
+	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Sniper")
 	uniform = /obj/item/clothing/under/syndicate/combat
 	suit = /obj/item/clothing/suit/storage/vest
 	head = /obj/item/clothing/head/helmet/merc
@@ -757,35 +627,61 @@
 	glasses = /obj/item/clothing/glasses/night
 	gloves = /obj/item/clothing/gloves/thick/combat
 	shoes = /obj/item/clothing/shoes/combat
-	id_types = list(/obj/item/card/id/adminlvl4)
-	suit_store = /obj/item/gun/launcher/grenade // LEEEET'S DO IIIT
-	r_hand = /obj/item/clothing/accessory/storage/bandolier
+	id_types = null
+
+	r_hand = null
 	l_hand = /obj/item/material/hatchet/tacknife
-	l_pocket = /obj/item/plastique
+	l_pocket = /obj/item/ammo_magazine/scp
 	r_pocket = /obj/item/card/emag
 	l_ear = /obj/item/device/radio/headset/ert
-	belt = /obj/item/storage/belt/holster/security/tactical
-	back = /obj/item/storage/backpack/rucksack
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/fragshells = 6,/obj/item/clothing/accessory/ubac/green = 1,/obj/item/clothing/accessory/armor/helmcover/blue/sol = 1)
+	belt = /obj/item/gun/projectile/pistol
+	back = /obj/item/storage/backpack/rucksack/blue
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/a50 = 2,/obj/item/ammo_magazine/scp/svd = 4,/obj/item/clothing/accessory/ubac/green = 1)
 
-/decl/hierarchy/outfit/job/site90/crew/command/event/ungoc/leader
+/decl/hierarchy/outfit/job/site90/crew/command/event/ungocofficer
 	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Team Leader")
+	uniform = /obj/item/clothing/under/syndicate/combat
 	suit = /obj/item/clothing/suit/storage/vest
 	mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/helmet/merc
+	head = /obj/item/clothing/head/beret/scp/goc
 	gloves = /obj/item/clothing/gloves/thick/combat
-	glasses = /obj/item/clothing/glasses/thermal/plain/jensen
+//	glasses = /obj/item/clothing/glasses/thermal/plain/augmented
 	shoes = /obj/item/clothing/shoes/combat
-	id_types = list(/obj/item/card/id/adminlvl5)
-	suit_store = /obj/item/gun/projectile/automatic/scp/ak742
+	id_types = null
+	suit_store = /obj/item/gun/projectile/automatic/scp/p90
 	r_hand = null
 	l_hand = /obj/item/material/hatchet/tacknife
 	l_pocket = /obj/item/grenade/frag
 	r_pocket = /obj/item/card/emag
 	l_ear = /obj/item/device/radio/headset/ert
-	belt = /obj/item/gun/energy/stunrevolver/rifle
-	back = /obj/item/storage/backpack/rucksack
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/handcuffs = 1,/obj/item/ammo_magazine/scp/ak/big = 5,/obj/item/clothing/accessory/ubac/green = 1,/obj/item/clothing/accessory/armor/helmcover/blue/sol = 1)
+	belt = /obj/item/gun/projectile/pistol
+	back = /obj/item/storage/backpack/rucksack/blue
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/a50 = 2,/obj/item/ammo_magazine/scp/p90_mag/ap = 4,/obj/item/clothing/accessory/ubac/green = 1)
+
+/decl/hierarchy/outfit/job/site90/crew/command/event/scp5000
+	name = OUTFIT_JOB_NAME("Pietro Wilson")
+	uniform = /obj/item/clothing/under/scp/suittie
+	shoes = /obj/item/clothing/shoes/laceup
+	id_types = /obj/item/card/id/sciencelvl1
+	r_hand = null
+	l_hand = null
+	l_pocket = null
+	r_pocket = /obj/item/card/emag
+	l_ear = /obj/item/device/radio/headset/ert
+//	back = /obj/item/rig/light/stealth/scp5000
+
+/decl/hierarchy/outfit/job/site90/crew/command/event/scp5000hunter
+	name = OUTFIT_JOB_NAME("Exclusion Operative")
+	uniform = /obj/item/clothing/under/syndicate/combat
+	shoes = /obj/item/clothing/shoes/combat
+	id_types = null
+	r_hand = null
+	l_hand = null
+	l_pocket = null
+	r_pocket = /obj/item/card/emag
+	l_ear = /obj/item/device/radio/headset/ert
+//	back = /obj/item/rig/light/stealth/scp5000/working
+
 
 // FULLY GEARED (for zombies)
 
@@ -841,3 +737,17 @@
 	l_pocket = /obj/item/ammo_magazine/scp/mk9
 	l_ear = null
 	back = null
+
+/decl/hierarchy/outfit/job/site90/crew/civ/uiu
+	name = OUTFIT_JOB_NAME("Unusual Incidents Unit Relations Agent")
+	uniform = /obj/item/clothing/under/suit_jacket/charcoal
+	shoes = /obj/item/clothing/shoes/dress
+	suit = /obj/item/clothing/suit/armor/bulletproof
+	glasses = /obj/item/clothing/glasses/sunglasses
+	gloves = /obj/item/clothing/gloves/thick/combat
+	l_pocket = /obj/item/device/radio
+	id_types = list(/obj/item/card/id/adminlvl3)
+	l_ear = /obj/item/device/radio/headset/heads/hos/uiu
+	belt = /obj/item/gun/projectile/revolver/mateba
+	back = /obj/item/storage/backpack/satchel/pocketbook
+	backpack_contents = list(/obj/item/ammo_magazine/c50 = 3,/obj/item/clothing/head/helmet/ballistic = 1)
