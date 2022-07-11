@@ -332,7 +332,7 @@
 	if(H.species.get_bodytype() == SPECIES_MONARCH_QUEEN)
 		return ..()
 	else
-		return (..() && (H && H.pulling_punches))
+		return (..() && (H?.pulling_punches))
 
 /datum/species/nabber/attempt_grab(var/mob/living/carbon/human/grabber, var/mob/living/target)
 	if(grabber.species.get_bodytype() == SPECIES_MONARCH_QUEEN)

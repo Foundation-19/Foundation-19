@@ -25,7 +25,7 @@
 			continue
 		if(isliving(A))
 			M = A
-		if(M && M.stat)
+		if(M?.stat)
 			continue
 		if(mode == "specific")
 			if(!(A in C.allowed_targets))

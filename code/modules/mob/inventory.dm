@@ -189,7 +189,7 @@ var/list/slot_equipment_priority = list( \
 /mob/proc/drop_from_inventory(var/obj/item/W, var/atom/target = null)
 	if(W)
 		remove_from_mob(W, target)
-		if(!(W && W.loc)) return 1 // self destroying objects (tk, grabs)
+		if(!(W?.loc)) return 1 // self destroying objects (tk, grabs)
 		update_icons()
 		return 1
 	return 0

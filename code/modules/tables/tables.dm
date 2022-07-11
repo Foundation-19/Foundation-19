@@ -364,7 +364,7 @@
 		var/tabledirs = 0
 		for(var/direction in list(turn(dir,90), turn(dir,-90)) )
 			var/obj/structure/table/T = locate(/obj/structure/table ,get_step(src,direction))
-			if (T && T.flipped == 1 && T.dir == src.dir && material && T.material && T.material.name == material.name)
+			if (T?.flipped == 1 && T.dir == src.dir && material && T.material && T.material.name == material.name)
 				type++
 				tabledirs |= direction
 

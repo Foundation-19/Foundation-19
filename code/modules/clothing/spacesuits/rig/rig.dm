@@ -680,7 +680,7 @@
 		"<span class='info'>You start putting on \the [src]...</span>")
 
 		if(!do_after(M,seal_delay,src))
-			if(M && M.back == src)
+			if(M?.back == src)
 				if(!M.unEquip(src))
 					return
 			src.dropInto(loc)

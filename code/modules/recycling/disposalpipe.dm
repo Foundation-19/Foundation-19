@@ -773,7 +773,7 @@
 
 	//Disposal constructors
 	var/obj/structure/disposalconstruct/C = locate() in src.loc
-	if(C && C.anchored)
+	if(C?.anchored)
 		return
 
 	var/turf/T = src.loc

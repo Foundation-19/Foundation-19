@@ -371,7 +371,7 @@
 		return TRUE
 	for(var/thing in H.bad_external_organs)
 		var/obj/item/organ/external/E = thing
-		if(E && E.is_stump())
+		if(E?.is_stump())
 			lost_limb_count++
 	return (lost_limb_count >= DIONA_LIMB_DEATH_COUNT)
 #undef DIONA_LIMB_DEATH_COUNT

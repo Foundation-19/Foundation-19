@@ -256,7 +256,7 @@
 	user.next_move = world.time + 20 //also should prevent user from triggering this repeatedly
 	if(!do_after(user, 20 * user.skill_delay_mult(SKILL_COMBAT), do_flags = DO_DEFAULT & ~DO_SHOW_PROGRESS))
 		return 0
-	if(!(G && G.affecting == affecting)) //check that we still have a grab
+	if(!(G?.affecting == affecting)) //check that we still have a grab
 		return 0
 
 	var/damage_mod = 1
@@ -307,7 +307,7 @@
 
 	if(!do_after(user, 20, do_flags = DO_DEFAULT & ~DO_SHOW_PROGRESS))
 		return 0
-	if(!(G && G.affecting == affecting)) //check that we still have a grab
+	if(!(G?.affecting == affecting)) //check that we still have a grab
 		return 0
 	if(!O || O.is_stump() || !O.sever_tendon())
 		return 0

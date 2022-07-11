@@ -306,7 +306,7 @@
 		var/list/obj/item/organ/external/standing = list()
 		for(var/limb_tag in list(BP_L_FOOT, BP_R_FOOT))
 			var/obj/item/organ/external/E = organs_by_name[limb_tag]
-			if(E && E.is_usable())
+			if(E?.is_usable())
 				standing[E.organ_tag] = E
 		if((def_zone == BP_L_FOOT || def_zone == BP_L_LEG) && standing[BP_L_FOOT])
 			floor_organ = standing[BP_L_FOOT]
@@ -348,7 +348,7 @@
 		return list(init)
 
 	for(var/obj/item/organ/external/E in list(floor, init))
-		while(E && E.parent_organ)
+		while(E?.parent_organ)
 			var/candidate = organs_by_name[E.parent_organ]
 			if(!candidate || (candidate in traced_organs))
 				break // Organ parenthood is not guaranteed to be a tree
