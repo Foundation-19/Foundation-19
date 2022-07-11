@@ -2044,7 +2044,6 @@
 #include "code\modules\mob\animations.dm"
 #include "code\modules\mob\death.dm"
 #include "code\modules\mob\floating_message.dm"
-#include "code\modules\mob\gender.dm"
 #include "code\modules\mob\hear_say.dm"
 #include "code\modules\mob\holder.dm"
 #include "code\modules\mob\inventory.dm"
