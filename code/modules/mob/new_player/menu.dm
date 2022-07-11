@@ -157,11 +157,10 @@
 			return TRUE
 		var/mob/observer/ghost/observer = new()
 
-		spawning = 1
+		spawning = TRUE
 		sound_to(src, sound(null, repeat = 0, wait = 0, volume = 85, channel = GLOB.lobby_sound_channel))// MAD JAMS cant last forever yo
 
-
-		observer.started_as_observer = 1
+		observer.started_as_observer = TRUE
 		var/obj/O = locate("landmark*Observer-Start")
 		if(istype(O))
 			to_chat(src, "<span class='notice'>Now teleporting.</span>")
