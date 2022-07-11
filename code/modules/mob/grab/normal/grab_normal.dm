@@ -9,8 +9,7 @@
 	if(affecting != assailant)
 		visible_message("<span class='warning'>[assailant] has grabbed [affecting]'s [O.name]!</span>")
 	else
-		var/datum/gender/T = gender_datums[assailant.get_gender()]
-		visible_message("<span class='notice'>[assailant] has grabbed [T.his] [O.name]!</span>")
+		visible_message("<span class='notice'>[assailant] has grabbed [assailant.p_their()] [O.name]!</span>")
 
 	if(!(affecting.a_intent == I_HELP))
 		upgrade(TRUE)
