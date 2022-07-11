@@ -15,8 +15,8 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	//More variables below.
 
 /datum/computer_file/report/crew_record/New()
-	..()
-	load_from_mob(null)
+	load_from_mob(null) //jesus christ, what?
+	return ..()
 
 /datum/computer_file/report/crew_record/Destroy()
 	. = ..()
@@ -48,17 +48,17 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	set_name(H ? H.real_name : "Unset")
 	set_formal_name(formal_name)
 	set_job(H ? GetAssignment(H) : "Unset")
-	set_sex(H.get_sex())
+	set_sex(H ? H.get_sex() : "Unset")
 	set_age(H ? H.age : 30)
 	set_status(GLOB.default_physical_status)
 	set_species(H ? H.get_species() : SPECIES_HUMAN)
-	set_branch(H ? (H.char_branch && H.char_branch.name) : "None")
-	set_rank(H ? (H.char_rank && H.char_rank.name) : "None")
+	set_branch(H ? (H.char_branch?.name) : "None")
+	set_rank(H ? (H.char_rank?.name) : "None")
 	set_public_record(H && H.public_record && !jobban_isbanned(H, "Records") ? html_decode(H.public_record) : "No record supplied")
 
 	// Medical record
 	set_bloodtype(H ? H.b_type : "Unset")
-	set_medRecord((H && H.med_record && !jobban_isbanned(H, "Records") ? html_decode(H.med_record) : "No record supplied"))
+	set_medRecord((H?.med_record && !jobban_isbanned(H, "Records") ? html_decode(H.med_record) : "No record supplied"))
 
 	if(H)
 		if(H.isSynthetic())

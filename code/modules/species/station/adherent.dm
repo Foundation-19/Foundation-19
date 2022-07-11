@@ -164,7 +164,7 @@
 
 /datum/species/adherent/get_additional_examine_text(mob/living/carbon/human/H)
 	if(can_overcome_gravity(H))
-		return SPAN_NOTICE("<i>[p_they()] [H.p_are()] floating on a cloud of shimmering distortion.</i>")
+		return SPAN_NOTICE("<i>[H.p_they(TRUE)] [H.p_are()] floating on a cloud of shimmering distortion.</i>")
 
 /datum/species/adherent/post_organ_rejuvenate(obj/item/organ/org, mob/living/carbon/human/H)
 	org.status |= (ORGAN_BRITTLE|ORGAN_CRYSTAL|ORGAN_ROBOTIC)

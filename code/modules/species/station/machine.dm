@@ -107,7 +107,7 @@
 	return "oil"
 
 /datum/species/machine/disfigure_msg(var/mob/living/carbon/human/H)
-	return "<span class='danger'>[H.p_their()] monitor is completely busted!</span>\n"
+	return "<span class='danger'>[H.p_their(TRUE)] monitor is completely busted!</span>\n"
 
 /datum/species/machine/can_float(mob/living/carbon/human/H)
 	return FALSE

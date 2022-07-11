@@ -52,86 +52,86 @@
 
 	//uniform
 	if(w_uniform && !skipjumpsuit)
-		msg += "[p_they()] [p_are()] wearing [w_uniform.get_examine_line()].\n"
+		msg += "[p_they(TRUE)] [p_are()] wearing [w_uniform.get_examine_line()].\n"
 
 	//head
 	if(head)
-		msg += "[p_they()] [p_are()] wearing [head.get_examine_line()] on [p_their()] head.\n"
+		msg += "[p_they(TRUE)] [p_are()] wearing [head.get_examine_line()] on [p_their()] head.\n"
 
 	//suit/armour
 	if(wear_suit)
-		msg += "[p_they()] [p_are()] wearing [wear_suit.get_examine_line()].\n"
+		msg += "[p_they(TRUE)] [p_are()] wearing [wear_suit.get_examine_line()].\n"
 		//suit/armour storage
 		if(s_store && !skipsuitstorage)
 			msg += "[p_they()] [p_are()] carrying [s_store.get_examine_line()] on [p_their()] [wear_suit.name].\n"
 
 	//back
 	if(back)
-		msg += "[p_they()] [p_have()] [back.get_examine_line()] on [p_their()] back.\n"
+		msg += "[p_they(TRUE)] [p_have()] [back.get_examine_line()] on [p_their()] back.\n"
 
 	//left hand
 	if(l_hand)
-		msg += "[p_they()] [p_are()] holding [l_hand.get_examine_line()] in [p_their()] left hand.\n"
+		msg += "[p_they(TRUE)] [p_are()] holding [l_hand.get_examine_line()] in [p_their()] left hand.\n"
 
 	//right hand
 	if(r_hand)
-		msg += "[p_they()] [p_are()] holding [r_hand.get_examine_line()] in [p_their()] right hand.\n"
+		msg += "[p_they(TRUE)] [p_are()] holding [r_hand.get_examine_line()] in [p_their()] right hand.\n"
 
 	//gloves
 	if(gloves && !skipgloves)
-		msg += "[p_they()] [p_have()] [gloves.get_examine_line()] on [p_their()] hands.\n"
+		msg += "[p_they(TRUE)] [p_have()] [gloves.get_examine_line()] on [p_their()] hands.\n"
 	else if(blood_DNA)
 		msg += "<span class='warning'>[p_they()] [p_have()] [(hand_blood_color != SYNTH_BLOOD_COLOUR) ? "blood" : "oil"]-stained hands!</span>\n"
 
 	//belt
 	if(belt)
-		msg += "[p_they()] [p_have()] [belt.get_examine_line()] about [p_their()] waist.\n"
+		msg += "[p_they(TRUE)] [p_have()] [belt.get_examine_line()] about [p_their()] waist.\n"
 
 	//shoes
 	if(shoes && !skipshoes)
-		msg += "[p_they()] [p_are()] wearing [shoes.get_examine_line()] on [p_their()] feet.\n"
+		msg += "[p_they(TRUE)] [p_are()] wearing [shoes.get_examine_line()] on [p_their()] feet.\n"
 	else if(feet_blood_DNA)
 		msg += "<span class='warning'>[p_they()] [p_have()] [(feet_blood_color != SYNTH_BLOOD_COLOUR) ? "blood" : "oil"]-stained feet!</span>\n"
 
 	//mask
 	if(wear_mask && !skipmask)
-		msg += "[p_they()] [p_have()] [wear_mask.get_examine_line()] on [p_their()] face.\n"
+		msg += "[p_they(TRUE)] [p_have()] [wear_mask.get_examine_line()] on [p_their()] face.\n"
 
 	//eyes
 	if(glasses && !skipeyes)
-		msg += "[p_they()] [p_have()] [glasses.get_examine_line()] covering [p_their()] eyes.\n"
+		msg += "[p_they(TRUE)] [p_have()] [glasses.get_examine_line()] covering [p_their()] eyes.\n"
 
 	//left ear
 	if(l_ear && !skipears)
-		msg += "[p_they()] [p_have()] [l_ear.get_examine_line()] on [p_their()] left ear.\n"
+		msg += "[p_they(TRUE)] [p_have()] [l_ear.get_examine_line()] on [p_their()] left ear.\n"
 
 	//right ear
 	if(r_ear && !skipears)
-		msg += "[p_they()] [p_have()] [r_ear.get_examine_line()] on [p_their()] right ear.\n"
+		msg += "[p_they(TRUE)] [p_have()] [r_ear.get_examine_line()] on [p_their()] right ear.\n"
 
 	//ID
 	if(wear_id)
-		msg += "[p_they()] [p_are()] wearing [wear_id.get_examine_line()].\n"
+		msg += "[p_they(TRUE)] [p_are()] wearing [wear_id.get_examine_line()].\n"
 
 	//handcuffed?
 	if(handcuffed)
 		if(istype(handcuffed, /obj/item/handcuffs/cable))
-			msg += "<span class='warning'>[p_they()] [p_are()] [icon2html(handcuffed, user)] restrained with cable!</span>\n"
+			msg += "<span class='warning'>[p_they(TRUE)] [p_are()] [icon2html(handcuffed, user)] restrained with cable!</span>\n"
 		else
-			msg += "<span class='warning'>[p_they()] [p_are()] [icon2html(handcuffed, user)] handcuffed!</span>\n"
+			msg += "<span class='warning'>[p_they(TRUE)] [p_are()] [icon2html(handcuffed, user)] handcuffed!</span>\n"
 
 	//buckled
 	if(buckled)
-		msg += "<span class='warning'>[p_they()] [p_are()] [icon2html(buckled, user)] buckled to [buckled]!</span>\n"
+		msg += "<span class='warning'>[p_they(TRUE)] [p_are()] [icon2html(buckled, user)] buckled to [buckled]!</span>\n"
 
 	//Jitters
 	if(is_jittery)
 		if(jitteriness >= 300)
-			msg += "<span class='warning'><B>[p_they()] [p_are()] convulsing violently!</B></span>\n"
+			msg += "<span class='warning'><B>[p_they(TRUE)] [p_are()] convulsing violently!</B></span>\n"
 		else if(jitteriness >= 200)
-			msg += "<span class='warning'>[p_they()] [p_are()] extremely jittery.</span>\n"
+			msg += "<span class='warning'>[p_they(TRUE)] [p_are()] extremely jittery.</span>\n"
 		else if(jitteriness >= 100)
-			msg += "<span class='warning'>[p_they()] [p_are()] twitching ever so slightly.</span>\n"
+			msg += "<span class='warning'>[p_they(TRUE)] [p_are()] twitching ever so slightly.</span>\n"
 
 	//Disfigured face
 	if(!skipface) //Disfigurement only matters for the head currently.
@@ -149,26 +149,26 @@
 			msg += "<span class='warning'>[p_they()] [p_have()] \a [o.splinted] on [p_their()] [o.name]!</span>\n"
 
 	if(mSmallsize in mutations)
-		msg += "[p_they()] [p_are()] small halfling!\n"
+		msg += "[p_they(TRUE)] [p_are()] small halfling!\n"
 
 	if(stat || status_flags & FAKEDEATH)
-		msg += "<span class='warning'>[p_they()] [p_are()]n't responding to anything around [p_them()] and seems to be unconscious.</span>\n"
+		msg += "<span class='warning'>[p_they(TRUE)] [p_are()]n't responding to anything around [p_them()] and seems to be unconscious.</span>\n"
 		if((stat == DEAD || is_asystole() || losebreath || status_flags & FAKEDEATH) && distance <= 3)
-			msg += "<span class='warning'>[p_they()] [p_do()] not appear to be breathing.</span>\n"
+			msg += "<span class='warning'>[p_they(TRUE)] [p_do()] not appear to be breathing.</span>\n"
 
 	if(fire_stacks > 0)
-		msg += "[p_they()] looks flammable.\n"
+		msg += "[p_they(TRUE)] looks flammable.\n"
 	else if(fire_stacks < 0)
-		msg += "[p_they()] looks wet.\n"
+		msg += "[p_they(TRUE)] looks wet.\n"
 	if(on_fire)
 		msg += "<span class='warning'>[p_they()] [p_are()] on fire!.</span>\n"
 
 	var/ssd_msg = species.get_ssd(src)
 	if(ssd_msg && (!should_have_organ(BP_BRAIN) || has_brain()) && stat != DEAD)
 		if(!key)
-			msg += SPAN_DEADSAY("[p_they()] [p_are()] [ssd_msg]. [p_they()] won't be recovering any time soon. (Ghosted)") + "\n"
+			msg += SPAN_DEADSAY("[p_they(TRUE)] [p_are()] [ssd_msg]. [p_they()] won't be recovering any time soon. (Ghosted)") + "\n"
 		else if(!client)
-			msg += SPAN_DEADSAY("[p_they()] [p_are()] [ssd_msg]. (Disconnected)") + "\n"
+			msg += SPAN_DEADSAY("[p_they(TRUE)] [p_are()] [ssd_msg]. (Disconnected)") + "\n"
 
 	if(admin_paralyzed)
 		msg += SPAN_DEBUG("OOC: [p_they()] [p_have()] been paralyzed by staff. Please avoid interacting with [p_them()] unless cleared to do so by staff.") + "\n"
@@ -178,9 +178,9 @@
 		msg += "<span class='notice'>[p_they()] [p_have()] \"[H.forehead_graffiti]\" written on [p_their()] [H.name] in [H.graffiti_style]!</span>\n"
 
 	if(became_younger)
-		msg += "[p_they()] looks a lot younger than you remember.\n"
+		msg += "[p_they(TRUE)] looks a lot younger than you remember.\n"
 	if(became_older)
-		msg += "[p_they()] looks a lot older than you remember.\n"
+		msg += "[p_they(TRUE)] looks a lot older than you remember.\n"
 
 	var/extra_species_text = species.get_additional_examine_text(src)
 	if(extra_species_text)
@@ -198,13 +198,13 @@
 		var/obj/item/organ/external/E = organs_by_name[organ_tag]
 
 		if(!E)
-			wound_flavor_text[organ_descriptor] = "<b>[p_they()] [p_are()] missing [p_their()] [organ_descriptor].</b>\n"
+			wound_flavor_text[organ_descriptor] = "<b>[p_they(TRUE)] [p_are()] missing [p_their()] [organ_descriptor].</b>\n"
 			continue
 
 		wound_flavor_text[E.name] = ""
 
 		if(E.applied_pressure == src)
-			applying_pressure = "<span class='info'>[p_they()] [p_are()] applying pressure to [p_their()] [E.name].</span><br>"
+			applying_pressure = "<span class='info'>[p_they(TRUE)] [p_are()] applying pressure to [p_their()] [E.name].</span><br>"
 
 		var/obj/item/clothing/hidden
 		var/list/clothing_items = list(head, wear_mask, wear_suit, w_uniform, gloves, shoes)
@@ -220,20 +220,20 @@
 				hidden_bleeders[hidden] += E.name
 		else
 			if(E.is_stump())
-				wound_flavor_text[E.name] += "<b>[p_they()] [p_have()] a stump where [p_their()] [organ_descriptor] should be.</b>\n"
+				wound_flavor_text[E.name] += "<b>[p_they(TRUE)] [p_have()] a stump where [p_their()] [organ_descriptor] should be.</b>\n"
 				if(LAZYLEN(E.wounds) && E.parent)
-					wound_flavor_text[E.name] += "[p_they()] [p_have()] [E.get_wounds_desc()] on [p_their()] [E.parent.name].<br>"
+					wound_flavor_text[E.name] += "[p_they(TRUE)] [p_have()] [E.get_wounds_desc()] on [p_their()] [E.parent.name].<br>"
 			else
 				if(!is_synth && BP_IS_ROBOTIC(E) && (E.parent && !BP_IS_ROBOTIC(E.parent) && !BP_IS_ASSISTED(E.parent)))
-					wound_flavor_text[E.name] = "[p_they()] [p_have()] a [E.name].\n"
+					wound_flavor_text[E.name] = "[p_they(TRUE)] [p_have()] a [E.name].\n"
 				var/wounddesc = E.get_wounds_desc()
 				if(wounddesc != "nothing")
-					wound_flavor_text[E.name] += "[p_they()] [p_have()] [wounddesc] on [p_their()] [E.name].<br>"
+					wound_flavor_text[E.name] += "[p_they(TRUE)] [p_have()] [wounddesc] on [p_their()] [E.name].<br>"
 		if(!hidden || distance <=1)
 			if(E.dislocated > 0)
-				wound_flavor_text[E.name] += "[p_their()] [E.joint] is dislocated!<br>"
+				wound_flavor_text[E.name] += "[p_their(TRUE)] [E.joint] is dislocated!<br>"
 			if(((E.status & ORGAN_BROKEN) && E.brute_dam > E.min_broken_damage) || (E.status & ORGAN_MUTATED))
-				wound_flavor_text[E.name] += "[p_their()] [E.name] is dented and swollen!<br>"
+				wound_flavor_text[E.name] += "[p_their(TRUE)] [E.name] is dented and swollen!<br>"
 
 		for(var/datum/wound/wound in E.wounds)
 			var/list/embedlist = wound.embedded_objects
@@ -248,7 +248,7 @@
 						parsedembed.Add("multiple "+embedded.name)
 				wound_flavor_text["[E.name]"] += "The [wound.desc] on [p_their()] [E.name] has \a [english_list(parsedembed, and_text = " and \a ", comma_text = ", \a ")] sticking out of it!<br>"
 	for(var/hidden in hidden_bleeders)
-		wound_flavor_text[hidden] = "[p_they()] [p_have()] blood soaking through [hidden] around [p_their()] [english_list(hidden_bleeders[hidden])]!<br>"
+		wound_flavor_text[hidden] = "[p_they(TRUE)] [p_have()] blood soaking through [hidden] around [p_their()] [english_list(hidden_bleeders[hidden])]!<br>"
 
 	msg += "<span class='warning'>"
 	for(var/limb in wound_flavor_text)
@@ -260,7 +260,7 @@
 			continue
 		msg += "<span class='danger'>[src] [p_have()] \a [implant.name] sticking out of [p_their()] flesh!</span>\n"
 	if(digitalcamo)
-		msg += "[p_they()] [p_are()] repulsively uncanny!\n"
+		msg += "[p_they(TRUE)] [p_are()] repulsively uncanny!\n"
 
 	if(hasHUD(user, HUD_SECURITY))
 		var/perpname = "wot"

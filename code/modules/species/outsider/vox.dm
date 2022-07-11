@@ -135,7 +135,7 @@
 		H.set_internals(H.back)
 
 /datum/species/vox/disfigure_msg(var/mob/living/carbon/human/H)
-	return "<span class='danger'>[H.p_their()] beak-segments are cracked and chipped! [H.p_their()] [H.p_are()] not even recognizable.</span>\n"
+	return "<span class='danger'>[H.p_their(TRUE)] beak-segments are cracked and chipped! [H.p_their()] [H.p_are()] not even recognizable.</span>\n"
 
 /datum/species/vox/skills_from_age(age)
 	. = 8
