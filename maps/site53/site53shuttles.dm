@@ -278,7 +278,7 @@
 /obj/effect/shuttle_landmark/supply/centcom
 	name = "Offsite"
 	landmark_tag = "nav_cargo_start"
-	base_area = /turf/unsimulated/floor/reinforced
+	base_turf = /turf/unsimulated/floor/reinforced
 
 /obj/effect/shuttle_landmark/supply/station
 	name = "Hangar"
