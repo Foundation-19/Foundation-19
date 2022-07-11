@@ -28754,6 +28754,7 @@
 /obj/structure/table/standard,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/item/gun/projectile/revolver/mateba,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/securitypost)
 "bhZ" = (
@@ -28819,52 +28820,6 @@
 /obj/item/ammo_magazine/box/a10mm,
 /obj/item/ammo_magazine/box/a10mm,
 /obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a50,
-/obj/item/ammo_magazine/box/a50,
-/obj/item/ammo_magazine/box/a50,
-/turf/simulated/floor/tiled/dark,
-/area/site53/zonecommanderoffice{
-	name = "\improper Heavy Containment Zone Equipment Room"
-	})
-"bic" = (
-/obj/structure/table/rack,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
 /turf/simulated/floor/tiled/dark,
 /area/site53/zonecommanderoffice{
 	name = "\improper Heavy Containment Zone Equipment Room"
@@ -29681,12 +29636,12 @@
 	})
 "bjn" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/m16,
-/obj/item/gun/projectile/automatic/scp/m16,
-/obj/item/gun/projectile/automatic/scp/m16,
-/obj/item/gun/projectile/automatic/scp/m16,
-/obj/item/gun/projectile/automatic/scp/m16,
-/obj/item/gun/projectile/automatic/scp/m16,
+/obj/item/ammo_magazine/box/a50,
+/obj/item/ammo_magazine/box/a50,
+/obj/item/ammo_magazine/box/a50,
+/obj/item/ammo_magazine/box/a50,
+/obj/item/ammo_magazine/box/a50,
+/obj/item/ammo_magazine/box/a50,
 /turf/simulated/floor/tiled/dark,
 /area/site53/zonecommanderoffice{
 	name = "\improper Heavy Containment Zone Equipment Room"
@@ -99219,7 +99174,7 @@ azA
 aGN
 bhS
 rrU
-bic
+bjq
 bio
 bjn
 aGN
