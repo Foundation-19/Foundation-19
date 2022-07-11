@@ -274,14 +274,8 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
 "aM" = (
-/obj/effect/decal/cleanable/blood/writing{
-	desc = "DEBT OF LIFE PAID TO THE LION OF DEATH";
-	drydesc = "It looks like it's been there for some time.";
-	message = "DEBT OF LIFE PAID TO THE LION OF DEATH";
-	name = "bloody markings";
-	text = "DEBT OF LIFE PAID TO THE LION OF DEATH"
-	},
-/turf/simulated/mineral/random,
+/obj/effect/landmark/corpse/scientist,
+/turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mine/unexplored)
 "aN" = (
 /obj/effect/paint_stripe/white,
@@ -40945,7 +40939,7 @@ rY
 rY
 rY
 xs
-xC
+aM
 zq
 xp
 rY
@@ -41718,7 +41712,7 @@ rY
 rY
 rY
 rY
-aM
+rY
 rY
 rY
 rY
