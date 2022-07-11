@@ -78,7 +78,7 @@ var/global/photo_count = 0
 			to_chat(user, "<span class='danger'>You gain a dull headache.</span>")
 			switch(anomalytype)
 				if("096")
-					var/mob/living/simple_animal/scp/scp096/A = anomalymob //I hate this but I don't know another way to do it, so, we go the shitcode way!
+					var/mob/living/simple_animal/hostile/scp096/A = anomalymob //I hate this but I don't know another way to do it, so, we go the shitcode way!
 					A.specialexamine(user) //YOU ARE ALREADY DEAD.
 					return
 	else
@@ -225,13 +225,14 @@ var/global/photo_count = 0
 			mob_detail = "You can see [A] on the photo[(A.health / A.maxHealth) < 0.75 ? " - [A] looks hurt":""].[holding ? " [holding]":"."]. "
 		else
 			mob_detail += "You can also see [A] on the photo[(A.health / A.maxHealth)< 0.75 ? " - [A] looks hurt":""].[holding ? " [holding]":"."]."
-	for(var/mob/living/simple_animal/scp/B in the_turf) //Handles making images anomalous
-		anomalous = TRUE
-		if(B.anomalytype)
-			anomalytype = B.anomalytype
-			anomalymob = B
-		else
-			anomalytype = null
+	for(var/mob/living/simple_animal/hostile/B in the_turf) //Handles making images anomalous
+		if(anomalytype)
+			anomalous = TRUE
+			if(B.anomalytype)
+				anomalytype = B.anomalytype
+				anomalymob = B
+			else
+				anomalytype = null
 	return mob_detail
 
 /obj/item/device/camera/afterattack(atom/target as mob|obj|turf|area, mob/user as mob, flag)
