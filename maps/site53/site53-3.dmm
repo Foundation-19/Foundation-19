@@ -880,6 +880,9 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception)
+"co" = (
+/turf/unsimulated/mineral,
+/area/site53/medical/mentalhealth/isolation)
 "cp" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -2213,7 +2216,7 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/snow,
-/area/site53/surface/surface)
+/area/site53/medical/mentalhealth/isolation)
 "fT" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -4139,7 +4142,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/snow,
-/area/site53/surface/surface)
+/area/site53/medical/mentalhealth/isolation)
 "kl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -8122,7 +8125,7 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "vG" = (
-/obj/effect/shuttle_landmark/chaos2/out,
+/obj/effect/shuttle_landmark/goc1/out,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "vH" = (
@@ -35145,7 +35148,7 @@ dm
 hL
 dm
 dm
-oS
+co
 dA
 dA
 dA
@@ -35402,7 +35405,7 @@ kY
 de
 lr
 kk
-oS
+co
 dA
 dA
 dA
@@ -35659,7 +35662,7 @@ ZS
 ZS
 Kq
 fS
-oS
+co
 dA
 dA
 dA
@@ -35916,7 +35919,7 @@ mc
 mc
 mc
 eG
-oS
+co
 dA
 dA
 dA
@@ -42429,7 +42432,7 @@ fL
 rb
 fK
 fK
-fL
+fK
 GJ
 jg
 jg
@@ -42686,7 +42689,7 @@ bm
 bO
 bO
 bX
-bm
+bO
 iz
 jg
 jg
@@ -42938,13 +42941,13 @@ bm
 bm
 jg
 jg
+bm
+bm
 bO
 bO
 bO
 bO
-bO
-bO
-ic
+iz
 jg
 jg
 ZR
@@ -43195,7 +43198,7 @@ bm
 bO
 jg
 jg
-bO
+bm
 bO
 bO
 bK
@@ -43457,7 +43460,7 @@ bO
 bO
 bO
 bO
-bm
+bO
 iz
 jg
 jg
@@ -43714,7 +43717,7 @@ bS
 bO
 bO
 bO
-bm
+bO
 iz
 jg
 jg
@@ -43969,8 +43972,8 @@ jg
 bK
 bS
 bO
-nZ
-nZ
+Rx
+Rx
 Rx
 RG
 jg
@@ -46525,9 +46528,9 @@ bO
 bO
 bO
 bO
-bO
-bO
-bO
+bm
+bm
+bm
 bS
 bS
 bO
@@ -46773,19 +46776,19 @@ bm
 bm
 bm
 bm
+ru
+bO
+bO
+bO
+bO
+bO
+bO
+bO
+bO
+bO
 bm
-bO
-bO
-bO
-bS
-bS
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+bm
+bm
 bO
 bO
 bO
@@ -47030,17 +47033,17 @@ bm
 bm
 bm
 bm
-ru
 bO
 bO
 bO
-bS
-bO
-bS
 bO
 bO
 bO
-vG
+bO
+bO
+bO
+bO
+bO
 bO
 bO
 bO
@@ -47287,11 +47290,11 @@ bm
 bm
 bm
 bm
-bm
 bO
 bO
 bO
 bO
+vG
 bO
 bO
 bO
@@ -47544,7 +47547,7 @@ bm
 bm
 bm
 bm
-bm
+bO
 bO
 bO
 bO
@@ -48325,7 +48328,7 @@ bO
 bO
 bO
 bO
-bO
+bS
 bO
 bO
 bK
@@ -48583,7 +48586,7 @@ bm
 bm
 bm
 bO
-bO
+bS
 bm
 bm
 bO

@@ -1,6 +1,3 @@
-/obj/item/clothing/head/beret/scp
-	icon = 'icons/obj/clothing/hats.dmi'
-
 /obj/item/clothing/head/solgov
 	name = "master solgov hat"
 	icon = 'maps/torch/icons/obj/solgov-head.dmi'

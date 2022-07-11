@@ -202,23 +202,23 @@
 
 /obj/item/storage/box/ammo/beanbags
 	name = "box of beanbag shells"
-	startswith = list(/obj/item/ammo_magazine/shotholder/beanbag = 2)
+	startswith = list(/obj/item/ammo_magazine/shotholder/beanbag = 4)
 
 /obj/item/storage/box/ammo/shotgunammo
 	name = "box of shotgun slugs"
-	startswith = list(/obj/item/ammo_magazine/shotholder = 2)
+	startswith = list(/obj/item/ammo_magazine/shotholder = 3)
 
 /obj/item/storage/box/ammo/shotgunshells
 	name = "box of shotgun shells"
-	startswith = list(/obj/item/ammo_magazine/shotholder/shell = 2)
+	startswith = list(/obj/item/ammo_magazine/shotholder/shell = 3)
 
 /obj/item/storage/box/ammo/flashshells
 	name = "box of illumination shells"
-	startswith = list(/obj/item/ammo_magazine/shotholder/flash = 2)
+	startswith = list(/obj/item/ammo_magazine/shotholder/flash = 3)
 
 /obj/item/storage/box/ammo/stunshells
 	name = "box of stun shells"
-	startswith = list(/obj/item/ammo_magazine/shotholder/stun = 2)
+	startswith = list(/obj/item/ammo_magazine/shotholder/stun = 4)
 
 /obj/item/storage/box/ammo/sniperammo
 	name = "box of sniper shells"
