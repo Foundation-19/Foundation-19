@@ -165,7 +165,7 @@
 	name = "tomato"
 	seed_name = "tomato"
 	display_name = "tomato plant"
-	mutants = list("bluetomato","bloodtomato")
+	mutants = null
 	chems = list(/datum/reagent/nutriment = list(1,10), /datum/reagent/drink/juice/tomato = list(10,10))
 	kitchen_tag = "tomato"
 
@@ -183,7 +183,7 @@
 	set_trait(TRAIT_IDEAL_LIGHT, 6)
 	set_trait(TRAIT_WATER_CONSUMPTION, 6)
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.25)
-
+/*
 /datum/seed/tomato/blood
 	name = "bloodtomato"
 	seed_name = "blood tomato"
@@ -235,7 +235,7 @@
 	set_trait(TRAIT_PRODUCT_COLOUR,"#00e5ff")
 	set_trait(TRAIT_BIOLUM,1)
 	set_trait(TRAIT_BIOLUM_COLOUR,"#4da4a8")
-
+*/
 //Eggplants/varieties.
 /datum/seed/eggplant
 	name = "eggplant"

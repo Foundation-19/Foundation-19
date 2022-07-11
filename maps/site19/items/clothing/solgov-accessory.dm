@@ -730,5 +730,5 @@ ranks - marines
 /obj/item/clothing/gloves/foundation_service
 	name = "service gloves"
 	desc = "A pair of dark grey Foundation gloves, with soft padding to make them comfortable to wear."
-	icon_state = "co_gloves"
-	item_state = "G_Gloves_OM"
+	icon_state = "black"
+	item_state = "bgloves"
