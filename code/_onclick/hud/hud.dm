@@ -42,7 +42,7 @@
 /datum/hud/New(mob/owner)
 	mymob = owner
 	instantiate()
-	..()
+	return ..()
 
 /datum/hud/Destroy()
 	. = ..()

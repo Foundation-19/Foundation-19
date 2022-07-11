@@ -239,6 +239,13 @@
 	desc = "A 7.62mm practice bullet casing."
 	projectile_type = /obj/item/projectile/bullet/rifle/a762/practice
 
+/obj/item/ammo_casing/a762nato
+	desc = "A 7.62x51mm NAVO bullet casing."
+	caliber = "a762nato"
+	projectile_type = /obj/item/projectile/bullet/rifle/a762nato
+	icon_state = "rifle-casing"
+	spent_icon = "rifle-casing-spent"
+
 /obj/item/ammo_casing/rocket
 	name = "rocket shell"
 	desc = "A high explosive designed to be fired from a launcher."
@@ -396,13 +403,19 @@
 /obj/item/projectile/bullet/rifle/a556
 	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
 	damage = 50
-	armor_penetration = 0
+	armor_penetration = 10
 	agony = 0
 
 /obj/item/projectile/bullet/rifle/a762
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
-	damage = 60
-	armor_penetration = 0
+	damage = 55
+	armor_penetration = 5
+	agony = 0
+
+/obj/item/projectile/bullet/rifle/a762nato
+	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	damage = 55
+	armor_penetration = 15
 	agony = 0
 
 /obj/item/projectile/bullet/rifle/a145
