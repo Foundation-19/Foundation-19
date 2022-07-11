@@ -9,12 +9,12 @@
 	name = "SCP-966"
 	designation = "966"
 	classification = EUCLID
-  
+
 /mob/living/carbon/human/scp966/IsAdvancedToolUser()
 	return FALSE
-  
+
 /mob/living/scp_966/proc/OpenDoor(obj/machinery/door/A)
-  if(!istype(A) || incapacitated() || IsBeingWatched())
+	if(!istype(A) || incapacitated())
 		return
 
 	if(istype(A, /obj/machinery/door/blast/regular))
@@ -28,7 +28,7 @@
 	if(!A.density)
 		return
 
-	visible_message("\The [src] begins to pry open \the [A]!")
+  visible_message("\The [src] begins to pry open \the [A]!")
 	if(!do_after(src, 5 SECONDS, A))
 		return
 
