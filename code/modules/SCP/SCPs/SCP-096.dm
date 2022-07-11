@@ -1,6 +1,4 @@
-//sculpture
 //SCP-096, nothing more need be said
-//Do this here as it'll be the only one that uses this - Yawet330 (for now)
 /mob/living/simple_animal/hostile/scp096
 	name = "???"
 	desc = "No, no, you know not to look closely at it" //for non-targets
