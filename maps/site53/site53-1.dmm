@@ -6950,6 +6950,7 @@
 	icon_state = "camera";
 	name = "SCP-049 Containment Foyer"
 	},
+/obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
 "pq" = (

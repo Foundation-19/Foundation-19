@@ -2076,13 +2076,13 @@
 "fy" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/machinery/recharger/wallcharger{
 	dir = 8;
 	pixel_x = 20
 	},
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/ezarmory)
 "fz" = (
@@ -5263,6 +5263,9 @@
 /obj/structure/closet/secure_closet/mtf/enlisted/ez,
 /obj/item/clothing/accessory/armorplate/tactical,
 /obj/item/gun/energy/taser,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/crowbar/red,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/zonecommanderoffice{
 	name = "Entrance Zone Equipment Room"
@@ -5391,6 +5394,7 @@
 /obj/structure/closet/secure_closet/mtf/nco/ez,
 /obj/item/clothing/accessory/armorplate/tactical,
 /obj/item/gun/energy/taser,
+/obj/item/crowbar/red,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/zonecommanderoffice{
 	name = "Entrance Zone Equipment Room"
@@ -5426,6 +5430,7 @@
 /obj/structure/closet/secure_closet/mtf/nco/ez,
 /obj/item/clothing/accessory/armorplate/tactical,
 /obj/item/gun/energy/taser,
+/obj/item/crowbar/red,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/zonecommanderoffice{
 	name = "Entrance Zone Equipment Room"
@@ -5528,6 +5533,7 @@
 /obj/item/clothing/suit/armor/pcarrier/scp/medium,
 /obj/item/gun/energy/taser,
 /obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/crowbar/red,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/zonecommanderoffice{
 	name = "Entrance Zone Commander's Office"
@@ -7052,6 +7058,7 @@
 /obj/item/reagent_containers/syringe/amnesticsc,
 /obj/item/implantcase/death_alarm,
 /obj/item/implanter,
+/obj/item/crowbar/red,
 /turf/simulated/floor/carpet/blue2,
 /area/site53/zonecommanderoffice{
 	name = "\improper LCZ Zone Commander's Office"
