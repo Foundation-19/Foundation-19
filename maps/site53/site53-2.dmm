@@ -23815,10 +23815,9 @@
 	icon_state = "4-8";
 	pixel_z = 0
 	},
-/obj/machinery/door/blast/shutters{
-	begins_closed = 0;
-	id_tag = "ULCZ Checkpoint Booth Exit";
-	name = "ULCZ Checkpoint Booth Exit"
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
@@ -27780,17 +27779,19 @@
 	id_tag = "ULCZ Booth Window 2";
 	name = "ULCZ Booth Window 2"
 	},
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1";
-	pixel_x = 11
-	},
 /obj/machinery/button/blast_door{
 	dir = 1;
 	id_tag = "ULCZ Checkpoint Secondary Entrance";
 	name = "ULCZ Checkpoint Secondary Entrance";
 	pixel_y = -23;
 	req_access = list(202)
+	},
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "ULCZ Interior Booth Window";
+	name = "ULCZ Checkpoint Booth Exit";
+	pixel_x = 24;
+	req_access = list(list(202,302))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
@@ -27877,6 +27878,7 @@
 	name = "Entry Line"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper ULCZ Checkpoint"
@@ -27914,6 +27916,7 @@
 	name = "ULCZ Checkpoint Processing Entries"
 	},
 /obj/effect/catwalk_plated/white,
+/obj/structure/window/reinforced,
 /turf/space,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper ULCZ Checkpoint"
@@ -27921,6 +27924,7 @@
 "bgT" = (
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper ULCZ Checkpoint"
@@ -28088,6 +28092,9 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 8
+	},
+/obj/effect/floor_decal/industrial/loading{
+	name = "Exit line"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
@@ -28505,19 +28512,11 @@
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
 "bhF" = (
-/obj/machinery/door/airlock/glass/research{
-	name = "Hallway"
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/warning{
+	name = "\improper Checkpoint Bag Checking"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/door/firedoor,
-/obj/effect/catwalk_plated/white,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor,
+/turf/simulated/wall/prepainted,
 /area/site53/ulcz/hallways)
 "bhG" = (
 /obj/structure/table/standard,
@@ -30337,6 +30336,7 @@
 	name = "ULCZ Checkpoint Primary Entrance"
 	},
 /obj/effect/catwalk_plated/white,
+/obj/structure/window/reinforced,
 /turf/space,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper ULCZ Checkpoint"
@@ -31887,6 +31887,15 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/hallways)
+"fIM" = (
+/obj/effect/floor_decal/industrial/loading{
+	dir = 8;
+	icon_state = "loadingarea";
+	name = "Exit Line"
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "fKV" = (
 /obj/structure/flora/pottedplant/orientaltree,
 /obj/machinery/light,
@@ -31934,7 +31943,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "fTi" = (
-/obj/effect/floor_decal/industrial/loading,
+/obj/effect/floor_decal/industrial/loading{
+	name = "Exit line"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/robotics{
 	name = "\improper Xenobiology Laboratory"
@@ -33532,6 +33543,7 @@
 	name = "ULCZ Checkpoint Processing Entries"
 	},
 /obj/effect/catwalk_plated/white,
+/obj/structure/window/reinforced,
 /turf/space,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper ULCZ Checkpoint"
@@ -35245,6 +35257,22 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
+"pyn" = (
+/obj/structure/closet{
+	name = "Confiscated items"
+	},
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/checkequip{
+	name = "\improper ULCZ Checkpoint"
+	})
 "pze" = (
 /obj/machinery/camera/autoname{
 	c_tag = "Comms Tower Basement";
@@ -36551,6 +36579,7 @@
 	dir = 4;
 	name = "Entry Line"
 	},
+/obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "tXn" = (
@@ -36580,6 +36609,30 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
+"ucR" = (
+/obj/structure/table/standard,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/door/window/brigdoor{
+	name = "Booth";
+	req_access = list(202);
+	dir = 4
+	},
+/obj/machinery/door/window/brigdoor/westleft{
+	req_access = list(202);
+	name = "Booth"
+	},
+/obj/machinery/door/blast/shutters{
+	begins_closed = 0;
+	id_tag = "ULCZ Interior Booth Window";
+	name = "ULCZ Checkpoint Booth Exit"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/checkequip{
+	name = "\improper ULCZ Checkpoint"
+	})
 "ucY" = (
 /obj/machinery/light{
 	dir = 1;
@@ -42477,7 +42530,7 @@ aLv
 aGv
 aHf
 aMD
-aMV
+pyn
 aMS
 aMD
 pXS
@@ -42743,7 +42796,7 @@ aMS
 aMS
 aVe
 aMS
-aMS
+aVc
 viG
 bgT
 bhz
@@ -42999,10 +43052,10 @@ aHf
 aMD
 gKo
 aMV
-aMV
+bhC
 aNl
 aVe
-bhC
+aMS
 bgH
 bgL
 bgT
@@ -43262,7 +43315,7 @@ aMD
 aMD
 aMD
 aVi
-aMD
+ucR
 aMD
 aMD
 kOa
@@ -43520,10 +43573,10 @@ aeW
 aeW
 aeW
 aeW
-aeW
+aHf
 aWS
-aeW
-aeW
+fIM
+bhF
 aeW
 tWq
 lTb
@@ -43780,11 +43833,11 @@ aeW
 aHQ
 aLl
 aGH
-aGH
+aGp
 aXh
-aGI
-aeW
-aGw
+aGM
+aGp
+aGH
 aKq
 aLv
 aKq
@@ -44043,7 +44096,7 @@ aMK
 aMK
 bhD
 bhE
-bhF
+bhE
 bhE
 bhE
 bhH
