@@ -29662,9 +29662,6 @@
 /obj/item/gun/projectile/pistol/mk9,
 /obj/item/gun/projectile/pistol/mk9,
 /obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/revolver/mateba,
-/obj/item/gun/projectile/revolver/mateba,
-/obj/item/gun/projectile/revolver/mateba,
 /turf/simulated/floor/tiled/dark,
 /area/site53/zonecommanderoffice{
 	name = "\improper Heavy Containment Zone Equipment Room"
@@ -29676,18 +29673,20 @@
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
 /turf/simulated/floor/tiled/dark,
 /area/site53/zonecommanderoffice{
 	name = "\improper Heavy Containment Zone Equipment Room"
 	})
 "bjn" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/ak74,
-/obj/item/gun/projectile/automatic/scp/ak74,
-/obj/item/gun/projectile/automatic/scp/ak74,
-/obj/item/gun/projectile/automatic/scp/ak74,
-/obj/item/gun/projectile/automatic/scp/ak74,
-/obj/item/gun/projectile/automatic/scp/ak74,
+/obj/item/gun/projectile/automatic/scp/m16,
+/obj/item/gun/projectile/automatic/scp/m16,
+/obj/item/gun/projectile/automatic/scp/m16,
+/obj/item/gun/projectile/automatic/scp/m16,
+/obj/item/gun/projectile/automatic/scp/m16,
+/obj/item/gun/projectile/automatic/scp/m16,
 /turf/simulated/floor/tiled/dark,
 /area/site53/zonecommanderoffice{
 	name = "\improper Heavy Containment Zone Equipment Room"
@@ -29698,6 +29697,9 @@
 	dir = 1;
 	name = "HCZ Equipment Room"
 	},
+/obj/item/gun/projectile/revolver/mateba,
+/obj/item/gun/projectile/revolver/mateba,
+/obj/item/gun/projectile/revolver/mateba,
 /turf/simulated/floor/tiled/dark,
 /area/site53/zonecommanderoffice{
 	name = "\improper Heavy Containment Zone Equipment Room"
