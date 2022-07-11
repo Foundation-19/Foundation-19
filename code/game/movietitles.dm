@@ -143,8 +143,7 @@ client
 			if(prob(90))
 				chunk += "[actor_culture.get_random_name(H.gender)]\t \t \t \t[uppertext(used_name)][job]"
 			else
-				var/datum/gender/G = gender_datums[H.gender]
-				chunk += "[used_name]\t \t \t \t[uppertext(G.him)]SELF"
+				chunk += "[used_name]\t \t \t \t[uppertext(H.p_themself())]"
 		else
 			chunk += "[uppertext(actor_culture.get_random_name(H.gender))] a.k.a. '[uppertext(H.ckey)]'\t \t \t \t[uppertext(used_name)][job]"
 		chunksize++

@@ -25,5 +25,5 @@
 /datum/mob_descriptor/body_length/get_first_person_message_start()
 	return "Your body is"
 
-/datum/mob_descriptor/body_length/get_third_person_message_start(var/datum/gender/my_gender)
-	return "[my_gender.His] body is"
+/datum/mob_descriptor/body_length/get_third_person_message_start(mob/me)
+	return "[me.p_their(TRUE)] body is"

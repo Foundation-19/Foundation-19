@@ -356,8 +356,8 @@
 	title = "LCZ Guard"
 	department = "Light Containment Personnel"
 	department_flag = SEC
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 20
+	spawn_positions = 20
 	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	economic_power = 4
 //	minimal_player_age = 0
@@ -403,8 +403,8 @@
 	title = "HCZ Guard"
 	department = "Heavy Containment Personnel"
 	department_flag = SEC
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 6
+	spawn_positions = 6
 	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
 	//supervisors = "the Guard/Zone Commander"
 	economic_power = 4
@@ -449,8 +449,8 @@
 	title = "EZ Agent"
 	department = "Entrance Personnel"
 	department_flag = SEC
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 6
+	spawn_positions = 6
 	//duties = "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
 	economic_power = 4
 	minimal_player_age = 0

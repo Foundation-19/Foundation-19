@@ -7,6 +7,7 @@
 #define RUIN_MAP_EDGE_PAD 15
 
 // Invisibility constants.
+#define INVISIBILITY_HUNTER      10 //SCP Edit: This is a special level for 966, so it can be seen by Night Vision and Infrared Goggles.
 #define INVISIBILITY_LIGHTING    20
 #define INVISIBILITY_LEVEL_ONE   35
 #define INVISIBILITY_LEVEL_TWO   45
