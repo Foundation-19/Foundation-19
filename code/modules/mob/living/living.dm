@@ -911,3 +911,6 @@ default behaviour is:
 /mob/living/proc/jump_layer_shift_end()
 	jumping = FALSE
 	reset_layer()
+
+/mob/living/proc/ClimbCheck(atom/A)
+	return TRUE
