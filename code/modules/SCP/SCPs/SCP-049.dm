@@ -16,6 +16,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	var/chasing_sound = FALSE
 	var/anger = 0
 	var/angry = FALSE
+	status_flags = NO_ANTAG
 
 /datum/scp/scp_049
 	name = "SCP-049"

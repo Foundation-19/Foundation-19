@@ -70,7 +70,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        map_path: [example, torch, away_sites_testing]
+        map_path: [torch, away_sites_testing, site53, site19, site13]
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - name: Setup Cache

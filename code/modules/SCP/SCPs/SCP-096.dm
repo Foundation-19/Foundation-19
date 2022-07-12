@@ -12,6 +12,8 @@
 	response_disarm = "pushes the"
 	response_harm   = "hits the"
 	anomalytype = SCP_096
+	status_flags = NO_ANTAG
+
 
 	health = 600
 	maxHealth = 600

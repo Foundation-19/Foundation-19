@@ -11,6 +11,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	icon = 'icons/SCP/scp-173.dmi'
 	icon_state = "173"
 	SCP = /datum/scp/scp_173
+	status_flags = NO_ANTAG
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7

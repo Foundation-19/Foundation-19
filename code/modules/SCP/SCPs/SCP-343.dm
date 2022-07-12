@@ -7,6 +7,8 @@ GLOBAL_LIST_EMPTY(scp343s)
 	see_in_dark = 7
 	icon = 'icons/SCP/scp-343.dmi'
 	icon_state = null
+	status_flags = NO_ANTAG
+
 
 /datum/scp/scp_343
 	name = "SCP-343"
