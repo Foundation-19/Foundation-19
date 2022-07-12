@@ -14,14 +14,14 @@
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 
-	New()
-		..()
-		new /obj/item/paper/scp/safe/scp013(src)
-		new /obj/item/paper/scp/safe/scp113(src)
-		new /obj/item/paper/scp/safe/scp131(src)
-		new /obj/item/paper/scp/safe/scp500(src)
-		new /obj/item/paper/scp/safe/scp999(src)
-		update_icon()
+/obj/structure/filingcabinet/scp/safe/scp1to999/New()
+	..()
+	new /obj/item/paper/scp/safe/scp013(src)
+	new /obj/item/paper/scp/safe/scp113(src)
+	new /obj/item/paper/scp/safe/scp131(src)
+	new /obj/item/paper/scp/safe/scp500(src)
+	new /obj/item/paper/scp/safe/scp999(src)
+	update_icon()
 
 /obj/structure/filingcabinet/scp/safe/scp1000to1999
 	name = "SCP Documents - Safe - 1000 to 1999"
@@ -83,21 +83,21 @@
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 
-	New()
-		..()
-		new /obj/item/paper/scp/euclid/scp012(src)
-		new /obj/item/paper/scp/euclid/scp049(src)
-		new /obj/item/paper/scp/euclid/scp078(src)
-		new /obj/item/paper/scp/euclid/scp096(src)
-		new /obj/item/paper/scp/euclid/scp096/addendum1(src)
-		new /obj/item/paper/scp/euclid/scp151(src)
-		new /obj/item/paper/scp/euclid/scp151/addendum1(src)
-		new /obj/item/paper/scp/euclid/scp153(src)
-		new /obj/item/paper/scp/euclid/scp153/addendum1(src)
-		new /obj/item/paper/scp/euclid/scp173(src)
-		new /obj/item/paper/scp/euclid/scp513(src)
-		new /obj/item/paper/scp/euclid/scp895(src)
-		update_icon()
+/obj/structure/filingcabinet/scp/euclid/scp1to999/New()
+	..()
+	new /obj/item/paper/scp/euclid/scp012(src)
+	new /obj/item/paper/scp/euclid/scp049(src)
+	new /obj/item/paper/scp/euclid/scp078(src)
+	new /obj/item/paper/scp/euclid/scp096(src)
+	new /obj/item/paper/scp/euclid/scp096/addendum1(src)
+	new /obj/item/paper/scp/euclid/scp151(src)
+	new /obj/item/paper/scp/euclid/scp151/addendum1(src)
+	new /obj/item/paper/scp/euclid/scp153(src)
+	new /obj/item/paper/scp/euclid/scp153/addendum1(src)
+	new /obj/item/paper/scp/euclid/scp173(src)
+	new /obj/item/paper/scp/euclid/scp513(src)
+	new /obj/item/paper/scp/euclid/scp895(src)
+	update_icon()
 
 /obj/structure/filingcabinet/scp/euclid/scp1000to1999
 	name = "SCP Documents - Euclid - 1000 to 1999"
@@ -159,11 +159,11 @@
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 
-	New()
-		..()
-		new /obj/item/paper/scp/keter/scp106(src)
-		new /obj/item/paper/scp/keter/scp939(src)
-		update_icon()
+/obj/structure/filingcabinet/scp/keter/scp1to999/New()
+	..()
+	new /obj/item/paper/scp/keter/scp106(src)
+	new /obj/item/paper/scp/keter/scp939(src)
+	update_icon()
 
 
 /obj/structure/filingcabinet/scp/keter/scp1000to1999

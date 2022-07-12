@@ -188,9 +188,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/item/reagent_containers/chem_disp_cartridge/coffee{
-	name = "coffee canister"
-	},
 /turf/simulated/floor/tiled/airless,
 /area/map_template/ecship/crew)
 "aE" = (

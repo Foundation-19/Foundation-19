@@ -238,13 +238,11 @@
 	var/active = 0
 	var/item_color
 
-/obj/item/holo/esword/green
-	New()
-		item_color = "green"
+/obj/item/holo/esword/green/New()
+	item_color = "green"
 
-/obj/item/holo/esword/red
-	New()
-		item_color = "red"
+/obj/item/holo/esword/red/New()
+	item_color = "red"
 
 /obj/item/holo/esword/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 	. = ..()

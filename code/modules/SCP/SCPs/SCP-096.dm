@@ -1,4 +1,3 @@
-//sculpture
 //SCP-096, nothing more need be said
 /mob/living/simple_animal/hostile/scp096
 	name = "???"
@@ -12,10 +11,10 @@
 	response_help  = "touches the"
 	response_disarm = "pushes the"
 	response_harm   = "hits the"
+	anomalytype = SCP_096
 
 	health = 600
 	maxHealth = 600
-	move_to_delay = 2
 
 	var/murder_sound = list('sound/voice/096-kill.ogg')
 	var/scare_sound = list('sound/scp/scare1.ogg','sound/scp/scare2.ogg','sound/scp/scare3.ogg','sound/scp/scare4.ogg')	//Boo
@@ -195,6 +194,27 @@
 		return
 	..()
 
+/mob/living/simple_animal/hostile/scp096/proc/specialexamine(var/userguy) //Snowflaked.
+	if (istype(userguy, /mob/living/carbon))
+		if (!(userguy in kill_list))
+			to_chat(userguy, target_desc_1)
+			kill_list += userguy
+			if(userguy)
+				CALLBACK(addtimer( to_chat(userguy, "<span class='alert'>That was a mistake. Run</span>"), 20 SECONDS))
+			if(userguy)
+				CALLBACK(addtimer( to_chat(userguy, "<span class='danger'>RUN</span>"), 30 SECONDS))
+		else
+			to_chat(userguy, target_desc_2)
+		if(will_scream)
+			if(!buckled) dir = 2
+			visible_message("<span class='danger'>[src] SCREAMS!</span>")
+			playsound(get_turf(src), 'sound/voice/096-rage.ogg', 100)
+			screaming = 1
+			will_scream = 0
+			spawn(290)
+				screaming = 0
+		return
+	..()
 
 /mob/living/simple_animal/hostile/scp096/proc/handle_target(var/mob/living/carbon/target)
 
@@ -268,7 +288,7 @@
 					dir = get_dir(src, target)
 					next_turf = get_step(src, get_dir(next_turf,target))
 			limit--
-			sleep(move_to_delay + round(staggered/8))
+			sleep(2 + round(staggered/8))
 		chasing = 0
 
 /mob/living/simple_animal/hostile/scp096/proc/is_different_level(var/turf/target_turf)

@@ -11036,12 +11036,6 @@
 "LO" = (
 /obj/effect/floor_decal/corner/green/diagonal,
 /obj/structure/table/standard,
-/obj/item/reagent_containers/chem_disp_cartridge/radium{
-	pixel_y = 13
-	},
-/obj/item/reagent_containers/chem_disp_cartridge/radium{
-	pixel_y = 4
-	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/virology)
 "LT" = (
