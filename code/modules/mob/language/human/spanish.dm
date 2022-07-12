@@ -11,6 +11,7 @@
 	colour = "iberian"
 	key = "5"
 	shorthand = "Spain"
+	whisper_verb = "whispers"
 	partial_understanding = list(
 		LANGUAGE_HUMAN_GERMAN = 15,
 		LANGUAGE_HUMAN_FRENCH = 30,

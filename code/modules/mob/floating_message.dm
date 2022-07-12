@@ -15,7 +15,7 @@ var/global/list/floating_chat_colors = list()
 /atom/movable
 	var/list/stored_chat_text
 
-/atom/movable/proc/animate_chat(message, datum/language/language, small, list/show_to, duration = CHAT_MESSAGE_LIFESPAN)
+/atom/movable/proc/animate_chat(message, datum/language/language, small, list/show_to, whisper = FALSE, unique_messages = null, duration = CHAT_MESSAGE_LIFESPAN)
 	set waitfor = FALSE
 
 	/// Get rid of any URL schemes that might cause BYOND to automatically wrap something in an anchor tag
@@ -48,6 +48,15 @@ var/global/list/floating_chat_colors = list()
 	// create 2 messages, one that appears if you know the language, and one that appears when you don't know the language
 	var/image/understood = generate_floating_text(src, capitalize(message), style, fontsize, duration, show_to)
 	var/image/gibberish = language ? generate_floating_text(src, language.scramble(message), style, fontsize, duration, show_to) : understood
+
+	//hack for unique messages, i.e. misunderstood whispers
+	for(var/client/client in unique_messages)
+		var/image/unique = generate_floating_text(src, capitalize(unique_messages[client]), style, fontsize, duration, show_to)
+
+		show_to -= client //remove the client from the normal list if we're giving them a unique response to this
+		if(!client.mob.is_deaf() && client.get_preference_value(/datum/client_preference/floating_messages) == GLOB.PREF_SHOW)
+			client.images += unique
+
 
 	for(var/client/C in show_to)
 		if(!C.mob.is_deaf() && C.get_preference_value(/datum/client_preference/floating_messages) == GLOB.PREF_SHOW)
