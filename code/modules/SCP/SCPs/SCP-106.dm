@@ -524,10 +524,31 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	if(WallEye)
 		var/turf/step = get_step(src, dir)
 		if(step?.is_phasable())
-			if(do_after(src, 5 SECONDS,step))
+			alpha = 128
+
+
+			layer = OBSERVER_LAYER
+
+			switch(dir)
+				if (NORTH, NORTHEAST, NORTHWEST)
+					animate(src, pixel_y = 29, time =  3 SECONDS)
+				if (SOUTH, SOUTHEAST, SOUTHWEST)
+					animate(src, pixel_y = -29, time =  3 SECONDS)
+				if (EAST)
+					animate(src, pixel_x = 29, time =  3 SECONDS)
+				if (WEST)
+					animate(src, pixel_x = -29, time =  3 SECONDS)
+
+
+			if(do_after(src, 3 SECONDS,step))
 				WallEye.possess(src)
 				src.forceMove(pick(GLOB.scp106_floors))
 				phasing = TRUE
+			alpha = 255
+
+			layer = MOB_LAYER + 0.1
+			pixel_x = 0
+			pixel_y = 0
 
 /mob/living/carbon/human/scp106/proc/wall_unphase()
 	set name = "Leave wall"
