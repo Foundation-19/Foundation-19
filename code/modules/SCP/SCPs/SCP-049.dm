@@ -45,10 +45,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	new_species = "SCP-049"
 	return  ..()
 
-/mob/living/carbon/human/scp049/New(new_loc, new_species)
-	new_species = "SCP-049"
-	return  ..()
-
 /mob/living/carbon/human/scp049/Initialize()
 	. = ..()
 	// fix names
@@ -89,11 +85,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		see_disease()
 
 /mob/living/carbon/human/scp049/proc/is_valid_curing_target(var/mob/living/carbon/human/target)
-	if(isspecies(target, SPECIES_SCP049_1))
-		return FALSE
-	if(istype(target, /mob/living/carbon/human/scp049))
-		return FALSE
-	if(isscp343(target))
+	if(target.SCP)
 		return FALSE
 	if(!istype(target, /mob/living/carbon/human))
 		return FALSE
