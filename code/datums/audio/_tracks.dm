@@ -310,27 +310,32 @@
 	source = 'sound/music/foundation.ogg'
 	title = "We Die In The Dark, So You Can Live In The Light"
 	author = "Piotr Musial"
+	license = /decl/license/grandfathered
 
 /decl/audio/track/perdition
 	source = 'sound/music/perdition.ogg'
 	title = "Site 64 Perdition"
 	author = "Comrade"
+	license = /decl/license/grandfathered
 
 /decl/audio/track/ajoura
 	source = 'sound/music/ajoura.ogg'
 	title = "The SCP Foundation Main Theme"
 	author = "Ajoura"
 	url = "https://www.youtube.com/watch?v=YJaeH8ffl_M"
+	license = /decl/license/grandfathered
 
 /decl/audio/track/days
 	source = 'sound/music/days.ogg'
 	title = "30 Days"
 	author = "Buffalowing/Various Artists"
+	license = /decl/license/grandfathered
 
 /decl/audio/track/hie
 	source = 'sound/music/howitends.ogg'
 	title = "How It Ends"
 	author = "Atli �rvarsson"
+	license = /decl/license/grandfathered
 
 /decl/audio/track/chaos
 	source = 'sound/music/chaos_insurgency.ogg'

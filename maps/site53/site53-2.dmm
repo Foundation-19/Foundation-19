@@ -21899,7 +21899,6 @@
 	name = "Infected Subject Area";
 	pixel_x = 22;
 	pixel_y = 32;
-	power_components = list(202)
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment{
