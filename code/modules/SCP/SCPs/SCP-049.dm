@@ -37,7 +37,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	return
 /mob/living/carbon/human/scp049/New(new_loc, new_species)
 	new_species = "SCP-049"
-	. = ..()
+	return  ..()
 
 /mob/living/carbon/human/scp049/Initialize()
 	..()
