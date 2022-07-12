@@ -133,7 +133,6 @@ var/list/admin_verbs_spawn = list(
 	/datum/admins/proc/spawn_plant,
 	/datum/admins/proc/spawn_atom,		// allows us to spawn instances,
 	/datum/admins/proc/spawn_artifact,
-	/client/proc/spawn_chemdisp_cartridge,
 	/datum/admins/proc/mass_debug_closet_icons
 	)
 var/list/admin_verbs_server = list(

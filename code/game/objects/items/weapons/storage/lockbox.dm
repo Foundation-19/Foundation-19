@@ -16,44 +16,44 @@
 	var/icon_broken = "lockbox+b"
 
 
-	attackby(obj/item/W as obj, mob/user as mob)
-		if (istype(W, /obj/item/card/id))
-			if(src.broken)
-				to_chat(user, "<span class='warning'>It appears to be broken.</span>")
+/obj/item/storage/lockbox/attackby(obj/item/W as obj, mob/user as mob)
+	if (istype(W, /obj/item/card/id))
+		if(src.broken)
+			to_chat(user, "<span class='warning'>It appears to be broken.</span>")
+			return
+		if(src.allowed(user))
+			src.locked = !( src.locked )
+			if(src.locked)
+				src.icon_state = src.icon_locked
+				to_chat(user, "<span class='notice'>You lock \the [src]!</span>")
+				close_all()
 				return
-			if(src.allowed(user))
-				src.locked = !( src.locked )
-				if(src.locked)
-					src.icon_state = src.icon_locked
-					to_chat(user, "<span class='notice'>You lock \the [src]!</span>")
-					close_all()
-					return
-				else
-					src.icon_state = src.icon_closed
-					to_chat(user, "<span class='notice'>You unlock \the [src]!</span>")
-					return
 			else
-				to_chat(user, "<span class='warning'>Access Denied</span>")
-		else if(istype(W, /obj/item/melee/energy/blade))
-			if(emag_act(INFINITY, user, W, "The locker has been sliced open by [user] with an energy blade!", "You hear metal being sliced and sparks flying."))
-				var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
-				spark_system.set_up(5, 0, src.loc)
-				spark_system.start()
-				playsound(src.loc, 'sound/weapons/blade1.ogg', 50, 1)
-				playsound(src.loc, "sparks", 50, 1)
-		if(!locked)
-			..()
+				src.icon_state = src.icon_closed
+				to_chat(user, "<span class='notice'>You unlock \the [src]!</span>")
+				return
 		else
-			to_chat(user, "<span class='warning'>It's locked!</span>")
-		return
+			to_chat(user, "<span class='warning'>Access Denied</span>")
+	else if(istype(W, /obj/item/melee/energy/blade))
+		if(emag_act(INFINITY, user, W, "The locker has been sliced open by [user] with an energy blade!", "You hear metal being sliced and sparks flying."))
+			var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
+			spark_system.set_up(5, 0, src.loc)
+			spark_system.start()
+			playsound(src.loc, 'sound/weapons/blade1.ogg', 50, 1)
+			playsound(src.loc, "sparks", 50, 1)
+	if(!locked)
+		..()
+	else
+		to_chat(user, "<span class='warning'>It's locked!</span>")
+	return
 
 
-	show_to(mob/user as mob)
-		if(locked)
-			to_chat(user, "<span class='warning'>It's locked!</span>")
-		else
-			..()
-		return
+/obj/item/storage/lockbox/show_to(mob/user as mob)
+	if(locked)
+		to_chat(user, "<span class='warning'>It's locked!</span>")
+	else
+		..()
+	return
 
 /obj/item/storage/lockbox/emag_act(var/remaining_charges, var/mob/user, var/emag_source, var/visual_feedback = "", var/audible_feedback = "")
 	if(!broken)
@@ -77,12 +77,12 @@
 	name = "lockbox of loyalty implants"
 	req_access = list(access_security)
 
-	New()
-		..()
-		new /obj/item/implantcase/loyalty(src)
-		new /obj/item/implantcase/loyalty(src)
-		new /obj/item/implantcase/loyalty(src)
-		new /obj/item/implanter/loyalty(src)
+/obj/item/storage/lockbox/loyalty/New()
+	..()
+	new /obj/item/implantcase/loyalty(src)
+	new /obj/item/implantcase/loyalty(src)
+	new /obj/item/implantcase/loyalty(src)
+	new /obj/item/implanter/loyalty(src)
 
 
 /obj/item/storage/lockbox/clusterbang
@@ -90,6 +90,6 @@
 	desc = "You have a bad feeling about opening this."
 	req_access = list(access_security)
 
-	New()
-		..()
-		new /obj/item/grenade/flashbang/clusterbang(src)
+/obj/item/storage/lockbox/clusterbang/New()
+	..()
+	new /obj/item/grenade/flashbang/clusterbang(src)

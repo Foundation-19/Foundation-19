@@ -12,6 +12,7 @@
 	var/attack_delay = DEFAULT_ATTACK_COOLDOWN
 	var/break_stuff_probability = 10
 	var/destroy_surroundings = 1
+	var/anomalytype
 	a_intent = I_HURT
 
 	var/shuttletarget = null

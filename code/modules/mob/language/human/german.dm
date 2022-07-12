@@ -15,6 +15,7 @@
 	key = "1"
 	flags = WHITELISTED
 	shorthand = "Ger"
+	whisper_verb = "whispers"
 	partial_understanding = list(
 		LANGUAGE_HUMAN_CHINESE = 5,
 		LANGUAGE_HUMAN_ARABIC = 5,

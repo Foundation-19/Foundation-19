@@ -58,19 +58,20 @@
 
 /obj/machinery/computer/bullet_act(var/obj/item/projectile/Proj)
 	take_damage(Proj.get_structure_damage())
-	..()
+	return ..()
 
 /obj/machinery/computer/attackby(obj/item/I, mob/user)
-	if (isScrewdriver(I) || isWrench(I) || isCrowbar(I))
+	if(isScrewdriver(I) || isWrench(I) || isCrowbar(I))
 		return ..() // handled by construction
-	if (user.a_intent != I_HURT)
+	if(user.a_intent != I_HURT)
 		return ..()
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.do_attack_animation(src)
 	playsound(src, 'sound/weapons/smash.ogg', 25, 1)
-	take_damage(I.force)
-	..()
+	if(I.force)
+		take_damage(I.force)
+	return ..()
 
 /obj/machinery/computer/proc/take_damage(var/damage)
 	if (health <= 0)

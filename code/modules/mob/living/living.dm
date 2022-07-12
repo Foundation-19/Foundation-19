@@ -700,7 +700,7 @@ default behaviour is:
 	resting = !resting
 	to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"]</span>")
 	if(hud_used)
-		hud_used.rest_button.icon_state = "rest_[resting]"
+		hud_used.rest_button?.icon_state = "rest_[resting]"
 
 //called when the mob receives a bright flash
 /mob/living/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
@@ -911,3 +911,6 @@ default behaviour is:
 /mob/living/proc/jump_layer_shift_end()
 	jumping = FALSE
 	reset_layer()
+
+/mob/living/proc/ClimbCheck(atom/A)
+	return TRUE
