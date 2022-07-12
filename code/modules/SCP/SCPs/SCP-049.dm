@@ -37,6 +37,10 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		transform = null
 	return
 
+/mob/living/carbon/human/scp049/New(new_loc, new_species)
+	new_species = "SCP-049"
+	return  ..()
+
 /mob/living/carbon/human/scp049/Initialize()
 	. = ..()
 	// fix names
@@ -46,7 +50,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		if(istype(player) && prob(1))
 			infected_players += player
 
-	set_species("SCP-049")
 	GLOB.scp049s += src
 	verbs += /mob/living/carbon/human/proc/door_049
 
@@ -307,7 +310,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /datum/ai_holder/humanoid/scp049/pick_target(list/targets)
 	var/mob/living/carbon/human/scp049/user = holder
 	for(var/target in targets)
-		if(!isliving(target) || !user.is_valid_curing_target(target)) || !(target in user.infected_players))
+		if(!isliving(target) || !user.is_valid_curing_target(target) || !(target in user.infected_players))
 			targets -= target
 	return ..()
 
