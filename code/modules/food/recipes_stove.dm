@@ -159,12 +159,14 @@
 		/obj/item/reagent_containers/food/snacks/meatball
 	)
 	result = /obj/item/reagent_containers/food/snacks/donkpocket //SPECIAL
-	proc/warm_up(var/obj/item/reagent_containers/food/snacks/donkpocket/being_cooked)
-		being_cooked.heat()
-	make_food(var/obj/container as obj)
-		var/obj/item/reagent_containers/food/snacks/donkpocket/being_cooked = ..(container)
-		warm_up(being_cooked)
-		return being_cooked
+
+/datum/recipe/donkpocket/proc/warm_up(var/obj/item/reagent_containers/food/snacks/donkpocket/being_cooked)
+	being_cooked.heat()
+
+/datum/recipe/donkpocket/make_food(var/obj/container as obj)
+	var/obj/item/reagent_containers/food/snacks/donkpocket/being_cooked = ..(container)
+	warm_up(being_cooked)
+	return being_cooked
 
 /datum/recipe/donkpocket2
 	items = list(
@@ -187,11 +189,12 @@
 		/obj/item/reagent_containers/food/snacks/donkpocket
 	)
 	result = /obj/item/reagent_containers/food/snacks/donkpocket //SPECIAL
-	make_food(var/obj/container as obj)
-		var/obj/item/reagent_containers/food/snacks/donkpocket/being_cooked = locate() in container
-		if(being_cooked && !being_cooked.warm)
-			warm_up(being_cooked)
-		return being_cooked
+
+/datum/recipe/donkpocket/warm/make_food(var/obj/container as obj)
+	var/obj/item/reagent_containers/food/snacks/donkpocket/being_cooked = locate() in container
+	if(being_cooked && !being_cooked.warm)
+		warm_up(being_cooked)
+	return being_cooked
 
 /datum/recipe/meatbread
 	items = list(
@@ -462,10 +465,11 @@
 /datum/recipe/amanitajelly
 	reagents = list(/datum/reagent/water = 10, /datum/reagent/ethanol/vodka = 5, /datum/reagent/toxin/amatoxin = 5)
 	result = /obj/item/reagent_containers/food/snacks/amanitajelly
-	make_food(var/obj/container as obj)
-		var/obj/item/reagent_containers/food/snacks/amanitajelly/being_cooked = ..(container)
-		being_cooked.reagents.del_reagent(/datum/reagent/toxin/amatoxin)
-		return being_cooked
+
+/datum/recipe/amanitajelly/make_food(var/obj/container as obj)
+	var/obj/item/reagent_containers/food/snacks/amanitajelly/being_cooked = ..(container)
+	being_cooked.reagents.del_reagent(/datum/reagent/toxin/amatoxin)
+	return being_cooked
 
 /datum/recipe/meatballsoup
 	fruit = list("carrot" = 1, "potato" = 1)
@@ -880,10 +884,11 @@
 	fruit = list("potato" = 1, "ambrosia" = 3)
 	items = list(/obj/item/reagent_containers/food/snacks/meatball)
 	result = /obj/item/reagent_containers/food/snacks/validsalad
-	make_food(var/obj/container as obj)
-		var/obj/item/reagent_containers/food/snacks/validsalad/being_cooked = ..(container)
-		being_cooked.reagents.del_reagent(/datum/reagent/toxin)
-		return being_cooked
+
+/datum/recipe/validsalad/make_food(var/obj/container as obj)
+	var/obj/item/reagent_containers/food/snacks/validsalad/being_cooked = ..(container)
+	being_cooked.reagents.del_reagent(/datum/reagent/toxin)
+	return being_cooked
 
 /datum/recipe/cracker
 	reagents = list(/datum/reagent/sodiumchloride = 1)

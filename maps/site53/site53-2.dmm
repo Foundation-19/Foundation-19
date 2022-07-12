@@ -3265,7 +3265,7 @@
 "bEw" = (/obj/structure/extinguisher_cabinet{pixel_x = -26},/turf/simulated/floor/tiled/white,/area/site53/reswing/robotics{name = "\improper Xenobiology Laboratory"})
 "bHX" = (/obj/machinery/papershredder,/obj/effect/floor_decal/corner/orange/border{dir = 1; icon_state = "bordercolor"},/turf/simulated/floor/tiled/monotile/white,/area/site53/science/seniorresearchera)
 "bKj" = (/obj/effect/floor_decal/corner/red/border{dir = 8; icon_state = "bordercolor"},/obj/machinery/camera/network/lcz{dir = 4; icon_state = "camera"},/turf/simulated/floor/tiled/monotile/white,/area/site53/llcz/dclass/checkequip{name = "\improper LCZ Security Center"})
-"bOD" = (/obj/item/reagent_containers/chem_disp_cartridge/chloral,/obj/machinery/chemical_dispenser,/turf/simulated/floor/tiled,/area/site53/uhcz/scp247observation)
+"bOD" = (/obj/machinery/chemical_dispenser,/turf/simulated/floor/tiled,/area/site53/uhcz/scp247observation)
 "bON" = (/obj/effect/paint_stripe/brown,/turf/simulated/wall/r_wall/prepainted,/area/site53/llcz/scp263)
 "bPn" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/filingcabinet,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled/monotile,/area/site53/engineering/controlroom)
 "bRl" = (/obj/structure/bed/chair,/turf/simulated/floor/tiled/white,/area/site53/surface/bunker)

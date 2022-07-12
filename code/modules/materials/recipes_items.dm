@@ -176,28 +176,6 @@
 	req_amount = 4
 	difficulty = 2
 
-/datum/stack_recipe/cartridge
-	title = "reagent dispenser cartridge"
-	var/modifier = ""
-	difficulty = 2
-
-/datum/stack_recipe/cartridge/display_name()
-	return "[title] ([modifier])"
-
-/datum/stack_recipe/cartridge/small
-	result_type = /obj/item/reagent_containers/chem_disp_cartridge/small
-	modifier = "small"
-
-/datum/stack_recipe/cartridge/medium
-	result_type = /obj/item/reagent_containers/chem_disp_cartridge/medium
-	modifier = "medium"
-	req_amount = 3
-
-/datum/stack_recipe/cartridge/large
-	result_type = /obj/item/reagent_containers/chem_disp_cartridge
-	modifier = "large"
-	req_amount = 5
-
 /datum/stack_recipe/sandals
 	title = "sandals"
 	result_type = /obj/item/clothing/shoes/sandal
