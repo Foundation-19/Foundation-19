@@ -3555,7 +3555,6 @@
 /obj/structure/table/standard,
 /obj/item/weapon/reagent_containers/food/drinks/coffeecup/metal,
 /obj/item/weapon/reagent_containers/food/drinks/coffeecup/metal,
-/obj/item/weapon/reagent_containers/chem_disp_cartridge/coffee{
 	name = "coffee canister"
 	},
 /turf/simulated/floor/tiled,

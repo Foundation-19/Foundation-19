@@ -11,25 +11,23 @@
 	var/obj/screen/using
 
 	using = new /obj/screen/new_player/title(src)
-	using.name = "Title"
 	using.hud = src
 	adding += using
 
 	using = new /obj/screen/new_player/selection/join_game(src)
-	using.name = "Join Game"
 	using.hud = src
 	adding += using
 
 	using = new /obj/screen/new_player/selection/settings(src)
-	using.name = "Setup Character"
+	using.hud = src
 	adding += using
 
 	using = new /obj/screen/new_player/selection/manifest(src)
-	using.name = "Crew Manifest"
+	using.hud = src
 	adding += using
 
 	using = new /obj/screen/new_player/selection/observe(src)
-	using.name = "Observe"
+	using.hud = src
 	adding += using
 
 	mymob.client.screen = list()
@@ -42,7 +40,7 @@
 //I am way too lazy to port map specific lobby screens since I heavily doubt we'll ever use them.
 
 /obj/screen/new_player/title
-	name = "Title"
+	name = "Lobby art"
 	icon = 'maps/site53/icons/lobby.dmi'
 	icon_state = "title_old"
 	screen_loc = "WEST,SOUTH"
@@ -86,7 +84,7 @@
 	animate(src, color = color_rotation(30), transform = M, time = 3, easing = CUBIC_EASING)
 	return ..()
 
-/obj/screen/new_player/selection/MouseExited(location,control,params)
+/obj/screen/new_player/selection/MouseExited(location, control, params)
 	animate(src, color = null, transform = null, time = 3, easing = CUBIC_EASING)
 	return ..()
 

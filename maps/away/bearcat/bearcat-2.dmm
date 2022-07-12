@@ -4207,10 +4207,6 @@
 /obj/structure/table/standard,
 /obj/item/reagent_containers/food/drinks/glass2/coffeecup/metal,
 /obj/item/reagent_containers/food/drinks/glass2/coffeecup/metal,
-/obj/item/reagent_containers/chem_disp_cartridge/coffee{
-	name = "coffee canister";
-	pixel_y = 6
-	},
 /turf/simulated/floor/tiled,
 /area/ship/scrap/maintenance/engineering)
 "hr" = (

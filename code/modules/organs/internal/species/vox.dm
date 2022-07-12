@@ -127,7 +127,7 @@
 		// Convert stored matter into sheets.
 		for(var/mat in check_materials)
 			var/material/M = SSmaterials.get_material_by_name(mat)
-			if(M && M.stack_type && stored_matter[mat] >= M.units_per_sheet)
+			if(M?.stack_type && stored_matter[mat] >= M.units_per_sheet)
 
 				// Remove as many sheets as possible from the gizzard.
 				var/sheets = Floor(stored_matter[mat]/M.units_per_sheet)

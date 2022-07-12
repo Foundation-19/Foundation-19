@@ -48,7 +48,7 @@
 	ExpectedToken
 		message="Expected: '"
 		New(id, token/T)
-			if(T && T.line) message="[T.line]: [message]"
+			if(T?.line) message="[T.line]: [message]"
 			message+="[id]'. "
 			if(T)message+="Found '[T.value]'."
 

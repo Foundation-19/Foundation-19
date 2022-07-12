@@ -9,12 +9,12 @@
 	name = "exile"
 	desc = "Prevents you from returning from away missions."
 
-	get_data()
-		var/dat = {"
+/obj/item/implant/exile/get_data()
+	var/dat = {"
 <b>Implant Specifications:</b><BR>
 <b>Name:</b> [GLOB.using_map.company_name] Employee Exile Implant<BR>
 <b>Implant Details:</b> The onboard gateway system has been modified to reject entry by individuals containing this implant<BR>"}
-		return dat
+	return dat
 
 /obj/item/implantcase/exile
 	name = "Glass Case- 'Exile'"
@@ -27,13 +27,13 @@
 	name = "Exile Implants"
 	req_access = list(access_hos)
 
-	New()
-		..()
-		sleep(2)
-		new /obj/item/implanter/exile(src)
-		new /obj/item/implantcase/exile(src)
-		new /obj/item/implantcase/exile(src)
-		new /obj/item/implantcase/exile(src)
-		new /obj/item/implantcase/exile(src)
-		new /obj/item/implantcase/exile(src)
-		return
+/obj/structure/closet/secure_closet/exile/New()
+	..()
+	sleep(2)
+	new /obj/item/implanter/exile(src)
+	new /obj/item/implantcase/exile(src)
+	new /obj/item/implantcase/exile(src)
+	new /obj/item/implantcase/exile(src)
+	new /obj/item/implantcase/exile(src)
+	new /obj/item/implantcase/exile(src)
+	return

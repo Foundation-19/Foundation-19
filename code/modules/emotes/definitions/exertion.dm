@@ -3,7 +3,7 @@
 	key = "esweat"
 	emote_range = 4
 	emote_message_1p = "You are sweating heavily."
-	emote_message_3p = "USER is sweating heavily."
+	emote_message_3p = "is sweating heavily."
 
 /decl/emote/exertion/biological/check_user(mob/living/user)
 	if(istype(user) && !user.isSynthetic())
@@ -13,14 +13,14 @@
 /decl/emote/exertion/biological/breath
 	key = "ebreath"
 	emote_message_1p = "You feel out of breath."
-	emote_message_3p = "USER looks out of breath."
+	emote_message_3p = "looks out of breath."
 
 /decl/emote/exertion/biological/pant
 	key = "epant"
 	emote_range = 3
 	message_type = AUDIBLE_MESSAGE
 	emote_message_1p = "You pant to catch your breath."
-	emote_message_3p = "USER pants for air."
+	emote_message_3p = "pants for air."
 	emote_message_impaired = "You can see USER breathing heavily."
 
 /decl/emote/exertion/synthetic

@@ -79,7 +79,7 @@ GLOBAL_LIST_INIT(exo_event_mob_count,list())// a list of all mobs currently spaw
 		var/mob/M
 		for (var/i = length(GLOB.player_list) to 1 step -1)
 			M = GLOB.player_list[i]
-			if (M && M.stat != DEAD && (get_z(M) in GetConnectedZlevels(A.z)))
+			if (M?.stat != DEAD && (get_z(M) in GetConnectedZlevels(A.z)))
 				players += M
 
 				if (get_crewmember_record(M.real_name || M.name))
@@ -218,5 +218,5 @@ GLOBAL_LIST_INIT(exo_event_mob_count,list())// a list of all mobs currently spaw
 	log_debug("Exoplanet Awakening event spawned [spawned_mobs] mobs. It was a level [exo_severity] out of 3 severity.")
 
 	for (var/mob/M in GLOB.player_list)
-		if (M && M.z == chosen_area.z)
+		if (M?.z == chosen_area.z)
 			to_chat(M, SPAN_NOTICE("The planet grows calm, the ground no longer heaving its horrors to the surface."))

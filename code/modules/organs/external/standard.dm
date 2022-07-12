@@ -37,7 +37,7 @@
 /obj/item/organ/external/get_scan_results()
 	. = ..()
 	var/obj/item/organ/internal/lungs/L = locate() in src
-	if( L && L.is_bruised())
+	if(L?.is_bruised())
 		. += "Lung ruptured"
 
 /obj/item/organ/external/groin
