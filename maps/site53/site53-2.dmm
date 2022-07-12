@@ -6557,13 +6557,6 @@
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "ULCZ Secure Armoury";
@@ -10101,7 +10094,9 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/ulcz/hallways)
+/area/site53/llcz/dclass/checkequip{
+	name = "\improper LCZ Security Center"
+	})
 "avy" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/green{
@@ -18726,7 +18721,7 @@
 /area/site53/ulcz/scp173)
 "aMC" = (
 /obj/effect/paint_stripe/red,
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper ULCZ Secure Armoury"
 	})
@@ -18737,12 +18732,8 @@
 	name = "\improper ULCZ Checkpoint"
 	})
 "aME" = (
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1";
-	pixel_x = 11
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper LCZ Security Center"
 	})
@@ -18875,9 +18866,6 @@
 /obj/item/ammo_magazine/box/a10mm,
 /obj/item/ammo_magazine/box/a10mm,
 /obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a50,
-/obj/item/ammo_magazine/box/a50,
-/obj/item/ammo_magazine/box/a50,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper LCZ Security Center"
@@ -18986,44 +18974,11 @@
 	name = "\improper ULCZ Checkpoint"
 	})
 "aNb" = (
-/obj/structure/table/rack,
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
-/obj/item/ammo_magazine/box/a762,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper LCZ Security Center"
@@ -28216,33 +28171,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
-"bhm" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
 "bhn" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -28254,13 +28182,13 @@
 	name = "\improper LCZ Security Center"
 	})
 "bho" = (
-/obj/machinery/power/apc/hyper{
-	dir = 4;
-	icon_state = "apc0"
-	},
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/hyper{
+	dir = 4;
+	icon_state = "apc0"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/checkequip{
@@ -28306,9 +28234,6 @@
 /obj/item/gun/projectile/pistol/mk9,
 /obj/item/gun/projectile/pistol/mk9,
 /obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/revolver/mateba,
-/obj/item/gun/projectile/revolver/mateba,
-/obj/item/gun/projectile/revolver/mateba,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper LCZ Security Center"
@@ -28320,23 +28245,37 @@
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper LCZ Security Center"
 	})
 "bhs" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/ak74,
-/obj/item/gun/projectile/automatic/scp/ak74,
-/obj/item/gun/projectile/automatic/scp/ak74,
-/obj/item/gun/projectile/automatic/scp/ak74,
-/obj/item/gun/projectile/automatic/scp/ak74,
-/obj/item/gun/projectile/automatic/scp/ak74,
+/obj/item/reagent_containers/spray/pepper,
+/obj/item/reagent_containers/spray/pepper,
+/obj/item/reagent_containers/spray/pepper,
+/obj/item/reagent_containers/spray/pepper,
+/obj/item/reagent_containers/spray/pepper,
+/obj/item/reagent_containers/spray/pepper,
+/obj/item/reagent_containers/spray/pepper,
+/obj/item/reagent_containers/spray/pepper,
+/obj/item/reagent_containers/spray/pepper,
+/obj/item/reagent_containers/spray/pepper,
+/obj/item/reagent_containers/spray/pepper,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper LCZ Security Center"
 	})
 "bht" = (
+/obj/machinery/camera/network/hcz{
+	dir = 1;
+	name = "HCZ Equipment Room"
+	},
+/obj/item/storage/box/teargas,
+/obj/item/storage/box/teargas,
+/obj/item/storage/box/teargas,
 /obj/structure/table/rack,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/checkequip{
@@ -39134,12 +39073,12 @@ azA
 azA
 azA
 azA
-aeC
-aeC
-aeC
-aeC
-aeC
-aeC
+aME
+aME
+aME
+aME
+aME
+aME
 aMC
 azA
 azA
@@ -39394,13 +39333,13 @@ azA
 azA
 azA
 azA
-aeC
+aME
 avx
 aMx
 aoN
-bhm
 bhp
-aeC
+bhp
+aME
 azA
 azA
 azA
@@ -39654,13 +39593,13 @@ azA
 azA
 azA
 azA
-aeC
+aME
 aDI
 ahO
 ahO
 ahO
 bhq
-aeC
+aME
 azA
 azA
 azA
@@ -39914,13 +39853,13 @@ azA
 azA
 azA
 azA
-aeC
+aME
 aMu
 ahO
 aMQ
 ahO
 bhr
-aeC
+aME
 azA
 azA
 azA
@@ -40174,13 +40113,13 @@ azA
 azA
 azA
 azA
-aeC
+aME
 aMu
 ahO
 aNb
 bhn
 bhs
-aeC
+aME
 azA
 azA
 azA
@@ -40434,13 +40373,13 @@ aTJ
 aTJ
 azA
 azA
-aeC
-aMv
 aME
+aMv
+ahO
 aNc
 bho
 bht
-aeC
+aME
 azA
 azA
 azA
