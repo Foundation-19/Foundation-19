@@ -5,6 +5,7 @@
 	colour = "rough"
 	key = "t"
 	space_chance = 70
+	whisper_verb = "whispers"
 	partial_understanding = list(
 		LANGUAGE_HUMAN_GERMAN = 75,
 		LANGUAGE_HUMAN_CHINESE = 20,

@@ -9,6 +9,7 @@
 	warning = "Automatically given if spawning with no languages."
 	key = "j"
 	shorthand = "Eng"
+	whisper_verb = "whispers"
 	partial_understanding = list(
 		LANGUAGE_HUMAN_GERMAN = 25,
 		LANGUAGE_HUMAN_CHINESE = 5,

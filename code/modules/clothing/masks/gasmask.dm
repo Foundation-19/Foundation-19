@@ -244,3 +244,16 @@
 		bio = ARMOR_BIO_STRONG,
 		rad = ARMOR_RAD_SMALL
 		)
+
+/obj/item/clothing/mask/gas/chaos
+	name = "gas mask"
+	desc = "A face-covering mask that was deployed by the Chaos insurgency to stop harmfull gases."
+	icon_state = "chaos-mask"
+	item_state = "chaos-mask"
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	body_parts_covered = FACE|EYES
+	armor = list(
+		melee = ARMOR_MELEE_MINOR,
+		bio = ARMOR_BIO_STRONG,
+		rad = ARMOR_RAD_SMALL
+		)

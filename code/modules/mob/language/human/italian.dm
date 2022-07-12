@@ -5,6 +5,7 @@
 	colour = "italian"
 	key = "7"
 	shorthand = "italo"
+	whisper_verb = "whispers"
 	partial_understanding = list(
 		LANGUAGE_HUMAN_GERMAN = 5,
 		LANGUAGE_HUMAN_FRENCH = 25,
@@ -16,4 +17,4 @@
 		 "la", "te", "re", "ge", "de", "ne", "se", "le", "ti", "ri", "gi", "di", "ni", "si"
 	)
 	has_written_form = TRUE
-	
+

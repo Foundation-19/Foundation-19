@@ -66,11 +66,3 @@
 	. = ..()
 	for(var/mob/living/carbon/human/affected in range(1, src))
 		affected?.update_013_status()
-
-/obj/item/clothing/suit/armor/vest/scp/medarmorchaos
-	name = "armored vest"
-	desc = "A synthetic armor vest."
-	icon_state = "chaos-armor"
-	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
-	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
-	armor = list(melee = 40, bullet = 85, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
