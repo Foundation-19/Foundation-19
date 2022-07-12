@@ -6,6 +6,7 @@
 	key = "6"
 	shorthand = "Jap"
 	space_chance = 25
+	whisper_verb = "whispers"
 	partial_understanding = list(
 		LANGUAGE_HUMAN_GERMAN = 5,
 		LANGUAGE_HUMAN_ARABIC = 5,

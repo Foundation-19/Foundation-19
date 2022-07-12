@@ -4,6 +4,7 @@
 	colour = "russian"
 	key = "r"
 	shorthand = "Russ"
+	whisper_verb = "whispers"
 	partial_understanding = list(
 		LANGUAGE_HUMAN_GERMAN = 5,
 		LANGUAGE_ENGLISH = 20

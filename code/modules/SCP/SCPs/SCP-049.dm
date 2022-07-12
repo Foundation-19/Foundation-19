@@ -20,6 +20,11 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	var/emote_cooldown = 0 // How long before next emote
 	var/pestillence_cooldown = 0 // How long until another person can be diagnosed with the disease through examining
 	var/ai_death_touch_cooldown = 0 // Cooldown for AI to deathtouch
+	var/curing = FALSE //we doing gods work or nah?
+	var/chasing_sound = FALSE
+	var/anger = 0
+	var/angry = FALSE
+	status_flags = NO_ANTAG
 
 /datum/scp/scp_049
 	name = "SCP-049"
@@ -36,6 +41,9 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	else
 		transform = null
 	return
+/mob/living/carbon/human/scp049/New(new_loc, new_species)
+	new_species = "SCP-049"
+	return  ..()
 
 /mob/living/carbon/human/scp049/Initialize()
 	. = ..()

@@ -482,6 +482,9 @@ its easier to just keep the beam vertical.
 	if (!(atom_flags & ATOM_FLAG_CLIMBABLE) || !can_touch(user, check_silicon) || (!post_climb_check && climbers && (user in climbers)))
 		return 0
 
+	if (!user.ClimbCheck(src)) // Mob specific climb check
+		return 0
+
 	if (!user.Adjacent(src))
 		to_chat(user, "<span class='danger'>You can't climb there, the way is blocked.</span>")
 		return 0

@@ -12,6 +12,8 @@
 	response_disarm = "pushes the"
 	response_harm   = "hits the"
 	anomalytype = SCP_096
+	status_flags = NO_ANTAG
+
 
 	health = 600
 	maxHealth = 600
@@ -214,7 +216,6 @@
 			spawn(290)
 				screaming = 0
 		return
-	..()
 
 /mob/living/simple_animal/hostile/scp096/proc/handle_target(var/mob/living/carbon/target)
 

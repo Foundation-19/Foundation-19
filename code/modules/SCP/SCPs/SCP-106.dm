@@ -14,6 +14,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	see_in_dark = 7
 	icon = 'icons/SCP/scp-106.dmi'
 	icon_state = null
+	status_flags = NO_ANTAG
 
 /datum/scp/scp_106
 	name = "SCP-106"

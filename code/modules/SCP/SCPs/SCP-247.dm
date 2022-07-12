@@ -16,6 +16,7 @@
 	icon_living = "scp-247"
 	icon_dead = "dead"
 
+	status_flags = NO_ANTAG
 
 	maxHealth = 300
 	health = 300
