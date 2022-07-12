@@ -186,9 +186,6 @@
 	max_ammo = 12
 	multiple_sprites = 1
 
-
-
-
 /obj/item/ammo_magazine/scp/m1911
 	name = "M1911 Colt Magazine (.45ACP)"
 	icon_state = "45"
