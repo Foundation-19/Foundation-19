@@ -87,6 +87,8 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/scp049/proc/is_valid_curing_target(var/mob/living/carbon/human/target)
 	if(target.SCP)
 		return FALSE
+	if(isspecies(target, SPECIES_SCP049_1))
+		return FALSE
 	if(!istype(target, /mob/living/carbon/human))
 		return FALSE
 
