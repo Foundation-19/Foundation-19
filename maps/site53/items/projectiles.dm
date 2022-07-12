@@ -199,6 +199,3 @@
 	max_ammo = 7
 	multiple_sprites = 1
 
-
-
-
