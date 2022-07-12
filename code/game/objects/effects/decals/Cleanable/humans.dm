@@ -271,6 +271,10 @@ var/global/list/image/splatter_cache=list()
 /obj/effect/decal/cleanable/blood/gibs/merge_with_blood()
 	return FALSE
 
+/obj/effect/decal/cleanable/blood/gibs/red
+	fleshcolor = "#fc1111"
+	basecolor = "#fc1111"
+
 /obj/effect/decal/cleanable/mucus
 	name = "mucus"
 	desc = "Disgusting mucus."

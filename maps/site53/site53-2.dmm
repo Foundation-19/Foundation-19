@@ -28265,23 +28265,6 @@
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper LCZ Security Center"
 	})
-"bhs" = (
-/obj/structure/table/rack,
-/obj/item/reagent_containers/spray/pepper,
-/obj/item/reagent_containers/spray/pepper,
-/obj/item/reagent_containers/spray/pepper,
-/obj/item/reagent_containers/spray/pepper,
-/obj/item/reagent_containers/spray/pepper,
-/obj/item/reagent_containers/spray/pepper,
-/obj/item/reagent_containers/spray/pepper,
-/obj/item/reagent_containers/spray/pepper,
-/obj/item/reagent_containers/spray/pepper,
-/obj/item/reagent_containers/spray/pepper,
-/obj/item/reagent_containers/spray/pepper,
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
 "bht" = (
 /obj/machinery/camera/network/hcz{
 	dir = 1;
@@ -32425,8 +32408,8 @@
 	pixel_x = 10
 	},
 /obj/machinery/atmospherics/unary/freezer{
-	use_power = 1;
-	set_temperature = 80
+	set_temperature = 80;
+	use_power = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/serverfarmcontrol)
@@ -36231,8 +36214,8 @@
 /area/site53/surface/bunker)
 "sso" = (
 /obj/machinery/atmospherics/unary/freezer{
-	use_power = 1;
-	set_temperature = 80
+	set_temperature = 80;
+	use_power = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/serverfarmcontrol)
@@ -36676,13 +36659,13 @@
 	dir = 1
 	},
 /obj/machinery/door/window/brigdoor{
+	dir = 4;
 	name = "Booth";
-	req_access = list(202);
-	dir = 4
+	req_access = list(202)
 	},
 /obj/machinery/door/window/brigdoor/westleft{
-	req_access = list(202);
-	name = "Booth"
+	name = "Booth";
+	req_access = list(202)
 	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
@@ -40269,8 +40252,8 @@ aMu
 ahO
 aNb
 bhn
-bhs
-aME
+bht
+aeC
 azA
 azA
 azA
