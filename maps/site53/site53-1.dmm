@@ -1980,6 +1980,9 @@
 	})
 "eF" = (
 /obj/machinery/camera/network/lcz,
+/obj/machinery/recharger/wallcharger{
+	pixel_y = 23
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
 "eG" = (
@@ -4019,6 +4022,7 @@
 /area/site53/llcz/dclass/canteen)
 "iV" = (
 /obj/structure/table/reinforced,
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpointoverlook)
 "iW" = (
