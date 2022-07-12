@@ -4555,6 +4555,19 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"AG" = (
+/obj/structure/table/standard,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/door/window/brigdoor/southleft{
+	req_access = list(505);
+	dir = 4
+	},
+/obj/item/rig/ce/equipped,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/hallway)
 "AY" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4;
@@ -36142,7 +36155,7 @@ el
 fl
 fl
 fl
-fl
+AG
 gu
 dZ
 ai
