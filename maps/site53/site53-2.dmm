@@ -20132,7 +20132,7 @@
 /area/site53/ulcz/hallways)
 "aPr" = (
 /obj/machinery/door/airlock/glass/civilian{
-	name = "SCP-529 Observation";
+	name = "Unused SCP Containment Chamber ";
 	req_access = list(301)
 	},
 /obj/structure/cable/green{
@@ -23549,32 +23549,24 @@
 	requires_power = 0
 	})
 "aWp" = (
-/turf/simulated/floor/carpet/brown,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp500{
 	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "aWq" = (
-/obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
+/obj/machinery/door/airlock/science{
+	name = "General Purpose Containment  Chamber";
+	req_access = list(302)
 	},
-/turf/simulated/floor/carpet/brown,
-/area/site53/llcz/scp500{
-	name = "\improper SCP-529";
-	requires_power = 0
-	})
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/generalpurpose)
 "aWr" = (
-/obj/structure/dogbed{
-	desc = "A bed made especially for cats, or other similarly sized pets.";
-	name = "cat bed";
-	pixel_y = 9
-	},
-/mob/living/simple_animal/friendly/cat/fluff/scp529{
+/obj/machinery/camera/network/lcz{
 	dir = 4;
-	icon_state = "cat"
+	icon_state = "camera"
 	},
-/turf/simulated/floor/carpet/brown,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500{
 	name = "\improper SCP-529";
 	requires_power = 0
@@ -23772,16 +23764,6 @@
 /obj/item/clothing/gloves/latex,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp113)
-"aWO" = (
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/carpet/brown,
-/area/site53/llcz/scp500{
-	name = "\improper SCP-529";
-	requires_power = 0
-	})
 "aWP" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
@@ -23790,9 +23772,8 @@
 	requires_power = 0
 	})
 "aWQ" = (
-/obj/machinery/door/airlock/glass/civilian{
-	name = "SCP-529";
-	req_access = list(301)
+/obj/machinery/light_switch{
+	pixel_y = -25
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500{
@@ -23800,14 +23781,12 @@
 	requires_power = 0
 	})
 "aWR" = (
-/obj/machinery/light_switch{
-	pixel_y = -25
+/obj/effect/paint_stripe/brown,
+/obj/structure/sign/directions/lcz{
+	dir = 8
 	},
-/turf/simulated/floor/carpet/brown,
-/area/site53/llcz/scp500{
-	name = "\improper SCP-529";
-	requires_power = 0
-	})
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/brownline)
 "aWS" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -30703,6 +30682,14 @@
 /area/site53/reswing/robotics{
 	name = "\improper Xenobiology Laboratory"
 	})
+"bGm" = (
+/obj/structure/sign/directions/ez{
+	pixel_x = -30
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/checkequip{
+	name = "\improper ULCZ Checkpoint"
+	})
 "bHX" = (
 /obj/machinery/papershredder,
 /obj/effect/floor_decal/corner/orange/border{
@@ -30711,6 +30698,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
+"bIm" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/generalpurpose)
 "bKj" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8;
@@ -30765,6 +30758,13 @@
 /area/site53/reswing/robotics{
 	name = "\improper Xenobiology Laboratory"
 	})
+"bTH" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/directions/ez{
+	dir = 8
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/lowertrams/redline)
 "bUj" = (
 /obj/item/stool/padded,
 /obj/machinery/camera/network/entrance{
@@ -31293,6 +31293,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp013)
+"dEo" = (
+/obj/effect/paint_stripe/brown,
+/obj/structure/sign/directions/lcz,
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/brownline)
 "dGV" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
@@ -32316,6 +32321,17 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"gUk" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 9;
+	icon_state = "bordercolor"
+	},
+/obj/structure/sign/directions/ez{
+	dir = 8;
+	pixel_x = -30
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "gUq" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4
@@ -33829,6 +33845,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
+"lxM" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/directions/hcz{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/lowertrams/redline)
 "lzu" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/zonecommanderoffice{
@@ -34390,6 +34413,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/serverfarmtunnel)
+"mXz" = (
+/obj/effect/paint_stripe/mauve,
+/obj/structure/sign/directions/ez,
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/hallways)
 "mXU" = (
 /obj/structure/table/standard,
 /obj/item/stock_parts/circuitboard/pacman,
@@ -35309,6 +35337,11 @@
 /obj/machinery/light/small,
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
+"pCN" = (
+/obj/effect/paint_stripe/mauve,
+/obj/structure/sign/directions/ez,
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/medicalpost)
 "pEO" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
@@ -35508,12 +35541,8 @@
 /turf/simulated/floor/plating,
 /area/site53/uhcz/hallways)
 "qjG" = (
-/obj/machinery/camera/network/lcz{
-	dir = 8;
-	icon_state = "camera";
-	name = "SCP-529"
-	},
-/turf/simulated/floor/carpet/brown,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp500{
 	name = "\improper SCP-529";
 	requires_power = 0
@@ -35560,6 +35589,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
+"qrM" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/directions/hcz,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/lowertrams/redline)
 "qtf" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1;
@@ -36141,6 +36175,13 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/generalpurpose)
+"shr" = (
+/obj/effect/paint_stripe/brown,
+/obj/structure/sign/directions/ez{
+	dir = 4
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/brownline)
 "siU" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 6;
@@ -37252,6 +37293,15 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
+"vKs" = (
+/obj/effect/paint_stripe/brown,
+/obj/structure/sign/directions/lcz{
+	dir = 1
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/llcz/dclass/checkequip{
+	name = "\improper ULCZ Checkpoint"
+	})
 "vKY" = (
 /obj/effect/floor_decal/corner/green/mono,
 /obj/structure/table/standard,
@@ -38161,6 +38211,16 @@
 /obj/structure/closet/secure_closet/engineering_welding,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/ulcz/medicalpost)
+"xZp" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 9;
+	icon_state = "bordercolor"
+	},
+/obj/structure/sign/directions/ez{
+	pixel_x = -30
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "yaM" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -42287,7 +42347,7 @@ aMS
 aMS
 tBU
 aMS
-aNo
+bGm
 aNo
 aNo
 aNo
@@ -42812,7 +42872,7 @@ agU
 agU
 agU
 agU
-agU
+vKs
 agU
 aPi
 agU
@@ -43599,7 +43659,7 @@ aMF
 aWn
 aVI
 aVI
-aVI
+aWr
 aVI
 aVH
 azA
@@ -44080,7 +44140,7 @@ afp
 aNG
 moM
 aHf
-aHA
+xZp
 aIR
 aJt
 aJC
@@ -44120,7 +44180,7 @@ aXI
 aWw
 aWF
 aWw
-aVI
+aWQ
 aVH
 azA
 azA
@@ -44376,11 +44436,11 @@ aPs
 aKq
 aGJ
 aMF
+aWq
 aWo
 aWo
 aWo
 aWo
-aWQ
 aVH
 azA
 azA
@@ -44636,11 +44696,11 @@ aPs
 aGF
 aGP
 aMF
+aXv
+aXv
+aXv
+aXv
 aWp
-aWp
-aWp
-aWp
-aWR
 aVH
 azA
 azA
@@ -44896,11 +44956,11 @@ aPt
 aMF
 aMF
 aMF
-aWq
-aWp
-aWp
-aWp
-aWp
+bIm
+aXv
+aXE
+aXv
+qjG
 aVH
 azA
 azA
@@ -45156,10 +45216,10 @@ aPs
 aGI
 aMF
 aMF
-aWr
-aWp
-qjG
-aWO
+aXv
+aXv
+aXv
+aXv
 aWp
 aVH
 azA
@@ -48531,7 +48591,7 @@ ahX
 ahX
 ahX
 bXL
-aHA
+gUk
 aPs
 fTf
 aMF
@@ -62272,7 +62332,7 @@ ahC
 abT
 adw
 adG
-abI
+dEo
 adP
 adP
 adP
@@ -63053,7 +63113,7 @@ abV
 aOU
 adG
 afu
-abI
+shr
 aiw
 aiw
 aiw
@@ -66173,7 +66233,7 @@ abI
 abI
 abI
 abI
-abI
+aWR
 ado
 ael
 aal
@@ -72156,7 +72216,7 @@ abY
 abY
 ugg
 qEi
-abY
+lxM
 abY
 abW
 abW
@@ -75013,7 +75073,7 @@ aAj
 ack
 aEV
 adN
-abY
+bTH
 acE
 acQ
 aec
@@ -75273,7 +75333,7 @@ aCK
 aCX
 aEV
 acl
-abY
+qrM
 adT
 adT
 adT
@@ -94530,7 +94590,7 @@ aAY
 aBX
 aAY
 aAY
-aAY
+mXz
 aAY
 aAY
 aBo
@@ -96628,7 +96688,7 @@ ass
 aGU
 aGC
 nzk
-nzk
+pCN
 nzk
 nzk
 biT
