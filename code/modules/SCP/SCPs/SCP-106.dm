@@ -16,6 +16,10 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	icon_state = null
 	status_flags = NO_ANTAG
 
+/mob/living/carbon/human/scp106/New(new_loc, new_species)
+	new_species = "SCP-106"
+	return ..()
+
 /datum/scp/scp_106
 	name = "SCP-106"
 	designation = "106"
