@@ -11,6 +11,7 @@
 	key = "3"
 	shorthand = "Hindi"
 	space_chance = 30
+	whisper_verb = "whispers"
 	partial_understanding = list(
 		LANGUAGE_HUMAN_GERMAN = 5,
 		LANGUAGE_HUMAN_CHINESE = 5,
