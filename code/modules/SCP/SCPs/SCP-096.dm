@@ -216,7 +216,6 @@
 			spawn(290)
 				screaming = 0
 		return
-	..()
 
 /mob/living/simple_animal/hostile/scp096/proc/handle_target(var/mob/living/carbon/target)
 
