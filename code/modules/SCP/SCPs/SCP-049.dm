@@ -281,10 +281,19 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	wander = TRUE
 	intelligence_level = AI_SMART
 
-/mob/living/carbon/human/scp049/IAttack(atom/A) //Grabs target before death touching; then curing.
+/datum/ai_holder/humanoid/scp049/give_target(new_target, urgent)
+	. = ..()
+	var/mob/living/carbon/human/scp049/user = holder
+	if(new_target in user.infected_players)
+		user.pointed(new_target)
+		user.I_sense_the_disease_in_you()
+
+/mob/living/carbon/human/scp049/IAttack(atom/A)
+	if(!canClick())
+		return FALSE
 	var/mob/living/carbon/human/target = A
 	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	zone_sel.selecting = pick(list(BP_HEAD, BP_CHEST))
+	zone_sel.selecting = pick(BP_CHEST, BP_HEAD)
 	if(world.time >= ai_death_touch_cooldown)
 		stop_heart(target)
 		ai_death_touch_cooldown = world.time + NEXT_DEATH_TOUCH_AI
@@ -295,15 +304,12 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		target.attack_hand(src)
 		return TRUE
 
-/datum/ai_holder/humanoid/scp049/can_attack(atom/movable/the_target, vision_required = TRUE)
-	if(!can_see_target(the_target) && vision_required)
-		return FALSE
+/datum/ai_holder/humanoid/scp049/pick_target(list/targets)
 	var/mob/living/carbon/human/scp049/user = holder
-	if(!user.is_valid_curing_target(the_target)) // No targetting God, SCP-049, SCP-049-1, or animals
-		return FALSE
-	if(!(the_target in user.infected_players)) //If target isn't infected, and did not attack. Then do not target. FIX
-		return FALSE
-	return TRUE
+	for(var/target in targets)
+		if(!isliving(target) || !user.is_valid_curing_target(target)) || !(target in user.infected_players))
+			targets -= target
+	return ..()
 
 /datum/ai_holder/humanoid/scp049/post_melee_attack(atom/A)
 	var/mob/living/carbon/human/scp049/user = holder

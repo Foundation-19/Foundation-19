@@ -42,8 +42,9 @@
 	H.mind_initialize()
 	var/datum/spell/spl = new /datum/spell/targeted/curepestillence
 	H.add_spell(spl)
-	//mind.learned_spells += spl
 	spl = new /datum/spell/aimed/stopheart
+	H.add_spell(spl)
+	spl = new /datum/spell/targeted/communicate_049
 	H.add_spell(spl)
 	H.add_language(LANGUAGE_ENGLISH, TRUE)
 	H.add_language(LANGUAGE_HUMAN_FRENCH, TRUE)
@@ -51,4 +52,3 @@
 	H.add_language(LANGUAGE_HUMAN_SPANISH, TRUE)
 	H.update_languages()
 	H.set_default_language(all_languages[LANGUAGE_ENGLISH])
-	//mind.learned_spells += spl

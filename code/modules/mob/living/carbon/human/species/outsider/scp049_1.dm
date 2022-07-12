@@ -304,5 +304,7 @@
 	set_stat(CONSCIOUS)
 	add_language(LANGUAGE_SCP049_GLOBAL)
 	set_default_language(all_languages[LANGUAGE_SCP049_GLOBAL])
+	var/datum/spell/spl = new /datum/spell/targeted/communicate_049
+	add_spell(spl)
 	var/turf/T = get_turf(src)
 	playsound(T, 'sound/hallucinations/wail.ogg', 25, 1)

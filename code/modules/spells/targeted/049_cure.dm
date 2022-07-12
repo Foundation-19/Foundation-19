@@ -11,8 +11,7 @@
 /datum/spell/targeted/curepestillence/cast(list/targets, mob/user)
 	if(!using)
 		var/mob/living/carbon/human/scp049/player = user
-		for(var/mob/living/carbon/human/target in targets)
-			using = TRUE
-			player.conversion_act()
+		using = TRUE
+		player.conversion_act()
 		using = FALSE
 
