@@ -18,6 +18,10 @@ GLOBAL_LIST_EMPTY(scp343s)
 /mob/living/carbon/human/scp343/IsAdvancedToolUser()
 	return FALSE
 
+/mob/living/carbon/human/scp343/New(new_loc, new_species)
+	new_species = "SCP-343"
+	return ..()
+
 /mob/living/carbon/human/scp343/Initialize()
 	..()
 
@@ -29,7 +33,6 @@ GLOBAL_LIST_EMPTY(scp343s)
 	if(mind)
 		mind.name = real_name
 
-	set_species("SCP-343")
 	GLOB.scp343s += src
 
 	verbs += /mob/living/carbon/human/scp343/proc/phase_through_airlock

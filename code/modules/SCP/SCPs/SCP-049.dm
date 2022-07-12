@@ -36,6 +36,9 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	else
 		transform = null
 	return
+/mob/living/carbon/human/scp049/New(new_loc, new_species)
+	new_species = "SCP-049"
+	return  ..()
 
 /mob/living/carbon/human/scp049/Initialize()
 	..()
@@ -47,7 +50,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	// fix names
 	fully_replace_character_name("SCP-049")
 
-	set_species("SCP-049")
 	GLOB.scp049s += src
 	verbs += /mob/living/carbon/human/proc/SCP_049_talk
 	verbs += /mob/living/carbon/human/proc/door_049
