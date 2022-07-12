@@ -96,6 +96,11 @@
 	icon_state = "cap_cypherkey"
 	channels = list("Command" = 1, "Security" = 1, "Engineering" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Hailing" = 0, "HCZ-Security" = 1, "LCZ-Security" =1, "ECZ-Security" = 1)
 
+/obj/item/device/encryptionkey/heads/qm
+	name = "logistics officer's encryption key"
+	icon_state = "cargo_cypherkey"
+	channels = list("Supply" = 1, "Command" = 1, "Hailing" = 1)
+
 /obj/item/device/encryptionkey/heads/ai_integrated
 	name = "ai integrated encryption key"
 	desc = "Integrated encryption key."

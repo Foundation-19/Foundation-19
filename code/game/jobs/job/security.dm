@@ -57,8 +57,6 @@
 	allowed_ranks = list(
 		/datum/mil_rank/security/w5
 	)
-	equip(var/mob/living/carbon/human/H)
-		..()
 
 	access = list(
 		access_sec_comms,
@@ -102,8 +100,6 @@
 		/datum/mil_rank/security/e7,
 		/datum/mil_rank/security/e8
 	)
-	equip(var/mob/living/carbon/human/H)
-		..()
 
 	access = list(
 		access_sec_comms,
@@ -142,8 +138,6 @@
 		/datum/mil_rank/security/e4,
 		/datum/mil_rank/security/e5
 	)
-	equip(var/mob/living/carbon/human/H)
-		..()
 
 	access = list(
 		access_sciencelvl1,
@@ -179,8 +173,6 @@
 	allowed_ranks = list(
 		/datum/mil_rank/security/o2
 	)
-	equip(var/mob/living/carbon/human/H)
-		..()
 
 	access = list(
 		access_sec_comms,
@@ -218,8 +210,6 @@
 		/datum/mil_rank/security/e5,
 		/datum/mil_rank/security/e6
 	)
-	equip(var/mob/living/carbon/human/H)
-		..()
 
 	access = list(
 		access_sec_comms,
@@ -253,8 +243,6 @@
 		/datum/mil_rank/security/e3,
 		/datum/mil_rank/security/e4
 	)
-	equip(var/mob/living/carbon/human/H)
-		..()
 
 	access = list(
 		access_sec_comms,
@@ -287,8 +275,6 @@
 	allowed_ranks = list(
 		/datum/mil_rank/security/o1
 	)
-	equip(var/mob/living/carbon/human/H)
-		..()
 
 	access = list(
 		access_sec_comms,
@@ -326,8 +312,6 @@
 		/datum/mil_rank/security/e4,
 		/datum/mil_rank/security/e5
 	)
-	equip(var/mob/living/carbon/human/H)
-		..()
 
 	access = list(
 		access_sec_comms,
@@ -363,8 +347,6 @@
 		/datum/mil_rank/security/e1,
 		/datum/mil_rank/security/e2
 	)
-	equip(var/mob/living/carbon/human/H)
-		..()
 
 	access = list(
 		access_sec_comms,
