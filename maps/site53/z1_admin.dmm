@@ -2173,12 +2173,6 @@
 	name = "emergency response team wardrobe"
 	},
 /obj/item/clothing/glasses/night,
-/obj/item/clothing/mask/gas/chaos,
-/obj/item/clothing/head/helmet/scp/chaos,
-/obj/item/clothing/suit/armor/vest/scp/medarmor/chaos,
-/obj/item/clothing/mask/balaclava/tactical,
-/obj/item/clothing/gloves/thick/swat,
-/obj/item/gun/projectile/automatic/scp/ak74,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom{
 	name = "\improper Chaos"
@@ -2585,6 +2579,7 @@
 "mK" = (
 /obj/machinery/light{
 	dir = 8;
+	icon_state = "tube1";
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -2693,14 +2688,14 @@
 "nt" = (
 /obj/item/clothing/head/helmet/scp/goc,
 /obj/item/clothing/suit/armor/goc,
+/obj/structure/closet,
 /obj/item/storage/belt/holster/security,
 /obj/item/gun/projectile/pistol,
 /obj/item/clothing/gloves/thick/swat,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/ert,
 /obj/item/clothing/glasses/night,
-/obj/structure/closet{
-	icon_state = "syndicate1";
-	name = "GOC wardrobe"
-	},
+/obj/item/device/radio/headset/goc,
 /obj/item/gun/projectile/shotgun/pump/combat,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom{
@@ -2754,28 +2749,12 @@
 /obj/item/ammo_magazine/scp/ak,
 /obj/item/ammo_magazine/scp/ak,
 /obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom{
 	name = "\improper Chaos"
 	})
 "nA" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/ak/big,
-/obj/item/ammo_magazine/scp/ak/big,
-/obj/item/ammo_magazine/scp/ak/big,
-/obj/item/ammo_magazine/scp/ak/big,
-/obj/item/gun/projectile/automatic/scp/rpk,
-/obj/item/gun/projectile/automatic/scp/rpk,
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = 0
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom{
 	name = "\improper Chaos"
@@ -2925,13 +2904,16 @@
 /area/centcom)
 "nW" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/shotholder/shell,
-/obj/item/ammo_magazine/shotholder/shell,
-/obj/item/ammo_magazine/shotholder/shell,
-/obj/item/ammo_magazine/shotholder/shell,
-/obj/item/ammo_magazine/shotholder/shell,
-/obj/item/ammo_magazine/shotholder/shell,
-/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom{
 	name = "\improper Chaos"
@@ -3286,22 +3268,6 @@
 	},
 /area/centcom{
 	name = "\improper MTF"
-	})
-"pc" = (
-/obj/structure/closet{
-	icon_state = "syndicate1";
-	name = "emergency response team wardrobe"
-	},
-/obj/item/clothing/glasses/night,
-/obj/item/clothing/mask/gas/chaos,
-/obj/item/clothing/head/helmet/scp/chaos,
-/obj/item/clothing/suit/armor/vest/scp/medarmor/chaos,
-/obj/item/clothing/mask/balaclava/tactical,
-/obj/item/clothing/gloves/thick/swat,
-/obj/item/gun/projectile/automatic/scp/ak742,
-/turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper Chaos"
 	})
 "pd" = (
 /obj/structure/bed/padded,
@@ -4155,15 +4121,15 @@
 "xV" = (
 /obj/item/clothing/head/helmet/scp/goc,
 /obj/item/clothing/suit/armor/goc,
+/obj/structure/closet,
 /obj/item/storage/belt/holster/security,
 /obj/item/gun/projectile/pistol,
 /obj/item/clothing/gloves/thick/swat,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/ert,
 /obj/item/clothing/glasses/night,
+/obj/item/device/radio/headset/goc,
 /obj/item/gun/projectile/automatic/scp/fnfal,
-/obj/structure/closet{
-	icon_state = "syndicate1";
-	name = "GOC wardrobe"
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom{
 	name = "\improper GOC"
@@ -4454,22 +4420,6 @@
 	},
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
-"Fk" = (
-/obj/structure/closet{
-	icon_state = "syndicate1";
-	name = "emergency response team wardrobe"
-	},
-/obj/item/clothing/glasses/night,
-/obj/item/clothing/mask/gas/chaos,
-/obj/item/clothing/head/helmet/scp/chaos,
-/obj/item/clothing/suit/armor/vest/scp/medarmor/chaos,
-/obj/item/clothing/mask/balaclava/tactical,
-/obj/item/clothing/gloves/thick/swat,
-/obj/item/gun/projectile/automatic/scp/ak47,
-/turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper Chaos"
-	})
 "Fo" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/scp,
@@ -4512,15 +4462,6 @@
 	},
 /area/centcom{
 	name = "\improper MTF"
-	})
-"Gt" = (
-/obj/structure/closet/crate,
-/obj/item/clothing/under/ert,
-/obj/item/device/radio/headset/goc,
-/obj/item/clothing/shoes/jackboots,
-/turf/simulated/floor/wood,
-/area/centcom{
-	name = "\improper GOC"
 	})
 "Gu" = (
 /turf/simulated/floor/wood,
@@ -4712,18 +4653,6 @@
 /area/centcom{
 	name = "\improper GOC"
 	})
-"Ln" = (
-/obj/structure/table/rack,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/machinery/light{
-	dir = 4;
-	pixel_x = 0
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper Chaos"
-	})
 "LD" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/combat,
@@ -4781,19 +4710,19 @@
 "MO" = (
 /obj/item/clothing/head/helmet/scp/goc,
 /obj/item/clothing/suit/armor/goc,
+/obj/structure/closet,
 /obj/item/storage/belt/holster/security,
 /obj/item/gun/projectile/pistol,
 /obj/item/clothing/gloves/thick/swat,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/ert,
 /obj/item/clothing/glasses/night,
 /obj/machinery/light{
 	dir = 8;
 	pixel_x = 0
 	},
+/obj/item/device/radio/headset/goc,
 /obj/item/gun/projectile/automatic/scp/fnfal,
-/obj/structure/closet{
-	icon_state = "syndicate1";
-	name = "GOC wardrobe"
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom{
 	name = "\improper GOC"
@@ -4972,15 +4901,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"Xn" = (
-/obj/machinery/light{
-	dir = 4;
-	pixel_x = 0
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper Chaos"
-	})
 "Xw" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/door/blast/shutters{
@@ -22921,7 +22841,7 @@ eL
 zB
 lA
 le
-Fk
+le
 lA
 zB
 eU
@@ -23325,7 +23245,7 @@ eL
 zB
 zh
 le
-pc
+le
 zh
 zB
 eU
@@ -23562,7 +23482,7 @@ xE
 mr
 lI
 XG
-Gt
+PW
 Gu
 PW
 XG
@@ -23728,7 +23648,7 @@ eL
 eL
 zB
 zh
-Fk
+le
 le
 zh
 zB
@@ -24132,17 +24052,17 @@ eL
 eL
 zB
 lA
-pc
+le
 le
 lA
 zB
 eU
 lX
 zB
+kS
 zh
 zh
-zh
-zh
+lz
 zB
 eL
 eL
@@ -24341,10 +24261,10 @@ zB
 mw
 mi
 zB
-Xn
+zh
 ld
 nW
-Ln
+nA
 zB
 eL
 eL
