@@ -35,6 +35,9 @@ var/global/photo_count = 0
 	var/scribble	//Scribble on the back.
 	var/image/tiny
 	var/photo_size = 3
+	var/anomalous = FALSE //ADD SUPPORT FOR MEMETICS/096/OTHERS TO SPREAD THROUGH PHOTOS
+	var/anomalytype //This has to inherit from the camera
+	var/anomalymob //This has to inherit from the camera
 
 /obj/item/photo/New()
 	id = photo_count++
@@ -71,6 +74,13 @@ var/global/photo_count = 0
 	if(distance <= 1)
 		show(user)
 		to_chat(user, desc)
+		if(anomalous)
+			to_chat(user, "<span class='danger'>You gain a dull headache.</span>")
+			switch(anomalytype)
+				if("096")
+					var/mob/living/simple_animal/hostile/scp096/A = anomalymob //I hate this but I don't know another way to do it, so, we go the shitcode way!
+					A.specialexamine(user) //YOU ARE ALREADY DEAD.
+					return
 	else
 		to_chat(user, "<span class='notice'>It is too far away.</span>")
 
@@ -154,6 +164,10 @@ var/global/photo_count = 0
 	var/icon_on = "camera"
 	var/icon_off = "camera_off"
 	var/size = 3
+	var/anomalous = FALSE //ADD SUPPORT FOR MEMETICS/096/OTHERS TO SPREAD THROUGH PHOTOS
+	var/anomalytype
+	var/anomalymob
+
 /obj/item/device/camera/on_update_icon()
 	var/datum/extension/base_icon_state/bis = get_extension(src, /datum/extension/base_icon_state)
 	if(on)
@@ -211,6 +225,14 @@ var/global/photo_count = 0
 			mob_detail = "You can see [A] on the photo[(A.health / A.maxHealth) < 0.75 ? " - [A] looks hurt":""].[holding ? " [holding]":"."]. "
 		else
 			mob_detail += "You can also see [A] on the photo[(A.health / A.maxHealth)< 0.75 ? " - [A] looks hurt":""].[holding ? " [holding]":"."]."
+	for(var/mob/living/simple_animal/hostile/B in the_turf) //Handles making images anomalous
+		if(anomalytype)
+			anomalous = TRUE
+			if(B.anomalytype)
+				anomalytype = B.anomalytype
+				anomalymob = B
+			else
+				anomalytype = null
 	return mob_detail
 
 /obj/item/device/camera/afterattack(atom/target as mob|obj|turf|area, mob/user as mob, flag)
@@ -265,6 +287,11 @@ var/global/photo_count = 0
 	p.desc = mobs
 	p.photo_size = size
 	p.update_icon()
+
+	if(anomalytype) //Handles making SCP-096 and other anomalies MAD when you see them
+		p.anomalous = TRUE
+		p.anomalytype = anomalytype
+		p.anomalymob = anomalymob
 
 	return p
 

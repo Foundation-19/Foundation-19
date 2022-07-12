@@ -4,7 +4,7 @@
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 8
 
-  
+
 /datum/scp/scp_966
 	name = "SCP-966"
 	designation = "966"
@@ -28,7 +28,7 @@
 	if(!A.density)
 		return
 
-  visible_message("\The [src] begins to pry open \the [A]!")
+	visible_message("\The [src] begins to pry open \the [A]!")
 	if(!do_after(src, 5 SECONDS, A))
 		return
 

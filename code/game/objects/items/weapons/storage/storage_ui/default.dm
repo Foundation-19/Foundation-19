@@ -148,7 +148,7 @@
 /datum/storage_ui/default/prepare_ui()
 	//if storage slots is null then use the storage space UI, otherwise use the slots UI
 	for(var/mob/user in is_seeing)
-		if(user)
+		if(user && user.client)
 			user.client.screen -= containers
 	for(var/container in containers)
 		if(container)

@@ -57,6 +57,9 @@
 
 	var/required_language
 
+	var/balance_limited = FALSE //is this job limited for balance purposes, compared to D-class? Intended for LCZ balance
+
+
 /datum/job/New()
 
 	if(prob(100-availablity_chance))	//Close positions, blah blah.
@@ -190,7 +193,10 @@
 			apply_fingerprints_to_item(holder, sub_item)
 
 /datum/job/proc/is_position_available()
-	return (current_positions < total_positions) || (total_positions == -1)
+	if(!check_d_class_balance())
+		return FALSE
+	else
+		return (current_positions < total_positions) || (total_positions == -1)
 
 /datum/job/proc/has_alt_title(var/mob/H, var/supplied_title, var/desired_title)
 	return (supplied_title == desired_title) || (H.mind && H.mind.role_alt_title == desired_title)
@@ -489,3 +495,25 @@
 		. = min_skill[S.type]
 	if(!.)
 		. = SKILL_MIN
+
+/datum/job/proc/check_d_class_balance()
+	if(!balance_limited) //if this role doesn't care about balance, move on
+		return TRUE
+
+	var/department_count = 0
+	var/datum/job/classd/CD
+
+	for(var/datum/job/job in SSjobs.primary_job_datums) //find all other jobs in our department
+		if(job.department == department && job.type != type)
+			department_count += job.get_active_count()
+
+		if(job.type == /datum/job/classd)
+			CD = job
+
+	if(department_count < 5) //LCZ can always have at least 5 guards, regardless of Class D population
+		return TRUE
+
+	if(department_count < CD.get_active_count() / 4) //if there is more than 4 d-class for every guard
+		return TRUE
+	else
+		return FALSE
