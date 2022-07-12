@@ -31287,6 +31287,17 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/science/seniorresearcherb)
+"dDl" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8;
+	icon_state = "bordercolor"
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/checkequip{
+	name = "\improper LCZ Security Center"
+	})
 "dDY" = (
 /obj/machinery/camera/network/lcz{
 	name = "SCP-013"
@@ -31901,6 +31912,13 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
+"fJM" = (
+/obj/structure/table/standard,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "fKV" = (
 /obj/structure/flora/pottedplant/orientaltree,
 /obj/machinery/light,
@@ -33070,6 +33088,17 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
+"jnd" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/checkequip{
+	name = "\improper LCZ Security Center"
+	})
 "joI" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -43610,7 +43639,7 @@ aUf
 aUf
 aUk
 aUf
-aUf
+jnd
 aVs
 aTJ
 aHf
@@ -44646,7 +44675,7 @@ aTJ
 aTJ
 aTJ
 aTZ
-aUw
+dDl
 aUw
 aUd
 aUw
@@ -58980,7 +59009,7 @@ aaq
 aaq
 aaq
 aaq
-apW
+fJM
 bbH
 aEG
 beN
