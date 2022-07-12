@@ -149,13 +149,13 @@
 
 	if(href_list["read"])
 		var/obj/item/paper/P = locate(href_list["read"])
-		if(P && P.loc == src)
+		if(P?.loc == src)
 			P.show_content(user)
 		. = TOPIC_HANDLED
 
 	if(href_list["look"])
 		var/obj/item/photo/P = locate(href_list["look"])
-		if(P && P.loc == src)
+		if(P?.loc == src)
 			P.show(user)
 		. = TOPIC_HANDLED
 

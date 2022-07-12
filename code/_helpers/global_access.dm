@@ -459,8 +459,6 @@
 			return global.gear_datums;
 		if("gear_tweak_free_color_choice_")
 			return global.gear_tweak_free_color_choice_;
-		if("gender_datums")
-			return global.gender_datums;
 		if("ghost_darkness_images")
 			return global.ghost_darkness_images;
 		if("ghost_sightless_images")
@@ -881,7 +879,7 @@
 			return global.z_levels;
 		if("zone_blocked")
 			return global.zone_blocked;
-		
+
 /proc/writeglobal(which, newval)
 	switch(which)
 		if("ANTAG_FREQS")
@@ -1342,8 +1340,6 @@
 			global.gear_datums=newval;
 		if("gear_tweak_free_color_choice_")
 			global.gear_tweak_free_color_choice_=newval;
-		if("gender_datums")
-			global.gender_datums=newval;
 		if("ghost_darkness_images")
 			global.ghost_darkness_images=newval;
 		if("ghost_sightless_images")
@@ -1764,7 +1760,7 @@
 			global.z_levels=newval;
 		if("zone_blocked")
 			global.zone_blocked=newval;
-		
+
 /var/list/_all_globals=list(
 	"ANTAG_FREQS",
 	"AWAY_FREQS_ASSIGNED",

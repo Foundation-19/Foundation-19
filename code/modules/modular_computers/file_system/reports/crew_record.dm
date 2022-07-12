@@ -15,8 +15,8 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	//More variables below.
 
 /datum/computer_file/report/crew_record/New()
-	..()
-	load_from_mob(null)
+	load_from_mob(null) //jesus christ, what?
+	return ..()
 
 /datum/computer_file/report/crew_record/Destroy()
 	. = ..()
@@ -48,22 +48,17 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	set_name(H ? H.real_name : "Unset")
 	set_formal_name(formal_name)
 	set_job(H ? GetAssignment(H) : "Unset")
-	var/gender_term = "Unset"
-	if(H)
-		var/datum/gender/G = gender_datums[H.get_sex()]
-		if(G)
-			gender_term = gender2text(G.formal_term)
-	set_sex(gender_term)
+	set_sex(H ? H.get_sex() : "Unset")
 	set_age(H ? H.age : 30)
 	set_status(GLOB.default_physical_status)
 	set_species(H ? H.get_species() : SPECIES_HUMAN)
-	set_branch(H ? (H.char_branch && H.char_branch.name) : "None")
-	set_rank(H ? (H.char_rank && H.char_rank.name) : "None")
-	set_public_record(H && H.public_record && !jobban_isbanned(H, "Records") ? html_decode(H.public_record) : "No record supplied")
+	set_branch(H ? (H.char_branch?.name) : "None")
+	set_rank(H ? (H.char_rank?.name) : "None")
+	set_public_record(H?.public_record && !jobban_isbanned(H, "Records") ? html_decode(H.public_record) : "No record supplied")
 
 	// Medical record
 	set_bloodtype(H ? H.b_type : "Unset")
-	set_medRecord((H && H.med_record && !jobban_isbanned(H, "Records") ? html_decode(H.med_record) : "No record supplied"))
+	set_medRecord((H?.med_record && !jobban_isbanned(H, "Records") ? html_decode(H.med_record) : "No record supplied"))
 
 	if(H)
 		if(H.isSynthetic())
@@ -91,7 +86,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	set_criminalStatus(GLOB.default_security_status)
 	set_dna(H ? H.dna.unique_enzymes : "")
 	set_fingerprint(H ? md5(H.dna.uni_identity) : "")
-	set_secRecord(H && H.sec_record && !jobban_isbanned(H, "Records") ? html_decode(H.sec_record) : "No record supplied")
+	set_secRecord(H?.sec_record && !jobban_isbanned(H, "Records") ? html_decode(H.sec_record) : "No record supplied")
 
 	// Employment record
 	var/employment_record = "No record supplied"
@@ -124,7 +119,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 		set_skillset(jointext(skills,"\n"))
 
 	// Antag record
-	set_antagRecord(H && H.exploit_record && !jobban_isbanned(H, "Records") ? html_decode(H.exploit_record) : "")
+	set_antagRecord(H?.exploit_record && !jobban_isbanned(H, "Records") ? html_decode(H.exploit_record) : "")
 
 // Global methods
 // Used by character creation to create a record for new arrivals.
@@ -197,7 +192,7 @@ KEY.set_access(ACCESS, ACCESS_EDIT || ACCESS || access_bridge)}
 FIELD_SHORT("Name", name, null, access_adminlvl5)
 FIELD_SHORT("Formal Name", formal_name, null, access_adminlvl5)
 FIELD_SHORT("Job", job, null, access_change_ids)
-FIELD_LIST("Sex", sex, record_genders(), null, access_adminlvl5)
+FIELD_SHORT("Sex", sex, null, access_adminlvl5)
 FIELD_NUM("Age", age, null, access_change_ids)
 FIELD_LIST_EDIT("Status", status, GLOB.physical_statuses, null, access_medicallvl2)
 
@@ -239,13 +234,6 @@ FIELD_LONG("Exploitable Information", antagRecord, access_syndicate, access_synd
 	for(var/rank in branch.ranks)
 		var/datum/mil_rank/RA = branch.ranks[rank]
 		. |= RA.name
-
-/datum/report_field/options/crew_record/sex/proc/record_genders()
-	. = list()
-	. |= "Unset"
-	for(var/thing in gender_datums)
-		var/datum/gender/G = gender_datums[thing]
-		. |= gender2text(G.formal_term)
 
 /datum/report_field/options/crew_record/branch/proc/record_branches()
 	. = list()

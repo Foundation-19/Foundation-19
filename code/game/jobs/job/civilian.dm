@@ -166,8 +166,6 @@
 	allowed_ranks = list(
 	/datum/mil_rank/civ/classc
 	)
-	equip(var/mob/living/carbon/human/H)
-		..()
 
 	access = list()
 
@@ -191,8 +189,5 @@
 	allowed_ranks = list(
 	/datum/mil_rank/civ/classc
 	)
-	equip(var/mob/living/carbon/human/H)
-		..()
-
 	access = list()
 	minimal_access = list()

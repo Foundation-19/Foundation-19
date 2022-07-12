@@ -259,9 +259,15 @@
 
 /datum/chemical_reaction/classc
 	name = "Class-C Amnestics"
-	result = /datum/reagent/amnestics/classb
+	result = /datum/reagent/amnestics/classc
 	required_reagents = list(/datum/reagent/amnestics/classb = 1, /datum/reagent/mindbreaker_toxin = 1, /datum/reagent/medicine/fluff/paroxetine = 1)
-	result_amount = 2
+	result_amount = 3 //This was wrong
+
+/datum/chemical_reaction/classd //VERY HARD TO MAKE AND DANGEROUS.
+	name = "Class-D Amnestics"
+	result = /datum/reagent/amnestics/classd
+	required_reagents = list(/datum/reagent/amnestics/classc = 3, /datum/reagent/chloral_hydrate = 10,/datum/reagent/mindbreaker_toxin = 5, /datum/reagent/impedrezene = 5)
+	result_amount = 3 //Unforgivingly expensive to make in the quantities needed.
 
 /datum/chemical_reaction/regrettiforgetti
 	name = "Regretti Forgetti"

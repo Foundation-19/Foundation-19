@@ -62,7 +62,7 @@
 	var/obj/item/W = get_natural_weapon()
 	if(W)
 		W.force = min((W.force + potency), max_damage)
-	if(!loose && prob(25) && (W && W.force >= loose_threshold)) //second wind
+	if(!loose && prob(25) && (W?.force >= loose_threshold)) //second wind
 		loose = TRUE
 		health = (initial(health) * 1.5)
 		maxHealth = (initial(maxHealth) * 1.5)
