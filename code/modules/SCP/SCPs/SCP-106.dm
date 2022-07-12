@@ -522,9 +522,10 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	if(WallEye)
 		var/turf/step = get_step(src, dir)
 		if(step && step.is_phasable())
-			WallEye.possess(src)
-			src.forceMove(pick(GLOB.scp106_floors))
-			phasing = TRUE
+			if(do_after(user, 5 SECONDS)
+				WallEye.possess(src)
+				src.forceMove(pick(GLOB.scp106_floors))
+				phasing = TRUE
 
 /mob/living/carbon/human/scp106/proc/wall_unphase()
 	set name = "Leave wall"
@@ -534,10 +535,11 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		return
 	var/turf/exit = get_turf(WallEye.loc)
 	if(exit.is_phasable())
-		src.forceMove(exit)
-		WallEye.release(src)
-		WallEye.forceMove(src)
-		phasing = FALSE
+		if(do_after(user, 5 SECONDS)
+			src.forceMove(exit)
+			WallEye.release(src)
+			WallEye.forceMove(src)
+			phasing = FALSE
 
 /mob/observer/eye/scp106
 	name = "SCP-106 presence"

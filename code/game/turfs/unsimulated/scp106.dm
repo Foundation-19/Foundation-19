@@ -46,4 +46,4 @@ GLOBAL_LIST_EMPTY(scp106_floors)
 	color = "#000000"
 
 /turf/unsimulated/wall/scp106/is_phasable()
-	return TRUE
+	return FALSE
