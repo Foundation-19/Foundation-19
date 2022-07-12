@@ -18198,6 +18198,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
+"aLp" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden,
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/serverfarmcontrol)
 "aLq" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/reinforced,
@@ -20829,6 +20834,9 @@
 	name = "\improper Biohazard Test Chamber"
 	})
 "aQz" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid{
 	temperature = 80
 	},
@@ -30800,6 +30808,13 @@
 /obj/item/paper/scp/euclid/scp096,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp096)
+"ccW" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 8
+	},
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/serverfarmcontrol)
 "cdF" = (
 /obj/structure/bed/chair,
 /obj/machinery/camera/autoname{
@@ -31000,11 +31015,6 @@
 /obj/item/clothing/mask/surgical,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
-"cAD" = (
-/obj/machinery/atmospherics/binary/pump/on,
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmcontrol)
 "cDv" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/reinforced,
@@ -31112,14 +31122,6 @@
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
-"cVK" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 80
-	},
-/area/site53/upper_surface/serverfarminterior)
 "cXI" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/grassybush,
@@ -31226,12 +31228,6 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/genstorage1)
-"dmx" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/hidden,
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmcontrol)
 "dnL" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
@@ -31892,6 +31888,11 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
+"fxz" = (
+/obj/machinery/atmospherics/binary/pump/on,
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/serverfarmcontrol)
 "fEN" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/camera/network/entrance{
@@ -32185,12 +32186,6 @@
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
-"gwj" = (
-/obj/machinery/atmospherics/pipe/simple/hidden,
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 80
-	},
-/area/site53/upper_surface/serverfarminterior)
 "gyL" = (
 /obj/machinery/computer/modular/preset/aislot/research{
 	dir = 4
@@ -32584,13 +32579,6 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
-"hEa" = (
-/obj/machinery/atmospherics/binary/pump/on{
-	dir = 1
-	},
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmcontrol)
 "hFj" = (
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/uhcz/scp247containment)
@@ -33011,6 +32999,16 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/ulcz/medicalpost)
+"iWz" = (
+/obj/machinery/atmospherics/unary/vent_pump/siphon/on{
+	dir = 1;
+	external_pressure_bound = 0;
+	external_pressure_bound_default = 0
+	},
+/turf/simulated/floor/tiled/techfloor/grid{
+	temperature = 80
+	},
+/area/site53/upper_surface/serverfarminterior)
 "iWC" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -33493,19 +33491,10 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
-"kxI" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden,
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmcontrol)
 "kyw" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurant)
-"kAs" = (
-/obj/machinery/drone_fabricator/derelict,
-/turf/simulated/floor/reinforced,
-/area/site53/reswing/robotics)
 "kBD" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/machinery/camera/network/entrance,
@@ -33799,6 +33788,13 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"ltl" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 10
+	},
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/serverfarmcontrol)
 "ltv" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Brown Line";
@@ -33897,6 +33893,10 @@
 	},
 /turf/simulated/open,
 /area/site53/ulcz/hallways)
+"lxl" = (
+/mob/living/silicon/robot/drone/construction,
+/turf/simulated/floor/reinforced,
+/area/site53/reswing/robotics)
 "lxz" = (
 /obj/machinery/light{
 	dir = 4
@@ -34090,6 +34090,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
+"lTe" = (
+/obj/machinery/atmospherics/binary/pump/on{
+	dir = 1
+	},
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/serverfarmcontrol)
 "lTp" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -34272,6 +34279,10 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/engineering/bathrooms)
+"muA" = (
+/obj/machinery/drone_fabricator/derelict,
+/turf/simulated/floor/reinforced,
+/area/site53/reswing/robotics)
 "mvr" = (
 /obj/structure/hygiene/toilet{
 	dir = 4
@@ -34747,6 +34758,12 @@
 /area/site53/reswing/robotics{
 	name = "\improper Xenobiology Laboratory"
 	})
+"nJl" = (
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/turf/simulated/floor/tiled/techfloor/grid{
+	temperature = 80
+	},
+/area/site53/upper_surface/serverfarminterior)
 "nJM" = (
 /obj/structure/closet/l3closet/virology,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -34834,16 +34851,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/medicalpost)
-"nTZ" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/table/standard,
-/obj/item/device/flashlight{
-	pixel_y = 15
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/engineering/storage)
 "nUg" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -34923,13 +34930,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
-"okU" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 10
-	},
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmcontrol)
 "ome" = (
 /obj/structure/sign/warning/secure_area{
 	pixel_y = 32
@@ -35322,13 +35322,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/science/aicobservation)
-"pod" = (
-/obj/machinery/atmospherics/unary/freezer{
-	set_temperature = 80;
-	use_power = 1
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/serverfarmcontrol)
 "prD" = (
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp247observation)
@@ -35675,16 +35668,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
-"qrD" = (
-/obj/machinery/atmospherics/unary/vent_pump/siphon/on{
-	dir = 1;
-	external_pressure_bound = 0;
-	external_pressure_bound_default = 0
-	},
-/turf/simulated/floor/tiled/techfloor/grid{
-	temperature = 80
-	},
-/area/site53/upper_surface/serverfarminterior)
 "qrM" = (
 /obj/effect/paint_stripe/red,
 /obj/structure/sign/directions/hcz,
@@ -36140,6 +36123,11 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
+"rJk" = (
+/turf/simulated/floor/tiled/techfloor/grid{
+	temperature = 80
+	},
+/area/site53/upper_surface/serverfarminterior)
 "rMC" = (
 /obj/machinery/camera/network/lcz{
 	dir = 8;
@@ -36310,6 +36298,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"sso" = (
+/obj/machinery/atmospherics/unary/freezer{
+	set_temperature = 80;
+	use_power = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/upper_surface/serverfarmcontrol)
 "sva" = (
 /obj/machinery/door/airlock/civilian{
 	name = "Evacuation Bunker Living Compartment"
@@ -36525,6 +36520,12 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
+"toO" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/serverfarmcontrol)
 "tqz" = (
 /obj/structure/virology/analyser,
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -37460,6 +37461,16 @@
 /obj/machinery/light,
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
+"vSg" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/table/standard,
+/obj/item/device/flashlight{
+	pixel_y = 15
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/engineering/storage)
 "vSP" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -38228,13 +38239,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/hallways)
-"xNV" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 8
-	},
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/serverfarmcontrol)
 "xQv" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-263 Containment Chamber";
@@ -61742,7 +61746,7 @@ asM
 aus
 auL
 auR
-nTZ
+vSg
 awH
 auL
 auL
@@ -70563,7 +70567,7 @@ aWm
 fwB
 aRX
 aPP
-aQz
+rJk
 hMV
 aQS
 aRg
@@ -70823,8 +70827,8 @@ aWm
 aRL
 aRX
 aPP
-aQz
-aQz
+rJk
+rJk
 aQU
 aRg
 aQd
@@ -71083,10 +71087,10 @@ aCT
 aCT
 aCT
 aPR
-aQz
-aQz
-aQz
-aQz
+rJk
+rJk
+rJk
+rJk
 aRq
 aAc
 azA
@@ -71342,9 +71346,9 @@ aRG
 xQK
 aRM
 aRX
-aQz
-aQz
-aQz
+rJk
+rJk
+rJk
 aQV
 aRg
 aRl
@@ -71597,14 +71601,14 @@ alf
 azA
 azA
 aCT
-pod
-xNV
-hEa
+sso
+ccW
+lTe
 aRe
-dmx
-gwj
-qrD
-aQz
+toO
+nJl
+iWz
+rJk
 aQW
 aRg
 aRm
@@ -71858,13 +71862,13 @@ azA
 azA
 aCT
 hrk
-kxI
+aLp
 aRI
 aRS
 aRX
-aQz
-aQz
-aQz
+rJk
+rJk
+rJk
 aAc
 aAc
 aAc
@@ -72118,13 +72122,13 @@ azA
 azA
 aCT
 jIV
-okU
-cAD
+ltl
+fxz
 anE
-dmx
-gwj
-cVK
+toO
+nJl
 aQz
+rJk
 abc
 aQg
 aPX
@@ -72382,11 +72386,11 @@ aRG
 aRJ
 aRM
 aRX
-aQz
-aQz
-aQz
-aQz
-aQz
+rJk
+rJk
+rJk
+rJk
+rJk
 aRq
 aAc
 azA
@@ -72643,8 +72647,8 @@ aCT
 aCT
 aCT
 aQj
-aQz
-aQz
+rJk
+rJk
 aQY
 aRi
 aRo
@@ -72902,9 +72906,9 @@ azA
 azA
 aAc
 aRA
-aQz
-aQz
-aQz
+rJk
+rJk
+rJk
 aAc
 aAc
 aAc
@@ -73162,9 +73166,9 @@ azA
 azA
 aAc
 aSj
-aQz
-aQz
-aQz
+rJk
+rJk
+rJk
 aRa
 azI
 aRp
@@ -73422,11 +73426,11 @@ azA
 azA
 aAc
 aRd
-aQz
-aQz
-aQz
-aQz
-aQz
+rJk
+rJk
+rJk
+rJk
+rJk
 aRq
 aAc
 azA
@@ -73554,7 +73558,7 @@ azA
 azA
 azA
 aIh
-agx
+lxl
 agx
 agx
 aeU
@@ -73682,9 +73686,9 @@ azA
 azA
 aAc
 aQv
-aQz
-aQz
-aQz
+rJk
+rJk
+rJk
 aQA
 aRs
 aQR
@@ -73814,7 +73818,7 @@ azA
 azA
 azA
 aIh
-kAs
+muA
 cDv
 agx
 aeU
