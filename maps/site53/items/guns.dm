@@ -97,9 +97,6 @@
 	magazine_type = /obj/item/ammo_magazine/scp/m1911
 	allowed_magazines = list(/obj/item/ammo_magazine/scp/m1911)
 
-
-
-
 /obj/item/gun/projectile/pistol/usp45
 	name = "USP45"
 	desc = "Sidearm assigned to certain operatives and guards of the Foundation. Chambered in .45ACP."
