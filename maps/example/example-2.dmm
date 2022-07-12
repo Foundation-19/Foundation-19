@@ -82,7 +82,6 @@
 /obj/effect/floor_decal/corner/blue/diagonal,
 /obj/structure/table/glass,
 /obj/item/reagent_containers/dropper,
-/obj/item/reagent_containers/chem_disp_cartridge/peridaxon,
 /obj/item/stack/nanopaste,
 /obj/machinery/light{
 	dir = 8;

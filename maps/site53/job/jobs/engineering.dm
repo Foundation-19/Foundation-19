@@ -143,8 +143,6 @@
 	access = list(
 		access_eng_comms,
 		access_securitylvl1,
-		access_securitylvl2,
-		access_securitylvl3,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,
@@ -189,10 +187,6 @@
 	access = list(
 		access_eng_comms,
 		access_securitylvl1,
-		access_securitylvl2,
-		access_securitylvl3,
-		access_securitylvl4,
-		access_securitylvl4,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,

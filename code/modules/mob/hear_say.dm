@@ -90,6 +90,8 @@
 			var/turf/source = speaker? get_turf(speaker) : get_turf(src)
 			src.playsound_local(source, speech_sound, sound_vol, 1)
 
+		return message
+
 /mob/proc/on_hear_say(var/message)
 	to_chat(src, message)
 
@@ -118,7 +120,7 @@
 			if(istype(speaker,/mob/living/simple_animal))
 				var/mob/living/M = speaker
 				var/datum/say_list/S = M.say_list
-				if(S && S.speak && S.speak.len)
+				if(S?.speak && S.speak.len)
 					message = pick(S.speak)
 				else
 					return

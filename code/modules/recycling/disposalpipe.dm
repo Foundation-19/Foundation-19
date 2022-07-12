@@ -28,7 +28,7 @@
 
 // pipe is deleted
 // ensure if holder is present, it is expelled
-obj/structure/disposalpipe/Destroy()
+/obj/structure/disposalpipe/Destroy()
 	var/obj/structure/disposalholder/H = locate() in src
 	if(H)
 		// holder was present
@@ -773,7 +773,7 @@ obj/structure/disposalpipe/Destroy()
 
 	//Disposal constructors
 	var/obj/structure/disposalconstruct/C = locate() in src.loc
-	if(C && C.anchored)
+	if(C?.anchored)
 		return
 
 	var/turf/T = src.loc

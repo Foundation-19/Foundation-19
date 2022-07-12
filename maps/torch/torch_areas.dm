@@ -1575,7 +1575,7 @@
 	name = "\improper Robotics Laboratory"
 	req_access = list(list(access_medical,access_robotics))
 
-area/assembly/robotics/office
+/area/assembly/robotics/office
 	name = "\improper Robotics Office"
 
 /area/assembly/robotics/surgery

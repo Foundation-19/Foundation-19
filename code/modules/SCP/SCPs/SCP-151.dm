@@ -9,6 +9,7 @@
 	var/gen_time = 100 //how long we wait between hurting victims
 	var/list/victims = list()
 
+
 /obj/structure/scp151/proc/hurt_victims() //simulate drowning
 	for(var/mob/living/user in victims)
 		user.apply_damage(30, OXY)

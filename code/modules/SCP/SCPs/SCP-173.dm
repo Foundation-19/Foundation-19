@@ -11,12 +11,16 @@ GLOBAL_LIST_EMPTY(scp173s)
 	icon = 'icons/SCP/scp-173.dmi'
 	icon_state = "173"
 	SCP = /datum/scp/scp_173
+	status_flags = NO_ANTAG
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 
 	maxHealth = 5000
 	health = 5000
+
+	can_pull_size = 0 // Can't pull things
+	a_intent = "harm" // Doesn't switch places with people
 
 	/// Reference to the area we were created in
 	var/area/spawn_area
@@ -34,12 +38,15 @@ GLOBAL_LIST_EMPTY(scp173s)
 	/// How much time you have to wait before defecating again
 	var/defecation_cooldown_time = 30 SECONDS
 	/// What kind of objects/effects we spawn on defecation. Also used when checking the area
-	var/list/defecation_types = list(/obj/effect/decal/cleanable/blood, /obj/effect/decal/cleanable/blood/xeno, /obj/effect/decal/cleanable/vomit, /obj/effect/decal/cleanable/mucus)
+	var/list/defecation_types = list(/obj/effect/decal/cleanable/blood/gibs/red, /obj/effect/decal/cleanable/vomit, /obj/effect/decal/cleanable/mucus)
 
 	/// Simple cooldown for warning message for passive breach
 	var/warning_cooldown
 	/// Same, but for breaching effect
 	var/breach_cooldown
+
+	/// This one to avoid sound spam when opening doors
+	var/door_cooldown
 
 /mob/living/scp_173/Initialize()
 	GLOB.scp173s += src
@@ -63,13 +70,20 @@ GLOBAL_LIST_EMPTY(scp173s)
 /mob/living/scp_173/Move(a,b,f)
 	if(IsBeingWatched())
 		return FALSE
-	return ..(a,b,f)
+	return ..()
+
+/mob/living/scp_173/face_atom(atom/A)
+	if(IsBeingWatched())
+		return FALSE
+	return ..()
 
 /mob/living/scp_173/movement_delay()
 	return -5
 
 /mob/living/scp_173/UnarmedAttack(atom/A)
-	if(!IsBeingWatched() && ishuman(A))
+	if(IsBeingWatched() || incapacitated()) // We can't do anything while being watched
+		return
+	if(ishuman(A))
 		if(snap_cooldown > world.time)
 			to_chat(src, "<span class='warning'>You can't attack yet.</span>")
 			return
@@ -88,6 +102,15 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 	if(istype(A, /obj/machinery/door))
 		OpenDoor(A)
+		return
+	if(istype(A,/obj/structure/window))
+		var/obj/structure/window/W = A
+		W.shatter()
+		return
+	if(istype(A,/obj/structure/grille))
+		playsound(get_turf(A), 'sound/effects/grillehit.ogg', 50, 1)
+		qdel(A)
+		return
 	return
 
 /mob/living/scp_173/Life()
@@ -112,6 +135,12 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(world.time > snap_cooldown)
 		AIAttemptAttack()
 
+/mob/living/scp_173/ClimbCheck(atom/A)
+	if(IsBeingWatched())
+		to_chat(src, "<span class='danger'>You can't climb while being watched.</span>")
+		return FALSE
+	return TRUE
+
 /mob/living/scp_173/proc/IsBeingWatched()
 	for(var/mob/living/L in view(7, src))
 		if((istype(L, /mob/living/simple_animal/scp_131)) && (InCone(L, L.dir)))
@@ -132,33 +161,54 @@ GLOBAL_LIST_EMPTY(scp173s)
 	return FALSE
 
 /mob/living/scp_173/proc/OpenDoor(obj/machinery/door/A)
-	if(!istype(A) || incapacitated() || IsBeingWatched())
+	if(door_cooldown > world.time)
 		return
 
-	if(istype(A, /obj/machinery/door/blast/regular))
-		to_chat(src, "<span class='warning'>You cannot open blast doors.</span>")
+	if(!istype(A))
+		return
+
+	if(!A.density)
 		return
 
 	if(!A.Adjacent(src))
 		to_chat(src, "<span class='warning'>\The [A] is too far away.</span>")
 		return
 
-	if(!A.density)
+	var/open_time = 3 SECONDS
+	if(istype(A, /obj/machinery/door/blast))
+		if(get_area(A) == spawn_area)
+			to_chat(src, "<span class='warning'>You cannot open blast doors in your containment zone.</span>")
+			return
+		open_time = 15 SECONDS
+
+	if(istype(A, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/AR = A
+		if(AR.locked)
+			open_time += 2 SECONDS
+		if(AR.welded)
+			open_time += 2 SECONDS
+		if(AR.secured_wires)
+			open_time += 2 SECONDS
+
+	A.visible_message(SPAN_WARNING("\The [src] begins to pry open \the [A]!"))
+	playsound(get_turf(A), 'sound/machines/airlock_creaking.ogg', 35, 1)
+	door_cooldown = world.time + open_time // To avoid sound spam
+	if(!do_after(src, open_time, A))
 		return
 
-	visible_message("\The [src] begins to pry open \the [A]!")
-	if(!do_after(src, 5 SECONDS, A))
-		return
-
-	if(!A.density)
+	if(istype(A, /obj/machinery/door/blast))
+		var/obj/machinery/door/blast/DB = A
+		DB.visible_message(SPAN_DANGER("\The [src] forcefully opens \the [DB]!"))
+		DB.force_open()
 		return
 
 	if(istype(A, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/AR = A
 		AR.unlock(TRUE) // No more bolting in the SCPs and calling it a day
+		AR.welded = FALSE
 	A.stat |= BROKEN
 	var/check = A.open(TRUE)
-	visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
+	A.visible_message(SPAN_DANGER("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]"))
 
 /mob/living/scp_173/proc/DisableBlinking(mob/living/carbon/human/H)
 	next_blinks[H] = null
@@ -213,23 +263,28 @@ GLOBAL_LIST_EMPTY(scp173s)
 			if(Tdir && !IsBeingWatched())
 				SelfMove(Tdir)
 	// Breach check
-	var/area/A = get_area(src)
-	if(A == spawn_area) // Still in containment area
-		var/feces_amount = 0
-		for(var/obj/O in A)
-			if(O.type in defecation_types)
-				feces_amount += 1
-				continue
+	var/feces_amount = CheckFeces()
+	if(feces_amount >= 60) // Breach, gonna take ~30 minutes
+		if(breach_cooldown > world.time)
+			return
+		breach_cooldown = world.time + 10 MINUTES
+		warning_cooldown = world.time + 5 MINUTES // Just in case 173 doesn't immediately leave the area
+		command_announcement.Announce("ALERT! SCP-173 containment zone security measures have shut down due to severe acidic degradation.")
+		BreachEffect()
+	else if((feces_amount >= 40) && world.time > warning_cooldown) // Warning, after ~20 minutes
+		warning_cooldown = world.time + 2 MINUTES
+		command_announcement.Announce("ATTENTION! SCP-173 containment zone is suffering from mild acidic degradation. Janitorial services involvement is required.")
 
-		if(feces_amount >= 60) // Breach, gonna take ~30 minutes
-			if(breach_cooldown > world.time)
-				return
-			breach_cooldown = world.time + 10 MINUTES
-			command_announcement.Announce("ALERT! SCP-173 containment zone security measures have shut down due to severe acidic degradation.")
-			BreachEffect()
-		else if((feces_amount >= 40) && world.time > warning_cooldown) // Warning, after ~20 minutes
-			warning_cooldown = world.time + 2 MINUTES
-			command_announcement.Announce("ATTENTION! SCP-173 containment zone is suffering from mild acidic degradation. Janitorial services involvement is required.")
+/mob/living/scp_173/proc/CheckFeces(containment_zone = TRUE) // Proc that returns amount of 173 feces in the area
+	var/area/A = get_area(src)
+	if((A != spawn_area) && containment_zone) // Not in containment zone
+		return 0
+	var/feces_amount = 0
+	for(var/obj/O in A)
+		if(O.type in defecation_types)
+			feces_amount += 1
+			continue
+	return feces_amount
 
 /mob/living/scp_173/proc/BreachEffect()
 	var/area/A = get_area(src)
@@ -252,42 +307,45 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /obj/structure/scp173_cage/MouseDrop_T(atom/movable/dropping, mob/user)
 	if(isscp173(dropping))
-		visible_message("<span class = 'danger'>[user] starts to put SCP-173 into the cage.</span>")
+		visible_message(SPAN_WARNING("[user] starts to put SCP-173 into the cage."))
 		var/oloc = loc
-		if(do_after(user, 5 SECONDS, dropping) && loc == oloc) // shitty but there's no good alternative
+		if(do_after(user, 10 SECONDS, dropping) && loc == oloc)
 			dropping.forceMove(src)
 			underlays += image(dropping)
-			visible_message("<span class = 'good'>[user] puts SCP-173 in the cage.</span>")
+			visible_message(SPAN_NOTICE("[user] puts SCP-173 in the cage."))
 			name = "SCP-173 Cage"
 			playsound(loc, 'sound/machines/bolts_down.ogg', 50, 1)
 			return TRUE
 		return FALSE
 	if(isliving(dropping))
-		to_chat(user, "<span class = 'warning'>\The [dropping] won't fit in the cage.</span>")
+		to_chat(user, SPAN_WARNING("\The [dropping] won't fit in the cage."))
 	return FALSE
 
 /obj/structure/scp173_cage/attack_hand(mob/living/carbon/human/H)
 	if(!LAZYLEN(contents))
 		return ..()
-	if(do_after(H, 3 SECONDS, src))
-		visible_message("<span class = 'danger'>[H] opens the cage!</span>")
-		playsound(loc, 'sound/machines/bolts_up.ogg', 50, 1)
-		for(var/mob/living/L in contents)
-			L.forceMove(get_turf(src))
-		underlays.Cut()
-		name = initial(name)
+	visible_message(SPAN_WARNING("[H] attempts to open \the [src]."))
+	if(do_after(H, 5 SECONDS, src))
+		visible_message(SPAN_DANGER("[H] opens \the [src]!"))
+		ReleaseContents()
 
 /obj/structure/scp173_cage/relaymove(mob/user, direction)
 	if(resist_cooldown > world.time)
 		return
 	resist_cooldown = world.time + 10 SECONDS
-	if(do_after(user, 30 SECONDS, src))
+	if(do_after(user, 20 SECONDS, src))
 		visible_message("<span class = 'danger'>[user] opens the cage from the inside!</span>")
-		playsound(loc, 'sound/machines/bolts_up.ogg', 50, 1)
-		for(var/mob/living/L in contents)
-			L.forceMove(get_turf(src))
-		underlays.Cut()
-		name = initial(name)
+		ReleaseContents()
+
+/obj/structure/scp173_cage/proc/ReleaseContents()
+	if(!LAZYLEN(contents))
+		return FALSE
+	playsound(loc, 'sound/machines/bolts_up.ogg', 50, 1)
+	for(var/mob/living/L in contents)
+		L.forceMove(get_turf(src))
+	underlays.Cut()
+	name = initial(name)
+	return TRUE
 
 /*
  * Acid

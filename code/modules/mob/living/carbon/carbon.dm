@@ -59,7 +59,7 @@
 			user.last_special = world.time + 50
 			src.visible_message("<span class='danger'>You hear something rumbling inside [src]'s stomach...</span>")
 			var/obj/item/I = user.get_active_hand()
-			if(I && I.force)
+			if(I?.force)
 				var/d = rand(round(I.force / 4), I.force)
 				if(istype(src, /mob/living/carbon/human))
 					var/mob/living/carbon/human/H = src

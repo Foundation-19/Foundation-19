@@ -1,3 +1,6 @@
+#define SCP_096 "096"
+
+
 /mob/proc/is_scp012_affected(var/turf/target)
 	if (!target)
 		target = get_turf(src)

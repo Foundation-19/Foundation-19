@@ -9,9 +9,9 @@
 	var/heavy_effect_range = 1
 	var/light_effect_range = 2
 
-	on_impact(var/atom/A)
-		empulse(A, heavy_effect_range, light_effect_range)
-		return 1
+/obj/item/projectile/ion/on_impact(var/atom/A)
+	empulse(A, heavy_effect_range, light_effect_range)
+	return 1
 
 /obj/item/projectile/ion/small
 	name = "ion pulse"
@@ -28,9 +28,9 @@
 	damage = 60
 	damage_flags = DAM_BULLET | DAM_SHARP | DAM_EDGE
 
-	on_hit(var/atom/target, var/blocked = 0)
-		explosion(target, -1, 0, 2)
-		return 1
+/obj/item/projectile/bullet/gyro/on_hit(var/atom/target, var/blocked = 0)
+	explosion(target, -1, 0, 2)
+	return 1
 
 /obj/item/projectile/temp
 	name = "freeze beam"
@@ -140,25 +140,25 @@
 	damage_type = TOX
 	nodamage = TRUE
 
-	on_hit(var/atom/target, var/blocked = 0)
-		var/mob/M = target
-		if(ishuman(target)) //These rays make plantmen fat.
-			var/mob/living/carbon/human/H = M
-			if((H.species.species_flags & SPECIES_FLAG_IS_PLANT) && (H.nutrition < 500))
-				H.adjust_nutrition(30)
-		else if (istype(target, /mob/living/carbon/))
-			M.show_message("<span class='notice'>The radiation beam dissipates harmlessly through your body.</span>")
-		else
-			return 1
+/obj/item/projectile/energy/florayield/on_hit(var/atom/target, var/blocked = 0)
+	var/mob/M = target
+	if(ishuman(target)) //These rays make plantmen fat.
+		var/mob/living/carbon/human/H = M
+		if((H.species.species_flags & SPECIES_FLAG_IS_PLANT) && (H.nutrition < 500))
+			H.adjust_nutrition(30)
+	else if (istype(target, /mob/living/carbon/))
+		M.show_message("<span class='notice'>The radiation beam dissipates harmlessly through your body.</span>")
+	else
+		return 1
 
 
 /obj/item/projectile/beam/mindflayer
 	name = "flayer ray"
 
-	on_hit(var/atom/target, var/blocked = 0)
-		if(ishuman(target))
-			var/mob/living/carbon/human/M = target
-			M.confused += rand(5,8)
+/obj/item/projectile/beam/mindflayer/on_hit(var/atom/target, var/blocked = 0)
+	if(ishuman(target))
+		var/mob/living/carbon/human/M = target
+		M.confused += rand(5,8)
 
 /obj/item/projectile/chameleon
 	name = "bullet"

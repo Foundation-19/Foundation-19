@@ -201,20 +201,20 @@
 	path = 1
 	stage = 2
 
-	New()
-		..()
-		var/obj/item/reagent_containers/glass/beaker/B1 = new(src)
-		var/obj/item/reagent_containers/glass/beaker/B2 = new(src)
+/obj/item/grenade/chem_grenade/metalfoam/New()
+	..()
+	var/obj/item/reagent_containers/glass/beaker/B1 = new(src)
+	var/obj/item/reagent_containers/glass/beaker/B2 = new(src)
 
-		B1.reagents.add_reagent(/datum/reagent/aluminium, 30)
-		B2.reagents.add_reagent(/datum/reagent/foaming_agent, 10)
-		B2.reagents.add_reagent(/datum/reagent/acid/polytrinic, 10)
+	B1.reagents.add_reagent(/datum/reagent/aluminium, 30)
+	B2.reagents.add_reagent(/datum/reagent/foaming_agent, 10)
+	B2.reagents.add_reagent(/datum/reagent/acid/polytrinic, 10)
 
-		detonator = new/obj/item/device/assembly_holder/timer_igniter(src)
+	detonator = new/obj/item/device/assembly_holder/timer_igniter(src)
 
-		beakers += B1
-		beakers += B2
-		icon_state = initial(icon_state) +"_locked"
+	beakers += B1
+	beakers += B2
+	icon_state = initial(icon_state) +"_locked"
 
 /obj/item/grenade/chem_grenade/incendiary
 	name = "incendiary grenade"
@@ -222,22 +222,22 @@
 	path = 1
 	stage = 2
 
-	New()
-		..()
-		var/obj/item/reagent_containers/glass/beaker/B1 = new(src)
-		var/obj/item/reagent_containers/glass/beaker/B2 = new(src)
+/obj/item/grenade/chem_grenade/incendiary/New()
+	..()
+	var/obj/item/reagent_containers/glass/beaker/B1 = new(src)
+	var/obj/item/reagent_containers/glass/beaker/B2 = new(src)
 
-		B1.reagents.add_reagent(/datum/reagent/aluminium, 15)
-		B1.reagents.add_reagent(/datum/reagent/fuel,20)
-		B2.reagents.add_reagent(/datum/reagent/toxin/phoron, 15)
-		B2.reagents.add_reagent(/datum/reagent/acid/sulphuric, 15)
-		B1.reagents.add_reagent(/datum/reagent/fuel,20)
+	B1.reagents.add_reagent(/datum/reagent/aluminium, 15)
+	B1.reagents.add_reagent(/datum/reagent/fuel,20)
+	B2.reagents.add_reagent(/datum/reagent/toxin/phoron, 15)
+	B2.reagents.add_reagent(/datum/reagent/acid/sulphuric, 15)
+	B1.reagents.add_reagent(/datum/reagent/fuel,20)
 
-		detonator = new/obj/item/device/assembly_holder/timer_igniter(src)
+	detonator = new/obj/item/device/assembly_holder/timer_igniter(src)
 
-		beakers += B1
-		beakers += B2
-		icon_state = initial(icon_state) +"_locked"
+	beakers += B1
+	beakers += B2
+	icon_state = initial(icon_state) +"_locked"
 
 /obj/item/grenade/chem_grenade/antiweed
 	name = "weedkiller grenade"
@@ -245,21 +245,21 @@
 	path = 1
 	stage = 2
 
-	New()
-		..()
-		var/obj/item/reagent_containers/glass/beaker/B1 = new(src)
-		var/obj/item/reagent_containers/glass/beaker/B2 = new(src)
+/obj/item/grenade/chem_grenade/antiweed/New()
+	..()
+	var/obj/item/reagent_containers/glass/beaker/B1 = new(src)
+	var/obj/item/reagent_containers/glass/beaker/B2 = new(src)
 
-		B1.reagents.add_reagent(/datum/reagent/toxin/plant_b_gone, 25)
-		B1.reagents.add_reagent(/datum/reagent/potassium, 25)
-		B2.reagents.add_reagent(/datum/reagent/phosphorus, 25)
-		B2.reagents.add_reagent(/datum/reagent/sugar, 25)
+	B1.reagents.add_reagent(/datum/reagent/toxin/plant_b_gone, 25)
+	B1.reagents.add_reagent(/datum/reagent/potassium, 25)
+	B2.reagents.add_reagent(/datum/reagent/phosphorus, 25)
+	B2.reagents.add_reagent(/datum/reagent/sugar, 25)
 
-		detonator = new/obj/item/device/assembly_holder/timer_igniter(src)
+	detonator = new/obj/item/device/assembly_holder/timer_igniter(src)
 
-		beakers += B1
-		beakers += B2
-		icon_state = "grenade"
+	beakers += B1
+	beakers += B2
+	icon_state = "grenade"
 
 /obj/item/grenade/chem_grenade/cleaner
 	name = "cleaner grenade"
@@ -267,20 +267,20 @@
 	stage = 2
 	path = 1
 
-	New()
-		..()
-		var/obj/item/reagent_containers/glass/beaker/B1 = new(src)
-		var/obj/item/reagent_containers/glass/beaker/B2 = new(src)
+/obj/item/grenade/chem_grenade/cleaner/New()
+	..()
+	var/obj/item/reagent_containers/glass/beaker/B1 = new(src)
+	var/obj/item/reagent_containers/glass/beaker/B2 = new(src)
 
-		B1.reagents.add_reagent(/datum/reagent/surfactant, 40)
-		B2.reagents.add_reagent(/datum/reagent/water, 40)
-		B2.reagents.add_reagent(/datum/reagent/space_cleaner, 10)
+	B1.reagents.add_reagent(/datum/reagent/surfactant, 40)
+	B2.reagents.add_reagent(/datum/reagent/water, 40)
+	B2.reagents.add_reagent(/datum/reagent/space_cleaner, 10)
 
-		detonator = new/obj/item/device/assembly_holder/timer_igniter(src)
+	detonator = new/obj/item/device/assembly_holder/timer_igniter(src)
 
-		beakers += B1
-		beakers += B2
-		icon_state = initial(icon_state) +"_locked"
+	beakers += B1
+	beakers += B2
+	icon_state = initial(icon_state) +"_locked"
 
 /obj/item/grenade/chem_grenade/teargas
 	name = "tear gas grenade"
@@ -288,22 +288,22 @@
 	stage = 2
 	path = 1
 
-	New()
-		..()
-		var/obj/item/reagent_containers/glass/beaker/large/B1 = new(src)
-		var/obj/item/reagent_containers/glass/beaker/large/B2 = new(src)
+/obj/item/grenade/chem_grenade/teargas/New()
+	..()
+	var/obj/item/reagent_containers/glass/beaker/large/B1 = new(src)
+	var/obj/item/reagent_containers/glass/beaker/large/B2 = new(src)
 
-		B1.reagents.add_reagent(/datum/reagent/phosphorus, 40)
-		B1.reagents.add_reagent(/datum/reagent/potassium, 40)
-		B1.reagents.add_reagent(/datum/reagent/capsaicin/condensed, 40)
-		B2.reagents.add_reagent(/datum/reagent/sugar, 40)
-		B2.reagents.add_reagent(/datum/reagent/capsaicin/condensed, 80)
+	B1.reagents.add_reagent(/datum/reagent/phosphorus, 40)
+	B1.reagents.add_reagent(/datum/reagent/potassium, 40)
+	B1.reagents.add_reagent(/datum/reagent/capsaicin/condensed, 40)
+	B2.reagents.add_reagent(/datum/reagent/sugar, 40)
+	B2.reagents.add_reagent(/datum/reagent/capsaicin/condensed, 80)
 
-		detonator = new/obj/item/device/assembly_holder/timer_igniter(src)
+	detonator = new/obj/item/device/assembly_holder/timer_igniter(src)
 
-		beakers += B1
-		beakers += B2
-		icon_state = initial(icon_state) +"_locked"
+	beakers += B1
+	beakers += B2
+	icon_state = initial(icon_state) +"_locked"
 
 /obj/item/grenade/chem_grenade/water
 	name = "water grenade"

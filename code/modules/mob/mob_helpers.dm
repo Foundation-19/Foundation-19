@@ -52,30 +52,30 @@
 			return TRUE
 
 
-proc/isdeaf(A)
+/proc/isdeaf(A)
 	if(isliving(A))
 		var/mob/living/M = A
 		return (M.sdisabilities & DEAFENED) || M.ear_deaf
 	return 0
 
-proc/hasorgans(A) // Fucking really??
+/proc/hasorgans(A) // Fucking really??
 	return ishuman(A)
 
-proc/iscuffed(A)
+/proc/iscuffed(A)
 	if(istype(A, /mob/living/carbon))
 		var/mob/living/carbon/C = A
 		if(C.handcuffed)
 			return 1
 	return 0
 
-proc/hassensorlevel(A, var/level)
+/proc/hassensorlevel(A, var/level)
 	var/mob/living/carbon/human/H = A
 	if(istype(H) && istype(H.w_uniform, /obj/item/clothing/under))
 		var/obj/item/clothing/under/U = H.w_uniform
 		return U.sensor_mode >= level
 	return 0
 
-proc/getsensorlevel(A)
+/proc/getsensorlevel(A)
 	var/mob/living/carbon/human/H = A
 	if(istype(H) && istype(H.w_uniform, /obj/item/clothing/under))
 		var/obj/item/clothing/under/U = H.w_uniform
@@ -232,7 +232,7 @@ var/list/global/organ_rel_size = list(
 	if(re_encode)
 		. = html_encode(.)
 
-proc/slur(phrase)
+/proc/slur(phrase)
 	phrase = html_decode(phrase)
 	var/leng=length(phrase)
 	var/counter=length(phrase)
@@ -240,15 +240,22 @@ proc/slur(phrase)
 	var/newletter=""
 	while(counter>=1)
 		newletter=copytext(phrase,(leng-counter)+1,(leng-counter)+2)
-		if(rand(1,3)==3)
-			if(lowertext(newletter)=="o")	newletter="u"
-			if(lowertext(newletter)=="s")	newletter="ch"
-			if(lowertext(newletter)=="a")	newletter="ah"
-			if(lowertext(newletter)=="c")	newletter="k"
-		switch(rand(1,15))
-			if(1,3,5,8)	newletter="[lowertext(newletter)]"
-			if(2,4,6,15)	newletter="[uppertext(newletter)]"
-			if(7)	newletter+="'"
+		if(prob(30))
+			if(lowertext(newletter)=="o")
+				newletter="u"
+			if(lowertext(newletter)=="s")
+				newletter="ch"
+			if(lowertext(newletter)=="a")
+				newletter="ah"
+			if(lowertext(newletter)=="c")
+				newletter="k"
+		switch(rand(1,9))
+			if(1,2,3,4)
+				newletter="[lowertext(newletter)]"
+			if(5,6,7,8)
+				newletter="[uppertext(newletter)]"
+			if(9)
+				newletter+="'"
 			//if(9,10)	newletter="<b>[newletter]</b>"
 			//if(11,12)	newletter="<big>[newletter]</big>"
 			//if(13)	newletter="<small>[newletter]</small>"
@@ -279,7 +286,7 @@ proc/slur(phrase)
 	return sanitize(t)
 
 
-proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 for p will cause letters to be replaced instead of added
+/proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 for p will cause letters to be replaced instead of added
 	/* Turn text into complete gibberish! */
 	var/returntext = ""
 	for(var/i = 1, i <= length(t), i++)

@@ -359,10 +359,10 @@
 	var/dir2 = 0
 	var/dir3 = 0
 	switch(direction)
-		if(NORTH||SOUTH)
+		if(NORTH,SOUTH)
 			dir2 = 4
 			dir3 = 8
-		if(EAST||WEST)
+		if(EAST,WEST)
 			dir2 = 1
 			dir3 = 2
 	var/turf/T2 = T
@@ -392,12 +392,12 @@
 	else if (locate(/obj/machinery/field_generator) in T)
 		var/obj/machinery/field_generator/G = locate(/obj/machinery/field_generator) in T
 
-		if (G && G.active)
+		if (G?.active)
 			return 0
 	else if (locate(/obj/machinery/shieldwallgen) in T)
 		var/obj/machinery/shieldwallgen/S = locate(/obj/machinery/shieldwallgen) in T
 
-		if (S && S.active)
+		if (S?.active)
 			return 0
 	return 1
 

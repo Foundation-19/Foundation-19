@@ -414,6 +414,18 @@
 	name = "\improper Medbay"
 	icon_state = "med"
 
+/obj/structure/sign/directions/hcz
+	name = "\improper Heavy Containment Zone"
+	icon_state = "direction_hcz"
+
+/obj/structure/sign/directions/lcz
+	name = "\improper Low Containment Zone"
+	icon_state = "direction_lcz"
+
+/obj/structure/sign/directions/ez
+	name = "\improper Entrance Zone"
+	icon_state = "direction_ez"
+
 /obj/structure/sign/deck/bridge
 	name = "\improper Bridge Deck"
 	icon_state = "deck-b"

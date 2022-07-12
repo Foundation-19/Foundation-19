@@ -24,7 +24,7 @@ SUBSYSTEM_DEF(open_space)
 
 
 //Add the turf
-turf/simulated/open/LateInitialize()
+/turf/simulated/open/LateInitialize()
 	SSopen_space.add_turf(src)
 
 

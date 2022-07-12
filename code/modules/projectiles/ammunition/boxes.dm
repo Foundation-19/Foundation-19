@@ -66,17 +66,8 @@
 	caliber = CALIBER_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_STEEL = 1440)
-	max_ammo = 4
+	max_ammo = 6
 	multiple_sprites = 1
-	var/marking_color
-
-/obj/item/ammo_magazine/shotholder/on_update_icon()
-	..()
-	cut_overlays()
-	if(marking_color)
-		var/image/I = image(icon, "shotholder-marking")
-		I.color = marking_color
-		add_overlay(I)
 
 /obj/item/ammo_magazine/shotholder/attack_hand(mob/user)
 	if((user.a_intent == I_HURT) && (stored_ammo.len))
@@ -91,25 +82,21 @@
 /obj/item/ammo_magazine/shotholder/shell
 	name = "shotgun shell holder"
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
-	marking_color = COLOR_RED_GRAY
 
 /obj/item/ammo_magazine/shotholder/beanbag
 	name = "beanbag shell holder"
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	matter = list(MATERIAL_STEEL = 720)
-	marking_color = COLOR_PAKISTAN_GREEN
 
 /obj/item/ammo_magazine/shotholder/flash
 	name = "illumination shell holder"
 	ammo_type = /obj/item/ammo_casing/shotgun/flash
 	matter = list(MATERIAL_STEEL = 360, MATERIAL_GLASS = 360)
-	marking_color = COLOR_PALE_YELLOW
 
 /obj/item/ammo_magazine/shotholder/stun
 	name = "stun shell holder"
 	ammo_type = /obj/item/ammo_casing/shotgun/stunshell
 	matter = list(MATERIAL_STEEL = 1440, MATERIAL_GLASS = 2880)
-	marking_color = COLOR_MUZZLE_FLASH
 
 /obj/item/ammo_magazine/shotholder/empty
 	name = "shotgun ammunition holder"
@@ -184,16 +171,18 @@
 
 /obj/item/ammo_magazine/pistol/double
 	name = "doublestack pistol magazine"
-	icon_state = "pistol_mag"
+	icon_state = "9mmds"
 	matter = list(MATERIAL_STEEL = 1050)
 	max_ammo = 15
 
 /obj/item/ammo_magazine/pistol/double/rubber
 	labels = list("rubber")
+	icon_state = "R9mmds"
 	ammo_type = /obj/item/ammo_casing/pistol/rubber
 
 /obj/item/ammo_magazine/pistol/double/practice
 	labels = list("practice")
+	icon_state = "R9mmds"
 	ammo_type = /obj/item/ammo_casing/pistol/practice
 
 /obj/item/ammo_magazine/pistol/small

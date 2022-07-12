@@ -109,7 +109,7 @@ var/list/mining_floors = list()
 		add_overlay(excav_overlay)
 
 	if(archaeo_overlay)
-		add_overlay(archaeo_overlay)
+		add_overlay(image('icons/turf/excavation_overlays.dmi', archaeo_overlay))
 
 /turf/simulated/mineral/ex_act(severity)
 	switch(severity)
@@ -258,7 +258,7 @@ var/list/mining_floors = list()
 			if(!archaeo_overlay && finds && finds.len)
 				var/datum/find/F = finds[1]
 				if(F.excavation_required <= excavation_level + F.view_range)
-					archaeo_overlay = image('icons/turf/excavation_overlays.dmi',"overlay_archaeo[rand(1,3)]")
+					archaeo_overlay = "overlay_archaeo[rand(1,3)]"
 					updateIcon = 1
 
 			else if(archaeo_overlay && (!finds || !finds.len))

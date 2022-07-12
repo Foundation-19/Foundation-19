@@ -50,12 +50,15 @@
 	var/defer_roundstart_spawn = FALSE // If true, the job will be put off until all other jobs have been populated.
 	var/list/species_branch_rank_cache_ = list()
 	var/list/psi_faculties                // Starting psi faculties, if any.
-	var/psi_latency_chance = 0            // Chance of an additional psi latency, if any.
-	var/give_psionic_implant_on_join = TRUE // If psionic, will be implanted for control.
+	var/psi_latency_chance = 2            // Chance of an additional psi latency, if any.
+	var/give_psionic_implant_on_join = FALSE // If psionic, will be implanted for control.
 
 	var/use_species_whitelist // If set, restricts the job to players with the given species whitelist. This does NOT restrict characters joining as the job to the species itself.
 
 	var/required_language
+
+	var/balance_limited = FALSE //is this job limited for balance purposes, compared to D-class? Intended for LCZ balance
+
 
 /datum/job/New()
 
@@ -190,7 +193,10 @@
 			apply_fingerprints_to_item(holder, sub_item)
 
 /datum/job/proc/is_position_available()
-	return (current_positions < total_positions) || (total_positions == -1)
+	if(!check_d_class_balance())
+		return FALSE
+	else
+		return (current_positions < total_positions) || (total_positions == -1)
 
 /datum/job/proc/has_alt_title(var/mob/H, var/supplied_title, var/desired_title)
 	return (supplied_title == desired_title) || (H.mind && H.mind.role_alt_title == desired_title)
@@ -198,7 +204,7 @@
 /datum/job/proc/is_restricted(var/datum/preferences/prefs, var/feedback)
 	var/datum/species/S
 
-	if (!is_species_whitelist_allowed(prefs.client, use_species_whitelist))
+	if(!is_species_whitelist_allowed(prefs.client, use_species_whitelist))
 		S = all_species[use_species_whitelist]
 		to_chat(feedback, "<span class='boldannounce'>\An [S] species whitelist is required for [title].</span>")
 		return TRUE
@@ -226,14 +232,16 @@
 
 	return FALSE
 
-/datum/job/proc/get_join_link(var/client/caller, var/href_string, var/show_invalid_jobs)
-	if(is_available(caller))
-		if(is_restricted(caller.prefs))
-			if(show_invalid_jobs)
-				return "<tr><td><a style='text-decoration: line-through' href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
-		else
-			return "<tr><td><a href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
-	return ""
+/datum/job/proc/get_join_link(client/caller, href_string, show_invalid_jobs)
+	if(!is_available(caller))
+		if(show_invalid_jobs)
+			return "<tr><td><a style='background: #9E4444' href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
+		return ""
+	if(is_restricted(caller.prefs))
+		if(show_invalid_jobs)
+			return "<tr><td><a style='background: #9E4444' href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
+	else
+		return "<tr><td><a href='[href_string]'>[title]</a></td><td>[current_positions]</td><td>(Active: [get_active_count()])</td></tr>"
 
 // Only players with the job assigned and AFK for less than 10 minutes count as active
 /datum/job/proc/check_is_active(var/mob/M)
@@ -487,3 +495,25 @@
 		. = min_skill[S.type]
 	if(!.)
 		. = SKILL_MIN
+
+/datum/job/proc/check_d_class_balance()
+	if(!balance_limited) //if this role doesn't care about balance, move on
+		return TRUE
+
+	var/department_count = 0
+	var/datum/job/classd/CD
+
+	for(var/datum/job/job in SSjobs.primary_job_datums) //find all other jobs in our department
+		if(job.department == department && job.type != type)
+			department_count += job.get_active_count()
+
+		if(job.type == /datum/job/classd)
+			CD = job
+
+	if(department_count < 5) //LCZ can always have at least 5 guards, regardless of Class D population
+		return TRUE
+
+	if(department_count < CD.get_active_count() / 4) //if there is more than 4 d-class for every guard
+		return TRUE
+	else
+		return FALSE

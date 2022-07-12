@@ -4558,9 +4558,6 @@
 /turf/simulated/floor/tiled/skrell/red,
 /area/ship/skrellscoutship/hangar)
 "Cd" = (
-/obj/item/reagent_containers/chem_disp_cartridge/acetone,
-/obj/item/reagent_containers/chem_disp_cartridge/ammonia,
-/obj/item/reagent_containers/chem_disp_cartridge/carbon,
 /obj/item/scalpel/manager,
 /obj/item/storage/firstaid/surgery,
 /obj/structure/closet/crate/medical,

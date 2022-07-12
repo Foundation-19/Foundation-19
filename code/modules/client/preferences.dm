@@ -8,7 +8,7 @@
 
 #define MAX_LOAD_TRIES 5
 
-datum/preferences
+/datum/preferences
 	//doohickeys for savefiles
 	var/is_guest = FALSE
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
@@ -68,9 +68,6 @@ datum/preferences
 			load_data()
 
 	sanitize_preferences()
-	if(client && istype(client.mob, /mob/new_player))
-		var/mob/new_player/np = client.mob
-		np.new_player_panel(TRUE)
 
 /datum/preferences/proc/load_data()
 	load_failed = null
@@ -206,10 +203,6 @@ datum/preferences
 
 		if (winget(usr, "preferences_browser", "is-visible") == "true")
 			open_setup_window(usr)
-
-		if (istype(client.mob, /mob/new_player))
-			var/mob/new_player/M = client.mob
-			M.new_player_panel()
 
 		if (href_list["details"])
 			return 1

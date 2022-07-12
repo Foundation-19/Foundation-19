@@ -10,6 +10,7 @@
 	colour = "french"
 	key = "8"
 	shorthand = "Fr"
+	whisper_verb = "whispers"
 	partial_understanding = list(
 		LANGUAGE_HUMAN_SPANISH = 30,
 		LANGUAGE_HUMAN_ITALIAN = 25,

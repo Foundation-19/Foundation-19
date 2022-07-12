@@ -2,6 +2,9 @@
 /turf/simulated/wall/prepainted
 	paint_color = COLOR_GUNMETAL
 
+/turf/simulated/wall/prepainted/New(var/newloc)
+	..(newloc,MATERIAL_STEEL)
+
 /turf/simulated/wall/r_wall/prepainted
 	paint_color = COLOR_GUNMETAL
 
@@ -155,7 +158,7 @@
 /turf/simulated/wall/alium
 	icon_state = "jaggy"
 	floor_type = /turf/simulated/floor/fixed/alium
-	list/blend_objects = newlist()
+	blend_objects = newlist()
 
 /turf/simulated/wall/alium/New(var/newloc)
 	..(newloc,MATERIAL_ALIENALLOY)

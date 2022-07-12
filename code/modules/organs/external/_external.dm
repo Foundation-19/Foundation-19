@@ -274,18 +274,18 @@
 
 /obj/item/organ/external/proc/is_dislocated()
 	if(dislocated > 0)
-		return 1
+		return TRUE
 	if(is_parent_dislocated())
-		return 1//if any parent is dislocated, we are considered dislocated as well
-	return 0
+		return TRUE//if any parent is dislocated, we are considered dislocated as well
+	return FALSE
 
 /obj/item/organ/external/proc/is_parent_dislocated()
 	var/obj/item/organ/external/O = parent
-	while(O && O.dislocated != -1)
+	while(O && O.dislocated != -1) //don't use ?. in while loops, kids
 		if(O.dislocated == 1)
-			return 1
+			return TRUE
 		O = O.parent
-	return 0
+	return FALSE
 
 
 /obj/item/organ/external/proc/dislocate()
@@ -747,7 +747,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		else
 			brute_dam += W.damage
 
-		if(bleeds && W.bleeding() && (H && H.should_have_organ(BP_HEART)))
+		if(bleeds && W.bleeding() && (H?.should_have_organ(BP_HEART)))
 			W.bleed_timer--
 			status |= ORGAN_BLEEDING
 
@@ -1018,7 +1018,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		if(W.clamped)
 			return 1
 
-obj/item/organ/external/proc/remove_clamps()
+/obj/item/organ/external/proc/remove_clamps()
 	var/rval = 0
 	for(var/datum/wound/W in wounds)
 		rval |= W.clamped

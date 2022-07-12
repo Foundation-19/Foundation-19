@@ -709,9 +709,6 @@
 /obj/structure/filingcabinet,
 /turf/simulated/floor/wood,
 /area/site53/uez/hallway)
-"bO" = (
-/turf/simulated/floor/plating,
-/area/site53/uez/sdoffice)
 "bP" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1222,10 +1219,6 @@
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
-"da" = (
-/obj/effect/paint_stripe/blue,
-/turf/simulated/wall/titanium,
-/area/site53/uez/sdoffice)
 "db" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -1347,13 +1340,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
-"do" = (
-/obj/machinery/light/small/red{
-	dir = 4;
-	icon_state = "bulb1"
-	},
-/turf/simulated/floor/plating,
-/area/site53/uez/sdoffice)
 "dp" = (
 /obj/structure/bed/chair{
 	dir = 8;
@@ -2710,21 +2696,6 @@
 /obj/machinery/light,
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/hallway)
-"gD" = (
-/obj/structure/table/rack,
-/obj/item/rig/ce/equipped,
-/obj/structure/window/reinforced{
-	dir = 1;
-	icon_state = "rwindow"
-	},
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/window/brigdoor/eastright,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "gE" = (
 /obj/effect/floor_decal/spline/fancy/black{
@@ -34100,10 +34071,10 @@ ac
 bM
 aM
 aM
-bO
-bO
-do
-bO
+aM
+aM
+bT
+aM
 ac
 dj
 dq
@@ -34611,8 +34582,8 @@ hk
 hk
 hk
 hk
-da
-bO
+ac
+aM
 ac
 ca
 ca
@@ -34868,8 +34839,8 @@ hk
 hk
 hk
 hk
-da
-bO
+ac
+aM
 ac
 cb
 ck
@@ -35125,8 +35096,8 @@ hk
 hk
 hk
 hk
-da
-bO
+ac
+aM
 ac
 ac
 cl
@@ -35382,8 +35353,8 @@ hk
 hk
 hk
 hk
-da
-bO
+ac
+aM
 ac
 ov
 cm
@@ -35639,8 +35610,8 @@ hk
 hk
 hk
 hk
-da
-bO
+ac
+aM
 ac
 cc
 cn
@@ -36171,8 +36142,8 @@ el
 fl
 fl
 fl
+fl
 gu
-gD
 dZ
 ai
 ai

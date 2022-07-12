@@ -15,7 +15,7 @@ var/list/fusion_reactions
 /decl/fusion_reaction/proc/handle_reaction_special(var/obj/effect/fusion_em_field/holder)
 	return 0
 
-proc/get_fusion_reaction(var/p_react, var/s_react, var/m_energy)
+/proc/get_fusion_reaction(var/p_react, var/s_react, var/m_energy)
 	if(!fusion_reactions)
 		fusion_reactions = list()
 		for(var/rtype in typesof(/decl/fusion_reaction) - /decl/fusion_reaction)
@@ -147,7 +147,7 @@ proc/get_fusion_reaction(var/p_react, var/s_react, var/m_energy)
 		if(I.cur_assembly && I.cur_assembly.fuel_type == MATERIAL_SUPERMATTER)
 			explosion(get_turf(I), 1, 2, 3)
 			spawn(5)
-				if(I && I.loc)
+				if(I?.loc)
 					qdel(I)
 
 	sleep(5)

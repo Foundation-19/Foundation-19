@@ -75,7 +75,7 @@
 		qdel(M.shadow)
 		M.shadow = null
 		var/client/C = M.client
-		if(C && C.eye == shadow)
+		if(C?.eye == shadow)
 			M.reset_view(0)
 
 //

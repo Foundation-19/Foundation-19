@@ -154,3 +154,8 @@
 	name = "\improper Mohrandade passport"
 	icon_state = "passport"
 	desc = "A passport from the Empire of Mohranda, a frontier empire established on Lohrene and Mohranda, in the Luggust system."
+
+//EARTH SHIT
+/obj/item/passport/earth/usa
+	name = "\improper US passport"
+	desc = "A patriotic passport, to identify yourself as a citizien of the greatest country on earth while abroad."

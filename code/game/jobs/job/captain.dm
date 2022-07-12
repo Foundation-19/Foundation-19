@@ -42,6 +42,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	ideal_character_age = 50
 
 	access = list(
+		access_hop,
 		access_adminlvl1,
 		access_adminlvl2,
 		access_adminlvl3,
@@ -73,9 +74,6 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	/datum/mil_rank/security/w4,
 	/datum/mil_rank/security/w5
 	)
-	equip(var/mob/living/carbon/human/H)
-		..()
-
 	access = list(
 		access_securitylvl1,
 		access_securitylvl2,
@@ -121,8 +119,6 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/classa
 	)
-	equip(var/mob/living/carbon/human/H)
-		..()
 
 	access = list(
 		access_adminlvl1,
@@ -154,8 +150,6 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/classa
 	)
-	equip(var/mob/living/carbon/human/H)
-		..()
 
 	access = list(
 		access_civ_comms,

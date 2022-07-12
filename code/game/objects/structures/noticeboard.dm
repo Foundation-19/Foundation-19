@@ -55,7 +55,7 @@
 		if((usr.stat || usr.restrained()))	//For when a player is handcuffed while they have the notice window open
 			return
 		var/obj/item/P = locate(href_list["remove"])
-		if(P && P.loc == src)
+		if(P?.loc == src)
 			P.loc = get_turf(src)	//dump paper on the floor because you're a clumsy fuck
 			P.add_fingerprint(usr)
 			add_fingerprint(usr)
@@ -65,7 +65,7 @@
 		if((usr.stat || usr.restrained())) //For when a player is handcuffed while they have the notice window open
 			return
 		var/obj/item/P = locate(href_list["write"])
-		if((P && P.loc == src)) //ifthe paper's on the board
+		if((P?.loc == src)) //ifthe paper's on the board
 			if(istype(usr.r_hand, /obj/item/weapon/pen)) //and you're holding a pen
 				add_fingerprint(usr)
 				P.attackby(usr.r_hand, usr) //then do ittttt
@@ -77,10 +77,10 @@
 					to_chat(usr, "<span class='notice'>You'll need something to write with!</span>")
 	if(href_list["read"])
 		var/obj/item/weapon/paper/P = locate(href_list["read"])
-		if((P && P.loc == src))
+		if((P?.loc == src))
 			P.show_content(usr)
 	if(href_list["look"])
 		var/obj/item/weapon/photo/P = locate(href_list["look"])
-		if((P && P.loc == src))
+		if((P?.loc == src))
 			P.show(usr)
 	return

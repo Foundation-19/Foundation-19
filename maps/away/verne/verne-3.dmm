@@ -2692,9 +2692,6 @@
 /turf/simulated/floor/tiled/freezer,
 /area/verne/common/kitchen)
 "ty" = (
-/obj/item/reagent_containers/chem_disp_cartridge/acetone,
-/obj/item/reagent_containers/chem_disp_cartridge/copper,
-/obj/item/reagent_containers/chem_disp_cartridge/imidazoline,
 /obj/structure/table/rack,
 /obj/item/reagent_containers/syringe/antitoxin,
 /obj/item/reagent_containers/glass/beaker/bluespace,
@@ -5052,7 +5049,6 @@
 	req_access = newlist()
 	},
 /obj/item/reagent_containers/food/snacks/mint,
-/obj/item/reagent_containers/chem_disp_cartridge/ethanol,
 /turf/simulated/floor/tiled/freezer,
 /area/verne/common/kitchen/fridge)
 "Nz" = (

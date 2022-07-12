@@ -86,7 +86,7 @@
 /obj/effect/shuttle_landmark/heli/mtf/start
 	name = "MTF Base"
 	landmark_tag = "nav_mtf_start"
-	base_turf = /turf/simulated/floor/tiled/dark
+	base_turf = /turf/unsimulated/floor/reinforced
 
 /obj/effect/shuttle_landmark/heli/mtf/out
 	name = "Site 53"
@@ -150,6 +150,7 @@
 	name = "Chaos Base"
 	landmark_tag = "car1_start"
 	base_turf = /turf/simulated/floor/exoplanet/snow
+	base_area = /area/site53/surface/surface
 
 /obj/effect/shuttle_landmark/chaos1/out
 	name = "Site 53"
@@ -157,23 +158,25 @@
 	base_turf = /turf/simulated/floor/exoplanet/snow
 	base_area = /area/site53/surface/surface
 
-/datum/shuttle/autodock/ferry/chaos2
-	name = "Chaos Car 2"
+/datum/shuttle/autodock/ferry/goc1
+	name = "GOC Car 1"
 	warmup_time = 20
-	shuttle_area = list(/area/site53/tram/car2)
-	waypoint_station = "car2_start"
-	waypoint_offsite = "car2_out"
+	shuttle_area = list(/area/site53/tram/goc1)
+	waypoint_station = "goc1_start"
+	waypoint_offsite = "goc1_out"
 
 
-/obj/effect/shuttle_landmark/chaos2/start
-	name = "Chaos Base"
-	landmark_tag = "car2_start"
+/obj/effect/shuttle_landmark/goc1/start
+	name = "GOC Base"
+	landmark_tag = "goc1_start"
 	base_turf = /turf/simulated/floor/exoplanet/snow
+	base_area = /area/site53/surface/surface
 
-/obj/effect/shuttle_landmark/chaos2/out
+/obj/effect/shuttle_landmark/goc1/out
 	name = "Site 53"
-	landmark_tag = "car2_out"
+	landmark_tag = "goc1_out"
 	base_turf = /turf/simulated/floor/exoplanet/snow
+	base_area = /area/site53/surface/surface
 /*
 /datum/shuttle/autodock/multi/antag/rescue
 	name = "Rescue"
@@ -275,6 +278,7 @@
 /obj/effect/shuttle_landmark/supply/centcom
 	name = "Offsite"
 	landmark_tag = "nav_cargo_start"
+	base_turf = /turf/unsimulated/floor/reinforced
 
 /obj/effect/shuttle_landmark/supply/station
 	name = "Hangar"

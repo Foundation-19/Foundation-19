@@ -16,6 +16,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	icon = 'icons/SCP/scp-106.dmi'
 	icon_state = null
 	var/mob/observer/eye/scp106/WallEye
+
 	status_flags = NO_ANTAG
 
 /datum/scp/scp_106
