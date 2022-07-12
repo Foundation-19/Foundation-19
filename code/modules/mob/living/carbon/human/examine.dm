@@ -111,7 +111,7 @@
 
 	//ID
 	if(wear_id)
-		msg += "[p_they(TRUE)] [p_are()] wearing [wear_id.get_examine_line()].\n"image.
+		msg += "[p_they(TRUE)] [p_are()] wearing [wear_id.get_examine_line()].\n"
 
 	//handcuffed?
 	if(handcuffed)
