@@ -311,12 +311,14 @@
 	title = "We Die In The Dark, So You Can Live In The Light"
 	author = "Piotr Musial"
 	license = /decl/license/grandfathered
+	url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
 /decl/audio/track/perdition
 	source = 'sound/music/perdition.ogg'
 	title = "Site 64 Perdition"
 	author = "Comrade"
 	license = /decl/license/grandfathered
+	url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
 /decl/audio/track/ajoura
 	source = 'sound/music/ajoura.ogg'
@@ -330,12 +332,14 @@
 	title = "30 Days"
 	author = "Buffalowing/Various Artists"
 	license = /decl/license/grandfathered
+	url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
 /decl/audio/track/hie
 	source = 'sound/music/howitends.ogg'
 	title = "How It Ends"
 	author = "Atli �rvarsson"
 	license = /decl/license/grandfathered
+	url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
 /decl/audio/track/chaos
 	source = 'sound/music/chaos_insurgency.ogg'
