@@ -2270,6 +2270,13 @@
 "fY" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/paleblue/mono,
+/obj/item/device/flashlight,
+/obj/item/device/flashlight{
+	pixel_y = 15
+	},
+/obj/item/device/flashlight{
+	pixel_y = 7
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
 "fZ" = (
