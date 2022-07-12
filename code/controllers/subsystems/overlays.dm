@@ -194,7 +194,7 @@ SUBSYSTEM_DEF(overlays)
 		return
 
 	var/list/cached_other = other.our_overlays
-	if(cached_other)
+	if(length(cached_other))
 		if(cut_old)
 			our_overlays = cached_other.Copy()
 		else
