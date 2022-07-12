@@ -36,6 +36,9 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		transform = null
 	return
 
+/mob/living/carbon/human/scp106/New(new_loc, new_species)
+	new_species = "SCP-106"
+	. = ..()
 
 /mob/living/carbon/human/scp106/Initialize()
 	. = ..()
@@ -58,7 +61,6 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	verbs += /mob/living/carbon/human/scp106/proc/wall_phase
 	verbs += /mob/living/carbon/human/scp106/proc/wall_unphase
 
-	set_species("SCP-106")
 	GLOB.scp106s |= src
 
 /mob/living/carbon/human/scp106/Destroy()
