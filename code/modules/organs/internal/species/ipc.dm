@@ -214,7 +214,7 @@
 		add_overlay(image('icons/obj/assemblies.dmi', "posibrain-shackles"))
 
 /obj/item/organ/internal/posibrain/proc/transfer_identity(var/mob/living/carbon/H)
-	if(H && H.mind)
+	if(H?.mind)
 		brainmob.set_stat(CONSCIOUS)
 		H.mind.transfer_to(brainmob)
 		brainmob.SetName(H.real_name)
@@ -260,7 +260,7 @@
 					owner.Weaken(2)
 			if (prob(2))
 				var/obj/item/organ/internal/cell/C = owner.internal_organs_by_name[BP_CELL]
-				if (C && C.get_charge() > 25)
+				if(C?.get_charge() > 25)
 					C.use(25)
 					to_chat(owner, SPAN_WARNING("Your chassis power routine fluctuates wildly."))
 					var/datum/effect/effect/system/spark_spread/S = new

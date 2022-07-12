@@ -26,9 +26,9 @@ var/intercom_range_display_status = 0
 	icon = 'icons/480x480.dmi'
 	icon_state = "25percent"
 
-	New()
-		src.pixel_x = -224
-		src.pixel_y = -224
+/obj/effect/debugging/camera_range/New()
+	src.pixel_x = -224
+	src.pixel_y = -224
 
 /obj/effect/debugging/marker
 	icon = 'icons/turf/areas.dmi'
@@ -279,7 +279,7 @@ var/list/debug_verbs = list (
 		if(istype(A,type_path))
 			var/atom/B = A
 			while(!(isturf(B.loc)))
-				if(B && B.loc)
+				if(B?.loc)
 					B = B.loc
 				else
 					break

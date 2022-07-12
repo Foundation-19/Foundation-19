@@ -96,6 +96,11 @@
 	icon_state = "cap_cypherkey"
 	channels = list("Command" = 1, "Security" = 1, "Engineering" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Hailing" = 0, "HCZ-Security" = 1, "LCZ-Security" =1, "ECZ-Security" = 1)
 
+/obj/item/device/encryptionkey/heads/qm
+	name = "logistics officer's encryption key"
+	icon_state = "cargo_cypherkey"
+	channels = list("Supply" = 1, "Command" = 1, "Hailing" = 1)
+
 /obj/item/device/encryptionkey/heads/ai_integrated
 	name = "ai integrated encryption key"
 	desc = "Integrated encryption key."
@@ -105,7 +110,7 @@
 /obj/item/device/encryptionkey/heads/rd
 	name = "chief science officer's encryption key"
 	icon_state = "rd_cypherkey"
-	channels = list("Science" = 1, "Command" = 1, "Hailing" = 1, "HCZ-Security" = 1, "LCZ-Security" =1, "ECZ-Security" = 1)
+	channels = list("Science" = 1, "Command" = 1, "Hailing" = 1)
 
 /obj/item/device/encryptionkey/heads/hos
 	name = "head of security's encryption key"
@@ -115,12 +120,12 @@
 /obj/item/device/encryptionkey/heads/ce
 	name = "chief engineer's encryption key"
 	icon_state = "ce_cypherkey"
-	channels = list("Engineering" = 1, "Command" = 1, "Hailing" = 1, "HCZ-Security" = 1, "LCZ-Security" =1, "ECZ-Security" = 1)
+	channels = list("Engineering" = 1, "Command" = 1, "Hailing" = 1)
 
 /obj/item/device/encryptionkey/heads/cmo
 	name = "chief medical officer's encryption key"
 	icon_state = "cmo_cypherkey"
-	channels = list("Medical" = 1, "Command" = 1, "Hailing" = 1, "HCZ-Security" = 1, "LCZ-Security" =1, "ECZ-Security" = 1)
+	channels = list("Medical" = 1, "Command" = 1, "Hailing" = 1)
 
 /obj/item/device/encryptionkey/heads/hop
 	name = "head of personnel's encryption key"

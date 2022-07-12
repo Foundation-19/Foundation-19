@@ -67,7 +67,7 @@
 	var/datum/integrated_io/incoming = inputs[1]
 	var/atom/A = incoming.data_as_type(/atom)
 
-	set_pin_data(IC_OUTPUT, 1, A && A.name)
+	set_pin_data(IC_OUTPUT, 1, A?.name)
 
 /obj/item/integrated_circuit/converter/lowercase
 	name = "lowercase string converter"

@@ -237,16 +237,8 @@
 	//duties = "<big><b>As the EMT it is your job to man the medical post near the Class D cell block, and treat any injuries there of the guards or Class D's. You only have limited supplies, so it's best to make them count.</b></big>"
 	//supervisors = "the Chief Medical Officer"
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/emt
-	allowed_branches = list(
-	/datum/mil_branch/security,
-	/datum/mil_branch/civilian)
-	allowed_ranks = list(
-		/datum/mil_rank/security/e2,
-		/datum/mil_rank/security/e3,
-		/datum/mil_rank/security/e4,
-		/datum/mil_rank/security/e5,
-		/datum/mil_rank/civ/classc
-		)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudemt"
 
 	access = list(

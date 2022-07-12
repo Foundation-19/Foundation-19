@@ -123,8 +123,8 @@
 	dynamic_lighting = 0
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/tram/car2
-	name = "Chaos Car"
+/area/site53/tram/goc1
+	name = "GOC Car"
 	icon_state = "Sleep"
 	requires_power = 0
 	dynamic_lighting = 0

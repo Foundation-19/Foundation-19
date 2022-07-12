@@ -101,96 +101,96 @@
 	name = "\improper Verne Hangar"
 	icon_state = "living"
 
-area/verne/medical
+/area/verne/medical
 	name = "\improper Verne Medical Bay"
 	icon_state = "med"
 
-area/verne/medical/chem
+/area/verne/medical/chem
 	name = "\improper Verne Chemistry"
 	icon_state = "chem"
 
-area/verne/medical/storage
+/area/verne/medical/storage
 	name = "\improper Verne Medical Storage"
 	icon_state = "med2"
 
-area/verne/medical/surgery
+/area/verne/medical/surgery
 	name = "\improper Verne Medical Surgery"
 	icon_state = "med3"
 
-area/verne/common
+/area/verne/common
 	name = "\improper Verne Library"
 	icon_state = "library"
 
-area/verne/common/hydroponics
+/area/verne/common/hydroponics
 	name = "\improper Verne Hydroponics"
 	icon_state = "hydro"
 
-area/verne/common/messseating
+/area/verne/common/messseating
 	name = "\improper Verne Mess Seating"
 	icon_state = "common"
 
-area/verne/common/messseating/small
+/area/verne/common/messseating/small
 	name = "\improper Verne Mess Hallway"
 	icon_state = "common2"
 
-area/verne/common/hallway
+/area/verne/common/hallway
 	name = "\improper Verne Habitation Hallway"
 	icon_state = "living"
 
-area/verne/common/professor
+/area/verne/common/professor
 	name = "\improper Verne Professors Office"
 	icon_state = "living2"
 
-area/verne/common/head
+/area/verne/common/head
 	name = "\improper Verne Head"
 	icon_state = "head"
 
-area/verne/common/cryo
+/area/verne/common/cryo
 	name = "\improper Verne Cryostasis"
 	icon_state = "cryo"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
-area/verne/common/room
+/area/verne/common/room
 	name = "\improper Verne Stateroom One"
 	icon_state = "state1"
 
-area/verne/common/room/two
+/area/verne/common/room/two
 	name = "\improper Verne Stateroom Two"
 	icon_state = "state2"
 
-area/verne/common/room/three
+/area/verne/common/room/three
 	name = "\improper Verne Stateroom Three"
 	icon_state = "state3"
 
-area/verne/common/room/four
+/area/verne/common/room/four
 	name = "\improper Verne Stateroom Four"
 	icon_state = "state4"
 
-area/verne/common/room/five
+/area/verne/common/room/five
 	name = "\improper Verne Stateroom Five"
 	icon_state = "state5"
 
-area/verne/common/room/six
+/area/verne/common/room/six
 	name = "\improper Verne Stateroom Six"
 	icon_state = "state6"
 
-area/verne/common/room/seven
+/area/verne/common/room/seven
 	name = "\improper Verne Stateroom Seven"
 	icon_state = "state7"
 
-area/verne/common/room/eight
+/area/verne/common/room/eight
 	name = "\improper Verne Stateroom Eight"
 	icon_state = "state8"
 
-area/verne/common/kitchen
+/area/verne/common/kitchen
 	name = "\improper Verne Kitchen"
 	icon_state = "kitchen"
 
-area/verne/common/kitchen/access
+/area/verne/common/kitchen/access
 	name = "\improper Verne Mess Serving Line"
 	icon_state = "kitchen2"
 
-area/verne/common/kitchen/fridge
+/area/verne/common/kitchen/fridge
 	name = "\improper Verne Kitchen Fridge"
 	icon_state = "kitchen3"
 

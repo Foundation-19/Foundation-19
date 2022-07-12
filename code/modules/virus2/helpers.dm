@@ -1,5 +1,5 @@
 //Returns 1 if mob can be infected, 0 otherwise.
-proc/infection_chance(var/mob/living/carbon/M, var/vector = "Airborne")
+/proc/infection_chance(var/mob/living/carbon/M, var/vector = "Airborne")
 	if (!istype(M))
 		return 0
 
@@ -175,6 +175,6 @@ proc/infection_chance(var/mob/living/carbon/M, var/vector = "Airborne")
 		if (nudity)
 			for (var/ID in victim.virus2)
 				var/datum/disease2/disease/V = victim.virus2[ID]
-				if(V && V.spreadtype != vector) continue
+				if(V?.spreadtype != vector) continue
 				if(!infection_spreading_check(victim, V.spreadtype)) continue
 				infect_virus2(src,V)

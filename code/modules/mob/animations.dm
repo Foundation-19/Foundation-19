@@ -271,7 +271,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 	else if(pixel_z != default_pixel_z)
 		var/turf/T = get_turf(src)
 		for(var/obj/structure/S in T.contents)
-			if(S && S.mob_offset)
+			if(S?.mob_offset)
 				return
 		animate(src, pixel_z = default_pixel_z, time = 2, easing = SINE_EASING)
 

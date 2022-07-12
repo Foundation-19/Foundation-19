@@ -23,14 +23,14 @@
 /obj/item/robot_module/security/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	..()
 	for(var/obj/item/gun/energy/T in equipment)
-		if(T && T.power_supply)
+		if(T?.power_supply)
 			if(T.power_supply.charge < T.power_supply.maxcharge)
 				T.power_supply.give(T.charge_cost * amount)
 				T.update_icon()
 			else
 				T.charge_tick = 0
 	var/obj/item/melee/baton/robot/B = locate() in equipment
-	if(B && B.bcell)
+	if(B?.bcell)
 		B.bcell.give(amount)
 
 /obj/item/robot_module/security/general

@@ -1,6 +1,6 @@
 /mob/new_player/Login()
 	update_Login_details()	//handles setting lastKnownIP and computer_id for use by the ban systems as well as checking for multikeying
-	if (config.motd)
+	if(config.motd)
 		to_chat(src, "<div class=\"motd\">[config.motd]</div>", handle_whitespace=FALSE)
 	to_chat(src, "<div class='info'>Game ID: <div class='danger'>[game_id]</div></div>")
 
@@ -10,15 +10,12 @@
 		mind.current = src
 
 	loc = null
-	GLOB.using_map.show_titlescreen(client)
 	my_client = client
-	set_sight(sight|SEE_TURFS)
+	sight |= SEE_TURFS
 
 	// Add to player list if missing
-	if (!list_find(GLOB.player_list, src))
+	if(!list_find(GLOB.player_list, src))
 		ADD_SORTED(GLOB.player_list, src, /proc/cmp_mob_key)
-
-	new_player_panel()
 
 	if(!SScharacter_setup.initialized)
 		SScharacter_setup.newplayers_requiring_init += src
@@ -41,3 +38,4 @@
 	if(SL.up_description)
 		alert_desc = SL.up_description
 	to_chat(src, "<span class='notice'>The alert level on the [station_name()] is currently: <font color=[SL.light_color_alarm]><B>[SL.name]</B></font>. [alert_desc]</span>")
+	InitializeHud()

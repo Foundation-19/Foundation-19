@@ -11,9 +11,9 @@
 /mob/living/silicon/robot/Allow_Spacemove()
 	if(module)
 		for(var/obj/item/tank/jetpack/J in module.equipment)
-			if(J && J.allow_thrust(0.01))
+			if(J?.allow_thrust(0.01))
 				return 1
-	. = ..()
+	return ..()
 
 
  //No longer needed, but I'll leave it here incase we plan to re-use it.

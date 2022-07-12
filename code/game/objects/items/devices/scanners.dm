@@ -55,7 +55,7 @@ REAGENT SCANNER
 	to_chat(user, medical_scan_results(H, mode))
 	to_chat(user, "<hr>")
 
-proc/medical_scan_results(var/mob/living/carbon/human/H, var/verbose)
+/proc/medical_scan_results(var/mob/living/carbon/human/H, var/verbose)
 	. = list()
 	. += "<span class='notice'><b>Scan results for \the [H]:</b></span>"
 
@@ -254,7 +254,7 @@ proc/medical_scan_results(var/mob/living/carbon/human/H, var/verbose)
 	. = jointext(.,"<br>")
 
 // Calculates severity based on the ratios defined external limbs.
-proc/get_wound_severity(var/damage_ratio, var/vital = 0)
+/proc/get_wound_severity(var/damage_ratio, var/vital = 0)
 	var/degree
 
 	switch(damage_ratio)

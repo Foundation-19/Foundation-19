@@ -244,7 +244,7 @@
 
 				else if(issilicon(M)) //silicon
 					if(isAI(M))
-						M_job = "AIC"
+						M_job = "AI"
 					else if(ispAI(M))
 						M_job = "pAI"
 					else if(isrobot(M))

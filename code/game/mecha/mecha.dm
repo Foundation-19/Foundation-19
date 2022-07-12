@@ -361,7 +361,7 @@
 		occupant_message("<font color='red'>Maintenance protocols in effect.</font>")
 		return
 	. = do_move(direction)
-	occupant.dir = dir 
+	occupant.dir = dir
 	occupant.update_vision_cone()
 
 /obj/mecha/proc/do_move(direction)
@@ -1052,7 +1052,7 @@
 	return
 
 /obj/mecha/proc/moved_inside(var/mob/living/carbon/human/H as mob)
-	if(H && H.client && H in range(1))
+	if(H?.client && H in range(1))
 		H.reset_view(src)
 		/*
 		H.client.perspective = EYE_PERSPECTIVE
@@ -1152,7 +1152,7 @@
 		*/
 		src.occupant << browse(null, "window=exosuit")
 		src.occupant.update_vision_cone()
-		
+
 		if(istype(mob_container, /obj/item/device/mmi))
 			var/obj/item/device/mmi/mmi = mob_container
 			if(mmi.brainmob)
