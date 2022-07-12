@@ -176,9 +176,6 @@
 	max_ammo = 30
 	multiple_sprites = 1
 
-
-
-
 /obj/item/ammo_magazine/scp/usp45
 	name = "USP .45ACP Magazine"
 	icon_state = "magnum"
