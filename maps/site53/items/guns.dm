@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/shotgun/tactical
 	name = "combat shotgun"
-	desc = "A fully automatic shotgun, This one has a orange stripe."
+	desc = "A pump action shotgun"
 	icon_state = "tac_shotgun"
 	item_state = "cshotgun"
 	caliber = CALIBER_SHOTGUN
@@ -22,7 +22,7 @@
 
 /obj/item/gun/projectile/pistol/mk9
 	name = "MK9 Envy"
-	desc = "Standard issue 9mm pistol of the SCP Foundation, based on the Makarov."
+	desc = "Standard issue 9mm pistol of the SCP Foundation."
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "MK9"
 	w_class = ITEM_SIZE_NORMAL
@@ -82,3 +82,46 @@
 		icon_state = "gyropistolloaded"
 	else
 		icon_state = "gyropistol"
+
+
+
+
+
+/obj/item/gun/projectile/pistol/m1911
+	name = "M1911"
+	desc = "A classic Model 1911 pistol. Still effective even today, generally used as a surplus sidearm for Foundation security staff."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "colt"
+	w_class = ITEM_SIZE_NORMAL
+	caliber = ".45"
+	silenced = 0
+	fire_delay = 3
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/scp/m1911
+	allowed_magazines = list(/obj/item/ammo_magazine/scp/m1911)
+
+
+
+
+/obj/item/gun/projectile/pistol/usp45
+	name = "USP45"
+	desc = "Sidearm assigned to certain operatives and guards of the Foundation. Chambered in .45ACP."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "usp"
+	w_class = ITEM_SIZE_NORMAL
+	caliber = ".45"
+	silenced = 0
+	fire_delay = 3
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/scp/usp45
+	allowed_magazines = list(/obj/item/ammo_magazine/scp/usp45)
+
+
+
+
+
+
+
+

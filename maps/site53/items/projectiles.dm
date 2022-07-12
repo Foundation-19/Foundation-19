@@ -47,7 +47,7 @@
 
 /obj/item/ammo_magazine/scp
 	name = "MK3 magazine"
-	icon_state = "45"
+	icon_state = "9x19p"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/c9mm
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
@@ -154,7 +154,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/fnfal
-	name = "magazine (7.62x51 NAVO)"
+	name = "magazine (7.62x51 NATO)"
 	icon_state = "7.62x54s"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -163,3 +163,45 @@
 	ammo_type = /obj/item/ammo_casing/a762nato
 	max_ammo = 20
 	multiple_sprites = 1
+
+
+/obj/item/ammo_magazine/scp/vectormag
+	name = "magazine (Extended .45ACP)"
+	icon_state = "4mm"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	caliber = ".45"
+	matter = list(DEFAULT_WALL_MATERIAL = 1500)
+	ammo_type = /obj/item/ammo_casing/c45
+	max_ammo = 30
+	multiple_sprites = 1
+
+
+
+
+/obj/item/ammo_magazine/scp/usp45
+	name = "USP .45ACP Magazine"
+	icon_state = "magnum"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/c45
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = ".45"
+	max_ammo = 12
+	multiple_sprites = 1
+
+
+
+
+/obj/item/ammo_magazine/scp/m1911
+	name = "M1911 Colt Magazine (.45ACP)"
+	icon_state = "45"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/c45
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = ".45"
+	max_ammo = 7
+	multiple_sprites = 1
+
+
+
+

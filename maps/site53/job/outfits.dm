@@ -12,10 +12,10 @@
 	shoes = /obj/item/clothing/shoes/dress
 	suit = /obj/item/clothing/suit/storage/toggle/suit/black
 	id_types = list(/obj/item/card/id/adminlvl5)
-	belt = /obj/item/gun/projectile/revolver/mateba
+	belt = /obj/item/gun/projectile/pistol/m1911
 	l_ear = /obj/item/device/radio/headset/heads/captain
 	back = /obj/item/storage/backpack/satchel/pocketbook
-	backpack_contents = list(/obj/item/ammo_magazine/c50 = 3)
+	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 2)
 	l_hand = /obj/item/storage/briefcase/foundation/jerraman
 
 /decl/hierarchy/outfit/job/site90/crew/command/headofhr
@@ -112,7 +112,7 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/head/beret/sec = 1,/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/gun/projectile/revolver/mateba = 1,/obj/item/ammo_magazine/c50 = 1,/obj/item/ammo_magazine/box/a50 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
+	backpack_contents = list(/obj/item/clothing/head/beret/sec = 1,/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/gun/projectile/pistol/usp45 = 1, /obj/item/ammo_magazine/scp/usp45 = 1, /obj/item/ammo_magazine/box/acp45 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
 	belt = /obj/item/storage/belt/holster/security
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityofficer
 	mask = /obj/item/clothing/mask/balaclava
@@ -129,7 +129,7 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/hos = 1,/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/gun/projectile/revolver/mateba = 1,/obj/item/ammo_magazine/c50 = 1,/obj/item/ammo_magazine/box/a50 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
+	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/hos = 1,/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/gun/projectile/pistol/usp45 = 1, /obj/item/ammo_magazine/scp/usp45 = 1, /obj/item/ammo_magazine/box/acp45 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
 	belt = /obj/item/storage/belt/holster/security
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
@@ -145,7 +145,7 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1,/obj/item/clothing/glasses/eyepatch/hud/security = 1,/obj/item/gun/projectile/revolver/mateba = 1,/obj/item/ammo_magazine/c50 = 1,/obj/item/ammo_magazine/box/a50 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1,/obj/item/clothing/glasses/eyepatch/hud/security = 1,/obj/item/gun/projectile/pistol/usp45 = 1, /obj/item/ammo_magazine/scp/usp45 = 1, /obj/item/ammo_magazine/box/acp45 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
 	belt = /obj/item/storage/belt/holster/security
 	head = /obj/item/clothing/head/beret/sec/corporate/hos
 	mask = /obj/item/clothing/mask/balaclava
@@ -358,23 +358,22 @@
 	l_pocket = /obj/item/device/radio
 	id_types = list(/obj/item/card/id/adminlvl3)
 	l_ear = /obj/item/device/radio/headset/heads/hos/goc
-	belt = /obj/item/gun/projectile/revolver/mateba
+	belt = /obj/item/gun/projectile/pistol/usp45
 	back = /obj/item/storage/backpack/satchel/pocketbook
-	backpack_contents = list(/obj/item/ammo_magazine/c50 = 2, /obj/item/clothing/suit/armor/goc = 1)
+	backpack_contents = list(/obj/item/ammo_magazine/scp/usp45 = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/civ/uiu
 	name = OUTFIT_JOB_NAME("Unusual Incidents Unit Relations Agent")
 	uniform = /obj/item/clothing/under/suit_jacket/charcoal
 	shoes = /obj/item/clothing/shoes/dress
-	suit = /obj/item/clothing/suit/armor/bulletproof
 	glasses = /obj/item/clothing/glasses/sunglasses
 	gloves = /obj/item/clothing/gloves/thick/combat
 	l_pocket = /obj/item/device/radio
 	id_types = list(/obj/item/card/id/adminlvl3)
 	l_ear = /obj/item/device/radio/headset/heads/hos/uiu
-	belt = /obj/item/gun/projectile/revolver/mateba
+	belt = /obj/item/gun/projectile/pistol/m1911
 	back = /obj/item/storage/backpack/satchel/pocketbook
-	backpack_contents = list(/obj/item/ammo_magazine/c50 = 3,/obj/item/clothing/head/helmet/ballistic = 1)
+	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
 	name = OUTFIT_JOB_NAME("O5 Representative")
@@ -383,9 +382,8 @@
 	l_pocket = /obj/item/device/radio
 	id_types = list(/obj/item/card/id/adminlvl5)
 	l_ear = /obj/item/device/radio/headset/heads/hop
-	belt = /obj/item/gun/projectile/pistol/gyropistol
 	back = /obj/item/storage/backpack/satchel/pocketbook
-	backpack_contents = list(/obj/item/ammo_magazine/gyro = 3)
+	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1,/obj/item/ammo_magazine/scp/m1911 = 1)
 
 
 // ENGINEERING STUFF

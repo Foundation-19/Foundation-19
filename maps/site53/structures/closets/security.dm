@@ -111,7 +111,7 @@
 /obj/structure/closet/secure_closet/mtf/nco/hcz/WillContain()
 	return list(
 		/obj/item/storage/belt/holster/security/tactical,
-		/obj/item/gun/projectile/automatic/scp/m16,
+		/obj/item/gun/projectile/automatic/scp/galil,
 		/obj/item/gun/energy/stunrevolver/rifle,
 		/obj/item/ammo_magazine/scp/m16_mag = 3,
 		/obj/item/ammo_magazine/box/a556,
@@ -135,8 +135,6 @@
 /obj/structure/closet/secure_closet/mtf/enlisted/ez/WillContain()
 	return list(
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/gun/projectile/automatic/scp/m16,
-		/obj/item/ammo_magazine/scp/m16_mag = 3,
 		/obj/item/gun/projectile/automatic/scp/p90,
 		/obj/item/ammo_magazine/scp/p90_mag = 2,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
@@ -156,8 +154,6 @@
 /obj/structure/closet/secure_closet/mtf/nco/ez/WillContain()
 	return list(
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/gun/projectile/automatic/scp/m16,
-		/obj/item/ammo_magazine/scp/m16_mag = 3,
 		/obj/item/gun/projectile/automatic/scp/p90,
 		/obj/item/ammo_magazine/scp/p90_mag = 2,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
@@ -169,9 +165,7 @@
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/gun/energy/taser,
-		/obj/item/ammo_magazine/scp/mk9 = 3,
-		/obj/item/clothing/head/helmet/ballistic,
-		/obj/item/clothing/suit/armor/bulletproof/vest
+		/obj/item/ammo_magazine/scp/mk9 = 3
 	)
 
 /obj/structure/closet/secure_closet/mtf/commander
@@ -186,7 +180,7 @@
 /obj/structure/closet/secure_closet/mtf/commander/WillContain()
 	return list(
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/gun/projectile/automatic/scp/m16,
+		/obj/item/gun/projectile/automatic/scp/galil,
 		/obj/item/ammo_magazine/scp/m16_mag = 3,
 		/obj/item/gun/projectile/automatic/scp/p90,
 		/obj/item/ammo_magazine/scp/p90_mag = 3,
@@ -216,8 +210,6 @@
 /obj/structure/closet/secure_closet/mtf/co/WillContain()
 	return list(
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/gun/projectile/automatic/scp/m16,
-		/obj/item/ammo_magazine/scp/m16_mag = 3,
 		/obj/item/gun/projectile/automatic/scp/p90,
 		/obj/item/ammo_magazine/scp/p90_mag = 3,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
@@ -229,9 +221,7 @@
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/clothing/head/beret/sec/corporate/hos,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-		/obj/item/gun/projectile/pistol/mk9,
-		/obj/item/ammo_magazine/scp/mk9 = 3,
-		/obj/item/ammo_magazine/box/mk9
+		/obj/item/ammo_magazine/scp/usp45 = 3
 	)
 
 /obj/structure/closet/secure_closet/mtf/breachautomatics
@@ -245,10 +235,12 @@
 
 /obj/structure/closet/secure_closet/mtf/breachautomatics/WillContain()
 	return list(
+		/obj/item/gun/projectile/automatic/scp/galil,
+		/obj/item/gun/projectile/automatic/scp/galil,
+		/obj/item/gun/projectile/automatic/scp/galil,
 		/obj/item/gun/projectile/automatic/scp/m16,
-		/obj/item/gun/projectile/automatic/scp/m16,
-		/obj/item/gun/projectile/automatic/scp/m16,
-		/obj/item/ammo_magazine/scp/m16_mag = 9
+		/obj/item/ammo_magazine/scp/m16_mag = 12,
+		/obj/item/ammo_magazine/box/a556 = 4
 	)
 
 
@@ -264,8 +256,9 @@
 /obj/structure/closet/secure_closet/mtf/breachshotguns/WillContain()
 	return list(
 		/obj/item/gun/projectile/shotgun/pump/combat = 3,
-		/obj/item/storage/box/mtf/empammo = 6,
-		/obj/item/storage/box/mtf/pelletammo = 6
+		/obj/item/ammo_magazine/box/buckshot = 6,
+		/obj/item/ammo_magazine/box/slug = 6,
+		/obj/item/clothing/accessory/storage/bandolier = 3
 	)
 
 /obj/structure/closet/secure_closet/mtf/riotshotguns
@@ -280,7 +273,7 @@
 /obj/structure/closet/secure_closet/mtf/riotshotguns/WillContain()
 	return list(
 		/obj/item/gun/projectile/shotgun/pump = 3,
-		/obj/item/storage/box/mtf/beanbag = 12,
+		/obj/item/ammo_magazine/box/beanbag = 6,
 		/obj/item/clothing/accessory/storage/bandolier/beanbag = 3
 	)
 

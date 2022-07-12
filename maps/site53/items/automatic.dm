@@ -268,3 +268,72 @@
 	attack_verb = list("stabbed", "chopped", "cut")
 	applies_material_colour = 1
 //	drawsound = 'sound/items/unholster_knife.ogg'
+
+
+
+
+
+
+/obj/item/gun/projectile/automatic/scp/galil
+	name = "IWI Galil ACE"
+	desc = "An intermediate cartridge infantry assault rifle first produced by and for Israeli Forces. The Foundation found a use for these reliable rifles in the hands of Foundation operatives and guards."
+	icon_state = "galil"
+	item_state = "galil-empty"
+	w_class = ITEM_SIZE_HUGE
+	force = 10
+	slot_flags = SLOT_BACK
+	caliber = "a556"
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/scp/m16_mag
+	allowed_magazines = /obj/item/ammo_magazine/scp/m16_mag
+
+	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=1, one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.5, 0.8)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.1, 0.6, 0.9), autofire_enabled=1),
+		)
+
+/obj/item/gun/projectile/automatic/scp/galil/update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "galil"
+	else
+		icon_state = "galil-empty"
+	return
+
+
+
+/obj/item/gun/projectile/automatic/scp/vector
+	name = "Kriss Vector"
+	desc = "A powerful, high stopping power SMG assigned to MTF operatives and certain SD agents."
+	icon_state = "vector-45"
+	item_state = "vector-45"
+	w_class = ITEM_SIZE_HUGE
+	force = 10
+	caliber = ".45"
+	slot_flags = SLOT_BELT|SLOT_BACK
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/scp/vectormag
+	allowed_magazines = /obj/item/ammo_magazine/scp/vectormag
+	wielded_item_state = "p90-wielded"
+
+	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=0, one_hand_penalty=3, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.5, 0.7)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.2, 0.6, 0.8), autofire_enabled=1),
+		)
+
+/obj/item/gun/projectile/automatic/scp/vector/update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "vector-45"
+	else
+		icon_state = "vector-45-empty"
+	return
+
+
+
