@@ -83,10 +83,6 @@
 	else
 		icon_state = "gyropistol"
 
-
-
-
-
 /obj/item/gun/projectile/pistol/m1911
 	name = "M1911"
 	desc = "A classic Model 1911 pistol. Still effective even today, generally used as a surplus sidearm for Foundation security staff."
