@@ -64,6 +64,7 @@
 	department_flag = SEC
 	total_positions = 1
 	spawn_positions = 1
+	balance_limited = TRUE
 	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You also carry the responsibility of guarding the D-Cells. You should not leave your zone under usual SoP</b></big>"
 	economic_power = 4
 	minimal_player_age = 10
@@ -212,6 +213,7 @@
 	department_flag = SEC
 	total_positions = 4
 	spawn_positions = 4
+	balance_limited = TRUE
 	//duties = "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	economic_power = 4
 	minimal_player_age = 5
@@ -358,6 +360,7 @@
 	department_flag = SEC
 	total_positions = 20
 	spawn_positions = 20
+	balance_limited = TRUE
 	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	economic_power = 4
 //	minimal_player_age = 0
@@ -491,3 +494,4 @@
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_FORENSICS   = SKILL_MASTER)
 	skill_points = 20
+

@@ -194,11 +194,12 @@ SUBSYSTEM_DEF(overlays)
 		return
 
 	var/list/cached_other = other.our_overlays
-	if(cached_other)
+	if(length(cached_other))
 		if(cut_old)
-			our_overlays = cached_other.Copy()
+			LAZYCLEARLIST(our_overlays)
+			LAZYADD(our_overlays, cached_other)
 		else
-			our_overlays |= cached_other
+			LAZYDISTINCTADD(our_overlays, cached_other)
 		if(NOT_QUEUED_ALREADY)
 			QUEUE_FOR_COMPILE
 	else if(cut_old)

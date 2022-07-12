@@ -64,7 +64,7 @@
 
 /obj/item/reagent_containers/pill/scp500/New()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/adminordrazine, 50)
+	reagents.add_reagent(/datum/reagent/adminordrazine, 1)
 
 /obj/item/storage/fancy/cigarettes/bluelady
 	name = "pack of SCP-013s"

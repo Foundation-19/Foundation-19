@@ -45,5 +45,7 @@
 
 /datum/keybinding/living/aim_mode/down(client/user)
 	var/mob/living/L = user.mob
+	if(!L.aiming)
+		return
 	L.aiming.toggle_active()
 	return TRUE
