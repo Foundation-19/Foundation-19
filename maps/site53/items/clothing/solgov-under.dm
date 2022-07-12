@@ -308,7 +308,7 @@
 
 /obj/item/clothing/under/solgov/utility/marine/tan
 	name = "tan fatigues"
-	desc = "A tan version of the Security uniform, made from durable material."
+	desc = "Foundation issue utility jumpsuit, normally assigned to Logistic Department staff."
 	icon_state = "tanutility"
 	item_state = "johnny"
 	worn_state = "tanutility"
