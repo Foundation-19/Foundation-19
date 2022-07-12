@@ -298,8 +298,6 @@
 		icon_state = "galil-empty"
 	return
 
-
-
 /obj/item/gun/projectile/automatic/scp/vector
 	name = "Kriss Vector"
 	desc = "A powerful, high stopping power SMG assigned to MTF operatives and certain SD agents."
