@@ -18,6 +18,9 @@ GLOBAL_LIST_EMPTY(scp173s)
 	maxHealth = 5000
 	health = 5000
 
+	can_pull_size = 0 // Can't pull things
+	a_intent = "harm" // Doesn't switch places with people
+
 	/// Reference to the area we were created in
 	var/area/spawn_area
 
