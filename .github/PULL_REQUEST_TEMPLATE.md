@@ -1,16 +1,35 @@
-<!-- 
-Do not forget to add a changelog when you have made admin/player facing changes that can alter gameplay.
-Examples which require a changelog entry include:
-* Adding/removing objects that players may interact with, or the way they function.
-* Adding/removing/altering admin tools.
-* Changing the map.
+<!-- Write **BELOW** The Headers and **ABOVE** The comments else it may not be viewable. -->
 
-Examples were changelog entries are optional/not typically required:
-* Cosmetic changes such as descriptions, sound effects, etc.
-* Optimizations and other changes to underlying systems which do not affect gameplay.
-* Minor bug fixes.
+## About The Pull Request
 
-You'll find a README and example file in .\html\changelogs\ for further instructions.
+<!-- Describe The Pull Request. Please be sure every change is documented or this can delay review and even discourage maintainers from merging your PR! -->
 
-You can also find a template for adding your changelog directly to the PR description here: https://github.com/Baystation12/Baystation12/wiki/Automatic-changelog-generation
--->
+## Why It's Good For The Game
+
+<!-- Please add a short description of why you think these changes would benefit the game. If you can't justify it in words, it might not be worth adding. -->
+
+## Changelog
+
+<!-- If your PR modifies aspects of the game that can be concretely observed by players or admins you should add a changelog. If your change does NOT meet this description, remove this section. Be sure to properly mark your PRs to prevent unnecessary GBP loss. Please note that maintainers freely reserve the right to remove and add tags should they deem it appropriate. You can attempt to finagle the system all you want, but it's best to shoot for clear communication right off the bat. -->
+
+:cl:
+add: Added new mechanics or gameplay changes
+add: Added more things
+del: Removed old things
+qol: made something easier to use
+balance: rebalanced something
+fix: fixed a few things
+soundadd: added a new sound thingy
+sounddel: removed an old sound thingy
+imageadd: added some icons and images
+imagedel: deleted some icons and images
+spellcheck: fixed a few typos
+code: changed some code
+refactor: refactored some code
+config: changed some config setting
+admin: messed with admin stuff
+server: something server ops should know
+/:cl:
+
+<!-- Both :cl:'s are required for the changelog to work! You can put your name to the right of the first :cl: if you want to overwrite your GitHub username as author ingame. -->
+<!-- You can use multiple of the same prefix (they're only used for the icon ingame) and delete the unneeded ones. Despite some of the tags, changelogs should generally represent how a player might be affected by the changes rather than a summary of the PR's contents. -->
