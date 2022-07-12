@@ -63,7 +63,7 @@
 		msg += "[p_they(TRUE)] [p_are()] wearing [wear_suit.get_examine_line()].\n"
 		//suit/armour storage
 		if(s_store && !skipsuitstorage)
-			msg += "[p_they()] [p_are()] carrying [s_store.get_examine_line()] on [p_their()] [wear_suit.name].\n"
+			msg += "[p_they(TRUE)] [p_are()] carrying [s_store.get_examine_line()] on [p_their()] [wear_suit.name].\n"
 
 	//back
 	if(back)
@@ -111,7 +111,7 @@
 
 	//ID
 	if(wear_id)
-		msg += "[p_they(TRUE)] [p_are()] wearing [wear_id.get_examine_line()].\n"
+		msg += "[p_they(TRUE)] [p_are()] wearing [wear_id.get_examine_line()].\n"image.
 
 	//handcuffed?
 	if(handcuffed)
