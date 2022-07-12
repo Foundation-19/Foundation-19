@@ -981,7 +981,6 @@
 /area/icarus/vessel)
 "di" = (
 /obj/structure/table/standard,
-/obj/item/weapon/reagent_containers/chem_disp_cartridge/hydrazine,
 /turf/simulated/floor/tiled,
 /area/icarus/open)
 "dj" = (

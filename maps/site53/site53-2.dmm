@@ -30686,7 +30686,6 @@
 	name = "\improper LCZ Security Center"
 	})
 "bOD" = (
-/obj/item/reagent_containers/chem_disp_cartridge/chloral,
 /obj/machinery/chemical_dispenser,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)

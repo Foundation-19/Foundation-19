@@ -4521,7 +4521,6 @@
 /turf/simulated/floor/tiled/freezer,
 /area/errant_pisces/prod_storage)
 "kZ" = (
-/obj/item/reagent_containers/chem_disp_cartridge/synaptizine,
 /turf/simulated/floor/tiled/freezer,
 /area/errant_pisces/prod_storage)
 "la" = (
@@ -4597,7 +4596,6 @@
 /obj/structure/window/basic{
 	dir = 8
 	},
-/obj/item/reagent_containers/chem_disp_cartridge/hyperzine,
 /turf/simulated/floor/tiled/freezer,
 /area/errant_pisces/prod_storage)
 "lm" = (
@@ -4715,7 +4713,6 @@
 /turf/simulated/floor/plating,
 /area/errant_pisces/general_storage)
 "lG" = (
-/obj/item/reagent_containers/chem_disp_cartridge/mercury,
 /turf/simulated/floor/tiled/freezer,
 /area/errant_pisces/prod_storage)
 "lH" = (
