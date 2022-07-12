@@ -167,7 +167,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 		else if (M.head && (M.head.item_flags & ITEM_FLAG_AIRTIGHT)) // If they're protected by a helmet
 			continue
 
-	if (H && H.stat != CONSCIOUS)
+	if (H?.stat != CONSCIOUS)
 		addtimer(CALLBACK(src, .proc/handle_death_infection, H), 1 SECOND)
 
 /datum/species/zombie/handle_npc(mob/living/carbon/human/H)

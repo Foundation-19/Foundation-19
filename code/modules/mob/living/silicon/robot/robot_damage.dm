@@ -45,16 +45,18 @@
 	var/list/rval = new
 	for(var/V in components)
 		var/datum/robot_component/C = components[V]
-		if(C.installed == 1) rval += C
+		if(C.installed)
+			rval += C
 	return rval
 
 /mob/living/silicon/robot/proc/get_armour()
 
-	if(!components.len) return 0
+	if(!components.len)
+		return FALSE
 	var/datum/robot_component/C = components["armour"]
-	if(C && C.installed == 1)
+	if(C?.installed)
 		return C
-	return 0
+	return FALSE
 
 /mob/living/silicon/robot/heal_organ_damage(var/brute, var/burn)
 	var/list/datum/robot_component/parts = get_damaged_components(brute,burn)

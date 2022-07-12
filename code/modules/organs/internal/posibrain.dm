@@ -146,7 +146,7 @@
 		add_overlay(image('icons/obj/assemblies.dmi', "posibrain-shackles"))
 
 /obj/item/organ/internal/posibrain/proc/transfer_identity(var/mob/living/carbon/H)
-	if(H && H.mind)
+	if(H?.mind)
 		brainmob.set_stat(CONSCIOUS)
 		H.mind.transfer_to(brainmob)
 		brainmob.SetName(H.real_name)

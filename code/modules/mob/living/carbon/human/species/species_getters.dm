@@ -38,22 +38,22 @@
 	return name
 
 /datum/species/proc/get_knockout_message(var/mob/living/carbon/human/H)
-	return ((H && H.isSynthetic()) ? "encounters a hardware fault and suddenly reboots!" : knockout_message)
+	return ((H?.isSynthetic()) ? "encounters a hardware fault and suddenly reboots!" : knockout_message)
 
 /datum/species/proc/get_death_message(var/mob/living/carbon/human/H)
-	return ((H && H.isSynthetic()) ? "gives one shrill beep before falling lifeless." : death_message)
+	return ((H?.isSynthetic()) ? "gives one shrill beep before falling lifeless." : death_message)
 
 /datum/species/proc/get_ssd(var/mob/living/carbon/human/H)
-	return ((H && H.isSynthetic()) ? "flashing a 'system offline' glyph on their monitor" : show_ssd)
+	return ((H?.isSynthetic()) ? "flashing a 'system offline' glyph on their monitor" : show_ssd)
 
 /datum/species/proc/get_blood_colour(var/mob/living/carbon/human/H)
-	return ((H && H.isSynthetic()) ? SYNTH_BLOOD_COLOUR : blood_color)
+	return ((H?.isSynthetic()) ? SYNTH_BLOOD_COLOUR : blood_color)
 
 /datum/species/proc/get_virus_immune(var/mob/living/carbon/human/H)
-	return ((H && H.isSynthetic()) ? 1 : virus_immune)
+	return ((H?.isSynthetic()) ? 1 : virus_immune)
 
 /datum/species/proc/get_flesh_colour(var/mob/living/carbon/human/H)
-	return ((H && H.isSynthetic()) ? SYNTH_FLESH_COLOUR : flesh_color)
+	return ((H?.isSynthetic()) ? SYNTH_FLESH_COLOUR : flesh_color)
 
 /datum/species/proc/get_environment_discomfort(var/mob/living/carbon/human/H, var/msg_type)
 

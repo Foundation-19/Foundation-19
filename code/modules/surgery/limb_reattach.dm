@@ -36,7 +36,7 @@
 	var/obj/item/organ/external/T = target.organs_by_name[E.organ_tag]
 	if(!P || P.is_stump())
 		to_chat(user, SPAN_WARNING("The [E.amputation_point] is missing!"))
-	else if(T && T.is_stump())
+	else if(T?.is_stump())
 		to_chat(user, SPAN_WARNING("You cannot attach \a [E] when there is a stump!"))
 	else if(T)
 		to_chat(user, SPAN_WARNING("There is already \a [E]!"))

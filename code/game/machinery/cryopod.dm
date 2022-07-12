@@ -223,7 +223,7 @@
 	for(var/d in GLOB.cardinal)
 		var/turf/T = get_step(src,d)
 		var/obj/machinery/door/blast/B = locate() in T
-		if(B && B.density)
+		if(B?.density)
 			B.force_open()
 			break
 
