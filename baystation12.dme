@@ -3078,6 +3078,7 @@
 #include "code\modules\spells\general\area_teleport.dm"
 #include "code\modules\spells\general\contract_spells.dm"
 #include "code\modules\spells\general\create_air.dm"
+#include "code\modules\spells\general\049_commune.dm"
 #include "code\modules\spells\general\invisibility.dm"
 #include "code\modules\spells\general\mark_recall.dm"
 #include "code\modules\spells\general\portal_teleport.dm"
