@@ -619,6 +619,12 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			if (!M.client)
 				scps += M
 */
+
+		for (var/scp035 in GLOB.scp035s)
+			var/mob/M = scp035
+			if (!M.client)
+				scps += M
+
 		// whitelist required
 		for (var/scp049 in GLOB.scp049s)
 			var/mob/M = scp049
@@ -630,6 +636,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			var/mob/M = scp173
 			if (!M.client)
 				scps += M
+
+
 
 		// add new humanoid SCPs here or they won't be playable - Kachnov
 		if (scps.len)

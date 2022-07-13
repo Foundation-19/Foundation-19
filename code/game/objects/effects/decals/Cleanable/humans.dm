@@ -292,6 +292,10 @@ var/global/list/image/splatter_cache=list()
 /obj/effect/decal/cleanable/mucus/proc/set_dry()
 	dry = TRUE
 
+/obj/effect/decal/cleanable/mucus/update_icon()
+	. = ..()
+
+
 #undef BLOOD_SIZE_SMALL
 #undef BLOOD_SIZE_MEDIUM
 #undef BLOOD_SIZE_BIG
