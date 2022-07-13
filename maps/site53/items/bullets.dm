@@ -240,7 +240,7 @@
 	projectile_type = /obj/item/projectile/bullet/rifle/a762/practice
 
 /obj/item/ammo_casing/a762nato
-	desc = "A 7.62x51mm NAVO bullet casing."
+	desc = "A 7.62x51mm NATO bullet casing."
 	caliber = "a762nato"
 	projectile_type = /obj/item/projectile/bullet/rifle/a762nato
 	icon_state = "rifle-casing"
