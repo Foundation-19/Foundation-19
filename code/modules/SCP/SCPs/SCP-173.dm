@@ -256,8 +256,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 /mob/living/scp_173/proc/Defecate()
 	if(!isobj(loc) && world.time > defecation_cooldown)
 		defecation_cooldown = world.time + defecation_cooldown_time
-		var/obj/feces = pick(defecation_types)
-		new feces(loc)
+		var/feces_type = pick(defecation_types)
+		var/obj/effect/decal/cleanable/feces = new feces_type(loc)
 		feces.update_icon()
 		if(!client) // So it doesn't spam it in one spot
 			var/Tdir = pick(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST)
