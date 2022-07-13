@@ -1,7 +1,7 @@
 /var/total_lighting_overlays = 0
 /atom/movable/lighting_overlay
 	name = ""
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	simulated = FALSE
 	anchored = TRUE
 	icon = LIGHTING_ICON

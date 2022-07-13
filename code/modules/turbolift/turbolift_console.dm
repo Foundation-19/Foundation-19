@@ -55,7 +55,7 @@
 	icon_state = "button"
 	var/light_up = FALSE
 	var/datum/turbolift_floor/floor
-	mouse_opacity = 2 //No more eyestrain aiming at tiny pixels
+	mouse_opacity = MOUSE_OPACITY_OPAQUE //No more eyestrain aiming at tiny pixels
 
 /obj/structure/lift/button/Destroy()
 	if(floor && floor.ext_panel == src)
@@ -95,7 +95,7 @@
 /obj/structure/lift/panel
 	name = "elevator control panel"
 	icon_state = "panel"
-	mouse_opacity = 2 //No more eyestrain aiming at tiny pixels
+	mouse_opacity = MOUSE_OPACITY_OPAQUE //No more eyestrain aiming at tiny pixels
 
 
 /obj/structure/lift/panel/attack_ghost(var/mob/user)
@@ -143,3 +143,4 @@
 	interact(user)
 
 // End panel.
+
