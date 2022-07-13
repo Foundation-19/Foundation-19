@@ -11,7 +11,7 @@ GLOBAL_LIST(end_titles)
 /client/proc/RollCredits()
 	set waitfor = FALSE
 
-	if(get_preference_value(/datum/client_preference/show_credits) != GLOB.PREF_YES)
+	if(get_preference_value(/datum/client_preference/show_credits) != GLOB.PREF_YES) //testing linters
 		return
 
 	if(!GLOB.end_titles)
