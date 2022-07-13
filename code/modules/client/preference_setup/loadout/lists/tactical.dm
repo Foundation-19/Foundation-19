@@ -5,11 +5,11 @@
 	allowed_branches = list(/datum/mil_branch/security)
 
 // Not allowed because: access to non lore-friendly tags at the moment (as well as ability to choose Zone Commander tags etc)
-///datum/gear/tactical/armor_deco
+/*/datum/gear/tactical/armor_deco
 	display_name = "armor customization"
 	path = /obj/item/clothing/accessory/armor/tag
 	flags = GEAR_HAS_SUBTYPE_SELECTION
-
+*/
 //Some of the offered covers are non lore friendly. Also, kind of defeat the purpose of uniformization
 /*/datum/gear/tactical/helm_covers
 	display_name = "helmet covers"
