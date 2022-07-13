@@ -63,7 +63,6 @@
 	department_flag = SEC
 	total_positions = 1
 	spawn_positions = 1
-	balance_limited = TRUE
 	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You also carry the responsibility of guarding the D-Cells. You should not leave your zone under usual SoP</b></big>"
 	economic_power = 4
 	minimal_player_age = 10
@@ -357,7 +356,7 @@
 	economic_power = 4
 //	minimal_player_age = 0
 	ideal_character_age = 25
-	loadout_allowed = FALSE
+	balance_limited = TRUE
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerlcz
 	allowed_branches = list(
 		/datum/mil_branch/security

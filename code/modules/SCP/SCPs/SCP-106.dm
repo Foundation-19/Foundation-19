@@ -10,10 +10,13 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	var/last_y = -1
 	var/last_z = -1
 	var/confusing = FALSE
+	var/phasing = FALSE
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 	icon = 'icons/SCP/scp-106.dmi'
 	icon_state = null
+	var/mob/observer/eye/scp106/WallEye
+
 	status_flags = NO_ANTAG
 
 /mob/living/carbon/human/scp106/New(new_loc, new_species)
@@ -39,6 +42,9 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		transform = null
 	return
 
+/mob/living/carbon/human/scp106/New(new_loc, new_species)
+	new_species = "SCP-106"
+	. = ..()
 
 /mob/living/carbon/human/scp106/Initialize()
 	. = ..()
@@ -54,7 +60,13 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 
 	verbs += /mob/living/carbon/human/scp106/proc/confuse_victims
 
-	set_species("SCP-106")
+	WallEye = new(src)
+	WallEye.visualnet.add_source(src)
+	WallEye.visualnet.add_source(WallEye)
+
+	verbs += /mob/living/carbon/human/scp106/proc/wall_phase
+	verbs += /mob/living/carbon/human/scp106/proc/wall_unphase
+
 	GLOB.scp106s |= src
 
 /mob/living/carbon/human/scp106/Destroy()
@@ -71,7 +83,6 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	else
 		species.brute_mod = 0.5
 		species.burn_mod = 0.5
-
 
 /mob/living/carbon/human/scp106/update_icons()
 	return
@@ -506,3 +517,82 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	for(var/obj/structure/femur_breaker/C in range())
 		if (C.id == id_tag)
 			C.activate(user)
+
+
+/mob/living/carbon/human/scp106/proc/wall_phase()
+	set name = "Enter wall"
+	set category = "SCP"
+	set desc = "Enter the wall to reappear elsewhere"
+	if(phasing)
+		return
+	if(WallEye)
+		var/turf/step = get_step(src, dir)
+		if(step?.is_phasable())
+			alpha = 128
+
+
+			layer = OBSERVER_LAYER
+
+			switch(dir)
+				if (NORTH, NORTHEAST, NORTHWEST)
+					animate(src, pixel_y = 29, time =  3 SECONDS)
+				if (SOUTH, SOUTHEAST, SOUTHWEST)
+					animate(src, pixel_y = -29, time =  3 SECONDS)
+				if (EAST)
+					animate(src, pixel_x = 29, time =  3 SECONDS)
+				if (WEST)
+					animate(src, pixel_x = -29, time =  3 SECONDS)
+
+
+			if(do_after(src, 3 SECONDS,step))
+				WallEye.possess(src)
+				src.forceMove(pick(GLOB.scp106_floors))
+				phasing = TRUE
+			alpha = 255
+
+			layer = MOB_LAYER + 0.1
+			pixel_x = 0
+			pixel_y = 0
+
+/mob/living/carbon/human/scp106/proc/wall_unphase()
+	set name = "Leave wall"
+	set category = "SCP"
+	set desc = "Leave the wall to reappear elsewhere"
+	if(!phasing)
+		return
+	var/turf/exit = get_turf(WallEye.loc)
+	if(exit?.is_phasable())
+		if(do_after(src, 5 SECONDS,WallEye))
+			src.forceMove(exit)
+			WallEye.release(src)
+			WallEye.forceMove(src)
+			phasing = FALSE
+
+/mob/observer/eye/scp106
+	name = "SCP-106 presence"
+	cooldown = 5
+	see_invisible = SEE_INVISIBLE_NOLIGHTING
+	see_in_dark = 7
+
+/mob/observer/eye/scp106/New()
+	. = ..()
+	visualnet = new /datum/visualnet/scp106
+
+/mob/observer/eye/scp106/EyeMove(direct)
+	var/turf/step = get_turf(get_step(src, direct))
+	if(!step.is_phasable())
+		return FALSE
+	. = ..()
+
+/datum/visualnet/scp106
+	valid_source_types =  list(/mob/observer/eye/scp106,/mob/living/carbon/human/scp106) //list(/turf/simulated/wall,/turf/unsimulated/wall)
+	chunk_type = /datum/chunk/scp106
+
+/datum/visualnet/scp106/New()
+	. = ..()
+
+/datum/chunk/scp106/acquire_visible_turfs(list/visible)
+	for(var/source in sources)
+		for(var/turf/T in range(7, get_turf(source)))
+			if(T.is_phasable())
+				visible[T] = T

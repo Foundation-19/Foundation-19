@@ -2,10 +2,10 @@ name: CI Suite
 on:
   push:
     branches:
-    - master
+    - main
   pull_request:
     branches:
-    - master
+    - main
 jobs:
   run_linters:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
@@ -35,7 +35,7 @@ jobs:
           tools/bootstrap/python -c ''
       - name: Run Linters
         run: |
-          bash tools/ci/check_filedirs.sh ColonialMarinesALPHA.dme
+          bash tools/ci/check_filedirs.sh baystation12.dme
           bash tools/ci/check_changelogs.sh
           bash tools/ci/check_misc.sh
           tools/build/build --ci lint tgui-test
@@ -64,4 +64,3 @@ jobs:
           bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
           tools/build/build --ci dm -DCIBUILDING -DCITESTING -DALL_MAPS
-

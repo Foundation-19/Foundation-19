@@ -226,7 +226,7 @@ var/global/photo_count = 0
 		else
 			mob_detail += "You can also see [A] on the photo[(A.health / A.maxHealth)< 0.75 ? " - [A] looks hurt":""].[holding ? " [holding]":"."]."
 	for(var/mob/living/simple_animal/hostile/B in the_turf) //Handles making images anomalous
-		if(anomalytype)
+		if(B.anomalytype)
 			anomalous = TRUE
 			if(B.anomalytype)
 				anomalytype = B.anomalytype

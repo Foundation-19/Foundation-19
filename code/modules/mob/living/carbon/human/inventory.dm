@@ -121,6 +121,8 @@ This saves us from having to call add_fingerprint() any time something is put in
 			return has_organ(BP_CHEST)
 		if(slot_in_backpack)
 			return 1
+		if(slot_in_belt)
+			return 1
 		if(slot_tie)
 			return 1
 
@@ -347,6 +349,10 @@ This saves us from having to call add_fingerprint() any time something is put in
 			if(src.get_active_hand() == W)
 				src.remove_from_mob(W)
 			W.forceMove(src.back)
+		if(slot_in_belt)
+			if(src.get_active_hand() == W)
+				src.remove_from_mob(W)
+			W.forceMove(src.belt)
 		if(slot_tie)
 			var/obj/item/clothing/under/uniform = src.w_uniform
 			if(uniform)

@@ -556,8 +556,15 @@
 
 
 /obj/item/card/id/officeworker
-	name = "Office staff ID"
+	name = "Office Staff ID"
 	desc = "A low level ID issued to office workers."
 	icon_state = "adminlvl1"
+	item_state = "Admin_ID"
+	job_access_type = /datum/job/officeworker
+
+/obj/item/card/id/classd
+	name = "Class-D ID"
+	desc = "An ID card issued to Class-D Foundation personnel."
+	icon_state = "classd"
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/officeworker
