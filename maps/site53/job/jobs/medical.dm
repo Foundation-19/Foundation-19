@@ -69,7 +69,7 @@
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_MEDICAL     = SKILL_TRAINED,
 	                    SKILL_ANATOMY     = SKILL_TRAINED,
-	                    SKILL_CHEMISTRY   = SKILL_BASIC,
+	                    SKILL_CHEMISTRY   = SKILL_EXPERIENCED,
 						SKILL_DEVICES     = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MASTER,
