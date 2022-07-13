@@ -126,7 +126,7 @@
 	if(!fire)
 		fire = 1	//used for firedoor checks
 		update_icon()
-		mouse_opacity = 0
+		mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 		if(!all_doors)
 			return
 		for(var/obj/machinery/door/firedoor/D in all_doors)
@@ -141,7 +141,7 @@
 	if (fire)
 		fire = 0	//used for firedoor checks
 		update_icon()
-		mouse_opacity = 0
+		mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 		if(!all_doors)
 			return
 		for(var/obj/machinery/door/firedoor/D in all_doors)
@@ -169,13 +169,13 @@
 	if (!( party ))
 		party = 1
 		update_icon()
-		mouse_opacity = 0
+		mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	return
 
 /area/proc/partyreset()
 	if (party)
 		party = 0
-		mouse_opacity = 0
+		mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 		update_icon()
 		for(var/obj/machinery/door/firedoor/D in src)
 			if(!D.blocked)
