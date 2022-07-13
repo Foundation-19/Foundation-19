@@ -1,0 +1,129 @@
+{{if data.active}}
+	{{:helper.link('Back to List', null, {'clear' : 1})}}
+	{{if data.screen == "main"}}
+		{{:helper.link('Configure', null, {'screen_threshholds' : 1})}}<br>
+		<div class="item">
+			<div class="itemLabel">
+				Core Integrity:
+			</div>
+			<div class="itemContent">
+				{{:helper.displayBar(data.SM_integrity, 0, 100, (data.SM_integrity == 100) ? 'good' : (data.SM_integrity >= 50) ? 'average' : 'bad')}} {{:data.SM_integrity}}%
+			</div>
+			<div class="itemLabel">
+				Relative EER:
+			</div>
+			<div class="itemContent">
+				<span class='{{:data.SM_power_label}}'>{{:data.SM_power}} MeV/cm3</span>
+			</div>
+			<div class="itemLabel">
+				Temperature:
+			</div>
+			<div class="itemContent">
+				<span class='{{:data.SM_ambienttemp_label}}'>{{:data.SM_ambienttemp}} K</span>
+			</div>
+			<div class="itemLabel">
+				Pressure:
+			</div>
+			<div class="itemContent">
+				<span class='{{:data.SM_ambientpressure_label}}'>{{:data.SM_ambientpressure}} kPa</span>
+			</div>
+			<div class="itemLabel">
+				Chamber EPR:
+			</div>
+			<div class="itemContent">
+				<span class='{{:data.SM_EPR_label}}'>{{:data.SM_EPR}}</span>
+			</div>
+		</div>
+		<hr><br
+		<div class="item">
+			<div class="itemLabel">
+				Gas Composition:
+			</div>
+			<div class="itemContent">
+				<div class="item">
+					<div class="itemLabel">
+						O2:
+					</div>
+					<div class="itemContent">
+						{{:data.SM_gas_O2}} %
+					</div>
+					<div class="itemLabel">
+						CO2:
+					</div>
+					<div class="itemContent">
+						{{:data.SM_gas_CO2}} %
+					</div>
+					<div class="itemLabel">
+						N2:
+					</div>
+					<div class="itemContent">
+						{{:data.SM_gas_N2}} %
+					</div>
+					<div class="itemLabel">
+						PH:
+					</div>
+					<div class="itemContent">
+						{{:data.SM_gas_PH}} %
+					</div>
+					<div class="itemLabel">
+						H2:
+					</div>
+					<div class="itemContent">
+						{{:data.SM_gas_H2}} %
+					</div>
+					<div class="itemLabel">
+						N2O:
+					</div>
+					<div class="itemContent">
+						{{:data.SM_gas_N2O}} %
+					</div>
+				</div>
+			</div>
+		</div>
+	{{else data.screen == "threshholds"}}
+		{{:helper.link('Monitor', null, {'screen_main' : 1})}}<br>
+		<table class="fixed">
+			<tr>
+				<th>Threshholds</th>
+				<td><span class='bad'>min2</span></td>
+				<td><span class='average'>min1</span></td>
+				<td><span class='average'>max1</span></td>
+				<td><span class='bad'>max2</span></td>
+			</tr>
+
+			{{for data.threshholds}}
+				<tr>
+					<th>{{:value.name}}</th>
+					<td>{{:helper.link(value.min_h >= 0 ? value.min_h : "Off", null, {'set_threshhold' : 1, 'threshhold' : value.name, 'category' : 'min_h', 'value' : value.min_h})}}</td>
+					<td>{{:helper.link(value.min_l >= 0 ? value.min_l : "Off", null, {'set_threshhold' : 1, 'threshhold' : value.name, 'category' : 'min_l', 'value' : value.min_l})}}</td>
+					<td>{{:helper.link(value.max_l >= 0 ? value.max_l : "Off", null, {'set_threshhold' : 1, 'threshhold' : value.name, 'category' : 'max_l', 'value' : value.max_l})}}</td>
+					<td>{{:helper.link(value.max_h >= 0 ? value.max_h : "Off", null, {'set_threshhold' : 1, 'threshhold' : value.name, 'category' : 'max_h', 'value' : value.max_h})}}</td>
+				</tr>
+			{{/for}}
+		</table>
+	{{/if}}
+{{else}}
+	{{:helper.link('Refresh', null, {'refresh' : 1})}}<br>
+	{{for data.supermatters}}
+		<div class="item">
+			<div class="itemLabel">
+				Area:
+			</div>
+			<div class="itemContent">
+				{{:value.area_name}} - (#{{:value.uid}})
+			</div>
+			<div class="itemLabel">
+				Integrity:
+			</div>
+			<div class="itemContent">
+				{{:value.integrity}} %
+			</div>
+			<div class="itemLabel">
+				Options:
+			</div>
+			<div class="itemContent">
+				{{:helper.link('View Details', null, {'set' : value.uid})}}
+			</div>
+		</div>
+	{{/for}}
+{{/if}}
