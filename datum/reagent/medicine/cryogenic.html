@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;reagent&#x2F;medicine&#x2F;cryogenic - Space Station 13 - TeguStation</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Space Station 13 - TeguStation</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/reagent/medicine/cryogenic.html#var">Var Details</a> - <a href="datum/reagent/medicine/cryogenic.html#proc">Proc Details</a></header>
+<main>
+<h1>/<a href="datum.html">datum</a>/<a href="datum/reagent/medicine/cryogenic.html">reagent/medicine/cryogenic</a>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/450a50877364306e1c08df849746fff938e54fdc/code/modules/reagents/Chemistry-Reagents/medicines/medicines_cryogenic.dm#L6">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;Chemistry-Reagents&#x2F;medicines&#x2F;medicines_cryogenic.dm 6"/></a></h1>
+
+<p>Cryogenic reagents only work at extremely low body temperatures.
+This is 170K by default (-153F or -103C) but can be configured by subtypes.
+By default, cryogenic reagents cannot overdose, and metabolize more slowly.</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/reagent/medicine/cryogenic.html#var/temperature_threshold">temperature_threshold</a></th><td>Minimum body temperature (in Kelvin) required for this chemical to take its unique effects.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/reagent/medicine/cryogenic.html#proc/handle_effects">handle_effects</a></th><td>Called each time the medicine ticks when the mob's body temperature is below <code>temperature_threshold</code>.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/temperature_threshold"><aside class="declaration">var </aside>temperature_threshold
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/450a50877364306e1c08df849746fff938e54fdc/code/modules/reagents/Chemistry-Reagents/medicines/medicines_cryogenic.dm#L10">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;Chemistry-Reagents&#x2F;medicines&#x2F;medicines_cryogenic.dm 10"/></a></h3>
+        <p>Minimum body temperature (in Kelvin) required for this chemical to take its unique effects.</p><h2 id="proc">Proc Details</h2><h3 id="proc/handle_effects"><aside class="declaration">proc </aside>handle_effects<aside>(/<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/<a href="mob/living/carbon.html">carbon</a>/M, alien, removed) 
+        
+    
+            <a href="https://github.com/Foundation-19/Foundation-19/blob/450a50877364306e1c08df849746fff938e54fdc/code/modules/reagents/Chemistry-Reagents/medicines/medicines_cryogenic.dm#L18">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;Chemistry-Reagents&#x2F;medicines&#x2F;medicines_cryogenic.dm 18"/></a></aside>
+        </h3>
+        <p>Called each time the medicine ticks when the mob's body temperature is below <code>temperature_threshold</code>.</p></main>
+<footer>
+    baystation12.dme
+    <a href="https://github.com/Foundation-19/Foundation-19/tree/450a50877364306e1c08df849746fff938e54fdc">450a508</a>
+        (main) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>
