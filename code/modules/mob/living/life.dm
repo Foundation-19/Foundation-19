@@ -200,9 +200,14 @@
 	else
 		update_living_sight()
 
-	var/list/vision = get_accumulated_vision_handlers()
-	set_sight(sight | vision[1])
-	set_see_invisible(max(vision[2], see_invisible))
+	if(eyeobj)
+		var/list/vision = eyeobj.get_accumulated_vision_handlers()
+		set_sight(eyeobj.sight | vision[1])
+		set_see_invisible(max(vision[2], eyeobj.see_invisible))
+	else
+		var/list/vision = get_accumulated_vision_handlers()
+		set_sight(sight | vision[1])
+		set_see_invisible(max(vision[2], see_invisible))
 
 /mob/living/proc/update_living_sight()
 	var/set_sight_flags = sight & ~(SEE_TURFS|SEE_MOBS|SEE_OBJS)

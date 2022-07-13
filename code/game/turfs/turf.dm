@@ -356,6 +356,9 @@ var/const/enterloopsanity = 100
 /turf/proc/is_wall()
 	return FALSE
 
+/turf/proc/is_phasable()
+	return FALSE
+
 /turf/proc/is_open()
 	return FALSE
 
