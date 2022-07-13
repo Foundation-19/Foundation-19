@@ -121,7 +121,7 @@
 
 /obj/item/clothing/glasses/hud/scramble
 	name = "SCRAMBLE goggles"
-	desc = "State-of-the-art SCRAMBLE goggles. These things cost a fortune and apparently make you able to view SCP-096!"
+	desc = "State-of-the-art SCRAMBLE goggles. They work by obscuring the face of SCP-096 in software before the brain can register the image."
 	icon_state = "scramble"
 	item_state = "glasses"
 	origin_tech = null
@@ -145,7 +145,7 @@
 
 /obj/item/clothing/glasses/hud/scramble/experimental
 	name = "experimental SCRAMBLE goggles"
-	desc = "Experimental SCRAMBLE goggles. Designed to prevent the user from viewing the face of SCP-096."
+	desc = "Experimental SCRAMBLE goggles. Designed to prevent the user from viewing the face of SCP-096 by obscuring it before the brain can register the image."
 
 /obj/item/clothing/glasses/hud/scramble/experimental/Initialize()
 	. = ..()
