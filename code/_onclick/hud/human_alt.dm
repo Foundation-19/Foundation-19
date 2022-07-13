@@ -322,7 +322,7 @@
 	mymob.pain.name = "pain"
 	mymob.pain.screen_loc = "WEST,SOUTH to EAST,NORTH"
 	mymob.pain.layer = UNDER_HUD_LAYER
-	mymob.pain.mouse_opacity = 0
+	mymob.pain.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	hud_elements |= mymob.pain
 
 	mymob.noise = new /obj/screen()
@@ -330,7 +330,7 @@
 	mymob.noise.icon_state = "[rand(1,9)]"
 	mymob.noise.name = " "
 	mymob.noise.screen_loc = "1,1 to 15,15"
-	mymob.noise.mouse_opacity = 0
+	mymob.noise.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	hud_elements |= mymob.noise
 
 	mymob.combat_icon = new /obj/screen()//combat mode
@@ -414,7 +414,7 @@
 		H.fov.icon_state = "combat"
 		H.fov.name = " "
 		H.fov.screen_loc = "1,1"
-		H.fov.mouse_opacity = 0
+		H.fov.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 		H.fov.layer = UNDER_HUD_LAYER
 		hud_elements |= H.fov
 

@@ -187,7 +187,7 @@ var/global/datum/controller/gameticker/ticker
 		cinematic.icon_state = "station_intact"
 		cinematic.plane = HUD_PLANE
 		cinematic.layer = HUD_ABOVE_ITEM_LAYER
-		cinematic.mouse_opacity = 0
+		cinematic.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 		cinematic.screen_loc = "1,0"
 
 		var/obj/structure/bed/temp_buckle = new(src)

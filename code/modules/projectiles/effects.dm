@@ -8,7 +8,7 @@
 	light_max_bright = 1
 	light_color = "#ff00dc"
 
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/effect/projectile/proc/set_transform(var/matrix/M)
 	if(istype(M))
