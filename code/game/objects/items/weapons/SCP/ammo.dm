@@ -288,4 +288,4 @@
 /obj/item/storage/box/mtf/beanbag
 	name = "non-lethal ammunition"
 	desc = "Contains beanbag ammunition for a shotgun."
-	startswith = list(/obj/item/ammo_casing/shotgun/beanbag = 7
+	startswith = list(/obj/item/ammo_casing/shotgun/beanbag = 7)
