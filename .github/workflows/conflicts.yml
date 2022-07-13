@@ -2,7 +2,7 @@ name: 'Check for merge conflicts'
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   triage:
     runs-on: ubuntu-20.04
