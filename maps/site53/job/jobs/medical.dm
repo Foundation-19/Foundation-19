@@ -117,8 +117,8 @@
 	department = "Medical"
 	department_flag = MED
 	selection_color = "#013d3b"
-	total_positions = 8
-	spawn_positions = 8
+	total_positions = 5
+	spawn_positions = 5
 	ideal_character_age = 40
 	minimal_player_age = 3
 	economic_power = 5
@@ -155,8 +155,8 @@
 	department = "Medical"
 	department_flag = MED
 	selection_color = "#013d3b"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 2
+	spawn_positions = 2
 	minimal_player_age = 3
 	ideal_character_age = 40
 	economic_power = 5
@@ -230,8 +230,8 @@
 	department = "Medical"
 	department_flag = MED
 	selection_color = "#013d3b"
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 4
+	spawn_positions = 4
 	ideal_character_age = 40
 	economic_power = 5
 	//duties = "<big><b>As the EMT it is your job to man the medical post near the Class D cell block, and treat any injuries there of the guards or Class D's. You only have limited supplies, so it's best to make them count.</b></big>"

@@ -269,7 +269,7 @@
 		/obj/item/material/knife/folding/
 		)
 
-/obj/item/storage/belt/holster/security/fullgc/New()
+/obj/item/storage/belt/holster/security/fullmateba/New()
 	..()
 	new /obj/item/handcuffs(src)
 	new /obj/item/reagent_containers/spray/pepper(src)
@@ -278,11 +278,11 @@
 	new /obj/item/gun/projectile/revolver/mateba(src)
 	new /obj/item/ammo_magazine/c50(src)
 	new /obj/item/ammo_magazine/box/a50(src)
-	new /obj/item/clothing/glasses/sunglasses/sechud/goggles(src)
+	new /obj/item/handcuffs(src)
 	update_icon()
 
 
-/obj/item/storage/belt/holster/security/fullzc/New()
+/obj/item/storage/belt/holster/security/fullusp/New()
 	..()
 	new /obj/item/handcuffs(src)
 	new /obj/item/reagent_containers/spray/pepper(src)
@@ -291,23 +291,11 @@
 	new /obj/item/gun/projectile/pistol/usp45(src)
 	new /obj/item/ammo_magazine/scp/usp45(src)
 	new /obj/item/ammo_magazine/box/acp45(src)
-	new /obj/item/clothing/glasses/sunglasses/sechud/goggles(src)
-	update_icon()
-
-/obj/item/storage/belt/holster/security/fullzcez/New()
-	..()
 	new /obj/item/handcuffs(src)
-	new /obj/item/reagent_containers/spray/pepper(src)
-	new /obj/item/device/flash(src)
-	new /obj/item/device/flashlight/maglight(src)
-	new /obj/item/gun/projectile/pistol/usp45(src)
-	new /obj/item/ammo_magazine/scp/usp45(src)
-	new /obj/item/ammo_magazine/box/acp45(src)
-	new /obj/item/clothing/glasses/eyepatch/hud/security(src)
 	update_icon()
 
 
-/obj/item/storage/belt/holster/security/full/New()
+/obj/item/storage/belt/holster/security/fullmk9/New()
 	..()
 	new /obj/item/handcuffs(src)
 	new /obj/item/reagent_containers/spray/pepper(src)
@@ -316,20 +304,9 @@
 	new /obj/item/gun/projectile/pistol/mk9(src)
 	new /obj/item/ammo_magazine/scp/mk9(src)
 	new /obj/item/ammo_magazine/box/mk9(src)
-	new /obj/item/clothing/glasses/sunglasses/sechud/goggles(src)
+	new /obj/item/handcuffs(src)
 	update_icon()
 
-/obj/item/storage/belt/holster/security/fullez/New()
-	..()
-	new /obj/item/handcuffs(src)
-	new /obj/item/reagent_containers/spray/pepper(src)
-	new /obj/item/device/flash(src)
-	new /obj/item/device/flashlight/maglight(src)
-	new /obj/item/gun/projectile/pistol/mk9(src)
-	new /obj/item/ammo_magazine/scp/mk9(src)
-	new /obj/item/ammo_magazine/box/mk9(src)
-	new /obj/item/clothing/glasses/eyepatch/hud/security(src)
-	update_icon()
 
 /obj/item/storage/belt/general
 	name = "equipment belt"
