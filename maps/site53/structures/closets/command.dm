@@ -18,7 +18,6 @@
 		/obj/item/clothing/shoes/dress,
 		/obj/item/device/radio,
 		/obj/item/clothing/suit/storage/toggle/suit/black,
-		
 	)
 
 /obj/structure/closet/secure_closet/administration/commsofficer
