@@ -208,7 +208,7 @@
 	name = "\improper Primary Checkpoint Cryo"
 	})
 "aC" = (
-/obj/effect/paint_stripe/blue,
+/obj/effect/paint_stripe/gray,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/hallways)
 "aD" = (
@@ -389,8 +389,19 @@
 	name = "\improper Re-education center"
 	})
 "bb" = (
-/turf/unsimulated/mineral,
-/area/site53/uhcz/scp8containment)
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "247lockdown"
+	},
+/obj/machinery/door/blast/shutters{
+	id_tag = "Observation Shutter Central";
+	name = "Observation Shutter Central"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "bc" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -597,12 +608,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
 "bH" = (
-/obj/machinery/door/blast/regular{
-	dir = 8;
-	id_tag = "second2"
+/obj/structure/table/standard,
+/obj/machinery/camera/autoname{
+	dir = 1;
+	network = list("Heavy Containment Zone Network")
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lhcz/scp1102room)
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "bI" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -657,9 +671,14 @@
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
 "bO" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/prepainted,
-/area/site53/llcz/maintenance)
+/obj/structure/crematorium{
+	dir = 8;
+	id = "scp8crem"
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "bP" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -923,11 +942,8 @@
 /area/site53/llcz/maintenance)
 "co" = (
 /obj/effect/paint_stripe/gray,
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper Primary Checkpoint Armoury"
-	})
+/turf/simulated/wall/prepainted,
+/area/site53/llcz/maintenance)
 "cp" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -1032,15 +1048,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
 "cC" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/structure/barricade,
-/obj/structure/barricade/spike{
-	name = "Spikes"
+/obj/machinery/light{
+	icon_state = "tube1"
 	},
-/turf/simulated/floor/plating,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/lhcz/hallway)
 "cD" = (
 /obj/machinery/conveyor{
 	dir = 6;
@@ -1078,10 +1090,15 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/scp513)
 "cH" = (
-/obj/machinery/light{
-	dir = 1
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-008";
+	req_access = list(list(202,303,404))
 	},
-/turf/simulated/floor/tiled,
+/obj/machinery/door/blast/shutters{
+	id_tag = "SCP 008 Storage";
+	name = "SCP 008 Storage"
+	},
+/turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -1166,11 +1183,11 @@
 	})
 "cQ" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -1234,10 +1251,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
 "cY" = (
-/turf/simulated/floor/tiled/dark,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/cellbubble)
 "cZ" = (
 /obj/item/device/taperecorder,
 /obj/structure/table/standard,
@@ -1768,16 +1784,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
 "ek" = (
-/obj/structure/bed/chair/office,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/door/blast/regular{
+	dir = 8;
+	id_tag = "first1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/area/site53/lhcz/scp1102room)
 "el" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -2293,9 +2305,11 @@
 /turf/simulated/floor,
 /area/site53/llcz/scp513)
 "fm" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/hallways)
+/obj/effect/floor_decal/corner/purple/bordercorner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp1102room)
 "fn" = (
 /obj/effect/paint_stripe/white,
 /obj/machinery/button/blast_door{
@@ -2858,24 +2872,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/botany)
 "gC" = (
-/obj/structure/table/standard,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/handcuffs,
-/obj/item/handcuffs,
-/obj/item/handcuffs,
-/obj/item/handcuffs,
-/obj/item/handcuffs,
-/obj/item/handcuffs,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -3224,21 +3221,12 @@
 /turf/simulated/mineral/random,
 /area/site53/llcz/dclass/prep)
 "hz" = (
-/obj/effect/catwalk_plated/white,
-/obj/machinery/door/airlock/highsecurity{
-	name = "Experimentation Center";
-	req_access = list(list(202,303,404))
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
+/obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "247lockdown"
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -3595,13 +3583,22 @@
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
 "id" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
-/area/site53/lhcz/maintenance)
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/barricade,
+/obj/structure/barricade/spike{
+	name = "Spikes"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "ie" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
-/area/site53/lhcz/scp1102room)
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "if" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -4859,12 +4856,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
 "kO" = (
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 9
-	},
-/obj/machinery/vending/cigarette,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lhcz/scp1102room)
+/obj/structure/closet/crate/secure/biohazard/blanks,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "kP" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/door/window/northright{
@@ -5498,10 +5494,9 @@
 /turf/simulated/floor,
 /area/site53/engineering/maintenance/lowerselfdestruct)
 "ml" = (
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/isolation)
 "mm" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -5697,7 +5692,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/lowernukeladders)
 "mF" = (
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -6200,18 +6198,24 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/hallway)
 "nL" = (
-/obj/machinery/light{
-	icon_state = "tube1"
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/lhcz/hallway)
-"nM" = (
-/obj/effect/floor_decal/industrial/warning,
-/obj/structure/railing/mapped,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
+"nM" = (
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/checkpoint)
 "nN" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
@@ -6316,16 +6320,20 @@
 /turf/simulated/floor,
 /area/site53/engineering/maintenance/lowerselfdestruct)
 "oa" = (
+/obj/machinery/light{
+	dir = 8
+	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/machinery/light/small{
-	dir = 1
+/obj/machinery/camera/network/scp049{
+	dir = 8;
+	name = "SCP-049 Observation Access"
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/lhcz/maintenance)
+/turf/simulated/floor/tiled,
+/area/site53/lhcz/scp049containment)
 "ob" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/light{
@@ -6434,8 +6442,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
 "op" = (
-/obj/machinery/papershredder,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -6523,13 +6531,19 @@
 	name = "\improper Lower LCZ Access Checkpoint"
 	})
 "oA" = (
-/obj/machinery/button/blast_door{
-	id_tag = "scp8panic";
-	name = "Panic button";
-	pixel_y = 24
+/obj/structure/barricade,
+/obj/structure/barricade/spike{
+	name = "Spikes"
 	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/uhcz/scp8containment)
+/obj/machinery/door/blast/shutters{
+	dir = 8;
+	id_tag = "Entity Cage";
+	name = "Entity Cage"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "oB" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/head/soft/orange,
@@ -6680,8 +6694,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/light{
-	dir = 8
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "247lockdown"
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
@@ -6720,19 +6735,28 @@
 /turf/simulated/floor/tiled/old_cargo,
 /area/site53/lhcz/scp049containment)
 "oZ" = (
-/obj/machinery/light{
-	dir = 8
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "247lockdown"
 	},
-/turf/simulated/floor/tiled/white,
+/obj/machinery/door/blast/shutters{
+	id_tag = "Observation Shutter Control Subject";
+	name = "Observation Shutter Control Subject"
+	},
+/turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
 "pa" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
+/obj/structure/bed/chair,
+/obj/machinery/camera/autoname{
+	network = list("SCP-247 CCTV Network")
 	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "pb" = (
 /obj/structure/table/glass,
 /obj/item/device/flashlight/pen,
@@ -6751,23 +6775,20 @@
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
 "pe" = (
-/obj/structure/virology/analyser,
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
-"pf" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
-	id_tag = "247lockdown"
+	id_tag = "049emerg"
 	},
-/obj/machinery/door/blast/shutters{
-	id_tag = "Observation Shutter Central";
-	name = "Observation Shutter Central"
+/turf/simulated/floor,
+/area/site53/lhcz/scp049containment)
+"pf" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/barricade,
+/obj/structure/barricade/spike{
+	name = "Spikes"
 	},
+/obj/machinery/light,
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
@@ -6796,11 +6817,8 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/lhcz/scp049containment)
 "pk" = (
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 10
-	},
-/obj/machinery/vending/coffee,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
 /area/site53/lhcz/scp1102room)
 "pl" = (
 /obj/item/clothing/mask/muzzle,
@@ -7168,11 +7186,11 @@
 	name = "\improper Re-education center"
 	})
 "pZ" = (
-/obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/tiled,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp1102room)
 "qa" = (
 /obj/machinery/shieldwallgen{
 	active = 1;
@@ -7365,14 +7383,16 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
 "qu" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/camera/network/scp049{
+	dir = 4;
+	name = "SCP-049 Containment Chamberlock"
 	},
-/turf/simulated/floor,
-/area/site53/lhcz/hallway)
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/machinery/light/small/red{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/lhcz/scp049containment)
 "qv" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/ore_box,
@@ -7381,12 +7401,12 @@
 	name = "\improper D Class Mining Operations"
 	})
 "qw" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
+/obj/structure/table/standard,
+/obj/machinery/light{
+	dir = 1
 	},
-/obj/effect/floor_decal/industrial/warning,
-/obj/structure/railing/mapped,
-/turf/simulated/floor/tiled/white,
+/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -7495,14 +7515,9 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
 "qH" = (
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "247lockdown"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
+/area/site53/lhcz/scp049containment)
 "qI" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7643,23 +7658,16 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/scp106containment)
 "qX" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/obj/structure/closet/secure_closet/freezer{
-	icon = 'icons/obj/closets/fridge.dmi';
-	name = "Secure Freezer";
-	req_access = list(304)
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 1
 	},
-/obj/item/reagent_containers/glass/beaker/vial/scp008,
-/obj/item/reagent_containers/glass/beaker/vial/scp008,
-/obj/item/reagent_containers/glass/beaker/vial/scp008,
-/obj/item/reagent_containers/glass/beaker/vial/scp008,
-/obj/item/reagent_containers/glass/beaker/vial/scp008,
-/obj/item/storage/box/syringes,
-/obj/item/storage/box/syringes,
-/turf/simulated/floor/tiled/dark,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/obj/structure/filingcabinet,
+/obj/machinery/light{
+	dir = 1;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp1102room)
 "qY" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
@@ -8217,9 +8225,27 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "sf" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/checkpoint)
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 8;
+	icon_state = "pdoor0";
+	id_tag = "scp8panic";
+	name = "SCP-008 Lockdown shutter"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external/glass/bolted/cycling{
+	id_tag = "scp8_interior";
+	tag = "scp8_airlock"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
 "sg" = (
 /obj/machinery/atmospherics/pipe/manifold/visible,
 /turf/simulated/floor/tiled/monotile/white,
@@ -8435,8 +8461,12 @@
 /turf/simulated/floor/lino,
 /area/site53/lhcz/scp049containment)
 "sJ" = (
-/obj/structure/closet/secure_closet/freezer/meat,
-/turf/simulated/floor/tiled/freezer,
+/obj/structure/table/standard,
+/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -8626,10 +8656,14 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
 "td" = (
-/obj/structure/table/rack,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/uhcz/scp8containment)
+/obj/structure/closet/secure_closet/mtf/breachshotguns,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "te" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -9320,19 +9354,19 @@
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
 "uw" = (
-/obj/structure/filingcabinet/chestdrawer,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/uhcz/scp8containment)
-"ux" = (
-/obj/effect/paint_stripe/red,
+/obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
-	id_tag = "Entity Cage";
-	name = "Entity Cage"
+	id_tag = "Observation Shutter Central";
+	name = "Observation Shutter Central"
 	},
-/turf/simulated/wall/titanium,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
+"ux" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
 "uy" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9342,9 +9376,13 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/scp106containment)
 "uz" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
-/area/site53/lhcz/scp049containment)
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "uA" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
@@ -9866,15 +9904,10 @@
 	name = "\improper Re-education center"
 	})
 "vE" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "247lockdown"
+/obj/structure/bed/chair/shuttle{
+	name = "Reeducation Chair"
 	},
-/obj/machinery/door/blast/shutters{
-	id_tag = "Observation Shutter Cage";
-	name = "Observation Shutter Cage"
-	},
+/obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
@@ -10194,16 +10227,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/briefing)
 "wh" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/highsecurity,
-/obj/item/taperoll/engineering/applied,
-/turf/simulated/floor,
-/area/site53/lhcz/hallway)
+/turf/simulated/floor/tiled/dark,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "wi" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/light{
@@ -10609,17 +10636,12 @@
 /area/site53/llcz/dclass/canteenbubble)
 "xe" = (
 /obj/machinery/light{
-	dir = 8
+	dir = 4;
+	icon_state = "tube1";
+	pixel_x = 12
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/turf/simulated/floor/lino,
+/area/site53/lhcz/scp049containment)
 "xf" = (
 /obj/item/beach_ball,
 /turf/simulated/floor/beach/sand,
@@ -11446,34 +11468,31 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/medicalpost)
 "zf" = (
-/obj/machinery/camera/autoname{
+/obj/machinery/door/airlock/research{
+	name = "Containment Chamber";
+	req_access = list(203,303)
+	},
+/obj/machinery/door/blast/regular{
 	dir = 8;
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"zg" = (
-/obj/structure/table/standard,
-/obj/machinery/button/blast_door{
-	id_tag = "Entity Cage Separator";
-	name = "Entity Cage Separator"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"zh" = (
-/obj/structure/table/steel_reinforced,
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 1
-	},
-/obj/machinery/button/blast_door{
 	id_tag = "third3"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
+"zg" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/site53/lhcz/hallway)
+"zh" = (
+/obj/structure/virology/analyser,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment)
 "zi" = (
 /obj/machinery/camera/network/lcz{
 	dir = 1
@@ -11482,15 +11501,12 @@
 /turf/simulated/floor/lino,
 /area/site53/llcz/dclass/canteen)
 "zj" = (
-/obj/structure/hygiene/shower{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 14
-	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/uhcz/scp8containment)
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/warning/biohazard,
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "zk" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/reinforced,
@@ -11499,13 +11515,26 @@
 	name = "\improper Security Post #2"
 	})
 "zl" = (
-/turf/unsimulated/mineral,
-/area/site53/lhcz/hallway)
+/obj/effect/catwalk_plated/white,
+/turf/simulated/floor/plating,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "zm" = (
-/obj/machinery/light{
-	dir = 8
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/structure/closet/secure_closet/freezer{
+	icon = 'icons/obj/closets/fridge.dmi';
+	name = "Secure Freezer";
+	req_access = list(304)
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/item/reagent_containers/glass/beaker/vial/scp008,
+/obj/item/reagent_containers/glass/beaker/vial/scp008,
+/obj/item/reagent_containers/glass/beaker/vial/scp008,
+/obj/item/reagent_containers/glass/beaker/vial/scp008,
+/obj/item/reagent_containers/glass/beaker/vial/scp008,
+/obj/item/storage/box/syringes,
+/obj/item/storage/box/syringes,
+/turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -11529,18 +11558,20 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mine/unexplored)
 "zr" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
 "zs" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "SCP-247 Observation";
-	send_access = list(303)
+/obj/structure/table/reinforced,
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "Infected Subject Area";
+	name = "Infected Subject Area";
+	pixel_x = 22;
+	pixel_y = 32
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "Entity Cage";
+	name = "Entity Cage"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
@@ -11709,13 +11740,15 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
 "zQ" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "049emerg"
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor,
-/area/site53/lhcz/scp049containment)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "zR" = (
 /obj/machinery/light{
 	dir = 1;
@@ -11978,19 +12011,20 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost)
 "At" = (
-/obj/structure/table/standard,
-/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
-/obj/machinery/light{
-	dir = 8
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
 "Au" = (
-/obj/effect/floor_decal/industrial/firstaid/corner{
-	dir = 1
+/obj/structure/virology/iso{
+	pixel_x = -5
 	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
 "Av" = (
@@ -12050,9 +12084,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
 "AE" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/isolation)
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "AF" = (
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/monotile,
@@ -12351,12 +12389,17 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
 "Br" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1;
+	icon_state = "warning"
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -12372,7 +12415,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
 "Bt" = (
-/turf/simulated/floor/tiled,
+/obj/structure/bed/chair,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -12412,13 +12456,9 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/scp1102room)
 "By" = (
-/obj/machinery/button/blast_door{
-	id_tag = "scp049emerg";
-	name = "SCP-049 Emergency Lockdown";
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled,
-/area/site53/lhcz/scp049containment)
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/scp8containment)
 "Bz" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
 /obj/effect/floor_decal/industrial/warning{
@@ -12432,19 +12472,14 @@
 /turf/simulated/floor/plating,
 /area/site53/lhcz/scp1102room)
 "BB" = (
-/obj/structure/table/standard,
-/obj/machinery/firealarm{
-	dir = 8;
-	name = "emergency alarm"
+/obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/industrial/firstaid,
-/obj/machinery/camera/autoname{
-	c_tag = "Comms Tower Basement";
-	dir = 4;
-	network = list("Engineering Network")
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
+/turf/simulated/floor,
+/area/site53/lhcz/hallway)
 "BC" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -12454,61 +12489,60 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
 "BD" = (
-/obj/structure/dispenser/oxygen,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"BE" = (
-/obj/machinery/button/blast_door{
-	id_tag = "scp049emerg";
-	name = "SCP-049 Emergency Lockdown";
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled,
-/area/site53/lhcz/scp049containment)
-"BF" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"BG" = (
 /obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "247lockdown"
+/obj/structure/barricade,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
 	},
-/obj/machinery/door/blast/shutters{
-	id_tag = "Observation Shutter Control Subject";
-	name = "Observation Shutter Control Subject"
+/obj/structure/barricade/spike{
+	name = "Spikes"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"BH" = (
-/obj/structure/table/standard,
+"BE" = (
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"BF" = (
+/obj/structure/table/reinforced,
 /obj/machinery/light,
 /obj/machinery/button/blast_door{
-	id_tag = "Research Arena Entrance";
-	name = "Research Arena Entrance"
+	dir = 4;
+	id_tag = "Control Subject Area";
+	name = "Control Subject Area";
+	pixel_x = -23
 	},
+/obj/item/toy/desk/fan,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
+"BG" = (
+/obj/structure/closet,
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp1102room)
+"BH" = (
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment)
 "BI" = (
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor,
-/area/site53/lhcz/hallway)
-"BJ" = (
+/obj/machinery/camera/autoname{
+	network = list("SCP-247 CCTV Network")
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
+"BJ" = (
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor,
+/area/site53/lhcz/hallway)
 "BK" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
 /obj/effect/floor_decal/industrial/warning{
@@ -12728,11 +12762,9 @@
 /turf/simulated/floor/carpet/purple,
 /area/site53/lowertram/archive)
 "Ch" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/catwalk_plated/white,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -13445,12 +13477,13 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
 "DM" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	icon_state = "4-8"
+/obj/machinery/light{
+	dir = 4
 	},
-/turf/simulated/floor,
-/area/site53/lhcz/hallway)
+/turf/simulated/floor/tiled/dark,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "DN" = (
 /obj/machinery/button/alternate/door/bolts{
 	dir = 8;
@@ -14733,17 +14766,16 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
 "GP" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
+/obj/effect/catwalk_plated/white,
+/obj/structure/railing/mapped,
+/obj/machinery/light,
+/turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
 "GQ" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -16693,9 +16725,19 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "KL" = (
-/obj/structure/bed/chair/office,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/uhcz/scp8containment)
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "247lockdown"
+	},
+/obj/machinery/door/blast/shutters{
+	id_tag = "Observation Shutter Cage";
+	name = "Observation Shutter Cage"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "KM" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/door/airlock/glass/civilian{
@@ -16812,23 +16854,15 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "Lb" = (
-/obj/machinery/embedded_controller/radio/airlock/access_controller{
-	dir = 1;
-	id_tag = "scp8_airlock";
-	pixel_y = -25;
-	req_access = list(list(203,304));
-	tag_exterior_door = "scp8_exterior";
-	tag_interior_door = "scp8_interior"
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
 	},
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
+/obj/machinery/power/apc/hyper{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/uhcz/scp8containment)
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/lhcz/hallway)
 "Lc" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -16840,6 +16874,12 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
+"Ld" = (
+/obj/structure/reagent_dispensers/watertank,
+/turf/simulated/floor/tiled/steel_ridged,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Le" = (
 /obj/structure/bed,
 /obj/machinery/light{
@@ -16848,13 +16888,6 @@
 /obj/item/bedsheet/medical,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
-"Lf" = (
-/obj/structure/closet,
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lhcz/scp1102room)
 "Lg" = (
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = 32
@@ -16875,6 +16908,18 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"Lk" = (
+/obj/machinery/button/crematorium{
+	id_tag = "scp8crem";
+	pixel_y = -24;
+	req_access = list(304)
+	},
+/obj/structure/crematorium{
+	dir = 8;
+	id = "scp8crem"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment)
 "Ll" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -16894,27 +16939,26 @@
 /turf/simulated/floor,
 /area/site53/uhcz/scp106parts)
 "Lm" = (
-/obj/structure/table/standard,
-/obj/machinery/button/blast_door{
-	id_tag = "Observation Shutter Cage";
-	name = "Observation Shutter Cage"
+/obj/effect/floor_decal/corner/purple/bordercorner{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/area/site53/lhcz/scp1102room)
 "Ln" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper Primary Checkpoint Armoury"
 	})
 "Lo" = (
-/obj/structure/mopbucket,
-/obj/item/mop,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/steel_ridged,
+/obj/structure/table/standard,
+/obj/item/storage/box/syringegun,
+/obj/item/storage/box/syringegun,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -16930,57 +16974,35 @@
 /area/site53/llcz/mining/miningops{
 	name = "\improper D Class Mining Operations"
 	})
-"Lt" = (
-/obj/structure/hygiene/shower{
+"Ls" = (
+/obj/structure/closet/l3closet/virology,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
+	dir = 5
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp8containment)
-"Lv" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "SCP-008 Observation";
-	send_access = list(204)
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/uhcz/scp8containment)
-"Lw" = (
-/obj/structure/table/reinforced,
-/obj/machinery/button/blast_door{
-	id_tag = "Observation Shutter Central";
-	name = "Observation Shutter Central"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"Lx" = (
-/obj/structure/table/standard,
-/obj/item/storage/box/syringegun,
-/obj/item/storage/box/syringegun,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "Lz" = (
-/obj/structure/table/standard,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment)
 "LB" = (
 /obj/structure/ladder/up,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/scp106parts)
+"LC" = (
+/obj/machinery/door/blast/shutters{
+	dir = 8;
+	id_tag = "Research Arena Entrance";
+	name = "Research Arena Entrance"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "LD" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
@@ -17023,93 +17045,82 @@
 	requires_power = 0
 	})
 "LK" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/structure/table/standard,
+/obj/item/storage/box/bodybags,
+/obj/item/storage/box/bodybags,
+/obj/item/storage/box/bodybags,
+/obj/item/storage/box/bodybags,
+/turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"LN" = (
-/obj/effect/catwalk_plated/white,
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped,
-/obj/machinery/light,
-/turf/simulated/floor/plating,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"LO" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
+"LM" = (
+/obj/machinery/button/blast_door{
+	id_tag = "scp049emerg";
+	name = "SCP-049 Emergency Lockdown";
+	pixel_y = 32
 	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1;
-	icon_state = "warning"
-	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"LS" = (
-/obj/structure/hygiene/sink{
-	dir = 8;
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/obj/item/storage/mirror{
-	pixel_x = -23;
-	pixel_y = 5
-	},
-/turf/simulated/floor/tiled/old_tile,
+/turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
 "LU" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Experimentation Center";
-	req_access = list(204)
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -25;
+	req_access = list(201)
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"LW" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "SCP-008";
-	req_access = list(list(202,303,404))
-	},
-/obj/machinery/door/firedoor,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/uhcz/scp8containment)
-"LX" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/primaryhallway)
-"LY" = (
-/obj/structure/closet/l3closet/virology,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/light{
+/obj/effect/floor_decal/industrial/loading{
 	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment)
+"LV" = (
+/obj/machinery/embedded_controller/radio/airlock/access_controller{
+	dir = 1;
+	id_tag = "scp8_airlock";
+	pixel_y = -25;
+	req_access = list(list(203,304));
+	tag_exterior_door = "scp8_exterior";
+	tag_interior_door = "scp8_interior"
+	},
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp8containment)
-"LZ" = (
-/obj/structure/table/steel_reinforced,
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 4
+"LW" = (
+/obj/structure/table/standard,
+/obj/machinery/photocopier/faxmachine{
+	department = "SCP-247 Observation";
+	send_access = list(303)
 	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/lhcz/scp1102room)
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"LX" = (
+/obj/effect/floor_decal/industrial/hatch/red,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/primaryhallway)
+"LY" = (
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/door/airlock/highsecurity,
+/obj/item/taperoll/engineering/applied,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/site53/lhcz/hallway)
+"Mb" = (
+/obj/structure/closet/secure_closet/mtf/breachshotguns,
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Mc" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -17118,104 +17129,73 @@
 	},
 /turf/simulated/floor/carpet,
 /area/site53/lowertram/archive)
+"Md" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Me" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Primary Containment Compartment";
-	req_access = list(list(203,304))
+/obj/structure/hygiene/sink{
+	dir = 1;
+	pixel_y = 11
 	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "049emerg"
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
-/turf/simulated/floor/tiled,
-/area/site53/lhcz/scp049containment)
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
 "Mf" = (
 /obj/structure/table/standard,
 /obj/item/material/knife/table/plastic,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/kitchen)
 "Mg" = (
-/obj/structure/table/standard,
-/obj/item/clothing/suit/straight_jacket,
-/obj/item/clothing/suit/straight_jacket,
-/obj/item/clothing/suit/straight_jacket,
-/obj/item/clothing/suit/straight_jacket,
-/obj/item/clothing/head/helmet/facecover,
-/obj/item/clothing/head/helmet/facecover,
-/obj/item/clothing/head/helmet/facecover,
-/obj/item/clothing/head/helmet/facecover,
-/obj/item/clothing/glasses/blindfold,
-/obj/item/clothing/glasses/blindfold,
-/obj/item/clothing/glasses/blindfold,
-/obj/item/clothing/glasses/blindfold,
-/obj/item/clothing/ears/earmuffs,
-/obj/item/clothing/ears/earmuffs,
-/obj/item/clothing/ears/earmuffs,
-/obj/item/clothing/ears/earmuffs,
-/obj/item/clothing/mask/muzzle,
-/obj/item/clothing/mask/muzzle,
-/obj/item/clothing/mask/muzzle,
-/obj/item/clothing/mask/muzzle,
+/obj/machinery/door/airlock/highsecurity{
+	name = "Experimentation Center";
+	req_access = list(list(202,303,404))
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"Mh" = (
-/obj/machinery/camera/autoname{
-	network = list("Light Containment Zone Network")
-	},
-/obj/machinery/button/blast_door{
-	id_tag = "247lockdown";
-	name = "Containment Unit Lockdown button";
-	pixel_y = 24
-	},
-/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
 "Mj" = (
-/obj/structure/bed,
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"Mk" = (
-/obj/structure/bed/chair/office,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"Mm" = (
-/obj/machinery/camera/autoname{
-	dir = 1;
-	network = list("Heavy Containment Zone Network")
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "247lockdown"
 	},
-/turf/simulated/floor/tiled/white,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"Mp" = (
-/obj/structure/table/reinforced,
-/obj/machinery/button/blast_door{
-	id_tag = "Research Arena Entrance";
-	name = "Research Arena Entrance"
+"Ms" = (
+/obj/structure/hygiene/shower{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"Mq" = (
-/obj/item/device/camera,
-/obj/item/device/camera_film,
-/obj/item/device/camera_film,
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1";
-	pixel_x = 12
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
 	},
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled,
-/area/site53/lhcz/scp049containment)
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/uhcz/scp8containment)
 "Mu" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -17226,55 +17206,81 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
-"MA" = (
-/obj/structure/table/standard,
-/obj/item/device/camera,
+"Mz" = (
+/obj/structure/dispenser/oxygen,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
 "MC" = (
-/obj/structure/table/steel_reinforced,
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 8
+/obj/machinery/button/blast_door{
+	id_tag = "scp0491";
+	name = "SCP-049-1 Containment Chamber Unlock";
+	pixel_y = 32
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lhcz/scp1102room)
+/turf/simulated/floor/tiled,
+/area/site53/lhcz/scp049containment)
 "ME" = (
 /obj/structure/table/standard,
 /obj/item/device/paint_sprayer,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
-"MF" = (
-/obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"MG" = (
-/obj/machinery/door/blast/shutters{
-	dir = 8;
-	id_tag = "Entity Cage Separator";
-	name = "Entity Cage Separator"
+"MJ" = (
+/obj/effect/floor_decal/industrial/firstaid{
+	dir = 8
 	},
-/obj/structure/railing/mapped{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
 	},
-/turf/simulated/floor/plating,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment)
 "ML" = (
 /obj/structure/bookcase,
 /turf/simulated/floor/carpet,
 /area/site53/lowertram/archive)
 "MN" = (
-/obj/machinery/door/blast/regular{
-	dir = 8;
-	id_tag = "first1"
+/obj/structure/table/standard,
+/obj/machinery/button/blast_door{
+	id_tag = "Entity Cage";
+	name = "Entity Cage"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/lhcz/scp1102room)
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"MO" = (
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/structure/closet/secure_closet/freezer{
+	icon = 'icons/obj/closets/fridge.dmi';
+	name = "Secure Freezer";
+	req_access = list(304)
+	},
+/obj/item/reagent_containers/glass/beaker/vial/scp008,
+/obj/item/reagent_containers/glass/beaker/vial/scp008,
+/obj/item/reagent_containers/glass/beaker/vial/scp008,
+/obj/item/reagent_containers/glass/beaker/vial/scp008,
+/obj/item/reagent_containers/glass/beaker/vial/scp008,
+/obj/item/storage/box/syringes,
+/obj/item/storage/box/syringes,
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment)
+"MP" = (
+/obj/structure/table/standard,
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "emergency alarm"
+	},
+/obj/effect/floor_decal/industrial/firstaid,
+/obj/machinery/camera/autoname{
+	c_tag = "Comms Tower Basement";
+	dir = 4;
+	network = list("Engineering Network")
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment)
 "MQ" = (
 /obj/structure/table/standard,
 /obj/item/paper,
@@ -17282,42 +17288,47 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
 "MR" = (
-/obj/structure/table/reinforced,
-/obj/machinery/button/blast_door{
-	id_tag = "Entity Cage Separator";
-	name = "Entity Cage Separator"
+/obj/effect/catwalk_plated/white,
+/obj/machinery/door/airlock/highsecurity{
+	name = "Experimentation Center";
+	req_access = list(list(202,303,404))
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "247lockdown"
+	},
+/turf/simulated/floor,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"MV" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+"MS" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
 	},
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"MT" = (
+/obj/machinery/button/blast_door{
+	id_tag = "D-Class Reward Room";
+	name = "D-Class Reward Room";
+	req_access = list(202)
+	},
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/primaryhallway)
+"MU" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/light,
+/obj/machinery/chem_master,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
-"MW" = (
-/obj/structure/table/standard,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/under/scp/dclass,
-/obj/item/handcuffs,
-/obj/item/handcuffs,
-/obj/item/handcuffs,
-/obj/item/handcuffs,
-/obj/item/handcuffs,
-/obj/item/handcuffs,
-/turf/simulated/floor/tiled,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "MX" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -17329,29 +17340,34 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
-"Na" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"Nc" = (
+"MZ" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/light,
-/obj/machinery/chem_master,
+/obj/machinery/chemical_dispenser/full,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
-"Ne" = (
-/obj/structure/table/reinforced,
-/obj/item/device/camera,
-/turf/simulated/floor/tiled/monotile,
+"Nb" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
+"Nd" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Surgical Compartment";
+	req_access = list(list(203,304))
+	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "049emerg"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/lhcz/scp049containment)
 "Ng" = (
 /obj/machinery/door/window/brigdoor/northright{
 	req_access = list(603)
@@ -17379,21 +17395,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
-"Nj" = (
-/obj/structure/sign/warning/biohazard{
-	pixel_y = 34
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/unary/tank,
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/uhcz/scp8containment)
-"Nk" = (
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 6
-	},
-/obj/machinery/papershredder,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lhcz/scp1102room)
 "Nl" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "SCP-529";
@@ -17405,48 +17406,11 @@
 	requires_power = 0
 	})
 "Nr" = (
-/obj/structure/table/reinforced,
-/obj/machinery/light,
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "Control Subject Area";
-	name = "Control Subject Area";
-	pixel_x = -23
-	},
-/obj/item/toy/desk/fan,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"Nu" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "247lockdown"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"Nx" = (
-/obj/effect/catwalk_plated/white,
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"Ny" = (
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor/plating,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
+/obj/effect/paint_stripe/gray,
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/checkequip{
+	name = "\improper Primary Checkpoint Armoury"
 	})
 "Nz" = (
 /obj/machinery/door/blast/regular{
@@ -17462,9 +17426,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/botany)
 "NE" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/glass/bucket,
-/turf/simulated/floor/tiled/steel_grid,
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/warning/caution,
+/turf/simulated/wall/titanium,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -17481,12 +17445,18 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "NH" = (
-/obj/effect/catwalk_plated/white,
-/obj/structure/railing/mapped{
-	dir = 1
+/obj/machinery/door/airlock/highsecurity{
+	name = "Experimentation Center";
+	req_access = list(list(202,303,404))
 	},
-/obj/machinery/light{
-	dir = 1
+/obj/machinery/door/blast/shutters{
+	id_tag = "Control Subject Area";
+	name = "Control Subject Area"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment{
@@ -17512,43 +17482,75 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/uhcz/scp106parts)
-"NK" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/glass/beaker,
-/obj/item/reagent_containers/glass/beaker,
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/item/reagent_containers/glass/beaker/large,
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
 "NL" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
-"NQ" = (
-/obj/effect/floor_decal/industrial/warning,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+"NM" = (
+/obj/structure/hygiene/shower{
+	dir = 8
 	},
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 14
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/uhcz/scp8containment)
+"NN" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped,
+/obj/machinery/door/blast/shutters{
+	dir = 8;
+	id_tag = "Entity Cage";
+	name = "Entity Cage"
+	},
+/turf/simulated/open,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"NP" = (
+/obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "Control Subject Area";
-	name = "Control Subject Area";
-	pixel_x = -23
+	id_tag = "Research Arena Entrance";
+	name = "Research Arena Entrance"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"NS" = (
-/obj/structure/railing/mapped{
-	dir = 8
+"NQ" = (
+/obj/machinery/camera/network/scp049{
+	dir = 4;
+	name = "SCP-049 Operating Theatre"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/old_tile,
+/area/site53/lhcz/scp049containment)
+"NS" = (
+/obj/machinery/button/blast_door{
+	id_tag = "247lockdown";
+	name = "Containment Unit Lockdown button";
+	pixel_y = 24;
+	req_access = list(202)
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
+"NT" = (
+/obj/item/device/camera,
+/obj/item/device/camera_film,
+/obj/item/device/camera_film,
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1";
+	pixel_x = 12
+	},
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled,
+/area/site53/lhcz/scp049containment)
 "NV" = (
 /obj/structure/cable/green{
 	d2 = 8;
@@ -17571,20 +17573,16 @@
 /obj/effect/floor_decal/industrial/warning/corner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost)
-"Ob" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+"Oa" = (
+/obj/machinery/door/blast/shutters{
+	dir = 8;
+	id_tag = "Entity Cage Separator";
+	name = "Entity Cage Separator"
 	},
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "Control Subject Area";
-	name = "Control Subject Area";
-	pixel_x = -23;
-	req_access = list(202)
+/obj/structure/railing/mapped{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -17595,14 +17593,38 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
+"Od" = (
+/turf/simulated/floor/tiled/freezer,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"Oe" = (
+/obj/effect/catwalk_plated/white,
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped,
+/obj/machinery/light,
+/turf/simulated/floor/plating,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Of" = (
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1";
-	pixel_x = 12
+/obj/machinery/door/blast/shutters{
+	dir = 8;
+	id_tag = "Entity Cage Separator";
+	name = "Entity Cage Separator"
 	},
-/turf/simulated/floor/lino,
-/area/site53/lhcz/scp049containment)
+/obj/structure/railing/mapped,
+/turf/simulated/floor/plating,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"Og" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/warning,
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Oh" = (
 /obj/machinery/door/airlock/glass/civilian{
 	id_tag = "archive";
@@ -17616,37 +17638,25 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
 "Oi" = (
-/turf/unsimulated/mineral,
-/area/site53/uhcz/scp106containment)
-"Oj" = (
-/obj/machinery/door/blast/shutters{
+/obj/structure/hygiene/sink{
 	dir = 8;
-	id_tag = "Research Arena Entrance";
-	name = "Research Arena Entrance"
+	pixel_x = -12;
+	pixel_y = 2
 	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/obj/item/storage/mirror{
+	pixel_x = -23;
+	pixel_y = 5
+	},
+/turf/simulated/floor/tiled/old_tile,
+/area/site53/lhcz/scp049containment)
 "Ok" = (
-/obj/structure/table/standard,
-/obj/machinery/camera/network/scp049{
-	name = "SCP-049 Containment Foyer"
+/obj/machinery/button/blast_door{
+	id_tag = "scp0491";
+	name = "SCP-049-1 Containment Chamber Unlock";
+	pixel_x = 32
 	},
-/obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
-"Ol" = (
-/obj/machinery/button/blast_door{
-	id_tag = "247lockdown";
-	name = "Containment Unit Lockdown button";
-	pixel_y = 24;
-	req_access = list(202)
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "Om" = (
 /obj/machinery/light,
 /obj/structure/filingcabinet,
@@ -17655,21 +17665,34 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
-"On" = (
+"Oq" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"Or" = (
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 5
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24;
+	req_access = list(201)
+	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d2 = 2;
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
-"Oo" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/structure/railing/mapped,
-/turf/simulated/floor/plating,
+"Os" = (
+/obj/structure/table/standard,
+/obj/item/reagent_containers/glass/bucket,
+/turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -17687,49 +17710,59 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
 "Ox" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /obj/machinery/button/blast_door{
-	dir = 8;
-	id_tag = "Infected Subject Area";
-	name = "Infected Subject Area";
-	pixel_x = 22;
-	pixel_y = 32
+	dir = 4;
+	id_tag = "Control Subject Area";
+	name = "Control Subject Area";
+	pixel_x = -23
 	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"Oy" = (
-/obj/structure/table/standard,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"OA" = (
-/obj/effect/catwalk_plated/white,
+"Oz" = (
+/obj/structure/table/standard,
+/obj/machinery/photocopier/faxmachine{
+	department = "SCP-008 Observation";
+	send_access = list(204)
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
+"OB" = (
 /obj/structure/railing/mapped,
-/obj/machinery/light,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
 "OC" = (
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/cellbubble)
-"OE" = (
-/obj/machinery/door/blast/shutters{
-	dir = 8;
-	id_tag = "Entity Cage Separator";
-	name = "Entity Cage Separator"
+"OD" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
-/obj/structure/railing/mapped,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
+"OE" = (
+/obj/structure/closet,
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp1102room)
 "OG" = (
 /obj/machinery/barrier,
 /obj/effect/floor_decal/corner/red/border,
@@ -17744,44 +17777,36 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/botany)
 "OJ" = (
-/obj/structure/bed/chair,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"OK" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8;
-	icon_state = "warning"
-	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1;
-	icon_state = "warning"
-	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
+/obj/structure/closet/secure_closet,
+/obj/item/material/twohanded/baseballbat,
+/obj/item/material/twohanded/baseballbat,
+/obj/item/material/twohanded/baseballbat,
+/obj/item/material/twohanded/baseballbat,
+/obj/item/material/twohanded/baseballbat,
+/obj/item/material/twohanded/baseballbat,
+/obj/item/material/twohanded/baseballbat,
+/obj/item/material/sword,
+/obj/item/material/sword,
+/obj/item/material/sword,
+/obj/item/material/sword,
+/obj/item/material/sword/katana,
+/obj/item/material/sword/katana,
+/obj/item/material/sword/katana,
+/obj/item/material/sword/katana,
+/obj/item/material/twohanded/fireaxe,
+/obj/item/material/twohanded/fireaxe,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
 "ON" = (
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 1
+/obj/structure/sign/warning/biohazard{
+	pixel_y = 34
 	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"OP" = (
-/obj/structure/hygiene/sink/kitchen{
-	pixel_y = 22
-	},
-/turf/simulated/floor/tiled/freezer,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/unary/tank,
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/uhcz/scp8containment)
 "OS" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -17794,6 +17819,14 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/scp106containment)
+"OT" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "OV" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/catwalk_plated/dark,
@@ -17804,12 +17837,29 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp106parts)
-"OW" = (
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/uhcz/scp8containment)
 "OX" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/mine/unexplored)
+"OY" = (
+/obj/machinery/light,
+/obj/machinery/button/crematorium{
+	id_tag = "scp8crem";
+	pixel_y = -24;
+	req_access = list(304)
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"OZ" = (
+/obj/structure/closet/secure_closet/mtf/breachshotguns,
+/obj/machinery/camera/autoname{
+	network = list("Light Containment Zone Network")
+	},
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Pa" = (
 /obj/structure/window/reinforced,
 /obj/structure/flora/ausbushes/leafybush,
@@ -17834,6 +17884,21 @@
 	},
 /turf/simulated/floor/carpet,
 /area/site53/lowertram/archive)
+"Pk" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/barricade,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/obj/structure/barricade/spike{
+	name = "Spikes"
+	},
+/obj/machinery/light,
+/turf/simulated/floor/plating,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Pl" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -17855,18 +17920,14 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
-"Pp" = (
-/obj/structure/closet/secure_closet/mtf/breachshotguns,
-/obj/machinery/light{
-	dir = 1
+"Pr" = (
+/obj/structure/table/standard,
+/obj/machinery/light,
+/obj/machinery/button/blast_door{
+	id_tag = "Control Subject Preparation";
+	name = "Control Subject Preparation"
 	},
-/turf/simulated/floor/tiled,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"Ps" = (
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -17877,18 +17938,34 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
 "Pv" = (
-/obj/structure/closet/secure_closet/mtf/breachshotguns,
-/turf/simulated/floor/tiled,
+/obj/structure/closet/secure_closet,
+/obj/item/material/twohanded/spear,
+/obj/item/material/twohanded/spear,
+/obj/item/material/twohanded/spear,
+/obj/item/material/twohanded/spear,
+/obj/item/material/twohanded/spear,
+/obj/item/material/twohanded/spear,
+/obj/item/material/twohanded/spear,
+/obj/item/material/twohanded/spear,
+/obj/item/material/knife/combat,
+/obj/item/material/knife/combat,
+/obj/item/material/knife/combat,
+/obj/item/material/knife/combat,
+/obj/item/material/knife/combat,
+/obj/item/material/knife/combat,
+/obj/item/material/knife/combat,
+/turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
 "Pw" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier{
-	pixel_y = 3
+/obj/machinery/camera/autoname{
+	network = list("Light Containment Zone Network")
 	},
-/obj/machinery/light{
-	dir = 4
+/obj/machinery/button/blast_door{
+	id_tag = "247lockdown";
+	name = "Containment Unit Lockdown button";
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
@@ -17900,22 +17977,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/scp106parts)
-"Py" = (
-/obj/structure/bed/chair/shuttle{
-	name = "Reeducation Chair"
-	},
-/obj/effect/floor_decal/industrial/outline/orange,
-/turf/simulated/floor/plating,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"PA" = (
-/obj/structure/table/standard,
-/obj/item/gun/launcher/syringe,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "PB" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/corner/red/border{
@@ -17925,41 +17986,71 @@
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper Primary Checkpoint Armoury"
 	})
-"PD" = (
-/obj/machinery/button/blast_door{
-	id_tag = "scp0491";
-	name = "SCP-049-1 Containment Chamber Unlock";
-	pixel_y = 32
+"PF" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Primary Containment Compartment";
+	req_access = list(list(203,304))
+	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "049emerg"
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
-"PF" = (
-/obj/machinery/light{
-	dir = 4
+"PI" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor,
+/area/site53/lhcz/hallway)
+"PK" = (
+/obj/structure/table/standard,
+/obj/machinery/light,
+/obj/machinery/button/blast_door{
+	id_tag = "Research Arena Entrance";
+	name = "Research Arena Entrance"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"PJ" = (
-/obj/structure/railing/mapped{
-	dir = 1
+"PN" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "scp8panic";
+	name = "SCP-008 Lockdown shutter"
 	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/turf/simulated/floor,
+/area/site53/uhcz/scp8containment)
 "PO" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"PQ" = (
-/obj/structure/table/standard,
-/obj/machinery/microscope,
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
+"PP" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "PT" = (
 /obj/structure/closet/secure_closet/mtf/breachshotguns,
 /obj/effect/floor_decal/corner/red/bordercee{
@@ -17983,45 +18074,31 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
 "PV" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/scp8containment)
-"PW" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "scp8panic";
-	name = "SCP-008 Lockdown shutter"
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1;
+	icon_state = "warning"
 	},
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/turf/simulated/floor,
-/area/site53/uhcz/scp8containment)
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "PX" = (
 /obj/structure/bed/roller,
 /turf/simulated/floor/tiled/old_cargo,
 /area/site53/lhcz/scp049containment)
 "Qa" = (
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 1
-	},
-/obj/structure/filingcabinet,
-/obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lhcz/scp1102room)
-"Qb" = (
-/obj/structure/closet/crate/bin,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/obj/structure/table/rack,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/uhcz/scp8containment)
 "Qc" = (
-/obj/structure/closet,
 /obj/effect/floor_decal/corner/purple/border{
-	dir = 5
+	dir = 9
 	},
+/obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
 "Qf" = (
@@ -18031,15 +18108,18 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
-"Qi" = (
-/obj/machinery/power/apc{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
+"Qg" = (
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1";
+	pixel_x = 12
 	},
 /turf/simulated/floor/tiled,
+/area/site53/lhcz/scp049containment)
+"Qi" = (
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -18052,6 +18132,24 @@
 /obj/structure/closet/secure_closet/hydroponics_dclass,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/botany)
+"Qk" = (
+/obj/structure/table/standard,
+/obj/machinery/button/blast_door{
+	id_tag = "Entity Cage Separator";
+	name = "Entity Cage Separator"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"Qm" = (
+/obj/structure/hygiene/sink/kitchen{
+	pixel_y = 22
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Qn" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -18069,6 +18167,16 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp106parts)
+"Qo" = (
+/obj/structure/table/standard,
+/obj/machinery/photocopier/faxmachine{
+	department = "SCP-247 Observation";
+	send_access = list(303)
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Qp" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -18088,12 +18196,34 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/mine/unexplored)
 "Qu" = (
-/obj/effect/floor_decal/industrial/firstaid/corner{
-	dir = 8
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 6
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/papershredder,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp1102room)
+"Qw" = (
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"Qx" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1;
+	icon_state = "warning"
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Qy" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -18103,15 +18233,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/scp106parts)
-"Qz" = (
-/obj/structure/bed/chair,
-/obj/machinery/camera/autoname{
-	network = list("SCP-247 CCTV Network")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "QC" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -18124,18 +18245,16 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/scp106parts)
-"QE" = (
-/obj/machinery/light{
-	dir = 8
-	},
+"QD" = (
 /obj/structure/cable/green{
-	d1 = 1;
 	d2 = 2;
-	icon_state = "1-2"
+	icon_state = "0-2"
 	},
-/obj/machinery/camera/network/scp049{
-	dir = 8;
-	name = "SCP-049 Observation Access"
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24;
+	req_access = list(301)
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
@@ -18146,20 +18265,65 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/kitchen)
 "QG" = (
-/obj/machinery/power/apc/high{
-	dir = 1;
-	req_access = list(501)
+/obj/effect/paint_stripe/red,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
+/area/site53/lhcz/scp049containment)
+"QH" = (
+/obj/machinery/door/blast/shutters{
+	dir = 8;
+	id_tag = "Entity Cage Separator";
+	name = "Entity Cage Separator"
 	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
+/turf/simulated/floor/plating,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"QJ" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 14
+	},
+/obj/machinery/door/airlock/external/glass/bolted/cycling{
+	id_tag = "scp8_exterior";
+	tag = "scp8_airlock"
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 8;
+	icon_state = "pdoor0";
+	id_tag = "scp8panic";
+	name = "SCP-008 Lockdown shutter"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
+"QN" = (
+/obj/structure/table/standard,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/head/helmet/facecover,
+/obj/item/clothing/head/helmet/facecover,
+/obj/item/clothing/head/helmet/facecover,
+/obj/item/clothing/head/helmet/facecover,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/ears/earmuffs,
+/obj/item/clothing/ears/earmuffs,
+/obj/item/clothing/ears/earmuffs,
+/obj/item/clothing/ears/earmuffs,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "QO" = (
-/obj/structure/virology/iso{
-	pixel_x = -5
-	},
+/obj/structure/virology/centrifuge,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -18175,32 +18339,40 @@
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper Primary Checkpoint Armoury"
 	})
-"QT" = (
-/obj/structure/bed/chair,
-/obj/machinery/light{
-	dir = 1
+"QR" = (
+/obj/machinery/button/blast_door{
+	id_tag = "scp049emerg";
+	name = "SCP-049 Emergency Lockdown";
+	pixel_x = 32
 	},
+/turf/simulated/floor/tiled,
+/area/site53/lhcz/scp049containment)
+"QX" = (
+/obj/structure/table/standard,
+/obj/item/storage/box/syringes,
+/obj/item/storage/box/syringes,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"QV" = (
-/obj/structure/hygiene/sink{
-	dir = 1;
-	pixel_y = 16
+"QY" = (
+/obj/effect/floor_decal/industrial/firstaid{
+	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	c_tag = "Comms Tower Basement";
-	dir = 4;
-	network = list("Engineering Network")
+/obj/machinery/access_button/airlock_interior{
+	master_tag = "scp8_airlock";
+	pixel_x = -25;
+	pixel_y = 25;
+	req_access = list(list(203,304))
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
-"Ra" = (
-/turf/simulated/floor/tiled/steel_ridged,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "Rc" = (
 /obj/structure/table/standard,
 /obj/item/device/soulstone,
@@ -18215,16 +18387,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lhcz/scp049containment)
-"Rf" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "Rg" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -18235,13 +18397,6 @@
 /area/site53/llcz/scp500{
 	name = "\improper SCP-529";
 	requires_power = 0
-	})
-"Rh" = (
-/obj/effect/paint_stripe/red,
-/obj/structure/sign/warning/biohazard,
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
 	})
 "Ri" = (
 /obj/machinery/camera/network/lcz{
@@ -18254,21 +18409,20 @@
 	requires_power = 0
 	})
 "Rj" = (
-/obj/machinery/camera/network/scp049{
-	dir = 4;
-	name = "SCP-049 Containment Chamberlock"
-	},
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/obj/machinery/light/small/red{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/lhcz/scp049containment)
+/obj/structure/closet/secure_closet/freezer/meat,
+/turf/simulated/floor/tiled/freezer,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Rk" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mining/miningops{
 	name = "\improper D Class Mining Operations"
 	})
+"Rm" = (
+/obj/structure/filingcabinet/chestdrawer,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
 "Ro" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/monotile/white,
@@ -18320,6 +18474,12 @@
 	name = "\improper SCP-529";
 	requires_power = 0
 	})
+"Rt" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Ru" = (
 /obj/machinery/light{
 	dir = 4
@@ -18334,6 +18494,15 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper Primary Checkpoint Armoury"
+	})
+"Rv" = (
+/obj/structure/table/standard,
+/obj/machinery/photocopier{
+	pixel_y = 3
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
 	})
 "Rw" = (
 /obj/effect/floor_decal/carpet/red/corners,
@@ -18350,14 +18519,19 @@
 /turf/simulated/floor/carpet,
 /area/site53/lowertram/archive)
 "Ry" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/railing/mapped{
-	dir = 1
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/structure/railing/mapped{
-	dir = 4
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp1102room)
+"Rz" = (
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("Entrance Zone Network")
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -18373,17 +18547,64 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost)
 "RD" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"RE" = (
+/obj/structure/table/standard,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/tank/oxygen,
+/obj/item/tank/oxygen,
+/obj/item/tank/oxygen,
+/obj/item/tank/oxygen,
+/obj/item/tank/oxygen,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"RG" = (
+/obj/machinery/button/blast_door{
+	id_tag = "049emerg";
+	name = "SCP-049 Emergency Lockdown";
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled,
+/area/site53/lhcz/scp049containment)
+"RH" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /obj/structure/cable/green{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 8;
+	icon_state = "1-8"
 	},
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	icon_state = "2-8"
-	},
-/turf/simulated/floor,
-/area/site53/lhcz/hallway)
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "RI" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
@@ -18391,22 +18612,15 @@
 	name = "\improper SCP-529";
 	requires_power = 0
 	})
-"RJ" = (
-/obj/structure/table/standard,
-/obj/machinery/button/blast_door{
-	id_tag = "Entity Cage";
-	name = "Entity Cage"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "RK" = (
-/obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "Control Subject Preparation";
+	name = "Control Subject Preparation";
+	pixel_x = 24;
+	req_access = list(202)
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -18422,13 +18636,25 @@
 	},
 /turf/simulated/floor/carpet,
 /area/site53/lowertram/archive)
-"RN" = (
+"RM" = (
+/obj/effect/catwalk_plated/white,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"RO" = (
+/obj/structure/table/standard,
+/obj/item/storage/lockbox/vials,
+/obj/item/reagent_containers/glass/beaker/vial,
+/obj/item/reagent_containers/glass/beaker/vial,
+/obj/item/reagent_containers/glass/beaker/vial,
+/obj/item/reagent_containers/glass/beaker/vial,
+/obj/item/reagent_containers/glass/beaker/vial,
+/obj/item/reagent_containers/glass/beaker/vial,
 /turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
-"RP" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/chemical_dispenser/full,
-/turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
 "RQ" = (
 /obj/effect/floor_decal/industrial/warning,
@@ -18441,6 +18667,14 @@
 /area/site53/llcz/scp500{
 	name = "\improper SCP-529";
 	requires_power = 0
+	})
+"RS" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
 	})
 "RT" = (
 /obj/machinery/door/airlock/security{
@@ -18460,39 +18694,31 @@
 /obj/structure/table/woodentable_reinforced/walnut/maple,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
+"RX" = (
+/obj/structure/bed/chair/office,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "RY" = (
-/obj/effect/floor_decal/industrial/firstaid{
-	dir = 1
+/obj/structure/mopbucket,
+/obj/item/mop,
+/obj/machinery/light{
+	dir = 8
 	},
-/obj/machinery/access_button/airlock_interior{
-	master_tag = "scp8_airlock";
-	pixel_x = -25;
-	pixel_y = 25;
-	req_access = list(list(203,304))
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
+/turf/simulated/floor/tiled/steel_ridged,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "RZ" = (
 /obj/structure/table/rack,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"Sb" = (
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/door/airlock/highsecurity,
-/obj/item/taperoll/engineering/applied,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor,
-/area/site53/lhcz/hallway)
 "Sd" = (
 /obj/machinery/light/spot{
 	dir = 4
@@ -18500,27 +18726,13 @@
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
-"Sh" = (
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "Si" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/structure/barricade,
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
+/obj/structure/table/steel_reinforced,
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 1
 	},
-/obj/structure/barricade/spike{
-	name = "Spikes"
-	},
-/turf/simulated/floor/plating,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp1102room)
 "Sj" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -18530,15 +18742,6 @@
 	name = "\improper SCP-529";
 	requires_power = 0
 	})
-"So" = (
-/obj/structure/filingcabinet,
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1";
-	pixel_x = 12
-	},
-/turf/simulated/floor/tiled,
-/area/site53/lhcz/scp049containment)
 "Sr" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
@@ -18546,78 +18749,42 @@
 	name = "\improper SCP-529";
 	requires_power = 0
 	})
-"Ss" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/structure/barricade,
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
-	},
-/obj/structure/barricade/spike{
-	name = "Spikes"
-	},
-/obj/machinery/light,
-/turf/simulated/floor/plating,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "Su" = (
 /obj/structure/closet/radiation,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/scp106parts)
 "Sx" = (
 /obj/effect/catwalk_plated/dark,
-/obj/machinery/door/airlock/highsecurity,
-/obj/item/taperoll/engineering/applied,
-/obj/structure/cable/green{
-	icon_state = "4-8"
+/obj/structure/railing/mapped{
+	dir = 1
 	},
-/turf/simulated/floor,
-/area/site53/lhcz/hallway)
-"Sy" = (
-/obj/machinery/firealarm{
-	name = "emergency alarm";
-	pixel_y = 17
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/uhcz/scp8containment)
-"SD" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"SF" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "247lockdown"
+"Sz" = (
+/obj/machinery/camera/autoname{
+	dir = 1;
+	network = list("Heavy Containment Zone Network")
 	},
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"SA" = (
+/obj/structure/table/steel_reinforced,
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp1102room)
+"SB" = (
+/obj/effect/paint_stripe/red,
 /obj/machinery/button/blast_door{
-	dir = 8;
-	id_tag = "Infected Subject Area";
-	name = "Infected Subject Area";
-	pixel_x = 22;
-	pixel_y = 32
+	id_tag = "SCP 008 Storage";
+	name = "SCP 008 Storage"
 	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"SG" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled,
+/turf/simulated/wall/titanium,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -18628,17 +18795,22 @@
 /obj/structure/table/rack,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
-"SJ" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Experimentation Center";
-	req_access = list(list(202,303,404))
-	},
+"SI" = (
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/lhcz/maintenance)
+"SJ" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -18655,25 +18827,19 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
-"SO" = (
-/obj/structure/table/standard,
-/obj/item/storage/box/syringes,
-/obj/item/storage/box/syringes,
-/turf/simulated/floor/tiled/monotile,
+"SM" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Experimentation Center";
+	req_access = list(list(202,303,404))
+	},
+/obj/machinery/door/blast/shutters{
+	id_tag = "Control Subject Area";
+	name = "Control Subject Area"
+	},
+/turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"SQ" = (
-/obj/structure/table/standard,
-/obj/item/storage/lockbox/vials,
-/obj/item/reagent_containers/glass/beaker/vial,
-/obj/item/reagent_containers/glass/beaker/vial,
-/obj/item/reagent_containers/glass/beaker/vial,
-/obj/item/reagent_containers/glass/beaker/vial,
-/obj/item/reagent_containers/glass/beaker/vial,
-/obj/item/reagent_containers/glass/beaker/vial,
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
 "SR" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -18683,21 +18849,37 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/scp106parts)
 "SU" = (
-/obj/structure/hygiene/sink{
-	dir = 1;
-	pixel_y = 11
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/uhcz/scp8containment)
+/obj/structure/table/standard,
+/obj/item/gun/launcher/syringe,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "SV" = (
-/obj/structure/virology/centrifuge,
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
+/obj/structure/bed/chair/office,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"SX" = (
+/obj/structure/table/standard,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "SY" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8
@@ -18717,31 +18899,8 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
 "Tb" = (
-/obj/structure/table/standard,
-/obj/item/clothing/suit/straight_jacket,
-/obj/item/clothing/suit/straight_jacket,
-/obj/item/clothing/suit/straight_jacket,
-/obj/item/clothing/suit/straight_jacket,
-/obj/item/clothing/head/helmet/facecover,
-/obj/item/clothing/head/helmet/facecover,
-/obj/item/clothing/head/helmet/facecover,
-/obj/item/clothing/head/helmet/facecover,
-/obj/item/clothing/glasses/blindfold,
-/obj/item/clothing/glasses/blindfold,
-/obj/item/clothing/glasses/blindfold,
-/obj/item/clothing/glasses/blindfold,
-/obj/item/clothing/ears/earmuffs,
-/obj/item/clothing/ears/earmuffs,
-/obj/item/clothing/ears/earmuffs,
-/obj/item/clothing/ears/earmuffs,
-/obj/item/clothing/mask/muzzle,
-/obj/item/clothing/mask/muzzle,
-/obj/item/clothing/mask/muzzle,
-/obj/item/clothing/mask/muzzle,
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/turf/unsimulated/mineral,
+/area/site53/uhcz/scp106containment)
 "Tc" = (
 /obj/machinery/floodlight{
 	dir = 4
@@ -18758,79 +18917,82 @@
 /obj/structure/flora/ausbushes/genericbush,
 /turf/simulated/floor/grass,
 /area/site53/lowertram/archive)
-"Tg" = (
-/obj/machinery/camera/autoname{
-	network = list("SCP-247 CCTV Network")
-	},
-/turf/simulated/floor/tiled/freezer,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"Tj" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Experimentation Center";
-	req_access = list(list(202,303,404))
-	},
-/obj/machinery/door/blast/shutters{
-	id_tag = "Control Subject Area";
-	name = "Control Subject Area"
-	},
-/turf/simulated/floor/plating,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"Tm" = (
-/obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "Research Arena Entrance";
-	name = "Research Arena Entrance";
-	pixel_y = -23;
-	req_access = list(202)
-	},
-/obj/machinery/light{
+"Tf" = (
+/obj/machinery/power/apc{
 	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"Tr" = (
-/obj/machinery/light{
+"Ti" = (
+/obj/structure/table/steel_reinforced,
+/obj/effect/floor_decal/corner/purple/border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/machinery/button/blast_door{
+	id_tag = "third3"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp1102room)
+"Tl" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
+"Tn" = (
+/obj/structure/hygiene/shower{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
+"Tq" = (
+/obj/structure/table/standard,
+/obj/machinery/microscope,
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment)
 "Ts" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/site53/llcz/mine/unexplored)
+"Tt" = (
+/obj/structure/bed/chair/office,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
 "Tu" = (
 /turf/simulated/floor,
 /area/site53/llcz/mine/unexplored)
+"Tv" = (
+/obj/effect/paint_stripe/blue,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/hallways)
 "Tw" = (
-/obj/machinery/light,
-/obj/machinery/button/crematorium{
-	id_tag = "scp8crem";
-	pixel_y = -24;
-	req_access = list(304)
-	},
-/turf/simulated/floor/tiled/freezer,
+/turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"Tx" = (
-/obj/machinery/camera/autoname{
-	network = list("SCP-247 CCTV Network")
-	},
+"Ty" = (
+/obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
-	id_tag = "247lockdown";
-	name = "Containment Unit Lockdown button";
-	pixel_y = 24
+	id_tag = "Entity Cage Separator";
+	name = "Entity Cage Separator"
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -18845,65 +19007,42 @@
 	requires_power = 0
 	})
 "TB" = (
-/obj/machinery/button/crematorium{
-	id_tag = "scp8crem";
-	pixel_y = -24;
-	req_access = list(304)
+/obj/machinery/light{
+	dir = 1
 	},
-/obj/structure/crematorium{
-	dir = 8;
-	id = "scp8crem"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
-"TD" = (
-/obj/structure/hygiene/shower{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/obj/machinery/atmospherics/pipe/simple/hidden/universal,
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/uhcz/scp8containment)
+/turf/simulated/floor/tiled/dark,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "TF" = (
 /obj/structure/bed/chair/office/comfy/teal{
 	dir = 8
 	},
 /turf/simulated/floor/carpet,
 /area/site53/lowertram/archive)
-"TG" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "247lockdown"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "TH" = (
-/obj/structure/bed/chair/comfy/black{
-	dir = 4
-	},
-/turf/simulated/floor/lino,
-/area/site53/lhcz/scp049containment)
-"TI" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Experimentation Center";
-	req_access = list(list(202,303,404))
-	},
-/obj/machinery/door/blast/shutters{
-	id_tag = "Control Subject Area";
-	name = "Control Subject Area"
+/obj/machinery/power/apc/high{
+	dir = 1;
+	req_access = list(501)
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 8;
+	icon_state = "0-8"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
+"TI" = (
+/obj/structure/table/standard,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
+"TJ" = (
+/obj/structure/table/standard,
+/obj/item/folder/red,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
 "TK" = (
 /obj/machinery/light{
 	dir = 4;
@@ -18913,6 +19052,16 @@
 /area/site53/llcz/scp500{
 	name = "\improper SCP-529";
 	requires_power = 0
+	})
+"TL" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "Control Subject Preparation";
+	name = "Control Subject Preparation"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
 	})
 "TN" = (
 /obj/machinery/light_switch{
@@ -18943,18 +19092,17 @@
 /turf/simulated/floor/carpet,
 /area/site53/lowertram/archive)
 "TR" = (
-/obj/effect/catwalk_plated/white,
-/obj/structure/railing/mapped,
-/turf/simulated/floor/plating,
+/obj/machinery/power/apc{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"TS" = (
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/uhcz/scp8containment)
 "TT" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 5
@@ -18984,6 +19132,12 @@
 /area/site53/llcz/mining/miningops{
 	name = "\improper D Class Mining Operations"
 	})
+"TY" = (
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
 "TZ" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/paper_bin,
@@ -19006,15 +19160,6 @@
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper Primary Checkpoint Armoury"
 	})
-"Ub" = (
-/obj/structure/closet/secure_closet/mtf/breachshotguns,
-/obj/machinery/camera/autoname{
-	network = list("Light Containment Zone Network")
-	},
-/turf/simulated/floor/tiled,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "Uc" = (
 /obj/machinery/light{
 	dir = 1
@@ -19022,16 +19167,12 @@
 /obj/structure/closet/jcloset_torch,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/scp106containment)
-"Ue" = (
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/uhcz/scp8containment)
-"Uf" = (
-/obj/structure/crematorium{
-	dir = 8;
-	id = "scp8crem"
+"Ud" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "247lockdown"
 	},
-/turf/simulated/floor/tiled/freezer,
+/turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -19042,15 +19183,6 @@
 /obj/machinery/bookbinder,
 /turf/simulated/floor/carpet,
 /area/site53/lowertram/archive)
-"Uj" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier{
-	pixel_y = 3
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "Uk" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -19068,44 +19200,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
-"Up" = (
-/obj/machinery/button/blast_door{
-	dir = 8;
-	id_tag = "Control Subject Preparation";
-	name = "Control Subject Preparation";
-	pixel_x = 24;
-	req_access = list(202)
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "Ur" = (
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/grass,
 /area/site53/llcz/dclass/botany)
-"Ut" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/structure/barricade,
-/obj/structure/barricade/spike{
-	name = "Spikes"
-	},
-/obj/machinery/camera/autoname{
-	dir = 1;
-	network = list("Heavy Containment Zone Network")
-	},
-/turf/simulated/floor/plating,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"Uv" = (
-/obj/structure/table/steel_reinforced,
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lhcz/scp1102room)
 "Uw" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -19114,30 +19213,58 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
-"UE" = (
-/obj/machinery/button/blast_door{
-	id_tag = "scp0491";
-	name = "SCP-049-1 Containment Chamber Unlock";
-	pixel_x = 32
+"Ux" = (
+/turf/unsimulated/mineral,
+/area/site53/lhcz/hallway)
+"UA" = (
+/obj/structure/table/standard,
+/obj/machinery/light{
+	dir = 1
 	},
-/turf/simulated/floor/tiled,
-/area/site53/lhcz/scp049containment)
-"UF" = (
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 5
-	},
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list(201)
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
+/obj/item/clothing/head/bio_hood/virology,
+/obj/item/clothing/head/bio_hood/virology,
+/obj/item/clothing/head/bio_hood/virology,
+/obj/item/clothing/suit/bio_suit/virology,
+/obj/item/clothing/suit/bio_suit/virology,
+/obj/item/clothing/suit/bio_suit/virology,
+/obj/item/tank/oxygen,
+/obj/item/tank/oxygen,
+/obj/item/tank/oxygen,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/lhcz/scp1102room)
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"UB" = (
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "247lockdown"
+	},
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "Infected Subject Area";
+	name = "Infected Subject Area";
+	pixel_x = 22;
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"UD" = (
+/obj/machinery/door/blast/shutters/open{
+	dir = 4;
+	icon_state = "shutter0";
+	id_tag = "Control Subject Preparation";
+	name = "Control Subject Preparation"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "UG" = (
 /obj/machinery/light/small,
 /obj/structure/filingcabinet,
@@ -19152,26 +19279,23 @@
 /obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
-"UJ" = (
-/obj/machinery/door/airlock/research{
-	name = "Containment Chamber";
-	req_access = list(203,303)
-	},
-/obj/machinery/door/blast/regular{
-	dir = 8;
-	id_tag = "third3"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lhcz/scp1102room)
 "UK" = (
 /obj/structure/fitness/punchingbag,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "UL" = (
-/obj/effect/paint_stripe/red,
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/scp106containment)
+/obj/machinery/camera/autoname{
+	network = list("SCP-247 CCTV Network")
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "247lockdown";
+	name = "Containment Unit Lockdown button";
+	pixel_y = 24
+	},
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "UN" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -19179,41 +19303,24 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
 "UO" = (
+/obj/structure/table/steel_reinforced,
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp1102room)
+"US" = (
 /obj/structure/table/standard,
-/obj/item/storage/box/bodybags,
-/obj/item/storage/box/bodybags,
-/obj/item/storage/box/bodybags,
-/obj/item/storage/box/bodybags,
-/turf/simulated/floor/tiled/steel_grid,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"US" = (
-/obj/machinery/access_button/airlock_exterior{
-	master_tag = "scp8_airlock";
-	pixel_x = 25;
-	pixel_y = -25;
-	req_access = list(list(203,304))
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 14
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/uhcz/scp8containment)
-"UV" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 14
-	},
-/obj/machinery/door/airlock/external/glass/bolted/cycling{
-	id_tag = "scp8_exterior";
-	tag = "scp8_airlock"
-	},
-/obj/machinery/door/blast/regular/open{
-	dir = 8;
-	icon_state = "pdoor0";
-	id_tag = "scp8panic";
-	name = "SCP-008 Lockdown shutter"
+"UU" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -19226,21 +19333,36 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
 "UX" = (
+/obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/machinery/power/apc/hyper{
-	dir = 1
+/turf/simulated/floor,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"UY" = (
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-1102-RU";
+	req_access = list(list(203,303))
 	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/lhcz/hallway)
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/lhcz/scp1102room)
 "Va" = (
-/obj/effect/floor_decal/corner/purple/border{
+/obj/structure/bed/chair,
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/lhcz/scp1102room)
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Vd" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -19253,34 +19375,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
-"Vg" = (
-/obj/machinery/button/blast_door{
-	id_tag = "scp049emerg";
-	name = "SCP-049 Emergency Lockdown";
-	pixel_x = 32
-	},
-/obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("Heavy Containment Zone Network")
-	},
-/turf/simulated/floor/tiled,
-/area/site53/lhcz/scp049containment)
-"Vi" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/obj/structure/closet/secure_closet/freezer{
-	icon = 'icons/obj/closets/fridge.dmi';
-	name = "Secure Freezer";
-	req_access = list(304)
-	},
-/obj/item/reagent_containers/glass/beaker/vial/scp008,
-/obj/item/reagent_containers/glass/beaker/vial/scp008,
-/obj/item/reagent_containers/glass/beaker/vial/scp008,
-/obj/item/reagent_containers/glass/beaker/vial/scp008,
-/obj/item/reagent_containers/glass/beaker/vial/scp008,
-/obj/item/storage/box/syringes,
-/obj/item/storage/box/syringes,
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
 "Vj" = (
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/titanium,
@@ -19294,19 +19388,19 @@
 /obj/structure/flora/ausbushes/palebush,
 /turf/simulated/floor/grass,
 /area/site53/lowertram/archive)
+"Vm" = (
+/obj/structure/table/standard,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
 "Vo" = (
 /obj/machinery/light_construct{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/mine/unexplored)
-"Vq" = (
-/obj/machinery/camera/network/scp049{
-	dir = 4;
-	name = "SCP-049 Operating Theatre"
-	},
-/turf/simulated/floor/tiled/old_tile,
-/area/site53/lhcz/scp049containment)
 "Vr" = (
 /obj/effect/floor_decal/corner/red/bordercee{
 	dir = 8
@@ -19315,6 +19409,18 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper Primary Checkpoint Armoury"
+	})
+"Vt" = (
+/obj/structure/table/standard,
+/obj/machinery/photocopier{
+	pixel_y = 3
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
 	})
 "Vu" = (
 /obj/effect/floor_decal/industrial/warning/full,
@@ -19336,27 +19442,17 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/isolation)
-"Vz" = (
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "VD" = (
-/obj/effect/paint_stripe/red,
-/obj/structure/sign/warning/caution,
-/turf/simulated/wall/titanium,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"VF" = (
-/obj/machinery/door/blast/shutters{
-	dir = 8;
-	id_tag = "Research Arena Entrance";
-	name = "Research Arena Entrance"
-	},
-/obj/structure/railing/mapped,
-/turf/simulated/floor/tiled/white,
+"VG" = (
+/obj/structure/kitchenspike,
+/turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -19391,54 +19487,6 @@
 /obj/item/stack/material/plastic/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
-"VN" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list(301)
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/tiled,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"VO" = (
-/obj/structure/table/standard,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/uhcz/scp8containment)
-"VP" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped,
-/obj/machinery/door/blast/shutters{
-	dir = 8;
-	id_tag = "Entity Cage";
-	name = "Entity Cage"
-	},
-/turf/simulated/open,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"VR" = (
-/obj/effect/catwalk_plated/white,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "VS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -19452,24 +19500,27 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
-"VU" = (
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1";
-	pixel_x = 12
+"VV" = (
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/door/airlock/highsecurity,
+/obj/item/taperoll/engineering/applied,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled,
-/area/site53/lhcz/scp049containment)
-"VW" = (
-/obj/machinery/camera/network/scp049{
-	dir = 1;
-	name = "SCP-049 Subject Reception"
+/turf/simulated/floor,
+/area/site53/lhcz/hallway)
+"VX" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Experimentation Center";
+	req_access = list(list(202,303,404))
 	},
-/turf/simulated/floor/lino,
-/area/site53/lhcz/scp049containment)
-"VY" = (
-/obj/structure/kitchenspike,
-/turf/simulated/floor/tiled/freezer,
+/obj/machinery/door/blast/shutters{
+	id_tag = "Infected Subject Area";
+	name = "Infected Subject Area"
+	},
+/turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -19497,67 +19548,35 @@
 /obj/structure/bookcase,
 /turf/simulated/floor/carpet,
 /area/site53/lowertram/archive)
-"Wd" = (
-/obj/structure/closet/secure_closet,
-/obj/item/material/twohanded/spear,
-/obj/item/material/twohanded/spear,
-/obj/item/material/twohanded/spear,
-/obj/item/material/twohanded/spear,
-/obj/item/material/twohanded/spear,
-/obj/item/material/twohanded/spear,
-/obj/item/material/twohanded/spear,
-/obj/item/material/twohanded/spear,
-/obj/item/material/knife/combat,
-/obj/item/material/knife/combat,
-/obj/item/material/knife/combat,
-/obj/item/material/knife/combat,
-/obj/item/material/knife/combat,
-/obj/item/material/knife/combat,
-/obj/item/material/knife/combat,
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"Wf" = (
-/obj/effect/floor_decal/industrial/firstaid{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
-"Wg" = (
-/obj/structure/table/reinforced,
-/obj/machinery/button/blast_door{
-	id_tag = "Control Subject Preparation";
-	name = "Control Subject Preparation"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "Wh" = (
 /obj/structure/bookcase/manuals/research_and_development,
 /turf/simulated/floor/carpet,
 /area/site53/lowertram/archive)
 "Wi" = (
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/steel_grid,
+/obj/machinery/camera/network/scp049{
+	dir = 1;
+	name = "SCP-049 Subject Reception"
+	},
+/turf/simulated/floor/lino,
+/area/site53/lhcz/scp049containment)
+"Wj" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/camera/autoname{
+	c_tag = "Server Farm Entrance";
+	dir = 4;
+	network = list("Engineering Network")
+	},
+/turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"Wj" = (
-/obj/structure/table/standard,
-/obj/item/folder/red,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/uhcz/scp8containment)
-"Wm" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor/tiled/white,
+"Wk" = (
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -19565,21 +19584,16 @@
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
-"Wq" = (
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/door/airlock/highsecurity{
-	name = "SCP-1102-RU";
-	req_access = list(list(203,303))
-	},
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/site53/lhcz/scp1102room)
 "Wr" = (
 /obj/machinery/camera/network/hcz,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/hallway)
+"Ws" = (
+/obj/effect/floor_decal/industrial/outline/orange,
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Wt" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -19607,16 +19621,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
-"Ww" = (
-/obj/machinery/door/blast/shutters{
-	dir = 8;
-	id_tag = "Entity Cage Separator";
-	name = "Entity Cage Separator"
-	},
-/turf/simulated/floor/plating,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "Wz" = (
 /obj/machinery/barrier,
 /obj/machinery/camera/network/lcz{
@@ -19633,6 +19637,39 @@
 /obj/structure/bed/chair/wood/walnut,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
+"WB" = (
+/obj/structure/hygiene/sink{
+	dir = 1;
+	pixel_y = 16
+	},
+/obj/machinery/camera/autoname{
+	c_tag = "Comms Tower Basement";
+	dir = 4;
+	network = list("Engineering Network")
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
+"WD" = (
+/obj/structure/table/reinforced,
+/obj/item/device/camera,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"WE" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/barricade,
+/obj/structure/barricade/spike{
+	name = "Spikes"
+	},
+/obj/machinery/camera/autoname{
+	dir = 1;
+	network = list("Heavy Containment Zone Network")
+	},
+/turf/simulated/floor/plating,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "WF" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 8
@@ -19654,28 +19691,6 @@
 /obj/structure/table/woodentable_reinforced/walnut/maple,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
-"WI" = (
-/obj/structure/table/standard,
-/obj/machinery/light,
-/obj/machinery/button/blast_door{
-	id_tag = "Control Subject Preparation";
-	name = "Control Subject Preparation"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"WJ" = (
-/obj/machinery/door/blast/shutters/open{
-	dir = 4;
-	icon_state = "shutter0";
-	id_tag = "Control Subject Preparation";
-	name = "Control Subject Preparation"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "WK" = (
 /obj/machinery/seed_extractor,
 /turf/simulated/floor/tiled/monotile/white,
@@ -19688,32 +19703,45 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/cellbubble)
 "WP" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/cellbubble)
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "Control Subject Area";
+	name = "Control Subject Area";
+	pixel_x = -23;
+	req_access = list(202)
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "WQ" = (
 /obj/structure/table/standard,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/tank/oxygen,
-/obj/item/tank/oxygen,
-/obj/item/tank/oxygen,
-/obj/item/tank/oxygen,
-/obj/item/tank/oxygen,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
-/turf/simulated/floor/tiled,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/suit/straight_jacket,
+/obj/item/clothing/head/helmet/facecover,
+/obj/item/clothing/head/helmet/facecover,
+/obj/item/clothing/head/helmet/facecover,
+/obj/item/clothing/head/helmet/facecover,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/ears/earmuffs,
+/obj/item/clothing/ears/earmuffs,
+/obj/item/clothing/ears/earmuffs,
+/obj/item/clothing/ears/earmuffs,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -19725,44 +19753,38 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
-"WT" = (
-/obj/machinery/button/blast_door{
-	id_tag = "049emerg";
-	name = "SCP-049 Emergency Lockdown";
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled,
-/area/site53/lhcz/scp049containment)
-"WU" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
-"WV" = (
-/obj/structure/table/steel_reinforced,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/window/brigdoor/eastleft,
-/obj/item/weapon/scp1102ru,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/lhcz/scp1102room)
 "WW" = (
 /obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list(301)
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/lhcz/scp049containment)
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"WZ" = (
+/obj/structure/table/standard,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/clothing/under/scp/dclass,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/item/handcuffs,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Xc" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -19774,49 +19796,15 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lowertram/archive)
-"Xe" = (
-/obj/structure/closet/secure_closet,
-/obj/item/material/twohanded/baseballbat,
-/obj/item/material/twohanded/baseballbat,
-/obj/item/material/twohanded/baseballbat,
-/obj/item/material/twohanded/baseballbat,
-/obj/item/material/twohanded/baseballbat,
-/obj/item/material/twohanded/baseballbat,
-/obj/item/material/twohanded/baseballbat,
-/obj/item/material/sword,
-/obj/item/material/sword,
-/obj/item/material/sword,
-/obj/item/material/sword,
-/obj/item/material/sword/katana,
-/obj/item/material/sword/katana,
-/obj/item/material/sword/katana,
-/obj/item/material/sword/katana,
-/obj/item/material/twohanded/fireaxe,
-/obj/item/material/twohanded/fireaxe,
-/turf/simulated/floor/tiled/white,
+"Xj" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"Xf" = (
-/obj/machinery/button/blast_door{
-	id_tag = "D-Class Reward Room";
-	name = "D-Class Reward Room";
-	req_access = list(202)
-	},
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/primaryhallway)
 "Xm" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Surgical Compartment";
-	req_access = list(list(203,304))
-	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "049emerg"
-	},
-/turf/simulated/floor/tiled,
-/area/site53/lhcz/scp049containment)
+/turf/unsimulated/mineral,
+/area/site53/uhcz/scp8containment)
 "Xn" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
@@ -19834,12 +19822,36 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/luxuryhall)
+"Xo" = (
+/obj/structure/table/standard,
+/obj/item/storage/slide_projector,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Xp" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500{
 	name = "\improper SCP-529";
 	requires_power = 0
 	})
+"Xq" = (
+/obj/structure/bed/chair/comfy/black{
+	dir = 4
+	},
+/turf/simulated/floor/lino,
+/area/site53/lhcz/scp049containment)
+"Xr" = (
+/obj/structure/table/standard,
+/obj/machinery/camera/network/scp049{
+	name = "SCP-049 Containment Foyer"
+	},
+/obj/item/storage/firstaid/surgery,
+/turf/simulated/floor/tiled,
+/area/site53/lhcz/scp049containment)
 "Xs" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -19849,42 +19861,44 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"Xu" = (
-/obj/effect/floor_decal/corner/purple/bordercorner{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+"Xt" = (
+/obj/structure/table/standard,
+/obj/machinery/light,
+/obj/machinery/button/blast_door{
+	id_tag = "Observation Shutter Control Subject";
+	name = "Observation Shutter Control Subject"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/lhcz/scp1102room)
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"Xv" = (
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"Xz" = (
+/obj/machinery/access_button/airlock_exterior{
+	master_tag = "scp8_airlock";
+	pixel_x = 25;
+	pixel_y = -25;
+	req_access = list(list(203,304))
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 14
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
 "XA" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
-"XB" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"XD" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/structure/barricade,
-/obj/structure/barricade/spike{
-	name = "Spikes"
-	},
-/obj/machinery/light,
-/turf/simulated/floor/plating,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "XE" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
@@ -19901,71 +19915,67 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "XH" = (
-/obj/structure/barricade,
-/obj/structure/barricade/spike{
-	name = "Spikes"
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-008";
+	req_access = list(list(202,303,404))
 	},
-/obj/machinery/door/blast/shutters{
-	dir = 8;
-	id_tag = "Entity Cage";
-	name = "Entity Cage"
+/obj/machinery/door/firedoor,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/plating,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
 "XI" = (
-/obj/effect/paint_stripe/red,
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
-/area/site53/lhcz/scp049containment)
+/obj/structure/closet/l3closet/virology,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/universal,
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/uhcz/scp8containment)
 "XJ" = (
 /obj/effect/floor_decal/carpet/red/corners,
 /obj/structure/filingcabinet/filingcabinet,
 /obj/machinery/camera/network/entrance,
 /turf/simulated/floor/carpet,
 /area/site53/lowertram/archive)
+"XK" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "XL" = (
-/obj/machinery/power/apc{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"XM" = (
 /obj/effect/floor_decal/industrial/warning{
-	dir = 1;
+	dir = 8;
 	icon_state = "warning"
-	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"XO" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "247lockdown"
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
 "XQ" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/freezer,
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24;
+	req_access = list(301)
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -19989,26 +19999,42 @@
 /obj/random/soap,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
-"XU" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/camera/autoname{
-	c_tag = "Server Farm Entrance";
-	dir = 4;
-	network = list("Engineering Network")
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "XW" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/beakers,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/kitchen)
+"XX" = (
+/obj/structure/table/standard,
+/obj/item/clothing/head/bio_hood/scientist,
+/obj/item/clothing/head/bio_hood/scientist,
+/obj/item/clothing/head/bio_hood/scientist,
+/obj/item/clothing/head/bio_hood/scientist,
+/obj/item/clothing/head/bio_hood/scientist,
+/obj/item/clothing/suit/bio_suit/scientist,
+/obj/item/clothing/suit/bio_suit/scientist,
+/obj/item/clothing/suit/bio_suit/scientist,
+/obj/item/clothing/suit/bio_suit/scientist,
+/obj/item/clothing/suit/bio_suit/scientist,
+/obj/item/tank/oxygen,
+/obj/item/tank/oxygen,
+/obj/item/tank/oxygen,
+/obj/item/tank/oxygen,
+/obj/item/tank/oxygen,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"XY" = (
+/obj/effect/paint_stripe/red,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/scp106containment)
 "XZ" = (
 /obj/machinery/light/small{
 	dir = 1;
@@ -20034,31 +20060,28 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "Ye" = (
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -25;
-	req_access = list(201)
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/industrial/loading{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
-"Yg" = (
-/obj/machinery/atmospherics/unary/tank/air{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/uhcz/scp8containment)
-"Yh" = (
-/obj/structure/closet/l3closet/virology,
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/universal,
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/uhcz/scp8containment)
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"Yf" = (
+/obj/structure/bed,
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"Yg" = (
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
+/area/site53/lhcz/maintenance)
 "Yj" = (
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
 	name = "Mining";
@@ -20068,40 +20091,29 @@
 /area/site53/llcz/mining/miningops{
 	name = "\improper D Class Mining Operations"
 	})
-"Yn" = (
-/obj/structure/table/standard,
-/obj/item/clothing/head/bio_hood/scientist,
-/obj/item/clothing/head/bio_hood/scientist,
-/obj/item/clothing/head/bio_hood/scientist,
-/obj/item/clothing/head/bio_hood/scientist,
-/obj/item/clothing/head/bio_hood/scientist,
-/obj/item/clothing/suit/bio_suit/scientist,
-/obj/item/clothing/suit/bio_suit/scientist,
-/obj/item/clothing/suit/bio_suit/scientist,
-/obj/item/clothing/suit/bio_suit/scientist,
-/obj/item/clothing/suit/bio_suit/scientist,
-/obj/item/tank/oxygen,
-/obj/item/tank/oxygen,
-/obj/item/tank/oxygen,
-/obj/item/tank/oxygen,
-/obj/item/tank/oxygen,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
+"Yk" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Experimentation Center";
+	req_access = list(204)
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"Yo" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "SCP-247 Observation";
-	send_access = list(303)
+"Ym" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
 	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment)
+"Yo" = (
+/obj/machinery/door/blast/shutters{
+	dir = 8;
+	id_tag = "Research Arena Entrance";
+	name = "Research Arena Entrance"
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -20113,34 +20125,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/dclass/assignmentbubble)
-"Yr" = (
-/obj/machinery/door/firedoor{
-	dir = 4
-	},
-/obj/machinery/door/blast/regular/open{
-	dir = 8;
-	icon_state = "pdoor0";
-	id_tag = "scp8panic";
-	name = "SCP-008 Lockdown shutter"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/door/airlock/external/glass/bolted/cycling{
-	id_tag = "scp8_interior";
-	tag = "scp8_airlock"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/uhcz/scp8containment)
-"Ys" = (
-/obj/effect/floor_decal/industrial/outline/orange,
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "Yt" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "LHCZ Maintenance";
@@ -20153,27 +20137,57 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
-"Yv" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+"Yu" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/button/blast_door{
+	id_tag = "Entity Cage";
+	name = "Entity Cage"
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white,
+/turf/simulated/wall/titanium,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
+"Yw" = (
+/obj/machinery/light{
+	dir = 1;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"Yy" = (
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 1
+	},
+/obj/structure/filingcabinet/scp,
+/obj/machinery/light{
+	dir = 1;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp1102room)
+"YB" = (
+/obj/structure/table/standard,
+/obj/item/reagent_containers/glass/beaker,
+/obj/item/reagent_containers/glass/beaker,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker/large,
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment)
 "YC" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"YD" = (
+/obj/machinery/door/blast/regular{
+	dir = 8;
+	id_tag = "second2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp1102room)
 "YF" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -20189,8 +20203,10 @@
 /turf/simulated/floor/carpet/purple,
 /area/site53/lowertram/archive)
 "YG" = (
-/obj/structure/railing/mapped,
-/turf/simulated/floor/tiled/white,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -20202,30 +20218,53 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
-"YJ" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/button/blast_door{
-	id_tag = "SCP 008 Storage";
-	name = "SCP 008 Storage"
+"YK" = (
+/obj/machinery/firealarm{
+	name = "emergency alarm";
+	pixel_y = 17
 	},
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
 "YL" = (
-/obj/structure/table/standard,
-/obj/machinery/recharger,
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/button/blast_door{
+	id_tag = "scp8panic";
+	name = "Panic button";
+	pixel_y = 24
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
+"YN" = (
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "Infected Subject Area";
+	name = "Infected Subject Area";
+	pixel_x = 22;
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"YN" = (
-/obj/structure/table/standard,
-/obj/item/storage/slide_projector,
+"YS" = (
+/obj/effect/catwalk_plated/white,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/plating,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"YT" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -20239,59 +20278,17 @@
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
 "YV" = (
-/obj/structure/table/reinforced,
-/obj/machinery/button/blast_door{
-	dir = 8;
-	id_tag = "Infected Subject Area";
-	name = "Infected Subject Area";
-	pixel_x = 22;
-	pixel_y = 32
-	},
-/obj/machinery/button/blast_door{
-	id_tag = "Entity Cage";
-	name = "Entity Cage"
-	},
+/obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
 "YW" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8;
-	icon_state = "warning"
+/obj/effect/floor_decal/industrial/firstaid/corner{
+	dir = 1
 	},
-/obj/effect/floor_decal/industrial/warning,
-/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"YX" = (
-/obj/structure/hygiene/shower{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/hatch/red,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
-"YY" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Experimentation Center";
-	req_access = list(list(202,303,404))
-	},
-/obj/machinery/door/blast/shutters{
-	id_tag = "Infected Subject Area";
-	name = "Infected Subject Area"
-	},
-/turf/simulated/floor/plating,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "YZ" = (
 /obj/effect/catwalk_plated/white,
 /obj/effect/floor_decal/carpet/blue2,
@@ -20312,6 +20309,11 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertram/archive)
+"Zb" = (
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
 "Zc" = (
 /obj/machinery/flasher/portable,
 /obj/effect/floor_decal/corner/red/border{
@@ -20321,13 +20323,28 @@
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper Primary Checkpoint Armoury"
 	})
-"Zf" = (
-/obj/effect/paint_stripe/red,
-/obj/structure/sign/warning,
-/turf/simulated/wall/titanium,
+"Zd" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
+"Zf" = (
+/obj/machinery/button/blast_door{
+	id_tag = "scp049emerg";
+	name = "SCP-049 Emergency Lockdown";
+	pixel_x = 32
+	},
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("Heavy Containment Zone Network")
+	},
+/turf/simulated/floor/tiled,
+/area/site53/lhcz/scp049containment)
 "Zg" = (
 /obj/machinery/light{
 	dir = 8
@@ -20337,46 +20354,60 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
-"Zh" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled,
+"Zi" = (
+/obj/machinery/papershredder,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
+"Zj" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/highsecurity,
+/obj/item/taperoll/engineering/applied,
+/turf/simulated/floor,
+/area/site53/lhcz/hallway)
 "Zk" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8;
-	icon_state = "warning"
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "Research Arena Entrance";
+	name = "Research Arena Entrance";
+	pixel_y = -23;
+	req_access = list(202)
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
 "Zl" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "SCP-008";
-	req_access = list(list(202,303,404))
-	},
-/obj/machinery/door/blast/shutters{
-	id_tag = "SCP 008 Storage";
-	name = "SCP 008 Storage"
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/structure/table/standard,
+/obj/item/device/camera,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
-"Zm" = (
-/obj/structure/reagent_dispensers/watertank,
-/turf/simulated/floor/tiled/steel_ridged,
+"Zo" = (
+/obj/structure/hygiene/shower{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/machinery/atmospherics/pipe/simple/hidden/universal,
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/uhcz/scp8containment)
+"Zp" = (
+/obj/structure/table/standard,
+/obj/machinery/button/blast_door{
+	id_tag = "Observation Shutter Cage";
+	name = "Observation Shutter Cage"
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -20395,20 +20426,21 @@
 	requires_power = 0
 	})
 "Zt" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+/obj/effect/floor_decal/industrial/firstaid/corner{
+	dir = 8
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/atmospherics/unary/vent_pump/on,
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment)
+"Zu" = (
+/obj/structure/filingcabinet,
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1";
+	pixel_x = 12
 	},
 /turf/simulated/floor/tiled,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/area/site53/lhcz/scp049containment)
 "Zv" = (
 /obj/effect/floor_decal/corner/red/bordercee{
 	dir = 8
@@ -20419,13 +20451,18 @@
 	name = "\improper Primary Checkpoint Armoury"
 	})
 "Zw" = (
-/obj/machinery/light{
+/obj/structure/table/steel_reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/obj/machinery/door/window/brigdoor/eastleft,
+/obj/item/weapon/scp1102ru,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/lhcz/scp1102room)
 "Zy" = (
 /obj/structure/table/rack,
 /obj/machinery/light/small,
@@ -20433,24 +20470,18 @@
 /obj/item/storage/firstaid/adv,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
-"ZC" = (
-/obj/structure/table/standard,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/item/clothing/head/bio_hood/virology,
-/obj/item/clothing/head/bio_hood/virology,
-/obj/item/clothing/head/bio_hood/virology,
-/obj/item/clothing/suit/bio_suit/virology,
-/obj/item/clothing/suit/bio_suit/virology,
-/obj/item/clothing/suit/bio_suit/virology,
-/obj/item/tank/oxygen,
-/obj/item/tank/oxygen,
-/obj/item/tank/oxygen,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
+"ZA" = (
+/obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment{
+	name = "\improper Biohazard Test Chamber"
+	})
+"ZC" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -20460,12 +20491,11 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
 "ZE" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/railing/mapped,
-/turf/simulated/floor/plating,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
+/obj/machinery/atmospherics/unary/tank/air{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/uhcz/scp8containment)
 "ZG" = (
 /obj/structure/bed/chair,
 /obj/effect/landmark{
@@ -20494,9 +20524,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lowertram/archive)
 "ZJ" = (
-/obj/effect/floor_decal/corner/purple/bordercorner{
-	dir = 1
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 10
 	},
+/obj/machinery/vending/coffee,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
 "ZK" = (
@@ -20505,30 +20536,10 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
-"ZN" = (
-/obj/structure/table/standard,
-/obj/machinery/light,
-/obj/machinery/button/blast_door{
-	id_tag = "Observation Shutter Control Subject";
-	name = "Observation Shutter Control Subject"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"ZO" = (
-/obj/structure/closet/crate/secure/biohazard/blanks,
-/turf/simulated/floor/tiled/dark,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
-"ZQ" = (
-/obj/structure/table/standard,
-/obj/machinery/camera/autoname{
-	dir = 1;
-	network = list("Heavy Containment Zone Network")
-	},
-/turf/simulated/floor/tiled/white,
+"ZM" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -20538,17 +20549,6 @@
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper Primary Checkpoint Armoury"
 	})
-"ZV" = (
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 1
-	},
-/obj/structure/filingcabinet/scp,
-/obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lhcz/scp1102room)
 "ZZ" = (
 /obj/structure/table/rack,
 /obj/item/clothing/glasses/sunglasses,
@@ -28186,7 +28186,7 @@ ya
 yo
 gq
 gq
-Xf
+MT
 KJ
 wJ
 wJ
@@ -28638,7 +28638,7 @@ gq
 gq
 gq
 gq
-bO
+co
 bP
 rn
 tJ
@@ -28895,11 +28895,11 @@ gq
 gq
 gq
 gq
-bO
+co
 bQ
 bY
 tL
-bO
+co
 bw
 bw
 hU
@@ -29152,11 +29152,11 @@ gq
 gq
 gq
 gq
-bO
+co
 bT
 bQ
 tL
-bO
+co
 ex
 cc
 rh
@@ -29205,16 +29205,16 @@ wx
 wx
 wx
 wx
-AE
-AE
-AE
-AE
+ml
+ml
+ml
+ml
 xc
 BR
-AE
-AE
-AE
-AE
+ml
+ml
+ml
+ml
 Dd
 Eh
 KF
@@ -29409,11 +29409,11 @@ gq
 gq
 gq
 gq
-bO
+co
 bU
 cb
 tL
-bO
+co
 cc
 ch
 rh
@@ -29462,16 +29462,16 @@ Hf
 vb
 wy
 tj
-AE
+ml
 ip
 wT
-AE
+ml
 wY
 xg
-AE
+ml
 wT
 EQ
-AE
+ml
 Eg
 KA
 KG
@@ -29666,7 +29666,7 @@ gq
 gq
 gq
 gq
-bO
+co
 da
 rv
 tM
@@ -29719,7 +29719,7 @@ sM
 Hg
 Hm
 tj
-AE
+ml
 wQ
 Hq
 xl
@@ -29728,7 +29728,7 @@ wG
 EF
 Hx
 wQ
-AE
+ml
 Eh
 KB
 KH
@@ -29923,17 +29923,17 @@ gq
 gq
 gq
 gq
-bO
-bO
-bO
-bO
-bO
+co
+co
+co
+co
+co
 cc
 ch
 hX
 ch
 ir
-fm
+aC
 aD
 aD
 aD
@@ -29976,16 +29976,16 @@ tj
 tj
 tj
 tj
-AE
-AE
-AE
-AE
+ml
+ml
+ml
+ml
 Ht
 oi
-AE
-AE
-AE
-AE
+ml
+ml
+ml
+ml
 Eg
 KC
 KG
@@ -30233,16 +30233,16 @@ Hf
 vb
 wy
 tj
-AE
+ml
 wR
 wT
-AE
+ml
 xa
 xh
-AE
+ml
 wT
 vW
-AE
+ml
 EC
 KD
 KH
@@ -30447,7 +30447,7 @@ bw
 hY
 bw
 bw
-aC
+Tv
 aD
 rI
 aD
@@ -30490,7 +30490,7 @@ sM
 Hh
 Hm
 tj
-AE
+ml
 wQ
 Hr
 xm
@@ -30499,7 +30499,7 @@ wG
 EG
 Hy
 wQ
-AE
+ml
 Eh
 KE
 KH
@@ -30747,16 +30747,16 @@ tj
 tj
 tj
 tj
-AE
-AE
-AE
-AE
+ml
+ml
+ml
+ml
 yj
 Ei
-AE
-AE
-AE
-AE
+ml
+ml
+ml
+ml
 dj
 dj
 dj
@@ -31004,16 +31004,16 @@ sM
 Hi
 Hn
 tj
-AE
+ml
 wS
 wT
-AE
+ml
 xb
 Ep
-AE
+ml
 wT
 vW
-AE
+ml
 KK
 eu
 uf
@@ -31261,7 +31261,7 @@ Hf
 vb
 wy
 tj
-AE
+ml
 wQ
 Hs
 xu
@@ -31270,7 +31270,7 @@ EB
 EH
 Hz
 wQ
-AE
+ml
 KK
 uf
 uf
@@ -31518,17 +31518,17 @@ tj
 tj
 tj
 tj
-AE
-AE
-AE
-AE
+ml
+ml
+ml
+ml
 xc
 BR
-AE
-AE
-AE
-AE
-AE
+ml
+ml
+ml
+ml
+ml
 KX
 uf
 KN
@@ -31745,7 +31745,7 @@ aD
 zc
 pL
 tX
-sf
+nM
 eD
 uO
 tj
@@ -31778,7 +31778,7 @@ tj
 wP
 wP
 wP
-AE
+ml
 wX
 wX
 wX
@@ -32002,7 +32002,7 @@ aD
 tI
 rE
 tX
-sf
+nM
 dC
 Fl
 tj
@@ -32035,7 +32035,7 @@ tj
 wP
 wP
 wP
-AE
+ml
 xj
 FN
 xn
@@ -32259,7 +32259,7 @@ aD
 xI
 rE
 gv
-sf
+nM
 ds
 uf
 et
@@ -32289,14 +32289,14 @@ tj
 tj
 tj
 tj
-AE
-AE
-AE
-AE
-AE
-AE
-AE
-AE
+ml
+ml
+ml
+ml
+ml
+ml
+ml
+ml
 xw
 xc
 Yq
@@ -33026,7 +33026,7 @@ jb
 jb
 jb
 jb
-sf
+nM
 jT
 jX
 jv
@@ -33287,15 +33287,15 @@ jI
 rE
 tS
 jv
-WP
-WP
-WP
-WP
-WP
-WP
+cY
+cY
+cY
+cY
+cY
+cY
 Ey
-WP
-WP
+cY
+cY
 Dp
 Dp
 Dp
@@ -33540,7 +33540,7 @@ pK
 pK
 eB
 jb
-sf
+nM
 tA
 ve
 jv
@@ -33548,11 +33548,11 @@ gZ
 uH
 pI
 vz
-WP
+cY
 iY
 wU
 kR
-WP
+cY
 rX
 Qf
 Ji
@@ -33809,7 +33809,7 @@ it
 iY
 wU
 iY
-WP
+cY
 GM
 lq
 iY
@@ -34054,16 +34054,16 @@ tr
 pK
 eB
 jb
-sf
+nM
 Dc
 tS
 kl
-WP
-WP
-WP
-WP
-WP
-WP
+cY
+cY
+cY
+cY
+cY
+cY
 wU
 iY
 yP
@@ -34311,7 +34311,7 @@ pN
 rC
 jb
 jb
-sf
+nM
 eF
 tS
 kp
@@ -34323,15 +34323,15 @@ uQ
 we
 wV
 iY
-WP
-WP
-WP
-WP
-WP
-WP
-WP
-WP
-WP
+cY
+cY
+cY
+cY
+cY
+cY
+cY
+cY
+cY
 jn
 jk
 fs
@@ -34554,7 +34554,7 @@ ch
 hX
 ch
 cc
-fm
+aC
 EK
 cv
 cc
@@ -34572,23 +34572,23 @@ pL
 rE
 tS
 kl
-WP
-WP
-WP
+cY
+cY
+cY
 rR
 jx
-WP
+cY
 NL
 iY
 zx
-WP
+cY
 EU
 Fh
 OC
 OC
 NI
 FZ
-WP
+cY
 fs
 fs
 fs
@@ -34845,7 +34845,7 @@ OC
 FV
 FX
 WO
-WP
+cY
 sp
 si
 iR
@@ -35095,14 +35095,14 @@ fz
 fz
 iY
 iY
-WP
+cY
 EW
 JU
 OC
 OC
 FY
 Ga
-WP
+cY
 iK
 iS
 iS
@@ -35351,15 +35351,15 @@ dV
 ed
 fz
 Ey
-WP
-WP
-WP
-WP
-WP
-WP
-WP
-WP
-WP
+cY
+cY
+cY
+cY
+cY
+cY
+cY
+cY
+cY
 iK
 iS
 kU
@@ -36867,7 +36867,7 @@ fV
 JJ
 yK
 Jr
-co
+Nr
 QP
 Ln
 VJ
@@ -65346,13 +65346,13 @@ gq
 gq
 gq
 gq
-ie
-ie
-ie
-ie
-ie
-ie
-ie
+pk
+pk
+pk
+pk
+pk
+pk
+pk
 gq
 gq
 gq
@@ -65603,13 +65603,13 @@ gq
 gq
 gq
 gq
-ie
+pk
 AF
 AU
 Bv
 AU
 AF
-ie
+pk
 gq
 gq
 gq
@@ -65860,13 +65860,13 @@ gq
 gq
 gq
 gq
-ie
+pk
 AG
 AW
 Bx
 BK
 BP
-ie
+pk
 gq
 gq
 gq
@@ -66117,13 +66117,13 @@ gq
 gq
 gq
 gq
-ie
+pk
 AH
 AX
-WV
+Zw
 BL
 BQ
-ie
+pk
 gq
 gq
 gq
@@ -66374,13 +66374,13 @@ gq
 gq
 gq
 gq
-ie
+pk
 AG
 AZ
 Bz
 BM
 BP
-ie
+pk
 gq
 gq
 gq
@@ -66631,13 +66631,13 @@ gq
 gq
 gq
 gq
-ie
+pk
 AF
 Ba
 BA
 Ba
 AF
-ie
+pk
 gq
 gq
 gq
@@ -66885,16 +66885,16 @@ gq
 gq
 gq
 gq
-ie
-ie
-ie
-ie
-ie
-ie
-UJ
-ie
-ie
-ie
+pk
+pk
+pk
+pk
+pk
+pk
+zf
+pk
+pk
+pk
 gq
 gq
 gq
@@ -67141,16 +67141,16 @@ gq
 gq
 gq
 gq
-ie
-ie
-Lf
-MC
 pk
-ie
+pk
+OE
+SA
+ZJ
+pk
 Bm
 zo
 zo
-ie
+pk
 gq
 gq
 gq
@@ -67398,16 +67398,16 @@ gq
 gq
 gq
 gq
-ie
-kO
-ZJ
+pk
+Qc
+fm
 zo
 Av
 AI
 zo
 zo
 zo
-ie
+pk
 gq
 gq
 gq
@@ -67655,16 +67655,16 @@ gq
 gq
 gq
 gq
-ie
-Qa
+pk
+qX
 zo
 zo
 Aw
-ie
+pk
 Bp
 zo
 BN
-ie
+pk
 gq
 gq
 gq
@@ -67912,8 +67912,8 @@ gq
 gq
 gq
 gq
-ie
-Va
+pk
+pZ
 zo
 Af
 Ax
@@ -67921,7 +67921,7 @@ AK
 Bq
 Bq
 Bq
-ie
+pk
 gq
 gq
 gq
@@ -68169,16 +68169,16 @@ gq
 gq
 gq
 gq
-ie
-Uv
+pk
+Si
 zo
 zo
 Ay
-ie
-bH
-bH
-bH
-ie
+pk
+YD
+YD
+YD
+pk
 gq
 gq
 gq
@@ -68426,8 +68426,8 @@ gq
 gq
 gq
 gq
-ie
-zh
+pk
+Ti
 zo
 Af
 Av
@@ -68435,7 +68435,7 @@ AK
 Bs
 Bs
 Bs
-ie
+pk
 gq
 gq
 gq
@@ -68683,16 +68683,16 @@ gq
 gq
 gq
 gq
-ie
-Uv
+pk
+Si
 zo
 zo
 AA
-ie
-MN
-MN
-MN
-ie
+pk
+ek
+ek
+ek
+pk
 gq
 gq
 gq
@@ -68940,8 +68940,8 @@ gq
 gq
 gq
 gq
-ie
-Va
+pk
+pZ
 zo
 Af
 AB
@@ -68949,7 +68949,7 @@ AK
 Bu
 Bu
 Bu
-ie
+pk
 gq
 gq
 gq
@@ -69197,16 +69197,16 @@ gq
 gq
 gq
 gq
-ie
-ZV
+pk
+Yy
 zo
 zo
 AC
-ie
+pk
 Bp
 zo
 BN
-ie
+pk
 gq
 gq
 gq
@@ -69454,16 +69454,16 @@ gq
 gq
 gq
 gq
-ie
-UF
-Xu
+pk
+Or
+Lm
 Ar
 AD
 AT
 Ar
 BC
 zo
-ie
+pk
 gq
 gq
 gq
@@ -69711,16 +69711,16 @@ gq
 gq
 gq
 gq
-ie
-ie
-Qc
-LZ
-Nk
-ie
+pk
+pk
+BG
+UO
+Qu
+pk
 zo
-On
+Ry
 zo
-ie
+pk
 gq
 gq
 gq
@@ -69969,15 +69969,15 @@ gq
 gq
 gq
 gq
-ie
-ie
-ie
-ie
-ie
-ie
-Wq
-ie
-ie
+pk
+pk
+pk
+pk
+pk
+pk
+UY
+pk
+pk
 gq
 gq
 gq
@@ -70232,7 +70232,7 @@ gq
 gq
 gq
 qn
-DM
+zg
 qn
 gq
 gq
@@ -70489,7 +70489,7 @@ gq
 gq
 gq
 qn
-DM
+zg
 qn
 gq
 gq
@@ -70746,7 +70746,7 @@ gq
 gq
 gq
 qn
-DM
+zg
 qn
 gq
 gq
@@ -70980,20 +70980,20 @@ gq
 gq
 gq
 gq
-uz
-uz
-uz
-uz
-uz
-uz
-uz
-uz
-uz
-uz
-uz
-uz
-uz
-uz
+qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
 gq
 gq
 gq
@@ -71003,7 +71003,7 @@ gq
 gq
 gq
 qn
-DM
+zg
 qn
 gq
 gq
@@ -71237,20 +71237,20 @@ gq
 gq
 gq
 gq
-uz
+qH
 ag
 oF
 oL
 oS
 oL
-QE
+oa
 oL
 oL
 oS
 oL
 pr
 on
-uz
+qH
 gq
 gq
 gq
@@ -71260,7 +71260,7 @@ gq
 gq
 gq
 qn
-DM
+zg
 qn
 gq
 gq
@@ -71494,20 +71494,20 @@ gq
 gq
 gq
 gq
-uz
+qH
 nY
 oG
 on
-uz
-uz
-uz
-uz
-uz
-uz
+qH
+qH
+qH
+qH
+qH
+qH
 pl
 oG
 on
-uz
+qH
 gq
 gq
 gq
@@ -71517,7 +71517,7 @@ gq
 qn
 qn
 qn
-Sx
+LY
 qn
 qn
 qn
@@ -71751,21 +71751,21 @@ gq
 gq
 gq
 gq
-uz
-WW
+qH
+QD
 oH
 oK
-zQ
+pe
 dG
-TH
+Xq
 oV
 sI
-uz
-Ok
+qH
+Xr
 oG
 on
-uz
-uz
+qH
+qH
 gq
 gq
 gq
@@ -71774,9 +71774,9 @@ gq
 qn
 pp
 mK
-DM
+zg
 mK
-nL
+cC
 qn
 gq
 gq
@@ -71786,9 +71786,9 @@ gq
 qn
 pp
 mK
-BI
+BJ
 mK
-nL
+cC
 qn
 gq
 gq
@@ -71797,7 +71797,7 @@ gq
 qn
 mK
 mK
-BI
+BJ
 mK
 ra
 nQ
@@ -72008,21 +72008,21 @@ gq
 gq
 gq
 gq
-uz
-PD
+qH
+MC
 oI
 oM
-zQ
+pe
 IQ
 pg
 pg
 oV
-uz
+qH
 kw
 oG
 on
 on
-uz
+qH
 qn
 qn
 qn
@@ -72030,9 +72030,9 @@ qn
 qn
 qn
 mK
-BI
-DM
-BI
+BJ
+zg
+BJ
 mK
 qn
 qn
@@ -72042,9 +72042,9 @@ qn
 qn
 qn
 mK
-BI
-BI
-BI
+BJ
+BJ
+BJ
 mK
 qn
 qn
@@ -72052,9 +72052,9 @@ qn
 qn
 qn
 qn
-UX
+Lb
 nK
-BI
+BJ
 mK
 ra
 xi
@@ -72265,16 +72265,16 @@ gq
 gq
 gq
 gq
-uz
+qH
 on
 bN
 bN
-zQ
+pe
 gh
 oV
 qT
 oV
-uz
+qH
 qC
 ps
 oL
@@ -72285,25 +72285,25 @@ qo
 qp
 qo
 qo
-wh
-qu
+Zj
+BB
 qo
-RD
-qu
-qu
-Sb
+PI
+BB
+BB
+VV
 qo
 qo
 qp
 qo
 qo
-wh
-qu
+Zj
+BB
 qo
 qo
-qu
-qu
-Sb
+BB
+BB
+VV
 qo
 qo
 qp
@@ -72522,21 +72522,21 @@ gq
 gq
 gq
 gq
-uz
+qH
 on
 bu
 bN
-zQ
+pe
 oV
 oV
 oV
-VW
-uz
+Wi
+qH
 po
 vi
 YU
 on
-uz
+qH
 qn
 qn
 qn
@@ -72544,9 +72544,9 @@ qn
 qn
 qn
 Wr
-BI
-BI
-BI
+BJ
+BJ
+BJ
 mK
 qn
 qn
@@ -72556,9 +72556,9 @@ qn
 qn
 qn
 Wr
-BI
-BI
-BI
+BJ
+BJ
+BJ
 mK
 qn
 qn
@@ -72779,21 +72779,21 @@ gq
 gq
 gq
 gq
-uz
-PD
+qH
+MC
 oI
 oM
-zQ
+pe
 oV
 oV
 gh
 oV
-XI
-uz
+QG
+qH
 Oc
-uz
-uz
-uz
+qH
+qH
+qH
 gq
 gq
 gq
@@ -72802,9 +72802,9 @@ gq
 qn
 pp
 mK
-BI
+BJ
 mK
-nL
+cC
 qn
 gq
 gq
@@ -72814,9 +72814,9 @@ gq
 qn
 pp
 mK
-BI
+BJ
 mK
-nL
+cC
 qn
 gq
 gq
@@ -73036,20 +73036,20 @@ gq
 gq
 gq
 gq
-uz
+qH
 ma
 on
 oK
-zQ
-Of
+pe
+xe
 oV
 rl
-Of
-Me
-Rj
+xe
+PF
+qu
 ZH
 VL
-uz
+qH
 gq
 gq
 gq
@@ -73071,7 +73071,7 @@ gq
 qn
 qn
 qn
-wh
+Zj
 qn
 qn
 qn
@@ -73293,20 +73293,20 @@ gq
 gq
 gq
 gq
-uz
-WT
+qH
+RG
 on
 oO
-uz
-uz
+qH
+qH
 pc
-uz
-uz
-uz
+qH
+qH
+qH
 pq
 ZH
 Rd
-uz
+qH
 gq
 gq
 gq
@@ -73326,11 +73326,11 @@ gq
 gq
 gq
 gq
-GP
+GQ
 JM
-VR
-zm
-GP
+UX
+Oq
+GQ
 gq
 gq
 gq
@@ -73550,20 +73550,20 @@ gq
 gq
 gq
 gq
-uz
-By
+qH
+LM
 on
 oP
-uz
-uz
+qH
+qH
 pc
-uz
-uz
-uz
-uz
-Xm
-uz
-uz
+qH
+qH
+qH
+qH
+Nd
+qH
+qH
 gq
 gq
 gq
@@ -73577,17 +73577,17 @@ gq
 gq
 gq
 gq
-GP
-GP
-GP
-GP
-GP
+GQ
+GQ
+GQ
+GQ
+GQ
 gq
-GP
+GQ
 JM
-VR
+UX
 JM
-GP
+GQ
 gq
 gq
 gq
@@ -73807,19 +73807,19 @@ gq
 gq
 gq
 gq
-uz
+qH
 on
 on
 bN
-zQ
+pe
 oY
 pj
-LS
-Vq
+Oi
+NQ
 ti
 pj
 eP
-uz
+qH
 gq
 gq
 gq
@@ -73834,17 +73834,17 @@ gq
 gq
 gq
 gq
-GP
-Tb
-gC
+GQ
+WQ
+WZ
 rL
-GP
+GQ
 gq
-GP
-Ol
-VR
+GQ
+NS
+UX
 JM
-GP
+GQ
 gq
 gq
 gq
@@ -74064,11 +74064,11 @@ gq
 gq
 gq
 gq
-uz
-PD
+qH
+MC
 oI
 oM
-zQ
+pe
 uN
 pj
 pj
@@ -74076,7 +74076,7 @@ sZ
 pj
 pj
 uN
-uz
+qH
 gq
 gq
 gq
@@ -74091,17 +74091,17 @@ gq
 gq
 gq
 gq
-GP
-Xe
+GQ
+OJ
 ph
-Wd
-GP
+Pv
+GQ
 gq
-GP
-SD
-VR
+GQ
+Tl
+UX
 JM
-GP
+GQ
 gq
 gq
 gq
@@ -74321,11 +74321,11 @@ gq
 gq
 gq
 gq
-uz
+qH
 on
 oK
 bN
-zQ
+pe
 uN
 uN
 eP
@@ -74333,32 +74333,32 @@ PX
 eP
 uN
 pb
-uz
+qH
 gq
 gq
 gq
 gq
 gq
-GP
-GP
-GP
-GP
-GP
-GP
-GP
-GP
-GP
-GP
-GP
+GQ
+GQ
+GQ
+GQ
+GQ
+GQ
+GQ
+GQ
+GQ
+GQ
+GQ
 pt
-GP
-GP
-GP
-GP
-GP
-hz
-GP
-GP
+GQ
+GQ
+GQ
+GQ
+GQ
+MR
+GQ
+GQ
 gq
 qn
 qn
@@ -74578,44 +74578,44 @@ gq
 gq
 gq
 gq
-uz
+qH
 on
 on
 on
-uz
-zQ
-zQ
-zQ
-zQ
-zQ
-zQ
-zQ
-uz
+qH
+pe
+pe
+pe
+pe
+pe
+pe
+pe
+qH
 gq
 gq
 gq
 gq
 gq
-GP
-Zm
-Lo
-Ra
-GP
-Bt
-xe
-NQ
-Nu
-TI
-Ob
-Rf
-XU
+GQ
+Ld
+RY
+Tw
+GQ
+BE
+XK
+Ox
+Mj
+NH
+WP
+cQ
+Wj
+Ye
+cQ
+cQ
 oT
-Rf
-Rf
-XO
-Yv
-oZ
-GP
+nL
+SJ
+GQ
 gq
 qn
 nG
@@ -74628,9 +74628,9 @@ jH
 qn
 qn
 aG
-id
+Yg
 oy
-id
+Yg
 gq
 gq
 gq
@@ -74835,7 +74835,7 @@ gq
 gq
 gq
 gq
-uz
+qH
 bJ
 on
 on
@@ -74847,32 +74847,32 @@ bN
 oM
 oK
 oP
-uz
-gq
-gq
-gq
-gq
-gq
-GP
-ml
-ml
-ml
-pt
-Bt
-cQ
-MF
-TG
-Tj
-ph
-ph
-ph
-ph
-ph
-Up
 qH
-XL
+gq
+gq
+gq
+gq
+gq
+GQ
+Zb
+Zb
+Zb
+pt
+BE
+At
+ZA
+hz
+SM
 ph
-GP
+ph
+ph
+ph
+ph
+RK
+Ud
+Tf
+ph
+GQ
 gq
 qn
 nG
@@ -74885,9 +74885,9 @@ ow
 qA
 rr
 qz
-id
+Yg
 qG
-id
+Yg
 gq
 gq
 gq
@@ -75092,7 +75092,7 @@ gq
 gq
 gq
 gq
-uz
+qH
 bN
 on
 on
@@ -75104,32 +75104,32 @@ bN
 pd
 on
 on
-uz
+qH
 gq
 gq
 gq
 gq
 gq
-GP
-NE
-Wi
-UO
-GP
-Bt
-cQ
-GP
-GP
-GP
-GP
-GP
-WJ
-WJ
-WJ
-GP
-GP
-GP
-GP
-GP
+GQ
+Os
+Xj
+LK
+GQ
+BE
+At
+GQ
+GQ
+GQ
+GQ
+GQ
+UD
+UD
+UD
+GQ
+GQ
+GQ
+GQ
+GQ
 gq
 qn
 nG
@@ -75137,14 +75137,14 @@ nG
 nG
 nG
 qn
-id
+Yg
 Yt
-id
-id
-id
-id
+Yg
+Yg
+Yg
+Yg
 qM
-id
+Yg
 gq
 gq
 gq
@@ -75349,44 +75349,44 @@ gq
 gq
 gq
 gq
-uz
+qH
 oD
 on
-So
+Zu
 oU
-UE
-Vg
-VU
+Ok
+Zf
+Qg
 on
+QR
+Ok
+NT
+qH
+gq
+gq
+gq
+gq
+gq
+GQ
+GQ
+GQ
+GQ
+GQ
 BE
-UE
-Mq
-uz
-gq
-gq
-gq
-gq
-gq
-GP
-GP
-GP
-GP
-GP
-Bt
-cQ
-Qb
+At
+YV
 oR
-Lz
-BG
+TI
 oZ
+SJ
 ph
 ph
 ph
-oZ
+SJ
 pt
 ph
-Mj
-GP
+Yf
+GQ
 gq
 qn
 qn
@@ -75394,18 +75394,18 @@ qn
 qn
 qn
 qn
-id
+Yg
 oC
-id
-id
+Yg
+Yg
 Bk
 qD
 qN
-id
-id
-id
-id
-id
+Yg
+Yg
+Yg
+Yg
+Yg
 gq
 gq
 gq
@@ -75606,63 +75606,63 @@ gq
 gq
 gq
 gq
-uz
-uz
-uz
-uz
-uz
-uz
-uz
-uz
-uz
-uz
-uz
-uz
-uz
+qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
 gq
 gq
 gq
 gq
 gq
-GP
-BJ
-Uf
-BJ
-GP
-Tx
-cQ
-mF
-Mk
-WI
-BG
+GQ
+Od
+bO
+Od
+GQ
+UL
+At
+gC
+SV
+Pr
+oZ
 ph
-Ys
-Ys
-Ys
+Ws
+Ws
+Ws
 ph
-Wm
+op
 ph
-ZQ
-GP
+bH
+GQ
 gq
-zl
-zl
-zl
-zl
-zl
+Ux
+Ux
+Ux
+Ux
+Ux
 gq
-id
+Yg
 oC
-id
-id
-id
+Yg
+Yg
+Yg
 jq
 zZ
-id
+Yg
 KP
 Ta
 VM
-id
+Yg
 gq
 gq
 gq
@@ -75676,7 +75676,7 @@ nI
 nI
 nI
 nJ
-nN
+qW
 qW
 uy
 qW
@@ -75881,26 +75881,26 @@ gq
 gq
 gq
 gq
-GP
-BJ
-BJ
-Tw
-GP
-RK
-cQ
-mF
-mF
-ZN
-BG
+GQ
+Od
+Od
+OY
+GQ
+Yw
+At
+gC
+gC
+Xt
+oZ
 ph
 ph
 ph
 ph
-Mm
-GP
-GP
-GP
-GP
+Sz
+GQ
+GQ
+GQ
+GQ
 gq
 gq
 gq
@@ -75908,7 +75908,7 @@ gq
 gq
 gq
 gq
-id
+Yg
 oE
 qs
 qx
@@ -75919,7 +75919,7 @@ VT
 qO
 qO
 is
-id
+Yg
 gq
 gq
 gq
@@ -76138,23 +76138,23 @@ gq
 gq
 gq
 gq
-GP
-OP
-BJ
-BJ
+GQ
+Qm
+Od
+Od
 pt
-Bt
-cQ
-mF
-mF
-BH
-BG
-zr
-PJ
+BE
+At
+gC
+gC
+PK
+oZ
+VD
+RS
 ph
-YG
-Tm
-GP
+OB
+Zk
+GQ
 gq
 gq
 gq
@@ -76165,18 +76165,18 @@ gq
 gq
 gq
 gq
-id
-oa
-id
-id
-id
+Yg
+SI
+Yg
+Yg
+Yg
 qF
 qP
-id
+Yg
 GO
 Zq
 ME
-id
+Yg
 gq
 gq
 gq
@@ -76190,10 +76190,10 @@ nI
 nI
 nI
 nI
-UL
-id
+XY
+Yg
 ox
-id
+Yg
 nN
 gq
 gq
@@ -76395,23 +76395,23 @@ gq
 gq
 gq
 gq
-GP
-Tg
-BJ
+GQ
+BI
+Od
+YT
+GQ
 XQ
-GP
-VN
-Zt
-op
-Uj
+PP
+Zi
+Rv
+LW
+GQ
+Og
+LC
+LC
 Yo
-GP
-Zf
-Oj
-Oj
-VF
-Zf
-GP
+Og
+GQ
 gq
 gq
 gq
@@ -76422,18 +76422,18 @@ gq
 gq
 gq
 gq
-id
+Yg
 oC
-id
+Yg
 gq
-id
-id
-id
-id
-id
-id
-id
-id
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
 gq
 gq
 gq
@@ -76448,9 +76448,9 @@ nN
 nN
 nN
 nN
-id
+Yg
 oC
-id
+Yg
 gq
 gq
 gq
@@ -76652,23 +76652,23 @@ gq
 gq
 gq
 gq
+GQ
+VG
+Rj
+Rj
+GQ
+GQ
+Mg
+GQ
+GQ
+GQ
+GQ
+GQ
+YS
+zl
 GP
-VY
-sJ
-sJ
-GP
-GP
-SJ
-GP
-GP
-GP
-GP
-GP
-NH
-Ny
-OA
-GP
-GP
+GQ
+GQ
 gq
 gq
 gq
@@ -76679,9 +76679,9 @@ gq
 gq
 gq
 gq
-id
+Yg
 oC
-id
+Yg
 gq
 gq
 gq
@@ -76699,15 +76699,15 @@ gq
 gq
 gq
 gq
-Oi
-Oi
-Oi
-Oi
-Oi
+Tb
+Tb
+Tb
+Tb
+Tb
 gq
-id
+Yg
 qZ
-id
+Yg
 gq
 gq
 gq
@@ -76909,62 +76909,62 @@ gq
 gq
 gq
 gq
-GP
-GP
-GP
-GP
-GP
-Yn
-Br
-Zw
-Nr
-Wg
-pf
-cC
-Nx
-Ny
-TR
-cC
-GP
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+GQ
+GQ
+GQ
+GQ
+GQ
+XX
+zQ
+OT
+BF
+TL
+bb
 id
+RM
+zl
+Ch
+id
+GQ
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+Yg
 oC
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
 oC
-id
+Yg
 gq
 gq
 gq
@@ -77170,30 +77170,30 @@ gq
 gq
 gq
 gq
-GP
-ZC
-Br
-mF
-mF
-Mp
-pf
-cC
-OK
-Zk
-YW
-cC
-Rh
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+GQ
+UA
+zQ
+gC
+gC
+NP
+bb
 id
+Qx
+XL
+Md
+id
+zj
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+gq
+Yg
 qk
 qt
 qy
@@ -77221,7 +77221,7 @@ qy
 qt
 qt
 te
-id
+Yg
 gq
 gq
 gq
@@ -77427,19 +77427,19 @@ gq
 gq
 gq
 gq
-GP
-BD
-Br
-mF
-mF
-Mk
-pf
-cC
-XM
+GQ
+Mz
+zQ
+gC
+gC
+SV
+bb
+id
+PV
 ph
-nM
-cC
-GP
+ie
+id
+GQ
 gq
 gq
 gq
@@ -77450,35 +77450,35 @@ gq
 gq
 gq
 gq
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
+Yg
 gq
 gq
 gq
@@ -77684,19 +77684,19 @@ gq
 gq
 gq
 gq
-GP
-Mh
-Br
-mF
-mF
-Lw
-pf
-cC
-XM
+GQ
+Pw
+zQ
+gC
+gC
+uw
+bb
+id
+PV
 ph
-nM
-XD
-Zf
+ie
+pf
+Og
 gq
 gq
 gq
@@ -77941,19 +77941,19 @@ gq
 gq
 gq
 gq
-GP
+GQ
 oR
-ek
-mF
-mF
-Mk
-pf
-cC
-XM
+RX
+gC
+gC
+SV
+bb
+id
+PV
 ph
-nM
-cC
-GP
+ie
+id
+GQ
 gq
 gq
 gq
@@ -78198,19 +78198,19 @@ gq
 gq
 gq
 gq
-GP
-Oy
-ek
-mF
-mF
-MR
-pf
-cC
-LO
-XB
+GQ
 qw
-cC
-Rh
+RX
+gC
+gC
+Ty
+bb
+id
+Br
+MS
+RD
+id
+zj
 gq
 gq
 gq
@@ -78451,23 +78451,23 @@ gq
 gq
 gq
 gq
-GP
-GP
-GP
-GP
-GP
-YL
-Br
-PF
-Ne
-YV
-pf
-cC
-Nx
-Ny
-TR
-cC
-GP
+GQ
+GQ
+GQ
+GQ
+GQ
+US
+zQ
+AE
+WD
+zs
+bb
+id
+RM
+zl
+Ch
+id
+GQ
 gq
 gq
 gq
@@ -78708,23 +78708,23 @@ gq
 gq
 gq
 gq
-GP
-YN
-Vz
-MA
-GP
-GP
-SJ
-GP
-GP
-GP
-GP
-GP
-NH
-Ny
-LN
-GP
-GP
+GQ
+Xo
+Rt
+Zl
+GQ
+GQ
+Mg
+GQ
+GQ
+GQ
+GQ
+GQ
+YS
+zl
+Oe
+GQ
+GQ
 gq
 gq
 gq
@@ -78965,23 +78965,23 @@ gq
 gq
 gq
 gq
-GP
-Sh
-Mk
-SO
-GP
-Bt
-cQ
-Qb
+GQ
+Qi
+SV
+QX
+GQ
+BE
 At
-Lz
-GP
-GP
-MG
-Ww
-OE
-GP
-GP
+YV
+sJ
+TI
+GQ
+GQ
+Oa
+QH
+Of
+GQ
+GQ
 gq
 gq
 gq
@@ -79222,23 +79222,23 @@ gq
 gq
 gq
 gq
-GP
-OJ
-mF
-mF
-pt
-Bt
-cQ
-mF
-Mk
-zg
-vE
-Si
 GQ
-Ps
-ZE
-Ss
-GP
+Bt
+gC
+gC
+pt
+BE
+At
+gC
+SV
+Qk
+KL
+BD
+Sx
+Wk
+ZM
+Pk
+GQ
 gq
 gq
 gq
@@ -79479,23 +79479,23 @@ gq
 gq
 gq
 gq
-GP
-Qz
-mF
-PA
-GP
-cH
-cQ
-mF
-mF
-Lm
-vE
-cC
 GQ
-Py
-ZE
-Ut
-Rh
+pa
+gC
+SU
+GQ
+YG
+At
+gC
+gC
+Zp
+KL
+id
+Sx
+vE
+ZM
+WE
+zj
 gq
 gq
 gq
@@ -79736,23 +79736,23 @@ gq
 gq
 gq
 gq
-GP
-QT
-mF
-Lx
-GP
-Tx
-cQ
-mF
-mF
-RJ
-vE
-cC
-Ry
-Ps
-Oo
-XD
-GP
+GQ
+Va
+gC
+Lo
+GQ
+UL
+At
+gC
+gC
+MN
+KL
+id
+Nb
+Wk
+Zd
+pf
+GQ
 gq
 gq
 gq
@@ -79993,23 +79993,23 @@ gq
 gq
 gq
 gq
-GP
-GP
-GP
-GP
-GP
-Bt
-cQ
-op
-Pw
-zs
-GP
-GP
-XH
-VP
-XH
-GP
-GP
+GQ
+GQ
+GQ
+GQ
+GQ
+BE
+At
+Zi
+Vt
+Qo
+GQ
+GQ
+oA
+NN
+oA
+GQ
+GQ
 gq
 gq
 gq
@@ -80250,23 +80250,23 @@ gq
 gq
 gq
 gq
-GP
-Pv
-MW
-MW
-GP
-Bt
-cQ
-GP
-GP
-GP
-GP
-VD
-NS
-ON
-NS
-VD
-GP
+GQ
+Mb
+SX
+SX
+GQ
+BE
+At
+GQ
+GQ
+GQ
+GQ
+NE
+uz
+Xv
+uz
+NE
+GQ
 gq
 gq
 gq
@@ -80501,29 +80501,29 @@ gq
 gq
 gq
 gq
-GP
-GP
-GP
-GP
-GP
-GP
-GP
-Pp
-Bt
-Bt
-LU
-Bt
-cQ
-pZ
-TG
-YY
-cY
-cY
-cY
-cY
-cY
-cY
-ux
+GQ
+GQ
+GQ
+GQ
+GQ
+GQ
+GQ
+td
+BE
+BE
+Yk
+BE
+At
+Qw
+hz
+VX
+wh
+wh
+wh
+wh
+wh
+wh
+Yu
 gq
 gq
 gq
@@ -80758,31 +80758,31 @@ gq
 gq
 gq
 gq
-GP
-ZO
-GP
-ZO
-GP
-ZO
-GP
-Ub
-Mg
-WQ
-GP
-cH
-cQ
-pZ
-SF
-YY
-cY
-cY
-cY
-cY
-cY
-cY
-YJ
-Rh
-GP
+GQ
+kO
+GQ
+kO
+GQ
+kO
+GQ
+OZ
+QN
+RE
+GQ
+YG
+At
+Qw
+UB
+VX
+wh
+wh
+wh
+wh
+wh
+wh
+SB
+zj
+GQ
 gq
 gq
 gq
@@ -81015,31 +81015,31 @@ gq
 gq
 gq
 gq
-GP
+GQ
 pt
-GP
+GQ
 pt
-GP
+GQ
 pt
-GP
-GP
-GP
-GP
-GP
-Bt
-cQ
-GP
-GP
-GP
-Tr
-Ox
-BF
-zf
-BF
-cY
-Zl
-qX
-Rh
+GQ
+GQ
+GQ
+GQ
+GQ
+BE
+At
+GQ
+GQ
+GQ
+TB
+YN
+DM
+Rz
+DM
+wh
+cH
+zm
+zj
 gq
 gq
 gq
@@ -81272,31 +81272,31 @@ gq
 gq
 gq
 gq
-GP
-cY
-Ch
-cY
-LK
-cY
-LK
-cY
-Ch
-cY
+GQ
+wh
+ZC
+wh
+mF
+wh
+mF
+wh
+ZC
+wh
 pt
-Bt
-cQ
-PV
-PV
-PV
-PV
-PV
-PV
-PV
-PV
-PV
-PV
-Rh
-GP
+BE
+At
+By
+By
+By
+By
+By
+By
+By
+By
+By
+By
+zj
+GQ
 gq
 gq
 gq
@@ -81529,29 +81529,29 @@ gq
 gq
 gq
 gq
-GP
-cY
-BF
-cY
-BF
-cY
-BF
-cY
-BF
-cY
-GP
-Bt
-cQ
-PV
-PV
-VO
-Yg
-PV
-Nj
-Yh
-LY
-td
-PV
+GQ
+wh
+DM
+wh
+DM
+wh
+DM
+wh
+DM
+wh
+GQ
+BE
+At
+By
+By
+Vm
+ZE
+By
+ON
+XI
+Ls
+Qa
+By
 gq
 gq
 gq
@@ -81786,29 +81786,29 @@ gq
 gq
 gq
 gq
-GP
+GQ
 pt
-GP
+GQ
 pt
-GP
+GQ
 pt
-GP
+GQ
 pt
-GP
+GQ
 pt
-GP
-cH
-cQ
-PV
-QV
-OW
-US
-UV
-zj
-TD
-Lt
-Lb
-PV
+GQ
+YG
+At
+By
+WB
+zr
+Xz
+QJ
+NM
+Zo
+Ms
+LV
+By
 gq
 gq
 gq
@@ -82043,30 +82043,30 @@ gq
 gq
 gq
 gq
-GP
-ZO
-GP
-ZO
-GP
-ZO
-GP
-ZO
-GP
-ZO
-GP
-Na
-Zh
-PV
-oA
-OW
-uw
-PV
-PV
-PV
-PV
-Yr
-PV
-PV
+GQ
+kO
+GQ
+kO
+GQ
+kO
+GQ
+kO
+GQ
+kO
+GQ
+OD
+RH
+By
+YL
+zr
+Rm
+By
+By
+By
+By
+sf
+By
+By
 gq
 gq
 gq
@@ -82300,30 +82300,30 @@ gq
 gq
 gq
 gq
-GP
-GP
-GP
-GP
-GP
-GP
-GP
-GP
-GP
-GP
-GP
-Qi
-SG
-LW
-MV
-OW
-Ue
-PW
-SQ
-BB
-YX
-RY
-RP
-PV
+GQ
+GQ
+GQ
+GQ
+GQ
+GQ
+GQ
+GQ
+GQ
+GQ
+GQ
+TR
+WW
+XH
+UU
+zr
+ux
+PN
+RO
+MP
+Tn
+QY
+MZ
+By
 gq
 gq
 gq
@@ -82567,20 +82567,20 @@ gq
 gq
 gq
 gq
-GP
-GP
-Rh
-PV
-Sy
-OW
-Wj
-PW
-PQ
-Qu
-Wf
-Au
-Nc
-PV
+GQ
+GQ
+zj
+By
+YK
+zr
+TJ
+PN
+Tq
+Zt
+MJ
+YW
+MU
+By
 gq
 gq
 gq
@@ -82827,17 +82827,17 @@ gq
 gq
 gq
 gq
-PV
-QG
-KL
-Ue
-PW
-NK
-RN
-SU
-RN
-Ye
-PV
+By
+TH
+Tt
+ux
+PN
+YB
+BH
+Me
+BH
+LU
+By
 gq
 gq
 gq
@@ -83084,17 +83084,17 @@ gq
 gq
 gq
 gq
-PV
-PV
-Lv
-TS
-PW
-Vi
-WU
-pa
-RN
-TB
-PV
+By
+By
+Oz
+TY
+PN
+MO
+Lz
+Ym
+BH
+Lk
+By
 gq
 gq
 gq
@@ -83342,16 +83342,16 @@ gq
 gq
 gq
 gq
-PV
-PV
-PV
-PV
-PV
-SV
-pe
+By
+By
+By
+By
+By
 QO
-PV
-PV
+zh
+Au
+By
+By
 gq
 gq
 gq
@@ -83603,12 +83603,12 @@ gq
 gq
 gq
 gq
-PV
-PV
-PV
-PV
-PV
-bb
+By
+By
+By
+By
+By
+Xm
 gq
 gq
 gq
