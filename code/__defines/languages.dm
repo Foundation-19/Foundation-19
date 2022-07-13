@@ -40,7 +40,6 @@
 #define LANGUAGE_MANTID_NONVOCAL   "Ascent-Glow"
 #define LANGUAGE_MANTID_VOCAL      "Ascent-Voc"
 #define LANGUAGE_MANTID_BROADCAST  "Worldnet"
-#define LANGUAGE_SCP049_GLOBAL		   "SCP-049 Hivemind"
 
 // Language flags.
 #define WHITELISTED  1   // Language is available if the speaker is whitelisted.

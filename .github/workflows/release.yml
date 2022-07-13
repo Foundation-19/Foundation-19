@@ -1,0 +1,29 @@
+name: Build Release
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+    - name: Clone custom items
+      uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+      with:
+        repository: Baystation12/custom-items
+        path: custom-items
+    - name: Build and Publish Image to Registry
+      env:
+        BUILD_ARGS: -Icustom-items/inc.dm
+      uses: elgohr/Publish-Docker-Github-Action@d9b5f4fc837f673238b26fecac84a3a711887b42
+      with:
+        name: ${{ secrets.IMAGE_NAME }}
+        username: ${{ secrets.REG_USER }}
+        password: ${{ secrets.REG_PASS }}
+        tags: "latest"
+        buildargs: BUILD_ARGS
+        registry: ${{ secrets.REG_URL }}
+        cache: true

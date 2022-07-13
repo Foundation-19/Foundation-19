@@ -15,9 +15,6 @@ meteor_act
 	if(!has_organ(def_zone))
 		return PROJECTILE_FORCE_MISS //if they don't have the organ in question then the projectile just passes by.
 
-	if(ai_holder && P.firer)
-		ai_holder.react_to_attack(P.firer)
-
 	//Shields
 	var/shield_check = check_shields(P.damage, P, null, def_zone, "the [P.name]")
 	if(shield_check)
@@ -174,8 +171,6 @@ meteor_act
 	if(I.attack_message_name())
 		weapon_mention = " with [I.attack_message_name()]"
 	visible_message(SPAN_DANGER("\The [src] has been [I.attack_verb.len? pick(I.attack_verb) : "attacked"] in the [affecting.name][weapon_mention] by \the [user]!"))
-	if (ai_holder)
-		ai_holder.react_to_attack(user)
 	return standard_weapon_hit_effects(I, user, effective_force, hit_zone)
 
 /mob/living/carbon/human/standard_weapon_hit_effects(obj/item/I, mob/living/user, effective_force, hit_zone)
@@ -354,9 +349,6 @@ meteor_act
 			var/client/assailant = TT.thrower.client
 			if(assailant)
 				admin_attack_log(TT.thrower, src, "Threw \an [O] at their victim.", "Had \an [O] thrown at them", "threw \an [O] at")
-
-		if (ai_holder)
-			ai_holder.react_to_attack(TT.thrower)
 
 		//thrown weapon embedded object code.
 		if(dtype == BRUTE && istype(O,/obj/item))
@@ -542,4 +534,4 @@ meteor_act
 	var/obj/item/organ/internal/heart/heart = internal_organs_by_name[BP_HEART]
 	if(heart.pulse == PULSE_NONE)
 		death()
-
+	
