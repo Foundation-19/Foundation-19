@@ -96,9 +96,9 @@
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmateba
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/beret/solgov/marcom
 	mask = /obj/item/clothing/mask/balaclava
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 
 
 
@@ -115,10 +115,10 @@
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/beret/sec = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityofficer
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 
 
 /decl/hierarchy/outfit/job/site90/crew/security/ltofficerlcz
@@ -134,10 +134,10 @@
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/hos = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 
 /decl/hierarchy/outfit/job/site90/crew/security/ltofficerez
 	name = OUTFIT_JOB_NAME("EZ Senior Agent")
@@ -151,9 +151,9 @@
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
+	glasses = /obj/item/clothing/glasses/eyepatch/hud/security
 	head = /obj/item/clothing/head/beret/sec/corporate/hos
 	mask = /obj/item/clothing/mask/balaclava
-	glasses = /obj/item/clothing/glasses/eyepatch/hud/security
 
 
 // GUARD OUTFITS
@@ -169,10 +169,11 @@
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/warden = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+
 
 /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerhcz
 	name = OUTFIT_JOB_NAME("HCZ Guard")
@@ -185,10 +186,10 @@
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/warden = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 
 /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerez
 	name = OUTFIT_JOB_NAME("EZ Agent")
@@ -203,9 +204,9 @@
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
+	glasses = /obj/item/clothing/glasses/eyepatch/hud/security
 	head = /obj/item/clothing/head/beret/sec/corporate/warden
 	mask = /obj/item/clothing/mask/balaclava
-	glasses = /obj/item/clothing/glasses/eyepatch/hud/security
 
 /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerez
 	name = OUTFIT_JOB_NAME("EZ Junior Agent")
@@ -220,9 +221,9 @@
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
+	glasses = /obj/item/clothing/glasses/eyepatch/hud/security
 	head = /obj/item/clothing/head/beret/sec/corporate/officer
 	mask = /obj/item/clothing/mask/balaclava
-	glasses = /obj/item/clothing/glasses/eyepatch/hud/security
 
 // JUNIOR GUARD OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerlcz
@@ -237,10 +238,10 @@
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/officer = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 
 /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerhcz
 	name = OUTFIT_JOB_NAME("HCZ Junior Guard")
@@ -254,10 +255,10 @@
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/officer = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 
 // SCIENCE OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/science/juniorscientist
