@@ -25,7 +25,8 @@
 	var/static/list/insomnia_messages = list("You feel so tired... but you can't sleep.", "You feel like... like.... sleep is.... can't.... sleep....")
 
 /obj/item/scp513/examine(mob/user)
-	user << "<b><span class = 'euclid'><big>SCP-513</big></span></b> - [desc]"
+	. = ..()
+	to_chat(user, "<b><span class = 'euclid'><big>SCP-513</big></span></b> - [desc]")
 
 /obj/item/scp513/Initialize()
 	. = ..()
