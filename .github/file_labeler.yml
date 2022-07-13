@@ -5,7 +5,7 @@ Mapping:
   maps/**/*
   _maps/**/*
 
-github_actions:
+Github:
   .github/**/*
 
 Sprites:
