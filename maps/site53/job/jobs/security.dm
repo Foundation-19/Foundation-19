@@ -357,7 +357,7 @@
 	economic_power = 4
 //	minimal_player_age = 0
 	ideal_character_age = 25
-	loadout_allowed = FALSE
+	balance_limited = TRUE
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerlcz
 	allowed_branches = list(
 		/datum/mil_branch/security
