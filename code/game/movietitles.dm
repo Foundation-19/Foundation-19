@@ -15,7 +15,7 @@ GLOBAL_LIST(end_titles)
 		return
 
 	if(!GLOB.end_titles)
-		GLOB.end_titles = generate_titles()
+		GLOB.end_titles = generate_titles() //am i done yet?
 
 	LAZYINITLIST(credits)
 
