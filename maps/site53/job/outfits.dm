@@ -113,7 +113,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/beret/sec = 1)
-	belt = /obj/item/storage/belt/holster/security/fullzc
+	belt = /obj/item/storage/belt/holster/security/full
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityofficer
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -131,7 +131,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/hos = 1)
-	belt = /obj/item/storage/belt/holster/security/fullzc
+	belt = /obj/item/storage/belt/holster/security/full
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -147,7 +147,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1)
-	belt = /obj/item/storage/belt/holster/security/fullzcez
+	belt = /obj/item/storage/belt/holster/security/fullez
 	head = /obj/item/clothing/head/beret/sec/corporate/hos
 	mask = /obj/item/clothing/mask/balaclava
 
@@ -304,6 +304,7 @@
 	l_ear = null
 	back = null
 	l_pocket = /obj/item/paper/dclass_orientation
+	id_types = list(/obj/item/card/id/classd)
 
 /decl/hierarchy/outfit/job/site90/crew/civ/classd/post_equip(var/mob/living/carbon/human/H)
 	..()
@@ -838,6 +839,7 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	belt = /obj/item/gun/projectile/pistol/mk9
 	l_pocket = /obj/item/ammo_magazine/scp/mk9
+	id_types = list(/obj/item/card/id/classd)
 	l_ear = null
 	back = null
 
@@ -853,5 +855,4 @@
 	r_ear = /obj/item/pen
 	l_pocket = /obj/item/material/clipboard
 	r_pocket = /obj/item/folder
-
 

@@ -67,7 +67,7 @@
 /obj/item/storage/belt/holster/attackby(obj/item/W as obj, mob/user as mob)
 	var/datum/extension/holster/H = get_extension(src, /datum/extension/holster)
 	if(H.holster(W, user))
-		return
+		return TRUE
 	else
 		. = ..(W, user)
 
