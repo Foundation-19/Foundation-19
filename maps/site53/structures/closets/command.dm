@@ -13,10 +13,12 @@
 
 /obj/structure/closet/secure_closet/administration/facilityadmin/WillContain()
 	return list(
+	  	/obj/item/clothing/accessory/armorplate/sneaky,
 //		/obj/item/clothing/under/suittie,
 		/obj/item/clothing/shoes/dress,
 		/obj/item/device/radio,
 		/obj/item/clothing/suit/storage/toggle/suit/black,
+		
 	)
 
 /obj/structure/closet/secure_closet/administration/commsofficer
