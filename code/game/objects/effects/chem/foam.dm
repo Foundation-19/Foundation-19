@@ -180,3 +180,4 @@
 	if(air_group)
 		return 0
 	return !density
+	
