@@ -1,0 +1,12 @@
+Code:
+  code/**/*
+
+Mapping:
+  maps/**/*
+  _maps/**/*
+
+github_actions:
+  .github/**/*
+
+Sprites:
+  icons/**/*
