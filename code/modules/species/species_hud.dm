@@ -48,6 +48,9 @@
 	if(slot_back in equip_slots)
 		equip_slots |= slot_in_backpack
 
+	if(slot_belt in equip_slots)
+		equip_slots |= slot_in_belt
+
 	if(slot_w_uniform in equip_slots)
 		equip_slots |= slot_tie
 
