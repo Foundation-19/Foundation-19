@@ -5,7 +5,7 @@
 
 /decl/color_generator/proc/GenerateHex()
 	. = GenerateRGB()
-	. = rgb(.[1], .[2], .[3])
+	. = rgb(.[1], .[2], .[3]) //This is a test, don't merge
 
 /decl/color_generator/proc/GenerateRGB()
 	. = create_color()
