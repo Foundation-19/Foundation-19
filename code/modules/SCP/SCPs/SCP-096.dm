@@ -212,34 +212,45 @@
 		return
 	..()
 
-/mob/living/simple_animal/hostile/scp096/proc/specialexamine(var/userguy) //Snowflaked.
-	if (istype(userguy, /mob/living/carbon))
-		satisfied_urges += userguy
-		var/protected = (userguy in GLOB.scramble_hud_protected)
-		var/scramblehud = (userguy in GLOB.scramble_hud_users)
-		if(scramblehud)
-			to_chat(userguy, scramble_desc)
-			if(protected)
-				return
-		if (!(userguy in kill_list))
-			kill_list += userguy
-			if(!scramblehud)
-				to_chat(userguy, target_desc_1)
-			if(userguy)
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, userguy, "<span class='alert'>That was a mistake. Run</span>"), 20 SECONDS)
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, userguy, "<span class='danger'>RUN</span>"), 30 SECONDS)
-		else if(!scramblehud)
-			to_chat(userguy, target_desc_2)
-
-		if(will_scream)
-			if(!buckled) dir = 2
-			visible_message("<span class='danger'>[src] SCREAMS!</span>")
-			playsound(get_turf(src), 'sound/voice/096-rage.ogg', 100)
-			screaming = 1
-			will_scream = 0
-			spawn(290)
-				screaming = 0
+/mob/living/simple_animal/hostile/scp096/proc/specialexamine(mob/userguy) //Snowflaked.
+	if (!iscarbon(userguy))
 		return
+	// Do not let blind folks examine 096. Doesn't make sense.
+	if(ishuman(userguy))
+		var/mob/living/carbon/human/H = userguy
+		if(H.equipment_tint_total == TINT_BLIND)
+			return
+	// Do not let unconscious or dead people examine 096.
+	// Dead as in ghost in dead body, not as in ghost
+	if(userguy.stat)
+		return
+
+	satisfied_urges += userguy
+	var/protected = (userguy in GLOB.scramble_hud_protected)
+	var/scramblehud = (userguy in GLOB.scramble_hud_users)
+	if(scramblehud)
+		to_chat(userguy, scramble_desc)
+		if(protected)
+			return
+	if (!(userguy in kill_list))
+		kill_list += userguy
+		if(!scramblehud)
+			to_chat(userguy, target_desc_1)
+		if(userguy)
+			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, userguy, "<span class='alert'>That was a mistake. Run</span>"), 20 SECONDS)
+			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, userguy, "<span class='danger'>RUN</span>"), 30 SECONDS)
+	else if(!scramblehud)
+		to_chat(userguy, target_desc_2)
+
+	if(will_scream)
+		if(!buckled) dir = 2
+		visible_message("<span class='danger'>[src] SCREAMS!</span>")
+		playsound(get_turf(src), 'sound/voice/096-rage.ogg', 100)
+		screaming = 1
+		will_scream = 0
+		spawn(290)
+			screaming = 0
+	return
 
 /mob/living/simple_animal/hostile/scp096/proc/handle_target(var/mob/living/carbon/target)
 
