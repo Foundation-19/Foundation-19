@@ -46,6 +46,7 @@ ut // COMMAND
 		access_adminlvl3,
 		access_adminlvl4,
 		access_com_comms,
+		access_change_ids,
 		access_civ_comms,
 		access_keyauth
 	)
