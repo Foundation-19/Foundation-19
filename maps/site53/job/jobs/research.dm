@@ -4,8 +4,8 @@
 	title = "Researcher Associate"
 	department = "Science"
 	department_flag = SCI
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 24
+	spawn_positions = 24
 	//supervisors = "the Research Director and anyone in a higher position than you"
 	economic_power = 4
 	alt_titles = list("Junior Xenobiologist", "Junior Xenoarcheologist", "Assistant Researcher", "Research Assistant", "Research Intern", "Junior Researcher", "Junior Robotics Technician")
@@ -36,8 +36,8 @@
 	title = "Researcher"
 	department = "Science"
 	department_flag = SCI
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 12
+	spawn_positions = 12
 	//supervisors = "the Research Director and anyone in a higher position than you"
 	economic_power = 4
 	alt_titles = list("Xenobiologist", "Xenoarcheologist", "Robotics Technician")
