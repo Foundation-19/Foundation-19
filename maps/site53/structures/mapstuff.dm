@@ -1,11 +1,22 @@
-/datum/map_template/ruin/exoplanet/monolith
-	name = "Monolith Ring"
-	id = "planetsite_monoliths"
-	description = "Bunch of monoliths surrounding an artifact."
-	suffixes = list("monoliths/monoliths.dmm")
-	spawn_cost = 1
-	template_flags = TEMPLATE_FLAG_NO_RUINS
-	ruin_tags = RUIN_ALIEN
+/obj/structure/backup_server
+	name = "backup server"
+	icon = 'icons/obj/machines/research.dmi'
+	icon_state = "server"
+	desc = "Impact resistant server rack. You might be able to pry a disk out."
+	var/obj/item/stock_parts/computer/hard_drive/cluster/drive = new /obj/item/stock_parts/computer/hard_drive/cluster
+
+/obj/structure/backup_server/attackby(obj/item/W, mob/user, var/click_params)
+	if(isCrowbar(W))
+		if (!drive)
+			to_chat(user, SPAN_WARNING("There is nothing else to take from \the [src]."))
+			return
+
+		to_chat(user, SPAN_NOTICE("You pry out the data drive from \the [src]."))
+		playsound(loc, 'sound/items/Crowbar.ogg', 50, 1)
+		drive.origin_tech = list(TECH_DATA = rand(4,5), TECH_ENGINEERING = rand(4,5), TECH_PHORON = rand(4,5), TECH_COMBAT = rand(2,5), TECH_ESOTERIC = rand(0,6))
+		var/obj/item/stock_parts/computer/hard_drive/cluster/extracted_drive = drive
+		user.put_in_hands(extracted_drive)
+		drive = null
 
 /obj/structure/monolith
 	name = "monolith"
@@ -68,13 +79,3 @@
 				return
 	to_chat(user, "<span class='notice'>\The [src] is still.</span>")
 	return ..()
-
-/turf/simulated/floor/fixed/alium/ruin
-	name = "ancient alien plating"
-	desc = "This obviously wasn't made for your feet. Looks pretty old."
-	initial_gas = null
-
-/turf/simulated/floor/fixed/alium/ruin/Initialize()
-	. = ..()
-	if(prob(10))
-		ChangeTurf(get_base_turf_by_area(src))
