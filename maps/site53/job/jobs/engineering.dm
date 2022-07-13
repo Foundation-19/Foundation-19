@@ -2,8 +2,8 @@
 
 /datum/job/juneng
 	title = "Junior Engineer"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 8
+	spawn_positions = 8
 	department_flag = ENG
 	//supervisors = "the Chief Engineer"
 	economic_power = 5
@@ -33,8 +33,8 @@
 
 /datum/job/eng
 	title = "Engineer"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 6
+	spawn_positions = 6
 	department_flag = ENG
 	//supervisors = "the Chief Engineer"
 	economic_power = 5

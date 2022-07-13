@@ -3,6 +3,8 @@
 	slot = slot_w_uniform
 	category = /datum/gear/uniform
 	denied_roles = list(/datum/job/classd)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	//Security shouldn't wear something else than their uniform
 
 /datum/gear/uniform/jumpsuit
 	display_name = "jumpsuit, colour select"
@@ -147,6 +149,8 @@
 	path = /obj/item/clothing/under/kimono
 	flags = GEAR_HAS_COLOR_SELECTION
 
+/* Because the vast majority of these are non lore friendly,at minimum we should rename them
+
 /datum/gear/uniform/corporate
 	display_name = "corporate uniform selection"
 	path = /obj/item/clothing/under
@@ -191,6 +195,7 @@
 	display_name = "corporate colours, liason suit"
 	path = /obj/item/clothing/under/suit_jacket/corp
 	flags = GEAR_HAS_TYPE_SELECTION
+*/
 
 /datum/gear/uniform/sterile
 	display_name = "sterile jumpsuit"
