@@ -91,7 +91,7 @@
 			delete_me = 1
 			return
 		if("JoinLateComms")
-			GLOB.latejoin_comms += loc
+			GLOB.latejoin_comms += loc //requires a location
 			delete_me = 1
 			return
 		if("JoinLatelcz")
