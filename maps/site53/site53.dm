@@ -41,6 +41,7 @@
 	#include "job/jobs/misc.dm"
 	#include "job/jobs/research.dm"
 	#include "job/jobs/security.dm"
+	#include "structures/mapstuff.dm"
 	#include "structures/signs.dm"
 	#include "structures/closets/command.dm"
 	#include "structures/closets/medical.dm"

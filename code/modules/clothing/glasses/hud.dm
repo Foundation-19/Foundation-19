@@ -118,3 +118,36 @@
 	item_state = "scihudpresc"
 	desc = "A science HUD integrated with a set of prescription glasses."
 	prescription = 7
+
+/obj/item/clothing/glasses/hud/scramble
+	name = "SCRAMBLE goggles"
+	desc = "State-of-the-art SCRAMBLE goggles. These things cost a fortune and apparently make you able to view SCP-096!"
+	icon_state = "scramble"
+	item_state = "glasses"
+	origin_tech = null
+	action_button_name = "Toggle Goggles"
+	toggleable = TRUE
+	see_invisible = SEE_INVISIBLE_NOLIGHTING
+	off_state = "denight"
+	electric = TRUE
+	var/faulty = FALSE
+
+/obj/item/clothing/glasses/hud/scramble/Initialize()
+	. = ..()
+	overlay = GLOB.global_hud.scramble
+
+/obj/item/clothing/glasses/hud/scramble/process_hud(mob/M)
+	process_scramble_hud(M, faulty)
+
+
+/obj/item/clothing/glasses/hud/scramble/faulty // for admin shenanigans
+	faulty = TRUE
+
+/obj/item/clothing/glasses/hud/scramble/experimental
+	name = "experimental SCRAMBLE goggles"
+	desc = "Experimental SCRAMBLE goggles. Designed to prevent the user from viewing the face of SCP-096."
+
+/obj/item/clothing/glasses/hud/scramble/experimental/Initialize()
+	. = ..()
+	// 30% chance of being faulty
+	faulty = prob(30)
