@@ -41,12 +41,27 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	else
 		transform = null
 	return
+
 /mob/living/carbon/human/scp049/New(new_loc, new_species)
 	new_species = "SCP-049"
 	return  ..()
 
 /mob/living/carbon/human/scp049/Initialize()
 	. = ..()
+	mind_initialize()
+	var/datum/spell/spl = new /datum/spell/targeted/curepestillence
+	add_spell(spl)
+	spl = new /datum/spell/aimed/stopheart
+	add_spell(spl)
+	spl = new /datum/spell/targeted/communicate_049
+	add_spell(spl)
+
+	add_language(LANGUAGE_ENGLISH, TRUE)
+	add_language(LANGUAGE_HUMAN_FRENCH, TRUE)
+	add_language(LANGUAGE_HUMAN_GERMAN, TRUE)
+	add_language(LANGUAGE_HUMAN_SPANISH, TRUE)
+	update_languages()
+	set_default_language(all_languages[LANGUAGE_ENGLISH])
 	// fix names
 	fully_replace_character_name("SCP-049")
 
@@ -97,8 +112,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/scp049/Login()
 	. = ..()
 	if(client)
-		//Start text
-
 		if(!(MUTATION_XRAY in mutations))
 			mutations.Add(MUTATION_XRAY)
 			update_mutations()
