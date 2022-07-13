@@ -42,7 +42,7 @@
 		/obj/item/gun/projectile/automatic/scp/p90,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
 		/obj/item/gun/energy/taser/carbine,
-		/obj/item/ammo_magazine/box/a10mm,
+//  	/obj/item/ammo_magazine/box/a10mm,
 		/obj/item/handcuffs = 4,
 //		/obj/item/ammo_magazine/box/c45donor,
 //		/obj/item/ammo_magazine/box/c45donor/rubber,
