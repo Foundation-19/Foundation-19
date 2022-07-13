@@ -10,3 +10,12 @@ Github:
 
 Sprites:
   icons/**/*
+
+Tools:
+  tools/**/*
+
+TGUI:
+  tgui/**/*
+
+Sounds:
+  sounds/**/*
