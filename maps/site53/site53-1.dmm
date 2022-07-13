@@ -255,6 +255,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_z = 0
+	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
 "aI" = (
@@ -1588,6 +1594,12 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_z = 0
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
@@ -52783,8 +52795,8 @@ ML
 aW
 ot
 fO
+nP
 ot
-gq
 gq
 gq
 gq
@@ -53048,7 +53060,6 @@ gq
 gq
 gq
 gq
-gq
 pC
 rY
 rY
@@ -53299,7 +53310,6 @@ ot
 fO
 nP
 ot
-gq
 gq
 gq
 gq
