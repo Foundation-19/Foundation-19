@@ -14,7 +14,7 @@ var/const/POSITIVE_INFINITY = 1#INF // win: 1.#INF, lin: inf
 var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 //var/const/POSITIVE_NAN = -(1#INF/1#INF) // win: 1.#QNAN, lin: nan -- demonstration of creation, but not useful
 //var/const/NEGATIVE_NAN = (1#INF/1#INF) //win: -1.#IND, lin: -nan -- demonstration of creation, but not useful
-#define isfinite(N) (isnum(N) && ((N) == (N)) && ((N) != POSITIVE_INFINITY) && ((N) != NEGATIVE_INFINITY))
+#define isfinite(N) (isnum(N) && ((N) == (N)) && ((N) != POSITIVE_INFINITY) && ((N) != NEGATIVE_INFINITY))//pain
 
 #define isnan(N) (isnum(N) && (N) != (N))
 
