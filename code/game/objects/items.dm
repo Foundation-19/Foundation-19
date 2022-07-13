@@ -447,6 +447,19 @@ var/list/global/slot_flags_enumeration = list(
 					allow = 1
 			if(!allow)
 				return 0
+
+		if(slot_in_belt) //used entirely for equipping spawned mobs or at round start
+			var/allow = 0
+			if(H.belt && istype(H.belt, /obj/item/storage/belt))
+				var/obj/item/storage/belt/B = H.belt
+				if(B.can_be_inserted(src,M,1))
+					allow = 1
+				if(B.attackby(src, H)) //attempt to holster if we can't otherwise put the item in the belt
+					allow = 1
+			if(!allow)
+				return 0
+
+
 		if(slot_tie)
 			if((!H.w_uniform && (slot_w_uniform in mob_equip)) && (!H.wear_suit && (slot_wear_suit in mob_equip)))
 				if(!disable_warning)

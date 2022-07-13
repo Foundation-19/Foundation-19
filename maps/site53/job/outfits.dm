@@ -94,8 +94,9 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1,/obj/item/clothing/glasses/eyepatch/hud/security = 1,/obj/item/gun/projectile/revolver/mateba = 1,/obj/item/ammo_magazine/c50 = 1,/obj/item/ammo_magazine/box/a50 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1,/obj/item/clothing/glasses/eyepatch/hud/security = 1,/obj/item/ammo_magazine/c50 = 1,/obj/item/ammo_magazine/box/a50 = 1)
+	belt_contents = list(/obj/item/gun/projectile/revolver/mateba = 1)
+	belt = /obj/item/storage/belt/holster/security/full
 	head = /obj/item/clothing/head/beret/solgov/marcom
 	mask = /obj/item/clothing/mask/balaclava
 
@@ -112,8 +113,9 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/head/beret/sec = 1,/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/gun/projectile/revolver/mateba = 1,/obj/item/ammo_magazine/c50 = 1,/obj/item/ammo_magazine/box/a50 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
+	backpack_contents = list(/obj/item/clothing/head/beret/sec = 1,/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/ammo_magazine/c50 = 1,/obj/item/ammo_magazine/box/a50 = 1)
+	belt_contents = list(/obj/item/gun/projectile/revolver/mateba = 1)
+	belt = /obj/item/storage/belt/holster/security/full
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityofficer
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -129,8 +131,9 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/hos = 1,/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/gun/projectile/revolver/mateba = 1,/obj/item/ammo_magazine/c50 = 1,/obj/item/ammo_magazine/box/a50 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
+	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/hos = 1,/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1 ,/obj/item/ammo_magazine/c50 = 1,/obj/item/ammo_magazine/box/a50 = 1)
+	belt_contents = list(/obj/item/gun/projectile/revolver/mateba = 1)
+	belt = /obj/item/storage/belt/holster/security/full
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -145,8 +148,9 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1,/obj/item/clothing/glasses/eyepatch/hud/security = 1,/obj/item/gun/projectile/revolver/mateba = 1,/obj/item/ammo_magazine/c50 = 1,/obj/item/ammo_magazine/box/a50 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1,/obj/item/clothing/glasses/eyepatch/hud/security = 1,/obj/item/ammo_magazine/c50 = 1,/obj/item/ammo_magazine/box/a50 = 1)
+	belt_contents = list(/obj/item/gun/projectile/revolver/mateba = 1)
+	belt = /obj/item/storage/belt/holster/security/full
 	head = /obj/item/clothing/head/beret/sec/corporate/hos
 	mask = /obj/item/clothing/mask/balaclava
 
@@ -162,8 +166,9 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/gun/projectile/pistol/mk9 = 1,/obj/item/ammo_magazine/scp/mk9 = 1,/obj/item/ammo_magazine/box/mk9 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
+	backpack_contents = list(/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1, /obj/item/ammo_magazine/box/mk9 = 1)
+	belt_contents = list(/obj/item/gun/projectile/pistol/mk9 = 1,/obj/item/ammo_magazine/scp/mk9 = 1)
+	belt = /obj/item/storage/belt/holster/security/full
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -178,8 +183,8 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/gun/projectile/pistol/mk9 = 1,/obj/item/ammo_magazine/scp/mk9 = 1,/obj/item/ammo_magazine/box/mk9 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
+	backpack_contents = list(/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/ammo_magazine/box/mk9 = 1)
+	belt = /obj/item/storage/belt/holster/security/full
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -195,8 +200,9 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1,/obj/item/clothing/glasses/eyepatch/hud/security = 1,/obj/item/gun/projectile/pistol/mk9 = 1,/obj/item/ammo_magazine/scp/mk9 = 1,/obj/item/ammo_magazine/box/mk9 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1,/obj/item/clothing/glasses/eyepatch/hud/security = 1,/obj/item/ammo_magazine/box/mk9 = 1)
+	belt_contents = list(/obj/item/gun/projectile/pistol/mk9 = 1,/obj/item/ammo_magazine/scp/mk9 = 1)
+	belt = /obj/item/storage/belt/holster/security/full
 	head = /obj/item/clothing/head/beret/sec/corporate/warden
 	mask = /obj/item/clothing/mask/balaclava
 
@@ -211,8 +217,9 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1,/obj/item/clothing/glasses/eyepatch/hud/security = 1,/obj/item/gun/projectile/pistol/mk9 = 1,/obj/item/ammo_magazine/scp/mk9 = 1,/obj/item/ammo_magazine/box/mk9 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1,/obj/item/clothing/glasses/eyepatch/hud/security = 1,/obj/item/ammo_magazine/box/mk9 = 1)
+	belt_contents = list(/obj/item/gun/projectile/pistol/mk9 = 1,/obj/item/ammo_magazine/scp/mk9 = 1)
+	belt = /obj/item/storage/belt/holster/security/full
 	head = /obj/item/clothing/head/beret/sec/corporate/officer
 	mask = /obj/item/clothing/mask/balaclava
 
@@ -228,8 +235,9 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/gun/projectile/pistol/mk9 = 1,/obj/item/ammo_magazine/scp/mk9 = 1,/obj/item/ammo_magazine/box/mk9 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
+	backpack_contents = list(/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/ammo_magazine/box/mk9 = 1)
+	belt_contents = list(/obj/item/gun/projectile/pistol/mk9 = 1,/obj/item/ammo_magazine/scp/mk9 = 1)
+	belt = /obj/item/storage/belt/holster/security/full
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -245,8 +253,9 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/gun/projectile/pistol/mk9 = 1,/obj/item/ammo_magazine/scp/mk9 = 1,/obj/item/ammo_magazine/box/mk9 = 1,/obj/item/handcuffs = 0,/obj/item/reagent_containers/spray/pepper = 1,/obj/item/device/flash = 1,/obj/item/device/flashlight/maglight = 1)
-	belt = /obj/item/storage/belt/holster/security
+	backpack_contents = list(/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,/obj/item/ammo_magazine/box/mk9 = 1)
+	belt_contents = list(/obj/item/gun/projectile/pistol/mk9 = 1, /obj/item/ammo_magazine/scp/mk9 = 1)
+	belt = /obj/item/storage/belt/holster/security/full
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -304,6 +313,7 @@
 	l_ear = null
 	back = null
 	l_pocket = /obj/item/paper/dclass_orientation
+	id_types = list(/obj/item/card/id/classd)
 
 /decl/hierarchy/outfit/job/site90/crew/civ/classd/post_equip(var/mob/living/carbon/human/H)
 	..()
@@ -839,6 +849,7 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	belt = /obj/item/gun/projectile/pistol/mk9
 	l_pocket = /obj/item/ammo_magazine/scp/mk9
+	id_types = list(/obj/item/card/id/classd)
 	l_ear = null
 	back = null
 

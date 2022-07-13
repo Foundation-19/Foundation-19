@@ -3262,7 +3262,7 @@
 /obj/item/clothing/suit/armor/vest/scp/medarmor/eta,
 /obj/item/clothing/head/helmet/scp/eta,
 /obj/structure/table/rack,
-/obj/item/clothing/glasses/scramble,
+/obj/item/clothing/glasses/hud/scramble,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -4701,7 +4701,7 @@
 	},
 /obj/item/clothing/suit/armor/vest/scp/medarmor/eta,
 /obj/item/clothing/head/helmet/scp/eta,
-/obj/item/clothing/glasses/scramble,
+/obj/item/clothing/glasses/hud/scramble,
 /obj/structure/table/rack,
 /turf/unsimulated/floor{
 	icon_state = "dark"

@@ -50,6 +50,19 @@ the HUD updates properly! */
 	for (var/obj/effect/decal/cleanable/dirtyfloor in view(P.Mob))
 		P.Client.images += dirtyfloor.hud_overlay
 
+// SCRAMBLE gear.
+/proc/process_scramble_hud(var/mob/M,var/faulty_goggles = FALSE, var/mob/Alt)
+	if(!can_process_hud(M))
+		return
+
+	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.scramble_hud_users)
+	if(!faulty_goggles)
+		GLOB.scramble_hud_protected |= M
+	// The only things that will have scramble hud, or so we assume
+	// is SCP-096 (or, if admin shenanigans were happening, SCP-096s)
+	for(var/mob/living/simple_animal/hostile/scp096/shylad in P.Mob.in_view(P.Turf))
+		P.Client.images += shylad.hud_scramble
+
 /datum/arranged_hud_process
 	var/client/Client
 	var/mob/Mob
@@ -80,6 +93,8 @@ the HUD updates properly! */
 	GLOB.med_hud_users -= src
 	GLOB.sec_hud_users -= src
 	GLOB.jani_hud_users -= src
+	GLOB.scramble_hud_users -= src
+	GLOB.scramble_hud_protected -= src
 
 /mob/proc/in_view(var/turf/T)
 	return view(T)

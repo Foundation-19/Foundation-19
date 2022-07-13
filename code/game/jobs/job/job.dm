@@ -504,7 +504,7 @@
 	var/datum/job/classd/CD
 
 	for(var/datum/job/job in SSjobs.primary_job_datums) //find all other jobs in our department
-		if(job.department == department && job.type != type)
+		if(job.department == department)
 			department_count += job.get_active_count()
 
 		if(job.type == /datum/job/classd)
