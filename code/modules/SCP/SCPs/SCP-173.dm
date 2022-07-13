@@ -256,9 +256,9 @@ GLOBAL_LIST_EMPTY(scp173s)
 /mob/living/scp_173/proc/Defecate()
 	if(!isobj(loc) && world.time > defecation_cooldown)
 		defecation_cooldown = world.time + defecation_cooldown_time
-		var/obj/feces = pick(defecation_types)
-		new feces(loc)
-		feces.update_icon()
+		var/feces = pick(defecation_types)
+		var/obj/effect/new_f = new feces(loc)
+		new_f.update_icon()
 		if(!client) // So it doesn't spam it in one spot
 			var/Tdir = pick(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST)
 			if(Tdir && !IsBeingWatched())
