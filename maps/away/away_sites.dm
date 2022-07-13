@@ -15,3 +15,4 @@
 		new /datum/random_map/automata/cave_system(null, 1, 1, z + generate_mining_by_z - 1, world.maxx, world.maxy)
 		new /datum/random_map/noise/ore(null, 1, 1, z + generate_mining_by_z - 1, world.maxx, world.maxy)
 		GLOB.using_map.refresh_mining_turfs(z + generate_mining_by_z - 1)
+//touched

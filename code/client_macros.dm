@@ -12,7 +12,7 @@ var/list/registered_macros_by_ckey_
 /mob/verb/DisableDblClick(argu = null as anything, sec = "" as text, number1 = 0 as num, number2 = 0 as num)
 	set name = ".dblclick"
 	set category = null
-	log_macro(ckey, ".dblclick")
+	log_macro(ckey, ".dblclick") //touch
 
 /proc/log_macro(var/ckey, var/macro)
 	to_chat(usr, "The [macro] macro is disabled due to potential exploits.")
