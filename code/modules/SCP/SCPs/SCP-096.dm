@@ -214,6 +214,17 @@
 
 /mob/living/simple_animal/hostile/scp096/proc/specialexamine(var/userguy) //Snowflaked.
 	if (istype(userguy, /mob/living/carbon))
+		// Do not let blind folks examine 096. Doesn't make sense.
+		if(ishuman(userguy))
+			var/mob/living/carbon/human/H = userguy
+			if(H.equipment_tint_total == TINT_BLIND)
+				return
+		// Do not let unconscious or dead people examine 096.
+		// Dead as in ghost in dead body, not as in ghost
+		var/mob/M = userguy // we are sure he's atleast a mob
+		if(M.stat)
+			return
+
 		satisfied_urges += userguy
 		var/protected = (userguy in GLOB.scramble_hud_protected)
 		var/scramblehud = (userguy in GLOB.scramble_hud_users)
