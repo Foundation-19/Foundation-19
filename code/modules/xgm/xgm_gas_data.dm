@@ -105,3 +105,4 @@
 	if(gas_data.tile_overlay[gas_id])
 		icon_state = gas_data.tile_overlay[gas_id]
 	color = gas_data.tile_overlay_color[gas_id]
+	
