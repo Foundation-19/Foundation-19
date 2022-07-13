@@ -1,0 +1,30 @@
+name: Add PR labels
+
+on: 
+  push:
+    branches:
+      - dev
+  pull_request_target:
+
+jobs:
+  Apply_labels:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+    - name: Check for merge conflict
+      uses: eps1lon/actions-label-merge-conflict@513a24fc7dca40990863be2935e059e650728400
+      with:
+        dirtyLabel: "Merge Conflict"
+        repoToken: "${{ secrets.GITHUB_TOKEN }}"
+        commentOnDirty: "This pull request has conflicts, please resolve those before we can evaluate your pull request."
+
+    - name: Apply labels
+      if: github.event_name != 'push'
+      uses: actions/labeler@main
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        sync-labels: true
+        configuration-path: .github/file_labeler.yml
