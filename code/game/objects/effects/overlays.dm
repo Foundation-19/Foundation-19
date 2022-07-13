@@ -47,7 +47,7 @@
 	anchored = TRUE
 	density = TRUE
 	layer = ABOVE_TILE_LAYER
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/effect/overlay/wallrot/New()
 	..()

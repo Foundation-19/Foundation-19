@@ -90,7 +90,7 @@
 	icon_state = "generic"
 	layer = FIRE_LAYER
 	appearance_flags = RESET_COLOR
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	var/gas_id
 
 /obj/effect/gas_overlay/proc/update_alpha_animation(var/new_alpha)
