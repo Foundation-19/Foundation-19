@@ -454,6 +454,8 @@ var/list/global/slot_flags_enumeration = list(
 				var/obj/item/storage/belt/B = H.belt
 				if(B.can_be_inserted(src,M,1))
 					allow = 1
+				if(B.attackby(src, H)) //attempt to holster if we can't otherwise put the item in the belt
+					allow = 1
 			if(!allow)
 				return 0
 
