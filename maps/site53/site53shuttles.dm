@@ -8,7 +8,7 @@
 /datum/shuttle/autodock/ferry/escape_pod/torchpod/New()
 	name = "Escape Pod [number]"
 	dock_target = "escape_pod_[number]"
-	arming_controller = "escape_pod_[number]_berth"
+	arming_controller = "escape_pod_[number]"
 	waypoint_station = "escape_pod_[number]_start"
 	landmark_transition = "escape_pod_[number]_internim"
 	waypoint_offsite = "escape_pod_[number]_out"
@@ -72,6 +72,12 @@
 /obj/effect/shuttle_landmark/engineering/internim
 	name = "In transit"
 	landmark_tag = "nav_engineering_transition"
+
+/datum/shuttle/autodock/ferry/heli
+	name = "Helicopter"
+	sound_takeoff = 'sound/effects/helicopter.ogg'
+	warmup_time = 14
+	move_time = 39
 
 /datum/shuttle/autodock/ferry/heli/mtf
 	name = "MTF Helicopter"
@@ -228,7 +234,7 @@
 	landmark_tag = "nav_ert_deck1"
 
 //Merc
-
+/* -- dont need this, but commenting out just incase it breaks shit
 /datum/shuttle/autodock/multi/antag/mercenary
 	name = "Mercenary"
 	warmup_time = 0
@@ -250,11 +256,11 @@
 	name = "Mercenary Base"
 	landmark_tag = "nav_merc_start"
 	docking_controller = "merc_base"
-
+*/
 /obj/effect/shuttle_landmark/merc/internim
 	name = "In transit"
 	landmark_tag = "nav_merc_transition"
-
+/*
 /obj/effect/shuttle_landmark/merc/dock
 	name = "Docking Port"
 	landmark_tag = "nav_merc_dock"
@@ -264,7 +270,7 @@
 	name = "Site53"
 	landmark_tag = "nav_merc_deck1"
 	base_area = /area/site53/surface/surface
-
+*/
 //
 
 /datum/shuttle/autodock/ferry/supply/drone

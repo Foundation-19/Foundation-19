@@ -1,11 +1,10 @@
-<!-- Only developers should be using this template! To be used with milestones. -->
-<!-- If you are looking at making suggestions, please use the #ideasguy channel on our discord -->
+---
+name: Feature request
+about: Suggest an idea for this project
+title: ''
+labels: ''
+assignees: ''
 
-#### Summary
-<!-- a quick, 1-2 sentence summary -->
+---
 
-#### Details
-<!-- how you think this would work -->
-
-#### Implementation
-<!-- optional, if you have an idea how to implement it -->
+Please place all features requests here: https://www.paradisestation.org/forum/60-suggestions/

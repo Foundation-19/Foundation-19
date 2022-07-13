@@ -1,27 +1,35 @@
 ---
 name: Bug report
-about: Create a report to help reproduce and fix the issue
+about: Create a report to help us improve
+title: ''
+labels: ''
+assignees: ''
+
 ---
-## Testmerges:
-
-<!-- If you're certain the issue is to be caused by a test merge, report it in the pull request's comment section rather than on the tracker(If you're unsure you can refer to the issue number by prefixing said number with #. The issue number can be found beside the title after submitting it to the tracker).If no testmerges are active, feel free to remove this section. -->
-
-
-## Description
-<!-- a quick, 1-2 sentence summary -->
+<!-- Write **BELOW** The Headers and **ABOVE** The comments else it may not be viewable -->
+**Issue Description**:
+<!---What is the problem?-->
 
 
-## Difference between expected and actual behavior
-<!-- what does it do, what it should do... -->
+**What did you expect to happen**: 
+<!--Why do you think this is an issue?-->
 
 
-## Steps to reproduce
-<!-- step by step on how we can reproduce this issue, as detailed as possible -->
+**What happened instead**:
+<!--How is what happened different from what you expected?-->
 
 
-## Issue bingo (not required to be all checked)
-<!-- Check these by writing an x inside the [ ] (like this: [x])-->
-<!-- Don't forget to remove the space between the brackets, or it won't work! -->
-- [ ] Issue could be reproduced at least once
-- [ ] Issue happened in a recent (less than 7 days ago) round
-- [ ] Couldn't find an existing issue about this (https://github.com/cmss13-devs/cmss13/issues)
+**Why is this bad/What are the consequences**:
+<!--Why do you think this is an important issue?-->
+
+
+**Steps to reproduce the problem**:
+<!--The most important section. Review everything you did leading up to causing the issue.-->
+
+
+**When did the problem start happening**:
+<!--If your report is about something that used to work but no longer does, when was the last time you remember it working?-->
+
+
+**Extra information**:
+<!--Anything else you can tell us.-->
