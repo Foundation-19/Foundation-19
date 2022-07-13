@@ -1,6 +1,11 @@
 version: 2
+
 updates:
-  - package-ecosystem: "github-actions"
+  - package-ecosystem: github-actions
     directory: "/"
     schedule:
+<<<<<<< Updated upstream
       interval: "weekly"
+=======
+      interval: "daily"
+>>>>>>> Stashed changes
