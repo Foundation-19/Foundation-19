@@ -80,7 +80,7 @@ GLOBAL_LIST_EMPTY(scp999s)
 			attached_mode = IMMOBILIZING
 			attached = a
 			a.visible_message("<span class='warning'>[src] begins to wrap around [attached]!</span>", "<span class='warning'>[src] begins wrapping around you, filling you with happiness!</span>")
-		forceMove(attached.loc)
+		forceMove(get_turf(attached))
 
 /mob/living/simple_animal/scp_999/Move(a,b,f)
 	if(attached)

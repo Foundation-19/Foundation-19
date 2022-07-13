@@ -7,7 +7,6 @@
 	economic_power = 8
 	minimal_player_age = 15
 	ideal_character_age = 55
-	loadout_allowed = FALSE
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/cos
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -64,12 +63,10 @@
 	department_flag = SEC
 	total_positions = 1
 	spawn_positions = 1
-	balance_limited = TRUE
 	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You also carry the responsibility of guarding the D-Cells. You should not leave your zone under usual SoP</b></big>"
 	economic_power = 4
 	minimal_player_age = 10
 	ideal_character_age = 45
-	loadout_allowed = FALSE
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ltofficerlcz
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -114,7 +111,6 @@
 	economic_power = 4
 	minimal_player_age = 10
 	ideal_character_age = 45
-	loadout_allowed = FALSE
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ltofficerhcz
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -160,7 +156,6 @@
 	economic_power = 4
 	minimal_player_age = 10
 	ideal_character_age = 45
-	loadout_allowed = FALSE
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ltofficerez
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -218,7 +213,6 @@
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 25
-	loadout_allowed = FALSE
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerlcz
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -266,7 +260,6 @@
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 25
-	loadout_allowed = FALSE
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerhcz
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -311,7 +304,6 @@
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
-	loadout_allowed = FALSE
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerez
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -360,12 +352,11 @@
 	department_flag = SEC
 	total_positions = 20
 	spawn_positions = 20
-	balance_limited = TRUE
 	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	economic_power = 4
 //	minimal_player_age = 0
 	ideal_character_age = 25
-	loadout_allowed = FALSE
+	balance_limited = TRUE
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerlcz
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -413,7 +404,6 @@
 	economic_power = 4
 //	minimal_player_age = 0
 	ideal_character_age = 25
-	loadout_allowed = FALSE
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerhcz
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -458,7 +448,6 @@
 	economic_power = 4
 	minimal_player_age = 0
 	ideal_character_age = 27
-	loadout_allowed = FALSE
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerez
 	allowed_branches = list(
 		/datum/mil_branch/security

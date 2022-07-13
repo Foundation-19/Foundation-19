@@ -407,8 +407,12 @@ var/list/gear_datums = list()
 
 /datum/gear/proc/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
 	var/obj/item/item = spawn_item(H, H, metadata)
-	if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 1, force = 1))
-		. = item
+	if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 0, force = 0))
+		return item
+
+	if(H.equip_to_storage(item)) //I dunno who designed Bay loadout system originally, but their code for custom items has the sane solution here: don't overwrite necessary
+		return item					//job gear and put loadout items in the back, just in case
+
 
 /datum/gear/proc/spawn_in_storage_or_drop(var/mob/living/carbon/human/H, var/metadata)
 	var/obj/item/item = spawn_item(H, H, metadata)

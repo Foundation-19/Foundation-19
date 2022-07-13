@@ -41,6 +41,7 @@ var/list/outfits_decls_by_type_
 	var/l_hand = null
 	var/holster = null
 	var/list/backpack_contents = list() // In the list(path=count,otherpath=count) format
+	var/list/belt_contents = list()
 
 	var/id_types
 	var/id_desc
@@ -118,6 +119,11 @@ var/list/outfits_decls_by_type_
 		var/number = backpack_contents[path]
 		for(var/i=0,i<number,i++)
 			H.equip_to_slot_or_store_or_drop(new path(H), slot_in_backpack)
+
+	for(var/path in belt_contents)
+		var/number = belt_contents[path]
+		for(var/i=0,i<number,i++)
+			H.equip_to_slot_or_store_or_drop(new path(H), slot_in_belt)
 
 	if(!(OUTFIT_ADJUSTMENT_SKIP_POST_EQUIP & equip_adjustments))
 		post_equip(H)

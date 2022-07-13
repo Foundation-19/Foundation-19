@@ -67,7 +67,7 @@
 /obj/item/storage/belt/holster/attackby(obj/item/W as obj, mob/user as mob)
 	var/datum/extension/holster/H = get_extension(src, /datum/extension/holster)
 	if(H.holster(W, user))
-		return
+		return TRUE
 	else
 		. = ..(W, user)
 
@@ -98,6 +98,9 @@
 					add_overlay(image('icons/obj/clothing/obj_belt_overlays.dmi', "[I.icon_state]"))
 			else if(overlay_flags & BELT_OVERLAY_ITEMS)
 				add_overlay(image('icons/obj/clothing/obj_belt_overlays.dmi', "[I.icon_state]"))
+
+
+
 
 /obj/item/storage/belt/utility
 	name = "tool belt"
@@ -265,6 +268,15 @@
 		/obj/item/clothing/head/beret,
 		/obj/item/material/knife/folding/
 		)
+
+/obj/item/storage/belt/holster/security/full/New()
+	..()
+	new /obj/item/handcuffs(src)
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/device/flash(src)
+	new /obj/item/device/flashlight/maglight(src)
+	update_icon()
+
 
 /obj/item/storage/belt/general
 	name = "equipment belt"
