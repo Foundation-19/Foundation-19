@@ -99,6 +99,9 @@
 			else if(overlay_flags & BELT_OVERLAY_ITEMS)
 				add_overlay(image('icons/obj/clothing/obj_belt_overlays.dmi', "[I.icon_state]"))
 
+
+
+
 /obj/item/storage/belt/utility
 	name = "tool belt"
 	desc = "A belt of durable leather, festooned with hooks, slots, and pouches."
@@ -265,6 +268,15 @@
 		/obj/item/clothing/head/beret,
 		/obj/item/material/knife/folding/
 		)
+
+/obj/item/storage/belt/holster/security/full/New()
+	..()
+	new /obj/item/handcuffs(src)
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/device/flash(src)
+	new /obj/item/device/flashlight/maglight(src)
+	update_icon()
+
 
 /obj/item/storage/belt/general
 	name = "equipment belt"
