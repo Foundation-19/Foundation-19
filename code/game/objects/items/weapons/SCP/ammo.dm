@@ -43,7 +43,7 @@
 	name = "MK9 magazine (9mm)"
 	icon_state = "9mmds"
 	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/c45
+	ammo_type = /obj/item/ammo_casing/c9mm
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
 	max_ammo = 17
@@ -53,7 +53,7 @@
 	name = "MK9 magazine (9mm rubber)"
 	icon_state = "R9mmds"
 	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/c45/rubber
+	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
 	max_ammo = 17
@@ -178,6 +178,16 @@
 	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 100
 
+// 45acp
+/obj/item/ammo_magazine/box/a45
+	name = "ammunition box (.45acp)"
+	icon_state = "ammobox"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = ".45"
+	matter = list(DEFAULT_WALL_MATERIAL = 2250)
+	ammo_type = /obj/item/ammo_casing/c45
+	max_ammo = 100
+
 /obj/item/ammo_magazine/box/a50
 	name = "ammunition box (.44 magnum)"
 	icon_state = "357"
@@ -220,6 +230,47 @@
 	ammo_type = /obj/item/ammo_casing/a762
 	max_ammo = 100
 	multiple_sprites = 1
+
+// shotgun
+/obj/item/ammo_magazine/box/buckshot
+	name = "ammunition box (Buckshot)"
+	icon_state = "ammobox"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = CALIBER_SHOTGUN
+	matter = list(DEFAULT_WALL_MATERIAL = 2250)
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	max_ammo = 30
+
+
+/obj/item/ammo_magazine/box/slug
+	name = "ammunition box (Buckshot)"
+	icon_state = "ammobox"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = CALIBER_SHOTGUN
+	matter = list(DEFAULT_WALL_MATERIAL = 2250)
+	ammo_type = /obj/item/ammo_casing/shotgun
+	max_ammo = 30
+
+
+/obj/item/ammo_magazine/box/beanbag
+	name = "ammunition box (Beanbag)"
+	icon_state = "ammobox"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = CALIBER_SHOTGUN
+	matter = list(DEFAULT_WALL_MATERIAL = 2250)
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	max_ammo = 30
+
+
+// 45acp
+/obj/item/ammo_magazine/box/acp45
+	name = "ammunition box (.45)"
+	icon_state = "ammobox"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = ".45"
+	matter = list(DEFAULT_WALL_MATERIAL = 2250)
+	ammo_type = /obj/item/ammo_casing/c45
+	max_ammo = 100
 
 
 
