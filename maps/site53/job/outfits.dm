@@ -117,7 +117,6 @@
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityofficer
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
-	suit_store = /obj/item/gun/projectile/pistol/usp45
 
 
 /decl/hierarchy/outfit/job/site90/crew/security/ltofficerlcz
@@ -136,7 +135,6 @@
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
-	suit_store = /obj/item/gun/projectile/pistol/usp45
 
 /decl/hierarchy/outfit/job/site90/crew/security/ltofficerez
 	name = OUTFIT_JOB_NAME("EZ Senior Agent")
@@ -152,7 +150,6 @@
 	belt = /obj/item/storage/belt/holster/security/fullzcez
 	head = /obj/item/clothing/head/beret/sec/corporate/hos
 	mask = /obj/item/clothing/mask/balaclava
-	suit_store = /obj/item/gun/projectile/pistol/usp45
 
 
 // GUARD OUTFITS
