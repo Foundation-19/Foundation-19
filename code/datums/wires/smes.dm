@@ -9,8 +9,6 @@
 		new /datum/wire_description(SMES_WIRE_FAILSAFES, "This wire appears to connect to a failsafe mechanism.")
 	)
 
-	var/mob/saboteur = null //used to store whoever last cut the grounding wire, for admin purposess
-
 var/const/SMES_WIRE_RCON = 1		// Remote control (AI and consoles), cut to disable
 var/const/SMES_WIRE_INPUT = 2		// Input wire, cut to disable input, pulse to disable for 60s
 var/const/SMES_WIRE_OUTPUT = 4		// Output wire, cut to disable output, pulse to disable for 60s
@@ -46,8 +44,6 @@ var/const/SMES_WIRE_FAILSAFES = 16	// Cut to disable failsafes, mend to reenable
 			S.output_cut = !mended
 		if(SMES_WIRE_GROUNDING)
 			S.grounding = mended
-			saboteur = usr
-			log_and_message_admins("SMES SABOTAGE: <b>[usr.x]X [usr.y]Y [usr.z]Z</b> User: [usr.ckey] has just cut an SMES grounding wire!<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[usr.x];Y=[usr.y];Z=[usr.z]'>JMP</a>")
 		if(SMES_WIRE_FAILSAFES)
 			S.safeties_enabled = mended
 
