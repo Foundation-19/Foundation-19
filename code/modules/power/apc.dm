@@ -216,7 +216,7 @@
 		return
 	failure_timer = max(failure_timer, round(duration))
 	playsound(src, 'sound/machines/apc_nopower.ogg', 75, 0)
-	update(1)
+	update()
 
 /obj/machinery/power/apc/proc/init_round_start()
 	has_electronics = 2 //installed and secured
@@ -784,7 +784,7 @@
 	var/obj/item/cell/cell = get_cell()
 	return "[area.name] : [equipment]/[lighting]/[environ] ([lastused_equip+lastused_light+lastused_environ]) : [cell? cell.percent() : "N/C"] ([charging])"
 
-/obj/machinery/power/apc/proc/update(var/pow_change)
+/obj/machinery/power/apc/proc/update()
 	if(operating && !shorted && !failure_timer)
 
 		//prevent unnecessary updates to emergency lighting
@@ -799,9 +799,6 @@
 		area.power_light = 0
 		area.power_equip = 0
 		area.power_environ = 0
-	
-	if(pow_change)
-		area.power_change()
 
 	var/obj/item/cell/cell = get_cell()
 	if(!cell || cell.charge <= 0)
@@ -922,7 +919,6 @@
 		return
 
 	if(failure_timer)
-		update()
 		queue_icon_update()
 		failure_timer--
 		force_update = 1
