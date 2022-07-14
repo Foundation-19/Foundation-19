@@ -233,7 +233,7 @@
 
 /obj/effect/overmap/event/carp
 	name = "carp shoal"
-	events = list(/datum/event/carp_migration/overmap)
+	events = list()
 	opacity = 0
 	difficulty = EVENT_LEVEL_MODERATE
 	event_icon_states = list("carp1", "carp2")
