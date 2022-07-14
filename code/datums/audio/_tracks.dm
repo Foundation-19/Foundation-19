@@ -337,7 +337,7 @@
 /decl/audio/track/hie
 	source = 'sound/music/howitends.ogg'
 	title = "How It Ends"
-	author = "Atli �rvarsson"
+	author = "Atli rvarsson"
 	license = /decl/license/grandfathered
 	url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 

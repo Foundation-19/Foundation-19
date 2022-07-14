@@ -41,7 +41,6 @@ GLOBAL_LIST_EMPTY(scp131s)
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 
-//временно
 /mob/living/simple_animal/scp_131/say(var/message, var/datum/language/speaking = null, whispering)
 	src << "<span class = 'notice'>You cannot speak.</span>"
 	return 0
