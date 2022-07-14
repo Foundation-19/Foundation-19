@@ -136,7 +136,6 @@
 	of one of the various corporations, persons hired in service roles in one of the many prefectures or a resident of New Vegas. The 'poor' of Luna typically resent the rich because of their \
 	financial, cultural and political power and influence over their lives."
 	economic_power = 1
-	language = LANGUAGE_HUMAN_SELENIAN
 
 /decl/cultural_info/culture/human/luna_rich
 	name = CULTURE_HUMAN_LUNARICH
@@ -146,7 +145,6 @@
 	Much of the elite of Luna is embroiled in 'The Game' a state of political manoeuvring and intrigue among various factions and persons of influence and power \
 	with implications far beyond the squabbles of the prefectures."
 	economic_power = 1.3
-	language = LANGUAGE_HUMAN_SELENIAN
 
 /decl/cultural_info/culture/human/venusian_upper
 	name = CULTURE_HUMAN_VENUSIAN
