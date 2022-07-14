@@ -1,6 +1,6 @@
 /obj/skybox
 	name = "skybox"
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 	anchored = TRUE
 	simulated = FALSE
 	screen_loc = "CENTER:-224,CENTER:-224"

@@ -8,7 +8,7 @@
 	density = TRUE
 	opacity = 1
 	anchored = TRUE
-	mouse_opacity = MOUSE_OPACITY_OPAQUE
+	mouse_opacity = 2
 
 	layer = BLOB_SHIELD_LAYER
 

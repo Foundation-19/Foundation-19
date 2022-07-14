@@ -281,9 +281,9 @@
 		to_chat(src, "<span class='info'>You are now invisible.</span>")
 		visible_message("<span class='emote'>It fades from sight...</span>")
 		set_invisibility(INVISIBILITY_OBSERVER)
-		mouse_opacity = MOUSE_OPACITY_ICON
+		mouse_opacity = 1
 	else
 		ghost_magic_cd = world.time + 60 SECONDS
 		to_chat(src, "<span class='info'>You are now visible.</span>")
 		set_invisibility(0)
-		mouse_opacity = MOUSE_OPACITY_TRANSPARENT // This is so they don't make people invincible to melee attacks by hovering over them
+		mouse_opacity = 0 // This is so they don't make people invincible to melee attacks by hovering over them

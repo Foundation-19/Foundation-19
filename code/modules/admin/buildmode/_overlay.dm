@@ -14,7 +14,7 @@
 	for (var/x = -size to size step 1)
 		for (var/y = -size to size step 1)
 			var/atom/movable/M = new
-			M.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+			M.mouse_opacity = 0
 			M.icon = 'icons/turf/overlays.dmi'
 			M.icon_state = icon_state
 			M.screen_loc = "CENTER[x < 0 ? "-" : "+"][abs(x)],CENTER[y < 0 ? "-" : "+"][abs(y)]"

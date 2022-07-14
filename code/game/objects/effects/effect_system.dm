@@ -9,7 +9,7 @@ would spawn and follow the beaker, even if it is carried or thrown.
 /obj/effect/effect
 	name = "effect"
 	icon = 'icons/effects/effects.dmi'
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 	unacidable = TRUE
 	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GRILLE
 
@@ -99,7 +99,7 @@ steam.start() -- spawns the effect
 	icon = 'icons/effects/effects.dmi'
 	var/amount = 6.0
 	anchored = TRUE
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 
 /obj/effect/sparks/New()
 	..()
@@ -174,7 +174,7 @@ steam.start() -- spawns the effect
 	icon_state = "smoke"
 	opacity = 1
 	anchored = FALSE
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 	var/amount = 6.0
 	var/time_to_live = 100
 

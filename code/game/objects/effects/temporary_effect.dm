@@ -3,7 +3,7 @@
 	icon = 'icons/effects/effects.dmi'
 	anchored = TRUE
 	unacidable = TRUE
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 	density = FALSE
 	layer = ABOVE_HUMAN_LAYER
 	var/duration = 30

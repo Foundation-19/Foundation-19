@@ -4,7 +4,7 @@
 	anchored = TRUE
 	simulated = FALSE
 	opacity = 0
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 	layer = FLY_LAYER
 	alpha = 0
 	color = COLOR_OCEAN
@@ -89,7 +89,7 @@
 // Permaflood overlay.
 /obj/effect/flood
 	name = ""
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 	layer = DEEP_FLUID_LAYER
 	color = COLOR_OCEAN
 	icon = 'icons/effects/liquids.dmi'

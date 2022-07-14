@@ -195,7 +195,7 @@
 // This thing holds the mimic appearance for non-OVERWRITE turfs.
 /atom/movable/openspace/turf_delegate
 	plane = OPENTURF_MAX_PLANE
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 	no_z_overlay = TRUE  // Only one of these should ever be visible at a time, the mimic logic will handle that.
 
 /atom/movable/openspace/turf_delegate/attackby(obj/item/W, mob/user)
@@ -217,7 +217,7 @@
 // A type for copying delegates' self-appearance.
 /atom/movable/openspace/delegate_copy
 	plane = OPENTURF_MAX_PLANE	// These *should* only ever be at the top?
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 	var/turf/delegate
 
 /atom/movable/openspace/delegate_copy/Initialize(mapload, ...)

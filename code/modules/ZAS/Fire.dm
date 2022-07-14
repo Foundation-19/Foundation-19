@@ -117,7 +117,7 @@ If it gains pressure too slowly, it may leak or just rupture instead of explodin
 	//Icon for fire on turfs.
 
 	anchored = TRUE
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 
 	blend_mode = BLEND_ADD
 

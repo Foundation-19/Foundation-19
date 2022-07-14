@@ -5,7 +5,7 @@
 	icon_state = "arrow"
 	layer = POINTER_LAYER
 	anchored = TRUE
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 
 /obj/effect/decal/point/Initialize()
 	. = ..()
