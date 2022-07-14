@@ -2,7 +2,6 @@ GLOBAL_LIST_EMPTY(med_hud_users)          // List of all entities using a medica
 GLOBAL_LIST_EMPTY(sec_hud_users)          // List of all entities using a security HUD.
 GLOBAL_LIST_EMPTY(jani_hud_users)
 GLOBAL_LIST_EMPTY(scramble_hud_users)     // List of all entities using SCRAMBLE gear, this is ONLY for the overlay on 096.
-
 GLOBAL_LIST_EMPTY(scramble_hud_protected) // For ACTUAL protection from 096.
 GLOBAL_LIST_EMPTY(hud_icon_reference)
 

@@ -88,7 +88,7 @@
 //Skill-related mob helper procs
 
 /mob/proc/get_skill_value(skill_path)
-	return skillset.get_value(skill_path)
+	return skillset?.get_value(skill_path)
 
 /mob/proc/reset_skillset()
 	qdel(skillset)

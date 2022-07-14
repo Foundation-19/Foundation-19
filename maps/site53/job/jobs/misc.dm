@@ -44,9 +44,13 @@
 	minimal_player_age = 5
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/officeworker
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
-	hud_icon = "hudassistant"
+	allowed_branches = list(
+		/datum/mil_branch/civilian
+	)
+	allowed_ranks = list(
+		/datum/mil_rank/civ/classc
+	)
+	hud_icon = "hudcrewman"
 
 	access = list(
 		access_civ_comms,
