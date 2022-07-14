@@ -350,7 +350,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/wood,
@@ -407,7 +406,6 @@
 "bq" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8;
-	layer = 2.4;
 	level = 2
 	},
 /obj/structure/bed/chair{
@@ -1002,7 +1000,6 @@
 /obj/structure/closet/crate/uranium,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor,
@@ -1260,7 +1257,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
-	layer = 2.4;
 	level = 2
 	},
 /obj/item/weapon/hemostat,
@@ -1294,7 +1290,6 @@
 "dr" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
-	layer = 2.4;
 	level = 2
 	},
 /obj/effect/landmark{
@@ -1440,7 +1435,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -1854,9 +1848,7 @@
 /obj/item/weapon/reagent_containers/food/condiment/small/peppermill{
 	pixel_x = 3
 	},
-/obj/item/weapon/reagent_containers/food/condiment/enzyme{
-	layer = 5
-	},
+/obj/item/weapon/reagent_containers/food/condiment/enzyme,
 /obj/item/weapon/reagent_containers/glass/rag,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/crew/kitchen)
@@ -1967,7 +1959,6 @@
 "eL" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled/white,
@@ -2394,7 +2385,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -2998,7 +2988,6 @@
 /obj/machinery/washing_machine,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled/freezer,
@@ -3411,7 +3400,6 @@
 "hB" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/plating,
@@ -3915,7 +3903,6 @@
 /obj/structure/closet/secure_closet/engineering_welding,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -3992,7 +3979,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/plating,
@@ -4396,7 +4382,6 @@
 "jx" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/plating,
@@ -4431,7 +4416,6 @@
 	dir = 2;
 	icon_state = "pdoor0";
 	id = "radaway";
-	layer = 5;
 	opacity = 0
 	},
 /obj/structure/sign{
@@ -4607,7 +4591,6 @@
 	dir = 2;
 	icon_state = "pdoor0";
 	id = "radaway";
-	layer = 5;
 	opacity = 0
 	},
 /obj/machinery/meter/turf,
@@ -5196,7 +5179,6 @@
 /obj/effect/decal/cleanable/cobweb2,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
-	layer = 2.4;
 	level = 2
 	},
 /obj/machinery/alarm{
@@ -5213,7 +5195,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /obj/structure/cable{
@@ -5310,7 +5291,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /turf/simulated/floor/tiled,
@@ -5393,7 +5373,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /obj/structure/cable{
@@ -5575,7 +5554,6 @@
 "xZ" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
-	layer = 2.4;
 	level = 2
 	},
 /obj/machinery/computer/engines,
@@ -5766,7 +5744,6 @@
 "Cc" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
-	layer = 2.4;
 	level = 2
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
@@ -6198,7 +6175,6 @@
 "Lb" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
-	layer = 2.4;
 	level = 2
 	},
 /obj/effect/floor_decal/corner/beige{
@@ -6421,7 +6397,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
-	layer = 2.4;
 	level = 2
 	},
 /obj/item/device/radio/intercom{
@@ -6434,7 +6409,6 @@
 /obj/effect/decal/cleanable/cobweb2,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8;
-	layer = 2.4;
 	level = 2
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
