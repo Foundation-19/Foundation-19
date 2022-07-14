@@ -17403,6 +17403,9 @@
 	dir = 4;
 	pixel_y = 8
 	},
+/obj/effect/floor_decal/corner/white/border{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/chapel)
 "Ly" = (
@@ -17419,6 +17422,9 @@
 /area/chapel)
 "Lz" = (
 /obj/structure/table/woodentable_reinforced/walnut,
+/obj/machinery/light/small,
+/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
+/obj/effect/floor_decal/corner/white/half,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/chapel)
 "LB" = (
@@ -17483,6 +17489,17 @@
 	},
 /turf/simulated/floor,
 /area/site53/lowertram/archive)
+"LS" = (
+/obj/structure/closet/coffin/wooden,
+/obj/effect/floor_decal/corner/white/border{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb1"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/chapel)
 "LX" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/monotile,
@@ -17672,6 +17689,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/mine/unexplored)
+"NA" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/pen,
+/obj/effect/floor_decal/corner/white/border{
+	dir = 8
+	},
+/obj/item/paper_bin,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/chapel)
 "NC" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -17763,6 +17789,16 @@
 /obj/effect/floor_decal/industrial/warning/corner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost)
+"Oa" = (
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb1"
+	},
+/obj/effect/floor_decal/corner/white/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/mine/unexplored)
 "Oc" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Containment Chamber Access Chamberlock";
@@ -17838,6 +17874,16 @@
 /obj/structure/bed/chair/office,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertram/archive)
+"OA" = (
+/obj/structure/closet/coffin/wooden,
+/obj/effect/floor_decal/corner/white/three_quarters{
+	dir = 4
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/chapel)
 "OC" = (
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/cellbubble)
@@ -17863,6 +17909,20 @@
 /obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/botany)
+"OP" = (
+/obj/effect/floor_decal/corner/grey/mono,
+/obj/structure/table/woodentable_reinforced/ebony/walnut,
+/obj/item/paper/pamphlet,
+/obj/item/paper/pamphlet,
+/obj/item/paper/pamphlet,
+/obj/item/paper/pamphlet,
+/obj/item/paper/pamphlet,
+/obj/item/paper/pamphlet,
+/obj/item/paper/pamphlet,
+/obj/item/paper/pamphlet,
+/obj/item/paper/pamphlet,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/chapel)
 "OS" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -17930,6 +17990,7 @@
 /area/site53/llcz/dclass/kitchenbotanybubble)
 "Pe" = (
 /obj/structure/closet/coffin/wooden,
+/obj/effect/floor_decal/corner/white/border,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/chapel)
 "Pf" = (
@@ -17970,9 +18031,9 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
 "Pn" = (
-/obj/machinery/light/small{
-	dir = 1;
-	icon_state = "bulb1"
+/obj/structure/closet/coffin/wooden,
+/obj/effect/floor_decal/corner/white/border{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/chapel)
@@ -18081,10 +18142,24 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"PW" = (
+/obj/effect/floor_decal/corner/white/three_quarters{
+	dir = 4
+	},
+/obj/machinery/papershredder,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/chapel)
 "PX" = (
 /obj/structure/bed/roller,
 /turf/simulated/floor/tiled/old_cargo,
 /area/site53/lhcz/scp049containment)
+"PY" = (
+/obj/structure/closet/coffin/wooden,
+/obj/effect/floor_decal/corner/white/three_quarters{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/mine/unexplored)
 "Qb" = (
 /obj/structure/filingcabinet,
 /obj/machinery/button/blast_door{
@@ -18531,6 +18606,17 @@
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
+"Se" = (
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb1"
+	},
+/obj/effect/floor_decal/corner/white/border{
+	dir = 1
+	},
+/obj/structure/table/woodentable/walnut,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/chapel)
 "Sj" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -18672,7 +18758,10 @@
 /turf/simulated/floor/carpet,
 /area/site53/lowertram/archive)
 "TH" = (
-/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/effect/floor_decal/corner/white/three_quarters{
+	dir = 1
+	},
+/obj/structure/flora/pottedplant/largebush,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/chapel)
 "TK" = (
@@ -18689,6 +18778,7 @@
 /obj/effect/floor_decal/corner/grey/half{
 	dir = 1
 	},
+/obj/structure/flora/pottedplant/thinbush,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/chapel)
 "TN" = (
@@ -18886,6 +18976,14 @@
 /obj/effect/floor_decal/carpet/blue2,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
+"UX" = (
+/obj/effect/paint_stripe/gunmetal,
+/turf/simulated/wall/prepainted,
+/area/site53/llcz/mine/unexplored)
+"UY" = (
+/obj/effect/floor_decal/corner/white/bordercorner,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/chapel)
 "Vb" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -19030,8 +19128,17 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
 "VQ" = (
-/obj/structure/table/woodentable_reinforced/walnut,
-/obj/item/pen,
+/obj/structure/flora/pottedplant/large,
+/obj/effect/floor_decal/corner/white/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/chapel)
+"VR" = (
+/obj/structure/closet/coffin/wooden,
+/obj/effect/floor_decal/corner/white/border{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/chapel)
 "VS" = (
@@ -19141,6 +19248,17 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"Wx" = (
+/obj/effect/floor_decal/corner/white/border{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 8;
+	icon_state = "rwindow"
+	},
+/obj/structure/table/woodentable/walnut,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/chapel)
 "Wz" = (
 /obj/machinery/barrier,
 /obj/machinery/camera/network/lcz{
@@ -19228,8 +19346,7 @@
 /area/site53/lowertram/archive)
 "WT" = (
 /obj/structure/table/woodentable_reinforced/walnut,
-/obj/machinery/light/small,
-/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
+/obj/effect/floor_decal/corner/white/three_quarters,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/chapel)
 "WV" = (
@@ -19255,8 +19372,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lowertram/archive)
 "Xi" = (
-/obj/structure/closet/coffin/wooden,
-/obj/machinery/camera/network/entrance,
+/obj/structure/window/reinforced{
+	dir = 8;
+	icon_state = "rwindow"
+	},
+/obj/structure/table/woodentable/walnut,
+/obj/item/newspaper,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/chapel)
 "Xn" = (
@@ -19379,6 +19500,12 @@
 /obj/item/storage/box/beakers,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/kitchen)
+"XX" = (
+/obj/effect/floor_decal/corner/white/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/chapel)
 "XZ" = (
 /obj/machinery/light/small{
 	dir = 1;
@@ -19405,7 +19532,6 @@
 /area/site53/llcz/dclass/primaryhallway)
 "Yd" = (
 /obj/effect/floor_decal/corner/grey,
-/obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/chapel)
 "Yg" = (
@@ -19441,6 +19567,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/dclass/assignmentbubble)
+"Ys" = (
+/obj/structure/closet/coffin/wooden,
+/obj/effect/floor_decal/corner/white/three_quarters{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/llcz/mine/unexplored)
 "Yt" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "LHCZ Maintenance";
@@ -19459,6 +19592,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"YE" = (
+/obj/effect/floor_decal/corner/grey/half,
+/obj/structure/flora/pottedplant/large,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/chapel)
 "YF" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -19492,7 +19630,10 @@
 /turf/simulated/floor/wood/maple,
 /area/chapel)
 "YP" = (
-/obj/item/material/cross/silver,
+/obj/structure/window/reinforced{
+	dir = 8;
+	icon_state = "rwindow"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/chapel)
 "YT" = (
@@ -41615,14 +41756,14 @@ hu
 aN
 pC
 pC
-xz
-xz
-xz
-xz
-xz
-xz
-xz
-xz
+pC
+pC
+pC
+pC
+pC
+pC
+pC
+pC
 bh
 iF
 jt
@@ -41870,15 +42011,15 @@ gq
 aN
 hu
 aN
-pC
-pC
+UX
+UX
 xz
-Pe
-Pe
-Pe
-ZA
-VQ
-Lz
+xz
+xz
+xz
+xz
+xz
+xz
 xz
 xp
 xp
@@ -42127,14 +42268,14 @@ gq
 aN
 hu
 aN
-pC
-pC
-xz
+UX
+Ys
 Pn
-ZA
-ZA
-ZA
-LE
+Pn
+Pn
+LS
+VQ
+NA
 WT
 xz
 rY
@@ -42384,14 +42525,14 @@ gq
 aN
 hu
 aN
-pC
-pC
-xz
-Xi
-Pe
-Pe
+UX
+Oa
 ZA
 ZA
+ZA
+ZA
+ZA
+LE
 Lz
 xz
 rY
@@ -42641,15 +42782,15 @@ gq
 aN
 hu
 aN
-pC
-pC
-xz
+UX
+PY
+VR
+VR
+VR
+VR
 ZA
-ZA
-ZA
-ZA
-ZA
-xz
+UY
+PW
 xz
 rY
 rY
@@ -42898,16 +43039,16 @@ gq
 fn
 hu
 aN
-pC
-pC
+UX
+UX
 xz
-Pe
-ZA
+Wx
+Xi
 YP
 ZA
 Pe
 xz
-pC
+xz
 pC
 rY
 rY
@@ -43158,11 +43299,11 @@ aN
 aN
 aN
 xz
-Pn
+Se
 ZA
 ZA
 Lv
-Pe
+OA
 xz
 pC
 pC
@@ -43416,7 +43557,7 @@ ri
 am
 xz
 TH
-ZA
+XX
 ZA
 xz
 xz
@@ -44708,7 +44849,7 @@ ZA
 ZA
 ZA
 ZA
-YT
+YE
 Lq
 xz
 rY
@@ -45985,7 +46126,7 @@ On
 Qq
 Xw
 xz
-RU
+OP
 PC
 RU
 xz
