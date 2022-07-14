@@ -17,7 +17,7 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 	var/mob/living/carbon/victim
 
 /obj/machinery/scp294/Initialize(atom/holder)
-	..()
+	. = ..()
 	//get the names of all players at roundstart to save on cpu.
 	//yes this may lead to names not working if they join midround but it adds to the mystery of its 'randomness' lol
 

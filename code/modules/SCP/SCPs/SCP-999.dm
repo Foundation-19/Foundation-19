@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(scp999s)
 	see_in_dark = 7
 
 /mob/living/simple_animal/scp_999/Initialize()
-	..()
+	. = ..()
 	GLOB.scp999s += src
 
 /mob/living/simple_animal/scp_999/say(var/message, var/datum/language/speaking = null, whispering)

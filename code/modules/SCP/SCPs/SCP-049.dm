@@ -41,7 +41,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	return  ..()
 
 /mob/living/carbon/human/scp049/Initialize()
-	..()
+	. = ..()
 	// fix names
 	fully_replace_character_name("SCP-049")
 

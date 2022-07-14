@@ -23,7 +23,7 @@ GLOBAL_LIST_EMPTY(scp343s)
 	return ..()
 
 /mob/living/carbon/human/scp343/Initialize()
-	..()
+	. = ..()
 
 	update_icons()
 

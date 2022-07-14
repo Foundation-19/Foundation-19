@@ -58,7 +58,7 @@ GLOBAL_LIST_EMPTY(scp131s)
 	// icon_dead = "SCP-131B_d"
 
 /mob/living/simple_animal/scp_131/Initialize()
-	..()
+	. = ..()
 //	add_language(LANGUAGE_EYEPOD, 1)
 	GLOB.scp131s += src
 	verbs += /mob/living/proc/ventcrawl
