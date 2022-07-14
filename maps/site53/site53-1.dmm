@@ -17545,10 +17545,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
-"Mw" = (
-/obj/effect/paint_stripe/gunmetal,
-/turf/simulated/wall/prepainted,
-/area/site53/llcz/mine/unexplored)
 "ME" = (
 /obj/structure/table/standard,
 /obj/item/device/paint_sprayer,
@@ -18042,10 +18038,6 @@
 /obj/structure/bookcase/manuals,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
-"PQ" = (
-/obj/effect/paint_stripe/gunmetal,
-/turf/simulated/wall/prepainted,
-/area/site53/engineering/maintenance/llczmaint)
 "PR" = (
 /obj/effect/floor_decal/carpet/green{
 	dir = 1
@@ -43138,7 +43130,7 @@ lg
 aN
 aN
 aN
-PQ
+xz
 Pn
 ZA
 ZA
@@ -43395,7 +43387,7 @@ ab
 cj
 ri
 am
-PQ
+xz
 TH
 ZA
 ZA
@@ -43652,7 +43644,7 @@ aN
 ac
 aN
 aN
-PQ
+xz
 xz
 xz
 Zi
@@ -43909,7 +43901,7 @@ aN
 ac
 aN
 rY
-Mw
+xz
 NR
 Qk
 ZA
