@@ -31,11 +31,12 @@ avoid code duplication. This includes items that may sometimes act as a standard
 
 // No comment
 /atom/proc/attackby(obj/item/W, mob/user, var/click_params)
+	user.client.interact_log += "([time_stamp()]) - Interacted with [src], using [W]."
+
 	return
 
 /atom/movable/attackby(obj/item/W, mob/user)
 	if(W?.item_flags & ITEM_FLAG_NO_BLUDGEON)
-		visible_message("<span class='danger'>[src] has been hit by [user] with [W].</span>")
 		return
 	return ..()
 
@@ -43,7 +44,14 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	if(!ismob(user))
 		return 0
 	if(can_operate(src,user) && I?.do_surgery(src,user)) //Surgery
+		if(client)
+			user.client.interact_log += "<font color=red>([time_stamp()]) - Interacted with [src], using [I], for surgery.</font>"
+			src.client.interact_log += "<font color=red>([time_stamp()]) - Had surger performed by [user], using I]</font>."
 		return 1
+
+	if(client)
+		user.client.interact_log += "([time_stamp()]) - Interacted with [src], using [I]."
+		src.client.interact_log += "([time_stamp()]) - Was interacted with by [user], using [I]."
 	return I.attack(src, user, user.zone_sel ? user.zone_sel.selecting : ran_zone())
 
 /mob/living/carbon/human/attackby(obj/item/I, mob/user)

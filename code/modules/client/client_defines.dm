@@ -80,3 +80,10 @@
 
 	///Needs to implement InterceptClickOn(user,params,atom) proc
 	var/datum/click_intercept = null
+
+	//LOGGING STUFF: F19 Admin Logging Suite
+	var/list/say_log = list()
+	var/list/emote_log = list()
+	var/list/ooc_log = list()
+	var/list/dsay_log = list()
+	var/list/interact_log = list()
