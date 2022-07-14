@@ -4,8 +4,4 @@ updates:
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
-<<<<<<< Updated upstream
-      interval: "weekly"
-=======
       interval: "daily"
->>>>>>> Stashed changes

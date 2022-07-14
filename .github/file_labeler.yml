@@ -1,0 +1,21 @@
+Code:
+  code/**/*
+
+Mapping:
+  maps/**/*
+  _maps/**/*
+
+Github:
+  .github/**/*
+
+Sprites:
+  icons/**/*
+
+Tools:
+  tools/**/*
+
+TGUI:
+  tgui/**/*
+
+Sounds:
+  sounds/**/*

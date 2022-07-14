@@ -3,6 +3,7 @@
 	sort_category = "Utility"
 	category = /datum/gear/utility
 	denied_roles = list(/datum/job/classd)
+	//Security can use these, yeah
 
 /datum/gear/utility/briefcase
 	display_name = "briefcase"

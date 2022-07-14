@@ -578,9 +578,9 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 
 /mob/observer/eye/scp106
 	name = "SCP-106 presence"
+	cooldown = 5
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
-	sprint = 5
 
 /mob/observer/eye/scp106/New()
 	. = ..()
@@ -590,7 +590,6 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	var/turf/step = get_turf(get_step(src, direct))
 	if(!step.is_phasable())
 		return FALSE
-			//We do this specifically as they have special conditions
 	if(direct == UP && !HasAbove(z))
 		return FALSE
 	if(direct == DOWN && !HasBelow(z))

@@ -3,6 +3,8 @@
 	sort_category = "Suits and Overwear"
 	category = /datum/gear/suit
 	denied_roles = list(/datum/job/classd)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	//Reasoning : it eats the Armour slot of guards. Also, there's little justification for wearing one of these as a guard
 
 /datum/gear/suit/poncho
 	display_name = "poncho selection"
