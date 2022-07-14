@@ -30192,12 +30192,14 @@
 /obj/machinery/camera/autoname{
 	dir = 4;
 	name = "SCP-247 Containment"
+
 	},
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
 	pixel_x = -24
 	},
+
 /obj/structure/cable/green,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/uhcz/scp247containment)
