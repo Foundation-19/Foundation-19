@@ -8,7 +8,7 @@
 	opacity = 0
 	layer = ABOVE_HUMAN_LAYER
 	simulated = FALSE
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 
 	var/mob/living/aiming_at   // Who are we currently targeting, if anyone?
 	var/obj/item/aiming_with   // What are we targeting with?

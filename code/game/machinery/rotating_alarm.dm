@@ -7,7 +7,7 @@
 	var/_color = COLOR_ORANGE
 	plane = EFFECTS_ABOVE_LIGHTING_PLANE
 	layer = EYE_GLOW_LAYER
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 
 
 /obj/effect/spinning_light/Initialize()

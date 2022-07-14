@@ -6,7 +6,6 @@ var/list/all_virtual_listeners = list()
 	see_in_dark = SEE_IN_DARK_DEFAULT
 	see_invisible = SEE_INVISIBLE_LIVING
 	sight = SEE_SELF
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 	virtual_mob = null
 	no_z_overlay = TRUE

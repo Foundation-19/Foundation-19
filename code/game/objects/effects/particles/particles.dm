@@ -128,7 +128,7 @@
 /obj/particle_emitter
 	name = ""
 	anchored = TRUE
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 	appearance_flags = PIXEL_SCALE
 
 /obj/particle_emitter/Initialize(mapload, time, _color)
@@ -191,7 +191,7 @@
 /obj/particle_emitter/sparks_flare
 	plane = EFFECTS_ABOVE_LIGHTING_PLANE
 	particles = new/particles/flare_sparks
-	mouse_opacity = MOUSE_OPACITY_ICON
+	mouse_opacity = 1
 
 /obj/particle_emitter/sparks_flare/Initialize(mapload, time, _color)
 	. = ..()

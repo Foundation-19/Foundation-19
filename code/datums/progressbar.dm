@@ -100,7 +100,7 @@
 	src.max_progress = max_progress
 	src.actee = actee
 	bar = new()
-	bar.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	bar.mouse_opacity = 0
 	bar.icon = 'icons/effects/progressbar.dmi'
 	bar.icon_state = "prog_bar_0"
 	bar.pixel_x = (actee.x - actor.x) * WORLD_ICON_SIZE

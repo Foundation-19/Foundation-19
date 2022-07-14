@@ -301,7 +301,7 @@
 		H.fov.icon_state = "combat"
 		H.fov.name = " "
 		H.fov.screen_loc = "1,1"
-		H.fov.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+		H.fov.mouse_opacity = 0
 		H.fov.layer = UNDER_HUD_LAYER
 		hud_elements |= H.fov
 

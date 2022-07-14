@@ -56,7 +56,7 @@ GLOBAL_LIST(end_titles)
 
 /obj/screen/credit
 	icon_state = "blank"
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 	alpha = 0
 	screen_loc = "1,1"
 	plane = HUD_PLANE

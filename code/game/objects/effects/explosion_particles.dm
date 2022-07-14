@@ -4,7 +4,7 @@
 	icon_state = "explosion_particle"
 	opacity = 1
 	anchored = TRUE
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 
 /obj/effect/expl_particles/New()
 	..()
@@ -36,7 +36,7 @@
 	icon_state = "explosion"
 	opacity = 1
 	anchored = TRUE
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 	pixel_x = -32
 	pixel_y = -32
 
@@ -62,4 +62,3 @@
 	var/datum/effect/effect/system/smoke_spread/S = new/datum/effect/effect/system/smoke_spread()
 	S.set_up(5,0,location,null)
 	S.start()
-	

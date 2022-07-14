@@ -29,7 +29,7 @@
 	gender = PLURAL
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "dirt"
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = 0
 	persistent = TRUE
 
 /obj/effect/decal/cleanable/flour
