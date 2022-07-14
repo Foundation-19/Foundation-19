@@ -58,12 +58,11 @@ GLOBAL_LIST_EMPTY(scp131s)
 	// icon_dead = "SCP-131B_d"
 
 /mob/living/simple_animal/scp_131/Initialize()
-	. = ..()
 //	add_language(LANGUAGE_EYEPOD, 1)
 	GLOB.scp131s += src
 	verbs += /mob/living/proc/ventcrawl
 	verbs += /mob/living/proc/hide
-
+	return ..()
 
 /mob/living/simple_animal/scp_131/update_icon()
 	if(stat != DEAD && resting)
@@ -79,7 +78,7 @@ GLOBAL_LIST_EMPTY(scp131s)
 
 /mob/living/simple_animal/scp131/Destroy()
 	GLOB.scp131s -= src
-	..()
+	return ..()
 
 /mob/living/simple_animal/scp_131/verb/bond_with()
 	set name = "Bond With"
@@ -97,9 +96,9 @@ GLOBAL_LIST_EMPTY(scp131s)
 	if(.)
 		set_dir(get_dir(src, friend))
 		visible_emote(pick("whirrs around [friend]'s legs.",
-						   "brushes against [friend].",
-						   "stares reverently up at [friend].",
-						   "seems to look where [friend] is looking."))
+							"brushes against [friend].",
+							"stares reverently up at [friend].",
+							"seems to look where [friend] is looking."))
 	else
 		to_chat(usr, "<span class='notice'>[src] ignores you.</span>")
 	return

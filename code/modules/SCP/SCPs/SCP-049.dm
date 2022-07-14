@@ -41,7 +41,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	return  ..()
 
 /mob/living/carbon/human/scp049/Initialize()
-	. = ..()
 	// fix names
 	fully_replace_character_name("SCP-049")
 
@@ -58,6 +57,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		/mob/living/carbon/human/scp049/proc/Im_here_to_cure_you,
 		/mob/living/carbon/human/scp049/proc/cure_action
 	)
+	return ..()
 
 /mob/living/carbon/human/scp049/Destroy()
 	pestilence_images = null
@@ -67,7 +67,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	return ..()
 
 /mob/living/carbon/human/scp049/Life()
-	..()
+	. = ..()
 	if(prob(50) && !contained)
 		addtimer(CALLBACK(src, .proc/see_disease), 5 SECONDS) //only occasionally see the disease, less deadly. TODO: containment mechanics
 	if(anger==100)

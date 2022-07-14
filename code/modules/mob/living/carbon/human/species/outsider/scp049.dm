@@ -37,7 +37,7 @@
 /datum/species/scp049/handle_post_spawn(mob/living/carbon/human/H)
 	. = ..()
 
-/datum/species/scp049/handle_npc(var/mob/living/carbon/human/scp049/H)
+/datum/species/scp049/handle_npc(mob/living/carbon/human/scp049/H)
 	if (!H || H.client)
 		if(H.target)
 			H.target = null
