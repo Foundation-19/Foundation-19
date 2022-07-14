@@ -45,7 +45,7 @@
 		/obj/item/storage/box/encryptionkeys/eng,
 		/obj/item/storage/box/encryptionkeys/sec,
 		/obj/item/clothing/shoes/dutyboots,
-//		/obj/item/device/radio/headset/heads/commsofficer
+		///obj/item/device/radio/headset/heads/commsofficer
 		/obj/item/paper/monitorkey,
 	)
 
