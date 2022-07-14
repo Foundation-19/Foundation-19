@@ -40,8 +40,8 @@
 	total_positions = 100
 	spawn_positions = 100
 	minimal_player_age = 10
-	//supervisors = "the Archivist and administrative staff"
-	//duties = "<big><b>You are a low level pen pusher of the SCP Foundation. Your direct supervisor is the Archivist but you may also answer to the O5 and Ethics Committee Representative. Write reports, assist researchers and generally be a pain in the ass to everyone around you."
+//	supervisors = "the Archivist and administrative staff"
+//	duties = "<big><b>You are a low level pen pusher of the SCP Foundation. Your direct supervisor is the Archivist but you may also answer to the O5 and Ethics Committee Representative. Write reports, assist researchers and generally be a pain in the ass to everyone around you.</b></big>"
 	economic_power = 2
 	minimal_player_age = 5
 	ideal_character_age = 30
@@ -52,7 +52,7 @@
 	allowed_ranks = list(
 		/datum/mil_rank/civ/classc
 	)
-	hud_icon = "hudassistant"
+	hud_icon = "hudcrewman"
 
 	access = list(
 		access_civ_comms,

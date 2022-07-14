@@ -874,7 +874,7 @@
 	//Clear the access reqs, disable the safeties, and open up all paintjobs.
 	to_chat(user, "<span class='danger'>You run the sequencer across the interface, corrupting the operating protocols.</span>")
 	departments = list("Engineering","Mining","Medical","Security","Atmos","^%###^%$")
-	emagged = 1
+	emagged = TRUE
 	safeties = 0
 	req_access = list()
 	updateUsrDialog()

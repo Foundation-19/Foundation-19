@@ -206,7 +206,7 @@
 			sleep(30)
 			visible_message("\icon[src] <b>[src]</b> beeps: \"User DB truncated. Please contact your [GLOB.using_map.company_name] system operator for future assistance.\"")
 			req_access = null
-			emagged = 1
+			emagged = TRUE
 			return 1
 		if(0.5)
 			visible_message("\icon[src] <b>[src]</b> beeps: \"DB not responding \[Code 0x0003\]...\"")

@@ -34,7 +34,7 @@
 	response_disarm = "shoos"
 	response_harm   = "stomps on"
 
-	var/emagged = 0
+	var/emagged = FALSE
 	var/obj/item/held_item = null //Storage for single item they can hold.
 	speed = -1                    //Spiderbots gotta go fast.
 	pass_flags = PASS_FLAG_TABLE
