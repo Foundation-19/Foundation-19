@@ -688,7 +688,7 @@ Checks if a list has the same entries and values as an element of big.
 	if(!islist(l))
 		return l
 	. = l.Copy()
-	for(var/i = 1 to length(L))
+	for(var/i = 1 to length(l))
 		if(islist(.[i]))
 			.[i] = .(.[i])
 
