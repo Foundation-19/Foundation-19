@@ -24,7 +24,7 @@ var/list/global_huds = list(
 	screen.screen_loc = "1,1"
 	screen.icon = 'icons/obj/hud_full.dmi'
 	screen.icon_state = icon_state
-	screen.mouse_opacity = 0
+	screen.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 	return screen
 
@@ -39,7 +39,7 @@ var/list/global_huds = list(
 	holomap.name = "holomap"
 	holomap.icon = null
 	holomap.screen_loc = ui_holomap
-	holomap.mouse_opacity = 0
+	holomap.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /*
 	The hud datum
