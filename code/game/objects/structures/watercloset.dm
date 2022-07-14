@@ -246,7 +246,7 @@
 	icon_state = "mist"
 	layer = MOB_LAYER + 1
 	anchored = TRUE
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/structure/hygiene/shower/attack_hand(var/mob/M)
 	on = !on
