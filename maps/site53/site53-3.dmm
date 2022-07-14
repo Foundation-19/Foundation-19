@@ -849,6 +849,9 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception)
+"co" = (
+/turf/unsimulated/mineral,
+/area/site53/medical/mentalhealth/isolation)
 "cp" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -34837,7 +34840,7 @@ dm
 hL
 dm
 dm
-dA
+co
 dA
 dA
 dA
@@ -35094,7 +35097,7 @@ kY
 de
 lr
 kk
-dA
+co
 dA
 dA
 dA
@@ -35351,7 +35354,7 @@ ZS
 ZS
 Kq
 fS
-dA
+co
 dA
 dA
 dA
@@ -35608,7 +35611,7 @@ mc
 mc
 mc
 eG
-dA
+co
 dA
 dA
 dA

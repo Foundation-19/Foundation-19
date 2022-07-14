@@ -70,7 +70,8 @@
 /area/site53/uez/bridge)
 "am" = (
 /obj/machinery/light{
-	dir = 1
+	dir = 1;
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
@@ -105,6 +106,7 @@
 /area/site53/upper_surface/maincontrolroom)
 "ar" = (
 /obj/machinery/door/blast/regular/open{
+	dir = 1;
 	icon_state = "pdoor0";
 	id_tag = "controlroom";
 	name = "Control Room Lockdown Blast Door"
@@ -150,14 +152,16 @@
 "ax" = (
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /turf/simulated/open,
 /area/site53/upper_surface/maincontrolroom)
 "ay" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /turf/simulated/open,
 /area/site53/upper_surface/maincontrolroom)
@@ -249,7 +253,8 @@
 "aK" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_y = 0
 	},
 /obj/structure/flora/pottedplant/minitree,
 /obj/structure/railing/mapped{
@@ -312,7 +317,8 @@
 "aT" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_y = 0
 	},
 /obj/structure/flora/pottedplant/minitree,
 /obj/structure/railing/mapped,
@@ -343,7 +349,8 @@
 "aW" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -357,7 +364,8 @@
 "aZ" = (
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -370,6 +378,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24;
 	req_access = list(201)
 	},
@@ -386,7 +395,8 @@
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
@@ -412,7 +422,8 @@
 "bh" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -427,14 +438,16 @@
 "bj" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
 "bk" = (
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -501,18 +514,21 @@
 	dir = 1
 	},
 /obj/machinery/light{
-	dir = 1
+	dir = 1;
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "bu" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_y = 0
 	},
 /obj/machinery/papershredder,
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 9
+	dir = 9;
+	icon_state = "bordercolor"
 	},
 /obj/structure/railing/mapped{
 	dir = 4
@@ -526,14 +542,16 @@
 	},
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
 "bw" = (
 /obj/structure/filingcabinet,
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /obj/structure/railing/mapped{
 	dir = 4
@@ -551,12 +569,14 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24;
 	req_access = list(201)
 	},
 /obj/structure/cable{
 	d2 = 2;
-	icon_state = "0-2"
+	icon_state = "0-2";
+	pixel_y = 0
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/maintenance)
@@ -571,11 +591,13 @@
 "bA" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_y = 0
 	},
 /obj/machinery/photocopier,
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 5
+	dir = 5;
+	icon_state = "bordercolor"
 	},
 /obj/structure/railing/mapped{
 	dir = 8
@@ -593,6 +615,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/blast/regular/open{
+	dir = 1;
 	icon_state = "pdoor0";
 	id_tag = "facilitylockdown";
 	name = "Exterior Lockdown Blast Door"
@@ -611,7 +634,8 @@
 /area/site53/uez/hallway)
 "bD" = (
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -655,7 +679,8 @@
 "bI" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
@@ -718,7 +743,8 @@
 /obj/machinery/papershredder,
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /turf/simulated/floor/wood,
 /area/site53/uez/hallway)
@@ -733,7 +759,8 @@
 /obj/item/device/flashlight/lamp/green,
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
@@ -746,7 +773,8 @@
 /area/site53/uez/hallway)
 "bY" = (
 /obj/machinery/door/airlock/command{
-	name = "Head of Personnel's Office"
+	name = "Head of Personnel's Office";
+	req_access = list()
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -780,6 +808,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24;
 	req_access = list(201)
 	},
@@ -794,6 +823,7 @@
 /area/site53/uez/hallway)
 "ce" = (
 /obj/machinery/keycard_auth{
+	pixel_x = 0;
 	pixel_y = 28;
 	req_access = list(304,504,303)
 	},
@@ -826,6 +856,7 @@
 "ck" = (
 /obj/structure/bed/chair/comfy/captain{
 	dir = 1;
+	icon_state = "capchair_preview";
 	name = "director's chair"
 	},
 /turf/simulated/floor/carpet/purple,
@@ -858,7 +889,8 @@
 /area/site53/uez/hallway)
 "cp" = (
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -880,7 +912,8 @@
 "ct" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
@@ -888,7 +921,8 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/carpet/purple,
@@ -896,7 +930,8 @@
 "cv" = (
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /obj/structure/railing/mapped{
 	dir = 1
@@ -976,7 +1011,8 @@
 /area/site53/uez/hallway)
 "cD" = (
 /obj/machinery/power/apc/hyper{
-	dir = 4
+	dir = 4;
+	icon_state = "apc0"
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -992,7 +1028,8 @@
 	},
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
@@ -1074,6 +1111,7 @@
 "cP" = (
 /obj/structure/cable{
 	d1 = 32;
+	d2 = 1;
 	icon_state = "32-1"
 	},
 /obj/structure/lattice,
@@ -1143,7 +1181,8 @@
 /area/site53/uez/hallway)
 "cW" = (
 /obj/machinery/door/airlock/glass/command{
-	name = "Senior Administrative Offices"
+	name = "Senior Administrative Offices";
+	req_access = list()
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect"
@@ -1167,7 +1206,8 @@
 "cY" = (
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /obj/machinery/door/window/holowindoor{
 	req_access = list(605)
@@ -1213,6 +1253,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24;
 	req_access = list(201)
 	},
@@ -1220,7 +1261,6 @@
 /area/site53/uez/hallway)
 "df" = (
 /obj/structure/table/standard,
-/obj/item/stamp/rd,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "dg" = (
@@ -1234,7 +1274,8 @@
 /area/site53/uez/hallway)
 "di" = (
 /obj/machinery/door/airlock/multi_tile/glass/command{
-	name = "Senior Admin Offices"
+	name = "Senior Admin Offices";
+	req_access = list()
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1242,6 +1283,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/blast/regular/open{
+	dir = 1;
 	icon_state = "pdoor0";
 	id_tag = "bridgecorelockdown"
 	},
@@ -1279,6 +1321,7 @@
 	},
 /obj/machinery/keycard_auth{
 	pixel_x = -28;
+	pixel_y = 0;
 	req_access = list(304,504,303)
 	},
 /turf/simulated/floor/carpet/purple,
@@ -1299,7 +1342,8 @@
 /area/site53/uez/hallway)
 "dp" = (
 /obj/structure/bed/chair{
-	dir = 8
+	dir = 8;
+	icon_state = "chair_preview"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/hallway)
@@ -1330,6 +1374,7 @@
 "dt" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
+	icon_state = "camera";
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/wood/mahogany,
@@ -1368,14 +1413,17 @@
 /area/site53/uez/hallway)
 "dy" = (
 /obj/machinery/power/apc{
-	dir = 1
+	dir = 1;
+	icon_state = "apc0"
 	},
 /obj/structure/cable{
 	d2 = 2;
-	icon_state = "0-2"
+	icon_state = "0-2";
+	pixel_y = 0
 	},
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -1398,7 +1446,8 @@
 	pixel_y = 32
 	},
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -1453,6 +1502,7 @@
 /area/site53/uez/hallway)
 "dI" = (
 /obj/machinery/door/blast/regular/open{
+	dir = 1;
 	icon_state = "pdoor0";
 	id_tag = "bridgecorelockdown"
 	},
@@ -1471,7 +1521,8 @@
 	},
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -1502,7 +1553,8 @@
 /obj/machinery/photocopier,
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/hallway)
@@ -1675,6 +1727,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24;
 	req_access = list(201)
 	},
@@ -1733,6 +1786,7 @@
 "eo" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
+	icon_state = "camera";
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/lino,
@@ -1741,7 +1795,8 @@
 /obj/machinery/door/airlock/multi_tile/glass/command{
 	dir = 8;
 	icon_state = "closed";
-	name = "Junior Admin Offices"
+	name = "Junior Admin Offices";
+	req_access = list()
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -1749,6 +1804,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/blast/regular/open{
+	dir = 1;
 	icon_state = "pdoor0";
 	id_tag = "bridgecorelockdown"
 	},
@@ -1763,9 +1819,11 @@
 /obj/machinery/door/airlock/multi_tile/glass/command{
 	dir = 8;
 	icon_state = "closed";
-	name = "Canteen & Conference Room"
+	name = "Canteen & Conference Room";
+	req_access = list()
 	},
 /obj/machinery/door/blast/regular/open{
+	dir = 1;
 	icon_state = "pdoor0";
 	id_tag = "bridgecorelockdown"
 	},
@@ -1779,6 +1837,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24;
 	req_access = list(201)
 	},
@@ -1789,7 +1848,8 @@
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = 0
 	},
 /turf/simulated/open,
 /area/site53/upper_surface/maincontrolroom)
@@ -1804,7 +1864,8 @@
 "ev" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_y = 0
 	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
@@ -1843,7 +1904,8 @@
 /area/site53/uez/hallway)
 "eC" = (
 /obj/machinery/power/apc/hyper{
-	dir = 8
+	dir = 8;
+	icon_state = "apc0"
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -1899,7 +1961,8 @@
 /area/site53/uez/hallway)
 "eK" = (
 /obj/machinery/door/airlock/multi_tile/glass/command{
-	name = "Conference Room A"
+	name = "Conference Room A";
+	req_access = list()
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1910,7 +1973,8 @@
 /area/site53/uez/conference)
 "eL" = (
 /obj/machinery/power/apc/hyper{
-	dir = 1
+	dir = 1;
+	icon_state = "apc0"
 	},
 /obj/structure/cable/green{
 	d2 = 4;
@@ -1957,25 +2021,29 @@
 	icon_state = "1-2"
 	},
 /obj/structure/bed/chair/comfy/blue{
-	dir = 1
+	dir = 1;
+	icon_state = "comfychair_preview"
 	},
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
 "eR" = (
 /obj/structure/bed/chair/comfy/blue{
-	dir = 1
+	dir = 1;
+	icon_state = "comfychair_preview"
 	},
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
 "eS" = (
 /obj/structure/bed/chair/comfy/blue{
-	dir = 4
+	dir = 4;
+	icon_state = "comfychair_preview"
 	},
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
 "eT" = (
 /obj/structure/bed/chair/comfy/blue{
-	dir = 8
+	dir = 8;
+	icon_state = "comfychair_preview"
 	},
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
@@ -2018,7 +2086,8 @@
 /area/site53/uez/conference)
 "fd" = (
 /obj/structure/bed/chair{
-	dir = 4
+	dir = 4;
+	icon_state = "chair_preview"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/hallway)
@@ -2043,7 +2112,8 @@
 	name = "Communications Officer"
 	},
 /obj/effect/floor_decal/corner/blue/half{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolorhalf"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
@@ -2073,6 +2143,7 @@
 "fk" = (
 /obj/machinery/keycard_auth{
 	pixel_x = 28;
+	pixel_y = 0;
 	req_access = list(304,504,303)
 	},
 /turf/simulated/floor/carpet/red,
@@ -2092,6 +2163,7 @@
 "fo" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
+	icon_state = "camera";
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/carpet/red,
@@ -2208,7 +2280,8 @@
 "fG" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_y = 0
 	},
 /obj/item/device/radio/intercom{
 	frequency = 1017;
@@ -2216,7 +2289,8 @@
 	pixel_y = 32
 	},
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -2241,12 +2315,14 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24;
 	req_access = list(201)
 	},
 /obj/structure/cable{
 	d2 = 2;
-	icon_state = "0-2"
+	icon_state = "0-2";
+	pixel_y = 0
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
@@ -2266,10 +2342,12 @@
 "fL" = (
 /obj/structure/cable{
 	d2 = 2;
-	icon_state = "0-2"
+	icon_state = "0-2";
+	pixel_y = 0
 	},
 /obj/machinery/power/terminal{
-	dir = 8
+	dir = 8;
+	icon_state = "term"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/substation)
@@ -2280,11 +2358,13 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/power/apc{
-	dir = 4
+	dir = 4;
+	icon_state = "apc0"
 	},
 /obj/structure/cable{
 	d2 = 2;
-	icon_state = "0-2"
+	icon_state = "0-2";
+	pixel_y = 0
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/substation)
@@ -2413,6 +2493,7 @@
 "ga" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
+	dir = 1;
 	icon_state = "pdoor0";
 	id_tag = "facilitylockdown";
 	name = "Exterior Lockdown Blast Door"
@@ -2483,7 +2564,6 @@
 /area/site53/uez/hallway)
 "gk" = (
 /obj/structure/table/standard,
-/obj/item/stamp/scp/cmo,
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/hallway)
 "gl" = (
@@ -2606,6 +2686,7 @@
 /area/site53/uez/hallway)
 "gB" = (
 /obj/machinery/keycard_auth{
+	pixel_x = 0;
 	pixel_y = -28;
 	req_access = list(304,504,303)
 	},
@@ -2624,6 +2705,7 @@
 /area/site53/uez/hallway)
 "gF" = (
 /obj/machinery/keycard_auth{
+	pixel_x = 0;
 	pixel_y = -28;
 	req_access = list(304,504,303)
 	},
@@ -2640,18 +2722,22 @@
 /area/site53/uez/hallway)
 "gJ" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/light{
-	dir = 1
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "gK" = (
 /obj/machinery/computer/modular/preset/aislot/research,
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -2668,6 +2754,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "Tram Control";
 	dir = 4;
+	icon_state = "camera";
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -2680,6 +2767,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1;
+	icon_state = "camera";
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/lino,
@@ -2798,7 +2886,8 @@
 "hQ" = (
 /obj/machinery/computer/modular/preset/engineering,
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -2950,7 +3039,8 @@
 "ii" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics{
@@ -3026,7 +3116,8 @@
 "io" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics{
@@ -3058,6 +3149,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24;
 	req_access = list(201)
 	},
@@ -3309,7 +3401,8 @@
 	},
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics{
@@ -3348,7 +3441,8 @@
 "jf" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /obj/structure/table/standard,
 /obj/machinery/photocopier{
@@ -3362,7 +3456,8 @@
 "jg" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 1
@@ -3375,7 +3470,8 @@
 /obj/machinery/lapvend,
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 1
@@ -3451,7 +3547,8 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/orange/bordercorner{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolorcorner"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3481,7 +3578,8 @@
 "ju" = (
 /obj/machinery/computer/modular/preset/aislot/sysadmin,
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3520,7 +3618,8 @@
 	icon_state = "console"
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/camera/autoname{
 	dir = 4;
@@ -3547,13 +3646,15 @@
 "jC" = (
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_y = 0
 	},
 /obj/machinery/computer/modular/preset/civilian{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3604,13 +3705,15 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "jL" = (
 /obj/effect/floor_decal/corner/orange/bordercorner{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolorcorner"
 	},
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
@@ -3633,7 +3736,8 @@
 /area/site53/upper_surface/maincontrolroom)
 "jQ" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3647,6 +3751,7 @@
 /area/site53/upper_surface/commstower)
 "jT" = (
 /obj/machinery/door/blast/regular/open{
+	dir = 1;
 	icon_state = "pdoor0";
 	id_tag = "commtower"
 	},
@@ -3655,14 +3760,16 @@
 /area/site53/upper_surface/commstower)
 "jU" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "jV" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
@@ -3672,7 +3779,8 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
@@ -3686,10 +3794,13 @@
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/light{
-	dir = 1
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 0
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile/white,
@@ -3703,7 +3814,8 @@
 /area/site53/upper_surface/commstower)
 "jZ" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /obj/machinery/photocopier{
@@ -3753,6 +3865,7 @@
 /obj/machinery/light,
 /obj/machinery/computer/telecomms/monitor{
 	dir = 1;
+	icon_state = "computer";
 	network = "tcommsat"
 	},
 /obj/effect/floor_decal/corner/orange/border,
@@ -3760,7 +3873,8 @@
 /area/site53/upper_surface/commstower)
 "kl" = (
 /obj/effect/floor_decal/corner/orange/bordercorner{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolorcorner"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3793,7 +3907,8 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/orange/bordercorner{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolorcorner"
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "commtower";
@@ -3830,7 +3945,8 @@
 /area/site53/upper_surface/commstower)
 "kG" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3838,7 +3954,8 @@
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "4-8";
+	pixel_x = 0
 	},
 /obj/machinery/camera/autoname{
 	dir = 1;
@@ -3864,14 +3981,16 @@
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "4-8";
+	pixel_x = 0
 	},
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "kN" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3882,7 +4001,8 @@
 /area/site53/upper_surface/commstower)
 "kP" = (
 /obj/effect/floor_decal/corner/orange/bordercorner{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolorcorner"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3906,6 +4026,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/blast/regular/open{
+	dir = 1;
 	icon_state = "pdoor0";
 	id_tag = "commtower"
 	},
@@ -3917,7 +4038,8 @@
 	},
 /obj/machinery/computer/modular/preset/security,
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3935,9 +4057,19 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/maintenance)
+"kV" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/maintenance)
 "kX" = (
 /obj/machinery/computer/telecomms/server{
 	dir = 1;
+	icon_state = "computer";
 	network = "tcommsat"
 	},
 /obj/effect/floor_decal/corner/orange/border,
@@ -3952,14 +4084,16 @@
 /area/site53/upper_surface/commstower)
 "kZ" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "la" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
@@ -4037,7 +4171,8 @@
 	network = list("Entrance Zone Network")
 	},
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
@@ -4057,7 +4192,8 @@
 /area/site53/entrancezone/forensics)
 "nD" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
@@ -4082,7 +4218,8 @@
 /area/site53/uez/conference)
 "nR" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner,
 /turf/simulated/floor/tiled/monotile,
@@ -4107,7 +4244,8 @@
 "po" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/wood/mahogany,
@@ -4119,22 +4257,26 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
+	icon_state = "camera";
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "ql" = (
 /obj/effect/floor_decal/corner/blue{
-	dir = 8
+	dir = 8;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "qt" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolorcorner"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolorcorner"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
@@ -4146,13 +4288,15 @@
 /area/site53/entrancezone/forensics)
 "qD" = (
 /obj/effect/floor_decal/corner/blue/bordercorner{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolorcorner"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
 "qK" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 10
+	dir = 10;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/steel,
 /obj/item/taperoll/police,
@@ -4171,7 +4315,8 @@
 /area/site53/entrancezone/forensics)
 "rI" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/light{
 	dir = 8
@@ -4204,10 +4349,12 @@
 "sZ" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -4220,7 +4367,8 @@
 /area/site53/uez/conference)
 "tv" = (
 /obj/effect/floor_decal/corner/green{
-	dir = 4
+	dir = 4;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
@@ -4238,7 +4386,8 @@
 "ue" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "controlroom";
@@ -4284,7 +4433,8 @@
 "vh" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -4357,7 +4507,8 @@
 /area/site53/upper_surface/maincontrolroom)
 "yv" = (
 /obj/effect/floor_decal/corner/blue/bordercorner{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolorcorner"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -4406,7 +4557,8 @@
 /area/site53/entrancezone/forensics)
 "AY" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /obj/machinery/microwave,
@@ -4414,7 +4566,8 @@
 /area/site53/upper_surface/commstower)
 "Ba" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 6
+	dir = 6;
+	icon_state = "bordercolor"
 	},
 /obj/structure/closet/secure_closet{
 	name = "secure evidence locker";
@@ -4443,7 +4596,8 @@
 /area/site53/entrancezone/forensics)
 "Cq" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
@@ -4490,7 +4644,8 @@
 /area/site53/uez/maintenance)
 "DB" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 10
+	dir = 10;
+	icon_state = "bordercolor"
 	},
 /obj/structure/closet/secure_closet{
 	name = "secure evidence locker";
@@ -4500,7 +4655,8 @@
 /area/site53/entrancezone/forensics)
 "DH" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/light{
 	dir = 4
@@ -4509,7 +4665,8 @@
 /area/site53/upper_surface/commstower)
 "DJ" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5
+	dir = 5;
+	icon_state = "bordercolor"
 	},
 /obj/structure/closet/secure_closet{
 	name = "secure evidence locker";
@@ -4528,7 +4685,8 @@
 /area/site53/surface/surface)
 "EH" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -4547,13 +4705,15 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "FO" = (
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /obj/structure/window/basic/full{
@@ -4585,7 +4745,8 @@
 /area/site53/uez/hallway)
 "Gc" = (
 /obj/effect/floor_decal/corner/blue/bordercorner{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolorcorner"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -4603,7 +4764,8 @@
 /area/site53/uez/conference)
 "HT" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
@@ -4649,6 +4811,7 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 4;
+	icon_state = "camera";
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -4691,6 +4854,7 @@
 "Nk" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
+	icon_state = "camera";
 	network = list("Entrance Zone Network")
 	},
 /obj/structure/table/standard,
@@ -4712,13 +4876,16 @@
 	},
 /obj/effect/floor_decal/corner/brown/mono,
 /obj/machinery/light{
-	dir = 1
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "NJ" = (
 /obj/structure/bed/chair/comfy/blue{
 	dir = 1;
+	icon_state = "comfychair_preview";
 	name = "Chief Medical Officer"
 	},
 /obj/effect/floor_decal/corner/paleblue/half{
@@ -4728,7 +4895,8 @@
 /area/site53/uez/conference)
 "NW" = (
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 1
+	dir = 1;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/camera/autoname{
 	network = list("Entrance Zone Network")
@@ -4737,7 +4905,8 @@
 /area/site53/upper_surface/maincontrolroom)
 "Oc" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -4767,7 +4936,8 @@
 /area/site53/uez/conference)
 "OX" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
@@ -4837,10 +5007,12 @@
 	})
 "RL" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolorcorner"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolorcorner"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner,
 /turf/simulated/floor/tiled/monotile,
@@ -4852,7 +5024,8 @@
 /area/site53/uez/conference)
 "RU" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/camera/autoname{
 	dir = 4;
@@ -4883,10 +5056,12 @@
 "SP" = (
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -4949,7 +5124,8 @@
 "UU" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
-	department = "Command Meeting Room"
+	department = "Command Meeting Room";
+	send_access = list()
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
@@ -4988,7 +5164,8 @@
 /area/site53/upper_surface/maincontrolroom)
 "Yr" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 4
+	dir = 4;
+	icon_state = "bordercolor"
 	},
 /obj/structure/table/standard,
 /obj/machinery/camera/autoname{
@@ -5015,7 +5192,8 @@
 /area/site53/uez/conference)
 "Zl" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9
+	dir = 9;
+	icon_state = "bordercolor"
 	},
 /obj/structure/coatrack,
 /obj/item/clothing/suit/storage/toggle/labcoat,
@@ -5023,7 +5201,8 @@
 /area/site53/entrancezone/forensics)
 "Zn" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9
+	dir = 9;
+	icon_state = "bordercolor"
 	},
 /obj/structure/closet/secure_closet{
 	name = "secure evidence locker";
@@ -5033,7 +5212,8 @@
 /area/site53/entrancezone/forensics)
 "Zy" = (
 /obj/effect/floor_decal/corner/blue/border{
-	dir = 8
+	dir = 8;
+	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -31675,7 +31855,7 @@ jH
 jH
 jH
 jH
-fz
+kV
 fC
 hZ
 hZ
@@ -31932,7 +32112,7 @@ mQ
 Oc
 jy
 jH
-fz
+kV
 fC
 hZ
 hZ
@@ -32189,7 +32369,7 @@ kr
 kr
 kO
 jH
-fz
+kV
 fC
 hZ
 hZ
@@ -32446,7 +32626,7 @@ kP
 kr
 Tg
 jH
-fz
+kV
 fC
 hZ
 hZ
@@ -32703,7 +32883,7 @@ kN
 kr
 jq
 jH
-fz
+kV
 fC
 hZ
 hZ
@@ -32960,7 +33140,7 @@ kN
 kr
 ko
 jH
-fz
+kV
 fC
 hZ
 hZ
