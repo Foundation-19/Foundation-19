@@ -26519,7 +26519,6 @@
 	dir = 1
 	},
 /obj/machinery/vending/wallmed1{
-	layer = 3.3;
 	name = "Emergency NanoMed";
 	pixel_y = 28
 	},
@@ -28561,6 +28560,10 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
+"iGM" = (
+/obj/effect/landmark/test/safe_turf,
+/turf/simulated/floor/tiled,
+/area/site53/lowertrams/hub)
 "iHf" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -30189,12 +30192,14 @@
 /obj/machinery/camera/autoname{
 	dir = 4;
 	name = "SCP-247 Containment"
+
 	},
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
 	pixel_x = -24
 	},
+
 /obj/structure/cable/green,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/uhcz/scp247containment)
@@ -64009,7 +64014,7 @@ aZu
 aac
 azC
 aOt
-aae
+iGM
 aSV
 aWX
 bdo

@@ -16,9 +16,9 @@ GLOBAL_LIST_EMPTY(scp012s)
 	classification = EUCLID
 
 /obj/item/paper/scp012/Initialize()
-	. = ..()
 	START_PROCESSING(SSobj, src)
 	GLOB.scp012s += src
+	return ..()
 
 /obj/item/paper/scp012/Destroy()
 	STOP_PROCESSING(SSobj, src)

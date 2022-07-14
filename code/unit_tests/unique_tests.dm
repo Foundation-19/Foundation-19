@@ -19,7 +19,7 @@
 	else
 		pass("All cable colors are unique.")
 
-	return 1
+	return TRUE
 
 /datum/unit_test/research_designs_shall_be_unique
 	name = "UNIQUENESS: Research Designs Shall Be Unique"
@@ -44,7 +44,7 @@
 	else
 		pass("All research designs are unique.")
 
-	return 1
+	return TRUE
 
 /datum/unit_test/player_preferences_shall_have_unique_key
 	name = "UNIQUENESS: Player Preferences Shall Be Unique"
@@ -61,7 +61,7 @@
 		fail("[number_of_issues] issues with player preferences found.")
 	else
 		pass("All player preferences have unique keys.")
-	return 1
+	return TRUE
 
 /datum/unit_test/access_datums_shall_be_unique
 	name = "UNIQUENESS: Access Datums Shall Be Unique"
@@ -81,8 +81,9 @@
 		fail("[number_of_issues] issue\s with access datums found.")
 	else
 		pass("All access datums are unique.")
-	return 1
+	return TRUE
 
+/* I don't particularily care, plus this gets in the way of map specific job outfits for no real reason
 /datum/unit_test/outfit_datums_shall_have_unique_names
 	name = "UNIQUENESS: Outfit Datums Shall Have Unique Names"
 
@@ -98,7 +99,8 @@
 		fail("[number_of_issues] issue\s with outfit datums found.")
 	else
 		pass("All outfit datums have unique names.")
-	return 1
+	return TRUE
+*/
 
 /datum/unit_test/languages_shall_have_unique_names
 	name = "UNIQUENESS: Languages Shall Have Unique Names"
@@ -115,7 +117,7 @@
 		fail("[number_of_issues] issue\s with language datums found.")
 	else
 		pass("All languages datums have unique names.")
-	return 1
+	return TRUE
 
 /datum/unit_test/languages_shall_have_no_or_unique_keys
 	name = "UNIQUENESS: Languages Shall Have No or Unique Keys"
@@ -136,7 +138,7 @@
 		fail("[number_of_issues] issue\s with language datums found.")
 	else
 		pass("All languages datums have unique keys.")
-	return 1
+	return TRUE
 
 /datum/unit_test/outfit_backpacks_shall_have_unique_names
 	name = "UNIQUENESS: Outfit Backpacks Shall Have Unique Names"
@@ -154,7 +156,7 @@
 		fail("[number_of_issues] duplicate outfit backpacks\s found.")
 	else
 		pass("All outfit backpacks have unique names.")
-	return 1
+	return TRUE
 
 /datum/unit_test/space_suit_modifiers_shall_have_unique_names
 	name = "UNIQUENESS: Space Suit Modifiers Shall Have Unique Names"
@@ -172,7 +174,7 @@
 		fail("[number_of_issues] duplicate space suit modifier\s found.")
 	else
 		pass("All space suit modifiers have unique names.")
-	return 1
+	return TRUE
 
 /datum/unit_test/proc/number_of_issues(var/list/entries, var/type, var/feedback = /decl/noi_feedback)
 	var/issues = 0

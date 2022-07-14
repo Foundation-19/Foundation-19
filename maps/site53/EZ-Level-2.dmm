@@ -1739,7 +1739,6 @@
 	pixel_y = 25
 	},
 /obj/item/storage/mirror{
-	layer = 2;
 	pixel_y = 31
 	},
 /turf/simulated/floor/tiled/freezer,
