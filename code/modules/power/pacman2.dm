@@ -8,7 +8,7 @@
 	power_gen = 4500
 	var/obj/item/weapon/tank/phoron/P = null
 	var/board_path = /obj/item/weapon/circuitboard/pacman2
-	var/emagged = 0
+	var/emagged = FALSE
 	var/heat = 0
 /*
 	process()
@@ -165,6 +165,6 @@
 				usr.machine = null
 
 /obj/machinery/power/port_gen/pacman2/emag_act(var/remaining_uses, var/mob/user)
-	emagged = 1
+	emagged = TRUE
 	emp_act(1)
 	return 1

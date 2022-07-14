@@ -187,12 +187,12 @@ for reference:
 		else if(isWrench(W))
 			if (src.health < src.maxhealth)
 				src.health = src.maxhealth
-				src.emagged = 0
+				src.emagged = FALSE
 				src.req_access = list(access_security)
 				visible_message("<span class='warning'>[user] repairs \the [src]!</span>")
 				return
 			else if (src.emagged > 0)
-				src.emagged = 0
+				src.emagged = FALSE
 				src.req_access = list(access_security)
 				visible_message("<span class='warning'>[user] repairs \the [src]!</span>")
 				return
@@ -250,8 +250,8 @@ for reference:
 
 
 /obj/machinery/deployable/barrier/emag_act(var/remaining_charges, var/mob/user)
-	if (src.emagged == 0)
-		src.emagged = 1
+	if (src.emagged == FALSE)
+		src.emagged = TRUE
 		src.req_access.Cut()
 		src.req_one_access.Cut()
 		to_chat(user, "You break the ID authentication lock on \the [src].")
@@ -260,7 +260,7 @@ for reference:
 		s.start()
 		visible_message("<span class='warning'>BZZzZZzZZzZT</span>")
 		return 1
-	else if (src.emagged == 1)
+	else if (src.emagged == TRUE)
 		src.emagged = 2
 		to_chat(user, "You short out the anchoring mechanism on \the [src].")
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
