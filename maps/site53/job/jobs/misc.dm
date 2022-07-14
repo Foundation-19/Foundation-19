@@ -52,7 +52,7 @@
 	allowed_ranks = list(
 		/datum/mil_rank/civ/classc
 	)
-	hud_icon = "hudassistant"
+	hud_icon = "hudcrewman"
 
 	access = list(
 		access_civ_comms,
