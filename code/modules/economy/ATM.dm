@@ -179,9 +179,9 @@
 							t += "<form name='transfer' action='?src=\ref[src]' method='get'>"
 							t += "<input type='hidden' name='src' value='\ref[src]'>"
 							t += "<input type='hidden' name='choice' value='transfer'>"
-							t += "Target account number: <input type='text' name='target_acc_number' value='' style='width:200px; background-color:white;'><br>"
-							t += "Funds to transfer: <input type='text' name='funds_amount' value='' style='width:200px; background-color:white;'><br>"
-							t += "Transaction purpose: <input type='text' name='purpose' value='Funds transfer' style='width:200px; background-color:white;'><br>"
+							t += "Target account number: <input type='text' name='target_acc_number' value='' style='width:200px; background-color:white;color:black'><br>"
+							t += "Funds to transfer: <input type='text' name='funds_amount' value='' style='width:200px; background-color:white;color:black'><br>"
+							t += "Transaction purpose: <input type='text' name='purpose' value='Funds transfer' style='width:200px; background-color:white;color:black'><br>"
 							t += "<input type='submit' value='Transfer funds'><br>"
 							t += "</form>"
 						else
