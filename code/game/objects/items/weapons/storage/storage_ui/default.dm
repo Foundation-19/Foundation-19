@@ -43,17 +43,17 @@
 
 	stored_start = new /obj //we just need these to hold the icon
 	stored_start.icon_state = "stored_start"
-	stored_start.mouse_opacity = 1
+	stored_start.mouse_opacity = MOUSE_OPACITY_ICON
 	stored_start.plane = FLOAT_PLANE
 	stored_start.layer = HUD_CLICKABLE_LAYER
 	stored_continue = new /obj
 	stored_continue.icon_state = "stored_continue"
-	stored_continue.mouse_opacity = 1
+	stored_continue.mouse_opacity = MOUSE_OPACITY_ICON
 	stored_continue.plane = FLOAT_PLANE
 	stored_continue.layer = HUD_CLICKABLE_LAYER
 	stored_end = new /obj
 	stored_end.icon_state = "stored_end"
-	stored_end.mouse_opacity = 1
+	stored_end.mouse_opacity = MOUSE_OPACITY_ICON
 	stored_end.plane = FLOAT_PLANE
 	stored_end.layer = HUD_CLICKABLE_LAYER
 

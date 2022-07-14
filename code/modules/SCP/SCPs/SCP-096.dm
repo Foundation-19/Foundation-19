@@ -4,6 +4,8 @@
 	desc = "No, no, you know not to look closely at it" //for non-targets
 	var/target_desc_1 = "A pale, emanciated figure. It looks almost human, but its limbs are long and skinny, and its face is......<span class='danger'>no. NO. NO!</span>" //for targets
 	var/target_desc_2 = "<span class='danger'>NO!</span>" //on second examine
+
+	var/scramble_desc = "A pale, emanciated figure. It looks almost human, but its limbs are long and skinny, its face <span class='info'>censored with several flashing squares.</span>"
 	icon = 'icons/SCP/scp-096.dmi'
 	icon_state = "scp"
 	icon_living = "scp"
@@ -14,6 +16,8 @@
 	anomalytype = SCP_096
 	status_flags = NO_ANTAG
 
+	// For scramble goggles.
+	var/hud_scramble
 
 	health = 600
 	maxHealth = 600
@@ -25,6 +29,7 @@
 	var/obj/machinery/atmospherics/unary/vent_pump/entry_vent //Graciously stolen from spider code
 
 	var/list/kill_list = list() //list of people this guy is about to murder
+	var/list/satisfied_urges = list() // list of people who have satisfied their urge to check out 096's face.
 	var/list/target_blacklist = list(/mob/living/carbon/human/scp343) //List of mob types exempt from 049s targetting.
 	var/list/examine_urge_list = list() //tracks urge to examine
 	var/list/examine_urge_values = list()
@@ -44,6 +49,26 @@
 	emote_hear = list("makes a faint groaning sound")
 	emote_see = list("shuffles around aimlessly", "shivers")
 
+/mob/living/simple_animal/hostile/scp096/New()
+	..()
+	hud_scramble = new /image/hud_overlay('icons/SCP/hud_scramble.dmi', src, "scramble-alive")
+
+// snowflake hud handling for scramble gear
+/mob/living/simple_animal/hostile/scp096/proc/handle_scramble()
+	if(hud_scramble)
+		var/image/holder = hud_scramble
+		if(health <= 0)
+			holder.icon_state = "scramble-dead"
+		else
+			holder.icon_state = "scramble-alive"
+
+		hud_scramble = holder
+
+/mob/living/simple_animal/hostile/scp096/death(gibbed, deathmessage, show_dead_message)
+	..()
+	handle_scramble()
+
+
 /mob/living/simple_animal/hostile/scp096/Destroy()
 	kill_list = null
 	examine_urge_list = null
@@ -56,6 +81,11 @@
 	check_los()
 	staggered = max(staggered/8 - 1, 0)
 	adjustBruteLoss(-5)
+
+	// I don't know if there is a simple way to
+	// check if a simplemob has just been revived,
+	// so here snowflake hud handling shall go
+	handle_scramble()
 
 	if(screaming) //we're still screaming
 		return
@@ -92,6 +122,8 @@
 /mob/living/simple_animal/hostile/scp096/proc/check_los()
 	for(var/mob/living/carbon/human/H in viewers(src, null))
 		if(H in kill_list)
+			continue
+		if(H in satisfied_urges)
 			continue
 		if(H.stat || H.equipment_tint_total == TINT_BLIND)
 			continue
@@ -151,12 +183,12 @@
 		if(5)
 			to_chat(H, "<span class='alert'>Unable to resist the urge, you look closely...</span>")
 			spawn(10)
-				examine(H)
+				specialexamine(H)
+				satisfied_urges += H
 
 	examine_urge = min(examine_urge+1, 5)
 	examine_urge_values[index] = examine_urge
-
-	CALLBACK( addtimer(H, .proc/reduce_examine_urge), 200 SECONDS)
+	addtimer(CALLBACK(src, .proc/reduce_examine_urge, H), 200 SECONDS)
 
 /mob/living/simple_animal/hostile/scp096/proc/reduce_examine_urge(var/mob/living/carbon/human/H)
 	var/index
@@ -175,48 +207,50 @@
 	examine_urge_values[index] = examine_urge
 
 /mob/living/simple_animal/hostile/scp096/examine(var/userguy)
-	if (istype(userguy, /mob/living/carbon))
-		if (!(userguy in kill_list))
-			to_chat(userguy, target_desc_1)
-			kill_list += userguy
-			if(userguy)
-				CALLBACK(addtimer( to_chat(userguy, "<span class='alert'>That was a mistake. Run</span>"), 20 SECONDS))
-			if(userguy)
-				CALLBACK(addtimer( to_chat(userguy, "<span class='danger'>RUN</span>"), 30 SECONDS))
-		else
-			to_chat(userguy, target_desc_2)
-		if(will_scream)
-			if(!buckled) dir = 2
-			visible_message("<span class='danger'>[src] SCREAMS!</span>")
-			playsound(get_turf(src), 'sound/voice/096-rage.ogg', 100)
-			screaming = 1
-			will_scream = 0
-			spawn(290)
-				screaming = 0
+	if(istype(userguy, /mob/living/carbon))
+		specialexamine(userguy)
 		return
 	..()
 
-/mob/living/simple_animal/hostile/scp096/proc/specialexamine(var/userguy) //Snowflaked.
-	if (istype(userguy, /mob/living/carbon))
-		if (!(userguy in kill_list))
-			to_chat(userguy, target_desc_1)
-			kill_list += userguy
-			if(userguy)
-				CALLBACK(addtimer( to_chat(userguy, "<span class='alert'>That was a mistake. Run</span>"), 20 SECONDS))
-			if(userguy)
-				CALLBACK(addtimer( to_chat(userguy, "<span class='danger'>RUN</span>"), 30 SECONDS))
-		else
-			to_chat(userguy, target_desc_2)
-		if(will_scream)
-			if(!buckled) dir = 2
-			visible_message("<span class='danger'>[src] SCREAMS!</span>")
-			playsound(get_turf(src), 'sound/voice/096-rage.ogg', 100)
-			screaming = 1
-			will_scream = 0
-			spawn(290)
-				screaming = 0
+/mob/living/simple_animal/hostile/scp096/proc/specialexamine(mob/userguy) //Snowflaked.
+	if (!iscarbon(userguy))
 		return
-	..()
+	// Do not let blind folks examine 096. Doesn't make sense.
+	if(ishuman(userguy))
+		var/mob/living/carbon/human/H = userguy
+		if(H.equipment_tint_total == TINT_BLIND)
+			return
+	// Do not let unconscious or dead people examine 096.
+	// Dead as in ghost in dead body, not as in ghost
+	if(userguy.stat)
+		return
+
+	satisfied_urges += userguy
+	var/protected = (userguy in GLOB.scramble_hud_protected)
+	var/scramblehud = (userguy in GLOB.scramble_hud_users)
+	if(scramblehud)
+		to_chat(userguy, scramble_desc)
+		if(protected)
+			return
+	if (!(userguy in kill_list))
+		kill_list += userguy
+		if(!scramblehud)
+			to_chat(userguy, target_desc_1)
+		if(userguy)
+			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, userguy, "<span class='alert'>That was a mistake. Run</span>"), 20 SECONDS)
+			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, userguy, "<span class='danger'>RUN</span>"), 30 SECONDS)
+	else if(!scramblehud)
+		to_chat(userguy, target_desc_2)
+
+	if(will_scream)
+		if(!buckled) dir = 2
+		visible_message("<span class='danger'>[src] SCREAMS!</span>")
+		playsound(get_turf(src), 'sound/voice/096-rage.ogg', 100)
+		screaming = 1
+		will_scream = 0
+		spawn(290)
+			screaming = 0
+	return
 
 /mob/living/simple_animal/hostile/scp096/proc/handle_target(var/mob/living/carbon/target)
 
@@ -307,7 +341,6 @@
 
 //This performs an immediate murder check, meant to avoid people cheesing us by just running faster than Life() refresh
 /mob/living/simple_animal/hostile/scp096/proc/check_murder()
-
 	//See if we're able to murder anyone
 	for(var/mob/living/carbon/M in get_turf(src))
 		if(M in kill_list)

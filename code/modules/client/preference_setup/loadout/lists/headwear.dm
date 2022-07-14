@@ -3,12 +3,15 @@
 	slot = slot_head
 	category = /datum/gear/head
 	denied_roles = list(/datum/job/classd)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	//Same idea, eats the helmet slot which guards spawn with. With the exception of certain beret variations, no reason to wear any of these.
 
 /datum/gear/head/beret
 	display_name = "beret, colour select"
 	path = /obj/item/clothing/head/beret/plaincolor
 	flags = GEAR_HAS_COLOR_SELECTION
 	description = "A simple, solid color beret. This one has no emblems or insignia on it."
+
 
 /datum/gear/head/bandana
 	display_name = "bandana selection"

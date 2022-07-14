@@ -18,6 +18,7 @@
 	display_name = "non-prescription glasses"
 	path = /obj/item/clothing/glasses
 	denied_roles = null
+	allowed_branches = list(/datum/mil_branch/civilian)
 
 /datum/gear/eyes/fashionglasses/New()
 	..()
@@ -47,23 +48,28 @@
 /datum/gear/eyes/security
 	display_name = "Security HUD"
 	path = /obj/item/clothing/glasses/hud/security
+	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/eyes/security/prescription
 	display_name = "Security HUD, prescription"
 	path = /obj/item/clothing/glasses/hud/security/prescription
+	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/eyes/security/sunglasses
 	display_name = "Security HUD Sunglasses"
 	path = /obj/item/clothing/glasses/sunglasses/sechud
+	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/eyes/security/aviators
 	display_name = "Security HUD Aviators"
 	path = /obj/item/clothing/glasses/sunglasses/sechud/toggle
+	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/eyes/security/ipatch
 	display_name = "HUDpatch, Security"
 	path = /obj/item/clothing/glasses/eyepatch/hud/security
 	cost = 2
+	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/eyes/medical
 	display_name = "Medical HUD"

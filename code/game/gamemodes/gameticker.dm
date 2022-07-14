@@ -51,8 +51,7 @@ var/global/datum/controller/gameticker/ticker
 			else
 				master_mode = "extended"
 
-		to_world("<B><FONT color='blue'>Welcome to the pre-game lobby!</FONT></B>")
-		to_world("Please, setup your character and select ready. Game will start in [pregame_timeleft] seconds")
+		to_world("<B><FONT color='blue'>The game will start soon!</FONT></B>")
 
 		while(current_state == GAME_STATE_PREGAME)
 			for(var/i=0, i<10, i++)
@@ -188,7 +187,7 @@ var/global/datum/controller/gameticker/ticker
 		cinematic.icon_state = "station_intact"
 		cinematic.plane = HUD_PLANE
 		cinematic.layer = HUD_ABOVE_ITEM_LAYER
-		cinematic.mouse_opacity = 0
+		cinematic.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 		cinematic.screen_loc = "1,0"
 
 		var/obj/structure/bed/temp_buckle = new(src)

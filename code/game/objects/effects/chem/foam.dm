@@ -9,7 +9,7 @@
 	anchored = TRUE
 	density = FALSE
 	layer = ABOVE_OBJ_LAYER
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	animate_movement = 0
 	var/amount = 3
 	var/expand = 1
@@ -180,3 +180,4 @@
 	if(air_group)
 		return 0
 	return !density
+	

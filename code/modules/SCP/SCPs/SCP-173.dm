@@ -207,8 +207,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 		AR.unlock(TRUE) // No more bolting in the SCPs and calling it a day
 		AR.welded = FALSE
 	A.stat |= BROKEN
-	var/check = A.open(TRUE)
-	A.visible_message(SPAN_DANGER("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]"))
+	var/check = A.open(1)
+	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
 
 /mob/living/scp_173/proc/DisableBlinking(mob/living/carbon/human/H)
 	next_blinks[H] = null
@@ -257,7 +257,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(!isobj(loc) && world.time > defecation_cooldown)
 		defecation_cooldown = world.time + defecation_cooldown_time
 		var/feces = pick(defecation_types)
-		new feces(loc)
+		var/obj/effect/new_f = new feces(loc)
+		new_f.update_icon()
 		if(!client) // So it doesn't spam it in one spot
 			var/Tdir = pick(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST)
 			if(Tdir && !IsBeingWatched())
