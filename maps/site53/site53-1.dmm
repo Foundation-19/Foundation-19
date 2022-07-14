@@ -17650,6 +17650,9 @@
 /obj/effect/floor_decal/carpet/green{
 	dir = 1
 	},
+/obj/machinery/camera/network/entrance{
+	dir = 8
+	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
 "Nv" = (
@@ -18867,6 +18870,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/chapel)
+"UQ" = (
+/obj/structure/bed/chair/wood/ebony{
+	icon_state = "bar_stool_padded_preview"
+	},
+/obj/machinery/camera/network/entrance,
+/turf/simulated/floor/tiled/monotile,
+/area/chapel)
 "UW" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/window/reinforced{
@@ -18975,6 +18985,18 @@
 "Vz" = (
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/monotile,
+/area/chapel)
+"VH" = (
+/obj/effect/floor_decal/corner/grey/half{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/chapel)
 "VI" = (
 /obj/structure/window/reinforced,
@@ -19232,6 +19254,11 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lowertram/archive)
+"Xi" = (
+/obj/structure/closet/coffin/wooden,
+/obj/machinery/camera/network/entrance,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/chapel)
 "Xn" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
@@ -42360,7 +42387,7 @@ aN
 pC
 pC
 xz
-Pe
+Xi
 Pe
 Pe
 ZA
@@ -44668,7 +44695,7 @@ Te
 Li
 Vt
 Te
-VU
+UQ
 On
 Qq
 VU
@@ -45451,7 +45478,7 @@ WV
 Ny
 Lt
 Ny
-Lt
+VH
 RC
 xz
 rY
