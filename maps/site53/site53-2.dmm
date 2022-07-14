@@ -28561,6 +28561,10 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
+"iGM" = (
+/obj/effect/landmark/test/safe_turf,
+/turf/simulated/floor/tiled,
+/area/site53/lowertrams/hub)
 "iHf" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -64009,7 +64013,7 @@ aZu
 aac
 azC
 aOt
-aae
+iGM
 aSV
 aWX
 bdo
