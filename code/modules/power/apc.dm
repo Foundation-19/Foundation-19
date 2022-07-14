@@ -216,7 +216,6 @@
 		return
 	failure_timer = max(failure_timer, round(duration))
 	playsound(src, 'sound/machines/apc_nopower.ogg', 75, 0)
-	update()
 
 /obj/machinery/power/apc/proc/init_round_start()
 	has_electronics = 2 //installed and secured
@@ -786,6 +785,7 @@
 
 /obj/machinery/power/apc/proc/update()
 	if(operating && !shorted && !failure_timer)
+
 		//prevent unnecessary updates to emergency lighting
 		var/new_power_light = (lighting >= POWERCHAN_ON)
 		if(area.power_light != new_power_light)
@@ -920,6 +920,7 @@
 		return
 
 	if(failure_timer)
+		update()
 		queue_icon_update()
 		failure_timer--
 		force_update = 1
