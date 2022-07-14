@@ -34,8 +34,14 @@ SUBSYSTEM_DEF(ticker)
 	///Set to TRUE when an admin forcibly ends round.
 	var/forced_end = FALSE
 
+	var/gametime_offset = 432000 //Deciseconds to add to world.time for station time.
+	var/station_time_rate_multiplier = 12 //factor of station time progressal vs real time.
+	var/round_start_time = 0
+
 /datum/controller/subsystem/ticker/Initialize()
 	to_world("<span class='info'><B>The game will start soon!</B></span>")
+	round_start_time = world.time
+	gametime_offset = rand(0, 23) HOURS
 	return ..()
 
 /datum/controller/subsystem/ticker/fire(resumed = 0)
@@ -211,6 +217,8 @@ SUBSYSTEM_DEF(ticker)
 	delay_notified = SSticker.delay_notified
 
 	minds = SSticker.minds
+
+	round_start_time = SSticker.round_start_time
 
 /*
 Helpers

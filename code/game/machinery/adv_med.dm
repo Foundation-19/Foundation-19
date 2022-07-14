@@ -279,7 +279,7 @@
 	var/mob/living/carbon/human/H = src
 	var/dat = "<meta charset=\"utf-8\">"
 	dat +="<b>SCAN RESULTS FOR: [H]</b>"
-	dat +="Scan performed at [stationtime2text()]<br>"
+	dat +="Scan performed at [station_time_timestamp("hh:mm")]<br>"
 
 	var/brain_result = "normal"
 	if(H.should_have_organ(BP_BRAIN))

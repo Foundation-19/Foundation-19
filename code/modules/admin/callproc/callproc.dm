@@ -98,6 +98,10 @@
 			to_chat(usr, "\The [target] has no call [procname]()")
 			clear()
 			return
+		if(procname in list(/datum/proc/set_variable_value))
+			to_chat(usr, SPAN_WARNING("You can't call [procname]!"))
+			clear()
+			return
 
 	arguments = list()
 	do_args()

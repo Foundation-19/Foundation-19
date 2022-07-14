@@ -182,7 +182,7 @@
 	var/list/header = list("<html><body><center>")
 
 	header += "<b>Welcome, [name].<br></b>"
-	header += "Round Duration: [roundduration2text()]<br>"
+	header += "Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]<br>"
 
 	if(evacuation_controller.has_evacuated())
 		header += "<font color='red'><b>\The [station_name()] has been evacuated.</b></font><br>"
