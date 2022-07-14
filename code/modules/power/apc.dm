@@ -216,6 +216,7 @@
 		return
 	failure_timer = max(failure_timer, round(duration))
 	playsound(src, 'sound/machines/apc_nopower.ogg', 75, 0)
+	update()
 
 /obj/machinery/power/apc/proc/init_round_start()
 	has_electronics = 2 //installed and secured
@@ -920,7 +921,6 @@
 		return
 
 	if(failure_timer)
-		update()
 		queue_icon_update()
 		failure_timer--
 		force_update = 1
