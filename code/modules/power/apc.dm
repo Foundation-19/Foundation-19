@@ -786,7 +786,6 @@
 
 /obj/machinery/power/apc/proc/update()
 	if(operating && !shorted && !failure_timer)
-
 		//prevent unnecessary updates to emergency lighting
 		var/new_power_light = (lighting >= POWERCHAN_ON)
 		if(area.power_light != new_power_light)
@@ -799,6 +798,8 @@
 		area.power_light = 0
 		area.power_equip = 0
 		area.power_environ = 0
+
+	area.power_change()
 
 	var/obj/item/cell/cell = get_cell()
 	if(!cell || cell.charge <= 0)
