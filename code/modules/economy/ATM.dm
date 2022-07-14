@@ -58,7 +58,7 @@
 		//short out the machine, shoot sparks, spew money!
 		emagged = TRUE
 		spark_system.start()
-		spawn_money(rand(100,500),src.loc)
+		spawn_money(rand(100,500),get_turf(src))
 		//we don't want to grief people by locking their id in an emagged ATM
 		release_held_id(user)
 
@@ -179,9 +179,9 @@
 							t += "<form name='transfer' action='?src=\ref[src]' method='get'>"
 							t += "<input type='hidden' name='src' value='\ref[src]'>"
 							t += "<input type='hidden' name='choice' value='transfer'>"
-							t += "Target account number: <input type='text' name='target_acc_number' value='' style='width:200px; background-color:white;'><br>"
-							t += "Funds to transfer: <input type='text' name='funds_amount' value='' style='width:200px; background-color:white;'><br>"
-							t += "Transaction purpose: <input type='text' name='purpose' value='Funds transfer' style='width:200px; background-color:white;'><br>"
+							t += "Target account number: <input type='text' name='target_acc_number' value='' style='width:200px; background-color:white; color:black'><br>"
+							t += "Funds to transfer: <input type='text' name='funds_amount' value='' style='width:200px; background-color:white; color:black'><br>"
+							t += "Transaction purpose: <input type='text' name='purpose' value='Funds transfer' style='width:200px; background-color:white; color:black'><br>"
 							t += "<input type='submit' value='Transfer funds'><br>"
 							t += "</form>"
 						else
@@ -206,7 +206,7 @@
 				//change our display depending on account security levels
 				if(!account_security_level)
 					t += "To log in to your savings account, press 'submit' with ID clearly displayed. If you wish to log into another account, please enter the account number into the field below or insert a registered ID card into the slot above and then press 'submit'.<BR>"
-				else if (account_security_level == 1)
+				else if(account_security_level == 1)
 					t += "This account requires a PIN to access. For security reasons the account # will need re-entered or ID bound to this account re-scanned."
 				else
 					t += "<span class='bad'><b>Due to the security settings on this account, all information needs to be re-entered and the ID bound to this account placed in the slot above.</b></span><BR>"
@@ -228,7 +228,7 @@
 		return
 
 /obj/machinery/atm/Topic(var/href, var/href_list)
-	if((. = ..()))
+	if((..()))
 		return
 	if(href_list["choice"])
 		switch(href_list["choice"])
@@ -240,7 +240,7 @@
 						alert("That is not a valid amount.")
 					else if(transfer_amount <= authenticated_account.money)
 						var/target_account_number = text2num(href_list["target_acc_number"])
-						var/transfer_purpose = href_list["purpose"]
+						var/transfer_purpose = sanitizeSafe(href_list["purpose"])
 						var/datum/money_account/target_account = get_account(target_account_number)
 						if(target_account && authenticated_account.transfer(target_account, transfer_amount, transfer_purpose))
 							to_chat(usr, "[icon2html(src, usr)]<span class='info'>Funds transfer successful.</span>")
@@ -249,20 +249,20 @@
 
 					else
 						to_chat(usr, "[icon2html(src, usr)]<span class='warning'>You don't have enough funds to do that!</span>")
+
 			if("view_screen")
 				view_screen = text2num(href_list["view_screen"])
+
 			if("change_security_level")
 				if(authenticated_account)
 					var/new_sec_level = max( min(text2num(href_list["new_security_level"]), 2), 0)
 					authenticated_account.security_level = new_sec_level
+
 			if("attempt_auth")
 
 				//Look to see if we're holding an ID, if so scan the data from that and use it, if not scan the user for the data
 				var/obj/item/card/id/login_card
-				if(held_card)
-					login_card = held_card
-				else
-					login_card = scan_user(usr)
+				login_card = held_card ? held_card : scan_user(usr)
 
 				if(!ticks_left_locked_down)
 					var/tried_account_num = text2num(href_list["account_num"])
@@ -313,6 +313,7 @@
 						to_chat(usr, "[icon2html(src, usr)] <span class='info'>Access granted. Welcome user '[authenticated_account.owner_name].'</span>")
 
 					previous_account_number = tried_account_num
+
 			if("e_withdrawal")
 				var/amount = max(text2num(href_list["funds_amount"]),0)
 				amount = round(amount, 0.01)
@@ -322,9 +323,10 @@
 					//create an entry in the account transaction log
 					if(authenticated_account.withdraw(amount, "Credit withdrawal", machine_id))
 						playsound(src, 'sound/machines/chime.ogg', 50, 1)
-						spawn_ewallet(amount,src.loc,usr)
+						spawn_ewallet(amount,get_turf(src),usr)
 					else
 						to_chat(usr, "[icon2html(src, usr)]<span class='warning'>You don't have enough funds to do that!</span>")
+
 			if("withdrawal")
 				var/amount = max(text2num(href_list["funds_amount"]),0)
 				amount = round(amount, 0.01)
@@ -334,12 +336,13 @@
 					//remove the money
 					if(authenticated_account.withdraw(amount, "Credit withdrawal", machine_id))
 						playsound(src, 'sound/machines/chime.ogg', 50, 1)
-						spawn_money(amount,src.loc,usr)
+						spawn_money(amount,get_turf(src),usr)
 					else
 						to_chat(usr, "[icon2html(src, usr)]<span class='warning'>You don't have enough funds to do that!</span>")
+
 			if("balance_statement")
 				if(authenticated_account)
-					var/obj/item/paper/R = new(src.loc)
+					var/obj/item/paper/R = new(get_turf(src))
 					R.SetName("Account balance: [authenticated_account.owner_name]")
 					R.info = "<b>Automated Teller Account Statement</b><br><br>"
 					R.info += "<i>Account holder:</i> [authenticated_account.owner_name]<br>"
@@ -357,13 +360,11 @@
 					R.add_overlay(stampoverlay)
 					R.stamps += "<HR><i>This paper has been stamped by the Automatic Teller Machine.</i>"
 
-				if(prob(50))
-					playsound(loc, 'sound/items/polaroid1.ogg', 50, 1)
-				else
-					playsound(loc, 'sound/items/polaroid2.ogg', 50, 1)
-			if ("print_transaction")
+					playsound(loc, prob(50) ? 'sound/items/polaroid1.ogg' : 'sound/items/polaroid2.ogg', 50, 1)
+
+			if("print_transaction")
 				if(authenticated_account)
-					var/obj/item/paper/R = new(src.loc)
+					var/obj/item/paper/R = new(get_turf(src))
 					R.SetName("Transaction logs: [authenticated_account.owner_name]")
 					R.info = "<b>Transaction logs</b><br>"
 					R.info += "<i>Account holder:</i> [authenticated_account.owner_name]<br>"
@@ -379,6 +380,7 @@
 					R.info += "<td><b>Value</b></td>"
 					R.info += "<td><b>Source terminal ID</b></td>"
 					R.info += "</tr>"
+
 					for(var/datum/transaction/T in authenticated_account.transaction_log)
 						R.info += "<tr>"
 						R.info += "<td>[T.date]</td>"
@@ -399,10 +401,7 @@
 					R.add_overlay(stampoverlay)
 					R.stamps += "<HR><i>This paper has been stamped by the Automatic Teller Machine.</i>"
 
-				if(prob(50))
-					playsound(loc, 'sound/items/polaroid1.ogg', 50, 1)
-				else
-					playsound(loc, 'sound/items/polaroid2.ogg', 50, 1)
+					playsound(loc, prob(50) ? 'sound/items/polaroid1.ogg' : 'sound/items/polaroid2.ogg', 50, 1)
 
 			if("insert_card")
 				if(!held_card)
@@ -411,12 +410,13 @@
 						to_chat(usr, "[icon2html(src, usr)] <span class='warning'>The ATM card reader rejected your ID because this machine has been sabotaged!</span>")
 					else
 						var/obj/item/I = usr.get_active_hand()
-						if (istype(I, /obj/item/card/id))
+						if(istype(I, /obj/item/card/id))
 							if(!usr.unEquip(I, src))
 								return
 							held_card = I
 				else
 					release_held_id(usr)
+
 			if("logout")
 				authenticated_account = null
 				account_security_level = 0

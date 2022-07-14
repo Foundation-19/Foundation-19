@@ -67,7 +67,7 @@
 
 /obj/item/gun/projectile/automatic/scp/ak74
 	name = "AK-103"
-	desc = "A 7.62х39mm modernized variant of the original AK-47, exported from Russia."
+	desc = "A 7.62x39mm modernized variant of the original AK-47, exported from Russia."
 	icon_state = "ak74"
 	item_state = "ak74"
 	w_class = ITEM_SIZE_HUGE
@@ -102,7 +102,7 @@
 */
 /obj/item/gun/projectile/automatic/scp/ak742
 	name = "AK-19"
-	desc = "A 7.62х39mm modernized variant of the original AK-47, exported from Russia. This one has a front grip and updated internals to fire quite a bit faster than it's brother."
+	desc = "A 7.62x39mm modernized variant of the original AK-47, exported from Russia. This one has a front grip and updated internals to fire quite a bit faster than it's brother."
 	icon_state = "ak742"
 	item_state = "ak742"
 	w_class = ITEM_SIZE_HUGE
