@@ -743,8 +743,6 @@
 			return global.sortInstance;
 		if("sounds_cache")
 			return global.sounds_cache;
-		if("spacevines_spawned")
-			return global.spacevines_spawned;
 		if("sparring_attack_cache")
 			return global.sparring_attack_cache;
 		if("spells")
@@ -1624,8 +1622,6 @@
 			global.sortInstance=newval;
 		if("sounds_cache")
 			global.sounds_cache=newval;
-		if("spacevines_spawned")
-			global.spacevines_spawned=newval;
 		if("sparring_attack_cache")
 			global.sparring_attack_cache=newval;
 		if("spells")
