@@ -30,7 +30,7 @@
 		return
 
 	var/mob/living/carbon/human/H = user
-	if (istype(H) && H.gloves)
+	if(istype(H) && H.gloves)
 		return
 
 	var/obj/item/I = owner

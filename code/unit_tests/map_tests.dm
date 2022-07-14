@@ -1,7 +1,7 @@
 /*
  *
  *  Map Unit Tests.
- *  Zone checks / APC / Scrubber / Vent / Cryopod Computers.
+ *  Zone checks / APC / Cryopod Computers.
  *
  *
  */
@@ -11,7 +11,7 @@
 
 
 /datum/unit_test/apc_area_test
-	name = "MAP: Area Test APC / Scrubbers / Vents"
+	name = "MAP: Area Test APC"
 
 
 /datum/unit_test/apc_area_test/start_test()
@@ -35,27 +35,13 @@
 			log_bad("[bad_msg] is not supposed to have an APC.")
 			area_good = 0
 
-		if(!A.air_scrub_names.len && !(exemptions & GLOB.using_map.NO_SCRUBBER))
-			log_bad("[bad_msg] lacks an air scrubber.")
-			area_good = 0
-		else if(A.air_scrub_names.len && (exemptions & GLOB.using_map.NO_SCRUBBER))
-			log_bad("[bad_msg] is not supposed to have an air scrubber.")
-			area_good = 0
-
-		if(!A.air_vent_names.len && !(exemptions & GLOB.using_map.NO_VENT))
-			log_bad("[bad_msg] lacks an air vent.[ascii_reset]")
-			area_good = 0
-		else if(A.air_vent_names.len && (exemptions & GLOB.using_map.NO_VENT))
-			log_bad("[bad_msg] is not supposed to have an air vent.")
-			area_good = 0
-
 		if(!area_good)
 			bad_areas.Add(A)
 
 	if(bad_areas.len)
-		fail("\[[bad_areas.len]/[area_test_count]\]Some areas did not have the expected APC/vent/scrubber setup.")
+		fail("\[[bad_areas.len]/[area_test_count]\]Some areas did not have the expected APC setup.")
 	else
-		pass("All \[[area_test_count]\] areas contained APCs, air scrubbers, and air vents.")
+		pass("All \[[area_test_count]\] areas contained APCs.")
 
 	return 1
 
@@ -66,44 +52,6 @@
 		if(istype(area, exempt_type))
 			return GLOB.using_map.apc_test_exempt_areas[exempt_type]
 
-/datum/unit_test/air_alarm_connectivity
-	name = "MAP: Air alarms shall receive updates."
-	async = TRUE // Waits for SStimers to finish one full run before testing
-
-/datum/unit_test/air_alarm_connectivity/start_test()
-	return 1
-
-/datum/unit_test/air_alarm_connectivity/subsystems_to_await()
-	return list(SStimer)
-
-/datum/unit_test/air_alarm_connectivity/check_result()
-	var/failed = FALSE
-	for(var/area/A in world)
-		if(!A.z)
-			continue
-		if(!isPlayerLevel(A.z))
-			continue
-		var/obj/machinery/alarm/alarm = locate() in A // Only test areas with functional alarms
-		if(!alarm)
-			continue
-		if(alarm.stat & (NOPOWER | BROKEN))
-			continue
-
-		for(var/tag in A.air_vent_names) // The point of this test is that while the names list is registered at init, the info is transmitted by radio.
-			if(!A.air_vent_info[tag])
-				log_bad("Vent [A.air_vent_names[tag]] with id_tag [tag] did not update the air alarm in area [A].")
-				failed = TRUE
-		for(var/tag in A.air_scrub_names)
-			if(!A.air_scrub_info[tag])
-				log_bad("Scrubber [A.air_scrub_names[tag]] with id_tag [tag] did not update the air alarm in area [A].")
-				failed = TRUE
-
-	if(failed)
-		fail("Some areas did not receive updates from all of their atmos devices.")
-	else
-		pass("All atmos devices updated their area's air alarms successfully.")
-
-	return 1
 //=======================================================================================
 
 /datum/unit_test/wire_test

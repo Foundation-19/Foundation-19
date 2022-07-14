@@ -441,7 +441,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		qdel(G)
 
 /obj/structure/femur_breaker/attack_hand(mob/user)
-	if (buckled_mob && buckled_mob != user)
+	if(buckled_mob && buckled_mob != user)
 
 		visible_message("<span class = 'notice'>[user] unbuckles [buckled_mob] from the femur breaker.</span>")
 		buckled_mob.buckled = null
@@ -459,7 +459,8 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		buckled_mob.anchored = FALSE
 		buckled_mob = null
 
-/decl/public_access/public_method/femurbreaker
+//This doesn't work by the way, but I'm not fixing it because I think earraping the entire server with the sound is a shit idea
+/decl/public_access/public_method/femurbreaker 
 	name = "spark"
 	desc = "Creates sparks to ignite nearby gases."
 	call_proc = /obj/structure/femur_breaker/proc/activate
@@ -509,9 +510,6 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	icon = 'icons/obj/objects.dmi'
 	id_tag = 2
 
-
-/obj/machinery/button/femur_breaker/Initialize()
-	. = ..()
 
 /obj/machinery/button/femur_breaker/activate(mob/user)
 	for(var/obj/structure/femur_breaker/C in range())
@@ -575,21 +573,19 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	see_in_dark = 7
 
 /mob/observer/eye/scp106/New()
-	. = ..()
 	visualnet = new /datum/visualnet/scp106
+	return ..()
 
 /mob/observer/eye/scp106/EyeMove(direct)
 	var/turf/step = get_turf(get_step(src, direct))
 	if(!step.is_phasable())
 		return FALSE
-	. = ..()
+	return ..()
 
 /datum/visualnet/scp106
 	valid_source_types =  list(/mob/observer/eye/scp106,/mob/living/carbon/human/scp106) //list(/turf/simulated/wall,/turf/unsimulated/wall)
 	chunk_type = /datum/chunk/scp106
 
-/datum/visualnet/scp106/New()
-	. = ..()
 
 /datum/chunk/scp106/acquire_visible_turfs(list/visible)
 	for(var/source in sources)

@@ -62,7 +62,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 /mob/living/scp_173/Destroy()
 	next_blinks = null
 	GLOB.scp173s -= src
-	..()
+	return ..()
 
 /mob/living/scp_173/say(message)
 	return // lol you can't talk

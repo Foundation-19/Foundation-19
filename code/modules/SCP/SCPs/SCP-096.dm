@@ -50,8 +50,8 @@
 	emote_see = list("shuffles around aimlessly", "shivers")
 
 /mob/living/simple_animal/hostile/scp096/New()
-	..()
 	hud_scramble = new /image/hud_overlay('icons/SCP/hud_scramble.dmi', src, "scramble-alive")
+	..()
 
 // snowflake hud handling for scramble gear
 /mob/living/simple_animal/hostile/scp096/proc/handle_scramble()
@@ -65,9 +65,9 @@
 		hud_scramble = holder
 
 /mob/living/simple_animal/hostile/scp096/death(gibbed, deathmessage, show_dead_message)
-	..()
-	handle_scramble()
 
+	handle_scramble()
+	return ..()
 
 /mob/living/simple_animal/hostile/scp096/Destroy()
 	kill_list = null

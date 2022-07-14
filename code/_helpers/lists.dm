@@ -182,13 +182,13 @@ Checks if a list has the same entries and values as an element of big.
 
 // Removes the first element of a list, a la pops the left-most element.
 /proc/popleft(list/L)
-	if(L.len)
+	if(length(L))
 		. = L[1]
 		L.Cut(1,2)
 
 //Returns the next element in parameter list after first appearance of parameter element. If it is the last element of the list or not present in list, returns first element.
 /proc/next_in_list(element, list/L)
-	for(var/i=1, i<L.len, i++)
+	for(var/i=1, i<length(L), i++)
 		if(L[i] == element)
 			return L[i+1]
 	return L[1]
@@ -201,7 +201,7 @@ Checks if a list has the same entries and values as an element of big.
 /proc/reverselist(list/L)
 	var/list/output = list()
 	if(L)
-		for(var/i = L.len; i >= 1; i--)
+		for(var/i = length(L); i >= 1; i--)
 			output += L[i]
 	return output
 
@@ -212,8 +212,8 @@ Checks if a list has the same entries and values as an element of big.
 
 	L = L.Copy()
 
-	for(var/i=1; i<L.len; i++)
-		L.Swap(i, rand(i,L.len))
+	for(var/i=1; i<length(L); i++)
+		L.Swap(i, rand(i,length(L)))
 	return L
 
 //Return a list with no duplicate entries
@@ -230,9 +230,9 @@ Checks if a list has the same entries and values as an element of big.
 
 //Mergesort: divides up the list into halves to begin the sort
 /proc/sortKey(var/list/client/L, var/order = 1)
-	if(isnull(L) || L.len < 2)
+	if(isnull(L) || length(L) < 2)
 		return L
-	var/middle = L.len / 2 + 1
+	var/middle = length(L) / 2 + 1
 	return mergeKey(sortKey(L.Copy(0,middle)), sortKey(L.Copy(middle)), order)
 
 //Mergsort: does the actual sorting and returns the results back to sortAtom
@@ -240,7 +240,7 @@ Checks if a list has the same entries and values as an element of big.
 	var/Li=1
 	var/Ri=1
 	var/list/result = new()
-	while(Li <= L.len && Ri <= R.len)
+	while(Li <= length(L) && Ri <= length(R))
 		var/client/rL = L[Li]
 		var/client/rR = R[Ri]
 		if(sorttext(rL.ckey, rR.ckey) == order)
@@ -248,17 +248,17 @@ Checks if a list has the same entries and values as an element of big.
 		else
 			result += R[Ri++]
 
-	if(Li <= L.len)
+	if(Li <= length(L))
 		return (result + L.Copy(Li, 0))
 	return (result + R.Copy(Ri, 0))
 
 //Mergesort: divides up the list into halves to begin the sort
 /proc/sortAtom(var/list/atom/L, var/order = 1)
-	if(isnull(L) || L.len < 2)
+	if(isnull(L) || length(L) < 2)
 		return L
 	if(null in L)	// Cannot sort lists containing null entries.
 		return L
-	var/middle = L.len / 2 + 1
+	var/middle = length(L) / 2 + 1
 	return mergeAtoms(sortAtom(L.Copy(0,middle)), sortAtom(L.Copy(middle)), order)
 
 //Mergsort: does the actual sorting and returns the results back to sortAtom
@@ -267,7 +267,7 @@ Checks if a list has the same entries and values as an element of big.
 	var/Ri=1
 	var/list/result = new()
 
-	while(Li <= L.len && Ri <= R.len)
+	while(Li <= length(L) && Ri <= length(R))
 		var/atom/rL = L[Li]
 		var/atom/rR = R[Ri]
 		if(sorttext(rL.name, rR.name) == order)
@@ -275,15 +275,15 @@ Checks if a list has the same entries and values as an element of big.
 		else
 			result += R[Ri++]
 
-	if(Li <= L.len)
+	if(Li <= length(L))
 		return (result + L.Copy(Li, 0))
 	return (result + R.Copy(Ri, 0))
 
 //Mergesort: any value in a list
 /proc/sortList(var/list/L)
-	if(L.len < 2)
+	if(length(L) < 2)
 		return L
-	var/middle = L.len / 2 + 1 // Copy is first,second-1
+	var/middle = length(L) / 2 + 1 // Copy is first,second-1
 	return mergeLists(sortList(L.Copy(0,middle)), sortList(L.Copy(middle))) //second parameter null = to end of list
 
 //Mergsorge: uses sortList() but uses the var's name specifically. This should probably be using mergeAtom() instead
@@ -297,29 +297,29 @@ Checks if a list has the same entries and values as an element of big.
 	var/Li=1
 	var/Ri=1
 	var/list/result = new()
-	while(Li <= L.len && Ri <= R.len)
+	while(Li <= length(L) && Ri <= length(R))
 		if(sorttext(L[Li], R[Ri]) < 1)
 			result += R[Ri++]
 		else
 			result += L[Li++]
 
-	if(Li <= L.len)
+	if(Li <= length(L))
 		return (result + L.Copy(Li, 0))
 	return (result + R.Copy(Ri, 0))
 
 
 // List of lists, sorts by element[key] - for things like crew monitoring computer sorting records by name.
 /proc/sortByKey(var/list/L, var/key)
-	if(L.len < 2)
+	if(length(L) < 2)
 		return L
-	var/middle = L.len / 2 + 1
+	var/middle = length(L) / 2 + 1
 	return mergeKeyedLists(sortByKey(L.Copy(0, middle), key), sortByKey(L.Copy(middle), key), key)
 
 /proc/mergeKeyedLists(var/list/L, var/list/R, var/key)
 	var/Li=1
 	var/Ri=1
 	var/list/result = new()
-	while(Li <= L.len && Ri <= R.len)
+	while(Li <= length(L) && Ri <= length(R))
 		if(sorttext(L[Li][key], R[Ri][key]) < 1)
 			// Works around list += list2 merging lists; it's not pretty but it works
 			result += "temp item"
@@ -328,29 +328,29 @@ Checks if a list has the same entries and values as an element of big.
 			result += "temp item"
 			result[result.len] = L[Li++]
 
-	if(Li <= L.len)
+	if(Li <= length(L))
 		return (result + L.Copy(Li, 0))
 	return (result + R.Copy(Ri, 0))
 
 
 //Mergesort: any value in a list, preserves key=value structure
 /proc/sortAssoc(var/list/L)
-	if(L.len < 2)
+	if(length(L) < 2)
 		return L
-	var/middle = L.len / 2 + 1 // Copy is first,second-1
+	var/middle = length(L) / 2 + 1 // Copy is first,second-1
 	return mergeAssoc(sortAssoc(L.Copy(0,middle)), sortAssoc(L.Copy(middle))) //second parameter null = to end of list
 
 /proc/mergeAssoc(var/list/L, var/list/R)
 	var/Li=1
 	var/Ri=1
 	var/list/result = new()
-	while(Li <= L.len && Ri <= R.len)
+	while(Li <= length(L) && Ri <= length(R))
 		if(sorttext(L[Li], R[Ri]) < 1)
 			result += R&R[Ri++]
 		else
 			result += L&L[Li++]
 
-	if(Li <= L.len)
+	if(Li <= length(L))
 		return (result + L.Copy(Li, 0))
 	return (result + R.Copy(Ri, 0))
 
@@ -401,7 +401,7 @@ Checks if a list has the same entries and values as an element of big.
 
 //Don't use this on lists larger than half a dozen or so
 /proc/insertion_sort_numeric_list_ascending(var/list/L)
-	//to_world_log("ascending len input: [L.len]")
+	//to_world_log("ascending len input: [length(L)]")
 	var/list/out = list(pop(L))
 	for(var/entry in L)
 		if(isnum(entry))
@@ -418,7 +418,7 @@ Checks if a list has the same entries and values as an element of big.
 	return out
 
 /proc/insertion_sort_numeric_list_descending(var/list/L)
-	//to_world_log("descending len input: [L.len]")
+	//to_world_log("descending len input: [length(L)]")
 	var/list/out = insertion_sort_numeric_list_ascending(L)
 	//to_world_log("output: [out.len]")
 	return reverselist(out)
@@ -430,7 +430,7 @@ Checks if a list has the same entries and values as an element of big.
 // Return the index using dichotomic search
 /proc/FindElementIndex(atom/A, list/L, cmp)
 	var/i = 1
-	var/j = L.len
+	var/j = length(L)
 	var/mid
 
 	while(i < j)
@@ -441,23 +441,23 @@ Checks if a list has the same entries and values as an element of big.
 		else
 			j = mid
 
-	if(i == 1 || i ==  L.len) // Edge cases
+	if(i == 1 || i ==  length(L)) // Edge cases
 		return (call(cmp)(L[i],A) > 0) ? i : i+1
 	else
 		return i
 
 
 /proc/dd_sortedObjectList(var/list/L, var/cache=list())
-	if(L.len < 2)
+	if(length(L) < 2)
 		return L
-	var/middle = L.len / 2 + 1 // Copy is first,second-1
+	var/middle = length(L) / 2 + 1 // Copy is first,second-1
 	return dd_mergeObjectList(dd_sortedObjectList(L.Copy(0,middle), cache), dd_sortedObjectList(L.Copy(middle), cache), cache) //second parameter null = to end of list
 
 /proc/dd_mergeObjectList(var/list/L, var/list/R, var/list/cache)
 	var/Li=1
 	var/Ri=1
 	var/list/result = new()
-	while(Li <= L.len && Ri <= R.len)
+	while(Li <= length(L) && Ri <= length(R))
 		var/LLi = L[Li]
 		var/RRi = R[Ri]
 		var/LLiV = cache[LLi]
@@ -473,14 +473,14 @@ Checks if a list has the same entries and values as an element of big.
 		else
 			result += R[Ri++]
 
-	if(Li <= L.len)
+	if(Li <= length(L))
 		return (result + L.Copy(Li, 0))
 	return (result + R.Copy(Ri, 0))
 
 // Insert an object into a sorted list, preserving sortedness
 /proc/dd_insertObjectList(var/list/L, var/O)
 	var/min = 1
-	var/max = L.len + 1
+	var/max = length(L) + 1
 	var/Oval = O:dd_SortValue()
 
 	while(1)
@@ -579,7 +579,8 @@ Checks if a list has the same entries and values as an element of big.
 //creates every subtype of prototype (excluding prototype) and adds it to list L.
 //if no list/L is provided, one is created.
 /proc/init_subtypes(prototype, list/L)
-	if(!istype(L))	L = list()
+	if(!istype(L))
+		L = list()
 	for(var/path in subtypesof(prototype))
 		L += new path()
 	return L
@@ -601,7 +602,7 @@ Checks if a list has the same entries and values as an element of big.
 			. += entry
 
 /proc/group_by(var/list/group_list, var/key, var/value)
-	var/values = group_list[key]
+	var/list/values = group_list[key]
 	if(!values)
 		values = list()
 		group_list[key] = values
@@ -628,9 +629,9 @@ Checks if a list has the same entries and values as an element of big.
 
 //Move a single element from position fromIndex within a list, to position toIndex
 //All elements in the range [1,toIndex) before the move will be before the pivot afterwards
-//All elements in the range [toIndex, L.len+1) before the move will be after the pivot afterwards
+//All elements in the range [toIndex, length(L)+1) before the move will be after the pivot afterwards
 //In other words, it's as if the range [fromIndex,toIndex) have been rotated using an unsigned shift operation common to other languages.
-//fromIndex and toIndex must be in the range [1,L.len+1]
+//fromIndex and toIndex must be in the range [1,length(L)+1]
 //This will preserve associations ~Carnie
 /proc/moveElement(list/L, fromIndex, toIndex)
 	if(fromIndex == toIndex || fromIndex+1 == toIndex)	//no need to move
@@ -667,13 +668,13 @@ Checks if a list has the same entries and values as an element of big.
 
 //replaces reverseList ~Carnie
 /proc/reverseRange(list/L, start=1, end=0)
-	if(L.len)
-		start = start % L.len
-		end = end % (L.len+1)
+	if(length(L))
+		start = start % length(L)
+		end = end % (length(L)+1)
 		if(start <= 0)
-			start += L.len
+			start += length(L)
 		if(end <= 0)
-			end += L.len + 1
+			end += length(L) + 1
 
 		--end
 		while(start < end)
@@ -687,7 +688,7 @@ Checks if a list has the same entries and values as an element of big.
 	if(!islist(l))
 		return l
 	. = l.Copy()
-	for(var/i = 1 to l.len)
+	for(var/i = 1 to length(L))
 		if(islist(.[i]))
 			.[i] = .(.[i])
 
