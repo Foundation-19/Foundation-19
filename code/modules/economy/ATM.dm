@@ -240,7 +240,7 @@
 						alert("That is not a valid amount.")
 					else if(transfer_amount <= authenticated_account.money)
 						var/target_account_number = text2num(href_list["target_acc_number"])
-						var/transfer_purpose = sanitize(href_list["purpose"])
+						var/transfer_purpose = sanitizeSafe(href_list["purpose"])
 						var/datum/money_account/target_account = get_account(target_account_number)
 						if(target_account && authenticated_account.transfer(target_account, transfer_amount, transfer_purpose))
 							to_chat(usr, "[icon2html(src, usr)]<span class='info'>Funds transfer successful.</span>")
