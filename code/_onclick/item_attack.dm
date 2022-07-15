@@ -31,13 +31,12 @@ avoid code duplication. This includes items that may sometimes act as a standard
 
 // No comment
 /atom/proc/attackby(obj/item/W, mob/user, var/click_params)
-	user.client.interact_log += "([time_stamp()]) - Interacted with [src], using [W]."
-
+	user.client.interact_log += "([time_stamp()]) - Interacted with [src], using [W]. (Intent: [user.a_intent]|Location: [get_area(src)])"
 	return
 
 /atom/movable/attackby(obj/item/W, mob/user)
 	if(W?.item_flags & ITEM_FLAG_NO_BLUDGEON)
-		return
+		visible_message("<span class='danger'>[src] has been hit by [user] with [W].</span>")
 	return ..()
 
 /mob/living/attackby(obj/item/I, mob/user)
@@ -50,8 +49,8 @@ avoid code duplication. This includes items that may sometimes act as a standard
 		return 1
 
 	if(client)
-		user.client.interact_log += "([time_stamp()]) - Interacted with [src], using [I]."
-		src.client.interact_log += "([time_stamp()]) - Was interacted with by [user], using [I]."
+		user.client.interact_log += "([time_stamp()]) - Interacted with [src], using [I]. (Intent: [user.a_intent]|Location: [get_area(src)])"
+		src.client.interact_log += "([time_stamp()]) - Was interacted with by [user], using [I]. (Intent: [user.a_intent]|Location: [get_area(src)])"
 	return I.attack(src, user, user.zone_sel ? user.zone_sel.selecting : ran_zone())
 
 /mob/living/carbon/human/attackby(obj/item/I, mob/user)
