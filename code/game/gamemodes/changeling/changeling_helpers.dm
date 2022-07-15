@@ -6,7 +6,7 @@
 		mind.changeling = new /datum/changeling(gender)
 		mind.changeling.owner_mind = mind
 
-	verbs += /datum/changeling/proc/EvolutionMenu
+	add_verb(src, /datum/changeling/proc/EvolutionMenu)
 	add_language(LANGUAGE_CHANGELING_GLOBAL)
 
 	if(!LAZYLEN(GLOB.changeling_power_instances))

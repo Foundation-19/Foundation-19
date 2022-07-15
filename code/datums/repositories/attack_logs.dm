@@ -21,7 +21,7 @@ var/repository/attack_logs/attack_log_repository = new()
 	var/message
 
 /datum/attack_log/New(var/mob/mob_attacker, var/mob/mob_victim, var/action_message)
-	station_time = time_stamp()
+	station_time = station_time_timestamp()
 
 	attacker = mob_repository.get_lite_mob(mob_attacker)
 	victim = mob_repository.get_lite_mob(mob_victim)

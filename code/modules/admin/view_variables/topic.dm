@@ -411,7 +411,7 @@
 		if(!verb || verb == "Cancel")
 			return
 		else
-			H.verbs += verb
+			add_verb(H, verb)
 
 	else if(href_list["remverb"])
 		if(!check_rights(R_DEBUG))      return
@@ -428,7 +428,7 @@
 		if(!verb)
 			return
 		else
-			H.verbs -= verb
+			remove_verb(H, verb)
 
 	else if(href_list["addorgan"])
 		if(!check_rights(R_SPAWN))	return
@@ -485,9 +485,10 @@
 			return
 
 		SSnano.close_uis(H)
-		H.client.cache.Cut()
-		var/datum/asset/assets = get_asset_datum(/datum/asset/nanoui)
-		assets.send(H)
+		var/datum/asset/simple/nanoui/asset = get_asset_datum(/datum/asset/simple/nanoui)
+		//Pretend we never recieved this asset
+		H.client.sent_assets -= asset.assets
+		asset.send(H.client)
 
 		to_chat(usr, "Resource files sent")
 		to_chat(H, "Your NanoUI Resource files have been refreshed")

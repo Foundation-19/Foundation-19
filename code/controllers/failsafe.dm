@@ -93,7 +93,4 @@ GLOBAL_REAL(Failsafe, /datum/controller/failsafe)
 			sleep(initial(processing_interval))
 
 /datum/controller/failsafe/stat_entry()
-	if(!stat_line)
-		stat_line = new (null, src)
-	stat_line.name = "Defcon: [defcon] (Interval: [Failsafe.processing_interval] | Iteration: [Failsafe.master_iteration])"
-	stat(name, stat_line)
+	return "Defcon: [defcon] (Interval: [Failsafe.processing_interval] | Iteration: [Failsafe.master_iteration])"

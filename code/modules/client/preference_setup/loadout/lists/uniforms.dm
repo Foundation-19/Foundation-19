@@ -3,7 +3,6 @@
 	slot = slot_w_uniform
 	category = /datum/gear/uniform
 	denied_roles = list(/datum/job/classd)
-	allowed_branches = list(/datum/mil_branch/civilian)
 	//Security shouldn't wear something else than their uniform
 
 /datum/gear/uniform/jumpsuit

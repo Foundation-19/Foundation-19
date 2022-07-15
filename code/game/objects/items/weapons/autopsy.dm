@@ -73,7 +73,7 @@
 	var/scan_data = ""
 
 	if(timeofdeath)
-		scan_data += "<b>Time of death:</b> [worldtime2stationtime(timeofdeath)]<br><br>"
+		scan_data += "<b>Time of death:</b> [time2text(SSticker.round_start_time + timeofdeath, "hh:mm")]<br><br>"
 
 	var/n = 1
 	for(var/wdata_idx in wdata)
@@ -120,7 +120,7 @@
 		if(damaging_weapon)
 			scan_data += "Severity: [damage_desc]<br>"
 			scan_data += "Hits by weapon: [total_hits]<br>"
-		scan_data += "Approximate time of wound infliction: [worldtime2stationtime(age)]<br>"
+		scan_data += "Approximate time of wound infliction: [time2text(SSticker.round_start_time + age, "hh:mm")]<br>"
 		scan_data += "Affected limbs: [D.organ_names]<br>"
 		scan_data += "Possible weapons:<br>"
 		for(var/weapon_name in weapon_chances)
