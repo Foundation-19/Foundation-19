@@ -72,8 +72,8 @@ SUBSYSTEM_DEF(event)
 		if (MC_TICK_CHECK)
 			return
 
-/datum/controller/subsystem/event/stat_entry()
-	..("E:[active_events.len]")
+/datum/controller/subsystem/event/stat_entry(msg)
+	.=..("[msg] E:[active_events.len]")
 
 //Actual event handling
 /datum/controller/subsystem/event/proc/event_complete(var/datum/event/E)

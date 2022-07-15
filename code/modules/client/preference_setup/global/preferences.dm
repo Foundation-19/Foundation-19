@@ -113,6 +113,7 @@ var/list/_client_preferences_by_type
 	description = "Play announcement sound effects"
 	key = "SOUND_ANNOUNCEMENT"
 	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+
 /datum/client_preference/ghost_ears
 	description = "Ghost ears"
 	key = "CHAT_GHOSTEARS"
@@ -243,6 +244,42 @@ var/list/_client_preferences_by_type
 	description ="Floating chat messages"
 	key = "FLOATING_CHAT"
 	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
+
+/datum/client_preference/fancy_tgui
+	description = "Fancy TGUI"
+	key = "FANCY_TGUI"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_YES
+
+/datum/client_preference/lock_tgui
+	description = "Lock TGUI"
+	key = "LOCK_TGUI"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/fast_mc_refresh
+	description = "Fast MC Refresh"
+	key = "FAST_MC_REFRESH"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/use_tgui_inputs
+	description = "Use TGUI inputs"
+	key = "USE_TGUI_INPUTS"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_YES
+
+/datum/client_preference/large_tgui_inputs
+	description = "Large TGUI inputs buttons"
+	key = "LARGE_TGUI_INPUTS"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/swap_tgui_inputs
+	description = "Swap Sumbmit/Cancle buttons"
+	key = "SWAP_TGUI_INPUTS"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_YES
 
 /********************
 * General Staff Preferences *

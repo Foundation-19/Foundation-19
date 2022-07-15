@@ -25,7 +25,7 @@
 		else
 			return
 	// Client does NOT have tgui_input on: Returns regular input
-	if(!user.client.prefs.tgui_input)
+	if(user.client.get_preference_value(/datum/client_preference/use_tgui_inputs) == GLOB.PREF_NO)
 		var/input_number = input(user, message, title, default) as null|num
 		return clamp(round_value ? round(input_number) : input_number, min_value, max_value)
 	var/datum/tgui_input_number/number_input = new(user, message, title, default, max_value, min_value, timeout, round_value)
@@ -113,11 +113,11 @@
 /datum/tgui_input_number/tgui_static_data(mob/user)
 	var/list/data = list()
 	data["init_value"] = default // Default is a reserved keyword
-	data["large_buttons"] = user.client.prefs.tgui_input_large
+	data["large_buttons"] = (user.client.get_preference_value(/datum/client_preference/large_tgui_inputs) == GLOB.PREF_YES)
 	data["max_value"] = max_value
 	data["message"] = message
 	data["min_value"] = min_value
-	data["swapped_buttons"] = user.client.prefs.tgui_input_swapped
+	data["swapped_buttons"] = (user.client.get_preference_value(/datum/client_preference/swap_tgui_inputs) == GLOB.PREF_YES)
 	data["title"] = title
 	return data
 

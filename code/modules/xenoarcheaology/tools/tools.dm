@@ -19,19 +19,18 @@
 	var/turf/T = get_turf(src)
 	return T ? "[T.x]:[T.y]:[T.z]" : "N/A"
 
-/mob/living/carbon/human/Stat()
-	. = ..()
-	if(statpanel("Status"))
-		var/obj/item/device/gps/L = locate() in src
-		if(L)
-			stat("Coordinates:", "[L.get_coordinates()]")
+/mob/living/carbon/human/get_status_tab_items()
+	.=..()
+	var/obj/item/device/gps/L = locate() in src
+	if(L)
+		. += "Coordinates: [L.get_coordinates()]"
 
-/mob/living/silicon/robot/Stat()
-	. = ..()
-	if(statpanel("Status") && (istype(module_state_1, /obj/item/device/gps) || istype(module_state_2, /obj/item/device/gps) || istype(module_state_3, /obj/item/device/gps)))
+/mob/living/silicon/robot/get_status_tab_items()
+	.=..()
+	if(istype(module_state_1, /obj/item/device/gps) || istype(module_state_2, /obj/item/device/gps) || istype(module_state_3, /obj/item/device/gps))
 		var/obj/item/device/gps/L = locate() in src
 		if(L)
-			stat("Coordinates:", "[L.get_coordinates()]")
+			. += "Coordinates: [L.get_coordinates()]"
 
 /obj/item/device/measuring_tape
 	name = "measuring tape"

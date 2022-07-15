@@ -53,23 +53,13 @@ SUBSYSTEM_DEF(garbage)
 
 /datum/controller/subsystem/garbage/stat_entry(msg)
 	var/list/counts = list()
-	for (var/list/L in queues)
-		counts += length(L)
-	msg += "Q:[counts.Join(",")]|D:[delslasttick]|G:[gcedlasttick]|"
-	msg += "GR:"
-	if (!(delslasttick+gcedlasttick))
-		msg += "n/a|"
-	else
-		msg += "[round((gcedlasttick/(delslasttick+gcedlasttick))*100, 0.01)]%|"
-
-	msg += "TD:[totaldels]|TG:[totalgcs]|"
-	if (!(totaldels+totalgcs))
-		msg += "n/a|"
-	else
-		msg += "TGR:[round((totalgcs/(totaldels+totalgcs))*100, 0.01)]%"
-	msg += " P:[pass_counts.Join(",")]"
-	msg += "|F:[fail_counts.Join(",")]"
-	..(msg)
+	for (var/list/L as anything in queues)
+		counts += L.len
+	msg = "[msg] Q:[counts.Join(",")]|D:[delslasttick]|G:[gcedlasttick]|"
+	msg = "[msg] GR: [!(delslasttick+gcedlasttick) ? "n/a|" : "[round((gcedlasttick/(delslasttick+gcedlasttick))*100, 0.01)]%|"]"
+	msg = "[msg] TD:[totaldels]|TG:[totalgcs]|[!(totaldels+totalgcs) ? "n/a|" : "TGR:[round((totalgcs/(totaldels+totalgcs))*100, 0.01)]%"]"
+	msg = "[msg] P:[pass_counts.Join(",")] |F:[fail_counts.Join(",")]"
+	.=..(msg)
 
 /datum/controller/subsystem/garbage/Shutdown()
 	//Adds the del() log to the qdel log file

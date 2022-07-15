@@ -76,12 +76,12 @@
 	if(!worm.host.lastKnownIP)
 		worm.host.lastKnownIP = s2h_ip
 	worm.controlling = TRUE
-	worm.host.verbs += /mob/living/carbon/proc/release_control
-	worm.host.verbs += /mob/living/carbon/proc/punish_host
-	worm.host.verbs += /mob/living/carbon/proc/spawn_larvae
+	add_verb(worm.host, /mob/living/carbon/proc/release_control)
+	add_verb(worm.host, /mob/living/carbon/proc/punish_host)
+	add_verb(worm.host, /mob/living/carbon/proc/spawn_larvae)
 
 	return TRUE
-	
+
 /obj/screen/borer/inject_chemicals
 	name = "Inject Chemicals"
 	icon_state = "inject_chemicals"

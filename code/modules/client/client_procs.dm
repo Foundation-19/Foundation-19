@@ -449,16 +449,6 @@
 	var/seconds = inactivity/10
 	return "[round(seconds / 60)] minute\s, [seconds % 60] second\s"
 
-
-/client/Stat()
-	if(!usr)
-		return
-	// Add always-visible stat panel calls here, to define a consistent display order.
-	statpanel("Status")
-	..()
-	if (config.stat_delay > 0)
-		sleep(config.stat_delay)
-
 /mob/proc/MayRespawn()
 	return 0
 
@@ -535,21 +525,38 @@
 	var/aspect_ratio = view_size[1] / view_size[2]
 
 	// Calculate desired pixel width using window size and aspect ratio
-	var/sizes = params2list(winget(src, "mainwindow.mainvsplit;mapwindow", "size"))
-	var/map_size = splittext(sizes["mapwindow.size"], "x")
+	var/list/sizes = params2list(winget(src, "mainwindow.split;mapwindow", "size"))
+
+	// Client closed the window? Some other error? This is unexpected behaviour, let's
+	// CRASH with some info.
+	if(!sizes["mapwindow.size"])
+		CRASH("sizes does not contain mapwindow.size key. This means a winget failed to return what we wanted. --- sizes var: [sizes] --- sizes length: [length(sizes)]")
+
+	var/list/map_size = splittext(sizes["mapwindow.size"], "x")
+
+	var/desired_width = 0
+
+	// Looks like we expect mapwindow.size to be "ixj" where i and j are numbers.
+	// If we don't get our expected 2 outputs, let's give some useful error info.
+	if(length(map_size) != 2)
+		CRASH("map_size of incorrect length --- map_size var: [map_size] --- map_size length: [length(map_size)]")
 	var/height = text2num(map_size[2])
-	var/desired_width = round(height * aspect_ratio)
+	desired_width = round(height * aspect_ratio)
+
 	if (text2num(map_size[1]) == desired_width)
 		// Nothing to do
 		return
 
-	var/split_size = splittext(sizes["mainwindow.mainvsplit.size"], "x")
+	var/split_size = splittext(sizes["mainwindow.split.size"], "x")
 	var/split_width = text2num(split_size[1])
+
+	// Avoid auto-resizing the statpanel and chat into nothing.
+	desired_width = min(desired_width, split_width - 300)
 
 	// Calculate and apply a best estimate
 	// +4 pixels are for the width of the splitter's handle
 	var/pct = 100 * (desired_width + 4) / split_width
-	winset(src, "mainwindow.mainvsplit", "splitter=[pct]")
+	winset(src, "mainwindow.split", "splitter=[pct]")
 
 	// Apply an ever-lowering offset until we finish or fail
 	var/delta
@@ -569,7 +576,7 @@
 			delta = -delta/2
 
 		pct += delta
-		winset(src, "mainwindow.mainvsplit", "splitter=[pct]")
+		winset(src, "mainwindow.split", "splitter=[pct]")
 
 /client/verb/show_lore()
 	set name = "Show Lore"
@@ -586,7 +593,7 @@
 			holder.callproc.arguments += A
 
 		holder.callproc.waiting_for_click = 0
-		verbs -= /client/proc/cancel_callproc_select
+		remove_verb(src, /client/proc/cancel_callproc_select)
 		holder.callproc.do_args()
 		return
 
@@ -594,9 +601,9 @@
 		// If hotkey mode is enabled, then clicking the map will automatically
 		// unfocus the text bar. This removes the red color from the text bar
 		// so that the visual focus indicator matches reality.
-		winset(src, null, "outputwindow.input.background-color=[COLOR_INPUT_DISABLED]")
+		winset(src, null, "outputwindow.input.focus=false")
 	else
-		winset(src, null, "outputwindow.input.focus=true input.background-color=[COLOR_INPUT_ENABLED]")
+		winset(src, null, "outputwindow.input.focus=true")
 
 	return ..()
 

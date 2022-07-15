@@ -483,6 +483,8 @@
 /// Adds this list to the output to the stat browser
 /mob/proc/get_status_tab_items()
 	. = list()
+	if(client.is_stealthed())
+		. += "Stealth: Engaged [client.holder.stealthy_ == 2 ? "(Auto)" : "(Manual)"]"
 
 /mob/verb/cancel_camera()
 	set name = "Cancel Camera View"
@@ -886,7 +888,7 @@
 
 /mob/proc/remove_implant(var/obj/item/implant, var/surgical_removal = FALSE)
 	if(!LAZYLEN(get_visible_implants(0))) //Yanking out last object - removing verb.
-		verbs -= /mob/proc/yank_out_object
+		remove_verb(src, /mob/proc/yank_out_object)
 	for(var/obj/item/O in pinned)
 		if(O == implant)
 			pinned -= O

@@ -11,7 +11,7 @@
  */
 
 SUBSYSTEM_DEF(tgui)
-	name = "tgui"
+	name = "TGUI"
 	wait = 9
 	flags = SS_NO_INIT|SS_NEEDS_SHUTDOWN
 	priority = SS_PRIORITY_TGUI
@@ -37,8 +37,7 @@ SUBSYSTEM_DEF(tgui)
 	close_all_uis()
 
 /datum/controller/subsystem/tgui/stat_entry(msg)
-	msg = "P:[length(open_uis)]"
-	return ..()
+	.=..("[msg] P:[length(open_uis)]")
 
 /datum/controller/subsystem/tgui/fire(resumed = FALSE)
 	if(!resumed)

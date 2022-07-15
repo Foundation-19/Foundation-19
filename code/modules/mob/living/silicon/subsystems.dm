@@ -73,18 +73,6 @@
 	if(istype(SSS))
 		SSS.Click()
 
-/mob/living/silicon/Stat()
-	. = ..()
-	if(!.)
-		return
-	if(!silicon_subsystems.len)
-		return
-	if(!statpanel("Subsystems"))
-		return
-	for(var/subsystem_type in silicon_subsystems)
-		var/stat_silicon_subsystem/SSS = silicon_subsystems[subsystem_type]
-		stat(SSS)
-
 /mob/living/silicon/proc/get_subsystem_from_path(subsystem_type)
 	var/stat_silicon_subsystem/SSS = silicon_subsystems[subsystem_type]
 	if(!istype(SSS))

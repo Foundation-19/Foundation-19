@@ -11,8 +11,8 @@ SUBSYSTEM_DEF(overlays)
 	var/list/overlay_icon_state_caches = list()
 	var/list/overlay_icon_cache = list()
 
-/datum/controller/subsystem/overlays/stat_entry()
-	..("Ov:[processing.len - (idex - 1)]")
+/datum/controller/subsystem/overlays/stat_entry(msg)
+	.=..("[msg] Ov:[processing.len - (idex - 1)]")
 
 /datum/controller/subsystem/overlays/Initialize()
 	Flush()

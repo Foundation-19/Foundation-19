@@ -59,7 +59,7 @@ SUBSYSTEM_DEF(statpanels)
 			if(!("MC" in target.panel_tabs))
 				target.stat_panel.send_message("add_admin_tabs")
 
-			if(target.stat_tab == "MC" && ((num_fires % mc_wait == 0) || target?.prefs.fast_mc_refresh))
+			if(target.stat_tab == "MC" && ((num_fires % mc_wait == 0) || target?.get_preference_value(/datum/client_preference/fast_mc_refresh) == GLOB.PREF_YES))
 				set_MC_tab(target)
 
 		if(target.mob)

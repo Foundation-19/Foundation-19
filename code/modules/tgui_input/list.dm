@@ -22,7 +22,7 @@
 		else
 			return
 	/// Client does NOT have tgui_input on: Returns regular input
-	if(!user.client.prefs.tgui_input)
+	if(user.client.get_preference_value(/datum/client_preference/use_tgui_inputs) == GLOB.PREF_NO)
 		return input(user, message, title, default) as null|anything in items
 	var/datum/tgui_list_input/input = new(user, message, title, items, default, timeout)
 	input.ui_interact(user)
@@ -109,9 +109,9 @@
 	var/list/data = list()
 	data["init_value"] = default || items[1]
 	data["items"] = items
-	data["large_buttons"] = user.client.prefs.tgui_input_large
 	data["message"] = message
-	data["swapped_buttons"] = user.client.prefs.tgui_input_swapped
+	data["large_buttons"] = (user.client.get_preference_value(/datum/client_preference/large_tgui_inputs) == GLOB.PREF_YES)
+	data["swapped_buttons"] = (user.client.get_preference_value(/datum/client_preference/swap_tgui_inputs) == GLOB.PREF_YES)
 	data["title"] = title
 	return data
 

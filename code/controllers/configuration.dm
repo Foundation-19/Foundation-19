@@ -229,9 +229,6 @@ var/list/gamemode_cache = list()
 	var/motd = ""
 	var/event = ""
 
-	/// The delay in deciseconds between stat() updates.
-	var/stat_delay = 5
-
 	var/asset_transport = "simple"
 
 	var/log_assets = FALSE
@@ -800,9 +797,6 @@ var/list/gamemode_cache = list()
 
 				if ("game_version")
 					config.game_version = value
-
-				if ("stat_delay")
-					stat_delay = Floor(text2num(value))
 
 				if ("asset_transport")
 					asset_transport = lowertext(value)
