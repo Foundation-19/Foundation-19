@@ -413,6 +413,7 @@ var/list/admin_verbs_mentors = list(
 		if (!ghost)
 			to_chat(src, FONT_COLORED("red", "You are already admin-ghosted."))
 			return
+		ghost.client?.init_verbs()
 		log_and_message_admins("has admin ghosted.", usr)
 		ghost.admin_ghosted = 1
 		if(body)
