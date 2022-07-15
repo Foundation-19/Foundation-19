@@ -103,7 +103,7 @@
 			H.mutations |= MUTATION_SPACERES
 			familiar_type = /mob/living/simple_animal/hostile/carp/pike
 		if("Mouse")
-			H.verbs |= /mob/living/proc/ventcrawl
+			add_verb(H, /mob/living/proc/ventcrawl)
 			familiar_type = /mob/living/simple_animal/friendly/mouse
 		if("Cat")
 			H.mutations |= mRun
