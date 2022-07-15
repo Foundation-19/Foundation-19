@@ -2,19 +2,19 @@
 
 /datum/antagonist/cultist/proc/add_ghost_magic(var/mob/observer/ghost/M)
 	if(max_cult_rating >= CULT_GHOSTS_1)
-		add_verb(M, /mob/observer/ghost/proc/flick_lights)
-		add_verb(M, /mob/observer/ghost/proc/bloody_doodle)
-		add_verb(M, /mob/observer/ghost/proc/shatter_glass)
-		add_verb(M, /mob/observer/ghost/proc/slice)
+		M.verbs += /mob/observer/ghost/proc/flick_lights
+		M.verbs += /mob/observer/ghost/proc/bloody_doodle
+		M.verbs += /mob/observer/ghost/proc/shatter_glass
+		M.verbs += /mob/observer/ghost/proc/slice
 		if(max_cult_rating >= CULT_GHOSTS_2)
-			add_verb(M, /mob/observer/ghost/proc/move_item)
-			add_verb(M, /mob/observer/ghost/proc/whisper_to_cultist)
-			add_verb(M, /mob/observer/ghost/proc/bite_someone)
-			add_verb(M, /mob/observer/ghost/proc/chill_someone)
+			M.verbs += /mob/observer/ghost/proc/move_item
+			M.verbs += /mob/observer/ghost/proc/whisper_to_cultist
+			M.verbs += /mob/observer/ghost/proc/bite_someone
+			M.verbs += /mob/observer/ghost/proc/chill_someone
 			if(max_cult_rating >= CULT_GHOSTS_3)
-				add_verb(M, /mob/observer/ghost/proc/whisper_to_anyone)
-				add_verb(M, /mob/observer/ghost/proc/bloodless_doodle)
-				add_verb(M, /mob/observer/ghost/proc/toggle_visiblity)
+				M.verbs += /mob/observer/ghost/proc/whisper_to_anyone
+				M.verbs += /mob/observer/ghost/proc/bloodless_doodle
+				M.verbs += /mob/observer/ghost/proc/toggle_visiblity
 
 /mob/observer/ghost/proc/ghost_ability_check()
 	var/turf/T = get_turf(src)

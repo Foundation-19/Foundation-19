@@ -93,8 +93,8 @@
 	. = ..()
 
 	add_language(LANGUAGE_BORER_GLOBAL)
-	add_verb(src, /mob/living/proc/ventcrawl)
-	add_verb(src, /mob/living/proc/hide)
+	verbs += /mob/living/proc/ventcrawl
+	verbs += /mob/living/proc/hide
 
 	generation = gen
 	set_borer_name()
@@ -193,9 +193,17 @@
 				if(prob(host.getBrainLoss()/20))
 					host.say("*[pick(list("blink","blink_r","choke","aflap","drool","twitch","twitch_v","gasp"))]")
 
-/mob/living/simple_animal/borer/get_status_tab_items()
-	.=..()
-	. += "Chemicals [chemicals]"
+/mob/living/simple_animal/borer/Stat()
+	. = ..()
+	statpanel("Status")
+
+	if(evacuation_controller)
+		var/eta_status = evacuation_controller.get_status_panel_eta()
+		if(eta_status)
+			stat(null, eta_status)
+
+	if (client.statpanel == "Status")
+		stat("Chemicals", chemicals)
 
 /mob/living/simple_animal/borer/proc/detatch()
 
@@ -209,9 +217,9 @@
 	controlling = 0
 
 	host.remove_language(LANGUAGE_BORER_GLOBAL)
-	remove_verb(host, /mob/living/carbon/proc/release_control)
-	remove_verb(host, /mob/living/carbon/proc/punish_host)
-	remove_verb(host, /mob/living/carbon/proc/spawn_larvae)
+	host.verbs -= /mob/living/carbon/proc/release_control
+	host.verbs -= /mob/living/carbon/proc/punish_host
+	host.verbs -= /mob/living/carbon/proc/spawn_larvae
 
 	if(host_brain)
 

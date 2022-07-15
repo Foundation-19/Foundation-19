@@ -16,7 +16,7 @@
 		if(C.is_afk())
 			active_players -= 1
 	var/check = "Current Players: [GLOB.clients.len], Active Players: [active_players]. "
-	check += "\nGamemode: [SSticker.master_mode], Round Time: [DisplayTimeText(world.time - SSticker.round_start_time)]."
+	check += "\nGamemode: [SSticker.master_mode], Round Time: [roundduration2text()]."
 	return check
 
 /// Displays player count, REAL gamemode and ckeys of admins online.
@@ -48,5 +48,5 @@
 		gamemode = "[SSticker.master_mode] (Lobby)"
 	else
 		gamemode = SSticker.mode.name
-	status += "\nGamemode: [gamemode]. Round Time: [DisplayTimeText(world.time - SSticker.round_start_time)]."
+	status += "\nGamemode: [gamemode]. Round Time: [roundduration2text()]."
 	return status

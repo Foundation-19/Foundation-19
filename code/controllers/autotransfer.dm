@@ -17,4 +17,4 @@ var/datum/controller/transfer_controller/transfer_controller
 		timerbuffer += config.vote_autotransfer_interval
 
 /datum/controller/transfer_controller/proc/time_till_transfer_vote()
-	return timerbuffer - (world.time - SSticker.round_start_time) - (1 MINUTE)
+	return timerbuffer - round_duration_in_ticks - (1 MINUTE)

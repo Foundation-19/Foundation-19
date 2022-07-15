@@ -112,7 +112,7 @@
 	dat += "Brain activity: [brain_result]."
 
 	if(H.stat == DEAD || (H.status_flags & FAKEDEATH))
-		dat += "<span class='scan_warning'>[b]Time of Death:[endb] [time2text(SSticker.round_start_time + H.timeofdeath, "hh:mm")]</span>"
+		dat += "<span class='scan_warning'>[b]Time of Death:[endb] [time2text(worldtime2stationtime(H.timeofdeath), "hh:mm")]</span>"
 
 	// Pulse rate.
 	var/pulse_result = "normal"

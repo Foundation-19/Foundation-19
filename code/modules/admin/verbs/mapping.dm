@@ -158,7 +158,7 @@ var/list/debug_verbs = list (
 
 	if(!check_rights(R_DEBUG)) return
 
-	add_verb(src, debug_verbs)
+	verbs += debug_verbs
 
 	SSstatistics.add_field_details("admin_verb","mDV") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -168,7 +168,7 @@ var/list/debug_verbs = list (
 
 	if(!check_rights(R_DEBUG)) return
 
-	remove_verb(src, debug_verbs)
+	verbs -= debug_verbs
 
 	SSstatistics.add_field_details("admin_verb","hDV") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 

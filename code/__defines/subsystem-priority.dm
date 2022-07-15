@@ -17,7 +17,6 @@
 #define SS_PRIORITY_AIR            80  // ZAS processing.
 #define SS_PRIORITY_CHEMISTRY      60  // Multi-tick chemical reactions.
 #define SS_PRIORITY_CHAT           40  // Chat
-#define SS_PRIORITY_STATPANEL      30  // Stat panel
 #define SS_PRIORITY_INPUT          20  // Input things.
 #define SS_PRIORITY_ALARM          20  // Alarm processing.
 #define SS_PRIORITY_EVENT          20  // Event processing and queue handling.
@@ -35,7 +34,6 @@
 #define SS_PRIORITY_GHOST_IMAGES   10  // Updates ghost client images.
 #define SS_PRIORITY_ZCOPY          10  // Builds appearances for Z-Mimic.
 #define SS_PRIORITY_PROJECTILES    10  // Projectile processing!
-#define SS_PRIORITY_PING           10  // Pong!
 
 // SS_BACKGROUND
 #define SS_PRIORITY_OBJECTS       100  // processing_objects processing.
@@ -44,7 +42,6 @@
 #define SS_PRIORITY_VINES         50   // Spreading vine effects.
 #define SS_PRIORITY_PSYCHICS      45   // Psychic complexus processing.
 #define SS_PRIORITY_NANO          40   // Updates to nanoui uis.
-#define SS_PRIORITY_TGUI          40   // Updates TGUI UIs.
 #define SS_PRIORITY_TURF          30   // Radioactive walls/blob.
 #define SS_PRIORITY_EVAC          30   // Processes the evac controller.
 #define SS_PRIORITY_CIRCUIT       30   // Processing Circuit's ticks and all that

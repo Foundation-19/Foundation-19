@@ -86,7 +86,7 @@
 	if (mRemotetalk in H.mutations)
 		return 0
 	H.mutations.Add(mRemotetalk)
-	add_verb(H, /mob/living/carbon/human/proc/remotesay)
+	H.verbs += /mob/living/carbon/human/proc/remotesay
 	to_chat(H, "<span class='notice'>You expand your mind outwards.</span>")
 	return 1
 

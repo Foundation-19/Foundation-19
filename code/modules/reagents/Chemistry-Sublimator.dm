@@ -49,10 +49,8 @@
 
 /obj/machinery/portable_atmospherics/reagent_sublimator/New()
 	. = ..()
-	if(holding)
-		verbs |= /obj/machinery/portable_atmospherics/reagent_sublimator/proc/remove_tank
-	if(container)
-		verbs |= /obj/machinery/portable_atmospherics/reagent_sublimator/proc/remove_container
+	if(holding)   verbs |= /obj/machinery/portable_atmospherics/reagent_sublimator/proc/remove_tank
+	if(container) verbs |= /obj/machinery/portable_atmospherics/reagent_sublimator/proc/remove_container
 	update_icon()
 
 // Coded this before realizing base type didn't support tank mixing, leaving it in just in case someone decides to add it.

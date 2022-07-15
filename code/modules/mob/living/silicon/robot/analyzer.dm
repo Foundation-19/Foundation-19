@@ -45,7 +45,7 @@
 			user.show_message("\t Key: <font color='#ffa500'>Electronics</font>/<font color='red'>Brute</font>", 1)
 			user.show_message("\t Damage Specifics: <font color='#ffa500'>[BU]</font> - <font color='red'>[BR]</font>")
 			if(M.stat == DEAD)
-				user.show_message("<span class='notice'>Time of Failure: [time2text(time2text(SSticker.round_start_time, M.timeofdeath, "hh:mm"))]</span>")
+				user.show_message("<span class='notice'>Time of Failure: [time2text(worldtime2stationtime(M.timeofdeath))]</span>")
 			var/mob/living/silicon/robot/H = M
 			var/list/damaged = H.get_damaged_components(1,1,1)
 			user.show_message("<span class='notice'>Localized Damage:</span>",1)

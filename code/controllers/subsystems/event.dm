@@ -72,8 +72,8 @@ SUBSYSTEM_DEF(event)
 		if (MC_TICK_CHECK)
 			return
 
-/datum/controller/subsystem/event/stat_entry(msg)
-	.=..("[msg] E:[active_events.len]")
+/datum/controller/subsystem/event/stat_entry()
+	..("E:[active_events.len]")
 
 //Actual event handling
 /datum/controller/subsystem/event/proc/event_complete(var/datum/event/E)
@@ -90,7 +90,7 @@ SUBSYSTEM_DEF(event)
 	if(EM.add_to_queue)
 		EC.available_events += EM
 
-	log_debug("Event '[EM.name]' has completed at [time2text(SSticker.round_start_time + world.time, "hh:mm")].")
+	log_debug("Event '[EM.name]' has completed at [worldtime2stationtime(world.time)].")
 
 /datum/controller/subsystem/event/proc/delay_events(var/severity, var/delay)
 	var/datum/event_container/EC = event_containers[severity]
@@ -113,12 +113,12 @@ SUBSYSTEM_DEF(event)
 		var/datum/event_meta/EM = E.event_meta
 		if(EM.name == "Nothing")
 			continue
-		var/message = "'[EM.name]' began at [time2text(SSticker.round_start_time + E.startedAt, "hh:mm")] "
+		var/message = "'[EM.name]' began at [worldtime2stationtime(E.startedAt)] "
 		if(E.isRunning)
 			message += "and is still running."
 		else
 			if(E.endedAt - E.startedAt > MinutesToTicks(5)) // Only mention end time if the entire duration was more than 5 minutes
-				message += "and ended at [time2text(SSticker.round_start_time + E.endedAt, "hh:mm")]."
+				message += "and ended at [worldtime2stationtime(E.endedAt)]."
 			else
 				message += "and ran to completion."
 
@@ -177,7 +177,7 @@ SUBSYSTEM_DEF(event)
 			var/next_event_at = max(0, EC.next_event_time - world.time)
 			html += "<tr>"
 			html += "<td>[severity_to_string[severity]]</td>"
-			html += "<td>[time2text(SSticker.round_start_time + max(EC.next_event_time, world.time), "hh:mm")]</td>"
+			html += "<td>[worldtime2stationtime(max(EC.next_event_time, world.time))]</td>"
 			html += "<td>[round(next_event_at / 600, 0.1)]</td>"
 			html += "<td>"
 			html +=   "<A align='right' href='?src=\ref[src];dec_timer=2;event=\ref[EC]'>--</A>"
@@ -225,7 +225,7 @@ SUBSYSTEM_DEF(event)
 			html += "<tr>"
 			html += "<td>[severity_to_string[EM.severity]]</td>"
 			html += "<td>[EM.name]</td>"
-			html += "<td>[time2text(SSticker.round_start_time + ends_at, "hh:mm")]</td>"
+			html += "<td>[worldtime2stationtime(ends_at)]</td>"
 			html += "<td>[ends_in]</td>"
 			html += "<td><A align='right' href='?src=\ref[src];stop=\ref[E]'>Stop</A></td>"
 			html += "</tr>"

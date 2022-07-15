@@ -12,8 +12,8 @@ SUBSYSTEM_DEF(chemistry)
 
 	var/list/random_chem_prototypes =       list()
 
-/datum/controller/subsystem/chemistry/stat_entry(msg)
-	.=..("[msg] AH:[active_holders.len]")
+/datum/controller/subsystem/chemistry/stat_entry()
+	..("AH:[active_holders.len]")
 
 /datum/controller/subsystem/chemistry/Initialize()
 

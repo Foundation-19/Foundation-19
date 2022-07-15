@@ -36,7 +36,7 @@
 		show_browser(usr,"<HTML><HEAD><TITLE>[open_file]</TITLE></HEAD>[digitalPencode2html(loaded_data)]</BODY></HTML>", "window=[open_file]")
 		return 1
 
-	if(href_list["PRG_taghelp"])
+	if(href_list["PRG_taghelp"])		
 		var/datum/codex_entry/entry = SScodex.get_codex_entry("pen")
 		if(entry)
 			SScodex.present_codex_entry(usr, entry)

@@ -10,4 +10,4 @@ SUBSYSTEM_DEF(antags)
 	. = ..()
 
 /datum/controller/subsystem/antags/stat_entry(msg)
-	.=..("[msg] | Antag Datums: [GLOB.all_antag_types_.len]")
+	..("[GLOB.all_antag_types_.len] antag datums")

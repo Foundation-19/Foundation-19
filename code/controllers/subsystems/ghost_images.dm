@@ -7,8 +7,8 @@ SUBSYSTEM_DEF(ghost_images)
 	var/list/queue = list()
 	var/queue_all = FALSE
 
-/datum/controller/subsystem/ghost_images/stat_entry(msg)
-	.=..("[msg] P:[queue.len]")
+/datum/controller/subsystem/ghost_images/stat_entry()
+	..("P:[queue.len]")
 
 /datum/controller/subsystem/ghost_images/fire(resumed = 0)
 	if(!resumed && queue_all)

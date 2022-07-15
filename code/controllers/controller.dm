@@ -1,5 +1,6 @@
 /datum/controller
 	var/name
+	var/atom/movable/clickable_stat/stat_line
 
 /datum/controller/proc/Initialize()
 
@@ -14,4 +15,4 @@
 
 /datum/controller/proc/Recover()
 
-/datum/controller/proc/stat_entry(msg)
+/datum/controller/proc/stat_entry()
