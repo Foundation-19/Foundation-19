@@ -58,7 +58,7 @@ window "mainwindow"
 		statusbar = false
 		is-maximized = true
 		icon = 'icons\\ss13_64.png'
-		macro = "macro"
+		macro = "default"
 		menu = "menu"
 	elem "split"
 		type = CHILD
