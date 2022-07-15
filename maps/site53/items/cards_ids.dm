@@ -567,4 +567,4 @@
 	desc = "An ID card issued to Class-D Foundation personnel."
 	icon_state = "classd"
 	item_state = "Admin_ID"
-	job_access_type = /datum/job/officeworker
+	job_access_type = /datum/job/classd
