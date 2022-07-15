@@ -56,7 +56,10 @@
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/chemist
 	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	allowed_ranks = list(
+						/datum/mil_rank/civ/classc,
+						/datum/mil_rank/civ/classb,
+						)
 	hud_icon = "hudpharmacist"
 
 	access = list(
