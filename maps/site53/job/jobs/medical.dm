@@ -52,6 +52,7 @@
 	//supervisors = "the Chief Medical Officer"
 	selection_color = "#013d3b"
 	economic_power = 4
+	alt_titles = list("Pharmacist")
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/chemist
 	allowed_branches = list(/datum/mil_branch/civilian)
