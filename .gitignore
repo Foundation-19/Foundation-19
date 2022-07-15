@@ -4,6 +4,7 @@ Thumbs.db
 *.int
 *.rsc
 *.dmb
+*.mdme
 *.lk
 *.backup
 *.before
