@@ -23,8 +23,7 @@
 	path = /obj/item/clothing/accessory/kneepads
 	flags = GEAR_HAS_COLOR_SELECTION
 
-
- /datum/gear/tactical/holster
+/datum/gear/tactical/holster
 	display_name = "holster selection"
 	path = /obj/item/clothing/accessory/storage/holster
 	cost = 3
