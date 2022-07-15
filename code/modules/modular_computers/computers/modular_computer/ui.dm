@@ -149,7 +149,7 @@
 		)))
 	data["PC_programheaders"] = program_headers
 
-	data["PC_stationtime"] = stationtime2text()
+	data["PC_stationtime"] = station_time_timestamp("hh:mm")
 	data["PC_hasheader"] = 1
 	data["PC_showexitprogram"] = active_program ? 1 : 0 // Hides "Exit Program" button on mainscreen
 	return data

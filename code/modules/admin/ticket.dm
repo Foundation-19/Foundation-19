@@ -108,7 +108,7 @@ var/list/ticket_panels = list()
 	src.msg_from = msg_from
 	src.msg_to = msg_to
 	src.msg = msg
-	src.time_stamp = time_stamp()
+	src.time_stamp = station_time_timestamp()
 
 /datum/ticket_panel
 	var/datum/ticket/open_ticket = null

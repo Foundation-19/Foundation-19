@@ -1,0 +1,1743 @@
+2021-01-01:
+  Mucker:
+  - bugfix: Fix the webhook not displaying the escaped count.
+  - bugfix: "Fix '\xFF' appearing ahead of the station name in the late-join list\
+      \ in certain circumstances."
+  SierraKomodo:
+  - admin: Debug logs now appear in a distinct pink to better separate them from other
+      text.
+  Spookerton:
+  - bugfix: Changelings can't absorb DNA from synthetic mobs.
+2021-01-02:
+  SierraKomodo:
+  - rscadd: Light bulbs now have a random tone to their lighting color, just like
+      real light bulbs. The tones are yellowish, blueish, pinkish, or if you're lucky,
+      pure white.
+  juxtaposed9930:
+  - bugfix: Ascent nymphs will no longer nibble ascent drones.
+2021-01-03:
+  RustingWithYou:
+  - tweak: doubles voxship spawn chance to pre-scavship levels
+  juxtaposed9930:
+  - bugfix: The caulship airlock now cycles properly.
+  - tweak: The pilot is now a "technical" job and can get the associated gear in the
+      loadout.
+  zkxs:
+  - tweak: The miner cyborg module now has built in magboots
+2021-01-04:
+  SierraKomodo:
+  - tweak: Pink light tones have been removed from the light bulbs.
+  juxtaposed9930:
+  - tweak: Wallets can now hold passports.
+  - tweak: Webbing vests & drop pouches are now in two drop down lists in loadout.
+2021-01-06:
+  Mucker:
+  - rscdel: Removed rockets from the megabot.
+  - rscdel: Removed an unused debug-message in exo awakening.
+  - admin: Add the 'Mob Spawner Mode' to buildmode to allow for the automated spawning
+      of mobs via spawners.
+  SierraKomodo:
+  - tweak: Loadout items that fail to spawn selected contents properly now display
+      a warning to the user indicating there was a problem. If you see this message
+      that says 'contact a dev', contact a dev.
+  - admin: Item tweak failure debug logs no longer include the massive text dump of
+      all valid entries.
+  - bugfix: Ascent and skrell lights are now cyan again.
+  zkxs:
+  - tweak: Folding knives are no longer slightly worse than fixed-blade knives
+  - tweak: The steel lightweight utility knife no longer pretends to be made of titanium
+2021-01-08:
+  MistakeNot4892:
+  - tweak: Caulship is now a space site instead of an exoplanet ruin due to bugs with
+      ruin code.
+  - rscdel: Caulship has Ascent atoms and more QOL objects mapped in including methyl
+      bromide tanks and alien showers.
+2021-01-09:
+  PhosphoricPanda:
+  - rscadd: Security gets two boxes of smokes in equipment room.
+2021-01-10:
+  PhosphoricPanda:
+  - maptweak: Space bikes begone.
+  SierraKomodo:
+  - rscadd: Windows and window panels on airlocks can now be painted.
+  eckff (Ported by SierraKomodo):
+  - tweak: Lightbulb sprites are now drawn above the lighting overlay to make them
+      more 'bright light vibrant' looking
+  juxtaposed9930:
+  - tweak: Biomods are now usable by baseline humans.
+  - rscdel: Boosters no longer exist as a distinct species.
+  - tweak: The "prison break" event no longer recommends AI involvement.
+2021-01-11:
+  Mucker:
+  - admin: Adds a new buildmode mode for placing portals.
+  - bugfix: Mob spawners put on shuttles now stay with the shuttle after transitions.
+  juxtaposed9930:
+  - bugfix: Shuttle-specific navpoints on the Torch will no longer show up on other
+      shuttles.
+2021-01-12: {}
+2021-01-13: {}
+2021-01-14:
+  Mucker:
+  - bugfix: Fix mob spawner copying sometimes not copying the mob list.
+  - bugfix: Fix spawners putting mobs in walls or on occupied turfs.
+  Spookerton:
+  - admin: Quick Create Object no longer exists.
+  juxtaposed9930:
+  - bugfix: Prosthetic hands no longer float on female humans.
+  - bugfix: The admin shuttle can dock again.
+  - bugfix: The new merc airlock doors work properly.
+  - bugfix: The new merc shuttle can dock again.
+2021-01-15: {}
+2021-01-16:
+  SierraKomodo:
+  - tweak: Pumps, valves, and other interactable pipe stuff now render above catwalks
+      so they're easier to access.
+  - admin: Players joining submap roles no longer trigger debug logs.
+  - tweak: Roller beds no longer buckle you when you drag them to yourself.
+  - tweak: Clicking people with melee weapons or random objects while on help intent
+      will no longer attack or cause harm.
+  Tennessee116:
+  - maptweak: The old survival pod ruin has been given a minor facelift.
+  juxtaposed9930:
+  - tweak: Rogue drone swarms will no longer occasionally announce as Class II laser
+      fire.
+  - tweak: The Ninja and Light hardsuits are now human and IPC restricted.
+2021-01-17:
+  SealCure:
+  - tweak: The chance for a ZAC speaker to understand Selenian has been raised to
+      85%, in line with the Selenian-ZAC understanding.
+  SierraKomodo:
+  - tweak: Default window color is now closer to the old desaturated cyan window color.
+  - bugfix: Windows now reset to the correct color when unpainted and untinted.
+  - bugfix: Turbolift door window sprites are now longer broken.
+2021-01-18:
+  juxtaposed9930:
+  - tweak: Mining beacons emit a more useful amount of light.
+2021-01-19:
+  Alex6511:
+  - bugfix: The xenoarch coolant tank is now the correct size.
+  JAR_OSKI:
+  - rscadd: Adds a Stop-Sounds verb.
+  juxtaposed9930:
+  - tweak: Quadruples the merc shuttle's starting fuel.
+2021-01-20: {}
+2021-01-21:
+  Alex6511:
+  - bugfix: Several airlocks on the Lar Maria away site will now function.
+  juxtaposed9930:
+  - tweak: Mercenary base no longer has mapped-in chameleon clothes.
+2021-01-22:
+  PigeonLord:
+  - rscadd: Neckerchief added to loadout.
+  Qlonever:
+  - tweak: Various pixel fixes for labcoat onmob sprites.
+  SDTheCyanWyan:
+  - maptweak: Replaced away site two-door mapping with double doors and double airlocks
+      with singles.
+  SierraKomodo:
+  - maptweak: The janitor's closet now has lights outside the doors and signs pointing
+      from the ladder well to the closet.
+  Tennessee116:
+  - maptweak: The shuttle in the lost supply base has been replaced with a broken
+      supply drone.
+  juxtaposed9930:
+  - tweak: Nanomed+'s now lock generic toxin behind the contraband wire.
+  - tweak: Nanomed+'s no longer lock dylovene pills behind the contraband wire.
+  - tweak: Sleepers no longer have soporific.
+2021-01-23: {}
+2021-01-24:
+  Mucker:
+  - tweak: Replaces the 'Show Job in Lobby' preference with 'Show Ready Status in
+      Lobby' to make it easier for players to keep characters anonymous.
+  SierraKomodo:
+  - rscadd: Windows can now be repaired. The steps are use glass sheets of the exact
+      same material as the window was made of, then weld. The number of glass sheets
+      needed will depend on the window.
+  - tweak: Shattered windows now drop a random number of materials, making destroying
+      them a net loss in resources.
+  - tweak: Windows now show the material they're reinforced with when examined.
+  Tennessee116:
+  - maptweak: The SCG came around and refurbished the flags of the Torch. They no
+      longer are surplus from the SEV Icarus.
+  - maptweak: The SCGR's flag is no longer improperly pixel-shifted.
+  lorwp:
+  - admin: Direct/Global/Local Narrates now show for all staff, not just those with
+      R_ADMIN
+  - admin: Ditto with paralyze logs
+2021-01-25: {}
+2021-01-26: {}
+2021-01-27:
+  Mucker:
+  - rscadd: Adds a preference option to toggle whether or not your presence is announced
+      when joining as an observer, called 'Announce When Joining as Observer'.
+  SDTheCyanWyan:
+  - tweak: Prevents inflatables from being used in space
+  Tennessee116:
+  - maptweak: The mining planetoid no longer uses shuttle walls, having been replaced
+      by regular titanium.
+  - maptweak: The mining planetoid no longer contains stacked turfs.
+  - maptweak: The SEV Icarus has received a medium-level facelift.
+  - maptweak: The Fallen Icarus away site no longer has airless plating.
+2021-01-28: {}
+2021-01-29:
+  SierraKomodo:
+  - bugfix: Lights in emergency lighting mode now use the correct overlay color instead
+      of still appearing bright white.
+  - bugfix: Ascent drones can now state laws.
+  Spookerton:
+  - tweak: The lobby tab now displays the time until the next continue vote, or the
+      initial and subsequent times before the round starts.
+2021-01-30: {}
+2021-01-31: {}
+2021-02-01:
+  Mucker:
+  - admin: Add a debug toggle to turn on/off planets repopulating mobs.
+  - admin: Changed the mob spawner expiration debug message to include a jump-to button
+      and show its coordinates.
+  - admin: Added the 'Atmos immune' toggle to the mob spawner, making spawned mobs
+      immune to all atmospheric conditions.
+  Pebblesthe2nd:
+  - rscadd: 'New style for suit icons. Replaces most of the current ones. Purpose:
+      Standardize icons with something that looks better than the onmob sprite.'
+  - tweak: The icons for a variety of suit layer clothing have been replaced with
+      versions that are not the on-mob sprite.
+  Spookerton:
+  - admin: removed legacy log access verbs
+  - admin: removed legacy randomize everyone on spawn secret
+  - admin: removed legacy triple AI slot at roundstart secret
+  juxtaposed9930:
+  - tweak: Raiders now spawn with NVGs instead of thermals.
+  - maptweak: The skipjack now has a pair of NVGs instead of a thermonocle.
+2021-02-02: {}
+2021-02-03:
+  Ninetailed:
+  - rscadd: Robots can now unbuckle themselves and others from things by clicking
+      on them, just like a real boy!
+  - rscadd: Robots with the GPS/RPD as an active module now get coordinates in the
+      Status box the same as humans do
+  - rscadd: Surveyor module now has a harvester to gather plants for the bioreactor
+  - tweak: Robot net gun no longer has a safety, as selecting the module for use serves
+      the same purpose
+  - tweak: Vines can no longer grab you if you're flying
+  - bugfix: Net gun now actually fires nets instead of dropping them
+  - bugfix: Robot net gun now spawns with shells loaded
+  - bugfix: All living mobs, including robots, can break free of vines using the Resist
+      verb, rather than this being restricted to carbon life
+  SierraKomodo:
+  - rscadd: You can now select equipment belts and toolbelts in loadout options. The
+      belts will spawn empty - Find your own tools.
+2021-02-04:
+  RustingWithYou:
+  - tweak: banishing nar'sie now deletes all simplemobs in the cult faction - constructs,
+      creatures, faithless, etc.
+  - tweak: banishing nar'sie now resets the skybox to its normal state
+  - tweak: banishing nar'sie now properly checks for cultists when doing the global
+      message
+  - tweak: cult walls and floors can now be deconverted through nullrod application.
+      banishing nar'sie will also deconvert those turfs
+  SierraKomodo:
+  - rscdel: Liquid Corruption can no longer appear as a random chemical in xenobotany
+      seeds.
+  juxtaposed9930:
+  - tweak: Portable floodlamps are now appropriately weaker than industrial floodlights.
+  - tweak: Forcing airlocks and firelocks with exosuit clamps breaks them.
+2021-02-05:
+  Mucker:
+  - bugfix: Fix the gravity event end announcement being spammed.
+2021-02-06: {}
+2021-02-07:
+  BlueNexus:
+  - tweak: Added cooling modules to merc hardsuits
+  juxtaposed9930:
+  - tweak: Brainwashing implants are now restricted to traitor uplinks only.
+2021-02-08:
+  Tennessee116:
+  - rscadd: Added binoculars to the bridge.
+2021-02-09:
+  Ilysen:
+  - spellcheck: Fixed some improper naming conventions on labcoats and the radiation
+      suit.
+  - spellcheck: Surgical tools and advanced kits now have more descriptive examine
+      texts.
+  - spellcheck: Added descriptions to bone gel, bone setters, and the FixOVein.
+  - bugfix: The "custom event is taking place" popup no longer appears every round.
+  Pawn:
+  - tweak: Adds the ability to put a RPD in space suits storage where RCDs can.
+  SDTheCyanWyan:
+  - maptweak: Allows Shoal Technicians and Shoal Biotechnicians to access Voxship
+      Thruster APC
+2021-02-10:
+  SealCure:
+  - tweak: Refactors departmental memos to be subtypes of paper, making them able
+      to be clipped, filed and bundled.
+  - rscadd: Adds readable and memo checks to paper, enabling the creation of unreadable
+      and unwritable papers.
+  SierraKomodo:
+  - maptweak: The miscellaneous research lab's teleport beacon has been moved outside
+      of the containment cell.
+  - maptweak: The miscellaneous research lab's containment cell's siphon now starts
+      off by default.
+  Spookerton:
+  - admin: Unbroke build mode overlay clickthrough - areas works as expected again.
+  theunlovedrock:
+  - tweak: you can no longer remove limbguards from the specialty armory armors.
+2021-02-11:
+  BlueNexus:
+  - tweak: Changed the radiation unit to Ionization Units (IU/s)
+  Ilysen:
+  - spellcheck: Added a description to the body scanner and body scanner console.
+  - spellcheck: Fixed improper naming conventions for the body scanner and body scanner
+      console.
+  - spellcheck: There's now a single space character between blood level and blood
+      oxygenation to make the information smoother to read. Previously, they were
+      clumped together.
+  - tweak: Added visible messages for ejecting, climbing into, and climbing out of
+      body scanners, as well as taking scans and pushing them to displays.
+  - tweak: Climbing into the body scanner by clicking and dragging now mirrors the
+      functionality of the Enter Body Scanner verb, instead of acting as though you
+      were "placing" yourself inside of it.
+  Mucker:
+  - tweak: Separates off-ship roles in the round-end statistics.
+  Tennessee116:
+  - maptweak: The radioactive shrine has received a facelift.
+  - maptweak: (Hopefully) the last shuttle walls have been removed in CentCom.
+2021-02-12:
+  Mucker:
+  - rscadd: Added shadows to turfs where shuttles are landing.
+  Pawn:
+  - rscadd: A brand new Memorial room for the fallen Solgov members with a brand new
+      Memorial Rock for all your private mourning needs.
+  SDTheCyanWyan:
+  - tweak: Print a message when a manual valve is opened/closed
+  Spookerton:
+  - tweak: EC service uniforms are back to utility + jacket.
+  - tweak: EC dress uniforms use the previous service under icons.
+  - rscdel: No more colored jumpers on EC dress unders.
+  - tweak: EC service jackets can have scarves attached.
+2021-02-13:
+  Mucker:
+  - rscadd: Characters can now be quickly swapped by clicking on the 'Current Character'
+      name in the main lobby menu.
+  juxtaposed9930:
+  - maptweak: The forgotten raider thermonocle has been swapped for NVGs
+2021-02-14:
+  CrimsonShrike:
+  - rscadd: Added exosuit pilot count information. Now you know something.
+  Spookerton:
+  - bugfix: You can juice cabbig.
+2021-02-15: {}
+2021-02-16:
+  Mucker:
+  - tweak: The main welcome menu now auto refreshes when swapping characters or when
+      the game starts.
+2021-02-17:
+  Ilysen:
+  - rscadd: Added the Newscast program to computers. Acts like a read-only newscaster,
+      but on your PDA, Tablet, or Console. Comes installed on PDAs by default.
+  Mucker:
+  - tweak: Stops the character setup menu from appearing when quick-swapping characters.
+  Pawn:
+  - rscadd: Adds an athletics locker into the Deck 3 Head and Observatory.
+  SierraKomodo:
+  - bugfix: The skipjack's airlock will now use both vents when cycling.
+  juxtaposed9930:
+  - tweak: Halves the Aquila's shuttle mass to 10000, equivalent to two Charons.
+2021-02-18:
+  CrimsonShrike:
+  - rscadd: Added exosuit machete.
+  EvenInDeathIStillServe:
+  - bugfix: Chocolate milk cartons from the SweatMax actually contain chocolate milk.
+  - rscadd: Stacks created on or moved into the same turf while not being thrown will
+      merge automatically.
+  PhosphoricPanda:
+  - bugfix: Cryptographic Sequencers correctly break open doors again.
+2021-02-24:
+  CrimsonShrike:
+  - rscadd: Added exosuit ballistic shield. For your shielding needs.
+  EvenInDeathIStillServe:
+  - rscadd: Boron fusion can be done at the R-UST, using Boron chemical cartridges
+      purchasable from supply. Higher output than normal fusion, but with higher risk.
+  - rscadd: Gas facemasks can be pulled down to cover the neck.
+  Ilysen:
+  - bugfix: Robots/synthetics can now repair windows with their sheet synthesizers.
+  - tweak: The Background menu in character selection no longer puts the user through
+      a popup to select an option. Instead, clicking the name of an entry expands
+      a list that lets you select from all entries in realtime, which should hopefully
+      make it a lot smoother to use and open the door for new ones to be added again.
+  - spellcheck: Adjusted descriptions for several Chorus-related things.
+  - rscadd: Added death sounds for Chorus structures.
+  - rscadd: Added different death messages for each Chorus structure.
+  - tweak: Chorus structures can be examined to show their rough health.
+  - bugfix: Chorus spinal columns now work correctly.
+  Pawn:
+  - rscadd: You can pick up opossums and Poppy
+  PhosphoricPanda:
+  - tweak: Disposals are now marginally more lethal. Please avoid hole.
+  Ryan180602:
+  - tweak: Tweaks Miner Rig and Voidsuit armour values
+  - tweak: Makes Supply the default channel for Prospectors
+  SealCure:
+  - rscadd: 'Adds two new implants: a medHUD and a secHUD, toggleable with an action
+      button. Both can be implanted into normal and prosthetic heads.'
+  Spookerton:
+  - tweak: The minimum age of humans is 18.
+  - tweak: Drop pouches get 5 small slots worth of freeform storage and are renamed
+      to drop bags.
+  - tweak: Webbing vests get 5 small slots worth of freeform storage.
+  - tweak: Large webbing gets 4 small slots worth of freeform storage.
+  juxtaposed9930:
+  - maptweak: Fixes some walls on the TEV ruin that were the wrong type.
+  - maptweak: Replaces the annoying "low pressure" tiles from the TEV ruin.
+  theunlovedrock:
+  - maptweak: The Bearcat has a suit cycler and suit coolers. Spare oxygen has been
+      moved to atmospherics.
+2021-02-25: {}
+2021-02-26:
+  AzlanonPC:
+  - imageadd: Sprites for robot components have been completely replaced.
+  - imageadd: Different exosuit plating components now have unique sprites.
+  - tweak: Robot components now have descriptions.
+  Ilysen:
+  - tweak: The ChemMaster has received a visual revamp. It's no longer stuck with
+      the ancient basic HTML browser, and has received a NanoUI facelift.
+  - tweak: You can now cancel pill or bottle creation in the ChemMaster, instead of
+      being forced to finish once you started.
+2021-02-27:
+  Ilysen:
+  - tweak: Emitters can be rotated with alt-click if they're unsecured from the floor.
+  - tweak: Examining an emitter with Trained engines skill or higher will show you
+      if it's emagged.
+  - spellcheck: Emitters have received a grammar and message pass.
+  Shadowtail117:
+  - rscadd: Holopads now show incoming caller ID and up to the last 5 recent calls
+      on examine.
+  SierraKomodo:
+  - admin: Fixes the cremation attack log reversing the order of attacker/victim and
+      claiming the crematee was the one creating the cremator.
+  - admin: Turret admin logs now display the user instead of 'INVALID' and have working
+      MOB and LOC links.
+  Spookerton:
+  - bugfix: Yeosa'Unathi can spawn in the same locations as Sinta'Unathi.
+  - admin: Build Mode Basic is gone, advanced was renamed to "build mode" and became
+      the default mode.
+2021-02-28:
+  RustingWithYou:
+  - rscadd: The OFD can now fire at away sites again.
+  - rscadd: The OFD now has strength and range settings on its console again.
+  Tennessee116:
+  - maptweak: The CL's Office now has green carpet instead of brown.
+2021-03-01:
+  Ilysen:
+  - tweak: Rewrote names and messages associated with supermatter cores and shards.
+  SierraKomodo:
+  - admin: Supply beacons now generate attack logs when activated
+  - admin: Suicide by gun in the mouth now trigger attack logs instead of admin logs,
+      including a new log when starting the suicide process
+2021-03-02:
+  Mucker:
+  - bugfix: Fix crates/closets being deleted when fired from the OFD instead of sent
+      to their target.
+  SealCure:
+  - tweak: Removes mention of smell for synthetics when examining gunshot residue.
+  SierraKomodo:
+  - tweak: The scavver gantry coilgun now comes pre-loaded with a fully-charged power
+      cell and advanced capacitor, instead of having to load it yourself.
+  - tweak: Magnetic weapons (Coilguns and railguns) now have proper codex entries,
+      including mechanics tips on how to use them.
+  - rscadd: Light bulbs and lights can now be painted with paint sprayers.
+  - tweak: You will no longer bash lights with random objects if you're on help intent.
+  - admin: Light colors can now be easily modified by running the `set_color()` proc
+      on a light tube or a light fixture that has lighting installed.
+  Spookerton:
+  - bugfix: You can no longer drain donut souls directly from donuts into your own
+      blood; IV stands and roller beds can only use IV bags as IV bags.
+2021-03-03: {}
+2021-03-04:
+  JAR-OSKI:
+  - rscdel: Removes thermals from uplinks
+  Mucker:
+  - rscadd: Adds 3 new artifact effects.
+  - tweak: The teleportation anomaly now has a small buildup and warns affected players
+      before the teleportation occurs.
+  Spookerton:
+  - admin: Took per-action logs back out of build mode after spam complaints.
+  - rscadd: You can add fades to your hair through markings now, if you're a human.
+2021-03-05: {}
+2021-03-06:
+  juxtaposed9930:
+  - maptweak: Robotics now has a paint sprayer, for all your exosuit painting needs.
+2021-03-07: {}
+2021-03-08:
+  CrimsonShrike:
+  - rscadd: Added new exosuit module. Rotatory plasma cutter. It's automatic!
+  Lorwp:
+  - spellcheck: Voleyball > Volleyball
+  Mucker:
+  - tweak: Buffs damage of spiders, meat monsters, and planet fauna now that they
+      respect armor.
+  SierraKomodo:
+  - bugfix: Teleporters and other things dependent on the `player_levels` global no
+      longer break whenever a `teleport_far` anomaly is loaded.
+2021-03-09:
+  Parazoid:
+  - tweak: Departmental pagers will now still alert you if you're using any handheld
+      computer instead of just PDAs.
+  Spookerton:
+  - tweak: You can't use ram horns and ears at the same time.
+  - tweak: Deployable barriers use access_brig because half the damn ship has access_security.
+  - tweak: Deployable barriers have more health, show condition on examine, and apply
+      cooldowns.
+  - tweak: Deployable barriers fail to anchor if EMPd or emagged. This is shown on
+      nearby examine.
+  - tweak: You can repair barrier health with a wrench and its anchorability with
+      a welding tool.
+2021-03-10:
+  Ilysen:
+  - rscadd: Emergency shutters now play sounds when they open and close.
+  - spellcheck: Rewrote some emergency shutter messages from past tense to present
+      tense (i.e. "has opened" -> "opens").
+  - bugfix: Fixed some mildly broken examine text for multipurpose cable coils.
+  - spellcheck: Lowercased the names of the emergency softsuit, emergency space helmet,
+      anomaly suit, and anomaly hood, to bring them in line with normal object naming
+      schemes.
+  - spellcheck: Fixed run-on sentences in the descriptions of the emergency softsuit
+      and emergency space helmet.
+  Ryan180602:
+  - tweak: Adds seperate smell feedback messages for synthetics
+  SierraKomodo:
+  - admin: Attack logs generated by ranged simple mobs now properly display the source,
+      and only appear in chat if both parties have a ckey (Like all other attack logs)
+  SierraKomodo & Pawn:
+  - imageadd: New sprites and lighting overlays for teleporters have been added.
+2021-03-11:
+  EvenInDeathIStillServe:
+  - rscadd: The R-UST fusion field now changes coloration and light intensity depending
+      on temperature.
+  Spookerton:
+  - tweak: The succumb verb is gone. Use ghost instead if you're going to.
+  juxtaposed9930:
+  - tweak: Steel and plasteel are now slightly more resistant to brute damage.
+2021-03-12: {}
+2021-03-13: {}
+2021-03-14: {}
+2021-03-15:
+  Spookerton:
+  - tweak: Emagging exosuit fabricators succeeds immediately.
+2021-03-16: {}
+2021-03-17:
+  Imienny:
+  - bugfix: Prescription glasses once again work while using camera.
+  - bugfix: Goggles once again work when looking up.
+  - tweak: Its no longer possible to use binoculars inside of mechs with sensors providing
+      any vision flags.
+  - tweak: Binoculars/scopes temporarily disable worn goggles when used.
+  Mucker:
+  - rscdel: Removes gas generation artifact effects.
+  - bugfix: The artifact scanner will now properly detect secondary artifact effects.
+  - bugfix: Fixed the 'Touch' trigger for artifacts, poking rocks now actually has
+      consequences!
+  - tweak: Artifact effects will now remain on for longer when activated in order
+      for effects to have time to happen.
+  - tweak: '''Pushback'' artifact effect will no longer tear off limbs.'
+  juxtaposed9930:
+  - maptweak: Because of intense budget cuts, many of the Torch's reinforced walls
+      have been replaced with normal walls.
+2021-03-18:
+  CrimsonShrike:
+  - rscadd: 'Adds terraformed planet subtype: Safe and a good source of meat and animal
+      products.'
+  - tweak: Planet generation has been tweaked. Expect more habitable or tolerable
+      planets where you won't need to use spacesuits.
+  - bugfix: Fixes some planets not being hostile as often they should be.
+  Tennessee116:
+  - tweak: Hull blue is now Sol blue.
+2021-03-19:
+  CrimsonShrike:
+  - tweak: Intercomm quick access will now use exosuit radios if possible. (Use :i
+      while in a mech to use the mech radio)
+  - bugfix: Exosuit radios now will check distance correctly.
+  Ilysen:
+  - bugfix: Admin-sent faxes no longer open the fax editing menu when you finish writing
+      on them.
+  Shadowtail117:
+  - tweak: Skrell are now more tolerant of space drugs (found in qokk'loa) and will
+      no longer randomly giggle or move around when under its effects.
+  SierraKomodo:
+  - bugfix: Stunbatons now work on help intent
+  Tennessee116:
+  - tweak: Only security can select balaclavas in their loadout.
+  - rscdel: The forest planetoid away site has been removed.
+  - rscadd: There is a new exoplanet ruin, the crash of the SEV Icarus.
+  gy1ta23:
+  - tweak: Indie-Sympathizing leather supply office chairs replaced with God-Intended
+      SolGov Office Chairs.
+  juxtaposed9930:
+  - maptweak: Repaints the teleporter walls to normal hull black.
+  lorwp:
+  - tweak: High Visibility Jackets from loadout can now take ACCESSORY_SLOT_INSIGNIA
+      (pins, badges, etc)
+  - bugfix: Yeosa'Unathi can now take Cultural Exchange Patches
+2021-03-20:
+  SierraKomodo:
+  - maptweak: The crashed survivor pod's fuel tank has been moved to a less exposed
+      area so it stops being shot randomly by mobs, events, and security.
+  - tweak: Most timed actions now tell you why they failed if they fail.
+  Spookerton:
+  - tweak: Emagging a jukebox no longer causes it to airhorn everyone and then explode.
+  - tweak: Boomboxes don't break on their own anymore, and only do so when EMPd.
+  - tweak: Boomboxes and headphones share a new simplified jukebox nano interface.
+  - tweak: Teleporters are only configured by their console. No more projector clicking.
+  - tweak: Teleporters can be reconnected if they get trashed but you have the bits.
+2021-03-26:
+  CrimsonShrike:
+  - tweak: Mech light legs now prevent fall damage.
+  - rscadd: Exosuit manouvering units added. Space awaits! Added one to the exploration
+      exosuit to make it usable for away sites. Added another to salvage gantry mech
+      so it stops floating into space and dying.
+  - tweak: Mechetes have been adjusted to be more powerful but slower.
+  - rscadd: Exosuits now have power states. Remember to turn them on using power button!
+  - tweak: Adjusts some exosuit buttons to better reflect real state of suit
+  - tweak: Some exosuit modules will now consume power passively too.
+  - tweak: Flaregun impacts now have a chance to set victim on fire
+  - rscadd: Slide projectors. Maps one to the briefing room on Deck 1
+  EvenInDeathIStillServe:
+  - tweak: Speech bubbles are animated now.
+  - tweak: Matter cartridges can be partially loaded to refill RCDs, both of the construction
+      and crossbow varieties.
+  Ilysen:
+  - tweak: Added some digital logs on modular computers on the Ahab's Harpoon away
+      site that elucidates more about what happened. Keep an eye out for new digital
+      logs going forward!
+  - tweak: Cultist pylons are now destroyed permanently when they shatter, instead
+      of being placed into a weird "broken" state where have the exact same sprite
+      but can be passed over.
+  - tweak: Cult pylons now have a proper health system, instead of using random chance
+      to determine if they're damaged.
+  - tweak: Wraiths now float, preventing them from falling down z-levels and letting
+      them counteract gravity. They'll still drift in space, though.
+  - tweak: Artificer abilities no longer use a super loud sound.
+  - bugfix: Finally fixed wraiths being unable to use their Phase Shift.
+  - bugfix: Fixed player-controlled simple animals (like constructs) being unable
+      to hurt things.
+  - bugfix: Natural weapons can no longer embed into wounds.
+  - bugfix: Artificers now correctly repair constructs on an attack instead of bashing
+      them.
+  Lorwp:
+  - tweak: New changelog generation method
+  Mucker:
+  - rscdel: Removed the 'teleport_far' artifact effect.
+  - admin: Adds a buildmode for editing an area, turf, and container atmospheres.
+  Ryan180602:
+  - rscadd: Drinking glasses can now be used to splash mobs
+  - rscadd: Beakers can now break when thrown, spilling its contents
+  - tweak: Add a harm-intent check when clicking on self with glasses/beakers
+  - tweak: FBPs are no longer affected by the effects of smoke
+  - bugfix: Fixes an oversight with unintentionally pouring reagents into dispensers
+  SealCure:
+  - tweak: Adds user feedback to toggling a HUDimplant.
+  - tweak: Nymphs engulfing drinking glasses will now obtain a glass shard instead
+      of deleting the container.
+  - tweak: Punitelli will now sometimes spawn with a fashionable pair of sandals for
+      his poor feet.
+  Spookerton:
+  - tweak: The appearance editor from antag appearance selection has languages on
+      it.
+  - bugfix: The vox mirror creates vox mobs appropriately equipped for their antag
+      type.
+2021-03-27:
+  SammasC123:
+  - tweak: Pain multiplier for hits to the groin (and theoretically other genitals)
+      lowered from x2 to x1.5.
+2021-03-28:
+  Ilysen:
+  - rscadd: You can now examine many circuit boards to learn some short information
+      about the machine they're used to build. Your Construction skill affects the
+      amount of info you glean, with Trained construction getting the most results.
+  - rscadd: Examining a machine with at least Basic construction skill will tell you
+      about its function.
+2021-03-29:
+  SierraKomodo:
+  - tweak: There is now a delay between the exoplanet awakening event starting and
+      mobs actually spawning.
+  - tweak: Cargo trolleys can now be hitched together regardless of what direction
+      the trolley is facing.
+  - tweak: Cargo trolleys now tell you if and what they're linked to when you examine
+      them.
+  - bugfix: Natural weapons (I.e. teeth) will no longer embed in people.
+2021-04-20:
+  ? ''
+  : - tweak: All torch fleet crew now spawn with departmental coveralls.
+    - tweak: All torch fleet crew can obtain fatigues from uniform vendors.
+    - tweak: The fleet jacket and fleet polo are no longer available from uniform
+        vendors.
+    - rscdel: Fleet officer's coveralls no longer exist.
+    - tweak: Fleet security enlisted now ACTUALLY spawn with coveralls.
+    - tweak: Orbital mining station description changed to be less important sounding.
+    - tweak: More guns have been added to the random raider spawns.
+    - tweak: Toolbelts can hold geiger counters.
+    - rscadd: The SEV Icarus ruin now has a green haze.
+    - tweak: Sealed skrellian hardsuits now contain skrellian booty properly.
+    - tweak: The skrellian engineering hardsuit's funny little welding arm is layered
+        properly now.
+  AzlanonPC:
+  - rscadd: implantable HUDs and multitools have different sprites for each variation.
+  Boznar:
+  - maptweak: unmaps flash from physician lockers
+  CrimsonShrike:
+  - rscadd: Adds exosuit flash.
+  - rscadd: Adds exosuit camera.
+  - tweak: Exosuit floodlights can be mounted on shoulders now too.
+  - tweak: Light exosuit chassis now has a single shoulder slot.
+  - tweak: Spherical exosuit chassis now seats 2.
+  - rscadd: Adds looking down.
+  - tweak: Changes and bugfixes for zmimic.
+  - rscadd: Adds diona nymph chirp as instrument. Don't say I don't ever give you
+      anything.
+  Cupax3:
+  - rscadd: Added a new Xynergy labcoat to the loadouts, available to all Civilian
+      & Labcoat-wearing personnel.
+  Hubblenaut:
+  - tweak: Regular use of the sauna will no longer trigger the air alarm in it.
+  Ilysen:
+  - rscadd: While unconscious or asleep, you may now get bolded message similar to
+      dreams to indicate that you're being treated, floating in a cryo tube, sitting
+      in a sleeper with stasis, or on an operating table - these are added with the
+      goal of helping someone understand what's happening to them even though they
+      can't see around them while unconscious.
+  - rscadd: Added a codex entry describing how SSD messages are displayed from a mechanical
+      perspective.
+  - spellcheck: Ghosted mobs now have a distinct examine message from disconnected
+      mobs.
+  - bugfix: Monkeys are no longer permanently comatose.
+  Imienny:
+  - rscdel: Its no longer possible to make combat mech sensors(thermal mech sensors)
+  - rscdel: Skrell scout ship no longer spawns with thermal goggles
+  JAR-OSKI:
+  - bugfix: Fixes hudpatch rogue pixel
+  Mucker:
+  - admin: Adds a faction modifier to mob spawner buildmode.
+  - bugfix: Player mobs inside things are properly notified of exoplanet spawn events.
+  - tweak: Added spiders and lowered meat horror spawn chance for exoplanet spawn
+      events.
+  - bugfix: Fixed the skill panel losing focus when editing skills.
+  - tweak: Moved the 'rename species' verb for exoplanet mobs to the IC tab and added
+      a right-click option.
+  - admin: Added a verb for spawning exoplanets, 'Create Exoplanet' in the Debug tab.
+  - admin: Adds the 'Notarget' verb to 'Special Verbs', toggling a mobs visibility
+      to simple mobs.
+  - rscadd: Nurse spiders can now 'feed' a small number of spiderlings to cause them
+      to begin growing.
+  - rscadd: Spiders can now use ladders. Cower in fear.
+  - bugfix: Fixed guard/nurse spiders not pairing up, so guards will now go 'berserk'
+      when their nurse is killed.
+  - bugfix: Nurse spiders will no longer cocoon other spiders (or themselves).
+  - tweak: Nurse spiders now have a chance to be able to spawn an egg cluster after
+      spawning, instead of needing to feed first.
+  - tweak: Egg clusters now take slightly more time to spawn spiderlings.
+  - tweak: Nurse spiders will no longer cocoon items.
+  - tweak: The hellportal artifact effect will now spawn abominations much less often,
+      so we may keep our limbs.
+  Ryan180602:
+  - rscdel: Remove Space-Adapted themed accessories
+  - tweak: Over-exertion and over-utilisation of pulse-heightening drugs like nicotine,
+      caffeine and hyperzine can cause cardiac arrests
+  - tweak: Add Construction/Electrical BASIC as default for Roboticists
+  - bugfix: Fixes splashing liquids in beaker when transferring to Condimasters
+  SealCure:
+  - tweak: Ascent caulship is no longer referred to as 'colony ship' in the join menu.
+  SierraKomodo:
+  - tweak: Thermals have been re-added to various antag sources that were previously
+      removed.
+  - admin: Mech weapons now generate proper attack logs instead of admin logs, and
+      only appear when targeting mobs.
+  - tweak: 'Windows now have a minimum damage threshold based on the hardness of their
+      material before they can actually be damaged by melee attacks, adjustments to
+      their health calculation based on material integrity, and now have proper armor
+      handling for melee attacks (Projectile processing for walls already had this).
+      Walls are overall more robust when attacking them. See PR #30429 for specifics.'
+  - rscdel: Uniform jackets and winter coats no longer provide any armor or protections.
+  - admin: Pulled punches no longer generate attack logs.
+  - rscadd: Papers are now written in languages. If you understand the language, you
+      can read it. If not, it has the same effects as hearing people talking in a
+      language you don't understand. You can set the language you're writing in when
+      writing on a blank sheet by clicking the language name at the top of the paper's
+      UI window. ZAC is used by default for each paper.
+  - admin: The fax prompt now has a 'Change Language' button to set what language
+      the fax is written in. ZAC is used by default.
+  - bugfix: Grilles of non-default materials now drop the correct material rod when
+      dismantled with wirecutters.
+  - tweak: Blob attacks on structures now use consistent damage handling.
+  - rscadd: Blobs will now open broken doors.
+  - bugfix: Wet people no longer show up as 'flammable' when examined, and instead
+      show up as 'wet'.
+  - tweak: Flying medic drones now have rollerbeds.
+  Spookerton:
+  - admin: Added a Reload Character option to player panel - rebuilds a valid mob
+      from current preferences.
+  Sweedle:
+  - bugfix: Added a recipe for Kamikaze! Combine 1 part vodka, triple sec and lime
+      juice for a sour treat.
+  - tweak: Cherry and strawberry soda are now made with cherry jelly and berry juice
+      respectively.
+  - bugfix: Hooch can now be made as normal. Fringe weaver is now made with 2 parts
+      ethanol, 1 part sugar and 1 part water.
+  - tweak: Fringe weaver will now get you significantly drunker.
+  Tennessee116:
+  - imageadd: Replaced the sprites of the secure briefcase and captain's backwear
+  gy1ta23:
+  - tweak: Added an extra box of sterile gloves to the infirmary, and a supply crate
+      for more.
+2021-04-21:
+  BlueNexus:
+  - tweak: Temperature should have an increased impact on thrust, and burn mode works
+      again.
+  CrimsonShrike:
+  - tweak: Exosuits no longer accumulate radiation. They will instead return radiation
+      at current location reduced by armour directly.
+  Mucker:
+  - rscadd: Ported exoplanet themes from Nebula, includes Ruined City, Robot Guardians,
+      and Radiation Bombing
+  - tweak: Desert planets now have much less quicksand, but the quicksand that does
+      exist is now invisible.
+  - rscdel: Removed the ruined planet type, replaced with the 'Ruined City' theme
+      which can occur on any planet.
+  - admin: Fixed some buildmode nanoui's not working if you weren't ghosted.
+  Paprikue/Dox:
+  - rscadd: You can now toggle your HUDs on and off, without having to remove them,
+      in case you wanted to pull off the look while resting your eyes. Includes new
+      sprites for when they're off, and flashy sound effects to boot.
+  - rscadd: The science nerds can now get prescription Science HUDs so they can be
+      even nerdier. Available in loadout.
+  - tweak: Tweaked the Medical HUD visor colors slightly to better match normal medHUD
+      colors.
+  - tweak: EMPs now don't blind you if your HUD or goggles are deactivated. Security
+      HUDs also don't protect from flashes if they're not active.
+  - bugfix: HUDs no longer say that you're blinded after being EMP'd when they're
+      not on your eyes.
+  Ryan180602:
+  - maptweak: Change Physician's Paperwork Office to Medical Paperwork Office (for
+      all medical personnel)
+  - maptweak: Remapped Exam Room
+  - maptweak: Added 3 Runtime spawn locations
+  SealCure:
+  - rscadd: Adds janihud implants, buildable from the robotics fabricators.
+2021-04-26:
+  ? ''
+  : - tweak: CPR now is much less likely to restart a stopped heart.
+    - tweak: Skrellship hardsuits no show skin on their hands.
+    - tweak: Nanoblood now dents a mob's immunity more.
+    - tweak: Merc TTVs contain less gas for overall less boom.
+  CrimsonShrike:
+  - rscadd: New exosuit sprites. Courtesy of Azlan.
+  - tweak: Combat chassis is no longer transparent. Power loss will affect it.
+  Mucker:
+  - tweak: Tweak Petrov's atmos laptop access so all science personnel can use it.
+  - bugfix: Fixed science players not having access to Petrov cameras.
+  SealCure:
+  - bugfix: Mil-pistols now show belt overlays when holstered, and pistol magazines
+      do not.
+2021-04-29:
+  ? ''
+  : - maptweak: The cyclopes now has ~70% less fuel in the pipes, to prevent roundstart
+        explosions.
+    - maptweak: Adds two EMT belts to skrellship medbay.
+  CrimsonShrike:
+  - tweak: Jumping into deep water is no longer harmful.
+  - tweak: Water allows overcoming of gravity so long you can swim.
+  - tweak: You will no longer sink as long as water is deep enough.
+  SierraKomodo:
+  - bugfix: Sensor consoles will now print scans in the language that makes sense
+      for their mapped areas.
+  - rscadd: Modular console printers can now have their printing language configured
+      in the 'Computer Configuration Tool' menu for the console. These languages are
+      limited to what languages the user knows.
+  - admin: A `set_language()` proc has been added to papers to allow for easier changing
+      of a paper's language without dealing with VV, which likes to crash clients
+      when editing the language var for some reason.
+  - bugfix: AI-controlled zombies are no longer permanently comatose.
+2021-04-30:
+  ? ''
+  : - tweak: Using adrenaline to start a stopped heart now does half as much damage.
+  0sj/Jaydn:
+  - maptweak: Skrellships doors are now named
+  Cupax3:
+  - maptweak: The Caulship now has three new cat walks beneath the shield generator
+      and Ascent SMES, allowing for tinkering with the power net directly.
+  - bugfix: Both Silicons and Organics now use !; or ,2.h to use languages and emotes
+      over radio.
+  - bugfix: Holopads no longer have phantom conversations and connections due to people
+      calling when you're on a call.
+  - bugfix: Four suits were slightly adjusted in size to match with accessories.
+  Mucker:
+  - admin: Search results in VV will remain in view after clicking 'refresh'.
+  SealCure:
+  - tweak: You now split thaler stacks using your other hand, just as you do for material
+      stacks.
+2021-05-02:
+  ? ''
+  : - bugfix: Fix border windows, window click-through and enforce window construction
+        steps.
+    - bugfix: Fix mineral processor eviscerating mobs.
+    - bugfix: IC signalers no longer require refreshing a pin to work after printing.
+    - tweak: Full-tile windows can only be anchored to floor/low wall/grille/non-dense
+        objects.
+  Cupax3:
+  - maptweak: The Deck Chief has dug up an old space piano from one of the Entertainers
+      and put it up for grabs in the Commissary!
+  Domic2:
+  - rscadd: Adds pipe sparkers, pipe fires can now be started without heating the
+      mix. Can be controlled via signalers and buttons, or disabled with a screwdriver.
+  Mucker:
+  - bugfix: Fix the Depth Scanner's UI not updating on button clicks.
+  - tweak: Updates the Depth Scanner, Anomaly Power Utilizer, Artifact Scanner, Artifact
+      Harvester, Suspension Field Generator, and the Reagent Grinder UI's to use modern
+      browsers.
+  - bugfix: Fix mined exoplanet mineral turfs not having gravity.
+  - tweak: Lowered the amount of quicksand on desert planets.
+  NL208:
+  - tweak: Makes all modular scanners repairable with nanopaste or cable.
+  Paprikue:
+  - tweak: Syringes now use the current transfer amount for taking blood samples instead
+      of filling the whole thing immediately.
+  - bugfix: Computer modules will now consume power as originally intended.
+  - bugfix: Computers now die when you remove their batteries (as long as they don't
+      have a tesla link to directly power them)
+  - tweak: Tweaked battery depletion rates so that they don't discharge almost immediately.
+2021-05-04:
+  CrimsonShrike:
+  - tweak: Mobs that can drown will not drown if there is not enough fluid on turf
+      above to allow swimming, if they are able to overcome gravity.
+  Imienny:
+  - tweak: Replaced vox rig sprites with new one, Big thanks to coiscin for sprites!
+  Vandalxx:
+  - tweak: changed the body dragging sprite to appear more draggy
+2021-05-07:
+  ? ''
+  : - bugfix: The LMG no longer disappears it's half empty, full, or someone sneezes
+        weirdly.
+    - rscadd: Adds a new recruitment poster from the Fleet
+    - maptweak: The skipjack's ceiling is now simulated turf, in a fancy brown colour.
+    - tweak: Disables the ascent caulship's spawn.
+  Cupax3:
+  - maptweak: The Vox Scavenger Ship now has a button to use its burn chamber igniter.
+  - tweak: Attacking point blank with a gun on harm intent no longer attacks, and
+      instead aims, if gun mode is aiming.
+  Ryan180602:
+  - maptweak: Exploration themed backpacks and cameras will now spawn in exploration
+      lockers
+  SealCure:
+  - bugfix: AntagHUD now shows mutineers and loyalists properly.
+  SierraKomodo:
+  - maptweak: The Errant Pisces shuttle landmarks have been moved, to prevent shuttles
+      from landing inside nets and deleting their walls.
+2021-05-09:
+  ? ''
+  : - maptweak: The commissary's space piano will now randomly spawn at a set location
+        on one of the six decks. Find them all!
+  Cupax3:
+  - bugfix: Most uniforms now correctly display, for example fleet dress.
+  Domic:
+  - maptweak: Adds spare headsets to robotics
+  - bugfix: Magboots no longer grip open spaces.
+  Ryan180602:
+  - maptweak: Moves Lar-Maria's shuttle landmarks to not cause the Charon from flying
+      into the station, deleting turfs.
+  SierraKomodo:
+  - rscadd: Borgs can now have a new upgrade module installed, available from robotics
+      fabricators, called "optical matrix shielding". This upgrade makes the borg
+      immune to flashes when installed.
+  - rscadd: Traitor borgs now have flash immunity when antagged. De-antagged traitor
+      borgs will lose this immunity.
+  - rscadd: Combat borgs now have flash immunity by default.
+  - admin: Attack logs now show the attacker's selected target zone.
+2021-05-10:
+  ? ''
+  : - tweak: The number of mercs that can spawn is now 3 to 5, down from 4 to 6.
+  CrimsonShrike:
+  - rscadd: Added two new exosuit modkits.
+  - tweak: Tweaked exosuit decal rendering. Should make decals mesh better with existing
+      geometry.
+  - tweak: Exosuit modkits no longer consume on use.
+  Domic2:
+  - tweak: Railings now appear in front of mobs when they should.
+  Mucker:
+  - bugfix: Fixed not being able to hear announcements while inside things like mechs
+      or sleepers.
+  - tweak: Corrected a minor typo in the mail announcement and the letter item.
+  - bugfix: Fixed shuttle movement into areas with gravity knocking players over while
+      they were buckled.
+  - rscadd: Anomaly Crates can now be ordered from Supply.
+  Nirnael:
+  - bugfix: Shutters are again reachable on window tiles.
+  Ryan180602:
+  - maptweak: Removed soporific from the counselor's locker, and replaced their single
+      methylphenidate pill with a pill bottle.
+  Ryan18062:
+  - rscdel: Removes Phlogiston
+  afterthought, Mucker:
+  - bugfix: Fixes the skill panel refresh bug (for real this time).
+2021-05-13:
+  GeneralCamo:
+  - tweak: Cleaned up access permissions and renamed a few to make them more clear.
+  Ryan180602:
+  - rscadd: Transfer RIG modules to be craftable from MechLab instead of FabLab
+  - maptweak: Add Long Range Holopad to Vox Ship
+  - maptweak: Rename Vox Fore to Unknown Vessel Cockpit
+2021-05-15:
+  Mucker:
+  - tweak: Invisible hydroponics trays will no longer display their machine description
+      on examine.
+  - bugfix: Fixed the mimic to use the correct crate icon.
+  Ryan180602:
+  - tweak: Makes higher piloting skills actually matter to tackle meteors.
+  - tweak: Very minor wording tweaks to skill descriptions.
+2021-05-19:
+  CSCMe:
+  - rscadd: Adds "Don't let a slime snack on you" personal goal for scientists.
+  GeneralCamo:
+  - bugfix: Scrubbers now use the correct sprites when siphoning.
+  Jux:
+  - tweak: Adds four more pistols to the renegade gunpool.
+  SealCure:
+  - bugfix: Winter coats now have hood sprites again.
+  SierraKomodo:
+  - bugfix: Ghosts will no longer break skillchecks for helm controls.
+  - tweak: Ship helm consoles now only allow a single person to use manual control
+      at a time, including viewing the overmap through the helm.
+  - rscadd: Messages are now displayed whenever another mob takes control of a helm
+      control, to make it outwardly obvious who's skills are used to calculate flight.
+  Tennessee116:
+  - admin: Admin-paralyzed mobs will now be reported as such in the roundstart logout
+      report.
+  bear1ake:
+  - bugfix: Glass spear's inhand icon shows correctly
+2021-05-22:
+  Spookerton:
+  - admin: Added radiation build mode.
+2021-05-23:
+  BlueNexus:
+  - maptweak: Simplified the Nacelles slightly. As a side effect, the engines should
+      come up to pressure faster.
+  - maptweak: Pipes in the Nacelles should no longer explode with burn mode on
+  GeneralCamo:
+  - tweak: Renamed the captain's backpack and captain's satchel to the command backpack
+      and command satchel respectively, and changed its description to denote it is
+      given to senior officers.
+  - tweak: The executive officer now gets command packs by default
+  - tweak: Former corporate packs have been renamed to science packs.
+  - spellcheck: Various style and grammar improvements have been made to the descriptions
+      of various backpacks.
+  Imienny:
+  - bugfix: Taking pills no longer stops you from eating.
+  - tweak: Races which can regurgitate content of their stomach no longer have to
+      stick finger in to their throat.
+  Ryan180602:
+  - tweak: Engineer Trainees now get access to material goggles
+  SierraKomodo:
+  - rscdel: The Executive Assistant/Asset Protection Agent role has been removed.
+2021-05-24:
+  The-Spanish-Inquisition:
+  - rscadd: Added two new projectile firearms; Added one ammo speed loader to support
+      new firearm.
+2021-05-25:
+  Jux:
+  - tweak: Fleet CAs and CNs now don't get the dress beret, and have to wear the full
+      sailor getup.
+2021-05-26:
+  Hubblenaut:
+  - bugfix: Fixes melee weapons like the energy sword effectively not having armor
+      penetration.
+  Mucker:
+  - rscadd: Ported Polaris mob AI and integrated existing simple mobs into it.
+  - admin: Added a buildmode for controlling mobs with AI (sort of like an RTS).
+  - bugfix: Fixed ranged mobs rapid firing when being melee'd.
+  - bugfix: Fixed mobs being able to circumvent barriers via diagonal movement.
+  - rscdel: Nanomachines and Commanded have been disabled until they can be integrated
+      with the new mob AI.
+  Spookerton:
+  - tweak: The peacekeeper armor and helmet sets in the emergency armory are black
+      medium with sol tags instead.
+2021-05-27:
+  CSCMe, ChaosAlpha:
+  - bugfix: Gibbed Dionaea couldn't jump between their nymphs.
+  - bugfix: Dusted non-humans didn't have ghost sprites
+  Jux:
+  - tweak: The fleet wheel cover is now exclusive to SNCOs and Officers. Tout your
+      headgear over the lower enlisted and laugh.
+2021-05-28:
+  GeneralCamo:
+  - tweak: Renamed Laboratory Technician to Pharmacist
+  - tweak: Pharmacists now get their job-specific packs and PDA
+  - rscadd: Re-added "Chemist" alt-title to the Pharmacist
+2021-05-30:
+  0sj/Jaydn:
+  - tweak: skrellian space heaters now have a default temp of 40
+  - maptweak: Added circuit printer upgrades and two hyposprays to skrellship
+  CrimsonShrike:
+  - tweak: Rigs with unlocked panels require no access to use. Sharing rigs with department
+      members no longer requires cutting wires.
+  GeneralCamo:
+  - maptweak: The crashed survival pod now spawns with plastic.
+  - bugfix: The crashed survival pod now spawns the correct engineering tape roll
+      (rather than pre-placed engineering tape)
+  Ilysen:
+  - rscadd: Added a whole smorgasbord of new augment options, which you can obtain
+      in a variety of ways.
+  - rscadd: Traitors can access an Augments section in their uplink to buy CBMs -
+      compact bionic modules that can be used to self-install augments with no medical
+      skill. They are, however, very painful to use.
+  - rscadd: Added an Augments section to character loadout for minor augments.
+  - rscadd: Added a selection of fluff augments that do nothing mechanically, and
+      exist purely for roleplay purposes. You can get them from roundstart loadouts.
+  - tweak: Integrated HUD augments can now be picked at roundstart by appropriate
+      roles.
+  - tweak: Some augments can now be discovered by grab-inspecting the body part they're
+      on.
+  - tweak: Medical records now differentiate between roundstart prosthetics and roundstart
+      augments.
+  - bugfix: Hidden augments are now fully hidden on body scanners instead of showing
+      on the "internal organs" list as a mechanical prosthetic.
+  - bugfix: HUD augments now let you control medical status/security status/etc when
+      examining another person.
+  Viiim, Rootoo:
+  - tweak: Changes the recipe of the fizzy orange, alexander, and iced frappe, so
+      that they don't overlap with the kira special, iced coffee, and stinger.
+  Viim:
+  - tweak: Changes traitor skills from three trained, one experienced, to two trained,
+      one experienced, and one master.
+2021-05-31:
+  Ilysen:
+  - bugfix: You can now properly change the appearance of the modified gas mask.
+2021-06-01:
+  SierraKomodo:
+  - rscdel: Pickpocket gloves have been removed.
+2021-06-02:
+  Ilysen:
+  - bugfix: You can now properly light molotov cocktails with any open flame source
+      like welding tools, not just lighters.
+2021-06-04:
+  CrimsonShrike:
+  - tweak: Big things hurt more when they fall on you.
+  - tweak: Exosuits now take explosion damage correctly
+  Huntime:
+  - maptweak: Aligned infirmary entrance with ladders and added borders to colored
+      infirmary floor sections.
+  Ilysen:
+  - rscadd: You can now browse through hairstyles with arrows in addition to selecting
+      a style from a list. Useful for looking around more without having to pick randomly!
+  SealCure:
+  - rscadd: Adds scienceHUD implants, buildable from the robotics fabricator and selectable
+      at the loadout screen.
+2021-06-13:
+  SierraKomodo:
+  - bugfix: It is no longer possible to buckle mechs to chairs.
+2021-06-14:
+  Cupax3:
+  - admin: SQL updated to no longer use "rank" and "level" as names...
+2021-06-15:
+  DeadmonWonderland:
+  - rscadd: Adherents now have the option for Medical Technician and Physician roles.
+  - rscadd: Unathi now have Fleet and Sol Government roles. EC and Fleet ranks are
+      up to LCDR
+  - rscadd: Skrell now have Fleet and Sol Government roles. EC and Fleet ranks are
+      up to LCDR
+  Ilysen:
+  - maptweak: Reverts the prior medbay changes committed by Huntime due to a few stability
+      errors and general mixed reception.
+2021-06-16:
+  Mucker, Ryan180602, and SierraKomodo:
+  - bugfix: Fix fleet jacket entry in the uniform vendor.
+  - bugfix: Fixed character menu preview icon not updating on character swaps.
+  - bugfix: Service borg consumables should now properly recharge/refill.
+  - tweak: Add robotic stomach sprite (from Azlan) for Stomachs from Prosthetic Fabricators.
+2021-06-20:
+  Ilysen:
+  - spellcheck: Rewrote the in-game Changelog popup to mention TeguStation instead
+      of Baystation 12. Lots of people from the Baystation 12 dev team have been added
+      to the credits as a result.
+  - rscadd: Bioprinters and prosthetic organ fabricators have a new interface, based
+      in NanoUI, instead of using a basic HTML popup.
+  - rscadd: Organs printed from a bioprinter are now called "surrogate" organs, and
+      have a slightly green tint. These changes are purely aesthetic, and the organs
+      function the exact same as their normal counterparts.
+  - tweak: Organ printing machines now show the human-readable name for the part they're
+      creating, instead of the in-code name (i.e. "l_arm" is now referred to as "left
+      arm").
+  - tweak: Added feedback for when an organ printer starts creating an organ.
+  - tweak: Injecting blood samples into a bioprinter now actually removes the blood
+      sample from the syringe.
+  - tweak: Prosthetic organ fabricators have been renamed to prostheses fabricators,
+      in an effort to clarify that they can print robotic limbs as well as robotic
+      organs.
+  MitztheKat:
+  - rscadd: Adds sheep to cargo. stock up 'cuz you'll want their milk for when feta
+      is added!
+  - wip: preparing to fix Milking. Will refer to chicken code or /TG/ code.
+  theunlovedrock, monitorlizard, pawn:
+  - rscadd: Adds a new provocateur ship, the IPV Rawl available for Unathi.
+2021-06-21:
+  EgorDinamit:
+  - imageadd: Replaced bay logotype in several icons with TeguStation one.
+2021-06-22:
+  Azlan, Pawn:
+  - rscadd: Most voidsuits used by SCG crew now follow a new, fresh standard. Credit
+      to Pawn and Azlan for actually doing all the work.
+  - rscadd: Added a few missing states for alternate helmets for skrell and unathi
+      on hardsuits such as industrial one.
+  - bugfix: Moved the command and exploration helmets to their respective file, instead
+      of the suit file.
+  - bugfix: Pathfinder's HCM now actually uses its object icon.
+  - bugfix: Fixed a bunch ancient EBM helmets light smuck.
+  - bugfix: Unathi medical voidsuits now have a proper head sprite, instead of reusing
+      the white voidsuit one.
+  EgorDinamit:
+  - rscadd: Added Atlas the tegu, and Steppy the alligator.
+2021-06-23:
+  Rock:
+  - rscadd: Command EVA now has a suit cycler for command voidsuits.
+  anconfuzedrock:
+  - bugfix: cycled explo suits are now actually visible.
+2021-06-28:
+  Fre3bie and Sky:
+  - rscadd: three different types of wrist watches black / fancy / leather
+  - rscadd: new loadout option for these watches
+  Ilysen:
+  - rscadd: You can now deconstruct nearly-empty or destroyed gas canisters with a
+      welding tool.
+  - rscadd: You can now repair damage to gas canisters with duct tape.
+  - rscadd: Examining a gas canisters now gives a rough idea of how damaged it is.
+  - tweak: Improved the feedback for attacking canisters - it now has a normal attack
+      animation and plays a sound.
+  - tweak: By making canisters rupture at zero health instead of 10, they're technically
+      slightly stronger now!
+  - spellcheck: Updated the codex entry for canisters to reflect new functionalities.
+  - spellcheck: Renamed canisters - now they're `gas canister` instead of `Canister`.
+      Also added a simple examine description.
+  - spellcheck: Helium, Methyl Bromide, and Chlorine canisters now explicitly state
+      what they contain on their label instead of having a chemical formula - this
+      is to bring them in line with other gas canisters.
+  - rscadd: The chef's cookers (griddle, oven, etc.) have received a UI facelift.
+  - bugfix: Cookers now properly play a ding when they finish cooking - previously
+      the sound played at 0.5% volume.
+  - tweak: Adherents now have a special cell, called the "crystal-ceramic grid", instead
+      of a standard superior power cell. It is mechanically identical, but shows instead
+      of "superior power cell" when you recharge from an electron reservoir.
+  - tweak: The electron reservoir now has first-person messages towards the person
+      using it. Zap.
+  - bugfix: Slamming someone into the electron reservoir now drops the grab, since
+      the victim goes flying across the room.
+  MuckerMayhem and Sky:
+  - admin: adds a button to end the round while still showing credit scene
+  Rootoo807, Viim:
+  - imageadd: Corgi Hat sprites for both normal corgi and Lisa
+  Sky:
+  - rscadd: snake mob
+  - imageadd: snake sprites courtesy of tg
+  SkyCinnamon:
+  - spellcheck: changed capitalization in GAS define
+2021-06-29:
+  Samuuu3:
+  - rscadd: Adds more chemical injection options for cortical borers
+  - tweak: Changes the name and description of borer thralls to borer hosts
+2021-07-01:
+  Ilysen:
+  - tweak: The chat log limit has been doubled. This change may or may not stay depending
+      on if stability issues appear.
+  - tweak: The danger span (most commonly shown for combat) is now properly bolded
+      across all chat modes.
+2021-07-02:
+  rust-g devs, Cupax3:
+  - wip: Adds rust-g to the backend. No user impact.
+2021-07-03:
+  Shadowtail117:
+  - admin: Added a config setting for world.sleep_offline.
+  Spookerton , Sky:
+  - bugfix: Unathi can wear soft caps again
+2021-07-05:
+  Sky:
+  - rscadd: safety moth posters made by Azlanon and AyyRobotics
+2021-07-13:
+  ? ''
+  : - tweak: Adds Fleet Jackets and Polo and Pants back to the uniform vendors.
+  Ilysen:
+  - tweak: Microwaves are no longer used to cook recipes. Instead, they're used to
+      cook ingredient items, such as raw cutlets, in bulk.
+  - tweak: Using monkey cubes in the worst way now also fractures your chest, in addition
+      to having a beefier message and a splat sound.
+  - rscadd: Added the electric stove, which is the new machine used to cook recipes.
+      It cooks a bit faster than the microwave (to make up for there only being one
+      of them) and can be upgraded with stock parts.
+  - rscadd: Added an electric stove to the Torch galley and several offships.
+  - rscadd: Added hot plates (smaller versions of the stove) to places that currently
+      only have a microwave that now lack an object to cook food, including most of
+      the other offships not mentioned above.
+  - rscadd: Added baking sheets, which are large trays that can be put into stoves
+      or hot plates while they have food on them to cook the ingredients on them as
+      though they were standalone. For instance, you can put the ingredients for a
+      taco onto a sheet, and the ingredients for meatbread into the stove, and both
+      a taco and a loaf of meatbread will be cooked! They can only hold anything that
+      could normally fit into a stove.
+  - bugfix: Trays can no longer hold other trays, creating infinite tray recursion.
+  - bugfix: Fixed a runtime caused by certain animals trying to retaliate when having
+      no natural weapon.
+  Shadowtail117:
+  - admin: Mentors can now be specified in adminranks.txt with the "+MENTOR" permission,
+      or with "+EVERYTHING". Staff ranks that have ONLY +MENTOR will not receive the
+      default admin verbs or access to the MC panel, and cannot deadmin themselves.
+  - rscadd: All players now have access to a "Mentorhelp" verb, which allows you to
+      request help from an in-game mentor similar to an adminhelp.
+  - rscadd: Mentors can respond to a player's mentorhelp by clicking on their name
+      (players can reply to a mentor in the same way) and can also initiate the conversation
+      by either right-clicking a mob or in the "Mentor PM" verb.
+  - admin: Msay has received an overhaul and now stands for mentorsay, not moderatorsay.
+      Mentors have access to it by default. Admins retain access.
+  - tweak: All of the verbs listed above, as well as adminhelp, asay, admin PM, and
+      staffwho are now in a new "Staffhelp" category for easier access.
+  - admin: Admin memos have been moved to an "Admin Memos" verb, and a new "Mentor
+      Memos" verb has been added with nearly-identical functionality. They both reside
+      in the Admin verb category. Mentors cannot edit or delete mentor memos or see
+      admin memos.
+  - admin: Mentor action logs (mentorhelps and PMs) can be viewed in the Secrets panel.
+  - admin: Two new config settings have been added, LOG_MENTOR and ENABLE_MEMOS. The
+      former acts similarly to LOG_ADMIN, and the latter will enable/disable the use
+      of the memo systems (though the verbs will still be visible).
+  - admin: Admins can mute people from using mentorhelps and mentor PMs.
+2021-07-24:
+  ? ''
+  : - tweak: diona now have mask , left ear, eye slots
+    - tweak: diona can now wear hard hats
+    - rscadd: diona cant wear hud glasses but can wear eyepatch huds
+    - rscadd: you cannot blindfold a diona
+  Ilysen:
+  - tweak: Forehead graffiti is now removable by using a piece of paper targeting
+      the head.
+  - rscadd: Revamped the way changeling abilities are shown. Instead of existing in
+      a verb tab, they now have buttons like spells. Actual functionality should remain
+      (mostly) unchanged.
+  - tweak: Changeling stasis will now send a message and sound to the user if they're
+      dead and have ghosted, allowing them to know when to return to their body.
+  - tweak: Rewrote the messages for a bunch of changeling abilities.
+  - tweak: Improved the user feedback for some changeling abilities.
+  - tweak: Changeling stasis and other fake death sources are now more convincing.
+      Examine texts, medical scanners, medical HUDs, and other sources are now fooled
+      by fake death, and fake-dead mobs will no longer gasp or make other emotes.
+  - balance: You will now receive a message if you fail to speak while silenced, instead
+      of it failing with no feedback.
+  - balance: Monkeyizing is a little faster.
+  - balance: Medical HUDs will now detect changelings in stasis as being dead, rather
+      than alive.
+  - balance: Because the AI role doesn't currently exist, Digital Camouflage has been
+      made free to purchase and maintain, as it is primary a roleplay ability now.
+2021-07-28:
+  Shadowtail117:
+  - rscadd: You can now shift your location on a tile up to 8 pixels in any direction
+      using control + shift + an arrow key.
+  Sky:
+  - tweak: All human subspecies aside from mules can have biomods
+  - rscadd: snakes are able to spawn via vermin infestation
+  - rscadd: snakes can be bought via cargo
+  Yvesza , Sky:
+  - balance: Improved the effects of Amatoxin, Lexorin, Carpotoxin and Impedrezene.
+  - balance: Vox are no longer effected by Lexorin.
+  - balance: Chemical smoke duration now scales with the amount of reagents used to
+      create it.
+  - balance: Chemical smoke splashes less reagents on touch (10 -> 5)
+  - tweak: Characters being coated with harmful chemicals will receive warning messages,
+      along with anyone close enough to bear witness.
+  - tweak: Being sprayed with acid while wearing protective gear no longer automatically
+      identifies it as acid.
+2021-07-29:
+  Shadowtail117:
+  - bugfix: Regular players can no longer see a ghost Mentor PM verb that doesn't
+      do anything.
+2021-08-02:
+  SkyCinnamon:
+  - bugfix: mob ai can no longer open any door
+2021-08-04:
+  Shadowtail117:
+  - admin: F8 will now open up the Asay window instead of invisimin.
+2021-08-07:
+  Ilysen:
+  - spellcheck: Emergency floodlights now have a description.
+  - spellcheck: Fixed some grammatical mistakes that appeared when examining power
+      cells.
+2021-08-08:
+  Shadowtail117:
+  - rscadd: You will now be asked to confirm to join as a job for which you don't
+      have any preferences set.
+2021-08-10:
+  Cupax3:
+  - admin: Adds a job whitelist system
+  - admin: Makes AI a whitelisted job
+  Yvesa , Spookerton:
+  - tweak: Flashes no longer stack their confusion / stun effects infinitely.
+  - bugfix: Groins are now more pain resistant.
+  - balance: Dislocations via disarm intent are significantly less likely to occur
+      with low force weapons initially, chance to dislocate rises as damage is dealt
+      to limbs.
+2021-08-11:
+  OriginalNaym:
+  - rscadd: A hijab and turban with the Fleet colors and symbol are now available
+      from loadouts and uniform vendors for Fleet characters
+2021-08-13:
+  Sky:
+  - tweak: Changeling now requires 10 people
+2021-08-16:
+  Ilysen:
+  - rscadd: Items in Xenowear now list the names of each species that can equip them.
+  - tweak: Special examine texts for species now appear below their clothing information,
+      instead of being at the top of the message, and are italicized for clarity.
+  - tweak: Adherents now have a uniform layer, which they need to equip an ID and
+      a belt. They also get pockets now, as a result.
+  - tweak: Adherents can now equip the gear harness, and pick it as a loadout item
+      in Xenowear.
+  - bugfix: Walls no longer become un-weldable after a deconstruction attempt is interrupted.
+2021-08-21:
+  OriginalNaym:
+  - tweak: There are now ten security badges in the locker room vendor instead of
+      six.
+2021-08-22:
+  Ilysen:
+  - rscadd: You can now examine disposals pipes to see if they're damaged.
+  - rscadd: Disposals pipes now play a quiet scraping sound as they're moved.
+  - rscadd: Modernized some messages and sounds related to disposals construction.
+  - bugfix: Disposals chutes no longer always face south when you construct them.
+  - bugfix: You can properly destroy unused disposal pipes and machines by click-dragging
+      them onto the disposals pipe dispenser.
+  - bugfix: Disposals pipes no longer render underneath their dispenser.
+  - tweak: Modernized some messages and sounds related to disposals construction.
+  Sky, Cuboos:
+  - tweak: High security doors now make a different denied access sound
+  - rscadd: Every door now makes a denied access sound
+2021-08-23:
+  Shadowtail117:
+  - bugfix: The mentorhelp verb is now available to all players under the Staffhelp
+      category again.
+2021-08-25:
+  Ilysen:
+  - admin: Added a button in View Variables to add reagents to an atom with reagents.
+      Includes mobs, beakers, food, and so on.
+2021-08-27:
+  Cupax3, Watermelon914, Jordie0608, Cyberboss, and many more:
+  - admin: Repairs SQL backend connection, allowing playtime lookups.
+  - experiment: Screamtest due to scope needed
+  Ilysen:
+  - balance: Antidexafen no longer overdoses, and its painkiller amount has been decreased
+      to 5, from 15. Neither of these are very big at all, so overall impact should
+      be low.
+  - tweak: Lactate renamed to Lactic Acid, to avoid... confusion.
+  - tweak: Gave Imidazoline a proper description.
+  Sky:
+  - tweak: Explorers can fly the Charon
+  - tweak: shuttle pilots have maintenance access
+2021-08-28:
+  Shadowtail117:
+  - admin: Admin ghosting (aghosting) will now log and message admins.
+2021-09-01:
+  Ilysen:
+  - tweak: Updated several culture texts for adherents to reflect some rewritten lore
+      for them, with the intent to flesh out different parts of their history to give
+      more material for adherents to roleplay and shape their personality with.
+2021-09-04:
+  Ilysen:
+  - spellcheck: Flashes now display their use messages in second person for both the
+      mob doing the flashing and the mob being flashed. This is the first step towards
+      properly targeted messages!
+  Mucker, Hubblenaut , Sky:
+  - bugfix: Mobs not trying to break through solid turf when attacking
+  - bugfix: Xenobotany can now grow unlimited seeds
+2021-09-06:
+  Ilysen:
+  - maptweak: The bluespace river away site has received some map adjustments and
+      modernization.
+  - maptweak: An anomaly scanner (Alden-Saraspova counter) can now be used on some
+      objects and turfs in the bluespace river away site for some fluff text.
+  - bugfix: Welding apart floors in the bluespace river's underground z-level no longer
+      creates space tiles.
+  SierraKomodo, Azlan:
+  - rscadd: 'Teleporter beacons have been completely replaced with machinery-based
+      beacons. These beacons hide under floor tiles when fully installed, and can
+      only be targeted and used by teleporter consoles when powered, anchored, and
+      un-tampered with. See PR #109 on GitHub for detailed changes.'
+2021-09-12:
+  Shadowtail117:
+  - rscadd: You can now pull someone by the hands if you target a hand that they have
+      and pull them.
+  - rscadd: You can now shake someone's hand if you target a hand that they have and
+      click on them with help intent.
+2021-09-14:
+  Ilysen:
+  - tweak: Reformatted printed exoplanet scan reports.
+  - tweak: Exoplanet scans now show the estimated amount of minerals on the planet
+      (for mining drills).
+  Retlaw, Sky:
+  - tweak: fuel port resprite for all variants
+  TetraZeta, Sky:
+  - tweak: mop resprited
+2021-09-21:
+  Chinsky, Sky, Retlaw:
+  - rscadd: Runechat
+  Sky, Retlaw:
+  - tweak: New resprites of bluespace, normal and noreaction syringes
+  - tweak: different reagent fillings in order to accommodate the new syringes
+  - tweak: new inject and draw icons for syringes
+2021-10-05:
+  EgorDinamit:
+  - tweak: Walking into bluespace ghost/clone will no longer kill you.
+  Shadowtail117:
+  - tweak: The fountain of youth will no longer make you a minor.
+2021-10-07:
+  Ilysen:
+  - spellcheck: The names of several reagents have been capitalized.
+  - spellcheck: Added descriptions to many reagents that lacked them, and rewrote
+      several descriptions that were either barebones or didn't actually explain much
+      about what the reagents did.
+2021-10-10:
+  EgorDinamit:
+  - tweak: Added Discord invite button to the interface.
+  - tweak: Multiple progress bars may appear if you are attempting to complete multiple
+      tasks.
+  - soundadd: New flashbang sounds.
+  - tweak: Latejoin menu looks a tiny bit different.
+  Mucker, Sky:
+  - bugfix: simple mobs cant walk in space
+2021-10-13:
+  EgorDinamit:
+  - tweak: Smooth movement!
+  - rscadd: Bluespace RPED.
+  - tweak: Sounds for both RPEDs when updating parts.
+  - tweak: Ghost "Follow" verb now only shows mobs with clients(player-controlled).
+  - soundadd: Banging on the window now has a different sound effect.
+  - tweak: Examining items inside your backpack will not show a message just at what
+      item you are looking.
+2021-10-14:
+  EgorDinamit:
+  - tweak: Attacking a wall now properly shows an animation.
+  - rscadd: Add "truster players" system. At this moment, it only grants player a
+      slightly different OOC color.
+  Mucker:
+  - bugfix: Fix mobs not properly reacting to attacks
+  - bugfix: The clown and crab are no longer default hostile
+  SierraKomodo:
+  - bugfix: Cameras no longer permanently block blob expansion.
+  - tweak: Blobs will no longer spread onto tiles that have a dense object, which
+      blocked them from being shot by projectiles.
+  - tweak: Blobs will now damage any items or objects on a turf that use standardized
+      health.
+2021-10-15:
+  EgorDinamit:
+  - tweak: Attack animations have been updated to convey a little bit more movement.
+  - tweak: SSD examine messages now clarify SSD status in the text.
+  - tweak: Voting panel has been updated.
+2021-10-17:
+  EgorDinamit:
+  - tweak: Your screen won't shake if you are trained in weapons skill when shooting
+      a gun.
+  - rscadd: Projectiles now use pixel-precise movement. Pew-pew.
+2021-10-18:
+  EgorDinamit:
+  - tweak: Fax and Newscaster interfaces have been updated.
+  quardbreak:
+  - tweak: Runechat messages font is one pixel larger. Rejoice.
+2021-10-19:
+  EgorDinamit:
+  - tweak: Progress/Stamina bars won't blink now.
+  - tweak: Font for status displays is changed.
+  MuckerMayhem:
+  - tweak: Made it more difficult to dodge simple mobs melee attacks.
+  - tweak: Mobs calling for help will no longer cascade and bring the entire map toward
+      them.
+  Quantum-M:
+  - bugfix: Fixes the reagent path for the Sulphuric acid cartridge.
+2021-10-21:
+  EgorDinamit:
+  - admin: Added admin verb "Fix air".
+2021-10-25:
+  EgorDinamit:
+  - rscadd: Added *spin emote.
+2021-10-29:
+  EgorDinamit:
+  - tweak: Ghosts can click on backpacks/boxes/other storage devices to see their
+      contents.
+2021-10-31:
+  EgorDinamit:
+  - soundadd: Fire sounds of some guns have been changed.
+  - tweak: Added hollow-point bullet magazines to the prototype SMG. These are admin-spawn
+      only for now.
+  MistakeNot4892:
+  - rscadd: True auto-fire is added to "full-auto" fire mode on some guns. Rejoice.
+2021-11-01:
+  EgorDinamit:
+  - rscadd: Quick-equip hotkey (E) now can put items inside of a backpack or any other
+      storage item.
+2021-11-05:
+  Sky:
+  - rscadd: Steppy poster is back and spawns in cargo
+2021-11-09:
+  Azlan:
+  - imageadd: Updated supermatter icons.
+  EgorDinamit:
+  - rscadd: Players on lowpop will start with more access. Choose command positions
+      for even more access.
+  - admin: Lowpop access is controlled by config values LOWPOP_ACCESS and LOWPOP_ACCESS_AMOUNT.
+  - rscadd: An abandoned tech cult church has been added to the list of exoplanet
+      ruins.
+  Imienny, RustingWithYou:
+  - rscadd: Adds new emote to Vox Armalis *ashriek, *shriek but cooler.
+  - tweak: The *ashriek emote sound may also play when speaking.
+  - rscadd: Adds two new Vox plants - the resin plant and the breather. The breather
+      produces nitrogen gas, and the resin produces a new material, Vox bioresin.
+      Adds seeds for both of them to the Vox offship.
+  - rscadd: Adds seed extractor to Vox ship.
+  - rscadd: Vox Armalis can now use *shriek emote.
+  - imageadd: Adds sprites for Vox Armalis wearing the two types of Vox clothing.
+2021-11-11:
+  EgorDinamit:
+  - tweak: Added fancy-looking jumpsuit. Currently unavailable outside of admin spawn.
+2021-11-13:
+  AzlanOnPC, Pawn, Fre3bie, SomeAngryMiner:
+  - imageadd: EVA Hardsuit, Blood-Red Voidsuit, Crimson Hardsuit and Heavy Crimson
+      Hardsuit have received a sprite update.
+  - tweak: Mercenary EOD hardsuit is now spaceproof.
+  - tweak: Vox can now wear mercenary voidsuits and hardsuits, while Skrell and unathi
+      can now wear merc and EVA hardsuits.
+  EgorDinamit:
+  - tweak: 'Temperature gun now only has 2 modes: heat and freeze. Both adjust the
+      target''s temperature by 40 in their respective direction.'
+  - tweak: Temperature gun now fires a bit faster and consumes more charge per shot.
+2021-11-16:
+  AMcilraith:
+  - tweak: flashlight has been resprited
+  EgorDinamit:
+  - rscadd: Assault laser rifle is added to the game. Currently unobtainable outside
+      of admin spawns.
+  - imageadd: Added missing inhand icons for "lasersec". Currently used by assault
+      laser rifle.
+  - tweak: Psionic laser on master level of energistics is no longer stun projectile.
+      Now it's a weak damaging laser.
+  Hubblenaut:
+  - tweak: When confused or being clumsy, you will now fall over railings, mineral
+      baths, or slam into objects and walls when sprinting.
+  - tweak: You can't get out of disposal bins or mineral baths when you're incapacitated.
+  - bugfix: No longer phasing through walls using railings.
+2021-11-19:
+  EgorDinamit:
+  - tweak: Telekinesis powers scale with your psychokinesis level. At paramount -
+      you won't release a grasp on item/mob after throw as well.
+  - tweak: Telekinesis throws are overall less damaging and take more stamina to perform.
+  - rscadd: Cybersun voidsuit added. Currently unobtainable, but might become an item
+      available to mercenaries/traitors later.
+  - tweak: GCC is gone and TerraGov is now in its place! Terran now means quite a
+      different thing, dear lore people.
+  quardbreak:
+  - rscadd: Custom keybindings have been added.
+2021-11-20:
+  EgorDinamit:
+  - tweak: Artifact container now provides a message and sound effect on a successful
+      action.
+2021-11-21:
+  EgorDinamit:
+  - tweak: Mobs won't "fly off" the rolling beds and wheelchairs when being pulled
+      or otherwise moved.
+2021-11-23:
+  EgorDinamit:
+  - tweak: Blob nodes now play an animation and sound effect on each attack.
+  - tweak: Blob nodes can now attack light sources, but only structures.
+2021-11-24:
+  EgorDinamit:
+  - tweak: Clogged objects(toilets, sinks) now give a better description of how bad
+      the situation really is.
+  Shadowtail117:
+  - bugfix: HCM chemical injectors can no longer inject people over any distance.
+  - tweak: Mobs being injected by an HCM chemical injector are no longer told what
+      they are injected with and in what quantity.
+2021-11-30:
+  EgorDinamit:
+  - tweak: Late join menu has been updated to show unavailable jobs in a different
+      style, if you chose to see them.
+2021-12-06:
+  Doctor Derp & NiennaB:
+  - imageadd: 'Adds new unbranded sprites. Original author: NiennaB!'
+  - imagedel: Deletes old unbranded sprites.
+  Shadowtail117:
+  - tweak: You can now see if a drink contains ice or is completely ice when examining
+      it while close by.
+  - tweak: Water no longer makes a sound or plays a message when freezing, and ice
+      no longer makes a sound or plays a message when melting.
+  - bugfix: Because of the above, water bottles will no longer invade your ears or
+      your chat when opening/closing freezers containing them.
+2021-12-07:
+  EgorDinamit:
+  - balance: Cyborgs now move slightly faster.
+  - rscadd: Unregistered vessels may now appear in the merchant list. Be quick and
+      you may find something extremely powerful!
+  - tweak: Energy weapons trader doesn't sell power cells anymore. Instead, they now
+      have energy pistols and temperature guns in stock.
+2021-12-08:
+  EgorDinamit:
+  - rscadd: T12 rifle is now in the game. Currently event(admin)-only.
+  MuckerMayhem:
+  - bugfix: simple mobs can destroy tables
+2021-12-10:
+  EgorDinamit:
+  - tweak: Major severity exoplanet awakening event will no longer happen on lowpop(below
+      12). Moderate severity will still happen.
+2021-12-13:
+  EgorDinamit:
+  - tweak: Upgraded capacitors and scanning modules received proper icons.
+2021-12-14:
+  Shadowtail117:
+  - tweak: The hydrogen tanks in the auxiliary fuel bay next to medical have been
+      changed to carbon dioxide tanks.
+2021-12-16:
+  EgorDinamit:
+  - tweak: Pointing at an object is a bit more precise now. The arrow sprite itself
+      has also been adjusted and made a bit bigger.
+  - tweak: Explosions will now cause fuel tanks to explode as well.
+  Shadowtail117:
+  - tweak: 'New keybind: Toggle Aim Mode. This will swap between snapshot and active
+      aiming modes; default key is N.'
+2021-12-17:
+  Shadowtail117:
+  - bugfix: Using a stethoscope is now formatted correctly.
+  - tweak: Unathi hearts now sound like two individual pulses.
+  - tweak: Under 280 degrees Kelvin (about 6 degrees Celsius), an unathi's regenerative
+      ability will shut down. Get warmer to turn it back on.
+2021-12-21:
+  EgorDinamit:
+  - tweak: To go into cyborg recharge station now you have to mouse-drop yourself
+      OR another mob into it.
+  - tweak: Cyborg recharge station will force its occupant to go out if power goes
+      out. Same happens if you try to enter it without power.
+  - rscadd: Meraline reagent is added, a chemical effective at healing brute damage.
+      The recipe is Bicaridine, Invaprovaline, and Iron.
+  - tweak: Rechargers can now be upgraded with better capacitors to increase the rate
+      at which items are being recharged.
+  UDaV73rus:
+  - tweak: Singularity sprites have been updated.
+2021-12-28:
+  EgorDinamit:
+  - tweak: Containment fields now shock mobs and structures only when they move into
+      them, instead of randomly doing that when in close proximity.
+  - tweak: Bicaridine, Imidazoline, and Alkysine are now available in sleepers on
+      various stages of stock parts upgrade.
+  - tweak: Hyronalin is now available at the first upgrade tier of sleepers. Kelotane
+      has been moved to tier 2.
+  - tweak: If power goes out - occupants will automatically leave sleepers.
+  - rscadd: There will be a location blurb displayed when you join the round.
+  EgorDinamit, Kor (/tg/):
+  - rscadd: Christmas (gift) tree will appear in the place of a fountain on deck 3
+      from December 1st to January 13th.
+  - tweak: Santa's bag can hold fewer items, but now it can contain items of nearly
+      any size and spawns gifts every 30 seconds while worn.
+  Shadowtail117:
+  - tweak: Unathi can now wear command HCMs. Rejoice.
+2021-12-31:
+  EgorDinamit:
+  - rscadd: 2 new posters added.
+  - rscdel: A lot of Bay posters were deleted, mainly low-quality ones.
+  - tweak: Buttons now provide a message saying "Access denied" if you try to interact
+      with them while lacking proper access level.
+  - tweak: RND Console will properly notify you of your insufficient access.
+  - tweak: A lot of old browsers UIs are replaced with better-looking browser popups.
+  - tweak: Admins can send custom text blurbs to players.
