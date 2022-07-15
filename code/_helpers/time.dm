@@ -2,6 +2,10 @@
 /proc/worldtime2text()
 	return gameTimestamp("hh:mm:ss", world.time)
 
+/proc/time_stamp(format = "hh:mm:ss", show_ds)
+	var/time_string = time2text(world.timeofday, format)
+	return show_ds ? "[time_string]:[world.timeofday % 10]" : time_string
+
 /proc/minutes_to_readable(minutes)
 	if (!isnum(minutes))
 		minutes = text2num(minutes)
