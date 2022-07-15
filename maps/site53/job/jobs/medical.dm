@@ -58,7 +58,7 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 						/datum/mil_rank/civ/classc,
-						/datum/mil_rank/civ/classb,
+						/datum/mil_rank/civ/classb
 						)
 	hud_icon = "hudpharmacist"
 
