@@ -8,8 +8,8 @@ on:
     branches:
       - dev
 env:
-  BYOND_MAJOR: "513"
-  BYOND_MINOR: "1527"
+  BYOND_MAJOR: "514"
+  BYOND_MINOR: "1584"
   SPACEMAN_DMM_VERSION: suite-1.5
 
 jobs:
