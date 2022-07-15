@@ -95,7 +95,7 @@ def FindCompiler():
 
 	if sys.platform == 'win32':
 		compiler_name = 'dm'
-	compiler_path = "D:/Programms/BYOND/bin/dm.exe"
+	compiler_path = spawn.find_executable(compiler_name)
 	if compiler_path == None:
 		# Attempt to look in %ProgramFiles% and %ProgramFiles(x86)% for BYOND.
 		for path in (os.environ['ProgramFiles'], os.environ['ProgramFiles(x86)']):
