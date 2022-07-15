@@ -41,9 +41,9 @@
 	//supervisors = "the Archivist and administrative staff"
 	//duties = "<big><b>You are a low level pen pusher of the SCP Foundation. Your direct supervisor is the Archivist but you may also answer to the O5 and Ethics Committee Representative. Write reports, assist researchers and generally be a pain in the ass to everyone around you.</big></b>"
 	economic_power = 2
-	alt_titles = list("Administrative Assistant", "Accountant", "Auditor", "Secretary")
 	minimal_player_age = 5
 	ideal_character_age = 30
+	alt_titles = list("Administrative Assistant", "Accountant", "Auditor", "Secretary")
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/officeworker
 	allowed_branches = list(
 		/datum/mil_branch/civilian
