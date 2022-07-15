@@ -45,7 +45,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 		return 0
 	if(can_operate(src,user) && I?.do_surgery(src,user)) //Surgery
 		if(client)
-			user.client.interact_log += "<font color=red>([time_stamp()]) - Interacted with [src], using [I], for surgery.</font>"
+			user.client.interact_log += "<font color=red>([time_stamp()]) - Did surgery on [src], using [I].</font>"
 			src.client.interact_log += "<font color=red>([time_stamp()]) - Had surger performed by [user], using I]</font>."
 		return 1
 
