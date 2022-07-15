@@ -97,13 +97,10 @@ def FindCompiler():
 		compiler_name = 'dm'
 	compiler_path = spawn.find_executable(compiler_name)
 	if compiler_path == None:
-		# Attempt to look in %ProgramFiles% and %ProgramFiles(x86)% for BYOND.
-		for path in (os.environ['ProgramFiles'], os.environ['ProgramFiles(x86)']):
-			path = os.path.join(path, "BYOND", "bin", "dm.exe")
-
-			if os.access(path, os.F_OK):
-				compiler_path = path
-				break
+		dirname = os.path.realpath(os.path.dirname(__file__))
+		dirname = os.path.dirname(os.path.dirname(dirname))
+		filepath = os.path.join(dirname, 'scripts', 'sourcedm.sh')
+		compiler_path = os.system(filepath)
 
 	if compiler_path == None:
 		raise IOError("Unable to locate Dream Maker compiler binary. Please ensure that it is in your PATH.")
