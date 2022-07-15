@@ -75,7 +75,7 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 			var/mob/living/silicon/robot/R = traitor_mob
 			R.SetLockdown(0)
 			R.emagged = TRUE // Provides a traitor robot with its module's emag item
-			add_verb(R, /mob/living/silicon/robot/proc/ResetSecurityCodes)
+			R.verbs |= /mob/living/silicon/robot/proc/ResetSecurityCodes
 			R.status_flags &= ~CANWEAKEN // Apply optical matrix protection (Flash resistance)
 		return 1
 

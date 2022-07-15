@@ -16,7 +16,7 @@ SUBSYSTEM_DEF(atoms)
 	var/static/tmp/list/BadInitializeCalls = list()
 
 /datum/controller/subsystem/atoms/stat_entry(msg)
-	.=..("[msg] [BadInitializeCalls.len] bad inits")
+	..("[msg] [BadInitializeCalls.len] bad inits")
 
 /datum/controller/subsystem/atoms/Shutdown()
 	var/initlog = InitLog()

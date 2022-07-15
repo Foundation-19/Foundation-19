@@ -35,16 +35,6 @@
 
 	#endif
 
-	// Tgui Topic middleware
-	if(tgui_Topic(href_list))
-		return
-
-	if(href_list["reload_tguipanel"])
-		nuke_chat()
-
-	if(href_list["reload_statbrowser"])
-		stat_panel.reinitialize()
-
 	// asset_cache
 	if(href_list["asset_cache_confirm_arrival"])
 //		to_chat(src, "ASSET JOB [href_list["asset_cache_confirm_arrival"]] ARRIVED.")
@@ -96,14 +86,11 @@
 		to_chat(GLOB.href_logfile, "<small>[time2text(world.timeofday,"hh:mm")] [src] (usr:[usr])</small> || [hsrc ? "[hsrc] " : ""][href]<br>")
 
 	switch(href_list["_src_"])
-		if("holder")
-			hsrc = holder
-		if("usr")
-			hsrc = mob
-		if("prefs")
-			return prefs.process_link(usr,href_list)
-		if("vars")
-			return view_var_Topic(href,href_list,hsrc)
+		if("holder")	hsrc = holder
+		if("usr")		hsrc = mob
+		if("prefs")		return prefs.process_link(usr,href_list)
+		if("vars")		return view_var_Topic(href,href_list,hsrc)
+		if("chat")		return chatOutput.Topic(href, href_list)
 
 	switch(href_list["action"])
 		if("openLink")
@@ -139,12 +126,8 @@
 /client/New(TopicData)
 	TopicData = null							//Prevent calls to client.Topic from connect
 
-	// Instantiate stat panel
-	stat_panel = new(src, "statbrowser")
-	stat_panel.subscribe(src, .proc/on_stat_panel_message)
-
-	// Instantiate tgui panel
-	tgui_panel = new(src, "browseroutput")
+	// Load goonchat
+	chatOutput = new(src)
 
 	switch (connection)
 		if ("seeker", "web") // check for invalid connection type. do nothing if valid
@@ -224,18 +207,13 @@
 
 	log_client_to_db()
 
-	var/datum/asset/simple/asset = get_asset_datum(/datum/asset/simple/on_join)
-	asset.send(src)
-
-	connection_time = world.time
-	connection_realtime = world.realtime
-	connection_timeofday = world.timeofday
+	send_resources()
 
 	if (SSmisc.changelog_hash && prefs.lastchangelog != SSmisc.changelog_hash) //bolds the changelog button on the interface so we know there are updates.
 		to_chat(src, "<span class='info'>You have unread updates in the changelog.</span>")
-		winset(src, "statwindow.changelog", "background-color=#eaeaea;font-style=bold")
+		winset(src, "rpane.changelog", "background-color=#eaeaea;font-style=bold")
 		if(config.aggressive_changelog)
-			src.changelog()
+			src.changes()
 
 	if(!winexists(src, "asset_cache_browser")) // The client is using a custom skin, tell them.
 		to_chat(src, "<span class='warning'>Unable to access asset cache browser, if you are using a custom skin file, please allow DS to download the updated version, if you are not, then make a bug report. This is not a critical issue but can cause issues with resource downloading, as it is impossible to know when extra resources arrived to you.</span>")
@@ -243,23 +221,12 @@
 	if(holder)
 		src.control_freak = 0 //Devs need 0 for profiler access
 
-	// Initialize stat panel
-	stat_panel.initialize(
-		inline_html = file("html/statbrowser.html"),
-		inline_js = file("html/statbrowser.js"),
-		inline_css = file("html/statbrowser.css"),
-	)
-	addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
-
-	// Initialize tgui panel
-	tgui_panel.initialize()
-
 	if(SSinput.initialized)
 		set_macros()
 
-//////////////
-//DISCONNECT//
-//////////////
+	//////////////
+	//DISCONNECT//
+	//////////////
 /client/Del()
 	ticket_panels -= src
 	if(src && watched_variables_window)
@@ -275,69 +242,10 @@
 	..()
 	return QDEL_HINT_HARDDEL_NOW
 
-/**
- * Handles incoming messages from the stat-panel TGUI.
- */
-/client/proc/on_stat_panel_message(type, payload)
-	switch(type)
-		if("Update-Verbs")
-			init_verbs()
-		if("Remove-Tabs")
-			panel_tabs -= payload["tab"]
-		if("Send-Tabs")
-			panel_tabs |= payload["tab"]
-		if("Reset-Tabs")
-			panel_tabs = list()
-		if("Set-Tab")
-			stat_tab = payload["tab"]
-			SSstatpanels.immediate_send_stat_data(src)
-
-/// compiles a full list of verbs and sends it to the browser
-/client/proc/init_verbs()
-	var/list/verblist = list()
-	var/list/verbstoprocess = verbs.Copy()
-	if(mob)
-		verbstoprocess += mob.verbs
-		for(var/atom/movable/thing as anything in mob.contents)
-			verbstoprocess += thing.verbs
-	panel_tabs.Cut() // panel_tabs get reset in init_verbs on JS side anyway
-	for(var/procpath/verb_to_init as anything in verbstoprocess)
-		if(!verb_to_init)
-			continue
-		if(verb_to_init.hidden)
-			continue
-		if(!istext(verb_to_init.category))
-			continue
-		panel_tabs |= verb_to_init.category
-		verblist[++verblist.len] = list(verb_to_init.category, verb_to_init.name)
-	src.stat_panel.send_message("init_verbs", list(panel_tabs = panel_tabs, verblist = verblist))
-
-/client/proc/check_panel_loaded()
-	if(stat_panel.is_ready())
-		return
-	to_chat(src, SPAN_USERDANGER("Statpanel failed to load, click <a href='?src=[any2ref(src)];reload_statbrowser=1'>here</a> to reload the panel "))
-
-/**
- * Initializes dropdown menus on client
- */
-/client/proc/initialize_menus()
-	var/list/topmenus = GLOB.menulist[/datum/verbs/menu]
-	for (var/thing in topmenus)
-		var/datum/verbs/menu/topmenu = thing
-		var/topmenuname = "[topmenu]"
-		if (topmenuname == "[topmenu.type]")
-			var/list/tree = splittext(topmenuname, "/")
-			topmenuname = tree[tree.len]
-		winset(src, "[topmenu.type]", "parent=menu;name=[url_encode(topmenuname)]")
-		var/list/entries = topmenu.Generate_list(src)
-		for (var/child in entries)
-			winset(src, "[child]", "[entries[child]]")
-			if (!ispath(child, /datum/verbs/menu))
-				var/procpath/verbpath = child
-				if (verbpath.name[1] != "@")
-					new child(src)
+// here because it's similar to below
 
 // Returns null if no DB connection can be established, or -1 if the requested key was not found in the database
+
 /proc/get_player_age(key)
 	establish_db_connection()
 	if(!SSdbcore.IsConnected())
@@ -449,6 +357,54 @@
 	var/seconds = inactivity/10
 	return "[round(seconds / 60)] minute\s, [seconds % 60] second\s"
 
+
+/client/Stat()
+	if(!usr)
+		return
+	// Add always-visible stat panel calls here, to define a consistent display order.
+	statpanel("Status")
+	..()
+	if (config.stat_delay > 0)
+		sleep(config.stat_delay)
+
+
+//Sends resource files to client cache
+/client/proc/getFiles()
+	for(var/file in args)
+		send_rsc(src, file, null)
+
+//send resources to the client. It's here in its own proc so we can move it around easiliy if need be
+/client/proc/send_resources()
+	getFiles(
+		'html/search.js',
+		'html/panels.css',
+		'html/spacemag.css',
+		'html/images/loading.gif',
+		'html/images/eng.png',
+		'html/images/sec.png',
+		'html/images/med.png',
+		'html/images/sci.png',
+		'html/images/ethics.png',
+		'html/images/log.png',
+		'html/images/isd.png',
+		'html/images/admin.png',
+		'html/images/o5.png',
+		'html/images/ecd.png',
+		'html/images/int.png',
+		'html/images/mtf.png',
+		'html/images/trib.png',
+		'html/images/scplogo.png',
+		'html/images/ungoc.png',
+		'html/images/uiu.png'
+		)
+	addtimer(CALLBACK(src, .proc/after_send_resources), 1 SECOND)
+
+
+/client/proc/after_send_resources()
+	var/decl/asset_cache/asset_cache = decls_repository.get_decl(/decl/asset_cache)
+	getFilesSlow(src, asset_cache.cache, register_asset = FALSE)
+
+
 /mob/proc/MayRespawn()
 	return 0
 
@@ -525,38 +481,21 @@
 	var/aspect_ratio = view_size[1] / view_size[2]
 
 	// Calculate desired pixel width using window size and aspect ratio
-	var/list/sizes = params2list(winget(src, "mainwindow.split;mapwindow", "size"))
-
-	// Client closed the window? Some other error? This is unexpected behaviour, let's
-	// CRASH with some info.
-	if(!sizes["mapwindow.size"])
-		CRASH("sizes does not contain mapwindow.size key. This means a winget failed to return what we wanted. --- sizes var: [sizes] --- sizes length: [length(sizes)]")
-
-	var/list/map_size = splittext(sizes["mapwindow.size"], "x")
-
-	var/desired_width = 0
-
-	// Looks like we expect mapwindow.size to be "ixj" where i and j are numbers.
-	// If we don't get our expected 2 outputs, let's give some useful error info.
-	if(length(map_size) != 2)
-		CRASH("map_size of incorrect length --- map_size var: [map_size] --- map_size length: [length(map_size)]")
+	var/sizes = params2list(winget(src, "mainwindow.mainvsplit;mapwindow", "size"))
+	var/map_size = splittext(sizes["mapwindow.size"], "x")
 	var/height = text2num(map_size[2])
-	desired_width = round(height * aspect_ratio)
-
+	var/desired_width = round(height * aspect_ratio)
 	if (text2num(map_size[1]) == desired_width)
 		// Nothing to do
 		return
 
-	var/split_size = splittext(sizes["mainwindow.split.size"], "x")
+	var/split_size = splittext(sizes["mainwindow.mainvsplit.size"], "x")
 	var/split_width = text2num(split_size[1])
-
-	// Avoid auto-resizing the statpanel and chat into nothing.
-	desired_width = min(desired_width, split_width - 300)
 
 	// Calculate and apply a best estimate
 	// +4 pixels are for the width of the splitter's handle
 	var/pct = 100 * (desired_width + 4) / split_width
-	winset(src, "mainwindow.split", "splitter=[pct]")
+	winset(src, "mainwindow.mainvsplit", "splitter=[pct]")
 
 	// Apply an ever-lowering offset until we finish or fail
 	var/delta
@@ -576,7 +515,7 @@
 			delta = -delta/2
 
 		pct += delta
-		winset(src, "mainwindow.split", "splitter=[pct]")
+		winset(src, "mainwindow.mainvsplit", "splitter=[pct]")
 
 /client/verb/show_lore()
 	set name = "Show Lore"
@@ -593,7 +532,7 @@
 			holder.callproc.arguments += A
 
 		holder.callproc.waiting_for_click = 0
-		remove_verb(src, /client/proc/cancel_callproc_select)
+		verbs -= /client/proc/cancel_callproc_select
 		holder.callproc.do_args()
 		return
 
@@ -601,9 +540,9 @@
 		// If hotkey mode is enabled, then clicking the map will automatically
 		// unfocus the text bar. This removes the red color from the text bar
 		// so that the visual focus indicator matches reality.
-		winset(src, null, "outputwindow.input.focus=false")
+		winset(src, null, "outputwindow.input.background-color=[COLOR_INPUT_DISABLED]")
 	else
-		winset(src, null, "outputwindow.input.focus=true")
+		winset(src, null, "outputwindow.input.focus=true input.background-color=[COLOR_INPUT_ENABLED]")
 
 	return ..()
 

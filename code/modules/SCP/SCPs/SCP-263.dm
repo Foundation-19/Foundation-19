@@ -19,13 +19,15 @@
 /mob/living/simple_animal/hostile/scp_263/Initialize()
 	add_language(/datum/language/english)
 
-	// emotes
-	add_verb(src, list(
+
+		// emotes
+	verbs += list(
 		/mob/living/simple_animal/hostile/scp_263/proc/On,
 		/mob/living/simple_animal/hostile/scp_263/proc/Cash,
 		/mob/living/simple_animal/hostile/scp_263/proc/Ash,
 		/mob/living/simple_animal/hostile/scp_263/proc/Cursed,
-	))
+
+	)
 	return ..()
 
 /mob/living/simple_animal/hostile/scp_263/Destroy()

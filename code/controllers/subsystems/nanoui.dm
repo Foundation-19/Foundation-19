@@ -17,5 +17,5 @@ SUBSYSTEM_DEF(nanoui)
 		else
 			processing_uis -= NUI
 
-/datum/controller/subsystem/nanoui/stat_entry(msg)
-	.=..("[msg]|[processing_uis.len] UIs")
+/datum/controller/subsystem/nanoui/stat_entry()
+	..("[processing_uis.len] UIs")

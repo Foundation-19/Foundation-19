@@ -35,7 +35,7 @@ GLOBAL_LIST_INIT(skill_verbs, init_subtypes(/datum/skill_verb))
 	if(!skillset || !skillset.owner)
 		return
 	. = should_see_verb()
-	. ? add_verb(skillset.owner, the_verb) : (remove_verb(skillset.owner, the_verb))
+	. ? (skillset.owner.verbs |= the_verb) : (skillset.owner.verbs -= the_verb)
 
 /datum/skill_verb/proc/should_see_verb()
 	if(cooling_down)

@@ -229,17 +229,8 @@ var/list/gamemode_cache = list()
 	var/motd = ""
 	var/event = ""
 
-	var/asset_transport = "simple"
-
-	var/log_assets = FALSE
-
-	var/cache_assets = TRUE
-
-	var/asset_simple_preload = FALSE
-
-	var/asset_cdn_webroot = FALSE
-
-	var/asset_cdn_url
+	/// The delay in deciseconds between stat() updates.
+	var/stat_delay = 5
 
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
@@ -798,26 +789,8 @@ var/list/gamemode_cache = list()
 				if ("game_version")
 					config.game_version = value
 
-				if ("asset_transport")
-					asset_transport = lowertext(value)
-
-				if ("log_assets")
-					log_assets = text2num(value)
-
-				if ("cache_assets")
-					cache_assets = text2num(value)
-
-				if ("asset_simple_preload")
-					asset_simple_preload = text2num(value)
-
-				if ("asset_cdn_webroot")
-					asset_cdn_webroot = text2num(value)
-
-				if ("asset_cdn_url")
-					if (value || trim(value) != "")
-						if(value && value[length(value)] != "/")
-							value += "/"
-						asset_cdn_url = value
+				if ("stat_delay")
+					stat_delay = Floor(text2num(value))
 
 				else
 					log_misc("Unknown setting in configuration: '[name]'")

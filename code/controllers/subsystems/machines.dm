@@ -126,10 +126,20 @@ SUBSYSTEM_DEF(machines)
 		machine.build_network()
 		CHECK_TICK
 
-/datum/controller/subsystem/machines/stat_entry(msg)
-	msg = "[msg] C:{PI:[round(cost_pipenets,1)]|MC:[round(cost_machinery,1)]|PN:[round(cost_powernets,1)]|PO:[round(cost_power_objects,1)]} "
-	msg = "[msg] PI:[pipenets.len]|MC:[processing.len]|PN:[powernets.len]|PO:[power_objects.len]|MC/MS:[round((cost ? processing.len/cost : 0),0.1)]"
-	.=..(msg)
+/datum/controller/subsystem/machines/stat_entry()
+	var/msg = list()
+	msg += "C:{"
+	msg += "PI:[round(cost_pipenets,1)]|"
+	msg += "MC:[round(cost_machinery,1)]|"
+	msg += "PN:[round(cost_powernets,1)]|"
+	msg += "PO:[round(cost_power_objects,1)]"
+	msg += "} "
+	msg += "PI:[pipenets.len]|"
+	msg += "MC:[processing.len]|"
+	msg += "PN:[powernets.len]|"
+	msg += "PO:[power_objects.len]|"
+	msg += "MC/MS:[round((cost ? processing.len/cost : 0),0.1)]"
+	..(jointext(msg, null))
 
 /datum/controller/subsystem/machines/proc/process_pipenets(resumed, no_mc_tick)
 	if(!resumed)

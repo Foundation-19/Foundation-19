@@ -138,7 +138,7 @@
 			return 1
 		if(STATUS_DISPLAY_TIME)
 			message1 = "TIME"
-			message2 = station_time_timestamp("hh:mm")
+			message2 = stationtime2text()
 			update_display(message1, message2)
 			if(status_display_show_alert_border)
 				add_alert_border_to_display()

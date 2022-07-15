@@ -6,7 +6,7 @@
 		else
 			A.SetName("alien creature")
 			A.real_name = "alien creature"
-			add_verb(A, /mob/living/simple_animal/proc/name_species)
+			A.verbs |= /mob/living/simple_animal/proc/name_species
 	if (atmosphere)
 		//Set up gases for living things
 		if (!LAZYLEN(breathgas))
@@ -68,7 +68,7 @@
 		if (istype(A,species_type))
 			A.SetName(newname)
 			A.real_name = newname
-			remove_verb(A, /mob/living/simple_animal/proc/name_species)
+			A.verbs -= /mob/living/simple_animal/proc/name_species
 	return TRUE
 
 /obj/effect/landmark/exoplanet_spawn

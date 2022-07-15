@@ -20,19 +20,19 @@
 	set desc = "Recieve optional objectives."
 	set category = "OOC"
 
-	remove_verb(src, /mob/proc/add_objectives)
+	src.verbs -= /mob/proc/add_objectives
 
-	if(!mind)
+	if(!src.mind)
 		return
 
 	var/all_antag_types = GLOB.all_antag_types_
 	for(var/tag in all_antag_types) //we do all of them in case an admin adds an antagonist via the PP. Those do not show up in gamemode.
 		var/datum/antagonist/antagonist = all_antag_types[tag]
-		if(antagonist && antagonist.is_antagonist(mind))
-			antagonist.create_objectives(mind,1)
+		if(antagonist && antagonist.is_antagonist(src.mind))
+			antagonist.create_objectives(src.mind,1)
 
 	to_chat(src, "<b><font size=3>These objectives are completely voluntary. You are not required to complete them.</font></b>")
-	show_objectives(mind)
+	show_objectives(src.mind)
 
 /mob/living/proc/set_ambition()
 	set name = "Set Ambition"

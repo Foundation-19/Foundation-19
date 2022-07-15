@@ -253,6 +253,6 @@ Subtypes
 	if(!istype(file))
 		file = target.create_file("proxy")
 	if(file)
-		file.stored_data += "([station_time_timestamp()]) Proxy routing request accepted from: [comp.get_network_tag()].\[br\]"
+		file.stored_data += "([time_stamp()]) Proxy routing request accepted from: [comp.get_network_tag()].\[br\]"
 	network_card.proxy_id = id
 	return "proxy: Device proxy set to [id]."

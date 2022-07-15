@@ -42,19 +42,19 @@
 	current_antagonists |= player
 
 	if(faction_verb)
-		add_verb(player.current, faction_verb)
+		player.current.verbs |= faction_verb
 
 	if(config.objectives_disabled == CONFIG_OBJECTIVE_VERB)
-		add_verb(player.current, /mob/proc/add_objectives)
+		player.current.verbs += /mob/proc/add_objectives
 
 	if(player.current.client)
-		add_verb(player.current.client, /client/proc/aooc)
+		player.current.client.verbs += /client/proc/aooc
 
 	spawn(1 SECOND) //Added a delay so that this should pop up at the bottom and not the top of the text flood the new antag gets.
 		to_chat(player.current, "<span class='notice'>Once you decide on a goal to pursue, you can optionally display it to \
 			everyone at the end of the shift with the <b>Set Ambition</b> verb, located in the IC tab.  You can change this at any time, \
 			and it otherwise has no bearing on your round.</span>")
-	add_verb(player.current, /mob/living/proc/set_ambition)
+	player.current.verbs += /mob/living/proc/set_ambition
 
 	// Handle only adding a mind and not bothering with gear etc.
 	if(nonstandard_role_type)
@@ -70,7 +70,7 @@
 	if(!istype(player))
 		return 0
 	if(player.current && faction_verb)
-		remove_verb(player.current, faction_verb)
+		player.current.verbs -= faction_verb
 	if(faction && player.current.faction == faction)
 		player.current.faction = MOB_FACTION_NEUTRAL
 	if(player in current_antagonists)
@@ -86,9 +86,9 @@
 
 		if(!is_special_character(player))
 			if(player.current)
-				remove_verb(player.current, /mob/living/proc/set_ambition)
+				player.current.verbs -= /mob/living/proc/set_ambition
 				if(player.current.client)
-					remove_verb(player.current.client, /client/proc/aooc)
+					player.current.client.verbs -= /client/proc/aooc
 			qdel(SSgoals.ambitions[player])
 		return 1
 	return 0

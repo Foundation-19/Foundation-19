@@ -327,7 +327,7 @@
 		var/dat = list()
 		dat += "<html><head><title>Round Status</title></head><body><h1><B>Round Status</B></h1>"
 		dat += "Current Game Mode: <B>[SSticker.mode.name]</B><BR>"
-		dat += "Round Duration: <B>[DisplayTimeText(world.time - SSticker.round_start_time)]</B><BR>"
+		dat += "Round Duration: <B>[roundduration2text()]</B><BR>"
 		dat += "<B>Evacuation</B><BR>"
 		if (evacuation_controller.is_idle())
 			dat += "<a href='?src=\ref[src];call_shuttle=1'>Call Evacuation</a><br>"

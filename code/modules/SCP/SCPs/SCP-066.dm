@@ -27,11 +27,11 @@
 
 
 		// emotes
-	add_verb(src, list(
+	verbs += list(
 		/mob/living/simple_animal/cat/scp_066/proc/Eric,
 		/mob/living/simple_animal/cat/scp_066/proc/EarRape,
-		/mob/living/simple_animal/cat/scp_066/proc/Noise,
-	))
+		/mob/living/simple_animal/cat/scp_066/proc/Noise
+	)
 
 	// SCP-066 emotes
 /* /mob/living/simple_animal/cat/scp_066/proc/Eric()

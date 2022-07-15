@@ -51,7 +51,7 @@
 	H.mutations |= MUTATION_FERAL
 	H.mutations |= MUTATION_XRAY
 	H.mutations |= mNobreath //Byond doesn't like adding them all in one OR statement :(
-	add_verb(H, /mob/living/carbon/proc/consume2)
+	H.verbs += /mob/living/carbon/proc/consume2
 	H.move_intents = list(/decl/move_intent/creep) //Zooming days are over
 	H.a_intent = "harm"
 	H.move_intent = new /decl/move_intent/creep

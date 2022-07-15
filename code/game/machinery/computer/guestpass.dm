@@ -18,15 +18,15 @@
 /obj/item/card/id/guest/examine(mob/user)
 	. = ..()
 	if (!expired)
-		to_chat(user, SPAN_NOTICE("This pass expires at [time2text(SSticker.round_start_time + expiration_time, "hh:mm")]."))
+		to_chat(user, SPAN_NOTICE("This pass expires at [worldtime2stationtime(expiration_time)]."))
 	else
-		to_chat(user, SPAN_WARNING("It expired at [time2text(SSticker.round_start_time + expiration_time, "hh:mm")]."))
+		to_chat(user, SPAN_WARNING("It expired at [worldtime2stationtime(expiration_time)]."))
 
 /obj/item/card/id/guest/read()
 	if (expired)
-		to_chat(usr, SPAN_NOTICE("This pass expired at [time2text(SSticker.round_start_time + expiration_time, "hh:mm")]."))
+		to_chat(usr, SPAN_NOTICE("This pass expired at [worldtime2stationtime(expiration_time)]."))
 	else
-		to_chat(usr, SPAN_NOTICE("This pass expires at [time2text(SSticker.round_start_time + expiration_time, "hh:mm")]."))
+		to_chat(usr, SPAN_NOTICE("This pass expires at [worldtime2stationtime(expiration_time)]."))
 
 	to_chat(usr, SPAN_NOTICE("It grants access to following areas:"))
 	for (var/A in temp_access)
@@ -103,7 +103,7 @@
 				"selected" = (A in accesses))))
 
 		data["giver_access"] = giver_access
-
+		
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
 		ui = new(user, src, ui_key, "guestpass.tmpl", "Guest Pass Terminal", 600, 800)
@@ -170,13 +170,13 @@
 	else if (href_list["issue"])
 		if (giver && accesses.len)
 			var/number = add_zero(random_id("guestpass_id_number",1000,9999), 4)
-			var/entry = "\[[station_time_timestamp("hh:mm")]\] Pass #[number] issued by [giver.registered_name] ([giver.assignment]) to [giv_name]. Reason: [reason]. Granted access to following areas: "
+			var/entry = "\[[stationtime2text()]\] Pass #[number] issued by [giver.registered_name] ([giver.assignment]) to [giv_name]. Reason: [reason]. Granted access to following areas: "
 			var/list/access_descriptors = list()
 			for (var/A in accesses)
 				if (A in giver.access)
 					access_descriptors += get_access_desc(A)
 			entry += english_list(access_descriptors, and_text = ", ")
-			entry += ". Expires at [time2text(SSticker.round_start_time + duration MINUTES, "hh:mm")]."
+			entry += ". Expires at [worldtime2stationtime(world.time + duration MINUTES)]."
 			internal_log.Add(entry)
 
 			var/obj/item/card/id/guest/pass = new(src.loc)

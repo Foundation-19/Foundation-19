@@ -16,7 +16,7 @@
 	..()
 
 	date = stationdate2text()
-	time = station_time_timestamp("hh:mm")
+	time = stationtime2text()
 
 	purpose = _purpose
 	amount = _amount

@@ -307,40 +307,27 @@ var/list/admin_verbs_mentors = list(
 /client/proc/add_admin_verbs()
 	if(holder)
 		if(holder.rights && holder.rights != R_MENTOR) //If we ONLY have mentor rights then we don't deserve the default perms
-			add_verb(src, admin_verbs_default)
-		if(holder.rights & R_BUILDMODE)
-			add_verb(src, /client/proc/togglebuildmodeself)
-		if(holder.rights & R_ADMIN)
-			add_verb(src, admin_verbs_admin)
-		if(holder.rights & R_BAN)
-			add_verb(src, admin_verbs_ban)
-		if(holder.rights & R_FUN)
-			add_verb(src, admin_verbs_fun)
-		if(holder.rights & R_SERVER)
-			add_verb(src, admin_verbs_server)
+			verbs += admin_verbs_default
+		if(holder.rights & R_BUILDMODE)		verbs += /client/proc/togglebuildmodeself
+		if(holder.rights & R_ADMIN)			verbs += admin_verbs_admin
+		if(holder.rights & R_BAN)			verbs += admin_verbs_ban
+		if(holder.rights & R_FUN)			verbs += admin_verbs_fun
+		if(holder.rights & R_SERVER)		verbs += admin_verbs_server
 		if(holder.rights & R_DEBUG)
-			add_verb(src, admin_verbs_debug)
+			verbs += admin_verbs_debug
 			if(config.debugparanoid && !(holder.rights & R_ADMIN))
-				remove_verb(src, admin_verbs_paranoid_debug) //Right now it's just callproc but we can easily add others later on.
-		if(holder.rights & R_POSSESS)
-			add_verb(src, admin_verbs_possess)
-		if(holder.rights & R_PERMISSIONS)
-			add_verb(src, admin_verbs_permissions)
-		if(holder.rights & R_STEALTH)
-			add_verb(src, /client/proc/stealth)
-		if(holder.rights & R_REJUVINATE)
-			add_verb(src, admin_verbs_rejuv)
-		if(holder.rights & R_SOUNDS)
-			add_verb(src, admin_verbs_sounds)
-		if(holder.rights & R_SPAWN)
-			add_verb(src, admin_verbs_spawn)
-		if(holder.rights & R_MOD)
-			add_verb(src, admin_verbs_mod)
-		if(holder.rights & R_MENTOR)
-			add_verb(src, admin_verbs_mentors)
+				verbs.Remove(admin_verbs_paranoid_debug)			//Right now it's just callproc but we can easily add others later on.
+		if(holder.rights & R_POSSESS)		verbs += admin_verbs_possess
+		if(holder.rights & R_PERMISSIONS)	verbs += admin_verbs_permissions
+		if(holder.rights & R_STEALTH)		verbs += /client/proc/stealth
+		if(holder.rights & R_REJUVINATE)	verbs += admin_verbs_rejuv
+		if(holder.rights & R_SOUNDS)		verbs += admin_verbs_sounds
+		if(holder.rights & R_SPAWN)			verbs += admin_verbs_spawn
+		if(holder.rights & R_MOD)			verbs += admin_verbs_mod
+		if(holder.rights & R_MENTOR)        verbs += admin_verbs_mentors
 
 /client/proc/remove_admin_verbs()
-	remove_verb(src, list(
+	verbs.Remove(
 		admin_verbs_default,
 		/client/proc/togglebuildmodeself,
 		admin_verbs_admin,
@@ -355,16 +342,15 @@ var/list/admin_verbs_mentors = list(
 		admin_verbs_sounds,
 		admin_verbs_spawn,
 		admin_verbs_mentors,
-		debug_verbs,
-		))
+		debug_verbs
+		)
 
 /client/proc/hide_most_verbs()//Allows you to keep some functionality while hiding some verbs
 	set name = "Adminverbs - Hide Most"
 	set category = "Admin"
 
-	remove_verb(src, /client/proc/hide_most_verbs)
-	remove_verb(src, admin_verbs_hideable)
-	add_verb(src, /client/proc/show_verbs)
+	verbs.Remove(/client/proc/hide_most_verbs, admin_verbs_hideable)
+	verbs += /client/proc/show_verbs
 
 	to_chat(src, "<span class='interface'>Most of your adminverbs have been hidden.</span>")
 	SSstatistics.add_field_details("admin_verb","HMV") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -375,7 +361,7 @@ var/list/admin_verbs_mentors = list(
 	set category = "Admin"
 
 	remove_admin_verbs()
-	add_verb(src, /client/proc/show_verbs)
+	verbs += /client/proc/show_verbs
 
 	to_chat(src, "<span class='interface'>Almost all of your adminverbs have been hidden.</span>")
 	SSstatistics.add_field_details("admin_verb","TAVVH") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -385,7 +371,7 @@ var/list/admin_verbs_mentors = list(
 	set name = "Adminverbs - Show"
 	set category = "Admin"
 
-	remove_verb(src, /client/proc/show_verbs)
+	verbs -= /client/proc/show_verbs
 	add_admin_verbs()
 
 	to_chat(src, "<span class='interface'>All of your adminverbs are now visible.</span>")
@@ -613,7 +599,7 @@ var/list/admin_verbs_mentors = list(
 		log_admin("[src] re-admined themself.")
 		message_admins("[src] re-admined themself.", 1)
 		to_chat(src, "<span class='interface'>You now have the keys to control the planet, or at least [GLOB.using_map.full_name].</span>")
-		remove_verb(src, /client/proc/readmin_self)
+		verbs -= /client/proc/readmin_self
 
 /client/proc/deadmin_self()
 	set name = "De-admin self"
@@ -625,7 +611,7 @@ var/list/admin_verbs_mentors = list(
 			message_admins("[src] deadmined themself.", 1)
 			deadmin()
 			to_chat(src, "<span class='interface'>You are now a normal player.</span>")
-			add_verb(src, /client/proc/readmin_self)
+			verbs |= /client/proc/readmin_self
 	SSstatistics.add_field_details("admin_verb","DAS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/toggle_log_hrefs()

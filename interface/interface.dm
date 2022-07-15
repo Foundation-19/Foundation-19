@@ -35,6 +35,30 @@
 		to_chat(src, SPAN_WARNING("The github URL is not set in the server configuration."))
 	return
 
+/client/verb/bugreport()
+	set name = "Bug Report"
+	set desc = "Visit the GitHub repository to report an issue or bug."
+	set hidden = 1
+	if( config.issuereporturl )
+		if(alert("This will open GitHub in your browser. Are you sure?",,"Yes","No")=="No")
+			return
+		send_link(src, config.issuereporturl)
+	else
+		to_chat(src, SPAN_WARNING("The issue report URL is not set in the server configuration."))
+	return
+
+/client/verb/forum()
+	set name = "Forum"
+	set desc = "Visit the forum."
+	set hidden = 1
+	if( config.forumurl )
+		if(alert("This will open the forum in your browser. Are you sure?",,"Yes","No")=="No")
+			return
+		send_link(src, config.forumurl)
+	else
+		to_chat(src, SPAN_WARNING("The forum URL is not set in the server configuration."))
+	return
+
 /client/verb/rules()
 	set name = "Rules"
 	set desc = "Show Server Rules."
@@ -46,6 +70,8 @@
 	else
 		to_chat(src, SPAN_WARNING("The forum URL is not set in the server configuration."))
 	return
+
+
 
 /client/verb/lore()
 	set name = "Lore"
@@ -59,14 +85,4 @@
 		to_chat(src, SPAN_WARNING("The forum URL is not set in the server configuration."))
 	return
 
-/client/verb/changelog()
-	set name = "Changelog"
-	set category = "OOC"
-	if(!GLOB.changelog_tgui)
-		GLOB.changelog_tgui = new /datum/changelog()
 
-	GLOB.changelog_tgui.tgui_interact(mob)
-	if(prefs.lastchangelog != GLOB.changelog_hash)
-		prefs.lastchangelog = GLOB.changelog_hash
-		prefs.save_preferences()
-		winset(src, "infowindow.changelog", "font-style=;")

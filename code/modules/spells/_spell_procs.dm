@@ -1,6 +1,21 @@
 /datum/mind
 	var/list/learned_spells
 
+/mob/Stat()
+	. = ..()
+	if(. && ability_master && ability_master.spell_objects)
+		for(var/obj/screen/ability/spell/screen in ability_master.spell_objects)
+			var/datum/spell/S = screen.spell
+			if((!S.connected_button) || !statpanel(S.panel))
+				continue //Not showing the noclothes spell
+			switch(S.charge_type)
+				if(SPELL_RECHARGE)
+					statpanel(S.panel,"[S.charge_counter/10.0]/[S.charge_max/10]",S.connected_button)
+				if(SPELL_CHARGES)
+					statpanel(S.panel,"[S.charge_counter]/[S.charge_max]",S.connected_button)
+				if(SPELL_HOLDVAR)
+					statpanel(S.panel,"[S.holder_var_type] [S.holder_var_amount]",S.connected_button)
+
 //A fix for when a spell is created before a mob is created
 /mob/Login()
 	. = ..()

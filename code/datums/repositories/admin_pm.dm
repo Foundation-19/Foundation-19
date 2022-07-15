@@ -37,7 +37,7 @@ var/repository/admin_pm/admin_pm_repository = new()
 	var/message
 
 /datum/admin_privat_message/New(var/sender, var/receiver, var/message)
-	station_time = station_time_timestamp()
+	station_time = time_stamp()
 	src.message = message
 	src.sender = sender
 	src.receiver = receiver

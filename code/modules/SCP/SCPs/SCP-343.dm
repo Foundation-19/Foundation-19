@@ -35,7 +35,8 @@ GLOBAL_LIST_EMPTY(scp343s)
 		mind.name = real_name
 
 	GLOB.scp343s += src
-	add_verb(src, /mob/living/carbon/human/scp343/proc/phase_through_airlock)
+
+	verbs += /mob/living/carbon/human/scp343/proc/phase_through_airlock
 	return ..()
 
 /mob/living/carbon/human/scp343/Destroy()

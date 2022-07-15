@@ -244,8 +244,8 @@
 			affecting.forceMove(pick(GLOB.scp106_floors))
 			H.set_last_xyz()
 			H.forceMove(get_turf(affecting))
-			remove_verb(H, /mob/living/carbon/human/scp106/proc/enter_pocket_dimension)
-			add_verb(H, /mob/living/carbon/human/scp106/proc/go_back)
+			H.verbs -= /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
+			H.verbs += /mob/living/carbon/human/scp106/proc/go_back
 			qdel(src)
 
 /obj/item/grab/proc/downgrade()

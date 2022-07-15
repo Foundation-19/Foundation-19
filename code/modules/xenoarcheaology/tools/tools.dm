@@ -19,18 +19,19 @@
 	var/turf/T = get_turf(src)
 	return T ? "[T.x]:[T.y]:[T.z]" : "N/A"
 
-/mob/living/carbon/human/get_status_tab_items()
-	.=..()
-	var/obj/item/device/gps/L = locate() in src
-	if(L)
-		. += "Coordinates: [L.get_coordinates()]"
-
-/mob/living/silicon/robot/get_status_tab_items()
-	.=..()
-	if(istype(module_state_1, /obj/item/device/gps) || istype(module_state_2, /obj/item/device/gps) || istype(module_state_3, /obj/item/device/gps))
+/mob/living/carbon/human/Stat()
+	. = ..()
+	if(statpanel("Status"))
 		var/obj/item/device/gps/L = locate() in src
 		if(L)
-			. += "Coordinates: [L.get_coordinates()]"
+			stat("Coordinates:", "[L.get_coordinates()]")
+
+/mob/living/silicon/robot/Stat()
+	. = ..()
+	if(statpanel("Status") && (istype(module_state_1, /obj/item/device/gps) || istype(module_state_2, /obj/item/device/gps) || istype(module_state_3, /obj/item/device/gps)))
+		var/obj/item/device/gps/L = locate() in src
+		if(L)
+			stat("Coordinates:", "[L.get_coordinates()]")
 
 /obj/item/device/measuring_tape
 	name = "measuring tape"
@@ -153,7 +154,7 @@
 			//create a new scanlog entry
 			var/datum/depth_scan/D = new()
 			D.coords = "[M.x]:[M.y]:[M.z]"
-			D.time = station_time_timestamp("hh:mm")
+			D.time = stationtime2text()
 			D.record_index = positive_locations.len + 1
 			D.material = M.mineral ? M.mineral.ore_name : "Rock"
 
@@ -174,7 +175,7 @@
 			//create a new scanlog entry
 			var/datum/depth_scan/D = new()
 			D.coords = "[B.x]:[B.y]:[B.z]"
-			D.time = station_time_timestamp("hh:mm")
+			D.time = stationtime2text()
 			D.record_index = positive_locations.len + 1
 
 			//these values are arbitrary
