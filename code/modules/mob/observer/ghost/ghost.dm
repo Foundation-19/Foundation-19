@@ -153,6 +153,7 @@ Works together with spawning an observer, noted above.
 		ghost.key = key
 		if(ghost.client && !ghost.client.holder && !config.antag_hud_allowed) // For new ghosts we remove the verb from even showing up if it's not allowed.
 			remove_verb(ghost, /mob/observer/ghost/verb/toggle_antagHUD) // Poor guys, don't know what they are missing!
+		ghost.client?.init_verbs()
 		return ghost
 
 /mob/observer/ghostize() // Do not create ghosts of ghosts.
@@ -205,6 +206,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	mind.current.key = key
 	mind.current.teleop = null
 	mind.current.reload_fullscreen()
+	mind.current.client.init_verbs()
 	if(!admin_ghosted)
 		announce_ghost_joinleave(mind, 0, "They now occupy their body again.")
 	return 1

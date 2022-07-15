@@ -298,7 +298,8 @@ Helpers
 	for(var/mob/new_player/player in GLOB.player_list)
 		if(player && player.ready && player.mind)
 			if(player.mind.assigned_role=="AIC")
-				player.AIize()
+				var/mob/living/silicon/ai/ai = player.AIize()
+				ai.client?.init_verbs()
 				player.close_spawn_windows()
 			else if(!player.mind.assigned_role)
 				continue

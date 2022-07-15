@@ -145,6 +145,7 @@
 		character.forceMove(C.loc)
 		var/mob/living/silicon/ai/A = character
 		A.on_mob_init()
+		A.client.init_verbs()
 
 		AnnounceCyborg(character, job.title, "has been downloaded to the empty core in \the [character.loc.loc]")
 		SSticker.mode.handle_latejoin(character)
@@ -156,6 +157,7 @@
 	SSticker.mode.handle_latejoin(character)
 	GLOB.universe.OnPlayerLatejoin(character)
 	spawnpoint.after_join(character)
+	character.client.init_verbs()
 	if(job.create_record)
 		if(character.mind.assigned_role != "Robot")
 			CreateModularRecord(character)
@@ -304,6 +306,7 @@
 	new_character.regenerate_icons()
 
 	new_character.key = key		//Manually transfer the key to log them in
+	new_character.client.init_verbs()
 	return new_character
 
 /mob/new_player/proc/ViewManifest()
