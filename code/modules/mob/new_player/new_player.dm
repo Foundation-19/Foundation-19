@@ -20,6 +20,8 @@
 
 /mob/new_player/Initialize()
 	add_verb(src, /mob/proc/toggle_antag_pool)
+	if(length(GLOB.new_player))
+		forceMove(pick(GLOB.new_player))
 	return ..()
 
 /mob/new_player/get_status_tab_items()
