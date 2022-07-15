@@ -113,9 +113,10 @@
 		charge -= (output_level_max * CELLRATE)
 		if(powernet && prob(1)) // Small chance of overload occuring since grounding is disabled.
 			powernet.apcs_overload(5,10,20)
-			
+
 		var/datum/wires/smes/smes_wires = wires
 
+		//yes, I know : operator is ass. No, I can't make this better. Wires is casted to /datum/wires by default by /obj/machinery. :(
 		log_and_message_admins("SMES GROUNDING TICK: <b>[src.x]X [src.y]Y [src.z]Z</b> User: [smes_wires.saboteur.ckey], cut a grounding wire earlier, causing this SMES to potentially cause lag every tick!<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>")
 
 	..()

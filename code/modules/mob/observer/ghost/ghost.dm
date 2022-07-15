@@ -35,7 +35,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 
 /mob/observer/ghost/New(mob/body)
 	see_in_dark = 100
-	verbs += /mob/proc/toggle_antag_pool
+	add_verb(src, /mob/proc/toggle_antag_pool)
 
 	var/turf/T
 	if(ismob(body))
@@ -151,8 +151,9 @@ Works together with spawning an observer, noted above.
 		ghost.can_reenter_corpse = can_reenter_corpse
 		ghost.timeofdeath = src.stat == DEAD ? src.timeofdeath : world.time
 		ghost.key = key
-		if(ghost.client && !ghost.client.holder && !config.antag_hud_allowed)		// For new ghosts we remove the verb from even showing up if it's not allowed.
-			ghost.verbs -= /mob/observer/ghost/verb/toggle_antagHUD	// Poor guys, don't know what they are missing!
+		if(ghost.client && !ghost.client.holder && !config.antag_hud_allowed) // For new ghosts we remove the verb from even showing up if it's not allowed.
+			remove_verb(ghost, /mob/observer/ghost/verb/toggle_antagHUD) // Poor guys, don't know what they are missing!
+		ghost.client?.init_verbs()
 		return ghost
 
 /mob/observer/ghostize() // Do not create ghosts of ghosts.
@@ -191,14 +192,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/can_use_hands()	return 0
 /mob/observer/ghost/is_active()		return 0
 
-/mob/observer/ghost/Stat()
-	. = ..()
-	if(statpanel("Status"))
-		if(evacuation_controller)
-			var/eta_status = evacuation_controller.get_status_panel_eta()
-			if(eta_status)
-				stat(null, eta_status)
-
 /mob/observer/ghost/verb/reenter_corpse()
 	set category = "Ghost"
 	set name = "Re-enter Corpse"
@@ -213,6 +206,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	mind.current.key = key
 	mind.current.teleop = null
 	mind.current.reload_fullscreen()
+	mind.current.client.init_verbs()
 	if(!admin_ghosted)
 		announce_ghost_joinleave(mind, 0, "They now occupy their body again.")
 	return 1

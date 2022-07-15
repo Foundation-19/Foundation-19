@@ -41,23 +41,22 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	return  ..()
 
 /mob/living/carbon/human/scp049/Initialize()
-	..()
 	// fix names
 	fully_replace_character_name("SCP-049")
 
 	GLOB.scp049s += src
-	verbs += /mob/living/carbon/human/proc/SCP_049_talk
-	verbs += /mob/living/carbon/human/proc/door_049
 
-	// emotes
-	verbs += list(
+	add_verb(src, list(
+		/mob/living/carbon/human/proc/door_049,
+		/mob/living/carbon/human/proc/SCP_049_talk,
 		/mob/living/carbon/human/scp049/proc/greetings,
 		/mob/living/carbon/human/scp049/proc/yet_another_victim,
 		/mob/living/carbon/human/scp049/proc/you_are_not_a_doctor,
 		/mob/living/carbon/human/scp049/proc/I_sense_the_disease_in_you,
 		/mob/living/carbon/human/scp049/proc/Im_here_to_cure_you,
-		/mob/living/carbon/human/scp049/proc/cure_action
-	)
+		/mob/living/carbon/human/scp049/proc/cure_action,
+	))
+	return ..()
 
 /mob/living/carbon/human/scp049/Destroy()
 	pestilence_images = null
@@ -67,7 +66,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	return ..()
 
 /mob/living/carbon/human/scp049/Life()
-	..()
+	. = ..()
 	if(prob(50) && !contained)
 		addtimer(CALLBACK(src, .proc/see_disease), 5 SECONDS) //only occasionally see the disease, less deadly. TODO: containment mechanics
 	if(anger==100)

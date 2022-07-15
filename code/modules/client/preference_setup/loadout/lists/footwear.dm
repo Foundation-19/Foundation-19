@@ -4,7 +4,6 @@
 	slot = slot_shoes
 	category = /datum/gear/shoes
 	denied_roles = list(/datum/job/classd)
-	allowed_branches = list(/datum/mil_branch/civilian)
 	// Reasoning : none of the options provided fits security branches. You don't want to see security officers with high heels or sandals on a high security facility. But it makes sense for civi staff.
 
 /datum/gear/shoes/athletic

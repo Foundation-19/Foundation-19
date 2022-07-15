@@ -25,17 +25,17 @@ GLOBAL_LIST_EMPTY(scp999s)
 	see_in_dark = 7
 
 /mob/living/simple_animal/scp_999/Initialize()
-	..()
 	GLOB.scp999s += src
+	return ..()
 
 /mob/living/simple_animal/scp_999/say(var/message, var/datum/language/speaking = null, whispering)
-	src << "<span class = 'notice'>You cannot speak.</span>"
-	return 0
+	to_chat(src,"<span class = 'notice'>You cannot speak.</span>")
+	return FALSE
 
 /mob/living/simple_animal/scp_999/Destroy()
 	last_healing = null
 	GLOB.scp999s -= src
-	..()
+	return ..()
 
 /mob/living/simple_animal/scp_999/update_icon()
 	if(stat != DEAD && resting)

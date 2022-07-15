@@ -587,12 +587,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 
 /datum/controller/master/stat_entry()
-	if(!stat_line)
-		stat_line = new (null, src)
-
-	stat("Byond:", "(FPS:[world.fps]) (TickCount:[world.time/world.tick_lag]) (TickDrift:[round(Master.tickdrift,1)]([round((Master.tickdrift/(world.time/world.tick_lag))*100,0.1)]%))")
-	stat_line.name = "(TickRate:[Master.processing]) (Iteration:[Master.iteration])"
-	stat(name, stat_line)
+	return "(TickRate:[Master.processing]) (Iteration:[Master.iteration]) (TickLimit: [round(Master.current_ticklimit, 0.1)])"
 
 /datum/controller/master/StartLoadingMap()
 	//disallow more than one map to load at once, multithreading it will just cause race conditions

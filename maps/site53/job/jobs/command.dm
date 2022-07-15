@@ -21,6 +21,7 @@ ut // COMMAND
 		access_adminlvl5,
 		access_keyauth
 	)
+
 	minimal_access = list()
 
 /datum/job/hop
@@ -50,6 +51,7 @@ ut // COMMAND
 		access_civ_comms,
 		access_keyauth
 	)
+
 	minimal_access = list()
 
 // COMMUNICATIONS
@@ -93,22 +95,22 @@ ut // COMMAND
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3
-
 	)
+
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY  = SKILL_BASIC,
-	                    SKILL_COMPUTER     = SKILL_EXPERIENCED,
-	                    SKILL_EVA          = SKILL_EXPERIENCED,
-	                    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
-	                    SKILL_ELECTRICAL   = SKILL_EXPERIENCED,
-	                    SKILL_ATMOS        = SKILL_EXPERIENCED,
-	                    SKILL_ENGINES      = SKILL_TRAINED)
+	min_skill = list(SKILL_BUREAUCRACY  = SKILL_BASIC,
+					SKILL_COMPUTER      = SKILL_EXPERIENCED,
+					SKILL_EVA           = SKILL_EXPERIENCED,
+					SKILL_CONSTRUCTION  = SKILL_EXPERIENCED,
+					SKILL_ELECTRICAL    = SKILL_EXPERIENCED,
+					SKILL_ATMOS         = SKILL_EXPERIENCED,
+					SKILL_ENGINES       = SKILL_TRAINED)
 
-	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MASTER,
-	                    SKILL_ELECTRICAL   = SKILL_MASTER,
-	                    SKILL_ATMOS        = SKILL_MASTER,
-	                    SKILL_ENGINES      = SKILL_MASTER)
+	max_skill = list(SKILL_CONSTRUCTION = SKILL_MASTER,
+					SKILL_ELECTRICAL    = SKILL_MASTER,
+					SKILL_ATMOS         = SKILL_MASTER,
+					SKILL_ENGINES       = SKILL_MASTER)
 	skill_points = 30
 
 /datum/job/commeng
@@ -144,17 +146,17 @@ ut // COMMAND
 		access_engineeringlvl3
 	)
 
-	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
-	                    SKILL_EVA          = SKILL_BASIC,
-	                    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
-	                    SKILL_ELECTRICAL   = SKILL_BASIC,
-	                    SKILL_ATMOS        = SKILL_BASIC,
-	                    SKILL_ENGINES      = SKILL_BASIC)
+	min_skill = list(SKILL_COMPUTER     = SKILL_BASIC,
+					SKILL_EVA           = SKILL_BASIC,
+					SKILL_CONSTRUCTION  = SKILL_EXPERIENCED,
+					SKILL_ELECTRICAL    = SKILL_BASIC,
+					SKILL_ATMOS         = SKILL_BASIC,
+					SKILL_ENGINES       = SKILL_BASIC)
 
-	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MASTER,
-	                    SKILL_ELECTRICAL   = SKILL_MASTER,
-	                    SKILL_ATMOS        = SKILL_MASTER,
-	                    SKILL_ENGINES      = SKILL_MASTER)
+	max_skill = list(SKILL_CONSTRUCTION = SKILL_MASTER,
+					SKILL_ELECTRICAL    = SKILL_MASTER,
+					SKILL_ATMOS         = SKILL_MASTER,
+					SKILL_ENGINES       = SKILL_MASTER)
 	skill_points = 20
 
 // MISC

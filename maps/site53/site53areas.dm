@@ -168,6 +168,7 @@
 
 // SITE 53 SURFACE AREA'S
 /area/site53
+	base_turf = /turf/simulated/floor/plating
 
 /area/site53/surface/surface
 	name = "Surface"

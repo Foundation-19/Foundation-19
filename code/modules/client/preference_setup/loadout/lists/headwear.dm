@@ -3,7 +3,7 @@
 	slot = slot_head
 	category = /datum/gear/head
 	denied_roles = list(/datum/job/classd)
-	allowed_branches = list(/datum/mil_branch/civilian)
+
 	//Same idea, eats the helmet slot which guards spawn with. With the exception of certain beret variations, no reason to wear any of these.
 
 /datum/gear/head/beret

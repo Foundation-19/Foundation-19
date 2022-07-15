@@ -34,8 +34,14 @@ SUBSYSTEM_DEF(ticker)
 	///Set to TRUE when an admin forcibly ends round.
 	var/forced_end = FALSE
 
+	var/gametime_offset = 432000 //Deciseconds to add to world.time for station time.
+	var/station_time_rate_multiplier = 12 //factor of station time progressal vs real time.
+	var/round_start_time = 0
+
 /datum/controller/subsystem/ticker/Initialize()
 	to_world("<span class='info'><B>The game will start soon!</B></span>")
+	round_start_time = world.time
+	gametime_offset = rand(0, 23) HOURS
 	return ..()
 
 /datum/controller/subsystem/ticker/fire(resumed = 0)
@@ -172,30 +178,30 @@ SUBSYSTEM_DEF(ticker)
 			log_error("Ticker arrived at round end in an unexpected endgame state.")
 
 
-/datum/controller/subsystem/ticker/stat_entry()
+/datum/controller/subsystem/ticker/stat_entry(msg)
 	switch(GAME_STATE)
 		if(RUNLEVEL_LOBBY)
-			..("[round_progressing ? "START:[round(pregame_timeleft/10)]s" : "(PAUSED)"]")
+			.=..("[round_progressing ? "START:[round(pregame_timeleft/10)]s" : "(PAUSED)"]")
 		if(RUNLEVEL_SETUP)
-			..("SETUP")
+			.=..("SETUP")
 		if(RUNLEVEL_GAME)
-			..("GAME")
+			.=..("GAME")
 		if(RUNLEVEL_POSTGAME)
 			switch(end_game_state)
 				if(END_GAME_NOT_OVER)
-					..("ENDGAME ERROR")
+					.=..("ENDGAME ERROR")
 				if(END_GAME_AWAITING_MAP)
-					..("MAP VOTE")
+					.=..("MAP VOTE")
 				if(END_GAME_MODE_FINISH_DONE)
-					..("MODE OVER, WAITING")
+					.=..("MODE OVER, WAITING")
 				if(END_GAME_READY_TO_END)
-					..("ENDGAME PROCESSING")
+					.=..("ENDGAME PROCESSING")
 				if(END_GAME_DELAYED)
-					..("PAUSED")
+					.=..("PAUSED")
 				if(END_GAME_AWAITING_TICKETS)
-					..("AWAITING TICKETS")
+					.=..("AWAITING TICKETS")
 				if(END_GAME_ENDING)
-					..("END IN [round(restart_timeout/10)]s")
+					.=..("END IN [round(restart_timeout/10)]s")
 
 /datum/controller/subsystem/ticker/Recover()
 	pregame_timeleft = SSticker.pregame_timeleft
@@ -211,6 +217,8 @@ SUBSYSTEM_DEF(ticker)
 	delay_notified = SSticker.delay_notified
 
 	minds = SSticker.minds
+
+	round_start_time = SSticker.round_start_time
 
 /*
 Helpers
@@ -290,7 +298,8 @@ Helpers
 	for(var/mob/new_player/player in GLOB.player_list)
 		if(player && player.ready && player.mind)
 			if(player.mind.assigned_role=="AIC")
-				player.AIize()
+				var/mob/living/silicon/ai/ai = player.AIize()
+				ai.client?.init_verbs()
 				player.close_spawn_windows()
 			else if(!player.mind.assigned_role)
 				continue
