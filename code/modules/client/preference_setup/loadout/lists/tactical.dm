@@ -30,7 +30,7 @@
 
 
 
-datum/gear/tactical/sheath
+/datum/gear/tactical/sheath
 	display_name = "machete sheath"
 	path = /obj/item/clothing/accessory/storage/holster/machete
 
