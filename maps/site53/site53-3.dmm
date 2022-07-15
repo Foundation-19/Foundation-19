@@ -849,9 +849,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception)
-"co" = (
-/turf/unsimulated/mineral,
-/area/site53/medical/mentalhealth/isolation)
 "cp" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -5350,6 +5347,9 @@
 /area/site53/zonecommanderoffice{
 	name = "Entrance Zone Commander's Office"
 	})
+"nU" = (
+/turf/unsimulated/mineral,
+/area/site53/medical/mentalhealth/isolation)
 "nY" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -6819,7 +6819,6 @@
 /obj/structure/closet/secure_closet/mtf/co{
 	req_access = list(302)
 	},
-/obj/item/implantcase/death_alarm,
 /obj/item/crowbar/red,
 /obj/item/clothing/head/bio_hood/security,
 /obj/item/clothing/suit/bio_suit/security,
@@ -8377,6 +8376,19 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"BQ" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/red/half{
+	dir = 1
+	},
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/zonecommanderoffice{
+	name = "Entrance Zone Security Center"
+	})
 "BR" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -8966,6 +8978,13 @@
 "Jx" = (
 /obj/effect/landmark/start{
 	name = "EZ Agent"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc{
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/site53/zonecommanderoffice{
@@ -34840,7 +34859,7 @@ dm
 hL
 dm
 dm
-co
+nU
 dA
 dA
 dA
@@ -35097,7 +35116,7 @@ kY
 de
 lr
 kk
-co
+nU
 dA
 dA
 dA
@@ -35354,7 +35373,7 @@ ZS
 ZS
 Kq
 fS
-co
+nU
 dA
 dA
 dA
@@ -35611,7 +35630,7 @@ mc
 mc
 mc
 eG
-co
+nU
 dA
 dA
 dA
@@ -42825,7 +42844,7 @@ tB
 tB
 tB
 mS
-xg
+nA
 xg
 xg
 nA
@@ -43076,13 +43095,13 @@ lF
 ms
 mu
 tQ
-tH
+BQ
 tB
 tB
 uf
 ue
 mZ
-yt
+nH
 yt
 yt
 nH
