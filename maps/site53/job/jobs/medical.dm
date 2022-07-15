@@ -52,10 +52,14 @@
 	//supervisors = "the Chief Medical Officer"
 	selection_color = "#013d3b"
 	economic_power = 4
+	alt_titles = list("Pharmacist")
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/chemist
 	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
+	allowed_ranks = list(
+						/datum/mil_rank/civ/classc,
+						/datum/mil_rank/civ/classb
+						)
 	hud_icon = "hudpharmacist"
 
 	access = list(
@@ -125,7 +129,10 @@
 	alt_titles = list("Coroner")
 	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/medicaldoctor
 	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classb)
+	allowed_ranks = list(
+						/datum/mil_rank/civ/classc,
+						/datum/mil_rank/civ/classb
+						)
 	hud_icon = "hudphysician"
 
 	access = list(
