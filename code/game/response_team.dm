@@ -146,5 +146,5 @@ var/can_call_ert
 /datum/evacuation_predicate/ert/can_call(var/user)
 	if(world.time >= prevent_until)
 		return TRUE
-	to_chat(user, "<span class='warning'>An emergency response team has been dispatched. Evacuation requests will be denied until [duration2stationtime(prevent_until - world.time)].</span>")
+	to_chat(user, "<span class='warning'>An emergency response team has been dispatched. Evacuation requests will be denied until [station_time_timestamp("hh:mm", prevent_until - world.time)].</span>")
 	return FALSE

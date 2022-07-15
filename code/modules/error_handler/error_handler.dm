@@ -5,7 +5,7 @@ GLOBAL_VAR_INIT(actual_error_file_line, new/regex("^%% (.*?),(.*?) %% "))
 #ifdef DEBUG
 /world/Error(exception/E)
 	if(!istype(E)) //Something threw an unusual exception
-		log_world("\[[time_stamp()]] Uncaught exception: [E]")
+		log_world("\[[station_time_timestamp()]] Uncaught exception: [E]")
 		return ..()
 
 	var/static/list/error_last_seen = list()
@@ -65,7 +65,7 @@ GLOBAL_VAR_INIT(actual_error_file_line, new/regex("^%% (.*?),(.*?) %% "))
 			var/skipcount = abs(error_cooldown[erroruid]) - 1
 			error_cooldown[erroruid] = 0
 			if(skipcount > 0)
-				to_world_log("\[[time_stamp()]] Skipped [skipcount] runtimes in [erroruid].")
+				to_world_log("\[[station_time_timestamp()]] Skipped [skipcount] runtimes in [erroruid].")
 				GLOB.error_cache.log_error(E, skip_count = skipcount)
 
 	error_last_seen[erroruid] = world.time
@@ -102,7 +102,7 @@ GLOBAL_VAR_INIT(actual_error_file_line, new/regex("^%% (.*?),(.*?) %% "))
 	if(GLOB.error_cache)
 		GLOB.error_cache.log_error(E, desclines)
 
-	to_world_log("\[[time_stamp()]] Runtime in [erroruid]: [E]")
+	to_world_log("\[[station_time_timestamp()]] Runtime in [erroruid]: [E]")
 	for(var/line in desclines)
 		to_world_log(line)
 

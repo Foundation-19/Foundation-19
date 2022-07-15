@@ -201,7 +201,7 @@
 /mob/living/proc/embed(var/obj/O, var/def_zone=null, var/datum/wound/supplied_wound)
 	O.forceMove(src)
 	embedded += O
-	verbs += /mob/proc/yank_out_object
+	add_verb(src, /mob/proc/yank_out_object)
 
 //This is called when the mob is thrown into a dense turf
 /mob/living/proc/turf_collision(var/turf/T, var/speed)

@@ -299,8 +299,6 @@
 			return global.ascii_reset;
 		if("ascii_yellow")
 			return global.ascii_yellow;
-		if("asset_datums")
-			return global.asset_datums;
 		if("assigned")
 			return global.assigned;
 		if("assigned_blocks")
@@ -507,8 +505,6 @@
 			return global.last_chew;
 		if("last_message_id")
 			return global.last_message_id;
-		if("last_round_duration")
-			return global.last_round_duration;
 		if("light_overlay_cache")
 			return global.light_overlay_cache;
 		if("lighting_overlays_initialised")
@@ -607,10 +603,6 @@
 			return global.newscaster_standard_feeds;
 		if("next_account_number")
 			return global.next_account_number;
-		if("next_duration_update")
-			return global.next_duration_update;
-		if("next_station_date_change")
-			return global.next_station_date_change;
 		if("ninjastart")
 			return global.ninjastart;
 		if("ntnet_card_uid")
@@ -707,10 +699,6 @@
 			return global.robot_hud_colours;
 		if("robot_inventory")
 			return global.robot_inventory;
-		if("round_start_time")
-			return global.round_start_time;
-		if("roundstart_hour")
-			return global.roundstart_hour;
 		if("rune_list")
 			return global.rune_list;
 		if("same_wires")
@@ -769,8 +757,6 @@
 			return global.sqlport;
 		if("station_account")
 			return global.station_account;
-		if("station_date")
-			return global.station_date;
 		if("stool_cache")
 			return global.stool_cache;
 		if("stored_shock_by_ref")
@@ -1178,8 +1164,6 @@
 			global.ascii_reset=newval;
 		if("ascii_yellow")
 			global.ascii_yellow=newval;
-		if("asset_datums")
-			global.asset_datums=newval;
 		if("assigned")
 			global.assigned=newval;
 		if("assigned_blocks")
@@ -1386,8 +1370,6 @@
 			global.last_chew=newval;
 		if("last_message_id")
 			global.last_message_id=newval;
-		if("last_round_duration")
-			global.last_round_duration=newval;
 		if("light_overlay_cache")
 			global.light_overlay_cache=newval;
 		if("lighting_overlays_initialised")
@@ -1486,10 +1468,6 @@
 			global.newscaster_standard_feeds=newval;
 		if("next_account_number")
 			global.next_account_number=newval;
-		if("next_duration_update")
-			global.next_duration_update=newval;
-		if("next_station_date_change")
-			global.next_station_date_change=newval;
 		if("ninjastart")
 			global.ninjastart=newval;
 		if("ntnet_card_uid")
@@ -1586,10 +1564,6 @@
 			global.robot_hud_colours=newval;
 		if("robot_inventory")
 			global.robot_inventory=newval;
-		if("round_start_time")
-			global.round_start_time=newval;
-		if("roundstart_hour")
-			global.roundstart_hour=newval;
 		if("rune_list")
 			global.rune_list=newval;
 		if("same_wires")
@@ -1648,8 +1622,6 @@
 			global.sqlport=newval;
 		if("station_account")
 			global.station_account=newval;
-		if("station_date")
-			global.station_date=newval;
 		if("stool_cache")
 			global.stool_cache=newval;
 		if("stored_shock_by_ref")
@@ -1907,7 +1879,6 @@
 	"ascii_red",
 	"ascii_reset",
 	"ascii_yellow",
-	"asset_datums",
 	"assigned",
 	"assigned_blocks",
 	"attack_log_repository",
@@ -2012,7 +1983,6 @@
 	"language_keys",
 	"last_chew",
 	"last_message_id",
-	"last_round_duration",
 	"light_overlay_cache",
 	"lighting_overlays_initialised",
 	"limb_icon_cache",
@@ -2062,8 +2032,6 @@
 	"news_network",
 	"newscaster_standard_feeds",
 	"next_account_number",
-	"next_duration_update",
-	"next_station_date_change",
 	"ninjastart",
 	"ntnet_card_uid",
 	"ntnet_global",
@@ -2112,8 +2080,6 @@
 	"robot_custom_icons",
 	"robot_hud_colours",
 	"robot_inventory",
-	"round_start_time",
-	"roundstart_hour",
 	"rune_list",
 	"same_wires",
 	"send_emergency_team",
@@ -2144,7 +2110,6 @@
 	"sqlpass",
 	"sqlport",
 	"station_account",
-	"station_date",
 	"stool_cache",
 	"stored_shock_by_ref",
 	"string_part_flags",

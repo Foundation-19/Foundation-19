@@ -215,12 +215,12 @@ GLOBAL_LIST_EMPTY(scp173s)
 	for(var/mob/living/scp_173/S in GLOB.scp173s) // In case you spawned more than one
 		if(S.next_blinks[H]) // Not null
 			return
-	H.verbs -= /mob/living/carbon/human/verb/manual_blink
+	remove_verb(H, /mob/living/carbon/human/verb/manual_blink)
 
 /mob/living/scp_173/proc/CauseBlink(mob/living/carbon/human/H)
 	H.visible_message("<span class='notice'>[H] blinks.</span>")
 	H.eye_blind += 2
-	H.verbs |= /mob/living/carbon/human/verb/manual_blink
+	add_verb(H, /mob/living/carbon/human/verb/manual_blink)
 	next_blinks[H] = world.time + rand(15 SECONDS, 25 SECONDS)
 
 /mob/living/scp_173/proc/AIAttemptAttack()

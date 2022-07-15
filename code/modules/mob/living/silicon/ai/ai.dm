@@ -54,7 +54,6 @@ var/list/ai_verbs_default = list(
 	anchored = TRUE // -- TLE
 	density = TRUE
 	status_flags = CANSTUN|CANPARALYSE|CANPUSH
-	shouldnt_see = list(/obj/effect/rune)
 	maxHealth = 200
 	var/list/network = list("Exodus")
 	var/obj/machinery/camera/camera = null
@@ -112,12 +111,12 @@ var/list/ai_verbs_default = list(
 	var/static/list/custom_ai_icons_by_ckey_and_name
 
 /mob/living/silicon/ai/proc/add_ai_verbs()
-	src.verbs |= ai_verbs_default
-	src.verbs -= /mob/living/verb/ghost
+	add_verb(src, ai_verbs_default)
+	remove_verb(src, /mob/living/verb/ghost)
 
 /mob/living/silicon/ai/proc/remove_ai_verbs()
-	src.verbs -= ai_verbs_default
-	src.verbs += /mob/living/verb/ghost
+	remove_verb(src, ai_verbs_default)
+	add_verb(src, /mob/living/verb/ghost)
 
 /mob/living/silicon/ai/New(loc, var/datum/ai_laws/L, var/obj/item/device/mmi/B, var/safety = 0)
 	announcement = new()

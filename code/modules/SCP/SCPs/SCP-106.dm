@@ -54,18 +54,19 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	// fix names
 	fully_replace_character_name("SCP-106")
 
-	verbs += /mob/living/carbon/human/scp106/proc/phase_through_airlock
+	add_verb(src, /mob/living/carbon/human/scp106/proc/phase_through_airlock)
 	if (!(loc in GLOB.scp106_floors))
-		verbs += /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
+		add_verb(src, /mob/living/carbon/human/scp106/proc/enter_pocket_dimension)
 
-	verbs += /mob/living/carbon/human/scp106/proc/confuse_victims
+	add_verb(src, list(
+		/mob/living/carbon/human/scp106/proc/confuse_victims,
+		/mob/living/carbon/human/scp106/proc/wall_phase,
+		/mob/living/carbon/human/scp106/proc/wall_unphase,
+	))
 
 	WallEye = new(src)
 	WallEye.visualnet.add_source(src)
 	WallEye.visualnet.add_source(WallEye)
-
-	verbs += /mob/living/carbon/human/scp106/proc/wall_phase
-	verbs += /mob/living/carbon/human/scp106/proc/wall_unphase
 
 	GLOB.scp106s |= src
 
@@ -235,8 +236,8 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	set desc = "Return to the area you last teleported from."
 	if (last_x != -1) // shouldn't be possible but just in case
 		forceMove(locate(last_x, last_y, last_z))
-	verbs -= /mob/living/carbon/human/scp106/proc/go_back
-	verbs += /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
+	remove_verb(src, /mob/living/carbon/human/scp106/proc/go_back)
+	add_verb(src, /mob/living/carbon/human/scp106/proc/enter_pocket_dimension)
 
 #define PHASE_TIME (2 SECONDS)
 /mob/living/carbon/human/scp106/var/phase_cooldown = -1
@@ -329,8 +330,8 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	if (do_after(src, 30, get_turf(src)))
 		set_last_xyz()
 		forceMove(pick(GLOB.scp106_floors))
-		verbs -= /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
-		verbs += /mob/living/carbon/human/scp106/proc/go_back
+		remove_verb(src, /mob/living/carbon/human/scp106/proc/enter_pocket_dimension)
+		add_verb(src, /mob/living/carbon/human/scp106/proc/go_back)
 
 /mob/living/carbon/human/scp106/proc/confuse_victims()
 	set name = "Confuse Victims"
@@ -346,8 +347,8 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		if (!(loc in GLOB.scp106_floors))
 			to_chat(src, "<span class='danger'><i>You flee back to your pocket dimension!</i></span>")
 			forceMove(pick(GLOB.scp106_floors))
-			verbs -= /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
-			verbs += /mob/living/carbon/human/scp106/proc/go_back
+			remove_verb(src, /mob/living/carbon/human/scp106/proc/enter_pocket_dimension)
+			add_verb(src, /mob/living/carbon/human/scp106/proc/go_back)
 
 // special objects
 /obj/scp106_exit
@@ -460,7 +461,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		buckled_mob = null
 
 //This doesn't work by the way, but I'm not fixing it because I think earraping the entire server with the sound is a shit idea
-/decl/public_access/public_method/femurbreaker 
+/decl/public_access/public_method/femurbreaker
 	name = "spark"
 	desc = "Creates sparks to ignite nearby gases."
 	call_proc = /obj/structure/femur_breaker/proc/activate

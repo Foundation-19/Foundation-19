@@ -44,13 +44,16 @@ export const WarningParameter = new Juke.Parameter({
 export const DmMapsIncludeTarget = new Juke.Target({
   executes: async () => {
     const folders = [
-      ...Juke.glob('maps/**/*.dmm'),
+      ...Juke.glob('_maps/RandomRuins/**/*.dmm'),
+      ...Juke.glob('_maps/RandomZLevels/**/*.dmm'),
+      ...Juke.glob('_maps/shuttles/**/*.dmm'),
+      ...Juke.glob('_maps/templates/**/*.dmm'),
     ];
     const content = folders
-      .map((file) => file.replace('maps/', ''))
+      .map((file) => file.replace('_maps/', ''))
       .map((file) => `#include "${file}"`)
       .join('\n') + '\n';
-    fs.writeFileSync('maps/templates.dm', content);
+    fs.writeFileSync('_maps/templates.dm', content);
   },
 });
 
@@ -190,6 +193,11 @@ export const TguiEslintTarget = new Juke.Target({
   executes: ({ get }) => yarn('tgui:lint', !get(CiParameter) && '--fix'),
 });
 
+export const TguiPrettierTarget = new Juke.Target({
+  dependsOn: [YarnTarget],
+  executes: () => yarn('tgui:prettier'),
+});
+
 export const TguiSonarTarget = new Juke.Target({
   dependsOn: [YarnTarget],
   executes: () => yarn('tgui:sonar'),
@@ -207,7 +215,7 @@ export const TguiTestTarget = new Juke.Target({
 });
 
 export const TguiLintTarget = new Juke.Target({
-  dependsOn: [YarnTarget, TguiEslintTarget, TguiTscTarget],
+  dependsOn: [YarnTarget, TguiPrettierTarget, TguiEslintTarget, TguiTscTarget],
 });
 
 export const TguiDevTarget = new Juke.Target({

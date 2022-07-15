@@ -182,7 +182,7 @@
 		observer.real_name = client.prefs.real_name
 		observer.SetName(observer.real_name)
 		if(!client.holder && !config.antag_hud_allowed)           // For new ghosts we remove the verb from even showing up if it's not allowed.
-			observer.verbs -= /mob/observer/ghost/verb/toggle_antagHUD        // Poor guys, don't know what they are missing!
+			add_verb(observer, /mob/observer/ghost/verb/toggle_antagHUD) // Poor guys, don't know what they are missing!
 		observer.key = key
 		qdel(src)
 
