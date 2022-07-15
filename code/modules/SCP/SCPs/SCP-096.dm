@@ -210,7 +210,7 @@
 	if(istype(userguy, /mob/living/carbon))
 		specialexamine(userguy)
 		return
-	..()
+	return ..()
 
 /mob/living/simple_animal/hostile/scp096/proc/specialexamine(mob/userguy) //Snowflaked.
 	if (!iscarbon(userguy))
