@@ -4,7 +4,7 @@
 	category = /datum/gear/clothing/
 	slot = slot_tie
 	denied_roles = list(/datum/job/classd)
-	allowed_branches = list(/datum/mil_branch/civilian)
+
 	//No reason for guards to wear hawaian shirts, is there? Researchers and office staff.. I mean, maybe.
 
 /datum/gear/clothing/flannel
