@@ -4493,9 +4493,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "lB" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -4503,9 +4501,7 @@
 "lC" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/zonecommanderoffice)
 "lD" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Post";
@@ -4529,9 +4525,7 @@
 "lG" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "lH" = (
 /obj/machinery/light{
 	dir = 8
@@ -4544,9 +4538,7 @@
 "lI" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "lJ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -4589,9 +4581,7 @@
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/zonecommanderoffice)
 "lW" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -4964,26 +4954,20 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "mR" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "mS" = (
 /obj/machinery/door/airlock/multi_tile/security{
 	name = "\improper Entrance Zone Guard Equipment";
 	req_access = list(202)
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/zonecommanderoffice)
 "mT" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurant)
@@ -4998,17 +4982,13 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "mY" = (
 /obj/effect/landmark/start{
 	name = "EZ Junior Agent"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/zonecommanderoffice)
 "mZ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5016,9 +4996,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/zonecommanderoffice)
 "ng" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5035,9 +5013,7 @@
 /obj/item/clothing/head/bio_hood/security,
 /obj/item/crowbar/red,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/zonecommanderoffice)
 "nj" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -5065,20 +5041,14 @@
 "nn" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "no" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "nq" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "nr" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile/white,
@@ -5090,9 +5060,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "nt" = (
 /obj/structure/closet/secure_closet/mtf/enlisted/ez,
 /obj/item/clothing/accessory/armorplate/tactical,
@@ -5102,9 +5070,7 @@
 /obj/item/crowbar/red,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/zonecommanderoffice)
 "nu" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
@@ -5113,9 +5079,7 @@
 	name = "EZ Senior Agent"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "nv" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
@@ -5126,9 +5090,7 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "nx" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5140,9 +5102,7 @@
 	name = "trash bin"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "ny" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5158,9 +5118,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/zonecommanderoffice)
 "nE" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
@@ -5188,9 +5146,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/zonecommanderoffice)
 "nI" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Entrance Zone Commander's Office";
@@ -5198,15 +5154,11 @@
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "nJ" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "nK" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5215,9 +5167,7 @@
 	},
 /obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "nL" = (
 /obj/machinery/light,
 /obj/machinery/camera/autoname{
@@ -5225,9 +5175,7 @@
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "nM" = (
 /obj/machinery/power/apc{
 	name = "south bump";
@@ -5238,9 +5186,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "nN" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5248,9 +5194,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "nO" = (
 /obj/structure/table/woodentable,
 /obj/item/instrument/guitar,
@@ -5290,9 +5234,7 @@
 /obj/item/clothing/suit/bio_suit/security,
 /obj/item/clothing/head/bio_hood/security,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "nU" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/mentalhealth/isolation)
@@ -5707,9 +5649,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "pl" = (
 /obj/machinery/power/apc{
 	dir = 8;
@@ -5792,9 +5732,7 @@
 /obj/effect/paint_stripe/red,
 /obj/machinery/status_display,
 /turf/simulated/wall/prepainted,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/zonecommanderoffice)
 "pz" = (
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/prepainted,
@@ -5852,9 +5790,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "pO" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -5863,9 +5799,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "pW" = (
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/wood/maple,
@@ -6283,9 +6217,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "rK" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -6296,9 +6228,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "rL" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Primary Storage";
@@ -6977,14 +6907,10 @@
 "tA" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "tB" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "tC" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -7007,26 +6933,20 @@
 "tE" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "tH" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/half{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "tL" = (
 /obj/effect/floor_decal/corner/red/half{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "tM" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -7042,9 +6962,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "tO" = (
 /obj/structure/lattice,
 /turf/simulated/open,
@@ -7052,65 +6970,49 @@
 "tQ" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "tR" = (
 /obj/machinery/door/airlock/security{
 	name = "Security Center";
 	req_access = list(201)
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "tS" = (
 /obj/effect/paint_stripe/red,
 /obj/machinery/status_display,
 /turf/simulated/wall/prepainted,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "tU" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "tV" = (
 /obj/structure/filingcabinet,
 /obj/effect/floor_decal/corner/red/half{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "tW" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "tX" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier{
 	pixel_y = 3
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "tY" = (
 /obj/effect/floor_decal/corner/red/half{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "tZ" = (
 /obj/machinery/door/airlock/security{
 	name = "Security Center";
@@ -7122,9 +7024,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "ua" = (
 /obj/machinery/power/apc{
 	dir = 1
@@ -7137,9 +7037,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "ub" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -7147,9 +7045,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "uc" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7162,14 +7058,10 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "ud" = (
 /turf/unsimulated/mineral,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "ue" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7177,9 +7069,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "uf" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -7187,9 +7077,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "ug" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7202,9 +7090,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "uh" = (
 /obj/machinery/light{
 	dir = 4
@@ -7217,9 +7103,7 @@
 	name = "trash bin"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "ui" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "EZ Security Center";
@@ -7227,16 +7111,12 @@
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "uj" = (
 /obj/structure/filingcabinet,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "uk" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7692,16 +7572,12 @@
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "wz" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "wC" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 4
@@ -7797,9 +7673,7 @@
 /obj/item/clothing/under/scp/dclass,
 /obj/item/clothing/under/scp/dclass,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "xb" = (
 /obj/effect/landmark{
 	name = "JoinLateCryo"
@@ -7816,9 +7690,7 @@
 /area/site53/surface/surface)
 "xg" = (
 /turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/zonecommanderoffice)
 "xs" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -7836,9 +7708,7 @@
 	pixel_y = 28
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "xW" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/handcuffs,
@@ -7851,9 +7721,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/zonecommanderoffice)
 "yz" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/surgery/hall)
@@ -7920,9 +7788,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/zonecommanderoffice)
 "zf" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/glass/beaker/large,
@@ -8037,9 +7903,7 @@
 /area/site53/surface/surface)
 "zP" = (
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "zU" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -8058,9 +7922,7 @@
 /obj/item/clothing/shoes/orange,
 /obj/item/clothing/shoes/orange,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Am" = (
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "ezcell";
@@ -8068,9 +7930,7 @@
 	req_access = list(202)
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Ao" = (
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
@@ -8119,18 +7979,14 @@
 	pixel_y = 28
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Bf" = (
 /obj/structure/closet,
 /obj/effect/floor_decal/corner/red/half{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Bl" = (
 /obj/structure/hygiene/shower{
 	pixel_y = 14
@@ -8197,9 +8053,7 @@
 /obj/item/storage/firstaid/combat,
 /obj/item/storage/firstaid/combat,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "BR" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -8273,9 +8127,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Cp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -8414,9 +8266,7 @@
 	req_access = list(202)
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Ev" = (
 /obj/structure/closet/secure_closet/personal/patient,
 /turf/simulated/floor/tiled/white,
@@ -8460,9 +8310,7 @@
 	req_access = list(202)
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Fk" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -8514,9 +8362,7 @@
 "FH" = (
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "FQ" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/carpet/blue2,
@@ -8629,9 +8475,7 @@
 "Hf" = (
 /obj/structure/bed,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Hj" = (
 /obj/structure/table/standard,
 /obj/item/storage/pill_bottle/amnesticsa,
@@ -8652,9 +8496,7 @@
 /obj/item/clothing/head/bio_hood/security,
 /obj/item/storage/pill_bottle/amnesticsa,
 /turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/zonecommanderoffice)
 "Hq" = (
 /obj/structure/hygiene/toilet{
 	dir = 4
@@ -8663,9 +8505,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Hs" = (
 /obj/structure/iv_drip,
 /turf/simulated/floor/carpet/orange,
@@ -8698,9 +8538,7 @@
 	},
 /obj/item/storage/pill_bottle/amnesticsa,
 /turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/zonecommanderoffice)
 "HM" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -8794,9 +8632,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/zonecommanderoffice)
 "Jy" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -8878,9 +8714,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Mj" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/hatch/maintenance{
@@ -8897,17 +8731,13 @@
 /obj/effect/paint_stripe/red,
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Ms" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Mu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -9066,9 +8896,7 @@
 "PR" = (
 /obj/structure/bed/chair/padded,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "PS" = (
 /turf/simulated/floor/tiled,
 /area/site53/entrancezone/ezarmory)
@@ -9085,9 +8913,7 @@
 	},
 /obj/structure/closet,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Qa" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/mineral,
@@ -9201,9 +9027,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Ru" = (
 /obj/machinery/door/blast/shutters/open{
 	dir = 4;
@@ -9220,9 +9044,7 @@
 	},
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Rx" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -9244,9 +9066,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "RK" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -9328,9 +9148,7 @@
 	},
 /obj/structure/closet,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "TB" = (
 /obj/effect/floor_decal/corner/green,
 /obj/machinery/button/alternate/door/bolts{
@@ -9356,9 +9174,7 @@
 	pixel_x = 20
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "TI" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -9416,9 +9232,7 @@
 /obj/structure/table/standard,
 /obj/item/pen,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Uc" = (
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 4
@@ -9459,9 +9273,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Uy" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 9
@@ -9476,9 +9288,7 @@
 "UE" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "UF" = (
 /obj/effect/shuttle_landmark/heli/out,
 /turf/simulated/floor/tiled/monotile/white,
@@ -9508,9 +9318,7 @@
 	req_access = list(202)
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Va" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
@@ -9518,9 +9326,7 @@
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "Vi" = (
 /obj/structure/sign/warning/moving_parts{
 	pixel_y = -32
@@ -9586,9 +9392,7 @@
 	req_access = list(202)
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Wr" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -9603,9 +9407,7 @@
 	pixel_x = 20
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "WG" = (
 /obj/machinery/floodlight{
 	anchored = 1;
@@ -9674,9 +9476,7 @@
 /obj/effect/floor_decal/corner/red/border,
 /obj/structure/closet,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Xv" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -9713,9 +9513,7 @@
 	},
 /obj/structure/hygiene/toilet,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "XI" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -9762,9 +9560,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Yh" = (
 /obj/machinery/floodlight{
 	anchored = 1;
@@ -9852,9 +9648,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "Za" = (
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/wood/maple,

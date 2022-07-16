@@ -108,9 +108,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aap" = (
 /obj/machinery/computer/shuttle_control{
 	name = "Light Containment Tram control console";
@@ -1716,9 +1714,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aeF" = (
 /obj/structure/sign/scp/radiation,
 /obj/effect/paint_stripe/yellow,
@@ -4340,9 +4336,7 @@
 "akH" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "akI" = (
 /obj/structure/table/steel_reinforced,
 /obj/structure/cable{
@@ -4520,9 +4514,7 @@
 /area/site53/engineering/locker_room)
 "alf" = (
 /turf/simulated/wall/titanium,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "alg" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch,
@@ -4775,9 +4767,7 @@
 /obj/item/clothing/suit/bio_suit/security,
 /obj/item/clothing/head/bio_hood/security,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "alG" = (
 /obj/effect/paint_stripe/green,
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
@@ -5111,9 +5101,7 @@
 /obj/item/clothing/suit/bio_suit/security,
 /obj/item/clothing/head/bio_hood/security,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "amB" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -11715,9 +11703,7 @@
 /obj/item/clothing/suit/bio_suit/security,
 /obj/item/clothing/head/bio_hood/security,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aAJ" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -13361,9 +13347,7 @@
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aEl" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/standard,
@@ -13438,9 +13422,7 @@
 /obj/item/clothing/head/bio_hood/security,
 /obj/item/crowbar/red,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aEw" = (
 /obj/structure/closet/secure_closet/mtf/enlisted,
 /obj/machinery/light{
@@ -13452,9 +13434,7 @@
 /obj/item/clothing/head/bio_hood/security,
 /obj/item/crowbar/red,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aEx" = (
 /obj/structure/closet/l3closet,
 /obj/item/clothing/suit/bio_suit/general,
@@ -13744,9 +13724,7 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aFi" = (
 /obj/structure/bed/chair,
 /obj/machinery/light{
@@ -14868,9 +14846,7 @@
 "aId" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/prepainted,
-/area/site53/ulcz/maintenance{
-	name = "Research Wing Substation"
-	})
+/area/site53/ulcz/maintenance)
 "aIe" = (
 /obj/item/device/taperecorder,
 /obj/item/device/camera,
@@ -14911,15 +14887,11 @@
 	req_access = list(301)
 	},
 /turf/simulated/floor,
-/area/site53/ulcz/maintenance{
-	name = "Research Wing Substation"
-	})
+/area/site53/ulcz/maintenance)
 "aIl" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/titanium,
-/area/site53/ulcz/maintenance{
-	name = "Research Wing Substation"
-	})
+/area/site53/ulcz/maintenance)
 "aIm" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -14935,9 +14907,7 @@
 /area/site53/lowertrams/hczmaint)
 "aIn" = (
 /turf/simulated/floor,
-/area/site53/ulcz/maintenance{
-	name = "Research Wing Substation"
-	})
+/area/site53/ulcz/maintenance)
 "aIo" = (
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/monotile/white,
@@ -14949,9 +14919,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor,
-/area/site53/ulcz/maintenance{
-	name = "Research Wing Substation"
-	})
+/area/site53/ulcz/maintenance)
 "aIq" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -14963,9 +14931,7 @@
 	pixel_y = 8
 	},
 /turf/simulated/floor,
-/area/site53/ulcz/maintenance{
-	name = "Research Wing Substation"
-	})
+/area/site53/ulcz/maintenance)
 "aIr" = (
 /obj/structure/cable{
 	d2 = 2;
@@ -14975,9 +14941,7 @@
 	dir = 4
 	},
 /turf/simulated/floor,
-/area/site53/ulcz/maintenance{
-	name = "Research Wing Substation"
-	})
+/area/site53/ulcz/maintenance)
 "aIs" = (
 /obj/machinery/power/smes/buildable/preset/ds90/substation_full{
 	RCon_tag = "Research Wing Substation"
@@ -14988,9 +14952,7 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor,
-/area/site53/ulcz/maintenance{
-	name = "Research Wing Substation"
-	})
+/area/site53/ulcz/maintenance)
 "aIt" = (
 /obj/structure/plasticflaps,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -15737,9 +15699,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor,
-/area/site53/ulcz/maintenance{
-	name = "Research Wing Substation"
-	})
+/area/site53/ulcz/maintenance)
 "aKn" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -15752,17 +15712,13 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor,
-/area/site53/ulcz/maintenance{
-	name = "Research Wing Substation"
-	})
+/area/site53/ulcz/maintenance)
 "aKo" = (
 /obj/machinery/power/breakerbox/activated{
 	RCon_tag = "Research Wing Bypass"
 	},
 /turf/simulated/floor,
-/area/site53/ulcz/maintenance{
-	name = "Research Wing Substation"
-	})
+/area/site53/ulcz/maintenance)
 "aKp" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -15773,9 +15729,7 @@
 	name = "Research Wing Substation"
 	},
 /turf/simulated/floor,
-/area/site53/ulcz/maintenance{
-	name = "Research Wing Substation"
-	})
+/area/site53/ulcz/maintenance)
 "aKq" = (
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
@@ -15791,9 +15745,7 @@
 	pixel_x = -24
 	},
 /turf/simulated/floor,
-/area/site53/ulcz/maintenance{
-	name = "Research Wing Substation"
-	})
+/area/site53/ulcz/maintenance)
 "aKs" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -15806,9 +15758,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor,
-/area/site53/ulcz/maintenance{
-	name = "Research Wing Substation"
-	})
+/area/site53/ulcz/maintenance)
 "aKt" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -17038,9 +16988,7 @@
 "aNs" = (
 /obj/effect/paint/silver,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aNt" = (
 /obj/machinery/light{
 	dir = 1;
@@ -17175,9 +17123,7 @@
 	},
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aNI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -17245,9 +17191,7 @@
 	},
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aNQ" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -18640,9 +18584,7 @@
 /area/site53/upper_surface/serverfarmcontrol)
 "aRW" = (
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aRX" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -18651,9 +18593,7 @@
 "aRY" = (
 /obj/structure/railing/mapped,
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aRZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -18744,9 +18684,7 @@
 "aSl" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aSm" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techfloor,
@@ -18773,14 +18711,10 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aSr" = (
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aSs" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/r_wall/prepainted,
@@ -18858,9 +18792,7 @@
 "aSG" = (
 /obj/structure/stairs/north,
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aSH" = (
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/techmaint,
@@ -18868,38 +18800,26 @@
 "aSI" = (
 /obj/structure/stairs/west,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aSJ" = (
 /turf/simulated/floor,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aSK" = (
 /turf/simulated/mineral,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aSL" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Abandoned Maintenance Tunnel"
 	},
 /turf/simulated/floor,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aSM" = (
 /turf/simulated/open,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aSN" = (
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aSO" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/r_wall/prepainted,
@@ -18911,9 +18831,7 @@
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/effect/decal/cleanable/spiderling_remains,
 /turf/simulated/floor,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aSR" = (
 /obj/machinery/optable,
 /obj/machinery/light{
@@ -18924,15 +18842,11 @@
 "aSS" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aST" = (
 /obj/structure/railing/mapped,
 /turf/simulated/floor,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aSU" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/floor_decal/corner/green/mono,
@@ -18955,9 +18869,7 @@
 "aSW" = (
 /obj/item/stack/material/steel,
 /turf/simulated/floor,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aSX" = (
 /obj/machinery/computer/modular/preset/aislot/sysadmin{
 	dir = 8
@@ -18967,21 +18879,15 @@
 "aTa" = (
 /obj/structure/stairs/east,
 /turf/simulated/floor,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aTc" = (
 /obj/structure/ladder,
 /turf/simulated/floor,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aTd" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aTf" = (
 /obj/structure/closet/wardrobe/robotics_black,
 /obj/machinery/light/spot{
@@ -19051,9 +18957,7 @@
 "aTq" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aTs" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "LCZ Security Center";
@@ -19061,9 +18965,7 @@
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aTu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 4
@@ -19080,9 +18982,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aTw" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 9
@@ -19092,9 +18992,7 @@
 "aTy" = (
 /obj/effect/floor_decal/corner/black/diagonal,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aTA" = (
 /obj/item/storage/mirror{
 	pixel_y = 27
@@ -19104,9 +19002,7 @@
 	pixel_y = 11
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aTB" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/machinery/light{
@@ -19114,9 +19010,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aTE" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -19124,9 +19018,7 @@
 	pixel_y = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aTF" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/closet/secure_closet/mtf/enlisted/hcz,
@@ -19142,36 +19034,26 @@
 "aTH" = (
 /obj/structure/closet/secure_closet/personal,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aTI" = (
 /obj/machinery/door/airlock/civilian{
 	name = "Restroom"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aTJ" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aTL" = (
 /obj/structure/railing/mapped,
 /obj/structure/flora/pottedplant,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aTM" = (
 /obj/structure/stairs/north,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aTN" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -19221,9 +19103,7 @@
 /area/site53/llcz/dclass/armory)
 "aTT" = (
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aTW" = (
 /obj/machinery/button/blast_door{
 	id_tag = "173emerg";
@@ -19243,9 +19123,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUa" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -19253,9 +19131,7 @@
 	pixel_y = 1
 	},
 /turf/simulated/floor/wood,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUb" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/door/blast/regular/open{
@@ -19291,9 +19167,7 @@
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUh" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -19301,9 +19175,7 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUi" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -19313,9 +19185,7 @@
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUj" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/techmaint,
@@ -19329,15 +19199,11 @@
 "aUn" = (
 /obj/machinery/vending/fitness,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUo" = (
 /obj/machinery/vending/snack,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUp" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
@@ -19346,34 +19212,26 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUr" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUt" = (
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUu" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUv" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -19381,15 +19239,11 @@
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUw" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUx" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8;
@@ -19399,33 +19253,25 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUy" = (
 /obj/effect/floor_decal/spline/plain/blue{
 	dir = 9
 	},
 /turf/simulated/floor/wood,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUz" = (
 /obj/effect/floor_decal/spline/plain/blue{
 	dir = 1
 	},
 /turf/simulated/floor/wood,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUA" = (
 /obj/effect/floor_decal/spline/plain/blue{
 	dir = 5
 	},
 /turf/simulated/floor/wood,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUB" = (
 /obj/machinery/vending/cola,
 /obj/machinery/light{
@@ -19434,40 +19280,30 @@
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUE" = (
 /obj/effect/floor_decal/corner/grey/diagonal,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUF" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Locker Room";
 	req_access = list(202)
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUH" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Break Room"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUI" = (
 /obj/effect/floor_decal/spline/plain/blue{
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUJ" = (
 /obj/machinery/light{
 	dir = 8;
@@ -19479,23 +19315,17 @@
 	pixel_y = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUK" = (
 /obj/effect/floor_decal/spline/plain/blue{
 	dir = 4
 	},
 /turf/simulated/floor/wood,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUL" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUM" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -19503,46 +19333,34 @@
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUN" = (
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUO" = (
 /obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUP" = (
 /obj/effect/floor_decal/spline/plain/blue{
 	dir = 10
 	},
 /turf/simulated/floor/wood,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUQ" = (
 /obj/effect/floor_decal/spline/plain/blue,
 /turf/simulated/floor/wood,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUR" = (
 /obj/effect/floor_decal/spline/plain/blue{
 	dir = 6
 	},
 /turf/simulated/floor/wood,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUU" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -19573,9 +19391,7 @@
 /obj/structure/window/reinforced,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aUZ" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
@@ -19585,9 +19401,7 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVb" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
@@ -19604,9 +19418,7 @@
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVg" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-078 Containment Chamber";
@@ -19641,9 +19453,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVl" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -19653,9 +19463,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVm" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -19666,9 +19474,7 @@
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVo" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -19677,17 +19483,13 @@
 	},
 /obj/machinery/vending/security,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVp" = (
 /obj/machinery/light_switch{
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVq" = (
 /obj/machinery/light{
 	dir = 4;
@@ -19700,17 +19502,13 @@
 	pixel_y = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVr" = (
 /obj/machinery/door/window/brigdoor/eastright{
 	req_access = list(202)
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVs" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -19719,9 +19517,7 @@
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVu" = (
 /obj/machinery/door/window/brigdoor/westleft{
 	req_access = list(202)
@@ -19732,9 +19528,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVv" = (
 /obj/effect/paint_stripe/red,
 /obj/machinery/computer/guestpass,
@@ -19750,9 +19544,7 @@
 	req_access = list()
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVy" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -19760,9 +19552,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVz" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/door/airlock/glass/security{
@@ -19775,15 +19565,11 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVA" = (
 /obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVB" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/door/airlock/glass/security{
@@ -19800,9 +19586,7 @@
 /obj/machinery/status_display,
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVE" = (
 /obj/machinery/button/blast_door{
 	id_tag = "173";
@@ -19817,9 +19601,7 @@
 /obj/machinery/status_display,
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVH" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
@@ -19841,26 +19623,20 @@
 	name = "LCZ Guard"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVL" = (
 /obj/effect/floor_decal/corner/grey/diagonal,
 /obj/effect/landmark/start{
 	name = "LCZ Junior Guard"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVM" = (
 /obj/effect/landmark/start{
 	name = "LCZ Junior Guard"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aVN" = (
 /obj/machinery/light{
 	dir = 1;
@@ -20414,9 +20190,7 @@
 /obj/item/clothing/head/bio_hood/security,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "aXi" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -20965,9 +20739,7 @@
 /area/site53/lowertrams/escape)
 "aYB" = (
 /turf/simulated/floor/shuttle/white,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aYC" = (
 /obj/machinery/light{
 	dir = 1;
@@ -20998,9 +20770,7 @@
 /area/site53/upper_surface/serverfarmtunnel)
 "aYM" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "aYN" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -21860,9 +21630,7 @@
 /obj/item/crowbar/red,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "bbk" = (
 /obj/effect/floor_decal/corner/blue/full,
 /obj/machinery/door/airlock/highsecurity,
@@ -22414,9 +22182,7 @@
 /obj/item/storage/pill_bottle/amnesticsa,
 /obj/item/crowbar/red,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "bdf" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
@@ -22891,9 +22657,7 @@
 "beO" = (
 /obj/machinery/floodlight,
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "beP" = (
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/surface/explorers)
@@ -22963,16 +22727,12 @@
 "bfe" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "bff" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/floodlight,
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "bfg" = (
 /obj/machinery/light/small/red{
 	dir = 4;
@@ -22984,29 +22744,21 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/ore_box,
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "bfi" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "bfj" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/stasis_cage,
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "bfk" = (
 /obj/structure/ore_box,
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "bfl" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/orange/border{
@@ -23864,9 +23616,7 @@
 	req_access = list()
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "bho" = (
 /obj/machinery/power/apc/hyper{
 	dir = 4
@@ -25963,9 +25713,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "bOD" = (
 /obj/machinery/chemical_dispenser,
 /turf/simulated/floor/tiled,
@@ -26046,9 +25794,7 @@
 	name = "Showers"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "bXc" = (
 /obj/structure/table/rack,
 /obj/item/modular_computer/pda/science,
@@ -26179,9 +25925,7 @@
 "cnC" = (
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "cof" = (
 /obj/machinery/recharge_station,
 /obj/machinery/camera/network/hcz{
@@ -26291,9 +26035,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "cGz" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier{
@@ -26342,7 +26084,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "cMi" = (
@@ -26547,7 +26288,6 @@
 "dpg" = (
 /turf/simulated/floor/carpet/brown,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "dsY" = (
@@ -26682,7 +26422,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "dGV" = (
@@ -27574,9 +27313,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "gvH" = (
 /obj/structure/lattice,
 /obj/structure/railing/mapped,
@@ -27872,7 +27609,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "hnw" = (
@@ -27935,9 +27671,7 @@
 /area/site53/llcz/scp513)
 "hxk" = (
 /turf/unsimulated/mineral,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "hzp" = (
 /obj/structure/cable/green{
 	d2 = 4;
@@ -28110,7 +27844,6 @@
 "hUb" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "hUh" = (
@@ -28157,7 +27890,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "iaf" = (
@@ -28578,9 +28310,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "joI" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -28624,7 +28354,6 @@
 	},
 /turf/space,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "jte" = (
@@ -28645,9 +28374,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "jwF" = (
 /obj/structure/disposaloutlet,
 /obj/structure/disposalpipe/trunk{
@@ -28796,9 +28523,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "jUp" = (
 /obj/structure/hygiene/toilet{
 	dir = 1
@@ -28808,9 +28533,7 @@
 	icon_state = "bulb1"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "jUv" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/orange/border{
@@ -29104,9 +28827,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "kLz" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -29445,9 +29166,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "lBq" = (
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/white,
@@ -29540,9 +29259,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "lQa" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -29769,9 +29486,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "mtc" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
@@ -29828,7 +29543,6 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "mzz" = (
@@ -29899,7 +29613,6 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "mNQ" = (
@@ -30198,9 +29911,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/reinforced,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "nwY" = (
 /obj/machinery/vending/dinnerware,
 /turf/simulated/floor/tiled/monotile,
@@ -30252,7 +29963,6 @@
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "nHk" = (
@@ -30510,9 +30220,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "ote" = (
 /obj/machinery/papershredder,
 /obj/effect/floor_decal/corner/orange/border{
@@ -30965,7 +30673,6 @@
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "pFN" = (
@@ -31055,7 +30762,6 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "pVm" = (
@@ -31265,7 +30971,6 @@
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "qFt" = (
@@ -31422,7 +31127,6 @@
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "rgb" = (
@@ -31530,9 +31234,7 @@
 /obj/structure/railing/mapped,
 /obj/item/stack/material/steel,
 /turf/simulated/floor,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "rtT" = (
 /obj/structure/flora/pottedplant/minitree,
 /obj/structure/railing/mapped,
@@ -31938,9 +31640,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "sMb" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -32284,9 +31984,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "tUq" = (
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp247observation)
@@ -32605,9 +32303,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/surface/surface{
-	name = "Underground Helipads"
-	})
+/area/site53/surface/surface)
 "uKH" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/steel_ridged,
@@ -32628,7 +32324,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "uTl" = (
@@ -33456,7 +33151,6 @@
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "wJT" = (
@@ -33560,9 +33254,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "xaC" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/reinforced,
@@ -33711,9 +33403,7 @@
 /obj/item/storage/pill_bottle/amnesticsa,
 /obj/item/crowbar/red,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = null
-	})
+/area/site53/llcz/dclass/checkequip)
 "xti" = (
 /obj/machinery/light{
 	dir = 1;
@@ -33739,7 +33429,6 @@
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/llcz/scp500{
-	name = "\improper SCP-529";
 	requires_power = 0
 	})
 "xxC" = (

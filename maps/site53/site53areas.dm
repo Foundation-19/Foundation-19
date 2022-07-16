@@ -849,13 +849,6 @@
 	icon_state = "engineering"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/centcom/telecomms
-	name = "\improper Telecommunications"
-	icon_state = "centcom"
-	requires_power = 0
-	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/entrancezone/securitypost
 	name = "\improper Entrance Zone Security Post"
 	icon_state = "head_quarters"
@@ -1072,10 +1065,6 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 //Site 53's science areas
-
-/area/site53/science/xenobiology
-	name = "\improper Xenobiology"
-	icon_state = "research"
 
 /area/site53/science/aicobservation
 	name = "\improper AIC Observation"
