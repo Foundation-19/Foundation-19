@@ -4,11 +4,11 @@
 /area/space)
 "b" = (
 /turf/unsimulated/wall/scp106,
-/area/pocketdimensions)
+/area/pocketdimension)
 "c" = (
 /obj/scp106_random,
 /turf/unsimulated/floor/scp106,
-/area/pocketdimensions)
+/area/pocketdimension)
 "d" = (
 /obj/structure/girder/cult{
 	name = "twisted blockade"
@@ -16,37 +16,37 @@
 /turf/simulated/floor/cult{
 	name = "twisted floor"
 	},
-/area/pocketdimensions)
+/area/pocketdimension)
 "e" = (
 /turf/unsimulated/floor/scp106,
-/area/pocketdimensions)
+/area/pocketdimension)
 "g" = (
 /obj/structure/closet/coffin,
 /turf/simulated/floor/cult{
 	name = "twisted floor"
 	},
-/area/pocketdimensions)
+/area/pocketdimension)
 "h" = (
 /obj/scp106_random,
 /turf/simulated/floor/cult{
 	name = "twisted floor"
 	},
-/area/pocketdimensions)
+/area/pocketdimension)
 "i" = (
 /turf/simulated/floor/cult{
 	name = "twisted floor"
 	},
-/area/pocketdimensions)
+/area/pocketdimension)
 "j" = (
 /obj/machinery/door/unpowered/simple/cult,
 /turf/unsimulated/floor/scp106,
-/area/pocketdimensions)
+/area/pocketdimension)
 "k" = (
 /obj/structure/girder/cult{
 	name = "twisted blockade"
 	},
 /turf/unsimulated/floor/scp106,
-/area/pocketdimensions)
+/area/pocketdimension)
 
 (1,1,1) = {"
 a
