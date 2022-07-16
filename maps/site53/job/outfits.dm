@@ -311,7 +311,6 @@
 	id_types = list(/obj/item/card/id/sciencelvl4)
 	l_pocket = /obj/item/book/manual/scp/scisop
 	l_ear = /obj/item/device/radio/headset/headset_sci
-	back = /obj/item/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/spellbook/student = 1)
 
 
