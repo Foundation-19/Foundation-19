@@ -73,10 +73,10 @@
 	*/
 	preload_rsc = 0
 
-	///goonchat chatoutput of the client
-	var/datum/chatOutput/chatOutput
-
+	//Hide top bars
 	var/fullscreen = FALSE
+	//Hide status bar (bottom left)
+	var/show_status_bar = TRUE
 
 	///Needs to implement InterceptClickOn(user,params,atom) proc
 	var/datum/click_intercept = null

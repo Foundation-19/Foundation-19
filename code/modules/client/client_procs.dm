@@ -492,29 +492,6 @@
 	if(istype(M) && !M.in_throw_mode)
 		M.OnMouseDown(object, location, control, params)
 
-/client/verb/toggle_fullscreen()
-	set name = "Toggle Fullscreen"
-	set category = "OOC"
-
-	fullscreen = !fullscreen
-
-	if (fullscreen)
-		winset(usr, "mainwindow", "titlebar=false")
-		winset(usr, "mainwindow", "can-resize=false")
-		winset(usr, "mainwindow", "is-maximized=false")
-		winset(usr, "mainwindow", "is-maximized=true")
-		winset(usr, "mainwindow", "statusbar=false")
-		winset(usr, "mainwindow", "menu=")
-//		winset(usr, "mainwindow.mainvsplit", "size=0x0")
-	else
-		winset(usr, "mainwindow", "is-maximized=false")
-		winset(usr, "mainwindow", "titlebar=true")
-		winset(usr, "mainwindow", "can-resize=true")
-		winset(usr, "mainwindow", "statusbar=true")
-		winset(usr, "mainwindow", "menu=menu")
-
-	fit_viewport()
-
 /client/verb/fit_viewport()
 	set name = "Fit Viewport"
 	set category = "OOC"
@@ -651,3 +628,36 @@
 		if(!(key in list("F1","F2")) && !winget(src, "default-\ref[key]", "command"))
 			to_chat(src, "You probably entered the game with a different keyboard layout.\n<a href='?src=\ref[src];reset_macros=1'>Please switch to the English layout and click here to fix the communication hotkeys.</a>")
 			break
+
+/client/verb/toggle_fullscreen()
+	set name = "Toggle Fullscreen"
+	set category = "OOC"
+
+	fullscreen = !fullscreen
+
+	if (fullscreen)
+		winset(usr, "mainwindow", "titlebar=false")
+		winset(usr, "mainwindow", "can-resize=false")
+		winset(usr, "mainwindow", "is-maximized=false")
+		winset(usr, "mainwindow", "is-maximized=true")
+		winset(usr, "mainwindow", "statusbar=false")
+		winset(usr, "mainwindow", "menu=")
+	else
+		winset(usr, "mainwindow", "is-maximized=false")
+		winset(usr, "mainwindow", "titlebar=true")
+		winset(usr, "mainwindow", "can-resize=true")
+		winset(usr, "mainwindow", "statusbar=true")
+		winset(usr, "mainwindow", "menu=menu")
+
+	fit_viewport()
+
+/client/verb/toggle_status_bar()
+	set name = "Toggle Status Bar"
+	set category = "OOC"
+
+	show_status_bar = !show_status_bar
+
+	if (show_status_bar)
+		winset(usr, "mapwindow.status_bar", "is-visible=true")
+	else
+		winset(usr, "mapwindow.status_bar", "is-visible=false")

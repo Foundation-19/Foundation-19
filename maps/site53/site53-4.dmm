@@ -748,11 +748,6 @@
 /obj/machinery/door/airlock/command{
 	name = "Head of Personnel's Office"
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect"
 	},
@@ -1221,6 +1216,8 @@
 "df" = (
 /obj/structure/table/standard,
 /obj/item/stamp/rd,
+/obj/item/stamp/denied,
+/obj/item/stamp/approved,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "dg" = (
@@ -1416,9 +1413,6 @@
 "dD" = (
 /obj/item/modular_computer/tablet/preset/custom_loadout/advanced,
 /obj/structure/table/standard,
-/obj/item/stamp/approved,
-/obj/item/stamp/denied,
-/obj/item/stamp/rd,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "dE" = (
@@ -2484,6 +2478,8 @@
 "gk" = (
 /obj/structure/table/standard,
 /obj/item/stamp/scp/cmo,
+/obj/item/stamp/approved,
+/obj/item/stamp/denied,
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/hallway)
 "gl" = (
