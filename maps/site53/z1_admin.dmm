@@ -10,9 +10,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "af" = (
 /obj/machinery/door/blast/shutters{
 	id_tag = "epislon11";
@@ -22,9 +20,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "as" = (
 /turf/simulated/wall/r_wall,
 /area/space)
@@ -39,9 +35,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "aF" = (
 /obj/structure/closet,
 /obj/effect/floor_decal/corner/blue/border{
@@ -54,9 +48,7 @@
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "aL" = (
 /obj/effect/floor_decal/corner{
 	color = "#FFFF00";
@@ -65,9 +57,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "aP" = (
 /obj/machinery/vending/weeb{
 	dir = 4
@@ -117,9 +107,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "bC" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -137,9 +125,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "bL" = (
 /obj/structure/sign/bluecross_2{
 	pixel_y = -24
@@ -164,9 +150,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "cf" = (
 /obj/effect/floor_decal/corner{
 	color = "#FFFF00";
@@ -176,9 +160,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "ci" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 8
@@ -199,9 +181,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "cm" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -272,9 +252,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "cF" = (
 /obj/effect/floor_decal/corner/white{
 	dir = 9;
@@ -287,9 +265,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "cG" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 10;
@@ -299,9 +275,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "cK" = (
 /obj/machinery/vending/cola{
 	dir = 8
@@ -316,9 +290,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "cP" = (
 /obj/machinery/r_n_d/server/centcom,
 /turf/simulated/floor/bluegrid/airless,
@@ -340,9 +312,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "dc" = (
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/misc.dmi';
@@ -357,23 +327,17 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "dr" = (
 /obj/structure/closet/crate,
 /obj/item/reagent_containers/food/condiment/cornoil,
 /obj/item/reagent_containers/food/condiment/cornoil,
 /obj/item/reagent_containers/food/condiment/cornoil,
 /turf/simulated/floor/wood,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "dD" = (
 /turf/unsimulated/mineral,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "dE" = (
 /obj/structure/railing/mapped,
 /turf/unsimulated/floor{
@@ -393,9 +357,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "dT" = (
 /obj/effect/floor_decal/corner/white{
 	dir = 9;
@@ -406,9 +368,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "dU" = (
 /obj/effect/floor_decal/corner/white{
 	dir = 6;
@@ -421,9 +381,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "dW" = (
 /obj/structure/table/rack,
 /obj/item/inducer,
@@ -433,9 +391,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "dX" = (
 /obj/effect/floor_decal/corner/white{
 	dir = 6;
@@ -447,17 +403,13 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "ec" = (
 /obj/structure/undies_wardrobe,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "ek" = (
 /obj/effect/floor_decal/corner/orange{
 	dir = 6;
@@ -474,9 +426,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "es" = (
 /turf/unsimulated/wall{
 	desc = "That looks like it doesn't open easily.";
@@ -496,9 +446,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "eH" = (
 /obj/structure/table/standard,
 /turf/unsimulated/floor{
@@ -516,9 +464,7 @@
 	dir = 8;
 	icon_state = "vault"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "eL" = (
 /turf/unsimulated/mineral,
 /area/site53/surface/surface)
@@ -552,9 +498,7 @@
 /area/site53/surface/surface)
 "eU" = (
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "eW" = (
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/lhcz/scp1102entrance)
@@ -1142,9 +1086,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "hw" = (
 /obj/structure/closet,
 /obj/random/medical,
@@ -1312,18 +1254,14 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "hW" = (
 /obj/structure/table/rack,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "hY" = (
 /obj/machinery/door/airlock/civilian{
 	name = "Tram Exit"
@@ -1403,9 +1341,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "im" = (
 /obj/structure/bed,
 /obj/machinery/light/small,
@@ -1423,9 +1359,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "io" = (
 /obj/structure/curtain/medical,
 /obj/effect/floor_decal/corner/blue/border{
@@ -1520,9 +1454,7 @@
 	name = "Chaos Insurgency Outpost"
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "iH" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/kafel_full,
@@ -1753,9 +1685,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "jB" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
@@ -1775,9 +1705,7 @@
 /area/site53/tram/car1)
 "jF" = (
 /turf/simulated/wall/titanium,
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "jG" = (
 /obj/machinery/light{
 	dir = 8;
@@ -1794,9 +1722,7 @@
 "jI" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/wood,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "jJ" = (
 /obj/structure/closet,
 /obj/item/device/radio/headset/syndicate,
@@ -1804,17 +1730,13 @@
 /obj/item/clothing/under/scp/utility/chaos,
 /obj/item/clothing/shoes/dutyboots,
 /turf/simulated/floor/wood,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "jK" = (
 /obj/machinery/acting/changer,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "jL" = (
 /obj/machinery/door/airlock/security{
 	name = "Holding Cells";
@@ -1835,9 +1757,7 @@
 /obj/item/clothing/under/scp/utility/chaos,
 /obj/item/clothing/shoes/dutyboots,
 /turf/simulated/floor/wood,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "jN" = (
 /obj/structure/grille,
 /turf/simulated/floor/exoplanet/snow,
@@ -1860,9 +1780,7 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/wood,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "jR" = (
 /obj/structure/bed,
 /obj/structure/bed{
@@ -1872,23 +1790,17 @@
 	name = "Syndicate-Spawn"
 	},
 /turf/simulated/floor/wood,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "jS" = (
 /turf/simulated/floor/wood,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "jT" = (
 /obj/machinery/light{
 	dir = 4;
 	pixel_x = 0
 	},
 /turf/simulated/floor/wood,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "jU" = (
 /obj/structure/flora/grass/both,
 /turf/simulated/floor/exoplanet/snow,
@@ -1932,9 +1844,7 @@
 "kg" = (
 /obj/machinery/light,
 /turf/simulated/floor/wood,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "kh" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/unsimulated/floor/scp1102,
@@ -1955,9 +1865,7 @@
 "kl" = (
 /obj/machinery/door/airlock/glass,
 /turf/simulated/floor/wood,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "km" = (
 /obj/structure/bed/chair/office{
 	dir = 1;
@@ -1977,9 +1885,7 @@
 /obj/structure/railing/mapped,
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "ks" = (
 /obj/machinery/button/blast_door{
 	dir = 1;
@@ -1991,9 +1897,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "kw" = (
 /obj/structure/table/standard,
 /obj/item/storage/pill_bottle/amnesticsa,
@@ -2003,9 +1907,7 @@
 "kx" = (
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "ky" = (
 /obj/structure/railing/mapped,
 /obj/machinery/light{
@@ -2013,9 +1915,7 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "kz" = (
 /obj/machinery/button/blast_door{
 	dir = 1;
@@ -2028,9 +1928,7 @@
 "kA" = (
 /obj/structure/coatrack,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "kB" = (
 /obj/machinery/light/spot,
 /turf/simulated/floor/plating,
@@ -2038,9 +1936,7 @@
 "kE" = (
 /obj/structure/ore_box,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "kI" = (
 /obj/machinery/vending/snack,
 /obj/machinery/light{
@@ -2048,15 +1944,11 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "kJ" = (
 /obj/machinery/vending/coffee,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "kK" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 9;
@@ -2068,49 +1960,35 @@
 	},
 /obj/structure/iv_drip,
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "kL" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/storage/firstaid/combat,
 /obj/item/storage/firstaid/combat,
 /obj/item/storage/firstaid/adv,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "kM" = (
 /turf/simulated/floor/lino,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "kP" = (
 /obj/structure/bed/chair/comfy/black,
 /turf/simulated/floor/lino,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "kQ" = (
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "kS" = (
 /obj/machinery/light/small{
 	dir = 1;
 	icon_state = "bulb1"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "kT" = (
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "kW" = (
 /obj/machinery/door/blast/shutters{
 	id_tag = "chaos1"
@@ -2120,38 +1998,28 @@
 "kX" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/lino,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "kY" = (
 /obj/structure/table/woodentable,
 /obj/random/snack,
 /turf/simulated/floor/lino,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "kZ" = (
 /obj/structure/bed/chair/comfy/black{
 	dir = 8
 	},
 /turf/simulated/floor/lino,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "la" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "lb" = (
 /obj/structure/table/steel_reinforced,
 /obj/structure/bedsheetbin,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "ld" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/scp/mk9,
@@ -2164,9 +2032,7 @@
 /obj/item/ammo_magazine/scp/mk9,
 /obj/item/ammo_magazine/scp/mk9,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "le" = (
 /obj/structure/closet{
 	icon_state = "syndicate1";
@@ -2174,9 +2040,7 @@
 	},
 /obj/item/clothing/glasses/night,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "lg" = (
 /obj/structure/table/rack,
 /obj/item/gun/projectile/automatic/scp/m16,
@@ -2205,9 +2069,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "lj" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/exoplanet/snow,
@@ -2223,15 +2085,11 @@
 /obj/random/drinkbottle,
 /obj/item/device/megaphone,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "lo" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "lr" = (
 /obj/structure/table/standard,
 /obj/item/gun/projectile/automatic/t12{
@@ -2243,40 +2101,30 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "lu" = (
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
 	},
 /turf/simulated/floor/lino,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "lv" = (
 /obj/machinery/light,
 /turf/simulated/floor/lino,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "lw" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8;
 	icon_state = "officechair_white_preview"
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "lx" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/snack,
 /obj/random/snack,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "ly" = (
 /obj/effect/floor_decal/corner/white{
 	dir = 9;
@@ -2289,21 +2137,15 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "lz" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "lA" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "lB" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -2318,9 +2160,7 @@
 "lE" = (
 /obj/structure/curtain/open/bed,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "lF" = (
 /obj/structure/skele_stand{
 	dir = 8;
@@ -2328,20 +2168,14 @@
 	},
 /obj/structure/curtain/open/bed,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "lG" = (
 /obj/machinery/door/airlock,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "lI" = (
 /turf/simulated/wall/titanium,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "lJ" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_wall,
@@ -2354,35 +2188,27 @@
 /obj/item/crowbar/emergency_forcing_tool,
 /obj/item/crowbar/emergency_forcing_tool,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "lM" = (
 /obj/machinery/light{
 	dir = 1;
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "lO" = (
 /obj/structure/noticeboard/anomaly{
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "lP" = (
 /turf/simulated/mineral,
 /area/space)
 "lQ" = (
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "lS" = (
 /obj/machinery/computer/shuttle_control{
 	shuttle_tag = "GOC Car 1"
@@ -2392,9 +2218,7 @@
 "lT" = (
 /obj/structure/curtain/medical,
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "lV" = (
 /turf/unsimulated/beach/sand{
 	density = 1;
@@ -2404,15 +2228,11 @@
 "lW" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "lX" = (
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "lZ" = (
 /obj/effect/floor_decal/corner/orange{
 	dir = 9;
@@ -2422,9 +2242,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "mg" = (
 /turf/unsimulated/beach/sand,
 /area/beach)
@@ -2435,9 +2253,7 @@
 "mi" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "mj" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/light{
@@ -2448,16 +2264,12 @@
 	name = "Nuclear-Code"
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "mk" = (
 /obj/structure/closet/secure_closet/medical2,
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "mn" = (
 /obj/machinery/computer/rdservercontrol{
 	badmin = 1;
@@ -2477,9 +2289,7 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "ms" = (
 /turf/unsimulated/floor{
 	dir = 2;
@@ -2495,9 +2305,7 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "mx" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/exoplanet/snow,
@@ -2533,9 +2341,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "mC" = (
 /obj/structure/flora/pottedplant/minitree,
 /turf/unsimulated/floor{
@@ -2564,18 +2370,14 @@
 "mI" = (
 /obj/machinery/door/airlock/medical,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "mJ" = (
 /obj/machinery/door/airlock/highsecurity,
 /obj/machinery/door/blast/shutters{
 	explosion_resistance = 100
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "mK" = (
 /obj/machinery/light{
 	dir = 8;
@@ -2583,9 +2385,7 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "mL" = (
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/tram/goc1)
@@ -2601,9 +2401,7 @@
 	req_access = list()
 	},
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "mQ" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/unsimulated/floor/grass{
@@ -2624,29 +2422,21 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "nb" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "nc" = (
 /obj/structure/table/reinforced,
 /obj/random/smokes,
 /obj/random/smokes,
 /obj/random/smokes,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "nd" = (
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "ne" = (
 /obj/machinery/light{
 	dir = 1;
@@ -2654,21 +2444,15 @@
 	},
 /obj/machinery/field_generator,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "no" = (
 /obj/structure/scp173_cage,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "np" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "nq" = (
 /turf/unsimulated/wall{
 	desc = "A secure airlock. Doesn't look like you can get through easily.";
@@ -2682,9 +2466,7 @@
 /obj/structure/table/reinforced,
 /obj/item/ammo_casing/rocket,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "nt" = (
 /obj/item/clothing/head/helmet/scp/goc,
 /obj/item/clothing/suit/armor/goc,
@@ -2698,9 +2480,7 @@
 /obj/item/device/radio/headset/goc,
 /obj/item/gun/projectile/shotgun/pump/combat,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "nu" = (
 /obj/machinery/light{
 	dir = 8;
@@ -2708,9 +2488,7 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "nv" = (
 /obj/effect/overlay/palmtree_r,
 /turf/unsimulated/beach/sand,
@@ -2718,22 +2496,16 @@
 "nw" = (
 /obj/structure/iv_drip,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "nx" = (
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "ny" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "nz" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/scp/ak,
@@ -2750,15 +2522,11 @@
 /obj/item/ammo_magazine/scp/ak,
 /obj/item/ammo_magazine/scp/ak,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "nA" = (
 /obj/structure/table/rack,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "nB" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/adv,
@@ -2775,9 +2543,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "nC" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 10;
@@ -2792,15 +2558,11 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "nH" = (
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "nI" = (
 /obj/structure/table/rack,
 /obj/item/bodybag,
@@ -2809,9 +2571,7 @@
 /obj/item/bodybag,
 /obj/item/bodybag,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "nJ" = (
 /obj/structure/table/rack,
 /obj/structure/window/reinforced{
@@ -2827,9 +2587,7 @@
 	},
 /obj/machinery/door/window/brigdoor/southleft,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "nK" = (
 /obj/structure/table/rack,
 /obj/structure/window/reinforced{
@@ -2845,9 +2603,7 @@
 	},
 /obj/machinery/door/window/brigdoor/southright,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "nL" = (
 /obj/structure/table/rack,
 /obj/structure/window/reinforced{
@@ -2864,9 +2620,7 @@
 /obj/machinery/door/window/brigdoor/southleft,
 /obj/item/device/chameleon,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "nN" = (
 /obj/effect/landmark{
 	name = "endgame_exit"
@@ -2883,9 +2637,7 @@
 	name = "Alpha-1"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "nQ" = (
 /obj/effect/floor_decal/corner/research{
 	dir = 9
@@ -2893,9 +2645,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "nR" = (
 /obj/machinery/bodyscanner{
 	dir = 8
@@ -2915,9 +2665,7 @@
 /obj/item/ammo_magazine/scp/m16_mag,
 /obj/item/ammo_magazine/scp/m16_mag,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "nX" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4;
@@ -2929,18 +2677,14 @@
 	},
 /obj/machinery/acting/changer,
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "nY" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/roller,
 /obj/item/roller,
 /obj/item/roller,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "oa" = (
 /obj/structure/table/standard,
 /obj/item/clothing/glasses/sunglasses,
@@ -2963,9 +2707,7 @@
 /obj/random/firstaid,
 /obj/random/firstaid,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "od" = (
 /obj/structure/table/rack,
 /obj/item/stack/medical/splint,
@@ -2978,15 +2720,11 @@
 /obj/item/stack/medical/advanced/ointment,
 /obj/item/stack/medical/advanced/ointment,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "oe" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "of" = (
 /obj/structure/flora/pottedplant/minitree,
 /turf/unsimulated/floor/techfloor,
@@ -2995,30 +2733,22 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/bodybag/cryobag,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "oh" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/reagentgrinder{
 	pixel_y = 7
 	},
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "oi" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "oj" = (
 /obj/structure/closet,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "ol" = (
 /obj/structure/bed/chair/office{
 	dir = 1;
@@ -3047,9 +2777,7 @@
 	name = "SCP-1996-RU"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "on" = (
 /obj/structure/table/rack,
 /obj/structure/window/reinforced{
@@ -3063,9 +2791,7 @@
 /obj/structure/window/reinforced,
 /obj/machinery/door/window/brigdoor/northright,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "oo" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1;
@@ -3079,9 +2805,7 @@
 /obj/item/bodybag,
 /obj/item/bodybag,
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "op" = (
 /obj/structure/flora/pottedplant/flower,
 /turf/unsimulated/floor/techfloor,
@@ -3122,22 +2846,16 @@
 	},
 /obj/machinery/field_generator,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "ow" = (
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "ox" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "oy" = (
 /obj/machinery/button/blast_door{
 	id_tag = "goc1";
@@ -3148,9 +2866,7 @@
 /area/site53/tram/goc1)
 "oz" = (
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "oB" = (
 /obj/structure/table/standard,
 /turf/unsimulated/beach/sand,
@@ -3202,9 +2918,7 @@
 "oI" = (
 /obj/machinery/field_generator,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "oJ" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -3223,9 +2937,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "oT" = (
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 1
@@ -3248,9 +2960,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "oX" = (
 /obj/structure/table/standard,
 /turf/unsimulated/floor/tile,
@@ -3266,9 +2976,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "pd" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/medical,
@@ -3304,9 +3012,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "pj" = (
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 4
@@ -3321,9 +3027,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "pp" = (
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 8
@@ -3408,9 +3112,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "qd" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 10;
@@ -3425,9 +3127,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "qe" = (
 /obj/item/clothing/head/collectable/paper,
 /turf/unsimulated/beach/sand,
@@ -3449,9 +3149,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "qk" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/unsimulated/floor/grass{
@@ -3474,9 +3172,7 @@
 	name = "Logistics Van"
 	},
 /turf/unsimulated/floor/techfloor,
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "qB" = (
 /turf/unsimulated/beach/water{
 	density = 1;
@@ -3494,9 +3190,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "qO" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 6
@@ -3505,9 +3199,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "qP" = (
 /obj/machinery/door/blast/shutters{
 	id_tag = "omega1";
@@ -3517,9 +3209,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "qQ" = (
 /obj/structure/table/standard,
 /obj/item/implantcase/death_alarm,
@@ -3534,9 +3224,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "qV" = (
 /obj/effect/shuttle_landmark/supply/centcom,
 /turf/simulated/floor/plating,
@@ -3549,9 +3237,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "qY" = (
 /obj/effect/floor_decal/corner/white{
 	dir = 6;
@@ -3568,18 +3254,14 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "rf" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "rp" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -3596,9 +3278,7 @@
 /area/site53/tram/goc1)
 "rC" = (
 /turf/unsimulated/floor/reinforced,
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "rE" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/unsimulated/floor{
@@ -3622,9 +3302,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "rW" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 6
@@ -3632,9 +3310,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "rX" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 5
@@ -3642,9 +3318,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "rY" = (
 /obj/structure/table/standard,
 /obj/item/ammo_magazine/t12,
@@ -3656,9 +3330,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "rZ" = (
 /turf/unsimulated/wall/lobby_background,
 /area/space)
@@ -3686,9 +3358,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "sG" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 32
@@ -3697,9 +3367,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "sH" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/hypospray/autoinjector/combatpain,
@@ -3714,9 +3382,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "sQ" = (
 /obj/effect/floor_decal/corner/research{
 	dir = 9
@@ -3728,9 +3394,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "sS" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/blue/border{
@@ -3744,9 +3408,7 @@
 	desc = "Awwww, a cute Medical Doctor action figure."
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "sT" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/unsimulated/floor/grass{
@@ -3758,9 +3420,7 @@
 "tc" = (
 /obj/machinery/body_scanconsole,
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "te" = (
 /obj/machinery/vending/wallmed1{
 	dir = 4;
@@ -3798,9 +3458,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "ti" = (
 /obj/effect/floor_decal/corner/research{
 	dir = 9
@@ -3845,9 +3503,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "tT" = (
 /obj/effect/floor_decal/corner/orange{
 	dir = 9;
@@ -3856,9 +3512,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "ub" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/syringe/amnesticsc,
@@ -3874,9 +3528,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "ug" = (
 /obj/item/implantcase/explosive,
 /obj/item/implantcase/explosive,
@@ -3891,9 +3543,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "uh" = (
 /obj/effect/floor_decal/corner/orange{
 	dir = 6;
@@ -3914,9 +3564,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "ul" = (
 /obj/effect/floor_decal/spline/fancy/black,
 /turf/unsimulated/floor/techfloor,
@@ -3929,9 +3577,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "uJ" = (
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 9
@@ -4016,9 +3662,7 @@
 /obj/item/ammo_magazine/scp/fnfal,
 /obj/item/ammo_magazine/scp/fnfal,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "wu" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
@@ -4042,18 +3686,14 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "wy" = (
 /obj/machinery/telecomms/hub/preset_cent,
 /turf/simulated/floor/bluegrid/airless,
 /area/centcom)
 "wz" = (
 /turf/unsimulated/wall,
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "wY" = (
 /obj/structure/shuttle/engine/heater{
 	dir = 1;
@@ -4070,16 +3710,12 @@
 	icon_state = "pdoor1";
 	name = "Logistics Van"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "xr" = (
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "xw" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 6
@@ -4093,9 +3729,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "xB" = (
 /obj/structure/table/standard,
 /obj/item/storage/pill_bottle/amnesticsb,
@@ -4107,9 +3741,7 @@
 	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "xP" = (
 /obj/effect/floor_decal/corner/orange{
 	dir = 9;
@@ -4121,9 +3753,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "xR" = (
 /turf/simulated/floor,
 /area/centcom)
@@ -4140,9 +3770,7 @@
 /obj/item/device/radio/headset/goc,
 /obj/item/gun/projectile/automatic/scp/fnfal,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "yh" = (
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor,
@@ -4164,9 +3792,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "yH" = (
 /obj/effect/floor_decal/corner/research{
 	dir = 9
@@ -4179,9 +3805,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "yI" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/unsimulated/floor/grass{
@@ -4201,9 +3825,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "yR" = (
 /obj/machinery/button/blast_door{
 	dir = 4;
@@ -4214,9 +3836,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "yS" = (
 /obj/machinery/door/airlock/vault{
 	name = "Epislon-11";
@@ -4225,22 +3845,16 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "zh" = (
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "zs" = (
 /obj/machinery/door/airlock{
 	name = "GOC Outpost"
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "zw" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 10;
@@ -4249,9 +3863,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "zA" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/blue/border{
@@ -4260,14 +3872,10 @@
 	},
 /obj/item/bodybag/cryobag,
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "zB" = (
 /turf/simulated/wall/titanium,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "zQ" = (
 /obj/effect/floor_decal/corner/research{
 	dir = 6
@@ -4275,9 +3883,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "Ad" = (
 /obj/structure/flora/tree/pine,
 /turf/simulated/floor/exoplanet/grass,
@@ -4293,16 +3899,12 @@
 "Aq" = (
 /obj/machinery/door/airlock,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "AA" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/machinery/bodyscanner,
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "Ba" = (
 /obj/effect/floor_decal/corner{
 	color = "#FFFF00";
@@ -4314,15 +3916,11 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "BC" = (
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "BF" = (
 /obj/structure/table/standard,
 /obj/item/crowbar/prybar,
@@ -4334,9 +3932,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "BG" = (
 /obj/structure/curtain/medical,
 /obj/effect/floor_decal/corner/blue/border{
@@ -4344,9 +3940,7 @@
 	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "BU" = (
 /turf/unsimulated/floor/reinforced,
 /area/site53/surface/surface)
@@ -4359,18 +3953,14 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "Ct" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "Cx" = (
 /obj/effect/paint/silver,
 /turf/simulated/wall/r_titanium,
@@ -4387,9 +3977,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "Ee" = (
 /obj/machinery/door/airlock/medical{
 	name = "Tram Clinic"
@@ -4403,9 +3991,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "Et" = (
 /turf/simulated/floor/shuttle/white,
 /area/site53/tram/mtf)
@@ -4416,9 +4002,7 @@
 "EE" = (
 /obj/effect/wingrille_spawn/reinforced/crescent,
 /turf/unsimulated/floor/plating,
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "EZ" = (
 /obj/structure/window/reinforced,
 /obj/structure/bed/chair/shuttle/black{
@@ -4440,9 +4024,7 @@
 /obj/item/ammo_magazine/scp,
 /obj/item/ammo_magazine/scp,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "Fu" = (
 /obj/effect/floor_decal/corner{
 	color = "#FFFF00";
@@ -4455,9 +4037,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "FA" = (
 /obj/structure/table/standard,
 /obj/item/implantcase/death_alarm,
@@ -4469,29 +4049,21 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "Gu" = (
 /turf/simulated/floor/wood,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "Hn" = (
 /obj/machinery/door/airlock,
 /turf/simulated/floor/wood,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "Hs" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4;
 	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "Hv" = (
 /turf/unsimulated/floor/sky,
 /area/site53/surface/surface)
@@ -4503,9 +4075,7 @@
 	icon_state = "closed";
 	name = "Sleeping Quarters"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "HS" = (
 /obj/machinery/telecomms/broadcaster/preset_cent,
 /turf/simulated/floor/bluegrid/airless,
@@ -4519,9 +4089,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "If" = (
 /obj/effect/floor_decal/corner{
 	color = "#FFFF00";
@@ -4534,9 +4102,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "Ij" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
@@ -4545,9 +4111,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "Il" = (
 /obj/machinery/door/blast/shutters{
 	id_tag = "eta10";
@@ -4557,9 +4121,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "IN" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 5
@@ -4570,9 +4132,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "IP" = (
 /obj/structure/bed/chair,
 /turf/unsimulated/floor{
@@ -4604,9 +4164,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "JU" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
@@ -4618,9 +4176,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "JV" = (
 /obj/structure/table/rack,
 /obj/machinery/light{
@@ -4634,17 +4190,13 @@
 /obj/item/ammo_magazine/shotholder/shell,
 /obj/item/ammo_magazine/shotholder/shell,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "Kf" = (
 /obj/structure/bed/chair/office/light,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "Lc" = (
 /obj/effect/shuttle_landmark/heli,
 /turf/unsimulated/floor/plating,
@@ -4659,9 +4211,7 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "LD" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/combat,
@@ -4673,9 +4223,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "LG" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/unsimulated/floor/grass{
@@ -4701,9 +4249,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "Mv" = (
 /obj/effect/floor_decal/corner/research{
 	dir = 6
@@ -4733,9 +4279,7 @@
 /obj/item/device/radio/headset/goc,
 /obj/item/gun/projectile/automatic/scp/fnfal,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "MW" = (
 /obj/effect/landmark{
 	name = "Response Team"
@@ -4745,9 +4289,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "NO" = (
 /obj/machinery/door/blast/shutters{
 	id_tag = "epislon9";
@@ -4757,9 +4299,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "PC" = (
 /obj/effect/landmark{
 	name = "Commando"
@@ -4767,9 +4307,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "PR" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/blue/border{
@@ -4779,9 +4317,7 @@
 /obj/item/storage/firstaid,
 /obj/item/storage/firstaid,
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "PS" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/simulated/floor/exoplanet/snow,
@@ -4795,9 +4331,7 @@
 	req_access = list()
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "PV" = (
 /obj/machinery/button/blast_door{
 	dir = 1;
@@ -4809,15 +4343,11 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "PW" = (
 /obj/structure/closet/crate,
 /turf/simulated/floor/wood,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "QJ" = (
 /obj/structure/closet,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
@@ -4826,14 +4356,10 @@
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "QU" = (
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "RW" = (
 /obj/structure/grille{
 	health_max = null;
@@ -4844,9 +4370,7 @@
 "Te" = (
 /obj/machinery/door/airlock,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper Chaos"
-	})
+/area/centcom)
 "UQ" = (
 /turf/space{
 	icon_state = "black"
@@ -4868,9 +4392,7 @@
 	icon_state = "bordercolor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "VH" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 4
@@ -4893,9 +4415,7 @@
 	req_access = list()
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "Wx" = (
 /obj/effect/shuttle_landmark/goc1/start,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -4924,18 +4444,14 @@
 "Xx" = (
 /obj/structure/sign/bluecross_2,
 /turf/simulated/wall/titanium,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "XG" = (
 /obj/structure/bed,
 /obj/structure/bed{
 	pixel_y = 8
 	},
 /turf/simulated/floor/wood,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "XQ" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/scp,
@@ -4955,9 +4471,7 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "Ye" = (
 /obj/structure/dispenser,
 /obj/machinery/button/blast_door{
@@ -4969,9 +4483,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "Yt" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
@@ -4989,9 +4501,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "YF" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 4
@@ -5022,9 +4532,7 @@
 /obj/item/grenade/frag,
 /obj/item/grenade/frag,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom{
-	name = "\improper GOC"
-	})
+/area/centcom)
 "ZC" = (
 /obj/machinery/button/blast_door{
 	dir = 1;
@@ -5036,9 +4544,7 @@
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
-/area/centcom{
-	name = "\improper MTF"
-	})
+/area/centcom)
 "ZY" = (
 /obj/machinery/computer/shuttle_control{
 	name = "MTF Helicopter";

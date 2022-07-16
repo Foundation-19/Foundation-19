@@ -507,9 +507,7 @@
 "bl" = (
 /obj/effect/paint_stripe/blue,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "bm" = (
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
@@ -612,9 +610,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "bC" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/exoplanet/grass,
@@ -2424,9 +2420,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "gA" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -3889,9 +3883,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "kc" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -3997,9 +3989,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/half,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "kn" = (
 /obj/structure/table/standard,
 /obj/item/stack/material/phoron/ten,
@@ -4049,9 +4039,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "kv" = (
 /obj/structure/morgue,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -4216,9 +4204,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "kS" = (
 /obj/machinery/camera/network/medbay{
 	c_tag = "Psychiatrist's Office"
@@ -4468,9 +4454,7 @@
 "lv" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "lw" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -4871,9 +4855,7 @@
 "mC" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "mD" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -4886,32 +4868,22 @@
 	},
 /obj/machinery/vending/cola,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "mE" = (
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "mF" = (
 /obj/machinery/vending/snack,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "mG" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "mI" = (
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "mJ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5014,9 +4986,7 @@
 	})
 "mT" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "mW" = (
 /obj/machinery/door/airlock/command{
 	name = "Zone Commander's Office";
@@ -5056,9 +5026,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "ni" = (
 /obj/structure/closet/secure_closet/mtf/enlisted/ez,
 /obj/item/clothing/accessory/armorplate/tactical,
@@ -5114,9 +5082,7 @@
 "nr" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "ns" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5155,9 +5121,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "nw" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/reinforced,
@@ -5186,9 +5150,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "nA" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5351,9 +5313,7 @@
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "oe" = (
 /obj/structure/railing/mapped,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -5410,9 +5370,7 @@
 	},
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "ol" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5496,9 +5454,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "ow" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5516,9 +5472,7 @@
 	},
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "oy" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -5612,9 +5566,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "oN" = (
 /obj/structure/disposaloutlet{
 	dir = 8
@@ -5644,9 +5596,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "oS" = (
 /turf/unsimulated/mineral,
 /area/site53/surface/surface)
@@ -5658,9 +5608,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "oU" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -5681,9 +5629,7 @@
 "oZ" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "pb" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/corner/orange/bordercorner{
@@ -5785,9 +5731,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "pn" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
@@ -6131,9 +6075,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "ri" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -6674,15 +6616,11 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sz" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sD" = (
 /obj/structure/railing/mapped,
 /obj/structure/window/reinforced{
@@ -6703,9 +6641,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sI" = (
 /obj/machinery/light{
 	dir = 8
@@ -6715,9 +6651,7 @@
 "sK" = (
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sL" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -6730,14 +6664,10 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sM" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sN" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -6754,9 +6684,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sO" = (
 /obj/machinery/light{
 	dir = 8
@@ -6765,9 +6693,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sP" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -6778,21 +6704,15 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sQ" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/carpet/blue2,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sR" = (
 /turf/simulated/floor/carpet/blue2,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sS" = (
 /obj/structure/closet/secure_closet/mtf/co{
 	req_access = list(302)
@@ -6801,16 +6721,12 @@
 /obj/item/clothing/head/bio_hood/security,
 /obj/item/clothing/suit/bio_suit/security,
 /turf/simulated/floor/carpet/blue2,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sT" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/carpet/blue2,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sU" = (
 /obj/effect/landmark/start{
 	name = "LCZ Zone Commander"
@@ -6819,18 +6735,14 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sV" = (
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sW" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -6844,9 +6756,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sX" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -6856,23 +6766,17 @@
 	},
 /obj/structure/flora/pottedplant,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sY" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sZ" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/carpet/blue2,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tb" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -6883,9 +6787,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tc" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -6898,9 +6800,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/borderfull,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "td" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -6911,9 +6811,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "te" = (
 /obj/structure/bed/chair/comfy/blue{
 	dir = 4
@@ -6922,9 +6820,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tf" = (
 /obj/structure/table/glass,
 /obj/item/device/flashlight/lamp,
@@ -6932,9 +6828,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tg" = (
 /obj/structure/bed/chair/comfy/blue{
 	dir = 8
@@ -6943,17 +6837,13 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "th" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "ti" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -6964,39 +6854,29 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tj" = (
 /obj/structure/bed/chair/comfy/blue{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tk" = (
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tl" = (
 /obj/structure/bed/chair/comfy/blue{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tm" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tn" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/hyper{
@@ -7006,9 +6886,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "to" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/blue/border{
@@ -7016,9 +6894,7 @@
 	},
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tp" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/structure/table/reinforced,
@@ -7026,9 +6902,7 @@
 	pixel_y = 3
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tq" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "LCZ Zone Commander's Office";
@@ -7037,41 +6911,31 @@
 /obj/effect/floor_decal/corner/blue/border,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tr" = (
 /obj/structure/filingcabinet,
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "ts" = (
 /obj/structure/filingcabinet,
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tt" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/item/modular_computer/laptop/preset/records,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tu" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/effect/floor_decal/corner/blue/bordercorner{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tv" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/blue/border,
@@ -7079,35 +6943,27 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tw" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tx" = (
 /obj/effect/floor_decal/corner/blue/bordercee{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "ty" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/blue/half,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tz" = (
 /obj/machinery/door/airlock/multi_tile/security{
 	id_tag = "ezguns";
@@ -7827,9 +7683,7 @@
 /obj/structure/table/standard,
 /obj/machinery/microwave,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "wl" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/prepainted,
@@ -8027,9 +7881,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "yV" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -8654,9 +8506,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "FA" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/exoplanet/grass,
@@ -8670,9 +8520,7 @@
 "FQ" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/carpet/blue2,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "Gb" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
