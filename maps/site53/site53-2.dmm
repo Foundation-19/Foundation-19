@@ -31865,6 +31865,19 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
+"qgK" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/catwalk_plated/white,
+/obj/machinery/door/airlock/science{
+	name = "SCP-078";
+	req_access = list(list(202,302))
+	},
+/turf/simulated/floor,
+/area/site53/ulcz/hallways)
 "qhm" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -32568,15 +32581,15 @@
 	name = "\improper Xenobiology Laboratory"
 	})
 "sqL" = (
-/obj/machinery/door/airlock/glass/research{
-	name = "Hallway"
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/catwalk_plated/white,
+/obj/machinery/door/airlock/science{
+	name = "SCP-066"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/scp066)
 "srm" = (
@@ -33877,9 +33890,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/controlroom)
 "vXz" = (
-/obj/machinery/door/airlock/glass/research{
-	name = "Hallway"
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -33888,6 +33898,9 @@
 /obj/effect/catwalk_plated/white,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/science{
+	name = "SCP-012"
+	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
 "vYs" = (
@@ -52588,7 +52601,7 @@ exG
 jVk
 afp
 afp
-aPq
+qgK
 aPp
 aPp
 aPp
