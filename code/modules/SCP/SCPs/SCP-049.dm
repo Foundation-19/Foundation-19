@@ -111,12 +111,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	var/voiceline = list('sound/scp/voice/SCP049_1.ogg','sound/scp/voice/SCP049_2.ogg','sound/scp/voice/SCP049_3.ogg','sound/scp/voice/SCP049_4.ogg','sound/scp/voice/SCP049_5.ogg')
 	playsound(src, pick(voiceline), 30)
 
-/mob/living/carbon/human/scp049/proc/getTarget()
-	return
-
-/mob/living/carbon/human/scp049/proc/pursueTarget()
-	return
-
 /mob/living/carbon/human/scp049/proc/SCP049_Chase_Music(mob/living/carbon/human/target)
 	if(!target)
 		chasing_sound = FALSE
@@ -366,4 +360,3 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	to_chat(target, "<span class='danger'>You feel the last of your mind drift away...</span>")
 	to_chat(src, "<span class='notice'>You have cured [target].</span>")
 	curing = FALSE
-	getTarget()
