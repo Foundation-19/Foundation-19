@@ -81,7 +81,16 @@
 	///Needs to implement InterceptClickOn(user,params,atom) proc
 	var/datum/click_intercept = null
 
-	// List of all asset filenames sent to this client by the asset cache, along with their assoicated md5s
+//LOGGING STUFF: F19 Admin Logging Suite
+	var/list/say_log = list()
+	var/list/emote_log = list()
+	var/list/ooc_log = list()
+	var/list/dsay_log = list()
+	var/list/interact_log = list()
+
+
+
+// List of all asset filenames sent to this client by the asset cache, along with their assoicated md5s
 	var/list/sent_assets = list()
 	/// List of all completed blocking send jobs awaiting acknowledgement by send_asset
 	var/list/completed_asset_jobs = list()

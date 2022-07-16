@@ -415,10 +415,20 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	var/spent_mobs = list()
 	var/id = 2
 
+	var/in_progress = FALSE
+
+	var/next_use
+	var/use_delay = 60 SECONDS //because please god, enough with the earrape
+
+GLOBAL_LIST_EMPTY(femur_breakers)
+
 /obj/structure/femur_breaker/Initialize()
 	. = ..()
+	GLOB.femur_breakers += src
 
 /obj/structure/femur_breaker/Destroy()
+	GLOB.femur_breakers -= src
+
 	qdel()
 	return ..()
 
@@ -469,12 +479,19 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 /obj/structure/femur_breaker/proc/activate()
 	set waitfor = FALSE
 
+	if(!buckled_mob)
+		return
+
 	var/mob/living/carbon/human/H = buckled_mob
 
 	// because monkeys are humans
 	if (istype(H.species, /datum/species/monkey))
 		return
 
+	if (world.time < next_use)
+		return
+
+	next_use = world.time + use_delay
 	world << sound('sound/scp/machinery/femur_breaker.ogg')
 	sleep(2.8 SECONDS)
 
@@ -513,7 +530,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 
 
 /obj/machinery/button/femur_breaker/activate(mob/user)
-	for(var/obj/structure/femur_breaker/C in range())
+	for(var/obj/structure/femur_breaker/C in GLOB.femur_breakers)
 		if (C.id == id_tag)
 			C.activate(user)
 
