@@ -19,6 +19,8 @@
 			return global.CMinutes;
 		if("DEPT_FREQS")
 			return global.DEPT_FREQS;
+		if("Debug2")
+			return global.Debug2;
 		if("Failsafe")
 			return global.Failsafe;
 		if("GLOB")
@@ -45,6 +47,8 @@
 			return global.SSantags;
 		if("SSao")
 			return global.SSao;
+		if("SSassets")
+			return global.SSassets;
 		if("SSatoms")
 			return global.SSatoms;
 		if("SScharacter_setup")
@@ -125,6 +129,8 @@
 			return global.SSoverlays;
 		if("SSpersistence")
 			return global.SSpersistence;
+		if("SSping")
+			return global.SSping;
 		if("SSplants")
 			return global.SSplants;
 		if("SSprocessing")
@@ -145,12 +151,16 @@
 			return global.SSstation;
 		if("SSstatistics")
 			return global.SSstatistics;
+		if("SSstatpanels")
+			return global.SSstatpanels;
 		if("SSsun")
 			return global.SSsun;
 		if("SSsupply")
 			return global.SSsupply;
 		if("SStemperature")
 			return global.SStemperature;
+		if("SStgui")
+			return global.SStgui;
 		if("SSthrowing")
 			return global.SSthrowing;
 		if("SSticker")
@@ -299,14 +309,14 @@
 			return global.ascii_reset;
 		if("ascii_yellow")
 			return global.ascii_yellow;
-		if("asset_datums")
-			return global.asset_datums;
 		if("assigned")
 			return global.assigned;
 		if("assigned_blocks")
 			return global.assigned_blocks;
 		if("attack_log_repository")
 			return global.attack_log_repository;
+		if("auxtools_debug_server")
+			return global.auxtools_debug_server;
 		if("base_miss_chance")
 			return global.base_miss_chance;
 		if("basic_robolimb")
@@ -331,6 +341,8 @@
 			return global.can_call_ert;
 		if("captain_announcement")
 			return global.captain_announcement;
+		if("changelog_hash")
+			return global.changelog_hash;
 		if("channel_color_presets")
 			return global.channel_color_presets;
 		if("channel_to_radio_key")
@@ -345,6 +357,8 @@
 			return global.client_preference_stats_;
 		if("client_repository")
 			return global.client_repository;
+		if("climbsounds")
+			return global.climbsounds;
 		if("combatlog")
 			return global.combatlog;
 		if("comm_message_listeners")
@@ -363,6 +377,8 @@
 			return global.crew_repository;
 		if("csrfz_check")
 			return global.csrfz_check;
+		if("custom_event_msg")
+			return global.custom_event_msg;
 		if("damage_icon_parts")
 			return global.damage_icon_parts;
 		if("dbcon")
@@ -425,6 +441,8 @@
 			return global.failed_unit_tests;
 		if("file_uid")
 			return global.file_uid;
+		if("fileaccess_timer")
+			return global.fileaccess_timer;
 		if("finds_as_strings")
 			return global.finds_as_strings;
 		if("flesh_hud_colours")
@@ -451,6 +469,10 @@
 			return global.fusion_reactions;
 		if("game_id")
 			return global.game_id;
+		if("game_version")
+			return global.game_version;
+		if("game_year")
+			return global.game_year;
 		if("gamemode_cache")
 			return global.gamemode_cache;
 		if("gas_data")
@@ -469,6 +491,8 @@
 			return global.global_message_listener;
 		if("global_vars_")
 			return global.global_vars_;
+		if("gravity_is_on")
+			return global.gravity_is_on;
 		if("gzn_check")
 			return global.gzn_check;
 		if("hadevent")
@@ -477,6 +501,8 @@
 			return global.holder_mob_icon_cache;
 		if("hotkey_keybinding_list_by_key")
 			return global.hotkey_keybinding_list_by_key;
+		if("href_logfile")
+			return global.href_logfile;
 		if("human_icon_cache")
 			return global.human_icon_cache;
 		if("id_card_states")
@@ -497,6 +523,8 @@
 			return global.jobban_keylist;
 		if("jobban_runonce")
 			return global.jobban_runonce;
+		if("join_motd")
+			return global.join_motd;
 		if("keybindings_by_name")
 			return global.keybindings_by_name;
 		if("landmarks_list")
@@ -507,8 +535,6 @@
 			return global.last_chew;
 		if("last_message_id")
 			return global.last_message_id;
-		if("last_round_duration")
-			return global.last_round_duration;
 		if("light_overlay_cache")
 			return global.light_overlay_cache;
 		if("lighting_overlays_initialised")
@@ -545,6 +571,8 @@
 			return global.maploader;
 		if("mark")
 			return global.mark;
+		if("master_mode")
+			return global.master_mode;
 		if("maze_cell_count")
 			return global.maze_cell_count;
 		if("mechas_list")
@@ -607,10 +635,6 @@
 			return global.newscaster_standard_feeds;
 		if("next_account_number")
 			return global.next_account_number;
-		if("next_duration_update")
-			return global.next_duration_update;
-		if("next_station_date_change")
-			return global.next_station_date_change;
 		if("ninjastart")
 			return global.ninjastart;
 		if("ntnet_card_uid")
@@ -707,14 +731,16 @@
 			return global.robot_hud_colours;
 		if("robot_inventory")
 			return global.robot_inventory;
-		if("round_start_time")
-			return global.round_start_time;
-		if("roundstart_hour")
-			return global.roundstart_hour;
+		if("round_progressing")
+			return global.round_progressing;
 		if("rune_list")
 			return global.rune_list;
 		if("same_wires")
 			return global.same_wires;
+		if("secondary_mode")
+			return global.secondary_mode;
+		if("secret_force_mode")
+			return global.secret_force_mode;
 		if("send_emergency_team")
 			return global.send_emergency_team;
 		if("sent_spiders_to_station")
@@ -769,8 +795,6 @@
 			return global.sqlport;
 		if("station_account")
 			return global.station_account;
-		if("station_date")
-			return global.station_date;
 		if("stool_cache")
 			return global.stool_cache;
 		if("stored_shock_by_ref")
@@ -815,6 +839,8 @@
 			return global.tape_roll_applications;
 		if("telecomms_list")
 			return global.telecomms_list;
+		if("tertiary_mode")
+			return global.tertiary_mode;
 		if("ticket_panels")
 			return global.ticket_panels;
 		if("tickets")
@@ -877,7 +903,7 @@
 			return global.z_levels;
 		if("zone_blocked")
 			return global.zone_blocked;
-
+		
 /proc/writeglobal(which, newval)
 	switch(which)
 		if("ANTAG_FREQS")
@@ -898,6 +924,8 @@
 			global.CMinutes=newval;
 		if("DEPT_FREQS")
 			global.DEPT_FREQS=newval;
+		if("Debug2")
+			global.Debug2=newval;
 		if("Failsafe")
 			global.Failsafe=newval;
 		if("GLOB")
@@ -924,6 +952,8 @@
 			global.SSantags=newval;
 		if("SSao")
 			global.SSao=newval;
+		if("SSassets")
+			global.SSassets=newval;
 		if("SSatoms")
 			global.SSatoms=newval;
 		if("SScharacter_setup")
@@ -1004,6 +1034,8 @@
 			global.SSoverlays=newval;
 		if("SSpersistence")
 			global.SSpersistence=newval;
+		if("SSping")
+			global.SSping=newval;
 		if("SSplants")
 			global.SSplants=newval;
 		if("SSprocessing")
@@ -1024,12 +1056,16 @@
 			global.SSstation=newval;
 		if("SSstatistics")
 			global.SSstatistics=newval;
+		if("SSstatpanels")
+			global.SSstatpanels=newval;
 		if("SSsun")
 			global.SSsun=newval;
 		if("SSsupply")
 			global.SSsupply=newval;
 		if("SStemperature")
 			global.SStemperature=newval;
+		if("SStgui")
+			global.SStgui=newval;
 		if("SSthrowing")
 			global.SSthrowing=newval;
 		if("SSticker")
@@ -1178,14 +1214,14 @@
 			global.ascii_reset=newval;
 		if("ascii_yellow")
 			global.ascii_yellow=newval;
-		if("asset_datums")
-			global.asset_datums=newval;
 		if("assigned")
 			global.assigned=newval;
 		if("assigned_blocks")
 			global.assigned_blocks=newval;
 		if("attack_log_repository")
 			global.attack_log_repository=newval;
+		if("auxtools_debug_server")
+			global.auxtools_debug_server=newval;
 		if("base_miss_chance")
 			global.base_miss_chance=newval;
 		if("basic_robolimb")
@@ -1210,6 +1246,8 @@
 			global.can_call_ert=newval;
 		if("captain_announcement")
 			global.captain_announcement=newval;
+		if("changelog_hash")
+			global.changelog_hash=newval;
 		if("channel_color_presets")
 			global.channel_color_presets=newval;
 		if("channel_to_radio_key")
@@ -1224,6 +1262,8 @@
 			global.client_preference_stats_=newval;
 		if("client_repository")
 			global.client_repository=newval;
+		if("climbsounds")
+			global.climbsounds=newval;
 		if("combatlog")
 			global.combatlog=newval;
 		if("comm_message_listeners")
@@ -1242,6 +1282,8 @@
 			global.crew_repository=newval;
 		if("csrfz_check")
 			global.csrfz_check=newval;
+		if("custom_event_msg")
+			global.custom_event_msg=newval;
 		if("damage_icon_parts")
 			global.damage_icon_parts=newval;
 		if("dbcon")
@@ -1304,6 +1346,8 @@
 			global.failed_unit_tests=newval;
 		if("file_uid")
 			global.file_uid=newval;
+		if("fileaccess_timer")
+			global.fileaccess_timer=newval;
 		if("finds_as_strings")
 			global.finds_as_strings=newval;
 		if("flesh_hud_colours")
@@ -1330,6 +1374,10 @@
 			global.fusion_reactions=newval;
 		if("game_id")
 			global.game_id=newval;
+		if("game_version")
+			global.game_version=newval;
+		if("game_year")
+			global.game_year=newval;
 		if("gamemode_cache")
 			global.gamemode_cache=newval;
 		if("gas_data")
@@ -1348,6 +1396,8 @@
 			global.global_message_listener=newval;
 		if("global_vars_")
 			global.global_vars_=newval;
+		if("gravity_is_on")
+			global.gravity_is_on=newval;
 		if("gzn_check")
 			global.gzn_check=newval;
 		if("hadevent")
@@ -1356,6 +1406,8 @@
 			global.holder_mob_icon_cache=newval;
 		if("hotkey_keybinding_list_by_key")
 			global.hotkey_keybinding_list_by_key=newval;
+		if("href_logfile")
+			global.href_logfile=newval;
 		if("human_icon_cache")
 			global.human_icon_cache=newval;
 		if("id_card_states")
@@ -1376,6 +1428,8 @@
 			global.jobban_keylist=newval;
 		if("jobban_runonce")
 			global.jobban_runonce=newval;
+		if("join_motd")
+			global.join_motd=newval;
 		if("keybindings_by_name")
 			global.keybindings_by_name=newval;
 		if("landmarks_list")
@@ -1386,8 +1440,6 @@
 			global.last_chew=newval;
 		if("last_message_id")
 			global.last_message_id=newval;
-		if("last_round_duration")
-			global.last_round_duration=newval;
 		if("light_overlay_cache")
 			global.light_overlay_cache=newval;
 		if("lighting_overlays_initialised")
@@ -1424,6 +1476,8 @@
 			global.maploader=newval;
 		if("mark")
 			global.mark=newval;
+		if("master_mode")
+			global.master_mode=newval;
 		if("maze_cell_count")
 			global.maze_cell_count=newval;
 		if("mechas_list")
@@ -1486,10 +1540,6 @@
 			global.newscaster_standard_feeds=newval;
 		if("next_account_number")
 			global.next_account_number=newval;
-		if("next_duration_update")
-			global.next_duration_update=newval;
-		if("next_station_date_change")
-			global.next_station_date_change=newval;
 		if("ninjastart")
 			global.ninjastart=newval;
 		if("ntnet_card_uid")
@@ -1586,14 +1636,16 @@
 			global.robot_hud_colours=newval;
 		if("robot_inventory")
 			global.robot_inventory=newval;
-		if("round_start_time")
-			global.round_start_time=newval;
-		if("roundstart_hour")
-			global.roundstart_hour=newval;
+		if("round_progressing")
+			global.round_progressing=newval;
 		if("rune_list")
 			global.rune_list=newval;
 		if("same_wires")
 			global.same_wires=newval;
+		if("secondary_mode")
+			global.secondary_mode=newval;
+		if("secret_force_mode")
+			global.secret_force_mode=newval;
 		if("send_emergency_team")
 			global.send_emergency_team=newval;
 		if("sent_spiders_to_station")
@@ -1648,8 +1700,6 @@
 			global.sqlport=newval;
 		if("station_account")
 			global.station_account=newval;
-		if("station_date")
-			global.station_date=newval;
 		if("stool_cache")
 			global.stool_cache=newval;
 		if("stored_shock_by_ref")
@@ -1694,6 +1744,8 @@
 			global.tape_roll_applications=newval;
 		if("telecomms_list")
 			global.telecomms_list=newval;
+		if("tertiary_mode")
+			global.tertiary_mode=newval;
 		if("ticket_panels")
 			global.ticket_panels=newval;
 		if("tickets")
@@ -1756,7 +1808,7 @@
 			global.z_levels=newval;
 		if("zone_blocked")
 			global.zone_blocked=newval;
-
+		
 /var/list/_all_globals=list(
 	"ANTAG_FREQS",
 	"AWAY_FREQS_ASSIGNED",
@@ -1767,6 +1819,7 @@
 	"CENT_FREQS",
 	"CMinutes",
 	"DEPT_FREQS",
+	"Debug2",
 	"Failsafe",
 	"GLOB",
 	"IClog",
@@ -1780,6 +1833,7 @@
 	"SSalarm",
 	"SSantags",
 	"SSao",
+	"SSassets",
 	"SSatoms",
 	"SScharacter_setup",
 	"SSchat",
@@ -1820,6 +1874,7 @@
 	"SSorbit",
 	"SSoverlays",
 	"SSpersistence",
+	"SSping",
 	"SSplants",
 	"SSprocessing",
 	"SSprojectiles",
@@ -1830,9 +1885,11 @@
 	"SSskybox",
 	"SSstation",
 	"SSstatistics",
+	"SSstatpanels",
 	"SSsun",
 	"SSsupply",
 	"SStemperature",
+	"SStgui",
 	"SSthrowing",
 	"SSticker",
 	"SStimer",
@@ -1907,10 +1964,10 @@
 	"ascii_red",
 	"ascii_reset",
 	"ascii_yellow",
-	"asset_datums",
 	"assigned",
 	"assigned_blocks",
 	"attack_log_repository",
+	"auxtools_debug_server",
 	"base_miss_chance",
 	"basic_robolimb",
 	"blocked",
@@ -1923,6 +1980,7 @@
 	"cameranet",
 	"can_call_ert",
 	"captain_announcement",
+	"changelog_hash",
 	"channel_color_presets",
 	"channel_to_radio_key",
 	"chargen_robolimbs",
@@ -1930,6 +1988,7 @@
 	"chicken_count",
 	"client_preference_stats_",
 	"client_repository",
+	"climbsounds",
 	"combatlog",
 	"comm_message_listeners",
 	"command_announcement",
@@ -1939,6 +1998,7 @@
 	"created",
 	"crew_repository",
 	"csrfz_check",
+	"custom_event_msg",
 	"damage_icon_parts",
 	"dbcon",
 	"dbcon_old",
@@ -1970,6 +2030,7 @@
 	"failed_old_db_connections",
 	"failed_unit_tests",
 	"file_uid",
+	"fileaccess_timer",
 	"finds_as_strings",
 	"flesh_hud_colours",
 	"floating_chat_colors",
@@ -1983,20 +2044,23 @@
 	"fruit_icon_cache",
 	"fusion_reactions",
 	"game_id",
+	"game_version",
+	"game_year",
 	"gamemode_cache",
 	"gas_data",
 	"gear_datums",
 	"gear_tweak_free_color_choice_",
-	"gender_datums",
 	"ghost_darkness_images",
 	"ghost_sightless_images",
 	"ghost_traps",
 	"global_message_listener",
 	"global_vars_",
+	"gravity_is_on",
 	"gzn_check",
 	"hadevent",
 	"holder_mob_icon_cache",
 	"hotkey_keybinding_list_by_key",
+	"href_logfile",
 	"human_icon_cache",
 	"id_card_states",
 	"image_repository",
@@ -2007,12 +2071,12 @@
 	"jobMax",
 	"jobban_keylist",
 	"jobban_runonce",
+	"join_motd",
 	"keybindings_by_name",
 	"landmarks_list",
 	"language_keys",
 	"last_chew",
 	"last_message_id",
-	"last_round_duration",
 	"light_overlay_cache",
 	"lighting_overlays_initialised",
 	"limb_icon_cache",
@@ -2031,6 +2095,7 @@
 	"map_sectors",
 	"maploader",
 	"mark",
+	"master_mode",
 	"maze_cell_count",
 	"mechas_list",
 	"merged",
@@ -2062,8 +2127,6 @@
 	"news_network",
 	"newscaster_standard_feeds",
 	"next_account_number",
-	"next_duration_update",
-	"next_station_date_change",
 	"ninjastart",
 	"ntnet_card_uid",
 	"ntnet_global",
@@ -2112,10 +2175,11 @@
 	"robot_custom_icons",
 	"robot_hud_colours",
 	"robot_inventory",
-	"round_start_time",
-	"roundstart_hour",
+	"round_progressing",
 	"rune_list",
 	"same_wires",
+	"secondary_mode",
+	"secret_force_mode",
 	"send_emergency_team",
 	"sent_spiders_to_station",
 	"server_name",
@@ -2130,7 +2194,6 @@
 	"solars_list",
 	"sortInstance",
 	"sounds_cache",
-	"spacevines_spawned",
 	"sparring_attack_cache",
 	"spells",
 	"splatter_cache",
@@ -2144,7 +2207,6 @@
 	"sqlpass",
 	"sqlport",
 	"station_account",
-	"station_date",
 	"stool_cache",
 	"stored_shock_by_ref",
 	"string_part_flags",
@@ -2167,6 +2229,7 @@
 	"tank_gauge_cache",
 	"tape_roll_applications",
 	"telecomms_list",
+	"tertiary_mode",
 	"ticket_panels",
 	"tickets",
 	"total_lighting_corners",

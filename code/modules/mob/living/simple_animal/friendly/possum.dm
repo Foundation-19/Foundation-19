@@ -86,8 +86,8 @@
 
 /mob/living/simple_animal/friendly/opossum/Initialize()
 	. = ..()
-	verbs += /mob/living/proc/ventcrawl
-	verbs += /mob/living/proc/hide
+	add_verb(src, /mob/living/proc/ventcrawl)
+	add_verb(src, /mob/living/proc/hide)
 
 /mob/living/simple_animal/friendly/opossum/poppy
 	name = "Poppy the Safety Possum"

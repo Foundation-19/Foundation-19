@@ -4,6 +4,7 @@ Thumbs.db
 *.int
 *.rsc
 *.dmb
+*.m.dme
 *.lk
 *.backup
 *.before
@@ -22,10 +23,7 @@ config/*
 sql/test_db
 
 # VisualStudioCode
-.vscode/*
-.vscode/settings.json
 *.code-workspace
-.history
 
 # swap
 [._]*.s[a-v][a-z]

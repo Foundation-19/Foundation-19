@@ -60,8 +60,8 @@ GLOBAL_LIST_EMPTY(scp131s)
 /mob/living/simple_animal/scp_131/Initialize()
 //	add_language(LANGUAGE_EYEPOD, 1)
 	GLOB.scp131s += src
-	verbs += /mob/living/proc/ventcrawl
-	verbs += /mob/living/proc/hide
+	add_verb(src, /mob/living/proc/ventcrawl)
+	add_verb(src, /mob/living/proc/hide)
 	return ..()
 
 /mob/living/simple_animal/scp_131/update_icon()

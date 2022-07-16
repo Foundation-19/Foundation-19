@@ -1,0 +1,177 @@
+2022-01-05:
+  EgorDinamit:
+  - rscadd: 'Ghosts now have 3 buttons on the HUD: "Orbit", "re-enter corpse" and
+      "teleport".'
+  - rscadd: Each new shift may have different station(ship) traits. Read command report
+      at round-start to see what you got.
+  KareTa, _Elar_ and few adjustments by EgorDinamit:
+  - rscadd: AI hud.
+2022-01-10:
+  EgorDinamit:
+  - tweak: Vox species can now work on SEV Torch. Their positions are heavily limited
+      to contractor ranks only. They can also be a merchant now.
+  - tweak: Added 2 Vox clothes options to loadouts.
+  - tweak: Vox spawn with sandals on now.
+  - tweak: Simple mobs no longer take ~2 seconds between the death message and actual
+      death.
+  - tweak: Simple mobs will now properly die when fighting each other without a living
+      player in sight.
+  - tweak: Ranged hivebots now have a fire delay and an increased projectile dispersion.
+  - rscadd: Ghosts following an object/mob will now orbit it.
+  - rscadd: Ghosts will now float. Yay.
+2022-01-11:
+  EgorDinamit:
+  - tweak: Electrical lockers spawn with 2 insulated gauntlets now, for Vox.
+  - tweak: Engineering storage on Torch now contains 2 magnetic claws, for Vox.
+  Shadowtail117:
+  - tweak: Wasgaelhi is now less potent as an alcohol.
+  - tweak: Mumbak sting will now intoxicate people similar to alcohol.
+  - tweak: Toggling (or trying to toggle) regenerative auras provides more immersive
+      messages.
+  - tweak: The "Crew Transfer Factor" that determines the weight of transfer votes
+      has been renamed to a more eponymous "Transfer Vote Multiplier".
+2022-01-13:
+  Doctor-Derp:
+  - maptweak: Updates the AI and Upload to look better and function better.
+2022-01-15:
+  EgorDinamit:
+  - rscdel: Removed "stripper" clothes from the code.
+2022-01-19:
+  EgorDinamit:
+  - tweak: Players will now spawn in a random cryopod, instead of always spawning
+      from one in the corner. Sleep time on start isn't random anymore.
+  - tweak: Using AI law modules in hand now shows their stored lawset.
+  - tweak: Traitor gamemode can start with 0 players and 0 antagonists on round-start.
+  - tweak: Revolution gamemode no requires at least 10 players to start.
+  EgorDinamit, SierraKomodo (BayStation 12):
+  - tweak: Standardized health for structures, turfs, and items. In short - less shitcode.
+  - tweak: Closets can now be broken open with any item that has more than 20 force(damage).
+2022-01-20:
+  EgorDinamit:
+  - tweak: Vox traders(NPC) now always want to purchase human mobs. Living players
+      cost more.
+  - tweak: Appraise verb, available to players with Finance skills, now can be used
+      on almost anything around you. You can finally tell your coworkers how much
+      they'd cost on the black market, yay!
+2022-01-21:
+  EgorDinamit:
+  - admin: Create object/mob/turf panel has been replaced with /tg/station's version,
+      inhand spawn variant now works for items.
+2022-01-22:
+  Shadowtail117:
+  - bugfix: If you are buckled down, you can no longer move between z-levels.
+2022-01-28:
+  Doctor-Derp:
+  - maptweak: Rearranges the Petrov analysis lab. Adds more equipment to suit new
+      anomaly research. Fixes Emitter wiring.
+  - maptweak: Adds a water tank to the rear Petrov maintenance compartment.
+  - maptweak: Adds cameras to the Observation room.
+  - maptweak: Pushes R-UST canister tanks into the wall for more space.
+  - maptweak: Adds a turret, turret control panel, and signage to cyborg/AI upload.
+  - maptweak: Adds a plunger to medbay decontamination toilets! :)
+2022-02-01:
+  EgorDinamit:
+  - tweak: Ascent lance had its armor penetration slightly reduced.
+  - tweak: Dexalin removed from the pool of chemicals available in Ascent sleepers.
+  - tweak: Airlocks open and close faster.
+  - balance: GAS have much more unarmed damage when in "combat stance".
+  EgorDinamit, Ryll/Shaps(/tg/) for sounds.:
+  - tweak: Field disperser now plays sound that ignores pressure. That means you will
+      hear it regardless of it being in space.
+  - tweak: Limb dismemberment now plays a sound.
+  - tweak: Bashing against a window is now louder.
+  - soundadd: Added sounds from /tg/ for limb dismemberment.
+2022-02-18:
+  EgorDinamit:
+  - tweak: You can now click on the inventory UI to retrieve the item, instead of
+      clicking precisely on the item itself.
+  - tweak: Drag&dropping an item onto itself will no longer cause it to be dropped.
+2022-02-19:
+  EgorDinamit, PowerfulBacon:
+  - rscadd: Added chat badges. Those appear next to the user's name in OOC chat if
+      they possess an admin rank or a status of "trusted player".
+2022-03-17:
+  ACCount12:
+  - imageadd: Added new conveyor sprites, from CEV Eris.
+  - tweak: Improved conveyor code, which allows people to use wrench on them to change
+      direction and multitool on the switch to make it one-way.
+  EgorDinamit:
+  - tweak: Dufflebags now have much less slowdown when worn.
+  - tweak: Mercenary void suits now have slightly less slowdown when worn.
+  - tweak: Combat belts(those can be found in ERT base) now have 0 slowdown.
+  - tweak: Simple mobs can no longer randomly stun you in melee. Rejoice.
+  - balance: 'Random weapon stuns are now much shorter: From 20 seconds to 3 seconds
+      and from 3 to 1.5.'
+  Roland410:
+  - rscadd: Foundation Advisor role has been added, their job is to oversee psionic
+      phenomena.
+  - rscadd: Added a chemical reagent "Jerraman". Its main purpose is to activate psionic
+      latencies. Foundation Advisor starts with 10 vial(4u each) of it in their office.
+      Be careful not to overdose!
+  - rscdel: Counselor/Mentalist no longer has psionic powers, and the Mentalist alt-title
+      was removed as such.
+  - tweak: All crewmembers now have a low chance to start with random psionic latencies.
+  - tweak: Antagonist psionic amplifier now can grant you 2 faculties instead of 1.
+  Spookerton:
+  - admin: MC tab doesn't lag the hell out of users anymore.
+  - bugfix: Sound player datum doesn't runtime randomly anymore.
+  - tweak: Subsystems were overall updated/improved/refactored to operate faster and
+      be less of a burden on the server.
+2022-03-19:
+  EgorDinamit:
+  - tweak: Health HUD will no longer show "100" icon when you are at full health.
+2022-03-20:
+  EgorDinamit:
+  - balance: Chances to miss a limb are heavily reduced. Keep in mind that targeting
+      the chest has the least chance to miss an attack, targeting the head has the
+      highest.
+  - tweak: High gun skills improve your chances to hit a target with a projectile.
+  - tweak: More guns received full-auto fire mode.
+  - tweak: Assault rifles and machine gun had their magazine capacity increased.
+  - tweak: Pistol and rifle bullets deal slightly less damage.
+2022-03-27:
+  EgorDinamit:
+  - tweak: Most jobs will have more access on lowpop(less than 10 players) rounds.
+2022-05-09:
+  Spookerton:
+  - tweak: Modes that would be impossible to start based on the number of players
+      in the lobby at vote time cannot be voted for.
+2022-05-15:
+  EgorDinamit:
+  - rscadd: The angels are coming! Apostle is back in action.
+2022-05-22:
+  BayStation 12:
+  - rscadd: Added holomaps.
+  - rscadd: Added rotating alarm lights.
+  - tweak: Gibs from gibber no longer fly at mach 5 speed.
+  - tweak: Viscerators from the grenade get user's faction.
+  - tweak: Fax machines can now be emagged and don't require access nor have cooldown.
+  - tweak: Leaping with broken legs might damage you. Be careful! It also reduces
+      the distance you leap at.
+  - tweak: Added venomous snakes and changed leeches sprites.
+  - balance: Frag grenades deal more damage.
+  - balance: Laser damage falls off with distance.
+  - admin: Added meteor build mode.
+  - imageadd: OFD resprited.
+2022-05-23:
+  EgorDinamit:
+  - rscadd: Slippery motor oil is now available to emagged janitor cyborgs.
+  - tweak: Water/Lube stun durations are heavily nerfed so you won't spend 10 seconds
+      lying on the floor.
+  - tweak: The wet floor overlays don't become invisible every once in a while now,
+      making it easier to spot a wet/lubed floor.
+2022-05-25:
+  EgorDinamit:
+  - tweak: Laughing and clapping emotes now provide a sound effect.
+2022-06-01:
+  EgorDinamit:
+  - tweak: Human inventory UI(when you drag&drop) now uses browser popup. It looks
+      better, yes.
+  - tweak: Events have slightly different chances to run. "Nothing" has significantly
+      lower chance.
+  - tweak: You can reboot APCs without unlocking them first.
+2022-06-05:
+  EgorDinamit:
+  - tweak: IPCs play an additional sound when moving.
+  - rscadd: Added radial menus from /tg/station. Currently used when choosing cyborg
+      module icon and organ manipulation surgeries.

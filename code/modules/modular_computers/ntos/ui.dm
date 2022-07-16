@@ -122,8 +122,8 @@
 			ui_update_needed = 1
 			last_battery_percent = batery_percent
 
-	if(stationtime2text() != last_world_time)
-		last_world_time = stationtime2text()
+	if(station_time_timestamp("hh:mm") != last_world_time)
+		last_world_time = station_time_timestamp("hh:mm")
 		ui_update_needed = 1
 
 	var/list/current_header_icons = list()
@@ -207,7 +207,7 @@
 		)))
 	data["PC_programheaders"] = program_headers
 
-	data["PC_stationtime"] = stationtime2text()
+	data["PC_stationtime"] = station_time_timestamp("hh:mm")
 	data["PC_hasheader"] = !updating
 	data["PC_showexitprogram"] = active_program ? 1 : 0 // Hides "Exit Program" button on mainscreen
 	return data

@@ -40,6 +40,7 @@ var/list/admin_datums = list()
 		owner = C
 		owner.holder = src
 		owner.add_admin_verbs()	//TODO
+		C.init_verbs()
 		GLOB.admins |= C
 
 /datum/admins/proc/disassociate()
@@ -48,6 +49,7 @@ var/list/admin_datums = list()
 		owner.remove_admin_verbs()
 		owner.deadmin_holder = owner.holder
 		owner.holder = null
+		owner.init_verbs()
 
 /datum/admins/proc/reassociate()
 	if(owner)
@@ -107,15 +109,6 @@ NOTE: It checks usr by default. Supply the "user" argument if you wish to check 
 		holder.disassociate()
 		//qdel(holder)
 	return 1
-
-/mob/Stat()
-	. = ..()
-	if(!client)
-		return
-
-	var/stealth_status = client.is_stealthed()
-	if(stealth_status && statpanel("Status"))
-		stat("Stealth", "Engaged [client.holder.stealthy_ == STEALTH_AUTO ? "(Auto)" : "(Manual)"]")
 
 /client/proc/is_stealthed()
 	if(!holder)

@@ -6269,11 +6269,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
 "aoT" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "prototype_chamber_blast2"
@@ -13269,6 +13264,10 @@
 	icon_state = "0-2"
 	},
 /obj/structure/closet/secure_closet/mtf/co,
+/obj/item/crowbar/red,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/clothing/suit/bio_suit/security,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/zonecommanderoffice{
 	name = "\improper Heavy Containment Zone Commander's Office"
@@ -13613,6 +13612,7 @@
 /area/site53/uhcz/hallways)
 "aEq" = (
 /obj/structure/table/standard,
+/obj/item/storage/pill_bottle/amnesticsa,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/zonecommanderoffice{
 	name = "\improper Heavy Containment Zone Commander's Office"
@@ -24766,7 +24766,6 @@
 /obj/structure/table/standard,
 /obj/item/paper_bin,
 /obj/item/pen,
-/obj/item/gun/projectile/revolver/mateba,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/securitypost)
 "bhZ" = (
@@ -25327,7 +25326,6 @@
 /obj/effect/floor_decal/corner/red/mono,
 /obj/item/reagent_containers/syringe/amnesticsc,
 /obj/item/reagent_containers/syringe/amnesticsc,
-/obj/item/storage/firstaid/combat,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/zonecommanderoffice{
 	name = "\improper Heavy Containment Zone Equipment Room"
@@ -28560,10 +28558,6 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
-"iGM" = (
-/obj/effect/landmark/test/safe_turf,
-/turf/simulated/floor/tiled,
-/area/site53/lowertrams/hub)
 "iHf" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -29031,9 +29025,11 @@
 /area/site53/lowertrams/restaurant)
 "kdH" = (
 /obj/structure/table/standard,
-/obj/item/storage/box/flashbangs,
-/obj/item/storage/box/teargas,
 /obj/effect/floor_decal/corner/red/mono,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/zonecommanderoffice{
 	name = "\improper Heavy Containment Zone Equipment Room"
@@ -29261,6 +29257,14 @@
 /area/site53/reswing/robotics{
 	name = "\improper Research Wing Hallways"
 	})
+"kQL" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "kZh" = (
 /obj/structure/bed/roller,
 /obj/structure/iv_drip,
@@ -30192,14 +30196,12 @@
 /obj/machinery/camera/autoname{
 	dir = 4;
 	name = "SCP-247 Containment"
-
 	},
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
 	pixel_x = -24
 	},
-
 /obj/structure/cable/green,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/uhcz/scp247containment)
@@ -64014,7 +64016,7 @@ aZu
 aac
 azC
 aOt
-iGM
+aae
 aSV
 aWX
 bdo
@@ -90007,7 +90009,7 @@ azA
 azA
 azA
 azA
-azA
+kQL
 azA
 azA
 aBo

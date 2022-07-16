@@ -33,7 +33,6 @@
 	display_name = "storage belt selection"
 	path = /obj/item/storage/belt
 	slot = slot_belt
-	allowed_branches = list(/datum/mil_branch/civilian)
 	//Eats the belt slot which guards needs (holster)
 	cost = 2
 
@@ -44,7 +43,6 @@
 		/obj/item/storage/belt/utility
 	)
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(belts)
-	allowed_branches = list(/datum/mil_branch/civilian)
 	//same as before
 
 /datum/gear/storage/webbing
@@ -70,13 +68,11 @@
 	slot = slot_belt
 	cost = 2
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_branches = list(/datum/mil_branch/civilian)
 
 /datum/gear/storage/waistpack/big
 	display_name = "large waist pack"
 	path = /obj/item/storage/belt/waistpack/big
 	cost = 4
-	allowed_branches = list(/datum/mil_branch/civilian)
 
 /datum/gear/accessory/wallet
 	display_name = "wallet, colour select"
