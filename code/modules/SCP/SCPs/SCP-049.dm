@@ -112,85 +112,10 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	playsound(src, pick(voiceline), 30)
 
 /mob/living/carbon/human/scp049/proc/getTarget()
-	if(client)
-		target = null
-		return target
-	if(MUTATION_XRAY in mutations) //dont let the ai see through walls
-		mutations.Remove(MUTATION_XRAY)
-		update_mutations()
-		update_sight()
-	if(target == src)
-		target = null
-		return target
-	if(target && !(target in view(10, src))) //if they get away, they get away
-		target = null
-		return target
-	if (!target || target.stat == DEAD)
-		var/list/possible_targets = list()
-		for(var/mob/living/carbon/human/L in view(10, src))
-			if(!(istype(L, /mob/living/carbon/human/scp049)) && !(L.scp_049_instance))
-				if(L.stat != DEAD)
-					possible_targets += L
-		CHECK_TICK
-		var/attempts = 0
-		while (++attempts <= 3)
-			for (var/living in possible_targets)
-				var/mob/living/L = living
-				switch (attempts)
-					if (1)
-						// pick the best target, a human in our prefered age range
-						if (ishuman(L))
-							var/mob/living/carbon/human/H = L
-							if (H.age >= 10 && H.age <= 25)
-								target = H
-								return target
-					if (2)
-						// pick any human target
-						if (ishuman(L))
-							target = L
-							return target
-					if (3)
-						// pick any target
-						target = L
-						return target
-	return target
+	return
 
 /mob/living/carbon/human/scp049/proc/pursueTarget()
-	if(client)
-		return FALSE
-	walk(src, null)
-	addtimer(CALLBACK(src, .proc/getTarget), 3 SECONDS)
-
-	if(!target)
-		return FALSE
-
-	//human nearby? well are they infected? if so make them regret it
-	if(target.pestilence && !chasing_sound && !contained)
-		chasing_sound = TRUE
-		target.playsound_local(src, 'sound/scp/chase/049_chase.ogg', 50, 0)
-		addtimer(CALLBACK(src, .proc/SCP049_Chase_Music), 23 SECONDS)
-	//human nearby? wander up to them
-	if (target && !(target in orange(1, src)))
-		walk_to(src, target, 1,10,0.1)
-		CHECK_TICK
-		return TRUE
-
-	walk(src, null)
-	if(!target.pestilence)
-		target = null
-		return FALSE
-
-	//below is the part where they're being chased with lethal intent and him running up to them is to do his good work
-	SCP049_Chase_Music()
-
-	if(check_nearby())
-		to_chat(target, "<span class = 'danger'>You feel the life draining from your body! You can't move!</span>")
-		scp049_attack(target)
-
-
-	CHECK_TICK
-
-	return TRUE
+	return
 
 /mob/living/carbon/human/scp049/proc/SCP049_Chase_Music(mob/living/carbon/human/target)
 	if(!target)
