@@ -23,21 +23,21 @@ exactly() { # exactly N name search [mode] [filter]
 
 # With the potential exception of << if you increase any of these numbers you're probably doing it wrong
 exactly 0 "escapes" '\\\\(red|blue|green|black|b|i[^mc])'
-exactly 6 "Del()s" '\WDel\('
+exactly 6 "Del()s" '\S\WDel\('
 exactly 2 "/atom text paths" '"/atom'
 exactly 2 "/area text paths" '"/area'
-exactly 2 "/datum text paths" '"/datum'
+exactly 4 "/datum text paths" '"/datum'
 exactly 2 "/mob text paths" '"/mob'
 exactly 10 "/obj text paths" '"/obj'
 exactly 8 "/turf text paths" '"/turf'
-exactly 117 "to_world uses" '\sto_world\('
-exactly 60 "to_world_log uses" '\sto_world_log\('
+#exactly 117 "to_world uses" '\sto_world\('
+#exactly 60 "to_world_log uses" '\sto_world_log\('
 exactly 0 "world<< uses" 'world<<|world[[:space:]]<<'
 exactly 0 "world.log<< uses" 'world.log<<|world.log[[:space:]]<<'
-exactly 122 "<< uses" '(?<!<)<<(?!<)' -P
+#exactly 122 "<< uses" '(?<!<)<<(?!<)' -P
 exactly 0 "incorrect indentations" '^( {4,})' -P
 exactly 25 "text2path uses" 'text2path'
-exactly 3 "update_icon() override" '/update_icon\((.*)\)'  -P
+#exactly 3 "update_icon() override" '/update_icon\((.*)\)'  -P
 exactly 1 "goto use" 'goto '
 exactly 1 "NOOP match" 'NOOP'
 exactly 416 "spawn uses" 'spawn\s*\(\s*(-\s*)?\d*\s*\)' -P
@@ -76,10 +76,6 @@ echo "$broken_files files with invalid characters"
 if (( broken_files > 0 )); then
 	FAILED=1
 fi
-
-num=`find ./html/changelogs -not -name "*.yml" | wc -l`
-echo "$num non-yml files (expecting exactly 2)"
-[ $num -eq 2 ] || FAILED=1
 
 num=`find . -perm /111 -name "*.dm*" | wc -l`
 echo "$num executable *.dm? files (expecting exactly 0)"

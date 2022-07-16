@@ -630,7 +630,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			var/mob/living/scp = input(src, "Which Euclid/Keter SCP do you want to take control of?") as null|anything in scps
 			if (isscp106(scp) && world.time < 60 MINUTES)
 				to_chat(src, "You cannot join as this SCP for [((60 MINUTES) - world.time)/600] more minutes.")
-			if (isscp049(scp) && world.time < 10 MINUTES && !("049" in GLOB.scp_whitelist[ckey] ? GLOB.scp_whitelist[ckey] : list()))
+			if (isscp049(scp) && world.time < 10 MINUTES) /*&& !("049" in GLOB.scp_whitelist[ckey] ? GLOB.scp_whitelist[ckey] : list())¸*/
 				to_chat(src, "You cannot join as this SCP for [((15 MINUTES) - world.time)/600] more minutes.")
 			else if (scp && !scp.client)
 				to_chat(src, "<span class='warning'>Keep in mind that you can and will be in your cage for long periods of time and even entire rounds.</span>")

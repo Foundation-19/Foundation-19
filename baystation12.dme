@@ -2993,7 +2993,6 @@
 #include "code\modules\research\designs\designs_weapon.dm"
 #include "code\modules\SCP\hud_data.dm"
 #include "code\modules\SCP\scp.dm"
-#include "code\modules\SCP\whitelist.dm"
 #include "code\modules\SCP\SCPs\SCP-012.dm"
 #include "code\modules\SCP\SCPs\SCP-013.dm"
 #include "code\modules\SCP\SCPs\SCP-049.dm"

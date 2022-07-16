@@ -354,9 +354,9 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 /obj/scp106_exit
 	icon = 'icons/mob/screen1.dmi'
 	icon_state = "x2"
-	anchored = 1.0
+	anchored = TRUE
 	unacidable = 1
-	simulated = 0
+	simulated = FALSE
 	invisibility = 100
 
 /obj/scp106_exit/Crossed(var/mob/living/L)
@@ -368,9 +368,9 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 /obj/scp106_teleport
 	icon = 'icons/mob/screen1.dmi'
 	icon_state = "x2"
-	anchored = 1.0
+	anchored = TRUE
 	unacidable = 1
-	simulated = 0
+	simulated = FALSE
 	invisibility = 100
 
 /obj/scp106_teleport/Crossed(var/mob/living/L)
@@ -385,9 +385,9 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 /obj/scp106_random
 	icon = 'icons/mob/screen1.dmi'
 	icon_state = "x2"
-	anchored = 1.0
+	anchored = TRUE
 	unacidable = 1
-	simulated = 0
+	simulated = FALSE
 	invisibility = 100
 
 /obj/scp106_random/Crossed(var/mob/living/L)
@@ -492,8 +492,11 @@ GLOBAL_LIST_EMPTY(femur_breakers)
 		return
 
 	next_use = world.time + use_delay
-	world << sound('sound/scp/machinery/femur_breaker.ogg')
-	sleep(2.8 SECONDS)
+
+	var/femur_breaker_sound = sound('sound/scp/machinery/femur_breaker.ogg')
+
+	for(var/mob/M in GLOB.player_list) //This is horrible.
+		playsound(M, femur_breaker_sound)
 
 	for (var/obj/item/organ/external/leg/L in H.organs)
 		if (!(L.status & BROKEN))
@@ -519,7 +522,11 @@ GLOBAL_LIST_EMPTY(femur_breakers)
 			if (active_shield_generators < 4)
 				return // failed
 
-			world << sound('sound/scp/machinery/femur_breaker_success.ogg')
+			var/success_sound = sound('sound/scp/machinery/femur_breaker_success.ogg')
+
+			for(var/mob/M in GLOB.player_list)
+				playsound(M, success_sound) //This is just as horrible.
+
 			spent_mobs[H] = TRUE
 			return
 

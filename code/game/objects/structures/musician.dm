@@ -9,8 +9,8 @@
 	name = "space minimoog"
 	icon = 'icons/obj/musician.dmi'
 	icon_state = "minimoog"
-	anchored = 1
-	density = 1
+	anchored = TRUE
+	density = TRUE
 	var/datum/song/song
 	var/playing = 0
 	var/help = 0
@@ -427,7 +427,7 @@
 					"[user] loosens \the [src]'s casters.", \
 					"<span class='notice'>You have loosened \the [src]. Now it can be pulled somewhere else.</span>", \
 					"You hear ratchet.")
-				src.anchored = 0
+				src.anchored = FALSE
 		else
 			playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
 			to_chat(user, "<span class='notice'>You begin to tighten \the [src] to the floor...</span>")
@@ -436,6 +436,6 @@
 					"[user] tightens \the [src]'s casters.", \
 					"<span class='notice'>You have tightened \the [src]'s casters. Now it can be played again</span>.", \
 					"You hear ratchet.")
-				src.anchored = 1
+				src.anchored = TRUE
 	else
 		..()

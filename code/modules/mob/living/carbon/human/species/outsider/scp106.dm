@@ -49,18 +49,19 @@
 	flash_mod =      0.0                    // Unflashable
 
 // #define 106AI
-/datum/species/scp106/handle_npc(mob/living/carbon/human/scp106/H)
+/datum/species/scp106/handle_npc(mob/living/carbon/human/H)
 	// sanity check, apparently its needed
 	if(!H || H.client)
 		return
 	// walk around randomly if we don't have a target
-	if(!H.pursueTarget())
-		var/turf/T = step_rand(H)
-		H.Move(get_dir(H, T))
+	var/mob/living/carbon/human/scp106/scp_106 = H
+	if(!scp_106.pursueTarget())
+		var/turf/T = step_rand(scp_106)
+		scp_106.Move(get_dir(scp_106, T))
 
 	if(prob(25))
-		var/turf/T = step_rand(H)
-		H.Move(get_dir(H, T))
+		var/turf/T = step_rand(scp_106)
+		scp_106.Move(get_dir(scp_106, T))
 
 /obj/item/organ/external/chest/unbreakable/scp106
 	dislocated = -1

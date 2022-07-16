@@ -19,7 +19,7 @@ GLOBAL_LIST_EMPTY(scp131s)
 	// language = LANGUAGE_EYEPOD
 //	species_language = LANGUAGE_EYEPOD
 	only_species_language = 1
-	density = 0
+	density = FALSE
 	universal_speak = 0
 	universal_understand = 1
 	mob_size = MOB_MEDIUM

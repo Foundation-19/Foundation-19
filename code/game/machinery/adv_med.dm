@@ -7,8 +7,8 @@
 	name = "Body Scanner"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "body_scanner_0"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 
 	use_power = 1
 	idle_power_usage = 60
@@ -183,8 +183,8 @@
 	name = "Body Scanner Console"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "body_scannerconsole"
-	density = 0
-	anchored = 1
+	density = FALSE
+	anchored = TRUE
 
 
 /obj/machinery/body_scanconsole/Initialize()
