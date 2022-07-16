@@ -68,8 +68,6 @@ GLOBAL_VAR(href_logfile)
 
 #define RECOMMENDED_VERSION 512
 /world/New()
-
-	enable_debugger()
 	//set window title
 	name = "[server_name] - [GLOB.using_map.full_name]"
 
@@ -487,6 +485,9 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 	..(reason)
 
 /world/Del()
+	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
+	if (debug_server)
+		call(debug_server, "auxtools_shutdown")()
 	callHook("shutdown")
 	return ..()
 
@@ -690,8 +691,3 @@ var/failed_old_db_connections = 0
 		return 1
 
 #undef FAILED_DB_CONNECTION_CUTOFF
-
-/world/proc/enable_debugger()
-	var/dll = world.GetConfig("env", "EXTOOLS_DLL")
-	if (dll)
-		call(dll, "debug_initialize")()
