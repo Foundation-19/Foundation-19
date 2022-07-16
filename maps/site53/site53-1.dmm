@@ -412,6 +412,13 @@
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper Re-education center"
 	})
+"bk" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/obj/item/stool,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost)
 "bm" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Hallway"
@@ -495,6 +502,13 @@
 /obj/item/device/radio,
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
+"bM" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/obj/machinery/chemical_dispenser/full,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost)
 "bN" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled,
@@ -8716,6 +8730,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 9
 	},
+/obj/machinery/chem_master,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost)
 "uE" = (
@@ -12063,6 +12078,8 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost)
 "CS" = (
@@ -15064,6 +15081,8 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/effect/floor_decal/corner/blue/border,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost)
 "Kf" = (
@@ -16811,6 +16830,13 @@
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/lhcz/scp049containment)
+"RJ" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/obj/machinery/reagentgrinder,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost)
 "RL" = (
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
@@ -21148,13 +21174,13 @@ gq
 gq
 gq
 gq
-dj
-dj
-dj
-dj
-dj
-dj
-dj
+gq
+gq
+gq
+gq
+gq
+gq
+gq
 en
 er
 Hl
@@ -21406,12 +21432,12 @@ gq
 gq
 gq
 dj
-ub
 dj
-ub
 dj
-ug
-nh
+dj
+dj
+dj
+dj
 en
 er
 GS
@@ -21663,12 +21689,12 @@ gq
 gq
 gq
 dj
-uc
+ub
 dj
-uc
+ub
 dj
-dj
-uc
+ug
+nh
 en
 er
 Ea
@@ -21920,12 +21946,12 @@ gq
 gq
 gq
 dj
-ud
-uf
-uf
-uf
-uf
-ui
+uc
+dj
+uc
+dj
+dj
+uc
 en
 wq
 ey
@@ -22177,12 +22203,12 @@ gq
 gq
 gq
 dj
-py
-ue
-ue
-ue
-EZ
-EZ
+ud
+uf
+uf
+uf
+uf
+ui
 en
 iI
 wc
@@ -22434,12 +22460,12 @@ gq
 gq
 gq
 dj
-dj
-dj
-dj
-dj
-pH
-pH
+py
+ue
+ue
+ue
+EZ
+EZ
 en
 uB
 wc
@@ -22690,13 +22716,13 @@ gq
 gq
 kL
 kL
-kL
-kL
-kL
-kL
-kL
-xT
-xT
+dj
+dj
+dj
+dj
+dj
+pH
+pH
 en
 zS
 GS
@@ -23199,7 +23225,7 @@ As
 Hh
 ie
 uD
-As
+bk
 CR
 JX
 kL
@@ -23455,7 +23481,7 @@ Bh
 Bh
 sR
 ie
-rq
+bM
 Bh
 Bh
 Kd
@@ -23712,7 +23738,7 @@ Bh
 Bh
 Ah
 ie
-rq
+RJ
 Bh
 Bh
 Ke
