@@ -3,7 +3,7 @@
 	post_round_safe_areas = list (
 		/area/centcom,
 		/area/site53/surface/bunker,
-		/area/shuttle/escape_pod7/station
+		/area/shuttle/escape_pod
 		)
 
 /area/turbolift
@@ -152,7 +152,7 @@
 	dynamic_lighting = 0
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/shuttle/escape_pod7/station
+/area/shuttle/escape_pod
 	name = "Transfer Tram"
 	icon_state = "Sleep"
 	requires_power = 0

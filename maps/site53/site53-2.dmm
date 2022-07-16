@@ -1719,7 +1719,7 @@
 	id_tag = "escapewindows"
 	},
 /turf/simulated/floor/plating,
-/area/shuttle/escape_pod7/station)
+/area/shuttle/escape_pod)
 "aeE" = (
 /obj/structure/closet/secure_closet/mtf/enlisted,
 /obj/item/crowbar/red,
@@ -1772,11 +1772,11 @@
 /area/site53/tram/hcz)
 "aeL" = (
 /turf/simulated/floor/tiled/monotile,
-/area/shuttle/escape_pod7/station)
+/area/shuttle/escape_pod)
 "aeN" = (
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/r_wall/prepainted,
-/area/shuttle/escape_pod7/station)
+/area/shuttle/escape_pod)
 "aeP" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
@@ -3126,7 +3126,7 @@
 	name = "\improper Escape Train"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/shuttle/escape_pod7/station)
+/area/shuttle/escape_pod)
 "ahN" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -4612,9 +4612,9 @@
 "alg" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch,
-/obj/effect/shuttle_landmark/escape_pod/start/pod7,
+/obj/effect/shuttle_landmark/escape_pod/start,
 /turf/simulated/floor/tiled/monotile,
-/area/shuttle/escape_pod7/station)
+/area/shuttle/escape_pod)
 "alh" = (
 /obj/machinery/light{
 	dir = 8;
@@ -4872,17 +4872,17 @@
 	id_tag = "escape1"
 	},
 /turf/simulated/wall/r_wall/prepainted,
-/area/shuttle/escape_pod7/station)
+/area/shuttle/escape_pod)
 "alH" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch,
 /turf/simulated/floor/tiled/monotile,
-/area/shuttle/escape_pod7/station)
+/area/shuttle/escape_pod)
 "alI" = (
 /obj/effect/paint_stripe/green,
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod,
 /turf/simulated/wall/r_wall/prepainted,
-/area/shuttle/escape_pod7/station)
+/area/shuttle/escape_pod)
 "alJ" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 10
@@ -5207,7 +5207,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/shuttle/escape_pod7/station)
+/area/shuttle/escape_pod)
 "amC" = (
 /turf/simulated/floor/reinforced,
 /area/site53/ulcz/tram)
@@ -6079,7 +6079,7 @@
 "aoz" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/airless/ceiling,
-/area/shuttle/escape_pod7/station)
+/area/shuttle/escape_pod)
 "aoA" = (
 /obj/structure/table/standard,
 /obj/item/folder,
@@ -19686,7 +19686,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/shuttle/escape_pod7/station)
+/area/shuttle/escape_pod)
 "aUn" = (
 /obj/machinery/vending/fitness,
 /turf/simulated/floor/tiled/monotile/white,
@@ -19910,14 +19910,14 @@
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
-/area/shuttle/escape_pod7/station)
+/area/shuttle/escape_pod)
 "aUV" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
-/area/shuttle/escape_pod7/station)
+/area/shuttle/escape_pod)
 "aUW" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -19926,7 +19926,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/shuttle/escape_pod7/station)
+/area/shuttle/escape_pod)
 "aUY" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -20008,7 +20008,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/shuttle/escape_pod7/station)
+/area/shuttle/escape_pod)
 "aVi" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Checkpoint Booth";

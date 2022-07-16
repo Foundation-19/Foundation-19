@@ -9669,7 +9669,7 @@
 	name = "Entrance Zone Security Center"
 	})
 "UF" = (
-/obj/effect/shuttle_landmark/heli/mtf/out,
+/obj/effect/shuttle_landmark/heli/out,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/surface/surface)
 "UI" = (

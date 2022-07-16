@@ -249,7 +249,7 @@
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
 "cv" = (
-/obj/effect/shuttle_landmark/heli/mtf/start,
+/obj/effect/shuttle_landmark/heli/start,
 /turf/simulated/floor/shuttle/white,
 /area/site53/tram/mtf)
 "cw" = (
@@ -3348,7 +3348,7 @@
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
 "py" = (
-/obj/effect/shuttle_landmark/escape_pod/out/pod7,
+/obj/effect/shuttle_landmark/escape_pod/out,
 /turf/simulated/floor,
 /area/centcom)
 "pE" = (
@@ -4646,7 +4646,7 @@
 	name = "\improper MTF"
 	})
 "Lc" = (
-/obj/effect/shuttle_landmark/heli/mtf,
+/obj/effect/shuttle_landmark/heli,
 /turf/unsimulated/floor/plating,
 /area/site53/surface/surface)
 "Le" = (
