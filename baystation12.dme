@@ -3091,6 +3091,7 @@
 #include "code\modules\spells\aoe_turf\conjure\force_portal.dm"
 #include "code\modules\spells\aoe_turf\conjure\forcewall.dm"
 #include "code\modules\spells\aoe_turf\conjure\grove.dm"
+#include "code\modules\spells\artifacts\monster_manual.dm"
 #include "code\modules\spells\artifacts\spellbound_servants.dm"
 #include "code\modules\spells\artifacts\storage.dm"
 #include "code\modules\spells\general\acid_spray.dm"
