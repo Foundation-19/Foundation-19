@@ -420,10 +420,15 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	var/next_use
 	var/use_delay = 60 SECONDS //because please god, enough with the earrape
 
+GLOBAL_LIST_EMPTY(femur_breakers)
+
 /obj/structure/femur_breaker/Initialize()
 	. = ..()
+	GLOB.femur_breakers += src
 
 /obj/structure/femur_breaker/Destroy()
+	GLOB.femur_breakers -= src
+
 	qdel()
 	return ..()
 
@@ -525,7 +530,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 
 
 /obj/machinery/button/femur_breaker/activate(mob/user)
-	for(var/obj/structure/femur_breaker/C in world)
+	for(var/obj/structure/femur_breaker/C in GLOB.femur_breakers)
 		if (C.id == id_tag)
 			C.activate(user)
 

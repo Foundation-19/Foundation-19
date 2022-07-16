@@ -2058,6 +2058,72 @@
 		show_player_panel(M)
 
 
+
+	if(href_list["say"])
+		var/list/dat = list()
+		var/client/C = locate(href_list["say"])
+
+
+		for(var/log in C.say_log)
+			dat += log
+			dat += "<br>"
+		var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
+		popup.set_content(JOINTEXT(dat))
+		popup.open()
+		return
+
+	if(href_list["ooc"])
+		var/list/dat = list()
+		var/client/C = locate(href_list["ooc"])
+
+
+		for(var/log in C.ooc_log)
+			dat += log
+			dat += "<br>"
+		var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
+		popup.set_content(JOINTEXT(dat))
+		popup.open()
+		return
+
+	if(href_list["emote"])
+		var/list/dat = list()
+		var/client/C = locate(href_list["emote"])
+
+
+		for(var/log in C.emote_log)
+			dat += log
+			dat += "<br>"
+		var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
+		popup.set_content(JOINTEXT(dat))
+		popup.open()
+		return
+
+	if(href_list["dsay"])
+		var/list/dat = list()
+		var/client/C = locate(href_list["dsay"])
+
+
+		for(var/log in C.dsay_log)
+			dat += log
+			dat += "<br>"
+		var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
+		popup.set_content(JOINTEXT(dat))
+		popup.open()
+		return
+
+	if(href_list["interact"])
+		var/list/dat = list()
+		var/client/C = locate(href_list["interact"])
+
+
+		for(var/log in C.interact_log)
+			dat += log
+			dat += "<br>"
+		var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
+		popup.set_content(JOINTEXT(dat))
+		popup.open()
+		return
+
 /mob/living/proc/can_centcom_reply()
 	return 0
 

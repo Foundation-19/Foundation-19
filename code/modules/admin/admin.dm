@@ -79,7 +79,12 @@ var/global/floorIsLava = 0
 		<A href='?_src_=holder;warn=[last_ckey]'>Warn</A> |
 		<A href='?src=\ref[src];newban=\ref[M];last_key=[last_ckey]'>Ban</A> |
 		<A href='?src=\ref[src];jobban2=\ref[M]'>Jobban</A> |
-		<A href='?src=\ref[src];notes=show;mob=\ref[M]'>Notes</A>
+		<A href='?src=\ref[src];notes=show;mob=\ref[M]'>Notes</A>|
+		<br><br> <A href='?src=\ref[src];say=\ref[M.client]'>SAY LOGS</A>|
+		<A href='?src=\ref[src];emote=\ref[M.client]'>EMOTE LOGS</A>|
+		<A href='?src=\ref[src];ooc=\ref[M.client]'>OOC LOGS</A>|
+		<A href='?src=\ref[src];dsay=\ref[M.client]'>DSAY LOGS</A>|
+		<A href='?src=\ref[src];interact=\ref[M.client]'>INTERACT LOGS</A>|
 	"}
 
 	if(M.client)
