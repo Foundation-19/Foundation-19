@@ -303,6 +303,18 @@
 	l_pocket = /obj/item/book/manual/scp/scisop
 	back = /obj/item/storage/backpack/satchel/pocketbook
 
+/decl/hierarchy/outfit/job/site90/crew/science/thaumaturge
+	name = OUTFIT_JOB_NAME("Thaumaturge")
+	uniform = /obj/item/clothing/under/scp/suittie
+	suit = /obj/item/clothing/suit/wizrobe
+	shoes = /obj/item/clothing/shoes/laceup
+	id_types = list(/obj/item/card/id/sciencelvl4)
+	l_pocket = /obj/item/book/manual/scp/scisop
+	l_ear = /obj/item/device/radio/headset/headset_sci
+	back = /obj/item/storage/backpack/satchel/pocketbook
+	backpack_contents = list(/obj/item/spellbook/student = 1)
+
+
 
 // MISC OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/civ/classd
