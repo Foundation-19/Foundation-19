@@ -10091,11 +10091,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/industrial/hatch/red,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
 "awU" = (
@@ -16202,6 +16197,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
+	},
+/obj/structure/cable/green{
+	icon_state = "2-8"
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
@@ -26390,11 +26388,6 @@
 	name = "Security Center";
 	req_access = list(202)
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
 "bkx" = (
@@ -27671,7 +27664,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/green,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper ULCZ Checkpoint"
@@ -28852,10 +28844,9 @@
 	})
 "iaf" = (
 /obj/structure/cable/green{
-	d1 = 2;
+	d1 = 1;
 	d2 = 4;
-	icon_state = "2-4";
-	dir = 4
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
@@ -29878,13 +29869,12 @@
 	name = "\improper Research Wing Hallways"
 	})
 "kQL" = (
+/obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
-/turf/unsimulated/mineral,
-/area/space)
+/turf/simulated/floor,
+/area/site53/ulcz/hallways)
 "kZh" = (
 /obj/structure/bed/roller,
 /obj/structure/iv_drip,
@@ -30372,11 +30362,6 @@
 /area/site53/llcz/scp012)
 "mfe" = (
 /obj/machinery/door/airlock/glass/medical,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/medicalpost)
 "mfj" = (
@@ -30956,11 +30941,6 @@
 /obj/item/stool,
 /obj/effect/landmark/start{
 	name = "Communications Technician"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/upper_surface/serverfarmcontrol)
@@ -31695,6 +31675,9 @@
 	dir = 9
 	},
 /obj/effect/catwalk_plated/white,
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
 "pCN" = (
@@ -34787,6 +34770,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "2-8"
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
@@ -44046,8 +44032,8 @@ hCq
 vEB
 vEB
 aKI
-aKq
-aKq
+afp
+afp
 aPq
 aPp
 aPp
@@ -47426,8 +47412,8 @@ aPq
 afp
 afp
 yjA
-aKq
-aKq
+afp
+afp
 aPq
 aPp
 aPp
@@ -49220,8 +49206,8 @@ vXz
 dDl
 dDl
 pCH
-aKq
-aKq
+kQL
+kQL
 aPq
 aPp
 aPp
@@ -91327,7 +91313,7 @@ azA
 azA
 azA
 azA
-kQL
+azA
 azA
 azA
 aBo
