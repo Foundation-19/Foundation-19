@@ -29205,12 +29205,6 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
 "jEg" = (
-/obj/machinery/power/breakerbox/activated,
-/obj/structure/cable,
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /turf/simulated/floor,
 /area/site53/surface/bunker)
 "jFN" = (
@@ -30335,11 +30329,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
 "mvM" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /obj/machinery/light,
 /turf/simulated/floor,
 /area/site53/surface/bunker)
@@ -30983,11 +30972,6 @@
 "omz" = (
 /obj/machinery/power/terminal{
 	dir = 1
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -33774,19 +33758,17 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
 "wio" = (
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 4;
+	icon_state = "1-4"
 	},
-/obj/structure/catwalk,
 /turf/simulated/floor,
-/area/site53/surface/bunker)
+/area/site53/lowertrams/hczmaint)
 "wiF" = (
 /obj/structure/table/rack,
 /obj/item/gun/launcher/syringe,
@@ -34528,11 +34510,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "yaM" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -74050,7 +74027,7 @@ aSO
 jpY
 aSO
 yaM
-wio
+tmK
 mvM
 aSO
 aSO
@@ -80811,7 +80788,7 @@ aZv
 aZv
 aZv
 bhu
-bjH
+wio
 ayq
 azA
 azA

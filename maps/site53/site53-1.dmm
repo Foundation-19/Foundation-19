@@ -10711,14 +10711,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/carpet/green,
 /area/site53/llcz/dclass/primaryhallway)
-"zE" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "zF" = (
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
@@ -10804,17 +10796,6 @@
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper Re-education center"
 	})
-"zO" = (
-/obj/machinery/door/airlock/glass/civilian{
-	name = "Library"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/primaryhallway)
 "zP" = (
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
 	id_tag = "cell11door";
@@ -12994,16 +12975,6 @@
 /obj/item/melee/classic_baton,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/cellbubble)
-"Fi" = (
-/obj/machinery/power/apc/hyper{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "Fk" = (
 /obj/item/device/megaphone,
 /obj/structure/table/reinforced,
@@ -17247,7 +17218,7 @@
 	id_tag = "Entity Cage";
 	name = "Entity Cage"
 	},
-/turf/space,
+/turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
 	})
@@ -24417,15 +24388,15 @@ Bh
 CW
 dj
 ud
-zE
-iD
-iD
-zO
-iD
-zB
-zB
-zB
-tk
+uf
+uf
+uf
+kr
+uf
+xT
+xT
+xT
+ym
 yr
 tj
 yA
@@ -24674,7 +24645,7 @@ NY
 Ew
 dj
 kb
-sj
+uf
 kb
 La
 dj
@@ -24931,7 +24902,7 @@ RQ
 rg
 dj
 kb
-Fi
+uf
 vZ
 uf
 dj

@@ -32,7 +32,7 @@
 			log_bad("[bad_msg] lacks an APC.")
 			area_good = 0
 		else if(A.apc && (exemptions & GLOB.using_map.NO_APC))
-			log_bad("[bad_msg] is not supposed to have an APC.")
+			log_bad("[bad_msg] is not supposed to have an APC. APC location: [A.x], [A.y], [A.z]")
 			area_good = 0
 
 		if(!area_good)
