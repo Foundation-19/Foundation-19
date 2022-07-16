@@ -10,6 +10,7 @@
 #define DEBUG
 // END_PREFERENCES
 // BEGIN_INCLUDE
+#include "code\_debugger.dm"
 #include "code\_macros.dm"
 #include "code\_version.dm"
 #include "code\hub.dm"
@@ -19,6 +20,7 @@
 #include "code\__datastructures\priority_queue.dm"
 #include "code\__datastructures\stack.dm"
 #include "code\__defines\__compile_options.dm"
+#include "code\__defines\_click.dm"
 #include "code\__defines\_planes+layers.dm"
 #include "code\__defines\_tick.dm"
 #include "code\__defines\admin.dm"
@@ -122,7 +124,6 @@
 #include "code\_helpers\areas.dm"
 #include "code\_helpers\atmospherics.dm"
 #include "code\_helpers\atom_movables.dm"
-#include "code\_helpers\auxtools.dm"
 #include "code\_helpers\builtin_proc_callers.dm"
 #include "code\_helpers\cmp.dm"
 #include "code\_helpers\files.dm"
