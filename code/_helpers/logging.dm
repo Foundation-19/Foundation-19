@@ -20,7 +20,7 @@
 /proc/log_ss_init(text)
 	game_log("SS", "[text]")
 
-#define WARNING(MSG) warning("[MSG] in [__FILE__] at line [__LINE__] src: [src] usr: [usr].")
+#define WARNING(MSG) warning("[MSG] in [__FILE__] at line [__LINE__] usr: [usr] usr: [usr].")
 //print a warning message to world.log
 /proc/warning(msg)
 	to_world_log("## WARNING: [msg][log_end]")
@@ -81,7 +81,7 @@
 	if (config.log_say)
 		game_log("SAY", text)
 	if(usr)
-		usr.client.say_log += "([time_stamp()]) - [text]"
+		usr.client.say_log += "([time_stamp()]) (<b>[usr.x]X, [usr.y]Y, [usr.z]Z</b>) - [text]. (Location: [get_area(usr)])"
 
 /proc/log_ooc(text)
 	if (config.log_ooc)
@@ -135,7 +135,7 @@
  */
 /proc/log_tgui(user, message, context,
 		datum/tgui_window/window,
-		datum/src_object)
+		datum/usr_object)
 	var/entry = ""
 	// Insert user info
 	if(!user)
@@ -151,12 +151,12 @@
 		entry += " in [context]"
 	else if(window)
 		entry += " in [window.id]"
-	// Resolve src_object
-	if(!src_object && window?.locked_by)
-		src_object = window.locked_by.src_object
-	// Insert src_object info
-	if(src_object)
-		entry += "\nUsing: [src_object.type] [any2ref(src_object)]"
+	// Resolve usr_object
+	if(!usr_object && window?.locked_by)
+		usr_object = window.locked_by.usr_object
+	// Insert usr_object info
+	if(usr_object)
+		entry += "\nUsing: [usr_object.type] [any2ref(usr_object)]"
 	// Insert message
 	if(message)
 		entry += "\n[message]"
@@ -241,7 +241,7 @@
 
 // Helper procs for building detailed log lines
 /datum/proc/get_log_info_line()
-	return "[src] ([type]) ([any2ref(src)])"
+	return "[usr] ([type]) ([any2ref(usr)])"
 
 /area/get_log_info_line()
 	return "[..()] ([isnum(z) ? "[x],[y],[z]" : "0,0,0"])"
@@ -250,7 +250,7 @@
 	return "[..()] ([x],[y],[z]) ([loc ? loc.type : "NULL"])"
 
 /atom/movable/get_log_info_line()
-	var/turf/t = get_turf(src)
+	var/turf/t = get_turf(usr)
 	return "[..()] ([t ? t : "NULL"]) ([t ? "[t.x],[t.y],[t.z]" : "0,0,0"]) ([t ? t.type : "NULL"])"
 
 /mob/get_log_info_line()
