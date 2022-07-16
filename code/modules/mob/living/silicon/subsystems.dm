@@ -27,6 +27,12 @@
 	silicon_subsystems.Cut()
 	. = ..()
 
+/mob/living/silicon/proc/get_silicon_subsystems()
+	.=list()
+	for(var/stat_silicon_subsystem/sub_stat as anything in silicon_subsystems)
+		sub_stat = silicon_subsystems[sub_stat]
+		. += list(list("[sub_stat.name]", "\ref[sub_stat]"))
+
 /mob/living/silicon/proc/init_subsystems()
 	for(var/subsystem_type in silicon_subsystems)
 		init_subsystem(subsystem_type)
@@ -96,12 +102,8 @@
 	..()
 
 /stat_silicon_subsystem/Destroy()
-	qdel(subsystem)
-	subsystem = null
-	. = ..()
+	QDEL_NULL(subsystem)
+	.=..()
 
-/stat_silicon_subsystem/Click(var/mob/given = usr)
-	if (istype(given))
-		subsystem.ui_interact(given, state = ui_state)
-	else
-		subsystem.ui_interact(usr, state = ui_state)
+/stat_silicon_subsystem/Click(location, control, params)
+	subsystem.ui_interact(usr, state = ui_state)

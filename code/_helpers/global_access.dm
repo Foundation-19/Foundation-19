@@ -21,6 +21,8 @@
 			return global.DEPT_FREQS;
 		if("Debug2")
 			return global.Debug2;
+		if("Debugger")
+			return global.Debugger;
 		if("Failsafe")
 			return global.Failsafe;
 		if("GLOB")
@@ -315,8 +317,6 @@
 			return global.assigned_blocks;
 		if("attack_log_repository")
 			return global.attack_log_repository;
-		if("auxtools_debug_server")
-			return global.auxtools_debug_server;
 		if("base_miss_chance")
 			return global.base_miss_chance;
 		if("basic_robolimb")
@@ -926,6 +926,8 @@
 			global.DEPT_FREQS=newval;
 		if("Debug2")
 			global.Debug2=newval;
+		if("Debugger")
+			global.Debugger=newval;
 		if("Failsafe")
 			global.Failsafe=newval;
 		if("GLOB")
@@ -1220,8 +1222,6 @@
 			global.assigned_blocks=newval;
 		if("attack_log_repository")
 			global.attack_log_repository=newval;
-		if("auxtools_debug_server")
-			global.auxtools_debug_server=newval;
 		if("base_miss_chance")
 			global.base_miss_chance=newval;
 		if("basic_robolimb")
@@ -1820,6 +1820,7 @@
 	"CMinutes",
 	"DEPT_FREQS",
 	"Debug2",
+	"Debugger",
 	"Failsafe",
 	"GLOB",
 	"IClog",
@@ -1967,7 +1968,6 @@
 	"assigned",
 	"assigned_blocks",
 	"attack_log_repository",
-	"auxtools_debug_server",
 	"base_miss_chance",
 	"basic_robolimb",
 	"blocked",

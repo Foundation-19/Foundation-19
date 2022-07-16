@@ -63,7 +63,8 @@ SUBSYSTEM_DEF(statpanels)
 				set_MC_tab(target)
 
 		if(target.mob)
-			var/mob/target_mob = target.mob
+			//It's /mob/living/silicon to save some perfomance in the second if
+			var/mob/living/silicon/target_mob = target.mob
 
 			// Handle the examined turf of the stat panel
 			if(target_mob?.listed_turf && num_fires % default_wait == 0)
@@ -73,6 +74,14 @@ SUBSYSTEM_DEF(statpanels)
 
 				else if(target.stat_tab == target_mob?.listed_turf.name || !(target_mob?.listed_turf.name in target.panel_tabs))
 					set_turf_examine_tab(target, target_mob)
+
+			if(istype(target_mob, /mob/living/silicon) && target_mob.silicon_subsystems.len)
+				if(!("Subsystems" in target.panel_tabs))
+					target.stat_panel.send_message("add_borg_subsystems")
+				if(target.stat_tab == "Subsystems")
+					target.stat_panel.send_message("update_borg_subsystems", target_mob.get_silicon_subsystems())
+			else
+				target.stat_panel.send_message("remove_borg_subsystems")
 
 		if(MC_TICK_CHECK)
 			return
