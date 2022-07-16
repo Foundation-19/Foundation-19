@@ -155,7 +155,6 @@
 	department_flag = SCI
 	total_positions = 1
 	spawn_positions = 6
-	//supervisors = "the Research Director and anyone in a higher position than you"
 	economic_power = 4
 	alt_titles = list("Thaumaturgist")
 	minimal_player_age = 10
