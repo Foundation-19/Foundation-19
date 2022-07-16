@@ -3830,7 +3830,6 @@
 /obj/machinery/door/airlock/highsecurity{
 	locked = 1;
 	name = "Entrance Zone Safe Room";
-	tag = "EZsaferoom"
 	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -9167,7 +9166,6 @@
 "FP" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Entrance Zone Safe Room";
-	tag = "EZsaferoom"
 	},
 /obj/structure/cable/green{
 	icon_state = "4-8"

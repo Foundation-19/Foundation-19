@@ -17667,7 +17667,6 @@
 	},
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
 	id_tag = "scp8_interior";
-	tag = "scp8_airlock"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -17915,7 +17914,6 @@
 	},
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
 	id_tag = "scp8_exterior";
-	tag = "scp8_airlock"
 	},
 /obj/machinery/door/blast/regular/open{
 	dir = 8;

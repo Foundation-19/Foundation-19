@@ -387,7 +387,6 @@
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
 	id_tag = "comms_pump";
-	tag = "comms_airlock"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/light,
@@ -5907,14 +5906,12 @@
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
 	id_tag = "comms_interior";
 	locked = 0;
-	tag = "comms_airlock"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/upper_surface/serverfarminterior)
 "aoa" = (
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
 	id_tag = "comms_exterior";
-	tag = "comms_airlock"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/upper_surface/serverfarminterior)
@@ -18726,7 +18723,6 @@
 /obj/machinery/airlock_sensor{
 	id_tag = "comms_sensor";
 	pixel_y = -24;
-	tag = "comms_airlock"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/upper_surface/serverfarminterior)
@@ -21282,7 +21278,6 @@
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
 	id_tag = "comms_interior";
 	locked = 0;
-	tag = "comms_airlock"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/upper_surface/serverfarminterior)
@@ -21340,7 +21335,6 @@
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
 	id_tag = "comms_pump";
-	tag = "comms_airlock"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/structure/sign/warning/vacuum{
@@ -21356,7 +21350,6 @@
 	},
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
 	id_tag = "comms_exterior";
-	tag = "comms_airlock"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/upper_surface/serverfarminterior)

@@ -210,7 +210,6 @@ function run_code_tests {
     run_test "check tags" "python3 tools/TagMatcher/tag-matcher.py ."
     run_test "check punctuation" "python3 tools/PunctuationChecker/punctuation-checker.py ."
     run_test "check icon state limit" "python3 tools/dmitool/check_icon_state_limit.py ."
-    run_test_ci "check changelog builds" "python3 tools/ss13_genchangelog.py html/changelog.html html/changelogs"
 }
 
 function run_byond_tests {
