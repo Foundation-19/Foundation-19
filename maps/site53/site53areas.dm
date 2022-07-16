@@ -355,6 +355,12 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
 
+/area/site53/ulcz/generalpurpose2
+	name = "\improper Second General Purpose Testing Laboratory"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
+
 /area/site53/ulcz/scp078
 	name = "\improper SCP-078"
 	icon_state = "research"
@@ -695,6 +701,11 @@
 
 /area/site53/llcz/dclass/checkequip
 	name = "\improper Primary Checkpoint Equipment"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint1"
+
+/area/site53/llcz/dclass/armory
+	name = "\improper Primary Checkpoint Armory"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint1"
 

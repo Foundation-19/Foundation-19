@@ -366,19 +366,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/surface/surface)
-"bb" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list(201)
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/wood,
-/area/site53/uez/hallway)
 "bc" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -488,14 +475,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/maincontrolroom)
-"bs" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/wood,
-/area/site53/uez/hallway)
 "bt" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -601,14 +580,6 @@
 /area/site53/logistics/logistics{
 	name = "\improper Logistics - Upper"
 	})
-"bC" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/wood,
-/area/site53/uez/hallway)
 "bD" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
@@ -684,14 +655,6 @@
 /obj/structure/filingcabinet,
 /turf/simulated/floor/wood,
 /area/site53/uez/hallway)
-"bP" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood,
-/area/site53/uez/hallway)
 "bQ" = (
 /obj/structure/table/woodentable,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -751,11 +714,6 @@
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect"
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "bZ" = (
@@ -769,19 +727,6 @@
 "cb" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/woodentable_reinforced/mahogany,
-/turf/simulated/floor/carpet/purple,
-/area/site53/uez/hallway)
-"cc" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list(201)
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "cd" = (
@@ -800,14 +745,6 @@
 /area/site53/uez/hallway)
 "cg" = (
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/hallway)
-"ch" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
 "ci" = (
 /turf/simulated/floor/wood/mahogany,
@@ -836,14 +773,6 @@
 	send_access = list(605)
 	},
 /obj/structure/table/woodentable_reinforced/mahogany,
-/turf/simulated/floor/carpet/purple,
-/area/site53/uez/hallway)
-"cn" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "co" = (
@@ -910,11 +839,6 @@
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cx" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/structure/railing/mapped{
 	dir = 1
 	},
@@ -995,19 +919,6 @@
 /obj/effect/paint_stripe/blue,
 /turf/simulated/wall/prepainted,
 /area/site53/uez/hallway)
-"cG" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/lino,
-/area/site53/uez/hallway)
 "cH" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1074,65 +985,21 @@
 /obj/structure/lattice,
 /turf/simulated/open,
 /area/site53/uez/mcrsubstation)
-"cQ" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/wood/mahogany,
-/area/site53/uez/hallway)
-"cR" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/wood/mahogany,
-/area/site53/uez/hallway)
 "cS" = (
 /obj/machinery/door/airlock/command{
 	name = "Site Director's Office";
 	req_access = list(605)
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect"
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
-"cT" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/carpet/blue,
-/area/site53/uez/hallway)
 "cU" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/structure/bed/chair/office,
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cV" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
@@ -1142,11 +1009,6 @@
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
@@ -1192,25 +1054,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/structure/coatrack,
-/turf/simulated/floor/carpet/purple,
-/area/site53/uez/hallway)
-"de" = (
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list(201)
-	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "df" = (
@@ -1269,11 +1113,6 @@
 /turf/simulated/floor/tiled,
 /area/site53/uez/hallway)
 "dl" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/keycard_auth{
 	pixel_x = -28;
 	req_access = list(304,504,303)
@@ -1431,14 +1270,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
 /area/site53/uez/hallway)
-"dG" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/hallway)
 "dH" = (
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect"
@@ -1458,18 +1289,9 @@
 /area/site53/uez/hallway)
 "dK" = (
 /obj/structure/closet/secure_closet/mtf/commander,
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "west bump";
-	pixel_x = -24
-	},
 /obj/machinery/light{
 	dir = 1;
 	icon_state = "tube1"
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
 	},
 /obj/item/folder,
 /obj/item/folder/blue,
@@ -1502,47 +1324,15 @@
 /area/site53/uez/hallway)
 "dO" = (
 /obj/machinery/light,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/filingcabinet,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/hallway)
-"dP" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/hallway)
 "dQ" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/papershredder,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/hallway)
-"dR" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/hallway)
 "dS" = (
 /obj/machinery/light,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/hallway)
 "dT" = (
@@ -1551,11 +1341,6 @@
 	icon_state = "closed";
 	name = "Research Director";
 	req_access = list(305)
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect"
@@ -1567,20 +1352,7 @@
 	name = "Security Commander's Office";
 	req_access = list(205)
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/hallway)
-"dV" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/hallway)
 "dW" = (
 /turf/simulated/floor/tiled/techmaint,
@@ -1589,11 +1361,6 @@
 /obj/machinery/door/airlock/glass/command{
 	name = "Chief Medical Officer";
 	req_access = list(405)
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/hallway)
@@ -1628,11 +1395,6 @@
 	name = "Chief Engineer";
 	req_access = list(505)
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/hallway)
 "ed" = (
@@ -1653,25 +1415,7 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
 /area/site53/uez/hallway)
-"eh" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/hallway)
 "ei" = (
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list(201)
-	},
 /obj/structure/coatrack,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/hallway)
@@ -1764,20 +1508,6 @@
 	id_tag = "bridgecorelockdown"
 	},
 /turf/simulated/floor/lino,
-/area/site53/uez/hallway)
-"er" = (
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list(201)
-	},
-/obj/structure/filingcabinet,
-/turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/hallway)
 "es" = (
 /obj/machinery/light{
@@ -1874,19 +1604,6 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/commstower)
-"eI" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/lino,
-/area/site53/uez/hallway)
 "eJ" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
@@ -2569,11 +2286,6 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
 "gx" = (
@@ -2653,11 +2365,6 @@
 /area/site53/upper_surface/commstower)
 "gL" = (
 /obj/machinery/light,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
 "gM" = (
@@ -2669,11 +2376,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
 "gN" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/camera/autoname{
 	dir = 1;
 	network = list("Entrance Zone Network")
@@ -32609,8 +32311,8 @@ hk
 cF
 dd
 dl
-cn
-dG
+cd
+dh
 dO
 cF
 hk
@@ -32864,11 +32566,11 @@ hk
 hk
 hk
 cF
-de
+cd
 dm
 dD
 dh
-dP
+gt
 cF
 hk
 hk
@@ -33382,7 +33084,7 @@ dg
 dp
 dh
 dh
-dR
+dh
 cF
 hk
 hk
@@ -33639,7 +33341,7 @@ dh
 dh
 dh
 dh
-dR
+dh
 cF
 hk
 hk
@@ -34410,9 +34112,9 @@ cd
 dr
 ac
 ev
-eI
+bK
 dX
-eh
+dh
 dh
 dh
 gh
@@ -34667,7 +34369,7 @@ cd
 ca
 ac
 bK
-fT
+bK
 dY
 ei
 dh
@@ -34924,7 +34626,7 @@ ac
 ac
 ac
 eB
-fT
+bK
 dY
 ej
 dh
@@ -35181,7 +34883,7 @@ dk
 ds
 ac
 bK
-fT
+bK
 dY
 dq
 dh
@@ -35429,16 +35131,16 @@ hk
 ac
 aM
 ac
-cc
-cn
-cn
-cQ
+cd
+cd
+cd
+ci
 ci
 ci
 ci
 ac
 bK
-fT
+bK
 dY
 ek
 dh
@@ -35689,13 +35391,13 @@ ac
 cd
 co
 Rd
-cR
+ci
 ci
 ci
 dt
 ac
 bK
-fT
+bK
 dY
 dY
 dY
@@ -35946,13 +35648,13 @@ ac
 ce
 cq
 cu
-cR
+ci
 po
 uZ
 rc
 ac
 ev
-fT
+bK
 dZ
 el
 fl
@@ -36209,7 +35911,7 @@ bX
 bX
 ac
 bK
-fT
+bK
 dZ
 em
 fl
@@ -36460,13 +36162,13 @@ bX
 cf
 cr
 cv
-cT
+cg
 cY
 cg
 dx
 ac
 bK
-fT
+bK
 dZ
 en
 dW
@@ -36709,8 +36411,8 @@ hk
 hk
 hk
 ae
-bb
-bs
+aV
+aV
 aV
 aV
 bX
@@ -36723,9 +36425,9 @@ cg
 dB
 ac
 bK
-fT
+bK
 dZ
-er
+fm
 dW
 fH
 go
@@ -36967,12 +36669,12 @@ hk
 hk
 ae
 aV
-bC
-bP
-bP
+aV
+aV
+aV
 bY
-ch
-ch
+ci
+ci
 cx
 cV
 db
@@ -36980,9 +36682,9 @@ ci
 dC
 ac
 eB
-eI
+bK
 ec
-dV
+dW
 dW
 dW
 gp
@@ -37231,13 +36933,13 @@ bX
 ci
 ci
 ci
-cR
+ci
 ci
 ci
 dt
 ac
 bK
-fT
+bK
 dZ
 dZ
 dZ
@@ -37488,13 +37190,13 @@ bX
 cj
 cj
 ct
-cR
+ci
 ct
 cj
 cj
 ac
 ev
-eI
+cC
 bE
 dz
 bF
@@ -38002,7 +37704,7 @@ bK
 bK
 cC
 cE
-cG
+cH
 cE
 cH
 cH
@@ -40321,7 +40023,7 @@ eN
 eN
 eu
 bK
-fT
+bK
 gT
 gT
 gT
@@ -41092,7 +40794,7 @@ ex
 eF
 eu
 bK
-fT
+bK
 eA
 gs
 gT
@@ -41349,7 +41051,7 @@ ex
 ex
 ey
 bK
-fT
+bK
 eA
 UU
 gT
@@ -41606,7 +41308,7 @@ ex
 ex
 ex
 bK
-fT
+bK
 eA
 fu
 gT
@@ -42120,7 +41822,7 @@ aw
 gi
 dF
 dK
-dV
+dW
 dW
 fd
 fm

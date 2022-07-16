@@ -483,7 +483,9 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
+/area/site53/llcz/dclass/cells{
+	name = "\improper D-Class Cell"
+	})
 "bH" = (
 /obj/machinery/button/blast_door{
 	id_tag = "D-Class Reward Room";
@@ -1207,7 +1209,9 @@
 	req_access = list(202)
 	},
 /turf/simulated/floor,
-/area/site53/llcz/dclass/isolation)
+/area/site53/llcz/dclass/cells{
+	name = "\improper D-Class Cell"
+	})
 "dR" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -2770,21 +2774,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchenbotanybubble)
-"hE" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled/old_tile,
-/area/site53/llcz/mining/miningops{
-	name = "\improper D Class Mining Operations"
-	})
 "hF" = (
 /obj/machinery/light{
 	dir = 4;
@@ -2851,11 +2840,6 @@
 	dir = 8;
 	icon_state = "closed";
 	name = "Mining Factory"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
@@ -3216,16 +3200,6 @@
 /obj/item/clothing/head/ushanka,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mine/unexplored)
-"iw" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops{
-	name = "\improper D Class Mining Operations"
-	})
 "ix" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -3679,16 +3653,6 @@
 /area/site53/llcz/mining/miningops{
 	name = "\improper D Class Mining Operations"
 	})
-"jA" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops{
-	name = "\improper D Class Mining Operations"
-	})
 "jB" = (
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -3940,7 +3904,7 @@
 	name = "bookshelf"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/luxurylibrary)
+/area/site53/llcz/dclass/primaryhallway)
 "kc" = (
 /obj/machinery/light{
 	dir = 4;
@@ -3990,13 +3954,14 @@
 /turf/simulated/floor/lino,
 /area/site53/llcz/dclass/canteen)
 "kg" = (
-/obj/machinery/power/apc{
-	dir = 8
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/structure/cable/green,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/llcz/mining/miningops{
-	name = "\improper D Class Mining Operations"
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/cells{
+	name = "\improper D-Class Cell"
 	})
 "kh" = (
 /obj/machinery/light{
@@ -4072,7 +4037,7 @@
 	name = "Library"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/luxurylibrary)
+/area/site53/llcz/dclass/primaryhallway)
 "ks" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
@@ -4287,10 +4252,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/checkpoint)
-"kL" = (
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/luxurylibrary)
 "kM" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5618,18 +5579,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
-"nL" = (
-/obj/machinery/power/apc{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "nM" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/railing/mapped,
@@ -6959,7 +6908,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/green,
-/area/site53/llcz/dclass/luxurylibrary)
+/area/site53/llcz/dclass/primaryhallway)
 "qS" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8135,13 +8084,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "tx" = (
-/obj/machinery/power/apc{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -9514,12 +9456,6 @@
 /area/site53/llcz/dclass/cells{
 	name = "\improper D-Class Cell"
 	})
-"wo" = (
-/obj/machinery/camera/network/lcz{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/luxurylibrary)
 "wp" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -10045,7 +9981,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/green,
-/area/site53/llcz/dclass/luxurylibrary)
+/area/site53/llcz/dclass/primaryhallway)
 "xE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -10105,40 +10041,44 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
 "xJ" = (
-/obj/machinery/light{
-	dir = 1
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/flasher{
+	id_tag = "d-class_corridor"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/luxurylibrary)
+/area/site53/llcz/dclass/cells{
+	name = "\improper D-Class Cell"
+	})
 "xK" = (
 /obj/machinery/light/small{
 	dir = 8;
 	icon_state = "bulb1"
 	},
 /turf/simulated/floor/carpet/green,
-/area/site53/llcz/dclass/luxurylibrary)
+/area/site53/llcz/dclass/primaryhallway)
 "xL" = (
 /turf/simulated/floor/carpet/green,
-/area/site53/llcz/dclass/luxurylibrary)
+/area/site53/llcz/dclass/primaryhallway)
 "xM" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Reading Room 2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/luxurylibrary)
+/area/site53/llcz/dclass/primaryhallway)
 "xN" = (
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/luxurylibrary)
+/area/site53/llcz/dclass/cells{
+	name = "\improper D-Class Cell"
+	})
 "xO" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Reading Room 1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/luxurylibrary)
+/area/site53/llcz/dclass/primaryhallway)
 "xP" = (
 /obj/structure/table/woodentable,
 /obj/machinery/light/small{
@@ -10146,7 +10086,7 @@
 	icon_state = "bulb1"
 	},
 /turf/simulated/floor/carpet/green,
-/area/site53/llcz/dclass/luxurylibrary)
+/area/site53/llcz/dclass/primaryhallway)
 "xQ" = (
 /obj/structure/flora/pottedplant,
 /obj/machinery/light{
@@ -10172,7 +10112,7 @@
 	desc = "This is a decorative shrub."
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/luxuryhall)
+/area/site53/llcz/dclass/primaryhallway)
 "xW" = (
 /obj/machinery/camera/network/scp106{
 	dir = 4;
@@ -10301,14 +10241,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
-"yn" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/luxurylibrary)
 "yo" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
@@ -10325,13 +10257,11 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost)
 "yq" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/luxurylibrary)
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/cells{
+	name = "\improper D-Class Cell"
+	})
 "yr" = (
 /obj/machinery/camera/network/lcz{
 	dir = 1
@@ -10736,9 +10666,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
-"zy" = (
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/luxurylibrary)
 "zz" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -10783,7 +10710,7 @@
 /obj/structure/table/woodentable,
 /obj/machinery/light/small,
 /turf/simulated/floor/carpet/green,
-/area/site53/llcz/dclass/luxurylibrary)
+/area/site53/llcz/dclass/primaryhallway)
 "zE" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -10791,7 +10718,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/luxurylibrary)
+/area/site53/llcz/dclass/primaryhallway)
 "zF" = (
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
@@ -10887,7 +10814,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/luxurylibrary)
+/area/site53/llcz/dclass/primaryhallway)
 "zP" = (
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
 	id_tag = "cell11door";
@@ -12635,9 +12562,6 @@
 	id_tag = "d-class_corridor";
 	pixel_y = -16
 	},
-/obj/machinery/power/apc/hyper{
-	dir = 1
-	},
 /obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
@@ -12894,14 +12818,16 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
+/area/site53/llcz/dclass/cells{
+	name = "\improper D-Class Cell"
+	})
 "EJ" = (
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/luxurylibrary)
+/area/site53/llcz/dclass/primaryhallway)
 "EK" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/machinery/light{
@@ -13077,7 +13003,7 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/luxurylibrary)
+/area/site53/llcz/dclass/primaryhallway)
 "Fk" = (
 /obj/item/device/megaphone,
 /obj/structure/table/reinforced,
@@ -13146,7 +13072,9 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
+/area/site53/llcz/dclass/cells{
+	name = "\improper D-Class Cell"
+	})
 "FL" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
@@ -13511,7 +13439,9 @@
 	req_access = list(300)
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
+/area/site53/llcz/dclass/cells{
+	name = "\improper D-Class Cell"
+	})
 "GV" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
@@ -15786,11 +15716,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment{
 	name = "\improper Biohazard Test Chamber"
@@ -16327,21 +16252,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/hallway)
-"Pv" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
-	})
 "Pw" = (
 /obj/structure/closet/secure_closet/freezer/meat,
 /turf/simulated/floor/tiled/freezer,
@@ -17393,19 +17303,13 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
 "Uz" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list(301)
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
 	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/tiled,
-/area/site53/uhcz/scp8containment{
-	name = "\improper Biohazard Test Chamber"
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/cells{
+	name = "\improper D-Class Cell"
 	})
 "UE" = (
 /obj/machinery/light{
@@ -17666,7 +17570,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
-	id_tag = "scp8_interior";
+	id_tag = "scp8_interior"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -17913,7 +17817,7 @@
 	dir = 14
 	},
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
-	id_tag = "scp8_exterior";
+	id_tag = "scp8_exterior"
 	},
 /obj/machinery/door/blast/regular/open{
 	dir = 8;
@@ -22712,8 +22616,8 @@ gq
 gq
 gq
 gq
-kL
-kL
+dj
+dj
 dj
 dj
 dj
@@ -22969,13 +22873,13 @@ ie
 ie
 ie
 ie
-kL
+dj
 qR
 xK
-kL
+dj
 xK
 qR
-kL
+dj
 xT
 xT
 en
@@ -23226,13 +23130,13 @@ uD
 bk
 CR
 JX
-kL
+dj
 xP
 xL
-kL
+dj
 xL
 zD
-kL
+dj
 xT
 xT
 xT
@@ -23483,13 +23387,13 @@ bM
 Bh
 Bh
 Kd
-kL
+dj
 xD
 xL
-kL
+dj
 xL
 xD
-kL
+dj
 xT
 xT
 xT
@@ -23740,13 +23644,13 @@ RJ
 Bh
 Bh
 Ke
-kL
-kL
+dj
+dj
 xM
-kL
+dj
 xO
-kL
-kL
+dj
+dj
 zR
 xT
 xT
@@ -23997,12 +23901,12 @@ Ae
 Bh
 JW
 Kg
-kL
+dj
 kb
-zy
+uf
 EJ
-zy
-kL
+uf
+dj
 xU
 xT
 xT
@@ -24254,13 +24158,13 @@ CV
 Bh
 Bh
 Kh
-kL
+dj
 kb
-zy
+uf
 kb
-zy
+uf
 kr
-xT
+uf
 xT
 xT
 xT
@@ -24511,13 +24415,13 @@ jW
 Bh
 Bh
 CW
-kL
-xJ
+dj
+ud
 zE
-yq
-yq
+iD
+iD
 zO
-zB
+iD
 zB
 zB
 zB
@@ -24768,12 +24672,12 @@ CP
 Bh
 NY
 Ew
-kL
+dj
 kb
-yn
+sj
 kb
-wo
-kL
+La
+dj
 xU
 xT
 xT
@@ -25025,13 +24929,13 @@ CO
 vu
 RQ
 rg
-kL
+dj
 kb
 Fi
-xN
-zy
-kL
-kL
+vZ
+uf
+dj
+dj
 zA
 xT
 xT
@@ -26837,21 +26741,21 @@ uf
 bf
 iD
 bF
-iD
-iD
-iD
-iD
+kg
+kg
+kg
+kg
 FA
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-uf
+sM
+sM
+sM
+sM
+sM
+sM
+sM
+sM
+sM
+sM
 dQ
 ob
 wG
@@ -27093,23 +26997,23 @@ uf
 eZ
 sj
 uf
-eZ
-uf
-uf
-eZ
-uf
-uf
-eZ
-uf
-uf
-eZ
-uf
-uf
-eZ
-uf
-uf
-eZ
-wG
+xJ
+sM
+sM
+xJ
+sM
+sM
+xJ
+sM
+sM
+xJ
+sM
+sM
+xJ
+sM
+sM
+xJ
+zF
 oe
 wG
 wG
@@ -27350,23 +27254,23 @@ uf
 uf
 sj
 uf
-uf
-uf
-vZ
-uf
+sM
+sM
+Uz
+sM
 EI
 GU
-vZ
-uf
-uf
-uf
-uf
-uf
-uf
-uf
-nW
-uf
-qu
+Uz
+sM
+sM
+sM
+sM
+sM
+sM
+sM
+xN
+sM
+yq
 qu
 qu
 qu
@@ -38904,7 +38808,7 @@ Lp
 hc
 DX
 DX
-hE
+hh
 hh
 hh
 kz
@@ -39161,7 +39065,7 @@ TX
 gu
 yw
 yw
-hb
+gu
 gu
 jZ
 hk
@@ -39418,7 +39322,7 @@ TX
 he
 hi
 gu
-hb
+gu
 gu
 kc
 ju
@@ -39932,9 +39836,9 @@ pC
 pC
 hk
 hr
-iw
-jA
-kg
+hr
+hr
+hr
 kD
 hr
 hr
@@ -73031,7 +72935,7 @@ pe
 pe
 OM
 VG
-nL
+pe
 pe
 xe
 gq
@@ -74561,8 +74465,8 @@ WI
 Br
 PV
 xe
-Uz
-Pv
+id
+BG
 QA
 Nr
 SP

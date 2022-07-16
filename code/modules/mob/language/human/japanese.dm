@@ -3,7 +3,7 @@
 	desc = "'Standard Nihongo Japanese', mostly just known as Japanese, is the official language of Japan.\
 			 It is based on the Kanto dialect of Japan and is the language of some english speakers."
 	colour = "japanese"
-	key = "6"
+	key = "e"
 	shorthand = "Jap"
 	space_chance = 25
 	whisper_verb = "whispers"

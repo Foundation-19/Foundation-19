@@ -109,7 +109,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aap" = (
 /obj/machinery/computer/shuttle_control{
@@ -386,7 +386,7 @@
 "abd" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
-	id_tag = "comms_pump";
+	id_tag = "comms_pump"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/light,
@@ -1731,7 +1731,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aeF" = (
 /obj/structure/sign/scp/radiation,
@@ -3139,9 +3139,7 @@
 /area/site53/lowertrams/maintenance)
 "ahO" = (
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "ahP" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -4427,7 +4425,7 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "akI" = (
 /obj/structure/table/steel_reinforced,
@@ -4864,7 +4862,7 @@
 /obj/item/clothing/head/bio_hood/security,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "alG" = (
 /obj/effect/paint_stripe/green,
@@ -5200,7 +5198,7 @@
 /obj/item/clothing/head/bio_hood/security,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "amB" = (
 /obj/structure/bed/chair{
@@ -5905,13 +5903,13 @@
 "anZ" = (
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
 	id_tag = "comms_interior";
-	locked = 0;
+	locked = 0
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/upper_surface/serverfarminterior)
 "aoa" = (
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
-	id_tag = "comms_exterior";
+	id_tag = "comms_exterior"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/upper_surface/serverfarminterior)
@@ -6202,9 +6200,7 @@
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/item/ammo_magazine/scp/p90_mag,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "aoO" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -9463,9 +9459,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "avy" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/green{
@@ -11862,7 +11856,7 @@
 /obj/item/clothing/head/bio_hood/security,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aAJ" = (
 /obj/structure/cable{
@@ -13288,9 +13282,7 @@
 "aDI" = (
 /obj/structure/closet/secure_closet/mtf/breachshotguns,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "aDJ" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
@@ -13546,7 +13538,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aEl" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -13629,7 +13621,7 @@
 /obj/item/crowbar/red,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aEw" = (
 /obj/structure/closet/secure_closet/mtf/enlisted,
@@ -13643,7 +13635,7 @@
 /obj/item/crowbar/red,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aEx" = (
 /obj/structure/closet/l3closet,
@@ -13695,13 +13687,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/redline)
 "aEE" = (
-/obj/machinery/power/apc/hyper{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /obj/machinery/photocopier/faxmachine{
 	department = "HCZ Security Center";
 	send_access = list(203)
@@ -13948,7 +13933,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aFi" = (
 /obj/structure/bed/chair,
@@ -16617,17 +16602,10 @@
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurant)
 "aLM" = (
-/obj/machinery/power/apc/hyper{
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurant)
@@ -16852,9 +16830,7 @@
 /obj/item/ammo_magazine/box/a556,
 /obj/item/ammo_magazine/box/a556,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "aMv" = (
 /obj/structure/closet/secure_closet/mtf/breachautomatics,
 /obj/item/ammo_magazine/box/a556,
@@ -16868,9 +16844,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "aMw" = (
 /obj/machinery/light{
 	dir = 4;
@@ -16916,9 +16890,7 @@
 /obj/item/ammo_magazine/scp/mk9,
 /obj/item/ammo_magazine/scp/mk9,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "aMy" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
@@ -16965,9 +16937,7 @@
 "aMC" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper ULCZ Secure Armoury"
-	})
+/area/site53/llcz/dclass/armory)
 "aMD" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
@@ -16981,9 +16951,7 @@
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "aMG" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
@@ -17112,9 +17080,7 @@
 /obj/item/ammo_magazine/box/a10mm,
 /obj/item/ammo_magazine/box/a10mm,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "aMR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -17137,13 +17103,6 @@
 	name = "\improper ULCZ Checkpoint"
 	})
 "aMU" = (
-/obj/machinery/power/apc/hyper{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
@@ -17212,9 +17171,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "aNd" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -17378,7 +17335,7 @@
 /obj/effect/paint/silver,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aNt" = (
 /obj/machinery/light{
@@ -17517,7 +17474,7 @@
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aNI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -17591,7 +17548,7 @@
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aNQ" = (
 /obj/structure/bed/chair{
@@ -18497,9 +18454,7 @@
 	icon_state = "4-8"
 	},
 /turf/space,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "aPX" = (
 /obj/machinery/telecomms/server/presets/security,
 /turf/simulated/floor/bluegrid/airless,
@@ -18722,7 +18677,7 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/airlock_sensor{
 	id_tag = "comms_sensor";
-	pixel_y = -24;
+	pixel_y = -24
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/upper_surface/serverfarminterior)
@@ -19409,7 +19364,7 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aTs" = (
 /obj/machinery/photocopier/faxmachine{
@@ -19419,7 +19374,7 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aTu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
@@ -19438,7 +19393,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aTw" = (
 /obj/effect/floor_decal/corner/yellow{
@@ -19450,7 +19405,7 @@
 /obj/effect/floor_decal/corner/black/diagonal,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aTA" = (
 /obj/item/storage/mirror{
@@ -19462,7 +19417,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aTB" = (
 /obj/structure/closet/secure_closet/personal,
@@ -19472,7 +19427,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aTE" = (
 /obj/structure/closet/crate/bin{
@@ -19482,7 +19437,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aTF" = (
 /obj/effect/floor_decal/corner/red/mono,
@@ -19502,7 +19457,7 @@
 /obj/structure/closet/secure_closet/personal,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aTI" = (
 /obj/machinery/door/airlock/civilian{
@@ -19510,26 +19465,26 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aTJ" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aTL" = (
 /obj/structure/railing/mapped,
 /obj/structure/flora/pottedplant,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aTM" = (
 /obj/structure/stairs/north,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aTN" = (
 /obj/structure/cable/green{
@@ -19577,13 +19532,11 @@
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/item/ammo_magazine/scp/p90_mag,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "aTT" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aTW" = (
 /obj/machinery/button/blast_door{
@@ -19605,7 +19558,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUa" = (
 /obj/structure/closet/crate/bin{
@@ -19615,7 +19568,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUb" = (
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -19653,7 +19606,7 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUh" = (
 /obj/structure/window/reinforced{
@@ -19663,7 +19616,7 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUi" = (
 /obj/structure/window/reinforced{
@@ -19675,7 +19628,7 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUj" = (
 /obj/structure/table/steel_reinforced,
@@ -19691,13 +19644,13 @@
 /obj/machinery/vending/fitness,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUo" = (
 /obj/machinery/vending/snack,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUp" = (
 /obj/structure/table/reinforced,
@@ -19708,7 +19661,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUr" = (
 /obj/structure/bed/chair/office/light{
@@ -19716,7 +19669,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUt" = (
 /obj/structure/window/reinforced{
@@ -19725,7 +19678,7 @@
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUu" = (
 /obj/structure/bed/chair/office/light{
@@ -19733,7 +19686,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUv" = (
 /obj/structure/window/reinforced{
@@ -19743,13 +19696,13 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUw" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUx" = (
 /obj/structure/bed/chair/office/light{
@@ -19761,7 +19714,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUy" = (
 /obj/effect/floor_decal/spline/plain/blue{
@@ -19769,7 +19722,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUz" = (
 /obj/effect/floor_decal/spline/plain/blue{
@@ -19777,7 +19730,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUA" = (
 /obj/effect/floor_decal/spline/plain/blue{
@@ -19785,7 +19738,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUB" = (
 /obj/machinery/vending/cola,
@@ -19796,13 +19749,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUE" = (
 /obj/effect/floor_decal/corner/grey/diagonal,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUF" = (
 /obj/machinery/door/airlock/glass/security{
@@ -19811,7 +19764,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUH" = (
 /obj/machinery/door/airlock/glass/security{
@@ -19819,7 +19772,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUI" = (
 /obj/effect/floor_decal/spline/plain/blue{
@@ -19827,7 +19780,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUJ" = (
 /obj/machinery/light{
@@ -19841,7 +19794,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUK" = (
 /obj/effect/floor_decal/spline/plain/blue{
@@ -19849,13 +19802,13 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUL" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUM" = (
 /obj/structure/window/reinforced{
@@ -19865,13 +19818,13 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUN" = (
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUO" = (
 /obj/structure/window/reinforced{
@@ -19880,7 +19833,7 @@
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUP" = (
 /obj/effect/floor_decal/spline/plain/blue{
@@ -19888,13 +19841,13 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUQ" = (
 /obj/effect/floor_decal/spline/plain/blue,
 /turf/simulated/floor/wood,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUR" = (
 /obj/effect/floor_decal/spline/plain/blue{
@@ -19902,7 +19855,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUU" = (
 /obj/structure/bed/chair{
@@ -19935,7 +19888,7 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aUZ" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -19947,7 +19900,7 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVb" = (
 /obj/structure/table/standard,
@@ -19962,26 +19915,6 @@
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper ULCZ Checkpoint"
 	})
-"aVd" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper ULCZ Checkpoint"
-	})
-"aVe" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper ULCZ Checkpoint"
-	})
 "aVf" = (
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
@@ -19990,7 +19923,7 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVg" = (
 /obj/machinery/photocopier/faxmachine{
@@ -20019,11 +19952,6 @@
 	id_tag = "ULCZ Checkpoint Booth Exit";
 	name = "ULCZ Checkpoint Booth Exit"
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper ULCZ Checkpoint"
@@ -20034,7 +19962,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVl" = (
 /obj/structure/bed/chair{
@@ -20046,7 +19974,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVm" = (
 /obj/structure/bed/chair{
@@ -20059,7 +19987,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVo" = (
 /obj/structure/cable/green{
@@ -20070,7 +19998,7 @@
 /obj/machinery/vending/security,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVp" = (
 /obj/machinery/light_switch{
@@ -20078,7 +20006,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVq" = (
 /obj/machinery/light{
@@ -20093,7 +20021,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVr" = (
 /obj/machinery/door/window/brigdoor/eastright{
@@ -20101,7 +20029,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVs" = (
 /obj/structure/cable/green{
@@ -20112,7 +20040,7 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVu" = (
 /obj/machinery/door/window/brigdoor/westleft{
@@ -20125,7 +20053,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVv" = (
 /obj/effect/paint_stripe/red,
@@ -20145,7 +20073,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVy" = (
 /obj/structure/cable/green{
@@ -20155,7 +20083,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVz" = (
 /obj/effect/catwalk_plated/white,
@@ -20170,13 +20098,13 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVA" = (
 /obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVB" = (
 /obj/effect/catwalk_plated/white,
@@ -20195,7 +20123,7 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVE" = (
 /obj/machinery/button/blast_door{
@@ -20212,7 +20140,7 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVH" = (
 /obj/effect/paint_stripe/gray,
@@ -20236,7 +20164,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVL" = (
 /obj/effect/floor_decal/corner/grey/diagonal,
@@ -20245,7 +20173,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVM" = (
 /obj/effect/landmark/start{
@@ -20253,7 +20181,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aVN" = (
 /obj/machinery/light{
@@ -20811,7 +20739,7 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "aXi" = (
 /obj/structure/cable/green{
@@ -20907,7 +20835,7 @@
 "aXp" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "aXq" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -20915,12 +20843,12 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "aXs" = (
 /obj/structure/bed/chair,
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "aXt" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/grass,
@@ -20934,7 +20862,7 @@
 	req_access = list(301)
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "aXx" = (
 /obj/item/device/flashlight/lamp,
 /obj/machinery/alarm{
@@ -20943,7 +20871,7 @@
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "aXy" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -20955,7 +20883,7 @@
 "aXz" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "aXA" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
@@ -20966,7 +20894,7 @@
 	icon_state = "officechair_white_preview"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "aXC" = (
 /obj/machinery/light/small,
 /obj/structure/closet/l3closet,
@@ -20987,7 +20915,7 @@
 "aXD" = (
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "aXE" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
@@ -21277,7 +21205,7 @@
 	},
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
 	id_tag = "comms_interior";
-	locked = 0;
+	locked = 0
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/upper_surface/serverfarminterior)
@@ -21334,7 +21262,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
 	dir = 8;
-	id_tag = "comms_pump";
+	id_tag = "comms_pump"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/structure/sign/warning/vacuum{
@@ -21349,7 +21277,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/external/glass/bolted/cycling{
-	id_tag = "comms_exterior";
+	id_tag = "comms_exterior"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/upper_surface/serverfarminterior)
@@ -22257,7 +22185,7 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "bbk" = (
 /obj/effect/floor_decal/corner/blue/full,
@@ -22760,7 +22688,7 @@
 /obj/effect/floor_decal/industrial/outline/orange,
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "bcZ" = (
 /obj/machinery/power/apc{
 	dir = 8;
@@ -22772,7 +22700,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "bda" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -22780,7 +22708,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "bdb" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -22793,7 +22721,7 @@
 /obj/item/device/tape/random,
 /obj/item/device/tape/random,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "bdd" = (
 /obj/machinery/door/airlock/highsecurity{
 	id_tag = "livingenclosure";
@@ -22811,7 +22739,7 @@
 /obj/item/crowbar/red,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "bdf" = (
 /obj/effect/paint_stripe/gray,
@@ -24263,9 +24191,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "bhi" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "ULCZ Secure Armoury";
@@ -24305,7 +24231,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "bho" = (
 /obj/machinery/power/apc/hyper{
@@ -24313,9 +24239,7 @@
 	},
 /obj/structure/cable/green,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "bhp" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
@@ -24346,9 +24270,7 @@
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "bhq" = (
 /obj/structure/table/rack,
 /obj/item/gun/projectile/pistol/mk9,
@@ -24358,9 +24280,7 @@
 /obj/item/gun/projectile/pistol/mk9,
 /obj/item/gun/projectile/pistol/mk9,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "bhr" = (
 /obj/structure/table/rack,
 /obj/item/gun/projectile/automatic/scp/p90,
@@ -24370,9 +24290,7 @@
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/item/gun/projectile/automatic/scp/p90,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
-	})
+/area/site53/llcz/dclass/armory)
 "bhu" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -24521,24 +24439,16 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/catwalk_plated/white,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
 "bhE" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 8;
+	icon_state = "1-8"
 	},
-/turf/simulated/floor,
-/area/site53/ulcz/hallways)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "bhF" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/monotile,
@@ -24557,11 +24467,6 @@
 	icon_state = "2-8"
 	},
 /obj/effect/catwalk_plated/white,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
 "bhI" = (
@@ -24825,11 +24730,6 @@
 	id_tag = "HCZ Secure Armoury";
 	name = "HCZ Secure Armoury"
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/space,
 /area/site53/zonecommanderoffice{
 	name = "\improper Heavy Containment Zone Equipment Room"
@@ -24839,32 +24739,10 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/securitypost)
-"bif" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/blast/regular/open{
-	begins_closed = 1;
-	icon_state = "pdoor0";
-	id_tag = "HCZ Secure Armoury";
-	name = "HCZ Secure Armoury"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/zonecommanderoffice{
-	name = "\improper Heavy Containment Zone Equipment Room"
-	})
 "big" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/zonecommanderoffice{
-	name = "\improper Heavy Containment Zone Equipment Room"
-	})
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/generalpurpose2)
 "bih" = (
 /obj/machinery/light{
 	dir = 1;
@@ -24934,19 +24812,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/hallways)
 "bim" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/obj/machinery/door/blast/regular/open{
-	begins_closed = 1;
-	icon_state = "pdoor0";
-	id_tag = "HCZ Secure Armoury";
-	name = "HCZ Secure Armoury"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/zonecommanderoffice{
-	name = "\improper Heavy Containment Zone Equipment Room"
-	})
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/generalpurpose2)
 "bin" = (
 /obj/machinery/door/airlock/multi_tile/research{
 	req_access = list(list(203,304))
@@ -25086,22 +24954,8 @@
 	name = "\improper Heavy Containment Zone Equipment Room"
 	})
 "bix" = (
-/obj/machinery/power/apc/hyper{
-	dir = 4
-	},
-/obj/structure/cable/green,
-/turf/simulated/floor/tiled/dark,
-/area/site53/zonecommanderoffice{
-	name = "\improper Heavy Containment Zone Equipment Room"
-	})
-"biy" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/zonecommanderoffice{
-	name = "\improper Heavy Containment Zone Equipment Room"
-	})
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/generalpurpose2)
 "biz" = (
 /obj/machinery/door/blast/regular/open{
 	begins_closed = 1;
@@ -25143,11 +24997,6 @@
 /turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
 "biC" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
@@ -25624,16 +25473,6 @@
 /area/site53/zonecommanderoffice{
 	name = "\improper Heavy Containment Zone Equipment Room"
 	})
-"bjq" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/zonecommanderoffice{
-	name = "\improper Heavy Containment Zone Equipment Room"
-	})
 "bjr" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -25819,26 +25658,12 @@
 	name = "\improper Heavy Containment Zone Equipment Room"
 	})
 "bjA" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
+/obj/machinery/light{
+	dir = 1
 	},
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "HCZ Secure Armoury";
-	name = "HCZ Secure Armoury";
-	pixel_x = -22;
-	req_access = list(204)
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/zonecommanderoffice{
-	name = "\improper Heavy Containment Zone Equipment Room"
-	})
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/generalpurpose2)
 "bjB" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -26617,7 +26442,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "bOD" = (
 /obj/machinery/chemical_dispenser,
@@ -26702,7 +26527,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "bXc" = (
 /obj/structure/table/rack,
@@ -26837,7 +26662,7 @@
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "cof" = (
 /obj/machinery/recharge_station,
@@ -28765,7 +28590,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "hTe" = (
 /obj/machinery/optable,
 /turf/simulated/floor/tiled/white,
@@ -29256,7 +29081,7 @@
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "joI" = (
 /obj/structure/cable{
@@ -29494,7 +29319,7 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "jUv" = (
 /obj/structure/table/standard,
@@ -29603,7 +29428,7 @@
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "kjv" = (
 /mob/living/simple_animal/hostile/scp247{
 	dir = 4
@@ -32142,7 +31967,7 @@
 	req_access = list(302)
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "rcp" = (
 /obj/structure/table/standard,
 /obj/item/stock_parts/matter_bin,
@@ -32393,7 +32218,7 @@
 	name = "General Purpose Testing Laboratory"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "rNe" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
@@ -32520,7 +32345,7 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "shr" = (
 /obj/structure/sign/directions/ez{
 	dir = 4
@@ -33637,7 +33462,7 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "vvq" = (
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp247observation)
@@ -34338,13 +34163,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "xaC" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/generalpurpose)
+/area/site53/ulcz/generalpurpose2)
 "xbp" = (
 /obj/machinery/door/airlock/glass/freezer,
 /obj/machinery/door/firedoor{
@@ -34493,7 +34318,7 @@
 /obj/item/crowbar/red,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip{
-	name = "\improper LCZ Security Center"
+	name = null
 	})
 "xti" = (
 /obj/machinery/light{
@@ -35666,12 +35491,12 @@ aXh
 aTJ
 azA
 azA
-aTJ
-aTJ
-aTJ
-aTJ
-aTJ
-aTJ
+aMC
+aMC
+aMC
+aMC
+aMC
+aMC
 aMC
 azA
 azA
@@ -35926,13 +35751,13 @@ alF
 aTJ
 azA
 azA
-aTJ
+aMC
 avx
 aMx
 aoN
 bhp
 bhp
-aTJ
+aMC
 azA
 azA
 azA
@@ -36186,13 +36011,13 @@ alF
 aTJ
 azA
 azA
-aTJ
+aMC
 aDI
 ahO
 ahO
 ahO
 bhq
-aTJ
+aMC
 azA
 azA
 azA
@@ -36446,13 +36271,13 @@ alF
 aTJ
 azA
 azA
-aTJ
+aMC
 aMu
 ahO
 aMQ
 ahO
 bhr
-aTJ
+aMC
 azA
 azA
 azA
@@ -36706,13 +36531,13 @@ alF
 aTJ
 azA
 azA
-aTJ
+aMC
 aMu
 ahO
 aTP
 ahO
 bhr
-aTJ
+aMC
 azA
 azA
 azA
@@ -36966,13 +36791,13 @@ alF
 aTJ
 azA
 azA
-aTJ
+aMC
 aMv
 aME
 aNb
 bho
 bhq
-aTJ
+aMC
 azA
 azA
 azA
@@ -37226,13 +37051,13 @@ bbj
 aTJ
 azA
 azA
-aTJ
-aTJ
-aTJ
+aMC
+aMC
+aMC
 aPV
-aTJ
-aTJ
-aTJ
+aMC
+aMC
+aMC
 azA
 azA
 azA
@@ -37488,9 +37313,9 @@ azA
 azA
 azA
 azA
-aTJ
+aMC
 bhh
-aTJ
+aMC
 azA
 azA
 azA
@@ -38546,7 +38371,7 @@ aMD
 aMD
 aMD
 aMU
-aVd
+aMS
 aMS
 bgD
 aMD
@@ -38806,7 +38631,7 @@ kFS
 xiC
 aMH
 bgQ
-aVe
+aMS
 aMS
 aVc
 bgJ
@@ -39066,7 +38891,7 @@ pyn
 aMS
 aMD
 pXS
-aVe
+aMS
 aMS
 bgF
 bgK
@@ -39326,7 +39151,7 @@ aMV
 aMS
 tBU
 aMS
-aVe
+aMS
 aMS
 aVc
 viG
@@ -39586,7 +39411,7 @@ gKo
 aMV
 bhC
 aNl
-aVe
+aMS
 aMS
 bgH
 bgL
@@ -40106,7 +39931,7 @@ aVS
 aVS
 aVS
 aVS
-aWJ
+aGM
 fIM
 aVS
 aGM
@@ -40366,7 +40191,7 @@ aHQ
 aLl
 aGM
 aGM
-aWJ
+aGM
 aGM
 aGM
 aGM
@@ -40627,10 +40452,10 @@ aML
 aMK
 aMK
 bhD
-bhE
-bhE
-bhE
-bhE
+aMK
+aMK
+aMK
+aMK
 bhH
 aNI
 aNI
@@ -46909,11 +46734,11 @@ aXp
 aXp
 aXp
 aXp
-aXE
+bim
 aXx
 bdc
 kiO
-aXE
+bim
 aXp
 azA
 azA
@@ -47166,12 +46991,12 @@ aXf
 aGM
 aWJ
 aXp
-aXv
+bix
 bcZ
 aXp
 vuY
 aXB
-aXv
+bix
 aXD
 sgZ
 aXp
@@ -47429,10 +47254,10 @@ hSj
 aXq
 bda
 aXw
-aXv
-aXv
-aXv
-aXv
+bix
+bix
+bix
+bix
 xaC
 aXp
 azA
@@ -47687,7 +47512,7 @@ aGM
 aWJ
 aXp
 bcY
-aXv
+bix
 aXp
 aXz
 aXz
@@ -47947,13 +47772,13 @@ ffp
 iCc
 aXp
 aXs
-aXv
+bix
 raR
-aXv
-aXv
-aXv
-aXv
-aXv
+bix
+bix
+bix
+bix
+bix
 aXp
 azA
 aiJ
@@ -48209,11 +48034,11 @@ aXp
 aXp
 aXp
 aXp
-bIm
-aXv
-aXE
-aXv
-aXG
+bjA
+bix
+bim
+bix
+big
 aXp
 azA
 aiJ
@@ -48469,11 +48294,11 @@ ffp
 azA
 azA
 aXp
-aXv
-aXv
+bix
+bix
 rMC
-aXv
-aXv
+bix
+bix
 aXp
 azA
 aiJ
@@ -92885,7 +92710,7 @@ aEu
 aEF
 aEF
 aEF
-aEO
+bhE
 aEC
 avp
 bkg
@@ -96002,8 +95827,8 @@ azA
 aGN
 bhT
 rrU
-bjq
-bix
+rrU
+rrU
 bjo
 aGN
 aGN
@@ -96522,7 +96347,7 @@ azA
 azA
 azA
 aGN
-bif
+biz
 aGN
 bjp
 aGN
@@ -96788,7 +96613,7 @@ aGN
 aGN
 bih
 biA
-bjq
+rrU
 bjB
 aGN
 azA
@@ -97042,12 +96867,12 @@ azA
 azA
 azA
 aGN
-big
-bjA
-bim
-bim
-biy
-biy
+rrU
+biA
+biz
+biz
+rrU
+rrU
 biC
 bjC
 aGN

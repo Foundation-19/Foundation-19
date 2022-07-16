@@ -229,7 +229,7 @@
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/surface/cryogenicsprimary)
 "aF" = (
 /obj/machinery/light{
 	dir = 8;
@@ -320,14 +320,16 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
 "aT" = (
-/obj/machinery/power/apc/hyper{
-	dir = 8
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/glass/civilian{
+	name = "Tram Hub"
 	},
 /obj/structure/cable{
+	d1 = 1;
 	d2 = 2;
-	icon_state = "0-2"
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/surface/cryogenicsprimary)
 "aU" = (
 /obj/structure/cryofeed{
@@ -349,11 +351,6 @@
 "aW" = (
 /obj/effect/landmark{
 	name = "Observer-Start"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
@@ -547,15 +544,12 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/virology)
 "bs" = (
-/obj/machinery/power/apc/hyper{
-	dir = 4
+/obj/machinery/door/airlock/glass/civilian{
+	name = "Tram Hub"
 	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled,
+/area/site53/surface/cryogenicsprimary)
 "bt" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/surface/surface)
@@ -2355,11 +2349,6 @@
 "gs" = (
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
@@ -2369,7 +2358,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/surface/cryogenicsprimary)
 "gt" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
@@ -4311,16 +4300,11 @@
 "lf" = (
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/surface/cryogenicsprimary)
 "lg" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5580,11 +5564,6 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
 "oE" = (
@@ -6012,9 +5991,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/surface/cryogenicsprimary)
 "qJ" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile,
@@ -6065,7 +6043,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/surface/cryogenicsprimary)
 "qU" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 1
@@ -6086,7 +6064,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/surface/cryogenicsprimary)
 "qX" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -7558,26 +7536,22 @@
 "uT" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/surface/surface)
-"uU" = (
-/obj/machinery/door/airlock/security{
-	name = "Communications Tower";
-	req_access = list(601)
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/commstower)
 "uV" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/commstower)
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/surface/tramhubhallwayentry)
 "uW" = (
 /obj/structure/sign/warning/moving_parts{
 	pixel_y = -32
@@ -7710,13 +7684,16 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "vp" = (
+/obj/machinery/door/airlock/glass/civilian{
+	name = "Tram Hub"
+	},
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/commstower)
+/turf/simulated/floor/tiled,
+/area/site53/surface/cryogenicsprimary)
 "vq" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -7741,19 +7718,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/commstower)
-"vu" = (
-/obj/machinery/power/apc{
-	dir = 4
-	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/upper_surface/commstower)
 "vv" = (
 /obj/machinery/light{
 	dir = 4;
@@ -7772,13 +7736,8 @@
 /area/site53/upper_surface/commstower)
 "vx" = (
 /obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/surface/cryogenicsprimary)
 "vy" = (
 /obj/effect/paint_stripe/white,
 /obj/machinery/status_display,
@@ -8272,7 +8231,7 @@
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/surface/cryogenicsprimary)
 "AN" = (
 /obj/machinery/atmospherics/unary/tank{
 	dir = 4
@@ -9048,6 +9007,10 @@
 	dir = 8;
 	network = list("Entrance Zone Network")
 	},
+/obj/machinery/power/apc/hyper{
+	dir = 4
+	},
+/obj/structure/cable,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/tramhubhallwayentry)
 "Lv" = (
@@ -38007,11 +37970,11 @@ nE
 bN
 nF
 oD
-nF
-uU
-uV
-uV
-vp
+nE
+ca
+oJ
+oJ
+oJ
 oJ
 oJ
 oJ
@@ -38268,7 +38231,7 @@ nE
 bn
 vv
 vq
-vu
+vq
 vw
 lX
 oJ
@@ -39783,13 +39746,13 @@ ay
 ay
 ay
 ay
-ae
-as
-as
-vr
-as
+af
+kC
+kC
+qI
+kC
 qT
-ay
+oU
 mi
 as
 as
@@ -40040,13 +40003,13 @@ ac
 as
 as
 az
-ae
-as
-as
-vr
-as
-as
-ay
+af
+kC
+kC
+qI
+kC
+kC
+oU
 mj
 as
 as
@@ -40297,13 +40260,13 @@ at
 at
 at
 fq
-aw
-at
-at
-gs
-at
+vp
 lf
-pq
+lf
+gs
+lf
+lf
+aT
 at
 at
 at
@@ -40554,11 +40517,11 @@ gt
 gt
 gt
 Ff
-ma
-gt
-gt
-qI
-gt
+bs
+vx
+vx
+vx
+vx
 vx
 qW
 gt
@@ -40803,7 +40766,7 @@ pu
 ae
 ai
 al
-aq
+uV
 Ln
 au
 ae
@@ -40811,13 +40774,13 @@ ac
 as
 as
 az
-ae
+af
 AI
-as
-vr
-as
-vr
-ay
+kC
+kC
+kC
+kC
+oU
 mj
 as
 as
@@ -41068,13 +41031,13 @@ ay
 ay
 ay
 ay
-ae
+af
 aE
-as
-vr
-as
-bs
-ay
+kC
+kC
+kC
+kC
+oU
 mi
 as
 as
@@ -41328,7 +41291,7 @@ cj
 af
 af
 pr
-gr
+aD
 oU
 af
 af
@@ -41584,7 +41547,7 @@ vC
 aA
 af
 aF
-aT
+kC
 aW
 kC
 aF
