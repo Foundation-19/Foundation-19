@@ -9,8 +9,7 @@
 	var/uses = 1
 	var/temp = null
 	var/list/monster = list(/mob/living/simple_animal/familiar/pet/cat,
-							/mob/living/simple_animal/familiar/pet/mouse,
-							)
+							/mob/living/simple_animal/familiar/pet/mouse)
 	var/list/monster_info = list(   "It is well known that the blackest of cats make good familiars.",
 									"Mice are full of mischief and magic. A simple animal, yes, but one of the wizard's finest.",
 									)
