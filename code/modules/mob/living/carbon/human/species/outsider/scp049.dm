@@ -34,8 +34,6 @@
 	radiation_mod =  0.0                    // No radiation damage
 	flash_mod =      0.0                    // Unflashable
 
-/datum/species/scp049/handle_post_spawn(mob/living/carbon/human/H)
-	. = ..()
 
 /datum/species/scp049/handle_vision(var/mob/living/carbon/human/scp049/H)
 	var/list/vision = H.get_accumulated_vision_handlers()
