@@ -412,6 +412,13 @@
 /area/site53/llcz/dclass/checkequip{
 	name = "\improper Re-education center"
 	})
+"bk" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/obj/item/stool,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost)
 "bm" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Hallway"
@@ -495,6 +502,13 @@
 /obj/item/device/radio,
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
+"bM" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/obj/machinery/chemical_dispenser/full,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost)
 "bN" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled,
@@ -2038,18 +2052,10 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/kitchen)
 "fM" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/door/airlock/hatch{
 	name = "LLCZ Maintenance";
 	req_access = list(201)
 	},
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
 	id_tag = "Lower LCZ Checkpoint Maintenance Access";
@@ -2795,11 +2801,6 @@
 /obj/machinery/door/airlock/civilian{
 	name = "Janitorial Closet";
 	req_access = list(201,704)
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/janitorial)
@@ -4074,7 +4075,7 @@
 /area/site53/llcz/dclass/luxurylibrary)
 "ks" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 8
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -4874,6 +4875,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor,
 /area/site53/engineering/maintenance/lowerselfdestruct)
 "mf" = (
@@ -4882,6 +4888,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor,
 /area/site53/engineering/maintenance/lowerselfdestruct)
@@ -4923,12 +4934,8 @@
 	dir = 1
 	},
 /obj/structure/cable{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
+	d1 = 32;
+	icon_state = "32-1"
 	},
 /turf/simulated/floor,
 /area/site53/engineering/maintenance/lowerselfdestruct)
@@ -6349,18 +6356,13 @@
 /turf/unsimulated/mineral,
 /area/site53/llcz/mine/unexplored)
 "pD" = (
-/obj/effect/catwalk_plated/white,
-/obj/machinery/button/alternate/door/bolts{
-	dir = 1;
-	id_tag = "cell11door";
-	name = "Cell 11 Control";
-	pixel_y = -26;
-	req_access = list(202)
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor,
-/area/site53/llcz/dclass/cells{
-	name = "\improper D-Class Cell"
-	})
+/area/site53/engineering/maintenance/lowerselfdestruct)
 "pF" = (
 /obj/machinery/camera/network/lcz{
 	dir = 8
@@ -8728,6 +8730,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 9
 	},
+/obj/machinery/chem_master,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost)
 "uE" = (
@@ -9042,10 +9045,8 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
-/obj/structure/disposalpipe/junction/yjunction{
-	dir = 8
-	},
 /obj/effect/catwalk_plated/white,
+/obj/structure/disposalpipe/junction,
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
 "vu" = (
@@ -10992,10 +10993,6 @@
 	RCon_tag = "Lower Heavy Containment Substation"
 	},
 /obj/structure/cable/green,
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
 "Aa" = (
@@ -12081,6 +12078,8 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost)
 "CS" = (
@@ -12234,15 +12233,14 @@
 	name = "\improper D-Class Cell"
 	})
 "Dj" = (
-/obj/effect/catwalk_plated/white,
-/obj/machinery/button/flasher{
-	id_tag = "cell12";
-	pixel_y = -30
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/door/blast/regular{
+	id_tag = "HCZ High Security Lock";
+	name = "HCZ High Security Lock (NO ENTRY)"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor,
-/area/site53/llcz/dclass/cells{
-	name = "\improper D-Class Cell"
-	})
+/area/site53/uhcz/scp106parts)
 "Dk" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/paint_stripe/gray,
@@ -15083,6 +15081,8 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/effect/floor_decal/corner/blue/border,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost)
 "Kf" = (
@@ -15506,7 +15506,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 8
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -15897,9 +15897,6 @@
 /obj/structure/bed/chair{
 	dir = 1
 	},
-/obj/effect/landmark{
-	name = "JoinLatelcz"
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "NG" = (
@@ -15978,6 +15975,22 @@
 /obj/item/storage/box/syringes,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"NV" = (
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	dir = 8;
+	id_tag = "Security Bubble Lockdown";
+	name = "Security Bubble Lockdown"
+	},
+/obj/machinery/door/airlock/glass/security{
+	name = "Security Bubble";
+	req_access = list(202)
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/cellbubble)
 "NW" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/railing/mapped,
@@ -16817,6 +16830,13 @@
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/lhcz/scp049containment)
+"RJ" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/obj/machinery/reagentgrinder,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/llcz/dclass/medicalpost)
 "RL" = (
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
@@ -17324,9 +17344,6 @@
 "Uk" = (
 /obj/structure/bed/chair{
 	dir = 8
-	},
-/obj/effect/landmark{
-	name = "JoinLatelcz"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -18069,9 +18086,6 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/obj/effect/landmark{
-	name = "JoinLatelcz"
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "XA" = (
@@ -18619,9 +18633,6 @@
 	})
 "ZG" = (
 /obj/structure/bed/chair,
-/obj/effect/landmark{
-	name = "JoinLatelcz"
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "ZH" = (
@@ -21163,13 +21174,13 @@ gq
 gq
 gq
 gq
-dj
-dj
-dj
-dj
-dj
-dj
-dj
+gq
+gq
+gq
+gq
+gq
+gq
+gq
 en
 er
 Hl
@@ -21421,12 +21432,12 @@ gq
 gq
 gq
 dj
-ub
 dj
-ub
 dj
-ug
-nh
+dj
+dj
+dj
+dj
 en
 er
 GS
@@ -21678,12 +21689,12 @@ gq
 gq
 gq
 dj
-uc
+ub
 dj
-uc
+ub
 dj
-dj
-uc
+ug
+nh
 en
 er
 Ea
@@ -21935,12 +21946,12 @@ gq
 gq
 gq
 dj
-ud
-uf
-uf
-uf
-uf
-ui
+uc
+dj
+uc
+dj
+dj
+uc
 en
 wq
 ey
@@ -22192,12 +22203,12 @@ gq
 gq
 gq
 dj
-py
-ue
-ue
-ue
-EZ
-EZ
+ud
+uf
+uf
+uf
+uf
+ui
 en
 iI
 wc
@@ -22449,12 +22460,12 @@ gq
 gq
 gq
 dj
-dj
-dj
-dj
-dj
-pH
-pH
+py
+ue
+ue
+ue
+EZ
+EZ
 en
 uB
 wc
@@ -22705,13 +22716,13 @@ gq
 gq
 kL
 kL
-kL
-kL
-kL
-kL
-kL
-xT
-xT
+dj
+dj
+dj
+dj
+dj
+pH
+pH
 en
 zS
 GS
@@ -23214,7 +23225,7 @@ As
 Hh
 ie
 uD
-As
+bk
 CR
 JX
 kL
@@ -23470,7 +23481,7 @@ Bh
 Bh
 sR
 ie
-rq
+bM
 Bh
 Bh
 Kd
@@ -23727,7 +23738,7 @@ Bh
 Bh
 Ah
 ie
-rq
+RJ
 Bh
 Bh
 Ke
@@ -24520,7 +24531,7 @@ Dt
 sM
 zH
 zF
-Dj
+zF
 sk
 sM
 kG
@@ -24777,7 +24788,7 @@ sM
 sM
 ws
 zF
-pD
+zF
 ws
 sM
 sM
@@ -25805,7 +25816,7 @@ DB
 sM
 zP
 FL
-uP
+zF
 Fa
 sM
 Hd
@@ -26062,7 +26073,7 @@ sM
 sM
 ws
 FL
-Dm
+zF
 ws
 sM
 sM
@@ -28122,7 +28133,7 @@ GY
 sM
 vT
 zF
-Dj
+zF
 Ab
 sM
 jn
@@ -28379,7 +28390,7 @@ sM
 sM
 ws
 zF
-pD
+zF
 ws
 sM
 sM
@@ -29407,7 +29418,7 @@ GZ
 sM
 vU
 zF
-uP
+zF
 wn
 sM
 Ao
@@ -29664,7 +29675,7 @@ sM
 sM
 ws
 zF
-Dm
+zF
 ws
 sM
 sM
@@ -31445,7 +31456,7 @@ cY
 cY
 cY
 cY
-Ey
+NV
 cY
 cY
 Dp
@@ -37391,7 +37402,7 @@ gM
 gq
 mh
 me
-mi
+pD
 mh
 mu
 mE
@@ -55308,7 +55319,7 @@ ot
 ot
 ot
 ot
-hm
+nP
 nT
 ot
 ot
@@ -55562,9 +55573,9 @@ gq
 ot
 gT
 hm
-bc
-bc
-bc
+Dj
+Dj
+Dj
 hm
 hm
 hm
