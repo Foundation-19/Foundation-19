@@ -24,7 +24,7 @@ jobs:
           pip install -r tools/changelog/requirements.txt
       - name: Make CL
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CL_TOKEN }}
           GIT_EMAIL: "mustang29-foundation19@yahoo.com"
           GIT_NAME: "Foundation19Bot"
         run: python tools/changelog/generate_cl.py
