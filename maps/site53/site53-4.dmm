@@ -35,7 +35,7 @@
 "ag" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/site53/surface/surface)
+/area/space)
 "ah" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -80,9 +80,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/plating,
-/area/site53/uez/mcrsubstation)
-"ao" = (
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
 "ap" = (
@@ -365,7 +362,7 @@
 "ba" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/surface/surface)
+/area/space)
 "bc" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -604,19 +601,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/maintenance)
-"bG" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/plating,
-/area/site53/uez/mcrsubstation)
 "bH" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/carpet/brown,
@@ -2454,7 +2438,7 @@
 "hM" = (
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/surface/surface)
+/area/space)
 "hN" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -2549,7 +2533,7 @@
 /area/site53/logistics/logisticsofficer)
 "hZ" = (
 /turf/simulated/open,
-/area/site53/surface/surface)
+/area/space)
 "ia" = (
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/r_wall/prepainted,
@@ -3357,7 +3341,7 @@
 "kx" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
-/area/site53/surface/surface)
+/area/space)
 "kB" = (
 /obj/effect/floor_decal/corner/orange/border,
 /obj/structure/closet/secure_closet/freezer/fridge,
@@ -4091,9 +4075,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
-"EB" = (
-/turf/unsimulated/mineral,
-/area/site53/surface/surface)
 "EH" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -4582,7 +4563,7 @@
 /area/site53/upper_surface/commstower)
 "WQ" = (
 /turf/simulated/mineral,
-/area/site53/surface/surface)
+/area/space)
 "WW" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -33601,16 +33582,16 @@ hZ
 hZ
 WQ
 WQ
-EB
-EB
-EB
-EB
-EB
-EB
-EB
-EB
-EB
-EB
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
 hk
 hk
 hk
@@ -33867,7 +33848,7 @@ WQ
 WQ
 WQ
 WQ
-EB
+hk
 hk
 hk
 hk
@@ -37210,10 +37191,10 @@ hZ
 hZ
 WQ
 WQ
-EB
-EB
-EB
-EB
+hk
+hk
+hk
+hk
 hk
 hk
 hk
@@ -37468,9 +37449,9 @@ hZ
 hZ
 WQ
 WQ
-EB
-EB
-EB
+hk
+hk
+hk
 hk
 hk
 hk
@@ -37726,8 +37707,8 @@ hZ
 hZ
 WQ
 WQ
-EB
-EB
+hk
+hk
 hk
 hk
 hk
@@ -37914,12 +37895,12 @@ fw
 fw
 fR
 fB
-an
-an
-an
-bG
-ao
-ak
+fw
+fw
+fw
+fI
+cL
+fC
 fC
 fC
 fC
@@ -37956,7 +37937,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -38213,7 +38194,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -38470,7 +38451,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -38727,7 +38708,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -38984,7 +38965,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -39241,7 +39222,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -39498,7 +39479,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -39755,7 +39736,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -40012,7 +39993,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -40269,7 +40250,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -40526,7 +40507,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -40783,7 +40764,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -41040,7 +41021,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -41297,7 +41278,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -41554,7 +41535,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -41811,7 +41792,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -41822,8 +41803,8 @@ hZ
 hZ
 WQ
 WQ
-EB
-EB
+hk
+hk
 WQ
 WQ
 hZ
@@ -42068,7 +42049,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -42078,10 +42059,10 @@ hZ
 hZ
 WQ
 WQ
-EB
-EB
-EB
-EB
+hk
+hk
+hk
+hk
 WQ
 WQ
 hZ
@@ -42325,7 +42306,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -42334,12 +42315,12 @@ hZ
 hZ
 WQ
 WQ
-EB
-EB
-EB
-EB
-EB
-EB
+hk
+hk
+hk
+hk
+hk
+hk
 WQ
 WQ
 WQ
@@ -42582,7 +42563,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
@@ -42590,7 +42571,7 @@ hZ
 hZ
 WQ
 WQ
-EB
+hk
 hk
 hk
 hk
@@ -42839,14 +42820,14 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 hZ
 WQ
 WQ
 WQ
-EB
+hk
 hk
 hk
 hk
@@ -43096,14 +43077,14 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 hZ
 WQ
 WQ
-EB
-EB
-EB
+hk
+hk
+hk
 hk
 hk
 hk
@@ -43353,7 +43334,7 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 WQ
 WQ
@@ -43610,10 +43591,10 @@ hk
 hk
 hk
 hk
-EB
+hk
 hZ
 WQ
-EB
+hk
 hk
 hk
 hk
@@ -43867,10 +43848,10 @@ hk
 hk
 hk
 hk
-EB
+hk
 WQ
 WQ
-EB
+hk
 hk
 hk
 hk

@@ -110,8 +110,22 @@
 	dynamic_lighting = 0
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/centcom/chaos
+	name = "Chaos Insurgency"
+	icon_state = "Sleep"
+	requires_power = 0
+	dynamic_lighting = 0
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/tram/goc1
 	name = "GOC Car"
+	icon_state = "Sleep"
+	requires_power = 0
+	dynamic_lighting = 0
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/centcom/goc
+	name = "GOC"
 	icon_state = "Sleep"
 	requires_power = 0
 	dynamic_lighting = 0
@@ -213,6 +227,9 @@
 	requires_power = 0
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/surface/explorers/surrounding
+	name = "\improper Scouts Prep Surrounding"
 
 // Site 53 upper surface area's
 
