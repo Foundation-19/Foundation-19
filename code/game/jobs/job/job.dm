@@ -84,7 +84,7 @@
 		H.add_language(LANGUAGE_ENGLISH)
 		H.set_default_language(all_languages[LANGUAGE_ENGLISH])
 
-	if(psi_latency_chance && prob(psi_latency_chance))
+	if(psi_latency_chance && !H.psi && prob(psi_latency_chance)) //Hopefully fixes admin-spawned/admin-allowed mules for future whitelists and/or jobs where you spawn with psionics.
 		H.set_psi_rank(pick(PSI_COERCION, PSI_REDACTION, PSI_ENERGISTICS, PSI_PSYCHOKINESIS), 1, defer_update = TRUE)
 	if(islist(psi_faculties))
 		for(var/psi in psi_faculties)
