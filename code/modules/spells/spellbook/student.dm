@@ -18,6 +18,21 @@
 				/obj/item/weapon/monster_manual = 		1,
 				/datum/spell/invisibility = 		6
 					)
+ //This wasn't defined before.
+	sacrifice_objects = list(/obj/item/storage/toolbox,
+							/obj/item/cane,
+							/obj/item/flamethrower,
+							/obj/item/plastique,
+							/obj/item/dice,
+							/obj/item/soap,
+							/obj/item/flame/candle,
+							/obj/item/flame/candle/scented/incense,
+							/obj/item/caution,
+							/obj/item/towel,
+							/obj/item/tank/jetpack,
+							/obj/item/clothing/mask/plunger,
+							/obj/item/device/megaphone,
+							/obj/item/deck/cards)
 
 /datum/spellbook/student/apprentice
 	book_flags = CAN_MAKE_CONTRACTS|INVESTABLE|NOREVERT|NO_LOCKING
