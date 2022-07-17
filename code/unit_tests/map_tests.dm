@@ -326,12 +326,12 @@
 
 	for(var/obj/machinery/cryopod/C in SSmachines.machinery)
 		if(!C.control_computer)
-			log_bad("[get_area(C)] lacks a cryopod control computer while holding a cryopod.")
+			log_bad("[get_area(C)] lacks a cryopod control computer while holding a cryopod. Location of cryo pod: [C.x],[C.y],[C.z]")
 			pass = FALSE
 
 	for(var/obj/machinery/computer/cryopod/C in SSmachines.machinery)
 		if(!(locate(/obj/machinery/cryopod) in get_area(C)))
-			log_bad("[get_area(C)] lacks a cryopod while holding a control computer.")
+			log_bad("[get_area(C)] lacks a cryopod while holding a control computer. Location of cryo computer: [C.x],[C.y],[C.z]")
 			pass = FALSE
 
 	if(pass)
@@ -453,28 +453,6 @@
 			return TRUE
 	return FALSE
 
-//=======================================================================================
-
-/datum/unit_test/simple_pipes_shall_not_face_north_or_west // The init code is worthless and cannot handle it
-	name = "MAP: Simple pipes shall not face north or west"
-
-/datum/unit_test/simple_pipes_shall_not_face_north_or_west/start_test()
-	var/failures = 0
-	for(var/obj/machinery/atmospherics/pipe/simple/pipe in world) // Pipes are removed from the SSmachines list during init.
-		if(!istype(pipe, /obj/machinery/atmospherics/pipe/simple/hidden) && !istype(pipe, /obj/machinery/atmospherics/pipe/simple/visible))
-			continue
-		if(pipe.dir == NORTH || pipe.dir == WEST)
-			log_bad("Following pipe had an invalid direction: [log_info_line(pipe)]")
-			failures++
-
-	if(failures)
-		fail("[failures] simple pipe\s faced the wrong direction.")
-	else
-		pass("All simple pipes faced an appropriate direction.")
-	return 1
-
-//=======================================================================================
-
 /datum/unit_test/shutoff_valves_shall_connect_to_two_different_pipe_networks
 	name = "MAP: Shutoff valves shall connect to two different pipe networks"
 
@@ -543,7 +521,7 @@
 	exceptions = exceptions_by_turf
 
 	for(var/obj/structure/cable/C in world)
-		if(!all_ends_connected(C))
+		if(!all_ends_connected(C) && !(C.d1 == UP || C.d2 == UP))
 			failures++
 
 	if(failures)

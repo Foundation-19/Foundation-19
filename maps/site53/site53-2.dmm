@@ -20757,12 +20757,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/tram/scpcar)
-"aZi" = (
-/obj/machinery/computer{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/scpcar)
 "aZj" = (
 /obj/machinery/floodlight,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -62307,8 +62301,8 @@ aYJ
 aYL
 aYP
 aYR
-aZh
-aZn
+aZd
+aZk
 aYR
 aYP
 aYK
@@ -62567,8 +62561,8 @@ aYJ
 beR
 aYO
 aYO
-aZi
-aZi
+aZd
+aZd
 aYO
 aYO
 bfa
