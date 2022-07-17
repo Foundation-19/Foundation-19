@@ -62,6 +62,7 @@
 		/area/site53/tram/scpcar = NO_APC,
 		/area/turbolift/site53/commstower = NO_APC,
 		/area/turbolift/site53/scp106cont = NO_APC,
+		/area/centcom/goc = NO_APC,
 	)
 
 	away_site_budget = 3

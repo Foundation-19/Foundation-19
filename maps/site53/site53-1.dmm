@@ -5498,8 +5498,16 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
 "op" = (
-/turf/unsimulated/mineral,
-/area/site53/uhcz/scp106parts)
+/obj/machinery/power/apc{
+	dir = 4;
+	pixel_x = 24
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/assignment)
 "oq" = (
 /obj/machinery/light{
 	dir = 8
@@ -11778,19 +11786,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"DL" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "DM" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled,
@@ -11820,19 +11815,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/recreationhallway)
-"DP" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list(access_sciencelvl1)
-	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
 "DQ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -12990,10 +12972,11 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/primaryhallway)
-"HB" = (
-/obj/structure/railing/mapped,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "HC" = (
@@ -31854,7 +31837,7 @@ iR
 uK
 DO
 Be
-DL
+iD
 iD
 HA
 HE
@@ -32111,9 +32094,9 @@ iS
 iK
 iS
 Ci
+uf
+uf
 sj
-uf
-uf
 HF
 HF
 HX
@@ -32368,9 +32351,9 @@ kU
 iK
 uM
 kT
-DP
 uf
-HB
+uf
+EV
 HH
 HO
 Ib
@@ -32627,7 +32610,7 @@ xY
 kT
 uf
 uf
-HB
+EV
 HE
 HP
 HZ
@@ -32884,7 +32867,7 @@ iS
 kT
 ud
 uf
-HB
+EV
 HE
 HE
 Ic
@@ -33141,7 +33124,7 @@ iS
 kT
 uf
 uf
-uf
+sj
 HI
 HF
 HX
@@ -33398,7 +33381,7 @@ Ii
 gF
 uf
 uf
-uf
+sj
 DI
 HQ
 Id
@@ -33655,7 +33638,7 @@ jc
 gF
 uf
 uf
-uf
+sj
 DI
 HL
 HT
@@ -33912,7 +33895,7 @@ tq
 gF
 DY
 DI
-DI
+op
 DI
 HR
 Ie
@@ -73697,7 +73680,7 @@ WD
 WD
 WD
 WD
-op
+WD
 gq
 Yg
 qZ

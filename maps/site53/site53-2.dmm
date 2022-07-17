@@ -18333,7 +18333,7 @@
 /area/site53/upper_surface/serverfarmcontrol)
 "aRW" = (
 /turf/simulated/floor/reinforced,
-/area/centcom/goc)
+/area/space)
 "aRX" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -18468,9 +18468,6 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/surface/explorers)
-"aSt" = (
-/turf/simulated/wall/titanium,
-/area/centcom/goc)
 "aSu" = (
 /obj/item/device/flashlight{
 	on = 1
@@ -26769,7 +26766,7 @@
 /obj/item/clothing/shoes/tactical,
 /obj/item/clothing/gloves/tactical,
 /turf/simulated/floor/reinforced,
-/area/centcom/goc)
+/area/space)
 "gdE" = (
 /obj/structure/hygiene/sink/kitchen{
 	pixel_y = 22
@@ -29373,7 +29370,7 @@
 /obj/item/ammo_magazine/mil_rifle,
 /obj/item/ammo_magazine/mil_rifle,
 /turf/simulated/floor/reinforced,
-/area/centcom/goc)
+/area/space)
 "mVQ" = (
 /obj/structure/table/standard,
 /obj/item/stock_parts/manipulator/pico,
@@ -29472,7 +29469,7 @@
 /obj/item/storage/firstaid/combat,
 /obj/item/storage/firstaid/adv,
 /turf/simulated/floor/reinforced,
-/area/centcom/goc)
+/area/space)
 "nmq" = (
 /obj/structure/table/standard,
 /obj/item/storage/toolbox/mechanical,
@@ -30875,7 +30872,7 @@
 /obj/item/crowbar/emergency_forcing_tool,
 /obj/item/crowbar/emergency_forcing_tool,
 /turf/simulated/floor/reinforced,
-/area/centcom/goc)
+/area/space)
 "rqI" = (
 /obj/structure/cable/green{
 	d2 = 4;
@@ -31256,7 +31253,7 @@
 /obj/item/clothing/shoes/tactical,
 /obj/item/clothing/gloves/tactical,
 /turf/simulated/floor/reinforced,
-/area/centcom/goc)
+/area/space)
 "sBC" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/paper/scp012,
@@ -31499,7 +31496,7 @@
 "tsw" = (
 /obj/machinery/acting/changer,
 /turf/simulated/floor/reinforced,
-/area/centcom/goc)
+/area/space)
 "ttE" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -72537,9 +72534,9 @@ azA
 azA
 azA
 azA
-aSt
-aSt
-aSt
+bcV
+bcV
+bcV
 azA
 azA
 azA
@@ -72795,13 +72792,13 @@ azA
 azA
 azA
 azA
-aSt
-aSt
-aSt
+bcV
+bcV
+bcV
 tsw
-aSt
-aSt
-aSt
+bcV
+bcV
+bcV
 azA
 azA
 azA
@@ -73055,13 +73052,13 @@ azA
 azA
 azA
 azA
-aSt
+bcV
 gbS
 aRW
 aRW
 aRW
 gbS
-aSt
+bcV
 azA
 azA
 azA
@@ -73315,13 +73312,13 @@ azA
 azA
 azA
 azA
-aSt
+bcV
 gbS
 aRW
 aRW
 aRW
 sAN
-aSt
+bcV
 azA
 azA
 azA
@@ -73575,13 +73572,13 @@ azA
 azA
 azA
 azA
-aSt
+bcV
 gbS
 aRW
 aRW
 aRW
 gbS
-aSt
+bcV
 azA
 azA
 azA
@@ -73835,13 +73832,13 @@ azA
 azA
 azA
 azA
-aSt
+bcV
 mVc
 rpY
 nks
 rpY
 mVc
-aSt
+bcV
 azA
 azA
 azA
@@ -74095,13 +74092,13 @@ azA
 azA
 azA
 azA
-aSt
-aSt
-aSt
-aSt
-aSt
-aSt
-aSt
+bcV
+bcV
+bcV
+bcV
+bcV
+bcV
+bcV
 azA
 azA
 azA

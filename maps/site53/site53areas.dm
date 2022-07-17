@@ -186,7 +186,10 @@
 	name = "Away Checkpoint"
 
 /area/site53/surface/surface/away/storage
-	name = "Away Storage"
+	name = "Away Storage 1"
+
+/area/site53/surface/surface/away/storage2
+	name = "Away Storage 2"
 
 /area/site53/surface/surface/away/hotel
 	name = "Away Hotel"
