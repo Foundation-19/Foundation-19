@@ -16,7 +16,7 @@
 	display_name = "boot selection"
 	path = /obj/item/clothing/shoes
 	cost = 2
-	allowed_branches = list(/datum/mil_branch/civilian, /datum/mil_branch/civilian)
+	allowed_branches = list(/datum/mil_branch/civilian, /datum/mil_branch/security)
 
 /datum/gear/shoes/boots/New()
 	..()
