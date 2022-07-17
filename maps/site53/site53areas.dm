@@ -1049,11 +1049,6 @@
 	icon_state = "security"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/entrancezone/ezarmory
-	name = "\improper Entrance Zone Security Armory"
-	icon_state = "security"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/reswing/xenobiology
 	name = "\improper Xenobiology Laboratory"
 	icon_state = "research"

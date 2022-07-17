@@ -1977,8 +1977,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/robotics)
 "afB" = (
-/obj/effect/paint_stripe/mauve,
-/turf/simulated/wall/prepainted,
+/obj/structure/table/standard,
+/obj/item/stack/material/phoron,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
 "afC" = (
 /obj/structure/cable/green{
@@ -1990,7 +1991,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/brownline)
 "afD" = (
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor,
 /area/site53/reswing/xenobiology)
 "afE" = (
 /obj/effect/floor_decal/corner/yellow{
@@ -2547,7 +2549,8 @@
 /turf/simulated/floor/reinforced,
 /area/site53/engineering/primaryhallway)
 "agI" = (
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/paint_stripe/mauve,
+/turf/simulated/wall/prepainted,
 /area/site53/reswing/xenobiology)
 "agK" = (
 /obj/machinery/light{
@@ -2708,11 +2711,6 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/ulcz/tram)
 "ahh" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/xenobiology)
 "ahi" = (
@@ -6567,7 +6565,8 @@
 "aqh" = (
 /obj/structure/closet/jcloset_torch,
 /obj/machinery/camera/autoname{
-	dir = 1
+	dir = 1;
+	c_tag = "Janitor's Closet"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/janitorial)
@@ -7553,7 +7552,8 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Engineering Network 1")
+	network = list("Engineering Network 1");
+	c_tag = "Auxillary Closet"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/auxstorage)
@@ -25801,6 +25801,12 @@
 /area/site53/llcz/scp500{
 	requires_power = 0
 	})
+"cMg" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/xenobiology)
 "cMi" = (
 /obj/machinery/light{
 	dir = 4
@@ -25882,6 +25888,10 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/serverfarmtunnel)
+"cZs" = (
+/obj/machinery/reagentgrinder,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/xenobiology)
 "cZG" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/monotile,
@@ -26924,7 +26934,8 @@
 /area/site53/surface/bunker)
 "gjy" = (
 /obj/machinery/camera/network/entrance{
-	dir = 4
+	dir = 4;
+	c_tag = "Tram Hub 2"
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
@@ -27281,7 +27292,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
 "heG" = (
-/obj/machinery/light,
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
 "hgq" = (
@@ -27486,16 +27497,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp263)
-"hIk" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor,
-/area/site53/reswing/xenobiology)
 "hJZ" = (
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"hKm" = (
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/xenobiology)
 "hMV" = (
 /obj/machinery/access_button/airlock_exterior{
 	master_tag = "comms_airlock";
@@ -27700,12 +27710,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/engine_smes)
-"ipP" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/reswing/xenobiology)
 "iqN" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -28709,15 +28713,6 @@
 /obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
-"ljy" = (
-/obj/structure/table/standard,
-/obj/item/stack/material/phoron,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/reswing/xenobiology)
-"ljA" = (
-/obj/machinery/reagentgrinder,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/reswing/xenobiology)
 "lkh" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
@@ -28925,6 +28920,10 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp247observation)
+"lEO" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/xenobiology)
 "lFx" = (
 /obj/effect/paint_stripe/yellow,
 /obj/machinery/button/blast_door{
@@ -31100,8 +31099,12 @@
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/uhcz/scp247containment)
 "rPM" = (
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/monotile/white,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/xenobiology)
 "rWa" = (
 /obj/structure/table/standard,
@@ -71923,12 +71926,12 @@ azA
 azA
 azA
 azA
-afB
-afB
+agI
+agI
 acb
 acX
-afB
-afB
+agI
+agI
 aqA
 aqA
 aqA
@@ -72183,12 +72186,12 @@ azA
 azA
 azA
 azA
-afB
-ahV
 agI
+ahV
 ahh
+rPM
 aJe
-afB
+agI
 azA
 azA
 azA
@@ -72443,12 +72446,12 @@ azA
 azA
 azA
 azA
-afB
-ahV
 agI
+ahV
 ahh
+rPM
 aJe
-afB
+agI
 azA
 azA
 azA
@@ -72703,12 +72706,12 @@ azA
 azA
 azA
 azA
-afB
-aib
 agI
+aib
 ahh
+rPM
 aJg
-afB
+agI
 azA
 azA
 azA
@@ -72961,14 +72964,14 @@ azA
 azA
 azA
 azA
-afB
-afB
-afB
-afB
+agI
+agI
+agI
+agI
 acb
 acX
-afB
-afB
+agI
+agI
 azA
 azA
 azA
@@ -73220,7 +73223,7 @@ azA
 azA
 azA
 azA
-afB
+agI
 smH
 aMn
 ahp
@@ -73228,12 +73231,12 @@ bEw
 aMn
 aIF
 aJh
-afB
-afB
-afB
-afB
-afB
-afB
+agI
+agI
+agI
+agI
+agI
+agI
 azA
 azA
 azA
@@ -73484,16 +73487,16 @@ aJm
 pHf
 aMn
 mfj
-rPM
-rPM
-rPM
+heG
+heG
+heG
 aMn
 aMn
-hIk
 afD
-afD
-afD
-afB
+hKm
+hKm
+hKm
+agI
 azA
 azA
 azA
@@ -73740,20 +73743,20 @@ azA
 azA
 azA
 azA
-afB
+agI
 afV
 aMn
-ljA
-ljy
-rPM
-rPM
+cZs
+afB
+heG
+heG
 aMn
 aMn
 aIB
-afD
+hKm
 aKu
-heG
-afB
+lEO
+agI
 azA
 azA
 azA
@@ -74000,7 +74003,7 @@ azA
 azA
 azA
 azA
-afB
+agI
 afX
 aMn
 aMn
@@ -74012,8 +74015,8 @@ bTl
 aJY
 jwF
 fTi
-afD
-afB
+hKm
+agI
 azA
 azA
 azA
@@ -74260,20 +74263,20 @@ azA
 azA
 azA
 azA
-afB
+agI
 aoP
 aMn
-rPM
+heG
 aKj
 vmr
-rPM
+heG
 aMn
 vdk
-afB
-afB
-afB
-afB
-afB
+agI
+agI
+agI
+agI
+agI
 azA
 azA
 azA
@@ -74520,20 +74523,20 @@ azA
 azA
 azA
 azA
-afB
+agI
 aKH
 aMn
-rPM
-rPM
-rPM
+heG
+heG
+heG
 rDj
 aMn
 oJC
 aJY
 vxd
 fTi
-afD
-afB
+hKm
+agI
 azA
 azA
 azA
@@ -74780,7 +74783,7 @@ azA
 azA
 azA
 azA
-afB
+agI
 aKH
 aMn
 aMn
@@ -74790,10 +74793,10 @@ aMn
 aMn
 aMn
 aIB
-afD
-afD
-heG
-afB
+hKm
+hKm
+lEO
+agI
 azA
 azA
 azA
@@ -75040,7 +75043,7 @@ azA
 azA
 azA
 azA
-afB
+agI
 aKK
 aMn
 aMn
@@ -75049,11 +75052,11 @@ vsb
 aMm
 aMn
 aMn
-hIk
 afD
-afD
-afD
-afB
+hKm
+hKm
+hKm
+agI
 azA
 azA
 azA
@@ -75301,19 +75304,19 @@ azA
 azA
 azA
 azA
-afB
-hIk
+agI
+afD
 aJi
 aiF
-afB
+agI
 aiF
 aJi
-hIk
-afB
-afB
-afB
-afB
-afB
+afD
+agI
+agI
+agI
+agI
+agI
 azA
 azA
 azA
@@ -75561,15 +75564,15 @@ azA
 azA
 azA
 azA
-afB
-afD
-afD
+agI
+hKm
+hKm
 agY
-afB
+agI
 agY
 aKu
-afD
-afB
+hKm
+agI
 azA
 azA
 azA
@@ -75821,15 +75824,15 @@ azA
 azA
 azA
 azA
-afB
-afD
-afD
+agI
+hKm
+hKm
 aSy
-afB
+agI
 aSy
-afD
-afD
-afB
+hKm
+hKm
+agI
 azA
 azA
 azA
@@ -76081,15 +76084,15 @@ azA
 azA
 azA
 azA
-afB
-afD
-ipP
-afD
-afB
-afD
-ipP
-afD
-afB
+agI
+hKm
+cMg
+hKm
+agI
+hKm
+cMg
+hKm
+agI
 azA
 azA
 azA
@@ -76341,15 +76344,15 @@ azA
 azA
 azA
 azA
-afB
-afB
-afB
-afB
-afB
-afB
-afB
-afB
-afB
+agI
+agI
+agI
+agI
+agI
+agI
+agI
+agI
+agI
 azA
 azA
 azA
