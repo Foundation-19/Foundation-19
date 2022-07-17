@@ -267,7 +267,7 @@
 	id = access_torch_fax
 	desc = "Fax Machines"
 	region = ACCESS_REGION_COMMAND
-
+/*
 var/const/access_robotics = "ACCESS_ROBOTICS"
 /datum/access/robotics
 	id = access_robotics
@@ -326,3 +326,4 @@ var/const/access_ai_upload = "ACCESS_AI_UPLOAD"
 /datum/access/ai_upload
 	id = access_ai_upload
 	desc = "AI Upload"
+*/
