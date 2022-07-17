@@ -1295,9 +1295,6 @@
 /obj/item/folder/blue,
 /obj/item/folder/red,
 /obj/item/folder/white,
-/obj/item/folder/yellow,
-/obj/item/implantcase/death_alarm,
-/obj/item/implanter,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/hallway)
 "dL" = (
@@ -1403,6 +1400,9 @@
 /area/site53/uez/hallway)
 "ee" = (
 /obj/structure/table/standard,
+/obj/item/implanter,
+/obj/item/folder/yellow,
+/obj/item/implantcase/death_alarm,
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/hallway)
 "ef" = (
@@ -2535,10 +2535,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"hW" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor,
-/area/site53/logistics/logistics)
 "hX" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -2574,9 +2570,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
-"id" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "ie" = (
@@ -2681,13 +2674,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"io" = (
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
 "ip" = (
 /obj/machinery/papershredder,
 /obj/effect/floor_decal/corner/brown/half{
@@ -2754,10 +2740,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"ix" = (
-/obj/effect/paint_stripe/blue,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/logistics/logistics)
 "iy" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -2785,10 +2767,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"iC" = (
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
 "iD" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/standard,
@@ -2799,11 +2777,6 @@
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
-"iF" = (
-/obj/item/device/flashlight/lamp,
-/obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "iG" = (
@@ -4568,12 +4541,6 @@
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
-"YH" = (
-/obj/structure/table/standard,
-/obj/item/pen,
-/obj/item/paper_bin,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
 "YJ" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
@@ -26370,7 +26337,7 @@ hk
 hk
 ia
 ip
-id
+iy
 iX
 iG
 iG
@@ -26627,10 +26594,10 @@ hk
 hk
 ia
 iq
-id
-id
-id
-id
+iy
+iy
+iy
+iy
 RK
 ia
 hk
@@ -26884,10 +26851,10 @@ hk
 hk
 ia
 iq
-id
-id
-id
-id
+iy
+iy
+iy
+iy
 RK
 ia
 hk
@@ -27141,10 +27108,10 @@ ia
 ia
 ia
 jg
-id
-iF
+iy
+iD
 iG
-id
+iy
 jj
 ia
 hk
@@ -27398,10 +27365,10 @@ ie
 iP
 ia
 ir
-id
+iy
 iG
 iG
-id
+iy
 iZ
 ia
 hk
@@ -27650,15 +27617,15 @@ fC
 fC
 ia
 ib
-id
-id
+iy
+iy
 ij
 im
 il
-id
+iy
 iG
-YH
-id
+TT
+iy
 ZZ
 ia
 hk
@@ -27907,15 +27874,15 @@ fw
 fw
 bB
 ic
-id
-id
+iy
+iy
 ik
 in
 wj
-id
+iy
 iG
 iT
-id
+iy
 jb
 ia
 hk
@@ -28169,10 +28136,10 @@ ih
 iY
 ia
 jh
-id
+iy
 iG
-iF
-id
+iD
+iy
 jk
 ia
 hk
@@ -28420,16 +28387,16 @@ hZ
 kx
 hZ
 ia
-ix
+jl
 ig
-ix
+jl
 ia
 ia
 wj
-id
-id
-id
-id
+iy
+iy
+iy
+iy
 RK
 ia
 hk
@@ -28677,9 +28644,9 @@ hZ
 hZ
 hZ
 hZ
-ix
+jl
 ig
-ix
+jl
 ia
 ia
 iv
@@ -28932,8 +28899,8 @@ hZ
 hZ
 hZ
 hZ
-hW
-hW
+iz
+iz
 jl
 iA
 jl
@@ -29189,13 +29156,13 @@ hZ
 hZ
 hZ
 kx
-hW
+iz
 hX
 hP
 iB
 iu
 iU
-hW
+iz
 hZ
 kx
 hZ
@@ -29446,13 +29413,13 @@ hZ
 hZ
 hZ
 hZ
-hW
+iz
 hY
 iy
-iC
+iG
 JN
 TT
-hW
+iz
 hZ
 kx
 hZ
@@ -29703,13 +29670,13 @@ kx
 kx
 kx
 kx
-hW
+iz
 is
 iy
 iD
 iR
 iy
-hW
+iz
 hZ
 kx
 kx
@@ -29960,13 +29927,13 @@ hZ
 hZ
 hZ
 hZ
-hW
+iz
 it
-io
+ii
 iy
 iy
 iy
-hW
+iz
 hZ
 hZ
 hZ
@@ -30217,13 +30184,13 @@ hZ
 hZ
 hZ
 hZ
-hW
-hW
-hW
-hW
-hW
-hW
-hW
+iz
+iz
+iz
+iz
+iz
+iz
+iz
 hZ
 hZ
 hZ

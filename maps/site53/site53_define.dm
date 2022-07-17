@@ -13,7 +13,7 @@
 	overmap_event_areas = 0
 	usable_email_tlds = list("site53.foundation", "security.site53.foundation", "science.site53.foundation", "utility.site53.foundation")
 
-	allowed_spawns = list("Cryogenic Storage", "D-Cells", "Light Containment Zone", "Security Base")
+	allowed_spawns = list("Cryogenic Storage", "D-Cells", "Light Containment Zone")
 	default_spawn = "Cryogenic Storage"
 
 	station_name  = "Foundation Site 53"

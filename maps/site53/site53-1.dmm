@@ -396,10 +396,6 @@
 /obj/structure/barricade,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
-"bi" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/checkequip)
 "bk" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
@@ -823,10 +819,6 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
-"cP" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/checkequip)
 "cQ" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
@@ -2364,10 +2356,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
-"gS" = (
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/mining/miningops)
 "gT" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -3286,9 +3274,6 @@
 "iX" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/llcz/mining/miningops)
-"iY" = (
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/cellbubble)
 "iZ" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -4573,10 +4558,6 @@
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
-"lZ" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/cellbubble)
 "ma" = (
 /obj/machinery/camera/autoname{
 	network = list("Heavy Containment Zone Network")
@@ -4675,9 +4656,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/engineering/maintenance/lowerselfdestruct)
-"ml" = (
-/turf/simulated/floor/tiled/white,
-/area/site53/uhcz/scp8containment)
 "mm" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -5547,10 +5525,6 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
-"op" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/scp8containment)
 "oq" = (
 /obj/machinery/light{
 	dir = 8
@@ -6078,9 +6052,6 @@
 /obj/item/clothing/head/helmet/facecover,
 /obj/structure/table/reinforced,
 /obj/machinery/camera/network/lcz,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/prep)
-"pK" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/prep)
 "pL" = (
@@ -7144,10 +7115,6 @@
 "rY" = (
 /turf/simulated/mineral/random,
 /area/site53/llcz/mine/unexplored)
-"rZ" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/prepainted,
-/area/site53/llcz/dclass/checkequip)
 "sa" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -10031,13 +9998,6 @@
 	name = "vinyl wooden floor"
 	},
 /area/site53/llcz/dclass/luxuryhall)
-"yP" = (
-/obj/machinery/door/airlock/glass/security{
-	name = "Security Bubble";
-	req_access = list(202)
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/cellbubble)
 "yQ" = (
 /obj/structure/table/marble,
 /obj/machinery/light{
@@ -11881,11 +11841,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
-"DH" = (
-/obj/effect/paint_stripe/orange,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/mining/miningops)
 "DI" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
@@ -12493,11 +12448,6 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
-"Fm" = (
-/obj/item/device/megaphone,
-/obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/cellbubble)
 "Fn" = (
 /obj/machinery/button/flasher{
 	id_tag = "line3"
@@ -13519,10 +13469,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
-"Iu" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/prep)
 "Iv" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
@@ -14807,9 +14753,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp106parts)
-"Ln" = (
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip)
 "Lp" = (
 /obj/machinery/light{
 	dir = 1;
@@ -15189,10 +15132,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
-"NL" = (
-/obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/cellbubble)
 "NN" = (
 /obj/structure/table/standard,
 /obj/machinery/light,
@@ -15832,7 +15771,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/camera/autoname{
-	c_tag = "Server Farm Entrance";
+	c_tag = "SCP-008-3";
 	dir = 4;
 	network = list("Engineering Network")
 	},
@@ -16454,7 +16393,7 @@
 	},
 /obj/effect/floor_decal/industrial/firstaid,
 /obj/machinery/camera/autoname{
-	c_tag = "Comms Tower Basement";
+	c_tag = "SCP-008-2";
 	dir = 4;
 	network = list("Engineering Network")
 	},
@@ -17520,7 +17459,7 @@
 	pixel_y = 16
 	},
 /obj/machinery/camera/autoname{
-	c_tag = "Comms Tower Basement";
+	c_tag = "SCP-008-1";
 	dir = 4;
 	network = list("Engineering Network")
 	},
@@ -23281,11 +23220,11 @@ ig
 ii
 ch
 cc
-Iu
-Iu
-Iu
-Iu
-Iu
+jb
+jb
+jb
+jb
+jb
 ie
 rq
 Bh
@@ -23542,7 +23481,7 @@ pP
 IC
 IK
 IN
-Iu
+jb
 ie
 BW
 Bh
@@ -23795,11 +23734,11 @@ ch
 jg
 so
 cv
-Iu
+jb
 uo
 ID
 IO
-Iu
+jb
 ie
 TT
 iO
@@ -24056,7 +23995,7 @@ Ix
 IE
 IL
 IP
-Iu
+jb
 ie
 ie
 ie
@@ -24308,12 +24247,12 @@ cQ
 cQ
 hS
 cQ
-Iu
-Iu
+jb
+jb
 IF
 ID
 Iq
-Iu
+jb
 ie
 Um
 wt
@@ -24565,12 +24504,12 @@ cQ
 fR
 rh
 pU
-Iu
+jb
 IV
 IU
 ID
 oz
-Iu
+jb
 ie
 tG
 rI
@@ -24827,7 +24766,7 @@ Iz
 IG
 ID
 IR
-Iu
+jb
 ie
 vf
 Le
@@ -25084,7 +25023,7 @@ hT
 IH
 ID
 IN
-Iu
+jb
 ie
 tG
 rI
@@ -25339,9 +25278,9 @@ Iw
 Iv
 hV
 IG
-Iu
-Iu
-Iu
+jb
+jb
+jb
 ie
 vp
 zG
@@ -25596,7 +25535,7 @@ Ir
 Iv
 Iz
 IG
-Iu
+jb
 ie
 ie
 ie
@@ -25850,10 +25789,10 @@ fM
 ij
 rh
 us
-Iu
+jb
 jQ
 IG
-Iu
+jb
 ie
 il
 vo
@@ -26107,10 +26046,10 @@ cQ
 cQ
 hU
 cQ
-Iu
-Iu
+jb
+jb
 II
-Iu
+jb
 ie
 rw
 sg
@@ -26624,7 +26563,7 @@ ch
 cc
 Iv
 IJ
-Iu
+jb
 ie
 db
 CS
@@ -26879,9 +26818,9 @@ cd
 rU
 ch
 yR
-Iu
-Iu
-Iu
+jb
+jb
+jb
 ie
 ie
 ie
@@ -30258,12 +30197,12 @@ wr
 wr
 Hc
 wB
-lZ
-lZ
+cY
+cY
 xA
 AR
-lZ
-lZ
+cY
+cY
 DD
 DI
 EP
@@ -30472,14 +30411,14 @@ cc
 hX
 cc
 cQ
-cP
-cP
-cP
-cP
-cP
-cP
-cP
-cP
+dk
+dk
+dk
+dk
+dk
+dk
+dk
+dk
 IA
 pM
 IS
@@ -30513,14 +30452,14 @@ fs
 fs
 fs
 fs
-lZ
+cY
 zW
-lZ
+cY
 wE
 zX
 CN
 Db
-lZ
+cY
 DG
 DI
 EV
@@ -30729,18 +30668,18 @@ vd
 ia
 cv
 cQ
-cP
+dk
 dY
 eH
 eH
 eH
 eH
 eH
-cP
+dk
 IB
-pK
-pK
-pK
+ID
+ID
+ID
 eB
 jb
 sf
@@ -30752,7 +30691,7 @@ uH
 pI
 vz
 cY
-iY
+zX
 wU
 kR
 cY
@@ -30760,7 +30699,7 @@ rX
 Qf
 Ji
 jU
-iY
+zX
 rW
 Jj
 sY
@@ -30986,18 +30925,18 @@ cc
 hX
 fC
 cQ
-cP
+dk
 dZ
 ee
 ee
 ee
 ee
 ee
-cP
+dk
 pJ
-pK
-pK
-pK
+ID
+ID
+ID
 IS
 jb
 wW
@@ -31009,16 +30948,16 @@ pu
 it
 OC
 it
-iY
+zX
 wU
-iY
+zX
 cY
 GM
 lq
-iY
+zX
 jU
-iY
-iY
+zX
+zX
 lq
 kN
 cY
@@ -31243,18 +31182,18 @@ cQ
 hY
 cQ
 cQ
-cP
+dk
 aB
 ee
 eN
 eT
 ee
 gr
-cP
+dk
 oJ
 pM
 tr
-pK
+ID
 eB
 jb
 sf
@@ -31268,9 +31207,9 @@ cY
 cY
 cY
 wU
-iY
-yP
-iY
+zX
+zW
+zX
 CI
 jJ
 tm
@@ -31500,14 +31439,14 @@ cc
 hX
 cc
 ex
-cP
-cP
-cP
-cP
+dk
+dk
+dk
+dk
 eW
-cP
-cP
-cP
+dk
+dk
+dk
 jb
 jb
 pN
@@ -31525,7 +31464,7 @@ rA
 uQ
 we
 wV
-iY
+zX
 cY
 cY
 cY
@@ -31542,13 +31481,13 @@ jp
 fw
 kS
 wN
-Fm
+rW
 zT
 zU
 zX
 zX
 BY
-lZ
+cY
 DJ
 DI
 EV
@@ -31781,8 +31720,8 @@ cY
 rR
 jx
 cY
-NL
-iY
+zT
+zX
 zx
 cY
 EU
@@ -31798,14 +31737,14 @@ fs
 fs
 fs
 yL
-lZ
-lZ
-lZ
+cY
+cY
+cY
 wN
 xA
 zW
-lZ
-lZ
+cY
+cY
 DK
 DI
 EV
@@ -32039,8 +31978,8 @@ kO
 kO
 kO
 XE
-iY
-iY
+zX
+zX
 EO
 OC
 OC
@@ -32296,8 +32235,8 @@ EL
 dT
 kO
 kO
-iY
-iY
+zX
+zX
 cY
 EW
 JU
@@ -32773,17 +32712,17 @@ dM
 cQ
 cQ
 cQ
-bi
-bi
-bi
+dk
+dk
+dk
 pC
 pC
 lG
 oX
-rZ
+dB
 oW
-rZ
-rZ
+dB
+dB
 cQ
 dB
 eh
@@ -33029,19 +32968,19 @@ ce
 dx
 cc
 cQ
-bi
-bi
+dk
+dk
 zL
-bi
-bi
-bi
+dk
+dk
+dk
 wp
 pm
 sc
 uq
-bi
-bi
-bi
+dk
+dk
+dk
 dk
 ei
 ZS
@@ -33286,14 +33225,14 @@ cf
 dR
 cc
 cQ
-bi
+dk
 eq
 fV
 hx
 ls
-bi
+dk
 wp
-bi
+dk
 pw
 fV
 vx
@@ -33574,8 +33513,8 @@ BV
 eX
 DA
 rQ
-gS
-gS
+hk
+hk
 fA
 fA
 fA
@@ -33800,7 +33739,7 @@ ci
 eL
 cc
 cQ
-bi
+dk
 fV
 fV
 fV
@@ -33810,9 +33749,9 @@ fV
 Az
 fV
 Cd
-bi
-bi
-bi
+dk
+dk
+dk
 dk
 Ua
 gn
@@ -34057,7 +33996,7 @@ cc
 cq
 cv
 cQ
-bi
+dk
 yU
 fV
 cg
@@ -34072,10 +34011,10 @@ yK
 Jr
 Tm
 QP
-Ln
+ee
 VJ
 ik
-Ln
+ee
 Ot
 dk
 pC
@@ -34314,7 +34253,7 @@ cc
 cc
 cw
 cQ
-bi
+dk
 eq
 bW
 fV
@@ -34329,10 +34268,10 @@ IT
 fV
 dk
 PT
-Ln
+ee
 Ru
 Zv
-Ln
+ee
 Vr
 dk
 pC
@@ -34571,19 +34510,19 @@ cQ
 cQ
 cQ
 cQ
-bi
-bi
-bi
+dk
+dk
+dk
 ck
-bi
+dk
 zY
 zC
 Az
 fV
 Gx
-bi
-bi
-bi
+dk
+dk
+dk
 dk
 dk
 dk
@@ -34826,13 +34765,13 @@ aN
 pC
 pC
 pC
-bi
-bi
-bi
-bi
-bi
+dk
+dk
+dk
+dk
+dk
 eq
-bi
+dk
 Az
 Az
 Az
@@ -34841,7 +34780,7 @@ fV
 JL
 yK
 Jr
-bi
+dk
 pC
 pC
 pC
@@ -35083,7 +35022,7 @@ aN
 pC
 rY
 pC
-bi
+dk
 aP
 Ki
 fV
@@ -35098,7 +35037,7 @@ fV
 JN
 IT
 fV
-bi
+dk
 pC
 rY
 rY
@@ -35340,22 +35279,22 @@ aN
 pC
 rY
 pC
-bi
+dk
 GI
 fB
 ib
-bi
+dk
 ez
-bi
-bi
-bi
-bi
-bi
+dk
+dk
+dk
+dk
+dk
 pR
-bi
-bi
-bi
-bi
+dk
+dk
+dk
+dk
 pC
 rY
 rY
@@ -35597,11 +35536,11 @@ aN
 pC
 rY
 pC
-bi
+dk
 Im
 fB
 fV
-bi
+dk
 GF
 lK
 ja
@@ -35610,7 +35549,7 @@ yK
 Jx
 fV
 CU
-bi
+dk
 pC
 pC
 pC
@@ -35854,11 +35793,11 @@ aN
 pC
 rY
 pC
-bi
-bi
-bi
+dk
+dk
+dk
 iP
-bi
+dk
 GI
 Im
 ja
@@ -35867,7 +35806,7 @@ fV
 Jx
 fV
 JE
-bi
+dk
 pC
 rY
 ua
@@ -36113,9 +36052,9 @@ rY
 pC
 pC
 pC
-bi
+dk
 Kj
-bi
+dk
 GI
 Im
 ja
@@ -36124,7 +36063,7 @@ fV
 Jx
 fV
 JF
-bi
+dk
 pC
 rY
 rY
@@ -36369,10 +36308,10 @@ pC
 rY
 rY
 pC
-bi
-bi
+dk
+dk
 hR
-bi
+dk
 GI
 Im
 ja
@@ -36381,7 +36320,7 @@ fV
 Jx
 Kq
 JI
-bi
+dk
 pC
 rY
 rY
@@ -36626,10 +36565,10 @@ pC
 rY
 rY
 pC
-bi
+dk
 hR
 hR
-bi
+dk
 GL
 vX
 ja
@@ -36638,7 +36577,7 @@ zN
 Jx
 vD
 JT
-bi
+dk
 pC
 rY
 rY
@@ -36883,19 +36822,19 @@ pC
 rY
 rY
 pC
-bi
+dk
 hR
-bi
-bi
+dk
+dk
 Jm
-bi
-bi
-bi
-bi
+dk
+dk
+dk
+dk
 sm
-bi
-bi
-bi
+dk
+dk
+dk
 pC
 rY
 rY
@@ -37140,18 +37079,18 @@ pC
 rY
 rY
 pC
-bi
+dk
 hR
-bi
+dk
 qV
 wH
 Gb
-bi
-bi
+dk
+dk
 ms
 zN
 pY
-bi
+dk
 pC
 pC
 rY
@@ -37397,18 +37336,18 @@ pC
 rY
 rY
 pC
-bi
+dk
 hR
 eC
 wH
 wH
 wH
 gK
-bi
-bi
-bi
-bi
-bi
+dk
+dk
+dk
+dk
+dk
 pC
 rY
 rY
@@ -37654,13 +37593,13 @@ pC
 rY
 rY
 pC
-bi
+dk
 Kj
 Jm
 wH
 wH
 wH
-bi
+dk
 pC
 pC
 pC
@@ -37911,13 +37850,13 @@ pC
 rY
 rY
 pC
-bi
-bi
-bi
+dk
+dk
+dk
 Bf
 Bg
 In
-bi
+dk
 pC
 rY
 rY
@@ -38170,11 +38109,11 @@ rY
 pC
 pC
 pC
-bi
-bi
-bi
-bi
-bi
+dk
+dk
+dk
+dk
+dk
 pC
 rY
 rY
@@ -38713,8 +38652,8 @@ rY
 rY
 hk
 DF
-DH
-DH
+hj
+hj
 hj
 hp
 hM
@@ -78488,16 +78427,16 @@ ZE
 pt
 id
 BG
-op
-op
-op
-op
-op
-op
-op
-op
-op
-op
+xe
+xe
+xe
+xe
+xe
+xe
+xe
+xe
+xe
+xe
 LA
 xe
 gq
@@ -78745,16 +78684,16 @@ ZE
 xe
 id
 BG
-op
-op
+xe
+xe
 zf
 Oz
-op
+xe
 SB
 Xl
 Nn
 Up
-op
+xe
 gq
 gq
 gq
@@ -79002,7 +78941,7 @@ pt
 xe
 qw
 BG
-op
+xe
 YQ
 Na
 Wf
@@ -79011,7 +78950,7 @@ Yi
 Uo
 ZD
 KL
-op
+xe
 gq
 gq
 gq
@@ -79259,17 +79198,17 @@ BD
 xe
 Pq
 ON
-op
+xe
 SC
 Na
 YO
-op
-op
-op
-op
+xe
+xe
+xe
+xe
 VE
-op
-op
+xe
+xe
 gq
 gq
 gq
@@ -79526,7 +79465,7 @@ Ue
 Yf
 Yx
 BE
-op
+xe
 gq
 gq
 gq
@@ -79773,7 +79712,7 @@ gq
 xe
 xe
 LA
-op
+xe
 Vm
 Na
 Ux
@@ -79783,7 +79722,7 @@ WU
 Ox
 Sb
 Qw
-op
+xe
 gq
 gq
 gq
@@ -80030,17 +79969,17 @@ gq
 gq
 gq
 gq
-op
+xe
 LR
 pZ
 OZ
 GQ
 Ml
-ml
+pe
 Wc
-ml
+pe
 PQ
-op
+xe
 gq
 gq
 gq
@@ -80287,17 +80226,17 @@ gq
 gq
 gq
 gq
-op
-op
+xe
+xe
 Za
 Va
 GQ
 NQ
 QK
 Ch
-ml
+pe
 PF
-op
+xe
 gq
 gq
 gq
@@ -80545,16 +80484,16 @@ gq
 gq
 gq
 gq
-op
-op
-op
-op
-op
+xe
+xe
+xe
+xe
+xe
 Ys
 UY
 BF
-op
-op
+xe
+xe
 gq
 gq
 gq
@@ -80806,11 +80745,11 @@ gq
 gq
 gq
 gq
-op
-op
-op
-op
-op
+xe
+xe
+xe
+xe
+xe
 Uu
 gq
 gq

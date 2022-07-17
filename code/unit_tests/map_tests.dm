@@ -493,26 +493,6 @@
 		pass("All shutoff valves connect to two different pipe networks.")
 	return 1
 
-//=======================================================================================
-
-/datum/unit_test/station_pipes_shall_not_leak
-	name = "MAP: Station pipes shall not leak"
-
-/datum/unit_test/station_pipes_shall_not_leak/start_test()
-	var/failures = 0
-	for(var/obj/machinery/atmospherics/pipe/P in world)
-		if(P.leaking && isStationLevel(P.z))
-			failures++
-			log_bad("Following pipe is leaking: [log_info_line(P)]")
-
-	if(failures)
-		fail("[failures] station pipe\s leak.")
-	else
-		pass("No station pipes are leaking")
-	return 1
-
-//=======================================================================================
-
 /datum/unit_test/station_power_terminals_shall_be_wired
 	name = "MAP: Station power terminals shall be wired"
 

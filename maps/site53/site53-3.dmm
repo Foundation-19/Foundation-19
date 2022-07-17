@@ -4522,10 +4522,6 @@
 /obj/effect/wallframe_spawn/reinforced/polarized/full,
 /turf/simulated/floor/plating,
 /area/site53/uez/o5repoffice)
-"lG" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/prepainted,
-/area/site53/zonecommanderoffice)
 "lH" = (
 /obj/machinery/light{
 	dir = 8
@@ -4535,10 +4531,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"lI" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor/plating,
-/area/site53/zonecommanderoffice)
 "lJ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -5042,25 +5034,10 @@
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/zonecommanderoffice)
-"no" = (
-/obj/machinery/papershredder,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice)
-"nq" = (
-/turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice)
 "nr" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurant)
-"ns" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice)
 "nt" = (
 /obj/structure/closet/secure_closet/mtf/enlisted/ez,
 /obj/item/clothing/accessory/armorplate/tactical,
@@ -5184,14 +5161,6 @@
 /obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice)
-"nN" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/zonecommanderoffice)
@@ -5641,15 +5610,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"pk" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "facilitylockdown";
-	name = "Exterior Lockdown Blast Door"
-	},
-/turf/simulated/floor/plating,
-/area/site53/zonecommanderoffice)
 "pl" = (
 /obj/machinery/power/apc{
 	dir = 8;
@@ -5728,11 +5688,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
 /area/site53/entrancezone/forensics)
-"py" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/status_display,
-/turf/simulated/wall/prepainted,
-/area/site53/zonecommanderoffice)
 "pz" = (
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/prepainted,
@@ -6595,9 +6550,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/zonecommanderoffice)
-"sM" = (
-/turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice)
 "sN" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -6904,10 +6856,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/ezarmory)
-"tA" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/prepainted,
-/area/site53/zonecommanderoffice)
 "tB" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/zonecommanderoffice)
@@ -7061,14 +7009,6 @@
 /area/site53/zonecommanderoffice)
 "ud" = (
 /turf/unsimulated/mineral,
-/area/site53/zonecommanderoffice)
-"ue" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
 /area/site53/zonecommanderoffice)
 "uf" = (
 /obj/structure/cable/green{
@@ -14447,8 +14387,8 @@ sE
 sE
 oZ
 kt
-sM
-sM
+tB
+tB
 tp
 bl
 dA
@@ -14704,8 +14644,8 @@ sE
 sE
 oZ
 kt
-sM
-sM
+tB
+tB
 tq
 bl
 dA
@@ -14962,7 +14902,7 @@ sE
 oZ
 te
 tj
-sM
+tB
 tr
 bl
 dA
@@ -15219,7 +15159,7 @@ sE
 oZ
 tf
 tk
-sM
+tB
 ts
 bl
 dA
@@ -15464,8 +15404,8 @@ dA
 bl
 ty
 pm
-sM
-sM
+tB
+tB
 oZ
 sE
 sE
@@ -15476,7 +15416,7 @@ sE
 oZ
 tg
 tl
-sM
+tB
 tt
 bl
 dA
@@ -15732,8 +15672,8 @@ sE
 sE
 oZ
 kt
-sM
-sM
+tB
+tB
 sK
 bl
 dA
@@ -38843,12 +38783,12 @@ dw
 Ce
 ud
 ud
-tA
-tA
-tA
-tA
-tA
-tA
+lC
+lC
+lC
+lC
+lC
+lC
 bk
 Gg
 bk
@@ -39100,10 +39040,10 @@ dw
 Ce
 ud
 ud
-tA
+lC
 XF
 tB
-tA
+lC
 XF
 tB
 bk
@@ -39357,10 +39297,10 @@ XO
 Ce
 ud
 ud
-tA
+lC
 Hf
 tB
-tA
+lC
 Hf
 tB
 bk
@@ -39612,13 +39552,13 @@ Ce
 Ce
 Ce
 Ce
-tA
-tA
+lC
+lC
 Mq
-tA
+lC
 Fi
-tA
-tA
+lC
+lC
 Wm
 hp
 dp
@@ -39869,10 +39809,10 @@ dA
 dA
 dA
 dA
-tA
+lC
 Hq
 Hf
-tA
+lC
 xK
 YT
 LE
@@ -40126,7 +40066,7 @@ mk
 mk
 mk
 mk
-tA
+lC
 tB
 tB
 Es
@@ -40383,14 +40323,14 @@ UI
 UI
 qA
 mk
-tA
-tA
-tA
-tA
-tA
+lC
+lC
+lC
+lC
+lC
 tB
 UV
-tA
+lC
 hp
 dr
 dD
@@ -40640,7 +40580,7 @@ IG
 Vn
 XD
 mk
-tA
+lC
 zP
 lA
 zP
@@ -40897,11 +40837,11 @@ oq
 Gv
 vn
 mk
-tA
+lC
 PR
 wz
 Ux
-tA
+lC
 Bc
 tB
 FH
@@ -41158,7 +41098,7 @@ px
 px
 px
 px
-tA
+lC
 RJ
 tB
 Xq
@@ -41445,7 +41385,7 @@ ae
 ae
 ae
 af
-vD
+xb
 xb
 xb
 xb
@@ -41676,7 +41616,7 @@ Ak
 tB
 tB
 Tn
-tA
+lC
 dA
 dA
 dA
@@ -41928,12 +41868,12 @@ lY
 lW
 BR
 mp
-tA
-tA
+lC
+lC
 tB
 Rj
-tA
-tA
+lC
+lC
 lC
 lC
 lC
@@ -42704,7 +42644,7 @@ BQ
 tB
 tB
 uf
-ue
+mZ
 mZ
 nH
 yt
@@ -43213,7 +43153,7 @@ rE
 lF
 ms
 mv
-tA
+lC
 ua
 tN
 tN
@@ -43476,7 +43416,7 @@ tE
 tE
 ub
 ui
-py
+tS
 ni
 mY
 mY
@@ -43733,12 +43673,12 @@ tE
 tE
 ub
 uj
-lG
-lI
-lI
-lI
-lG
-lG
+lC
+tQ
+tQ
+tQ
+lC
+lC
 dA
 dA
 dA
@@ -43990,12 +43930,12 @@ tU
 tU
 ub
 tX
-lI
+tQ
 nn
-nq
-nq
+tB
+tB
 nL
-lG
+lC
 fx
 bO
 ih
@@ -44243,16 +44183,16 @@ bS
 bm
 pO
 rJ
-ue
-ue
+mZ
+mZ
 ug
 TR
-lI
-no
+tQ
+tW
 nu
 nI
 nM
-lG
+lC
 bO
 bm
 rm
@@ -44504,12 +44444,12 @@ tB
 tB
 ub
 tB
-lI
+tQ
 Vf
 nw
 nJ
-nN
-pk
+ub
+pO
 bO
 bS
 rm
@@ -44761,12 +44701,12 @@ mR
 tB
 ub
 tB
-lI
-nq
-nq
-nq
-nN
-pk
+tQ
+tB
+tB
+tB
+ub
+pO
 ru
 cf
 bO
@@ -45019,11 +44959,11 @@ uh
 Wr
 TG
 mW
-ns
+mZ
 nx
 nK
 nT
-lG
+lC
 bO
 bm
 bY
@@ -45269,18 +45209,18 @@ bI
 bO
 bO
 bS
-tA
-tA
-tA
-tA
-tA
-tA
-lG
+lC
+lC
+lC
+lC
+lC
+lC
+lC
 pN
 pN
 pN
 pN
-lG
+lC
 bO
 bm
 bm
