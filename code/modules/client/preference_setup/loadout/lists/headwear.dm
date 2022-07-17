@@ -3,19 +3,21 @@
 	slot = slot_head
 	category = /datum/gear/head
 	denied_roles = list(/datum/job/classd)
+	allowed_branches = list(/datum/mil_branch/civilian)
 
-	//Same idea, eats the helmet slot which guards spawn with. With the exception of certain beret variations, no reason to wear any of these.
+	//Same idea, eats the helmet slot which guards spawn with. Will selectively allow certain headgear that would fit security like beanies, hwoever
 
 /datum/gear/head/beret
 	display_name = "beret, colour select"
 	path = /obj/item/clothing/head/beret/plaincolor
 	flags = GEAR_HAS_COLOR_SELECTION
 	description = "A simple, solid color beret. This one has no emblems or insignia on it."
-
+	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/head/bandana
 	display_name = "bandana selection"
 	path = /obj/item/clothing
+	allowed_branches = list(/datum/mil_branch/civilian, /datum/mil_branch/security)
 
 /datum/gear/head/bandana/New()
 	..()
@@ -26,6 +28,7 @@
 	path = /obj/item/clothing/head/beanie
 	flags = GEAR_HAS_COLOR_SELECTION
 	denied_roles = null
+	allowed_branches = list(/datum/mil_branch/civilian, /datum/mil_branch/security)
 
 /datum/gear/head/bow
 	display_name = "hair bow, colour select"
@@ -43,6 +46,7 @@
 	display_name = "mariner's cap, colour select"
 	path = /obj/item/clothing/head/mariner
 	flags = GEAR_HAS_COLOR_SELECTION
+	allowed_branches = list(/datum/mil_branch/security)
 
 /datum/gear/head/orange_cap
 	display_name = "orange cap"
