@@ -5,7 +5,7 @@
 	category = /datum/gear/shoes
 	denied_roles = list(/datum/job/classd)
 	allowed_branches = list(/datum/mil_branch/civilian)
-	// Reasoning : Most options are not fit, save for some of the boots selections such as workboots. You don't want to see security officers with high heels or sandals on a high security facility. But it makes sense for civi staff.
+	// Reasoning : Most options are not fit, save for some of the boots selections such as workboots which are allowed for all. You don't want to see security officers with high heels or sandals on a high security facility. But it makes sense for civi staff.
 
 /datum/gear/shoes/athletic
 	display_name = "athletic shoes, colour select"
