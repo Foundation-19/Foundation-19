@@ -5,10 +5,11 @@
 	slot = slot_tie
 	denied_roles = list(/datum/job/classd)
 
-
+//guards don't wear ties
 /datum/gear/accessory/tie
 	display_name = "tie selection"
 	path = /obj/item/clothing/accessory
+	allowed_branches = list(/datum/mil_branch/civilian)
 
 
 /datum/gear/accessory/tie/New()
@@ -29,6 +30,7 @@
 	display_name = "colored tie"
 	path = /obj/item/clothing/accessory
 	flags = GEAR_HAS_COLOR_SELECTION
+	allowed_branches = list(/datum/mil_branch/civilian)
 
 
 /datum/gear/accessory/tie_color/New()
@@ -51,13 +53,13 @@
 /datum/gear/accessory/bowtie
 	display_name = "bowtie, horrible"
 	path = /obj/item/clothing/accessory/bowtie/ugly
-
+	allowed_branches = list(/datum/mil_branch/civilian)
 
 /datum/gear/accessory/bowtie/color
 	display_name = "bowtie, colour select"
 	path = /obj/item/clothing/accessory/bowtie/color
 	flags = GEAR_HAS_COLOR_SELECTION
-
+	allowed_branches = list(/datum/mil_branch/civilian)
 
 /*/datum/gear/accessory/ntaward
 	display_name = "corporate award selection"
