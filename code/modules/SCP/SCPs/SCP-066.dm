@@ -23,7 +23,7 @@
 
 
 /mob/living/simple_animal/cat/scp_066/Initialize()
-	add_language(/datum/language/english)
+	add_language(LANGUAGE_ENGLISH)
 
 
 		// emotes
