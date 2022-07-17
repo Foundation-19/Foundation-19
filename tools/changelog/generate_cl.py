@@ -96,7 +96,7 @@ if write_cl["changes"]:
             f"html/changelogs/AutoChangeLog-pr-{pr_number}.yml",
             f"Automatic changelog generation for PR #{pr_number} [ci skip]",
             content=f"{cl_contents.read()}",
-            branch="master",
+            branch="dev",
             committer=InputGitAuthor(git_name, git_email),
         )
     print("Done!")
