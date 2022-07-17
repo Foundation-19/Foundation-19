@@ -436,7 +436,7 @@
 		/datum/reagent/copper = 1, 
 		/datum/reagent/medicine/dermaline = 1,
 		/datum/reagent/medicine/meraline = 1,
-		/datum/reagent/uranium = 1, 
+		/datum/reagent/uranium = 1
 	)
 	result_amount = 3
 
