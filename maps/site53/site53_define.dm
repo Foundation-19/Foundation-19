@@ -53,13 +53,13 @@
 		/area/turbolift/site53/scp106obs = NO_APC,
 		/area/turbolift/site53/scp106obs = NO_APC,
 		/area/turbolift/site53/uhcz = NO_APC,
-		/area/turbolift/site53/lhc = NO_APC,
+		/area/turbolift/site53/lhcz = NO_APC,
 		/area/site53/tram/engineering = NO_APC,
 		/area/site53/tram/lcz = NO_APC,
 		/area/site53/tram/hcz = NO_APC,
 		/area/shuttle/escape_pod = NO_APC,
 		/area/site53/tram/scpcar,
-		
+
 	)
 
 	away_site_budget = 3
