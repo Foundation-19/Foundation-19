@@ -58,8 +58,7 @@
 		/area/site53/tram/lcz = NO_APC,
 		/area/site53/tram/hcz = NO_APC,
 		/area/shuttle/escape_pod = NO_APC,
-		/area/site53/tram/scpcar,
-
+		/area/site53/tram/scpcar = NO_APC,
 	)
 
 	away_site_budget = 3
