@@ -76,7 +76,7 @@
 		for(C in T)
 			wire_test_count++
 			var/combined_dir = "[C.d1]-[C.d2]"
-			if(combined_dir in dirs_checked)
+			if(combined_dir in dirs_checked && (!locate(/obj/machinery/power/breakerbox/activated) in T))
 				bad_tests++
 				log_unit_test("[bad_msg] Contains multiple wires with same direction on top of each other.")
 			dirs_checked.Add(combined_dir)
@@ -185,6 +185,7 @@
 
 	return 1
 
+/* Who cares?
 /datum/unit_test/map_image_map_test
 	name = "MAP: All map levels shall have a corresponding map image."
 
@@ -204,7 +205,7 @@
 		pass("All map levels had a corresponding image.")
 
 	return 1
-
+*/
 //=======================================================================================
 
 /datum/unit_test/correct_allowed_spawn_test

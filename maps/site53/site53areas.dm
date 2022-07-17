@@ -659,13 +659,23 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint1"
 
-/area/site53/llcz/dclass/checkequip
+/area/site53/llcz/checkequip
 	name = "\improper Primary Checkpoint Equipment"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint1"
 
+/area/site53/llcz/dclass/checkequip
+	name = "\improper Primary D-Class Checkpoint Equipment"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint1"
+
+/area/site53/llcz/dclass/checkcryo
+	name = "\improper Primary D-Class Checkpoint Cryo"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint1"
+
 /area/site53/llcz/dclass/armory
-	name = "\improper Primary Checkpoint Armory"
+	name = "\improper Primary D-Class Checkpoint Armory"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint1"
 
@@ -901,6 +911,11 @@
 	icon_state = "detective"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/entrancezone/forensicsstairwell
+	name = "\improper Forensics Laboratory Stairwell"
+	icon_state = "detective"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/medical/infirmreception
 	name = "\improper Infirmary Reception"
 	icon_state = "medbay2"
@@ -1031,6 +1046,11 @@
 
 /area/site53/uhcz/securitypost
 	name = "\improper HCZ Checkpoint"
+	icon_state = "checkpoint"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/uhcz/commanderoffice
+	name = "\improper HCZ Commander's Office"
 	icon_state = "checkpoint"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 

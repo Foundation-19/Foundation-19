@@ -189,7 +189,7 @@
 "aB" = (
 /obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip)
+/area/site53/llcz/dclass/checkcryo)
 "aD" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/railing/mapped{
@@ -1220,14 +1220,14 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip)
+/area/site53/llcz/dclass/checkcryo)
 "dZ" = (
 /obj/machinery/computer/cryopod{
 	pixel_y = 24;
 	req_access = list(access_sciencelvl1)
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip)
+/area/site53/llcz/dclass/checkcryo)
 "eb" = (
 /obj/machinery/vending/wallmed1{
 	pixel_y = 29
@@ -1470,7 +1470,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip)
+/area/site53/llcz/dclass/checkcryo)
 "eI" = (
 /obj/structure/stairs/east,
 /turf/simulated/floor/tiled/monotile/white,
@@ -1520,7 +1520,7 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip)
+/area/site53/llcz/dclass/checkcryo)
 "eO" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1571,7 +1571,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip)
+/area/site53/llcz/dclass/checkcryo)
 "eU" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1604,7 +1604,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip)
+/area/site53/llcz/dclass/checkcryo)
 "eX" = (
 /obj/machinery/computer/modular/preset/security{
 	dir = 8;
@@ -2219,7 +2219,7 @@
 "gr" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkequip)
+/area/site53/llcz/dclass/checkcryo)
 "gs" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchenbotanybubble)
@@ -15385,6 +15385,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip)
+"PE" = (
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/checkcryo)
 "PF" = (
 /obj/machinery/button/crematorium{
 	id_tag = "scp8crem";
@@ -16853,6 +16857,9 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip)
+"WG" = (
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/checkcryo)
 "WI" = (
 /obj/machinery/camera/autoname{
 	network = list("SCP-247 CCTV Network")
@@ -30274,14 +30281,14 @@ cc
 hX
 cc
 cQ
-dk
-dk
-dk
-dk
-dk
-dk
-dk
-dk
+PE
+PE
+PE
+PE
+PE
+PE
+PE
+PE
 IA
 pM
 IS
@@ -30531,14 +30538,14 @@ vd
 ia
 cv
 cQ
-dk
+PE
 dY
 eH
 eH
 eH
 eH
 eH
-dk
+PE
 IB
 ID
 ID
@@ -30788,14 +30795,14 @@ cc
 hX
 fC
 cQ
-dk
+PE
 dZ
-ee
-ee
-ee
-ee
-ee
-dk
+WG
+WG
+WG
+WG
+WG
+PE
 pJ
 ID
 ID
@@ -31045,14 +31052,14 @@ cQ
 hY
 cQ
 cQ
-dk
+PE
 aB
-ee
+WG
 eN
 eT
-ee
+WG
 gr
-dk
+PE
 oJ
 pM
 tr
@@ -31302,14 +31309,14 @@ wp
 hX
 wp
 ex
-dk
-dk
-dk
-dk
+PE
+PE
+PE
+PE
 eW
-dk
-dk
-dk
+PE
+PE
+PE
 jb
 jb
 pN

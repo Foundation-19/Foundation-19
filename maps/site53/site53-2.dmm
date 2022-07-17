@@ -1042,11 +1042,6 @@
 /area/site53/lowertrams/brownline)
 "adf" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -1071,16 +1066,6 @@
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/brownline)
 "adi" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list(access_sciencelvl1)
-	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/structure/closet/secure_closet/engineering_welding,
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint)
@@ -1878,7 +1863,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice)
+/area/site53/uhcz/commanderoffice)
 "afm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -11431,18 +11416,14 @@
 /turf/simulated/floor/tiled/dark,
 /area/vacant/prototype/engine)
 "aAx" = (
-/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable{
-	d1 = 32;
-	icon_state = "32-1"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/zpipe/down/scrubbers{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/zpipe/down/supply{
-	dir = 1
-	},
-/turf/simulated/open,
+/turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/upperselfdestruct)
 "aAy" = (
 /obj/machinery/camera/autoname{
@@ -12901,10 +12882,10 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/zonecommanderoffice)
+/area/site53/uhcz/commanderoffice)
 "aDC" = (
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice)
+/area/site53/uhcz/commanderoffice)
 "aDD" = (
 /obj/machinery/power/apc/hyper{
 	dir = 1
@@ -12919,7 +12900,7 @@
 /obj/item/clothing/head/bio_hood/security,
 /obj/item/clothing/suit/bio_suit/security,
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/zonecommanderoffice)
+/area/site53/uhcz/commanderoffice)
 "aDE" = (
 /obj/machinery/light{
 	dir = 4;
@@ -12972,7 +12953,7 @@
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice)
+/area/site53/uhcz/commanderoffice)
 "aDL" = (
 /obj/structure/flora/ausbushes/pointybush,
 /obj/machinery/light,
@@ -13145,7 +13126,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/zonecommanderoffice)
+/area/site53/uhcz/commanderoffice)
 "aEk" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -13161,7 +13142,7 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice)
+/area/site53/uhcz/commanderoffice)
 "aEm" = (
 /obj/machinery/light/small{
 	dir = 1;
@@ -13197,7 +13178,7 @@
 /obj/structure/table/standard,
 /obj/item/storage/pill_bottle/amnesticsa,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice)
+/area/site53/uhcz/commanderoffice)
 "aEr" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4;
@@ -13224,7 +13205,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice)
+/area/site53/uhcz/commanderoffice)
 "aEv" = (
 /obj/structure/closet/secure_closet/mtf/enlisted,
 /obj/item/clothing/suit/bio_suit/security,
@@ -13339,7 +13320,7 @@
 "aEM" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
-/area/site53/zonecommanderoffice)
+/area/site53/uhcz/commanderoffice)
 "aEN" = (
 /obj/machinery/light{
 	dir = 4;
@@ -13725,7 +13706,7 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice)
+/area/site53/uhcz/commanderoffice)
 "aFE" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
@@ -13824,7 +13805,7 @@
 	name = "HCZ Security Post"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/zonecommanderoffice)
+/area/site53/uhcz/commanderoffice)
 "aFU" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 4
@@ -14264,7 +14245,7 @@
 "aHg" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
-/area/site53/zonecommanderoffice)
+/area/site53/uhcz/commanderoffice)
 "aHh" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -24400,11 +24381,6 @@
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -24416,22 +24392,19 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "bjs" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/zpipe/down/scrubbers{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/zpipe/down/supply{
+	dir = 1
 	},
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d1 = 32;
+	icon_state = "32-1"
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
+/turf/simulated/open,
+/area/site53/engineering/maintenance/upperselfdestruct)
 "bjt" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/button/alternate/door/bolts{
@@ -24441,11 +24414,6 @@
 	pixel_x = 24;
 	pixel_y = 23;
 	req_access = list(access_securitylvl3)
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -24463,11 +24431,6 @@
 	locked = 1;
 	name = "HCZ Armory";
 	req_access = list(access_securitylvl3)
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -24491,11 +24454,6 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -24506,30 +24464,9 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
-"bjx" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
 "bjy" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -24542,11 +24479,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "bjz" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "HCZ Secure Armoury";
 	req_access = list(access_securitylvl4)
@@ -28671,7 +28603,7 @@
 /area/site53/lowertrams/redline)
 "lzu" = (
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/zonecommanderoffice)
+/area/site53/uhcz/commanderoffice)
 "lAo" = (
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -52318,7 +52250,7 @@ azA
 aay
 aiL
 aAx
-aay
+bjs
 ajO
 aOj
 aOE
@@ -92832,7 +92764,7 @@ ass
 aTF
 bdl
 aEH
-bjs
+bjf
 ltO
 pcU
 gID
@@ -93092,7 +93024,7 @@ gID
 aTF
 bdl
 aEH
-bjs
+bjf
 ltO
 phw
 gID
@@ -94132,7 +94064,7 @@ gID
 gID
 bip
 rrU
-bjx
+bjB
 rrU
 biP
 biU
@@ -94392,7 +94324,7 @@ gID
 gID
 biq
 rrU
-bjx
+bjB
 rrU
 kdH
 biU

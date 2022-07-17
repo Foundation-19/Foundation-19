@@ -5575,11 +5575,6 @@
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Tram Hub"
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled,
 /area/site53/surface/tramhubhallwayentry)
 "pr" = (
@@ -5605,7 +5600,7 @@
 "px" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/site53/entrancezone/forensics)
+/area/site53/entrancezone/forensicsstairwell)
 "pz" = (
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/prepainted,
@@ -8302,7 +8297,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/forensics)
+/area/site53/entrancezone/forensicsstairwell)
 "HL" = (
 /obj/item/clothing/suit/bio_suit/security,
 /obj/item/clothing/head/bio_hood/security,
@@ -8358,7 +8353,7 @@
 "IK" = (
 /obj/structure/stairs/north,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/forensics)
+/area/site53/entrancezone/forensicsstairwell)
 "IL" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/blue,
@@ -8562,7 +8557,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/forensics)
+/area/site53/entrancezone/forensicsstairwell)
 "Ny" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/box/a10mm,
@@ -9096,7 +9091,7 @@
 /area/site53/uez/equipmentroom)
 "Va" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/forensics)
+/area/site53/entrancezone/forensicsstairwell)
 "Vf" = (
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/structure/table/reinforced,
