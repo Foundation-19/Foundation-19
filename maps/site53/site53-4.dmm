@@ -577,7 +577,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "bD" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
@@ -2488,7 +2488,7 @@
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsofficer)
 "hQ" = (
 /obj/machinery/computer/modular/preset/engineering,
 /obj/effect/floor_decal/corner/orange/border{
@@ -2534,7 +2534,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "hX" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -2542,18 +2542,18 @@
 	pixel_y = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsofficer)
 "hY" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsofficer)
 "hZ" = (
 /turf/simulated/open,
 /area/site53/surface/surface)
 "ia" = (
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "ib" = (
 /obj/structure/railing/mapped,
 /obj/structure/cable{
@@ -2562,7 +2562,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "ic" = (
 /obj/structure/railing/mapped,
 /obj/structure/cable{
@@ -2571,7 +2571,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "ie" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -2579,7 +2579,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "if" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -2590,7 +2590,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "ig" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -2598,7 +2598,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "ih" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -2609,14 +2609,14 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "ii" = (
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsofficer)
 "ij" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -2632,7 +2632,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "ik" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -2643,7 +2643,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "il" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -2654,7 +2654,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "im" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Break Room";
@@ -2666,21 +2666,21 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "in" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Break Room";
 	req_access = list(access_adminlvl1)
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "ip" = (
 /obj/machinery/papershredder,
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "iq" = (
 /obj/structure/closet/secure_closet/logistics/specialist,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -2688,7 +2688,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "ir" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -2703,19 +2703,19 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "is" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier{
 	pixel_y = 3
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsofficer)
 "it" = (
 /obj/structure/closet/secure_closet/logistics/officer,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsofficer)
 "iu" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -2727,26 +2727,26 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsofficer)
 "iv" = (
 /obj/machinery/vending/fitness,
 /obj/effect/floor_decal/corner/brown/mono,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "iw" = (
 /obj/machinery/vending/cola,
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "iy" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "iz" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsofficer)
 "iA" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "Logistics Officer";
@@ -2758,7 +2758,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsofficer)
 "iB" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -2766,23 +2766,23 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsofficer)
 "iD" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsofficer)
 "iE" = (
 /obj/structure/bed/chair/comfy/brown,
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "iG" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "iH" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -2818,7 +2818,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "iP" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -2830,7 +2830,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "iR" = (
 /obj/effect/landmark/start{
 	name = "Logistics Officer"
@@ -2839,7 +2839,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsofficer)
 "iT" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Logistics Breakroom";
@@ -2847,7 +2847,7 @@
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "iU" = (
 /obj/structure/cable,
 /obj/machinery/power/apc{
@@ -2856,28 +2856,28 @@
 	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsofficer)
 "iV" = (
 /obj/machinery/vending/cigarette,
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "iW" = (
 /obj/machinery/vending/snack,
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "iX" = (
 /obj/structure/bed/chair/comfy/brown,
 /obj/effect/landmark/start{
 	name = "Logistics Specialist"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "iY" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -2889,7 +2889,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "iZ" = (
 /obj/machinery/chemical_dispenser/bar_coffee/full,
 /obj/structure/table/standard,
@@ -2899,7 +2899,7 @@
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "jb" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -2908,12 +2908,12 @@
 	},
 /obj/effect/floor_decal/corner/brown/half,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "jc" = (
 /obj/machinery/vending/assist,
 /obj/effect/floor_decal/corner/brown/mono,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "jf" = (
 /obj/machinery/light{
 	dir = 1;
@@ -2925,7 +2925,7 @@
 	},
 /obj/effect/floor_decal/corner/brown/mono,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "jg" = (
 /obj/machinery/light{
 	dir = 1;
@@ -2935,7 +2935,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "jh" = (
 /obj/machinery/lapvend,
 /obj/machinery/light{
@@ -2946,7 +2946,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "ji" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 1
@@ -2954,23 +2954,23 @@
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/brown/mono,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "jj" = (
 /obj/machinery/chemical_dispenser/bar_soft/full,
 /obj/machinery/light,
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/brown/half,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "jk" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/brown/half,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "jl" = (
 /obj/effect/paint_stripe/blue,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "jm" = (
 /obj/machinery/requests_console{
 	department = "Logistics";
@@ -2980,7 +2980,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "jo" = (
 /obj/structure/flora/pottedplant/minitree{
 	pixel_y = 8
@@ -3064,7 +3064,7 @@
 	},
 /obj/effect/floor_decal/corner/brown/half,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "jx" = (
 /obj/machinery/computer/modular/preset/medical{
 	dir = 4;
@@ -3321,7 +3321,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "kn" = (
 /obj/machinery/status_display,
 /turf/simulated/wall/r_wall/prepainted,
@@ -3778,6 +3778,10 @@
 /obj/item/paper_bin,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"tD" = (
+/obj/effect/paint_stripe/blue,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/logistics/logisticsofficer)
 "tS" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -3846,7 +3850,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "wz" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -3951,6 +3955,11 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"Av" = (
+/obj/item/device/flashlight/lamp,
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logisticsbreak)
 "AY" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -4019,6 +4028,10 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
+"Ds" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logisticsofficer)
 "Dx" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -4159,6 +4172,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
+"Ia" = (
+/obj/structure/table/standard,
+/obj/item/pen,
+/obj/item/paper_bin,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logisticsbreak)
 "Iy" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -4181,7 +4200,7 @@
 /obj/item/stamp/denied,
 /obj/item/stamp/cargo,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsofficer)
 "KA" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -4209,7 +4228,7 @@
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "Mm" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
@@ -4375,7 +4394,7 @@
 "RK" = (
 /obj/effect/floor_decal/corner/brown/half,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 "RL" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
@@ -4415,6 +4434,13 @@
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
+"Sh" = (
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logisticsbreak)
 "Sv" = (
 /obj/structure/bed/chair/office{
 	dir = 8
@@ -4484,7 +4510,11 @@
 /obj/item/pen,
 /obj/item/paper_bin,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsofficer)
+"UG" = (
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor,
+/area/site53/logistics/logisticsbreak)
 "UU" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
@@ -4552,6 +4582,9 @@
 /obj/item/clothing/suit/storage/toggle/labcoat,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
+"Zm" = (
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logisticsofficer)
 "Zn" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
@@ -4576,7 +4609,7 @@
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/brown/half,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/logistics/logisticsbreak)
 
 (1,1,1) = {"
 hk
@@ -27109,7 +27142,7 @@ ia
 ia
 jg
 iy
-iD
+Av
 iG
 iy
 jj
@@ -27624,7 +27657,7 @@ im
 il
 iy
 iG
-TT
+Ia
 iy
 ZZ
 ia
@@ -28130,7 +28163,7 @@ fC
 fC
 fC
 ia
-ii
+Sh
 if
 ih
 iY
@@ -28138,7 +28171,7 @@ ia
 jh
 iy
 iG
-iD
+Av
 iy
 jk
 ia
@@ -28901,17 +28934,17 @@ hZ
 hZ
 iz
 iz
-jl
+tD
 iA
-jl
-jl
-jl
+tD
+tD
+tD
 ia
-iz
-iz
-iz
-iz
-iz
+UG
+UG
+UG
+UG
+UG
 ia
 hk
 hk
@@ -29415,8 +29448,8 @@ hZ
 hZ
 iz
 hY
-iy
-iG
+Zm
+Ds
 JN
 TT
 iz
@@ -29672,10 +29705,10 @@ kx
 kx
 iz
 is
-iy
+Zm
 iD
 iR
-iy
+Zm
 iz
 hZ
 kx
@@ -29930,9 +29963,9 @@ hZ
 iz
 it
 ii
-iy
-iy
-iy
+Zm
+Zm
+Zm
 iz
 hZ
 hZ

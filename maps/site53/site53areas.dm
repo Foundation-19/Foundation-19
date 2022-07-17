@@ -423,6 +423,11 @@
 //	'sound/ambience/lcz/crb/Commotion21.ogg'
 //	)
 
+/area/site53/llcz/entrance_checkpoint
+	name = "\improper Light Containment Zone Checkpoint"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint1"
+
 /area/site53/ulcz/hallways
 	name = "\improper Upper Light Containment Hallway"
 	icon_state = "hallC1"
@@ -561,6 +566,18 @@
 	icon_state = "SolarcontrolS"
 	turf_initializer = /decl/turf_initializer/maintenance
 
+/area/site53/uez/equipmentroom
+	name = "Upper Entrance Zone Equipment Room"
+	icon_state = "security"
+
+/area/site53/uez/senioragentoffice
+	name = "Upper Entrance Zone Senior Agent Office"
+	icon_state = "security"
+
+/area/site53/uez/armory
+	name = "Upper Entrance Zone Armory"
+	icon_state = "security"
+
 /area/site53/uez/bridge
 	name = "\improper Bridge"
 	icon_state = "hallC1"
@@ -619,6 +636,21 @@
 
 /area/site53/llcz/dclass/cellbubble
 	name = "\improper Cell Security Bubble"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint1"
+
+/area/site53/llcz/dclass/entrance_checkpoint
+	name = "\improper D-Class Cells Zone Checkpoint"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint1"
+
+/area/site53/llcz/dclass/assignmentline
+	name = "\improper Assignment Line Security Bubble"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint1"
+
+/area/site53/llcz/dclass/reeducation
+	name = "\improper Reeducation Security Bubble"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint1"
 
@@ -1022,6 +1054,11 @@
 	icon_state = "security"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/reswing/xenobiology
+	name = "\improper Xenobiology Laboratory"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/reswing/robotics
 	name = "\improper Robotics Laboratory"
 	icon_state = "research"
@@ -1030,6 +1067,21 @@
 /area/site53/logistics/logistics
 	name = "\improper Logistics"
 	icon_state = "quart"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/logistics/logisticsofficer
+	name = "\improper Logistics Officer Office"
+	icon_state = "quart"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/logistics/logisticsbreak
+	name = "\improper Logistics Break Area"
+	icon_state = "quart"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/lhcz/hczguardgear
+	name = "\improper HCZ Guard Gear Room"
+	icon_state = "checkpoint1"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/lhcz/scp1102entrance

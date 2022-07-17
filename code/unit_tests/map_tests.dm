@@ -29,10 +29,11 @@
 
 		var/exemptions = get_exemptions(A)
 		if(!A.apc && !(exemptions & GLOB.using_map.NO_APC))
-			log_bad("[bad_msg] lacks an APC.")
+			var/turf/T = pick_area_turf(A)
+			log_bad("[bad_msg] lacks an APC. Area Z: [A.z] Random area turf: [T.x],[T.y],[T.z].")
 			area_good = 0
 		else if(A.apc && (exemptions & GLOB.using_map.NO_APC))
-			log_bad("[bad_msg] is not supposed to have an APC. APC location: [A.x], [A.y], [A.z]")
+			log_bad("[bad_msg] is not supposed to have an APC. APC location: [A.apc.x], [A.apc.y], [A.apc.z].")
 			area_good = 0
 
 		if(!area_good)
@@ -521,7 +522,7 @@
 	exceptions = exceptions_by_turf
 
 	for(var/obj/structure/cable/C in world)
-		if(!all_ends_connected(C) && !(C.d1 == UP || C.d2 == UP))
+		if(!all_ends_connected(C) && !(C.d1 == UP || C.d2 == UP) && !(C.d1 == DOWN || C.d2 == DOWN))
 			failures++
 
 	if(failures)
