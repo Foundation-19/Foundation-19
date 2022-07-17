@@ -32,7 +32,7 @@
 			log_bad("[bad_msg] lacks an APC.")
 			area_good = 0
 		else if(A.apc && (exemptions & GLOB.using_map.NO_APC))
-			log_bad("[bad_msg] is not supposed to have an APC.")
+			log_bad("[bad_msg] is not supposed to have an APC. APC location: [A.x], [A.y], [A.z]")
 			area_good = 0
 
 		if(!area_good)
@@ -492,26 +492,6 @@
 	else
 		pass("All shutoff valves connect to two different pipe networks.")
 	return 1
-
-//=======================================================================================
-
-/datum/unit_test/station_pipes_shall_not_leak
-	name = "MAP: Station pipes shall not leak"
-
-/datum/unit_test/station_pipes_shall_not_leak/start_test()
-	var/failures = 0
-	for(var/obj/machinery/atmospherics/pipe/P in world)
-		if(P.leaking && isStationLevel(P.z))
-			failures++
-			log_bad("Following pipe is leaking: [log_info_line(P)]")
-
-	if(failures)
-		fail("[failures] station pipe\s leak.")
-	else
-		pass("No station pipes are leaking")
-	return 1
-
-//=======================================================================================
 
 /datum/unit_test/station_power_terminals_shall_be_wired
 	name = "MAP: Station power terminals shall be wired"

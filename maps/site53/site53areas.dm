@@ -3,7 +3,7 @@
 	post_round_safe_areas = list (
 		/area/centcom,
 		/area/site53/surface/bunker,
-		/area/shuttle/escape_pod7/station
+		/area/shuttle/escape_pod
 		)
 
 /area/turbolift
@@ -12,19 +12,6 @@
 	requires_power = 0
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
-
-
-/area/turbolift/start
-	name = "\improper Turbolift Start"
-
-/area/turbolift/gatea
-	name = "\improper Topside Gate A"
-	base_turf = /turf/simulated/open
-
-/area/turbolift/entrancezone
-	name = "\improper Entrance Zone"
-	icon_state = "security"
-	base_turf = /turf/simulated/open
 
 // SITE 53 ELEVATOR AREA'S
 
@@ -152,7 +139,7 @@
 	dynamic_lighting = 0
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/shuttle/escape_pod7/station
+/area/shuttle/escape_pod
 	name = "Transfer Tram"
 	icon_state = "Sleep"
 	requires_power = 0
@@ -201,14 +188,6 @@
 
 /area/site53/surface/cryogenicsprimary
 	name = "\improper Primary Cryogenic Storage"
-	icon_state = "Sleep"
-	requires_power = 0
-	dynamic_lighting = 1
-
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/surface/cryogenicsaux
-	name = "\improper Auxiliary Cryogenic Storage"
 	icon_state = "Sleep"
 	requires_power = 0
 	dynamic_lighting = 1
@@ -331,10 +310,6 @@
 	sound_env = TUNNEL_ENCLOSED
 	turf_initializer = /decl/turf_initializer/maintenance
 
-/area/site53/maintenance/surface
-	name = "\improper Tram Hub Maintenance"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/maintenance/surfacewest
 	name = "\improper Surface Maintenance West"
 	area_flags = AREA_FLAG_RAD_SHIELDED
@@ -351,6 +326,12 @@
 
 /area/site53/ulcz/generalpurpose
 	name = "\improper General Purpose Testing Laboratory"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
+
+/area/site53/ulcz/generalpurpose2
+	name = "\improper Second General Purpose Testing Laboratory"
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
@@ -502,12 +483,6 @@
 	requires_power = 0
 	dynamic_lighting = 1
 
-/area/site53/lowertrams/secondarymaintenance
-	name = "\improper Lower Tram Hub Secondary Maintenance Tunnel"
-	icon_state = "conference"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	turf_initializer = /decl/turf_initializer/maintenance
-
 /area/site53/engineering/maintenance/maintenancetunnel
 	name = "\improper Engineering Maintenance Tunnels"
 	icon_state = "conference"
@@ -544,18 +519,6 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	turf_initializer = /decl/turf_initializer/maintenance
 
-/area/site53/uez/sdoffice
-	name = "\improper Site Director's Office"
-	sound_env = MEDIUM_SOFTFLOOR
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "head_quarters"
-
-/area/site53/uez/guardcommander
-	name = "\improper Guard Commander's Office"
-	sound_env = MEDIUM_SOFTFLOOR
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "head_quarters"
-
 /area/site53/uez/o5repoffice
 	name = "\improper O5 Representative's Office"
 	sound_env = MEDIUM_SOFTFLOOR
@@ -564,30 +527,6 @@
 
 /area/site53/uez/goirepoffice
 	name = "\improper GoI Representative's Office"
-	sound_env = MEDIUM_SOFTFLOOR
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "head_quarters"
-
-/area/site53/uez/hopoffice
-	name = "\improper Head of Personnel's Office"
-	sound_env = MEDIUM_SOFTFLOOR
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "head_quarters"
-
-/area/site53/uez/cmooffice
-	name = "\improper Chief Medical Officer's Office"
-	sound_env = MEDIUM_SOFTFLOOR
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "head_quarters"
-
-/area/site53/uez/ceoffice
-	name = "\improper Chief Engineer's Office"
-	sound_env = MEDIUM_SOFTFLOOR
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "head_quarters"
-
-/area/site53/uez/rdoffice
-	name = "\improper Research Director's Office"
 	sound_env = MEDIUM_SOFTFLOOR
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "head_quarters"
@@ -648,11 +587,6 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "hallC1"
 
-/area/site53/llcz/mining/miningfact
-	name = "\improper Mining Factory"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "hallC1"
-
 /area/site53/llcz/dclass/recreationhallway
 	name = "\improper Recreation Hallway"
 	area_flags = AREA_FLAG_RAD_SHIELDED
@@ -695,6 +629,11 @@
 
 /area/site53/llcz/dclass/checkequip
 	name = "\improper Primary Checkpoint Equipment"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint1"
+
+/area/site53/llcz/dclass/armory
+	name = "\improper Primary Checkpoint Armory"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint1"
 
@@ -779,16 +718,6 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "exam_room"
 
-/area/site53/llcz/dclass/medicalstorage
-	name = "\improper D-Class Medical Storage"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "exam_room"
-
-/area/site53/llcz/dclass/dshop
-	name = "\improper D-Class Commissary"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "exam_room"
-
 /area/site53/llcz/mine/explored
 	name = "Mine"
 	icon_state = "explored"
@@ -852,12 +781,6 @@
 	name = "\improper HCZ Hallways"
 	icon_state = "fpmaint"
 	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/uhcz/scp106maintlow
-	name = "\improper SCP-106 Lower Maintenance"
-	icon_state = "fpmaint"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	turf_initializer = /decl/turf_initializer/maintenance
 
 /area/site53/uhcz/scp106containment
 	name = "\improper SCP-106 Containment Chamber"
@@ -926,23 +849,6 @@
 	icon_state = "engineering"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/centcom/telecomms
-	name = "\improper Telecommunications"
-	icon_state = "centcom"
-	requires_power = 0
-	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/engineering/ceoffice
-	name = "\improper Chief Engineer's Office"
-	icon_state = "head_quarters"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/engineering/contengoff
-	name = "\improper Containment Engineer's Office"
-	icon_state = "head_quarters"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/entrancezone/securitypost
 	name = "\improper Entrance Zone Security Post"
 	icon_state = "head_quarters"
@@ -990,16 +896,6 @@
 	icon_state = "surgery"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/medical/surgery/storage
-	name = "\improper Operating Storage"
-	icon_state = "surgery"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/medical/surgery/recov
-	name = "\improper Surgical Recovery"
-	icon_state = "surgery"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/medical/surgery/hall
 	name = "\improper Surgical Hallway"
 	icon_state = "surgery"
@@ -1007,11 +903,6 @@
 
 /area/site53/medical/exam_room
 	name = "\improper Exam Room"
-	icon_state = "exam_room"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/medical/bloodstor
-	name = "\improper Blood Bag Storage"
 	icon_state = "exam_room"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
@@ -1174,13 +1065,6 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 //Site 53's science areas
-/area/site53/science/fabricationlab
-	name = "\improper Fabrication Lab"
-	icon_state = "research"
-
-/area/site53/science/xenobiology
-	name = "\improper Xenobiology"
-	icon_state = "research"
 
 /area/site53/science/aicobservation
 	name = "\improper AIC Observation"
@@ -1188,18 +1072,6 @@
 
 /area/site53/science/aiccore
 	name = "\improper AIC Server Room"
-	icon_state = "research"
-
-/area/site53/science/robotics
-	name = "\improper Robotics"
-	icon_state = "research"
-
-/area/site53/science/lockerroom
-	name = "\improper Research Locker Room"
-	icon_state = "research"
-
-/area/site53/science/xenoarchaeology
-	name = "\improper Xenoarchaeology"
 	icon_state = "research"
 
 /area/site53/science/seniorresearchera

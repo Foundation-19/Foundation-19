@@ -730,7 +730,7 @@
 
 	if ((isscp106 || isscp049) && !incapacitated(INCAPACITATION_RESTRAINED|INCAPACITATION_BUCKLED_FULLY|INCAPACITATION_BUCKLED_PARTIALLY))
 		lying = 0
-		density = 1
+		density = TRUE
 
 	// update SCP-106's vis_contents icon
 	if (isscp106)

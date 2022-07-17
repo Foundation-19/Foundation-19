@@ -358,7 +358,7 @@
 		T.loc = src.loc
 		visible_message("<span class='danger'>[src] grabs [T]!</span>")
 		dir = 2
-		T.anchored = 1
+		T.anchored = TRUE
 		var/original_y = T.pixel_y
 		T.pixel_y = 10
 		murdering = 1
@@ -368,7 +368,7 @@
 
 		sleep(20)
 
-		T.anchored = 0
+		T.anchored = FALSE
 		T.pixel_y = original_y
 		if(ishuman(T))
 			T.emote("scream")
