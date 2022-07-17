@@ -46,11 +46,15 @@ var/list/artefact_feedback = list(/obj/structure/closet/wizard/armor = 		"HS",
 	desc = spellbook.desc
 
 /obj/item/spellbook/attack_self(mob/user as mob)
-//The Job restriction doesnt seem to work so I gave up and deleted the code barring normal people from using the spellbooks.
 	if(!user.mind)
 		return
-	if (user.mind.assigned_job != /datum/job/thaumaturge)
-
+	if (user.mind.special_role != ANTAG_WIZARD)
+		if (user.mind.special_role != ANTAG_APPRENTICE)
+			to_chat(user, "You can't make heads or tails of this book.")
+			return
+		if (spellbook.book_flags & LOCKED)
+			to_chat(user, "<span class='warning'>Drat! This spellbook's apprentice-proof lock is on!</span>")
+			return
 	else if (spellbook.book_flags & LOCKED)
 		to_chat(user, "You notice the apprentice-proof lock is on. Luckily you are beyond such things.")
 	interact(user)
@@ -143,6 +147,8 @@ var/list/artefact_feedback = list(/obj/structure/closet/wizard/armor = 		"HS",
 				dat += "<center><b>Currently investing in a slot...</b></center>"
 			else
 				dat += "<center><A href='byond://?src=\ref[src];invest=1'>Invest a Spell Slot</a><br><i>Investing a spellpoint will return two spellpoints back in 15 minutes.<br>Some say a sacrifice could even shorten the time...</i></center>"
+		if(!(spellbook.book_flags & NOREVERT))
+			dat += "<center><A href='byond://?src=\ref[src];book=1'>Choose different spellbook.</a></center>"
 		if(!(spellbook.book_flags & NO_LOCKING))
 			dat += "<center><A href='byond://?src=\ref[src];lock=1'>[spellbook.book_flags & LOCKED ? "Unlock" : "Lock"] the spellbook.</a></center>"
 	var/datum/browser/popup = new(user, "spellbook", "Spell Book")
