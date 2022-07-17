@@ -420,7 +420,7 @@
 "abk" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list(list(203,302))
+	req_access = list(list(access_securitylvl3,access_sciencelvl2))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -1727,7 +1727,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/window/brigdoor/eastleft{
-	req_access = list(list(203,302))
+	req_access = list(list(access_securitylvl3,access_sciencelvl2))
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/scp343entrance)
@@ -1745,7 +1745,7 @@
 "aeK" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Red Line";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /turf/simulated/floor/plating,
 /area/site53/tram/hcz)
@@ -4555,7 +4555,7 @@
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-895";
-	req_access = list(list(203,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5016,7 +5016,7 @@
 "amu" = (
 /obj/machinery/keycard_auth{
 	pixel_y = 32;
-	req_access = list(304,504,303)
+	req_access = list(access_sciencelvl4,access_engineeringlvl4,access_sciencelvl3)
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techfloor,
@@ -11653,7 +11653,7 @@
 "aAK" = (
 /obj/machinery/door/airlock/science{
 	name = "Elevator Access";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -14651,7 +14651,7 @@
 "aHP" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Containment Chamber";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -14706,7 +14706,7 @@
 "aHV" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-078 Chamber";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
@@ -15151,7 +15151,7 @@
 "aJb" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Observation";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile/white,
@@ -15281,7 +15281,7 @@
 "aJB" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-151";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -15313,7 +15313,7 @@
 "aJF" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-151 Containment Chamber";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
@@ -15397,7 +15397,7 @@
 "aJT" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-173 Containment Chamber";
-	req_access = list(list(202,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
@@ -15783,7 +15783,7 @@
 "aKJ" = (
 /obj/machinery/door/airlock/science{
 	name = "Observation";
-	req_access = list(list(202,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
@@ -15807,7 +15807,7 @@
 "aKM" = (
 /obj/machinery/door/airlock/science{
 	name = "Observation";
-	req_access = list(list(202,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -16094,7 +16094,7 @@
 "aLA" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-173";
-	req_access = list(list(202,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -16531,7 +16531,7 @@
 "aMI" = (
 /obj/machinery/door/airlock/research{
 	name = "Containment Chamber";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -16791,7 +16791,7 @@
 	id_tag = "ULCZ Checkpoint Booth Exit";
 	name = "ULCZ Checkpoint Booth Exit";
 	pixel_x = 24;
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /obj/item/device/toner,
 /obj/item/device/toner,
@@ -17761,7 +17761,7 @@
 "aPv" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-263";
-	req_access = list(list(202,304))
+	req_access = list(list(access_securitylvl2,access_sciencelvl4))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -18799,7 +18799,7 @@
 "aTj" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-173 Chamber";
-	req_access = list(list(202,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -18989,7 +18989,7 @@
 	id_tag = "173emerg";
 	name = "Observation Emergency Blast Doors button";
 	pixel_y = 25;
-	req_access = list(list(202,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
@@ -19298,7 +19298,7 @@
 "aVg" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-078 Containment Chamber";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
@@ -19468,7 +19468,7 @@
 	id_tag = "173";
 	name = "Chamber Blast Doors button";
 	pixel_y = 25;
-	req_access = list(list(202,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
@@ -19634,7 +19634,7 @@
 "aWd" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-078 Observation";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -19675,7 +19675,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/science{
 	name = "SCP-173 Chamber";
-	req_access = list(list(202,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -20075,7 +20075,7 @@
 	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-500";
-	req_access = list(list(204,304))
+	req_access = list(list(access_securitylvl4,access_sciencelvl4))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -21073,7 +21073,7 @@
 /area/site53/uhcz/hallways)
 "bag" = (
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list(list(203,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "15"
@@ -21125,7 +21125,7 @@
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-035";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /turf/simulated/floor/plating,
 /area/site53/lhcz/scp035room)
@@ -21154,7 +21154,7 @@
 	dir = 8;
 	id_tag = "16";
 	pixel_x = 23;
-	req_access = list(list(203,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp035room)
@@ -21206,7 +21206,7 @@
 /area/site53/lhcz/scp035room)
 "bav" = (
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list(list(203,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "16"
@@ -21511,7 +21511,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list(list(203,302))
+	req_access = list(list(access_securitylvl3,access_sciencelvl2))
 	},
 /turf/simulated/floor/plating,
 /area/site53/lhcz/scp343entrance)
@@ -22030,7 +22030,7 @@
 	id_tag = "livingenclosure";
 	locked = 1;
 	name = "SCP-247 Enclosure";
-	req_access = list(list(203,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp247observation)
@@ -23116,7 +23116,7 @@
 	id_tag = "ULCZ Interior Booth Window";
 	name = "ULCZ Checkpoint Booth Exit";
 	pixel_x = 24;
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip)
@@ -24030,7 +24030,7 @@
 /area/site53/ulcz/generalpurpose2)
 "bin" = (
 /obj/machinery/door/airlock/multi_tile/research{
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -24854,7 +24854,7 @@
 	id_tag = "UHCZ Checkpoint Control Room";
 	name = "UHCZ Checkpoint Control Room";
 	pixel_x = 24;
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -25819,7 +25819,7 @@
 "cvQ" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-247";
-	req_access = list(list(203,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -25846,7 +25846,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "895entry";
 	pixel_y = 23;
-	req_access = list(list(203,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp895)
@@ -25958,7 +25958,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/science{
 	name = "Containment chamber";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
@@ -26152,7 +26152,7 @@
 "dsY" = (
 /obj/machinery/door/airlock/research{
 	name = "Observation";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -26267,7 +26267,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/science{
 	name = "Observation";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
@@ -26373,7 +26373,7 @@
 	id_tag = "foodenclosure";
 	locked = 1;
 	name = "SCP-247 Enclosure";
-	req_access = list(list(203,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp247observation)
@@ -26458,14 +26458,14 @@
 "eqH" = (
 /obj/machinery/door/airlock/science{
 	name = "Tranqilizer Storage";
-	req_access = list(list(203,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
 "erj" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-096";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "096chamberlock2"
@@ -26614,7 +26614,7 @@
 "eQX" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-106 Observation";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -27105,7 +27105,7 @@
 	},
 /obj/machinery/door/airlock/science{
 	name = "Observation";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
@@ -27454,7 +27454,7 @@
 "hmB" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-247 Staff Training";
-	req_access = list(list(203,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
@@ -27657,7 +27657,7 @@
 	},
 /obj/machinery/door/airlock/research{
 	name = "SCP-513";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -27693,7 +27693,7 @@
 "hTt" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-247 Observation";
-	req_access = list(list(203,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -28163,7 +28163,7 @@
 "jmX" = (
 /obj/machinery/door/airlock/glass/science{
 	name = "SCP-066 Containment Chamber";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
@@ -28205,7 +28205,7 @@
 "jsp" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-529";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
@@ -28538,7 +28538,7 @@
 "ktI" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-247 Observation";
-	req_access = list(list(203,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
@@ -28564,7 +28564,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-066 Observation";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
@@ -28901,7 +28901,7 @@
 "ltv" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Brown Line";
-	req_access = list(list(202,302,402))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2,access_medicallvl2))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/lcz)
@@ -29129,7 +29129,7 @@
 	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-106";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106containment)
@@ -29420,7 +29420,7 @@
 "mDz" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-078";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
@@ -29512,7 +29512,7 @@
 /obj/machinery/door/airlock/highsecurity{
 	id_tag = "scp96chamber";
 	name = "SCP-096";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -29723,7 +29723,7 @@
 	dir = 4;
 	id_tag = "16";
 	pixel_x = -23;
-	req_access = list(list(203,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp035room)
@@ -30815,7 +30815,7 @@
 "qEi" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Red Line";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
@@ -31409,7 +31409,7 @@
 "swJ" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-263 Observation";
-	req_access = list(list(202,304))
+	req_access = list(list(access_securitylvl2,access_sciencelvl4))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
@@ -31925,7 +31925,7 @@
 "ugg" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Red Line";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
@@ -32028,7 +32028,7 @@
 	id_tag = "livingenclosure";
 	locked = 1;
 	name = "SCP-247 Enclosure";
-	req_access = list(list(203,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -32049,7 +32049,7 @@
 /obj/machinery/door/airlock/highsecurity{
 	id_tag = "scp96observation";
 	name = "SCP-096";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -32251,14 +32251,14 @@
 	id_tag = "066";
 	name = "SCP-066 Containment Chamber Lock button";
 	pixel_y = 24;
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /obj/machinery/button/blast_door{
 	dir = 8;
 	id_tag = "066shutter";
 	name = "SCP-066 Containment Chamber Shutter button";
 	pixel_x = 24;
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
@@ -32266,7 +32266,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-263 Observation";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
@@ -32981,7 +32981,7 @@
 "wGH" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-106 Observation";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/effect/catwalk_plated,
 /turf/simulated/floor,
@@ -33036,7 +33036,7 @@
 	},
 /obj/machinery/door/airlock/science{
 	name = "SCP-106 Observation";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/effect/catwalk_plated,
 /turf/simulated/floor,
@@ -33097,7 +33097,7 @@
 "wUk" = (
 /obj/machinery/door/airlock/research{
 	name = "Observation";
-	req_access = list(list(202,302))
+	req_access = list(list(access_securitylvl2,access_sciencelvl2))
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
@@ -33407,7 +33407,7 @@
 "xQv" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-263 Containment Chamber";
-	req_access = list(list(202,304))
+	req_access = list(list(access_securitylvl2,access_sciencelvl4))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
@@ -33501,7 +33501,7 @@
 	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-096";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/cable/green{

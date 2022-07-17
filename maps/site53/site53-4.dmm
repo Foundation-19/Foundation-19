@@ -685,7 +685,7 @@
 /area/site53/uez/hallway)
 "bV" = (
 /obj/structure/closet/secure_closet/hop{
-	req_access = list(500)
+	req_access = list(access_adminlvl1)
 	},
 /turf/simulated/floor/wood,
 /area/site53/uez/hallway)
@@ -733,7 +733,7 @@
 "ce" = (
 /obj/machinery/keycard_auth{
 	pixel_y = 28;
-	req_access = list(304,504,303)
+	req_access = list(access_sciencelvl4,access_engineeringlvl4,access_sciencelvl3)
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
@@ -1113,7 +1113,7 @@
 "dl" = (
 /obj/machinery/keycard_auth{
 	pixel_x = -28;
-	req_access = list(304,504,303)
+	req_access = list(access_sciencelvl4,access_engineeringlvl4,access_sciencelvl3)
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
@@ -1782,7 +1782,7 @@
 "fk" = (
 /obj/machinery/keycard_auth{
 	pixel_x = 28;
-	req_access = list(304,504,303)
+	req_access = list(access_sciencelvl4,access_engineeringlvl4,access_sciencelvl3)
 	},
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/hallway)
@@ -2313,7 +2313,7 @@
 "gB" = (
 /obj/machinery/keycard_auth{
 	pixel_y = -28;
-	req_access = list(304,504,303)
+	req_access = list(access_sciencelvl4,access_engineeringlvl4,access_sciencelvl3)
 	},
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/hallway)
@@ -2331,7 +2331,7 @@
 "gF" = (
 /obj/machinery/keycard_auth{
 	pixel_y = -28;
-	req_access = list(304,504,303)
+	req_access = list(access_sciencelvl4,access_engineeringlvl4,access_sciencelvl3)
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/hallway)

@@ -1943,7 +1943,7 @@
 /obj/effect/floor_decal/corner/green/full,
 /obj/machinery/smartfridge/secure/virology{
 	pixel_y = -32;
-	req_access = list("404")
+	req_access = list(access_medicallvl4)
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/virology)

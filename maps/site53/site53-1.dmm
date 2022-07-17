@@ -220,7 +220,7 @@
 	id_tag = "106cycle";
 	name = "Chamberlock Door Cycle button";
 	pixel_y = 23;
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/button/femur_breaker{
@@ -1027,7 +1027,7 @@
 /area/site53/llcz/dclass/assignment)
 "dA" = (
 /obj/machinery/vending/medical{
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /obj/machinery/light/small{
 	dir = 1;
@@ -1211,7 +1211,7 @@
 "dZ" = (
 /obj/machinery/computer/cryopod{
 	pixel_y = 24;
-	req_access = list(300)
+	req_access = list(access_sciencelvl1)
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip)
@@ -1415,7 +1415,7 @@
 "eC" = (
 /obj/machinery/button/crematorium{
 	id_tag = "Reeducation Cremator";
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/titanium,
@@ -1786,7 +1786,7 @@
 "fr" = (
 /obj/machinery/door/airlock/civilian{
 	name = "Kitchen";
-	req_access = list(list(202,701))
+	req_access = list(list(access_securitylvl2,access_dclasskitchen))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchen)
@@ -2300,7 +2300,7 @@
 "gK" = (
 /obj/machinery/button/crematorium{
 	id_tag = "Reeducation Cremator 2";
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/titanium,
@@ -3349,7 +3349,7 @@
 	},
 /obj/machinery/vending/medical{
 	dir = 1;
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -3588,7 +3588,7 @@
 	},
 /obj/machinery/door/airlock/civilian{
 	name = "Kitchen";
-	req_access = list(list(202,701))
+	req_access = list(list(access_securitylvl2,access_dclasskitchen))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchen)
@@ -3895,7 +3895,7 @@
 "ky" = (
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
 	name = "Mining";
-	req_access = list(list(202,703))
+	req_access = list(list(access_securitylvl2,access_dclassmining))
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -3934,7 +3934,7 @@
 	id_tag = "106cycle";
 	locked = 1;
 	name = "SCP-106";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/uhcz/scp106parts)
@@ -5120,7 +5120,7 @@
 "nm" = (
 /obj/machinery/keycard_auth{
 	pixel_y = 28;
-	req_access = list(304,504,303)
+	req_access = list(access_sciencelvl4,access_engineeringlvl4,access_sciencelvl3)
 	},
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
@@ -5704,7 +5704,7 @@
 "oQ" = (
 /obj/machinery/door/airlock/glass/medical{
 	name = "Stasis Bay";
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /obj/machinery/atmospherics/pipe/simple/visible,
 /turf/simulated/floor/tiled/monotile,
@@ -5717,7 +5717,7 @@
 "oS" = (
 /obj/machinery/door/airlock/science{
 	name = "Observation";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5925,7 +5925,7 @@
 "pt" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Experimentation Center";
-	req_access = list(list(202,303,404))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3,access_medicallvl4))
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
@@ -6281,7 +6281,7 @@
 "qm" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-049";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -6409,7 +6409,7 @@
 /obj/machinery/door/airlock/highsecurity{
 	id_tag = "106cycle";
 	name = "SCP-106";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/hallway)
@@ -7200,7 +7200,7 @@
 "sl" = (
 /obj/machinery/door/airlock/glass/medical{
 	name = "Stasis Bay";
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/medicalpost)
@@ -7752,7 +7752,7 @@
 /area/site53/llcz/dclass/cells)
 "tz" = (
 /obj/machinery/door/window/southleft{
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -8975,7 +8975,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "Mining Access Gate 3";
 	name = "Mining Access Gate 3";
-	req_access = list(300)
+	req_access = list(access_sciencelvl1)
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
@@ -9109,7 +9109,7 @@
 "wF" = (
 /obj/structure/closet/secure_closet/medical1{
 	anchored = 1;
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -11324,7 +11324,7 @@
 "CH" = (
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
 	name = "Botany";
-	req_access = list(list(202,702))
+	req_access = list(list(access_securitylvl2,access_dclassbotany))
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -11429,7 +11429,7 @@
 /area/site53/llcz/dclass/medicalpost)
 "CT" = (
 /obj/machinery/smartfridge/secure/medbay{
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/titanium,
@@ -12337,7 +12337,7 @@
 "Ff" = (
 /obj/machinery/door/airlock/glass/medical{
 	name = "D-Class Confiscated Items";
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -12386,7 +12386,7 @@
 	},
 /obj/machinery/door/airlock/glass/medical{
 	name = "Medical Storage";
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/medicalpost)
@@ -12758,7 +12758,7 @@
 	id_tag = "CDZ Conference Door";
 	name = "CDZ Conference Door";
 	pixel_x = 24;
-	req_access = list(300)
+	req_access = list(access_sciencelvl1)
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
@@ -13327,7 +13327,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/window/southleft{
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/floor_decal/corner/blue/border,
@@ -13647,7 +13647,7 @@
 /area/site53/llcz/dclass/prep)
 "IW" = (
 /obj/machinery/door/window/southleft{
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/floor_decal/corner/blue/border{
@@ -13753,7 +13753,7 @@
 	id_tag = "Mining Checkpoint Lockdown";
 	name = "Mining Checkpoint Lockdown";
 	pixel_y = 32;
-	req_access = list(300)
+	req_access = list(access_sciencelvl1)
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/recreationhallway)
@@ -14202,7 +14202,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/glass/security{
-	req_access = list(list(202,402));
+	req_access = list(list(access_securitylvl2,access_medicallvl2));
 	name = "CDZ Medbay"
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -14221,7 +14221,7 @@
 	dir = 4
 	},
 /obj/machinery/door/window/brigdoor/westleft{
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -14280,7 +14280,7 @@
 /area/site53/llcz/dclass/checkequip)
 "Kk" = (
 /obj/machinery/door/window/brigdoor/westleft{
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -14305,7 +14305,7 @@
 	id_tag = "cdzmed";
 	name = "D-Class Entry button";
 	pixel_y = -23;
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
@@ -14322,7 +14322,7 @@
 "Kp" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "SCP-106 Maintenance";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/structure/disposalpipe/segment,
 /obj/effect/catwalk_plated/dark,
@@ -14350,7 +14350,7 @@
 	id_tag = "cdzmed";
 	name = "D-Class Entry button";
 	pixel_y = -23;
-	req_access = list(list(202,402))
+	req_access = list(list(access_securitylvl2,access_medicallvl2))
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4;
@@ -14500,7 +14500,7 @@
 	dir = 1;
 	id_tag = "scp8_airlock";
 	pixel_y = -25;
-	req_access = list(list(203,304));
+	req_access = list(list(access_securitylvl3,access_sciencelvl4));
 	tag_exterior_door = "scp8_exterior";
 	tag_interior_door = "scp8_interior"
 	},
@@ -15093,7 +15093,7 @@
 "Oc" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Containment Chamber Access Chamberlock";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
@@ -15258,7 +15258,7 @@
 /obj/effect/catwalk_plated/white,
 /obj/machinery/door/airlock/highsecurity{
 	name = "Experimentation Center";
-	req_access = list(list(202,303,404))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3,access_medicallvl4))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -15402,7 +15402,7 @@
 "PH" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Primary Containment Compartment";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -15587,7 +15587,7 @@
 "QB" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Experimentation Center";
-	req_access = list(list(202,303,404))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3,access_medicallvl4))
 	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "Infected Subject Area";
@@ -16391,7 +16391,7 @@
 "UL" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008";
-	req_access = list(list(202,303,404))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3,access_medicallvl4))
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/cable/green{
@@ -16727,7 +16727,7 @@
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-1102-RU";
-	req_access = list(list(203,303))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3))
 	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -16739,7 +16739,7 @@
 	master_tag = "scp8_airlock";
 	pixel_x = 25;
 	pixel_y = -25;
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 14
@@ -17067,7 +17067,7 @@
 "XN" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Surgical Compartment";
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -17241,7 +17241,7 @@
 	master_tag = "scp8_airlock";
 	pixel_x = -25;
 	pixel_y = 25;
-	req_access = list(list(203,304))
+	req_access = list(list(access_securitylvl3,access_sciencelvl4))
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -17254,7 +17254,7 @@
 "YB" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Experimentation Center";
-	req_access = list(list(202,303,404))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3,access_medicallvl4))
 	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "Control Subject Area";
@@ -17415,7 +17415,7 @@
 "Zp" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Experimentation Center";
-	req_access = list(list(202,303,404))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3,access_medicallvl4))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -17519,7 +17519,7 @@
 "ZM" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Experimentation Center";
-	req_access = list(list(202,303,404))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3,access_medicallvl4))
 	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "Control Subject Area";
@@ -17543,7 +17543,7 @@
 "ZQ" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008";
-	req_access = list(list(202,303,404))
+	req_access = list(list(access_securitylvl2,access_sciencelvl3,access_medicallvl4))
 	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "SCP 008 Storage";
