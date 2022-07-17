@@ -138,7 +138,7 @@
 "bU" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Holding Cell";
-	req_access = list(202)
+	req_access = list(access_securitylvl2)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -176,7 +176,7 @@
 /area/site53/tram/mtf)
 "cl" = (
 /obj/machinery/door/airlock/vault{
-	req_access = list(100)
+	req_access = list(access_mtf)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -441,7 +441,7 @@
 "eG" = (
 /obj/machinery/door/airlock/vault{
 	name = "Mobile Task Force Garage";
-	req_access = list(100)
+	req_access = list(access_mtf)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -1680,7 +1680,7 @@
 "jz" = (
 /obj/machinery/door/airlock/vault{
 	name = "Beta-7";
-	req_access = list(100)
+	req_access = list(access_mtf)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -1740,7 +1740,7 @@
 "jL" = (
 /obj/machinery/door/airlock/security{
 	name = "Holding Cells";
-	req_access = list(201)
+	req_access = list(access_securitylvl1)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -2932,7 +2932,7 @@
 "oQ" = (
 /obj/machinery/door/airlock/vault{
 	name = "Eta-10";
-	req_access = list(100)
+	req_access = list(access_mtf)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3007,7 +3007,7 @@
 	},
 /obj/machinery/vending/security{
 	dir = 1;
-	req_access = list(100)
+	req_access = list(access_mtf)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3022,7 +3022,7 @@
 "po" = (
 /obj/machinery/door/airlock/vault{
 	name = "Omega-1";
-	req_access = list(100)
+	req_access = list(access_mtf)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3144,7 +3144,7 @@
 "qh" = (
 /obj/machinery/door/airlock/vault{
 	name = "Alpha-1";
-	req_access = list(100)
+	req_access = list(access_mtf)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3389,7 +3389,7 @@
 	},
 /obj/machinery/vending/security{
 	dir = 4;
-	req_access = list(100)
+	req_access = list(access_mtf)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3748,7 +3748,7 @@
 	icon_state = "corner_white"
 	},
 /obj/machinery/vending/security{
-	req_access = list(100)
+	req_access = list(access_mtf)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3787,7 +3787,7 @@
 "yE" = (
 /obj/machinery/door/airlock/vault{
 	name = "Epislon-9";
-	req_access = list(100)
+	req_access = list(access_mtf)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3820,7 +3820,7 @@
 	},
 /obj/machinery/vending/security{
 	dir = 4;
-	req_access = list(100)
+	req_access = list(access_mtf)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3840,7 +3840,7 @@
 "yS" = (
 /obj/machinery/door/airlock/vault{
 	name = "Epislon-11";
-	req_access = list(100)
+	req_access = list(access_mtf)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3911,7 +3911,7 @@
 	dir = 9
 	},
 /obj/structure/closet/crate/secure/biohazard{
-	req_access = list(100)
+	req_access = list(access_mtf)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -4097,7 +4097,7 @@
 	},
 /obj/machinery/vending/security{
 	dir = 4;
-	req_access = list(100)
+	req_access = list(access_mtf)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -4127,7 +4127,7 @@
 	dir = 5
 	},
 /obj/machinery/vending/security{
-	req_access = list(100)
+	req_access = list(access_mtf)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -4548,7 +4548,7 @@
 "ZY" = (
 /obj/machinery/computer/shuttle_control{
 	name = "MTF Helicopter";
-	req_access = list(402,302);
+	req_access = list(access_medicallvl2,access_sciencelvl2);
 	shuttle_tag = "MTF Helicopter"
 	},
 /turf/simulated/floor/shuttle/black,

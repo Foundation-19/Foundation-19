@@ -99,7 +99,7 @@
 "aq" = (
 /obj/machinery/door/airlock/command{
 	name = "Main Control Room";
-	req_access = list(601)
+	req_access = list(access_adminlvl1)
 	},
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/maincontrolroom)
@@ -222,7 +222,7 @@
 "aG" = (
 /obj/machinery/computer/shuttle_control{
 	name = "Heavy Containment Zone";
-	req_access = list(602);
+	req_access = list(access_adminlvl2);
 	shuttle_tag = "Heavy Containment Tram"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -230,14 +230,14 @@
 "aH" = (
 /obj/machinery/computer/shuttle_control{
 	name = "Light Containment Tram control console";
-	req_access = list(602);
+	req_access = list(access_adminlvl2);
 	shuttle_tag = "Light Containment Tram"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
 "aI" = (
 /obj/machinery/computer/shuttle_control/engineering{
-	req_access = list(602)
+	req_access = list(access_adminlvl2)
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -286,7 +286,7 @@
 /area/site53/uez/bridge)
 "aP" = (
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list(604)
+	req_access = list(access_adminlvl4)
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "sitedirect"
@@ -305,7 +305,7 @@
 "aS" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "Tram Control Room";
-	req_access = list(602)
+	req_access = list(access_adminlvl2)
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -434,7 +434,7 @@
 "bm" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "Main Control Room";
-	req_access = list(601)
+	req_access = list(access_adminlvl1)
 	},
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
@@ -531,7 +531,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(201)
+	req_access = list(access_securitylvl1)
 	},
 /obj/structure/cable{
 	d2 = 2;
@@ -564,7 +564,7 @@
 "bB" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Maintenance";
-	req_access = list(601)
+	req_access = list(access_adminlvl1)
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -592,7 +592,7 @@
 	},
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Maintenance";
-	req_access = list(601)
+	req_access = list(access_adminlvl1)
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/maintenance)
@@ -645,7 +645,7 @@
 /area/site53/uez/hallway)
 "bM" = (
 /obj/structure/closet/crate/secure/biohazard{
-	req_access = list(301)
+	req_access = list(access_sciencelvl1)
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -849,7 +849,7 @@
 /area/site53/uez/hallway)
 "cy" = (
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list(605)
+	req_access = list(access_adminlvl5)
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "sitedirect"
@@ -870,13 +870,13 @@
 	},
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Upper Entrance Zone Substation";
-	req_access = list(501)
+	req_access = list(access_engineeringlvl1)
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/substation)
 "cB" = (
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list(605)
+	req_access = list(access_adminlvl5)
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect"
@@ -986,7 +986,7 @@
 "cS" = (
 /obj/machinery/door/airlock/command{
 	name = "Site Director's Office";
-	req_access = list(605)
+	req_access = list(access_adminlvl5)
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect"
@@ -1015,7 +1015,7 @@
 	id_tag = "sitedirect"
 	},
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list(604)
+	req_access = list(access_adminlvl4)
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -1025,7 +1025,7 @@
 	icon_state = "tube1"
 	},
 /obj/machinery/door/window/holowindoor{
-	req_access = list(605)
+	req_access = list(access_adminlvl5)
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
@@ -1186,7 +1186,7 @@
 	},
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "MCR Substation";
-	req_access = list(601)
+	req_access = list(access_adminlvl1)
 	},
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
@@ -1335,7 +1335,7 @@
 	dir = 8;
 	icon_state = "closed";
 	name = "Research Director";
-	req_access = list(305)
+	req_access = list(access_sciencelvl5)
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect"
@@ -1345,7 +1345,7 @@
 "dU" = (
 /obj/machinery/door/airlock/command{
 	name = "Security Commander's Office";
-	req_access = list(205)
+	req_access = list(access_securitylvl5)
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/hallway)
@@ -1355,7 +1355,7 @@
 "dX" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "Chief Medical Officer";
-	req_access = list(405)
+	req_access = list(access_medicallvl5)
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/hallway)
@@ -1376,7 +1376,7 @@
 "eb" = (
 /obj/machinery/door/airlock/multi_tile/glass/command{
 	name = "Admin Canteen";
-	req_access = list(602)
+	req_access = list(access_adminlvl2)
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1388,7 +1388,7 @@
 "ec" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "Chief Engineer";
-	req_access = list(505)
+	req_access = list(access_engineeringlvl5)
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/hallway)
@@ -1542,7 +1542,7 @@
 "ey" = (
 /obj/machinery/door/airlock/multi_tile/glass/command{
 	name = "Admin Canteen";
-	req_access = list(602)
+	req_access = list(access_adminlvl2)
 	},
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
@@ -1827,7 +1827,7 @@
 	},
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Upper Entrance Zone Substation";
-	req_access = list(501)
+	req_access = list(access_engineeringlvl1)
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/substation)
@@ -1951,7 +1951,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(201)
+	req_access = list(access_securitylvl1)
 	},
 /obj/structure/cable{
 	d2 = 2;
@@ -2429,7 +2429,7 @@
 	},
 /obj/structure/closet/secure_closet{
 	name = "secure evidence locker";
-	req_access = list(202)
+	req_access = list(access_securitylvl2)
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
@@ -2658,7 +2658,7 @@
 "im" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Break Room";
-	req_access = list(601)
+	req_access = list(access_adminlvl1)
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -2670,7 +2670,7 @@
 "in" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Break Room";
-	req_access = list(601)
+	req_access = list(access_adminlvl1)
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -2697,7 +2697,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(201)
+	req_access = list(access_securitylvl1)
 	},
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 1
@@ -2750,7 +2750,7 @@
 "iA" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "Logistics Officer";
-	req_access = list(602)
+	req_access = list(access_adminlvl2)
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -3018,7 +3018,7 @@
 "jr" = (
 /obj/machinery/computer/shuttle_control{
 	name = "Heavy Containment Zone";
-	req_access = list(503);
+	req_access = list(access_engineeringlvl3);
 	shuttle_tag = "Heavy Containment Tram"
 	},
 /obj/effect/floor_decal/corner/red/mono,
@@ -3026,7 +3026,7 @@
 /area/site53/upper_surface/commstower)
 "js" = (
 /obj/machinery/computer/shuttle_control/engineering{
-	req_access = list(503)
+	req_access = list(access_engineeringlvl3)
 	},
 /obj/effect/floor_decal/corner/orange/mono,
 /turf/simulated/floor/tiled/monotile/white,
@@ -3447,7 +3447,7 @@
 "kR" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Maintenance";
-	req_access = list(501,604)
+	req_access = list(access_engineeringlvl1,access_adminlvl4)
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -3516,14 +3516,14 @@
 	id_tag = "dchecknorth";
 	name = "North CDZ Blastdoors";
 	pixel_x = -6;
-	req_access = list(202)
+	req_access = list(access_securitylvl2)
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "dchecksouth";
 	name = "South CDZ Blastdoors";
 	pixel_x = 4;
-	req_access = list(202)
+	req_access = list(access_securitylvl2)
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -3733,7 +3733,7 @@
 	},
 /obj/structure/closet/secure_closet{
 	name = "secure evidence locker";
-	req_access = list(202)
+	req_access = list(access_securitylvl2)
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
@@ -3792,7 +3792,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "controlroom";
 	name = "Control Room Lockdown button";
-	req_access = list(601)
+	req_access = list(access_adminlvl1)
 	},
 /obj/item/crowbar/emergency_forcing_tool,
 /turf/simulated/floor/tiled/monotile,
@@ -3965,7 +3965,7 @@
 	},
 /obj/structure/closet/secure_closet{
 	name = "secure evidence locker";
-	req_access = list(202)
+	req_access = list(access_securitylvl2)
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
@@ -3997,7 +3997,7 @@
 	dir = 4;
 	id_tag = "controlroom";
 	name = "Control Room Lockdown button";
-	req_access = list(601)
+	req_access = list(access_adminlvl1)
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -4041,7 +4041,7 @@
 	},
 /obj/structure/closet/secure_closet{
 	name = "secure evidence locker";
-	req_access = list(202)
+	req_access = list(access_securitylvl2)
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
@@ -4060,7 +4060,7 @@
 	},
 /obj/structure/closet/secure_closet{
 	name = "secure evidence locker";
-	req_access = list(202)
+	req_access = list(access_securitylvl2)
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
@@ -4113,7 +4113,7 @@
 	anchored = 0;
 	id_tag = "facilitylockdown";
 	name = "Facility Lockdown button";
-	req_access = list(604)
+	req_access = list(access_adminlvl4)
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -4250,7 +4250,7 @@
 "Ny" = (
 /obj/machinery/computer/shuttle_control{
 	name = "Light Containment Tram control console";
-	req_access = list(503);
+	req_access = list(access_engineeringlvl3);
 	shuttle_tag = "Light Containment Tram"
 	},
 /obj/effect/floor_decal/corner/brown/mono,
@@ -4318,14 +4318,14 @@
 	id_tag = "hczeast";
 	name = "East HCZ Entry Blast Doors";
 	pixel_x = 4;
-	req_access = list(203)
+	req_access = list(access_securitylvl3)
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "hczwest";
 	name = "West HCZ Entry Blast Doors";
 	pixel_x = -6;
-	req_access = list(203)
+	req_access = list(access_securitylvl3)
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -4404,7 +4404,7 @@
 	dir = 4;
 	id_tag = "facilitylockdown";
 	name = "Facility Lockdown button";
-	req_access = list(604)
+	req_access = list(access_adminlvl4)
 	},
 /obj/structure/window/basic/full{
 	anchored = 0;
@@ -4453,7 +4453,7 @@
 "Ts" = (
 /obj/machinery/door/airlock/command{
 	name = "Communications Tower";
-	req_access = list(602)
+	req_access = list(access_adminlvl2)
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -4466,7 +4466,7 @@
 	},
 /obj/machinery/door/airlock/security{
 	name = "Evidence Storage";
-	req_access = list(202)
+	req_access = list(access_securitylvl2)
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
@@ -4558,7 +4558,7 @@
 	},
 /obj/structure/closet/secure_closet{
 	name = "secure evidence locker";
-	req_access = list(202)
+	req_access = list(access_securitylvl2)
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
