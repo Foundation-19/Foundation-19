@@ -324,6 +324,11 @@
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Tram Hub"
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled,
 /area/site53/surface/cryogenicsprimary)
 "aU" = (
@@ -2288,6 +2293,11 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled,
 /area/site53/surface/cryogenicsprimary)
 "gt" = (
@@ -4119,6 +4129,11 @@
 "kP" = (
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "kQ" = (
@@ -5138,6 +5153,15 @@
 "nU" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/mentalhealth/isolation)
+"nW" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "nY" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -5347,8 +5371,18 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "oD" = (
-/turf/simulated/floor/tiled,
-/area/site53/surface/cryogenicsprimary)
+/obj/machinery/door/airlock/glass/mining{
+	name = "Helipad";
+	req_access = list(access_adminlvl1)
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "oE" = (
 /obj/structure/railing/mapped,
 /obj/structure/flora/tree/dead,
@@ -5555,6 +5589,11 @@
 /area/site53/medical/mentalhealth/office)
 "po" = (
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
 "pp" = (
@@ -5574,6 +5613,11 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Tram Hub"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
 /area/site53/surface/tramhubhallwayentry)
@@ -5672,6 +5716,14 @@
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
+"qo" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/logistics/logistics)
 "qx" = (
 /obj/structure/closet/cabinet,
 /obj/item/gun/projectile/shotgun/doublebarrel,
@@ -6156,6 +6208,11 @@
 	name = "Logistics"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
 "rX" = (
@@ -6206,13 +6263,29 @@
 	dir = 4;
 	icon_state = "pipe-c"
 	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
 "sg" = (
-/turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/obj/vehicle/train/cargo/trolley,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/steel_ridged,
+/area/site53/logistics/logistics)
 "si" = (
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled,
 /area/site53/surface/surface)
 "sl" = (
@@ -6221,11 +6294,21 @@
 	req_access = list(access_adminlvl1)
 	},
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
 "sm" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
@@ -6237,6 +6320,11 @@
 /obj/structure/disposalpipe/segment{
 	dir = 1;
 	icon_state = "pipe-c"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
@@ -6356,6 +6444,14 @@
 /obj/effect/floor_decal/corner/blue/bordercorner,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/zonecommanderoffice)
+"sH" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "sI" = (
 /obj/machinery/light{
 	dir = 8
@@ -7309,6 +7405,18 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
+"vQ" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "vY" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -7337,6 +7445,18 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/prepainted,
 /area/space)
+"wt" = (
+/obj/machinery/door/airlock/glass/mining{
+	name = "Helipad";
+	req_access = list(access_adminlvl1)
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "ww" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/mono,
@@ -7426,6 +7546,11 @@
 	pixel_y = -20
 	},
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
 "xa" = (
@@ -7677,6 +7802,26 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"zV" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
+"Ab" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "Ak" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
@@ -8376,6 +8521,25 @@
 /obj/item/stool,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
+"Ja" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
+"Jb" = (
+/obj/effect/floor_decal/industrial/loading{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "Jc" = (
 /obj/item/clothing/suit/storage/toggle/fr_jacket,
 /obj/item/clothing/suit/storage/toggle/fr_jacket/ems,
@@ -8474,6 +8638,18 @@
 /obj/structure/cable,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/tramhubhallwayentry)
+"Lu" = (
+/obj/machinery/door/airlock/glass/mining{
+	name = "Cargo Center";
+	req_access = list(access_adminlvl1)
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/logistics/logistics)
 "Lv" = (
 /obj/structure/curtain/medical,
 /obj/effect/floor_decal/corner/paleblue/half{
@@ -8598,6 +8774,26 @@
 /obj/item/auto_cpr,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/sleeper)
+"Oz" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/logistics/logistics)
+"OA" = (
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "OC" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -8660,6 +8856,17 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
+"Py" = (
+/obj/machinery/light/spot{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "PA" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -9155,6 +9362,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
+"VQ" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "Wm" = (
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "ezcell1";
@@ -31258,8 +31473,8 @@ qK
 qK
 qK
 qK
-qK
-jt
+OA
+Py
 kP
 kQ
 jt
@@ -31517,7 +31732,7 @@ oV
 oV
 oV
 oV
-Lb
+oD
 Lb
 oV
 oV
@@ -31774,7 +31989,7 @@ dA
 dA
 dA
 oV
-uz
+Jb
 uR
 oV
 dA
@@ -32031,7 +32246,7 @@ dA
 dA
 dA
 oV
-qK
+Ja
 qK
 oV
 dA
@@ -32288,7 +32503,7 @@ dA
 dA
 dA
 oV
-qK
+Ja
 rH
 oV
 dA
@@ -32545,7 +32760,7 @@ dA
 dA
 dA
 oV
-qK
+Ja
 qK
 oV
 dA
@@ -32802,7 +33017,7 @@ oV
 oV
 oV
 oV
-rR
+wt
 rR
 oV
 oV
@@ -33059,7 +33274,7 @@ zb
 oV
 vd
 uQ
-uQ
+Oz
 uQ
 uQ
 vd
@@ -33316,7 +33531,7 @@ uW
 oV
 uQ
 uQ
-uQ
+Oz
 uQ
 uQ
 uQ
@@ -33573,7 +33788,7 @@ nk
 uO
 qK
 rU
-qK
+Ja
 rU
 qK
 rU
@@ -33826,11 +34041,11 @@ po
 po
 po
 so
-nk
-uO
-qK
-rV
-qK
+qo
+Lu
+Ab
+sg
+sH
 rV
 qK
 rV
@@ -39195,20 +39410,20 @@ oi
 jg
 oE
 se
-qZ
+nW
 wV
-qZ
-qZ
-qZ
-qZ
-qZ
-qZ
-qZ
-qZ
-qZ
-qZ
-qZ
-bA
+nW
+nW
+nW
+nW
+nW
+nW
+nW
+nW
+nW
+nW
+nW
+zV
 nE
 nE
 nE
@@ -39691,24 +39906,24 @@ vp
 lf
 lf
 gs
-oD
-oD
+lf
+lf
 aT
-sg
-sg
-sg
-sg
+at
+at
+at
+at
 pq
-nE
-nE
-se
-qZ
-qZ
-qZ
-qZ
-qZ
-qZ
-bA
+VQ
+VQ
+vQ
+nW
+nW
+nW
+nW
+nW
+nW
+zV
 nE
 bM
 bM

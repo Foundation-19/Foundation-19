@@ -269,6 +269,12 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	turf_initializer = /decl/turf_initializer/maintenance
 
+/area/site53/lowertrams/hczmaint/east
+	name = "\improper Eastern Heavy Containment Maintenance"
+
+/area/site53/lowertrams/hczmaint/south
+	name = "\improper Southern Heavy Containment Maintenance"
+
 /area/site53/lowertrams/orangeline
 	name = "\improper Orange Line"
 	icon_state = "hallF"

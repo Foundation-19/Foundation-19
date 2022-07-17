@@ -3890,6 +3890,11 @@
 /obj/effect/floor_decal/corner/red/bordercee{
 	dir = 8
 	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
 "yb" = (
