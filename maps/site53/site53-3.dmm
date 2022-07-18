@@ -6795,6 +6795,7 @@
 /obj/effect/floor_decal/corner/red/half{
 	dir = 1
 	},
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "tL" = (
@@ -8651,6 +8652,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensicsstairwell)
+"Nk" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/red/mono,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "Ny" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/box/a10mm,
@@ -9255,6 +9262,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
+"Vy" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/securitypost)
 "VG" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light/small{
@@ -41320,7 +41332,7 @@ gU
 fD
 dA
 da
-jI
+Vy
 jB
 jF
 jy
@@ -42114,7 +42126,7 @@ uk
 mr
 mt
 Jt
-ww
+Nk
 tY
 tY
 Bf
