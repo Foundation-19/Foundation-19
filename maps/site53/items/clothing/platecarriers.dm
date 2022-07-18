@@ -31,7 +31,7 @@
 	name = "combined heavy assault suit"
 	desc = "A multi-layered composite armor suit with ballistic weave underpadding and a kevlar undersuit, fitted with it's own cooling unit and exoskeleton supports. 'Nu-7' is emblazoned on the collar, and 'Hammer Down' is sewed into the back of it."
 	icon_state = "mtf-heavy"
-	item_state = "mtf-heavyr"
+	item_state = "mtf-heavy"
 	permeability_coefficient = 0
 	gas_transfer_coefficient = 0
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
