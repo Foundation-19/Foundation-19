@@ -108,31 +108,31 @@
 
 // ENGINEERING
 
-/var/const/access_engineeringlvl1 = "ACCESS_ENGINEERING_LEVEL_1" //Junior Engineer
+/var/const/access_engineeringlvl1 = "ACCESS_ENGINEERING_LEVEL1" //Junior Engineer
 /datum/access/engineeringlvl1
 	id = access_engineeringlvl1
 	desc = "Engineering Level 1"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_engineeringlvl2 = "ACCESS_ENGINEERING_LEVEL_2" // Engineer
+/var/const/access_engineeringlvl2 = "ACCESS_ENGINEERING_LEVEL2" // Engineer
 /datum/access/engineeringlvl2
 	id = access_engineeringlvl2
 	desc = "Engineering Level 2"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_engineeringlvl3 = "ACCESS_ENGINEERING_LEVEL_3" // Senior Engineer, Comms Programmer
+/var/const/access_engineeringlvl3 = "ACCESS_ENGINEERING_LEVEL3" // Senior Engineer, Comms Programmer
 /datum/access/engineeringlvl3
 	id = access_engineeringlvl3
 	desc = "Engineering Level 3"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_engineeringlvl4 = "ACCESS_ENGINEERING_LEVEL_4" // Containment Engineer
+/var/const/access_engineeringlvl4 = "ACCESS_ENGINEERING_LEVEL4" // Containment Engineer
 /datum/access/engineeringlvl4
 	id = access_engineeringlvl4
 	desc = "Engineering Level 4"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_engineeringlvl5 = "ACCESS_ENGINEERING_LEVEL_5" //Chief Engineer
+/var/const/access_engineeringlvl5 = "ACCESS_ENGINEERING_LEVEL5" //Chief Engineer
 /datum/access/engineeringlvl5
 	id = access_engineeringlvl5
 	desc = "Engineering Level 5"
