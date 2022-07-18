@@ -13403,11 +13403,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/entrance_checkpoint)
-"Iy" = (
-/obj/item/device/megaphone,
-/obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/kitchenbotanybubble)
 "Iz" = (
 /obj/machinery/computer/modular/preset/security,
 /turf/simulated/floor/tiled/monotile/white,
@@ -35407,7 +35402,7 @@ qv
 hb
 hg
 qe
-Iy
+rF
 gs
 rF
 xk
