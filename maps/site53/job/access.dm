@@ -2,12 +2,18 @@
 * Deep Space Site 90 *
 *********************/
 
-// NTF
+// MTF, GOC
 
 /var/const/access_mtf = "ACCESS_MTF"
 /datum/access/mtf
 	id = access_mtf
 	desc = "MTF"
+	region = ACCESS_TYPE_CENTCOM
+	
+/var/const/access_ungoc = 100
+/datum/access/ungoc
+	id = access_ungoc
+	desc = "UNGOC"
 	region = ACCESS_TYPE_CENTCOM
 
 // Security
