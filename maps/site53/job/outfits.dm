@@ -99,7 +99,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/beret/solgov/marcom
 	mask = /obj/item/clothing/mask/balaclava
-
+	gloves = /obj/item/clothing/gloves/tactical/scp
 
 
 // ZONE COMMANDER OUTFITS.
@@ -154,7 +154,7 @@
 	glasses = /obj/item/clothing/glasses/eyepatch/hud/security
 	head = /obj/item/clothing/head/beret/sec/corporate/hos
 	mask = /obj/item/clothing/mask/balaclava
-
+	gloves = /obj/item/clothing/gloves/tactical/scp
 
 // GUARD OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerlcz
@@ -207,6 +207,7 @@
 	glasses = /obj/item/clothing/glasses/eyepatch/hud/security
 	head = /obj/item/clothing/head/beret/sec/corporate/warden
 	mask = /obj/item/clothing/mask/balaclava
+	gloves = /obj/item/clothing/gloves/tactical/scp
 
 /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerez
 	name = OUTFIT_JOB_NAME("EZ Junior Agent")
@@ -224,6 +225,7 @@
 	glasses = /obj/item/clothing/glasses/eyepatch/hud/security
 	head = /obj/item/clothing/head/beret/sec/corporate/officer
 	mask = /obj/item/clothing/mask/balaclava
+	gloves = /obj/item/clothing/gloves/tactical/scp
 
 // JUNIOR GUARD OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerlcz
