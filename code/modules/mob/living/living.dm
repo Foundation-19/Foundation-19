@@ -15,7 +15,7 @@
 //mob verbs are faster than object verbs. See mob/verb/examine.
 /mob/living/verb/pulled(atom/movable/AM as mob|obj in oview(1))
 	set name = "Pull"
-	set category = "Object"
+	set category = "IC.Interact"
 
 	if(AM.Adjacent(src))
 		src.start_pulling(AM)
@@ -619,7 +619,7 @@ default behaviour is:
 
 /mob/living/verb/resist()
 	set name = "Resist"
-	set category = "IC"
+	set category = "IC.Interact"
 
 	if(!incapacitated(INCAPACITATION_KNOCKOUT) && last_resist + 2 SECONDS <= world.time)
 		last_resist = world.time
@@ -695,7 +695,7 @@ default behaviour is:
 
 /mob/living/verb/lay_down()
 	set name = "Rest"
-	set category = "IC"
+	set category = "IC.Interact"
 
 	resting = !resting
 	to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"]</span>")

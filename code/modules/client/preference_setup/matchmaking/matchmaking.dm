@@ -143,7 +143,7 @@ var/global/datum/matchmaker/matchmaker = new()
 /mob/living/verb/see_relationship_info()
 	set name = "See Relationship Info"
 	set desc = "See what connections between people you know of."
-	set category = "IC"
+	set category = "IC.Memory"
 
 	var/list/relations = matchmaker.get_relationships(mind)
 	var/list/dat = list()

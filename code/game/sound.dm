@@ -155,6 +155,6 @@ var/const/FALLOFF_SOUNDS = 0.5
 /client/verb/stop_sounds()
 	set name = "Stop All Sounds"
 	set desc = "Stop all sounds that are currently playing on your client."
-	set category = "OOC"
+	set category = "Admin.Sound"
 
 	sound_to(usr, sound(null))

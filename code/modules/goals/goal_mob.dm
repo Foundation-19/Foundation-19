@@ -10,7 +10,7 @@
 
 	set name = "Show Goals"
 	set desc = "Shows your round goals."
-	set category = "IC"
+	set category = "IC.Memory"
 
 	show_goals(TRUE, TRUE)
 

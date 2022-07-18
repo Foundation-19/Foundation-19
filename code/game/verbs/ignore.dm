@@ -1,6 +1,6 @@
 /client/verb/ignore(key_to_ignore as text)
 	set name = "Ignore"
-	set category = "OOC"
+	set category = null
 	set desc = "Makes OOC and Deadchat messages from a specific player not appear to you."
 
 	if(!key_to_ignore)
@@ -16,7 +16,7 @@
 
 /client/verb/unignore(key_to_unignore as text)
 	set name = "Unignore"
-	set category = "OOC"
+	set category = null
 	set desc = "Reverts your ignoring of a specific player."
 
 	if(!key_to_unignore)

@@ -1,5 +1,5 @@
 /client/proc/restart_controller(controller in list("Master", "Failsafe"))
-	set category = "Debug"
+	set category = "Debug.Fix"
 	set name = "Restart Controller"
 	var/client/client = usr?.client
 	if(!check_rights(R_ADMIN, TRUE, client))

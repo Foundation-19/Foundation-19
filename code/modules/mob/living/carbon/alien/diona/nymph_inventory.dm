@@ -64,7 +64,7 @@
 /mob/living/carbon/alien/diona/verb/drop_item_verb()
 	set name = "Drop Held Item"
 	set desc = "Drop the item you are currently holding inside."
-	set category = "IC"
+	set category = "IC.Interact"
 	set src = usr
 	drop_item()
 

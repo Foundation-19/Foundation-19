@@ -1,6 +1,6 @@
 /client/proc/fix_air(turf/simulated/T in world)
 	set name = "Fix Air"
-	set category = "Admin"
+	set category = "Admin.Fix"
 	set desc = "Fixes air in specified radius."
 
 	if(!check_rights(R_ADMIN))
@@ -25,7 +25,7 @@
 		log_and_message_admins("[usr] fixed air with range [range] in area [T.loc.name]. [changed_zones.len] [(changed_zones.len) > 1 ? "zones have" : "zone has"] been affected.")
 
 /client/proc/fixatmos()
-	set category = "Admin"
+	set category = "Admin.Fix"
 	set name = "Fix Atmospherics Grief"
 
 	if(!check_rights(R_ADMIN|R_DEBUG)) return

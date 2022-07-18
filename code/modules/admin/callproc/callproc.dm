@@ -2,7 +2,7 @@
 
 // standard callproc, select target
 /client/proc/callproc()
-	set category = "Debug"
+	set category = "Debug.Spawn"
 	set name = "Advanced ProcCall"
 
 	if(!check_rights(R_DEBUG)) return
@@ -37,7 +37,7 @@
 
 // right click verb
 /client/proc/callproc_target(atom/A in range(world.view))
-	set category = "Debug"
+	set category = "Debug.Spawn"
 	set name = "Advanced ProcCall Target"
 
 	if(!check_rights(R_DEBUG)) return
@@ -199,7 +199,7 @@
 
 /client/proc/cancel_callproc_select()
 	set name = "Cancel Callproc Select"
-	set category = "Admin"
+	set category = "Admin.Misc"
 
 	remove_verb(src, /client/proc/cancel_callproc_select)
 	if(holder && holder.callproc && holder.callproc.waiting_for_click)

@@ -1,6 +1,6 @@
 /proc/possess(obj/O as obj)
 	set name = "Possess Obj"
-	set category = "Object"
+	set category = "IC"
 
 	log_and_message_admins("has possessed [O]")
 
@@ -17,7 +17,7 @@
 
 /proc/release(obj/O)
 	set name = "Release Obj"
-	set category = "Object"
+	set category = "IC"
 	//usr.loc = get_turf(usr)
 
 	if(usr.control_object && usr.name_archive) //if you have a name archived and if you are actually relassing an object
@@ -36,7 +36,7 @@
 
 /proc/givetestverbs(mob/M as mob in SSmobs.mob_list)
 	set desc = "Give this guy possess/release verbs"
-	set category = "Debug"
+	set category = "Debug.Misc"
 	set name = "Give Possessing Verbs"
 	add_verb(M, /proc/possess)
 	add_verb(M, /proc/release)

@@ -1,5 +1,5 @@
 /client/proc/Cell()
-	set category = "Debug"
+	set category = "Debug.Misc"
 	set name = "Cell"
 	if(!mob)
 		return
@@ -20,7 +20,7 @@
 	SSstatistics.add_field_details("admin_verb","ASL") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_robotize(var/mob/M in SSmobs.mob_list)
-	set category = "Fun"
+	set category = "Admin.Fun"
 	set name = "Make Robot"
 
 	if(GAME_STATE < RUNLEVEL_GAME)
@@ -35,7 +35,7 @@
 		alert("Invalid mob")
 
 /client/proc/cmd_admin_animalize(var/mob/M in SSmobs.mob_list)
-	set category = "Fun"
+	set category = "Admin.Fun"
 	set name = "Make Simple Animal"
 
 	if(GAME_STATE < RUNLEVEL_GAME)
@@ -56,7 +56,7 @@
 
 
 /client/proc/makepAI(var/turf/T in SSmobs.mob_list)
-	set category = "Fun"
+	set category = "Admin.Fun"
 	set name = "Make pAI"
 	set desc = "Specify a location to spawn a pAI device, then specify a key to play that pAI"
 
@@ -83,7 +83,7 @@
 	SSstatistics.add_field_details("admin_verb","MPAI") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_slimeize(var/mob/M in SSmobs.mob_list)
-	set category = "Fun"
+	set category = "Admin.Fun"
 	set name = "Make slime"
 
 	if(GAME_STATE < RUNLEVEL_GAME)
@@ -115,7 +115,7 @@
 	SSstatistics.add_field_details("admin_verb","DELA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_debug_make_powernets()
-	set category = "Debug"
+	set category = "Debug.Fix"
 	set name = "Make Powernets"
 	SSmachines.makepowernets()
 	log_admin("[key_name(src)] has remade the powernet. makepowernets() called.")
@@ -123,7 +123,7 @@
 	SSstatistics.add_field_details("admin_verb","MPWN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_grantfullaccess(var/mob/M in SSmobs.mob_list)
-	set category = "Admin"
+	set category = "Admin.Fun"
 	set name = "Grant Full Access"
 
 	if (GAME_STATE < RUNLEVEL_GAME)
@@ -150,7 +150,7 @@
 	log_and_message_admins("has granted [M.key] full access.")
 
 /client/proc/cmd_assume_direct_control(var/mob/M in SSmobs.mob_list)
-	set category = "Admin"
+	set category = "Admin.Event"
 	set name = "Assume direct control"
 	set desc = "Direct intervention"
 
@@ -175,7 +175,7 @@
 
 
 /client/proc/cmd_admin_areatest()
-	set category = "Mapping"
+	set category = "Debug.Map"
 	set name = "Test areas"
 
 	var/list/areas_all = list()
@@ -263,7 +263,7 @@
 		log_debug("* [areatype]")
 
 /datum/admins/proc/cmd_admin_dress()
-	set category = "Fun"
+	set category = "Admin.Fun"
 	set name = "Select equipment"
 
 	if(!check_rights(R_FUN))
@@ -293,7 +293,7 @@
 	log_and_message_admins("changed the equipment of [key_name(H)] to [outfit.name].")
 
 /client/proc/startSinglo()
-	set category = "Debug"
+	set category = "Debug.Misc"
 	set name = "Start Singularity"
 	set desc = "Sets up the singularity and all machines to get power flowing"
 
@@ -343,7 +343,7 @@
 			SMES.input_attempt = 1
 
 /client/proc/cmd_debug_mob_lists()
-	set category = "Debug"
+	set category = "Debug.Misc"
 	set name = "Debug Mob Lists"
 	set desc = "For when you just gotta know"
 
@@ -380,7 +380,7 @@
 		alert("Invalid mob")
 
 /datum/admins/proc/view_runtimes()
-	set category = "Debug"
+	set category = "Debug.Data"
 	set name = "View Runtimes"
 	set desc = "Open the Runtime Viewer"
 
@@ -390,7 +390,7 @@
 	GLOB.error_cache.show_to(usr.client)
 
 /client/proc/cmd_analyse_health_panel()
-	set category = "Debug"
+	set category = "Debug.Data"
 	set name = "Analyse Health"
 	set desc = "Get an advanced health reading on a human mob."
 
@@ -429,7 +429,7 @@
 
 /client/var/list/image/powernet_markers = list()
 /client/proc/visualpower()
-	set category = "Debug"
+	set category = "Debug.Map"
 	set name = "Visualize Powernets"
 
 	if(!check_rights(R_DEBUG)) return
@@ -449,21 +449,21 @@
 	images += powernet_markers
 
 /client/proc/visualpower_remove()
-	set category = "Debug"
+	set category = "Debug.Map"
 	set name = "Remove Powernets Visuals"
 
 	images -= powernet_markers
 	QDEL_NULL_LIST(powernet_markers)
 
 /client/proc/toggle_planet_repopulating()
-	set category = "Debug"
+	set category = "Debug.Misc"
 	set name = "Toggle Planet Mob Repopulating"
 
 	GLOB.planet_repopulation_disabled = !GLOB.planet_repopulation_disabled
 	log_and_message_admins("toggled planet mob repopulating [GLOB.planet_repopulation_disabled ? "OFF" : "ON"].")
 
 /client/proc/spawn_exoplanet(exoplanet_type as anything in subtypesof(/obj/effect/overmap/visitable/sector/exoplanet))
-	set category = "Debug"
+	set category = "Debug.Misc"
 	set name = "Create Exoplanet"
 
 	var/budget = input("Ruins budget. Default is 5, a budget of 0 will not spawn any ruins, 5 will spawn around 3-5 ruins:", "Ruins Budget", 5) as num | null

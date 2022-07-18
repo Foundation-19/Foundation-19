@@ -54,7 +54,7 @@ GLOBAL_LIST_EMPTY(scp_013_1s)
 /mob/living/carbon/human/verb/manual_blink()
 	set name = "Blink"
 	set desc = "Your eyes will close for a moment, giving them some rest."
-	set category = "IC"
+	set category = "IC.Interact"
 
 	for(var/mob/living/scp_173/S in view(7, src))
 		S.CauseBlink(src)

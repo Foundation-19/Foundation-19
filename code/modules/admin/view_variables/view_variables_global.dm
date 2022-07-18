@@ -43,7 +43,7 @@
 			)
 
 /client/proc/debug_global_variables()
-	set category = "Debug"
+	set category = "Debug.Data"
 	set name = "View Global Variables"
 
 	if(!global_vars_)

@@ -38,11 +38,11 @@ var/intercom_range_display_status = 0
 	return 0
 
 /client/proc/do_not_use_these()
-	set category = "Mapping"
+	set category = "Debug.Map"
 	set name = "-None of these are for ingame use!!"
 
 /client/proc/camera_view()
-	set category = "Mapping"
+	set category = "Debug.Map"
 	set name = "Camera Range Display"
 
 	if(camera_range_display_status)
@@ -63,7 +63,7 @@ var/intercom_range_display_status = 0
 
 
 /client/proc/sec_camera_report()
-	set category = "Mapping"
+	set category = "Debug.Map"
 	set name = "Camera Report"
 
 	var/list/obj/machinery/camera/CL = list()
@@ -99,7 +99,7 @@ var/intercom_range_display_status = 0
 	SSstatistics.add_field_details("admin_verb","mCRP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/intercom_view()
-	set category = "Mapping"
+	set category = "Debug.Map"
 	set name = "Intercom Range Display"
 
 	if(intercom_range_display_status)
@@ -194,7 +194,7 @@ var/list/debug_verbs = list (
 
 
 /client/proc/testZAScolors()
-	set category = "ZAS"
+	set category = "Debug.ZAS"
 	set name = "Check ZAS connections"
 
 	if(!check_rights(R_DEBUG)) return
@@ -239,7 +239,7 @@ var/list/debug_verbs = list (
 		testZAScolors_turfs += T
 
 /client/proc/testZAScolors_remove()
-	set category = "ZAS"
+	set category = "Debug.ZAS"
 	set name = "Remove ZAS connection colors"
 
 	testZAScolors_turfs.Cut()
@@ -250,7 +250,7 @@ var/list/debug_verbs = list (
 			images.Remove(i)
 
 /client/proc/rebootAirMaster()
-	set category = "ZAS"
+	set category = "Debug.ZAS"
 	set name = "Reboot ZAS"
 
 	if(alert("This will destroy and remake all zone geometry on the whole map.","Reboot ZAS","Reboot ZAS","Nevermind") == "Reboot ZAS")
@@ -258,7 +258,7 @@ var/list/debug_verbs = list (
 
 
 /client/proc/count_objects_on_z_level()
-	set category = "Mapping"
+	set category = "Debug.Map"
 	set name = "Count Objects On Level"
 	var/level = input("Which z-level?","Level?") as text
 	if(!level) return
@@ -301,7 +301,7 @@ var/list/debug_verbs = list (
 	SSstatistics.add_field_details("admin_verb","mOBJZ") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/count_objects_all()
-	set category = "Mapping"
+	set category = "Debug.Map"
 	set name = "Count Objects All"
 
 	var/type_text = input("Which type path?","") as text
@@ -332,7 +332,7 @@ var/list/debug_verbs = list (
 
 //Special for Cakey
 /client/proc/find_leaky_pipes()
-	set category = "Mapping"
+	set category = "Debug.Map"
 	set name = "Find Leaky Pipes"
 
 	var/list/baddies = list("LEAKY PIPES")

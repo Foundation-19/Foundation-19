@@ -2,7 +2,7 @@
 
 //Works similarly to the supply drop in that you create it to use it instantly.
 /client/proc/create_dungeon()
-	set category = "Fun"
+	set category = "Debug.Misc"
 	set name = "Create Dungeon"
 	set desc = "Create and apply a configurable dungeon to a zlevel."
 

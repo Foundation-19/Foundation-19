@@ -345,7 +345,7 @@ SUBSYSTEM_DEF(event)
 
 /client/proc/event_manager_panel()
 	set name = "Event Manager Panel"
-	set category = "Admin"
+	set category = "Admin.Event"
 	if(SSevent)
 		SSevent.Interact(usr)
 	SSstatistics.add_field_details("admin_verb","EMP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

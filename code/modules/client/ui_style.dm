@@ -17,7 +17,7 @@
 
 /client/verb/change_ui()
 	set name = "Change UI"
-	set category = "OOC"
+	set category = "OOC.Misc"
 	set desc = "Configure your user interface"
 
 	if(!ishuman(usr))

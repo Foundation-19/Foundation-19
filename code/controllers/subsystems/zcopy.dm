@@ -319,7 +319,7 @@ SUBSYSTEM_DEF(zcopy)
 /client/proc/analyze_openturf(turf/T)
 	set name = "Analyze Openturf"
 	set desc = "Show the layering of an openturf and everything it's mimicking."
-	set category = "Debug"
+	set category = "Debug.Data"
 
 	if (!check_rights(R_DEBUG))
 		return

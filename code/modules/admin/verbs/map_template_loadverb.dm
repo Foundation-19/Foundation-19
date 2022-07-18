@@ -1,5 +1,5 @@
 /datum/admins/proc/map_template_load()
-	set category = "Fun"
+	set category = "Debug.Map"
 	set desc = "Pick a map template to load at your current location. You will be able to confirm bounds before committing."
 	set name = "Map Template - Place"
 
@@ -32,7 +32,7 @@
 	usr.client.images -= preview
 
 /datum/admins/proc/map_template_load_new_z()
-	set category = "Fun"
+	set category = "Debug.Map"
 	set desc = "Pick a map template to load as a new zlevel, or a set of new zlevels if multi-z."
 	set name = "Map Template - Place In New Z"
 
@@ -66,7 +66,7 @@
 		to_chat(usr, "Failed to place map template [log_name].")
 
 /datum/admins/proc/map_template_upload()
-	set category = "Fun"
+	set category = "Debug.Map"
 	set desc = "Upload a .dmm file to use as a map template. Any unknown types will be skipped!"
 	set name = "Map Template - Upload"
 

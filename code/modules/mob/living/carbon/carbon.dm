@@ -363,7 +363,7 @@
 
 /mob/living/carbon/verb/mob_sleep()
 	set name = "Sleep"
-	set category = "IC"
+	set category = "IC.Interact"
 
 	if(alert("Are you sure you want to [player_triggered_sleeping ? "wake up?" : "sleep for a while? Use 'sleep' again to wake up"]", "Sleep", "No", "Yes") == "Yes")
 		player_triggered_sleeping = !player_triggered_sleeping

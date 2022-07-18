@@ -180,7 +180,7 @@
 
 /mob/verb/ShowMemories()
 	set name = "Notes"
-	set category = "IC"
+	set category = "IC.Memory"
 	if(mind)
 		mind.ShowMemory(src)
 	else
@@ -188,7 +188,7 @@
 
 /mob/verb/AddMemory(var/msg as message)
 	set name = "Add Note"
-	set category = "IC"
+	set category = "IC.Memory"
 
 	msg = sanitize(msg,extra = FALSE)
 	if(msg)

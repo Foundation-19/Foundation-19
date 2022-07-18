@@ -193,7 +193,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/is_active()		return 0
 
 /mob/observer/ghost/verb/reenter_corpse()
-	set category = "Ghost"
+	set category = "Ghost.Interact"
 	set name = "Re-enter Corpse"
 	if(!client)	return
 	if(!(mind && mind.current && can_reenter_corpse))
@@ -212,7 +212,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	return 1
 
 /mob/observer/ghost/verb/toggle_medHUD()
-	set category = "Ghost"
+	set category = "Ghost.Vision"
 	set name = "Toggle MedicHUD"
 	set desc = "Toggles Medical HUD, allowing you to see how everyone is doing."
 	if(!client)
@@ -225,7 +225,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		to_chat(src, "<span class='notice'>Medical HUD Enabled</span>")
 
 /mob/observer/ghost/verb/toggle_antagHUD()
-	set category = "Ghost"
+	set category = "Ghost.Vision"
 	set name = "Toggle AntagHUD"
 	set desc = "Toggles AntagHUD, allowing you to see who is the antagonist."
 
@@ -252,7 +252,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		to_chat(src, SPAN_NOTICE("AntagHUD Enabled"))
 
 /mob/observer/ghost/verb/dead_tele(A in area_repository.get_areas_by_z_level())
-	set category = "Ghost"
+	set category = "Ghost.Teleport"
 	set name = "Teleport"
 	set desc= "Teleport to a location"
 
@@ -269,7 +269,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	ghost_to_turf(pick(area_turfs))
 
 /mob/observer/ghost/verb/dead_tele_coord(tx as num, ty as num, tz as num)
-	set category = "Ghost"
+	set category = "Ghost.Teleport"
 	set name = "Teleport to Coordinate"
 	set desc= "Teleport to a coordinate"
 
@@ -280,7 +280,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		to_chat(src, "<span class='warning'>Invalid coordinates.</span>")
 
 /mob/observer/ghost/verb/follow(var/mob/fh in GLOB.player_list)
-	set category = "Ghost"
+	set category = "Ghost.Teleport"
 	set name = "Follow"
 	set desc = "Follow a player"
 
@@ -290,7 +290,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	start_following(fh)
 
 /mob/observer/ghost/verb/jumptomob(var/mob/M in SSmobs.mob_list)
-	set category = "Ghost"
+	set category = "Ghost.Teleport"
 	set name = "Jump to Mob"
 	set desc = "Jump to any mob"
 
@@ -359,7 +359,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/observer/ghost/verb/analyze_air()
 	set name = "Analyze Air"
-	set category = "Ghost"
+	set category = "Ghost.Interact"
 
 	var/turf/t = get_turf(src)
 	if(t)
@@ -367,7 +367,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/observer/ghost/verb/check_radiation()
 	set name = "Check Radiation"
-	set category = "Ghost"
+	set category = "Ghost.Interact"
 
 	var/turf/t = get_turf(src)
 	if(t)
@@ -376,7 +376,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/observer/ghost/verb/scan_target()
 	set name = "Scan Target"
-	set category = "Ghost"
+	set category = "Ghost.Interact"
 	set desc = "Analyse whatever you are following."
 
 	if(ishuman(following))
@@ -386,7 +386,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/observer/ghost/verb/become_mouse()
 	set name = "Become mouse"
-	set category = "Ghost"
+	set category = "Ghost.Respawn"
 
 	if(config.disable_player_mice)
 		to_chat(src, "<span class='warning'>Spawning as a mouse is currently disabled.</span>")
@@ -425,7 +425,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		to_chat(host, "<span class='info'>You are now a mouse. Try to avoid interaction with players, and do not give hints away that you are more than a simple rodent.</span>")
 /mob/observer/ghost/verb/view_manfiest()
 	set name = "Show Crew Manifest"
-	set category = "Ghost"
+	set category = "Ghost.Vision"
 
 	var/dat
 	dat += "<h4>Crew Manifest</h4>"
@@ -489,14 +489,14 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/verb/toggle_ghostsee()
 	set name = "Toggle Ghost Vision"
 	set desc = "Toggles your ability to see things only ghosts can see, like other ghosts"
-	set category = "Ghost"
+	set category = "Ghost.Vision"
 	ghostvision = !(ghostvision)
 	updateghostsight()
 	to_chat(src, "You [(ghostvision?"now":"no longer")] have ghost vision.")
 
 /mob/observer/ghost/verb/toggle_darkness()
 	set name = "Toggle Darkness"
-	set category = "Ghost"
+	set category = "Ghost.Vision"
 	seedarkness = !(seedarkness)
 	updateghostsight()
 	to_chat(src, "You [(seedarkness?"now":"no longer")] see darkness.")
@@ -574,7 +574,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/observer/ghost/verb/respawn()
 	set name = "Respawn"
-	set category = "OOC"
+	set category = "Ghost.Respawn"
 
 	if (!(config.abandon_allowed))
 		to_chat(usr, SPAN_WARNING("Respawn is disabled."))
@@ -599,7 +599,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	log_and_message_admins("has respawned.", M)
 
 /mob/observer/ghost/verb/become_scp()
-	set category = "Ghost"
+	set category = "Ghost.Respawn"
 	set name = "Become Euclid/Keter SCP"
 	set desc = "Take control of a clientless SCP."
 
@@ -644,7 +644,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/observer/ghost/verb/become_safe()
 	set name = "Become Safe SCP"
-	set category = "Ghost"
+	set category = "Ghost.Respawn"
 
 	// if(config.disable_player_safe_scps)
 	// 	to_chat(src, "<span class='warning'>Spawning as adorable Safe SCPs is currently disabled.</span>")

@@ -47,7 +47,7 @@ GLOBAL_LIST(end_titles)
 
 /client/proc/ClearCredits()
 	set name = "Stop End Titles"
-	set category = "OOC"
+	set category = "OOC.Misc"
 	remove_verb(src, /client/proc/ClearCredits)
 	QDEL_NULL_LIST(credits)
 	mob.clear_fullscreen("fishbed")

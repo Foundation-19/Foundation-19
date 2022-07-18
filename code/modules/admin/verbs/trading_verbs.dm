@@ -1,5 +1,5 @@
 /client/proc/list_traders()
-	set category = "Debug"
+	set category = null
 	set name = "List Traders"
 	set desc = "Lists all the current traders"
 
@@ -8,7 +8,7 @@
 		to_chat(src, "[T.name] <a href='?_src_=vars;Vars=\ref[T]'>\ref[T]</a>")
 
 /client/proc/add_trader()
-	set category = "Debug"
+	set category = null
 	set name = "Add Trader"
 	set desc = "Adds a trader to the list."
 
@@ -20,7 +20,7 @@
 	SStrade.traders += new type
 
 /client/proc/remove_trader()
-	set category = "Debug"
+	set category = null
 	set name = "Remove Trader"
 	set desc = "Removes a trader from the trader list."
 

@@ -148,7 +148,7 @@
 			drop.forceMove(T)
 
 /datum/admins/proc/call_drop_pod()
-	set category = "Fun"
+	set category = "Admin.Fun"
 	set desc = "Call an immediate drop pod on your location."
 	set name = "Call Drop Pod"
 

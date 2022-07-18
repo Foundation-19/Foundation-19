@@ -1,6 +1,6 @@
 /mob/living/silicon/ai/verb/wipe_core()
 	set name = "Wipe Core"
-	set category = "OOC"
+	set category = "OOC.Character"
 	set desc = "Wipe your core. This is functionally equivalent to cryo or robotic storage, freeing up your job slot."
 
 	if(istype(loc, /obj/item))

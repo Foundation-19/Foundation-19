@@ -812,7 +812,7 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 
 /mob/living/carbon/human/verb/check_species()
 	set name = "Check Species Information"
-	set category = "IC"
+	set category = "IC.Memory"
 	set src = usr
 
 	show_browser(src, species.get_description(), "window=species;size=700x400")

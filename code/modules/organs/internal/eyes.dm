@@ -47,7 +47,7 @@
 /obj/item/organ/internal/eyes/proc/change_eye_color()
 	set name = "Change Eye Color"
 	set desc = "Changes your robotic eye color."
-	set category = "IC"
+	set category = "IC.Character"
 	set src in usr
 	if (!owner || owner.incapacitated())
 		return

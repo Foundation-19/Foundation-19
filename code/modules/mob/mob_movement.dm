@@ -317,7 +317,7 @@
 /mob/verb/SetDefaultWalk()
 	set name = "Set Default Walk"
 	set desc = "Select your default walking style."
-	set category = "IC"
+	set category = "IC.Misc"
 	var/choice = input(usr, "Select a default walk.", "Set Default Walk") as null|anything in get_movement_datums_by_missing_flag(MOVE_INTENT_QUICK)
 	if(choice && (choice in get_movement_datums_by_missing_flag(MOVE_INTENT_QUICK)))
 		default_walk_intent = choice
@@ -326,7 +326,7 @@
 /mob/verb/SetDefaultRun()
 	set name = "Set Default Run"
 	set desc = "Select your default running style."
-	set category = "IC"
+	set category = "IC.Misc"
 	var/choice = input(usr, "Select a default run.", "Set Default Run") as null|anything in get_movement_datums_by_flag(MOVE_INTENT_QUICK)
 	if(choice && (choice in get_movement_datums_by_flag(MOVE_INTENT_QUICK)))
 		default_run_intent = choice

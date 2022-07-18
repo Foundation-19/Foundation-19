@@ -20,7 +20,7 @@ var/list/client_preference_stats_
 /client/verb/toggle_preference_verb(var/client_pref_name in client_preference_stats_for_usr())
 	set name = "Toggle Preference"
 	set desc = "Toggles the selected preference."
-	set category = "OOC"
+	set category = "OOC.Character"
 
 	var/list/client_stats = client_preference_stats_for_usr()
 	var/stat_client_preference/scp = client_stats[client_pref_name]

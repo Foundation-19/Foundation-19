@@ -8,7 +8,7 @@
 /client/proc/Jump(var/selected_area in area_repository.get_areas_by_z_level())
 	set name = "Jump to Area"
 	set desc = "Area to jump to"
-	set category = "Admin"
+	set category = "Admin.Teleport"
 	if(!check_rights(R_ADMIN|R_MOD|R_DEBUG))
 		return
 	if(!config.allow_admin_jump)
@@ -22,7 +22,7 @@
 
 /client/proc/jumptoturf(var/turf/T)
 	set name = "Jump to Turf"
-	set category = "Admin"
+	set category = "Admin.Teleport"
 	if(!check_rights(R_ADMIN|R_MOD|R_DEBUG))
 		return
 	if(!config.allow_admin_jump)
@@ -34,7 +34,7 @@
 
 /client/proc/jumptomob(var/mob/M in SSmobs.mob_list)
 	set popup_menu = FALSE
-	set category = "Admin"
+	set category = "Admin.Teleport"
 	set name = "Jump to Mob"
 
 	if(!check_rights(R_ADMIN|R_MOD|R_DEBUG))
@@ -53,7 +53,7 @@
 		alert("Admin jumping disabled")
 
 /client/proc/jumptocoord(tx as num, ty as num, tz as num)
-	set category = "Admin"
+	set category = "Admin.Teleport"
 	set name = "Jump to Coordinate"
 
 	if(!check_rights(R_ADMIN|R_MOD|R_DEBUG))
@@ -77,7 +77,7 @@
 	return sortKey(GLOB.clients.Copy())
 
 /client/proc/jumptokey(client/C in sorted_client_keys())
-	set category = "Admin"
+	set category = "Admin.Teleport"
 	set name = "Jump to Key"
 
 	if(!check_rights(R_ADMIN|R_MOD|R_DEBUG))
@@ -97,7 +97,7 @@
 
 /client/proc/Getmob(var/mob/M in SSmobs.mob_list)
 	set popup_menu = FALSE
-	set category = "Admin"
+	set category = "Admin.Teleport"
 	set name = "Get Mob"
 	set desc = "Mob to teleport"
 	if(!check_rights(R_ADMIN|R_MOD|R_DEBUG))
@@ -110,7 +110,7 @@
 		alert("Admin jumping disabled")
 
 /client/proc/Getkey()
-	set category = "Admin"
+	set category = "Admin.Teleport"
 	set name = "Get Key"
 	set desc = "Key to teleport"
 
@@ -136,7 +136,7 @@
 		alert("Admin jumping disabled")
 
 /client/proc/sendmob(var/mob/M in sortmobs())
-	set category = "Admin"
+	set category = "Admin.Teleport"
 	set name = "Send Mob"
 	if(!check_rights(R_ADMIN|R_MOD|R_DEBUG))
 		return

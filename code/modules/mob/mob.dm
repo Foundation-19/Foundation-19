@@ -370,7 +370,7 @@
 //mob verbs are faster than object verbs. See http://www.byond.com/forum/?post=1326139&page=2#comment8198716 for why this isn't atom/verb/examine()
 /mob/verb/examinate(atom/A as mob|obj|turf in view())
 	set name = "Examine"
-	set category = "IC"
+	set category = "IC.Interact"
 
 	if((is_blind(src) || usr && usr.stat) && !isobserver(src))
 		to_chat(src, "<span class='notice'>Something is there but you can't see it.</span>")
@@ -407,7 +407,7 @@
 
 /mob/verb/pointed(atom/A as mob|obj|turf in view())
 	set name = "Point To"
-	set category = "Object"
+	set category = "IC.Interact"
 
 	if(!src || !isturf(src.loc) || !(A in view(src.loc)))
 		return 0
@@ -442,7 +442,7 @@
 
 /mob/verb/mode()
 	set name = "Activate Held Object"
-	set category = "Object"
+	set category = "IC.Interact"
 	set src = usr
 
 	if(hand)
@@ -488,7 +488,7 @@
 
 /mob/verb/cancel_camera()
 	set name = "Cancel Camera View"
-	set category = "OOC"
+	set category = "IC.View"
 	unset_machine()
 	reset_view(null)
 
@@ -552,7 +552,7 @@
 /mob/verb/stop_pulling()
 
 	set name = "Stop Pulling"
-	set category = "IC"
+	set category = "IC.Interact"
 
 	if(pulling)
 		if(ishuman(pulling))
@@ -927,7 +927,7 @@
 	. = ..()
 
 /mob/proc/yank_out_object()
-	set category = "Object"
+	set category = "IC.Interact"
 	set name = "Yank out object"
 	set desc = "Remove an embedded item at the cost of bleeding and pain."
 	set src in view(1)
@@ -994,7 +994,7 @@
 /mob/verb/face_direction()
 
 	set name = "Face Direction"
-	set category = "IC"
+	set category = "IC.View"
 	set src = usr
 
 	set_face_dir()
@@ -1124,7 +1124,7 @@
 /mob/proc/toggle_antag_pool()
 	set name = "Toggle Add-Antag Candidacy"
 	set desc = "Toggles whether or not you will be considered a candidate by an add-antag vote."
-	set category = "OOC"
+	set category = "OOC.Game"
 	if(isghostmind(src.mind) || isnewplayer(src))
 		if(SSticker.looking_for_antags)
 			if(src.mind in SSticker.antag_pool)

@@ -461,7 +461,7 @@
 
 /client/verb/character_setup()
 	set name = "Character Setup"
-	set category = "OOC"
+	set category = "OOC.Character"
 	if(prefs)
 		prefs.open_setup_window(usr)
 
@@ -494,7 +494,7 @@
 
 /client/verb/fit_viewport()
 	set name = "Fit Viewport"
-	set category = "OOC"
+	set category = "OOC.View"
 	set desc = "Fit the width of the map window to match the viewport"
 
 	// Fetch aspect ratio
@@ -557,7 +557,7 @@
 
 /client/verb/show_lore()
 	set name = "Show Lore"
-	set category = "OOC"
+	set category = "OOC.Misc"
 	set desc = "Show the lore page of server"
 	src.lore()
 
@@ -631,7 +631,7 @@
 
 /client/verb/toggle_fullscreen()
 	set name = "Toggle Fullscreen"
-	set category = "OOC"
+	set category = "OOC.View"
 
 	fullscreen = !fullscreen
 
@@ -653,7 +653,7 @@
 
 /client/verb/toggle_status_bar()
 	set name = "Toggle Status Bar"
-	set category = "OOC"
+	set category = "OOC.Misc"
 
 	show_status_bar = !show_status_bar
 

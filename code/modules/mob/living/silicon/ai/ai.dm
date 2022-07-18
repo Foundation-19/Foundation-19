@@ -725,7 +725,7 @@ var/list/ai_verbs_default = list(
 // Pass lying down or getting up to our pet human, if we're in a rig.
 /mob/living/silicon/ai/lay_down()
 	set name = "Rest"
-	set category = "IC"
+	set category = "IC.Interact"
 
 	resting = FALSE
 	var/obj/item/rig/rig = src.get_rig()

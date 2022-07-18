@@ -3,7 +3,7 @@
 	set popup_menu = FALSE
 	set name = "Set AI Hologram"
 	set desc = "Set an AI's hologram to a mob. Use this verb on the mob you want the hologram to look like."
-	set category = "Fun"
+	set category = "Admin.Fun"
 
 	if(!check_rights(R_FUN)) return
 

@@ -4,7 +4,7 @@
 //Note: For use in BS12, need text_starts_with proc, and to modify the action on select to use BS12's object edit command(s).
 
 /client/proc/SDQL_query(query_text as message)
-	set category = "Admin"
+	set category = "Debug.SDQL"
 	if(!check_rights(R_DEBUG))  //Shouldn't happen... but just to be safe.
 		log_and_message_admins(" - Non-admin attempted to execute a SDQL query!")
 

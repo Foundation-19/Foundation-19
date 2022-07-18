@@ -281,7 +281,7 @@ GLOBAL_DATUM_INIT(event_manager, /datum/event_manager, new)
 
 /client/proc/forceEvent(var/type in GLOB.event_manager.allEvents)
 	set name = "Trigger Event (Debug Only)"
-	set category = "Debug"
+	set category = "Debug.Event"
 
 	if(!holder)
 		return
@@ -292,7 +292,7 @@ GLOBAL_DATUM_INIT(event_manager, /datum/event_manager, new)
 
 /client/proc/event_manager_panel()
 	set name = "Event Manager Panel"
-	set category = "Admin"
+	set category = "Admin.Event"
 	if(GLOB.event_manager)
 		GLOB.event_manager.Interact(usr)
 	feedback_add_details("admin_verb","EMP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

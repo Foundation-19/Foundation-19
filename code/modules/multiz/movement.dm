@@ -1,12 +1,12 @@
 /mob/verb/up()
 	set name = "Move Upwards"
-	set category = "IC"
+	set category = "IC.Interact"
 
 	move_up()
 
 /mob/verb/down()
 	set name = "Move Down"
-	set category = "IC"
+	set category = "IC.Interact"
 
 	SelfMove(DOWN)
 

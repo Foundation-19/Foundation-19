@@ -5,7 +5,7 @@
 
 // Acceptable 'in world', as VV would be incredibly hampered otherwise
 /client/proc/debug_variables(datum/D in world)
-	set category = "Debug"
+	set category = "Debug.Data"
 	set name = "View Variables"
 
 	if(!check_rights(0))
@@ -112,7 +112,7 @@
 	var/datum/browser/watched_variables/watched_variables_window
 
 /client/proc/watched_variables()
-	set category = "Debug"
+	set category = "Debug.Data"
 	set name = "View Watched Variables"
 
 	watched_variables_window = new(usr, "watchedvariables", "Watched Variables", 640, 640, src)

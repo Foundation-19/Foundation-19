@@ -265,7 +265,7 @@ var/global/floorIsLava = 0
 
 #define PLAYER_NOTES_ENTRIES_PER_PAGE 50
 /datum/admins/proc/PlayerNotes()
-	set category = "Admin"
+	set category = "Admin.Player"
 	set name = "Player Notes"
 	if (!istype(src,/datum/admins))
 		src = usr.client.holder
@@ -313,7 +313,7 @@ var/global/floorIsLava = 0
 
 /datum/admins/proc/show_player_info(var/key as text)
 
-	set category = "Admin"
+	set category = "Admin.Player"
 	set name = "Show Player Info"
 	if (!istype(src,/datum/admins))
 		src = usr.client.holder
@@ -388,7 +388,7 @@ var/global/floorIsLava = 0
 	popup.open()
 
 /datum/admins/proc/access_news_network() //MARKER
-	set category = "Fun"
+	set category = "Admin.Game"
 	set name = "Access Newscaster Network"
 	set desc = "Allows you to view, add and edit news feeds."
 
@@ -706,7 +706,7 @@ var/global/floorIsLava = 0
 
 
 /datum/admins/proc/restart()
-	set category = "Server"
+	set category = "Admin.Round"
 	set name = "Restart"
 	set desc="Restarts the world"
 	if (!usr.client.holder)
@@ -726,7 +726,7 @@ var/global/floorIsLava = 0
 
 
 /datum/admins/proc/announce()
-	set category = "Special Verbs"
+	set category = "Admin.Chat"
 	set name = "Announce"
 	set desc="Announce your desires to the world"
 	if(!check_rights(0))	return
@@ -740,7 +740,7 @@ var/global/floorIsLava = 0
 	SSstatistics.add_field_details("admin_verb","A") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/toggleooc()
-	set category = "Server"
+	set category = "Admin.Toggle"
 	set desc="Globally Toggles OOC"
 	set name="Toggle OOC"
 
@@ -756,7 +756,7 @@ var/global/floorIsLava = 0
 	SSstatistics.add_field_details("admin_verb","TOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/toggleaooc()
-	set category = "Server"
+	set category = "Admin.Toggle"
 	set desc="Globally Toggles AOOC"
 	set name="Toggle AOOC"
 
@@ -772,7 +772,7 @@ var/global/floorIsLava = 0
 	SSstatistics.add_field_details("admin_verb","TAOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/togglelooc()
-	set category = "Server"
+	set category = "Admin.Toggle"
 	set desc="Globally Toggles LOOC"
 	set name="Toggle LOOC"
 
@@ -789,7 +789,7 @@ var/global/floorIsLava = 0
 
 
 /datum/admins/proc/endnow()
-	set category = "Server"
+	set category = "Admin.Round"
 	set desc = "round goes bye bye"
 	set name = "End Round"
 
@@ -805,7 +805,7 @@ var/global/floorIsLava = 0
 		to_chat(usr,FONT_LARGE(SPAN_WARNING("You cannot end the round before it's begun!")))
 
 /datum/admins/proc/toggledsay()
-	set category = "Server"
+	set category = "Admin.Toggle"
 	set desc="Globally Toggles DSAY"
 	set name="Toggle DSAY"
 
@@ -821,7 +821,7 @@ var/global/floorIsLava = 0
 	SSstatistics.add_field_details("admin_verb","TDSAY") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc
 
 /datum/admins/proc/toggleoocdead()
-	set category = "Server"
+	set category = "Admin.Toggle"
 	set desc="Toggle Dead OOC."
 	set name="Toggle Dead OOC"
 
@@ -860,7 +860,7 @@ var/global/floorIsLava = 0
 	SSstatistics.add_field_details("admin_verb","TTS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/startnow()
-	set category = "Server"
+	set category = "Admin.Round"
 	set desc="Start the round RIGHT NOW"
 	set name="Start Now"
 	if(GAME_STATE < RUNLEVEL_LOBBY)
@@ -908,7 +908,7 @@ var/global/floorIsLava = 0
 	SSstatistics.add_field_details("admin_verb","TR") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/delay()
-	set category = "Server"
+	set category = "Admin.Round"
 	set desc="Delay the game start/end"
 	set name="Delay"
 
@@ -966,7 +966,7 @@ var/global/floorIsLava = 0
 	world.Reboot()
 
 /datum/admins/proc/unprison(var/mob/M in SSmobs.mob_list)
-	set category = "Admin"
+	set category = "Admin.Player"
 	set name = "Unprison"
 	if (isAdminLevel(M.z))
 		if (config.allow_admin_jump)
@@ -1010,7 +1010,7 @@ var/global/floorIsLava = 0
 
 	set name = "Mass Debug Closet Icons"
 	set desc = "Spawn every possible custom closet. Do not do this on live."
-	set category = "Debug"
+	set category = "Debug.Misc"
 
 	if(!check_rights(R_SPAWN))
 		return
@@ -1029,7 +1029,7 @@ var/global/floorIsLava = 0
 				new /obj/structure/closet/debug(T, check_appearance)
 
 /datum/admins/proc/spawn_fruit(seedtype in SSplants.seeds)
-	set category = "Debug"
+	set category = "Debug.Spawn"
 	set desc = "Spawn the product of a seed."
 	set name = "Spawn Fruit"
 
@@ -1042,7 +1042,7 @@ var/global/floorIsLava = 0
 	log_admin("[key_name(usr)] spawned [seedtype] fruit at ([usr.x],[usr.y],[usr.z])")
 
 /datum/admins/proc/spawn_custom_item()
-	set category = "Debug"
+	set category = "Debug.Spawn"
 	set desc = "Spawn a custom item."
 	set name = "Spawn Custom Item"
 
@@ -1062,7 +1062,7 @@ var/global/floorIsLava = 0
 
 /datum/admins/proc/check_custom_items()
 
-	set category = "Debug"
+	set category = "Debug.Data"
 	set desc = "Check the custom item list."
 	set name = "Check Custom Items"
 
@@ -1083,7 +1083,7 @@ var/global/floorIsLava = 0
 			to_chat(usr, "- name: [item.item_name] icon: [item.item_icon_state] path: [item.item_path] desc: [item.item_desc]")
 
 /datum/admins/proc/spawn_plant(seedtype in SSplants.seeds)
-	set category = "Debug"
+	set category = "Debug.Spawn"
 	set desc = "Spawn a spreading plant effect."
 	set name = "Spawn Plant"
 
@@ -1095,7 +1095,7 @@ var/global/floorIsLava = 0
 	log_admin("[key_name(usr)] spawned [seedtype] vines at ([usr.x],[usr.y],[usr.z])")
 
 /datum/admins/proc/spawn_atom(var/object as text)
-	set category = "Debug"
+	set category = "Debug.Spawn"
 	set desc = "(atom path) Spawn an atom"
 	set name = "Spawn"
 
@@ -1129,7 +1129,7 @@ var/global/floorIsLava = 0
 	SSstatistics.add_field_details("admin_verb","SA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/spawn_artifact(effect in subtypesof(/datum/artifact_effect))
-	set category = "Debug"
+	set category = "Debug.Spawn"
 	set desc = "(atom path) Spawn an artifact with a specified effect."
 	set name = "Spawn Artifact"
 
@@ -1173,7 +1173,7 @@ var/global/floorIsLava = 0
 			QDEL_NULL(A.secondary_effect)
 
 /datum/admins/proc/show_traitor_panel(var/mob/M in SSmobs.mob_list)
-	set category = "Admin"
+	set category = "Admin.Game"
 	set desc = "Edit mobs's memory and role"
 	set name = "Show Traitor Panel"
 
@@ -1188,7 +1188,7 @@ var/global/floorIsLava = 0
 	SSstatistics.add_field_details("admin_verb","STP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/show_game_mode()
-	set category = "Admin"
+	set category = "Admin.Round"
 	set desc = "Show the current round configuration."
 	set name = "Show Game Mode"
 
@@ -1328,7 +1328,7 @@ var/global/floorIsLava = 0
 	NM.ui_interact(usr)
 
 /client/proc/update_mob_sprite(mob/living/carbon/human/H as mob)
-	set category = "Admin"
+	set category = "Server"
 	set name = "Update Mob Sprite"
 	set desc = "Should fix any mob sprite update errors."
 
@@ -1410,7 +1410,7 @@ var/global/floorIsLava = 0
 	return 1
 
 /datum/admins/proc/force_antag_latespawn()
-	set category = "Admin"
+	set category = "Admin.Fun"
 	set name = "Force Template Spawn"
 	set desc = "Force an antagonist template to spawn."
 
@@ -1435,7 +1435,7 @@ var/global/floorIsLava = 0
 	antag.attempt_auto_spawn()
 
 /datum/admins/proc/force_mode_latespawn()
-	set category = "Admin"
+	set category = "Admin.Fun"
 	set name = "Force Mode Spawn"
 	set desc = "Force autotraitor to proc."
 
@@ -1479,7 +1479,7 @@ var/global/floorIsLava = 0
 
 
 /datum/admins/proc/sendFax()
-	set category = "Special Verbs"
+	set category = "Admin.Event"
 	set name = "Send Fax"
 	set desc = "Sends a fax to this machine"
 
@@ -1517,7 +1517,7 @@ var/global/floorIsLava = 0
 
 
 /client/proc/check_fax_history()
-	set category = "Special Verbs"
+	set category = "Admin.Event"
 	set name = "Check Fax History"
 	set desc = "Look up the faxes sent this round."
 

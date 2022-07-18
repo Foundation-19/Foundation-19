@@ -23,7 +23,7 @@
 	return 1
 
 /client/proc/SDQL2_query(var/query_text as message)
-	set category = "Debug"
+	set category = "Debug.SDQL"
 
 	if(!check_rights(R_DEBUG))  // Shouldn't happen... but just to be safe.
 		message_admins("<span class='warning'>ERROR: Non-admin [usr.key] attempted to execute the following SDQL query: [query_text]</span>")

@@ -1,5 +1,5 @@
 /mob/verb/pray(msg as text)
-	set category = "IC"
+	set category = "IC.Chat"
 	set name = "Pray"
 
 	sanitize_and_communicate(/decl/communication_channel/pray, src, msg)

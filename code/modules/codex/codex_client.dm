@@ -5,7 +5,7 @@
 /client/verb/search_codex(searching as text)
 
 	set name = "Search Codex"
-	set category = "IC"
+	set category = "IC.Interact"
 	set src = usr
 
 	if(!mob || !SScodex)
@@ -61,7 +61,7 @@
 /client/verb/list_codex_entries()
 
 	set name = "List Codex Entries"
-	set category = "IC"
+	set category = "IC.Interact"
 	set src = usr
 
 	if(!mob || !SScodex.initialized)
@@ -103,7 +103,7 @@
 
 /client/verb/codex()
 	set name = "Codex"
-	set category = "IC"
+	set category = "IC.Interact"
 	set src = usr
 
 	if(!mob || !SScodex)

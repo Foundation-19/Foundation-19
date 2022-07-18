@@ -292,7 +292,7 @@ GLOBAL_LIST_INIT(possible_say_verbs, list(
 
 /mob/living/silicon/pai/verb/wipe_software()
 	set name = "Wipe Software"
-	set category = "OOC"
+	set category = "OOC.Character"
 	set desc = "Wipe your software. This is functionally equivalent to cryo or robotic storage, freeing up your job slot."
 
 	// Make sure people don't kill themselves accidentally

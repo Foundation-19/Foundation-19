@@ -65,7 +65,7 @@ var/list/hidden_skill_types = list(\
 	return
 
 /mob/living/carbon/human/verb/show_skills()
-	set category = "IC"
+	set category = "IC.Memory"
 	set name = "Show Own Skills"
 
 	show_skill_window(src, src)

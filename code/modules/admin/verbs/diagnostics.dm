@@ -1,5 +1,5 @@
 /client/proc/air_report()
-	set category = "Debug"
+	set category = "Debug.Data"
 	set name = "Show Air Report"
 
 	if(!SSair)
@@ -42,7 +42,7 @@
 	show_browser(usr, output,"window=airreport")
 
 /client/proc/fix_next_move()
-	set category = "Debug"
+	set category = "Debug.Misc"
 	set name = "Unfreeze Everyone"
 	var/largest_move_time = 0
 	var/largest_click_time = 0
@@ -73,7 +73,7 @@
 	return
 
 /client/proc/radio_report()
-	set category = "Debug"
+	set category = "Debug.Data"
 	set name = "Radio report"
 
 	var/output = "<b>Radio Report</b><hr>"
@@ -100,7 +100,7 @@
 
 /client/proc/reload_admins()
 	set name = "Reload Admins"
-	set category = "Debug"
+	set category = "Debug.Data"
 
 	if(!check_rights(R_SERVER))	return
 
@@ -111,7 +111,7 @@
 /client/proc/print_jobban_old()
 	set name = "Print Jobban Log"
 	set desc = "This spams all the active jobban entries for the current round to standard output."
-	set category = "Debug"
+	set category = "Debug.Data"
 
 	to_chat(usr, "<b>Jobbans active in this round.</b>")
 	for(var/t in jobban_keylist)
@@ -120,7 +120,7 @@
 /client/proc/print_jobban_old_filter()
 	set name = "Search Jobban Log"
 	set desc = "This searches all the active jobban entries for the current round and outputs the results to standard output."
-	set category = "Debug"
+	set category = "Debug.Data"
 
 	var/job_filter = input("Contains what?","Filter") as text|null
 	if(!job_filter)

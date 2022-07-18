@@ -6,7 +6,7 @@
 	set category = "Admin"
 
 	if(config.enable_memos)
-		if(!check_rights(0))
+		if(!check_rights(R_ADMIN|R_MOD))
 			return
 		switch(task)
 			if("write")		admin_memo_write()

@@ -1,7 +1,7 @@
 /datum/admins/proc/spawn_fluid_verb()
 	set name = "Spawn Water"
 	set desc = "Flood the turf you are standing on."
-	set category = "Debug"
+	set category = "Debug.Misc"
 
 	if(!check_rights(R_SPAWN)) return
 	var/mob/user = usr
@@ -14,7 +14,7 @@
 
 	set name = "Jump To Fluid Source"
 	set desc = "Jump to an active fluid source."
-	set category = "Debug"
+	set category = "Debug.Misc"
 
 	if(!check_rights(R_SPAWN)) return
 	var/mob/user = usr
@@ -28,7 +28,7 @@
 
 	set name = "Jump To Fluid Activity"
 	set desc = "Jump to an active fluid overlay."
-	set category = "Debug"
+	set category = "Debug.Misc"
 
 	if(!check_rights(R_SPAWN)) return
 	var/mob/user = usr
@@ -47,7 +47,7 @@
 
 GLOBAL_LIST_INIT(submerged_levels, new)
 /datum/admins/proc/submerge_map()
-	set category = "Admin"
+	set category = "Admin.Fun"
 	set desc = "Submerge the map in an ocean."
 	set name = "Submerge Map"
 

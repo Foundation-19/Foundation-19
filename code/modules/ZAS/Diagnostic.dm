@@ -1,5 +1,5 @@
 /client/proc/Zone_Info(turf/T as null|turf)
-	set category = "Debug"
+	set category = "Debug.ZAS"
 	if(T)
 		if(istype(T,/turf/simulated) && T:zone)
 			T:zone:dbg_data(src)
@@ -18,7 +18,7 @@
 /client/var/list/zone_debug_images
 
 /client/proc/Test_ZAS_Connection(var/turf/simulated/T as turf)
-	set category = "Debug"
+	set category = "Debug.ZAS"
 	if(!istype(T))
 		return
 
@@ -77,6 +77,6 @@
 			to_chat(mob, "both turfs can merge.")
 
 /client/proc/ZASSettings()
-	set category = "Debug"
+	set category = "Debug.ZAS"
 
 	vsc.SetDefault(mob)

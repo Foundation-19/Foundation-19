@@ -17,7 +17,7 @@
 	SSstatistics.add_field_details("admin_verb","DEVR") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_prison(mob/M as mob in SSmobs.mob_list)
-	set category = "Admin"
+	set category = "Admin.Player"
 	set name = "Prison"
 	if(!holder)
 		to_chat(src, "Only administrators may use this command.")
@@ -43,7 +43,7 @@
 		SSstatistics.add_field_details("admin_verb","PRISON") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_check_new_players()	//Allows admins to determine who the newer players are.
-	set category = "Admin"
+	set category = "Admin.Player"
 	set name = "Check new Players"
 	if(!holder)
 		to_chat(src, "Only staff members may use this command.")
@@ -75,7 +75,7 @@
 
 
 /client/proc/cmd_admin_world_narrate() // Allows administrators to fluff events a little easier -- TLE
-	set category = "Special Verbs"
+	set category = "Admin.Event"
 	set name = "Global Narrate"
 	set desc = "Narrate to everyone."
 
@@ -152,7 +152,7 @@
 
 //Condenced version of the mob targeting narrates
 /client/proc/cmd_admin_narrate(atom/A)
-	set category = "Special Verbs"
+	set category = "Admin.Event"
 	set name = "Narrate"
 	set desc = "Selection of narrates targeting a mob."
 
@@ -211,7 +211,7 @@
 
 // Local narrate, narrates to everyone who can see where you are regardless of whether they are blind or deaf.
 /client/proc/cmd_admin_local_narrate()
-	set category = "Special Verbs"
+	set category = "Admin.Event"
 	set name = "Local Narrate"
 	set desc = "Narrate to everyone who can see the turf your mob is on."
 
@@ -276,7 +276,7 @@
 	log_and_message_staff(" - AudibleNarrate [result[2]]/[result[3]] on [A]: [result[4]]")
 
 /client/proc/cmd_admin_godmode(mob/M as mob in SSmobs.mob_list)
-	set category = "Special Verbs"
+	set category = "Server"
 	set name = "Godmode"
 	if(!holder)
 		to_chat(src, "Only administrators may use this command.")
@@ -288,7 +288,7 @@
 	SSstatistics.add_field_details("admin_verb","GOD") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_notarget(mob/living/M as mob in SSmobs.mob_list)
-	set category = "Special Verbs"
+	set category = "Server"
 	set name = "Notarget"
 	set desc = "Makes the target mob become invisible to all simple mobs."
 
@@ -339,7 +339,7 @@
 	SSstatistics.add_field_details("admin_verb","MUTE") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_add_random_ai_law()
-	set category = "Fun"
+	set category = "Admin.Fun"
 	set name = "Add Random AI Law"
 	if(!holder)
 		to_chat(src, "Only administrators may use this command.")
@@ -392,7 +392,7 @@ Ccomp's first proc.
 	. = sortAssoc(.)
 
 /client/proc/allow_character_respawn(var/selection in get_ghosts_by_key())
-	set category = "Special Verbs"
+	set category = "Server"
 	set name = "Allow player to respawn"
 	set desc = "Allows the player bypass the wait to respawn or allow them to re-enter their corpse."
 
@@ -484,7 +484,7 @@ Ccomp's first proc.
 	message_admins("Admin [key_name_admin(usr)] has [action] on joining the round if they use AntagHUD", 1)
 
 /client/proc/cmd_admin_add_freeform_ai_law()
-	set category = "Fun"
+	set category = "Admin.Fun"
 	set name = "Add Custom AI law"
 	if(!holder)
 		to_chat(src, "Only administrators may use this command.")
@@ -512,7 +512,7 @@ Ccomp's first proc.
 	SSstatistics.add_field_details("admin_verb","IONC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_rejuvenate(mob/living/M as mob in SSmobs.mob_list)
-	set category = "Special Verbs"
+	set category = "Admin.Player"
 	set name = "Rejuvenate"
 	if(!holder)
 		to_chat(src, "Only administrators may use this command.")
@@ -531,7 +531,7 @@ Ccomp's first proc.
 	SSstatistics.add_field_details("admin_verb","REJU") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_create_centcom_report()
-	set category = "Special Verbs"
+	set category = "Admin.Event"
 	set name = "Create Command Report"
 	if(!holder)
 		to_chat(src, "Only administrators may use this command.")
@@ -557,7 +557,7 @@ Ccomp's first proc.
 	SSstatistics.add_field_details("admin_verb","CCR") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_delete(atom/O as obj|mob|turf in range(world.view))
-	set category = "Admin"
+	set category = "Server"
 	set name = "Delete"
 
 	if (!holder)
@@ -577,7 +577,7 @@ Ccomp's first proc.
 			qdel(O)
 
 /client/proc/cmd_admin_list_open_jobs()
-	set category = "Admin"
+	set category = "Admin.Round"
 	set name = "List free slots"
 
 	if (!holder)
@@ -588,7 +588,7 @@ Ccomp's first proc.
 	SSstatistics.add_field_details("admin_verb","LFS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_explosion(atom/O as obj|mob|turf in range(world.view))
-	set category = "Special Verbs"
+	set category = "Admin.Fun"
 	set name = "Explosion"
 
 	if(!check_rights(R_DEBUG|R_FUN))	return
@@ -620,7 +620,7 @@ Ccomp's first proc.
 		return
 
 /client/proc/cmd_admin_emp(atom/O as obj|mob|turf in range(world.view))
-	set category = "Special Verbs"
+	set category = "Admin.Fun"
 	set name = "EM Pulse"
 
 	if(!check_rights(R_DEBUG|R_FUN))	return
@@ -642,7 +642,7 @@ Ccomp's first proc.
 		return
 
 /client/proc/cmd_admin_gib(mob/M as mob in SSmobs.mob_list)
-	set category = "Special Verbs"
+	set category = "Admin.Fun"
 	set name = "Gib"
 
 	if(!check_rights(R_ADMIN|R_FUN))	return
@@ -664,7 +664,7 @@ Ccomp's first proc.
 
 /client/proc/cmd_admin_gib_self()
 	set name = "Gibself"
-	set category = "Fun"
+	set category = "Admin.Fun"
 
 	var/confirm = alert(src, "You sure?", "Confirm", "Yes", "No")
 	if(confirm == "Yes")
@@ -682,7 +682,7 @@ Ccomp's first proc.
 	return
 
 /client/proc/cmd_admin_check_contents(mob/living/M as mob in SSmobs.mob_list)
-	set category = "Special Verbs"
+	set category = "Server"
 	set name = "Check Contents"
 
 	var/list/L = M.get_contents()
@@ -722,7 +722,7 @@ Ccomp's first proc.
 */
 
 /client/proc/toggle_view_range()
-	set category = "Special Verbs"
+	set category = "Server"
 	set name = "Change View Range"
 	set desc = "switches between 1x and custom views"
 
@@ -736,7 +736,7 @@ Ccomp's first proc.
 
 /client/proc/admin_call_shuttle()
 
-	set category = "Admin"
+	set category = "Admin.Round"
 	set name = "Call Evacuation"
 
 	if(!SSticker.mode || !evacuation_controller)
@@ -758,7 +758,7 @@ Ccomp's first proc.
 	return
 
 /client/proc/admin_cancel_shuttle()
-	set category = "Admin"
+	set category = "Admin.Round"
 	set name = "Cancel Evacuation"
 
 	if(!check_rights(R_ADMIN))	return
@@ -774,7 +774,7 @@ Ccomp's first proc.
 	log_and_message_admins("admin-cancelled the evacuation.")
 
 /client/proc/admin_deny_shuttle()
-	set category = "Admin"
+	set category = "Admin.Round"
 	set name = "Toggle Deny Evac"
 
 	if (!evacuation_controller)
@@ -788,7 +788,7 @@ Ccomp's first proc.
 	message_admins("[key_name_admin(usr)] has [evacuation_controller.deny ? "denied" : "allowed"] evacuation to be called.")
 
 /client/proc/cmd_admin_attack_log(mob/M as mob in SSmobs.mob_list)
-	set category = "Special Verbs"
+	set category = "Admin.Logs"
 	set name = "Attack Log"
 
 	to_chat(usr, text("<span class='danger'>Attack Log for []</span>", mob))

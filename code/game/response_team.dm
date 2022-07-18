@@ -8,7 +8,7 @@ var/can_call_ert
 
 /client/proc/response_team()
 	set name = "Dispatch Emergency Response Team"
-	set category = "Special Verbs"
+	set category = "Admin.Event"
 	set desc = "Send an emergency response team"
 
 	if(!holder)
@@ -49,7 +49,7 @@ var/can_call_ert
 /client/verb/JoinResponseTeam()
 
 	set name = "Join Response Team"
-	set category = "IC"
+	set category = "OOC.Game"
 
 	if(!MayRespawn(1))
 		to_chat(usr, "<span class='warning'>You cannot join the response team at this time.</span>")

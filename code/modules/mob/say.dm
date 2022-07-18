@@ -3,18 +3,18 @@
 
 /mob/verb/whisper()
 	set name = "Whisper"
-	set category = "IC"
+	set category = "IC.Chat"
 	return
 
 /mob/verb/say_verb(message as text)
 	set name = "Say"
-	set category = "IC"
+	set category = "IC.Chat"
 	remove_typing_indicator()
 	usr.say(message)
 
 /mob/verb/me_verb(message as text)
 	set name = "Me"
-	set category = "IC"
+	set category = "IC.Chat"
 
 	message = sanitize(message)
 

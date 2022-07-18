@@ -169,7 +169,7 @@
 // Debug verb for VVing the chunk that the turf is in.
 /turf/proc/view_chunk()
 	set name = "View Chunk"
-	set category = "Debug"
+	set category = "Debug.Data"
 	set src in world
 
 	if(cameranet.is_chunk_generated(x, y, z))
@@ -178,7 +178,7 @@
 
 /turf/proc/update_chunk()
 	set name = "Update Chunk"
-	set category = "Debug"
+	set category = "Debug.Fix"
 	set src in world
 
 	if(cameranet.is_chunk_generated(x, y, z))

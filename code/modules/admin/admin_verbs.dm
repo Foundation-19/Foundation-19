@@ -424,7 +424,7 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/invisimin()
 	set name = "Invisimin"
-	set category = "Admin"
+	set category = "Admin.Game"
 	set desc = "Toggles ghost-like invisibility (Don't abuse this)"
 	if(holder && mob)
 		if(mob.invisibility == INVISIBILITY_OBSERVER)
@@ -439,7 +439,7 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/player_panel()
 	set name = "Player Panel"
-	set category = "Admin"
+	set category = "Admin.Game"
 	if(holder)
 		holder.player_panel()
 	SSstatistics.add_field_details("admin_verb","PPN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -447,7 +447,7 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/check_antagonists()
 	set name = "Check Antagonists"
-	set category = "Admin"
+	set category = "Admin.Player"
 	if(holder)
 		holder.check_antagonists()
 		log_admin("[key_name(usr)] checked antagonists.")	//for tsar~
@@ -456,7 +456,7 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/jobbans()
 	set name = "Display Job bans"
-	set category = "Admin"
+	set category = "Admin.Player"
 	if(holder)
 		if(config.ban_legacy_system)
 			holder.Jobbans()
@@ -467,7 +467,7 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/unban_panel()
 	set name = "Unban Panel"
-	set category = "Admin"
+	set category = "Admin.Player"
 	if(holder)
 		if(config.ban_legacy_system)
 			holder.unbanpanel()
@@ -478,7 +478,7 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/game_panel()
 	set name = "Game Panel"
-	set category = "Admin"
+	set category = "Admin.Game"
 	if(holder)
 		holder.Game()
 	SSstatistics.add_field_details("admin_verb","GP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -486,14 +486,14 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/secrets()
 	set name = "Secrets"
-	set category = "Admin"
+	set category = "Admin.Game"
 	if (holder)
 		holder.Secrets()
 	SSstatistics.add_field_details("admin_verb","S") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
 /client/proc/colorooc()
-	set category = "Fun"
+	set category = "Admin.Chat"
 	set name = "OOC Text Color"
 	if(!holder)	return
 	var/response = alert(src, "Please choose a distinct color that is easy to read and doesn't mix with all the other chat and radio frequency colors.", "Change own OOC color", "Pick new color", "Reset to default", "Cancel")
@@ -550,7 +550,7 @@ var/list/admin_verbs_mentors = list(
 #undef AUTOBANTIME
 
 /client/proc/drop_bomb() // Some admin dickery that can probably be done better -- TLE
-	set category = "Special Verbs"
+	set category = "Admin.Fun"
 	set name = "Drop Bomb"
 	set desc = "Cause an explosion of varying strength at your location."
 
@@ -585,7 +585,7 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/togglebuildmodeself()
 	set name = "Toggle Build Mode Self"
-	set category = "Special Verbs"
+	set category = "Server"
 
 	if(!check_rights(R_ADMIN))
 		return
@@ -595,7 +595,7 @@ var/list/admin_verbs_mentors = list(
 	SSstatistics.add_field_details("admin_verb","TBMS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/object_talk(var/msg as text) // -- TLE
-	set category = "Special Verbs"
+	set category = "Admin.Chat"
 	set name = "oSay"
 	set desc = "Display a message to everyone who can hear the target"
 	if(mob.control_object)
@@ -643,13 +643,13 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/check_ai_laws()
 	set name = "Check AI Laws"
-	set category = "Admin"
+	set category = "Admin.Game"
 	if(holder)
 		src.holder.output_ai_laws()
 
 /client/proc/rename_silicon()
 	set name = "Rename Silicon"
-	set category = "Admin"
+	set category = "Admin.Fun"
 
 	if(!check_rights(R_ADMIN)) return
 
@@ -664,7 +664,7 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/manage_silicon_laws()
 	set name = "Manage Silicon Laws"
-	set category = "Admin"
+	set category = "Admin.Game"
 
 	if(!check_rights(R_ADMIN)) return
 
@@ -679,7 +679,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/change_human_appearance_admin()
 	set name = "Change Mob Appearance - Admin"
 	set desc = "Allows you to change the mob appearance"
-	set category = "Admin"
+	set category = "Admin.Fun"
 
 	if(!check_rights(R_FUN)) return
 
@@ -693,7 +693,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/change_human_appearance_self()
 	set name = "Change Mob Appearance - Self"
 	set desc = "Allows the mob to change its appearance"
-	set category = "Admin"
+	set category = "Admin.Fun"
 
 	if(!check_rights(R_FUN)) return
 
@@ -716,7 +716,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/change_security_level()
 	set name = "Set security level"
 	set desc = "Sets the security level"
-	set category = "Admin"
+	set category = "Admin.Game"
 
 	if(!check_rights(R_ADMIN))	return
 
@@ -742,7 +742,7 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/editappear()
 	set name = "Edit Appearance"
-	set category = "Fun"
+	set category = "OOC.Character"
 
 	if(!check_rights(R_FUN))	return
 
@@ -810,14 +810,14 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/playernotes()
 	set name = "Show Player Info"
-	set category = "Admin"
+	set category = "Admin.Player"
 	if(holder)
 		holder.PlayerNotes()
 	return
 
 /client/proc/free_slot_submap()
 	set name = "Free Job Slot (Submap)"
-	set category = "Admin"
+	set category = "Server"
 	if(!holder) return
 
 	var/list/jobs = list()
@@ -841,7 +841,7 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/free_slot_crew()
 	set name = "Free Job Slot (Crew)"
-	set category = "Admin"
+	set category = "Admin.Round"
 	if(holder)
 		var/list/jobs = list()
 		for (var/datum/job/J in SSjobs.primary_job_datums)
@@ -887,7 +887,7 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/man_up(mob/T as mob in SSmobs.mob_list)
 	set popup_menu = FALSE
-	set category = "Fun"
+	set category = "Admin.Fun"
 	set name = "Man Up"
 	set desc = "Tells mob to man up and deal with it."
 
@@ -897,7 +897,7 @@ var/list/admin_verbs_mentors = list(
 	log_and_message_admins("told [key_name(T)] to man up and deal with it.")
 
 /client/proc/global_man_up()
-	set category = "Fun"
+	set category = "Admin.Fun"
 	set name = "Man Up Global"
 	set desc = "Tells everyone to man up and deal with it."
 
@@ -908,7 +908,7 @@ var/list/admin_verbs_mentors = list(
 	log_and_message_admins("told everyone to man up and deal with it.")
 
 /client/proc/give_spell(mob/T as mob in SSmobs.mob_list) // -- Urist
-	set category = "Fun"
+	set category = "Admin.Fun"
 	set name = "Give Spell"
 	set desc = "Gives a spell to a mob."
 	var/datum/spell/S = input("Choose the spell to give to that guy", "ABRAKADABRA") as null|anything in spells

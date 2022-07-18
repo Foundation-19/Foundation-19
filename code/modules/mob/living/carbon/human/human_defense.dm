@@ -527,11 +527,11 @@ meteor_act
 	apply_damage(0.3 * f_loss, BURN, null, DAM_EXPLODE | DAM_DISPERSED, used_weapon = "Explosive blast")
 
 /mob/living/carbon/human/verb/succumb()
-	set category = "IC"
+	set category = "IC.Interact"
 	set name = "Succumb"
 	set desc = "Succumb to your pain, and die."
 
 	var/obj/item/organ/internal/heart/heart = internal_organs_by_name[BP_HEART]
 	if(heart.pulse == PULSE_NONE)
 		death()
-	
+

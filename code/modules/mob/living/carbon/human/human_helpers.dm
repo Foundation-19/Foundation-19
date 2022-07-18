@@ -170,7 +170,7 @@
 /mob/living/carbon/human/proc/sonar_ping()
 	set name = "Listen In"
 	set desc = "Allows you to listen in to movement and noises around you."
-	set category = "IC"
+	set category = "IC.Character"
 
 	if(incapacitated())
 		to_chat(src, "<span class='warning'>You need to recover before you can use this ability.</span>")

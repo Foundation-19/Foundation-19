@@ -18,7 +18,7 @@
 /mob/proc/add_objectives()
 	set name = "Get Objectives"
 	set desc = "Recieve optional objectives."
-	set category = "OOC"
+	set category = "OOC.Game"
 
 	remove_verb(src, /mob/proc/add_objectives)
 
@@ -36,7 +36,7 @@
 
 /mob/living/proc/set_ambition()
 	set name = "Set Ambition"
-	set category = "IC"
+	set category = "IC.Memory"
 	set src = usr
 
 	if(!mind)

@@ -1046,7 +1046,7 @@
 /mob/living/carbon/human/verb/lookup()
 	set name = "Look up"
 	set desc = "If you want to know what's above."
-	set category = "IC"
+	set category = "IC.Interact"
 
 
 	if(client && !is_physically_disabled())
@@ -1067,7 +1067,7 @@
 /mob/living/verb/lookdown()
 	set name = "Look Down"
 	set desc = "If you want to know what's below."
-	set category = "IC"
+	set category = "IC.Interact"
 
 	if(client && !is_physically_disabled())
 		if(z_eye)
@@ -1255,7 +1255,7 @@
 		default_language = default_languages[1]
 
 /mob/living/carbon/human/proc/bloody_doodle()
-	set category = "IC"
+	set category = "IC.Interact"
 	set name = "Write in blood"
 	set desc = "Use blood on your hands to write a short message on the floor or a wall, murder mystery style."
 
@@ -1483,7 +1483,7 @@
 /mob/living/carbon/human/verb/pull_punches()
 	set name = "Switch Stance"
 	set desc = "Try not to hurt them."
-	set category = "IC"
+	set category = "IC.Interact"
 	species.toggle_stance(src)
 
 // Similar to get_pulse, but returns only integer numbers instead of text.
