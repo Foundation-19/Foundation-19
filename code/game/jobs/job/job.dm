@@ -21,6 +21,7 @@
 	var/head_position = 0                 // Is this position Command?
 	var/minimum_character_age			  // List of species = age, if species is not here, it's auto-pass
 	var/ideal_character_age = 30
+	var/playtimerequired = 0				// How many minutes in this deaprtment are required to play this job?
 	var/create_record = 1                 // Do we announce/make records for people who spawn on this job?
 	var/is_semi_antagonist = FALSE        // Whether or not this job is given semi-antagonist status.
 	var/account_allowed = 1               // Does this job type come with a station account?
@@ -517,3 +518,4 @@
 		return TRUE
 	else
 		return FALSE
+

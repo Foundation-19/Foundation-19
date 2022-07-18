@@ -236,3 +236,8 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 #define ismachinery(A) istype(A, /obj/machinery)
 
 #define isdatum(A) istype(A, /datum)
+
+// playtime tracking
+
+#define to_file(file_entry, source_var)                     file_entry << source_var
+#define from_file(file_entry, target_var)                   file_entry >> target_var
