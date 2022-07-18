@@ -29,10 +29,11 @@
 
 		var/exemptions = get_exemptions(A)
 		if(!A.apc && !(exemptions & GLOB.using_map.NO_APC))
-			log_bad("[bad_msg] lacks an APC.")
+			var/turf/T = pick_area_turf(A)
+			log_bad("[bad_msg] lacks an APC. Area Z: [A.z] Random area turf: [T.x],[T.y],[T.z].")
 			area_good = 0
 		else if(A.apc && (exemptions & GLOB.using_map.NO_APC))
-			log_bad("[bad_msg] is not supposed to have an APC. APC location: [A.x], [A.y], [A.z]")
+			log_bad("[bad_msg] is not supposed to have an APC. APC location: [A.apc.x], [A.apc.y], [A.apc.z].")
 			area_good = 0
 
 		if(!area_good)
@@ -75,7 +76,7 @@
 		for(C in T)
 			wire_test_count++
 			var/combined_dir = "[C.d1]-[C.d2]"
-			if(combined_dir in dirs_checked)
+			if(combined_dir in dirs_checked && (!locate(/obj/machinery/power/breakerbox/activated) in T))
 				bad_tests++
 				log_unit_test("[bad_msg] Contains multiple wires with same direction on top of each other.")
 			dirs_checked.Add(combined_dir)
@@ -184,6 +185,7 @@
 
 	return 1
 
+/* Who cares?
 /datum/unit_test/map_image_map_test
 	name = "MAP: All map levels shall have a corresponding map image."
 
@@ -203,7 +205,7 @@
 		pass("All map levels had a corresponding image.")
 
 	return 1
-
+*/
 //=======================================================================================
 
 /datum/unit_test/correct_allowed_spawn_test
@@ -326,12 +328,12 @@
 
 	for(var/obj/machinery/cryopod/C in SSmachines.machinery)
 		if(!C.control_computer)
-			log_bad("[get_area(C)] lacks a cryopod control computer while holding a cryopod.")
+			log_bad("[get_area(C)] lacks a cryopod control computer while holding a cryopod. Location of cryo pod: [C.x],[C.y],[C.z]")
 			pass = FALSE
 
 	for(var/obj/machinery/computer/cryopod/C in SSmachines.machinery)
 		if(!(locate(/obj/machinery/cryopod) in get_area(C)))
-			log_bad("[get_area(C)] lacks a cryopod while holding a control computer.")
+			log_bad("[get_area(C)] lacks a cryopod while holding a control computer. Location of cryo computer: [C.x],[C.y],[C.z]")
 			pass = FALSE
 
 	if(pass)
@@ -453,28 +455,6 @@
 			return TRUE
 	return FALSE
 
-//=======================================================================================
-
-/datum/unit_test/simple_pipes_shall_not_face_north_or_west // The init code is worthless and cannot handle it
-	name = "MAP: Simple pipes shall not face north or west"
-
-/datum/unit_test/simple_pipes_shall_not_face_north_or_west/start_test()
-	var/failures = 0
-	for(var/obj/machinery/atmospherics/pipe/simple/pipe in world) // Pipes are removed from the SSmachines list during init.
-		if(!istype(pipe, /obj/machinery/atmospherics/pipe/simple/hidden) && !istype(pipe, /obj/machinery/atmospherics/pipe/simple/visible))
-			continue
-		if(pipe.dir == NORTH || pipe.dir == WEST)
-			log_bad("Following pipe had an invalid direction: [log_info_line(pipe)]")
-			failures++
-
-	if(failures)
-		fail("[failures] simple pipe\s faced the wrong direction.")
-	else
-		pass("All simple pipes faced an appropriate direction.")
-	return 1
-
-//=======================================================================================
-
 /datum/unit_test/shutoff_valves_shall_connect_to_two_different_pipe_networks
 	name = "MAP: Shutoff valves shall connect to two different pipe networks"
 
@@ -543,7 +523,7 @@
 	exceptions = exceptions_by_turf
 
 	for(var/obj/structure/cable/C in world)
-		if(!all_ends_connected(C))
+		if(!all_ends_connected(C) && !(C.d1 == UP || C.d2 == UP) && !(C.d1 == DOWN || C.d2 == DOWN))
 			failures++
 
 	if(failures)
