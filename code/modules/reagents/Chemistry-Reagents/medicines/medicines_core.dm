@@ -76,7 +76,7 @@
 	overdose = REAGENTS_OVERDOSE * 0.5
 	value = 3.9
 
-/datum/reagent/medicine/meralyne/affect_blood(mob/living/carbon/M, alien, removed)
+/datum/reagent/medicine/meraline/affect_blood(mob/living/carbon/M, alien, removed)
 	if (alien != IS_DIONA)
 		M.heal_organ_damage(12 * removed, 0)
 
