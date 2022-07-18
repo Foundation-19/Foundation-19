@@ -328,12 +328,6 @@
 	desc = "RC Announcements"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_keycard_auth = "ACCESS_KEYCARD_AUTH" //Used for events which require at least two people to confirm them 60
-/datum/access/keycard_auth
-	id = access_keycard_auth
-	desc = "Keycode Auth. Device"
-	region = ACCESS_REGION_COMMAND
-
 /var/const/access_tcomsat ="ACCESS_TELECOMS" // has access to the entire telecomms satellite / machinery 61
 /datum/access/tcomsat
 	id = access_tcomsat
