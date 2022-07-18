@@ -73,6 +73,8 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 /mob/living/carbon/human/scp106/Destroy()
 	target = null
 	GLOB.scp106s -= src
+	qdel(WallEye)
+	WallEye = null
 	return ..()
 
 
@@ -327,7 +329,10 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	set name = "Enter Pocket Dimension"
 	set category = "SCP"
 	set desc = "Enter your pocket dimension."
-	if (do_after(src, 30, get_turf(src)))
+	var/turf/T = get_turf(src)
+	if (do_after(src, 30, T))
+		if (T in GLOB.scp106_floors)
+			return
 		set_last_xyz()
 		forceMove(pick(GLOB.scp106_floors))
 		remove_verb(src, /mob/living/carbon/human/scp106/proc/enter_pocket_dimension)
@@ -505,7 +510,9 @@ GLOBAL_LIST_EMPTY(femur_breakers)
 				return
 			sleep(10 SECONDS)
 			for (var/scp106 in GLOB.scp106s)
-				var/atom/movable/A = scp106
+				var/mob/living/carbon/human/scp106/A = scp106
+				if (A.phasing)
+					A.wall_unphase()
 				A.forceMove(GLOB.scp106_spawnpoints[1])
 			sleep(40 SECONDS)
 			for (var/scp106 in GLOB.scp106s)
@@ -569,6 +576,7 @@ GLOBAL_LIST_EMPTY(femur_breakers)
 
 			if(do_after(src, 3 SECONDS,step))
 				WallEye.possess(src)
+				WallEye.forceMove(step)
 				src.forceMove(pick(GLOB.scp106_floors))
 				phasing = TRUE
 			alpha = 255
@@ -605,7 +613,12 @@ GLOBAL_LIST_EMPTY(femur_breakers)
 	var/turf/step = get_turf(get_step(src, direct))
 	if(!step.is_phasable())
 		return FALSE
-	return ..()
+	if(direct == UP && !HasAbove(z))
+		return FALSE
+	if(direct == DOWN && !HasBelow(z))
+		return FALSE
+	setLoc(step)
+	return TRUE
 
 /datum/visualnet/scp106
 	valid_source_types =  list(/mob/observer/eye/scp106,/mob/living/carbon/human/scp106) //list(/turf/simulated/wall,/turf/unsimulated/wall)
