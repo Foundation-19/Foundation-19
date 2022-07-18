@@ -516,7 +516,7 @@
 "tf" = (/obj/effect/floor_decal/corner/yellow/border{dir = 5},/obj/structure/table/standard,/turf/simulated/floor/tiled/dark,/area/site53/surface/explorers)
 "tg" = (/obj/structure/cable{icon_state = "4-8"},/turf/simulated/floor/tiled/techfloor,/area/engineering/engine_room)
 "th" = (/obj/structure/cable/green{icon_state = "4-8"},/turf/simulated/floor/tiled/white,/area/space)
-"ti" = (/obj/effect/floor_decal/corner/green/full,/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 1},/obj/structure/window/reinforced{dir = 8},/obj/structure/bed/chair{dir = 4},/obj/machinery/door/window/eastright{name = "Patient Seating"; req_access = list(931)},/mob/living/carbon/human/monkey,/turf/simulated/floor/tiled/white,/area/site53/medical/virology)
+"ti" = (/obj/effect/floor_decal/corner/green/full,/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 1},/obj/structure/window/reinforced{dir = 8},/obj/structure/bed/chair{dir = 4},/obj/machinery/door/window/eastright{name = "Patient Seating"},/mob/living/carbon/human/monkey,/turf/simulated/floor/tiled/white,/area/site53/medical/virology)
 "to" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 1},/turf/simulated/floor/tiled/techmaint,/area/engineering/engineering_monitoring)
 "tq" = (/obj/structure/cable{icon_state = "2-5"},/turf/simulated/floor/plating,/area/space)
 "tu" = (/turf/simulated/floor/tiled/white,/area/medical/chemistry)

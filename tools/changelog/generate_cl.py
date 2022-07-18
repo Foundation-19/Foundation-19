@@ -47,7 +47,7 @@ pr_list = commit.get_pulls()
 
 if not pr_list.totalCount:
     print("Direct commit detected")
-    exit(1)  # Change to '0' if you do not want the action to fail when a direct commit is detected
+    exit(0)
 
 pr = pr_list[0]
 
@@ -56,13 +56,16 @@ pr_number = pr.number
 pr_author = pr.user.login
 
 write_cl = {}
-try:
-    cl = CL_BODY.search(pr_body)
-    cl_list = CL_SPLIT.findall(cl.group(2))
-except AttributeError:
-    print("No CL found!")
-    exit(1)  # Change to '0' if you do not want the action to fail when no CL is provided
-
+if pr.body:
+    try:
+        cl = CL_BODY.search(pr_body)
+        cl_list = CL_SPLIT.findall(cl.group(2))
+    except AttributeError:
+        print("No CL found!")
+        exit(0)
+else:
+        print("No PR body found!")
+        exit(0)
 
 if cl.group(1) is not None:
     write_cl["author"] = cl.group(1).lstrip()
@@ -96,7 +99,7 @@ if write_cl["changes"]:
             f"html/changelogs/AutoChangeLog-pr-{pr_number}.yml",
             f"Automatic changelog generation for PR #{pr_number} [ci skip]",
             content=f"{cl_contents.read()}",
-            branch="master",
+            branch="dev",
             committer=InputGitAuthor(git_name, git_email),
         )
     print("Done!")
