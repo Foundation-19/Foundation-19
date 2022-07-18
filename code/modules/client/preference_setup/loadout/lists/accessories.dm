@@ -108,14 +108,12 @@
 /datum/gear/accessory/ftupin
 	display_name = "Free Trade Union pin"
 	path = /obj/item/clothing/accessory/ftupin
-
+*/
 /datum/gear/accessory/chaplaininsignia
 	display_name = "chaplain insignia"
 	path = /obj/item/clothing/accessory/chaplaininsignia
 	cost = 1
 	allowed_roles = list(/datum/job/chaplain)
-
-*/
 
 /datum/gear/accessory/chaplaininsignia/New()
 	..()

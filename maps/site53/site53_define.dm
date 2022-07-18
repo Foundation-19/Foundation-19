@@ -42,6 +42,28 @@
 	use_overmap = 0
 	num_exoplanets = 0
 	planet_size = list(129,129)
+	apc_test_exempt_areas = list(
+		/area/space = NO_APC,
+		/area/site53/llcz/mine/unexplored = NO_APC,
+		/area/site53/llcz/mine/explored = NO_APC,
+		/area/site53/surface = NO_APC,
+		/area/turbolift/site53/surface = NO_APC,
+		/area/turbolift/site53/basement = NO_APC,
+		/area/turbolift/site53/logistics = NO_APC,
+		/area/turbolift/site53/logisticstorage = NO_APC,
+		/area/turbolift/site53/scp106obs = NO_APC,
+		/area/turbolift/site53/scp106obs = NO_APC,
+		/area/turbolift/site53/uhcz = NO_APC,
+		/area/turbolift/site53/lhcz = NO_APC,
+		/area/site53/tram/engineering = NO_APC,
+		/area/site53/tram/lcz = NO_APC,
+		/area/site53/tram/hcz = NO_APC,
+		/area/shuttle/escape_pod = NO_APC,
+		/area/site53/tram/scpcar = NO_APC,
+		/area/turbolift/site53/commstower = NO_APC,
+		/area/turbolift/site53/scp106cont = NO_APC,
+		/area/centcom/goc = NO_APC,
+	)
 
 	away_site_budget = 3
 
