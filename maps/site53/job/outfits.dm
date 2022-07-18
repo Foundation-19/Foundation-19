@@ -658,6 +658,26 @@
 	back = /obj/item/storage/backpack/satchel
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/clothing/mask/gas = 1)
 
+/decl/hierarchy/outfit/job/site90/crew/command/event/hammerdown
+	name = OUTFIT_JOB_NAME("MTF Nu-7 Soldier")
+	uniform = /obj/item/clothing/under/tactical
+	suit = /obj/item/clothing/suit/armor/mtfheavy
+	mask = /obj/item/clothing/mask/gas
+	head = /obj/item/clothing/head/helmet/mtfheavy
+	gloves = /obj/item/clothing/gloves/thick/combat
+	glasses = /obj/item/clothing/glasses/tacgoggles
+	shoes = /obj/item/clothing/shoes/combat
+	id_types = list(/obj/item/card/id/mtf)
+	suit_store = null
+	r_hand = /obj/item/gun/projectile/automatic/t12
+	l_hand = null
+	l_pocket = /obj/item/grenade/frag
+	r_pocket = /obj/item/grenade/flashbang/clusterbang //gods must be strong
+	l_ear = /obj/item/device/radio/headset/ert
+	belt = /obj/item/storage/belt/holster/security/tactical
+	back = /obj/item/storage/backpack/rucksack
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/t12 = 15) //all you need is kill
+
 /decl/hierarchy/outfit/job/site90/crew/command/event/chaos_soldier
 	name = OUTFIT_JOB_NAME("Chaos Insurgency Soldier")
 	uniform = /obj/item/clothing/under/scp/utility/chaos
