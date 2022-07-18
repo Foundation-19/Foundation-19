@@ -325,7 +325,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /turf/simulated/floor/reinforced,
 /area/vacant/prototype/engine)
@@ -358,7 +358,7 @@
 "abb" = (
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/yellow/mono,
 /turf/simulated/floor/tiled/monotile,
@@ -661,7 +661,7 @@
 /obj/structure/bed/chair,
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/brown/mono,
 /turf/simulated/floor/tiled/monotile,
@@ -674,7 +674,7 @@
 "acb" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Xenobiology Laboratory";
-	req_access = list(access_sciencelvl3)
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/reswing/xenobiology)
@@ -996,7 +996,7 @@
 	},
 /obj/machinery/door/airlock/glass/research{
 	name = "Xenobiology Laboratory";
-	req_access = list(access_sciencelvl3)
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/reswing/xenobiology)
@@ -1070,7 +1070,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable{
 	d2 = 2;
@@ -1235,7 +1235,7 @@
 "adD" = (
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 1
@@ -1493,7 +1493,7 @@
 "aee" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Heavy Containment Maintenance";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -1547,7 +1547,7 @@
 "aek" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Heavy Containment Maintenance";
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -1721,7 +1721,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/window/brigdoor/eastleft{
-	req_access = list(list(access_securitylvl3,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -1744,7 +1744,7 @@
 "aeK" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Red Line";
-	req_access = list(list(access_securitylvl3,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /turf/simulated/floor/plating,
 /area/site53/tram/hcz)
@@ -1811,7 +1811,7 @@
 "aeZ" = (
 /obj/machinery/door/airlock/research{
 	name = "Production Room";
-	req_access = list(access_sciencelvl3)
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
@@ -1939,7 +1939,7 @@
 "afs" = (
 /obj/machinery/door/airlock/research{
 	name = "Surgical Theatre";
-	req_access = list(access_sciencelvl3)
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
@@ -2083,7 +2083,7 @@
 "afP" = (
 /obj/machinery/door/window/brigdoor/northleft{
 	name = "Chemistry Laboratory";
-	req_access = list(access_sciencelvl3)
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/robotics)
@@ -2913,7 +2913,7 @@
 	},
 /obj/machinery/door/airlock/glass/research{
 	name = "Research Wing";
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
@@ -2952,7 +2952,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/maintenance{
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -3061,7 +3061,7 @@
 	},
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "ULCZ Maintenance";
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -3129,7 +3129,7 @@
 "aih" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Research Wing";
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
@@ -3282,7 +3282,7 @@
 /obj/item/aiModule/purge,
 /obj/structure/window/reinforced,
 /obj/machinery/door/window/brigdoor/eastleft{
-	req_access = list(access_sciencelvl5,access_adminlvl4)
+	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
@@ -3420,7 +3420,7 @@
 	icon_state = "tube1"
 	},
 /obj/machinery/door/window/brigdoor/southleft{
-	req_access = list(access_engineeringlvl3)
+	req_access = list("ACCESS_ENGINEERING_LEVEL3")
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -3428,7 +3428,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable{
 	d2 = 2;
@@ -3529,7 +3529,7 @@
 "aiY" = (
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/yellow/half{
 	dir = 1
@@ -3646,7 +3646,7 @@
 	},
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Self-Destruct Maintenance";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -3913,7 +3913,7 @@
 "ajX" = (
 /obj/structure/closet/secure_closet/engineering_personal{
 	name = "Containment Engineer's locker";
-	req_access = list(access_engineeringlvl4)
+	req_access = list("ACCESS_ENGINEERING_LEVEL4")
 	},
 /obj/machinery/camera/autoname{
 	dir = 8;
@@ -4107,7 +4107,7 @@
 "aku" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering Control Room";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/controlroom)
@@ -4121,7 +4121,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering Control Room";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/controlroom)
@@ -4264,7 +4264,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/engineering{
 	name = "Break Room";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/engineering/breakroom)
@@ -4276,7 +4276,7 @@
 	},
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Self-Destruct Maintenance";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -4320,7 +4320,7 @@
 /obj/structure/closet/radiation,
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techmaint,
@@ -4334,7 +4334,7 @@
 "akU" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Dorms";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/engineering/sleeproom)
@@ -4343,7 +4343,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/engineering{
 	name = "Dorms";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -4359,7 +4359,7 @@
 "akY" = (
 /obj/machinery/door/airlock/glass/engineering{
 	name = "Containment Engineer's Office";
-	req_access = list(access_engineeringlvl4)
+	req_access = list("ACCESS_ENGINEERING_LEVEL4")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -4373,7 +4373,7 @@
 /area/site53/engineering/containment_engineer)
 "ala" = (
 /obj/structure/closet/secure_closet/engineering_welding{
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/yellow/mono,
 /turf/simulated/floor/tiled/monotile,
@@ -4393,7 +4393,7 @@
 /area/site53/upper_surface/serverfarmtunnel)
 "ale" = (
 /obj/structure/closet/secure_closet/engineering_welding{
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable{
 	d2 = 2;
@@ -4479,7 +4479,7 @@
 	id_tag = "ULCZ Secure Armoury";
 	name = "ULCZ Secure Armoury";
 	pixel_x = -22;
-	req_access = list(access_securitylvl4)
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
@@ -4500,7 +4500,7 @@
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-895";
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -4577,7 +4577,7 @@
 /obj/structure/closet/radiation,
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/yellow/half{
 	dir = 1
@@ -4804,7 +4804,7 @@
 	dir = 8
 	},
 /obj/structure/closet/secure_closet/engineering_personal{
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /obj/item/device/flashlight{
 	pixel_y = 15
@@ -4908,7 +4908,7 @@
 	dir = 8
 	},
 /obj/structure/closet/secure_closet/engineering_personal{
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /obj/item/device/flashlight{
 	pixel_y = 15
@@ -4961,7 +4961,7 @@
 "amu" = (
 /obj/machinery/keycard_auth{
 	pixel_y = 32;
-	req_access = list(access_sciencelvl4,access_engineeringlvl4,access_sciencelvl3)
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ENGINEERING_LEVEL4")
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techfloor,
@@ -5041,7 +5041,7 @@
 "amG" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Communications Maintenance";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -5094,7 +5094,7 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/engineering_personal{
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /obj/item/device/flashlight{
 	pixel_y = 15
@@ -5132,7 +5132,7 @@
 	},
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/janitorial)
@@ -5217,7 +5217,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "selfdestruct";
 	pixel_y = 24;
-	req_access = list(access_adminlvl5)
+	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
@@ -5320,7 +5320,7 @@
 	},
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/primaryhallway)
@@ -5414,7 +5414,7 @@
 	},
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/auxstorage)
@@ -5575,7 +5575,7 @@
 "anL" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Heavy Containment Maintenance";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -5625,7 +5625,7 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/engineering_personal{
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /obj/item/device/flashlight{
 	pixel_y = 15
@@ -5826,7 +5826,7 @@
 "aoq" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Heavy Containment Maintenance";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -5926,7 +5926,7 @@
 "aoJ" = (
 /obj/machinery/door/airlock/command{
 	name = "AIC Access";
-	req_access = list(access_sciencelvl4,access_adminlvl3)
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/science/aicobservation)
@@ -5987,7 +5987,7 @@
 	id_tag = "ULCZ Secure Armoury";
 	name = "ULCZ Secure Armoury";
 	pixel_x = -22;
-	req_access = list(access_securitylvl4)
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/item/ammo_magazine/scp/p90_mag,
@@ -6027,7 +6027,7 @@
 /area/site53/engineering/primaryhallway)
 "aoR" = (
 /obj/structure/closet/secure_closet/engineering_personal{
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /obj/effect/floor_decal/corner/yellow/mono,
 /obj/item/device/flashlight{
@@ -6053,7 +6053,7 @@
 	},
 /obj/machinery/door/airlock/engineering{
 	name = "Main Reactor";
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/vacant/prototype/engine)
@@ -6118,7 +6118,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/machinery/door/airlock/engineering{
 	name = "Atmos";
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -6218,7 +6218,7 @@
 	},
 /obj/effect/floor_decal/corner/yellow/mono,
 /obj/structure/closet/secure_closet/engineering_personal{
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /obj/item/device/flashlight{
 	pixel_y = 15
@@ -6301,7 +6301,7 @@
 	},
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/vacant/prototype/control)
@@ -6338,7 +6338,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/vacant/prototype/control)
@@ -6670,7 +6670,7 @@
 	},
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
@@ -6748,7 +6748,7 @@
 /area/site53/engineering/primaryhallway)
 "aqy" = (
 /obj/machinery/door/airlock/maintenance{
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -6973,7 +6973,7 @@
 "aqS" = (
 /obj/machinery/power/apc/high{
 	dir = 1;
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -7625,7 +7625,7 @@
 "asb" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Main Reactor";
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/vacant/prototype/control)
@@ -7943,7 +7943,7 @@
 	},
 /obj/machinery/door/airlock/engineering{
 	name = "Lockers Room";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/locker_room)
@@ -7951,7 +7951,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/engineering{
 	name = "Lockers Room";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/locker_room)
@@ -7959,7 +7959,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
@@ -8041,7 +8041,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/engineering{
 	name = "Fire Closet";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/primaryhallway)
@@ -8050,7 +8050,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/engineering{
 	name = "Secure Storage";
-	req_access = list(access_engineeringlvl3)
+	req_access = list("ACCESS_ENGINEERING_LEVEL3")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -8120,7 +8120,7 @@
 "ati" = (
 /obj/machinery/door/airlock/vault{
 	name = "Secure Storage";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -8299,7 +8299,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable{
 	d2 = 2;
@@ -8362,7 +8362,7 @@
 	},
 /obj/machinery/door/airlock/engineering{
 	name = "Workshop";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/storage)
@@ -8370,7 +8370,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/engineering{
 	name = "Workshop";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/storage)
@@ -8506,7 +8506,7 @@
 	},
 /obj/machinery/door/airlock/engineering{
 	name = "Main Reactor";
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/vacant/prototype/control)
@@ -8565,7 +8565,7 @@
 	dir = 5
 	},
 /obj/structure/closet/secure_closet/engineering_welding{
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/storage)
@@ -8574,7 +8574,7 @@
 	dir = 5
 	},
 /obj/structure/closet/secure_closet/engineering_electrical{
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/machinery/light{
 	dir = 1;
@@ -8587,7 +8587,7 @@
 	dir = 5
 	},
 /obj/structure/closet/secure_closet/engineering_electrical{
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/storage)
@@ -8650,7 +8650,7 @@
 	},
 /obj/machinery/door/airlock/engineering{
 	name = "Main Reactor";
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
@@ -8742,7 +8742,7 @@
 	},
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/storage)
@@ -8757,7 +8757,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/engineering{
 	name = "Battery Bank";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/cyan{
@@ -8808,7 +8808,7 @@
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/vault{
 	name = "Secure Storage";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -9027,7 +9027,7 @@
 	},
 /obj/machinery/suit_storage_unit/engineering{
 	islocked = 0;
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/storage)
@@ -9422,7 +9422,7 @@
 	},
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
@@ -9598,7 +9598,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering Control Room";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
@@ -9773,7 +9773,7 @@
 	},
 /obj/machinery/suit_storage_unit/engineering{
 	islocked = 0;
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /obj/machinery/light{
 	dir = 4;
@@ -9849,7 +9849,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/engineering{
 	name = "Main Reactor";
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/vacant/prototype/control)
@@ -10022,7 +10022,7 @@
 "axp" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering Control Room";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -10132,7 +10132,7 @@
 	},
 /obj/machinery/door/airlock/engineering{
 	name = "Atmos";
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -10211,7 +10211,7 @@
 "axK" = (
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/flora/pottedplant/flower,
 /obj/effect/floor_decal/corner/yellow/half{
@@ -10449,7 +10449,7 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/vacant/prototype/engine)
@@ -10594,7 +10594,7 @@
 "ayv" = (
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/orange/mono,
 /obj/structure/flora/pottedplant/floorleaf,
@@ -10669,7 +10669,7 @@
 "ayG" = (
 /obj/machinery/door/airlock/glass/engineering{
 	name = "Engineering Tram";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -11137,14 +11137,14 @@
 	},
 /obj/machinery/door/airlock/maintenance{
 	name = "Logistics Storage Area";
-	req_access = list(access_engineeringlvl1,access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1","ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/plating,
 /area/site53/logistics/logistics)
 "azL" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Underground Storage";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -11152,7 +11152,7 @@
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/highsecurity{
 	name = "Underground Storage";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -11245,7 +11245,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "check3";
 	pixel_y = 24;
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
@@ -11424,7 +11424,7 @@
 "aAv" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Main Reactor";
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/vacant/prototype/engine)
@@ -11553,7 +11553,7 @@
 "aAK" = (
 /obj/machinery/door/airlock/science{
 	name = "Elevator Access";
-	req_access = list(list(access_securitylvl3,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -11628,7 +11628,7 @@
 "aAS" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Heavy Containment Maintenance";
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -12226,7 +12226,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -12268,7 +12268,7 @@
 "aCn" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "SCP-106 Elevator Maintenance";
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -12549,7 +12549,7 @@
 "aCK" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Heavy Containment Maintenance";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -13068,7 +13068,7 @@
 "aEc" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "SCP-106 Elevator Maintenance";
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -13210,7 +13210,7 @@
 "aEu" = (
 /obj/machinery/door/airlock/security{
 	name = "Zone Commander's Office";
-	req_access = list(access_securitylvl4)
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -13401,7 +13401,7 @@
 "aET" = (
 /obj/machinery/door/airlock/glass/engineering{
 	name = "Orange Line";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/cable{
@@ -13453,7 +13453,7 @@
 "aFa" = (
 /obj/machinery/door/airlock/glass/engineering{
 	name = "Orange Line";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -13588,7 +13588,7 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -13944,7 +13944,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "check3";
 	pixel_y = 24;
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/red{
 	dir = 9
@@ -14238,7 +14238,7 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/engineering/engine_smes)
@@ -14484,7 +14484,7 @@
 "aHJ" = (
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
@@ -14529,7 +14529,7 @@
 "aHP" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Containment Chamber";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -14564,7 +14564,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -14584,7 +14584,7 @@
 "aHV" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-078 Chamber";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
@@ -14679,7 +14679,7 @@
 	},
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Research Wing Substation";
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint)
@@ -14796,14 +14796,14 @@
 /obj/machinery/door/window/brigdoor/northleft,
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/door/window/brigdoor/southright{
-	req_access = list(access_sciencelvl3)
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/reswing/xenobiology)
 "aIC" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "General Purpose Laboratory";
-	req_access = list(access_sciencelvl2)
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/reswing/robotics)
@@ -15025,7 +15025,7 @@
 "aJb" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Observation";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile/white,
@@ -15079,7 +15079,7 @@
 /obj/machinery/door/window/brigdoor/westleft,
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/door/window/brigdoor/eastleft{
-	req_access = list(access_sciencelvl3)
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/reswing/xenobiology)
@@ -15122,7 +15122,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/monotile/white,
@@ -15155,7 +15155,7 @@
 "aJB" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-151";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -15187,7 +15187,7 @@
 "aJF" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-151 Containment Chamber";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
@@ -15206,7 +15206,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
@@ -15264,14 +15264,14 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/scp173)
 "aJT" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-173 Containment Chamber";
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
@@ -15334,7 +15334,7 @@
 "aKc" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "General Purpose Laboratory";
-	req_access = list(access_sciencelvl2)
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -15644,7 +15644,7 @@
 "aKJ" = (
 /obj/machinery/door/airlock/science{
 	name = "Observation";
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
@@ -15668,7 +15668,7 @@
 "aKM" = (
 /obj/machinery/door/airlock/science{
 	name = "Observation";
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -15757,7 +15757,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 4;
@@ -15955,7 +15955,7 @@
 "aLA" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-173";
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -16355,7 +16355,7 @@
 	id_tag = "ULCZ Maintenance Tunnel Access (EMERGENCY ONLY)";
 	name = "ULCZ Maintenance Tunnel Access (EMERGENCY ONLY)";
 	pixel_y = -23;
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/maintenance)
@@ -16387,7 +16387,7 @@
 "aMI" = (
 /obj/machinery/door/airlock/research{
 	name = "Containment Chamber";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -16447,7 +16447,7 @@
 	},
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Heavy Containment Maintenance";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor,
 /area/site53/lowertrams/redline)
@@ -16647,7 +16647,7 @@
 	id_tag = "ULCZ Checkpoint Booth Exit";
 	name = "ULCZ Checkpoint Booth Exit";
 	pixel_x = 24;
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/item/device/toner,
 /obj/item/device/toner,
@@ -17333,7 +17333,7 @@
 	dir = 1;
 	id_tag = "selfdestruct";
 	pixel_y = -23;
-	req_access = list(access_adminlvl5)
+	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/uppernukeladders)
@@ -17584,7 +17584,7 @@
 "aPr" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Unused SCP Containment Chamber ";
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -17632,7 +17632,7 @@
 "aPv" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-263";
-	req_access = list(list(access_securitylvl2,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -17815,7 +17815,7 @@
 "aPV" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Experimentation Center";
-	req_access = list(access_securitylvl4)
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/machinery/door/blast/regular/open{
 	begins_closed = 1;
@@ -17970,7 +17970,7 @@
 /obj/effect/paint_stripe/red,
 /obj/machinery/door/airlock/engineering{
 	name = "Communication Engineers";
-	req_access = list(access_engineeringlvl3)
+	req_access = list("ACCESS_ENGINEERING_LEVEL3")
 	},
 /obj/machinery/door/firedoor{
 	dir = 4
@@ -18050,7 +18050,7 @@
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/maintenance{
 	name = "Logistics Storage Area";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/barricade,
 /turf/simulated/floor/plating,
@@ -18125,7 +18125,7 @@
 "aRb" = (
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/upper_surface/serverfarmcontrol)
@@ -18196,7 +18196,7 @@
 "aRz" = (
 /obj/machinery/suit_storage_unit/engineering{
 	islocked = 0;
-	req_access = list(access_engineeringlvl2)
+	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
@@ -18209,7 +18209,7 @@
 "aRC" = (
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -18266,7 +18266,7 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/machinery/computer/rcon{
 	dir = 8
@@ -18312,7 +18312,7 @@
 "aRO" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Communication Engineers";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -18512,7 +18512,7 @@
 "aSC" = (
 /obj/machinery/door/window/brigdoor/northright{
 	name = "Chemistry Laboratory";
-	req_access = list(access_sciencelvl3)
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/robotics)
@@ -18656,7 +18656,7 @@
 "aTj" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-173 Chamber";
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -18701,7 +18701,7 @@
 "aTs" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "LCZ Security Center";
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
@@ -18846,7 +18846,7 @@
 	id_tag = "173emerg";
 	name = "Observation Emergency Blast Doors button";
 	pixel_y = 25;
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
@@ -19025,7 +19025,7 @@
 "aUF" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Locker Room";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
@@ -19155,7 +19155,7 @@
 "aVg" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-078 Containment Chamber";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
@@ -19172,7 +19172,7 @@
 "aVi" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Checkpoint Booth";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
@@ -19238,7 +19238,7 @@
 /area/site53/llcz/checkequip)
 "aVr" = (
 /obj/machinery/door/window/brigdoor/eastright{
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
@@ -19253,7 +19253,7 @@
 /area/site53/llcz/checkequip)
 "aVu" = (
 /obj/machinery/door/window/brigdoor/westleft{
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -19290,7 +19290,7 @@
 /obj/effect/catwalk_plated/white,
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Center";
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -19325,7 +19325,7 @@
 	id_tag = "173";
 	name = "Chamber Blast Doors button";
 	pixel_y = 25;
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
@@ -19424,7 +19424,7 @@
 	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "HCZ Secure Armoury";
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "UHCZ Secure Maintenance Tunnel Lockdown";
@@ -19474,7 +19474,7 @@
 "aWd" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-078 Observation";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -19515,7 +19515,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/science{
 	name = "SCP-173 Chamber";
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -19578,7 +19578,7 @@
 "aWq" = (
 /obj/machinery/door/airlock/science{
 	name = "General Purpose Containment  Chamber";
-	req_access = list(access_sciencelvl2)
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/generalpurpose)
@@ -19633,7 +19633,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -19653,7 +19653,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -19706,7 +19706,7 @@
 "aWI" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-013";
-	req_access = list(access_sciencelvl2)
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -19750,7 +19750,7 @@
 	},
 /obj/machinery/door/airlock/science{
 	name = "SCP-113";
-	req_access = list(access_sciencelvl2)
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp113)
@@ -19808,7 +19808,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/scp343entrance)
@@ -19824,7 +19824,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -19839,7 +19839,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -20025,7 +20025,7 @@
 "aXw" = (
 /obj/machinery/door/airlock/science{
 	name = "General Purpose Testing Chamber";
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/generalpurpose2)
@@ -20350,7 +20350,7 @@
 "aYr" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Communication Engineers";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -20904,7 +20904,7 @@
 /area/site53/uhcz/hallways)
 "bag" = (
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "15"
@@ -20956,7 +20956,7 @@
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-035";
-	req_access = list(list(access_securitylvl3,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /turf/simulated/floor/plating,
 /area/site53/lhcz/scp035room)
@@ -20985,7 +20985,7 @@
 	dir = 8;
 	id_tag = "16";
 	pixel_x = 23;
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp035room)
@@ -21037,7 +21037,7 @@
 /area/site53/lhcz/scp035room)
 "bav" = (
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "16"
@@ -21364,7 +21364,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list(list(access_securitylvl3,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL2"))
 	},
 /turf/simulated/floor/plating,
 /area/site53/lhcz/scp343entrance)
@@ -21419,7 +21419,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_sciencelvl1);
+	req_access = list("ACCESS_SCIENCE_LEVEL1");
 	desc = "Seems more like a decoration than anyhting."
 	},
 /obj/structure/cable/green{
@@ -21894,7 +21894,7 @@
 	id_tag = "livingenclosure";
 	locked = 1;
 	name = "SCP-247 Enclosure";
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp247observation)
@@ -21913,7 +21913,7 @@
 "bdg" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "RIOT CONTROL";
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
@@ -21989,7 +21989,7 @@
 "bdu" = (
 /obj/machinery/alarm{
 	pixel_y = 23;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/table/standard,
 /obj/item/toy/plushie/lizard{
@@ -22583,7 +22583,7 @@
 /area/site53/surface/explorers)
 "bfD" = (
 /obj/machinery/door/airlock{
-	req_access = list(access_sciencelvl3)
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /turf/simulated/floor/wood,
 /area/site53/surface/explorers)
@@ -22890,7 +22890,7 @@
 	id_tag = "UHCZ Lockdown";
 	name = "UHCZ Lockdown";
 	pixel_y = 23;
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine,
@@ -22903,7 +22903,7 @@
 	id_tag = "ULCZ Checkpoint Booth";
 	name = "ULCZ Checkpoint Booth";
 	pixel_y = -23;
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/camera/autoname{
 	dir = 4;
@@ -22925,7 +22925,7 @@
 	id_tag = "ULCZ Checkpoint Primary Entrance";
 	name = "ULCZ Checkpoint Primary Entrance";
 	pixel_y = -23;
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "ULCZ Booth Window 1";
@@ -22948,7 +22948,7 @@
 	id_tag = "ULCZ Exit Line Cycle";
 	name = "ULCZ Exit Line Cycle";
 	pixel_y = -23;
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
@@ -22973,21 +22973,21 @@
 	id_tag = "ULCZ Checkpoint Secondary Entrance";
 	name = "ULCZ Checkpoint Secondary Entrance";
 	pixel_y = -23;
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
 	dir = 8;
 	id_tag = "ULCZ Interior Booth Window";
 	name = "ULCZ Checkpoint Booth Exit";
 	pixel_x = 24;
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "bgI" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Checkpoint Booth";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
@@ -23000,11 +23000,11 @@
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor{
 	name = "Booth";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/window/brigdoor/northright{
 	name = "Booth";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "ULCZ Booth Window 1";
@@ -23152,7 +23152,7 @@
 	id_tag = "ULCZ Maintenance Tunnel Access (EMERGENCY ONLY)";
 	name = "ULCZ Maintenance Tunnel Access (EMERGENCY ONLY)";
 	pixel_y = -23;
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/maintenance)
@@ -23162,7 +23162,7 @@
 	id_tag = "ULCZ Maintenance Tunnel Access (EMERGENCY ONLY)";
 	name = "ULCZ Maintenance Tunnel Access (EMERGENCY ONLY)";
 	pixel_x = 24;
-	req_access = list(access_adminlvl5)
+	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/maintenance)
@@ -23217,7 +23217,7 @@
 	id_tag = "ULCZ Maintenance Tunnel Access (EMERGENCY ONLY)";
 	name = "ULCZ Maintenance Tunnel Access (EMERGENCY ONLY)";
 	pixel_x = 24;
-	req_access = list(access_adminlvl5)
+	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/maintenance)
@@ -23309,7 +23309,7 @@
 "bhi" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "ULCZ Secure Armoury";
-	req_access = list(access_securitylvl4)
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/machinery/door/blast/regular/open{
 	begins_closed = 1;
@@ -23689,7 +23689,7 @@
 "bhU" = (
 /obj/machinery/door/airlock/security{
 	name = "Heavy Containment Zone Gate Security Post";
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
@@ -23779,7 +23779,7 @@
 	id_tag = "HCZ Secure Armoury";
 	name = "HCZ Secure Armoury";
 	pixel_x = -22;
-	req_access = list(access_securitylvl4)
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
@@ -23805,7 +23805,7 @@
 "bid" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "HCZ Secure Armoury";
-	req_access = list(access_securitylvl4)
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/machinery/door/blast/regular/open{
 	begins_closed = 1;
@@ -23895,7 +23895,7 @@
 /area/site53/ulcz/generalpurpose2)
 "bin" = (
 /obj/machinery/door/airlock/multi_tile/research{
-	req_access = list(list(access_securitylvl3,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -23998,7 +23998,7 @@
 	id_tag = "UHCZ Booth Window 2";
 	name = "UHCZ Booth Window 2";
 	pixel_y = 23;
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
@@ -24010,7 +24010,7 @@
 	id_tag = "UHCZ Booth Window 1";
 	name = "UHCZ Booth Window 1";
 	pixel_y = 23;
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
@@ -24041,7 +24041,7 @@
 	id_tag = "HCZ Secure Armoury";
 	name = "HCZ Secure Armoury";
 	pixel_x = -22;
-	req_access = list(access_securitylvl4)
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
@@ -24153,11 +24153,11 @@
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor{
 	name = "Booth";
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/machinery/door/window/brigdoor/northright{
 	name = "Booth";
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
@@ -24294,14 +24294,14 @@
 	id_tag = "UHCZ Checkpoint Control Room 2";
 	name = "UHCZ Checkpoint Control Room 2";
 	pixel_y = -23;
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "bjd" = (
 /obj/machinery/door/airlock/security{
 	name = "Heavy Containment Equipment";
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -24316,7 +24316,7 @@
 "bje" = (
 /obj/machinery/door/airlock/security{
 	name = "Heavy Containment Zone Gate Security Post";
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -24488,7 +24488,7 @@
 	name = "HCZ Armory Door bolt";
 	pixel_x = 24;
 	pixel_y = 23;
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -24505,7 +24505,7 @@
 	id_tag = "hczguns";
 	locked = 1;
 	name = "HCZ Armory";
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -24556,7 +24556,7 @@
 "bjz" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "HCZ Secure Armoury";
-	req_access = list(access_securitylvl4)
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -24607,7 +24607,7 @@
 	id_tag = "UHCZ Checkpoint Control Room";
 	name = "UHCZ Checkpoint Control Room";
 	pixel_x = 24;
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -24620,7 +24620,7 @@
 "bjE" = (
 /obj/machinery/door/airlock/security{
 	name = "Heavy Containment Zone Gate Security Post";
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
@@ -24731,7 +24731,7 @@
 "bjP" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Heavy Containment Maintenance";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -24747,7 +24747,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable{
 	d2 = 2;
@@ -24773,14 +24773,14 @@
 	id_tag = "UHCZ Secure Maintenance Tunnel Lockdown";
 	name = "UHCZ Secure Maintenance Tunnel Lockdown";
 	pixel_x = 24;
-	req_access = list(access_securitylvl4)
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "bjU" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Heavy Containment Maintenance";
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -24972,7 +24972,7 @@
 "bks" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Center";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/maintenance)
@@ -25009,7 +25009,7 @@
 /obj/effect/catwalk_plated/white,
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Center";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
@@ -25357,7 +25357,7 @@
 	},
 /obj/machinery/power/apc/hyper{
 	dir = 1;
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable{
 	d2 = 4;
@@ -25468,7 +25468,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -25500,7 +25500,7 @@
 /area/site53/ulcz/medicalpost)
 "coZ" = (
 /obj/machinery/door/airlock/maintenance{
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -25525,7 +25525,7 @@
 "cvQ" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-247";
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -25552,7 +25552,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "895entry";
 	pixel_y = 23;
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp895)
@@ -25664,7 +25664,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/science{
 	name = "Containment chamber";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
@@ -25861,7 +25861,7 @@
 "dsY" = (
 /obj/machinery/door/airlock/research{
 	name = "Observation";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -25957,7 +25957,7 @@
 	},
 /obj/machinery/door/airlock/glass/research{
 	name = "Senior Researcher Office B";
-	req_access = list(access_sciencelvl4)
+	req_access = list("ACCESS_SCIENCE_LEVEL4")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/science/seniorresearcherb)
@@ -25992,7 +25992,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/science{
 	name = "Observation";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
@@ -26113,7 +26113,7 @@
 	id_tag = "foodenclosure";
 	locked = 1;
 	name = "SCP-247 Enclosure";
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp247observation)
@@ -26138,7 +26138,7 @@
 "ecq" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Communication Engineers";
-	req_access = list(access_engineeringlvl3)
+	req_access = list("ACCESS_ENGINEERING_LEVEL3")
 	},
 /obj/machinery/door/firedoor{
 	dir = 4
@@ -26179,7 +26179,7 @@
 	id_tag = "evacbunkerblastdoor";
 	name = "Evacuation Bunker Blast Door button";
 	pixel_y = 25;
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
@@ -26213,14 +26213,14 @@
 "eqH" = (
 /obj/machinery/door/airlock/science{
 	name = "Tranqilizer Storage";
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
 "erj" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-096";
-	req_access = list(list(access_securitylvl3,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "096chamberlock2"
@@ -26322,7 +26322,7 @@
 	},
 /obj/machinery/door/airlock/glass/command{
 	name = "AIC Observation";
-	req_access = list(access_sciencelvl4,access_adminlvl3)
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/science/aicobservation)
@@ -26369,7 +26369,7 @@
 "eQX" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-106 Observation";
-	req_access = list(list(access_securitylvl3,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -26874,7 +26874,7 @@
 	},
 /obj/machinery/door/airlock/science{
 	name = "Observation";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
@@ -27222,7 +27222,7 @@
 "hmB" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-247 Staff Training";
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
@@ -27282,7 +27282,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -27346,7 +27346,7 @@
 	dir = 1;
 	id_tag = "check3";
 	pixel_y = -22;
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
@@ -27388,7 +27388,7 @@
 /area/site53/uhcz/scp247containment)
 "hFl" = (
 /obj/machinery/power/rad_collector{
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
@@ -27433,7 +27433,7 @@
 	},
 /obj/machinery/door/airlock/research{
 	name = "SCP-513";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -27469,7 +27469,7 @@
 "hTt" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-247 Observation";
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -27493,7 +27493,7 @@
 /obj/machinery/door/window{
 	dir = 8;
 	name = "DANGER: LEADS TO SCP-012 CHAMBER";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
@@ -27679,7 +27679,7 @@
 	},
 /obj/machinery/door/airlock/science{
 	name = "General Storage";
-	req_access = list(access_sciencelvl3)
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/genstorage1)
@@ -27897,7 +27897,7 @@
 "jgH" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Unused SCP Containment Chamber ";
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -27939,7 +27939,7 @@
 "jmX" = (
 /obj/machinery/door/airlock/glass/science{
 	name = "SCP-066 Containment Chamber";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
@@ -27981,7 +27981,7 @@
 "jsp" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-529";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
@@ -28267,7 +28267,7 @@
 "kiO" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "General Purpose Chamber";
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/machinery/firealarm{
 	dir = 8;
@@ -28313,7 +28313,7 @@
 "ktI" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-247 Observation";
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
@@ -28339,7 +28339,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-066 Observation";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
@@ -28370,7 +28370,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/highsecurity/bolted{
-	req_access = list(access_sciencelvl5,access_adminlvl4)
+	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/science/aiccore)
@@ -28676,7 +28676,7 @@
 "ltv" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Brown Line";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2,access_medicallvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2","ACCESS_MEDICAL_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/lcz)
@@ -28707,7 +28707,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -28919,7 +28919,7 @@
 	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-106";
-	req_access = list(list(access_securitylvl3,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106containment)
@@ -29210,7 +29210,7 @@
 "mDz" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-078";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
@@ -29305,7 +29305,7 @@
 /obj/machinery/door/airlock/highsecurity{
 	id_tag = "scp96chamber";
 	name = "SCP-096";
-	req_access = list(list(access_securitylvl3,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -29484,7 +29484,7 @@
 "nmB" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Senior Researcher Office A";
-	req_access = list(access_sciencelvl4)
+	req_access = list("ACCESS_SCIENCE_LEVEL4")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -29516,7 +29516,7 @@
 	dir = 4;
 	id_tag = "16";
 	pixel_x = -23;
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp035room)
@@ -29977,7 +29977,7 @@
 	id_tag = "evaccell";
 	name = "Bunker Brig Cell bolt button";
 	pixel_x = -25;
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
@@ -30085,7 +30085,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/high{
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
@@ -30185,7 +30185,7 @@
 "pnC" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "AIC Observation";
-	req_access = list(access_sciencelvl4,access_adminlvl3)
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/science/aicobservation)
@@ -30607,7 +30607,7 @@
 "qEi" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Red Line";
-	req_access = list(list(access_securitylvl3,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
@@ -30665,7 +30665,7 @@
 "qLk" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Communication Engineers";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -30770,14 +30770,14 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
 "raR" = (
 /obj/machinery/door/airlock/science{
 	name = "General Purpose Testing Chamber";
-	req_access = list(access_sciencelvl2)
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/generalpurpose2)
@@ -30836,7 +30836,7 @@
 "rlV" = (
 /obj/machinery/door/airlock/vault{
 	name = "Containment Chamber";
-	req_access = list(access_securitylvl3)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/scp106containment)
@@ -30987,7 +30987,7 @@
 	},
 /obj/machinery/door/airlock/command{
 	name = "AIC Access";
-	req_access = list(access_sciencelvl4,access_adminlvl3)
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/science/aicobservation)
@@ -31123,7 +31123,7 @@
 "sek" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Checkpoint holding cell";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor,
 /area/site53/llcz/entrance_checkpoint)
@@ -31233,7 +31233,7 @@
 "swJ" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-263 Observation";
-	req_access = list(list(access_securitylvl2,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL4"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
@@ -31602,7 +31602,7 @@
 "tGo" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Robotics Laboratory";
-	req_access = list(access_sciencelvl3)
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
@@ -31704,11 +31704,11 @@
 /obj/machinery/door/window/brigdoor{
 	dir = 4;
 	name = "Booth";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/window/brigdoor/westleft{
 	name = "Booth";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
@@ -31736,7 +31736,7 @@
 "ugg" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Red Line";
-	req_access = list(list(access_securitylvl3,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
@@ -31839,7 +31839,7 @@
 	id_tag = "livingenclosure";
 	locked = 1;
 	name = "SCP-247 Enclosure";
-	req_access = list(list(access_securitylvl2,access_sciencelvl3))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -31871,7 +31871,7 @@
 /obj/machinery/door/airlock/highsecurity{
 	id_tag = "scp96observation";
 	name = "SCP-096";
-	req_access = list(list(access_securitylvl3,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -31956,7 +31956,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -32000,7 +32000,7 @@
 "uQr" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "SCP-529";
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500{
@@ -32073,14 +32073,14 @@
 	id_tag = "066";
 	name = "SCP-066 Containment Chamber Lock button";
 	pixel_y = 24;
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/machinery/button/blast_door{
 	dir = 8;
 	id_tag = "066shutter";
 	name = "SCP-066 Containment Chamber Shutter button";
 	pixel_x = 24;
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
@@ -32088,7 +32088,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-263 Observation";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
@@ -32111,11 +32111,11 @@
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor{
 	name = "Booth";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/window/brigdoor/northright{
 	name = "Booth";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "ULCZ Booth Window 2";
@@ -32213,7 +32213,7 @@
 	dir = 1
 	},
 /obj/machinery/door/window/brigdoor/eastright{
-	req_access = list(access_adminlvl4,access_adminlvl4)
+	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
@@ -32824,7 +32824,7 @@
 "wGH" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-106 Observation";
-	req_access = list(list(access_securitylvl3,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/effect/catwalk_plated,
 /turf/simulated/floor,
@@ -32879,7 +32879,7 @@
 	},
 /obj/machinery/door/airlock/science{
 	name = "SCP-106 Observation";
-	req_access = list(list(access_securitylvl3,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/effect/catwalk_plated,
 /turf/simulated/floor,
@@ -32940,7 +32940,7 @@
 "wUk" = (
 /obj/machinery/door/airlock/research{
 	name = "Observation";
-	req_access = list(list(access_securitylvl2,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
@@ -33258,7 +33258,7 @@
 "xQv" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-263 Containment Chamber";
-	req_access = list(list(access_securitylvl2,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL4"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
@@ -33279,7 +33279,7 @@
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "evaccell";
 	name = "Bunker Brig Cell";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
@@ -33366,7 +33366,7 @@
 	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-096";
-	req_access = list(list(access_securitylvl3,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/cable/green{
