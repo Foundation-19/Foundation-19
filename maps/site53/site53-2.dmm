@@ -32678,10 +32678,6 @@
 /obj/item/storage/box/syringegun,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
-"wsb" = (
-/mob/living/carbon/human/scp343,
-/turf/simulated/floor/lino,
-/area/site53/lhcz/scp343room)
 "wtF" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -92021,7 +92017,7 @@ bbu
 bbu
 bcn
 bcd
-wsb
+bcd
 bcd
 bbo
 aki
