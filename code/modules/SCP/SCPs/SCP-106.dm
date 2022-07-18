@@ -54,18 +54,19 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	// fix names
 	fully_replace_character_name("SCP-106")
 
-	verbs += /mob/living/carbon/human/scp106/proc/phase_through_airlock
+	add_verb(src, /mob/living/carbon/human/scp106/proc/phase_through_airlock)
 	if (!(loc in GLOB.scp106_floors))
-		verbs += /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
+		add_verb(src, /mob/living/carbon/human/scp106/proc/enter_pocket_dimension)
 
-	verbs += /mob/living/carbon/human/scp106/proc/confuse_victims
+	add_verb(src, list(
+		/mob/living/carbon/human/scp106/proc/confuse_victims,
+		/mob/living/carbon/human/scp106/proc/wall_phase,
+		/mob/living/carbon/human/scp106/proc/wall_unphase,
+	))
 
 	WallEye = new(src)
 	WallEye.visualnet.add_source(src)
 	WallEye.visualnet.add_source(WallEye)
-
-	verbs += /mob/living/carbon/human/scp106/proc/wall_phase
-	verbs += /mob/living/carbon/human/scp106/proc/wall_unphase
 
 	GLOB.scp106s |= src
 
@@ -237,8 +238,8 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	set desc = "Return to the area you last teleported from."
 	if (last_x != -1) // shouldn't be possible but just in case
 		forceMove(locate(last_x, last_y, last_z))
-	verbs -= /mob/living/carbon/human/scp106/proc/go_back
-	verbs += /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
+	remove_verb(src, /mob/living/carbon/human/scp106/proc/go_back)
+	add_verb(src, /mob/living/carbon/human/scp106/proc/enter_pocket_dimension)
 
 #define PHASE_TIME (2 SECONDS)
 /mob/living/carbon/human/scp106/var/phase_cooldown = -1
@@ -334,8 +335,8 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 			return
 		set_last_xyz()
 		forceMove(pick(GLOB.scp106_floors))
-		verbs -= /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
-		verbs += /mob/living/carbon/human/scp106/proc/go_back
+		remove_verb(src, /mob/living/carbon/human/scp106/proc/enter_pocket_dimension)
+		add_verb(src, /mob/living/carbon/human/scp106/proc/go_back)
 
 /mob/living/carbon/human/scp106/proc/confuse_victims()
 	set name = "Confuse Victims"
@@ -351,16 +352,16 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		if (!(loc in GLOB.scp106_floors))
 			to_chat(src, "<span class='danger'><i>You flee back to your pocket dimension!</i></span>")
 			forceMove(pick(GLOB.scp106_floors))
-			verbs -= /mob/living/carbon/human/scp106/proc/enter_pocket_dimension
-			verbs += /mob/living/carbon/human/scp106/proc/go_back
+			remove_verb(src, /mob/living/carbon/human/scp106/proc/enter_pocket_dimension)
+			add_verb(src, /mob/living/carbon/human/scp106/proc/go_back)
 
 // special objects
 /obj/scp106_exit
 	icon = 'icons/mob/screen1.dmi'
 	icon_state = "x2"
-	anchored = 1.0
+	anchored = TRUE
 	unacidable = 1
-	simulated = 0
+	simulated = FALSE
 	invisibility = 100
 
 /obj/scp106_exit/Crossed(var/mob/living/L)
@@ -372,9 +373,9 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 /obj/scp106_teleport
 	icon = 'icons/mob/screen1.dmi'
 	icon_state = "x2"
-	anchored = 1.0
+	anchored = TRUE
 	unacidable = 1
-	simulated = 0
+	simulated = FALSE
 	invisibility = 100
 
 /obj/scp106_teleport/Crossed(var/mob/living/L)
@@ -389,9 +390,9 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 /obj/scp106_random
 	icon = 'icons/mob/screen1.dmi'
 	icon_state = "x2"
-	anchored = 1.0
+	anchored = TRUE
 	unacidable = 1
-	simulated = 0
+	simulated = FALSE
 	invisibility = 100
 
 /obj/scp106_random/Crossed(var/mob/living/L)
@@ -419,10 +420,20 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	var/spent_mobs = list()
 	var/id = 2
 
+	var/in_progress = FALSE
+
+	var/next_use
+	var/use_delay = 60 SECONDS //because please god, enough with the earrape
+
+GLOBAL_LIST_EMPTY(femur_breakers)
+
 /obj/structure/femur_breaker/Initialize()
 	. = ..()
+	GLOB.femur_breakers += src
 
 /obj/structure/femur_breaker/Destroy()
+	GLOB.femur_breakers -= src
+
 	qdel()
 	return ..()
 
@@ -446,7 +457,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		qdel(G)
 
 /obj/structure/femur_breaker/attack_hand(mob/user)
-	if (buckled_mob && buckled_mob != user)
+	if(buckled_mob && buckled_mob != user)
 
 		visible_message("<span class = 'notice'>[user] unbuckles [buckled_mob] from the femur breaker.</span>")
 		buckled_mob.buckled = null
@@ -464,6 +475,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		buckled_mob.anchored = FALSE
 		buckled_mob = null
 
+//This doesn't work by the way, but I'm not fixing it because I think earraping the entire server with the sound is a shit idea
 /decl/public_access/public_method/femurbreaker
 	name = "spark"
 	desc = "Creates sparks to ignite nearby gases."
@@ -472,14 +484,24 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 /obj/structure/femur_breaker/proc/activate()
 	set waitfor = FALSE
 
+	if(!buckled_mob)
+		return
+
 	var/mob/living/carbon/human/H = buckled_mob
 
 	// because monkeys are humans
 	if (istype(H.species, /datum/species/monkey))
 		return
 
-	world << sound('sound/scp/machinery/femur_breaker.ogg')
-	sleep(2.8 SECONDS)
+	if (world.time < next_use)
+		return
+
+	next_use = world.time + use_delay
+
+	var/femur_breaker_sound = sound('sound/scp/machinery/femur_breaker.ogg')
+
+	for(var/mob/M in GLOB.player_list) //This is horrible.
+		playsound(M, femur_breaker_sound)
 
 	for (var/obj/item/organ/external/leg/L in H.organs)
 		if (!(L.status & BROKEN))
@@ -507,7 +529,11 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 			if (active_shield_generators < 4)
 				return // failed
 
-			world << sound('sound/scp/machinery/femur_breaker_success.ogg')
+			var/success_sound = sound('sound/scp/machinery/femur_breaker_success.ogg')
+
+			for(var/mob/M in GLOB.player_list)
+				playsound(M, success_sound) //This is just as horrible.
+
 			spent_mobs[H] = TRUE
 			return
 
@@ -517,11 +543,8 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	id_tag = 2
 
 
-/obj/machinery/button/femur_breaker/Initialize()
-	. = ..()
-
 /obj/machinery/button/femur_breaker/activate(mob/user)
-	for(var/obj/structure/femur_breaker/C in range())
+	for(var/obj/structure/femur_breaker/C in GLOB.femur_breakers)
 		if (C.id == id_tag)
 			C.activate(user)
 
@@ -583,8 +606,8 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	see_in_dark = 7
 
 /mob/observer/eye/scp106/New()
-	. = ..()
 	visualnet = new /datum/visualnet/scp106
+	return ..()
 
 /mob/observer/eye/scp106/EyeMove(direct)
 	var/turf/step = get_turf(get_step(src, direct))
@@ -601,8 +624,6 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	valid_source_types =  list(/mob/observer/eye/scp106,/mob/living/carbon/human/scp106) //list(/turf/simulated/wall,/turf/unsimulated/wall)
 	chunk_type = /datum/chunk/scp106
 
-/datum/visualnet/scp106/New()
-	. = ..()
 
 /datum/chunk/scp106/acquire_visible_turfs(list/visible)
 	for(var/source in sources)

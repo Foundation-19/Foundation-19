@@ -13,7 +13,7 @@
 
 /obj/structure/closet/secure_closet/administration/facilityadmin/WillContain()
 	return list(
-//		/obj/item/clothing/under/suittie,
+		/obj/item/clothing/accessory/armorplate/sneaky,
 		/obj/item/clothing/shoes/dress,
 		/obj/item/device/radio,
 		/obj/item/clothing/suit/storage/toggle/suit/black,
@@ -45,7 +45,6 @@
 		/obj/item/storage/box/encryptionkeys/eng,
 		/obj/item/storage/box/encryptionkeys/sec,
 		/obj/item/clothing/shoes/dutyboots,
-//		/obj/item/device/radio/headset/heads/commsofficer
 		/obj/item/paper/monitorkey,
 	)
 
@@ -66,6 +65,5 @@
 		/obj/item/material/clipboard,
 		/obj/item/folder/blue,
 		/obj/item/clothing/shoes/dutyboots,
-//		/obj/item/device/radio/headset/commsdispatcher,
-		/obj/item/storage/belt/utility/full
+		/obj/item/storage/belt/utility/full,
 	)

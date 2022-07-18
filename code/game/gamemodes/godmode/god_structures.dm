@@ -22,8 +22,8 @@
 	var/power_adjustment = 1 //How much power we get/lose
 	var/build_cost = 0 //How much it costs to build this item.
 	var/deity_flags = DEITY_STRUCTURE_NEAR_IMPORTANT
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	icon_state = "tomealtar"
 
 /obj/structure/deity/New(var/newloc, var/god)

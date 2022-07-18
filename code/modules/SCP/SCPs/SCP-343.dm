@@ -1,5 +1,8 @@
-GLOBAL_LIST_EMPTY(scp343s)
 
+// This code seriously needs some love.
+// TODO: Make this not terrible.
+
+GLOBAL_LIST_EMPTY(scp343s)
 /mob/living/carbon/human/scp343
 	desc = "A mysterious powerful man."
 	SCP = /datum/scp/scp_343
@@ -23,8 +26,6 @@ GLOBAL_LIST_EMPTY(scp343s)
 	return ..()
 
 /mob/living/carbon/human/scp343/Initialize()
-	..()
-
 	update_icons()
 
 	// fix names
@@ -34,17 +35,12 @@ GLOBAL_LIST_EMPTY(scp343s)
 		mind.name = real_name
 
 	GLOB.scp343s += src
-
-	verbs += /mob/living/carbon/human/scp343/proc/phase_through_airlock
-
+	add_verb(src, /mob/living/carbon/human/scp343/proc/phase_through_airlock)
+	return ..()
 
 /mob/living/carbon/human/scp343/Destroy()
 	GLOB.scp343s -= src
-	. = ..()
-
-/mob/living/carbon/human/scp343/Move()
-	. = ..()
-
+	return ..()
 
 /mob/living/carbon/human/scp343/forceMove(destination)
 	. = ..(destination)

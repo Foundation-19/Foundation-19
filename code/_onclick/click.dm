@@ -283,12 +283,9 @@
 
 /atom/proc/AltClick(var/mob/user)
 	var/turf/T = get_turf(src)
-	if(T && user.TurfAdjacent(T))
-		if(user.listed_turf == T)
-			user.listed_turf = null
-		else
-			user.listed_turf = T
-			user.client.statpanel = "Turf"
+	if(T && (isturf(loc) || isturf(src)) && user.TurfAdjacent(T))
+		user.listed_turf = T
+		user.client.stat_panel.send_message("create_listedturf", T.name)
 	return 1
 
 /mob/proc/TurfAdjacent(var/turf/T)

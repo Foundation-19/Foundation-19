@@ -312,9 +312,9 @@
 
 <b>Special Containment Procedures:</b> SCP-013 are to be kept in a Secure Storage Vault at Site-66. Exposed subjects are to be monitored for differences between their symptoms. Exposed subjects are to be interviewed daily, and any changes in perception are to be logged.<br>
 
-<b>Description:</b> SCP-013 is the collective designation of 242 cigarettes which display similar anomalies. The most common external detail between instances is the presence of the words “Blue Lady” hand-written on each cigarette in blue ink.
+<b>Description:</b> SCP-013 is the collective designation of 242 cigarettes which display similar anomalies. The most common external detail between instances is the presence of the words "Blue Lady" hand-written on each cigarette in blue ink.
 Subjects who consume the contents of SCP-013 through inhalation will begin to perceive themselves as a specific unidentified woman. Subjects have described the woman to be aged between 25 and 35 years old, standing approximately 1.6 metres tall with an estimated weight of between 50 and 55 kg. Additional recurring details include cropped dark hair, blue eyes, and bright blue lipstick.
-Immediately after consuming an instance of SCP-013, subjects will gradually begin to perceive reflections of themselves as having the features of the woman, and will gradually perceive their bodies changing to reflect her appearance over the course of the following weeks. All changes are entirely mental; the subject’s body does not change outwardly, only their perception of themselves. These alterations are permanent, and cannot be reversed.
+Immediately after consuming an instance of SCP-013, subjects will gradually begin to perceive reflections of themselves as having the features of the woman, and will gradually perceive their bodies changing to reflect her appearance over the course of the following weeks. All changes are entirely mental; the subject's body does not change outwardly, only their perception of themselves. These alterations are permanent, and cannot be reversed.
 SCP-013 was discovered after the suicide of an Ian Miles, packed in a large cardboard crate in his apartment. A cursory search of the apartment uncovered several hundred sketches of a figure strongly resembling the one perceived while under 013's effect. Miles' body had been found sitting at a desk, dead of a massive overdose and draped over a handwritten note, transcribed below.
 During the investigation of Miles' apartment, one civilian investigator became affected by 013's effect. An embedded Agent soon contacted the nearest Site; the subject, the artifact, and related evidence were extracted and contained.
 Currently, two hundred seventeen instances of SCP-013 cigarettes are contained at Bio-Site 66; twenty-five SCP-013 cigarettes are contained at Research Sector-09, pending future research into similar anomalous effects.
@@ -416,22 +416,22 @@ Subjects SCP-131-A and SCP-131-B were found in a cornfield outside ¦¦¦¦¦¦�
 
 <b>Object Class:</b> Safe<br>
 
-<b>Special Containment Procedures:</b> SCP-999 is allowed to freely roam the facility should it desire to, but otherwise must stay in its pen. Subject is not allowed out of its pen at night or off facility grounds at any time. Pen is to be kept clean and food replaced twice daily. All personnel are allowed inside SCP-999’s holding area, but only if they are not assigned to other tasks at the time, or if they are on break. Subject is to be played with when bored and spoken to in a calm, non-threatening tone. <br>
+<b>Special Containment Procedures:</b> SCP-999 is allowed to freely roam the facility should it desire to, but otherwise must stay in its pen. Subject is not allowed out of its pen at night or off facility grounds at any time. Pen is to be kept clean and food replaced twice daily. All personnel are allowed inside SCP-999's holding area, but only if they are not assigned to other tasks at the time, or if they are on break. Subject is to be played with when bored and spoken to in a calm, non-threatening tone. <br>
 
-<b>Description:</b> SCP-999 appears to be a large, amorphous, gelatinous mass of translucent orange slime, weighing about 54 kg (120 lbs) with a consistency similar to that of peanut butter. Subject’s size and shape constantly change, though most of the time its form is the size of a large beanbag chair. Composition of SCP-999 is oil-based, but consists of a substance unknown to modern science. Other than a thin, transparent membrane surrounding the orange mass, subject appears to have no organs to speak of.<br>
+<b>Description:</b> SCP-999 appears to be a large, amorphous, gelatinous mass of translucent orange slime, weighing about 54 kg (120 lbs) with a consistency similar to that of peanut butter. Subject's size and shape constantly change, though most of the time its form is the size of a large beanbag chair. Composition of SCP-999 is oil-based, but consists of a substance unknown to modern science. Other than a thin, transparent membrane surrounding the orange mass, subject appears to have no organs to speak of.<br>
 
-Subject’s temperament is best described as playful and dog-like: when approached, SCP-999 will react with overwhelming elation, slithering over to the nearest person and leaping upon them, “hugging” them with a pair of pseudopods while nuzzling the person’s face with a third pseudopod, all the while emitting high-pitched gurgling and cooing noises. The surface of SCP-999 emits a pleasing odor that differs with whomever it is interacting with. Recorded scents include chocolate, fresh laundry, bacon, roses, and Play-Doh™.
+Subject's temperament is best described as playful and dog-like: when approached, SCP-999 will react with overwhelming elation, slithering over to the nearest person and leaping upon them, "hugging" them with a pair of pseudopods while nuzzling the person's face with a third pseudopod, all the while emitting high-pitched gurgling and cooing noises. The surface of SCP-999 emits a pleasing odor that differs with whomever it is interacting with. Recorded scents include chocolate, fresh laundry, bacon, roses, and Play-Doh.
 
-Simply touching SCP-999’s surface causes an immediate euphoria, which intensifies the longer one is exposed to SCP-999, and lasts long after separation from the creature. Subject’s favorite activity is tickle-wrestling, often by completely enveloping a person from the neck down and tickling them until asked to stop (though it does not always comply with this request).
+Simply touching SCP-999's surface causes an immediate euphoria, which intensifies the longer one is exposed to SCP-999, and lasts long after separation from the creature. Subject's favorite activity is tickle-wrestling, often by completely enveloping a person from the neck down and tickling them until asked to stop (though it does not always comply with this request).
 
-While the creature will interact with anyone, it seems to have a special interest in those who are unhappy or hurt in any way. Persons suffering from crippling depression, after interacting with SCP-999, have returned completely cured with a very positive outlook on life. The possibility of marketing SCP-999’s slime as an antidepressant has been discussed.
+While the creature will interact with anyone, it seems to have a special interest in those who are unhappy or hurt in any way. Persons suffering from crippling depression, after interacting with SCP-999, have returned completely cured with a very positive outlook on life. The possibility of marketing SCP-999's slime as an antidepressant has been discussed.
 
-In addition to its playful behavior, SCP-999 seems to love all animals (especially humans), refusing to eat any meat and even risking its own life to save others, on one occasion leaping in front of a person to take a bullet fired at them (subject’s intellect is still up for debate: though its behavior is infantile, it seems to understand human speech and most modern technology, including guns). The creature’s diet consists entirely of candy and sweets, with M&M’s™ and Necco™ wafers being its favorites. Its eating methods are similar to those of an amoeba.
+In addition to its playful behavior, SCP-999 seems to love all animals (especially humans), refusing to eat any meat and even risking its own life to save others, on one occasion leaping in front of a person to take a bullet fired at them (subject's intellect is still up for debate: though its behavior is infantile, it seems to understand human speech and most modern technology, including guns). The creature's diet consists entirely of candy and sweets, with M&M's and Necco wafers being its favorites. Its eating methods are similar to those of an amoeba.
 <br>
-<b>Addendum SCP-999-A:</b> The following is a report from an experiment in which SCP-682 is exposed to SCP-999 in the hopes that it will curb the creature’s omnicidal rage.
+<b>Addendum SCP-999-A:</b> The following is a report from an experiment in which SCP-682 is exposed to SCP-999 in the hopes that it will curb the creature's omnicidal rage.
 <br><br>
 <i>
-SCP-999 is released into SCP-682’s containment area. SCP-999 immediately slithers towards SCP-682.
+SCP-999 is released into SCP-682's containment area. SCP-999 immediately slithers towards SCP-682.
 <br>
 999: (elated gurgles)
 <br>
@@ -439,25 +439,25 @@ SCP-999 is released into SCP-682’s containment area. SCP-999 immediately slith
 <br>
 SCP-999 moves in front of SCP-682, jumping up and down in a dog-like manner while calling out in a high-pitched squealing noise.
 <br>
-682: (groans) Disgusting…
+682: (groans) Disgusting...
 <br>
 SCP-682 immediately steps on SCP-999, completely flattening SCP-999. Observers were about to abort the experiment when SCP-682 started talking again.
 <br>
-682: (grunts) Hmmm? (unintelligible) what is this… (low noise, similar to light chuckle) I feel all… tingly inside…
+682: (grunts) Hmmm? (unintelligible) what is this... (low noise, similar to light chuckle) I feel all... tingly inside...
 <br>
-SCP-999 can be seen crawling up from between SCP-682’s toes, up along its side and around its neck, where it clings on and begins gently nuzzling with its pseudopod. A wide grin slowly spreads across SCP-682’s face.
+SCP-999 can be seen crawling up from between SCP-682's toes, up along its side and around its neck, where it clings on and begins gently nuzzling with its pseudopod. A wide grin slowly spreads across SCP-682's face.
 <br>
-682: (deep chuckling) I feel… so… happy. Happy… (laughs) happy… happy…
+682: (deep chuckling) I feel... so... happy. Happy... (laughs) happy... happy...
 <br>
-SCP-682 repeats the word “happy” for several minutes, laughing occasionally before escalating into nonstop laughter. As laughter continues, SCP-682 rolls around on its back, slamming its tail upon the floor with dangerous force.
+SCP-682 repeats the word "happy" for several minutes, laughing occasionally before escalating into nonstop laughter. As laughter continues, SCP-682 rolls around on its back, slamming its tail upon the floor with dangerous force.
 <br>
 682: (bellowing laughter) Stop! No tickling! (continues laughing)
 <br>
-SCP-682 and SCP-999 continue the “tickle fight” until SCP-682 finally wears down and appears to fall asleep with what would appear to be a smile on its face. After fifteen minutes with no activity, two D-Class personnel enter the room to retrieve SCP-999. When SCP-999 is removed, SCP-682 immediately wakes up and unleashes an unidentifiable wave of energy from its body, all the while laughing maniacally.
+SCP-682 and SCP-999 continue the "tickle fight" until SCP-682 finally wears down and appears to fall asleep with what would appear to be a smile on its face. After fifteen minutes with no activity, two D-Class personnel enter the room to retrieve SCP-999. When SCP-999 is removed, SCP-682 immediately wakes up and unleashes an unidentifiable wave of energy from its body, all the while laughing maniacally.
 <br>
-All persons within the wave’s range collapse into crippling fits of laughter, allowing SCP-682 to escape and slaughter all in its path. Meanwhile, SCP-999 quickly rescues as many persons as it can, taking them to a safe place to recover from SCP-682’s "laughter wave" while agents suppress and recontain SCP-682.
+All persons within the wave's range collapse into crippling fits of laughter, allowing SCP-682 to escape and slaughter all in its path. Meanwhile, SCP-999 quickly rescues as many persons as it can, taking them to a safe place to recover from SCP-682's "laughter wave" while agents suppress and recontain SCP-682.
 <br>
-Despite the tragedy that SCP-682 had brought upon the facility, SCP-999 has not shown any fear towards the creature and in fact has made gestures suggesting it wants to “play” with SCP-682 again. SCP-682, however, has stated, “That feculent little snot wad can -DATA EXPUNGED- and die."</i>
+Despite the tragedy that SCP-682 had brought upon the facility, SCP-999 has not shown any fear towards the creature and in fact has made gestures suggesting it wants to "play" with SCP-682 again. SCP-682, however, has stated, "That feculent little snot wad can -DATA EXPUNGED- and die."</i>
 
 "}
 
@@ -585,7 +585,7 @@ The painting is not signed, but several names are written on the back.
 
 <b>Object Class:</b> Euclid<br>
 
-<b>Special Containment Procedures:</b> SCP-513 is to be suspended in a one cubic meter block of gelatin and contained within a soundproofed, climate-controlled cell. The gelatin must be inspected daily for any degradation or loss of integrity. An emergency inspection will be carried out immediately following any earthquake, explosion, or sonic event grade 2 or higher. Personnel performing the inspection are to wear earplugs and active noise-canceling earmuffs at all times while inside SCP-513’s cell.
+<b>Special Containment Procedures:</b> SCP-513 is to be suspended in a one cubic meter block of gelatin and contained within a soundproofed, climate-controlled cell. The gelatin must be inspected daily for any degradation or loss of integrity. An emergency inspection will be carried out immediately following any earthquake, explosion, or sonic event grade 2 or higher. Personnel performing the inspection are to wear earplugs and active noise-canceling earmuffs at all times while inside SCP-513's cell.
 
 If the gelatin cube shows any signs of degradation (such as rips, tears, splits, liquefaction, or mold), SCP-513 is to be immediately removed and suspended within a replacement cube by a team of surgically deafened Class-D personnel. No other personnel are to enter the cell during this procedure.
 
@@ -597,11 +597,11 @@ If possible, SCP-513-1 is to be apprehended on sight.<br>
 
 <b>Description:</b> Physically, SCP-513 is an unremarkable, rusty cowbell. No marks or engravings are visible on its surface due to the large amount of corrosion. Attempts to remove the rust chemically or mechanically have had no success.
 
-SCP-513 was recovered by Agent ¦¦¦¦¦¦ while carrying out Containment Reestablishment Procedure Mu at Site-¦¦. SCP-513’s clapper was firmly held in place by several strips of duct tape. A single scrap of paper was found along with SCP-513 (see Addendum).
+SCP-513 was recovered by Agent ¦¦¦¦¦¦ while carrying out Containment Reestablishment Procedure Mu at Site-¦¦. SCP-513's clapper was firmly held in place by several strips of duct tape. A single scrap of paper was found along with SCP-513 (see Addendum).
 
 Any noise produced by SCP-513 immediately induces strong anxiety in all sentient beings who hear it, regardless of their previous mental status. Exposure victims report feelings of being watched by an unseen entity and present elevated heart rates and blood pressure. Roughly one hour after exposure, exposure victims begin to catch glimpses of SCP-513-1 when opening doors, walking past mirrors, turning their heads, or performing any other actions that result in a sudden change in visual perception. Upon being sighted, SCP-513-1 reportedly turns away and runs out of view before disappearing without a trace. Questioning of bystanders indicates that SCP-513-1 is invisible to those who have not been exposed to SCP-513.
 
-Sightings of SCP-513-1 reoccur every 14 to 237 minutes. This “stalking” behavior inevitably causes extreme sleep deprivation, as victims are frequently disturbed by SCP-513-1’s presence in their quarters. Victims able to fall asleep before SCP-513-1's appearance report being physically assaulted by it. Upon the victim's awakening, SCP-513-1 flees as usual (see Experiment Log 513). This sleep deprivation, along with the mental stress caused by SCP-513-1's behavior, invariably induces paranoia, aggression, hypervigilance, and depression. All test cases but one have ended with the test subject’s suicide.
+Sightings of SCP-513-1 reoccur every 14 to 237 minutes. This "stalking" behavior inevitably causes extreme sleep deprivation, as victims are frequently disturbed by SCP-513-1's presence in their quarters. Victims able to fall asleep before SCP-513-1's appearance report being physically assaulted by it. Upon the victim's awakening, SCP-513-1 flees as usual (see Experiment Log 513). This sleep deprivation, along with the mental stress caused by SCP-513-1's behavior, invariably induces paranoia, aggression, hypervigilance, and depression. All test cases but one have ended with the test subject's suicide.
 
 Descriptions of SCP-513-1's appearance are largely unreliable. Test subjects are unable to provide complete accounts of sightings due to their exhaustion, degraded mental health, and disruptive hypervigilance. However, all interrogations thus far indicate that SCP-513-1 is a tall, emaciated humanoid with abnormally large hands.</tt>
 	"}
@@ -637,7 +637,7 @@ The reddish brown substance on the floor is a combination of feces and blood. Or
 <br>
 <b>Object Class:</b> Euclid
 <br>
-<b>Special Containment Procedures:</b> SCP-513 is to be suspended in a one cubic meter block of gelatin and contained within a soundproofed, climate-controlled cell. The gelatin must be inspected daily for any degradation or loss of integrity. An emergency inspection will be carried out immediately following any earthquake, explosion, or sonic event grade 2 or higher. Personnel performing the inspection are to wear earplugs and active noise-canceling earmuffs at all times while inside SCP-513’s cell.
+<b>Special Containment Procedures:</b> SCP-513 is to be suspended in a one cubic meter block of gelatin and contained within a soundproofed, climate-controlled cell. The gelatin must be inspected daily for any degradation or loss of integrity. An emergency inspection will be carried out immediately following any earthquake, explosion, or sonic event grade 2 or higher. Personnel performing the inspection are to wear earplugs and active noise-canceling earmuffs at all times while inside SCP-513's cell.
 <br>
 If the gelatin cube shows any signs of degradation (such as rips, tears, splits, liquefaction, or mold), SCP-513 is to be immediately removed and suspended within a replacement cube by a team of surgically deafened Class-D personnel. No other personnel are to enter the cell during this procedure.
 
@@ -649,11 +649,11 @@ If possible, SCP-513-1 is to be apprehended on sight.
 <br>
 <b>Description:</b> Physically, SCP-513 is an unremarkable, rusty cowbell. No marks or engravings are visible on its surface due to the large amount of corrosion. Attempts to remove the rust chemically or mechanically have had no success.
 
-SCP-513 was recovered by Agent ¦¦¦¦¦¦ while carrying out Containment Reestablishment Procedure Mu at Site-¦¦. SCP-513’s clapper was firmly held in place by several strips of duct tape. A single scrap of paper was found along with SCP-513 (see Addendum).
+SCP-513 was recovered by Agent ¦¦¦¦¦¦ while carrying out Containment Reestablishment Procedure Mu at Site-¦¦. SCP-513's clapper was firmly held in place by several strips of duct tape. A single scrap of paper was found along with SCP-513 (see Addendum).
 
 Any noise produced by SCP-513 immediately induces strong anxiety in all sentient beings who hear it, regardless of their previous mental status. Exposure victims report feelings of being watched by an unseen entity and present elevated heart rates and blood pressure. Roughly one hour after exposure, exposure victims begin to catch glimpses of SCP-513-1 when opening doors, walking past mirrors, turning their heads, or performing any other actions that result in a sudden change in visual perception. Upon being sighted, SCP-513-1 reportedly turns away and runs out of view before disappearing without a trace. Questioning of bystanders indicates that SCP-513-1 is invisible to those who have not been exposed to SCP-513.
 
-Sightings of SCP-513-1 reoccur every 14 to 237 minutes. This “stalking” behavior inevitably causes extreme sleep deprivation, as victims are frequently disturbed by SCP-513-1’s presence in their quarters. Victims able to fall asleep before SCP-513-1's appearance report being physically assaulted by it. Upon the victim's awakening, SCP-513-1 flees as usual (see Experiment Log 513). This sleep deprivation, along with the mental stress caused by SCP-513-1's behavior, invariably induces paranoia, aggression, hypervigilance, and depression. All test cases but one have ended with the test subject’s suicide.
+Sightings of SCP-513-1 reoccur every 14 to 237 minutes. This "stalking" behavior inevitably causes extreme sleep deprivation, as victims are frequently disturbed by SCP-513-1's presence in their quarters. Victims able to fall asleep before SCP-513-1's appearance report being physically assaulted by it. Upon the victim's awakening, SCP-513-1 flees as usual (see Experiment Log 513). This sleep deprivation, along with the mental stress caused by SCP-513-1's behavior, invariably induces paranoia, aggression, hypervigilance, and depression. All test cases but one have ended with the test subject's suicide.
 
 Descriptions of SCP-513-1's appearance are largely unreliable. Test subjects are unable to provide complete accounts of sightings due to their exhaustion, degraded mental health, and disruptive hypervigilance. However, all interrogations thus far indicate that SCP-513-1 is a tall, emaciated humanoid with abnormally large hands.
 "}
@@ -756,7 +756,7 @@ Retrieval Incident #096-1-A</b>
 
 <b>Dr. ¦¦¦:</b> Could you describe it a little more, please?
 
-<b>Capt. ¦¦¦¦¦¦¦¦¦:</b> *Pauses* Yeah, yeah. It started screaming at us, and crying. Not animal roaring though, sounded exactly like a person. Really fucking creepy. *Pauses again* We started firing when it picked up Corporal ¦¦ and ripped off his leg. God, he was screaming for our help… fuckin 'A… anyway, we were blowing chunks out of the target, round after round. Didn't do jackshit. I almost lost it when it started -DATA EXPUNGED- him.
+<b>Capt. ¦¦¦¦¦¦¦¦¦:</b> *Pauses* Yeah, yeah. It started screaming at us, and crying. Not animal roaring though, sounded exactly like a person. Really fucking creepy. *Pauses again* We started firing when it picked up Corporal ¦¦ and ripped off his leg. God, he was screaming for our help... fuckin 'A... anyway, we were blowing chunks out of the target, round after round. Didn't do jackshit. I almost lost it when it started -DATA EXPUNGED- him.
 
 <b>Dr. ¦¦¦:</b> That's when you ordered the use of an *Papers are heard moving* AT-4 HEDT launcher?
 
@@ -780,7 +780,7 @@ Retrieval Incident #096-1-A</b>
 
 <b>Dr. ¦¦¦:</b> We have obtained an artist's depiction of SCP-096's face. Would you like to view it?
 
-<b>Capt. ¦¦¦¦¦¦¦¦¦:</b> *Pauses* You know, after hearing that thing's screams, and the screams of my men, I don't think I want to put a face to what I heard. No. Just… no.
+<b>Capt. ¦¦¦¦¦¦¦¦¦:</b> *Pauses* You know, after hearing that thing's screams, and the screams of my men, I don't think I want to put a face to what I heard. No. Just... no.
 
 <b>Dr. ¦¦¦:</b> All right, I believe we are done here. Thank you, Captain.
 
@@ -809,8 +809,8 @@ Addendum: SCP-151 was found in an antique shop in ¦¦¦¦¦¦¦¦¦, ¦¦¦, af
 	<h3>FOUNDATION RESEARCH DIVISION</h3>
 	</center>
 
-You’ve seen it. Now he can hear you.<br>
-You’ve touched it. Now he can see you.<br>
+You've seen it. Now he can hear you.<br>
+You've touched it. Now he can see you.<br>
 <u>Never</u> ring it. If you hear it, he can touch you.
 	"}
 
@@ -836,21 +836,21 @@ No physical interaction with SCP-106 is allowed at any time. All physical intera
 
 SCP-106 is to be contained in a sealed container, comprised of lead-lined steel. The container will be sealed within forty layers of identical material, each layer separated by no less than 36cm of empty space. Support struts between layers are to be randomly spaced. Container is to remain suspended no less than 60cm from any surface by ELO-IID electromagnetic supports.
 
-Secondary containment area is to be comprised of sixteen spherical “cells”, each filled with various fluids and a random assembly of surfaces and supports. Secondary containment is to be fitted with light systems, capable of flooding the entire assembly with no less than 80,000 lumens of light instantly with no direct human involvement. Both containment areas are to remain under 24 hour surveillance.
+Secondary containment area is to be comprised of sixteen spherical "cells", each filled with various fluids and a random assembly of surfaces and supports. Secondary containment is to be fitted with light systems, capable of flooding the entire assembly with no less than 80,000 lumens of light instantly with no direct human involvement. Both containment areas are to remain under 24 hour surveillance.
 
 Any corrosion observed on any containment cell surfaces, staff members, or other site locations within two hundred meters of SCP-106 are to be reported to Site Security immediately. Any objects or personnel lost to SCP-106 are to be deemed missing/KIA. No recovery attempts are to be made under any circumstances.
 <br>
-Note: Continued research and observation have shown that, when faced with highly complex/random assemblies of structures, SCP-106 can be “confused”, showing a marked delay on entry and exit from said structure. SCP-106 has also shown an aversion to direct, sudden light. This is not manifested in any form of physical damage, but a rapid exit in to the “pocket dimension” generated on solid surfaces.
+Note: Continued research and observation have shown that, when faced with highly complex/random assemblies of structures, SCP-106 can be "confused", showing a marked delay on entry and exit from said structure. SCP-106 has also shown an aversion to direct, sudden light. This is not manifested in any form of physical damage, but a rapid exit in to the "pocket dimension" generated on solid surfaces.
 
-These observations, along with those of lead-aversion and liquid confusion, have reduced the general escape incidents by 43%. The “primary” cells have also been effective in recovery incidents requiring Recall Protocol ¦¦ -¦¦¦ -¦. Observation is ongoing.
+These observations, along with those of lead-aversion and liquid confusion, have reduced the general escape incidents by 43%. The "primary" cells have also been effective in recovery incidents requiring Recall Protocol ¦¦ -¦¦¦ -¦. Observation is ongoing.
 <br>
-Description: SCP-106 appears to be an elderly humanoid, with a general appearance of advanced decomposition. This appearance may vary, but the “rotting” quality is observed in all forms. SCP-106 is not exceptionally agile, and will remain motionless for days at a time, waiting for prey. SCP-106 is also capable of scaling any vertical surface and can remain suspended upside down indefinitely. When attacking, SCP-106 will attempt to incapacitate prey by damaging major organs, muscle groups, or tendons, then pull disabled prey into its pocket dimension. SCP-106 appears to prefer human prey items in the 10-25 years of age bracket.
+Description: SCP-106 appears to be an elderly humanoid, with a general appearance of advanced decomposition. This appearance may vary, but the "rotting" quality is observed in all forms. SCP-106 is not exceptionally agile, and will remain motionless for days at a time, waiting for prey. SCP-106 is also capable of scaling any vertical surface and can remain suspended upside down indefinitely. When attacking, SCP-106 will attempt to incapacitate prey by damaging major organs, muscle groups, or tendons, then pull disabled prey into its pocket dimension. SCP-106 appears to prefer human prey items in the 10-25 years of age bracket.
 
-SCP-106 causes a “corrosion” effect in all solid matter it touches, engaging a physical breakdown in materials several seconds after contact. This is observed as rusting, rotting, and cracking of materials, and the creation of a black, mucus-like substance similar to the material coating SCP-106. This effect is particularly detrimental to living tissues, and is assumed to be a “pre-digestion” action. Corrosion continues for six hours after contact, after which the effect appears to “burn out”.
+SCP-106 causes a "corrosion" effect in all solid matter it touches, engaging a physical breakdown in materials several seconds after contact. This is observed as rusting, rotting, and cracking of materials, and the creation of a black, mucus-like substance similar to the material coating SCP-106. This effect is particularly detrimental to living tissues, and is assumed to be a "pre-digestion" action. Corrosion continues for six hours after contact, after which the effect appears to "burn out".
 
-SCP-106 is capable of passing through solid matter, leaving behind a large patch of its corrosive mucus. SCP-106 is able to “vanish” inside solid matter, entering what is assumed to be a form of “pocket dimension”. SCP-106 is then able to exit this dimension from any point connected to the initial entry point (examples: “entering” the inner wall of a room, and “exiting” the outer wall. Entering a wall, and exiting from the ceiling). It is unknown if this is the point of origin for SCP-106, or a simple “lair” created by SCP-106.
+SCP-106 is capable of passing through solid matter, leaving behind a large patch of its corrosive mucus. SCP-106 is able to "vanish" inside solid matter, entering what is assumed to be a form of "pocket dimension". SCP-106 is then able to exit this dimension from any point connected to the initial entry point (examples: "entering" the inner wall of a room, and "exiting" the outer wall. Entering a wall, and exiting from the ceiling). It is unknown if this is the point of origin for SCP-106, or a simple "lair" created by SCP-106.
 
-Limited observation of this “pocket dimension” has shown it to be comprised mostly of halls and rooms, with -DATA EXPUNGED- entry. This activity can continue for days, with some subjected individuals being released for the express purpose of hunting, recapture, -DATA EXPUNGED-.
+Limited observation of this "pocket dimension" has shown it to be comprised mostly of halls and rooms, with -DATA EXPUNGED- entry. This activity can continue for days, with some subjected individuals being released for the express purpose of hunting, recapture, -DATA EXPUNGED-.
 "}
 
 /obj/item/paper/scp/keter/scp939
@@ -884,7 +884,7 @@ SCP-939 do not possess many vital organ systems; central and peripheral nervous 
 
 SCP-939's primary method of luring prey is the imitation of human speech in the voices of prior victims, though imitation of other species and active nocturnal hunts have been documented. SCP-939 vocalizations often imply significant distress; whether SCP-939 understand their vocalizations or are repeating previously heard phrases is the subject of ongoing study. How SCP-939 acquire voices is not currently understood; specimens have been documented imitating victims despite never hearing the victim speak. Analysis of SCP-939 vocalizations cannot distinguish between SCP-939 and samples of known victims' voices. The use of biometric voice-recognition security or identification systems at any installation housing SCP-939 is strongly discouraged for this reason. Prey is usually killed with a single bite to the cranium or neck; bite forces have been measured in excess of 35 MPa.
 
-SCP-939 exhale minute traces of an aerosolized Class C amnestic, designated AMN-C227. AMN-C227 causes temporary anterograde amnesia, inhibiting memory formation for the duration of exposure, plus an average of thirty (30) minutes. It is colorless, odorless, and tasteless with an estimated ECt50 for inhalation of 0.0015mg•min/m3. In well-ventilated or open air environments, risk of exposure to ECt50 is greatly reduced but not negligible. AMN-C227 is typically undetectable in the bloodstream sixty (60) minutes following cessation of exposure. Reported sensations of disorientation and mild hallucinations immediately following removal from environments saturated with the agent are similar to recreational use of numerous psychoactive substances and easily mistaken as such.
+SCP-939 exhale minute traces of an aerosolized Class C amnestic, designated AMN-C227. AMN-C227 causes temporary anterograde amnesia, inhibiting memory formation for the duration of exposure, plus an average of thirty (30) minutes. It is colorless, odorless, and tasteless with an estimated ECt50 for inhalation of 0.0015mg min/m3. In well-ventilated or open air environments, risk of exposure to ECt50 is greatly reduced but not negligible. AMN-C227 is typically undetectable in the bloodstream sixty (60) minutes following cessation of exposure. Reported sensations of disorientation and mild hallucinations immediately following removal from environments saturated with the agent are similar to recreational use of numerous psychoactive substances and easily mistaken as such.
 "}
 
 

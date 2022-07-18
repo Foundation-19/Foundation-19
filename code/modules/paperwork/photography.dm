@@ -77,7 +77,7 @@ var/global/photo_count = 0
 		if(anomalous)
 			to_chat(user, "<span class='danger'>You gain a dull headache.</span>")
 			switch(anomalytype)
-				if("096")
+				if(SCP_096)
 					var/mob/living/simple_animal/hostile/scp096/A = anomalymob //I hate this but I don't know another way to do it, so, we go the shitcode way!
 					A.specialexamine(user) //YOU ARE ALREADY DEAD.
 					return

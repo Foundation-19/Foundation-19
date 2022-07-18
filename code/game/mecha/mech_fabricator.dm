@@ -3,8 +3,8 @@
 	icon_state = "fab-idle"
 	name = "Exosuit Fabricator"
 	desc = "A machine used for construction of robotcs and mechas."
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	use_power = 1
 	idle_power_usage = 20
 	active_power_usage = 5000
@@ -197,7 +197,6 @@
 /obj/machinery/mecha_part_fabricator/emag_act(var/remaining_charges, var/mob/user)
 	switch(emagged)
 		if(0)
-			emagged = 0.5
 			visible_message("\icon[src] <b>[src]</b> beeps: \"DB error \[Code 0x00F1\]\"")
 			sleep(10)
 			visible_message("\icon[src] <b>[src]</b> beeps: \"Attempting auto-repair\"")
@@ -206,10 +205,8 @@
 			sleep(30)
 			visible_message("\icon[src] <b>[src]</b> beeps: \"User DB truncated. Please contact your [GLOB.using_map.company_name] system operator for future assistance.\"")
 			req_access = null
-			emagged = 1
+			emagged = TRUE
 			return 1
-		if(0.5)
-			visible_message("\icon[src] <b>[src]</b> beeps: \"DB not responding \[Code 0x0003\]...\"")
 		if(1)
 			visible_message("\icon[src] <b>[src]</b> beeps: \"No records in User DB\"")
 

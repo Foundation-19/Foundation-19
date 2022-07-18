@@ -99,7 +99,7 @@ Class Procs:
 	w_class = ITEM_SIZE_NO_CONTAINER
 
 	var/stat = 0
-	var/emagged = 0
+	var/emagged = FALSE
 	var/malf_upgraded = 0
 	var/use_power = 1
 		//0 = dont run the auto
@@ -131,7 +131,7 @@ Class Procs:
 				qdel(A)
 			else // Otherwise we assume they were dropped to the ground during deconstruction, and were not removed from the component_parts list by deconstruction code.
 				component_parts -= A
-	SSmachines.all_machinery -= src 
+	SSmachines.all_machinery -= src
 	. = ..()
 
 /obj/machinery/Process()//If you dont use process or power why are you here
@@ -146,7 +146,7 @@ Class Procs:
 		pulse2.icon = 'icons/effects/effects.dmi'
 		pulse2.icon_state = "empdisable"
 		pulse2.SetName("emp sparks")
-		pulse2.anchored = 1
+		pulse2.anchored = TRUE
 		pulse2.set_dir(pick(GLOB.cardinal))
 
 		spawn(10)

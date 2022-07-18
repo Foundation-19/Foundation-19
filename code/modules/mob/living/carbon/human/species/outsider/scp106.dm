@@ -48,19 +48,6 @@
 	radiation_mod =  0.0                    // No radiation damage
 	flash_mod =      0.0                    // Unflashable
 
-// #define 106AI
-/datum/species/scp106/handle_npc(var/mob/living/carbon/human/scp106/H)
-	// sanity check, apparently its needed
-	if (!H || H.client)
-		return
-	// walk around randomly if we don't have a target
-	if (!H.pursueTarget())
-		var/turf/T = step_rand(H)
-		H.Move(get_dir(H, T))
-
-	if (prob(25))
-		var/turf/T = step_rand(H)
-		H.Move(get_dir(H, T))
 
 /obj/item/organ/external/chest/unbreakable/scp106
 	dislocated = -1

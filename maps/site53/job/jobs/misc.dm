@@ -6,19 +6,19 @@
 	total_positions = 999
 	spawn_positions = 999
 	//duties = "<big><b>As a Class D Foundation Employee, you are most likely a former convict who faced a life sentence or the death penalty. You are extremely grateful to have been offered the chance to participate in the Foundation's rapid rehabilitation program, at a facility which aims to release you into the free world in just 30 days.<br> Find a way to show you're ready to re-integrate into society: work in mining, botany, the kitchens, or volunteer yourself as a participant in scientific studies.<br> <span style = 'color:red'>REMEMBER!</span> Rioting as Class D has been prohibited without staff approval, under rule 15. <br>IMPORTANT! Do not try to break out of your cell at game start. You will break your only way out!</b></big>"
-	access = list()			//See /datum/job/classd/get_access()
-	minimal_access = list()	//See /datum/job/classd/get_access()
+	access = list()			
+	minimal_access = list()	
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/classd
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classd)
 	hud_icon = "huddclass"
 	var/static/list/used_numbers = list()
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_TRAINED,
-	                    SKILL_WEAPONS     = SKILL_TRAINED)
+	max_skill = list(SKILL_COMBAT = SKILL_TRAINED,
+					SKILL_WEAPONS = SKILL_TRAINED)
 
 /datum/job/classd/equip(mob/living/carbon/human/H)
-	..()
+	. = ..()
 	var/r = rand(100,9000)
 	while (used_numbers.Find(r))
 		r = rand(100,9000)
@@ -28,8 +28,6 @@
 	if(istype(H.wear_id, /obj/item/card/id))
 		var/obj/item/card/id/ID = H.wear_id
 		ID.registered_name = "D-[used_numbers[used_numbers.len]]"
-
-
 
 //Office Worker
 
@@ -41,10 +39,11 @@
 	spawn_positions = 100
 	minimal_player_age = 10
 	//supervisors = "the Archivist and administrative staff"
-	//duties = "<big><b>You are a low level pen pusher of the SCP Foundation. Your direct supervisor is the Archivist but you may also answer to the O5 and Ethics Committee Representative. Write reports, assist researchers and generally be a pain in the ass to everyone around you."
+	//duties = "<big><b>You are a low level pen pusher of the SCP Foundation. Your direct supervisor is the Archivist but you may also answer to the O5 and Ethics Committee Representative. Write reports, assist researchers and generally be a pain in the ass to everyone around you.</big></b>"
 	economic_power = 2
 	minimal_player_age = 5
 	ideal_character_age = 30
+	alt_titles = list("Administrative Assistant", "Accountant", "Auditor", "Secretary")
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/officeworker
 	allowed_branches = list(
 		/datum/mil_branch/civilian
@@ -52,7 +51,7 @@
 	allowed_ranks = list(
 		/datum/mil_rank/civ/classc
 	)
-	hud_icon = "hudassistant"
+	hud_icon = "hudcrewman"
 
 	access = list(
 		access_civ_comms,
@@ -61,11 +60,9 @@
 		access_sciencelvl2,
 		access_medicallvl1,
 		access_medicallvl2,
-
 	)
+
 	minimal_access = list()
-
-
 
 //LOGISTICS
 
@@ -97,18 +94,18 @@
 	minimal_access = list()
 
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_EXPERIENCED,
-	                    SKILL_FINANCE     = SKILL_BASIC,
-	                    SKILL_HAULING     = SKILL_BASIC,
-	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_PILOT       = SKILL_BASIC)
+	min_skill = list(SKILL_BUREAUCRACY = SKILL_EXPERIENCED,
+					SKILL_FINANCE     = SKILL_BASIC,
+					SKILL_HAULING     = SKILL_BASIC,
+					SKILL_EVA         = SKILL_BASIC,
+					SKILL_PILOT       = SKILL_BASIC)
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MASTER)
 	skill_points = 18
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
-							 /datum/computer_file/program/deck_management,
-							 /datum/computer_file/program/reports)
+							/datum/computer_file/program/deck_management,
+							/datum/computer_file/program/reports)
 
 
 /datum/job/cargo_tech
@@ -127,29 +124,29 @@
 	hud_icon = "huddecktechnician"
 
 	access = list(
-	access_log_comms,
-	access_maint_tunnels,
-	access_emergency_storage,
-	access_cargo,
-	access_cargo_bot,
-	access_adminlvl1,
-	access_mailsorting
+		access_log_comms,
+		access_maint_tunnels,
+		access_emergency_storage,
+		access_cargo,
+		access_cargo_bot,
+		access_adminlvl1,
+		access_mailsorting
 	)
 	minimal_access = list()
 
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_EXPERIENCED,
-	                    SKILL_FINANCE     = SKILL_BASIC,
-	                    SKILL_HAULING     = SKILL_BASIC,
-	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_PILOT       = SKILL_BASIC)
+	min_skill = list(SKILL_BUREAUCRACY = SKILL_EXPERIENCED,
+					SKILL_FINANCE      = SKILL_BASIC,
+					SKILL_HAULING      = SKILL_BASIC,
+					SKILL_EVA          = SKILL_BASIC,
+					SKILL_PILOT        = SKILL_BASIC)
 
-	max_skill = list(   SKILL_PILOT       = SKILL_MASTER)
+	max_skill = list(SKILL_PILOT       = SKILL_MASTER)
 	skill_points = 18
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
-							 /datum/computer_file/program/deck_management,
-							 /datum/computer_file/program/reports)
+							/datum/computer_file/program/deck_management,
+							/datum/computer_file/program/reports)
 
 
 // MISC JOBS
@@ -172,11 +169,7 @@
 	)
 	hud_icon = "hudsanitationtechnician"
 
-	access = list(
-		access_civ_comms,
-		access_sciencelvl1,
-		access_dclassjanitorial
-	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
+	access = list(access_civ_comms, access_sciencelvl1, access_dclassjanitorial) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 
 	minimal_access = list()
 
@@ -193,24 +186,19 @@
 	ideal_character_age = 24
 	alt_titles = list("Cook")
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/chef
-	allowed_branches = list(
-		/datum/mil_branch/civilian
-	)
+	allowed_branches = list(/datum/mil_branch/civilian)
 	hud_icon = "hudcook"
-	allowed_ranks = list(
-	/datum/mil_rank/civ/classc
-	)
+	allowed_ranks = list(/datum/mil_rank/civ/classc)
 
-	access = list(
-		access_civ_comms,
+	access = list(access_civ_comms, 
 		access_dclasskitchen,
 		access_dclassbotany
 	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 	minimal_access = list()
 
-	min_skill = list(   SKILL_COOKING   = SKILL_EXPERIENCED,
-	                    SKILL_BOTANY    = SKILL_BASIC,
-	                    SKILL_CHEMISTRY = SKILL_BASIC)
+	min_skill = list(SKILL_COOKING   = SKILL_EXPERIENCED,
+					SKILL_BOTANY    = SKILL_BASIC,
+					SKILL_CHEMISTRY = SKILL_BASIC)
 
 
 /datum/job/bartender
@@ -224,12 +212,8 @@
 	ideal_character_age = 24
 	alt_titles = list("Waiter")
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/bartender
-	allowed_branches = list(
-		/datum/mil_branch/civilian
-	)
-	allowed_ranks = list(
-	/datum/mil_rank/civ/classc
-	)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudbartender"
 
 	access = list(
@@ -239,9 +223,9 @@
 	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 	minimal_access = list()
 
-	min_skill = list(   SKILL_COOKING   = SKILL_EXPERIENCED,
-	                    SKILL_BOTANY    = SKILL_BASIC,
-	                    SKILL_CHEMISTRY = SKILL_BASIC)
+	min_skill = list(SKILL_COOKING  = SKILL_EXPERIENCED,
+					SKILL_BOTANY    = SKILL_BASIC,
+					SKILL_CHEMISTRY = SKILL_BASIC)
 
 
 /datum/job/archivist
@@ -257,12 +241,8 @@
 	minimal_player_age = 5
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/archivist
-	allowed_branches = list(
-		/datum/mil_branch/civilian
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/civ/classa
-	)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/classa)
 	hud_icon = "hudarchivist"
 
 	access = list(

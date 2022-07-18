@@ -44,7 +44,6 @@
 	the poverty line, often holding feelings of resentment against the other people of Luna."
 	capital = "Selene"
 	economic_power = 1.3
-	secondary_langs = list(LANGUAGE_HUMAN_SELENIAN)
 
 /decl/cultural_info/location/human/venus
 	name = HOME_SYSTEM_VENUS

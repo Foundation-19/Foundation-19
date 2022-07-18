@@ -93,7 +93,7 @@
 							I.override = FALSE
 /*						else if (L.footstep >= 1)
 							L.in_vision_cones[client] = TRUE
-*/
+
 			// items are invisible too
 			for(var/item in cone(src, OPPOSITE_DIR(dir), oview(get_turf(src)), /obj/item)) // http://www.byond.com/docs/ref/info.html#/proc/view
 				I = image("split", item)
@@ -101,6 +101,7 @@
 				client.images += I
 				client.hidden_images += I
 				hidden_atoms += item
+*/
 
 /mob/living/carbon/human/proc/reset_vision_cone()
 	var/delay = 10

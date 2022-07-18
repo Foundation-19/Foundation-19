@@ -480,35 +480,11 @@
 		else
 			return "<span class='notice'>[copytext_preserve_html(msg, 1, 37)]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a></span>"
 
-/client/verb/changes()
-	set name = "Changelog"
-	set category = "OOC"
-	getFiles(
-		'html/88x31.png',
-		'html/auction-hammer-gavel.png',
-		'html/bug-minus.png',
-		'html/burn-exclamation.png',
-		'html/chevron.png',
-		'html/chevron-expand.png',
-		'html/cross-circle.png',
-		'html/hard-hat-exclamation.png',
-		'html/image-minus.png',
-		'html/image-plus.png',
-		'html/map-pencil.png',
-		'html/music-minus.png',
-		'html/music-plus.png',
-		'html/tick-circle.png',
-		'html/scales.png',
-		'html/spell-check.png',
-		'html/wrench-screwdriver.png',
-		'html/changelog.css',
-		'html/changelog.html'
-		)
-	show_browser(src, 'html/changelog.html', "window=changes;size=675x650")
-	if (SSmisc.changelog_hash && prefs.lastchangelog != SSmisc.changelog_hash)
-		prefs.lastchangelog = SSmisc.changelog_hash
-		SScharacter_setup.queue_preferences_save(prefs)
-		winset(src, "rpane.changelog", "background-color=none;font-style=;")
+/// Adds this list to the output to the stat browser
+/mob/proc/get_status_tab_items()
+	. = list()
+	if(client.is_stealthed())
+		. += "Stealth: Engaged [client.holder.stealthy_ == 2 ? "(Auto)" : "(Manual)"]"
 
 /mob/verb/cancel_camera()
 	set name = "Cancel Camera View"
@@ -713,56 +689,6 @@
 	for(var/mob/M in viewers())
 		M.see(message)
 
-/mob/Stat()
-	..()
-	. = (is_client_active(10 MINUTES))
-	if(!.)
-		return
-
-	if(statpanel("Status"))
-		if(GAME_STATE >= RUNLEVEL_LOBBY)
-			stat("Local Time", stationtime2text())
-			stat("Local Date", stationdate2text())
-			stat("Round Duration", roundduration2text())
-		if(client.holder || isghost(client.mob))
-			stat("Location:", "([x], [y], [z]) [loc]")
-
-	if(client.holder && client.holder.rights != R_MENTOR) //Mentors don't deserve the MC panel
-		if(statpanel("MC"))
-			stat("CPU:","[world.cpu]")
-			stat("Instances:","[world.contents.len]")
-			stat(null)
-			if(Master)
-				Master.stat_entry()
-			else
-				stat("Master Controller:", "ERROR")
-			if(Failsafe)
-				Failsafe.stat_entry()
-			else if (Master.initializing)
-				stat("Failsafe Controller:", "Waiting for MC")
-			else
-				stat("Failsafe Controller:", "ERROR")
-			if(Master)
-				stat(null)
-				for(var/datum/controller/subsystem/SS in Master.subsystems)
-					SS.stat_entry()
-
-	if(listed_turf && client)
-		if(!TurfAdjacent(listed_turf))
-			listed_turf = null
-		else
-			if(statpanel("Turf"))
-				stat(listed_turf)
-				for(var/atom/A in listed_turf)
-					if(!A.mouse_opacity)
-						continue
-					if(A.invisibility > see_invisible)
-						continue
-					if(is_type_in_list(A, shouldnt_see))
-						continue
-					stat(A)
-
-
 // facing verbs
 /mob/proc/canface()
 	return !incapacitated()
@@ -804,7 +730,7 @@
 
 	if ((isscp106 || isscp049) && !incapacitated(INCAPACITATION_RESTRAINED|INCAPACITATION_BUCKLED_FULLY|INCAPACITATION_BUCKLED_PARTIALLY))
 		lying = 0
-		density = 1
+		density = TRUE
 
 	// update SCP-106's vis_contents icon
 	if (isscp106)
@@ -962,7 +888,7 @@
 
 /mob/proc/remove_implant(var/obj/item/implant, var/surgical_removal = FALSE)
 	if(!LAZYLEN(get_visible_implants(0))) //Yanking out last object - removing verb.
-		verbs -= /mob/proc/yank_out_object
+		remove_verb(src, /mob/proc/yank_out_object)
 	for(var/obj/item/O in pinned)
 		if(O == implant)
 			pinned -= O

@@ -8,8 +8,8 @@
 	desc = "An industrial U-Stor-It Storage unit designed to accomodate all kinds of space suits. Its on-board equipment also allows the user to decontaminate the contents through a UV-ray purging cycle. There's a warning label dangling from the control pad, reading \"STRICTLY NO BIOLOGICALS IN THE CONFINES OF THE UNIT\"."
 	icon = 'icons/obj/suitstorage.dmi'
 	icon_state = "close"
-	anchored = 1
-	density = 1
+	anchored = TRUE
+	density = TRUE
 	use_power = 1
 	idle_power_usage = 50
 	active_power_usage = 200
@@ -671,8 +671,8 @@
 
 	name = "suit cycler"
 	desc = "An industrial machine for painting and refitting voidsuits."
-	anchored = 1
-	density = 1
+	anchored = TRUE
+	density = TRUE
 
 	icon = 'icons/obj/suitstorage.dmi'
 	icon_state = "close"
@@ -874,7 +874,7 @@
 	//Clear the access reqs, disable the safeties, and open up all paintjobs.
 	to_chat(user, "<span class='danger'>You run the sequencer across the interface, corrupting the operating protocols.</span>")
 	departments = list("Engineering","Mining","Medical","Security","Atmos","^%###^%$")
-	emagged = 1
+	emagged = TRUE
 	safeties = 0
 	req_access = list()
 	updateUsrDialog()

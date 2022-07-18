@@ -50,8 +50,8 @@
 	emote_see = list("shuffles around aimlessly", "shivers")
 
 /mob/living/simple_animal/hostile/scp096/New()
-	..()
 	hud_scramble = new /image/hud_overlay('icons/SCP/hud_scramble.dmi', src, "scramble-alive")
+	..()
 
 // snowflake hud handling for scramble gear
 /mob/living/simple_animal/hostile/scp096/proc/handle_scramble()
@@ -65,9 +65,9 @@
 		hud_scramble = holder
 
 /mob/living/simple_animal/hostile/scp096/death(gibbed, deathmessage, show_dead_message)
-	..()
-	handle_scramble()
 
+	handle_scramble()
+	return ..()
 
 /mob/living/simple_animal/hostile/scp096/Destroy()
 	kill_list = null
@@ -210,7 +210,7 @@
 	if(istype(userguy, /mob/living/carbon))
 		specialexamine(userguy)
 		return
-	..()
+	return ..()
 
 /mob/living/simple_animal/hostile/scp096/proc/specialexamine(mob/userguy) //Snowflaked.
 	if (!iscarbon(userguy))
@@ -358,7 +358,7 @@
 		T.loc = src.loc
 		visible_message("<span class='danger'>[src] grabs [T]!</span>")
 		dir = 2
-		T.anchored = 1
+		T.anchored = TRUE
 		var/original_y = T.pixel_y
 		T.pixel_y = 10
 		murdering = 1
@@ -368,7 +368,7 @@
 
 		sleep(20)
 
-		T.anchored = 0
+		T.anchored = FALSE
 		T.pixel_y = original_y
 		if(ishuman(T))
 			T.emote("scream")

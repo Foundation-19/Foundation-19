@@ -54,7 +54,7 @@
 	if(!components.len)
 		return FALSE
 	var/datum/robot_component/C = components["armour"]
-	if(C?.installed)
+	if(C && C.installed > 0) //baycode sets modules to -1 for some reason when broken, so if this checks !C.installed borgs are unbreakable
 		return C
 	return FALSE
 

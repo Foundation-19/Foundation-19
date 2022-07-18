@@ -19,25 +19,26 @@
 	var/show_invalid_jobs = 0
 
 /mob/new_player/Initialize()
-	verbs += /mob/proc/toggle_antag_pool
+	add_verb(src, /mob/proc/toggle_antag_pool)
+	if(length(GLOB.new_player))
+		forceMove(pick(GLOB.new_player))
 	return ..()
 
-/mob/new_player/Stat()
-	. = ..()
-
-	if(statpanel("Lobby"))
-		if(check_rights(R_INVESTIGATE, 0, src))
-			stat("Game Mode:", "[SSticker.mode ? SSticker.mode.name : SSticker.master_mode] ([SSticker.master_mode])")
-		else
-			stat("Game Mode:", PUBLIC_GAME_MODE)
+/mob/new_player/get_status_tab_items()
+	.=..()
+	if(check_rights(R_INVESTIGATE, 0, src))
+		. += "Game Mode: [SSticker.mode ? SSticker.mode.name : SSticker.master_mode] ([SSticker.master_mode])"
+	else
+		. += "Game Mode: [PUBLIC_GAME_MODE]"
 		var/extra_antags = list2params(additional_antag_types)
-		stat("Added Antagonists:", extra_antags ? extra_antags : "None")
-		stat("Initial Continue Vote:", "[round(config.vote_autotransfer_initial / 600, 1)] minutes")
-		stat("Additional Vote Every:", "[round(config.vote_autotransfer_interval / 600, 1)] minutes")
+		. += "Added Antagonists: [extra_antags ? extra_antags : "None"]"
+		. += "Initial Continue Vote: [round(config.vote_autotransfer_initial / 600, 1)] minutes"
+		. += "Additional Vote Every: [round(config.vote_autotransfer_interval / 600, 1)] minutes"
 
 		if(GAME_STATE <= RUNLEVEL_LOBBY)
-			stat("Time To Start:", "[round(SSticker.pregame_timeleft/10)][SSticker.round_progressing ? "" : " (DELAYED)"]")
-			stat("Players: [totalPlayers]", "Players Ready: [totalPlayersReady]")
+			. += "Time To Start: [round(SSticker.pregame_timeleft/10)][SSticker.round_progressing ? "" : " (DELAYED)"]"
+			. += "Players: [totalPlayers]"
+			. += "Players Ready: [totalPlayersReady]"
 			totalPlayers = 0
 			totalPlayersReady = 0
 			for(var/mob/new_player/player in GLOB.player_list)
@@ -47,11 +48,12 @@
 					if(player.client.prefs?.job_high)
 						highjob = " as [player.client.prefs.job_high]"
 					if(!player.is_stealthed())
-						stat("[player.key]", (player.ready && show_ready)?("(Playing[highjob])"):(null))
+						. += "[player.key] [(player.ready && show_ready) ? "Playing[highjob]" : null]"
 				totalPlayers++
-				if(player.ready)totalPlayersReady++
+				if(player.ready)
+					totalPlayersReady++
 		else
-			stat("Next Continue Vote:", "[max(round(transfer_controller.time_till_transfer_vote() / 600, 1), 0)] minutes")
+			. += "Next Continue Vote: [max(round(transfer_controller.time_till_transfer_vote() / 600, 1), 0)] minutes"
 
 /mob/new_player/Topic(href, href_list) // This is a full override; does not call parent.
 	if(usr != src)
@@ -145,6 +147,7 @@
 		character.forceMove(C.loc)
 		var/mob/living/silicon/ai/A = character
 		A.on_mob_init()
+		A.client.init_verbs()
 
 		AnnounceCyborg(character, job.title, "has been downloaded to the empty core in \the [character.loc.loc]")
 		SSticker.mode.handle_latejoin(character)
@@ -156,6 +159,7 @@
 	SSticker.mode.handle_latejoin(character)
 	GLOB.universe.OnPlayerLatejoin(character)
 	spawnpoint.after_join(character)
+	character.client.init_verbs()
 	if(job.create_record)
 		if(character.mind.assigned_role != "Robot")
 			CreateModularRecord(character)
@@ -182,7 +186,7 @@
 	var/list/header = list("<html><body><center>")
 
 	header += "<b>Welcome, [name].<br></b>"
-	header += "Round Duration: [roundduration2text()]<br>"
+	header += "Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]<br>"
 
 	if(evacuation_controller.has_evacuated())
 		header += "<font color='red'><b>\The [station_name()] has been evacuated.</b></font><br>"
@@ -304,6 +308,7 @@
 	new_character.regenerate_icons()
 
 	new_character.key = key		//Manually transfer the key to log them in
+	new_character.client.init_verbs()
 	return new_character
 
 /mob/new_player/proc/ViewManifest()

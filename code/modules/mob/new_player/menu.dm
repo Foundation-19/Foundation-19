@@ -42,7 +42,7 @@
 /obj/screen/new_player/title
 	name = "Lobby art"
 	icon = 'maps/site53/icons/lobby.dmi'
-	icon_state = "title_old"
+	icon_state = "title_new"
 	screen_loc = "WEST,SOUTH"
 	var/lobby_index = 1
 	var/lobby_transition_delay = 100
@@ -51,11 +51,8 @@
 	var/list/lobby_screens = icon_states(icon)
 
 	icon_state = lobby_screens[lobby_index]
-	if(Master.initializing)
-		spawn(lobby_transition_delay)
-			cycle_lobby_screen(lobby_screens)
-	else
-		addtimer(CALLBACK(src, .proc/cycle_lobby_screen, lobby_screens), lobby_transition_delay, TIMER_UNIQUE | TIMER_CLIENT_TIME | TIMER_OVERRIDE)
+
+	addtimer(CALLBACK(src, .proc/cycle_lobby_screen, lobby_screens), lobby_transition_delay, TIMER_UNIQUE | TIMER_CLIENT_TIME | TIMER_OVERRIDE)
 
 	return ..()
 
@@ -79,19 +76,17 @@
 	return ..()
 
 /obj/screen/new_player/selection/MouseEntered(location, control, params)
-	var/matrix/M = matrix()
-	M.Scale(1.1, 1)
-	animate(src, color = color_rotation(30), transform = M, time = 3, easing = CUBIC_EASING)
+	animate(src, color = color_rotation(30), time = 3)
 	return ..()
 
 /obj/screen/new_player/selection/MouseExited(location, control, params)
-	animate(src, color = null, transform = null, time = 3, easing = CUBIC_EASING)
+	animate(src, color = null, time = 3)
 	return ..()
 
 /obj/screen/new_player/selection/join_game
 	name = "Join Game"
 	icon_state = "joingame"
-	screen_loc = "RIGHT+2,CENTER-4"
+	screen_loc = "NORTH, CENTER-7"
 
 /obj/screen/new_player/selection/join_game/Click()//no ready system
 	var/mob/new_player/player = hud.mymob
@@ -111,7 +106,7 @@
 /obj/screen/new_player/selection/settings
 	name = "Setup"
 	icon_state = "setup"
-	screen_loc = "RIGHT+2,CENTER-5"
+	screen_loc = "NORTH-1,CENTER-7"
 
 /obj/screen/new_player/selection/settings/Click()
 	var/mob/new_player/player = hud.mymob
@@ -125,7 +120,7 @@
 /obj/screen/new_player/selection/manifest
 	name = "Crew Manifest"
 	icon_state = "manifest"
-	screen_loc = "RIGHT+2,CENTER-6"
+	screen_loc = "NORTH-2,CENTER-7"
 
 /obj/screen/new_player/selection/manifest/Click()
 	var/mob/new_player/player = hud.mymob
@@ -138,7 +133,7 @@
 /obj/screen/new_player/selection/observe
 	name = "Observe"
 	icon_state = "observe"
-	screen_loc = "RIGHT+2,CENTER-7"
+	screen_loc = "NORTH-3,CENTER-7"
 
 /obj/screen/new_player/selection/observe/Click()
 	var/mob/new_player/player = hud.mymob
@@ -182,8 +177,9 @@
 		observer.real_name = client.prefs.real_name
 		observer.SetName(observer.real_name)
 		if(!client.holder && !config.antag_hud_allowed)           // For new ghosts we remove the verb from even showing up if it's not allowed.
-			observer.verbs -= /mob/observer/ghost/verb/toggle_antagHUD        // Poor guys, don't know what they are missing!
+			add_verb(observer, /mob/observer/ghost/verb/toggle_antagHUD) // Poor guys, don't know what they are missing!
 		observer.key = key
+		observer.client.init_verbs()
 		qdel(src)
 
 		return TRUE

@@ -9,7 +9,7 @@
 /datum/gear/accessory/tie
 	display_name = "tie selection"
 	path = /obj/item/clothing/accessory
-	allowed_branches = list(/datum/mil_branch/civilian)
+
 
 /datum/gear/accessory/tie/New()
 	..()
@@ -29,7 +29,7 @@
 	display_name = "colored tie"
 	path = /obj/item/clothing/accessory
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_branches = list(/datum/mil_branch/civilian)
+
 
 /datum/gear/accessory/tie_color/New()
 	..()
@@ -37,7 +37,7 @@
 	ties["tie"] = /obj/item/clothing/accessory
 	ties["striped tie"] = /obj/item/clothing/accessory/long
 	gear_tweaks += new/datum/gear_tweak/path(ties)
-	allowed_branches = list(/datum/mil_branch/civilian)
+
 
 /datum/gear/accessory/locket
 	display_name = "locket"
@@ -51,13 +51,13 @@
 /datum/gear/accessory/bowtie
 	display_name = "bowtie, horrible"
 	path = /obj/item/clothing/accessory/bowtie/ugly
-	allowed_branches = list(/datum/mil_branch/civilian)
+
 
 /datum/gear/accessory/bowtie/color
 	display_name = "bowtie, colour select"
 	path = /obj/item/clothing/accessory/bowtie/color
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_branches = list(/datum/mil_branch/civilian)
+
 
 /*/datum/gear/accessory/ntaward
 	display_name = "corporate award selection"
@@ -108,14 +108,12 @@
 /datum/gear/accessory/ftupin
 	display_name = "Free Trade Union pin"
 	path = /obj/item/clothing/accessory/ftupin
-
+*/
 /datum/gear/accessory/chaplaininsignia
 	display_name = "chaplain insignia"
 	path = /obj/item/clothing/accessory/chaplaininsignia
 	cost = 1
 	allowed_roles = list(/datum/job/chaplain)
-
-*/
 
 /datum/gear/accessory/chaplaininsignia/New()
 	..()

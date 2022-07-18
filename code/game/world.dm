@@ -68,8 +68,6 @@ GLOBAL_VAR(href_logfile)
 
 #define RECOMMENDED_VERSION 512
 /world/New()
-
-	enable_debugger()
 	//set window title
 	name = "[server_name] - [GLOB.using_map.full_name]"
 
@@ -84,11 +82,21 @@ GLOBAL_VAR(href_logfile)
 		to_file(runtime_log, "Game [game_id] starting up at [time2text(world.timeofday, "hh:mm.ss")]")
 		log = runtime_log // Note that, as you can see, this is misnamed: this simply moves world.log into the runtime log file.
 
-	if (config && config.log_hrefs)
+	if(config && config.log_hrefs)
 		GLOB.href_logfile = file("data/logs/[date_string] hrefs.htm")
+
+	if(config?.log_assets)
+		GLOB.world_asset_log = file("[GLOB.log_directory]/asset.log")
 
 	if(byond_version < RECOMMENDED_VERSION)
 		to_world_log("Your server's byond version does not meet the recommended requirements for this server. Please update BYOND")
+
+	LoadVerbs(/datum/verbs/menu)
+
+	GLOB.timezoneOffset = text2num(time2text(0,"hh")) * 36000
+
+	var/latest_changelog = file("html/changelogs/archive/" + time2text(world.timeofday, "YYYY-MM") + ".yml")
+	GLOB.changelog_hash = fexists(latest_changelog) ? md5(latest_changelog) : 0 //for telling if the changelog has changed recently
 
 	// Database masterinit
 	SSdbcore.CheckSchemaVersion()
@@ -114,6 +122,7 @@ GLOBAL_VAR(href_logfile)
 	load_unit_test_changes()
 #endif
 	Master.Initialize(10, FALSE)
+
 
 #undef RECOMMENDED_VERSION
 
@@ -171,8 +180,8 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 
 		// This is dumb, but spacestation13.com's banners break if player count isn't the 8th field of the reply, so... this has to go here.
 		s["players"] = 0
-		s["stationtime"] = stationtime2text()
-		s["roundduration"] = roundduration2text()
+		s["stationtime"] = station_time_timestamp("hh:mm")
+		s["roundduration"] = DisplayTimeText(world.time - SSticker.round_start_time)
 		s["map"] = replacetext(GLOB.using_map.full_name, "\improper", "") //Done to remove the non-UTF-8 text macros
 
 		var/active = 0
@@ -454,7 +463,7 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 
 #undef SET_THROTTLE
 
-/world/Reboot(var/reason)
+/world/Reboot(reason)
 	/*spawn(0)
 		sound_to(world, sound(pick('sound/AI/newroundsexy.ogg','sound/misc/apcdestroyed.ogg','sound/misc/bangindonk.ogg')))// random end sounds!! - LastyBatsy
 
@@ -463,13 +472,9 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 
 	Master.Shutdown()
 
-	var/datum/chatOutput/co
-	for(var/client/C in GLOB.clients)
-		co = C.chatOutput
-		if(co)
-			co.ehjax_send(data = "roundrestart")
 	if(config.server)	//if you set a server location in config.txt, it sends you there instead of trying to reconnect to the same world address. -- NeoFite
 		for(var/client/C in GLOB.clients)
+			C?.tgui_panel?.send_roundrestart()
 			send_link(C, "byond://[config.server]")
 
 	if(config.wait_for_sigusr1_reboot && reason != 3)
@@ -480,6 +485,9 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 	..(reason)
 
 /world/Del()
+	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
+	if (debug_server)
+		call(debug_server, "auxtools_shutdown")()
 	callHook("shutdown")
 	return ..()
 
@@ -603,11 +611,12 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 	if(game_id)
 		GLOB.log_directory += "[game_id]"
 	else
-		GLOB.log_directory += "[replacetext(time_stamp(), ":", ".")]"
+		GLOB.log_directory += "[replacetext(station_time_timestamp(), ":", ".")]"
 
 	GLOB.world_qdel_log = file("[GLOB.log_directory]/qdel.log")
 	GLOB.query_debug_log = file("[GLOB.log_directory]/sql.log")
-	to_file(GLOB.world_qdel_log, "\n\nStarting up round ID [game_id]. [time_stamp()]\n---------------------")
+	GLOB.tgui_log = file("[GLOB.log_directory]/tgui.log")
+	to_file(GLOB.world_qdel_log, "\n\nStarting up round ID [game_id]. [station_time_timestamp()]\n---------------------")
 
 #define FAILED_DB_CONNECTION_CUTOFF 5
 var/failed_db_connections = 0
@@ -682,8 +691,3 @@ var/failed_old_db_connections = 0
 		return 1
 
 #undef FAILED_DB_CONNECTION_CUTOFF
-
-/world/proc/enable_debugger()
-	var/dll = world.GetConfig("env", "EXTOOLS_DLL")
-	if (dll)
-		call(dll, "debug_initialize")()
