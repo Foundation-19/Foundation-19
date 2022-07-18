@@ -414,7 +414,7 @@
 	job_access_type = /datum/job/hop
 
 /obj/item/card/id/adminlvl5
-	name = " responder ID"
+	name = " administration ID"
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "adminlvl5"
 	item_state = "Admin_ID"
@@ -423,14 +423,14 @@
 // ERT CARDS
 
 /obj/item/card/id/mtf
-	name = " administration ID"
+	name = " mobile task force ID"
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "adminlvl5"
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/mtf
 	
 /obj/item/card/id/physics
-	name = " responder ID"
+	name = " military ID"
 	desc = "A dark purple ID. Looks like the person wearing this won't give it up easy."
 	icon_state = "securitylvl5"
 	item_state = "Sec_ID5"
