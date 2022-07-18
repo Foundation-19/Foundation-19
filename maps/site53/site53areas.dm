@@ -110,8 +110,22 @@
 	dynamic_lighting = 0
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/centcom/chaos
+	name = "Chaos Insurgency"
+	icon_state = "Sleep"
+	requires_power = 0
+	dynamic_lighting = 0
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/tram/goc1
 	name = "GOC Car"
+	icon_state = "Sleep"
+	requires_power = 0
+	dynamic_lighting = 0
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/centcom/goc
+	name = "GOC"
 	icon_state = "Sleep"
 	requires_power = 0
 	dynamic_lighting = 0
@@ -172,7 +186,10 @@
 	name = "Away Checkpoint"
 
 /area/site53/surface/surface/away/storage
-	name = "Away Storage"
+	name = "Away Storage 1"
+
+/area/site53/surface/surface/away/storage2
+	name = "Away Storage 2"
 
 /area/site53/surface/surface/away/hotel
 	name = "Away Hotel"
@@ -213,6 +230,9 @@
 	requires_power = 0
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/surface/explorers/surrounding
+	name = "\improper Scouts Prep Surrounding"
 
 // Site 53 upper surface area's
 
@@ -268,6 +288,12 @@
 	icon_state = "hallA"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	turf_initializer = /decl/turf_initializer/maintenance
+
+/area/site53/lowertrams/hczmaint/east
+	name = "\improper Eastern Heavy Containment Maintenance"
+
+/area/site53/lowertrams/hczmaint/south
+	name = "\improper Southern Heavy Containment Maintenance"
 
 /area/site53/lowertrams/orangeline
 	name = "\improper Orange Line"
@@ -423,6 +449,11 @@
 //	'sound/ambience/lcz/crb/Commotion21.ogg'
 //	)
 
+/area/site53/llcz/entrance_checkpoint
+	name = "\improper Light Containment Zone Checkpoint"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint1"
+
 /area/site53/ulcz/hallways
 	name = "\improper Upper Light Containment Hallway"
 	icon_state = "hallC1"
@@ -561,6 +592,18 @@
 	icon_state = "SolarcontrolS"
 	turf_initializer = /decl/turf_initializer/maintenance
 
+/area/site53/uez/equipmentroom
+	name = "Upper Entrance Zone Equipment Room"
+	icon_state = "security"
+
+/area/site53/uez/senioragentoffice
+	name = "Upper Entrance Zone Senior Agent Office"
+	icon_state = "security"
+
+/area/site53/uez/armory
+	name = "Upper Entrance Zone Armory"
+	icon_state = "security"
+
 /area/site53/uez/bridge
 	name = "\improper Bridge"
 	icon_state = "hallC1"
@@ -622,18 +665,43 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint1"
 
+/area/site53/llcz/dclass/entrance_checkpoint
+	name = "\improper D-Class Cells Zone Checkpoint"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint1"
+
+/area/site53/llcz/dclass/assignmentline
+	name = "\improper Assignment Line Security Bubble"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint1"
+
+/area/site53/llcz/dclass/reeducation
+	name = "\improper Reeducation Security Bubble"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint1"
+
 /area/site53/llcz/dclass/canteenbubble
 	name = "\improper Canteen Security Bubble"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint1"
 
-/area/site53/llcz/dclass/checkequip
+/area/site53/llcz/checkequip
 	name = "\improper Primary Checkpoint Equipment"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint1"
 
+/area/site53/llcz/dclass/checkequip
+	name = "\improper Primary D-Class Checkpoint Equipment"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint1"
+
+/area/site53/llcz/dclass/checkcryo
+	name = "\improper Primary D-Class Checkpoint Cryo"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "checkpoint1"
+
 /area/site53/llcz/dclass/armory
-	name = "\improper Primary Checkpoint Armory"
+	name = "\improper Primary D-Class Checkpoint Armory"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "checkpoint1"
 
@@ -869,6 +937,11 @@
 	icon_state = "detective"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/entrancezone/forensicsstairwell
+	name = "\improper Forensics Laboratory Stairwell"
+	icon_state = "detective"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/medical/infirmreception
 	name = "\improper Infirmary Reception"
 	icon_state = "medbay2"
@@ -1002,6 +1075,11 @@
 	icon_state = "checkpoint"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/uhcz/commanderoffice
+	name = "\improper HCZ Commander's Office"
+	icon_state = "checkpoint"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/lhcz/scp895
 	name = "\improper Lower SCP-895"
 	icon_state = "research"
@@ -1017,9 +1095,9 @@
 	icon_state = "security"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/entrancezone/ezarmory
-	name = "\improper Entrance Zone Security Armory"
-	icon_state = "security"
+/area/site53/reswing/xenobiology
+	name = "\improper Xenobiology Laboratory"
+	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/reswing/robotics
@@ -1030,6 +1108,21 @@
 /area/site53/logistics/logistics
 	name = "\improper Logistics"
 	icon_state = "quart"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/logistics/logisticsofficer
+	name = "\improper Logistics Officer Office"
+	icon_state = "quart"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/logistics/logisticsbreak
+	name = "\improper Logistics Break Area"
+	icon_state = "quart"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/lhcz/hczguardgear
+	name = "\improper HCZ Guard Gear Room"
+	icon_state = "checkpoint1"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/lhcz/scp1102entrance

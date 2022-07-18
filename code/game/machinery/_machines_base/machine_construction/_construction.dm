@@ -30,8 +30,8 @@
 		return "[log_info_line(machine)] had an invalid construction state of type [type]."
 	if(needs_board)
 		var/obj/item/stock_parts/circuitboard/C = machine.get_component_of_type(/obj/item/stock_parts/circuitboard)
-		/*if(!C)
-			return "Machine [log_info_line(machine)] lacked a circuitboard." Cosmetic computers are a-okay. */ 
+		if(!C)
+			return "Machine [log_info_line(machine)] lacked a circuitboard."
 		if(C.board_type != needs_board)
 			return "Machine [log_info_line(machine)] had a circuitboard of an unexpected type: was [C.board_type], should be [needs_board]."
 		var/design = GLOB.build_path_to_design_datum_path[C.type]
