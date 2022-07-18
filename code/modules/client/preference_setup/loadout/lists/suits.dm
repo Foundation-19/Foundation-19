@@ -4,7 +4,7 @@
 	category = /datum/gear/suit
 	denied_roles = list(/datum/job/classd)
 	allowed_branches = list(/datum/mil_branch/civilian)
-	//Reasoning : it eats the Armour slot of guards. None of these options fits security. Too flashy, too visible, uniformity would be broken. To note: some guards have access to vest options at their lockers.
+	//Reasoning : None of these options fits security. Too flashy, too visible, uniformity would be broken. Exception is trenchcoat for command roles To note: some guards have access to vest options at their lockers.
 
 /datum/gear/suit/poncho
 	display_name = "poncho selection"
@@ -12,7 +12,6 @@
 	cost = 1
 	flags = GEAR_HAS_TYPE_SELECTION
 
-//no poncho for foundation guards, sorry
 /*/datum/gear/suit/security_poncho
 	display_name = "poncho, security"
 	path = /obj/item/clothing/suit/poncho/roles/security
@@ -157,6 +156,8 @@
 	display_name = "trenchcoat selection"
 	path = /obj/item/clothing/suit
 	cost = 3
+	allowed_branches = list(/datum/mil_branch/civilian, /datum/mil_branch/security)
+	denied_roles = list(/datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ncoofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/enlistedofficerez)
 
 /datum/gear/suit/trenchcoat/New()
 	..()
@@ -165,3 +166,6 @@
 	trenchcoats += /obj/item/clothing/suit/storage/det_trench/grey
 	trenchcoats += /obj/item/clothing/suit/leathercoat
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(trenchcoats)
+
+
+

@@ -75,6 +75,23 @@
 	caps["major bill's shipping cap"] = /obj/item/clothing/head/soft/mbill
 	gear_tweaks += new/datum/gear_tweak/path(caps)
 
+
+/datum/gear/head/capuniform
+	display_name = "Uniform cap"
+	path = /obj/item/clothing/head
+	allowed_branches = list(/datum/mil_branch/security)
+
+/datum/gear/head/capuniform/New()
+	..()
+	var/caps = list()
+	caps["black cap"] = /obj/item/clothing/head/soft/black
+	caps["blue cap"] = /obj/item/clothing/head/soft/blue
+	caps["green cap"] = /obj/item/clothing/head/soft/green
+	caps["grey cap"] = /obj/item/clothing/head/soft/grey
+	caps["red cap"] = /obj/item/clothing/head/soft/red
+	caps["white cap"] = /obj/item/clothing/head/soft/mime
+	gear_tweaks += new/datum/gear_tweak/path(caps)
+
 /datum/gear/head/hairflower
 	display_name = "hair flower pin"
 	path = /obj/item/clothing/head/hairflower
