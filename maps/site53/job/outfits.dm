@@ -537,6 +537,16 @@
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_cargo
 	back = /obj/item/storage/backpack/satchel/pocketbook
+	
+/decl/hierarchy/outfit/job/site90/crew/command/event/mtfbasic
+	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Agent")
+	uniform = /obj/item/clothing/under/ert
+	suit = /obj/item/clothing/suit/armor/mtftactical
+	head = /obj/item/clothing/head/helmet/mtftactical
+	gloves = /obj/item/clothing/gloves/thick/swat
+	shoes = /obj/item/clothing/shoes/swat
+	id_types = list(/obj/item/card/id/mtf)
+	l_ear = /obj/item/device/radio/headset/ert
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/mtf_epsilon1
 	name = OUTFIT_JOB_NAME("MTF Epsilon-6 Agent Alpha")
