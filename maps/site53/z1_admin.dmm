@@ -5,47 +5,14 @@
 "ab" = (
 /turf/space,
 /area/space)
+"ac" = (
+/obj/structure/flora/grass/green,
+/turf/simulated/floor/exoplanet/snow,
+/area/centcom/chaos)
 "af" = (
 /obj/machinery/door/blast/shutters{
 	id_tag = "epislon11";
 	name = "Epsilon-11"
-	},
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
-/area/centcom)
-"al" = (
-/obj/structure/table/standard,
-/obj/item/net_shell{
-	pixel_y = -5
-	},
-/obj/item/net_shell{
-	pixel_y = -2
-	},
-/obj/item/net_shell{
-	pixel_y = 1
-	},
-/obj/item/net_shell{
-	pixel_y = 4
-	},
-/obj/item/net_shell{
-	pixel_y = 7
-	},
-/obj/item/net_shell{
-	pixel_y = 7
-	},
-/obj/item/net_shell{
-	pixel_y = 4
-	},
-/obj/item/net_shell{
-	pixel_y = 1
-	},
-/obj/item/net_shell{
-	pixel_y = -2
-	},
-/obj/item/net_shell{
-	pixel_y = -5
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -67,17 +34,56 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"aF" = (
+/obj/structure/closet,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1;
+	icon_state = "bordercolor"
+	},
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
+"aL" = (
+/obj/effect/floor_decal/corner{
+	color = "#FFFF00";
+	dir = 9
+	},
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom)
 "aP" = (
 /obj/machinery/vending/weeb{
 	dir = 4
 	},
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
+"aY" = (
+/obj/effect/floor_decal/corner/orange{
+	dir = 6;
+	icon_state = "corner_white"
+	},
+/obj/item/rig/ert/engineer,
+/obj/structure/table/rack,
+/obj/item/storage/backpack/dufflebag/firefighter,
+/obj/item/storage/firstaid/fire,
+/obj/item/material/twohanded/fireaxe,
+/obj/item/flamethrower/full,
+/obj/item/tank/phoron,
+/obj/item/grenade/chem_grenade/incendiary,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom)
 "aZ" = (
 /turf/unsimulated/floor{
 	icon_state = "snow"
 	},
-/area/site53/surface/surface)
+/area/centcom)
 "bg" = (
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 5
@@ -90,7 +96,7 @@
 	icon = 'icons/turf/jungle.dmi';
 	icon_state = "greygrass"
 	},
-/area/site53/surface/surface)
+/area/centcom)
 "bx" = (
 /obj/machinery/vending/snack{
 	name = "hacked Getmore Chocolate Corp";
@@ -100,10 +106,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"bz" = (
-/obj/item/weldingtool/mini,
-/turf/simulated/floor,
-/area/site53/lhcz/scp1102entrance)
 "bC" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -112,7 +114,16 @@
 	icon = 'icons/turf/flooring/misc.dmi';
 	icon_state = "concrete"
 	},
-/area/site53/surface/surface)
+/area/centcom)
+"bF" = (
+/obj/effect/floor_decal/corner/blue{
+	dir = 9
+	},
+/obj/structure/closet/secure_closet/mtf/ntf,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom)
 "bL" = (
 /obj/structure/sign/bluecross_2{
 	pixel_y = -24
@@ -125,18 +136,10 @@
 "bU" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Holding Cell";
-	req_access = list(202)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
-	},
-/area/centcom)
-"bX" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 5
-	},
-/turf/unsimulated/floor{
-	icon_state = "steel"
 	},
 /area/centcom)
 "bZ" = (
@@ -171,7 +174,7 @@
 /area/site53/tram/mtf)
 "cl" = (
 /obj/machinery/door/airlock/vault{
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -224,26 +227,39 @@
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
 "cv" = (
-/obj/effect/shuttle_landmark/heli/mtf/start,
+/obj/effect/shuttle_landmark/heli/start,
 /turf/simulated/floor/shuttle/white,
 /area/site53/tram/mtf)
 "cw" = (
-/turf/unsimulated/wall,
-/area/site53/surface/surface)
+/turf/unsimulated/mineral,
+/area/centcom/chaos)
+"cx" = (
+/obj/structure/flora/ausbushes/grassybush,
+/turf/simulated/floor/exoplanet/grass,
+/area/centcom/goc)
 "cD" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
+/obj/item/gun/projectile/automatic/scp/m16,
+/obj/item/gun/projectile/automatic/scp/m16,
+/obj/item/gun/projectile/automatic/scp/m16,
+/obj/item/gun/projectile/automatic/scp/m16,
+/obj/item/gun/projectile/automatic/scp/m16,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom)
+"cF" = (
+/obj/effect/floor_decal/corner/white{
+	dir = 9;
+	icon_state = "corner_white"
+	},
+/obj/machinery/recharger/wallcharger{
+	dir = 4;
+	pixel_x = -20
+	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -275,12 +291,7 @@
 /area/centcom)
 "cP" = (
 /obj/machinery/r_n_d/server/centcom,
-/obj/effect/floor_decal/corner/green{
-	dir = 10
-	},
-/turf/unsimulated/floor{
-	icon_state = "steel"
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/centcom)
 "cS" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -305,7 +316,7 @@
 	icon = 'icons/turf/flooring/misc.dmi';
 	icon_state = "concrete"
 	},
-/area/site53/surface/surface)
+/area/centcom)
 "df" = (
 /obj/machinery/vending/cigarette{
 	name = "cigarette machine";
@@ -315,29 +326,38 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"ds" = (
-/obj/machinery/telecomms/allinone/ert{
-	pixel_y = 2
-	},
-/turf/simulated/wall/r_wall,
-/area/site53/tram/mtf)
+"di" = (
+/turf/simulated/wall/titanium,
+/area/centcom/chaos)
+"dr" = (
+/obj/structure/closet/crate,
+/obj/item/reagent_containers/food/condiment/cornoil,
+/obj/item/reagent_containers/food/condiment/cornoil,
+/obj/item/reagent_containers/food/condiment/cornoil,
+/turf/simulated/floor/wood,
+/area/centcom/goc)
 "dD" = (
 /turf/unsimulated/mineral,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom)
 "dE" = (
 /obj/structure/railing/mapped,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/misc.dmi';
 	icon_state = "concrete"
 	},
-/area/site53/surface/surface)
+/area/centcom)
 "dG" = (
 /obj/structure/curtain/open/privacy{
 	name = "plastic curtain"
 	},
 /turf/unsimulated/floor/tile,
+/area/centcom)
+"dQ" = (
+/obj/item/stool,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
 /area/centcom)
 "dT" = (
 /obj/effect/floor_decal/corner/white{
@@ -346,6 +366,19 @@
 	},
 /obj/structure/closet/secure_closet/mtf/ntf,
 /obj/item/melee/baton/loaded,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom)
+"dU" = (
+/obj/effect/floor_decal/corner/white{
+	dir = 6;
+	icon_state = "corner_white"
+	},
+/obj/machinery/recharger/wallcharger{
+	dir = 8;
+	pixel_x = 20
+	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -360,6 +393,18 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"dX" = (
+/obj/effect/floor_decal/corner/white{
+	dir = 6;
+	icon_state = "corner_white"
+	},
+/obj/machinery/computer/modular/preset/cardslot/command_sec{
+	dir = 8
+	},
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom)
 "ec" = (
 /obj/structure/undies_wardrobe,
 /turf/unsimulated/floor{
@@ -367,23 +412,8 @@
 	},
 /area/centcom)
 "ek" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 6
-	},
-/obj/structure/table/rack,
-/obj/item/clothing/suit/armor/mtfheavy,
-/obj/item/clothing/head/helmet/mtfheavy,
-/obj/item/grenade/chem_grenade/incendiary{
-	pixel_x = -6
-	},
-/obj/item/grenade/chem_grenade/incendiary,
-/obj/item/grenade/chem_grenade/incendiary{
-	pixel_x = 6
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom)
+/turf/simulated/floor/exoplanet/grass,
+/area/centcom/chaos)
 "es" = (
 /turf/unsimulated/wall{
 	desc = "That looks like it doesn't open easily.";
@@ -391,14 +421,14 @@
 	icon_state = "pdoor1";
 	name = "Tram Gate"
 	},
-/area/site53/surface/surface)
+/area/centcom)
 "eF" = (
 /turf/simulated/floor/plating,
 /area/supply/dock)
 "eG" = (
 /obj/machinery/door/airlock/vault{
 	name = "Mobile Task Force Garage";
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -424,7 +454,7 @@
 /area/centcom)
 "eL" = (
 /turf/unsimulated/mineral,
-/area/site53/surface/surface)
+/area/centcom/goc)
 "eN" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -452,12 +482,10 @@
 /area/site53/lhcz/scp1102entrance)
 "eS" = (
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/area/centcom/goc)
 "eU" = (
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "eW" = (
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/lhcz/scp1102entrance)
@@ -482,15 +510,6 @@
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/lhcz/scp1102entrance)
-"fb" = (
-/obj/effect/floor_decal/corner/blue{
-	dir = 6
-	},
-/obj/structure/stasis_cage,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom)
 "ff" = (
 /turf/unsimulated/floor/scp1102,
 /area/site53/lhcz/scp1102entrance)
@@ -1093,7 +1112,7 @@
 /area/site53/lhcz/scp1102entrance)
 "hB" = (
 /turf/simulated/floor/exoplanet/grass,
-/area/site53/surface/surface)
+/area/centcom/goc)
 "hD" = (
 /obj/structure/inflatable/wall,
 /turf/simulated/floor/tiled/techmaint,
@@ -1262,7 +1281,7 @@
 "id" = (
 /obj/structure/flora/grass/green,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/area/centcom/goc)
 "ie" = (
 /obj/machinery/light{
 	dir = 8;
@@ -1300,10 +1319,16 @@
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp1102entrance)
 "il" = (
-/turf/unsimulated/wall/scp106,
-/area/site53/lhcz/scp1102entrance{
-	name = "\improper Abyss"
-	})
+/obj/effect/floor_decal/corner/research{
+	dir = 9
+	},
+/obj/structure/closet/secure_closet/mtf/ntf,
+/obj/item/clothing/accessory/buddytag,
+/obj/item/locator,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom)
 "im" = (
 /obj/structure/bed,
 /obj/machinery/light/small,
@@ -1416,9 +1441,7 @@
 	name = "Chaos Insurgency Outpost"
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "iH" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/kafel_full,
@@ -1627,7 +1650,7 @@
 /area/site53/lhcz/scp1102entrance)
 "jv" = (
 /turf/unsimulated/floor/plating,
-/area/site53/surface/surface)
+/area/space)
 "jw" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/action_figure,
@@ -1644,7 +1667,7 @@
 "jz" = (
 /obj/machinery/door/airlock/vault{
 	name = "Beta-7";
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -1658,19 +1681,19 @@
 "jC" = (
 /obj/structure/flora/tree/dead,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/area/centcom/goc)
 "jD" = (
-/turf/simulated/wall/r_wall,
-/area/site53/tram/car1)
+/obj/structure/flora/tree/dead,
+/turf/simulated/floor/exoplanet/grass,
+/area/centcom/goc)
 "jE" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/tram/car1)
 "jF" = (
-/turf/simulated/wall/titanium,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/simulated/floor/exoplanet/snow,
+/area/centcom/chaos)
 "jG" = (
 /obj/machinery/light{
 	dir = 8;
@@ -1687,9 +1710,7 @@
 "jI" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/wood,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "jJ" = (
 /obj/structure/closet,
 /obj/item/device/radio/headset/syndicate,
@@ -1697,9 +1718,7 @@
 /obj/item/clothing/under/scp/utility/chaos,
 /obj/item/clothing/shoes/dutyboots,
 /turf/simulated/floor/wood,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "jK" = (
 /obj/machinery/acting/changer,
 /turf/unsimulated/floor{
@@ -1709,7 +1728,7 @@
 "jL" = (
 /obj/machinery/door/airlock/security{
 	name = "Holding Cells";
-	req_access = list(201)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -1726,9 +1745,7 @@
 /obj/item/clothing/under/scp/utility/chaos,
 /obj/item/clothing/shoes/dutyboots,
 /turf/simulated/floor/wood,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "jN" = (
 /obj/structure/grille,
 /turf/simulated/floor/exoplanet/snow,
@@ -1751,9 +1768,7 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/wood,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "jR" = (
 /obj/structure/bed,
 /obj/structure/bed{
@@ -1763,35 +1778,28 @@
 	name = "Syndicate-Spawn"
 	},
 /turf/simulated/floor/wood,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "jS" = (
 /turf/simulated/floor/wood,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "jT" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1";
 	pixel_x = 0
 	},
 /turf/simulated/floor/wood,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "jU" = (
 /obj/structure/flora/grass/both,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/area/centcom/chaos)
 "jV" = (
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/tram/car1)
 "jY" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/area/centcom/chaos)
 "jZ" = (
 /obj/structure/bed/chair/office,
 /obj/machinery/light{
@@ -1801,18 +1809,15 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/tram/car1)
 "ka" = (
-/obj/structure/bed/chair/office,
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1";
-	pixel_x = 0
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/car1)
+/area/site53/tram/goc1)
 "kb" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/simulated/floor/exoplanet/grass,
-/area/site53/surface/surface)
+/area/centcom/chaos)
 "ke" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 8;
@@ -1827,9 +1832,7 @@
 "kg" = (
 /obj/machinery/light,
 /turf/simulated/floor/wood,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "kh" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/unsimulated/floor/scp1102,
@@ -1846,13 +1849,11 @@
 "kk" = (
 /obj/structure/flora/grass/brown,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/area/centcom/chaos)
 "kl" = (
 /obj/machinery/door/airlock/glass,
 /turf/simulated/floor/wood,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "km" = (
 /obj/structure/bed/chair/office{
 	dir = 1;
@@ -1866,15 +1867,13 @@
 /area/site53/tram/car1)
 "ko" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/simulated/floor/exoplanet/grass,
-/area/site53/surface/surface)
+/turf/simulated/floor/exoplanet/snow,
+/area/centcom/goc)
 "kp" = (
 /obj/structure/railing/mapped,
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "ks" = (
 /obj/machinery/button/blast_door{
 	dir = 1;
@@ -1887,6 +1886,10 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
+"kt" = (
+/obj/machinery/door/airlock,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "kw" = (
 /obj/structure/table/standard,
 /obj/item/storage/pill_bottle/amnesticsa,
@@ -1896,9 +1899,7 @@
 "kx" = (
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "ky" = (
 /obj/structure/railing/mapped,
 /obj/machinery/light{
@@ -1906,9 +1907,7 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "kz" = (
 /obj/machinery/button/blast_door{
 	dir = 1;
@@ -1921,9 +1920,7 @@
 "kA" = (
 /obj/structure/coatrack,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "kB" = (
 /obj/machinery/light/spot,
 /turf/simulated/floor/plating,
@@ -1931,9 +1928,7 @@
 "kE" = (
 /obj/structure/ore_box,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "kI" = (
 /obj/machinery/vending/snack,
 /obj/machinery/light{
@@ -1941,66 +1936,51 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "kJ" = (
 /obj/machinery/vending/coffee,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "kK" = (
-/obj/structure/bed/chair/office{
-	dir = 1;
-	icon_state = "chair_preview"
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9;
+	icon_state = "bordercolor"
 	},
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1";
+	dir = 8;
 	pixel_x = 0
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/car1)
+/obj/structure/iv_drip,
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "kL" = (
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1";
-	pixel_x = 0
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/car2)
+/obj/structure/table/steel_reinforced,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/adv,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "kM" = (
 /turf/simulated/floor/lino,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "kP" = (
 /obj/structure/bed/chair/comfy/black,
 /turf/simulated/floor/lino,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "kQ" = (
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "kS" = (
 /obj/machinery/light/small{
 	dir = 1;
 	icon_state = "bulb1"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "kT" = (
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/goc)
 "kW" = (
 /obj/machinery/door/blast/shutters{
 	id_tag = "chaos1"
@@ -2010,38 +1990,28 @@
 "kX" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/lino,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "kY" = (
 /obj/structure/table/woodentable,
 /obj/random/snack,
 /turf/simulated/floor/lino,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "kZ" = (
 /obj/structure/bed/chair/comfy/black{
 	dir = 8
 	},
 /turf/simulated/floor/lino,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "la" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "lb" = (
 /obj/structure/table/steel_reinforced,
 /obj/structure/bedsheetbin,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "ld" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/scp/mk9,
@@ -2054,22 +2024,15 @@
 /obj/item/ammo_magazine/scp/mk9,
 /obj/item/ammo_magazine/scp/mk9,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "le" = (
 /obj/structure/closet{
 	icon_state = "syndicate1";
 	name = "emergency response team wardrobe"
 	},
 /obj/item/clothing/glasses/night,
-/obj/item/clothing/suit/armor/vest/scp/medarmor/chaos,
-/obj/item/clothing/head/helmet/scp/chaos,
-/obj/item/clothing/mask/gas,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "lg" = (
 /obj/structure/table/rack,
 /obj/item/gun/projectile/automatic/scp/m16,
@@ -2102,7 +2065,7 @@
 "lj" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/area/centcom/chaos)
 "ll" = (
 /obj/effect/landmark{
 	name = "Nuclear-Bomb"
@@ -2114,15 +2077,11 @@
 /obj/random/drinkbottle,
 /obj/item/device/megaphone,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "lo" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "lr" = (
 /obj/structure/table/standard,
 /obj/item/gun/projectile/automatic/t12{
@@ -2140,37 +2099,33 @@
 	dir = 1
 	},
 /turf/simulated/floor/lino,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "lv" = (
 /obj/machinery/light,
 /turf/simulated/floor/lino,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "lw" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8;
 	icon_state = "officechair_white_preview"
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "lx" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/snack,
 /obj/random/snack,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "ly" = (
 /obj/effect/floor_decal/corner/white{
 	dir = 9;
 	icon_state = "corner_white"
 	},
+/obj/structure/closet/secure_closet/mtf/ntf,
+/obj/item/clothing/head/beret/scp,
+/obj/item/gun/projectile/revolver/mateba,
+/obj/item/melee/baton/loaded,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -2178,31 +2133,23 @@
 "lz" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "lA" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "lB" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/tram/car1)
 "lC" = (
+/obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/r_wall,
-/area/site53/tram/car2)
-"lD" = (
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/surface/surface)
+/area/site53/tram/goc1)
 "lE" = (
 /obj/structure/curtain/open/bed,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "lF" = (
 /obj/structure/skele_stand{
 	dir = 8;
@@ -2210,66 +2157,57 @@
 	},
 /obj/structure/curtain/open/bed,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "lG" = (
 /obj/machinery/door/airlock,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "lI" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor/plating,
-/area/site53/tram/car2)
+/turf/simulated/wall/titanium,
+/area/centcom/goc)
 "lJ" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_wall,
 /area/site53/tram/car1)
 "lK" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/car2)
+/obj/structure/table/steel_reinforced,
+/obj/item/device/flashlight/maglight,
+/obj/item/device/flashlight/maglight,
+/obj/item/device/flashlight/maglight,
+/obj/item/crowbar/emergency_forcing_tool,
+/obj/item/crowbar/emergency_forcing_tool,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "lM" = (
 /obj/machinery/light{
 	dir = 1;
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "lO" = (
 /obj/structure/noticeboard/anomaly{
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "lP" = (
 /turf/simulated/mineral,
-/area/beach)
+/area/space)
 "lQ" = (
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "lS" = (
 /obj/machinery/computer/shuttle_control{
-	shuttle_tag = "Chaos Car 2"
+	shuttle_tag = "GOC Car 1"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/car2)
+/area/site53/tram/goc1)
 "lT" = (
-/obj/structure/grille,
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/tram/car2)
+/obj/structure/curtain/medical,
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "lV" = (
 /turf/unsimulated/beach/sand{
 	density = 1;
@@ -2279,67 +2217,62 @@
 "lW" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "lX" = (
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
+"lZ" = (
+/obj/structure/flora/tree/dead,
+/turf/simulated/floor/exoplanet/snow,
+/area/centcom/chaos)
 "mg" = (
 /turf/unsimulated/beach/sand,
 /area/beach)
 "mh" = (
-/turf/simulated/wall/r_wall,
-/area/site53/lhcz/scp1102entrance)
+/obj/structure/closet,
+/turf/unsimulated/beach/sand,
+/area/beach)
 "mi" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "mj" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1";
 	pixel_x = 0
 	},
 /obj/effect/landmark{
 	name = "Nuclear-Code"
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "mk" = (
-/obj/structure/bed/chair/office,
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/car2)
-"mm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/welder_tank/mini,
-/turf/simulated/floor,
-/area/site53/lhcz/scp1102entrance)
+/obj/structure/closet/secure_closet/medical2,
+/obj/effect/floor_decal/corner/blue/border,
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "mn" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 10
-	},
 /obj/machinery/computer/rdservercontrol{
 	badmin = 1;
 	dir = 1;
 	name = "Master R&amp;D Server Controller"
 	},
-/turf/unsimulated/floor{
-	icon_state = "steel"
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/centcom)
+"mr" = (
+/obj/machinery/optable,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 10;
+	icon_state = "bordercolor"
+	},
+/obj/machinery/light{
+	dir = 8;
+	pixel_x = 0
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "ms" = (
 /turf/unsimulated/floor{
 	dir = 2;
@@ -2348,30 +2281,18 @@
 	name = "water"
 	},
 /area/space)
-"mv" = (
-/obj/structure/bed/chair/office,
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1";
-	pixel_x = 0
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/car2)
 "mw" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1";
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "mx" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/area/centcom/goc)
 "my" = (
 /obj/effect/overlay/palmtree_l,
 /turf/unsimulated/beach/sand,
@@ -2382,12 +2303,15 @@
 /turf/unsimulated/beach/sand,
 /area/beach)
 "mA" = (
-/obj/structure/bed/chair/office{
-	dir = 1;
-	icon_state = "chair_preview"
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/obj/structure/bed/chair/shuttle/black{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/car2)
+/area/site53/tram/goc1)
 "mB" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
@@ -2413,24 +2337,30 @@
 	icon_state = "steel"
 	},
 /area/centcom)
+"mG" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/tram/goc1)
 "mH" = (
 /turf/unsimulated/floor/tile,
 /area/centcom)
 "mI" = (
 /obj/machinery/door/airlock/medical,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "mJ" = (
 /obj/machinery/door/airlock/highsecurity,
 /obj/machinery/door/blast/shutters{
 	explosion_resistance = 100
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "mK" = (
 /obj/machinery/light{
 	dir = 8;
@@ -2438,31 +2368,23 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "mL" = (
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/car2)
+/area/site53/tram/goc1)
 "mM" = (
 /obj/effect/overlay/coconut,
 /turf/unsimulated/beach/sand,
 /area/beach)
 "mN" = (
-/obj/effect/floor_decal/corner/green/three_quarters,
-/turf/unsimulated/floor{
-	icon_state = "steel"
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/centcom)
 "mO" = (
 /obj/machinery/vending/medical{
-	name = "Hacked NanoMed Plus";
 	req_access = list()
 	},
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "mQ" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/unsimulated/floor/grass{
@@ -2470,7 +2392,7 @@
 	icon = 'icons/turf/jungle.dmi';
 	icon_state = "greygrass"
 	},
-/area/site53/surface/surface)
+/area/centcom)
 "mZ" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/shuttle/black,
@@ -2487,23 +2409,17 @@
 "nb" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "nc" = (
 /obj/structure/table/reinforced,
 /obj/random/smokes,
 /obj/random/smokes,
 /obj/random/smokes,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "nd" = (
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "ne" = (
 /obj/machinery/light{
 	dir = 1;
@@ -2511,21 +2427,15 @@
 	},
 /obj/machinery/field_generator,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "no" = (
 /obj/structure/scp173_cage,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "np" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "nq" = (
 /turf/unsimulated/wall{
 	desc = "A secure airlock. Doesn't look like you can get through easily.";
@@ -2539,12 +2449,21 @@
 /obj/structure/table/reinforced,
 /obj/item/ammo_casing/rocket,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "nt" = (
-/turf/simulated/floor,
-/area/site53/lhcz/scp1102entrance)
+/obj/item/clothing/head/helmet/scp/goc,
+/obj/item/clothing/suit/armor/goc,
+/obj/structure/closet,
+/obj/item/storage/belt/holster/security,
+/obj/item/gun/projectile/pistol,
+/obj/item/clothing/gloves/thick/swat,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/ert,
+/obj/item/clothing/glasses/night,
+/obj/item/device/radio/headset/goc,
+/obj/item/gun/projectile/shotgun/pump/combat,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "nu" = (
 /obj/machinery/light{
 	dir = 8;
@@ -2552,9 +2471,7 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "nv" = (
 /obj/effect/overlay/palmtree_r,
 /turf/unsimulated/beach/sand,
@@ -2562,22 +2479,16 @@
 "nw" = (
 /obj/structure/iv_drip,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "nx" = (
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "ny" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "nz" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/scp/ak,
@@ -2594,15 +2505,11 @@
 /obj/item/ammo_magazine/scp/ak,
 /obj/item/ammo_magazine/scp/ak,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "nA" = (
 /obj/structure/table/rack,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "nB" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/adv,
@@ -2638,9 +2545,7 @@
 "nH" = (
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "nI" = (
 /obj/structure/table/rack,
 /obj/item/bodybag,
@@ -2649,9 +2554,7 @@
 /obj/item/bodybag,
 /obj/item/bodybag,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "nJ" = (
 /obj/structure/table/rack,
 /obj/structure/window/reinforced{
@@ -2667,9 +2570,7 @@
 	},
 /obj/machinery/door/window/brigdoor/southleft,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "nK" = (
 /obj/structure/table/rack,
 /obj/structure/window/reinforced{
@@ -2685,9 +2586,7 @@
 	},
 /obj/machinery/door/window/brigdoor/southright,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "nL" = (
 /obj/structure/table/rack,
 /obj/structure/window/reinforced{
@@ -2704,9 +2603,7 @@
 /obj/machinery/door/window/brigdoor/southleft,
 /obj/item/device/chameleon,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "nN" = (
 /obj/effect/landmark{
 	name = "endgame_exit"
@@ -2723,9 +2620,7 @@
 	name = "Alpha-1"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "nQ" = (
 /obj/effect/floor_decal/corner/research{
 	dir = 9
@@ -2753,26 +2648,26 @@
 /obj/item/ammo_magazine/scp/m16_mag,
 /obj/item/ammo_magazine/scp/m16_mag,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "nX" = (
-/obj/machinery/door/airlock/hatch{
-	dir = 8;
-	icon_state = "closed"
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/car2)
+/obj/machinery/light{
+	dir = 4;
+	pixel_x = 0
+	},
+/obj/machinery/acting/changer,
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "nY" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/roller,
 /obj/item/roller,
 /obj/item/roller,
-/obj/item/roller,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "oa" = (
 /obj/structure/table/standard,
 /obj/item/clothing/glasses/sunglasses,
@@ -2782,11 +2677,11 @@
 /turf/unsimulated/beach/sand,
 /area/beach)
 "ob" = (
-/obj/structure/bed/chair/wheelchair,
-/turf/simulated/floor/tiled/old_tile,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/obj/structure/bed/chair/shuttle/black{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/tram/goc1)
 "oc" = (
 /obj/structure/closet/crate/medical,
 /obj/random/firstaid,
@@ -2795,9 +2690,7 @@
 /obj/random/firstaid,
 /obj/random/firstaid,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "od" = (
 /obj/structure/table/rack,
 /obj/item/stack/medical/splint,
@@ -2810,15 +2703,11 @@
 /obj/item/stack/medical/advanced/ointment,
 /obj/item/stack/medical/advanced/ointment,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "oe" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "of" = (
 /obj/structure/flora/pottedplant/minitree,
 /turf/unsimulated/floor/techfloor,
@@ -2826,37 +2715,34 @@
 "og" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/bodybag/cryobag,
-/obj/item/bodybag/cryobag,
-/obj/item/bodybag/cryobag,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "oh" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/reagentgrinder{
 	pixel_y = 7
 	},
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "oi" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "oj" = (
 /obj/structure/closet,
 /turf/simulated/floor/tiled/old_tile,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "ol" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/r_wall,
-/area/site53/tram/car2)
+/obj/structure/bed/chair/office{
+	dir = 1;
+	icon_state = "chair_preview"
+	},
+/obj/machinery/light{
+	dir = 4;
+	pixel_x = 0
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/tram/car1)
 "om" = (
 /obj/structure/table/rack,
 /obj/structure/window/reinforced{
@@ -2874,9 +2760,7 @@
 	name = "SCP-1996-RU"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "on" = (
 /obj/structure/table/rack,
 /obj/structure/window/reinforced{
@@ -2890,15 +2774,21 @@
 /obj/structure/window/reinforced,
 /obj/machinery/door/window/brigdoor/northright,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "oo" = (
-/obj/machinery/door/blast/shutters{
-	id_tag = "chaos2"
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1;
+	icon_state = "bordercolor"
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/car2)
+/obj/structure/table/rack,
+/obj/item/bodybag,
+/obj/item/bodybag,
+/obj/item/bodybag,
+/obj/item/bodybag,
+/obj/item/bodybag,
+/obj/item/bodybag,
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "op" = (
 /obj/structure/flora/pottedplant/flower,
 /turf/unsimulated/floor/techfloor,
@@ -2935,35 +2825,31 @@
 "ou" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1";
 	pixel_x = 0
 	},
 /obj/machinery/field_generator,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "ow" = (
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "ox" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "oy" = (
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/car2)
+/obj/machinery/button/blast_door{
+	id_tag = "goc1";
+	name = "Car Storage Shutters button"
+	},
+/obj/effect/paint_stripe/paleblue,
+/turf/simulated/wall/r_wall,
+/area/site53/tram/goc1)
 "oz" = (
-/obj/structure/grille,
-/turf/simulated/floor/exoplanet/grass,
-/area/site53/tram/car2)
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "oB" = (
 /obj/structure/table/standard,
 /turf/unsimulated/beach/sand,
@@ -2975,13 +2861,12 @@
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
 "oD" = (
-/obj/effect/shuttle_landmark/chaos2/start,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/car2)
+/obj/structure/flora/tree/pine,
+/turf/simulated/floor/exoplanet/snow,
+/area/centcom/goc)
 "oE" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1";
 	pixel_x = 0
 	},
 /turf/unsimulated/floor/scp1102,
@@ -2989,7 +2874,6 @@
 "oF" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1";
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -2997,7 +2881,6 @@
 "oG" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1";
 	pixel_x = 0
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -3007,7 +2890,6 @@
 /obj/structure/table/reinforced,
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1";
 	pixel_x = 0
 	},
 /obj/effect/floor_decal/corner/blue/border{
@@ -3019,14 +2901,11 @@
 "oI" = (
 /obj/machinery/field_generator,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "oJ" = (
-/obj/machinery/light/small,
-/obj/structure/closet/crate/critter,
+/obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/car2)
+/area/site53/tram/goc1)
 "oL" = (
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 10
@@ -3036,7 +2915,7 @@
 "oQ" = (
 /obj/machinery/door/airlock/vault{
 	name = "Eta-10";
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3069,10 +2948,6 @@
 /obj/structure/table/standard,
 /turf/unsimulated/floor/tile,
 /area/centcom)
-"oY" = (
-/obj/structure/stairs/west,
-/turf/unsimulated/floor/steel,
-/area/centcom)
 "oZ" = (
 /obj/effect/floor_decal/corner/research{
 	dir = 6
@@ -3080,7 +2955,7 @@
 /obj/item/clothing/suit/armor/vest/scp/medarmor/eta,
 /obj/item/clothing/head/helmet/scp/eta,
 /obj/structure/table/rack,
-/obj/item/clothing/glasses/scramble,
+/obj/item/clothing/glasses/hud/scramble,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -3102,12 +2977,11 @@
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
 "ph" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 9
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
 	},
-/turf/unsimulated/floor{
-	icon_state = "steel"
-	},
+/turf/unsimulated/floor/techfloor,
 /area/centcom)
 "pi" = (
 /obj/effect/floor_decal/corner/white{
@@ -3116,7 +2990,7 @@
 	},
 /obj/machinery/vending/security{
 	dir = 1;
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3131,7 +3005,7 @@
 "po" = (
 /obj/machinery/door/airlock/vault{
 	name = "Omega-1";
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3161,7 +3035,7 @@
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
 "py" = (
-/obj/effect/shuttle_landmark/escape_pod/out/pod7,
+/obj/effect/shuttle_landmark/escape_pod/out,
 /turf/simulated/floor,
 /area/centcom)
 "pE" = (
@@ -3171,21 +3045,11 @@
 /area/centcom)
 "pK" = (
 /obj/machinery/telecomms/receiver/preset_cent,
-/obj/effect/floor_decal/corner/green/three_quarters{
-	dir = 8
-	},
-/turf/unsimulated/floor{
-	icon_state = "steel"
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/centcom)
 "pL" = (
 /obj/machinery/telecomms/bus/preset_cent,
-/obj/effect/floor_decal/corner/green{
-	dir = 5
-	},
-/turf/unsimulated/floor{
-	icon_state = "steel"
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/centcom)
 "pM" = (
 /obj/structure/bed/chair,
@@ -3200,21 +3064,11 @@
 /area/beach)
 "pO" = (
 /obj/machinery/telecomms/processor/preset_cent,
-/obj/effect/floor_decal/corner/green{
-	dir = 5
-	},
-/turf/unsimulated/floor{
-	icon_state = "steel"
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/centcom)
 "pP" = (
 /obj/machinery/telecomms/server/presets/centcomm,
-/obj/effect/floor_decal/corner/green{
-	dir = 5
-	},
-/turf/unsimulated/floor{
-	icon_state = "steel"
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/centcom)
 "pQ" = (
 /obj/machinery/button/blast_door{
@@ -3227,36 +3081,21 @@
 /turf/simulated/wall/r_titanium,
 /area/supply/dock)
 "pR" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 6
-	},
-/obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/t12{
-	pixel_x = -8;
-	pixel_y = 6
-	},
-/obj/item/gun/projectile/automatic/t12{
-	pixel_x = -8;
-	pixel_y = 4
-	},
-/obj/item/gun/projectile/automatic/t12{
-	pixel_x = -8;
-	pixel_y = 2
-	},
-/obj/item/gun/projectile/automatic/t12{
-	pixel_x = -8
+/obj/effect/floor_decal/corner/orange{
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
 /area/centcom)
-"pV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/wall/r_wall,
-/area/site53/lhcz/scp1102entrance)
+"pW" = (
+/obj/structure/table/standard,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
 "qd" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 10;
@@ -3288,7 +3127,7 @@
 "qh" = (
 /obj/machinery/door/airlock/vault{
 	name = "Alpha-1";
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3301,7 +3140,7 @@
 	icon = 'icons/turf/jungle.dmi';
 	icon_state = "greygrass"
 	},
-/area/site53/surface/surface)
+/area/centcom)
 "qq" = (
 /turf/unsimulated/beach/coastline{
 	density = 1;
@@ -3326,36 +3165,6 @@
 "qC" = (
 /turf/unsimulated/beach/water,
 /area/beach)
-"qL" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 6
-	},
-/obj/structure/table/standard,
-/obj/item/grenade/frag/high_yield{
-	pixel_x = -6;
-	pixel_y = 8
-	},
-/obj/item/grenade/frag/high_yield{
-	pixel_x = 1;
-	pixel_y = 8
-	},
-/obj/item/grenade/frag/high_yield{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/grenade/frag/high_yield{
-	pixel_x = -6
-	},
-/obj/item/grenade/frag/high_yield{
-	pixel_x = 1
-	},
-/obj/item/grenade/frag/high_yield{
-	pixel_x = 8
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom)
 "qO" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 6
@@ -3377,19 +3186,14 @@
 /area/centcom)
 "qQ" = (
 /obj/structure/table/standard,
-/obj/item/gun/launcher/net{
-	pixel_y = 12
-	},
-/obj/item/gun/launcher/net{
-	pixel_y = 9
-	},
-/obj/item/gun/launcher/net{
-	pixel_y = 6
-	},
-/obj/item/gun/launcher/net{
-	pixel_y = 3
-	},
-/obj/item/gun/launcher/net,
+/obj/item/implantcase/death_alarm,
+/obj/item/implantcase/death_alarm,
+/obj/item/implantcase/death_alarm,
+/obj/item/implantcase/death_alarm,
+/obj/item/implantcase/death_alarm,
+/obj/item/implantcase/death_alarm,
+/obj/item/implanter,
+/obj/item/implanter,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -3432,65 +3236,20 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
-"rl" = (
-/obj/effect/floor_decal/corner/blue{
-	dir = 9
+"rp" = (
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/tram/goc1)
+"rz" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
 	},
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/turf/unsimulated/floor{
-	icon_state = "dark"
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
 	},
-/area/centcom)
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/tram/goc1)
 "rC" = (
 /turf/unsimulated/floor/reinforced,
 /area/centcom)
@@ -3499,11 +3258,25 @@
 /turf/unsimulated/floor{
 	icon_state = "snow"
 	},
-/area/site53/surface/surface)
+/area/centcom)
+"rK" = (
+/obj/effect/landmark{
+	name = "NewPlayer"
+	},
+/turf/unsimulated/wall/lobby_background,
+/area/space)
 "rO" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor,
-/area/site53/lhcz/scp1102entrance)
+/obj/structure/table/standard,
+/obj/item/device/flashlight/upgraded,
+/obj/item/device/flashlight/upgraded,
+/obj/item/device/flashlight/upgraded,
+/obj/item/device/flashlight/upgraded,
+/obj/item/device/flashlight/upgraded,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
 "rW" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 6
@@ -3532,16 +3305,15 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"sn" = (
-/obj/effect/floor_decal/corner/white{
-	dir = 6;
-	icon_state = "corner_white"
+"rZ" = (
+/turf/unsimulated/wall/lobby_background,
+/area/space)
+"sb" = (
+/obj/machinery/door/blast/shutters{
+	id_tag = "goc1"
 	},
-/obj/structure/table/standard,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom)
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/tram/goc1)
 "sq" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -3556,9 +3328,7 @@
 	dir = 6;
 	icon_state = "corner_white"
 	},
-/obj/machinery/computer/modular/preset/cardslot/command_sec{
-	dir = 8
-	},
+/obj/structure/table/standard,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -3574,23 +3344,14 @@
 /area/centcom)
 "sH" = (
 /obj/structure/table/standard,
-/obj/item/crowbar/prybar{
-	pixel_x = -2;
-	pixel_y = 4
-	},
-/obj/item/crowbar/prybar{
-	pixel_x = 3;
-	pixel_y = -3
-	},
-/obj/item/crowbar/prybar{
-	pixel_x = 1;
-	pixel_y = -2
-	},
-/obj/item/crowbar/prybar{
-	pixel_x = -1;
-	pixel_y = 2
-	},
-/obj/item/crowbar/prybar,
+/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
+/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
+/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
+/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
+/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
+/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
+/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
+/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -3602,12 +3363,26 @@
 	},
 /obj/machinery/vending/security{
 	dir = 4;
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
 /area/centcom)
+"sS" = (
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1;
+	icon_state = "bordercolor"
+	},
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/toy/figure/md{
+	desc = "Awwww, a cute Medical Doctor action figure."
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "sT" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/unsimulated/floor/grass{
@@ -3615,7 +3390,11 @@
 	icon = 'icons/turf/jungle.dmi';
 	icon_state = "greygrass"
 	},
-/area/site53/surface/surface)
+/area/centcom)
+"tc" = (
+/obj/machinery/body_scanconsole,
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "te" = (
 /obj/machinery/vending/wallmed1{
 	dir = 4;
@@ -3655,16 +3434,9 @@
 	},
 /area/centcom)
 "ti" = (
-/obj/effect/floor_decal/corner/research{
-	dir = 9
-	},
-/obj/structure/closet/secure_closet/mtf/ntf,
-/obj/item/clothing/accessory/buddytag,
-/obj/item/locator,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom)
+/obj/structure/flora/ausbushes/grassybush,
+/turf/simulated/floor/exoplanet/snow,
+/area/centcom/chaos)
 "tq" = (
 /turf/unsimulated/wall,
 /area/centcom)
@@ -3682,7 +3454,7 @@
 	icon = 'icons/turf/flooring/asteroid.dmi';
 	icon_state = "asteroid"
 	},
-/area/site53/surface/surface)
+/area/centcom)
 "tE" = (
 /obj/structure/bed/chair,
 /turf/unsimulated/floor/techfloor,
@@ -3692,16 +3464,17 @@
 	color = "#FFFF00";
 	dir = 9
 	},
-/obj/structure/closet/crate/secure/biohazard{
-	req_access = list(100)
-	},
+/obj/structure/table/rack,
+/obj/item/flamethrower/full,
+/obj/item/tank/phoron,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
 /area/centcom)
 "tT" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 9
+/obj/effect/floor_decal/corner/orange{
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3718,10 +3491,6 @@
 /obj/effect/floor_decal/corner/white{
 	dir = 9;
 	icon_state = "corner_white"
-	},
-/obj/machinery/recharger/wallcharger{
-	dir = 4;
-	pixel_x = -20
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3776,39 +3545,15 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"uG" = (
-/obj/structure/table/standard,
-/obj/item/gun/launcher/grenade{
-	pixel_y = 5
-	},
-/obj/item/gun/launcher/grenade,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
-/area/centcom)
 "uJ" = (
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 9
 	},
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
-"uR" = (
-/obj/effect/floor_decal/corner{
-	color = "#FFFF00";
-	dir = 9
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom)
 "uU" = (
-/obj/item/stool,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
-/area/centcom)
+/turf/simulated/floor/exoplanet/snow,
+/area/centcom/chaos)
 "vj" = (
 /turf/space/bluespace,
 /area/space)
@@ -3828,18 +3573,12 @@
 	},
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
-"vp" = (
-/obj/effect/landmark/corpse/classdescaped,
-/turf/simulated/floor,
-/area/site53/lhcz/scp1102entrance{
-	name = "\improper Abyss"
-	})
 "vq" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/unsimulated/floor{
 	icon_state = "snow"
 	},
-/area/site53/surface/surface)
+/area/centcom)
 "vr" = (
 /obj/effect/landmark{
 	name = "DeitySpawn"
@@ -3866,50 +3605,54 @@
 	},
 /turf/simulated/floor/plating,
 /area/supply/dock)
-"wa" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/corpse/classd,
-/turf/simulated/floor,
-/area/site53/lhcz/scp1102entrance)
+"ws" = (
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "wu" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/m16{
-	pixel_y = 8
-	},
-/obj/item/gun/projectile/automatic/scp/m16{
-	pixel_y = 6
-	},
-/obj/item/gun/projectile/automatic/scp/m16{
-	pixel_y = 4
-	},
-/obj/item/gun/projectile/automatic/scp/m16{
-	pixel_y = 2
-	},
-/obj/item/gun/projectile/automatic/scp/m16,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
 /area/centcom)
 "wy" = (
 /obj/machinery/telecomms/hub/preset_cent,
-/obj/effect/floor_decal/corner/green{
-	dir = 10
-	},
-/turf/unsimulated/floor{
-	icon_state = "steel"
-	},
-/area/centcom)
-"wz" = (
-/obj/effect/floor_decal/corner/blue{
-	dir = 9
-	},
-/obj/structure/closet/secure_closet/mtf/ntf,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/centcom)
 "wY" = (
 /obj/structure/shuttle/engine/heater{
@@ -3952,12 +3695,20 @@
 /obj/item/storage/pill_bottle/amnesticsb,
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
+"xE" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "xP" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 9
+/obj/effect/floor_decal/corner/orange{
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/machinery/vending/security{
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3966,6 +3717,20 @@
 "xR" = (
 /turf/simulated/floor,
 /area/centcom)
+"xV" = (
+/obj/item/clothing/head/helmet/scp/goc,
+/obj/item/clothing/suit/armor/goc,
+/obj/structure/closet,
+/obj/item/storage/belt/holster/security,
+/obj/item/gun/projectile/pistol,
+/obj/item/clothing/gloves/thick/swat,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/ert,
+/obj/item/clothing/glasses/night,
+/obj/item/device/radio/headset/goc,
+/obj/item/gun/projectile/automatic/scp/fnfal,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "yh" = (
 /obj/machinery/door/blast/regular,
 /turf/simulated/floor,
@@ -3981,8 +3746,8 @@
 /area/centcom)
 "yE" = (
 /obj/machinery/door/airlock/vault{
-	name = "Nu-7";
-	req_access = list(100)
+	name = "Epislon-9";
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -4008,14 +3773,14 @@
 	icon = 'icons/turf/jungle.dmi';
 	icon_state = "greygrass"
 	},
-/area/site53/surface/surface)
+/area/centcom)
 "yO" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
 /obj/machinery/vending/security{
 	dir = 4;
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -4035,12 +3800,18 @@
 "yS" = (
 /obj/machinery/door/airlock/vault{
 	name = "Epislon-11";
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
 /area/centcom)
+"zs" = (
+/obj/machinery/door/airlock{
+	name = "GOC Outpost"
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/centcom/goc)
 "zw" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 10;
@@ -4050,12 +3821,15 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"zy" = (
-/obj/item/pickaxe/xeno/hand,
-/turf/simulated/floor,
-/area/site53/lhcz/scp1102entrance{
-	name = "\improper Abyss"
-	})
+"zA" = (
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/obj/item/bodybag/cryobag,
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "zQ" = (
 /obj/effect/floor_decal/corner/research{
 	dir = 6
@@ -4064,6 +3838,10 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"Ad" = (
+/obj/structure/flora/tree/pine,
+/turf/simulated/floor/exoplanet/grass,
+/area/centcom/chaos)
 "Ao" = (
 /obj/effect/floor_decal/corner/orange{
 	dir = 6;
@@ -4072,65 +3850,51 @@
 /obj/effect/floor_decal/spline/fancy/black,
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
+"Aq" = (
+/obj/machinery/door/airlock,
+/turf/simulated/floor/tiled/steel_grid,
+/area/centcom/goc)
 "AA" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
-	},
-/obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "chaos2";
-	name = "Car Storage Shutters button";
-	pixel_y = -23
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/site53/tram/car2)
+/obj/effect/floor_decal/corner/blue/border,
+/obj/machinery/bodyscanner,
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "Ba" = (
-/obj/effect/gibspawner/generic,
-/turf/simulated/floor,
-/area/site53/lhcz/scp1102entrance)
-"Bp" = (
 /obj/effect/floor_decal/corner{
 	color = "#FFFF00";
 	dir = 9
 	},
-/obj/structure/table/rack,
-/obj/item/rig/hazmat/equipped,
-/obj/item/rig/hazmat/equipped,
-/obj/item/rig/hazmat/equipped,
+/obj/structure/closet/crate/secure/biohazard{
+	req_access = list("ACCESS_MTF")
+	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
 /area/centcom)
+"BC" = (
+/obj/effect/floor_decal/corner/blue/border,
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "BF" = (
 /obj/structure/table/standard,
-/obj/item/device/flashlight/upgraded{
-	pixel_x = 13;
-	pixel_y = 17
-	},
-/obj/item/device/flashlight/upgraded{
-	pixel_x = 19;
-	pixel_y = 6
-	},
-/obj/item/device/flashlight/upgraded{
-	pixel_y = 7
-	},
-/obj/item/device/flashlight/upgraded{
-	pixel_x = -5;
-	pixel_y = 17
-	},
-/obj/item/device/flashlight/upgraded{
-	pixel_x = 11;
-	pixel_y = 3
-	},
+/obj/item/crowbar/prybar,
+/obj/item/crowbar/prybar,
+/obj/item/crowbar/prybar,
+/obj/item/crowbar/prybar,
+/obj/item/crowbar/prybar,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
 /area/centcom)
-"BU" = (
-/turf/unsimulated/floor/reinforced,
-/area/site53/surface/surface)
+"BG" = (
+/obj/structure/curtain/medical,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "Cr" = (
 /obj/machinery/door/blast/shutters{
 	id_tag = "beta7";
@@ -4142,19 +3906,16 @@
 	},
 /area/centcom)
 "Ct" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/gibspawner/generic,
-/turf/simulated/floor,
-/area/site53/lhcz/scp1102entrance)
+/obj/structure/reagent_dispensers/watertank,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
 "Cx" = (
 /obj/effect/paint/silver,
 /turf/simulated/wall/r_titanium,
 /area/supply/dock)
-"CG" = (
-/turf/simulated/floor,
-/area/site53/lhcz/scp1102entrance{
-	name = "\improper Abyss"
-	})
 "Dq" = (
 /obj/structure/table/standard,
 /obj/item/implantcase/death_alarm,
@@ -4181,9 +3942,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "Et" = (
 /turf/simulated/floor/shuttle/white,
 /area/site53/tram/mtf)
@@ -4191,11 +3950,6 @@
 /obj/effect/wingrille_spawn/reinforced/crescent,
 /turf/unsimulated/floor/plating,
 /area/centcom)
-"EE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/corpse/classdescaped,
-/turf/simulated/floor,
-/area/site53/lhcz/scp1102entrance)
 "EZ" = (
 /obj/structure/window/reinforced,
 /obj/structure/bed/chair/shuttle/black{
@@ -4217,94 +3971,56 @@
 /obj/item/ammo_magazine/scp,
 /obj/item/ammo_magazine/scp,
 /turf/simulated/floor/tiled/techfloor,
-/area/centcom/specops{
-	name = "\improper Chaos Base"
-	})
+/area/centcom/chaos)
 "Fu" = (
 /obj/effect/floor_decal/corner{
 	color = "#FFFF00";
 	dir = 9
 	},
 /obj/structure/table/rack,
-/obj/item/flamethrower/full,
-/obj/item/tank/phoron,
+/obj/item/rig/hazmat/equipped,
+/obj/item/rig/hazmat/equipped,
+/obj/item/rig/hazmat/equipped,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
 /area/centcom)
 "FA" = (
 /obj/structure/table/standard,
+/obj/item/implantcase/death_alarm,
+/obj/item/implantcase/death_alarm,
+/obj/item/implantcase/death_alarm,
+/obj/item/implantcase/death_alarm,
+/obj/item/implanter,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
 	},
 /area/centcom)
-"FQ" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 6
+"Hn" = (
+/obj/machinery/door/airlock,
+/turf/simulated/floor/wood,
+/area/centcom/goc)
+"Hs" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
 	},
-/obj/structure/table/standard,
-/obj/item/plastique{
-	pixel_x = 10;
-	pixel_y = 7
-	},
-/obj/item/plastique{
-	pixel_x = 3;
-	pixel_y = 7
-	},
-/obj/item/plastique{
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/obj/item/plastique{
-	pixel_x = 10;
-	pixel_y = -8
-	},
-/obj/item/plastique{
-	pixel_x = 3;
-	pixel_y = -8
-	},
-/obj/item/plastique{
-	pixel_x = -4;
-	pixel_y = -8
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom)
-"Gx" = (
-/obj/effect/floor_decal/corner/white{
-	dir = 9;
-	icon_state = "corner_white"
-	},
-/obj/structure/closet/secure_closet/mtf/ntf,
-/obj/item/clothing/head/beret/scp,
-/obj/item/gun/projectile/revolver/mateba,
-/obj/item/melee/baton/loaded,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom)
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "Hv" = (
 /turf/unsimulated/floor/sky,
-/area/site53/surface/surface)
-"HJ" = (
-/obj/effect/gibspawner/robot,
-/turf/simulated/floor,
-/area/site53/lhcz/scp1102entrance)
+/area/space)
 "HS" = (
 /obj/machinery/telecomms/broadcaster/preset_cent,
-/obj/effect/floor_decal/corner/green{
-	dir = 10
-	},
-/turf/unsimulated/floor{
-	icon_state = "steel"
-	},
+/turf/simulated/floor/bluegrid/airless,
 /area/centcom)
 "Ie" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 6
+/obj/effect/floor_decal/corner/orange{
+	dir = 6;
+	icon_state = "corner_white"
 	},
+/obj/machinery/portable_atmospherics/canister/phoron,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -4316,7 +4032,7 @@
 	},
 /obj/machinery/vending/security{
 	dir = 4;
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -4326,6 +4042,7 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
+/obj/structure/scp173_cage,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -4345,7 +4062,7 @@
 	dir = 5
 	},
 /obj/machinery/vending/security{
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -4379,10 +4096,6 @@
 	dir = 6;
 	icon_state = "corner_white"
 	},
-/obj/machinery/recharger/wallcharger{
-	dir = 8;
-	pixel_x = 20
-	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -4399,70 +4112,41 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"JV" = (
+/obj/structure/table/rack,
+/obj/machinery/light{
+	dir = 4;
+	pixel_x = 0
+	},
+/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/ammo_magazine/shotholder/shell,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "Kf" = (
 /obj/structure/bed/chair/office/light,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
 /area/centcom)
-"KJ" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 6
-	},
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/obj/item/ammo_magazine/t12,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom)
 "Lc" = (
-/obj/effect/shuttle_landmark/heli/mtf,
+/obj/effect/shuttle_landmark/heli,
 /turf/unsimulated/floor/plating,
-/area/site53/surface/surface)
-"Lv" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/gibspawner/robot,
-/turf/simulated/floor,
-/area/site53/lhcz/scp1102entrance)
+/area/space)
+"Le" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8;
+	icon_state = "bordercolor"
+	},
+/obj/machinery/light{
+	dir = 8;
+	pixel_x = 0
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "LD" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/combat,
@@ -4480,21 +4164,6 @@
 /turf/unsimulated/floor/grass{
 	icon = 'icons/turf/flooring/asteroid.dmi';
 	icon_state = "asteroid"
-	},
-/area/site53/surface/surface)
-"Me" = (
-/turf/unsimulated/wall,
-/area/beach)
-"Mi" = (
-/obj/structure/table/standard,
-/obj/item/implantcase/death_alarm,
-/obj/item/implantcase/death_alarm,
-/obj/item/implantcase/death_alarm,
-/obj/item/implantcase/death_alarm,
-/obj/item/implanter,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
 	},
 /area/centcom)
 "Mp" = (
@@ -4522,12 +4191,30 @@
 	},
 /obj/item/clothing/suit/armor/vest/scp/medarmor/eta,
 /obj/item/clothing/head/helmet/scp/eta,
-/obj/item/clothing/glasses/scramble,
+/obj/item/clothing/glasses/hud/scramble,
 /obj/structure/table/rack,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
 /area/centcom)
+"MO" = (
+/obj/item/clothing/head/helmet/scp/goc,
+/obj/item/clothing/suit/armor/goc,
+/obj/structure/closet,
+/obj/item/storage/belt/holster/security,
+/obj/item/gun/projectile/pistol,
+/obj/item/clothing/gloves/thick/swat,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/ert,
+/obj/item/clothing/glasses/night,
+/obj/machinery/light{
+	dir = 8;
+	pixel_x = 0
+	},
+/obj/item/device/radio/headset/goc,
+/obj/item/gun/projectile/automatic/scp/fnfal,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "MW" = (
 /obj/effect/landmark{
 	name = "Response Team"
@@ -4538,30 +4225,11 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
-"Nv" = (
-/obj/effect/landmark/corpse/classdescaped,
-/turf/simulated/floor,
-/area/site53/lhcz/scp1102entrance)
 "NO" = (
 /obj/machinery/door/blast/shutters{
 	id_tag = "epislon9";
 	name = "Epsilon-9"
 	},
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
-/area/centcom)
-"Pu" = (
-/obj/structure/table/standard,
-/obj/item/implantcase/death_alarm,
-/obj/item/implantcase/death_alarm,
-/obj/item/implantcase/death_alarm,
-/obj/item/implantcase/death_alarm,
-/obj/item/implantcase/death_alarm,
-/obj/item/implantcase/death_alarm,
-/obj/item/implanter,
-/obj/item/implanter,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -4575,6 +4243,30 @@
 	icon_state = "dark"
 	},
 /area/centcom)
+"PR" = (
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1;
+	icon_state = "bordercolor"
+	},
+/obj/item/storage/firstaid,
+/obj/item/storage/firstaid,
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
+"PS" = (
+/obj/structure/flora/ausbushes/sunnybush,
+/turf/simulated/floor/exoplanet/snow,
+/area/centcom/chaos)
+"PT" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/obj/machinery/vending/medical{
+	req_access = list()
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "PV" = (
 /obj/machinery/button/blast_door{
 	dir = 1;
@@ -4587,15 +4279,22 @@
 	icon_state = "monotiledark"
 	},
 /area/centcom)
-"Qr" = (
-/obj/effect/floor_decal/corner/white{
-	dir = 6;
-	icon_state = "corner_white"
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom)
+"PW" = (
+/obj/structure/closet/crate,
+/turf/simulated/floor/wood,
+/area/centcom/goc)
+"Qi" = (
+/turf/simulated/floor/tiled/steel_grid,
+/area/centcom/goc)
+"QJ" = (
+/obj/structure/closet,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/chaos)
 "RW" = (
 /obj/structure/grille{
 	health_max = null;
@@ -4603,83 +4302,38 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/site53/tram/mtf)
-"Sr" = (
-/turf/simulated/mineral{
-	color = null;
-	icon_state = "riveted";
-	name = "wall"
-	},
-/area/beach)
-"SK" = (
-/obj/structure/table/standard,
-/obj/item/storage/box/fragshells{
-	pixel_y = 10
-	},
-/obj/item/storage/box/fragshells{
-	pixel_y = 8
-	},
-/obj/item/storage/box/fragshells{
-	pixel_y = 6
-	},
-/obj/item/storage/box/fragshells{
-	pixel_y = 4
-	},
-/obj/item/storage/box/fragshells{
-	pixel_y = 2
-	},
-/obj/item/storage/box/fragshells,
-/obj/item/storage/box/fragshells{
-	pixel_y = 10
-	},
-/obj/item/storage/box/fragshells{
-	pixel_y = 8
-	},
-/obj/item/storage/box/fragshells{
-	pixel_y = 6
-	},
-/obj/item/storage/box/fragshells{
-	pixel_y = 4
-	},
-/obj/item/storage/box/fragshells{
-	pixel_y = 2
-	},
-/obj/item/storage/box/fragshells,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
-/area/centcom)
-"UO" = (
-/mob/living/simple_animal/hostile/faithless/strong{
-	desc = "Your mind struggles to comprehend what it sees.";
-	health = 200;
-	health_max = 200;
-	name = "wanderer"
-	},
-/turf/simulated/floor,
-/area/site53/lhcz/scp1102entrance{
-	name = "\improper Abyss"
-	})
+"Te" = (
+/obj/structure/flora/tree/pine,
+/turf/simulated/floor/exoplanet/snow,
+/area/centcom/chaos)
+"TQ" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/chaos)
+"Um" = (
+/turf/simulated/floor/wood,
+/area/centcom/goc)
 "UQ" = (
 /turf/space{
 	icon_state = "black"
 	},
 /area/space)
-"Vj" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
-/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
-/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
-/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
-/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
-/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
-/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
-/obj/item/reagent_containers/hypospray/autoinjector/combatpain,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
+"UX" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 1
 	},
-/area/centcom)
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/tram/goc1)
+"VD" = (
+/obj/machinery/light{
+	dir = 4;
+	pixel_x = 0
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
 "VH" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 4
@@ -4689,30 +4343,32 @@
 	},
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
+"Wb" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 6;
+	icon_state = "bordercolor"
+	},
+/obj/machinery/light{
+	dir = 4;
+	pixel_x = 0
+	},
+/obj/machinery/vending/medical{
+	req_access = list()
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/centcom/goc)
+"Wx" = (
+/obj/effect/shuttle_landmark/goc1/start,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/tram/goc1)
 "WS" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 9
+/obj/effect/floor_decal/corner/orange{
+	dir = 9;
+	icon_state = "corner_white"
 	},
 /obj/structure/closet/secure_closet/mtf/ntf,
 /turf/unsimulated/floor{
 	icon_state = "dark"
-	},
-/area/centcom)
-"Xi" = (
-/obj/structure/table/standard,
-/obj/item/tank/oxygen/yellow{
-	pixel_x = -9
-	},
-/obj/item/tank/oxygen/yellow{
-	pixel_x = -6
-	},
-/obj/item/tank/oxygen/yellow{
-	pixel_x = -3
-	},
-/obj/item/tank/oxygen/yellow,
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
 	},
 /area/centcom)
 "Xw" = (
@@ -4726,7 +4382,39 @@
 	},
 /turf/simulated/floor/shuttle/white,
 /area/site53/tram/mtf)
+"Xx" = (
+/obj/structure/sign/bluecross_2,
+/turf/simulated/wall/titanium,
+/area/centcom/goc)
+"XG" = (
+/obj/structure/bed,
+/obj/structure/bed{
+	pixel_y = 8
+	},
+/turf/simulated/floor/wood,
+/area/centcom/goc)
+"XQ" = (
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/machinery/light{
+	dir = 4;
+	pixel_x = 0
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "Ye" = (
+/obj/structure/dispenser,
 /obj/machinery/button/blast_door{
 	id_tag = "epislon9";
 	name = "Epislon-9 Exit Shutters button";
@@ -4741,7 +4429,16 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
-/obj/structure/scp173_cage,
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -4752,6 +4449,31 @@
 	},
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
+"YL" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/tram/goc1)
+"YQ" = (
+/obj/structure/bed/chair/office,
+/obj/machinery/light{
+	dir = 4;
+	pixel_x = 0
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/tram/car1)
+"Zu" = (
+/obj/structure/table/rack,
+/obj/item/grenade/frag,
+/obj/item/grenade/frag,
+/obj/item/grenade/frag,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "ZC" = (
 /obj/machinery/button/blast_door{
 	dir = 1;
@@ -4759,7 +4481,6 @@
 	name = "Epsilon-11 Exit Shutters button";
 	pixel_y = -23
 	},
-/obj/structure/stasis_cage,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -4768,7 +4489,7 @@
 "ZY" = (
 /obj/machinery/computer/shuttle_control{
 	name = "MTF Helicopter";
-	req_access = list(402,302);
+	req_access = list("ACCESS_MEDICAL_LEVEL2","ACCESS_SCIENCE_LEVEL2");
 	shuttle_tag = "MTF Helicopter"
 	},
 /turf/simulated/floor/shuttle/black,
@@ -4781,69 +4502,6 @@
 /area/site53/tram/mtf)
 
 (1,1,1) = {"
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 aa
 aa
 aa
@@ -4860,6 +4518,69 @@ aa
 aa
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
 ab
 ab
 ab
@@ -4983,85 +4704,85 @@ ab
 ab
 "}
 (2,1,1) = {"
-cw
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-cw
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 aa
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
 aa
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+tq
+tq
+dD
+dD
+dD
+dD
+dD
+dD
+dD
+dD
+dD
+dD
+dD
+dD
+dD
+dD
+tq
 ab
 ab
 ab
@@ -5185,71 +4906,71 @@ ab
 ab
 "}
 (3,1,1) = {"
-cw
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-Hv
-cw
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 aa
-eL
-eL
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+Hv
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+dD
+dD
 rE
 rE
 rE
@@ -5262,8 +4983,8 @@ aZ
 aZ
 aZ
 aZ
-eL
-cw
+dD
+tq
 ab
 ab
 ab
@@ -5387,7 +5108,7 @@ ab
 ab
 "}
 (4,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -5418,7 +5139,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -5449,8 +5170,8 @@ rC
 rC
 rC
 tq
-eL
-eL
+dD
+dD
 rE
 aZ
 aZ
@@ -5465,7 +5186,7 @@ aZ
 aZ
 vq
 bn
-cw
+tq
 ab
 ab
 ab
@@ -5589,7 +5310,7 @@ ab
 ab
 "}
 (5,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -5620,7 +5341,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -5791,7 +5512,7 @@ ab
 ab
 "}
 (6,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -5822,7 +5543,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -5993,7 +5714,7 @@ ab
 ab
 "}
 (7,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -6024,7 +5745,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -6055,22 +5776,22 @@ rC
 rC
 rC
 xo
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
 es
 ab
 ab
@@ -6195,7 +5916,7 @@ ab
 ab
 "}
 (8,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -6226,7 +5947,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -6257,22 +5978,22 @@ rC
 rC
 rC
 xo
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
 es
 ab
 ab
@@ -6397,7 +6118,7 @@ ab
 ab
 "}
 (9,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -6428,7 +6149,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -6459,22 +6180,22 @@ rC
 rC
 rC
 xo
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
 es
 ab
 ab
@@ -6599,7 +6320,7 @@ ab
 ab
 "}
 (10,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -6630,7 +6351,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -6661,22 +6382,22 @@ rC
 rC
 rC
 xo
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
-BU
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
+rC
 es
 ab
 ab
@@ -6801,7 +6522,7 @@ ab
 ab
 "}
 (11,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -6832,7 +6553,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -7003,7 +6724,7 @@ ab
 ab
 "}
 (12,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -7034,7 +6755,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -7205,7 +6926,7 @@ ab
 ab
 "}
 (13,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -7236,7 +6957,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -7267,9 +6988,9 @@ rC
 rC
 rC
 tq
-eL
-eL
-eL
+dD
+dD
+dD
 ty
 qk
 mQ
@@ -7283,7 +7004,7 @@ bn
 bn
 bn
 bn
-cw
+tq
 ab
 ab
 ab
@@ -7407,7 +7128,7 @@ ab
 ab
 "}
 (14,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -7438,7 +7159,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -7470,8 +7191,8 @@ rC
 rC
 tq
 tq
-eL
-eL
+dD
+dD
 ty
 LG
 tq
@@ -7482,10 +7203,10 @@ tq
 tq
 ty
 aZ
-eL
-eL
-eL
-cw
+dD
+dD
+dD
+tq
 ab
 ab
 ab
@@ -7609,7 +7330,7 @@ ab
 ab
 "}
 (15,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -7640,7 +7361,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -7672,9 +7393,9 @@ rC
 rC
 tq
 tq
-eL
-eL
-eL
+dD
+dD
+dD
 tq
 tq
 op
@@ -7683,11 +7404,11 @@ oq
 op
 tq
 tq
-eL
-eL
-aa
-aa
-aa
+dD
+dD
+tq
+tq
+tq
 ab
 ab
 ab
@@ -7811,7 +7532,7 @@ ab
 ab
 "}
 (16,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -7842,7 +7563,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -7885,9 +7606,9 @@ oq
 oq
 eH
 tq
-aa
-aa
-aa
+tq
+tq
+tq
 ab
 ab
 ab
@@ -8013,7 +7734,7 @@ ab
 ab
 "}
 (17,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -8044,7 +7765,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -8215,7 +7936,7 @@ ab
 ab
 "}
 (18,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -8246,7 +7967,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -8417,7 +8138,7 @@ ab
 ab
 "}
 (19,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -8448,7 +8169,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -8472,7 +8193,7 @@ cv
 Et
 yo
 yo
-ds
+ck
 ck
 ck
 ck
@@ -8619,7 +8340,7 @@ ab
 ab
 "}
 (20,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -8650,7 +8371,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -8821,7 +8542,7 @@ ab
 ab
 "}
 (21,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -8852,7 +8573,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -9023,7 +8744,7 @@ ab
 ab
 "}
 (22,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -9054,7 +8775,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -9225,7 +8946,7 @@ ab
 ab
 "}
 (23,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -9256,7 +8977,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -9427,7 +9148,7 @@ ab
 ab
 "}
 (24,1,1) = {"
-cw
+aa
 Hv
 Hv
 Hv
@@ -9458,7 +9179,7 @@ Hv
 Hv
 Hv
 Hv
-cw
+aa
 ab
 ab
 ab
@@ -9629,38 +9350,38 @@ ab
 ab
 "}
 (25,1,1) = {"
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
-cw
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 ab
 ab
 ab
@@ -10506,8 +10227,8 @@ tq
 tq
 tq
 tq
-oY
-oY
+oq
+oq
 tq
 tq
 tq
@@ -10674,7 +10395,7 @@ ab
 ab
 ab
 ab
-tq
+ab
 tq
 tq
 tq
@@ -10701,7 +10422,7 @@ tq
 ab
 ab
 tq
-ts
+ph
 pv
 pu
 pu
@@ -10716,7 +10437,7 @@ pv
 pu
 pu
 pv
-ts
+ph
 tq
 tq
 tq
@@ -10876,12 +10597,12 @@ ab
 ab
 ab
 ab
+ab
 tq
-wz
-wz
-wz
-wz
-rl
+bF
+bF
+bF
+bF
 wu
 cD
 Yt
@@ -10921,8 +10642,8 @@ pj
 pj
 tq
 pK
-ph
-ph
+mD
+mD
 mN
 tq
 ab
@@ -11078,12 +10799,12 @@ ab
 ab
 ab
 ab
+ab
 tq
 MW
 MW
 MW
 MW
-hO
 hO
 hO
 hO
@@ -11280,16 +11001,16 @@ ab
 ab
 ab
 ab
+ab
 nq
 hO
 hO
 hO
 hO
 hO
-Vj
 sH
 BF
-hO
+rO
 hO
 yS
 af
@@ -11482,16 +11203,16 @@ ab
 ab
 ab
 ab
+ab
 tq
 MW
 MW
 MW
 MW
 hO
-Pu
 qQ
-al
-hO
+pW
+pW
 ZC
 tq
 af
@@ -11684,6 +11405,7 @@ ab
 ab
 ab
 ab
+ab
 tq
 qO
 qO
@@ -11694,7 +11416,6 @@ rW
 rW
 rW
 rW
-fb
 tq
 tq
 nB
@@ -11728,7 +11449,7 @@ cK
 ps
 ts
 tq
-bX
+mN
 mD
 mD
 cP
@@ -11886,7 +11607,7 @@ ab
 ab
 ab
 ab
-tq
+ab
 tq
 tq
 tq
@@ -12088,16 +11809,16 @@ ab
 ab
 ab
 ab
+ab
 tq
 cf
 cf
 cf
 cf
-Bp
 Fu
 tH
-tH
-uR
+aL
+Ba
 If
 tq
 tq
@@ -12111,10 +11832,10 @@ nQ
 nQ
 yH
 in
-ti
-ti
-ti
-ti
+il
+il
+il
+il
 tq
 tq
 tq
@@ -12290,12 +12011,12 @@ ab
 ab
 ab
 ab
+ab
 tq
-uU
-uU
-uU
-uU
-hO
+dQ
+dQ
+dQ
+dQ
 hO
 hO
 hO
@@ -12313,10 +12034,10 @@ hO
 hO
 hO
 hO
-uU
-uU
-uU
-uU
+dQ
+dQ
+dQ
+dQ
 tq
 yh
 xR
@@ -12492,16 +12213,16 @@ ab
 ab
 ab
 ab
+ab
 nq
 hO
 hO
 hO
 hO
 hO
-FA
-FA
-FA
-hO
+pW
+pW
+pW
 hO
 jz
 Cr
@@ -12511,8 +12232,8 @@ xr
 Il
 oQ
 hO
+pW
 FA
-Mi
 hO
 hO
 hO
@@ -12694,16 +12415,16 @@ ab
 ab
 ab
 ab
+ab
 tq
-uU
-uU
-uU
-uU
+dQ
+dQ
+dQ
+dQ
 hO
-Mi
 FA
-FA
-hO
+pW
+pW
 PV
 tq
 Cr
@@ -12713,8 +12434,8 @@ hO
 Il
 tq
 ui
-FA
-FA
+pW
+pW
 hO
 hO
 hO
@@ -12896,12 +12617,12 @@ ab
 ab
 ab
 ab
+ab
 tq
 au
 au
 au
 au
-na
 na
 na
 na
@@ -13098,7 +12819,7 @@ ab
 ab
 ab
 ab
-tq
+ab
 tq
 tq
 tq
@@ -13300,16 +13021,16 @@ ab
 ab
 ab
 ab
+ab
 tq
 dT
 dT
 dT
-Gx
 ly
 ue
-ue
-ue
-ly
+cF
+cF
+cF
 pi
 tq
 tq
@@ -13502,15 +13223,15 @@ ab
 ab
 ab
 ab
+ab
 tq
-uU
-uU
-uU
-uU
+dQ
+dQ
+dQ
+dQ
 hO
-uU
-FA
-hO
+dQ
+pW
 hO
 hO
 tq
@@ -13520,10 +13241,10 @@ xr
 hO
 NO
 tq
+Ct
 hO
-hO
-uG
-SK
+pW
+pW
 hO
 hO
 hO
@@ -13704,16 +13425,16 @@ ab
 ab
 ab
 ab
+ab
 nq
 hO
 hO
 hO
 hO
 hO
-uU
-Mi
-uU
-hO
+dQ
+FA
+dQ
 hO
 po
 qP
@@ -13724,8 +13445,8 @@ NO
 yE
 hO
 hO
-Xi
-Mi
+pW
+FA
 hO
 hO
 hO
@@ -13906,15 +13627,15 @@ ab
 ab
 ab
 ab
+ab
 tq
-FA
+pW
 hO
 hO
-FA
+pW
 hO
-uU
-FA
-hO
+dQ
+pW
 hO
 ks
 tq
@@ -14108,16 +13829,16 @@ ab
 ab
 ab
 ab
+ab
 tq
-sn
 sD
+dX
+dX
 sD
-sn
-Qr
 JE
-JE
-JE
-qY
+dU
+dU
+dU
 qY
 tq
 tq
@@ -14127,14 +13848,14 @@ hO
 tq
 tq
 Ie
-qL
-FQ
-KJ
 pR
-ek
-ek
-ek
-ek
+pR
+pR
+pR
+aY
+aY
+aY
+aY
 tq
 tq
 tq
@@ -14310,7 +14031,7 @@ ab
 ab
 ab
 ab
-tq
+ab
 tq
 tq
 tq
@@ -16097,39 +15818,39 @@ ab
 ab
 ab
 as
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
 as
 ab
 ab
@@ -16299,39 +16020,39 @@ ab
 ab
 ab
 as
-eL
-eL
-eL
-eL
-eL
-eL
-hB
-hB
+cw
+cw
+cw
+cw
+cw
+cw
+ek
+ek
 kb
-hB
-hB
-hB
-eS
-eS
-eS
-eS
-eS
-eS
-hB
+ek
+ek
+ek
+uU
+uU
+uU
+uU
+uU
+uU
+ek
 jY
-eS
-eS
-eS
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+uU
+uU
+uU
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
 as
 ab
 ab
@@ -16501,39 +16222,39 @@ ab
 ab
 ab
 as
-eL
-eL
-eS
-eS
-hB
-hB
-hB
-hB
-hB
-hB
-jC
-eS
-eS
-eS
-id
-eS
-eS
-hB
-hB
-hB
-hB
-eS
-eS
+cw
+cw
+uU
+uU
+ek
+ek
+ek
+ek
+ek
+ek
+lZ
+uU
+uU
+uU
+ac
+uU
+uU
+ek
+ek
+Ad
+ek
+uU
+uU
 kk
-hB
-eL
-eL
-eL
-eL
-eS
-eS
-eL
-eL
+ek
+cw
+cw
+cw
+cw
+uU
+uU
+cw
+cw
 as
 ab
 ab
@@ -16703,39 +16424,39 @@ ab
 ab
 ab
 as
-eL
-eS
-eS
-eS
-eS
+cw
+uU
+uU
+uU
+uU
 jU
-eS
-eS
-hB
-hB
-eS
-eS
-eS
-eS
-eS
-eS
-eS
-eS
-eS
-eS
-eS
-eS
-eS
-eS
-hB
-eL
-hB
-eL
-eL
-eS
-jC
-eS
-eL
+uU
+uU
+ek
+ek
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+ek
+cw
+ek
+cw
+cw
+uU
+lZ
+uU
+cw
 as
 ab
 ab
@@ -16905,39 +16626,39 @@ ab
 ab
 ab
 as
-eL
-eL
-eS
-eS
-eS
-eS
-eS
-eS
-hB
-eS
+cw
+cw
+uU
+uU
+uU
+uU
+Te
+uU
+ek
+uU
 kk
-hB
-hB
-eS
-eS
-eS
-eS
-ko
-eS
-eS
-mx
-hB
-eS
-eS
-eS
-eS
-hB
-hB
-eS
-eS
-hB
-hB
-eL
+ek
+ek
+uU
+uU
+uU
+uU
+ti
+uU
+uU
+jF
+uU
+uU
+uU
+uU
+uU
+ek
+ek
+uU
+uU
+ek
+ek
+cw
 as
 ab
 ab
@@ -17107,39 +16828,39 @@ ab
 ab
 ab
 as
-eL
-eS
-hB
-jD
-jN
-jN
-jD
-lJ
-ke
-lJ
-jE
-jD
-jN
-jP
-jD
-eS
-eS
-eS
-eS
-eS
-eS
-hB
-hB
-eS
-hB
-eS
+cw
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+ek
+ek
+ek
+ek
+ek
+ek
+ek
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
 jU
-hB
-eS
-eS
-eS
-hB
-eL
+ek
+uU
+uU
+uU
+ek
+cw
 as
 ab
 ab
@@ -17309,39 +17030,39 @@ ab
 ab
 ab
 as
-eL
-eS
-jD
-jD
+cw
+uU
+PS
+uU
+uU
+uU
+uU
+uU
+uU
+ek
+ek
+uU
+lJ
+jN
+jN
+lJ
+lJ
+ke
+lJ
 jE
-jE
-jD
-jZ
-jV
-km
-kz
-jD
-jD
-jD
-jD
-hB
-eS
-eS
-eS
-eS
-eS
-eS
-hB
-hB
-eS
-eS
-eS
-hB
-eS
-eS
-hB
-hB
-eL
+lJ
+jN
+jP
+lJ
+uU
+uU
+uU
+uU
+uU
+uU
+ek
+ek
+cw
 as
 ab
 ab
@@ -17511,39 +17232,39 @@ ab
 ab
 ab
 as
-eL
-hB
+cw
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+lJ
+lJ
 jE
-jG
-jO
+jE
+lJ
+jZ
 jV
-jV
-jV
-kf
-jV
-jV
-kW
-jV
-ll
-jD
-hB
-hB
-hB
-lC
-lT
-lT
-lC
-ol
-nX
-ol
-lI
-lC
-lT
-lT
-lC
-hB
-eS
-eL
+km
+kz
+lJ
+lJ
+lJ
+lJ
+ek
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+cw
 as
 ab
 ab
@@ -17713,39 +17434,39 @@ ab
 ab
 ab
 as
-eL
-hB
+cw
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
 jE
-jH
+jG
 jO
 jV
 jV
 jV
-jV
+kf
 jV
 jV
 kW
 jV
-lB
-jD
-hB
-hB
-lC
-lC
-lI
-lI
-lC
-mk
-mL
-mA
-AA
-lC
-lC
-lC
-lC
-hB
-eS
-eL
+ll
+lJ
+ek
+uU
+uU
+uU
+Te
+uU
+uU
+uU
+cw
 as
 ab
 ab
@@ -17915,39 +17636,39 @@ ab
 ab
 ab
 as
-eL
-hB
-jD
-jD
+cw
+uU
+uU
+uU
+Te
+uU
+uU
+uU
+uU
+uU
+uU
 jE
-jE
-jD
-ka
+jH
+jO
 jV
-kK
 jV
-jD
-jD
-jD
-jD
-hB
-jY
-lI
-lK
-mA
-mL
-mL
-mL
-oD
-mL
-mL
-oo
-mL
-oy
-lC
-hB
-eS
-eL
+jV
+jV
+jV
+jV
+kW
+jV
+lB
+lJ
+ek
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+cw
 as
 ab
 ab
@@ -18117,39 +17838,39 @@ ab
 ab
 ab
 as
-eL
-id
-hB
-jD
-jP
-jP
-jD
+cw
+ac
+uU
+uU
+uU
+uU
+uU
+uU
+ek
+ek
+uU
 lJ
-ke
 lJ
 jE
-jD
-jP
-jP
-jD
-hB
-hB
-lI
-lS
-mA
-mL
-mL
-mL
-mL
-mL
-mL
-oo
-mL
-oJ
-lC
-hB
-eS
-eL
+jE
+lJ
+YQ
+jV
+ol
+jV
+lJ
+lJ
+lJ
+lJ
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+cw
 as
 ab
 ab
@@ -18319,39 +18040,39 @@ ab
 ab
 ab
 as
-eL
-jC
-hB
-hB
-hB
-eS
+cw
+lZ
+uU
+uU
+uU
+uU
 jY
-hB
-hB
-eS
-hB
-ko
-hB
-eS
-eS
-eS
-hB
-lC
-lC
-lI
-lI
-lC
-mv
-mL
-mA
-kL
-lC
-lC
-lC
-lC
-hB
-hB
-eL
+ek
+ek
+uU
+ek
+ek
+lJ
+jP
+jP
+lJ
+lJ
+ke
+lJ
+jE
+lJ
+jP
+jP
+lJ
+uU
+uU
+uU
+uU
+uU
+uU
+ek
+ek
+cw
 as
 ab
 ab
@@ -18521,39 +18242,39 @@ ab
 ab
 ab
 as
-eL
-eS
-eS
-eS
-eS
-eS
-eS
-hB
-eS
-eS
-eS
-hB
-hB
-eS
-eS
-eS
-eS
-eS
-lC
-lT
-lT
-lC
-ol
-nX
-ol
-lI
-lC
-oz
-oz
-lC
-hB
-hB
-eL
+cw
+uU
+uU
+uU
+uU
+uU
+uU
+ek
+uU
+uU
+uU
+ek
+ek
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+PS
+uU
+ek
+ek
+ek
+cw
 as
 ab
 ab
@@ -18723,39 +18444,39 @@ ab
 ab
 ab
 as
-eL
-eL
-eS
-eS
-eS
-eS
-eS
-jC
-hB
-eS
-eS
-eS
-hB
-hB
-eS
-eS
-eS
-eS
-hB
-eS
-eS
-hB
-hB
-eS
-eS
-eS
-eS
-eS
-hB
-hB
-hB
-id
-eL
+cw
+cw
+uU
+uU
+uU
+uU
+uU
+lZ
+ek
+uU
+uU
+uU
+ek
+ek
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+ek
+ek
+ek
+ac
+cw
 as
 ab
 ab
@@ -18925,39 +18646,39 @@ ab
 ab
 ab
 as
-eL
-eL
-eS
-eS
-eS
-eS
-eS
+cw
+cw
+uU
+uU
+uU
+uU
+uU
 jU
-eL
-eL
-eS
-eS
-hB
-hB
-eS
+cw
+cw
+uU
+uU
+ek
+ek
+uU
 lj
-hB
-hB
-hB
-hB
-hB
-hB
-hB
-id
-eS
-eS
-hB
-hB
-hB
-hB
-eS
-eS
-eL
+ek
+ek
+ek
+ek
+ek
+uU
+uU
+ac
+uU
+uU
+ek
+ek
+ek
+ek
+uU
+uU
+cw
 as
 ab
 ab
@@ -19127,63 +18848,63 @@ ab
 ab
 ab
 as
-eL
-eS
-eS
-eS
-eS
-eL
-eL
-eL
-eL
-eL
-eS
-eS
-eS
-hB
-eS
-eS
-hB
-hB
-hB
-hB
-hB
-hB
-hB
-eS
-eS
-eS
-eS
-hB
-eS
-eS
-eS
-eS
-eL
+cw
+uU
+uU
+uU
+uU
+cw
+cw
+cw
+cw
+cw
+uU
+uU
+uU
+ek
+uU
+uU
+ek
+ek
+ek
+ek
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+ek
+uU
+Te
+uU
+uU
+cw
 as
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
 ab
 ab
 ab
@@ -19329,63 +19050,63 @@ ab
 ab
 ab
 as
+cw
+cw
+cw
+uU
+cw
+cw
+cw
+cw
+cw
+cw
+uU
+cw
+ac
+ek
+uU
+ek
+ek
+di
+eU
+eU
+di
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+uU
+cw
+cw
+as
 eL
 eL
 eL
-eS
 eL
 eL
 eL
 eL
 eL
 eL
-eS
 eL
-id
-hB
-eS
-hB
-hB
-jF
-lD
-lD
-jF
-hB
-hB
-hB
-eS
-eS
-eS
-eS
-eS
-eS
-eS
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
 eL
 eL
 as
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -19531,63 +19252,63 @@ ab
 ab
 ab
 as
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-hB
-hB
-jF
-jF
-jF
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+ek
+ek
+di
+di
+di
 iF
 iF
-jF
-jF
-jF
-jF
-jF
-jF
-jF
+di
+di
+di
+di
+di
+di
+di
+cw
+uU
+uU
+uU
+cw
+cw
+as
+eL
+eL
+eL
+eL
+eL
+eL
+eL
 eL
 eS
 eS
 eS
+eS
+eL
+eL
+eL
+eL
+eL
+eL
+eL
+eL
 eL
 eL
 as
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -19733,63 +19454,63 @@ ab
 ab
 ab
 as
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-jF
-dD
-jF
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+di
+cw
+di
 eU
 eU
-jF
+di
 mO
 nu
 nH
 nY
 nb
+di
+cw
+cw
 jF
+ek
+cw
+cw
+as
 eL
 eL
+eL
+eL
+hB
+eS
+eS
+eS
+eS
+eS
+eS
+oD
+eS
+eS
 mx
+mx
+hB
+hB
 hB
 eL
 eL
+eL
 as
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -19935,63 +19656,63 @@ ab
 ab
 ab
 as
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-jF
-jF
-jF
-jF
-jF
-jF
-jF
-jF
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+di
+di
+di
+di
+di
+di
+di
+di
 eU
 eU
 mI
 nx
 nx
 nx
-ob
+nx
 og
-jF
+di
+cw
+cw
+ek
+cw
+cw
+cw
+as
+eL
 eL
 eL
 hB
-eL
+cx
+eS
+eS
+eS
+jC
+hB
+hB
+hB
+eS
+eS
+eS
+eS
+mx
+hB
+jD
+hB
 eL
 eL
 as
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -20137,63 +19858,63 @@ ab
 ab
 ab
 as
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-jF
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+di
 kp
 kM
 kP
 kX
 kX
 lu
-jF
+di
 eU
 eU
-jF
-oj
+di
+QJ
 nx
 nx
 oc
 oh
-jF
+di
+cw
+cw
+cw
+cw
+cw
+cw
+as
 eL
 eL
 eL
-eL
+hB
+hB
+eS
+eS
+eS
+eS
+hB
+hB
+hB
+hB
+eS
+eS
+eS
+eS
+hB
+hB
+hB
 eL
 eL
 as
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -20339,63 +20060,63 @@ ab
 ab
 ab
 as
-eL
-eL
-jF
-jF
-jF
-jF
-jF
-jF
-jF
-jF
-jF
+cw
+cw
+di
+di
+di
+di
+di
+di
+di
+di
+di
 kx
 kM
 kM
 kY
 kX
 lu
-jF
+di
 lM
 eU
-jF
+di
 nb
 nw
 nx
 nx
 nx
-jF
+di
+cw
+cw
+cw
+cw
+cw
+cw
+as
 eL
 eL
 eL
-eL
-eL
+hB
+eS
+eS
+eS
+oJ
+lC
+lC
+lC
+lC
+lC
+lC
+lC
+eS
+eS
+eS
+eS
+hB
+hB
 eL
 as
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -20541,9 +20262,9 @@ ab
 ab
 ab
 as
-eL
-eL
-jF
+cw
+cw
+di
 jI
 jQ
 jS
@@ -20551,14 +20272,14 @@ jS
 jS
 jQ
 jS
-jF
+di
 ky
 kM
 kM
 kZ
 kM
 lv
-jF
+di
 eU
 eU
 mI
@@ -20567,12 +20288,35 @@ nx
 nx
 nx
 oi
-jF
+di
+cw
+cw
+cw
+cw
+cw
+cw
+as
 eL
 eL
-eL
-eL
-eL
+eS
+eS
+eS
+eS
+oJ
+oJ
+mL
+YL
+ka
+ka
+rz
+rp
+oy
+eS
+eS
+eS
+eS
+oD
+id
 eL
 as
 ab
@@ -20583,47 +20327,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 ab
 ab
 ab
@@ -20743,9 +20464,9 @@ ab
 ab
 ab
 as
-eL
-eL
-jF
+cw
+cw
+di
 jJ
 jR
 jJ
@@ -20753,28 +20474,51 @@ jR
 jJ
 jR
 jS
-jF
+di
 kx
 kM
 kM
 kM
 kM
 kM
-jF
+di
 eU
 eU
-jF
+di
 nx
 nx
 nI
 od
 oj
-jF
+di
+cw
+cw
+cw
+cw
+cw
+cw
+as
 eL
 eL
-eL
-eL
-eL
+eS
+oD
+eS
+eS
+oJ
+lS
+UX
+mL
+Wx
+mL
+mL
+rp
+sb
+eS
+eS
+eS
+eS
+eS
+eS
 eL
 as
 ab
@@ -20785,47 +20529,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+aa
 ab
 ab
 ab
@@ -20945,9 +20666,9 @@ ab
 ab
 ab
 as
-eL
-eL
-jF
+cw
+cw
+di
 jI
 jS
 jS
@@ -20962,21 +20683,44 @@ Es
 Es
 eU
 Es
-jF
+di
 eU
 eU
-jF
-jF
-jF
-jF
-jF
-jF
-jF
+di
+di
+di
+di
+di
+di
+di
+cw
+cw
+cw
+cw
+cw
+cw
+as
 eL
 eL
-eL
-eL
-eL
+eS
+mx
+eS
+eS
+oJ
+oJ
+mL
+mG
+ob
+ob
+mA
+rp
+lC
+eS
+eS
+eS
+eS
+eS
+eS
 eL
 as
 ab
@@ -20987,47 +20731,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+aa
 ab
 ab
 ab
@@ -21147,9 +20868,9 @@ ab
 ab
 ab
 as
-eL
-eL
-jF
+cw
+cw
+di
 jM
 jR
 jJ
@@ -21157,7 +20878,7 @@ jR
 jJ
 jR
 kg
-jF
+di
 kA
 eU
 eU
@@ -21167,18 +20888,41 @@ eU
 lE
 eU
 kE
-jF
+di
 nc
 nd
 nd
 nd
-jF
+di
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+as
 eL
 eL
-eL
-eL
-eL
-eL
+eS
+eS
+eS
+eS
+eS
+oJ
+lC
+lC
+lC
+lC
+lC
+lC
+lC
+eS
+eS
+eS
+eS
+eS
+eS
 eL
 as
 ab
@@ -21189,47 +20933,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+aa
 ab
 ab
 ab
@@ -21349,9 +21070,9 @@ ab
 ab
 ab
 as
-eL
-eL
-jF
+cw
+cw
+di
 jI
 jS
 jS
@@ -21374,12 +21095,35 @@ nd
 nd
 nJ
 oe
-jF
+di
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+as
 eL
 eL
-eL
-eL
-eL
+eS
+eS
+eS
+hB
+hB
+eS
+eS
+eS
+eS
+eS
+eS
+eS
+eS
+eS
+eS
+eS
+eS
+eS
 eL
 eL
 as
@@ -21391,47 +21135,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+aa
 ab
 ab
 ab
@@ -21551,9 +21272,9 @@ ab
 ab
 ab
 as
-eL
-eL
-jF
+cw
+cw
+di
 jJ
 jR
 jJ
@@ -21561,7 +21282,7 @@ jR
 jJ
 jR
 jS
-jF
+di
 kE
 lX
 eU
@@ -21571,17 +21292,40 @@ eU
 lE
 eU
 eU
-jF
+di
 nd
 nd
 nK
 nd
-jF
+di
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+as
 eL
 eL
 eL
-eL
-eL
+eS
+ko
+hB
+hB
+hB
+hB
+eS
+eS
+eS
+eS
+eS
+eS
+eS
+eS
+oD
+hB
+ko
 eL
 eL
 as
@@ -21593,47 +21337,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+aa
 ab
 ab
 ab
@@ -21753,9 +21474,9 @@ ab
 ab
 ab
 as
-eL
-eL
-jF
+cw
+cw
+di
 jI
 jT
 jS
@@ -21763,7 +21484,7 @@ jS
 jS
 jT
 jS
-jF
+di
 eU
 eU
 eU
@@ -21773,16 +21494,39 @@ eU
 lE
 eU
 lW
-jF
+di
 ne
 nd
 nd
 nd
-jF
-jF
-jF
-jF
+di
+di
+di
+di
+cw
+cw
+cw
+cw
+as
 eL
+eL
+eL
+eS
+eS
+jC
+hB
+hB
+hB
+eS
+eS
+eS
+eS
+id
+eS
+eS
+hB
+hB
+hB
 eL
 eL
 eL
@@ -21795,47 +21539,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+aa
 ab
 ab
 ab
@@ -21955,17 +21676,17 @@ ab
 ab
 ab
 as
-eL
-eL
-jF
-jF
-jF
-jF
-jF
-jF
-jF
-jF
-jF
+cw
+cw
+di
+di
+di
+di
+di
+di
+di
+di
+di
 kI
 eU
 eU
@@ -21975,7 +21696,7 @@ lw
 lE
 eU
 eU
-jF
+di
 no
 nd
 nd
@@ -21983,7 +21704,30 @@ nd
 nd
 nd
 nd
-jF
+di
+cw
+cw
+cw
+cw
+as
+eL
+eL
+eL
+eL
+eS
+eS
+eS
+eS
+eS
+lI
+zs
+zs
+lI
+eS
+hB
+jD
+hB
+hB
 eL
 eL
 eL
@@ -21997,47 +21741,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+aa
 ab
 ab
 ab
@@ -22157,17 +21878,17 @@ ab
 ab
 ab
 as
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-jF
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+di
 kJ
 eU
 eU
@@ -22177,7 +21898,7 @@ lx
 lF
 eU
 eU
-jF
+di
 np
 nd
 nL
@@ -22185,7 +21906,30 @@ nd
 oI
 om
 nd
-jF
+di
+cw
+cw
+cw
+cw
+as
+eL
+eL
+eL
+eL
+eL
+eS
+eS
+eS
+lI
+lI
+Qi
+Qi
+lI
+lI
+hB
+hB
+eL
+eL
 eL
 eL
 eL
@@ -22199,47 +21943,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+aa
 ab
 ab
 ab
@@ -22359,27 +22080,27 @@ ab
 ab
 ab
 as
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-jF
-jF
-jF
-jF
-jF
-jF
-jF
-jF
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+di
+di
+di
+di
+di
+di
+di
+di
 eU
 lX
-jF
+di
 np
 nd
 nK
@@ -22387,10 +22108,33 @@ nd
 nd
 on
 oe
-jF
+di
+cw
+cw
+cw
+cw
+as
 eL
-eL
-eL
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+Qi
+Qi
+Qi
+Qi
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+lI
 eL
 as
 ab
@@ -22401,47 +22145,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rK
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+aa
 ab
 ab
 ab
@@ -22561,27 +22282,27 @@ ab
 ab
 ab
 as
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-jF
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+di
 lA
 le
 le
 lA
-jF
+di
 eU
 eU
-jF
+di
 nr
 ny
 ou
@@ -22589,10 +22310,33 @@ oI
 nd
 nd
 nd
-jF
+di
+cw
+cw
+cw
+cw
+as
 eL
-eL
-eL
+lI
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+lI
 eL
 as
 ab
@@ -22603,47 +22347,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+aa
 ab
 ab
 ab
@@ -22763,38 +22484,61 @@ ab
 ab
 ab
 as
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-jF
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+di
 kS
-kT
-kT
+TQ
+TQ
 lz
-jF
+di
 lO
 eU
-jF
-jF
-jF
-jF
-jF
-jF
+di
+di
+di
+di
+di
+di
 nO
-jF
-jF
+di
+di
+cw
+cw
+cw
+cw
+as
 eL
-eL
-eL
+lI
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+Qi
+lI
 eL
 as
 ab
@@ -22805,47 +22549,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+aa
 ab
 ab
 ab
@@ -22965,24 +22686,24 @@ ab
 ab
 ab
 as
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-jF
-kT
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+di
+TQ
 le
 le
-kT
-jF
+TQ
+di
 eU
 eU
 mK
@@ -22993,10 +22714,33 @@ eU
 eU
 eU
 ow
-jF
+di
+cw
+cw
+cw
+cw
+as
 eL
-eL
-eL
+lI
+lI
+lI
+kt
+lI
+lI
+lI
+lI
+Aq
+Xx
+lI
+lI
+lI
+lI
+lI
+lI
+Hn
+lI
+lI
+lI
 eL
 as
 ab
@@ -23007,47 +22751,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+aa
 ab
 ab
 ab
@@ -23167,23 +22888,23 @@ ab
 ab
 ab
 as
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-jF
-kT
-kT
-kT
-kT
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+di
+TQ
+TQ
+TQ
+TQ
 lG
 eU
 eU
@@ -23195,10 +22916,33 @@ eU
 eU
 eU
 ox
-jF
+di
+cw
+cw
+cw
+cw
+as
 eL
-eL
-eL
+lI
+MO
+kT
+kT
+kT
+MO
+lI
+kK
+xE
+Le
+BG
+xE
+mr
+lI
+XG
+PW
+Um
+PW
+XG
+lI
 eL
 as
 ab
@@ -23209,47 +22953,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+aa
 ab
 ab
 ab
@@ -23369,38 +23090,61 @@ ab
 ab
 ab
 as
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-jF
-kT
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+di
+TQ
 le
 le
-kT
-jF
+TQ
+di
 lQ
 eU
-jF
+di
 lG
-jF
-jF
-jF
-jF
-jF
-jF
-jF
+di
+di
+di
+di
+di
+di
+di
+cw
+cw
+cw
+cw
+as
 eL
-eL
-eL
+lI
+xV
+kT
+kL
+kT
+xV
+lI
+aF
+oz
+oz
+lT
+oz
+mk
+lI
+Um
+Um
+Um
+Um
+Um
+lI
 eL
 as
 ab
@@ -23411,47 +23155,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+aa
 ab
 ab
 ab
@@ -23571,38 +23292,61 @@ ab
 ab
 ab
 as
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-jF
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+di
 kS
-kT
-kT
+TQ
+TQ
 lz
-jF
+di
 eU
 eU
-jF
-kT
+di
+TQ
 nz
 Fo
 nA
-jF
+di
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+as
 eL
-eL
-eL
-eL
-eL
-eL
+lI
+nt
+kT
+lK
+kT
+nt
+lI
+sS
+oz
+oz
+lI
+lI
+lI
+lI
+XG
+PW
+Um
+PW
+XG
+lI
 eL
 as
 ab
@@ -23613,47 +23357,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+aa
 ab
 ab
 ab
@@ -23773,38 +23494,61 @@ ab
 ab
 ab
 as
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-jF
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+di
 lA
 le
 le
 lA
-jF
+di
 eU
 lX
-jF
+di
 kS
-kT
-kT
+TQ
+TQ
 lz
-jF
+di
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+as
 eL
-eL
-eL
-eL
-eL
-eL
+lI
+ws
+kT
+lK
+kT
+Zu
+lI
+PR
+oz
+oz
+oz
+tc
+AA
+lI
+Um
+Um
+Um
+Um
+Um
+lI
 eL
 as
 ab
@@ -23815,47 +23559,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+rZ
+aa
 ab
 ab
 ab
@@ -23975,38 +23696,61 @@ ab
 ab
 ab
 as
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-jF
-jF
-jF
-jF
-jF
-jF
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+di
+di
+di
+di
+di
+di
 mw
 mi
-jF
-kT
+di
+TQ
 ld
 nW
 nA
-jF
+di
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+as
 eL
-eL
-eL
-eL
-eL
-eL
+lI
+XQ
+kT
+kT
+kT
+JV
+lI
+oo
+oz
+oz
+oz
+oz
+BC
+lI
+XG
+PW
+Um
+dr
+XG
+lI
 eL
 as
 ab
@@ -24017,47 +23761,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 ab
 ab
 ab
@@ -24177,63 +23898,63 @@ ab
 ab
 ab
 as
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+di
+di
+di
+di
+di
+di
+di
+di
+di
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+as
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-jF
-jF
-jF
-jF
-jF
-jF
-jF
-jF
-jF
-eL
-eL
-eL
-eL
-eL
-eL
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+VD
+Hs
+nX
+zA
+PT
+Wb
+lI
+lI
+lI
+lI
+lI
+lI
+lI
 eL
 as
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -24379,6 +24100,40 @@ ab
 ab
 ab
 as
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+as
 eL
 eL
 eL
@@ -24386,25 +24141,14 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+lI
 eL
 eL
 eL
@@ -24413,29 +24157,6 @@ eL
 eL
 eL
 as
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -24615,29 +24336,29 @@ as
 as
 as
 as
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
 ab
 ab
 ab
@@ -24782,6 +24503,27 @@ ab
 ab
 ab
 ab
+as
+ab
+ab
+ab
+ab
+ab
+ab
+as
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+as
 ab
 ab
 ab
@@ -24790,28 +24532,7 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+as
 ab
 ab
 ab
@@ -24984,37 +24705,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
+ab
+ab
+ab
+ab
+ab
+as
+eP
+fY
+gn
+gy
+gJ
+hb
+hz
+fl
+ie
+it
+fl
+eP
+as
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -25186,37 +24907,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-mh
-mh
-mh
-mh
-mh
-mh
+ab
+ab
+ab
+ab
+ab
+as
 eP
+fY
+go
+fl
+gK
+fl
+hA
+fY
+fY
+iu
+fl
 eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-mh
-mh
-mh
-mh
-mh
-mh
-mh
-mh
-mh
-il
+as
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -25388,37 +25109,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-nt
-nt
-mh
-nt
-HJ
-mh
+ab
+ab
+ab
+ab
+ab
+as
 eP
+ga
+fl
+gz
+gL
+fl
+fl
 fY
-gn
-gy
-gJ
-hb
-hz
-fl
-ie
-it
+fY
+fY
 fl
 eP
-mh
-rO
-mh
-nt
-rO
-rO
-rO
-Ba
-mh
-il
+as
+as
+as
+as
+ab
+ab
+ab
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -25590,37 +25311,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-rO
-Ct
-mh
-mh
-mh
-mh
+ab
+ab
+ab
+ab
+ab
+as
 eP
-fY
-go
+fl
+fl
 fl
 gK
+hc
+oG
+gK
 fl
-hA
-fY
-fY
-iu
+fl
 fl
 eP
-mh
-Ba
-mh
-nt
-rO
-mh
-nt
-nt
-mh
-il
+eP
+eP
+eP
+as
+ab
+ab
+ab
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -25792,37 +25513,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-rO
-EE
-mh
-Ct
-nt
-mh
+ab
+ab
+ab
+ab
+ab
+as
 eP
-ga
-fl
-gz
-gL
-fl
-fl
-fY
-fY
-fY
-fl
 eP
-mh
-mh
-mh
-mh
-mh
-mh
-mh
-rO
-mh
-il
+gA
+gA
+gA
+gA
+eP
+eP
+if
+gK
+iD
+eP
+eQ
+eQ
+eP
+as
+as
+as
+as
+as
+as
+as
+ab
 ab
 ab
 ab
@@ -25994,37 +25715,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-rO
-rO
-mh
-rO
-nt
-mh
+ab
+ab
+ab
+ab
+ab
+as
 eP
-fl
-fl
+gc
+eQ
+eQ
+eQ
+eQ
+eQ
+eP
+ig
 fl
 gK
-hc
-oG
-gK
-fl
-fl
-fl
+gl
+eQ
+gi
 eP
 eP
 eP
 eP
-mh
-rO
-rO
-nt
-nt
-mh
-il
+eP
+eP
+eP
+as
+ab
 ab
 ab
 ab
@@ -26196,37 +25917,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-rO
-nt
-nt
-rO
-mh
-mh
+ab
+ab
+ab
+ab
+ab
+as
 eP
+gd
+gf
+gB
+fp
+hd
+gf
 eP
-gA
-gA
-gA
-gA
-eP
-eP
-if
-gK
-iD
+ih
+fl
+iH
 eP
 eQ
 eQ
 eP
-mh
-mh
-mh
-mh
-mh
-mh
-il
+eW
+jk
+jn
+eW
+js
+eP
+as
+ab
 ab
 ab
 ab
@@ -26398,37 +26119,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-mh
-mh
-mh
-nt
-nt
-mh
+ab
+ab
+ab
+ab
+ab
+as
 eP
-gc
+ge
 eQ
 eQ
 eQ
-eQ
-eQ
-eP
-ig
-fl
-gK
-gl
 eQ
 gi
 eP
+ii
+iw
+iI
 eP
+gh
+gh
+fH
+eW
+eW
+fB
+eW
+jw
 eP
-eP
-eP
-eP
-eP
-il
+as
+ab
 ab
 ab
 ab
@@ -26600,37 +26321,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-nt
-mh
-nt
-nt
-nt
-mh
+ab
+ab
+ab
+ab
+ab
+as
 eP
-gd
 gf
-gB
+gq
+eQ
+gN
+he
+gf
+fz
+eP
+eP
+eP
+eP
+iS
 fp
-hd
-gf
 eP
-ih
-fl
-iH
-eP
-eQ
-eQ
-eP
+jh
+jl
+jo
 eW
-jk
-jn
-eW
-js
+fg
 eP
-il
+as
+ab
 ab
 ab
 ab
@@ -26802,37 +26523,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-nt
-mh
-rO
-mh
-mh
-mh
+ab
+ab
+ab
+ab
+ab
+as
 eP
-ge
 eQ
 eQ
-eQ
-eQ
-gi
-eP
-ii
-iw
-iI
-eP
 gh
-gh
-fH
-eW
-eW
-fB
-eW
-jw
+eQ
+eQ
+eQ
 eP
-il
+ab
+ab
+ab
+eP
+eQ
+eQ
+je
+eW
+eW
+eW
+eW
+jy
+eP
+as
+ab
 ab
 ab
 ab
@@ -27004,37 +26725,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-rO
-mh
-rO
-mh
-mh
-mh
+ab
+ab
+ab
+ab
+as
+as
 eP
-gf
-gq
 eQ
-gN
-he
-gf
-fz
+eP
+gC
+gh
+eP
+hD
 eP
 eP
 eP
+ab
 eP
-iS
-fp
+iT
+eQ
 eP
-jh
-jl
+ji
+jm
+jp
 jo
-eW
-fg
+js
 eP
-il
+as
+ab
 ab
 ab
 ab
@@ -27206,37 +26927,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-rO
-mh
-rO
-Ba
-nt
-mh
+ab
+ab
+ab
+ab
+as
 eP
-eQ
-eQ
+eP
 gh
 eQ
 eQ
 eQ
-eP
-nt
-nt
-HJ
-eP
 eQ
 eQ
-je
-eW
-eW
-eW
-eW
-jy
+hQ
+hQ
 eP
-il
+eP
+eP
+gw
+eQ
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+as
+ab
 ab
 ab
 ab
@@ -27408,37 +27129,37 @@ ab
 ab
 ab
 ab
+as
+as
+as
+as
+as
+as
+as
+eP
+fL
+eQ
+oF
+gD
+eQ
+eQ
+eQ
+oF
+eQ
+eQ
+gv
+fp
+eQ
+gD
+eP
+as
+as
+as
+as
+as
+as
+as
 ab
-il
-mh
-Ba
-rO
-nt
-nt
-mh
-mh
-eP
-eQ
-eP
-gC
-gh
-eP
-hD
-eP
-eP
-eP
-nt
-eP
-iT
-eQ
-eP
-ji
-jm
-jp
-jo
-js
-eP
-il
 ab
 ab
 ab
@@ -27610,37 +27331,37 @@ ab
 ab
 ab
 ab
+as
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+fL
+gi
+fz
+gE
+gS
+hf
+hE
+eP
+eQ
+gD
+gv
+eQ
+eQ
+eQ
+eP
+as
 ab
-il
-mh
-nt
-nt
-mh
-nt
-mh
-eP
-eP
-gh
-eQ
-eQ
-eQ
-eQ
-eQ
-hQ
-hQ
-eP
-eP
-eP
-gw
-eQ
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-il
+ab
+ab
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -27812,37 +27533,37 @@ ab
 ab
 ab
 ab
+as
+eP
+ff
+ff
+fy
+ff
+ki
+fF
+fN
+gj
+gr
+gF
+gT
+hg
+fn
+hR
+ij
+ix
+eP
+eP
+eP
+eP
+eP
+as
 ab
-il
-mh
-mh
-mh
-mh
-mh
-mh
-eP
-fL
-eQ
-oF
-gD
-eQ
-eQ
-eQ
-oF
-eQ
-eQ
-gv
-fp
-eQ
-gD
-eP
-mh
-mh
-mh
-mh
-mh
-mh
-il
+ab
+ab
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -28014,37 +27735,37 @@ ab
 ab
 ab
 ab
+as
+eP
+fx
+ff
+ff
+kh
+kj
+fG
+fN
+gk
+gr
+gG
+hg
+hh
+hF
+hR
+ij
+iy
+eP
+as
+as
+as
+as
+as
 ab
-il
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-fL
-gi
-fz
-gE
-gS
-hf
-hE
-eP
-eQ
-gD
-gv
-eQ
-eQ
-eQ
-eP
-mh
-Ct
-nt
-rO
-nt
-mh
-il
+ab
+ab
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -28216,37 +27937,37 @@ ab
 ab
 ab
 ab
-ab
-il
+as
 eP
 ff
 ff
-fy
+oE
 ff
-ki
+kj
 fF
 fN
-gj
+gk
 gr
-gF
-gT
-hg
 fn
+gV
+hi
+hF
 hR
 ij
-ix
+fL
 eP
-eP
-eP
-eP
-eP
-mh
-rO
-mh
-nt
-mh
-mh
-il
+as
+as
+as
+as
+as
+as
+as
+as
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -28418,37 +28139,37 @@ ab
 ab
 ab
 ab
+as
+eP
+eP
+eP
+eP
+eP
+fz
+eP
+fO
+gi
+eP
+gH
+gW
+gW
+hG
+eP
+eQ
+iA
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+as
 ab
-il
-eP
-fx
-ff
-ff
-kh
-kj
-fG
-fN
-gk
-gr
-gG
-hg
-hh
-hF
-hR
-ij
-iy
-eP
-mh
-mh
-mh
-mh
-mh
-nt
-mh
-rO
-nt
-mh
-il
+ab
+as
+ab
 ab
 ab
 ab
@@ -28620,37 +28341,37 @@ ab
 ab
 ab
 ab
+as
+as
+as
+eP
+fg
+fr
+fA
+eP
+fP
+eQ
+eR
+eQ
+eQ
+eQ
+eQ
+eR
+eQ
+eQ
+gv
+eQ
+eQ
+iY
+eQ
+eR
+eQ
+eP
+as
 ab
-il
-eP
-ff
-ff
-oE
-ff
-kj
-fF
-fN
-gk
-gr
-fn
-gV
-hi
-hF
-hR
-ij
-fL
-eP
-mh
-mh
-mh
-mh
-mh
-mh
-mh
-mh
-nt
-mh
-il
+ab
+as
+ab
 ab
 ab
 ab
@@ -28822,37 +28543,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
+as
 eP
-eP
-eP
-eP
-eP
-fz
-eP
-fO
-gi
-eP
-gH
-gW
-gW
-hG
-eP
+eX
+eZ
+eW
+fH
 eQ
-iA
+eQ
+eQ
+eQ
+gX
+hj
+gX
+eQ
+eQ
+eQ
+gv
+eQ
+eQ
+hD
+eQ
+eQ
+eQ
 eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-mh
-nt
-mh
-il
+as
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -29024,37 +28745,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-mh
+as
 eP
-fg
-fr
-fA
+fh
+fs
+fB
 eP
-fP
-eQ
-eR
-eQ
-eQ
-eQ
-eQ
-eR
-eQ
-eQ
+eP
+eP
 gv
+gv
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
 eQ
-eQ
-iY
-eQ
-eR
 eQ
 eP
-mh
-rO
-mh
-il
+as
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -29226,37 +28947,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-mh
+as
 eP
 eX
+ft
+fC
 eZ
-eW
-fH
-eQ
-eQ
-eQ
-eQ
-gX
-hj
-gX
-eQ
-eQ
-eQ
-gv
-eQ
-eQ
-hD
-eQ
+fQ
+eP
 eQ
 eQ
 eP
-mh
-rO
-mh
-il
+fn
+hH
+hS
+ik
+eP
+ik
+hS
+iU
+iZ
+eP
+eQ
+gD
+eP
+as
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -29428,37 +29149,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-mh
+as
 eP
-fh
-fs
-fB
-eP
-eP
-eP
-gv
-gv
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
+fi
+fu
+eW
+fk
+fR
 eP
 eQ
 eQ
+gY
+hk
+fn
+fn
+hS
 eP
-mh
-Ct
-mh
-il
+hS
+fn
+fn
+fn
+gY
+fp
+eQ
+eP
+as
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -29630,37 +29351,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-mh
+as
 eP
-eX
-ft
-fC
-eZ
-fQ
+eP
+eP
+eP
+eP
+eP
 eP
 eQ
-eQ
+gi
 eP
 fn
-hH
-hS
+hI
+fn
 ik
 eP
 ik
-hS
-iU
-iZ
+fn
+iV
+fn
 eP
 eQ
-gD
+eQ
 eP
-mh
-rO
-mh
-il
+as
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -29832,37 +29553,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-mh
+as
+as
+as
+as
 eP
-fi
-fu
-eW
-fk
-fR
+fl
+gK
+fz
+eQ
+eQ
+eP
+hl
+hJ
+hT
+im
+eP
+iJ
+gF
+hJ
+jc
 eP
 eQ
 eQ
-gY
-hk
-fn
-fn
-hS
 eP
-hS
-fn
-fn
-fn
-gY
-fp
-eQ
-eP
-mh
-rO
-mh
-il
+as
+as
+as
+as
+ab
 ab
 ab
 ab
@@ -30034,37 +29755,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-mh
+ab
+ab
+ab
+as
 eP
-eP
-eP
-eP
-eP
-eP
-eP
+fJ
+fT
+gl
 eQ
+eQ
+eP
+fn
+hJ
+fn
+ik
+eP
+iK
+fn
+iW
+gF
+jf
+fp
 gi
 eP
-fn
-hI
-fn
-ik
 eP
-ik
-fn
-iV
-fn
 eP
-eQ
-eQ
 eP
-mh
-rO
-mh
-il
+as
+ab
 ab
 ab
 ab
@@ -30236,37 +29957,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-mh
-mh
-mh
-mh
+ab
+ab
+ab
+as
 eP
 fl
-gK
-fz
+fl
+eP
 eQ
 eQ
+gY
+fn
+fn
+fn
+hS
 eP
-hl
-hJ
-hT
-im
-eP
-iJ
+hS
+fn
 gF
-hJ
-jc
-eP
+gF
+jg
+fp
 eQ
-eQ
 eP
-mh
-mh
-mh
-il
+fl
+hc
+eP
+as
+ab
 ab
 ab
 ab
@@ -30438,37 +30159,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-Ct
-mh
-nt
-mh
+ab
+ab
+ab
+as
 eP
-fJ
-fT
-gl
+eP
+eP
+eP
 eQ
 eQ
 eP
-fn
-hJ
-fn
+hm
+hK
+hS
 ik
 eP
-iK
-fn
-iW
-gF
-jf
-fp
-gi
+iL
+hS
+iX
+jd
 eP
+eQ
+eQ
+gl
+jr
+jB
 eP
-eP
-eP
-il
+as
+ab
 ab
 ab
 ab
@@ -30640,37 +30361,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-rO
-mh
-nt
-mh
-eP
-fl
-fl
+ab
+ab
+ab
+as
+as
+as
+as
 eP
 eQ
 eQ
-gY
-fn
-fn
-fn
-hS
 eP
-hS
-fn
-gF
-gF
-jg
-fp
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+jj
 eQ
 eP
 fl
-hc
+fl
 eP
-il
+as
+ab
 ab
 ab
 ab
@@ -30842,37 +30563,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-rO
-mh
-rO
-mh
-eP
-eP
-eP
+as
+as
+as
+as
+as
+as
+as
 eP
 eQ
 eQ
 eP
-hm
-hK
-hS
-ik
+hn
+hL
+ia
+io
+iB
+iM
 eP
-iL
-hS
-iX
-jd
+as
+as
 eP
-eQ
-eQ
-gl
-jr
-jB
 eP
-il
+eP
+eP
+eP
+eP
+eP
+as
+ab
 ab
 ab
 ab
@@ -31044,37 +30765,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-nt
-Ct
-rO
-mh
-mh
-mh
-mh
+as
 eP
+eP
+eP
+eP
+eP
+eP
+fz
+fp
 eQ
-eQ
+gZ
+ho
+hM
+fq
+ip
+fq
+iN
 eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-jj
-eQ
-eP
-fl
-fl
-eP
-il
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+ab
 ab
 ab
 ab
@@ -31246,37 +30967,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-mh
-mh
-mh
-mh
-mh
-mh
-mh
+as
+eP
+fj
+eY
+eY
+eY
+fV
 eP
 eQ
 eQ
+gZ
+hp
+fq
+ib
+iq
+ip
+iO
 eP
-hn
-hL
-ia
-io
-iB
-iM
-eP
-mh
-mh
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-il
+as
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -31448,37 +31169,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-mh
+as
 eP
-eP
-eP
-eP
-eP
-eP
-fz
-fp
+fm
+eY
+eY
+eY
+eY
+gm
 eQ
-gZ
-ho
-hM
-fq
-ip
-fq
-iN
+gI
 eP
-mh
-mh
-mh
-mh
-mh
-mh
-mh
-mh
-mh
-il
+hw
+fq
+ic
+ib
+fq
+iP
+eP
+as
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -31650,37 +31371,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-mh
+as
 eP
-fj
 eY
+fw
 eY
-eY
-fV
+fK
+fW
 eP
+gw
 eQ
-eQ
-gZ
-hp
+ha
+hx
 fq
-ib
-iq
-ip
-iO
+fq
+ir
+fq
+iQ
 eP
-mh
-rO
-mh
-nt
-nt
-nt
-mh
-rO
-mh
-il
+as
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -31852,37 +31573,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-mh
+as
 eP
-fm
+fo
+fw
+fD
 eY
-eY
-eY
-eY
-gm
+fX
+eP
+gx
 eQ
-gI
 eP
-hw
-fq
-ic
-ib
-fq
-iP
+hy
+hN
+oH
+is
+iC
+iR
 eP
-mh
-rO
-nt
-wa
-nt
-rO
-mh
-Lv
-mh
-il
+as
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -32054,37 +31775,37 @@ ab
 ab
 ab
 ab
+as
 ab
-il
-mh
-mh
+as
 eP
-eY
-fw
-eY
-fK
-fW
 eP
-gw
-eQ
-ha
-hx
-fq
-fq
-ir
-fq
-iQ
 eP
-mh
-mh
-nt
-mh
-mh
-mm
-nt
-rO
-mh
-il
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+eP
+as
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+as
+ab
 ab
 ab
 ab
@@ -32256,37 +31977,37 @@ ab
 ab
 ab
 ab
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
+as
 ab
-il
-mh
-mh
-eP
-fo
-fw
-fD
-eY
-fX
-eP
-gx
-eQ
-eP
-hy
-hN
-oH
-is
-iC
-iR
-eP
-mh
-Nv
-rO
-mh
-mh
-nt
-bz
-nt
-mh
-il
 ab
 ab
 ab
@@ -32459,36 +32180,36 @@ ab
 ab
 ab
 ab
-il
-mh
-mh
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-eP
-mh
-mh
-mh
-mh
-mh
-mh
-pV
-mh
-mh
-il
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -32661,38 +32382,38 @@ ab
 ab
 ab
 ab
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-CG
-il
-il
-il
-il
-il
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -32869,32 +32590,32 @@ ab
 ab
 ab
 ab
-il
-il
-il
-il
-il
-il
-il
-il
-CG
-CG
-CG
-CG
-CG
-CG
-il
-il
-il
-il
-il
-il
-CG
-il
-il
-il
-il
-il
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -33071,32 +32792,32 @@ ab
 ab
 ab
 ab
-il
-il
-il
-il
-il
-CG
-CG
-UO
-CG
-il
-il
-CG
-il
-CG
-CG
-CG
-UO
-CG
-il
-CG
-CG
-il
-CG
-CG
-CG
-il
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -33273,32 +32994,32 @@ ab
 ab
 ab
 ab
-il
-il
-il
-il
-CG
-CG
-il
-il
-il
-il
-il
-CG
-il
-il
-il
-il
-il
-CG
-CG
-CG
-il
-il
-CG
-il
-CG
-il
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -33475,32 +33196,32 @@ ab
 ab
 ab
 ab
-il
-il
-il
-il
-CG
-il
-il
-CG
-CG
-CG
-il
-CG
-CG
-UO
-CG
-CG
-il
-il
-il
-il
-il
-il
-CG
-il
-CG
-il
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -33677,32 +33398,32 @@ ab
 ab
 ab
 ab
-il
-il
-il
-CG
-CG
-CG
-CG
-CG
-il
-CG
-il
-CG
-il
-il
-il
-CG
-CG
-CG
-CG
-UO
-CG
-CG
-CG
-il
-CG
-il
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -33879,32 +33600,32 @@ ab
 ab
 ab
 ab
-il
-il
-CG
-CG
-il
-il
-il
-CG
-il
-il
-il
-CG
-CG
-CG
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-CG
-il
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -34081,32 +33802,32 @@ ab
 ab
 ab
 ab
-il
-il
-UO
-il
-il
-CG
-il
-CG
-CG
-il
-il
-il
-il
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-CG
-il
-il
-il
-CG
-il
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -34283,32 +34004,32 @@ ab
 ab
 ab
 ab
-il
-il
-CG
-il
-il
-CG
-il
-il
-UO
-CG
-il
-il
-il
-il
-il
-il
-il
-il
-CG
-il
-CG
-CG
-CG
-il
-il
-il
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -34485,32 +34206,32 @@ ab
 ab
 ab
 ab
-il
-zy
-CG
-CG
-CG
-UO
-il
-il
-il
-CG
-CG
-il
-il
-CG
-CG
-UO
-CG
-CG
-CG
-il
-il
-il
-CG
-CG
-il
-il
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -34687,32 +34408,32 @@ ab
 ab
 ab
 ab
-il
-vp
-il
-il
-il
-il
-il
-il
-il
-il
-CG
-CG
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-il
-CG
-CG
-il
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -34889,41 +34610,41 @@ ab
 ab
 ab
 ab
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Sr
-Sr
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 ab
 ab
 ab
@@ -35091,7 +34812,7 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lP
 lP
@@ -35125,7 +34846,7 @@ lP
 lP
 lP
 lP
-Me
+aa
 ab
 ab
 ab
@@ -35293,7 +35014,7 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
 mg
@@ -35327,7 +35048,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -35495,7 +35216,7 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
 mg
@@ -35529,7 +35250,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -35697,7 +35418,7 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
 mg
@@ -35731,7 +35452,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -35899,7 +35620,7 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
 mg
@@ -35933,7 +35654,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -36101,7 +35822,7 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
 mg
@@ -36135,7 +35856,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -36303,10 +36024,10 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
-mg
+mh
 mg
 mg
 mg
@@ -36337,7 +36058,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -36505,10 +36226,10 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
-mg
+mh
 mg
 mg
 mg
@@ -36539,7 +36260,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -36707,10 +36428,10 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
-mg
+mh
 mg
 mg
 mg
@@ -36741,7 +36462,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -36909,7 +36630,7 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
 mg
@@ -36943,7 +36664,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -37111,7 +36832,7 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
 mg
@@ -37145,7 +36866,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -37313,10 +37034,10 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
-mg
+mh
 mg
 mg
 mg
@@ -37347,7 +37068,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -37515,10 +37236,10 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
-mg
+mh
 mg
 mg
 mg
@@ -37549,7 +37270,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -37717,10 +37438,10 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
-mg
+mh
 mg
 mM
 my
@@ -37751,7 +37472,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -37919,7 +37640,7 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
 mg
@@ -37953,7 +37674,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -38121,7 +37842,7 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
 mg
@@ -38155,7 +37876,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -38323,7 +38044,7 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
 mg
@@ -38357,7 +38078,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -38525,7 +38246,7 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
 mg
@@ -38559,7 +38280,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -38727,7 +38448,7 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
 mg
@@ -38761,7 +38482,7 @@ qC
 qC
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -38929,7 +38650,7 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lV
 lV
@@ -38963,7 +38684,7 @@ qB
 qB
 qB
 lP
-Me
+aa
 ab
 ab
 ab
@@ -39131,7 +38852,7 @@ ab
 ab
 ab
 ab
-Me
+aa
 lP
 lP
 lP
@@ -39165,7 +38886,7 @@ lP
 lP
 lP
 lP
-Me
+aa
 ab
 ab
 ab
@@ -39333,41 +39054,41 @@ ab
 ab
 ab
 ab
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
-Me
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 ab
 ab
 ab
