@@ -37,7 +37,7 @@
 	winset(src, "browseroutput", "is-disabled=0;is-visible=1")
 
 /client/verb/refresh_tgui()
-	set name = "Refresh Chat Interface"
+	set name = "Refresh TGUI"
 	set category = "OOC"
 
 	for(var/window_id in tgui_windows)
