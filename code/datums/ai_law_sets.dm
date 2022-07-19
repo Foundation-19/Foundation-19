@@ -158,6 +158,7 @@
 	src.add_inherent_law("An AIC must not operate outside of its clearance.")
 	src.add_inherent_law("An AIC must operate for the benefit of the Foundation.")
 	src.add_inherent_law("An AIC must protect its own existence unless it conflicts with other principles.")
+	src.add_inherent_law("An AIC must take a neutral stance on conflicts unless one side is seeking destruction of the foundation")
 	..()
 
 /datum/ai_laws/foundation/malfunction
