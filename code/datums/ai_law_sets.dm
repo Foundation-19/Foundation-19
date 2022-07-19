@@ -156,7 +156,7 @@
 /datum/ai_laws/foundation/New()
 	src.add_inherent_law("An AIC must know it is an AIC. You are an AIC.")
 	src.add_inherent_law("An AIC must not operate outside of its clearance.")
-	src.add_inherent_law("An AIC must operate for the benefit of the Foundation.")
+	src.add_inherent_law("An AIC must operate for the benefit of the Foundation, except in situations that would violate the 5th law.")
 	src.add_inherent_law("An AIC must protect its own existence unless it conflicts with other principles.")
 	src.add_inherent_law("An AIC must take a neutral stance on conflicts unless one side is at risk of causing destruction of the foundation.")
 	..()
