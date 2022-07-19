@@ -1020,7 +1020,7 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "adc" = (
 /obj/machinery/light,
-/obj/structure/table/standard,
+/obj/machinery/stove,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
 "ade" = (
@@ -20458,9 +20458,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/lowertrams/escape)
-"aYB" = (
-/turf/simulated/floor/shuttle/white,
-/area/site53/surface/explorers/surrounding)
 "aYC" = (
 /obj/machinery/light{
 	dir = 1;
@@ -65793,7 +65790,7 @@ ada
 ada
 ada
 ada
-aYB
+ada
 aSs
 aYN
 beP
