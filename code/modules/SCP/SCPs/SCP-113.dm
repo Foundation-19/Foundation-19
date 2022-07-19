@@ -8,39 +8,32 @@
 	throw_speed = 3
 //	candrop = 0
 	SCP = /datum/scp/scp_113
+	var/list/victims = list()
 
 /datum/scp/scp_113
 	name = "SCP-113"
 	designation = "113"
 	classification = SAFE
-	component = /datum/component/scp/scp_113
 
 /datum/scp/scp_113/isCompatible(atom/A)
 	if(isitem(A))
 		return 1
 
-/datum/component/scp/scp_113
-	signal_procs = list(COMSIG_PICKUP = .proc/pickup)
-	var/list/victims = list()
-
-/datum/component/scp/scp_113/proc/pickup(mob/living/user)
+/obj/item/device/scp113/pickup(mob/living/user)
 	if(!isliving(user))
-		return 1
-	if(!isitem(owner))
-		return
+		return ..()
 
 	var/mob/living/carbon/human/H = user
 	if(istype(H) && H.gloves)
-		return
-
-	var/obj/item/I = owner
-//	I.candrop = 0 //reset candrop for new pickup
+		return ..()
+	
+	canremove = 0 //reset candrop for new pickup
 
 	var/which_hand = BP_L_HAND //determine hand to burn
 	if(!user.hand)
 		which_hand = BP_R_HAND
 
-	to_chat(user, "<span class='warning'>The [I.name] begins to sear your hand, burning the skin on contact, and you feel yourself unable to drop it.</span>")
+	to_chat(user, "<span class='warning'>The [src] begins to sear your hand, burning the skin on contact, and you feel yourself unable to drop it.</span>")
 	var/damage_coeff = 1
 	if(user in victims)
 		damage_coeff = Clamp((5000-(world.time - victims[user]))/1000,1,5)
@@ -74,7 +67,7 @@
 		H.update_dna()
 		H.update_body()
 	spawn(350)
-		to_chat(user, "<span class='warning'>The burning begins to fade, and you feel your hand relax it's grip on the [I.name].</span>")
+		to_chat(user, "<span class='warning'>The burning begins to fade, and you feel your hand relax it's grip on the [src].</span>")
 	spawn(360)
-//		I.candrop = 1 //transformation finished, you can let go now
+		canremove = 1 //transformation finished, you can let go now
 		victims[user] = world.time
