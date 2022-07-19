@@ -742,7 +742,7 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/editappear()
 	set name = "Edit Appearance"
-	set category = "OOC.Character"
+	set category = "Admin.Player"
 
 	if(!check_rights(R_FUN))	return
 
