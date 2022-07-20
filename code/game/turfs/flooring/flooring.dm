@@ -413,3 +413,21 @@
 	wall_smooth = SMOOTH_NONE
 	space_smooth = SMOOTH_NONE
 	height = -FLUID_OVER_MOB_HEAD * 2
+
+//vroom vroom?
+
+/decl/flooring/road
+	icon = 'icons/turf/roads.dmi'
+	icon_base = "road"
+
+/decl/flooring/road/empty
+	icon_base = "road_empty"
+
+/decl/flooring/road/corner
+	icon_base = "road_corner"
+
+/decl/flooring/road/markings
+	icon_base = "road_marking"
+
+/decl/flooring/road/garage
+	icon_base = "garage"

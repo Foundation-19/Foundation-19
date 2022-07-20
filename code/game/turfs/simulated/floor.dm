@@ -102,3 +102,29 @@
 
 /turf/simulated/floor/is_floor()
 	return TRUE
+
+//vroom vroom
+
+/turf/simulated/floor/road
+	name = "Road"
+	desc = "It's a road"
+	icon = 'icons/turf/roads.dmi'
+	icon_state = "road"
+	initial_flooring = /decl/flooring/road
+
+/turf/simulated/floor/road/empty
+	icon_state = "road_empty"
+	initial_flooring = /decl/flooring/road/empty
+
+/turf/simulated/floor/road/corner
+	icon_state = "road_corner"
+	initial_flooring = /decl/flooring/road/corner
+
+/turf/simulated/floor/road/markings
+	icon_state = "road_marking"
+	initial_flooring = /decl/flooring/road/markings
+
+/turf/simulated/floor/road/garage
+	name = "garage floor"
+	icon_state = "garage"
+	initial_flooring = /decl/flooring/road/garage
