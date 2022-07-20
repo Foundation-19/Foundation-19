@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
-
 /obj/item/airlock_electronics
 	name = "airlock electronics"
 	icon = 'icons/obj/doors/door_assembly.dmi'
@@ -19,7 +17,7 @@
 	var/autoset = TRUE // Whether the door should inherit access from surrounding areas
 
 /obj/item/airlock_electronics/attack_self(mob/user)
-	if (!ishuman(user) && !istype(user,/mob/living/silicon/robot))
+	if(!ishuman(user) || !issilicon(user))
 		return ..(user)
 
 	ui_interact(user)
