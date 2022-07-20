@@ -121,7 +121,7 @@
 		bullet = 60,
 		laser = 40,
 		energy = 25,
-		bomb = ARMOR_BOMB_PADDED
+		bomb = ARMOR_BOMB_PADDED,
 		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_SHIELDED
 		)
@@ -152,7 +152,7 @@
 		bullet = 60,
 		laser = 40,
 		energy = 25,
-		bomb = ARMOR_BOMB_PADDED
+		bomb = ARMOR_BOMB_PADDED,
 		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_SHIELDED
 		)
