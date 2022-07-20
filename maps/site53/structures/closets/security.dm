@@ -98,10 +98,8 @@
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/storage/black_vest,
-		/obj/item/clothing/head/bio_hood/security,
-		/obj/item/clothing/suit/bio_suit/security,
-		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-		/obj/item/clothing/head/beret/sec/corporate/officer,
+		/obj/item/clothing/suit/bio_suit/hcz,
+		/obj/item/clothing/head/bio_hood/hcz,
 		/obj/item/ammo_magazine/scp/mk9 = 3
 	)
 
@@ -111,7 +109,7 @@
 /obj/structure/closet/secure_closet/mtf/nco/hcz/WillContain()
 	return list(
 		/obj/item/storage/belt/holster/security/tactical,
-		/obj/item/gun/projectile/automatic/scp/galil,
+		/obj/item/gun/projectile/automatic/scp/m16,
 		/obj/item/gun/energy/stunrevolver/rifle,
 		/obj/item/ammo_magazine/scp/m16_mag = 3,
 		/obj/item/ammo_magazine/box/a556,
@@ -121,10 +119,8 @@
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/storage/black_vest,
-		/obj/item/clothing/head/bio_hood/security,
-		/obj/item/clothing/suit/bio_suit/security,
-		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-		/obj/item/clothing/head/beret/sec/corporate/warden,
+		/obj/item/clothing/suit/bio_suit/hcz,
+		/obj/item/clothing/head/bio_hood/hcz,
 		/obj/item/ammo_magazine/scp/mk9 = 3
 	)
 
