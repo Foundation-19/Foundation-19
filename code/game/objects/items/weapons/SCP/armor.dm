@@ -109,3 +109,46 @@
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS
 	armor = list(melee = 100, bullet = 100, laser = 90, energy = 95, bomb = 90, bio = 90, rad = 0)
+
+/obj/item/clothing/head/bio_hood/hcz
+	name = "combat hazmat helmet"
+	icon_state = "hcz-hazard-helmet"
+	item_state = "hcz-hazard-helmet"
+	desc = "A helmet that protects the head and face from biological comtaminants, high temperatures, and bullets."
+	permeability_coefficient = 0
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		laser = ARMOR_LASER_MAJOR,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = ARMOR_BOMB_PADDED
+		bio = ARMOR_BIO_SHIELDED,
+		rad = ARMOR_RAD_MINOR
+		)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	body_parts_covered = HEAD|FACE|EYES
+	siemens_coefficient = 0.9
+
+/obj/item/clothing/suit/bio_suit/hcz
+	name = "combat hazmat suit"
+	desc = "An armored suit that protects against biological contamination and high temperatures."
+	icon_state = "hcz-hazard"
+	item_state = "hcz-hazard"
+	w_class = ITEM_SIZE_HUGE
+	gas_transfer_coefficient = 0
+	permeability_coefficient = 0
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+	allowed = list(/obj/item/tank/emergency,/obj/item/gun/energy,/obj/item/device/radio,/obj/item/reagent_containers/spray/pepper,/obj/item/gun/projectile,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/handcuffs,/obj/item/gun/magnetic,/obj/item/clothing/head/helmet,/obj/item/device/flashlight,/obj/item/clothing/head/bio_hood/hcz,/obj/item/clothing/mask/gas)
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		laser = ARMOR_LASER_MAJOR,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = ARMOR_BOMB_PADDED
+		bio = ARMOR_BIO_SHIELDED,
+		rad = ARMOR_RAD_MINOR
+		)
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	siemens_coefficient = 0.9
