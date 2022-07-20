@@ -1277,8 +1277,6 @@
 	},
 /obj/item/clothing/suit/bio_suit/hcz,
 /obj/item/clothing/head/bio_hood/hcz,
-/obj/item/clothing/mask/gas/swat,
-/obj/item/tank/oxygen/yellow,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/hallway)
 "dL" = (
@@ -1387,6 +1385,12 @@
 /obj/item/implanter,
 /obj/item/folder/yellow,
 /obj/item/implantcase/death_alarm,
+/obj/item/tank/oxygen/yellow{
+	pixel_x = -7
+	},
+/obj/item/clothing/mask/gas/swat{
+	pixel_x = -12
+	},
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/hallway)
 "ef" = (
