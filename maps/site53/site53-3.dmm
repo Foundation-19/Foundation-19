@@ -95,7 +95,7 @@
 "ao" = (
 /obj/machinery/door/airlock/command{
 	name = "Main Control Room";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -301,7 +301,7 @@
 /area/site53/maintenance/surfacewest)
 "aR" = (
 /obj/machinery/door/airlock/engineering{
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -334,7 +334,7 @@
 /area/site53/surface/cryogenicsprimary)
 "aV" = (
 /obj/machinery/door/airlock/engineering{
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -386,7 +386,7 @@
 /obj/item/clothing/accessory/stethoscope,
 /obj/item/clothing/suit/armor/pcarrier/light,
 /obj/structure/closet/secure_closet/paramedic{
-	req_access = list(access_medicallvl2)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/item/storage/firstaid/adv,
 /obj/item/crowbar/prybar,
@@ -564,7 +564,7 @@
 /area/site53/surface/surface)
 "bx" = (
 /obj/structure/closet/crate/secure/biohazard{
-	req_access = list(access_medicallvl2)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
@@ -734,7 +734,7 @@
 "ca" = (
 /obj/machinery/door/airlock/security{
 	name = "Communications Tower";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
@@ -768,7 +768,7 @@
 "cm" = (
 /obj/machinery/door/airlock/medical{
 	name = "Medical Reception";
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1020,7 +1020,7 @@
 "dn" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	name = "Emergency Treatment Center";
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1097,7 +1097,7 @@
 	dir = 9
 	},
 /obj/structure/closet/secure_closet/virology{
-	req_access = list(access_medicallvl4)
+	req_access = list("ACCESS_MEDICAL_LEVEL4")
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/button/alternate/door/bolts{
@@ -1249,7 +1249,7 @@
 "dP" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Maintenance";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -1293,7 +1293,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -1412,7 +1412,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/eastleft{
 	name = "Medical Reception";
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/machinery/door/blast/shutters/open{
 	dir = 4;
@@ -1492,7 +1492,7 @@
 /area/site53/medical/mentalhealth/isolation)
 "ez" = (
 /obj/structure/closet/secure_closet/medical3{
-	req_access = list(access_medicallvl3)
+	req_access = list("ACCESS_MEDICAL_LEVEL3")
 	},
 /obj/item/device/flashlight/pen,
 /obj/item/clothing/accessory/stethoscope,
@@ -1569,7 +1569,7 @@
 "eJ" = (
 /obj/machinery/door/airlock/medical{
 	name = "Psychiatry";
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
@@ -1728,7 +1728,7 @@
 /obj/machinery/button/crematorium{
 	id_tag = "medicalcrema";
 	pixel_x = -22;
-	req_access = list(access_medicallvl3)
+	req_access = list("ACCESS_MEDICAL_LEVEL3")
 	},
 /obj/item/storage/box/bodybags,
 /obj/item/storage/box/bodybags,
@@ -1737,14 +1737,14 @@
 "ff" = (
 /obj/machinery/door/airlock/medical{
 	name = "Medical Break Room";
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/equipstorage)
 "fg" = (
 /obj/machinery/door/airlock/medical{
 	name = "Medical Equipment Room";
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/equipstorage)
@@ -1839,7 +1839,7 @@
 /obj/machinery/door/airlock/glass/virology{
 	id_tag = "virocell1";
 	name = "Virology Isolation Cell 1";
-	req_access = list(access_medicallvl4)
+	req_access = list("ACCESS_MEDICAL_LEVEL4")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/virology)
@@ -1868,7 +1868,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 4;
@@ -1881,7 +1881,7 @@
 /obj/effect/floor_decal/corner/green/full,
 /obj/machinery/smartfridge/secure/virology{
 	pixel_y = -32;
-	req_access = list(access_medicallvl4)
+	req_access = list("ACCESS_MEDICAL_LEVEL4")
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/virology)
@@ -1939,13 +1939,13 @@
 /obj/machinery/door/airlock/glass/virology{
 	id_tag = "virocell4";
 	name = "Virology Isolation Cell 4";
-	req_access = list(access_medicallvl4)
+	req_access = list("ACCESS_MEDICAL_LEVEL4")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/virology)
 "fB" = (
 /obj/machinery/vending/medical{
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile/white,
@@ -1977,7 +1977,7 @@
 /area/site53/medical/virology)
 "fH" = (
 /obj/machinery/vending/medical{
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 1
@@ -2121,7 +2121,7 @@
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	id_tag = "medbaydoor";
 	name = "Medical Bay";
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -2162,7 +2162,7 @@
 "ge" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	name = "Surgical Ward";
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -2280,7 +2280,7 @@
 "gs" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Helipad";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/monotile,
@@ -2458,7 +2458,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/eastright{
 	name = "Medical Reception";
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/machinery/door/blast/shutters/open{
 	dir = 4;
@@ -2524,7 +2524,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/medical{
 	name = "Mortuary";
-	req_access = list(access_medicallvl2)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -2551,7 +2551,7 @@
 	},
 /obj/machinery/door/airlock/medical{
 	name = "Operating Room 2";
-	req_access = list(access_medicallvl2)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -2828,7 +2828,7 @@
 "hL" = (
 /obj/machinery/door/airlock/medical{
 	name = "Psychiatric Isolation";
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/mentalhealth/isolation)
@@ -2975,7 +2975,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -3011,7 +3011,7 @@
 "ij" = (
 /obj/structure/closet/secure_closet/medical3{
 	name = "surgeon's locker";
-	req_access = list(access_medicallvl3)
+	req_access = list("ACCESS_MEDICAL_LEVEL3")
 	},
 /obj/item/clothing/head/surgery/blue,
 /obj/item/clothing/suit/surgicalapron,
@@ -3046,7 +3046,7 @@
 /area/site53/medical/surgery/op1)
 "ip" = (
 /obj/structure/closet/crate/secure/biohazard{
-	req_access = list(access_medicallvl2)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
@@ -3074,13 +3074,13 @@
 /obj/machinery/door/airlock/glass/virology{
 	id_tag = "virocell3";
 	name = "Virology Isolation Cell 3";
-	req_access = list(access_medicallvl4)
+	req_access = list("ACCESS_MEDICAL_LEVEL4")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/virology)
 "iu" = (
 /obj/machinery/smartfridge/chemistry{
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/prepainted,
@@ -3215,7 +3215,7 @@
 /area/site53/uez/mcrsubstation)
 "iK" = (
 /obj/machinery/vending/medical{
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
@@ -3225,7 +3225,7 @@
 "iL" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	name = "Mental Isolation";
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmary)
@@ -3296,7 +3296,7 @@
 /obj/item/clothing/suit/bio_suit/general,
 /obj/item/clothing/head/bio_hood/general,
 /obj/structure/closet/secure_closet/medical3{
-	req_access = list(access_medicallvl3)
+	req_access = list("ACCESS_MEDICAL_LEVEL3")
 	},
 /obj/item/storage/firstaid/adv,
 /obj/machinery/light{
@@ -3523,7 +3523,7 @@
 "jo" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	name = "Chemistry Laboratory";
-	req_access = list(access_medicallvl2)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -3708,7 +3708,7 @@
 	dir = 4;
 	icon_state = "closed";
 	name = "Virology";
-	req_access = list(access_medicallvl4)
+	req_access = list("ACCESS_MEDICAL_LEVEL4")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -3747,7 +3747,7 @@
 /area/site53/medical/mentalhealth/isolation)
 "jU" = (
 /obj/structure/closet/secure_closet/chemical{
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/item/clothing/glasses/science,
 /obj/effect/floor_decal/corner/purple/mono,
@@ -3755,7 +3755,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 4;
@@ -3831,7 +3831,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -3950,7 +3950,7 @@
 "kq" = (
 /obj/machinery/door/airlock/medical{
 	name = "Psychiatrist's Office";
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -4000,7 +4000,7 @@
 /obj/item/clothing/suit/bio_suit/general,
 /obj/item/clothing/head/bio_hood/general,
 /obj/structure/closet/secure_closet/medical3{
-	req_access = list(access_medicallvl3)
+	req_access = list("ACCESS_MEDICAL_LEVEL3")
 	},
 /obj/machinery/camera/network/medbay{
 	c_tag = "Medical Equipment Room"
@@ -4023,10 +4023,10 @@
 "kB" = (
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor/westleft{
-	req_access = list(access_medicallvl2)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/machinery/door/window/eastleft{
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception)
@@ -4380,7 +4380,7 @@
 "lu" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Post";
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -4443,7 +4443,7 @@
 "lD" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Post";
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/securitypost)
@@ -4787,7 +4787,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -4826,7 +4826,7 @@
 /area/site53/entrancezone/hallway)
 "mK" = (
 /obj/machinery/door/window/brigdoor/northleft{
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -4901,7 +4901,7 @@
 "mS" = (
 /obj/machinery/door/airlock/multi_tile/security{
 	name = "\improper Entrance Zone Guard Equipment";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
@@ -4911,7 +4911,7 @@
 "mW" = (
 /obj/machinery/door/airlock/command{
 	name = "Zone Commander's Office";
-	req_access = list(access_securitylvl4)
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5122,7 +5122,7 @@
 "nR" = (
 /obj/machinery/door/airlock/multi_tile/glass/command{
 	name = "Administration Offices";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
@@ -5185,7 +5185,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	req_access = list(access_sciencelvl1)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -5203,7 +5203,7 @@
 	dir = 8;
 	icon_state = "closed";
 	name = "Substation";
-	req_access = list(access_engineeringlvl1)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/substation)
@@ -5531,7 +5531,7 @@
 	},
 /obj/machinery/door/airlock/medical{
 	name = "Operating Room 1";
-	req_access = list(access_medicallvl2)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5820,7 +5820,7 @@
 "qS" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Logistics";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
@@ -5903,7 +5903,7 @@
 	},
 /obj/machinery/door/airlock/command{
 	name = "O5 Representative's Office";
-	req_access = list(access_adminlvl2)
+	req_access = list("ACCESS_ADMIN_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/o5repoffice)
@@ -6088,7 +6088,7 @@
 "rI" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Loading Docks";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -6117,7 +6117,7 @@
 "rL" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Primary Storage";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -6137,7 +6137,7 @@
 /area/site53/logistics/logistics)
 "rO" = (
 /obj/machinery/door/window/brigdoor/northright{
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
@@ -6157,7 +6157,7 @@
 "rR" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Helipad";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -6206,7 +6206,7 @@
 "rX" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Cargo Center";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -6261,7 +6261,7 @@
 "sg" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Cargo Center";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -6282,7 +6282,7 @@
 "sl" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Logistics";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -6328,7 +6328,7 @@
 "sq" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Loading Docks";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -6345,7 +6345,7 @@
 "ss" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Loading Docks";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
@@ -6353,7 +6353,7 @@
 "st" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Primary Storage";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
@@ -6505,7 +6505,7 @@
 /area/site53/zonecommanderoffice)
 "sS" = (
 /obj/structure/closet/secure_closet/mtf/co{
-	req_access = list(access_sciencelvl2)
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /obj/item/crowbar/red,
 /obj/item/clothing/head/bio_hood/security,
@@ -6586,7 +6586,7 @@
 	},
 /obj/machinery/door/airlock/command{
 	name = "Zone Commander's Office";
-	req_access = list(access_securitylvl4)
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/effect/floor_decal/corner/blue/borderfull,
 /turf/simulated/floor/tiled/monotile,
@@ -6759,7 +6759,7 @@
 	id_tag = "ezguns";
 	locked = 1;
 	name = "\improper Entrance Zone Armoury";
-	req_access = list(access_securitylvl2);
+	req_access = list("ACCESS_SECURITY_LEVEL2");
 	secured_wires = 1
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -6795,6 +6795,7 @@
 /obj/effect/floor_decal/corner/red/half{
 	dir = 1
 	},
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "tL" = (
@@ -6830,7 +6831,7 @@
 "tR" = (
 /obj/machinery/door/airlock/security{
 	name = "Security Center";
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
@@ -6872,7 +6873,7 @@
 "tZ" = (
 /obj/machinery/door/airlock/security{
 	name = "Security Center";
-	req_access = list(access_securitylvl1)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7074,7 +7075,7 @@
 "uO" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Cargo Center";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
@@ -7311,7 +7312,7 @@
 "vz" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	name = "Recovery Ward";
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7607,7 +7608,7 @@
 	id_tag = "ezguns";
 	name = "EZ Armory Access button";
 	pixel_x = -23;
-	req_access = list(access_securitylvl4)
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/effect/landmark/start{
 	name = "EZ Agent"
@@ -7639,7 +7640,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/medical{
 	name = "Corpse Disposal";
-	req_access = list(access_medicallvl2)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/morgue)
@@ -7654,7 +7655,7 @@
 /obj/item/reagent_containers/ivbag/amnesticsd,
 /obj/item/reagent_containers/ivbag/amnesticsd,
 /obj/structure/closet/secure_closet/psychiatry{
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/item/storage/pill_bottle/amnesticsa,
@@ -7756,7 +7757,7 @@
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "ezcell";
 	name = "Holding Cell";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
@@ -8018,7 +8019,7 @@
 "Dg" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	name = "Staff Area";
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8079,7 +8080,7 @@
 /area/site53/maintenance/surfaceeast)
 "Ed" = (
 /obj/machinery/door/window/brigdoor/northright{
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -8112,7 +8113,7 @@
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "ezcell3";
 	name = "Holding Cell 3";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
@@ -8156,7 +8157,7 @@
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "ezcell2";
 	name = "Holding Cell 2";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
@@ -8366,7 +8367,7 @@
 	},
 /obj/machinery/door/airlock/security{
 	name = "Forensics Laboratory";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -8462,7 +8463,7 @@
 /obj/item/clothing/accessory/stethoscope,
 /obj/item/clothing/suit/armor/pcarrier/light,
 /obj/structure/closet/secure_closet/paramedic{
-	req_access = list(access_medicallvl2)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/machinery/light,
 /obj/item/storage/firstaid/adv,
@@ -8527,7 +8528,7 @@
 "Lb" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Helipad";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/cable{
@@ -8651,6 +8652,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensicsstairwell)
+"Nk" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/red/mono,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "Ny" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/box/a10mm,
@@ -8722,7 +8729,7 @@
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
 /obj/machinery/door/window/brigdoor/northleft{
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/logistics/logistics)
@@ -8965,7 +8972,7 @@
 "Si" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Helipad";
-	req_access = list(access_adminlvl1)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -9221,7 +9228,7 @@
 	dir = 8;
 	icon_state = "closed";
 	name = "Guard Hallway";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
@@ -9255,6 +9262,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
+"Vy" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/securitypost)
 "VG" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light/small{
@@ -9282,7 +9294,7 @@
 "VK" = (
 /obj/machinery/door/airlock/medical{
 	name = "Medical Equipment Room";
-	req_access = list(access_medicallvl1)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9299,7 +9311,7 @@
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "ezcell1";
 	name = "Holding Cell 1";
-	req_access = list(access_securitylvl2)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
@@ -9346,7 +9358,7 @@
 	dir = 4;
 	icon_state = "closed";
 	name = "Virology";
-	req_access = list(access_medicallvl4)
+	req_access = list("ACCESS_MEDICAL_LEVEL4")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9416,7 +9428,7 @@
 /obj/machinery/door/airlock/glass/virology{
 	id_tag = "virocell2";
 	name = "Virology Isolation Cell 2";
-	req_access = list(access_medicallvl4)
+	req_access = list("ACCESS_MEDICAL_LEVEL4")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/virology)
@@ -41320,7 +41332,7 @@ gU
 fD
 dA
 da
-jI
+Vy
 jB
 jF
 jy
@@ -42114,7 +42126,7 @@ uk
 mr
 mt
 Jt
-ww
+Nk
 tY
 tY
 Bf

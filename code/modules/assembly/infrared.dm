@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:32
-
 /obj/item/device/assembly/infra
 	name = "infrared emitter"
 	desc = "Emits a visible or invisible beam and is triggered when the beam is interrupted."
@@ -17,7 +15,7 @@
 	var/datum/proximity_trigger/line/proximity_trigger
 
 /obj/item/device/assembly/infra/New()
-	..()
+	. = ..()
 	beams = list()
 	seen_turfs = list()
 	proximity_trigger = new(src, /obj/item/device/assembly/infra/proc/on_beam_entered, /obj/item/device/assembly/infra/proc/on_visibility_change, world.view, PROXIMITY_EXCLUDE_HOLDER_TURF)
@@ -26,7 +24,7 @@
 	qdel(proximity_trigger)
 	proximity_trigger = null
 
-	. = ..()
+	return ..()
 
 /obj/item/device/assembly/infra/activate()
 	if(!..())
