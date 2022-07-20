@@ -138,7 +138,7 @@
 	desc = "An armored suit that protects against biological contamination and high temperatures."
 	icon_state = "hcz-hazard"
 	item_state = "hcz-hazard"
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_HUGE
 	gas_transfer_coefficient = 0
 	permeability_coefficient = 0
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
