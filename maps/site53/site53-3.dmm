@@ -5148,6 +5148,8 @@
 /obj/item/crowbar/red,
 /obj/item/clothing/suit/bio_suit/hcz,
 /obj/item/clothing/head/bio_hood/hcz,
+/obj/item/clothing/mask/gas/swat,
+/obj/item/tank/oxygen/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/senioragentoffice)
 "nU" = (
@@ -6510,6 +6512,8 @@
 /obj/item/crowbar/red,
 /obj/item/clothing/suit/bio_suit/hcz,
 /obj/item/clothing/head/bio_hood/hcz,
+/obj/item/clothing/mask/gas/swat,
+/obj/item/tank/oxygen/yellow,
 /turf/simulated/floor/carpet/blue2,
 /area/site53/zonecommanderoffice)
 "sT" = (

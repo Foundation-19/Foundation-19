@@ -12912,6 +12912,8 @@
 /obj/item/storage/belt/holster/security/tactical,
 /obj/item/clothing/suit/bio_suit/hcz,
 /obj/item/clothing/head/bio_hood/hcz,
+/obj/item/clothing/mask/gas/swat,
+/obj/item/tank/oxygen/yellow,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/commanderoffice)
 "aDE" = (
@@ -18765,6 +18767,8 @@
 /obj/item/crowbar/red,
 /obj/item/clothing/suit/bio_suit/hcz,
 /obj/item/clothing/head/bio_hood/hcz,
+/obj/item/clothing/mask/gas,
+/obj/item/tank/emergency/oxygen/double/red,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "aTG" = (
@@ -30109,6 +30113,8 @@
 /obj/item/storage/pill_bottle/amnesticsa,
 /obj/item/clothing/suit/bio_suit/hcz,
 /obj/item/clothing/head/bio_hood/hcz,
+/obj/item/clothing/mask/gas,
+/obj/item/tank/emergency/oxygen/double/red,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "pfF" = (
@@ -30141,6 +30147,8 @@
 /obj/item/storage/pill_bottle/amnesticsa,
 /obj/item/clothing/suit/bio_suit/hcz,
 /obj/item/clothing/head/bio_hood/hcz,
+/obj/item/clothing/mask/gas,
+/obj/item/tank/emergency/oxygen/double/red,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "piX" = (

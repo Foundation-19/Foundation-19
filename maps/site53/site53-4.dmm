@@ -1275,12 +1275,10 @@
 	dir = 1;
 	icon_state = "tube1"
 	},
-/obj/item/folder,
-/obj/item/folder/blue,
-/obj/item/folder/red,
-/obj/item/folder/white,
 /obj/item/clothing/suit/bio_suit/hcz,
 /obj/item/clothing/head/bio_hood/hcz,
+/obj/item/clothing/mask/gas/swat,
+/obj/item/tank/oxygen/yellow,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/hallway)
 "dL" = (
