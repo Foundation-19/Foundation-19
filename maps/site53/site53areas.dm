@@ -786,6 +786,26 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "exam_room"
 
+/area/site53/llcz/dclass/medicalpost/surgery
+	name = "\improper D-Class Medical Post Surgery"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "kitchen"
+
+/area/site53/llcz/dclass/medicalpost/storage
+	name = "\improper D-Class Medical Post Storage"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "Sleep"
+
+/area/site53/llcz/dclass/medicalpost/chem
+	name = "\improper D-Class Medical Post Chemistry"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "hallC1"
+
+/area/site53/llcz/dclass/medicalpost/morgue
+	name = "\improper D-Class Medical Post Morgue"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "kitchen"
+
 /area/site53/llcz/mine/explored
 	name = "Mine"
 	icon_state = "explored"
