@@ -195,10 +195,6 @@
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/head/bio_hood/security,
-		/obj/item/clothing/suit/bio_suit/hcz,
-		/obj/item/clothing/head/bio_hood/hcz,
-		/obj/item/clothing/mask/gas,
-		/obj/item/tank/oxygen/yellow,
 		/obj/item/gun/projectile/pistol/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 		/obj/item/ammo_magazine/box/mk9
