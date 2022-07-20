@@ -1279,6 +1279,8 @@
 /obj/item/folder/blue,
 /obj/item/folder/red,
 /obj/item/folder/white,
+/obj/item/clothing/suit/bio_suit/hcz,
+/obj/item/clothing/head/bio_hood/hcz,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/hallway)
 "dL" = (

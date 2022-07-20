@@ -6561,8 +6561,8 @@
 "aqh" = (
 /obj/structure/closet/jcloset_torch,
 /obj/machinery/camera/autoname{
-	dir = 1;
-	c_tag = "Janitor's Closet"
+	c_tag = "Janitor's Closet";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/janitorial)
@@ -7547,9 +7547,9 @@
 	dir = 9
 	},
 /obj/machinery/camera/autoname{
+	c_tag = "Auxillary Closet";
 	dir = 1;
-	network = list("Engineering Network 1");
-	c_tag = "Auxillary Closet"
+	network = list("Engineering Network 1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/auxstorage)
@@ -12910,8 +12910,8 @@
 /obj/structure/closet/secure_closet/mtf/co,
 /obj/item/crowbar/red,
 /obj/item/storage/belt/holster/security/tactical,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/suit/bio_suit/hcz,
+/obj/item/clothing/head/bio_hood/hcz,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/commanderoffice)
 "aDE" = (
@@ -18763,6 +18763,8 @@
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/closet/secure_closet/mtf/enlisted/hcz,
 /obj/item/crowbar/red,
+/obj/item/clothing/suit/bio_suit/hcz,
+/obj/item/clothing/head/bio_hood/hcz,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "aTG" = (
@@ -21416,11 +21418,11 @@
 "bbv" = (
 /obj/structure/skele_stand,
 /obj/machinery/power/apc{
+	desc = "Seems more like a decoration than anyhting.";
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list("ACCESS_SCIENCE_LEVEL1");
-	desc = "Seems more like a decoration than anyhting."
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -26833,8 +26835,8 @@
 /area/site53/surface/bunker)
 "gjy" = (
 /obj/machinery/camera/network/entrance{
-	dir = 4;
-	c_tag = "Tram Hub 2"
+	c_tag = "Tram Hub 2";
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
@@ -29960,8 +29962,8 @@
 /area/site53/llcz/scp263research)
 "oJB" = (
 /obj/machinery/camera/network/entrance{
-	dir = 8;
-	c_tag = "Tram Hub 1"
+	c_tag = "Tram Hub 1";
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
@@ -30105,6 +30107,8 @@
 	name = "HCZ Equipment Room"
 	},
 /obj/item/storage/pill_bottle/amnesticsa,
+/obj/item/clothing/suit/bio_suit/hcz,
+/obj/item/clothing/head/bio_hood/hcz,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "pfF" = (
@@ -30135,6 +30139,8 @@
 /obj/structure/closet/secure_closet/mtf/nco/hcz,
 /obj/item/crowbar/red,
 /obj/item/storage/pill_bottle/amnesticsa,
+/obj/item/clothing/suit/bio_suit/hcz,
+/obj/item/clothing/head/bio_hood/hcz,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "piX" = (
@@ -32846,9 +32852,9 @@
 /area/site53/llcz/scp513)
 "wJD" = (
 /obj/machinery/camera/network/lcz{
+	c_tag = "SCP-529";
 	dir = 8;
-	name = "SCP-529";
-	c_tag = "SCP-529"
+	name = "SCP-529"
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/llcz/scp500{

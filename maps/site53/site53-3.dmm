@@ -5146,8 +5146,8 @@
 /obj/item/gun/energy/taser,
 /obj/item/clothing/accessory/armorplate/tactical,
 /obj/item/crowbar/red,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
+/obj/item/clothing/suit/bio_suit/hcz,
+/obj/item/clothing/head/bio_hood/hcz,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/senioragentoffice)
 "nU" = (
@@ -6508,8 +6508,8 @@
 	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /obj/item/crowbar/red,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/suit/bio_suit/hcz,
+/obj/item/clothing/head/bio_hood/hcz,
 /turf/simulated/floor/carpet/blue2,
 /area/site53/zonecommanderoffice)
 "sT" = (
@@ -8547,9 +8547,9 @@
 /area/site53/surface/surface)
 "Ln" = (
 /obj/machinery/camera/autoname{
+	c_tag = "Cryo";
 	dir = 8;
-	network = list("Entrance Zone Network 1");
-	c_tag = "Cryo"
+	network = list("Entrance Zone Network 1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroomstairs)
