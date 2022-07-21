@@ -44,3 +44,6 @@
 /datum/fabricator_recipe/tool/welder_industrial
 	path = /obj/item/weldingtool/largetank
 	hidden = TRUE
+
+/datum/fabricator_recipe/tool/ducttape
+	path = /obj/item/tape_roll
