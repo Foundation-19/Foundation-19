@@ -72,7 +72,7 @@
 	taste_description = "blue razberry"
 	color = "#1408b8"
 
-	glass_name = "Blue Razberry Juice"
+	glass_name = "blue razberry juice"
 	glass_desc = "Are blue razberries an scp?"
 
 /datum/reagent/drink/juice/carrot
