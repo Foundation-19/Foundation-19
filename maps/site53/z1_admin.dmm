@@ -2450,20 +2450,6 @@
 /obj/item/ammo_casing/rocket,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
-"nt" = (
-/obj/item/clothing/head/helmet/scp/goc,
-/obj/item/clothing/suit/armor/goc,
-/obj/structure/closet,
-/obj/item/storage/belt/holster/security,
-/obj/item/gun/projectile/pistol,
-/obj/item/clothing/gloves/thick/swat,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/ert,
-/obj/item/clothing/glasses/night,
-/obj/item/device/radio/headset/goc,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/turf/simulated/floor/tiled/techfloor,
-/area/centcom/goc)
 "nu" = (
 /obj/machinery/light{
 	dir = 8;
@@ -3607,23 +3593,16 @@
 /area/supply/dock)
 "ws" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/fnfal,
-/obj/item/ammo_magazine/scp/fnfal,
-/obj/item/ammo_magazine/scp/fnfal,
-/obj/item/ammo_magazine/scp/fnfal,
-/obj/item/ammo_magazine/scp/fnfal,
-/obj/item/ammo_magazine/scp/fnfal,
-/obj/item/ammo_magazine/scp/fnfal,
-/obj/item/ammo_magazine/scp/fnfal,
-/obj/item/ammo_magazine/scp/fnfal,
-/obj/item/ammo_magazine/scp/fnfal,
-/obj/item/ammo_magazine/scp/fnfal,
-/obj/item/ammo_magazine/scp/fnfal,
-/obj/item/ammo_magazine/scp/fnfal,
-/obj/item/ammo_magazine/scp/fnfal,
-/obj/item/ammo_magazine/scp/fnfal,
-/obj/item/ammo_magazine/scp/fnfal,
-/obj/item/ammo_magazine/scp/fnfal,
+/obj/machinery/light{
+	dir = 4;
+	pixel_x = 0
+	},
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
 "wu" = (
@@ -3722,13 +3701,21 @@
 /obj/item/clothing/suit/armor/goc,
 /obj/structure/closet,
 /obj/item/storage/belt/holster/security,
-/obj/item/gun/projectile/pistol,
 /obj/item/clothing/gloves/thick/swat,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/under/ert,
 /obj/item/clothing/glasses/night,
 /obj/item/device/radio/headset/goc,
-/obj/item/gun/projectile/automatic/scp/fnfal,
+/obj/item/gun/energy/pulse_rifle/pistol,
+/obj/item/gun/energy/pulse_rifle,
+/obj/item/clothing/head/beret/scp/goc,
+/obj/item/rig/hazard/equipped{
+	name = "GOC whitesuit control module";
+	desc = "A GOC hardsuit designed for prolonged EVA in dangerous environments.";
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 100)
+	},
+/obj/item/storage/backpack/rucksack/blue,
+/obj/item/melee/energy/sword/blue,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
 "yh" = (
@@ -4118,12 +4105,12 @@
 	dir = 4;
 	pixel_x = 0
 	},
-/obj/item/ammo_magazine/shotholder/shell,
-/obj/item/ammo_magazine/shotholder/shell,
-/obj/item/ammo_magazine/shotholder/shell,
-/obj/item/ammo_magazine/shotholder/shell,
-/obj/item/ammo_magazine/shotholder/shell,
-/obj/item/ammo_magazine/shotholder/shell,
+/obj/item/grenade/empgrenade,
+/obj/item/grenade/empgrenade,
+/obj/item/grenade/empgrenade,
+/obj/item/grenade/empgrenade,
+/obj/item/grenade/empgrenade,
+/obj/item/grenade/empgrenade,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
 "Kf" = (
@@ -4202,17 +4189,25 @@
 /obj/item/clothing/suit/armor/goc,
 /obj/structure/closet,
 /obj/item/storage/belt/holster/security,
-/obj/item/gun/projectile/pistol,
 /obj/item/clothing/gloves/thick/swat,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/under/ert,
 /obj/item/clothing/glasses/night,
+/obj/item/device/radio/headset/goc,
+/obj/item/gun/energy/pulse_rifle/pistol,
+/obj/item/gun/energy/pulse_rifle,
+/obj/item/clothing/head/beret/scp/goc,
+/obj/item/rig/hazard/equipped{
+	name = "GOC whitesuit control module";
+	desc = "A GOC hardsuit designed for prolonged EVA in dangerous environments.";
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 100)
+	},
+/obj/item/storage/backpack/rucksack/blue,
+/obj/item/melee/energy/sword/blue,
 /obj/machinery/light{
 	dir = 8;
 	pixel_x = 0
 	},
-/obj/item/device/radio/headset/goc,
-/obj/item/gun/projectile/automatic/scp/fnfal,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
 "MW" = (
@@ -4332,6 +4327,7 @@
 	dir = 5;
 	icon_state = "bordercolor"
 	},
+/obj/machinery/chemical_dispenser/ert,
 /turf/simulated/floor/tiled/monotile/white,
 /area/centcom/goc)
 "VH" = (
@@ -4395,22 +4391,16 @@
 /area/centcom/goc)
 "XQ" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
 /obj/machinery/light{
 	dir = 4;
 	pixel_x = 0
 	},
+/obj/item/grenade/frag/high_yield,
+/obj/item/grenade/frag/high_yield,
+/obj/item/grenade/frag/high_yield,
+/obj/item/grenade/frag/high_yield,
+/obj/item/grenade/frag/high_yield,
+/obj/item/grenade/frag/high_yield,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
 "Ye" = (
@@ -4469,9 +4459,13 @@
 /area/site53/tram/car1)
 "Zu" = (
 /obj/structure/table/rack,
-/obj/item/grenade/frag,
-/obj/item/grenade/frag,
-/obj/item/grenade/frag,
+/obj/item/grenade/flashbang,
+/obj/item/grenade/flashbang,
+/obj/item/grenade/flashbang,
+/obj/item/grenade/flashbang,
+/obj/item/grenade/flashbang,
+/obj/item/grenade/flashbang,
+/obj/item/grenade/flashbang,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
 "ZC" = (
@@ -23328,11 +23322,11 @@ cw
 as
 eL
 lI
-nt
+xV
 kT
 lK
 kT
-nt
+xV
 lI
 sS
 oz
