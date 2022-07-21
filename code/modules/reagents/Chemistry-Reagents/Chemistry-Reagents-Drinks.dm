@@ -89,7 +89,7 @@
 	M.reagents.add_reagent(/datum/reagent/medicine/imidazoline, removed * 0.2)
 
 /datum/reagent/drink/juice/euclid
-	name = "Eculid berry juice"
+	name = "Eculid Berry Juice"
 	description = "Not safe enough for the normal population"
 	taste_description = "redacted"
 	color = "#FFFCFF" // rgb: 255, 140, 0
@@ -105,7 +105,7 @@
 	glass_name = "grape juice"
 	glass_desc = "It's grrrrrape!"
 /datum/reagent/drink/juice/keter
-	name = "Keter berry juice"
+	name = "Keter Berry Juice"
 	description = "A dangerous drink for dangerous people"
 	taste_description = "expunged"
 	color = "#EF1212" // rgb: 255, 140, 0
