@@ -58,7 +58,7 @@
 	glass_desc = "Berry juice. Or maybe it's jam. Who cares?"
 
 /datum/reagent/drink/juice/blackberry
-	name = "Blackberry"
+	name = "Blackberry Juice"
 	description = "Juice made from several thousand blackberries, probably."
 	taste_description = "blackberry"
 	color = "#8e0baf"
