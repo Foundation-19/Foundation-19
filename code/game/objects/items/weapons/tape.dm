@@ -4,6 +4,8 @@
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "taperoll"
 	w_class = ITEM_SIZE_SMALL
+	origin_tech = list(TECH_ENGINEERING = 1)
+	matter = list(MATERIAL_STEEL = 140)
 
 /obj/item/tape_roll/attack(var/mob/living/carbon/human/H, var/mob/user)
 	if(istype(H))
