@@ -1406,6 +1406,45 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/scp1102entrance)
+"iz" = (
+/obj/item/clothing/head/helmet/scp/goc,
+/obj/item/clothing/suit/armor/goc,
+/obj/structure/closet,
+/obj/item/storage/belt/holster/security,
+/obj/item/clothing/gloves/thick/swat,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/ert,
+/obj/item/clothing/glasses/night,
+/obj/item/device/radio/headset/goc,
+/obj/item/clothing/head/beret/scp/goc,
+/obj/item/rig/hazard/equipped{
+	name = "GOC whitesuit control module";
+	desc = "A GOC hardsuit designed for prolonged EVA in dangerous environments.";
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 100)
+	},
+/obj/item/storage/backpack/rucksack/blue,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/gun/projectile/automatic/assault_rifle{
+	desc = "The Rugged HK-417, perfect for the GOC"
+	},
+/obj/item/gun/projectile/pistol/military{
+	desc = "The Glock 19. Reliable, and efficient."
+	},
+/obj/item/gun/projectile/automatic/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "iA" = (
 /obj/machinery/vending/sovietsoda,
 /turf/simulated/floor/tiled/techmaint,
@@ -2226,6 +2265,42 @@
 /obj/structure/flora/tree/dead,
 /turf/simulated/floor/exoplanet/snow,
 /area/centcom/chaos)
+"mc" = (
+/obj/item/clothing/head/helmet/scp/goc,
+/obj/item/clothing/suit/armor/goc,
+/obj/structure/closet,
+/obj/item/storage/belt/holster/security,
+/obj/item/clothing/gloves/thick/swat,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/ert,
+/obj/item/clothing/glasses/night,
+/obj/item/device/radio/headset/goc,
+/obj/item/clothing/head/beret/scp/goc,
+/obj/item/rig/hazard/equipped{
+	name = "GOC whitesuit control module";
+	desc = "A GOC hardsuit designed for prolonged EVA in dangerous environments.";
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 100)
+	},
+/obj/item/storage/backpack/rucksack/blue,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/gun/projectile/automatic/assault_rifle{
+	desc = "The Rugged HK-417, perfect for the GOC"
+	},
+/obj/item/gun/projectile/pistol/military{
+	desc = "The Glock 19. Reliable, and efficient."
+	},
+/obj/item/gun/projectile/automatic/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "mg" = (
 /turf/unsimulated/beach/sand,
 /area/beach)
@@ -2450,6 +2525,45 @@
 /obj/item/ammo_casing/rocket,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
+"nt" = (
+/obj/item/clothing/head/helmet/scp/goc,
+/obj/item/clothing/suit/armor/goc,
+/obj/structure/closet,
+/obj/item/storage/belt/holster/security,
+/obj/item/clothing/gloves/thick/swat,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/ert,
+/obj/item/clothing/glasses/night,
+/obj/item/device/radio/headset/goc,
+/obj/item/clothing/head/beret/scp/goc,
+/obj/item/rig/hazard/equipped{
+	name = "GOC whitesuit control module";
+	desc = "A GOC hardsuit designed for prolonged EVA in dangerous environments.";
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 100)
+	},
+/obj/item/storage/backpack/rucksack/blue,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/gun/projectile/automatic/assault_rifle{
+	desc = "The Rugged HK-417, perfect for the GOC"
+	},
+/obj/item/gun/projectile/automatic/assault_rifle{
+	desc = "The Rugged HK-417, perfect for the GOC"
+	},
+/obj/item/gun/projectile/pistol/military{
+	desc = "The Glock 19. Reliable, and efficient."
+	},
+/obj/item/gun/projectile/automatic/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "nu" = (
 /obj/machinery/light{
 	dir = 8;
@@ -3706,8 +3820,6 @@
 /obj/item/clothing/under/ert,
 /obj/item/clothing/glasses/night,
 /obj/item/device/radio/headset/goc,
-/obj/item/gun/energy/pulse_rifle/pistol,
-/obj/item/gun/energy/pulse_rifle,
 /obj/item/clothing/head/beret/scp/goc,
 /obj/item/rig/hazard/equipped{
 	name = "GOC whitesuit control module";
@@ -3715,7 +3827,24 @@
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 100)
 	},
 /obj/item/storage/backpack/rucksack/blue,
-/obj/item/melee/energy/sword/blue,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/gun/projectile/automatic/assault_rifle{
+	desc = "The Rugged HK-417, perfect for the GOC"
+	},
+/obj/item/gun/projectile/pistol/military{
+	desc = "The Glock 19. Reliable, and efficient."
+	},
+/obj/item/gun/projectile/automatic/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
 "yh" = (
@@ -4194,8 +4323,6 @@
 /obj/item/clothing/under/ert,
 /obj/item/clothing/glasses/night,
 /obj/item/device/radio/headset/goc,
-/obj/item/gun/energy/pulse_rifle/pistol,
-/obj/item/gun/energy/pulse_rifle,
 /obj/item/clothing/head/beret/scp/goc,
 /obj/item/rig/hazard/equipped{
 	name = "GOC whitesuit control module";
@@ -4203,11 +4330,27 @@
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 100)
 	},
 /obj/item/storage/backpack/rucksack/blue,
-/obj/item/melee/energy/sword/blue,
 /obj/machinery/light{
 	dir = 8;
 	pixel_x = 0
 	},
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/ammo_magazine/pistol/double,
+/obj/item/gun/projectile/automatic/assault_rifle{
+	desc = "The Rugged HK-417, perfect for the GOC"
+	},
+/obj/item/gun/projectile/pistol/military{
+	desc = "The Glock 19. Reliable, and efficient."
+	},
+/obj/item/gun/projectile/automatic/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
+/obj/item/ammo_magazine/scp/fnfal,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
 "MW" = (
@@ -22918,7 +23061,7 @@ cw
 as
 eL
 lI
-MO
+mc
 kT
 kT
 kT
@@ -23124,7 +23267,7 @@ xV
 kT
 kL
 kT
-xV
+mc
 lI
 aF
 oz
@@ -23322,11 +23465,11 @@ cw
 as
 eL
 lI
-xV
+iz
 kT
 lK
 kT
-xV
+nt
 lI
 sS
 oz
