@@ -3057,10 +3057,6 @@
 "id" = (
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
-"ie" = (
-/obj/effect/paint_stripe/blue,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/medicalpost)
 "if" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10096,13 +10092,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
-"As" = (
-/obj/effect/paint_stripe/blue,
-/obj/structure/hygiene/sink{
-	pixel_y = -23
-	},
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/medicalpost)
 "At" = (
 /obj/structure/table/standard,
 /obj/machinery/light,
@@ -28348,7 +28337,7 @@ cQ
 hY
 cQ
 cQ
-ie
+cQ
 hy
 hy
 hy
@@ -28605,7 +28594,7 @@ gR
 hX
 cc
 cQ
-ie
+hy
 hy
 hy
 hy
@@ -28862,7 +28851,7 @@ cf
 hZ
 cc
 cQ
-ie
+hy
 hy
 hy
 hy
@@ -29119,7 +29108,7 @@ cc
 hX
 cc
 cQ
-ie
+hy
 hy
 hy
 hy
@@ -29376,7 +29365,7 @@ cd
 rV
 cc
 cQ
-ie
+hy
 hy
 hy
 hy
@@ -29633,7 +29622,7 @@ cc
 fC
 cc
 cQ
-As
+hy
 hy
 hy
 hy
@@ -29890,7 +29879,7 @@ cQ
 cQ
 cQ
 cQ
-ie
+hy
 hy
 hy
 hy
@@ -30147,7 +30136,7 @@ hy
 hy
 hy
 hy
-ie
+hy
 hy
 hy
 hy
