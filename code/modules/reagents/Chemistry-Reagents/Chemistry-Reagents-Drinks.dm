@@ -94,7 +94,7 @@
 	taste_description = "redacted"
 	color = "#FFFCFF" // rgb: 255, 140, 0
 
-	glass_name = "Euclid berry juice"
+	glass_name = "euclid berry juice"
 	glass_desc = "Safely contained in glass."
 /datum/reagent/drink/juice/grape
 	name = "Grape Juice"
