@@ -110,7 +110,7 @@
 	taste_description = "expunged"
 	color = "#EF1212" // rgb: 255, 140, 0
 
-	glass_name = "Keter berry juice"
+	glass_name = "keter berry juice"
 	glass_desc = "This juice could break out of the glass at any moment."
 /datum/reagent/drink/juice/lemon
 	name = "Lemon Juice"
