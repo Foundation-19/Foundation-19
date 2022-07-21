@@ -107,7 +107,7 @@
 /datum/reagent/drink/juice/keter
 	name = "Keter berry juice"
 	description = "A dangerous drink for dangerous people"
-	taste_description = "Expunged"
+	taste_description = "expunged"
 	color = "#EF1212" // rgb: 255, 140, 0
 
 	glass_name = "Keter berry juice"
