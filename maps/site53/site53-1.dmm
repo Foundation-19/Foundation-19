@@ -426,6 +426,9 @@
 /area/site53/llcz/dclass/cells)
 "bk" = (
 /obj/machinery/light,
+/obj/effect/floor_decal/industrial/traffic{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "bl" = (
@@ -1179,7 +1182,7 @@
 	},
 /obj/effect/floor_decal/corner/b_green/mono,
 /obj/machinery/door/window/brigdoor/westleft{
-	req_access = list("ACCESS_SECURITY_LEVEL2");
+	req_access = list("ACCESS_MEDICAL_LEVEL2");
 	name = "Surgery Kit Box"
 	},
 /turf/simulated/floor/tiled/white/monotile,
@@ -1318,8 +1321,8 @@
 /turf/simulated/floor,
 /area/site53/lowertram/archive)
 "dj" = (
-/obj/machinery/chemical_dispenser,
 /obj/effect/floor_decal/corner/yellow/mono,
+/obj/machinery/chemical_dispenser/full,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "dk" = (
@@ -5735,6 +5738,8 @@
 	pixel_x = -7
 	},
 /obj/effect/floor_decal/corner/yellow/mono,
+/obj/item/stack/material/phoron/ten,
+/obj/item/stack/material/phoron/ten,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "nY" = (
@@ -17589,9 +17594,9 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
 "Xx" = (
-/obj/machinery/door/airlock/medical{
-	name = "Medical Lobby";
-	req_access = list("ACCESS_MEDICAL_LEVEL2")
+/obj/machinery/door/airlock/glass/medical{
+	req_access = list("ACCESS_MEDICAL_LEVEL2");
+	name = "Medical Post"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
