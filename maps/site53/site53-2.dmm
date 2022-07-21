@@ -12910,10 +12910,8 @@
 /obj/structure/closet/secure_closet/mtf/co,
 /obj/item/crowbar/red,
 /obj/item/storage/belt/holster/security/tactical,
-/obj/item/clothing/suit/bio_suit/hcz,
-/obj/item/clothing/head/bio_hood/hcz,
-/obj/item/clothing/mask/gas/swat,
-/obj/item/tank/oxygen/yellow,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/clothing/suit/bio_suit/security,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/commanderoffice)
 "aDE" = (
@@ -18765,10 +18763,6 @@
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/closet/secure_closet/mtf/enlisted/hcz,
 /obj/item/crowbar/red,
-/obj/item/clothing/suit/bio_suit/hcz,
-/obj/item/clothing/head/bio_hood/hcz,
-/obj/item/clothing/mask/gas,
-/obj/item/tank/emergency/oxygen/double/red,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "aTG" = (
@@ -30111,10 +30105,6 @@
 	name = "HCZ Equipment Room"
 	},
 /obj/item/storage/pill_bottle/amnesticsa,
-/obj/item/clothing/suit/bio_suit/hcz,
-/obj/item/clothing/head/bio_hood/hcz,
-/obj/item/clothing/mask/gas,
-/obj/item/tank/emergency/oxygen/double/red,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "pfF" = (
@@ -30140,15 +30130,75 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
+"phu" = (
+/obj/structure/closet,
+/obj/item/clothing/suit/bio_suit/hcz{
+	pixel_x = -8
+	},
+/obj/item/clothing/suit/bio_suit/hcz{
+	pixel_x = -6
+	},
+/obj/item/clothing/suit/bio_suit/hcz{
+	pixel_x = -4
+	},
+/obj/item/clothing/suit/bio_suit/hcz{
+	pixel_x = -2
+	},
+/obj/item/clothing/suit/bio_suit/hcz,
+/obj/item/clothing/suit/bio_suit/hcz{
+	pixel_x = 2
+	},
+/obj/item/clothing/suit/bio_suit/hcz{
+	pixel_x = 4
+	},
+/obj/item/clothing/suit/bio_suit/hcz{
+	pixel_x = 6
+	},
+/obj/item/clothing/suit/bio_suit/hcz{
+	pixel_x = 8
+	},
+/obj/item/clothing/head/bio_hood/hcz{
+	pixel_x = -8;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/bio_hood/hcz{
+	pixel_x = -6;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/bio_hood/hcz{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/bio_hood/hcz{
+	pixel_x = -2;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/bio_hood/hcz{
+	pixel_y = 8
+	},
+/obj/item/clothing/head/bio_hood/hcz{
+	pixel_x = 2;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/bio_hood/hcz{
+	pixel_x = 4;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/bio_hood/hcz{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/bio_hood/hcz{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "phw" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/closet/secure_closet/mtf/nco/hcz,
 /obj/item/crowbar/red,
 /obj/item/storage/pill_bottle/amnesticsa,
-/obj/item/clothing/suit/bio_suit/hcz,
-/obj/item/clothing/head/bio_hood/hcz,
-/obj/item/clothing/mask/gas,
-/obj/item/tank/emergency/oxygen/double/red,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "piX" = (
@@ -94382,7 +94432,7 @@ azA
 gID
 bhS
 rrU
-rrU
+phu
 rrU
 bjn
 gID
