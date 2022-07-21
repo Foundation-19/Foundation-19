@@ -63,7 +63,7 @@
 	taste_description = "blackberry"
 	color = "#8e0baf"
 
-	glass_name = "Blackberry juice"
+	glass_name = "blackberry juice"
 	glass_desc = "Its blackberry juice."
 
 /datum/reagent/drink/juice/blueraz
