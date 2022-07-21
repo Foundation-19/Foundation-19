@@ -95,7 +95,7 @@
 	color = "#FFFCFF" // rgb: 255, 140, 0
 
 	glass_name = "euclid berry juice"
-	glass_desc = "Safely contained in glass."
+	glass_desc = "Safely contained in a glass."
 /datum/reagent/drink/juice/grape
 	name = "Grape Juice"
 	description = "It's grrrrrape!"
