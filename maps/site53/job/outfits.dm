@@ -769,7 +769,7 @@
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/handcuffs = 1,/obj/item/ammo_magazine/scp/ak = 10,/obj/item/clothing/accessory/ubac/green = 1,/obj/item/clothing/accessory/armor/helmcover/blue/sol = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/ungoc/gunner
-	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Machinegunner")
+	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Machinegunner") //I am heavy weapons guy
 	uniform = /obj/item/clothing/under/syndicate/combat
 	suit = /obj/item/clothing/suit/storage/vest
 	head = /obj/item/clothing/head/helmet/merc
@@ -779,14 +779,14 @@
 	shoes = /obj/item/clothing/shoes/combat
 	id_types = list(/obj/item/card/id/physics)
 	suit_store = null
-	r_hand = /obj/item/gun/projectile/automatic/l6_saw
+	r_hand = /obj/item/gun/projectile/automatic/l6_saw //and THIS... is my weapon
 	l_hand = null
 	l_pocket = /obj/item/grenade/frag
 	r_pocket = /obj/item/card/emag
 	l_ear = /obj/item/device/radio/headset/ert
 	belt = /obj/item/storage/belt/holster/security/tactical
 	back = /obj/item/storage/backpack/rucksack
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/handcuffs = 1,/obj/item/ammo_magazine/box/a556 = 10,/obj/item/clothing/accessory/ubac/green = 1,/obj/item/clothing/accessory/armor/helmcover/blue/sol = 1)
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/handcuffs = 1, /obj/item/ammo_magazine/box/machinegun = 10,/obj/item/clothing/accessory/ubac/green = 1,/obj/item/clothing/accessory/armor/helmcover/blue/sol = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/ungoc/grenadier
 	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Grenadier")
