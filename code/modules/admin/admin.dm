@@ -954,7 +954,8 @@ var/global/floorIsLava = 0
 	set category = "Server"
 	set desc="Reboots the server post haste"
 	set name="Immediate Reboot"
-	if(!usr.client.holder)	return
+	if(!check_rights(R_SERVER, FALSE, usr))
+		return
 	if( alert("Reboot server?",,"Yes","No") == "No")
 		return
 	to_world("<span class='danger'>Rebooting world!</span> <span class='notice'>Initiated by [usr.key]!</span>")
