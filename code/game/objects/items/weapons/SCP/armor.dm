@@ -110,7 +110,7 @@
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS
 	armor = list(melee = 100, bullet = 100, laser = 90, energy = 95, bomb = 90, bio = 90, rad = 0)
 
-/obj/item/clothing/head/bio_hood/hcz
+/obj/item/clothing/head/hcz_hazmat
 	name = "combat hazmat helmet"
 	icon_state = "hcz-hazard-helmet"
 	item_state = "hcz-hazard-helmet"
@@ -133,7 +133,7 @@
 	body_parts_covered = HEAD|FACE|EYES
 	siemens_coefficient = 0.9
 
-/obj/item/clothing/suit/bio_suit/hcz
+/obj/item/clothing/suit/hcz_hazmat
 	name = "combat hazmat suit"
 	desc = "An armored suit that protects against biological contamination and high temperatures."
 	icon_state = "hcz-hazard"
