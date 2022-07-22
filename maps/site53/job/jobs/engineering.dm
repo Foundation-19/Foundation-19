@@ -46,7 +46,7 @@
 		"Damage Control Technician",
 		"Electrician"
 		)
-	outfit_type = /decl/hierarchy/outfit/job/ds90/crew/engineering/juneng
+	outfit_type = /decl/hierarchy/outfit/job/ds90/crew/engineering/eng
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudengineer"
