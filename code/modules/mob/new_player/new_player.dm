@@ -29,15 +29,12 @@
 	else
 		. += "Game Mode: [PUBLIC_GAME_MODE]"
 
-	var/extra_antags = list2params(additional_antag_types)
-	. += "Added Antagonists: [extra_antags ? extra_antags : "None"]"
 	. += "Initial Continue Vote: [round(config.vote_autotransfer_initial / 600, 1)] minutes"
 	. += "Additional Vote Every: [round(config.vote_autotransfer_interval / 600, 1)] minutes"
 
 	if(SSticker.HasRoundStarted())
 		. += "Next Continue Vote: [max(round(transfer_controller.time_till_transfer_vote() / 600, 1), 0)] minutes"
 		return
-
 
 	. += "Time To Start: [round(SSticker.pregame_timeleft/10)][SSticker.round_progressing ? "" : " (DELAYED)"]"
 	. += "Players: [totalPlayers]"
