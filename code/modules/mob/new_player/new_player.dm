@@ -26,32 +26,34 @@
 	.=..()
 	if(check_rights(R_INVESTIGATE, 0, src))
 		. += "Game Mode: [SSticker.mode ? SSticker.mode.name : SSticker.master_mode] ([SSticker.master_mode])"
-	else
-		. += "Game Mode: [PUBLIC_GAME_MODE]"
 		var/extra_antags = list2params(additional_antag_types)
 		. += "Added Antagonists: [extra_antags ? extra_antags : "None"]"
-		. += "Initial Continue Vote: [round(config.vote_autotransfer_initial / 600, 1)] minutes"
-		. += "Additional Vote Every: [round(config.vote_autotransfer_interval / 600, 1)] minutes"
+	else
+		. += "Game Mode: [PUBLIC_GAME_MODE]"
 
-		if(GAME_STATE <= RUNLEVEL_LOBBY)
-			. += "Time To Start: [round(SSticker.pregame_timeleft/10)][SSticker.round_progressing ? "" : " (DELAYED)"]"
-			. += "Players: [totalPlayers]"
-			. += "Players Ready: [totalPlayersReady]"
-			totalPlayers = 0
-			totalPlayersReady = 0
-			for(var/mob/new_player/player in GLOB.player_list)
-				var/highjob
-				if(player.client)
-					var/show_ready = player.client.get_preference_value(/datum/client_preference/show_ready) == GLOB.PREF_SHOW
-					if(player.client.prefs?.job_high)
-						highjob = " as [player.client.prefs.job_high]"
-					if(!player.is_stealthed())
-						. += "[player.key] [(player.ready && show_ready) ? "Playing[highjob]" : null]"
-				totalPlayers++
-				if(player.ready)
-					totalPlayersReady++
-		else
-			. += "Next Continue Vote: [max(round(transfer_controller.time_till_transfer_vote() / 600, 1), 0)] minutes"
+	. += "Initial Continue Vote: [round(config.vote_autotransfer_initial / 600, 1)] minutes"
+	. += "Additional Vote Every: [round(config.vote_autotransfer_interval / 600, 1)] minutes"
+
+	if(SSticker.HasRoundStarted())
+		. += "Next Continue Vote: [max(round(transfer_controller.time_till_transfer_vote() / 600, 1), 0)] minutes"
+		return
+
+	. += "Time To Start: [round(SSticker.pregame_timeleft/10)][SSticker.round_progressing ? "" : " (DELAYED)"]"
+	. += "Players: [totalPlayers]"
+	. += "Players Ready: [totalPlayersReady]"
+	totalPlayers = 0
+	totalPlayersReady = 0
+	for(var/mob/new_player/player in GLOB.player_list)
+		var/highjob
+		if(player.client)
+			var/show_ready = player.client.get_preference_value(/datum/client_preference/show_ready) == GLOB.PREF_SHOW
+			if(player.client.prefs?.job_high)
+				highjob = " as [player.client.prefs.job_high]"
+			if(!player.is_stealthed())
+				. += "[player.key] [(player.ready && show_ready) ? "Playing[highjob]" : null]"
+		totalPlayers++
+		if(player.ready)
+			totalPlayersReady++
 
 /mob/new_player/Topic(href, href_list) // This is a full override; does not call parent.
 	if(usr != src)
