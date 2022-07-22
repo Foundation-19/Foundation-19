@@ -12,7 +12,7 @@
 "af" = (
 /obj/machinery/door/airlock/vault{
 	name = "Epislon-11";
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "epislon11";
@@ -294,9 +294,11 @@
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
 "bZ" = (
-/obj/effect/floor_decal/corner/beige/border{
+/obj/structure/bed,
+/obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
+/obj/item/bedsheet/blue,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -326,7 +328,7 @@
 /area/site53/tram/mtf)
 "cl" = (
 /obj/machinery/door/airlock/vault{
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -427,7 +429,7 @@
 /area/centcom)
 "cG" = (
 /obj/effect/floor_decal/corner/beige/border{
-	dir = 6
+	dir = 5
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -462,9 +464,8 @@
 /turf/simulated/floor/plating,
 /area/supply/dock)
 "cU" = (
-/obj/structure/closet/secure_closet/mtf/ntf,
-/obj/effect/floor_decal/corner/red{
-	dir = 6
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 4
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -582,9 +583,13 @@
 	},
 /area/centcom)
 "ec" = (
-/obj/machinery/computer/modular/preset/full/ert,
 /obj/effect/floor_decal/corner/black/border{
 	dir = 5
+	},
+/obj/machinery/computer/shuttle_control{
+	name = "MTF Helicopter";
+	req_access = list("ACCESS_MEDICAL_LEVEL2","ACCESS_SCIENCE_LEVEL2");
+	shuttle_tag = "MTF Helicopter"
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -637,7 +642,7 @@
 /area/centcom)
 "eE" = (
 /obj/machinery/vending/security{
-	req_access = list(100)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
@@ -647,7 +652,7 @@
 "eG" = (
 /obj/machinery/door/airlock/vault{
 	name = "Mobile Task Force Garage";
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3132,24 +3137,6 @@
 	},
 /turf/unsimulated/floor/plating,
 /area/centcom)
-"ot" = (
-/obj/structure/bed,
-/obj/structure/bed{
-	can_buckle = 0;
-	layer = 2.26;
-	pixel_y = 10
-	},
-/obj/item/bedsheet/blue{
-	layer = 2.25
-	},
-/obj/item/bedsheet/blue{
-	pixel_y = 10
-	},
-/obj/effect/floor_decal/corner/blue/bordercee,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom)
 "ou" = (
 /obj/machinery/light{
 	dir = 4
@@ -3512,7 +3499,7 @@
 "pE" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Holding Cell";
-	req_access = list(202)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
@@ -3726,29 +3713,6 @@
 	icon_state = "techmaint"
 	},
 /area/centcom)
-"qh" = (
-/obj/structure/bed,
-/obj/structure/bed{
-	can_buckle = 0;
-	layer = 2.26;
-	pixel_y = 10
-	},
-/obj/item/bedsheet/blue{
-	layer = 2.25
-	},
-/obj/item/bedsheet/blue{
-	pixel_y = 10
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom)
 "qk" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/unsimulated/floor/grass{
@@ -3803,7 +3767,7 @@
 "qP" = (
 /obj/machinery/door/airlock/vault{
 	name = "Omega-1";
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "omega1";
@@ -3818,20 +3782,7 @@
 	dir = 4
 	},
 /obj/structure/bed,
-/obj/structure/bed{
-	can_buckle = 0;
-	layer = 2.26;
-	pixel_y = 10
-	},
-/obj/item/bedsheet/blue{
-	layer = 2.25
-	},
-/obj/item/bedsheet/blue{
-	pixel_y = 10
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 8
-	},
+/obj/item/bedsheet/blue,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -3842,20 +3793,10 @@
 /area/supply/dock)
 "qX" = (
 /obj/structure/bed,
-/obj/structure/bed{
-	can_buckle = 0;
-	layer = 2.26;
-	pixel_y = 10
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
 	},
-/obj/item/bedsheet/blue{
-	layer = 2.25
-	},
-/obj/item/bedsheet/blue{
-	pixel_y = 10
-	},
-/obj/effect/floor_decal/corner/blue/bordercee{
-	dir = 1
-	},
+/obj/item/bedsheet/blue,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -3906,7 +3847,7 @@
 "rA" = (
 /obj/machinery/door/airlock/vault{
 	name = "Briefing Room";
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -3994,7 +3935,7 @@
 "rX" = (
 /obj/machinery/door/airlock/vault{
 	name = "Alpha-1";
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /obj/machinery/door/blast/shutters{
 	explosion_resistance = 100;
@@ -4086,12 +4027,12 @@
 	},
 /area/centcom)
 "su" = (
-/obj/machinery/vending/security{
-	dir = 1;
-	req_access = list(100)
-	},
 /obj/effect/floor_decal/corner/white/border{
 	dir = 10
+	},
+/obj/machinery/vending/security{
+	dir = 4;
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -4244,8 +4185,7 @@
 /area/centcom)
 "tE" = (
 /obj/machinery/door/airlock/vault{
-	name = "Epislon-11";
-	req_access = list(100)
+	name = "Epislon-11"
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -4984,15 +4924,11 @@
 	},
 /area/centcom)
 "xw" = (
-/obj/effect/floor_decal/corner/red{
-	dir = 6
+/obj/effect/floor_decal/corner/beige/border,
+/obj/structure/sign/warning/lethal_turrets{
+	name = "LIVE-FIRE RANGE";
+	pixel_y = -30
 	},
-/obj/structure/table/rack,
-/obj/item/clothing/mask/gas/alpha,
-/obj/item/clothing/gloves/tactical/alpha,
-/obj/item/clothing/under/scp/alpha,
-/obj/item/clothing/head/beret/scp/alpha,
-/obj/item/clothing/suit/armor/vest/scp/medarmor/alpha,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -5008,11 +4944,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/centcom/goc)
 "xP" = (
-/obj/machinery/vending/security{
-	req_access = list(100)
-	},
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 9
+	},
+/obj/machinery/vending/security{
+	dir = 4;
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -5021,7 +4958,7 @@
 "xQ" = (
 /obj/machinery/door/airlock/vault{
 	name = "Firing Range";
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -5142,7 +5079,7 @@
 "yO" = (
 /obj/machinery/vending/security{
 	dir = 4;
-	req_access = list(100)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 10
@@ -5190,13 +5127,11 @@
 	},
 /area/centcom)
 "yT" = (
-/obj/effect/floor_decal/corner/beige/bordercorner{
-	dir = 8
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 6
 	},
-/obj/effect/floor_decal/corner/beige/bordercorner,
 /turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
+	icon_state = "dark"
 	},
 /area/centcom)
 "zg" = (
@@ -5556,7 +5491,7 @@
 "Cr" = (
 /obj/machinery/door/airlock/vault{
 	name = "Beta-7";
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "beta7";
@@ -6006,13 +5941,13 @@
 	},
 /area/centcom)
 "Du" = (
-/obj/effect/floor_decal/corner/beige/border,
-/obj/structure/sign/warning/lethal_turrets{
-	name = "LIVE-FIRE RANGE";
-	pixel_y = -30
+/obj/effect/floor_decal/corner/beige/bordercorner{
+	dir = 8
 	},
+/obj/effect/floor_decal/corner/beige/bordercorner,
 /turf/unsimulated/floor{
-	icon_state = "dark"
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
 	},
 /area/centcom)
 "Dv" = (
@@ -6115,7 +6050,7 @@
 	},
 /obj/machinery/vending/security{
 	dir = 8;
-	req_access = list(100)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -6361,7 +6296,7 @@
 "HG" = (
 /obj/effect/floor_decal/corner/green/border,
 /obj/structure/closet/crate/secure/biohazard{
-	req_access = list(402)
+	req_access = null
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -6454,7 +6389,7 @@
 "Il" = (
 /obj/machinery/door/airlock/vault{
 	name = "Eta-10";
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "eta10";
@@ -6699,7 +6634,7 @@
 "Jk" = (
 /obj/machinery/vending/security{
 	dir = 4;
-	req_access = list(100)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 10
@@ -6725,12 +6660,12 @@
 	},
 /area/centcom)
 "Js" = (
-/obj/machinery/vending/security{
-	dir = 4;
-	req_access = list(100)
-	},
 /obj/effect/floor_decal/corner/research/border{
 	dir = 9
+	},
+/obj/machinery/vending/security{
+	dir = 4;
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -7404,7 +7339,7 @@
 "Np" = (
 /obj/machinery/door/airlock/security{
 	name = "Holding Cells";
-	req_access = list(201)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -7600,7 +7535,7 @@
 "NO" = (
 /obj/machinery/door/airlock/vault{
 	name = "Epislon-9";
-	req_access = list(100)
+	req_access = list("ACCESS_MTF")
 	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "epislon9";
@@ -8223,7 +8158,7 @@
 "RM" = (
 /obj/machinery/door/airlock/security{
 	name = "Holding Cells";
-	req_access = list(201)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -8247,8 +8182,7 @@
 /area/site53/tram/mtf)
 "Sp" = (
 /obj/machinery/door/airlock/vault{
-	name = "Medical";
-	req_access = list(100)
+	name = "Medical"
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -8541,7 +8475,7 @@
 "Us" = (
 /obj/machinery/door/airlock/security{
 	name = "Holding Cells";
-	req_access = list(201)
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
@@ -8903,14 +8837,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"WM" = (
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 5
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom)
 "WN" = (
 /obj/structure/sign/warning/secure_area/armory{
 	pixel_y = 28
@@ -9181,7 +9107,7 @@
 "ZY" = (
 /obj/machinery/computer/shuttle_control{
 	name = "MTF Helicopter";
-	req_access = list(402,302);
+	req_access = list("ACCESS_MEDICAL_LEVEL2","ACCESS_SCIENCE_LEVEL2");
 	shuttle_tag = "MTF Helicopter"
 	},
 /turf/simulated/floor/shuttle/black,
@@ -14878,9 +14804,9 @@ ab
 tq
 tq
 hY
-ot
-qh
-qh
+qX
+qX
+qX
 qX
 rO
 tq
@@ -15321,7 +15247,7 @@ ts
 oq
 tq
 NM
-ts
+Us
 oC
 oq
 oq
@@ -15523,7 +15449,7 @@ tq
 RM
 tq
 Eq
-Us
+ts
 tq
 oq
 oq
@@ -16090,10 +16016,10 @@ ab
 tq
 tq
 nR
-ot
+bZ
 qQ
 qQ
-qX
+bZ
 sq
 tq
 tq
@@ -20153,7 +20079,7 @@ rX
 rY
 hO
 hO
-nC
+xw
 tq
 BF
 hO
@@ -20356,7 +20282,7 @@ rY
 hO
 hO
 Du
-tq
+xQ
 BF
 hO
 hO
@@ -20554,11 +20480,11 @@ hO
 hO
 AQ
 tq
-rY
-hO
-hO
+cG
+cU
+cU
 yT
-xQ
+tq
 hO
 hO
 hO
@@ -20756,10 +20682,10 @@ hO
 hO
 AQ
 tq
-rY
-hO
-hO
-nC
+tq
+tq
+tq
+tq
 tq
 BF
 hO
@@ -20958,10 +20884,10 @@ QI
 QI
 wl
 tq
-WM
-bZ
-bZ
-cG
+ab
+ab
+ab
+ab
 tq
 Ix
 zY
@@ -21160,10 +21086,10 @@ tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
+ab
+ab
+ab
+ab
 tq
 tq
 tq
@@ -21360,13 +21286,13 @@ ab
 ab
 ab
 ab
-tq
-tq
-xw
-cU
-xw
-tq
-tq
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -21563,11 +21489,11 @@ ab
 ab
 ab
 ab
-tq
-tq
-tq
-tq
-tq
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
