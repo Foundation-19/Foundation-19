@@ -91,9 +91,6 @@ var/list/admin_verbs_admin = list(
 	/client/proc/view_chemical_reaction_logs,
 	/client/proc/makePAI,
 	/client/proc/fixatmos,
-	/client/proc/list_traders,
-	/client/proc/add_trader,
-	/client/proc/remove_trader,
 	/datum/admins/proc/sendFax,
 	/client/proc/check_fax_history,
 	/client/proc/cmd_admin_notarget
