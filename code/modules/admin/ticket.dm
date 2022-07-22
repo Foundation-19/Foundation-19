@@ -220,7 +220,7 @@ var/list/ticket_panels = list()
 			ticket.close(client_repository.get_lite_client(usr.client))
 		if("pm")
 			ticket.take(client_repository.get_lite_client(usr.client))
-			if(usr.client.holder && ticket.owner.ckey != usr.ckey)
+			if(check_rights(R_INVESTIGATE, FALSE, usr) && ticket.owner.ckey != usr.ckey)
 				usr.client.cmd_admin_pm(client_by_ckey(ticket.owner.ckey), ticket = ticket)
 			else if(ticket.status == TICKET_ASSIGNED)
 				// manually check that the target client exists here as to not spam the usr for each logged out admin on the ticket

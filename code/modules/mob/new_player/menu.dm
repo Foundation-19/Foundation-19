@@ -96,7 +96,7 @@
 		to_chat(player, SPAN_WARNING("The round has either not started yet or already ended."))
 		return
 
-	if(!player.client.holder)
+	if(!check_rights(R_INVESTIGATE, FALSE, player))
 		var/dsdiff = config.respawn_menu_delay MINUTES - (world.time - player.respawned_time)
 		if(dsdiff > 0)
 			to_chat(player, SPAN_WARNING("You must wait [time2text(dsdiff, "mm:ss")] before rejoining."))
