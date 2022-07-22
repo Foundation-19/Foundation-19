@@ -817,7 +817,7 @@ var/list/admin_verbs_mentors = list(
 
 /client/proc/free_slot_submap()
 	set name = "Free Job Slot (Submap)"
-	set category = "Server"
+	set category = "Admin.Round"
 	if(!holder) return
 
 	var/list/jobs = list()
