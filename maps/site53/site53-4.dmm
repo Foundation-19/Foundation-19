@@ -814,26 +814,26 @@
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/item/paper_bin,
 /obj/item/pen,
-/obj/machinery/door/window/northright{
-	id_tag = "sitedirect"
+/obj/structure/window/reinforced{
+	dir = 1
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cw" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/woodentable_reinforced/mahogany,
-/obj/machinery/door/window/northright{
-	id_tag = "sitedirect"
+/obj/structure/window/reinforced{
+	dir = 1
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cx" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
-/obj/machinery/door/window/eastright{
-	id_tag = "sitedirect"
+/obj/structure/window/reinforced{
+	dir = 4
 	},
-/obj/machinery/door/window/northright{
-	id_tag = "sitedirect"
+/obj/structure/window/reinforced{
+	dir = 1
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
@@ -1032,18 +1032,14 @@
 /area/site53/uez/hallway)
 "cZ" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
-/obj/machinery/door/window/southleft{
-	id_tag = "sitedirect"
-	},
+/obj/structure/window/reinforced,
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "db" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
-/obj/machinery/door/window/eastleft{
-	id_tag = "sitedirect"
-	},
-/obj/machinery/door/window/southright{
-	id_tag = "sitedirect"
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
