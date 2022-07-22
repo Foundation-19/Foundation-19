@@ -5616,7 +5616,7 @@
 "oD" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-049 Observation";
-	send_access = list(list(203,304))
+	send_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled,
@@ -9208,6 +9208,11 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
+"wR" = (
+/obj/structure/table/standard,
+/obj/item/storage/box/bodybags,
+/turf/simulated/floor/tiled/freezer,
+/area/site53/uhcz/scp8containment)
 "wS" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/flasher{
@@ -16004,7 +16009,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-247 Observation";
-	send_access = list(303)
+	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3","ACCESS_MEDICAL_LEVEL4"))
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
@@ -16162,12 +16167,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
 "TD" = (
-/obj/machinery/light,
-/obj/machinery/button/crematorium{
-	id_tag = "scp8crem";
-	pixel_y = -24;
-	req_access = list("ACCESS_SCIENCE_LEVEL4")
-	},
+/obj/structure/closet/crate/secure/biohazard/blanks,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment)
 "TI" = (
@@ -16513,7 +16513,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-247 Observation";
-	send_access = list(303)
+	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3","ACCESS_MEDICAL_LEVEL4"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
@@ -16870,6 +16870,11 @@
 "WI" = (
 /obj/machinery/camera/autoname{
 	network = list("SCP-247 CCTV Network")
+	},
+/obj/machinery/button/crematorium{
+	id_tag = "scp8crem";
+	pixel_y = 24;
+	req_access = list("ACCESS_SCIENCE_LEVEL4")
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment)
@@ -17311,7 +17316,7 @@
 	},
 /obj/machinery/photocopier/faxmachine{
 	department = "Archive";
-	send_access = list(500)
+	send_access = list("ACCESS_ADMIN_LEVEL3")
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/lowertram/archive)
@@ -17393,7 +17398,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-008 Observation";
-	send_access = list(204)
+	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3","ACCESS_MEDICAL_LEVEL4"))
 	},
 /obj/machinery/light{
 	dir = 4
@@ -72660,9 +72665,9 @@ gq
 gq
 gq
 xe
-Br
-Ps
-Br
+Zd
+Pw
+Pw
 xe
 QG
 BG
@@ -72919,7 +72924,7 @@ gq
 xe
 Br
 Br
-TD
+PV
 xe
 VY
 BG
@@ -73688,9 +73693,9 @@ gq
 gq
 gq
 xe
-Zd
-Pw
-Pw
+wR
+Ps
+TD
 xe
 xe
 Zp
