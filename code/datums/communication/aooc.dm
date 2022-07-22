@@ -16,9 +16,7 @@
 	if(!.)
 		return
 
-	. = TRUE
-
-	if(C.holder && C.holder.rights & R_ADMIN)
+	if(check_rights(R_INVESTIGATE))
 		return
 	else
 		if(isghost(C.mob))
