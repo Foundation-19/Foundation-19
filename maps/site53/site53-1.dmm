@@ -12246,6 +12246,7 @@
 	desc = "Taped to the side of the bowl is a handwritten note, reading 'take no more than two, please!!'";
 	name = "candy bowl"
 	},
+/obj/item/beach_ball,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurysleep)
 "GS" = (
