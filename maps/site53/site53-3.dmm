@@ -852,7 +852,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "Medical Reception";
-	send_access = list(403)
+	send_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception)
@@ -6039,7 +6039,7 @@
 "rC" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "O5 Representative's Office";
-	send_access = list(502)
+	send_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /obj/machinery/light{
 	dir = 8
@@ -6942,7 +6942,7 @@
 "ui" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "EZ Security Center";
-	send_access = list(202)
+	send_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
