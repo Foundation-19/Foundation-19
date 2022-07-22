@@ -99,8 +99,8 @@
 	department = "Medical"
 	department_flag = MED
 	selection_color = "#013d3b"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	ideal_character_age = 40
 	economic_power = 5
 	supervisors = "the Chief Medical Officer"
