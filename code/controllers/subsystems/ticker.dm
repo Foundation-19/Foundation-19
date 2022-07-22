@@ -39,8 +39,11 @@ SUBSYSTEM_DEF(ticker)
 	var/round_start_time = 0
 
 /datum/controller/subsystem/ticker/Initialize()
-	to_world("<span class='info'><B>Welcome to the pre-game lobby!</B></span>")
-	to_world("Please, setup your character and select ready. Game will start in [round(pregame_timeleft/10)] seconds.")
+	if(start_ASAP)
+		to_world("<span class='info'><B>The game will start as soon as possible due to configuration!</B></span>")
+	else
+		to_world("<span class='info'><B>Welcome to the pre-game lobby!</B></span>")
+		to_world("Please, setup your character and select ready. Game will start in [round(pregame_timeleft/10)] seconds.")
 	round_start_time = world.time
 	gametime_offset = rand(0, 23) HOURS
 	return ..()

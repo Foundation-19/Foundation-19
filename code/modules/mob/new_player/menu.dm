@@ -105,7 +105,7 @@
 
 	if(GAME_STATE <= RUNLEVEL_LOBBY)
 		player.ready = !player.ready
-		to_chat(player, "<span class='notice'>You are now [player.ready ? "ready" : "not ready"].")
+		to_chat(player, "<span class='notice'>You are now [player.ready ? "ready" : "not ready"].</span>")
 
 	else
 		player.LateChoices() //show the latejoin job selection menu
