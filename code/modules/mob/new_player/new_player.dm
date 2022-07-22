@@ -26,6 +26,8 @@
 	.=..()
 	if(check_rights(R_INVESTIGATE, 0, src))
 		. += "Game Mode: [SSticker.mode ? SSticker.mode.name : SSticker.master_mode] ([SSticker.master_mode])"
+		var/extra_antags = list2params(additional_antag_types)
+		. += "Added Antagonists: [extra_antags ? extra_antags : "None"]"
 	else
 		. += "Game Mode: [PUBLIC_GAME_MODE]"
 
