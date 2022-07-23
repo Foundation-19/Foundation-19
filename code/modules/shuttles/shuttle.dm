@@ -40,7 +40,7 @@
 	for(var/T in shuttle_area)
 		var/area/A = locate(T)
 		if(!istype(A))
-			CRASH("Shuttle \"[name]\" couldn't locate suck my area [T].")
+			CRASH("Shuttle \"[name]\" couldn't locate area [T].")
 		areas += A
 	shuttle_area = areas
 
