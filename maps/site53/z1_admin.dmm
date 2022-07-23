@@ -68,11 +68,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/centcom/goc)
 "aL" = (
-/obj/structure/closet/crate/secure/biohazard{
-	req_access = list(100)
-	},
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 8
+	},
+/obj/structure/closet/crate/secure/biohazard{
+	req_access = null
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -280,17 +280,6 @@
 /area/centcom)
 "bU" = (
 /obj/structure/bed,
-/obj/structure/bed{
-	can_buckle = 0;
-	layer = 2.26;
-	pixel_y = 10
-	},
-/obj/item/bedsheet/blue{
-	layer = 2.25
-	},
-/obj/item/bedsheet/blue{
-	pixel_y = 10
-	},
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
 "bZ" = (
@@ -585,11 +574,6 @@
 "ec" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 5
-	},
-/obj/machinery/computer/shuttle_control{
-	name = "MTF Helicopter";
-	req_access = list("ACCESS_MEDICAL_LEVEL2","ACCESS_SCIENCE_LEVEL2");
-	shuttle_tag = "MTF Helicopter"
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -6555,7 +6539,7 @@
 /obj/machinery/computer/shuttle_control{
 	dir = 4;
 	name = "MTF Helicopter";
-	req_access = list(402,302);
+	req_access = null;
 	shuttle_tag = "MTF Helicopter"
 	},
 /obj/effect/floor_decal/corner/black/border{
@@ -8384,7 +8368,7 @@
 /area/centcom)
 "Tm" = (
 /obj/machinery/vending/security{
-	req_access = list(100)
+	req_access = null
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
@@ -8436,11 +8420,11 @@
 	},
 /area/centcom)
 "TW" = (
-/obj/machinery/vending/security{
-	req_access = list(100)
-	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
+	},
+/obj/machinery/vending/security{
+	req_access = null
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -9107,7 +9091,7 @@
 "ZY" = (
 /obj/machinery/computer/shuttle_control{
 	name = "MTF Helicopter";
-	req_access = list("ACCESS_MEDICAL_LEVEL2","ACCESS_SCIENCE_LEVEL2");
+	req_access = null;
 	shuttle_tag = "MTF Helicopter"
 	},
 /turf/simulated/floor/shuttle/black,
