@@ -11,12 +11,11 @@
 	. = ..()
 	if(!.)
 		return
-
 	if(check_rights(R_INVESTIGATE))
-		return TRUE
-	else
-		if(!(C.donator_holder && C.donator_holder.flags & D_DOOC))
-			return FALSE
+		return
+	if(C.donator_holder?.flags & D_DOOC)
+		return
+	return FALSE
 
 /decl/communication_channel/dooc/do_communicate(var/client/C, var/message)
 	var/datum/admins/holder = C.holder
