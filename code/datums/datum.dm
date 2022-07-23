@@ -1,7 +1,16 @@
 /datum
 	var/tmp/gc_destroyed //Time when this object was destroyed.
 	var/tmp/is_processing = FALSE
-	var/list/active_timers  //for SStimer
+	/// Active timers with this datum as the target
+	var/list/active_timers
+	/// Components attached to this datum
+	var/list/datum_components
+	/// Status traits attached to this datum
+	var/list/comp_lookup
+	/// List of callbacks for signal procs
+	var/list/list/datum/callback/signal_procs
+	/// Datum level flags
+	var/datum_flags = NONE
 
 #ifdef TESTING
 	var/tmp/running_find_references
