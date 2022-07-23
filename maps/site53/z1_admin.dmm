@@ -6798,10 +6798,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"Lc" = (
-/obj/effect/shuttle_landmark/heli/transit,
-/turf/unsimulated/floor/plating,
-/area/space)
 "Le" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
@@ -11542,7 +11538,7 @@ jv
 jv
 jv
 jv
-Lc
+jv
 jv
 jv
 jv

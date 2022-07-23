@@ -40,7 +40,7 @@
 	for(var/T in shuttle_area)
 		var/area/A = locate(T)
 		if(!istype(A))
-			CRASH("Shuttle \"[name]\" couldn't locate area [T].")
+			CRASH("Shuttle \"[name]\" couldn't locate suck my area [T].")
 		areas += A
 	shuttle_area = areas
 
@@ -234,6 +234,8 @@
 		for(var/area/A in shuttle_area)
 			for(var/turf/TD in A.contents)
 				var/turf/TA = GetAbove(TD)
+				if(!TA)
+					continue
 				if(istype(TA, get_base_turf_by_area(TA)) || istype(TA, /turf/simulated/open))
 					if(get_area(TA) in shuttle_area)
 						continue
