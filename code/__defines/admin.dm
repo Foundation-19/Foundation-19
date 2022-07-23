@@ -42,9 +42,9 @@
 #define ADDANTAG_ADMIN  (1<<1)	// Any player with admin privilegies may call the add antagonist vote.
 #define ADDANTAG_AUTO   (1<<2)	// The add antagonist vote is available as an alternative for transfer vote.
 
-#define TICKET_CLOSED   (1<<0)  // Ticket has been resolved or declined
-#define TICKET_OPEN     (1<<1)  // Ticket has been created, but not responded to
-#define TICKET_ASSIGNED (1<<2)  // An admin has assigned themself to the ticket and will respond
+#define TICKET_CLOSED   0  // Ticket has been resolved or declined
+#define TICKET_OPEN     (1<<0)  // Ticket has been created, but not responded to
+#define TICKET_ASSIGNED (1<<1)  // An admin has assigned themself to the ticket and will respond
 
 #define LAST_CKEY(M) (M.ckey || M.last_ckey)
 #define LAST_KEY(M)  (M.key || M.last_ckey)

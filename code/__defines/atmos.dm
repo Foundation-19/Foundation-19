@@ -70,10 +70,10 @@
 #define LIQUIDFUEL_AMOUNT_TO_MOL		0.45  //mol/volume unit
 
 // XGM gas flags.
-#define XGM_GAS_FUEL        (1<<1)
-#define XGM_GAS_OXIDIZER    (1<<2)
-#define XGM_GAS_CONTAMINANT (1<<3)
-#define XGM_GAS_FUSION_FUEL (1<<4)
+#define XGM_GAS_FUEL        (1<<0)
+#define XGM_GAS_OXIDIZER    (1<<1)
+#define XGM_GAS_CONTAMINANT (1<<2)
+#define XGM_GAS_FUSION_FUEL (1<<3)
 
 #define TANK_LEAK_PRESSURE     (30 * ONE_ATMOSPHERE) // Tank starts leaking.
 #define TANK_RUPTURE_PRESSURE  (40 * ONE_ATMOSPHERE) // Tank spills all contents into atmosphere.
