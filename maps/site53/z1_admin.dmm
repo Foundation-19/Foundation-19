@@ -370,7 +370,7 @@
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
 "cv" = (
-/obj/effect/shuttle_landmark/heli/mtf/start,
+/obj/effect/shuttle_landmark/heli/start,
 /turf/simulated/floor/shuttle/white,
 /area/site53/tram/mtf)
 "cw" = (
@@ -6799,7 +6799,7 @@
 	},
 /area/centcom)
 "Lc" = (
-/obj/effect/shuttle_landmark/heli,
+/obj/effect/shuttle_landmark/heli/transit,
 /turf/unsimulated/floor/plating,
 /area/space)
 "Le" = (
