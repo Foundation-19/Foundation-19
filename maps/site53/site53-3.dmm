@@ -9208,7 +9208,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "UF" = (
-/obj/effect/shuttle_landmark/heli/out,
+/obj/effect/shuttle_landmark/heli/mtf/out,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/surface/surface)
 "UI" = (

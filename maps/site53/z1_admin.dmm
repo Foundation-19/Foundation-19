@@ -370,7 +370,7 @@
 /turf/simulated/floor/shuttle/black,
 /area/site53/tram/mtf)
 "cv" = (
-/obj/effect/shuttle_landmark/heli/start,
+/obj/effect/shuttle_landmark/heli/mtf/start,
 /turf/simulated/floor/shuttle/white,
 /area/site53/tram/mtf)
 "cw" = (

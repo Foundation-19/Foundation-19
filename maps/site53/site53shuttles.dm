@@ -53,7 +53,7 @@
 	name = "In transit"
 	landmark_tag = "nav_engineering_transition"
 
-/datum/shuttle/autodock/ferry/heli
+/datum/shuttle/autodock/ferry/heli/mtf
 	name = "MTF Helicopter"
 	sound_takeoff = 'sound/effects/helicopter.ogg'
 	warmup_time = 14
@@ -63,18 +63,18 @@
 	waypoint_offsite = "nav_mtf_out"
 	move_time = 39
 
-/obj/effect/shuttle_landmark/heli/start
+/obj/effect/shuttle_landmark/heli/mtf/start
 	name = "MTF Base"
 	landmark_tag = "nav_mtf_start"
 	base_turf = /turf/unsimulated/floor/reinforced
 
-/obj/effect/shuttle_landmark/heli/out
+/obj/effect/shuttle_landmark/heli/mtf/out
 	name = "Site 53"
 	landmark_tag = "nav_mtf_out"
 	base_turf = /turf/simulated/floor/reinforced
 	base_area = /area/site53/surface/surface
 
-/obj/effect/shuttle_landmark/heli
+/obj/effect/shuttle_landmark/heli/mtf
 	name = "In transit"
 	landmark_tag = "nav_mtf_transition"
 	base_turf = /turf/unsimulated/floor/plating
