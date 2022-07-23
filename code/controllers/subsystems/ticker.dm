@@ -7,9 +7,9 @@ SUBSYSTEM_DEF(ticker)
 	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
 
 	var/pregame_timeleft = 3 MINUTES
-	var/start_ASAP = TRUE          //the game will start as soon as possible, bypassing all pre-game nonsense
+	var/start_ASAP = FALSE          //the game will start as soon as possible, bypassing all pre-game nonsense
 	var/list/gamemode_vote_results  //Will be a list, in order of preference, of form list(config_tag = number of votes).
-	var/bypass_gamemode_vote = 0    //Intended for use with admin tools. Will avoid voting and ignore any results.
+	var/bypass_gamemode_vote = TRUE    //Intended for use with admin tools. Will avoid voting and ignore any results.
 
 	var/master_mode = "extended"    //The underlying game mode (so "secret" or the voted mode). Saved to default back to previous round's mode in case the vote failed. This is a config_tag.
 	var/datum/game_mode/mode        //The actual gamemode, if selected.
@@ -39,7 +39,11 @@ SUBSYSTEM_DEF(ticker)
 	var/round_start_time = 0
 
 /datum/controller/subsystem/ticker/Initialize()
-	to_world("<span class='info'><B>The game will start soon!</B></span>")
+	if(start_ASAP)
+		to_world("<span class='info'><B>The game will start as soon as possible due to configuration!</B></span>")
+	else
+		to_world("<span class='info'><B>Welcome to the pre-game lobby!</B></span>")
+		to_world("Please, setup your character and select ready. Game will start in [round(pregame_timeleft/10)] seconds.")
 	round_start_time = world.time
 	gametime_offset = rand(0, 23) HOURS
 	return ..()
