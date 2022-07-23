@@ -17,15 +17,14 @@
 		return
 
 	if(check_rights(R_INVESTIGATE))
-		return
+		return TRUE
 	else
 		if(isghost(C.mob))
 			to_chat(src, SPAN_WARNING("You cannot use [name] while ghosting/observing!"))
-			. = FALSE
+			return FALSE
 		if(!(C.mob?.mind?.special_role))
 			to_chat(C, SPAN_DANGER("You must be an antag to use [name]."))
-			. = FALSE
-	return
+			return FALSE
 
 
 /decl/communication_channel/aooc/do_communicate(client/C, message)
