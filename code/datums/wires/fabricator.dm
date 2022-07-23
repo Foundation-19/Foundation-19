@@ -1,6 +1,6 @@
-#define AUTOLATHE_HACK_WIRE    1
-#define AUTOLATHE_SHOCK_WIRE   2
-#define AUTOLATHE_DISABLE_WIRE 4
+#define AUTOLATHE_HACK_WIRE    (1<<0)
+#define AUTOLATHE_SHOCK_WIRE   (1<<1)
+#define AUTOLATHE_DISABLE_WIRE (1<<2)
 
 /datum/wires/fabricator
 

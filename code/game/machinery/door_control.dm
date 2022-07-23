@@ -66,11 +66,11 @@
 */
 
 // Bitmasks for door switches.
-#define OPEN   0x1
-#define IDSCAN 0x2
-#define BOLTS  0x4
-#define SHOCK  0x8
-#define SAFE   0x10
+#define OPEN   (1<<0)
+#define IDSCAN (1<<1)
+#define BOLTS  (1<<2)
+#define SHOCK  (1<<3)
+#define SAFE   (1<<4)
 
 /obj/machinery/button/remote/airlock
 	name = "remote door-control"

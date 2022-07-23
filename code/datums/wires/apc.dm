@@ -1,7 +1,7 @@
-#define APC_WIRE_IDSCAN 1
-#define APC_WIRE_MAIN_POWER1 2
-#define APC_WIRE_MAIN_POWER2 4
-#define APC_WIRE_AI_CONTROL 8
+#define APC_WIRE_IDSCAN 		(1<<0)
+#define APC_WIRE_MAIN_POWER1 	(1<<1)
+#define APC_WIRE_MAIN_POWER2 	(1<<2)
+#define APC_WIRE_AI_CONTROL 	(1<<3)
 
 /datum/wires/apc
 	holder_type = /obj/machinery/power/apc

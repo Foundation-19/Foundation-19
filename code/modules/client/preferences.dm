@@ -1,10 +1,10 @@
 #define SAVE_RESET -1
 
-#define JOB_PRIORITY_HIGH   0x1
-#define JOB_PRIORITY_MEDIUM 0x2
-#define JOB_PRIORITY_LOW    0x4
-#define JOB_PRIORITY_LIKELY 0x3
-#define JOB_PRIORITY_PICKED 0x7
+#define JOB_PRIORITY_HIGH   (1<<0)
+#define JOB_PRIORITY_MEDIUM (1<<1)
+#define JOB_PRIORITY_LOW    (1<<2)
+#define JOB_PRIORITY_LIKELY 3
+#define JOB_PRIORITY_PICKED 7 //fucking ew but fuck it
 
 #define MAX_LOAD_TRIES 5
 

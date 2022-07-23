@@ -25,21 +25,21 @@
 #define APC_UPDATE_ICON_COOLDOWN 100	// Time between automatically updating the icon (10 seconds)
 
 // Used to check whether or not to update the icon_state
-#define UPDATE_CELL_IN 1
-#define UPDATE_OPENED1 2
-#define UPDATE_OPENED2 4
-#define UPDATE_MAINT 8
-#define UPDATE_BROKE 16
-#define UPDATE_BLUESCREEN 32
-#define UPDATE_WIREEXP 64
-#define UPDATE_ALLGOOD 128
+#define UPDATE_CELL_IN 		(1<<0)
+#define UPDATE_OPENED1 		(1<<1)
+#define UPDATE_OPENED2 		(1<<2)
+#define UPDATE_MAINT 		(1<<3)
+#define UPDATE_BROKE 		(1<<4)
+#define UPDATE_BLUESCREEN 	(1<<5)
+#define UPDATE_WIREEXP 		(1<<6)
+#define UPDATE_ALLGOOD 		(1<<7)
 
 // Used to check whether or not to update the overlay
-#define APC_UPOVERLAY_CHARGEING0 1
-#define APC_UPOVERLAY_CHARGEING1 2
-#define APC_UPOVERLAY_CHARGEING2 4
-#define APC_UPOVERLAY_LOCKED 8
-#define APC_UPOVERLAY_OPERATING 16
+#define APC_UPOVERLAY_CHARGEING0 	(1<<0)
+#define APC_UPOVERLAY_CHARGEING1 	(1<<1)
+#define APC_UPOVERLAY_CHARGEING2 	(1<<2)
+#define APC_UPOVERLAY_LOCKED 		(1<<3)
+#define APC_UPOVERLAY_OPERATING 	(1<<4)
 
 // Various APC types
 /obj/machinery/power/apc/inactive

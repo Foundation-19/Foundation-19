@@ -82,19 +82,19 @@
 #define DEFAULT_JOB_TYPE /datum/job/classd
 
 //Area flags, possibly more to come
-#define AREA_FLAG_RAD_SHIELDED      1  // shielded from radiation, clearly
-#define AREA_FLAG_EXTERNAL          2  // External as in exposed to space, not outside in a nice, green, forest
-#define AREA_FLAG_ION_SHIELDED      4  // shielded from ionospheric anomalies as an FBP / IPC
-#define AREA_FLAG_IS_NOT_PERSISTENT 8  // SSpersistence will not track values from this area.
-#define AREA_FLAG_NO_MODIFY         16 // turf in this area cannot be dismantled.
-#define AREA_FLAG_HIDE_FROM_HOLOMAP 32 // if we shouldn't be drawn on station holomaps
+#define AREA_FLAG_RAD_SHIELDED      	(1<<0)  // shielded from radiation, clearly
+#define AREA_FLAG_EXTERNAL          	(1<<1)  // External as in exposed to space, not outside in a nice, green, forest
+#define AREA_FLAG_ION_SHIELDED      	(1<<2)  // shielded from ionospheric anomalies as an FBP / IPC
+#define AREA_FLAG_IS_NOT_PERSISTENT 	(1<<3)  // SSpersistence will not track values from this area.
+#define AREA_FLAG_NO_MODIFY         	(1<<4) // turf in this area cannot be dismantled.
+#define AREA_FLAG_HIDE_FROM_HOLOMAP 	(1<<5) // if we shouldn't be drawn on station holomaps
 
 //Map template flags
-#define TEMPLATE_FLAG_ALLOW_DUPLICATES 1 // Lets multiple copies of the template to be spawned
-#define TEMPLATE_FLAG_SPAWN_GUARANTEED 2 // Makes it ignore away site budget and just spawn (only for away sites)
-#define TEMPLATE_FLAG_CLEAR_CONTENTS   4 // if it should destroy objects it spawns on top of
-#define TEMPLATE_FLAG_NO_RUINS         8 // if it should forbid ruins from spawning on top of it
-#define TEMPLATE_FLAG_NO_RADS          16// Removes all radiation from the template after spawning.
+#define TEMPLATE_FLAG_ALLOW_DUPLICATES 	(1<<0) // Lets multiple copies of the template to be spawned
+#define TEMPLATE_FLAG_SPAWN_GUARANTEED 	(1<<1) // Makes it ignore away site budget and just spawn (only for away sites)
+#define TEMPLATE_FLAG_CLEAR_CONTENTS   	(1<<2) // if it should destroy objects it spawns on top of
+#define TEMPLATE_FLAG_NO_RUINS         	(1<<3) // if it should forbid ruins from spawning on top of it
+#define TEMPLATE_FLAG_NO_RADS          	(1<<4)// Removes all radiation from the template after spawning.
 
 //Ruin map template flags
 #define TEMPLATE_FLAG_RUIN_STARTS_DISALLOWED 32 // Ruin is not available during spawning unless another ruin permits it.
@@ -137,12 +137,12 @@
 #define NTNETSPEED_DOS_AMPLIFICATION 5	// Multiplier for Denial of Service program. Resulting load on NTNet relay is this multiplied by NTNETSPEED of the device
 
 // Program bitflags
-#define PROGRAM_ALL 		0x1F
-#define PROGRAM_CONSOLE 	0x1
-#define PROGRAM_LAPTOP 		0x2
-#define PROGRAM_TABLET 		0x4
-#define PROGRAM_TELESCREEN 	0x8
-#define PROGRAM_PDA 		0x10
+#define PROGRAM_ALL 		(~0)
+#define PROGRAM_CONSOLE 	(1<<0)
+#define PROGRAM_LAPTOP 		(1<<1)
+#define PROGRAM_TABLET 		(1<<2)
+#define PROGRAM_TELESCREEN 	(1<<3)
+#define PROGRAM_PDA 		(1<<4)
 
 #define PROGRAM_STATE_KILLED 0
 #define PROGRAM_STATE_BACKGROUND 1
@@ -296,9 +296,9 @@
 
 //-- Masks for /atom/var/init_flags --
 //- machinery
-#define INIT_MACHINERY_PROCESS_SELF 0x1
-#define INIT_MACHINERY_PROCESS_COMPONENTS 0x2
-#define INIT_MACHINERY_PROCESS_ALL 0x3
+#define INIT_MACHINERY_PROCESS_SELF 		(1<<0)
+#define INIT_MACHINERY_PROCESS_COMPONENTS 	(1<<1)
+#define INIT_MACHINERY_PROCESS_ALL 			(1<<2)
 //--
 
 

@@ -1,7 +1,7 @@
-#define WASHER_STATE_CLOSED  1
-#define WASHER_STATE_FULL    2
-#define WASHER_STATE_RUNNING 4
-#define WASHER_STATE_BLOODY  8
+#define WASHER_STATE_CLOSED  (1<<0)
+#define WASHER_STATE_FULL    (1<<1)
+#define WASHER_STATE_RUNNING (1<<2)
+#define WASHER_STATE_BLOODY  (1<<3)
 
 // WASHER_STATE_RUNNING implies WASHER_STATE_CLOSED | WASHER_STATE_FULL
 // if you break this assumption, you must update the icon file

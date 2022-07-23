@@ -4,9 +4,9 @@
 #define INTERNAL_PRESSURE_BOUND 0
 #define PRESSURE_CHECKS 1
 
-#define PRESSURE_CHECK_EXTERNAL 1
-#define PRESSURE_CHECK_INPUT 2
-#define PRESSURE_CHECK_OUTPUT 4
+#define PRESSURE_CHECK_EXTERNAL (1<<0)
+#define PRESSURE_CHECK_INPUT 	(1<<1)
+#define PRESSURE_CHECK_OUTPUT 	(1<<2)
 
 /obj/machinery/atmospherics/binary/dp_vent_pump
 	icon = 'icons/atmos/vent_pump.dmi'

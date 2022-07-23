@@ -1,6 +1,6 @@
-#define TELEBEACON_WIRE_POWER       1
-#define TELEBEACON_WIRE_RELAY       2
-#define TELEBEACON_WIRE_SIGNALLER   4
+#define TELEBEACON_WIRE_POWER       (1<<0)
+#define TELEBEACON_WIRE_RELAY       (1<<1)
+#define TELEBEACON_WIRE_SIGNALLER   (1<<2)
 
 
 /// Targetable beacon used by teleporters.

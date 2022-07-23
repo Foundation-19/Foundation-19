@@ -35,18 +35,18 @@
 #define MODEUSAGE_MODULATE 2				// Modulates the shield, enabling the mitigation system.
 
 // Relevant mode bitflags (maximal of 16 flags due to current BYOND limitations)
-#define MODEFLAG_HYPERKINETIC 1
-#define MODEFLAG_PHOTONIC 2
-#define MODEFLAG_NONHUMANS 4
-#define MODEFLAG_HUMANOIDS 8
-#define MODEFLAG_ANORGANIC 16
-#define MODEFLAG_ATMOSPHERIC 32
-#define MODEFLAG_HULL 64
-#define MODEFLAG_BYPASS 128
-#define MODEFLAG_OVERCHARGE 256
-#define MODEFLAG_MODULATE 512
-#define MODEFLAG_MULTIZ 1024
-#define MODEFLAG_EM 2048
+#define MODEFLAG_HYPERKINETIC   (1<<0)
+#define MODEFLAG_PHOTONIC       (1<<1)
+#define MODEFLAG_NONHUMANS      (1<<2)
+#define MODEFLAG_HUMANOIDS      (1<<3)
+#define MODEFLAG_ANORGANIC      (1<<4)
+#define MODEFLAG_ATMOSPHERIC    (1<<5)
+#define MODEFLAG_HULL           (1<<6)
+#define MODEFLAG_BYPASS         (1<<7)
+#define MODEFLAG_OVERCHARGE     (1<<8)
+#define MODEFLAG_MODULATE       (1<<9)
+#define MODEFLAG_MULTIZ         (1<<10)
+#define MODEFLAG_EM             (1<<11)
 
 // Return codes for shield hits.
 #define SHIELD_ABSORBED 1			// The shield has completely absorbed the hit

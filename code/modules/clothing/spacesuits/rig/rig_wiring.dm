@@ -1,8 +1,8 @@
-#define RIG_SECURITY 1
-#define RIG_AI_OVERRIDE 2
-#define RIG_SYSTEM_CONTROL 4
-#define RIG_INTERFACE_LOCK 8
-#define RIG_INTERFACE_SHOCK 16
+#define RIG_SECURITY 		(1<<0)
+#define RIG_AI_OVERRIDE 	(1<<1)
+#define RIG_SYSTEM_CONTROL 	(1<<2)
+#define RIG_INTERFACE_LOCK 	(1<<3)
+#define RIG_INTERFACE_SHOCK (1<<4)
 
 /datum/wires/rig
 	random = 1
