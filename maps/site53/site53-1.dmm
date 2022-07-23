@@ -618,19 +618,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/maintenance)
-"bS" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/loading{
-	dir = 8;
-	name = "Entry Line"
-	},
-/obj/machinery/door/firedoor{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
 "bT" = (
 /obj/machinery/power/breakerbox/activated{
 	RCon_tag = "Lower Light Containment Bypass"
@@ -864,6 +851,9 @@
 	},
 /obj/machinery/door/firedoor{
 	dir = 4
+	},
+/obj/machinery/door/airlock/multi_tile/glass/medical{
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -1151,7 +1141,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpointoverlook)
 "du" = (
-/obj/structure/railing/mapped,
 /obj/effect/floor_decal/industrial/loading{
 	dir = 4;
 	name = "Exit Line"
@@ -1161,6 +1150,9 @@
 	},
 /obj/machinery/door/firedoor{
 	dir = 4
+	},
+/obj/machinery/door/airlock/multi_tile/glass/medical{
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -6880,11 +6872,11 @@
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
 "rA" = (
-/obj/structure/table/standard,
 /obj/machinery/camera/network/lcz{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/yellow/mono,
+/obj/machinery/reagentgrinder,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "rB" = (
@@ -7118,6 +7110,16 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/site53/uhcz/scp106parts)
+"se" = (
+/obj/effect/floor_decal/industrial/loading{
+	dir = 8;
+	name = "Entry Line"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "sf" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/titanium,
@@ -10857,11 +10859,16 @@
 /turf/simulated/floor/plating,
 /area/site53/llcz/dclass/botany)
 "CL" = (
-/obj/machinery/reagentgrinder,
 /obj/machinery/light{
 	icon_state = "tube1"
 	},
 /obj/effect/floor_decal/corner/yellow/mono,
+/obj/structure/table/standard,
+/obj/item/storage/box/beakers,
+/obj/item/storage/box/beakers/insulated,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/dropper/industrial,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "CM" = (
@@ -17413,6 +17420,9 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/medical_lolli_jar,
 /obj/effect/floor_decal/corner/b_green/mono,
+/obj/machinery/button/alternate/door{
+	id_tag = "LobbyMedD"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "WD" = (
@@ -25264,7 +25274,7 @@ RH
 RH
 cI
 du
-bS
+se
 ct
 RH
 ZL
