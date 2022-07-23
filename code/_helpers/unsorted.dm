@@ -1302,13 +1302,6 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 //datum may be null, but it does need to be a typed var
 #define NAMEOF(datum, X) (#X || ##datum.##X)
 
-/// gives us the stack trace from CRASH() without ending the current proc.
-/proc/stack_trace(msg)
-	CRASH(msg)
-
-/datum/proc/stack_trace(msg)
-	CRASH(msg)
-
 /**
 \ref behaviour got changed in 512 so this is necesary to replicate old behaviour.
 
@@ -1322,6 +1315,6 @@ If it ever becomes necesary to get a more performant REF(), this lies here in wa
 	if(istype(input) && (input.datum_flags & DF_USE_TAG))
 		if(input.tag)
 			return "\[[url_encode(input.tag)]\]"
-		stack_trace("A ref was requested of an object with DF_USE_TAG set but no tag: [input]")
+		crash_with("A ref was requested of an object with DF_USE_TAG set but no tag: [input]")
 		input.datum_flags &= ~DF_USE_TAG
 	return "\ref[input]"

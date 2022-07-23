@@ -11,7 +11,7 @@
 	parent = raw_args[1]
 	var/list/arguments = raw_args.Copy(2)
 	if(Initialize(arglist(arguments)) == COMPONENT_INCOMPATIBLE)
-		stack_trace("Incompatible [type] assigned to a [parent.type]! args: [json_encode(arguments)]")
+		crash_with("Incompatible [type] assigned to a [parent.type]! args: [json_encode(arguments)]")
 		qdel(src, TRUE, TRUE)
 		CRASH("Incompatible [type] assigned to a [parent.type]! args: [json_encode(arguments)]")
 
@@ -104,7 +104,7 @@
 	var/list/sig_types = islist(sig_type_or_types) ? sig_type_or_types : list(sig_type_or_types)
 	for(var/sig_type in sig_types)
 		if(!override && procs[target][sig_type])
-			stack_trace("[sig_type] overridden on [target.type]. Use override = TRUE to suppress this warning")
+			crash_with("[sig_type] overridden on [target.type]. Use override = TRUE to suppress this warning")
 
 		procs[target][sig_type] = proctype
 
@@ -127,13 +127,13 @@
 	for(var/sig in sig_type_or_types)
 		if(!signal_procs[target][sig])
 			if(!istext(sig))
-				stack_trace("We're unregistering with something that isn't a valid signal \[[sig]\], you fucked up")
+				crash_with("We're unregistering with something that isn't a valid signal \[[sig]\], you fucked up")
 			continue
 		switch(length(lookup[sig]))
 			if(2)
 				lookup[sig] = (lookup[sig]-src)[1]
 			if(1)
-				stack_trace("[target] ([target.type]) somehow has single length list inside comp_lookup")
+				crash_with("[target] ([target.type]) somehow has single length list inside comp_lookup")
 				if(src in lookup[sig])
 					lookup -= sig
 					if(!length(lookup))
@@ -192,7 +192,7 @@
 /datum/proc/GetComponent(datum/component/c_type)
 	RETURN_TYPE(c_type)
 	if(initial(c_type.dupe_mode) == COMPONENT_DUPE_ALLOWED || initial(c_type.dupe_mode) == COMPONENT_DUPE_SELECTIVE)
-		stack_trace("GetComponent was called to get a component of which multiple copies could be on an object. This can easily break and should be changed. Type: \[[c_type]\]")
+		crash_with("GetComponent was called to get a component of which multiple copies could be on an object. This can easily break and should be changed. Type: \[[c_type]\]")
 	var/list/dc = datum_components
 	if(!dc)
 		return null
@@ -203,7 +203,7 @@
 /datum/proc/GetExactComponent(datum/component/c_type)
 	RETURN_TYPE(c_type)
 	if(initial(c_type.dupe_mode) == COMPONENT_DUPE_ALLOWED || initial(c_type.dupe_mode) == COMPONENT_DUPE_SELECTIVE)
-		stack_trace("GetComponent was called to get a component of which multiple copies could be on an object. This can easily break and should be changed. Type: \[[c_type]\]")
+		crash_with("GetComponent was called to get a component of which multiple copies could be on an object. This can easily break and should be changed. Type: \[[c_type]\]")
 	var/list/dc = datum_components
 	if(!dc)
 		return null

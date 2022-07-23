@@ -70,7 +70,7 @@
 			var/area/A = get_area(S)
 			var/list/temp = list(list(
 				"shield_status" = S.running,
-				"shield_ref" = any2ref(S),
+				"shield_ref" = REF(S),
 				"area" = A.name))
 			shields_info.Add(temp)
 		data["shields"] = shields_info
