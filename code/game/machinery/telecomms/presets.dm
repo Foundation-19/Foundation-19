@@ -264,7 +264,7 @@
 
 /obj/machinery/telecomms/server/presets/security
 	id = "Security Server"
-	freq_listening = list(SEC_FREQ, GOC_FREQ)
+	freq_listening = list(SEC_FREQ, GOC_FREQ, ERT_FREQ)
 	channel_tags = list(list(SEC_FREQ, "Security", COMMS_COLOR_SECURITY), list(GOC_FREQ, "GOC", COMMS_COLOR_COMMAND), list(ERT_FREQ, "Response Team", COMMS_COLOR_CENTCOMM))
 	autolinkers = list("security")
 
