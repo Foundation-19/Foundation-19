@@ -47,7 +47,7 @@
 		return FALSE
 	if(istype(C) && M.is_key_ignored(C.key))
 		return FALSE
-	if (M.client.holder)
+	if (check_rights(R_INVESTIGATE, FALSE, M))
 		return TRUE
 	if(M.stat != DEAD)
 		return FALSE
@@ -78,7 +78,7 @@
 
 	if(isghost(C.mob))
 		DM = C.mob
-	if(M.client.holder) 							// What admins see
+	if(check_rights(R_INVESTIGATE, FALSE, M)) 							// What admins see
 		lname = "[keyname][(DM && hide_deadchat_ckey) ? "*" : (DM ? "" : "^")] ([name])"
 	else
 		if(DM && hide_deadchat_ckey)						// If the person is actually observer they have the option to be anonymous
@@ -110,7 +110,7 @@
 /decl/dsay_communication/admin/can_communicate(var/client/communicator, var/message, var/decl/communication_channel/dsay)
 	if(!istype(communicator))
 		return FALSE
-	if(!communicator.holder)
+	if(!check_rights(R_INVESTIGATE, FALSE, communicator))
 		to_chat(communicator, "<span class='warning'>You do not have sufficent permissions to use DSAY!</span>")
 		return FALSE
 	return DSAY_ASK_BASE
