@@ -49,7 +49,7 @@
 	else
 		current_location = SSshuttle.get_landmark(current_location)
 	if(!istype(current_location))
-		CRASH("Shuttle \"[name]\" could not find its starthhhhaaaaaing location.")
+		CRASH("Shuttle \"[name]\" could not find its starting location.")
 
 	if(src.name in SSshuttle.shuttles)
 		CRASH("A shuttle with the name '[name]' is already defined.")
@@ -234,6 +234,8 @@
 		for(var/area/A in shuttle_area)
 			for(var/turf/TD in A.contents)
 				var/turf/TA = GetAbove(TD)
+				if(!TA)
+					continue
 				if(istype(TA, get_base_turf_by_area(TA)) || istype(TA, /turf/simulated/open))
 					if(get_area(TA) in shuttle_area)
 						continue
