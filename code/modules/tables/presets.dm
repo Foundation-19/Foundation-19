@@ -3,6 +3,11 @@
 	color = COLOR_OFF_WHITE
 	material = DEFAULT_FURNITURE_MATERIAL
 
+/obj/structure/table/plastic
+	icon_state = "plain_preview"
+	color = COLOR_GRAY80
+	material = MATERIAL_PLASTIC
+	
 /obj/structure/table/steel
 	icon_state = "plain_preview"
 	color = COLOR_GRAY40
