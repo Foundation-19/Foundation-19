@@ -7,7 +7,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173
 	name = "SCP-173"
-	desc = "A statue, constructed from concrete and rebar with traces of Krylon brand spray paint"
+	desc = "A statue, constructed from concrete and rebar with traces of Krylon brand spray paint."
 	icon = 'icons/SCP/scp-173.dmi'
 	icon_state = "173"
 	SCP = /datum/scp/scp_173
@@ -21,6 +21,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 	can_pull_size = 0 // Can't pull things
 	a_intent = "harm" // Doesn't switch places with people
+	can_be_buckled = FALSE
 
 	/// Reference to the area we were created in
 	var/area/spawn_area

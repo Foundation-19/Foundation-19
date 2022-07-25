@@ -17,10 +17,11 @@
 	var/autoset = TRUE // Whether the door should inherit access from surrounding areas
 
 /obj/item/airlock_electronics/attack_self(mob/user)
-	if(!ishuman(user) || !issilicon(user))
-		return ..(user)
+	if (ishuman(user) || issilicon(user))
+		ui_interact(user)
+		return
 
-	ui_interact(user)
+	return ..(user)
 
 
 /obj/item/airlock_electronics/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.hands_state)
