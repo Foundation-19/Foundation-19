@@ -4934,6 +4934,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/senioragentoffice)
+"na" = (
+/obj/structure/table/rack,
+/obj/item/clothing/suit/armor/goc,
+/obj/item/clothing/suit/armor/goc,
+/obj/item/clothing/head/helmet/scp/goc,
+/obj/item/clothing/head/helmet/scp/goc,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "ng" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5266,7 +5274,16 @@
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/substation)
 "oq" = (
-/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/button/alternate/door/bolts{
+	dir = 4;
+	id_tag = "goireparmory";
+	name = "Armory Access button";
+	pixel_x = -23;
+	req_access = list("access_adminlvl1")
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "or" = (
@@ -5624,7 +5641,7 @@
 /obj/effect/paint_stripe/orange,
 /obj/machinery/status_display,
 /turf/simulated/wall/prepainted,
-/area/site53/entrancezone/hallway)
+/area/site53/uez/goirepoffice)
 "px" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
@@ -5977,6 +5994,10 @@
 /area/site53/uez/o5repoffice)
 "rt" = (
 /obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "goireplockdown"
+	},
 /turf/simulated/floor/plating,
 /area/site53/uez/goirepoffice)
 "ru" = (
@@ -7544,6 +7565,13 @@
 /obj/item/storage/box/handcuffs,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
+"ye" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "yt" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7743,6 +7771,17 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"zZ" = (
+/obj/machinery/door/airlock/command{
+	name = "GOI Representative Armory";
+	req_access = list("access_adminlvl1")
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "goireparmory";
+	name = "GOI Representative Armory"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "Ak" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
@@ -8441,12 +8480,17 @@
 /area/site53/surface/surface)
 "IQ" = (
 /obj/machinery/door/airlock/command{
-	name = "GOI Representative Office"
+	name = "GOI Representative Office";
+	req_access = list("access_adminlvl1")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "goireplockdown"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/goirepoffice)
@@ -8560,6 +8604,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
+"LB" = (
+/obj/structure/table/standard,
+/obj/machinery/button/alternate{
+	name = "Emergency Shutter";
+	id_tag = "goireplockdown";
+	req_access = list("access_adminlvl1")
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "LE" = (
 /obj/machinery/button/alternate/door/bolts{
 	id_tag = "ezcell1";
@@ -8709,6 +8762,25 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"OG" = (
+/obj/structure/closet/secure_closet/detective,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/ammo_magazine/scp,
+/obj/item/device/radio/headset/heads/hos/uiu,
+/obj/item/device/radio/headset/heads/hos/goc,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/clothing/accessory/storage/webbing_large,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/clothing/suit/armor/pcarrier/light,
+/obj/item/clothing/head/helmet/site53,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "OM" = (
 /obj/structure/railing/mapped,
 /obj/structure/window/reinforced{
@@ -9052,6 +9124,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/chemistry)
+"Ta" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/full,
+/obj/machinery/door/airlock/command{
+	name = "GOI Representative Office"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/o5repoffice)
 "Tn" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 6
@@ -9513,6 +9592,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"Yl" = (
+/obj/machinery/camera/network/entrance,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "Yo" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -9566,6 +9649,16 @@
 /obj/item/reagent_containers/glass/beaker/vial,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/virology)
+"YP" = (
+/obj/machinery/button/alternate/door/bolts{
+	dir = 4;
+	id_tag = "goireparmory";
+	name = "Armory Access button";
+	pixel_x = -23;
+	req_access = list("access_adminlvl1")
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "YR" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -40320,7 +40413,7 @@ Ce
 mk
 Mx
 UI
-UI
+oq
 qA
 mk
 MX
@@ -40575,8 +40668,8 @@ GO
 cs
 DV
 mk
-wN
-IG
+Iz
+LB
 Vn
 XD
 mk
@@ -40824,7 +40917,7 @@ da
 da
 lo
 tD
-dt
+mk
 Ce
 Ce
 Ce
@@ -40833,7 +40926,7 @@ Ce
 Ce
 mk
 VI
-oq
+IG
 Gv
 vn
 mk
@@ -41081,15 +41174,15 @@ jE
 lu
 gN
 gj
-dt
-dA
-dA
-dA
-dA
-dA
-dA
 mk
-Iz
+Yl
+Go
+YP
+ye
+Go
+Go
+zZ
+wN
 Go
 QT
 Az
@@ -41338,13 +41431,13 @@ jF
 jy
 hS
 tD
-dt
-dA
-dA
-dA
-dA
-dA
-dA
+mk
+na
+na
+OG
+OG
+OG
+OG
 mk
 zE
 wJ
@@ -41595,13 +41688,13 @@ jG
 jy
 hS
 lj
-dt
-dt
-dt
+mk
+mk
+mk
 pw
-dt
-dt
-dt
+mk
+mk
+mk
 mk
 mk
 IQ
@@ -42376,7 +42469,7 @@ mB
 lF
 lF
 lF
-lF
+Ta
 lF
 lF
 lF

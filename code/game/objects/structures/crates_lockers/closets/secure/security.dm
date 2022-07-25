@@ -198,7 +198,7 @@
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/clothing/suit/armor/vest/detective,
 		/obj/item/taperoll/police,
-		/obj/item/gun/projectile/pistol/sec/detective,
+		/obj/item/gun/projectile/pistol,
 		/obj/item/clothing/accessory/storage/holster/armpit,
 		/obj/item/reagent_containers/food/drinks/flask/detflask,
 		/obj/item/storage/briefcase/crimekit,
