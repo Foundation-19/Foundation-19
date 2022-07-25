@@ -4855,6 +4855,8 @@
 /obj/item/crowbar/red,
 /obj/item/clothing/suit/bio_suit/security,
 /obj/item/clothing/head/bio_hood/security,
+/obj/item/gun/projectile/pistol/usp45,
+/obj/item/ammo_magazine/box/acp45,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/senioragentoffice)
 "nU" = (
