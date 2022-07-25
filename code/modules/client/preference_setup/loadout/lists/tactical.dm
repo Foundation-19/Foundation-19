@@ -60,4 +60,4 @@
 /datum/gear/tactical/cknife
 	display_name = "combat knife"
 	path = /obj/item/material/knife/combat
-	cost = 6
+	cost = 8
