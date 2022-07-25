@@ -377,18 +377,8 @@
 /turf/simulated/floor,
 /area/site53/uhcz/scp106parts)
 "bd" = (
-/obj/machinery/disposal/deliveryChute{
-	desc = "A note read: Dispose of bodies here";
-	name = "Termination Disposal";
-	dir = 1
-	},
 /obj/structure/disposalpipe/trunk{
 	dir = 4
-	},
-/obj/machinery/door/window{
-	dir = 1;
-	name = "Corpser Delivery(Danger: Deadly)";
-	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -397,6 +387,18 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
+/obj/machinery/door/window{
+	dir = 1;
+	name = "Corpser Delivery(Danger: Deadly)";
+	req_access = list("ACCESS_SECURITY_LEVEL1");
+	layer = 5.02
+	},
+/obj/machinery/disposal/deliveryChute{
+	desc = "A note read: Dispose of bodies here";
+	name = "Termination Disposal";
+	dir = 1;
+	pixel_y = -5
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "be" = (
@@ -551,12 +553,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"bG" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost/chem)
 "bH" = (
 /obj/machinery/button/blast_door{
 	id_tag = "D-Class Reward Room";
@@ -853,7 +849,9 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/multi_tile/glass/medical{
-	req_access = list("ACCESS_MEDICAL_LEVEL2")
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1"));
+	name = "Medbay Lobby";
+	id_tag = "LobbyMedD"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -1152,7 +1150,9 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/multi_tile/glass/medical{
-	req_access = list("ACCESS_MEDICAL_LEVEL2")
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1"));
+	name = "Medbay Lobby";
+	id_tag = "LobbyMedD"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -1162,6 +1162,17 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "dw" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
 "dx" = (
@@ -1308,6 +1319,11 @@
 	icon_state = "closed";
 	name = "Guard Hallway";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
@@ -1652,6 +1668,11 @@
 /area/site53/lhcz/scp049containment)
 "eR" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	dir = 8;
+	id_tag = "DCZChem";
+	name = "Chemistry Shutters"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "eS" = (
@@ -2707,6 +2728,9 @@
 "hE" = (
 /obj/structure/iv_drip,
 /obj/effect/floor_decal/industrial/firstaid{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -3948,6 +3972,7 @@
 /obj/item/storage/chewables/candy/medicallollis,
 /obj/effect/floor_decal/corner/b_green/mono,
 /obj/item/storage/box/lights/tubes,
+/obj/item/storage/box/bodybags,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
 "kw" = (
@@ -5482,6 +5507,11 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
 "oc" = (
@@ -6877,6 +6907,7 @@
 	},
 /obj/effect/floor_decal/corner/yellow/mono,
 /obj/machinery/reagentgrinder,
+/obj/item/storage/box/pillbottles,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "rB" = (
@@ -7343,25 +7374,19 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
 "sP" = (
-/obj/effect/catwalk_plated/white,
+/obj/machinery/door/airlock/medical{
+	name = "Chemistry";
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor,
-/area/site53/llcz/dclass/medicalpost)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost/chem)
 "sQ" = (
 /obj/machinery/light{
 	dir = 4;
@@ -8811,13 +8836,6 @@
 /obj/machinery/light,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/cells)
-"wA" = (
-/obj/machinery/door/airlock/multi_tile/glass/civilian{
-	name = "Assignments & Recreation";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/isolation)
 "wB" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/industrial/warning{
@@ -8978,7 +8996,13 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkpoint)
 "wX" = (
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/catwalk_plated/white,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
 "wY" = (
 /obj/effect/catwalk_plated/white,
@@ -9072,16 +9096,6 @@
 /obj/machinery/camera/network/scp106,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/scp106parts)
-"xj" = (
-/obj/machinery/power/apc{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/isolation)
 "xk" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters/open{
@@ -9116,13 +9130,9 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
 "xn" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/isolation)
+/obj/machinery/photocopier,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/assignmentbubble)
 "xo" = (
 /obj/effect/paint_stripe/red,
 /obj/effect/wallframe_spawn/reinforced/titanium,
@@ -9137,13 +9147,9 @@
 /turf/simulated/wall/titanium,
 /area/site53/llcz/mine/unexplored)
 "xq" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
+/obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/isolation)
+/area/site53/llcz/dclass/assignmentbubble)
 "xr" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Bubble";
@@ -9188,35 +9194,21 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
-"xv" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/assignmentbubble)
 "xx" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
+/obj/structure/table/standard,
+/obj/item/paper_bin,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "xy" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/effect/catwalk_plated/white,
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/assignmentbubble)
+/obj/structure/cable/green,
+/turf/simulated/floor,
+/area/site53/llcz/dclass/isolation)
 "xz" = (
 /obj/effect/paint_stripe/white,
 /obj/structure/sign/directions/lcz{
@@ -10859,16 +10851,13 @@
 /turf/simulated/floor/plating,
 /area/site53/llcz/dclass/botany)
 "CL" = (
-/obj/machinery/light{
-	icon_state = "tube1"
-	},
 /obj/effect/floor_decal/corner/yellow/mono,
 /obj/structure/table/standard,
 /obj/item/storage/box/beakers,
-/obj/item/storage/box/beakers/insulated,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/dropper/industrial,
+/obj/item/storage/box/pillbottles,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "CM" = (
@@ -11702,12 +11691,11 @@
 /turf/simulated/floor/grass,
 /area/site53/llcz/dclass/botany)
 "EZ" = (
-/obj/item/storage/mirror{
-	dir = 4;
-	pixel_x = 32
+/obj/machinery/camera/network/lcz{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/luxuryhall)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/assignmentbubble)
 "Fi" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -11718,6 +11706,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/industrial/firstaid{
 	dir = 1
+	},
+/obj/machinery/door/window/brigdoor/northleft{
+	name = "Medbay Secure";
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -11824,6 +11816,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentline)
+"FA" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost/storage)
 "FB" = (
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/medicalpost/morgue)
@@ -11904,17 +11906,6 @@
 /obj/effect/floor_decal/corner/b_green/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
-"FN" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/isolation)
 "FQ" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -12726,10 +12717,6 @@
 "If" = (
 /obj/machinery/camera/network/lcz{
 	dir = 1
-	},
-/obj/machinery/button/blast_door{
-	id_tag = "fightobservation";
-	pixel_y = -30
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
@@ -14024,6 +14011,12 @@
 /obj/effect/floor_decal/corner/b_green/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"Lv" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/assignmentbubble)
 "Lx" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -14143,6 +14136,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
+"LR" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost)
 "LS" = (
 /obj/structure/bed,
 /turf/simulated/floor/tiled/white,
@@ -14382,13 +14381,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/scp8containment)
-"MQ" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/b_green/mono,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost/storage)
 "MR" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -14486,6 +14478,21 @@
 /obj/structure/table/rack,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
+"Ni" = (
+/obj/effect/catwalk_plated/white,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/medicalpost)
 "Nj" = (
 /obj/structure/table/standard,
 /obj/machinery/camera/network/scp049{
@@ -14522,6 +14529,14 @@
 "Nq" = (
 /obj/effect/floor_decal/industrial/firstaid{
 	dir = 1
+	},
+/obj/machinery/door/window/brigdoor/northright{
+	req_access = list("ACCESS_MEDICAL_LEVEL2");
+	name = "Medbay Secure"
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -14988,8 +15003,8 @@
 	dir = 1
 	},
 /obj/machinery/button/flasher{
-	id_tag = "prisonlobby";
-	pixel_y = null
+	id_tag = "isolator2";
+	pixel_y = 32
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
@@ -15365,24 +15380,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurysleep)
-"Qa" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/door/airlock/medical{
-	name = "Chemistry";
-	req_access = list("ACCESS_MEDICAL_LEVEL2")
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost/chem)
 "Qd" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/steel_ridged,
@@ -15554,6 +15551,14 @@
 /obj/item/stack/material/phoron/ten,
 /obj/item/stack/material/phoron/ten,
 /obj/item/stack/material/phoron/ten,
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -24
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "QA" = (
@@ -15634,6 +15639,8 @@
 /obj/item/clothing/gloves/latex/nitrile,
 /obj/item/autopsy_scanner,
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
+/obj/item/storage/box/bodybags,
+/obj/item/storage/box/bodybags,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "QO" = (
@@ -15663,20 +15670,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lhcz/scp049containment)
-"QS" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
 "QT" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -15838,6 +15831,20 @@
 /obj/item/ammo_magazine/box/a556,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip)
+"Rv" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost/storage)
 "Rw" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/structure/barricade,
@@ -16166,10 +16173,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
 "Sz" = (
@@ -16847,16 +16854,24 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "UO" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list("ACCESS_SCIENCE_LEVEL1")
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
+/obj/machinery/alarm{
+	pixel_y = 23;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost/chem)
+"UP" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
 	},
 /obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
@@ -17084,10 +17099,14 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
 "VB" = (
-/obj/structure/hygiene/shower{
-	pixel_y = 20
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
 	},
-/obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/button/blast_door{
+	id_tag = "DCZChem";
+	name = "Chemistry Shutters";
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "VE" = (
@@ -17162,6 +17181,10 @@
 /obj/item/stack/material/plastic/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
+"VN" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost/chem)
 "VO" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/glass/bucket,
@@ -17615,7 +17638,17 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
 "Xl" = (
@@ -17633,20 +17666,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignmentbubble)
-"Xu" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost/chem)
 "Xv" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/bed/roller,
@@ -17666,12 +17685,23 @@
 "Xx" = (
 /obj/machinery/chem_master,
 /obj/effect/floor_decal/corner/yellow/mono,
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "Xz" = (
 /obj/structure/iv_drip,
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -17922,12 +17952,8 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "Yq" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters{
-	dir = 2;
-	id_tag = "fightobservation"
-	},
-/turf/simulated/floor/plating,
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "Ys" = (
 /obj/structure/virology/centrifuge,
@@ -23002,8 +23028,8 @@ py
 ue
 ue
 ue
-EZ
-EZ
+xT
+xT
 yo
 gq
 gq
@@ -24769,7 +24795,7 @@ Ln
 cZ
 Fi
 Qg
-sP
+Ni
 Qg
 Re
 Sy
@@ -25026,11 +25052,11 @@ Ns
 bi
 Nq
 rI
-QS
+LR
 rI
 xU
-MQ
-dw
+FH
+Rv
 Pu
 dK
 bI
@@ -25283,11 +25309,11 @@ Ti
 bi
 Of
 SA
-Qa
+eR
 eR
 Of
 FM
-dw
+Rv
 dh
 dK
 Ly
@@ -25540,11 +25566,11 @@ tD
 Fw
 Of
 UO
-Xu
+CL
 Qz
 Of
 ww
-dw
+Rv
 SQ
 dK
 Xi
@@ -25797,10 +25823,10 @@ rI
 NU
 Of
 VB
-bG
-CL
-Of
-FH
+VN
+UP
+sP
+FA
 dw
 kv
 dK
@@ -26593,13 +26619,13 @@ iD
 iD
 iD
 iD
-CM
-uf
-uf
+Ee
+iD
+iD
 dQ
 ob
-wG
-wG
+wX
+xy
 wG
 of
 qu
@@ -29680,17 +29706,17 @@ HB
 pG
 wP
 OH
-wX
-wX
-wX
-wA
+gq
+gq
+gq
+gM
 lS
 Vy
-Yq
-lS
-lS
-lS
-lS
+gM
+gq
+gq
+gq
+gq
 UT
 YZ
 Gs
@@ -29937,17 +29963,17 @@ xX
 Me
 xX
 OH
-xj
-FN
-xn
-xq
-xv
-lS
-Yq
+gq
+gq
+gq
+gM
 lS
 lS
-lS
-lS
+gM
+gq
+gq
+gq
+gq
 UT
 UW
 Gs
@@ -30190,21 +30216,21 @@ tj
 tj
 tj
 tj
-qu
-qu
-qu
-qu
-qu
-qu
-qu
-qu
-xx
-lS
-Yq
+OH
+OH
+OH
+OH
+HJ
+HJ
+HJ
+gM
 lS
 lS
-lS
-lS
+gM
+gq
+gq
+gq
+gq
 UT
 Gs
 Gs
@@ -30455,12 +30481,12 @@ HC
 HR
 DR
 gM
-xx
+lS
 If
 gM
 gM
-lS
-lS
+gM
+gM
 gM
 UT
 UT
@@ -30712,14 +30738,14 @@ Ed
 HK
 HS
 lj
-xy
+lm
 lm
 UI
 gM
-lS
-lS
-lS
-lS
+xn
+Yq
+xx
+xq
 UT
 Xo
 Gs
@@ -30974,8 +31000,8 @@ lS
 lS
 lS
 lS
-lS
-lS
+Lv
+EZ
 lS
 lk
 Qm
