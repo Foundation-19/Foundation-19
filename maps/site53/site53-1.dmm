@@ -6907,7 +6907,6 @@
 	},
 /obj/effect/floor_decal/corner/yellow/mono,
 /obj/machinery/reagentgrinder,
-/obj/item/storage/box/pillbottles,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "rB" = (
