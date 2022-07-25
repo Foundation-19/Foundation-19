@@ -303,8 +303,8 @@
 /datum/gear/mre/New()
 	..()
 	var/mre = list()
-	mre["random MRE"] = /obj/item/storage/mre/random
-	mre["vegan MRE"] = /obj/item/storage/mre/menu9
+	mre["random mre"] = /obj/item/storage/mre/random
+	mre["vegan mre"] = /obj/item/storage/mre/menu9
 	gear_tweaks += new/datum/gear_tweak/path(mre)
 
 /datum/gear/mrejoke
