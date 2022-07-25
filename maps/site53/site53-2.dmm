@@ -16913,17 +16913,13 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
-"aNM" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/entrance_checkpoint)
 "aNN" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
 	icon_state = "warning"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/entrance_checkpoint)
+/area/site53/ulcz/tram)
 "aNO" = (
 /obj/machinery/light{
 	dir = 4;
@@ -36933,7 +36929,7 @@ amC
 aXU
 dKX
 ahT
-aNM
+dKX
 aXV
 amC
 aYh

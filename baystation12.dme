@@ -36,6 +36,7 @@
 #include "code\__defines\chemistry.dm"
 #include "code\__defines\client.dm"
 #include "code\__defines\colors.dm"
+#include "code\__defines\components.dm"
 #include "code\__defines\cooldowns.dm"
 #include "code\__defines\culture.dm"
 #include "code\__defines\damage_organs.dm"

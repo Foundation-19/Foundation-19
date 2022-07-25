@@ -68,7 +68,8 @@ var/datum/report_topic_handler/report_topic_handler
 
 // check if there are any unhandled reports
 /client/proc/unhandled_reports()
-	if(!src.holder) return 0
+	if(!check_rights(R_INVESTIGATE, FALSE, src))
+		return 0
 	var/list/reports = load_reports()
 
 	for(var/datum/admin_report/N in reports)
@@ -92,7 +93,8 @@ var/datum/report_topic_handler/report_topic_handler
 /client/proc/display_admin_reports()
 	set category = "Admin"
 	set name = "Display Admin Reports"
-	if(!src.holder) return
+	if(!check_rights(R_INVESTIGATE, FALSE, src))
+		return
 
 	var/list/reports = load_reports()
 
@@ -119,7 +121,7 @@ var/datum/report_topic_handler/report_topic_handler
 
 /client/proc/Report(mob/M as mob in mob_list)
 	set category = "Admin"
-	if(!src.holder)
+	if(!check_rights(R_INVESTIGATE, FALSE, src))
 		return
 
 	var/CID = "Unknown"
@@ -136,7 +138,7 @@ var/datum/report_topic_handler/report_topic_handler
 		display_admin_reports()
 
 /client/proc/mark_report_done(ID as num)
-	if(!src.holder || src.holder.level < 0)
+	if(!check_rights(R_INVESTIGATE, FALSE, src))
 		return
 
 	var/savefile/Reports = new("data/reports.sav")
@@ -154,7 +156,7 @@ var/datum/report_topic_handler/report_topic_handler
 
 	to_chat(Reports["reports"], reports)
 /client/proc/edit_report(ID as num)
-	if(!src.holder || src.holder.level < 0)
+	if(!check_rights(R_INVESTIGATE, FALSE, src))
 		to_chat(src, "<b>You tried to modify the news, but you're not an admin!</b>")
 		return
 
