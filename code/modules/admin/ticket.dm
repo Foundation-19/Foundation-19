@@ -158,6 +158,8 @@ var/list/ticket_panels = list()
 				if(owner_client)
 					ref_mob = "\ref[owner_client.mob]"
 				ticket_dat += " - <A HREF='?_src_=holder;adminmoreinfo=[ref_mob]'>?</A> - <A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A> - <A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A> - <A HREF='?_src_=holder;narrateto=[ref_mob]'>DN</A>[owner_client ? "- [admin_jump_link(owner_client, src)]" : ""]"
+				if(ticket.status != TICKET_CLOSED)
+					ticket_dat +=  " - <a href='?_src_=holder;autoresponse=[ref_mob]'>Autoresponse</a>"
 			if(open_ticket && open_ticket == ticket)
 				ticket_dat += "</i>"
 			ticket_dat += "</li>"

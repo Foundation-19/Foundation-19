@@ -1351,6 +1351,78 @@
 
 		ticket.take(client_repository.get_lite_client(usr.client))
 
+	else if(href_list["autoresponse"]) // new verb on the Ahelp.  Will tell the person their message was received, and they probably won't get a response
+
+		var/mob/ref_person = locate(href_list["autoresponse"])
+		if(!ref_person || !istype(ref_person) || !ref_person.client)
+			to_chat(usr, "\blue Looks like that person stopped existing!")
+			return
+		var/client/ref_client = ref_person.client
+
+		var/datum/ticket/ticket = get_open_ticket_by_client(ref_client)
+		if(ticket && ticket.assigned_admins.len)
+			to_chat(usr, "<b>This adminhelp is already being handled, but continue if you wish.</b>")
+			if(alert(usr, "Are you sure you want to autoreply to this marked adminhelp?", "Confirmation", "Yes", "No") == "No")
+				return
+		else if (!ticket)
+			to_chat(usr, "<b>This ticket no longer exists.</b>")
+			return
+		ticket.take(client_repository.get_lite_client(usr.client))
+
+		var/list/choicelist = list("--CANCEL--",
+									"IC Issue",
+									"Being Handled",
+									"Fixed","Thanks!",
+									"L: GitHub Issue",
+									"A: Requesting to be an SCP",
+									"A: Becoming an SCP",
+									"L: RUST Engine",
+									"A: D-Class Riot",
+									"A: D-Class Cells",
+									"A: Directions/Lost",
+									"A: Character setup",
+									"L: Website and Discord information")
+
+		var/choice = input("Which autoresponse option do you want to send to the player?\n\n L - A webpage link.\n A - An answer to a common question.", "Autoresponse", "--CANCEL--") in choicelist
+
+		var/msgplayer
+		switch(choice)
+			if("IC Issue")
+				msgplayer = TICKET_AUTORESPONSE_IC_ISSUE
+			if("Being Handled")
+				msgplayer = TICKET_AUTORESPONSE_BEING_HANDLED
+			if("Fixed")
+				msgplayer = TICKET_AUTORESPONSE_FIXED
+			if("Thanks!")
+				msgplayer = TICKET_AUTORESPONSE_THANKS
+			if("A: Requesting to be an SCP")
+				msgplayer = TICKET_AUTORESPONSE_REQUESTING_TO_BE_SCP
+			if("A: Becoming an SCP")
+				msgplayer = TICKET_AUTORESPONSE_BECOMING_AN_SCP
+			if("L: GitHub Issue")
+				msgplayer = TICKET_AUTORESPONSE_GITHUB_ISSUE
+			if("L: RUST Engine")
+				msgplayer = TICKET_AUTORESPONSE_RUST_ENGINE
+			if("A: D-Class Riot")
+				msgplayer = TICKET_AUTORESPONSE_D_CLASS_RIOT
+			if("A: D-Class Cells")
+				msgplayer = TICKET_AUTORESPONSE_D_CLASS_CELLS
+			if("A: Directions/Lost")
+				msgplayer = TICKET_AUTORESPONSE_DIRECTIONS_OR_LOST
+			if("A: Character setup")
+				msgplayer = TICKET_AUTORESPONSE_CHARACTER_SETUP
+			if("L: Website and Discord information")
+				msgplayer = TICKET_AUTORESPONSE_WEBSITE_AND_DISCORD
+			else return
+
+		var/staff_message = "[usr.key] is autoresponding to [ref_client.key] with <font color='#009900'>'[choice]'</font>."
+		message_staff(staff_message, 1)
+		ticket.msgs += new /datum/ticket_msg(usr.ckey, ref_client.ckey, staff_message)
+		to_chat(ref_client, msgplayer) //send a message to the player when the Admin clicks "Mark"
+		if(ref_client.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
+			sound_to(ref_client, 'sound/effects/adminhelp-reply.ogg')
+		ticket.close(usr.client)
+
 	else if(href_list["adminplayerobservecoodjump"])
 		if(!check_rights(R_ADMIN))	return
 
