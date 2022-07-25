@@ -53,7 +53,7 @@
 		if(holder)
 			recieve_pm_type = holder.rank
 
-	else if(C && !C.holder)
+	else if(C && !check_rights(R_INVESTIGATE, FALSE, C))
 		to_chat(src, "<span class='warning'>Error: Admin-PM: Non-admin to non-admin PM communication is forbidden.</span>")
 		return
 
@@ -79,7 +79,7 @@
 	if(isnull(ticket))
 		if(holder)
 			ticket = get_open_ticket_by_client(receiver_lite) // it's more likely an admin clicked a different PM link, so check admin -> player with ticket first
-			if(isnull(ticket) && C.holder)
+			if(isnull(ticket) && check_rights(R_INVESTIGATE, FALSE, C))
 				ticket = get_open_ticket_by_client(sender_lite) // if still no dice, try an admin with ticket -> admin
 		else
 			ticket = get_open_ticket_by_client(sender_lite) // lastly, check player with ticket -> admin
@@ -103,7 +103,7 @@
 
 	var/recieve_message
 
-	if(holder && !C.holder)
+	if(holder && !check_rights(R_INVESTIGATE, FALSE, C))
 		recieve_message = "<span class='pm'><span class='howto'><b>-- Click the [recieve_pm_type]'s name to reply --</b></span></span>\n"
 		if(C.adminhelped)
 			to_chat(C, recieve_message)
@@ -119,7 +119,7 @@
 	to_chat(src, sender_message)
 
 	var/receiver_message = "<span class='pm'><span class='in'>" + create_text_tag("pm_in", "", C) + " <b>\[[recieve_pm_type] PM\]</b> <span class='name'>[get_options_bar(src, C.holder ? 1 : 0, C.holder ? 1 : 0, 1)]</span>"
-	if(C.holder)
+	if(check_rights(R_INVESTIGATE, FALSE, C))
 		receiver_message += " (<a href='?_src_=holder;take_ticket=\ref[ticket]'>[(ticket.status == TICKET_OPEN) ? "TAKE" : "JOIN"]</a>) (<a href='?src=\ref[usr];close_ticket=\ref[ticket]'>CLOSE</a>)"
 		receiver_message += ": <span class='message linkify'>[generate_ahelp_key_words(C.mob, msg)]</span>"
 	else
