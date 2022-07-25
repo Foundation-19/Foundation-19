@@ -295,10 +295,10 @@
 	gear_tweaks += new/datum/gear_tweak/path(cointype)
 	
 /datum/gear/mre
-	display_name = "MRE"
+	display_name = "mre"
 	description = "A Meal, Ready to Eat."
 	path = /obj/item/storage/mre
-	cost = 2
+	cost = 4
 	
 /datum/gear/mre/New()
 	..()
@@ -308,7 +308,7 @@
 	gear_tweaks += new/datum/gear_tweak/path(mre)
 
 /datum/gear/mrejoke
-	display_name = "Special MRE"
+	display_name = "special mre"
 	description = "A very special MRE."
 	path = /obj/item/storage/mre/menu11
 	cost = 10
@@ -318,3 +318,4 @@
 	description = "A roll of very strong tape."
 	path = /obj/item/tape_roll
 	cost = 6	
+	denied_roles = list(/datum/job/classd)
