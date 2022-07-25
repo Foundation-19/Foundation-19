@@ -63,7 +63,7 @@ export const DmTarget = new Juke.Target({
     get(DefineParameter).includes('ALL_MAPS') && DmMapsIncludeTarget,
   ],
   inputs: [
-    '_maps/map_files/generic/**',
+    'maps/**',
     'code/**',
     'goon/**',
     'html/**',
