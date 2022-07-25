@@ -8779,6 +8779,7 @@
 /obj/item/storage/belt/holster/security/tactical,
 /obj/item/clothing/suit/armor/pcarrier/light,
 /obj/item/clothing/head/helmet/site53,
+/obj/item/reagent_containers/food/drinks/bottle/maplesyrup,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "OM" = (
