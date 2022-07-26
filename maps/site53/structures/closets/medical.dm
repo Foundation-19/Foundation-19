@@ -72,7 +72,7 @@
 
 /obj/structure/closet/secure_closet/medical_torch
 	name = "corpsman's locker"
-	req_access = list(access_medical_equip)
+	req_access = list(access_medicallvl2)
 	icon_state = "securemed1"
 	icon_closed = "securemed"
 	icon_locked = "securemed1"
@@ -102,7 +102,7 @@
 
 /obj/structure/closet/secure_closet/medical_contractor
 	name = "medical contractor's locker"
-	req_access = list(access_medical)
+	req_access = list(access_medicallvl2)
 	icon_state = "securemed1"
 	icon_closed = "securemed"
 	icon_locked = "securemed1"

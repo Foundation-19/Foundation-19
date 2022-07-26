@@ -50,7 +50,7 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_medical)
+	req_access = list(access_medicallvl2)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/medical/alt

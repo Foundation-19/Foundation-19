@@ -118,7 +118,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "hallway"
 
 /area/medical
-	req_access = list(access_medical)
+	req_access = list(access_medicallvl2)
 
 /area/security
 	req_access = list(access_sec_doors)

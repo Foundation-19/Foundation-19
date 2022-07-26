@@ -273,7 +273,7 @@
 
 	allowed = list(/obj/item/device/flashlight,/obj/item/tank,/obj/item/device/suit_cooling_unit,/obj/item/storage/firstaid,/obj/item/device/scanner/health,/obj/item/stack/medical,/obj/item/roller,/obj/item/auto_cpr,/obj/item/inflatable_dispenser)
 
-	req_access = list(access_medical_equip)
+	req_access = list(access_medicallvl2)
 
 /obj/item/clothing/head/helmet/space/rig/medical
 	light_overlay = "helmet_light_wide"

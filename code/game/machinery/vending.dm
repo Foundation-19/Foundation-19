@@ -922,7 +922,7 @@
 	vend_delay = 18
 	base_type = /obj/machinery/vending/medical
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"
-	req_access = list(access_medical_equip)
+	req_access = list(access_medicallvl2)
 	products = list(
 		/obj/item/reagent_containers/glass/bottle/antitoxin = 6,
 		/obj/item/reagent_containers/glass/bottle/inaprovaline = 6,

@@ -72,7 +72,7 @@
 	desc = "A Medical-type heads-up display that connects directly to the ocular nerve of the user, replacing the need for that useless eyeball."
 	hud = /obj/item/clothing/glasses/hud/health
 	eye_color = COLOR_CYAN
-	req_access = list(access_medical)
+	req_access = list(access_medicallvl2)
 
 /obj/item/clothing/glasses/eyepatch/hud/meson
 	name = "MESpatch"

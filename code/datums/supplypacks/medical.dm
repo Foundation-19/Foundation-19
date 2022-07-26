@@ -111,7 +111,7 @@
 	cost = 15
 	containertype = /obj/structure/closet/crate/secure
 	containername = "medical surplus equipment crate"
-	access = access_medical
+	access = access_medicallvl2
 
 /decl/hierarchy/supply_pack/medical/cmogear
 	name = "Gear - Chief medical officer equipment"
@@ -132,7 +132,7 @@
 	cost = 60
 	containertype = /obj/structure/closet/crate/secure
 	containername = "chief medical officer equipment crate"
-	access = access_cmo
+	access = access_medicallvl5
 
 /decl/hierarchy/supply_pack/medical/doctorgear
 	name = "Gear - Medical Doctor equipment"
@@ -152,7 +152,7 @@
 	cost = 20
 	containertype = /obj/structure/closet/crate/secure
 	containername = "medical Doctor equipment crate"
-	access = access_medical_equip
+	access = access_medicallvl2
 
 /decl/hierarchy/supply_pack/medical/chemistgear
 	name = "Gear - Pharmacist equipment"
@@ -172,7 +172,7 @@
 	cost = 15
 	containertype = /obj/structure/closet/crate/secure
 	containername = "pharmacist equipment crate"
-	access = access_chemistry
+	access = access_medicallvl2
 
 /decl/hierarchy/supply_pack/medical/paramedicgear
 	name = "Gear - Paramedic equipment"
@@ -197,7 +197,7 @@
 	cost = 20
 	containertype = /obj/structure/closet/crate/secure
 	containername = "paramedic equipment crate"
-	access = access_medical_equip
+	access = access_medicallvl2
 
 /decl/hierarchy/supply_pack/medical/psychiatristgear
 	name = "Gear - Psychiatrist equipment"
@@ -213,7 +213,7 @@
 	cost = 15
 	containertype = /obj/structure/closet/crate/secure
 	containername = "psychiatrist equipment crate"
-	access = access_psychiatrist
+	access = access_medicallvl1
 
 /decl/hierarchy/supply_pack/medical/medicalscrubs
 	name = "Gear - Medical scrubs"
@@ -231,7 +231,7 @@
 	cost = 15
 	containertype = /obj/structure/closet/crate/secure
 	containername = "medical scrubs crate"
-	access = access_medical_equip
+	access = access_medicallvl2
 
 /decl/hierarchy/supply_pack/medical/autopsy
 	name = "Gear - Autopsy equipment"
@@ -246,7 +246,7 @@
 	cost = 20
 	containertype = /obj/structure/closet/crate/secure
 	containername = "autopsy equipment crate"
-	access = access_morgue
+	access = access_medicallvl2
 
 /decl/hierarchy/supply_pack/medical/medicaluniforms
 	name = "Gear - Medical uniforms"
@@ -270,7 +270,7 @@
 	cost = 15
 	containertype = /obj/structure/closet/crate/secure
 	containername = "medical uniform crate"
-	access = access_medical_equip
+	access = access_medicallvl2
 
 /decl/hierarchy/supply_pack/medical/medicalbiosuits
 	name = "Gear - Medical biohazard gear"
@@ -285,7 +285,7 @@
 	cost = 50
 	containertype = /obj/structure/closet/crate/secure
 	containername = "medical biohazard equipment crate"
-	access = access_medical_equip
+	access = access_medicallvl2
 
 /decl/hierarchy/supply_pack/medical/portablefreezers
 	name = "Equipment - Portable freezers"
@@ -293,7 +293,7 @@
 	cost = 25
 	containertype = /obj/structure/closet/crate/secure
 	containername = "portable freezers crate"
-	access = access_medical_equip
+	access = access_medicallvl2
 
 /decl/hierarchy/supply_pack/medical/surgery
 	name = "Gear - Surgery tools"
@@ -311,7 +311,7 @@
 	cost = 25
 	containertype = /obj/structure/closet/crate/secure
 	containername = "surgery crate"
-	access = access_medical
+	access = access_medicallvl2
 
 /decl/hierarchy/supply_pack/medical/sterile
 	name = "Gear - Sterile clothes"
@@ -330,7 +330,7 @@
 	cost = 20
 	containername = "medical scanner module crate"
 	containertype = /obj/structure/closet/crate/secure
-	access = access_medical_equip
+	access = access_medicallvl2
 
 /decl/hierarchy/supply_pack/medical/defib
 	name = "Electronics - Defibrilator crate"
@@ -338,7 +338,7 @@
 	cost = 60
 	containername = "\improper Defibrilator crate"
 	containertype = /obj/structure/closet/crate/secure
-	access = access_medical_equip
+	access = access_medicallvl2
 
 /decl/hierarchy/supply_pack/medical/beltdefib
 	name = "Electronics - Compact Defibrilator crate"
@@ -346,7 +346,7 @@
 	cost = 75
 	containername = "\improper Compact Defibrilator crate"
 	containertype = /obj/structure/closet/crate/secure
-	access = access_medical_equip
+	access = access_medicallvl2
 
 /decl/hierarchy/supply_pack/medical/autocomp
 	name = "Electronics - Auto-Compressor crate"
@@ -354,4 +354,4 @@
 	cost = 50
 	containername = "\improper Auto-Compressor crate"
 	containertype = /obj/structure/closet/crate/secure
-	access = access_medical_equip
+	access = access_medicallvl2

@@ -46,7 +46,7 @@
 /obj/machinery/suit_cycler/medical
 	name = "Medical suit cycler"
 	model_text = "Medical"
-	req_access = list(access_medical)
+	req_access = list(access_medicallvl2)
 	available_modifications = list(/decl/item_modifier/space_suit/medical)
 	species = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI)
 

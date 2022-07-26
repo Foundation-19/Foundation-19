@@ -204,9 +204,9 @@ FIELD_SHORT("Religion", religion, access_chapel_office, access_adminlvl5)
 FIELD_LONG("General Notes (Public)", public_record, null, access_adminlvl2)
 
 // MEDICAL RECORDS
-FIELD_LIST("Blood Type", bloodtype, GLOB.blood_types, access_medical, access_medicallvl2)
-FIELD_LONG("Medical Record", medRecord, access_medical, access_medicallvl2)
-FIELD_LONG("Known Implants", implants, access_medical, access_medicallvl2)
+FIELD_LIST("Blood Type", bloodtype, GLOB.blood_types, access_medicallvl2, access_medicallvl2)
+FIELD_LONG("Medical Record", medRecord, access_medicallvl2, access_medicallvl2)
+FIELD_LONG("Known Implants", implants, access_medicallvl2, access_medicallvl2)
 
 // SECURITY RECORDS
 FIELD_LIST("Criminal Status", criminalStatus, GLOB.security_statuses, access_securitylvl2, access_securitylvl2)

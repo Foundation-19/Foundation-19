@@ -134,7 +134,7 @@
 
 //	allowed = list(/obj/item/gun, /obj/item/device/flashlight, /obj/item/tank, /obj/item/device/suit_cooling_unit, /obj/item/storage/firstaid, /obj/item/device/healthanalyzer, /obj/item/stack/medical, /obj/item/roller)
 
-	req_access = list(access_cmo)
+	req_access = list(access_medicallvl5)
 
 /obj/item/clothing/head/helmet/space/rig/command/medical
 	icon_state = "command_med_rig"

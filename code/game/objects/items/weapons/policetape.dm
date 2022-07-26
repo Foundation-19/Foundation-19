@@ -129,7 +129,7 @@ var/list/tape_roll_applications = list()
 /obj/item/tape/medical
 	name = "medical tape"
 	desc = "A length of medical tape. Better not cross it."
-	req_access = list(access_medical)
+	req_access = list(access_medicallvl2)
 	icon_base = "stripetape"
 	detail_overlay = "stripes"
 	detail_color = COLOR_PALE_BLUE_GRAY

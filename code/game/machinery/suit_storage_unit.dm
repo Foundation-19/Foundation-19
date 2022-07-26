@@ -88,7 +88,7 @@
 	boots_type = /obj/item/clothing/shoes/magboots
 	tank_type = /obj/item/weapon/tank/oxygen
 	mask_type = /obj/item/clothing/mask/breath
-	req_access = list(access_medical)
+	req_access = list(access_medicallvl2)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/medical/alt
@@ -746,7 +746,7 @@
 /obj/machinery/suit_cycler/medical
 	name = "Medical suit cycler"
 	model_text = "Medical"
-	req_access = list(access_medical)
+	req_access = list(access_medicallvl2)
 	departments = list("Medical")
 	species = list(SPECIES_HUMAN,SPECIES_TAJARA,SPECIES_SKRELL,SPECIES_UNATHI)
 

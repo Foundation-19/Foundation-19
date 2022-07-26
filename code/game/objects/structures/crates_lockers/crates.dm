@@ -331,7 +331,7 @@
 /obj/structure/closet/crate/secure/biohazard/alt
 	name = "biowaste disposal cart"
 	desc = "A heavy cart used for organ disposal with markings indicating the things inside are probably gross."
-	req_access = list(access_surgery)
+	req_access = list(access_medicallvl3)
 	closet_appearance = /decl/closet_appearance/cart/biohazard/alt
 
 /obj/structure/closet/crate/paper_refill

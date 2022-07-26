@@ -76,7 +76,7 @@
 	cost = 120
 	containername = "medical voidsuit crate"
 	containertype = /obj/structure/closet/crate/secure/large
-	access = access_medical_equip
+	access = access_medicallvl2
 
 /decl/hierarchy/supply_pack/operations/voidsuit_security
 	name = "EVA - Security (armored) voidsuit"
