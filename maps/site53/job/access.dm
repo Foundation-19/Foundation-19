@@ -3,7 +3,7 @@
 *********************/
 
 // NTF
-
+/*
 /var/const/access_mtf = "ACCESS_MTF"
 /datum/access/mtf
 	id = access_mtf
@@ -30,7 +30,7 @@
 	desc = "Security Level 3"
 	region = ACCESS_REGION_SECURITY
 
-/var/const/access_securitylvl4 = "ACCESS_SECURITY_LEVEL4" //Zone Commander
+/var/const/access_securitylvl4 = "ACCESS_SECURITY_LEVEL4" //LCZ Zone Commander, EZ Supervisor
 /datum/access/securitylvl4
 	id = access_securitylvl4
 	desc = "Security Level 4"
@@ -44,25 +44,25 @@
 
 // SCIENCE
 
-/var/const/access_sciencelvl1 = "ACCESS_SCIENCE_LEVEL1" //Lobby
+/var/const/access_sciencelvl1 = "ACCESS_SCIENCE_LEVEL1" //Science Lobby
 /datum/access/sciencelvl1
 	id = access_sciencelvl1
 	desc = "Science Level 1"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_sciencelvl2 = "ACCESS_SCIENCE_LEVEL2" //Research Associate
+/var/const/access_sciencelvl2 = "ACCESS_SCIENCE_LEVEL2" //Safe, Research Associate
 /datum/access/sciencelvl2
 	id = access_sciencelvl2
 	desc = "Science Level 2"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_sciencelvl3 = "ACCESS_SCIENCE_LEVEL3" //Researcher
+/var/const/access_sciencelvl3 = "ACCESS_SCIENCE_LEVEL3" //Euclid, Researcher, Comms Officer
 /datum/access/sciencelvl3
 	id = access_sciencelvl3
 	desc = "Science Level 3"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_sciencelvl4 = "ACCESS_SCIENCE_LEVEL4" //Senior Researcher
+/var/const/access_sciencelvl4 = "ACCESS_SCIENCE_LEVEL4" //Keter, Senior Researcher, Guard Commander
 /datum/access/sciencelvl4
 	id = access_sciencelvl4
 	desc = "Science Level 4"
@@ -76,7 +76,7 @@
 
 // MEDICAL
 
-/var/const/access_medicallvl1 = "ACCESS_MEDICAL_LEVEL1" //Psych
+/var/const/access_medicallvl1 = "ACCESS_MEDICAL_LEVEL1" //Psych, Medical Lobby
 /datum/access/medicallvl1
 	id = access_medicallvl1
 	desc = "Medical Level 1"
@@ -94,7 +94,7 @@
 	desc = "Medical Level 3"
 	region =  ACCESS_REGION_MEDBAY
 
-/var/const/access_medicallvl4 = "ACCESS_MEDICAL_LEVEL4" //Virologist
+/var/const/access_medicallvl4 = "ACCESS_MEDICAL_LEVEL4" //Virologist, EZ Supervisor
 /datum/access/medicallvl4
 	id = access_medicallvl4
 	desc = "Medical Level 4"
@@ -108,25 +108,25 @@
 
 // ENGINEERING
 
-/var/const/access_engineeringlvl1 = "ACCESS_ENGINEERING_LEVEL1" //Junior Engineer
+/var/const/access_engineeringlvl1 = "ACCESS_ENGINEERING_LEVEL1" //Engineering Lobby
 /datum/access/engineeringlvl1
 	id = access_engineeringlvl1
 	desc = "Engineering Level 1"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_engineeringlvl2 = "ACCESS_ENGINEERING_LEVEL2" // Engineer
+/var/const/access_engineeringlvl2 = "ACCESS_ENGINEERING_LEVEL2" //Junior Engineer
 /datum/access/engineeringlvl2
 	id = access_engineeringlvl2
 	desc = "Engineering Level 2"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_engineeringlvl3 = "ACCESS_ENGINEERING_LEVEL3" // Senior Engineer, Comms Programmer
+/var/const/access_engineeringlvl3 = "ACCESS_ENGINEERING_LEVEL3" //Engineer, Comms Tech, Comms Officer
 /datum/access/engineeringlvl3
 	id = access_engineeringlvl3
 	desc = "Engineering Level 3"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_engineeringlvl4 = "ACCESS_ENGINEERING_LEVEL4" // Containment Engineer
+/var/const/access_engineeringlvl4 = "ACCESS_ENGINEERING_LEVEL4" //Senior Engineer, Containment Engineer, Comms Officer
 /datum/access/engineeringlvl4
 	id = access_engineeringlvl4
 	desc = "Engineering Level 4"
@@ -140,13 +140,13 @@
 
 // ADMINISTRATION
 
-/var/const/access_adminlvl1 = "ACCESS_ADMIN_LEVEL1" //Command Lobby, Logistics, Comms
+/var/const/access_adminlvl1 = "ACCESS_ADMIN_LEVEL1" //Command Lobby, Logistics, GOC Rep
 /datum/access/adminlvl1
 	id = access_adminlvl1
 	desc = "Admin Level 1"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_adminlvl2 = "ACCESS_ADMIN_LEVEL2" //05 Rep, Logistics Officer, Comms Tech
+/var/const/access_adminlvl2 = "ACCESS_ADMIN_LEVEL2" //Logistics Officer, Comms Tech
 /datum/access/adminlvl2
 	id = access_adminlvl2
 	desc = "Admin Level 2"
@@ -158,13 +158,13 @@
 	desc = "Admin Level 3"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_adminlvl4 = "ACCESS_ADMIN_LEVEL4" //AIC Upload/Core
+/var/const/access_adminlvl4 = "ACCESS_ADMIN_LEVEL4" //AIC Upload/Core, HoP, Comms Officer, EZ Supervisor, Guard Commander
 /datum/access/adminlvl4
 	id = access_adminlvl4
 	desc = "Admin Level 4"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_adminlvl5 = "ACCESS_ADMIN_LEVEL5" //Site Director
+/var/const/access_adminlvl5 = "ACCESS_ADMIN_LEVEL5" //O5 Rep, Site Director
 /datum/access/adminlvl5
 	id = access_adminlvl5
 	desc = "Admin Level 5"
@@ -267,10 +267,11 @@
 	id = access_torch_fax
 	desc = "Fax Machines"
 	region = ACCESS_REGION_COMMAND
+*/
 /*
-var/const/access_robotics = "ACCESS_ROBOTICS"
+var/const/access_sciencelvl2 = "access_sciencelvl2"
 /datum/access/robotics
-	id = access_robotics
+	id = access_sciencelvl2
 	desc = "Robotics"
 	region = ACCESS_REGION_ENGINEERING
 
@@ -292,38 +293,38 @@ var/const/access_chapel_office = "ACCESS_CHAPEL_OFFICE"
 	desc = "Chapel Office"
 	region = ACCESS_REGION_SERVICE
 
-var/const/access_bar = "ACCESS_BAR"
+var/const/access_dclasskitchen = "access_dclasskitchen"
 /datum/access/bar
-	id = access_bar
+	id = access_dclasskitchen
 	desc = "Bar"
 	region = ACCESS_REGION_SERVICE
 
-var/const/access_kitchen = "ACCESS_KITCHEN"
+var/const/access_dclasskitchen = "access_dclasskitchen"
 /datum/access/kitchen
-	id = access_kitchen
+	id = access_dclasskitchen
 	desc = "Kitchen"
 	region = ACCESS_REGION_SERVICE
 
-var/const/access_eva = "ACCESS_EVA"
+var/const/access_engineeringlvl1 = "access_engineeringlvl1"
 /datum/access/eva
-	id = access_eva
+	id = access_engineeringlvl1
 	desc = "EVA"
 	region = ACCESS_REGION_GENERAL
 
-var/const/access_crematorium = "ACCESS_CREMATORIUM"
+var/const/access_medicallvl1 = "access_medicallvl1"
 /datum/access/crematorium
-	id = access_crematorium
+	id = access_medicallvl1
 	desc = "Crematorium"
 	region = ACCESS_REGION_MEDBAY
 
-var/const/access_janitor = "ACCESS_JANITOR"
+var/const/access_dclassjanitorial = "access_dclassjanitorial"
 /datum/access/janitor
-	id = access_janitor
+	id = access_dclassjanitorial
 	desc = "Janitor"
 	region = ACCESS_REGION_SERVICE
 
-var/const/access_ai_upload = "ACCESS_AI_UPLOAD"
+var/const/access_ai_upload = "access_adminlvl4"
 /datum/access/ai_upload
-	id = access_ai_upload
+	id = access_adminlvl4
 	desc = "AI Upload"
 */

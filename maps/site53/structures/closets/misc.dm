@@ -88,7 +88,7 @@
 /obj/structure/closet/secure_closet/guncabinet/sidearm
 	name = "sidearm cabinet"
 	req_access = list()
-	req_one_access = list(access_armory,access_emergency_armory,access_hos,access_hop,access_ce,access_cmo,access_rd,access_senadv)
+	req_one_access = list(access_securitylvl4,access_emergency_armory,access_securitylvl5,access_hop,access_ce,access_cmo,access_rd,access_senadv)
 
 /obj/structure/closet/secure_closet/guncabinet/sidearm/WillContain()
 	return list(

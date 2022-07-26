@@ -86,7 +86,7 @@
 	cost = 120
 	containername = "security voidsuit crate"
 	containertype = /obj/structure/closet/crate/secure/large
-	access = access_brig
+	access = access_securitylvl2
 
 /decl/hierarchy/supply_pack/operations/bureaucracy
 	contains = list(/obj/item/material/clipboard,

@@ -90,7 +90,7 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_security)
+	req_access = list(access_securitylvl2)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/security/alt

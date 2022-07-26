@@ -21,7 +21,7 @@
 		if(H.wear_id)
 			var/obj/item/card/id/id = H.GetIdCard()
 			for(var/A in id.access)
-				if(A == access_security)
+				if(A == access_securitylvl2)
 					security++
 		if(!security)
 			//strip their stuff before they teleport into a cell :downs:

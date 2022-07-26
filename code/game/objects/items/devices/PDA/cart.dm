@@ -7,7 +7,7 @@
 	w_class = ITEM_SIZE_TINY
 
 	var/obj/item/radio/integrated/radio = null
-	var/access_security = 0
+	var/access_securitylvl2 = 0
 	var/access_engine = 0
 	var/access_atmos = 0
 	var/access_medical = 0
@@ -60,7 +60,7 @@
 /obj/item/weapon/cartridge/security
 	name = "\improper R.O.B.U.S.T. cartridge"
 	icon_state = "cart-s"
-	access_security = 1
+	access_securitylvl2 = 1
 
 /obj/item/weapon/cartridge/security/Initialize()
 	radio = new /obj/item/radio/integrated/beepsky(src)
@@ -69,7 +69,7 @@
 /obj/item/weapon/cartridge/detective
 	name = "\improper D.E.T.E.C.T. cartridge"
 	icon_state = "cart-s"
-	access_security = 1
+	access_securitylvl2 = 1
 	access_medical = 1
 
 
@@ -82,7 +82,7 @@
 /obj/item/weapon/cartridge/lawyer
 	name = "\improper P.R.O.V.E. cartridge"
 	icon_state = "cart-s"
-	access_security = 1
+	access_securitylvl2 = 1
 
 /obj/item/weapon/cartridge/clown
 	name = "\improper Honkworks 5.0 cartridge"
@@ -135,13 +135,13 @@
 	access_status_display = 1
 	access_quartermaster = 1
 	access_janitor = 1
-	access_security = 1
+	access_securitylvl2 = 1
 
 /obj/item/weapon/cartridge/hos
 	name = "\improper R.O.B.U.S.T. DELUXE"
 	icon_state = "cart-hos"
 	access_status_display = 1
-	access_security = 1
+	access_securitylvl2 = 1
 
 /obj/item/weapon/cartridge/hos/Initialize()
 	radio = new /obj/item/radio/integrated/beepsky(src)
@@ -179,7 +179,7 @@
 	access_quartermaster = 1
 	access_janitor = 1
 	access_engine = 1
-	access_security = 1
+	access_securitylvl2 = 1
 	access_medical = 1
 	access_reagent_scanner = 1
 	access_status_display = 1

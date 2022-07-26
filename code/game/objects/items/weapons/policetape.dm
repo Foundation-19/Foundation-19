@@ -75,7 +75,7 @@ var/list/tape_roll_applications = list()
 /obj/item/tape/police
 	name = "police tape"
 	desc = "A length of police tape.  Do not cross."
-	req_access = list(access_security)
+	req_access = list(access_securitylvl2)
 	color = COLOR_RED
 
 /obj/item/taperoll/engineering

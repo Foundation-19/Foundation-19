@@ -23,7 +23,7 @@
 		if(NETWORK_THUNDER)
 			return 0
 
-	return access_security // Default for all other networks
+	return access_securitylvl2 // Default for all other networks
 
 /datum/computer_file/program/camera_monitor
 	filename = "cammon"
@@ -85,7 +85,7 @@
 	if(!network_access)
 		return 1
 
-	return check_access(user, access_security) || check_access(user, network_access)
+	return check_access(user, access_securitylvl2) || check_access(user, network_access)
 
 /datum/nano_module/camera_monitor/Topic(href, href_list)
 	if(..())

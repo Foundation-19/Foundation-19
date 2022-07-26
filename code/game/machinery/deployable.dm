@@ -6,10 +6,10 @@ Barricades
 
 for reference:
 
-	access_security = 1
-	access_brig = 2
-	access_armory = 3
-	access_forensics_lockers= 4
+	access_securitylvl2 = 1
+	access_securitylvl2 = 2
+	access_securitylvl4 = 3
+	access_securitylvl2= 4
 	access_medical = 5
 	access_morgue = 6
 	access_tox = 7
@@ -145,7 +145,7 @@ for reference:
 	name = "deployable"
 	desc = "Deployable."
 	icon = 'icons/obj/objects.dmi'
-	req_access = list(access_security)//I'm changing this until these are properly tested./N
+	req_access = list(access_securitylvl2)//I'm changing this until these are properly tested./N
 
 /obj/machinery/deployable/barrier
 	name = "deployable barrier"
@@ -188,12 +188,12 @@ for reference:
 			if (src.health < src.maxhealth)
 				src.health = src.maxhealth
 				src.emagged = FALSE
-				src.req_access = list(access_security)
+				src.req_access = list(access_securitylvl2)
 				visible_message("<span class='warning'>[user] repairs \the [src]!</span>")
 				return
 			else if (src.emagged > 0)
 				src.emagged = FALSE
-				src.req_access = list(access_security)
+				src.req_access = list(access_securitylvl2)
 				visible_message("<span class='warning'>[user] repairs \the [src]!</span>")
 				return
 			return

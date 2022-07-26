@@ -1,6 +1,6 @@
 /obj/structure/closet/secure_closet/guncabinet
 	name = "gun cabinet"
-	req_access = list(access_armory)
+	req_access = list(access_securitylvl4)
 	icon = 'icons/obj/guncabinet.dmi'
 	closet_appearance = null
 

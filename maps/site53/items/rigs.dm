@@ -168,7 +168,7 @@
 
 	allowed = list(/obj/item/gun, /obj/item/ammo_magazine, /obj/item/ammo_casing, /obj/item/handcuffs, /obj/item/device/flashlight, /obj/item/tank, /obj/item/device/suit_cooling_unit, /obj/item/melee/baton)
 
-	req_access = list(access_hos)
+	req_access = list(access_securitylvl5)
 
 /obj/item/clothing/head/helmet/space/rig/command/security
 	icon_state = "command_sec_rig"

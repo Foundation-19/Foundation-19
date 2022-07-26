@@ -36,7 +36,7 @@
 /obj/machinery/suit_cycler/security
 	name = "Security suit cycler"
 	model_text = "Security"
-	req_access = list(access_security)
+	req_access = list(access_securitylvl2)
 	available_modifications = list(/decl/item_modifier/space_suit/security, /decl/item_modifier/space_suit/security/alt)
 	species = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI)
 

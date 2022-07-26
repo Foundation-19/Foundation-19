@@ -76,7 +76,7 @@
 	icon_state = "holobadge"
 	item_state = "holobadge"
 	badge_string = "Security"
-	var/badge_access = access_security
+	var/badge_access = access_securitylvl2
 	var/badge_number
 	var/emagged //emag_act removes access requirements
 

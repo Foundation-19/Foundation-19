@@ -12,7 +12,7 @@
 //when adding a new camera network, you should only need to update these two procs
 	New()
 		possibleNets["Engineering"] = access_ce
-		possibleNets["SS13"] = access_hos
+		possibleNets["SS13"] = access_securitylvl5
 		possibleNets["Mining"] = access_mining
 		possibleNets["Cargo"] = access_qm
 		possibleNets["Research"] = access_rd
