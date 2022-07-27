@@ -419,7 +419,7 @@
 	icon_state = "direction_hcz"
 
 /obj/structure/sign/directions/lcz
-	name = "\improper Low Containment Zone"
+	name = "\improper Light Containment Zone"
 	icon_state = "direction_lcz"
 
 /obj/structure/sign/directions/ez

@@ -59,26 +59,29 @@
 	warmup_time = 14
 	shuttle_area = list(/area/site53/tram/mtf)
 	waypoint_station = "nav_mtf_start"
-	landmark_transition = "nav_mtf_transition"
+	//landmark_transition = "nav_mtf_transition"
 	waypoint_offsite = "nav_mtf_out"
-	move_time = 39
+	//move_time = 39
 
 /obj/effect/shuttle_landmark/heli/start
 	name = "MTF Base"
 	landmark_tag = "nav_mtf_start"
 	base_turf = /turf/unsimulated/floor/reinforced
+	base_area = /area/site53/tram/mtf
 
 /obj/effect/shuttle_landmark/heli/out
 	name = "Site 53"
 	landmark_tag = "nav_mtf_out"
-	base_turf = /turf/simulated/floor/reinforced
+	base_turf = /turf/simulated/floor/tiled/monotile/white
 	base_area = /area/site53/surface/surface
 
-/obj/effect/shuttle_landmark/heli
+/* commented out because fuck you it no work
+/obj/effect/shuttle_landmark/heli/transit
 	name = "In transit"
 	landmark_tag = "nav_mtf_transition"
 	base_turf = /turf/unsimulated/floor/plating
-	base_area = /area/site53/surface/surface
+	base_area = /area/space
+*/
 
 /datum/shuttle/autodock/ferry/hcz
 	name = "Heavy Containment Tram"

@@ -27,12 +27,9 @@ var sdql2 = [];
 var permanent_tabs = []; // tabs that won't be cleared by wipes
 var turfcontents = [];
 var turfname = "";
-var imageRetryDelay = 500;
-var imageRetryLimit = 50;
 var menu = document.getElementById("menu");
 var under_menu = document.getElementById("under_menu");
 var statcontentdiv = document.getElementById("statcontent");
-var storedimages = [];
 var split_admin_tabs = false;
 
 // Any BYOND commands that could result in the client's focus changing go through this
@@ -384,43 +381,11 @@ function remove_interviews() {
 	checkStatusTab();
 }
 
-function iconError(e) {
-	if (current_tab != turfname) {
-		return;
-	}
-	setTimeout(function () {
-		var node = e.target;
-		var current_attempts = Number(node.getAttribute("data-attempts")) || 0;
-		if (current_attempts > imageRetryLimit) {
-			return;
-		}
-		var src = node.src;
-		node.src = null;
-		node.src = src + "#" + current_attempts;
-		node.setAttribute("data-attempts", current_attempts + 1);
-		draw_listedturf();
-	}, imageRetryDelay);
-}
-
 function draw_listedturf() {
 	statcontentdiv.textContent = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < turfcontents.length; i++) {
 		var part = turfcontents[i];
-		if (storedimages[part[1]] == null && part[2]) {
-			var img = document.createElement("img");
-			img.src = part[2];
-			img.id = part[1];
-			storedimages[part[1]] = part[2];
-			img.onerror = iconError;
-			table.appendChild(img);
-		} else {
-			var img = document.createElement("img");
-			img.onerror = iconError;
-			img.src = storedimages[part[1]];
-			img.id = part[1];
-			table.appendChild(img);
-		}
 		var b = document.createElement("div");
 		var clickcatcher = "";
 		b.className = "link";

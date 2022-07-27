@@ -4620,7 +4620,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/machinery/photocopier/faxmachine{
 	department = "Containment Engineer's Office";
-	send_access = list(303)
+	send_access = list("ACCESS_ENGINEERING_LEVEL4")
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/containment_engineer)
@@ -6095,8 +6095,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
-	department = "Engineering Monitoring";
-	send_access = list(502)
+	department = "Engineering Monitoring"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/controlroom)
@@ -12962,7 +12961,7 @@
 "aDK" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Heavy Containment Zone Commander";
-	send_access = list(204)
+	send_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techfloor,
@@ -15187,7 +15186,7 @@
 "aJF" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-151 Containment Chamber";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
+	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
@@ -15271,7 +15270,7 @@
 "aJT" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-173 Containment Chamber";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
@@ -15764,6 +15763,7 @@
 	icon_state = "0-4"
 	},
 /obj/structure/table/standard,
+/obj/machinery/photocopier/faxmachine,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
 "aLa" = (
@@ -16913,17 +16913,13 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
-"aNM" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/entrance_checkpoint)
 "aNN" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
 	icon_state = "warning"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/entrance_checkpoint)
+/area/site53/ulcz/tram)
 "aNO" = (
 /obj/machinery/light{
 	dir = 4;
@@ -18701,7 +18697,7 @@
 "aTs" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "LCZ Security Center";
-	req_access = list("ACCESS_SECURITY_LEVEL1")
+	send_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
@@ -19155,7 +19151,7 @@
 "aVg" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-078 Containment Chamber";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
+	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
@@ -27293,7 +27289,7 @@
 "hvI" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-513 Containment Chamber";
-	send_access = list(list(202,302))
+	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -28080,7 +28076,7 @@
 "jGW" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-012 Containment Chamber";
-	send_access = list(list(202,302))
+	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -28267,7 +28263,7 @@
 "kiO" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "General Purpose Chamber";
-	req_access = list("ACCESS_SCIENCE_LEVEL1")
+	send_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/machinery/firealarm{
 	dir = 8;
@@ -28339,7 +28335,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-066 Observation";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
+	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
@@ -28569,7 +28565,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-247 Observation";
-	send_access = list(303)
+	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
@@ -32088,7 +32084,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-263 Observation";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
+	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
@@ -32678,10 +32674,6 @@
 /obj/item/storage/box/syringegun,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
-"wsb" = (
-/mob/living/carbon/human/scp343,
-/turf/simulated/floor/lino,
-/area/site53/lhcz/scp343room)
 "wtF" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -36937,7 +36929,7 @@ amC
 aXU
 dKX
 ahT
-aNM
+dKX
 aXV
 amC
 aYh
@@ -92021,7 +92013,7 @@ bbu
 bbu
 bcn
 bcd
-wsb
+bcd
 bcd
 bbo
 aki

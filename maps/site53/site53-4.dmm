@@ -286,7 +286,8 @@
 	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /obj/machinery/door/blast/regular{
-	id_tag = "sitedirect"
+	id_tag = "sitedirect";
+	name = "Administrative Offices Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -457,7 +458,7 @@
 /obj/structure/table/woodentable,
 /obj/machinery/photocopier/faxmachine{
 	department = "Head of Personnel's Office";
-	send_access = list(601)
+	send_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /turf/simulated/floor/wood,
 /area/site53/uez/hallway)
@@ -498,7 +499,7 @@
 "bv" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Main Control Room";
-	send_access = list(601)
+	send_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/blue/border{
@@ -685,7 +686,8 @@
 "bX" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
-	id_tag = "sitedirect"
+	id_tag = "sitedirect";
+	name = "Administrative Offices Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
@@ -694,7 +696,8 @@
 	name = "Head of Personnel's Office"
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "sitedirect"
+	id_tag = "sitedirect";
+	name = "Administrative Offices Lockdown"
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
@@ -722,7 +725,9 @@
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "cf" = (
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	dir = 4
+	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cg" = (
@@ -752,7 +757,7 @@
 "cm" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Site Director's Office";
-	send_access = list(605)
+	send_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/carpet/purple,
@@ -776,7 +781,9 @@
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "cr" = (
-/obj/machinery/vending/cola,
+/obj/machinery/vending/cola{
+	dir = 4
+	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cs" = (
@@ -804,31 +811,30 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cw" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/woodentable_reinforced/mahogany,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cx" = (
-/obj/structure/railing/mapped{
+/obj/structure/table/woodentable_reinforced/mahogany,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cy" = (
@@ -836,13 +842,15 @@
 	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /obj/machinery/door/blast/regular{
-	id_tag = "sitedirect"
+	id_tag = "sitedirect";
+	name = "Administrative Offices Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "cz" = (
 /obj/machinery/door/blast/regular/open{
-	id_tag = "sitedirect"
+	id_tag = "sitedirect";
+	name = "Administrative Offices Lockdown"
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
@@ -863,7 +871,8 @@
 	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "sitedirect"
+	id_tag = "sitedirect";
+	name = "Administrative Offices Lockdown"
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
@@ -973,7 +982,8 @@
 	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "sitedirect"
+	id_tag = "sitedirect";
+	name = "Administrative Offices Lockdown"
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
@@ -983,6 +993,11 @@
 /area/site53/uez/hallway)
 "cV" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
+/obj/machinery/door/window/holowindoor{
+	req_access = list("ACCESS_ADMIN_LEVEL5");
+	dir = 4;
+	id_tag = "sitedirect"
+	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cW" = (
@@ -990,7 +1005,8 @@
 	name = "Senior Administrative Offices"
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "sitedirect"
+	id_tag = "sitedirect";
+	name = "Administrative Offices Lockdown"
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
@@ -1009,22 +1025,22 @@
 	icon_state = "tube1"
 	},
 /obj/machinery/door/window/holowindoor{
-	req_access = list("ACCESS_ADMIN_LEVEL5")
+	req_access = list("ACCESS_ADMIN_LEVEL5");
+	id_tag = "sitedirect"
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cZ" = (
-/obj/structure/railing/mapped,
 /obj/structure/table/woodentable_reinforced/mahogany,
+/obj/structure/window/reinforced,
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "db" = (
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
 /obj/structure/table/woodentable_reinforced/mahogany,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "dc" = (
@@ -1073,7 +1089,7 @@
 "dj" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Research Director's Office";
-	send_access = list(305)
+	send_access = list("ACCESS_SCIENCE_LEVEL5")
 	},
 /obj/machinery/light{
 	dir = 1
@@ -1254,7 +1270,8 @@
 /area/site53/uez/hallway)
 "dH" = (
 /obj/machinery/door/blast/regular/open{
-	id_tag = "sitedirect"
+	id_tag = "sitedirect";
+	name = "Administrative Offices Lockdown"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/hallway)
@@ -1284,7 +1301,7 @@
 "dL" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Guard Commander's Office";
-	send_access = list(205)
+	send_access = list("ACCESS_SECURITY_LEVEL5")
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techmaint,
@@ -1322,7 +1339,8 @@
 	req_access = list("ACCESS_SCIENCE_LEVEL5")
 	},
 /obj/machinery/door/blast/regular/open{
-	id_tag = "sitedirect"
+	id_tag = "sitedirect";
+	name = "Administrative Offices Lockdown"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/hallway)
@@ -1417,7 +1435,7 @@
 "ek" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Chief Medical Officer's Office";
-	send_access = list(405)
+	send_access = list("ACCESS_MEDICAL_LEVEL5")
 	},
 /obj/machinery/camera/autoname{
 	network = list("Entrance Zone Network")
@@ -1428,7 +1446,7 @@
 "el" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Chief Engineer's Office";
-	send_access = list(505)
+	send_access = list("ACCESS_ENGINEERING_LEVEL5")
 	},
 /obj/machinery/camera/autoname{
 	network = list("Entrance Zone Network")
@@ -2827,7 +2845,7 @@
 "iT" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Logistics Breakroom";
-	send_access = list(601)
+	send_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -3829,6 +3847,14 @@
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/maincontrolroom)
+"vN" = (
+/obj/structure/table/woodentable_reinforced/mahogany,
+/obj/machinery/button/blast_door{
+	id_tag = "sitedirect";
+	name = "Administrative Offices Lockdown"
+	},
+/turf/simulated/floor/carpet/purple,
+/area/site53/uez/hallway)
 "wj" = (
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 1
@@ -4152,6 +4178,15 @@
 	},
 /turf/simulated/wall/prepainted,
 /area/site53/uez/maintenance)
+"HF" = (
+/obj/effect/paint_stripe/blue,
+/obj/machinery/button/windowtint{
+	id = "sitedirect";
+	id_tag = "sitedirect";
+	pixel_y = -5
+	},
+/turf/simulated/wall/titanium,
+/area/site53/uez/hallway)
 "HP" = (
 /obj/structure/table/standard,
 /obj/item/folder/blue,
@@ -4166,7 +4201,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "Comms Tower";
-	send_access = list(601)
+	send_access = list("ACCESS_ADMIN_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -4621,6 +4656,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
+"ZB" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/full{
+	id = "sitedirect"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/hallway)
 "ZL" = (
 /obj/structure/flora/pottedplant/flower,
 /turf/simulated/floor/tiled/monotile,
@@ -33988,7 +34029,7 @@ ac
 aM
 ac
 ca
-ca
+vN
 cs
 ci
 ci
@@ -35271,7 +35312,7 @@ ac
 ac
 ac
 aM
-ac
+HF
 cd
 co
 Rd
@@ -35786,13 +35827,13 @@ ae
 ae
 ae
 ae
-bX
-bX
+ZB
+ZB
 ac
 cS
 ac
-bX
-bX
+ZB
+ZB
 ac
 bK
 bK
