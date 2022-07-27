@@ -379,7 +379,7 @@
 	name = "Illegal upgrade"
 	desc = "Allows for the construction of lethal upgrades for cyborgs."
 	id = "borg_syndicate_module"
-	req_tech = list(TECH_COMBAT = 4, TECH_ILLEGAL = 3)
+	req_tech = list(TECH_COMBAT = 4, TECH_ESOTERIC = 3)
 	materials = list(DEFAULT_WALL_MATERIAL = 10000, "glass" = 15000, "diamond" = 10000)
 	build_path = /obj/item/borg/upgrade/syndicate
 /*
@@ -513,7 +513,7 @@
 	name = "SOP-6 grenade launcher"
 	desc = "A weapon that violates the Geneva Convention at 6 rounds per minute."
 	id = "clusterbang_launcher"
-	req_tech = list(TECH_COMBAT= 5, TECH_MATERIAL = 5, TECH_ILLEGAL = 3)
+	req_tech = list(TECH_COMBAT= 5, TECH_MATERIAL = 5, TECH_ESOTERIC = 3)
 	materials = list(DEFAULT_WALL_MATERIAL = 20000, "gold" = 6000, "uranium" = 6000)
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang/clusterbang/limited
 

@@ -112,6 +112,9 @@ GLOBAL_LIST_EMPTY(scp173s)
 		playsound(get_turf(A), 'sound/effects/grillehit.ogg', 50, 1)
 		qdel(A)
 		return
+	if(istype(A, /obj/structure/inflatable))
+		var/obj/structure/inflatable/W = A
+		W.deflate(violent=1)
 	return
 
 /mob/living/scp_173/Life()

@@ -85,7 +85,7 @@ Used In File(s): \code\game\objects\items\devices\PDA\PDA.dm
                 </div>
                 <br>
             {{/if}}
-            {{if data.cartridge.access.access_engineeringlvl2 == 1}}
+            {{if data.cartridge.access.access_engine == 1}}
                 <div class="item">
                     <div class="itemLabelNarrow">
                         <b>Engineering</b>:
@@ -120,7 +120,7 @@ Used In File(s): \code\game\objects\items\devices\PDA\PDA.dm
                     {{if data.cartridge.access.access_status_display == 1}}
                         {{:helper.link('Status Display', 'gear', {'choice' : "42"}, null, 'fixedLeftWide')}}
                     {{/if}}
-                    {{if data.cartridge.access.access_dclassjanitorial==1}}
+                    {{if data.cartridge.access.access_janitor==1}}
                         {{:helper.link('Custodial Locator', 'gear', {'choice' : "49"}, null, 'fixedLeftWide')}}
                     {{/if}}
                     {{if data.cartridge.radio == 2}}
@@ -129,7 +129,7 @@ Used In File(s): \code\game\objects\items\devices\PDA\PDA.dm
                     {{if data.cartridge.access.access_reagent_scanner==1}}
                         {{:helper.link(data.scanmode == 3 ? 'Disable Reagent Scanner' : 'Enable Reagent Scanner', 'gear', {'choice' : "Reagent Scan"}, null, 'fixedLeftWider')}}
                     {{/if}}
-                    {{if data.cartridge.access.access_engineeringlvl2==1}}
+                    {{if data.cartridge.access.access_engine==1}}
                         {{:helper.link(data.scanmode == 4 ? 'Disable Halogen Counter' : 'Enable Halogen Counter', 'gear', {'choice' : "Halogen Counter"}, null, 'fixedLeftWider')}}
                     {{/if}}
                     {{if data.cartridge.access.access_atmos==1}}

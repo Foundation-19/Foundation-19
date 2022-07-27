@@ -511,14 +511,14 @@ other types of metals and chemistry for reagents).
 /datum/design/item/implant/adrenaline
 	name = "adrenaline"
 	id = "implant_adrenaline"
-	req_tech = list(TECH_MATERIAL = 2, TECH_BIO = 3, TECH_ILLEGAL = 3)
+	req_tech = list(TECH_MATERIAL = 2, TECH_BIO = 3, TECH_ESOTERIC = 3)
 	build_path = /obj/item/weapon/implantcase/adrenalin
 	sort_string = "MFAAE"
 
 /datum/design/item/implant/explosive
 	name = "explosive"
 	id = "implant_explosive"
-	req_tech = list(TECH_MATERIAL = 2, TECH_BIO = 3, TECH_ILLEGAL = 4)
+	req_tech = list(TECH_MATERIAL = 2, TECH_BIO = 3, TECH_ESOTERIC = 4)
 	build_path = /obj/item/weapon/implantcase/explosive
 	sort_string = "MFAAG"
 
@@ -607,7 +607,7 @@ other types of metals and chemistry for reagents).
 
 /datum/design/item/weapon/railgun
 	id = "railgun"
-	req_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 6, TECH_MAGNET = 6, TECH_ILLEGAL = 4)
+	req_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 6, TECH_MAGNET = 6, TECH_ESOTERIC = 4)
 	materials = list(DEFAULT_WALL_MATERIAL = 6000, "gold" = 8000, "silver" = 2000)
 	build_path = /obj/item/weapon/gun/magnetic/railgun
 	sort_string = "TAHAA"
@@ -879,7 +879,7 @@ other types of metals and chemistry for reagents).
 	name = "binary"
 	desc = "Allows for deciphering the binary channel on-the-fly."
 	id = "binaryencrypt"
-	req_tech = list(TECH_ILLEGAL = 2)
+	req_tech = list(TECH_ESOTERIC = 2)
 	materials = list(DEFAULT_WALL_MATERIAL = 300, "glass" = 300)
 	build_path = /obj/item/device/encryptionkey/binary
 	sort_string = "VASAA"
@@ -892,7 +892,7 @@ other types of metals and chemistry for reagents).
 	name = "holographic equipment kit"
 	desc = "A kit of dangerous, high-tech equipment with changeable looks."
 	id = "chameleon"
-	req_tech = list(TECH_ILLEGAL = 10)
+	req_tech = list(TECH_ESOTERIC = 10)
 	materials = list(DEFAULT_WALL_MATERIAL = 500)
 	build_path = /obj/item/weapon/storage/backpack/chameleon/sydie_kit
 	sort_string = "VASBA"

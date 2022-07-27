@@ -455,3 +455,12 @@ RADIATION_LOWER_LIMIT 0.15
 ## The delay in deciseconds between stat() updates.
 ## Lower can be more responsive to scene changes and updates but has a higher client/server overhead.
 # STAT_DELAY 5
+
+## Uncomment below to enable the Panic Bunker
+#USE_PANIC_BUNKER
+
+## Uncomment and add a message below to send to people when they attempt to join during Panic Bunker
+#PANIC_BUNKER_MESSAGE Your client's age is below a day on our server
+
+## Uncomment and add an amount in days below for how many days it must have been since the client first connected to join
+#PANIC_BUNKER_AGE 1
