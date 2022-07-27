@@ -171,14 +171,14 @@
 	region = ACCESS_REGION_COMMAND
 
 //LOGISTICS
-// /var/const/access_cargo = 951
+// /var/const/access_logistics = 951
 // /datum/access/cargo
-//	id = access_cargo
+//	id = access_logistics
 //	desc = "Logistics General"
 
-// /var/const/access_mailsorting = 952
+// /var/const/access_logistics = 952
 // /datum/access/mailsorting
-//	id = access_mailsorting
+//	id = access_logistics
 //	desc = "Logistics Mail Sorting"
 
 // D-CLASS WORK

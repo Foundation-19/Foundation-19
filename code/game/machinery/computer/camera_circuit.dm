@@ -14,7 +14,7 @@
 		possibleNets["Engineering"] = access_engineeringlvl5
 		possibleNets["SS13"] = access_securitylvl5
 		possibleNets["Mining"] = access_mining
-		possibleNets["Cargo"] = access_qm
+		possibleNets["Cargo"] = access_adminlvl2
 		possibleNets["Research"] = access_sciencelvl5
 		possibleNets["Medbay"] = access_medicallvl5
 		..()

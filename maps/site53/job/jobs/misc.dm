@@ -87,8 +87,8 @@
 		access_adminlvl2,
 		access_log_comms,
 		access_maint_tunnels,
-		access_cargo,
-		access_mailsorting
+		access_logistics,
+		access_logistics
 	)
 	minimal_access = list()
 
@@ -125,10 +125,10 @@
 	access = list(
 		access_log_comms,
 		access_maint_tunnels,
-		access_cargo,
-		access_cargo_bot,
+		access_logistics,
+		access_logistics,
 		access_adminlvl1,
-		access_mailsorting
+		access_logistics
 	)
 	minimal_access = list()
 

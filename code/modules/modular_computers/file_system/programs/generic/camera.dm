@@ -17,7 +17,7 @@
 		if(NETWORK_MEDICAL)
 			return access_medicallvl2
 		if(NETWORK_MINE)
-			return access_mailsorting // Cargo office - all cargo staff should have access here.
+			return access_logistics // Cargo office - all cargo staff should have access here.
 		if(NETWORK_RESEARCH)
 			return access_sciencelvl2
 		if(NETWORK_THUNDER)

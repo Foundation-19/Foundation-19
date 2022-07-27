@@ -149,7 +149,7 @@
 
 // ADMINISTRATION
 
-/var/const/access_adminlvl1 = "ACCESS_ADMIN_LEVEL1" //Command Lobby, Logistics, GOC Rep
+/var/const/access_adminlvl1 = "ACCESS_ADMIN_LEVEL1" //Command Lobby, Logistics Lobby, GOC Rep, Office Worker
 /datum/access/adminlvl1
 	id = access_adminlvl1
 	desc = "Admin Level 1"
@@ -180,10 +180,10 @@
 	region = ACCESS_REGION_COMMAND
 
 //LOGISTICS
-// /var/const/access_cargo = 951
-// /datum/access/cargo
-//	id = access_cargo
-//	desc = "Logistics General"
+/var/const/access_logistics = "ACCESS_LOGISTICS"
+/datum/access/logistics
+	id = access_logistics
+	desc = "Logistics"
 
 // /var/const/access_mailsorting = 952
 // /datum/access/mailsorting
@@ -454,13 +454,13 @@
 	id = access_rd
 	desc = "Chief Science Officer"
 	region = ACCESS_REGION_RESEARCH
-*/
+
 /var/const/access_cargo = "ACCESS_CARGO" //31
 /datum/access/cargo
 	id = access_cargo
 	desc = "Cargo Bay"
 	region = ACCESS_REGION_SUPPLY
-/*
+
 /var/const/access_construction = "ACCESS_CONSTRUCTION" //32
 /datum/access/construction
 	id = access_construction
@@ -472,13 +472,13 @@
 	id = access_chemistry
 	desc = "Chemistry Lab"
 	region = ACCESS_REGION_MEDBAY
-*/
+
 /var/const/access_cargo_bot = "ACCESS_CARGO_BOT" //34
 /datum/access/cargo_bot
 	id = access_cargo_bot
 	desc = "Cargo Bot Delivery"
 	region = ACCESS_REGION_SUPPLY
-
+*/
 /var/const/access_hydroponics = "ACCESS_HYDROPONICS" //35
 /datum/access/hydroponics
 	id = access_hydroponics
@@ -514,13 +514,13 @@
 	id = access_cmo
 	desc = "Chief Medical Officer"
 	region = ACCESS_REGION_COMMAND
-*/
+
 /var/const/access_qm = "ACCESS_QUARTERMASTER" //41
 /datum/access/qm
 	id = access_qm
 	desc = "Quartermaster"
 	region = ACCESS_REGION_SUPPLY
-
+*/
 /var/const/access_network = "ACCESS_NETWORK" //42
 /datum/access/network
 	id = access_network
@@ -538,25 +538,25 @@
 	id = access_research
 	desc = "Science"
 	region = ACCESS_REGION_RESEARCH
-
+*/
 /var/const/access_mining = "ACCESS_MINING" //48
 /datum/access/mining
 	id = access_mining
 	desc = "Mining"
 	region = ACCESS_REGION_SUPPLY
-*/
+
 /var/const/access_mining_office = "ACCESS_MINING_OFFICE" //49
 /datum/access/mining_office
 	id = access_mining_office
 	desc = "Mining Office"
 	access_type = ACCESS_TYPE_NONE
-
+/*
 /var/const/access_mailsorting = "ACCESS_SORTING" //50
 /datum/access/mailsorting
 	id = access_mailsorting
 	desc = "Cargo Office"
 	region = ACCESS_REGION_SUPPLY
-
+*/
 /var/const/access_heads_vault = "ACCESS_VAULT"  //53
 /datum/access/heads_vault
 	id = access_heads_vault

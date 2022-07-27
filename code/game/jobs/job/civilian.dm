@@ -48,8 +48,8 @@
 	supervisors = "the head of personnel"
 	selection_color = "#515151"
 	economic_power = 5
-	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station)
-	minimal_access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station)
+	access = list(access_maint_tunnels, access_logistics, access_logistics, access_logistics, access_adminlvl2, access_mining, access_mining_station)
+	minimal_access = list(access_maint_tunnels, access_logistics, access_logistics, access_logistics, access_adminlvl2, access_mining, access_mining_station)
 	minimal_player_age = 3
 	ideal_character_age = 40
 	outfit_type = /decl/hierarchy/outfit/job/cargo/qm
@@ -62,8 +62,8 @@
 	spawn_positions = 2
 	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#515151"
-	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station)
-	minimal_access = list(access_maint_tunnels, access_cargo, access_cargo_bot, access_mailsorting)
+	access = list(access_maint_tunnels, access_logistics, access_logistics, access_logistics, access_adminlvl2, access_mining, access_mining_station)
+	minimal_access = list(access_maint_tunnels, access_logistics, access_logistics, access_logistics)
 	outfit_type = /decl/hierarchy/outfit/job/cargo/cargo_tech
 
 /datum/job/mining
@@ -75,8 +75,8 @@
 	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#515151"
 	economic_power = 5
-	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station)
-	minimal_access = list(access_mining, access_mining_station, access_mailsorting)
+	access = list(access_maint_tunnels, access_logistics, access_logistics, access_logistics, access_adminlvl2, access_mining, access_mining_station)
+	minimal_access = list(access_mining, access_mining_station, access_logistics)
 	alt_titles = list("Drill Technician","Prospector")
 	outfit_type = /decl/hierarchy/outfit/job/cargo/mining
 

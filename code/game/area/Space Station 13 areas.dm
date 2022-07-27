@@ -177,7 +177,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/supply
 	name = "Supply Shuttle"
 	icon_state = "shuttle3"
-	req_access = list(access_cargo)
+	req_access = list(access_logistics)
 	area_flags = AREA_FLAG_HIDE_FROM_HOLOMAP
 
 /area/syndicate_elite_squad
