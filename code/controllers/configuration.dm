@@ -157,6 +157,10 @@ var/list/gamemode_cache = list()
 	var/minimum_byond_version = 512
 	var/minimum_byond_build = 1488
 
+	var/panic_bunker = 0
+	var/panic_bunker_message = ""
+	var/panic_bunker_age = 0
+
 	var/login_export_addr = null
 
 	var/enter_allowed = 1
@@ -818,6 +822,15 @@ var/list/gamemode_cache = list()
 						if(value && value[length(value)] != "/")
 							value += "/"
 						asset_cdn_url = value
+
+				if ("use_panic_bunker")
+					config.panic_bunker = 1
+
+				if ("panic_bunker_message")
+					config.panic_bunker_message = value
+
+				if ("panic_bunker_age")
+					config.panic_bunker_age = text2num(value)
 
 				else
 					log_misc("Unknown setting in configuration: '[name]'")
