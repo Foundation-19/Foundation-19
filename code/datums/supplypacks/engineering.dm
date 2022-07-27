@@ -71,7 +71,7 @@
 	cost = 10
 	containertype = /obj/structure/closet/crate/secure/large
 	containername = "emitter crate"
-	access = access_engine_equip
+	access = access_engineeringlvl2
 
 /decl/hierarchy/supply_pack/engineering/field_gen
 	name = "Equipment - Field generator"
@@ -79,7 +79,7 @@
 	containertype = /obj/structure/closet/crate/large
 	cost = 10
 	containername = "field generator crate"
-	access = access_ce
+	access = access_engineeringlvl5
 
 /decl/hierarchy/supply_pack/engineering/sing_gen
 	name = "Equipment - Singularity generator"
@@ -87,7 +87,7 @@
 	cost = 10
 	containertype = /obj/structure/closet/crate/secure/large
 	containername = "singularity generator crate"
-	access = access_ce
+	access = access_engineeringlvl5
 
 /decl/hierarchy/supply_pack/engineering/collector
 	name = "Power - Collector"
@@ -95,7 +95,7 @@
 	cost = 8
 	containertype = /obj/structure/closet/crate/secure/large
 	containername = "collector crate"
-	access = access_engine_equip
+	access = access_engineeringlvl2
 
 /decl/hierarchy/supply_pack/engineering/PA
 	name = "Equipment - Particle accelerator"
@@ -109,7 +109,7 @@
 	cost = 40
 	containertype = /obj/structure/largecrate
 	containername = "particle accelerator crate"
-	access = access_ce
+	access = access_engineeringlvl5
 
 /decl/hierarchy/supply_pack/engineering/pacman_parts
 	name = "Power - P.A.C.M.A.N. portable generator parts"
@@ -120,7 +120,7 @@
 	cost = 45
 	containername = "\improper P.A.C.M.A.N. Portable Generator Construction Kit"
 	containertype = /obj/structure/closet/crate/secure
-	access = access_tech_storage
+	access = access_engineeringlvl2
 
 /decl/hierarchy/supply_pack/engineering/super_pacman_parts
 	name = "Power - Super P.A.C.M.A.N. portable generator parts"
@@ -131,7 +131,7 @@
 	cost = 55
 	containername = "\improper Super P.A.C.M.A.N. portable generator construction kit"
 	containertype = /obj/structure/closet/crate/secure
-	access = access_tech_storage
+	access = access_engineeringlvl2
 
 /decl/hierarchy/supply_pack/engineering/teg
 	name = "Power - Mark I Thermoelectric Generator"
@@ -139,7 +139,7 @@
 	cost = 75
 	containertype = /obj/structure/closet/crate/secure/large
 	containername = "\improper Mk1 TEG crate"
-	access = access_engine_equip
+	access = access_engineeringlvl2
 
 /decl/hierarchy/supply_pack/engineering/circulator
 	name = "Equipment - Binary atmospheric circulator"
@@ -147,7 +147,7 @@
 	cost = 60
 	containertype = /obj/structure/closet/crate/secure/large
 	containername = "atmospheric circulator crate"
-	access = access_atmospherics
+	access = access_engineeringlvl2
 
 /decl/hierarchy/supply_pack/engineering/air_dispenser
 	name = "Equipment - Pipe Dispenser"
@@ -155,7 +155,7 @@
 	cost = 35
 	containertype = /obj/structure/closet/crate/secure/large
 	containername = "pipe dispenser crate"
-	access = access_atmospherics
+	access = access_engineeringlvl2
 
 /decl/hierarchy/supply_pack/engineering/disposals_dispenser
 	name = "Equipment - Disposals pipe dispenser"
@@ -163,7 +163,7 @@
 	cost = 35
 	containertype = /obj/structure/closet/crate/secure/large
 	containername = "disposal dispenser crate"
-	access = access_atmospherics
+	access = access_engineeringlvl2
 
 /decl/hierarchy/supply_pack/engineering/shield_generator
 	name = "Equipment - Shield generator construction kit"
@@ -171,7 +171,7 @@
 	cost = 50
 	containertype = /obj/structure/closet/crate/secure
 	containername = "shield generator construction kit crate"
-	access = access_engine
+	access = access_engineeringlvl2
 
 /decl/hierarchy/supply_pack/engineering/smbig
 	name = "Power - Supermatter core"
@@ -179,7 +179,7 @@
 	cost = 150
 	containertype = /obj/structure/closet/crate/secure/large/phoron
 	containername = "\improper Supermatter crate (CAUTION)"
-	access = access_ce
+	access = access_engineeringlvl5
 
 /decl/hierarchy/supply_pack/engineering/smsmall
 	name = "Power - Supermatter shard"
@@ -187,7 +187,7 @@
 	cost = 75
 	containertype = /obj/structure/closet/crate/secure/large/phoron
 	containername = "\improper Supermatter crate (CAUTION)"
-	access = access_ce
+	access = access_engineeringlvl5
 
 /decl/hierarchy/supply_pack/engineering/fueltank
 	name = "Liquid - Fuel tank"
@@ -247,4 +247,4 @@
 	cost = 120
 	containername = "engineering voidsuit crate"
 	containertype = /obj/structure/closet/crate/secure/large
-	access = access_engine
+	access = access_engineeringlvl2

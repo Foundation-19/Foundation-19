@@ -63,7 +63,7 @@
 		access_engineeringlvl2,
 		access_engineeringlvl3,
 		access_engineeringlvl4,
-		access_engine_equip
+		access_engineeringlvl2
 	)
 
 	minimal_access = list()

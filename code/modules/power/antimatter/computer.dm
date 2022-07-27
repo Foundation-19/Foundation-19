@@ -7,7 +7,7 @@
 	name = "Antimatter Engine Console"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "comm_computer"
-	req_access = list(ACCESS_ENGINE)
+	req_access = list(access_engineeringlvl2)
 	var/engine_id = 0
 	var/authenticated = 0
 	var/obj/machinery/power/am_engine/engine/connected_E = null

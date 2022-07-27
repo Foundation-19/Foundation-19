@@ -5,7 +5,7 @@
 	icon_state = "datadisk0"
 	item_state = "card-id"
 	w_class = ITEM_SIZE_SMALL
-	req_access = access_ce
+	req_access = access_engineeringlvl5
 	var/subject = "some strange, incomprehensible design"
 	var/locked = 1
 

@@ -3,7 +3,7 @@
 	helmet = /obj/item/clothing/head/helmet/space/fishbowl
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_eva)
+	req_access = list(access_engineeringlvl2)
 
 /obj/machinery/suit_storage_unit/atmos
 	name = "Atmospherics Voidsuit Storage Unit"
@@ -12,7 +12,7 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_atmospherics)
+	req_access = list(access_engineeringlvl2)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/atmos/alt
@@ -26,7 +26,7 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_construction)
+	req_access = list(access_engineeringlvl2)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/engineering/unishi

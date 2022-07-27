@@ -87,7 +87,6 @@
 		access_adminlvl2,
 		access_log_comms,
 		access_maint_tunnels,
-		access_emergency_storage,
 		access_cargo,
 		access_mailsorting
 	)
@@ -126,7 +125,6 @@
 	access = list(
 		access_log_comms,
 		access_maint_tunnels,
-		access_emergency_storage,
 		access_cargo,
 		access_cargo_bot,
 		access_adminlvl1,

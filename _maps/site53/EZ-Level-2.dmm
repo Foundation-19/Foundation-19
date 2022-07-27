@@ -1444,7 +1444,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(list("ACCESS_ENGINE_EQUIP","ACCESS_ATMOS"))
+	req_access = list(list("access_engineeringlvl2","ACCESS_ATMOS"))
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/crew_quarters/heads/office/ce)
@@ -3806,7 +3806,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(list("ACCESS_ENGINE_EQUIP","ACCESS_ATMOS"))
+	req_access = list(list("access_engineeringlvl2","ACCESS_ATMOS"))
 	},
 /obj/structure/cable/green{
 	dir = 8

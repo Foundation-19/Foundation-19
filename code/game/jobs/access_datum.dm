@@ -328,7 +328,7 @@
 	id = access_tox_storage
 	desc = "Toxins Lab"
 	region = ACCESS_REGION_RESEARCH
-*/
+
 /var/const/access_engine = "ACCESS_ENGINEERING" //10
 /datum/access/engine
 	id = access_engine
@@ -340,7 +340,7 @@
 	id = access_engine_equip
 	desc = "Engine Room"
 	region = ACCESS_REGION_ENGINEERING
-
+*/
 /var/const/access_maint_tunnels = "ACCESS_MAINT" //12
 /datum/access/maint_tunnels
 	id = access_maint_tunnels
@@ -352,13 +352,13 @@
 	id = access_external_airlocks
 	desc = "External Airlocks"
 	region = ACCESS_REGION_ENGINEERING
-
+/*
 /var/const/access_emergency_storage = "ACCESS_EMERGENCY_STORAGE" //14
 /datum/access/emergency_storage
 	id = access_emergency_storage
 	desc = "Emergency Storage"
 	region = ACCESS_REGION_ENGINEERING
-
+*/
 /var/const/access_change_ids = "ACCESS_CHANGE_ID" //15
 /datum/access/change_ids
 	id = access_change_ids
@@ -370,7 +370,7 @@
 	id = access_ai_upload
 	desc = "AI Upload"
 	region = ACCESS_REGION_COMMAND
-
+/*
 /var/const/access_teleporter = "ACCESS_TELEPORTER" //17
 /datum/access/teleporter
 	id = access_teleporter
@@ -382,7 +382,7 @@
 	id = access_eva
 	desc = "EVA"
 	region = ACCESS_REGION_COMMAND
-
+*/
 /var/const/access_bridge = "ACCESS_BRIDGE" //19
 /datum/access/bridge
 	id = access_bridge
@@ -406,7 +406,7 @@
 	id = access_chapel_office
 	desc = "Chapel Office"
 	region = ACCESS_REGION_GENERAL
-
+/*
 /var/const/access_tech_storage = "ACCESS_TECH_STORAGE" //23
 /datum/access/tech_storage
 	id = access_tech_storage
@@ -418,7 +418,7 @@
 	id = access_atmospherics
 	desc = "Atmospherics"
 	region = ACCESS_REGION_ENGINEERING
-
+*/
 /var/const/access_bar = "ACCESS_BAR" //25
 /datum/access/bar
 	id = access_bar
@@ -460,13 +460,13 @@
 	id = access_cargo
 	desc = "Cargo Bay"
 	region = ACCESS_REGION_SUPPLY
-
+/*
 /var/const/access_construction = "ACCESS_CONSTRUCTION" //32
 /datum/access/construction
 	id = access_construction
 	desc = "Construction Areas"
 	region = ACCESS_REGION_ENGINEERING
-/*
+
 /var/const/access_chemistry = "ACCESS_CHEMISTRY" //33
 /datum/access/chemistry
 	id = access_chemistry
@@ -484,13 +484,13 @@
 	id = access_hydroponics
 	desc = "Hydroponics"
 	region = ACCESS_REGION_GENERAL
-
+/*
 /var/const/access_manufacturing = "ACCESS_MANUFACTURING" //36
 /datum/access/manufacturing
 	id = access_manufacturing
 	desc = "Manufacturing"
 	access_type = ACCESS_TYPE_NONE
-
+*/
 /var/const/access_library = "ACCESS_LIBRARY" //37
 /datum/access/library
 	id = access_library
@@ -574,13 +574,13 @@
 	id = access_xenobiology
 	desc = "Xenobiology Lab"
 	region = ACCESS_REGION_RESEARCH
-*/
+
 /var/const/access_ce = "ACCESS_CHIEF_ENGINEER" //56
 /datum/access/ce
 	id = access_ce
 	desc = "Chief Engineer"
 	region = ACCESS_REGION_ENGINEERING
-
+*/
 /var/const/access_hop = "ACCESS_HEAD_OF_PERSONNEL" //57
 /datum/access/hop
 	id = access_hop

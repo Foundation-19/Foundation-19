@@ -10,7 +10,7 @@
 	icon_keyboard = "power_key"
 	icon_screen = "ai-fixer"
 	light_color = "#a97faa"
-	req_access = list(access_engine)
+	req_access = list(access_engineeringlvl2)
 	machine_name = "\improper RCON remote control console"
 	machine_desc = "RCON is a system allowing for remote modification of SMES units throughout the ship. This console allows that system to be properly utilized."
 	var/current_tag = null

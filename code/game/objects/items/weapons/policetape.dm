@@ -90,7 +90,7 @@ var/list/tape_roll_applications = list()
 /obj/item/tape/engineering
 	name = "engineering tape"
 	desc = "A length of engineering tape. Better not cross it."
-	req_access = list(list(access_engine,access_atmospherics))
+	req_access = list(list(access_engineeringlvl2,access_engineeringlvl2))
 	color = COLOR_ORANGE
 
 /obj/item/taperoll/atmos
@@ -102,7 +102,7 @@ var/list/tape_roll_applications = list()
 /obj/item/tape/atmos
 	name = "atmospherics tape"
 	desc = "A length of atmospherics tape. Better not cross it."
-	req_access = list(list(access_engine,access_atmospherics))
+	req_access = list(list(access_engineeringlvl2,access_engineeringlvl2))
 	color = COLOR_BLUE_LIGHT
 	icon_base = "stripetape"
 	detail_overlay = "stripes"

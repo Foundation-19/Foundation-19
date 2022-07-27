@@ -37,7 +37,7 @@
 	contains = list(/obj/item/rpd = 2)
 	cost = 100
 	containertype = /obj/structure/closet/crate/secure
-	access = access_atmospherics
+	access = access_engineeringlvl2
 	containername = "RPD crate"
 
 /decl/hierarchy/supply_pack/atmospherics/canister_empty
@@ -74,7 +74,7 @@
 	cost = 70
 	containername = "phoron gas canister crate"
 	containertype = /obj/structure/closet/crate/secure/large
-	access = access_atmospherics
+	access = access_engineeringlvl2
 
 /decl/hierarchy/supply_pack/atmospherics/canister_hydrogen
 	name = "Gas - Hydrogen canister"
@@ -82,7 +82,7 @@
 	cost = 25
 	containername = "hydrogen canister crate"
 	containertype = /obj/structure/closet/crate/secure/large
-	access = access_atmospherics
+	access = access_engineeringlvl2
 
 /decl/hierarchy/supply_pack/atmospherics/canister_sleeping_agent
 	name = "Gas - Nitrous oxide gas canister"
@@ -90,7 +90,7 @@
 	cost = 40
 	containername = "\improper N2O gas canister crate"
 	containertype = /obj/structure/closet/crate/secure/large
-	access = access_atmospherics
+	access = access_engineeringlvl2
 
 /decl/hierarchy/supply_pack/atmospherics/canister_carbon_dioxide
 	name = "Gas - Carbon dioxide gas canister"
@@ -98,7 +98,7 @@
 	cost = 40
 	containername = "\improper CO2 canister crate"
 	containertype = /obj/structure/closet/crate/secure/large
-	access = access_atmospherics
+	access = access_engineeringlvl2
 
 /decl/hierarchy/supply_pack/atmospherics/fuel
 	name = "Liquid - Fuel tanks"
@@ -120,7 +120,7 @@
 	cost = 120
 	containername = "atmospherics voidsuit crate"
 	containertype = /obj/structure/closet/crate/secure/large
-	access = access_atmospherics
+	access = access_engineeringlvl2
 
 /decl/hierarchy/supply_pack/atmospherics/scanner_module
 	name = "Electronics - Atmospherics scanner modules"
@@ -128,4 +128,4 @@
 	cost = 20
 	containername = "atmospherics scanner module crate"
 	containertype = /obj/structure/closet/crate/secure
-	access = access_atmospherics
+	access = access_engineeringlvl2

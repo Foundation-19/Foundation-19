@@ -11,7 +11,7 @@
 	program_menu_icon = "notice"
 	extended_desc = "This program connects to specially calibrated supermatter sensors to provide information on the status of supermatter-based engines."
 	ui_header = "smmon_0.gif"
-	required_access = access_engine
+	required_access = access_engineeringlvl2
 	requires_ntnet = TRUE
 	network_destination = "supermatter monitoring system"
 	size = 5

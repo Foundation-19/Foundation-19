@@ -58,7 +58,7 @@
 	new /obj/item/taperoll/research(src)
 
 /obj/machinery/alarm/isolation
-	req_access = list(list(access_sciencelvl2, access_atmospherics, access_engine_equip))
+	req_access = list(list(access_sciencelvl2, access_engineeringlvl2, access_engineeringlvl2))
 
 /obj/machinery/alarm/monitor/isolation
-	req_access = list(list(access_sciencelvl2, access_atmospherics, access_engine_equip))
+	req_access = list(list(access_sciencelvl2, access_engineeringlvl2, access_engineeringlvl2))

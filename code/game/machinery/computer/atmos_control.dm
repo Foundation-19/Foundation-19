@@ -10,7 +10,7 @@
 	light_color = "#00b000"
 	density = TRUE
 	anchored = TRUE
-	req_access = list(access_ce)
+	req_access = list(access_engineeringlvl5)
 	var/list/monitored_alarm_ids = null
 	var/datum/nano_module/atmos_control/atmos_control
 	base_type = /obj/machinery/computer/atmoscontrol

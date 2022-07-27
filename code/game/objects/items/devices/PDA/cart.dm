@@ -8,7 +8,7 @@
 
 	var/obj/item/radio/integrated/radio = null
 	var/access_securitylvl2 = 0
-	var/access_engine = 0
+	var/access_engineeringlvl2 = 0
 	var/access_atmos = 0
 	var/access_medicallvl2 = 0
 	var/access_clown = 0
@@ -40,7 +40,7 @@
 /obj/item/weapon/cartridge/engineering
 	name = "\improper Power-ON cartridge"
 	icon_state = "cart-e"
-	access_engine = 1
+	access_engineeringlvl2 = 1
 
 /obj/item/weapon/cartridge/atmos
 	name = "\improper BreatheDeep cartridge"
@@ -151,7 +151,7 @@
 	name = "\improper Power-On DELUXE"
 	icon_state = "cart-ce"
 	access_status_display = 1
-	access_engine = 1
+	access_engineeringlvl2 = 1
 	access_atmos = 1
 
 /obj/item/weapon/cartridge/cmo
@@ -178,7 +178,7 @@
 	icon_state = "cart-c"
 	access_quartermaster = 1
 	access_janitor = 1
-	access_engine = 1
+	access_engineeringlvl2 = 1
 	access_securitylvl2 = 1
 	access_medicallvl2 = 1
 	access_reagent_scanner = 1

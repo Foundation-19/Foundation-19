@@ -4,7 +4,7 @@
 
 /obj/structure/closet/secure_closet/engineering_chief_torch
 	name = "chief engineer's locker"
-	req_access = list(access_ce)
+	req_access = list(access_engineeringlvl5)
 	icon_state = "securece1"
 	icon_closed = "securece"
 	icon_locked = "securece1"
@@ -44,7 +44,7 @@
 
 /obj/structure/closet/secure_closet/engineering_torch
 	name = "engineer's locker"
-	req_access = list(access_engine_equip)
+	req_access = list(access_engineeringlvl2)
 	icon_state = "secureeng1"
 	icon_closed = "secureeng"
 	icon_locked = "secureeng1"
@@ -71,7 +71,7 @@
 
 /obj/structure/closet/secure_closet/engineering_contractor
 	name = "engineering contractor's locker"
-	req_access = list(access_engine)
+	req_access = list(access_engineeringlvl2)
 	icon_state = "secureeng1"
 	icon_closed = "secureeng"
 	icon_locked = "secureeng1"
@@ -124,7 +124,7 @@
 
 /obj/structure/closet/secure_closet/atmos_torch
 	name = "atmospherics equipment locker"
-	req_access = list(access_atmospherics)
+	req_access = list(access_engineeringlvl2)
 	icon_state = "secureatm1"
 	icon_closed = "secureatm"
 	icon_locked = "secureatm1"
