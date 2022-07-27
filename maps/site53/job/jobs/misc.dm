@@ -167,7 +167,11 @@
 	)
 	hud_icon = "hudsanitationtechnician"
 
-	access = list(access_civ_comms, access_sciencelvl1, access_dclassjanitorial) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
+	access = list(
+		access_civ_comms,
+		access_sciencelvl1,
+		access_dclassjanitorial
+	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 
 	minimal_access = list()
 
@@ -188,7 +192,8 @@
 	hud_icon = "hudcook"
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 
-	access = list(access_civ_comms, 
+	access = list(
+		access_civ_comms, 
 		access_dclasskitchen,
 		access_dclassbotany
 	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates

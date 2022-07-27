@@ -103,7 +103,7 @@
 	boots_type = /obj/item/clothing/shoes/magboots
 	tank_type = /obj/item/weapon/tank/oxygen
 	mask_type = /obj/item/clothing/mask/breath
-	req_access = list(access_mining)
+	req_access = list(access_dclassmining)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/mining/alt
@@ -725,7 +725,7 @@
 /obj/machinery/suit_cycler/mining
 	name = "Mining suit cycler"
 	model_text = "Mining"
-	req_access = list(access_mining)
+	req_access = list(access_dclassmining)
 	departments = list("Mining")
 	species = list(SPECIES_HUMAN,SPECIES_TAJARA,SPECIES_SKRELL,SPECIES_UNATHI)
 
@@ -761,7 +761,7 @@
 /obj/machinery/suit_cycler/pilot
 	name = "Pilot suit cycler"
 	model_text = "Pilot"
-	req_access = list(access_mining_office)
+	req_access = list(access_dclassmining)
 	departments = list("Pilot")
 	species = list(SPECIES_HUMAN,SPECIES_TAJARA,SPECIES_SKRELL,SPECIES_UNATHI)
 

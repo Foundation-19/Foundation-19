@@ -69,32 +69,32 @@
 	cost = 80
 	containertype = /obj/structure/largecrate/animal/cow
 	containername = "cow crate"
-	access = access_hydroponics
+	access = access_dclassbotany
 
 /decl/hierarchy/supply_pack/livecargo/goat
 	name = "Live - Goat"
 	cost = 75
 	containertype = /obj/structure/largecrate/animal/goat
 	containername = "goat crate"
-	access = access_hydroponics
+	access = access_dclassbotany
 
 /decl/hierarchy/supply_pack/livecargo/sheep
 	name = "Live - Sheep"
 	cost = 60
 	containertype = /obj/structure/largecrate/animal/sheep
 	containername = "sheep crate"
-	access = access_hydroponics
+	access = access_dclassbotany
 
 /decl/hierarchy/supply_pack/livecargo/goose
 	name = "Live - Goose"
 	cost = 75
 	containertype = /obj/structure/largecrate/animal/goose
 	containername = "goose containment unit"
-	access = access_hydroponics
+	access = access_dclassbotany
 
 /decl/hierarchy/supply_pack/livecargo/chicken
 	name = "Live - Chicken"
 	cost = 70
 	containertype = /obj/structure/largecrate/animal/chick
 	containername = "chicken crate"
-	access = access_hydroponics
+	access = access_dclassbotany

@@ -179,6 +179,26 @@
 	desc = "Admin Level 5"
 	region = ACCESS_REGION_COMMAND
 
+/var/const/access_hop = "ACCESS_HEAD_OF_PERSONNEL" //57
+/datum/access/hop
+	id = access_hop
+	desc = "Head of Personnel"
+	region = ACCESS_REGION_COMMAND
+
+/var/const/access_change_ids = "ACCESS_CHANGE_ID" //15
+/datum/access/change_ids
+	id = access_change_ids
+	desc = "ID Computer"
+	region = ACCESS_REGION_COMMAND
+
+//STAFF
+
+/var/const/access_chapel_office = "ACCESS_CHAPEL_STORAGE" //22
+/datum/access/chapel_office
+	id = access_chapel_office
+	desc = "Chapel Office"
+	region = ACCESS_REGION_GENERAL
+
 //LOGISTICS
 /var/const/access_logistics = "ACCESS_LOGISTICS"
 /datum/access/logistics
@@ -224,6 +244,20 @@
 	desc = "Keycard Authentication Access"
 	region = ACCESS_REGION_COMMAND
 
+//TELECOMMS AND NETWORK ACCESS
+
+/var/const/access_tcomsat ="ACCESS_TELECOMS" // has access to the entire telecomms satellite / machinery 61
+/datum/access/tcomsat
+	id = access_tcomsat
+	desc = "Telecommunications"
+	region = ACCESS_REGION_COMMAND
+
+/var/const/access_network = "ACCESS_NETWORK" //42
+/datum/access/network
+	id = access_network
+	desc = "Primary Network"
+	region = ACCESS_REGION_RESEARCH
+
 // TELECOMMS CHANNELS - THESE DON'T GO ON DOORS
 
 /var/const/access_eng_comms = "ACCESS_COMMS_ENGINEERING"
@@ -268,8 +302,19 @@
 	desc = "Command Comms"
 	region = ACCESS_REGION_NONE
 
-/* Additional Access
-*/
+// Additional Access
+
+/var/const/access_maint_tunnels = "ACCESS_MAINT" //12
+/datum/access/maint_tunnels
+	id = access_maint_tunnels
+	desc = "Maintenance"
+	region = ACCESS_REGION_ENGINEERING
+
+/var/const/access_external_airlocks = "ACCESS_EXTERNAL" //13
+/datum/access/external_airlocks
+	id = access_external_airlocks
+	desc = "External Airlocks"
+	region = ACCESS_REGION_ENGINEERING
 
 /var/const/access_torch_fax = "ACCESS_TORCH_FAX"
 /datum/access/torch_fax
@@ -340,7 +385,7 @@
 	id = access_engine_equip
 	desc = "Engine Room"
 	region = ACCESS_REGION_ENGINEERING
-*/
+
 /var/const/access_maint_tunnels = "ACCESS_MAINT" //12
 /datum/access/maint_tunnels
 	id = access_maint_tunnels
@@ -352,19 +397,19 @@
 	id = access_external_airlocks
 	desc = "External Airlocks"
 	region = ACCESS_REGION_ENGINEERING
-/*
+
 /var/const/access_emergency_storage = "ACCESS_EMERGENCY_STORAGE" //14
 /datum/access/emergency_storage
 	id = access_emergency_storage
 	desc = "Emergency Storage"
 	region = ACCESS_REGION_ENGINEERING
-*/
+
 /var/const/access_change_ids = "ACCESS_CHANGE_ID" //15
 /datum/access/change_ids
 	id = access_change_ids
 	desc = "ID Computer"
 	region = ACCESS_REGION_COMMAND
-/*
+
 /var/const/access_ai_upload = "ACCESS_AI_UPLOAD" //16
 /datum/access/ai_upload
 	id = access_ai_upload
@@ -400,13 +445,13 @@
 	id = access_all_personal_lockers
 	desc = "Personal Lockers"
 	region = ACCESS_REGION_COMMAND
-*/
+
 /var/const/access_chapel_office = "ACCESS_CHAPEL_STORAGE" //22
 /datum/access/chapel_office
 	id = access_chapel_office
 	desc = "Chapel Office"
 	region = ACCESS_REGION_GENERAL
-/*
+
 /var/const/access_tech_storage = "ACCESS_TECH_STORAGE" //23
 /datum/access/tech_storage
 	id = access_tech_storage
@@ -418,7 +463,7 @@
 	id = access_atmospherics
 	desc = "Atmospherics"
 	region = ACCESS_REGION_ENGINEERING
-*/
+
 /var/const/access_bar = "ACCESS_BAR" //25
 /datum/access/bar
 	id = access_bar
@@ -442,7 +487,7 @@
 	id = access_kitchen
 	desc = "Kitchen"
 	region = ACCESS_REGION_GENERAL
-/*
+
 /var/const/access_robotics = "ACCESS_ROBOTICS" //29
 /datum/access/robotics
 	id = access_robotics
@@ -478,13 +523,13 @@
 	id = access_cargo_bot
 	desc = "Cargo Bot Delivery"
 	region = ACCESS_REGION_SUPPLY
-*/
+
 /var/const/access_hydroponics = "ACCESS_HYDROPONICS" //35
 /datum/access/hydroponics
 	id = access_hydroponics
 	desc = "Hydroponics"
 	region = ACCESS_REGION_GENERAL
-/*
+
 /var/const/access_manufacturing = "ACCESS_MANUFACTURING" //36
 /datum/access/manufacturing
 	id = access_manufacturing
@@ -520,13 +565,13 @@
 	id = access_qm
 	desc = "Quartermaster"
 	region = ACCESS_REGION_SUPPLY
-*/
+
 /var/const/access_network = "ACCESS_NETWORK" //42
 /datum/access/network
 	id = access_network
 	desc = "Primary Network"
 	region = ACCESS_REGION_RESEARCH
-/*
+
 /var/const/access_surgery = "ACCESS_SURGERY" //45
 /datum/access/surgery
 	id = access_surgery
@@ -538,7 +583,7 @@
 	id = access_research
 	desc = "Science"
 	region = ACCESS_REGION_RESEARCH
-*/
+
 /var/const/access_mining = "ACCESS_MINING" //48
 /datum/access/mining
 	id = access_mining
@@ -550,7 +595,7 @@
 	id = access_mining_office
 	desc = "Mining Office"
 	access_type = ACCESS_TYPE_NONE
-/*
+
 /var/const/access_mailsorting = "ACCESS_SORTING" //50
 /datum/access/mailsorting
 	id = access_mailsorting
@@ -562,13 +607,13 @@
 	id = access_heads_vault
 	desc = "Main Vault"
 	region = ACCESS_REGION_COMMAND
-*/
-/var/const/access_mining_station = "ACCESS_MINING_EVA" //54
-/datum/access/mining_station
-	id = access_mining_station
+
+/var/const/access_mining_eva = "ACCESS_MINING_EVA" //54
+/datum/access/mining_mining_eva
+	id = access_mining_eva
 	desc = "Mining EVA"
 	region = ACCESS_REGION_SUPPLY
-/*
+
 /var/const/access_xenobiology = "ACCESS_XENOBIO" //55
 /datum/access/xenobiology
 	id = access_xenobiology
@@ -580,13 +625,13 @@
 	id = access_ce
 	desc = "Chief Engineer"
 	region = ACCESS_REGION_ENGINEERING
-*/
+
 /var/const/access_hop = "ACCESS_HEAD_OF_PERSONNEL" //57
 /datum/access/hop
 	id = access_hop
 	desc = "Head of Personnel"
 	region = ACCESS_REGION_COMMAND
-/*
+
 /var/const/access_hos = "ACCESS_HEAD_OF_SECURITY" //58
 /datum/access/hos
 	id = access_hos
@@ -598,25 +643,25 @@
 	id = access_RC_announce
 	desc = "RC Announcements"
 	region = ACCESS_REGION_COMMAND
-*/
+
 /var/const/access_tcomsat ="ACCESS_TELECOMS" // has access to the entire telecomms satellite / machinery 61
 /datum/access/tcomsat
 	id = access_tcomsat
 	desc = "Telecommunications"
 	region = ACCESS_REGION_COMMAND
-/*
+
 /var/const/access_gateway = "ACCESS_GATEWAY" //62
 /datum/access/gateway
 	id = access_gateway
 	desc = "Gateway"
 	region = ACCESS_REGION_COMMAND
-*/
+
 /var/const/access_sec_doors = "ACCESS_SEC_DOORS" // Security front doors //63
 /datum/access/sec_doors
 	id = access_sec_doors
 	desc = "Security"
 	region = ACCESS_REGION_SECURITY
-/*
+
 /var/const/access_psychiatrist = "ACCESS_PSYCHIATRIST" // Psychiatrist's office 64
 /datum/access/psychiatrist
 	id = access_psychiatrist

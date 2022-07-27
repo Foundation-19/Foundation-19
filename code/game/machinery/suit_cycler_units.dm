@@ -15,7 +15,7 @@
 /obj/machinery/suit_cycler/mining
 	name = "Mining suit cycler"
 	model_text = "Mining"
-	req_access = list(access_mining)
+	req_access = list(access_dclassmining)
 	available_modifications = list(/decl/item_modifier/space_suit/mining)
 	species = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI)
 
@@ -64,6 +64,6 @@
 /obj/machinery/suit_cycler/pilot
 	name = "Pilot suit cycler"
 	model_text = "Pilot"
-	req_access = list(access_mining_office)
+	req_access = list(access_dclassmining)
 	available_modifications = list(/decl/item_modifier/space_suit/pilot)
 	species = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI)

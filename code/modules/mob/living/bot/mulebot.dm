@@ -23,7 +23,7 @@
 	max_target_dist = 250
 	target_speed = 3
 	max_frustration = 5
-	botcard_access = list(access_maint_tunnels, access_logistics, access_logistics, access_logistics, access_adminlvl2, access_mining, access_mining_station)
+	botcard_access = list(access_maint_tunnels, access_logistics, access_logistics, access_logistics, access_adminlvl2, access_dclassmining)
 
 	var/atom/movable/load
 

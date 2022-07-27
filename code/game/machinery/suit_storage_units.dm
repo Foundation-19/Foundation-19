@@ -65,7 +65,7 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_mining)
+	req_access = list(access_dclassmining)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/mining/alt

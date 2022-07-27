@@ -10,7 +10,7 @@
 	icon_state = "farmbot0"
 	health = 50
 	maxHealth = 50
-	req_access = list(list(access_hydroponics, access_sciencelvl2))
+	req_access = list(list(access_dclassbotany, access_sciencelvl2))
 
 	var/action = "" // Used to update icon
 	var/waters_trays = 1

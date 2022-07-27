@@ -64,7 +64,7 @@
 	cost = 15
 	containertype = /obj/structure/closet/crate/secure
 	containername = "shaft miner equipment crate"
-	access = access_mining
+	access = access_dclassmining
 
 /decl/hierarchy/supply_pack/science/flamps
 	num_contained = 3

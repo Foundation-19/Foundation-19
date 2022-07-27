@@ -8,8 +8,8 @@
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#515151"
-	access = list(access_hydroponics, access_bar, access_kitchen)
-	minimal_access = list(access_bar)
+	access = list(access_dclassbotany, access_dclasskitchen, access_dclasskitchen)
+	minimal_access = list(access_dclasskitchen)
 	outfit_type = /decl/hierarchy/outfit/job/service/bartender
 
 /datum/job/chef
@@ -20,8 +20,8 @@
 	spawn_positions = 2
 	supervisors = "the head of personnel"
 	selection_color = "#515151"
-	access = list(access_hydroponics, access_bar, access_kitchen)
-	minimal_access = list(access_kitchen)
+	access = list(access_dclassbotany, access_dclasskitchen, access_dclasskitchen)
+	minimal_access = list(access_dclasskitchen)
 	alt_titles = list("Cook")
 	outfit_type = /decl/hierarchy/outfit/job/service/chef
 
@@ -33,8 +33,8 @@
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#515151"
-	access = list(access_hydroponics, access_bar, access_kitchen)
-	minimal_access = list(access_hydroponics)
+	access = list(access_dclassbotany, access_dclasskitchen, access_dclasskitchen)
+	minimal_access = list(access_dclassbotany)
 	alt_titles = list("Hydroponicist")
 	outfit_type = /decl/hierarchy/outfit/job/service/gardener
 
@@ -48,8 +48,8 @@
 	supervisors = "the head of personnel"
 	selection_color = "#515151"
 	economic_power = 5
-	access = list(access_maint_tunnels, access_logistics, access_logistics, access_logistics, access_adminlvl2, access_mining, access_mining_station)
-	minimal_access = list(access_maint_tunnels, access_logistics, access_logistics, access_logistics, access_adminlvl2, access_mining, access_mining_station)
+	access = list(access_maint_tunnels, access_logistics, access_logistics, access_logistics, access_adminlvl2, access_dclassmining, access_mining_eva)
+	minimal_access = list(access_maint_tunnels, access_logistics, access_logistics, access_logistics, access_adminlvl2, access_dclassmining, access_mining_eva)
 	minimal_player_age = 3
 	ideal_character_age = 40
 	outfit_type = /decl/hierarchy/outfit/job/cargo/qm
@@ -62,7 +62,7 @@
 	spawn_positions = 2
 	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#515151"
-	access = list(access_maint_tunnels, access_logistics, access_logistics, access_logistics, access_adminlvl2, access_mining, access_mining_station)
+	access = list(access_maint_tunnels, access_logistics, access_logistics, access_logistics, access_adminlvl2, access_dclassmining, access_mining_eva)
 	minimal_access = list(access_maint_tunnels, access_logistics, access_logistics, access_logistics)
 	outfit_type = /decl/hierarchy/outfit/job/cargo/cargo_tech
 
@@ -75,8 +75,8 @@
 	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#515151"
 	economic_power = 5
-	access = list(access_maint_tunnels, access_logistics, access_logistics, access_logistics, access_adminlvl2, access_mining, access_mining_station)
-	minimal_access = list(access_mining, access_mining_station, access_logistics)
+	access = list(access_maint_tunnels, access_logistics, access_logistics, access_logistics, access_adminlvl2, access_dclassmining, access_mining_eva)
+	minimal_access = list(access_dclassmining, access_mining_eva, access_logistics)
 	alt_titles = list("Drill Technician","Prospector")
 	outfit_type = /decl/hierarchy/outfit/job/cargo/mining
 
@@ -88,8 +88,8 @@
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#515151"
-	access = list(access_janitor, access_maint_tunnels, access_engineeringlvl2, access_sciencelvl2, access_sec_doors, access_medicallvl2)
-	minimal_access = list(access_janitor, access_maint_tunnels, access_engineeringlvl2, access_sciencelvl2, access_sec_doors, access_medicallvl2)
+	access = list(access_dclassjanitorial, access_maint_tunnels, access_engineeringlvl2, access_sciencelvl2, access_securitylvl1, access_medicallvl2)
+	minimal_access = list(access_dclassjanitorial, access_maint_tunnels, access_engineeringlvl2, access_sciencelvl2, access_securitylvl1, access_medicallvl2)
 	alt_titles = list("Custodian","Sanitation Technician")
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 
@@ -116,8 +116,8 @@
 	supervisors = "company officials and Corporate Regulations"
 	selection_color = "#515151"
 	economic_power = 7
-	access = list(access_adminlvl1, access_sec_doors, access_maint_tunnels, access_adminlvl4)
-	minimal_access = list(access_adminlvl1, access_sec_doors, access_adminlvl4)
+	access = list(access_adminlvl1, access_securitylvl1, access_maint_tunnels, access_adminlvl4)
+	minimal_access = list(access_adminlvl1, access_securitylvl1, access_adminlvl4)
 	minimal_player_age = 10
 	outfit_type = /decl/hierarchy/outfit/job/internal_affairs_agent
 
