@@ -141,12 +141,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	req_access = list(access_maint_tunnels)
 
 /area/rnd
-	req_access = list(access_research)
+	req_access = list(access_sciencelvl2)
 
 /area/rnd/xenobiology
 	name = "\improper Xenobiology Lab"
 	icon_state = "xeno_lab"
-	req_access = list(access_xenobiology, access_research)
+	req_access = list(access_sciencelvl2, access_sciencelvl2)
 
 /area/rnd/xenobiology/xenoflora
 	name = "\improper Xenoflora Lab"

@@ -26,7 +26,7 @@
 	cost = 10
 	containertype = /obj/structure/closet/crate/secure/gear
 	containername = "robotics assembly crate"
-	access = access_robotics
+	access = access_sciencelvl2
 
 /decl/hierarchy/supply_pack/science/phoron
 	name = "Parts - Phoron device kit"
@@ -37,7 +37,7 @@
 	cost = 10
 	containertype = /obj/structure/closet/crate/secure/phoron
 	containername = "phoron assembly crate"
-	access = access_tox_storage
+	access = access_sciencelvl3
 
 /decl/hierarchy/supply_pack/science/scanner_module
 	name = "Electronics - Reagent scanner modules"

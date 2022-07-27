@@ -11,7 +11,7 @@
 	var/obj/item/weapon/cell/cell = null
 	var/obj/machinery/camera/camera = null
 	var/obj/item/device/mmi/mmi = null
-	var/list/req_access = list(access_robotics) //Access needed to pop out the brain.
+	var/list/req_access = list(access_sciencelvl2) //Access needed to pop out the brain.
 	var/positronic
 
 	name = "spider-bot"
@@ -122,7 +122,7 @@
 			var/obj/item/device/pda/pda = O
 			id_card = pda.id
 
-		if(access_robotics in id_card.access)
+		if(access_sciencelvl2 in id_card.access)
 			to_chat(user, "<span class='notice'>You swipe your access card and pop the brain out of \the [src].</span>")
 			eject_brain()
 			if(held_item)

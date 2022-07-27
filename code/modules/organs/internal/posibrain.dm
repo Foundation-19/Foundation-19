@@ -20,7 +20,7 @@
 
 	var/searching = 0
 	var/askDelay = 10 * 60 * 1
-	req_access = list(access_robotics)
+	req_access = list(access_sciencelvl2)
 
 	var/list/shackled_verbs = list(
 		/obj/item/organ/internal/posibrain/proc/show_laws_brain,

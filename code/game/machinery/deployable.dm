@@ -12,8 +12,8 @@ for reference:
 	access_securitylvl2= 4
 	access_medicallvl2 = 5
 	access_medicallvl2 = 6
-	access_tox = 7
-	access_tox_storage = 8
+	access_sciencelvl3 = 7
+	access_sciencelvl3 = 8
 	access_genetics = 9
 	access_engine = 10
 	access_engine_equip= 11
@@ -34,8 +34,8 @@ for reference:
 	access_janitor = 26
 	access_crematorium = 27
 	access_kitchen = 28
-	access_robotics = 29
-	access_rd = 30
+	access_sciencelvl2 = 29
+	access_sciencelvl5 = 30
 	access_cargo = 31
 	access_construction = 32
 	access_medicallvl2 = 33

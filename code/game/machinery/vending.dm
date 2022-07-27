@@ -1234,7 +1234,7 @@
 	icon_state = "robotics"
 	icon_deny = "robotics-deny"
 	icon_vend = "robotics-vend"
-	req_access = list(access_robotics)
+	req_access = list(access_sciencelvl2)
 	base_type = /obj/machinery/vending/robotics
 	products = list(/obj/item/reagent_containers/food/drinks/bottle/oiljug = 5,
 					/obj/item/stack/cable_coil = 4,/obj/item/device/flash/synthetic = 4,/obj/item/cell/standard = 4,/obj/item/device/scanner/health = 2,

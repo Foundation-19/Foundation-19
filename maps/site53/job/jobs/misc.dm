@@ -254,7 +254,7 @@
 		access_adminlvl3,
 		access_adminlvl4,
 		access_keyauth,
-		access_research,
+		access_sciencelvl2,
 		access_sciencelvl1,
 		access_sciencelvl2,
 		access_sciencelvl3,

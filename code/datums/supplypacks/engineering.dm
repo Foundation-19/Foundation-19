@@ -205,7 +205,7 @@
 	cost = 10
 	containertype = /obj/structure/closet/crate/secure/gear
 	containername = "robotics assembly crate"
-	access = access_robotics
+	access = access_sciencelvl2
 
 /decl/hierarchy/supply_pack/engineering/radsuit
 	name = "Gear - Radiation protection gear"

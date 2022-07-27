@@ -25,7 +25,7 @@
 		access_adminlvl3,
 		access_adminlvl4,
 		access_keyauth,
-		access_research
+		access_sciencelvl2
 	)
 	minimal_player_age = 14
 	ideal_character_age = 50
@@ -55,7 +55,7 @@
 		access_sciencelvl3,
 		access_sciencelvl4,
 		access_securitylvl1,
-		access_research
+		access_sciencelvl2
 	)
 	minimal_access = list()
 
@@ -78,7 +78,7 @@
 		access_sci_comms,
 		access_sciencelvl1,
 		access_sciencelvl2,
-		access_research
+		access_sciencelvl2
 	)
 	minimal_access = list()
 
@@ -101,7 +101,7 @@
 		access_sci_comms,
 		access_sciencelvl1,
 		access_sciencelvl2,
-		access_research
+		access_sciencelvl2
 	)
 	minimal_access = list()
 

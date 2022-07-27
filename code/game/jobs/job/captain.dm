@@ -155,7 +155,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 		access_civ_comms,
 		access_sci_comms,
 		access_med_comms,
-		access_research,
+		access_sciencelvl2,
 		access_keyauth,
 		access_adminlvl1,
 		access_adminlvl2,

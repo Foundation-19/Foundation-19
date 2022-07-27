@@ -80,7 +80,7 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_xenoarch)
+	req_access = list(access_sciencelvl2)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/security
@@ -115,5 +115,5 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_xenoarch)
+	req_access = list(access_sciencelvl2)
 	islocked = 1

@@ -118,7 +118,7 @@
 	boots_type = /obj/item/clothing/shoes/magboots
 	tank_type = /obj/item/weapon/tank/oxygen
 	mask_type = /obj/item/clothing/mask/breath
-	req_access = list(access_xenoarch)
+	req_access = list(access_sciencelvl2)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/security
@@ -732,7 +732,7 @@
 /obj/machinery/suit_cycler/science
 	name = "Excavation suit cycler"
 	model_text = "Excavation"
-	req_access = list(access_xenoarch)
+	req_access = list(access_sciencelvl2)
 	departments = list("Science")
 	species = list(SPECIES_HUMAN,SPECIES_TAJARA,SPECIES_SKRELL,SPECIES_UNATHI)
 

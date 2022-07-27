@@ -316,7 +316,7 @@
 	id = access_morgue
 	desc = "Morgue"
 	region = ACCESS_REGION_MEDBAY
-*/
+
 /var/const/access_tox = "ACCESS_TOXINS" //7
 /datum/access/tox
 	id = access_tox
@@ -328,7 +328,7 @@
 	id = access_tox_storage
 	desc = "Toxins Lab"
 	region = ACCESS_REGION_RESEARCH
-
+*/
 /var/const/access_engine = "ACCESS_ENGINEERING" //10
 /datum/access/engine
 	id = access_engine
@@ -442,7 +442,7 @@
 	id = access_kitchen
 	desc = "Kitchen"
 	region = ACCESS_REGION_GENERAL
-
+/*
 /var/const/access_robotics = "ACCESS_ROBOTICS" //29
 /datum/access/robotics
 	id = access_robotics
@@ -454,7 +454,7 @@
 	id = access_rd
 	desc = "Chief Science Officer"
 	region = ACCESS_REGION_RESEARCH
-
+*/
 /var/const/access_cargo = "ACCESS_CARGO" //31
 /datum/access/cargo
 	id = access_cargo
@@ -532,7 +532,7 @@
 	id = access_surgery
 	desc = "Surgery"
 	region = ACCESS_REGION_MEDBAY
-*/
+
 /var/const/access_research = "ACCESS_RESEARCH" //47
 /datum/access/research
 	id = access_research
@@ -544,7 +544,7 @@
 	id = access_mining
 	desc = "Mining"
 	region = ACCESS_REGION_SUPPLY
-
+*/
 /var/const/access_mining_office = "ACCESS_MINING_OFFICE" //49
 /datum/access/mining_office
 	id = access_mining_office
@@ -568,13 +568,13 @@
 	id = access_mining_station
 	desc = "Mining EVA"
 	region = ACCESS_REGION_SUPPLY
-
+/*
 /var/const/access_xenobiology = "ACCESS_XENOBIO" //55
 /datum/access/xenobiology
 	id = access_xenobiology
 	desc = "Xenobiology Lab"
 	region = ACCESS_REGION_RESEARCH
-
+*/
 /var/const/access_ce = "ACCESS_CHIEF_ENGINEER" //56
 /datum/access/ce
 	id = access_ce
@@ -616,7 +616,7 @@
 	id = access_sec_doors
 	desc = "Security"
 	region = ACCESS_REGION_SECURITY
-
+/*
 /var/const/access_psychiatrist = "ACCESS_PSYCHIATRIST" // Psychiatrist's office 64
 /datum/access/psychiatrist
 	id = access_psychiatrist
@@ -628,7 +628,7 @@
 	id = access_xenoarch
 	desc = "Xenoarchaeology"
 	region = ACCESS_REGION_RESEARCH
-/*
+
 /var/const/access_medical_equip = "ACCESS_MEDICAL_EQUIP" //66
 /datum/access/medical_equip
 	id = access_medical_equip

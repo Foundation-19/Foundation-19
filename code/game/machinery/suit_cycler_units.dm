@@ -29,7 +29,7 @@
 /obj/machinery/suit_cycler/science
 	name = "Excavation suit cycler"
 	model_text = "Excavation"
-	req_access = list(access_xenoarch)
+	req_access = list(access_sciencelvl2)
 	available_modifications = list(/decl/item_modifier/space_suit/science)
 	species = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI)
 

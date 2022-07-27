@@ -86,7 +86,7 @@
 	icon_state = "ntholobadge"
 	color = null
 	badge_string = "Corporate Security"
-	badge_access = access_research
+	badge_access = access_sciencelvl2
 
 /obj/item/clothing/accessory/badge/holo/cord
 	icon_state = "holobadge-cord"

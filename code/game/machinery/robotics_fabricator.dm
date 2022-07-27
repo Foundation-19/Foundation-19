@@ -7,7 +7,7 @@
 	anchored = TRUE
 	idle_power_usage = 20
 	active_power_usage = 5000
-	req_access = list(access_robotics)
+	req_access = list(access_sciencelvl2)
 	base_type = /obj/machinery/robotics_fabricator
 	construct_state = /decl/machine_construction/default/panel_closed
 	uncreated_component_parts = null
