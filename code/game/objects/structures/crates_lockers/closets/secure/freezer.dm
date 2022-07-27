@@ -49,7 +49,7 @@
 	icon_locked = "fridge1"
 	icon_opened = "fridgeopen"
 	icon_off = "fridgebroken"
-	req_access = list(access_heads_vault)
+	req_access = list(access_keyauth)
 
 /obj/structure/closet/secure_closet/freezer/money/Initialize()
 	. = ..()

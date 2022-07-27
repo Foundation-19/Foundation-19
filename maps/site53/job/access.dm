@@ -323,7 +323,7 @@ var/const/access_dclassjanitorial = "access_dclassjanitorial"
 	desc = "Janitor"
 	region = ACCESS_REGION_SERVICE
 
-var/const/access_ai_upload = "access_adminlvl4"
+var/const/access_adminlvl4 = "access_adminlvl4"
 /datum/access/ai_upload
 	id = access_adminlvl4
 	desc = "AI Upload"

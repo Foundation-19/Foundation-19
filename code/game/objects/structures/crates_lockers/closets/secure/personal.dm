@@ -6,7 +6,7 @@
 	icon_locked = "secure1"
 	icon_opened = "secureopen"
 	icon_off = "secureoff"
-	req_access = list(access_all_personal_lockers)
+	req_access = list(access_adminlvl4)
 	locked = TRUE
 	var/registered_name = null
 

@@ -1,6 +1,6 @@
 /obj/structure/closet/secure_closet/captains
 	name = "captain's locker"
-	req_access = list(access_captain)
+	req_access = list(access_adminlvl5)
 	closet_appearance = /decl/closet_appearance/secure_closet/command
 
 /obj/structure/closet/secure_closet/captains/WillContain()
@@ -207,7 +207,7 @@
 
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections locker"
-	req_access = list(access_captain)
+	req_access = list(access_adminlvl5)
 
 /obj/structure/closet/secure_closet/injection/WillContain()
 	return list(/obj/item/reagent_containers/syringe/ld50_syringe/choral = 2)
@@ -226,7 +226,7 @@
 
 /obj/structure/closet/secure_closet/courtroom
 	name = "courtroom locker"
-	req_access = list(access_lawyer)
+	req_access = list(access_adminlvl1)
 
 /obj/structure/closet/secure_closet/courtroom/WillContain()
 	return list(
@@ -248,7 +248,7 @@
 
 /obj/structure/closet/secure_closet/lawyer
 	name = "internal affairs secure closet"
-	req_access = list(access_lawyer)
+	req_access = list(access_adminlvl1)
 
 /obj/structure/closet/secure_closet/lawyer/WillContain()
 	return list(

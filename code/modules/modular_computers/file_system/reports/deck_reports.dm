@@ -9,7 +9,7 @@
 
 /datum/computer_file/report/flight_plan/New()
 	..()
-	set_access(null, access_bridge)
+	set_access(null, access_keyauth)
 
 /datum/computer_file/report/flight_plan/Destroy()
 	leader = null
@@ -35,7 +35,7 @@
 
 /datum/computer_file/report/recipient/shuttle/New()
 	..()
-	set_access(null, access_bridge)
+	set_access(null, access_keyauth)
 
 /datum/computer_file/report/recipient/shuttle/Destroy()
 	shuttle = null

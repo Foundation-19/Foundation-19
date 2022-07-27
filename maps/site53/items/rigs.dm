@@ -18,7 +18,7 @@
 	glove_type = /obj/item/clothing/gloves/rig/command
 
 	allowed = list(/obj/item/gun, /obj/item/device/flashlight, /obj/item/tank, /obj/item/device/suit_cooling_unit)
-	req_access = list(access_heads) //bridge
+	req_access = list(access_adminlvl4) //bridge
 
 /obj/item/clothing/head/helmet/space/rig/command
 	light_overlay = "helmet_light_dual"
@@ -101,7 +101,7 @@
 
 	allowed = list(/obj/item/gun, /obj/item/ammo_magazine, /obj/item/device/flashlight, /obj/item/tank, /obj/item/device/suit_cooling_unit, /obj/item/storage/secure/briefcase)
 
-	req_access = list(access_captain)
+	req_access = list(access_adminlvl5)
 
 /obj/item/clothing/head/helmet/space/rig/command/co
 	icon_state = "command_CO_rig"

@@ -364,13 +364,13 @@
 	id = access_change_ids
 	desc = "ID Computer"
 	region = ACCESS_REGION_COMMAND
-
+/*
 /var/const/access_ai_upload = "ACCESS_AI_UPLOAD" //16
 /datum/access/ai_upload
 	id = access_ai_upload
 	desc = "AI Upload"
 	region = ACCESS_REGION_COMMAND
-/*
+
 /var/const/access_teleporter = "ACCESS_TELEPORTER" //17
 /datum/access/teleporter
 	id = access_teleporter
@@ -382,11 +382,11 @@
 	id = access_eva
 	desc = "EVA"
 	region = ACCESS_REGION_COMMAND
-*/
+
 /var/const/access_bridge = "ACCESS_BRIDGE" //19
 /datum/access/bridge
 	id = access_bridge
-	desc = "Bridge"
+	desc = "Command Staff"
 	region = ACCESS_REGION_COMMAND
 
 /var/const/access_captain = "ACCESS_CAPTAIN" //20
@@ -400,7 +400,7 @@
 	id = access_all_personal_lockers
 	desc = "Personal Lockers"
 	region = ACCESS_REGION_COMMAND
-
+*/
 /var/const/access_chapel_office = "ACCESS_CHAPEL_STORAGE" //22
 /datum/access/chapel_office
 	id = access_chapel_office
@@ -490,7 +490,7 @@
 	id = access_manufacturing
 	desc = "Manufacturing"
 	access_type = ACCESS_TYPE_NONE
-*/
+
 /var/const/access_library = "ACCESS_LIBRARY" //37
 /datum/access/library
 	id = access_library
@@ -502,7 +502,7 @@
 	id = access_lawyer
 	desc = "Internal Affairs"
 	region = ACCESS_REGION_COMMAND
-/*
+
 /var/const/access_virology = "ACCESS_VIRO" //39
 /datum/access/virology
 	id = access_virology
@@ -556,13 +556,13 @@
 	id = access_mailsorting
 	desc = "Cargo Office"
 	region = ACCESS_REGION_SUPPLY
-*/
+
 /var/const/access_heads_vault = "ACCESS_VAULT"  //53
 /datum/access/heads_vault
 	id = access_heads_vault
 	desc = "Main Vault"
 	region = ACCESS_REGION_COMMAND
-
+*/
 /var/const/access_mining_station = "ACCESS_MINING_EVA" //54
 /datum/access/mining_station
 	id = access_mining_station
@@ -604,13 +604,13 @@
 	id = access_tcomsat
 	desc = "Telecommunications"
 	region = ACCESS_REGION_COMMAND
-
+/*
 /var/const/access_gateway = "ACCESS_GATEWAY" //62
 /datum/access/gateway
 	id = access_gateway
 	desc = "Gateway"
 	region = ACCESS_REGION_COMMAND
-
+*/
 /var/const/access_sec_doors = "ACCESS_SEC_DOORS" // Security front doors //63
 /datum/access/sec_doors
 	id = access_sec_doors
@@ -634,13 +634,13 @@
 	id = access_medical_equip
 	desc = "Medical Equipment"
 	region = ACCESS_REGION_MEDBAY
-*/
+
 /var/const/access_heads = "ACCESS_HEADS" //67
 /datum/access/heads
 	id = access_heads
 	desc = "Command"
 	region = ACCESS_REGION_COMMAND
-
+*/
 /******************
 * Central Command *
 ******************/

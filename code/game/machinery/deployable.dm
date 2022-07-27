@@ -21,12 +21,12 @@ for reference:
 	access_external_airlocks = 13
 	access_emergency_storage = 14
 	access_change_ids = 15
-	access_ai_upload = 16
+	access_adminlvl4 = 16
 	access_teleporter = 17
 	access_engineeringlvl2 = 18
-	access_heads = 19
-	access_captain = 20
-	access_all_personal_lockers = 21
+	access_adminlvl4 = 19
+	access_adminlvl5 = 20
+	access_adminlvl4 = 21
 	access_chapel_office = 22
 	access_engineeringlvl2 = 23
 	access_engineeringlvl2 = 24
@@ -43,7 +43,7 @@ for reference:
 	access_hydroponics = 35
 	access_manufacturing = 36
 	access_library = 37
-	access_lawyer = 38
+	access_adminlvl1 = 38
 	access_medicallvl4 = 39
 	access_medicallvl5 = 40
 	access_adminlvl2 = 41

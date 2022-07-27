@@ -116,8 +116,8 @@
 	supervisors = "company officials and Corporate Regulations"
 	selection_color = "#515151"
 	economic_power = 7
-	access = list(access_lawyer, access_sec_doors, access_maint_tunnels, access_heads)
-	minimal_access = list(access_lawyer, access_sec_doors, access_heads)
+	access = list(access_adminlvl1, access_sec_doors, access_maint_tunnels, access_adminlvl4)
+	minimal_access = list(access_adminlvl1, access_sec_doors, access_adminlvl4)
 	minimal_player_age = 10
 	outfit_type = /decl/hierarchy/outfit/job/internal_affairs_agent
 
