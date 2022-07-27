@@ -389,9 +389,8 @@
 /obj/structure/window/reinforced,
 /obj/machinery/door/window{
 	dir = 1;
-	name = "Corpser Delivery(Danger: Deadly)";
-	req_access = list("ACCESS_SECURITY_LEVEL1");
-	layer = 5.02
+	name = "Corpse Delivery (Danger: Deadly)";
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/machinery/disposal/deliveryChute{
 	desc = "A note read: Dispose of bodies here";
