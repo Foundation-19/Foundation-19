@@ -178,7 +178,7 @@
 		message_admins("[ckey] tried to join with [get_player_age(ckey)] days, but there is a configured minimum player age of [config.panic_bunker_age] days.")
 		log_admin("[ckey] tried to join with [get_player_age(ckey)] days, but there is a configured minimum player age of [config.panic_bunker_age] days.")
 		to_chat("[config.panic_bunker_message]")
-		sleep(5)
+		alert(src,"[config.panic_bunker_message]","OK")
 		qdel(src)
 		return
 
