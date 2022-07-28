@@ -77,7 +77,6 @@
 	display_name = "coffee cup"
 	path = /obj/item/reagent_containers/food/drinks/glass2/coffeecup
 	flags = GEAR_HAS_TYPE_SELECTION
-	
 /datum/gear/knives
 	display_name = "knives selection"
 	description = "A selection of knives."
