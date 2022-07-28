@@ -325,7 +325,6 @@
 	cointype["coin, platinum"] = /obj/item/material/coin/platinum
 	gear_tweaks += new/datum/gear_tweak/path(cointype)
 	
-
 /datum/gear/mre
 	display_name = "mre"
 	description = "A Meal, Ready to Eat."
