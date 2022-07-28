@@ -59,40 +59,11 @@
 	gear_tweaks += new/datum/gear_tweak/reagents(lunchables_drink_reagents())
 
 /datum/gear/coffeecup
-	display_name = "coffee cup selection"
+	display_name = "coffee cup"
 	description = "A selection of coffee cups."
-	path = /obj/item/reagent_containers/food/drinks/glass2
-	flags = GEAR_HAS_TYPE_SELECTION
-
-/datum/gear/coffeecup/New()
-	..()
-	var/coffeecup = list()
-	coffeecup["coffee cup"] = /obj/item/reagent_containers/food/drinks/glass2/coffeecup
-	coffeecup["black coffee cup"] = /obj/item/reagent_containers/food/drinks/glass2/coffeecup/black
-	coffeecup["green coffee cup"] = /obj/item/reagent_containers/food/drinks/glass2/coffeecup/green
-	coffeecup["heart coffee cup"] = /obj/item/reagent_containers/food/drinks/glass2/coffeecup/heart
-	coffeecup["#1 coffee cup"] = /obj/item/reagent_containers/food/drinks/glass2/coffeecup/one
-	coffeecup["metal coffee cup"] = /obj/item/reagent_containers/food/drinks/glass2/coffeecup/metal
-	coffeecup["pawn coffee cup"] = /obj/item/reagent_containers/food/drinks/glass2/coffeecup/pawn
-	coffeecup["british coffee cup"] = /obj/item/reagent_containers/food/drinks/glass2/coffeecup/britcup
-	gear_tweaks += new/datum/gear_tweak/path(coffeecup)
-
-/datum/gear/tcoffeecup
-	display_name = "tall coffee cup selection"
-	description = "A selection of tall coffee cups."
-	cost = 2
 	path = /obj/item/reagent_containers/food/drinks/glass2/coffeecup
 	flags = GEAR_HAS_TYPE_SELECTION
-
-/datum/gear/tcoffeecup/New()
-	..()
-	var/tcoffeecup = list()
-	tcoffeecup["tall coffee cup"] = /obj/item/reagent_containers/food/drinks/glass2/coffeecup/tall
-	tcoffeecup["tall black coffee cup"] = /obj/item/reagent_containers/food/drinks/glass2/coffeecup/tall/black
-	tcoffeecup["tall metal coffee cup"] = /obj/item/reagent_containers/food/drinks/glass2/coffeecup/tall/metal
-	tcoffeecup["tall rainbow coffee cup"] = /obj/item/reagent_containers/food/drinks/glass2/coffeecup/tall/rainbow
-	gear_tweaks += new/datum/gear_tweak/path(tcoffeecup)
-
+	
 /datum/gear/knives
 	display_name = "knives selection"
 	description = "A selection of knives."
