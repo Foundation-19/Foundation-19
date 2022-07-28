@@ -58,9 +58,23 @@
 	..()
 	gear_tweaks += new/datum/gear_tweak/reagents(lunchables_drink_reagents())
 
+/datum/gear/cup
+	display_name = "glass cup"
+	path = /obj/item/reagent_containers/food/drinks/glass2
+
+/datum/gear/cup/New()
+	..()
+	var/cup = list()
+	cup["half-pint glass"] = /obj/item/reagent_containers/food/drinks/glass2/square
+	cup["rocks glass"] = /obj/item/reagent_containers/food/drinks/glass2/rocks
+	cup["sherry glass"] = /obj/item/reagent_containers/food/drinks/glass2/shake
+	cup["cocktail glass"] = /obj/item/reagent_containers/food/drinks/glass2/cocktail
+	cup["shot glass"] = /obj/item/reagent_containers/food/drinks/glass2/shot
+	cup["pint glass"] = /obj/item/reagent_containers/food/drinks/glass2/pint
+	gear_tweaks += new/datum/gear_tweak/path(cup)
+
 /datum/gear/coffeecup
 	display_name = "coffee cup"
-	description = "A selection of coffee cups."
 	path = /obj/item/reagent_containers/food/drinks/glass2/coffeecup
 	flags = GEAR_HAS_TYPE_SELECTION
 	
