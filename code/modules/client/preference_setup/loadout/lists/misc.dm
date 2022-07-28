@@ -75,7 +75,6 @@
 	coffeecup["metal coffee cup"] = /obj/item/reagent_containers/food/drinks/glass2/coffeecup/metal
 	coffeecup["pawn coffee cup"] = /obj/item/reagent_containers/food/drinks/glass2/coffeecup/pawn
 	coffeecup["british coffee cup"] = /obj/item/reagent_containers/food/drinks/glass2/coffeecup/britcup
-	coffeecup["foundation coffee cup"] = /obj/item/reagent_containers/food/drinks/coffeecup/SCP
 	gear_tweaks += new/datum/gear_tweak/path(coffeecup)
 
 /datum/gear/tcoffeecup
