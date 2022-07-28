@@ -319,3 +319,7 @@
 	path = /obj/item/tape_roll
 	cost = 6	
 	denied_roles = list(/datum/job/classd)
+	
+/datum/gear/deodorant
+	display_name = "deodorant"
+	path = /obj/item/reagent_containers/spray/cleaner/deodorant
