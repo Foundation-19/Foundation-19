@@ -4698,9 +4698,11 @@
 	dir = 1
 	},
 /obj/structure/cable{
-	d1 = 32;
-	icon_state = "32-1"
+	d1 = 16;
+	d2 = 0;
+	icon_state = "16-0"
 	},
+/obj/structure/cable,
 /turf/simulated/floor,
 /area/site53/engineering/maintenance/lowerselfdestruct)
 "ml" = (
