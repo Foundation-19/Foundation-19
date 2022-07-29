@@ -336,4 +336,6 @@
 
 /datum/gear/deodorant
 	display_name = "deodorant"
-	path = /obj/item/reagent_containers/spray/cleaner/deodorant	
+	path = /obj/item/reagent_containers/spray/cleaner/deodorant
+	cost = 2
+	denied_roles = list(/datum/job/classd)
