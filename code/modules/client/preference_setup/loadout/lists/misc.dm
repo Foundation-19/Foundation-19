@@ -58,25 +58,11 @@
 	..()
 	gear_tweaks += new/datum/gear_tweak/reagents(lunchables_drink_reagents())
 
-/datum/gear/cup
-	display_name = "glass cup"
-	path = /obj/item/reagent_containers/food/drinks/glass2
-
-/datum/gear/cup/New()
-	..()
-	var/cup = list()
-	cup["half-pint glass"] = /obj/item/reagent_containers/food/drinks/glass2/square
-	cup["rocks glass"] = /obj/item/reagent_containers/food/drinks/glass2/rocks
-	cup["sherry glass"] = /obj/item/reagent_containers/food/drinks/glass2/shake
-	cup["cocktail glass"] = /obj/item/reagent_containers/food/drinks/glass2/cocktail
-	cup["shot glass"] = /obj/item/reagent_containers/food/drinks/glass2/shot
-	cup["pint glass"] = /obj/item/reagent_containers/food/drinks/glass2/pint
-	gear_tweaks += new/datum/gear_tweak/path(cup)
-
 /datum/gear/coffeecup
 	display_name = "coffee cup"
 	path = /obj/item/reagent_containers/food/drinks/glass2/coffeecup
 	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/knives
 	display_name = "knives selection"
 	description = "A selection of knives."
@@ -321,21 +307,9 @@
 	mre["vegan mre"] = /obj/item/storage/mre/menu9
 	gear_tweaks += new/datum/gear_tweak/path(mre)
 
-/datum/gear/mrejoke
-	display_name = "special mre"
-	description = "A very special MRE."
-	path = /obj/item/storage/mre/menu11
-	cost = 10
-
 /datum/gear/tape
 	display_name = "duct tape"
 	description = "A roll of very strong tape."
 	path = /obj/item/tape_roll
 	cost = 6	
-	denied_roles = list(/datum/job/classd)
-
-/datum/gear/deodorant
-	display_name = "deodorant"
-	path = /obj/item/reagent_containers/spray/cleaner/deodorant
-	cost = 2
 	denied_roles = list(/datum/job/classd)
