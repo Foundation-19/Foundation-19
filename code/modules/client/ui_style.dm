@@ -49,8 +49,7 @@
 		I.color = UI_style_color_new
 		I.alpha = UI_style_alpha_new
 
-
-	if(alert("Like it? Save changes?",,"Yes", "No") == "Yes")
+	if(tgui_alert(src, "Like it? Save changes?", null, list("Yes", "No")) == "Yes")
 		prefs.UI_style = UI_style_new
 		prefs.UI_style_alpha = UI_style_alpha_new
 		prefs.UI_style_color = UI_style_color_new
