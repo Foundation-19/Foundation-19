@@ -20,6 +20,7 @@ ut // COMMAND
 		access_adminlvl4,
 		access_adminlvl5,
 		access_maint_tunnels,
+		access_change_ids,
 		access_keyauth
 	)
 
