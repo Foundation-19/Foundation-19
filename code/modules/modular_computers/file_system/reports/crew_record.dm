@@ -209,10 +209,10 @@ FIELD_LONG("Medical Record", medRecord, access_medicallvl2, access_medicallvl3)
 FIELD_LONG("Known Implants", implants, access_medicallvl2, access_medicallvl3)
 
 // SECURITY RECORDS
-FIELD_LIST("Criminal Status", criminalStatus, GLOB.security_statuses, access_securitylvl2)
-FIELD_LONG("Security Record", secRecord, access_securitylvl2)
-FIELD_SHORT("DNA", dna, access_securitylvl2)
-FIELD_SHORT("Fingerprint", fingerprint, access_securitylvl2)
+FIELD_LIST("Criminal Status", criminalStatus, GLOB.security_statuses, access_securitylvl2, access_securitylvl2)
+FIELD_LONG("Security Record", secRecord, access_securitylvl2, access_securitylvl2)
+FIELD_SHORT("DNA", dna, access_securitylvl2, access_securitylvl2)
+FIELD_SHORT("Fingerprint", fingerprint, access_securitylvl2, access_securitylvl2)
 
 // EMPLOYMENT RECORDS
 FIELD_LONG("Employment Record", emplRecord, access_adminlvl2, access_adminlvl5)
