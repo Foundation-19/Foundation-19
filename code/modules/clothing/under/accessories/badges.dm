@@ -33,7 +33,7 @@
 			user.examinate(src)
 			return TOPIC_HANDLED
 
-/obj/item/clothing/accessory/badge/get_examine_line()
+/obj/item/clothing/accessory/badge/get_examine_line(mob/user)
 	. = ..()
 	. += "  <a href='?src=\ref[src];look_at_me=1'>\[View\]</a>"
 
@@ -195,7 +195,7 @@
 	desc = "A leather-backed plastic badge displaying that the owner is certified press personnel."
 	icon_state = "pressbadge"
 	badge_string = "Journalist"
-	
+
 /obj/item/clothing/accessory/badge/tags/skrell
 	name = "\improper Skrellian holobadge"
 	desc = "A high tech Skrellian holobadge, designed to project information about the owner."
@@ -206,23 +206,23 @@
 	if(!istype(H))
 		return
 	desc = "Blood type: [H.b_type]"
-	
+
 /obj/item/clothing/accessory/badge/tags/skrell/verb/set_sdtf()
 	set name = "Set SDTF Name"
 	set category = "Object"
 	set src in usr
-	
+
 	if(usr.incapacitated())
 		to_chat(usr, "<span class='warning'>You're unable to do that.</span>")
 		return
-	
+
 	var/obj/item/in_hand = usr.get_active_hand()
 	if(in_hand != src)
 		to_chat(usr, "<span class='warning'>You have to be holding [src] to modify it.</span>")
 		return
-	
+
 	badge_string = sanitize(input(usr, "Input your SDTF.", "SDTF Holobadge") as null|text, MAX_NAME_LEN)
-	
+
 	if(usr.incapacitated())	//Because things can happen while you're typing
 		to_chat(usr, "<span class='warning'>You're unable to do that.</span>")
 		return
@@ -230,7 +230,7 @@
 	if(in_hand != src)
 		to_chat(usr, "<span class='warning'>You have to be holding [src] to modify it.</span>")
 		return
-		
+
 	if(badge_string)
 		set_name(usr.real_name)
 		set_desc(usr)

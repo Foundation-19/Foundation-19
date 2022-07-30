@@ -136,7 +136,7 @@
 	else
 		icon = initial(icon)
 
-/obj/item/clothing/get_examine_line()
+/obj/item/clothing/get_examine_line(mob/user)
 	. = ..()
 	var/list/visible = get_visible_accessories()
 	if (length(visible))

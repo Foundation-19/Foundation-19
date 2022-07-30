@@ -1,3 +1,20 @@
+#define TICKET_AUTORESPONSE_IC_ISSUE "<b>This issue has been deemed an IC (In-Character) issue, and will not be handled by staff. In case it's relevant, you may wish to ask your <a href='https://scp13.miraheze.org/wiki/Rank'>Chain Of Command</a> about your issue if you believe <a href='https://scp13.miraheze.org/wiki/Foundation_Rules'>Foundation Law</a> has been broken.</b>"
+#define TICKET_AUTORESPONSE_BEING_HANDLED "<b>The issue is already being dealt with.</b>"
+#define TICKET_AUTORESPONSE_FIXED "<b>The issue is already fixed.</b>"
+#define TICKET_AUTORESPONSE_THANKS "<b>Have a SCP day!</b>"
+#define TICKET_AUTORESPONSE_REQUESTING_TO_BE_SCP "<b>Only under certain circumstances will an admin put you into an SCP. Examples of these circumstances are: Imminent Test or gross negligence in containment. Do not repeatedly ask to become an SCP, as this might get you a mute.</b>"
+#define TICKET_AUTORESPONSE_BECOMING_AN_SCP "<b>In order to become an SCP, the alert level should be above red, and you should be dead for at least 5 minutes.</b>"
+#define TICKET_AUTORESPONSE_GITHUB_ISSUE "<b>Thanks for reporting this issue! Though, for maximum effectivity, please create an issue report on our <a href='https://github.com/Foundation-19/Foundation-19/issues'>GitHub</a>.</b>"
+#define TICKET_AUTORESPONSE_RUST_ENGINE "<b>The RUST Engine can be set up by finding the placed manual in the chamber area's, or alternatively you can visit <a href='https://bay.ss13.me/Guides/RUST'>the wiki guide on this engine</a>.</b>"
+#define TICKET_AUTORESPONSE_D_CLASS_RIOT "<b>D-Class may only riot with permission from a member of staff, and needs a good reason. If you wish to start a riot, you are to adminhelp again, outlining your reason. A member of staff will take your request under advisement.</b>"
+#define TICKET_AUTORESPONSE_D_CLASS_CELLS "<b>You can only get out if the on-duty guards feel like releasing you. It's best to wait and watch a YouTube video until such time.</b>"
+#define TICKET_AUTORESPONSE_DIRECTIONS_OR_LOST "<b>If you are lost, it is best to keep an eye on directional signs, ask a fellow player or find Holomaps, if they have been added to the current map.</b>"
+#define TICKET_AUTORESPONSE_CHARACTER_SETUP "<b>In order to join the game, you are required to select a branch and rank, found in the top area of the character set up. Once you have done this, you can join the jobs that are allowed for that rank. It is best to experiment for a moment to see which rank suits you best, since some jobs allow multiple.</b>"
+#define TICKET_AUTORESPONSE_WEBSITE_AND_DISCORD "<b>Hello, and welcome! Our website is located at: <a href='https://foundation-19.github.io/live/#'>https://foundation-19.github.io/live/</a> , our wiki is located at: <a href='https://scp13.miraheze.org/wiki'>https://scp13.miraheze.org/wiki</a>, our Discord is located at: <a href='https://discord.gg/xPxjQpp3Ud'>https://discord.gg/xPxjQpp3Ud</a> and our Patreon is located at: <a href='https://www.patreon.com/GSDR'>https://www.patreon.com/GSDR</a>. Hope to see you soon!</b>"
+
+#define TICKET_AUTORESPONSE_DEFAULT_NOTICE_MESSAGE "<b>NOTICE: [FONT_COLORED(COLOR_RED, usr.key)] is autoresponding with [FONT_COLORED(COLOR_ISLAMIC_GREEN, choice)].</b>"
+
+
 /datum/admins/Topic(href, href_list)
 	..()
 
@@ -1351,6 +1368,79 @@
 
 		ticket.take(client_repository.get_lite_client(usr.client))
 
+	else if(href_list["autoresponse"])
+
+		var/mob/ref_person = locate(href_list["autoresponse"])
+		if(!ref_person || !istype(ref_person) || !ref_person.client)
+			to_chat(usr, "\blue Looks like that person stopped existing!")
+			return
+		var/client/ref_client = ref_person.client
+
+		var/datum/ticket/ticket = get_open_ticket_by_client(ref_client)
+		if(ticket && ticket.assigned_admins.len)
+			to_chat(usr, "<b>This adminhelp is already being handled, but continue if you wish.</b>")
+			if(alert(usr, "Are you sure you want to autoreply to this marked adminhelp?", "Confirmation", "Yes", "No") == "No")
+				return
+		else if (!ticket)
+			to_chat(usr, "<b>This ticket no longer exists.</b>")
+			return
+		ticket.take(client_repository.get_lite_client(usr.client))
+
+		var/list/choicelist = list("--CANCEL--",
+									"IC Issue",
+									"Being Handled",
+									"Fixed","Thanks!",
+									"L: GitHub Issue",
+									"A: Requesting to be an SCP",
+									"A: Becoming an SCP",
+									"L: RUST Engine",
+									"A: D-Class Riot",
+									"A: D-Class Cells",
+									"A: Directions/Lost",
+									"A: Character setup",
+									"L: Website and Discord information")
+
+		var/choice = input("Which autoresponse option do you want to send to the player?\n\n L - A webpage link.\n A - An answer to a common question.", "Autoresponse", "--CANCEL--") in choicelist
+
+		var/msgplayer
+		switch(choice)
+			if("IC Issue")
+				msgplayer = TICKET_AUTORESPONSE_IC_ISSUE
+			if("Being Handled")
+				msgplayer = TICKET_AUTORESPONSE_BEING_HANDLED
+			if("Fixed")
+				msgplayer = TICKET_AUTORESPONSE_FIXED
+			if("Thanks!")
+				msgplayer = TICKET_AUTORESPONSE_THANKS
+			if("A: Requesting to be an SCP")
+				msgplayer = TICKET_AUTORESPONSE_REQUESTING_TO_BE_SCP
+			if("A: Becoming an SCP")
+				msgplayer = TICKET_AUTORESPONSE_BECOMING_AN_SCP
+			if("L: GitHub Issue")
+				msgplayer = TICKET_AUTORESPONSE_GITHUB_ISSUE
+			if("L: RUST Engine")
+				msgplayer = TICKET_AUTORESPONSE_RUST_ENGINE
+			if("A: D-Class Riot")
+				msgplayer = TICKET_AUTORESPONSE_D_CLASS_RIOT
+			if("A: D-Class Cells")
+				msgplayer = TICKET_AUTORESPONSE_D_CLASS_CELLS
+			if("A: Directions/Lost")
+				msgplayer = TICKET_AUTORESPONSE_DIRECTIONS_OR_LOST
+			if("A: Character setup")
+				msgplayer = TICKET_AUTORESPONSE_CHARACTER_SETUP
+			if("L: Website and Discord information")
+				msgplayer = TICKET_AUTORESPONSE_WEBSITE_AND_DISCORD
+			else return
+
+		var/staff_message = "[usr.key] is autoresponding to [ref_client.key] with [FONT_COLORED(COLOR_ISLAMIC_GREEN, choice)]."
+		message_staff(staff_message, 1)
+		ticket.msgs += new /datum/ticket_msg(usr.ckey, ref_client.ckey, staff_message)
+		to_chat(ref_client, TICKET_AUTORESPONSE_DEFAULT_NOTICE_MESSAGE)
+		to_chat(ref_client, msgplayer)
+		if(ref_client.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
+			sound_to(ref_client, 'sound/effects/adminhelp-reply.ogg')
+		ticket.close(usr.client)
+
 	else if(href_list["adminplayerobservecoodjump"])
 		if(!check_rights(R_ADMIN))	return
 
@@ -2174,3 +2264,19 @@
 	if(holder)
 		var/short_links = get_preference_value(/datum/client_preference/ghost_follow_link_length) == GLOB.PREF_SHORT
 		return admin_jump_link(target, src, delimiter, prefix, sufix, short_links)
+
+
+#undef TICKET_AUTORESPONSE_IC_ISSUE
+#undef TICKET_AUTORESPONSE_BEING_HANDLED
+#undef TICKET_AUTORESPONSE_FIXED
+#undef TICKET_AUTORESPONSE_THANKS
+#undef TICKET_AUTORESPONSE_REQUESTING_TO_BE_SCP
+#undef TICKET_AUTORESPONSE_BECOMING_AN_SCP
+#undef TICKET_AUTORESPONSE_GITHUB_ISSUE
+#undef TICKET_AUTORESPONSE_RUST_ENGINE
+#undef TICKET_AUTORESPONSE_D_CLASS_RIOT
+#undef TICKET_AUTORESPONSE_D_CLASS_CELLS
+#undef TICKET_AUTORESPONSE_DIRECTIONS_OR_LOST
+#undef TICKET_AUTORESPONSE_CHARACTER_SETUP
+#undef TICKET_AUTORESPONSE_WEBSITE_AND_DISCORD
+#undef TICKET_AUTORESPONSE_DEFAULT_NOTICE_MESSAGE
