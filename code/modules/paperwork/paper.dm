@@ -184,9 +184,10 @@
 		html += PAPER_META("The paper is written in [language.name].")
 		html += "<hr/>" + info
 	html += "[stamps]</body></html>"
-	show_browser(user, html, "window=[name]")
-	onclose(user, "[name]")
-
+	show_browser(user, html, "window=paper_[name]")
+	onclose(user, "paper_[name]")
+	if(isnull(name))
+		crash_with("Paper failed a sanity check. It has no name. Report that to DTraitor.")
 
 /obj/item/paper/verb/rename()
 	set name = "Rename paper"
