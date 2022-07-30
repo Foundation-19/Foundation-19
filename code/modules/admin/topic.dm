@@ -12,7 +12,7 @@
 #define TICKET_AUTORESPONSE_CHARACTER_SETUP "<b>In order to join the game, you are required to select a branch and rank, found in the top area of the character set up. Once you have done this, you can join the jobs that are allowed for that rank. It is best to experiment for a moment to see which rank suits you best, since some jobs allow multiple.</b>"
 #define TICKET_AUTORESPONSE_WEBSITE_AND_DISCORD "<b>Hello, and welcome! Our website is located at: <a href='https://foundation-19.github.io/live/#'>https://foundation-19.github.io/live/</a> , our wiki is located at: <a href='https://scp13.miraheze.org/wiki'>https://scp13.miraheze.org/wiki</a>, our Discord is located at: <a href='https://discord.gg/xPxjQpp3Ud'>https://discord.gg/xPxjQpp3Ud</a> and our Patreon is located at: <a href='https://www.patreon.com/GSDR'>https://www.patreon.com/GSDR</a>. Hope to see you soon!</b>"
 
-#define TICKET_AUTORESPONSE_DEFAULT_NOTICE_MESSAGE "<b>NOTICE: [FONT_COLORED(COLOR_RED, usr.key)] is autoresponding with [FONT_COLORED(COLOR_ISLAMIC_GREEN, choice)]."
+#define TICKET_AUTORESPONSE_DEFAULT_NOTICE_MESSAGE "<b>NOTICE: [FONT_COLORED(COLOR_RED, usr.key)] is autoresponding with [FONT_COLORED(COLOR_ISLAMIC_GREEN, choice)].</b>"
 
 
 /datum/admins/Topic(href, href_list)
