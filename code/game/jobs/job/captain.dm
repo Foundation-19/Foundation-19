@@ -42,7 +42,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	ideal_character_age = 50
 
 	access = list(
-		access_hop,
+		access_finances,
 		access_adminlvl1,
 		access_adminlvl2,
 		access_adminlvl3,

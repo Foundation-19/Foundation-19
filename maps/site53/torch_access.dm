@@ -276,7 +276,7 @@
 /datum/access/access_radio_sup
 	id = access_radio_sup
 	desc = "Supply Radio"
-	region = ACCESS_REGION_SUPPLY
+	region = ACCESS_REGION_NONE //region = ACCESS_REGION_SUPPLY
 
 /var/const/access_radio_serv = "ACCESS_RADIO_SERV"
 /datum/access/access_radio_serv

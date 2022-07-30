@@ -32,7 +32,7 @@
 	icon_opened = "hopsecureopen"
 	icon_off = "hopsecureoff"
 	closet_appearance = /decl/closet_appearance/secure_closet/command/hop
-	req_access = list(access_hop)
+	req_access = list(access_adminlvl4)
 
 /obj/structure/closet/secure_closet/hop/WillContain()
 	return list(
@@ -46,7 +46,7 @@
 
 /obj/structure/closet/secure_closet/hop2
 	name = "head of personnel's attire"
-	req_access = list(access_hop)
+	req_access = list(access_adminlvl4)
 	closet_appearance = /decl/closet_appearance/secure_closet/command/hop
 
 /obj/structure/closet/secure_closet/hop2/WillContain()

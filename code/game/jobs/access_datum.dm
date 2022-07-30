@@ -17,7 +17,7 @@
 /datum/access/mtf
 	id = access_mtf
 	desc = "MTF"
-	region = ACCESS_TYPE_CENTCOM
+	access_type = ACCESS_TYPE_CENTCOM
 
 // Security
 
@@ -77,7 +77,7 @@
 	desc = "Science Level 4"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_sciencelvl5 = "ACCESS_SCIENCE_LEVEL5" //Research Director
+/var/const/access_sciencelvl5 = "ACCESS_SCIENCE_LEVEL5" //Research Director, AIC Upload/Core
 /datum/access/sciencelvl5
 	id = access_sciencelvl5
 	desc = "Science Level 5"
@@ -167,7 +167,7 @@
 	desc = "Admin Level 3"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_adminlvl4 = "ACCESS_ADMIN_LEVEL4" //AIC Upload/Core, HoP, Comms Officer, EZ Supervisor, Guard Commander
+/var/const/access_adminlvl4 = "ACCESS_ADMIN_LEVEL4" //AIC Upload/Core, HoP, Comms Officer, EZ Supervisor, Guard Commander, Research Director
 /datum/access/adminlvl4
 	id = access_adminlvl4
 	desc = "Admin Level 4"
@@ -179,10 +179,10 @@
 	desc = "Admin Level 5"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_hop = "ACCESS_HEAD_OF_PERSONNEL" //57
+/var/const/access_finances = "ACCESS_FINANCES" //57
 /datum/access/hop
-	id = access_hop
-	desc = "Head of Personnel"
+	id = access_finances
+	desc = "Site Finances"
 	region = ACCESS_REGION_COMMAND
 
 /var/const/access_change_ids = "ACCESS_CHANGE_ID" //15
@@ -191,19 +191,12 @@
 	desc = "ID Computer"
 	region = ACCESS_REGION_COMMAND
 
-//STAFF
-
-/var/const/access_chapel_office = "ACCESS_CHAPEL_STORAGE" //22
-/datum/access/chapel_office
-	id = access_chapel_office
-	desc = "Chapel Office"
-	region = ACCESS_REGION_GENERAL
-
 //LOGISTICS
 /var/const/access_logistics = "ACCESS_LOGISTICS"
 /datum/access/logistics
 	id = access_logistics
 	desc = "Logistics"
+	region = ACCESS_REGION_COMMAND
 
 // /var/const/access_mailsorting = 952
 // /datum/access/mailsorting
@@ -255,7 +248,7 @@
 /var/const/access_network = "ACCESS_NETWORK" //42
 /datum/access/network
 	id = access_network
-	desc = "Primary Network"
+	desc = "Network Access"
 	region = ACCESS_REGION_RESEARCH
 
 // TELECOMMS CHANNELS - THESE DON'T GO ON DOORS

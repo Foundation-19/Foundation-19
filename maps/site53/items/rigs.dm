@@ -67,7 +67,7 @@
 	glove_type = /obj/item/clothing/gloves/rig/command
 
 	allowed = list(/obj/item/gun, /obj/item/ammo_magazine, /obj/item/device/flashlight, /obj/item/tank, /obj/item/device/suit_cooling_unit, /obj/item/storage/secure/briefcase)
-	req_access = list(access_hop)
+	req_access = list(access_adminlvl4)
 
 /obj/item/clothing/head/helmet/space/rig/command/xo
 	icon_state = "command_XO_rig"

@@ -199,12 +199,12 @@ FIELD_LIST_EDIT("Status", status, GLOB.physical_statuses, null, access_medicallv
 FIELD_SHORT("Species",species, null, access_adminlvl5)
 FIELD_LIST("Branch", branch, record_branches(), null, access_adminlvl5)
 FIELD_LIST("Rank", rank, record_ranks(), null, access_adminlvl5)
-FIELD_SHORT("Religion", religion, access_chapel_office, access_adminlvl5)
+FIELD_SHORT("Religion", religion, access_adminlvl1, access_adminlvl5)
 
 FIELD_LONG("General Notes (Public)", public_record, null, access_adminlvl2)
 
 // MEDICAL RECORDS
-FIELD_LIST("Blood Type", bloodtype, GLOB.blood_types, access_medicallvl2, access_medicallvl2)
+FIELD_LIST("Blood Type", bloodtype, GLOB.blood_types, access_medicallvl2, access_medicallvl4)
 FIELD_LONG("Medical Record", medRecord, access_medicallvl2, access_medicallvl2)
 FIELD_LONG("Known Implants", implants, access_medicallvl2, access_medicallvl2)
 
@@ -216,9 +216,9 @@ FIELD_SHORT("Fingerprint", fingerprint, access_securitylvl2, access_securitylvl2
 
 // EMPLOYMENT RECORDS
 FIELD_LONG("Employment Record", emplRecord, access_adminlvl2, access_adminlvl2)
-FIELD_SHORT("Home System", homeSystem, access_adminlvl5, access_adminlvl5)
-FIELD_SHORT("Faction", faction, access_adminlvl5, access_adminlvl5)
-FIELD_LONG("Qualifications", skillset, access_adminlvl5, access_adminlvl5)
+FIELD_SHORT("Home System", homeSystem, access_adminlvl4, access_adminlvl5)
+FIELD_SHORT("Faction", faction, access_adminlvl4, access_adminlvl5)
+FIELD_LONG("Qualifications", skillset, access_adminlvl4, access_adminlvl5)
 
 // ANTAG RECORDS
 FIELD_LONG("Exploitable Information", antagRecord, access_syndicate, access_syndicate)

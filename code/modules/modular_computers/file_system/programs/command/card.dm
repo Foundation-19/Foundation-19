@@ -48,8 +48,8 @@
 	data["science_jobs"] = format_jobs(SSjobs.titles_by_department(SCI))
 	data["security_jobs"] = format_jobs(SSjobs.titles_by_department(SEC))
 	data["exploration_jobs"] = format_jobs(SSjobs.titles_by_department(EXP))
-	data["service_jobs"] = format_jobs(SSjobs.titles_by_department(SRV))
-	data["supply_jobs"] = format_jobs(SSjobs.titles_by_department(SUP))
+	//data["service_jobs"] = format_jobs(SSjobs.titles_by_department(SRV))
+	//data["supply_jobs"] = format_jobs(SSjobs.titles_by_department(SUP))
 	data["civilian_jobs"] = format_jobs(SSjobs.titles_by_department(CIV))
 	data["centcom_jobs"] = format_jobs(get_all_centcom_jobs())
 
@@ -68,7 +68,7 @@
 			data["all_centcom_access"] = all_centcom_access
 		else
 			var/list/regions = list()
-			for(var/i = 1; i <= 8; i++)
+			for(var/i = 1; i <= 6; i++) //for(var/i = 1; i <= 8; i++) - may be related to _access_defs.dm - HDK
 				var/list/accesses = list()
 				for(var/access in get_region_accesses(i))
 					if (get_access_desc(access))
