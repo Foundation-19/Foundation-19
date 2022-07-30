@@ -44,7 +44,7 @@ ut // COMMAND
 	access = list(
 		access_com_comms,
 		access_civ_comms,
-		access_finances
+		access_finances,
 		access_adminlvl1,
 		access_adminlvl2,
 		access_adminlvl3,
