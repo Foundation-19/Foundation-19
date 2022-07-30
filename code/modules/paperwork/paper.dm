@@ -187,7 +187,7 @@
 	show_browser(user, html, "window=paper_[name]")
 	onclose(user, "paper_[name]")
 	if(isnull(name))
-		crash_with("Paper failed a sanity check. It has no name. Report that to DTraitor.")
+		crash_with("Paper failed a sanity check. It has no name. Report that! | Type: [type]")
 
 /obj/item/paper/verb/rename()
 	set name = "Rename paper"
