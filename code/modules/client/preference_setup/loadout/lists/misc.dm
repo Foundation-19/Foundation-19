@@ -293,3 +293,23 @@
 	cointype["coin, phoron"] = /obj/item/material/coin/phoron
 	cointype["coin, platinum"] = /obj/item/material/coin/platinum
 	gear_tweaks += new/datum/gear_tweak/path(cointype)
+	
+/datum/gear/mre
+	display_name = "mre"
+	description = "A Meal, Ready to Eat."
+	path = /obj/item/storage/mre
+	cost = 4
+
+/datum/gear/mre/New()
+	..()
+	var/mre = list()
+	mre["random mre"] = /obj/item/storage/mre/random
+	mre["vegan mre"] = /obj/item/storage/mre/menu9
+	gear_tweaks += new/datum/gear_tweak/path(mre)
+
+/datum/gear/tape
+	display_name = "duct tape"
+	description = "A roll of very strong tape."
+	path = /obj/item/tape_roll
+	cost = 6	
+	denied_roles = list(/datum/job/classd)

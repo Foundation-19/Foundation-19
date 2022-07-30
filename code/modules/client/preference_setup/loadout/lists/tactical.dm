@@ -55,3 +55,9 @@
 /datum/gear/tactical/balaclava
 	display_name = "balaclava"
 	path = /obj/item/clothing/mask/balaclava
+	
+//Combat knifes can be printed at a hacked autolathe with ease, high point penalty for spawning with one round start
+/datum/gear/tactical/cknife
+	display_name = "combat knife"
+	path = /obj/item/material/knife/combat
+	cost = 8	
