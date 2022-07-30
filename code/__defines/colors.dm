@@ -65,6 +65,7 @@
 #define COLOR_CYAN_BLUE        "#3366cc"
 #define COLOR_LIGHT_CYAN       "#66ccff"
 #define COLOR_PAKISTAN_GREEN   "#006600"
+#define COLOR_ISLAMIC_GREEN    "#009900"
 #define COLOR_SOL              "#436b8e"
 #define COLOR_AMBER            "#ffbf00"
 #define COLOR_COMMAND_BLUE     "#46698c"

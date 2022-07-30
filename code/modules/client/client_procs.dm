@@ -174,7 +174,7 @@
 			qdel(src)
 			return
 
-	if (config.panic_bunker && (get_player_age(ckey) <= config.panic_bunker_age && !(ckey in admin_datums)))
+	if (config.panic_bunker && (get_player_age(ckey) < config.panic_bunker_age && !(ckey in admin_datums)))
 		message_admins("[ckey] tried to join with [get_player_age(ckey)] days, but there is a configured minimum player age of [config.panic_bunker_age] days.")
 		log_admin("[ckey] tried to join with [get_player_age(ckey)] days, but there is a configured minimum player age of [config.panic_bunker_age] days.")
 		to_chat("[config.panic_bunker_message]")
