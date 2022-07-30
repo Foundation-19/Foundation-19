@@ -57,9 +57,7 @@
 		access_civ_comms,
 		access_adminlvl1,
 		access_sciencelvl1,
-		access_sciencelvl2,
-		access_medicallvl1,
-		access_medicallvl2,
+		access_medicallvl1
 	)
 
 	minimal_access = list()
@@ -83,11 +81,10 @@
 	allowed_ranks = list(/datum/mil_rank/civ/classb)
 
 	access = list(
+		access_log_comms,
 		access_adminlvl1,
 		access_adminlvl2,
-		access_log_comms,
 		access_maint_tunnels,
-		access_logistics,
 		access_logistics
 	)
 	minimal_access = list()
@@ -124,10 +121,8 @@
 
 	access = list(
 		access_log_comms,
-		access_maint_tunnels,
-		access_logistics,
-		access_logistics,
 		access_adminlvl1,
+		access_maint_tunnels,
 		access_logistics
 	)
 	minimal_access = list()
@@ -256,7 +251,6 @@
 		access_adminlvl2,
 		access_adminlvl3,
 		access_adminlvl4,
-		access_keyauth,
 		access_sciencelvl2,
 		access_sciencelvl1,
 		access_sciencelvl2,
@@ -265,7 +259,8 @@
 		access_medicallvl1,
 		access_medicallvl2,
 		access_medicallvl3,
-		access_medicallvl4
+		access_medicallvl4,
+		access_keyauth
 	)
 	minimal_access = list()
 

@@ -17,7 +17,8 @@
 
 	access = list(
 		access_sci_comms,
-		access_sciencelvl1
+		access_sciencelvl1,
+		access_sciencelvl2
 	)
 	minimal_access = list()
 
@@ -52,7 +53,7 @@
 	access_sci_comms,
 	access_sciencelvl1,
 	access_sciencelvl2,
-	access_sciencelvl2
+	access_sciencelvl3
 	)
 	minimal_access = list()
 
@@ -89,8 +90,7 @@
 		access_sciencelvl2,
 		access_sciencelvl3,
 		access_sciencelvl4,
-		access_securitylvl1,
-		access_sciencelvl2
+		access_securitylvl1
 	)
 	minimal_access = list()
 
@@ -122,19 +122,21 @@
 	access = list(
 		access_com_comms,
 		access_sci_comms,
-		access_sciencelvl5,
-		access_sciencelvl4,
-		access_sciencelvl3,
-		access_sciencelvl2,
 		access_sciencelvl1,
+		access_sciencelvl2,
+		access_sciencelvl3,
+		access_sciencelvl4,
+		access_sciencelvl5,
 		access_securitylvl1,
 		access_medicallvl1,
 		access_adminlvl1,
 		access_adminlvl2,
 		access_adminlvl3,
 		access_adminlvl4,
-		access_keyauth,
-		access_sciencelvl2
+		access_tcomsat,
+		access_network,
+		access_maint_tunnels,
+		access_keyauth
 	)
 	minimal_access = list()
 

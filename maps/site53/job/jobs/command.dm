@@ -19,6 +19,7 @@ ut // COMMAND
 		access_adminlvl3,
 		access_adminlvl4,
 		access_adminlvl5,
+		access_maint_tunnels,
 		access_keyauth
 	)
 
@@ -41,14 +42,14 @@ ut // COMMAND
 	alt_titles = list("Head of Personnel")
 
 	access = list(
-		access_adminlvl4,
+		access_com_comms,
+		access_civ_comms,
+		access_finances
 		access_adminlvl1,
 		access_adminlvl2,
 		access_adminlvl3,
 		access_adminlvl4,
-		access_com_comms,
 		access_change_ids,
-		access_civ_comms,
 		access_keyauth
 	)
 
@@ -75,8 +76,6 @@ ut // COMMAND
 	)
 
 	access = list(
-		access_sciencelvl1,
-		access_sciencelvl3,
 		access_com_comms,
 		access_sci_comms,
 		access_civ_comms,
@@ -84,17 +83,19 @@ ut // COMMAND
 		access_med_comms,
 		access_eng_comms,
 		access_sec_comms,
-		access_adminlvl4,
-		access_adminlvl3,
-		access_adminlvl2,
 		access_adminlvl1,
+		access_adminlvl2,
+		access_adminlvl3,
+		access_adminlvl4,
 		access_engineeringlvl1,
 		access_engineeringlvl2,
 		access_engineeringlvl3,
 		access_securitylvl1,
 		access_sciencelvl1,
 		access_sciencelvl2,
-		access_sciencelvl3
+		access_sciencelvl3,
+		access_tcomsat,
+		access_network
 	)
 
 	minimal_access = list()
@@ -141,9 +142,11 @@ ut // COMMAND
 		access_eng_comms,
 		access_sec_comms,
 		access_adminlvl1,
+		access_adminlvl2,
 		access_engineeringlvl1,
 		access_engineeringlvl2,
-		access_engineeringlvl3
+		access_engineeringlvl3,
+		access_tcomsat
 	)
 
 	min_skill = list(SKILL_COMPUTER     = SKILL_BASIC,
@@ -189,7 +192,8 @@ ut // COMMAND
 		access_adminlvl2,
 		access_adminlvl3,
 		access_adminlvl4,
-		access_adminlvl5
+		access_adminlvl5,
+		access_keyauth
 	)
 	minimal_access = list()
 

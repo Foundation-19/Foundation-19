@@ -23,7 +23,7 @@
 		access_eng_comms,
 		access_engineeringlvl1,
 		access_engineeringlvl2,
-		access_sciencelvl1
+		access_maint_tunnels
 	)
 	minimal_access = list()
 
@@ -53,11 +53,10 @@
 
 	access = list(
 		access_eng_comms,
-		access_securitylvl1,
 		access_engineeringlvl1,
 		access_engineeringlvl2,
 		access_engineeringlvl3,
-		access_sciencelvl1
+		access_maint_tunnels
 	)
 	minimal_access = list()
 
@@ -103,8 +102,7 @@
 		access_engineeringlvl2,
 		access_engineeringlvl3,
 		access_engineeringlvl4,
-		access_engineeringlvl2,
-		access_engineeringlvl2
+		access_maint_tunnels
 	)
 	minimal_access = list()
 
@@ -153,8 +151,7 @@
 		access_engineeringlvl2,
 		access_engineeringlvl3,
 		access_engineeringlvl4,
-		access_engineeringlvl2,
-		access_engineeringlvl2
+		access_maint_tunnels
 	)
 	minimal_access = list()
 
@@ -195,13 +192,15 @@
 		access_sciencelvl3,
 		access_sciencelvl4,
 		access_adminlvl1,
+		access_adminlvl2,
 		access_engineeringlvl1,
 		access_engineeringlvl2,
 		access_engineeringlvl3,
 		access_engineeringlvl4,
 		access_engineeringlvl5,
-		access_engineeringlvl2,
-		access_engineeringlvl2,
+		access_tcomsat,
+		access_network,
+		access_maint_tunnels,
 		access_keyauth
 	)
 	minimal_access = list()

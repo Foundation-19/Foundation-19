@@ -44,7 +44,7 @@
 	name = OUTFIT_JOB_NAME("Communications Technician")
 	uniform = /obj/item/clothing/under/scp/utility/communications/tech
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_types = list(/obj/item/card/id/commslvl1)
+	id_types = list(/obj/item/card/id/commslvl2)
 	belt = /obj/item/storage/belt/utility/full
 	l_ear = /obj/item/device/radio/headset/commsdispatcher
 	back = /obj/item/storage/backpack/satchel/pocketbook

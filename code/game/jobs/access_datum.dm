@@ -77,7 +77,7 @@
 	desc = "Science Level 4"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_sciencelvl5 = "ACCESS_SCIENCE_LEVEL5" //Research Director, AIC Upload/Core
+/var/const/access_sciencelvl5 = "ACCESS_SCIENCE_LEVEL5" //Research Director, AIC Upload/Core + Admin4
 /datum/access/sciencelvl5
 	id = access_sciencelvl5
 	desc = "Science Level 5"
@@ -155,7 +155,7 @@
 	desc = "Admin Level 1"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_adminlvl2 = "ACCESS_ADMIN_LEVEL2" //Logistics Officer, Comms Tech
+/var/const/access_adminlvl2 = "ACCESS_ADMIN_LEVEL2" //Logistics Officer, Comms Tech, Chief Engineer
 /datum/access/adminlvl2
 	id = access_adminlvl2
 	desc = "Admin Level 2"
@@ -167,7 +167,7 @@
 	desc = "Admin Level 3"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_adminlvl4 = "ACCESS_ADMIN_LEVEL4" //AIC Upload/Core, HoP, Comms Officer, EZ Supervisor, Guard Commander, Research Director
+/var/const/access_adminlvl4 = "ACCESS_ADMIN_LEVEL4" //AIC Upload/Core + Sci4, HoP, Comms Officer, EZ Supervisor, Guard Commander, Research Director
 /datum/access/adminlvl4
 	id = access_adminlvl4
 	desc = "Admin Level 4"
@@ -250,6 +250,20 @@
 	id = access_network
 	desc = "Network Access"
 	region = ACCESS_REGION_RESEARCH
+	
+// Additional Access
+
+/var/const/access_maint_tunnels = "ACCESS_MAINT" //12
+/datum/access/maint_tunnels
+	id = access_maint_tunnels
+	desc = "Maintenance"
+	region = ACCESS_REGION_ENGINEERING
+
+/var/const/access_external_airlocks = "ACCESS_EXTERNAL" //13
+/datum/access/external_airlocks
+	id = access_external_airlocks
+	desc = "External Airlocks"
+	region = ACCESS_REGION_ENGINEERING
 
 // TELECOMMS CHANNELS - THESE DON'T GO ON DOORS
 
@@ -295,25 +309,13 @@
 	desc = "Command Comms"
 	region = ACCESS_REGION_NONE
 
-// Additional Access
-
-/var/const/access_maint_tunnels = "ACCESS_MAINT" //12
-/datum/access/maint_tunnels
-	id = access_maint_tunnels
-	desc = "Maintenance"
-	region = ACCESS_REGION_ENGINEERING
-
-/var/const/access_external_airlocks = "ACCESS_EXTERNAL" //13
-/datum/access/external_airlocks
-	id = access_external_airlocks
-	desc = "External Airlocks"
-	region = ACCESS_REGION_ENGINEERING
-
+/* - Nothing seems to use this. - HDK
 /var/const/access_torch_fax = "ACCESS_TORCH_FAX"
 /datum/access/torch_fax
 	id = access_torch_fax
 	desc = "Fax Machines"
 	region = ACCESS_REGION_COMMAND
+*/
 
 /*****************
 * Station access *

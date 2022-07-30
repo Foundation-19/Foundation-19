@@ -438,11 +438,11 @@
 
 // COMMS CARDS
 
-/obj/item/card/id/commslvl1
+/obj/item/card/id/commslvl2
 	name = " administration ID"
 	desc = "A black ID. A black ID. Looks like the person wearing this won't give it up easy."
 	job_access_type = /datum/job/commeng
-	icon_state = "adminlvl1"
+	icon_state = "adminlvl2"
 	item_state = "Admin_ID"
 
 /obj/item/card/id/commslvl4
