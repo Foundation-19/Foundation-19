@@ -43,7 +43,7 @@
 	icon_locked = "medical1"
 	icon_opened = "medicalopen"
 	icon_off = "medicaloff"
-	req_access = list(access_medicallvl3, access_medicallvl2)
+	req_access = list(access_medicallvl3)
 
 /obj/structure/closet/secure_closet/medical2/WillContain()
 	return list(

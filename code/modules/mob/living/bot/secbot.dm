@@ -11,8 +11,8 @@
 	layer = MOB_LAYER
 	maxHealth = 50
 	health = 50
-	req_access = list(list(access_securitylvl2, access_securitylvl2))
-	botcard_access = list(access_securitylvl2, access_securitylvl1, access_securitylvl2, access_medicallvl2, access_maint_tunnels)
+	req_access = list(list(access_securitylvl2))
+	botcard_access = list(access_securitylvl2, access_sciencelvl2, access_securitylvl2, access_medicallvl2, access_maint_tunnels)
 
 	patrol_speed = 2
 	target_speed = 3

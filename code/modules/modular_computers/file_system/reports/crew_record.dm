@@ -201,21 +201,21 @@ FIELD_LIST("Branch", branch, record_branches(), null, access_adminlvl5)
 FIELD_LIST("Rank", rank, record_ranks(), null, access_adminlvl5)
 FIELD_SHORT("Religion", religion, access_adminlvl1, access_adminlvl5)
 
-FIELD_LONG("General Notes (Public)", public_record, null, access_adminlvl2)
+FIELD_LONG("General Notes (Public)", public_record, null, access_adminlvl4)
 
 // MEDICAL RECORDS
 FIELD_LIST("Blood Type", bloodtype, GLOB.blood_types, access_medicallvl2, access_medicallvl4)
-FIELD_LONG("Medical Record", medRecord, access_medicallvl2, access_medicallvl2)
-FIELD_LONG("Known Implants", implants, access_medicallvl2, access_medicallvl2)
+FIELD_LONG("Medical Record", medRecord, access_medicallvl2, access_medicallvl3)
+FIELD_LONG("Known Implants", implants, access_medicallvl2, access_medicallvl3)
 
 // SECURITY RECORDS
-FIELD_LIST("Criminal Status", criminalStatus, GLOB.security_statuses, access_securitylvl2, access_securitylvl2)
-FIELD_LONG("Security Record", secRecord, access_securitylvl2, access_securitylvl2)
-FIELD_SHORT("DNA", dna, access_securitylvl2, access_securitylvl2)
-FIELD_SHORT("Fingerprint", fingerprint, access_securitylvl2, access_securitylvl2)
+FIELD_LIST("Criminal Status", criminalStatus, GLOB.security_statuses, access_securitylvl2)
+FIELD_LONG("Security Record", secRecord, access_securitylvl2)
+FIELD_SHORT("DNA", dna, access_securitylvl2)
+FIELD_SHORT("Fingerprint", fingerprint, access_securitylvl2)
 
 // EMPLOYMENT RECORDS
-FIELD_LONG("Employment Record", emplRecord, access_adminlvl2, access_adminlvl2)
+FIELD_LONG("Employment Record", emplRecord, access_adminlvl2, access_adminlvl5)
 FIELD_SHORT("Home System", homeSystem, access_adminlvl4, access_adminlvl5)
 FIELD_SHORT("Faction", faction, access_adminlvl4, access_adminlvl5)
 FIELD_LONG("Qualifications", skillset, access_adminlvl4, access_adminlvl5)
