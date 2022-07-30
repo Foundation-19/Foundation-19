@@ -91,7 +91,7 @@
 				var/obj/item/device/pda/pda = I
 				I = pda.id
 			if (I && istype(I))
-				if(access_adminlvl5 in I.access)
+				if(access_adminlvl5 in I.access) //if(access_captain in I.access)
 					authorised = 1
 				else if (possibleNets[network] in I.access)
 					authorised = 1
