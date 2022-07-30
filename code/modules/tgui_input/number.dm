@@ -29,7 +29,7 @@
 		var/input_number = input(user, message, title, default) as null|num
 		return clamp(round_value ? round(input_number) : input_number, min_value, max_value)
 	var/datum/tgui_input_number/number_input = new(user, message, title, default, max_value, min_value, timeout, round_value)
-	number_input.ui_interact(user)
+	number_input.tgui_interact(user)
 	number_input.wait()
 	if (number_input)
 		. = number_input.entry
