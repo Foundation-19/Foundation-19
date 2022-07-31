@@ -1439,7 +1439,7 @@
 		to_chat(ref_client, msgplayer)
 		if(ref_client.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
 			sound_to(ref_client, 'sound/effects/adminhelp-reply.ogg')
-		ticket.close(usr.client)
+		ticket.close(client_repository.get_lite_client(usr.client))
 
 	else if(href_list["adminplayerobservecoodjump"])
 		if(!check_rights(R_ADMIN))	return
