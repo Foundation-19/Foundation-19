@@ -13,7 +13,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "ad" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -24,7 +24,7 @@
 "ae" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "af" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
@@ -136,7 +136,7 @@
 /area/site53/upper_surface/maincontrolroomstairs)
 "as" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "at" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -144,7 +144,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "au" = (
 /obj/machinery/light,
 /obj/structure/closet/crate/bin{
@@ -1346,7 +1346,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "eq" = (
 /obj/machinery/camera/network/medbay{
 	c_tag = "Mental Isolation 4";
@@ -2094,7 +2094,7 @@
 "gt" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "gu" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
@@ -4249,7 +4249,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "mb" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
@@ -4298,11 +4298,11 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "mi" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "mj" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -4312,7 +4312,7 @@
 	name = "scp420j"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "mk" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -4322,7 +4322,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "mm" = (
 /obj/machinery/light,
 /obj/structure/closet,
@@ -4334,7 +4334,7 @@
 /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet,
 /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "mn" = (
 /obj/structure/hygiene/sink{
 	dir = 1;
@@ -5316,7 +5316,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "pr" = (
 /obj/effect/paint_stripe/gray,
 /obj/machinery/status_display,
@@ -5419,7 +5419,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "qf" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -5659,7 +5659,7 @@
 /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/marine,
 /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/marine,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "rp" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5846,7 +5846,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "rN" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
@@ -8028,7 +8028,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "Ic" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/plastic/fifty,
@@ -8146,7 +8146,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "Kc" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -8198,7 +8198,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "Lm" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -8453,7 +8453,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "Qi" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/tree/pine,
