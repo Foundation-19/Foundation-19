@@ -4243,6 +4243,11 @@
 	name = "Tram Hub"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "facilitylockdown";
+	name = "Exterior Lockdown Blast Door"
+	},
 /turf/simulated/floor/tiled,
 /area/site53/surface/tramhubhallwayentry)
 "mb" = (
@@ -4286,6 +4291,11 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Tram Hub"
+	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "facilitylockdown";
+	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/tramhubhallwayentry)
@@ -5300,6 +5310,11 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "facilitylockdown";
+	name = "Exterior Lockdown Blast Door"
+	},
 /turf/simulated/floor/tiled,
 /area/site53/surface/tramhubhallwayentry)
 "pr" = (
@@ -5396,6 +5411,15 @@
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
+"qa" = (
+/obj/structure/bed/chair,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/surface/tramhubhallwayentry)
 "qf" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -7991,6 +8015,20 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"HU" = (
+/obj/machinery/light{
+	dir = 1;
+	icon_state = "tube1"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/hyper{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/surface/tramhubhallwayentry)
 "Ic" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/plastic/fifty,
@@ -8096,6 +8134,19 @@
 	},
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
+"JU" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/surface/tramhubhallwayentry)
 "Kc" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -8133,6 +8184,21 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
+"Lf" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/obj/effect/landmark{
+	name = "scp420j"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/surface/tramhubhallwayentry)
 "Lm" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -8379,6 +8445,15 @@
 "Qe" = (
 /turf/simulated/wall/wood,
 /area/site53/surface/surface)
+"Qg" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/surface/tramhubhallwayentry)
 "Qi" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/tree/pine,
@@ -39318,7 +39393,7 @@ lf
 lf
 lf
 aT
-at
+JU
 at
 at
 at
@@ -39575,7 +39650,7 @@ vx
 vx
 vx
 qW
-gt
+Qg
 gt
 gt
 gt
@@ -39832,7 +39907,7 @@ kC
 kC
 kC
 oU
-mj
+Lf
 as
 as
 ro
@@ -40089,7 +40164,7 @@ kC
 kC
 kC
 oU
-mi
+qa
 as
 as
 ml
@@ -40346,7 +40421,7 @@ aD
 oU
 af
 af
-ac
+HU
 as
 as
 as
