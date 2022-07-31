@@ -30804,12 +30804,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
-"rhy" = (
-/obj/machinery/door/airlock/highsecurity/bolted{
-	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "riw" = (
 /obj/effect/paint_stripe/red,
 /obj/effect/wallframe_spawn/reinforced/titanium,
@@ -82124,7 +82118,7 @@ azA
 azA
 azA
 azA
-rhy
+azA
 azA
 azA
 azA
