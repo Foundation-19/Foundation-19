@@ -265,7 +265,7 @@
 	text = "DEBT OF LIFE PAID TO THE LION OF DEATH"
 	},
 /turf/simulated/mineral{
-	initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
 /area/site53/llcz/mine/unexplored)
 "aN" = (
@@ -2681,7 +2681,7 @@
 /area/site53/llcz/dclass/reeducation)
 "hy" = (
 /turf/simulated/mineral{
-	initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
 /area/space)
 "hz" = (
@@ -7826,7 +7826,7 @@
 /area/site53/llcz/dclass/checkpoint)
 "ua" = (
 /turf/simulated/mineral{
-	initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
 /area/site53/llcz/mine/unexplored)
 "ub" = (
@@ -11687,14 +11687,9 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
-"Fg" = (
-/turf/simulated/floor/exoplanet/desert{
-	initial_gas = s
-	},
-/area/site53/llcz/mine/explored)
 "Fh" = (
 /turf/simulated/mineral/random{
-	initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472)
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
 /area/site53/llcz/mine/unexplored)
 "Fi" = (
@@ -38658,7 +38653,7 @@ ua
 ua
 ua
 gQ
-Fg
+gQ
 gQ
 gQ
 hd
