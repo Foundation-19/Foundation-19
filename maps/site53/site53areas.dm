@@ -211,8 +211,8 @@
 
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/surface/tramhubhallwayentry
-	name = "\improper Tram Hub"
+/area/site53/upper_surface/tramhubhallwayentry
+	name = "\improper Site 53 Entrance"
 	icon_state = "hallC1"
 //	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
 	area_flags = AREA_FLAG_RAD_SHIELDED
