@@ -119,7 +119,7 @@
 	log_debug(text)
 
 /proc/log_qdel(text)
-	to_file(GLOB.world_qdel_log, "\[[station_time_timestamp()]]QDEL: [text]")
+	to_file(GLOB.world_qdel_log, "\[[time_stamp()]]QDEL: [text]")
 
 /proc/log_query_debug(text)
 	to_file(GLOB.query_debug_log, "SQL: [text]")
