@@ -1011,11 +1011,6 @@
 	ambience = list('sound/ambience/signal.ogg')
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/medical/virology
-	name = "\improper Virology"
-	icon_state = "virology"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/medical/morgue
 	name = "\improper Morgue"
 	icon_state = "morgue"
