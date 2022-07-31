@@ -30805,9 +30805,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
 "rhy" = (
-/mob/living/simple_animal/hostile/scp096,
-/turf/simulated/floor/reinforced,
-/area/site53/uhcz/scp096)
+/obj/machinery/door/airlock/highsecurity/bolted{
+	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "riw" = (
 /obj/effect/paint_stripe/red,
 /obj/effect/wallframe_spawn/reinforced/titanium,
@@ -78735,7 +78737,7 @@ bdi
 aBC
 kwM
 kwM
-rhy
+kwM
 kwM
 kwM
 aBC
@@ -82122,7 +82124,7 @@ azA
 azA
 azA
 azA
-azA
+rhy
 azA
 azA
 azA
