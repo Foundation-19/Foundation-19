@@ -71,6 +71,11 @@
 		if(!check_species_allowed(S))
 			return FALSE
 
+		if(client.prefs.organ_data[BP_CHEST] == "cyborg")
+			if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
+				to_chat(usr, "No FBP without whitelist")
+				return FALSE
+
 		var/should_warn = TRUE
 		if(client.prefs.job_high == job.title)
 			should_warn = FALSE
@@ -82,7 +87,7 @@
 			should_warn = FALSE // If it isn't available there will be its own message.
 
 		if(should_warn)
-			if(alert(client, "You don't have any preferences set for [job.title]. Are you sure you want to join as it?", "Confirm Job Selection", "Yes", "No") == "No")
+			if(tgui_alert(client, "You don't have any preferences set for [job.title]. Are you sure you want to join as it?", "Confirm Job Selection", list("Yes", "No")) != "Yes")
 				return FALSE
 
 		AttemptLateSpawn(job, client.prefs.spawnpoint)
@@ -107,7 +112,7 @@
 		return FALSE
 
 	if(!job || !job.is_available(client))
-		alert("[job.title] is not available. Please try another.")
+		tgui_alert(client, "[job.title] is not available. Please try another.", null, list("Ok"))
 		return FALSE
 	if(job.is_restricted(client.prefs, src))
 		return
@@ -123,7 +128,7 @@
 
 	// Just in case someone stole our position while we were waiting for input from alert() proc
 	if(!job || !job.is_available(client))
-		to_chat(src, alert("[job.title] is not available. Please try another."))
+		tgui_alert(client, "[job.title] is not available. Please try another.", null, list("Ok"))
 		return FALSE
 
 	SSjobs.assign_role(src, job.title, 1)
@@ -254,6 +259,11 @@
 
 /mob/new_player/proc/create_character(turf/spawn_turf)
 	spawning = TRUE
+	if(client.prefs.organ_data[BP_CHEST] == "cyborg")
+		if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
+			to_chat(src, "No FBP without whitelist.")
+			spawning = FALSE
+			return	
 	close_spawn_windows()
 
 	var/mob/living/carbon/human/new_character
@@ -328,11 +338,11 @@
 /mob/new_player/proc/check_species_allowed(datum/species/S, show_alert = TRUE)
 	if(!S.is_available_for_join() && !has_admin_rights())
 		if(show_alert)
-			to_chat(src, alert("Your current species, [client.prefs.species], is not available for play."))
+			tgui_alert(client, "Your current species, [client.prefs.species], is not available for play.", null, list("Ok"))
 		return FALSE
 	if(!is_alien_whitelisted(src, S))
 		if(show_alert)
-			to_chat(src, alert("You are currently not whitelisted to play [client.prefs.species]."))
+			tgui_alert(client, "You are currently not whitelisted to play [client.prefs.species].", null, list("Ok"))
 		return FALSE
 	return TRUE
 

@@ -178,7 +178,7 @@
 /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerhcz
 	name = OUTFIT_JOB_NAME("HCZ Guard")
 	uniform = /obj/item/clothing/under/scpguardarmband
-	suit = /obj/item/clothing/head/hcz_hazmat
+	suit = /obj/item/clothing/suit/hcz_hazmat
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/seclvl3hcz)
 	l_ear = /obj/item/device/radio/headset/headset_sec_hcz
@@ -187,7 +187,7 @@
 	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/warden = 1,/obj/item/clothing/suit/armor/pcarrier/scp/tactical = 1,/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
-	head = /obj/item/clothing/suit/hcz_hazmat
+	head = /obj/item/clothing/head/hcz_hazmat
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
