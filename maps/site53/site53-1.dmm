@@ -2749,7 +2749,7 @@
 "hG" = (
 /obj/machinery/door/airlock/civilian{
 	name = "Janitorial Closet";
-	req_access = list("ACCESS_SECURITY_LEVEL1","ACCESS_DCLASS_JANITORIAL")
+	req_access = list(list("ACCESS_SECURITY_LEVEL1","ACCESS_DCLASS_JANITORIAL"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/janitorial)
@@ -7538,18 +7538,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
-"tg" = (
-/obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/recreationhallway)
 "th" = (
 /obj/machinery/computer/modular/preset/library{
 	dir = 4;
@@ -33789,7 +33777,7 @@ dV
 dV
 dV
 hG
-tg
+iK
 iK
 iS
 iS
