@@ -7,13 +7,13 @@
 	w_class = ITEM_SIZE_TINY
 
 	var/obj/item/radio/integrated/radio = null
-	var/access_securitylvl2 = 0
-	var/access_engineeringlvl2 = 0
+	var/access_security = 0
+	var/access_engine = 0
 	var/access_atmos = 0
-	var/access_medicallvl2 = 0
+	var/access_medical = 0
 	var/access_clown = 0
 	var/access_mime = 0
-	var/access_dclassjanitorial = 0
+	var/access_janitor = 0
 //	var/access_flora = 0
 	var/access_reagent_scanner = 0
 	var/access_remote_door = 0 // Control some blast doors remotely!!
@@ -21,7 +21,7 @@
 	var/access_status_display = 0
 	var/access_quartermaster = 0
 	var/access_detonate_pda = 0
-	var/access_dclassbotany = 0
+	var/access_hydroponics = 0
 	var/charges = 0
 	var/mode = null
 	var/menu
@@ -40,7 +40,7 @@
 /obj/item/weapon/cartridge/engineering
 	name = "\improper Power-ON cartridge"
 	icon_state = "cart-e"
-	access_engineeringlvl2 = 1
+	access_engine = 1
 
 /obj/item/weapon/cartridge/atmos
 	name = "\improper BreatheDeep cartridge"
@@ -50,7 +50,7 @@
 /obj/item/weapon/cartridge/medical
 	name = "\improper Med-U cartridge"
 	icon_state = "cart-m"
-	access_medicallvl2 = 1
+	access_medical = 1
 
 /obj/item/weapon/cartridge/chemistry
 	name = "\improper ChemWhiz cartridge"
@@ -60,7 +60,7 @@
 /obj/item/weapon/cartridge/security
 	name = "\improper R.O.B.U.S.T. cartridge"
 	icon_state = "cart-s"
-	access_securitylvl2 = 1
+	access_security = 1
 
 /obj/item/weapon/cartridge/security/Initialize()
 	radio = new /obj/item/radio/integrated/beepsky(src)
@@ -69,20 +69,20 @@
 /obj/item/weapon/cartridge/detective
 	name = "\improper D.E.T.E.C.T. cartridge"
 	icon_state = "cart-s"
-	access_securitylvl2 = 1
-	access_medicallvl2 = 1
+	access_security = 1
+	access_medical = 1
 
 
 /obj/item/weapon/cartridge/janitor
 	name = "\improper CustodiPRO cartridge"
 	desc = "The ultimate in clean-room design."
 	icon_state = "cart-j"
-	access_dclassjanitorial = 1
+	access_janitor = 1
 
 /obj/item/weapon/cartridge/lawyer
 	name = "\improper P.R.O.V.E. cartridge"
 	icon_state = "cart-s"
-	access_securitylvl2 = 1
+	access_security = 1
 
 /obj/item/weapon/cartridge/clown
 	name = "\improper Honkworks 5.0 cartridge"
@@ -134,14 +134,14 @@
 	icon_state = "cart-h"
 	access_status_display = 1
 	access_quartermaster = 1
-	access_dclassjanitorial = 1
-	access_securitylvl2 = 1
+	access_janitor = 1
+	access_security = 1
 
 /obj/item/weapon/cartridge/hos
 	name = "\improper R.O.B.U.S.T. DELUXE"
 	icon_state = "cart-hos"
 	access_status_display = 1
-	access_securitylvl2 = 1
+	access_security = 1
 
 /obj/item/weapon/cartridge/hos/Initialize()
 	radio = new /obj/item/radio/integrated/beepsky(src)
@@ -151,7 +151,7 @@
 	name = "\improper Power-On DELUXE"
 	icon_state = "cart-ce"
 	access_status_display = 1
-	access_engineeringlvl2 = 1
+	access_engine = 1
 	access_atmos = 1
 
 /obj/item/weapon/cartridge/cmo
@@ -159,7 +159,7 @@
 	icon_state = "cart-cmo"
 	access_status_display = 1
 	access_reagent_scanner = 1
-	access_medicallvl2 = 1
+	access_medical = 1
 
 /obj/item/weapon/cartridge/rd
 	name = "\improper Signal Ace DELUXE"
@@ -177,10 +177,10 @@
 	desc = "Now with 200% more value!"
 	icon_state = "cart-c"
 	access_quartermaster = 1
-	access_dclassjanitorial = 1
-	access_engineeringlvl2 = 1
-	access_securitylvl2 = 1
-	access_medicallvl2 = 1
+	access_janitor = 1
+	access_engine = 1
+	access_security = 1
+	access_medical = 1
 	access_reagent_scanner = 1
 	access_status_display = 1
 	access_atmos = 1
