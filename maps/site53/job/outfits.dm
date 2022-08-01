@@ -488,16 +488,6 @@
 	l_ear = /obj/item/device/radio/headset/headset_med
 	back = /obj/item/storage/backpack/medic
 
-/decl/hierarchy/outfit/job/ds90/medical/virologist
-	name = OUTFIT_JOB_NAME("Virologist")
-	uniform = /obj/item/clothing/under/rank/medical/scrubs/teal
-	shoes = /obj/item/clothing/shoes/white
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat
-	id_types = list(/obj/item/card/id/virologist)
-	l_pocket = /obj/item/device/radio
-	l_ear = /obj/item/device/radio/headset/headset_med
-	back = /obj/item/storage/backpack/medic
-
 /decl/hierarchy/outfit/job/ds90/medical/surgeon
 	name = OUTFIT_JOB_NAME("Surgeon")
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/green

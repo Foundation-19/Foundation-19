@@ -482,13 +482,6 @@
 	item_state = "Sec_ID5"
 	job_access_type = /datum/job/cmo
 
-/obj/item/card/id/virologist
-	name = " security ID"
-	desc = "A light blue card. Seems almost as unimportant as the person itself."
-	icon_state = "adminlvl2"
-	item_state = "Admin_ID"
-	job_access_type = /datum/job/virologist
-
 /obj/item/card/id/psychiatrist
 	name = " administration ID"
 	desc = "A light blue card. Seems important."
