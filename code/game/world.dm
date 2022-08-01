@@ -611,12 +611,12 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 	if(game_id)
 		GLOB.log_directory += "[game_id]"
 	else
-		GLOB.log_directory += "[replacetext(station_time_timestamp(), ":", ".")]"
+		GLOB.log_directory += "[replacetext(time_stamp(), ":", ".")]"
 
 	GLOB.world_qdel_log = file("[GLOB.log_directory]/qdel.log")
 	GLOB.query_debug_log = file("[GLOB.log_directory]/sql.log")
 	GLOB.tgui_log = file("[GLOB.log_directory]/tgui.log")
-	to_file(GLOB.world_qdel_log, "\n\nStarting up round ID [game_id]. [station_time_timestamp()]\n---------------------")
+	to_file(GLOB.world_qdel_log, "\n\nStarting up round ID [game_id]. [time_stamp()]\n---------------------")
 
 #define FAILED_DB_CONNECTION_CUTOFF 5
 var/failed_db_connections = 0

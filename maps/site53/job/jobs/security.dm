@@ -5,6 +5,7 @@
 	department_flag = SEC|COM
 	//duties = "<big><b>As the Guard Commander, you have direct say over the Security department. You're not assigned to any zone, but instead should jump in where necessary or requested. You are to speak with your Zone Commanders oftenly, and assign new guards to the right zone, or where it's needed mostly.</b></big>"
 	economic_power = 8
+	alt_titles = list("Security Chief", "Head of Security")
 	minimal_player_age = 15
 	ideal_character_age = 55
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/cos
@@ -217,6 +218,7 @@
 	balance_limited = TRUE
 	//duties = "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	economic_power = 4
+	alt_titles = list("LCZ Senior Containment Response Agent", "LCZ Containment Response Sergeant", "LCZ Senior Combat Medic", "LCZ Riot Control Sergeant", "LCZ Senior Riot Control Agent", "LCZ Senior Agent")
 	minimal_player_age = 5
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerlcz
@@ -264,6 +266,7 @@
 	spawn_positions = 3
 	//duties = "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	economic_power = 4
+	alt_titles = list("HCZ Senior Containment Response Agent", "HCZ Containment Response Sergeant", "HCZ Senior Combat Medic", "HCZ Senior Agent")
 	minimal_player_age = 5
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerhcz
@@ -308,6 +311,7 @@
 	spawn_positions = 2
 	//duties = "<big><b>As the Agent you have more access than a Junior Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	economic_power = 4
+	alt_titles = list("EZ Senior Forensics Agent", "EZ Senior Investigations Agent", "EZ Senior Combat Medic")
 	minimal_player_age = 5
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerez
@@ -360,6 +364,7 @@
 	spawn_positions = 20
 	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	economic_power = 4
+	alt_titles = list("LCZ Containment Response Agent", "LCZ Containment Response Guard", "LCZ Combat Medic", "LCZ Riot Control Guard", "LCZ Riot Control Agent", "LCZ Agent")
 //	minimal_player_age = 0
 	ideal_character_age = 25
 	balance_limited = TRUE
@@ -408,6 +413,7 @@
 	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
 	//supervisors = "the Guard/Zone Commander"
 	economic_power = 4
+	alt_titles = list("HCZ Containment Response Agent", "HCZ Containment Response Guard", "HCZ Combat Medic", "HCZ Agent")
 //	minimal_player_age = 0
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerhcz
@@ -452,6 +458,7 @@
 	spawn_positions = 6
 	//duties = "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
 	economic_power = 4
+	alt_titles = list("EZ Forensics Agent", "EZ Investigations Agent", "EZ Combat Medic")
 	minimal_player_age = 0
 	ideal_character_age = 27
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerez

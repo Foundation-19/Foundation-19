@@ -13,7 +13,7 @@
 	access = list(
 		access_com_comms,
 		access_med_comms,
-		access_medicallvl2,
+		access_medical_equip,
 		access_keyauth,
 		access_medicallvl1,
 		access_medicallvl2,
@@ -42,7 +42,7 @@
 	economic_power = 5
 	access = list(
 		access_med_comms,
-		access_medicallvl2,
+		access_medical_equip,
 		access_medicallvl1,
 		access_medicallvl2
 	)
@@ -61,7 +61,7 @@
 	selection_color = "#013d3b"
 	access = list(
 		access_med_comms,
-		access_medicallvl2,
+		access_medical_equip,
 		access_medicallvl1
 	)
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
@@ -85,36 +85,12 @@
 	)
 	access = list(
 		access_med_comms,
-		access_medicallvl2,
+		access_medical_equip,
 		access_medicallvl1,
 		access_medicallvl2,
 		access_medicallvl3,
 		access_securitylvl1,
 		access_sciencelvl1
-	)
-	minimal_access = list()
-
-/datum/job/virologist
-	title = "Virologist"
-	department = "Medical"
-	department_flag = MED
-	selection_color = "#013d3b"
-	total_positions = 2
-	spawn_positions = 2
-	ideal_character_age = 40
-	economic_power = 5
-	supervisors = "the Chief Medical Officer"
-	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/medicaldoctor
-	allowed_branches = list(
-	/datum/mil_branch/security)
-	allowed_ranks = list(/datum/mil_rank/security/e3)
-	access = list(
-		access_med_comms,
-		access_medicallvl2,
-		access_medicallvl1,
-		access_medicallvl2,
-		access_medicallvl3,
-		access_medicallvl4
 	)
 	minimal_access = list()
 
@@ -134,7 +110,7 @@
 	allowed_ranks = list(/datum/mil_rank/security/e3)
 	access = list(
 		access_med_comms,
-		access_medicallvl2,
+		access_medical_equip,
 		access_medicallvl1,
 		access_medicallvl2,
 		access_medicallvl3,
@@ -160,7 +136,7 @@
 	allowed_ranks = list(/datum/mil_rank/security/e4)
 	access = list(
 		access_med_comms,
-		access_medicallvl2,
+		access_medical_equip,
 		access_securitylvl1,
 		access_sciencelvl1,
 		access_engineeringlvl1,
