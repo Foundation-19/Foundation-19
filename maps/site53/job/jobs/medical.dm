@@ -154,7 +154,7 @@
 	                    SKILL_ANATOMY     = SKILL_MASTER,
 	                    SKILL_CHEMISTRY   = SKILL_MASTER)
 	skill_points = 24
-
+/*
 /datum/job/virologist
 	title = "Virologist"
 	department = "Medical"
@@ -192,7 +192,7 @@
 	                    SKILL_ANATOMY     = SKILL_MASTER,
 	                    SKILL_CHEMISTRY   = SKILL_MASTER)
 	skill_points = 23
-
+*/
 /datum/job/surgeon
 	title = "Surgeon"
 	department = "Medical"
