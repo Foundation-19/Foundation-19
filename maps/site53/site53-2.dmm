@@ -30804,10 +30804,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
-"rhy" = (
-/mob/living/simple_animal/hostile/scp096,
-/turf/simulated/floor/reinforced,
-/area/site53/uhcz/scp096)
 "riw" = (
 /obj/effect/paint_stripe/red,
 /obj/effect/wallframe_spawn/reinforced/titanium,
@@ -78735,7 +78731,7 @@ bdi
 aBC
 kwM
 kwM
-rhy
+kwM
 kwM
 kwM
 aBC
