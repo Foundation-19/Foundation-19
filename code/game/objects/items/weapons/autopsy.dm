@@ -66,8 +66,8 @@
 	set category = "Object"
 	set src in view(usr, 1)
 	set name = "Print Data"
-	if(usr.stat || !(istype(usr,/mob/living/carbon/human)))
-		to_chat(usr, "No.")
+	if(usr.stat || !((istype(usr,/mob/living/carbon/human) || istype(usr, /mob/living/silicon))))
+		to_chat(usr, "<span class='warning'>You don't have the dexterity to do this!</span>")
 		return
 
 	var/scan_data = ""
