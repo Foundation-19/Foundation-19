@@ -1,8 +1,10 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/obj/effect/floor_decal/corner/orange/border,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/area/site53/uez/equipmentroom)
 "ab" = (
 /obj/structure/stairs/north,
 /turf/simulated/floor/tiled/monotile,
@@ -49,40 +51,18 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroomstairs)
 "ak" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/red/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
-"al" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/structure/cable/green{
-	d1 = 4;
+	d1 = 1;
 	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
+"al" = (
+/obj/machinery/vending/cola,
+/obj/effect/floor_decal/corner/orange/border,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "am" = (
 /obj/machinery/light,
 /obj/structure/cable{
@@ -250,7 +230,7 @@
 "aI" = (
 /obj/structure/flora/pottedplant/decorative,
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 10
+	dir = 5
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
@@ -288,16 +268,28 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
 "aP" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 4
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/machinery/recharger/wallcharger{
+	dir = 8;
+	pixel_x = 20
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_y = 23
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/area/site53/uez/armory)
 "aQ" = (
 /turf/simulated/open,
 /area/site53/maintenance/surfacewest)
@@ -443,30 +435,28 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "bg" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "facilitylockdown";
-	name = "Exterior Lockdown Blast Door"
-	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
-/turf/simulated/floor/plating,
-/area/site53/uez/equipmentroom)
-"bh" = (
-/obj/structure/closet/secure_closet/mtf/enlisted/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/crowbar/red,
-/obj/effect/floor_decal/corner/red/border{
-	dir = 1
+/obj/machinery/light{
+	dir = 8
 	},
+/obj/structure/coatrack,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
+"bh" = (
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("Entrance Zone Network")
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "bj" = (
 /obj/structure/sign/directions/medical{
 	dir = 1;
@@ -755,37 +745,30 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "cq" = (
-/obj/structure/closet,
-/obj/effect/floor_decal/corner/red/border{
-	dir = 6
+/obj/machinery/light/small{
+	dir = 8
 	},
+/obj/structure/hygiene/toilet,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "cs" = (
-/obj/structure/closet/secure_closet/personal/empty,
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 5
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
 	},
-/obj/machinery/power/apc{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/goirepoffice)
-"cu" = (
-/obj/effect/paint_stripe/gray,
-/obj/machinery/status_display,
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/prepainted,
-/area/site53/entrancezone/hallway)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "cv" = (
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/prepainted,
 /area/site53/uez/janitor)
-"cC" = (
+"cD" = (
+/obj/machinery/light{
+	icon_state = "tube1"
+	},
+/obj/effect/floor_decal/corner/orange/border,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
+"cE" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
@@ -794,12 +777,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
-"cE" = (
-/obj/effect/floor_decal/corner/orange/bordercorner{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
 "cG" = (
 /obj/structure/cable{
 	d2 = 4;
@@ -813,18 +790,19 @@
 /turf/simulated/floor/plating,
 /area/site53/maintenance/surfaceeast)
 "cI" = (
-/obj/effect/landmark/start{
-	name = "EZ Junior Agent"
+/obj/structure/closet/secure_closet/personal/empty,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 5
 	},
-/obj/effect/floor_decal/corner/red/border{
-	dir = 4
+/obj/machinery/power/apc{
+	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("Entrance Zone Network")
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "cK" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
@@ -834,18 +812,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception)
 "cM" = (
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/structure/closet/secure_closet/mtf/nco/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/crowbar/red,
-/obj/item/storage/pill_bottle/amnesticsa,
-/obj/effect/floor_decal/corner/red/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled,
-/area/site53/uez/equipmentroom)
+/obj/item/stool,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "cO" = (
 /obj/structure/flora/tree/pine,
 /turf/simulated/floor/exoplanet/grass,
@@ -929,7 +898,7 @@
 /area/site53/entrancezone/securitypost)
 "db" = (
 /obj/effect/paint_stripe/gray,
-/obj/effect/paint_stripe/gray,
+/obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
 /area/site53/entrancezone/hallway)
 "dc" = (
@@ -1013,21 +982,16 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "dq" = (
+/obj/item/device/flashlight/lamp,
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/condiment/small/packet/salt,
-/obj/item/reagent_containers/food/condiment/small/packet/salt,
-/obj/item/reagent_containers/food/condiment/small/packet/pepper,
-/obj/item/reagent_containers/food/condiment/small/packet/pepper,
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
-"dr" = (
-/obj/effect/paint_stripe/red,
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/prepainted,
+/turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/equipmentroom)
+"dr" = (
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "ds" = (
 /obj/effect/floor_decal/industrial/loading{
 	dir = 4
@@ -1084,22 +1048,19 @@
 "dC" = (
 /obj/effect/paint_stripe/gray,
 /obj/effect/paint_stripe/gray,
-/obj/effect/paint_stripe/red,
-/obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/site53/uez/equipmentroom)
+/area/site53/entrancezone/hallway)
 "dD" = (
-/obj/machinery/light{
-	icon_state = "tube1"
+/obj/effect/floor_decal/corner/orange/bordercorner{
+	dir = 8
 	},
-/obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "dE" = (
 /obj/effect/paint_stripe/red,
-/obj/machinery/status_display,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/site53/uez/senioragentoffice)
+/area/site53/uez/armory)
 "dF" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -1251,6 +1212,12 @@
 /obj/structure/cable/green,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op2)
+"ea" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/status_display,
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/prepainted,
+/area/site53/entrancezone/hallway)
 "eb" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -1264,19 +1231,26 @@
 /turf/simulated/wall/prepainted,
 /area/site53/uez/janitor)
 "ed" = (
-/obj/structure/bed,
+/obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
+/area/site53/entrancezone/hallway)
 "ee" = (
 /obj/machinery/fabricator,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "ef" = (
-/obj/structure/table/standard,
-/obj/item/material/kitchen/utensil/fork/plastic,
-/obj/item/material/kitchen/utensil/spoon/plastic,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "facilitylockdown";
+	name = "Exterior Lockdown Blast Door"
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/equipmentroom)
 "eg" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -1426,12 +1400,18 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "eF" = (
-/obj/structure/flora/pottedplant/decorative,
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 5
+/obj/effect/landmark/start{
+	name = "EZ Junior Agent"
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/area/site53/uez/equipmentroom)
 "eG" = (
 /obj/effect/paint_stripe/gunmetal,
 /turf/simulated/wall/prepainted,
@@ -1497,10 +1477,13 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "eP" = (
-/obj/effect/paint_stripe/red,
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/prepainted,
-/area/site53/uez/armory)
+/obj/effect/floor_decal/corner/red/border,
+/obj/structure/table/standard,
+/obj/item/reagent_containers/food/snacks/donut/normal,
+/obj/item/reagent_containers/food/snacks/donut/normal,
+/obj/item/reagent_containers/food/snacks/donut/normal,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "eQ" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/isolation)
@@ -1718,6 +1701,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/medical/morgue)
+"fs" = (
+/obj/structure/table/standard,
+/obj/item/storage/box/teargas,
+/obj/item/storage/box/flashbangs,
+/obj/effect/floor_decal/corner/red/border,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/armory)
 "ft" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -1754,12 +1744,11 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "fy" = (
-/obj/machinery/vending/coffee,
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/obj/effect/paint_stripe/yellow,
+/obj/effect/paint_stripe/red,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/prepainted,
+/area/site53/uez/mcrsubstation)
 "fz" = (
 /obj/structure/table/woodentable/walnut,
 /obj/structure/bookcase{
@@ -1936,6 +1925,15 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception/waiting)
+"ga" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "gb" = (
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/equipstorage)
@@ -2426,10 +2424,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
 "hp" = (
-/obj/effect/paint_stripe/gray,
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/prepainted,
-/area/site53/uez/equipmentroom)
+/obj/effect/floor_decal/corner/orange/border,
+/obj/machinery/vending/snack,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "hq" = (
 /obj/structure/curtain/open/privacy{
 	name = "plastic curtain"
@@ -2743,18 +2741,15 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
 "ih" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/structure/disposalpipe/segment,
+/obj/machinery/light{
+	dir = 8
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
+/area/site53/entrancezone/hallway)
 "ii" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
@@ -4122,10 +4117,9 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/morgue)
 "lA" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/machinery/papershredder,
+/obj/effect/floor_decal/corner/red/border,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "lB" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -4267,14 +4261,11 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op2)
 "mf" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/obj/effect/paint_stripe/orange,
+/obj/effect/paint_stripe/orange,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/prepainted,
+/area/site53/uez/goirepoffice)
 "mh" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/civilian{
@@ -4577,13 +4568,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "mQ" = (
-/obj/machinery/door/airlock/glass/security{
-	id_tag = "ezcell1";
-	name = "Holding Cell 1";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
+/obj/effect/paint_stripe/red,
+/obj/machinery/status_display,
+/turf/simulated/wall/prepainted,
+/area/site53/uez/senioragentoffice)
 "mR" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 1
@@ -4591,12 +4579,19 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "mS" = (
-/obj/structure/flora/pottedplant/decorative,
-/obj/structure/railing/mapped{
-	dir = 8
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/entrancezone/hallway)
 "mT" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurant)
@@ -4626,6 +4621,19 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/senioragentoffice)
+"ne" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "ng" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -4682,11 +4690,19 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurant)
 "nt" = (
-/obj/effect/paint_stripe/orange,
-/obj/effect/paint_stripe/orange,
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/prepainted,
-/area/site53/uez/goirepoffice)
+/obj/structure/closet/secure_closet/mtf/enlisted/ez,
+/obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/gun/energy/taser,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/crowbar/red,
+/obj/machinery/camera/autoname{
+	dir = 1;
+	network = list("Entrance Zone Network")
+	},
+/obj/effect/floor_decal/corner/red/border,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "nu" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
@@ -4847,6 +4863,17 @@
 "nU" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/mentalhealth/isolation)
+"nW" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "nY" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -4960,11 +4987,14 @@
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/substation)
 "oq" = (
-/obj/structure/bed/chair/padded{
-	dir = 1
+/obj/structure/bed/chair/office/comfy{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/equipmentroom)
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "or" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -5374,15 +5404,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception/waiting)
-"pK" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/obj/effect/landmark/start{
-	name = "EZ Agent"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
 "pN" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -5439,19 +5460,9 @@
 /obj/item/device/flashlight/lantern,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
-"qz" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/coatrack,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
 "qA" = (
-/turf/simulated/floor/tiled,
-/area/site53/surface/cryogenicsprimary)
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/equipmentroom)
 "qB" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/surface)
@@ -5504,17 +5515,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "qL" = (
-/obj/machinery/door/airlock/security{
-	name = "Entrance Zone Guard Equipment";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
+/obj/effect/floor_decal/corner/orange/bordercorner,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
+/area/site53/entrancezone/hallway)
 "qM" = (
 /obj/machinery/light{
 	dir = 8
@@ -6508,20 +6511,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
-"tG" = (
-/obj/structure/closet/secure_closet/mtf/enlisted/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/crowbar/red,
-/obj/machinery/camera/autoname{
-	dir = 1;
-	network = list("Entrance Zone Network")
-	},
-/obj/effect/floor_decal/corner/red/border,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
 "tH" = (
 /obj/structure/table/standard,
 /obj/machinery/recharger,
@@ -6553,12 +6542,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "tO" = (
-/obj/effect/floor_decal/corner/red/border,
-/obj/structure/table/standard,
-/obj/item/reagent_containers/food/snacks/donut/normal,
-/obj/item/reagent_containers/food/snacks/donut/normal,
-/obj/item/reagent_containers/food/snacks/donut/normal,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/paint_stripe/gray,
+/obj/effect/paint_stripe/red,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/prepainted,
 /area/site53/uez/equipmentroom)
 "tQ" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -6602,14 +6589,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "tY" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/obj/effect/paint_stripe/red,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/prepainted,
+/area/site53/uez/equipmentroom)
 "tZ" = (
 /obj/machinery/door/airlock/security{
 	name = "Security Center";
@@ -6643,25 +6626,37 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "ud" = (
-/obj/machinery/vending/cigarette,
+/obj/structure/table/standard,
+/obj/item/material/kitchen/utensil/fork/plastic,
+/obj/item/material/kitchen/utensil/spoon/plastic,
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 1
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "uf" = (
-/obj/effect/paint_stripe/yellow,
-/obj/effect/paint_stripe/red,
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/prepainted,
-/area/site53/uez/mcrsubstation)
-"ug" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+/obj/machinery/button/alternate/door/bolts{
+	id_tag = "ezcell2";
+	name = "Cell 2 bolts";
+	pixel_x = -28
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/uez/equipmentroom)
+"ug" = (
+/obj/structure/closet/secure_closet/mtf/enlisted/ez,
+/obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/gun/energy/taser,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/crowbar/red,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "uh" = (
 /obj/machinery/light{
 	dir = 4
@@ -6728,6 +6723,13 @@
 	},
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/logistics/logistics)
+"ux" = (
+/obj/structure/flora/pottedplant/decorative,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "uz" = (
 /obj/effect/floor_decal/industrial/loading{
 	dir = 4
@@ -6841,11 +6843,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/surface/surface)
 "uV" = (
+/obj/structure/closet,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 8
+	dir = 6
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
+/area/site53/uez/equipmentroom)
 "uW" = (
 /obj/structure/sign/warning/moving_parts{
 	pixel_y = -32
@@ -7009,17 +7012,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/commstower)
-"vu" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
 "vv" = (
 /obj/machinery/light{
 	dir = 4;
@@ -7058,11 +7050,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
 "vA" = (
-/obj/structure/table/standard,
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
@@ -7109,17 +7098,20 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
-"vT" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 9
+"vY" = (
+/obj/structure/table/standard,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
-"vY" = (
-/obj/machinery/door/airlock/glass/security{
-	id_tag = "ezcell3";
-	name = "Holding Cell 3";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+"wg" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
@@ -7140,16 +7132,17 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "wz" = (
-/obj/machinery/papershredder,
-/obj/effect/floor_decal/corner/red/border,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
-"wA" = (
-/obj/structure/table/standard,
-/obj/item/material/kitchen/utensil/fork/plastic,
-/obj/item/material/kitchen/utensil/spoon/plastic,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 8
+	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
@@ -7192,18 +7185,14 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "wN" = (
-/obj/machinery/light{
-	dir = 4
+/obj/structure/cable/green{
+	icon_state = "1-2"
 	},
-/obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("Entrance Zone Network")
-	},
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 4
+/obj/effect/landmark/start{
+	name = "EZ Agent"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/area/site53/uez/equipmentroom)
 "wO" = (
 /obj/structure/hygiene/toilet{
 	dir = 4
@@ -7246,9 +7235,8 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
 "xa" = (
-/obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("Entrance Zone Network")
+/obj/machinery/light{
+	dir = 4
 	},
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -7270,14 +7258,8 @@
 /turf/simulated/floor/reinforced,
 /area/site53/surface/surface)
 "xg" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/red/border{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/armory)
 "xs" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -7288,32 +7270,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
-"xB" = (
-/obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/clothing/suit/armor/pcarrier/green,
-/obj/item/clothing/head/helmet,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/effect/floor_decal/corner/red/border{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
-"xF" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
 "xK" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -7327,9 +7283,18 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
 "xW" = (
-/obj/structure/bed/chair/padded,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/equipmentroom)
+/obj/item/stool,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
+"yg" = (
+/obj/structure/table/standard,
+/obj/item/material/kitchen/utensil/fork/plastic,
+/obj/item/material/kitchen/utensil/spoon/plastic,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "yt" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7362,17 +7327,19 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurant)
-"yP" = (
-/obj/structure/closet/secure_closet/mtf/enlisted/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/crowbar/red,
-/obj/effect/floor_decal/corner/red/border,
-/obj/machinery/light,
+"yQ" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("Entrance Zone Network")
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
+/area/site53/entrancezone/hallway)
 "yV" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -7466,17 +7433,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/sleeper)
-"zs" = (
-/obj/machinery/button/alternate/door/bolts{
-	id_tag = "ezcell1";
-	name = "Cell 1 bolts";
-	pixel_x = -28
-	},
-/obj/effect/floor_decal/corner/red/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
 "zt" = (
 /obj/structure/bed/chair/wood,
 /turf/simulated/floor/wood/maple,
@@ -7489,6 +7445,13 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"zv" = (
+/obj/structure/flora/pottedplant/decorative,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "zx" = (
 /obj/machinery/organ_printer/robot/mapped,
 /obj/machinery/light{
@@ -7496,6 +7459,18 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op2)
+"zy" = (
+/obj/structure/table/rack,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/clothing/suit/armor/pcarrier/green,
+/obj/item/clothing/head/helmet,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/armory)
 "zE" = (
 /obj/structure/flora/pottedplant/flower,
 /obj/effect/floor_decal/corner/orange/border{
@@ -7507,18 +7482,25 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "zG" = (
-/obj/machinery/light/small{
-	dir = 8
+/obj/structure/table/standard,
+/obj/item/reagent_containers/food/condiment/small/packet/salt,
+/obj/item/reagent_containers/food/condiment/small/packet/salt,
+/obj/item/reagent_containers/food/condiment/small/packet/pepper,
+/obj/item/reagent_containers/food/condiment/small/packet/pepper,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 10
 	},
-/obj/structure/hygiene/toilet,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
+/area/site53/entrancezone/hallway)
 "zO" = (
 /turf/simulated/floor/tiled,
 /area/site53/surface/surface)
 "zP" = (
-/obj/structure/bed,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/paint_stripe/gray,
+/obj/effect/paint_stripe/gray,
+/obj/effect/paint_stripe/red,
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/prepainted,
 /area/site53/uez/equipmentroom)
 "zU" = (
 /obj/structure/railing/mapped{
@@ -7535,10 +7517,19 @@
 "Ao" = (
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
-"Aq" = (
-/obj/effect/landmark/start{
-	name = "EZ Agent"
+"Av" = (
+/obj/machinery/power/apc{
+	dir = 1
 	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/structure/table/standard,
+/obj/item/hand_labeler,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "Az" = (
@@ -7577,21 +7568,25 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
 "Bc" = (
-/obj/item/stool,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
-"Be" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 6
-	},
-/obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("Entrance Zone Network")
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
+/area/site53/upper_surface/maincontrolroomstairs)
 "Bf" = (
 /obj/structure/closet,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
+"Bg" = (
+/obj/machinery/button/alternate/door/bolts{
+	id_tag = "ezcell1";
+	name = "Cell 1 bolts";
+	pixel_x = -28
+	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
@@ -7760,16 +7755,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"CK" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
 "CU" = (
 /obj/structure/iv_drip,
 /obj/structure/cable/green{
@@ -7805,22 +7790,18 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"Dr" = (
-/obj/structure/railing/mapped{
-	dir = 8
+"Do" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroomstairs)
+/area/site53/entrancezone/hallway)
 "DO" = (
-/obj/structure/closet/secure_closet/mtf/enlisted/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/crowbar/red,
-/obj/effect/floor_decal/corner/red/border{
-	dir = 5
-	},
+/obj/structure/closet,
+/obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "DR" = (
@@ -7831,21 +7812,12 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "DV" = (
-/obj/structure/closet/secure_closet/mtf/enlisted/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/crowbar/red,
-/obj/effect/floor_decal/corner/red/border{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
-	},
+/obj/structure/closet/secure_closet/mtf/breachautomatics,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/armory)
 "DX" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -7908,6 +7880,11 @@
 	},
 /turf/space,
 /area/site53/maintenance/surfacewest)
+"Ev" = (
+/obj/effect/paint_stripe/yellow,
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/wall/prepainted,
+/area/site53/maintenance/surfaceeast)
 "Ew" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -7924,6 +7901,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/medical/morgue)
+"Fd" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/equipmentroom)
 "Fe" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/paleblue/mono,
@@ -7941,12 +7924,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroomstairs)
 "Fi" = (
-/obj/structure/flora/pottedplant/decorative,
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 6
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/area/site53/uez/armory)
 "Fk" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -7983,12 +7965,6 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
-"FC" = (
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/goirepoffice)
 "FH" = (
 /obj/structure/flora/pottedplant/decorative,
 /obj/effect/floor_decal/corner/orange/border{
@@ -7996,17 +7972,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"FK" = (
+/obj/effect/floor_decal/corner/orange/bordercorner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "FQ" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/carpet/blue2,
 /area/site53/zonecommanderoffice)
-"FY" = (
-/obj/structure/table/standard,
-/obj/item/storage/box/teargas,
-/obj/item/storage/box/flashbangs,
-/obj/effect/floor_decal/corner/red/border,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
 "Gb" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -8024,27 +7999,22 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
-"Gl" = (
-/obj/structure/flora/pottedplant/decorative,
-/obj/effect/floor_decal/corner/red/border{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
 "Go" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
+"Gp" = (
+/obj/machinery/vending/coffee,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "Gv" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
-"GB" = (
-/obj/effect/paint_stripe/yellow,
-/obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/prepainted,
-/area/site53/maintenance/surfaceeast)
 "GJ" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -8052,12 +8022,6 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"GK" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
 "GO" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -8103,19 +8067,20 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/maintenance/surfaceeast)
 "Hf" = (
-/obj/effect/paint_stripe/yellow,
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/prepainted,
-/area/site53/uez/goirepoffice)
+/obj/structure/closet/secure_closet/mtf/enlisted/ez,
+/obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/gun/energy/taser,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/crowbar/red,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "Hj" = (
-/obj/structure/bed/chair/office/comfy{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/goirepoffice)
+/turf/simulated/floor/tiled,
+/area/site53/surface/cryogenicsprimary)
 "Hl" = (
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/white,
@@ -8124,9 +8089,6 @@
 /obj/machinery/camera/autoname{
 	dir = 8;
 	network = list("Entrance Zone Network")
-	},
-/obj/machinery/light{
-	dir = 4
 	},
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -8143,6 +8105,13 @@
 /obj/structure/iv_drip,
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
+"Hx" = (
+/obj/structure/flora/pottedplant/decorative,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "HG" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/corner/red/half{
@@ -8159,9 +8128,18 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensicsstairwell)
-"HL" = (
+"HH" = (
+/obj/machinery/door/airlock/glass/security{
+	id_tag = "ezcell1";
+	name = "Holding Cell 1";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
+/area/site53/uez/equipmentroom)
+"HL" = (
+/obj/effect/floor_decal/corner/red/border,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "HM" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -8169,6 +8147,17 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"HN" = (
+/obj/structure/table/standard,
+/obj/item/reagent_containers/food/condiment/small/packet/salt,
+/obj/item/reagent_containers/food/condiment/small/packet/salt,
+/obj/item/reagent_containers/food/condiment/small/packet/pepper,
+/obj/item/reagent_containers/food/condiment/small/packet/pepper,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "HU" = (
 /obj/machinery/light{
 	dir = 1;
@@ -8261,16 +8250,6 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
-"Jw" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "facilitylockdown";
-	name = "Exterior Lockdown Blast Door"
-	},
-/turf/simulated/floor/plating,
-/area/site53/uez/equipmentroom)
 "Jx" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/handcuffs,
@@ -8287,14 +8266,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/mcrsubstation)
-"JM" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
 "JN" = (
 /obj/structure/table/woodentable{
 	dir = 5
@@ -8314,29 +8285,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/tramhubhallwayentry)
-"JY" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/machinery/recharger/wallcharger{
-	dir = 8;
-	pixel_x = 20
-	},
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/effect/floor_decal/corner/red/border{
-	dir = 1
-	},
-/obj/machinery/recharger/wallcharger{
-	pixel_y = 23
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
 "Kc" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -8371,6 +8319,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
+"KW" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/maincontrolroomstairs)
 "Lb" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Helipad";
@@ -8421,33 +8375,25 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
-"Lw" = (
-/obj/item/device/flashlight/lamp,
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/equipmentroom)
 "LE" = (
-/obj/machinery/vending/hotfood,
-/obj/effect/floor_decal/corner/orange/border,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
-"LH" = (
-/obj/effect/paint_stripe/gray,
-/obj/effect/paint_stripe/red,
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/prepainted,
-/area/site53/uez/equipmentroom)
-"LO" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/food/condiment/small/packet/salt,
-/obj/item/reagent_containers/food/condiment/small/packet/salt,
-/obj/item/reagent_containers/food/condiment/small/packet/pepper,
-/obj/item/reagent_containers/food/condiment/small/packet/pepper,
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 10
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/area/site53/uez/armory)
 "Ma" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Tram Hub"
@@ -8467,33 +8413,40 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/maintenance/surfaceeast)
-"Mn" = (
-/obj/structure/closet/secure_closet/mtf/nco/ez,
-/obj/item/crowbar/red,
-/obj/item/gun/energy/taser,
-/obj/item/clothing/accessory/armorplate/tactical,
+"Mo" = (
 /obj/item/clothing/suit/bio_suit/security,
 /obj/item/clothing/head/bio_hood/security,
+/obj/structure/closet/secure_closet/mtf/nco/ez,
+/obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/gun/energy/taser,
+/obj/item/crowbar/red,
 /obj/item/storage/pill_bottle/amnesticsa,
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uez/equipmentroom)
-"Mo" = (
-/obj/structure/closet,
-/obj/effect/floor_decal/corner/red/border,
+"Mq" = (
+/obj/machinery/door/airlock/security{
+	name = "Entrance Zone Guard Equipment";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
-"Mq" = (
-/turf/simulated/floor/tiled,
-/area/site53/upper_surface/tramhubhallwayentry)
 "Ms" = (
-/obj/effect/landmark/start{
-	name = "EZ Junior Agent"
-	},
+/obj/structure/closet/secure_closet/mtf/enlisted/ez,
+/obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/gun/energy/taser,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/crowbar/red,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 4
+	dir = 5
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
@@ -8523,6 +8476,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"MW" = (
+/obj/machinery/door/airlock/glass/security{
+	id_tag = "ezcell3";
+	name = "Holding Cell 3";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/armory)
 "MX" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
@@ -8574,15 +8535,6 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"Og" = (
-/obj/structure/closet/secure_closet/mtf/breachautomatics,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/effect/floor_decal/corner/red/border{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
 "Ok" = (
 /obj/structure/bed/chair/armchair/brown,
 /turf/simulated/floor/wood/walnut,
@@ -8600,6 +8552,13 @@
 /obj/item/auto_cpr,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/sleeper)
+"Ov" = (
+/obj/structure/flora/pottedplant/decorative,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/maincontrolroomstairs)
 "OC" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -8611,6 +8570,32 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"OV" = (
+/obj/effect/landmark/start{
+	name = "EZ Junior Agent"
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
+"OW" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/maintenance/surfaceeast)
 "Pr" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/snow,
@@ -8651,19 +8636,20 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
 "PA" = (
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/equipmentroom)
-"PR" = (
-/obj/machinery/button/alternate/door/bolts{
-	id_tag = "ezcell2";
-	name = "Cell 2 bolts";
-	pixel_x = -28
+/obj/machinery/light{
+	dir = 4
 	},
-/obj/effect/floor_decal/corner/red/border{
+/turf/simulated/mineral,
+/area/site53/surface/surface)
+"PR" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
+/area/site53/entrancezone/hallway)
 "PS" = (
 /obj/machinery/button/alternate/door/bolts{
 	id_tag = "ezcell3";
@@ -8679,10 +8665,26 @@
 /obj/item/defibrillator/compact/loaded,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
+"PY" = (
+/obj/structure/bed/chair/padded,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/equipmentroom)
 "PZ" = (
-/obj/effect/paint_stripe/yellow,
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/mcrsubstation)
+/area/site53/uez/equipmentroom)
 "Qa" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/mineral,
@@ -8734,17 +8736,16 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "QJ" = (
-/obj/structure/closet/secure_closet/mtf/enlisted/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/crowbar/red,
-/obj/effect/floor_decal/corner/red/border{
-	dir = 6
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
+/area/site53/entrancezone/hallway)
 "QQ" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light/small{
@@ -8792,14 +8793,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
-"Rh" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
 "Rw" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
@@ -8872,6 +8865,22 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
+"Sj" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/button/alternate/door/bolts{
+	dir = 4;
+	id_tag = "ezguns";
+	name = "EZ Armory Access button";
+	pixel_x = -23;
+	req_access = list("ACCESS_SECURITY_LEVEL4")
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "Sk" = (
 /obj/machinery/sleeper,
 /turf/simulated/floor/tiled/white,
@@ -8902,6 +8911,17 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/sleeper)
+"SD" = (
+/obj/structure/closet/secure_closet/mtf/enlisted/ez,
+/obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/gun/energy/taser,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/crowbar/red,
+/obj/effect/floor_decal/corner/red/border,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "SL" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -8935,18 +8955,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/chemistry)
-"SY" = (
-/obj/machinery/light,
-/obj/effect/floor_decal/corner/red/border,
-/obj/structure/closet,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
 "Tn" = (
-/obj/effect/floor_decal/corner/orange/bordercorner{
-	dir = 1
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor/plating,
+/area/site53/maintenance/surfaceeast)
 "TG" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -9028,10 +9045,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
 "Uv" = (
-/obj/machinery/vending/cola,
-/obj/effect/floor_decal/corner/orange/border,
+/obj/structure/bed,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/area/site53/uez/equipmentroom)
 "Uw" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -9043,14 +9059,13 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "Ux" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 1
+/obj/machinery/door/airlock/glass/security{
+	id_tag = "ezcell";
+	name = "Holding Cell";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/area/site53/uez/equipmentroom)
 "UE" = (
 /obj/machinery/light,
 /obj/structure/table/standard,
@@ -9071,13 +9086,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
-"UR" = (
-/obj/structure/closet/secure_closet/mtf/breachautomatics,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/effect/floor_decal/corner/red/border,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
 "US" = (
 /obj/structure/table/standard,
 /obj/item/device/scanner/reagent,
@@ -9086,9 +9094,9 @@
 /area/site53/medical/morgue)
 "UV" = (
 /obj/effect/paint_stripe/gray,
-/obj/effect/paint_stripe/orange,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/site53/entrancezone/hallway)
+/area/site53/uez/equipmentroom)
 "Va" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensicsstairwell)
@@ -9116,12 +9124,16 @@
 /turf/simulated/wall/prepainted,
 /area/site53/medical/surgery/op1)
 "Vn" = (
-/obj/structure/flora/bush,
-/obj/effect/floor_decal/corner/red/border{
-	dir = 8
+/obj/effect/paint_stripe/yellow,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/prepainted,
+/area/site53/uez/goirepoffice)
+"Vw" = (
+/obj/structure/bed/chair/padded{
+	dir = 1
 	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/equipmentroom)
 "Vy" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
@@ -9163,6 +9175,22 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
+"Wa" = (
+/obj/machinery/button/alternate/door/bolts{
+	id_tag = "ezcell";
+	name = "Holding Cell Lock button";
+	dir = 8;
+	pixel_x = 23
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("Entrance Zone Network")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "Wl" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
@@ -9201,13 +9229,8 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/equipstorage)
 "WK" = (
-/obj/machinery/door/airlock/glass/security{
-	id_tag = "ezcell";
-	name = "Holding Cell";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
+/turf/simulated/floor/tiled,
+/area/site53/upper_surface/tramhubhallwayentry)
 "WX" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9229,18 +9252,34 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/mentalhealth/isolation)
 "Xq" = (
-/obj/machinery/light{
-	dir = 4
+/obj/effect/landmark/start{
+	name = "EZ Agent"
 	},
-/turf/simulated/mineral,
-/area/site53/surface/surface)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "Xu" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/senioragentoffice)
 "Xv" = (
-/obj/item/stool,
+/obj/structure/closet/secure_closet/mtf/enlisted/ez,
+/obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/gun/energy/taser,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/crowbar/red,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
+"Xx" = (
+/obj/machinery/vending/cigarette,
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 8
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
@@ -9261,22 +9300,22 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "XF" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/mcrsubstation)
+"XH" = (
+/obj/structure/closet/secure_closet/mtf/nco/ez,
+/obj/item/crowbar/red,
+/obj/item/gun/energy/taser,
+/obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/storage/pill_bottle/amnesticsa,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
 	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/maintenance/surfaceeast)
+/turf/simulated/floor/tiled,
+/area/site53/uez/equipmentroom)
 "XI" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -9314,10 +9353,21 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
-"Yf" = (
-/obj/effect/floor_decal/corner/orange/bordercorner,
+"Ya" = (
+/obj/structure/closet/secure_closet/mtf/breachautomatics,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
+/area/site53/uez/armory)
+"Yf" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/red/border,
+/obj/structure/closet,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "Yh" = (
 /obj/machinery/floodlight{
 	anchored = 1;
@@ -9345,6 +9395,16 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"Ym" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "facilitylockdown";
+	name = "Exterior Lockdown Blast Door"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/equipmentroom)
 "Yo" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -9383,15 +9443,6 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"YN" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor/plating,
-/area/site53/maintenance/surfaceeast)
 "YR" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -9401,45 +9452,21 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
-"YS" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 4
-	},
-/obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
 "YT" = (
-/obj/effect/floor_decal/corner/red/border,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
+/obj/structure/flora/bush,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "Za" = (
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
-"Zc" = (
-/obj/machinery/button/alternate/door/bolts{
-	id_tag = "ezcell";
-	name = "Holding Cell Lock button";
-	dir = 8;
-	pixel_x = 23
-	},
-/obj/effect/floor_decal/corner/red/border{
-	dir = 4
-	},
-/obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("Entrance Zone Network")
-	},
+"Zb" = (
+/obj/structure/bed,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/armory)
 "Zh" = (
 /obj/item/paper_bin,
 /obj/item/pen,
@@ -9449,22 +9476,6 @@
 "Zn" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
-"Zq" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/obj/machinery/button/alternate/door/bolts{
-	dir = 4;
-	id_tag = "ezguns";
-	name = "EZ Armory Access button";
-	pixel_x = -23;
-	req_access = list("ACCESS_SECURITY_LEVEL4")
-	},
-/obj/effect/floor_decal/corner/red/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
 "Zv" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -9472,21 +9483,16 @@
 /obj/machinery/camera/network/entrance,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"Zx" = (
-/obj/machinery/power/apc{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
+"ZE" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 1
+	dir = 6
 	},
-/obj/structure/table/standard,
-/obj/item/hand_labeler,
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("Entrance Zone Network")
+	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
+/area/site53/uez/armory)
 "ZG" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -9496,12 +9502,6 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
-"ZQ" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
 "ZR" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -38391,7 +38391,7 @@ gG
 ec
 bT
 bp
-GB
+Ev
 dA
 dA
 Ce
@@ -38654,13 +38654,13 @@ dA
 Ce
 dw
 Ce
-dq
+HN
 lH
-Xv
-wA
-Xv
+xW
+ud
+xW
 lH
-LO
+zG
 bk
 gm
 bk
@@ -38904,20 +38904,20 @@ eT
 gI
 ec
 bV
-YN
+Tn
 Ce
 Ce
 Ce
 Ce
 dw
 Ce
-fy
+Gp
 gh
 gh
 gh
 gh
 gh
-Uv
+al
 bk
 ho
 bk
@@ -38952,8 +38952,8 @@ oU
 af
 af
 ac
-Mq
-Mq
+WK
+WK
 as
 mh
 nE
@@ -39160,7 +39160,7 @@ kM
 eT
 gM
 ec
-XF
+OW
 pD
 Bv
 bq
@@ -39168,13 +39168,13 @@ bq
 GO
 XO
 Ce
-ud
+Xx
 gh
-Bc
-ef
-Bc
+cM
+yg
+cM
 gh
-LE
+hp
 bk
 gm
 bk
@@ -39183,7 +39183,7 @@ lY
 lY
 lH
 lY
-aI
+Hx
 RJ
 dA
 dA
@@ -39209,8 +39209,8 @@ kC
 qT
 oU
 mi
-Mq
-Mq
+WK
+WK
 ml
 ep
 nE
@@ -39431,16 +39431,16 @@ gh
 gh
 gh
 gh
-aa
+ed
 bk
 Es
 bk
-Ux
+Do
 gh
 eg
 eg
 gh
-dD
+cD
 RJ
 RJ
 RJ
@@ -39448,8 +39448,8 @@ RJ
 RJ
 pu
 RJ
-mS
-Dr
+Ov
+KW
 ap
 aj
 au
@@ -39460,14 +39460,14 @@ aj
 az
 af
 kC
-qA
-qA
-qA
+Hj
+Hj
+Hj
 kC
 oU
 mj
-Mq
-Mq
+WK
+WK
 mm
 ep
 nE
@@ -39673,7 +39673,7 @@ aC
 bc
 cR
 cR
-CK
+ih
 dp
 lY
 lY
@@ -39682,22 +39682,22 @@ lY
 lH
 lY
 lY
-Tn
+FK
 gh
 gh
 gh
 gh
 gh
-cE
+dD
 lY
 gh
 lY
-Tn
+FK
 gh
 gh
 gh
 Hq
-cE
+dD
 lY
 lY
 lY
@@ -39926,25 +39926,25 @@ jS
 lc
 iI
 ln
-YS
-aP
+wz
+QJ
 aY
 aY
-xF
+mS
 cp
+bd
+Ho
+bd
 bd
 xa
 bd
 bd
-tY
+bd
+yQ
 bd
 bd
 bd
-wN
-bd
-bd
-bd
-tY
+xa
 bd
 bd
 bd
@@ -39954,11 +39954,11 @@ gh
 gh
 gh
 Hq
-Yf
+qL
 bd
 bd
 bd
-Ho
+bh
 bd
 bd
 bd
@@ -40189,38 +40189,38 @@ dt
 dt
 dt
 dt
-Hf
+Vn
 mk
 mk
 mk
 mk
 mk
-nt
+mf
+db
+db
+db
 UV
 UV
 UV
-hp
-hp
-hp
-hp
-hp
-hp
-LH
-Ux
+UV
+UV
+UV
+tO
+Do
 gh
 eE
 eE
 gh
-dD
+cD
 RJ
 RJ
 RJ
 RJ
 RJ
-cu
+ea
 RJ
 ag
-ug
+Bc
 ap
 Ln
 au
@@ -40231,14 +40231,14 @@ aj
 az
 af
 AI
-qA
-qA
-qA
+Hj
+Hj
+Hj
 kC
 oU
 Lf
-Mq
-Mq
+WK
+WK
 ro
 ep
 nE
@@ -40449,7 +40449,7 @@ dA
 mk
 Mx
 UI
-Hj
+oq
 UI
 XD
 mk
@@ -40457,18 +40457,18 @@ dA
 dA
 dA
 MX
-vT
-Mn
-qz
-cM
-GK
-hp
-eF
+cs
+XH
+bg
+Mo
+aa
+UV
+aI
 bd
+Ho
 xa
-tY
 bd
-Fi
+ux
 RJ
 dA
 dA
@@ -40494,8 +40494,8 @@ kC
 kC
 oU
 qa
-Mq
-Mq
+WK
+WK
 ml
 ep
 nE
@@ -40705,7 +40705,7 @@ dA
 dA
 mk
 VI
-FC
+dr
 IG
 Gv
 vn
@@ -40714,19 +40714,19 @@ dA
 dA
 dA
 MX
-Zx
-pK
+Av
+wN
 uc
-Aq
-tO
+Xq
+eP
+zP
+RJ
+RJ
+RJ
+RJ
+RJ
+RJ
 dC
-RJ
-RJ
-RJ
-RJ
-RJ
-RJ
-db
 dA
 dA
 dA
@@ -40751,8 +40751,8 @@ oU
 af
 af
 HU
-Mq
-Mq
+WK
+WK
 as
 mh
 nE
@@ -40971,11 +40971,11 @@ px
 px
 px
 MX
-DV
+Xv
 mY
 SL
 mY
-yP
+SD
 MX
 dA
 dA
@@ -41218,7 +41218,7 @@ dA
 dA
 dA
 mk
-cs
+cI
 zE
 wJ
 xs
@@ -41228,17 +41228,17 @@ IK
 Va
 Ni
 MX
-bh
+ug
 mY
 SL
 mY
-tG
+nt
 kT
 kT
 kT
 kT
 kT
-eP
+dE
 dA
 MX
 MX
@@ -41485,23 +41485,23 @@ px
 px
 HG
 MX
-DO
 Ms
+OV
 SL
-cI
-QJ
+eF
+Hf
 kT
-xB
-ak
-uV
-Og
+zy
+LE
+Fi
+Ya
 kT
 dA
 MX
-zG
+cq
 Zn
 MX
-zG
+cq
 Zn
 aN
 aN
@@ -41731,7 +41731,7 @@ lY
 lY
 lY
 lY
-mf
+PR
 lY
 lY
 mN
@@ -41744,21 +41744,21 @@ mp
 MX
 MX
 MX
-qL
+Mq
 MX
 MX
 kT
-JY
-HL
-HL
-UR
+aP
+xg
+xg
+DV
 kT
 dA
 MX
-zP
+Uv
 Zn
 MX
-zP
+Uv
 Zn
 fF
 gq
@@ -42006,8 +42006,8 @@ Bf
 tV
 kT
 Jx
-HL
-HL
+xg
+xg
 zc
 kT
 kT
@@ -42016,7 +42016,7 @@ MX
 Vl
 MX
 MX
-mQ
+HH
 fF
 gq
 gq
@@ -42260,19 +42260,19 @@ Rw
 mR
 SL
 Zn
-YT
+HL
 kT
 nA
-HL
-HL
-FY
+xg
+xg
+fs
 kT
 wO
-ed
+Zb
 kT
 PS
-PR
-zs
+uf
+Bg
 Zn
 fF
 fF
@@ -42517,20 +42517,20 @@ BQ
 Zn
 SL
 Zn
-wz
+lA
 kT
 nH
 yt
-HL
-Be
+xg
+ZE
 kT
-HL
-HL
-vY
+xg
+xg
+MW
 Zn
 Zn
 ui
-Gl
+zv
 Wm
 dA
 fF
@@ -42777,7 +42777,7 @@ Zn
 UE
 kT
 kT
-JM
+wg
 tz
 kT
 kT
@@ -42786,8 +42786,8 @@ kT
 kT
 KR
 Zn
-Mo
-PZ
+DO
+XF
 fF
 fF
 fF
@@ -43029,12 +43029,12 @@ mv
 MX
 tL
 tN
-al
-ZQ
+PZ
+vA
 lI
-cC
-Zq
-Rh
+cE
+Sj
+ak
 Zn
 lS
 lS
@@ -43043,7 +43043,7 @@ lS
 Ny
 XL
 Zn
-SY
+Yf
 fF
 gq
 gq
@@ -43286,7 +43286,7 @@ mN
 tR
 Zn
 tE
-vA
+vY
 Zn
 ui
 ni
@@ -43294,13 +43294,13 @@ ni
 ni
 ni
 ni
-xg
+ga
 ni
 ni
 ni
 Zn
-Zc
-cq
+Wa
+uV
 fF
 gq
 gq
@@ -43543,22 +43543,22 @@ mx
 tZ
 uc
 tE
-vA
+vY
 Zn
 uj
-dE
+mQ
 tQ
 tQ
 tQ
 lC
 lC
-bg
-Jw
+ef
+Ym
 MX
-WK
+Ux
 MX
 MX
-uf
+fy
 fF
 fF
 fF
@@ -43800,7 +43800,7 @@ tM
 tS
 rK
 tU
-vu
+nW
 Zn
 tX
 tQ
@@ -43809,12 +43809,12 @@ Xu
 Xu
 nL
 lC
-Vn
+YT
 bO
 MX
-PA
-lA
-PA
+qA
+Fd
+qA
 MX
 dA
 dA
@@ -44057,7 +44057,7 @@ bm
 YR
 rJ
 Df
-ih
+ne
 uc
 TR
 tQ
@@ -44069,9 +44069,9 @@ lC
 bO
 bm
 MX
-xW
-Lw
-oq
+PY
+dq
+Vw
 MX
 dA
 dA
@@ -44316,7 +44316,7 @@ tH
 Zn
 Zn
 SL
-YT
+HL
 tQ
 Vf
 nw
@@ -44325,11 +44325,11 @@ ub
 pO
 bO
 bS
-dr
+tY
 MX
 MX
 MX
-dr
+tY
 oS
 oS
 dA
@@ -44573,7 +44573,7 @@ Rw
 mR
 Zn
 SL
-YT
+HL
 tQ
 Xu
 Xu
@@ -44844,7 +44844,7 @@ bO
 bO
 bO
 bO
-Xq
+PA
 rm
 rm
 rm
