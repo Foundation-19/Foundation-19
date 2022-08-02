@@ -111,6 +111,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	economic_power = 20
+	alt_titles = list("Chief Science Officer", "Head Researcher")
 	minimal_player_age = 15
 	ideal_character_age = 60
 	spawn_positions = 6
