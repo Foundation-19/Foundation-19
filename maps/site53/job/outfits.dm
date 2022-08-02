@@ -276,7 +276,7 @@
 /decl/hierarchy/outfit/job/site90/crew/science/scientist
 	name = OUTFIT_JOB_NAME("Scientist")
 	uniform = /obj/item/clothing/under/scp/suittie
-	/obj/item/clothing/suit/storage/toggle/labcoat/science
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
 	shoes = /obj/item/clothing/shoes/laceup
 	id_types = list(/obj/item/card/id/sciencelvl2)
 	l_ear = /obj/item/device/radio/headset/headset_sci
