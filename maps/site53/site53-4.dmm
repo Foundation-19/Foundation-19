@@ -11,27 +11,10 @@
 /obj/effect/paint_stripe/blue,
 /turf/simulated/wall/titanium,
 /area/site53/uez/hallway)
-"ad" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/flora/pottedplant/decorative,
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
 "ae" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/uez/hallway)
-"af" = (
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
 "ag" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
@@ -40,10 +23,6 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
 /area/site53/upper_surface/commstower)
-"ai" = (
-/obj/effect/paint_stripe/white,
-/turf/simulated/wall/prepainted,
-/area/site53/uez/bridge)
 "aj" = (
 /obj/effect/landmark/map_data{
 	height = 4
@@ -54,26 +33,6 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/uez/mcrsubstation)
-"al" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/flora/pottedplant/decorative,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
-"am" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
 "an" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -82,17 +41,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/mcrsubstation)
-"ap" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
 "aq" = (
 /obj/machinery/door/airlock/command{
 	name = "Main Control Room";
@@ -109,38 +57,6 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/maincontrolroom)
-"as" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
-"at" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/railing/mapped,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
-"au" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/obj/structure/railing/mapped,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
-"av" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
 "aw" = (
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/uez/canteen)
@@ -158,60 +74,6 @@
 	},
 /turf/simulated/open,
 /area/site53/upper_surface/maincontrolroom)
-"az" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
-"aA" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/flora/pottedplant/decorative,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
-"aB" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
-"aC" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/flora/pottedplant/decorative,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
-"aD" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
-"aE" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
 "aF" = (
 /obj/structure/flora/grass/both,
 /turf/simulated/floor/exoplanet/snow,
@@ -270,17 +132,11 @@
 "aM" = (
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
-"aN" = (
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
 "aO" = (
-/obj/structure/railing/mapped,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
+/obj/effect/paint_stripe/blue,
+/obj/effect/paint_stripe/blue,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/upper_surface/maincontrolroom)
 "aP" = (
 /obj/machinery/door/airlock/highsecurity{
 	req_access = list("ACCESS_ADMIN_LEVEL4")
@@ -364,17 +220,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_wall/prepainted,
 /area/space)
-"bc" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1";
-	pixel_x = -12
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
 "bd" = (
 /obj/structure/bed/chair/office/light,
 /obj/structure/railing/mapped{
@@ -462,26 +307,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/uez/hallway)
-"br" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/effect/paint_stripe/red,
-/obj/machinery/door/blast/regular/open{
-	dir = 2;
-	icon_state = "pdoor0";
-	id_tag = "controlroom";
-	name = "Control Room Lockdown Blast Door"
-	},
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/maincontrolroom)
-"bt" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
 "bu" = (
 /obj/machinery/light{
 	dir = 1;
@@ -1859,12 +1684,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/maintenance)
-"fx" = (
-/obj/machinery/door/airlock/hatch/maintenance{
-	name = "Maintenance"
-	},
-/turf/simulated/floor/tiled,
-/area/site53/uez/maintenance)
 "fy" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -2416,11 +2235,6 @@
 /obj/structure/flora/grass/green,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/uez/canteen)
-"hr" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/effect/paint_stripe/red,
-/turf/simulated/floor/plating,
-/area/site53/uez/bridge)
 "hs" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/exoplanet/grass,
@@ -3613,17 +3427,6 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
-"nH" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/effect/paint_stripe/red,
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "controlroom";
-	name = "Control Room Lockdown Blast Door"
-	},
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/maincontrolroom)
 "nI" = (
 /obj/structure/bed/chair/comfy/yellow{
 	name = "Containment Engineer"
@@ -3663,17 +3466,6 @@
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
-"pN" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
 "ql" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 8
@@ -4262,16 +4054,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
-"KY" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/machinery/camera/autoname{
-	dir = 4;
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
 "LM" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -34303,10 +34085,10 @@ gj
 gr
 gB
 dY
-ai
-ai
-ai
-ai
+hk
+hk
+hk
+hk
 hk
 hk
 hk
@@ -34560,33 +34342,33 @@ gk
 sY
 gq
 gd
-ad
-ap
-at
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
 fY
-nH
-nH
-nH
+ab
+ab
+ab
 ab
 aQ
 bo
@@ -34817,34 +34599,34 @@ dh
 dh
 dh
 dY
-am
-af
-af
-av
-av
-av
-av
-bc
-av
-av
-av
-av
-bc
-av
-av
-av
-KY
-bc
-av
-av
-av
-av
-bc
-av
-av
-aN
-hr
-ab
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+aO
 aW
 bo
 bo
@@ -35074,34 +34856,34 @@ fE
 gt
 gC
 dY
-am
-af
-af
-az
-az
-az
-az
-az
-az
-pN
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-af
-aO
-hr
-br
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+ab
 aQ
 bo
 bo
@@ -35331,34 +35113,34 @@ dY
 dY
 dY
 dY
-al
-as
-au
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-ai
-hr
-hr
-aB
-aO
-hr
-br
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+hk
+ab
 aQ
 bo
 bo
@@ -35588,10 +35370,10 @@ fl
 fl
 gu
 dZ
-ai
-ai
-ai
-ai
+hk
+hk
+hk
+hk
 hk
 IV
 IV
@@ -35609,13 +35391,13 @@ Mm
 Mm
 hk
 hk
-ai
-aA
-aD
-aB
-aO
-hr
-br
+hk
+hk
+hk
+hk
+hk
+hk
+ab
 aQ
 bo
 bo
@@ -35866,13 +35648,13 @@ DB
 Mm
 hk
 hk
-ai
-bt
-af
-af
-aO
-hr
-br
+hk
+hk
+hk
+hk
+hk
+hk
+ab
 aQ
 bo
 aX
@@ -36123,13 +35905,13 @@ OM
 Mm
 hk
 hk
-ai
-bt
-af
-af
-aO
-hr
-br
+hk
+hk
+hk
+hk
+hk
+hk
+ab
 aQ
 bo
 bo
@@ -36380,12 +36162,12 @@ Ba
 Mm
 hk
 hk
-ai
-aC
-aE
-aB
-au
-ai
+hk
+hk
+hk
+hk
+hk
+hk
 ab
 aW
 bo
@@ -36637,12 +36419,12 @@ Mm
 Cj
 hk
 hk
-ai
-ai
-ai
-af
-ai
-ai
+hk
+hk
+hk
+hk
+hk
+hk
 ab
 yY
 bo
@@ -36897,7 +36679,7 @@ dv
 dv
 dv
 dv
-fx
+dv
 dv
 dv
 ab
