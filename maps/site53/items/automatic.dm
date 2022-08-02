@@ -10,7 +10,7 @@
 	force = 10
 	caliber = "10mm"
 	slot_flags = SLOT_BELT|SLOT_BACK
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/p90_mag
 	allowed_magazines = /obj/item/ammo_magazine/scp/p90_mag
@@ -43,7 +43,7 @@
 	force = 10
 	slot_flags = SLOT_BACK
 	caliber = "a556"
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/m16_mag
 	allowed_magazines = /obj/item/ammo_magazine/scp/m16_mag
@@ -72,7 +72,7 @@
 	force = 10
 	slot_flags = SLOT_BACK
 	caliber = "a762"
-	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 1, TECH_ILLEGAL = 4)
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 1, TECH_ESOTERIC = 4)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/ak
 	allowed_magazines = /obj/item/ammo_magazine/scp/ak
@@ -102,7 +102,7 @@
 	force = 10
 	slot_flags = SLOT_BACK
 	caliber = "a762"
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/ak
 	allowed_magazines = /obj/item/ammo_magazine/scp/ak
@@ -131,7 +131,7 @@
 	force = 10
 	slot_flags = SLOT_BACK
 	caliber = "a762"
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/ak
 	allowed_magazines = /obj/item/ammo_magazine/scp/ak
@@ -159,7 +159,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	load_method = MAGAZINE
 	caliber = ".45"
-	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 3)
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ESOTERIC = 3)
 	slot_flags = SLOT_BELT
 	ammo_type = /obj/item/ammo_casing/c45
 	magazine_type = /obj/item/ammo_magazine/scp/ierichon
@@ -187,7 +187,7 @@
 	force = 10
 	slot_flags = SLOT_BACK
 	caliber = "a762"
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/ak
 	allowed_magazines = /obj/item/ammo_magazine/scp/ak
@@ -215,7 +215,7 @@
 	force = 10
 	slot_flags = SLOT_BACK
 	caliber = "a762"
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/svd
 	allowed_magazines = /obj/item/ammo_magazine/scp/svd
@@ -241,7 +241,7 @@
 	force = 10
 	slot_flags = SLOT_BACK
 	caliber = "a762nato"
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/fnfal
 	allowed_magazines = /obj/item/ammo_magazine/scp/fnfal
@@ -278,7 +278,7 @@
 	force = 10
 	slot_flags = SLOT_BACK
 	caliber = "a556"
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/m16_mag
 	allowed_magazines = /obj/item/ammo_magazine/scp/m16_mag
@@ -307,7 +307,7 @@
 	force = 10
 	caliber = ".45"
 	slot_flags = SLOT_BELT|SLOT_BACK
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/vectormag
 	allowed_magazines = /obj/item/ammo_magazine/scp/vectormag
