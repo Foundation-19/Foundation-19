@@ -420,7 +420,7 @@
 "abk" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list(list(access_securitylvl3,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
