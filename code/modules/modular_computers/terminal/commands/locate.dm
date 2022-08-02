@@ -7,8 +7,8 @@
 		"NOTICE: Requires network operator or admin access. Use by non-admins is logged."
 	)
 	pattern = "locate"
-	req_access = list(list(access_network, access_network_admin))
-	skill_needed = SKILL_PROF
+	req_access = list("ACCESS_ENGINEERING_LEVEL3")
+	skill_needed = SKILL_MASTER
 
 /datum/terminal_command/locate/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/list/arguments = get_arguments(text)
@@ -19,7 +19,7 @@
 	var/nid = text2num(arguments[1])
 	if(!nid)
 		return "[name]: Error; invalid network id."
-	if(!has_access(list(access_network_admin), user.GetAccess()))
+	if(!has_access(list("ACCESS_ENGINEERING_LEVEL3"), user.GetAccess()))
 		terminal.computer.add_log("'[name]' command executed against network id '[nid]'")
 	var/datum/extension/interactive/ntos/T = ntnet_global.get_os_by_nid(nid)
 	if(!istype(T) || !T.get_ntnet_status_incoming()) // Target device only need a direct connection to NTNet

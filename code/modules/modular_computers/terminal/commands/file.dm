@@ -4,7 +4,6 @@
 	man_entry = list(
 		"Format: file \[-flag filename \[filename2\]\]",
 		"Without options, list all files on storage devices.",
-		"With -h followed by filename, toggle the hidden flag on the file.",
 		"With -r followed by filename, remove the file.",
 		"With -m followed by filename and filename2, move or rename the file to the second filename",
 		"With -c followed by filename and filename2, copy the file to the second filename",
@@ -33,16 +32,7 @@
 		var/list/source = get_file_location(drives, arguments[2])
 		if(!source)
 			return "[name]: Error; unable to resolve filename."
-		if(arguments[1] == "-h")
-			var/datum/computer_file/F = terminal.computer.get_file(source["name"], source["drive"])
-			if(!istype(F))
-				return "[name]: Error; could not find file '[source["name"]]'."
-			var/obj/item/stock_parts/computer/hard_drive/D = source["drive"]
-			if(D.read_only)
-				return "[name]: Error; could not modify attribute for file '[source["name"]]'."
-			F.hidden = F.hidden ? FALSE : TRUE
-			return "[name]: File '[source["name"]]' set to be [(F.hidden ? "in" : "")]visible.";
-		else if(arguments[1] == "-r")
+		if(arguments[1] == "-r")
 			if(!terminal.computer.delete_file(source["name"], source["drive"]))
 				return "[name]: Error; could not delete file '[source["name"]]'."
 			return "[name]: File deleted."
@@ -82,8 +72,7 @@
 				if(O.len >= max_lines) // There's a line limit in the terminal, so if we approach it, break off and just list number of files on the drives.
 					O += ".. [(D.stored_files.len - i)] additional files."
 					break
-				var/flags = "+[(F.hidden ? "h" : "")][(F.read_only ? "r" : "rw")]"
-				O += "[flags] [F.filetype] [F.size]GQ [F.filename]"
+				O += "[F.filetype] [F.size]GQ [F.filename]"
 				i++
 	return O
 

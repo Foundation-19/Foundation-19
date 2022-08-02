@@ -7,13 +7,8 @@
 		"NOTICE: Requires network admin access."
 	)
 	pattern = "^ssh"
-	req_access = list(access_network_admin)
-	skill_needed = SKILL_EXPERT
-
-/datum/terminal_command/check_access(mob/user, datum/terminal/terminal)
-	if(terminal.computer.emagged() && !istype(terminal, /datum/terminal/remote))
-		return TRUE // Helps let antags do hacker gimmicks without having to get universal network access first.
-	return ..()
+	req_access = list("ACCESS_ENGINEERING_LEVEL3")
+	skill_needed = SKILL_EXPERIENCED
 
 /datum/terminal_command/ssh/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	if(istype(terminal, /datum/terminal/remote))

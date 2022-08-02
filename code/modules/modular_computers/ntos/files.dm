@@ -88,3 +88,23 @@
 		return FALSE
 	var/datum/computer_file/C = F.clone(0)
 	return disk_to.store_file(C)
+
+/// Attempts to move or copy the specified file, potentially between disks, and renaming it in the process if necessary
+/datum/extension/interactive/ntos/proc/move_file(filename, filename_new, obj/item/stock_parts/computer/hard_drive/disk_from, obj/item/stock_parts/computer/hard_drive/disk_to, copy = FALSE)
+	if(!istype(disk_from) || !istype(disk_to))
+		return
+
+	var/datum/computer_file/F = disk_from.find_file_by_name(filename)
+	if(!istype(F) || F.undeletable)
+		return
+
+	if(disk_from == disk_to && F.filename == filename_new)
+		return F // We don't need to do anything
+
+	var/datum/computer_file/FC = F.clone()
+	if(FC.filename != filename_new)
+		FC.filename = filename_new
+	FC = disk_to.store_file(FC)
+	if(FC && !copy) // Failure to remove the old file is not considered critical
+		disk_from.remove_file(F)
+	return FC

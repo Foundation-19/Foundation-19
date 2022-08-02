@@ -79,44 +79,68 @@
 		ntnet_global.register(network_card.identification_id, src)
 	update_host_icon()
 
-/datum/extension/interactive/ntos/proc/kill_program(var/datum/computer_file/program/P, var/forced = 0)
+/// Attempts to kill a program. Assumes that usr is directly accessing the device.
+/datum/extension/interactive/ntos/proc/kill_program(datum/computer_file/program/P, forced = FALSE)
+	kill_program_remote(P, forced, usr)
+
+/// Attempts to kill a program.
+/datum/extension/interactive/ntos/proc/kill_program_remote(datum/computer_file/program/P, forced = FALSE, mob/user = null)
 	if(!P)
 		return
 	P.on_shutdown(forced)
 	running_programs -= P
 	if(active_program == P)
 		active_program = null
-		if(ismob(usr))
-			ui_interact(usr) // Re-open the UI on this computer. It should show the main screen now.
+		if(ismob(user))
+			ui_interact(user) // Re-open the UI on this computer. It should show the main screen now.
 	update_host_icon()
 
+/// Attempts to start the named program in the foreground. Assumes that usr is directly accessing the device. Returns the program on success, otherwise nul.
 /datum/extension/interactive/ntos/proc/run_program(filename)
+	var/mob/user = usr
+	var/datum/computer_file/program/P = run_program_remote(filename, user, 1)
+	if(!istype(P))
+		return
+
+	activate_program(P, user)
+	return P
+
+/// Attempts to start the named program in the background. Returns the program on success, otherwise null.
+/datum/extension/interactive/ntos/proc/run_program_remote(filename, mob/user = null, loud = 0)
 	var/datum/computer_file/program/P = get_file(filename)
 
-	var/mob/user = usr
-	if(!P || !istype(P)) // Program not found or it's not executable program.
-		show_error(user, "I/O ERROR - Unable to run [filename]")
+	if(!istype(P))
+		loud && show_error(user, "I/O ERROR - Unable to run [filename]")
 		return
-
-	if(!P.is_supported_by_hardware(get_hardware_flag(), user, TRUE))
+	if(!P.is_supported_by_hardware(get_hardware_flag()))
+		loud && show_error(user, "Hardware Error - Incompatible software")
 		return
-
-	if(P.requires_ntnet && !get_ntnet_status())
-		to_chat(user, SPAN_WARNING("Unable to establish a working network connection. Please try again later. If problem persists, please contact your system administrator."))
+	if(P.requires_ntnet && !get_ntnet_status(P.requires_ntnet_feature))
+		loud && show_error(user, "Unable to establish a working network connection. Please try again later. If problem persists, please contact your system administrator.")
 		return
-
-	minimize_program(user)
 
 	if(P in running_programs)
+		return P
+	if(running_programs.len >= get_program_capacity())
+		loud && show_error(user, "Kernel Error - Insufficient CPU resources available to allocate.")
+		return
+	if(!P.can_run(user, loud))
+		return
+
+	P.on_startup(user, src)
+	running_programs |= P
+	return P
+
+/// Make a program the currently active one if it is running. Returns the program on success, otherwise null.
+/datum/extension/interactive/ntos/proc/activate_program(datum/computer_file/program/P, mob/user = null)
+	if(!istype(P))
+		return
+	if((P in running_programs) && P != active_program && P.program_state != PROGRAM_STATE_KILLED)
+		minimize_program(user)
 		P.program_state = PROGRAM_STATE_ACTIVE
 		active_program = P
-	else if(P.can_run(user, 1))
-		P.on_startup(user, src)
-		active_program = P
-
-	running_programs |= P
-	update_host_icon()
-	return 1
+		update_host_icon()
+		return P
 
 /datum/extension/interactive/ntos/proc/minimize_program(mob/user)
 	if(!active_program)
@@ -134,6 +158,13 @@
 		autorun.stored_data = "[program]"
 	else
 		create_file("autorun", "[program]")
+
+/// Returns the number number of programs this system can run at the same time.
+/datum/extension/interactive/ntos/proc/get_program_capacity()
+	var/obj/item/stock_parts/computer/processor_unit/C = get_component(PART_CPU)
+	if(!istype(C))
+		return 0
+	return 1 + C.processing_power
 
 /datum/extension/interactive/ntos/proc/add_log(var/text)
 	if(!get_ntnet_status())

@@ -26,6 +26,15 @@
 	else
 		return "N/A"
 
+/// Returns the connection quality to NTNet for this computer for others trying to reach it.
+/datum/extension/interactive/ntos/proc/get_ntnet_status_incoming()
+	if(!on) // No signal if the computer isn't on.
+		return 0
+	var/obj/item/stock_parts/computer/network_card/network_card = get_component(PART_NETWORK)
+	if(network_card)
+		return network_card.get_signal_direct()
+	return 0
+
 /datum/extension/interactive/ntos/proc/get_ntnet_status(var/specific_action = 0)
 	var/obj/item/stock_parts/computer/network_card/network_card = get_component(PART_NETWORK)
 	if(network_card)

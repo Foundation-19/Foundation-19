@@ -53,6 +53,61 @@ var/global/ntnet_card_uid = 1
 	ntnet_global.unregister(identification_id)
 	return ..()
 
+/obj/item/stock_parts/computer/network_card/proc/set_identification_string(identificator)
+	if(identificator && validate_identificator(identificator))
+		identification_string = "[identificator]"
+		return TRUE
+	else if(!identificator)
+		identification_string = ""
+		return TRUE
+	else
+		return FALSE
+
+/// Validates identificator name
+/obj/item/stock_parts/computer/network_card/proc/validate_identificator(identificator)
+	var/list/badchars = list("/","\\",":","*","?","\"","<",">","|","#",","," ")
+	for(var/char in badchars)
+		if(findtext(identificator, char))
+			return FALSE
+	return TRUE
+
+/// Returns a list of all network cards this connection passes through before terminating. Argument is a safety parameter for internal calls. Don't use manually.
+/obj/item/stock_parts/computer/network_card/proc/get_route(list/routed_through)
+	. = !isnull(routed_through) ? routed_through : list()
+	if((src in .))
+		return
+	. += src
+	if(proxy_id)
+		var/datum/extension/interactive/ntos/comp = ntnet_global.get_os_by_nid(proxy_id)
+		if(comp && comp.on)
+			var/obj/item/stock_parts/computer/network_card/nc = comp.get_component(PART_NETWORK)
+			if(nc && nc.get_signal_direct())
+				return nc.get_route(.)
+
+/// Returns the signal strength directly to NTNet for this card. 0 - No signal, 1 - Low signal, 2 - High signal. 3 - Wired Connection
+/obj/item/stock_parts/computer/network_card/proc/get_signal_direct()
+	. = 0
+	if(!check_functionality() || !ntnet_global || is_banned())
+		return
+	if(!ntnet_global.check_function() && !ethernet)
+		return
+	var/strength = 1
+	if(ethernet)
+		strength = 3
+	else if(long_range)
+		strength = 2
+	var/turf/T = get_turf(src)
+	if(!istype(T)) //no reception in nullspace
+		return
+	if(T.z in GLOB.using_map.station_levels) // Computer is on station. Low/High signal depending on what type of network card you have
+		. = strength
+	else if(T.z in GLOB.using_map.contact_levels) // Not on station, but close enough for radio signal to travel, or long cables in case of ethernet
+		. = strength - 1
+
+/// Returns the actual string identifier of this network card
+/obj/item/stock_parts/computer/network_card/proc/get_network_tag_direct()
+	return "[(identification_string ? identification_string : "Unidentified")] (NID [identification_id])"
+
 // Returns a string identifier of this network card
 /obj/item/stock_parts/computer/network_card/proc/get_network_tag(list/routed_through) // Argument is a safety parameter for internal calls. Don't use manually.
 	if(proxy_id && !(src in routed_through))

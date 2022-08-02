@@ -10,7 +10,7 @@
 		"It is recommended that the user ensure that the target device is accessible."
 	)
 	pattern = "^proxy"
-	skill_needed = SKILL_EXPERT
+	skill_needed = SKILL_EXPERIENCED
 
 /datum/terminal_command/proxy/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/list/arguments = get_arguments(text)
@@ -38,8 +38,12 @@
 		if(!terminal.computer.get_ntnet_status_incoming() || !target || !target.get_ntnet_status_incoming()) // Both devices only need a direct connection to NTNet to set up
 			return "[name]: Error; cannot locate target device. Try ping for diagnostics."
 		var/log_entry = "([station_time_timestamp()]) - Proxy routing request accepted from: [network_card.get_network_tag_direct()].\[br\]"
-		if(!target.update_data_file("proxy", log_entry, /datum/computer_file/data/logfile))
-			return "[name]: Error; unable to save proxy registration on target device."
+		var/datum/computer_file/data/logfile/file = target.get_file("proxy")
+		if(!istype(file))
+			file = target.create_file("proxy")
+		if(file)
+			file.stored_data += log_entry
+
 		network_card.proxy_id = nid
 		return "[name]: Device proxy set to NID '[nid]'."
 	return syntax_error()
