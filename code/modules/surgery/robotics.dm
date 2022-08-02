@@ -240,7 +240,7 @@
 //////////////////////////////////////////////////////////////////
 /decl/surgery_step/robotics/repair_brittle
 	name = "Reinforce prosthetic"
-	allowed_tools = list(/obj/item/stack/nanopaste = 100)
+	allowed_tools = list(/obj/item/stack/nanopaste = 5)
 	min_duration = 50
 	max_duration = 60
 
