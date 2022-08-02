@@ -604,13 +604,6 @@
 	name = "Upper Entrance Zone Armory"
 	icon_state = "security"
 
-/area/site53/uez/bridge
-	name = "\improper Bridge"
-	icon_state = "hallC1"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	sound_env = LARGE_ENCLOSED
-	requires_power = 0
-	dynamic_lighting = 1
 
 /area/site53/uez/mcrsubstation
 	name = "Main Control Room Substation"
