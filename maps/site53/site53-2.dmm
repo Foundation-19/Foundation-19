@@ -26360,7 +26360,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/engine_smes)
 "eNo" = (
-/obj/effect/floor_decal/industrial/warning/corner{
+/obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
 /turf/simulated/floor/reinforced,
@@ -30102,8 +30102,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
 "oXB" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
+/obj/machinery/door/blast/regular{
+	id_tag = "096chamberlock2"
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/scp096)
@@ -78305,11 +78305,11 @@ azA
 azA
 bdi
 aBC
-kwM
-eNo
+aBC
+aBC
 oXB
-lVz
-kwM
+aBC
+aBC
 aBC
 wiZ
 eED
@@ -78565,11 +78565,11 @@ azA
 azA
 bdi
 aBC
+aBC
 kwM
-kwM
-kwM
-kwM
-kwM
+eNo
+lVz
+aBC
 aBC
 bDp
 oBG
@@ -78825,11 +78825,11 @@ azA
 azA
 bdi
 aBC
-kwM
+aBC
 kwM
 kwM
 rhy
-kwM
+aBC
 aBC
 wiZ
 wRV
@@ -79085,11 +79085,11 @@ azA
 azA
 bdi
 aBC
+aBC
 kwM
 kwM
 kwM
-kwM
-kwM
+aBC
 aBC
 bDp
 oBG
@@ -79345,11 +79345,11 @@ azA
 azA
 bdi
 aBC
-kwM
-kwM
-kwM
-kwM
-kwM
+aBC
+aBC
+aBC
+aBC
+aBC
 aBC
 bdi
 bdi
