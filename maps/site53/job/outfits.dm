@@ -266,22 +266,24 @@
 /decl/hierarchy/outfit/job/site90/crew/science/juniorscientist
 	name = OUTFIT_JOB_NAME("Scientist Associate")
 	uniform = /obj/item/clothing/under/scp/suittie
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
 	shoes = /obj/item/clothing/shoes/laceup
 	id_types = list(/obj/item/card/id/sciencelvl1)
-	gloves = /obj/item/clothing/gloves/latex
 	l_ear = /obj/item/device/radio/headset/headset_sci
-	back = /obj/item/storage/backpack/satchel
+	back = /obj/item/storage/backpack/satchel/tox
+	backpack_contents = list(/obj/item/clothing/accessory/tunic = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/science/scientist
 	name = OUTFIT_JOB_NAME("Scientist")
 	uniform = /obj/item/clothing/under/scp/suittie
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat/genetics
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
 	shoes = /obj/item/clothing/shoes/laceup
 	id_types = list(/obj/item/card/id/sciencelvl2)
-	gloves = /obj/item/clothing/gloves/latex
 	l_ear = /obj/item/device/radio/headset/headset_sci
 	l_pocket = /obj/item/book/manual/scp/scisop
+	glasses = /obj/item/clothing/glasses/science
+	back = /obj/item/storage/backpack/messenger/tox
+	backpack_contents = list(/obj/item/clothing/accessory/tunic = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/science/seniorscientist
 	name = OUTFIT_JOB_NAME("Senior Scientist")
@@ -292,7 +294,9 @@
 	gloves = /obj/item/clothing/gloves/latex/nitrile
 	l_pocket = /obj/item/book/manual/scp/scisop
 	l_ear = /obj/item/device/radio/headset/headset_sci
-	back = /obj/item/storage/backpack/satchel/pocketbook
+	glasses = /obj/item/clothing/glasses/science
+	back = /obj/item/storage/backpack/messenger/tox
+	backpack_contents = list(/obj/item/clothing/accessory/tunic = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/science/researchdirector
 	name = OUTFIT_JOB_NAME("Research Director")
@@ -303,7 +307,9 @@
 	gloves = /obj/item/clothing/gloves/latex/nitrile
 	l_ear = /obj/item/device/radio/headset/heads/rd
 	l_pocket = /obj/item/book/manual/scp/scisop
-	back = /obj/item/storage/backpack/satchel/pocketbook
+	back = /obj/item/storage/backpack/messenger/tox
+	glasses = /obj/item/clothing/glasses/hud/science
+	backpack_contents = list(/obj/item/clothing/accessory/tunic = 1)
 
 
 // MISC OUTFITS
