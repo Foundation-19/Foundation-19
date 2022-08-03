@@ -157,43 +157,6 @@
 	                    SKILL_CHEMISTRY   = SKILL_MASTER)
 	skill_points = 24
 
-/datum/job/virologist
-	title = "Virologist"
-	department = "Medical"
-	department_flag = MED
-	selection_color = "#013d3b"
-	total_positions = 2
-	spawn_positions = 2
-	minimal_player_age = 3
-	ideal_character_age = 40
-	economic_power = 5
-	//supervisors = "the Chief Medical Officer"
-	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/virologist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/classc)
-	hud_icon = "hudvirologist"
-
-	access = list(
-		access_med_comms,
-		access_medical_equip,
-		access_medicallvl1,
-		access_medicallvl2,
-		access_medicallvl3,
-		access_medicallvl4
-	)
-	minimal_access = list()
-
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_MEDICAL     = SKILL_TRAINED,
-	                    SKILL_ANATOMY     = SKILL_TRAINED,
-	                    SKILL_CHEMISTRY   = SKILL_BASIC,
-						SKILL_DEVICES     = SKILL_TRAINED)
-
-	max_skill = list(   SKILL_MEDICAL     = SKILL_MASTER,
-	                    SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_CHEMISTRY   = SKILL_MASTER)
-	skill_points = 23
-
 /datum/job/surgeon
 	title = "Surgeon"
 	department = "Medical"

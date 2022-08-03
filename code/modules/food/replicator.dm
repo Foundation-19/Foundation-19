@@ -3,8 +3,8 @@
 	desc = "like a microwave, except better."
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "soda"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	use_power = 1
 	idle_power_usage = 40
 	obj_flags = OBJ_FLAG_ANCHORABLE

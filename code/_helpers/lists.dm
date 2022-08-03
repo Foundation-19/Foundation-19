@@ -279,6 +279,10 @@ Checks if a list has the same entries and values as an element of big.
 		return (result + L.Copy(Li, 0))
 	return (result + R.Copy(Ri, 0))
 
+//any value in a list || used by some tgui stuff
+/proc/sort_list(list/L, cmp=/proc/cmp_text_asc)
+	return sortTim(L.Copy(), cmp)
+
 //Mergesort: any value in a list
 /proc/sortList(var/list/L)
 	if(length(L) < 2)
@@ -762,3 +766,15 @@ Checks if a list has the same entries and values as an element of big.
 				continue
 			output += line
 		return output
+
+///takes an input_key, as text, and the list of keys already used, outputting a replacement key in the format of "[input_key] ([number_of_duplicates])" if it finds a duplicate
+///use this for lists of things that might have the same name, like mobs or objects, that you plan on giving to a player as input
+/proc/avoid_assoc_duplicate_keys(input_key, list/used_key_list)
+	if(!input_key || !istype(used_key_list))
+		return
+	if(used_key_list[input_key])
+		used_key_list[input_key]++
+		input_key = "[input_key] ([used_key_list[input_key]])"
+	else
+		used_key_list[input_key] = 1
+	return input_key

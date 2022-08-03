@@ -248,7 +248,7 @@
 /datum/chemical_reaction/classa
 	name = "Class-A Amnestics"
 	result = /datum/reagent/amnestics/classa
-	required_reagents = list(/datum/reagent/mindbreaker_toxin = 1, /datum/chemical_reaction/alkysine = 1, /datum/reagent/impedrezene = 1)
+	required_reagents = list(/datum/reagent/mindbreaker_toxin = 1, /datum/reagent/medicine/alkysine = 1, /datum/reagent/impedrezene = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/classb

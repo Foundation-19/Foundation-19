@@ -38,13 +38,13 @@
 			chassis.visible_message("[chassis] lifts [target] and starts to load it into cargo compartment.")
 			set_ready_state(0)
 			chassis.use_power(energy_drain)
-			O.anchored = 1
+			O.anchored = TRUE
 			var/T = chassis.loc
 			if(do_after_cooldown(target))
 				if(T == chassis.loc && src == chassis.selected)
 					cargo_holder.cargo += O
 					O.loc = chassis
-					O.anchored = 0
+					O.anchored = FALSE
 					occupant_message("<span class='notice'>[target] succesfully loaded.</span>")
 					log_message("Loaded [O]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
 				else
@@ -684,7 +684,7 @@
 	name = "energy relay"
 	desc = "Wirelessly drains energy from any available power channel in area. The performance index is quite low."
 	icon_state = "tesla"
-	origin_tech = list(TECH_MAGNET = 4, TECH_ILLEGAL = 2)
+	origin_tech = list(TECH_MAGNET = 4, TECH_ESOTERIC = 2)
 	equip_cooldown = 10
 	energy_drain = 0
 	range = 0
@@ -958,13 +958,13 @@
 					chassis.visible_message("[chassis] lifts [target] and starts to load it into cargo compartment.")
 					set_ready_state(0)
 					chassis.use_power(energy_drain)
-					O.anchored = 1
+					O.anchored = TRUE
 					var/T = chassis.loc
 					if(do_after_cooldown(target))
 						if(T == chassis.loc && src == chassis.selected)
 							cargo_holder.cargo += O
 							O.loc = chassis
-							O.anchored = 0
+							O.anchored = FALSE
 							chassis.occupant_message("<span class='notice'>[target] succesfully loaded.</span>")
 							chassis.log_message("Loaded [O]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
 						else
