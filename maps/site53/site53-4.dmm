@@ -658,6 +658,10 @@
 	pixel_x = 24
 	},
 /obj/structure/reagent_dispensers/watertank,
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/plating,
 /area/space)
 "bQ" = (
@@ -2483,6 +2487,10 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/structure/cable/cyan{
+	icon_state = "2-8";
+	dir = 2
+	},
 /turf/simulated/floor/plating,
 /area/space)
 "hC" = (
@@ -3892,6 +3900,10 @@
 	},
 /obj/structure/cable/cyan{
 	icon_state = "1-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2";
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/space)
@@ -5801,6 +5813,11 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
 /area/space)
