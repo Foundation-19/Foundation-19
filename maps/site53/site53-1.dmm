@@ -541,6 +541,20 @@
 /obj/effect/floor_decal/carpet/blue2,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/assignmentbubble)
+"bD" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost/storage)
 "bF" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10934,20 +10948,6 @@
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
-"Da" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost/storage)
 "Db" = (
 /obj/item/device/flashlight/pen,
 /obj/machinery/power/apc,
@@ -13944,13 +13944,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
-"Le" = (
-/obj/effect/paint_stripe/orange,
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/cells)
 "Lg" = (
 /obj/machinery/camera/network/lcz,
 /obj/structure/table/reinforced,
@@ -25071,7 +25064,7 @@ LR
 rI
 xU
 FH
-Da
+bD
 Pu
 dK
 bI
@@ -27380,7 +27373,7 @@ Fl
 tj
 tj
 tj
-Le
+tj
 tj
 tj
 tj
