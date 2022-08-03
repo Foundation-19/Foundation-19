@@ -25075,6 +25075,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"boY" = (
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/open/flooded,
+/area/space)
 "bpN" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
@@ -25169,6 +25176,9 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
+"byD" = (
+/turf/simulated/floor/plating,
+/area/space)
 "bBw" = (
 /obj/structure/cryofeed,
 /turf/simulated/floor/tiled/white,
@@ -25269,6 +25279,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/medicalpost)
+"bSH" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/remains,
+/turf/simulated/floor/plating,
+/area/space)
 "bTl" = (
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/disposal,
@@ -26325,6 +26342,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/science/aicobservation)
+"eCR" = (
+/obj/structure/cable/cyan{
+	icon_state = "32-8";
+	dir = 2
+	},
+/turf/simulated/floor/plating,
+/area/space)
 "eED" = (
 /obj/structure/bed/chair/office{
 	dir = 8
@@ -27183,6 +27207,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp999)
+"gYM" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/open/flooded,
+/area/space)
 "hbt" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -27532,6 +27565,13 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/scp106containment)
+"hZj" = (
+/obj/structure/catwalk,
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/turf/simulated/open/flooded,
+/area/space)
 "hZq" = (
 /obj/machinery/light/small{
 	dir = 1;
@@ -27645,6 +27685,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/scp513)
+"irL" = (
+/obj/structure/cable/cyan{
+	icon_state = "32-2";
+	dir = 8
+	},
+/turf/simulated/open,
+/area/space)
 "isi" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
@@ -27898,6 +27945,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
+"jdJ" = (
+/obj/structure/catwalk,
+/obj/structure/cable/cyan{
+	icon_state = "2-4"
+	},
+/turf/simulated/open/flooded,
+/area/space)
 "jek" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
@@ -28554,6 +28608,11 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
+"kSO" = (
+/obj/structure/catwalk,
+/obj/item/remains/robot,
+/turf/simulated/open/flooded,
+/area/space)
 "kZh" = (
 /obj/structure/bed/roller,
 /obj/structure/iv_drip,
@@ -28829,6 +28888,13 @@
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"lCE" = (
+/obj/structure/catwalk,
+/obj/machinery/light/spot{
+	dir = 4
+	},
+/turf/simulated/open/flooded,
+/area/space)
 "lCG" = (
 /obj/machinery/chemical_dispenser/full,
 /turf/simulated/floor/tiled/monotile/white,
@@ -29446,6 +29512,10 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp096)
+"nec" = (
+/obj/structure/catwalk,
+/turf/simulated/open/flooded,
+/area/space)
 "ngk" = (
 /obj/effect/floor_decal/corner/orange/mono,
 /obj/machinery/computer/guestpass{
@@ -29869,6 +29939,17 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
+"ory" = (
+/obj/structure/catwalk,
+/obj/machinery/power/apc/hyper{
+	dir = 1;
+	pixel_y = 16
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
+/turf/simulated/open/flooded,
+/area/space)
 "osf" = (
 /obj/structure/table/standard,
 /obj/machinery/camera/network/entrance,
@@ -29938,6 +30019,14 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp096)
+"oyW" = (
+/obj/structure/catwalk,
+/obj/structure/cable/cyan{
+	icon_state = "2-4";
+	dir = 4
+	},
+/turf/simulated/open/flooded,
+/area/space)
 "oBq" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -30819,6 +30908,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
+"raF" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/space)
 "raR" = (
 /obj/machinery/door/airlock/science{
 	name = "General Purpose Testing Chamber";
@@ -31304,6 +31399,15 @@
 /obj/item/paper/scp012,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
+"sEc" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/open/flooded,
+/area/space)
 "sEr" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -31417,6 +31521,13 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
+"sWi" = (
+/obj/structure/catwalk,
+/obj/machinery/light/spot{
+	dir = 8
+	},
+/turf/simulated/open,
+/area/space)
 "sWz" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -31833,6 +31944,10 @@
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
+"ujT" = (
+/obj/structure/ladder/updown,
+/turf/simulated/floor/plating,
+/area/space)
 "ulE" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -32386,6 +32501,18 @@
 /obj/machinery/reagent_temperature,
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"vFU" = (
+/obj/structure/catwalk,
+/obj/structure/cable/cyan{
+	icon_state = "2-4";
+	dir = 8
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-8";
+	dir = 8
+	},
+/turf/simulated/open/flooded,
+/area/space)
 "vGY" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4
@@ -32597,6 +32724,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
+"wbz" = (
+/obj/structure/railing/mapped,
+/turf/simulated/open/flooded,
+/area/space)
 "wcr" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/industrial/warning,
@@ -33024,6 +33155,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
+"wYu" = (
+/obj/structure/catwalk,
+/turf/simulated/open,
+/area/space)
+"xaw" = (
+/turf/simulated/open/flooded,
+/area/space)
 "xaC" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/reinforced,
@@ -33193,6 +33331,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
+"xvv" = (
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/open/flooded,
+/area/space)
 "xwF" = (
 /obj/structure/table/rack,
 /obj/item/device/radio,
@@ -67765,14 +67910,14 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+aQZ
+aQZ
+aQZ
+aQZ
+aQZ
+aQZ
+aQZ
+aQZ
 azA
 azA
 azA
@@ -68025,15 +68170,15 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+aQZ
+ujT
+nec
+nec
+nec
+nec
+nec
+aQZ
+aQZ
 azA
 azA
 azA
@@ -68284,17 +68429,17 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+aQZ
+aQZ
+xaw
+nec
+gYM
+nec
+xvv
+nec
+sWi
+aQZ
+aQZ
 azA
 azA
 azA
@@ -68544,17 +68689,17 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+aQZ
+nec
+xaw
+xaw
+xaw
+xaw
+xaw
+xvv
+nec
+nec
+aQZ
 azA
 azA
 azA
@@ -68804,17 +68949,17 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+aQZ
+nec
+xaw
+xaw
+aQZ
+ory
+aQZ
+xaw
+xvv
+nec
+aQZ
 azA
 azA
 azA
@@ -69064,17 +69209,17 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+aQZ
+nec
+xaw
+nec
+wYu
+hZj
+wYu
+nec
+nec
+nec
+aQZ
 azA
 azA
 azA
@@ -69324,17 +69469,17 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+aQZ
+nec
+xaw
+xaw
+aQZ
+hZj
+aQZ
+xaw
+wbz
+nec
+aQZ
 azA
 azA
 azA
@@ -69584,17 +69729,17 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+aQZ
+nec
+xaw
+xaw
+xaw
+hZj
+xaw
+xaw
+xaw
+xaw
+aQZ
 azA
 azA
 azA
@@ -69844,17 +69989,17 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+aQZ
+aQZ
+lCE
+nec
+sEc
+hZj
+boY
+nec
+kSO
+aQZ
+aQZ
 azA
 azA
 azA
@@ -70105,15 +70250,15 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+aQZ
+aQZ
+nec
+jdJ
+vFU
+oyW
+nec
+aQZ
+aQZ
 azA
 azA
 azA
@@ -70366,13 +70511,13 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+aQZ
+aQZ
+raF
+aQZ
+raF
+aQZ
+aQZ
 azA
 azA
 azA
@@ -70627,11 +70772,11 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
+aQZ
+bSH
+byD
+raF
+aQZ
 azA
 azA
 azA
@@ -70887,11 +71032,11 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
+aQZ
+irL
+byD
+eCR
+aQZ
 azA
 azA
 azA
@@ -71147,11 +71292,11 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
+aQZ
+aQZ
+aQZ
+aQZ
+aQZ
 azA
 azA
 azA
