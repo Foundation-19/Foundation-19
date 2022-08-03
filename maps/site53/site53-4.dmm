@@ -2475,6 +2475,14 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/plating,
 /area/space)
 "hC" = (
@@ -2912,6 +2920,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
 /area/space)
@@ -3848,6 +3861,7 @@
 /obj/structure/railing/mapped,
 /obj/machinery/atmospherics/pipe/zpipe/down/supply,
 /obj/machinery/atmospherics/pipe/zpipe/down/scrubbers,
+/obj/machinery/atmospherics/pipe/zpipe/down,
 /turf/simulated/open,
 /area/space)
 "ns" = (
@@ -4607,6 +4621,11 @@
 /obj/machinery/power/port_gen/pacman{
 	sheets = 25;
 	anchored = 1
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/plating,
 /area/space)
@@ -5778,6 +5797,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/plating,
 /area/space)
 "LE" = (
@@ -6118,6 +6142,7 @@
 /area/space)
 "Qb" = (
 /obj/effect/floor_decal/snow,
+/obj/structure/ladder,
 /turf/simulated/floor/plating,
 /area/space)
 "Qv" = (
@@ -6308,6 +6333,11 @@
 	},
 /obj/structure/railing/mapped,
 /obj/machinery/atmospherics/pipe/zpipe/down/fuel,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "32-2"
+	},
 /turf/simulated/open,
 /area/space)
 "Sh" = (

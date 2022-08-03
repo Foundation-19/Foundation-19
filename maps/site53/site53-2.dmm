@@ -26344,7 +26344,10 @@
 /area/site53/science/aicobservation)
 "eCR" = (
 /obj/structure/cable/cyan{
-	icon_state = "32-8";
+	icon_state = "0-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "16-0";
 	dir = 2
 	},
 /turf/simulated/floor/plating,

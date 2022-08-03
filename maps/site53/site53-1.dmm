@@ -14987,6 +14987,13 @@
 	dir = 2
 	},
 /obj/effect/flood,
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "16-0";
+	dir = 2
+	},
 /turf/simulated/floor/plating,
 /area/space)
 "OC" = (
