@@ -25,7 +25,7 @@
 	if(user.client.get_preference_value(/datum/client_preference/use_tgui_inputs) == GLOB.PREF_NO)
 		return input(user, message, title, default) as null|anything in items
 	var/datum/tgui_list_input/input = new(user, message, title, items, default, timeout)
-	input.ui_interact(user)
+	input.tgui_interact(user)
 	input.wait()
 	if (input)
 		. = input.choice

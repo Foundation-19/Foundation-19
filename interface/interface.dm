@@ -70,3 +70,8 @@
 		prefs.lastchangelog = GLOB.changelog_hash
 		prefs.save_preferences()
 		winset(src, "infowindow.changelog", "font-style=;")
+
+/client/verb/edit_hotkeys()
+	set name = "Edit Hotkeys"
+	set category = "Preferences"
+	prefs.macros.tgui_interact(usr)

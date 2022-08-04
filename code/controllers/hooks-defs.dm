@@ -1,10 +1,4 @@
 /**
- * Global init hook.
- * Called in global_init.dm when the server is initialized.
- */
-/hook/global_init
-
-/**
  * Startup hook.
  * Called in world.dm when the server starts.
  */

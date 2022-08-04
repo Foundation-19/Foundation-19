@@ -33,10 +33,11 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	var/obj/item/device/multitool/ghost_multitool
 	var/list/hud_images // A list of hud images
 
-/mob/observer/ghost/New(mob/body)
+/mob/observer/ghost/Initialize(mapload)
 	see_in_dark = 100
 	add_verb(src, /mob/proc/toggle_antag_pool)
 
+	var/mob/body = loc
 	var/turf/T
 	if(ismob(body))
 		T = get_turf(body)               //Where is the body located?
@@ -59,7 +60,8 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 		spawn(10) // wait for the observer mob to receive the client's key
 			mind = new /datum/mind(key)
 			mind.current = src
-	if(!T)	T = pick(GLOB.latejoin | GLOB.latejoin_cryo | GLOB.latejoin_gateway)			//Safety in case we cannot find the body's position
+	if(!T)
+		T = pick(GLOB.latejoin | GLOB.latejoin_cryo | GLOB.latejoin_gateway)			//Safety in case we cannot find the body's position
 	forceMove(T)
 
 	if(!name)							//To prevent nameless ghosts
@@ -75,7 +77,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 
 	GLOB.ghost_mob_list += src
 
-	..()
+	.=..()
 
 /mob/observer/ghost/Destroy()
 	GLOB.ghost_mob_list -= src

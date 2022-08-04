@@ -86,20 +86,22 @@ GLOBAL_LIST_INIT(possible_say_verbs, list(
 
 	hud_type = /datum/hud/pai
 
-/mob/living/silicon/pai/New(var/obj/item/device/paicard)
+/mob/living/silicon/pai/Initialize()
+	. = ..()
 	status_flags |= NO_ANTAG
-	card = paicard
+	card = loc
 
 	//As a human made device, we'll understand sol common without the need of the translator
 	add_language(LANGUAGE_ENGLISH, 1)
 	remove_verb(src, /mob/living/verb/ghost)
 
-	..()
+	.=..()
 
 	if(card)
 		if(!card.radio)
 			card.radio = new /obj/item/device/radio(card)
 		silicon_radio = card.radio
+	software = default_pai_software.Copy()
 
 /mob/living/silicon/pai/Destroy()
 	card = null

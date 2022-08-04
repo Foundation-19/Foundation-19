@@ -285,6 +285,7 @@ Checks if a list has the same entries and values as an element of big.
 
 //Mergesort: any value in a list
 /proc/sortList(var/list/L)
+	RETURN_TYPE(/list)
 	if(length(L) < 2)
 		return L
 	var/middle = length(L) / 2 + 1 // Copy is first,second-1

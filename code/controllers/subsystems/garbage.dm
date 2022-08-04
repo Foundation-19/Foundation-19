@@ -296,7 +296,6 @@ SUBSYSTEM_DEF(garbage)
 	if(!D)
 		return
 	if(!istype(D))
-		crash_with("qdel() can only handle /datum (sub)types, was passed: [log_info_line(D)]")
 		del(D)
 		return
 	var/datum/qdel_item/I = SSgarbage.items[D.type]

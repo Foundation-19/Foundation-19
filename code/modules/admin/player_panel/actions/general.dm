@@ -125,9 +125,10 @@
 	name = "Set Name"
 
 /datum/player_action/set_name/act(var/client/user, var/mob/target, var/list/params)
-	target.SetName(params["name"])
-	message_staff("[key_name_admin(user)] set [key_name_admin(target)]'s name to [params["name"]]")
-	return TRUE
+	if(target.name != params["name"])
+		target.SetName(params["name"])
+		message_staff("[key_name_admin(user)] set [key_name_admin(target)]'s name to [params["name"]]")
+		return TRUE
 
 /datum/player_action/set_ckey
 	action_tag = "set_ckey"
@@ -200,7 +201,7 @@
 	name = "Change Permissions"
 
 /datum/player_action/change_perms/act(var/client/user, var/mob/target, var/list/params)
-	if(!target.client || !target.client.holder)
+	if(!target.client?.holder)
 		return
 
 	user.holder.edit_admin_permissions()

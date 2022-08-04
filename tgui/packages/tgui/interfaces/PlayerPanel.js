@@ -85,14 +85,6 @@ export const PlayerPanel = (props, context) => {
                 onClick={() => act("access_variables")}
               />
             </Stack.Item>
-            <Stack.Item>
-              <Button
-                icon="window-restore"
-                content="View Playtimes"
-                disabled={!hasPermission(data, "show_notes")}
-                onClick={() => act("access_playtimes")}
-              />
-            </Stack.Item>
           </Stack>
           <Stack mt={1}>
             <Stack.Item width="80px" color="label">Client:</Stack.Item>
@@ -141,15 +133,6 @@ export const PlayerPanel = (props, context) => {
                   content={client_rank}
                   disabled={!hasPermission(data, "change_perms")}
                   onClick={() => act("change_perms")}
-                />
-              </Stack.Item>
-              <Stack.Item align="right">
-                <Button
-                  ml={1}
-                  icon="exclamation-triangle"
-                  disabled={!hasPermission(data, "alert_message")}
-                  onClick={() => act("alert_message")}
-                  content="Alert Message"
                 />
               </Stack.Item>
             </Stack>

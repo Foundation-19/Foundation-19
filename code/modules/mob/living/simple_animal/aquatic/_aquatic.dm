@@ -18,8 +18,8 @@
 
 	say_list_type = /datum/say_list/aquatic
 
-/mob/living/simple_animal/aquatic/New()
-	..()
+/mob/living/simple_animal/aquatic/Initialize()
+	. = ..()
 	default_pixel_x = rand(-12,12)
 	default_pixel_y = rand(-12,12)
 	pixel_x = default_pixel_x

@@ -63,8 +63,8 @@
 	..()
 	icon_state = resting ? "mouse_[body_color]_sleep" : "mouse_[body_color]"
 
-/mob/living/simple_animal/friendly/mouse/New()
-	..()
+/mob/living/simple_animal/friendly/mouse/Initialize()
+	. = ..()
 
 	add_verb(src, /mob/living/proc/ventcrawl)
 	add_verb(src, /mob/living/proc/hide)
@@ -124,8 +124,8 @@
 	name = "Tom"
 	desc = "Jerry the cat is not amused."
 
-/mob/living/simple_animal/friendly/mouse/brown/Tom/New()
-	..()
+/mob/living/simple_animal/friendly/mouse/brown/Tom/Initialize()
+	. = ..()
 	// Change my name back, don't want to be named Tom (666)
 	SetName(initial(name))
 	real_name = name

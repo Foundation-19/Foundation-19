@@ -17,11 +17,15 @@ export const KeyBinds = (props, context) => {
   return (
     <Window
       width={400}
-      height={400}
-      resizable
+      height={670}
     >
       <Window.Content scrollable>
         <Flex direction="column">
+          <Flex.Item>
+            <Section title="Important Note">
+              You need to press `Esc` while holding keys you want to set as a keybind to actually save it.
+            </Section>
+          </Flex.Item>
           <Flex.Item>
             <Section title="Settings">
               <Flex direction="column">

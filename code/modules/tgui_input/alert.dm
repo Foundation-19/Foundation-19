@@ -30,7 +30,7 @@
 		if(length(buttons) == 3)
 			return alert(user, message, title, buttons[1], buttons[2], buttons[3])
 	var/datum/tgui_alert/alert = new(user, message, title, buttons, timeout, autofocus)
-	alert.ui_interact(user)
+	alert.tgui_interact(user)
 	alert.wait()
 	if (alert)
 		. = alert.choice

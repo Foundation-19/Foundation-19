@@ -202,3 +202,5 @@
 	var/datum/click_intercept
 
 	var/datum/player_panel/mob_panel
+
+	var/list/datum/action/actions = list()
