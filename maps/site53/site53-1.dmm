@@ -14019,6 +14019,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
+"Lw" = (
+/obj/item/wrench,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uhcz/scp106parts)
 "Lx" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -17069,7 +17073,9 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/machinery/power/port_gen/pacman/mrs,
+/obj/machinery/power/port_gen/pacman/mrs{
+	anchored = 1
+	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp106parts)
 "Vv" = (
@@ -67935,7 +67941,7 @@ om
 xW
 Vu
 Vu
-om
+Lw
 om
 om
 om
