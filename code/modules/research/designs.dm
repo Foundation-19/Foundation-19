@@ -870,20 +870,6 @@ other types of metals and chemistry for reagents).
 	build_path = /obj/item/weapon/weldingtool/experimental
 	sort_string = "VAGAG"
 
-
-/datum/design/item/encryptionkey/AssembleDesignName()
-	..()
-	name = "Encryption key design ([item_name])"
-
-/datum/design/item/encryptionkey/binary
-	name = "binary"
-	desc = "Allows for deciphering the binary channel on-the-fly."
-	id = "binaryencrypt"
-	req_tech = list(TECH_ESOTERIC = 2)
-	materials = list(DEFAULT_WALL_MATERIAL = 300, "glass" = 300)
-	build_path = /obj/item/device/encryptionkey/binary
-	sort_string = "VASAA"
-
 /datum/design/item/camouflage/AssembleDesignName()
 	..()
 	name = "Camouflage design ([item_name])"
