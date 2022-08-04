@@ -3218,6 +3218,7 @@
 	dir = 8
 	},
 /obj/structure/table/standard,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "jW" = (
@@ -3517,15 +3518,13 @@
 	dir = 4;
 	id_tag = "dchecknorth";
 	name = "North CDZ Blastdoors";
-	pixel_x = -6;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	pixel_x = -6
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "dchecksouth";
 	name = "South CDZ Blastdoors";
-	pixel_x = 4;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	pixel_x = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -4391,15 +4390,13 @@
 	dir = 4;
 	id_tag = "hczeast";
 	name = "East HCZ Entry Blast Doors";
-	pixel_x = 4;
-	req_access = list("ACCESS_SECURITY_LEVEL3")
+	pixel_x = 4
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "hczwest";
 	name = "West HCZ Entry Blast Doors";
-	pixel_x = -6;
-	req_access = list("ACCESS_SECURITY_LEVEL3")
+	pixel_x = -6
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -4487,6 +4484,9 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/table/steel,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "Sh" = (
@@ -4534,7 +4534,7 @@
 "Ts" = (
 /obj/machinery/door/airlock/command{
 	name = "Communications Tower";
-	req_access = list("ACCESS_ADMIN_LEVEL2")
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)

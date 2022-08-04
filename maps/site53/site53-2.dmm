@@ -420,7 +420,7 @@
 "abk" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list(list(access_securitylvl3,access_sciencelvl2))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -6560,8 +6560,8 @@
 "aqh" = (
 /obj/structure/closet/jcloset_torch,
 /obj/machinery/camera/autoname{
-	dir = 1;
-	c_tag = "Janitor's Closet"
+	c_tag = "Janitor's Closet";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/janitorial)
@@ -7546,9 +7546,9 @@
 	dir = 9
 	},
 /obj/machinery/camera/autoname{
+	c_tag = "Auxillary Closet";
 	dir = 1;
-	network = list("Engineering Network 1");
-	c_tag = "Auxillary Closet"
+	network = list("Engineering Network 1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/auxstorage)
@@ -13830,13 +13830,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "aFV" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1";
-	pixel_x = -11
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/securitypost)
+/obj/effect/paint_stripe/red,
+/obj/structure/table/steel_reinforced,
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/hallways)
 "aFX" = (
 /obj/machinery/cooker/cereal,
 /obj/structure/table/standard,
@@ -19913,7 +19910,7 @@
 	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-500";
-	req_access = list(list(access_securitylvl4,access_sciencelvl4))
+	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -21414,11 +21411,11 @@
 "bbv" = (
 /obj/structure/skele_stand,
 /obj/machinery/power/apc{
+	desc = "Seems more like a decoration than anyhting.";
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list("ACCESS_SCIENCE_LEVEL1");
-	desc = "Seems more like a decoration than anyhting."
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -25348,6 +25345,12 @@
 /obj/machinery/fabricator,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
+"bYZ" = (
+/obj/effect/floor_decal/corner/red{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "bZv" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -26359,7 +26362,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/engine_smes)
 "eNo" = (
-/obj/effect/floor_decal/industrial/warning/corner{
+/obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
 /turf/simulated/floor/reinforced,
@@ -26415,6 +26418,12 @@
 	id_tag = "096chamberlock";
 	name = "Panic button";
 	pixel_y = 24
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "096chamberlock2";
+	name = "Chamber Access button";
+	pixel_y = 34;
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
@@ -26831,8 +26840,8 @@
 /area/site53/surface/bunker)
 "gjy" = (
 /obj/machinery/camera/network/entrance{
-	dir = 4;
-	c_tag = "Tram Hub 2"
+	c_tag = "Tram Hub 2";
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
@@ -27065,6 +27074,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
+"gPT" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "gQl" = (
 /obj/machinery/light/small{
 	dir = 1;
@@ -27073,6 +27089,11 @@
 /obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lowertrams/hub)
+"gRy" = (
+/obj/structure/table/standard,
+/obj/machinery/cell_charger,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/reswing/robotics)
 "gRS" = (
 /obj/machinery/computer/cryopod{
 	pixel_y = 26
@@ -27596,6 +27617,16 @@
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
+"ioa" = (
+/obj/effect/floor_decal/corner/red{
+	dir = 5
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "ipm" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -29958,8 +29989,8 @@
 /area/site53/llcz/scp263research)
 "oJB" = (
 /obj/machinery/camera/network/entrance{
-	dir = 8;
-	c_tag = "Tram Hub 1"
+	c_tag = "Tram Hub 1";
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
@@ -30018,6 +30049,21 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"oQE" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/table/steel,
+/obj/item/crowbar/red,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/obj/effect/floor_decal/corner/red{
+	icon_state = "corner_white_three_quarters"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "oSz" = (
 /obj/structure/bed/chair/office,
 /turf/simulated/floor/tiled/monotile,
@@ -30063,8 +30109,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
 "oXB" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
+/obj/machinery/door/blast/regular{
+	id_tag = "096chamberlock2"
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/scp096)
@@ -30242,6 +30288,14 @@
 /obj/item/clothing/under/scp/dclass,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
+"pyO" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "pze" = (
 /obj/machinery/camera/autoname{
 	c_tag = "Comms Tower Basement";
@@ -31507,15 +31561,27 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "ttJ" = (
-/obj/machinery/button/blast_door{
-	dir = 8;
-	id_tag = "096chamberlock2";
-	name = "Chamber Access button";
-	pixel_x = 24
+/obj/structure/window/reinforced,
+/obj/structure/table/steel,
+/obj/item/paper{
+	info = "WARNING: Testing on SCP-096 is not permitted without explicit O5 permission. Only break glass in case of approved test or emergencies.";
+	name = "notice from council";
+	text = null
 	},
-/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/obj/machinery/camera/motion{
+	network = list("Heavy Containment Zone Network");
+	pixel_x = 20
+	},
+/obj/effect/floor_decal/corner/red{
+	dir = 8;
+	icon_state = "corner_white_three_quarters"
+	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp096)
+/area/site53/uhcz/securitypost)
 "ttO" = (
 /obj/machinery/light{
 	dir = 8
@@ -31917,6 +31983,12 @@
 "uAr" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurantkitchenarea)
+"uBK" = (
+/obj/effect/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "uBV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/catwalk_plated,
@@ -32469,6 +32541,16 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/serverfarmcontrol)
+"vWO" = (
+/obj/effect/floor_decal/corner/red{
+	dir = 10
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "vXh" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -32602,6 +32684,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"wjM" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "HCZ Cell Lockdown Control";
+	req_access = list("ACCESS_SECURITY_LEVEL4")
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "wkb" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
@@ -32630,22 +32720,9 @@
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint/south)
 "wnA" = (
-/obj/machinery/button/blast_door{
-	dir = 8;
-	id_tag = "096chamberlock2";
-	name = "Chamber Access button";
-	pixel_x = 24
-	},
-/obj/machinery/button/blast_door{
-	dir = 8;
-	id_tag = "096chamberlock";
-	name = "Panic button";
-	pixel_x = 24;
-	pixel_y = -32
-	},
-/obj/effect/floor_decal/industrial/hatch/red,
+/obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp096)
+/area/site53/uhcz/securitypost)
 "wnY" = (
 /obj/structure/table/standard,
 /obj/item/storage/toolbox/mechanical,
@@ -32844,9 +32921,9 @@
 /area/site53/llcz/scp513)
 "wJD" = (
 /obj/machinery/camera/network/lcz{
+	c_tag = "SCP-529";
 	dir = 8;
-	name = "SCP-529";
-	c_tag = "SCP-529"
+	name = "SCP-529"
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/llcz/scp500{
@@ -33152,9 +33229,18 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
 "xzQ" = (
-/obj/machinery/camera/autoname{
+/obj/structure/window/basic/full{
+	name = "Safety Glass"
+	},
+/obj/structure/table/steel_reinforced,
+/obj/machinery/button/blast_door{
 	dir = 4;
-	network = list("Heavy Containment Zone Network")
+	id_tag = "SCP-096 Chamber Lockdown";
+	name = "SCP-096 Chamber Lockdown";
+	req_access = list("ACCESS_SECURITY_LEVEL5")
+	},
+/obj/effect/floor_decal/corner/red{
+	dir = 9
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
@@ -33277,6 +33363,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
+"xSy" = (
+/obj/machinery/camera/autoname{
+	dir = 1;
+	network = list("Heavy Containment Zone Network")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "xUj" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -33367,6 +33460,10 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "SCP-096 Chamber Lockdown";
+	name = "SCP-096 Chamber Lockdown"
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp096)
@@ -69096,7 +69193,7 @@ aJX
 aKe
 rcp
 mXU
-afk
+gRy
 vNo
 cMi
 aMp
@@ -77695,10 +77792,10 @@ azA
 azA
 bdi
 iCX
-ttJ
+ajS
 hDU
 fTE
-wnA
+fTE
 dtf
 bdi
 rhp
@@ -78215,11 +78312,11 @@ azA
 azA
 bdi
 aBC
-kwM
-eNo
+aBC
+aBC
 oXB
-lVz
-kwM
+aBC
+aBC
 aBC
 wiZ
 eED
@@ -78475,11 +78572,11 @@ azA
 azA
 bdi
 aBC
+aBC
 kwM
-kwM
-kwM
-kwM
-kwM
+eNo
+lVz
+aBC
 aBC
 bDp
 oBG
@@ -78735,11 +78832,11 @@ azA
 azA
 bdi
 aBC
+aBC
 kwM
 kwM
 rhy
-kwM
-kwM
+aBC
 aBC
 wiZ
 wRV
@@ -78995,11 +79092,11 @@ azA
 azA
 bdi
 aBC
+aBC
 kwM
 kwM
 kwM
-kwM
-kwM
+aBC
 aBC
 bDp
 oBG
@@ -79255,11 +79352,11 @@ azA
 azA
 bdi
 aBC
-kwM
-kwM
-kwM
-kwM
-kwM
+aBC
+aBC
+aBC
+aBC
+aBC
 aBC
 bdi
 bdi
@@ -86574,7 +86671,7 @@ aBo
 aBo
 aBo
 aBo
-aBo
+aFV
 aBo
 aBo
 aBo
@@ -87615,11 +87712,11 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
+ass
+ass
+ass
+ass
+ass
 azA
 azA
 azA
@@ -87875,11 +87972,11 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
+ass
+ttJ
+xzQ
+oQE
+ass
 azA
 azA
 azA
@@ -88135,11 +88232,11 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
+ass
+uBK
+aEC
+bYZ
+ass
 azA
 azA
 azA
@@ -88395,11 +88492,11 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
+ass
+uBK
+aEC
+bYZ
+ass
 azA
 azA
 azA
@@ -88655,11 +88752,11 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
+ass
+ioa
+aGs
+vWO
+ass
 azA
 azA
 azA
@@ -88916,9 +89013,9 @@ aBo
 aBo
 aBo
 aBo
-ass
-ass
-ass
+wnA
+wjM
+wnA
 ass
 azA
 aDJ
@@ -89176,9 +89273,9 @@ aBU
 aEJ
 aBU
 bin
-xzQ
-aFV
-aEC
+gPT
+gPT
+pyO
 ass
 azA
 aDJ
@@ -89438,7 +89535,7 @@ aDG
 bil
 aFI
 aEC
-aEC
+xSy
 ass
 azA
 agF

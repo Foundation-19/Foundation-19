@@ -142,10 +142,10 @@ GLOBAL_DATUM(error_cache, /datum/error_viewer/error_cache)
 
 /datum/error_viewer/error_source/New(exception/e)
 	if (!istype(e))
-		name = "\[[station_time_timestamp()]] Uncaught exceptions"
+		name = "\[[time_stamp()]] Uncaught exceptions"
 		return
 
-	name = "<b>\[[station_time_timestamp()]]</b> Runtime in <b>[e.file]</b>, line <b>[e.line]</b>: <b>[html_encode(e.name)]</b>"
+	name = "<b>\[[time_stamp()]]</b> Runtime in <b>[e.file]</b>, line <b>[e.line]</b>: <b>[html_encode(e.name)]</b>"
 
 /datum/error_viewer/error_source/show_to(user, datum/error_viewer/back_to, linear)
 	if (!istype(back_to))
@@ -170,15 +170,15 @@ GLOBAL_DATUM(error_cache, /datum/error_viewer/error_cache)
 
 /datum/error_viewer/error_entry/New(exception/e, list/desclines, skip_count)
 	if (!istype(e))
-		name = "<b>\[[station_time_timestamp()]]</b> Uncaught exception: <b>[html_encode(e.name)]</b>"
+		name = "<b>\[[time_stamp()]]</b> Uncaught exception: <b>[html_encode(e.name)]</b>"
 		return
 
 	if(skip_count)
-		name = "\[[station_time_timestamp()]] Skipped [skip_count] runtimes in [e.file],[e.line]."
+		name = "\[[time_stamp()]] Skipped [skip_count] runtimes in [e.file],[e.line]."
 		is_skip_count = TRUE
 		return
 
-	name = "<b>\[[station_time_timestamp()]]</b> Runtime in <b>[e.file]</b>, line <b>[e.line]</b>: <b>[html_encode(e.name)]</b>"
+	name = "<b>\[[time_stamp()]]</b> Runtime in <b>[e.file]</b>, line <b>[e.line]</b>: <b>[html_encode(e.name)]</b>"
 	info_name = "Runtime in [e.file],[e.line]: [e]"
 	info = info_name
 
