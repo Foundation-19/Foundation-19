@@ -139,6 +139,10 @@
 				/datum/reagent/drink/juice/pear,
 				/datum/reagent/drink/juice/banana,
 				/datum/reagent/drink/juice/berry,
+				/datum/reagent/drink/juice/blackberry,
+				/datum/reagent/drink/juice/blueraz,
+				/datum/reagent/drink/juice/euclid,
+				/datum/reagent/drink/juice/keter,
 				/datum/reagent/drink/juice/watermelon)), 3)
 	color = reagents.get_color()
 
@@ -161,6 +165,10 @@
 				/datum/reagent/drink/juice/pear,
 				/datum/reagent/drink/juice/banana,
 				/datum/reagent/drink/juice/berry,
+				/datum/reagent/drink/juice/blackberry,
+				/datum/reagent/drink/juice/blueraz,
+				/datum/reagent/drink/juice/euclid,
+				/datum/reagent/drink/juice/keter,
 				/datum/reagent/drink/juice/watermelon)), 3)
 	color = reagents.get_color()
 

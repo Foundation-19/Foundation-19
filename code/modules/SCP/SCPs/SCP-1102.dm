@@ -36,7 +36,7 @@ var/static/list/climbsounds = list('sound/effects/ladder.ogg','sound/effects/lad
 	desc = "A ladder. You can climb it up and down."
 	icon_state = "ladder10"
 	icon = 'icons/obj/structures.dmi'
-	anchored = 1
+	anchored = TRUE
 
 /obj/structure/ladder_scp_1102/attackby(obj/item/C as obj, mob/user as mob)
 	climb(user)

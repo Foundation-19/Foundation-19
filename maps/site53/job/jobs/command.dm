@@ -5,6 +5,7 @@ ut // COMMAND
 	//duties = "<big><b>As the Site Director you are responsible for the operations happening in the Site that you manage.<br>You won't have access to SCP's, or the D-Class area.<br> As Site Director, you should worry about making sure all SOP and safety procedures are followed by delegating to the heads of staff.<br><span style = 'color:red'>It is not your job to jump in where necessary! Consistently bad roleplay will be punished under the CoHoS rule!</span></b></big>"
 	minimal_player_age = 20
 	economic_power = 15
+	alt_titles = list("Facility Director")
 	ideal_character_age = 50
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/facilitydir
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -221,3 +222,33 @@ ut // COMMAND
 	)
 
 	minimal_access = list()
+
+/datum/job/mtf
+	title = "Mobile Task Force Operative"
+	department = "Regional Dispatch"
+	department_flag = COM
+	total_positions = 0
+	spawn_positions = 0
+	supervisors = "O5 Regional Dispatch and O5 Command"
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/event/mtfbasic
+	hud_icon = "hudseniorenlistedadvisor"
+	access = list()
+	minimal_access = list()
+
+/datum/job/mtf/get_access()
+	return get_all_station_access()
+
+/datum/job/physics
+	title = "UNGOC Physics Operative"
+	department = "Regional Dispatch"
+	department_flag = COM
+	total_positions = 0
+	spawn_positions = 0
+	supervisors = "UNGOC Regional Dispatch and UNGOC Central Command"
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/event/ungoc
+	hud_icon = "hudseniorenlistedadvisor"
+	access = list()
+	minimal_access = list()
+
+/datum/job/physics/get_access()
+	return get_all_station_access()

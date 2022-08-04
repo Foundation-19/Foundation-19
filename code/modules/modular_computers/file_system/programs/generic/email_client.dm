@@ -58,7 +58,7 @@
 	else
 		ui_header = "ntnrc_idle.gif"
 
-/datum/nano_module/email_client/
+/datum/nano_module/email_client
 	name = "Email Client"
 	var/stored_login = ""
 	var/stored_password = ""

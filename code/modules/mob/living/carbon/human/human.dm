@@ -90,39 +90,27 @@
 		return nutrition + food_volume * 15
 	return 0 //Always hungry, but you can't actually eat. :(
 
-/mob/living/carbon/human/Stat()
-	. = ..()
-	if(statpanel("Status"))
-		stat("Intent:", "[a_intent]")
-		stat("Move Mode:", "[move_intent.name]")
+/mob/living/carbon/human/get_status_tab_items()
+	.=..()
+	if(istype(internal))
+		if(!internal.air_contents)
+			qdel(internal)
+		else
+			. += "Internal Atmosphere Info: [internal.name]"
+			. += "Tank Pressure: [internal.air_contents.return_pressure()]"
+			. += "Distribution Pressure: [internal.distribute_pressure]"
 
-		if(evacuation_controller)
-			var/eta_status = evacuation_controller.get_status_panel_eta()
-			if(eta_status)
-				stat(null, eta_status)
+	var/obj/item/organ/internal/cell/potato = internal_organs_by_name[BP_CELL]
+	if(potato?.cell)
+		. += "Battery charge: [potato.get_charge()]/[potato.cell.maxcharge]"
 
-		if (istype(internal))
-			if (!internal.air_contents)
-				qdel(internal)
-			else
-				stat("Internal Atmosphere Info", internal.name)
-				stat("Tank Pressure", internal.air_contents.return_pressure())
-				stat("Distribution Pressure", internal.distribute_pressure)
+	if(istype(back,/obj/item/rig))
+		var/obj/item/rig/suit = back
+		. += "Suit charge: [suit.cell ? "[suit.cell.charge]/[suit.cell.maxcharge]" : "ERROR"]"
 
-		var/obj/item/organ/internal/cell/potato = internal_organs_by_name[BP_CELL]
-		if(potato && potato.cell)
-			stat("Battery charge:", "[potato.get_charge()]/[potato.cell.maxcharge]")
-
-		if(back && istype(back,/obj/item/rig))
-			var/obj/item/rig/suit = back
-			var/cell_status = "ERROR"
-			if(suit.cell) cell_status = "[suit.cell.charge]/[suit.cell.maxcharge]"
-			stat(null, "Suit charge: [cell_status]")
-
-		if(mind)
-			if(mind.changeling)
-				stat("Chemical Storage", mind.changeling.chem_charges)
-				stat("Genetic Damage Time", mind.changeling.genetic_damage)
+	if(mind?.changeling)
+		. += "Chemical Storage: [mind.changeling.chem_charges]"
+		. += "Genetic Damage Time: [mind.changeling.genetic_damage]"
 
 /mob/living/carbon/human/proc/implant_loyalty(mob/living/carbon/human/M, override = FALSE) // Won't override by default.
 	if(!config.use_loyalty_implants && !override) return // Nuh-uh.
@@ -729,7 +717,7 @@
 		return
 
 	if(!(mMorph in mutations))
-		src.verbs -= /mob/living/carbon/human/proc/morph
+		remove_verb(src, /mob/living/carbon/human/proc/morph)
 		return
 
 	var/new_facial = input("Please select facial hair color.", "Character Generation",rgb(r_facial,g_facial,b_facial)) as color
@@ -811,7 +799,7 @@
 		return
 
 	if(!(mRemotetalk in src.mutations))
-		src.verbs -= /mob/living/carbon/human/proc/remotesay
+		remove_verb(src, /mob/living/carbon/human/proc/remotesay)
 		return
 	var/list/creatures = list()
 	for(var/mob/living/carbon/h in world)
@@ -842,7 +830,7 @@
 	if(!(mRemote in src.mutations))
 		remoteview_target = null
 		reset_view(0)
-		src.verbs -= /mob/living/carbon/human/proc/remoteobserve
+		remove_verb(src, /mob/living/carbon/human/proc/remoteobserve)
 		return
 
 	if(client.eye != client.mob)
@@ -920,7 +908,7 @@
 			blood_DNA[M.dna.unique_enzymes] = M.dna.b_type
 	hand_blood_color = blood_color
 	src.update_inv_gloves()	//handles bloody hands overlays and updating
-	verbs += /mob/living/carbon/human/proc/bloody_doodle
+	add_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
 	return 1 //we applied blood to the item
 
 /mob/living/carbon/human/clean_blood(var/clean_feet)
@@ -1021,7 +1009,7 @@
 		user.visible_message("<span class='danger'>\The [user] removes \the [src]'s splints!</span>")
 	else
 		to_chat(user, "<span class='warning'>\The [src] has no splints that can be removed.</span>")
-	verbs -= /mob/living/carbon/human/proc/remove_splints
+	remove_verb(src, /mob/living/carbon/human/proc/remove_splints)
 
 
 /mob/living/carbon/human/verb/check_pulse()
@@ -1278,7 +1266,7 @@
 		return 0 //something is terribly wrong
 
 	if (!bloody_hands)
-		verbs -= /mob/living/carbon/human/proc/bloody_doodle
+		remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
 
 	if (src.gloves)
 		to_chat(src, "<span class='warning'>Your [src.gloves] are getting in the way.</span>")

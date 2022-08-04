@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
-
 /obj/machinery/computer/pod
 	name = "pod launch control console"
 	desc = "A control console for launching pods. Some people prefer firing Mechas."
@@ -14,21 +12,18 @@
 
 
 /obj/machinery/computer/pod/New()
-	..()
-	spawn( 5 )
+	. = ..()
+	spawn(5)
 		for(var/obj/machinery/mass_driver/M in SSmachines.all_machinery)
 			if(M.id == id)
 				connected = M
-			else
-		return
-	return
 
 
 /obj/machinery/computer/pod/proc/alarm()
 	if(stat & (NOPOWER|BROKEN))
 		return
 
-	if(!( connected ))
+	if(!(connected))
 		to_chat(viewers(null, null), "Cannot locate mass driver connector. Cancelling firing sequence!")
 		return
 
@@ -77,7 +72,7 @@
 				A.circuit = M
 				A.state = 3
 				A.icon_state = "3"
-				A.anchored = 1
+				A.anchored = TRUE
 				qdel(src)
 			else
 				to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
@@ -100,7 +95,7 @@
 				A.circuit = M
 				A.state = 4
 				A.icon_state = "4"
-				A.anchored = 1
+				A.anchored = TRUE
 				qdel(src)
 	else
 		attack_hand(user)
@@ -212,7 +207,7 @@
 		to_chat(user, "<span class='warning'>Access Denied</span>")
 		return
 	else
-		..()
+		return ..()
 
 /obj/machinery/computer/pod/old/swf
 	name = "Magix System IV"

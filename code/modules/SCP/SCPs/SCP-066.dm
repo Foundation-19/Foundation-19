@@ -23,15 +23,15 @@
 
 
 /mob/living/simple_animal/cat/scp_066/Initialize()
-	add_language(/datum/language/english)
+	add_language(LANGUAGE_ENGLISH)
 
 
 		// emotes
-	verbs += list(
+	add_verb(src, list(
 		/mob/living/simple_animal/cat/scp_066/proc/Eric,
 		/mob/living/simple_animal/cat/scp_066/proc/EarRape,
-		/mob/living/simple_animal/cat/scp_066/proc/Noise
-	)
+		/mob/living/simple_animal/cat/scp_066/proc/Noise,
+	))
 
 	// SCP-066 emotes
 /* /mob/living/simple_animal/cat/scp_066/proc/Eric()

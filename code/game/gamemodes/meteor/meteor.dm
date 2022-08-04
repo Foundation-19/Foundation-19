@@ -49,7 +49,7 @@
 	alert_title = "Automated Beacon AB-[rand(10, 99)]"
 	alert_text = "This is an automatic warning. Your facility: [GLOB.using_map.full_name] is on a collision course with a nearby asteroid belt. Estimated time until impact is: [meteor_grace_period / 1200] MINUTES. Please perform necessary actions to secure your ship or station from the threat. Have a nice day."
 	start_text = "This is an automatic warning. Your facility: [GLOB.using_map.full_name] has entered an asteroid belt. Estimated time until you leave the belt is: [rand(20,30)] HOURS and [rand(1, 59)] MINUTES. For your safety, please consider changing course or using protective equipment. Have a nice day."
-	next_wave = round_duration_in_ticks + meteor_grace_period
+	next_wave = (world.time - SSticker.round_start_time) + meteor_grace_period
 
 /datum/game_mode/meteor/proc/on_meteor_warn()
 	alert_sent = 1
@@ -64,22 +64,22 @@
 		var/area/map = locate(/area/overmap)
 		for(var/turf/T in map)
 			T.add_overlay(image('icons/obj/overmap.dmi', "meteor[rand(1,4)]"))
-	next_wave = round_duration_in_ticks + meteor_wave_delay
+	next_wave = (world.time - SSticker.round_start_time) + meteor_wave_delay
 
 /datum/game_mode/meteor/process()
 	// Send an alert halfway through the round.
-	if((round_duration_in_ticks >= (next_wave / 2)) && !alert_sent)
+	if(((world.time - SSticker.round_start_time) >= (next_wave / 2)) && !alert_sent)
 		on_meteor_warn()
 	// And then another one when the meteors start flying around.
-	if((round_duration_in_ticks >= next_wave) && (alert_sent == 1))
+	if(((world.time - SSticker.round_start_time) >= next_wave) && (alert_sent == 1))
 		on_enter_field()
-	if((round_duration_in_ticks >= METEOR_FAILSAFE_THRESHOLD) && (meteor_severity < 15) && !failsafe_triggered)
+	if(((world.time - SSticker.round_start_time) >= METEOR_FAILSAFE_THRESHOLD) && (meteor_severity < 15) && !failsafe_triggered)
 		log_and_message_admins("Meteor mode severity failsafe triggered: Severity forced to 15.")
 		meteor_severity = 15
 		failsafe_triggered = 1
 
-	if(round_duration_in_ticks >= next_wave)
-		next_wave = round_duration_in_ticks + meteor_wave_delay
+	if((world.time - SSticker.round_start_time) >= next_wave)
+		next_wave = (world.time - SSticker.round_start_time) + meteor_wave_delay
 		// Starts as barely noticeable dust impact, ends as barrage of most severe meteor types the code has to offer. Have fun.
 		spawn()
 			spawn_meteors(meteor_severity, get_meteor_types(), pick(GLOB.cardinal), pick(GLOB.using_map.station_levels))

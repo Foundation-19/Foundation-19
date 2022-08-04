@@ -68,6 +68,9 @@
 	if(modifiers["middle"] && modifiers["alt"])
 		AltMiddleClickOn(A)
 		return 1
+	if(modifiers["middle"] && modifiers["shift"])
+		ShiftMiddleClickOn(A)
+		return 1
 	if(modifiers["middle"])
 		MiddleClickOn(A)
 		return 1
@@ -236,6 +239,15 @@
 	pointed(A)
 	return
 
+/*
+	Middle-Shift click
+	Also used for pointing at something.
+*/
+
+/mob/proc/ShiftMiddleClickOn(atom/A)
+	pointed(A)
+	return
+
 // In case of use break glass
 /*
 /atom/proc/MiddleClick(var/mob/M as mob)
@@ -283,12 +295,9 @@
 
 /atom/proc/AltClick(var/mob/user)
 	var/turf/T = get_turf(src)
-	if(T && user.TurfAdjacent(T))
-		if(user.listed_turf == T)
-			user.listed_turf = null
-		else
-			user.listed_turf = T
-			user.client.statpanel = "Turf"
+	if(T && (isturf(loc) || isturf(src)) && user.TurfAdjacent(T))
+		user.listed_turf = T
+		user.client.stat_panel.send_message("create_listedturf", T.name)
 	return 1
 
 /mob/proc/TurfAdjacent(var/turf/T)

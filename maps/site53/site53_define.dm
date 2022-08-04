@@ -13,7 +13,7 @@
 	overmap_event_areas = 0
 	usable_email_tlds = list("site53.foundation", "security.site53.foundation", "science.site53.foundation", "utility.site53.foundation")
 
-	allowed_spawns = list("Cryogenic Storage", "D-Cells", "Light Containment Zone", "Security Base")
+	allowed_spawns = list("Cryogenic Storage", "D-Cells", "Light Containment Zone")
 	default_spawn = "Cryogenic Storage"
 
 	station_name  = "Foundation Site 53"
@@ -42,6 +42,28 @@
 	use_overmap = 0
 	num_exoplanets = 0
 	planet_size = list(129,129)
+	apc_test_exempt_areas = list(
+		/area/space = NO_APC,
+		/area/site53/llcz/mine/unexplored = NO_APC,
+		/area/site53/llcz/mine/explored = NO_APC,
+		/area/site53/surface = NO_APC,
+		/area/turbolift/site53/surface = NO_APC,
+		/area/turbolift/site53/basement = NO_APC,
+		/area/turbolift/site53/logistics = NO_APC,
+		/area/turbolift/site53/logisticstorage = NO_APC,
+		/area/turbolift/site53/scp106obs = NO_APC,
+		/area/turbolift/site53/scp106obs = NO_APC,
+		/area/turbolift/site53/uhcz = NO_APC,
+		/area/turbolift/site53/lhcz = NO_APC,
+		/area/site53/tram/engineering = NO_APC,
+		/area/site53/tram/lcz = NO_APC,
+		/area/site53/tram/hcz = NO_APC,
+		/area/shuttle/escape_pod = NO_APC,
+		/area/site53/tram/scpcar = NO_APC,
+		/area/turbolift/site53/commstower = NO_APC,
+		/area/turbolift/site53/scp106cont = NO_APC,
+		/area/centcom/goc = NO_APC,
+	)
 
 	away_site_budget = 3
 
@@ -97,7 +119,7 @@
 
 /datum/map/torch/send_welcome()
 	var/welcome_text = "<center><img src = sollogo.png /><br /><font size = 3><b>SEV Torch</b> Sensor Readings:</font><hr />"
-	welcome_text += "Report generated on [stationdate2text()] at [stationtime2text()]</center><br /><br />"
+	welcome_text += "Report generated on [stationdate2text()] at [station_time_timestamp("hh:mm")]</center><br /><br />"
 	welcome_text += "Current system:<br /><b>[system_name()]</b><br />"
 	welcome_text += "Next system targeted for jump:<br /><b>[generate_system_name()]</b><br />"
 	welcome_text += "Travel time to Sol:<br /><b>[rand(15,45)] days</b><br />"

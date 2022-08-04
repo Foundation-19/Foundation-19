@@ -73,10 +73,45 @@
 	*/
 	preload_rsc = 0
 
-	///goonchat chatoutput of the client
-	var/datum/chatOutput/chatOutput
-
+	//Hide top bars
 	var/fullscreen = FALSE
+	//Hide status bar (bottom left)
+	var/show_status_bar = TRUE
 
 	///Needs to implement InterceptClickOn(user,params,atom) proc
 	var/datum/click_intercept = null
+
+//LOGGING STUFF: F19 Admin Logging Suite
+	var/list/say_log = list()
+	var/list/emote_log = list()
+	var/list/ooc_log = list()
+	var/list/dsay_log = list()
+	var/list/interact_log = list()
+
+
+
+// List of all asset filenames sent to this client by the asset cache, along with their assoicated md5s
+	var/list/sent_assets = list()
+	/// List of all completed blocking send jobs awaiting acknowledgement by send_asset
+	var/list/completed_asset_jobs = list()
+	/// Last asset send job id.
+	var/last_asset_job = 0
+	var/last_completed_asset_job = 0
+
+	///world.time they connected
+	var/connection_time
+	///world.realtime they connected
+	var/connection_realtime
+	///world.timeofday they connected
+	var/connection_timeofday
+	///Last ping of the client
+	var/lastping = 0
+	///Average ping of the client
+	var/avgping = 0
+
+	/// our current tab
+	var/stat_tab
+	/// list of all tabs
+	var/list/panel_tabs = list()
+	/// list of tabs containing spells and abilities
+	var/list/spell_tabs = list()

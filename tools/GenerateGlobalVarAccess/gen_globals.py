@@ -42,7 +42,7 @@ def main():
 	if not os.access(namespace.projectfile, os.F_OK):
 		print("Unable to access file, aborting.")
 		return;
-		
+
 	print("Beginning global var generation...")
 
 	tree = ""
@@ -65,14 +65,14 @@ def main():
 
 	variables.sort()
 	code = GenCode(variables)
-	
+
 	with open(namespace.outfile, 'wb') as outfile:
 		outfile.write(code.encode('utf-8'))
-	
+
 	hash = GenerateMD5(namespace.outfile)
 	print("Global var generation complete. MD5 is: " + hash)
-	
-	
+
+
 def GenerateMD5(fname):
     hash_md5 = hashlib.md5()
     with open(fname, "rb") as f:
@@ -91,19 +91,16 @@ def FindCompiler():
 	if compiler_path:
 		return compiler_path
 
-	compiler_name = 'DreamMaker'
+	compiler_name = 'dm'
 
 	if sys.platform == 'win32':
 		compiler_name = 'dm'
 	compiler_path = spawn.find_executable(compiler_name)
-	if compiler_path == None and sys.platform == 'win32':
-		# Attempt to look in %ProgramFiles% and %ProgramFiles(x86)% for BYOND.
-		for path in (os.environ['ProgramFiles'], os.environ['ProgramFiles(x86)']):
-			path = os.path.join(path, "BYOND", "bin", "dm.exe")
-
-			if os.access(path, os.F_OK):
-				compiler_path = path
-				break
+	if compiler_path == None:
+		dirname = os.path.realpath(os.path.dirname(__file__))
+		dirname = os.path.dirname(os.path.dirname(dirname))
+		filepath = os.path.join(dirname, 'scripts', 'sourcedm.sh')
+		compiler_path = os.system(filepath)
 
 	if compiler_path == None:
 		raise IOError("Unable to locate Dream Maker compiler binary. Please ensure that it is in your PATH.")
@@ -140,7 +137,7 @@ def ParseTree(tree):
 	for index, line in enumerate(lines):
 		# Root level
 		node = line.split(" ", 1)[0].strip()
-		
+
 		indent = line.count("\t")
 
 		# We're skipping some levels.

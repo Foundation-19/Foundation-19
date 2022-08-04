@@ -157,6 +157,10 @@ var/list/gamemode_cache = list()
 	var/minimum_byond_version = 512
 	var/minimum_byond_build = 1488
 
+	var/panic_bunker = 0
+	var/panic_bunker_message = ""
+	var/panic_bunker_age = 0
+
 	var/login_export_addr = null
 
 	var/enter_allowed = 1
@@ -229,8 +233,17 @@ var/list/gamemode_cache = list()
 	var/motd = ""
 	var/event = ""
 
-	/// The delay in deciseconds between stat() updates.
-	var/stat_delay = 5
+	var/asset_transport = "simple"
+
+	var/log_assets = FALSE
+
+	var/cache_assets = TRUE
+
+	var/asset_simple_preload = FALSE
+
+	var/asset_cdn_webroot = FALSE
+
+	var/asset_cdn_url
 
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
@@ -789,8 +802,35 @@ var/list/gamemode_cache = list()
 				if ("game_version")
 					config.game_version = value
 
-				if ("stat_delay")
-					stat_delay = Floor(text2num(value))
+				if ("asset_transport")
+					asset_transport = lowertext(value)
+
+				if ("log_assets")
+					log_assets = text2num(value)
+
+				if ("cache_assets")
+					cache_assets = text2num(value)
+
+				if ("asset_simple_preload")
+					asset_simple_preload = text2num(value)
+
+				if ("asset_cdn_webroot")
+					asset_cdn_webroot = text2num(value)
+
+				if ("asset_cdn_url")
+					if (value || trim(value) != "")
+						if(value && value[length(value)] != "/")
+							value += "/"
+						asset_cdn_url = value
+
+				if ("use_panic_bunker")
+					config.panic_bunker = 1
+
+				if ("panic_bunker_message")
+					config.panic_bunker_message = value
+
+				if ("panic_bunker_age")
+					config.panic_bunker_age = text2num(value)
 
 				else
 					log_misc("Unknown setting in configuration: '[name]'")

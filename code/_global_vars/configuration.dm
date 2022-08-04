@@ -5,7 +5,7 @@ GLOBAL_VAR_INIT(max_explosion_range, 14)
 var/href_logfile        = null
 var/game_version        = "SCP13"
 var/changelog_hash      = ""
-var/game_year           = (text2num(time2text(world.realtime, "YYYY")) + 544)
+var/game_year           = (text2num(time2text(world.realtime, "YYYY")) + 10)
 var/join_motd = null
 
 var/master_mode       = "extended" // "extended"
@@ -28,3 +28,5 @@ var/DBConnection/dbcon_old = new() // /tg/station database (Old database) -- see
 // However it'd be ok to use for accessing attack logs and such too, which are even laggier.
 var/fileaccess_timer = 0
 var/custom_event_msg = null
+
+GLOBAL_VAR_INIT(changelog_hash, "")

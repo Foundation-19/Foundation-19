@@ -49,7 +49,7 @@ function envvar_override () {
     OPTION=`echo $p | cut -d "=" -f 1 | sed s/"$PREFIX"//`
     VALUE=`echo $p | cut -d "=" -f 2`
     # Comment out logic, comments line out if value is #
-    if [[ "${VALUE}" == "#" ]]; then 
+    if [[ "${VALUE}" == "#" ]]; then
       echo "Commenting out option \"$OPTION\" in $FILENAME"
       sed -i -r 's/^'"$OPTION"'.*/#&/' "$FILENAME"
     else
@@ -66,7 +66,7 @@ envvar_override "TG_GAME_" "/tgstation/config/game_options.txt"
 export IFS=","
 if [[ ! -z "${CKEYRANKS}" ]]; then
   echo -e "${PURPLE}[${YELLOW}---${PURPLE}]${RS} Inserting ranks..."
-  echo "" > /tgstation/config/admins.txt
+  echo "" > /Foundation-19/config/admins.txt
   echo -e "${RED}admins.txt has been reset!${RS}"
   for RANK in $CKEYRANKS; do
     echo "$( echo $RANK | cut -d '=' -f 1 )is now$( echo $RANK | cut -d '=' -f 2 )"
@@ -82,4 +82,4 @@ echo -e "${PURPLE}[${GREEN}---${PURPLE}]${RS} ${GREEN}Override complete!${RS}"
 echo -e "${PURPLE}[${GREEN}---${PURPLE}]${RS} ${GREEN}Starting DreamDaemon ...${RS}"
 echo -e "${PURPLE}[${GREEN}---${PURPLE}]${RS} ${YELLOW}Enjoy! <3${RS}"
 cd /tgstation
-DreamDaemon tgstation.dmb -port 1337 -trusted -close -verbose
+DreamDaemon baystation12.dmb -port 30120 -trusted -close -verbose

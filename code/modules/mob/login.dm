@@ -91,6 +91,7 @@
 	l_general = new()
 	client.screen += l_plane
 	client.screen += l_general
+	client.init_verbs()
 
 	refresh_client_images()
 	reload_fullscreen() // Reload any fullscreen overlays this mob has.
