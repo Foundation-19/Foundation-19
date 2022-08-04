@@ -285,6 +285,39 @@
 	back = /obj/item/storage/backpack/messenger/tox
 	backpack_contents = list(/obj/item/clothing/accessory/tunic = 1)
 
+/decl/hierarchy/outfit/job/site90/crew/science/seniorroboticist
+	name = OUTFIT_JOB_NAME("Senior Robotics Technician")
+	uniform = /obj/item/clothing/under/scp/utility
+	suit = /obj/item/clothing/suit/storage/solgov/service
+	shoes = /obj/item/clothing/shoes/workboots
+	id_types = list(/obj/item/card/id/sciencelvl4)
+	gloves = /obj/item/clothing/gloves/insulated
+	l_ear = /obj/item/device/radio/headset/headset_sci
+	l_pocket = /obj/item/book/manual/scp/scisop
+	belt = /obj/item/storage/belt/utility/full
+
+/decl/hierarchy/outfit/job/site90/crew/science/roboticist
+	name = OUTFIT_JOB_NAME("Robotics Technician")
+	uniform = /obj/item/clothing/under/scp/utility
+	suit = /obj/item/clothing/suit/storage/solgov/service
+	shoes = /obj/item/clothing/shoes/workboots
+	id_types = list(/obj/item/card/id/sciencelvl3)
+	gloves = /obj/item/clothing/gloves/insulated
+	l_ear = /obj/item/device/radio/headset/headset_sci
+	l_pocket = /obj/item/book/manual/scp/scisop
+	belt = /obj/item/storage/belt/utility/full
+
+/decl/hierarchy/outfit/job/site90/crew/science/juniorroboticist
+	name = OUTFIT_JOB_NAME("Junior Robotics Technician")
+	uniform = /obj/item/clothing/under/scp/utility
+	suit = /obj/item/clothing/suit/storage/solgov/service
+	shoes = /obj/item/clothing/shoes/workboots
+	id_types = list(/obj/item/card/id/sciencelvl2)
+	gloves = /obj/item/clothing/gloves/thick
+	l_ear = /obj/item/device/radio/headset/headset_sci
+	l_pocket = /obj/item/book/manual/scp/scisop
+	belt = /obj/item/storage/belt/utility/full
+
 /decl/hierarchy/outfit/job/site90/crew/science/seniorscientist
 	name = OUTFIT_JOB_NAME("Senior Scientist")
 	uniform = /obj/item/clothing/under/scp/suittie
