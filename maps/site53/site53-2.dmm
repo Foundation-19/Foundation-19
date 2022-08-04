@@ -27087,6 +27087,11 @@
 /obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lowertrams/hub)
+"gRy" = (
+/obj/structure/table/standard,
+/obj/machinery/cell_charger,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/reswing/robotics)
 "gRS" = (
 /obj/machinery/computer/cryopod{
 	pixel_y = 26
@@ -69186,7 +69191,7 @@ aJX
 aKe
 rcp
 mXU
-afk
+gRy
 vNo
 cMi
 aMp
