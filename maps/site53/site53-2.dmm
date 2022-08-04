@@ -23798,7 +23798,7 @@
 "bid" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "HCZ Secure Armoury";
-	req_access = list("ACCESS_SECURITY_LEVEL4")
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/machinery/door/blast/regular/open{
 	begins_closed = 1;
@@ -24549,7 +24549,7 @@
 "bjz" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "HCZ Secure Armoury";
-	req_access = list("ACCESS_SECURITY_LEVEL4")
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/structure/cable{
 	d1 = 4;
