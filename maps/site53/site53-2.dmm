@@ -22124,7 +22124,9 @@
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/janitoroffice)
 "bdS" = (
-/obj/structure/closet/crate/secure/biohazard,
+/obj/structure/closet/crate/secure/biohazard{
+	req_access = list()
+	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/janitoroffice)
 "bdT" = (
