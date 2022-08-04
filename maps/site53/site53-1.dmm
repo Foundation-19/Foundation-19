@@ -6876,6 +6876,9 @@
 	},
 /obj/effect/floor_decal/corner/yellow/mono,
 /obj/machinery/reagentgrinder,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "rB" = (
