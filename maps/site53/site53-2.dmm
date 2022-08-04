@@ -31741,7 +31741,9 @@
 	icon_state = "0-4"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
-/obj/machinery/power/port_gen/pacman/mrs,
+/obj/machinery/power/port_gen/pacman/mrs{
+	anchored = 1
+	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp106containment)
 "rrr" = (
@@ -33050,7 +33052,9 @@
 	icon_state = "0-4"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
-/obj/machinery/power/port_gen/pacman/mrs,
+/obj/machinery/power/port_gen/pacman/mrs{
+	anchored = 1
+	},
 /obj/machinery/light{
 	dir = 8
 	},
