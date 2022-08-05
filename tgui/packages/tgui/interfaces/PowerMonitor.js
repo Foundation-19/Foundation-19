@@ -27,7 +27,7 @@ export const PowerMonitor = () => {
 export const PowerMonitorContent = (props, context) => {
   const { act, data } = useBackend(context);
 
-  const { map_levels, all_sensors, focus } = data;
+  const { all_sensors, focus } = data;
 
   if (focus) {
     return <PowerMonitorFocus focus={focus} />;

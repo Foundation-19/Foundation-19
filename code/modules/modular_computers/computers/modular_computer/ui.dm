@@ -176,3 +176,55 @@
 	data["PC_hasheader"] = 1
 	data["PC_showexitprogram"] = active_program ? 1 : 0 // Hides "Exit Program" button on mainscreen
 	return data
+
+// Handles user's GUI input
+/obj/item/modular_computer/Topic(href, href_list)
+	if(..())
+		return 1
+	if(href_list["PC_exit"] )
+		kill_program()
+		return 1
+
+	if(href_list["PC_enable_component"] )
+		var/obj/item/stock_parts/computer/H = find_hardware_by_name(href_list["PC_enable_component"])
+		if(H && istype(H) && !H.enabled)
+			H.enabled = 1
+		. = 1
+
+	if(href_list["PC_disable_component"] )
+		var/obj/item/stock_parts/computer/H = find_hardware_by_name(href_list["PC_disable_component"])
+		if(H && istype(H) && H.enabled)
+			H.enabled = 0
+		. = 1
+
+	if(href_list["PC_shutdown"] )
+		shutdown_computer()
+		return 1
+	if(href_list["PC_minimize"] )
+		var/mob/user = usr
+		minimize_program(user)
+
+	if(href_list["PC_killprogram"] )
+		var/prog = href_list["PC_killprogram"]
+		var/datum/computer_file/program/P = null
+		var/mob/user = usr
+		if(hard_drive)
+			P = hard_drive.find_file_by_name(prog)
+
+		if(!istype(P) || P.program_state == PROGRAM_STATE_KILLED)
+			return
+
+		P.kill_program(1)
+		update_uis()
+		to_chat(user, "<span class='notice'>Program [P.filename].[P.filetype] with PID [rand(100,999)] has been killed.</span>")
+
+	if(href_list["PC_runprogram"] )
+		return run_program(href_list["PC_runprogram"])
+
+	if(href_list["PC_setautorun"] )
+		if(!hard_drive)
+			return
+		set_autorun(href_list["PC_setautorun"])
+
+	if(.)
+		update_uis()
