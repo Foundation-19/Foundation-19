@@ -1867,6 +1867,12 @@
 /area/site53/reswing/robotics)
 "afk" = (
 /obj/structure/table/standard,
+/obj/item/device/kit/paint/flames_blue,
+/obj/item/device/kit/paint/camouflage,
+/obj/item/device/kit/paint/camouflage/forest,
+/obj/item/device/paint_sprayer,
+/obj/item/device/paint_sprayer,
+/obj/item/device/paint_sprayer,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
 "afl" = (
@@ -29713,6 +29719,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
+"nQW" = (
+/mob/living/exosuit/premade/powerloader/old,
+/turf/simulated/floor/reinforced,
+/area/site53/reswing/robotics)
 "nRo" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -69170,7 +69180,7 @@ azA
 azA
 azA
 aIi
-agx
+nQW
 agx
 tbC
 aeU
