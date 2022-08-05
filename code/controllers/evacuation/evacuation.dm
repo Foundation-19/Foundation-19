@@ -50,10 +50,10 @@ var/datum/evacuation_controller/evacuation_controller
 /datum/evacuation_controller/proc/get_cooldown_message()
 	return "An evacuation cannot be called at this time. Please wait another [round((evac_cooldown_time-world.time)/600)] minute\s before trying again."
 
-/datum/evacuation_controller/proc/add_can_call_predicate(var/datum/evacuation_predicate/esp)
+/*/datum/evacuation_controller/proc/add_can_call_predicate(var/datum/evacuation_predicate/esp)
 	if(esp in evacuation_predicates)
 		CRASH("[esp] has already been added as an evacuation predicate")
-	evacuation_predicates += esp
+	evacuation_predicates += esp*/
 
 /datum/evacuation_controller/proc/call_evacuation(var/mob/user, var/_emergency_evac, var/forced, var/skip_announce, var/autotransfer)
 
