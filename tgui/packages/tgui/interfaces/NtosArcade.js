@@ -99,16 +99,7 @@ export const NtosArcade = (props, context) => {
               onClick={() => act('Start_Game')}
               content="Begin Game"
             />
-            <Button
-              icon="ticket-alt"
-              tooltip="Claim at your local Arcade Computer for Prizes!"
-              tooltipPosition="top"
-              disabled={data.GameActive === 1}
-              onClick={() => act('Dispense_Tickets')}
-              content="Claim Tickets"
-            />
           </Box>
-          <Box color={data.TicketCount >= 1 ? 'good' : 'normal'}>Earned Tickets: {data.TicketCount}</Box>
         </Section>
       </NtosWindow.Content>
     </NtosWindow>

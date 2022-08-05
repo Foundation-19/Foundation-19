@@ -15,7 +15,7 @@
  * optional ui datum/tgui The UI to be updated, if it exists.
  */
 /datum/proc/tgui_interact(mob/user, datum/tgui/ui)
-	return FALSE // Not implemented.
+	CRASH("Something called non-implemented tgui_interact. See stack trace for more details.")
 
 /**
  * public
@@ -118,7 +118,7 @@
  * This is a proc over a var for memory reasons
  */
 /datum/proc/tgui_state(mob/user)
-	return GLOB.default_state
+	return GLOB.default_tgui_state
 
 /**
  * global

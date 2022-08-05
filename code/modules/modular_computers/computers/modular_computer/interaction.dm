@@ -175,7 +175,7 @@
 /obj/item/modular_computer/attack_self(var/mob/user)
 	if(user.IsAdvancedToolUser())
 		if(enabled && screen_on)
-			ui_interact(user)
+			tgui_interact(user)
 		else if(!enabled && screen_on)
 			turn_on(user)
 	else

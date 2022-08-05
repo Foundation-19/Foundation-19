@@ -166,8 +166,8 @@
 				NM.using_access = user.GetAccess()
 		if(tguimodule_path)
 			TM = new tguimodule_path(src)
-			TM.using_access = user.GetAccess()
-			TM.tgui_interact(user)
+			if(user)
+				TM.using_access = user.GetAccess()
 		if(requires_ntnet && network_destination)
 			generate_network_log("Connection opened to [network_destination].")
 		program_state = PROGRAM_STATE_ACTIVE
@@ -188,13 +188,13 @@
 
 // This is called every tick when the program is enabled. Ensure you do parent call if you override it. If parent returns 1 continue with UI initialisation.
 // It returns 0 if it can't run or if NanoModule was used instead. I suggest using NanoModules where applicable.
-/datum/computer_file/program/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
+/datum/computer_file/program/tgui_interact(mob/user, datum/tgui/ui)
 	if(program_state != PROGRAM_STATE_ACTIVE) // Our program was closed. Close the ui if it exists.
 		if(ui)
 			ui.close()
-		return computer.ui_interact(user)
+		return computer.tgui_interact(user)
 	if(istype(NM))
-		NM.ui_interact(user, ui_key, null, force_open)
+		NM.ui_interact(user)
 		return 0
 	if(istype(TM))
 		TM.tgui_interact(user)
@@ -215,6 +215,39 @@
 		return 1
 	if(computer)
 		return computer.Topic(href, href_list)
+
+// CONVENTIONS, READ THIS WHEN CREATING NEW PROGRAM AND OVERRIDING THIS PROC:
+// Topic calls are automagically forwarded from NanoModule this program contains.
+// Calls beginning with "PRG_" are reserved for programs handling.
+// Calls beginning with "PC_" are reserved for computer handling (by whatever runs the program)
+// ALWAYS INCLUDE PARENT CALL ..() OR DIE IN FIRE.
+/datum/computer_file/program/tgui_act(action,list/params, datum/tgui/ui)
+	if(..())
+		return 1
+	if(computer)
+		switch(action)
+			if("PC_exit")
+				computer.kill_program()
+				ui.close()
+				return 1
+			if("PC_shutdown")
+				computer.shutdown_computer()
+				ui.close()
+				return 1
+			if("PC_minimize")
+				var/mob/user = usr
+				if(!computer.active_program)
+					return
+
+				computer.idle_threads.Add(computer.active_program)
+				program_state = PROGRAM_STATE_BACKGROUND // Should close any existing UIs
+
+				computer.active_program = null
+				computer.update_icon()
+				ui.close()
+
+				if(user && istype(user))
+					computer.tgui_interact(user) // Re-open the UI on this computer. It should show the main screen now.
 
 // Relays the call to nano module, if we have one
 /datum/computer_file/program/proc/check_eye(var/mob/user)

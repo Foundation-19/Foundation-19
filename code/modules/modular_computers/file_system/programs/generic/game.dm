@@ -4,7 +4,7 @@
 /datum/computer_file/program/game
 	filename = "dsarcade"				// File name, as shown in the file browser program.
 	filedesc = "Donksoft Micro Arcade"	// User-Friendly name.
-	program_icon_state = "arcade"		// Icon state of this program's screen.
+	program_icon_state = "game"		// Icon state of this program's screen.
 	extended_desc = "This is a port of the classic game 'Outbomb Cuban Pete', redesigned to run on tablets; Now with thrilling graphics and chilling storytelling."	// A nice description.
 	size = 6							// Size in GQ. Integers only. Smaller sizes should be used for utility/low use programs (like this one), while large sizes are for important programs.
 	requires_ntnet = FALSE				// This particular program does not require NTNet network conectivity...
@@ -34,7 +34,6 @@
 		heads_up = "You have crushed [boss_name]! Rejoice!"
 		playsound(computer.loc, 'sound/arcade/win.ogg', 50, TRUE, extrarange = -3, falloff = 0.1)
 		game_active = FALSE
-		program_icon_state = "arcade_off"
 		if(istype(computer))
 			computer.update_icon()
 		// user?.mind?.adjust_experience(/datum/skill/gaming, 50)
@@ -43,7 +42,6 @@
 		heads_up = "You have been defeated... how will the station survive?"
 		playsound(computer.loc, 'sound/arcade/lose.ogg', 50, TRUE, extrarange = -3, falloff = 0.1)
 		game_active = FALSE
-		program_icon_state = "arcade_off"
 		if(istype(computer))
 			computer.update_icon()
 		// user?.mind?.adjust_experience(/datum/skill/gaming, 10)
@@ -157,7 +155,6 @@
 			player_hp = 30
 			player_mp = 10
 			heads_up = "You stand before [boss_name]! Prepare for battle!"
-			program_icon_state = "arcade"
 			boss_id = rand(1,6)
 			pause_state = FALSE
 			if(istype(computer))

@@ -38,7 +38,7 @@
   * @return nothing
   */
 /datum/proc/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/nanoui/master_ui = null, datum/topic_state/state = GLOB.default_state)
-	return
+	CRASH("Something called non-implemented ui_interact. See stack trace for more details.")
 
  /**
   * Data to be sent to the UI.
