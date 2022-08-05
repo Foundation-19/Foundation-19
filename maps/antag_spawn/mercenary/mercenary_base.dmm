@@ -2442,13 +2442,13 @@
 	pixel_x = -1
 	},
 /obj/effect/spawner/newbomb/timer/syndicate,
-/obj/item/device/assembly/signaler{
+/obj/item/device/assembly/signaller{
 	pixel_y = 2
 	},
-/obj/item/device/assembly/signaler{
+/obj/item/device/assembly/signaller{
 	pixel_y = 2
 	},
-/obj/item/device/assembly/signaler{
+/obj/item/device/assembly/signaller{
 	pixel_y = 2
 	},
 /obj/effect/landmark/delete_on_shuttle{
@@ -2547,13 +2547,13 @@
 	pixel_x = -1
 	},
 /obj/effect/spawner/newbomb/timer/syndicate,
-/obj/item/device/assembly/signaler{
+/obj/item/device/assembly/signaller{
 	pixel_y = 2
 	},
-/obj/item/device/assembly/signaler{
+/obj/item/device/assembly/signaller{
 	pixel_y = 2
 	},
-/obj/item/device/assembly/signaler{
+/obj/item/device/assembly/signaller{
 	pixel_y = 2
 	},
 /obj/effect/landmark/delete_on_shuttle{
