@@ -7,5 +7,5 @@ SUBSYSTEM_DEF(sun)
 /datum/controller/subsystem/sun/fire()
 	GLOB.sun.calc_position()
 
-/datum/controller/subsystem/sun/stat_entry()
-	..("Angle:[GLOB.sun.angle]")
+/datum/controller/subsystem/sun/stat_entry(msg)
+	.=..("[msg] Angle:[GLOB.sun.angle]")

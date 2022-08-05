@@ -2,7 +2,7 @@
 "aa" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/unsimulated/mineral,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/uez/bridge)
 "ab" = (
 /obj/structure/stairs/north,
 /turf/simulated/floor/tiled/monotile,
@@ -13,7 +13,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "ad" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -24,7 +24,7 @@
 "ae" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "af" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
@@ -35,7 +35,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "ah" = (
 /obj/structure/cryofeed,
 /obj/machinery/light{
@@ -51,7 +51,7 @@
 	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "aj" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroomstairs)
@@ -60,14 +60,14 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "al" = (
 /obj/structure/railing/mapped{
 	dir = 4;
 	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "am" = (
 /obj/machinery/light,
 /obj/structure/cable{
@@ -95,7 +95,7 @@
 "ao" = (
 /obj/machinery/door/airlock/command{
 	name = "Main Control Room";
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -113,16 +113,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroomstairs)
 "aq" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/railing/mapped{
-	dir = 1
+/obj/effect/floor_decal/industrial/loading{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/quartermaster/hangar)
 "ar" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -138,10 +133,10 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "as" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "at" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -149,7 +144,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "au" = (
 /obj/machinery/light,
 /obj/structure/closet/crate/bin{
@@ -157,11 +152,7 @@
 	name = "trash bin"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
-"av" = (
-/obj/effect/paint_stripe/green,
-/turf/simulated/wall/r_titanium,
-/area/site53/medical/virology)
+/area/site53/upper_surface/maincontrolroomstairs)
 "aw" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Tram Hub"
@@ -172,7 +163,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "ax" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -184,25 +175,25 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "ay" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "az" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "aA" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/grass,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "aB" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/grass,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "aC" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -229,7 +220,7 @@
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/surface/cryogenicsprimary)
 "aF" = (
 /obj/machinery/light{
 	dir = 8;
@@ -253,7 +244,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/open,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/uez/bridge)
 "aJ" = (
 /obj/machinery/cryopod{
 	dir = 4
@@ -273,16 +264,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
-"aM" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 5
-	},
-/obj/structure/hygiene/sink{
-	dir = 1;
-	pixel_y = 16
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "aN" = (
 /obj/effect/paint_stripe/blue,
 /turf/simulated/wall/prepainted,
@@ -303,10 +284,10 @@
 /area/site53/maintenance/surfaceeast)
 "aQ" = (
 /turf/simulated/open,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/maintenance/surfacewest)
 "aR" = (
 /obj/machinery/door/airlock/engineering{
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -320,14 +301,16 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
 "aT" = (
-/obj/machinery/power/apc/hyper{
-	dir = 8
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/glass/civilian{
+	name = "Tram Hub"
 	},
 /obj/structure/cable{
+	d1 = 1;
 	d2 = 2;
-	icon_state = "0-2"
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/surface/cryogenicsprimary)
 "aU" = (
 /obj/structure/cryofeed{
@@ -337,7 +320,7 @@
 /area/site53/surface/cryogenicsprimary)
 "aV" = (
 /obj/machinery/door/airlock/engineering{
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -349,11 +332,6 @@
 "aW" = (
 /obj/effect/landmark{
 	name = "Observer-Start"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
@@ -394,7 +372,7 @@
 /obj/item/clothing/accessory/stethoscope,
 /obj/item/clothing/suit/armor/pcarrier/light,
 /obj/structure/closet/secure_closet/paramedic{
-	req_access = list(402)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/item/storage/firstaid/adv,
 /obj/item/crowbar/prybar,
@@ -455,15 +433,13 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "bf" = (
-/obj/machinery/power/apc/hyper{
-	dir = 4
-	},
 /obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/cryogenicsprimary)
+/area/site53/logistics/logistics)
 "bg" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -510,9 +486,7 @@
 "bl" = (
 /obj/effect/paint_stripe/blue,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "bm" = (
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
@@ -541,21 +515,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
-"br" = (
-/obj/structure/bed/padded,
-/obj/item/bedsheet/medical,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "bs" = (
-/obj/machinery/power/apc/hyper{
-	dir = 4
+/obj/machinery/door/airlock/glass/civilian{
+	name = "Tram Hub"
 	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled,
+/area/site53/surface/cryogenicsprimary)
 "bt" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/surface/surface)
@@ -579,7 +545,7 @@
 /area/site53/surface/surface)
 "bx" = (
 /obj/structure/closet/crate/secure/biohazard{
-	req_access = list(402)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
@@ -591,20 +557,6 @@
 	icon_state = "railing0-1"
 	},
 /turf/simulated/open,
-/area/site53/surface/surface)
-"bz" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
 "bA" = (
 /obj/structure/disposalpipe/segment{
@@ -618,45 +570,10 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "bC" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/exoplanet/grass,
-/area/site53/surface/surface)
-"bD" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
-"bE" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
-"bF" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
 "bG" = (
 /obj/structure/sign/directions/evac{
@@ -686,14 +603,6 @@
 "bM" = (
 /obj/structure/railing/mapped{
 	dir = 8
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
-"bN" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
@@ -806,7 +715,7 @@
 "ca" = (
 /obj/machinery/door/airlock/security{
 	name = "Communications Tower";
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
@@ -819,12 +728,6 @@
 "cc" = (
 /turf/unsimulated/mask,
 /area/site53/upper_surface/commstower)
-"cd" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "cf" = (
 /obj/structure/flora/ausbushes,
 /turf/simulated/floor/exoplanet/snow,
@@ -832,7 +735,7 @@
 "cj" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/grass,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "ck" = (
 /obj/effect/paint_stripe/gray,
 /turf/unsimulated/mineral,
@@ -840,7 +743,7 @@
 "cm" = (
 /obj/machinery/door/airlock/medical{
 	name = "Medical Reception";
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -924,7 +827,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "Medical Reception";
-	send_access = list(403)
+	send_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception)
@@ -1007,12 +910,12 @@
 	dir = 8
 	},
 /turf/simulated/floor/grass,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "cY" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/grass,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "cZ" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/sleeper)
@@ -1038,15 +941,6 @@
 "de" = (
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/mentalhealth/isolation)
-"df" = (
-/obj/structure/table/standard,
-/obj/item/toy/plushie/mouse,
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = 18
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "dg" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
@@ -1071,16 +965,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
-"dj" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
-"dk" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/turf/simulated/floor/plating,
-/area/site53/medical/virology)
 "dl" = (
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/prepainted,
@@ -1092,7 +976,7 @@
 "dn" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	name = "Emergency Treatment Center";
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1144,16 +1028,16 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "ds" = (
-/obj/effect/landmark{
-	name = "Observer-Start"
+/obj/effect/floor_decal/industrial/loading{
+	dir = 4
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/cryogenicsprimary)
+/area/site53/logistics/logistics)
 "dt" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -1164,22 +1048,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"dv" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 9
-	},
-/obj/structure/closet/secure_closet/virology{
-	req_access = list(404)
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/button/alternate/door/bolts{
-	dir = 4;
-	id_tag = "virocell1";
-	name = "Isolation Cell 1";
-	pixel_x = -24
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "dw" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -1199,14 +1067,6 @@
 /obj/item/reagent_containers/dropper,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op2)
-"dy" = (
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/medical/virology)
-"dz" = (
-/obj/structure/virology/analyser,
-/obj/effect/floor_decal/corner/green/full,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "dA" = (
 /turf/unsimulated/mineral,
 /area/space)
@@ -1321,7 +1181,7 @@
 "dP" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Maintenance";
-	req_access = list(202)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -1365,7 +1225,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(201)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -1394,12 +1254,6 @@
 /obj/structure/cable/green,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op2)
-"ea" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "eb" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -1452,19 +1306,6 @@
 /obj/structure/closet/secure_closet/medical2,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op1)
-"ej" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
-"ek" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/green/diagonal,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "el" = (
 /obj/machinery/vitals_monitor,
 /obj/structure/cable/green{
@@ -1484,7 +1325,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/eastleft{
 	name = "Medical Reception";
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/machinery/door/blast/shutters/open{
 	dir = 4;
@@ -1497,12 +1338,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception)
-"eo" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/green/diagonal,
-/obj/item/storage/lockbox/vials,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "ep" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -1511,7 +1346,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "eq" = (
 /obj/machinery/camera/network/medbay{
 	c_tag = "Mental Isolation 4";
@@ -1547,10 +1382,6 @@
 /obj/structure/closet/secure_closet/medical2,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op2)
-"ev" = (
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "ew" = (
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op2)
@@ -1564,7 +1395,7 @@
 /area/site53/medical/mentalhealth/isolation)
 "ez" = (
 /obj/structure/closet/secure_closet/medical3{
-	req_access = list(403)
+	req_access = list("ACCESS_MEDICAL_LEVEL3")
 	},
 /obj/item/device/flashlight/pen,
 /obj/item/clothing/accessory/stethoscope,
@@ -1597,13 +1428,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
-"eD" = (
-/obj/structure/virology/iso{
-	pixel_x = -5
-	},
-/obj/effect/floor_decal/corner/green/full,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "eE" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -1641,19 +1465,10 @@
 "eJ" = (
 /obj/machinery/door/airlock/medical{
 	name = "Psychiatry";
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
-"eK" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/leafybush,
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/window/reinforced,
-/turf/simulated/floor/grass,
-/area/site53/medical/virology)
 "eL" = (
 /obj/structure/table/woodentable/walnut,
 /obj/machinery/button/windowtint{
@@ -1697,18 +1512,6 @@
 "eQ" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/isolation)
-"eR" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/window/reinforced,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/grass,
-/area/site53/medical/virology)
 "eS" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmary)
@@ -1800,7 +1603,7 @@
 /obj/machinery/button/crematorium{
 	id_tag = "medicalcrema";
 	pixel_x = -22;
-	req_access = list(403)
+	req_access = list("ACCESS_MEDICAL_LEVEL3")
 	},
 /obj/item/storage/box/bodybags,
 /obj/item/storage/box/bodybags,
@@ -1809,14 +1612,14 @@
 "ff" = (
 /obj/machinery/door/airlock/medical{
 	name = "Medical Break Room";
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/equipstorage)
 "fg" = (
 /obj/machinery/door/airlock/medical{
 	name = "Medical Equipment Room";
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/equipstorage)
@@ -1829,20 +1632,6 @@
 /obj/effect/floor_decal/corner/black/border,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"fi" = (
-/obj/structure/table/standard,
-/obj/item/storage/box/detergent,
-/obj/item/roller/ironingboard,
-/obj/item/ironingiron,
-/obj/item/reagent_containers/spray/sterilizine,
-/obj/effect/floor_decal/corner/green/full,
-/obj/machinery/button/blast_door{
-	id_tag = "virolockdown";
-	name = "Virology Quarantine Shutters button";
-	pixel_y = 25
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "fj" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
@@ -1907,14 +1696,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"fo" = (
-/obj/machinery/door/airlock/glass/virology{
-	id_tag = "virocell1";
-	name = "Virology Isolation Cell 1";
-	req_access = list(404)
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/medical/virology)
 "fp" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -1934,13 +1715,13 @@
 	pixel_y = -20
 	},
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "fr" = (
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(201)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 4;
@@ -1948,15 +1729,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/medical/morgue)
-"fs" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/green/full,
-/obj/machinery/smartfridge/secure/virology{
-	pixel_y = -32;
-	req_access = list("404")
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "ft" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -1999,7 +1771,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/entrancezone/ezarmory)
+/area/site53/uez/armory)
 "fz" = (
 /obj/structure/table/woodentable/walnut,
 /obj/structure/bookcase{
@@ -2007,17 +1779,9 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
-"fA" = (
-/obj/machinery/door/airlock/glass/virology{
-	id_tag = "virocell4";
-	name = "Virology Isolation Cell 4";
-	req_access = list(404)
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/medical/virology)
 "fB" = (
 /obj/machinery/vending/medical{
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile/white,
@@ -2043,13 +1807,9 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/prepainted,
 /area/site53/uez/mcrsubstation)
-"fG" = (
-/obj/effect/floor_decal/corner/green,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "fH" = (
 /obj/machinery/vending/medical{
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 1
@@ -2108,11 +1868,6 @@
 /turf/simulated/wall/prepainted,
 /area/site53/medical/exam_room)
 "fR" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
@@ -2160,22 +1915,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/plating,
 /area/site53/medical/morgue)
-"fX" = (
-/obj/structure/table/rack,
-/obj/item/clothing/suit/hospital/blue,
-/obj/item/clothing/suit/hospital/blue,
-/obj/item/clothing/suit/hospital/blue,
-/obj/item/clothing/suit/hospital/blue,
-/obj/item/clothing/suit/hospital/pink,
-/obj/item/clothing/suit/hospital/pink,
-/obj/item/clothing/suit/hospital/pink,
-/obj/item/clothing/suit/hospital/pink,
-/obj/effect/floor_decal/corner/green/full,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "fY" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/paleblue/mono,
@@ -2193,7 +1932,7 @@
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	id_tag = "medbaydoor";
 	name = "Medical Bay";
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -2209,11 +1948,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception/waiting)
-"ga" = (
-/obj/structure/virology/centrifuge,
-/obj/effect/floor_decal/corner/green/full,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "gb" = (
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/equipstorage)
@@ -2234,7 +1968,7 @@
 "ge" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	name = "Surgical Ward";
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -2341,45 +2075,32 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/mcrsubstation)
 "gr" = (
-/obj/machinery/door/airlock/glass/civilian{
-	name = "Cryogenics Storage"
-	},
-/obj/machinery/door/firedoor,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/surface/cryogenicsprimary)
-"gs" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
+/obj/structure/disposalpipe/segment,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
+"gs" = (
+/obj/machinery/door/airlock/glass/mining{
+	name = "Helipad";
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
-/turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/hangar)
 "gt" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "gu" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/simulated/floor/grass,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "gv" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -2387,7 +2108,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/grass,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "gw" = (
 /obj/structure/lattice,
 /obj/structure/disposalpipe/down{
@@ -2435,9 +2156,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "gA" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -2513,11 +2232,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "gM" = (
@@ -2545,7 +2259,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/eastright{
 	name = "Medical Reception";
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/machinery/door/blast/shutters/open{
 	dir = 4;
@@ -2573,14 +2287,6 @@
 /obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
-"gS" = (
-/obj/structure/hygiene/sink{
-	dir = 8;
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "gT" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
@@ -2611,7 +2317,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/medical{
 	name = "Mortuary";
-	req_access = list(402)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -2638,7 +2344,7 @@
 	},
 /obj/machinery/door/airlock/medical{
 	name = "Operating Room 2";
-	req_access = list(402)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -2692,15 +2398,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
-"hh" = (
-/obj/structure/table/standard,
-/obj/item/toy/plushie/kitten,
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = 18
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "hi" = (
 /obj/machinery/organ_printer/flesh/mapped{
 	max_stored_matter = 9000;
@@ -2729,15 +2426,6 @@
 /obj/item/storage/box/gloves,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op1)
-"hm" = (
-/obj/structure/railing/mapped,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/leafybush,
-/turf/simulated/floor/grass,
-/area/site53/medical/virology)
 "hn" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 4
@@ -2859,26 +2547,6 @@
 /obj/effect/floor_decal/corner/black/border,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"hF" = (
-/obj/structure/hygiene/shower{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/medical/virology)
-"hG" = (
-/obj/structure/table/standard,
-/obj/item/toy/plushie/spider,
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = 18
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "hH" = (
 /obj/machinery/vitals_monitor,
 /obj/structure/cable/green{
@@ -2915,7 +2583,7 @@
 "hL" = (
 /obj/machinery/door/airlock/medical{
 	name = "Psychiatric Isolation";
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/mentalhealth/isolation)
@@ -3062,7 +2730,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(201)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -3098,7 +2766,7 @@
 "ij" = (
 /obj/structure/closet/secure_closet/medical3{
 	name = "surgeon's locker";
-	req_access = list(403)
+	req_access = list("ACCESS_MEDICAL_LEVEL3")
 	},
 /obj/item/clothing/head/surgery/blue,
 /obj/item/clothing/suit/surgicalapron,
@@ -3133,7 +2801,7 @@
 /area/site53/medical/surgery/op1)
 "ip" = (
 /obj/structure/closet/crate/secure/biohazard{
-	req_access = list(402)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
@@ -3157,17 +2825,9 @@
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/infirmary)
-"it" = (
-/obj/machinery/door/airlock/glass/virology{
-	id_tag = "virocell3";
-	name = "Virology Isolation Cell 3";
-	req_access = list(404)
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/medical/virology)
 "iu" = (
 /obj/machinery/smartfridge/chemistry{
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/prepainted,
@@ -3302,7 +2962,7 @@
 /area/site53/uez/mcrsubstation)
 "iK" = (
 /obj/machinery/vending/medical{
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
@@ -3312,7 +2972,7 @@
 "iL" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	name = "Mental Isolation";
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmary)
@@ -3331,16 +2991,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"iO" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/green/full,
-/obj/machinery/power/apc{
-	name = "south bump";
-	pixel_y = -24
-	},
-/obj/structure/cable/green,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "iP" = (
 /obj/effect/floor_decal/corner/paleblue/bordercorner{
 	dir = 4
@@ -3383,7 +3033,7 @@
 /obj/item/clothing/suit/bio_suit/general,
 /obj/item/clothing/head/bio_hood/general,
 /obj/structure/closet/secure_closet/medical3{
-	req_access = list(403)
+	req_access = list("ACCESS_MEDICAL_LEVEL3")
 	},
 /obj/item/storage/firstaid/adv,
 /obj/machinery/light{
@@ -3451,7 +3101,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/quartermaster/hangar)
 "jc" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -3610,7 +3260,7 @@
 "jo" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	name = "Chemistry Laboratory";
-	req_access = list(402)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -3622,7 +3272,7 @@
 "jp" = (
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/quartermaster/hangar)
 "jq" = (
 /obj/machinery/optable,
 /obj/item/clothing/mask/surgical,
@@ -3650,11 +3300,11 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/quartermaster/hangar)
 "ju" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/quartermaster/hangar)
 "jv" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -3712,7 +3362,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/quartermaster/hangar)
 "jE" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -3790,20 +3440,6 @@
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/infirmreception)
-"jO" = (
-/obj/machinery/door/airlock/multi_tile/glass/medical{
-	dir = 4;
-	icon_state = "closed";
-	name = "Virology";
-	req_access = list(404)
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/medical/virology)
 "jP" = (
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/prepainted,
@@ -3813,13 +3449,15 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/quartermaster/hangar)
 "jR" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "jS" = (
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmreception/waiting)
@@ -3832,7 +3470,7 @@
 /area/site53/medical/mentalhealth/isolation)
 "jU" = (
 /obj/structure/closet/secure_closet/chemical{
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/item/clothing/glasses/science,
 /obj/effect/floor_decal/corner/purple/mono,
@@ -3840,7 +3478,7 @@
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(201)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 4;
@@ -3900,9 +3538,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "kc" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -3912,13 +3548,13 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/quartermaster/hangar)
 "kd" = (
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
-	req_access = list(201)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -3926,15 +3562,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmreception)
-"ke" = (
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "kf" = (
 /obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/quartermaster/hangar)
 "kg" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -3961,7 +3594,7 @@
 	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/quartermaster/hangar)
 "ki" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -4008,9 +3641,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/half,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "kn" = (
 /obj/structure/table/standard,
 /obj/item/stack/material/phoron/ten,
@@ -4039,7 +3670,7 @@
 "kq" = (
 /obj/machinery/door/airlock/medical{
 	name = "Psychiatrist's Office";
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -4060,9 +3691,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "kv" = (
 /obj/structure/morgue,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -4091,7 +3720,7 @@
 /obj/item/clothing/suit/bio_suit/general,
 /obj/item/clothing/head/bio_hood/general,
 /obj/structure/closet/secure_closet/medical3{
-	req_access = list(403)
+	req_access = list("ACCESS_MEDICAL_LEVEL3")
 	},
 /obj/machinery/camera/network/medbay{
 	c_tag = "Medical Equipment Room"
@@ -4100,19 +3729,24 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "kA" = (
-/obj/effect/floor_decal/industrial/warning{
+/obj/structure/disposalpipe/segment{
 	dir = 8;
-	icon_state = "warning"
+	icon_state = "pipe-c"
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "kB" = (
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor/westleft{
-	req_access = list(402)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/machinery/door/window/eastleft{
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception)
@@ -4146,24 +3780,14 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception)
 "kG" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4;
-	icon_state = "warning"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/turf/simulated/wall/r_wall/prepainted,
+/area/quartermaster/hangar)
 "kH" = (
 /obj/structure/morgue{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/morgue)
-"kI" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/green/diagonal,
-/obj/item/storage/box/syringes,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "kJ" = (
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/chemistry)
@@ -4198,17 +3822,16 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/janitor)
-"kO" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/green/diagonal,
-/obj/item/storage/box/beakers,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "kP" = (
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/quartermaster/hangar)
 "kQ" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -4217,7 +3840,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/quartermaster/hangar)
 "kR" = (
 /obj/machinery/light{
 	dir = 1;
@@ -4227,9 +3850,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "kS" = (
 /obj/machinery/camera/network/medbay{
 	c_tag = "Psychiatrist's Office"
@@ -4239,7 +3860,7 @@
 "kT" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/site53/entrancezone/ezarmory)
+/area/site53/uez/armory)
 "kU" = (
 /turf/simulated/floor/plating,
 /area/site53/medical/morgue)
@@ -4311,16 +3932,11 @@
 "lf" = (
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/surface/cryogenicsprimary)
 "lg" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -4463,16 +4079,10 @@
 /obj/effect/floor_decal/corner/black/bordercorner,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"lt" = (
-/obj/machinery/washing_machine,
-/obj/effect/floor_decal/corner/green/full,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "lu" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Post";
-	req_access = list(201)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -4484,9 +4094,7 @@
 "lv" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "lw" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -4508,11 +4116,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/substation)
-"ly" = (
-/obj/structure/virology/incubator_off,
-/obj/effect/floor_decal/corner/green/full,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "lz" = (
 /obj/structure/crematorium{
 	dir = 4;
@@ -4525,9 +4128,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "lB" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -4535,13 +4136,11 @@
 "lC" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/uez/senioragentoffice)
 "lD" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Post";
-	req_access = list(201)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/securitypost)
@@ -4558,12 +4157,6 @@
 /obj/effect/wallframe_spawn/reinforced/polarized/full,
 /turf/simulated/floor/plating,
 /area/site53/uez/o5repoffice)
-"lG" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/prepainted,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
 "lH" = (
 /obj/machinery/light{
 	dir = 8
@@ -4574,27 +4167,28 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "lI" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor/plating,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/obj/machinery/papershredder,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "lJ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/grass,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "lK" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/quartermaster/hangar)
 "lL" = (
-/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/light{
+	dir = 1;
+	icon_state = "tube1"
+	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/upper_surface/maincontrolroomstairs)
 "lM" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -4602,13 +4196,13 @@
 	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/quartermaster/hangar)
 "lR" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sunnybush,
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/grass,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "lS" = (
 /obj/structure/closet/secure_closet/mtf/enlisted/ez,
 /obj/item/clothing/accessory/armorplate/tactical,
@@ -4621,9 +4215,7 @@
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/uez/equipmentroom)
 "lW" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -4651,14 +4243,19 @@
 	name = "Tram Hub"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "facilitylockdown";
+	name = "Exterior Lockdown Blast Door"
+	},
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "mb" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/grass,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "mc" = (
 /obj/effect/paint_stripe/gunmetal,
 /turf/simulated/wall/prepainted,
@@ -4689,18 +4286,23 @@
 /obj/item/ammo_magazine/box/a10mm,
 /obj/item/ammo_magazine/box/a10mm,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/ezarmory)
+/area/site53/uez/armory)
 "mh" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Tram Hub"
 	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "facilitylockdown";
+	name = "Exterior Lockdown Blast Door"
+	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "mi" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "mj" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -4710,7 +4312,7 @@
 	name = "scp420j"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "mk" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -4720,7 +4322,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "mm" = (
 /obj/machinery/light,
 /obj/structure/closet,
@@ -4732,7 +4334,7 @@
 /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet,
 /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "mn" = (
 /obj/structure/hygiene/sink{
 	dir = 1;
@@ -4887,14 +4489,12 @@
 "mC" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "mD" = (
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	req_access = list(301)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -4902,32 +4502,22 @@
 	},
 /obj/machinery/vending/cola,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "mE" = (
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "mF" = (
 /obj/machinery/vending/snack,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "mG" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "mI" = (
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "mJ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -4943,7 +4533,7 @@
 /area/site53/entrancezone/hallway)
 "mK" = (
 /obj/machinery/door/window/brigdoor/northleft{
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -5008,35 +4598,27 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "mR" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "mS" = (
 /obj/machinery/door/airlock/multi_tile/security{
 	name = "\improper Entrance Zone Guard Equipment";
-	req_access = list(202)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/uez/equipmentroom)
 "mT" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "mW" = (
 /obj/machinery/door/airlock/command{
 	name = "Zone Commander's Office";
-	req_access = list(204)
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5044,17 +4626,13 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/uez/senioragentoffice)
 "mY" = (
 /obj/effect/landmark/start{
 	name = "EZ Junior Agent"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/uez/equipmentroom)
 "mZ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5062,9 +4640,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/uez/senioragentoffice)
 "ng" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5072,9 +4648,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "ni" = (
 /obj/structure/closet/secure_closet/mtf/enlisted/ez,
 /obj/item/clothing/accessory/armorplate/tactical,
@@ -5083,9 +4657,7 @@
 /obj/item/clothing/head/bio_hood/security,
 /obj/item/crowbar/red,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/uez/equipmentroom)
 "nj" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -5113,36 +4685,20 @@
 "nn" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
-"no" = (
-/obj/machinery/papershredder,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/uez/senioragentoffice)
 "nq" = (
-/turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
-"nr" = (
-/obj/structure/bed/chair,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
-"ns" = (
-/obj/structure/cable/green{
+/obj/vehicle/train/cargo/trolley,
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/turf/simulated/floor/tiled/steel_ridged,
+/area/site53/logistics/logistics)
+"nr" = (
+/obj/structure/bed/chair,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/lowertrams/restaurant)
 "nt" = (
 /obj/structure/closet/secure_closet/mtf/enlisted/ez,
 /obj/item/clothing/accessory/armorplate/tactical,
@@ -5152,9 +4708,7 @@
 /obj/item/crowbar/red,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/uez/equipmentroom)
 "nu" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
@@ -5163,24 +4717,18 @@
 	name = "EZ Senior Agent"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/uez/senioragentoffice)
 "nv" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "nw" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/uez/senioragentoffice)
 "nx" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5192,9 +4740,7 @@
 	name = "trash bin"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/uez/senioragentoffice)
 "ny" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5202,9 +4748,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "nA" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5212,18 +4756,8 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/uez/equipmentroom)
 "nE" = (
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
-"nF" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
 "nG" = (
@@ -5242,9 +4776,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/uez/equipmentroom)
 "nI" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Entrance Zone Commander's Office";
@@ -5252,15 +4784,11 @@
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/uez/senioragentoffice)
 "nJ" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/uez/senioragentoffice)
 "nK" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5269,9 +4797,7 @@
 	},
 /obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/uez/senioragentoffice)
 "nL" = (
 /obj/machinery/light,
 /obj/machinery/camera/autoname{
@@ -5279,9 +4805,7 @@
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/uez/senioragentoffice)
 "nM" = (
 /obj/machinery/power/apc{
 	name = "south bump";
@@ -5292,19 +4816,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
-"nN" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/uez/senioragentoffice)
 "nO" = (
 /obj/structure/table/woodentable,
 /obj/item/instrument/guitar,
@@ -5317,7 +4829,7 @@
 "nR" = (
 /obj/machinery/door/airlock/multi_tile/glass/command{
 	name = "Administration Offices";
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
@@ -5344,9 +4856,10 @@
 /obj/item/clothing/suit/bio_suit/security,
 /obj/item/clothing/head/bio_hood/security,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/uez/senioragentoffice)
+"nU" = (
+/turf/unsimulated/mineral,
+/area/site53/medical/mentalhealth/isolation)
 "nY" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -5364,9 +4877,7 @@
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "oe" = (
 /obj/structure/railing/mapped,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -5381,7 +4892,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	req_access = list(301)
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -5399,7 +4910,7 @@
 	dir = 8;
 	icon_state = "closed";
 	name = "Substation";
-	req_access = list(501)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/substation)
@@ -5423,9 +4934,7 @@
 	},
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "ol" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5509,9 +5018,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "ow" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5529,9 +5036,7 @@
 	},
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "oy" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -5549,14 +5054,6 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"oA" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
 "oB" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -5572,18 +5069,11 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "oD" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/obj/effect/floor_decal/industrial/loading{
+	dir = 8
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/hangar)
 "oE" = (
 /obj/structure/railing/mapped,
 /obj/structure/flora/tree/dead,
@@ -5630,9 +5120,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "oN" = (
 /obj/structure/disposaloutlet{
 	dir = 8
@@ -5662,9 +5150,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "oS" = (
 /turf/unsimulated/mineral,
 /area/site53/surface/surface)
@@ -5676,9 +5162,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "oU" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -5695,13 +5179,11 @@
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/grass,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "oZ" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "pb" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/corner/orange/bordercorner{
@@ -5756,7 +5238,7 @@
 	},
 /obj/machinery/door/airlock/medical{
 	name = "Operating Room 1";
-	req_access = list(402)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5771,17 +5253,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"pk" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "facilitylockdown";
-	name = "Exterior Lockdown Blast Door"
-	},
-/turf/simulated/floor/plating,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
 "pl" = (
 /obj/machinery/power/apc{
 	dir = 8;
@@ -5803,14 +5274,17 @@
 	},
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "pn" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
 "po" = (
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
 "pp" = (
@@ -5836,8 +5310,13 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "facilitylockdown";
+	name = "Exterior Lockdown Blast Door"
+	},
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "pr" = (
 /obj/effect/paint_stripe/gray,
 /obj/machinery/status_display,
@@ -5847,12 +5326,12 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/simulated/floor/grass,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "pu" = (
 /obj/effect/paint_stripe/gray,
 /obj/machinery/status_display,
 /turf/simulated/wall/prepainted,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/uez/bridge)
 "pw" = (
 /obj/effect/paint_stripe/orange,
 /obj/machinery/status_display,
@@ -5861,14 +5340,7 @@
 "px" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/site53/entrancezone/forensics)
-"py" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/status_display,
-/turf/simulated/wall/prepainted,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/entrancezone/forensicsstairwell)
 "pz" = (
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/prepainted,
@@ -5882,11 +5354,6 @@
 /obj/effect/floor_decal/corner/purple/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
-"pC" = (
-/obj/structure/table/standard,
-/obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "pD" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -5909,6 +5376,10 @@
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/mentalhealth/office)
+"pG" = (
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/prepainted,
+/area/site53/upper_surface/maincontrolroomstairs)
 "pI" = (
 /obj/machinery/door/blast/shutters/open{
 	icon_state = "shutter0";
@@ -5926,9 +5397,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/uez/senioragentoffice)
 "pO" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -5937,13 +5406,28 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/senioragentoffice)
 "pW" = (
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
+"qa" = (
+/obj/structure/bed/chair,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/tramhubhallwayentry)
+"qf" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/upper_surface/maincontrolroomstairs)
 "qx" = (
 /obj/structure/closet/cabinet,
 /obj/item/gun/projectile/shotgun/doublebarrel,
@@ -6005,13 +5489,12 @@
 /area/site53/surface/surface)
 "qI" = (
 /obj/structure/cable{
-	d1 = 4;
+	d1 = 1;
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "1-8"
 	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "qJ" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile,
@@ -6020,9 +5503,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "qL" = (
-/obj/effect/paint_stripe/yellow,
+/obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/uez/bridge)
 "qM" = (
 /obj/machinery/light{
 	dir = 8
@@ -6053,7 +5536,7 @@
 "qS" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Logistics";
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
@@ -6062,7 +5545,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/surface/cryogenicsprimary)
 "qU" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 1
@@ -6083,30 +5566,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
-"qX" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
-"qY" = (
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "east bump";
-	pixel_x = 24
-	},
-/obj/effect/floor_decal/corner/brown/half{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/surface/cryogenicsprimary)
 "qZ" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white/monotile,
@@ -6150,9 +5610,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "ri" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -6161,7 +5619,7 @@
 	},
 /obj/machinery/door/airlock/command{
 	name = "O5 Representative's Office";
-	req_access = list(602)
+	req_access = list("ACCESS_ADMIN_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/o5repoffice)
@@ -6201,7 +5659,7 @@
 /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/marine,
 /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/marine,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "rp" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -6297,7 +5755,7 @@
 "rC" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "O5 Representative's Office";
-	send_access = list(502)
+	send_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /obj/machinery/light{
 	dir = 8
@@ -6346,7 +5804,7 @@
 "rI" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Loading Docks";
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -6360,9 +5818,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "rK" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -6373,13 +5829,11 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "rL" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Primary Storage";
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -6392,14 +5846,14 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/tramhubhallwayentry)
 "rN" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "rO" = (
 /obj/machinery/door/window/brigdoor/northright{
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
@@ -6419,7 +5873,7 @@
 "rR" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Helipad";
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -6457,18 +5911,18 @@
 /obj/machinery/door/airlock/glass/mining{
 	name = "Logistics"
 	},
+/obj/structure/disposalpipe/segment,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
 "rX" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Cargo Center";
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -6490,7 +5944,7 @@
 /obj/structure/lattice,
 /obj/structure/disposalpipe/down,
 /turf/simulated/open,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/uez/bridge)
 "sc" = (
 /obj/structure/railing/mapped,
 /obj/structure/flora/ausbushes/brflowers,
@@ -6509,89 +5963,62 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "se" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
 	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
-"sf" = (
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
-	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
 "sg" = (
+/obj/machinery/door/airlock/glass/mining{
+	name = "Cargo Center";
+	req_access = list("ACCESS_ADMIN_LEVEL1")
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/logistics/logistics)
+"si" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/surface/surface)
+"sl" = (
+/obj/machinery/door/airlock/glass/mining{
+	name = "Logistics";
+	req_access = list("ACCESS_ADMIN_LEVEL1")
+	},
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/logistics/logistics)
+"sm" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
-"sh" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
-"si" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled,
-/area/site53/surface/surface)
-"sk" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled,
-/area/site53/logistics/logistics)
-"sl" = (
-/obj/machinery/door/airlock/glass/mining{
-	name = "Logistics";
-	req_access = list(601)
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled,
-/area/site53/logistics/logistics)
-"sm" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled,
-/area/site53/logistics/logistics)
 "sn" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
@@ -6600,6 +6027,11 @@
 /obj/structure/disposalpipe/segment{
 	dir = 1;
 	icon_state = "pipe-c"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
@@ -6612,7 +6044,7 @@
 "sq" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Loading Docks";
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -6629,7 +6061,7 @@
 "ss" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Loading Docks";
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
@@ -6637,7 +6069,7 @@
 "st" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Primary Storage";
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
@@ -6693,15 +6125,11 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sz" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sD" = (
 /obj/structure/railing/mapped,
 /obj/structure/window/reinforced{
@@ -6722,21 +6150,11 @@
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
-"sI" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
+/area/site53/zonecommanderoffice)
 "sK" = (
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sL" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -6749,14 +6167,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
-"sM" = (
-/turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sN" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -6773,9 +6184,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sO" = (
 /obj/machinery/light{
 	dir = 8
@@ -6784,9 +6193,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sP" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -6797,40 +6204,29 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sQ" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/carpet/blue2,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sR" = (
 /turf/simulated/floor/carpet/blue2,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sS" = (
 /obj/structure/closet/secure_closet/mtf/co{
-	req_access = list(302)
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
-/obj/item/implantcase/death_alarm,
 /obj/item/crowbar/red,
 /obj/item/clothing/head/bio_hood/security,
 /obj/item/clothing/suit/bio_suit/security,
 /turf/simulated/floor/carpet/blue2,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sT" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/carpet/blue2,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sU" = (
 /obj/effect/landmark/start{
 	name = "LCZ Zone Commander"
@@ -6839,18 +6235,14 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sV" = (
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sW" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -6864,9 +6256,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sX" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -6876,23 +6266,17 @@
 	},
 /obj/structure/flora/pottedplant,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sY" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "sZ" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/carpet/blue2,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tb" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -6903,9 +6287,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tc" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -6914,13 +6296,11 @@
 	},
 /obj/machinery/door/airlock/command{
 	name = "Zone Commander's Office";
-	req_access = list(204)
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/effect/floor_decal/corner/blue/borderfull,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "td" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -6931,9 +6311,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "te" = (
 /obj/structure/bed/chair/comfy/blue{
 	dir = 4
@@ -6942,9 +6320,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tf" = (
 /obj/structure/table/glass,
 /obj/item/device/flashlight/lamp,
@@ -6952,9 +6328,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tg" = (
 /obj/structure/bed/chair/comfy/blue{
 	dir = 8
@@ -6963,17 +6337,13 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "th" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "ti" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -6984,39 +6354,29 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tj" = (
 /obj/structure/bed/chair/comfy/blue{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tk" = (
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tl" = (
 /obj/structure/bed/chair/comfy/blue{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tm" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tn" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/hyper{
@@ -7026,9 +6386,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "to" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/blue/border{
@@ -7036,9 +6394,7 @@
 	},
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tp" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/structure/table/reinforced,
@@ -7046,9 +6402,7 @@
 	pixel_y = 3
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tq" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "LCZ Zone Commander's Office";
@@ -7057,41 +6411,31 @@
 /obj/effect/floor_decal/corner/blue/border,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tr" = (
 /obj/structure/filingcabinet,
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "ts" = (
 /obj/structure/filingcabinet,
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tt" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/item/modular_computer/laptop/preset/records,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tu" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/effect/floor_decal/corner/blue/bordercorner{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tv" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/blue/border,
@@ -7099,56 +6443,40 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tw" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tx" = (
 /obj/effect/floor_decal/corner/blue/bordercee{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "ty" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/blue/half,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "tz" = (
 /obj/machinery/door/airlock/multi_tile/security{
 	id_tag = "ezguns";
 	locked = 1;
 	name = "\improper Entrance Zone Armoury";
-	req_access = list(202);
+	req_access = list("ACCESS_SECURITY_LEVEL2");
 	secured_wires = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/ezarmory)
-"tA" = (
-/obj/effect/paint_stripe/red,
-/turf/simulated/wall/prepainted,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/armory)
 "tB" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/zonecommanderoffice)
 "tC" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -7171,26 +6499,21 @@
 "tE" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "tH" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/half{
 	dir = 1
 	},
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "tL" = (
 /obj/effect/floor_decal/corner/red/half{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "tM" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -7206,79 +6529,61 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "tO" = (
 /obj/structure/lattice,
 /turf/simulated/open,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/uez/bridge)
 "tQ" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/senioragentoffice)
 "tR" = (
 /obj/machinery/door/airlock/security{
 	name = "Security Center";
-	req_access = list(201)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "tS" = (
 /obj/effect/paint_stripe/red,
 /obj/machinery/status_display,
 /turf/simulated/wall/prepainted,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "tU" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "tV" = (
 /obj/structure/filingcabinet,
 /obj/effect/floor_decal/corner/red/half{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "tW" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/senioragentoffice)
 "tX" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier{
 	pixel_y = 3
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "tY" = (
 /obj/effect/floor_decal/corner/red/half{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "tZ" = (
 /obj/machinery/door/airlock/security{
 	name = "Security Center";
-	req_access = list(201)
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7286,24 +6591,11 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "ua" = (
-/obj/machinery/power/apc{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/effect/floor_decal/corner/red/half{
-	dir = 1
-	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/quartermaster/hangar)
 "ub" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -7311,39 +6603,18 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/senioragentoffice)
 "uc" = (
 /obj/structure/cable/green{
 	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "ud" = (
 /turf/unsimulated/mineral,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
-"ue" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "uf" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -7351,9 +6622,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "ug" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7366,9 +6635,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "uh" = (
 /obj/machinery/light{
 	dir = 4
@@ -7381,26 +6648,20 @@
 	name = "trash bin"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "ui" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "EZ Security Center";
-	send_access = list(202)
+	send_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "uj" = (
 /obj/structure/filingcabinet,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "uk" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7524,7 +6785,7 @@
 "uO" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Cargo Center";
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
@@ -7556,26 +6817,17 @@
 "uT" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/surface/surface)
-"uU" = (
-/obj/machinery/door/airlock/security{
-	name = "Communications Tower";
-	req_access = list(601)
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/commstower)
 "uV" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/commstower)
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/maincontrolroomstairs)
 "uW" = (
 /obj/structure/sign/warning/moving_parts{
 	pixel_y = -32
@@ -7708,13 +6960,16 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "vp" = (
+/obj/machinery/door/airlock/glass/civilian{
+	name = "Tram Hub"
+	},
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/commstower)
+/turf/simulated/floor/tiled,
+/area/site53/surface/cryogenicsprimary)
 "vq" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -7727,8 +6982,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/logistics/logistics)
 "vs" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techmaint,
@@ -7738,19 +6993,6 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/upper_surface/commstower)
-"vu" = (
-/obj/machinery/power/apc{
-	dir = 4
-	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/upper_surface/commstower)
 "vv" = (
 /obj/machinery/light{
@@ -7770,13 +7012,8 @@
 /area/site53/upper_surface/commstower)
 "vx" = (
 /obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/surface/cryogenicsprimary)
 "vy" = (
 /obj/effect/paint_stripe/white,
 /obj/machinery/status_display,
@@ -7785,7 +7022,7 @@
 "vz" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	name = "Recovery Ward";
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7794,19 +7031,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
-"vA" = (
-/obj/structure/bed/chair{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "vB" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/grass,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "vC" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
@@ -7815,7 +7046,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/grass,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "vD" = (
 /obj/machinery/computer/cryopod{
 	pixel_y = 28
@@ -7854,21 +7085,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"wf" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "wj" = (
 /obj/structure/table/standard,
 /obj/machinery/microwave,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "wl" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/prepainted,
@@ -7877,16 +7098,12 @@
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "wz" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "wC" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 4
@@ -7940,7 +7157,7 @@
 	pixel_y = 27
 	},
 /turf/simulated/floor/tiled,
-/area/site53/entrancezone/ezarmory)
+/area/site53/uez/armory)
 "wS" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -7961,15 +7178,15 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/morgue)
 "wV" = (
+/obj/structure/sign/directions/evac{
+	pixel_x = -32;
+	pixel_y = -20
+	},
+/obj/structure/disposalpipe/segment,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/structure/disposalpipe/segment,
-/obj/structure/sign/directions/evac{
-	pixel_x = -32;
-	pixel_y = -20
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
@@ -7982,9 +7199,7 @@
 /obj/item/clothing/under/scp/dclass,
 /obj/item/clothing/under/scp/dclass,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "xb" = (
 /obj/effect/landmark{
 	name = "JoinLateCryo"
@@ -8001,9 +7216,7 @@
 /area/site53/surface/surface)
 "xg" = (
 /turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/uez/equipmentroom)
 "xs" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -8021,14 +7234,12 @@
 	pixel_y = 28
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "xW" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/handcuffs,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/ezarmory)
+/area/site53/uez/armory)
 "yt" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8036,16 +7247,10 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/uez/equipmentroom)
 "yz" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/surgery/hall)
-"yA" = (
-/obj/structure/bed/chair,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "yC" = (
 /obj/structure/bed/chair,
 /obj/effect/floor_decal/corner/brown/half{
@@ -8066,9 +7271,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "yV" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -8097,7 +7300,7 @@
 	id_tag = "ezguns";
 	name = "EZ Armory Access button";
 	pixel_x = -23;
-	req_access = list(204)
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/effect/landmark/start{
 	name = "EZ Agent"
@@ -8107,9 +7310,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/uez/equipmentroom)
 "zf" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/glass/beaker/large,
@@ -8131,7 +7332,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/medical{
 	name = "Corpse Disposal";
-	req_access = list(402)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/morgue)
@@ -8146,7 +7347,7 @@
 /obj/item/reagent_containers/ivbag/amnesticsd,
 /obj/item/reagent_containers/ivbag/amnesticsd,
 /obj/structure/closet/secure_closet/psychiatry{
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/item/storage/pill_bottle/amnesticsa,
@@ -8209,24 +7410,13 @@
 	name = "trash bin"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/ezarmory)
-"zJ" = (
-/obj/structure/table/standard,
-/obj/item/toy/plushie/lizard,
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = 18
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
+/area/site53/uez/armory)
 "zO" = (
 /turf/simulated/floor/tiled,
 /area/site53/surface/surface)
 "zP" = (
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "zU" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -8245,19 +7435,15 @@
 /obj/item/clothing/shoes/orange,
 /obj/item/clothing/shoes/orange,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "Am" = (
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "ezcell";
 	name = "Holding Cell";
-	req_access = list(202)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "Ao" = (
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
@@ -8270,7 +7456,7 @@
 	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/surface/cryogenicsprimary)
 "AN" = (
 /obj/machinery/atmospherics/unary/tank{
 	dir = 4
@@ -8306,24 +7492,14 @@
 	pixel_y = 28
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "Bf" = (
 /obj/structure/closet,
 /obj/effect/floor_decal/corner/red/half{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
-"Bl" = (
-/obj/structure/hygiene/shower{
-	pixel_y = 14
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/medical/virology)
+/area/site53/uez/equipmentroom)
 "Bq" = (
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 4
@@ -8374,6 +7550,17 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"BQ" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/red/half{
+	dir = 1
+	},
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "BR" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -8447,9 +7634,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "Cp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -8487,23 +7672,18 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op1)
-"CW" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 10
+"Df" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/structure/hygiene/sink{
-	pixel_y = -23
-	},
-/obj/machinery/camera/network/medbay{
-	c_tag = "Virology";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "Dg" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	name = "Staff Area";
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8564,7 +7744,7 @@
 /area/site53/maintenance/surfaceeast)
 "Ed" = (
 /obj/machinery/door/window/brigdoor/northright{
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -8574,6 +7754,18 @@
 /obj/item/pen,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/logistics/logistics)
+"Eh" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "Em" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -8585,16 +7777,10 @@
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "ezcell3";
 	name = "Holding Cell 3";
-	req_access = list(202)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
-"Ev" = (
-/obj/structure/closet/secure_closet/personal/patient,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
+/area/site53/uez/equipmentroom)
 "Ew" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -8626,35 +7812,21 @@
 	pixel_y = -20
 	},
 /turf/simulated/floor/tiled,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "Fi" = (
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "ezcell2";
 	name = "Holding Cell 2";
-	req_access = list(202)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "Fk" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/maintenance/surfaceeast)
-"Fo" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 4
-	},
-/obj/machinery/button/alternate/door/bolts{
-	id_tag = "virocell4";
-	name = "Isolation Cell 4";
-	pixel_x = 32;
-	pixel_y = 25
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "Fs" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -8680,9 +7852,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/lowertrams/restaurant{
-	name = "\improper Break Room"
-	})
+/area/site53/lowertrams/restaurant)
 "FA" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/exoplanet/grass,
@@ -8690,15 +7860,11 @@
 "FH" = (
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "FQ" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/carpet/blue2,
-/area/site53/zonecommanderoffice{
-	name = "\improper LCZ Zone Commander's Office"
-	})
+/area/site53/zonecommanderoffice)
 "Gb" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -8708,12 +7874,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/maintenance/surfaceeast)
-"Ge" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/green/full,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
 "Gg" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -8722,17 +7882,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
-"Gn" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/camera/network/medbay{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/infirmary)
 "Go" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
@@ -8741,18 +7890,6 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
-"GA" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/window/reinforced,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/grass,
-/area/site53/medical/virology)
 "GJ" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -8807,16 +7944,14 @@
 "Hf" = (
 /obj/structure/bed,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "Hj" = (
 /obj/structure/table/standard,
 /obj/item/storage/pill_bottle/amnesticsa,
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/item/reagent_containers/syringe/amnesticsc,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/ezarmory)
+/area/site53/uez/armory)
 "Hl" = (
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/white,
@@ -8830,9 +7965,7 @@
 /obj/item/clothing/head/bio_hood/security,
 /obj/item/storage/pill_bottle/amnesticsa,
 /turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/uez/equipmentroom)
 "Hq" = (
 /obj/structure/hygiene/toilet{
 	dir = 4
@@ -8841,9 +7974,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "Hs" = (
 /obj/structure/iv_drip,
 /turf/simulated/floor/carpet/orange,
@@ -8855,7 +7986,7 @@
 	},
 /obj/machinery/door/airlock/security{
 	name = "Forensics Laboratory";
-	req_access = list(202)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -8863,7 +7994,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/forensics)
+/area/site53/entrancezone/forensicsstairwell)
 "HL" = (
 /obj/item/clothing/suit/bio_suit/security,
 /obj/item/clothing/head/bio_hood/security,
@@ -8876,9 +8007,7 @@
 	},
 /obj/item/storage/pill_bottle/amnesticsa,
 /turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/uez/equipmentroom)
 "HM" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -8886,6 +8015,20 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"HU" = (
+/obj/machinery/light{
+	dir = 1;
+	icon_state = "tube1"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/hyper{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/tramhubhallwayentry)
 "Ic" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/plastic/fifty,
@@ -8921,7 +8064,7 @@
 "IK" = (
 /obj/structure/stairs/north,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/forensics)
+/area/site53/entrancezone/forensicsstairwell)
 "IL" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/blue,
@@ -8953,21 +8096,30 @@
 /obj/item/clothing/accessory/stethoscope,
 /obj/item/clothing/suit/armor/pcarrier/light,
 /obj/structure/closet/secure_closet/paramedic{
-	req_access = list(402)
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/machinery/light,
 /obj/item/storage/firstaid/adv,
 /obj/item/crowbar/prybar,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
+"Jt" = (
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/site53/uez/equipmentroom)
 "Jx" = (
 /obj/effect/landmark/start{
 	name = "EZ Agent"
 	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Equipment Room"
-	})
+/area/site53/uez/equipmentroom)
 "Jy" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -8982,6 +8134,19 @@
 	},
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
+"JU" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/upper_surface/tramhubhallwayentry)
 "Kc" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -9005,15 +8170,35 @@
 /obj/item/ammo_magazine/box/a556,
 /obj/item/ammo_magazine/box/a556,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/ezarmory)
+/area/site53/uez/armory)
 "Lb" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Helipad";
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/quartermaster/hangar)
+"Lf" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/obj/effect/landmark{
+	name = "scp420j"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/tramhubhallwayentry)
 "Lm" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -9024,10 +8209,11 @@
 "Ln" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance Zone Network")
+	network = list("Entrance Zone Network 1");
+	c_tag = "Cryo"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/surface/tramhubhallwayentry)
+/area/site53/upper_surface/maincontrolroomstairs)
 "Lv" = (
 /obj/structure/curtain/medical,
 /obj/effect/floor_decal/corner/paleblue/half{
@@ -9045,9 +8231,14 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
+"Ma" = (
+/obj/machinery/door/airlock/glass/civilian{
+	name = "Tram Hub"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled,
+/area/site53/upper_surface/maincontrolroomstairs)
 "Mj" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/hatch/maintenance{
@@ -9064,17 +8255,13 @@
 /obj/effect/paint_stripe/red,
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "Ms" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "Mu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -9087,12 +8274,24 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
+"MN" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/logistics/logistics)
 "MR" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"MX" = (
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/prepainted,
+/area/site53/uez/equipmentroom)
 "MY" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -9113,7 +8312,13 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/forensics)
+/area/site53/entrancezone/forensicsstairwell)
+"Nk" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/red/mono,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "Ny" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/box/a10mm,
@@ -9129,7 +8334,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/ezarmory)
+/area/site53/uez/armory)
 "NB" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -9165,18 +8370,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"OM" = (
-/obj/structure/railing/mapped,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/grass,
-/area/site53/medical/virology)
 "Pr" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/snow,
@@ -9185,7 +8378,7 @@
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
 /obj/machinery/door/window/brigdoor/northleft{
-	req_access = list(601)
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/logistics/logistics)
@@ -9223,22 +8416,14 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/entrancezone/ezarmory)
-"PF" = (
-/obj/structure/table/standard,
-/obj/item/storage/laundry_basket,
-/obj/effect/floor_decal/corner/green/diagonal,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
+/area/site53/uez/armory)
 "PR" = (
 /obj/structure/bed/chair/padded,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "PS" = (
 /turf/simulated/floor/tiled,
-/area/site53/entrancezone/ezarmory)
+/area/site53/uez/armory)
 "PX" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/gloves,
@@ -9252,9 +8437,7 @@
 	},
 /obj/structure/closet,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "Qa" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/mineral,
@@ -9262,6 +8445,15 @@
 "Qe" = (
 /turf/simulated/wall/wood,
 /area/site53/surface/surface)
+"Qg" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/upper_surface/tramhubhallwayentry)
 "Qi" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/tree/pine,
@@ -9307,7 +8499,7 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled,
-/area/site53/entrancezone/ezarmory)
+/area/site53/uez/armory)
 "QQ" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light/small{
@@ -9355,31 +8547,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
-"Rj" = (
-/obj/machinery/door/airlock/multi_tile/glass/security{
-	dir = 8;
-	icon_state = "closed";
-	name = "Guard Hallway";
-	req_access = list(202)
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
-"Ru" = (
-/obj/machinery/door/blast/shutters/open{
-	dir = 4;
-	icon_state = "shutter0";
-	id_tag = "virolockdown";
-	name = "Virology Quarantine shutter"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/medical/virology)
 "Rw" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/half{
@@ -9387,9 +8554,7 @@
 	},
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "Rx" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -9411,9 +8576,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "RK" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -9449,10 +8612,33 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"Si" = (
+/obj/machinery/door/airlock/glass/mining{
+	name = "Helipad";
+	req_access = list("ACCESS_ADMIN_LEVEL1")
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "Sk" = (
 /obj/machinery/sleeper,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/exam_room)
+"Sm" = (
+/obj/machinery/light/spot{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/hangar)
 "Sn" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/plasteel/fifty,
@@ -9468,14 +8654,26 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/sleeper)
-"SP" = (
+"SL" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
+"SS" = (
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/hangar)
 "SW" = (
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 8
@@ -9495,20 +8693,7 @@
 	},
 /obj/structure/closet,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
-"TB" = (
-/obj/effect/floor_decal/corner/green,
-/obj/machinery/button/alternate/door/bolts{
-	dir = 1;
-	id_tag = "virocell2";
-	name = "Isolation Cell 2";
-	pixel_x = 32;
-	pixel_y = -25
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
+/area/site53/uez/equipmentroom)
 "TG" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -9523,9 +8708,7 @@
 	pixel_x = 20
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "TI" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -9541,18 +8724,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/maintenance/surfaceeast)
-"TK" = (
-/obj/structure/railing/mapped,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/grass,
-/area/site53/medical/virology)
 "TP" = (
 /obj/machinery/button/blast_door{
 	dir = 8;
@@ -9583,9 +8754,15 @@
 /obj/structure/table/standard,
 /obj/item/pen,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
+"TU" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "Uc" = (
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 4
@@ -9626,28 +8803,13 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
-"Uy" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 9
-	},
-/obj/structure/closet/l3closet/virology,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
+/area/site53/uez/equipmentroom)
 "UE" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "UF" = (
-/obj/effect/shuttle_landmark/heli/mtf/out,
+/obj/effect/shuttle_landmark/heli/out,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/surface/surface)
 "UI" = (
@@ -9663,31 +8825,22 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/morgue)
 "UV" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/door/airlock/multi_tile/glass/security{
 	dir = 8;
 	icon_state = "closed";
 	name = "Guard Hallway";
-	req_access = list(202)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "Va" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/forensics)
+/area/site53/entrancezone/forensicsstairwell)
 "Vf" = (
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Commander's Office"
-	})
+/area/site53/uez/senioragentoffice)
 "Vi" = (
 /obj/structure/sign/warning/moving_parts{
 	pixel_y = -32
@@ -9699,7 +8852,7 @@
 /obj/item/storage/box/teargas,
 /obj/item/storage/box/flashbangs,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/ezarmory)
+/area/site53/uez/armory)
 "Vm" = (
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/prepainted,
@@ -9710,6 +8863,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
+"Vy" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/securitypost)
 "VG" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light/small{
@@ -9737,7 +8895,7 @@
 "VK" = (
 /obj/machinery/door/airlock/medical{
 	name = "Medical Equipment Room";
-	req_access = list(401)
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9746,16 +8904,18 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
+"Wl" = (
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled,
+/area/site53/upper_surface/maincontrolroomstairs)
 "Wm" = (
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "ezcell1";
 	name = "Holding Cell 1";
-	req_access = list(202)
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "Wr" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -9770,9 +8930,7 @@
 	pixel_x = 20
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "WG" = (
 /obj/machinery/floodlight{
 	anchored = 1;
@@ -9795,27 +8953,7 @@
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/item/gun/projectile/automatic/scp/p90,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/ezarmory)
-"WP" = (
-/obj/machinery/door/airlock/multi_tile/glass/medical{
-	dir = 4;
-	icon_state = "closed";
-	name = "Virology";
-	req_access = list(404)
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/blast/shutters/open{
-	dir = 4;
-	icon_state = "shutter0";
-	id_tag = "virolockdown";
-	name = "Virology Quarantine shutter"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/medical/virology)
+/area/site53/uez/armory)
 "WX" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9841,9 +8979,10 @@
 /obj/effect/floor_decal/corner/red/border,
 /obj/structure/closet,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
+"Xu" = (
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/senioragentoffice)
 "Xv" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -9851,7 +8990,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/ezarmory)
+/area/site53/uez/armory)
 "Xy" = (
 /obj/structure/railing/mapped,
 /obj/structure/window/reinforced{
@@ -9866,23 +9005,13 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
-"XE" = (
-/obj/machinery/door/airlock/glass/virology{
-	id_tag = "virocell2";
-	name = "Virology Isolation Cell 2";
-	req_access = list(404)
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/medical/virology)
 "XF" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
 /obj/structure/hygiene/toilet,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "XI" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -9904,7 +9033,7 @@
 /obj/item/ammo_magazine/box/a556,
 /obj/item/ammo_magazine/box/a556,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/ezarmory)
+/area/site53/uez/armory)
 "XN" = (
 /obj/structure/bed/chair,
 /obj/effect/floor_decal/corner/brown/half{
@@ -9929,9 +9058,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "Yh" = (
 /obj/machinery/floodlight{
 	anchored = 1;
@@ -9939,6 +9066,9 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/surface/surface)
+"Yi" = (
+/turf/simulated/mineral,
+/area/space)
 "Yj" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -9994,21 +9124,15 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"YM" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/green/diagonal,
-/obj/item/reagent_containers/glass/beaker/vial,
-/obj/item/reagent_containers/glass/beaker/vial,
-/obj/item/reagent_containers/glass/beaker/vial,
-/obj/item/reagent_containers/glass/beaker/vial,
-/obj/item/reagent_containers/glass/beaker/vial,
-/obj/item/reagent_containers/glass/beaker/vial,
-/obj/item/reagent_containers/glass/beaker/vial,
-/obj/item/reagent_containers/glass/beaker/vial,
-/obj/item/reagent_containers/glass/beaker/vial,
-/obj/item/reagent_containers/glass/beaker/vial,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
+"YR" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "facilitylockdown";
+	name = "Exterior Lockdown Blast Door"
+	},
+/turf/simulated/floor/plating,
+/area/site53/uez/equipmentroom)
 "YT" = (
 /obj/machinery/button/alternate/door/bolts{
 	id_tag = "ezcell2";
@@ -10019,9 +9143,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/zonecommanderoffice{
-	name = "Entrance Zone Security Center"
-	})
+/area/site53/uez/equipmentroom)
 "Za" = (
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/wood/maple,
@@ -10032,20 +9154,9 @@
 /obj/structure/table/woodentable/walnut,
 /turf/simulated/floor/carpet/blue2,
 /area/site53/uez/o5repoffice)
-"Zr" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 9
-	},
-/obj/structure/closet/l3closet/virology,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/button/alternate/door/bolts{
-	dir = 4;
-	id_tag = "virocell3";
-	name = "Isolation Cell 3";
-	pixel_x = -24
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/virology)
+"Zn" = (
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "Zv" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -14554,13 +13665,13 @@ ty
 oR
 sK
 oZ
-sE
-sE
-sE
-sE
-sE
-sE
-sE
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
 oZ
 td
 ti
@@ -14811,17 +13922,17 @@ ty
 oR
 sK
 oZ
-sE
-sE
-sE
-sE
-sE
-sE
-sE
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
 oZ
 kt
-sM
-sM
+tB
+tB
 tp
 bl
 dA
@@ -15068,17 +14179,17 @@ km
 sy
 sK
 oZ
-sE
-sE
-sE
-sE
-sE
-sE
-sE
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
 oZ
 kt
-sM
-sM
+tB
+tB
 tq
 bl
 dA
@@ -15326,16 +14437,16 @@ sy
 sK
 oZ
 oZ
-sE
-sE
-sE
-sE
-sE
-sE
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
 oZ
 te
 tj
-sM
+tB
 tr
 bl
 dA
@@ -15583,16 +14694,16 @@ oT
 sL
 sW
 oZ
-sE
-sE
-sE
-sE
-sE
-sE
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
 oZ
 tf
 tk
-sM
+tB
 ts
 bl
 dA
@@ -15837,19 +14948,19 @@ dA
 bl
 ty
 pm
-sM
-sM
+tB
+tB
 oZ
-sE
-sE
-sE
-sE
-sE
-sE
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
 oZ
 tg
 tl
-sM
+tB
 tt
 bl
 dA
@@ -16097,16 +15208,16 @@ rh
 sN
 sX
 oZ
-sE
-sE
-sE
-sE
-sE
-sE
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
 oZ
 kt
-sM
-sM
+tB
+tB
 sK
 bl
 dA
@@ -16354,12 +15465,12 @@ dg
 dP
 dg
 sz
-sE
-sE
-sE
-sE
-sE
-sE
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
 oZ
 th
 tm
@@ -16610,13 +15721,13 @@ dA
 bk
 Gg
 dg
-sE
-sE
-sE
-sE
-sE
-sE
-sE
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
 oZ
 sQ
 sT
@@ -16867,13 +15978,13 @@ dA
 bk
 di
 dg
-sE
-sE
-sE
-sE
-sE
-sE
-sE
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
 oZ
 sR
 sU
@@ -17124,13 +16235,13 @@ dA
 bk
 Gg
 dg
-sE
-sE
-sE
-sE
-sE
-sE
-sE
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
 oZ
 sS
 sV
@@ -28756,24 +27867,24 @@ dA
 dA
 dA
 dA
-oV
-oV
-oV
-oV
-oV
-oV
-oV
-oV
-oV
-oV
-oV
-oV
-oV
-oV
-oV
-oV
-oV
-oV
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
 dA
 dA
 dA
@@ -29013,24 +28124,24 @@ dA
 dA
 dA
 dA
-oV
+kG
 jb
-qK
-qK
-qK
-qK
-qK
+jH
+jH
+jH
+jH
+jH
 jb
-qK
-qK
+jH
+jH
 jb
-qK
-qK
-qK
-qK
-qK
+jH
+jH
+jH
+jH
+jH
 jb
-oV
+kG
 dA
 dA
 dA
@@ -29270,24 +28381,24 @@ dA
 dA
 dA
 dA
-oV
+kG
 jp
-uz
+aq
 jD
 kf
 kf
 kf
-kA
+uJ
 kf
 kf
-kA
+uJ
 kf
 kf
 kf
 lK
-uC
+oD
 jQ
-oV
+kG
 dA
 dA
 dA
@@ -29527,7 +28638,7 @@ dA
 dA
 dA
 dA
-oV
+kG
 jp
 ju
 jQ
@@ -29544,7 +28655,7 @@ uM
 jp
 ju
 jQ
-oV
+kG
 dA
 dA
 dA
@@ -29784,10 +28895,10 @@ dA
 dA
 dA
 dA
-oV
+kG
 jp
-rN
-jR
+ua
+uG
 uH
 jH
 jH
@@ -29798,10 +28909,10 @@ jH
 jH
 jH
 uG
-lL
-rN
+uH
+ua
 jQ
-oV
+kG
 dA
 dA
 dA
@@ -30041,10 +29152,10 @@ dA
 dA
 dA
 dA
-oV
+kG
 jp
-rN
-jR
+ua
+uG
 uH
 jH
 jH
@@ -30055,10 +29166,10 @@ jH
 jH
 jH
 uG
-lL
-rN
+uH
+ua
 jQ
-oV
+kG
 dA
 dA
 dA
@@ -30298,10 +29409,10 @@ dA
 dA
 dA
 dA
-oV
+kG
 jp
-rN
-jR
+ua
+uG
 uA
 jH
 jH
@@ -30312,10 +29423,10 @@ jH
 jH
 jH
 uA
-lL
-rN
+uH
+ua
 jQ
-oV
+kG
 dA
 dA
 dA
@@ -30555,10 +29666,10 @@ dA
 dA
 dA
 dA
-oV
+kG
 jp
-rN
-jR
+ua
+uG
 uH
 jH
 jH
@@ -30569,10 +29680,10 @@ jH
 jH
 jH
 uG
-lL
-rN
+uH
+ua
 jQ
-oV
+kG
 dA
 dA
 dA
@@ -30812,7 +29923,7 @@ dA
 dA
 dA
 dA
-oV
+kG
 jp
 ju
 jQ
@@ -30829,7 +29940,7 @@ uG
 jp
 ju
 jQ
-oV
+kG
 dA
 dA
 dA
@@ -31069,7 +30180,7 @@ dA
 dA
 dA
 dA
-oV
+kG
 jp
 ju
 jQ
@@ -31086,7 +30197,7 @@ uN
 jp
 ju
 jQ
-oV
+kG
 dA
 dA
 dA
@@ -31326,24 +30437,24 @@ dA
 dA
 dA
 dA
-oV
+kG
 jp
-uz
+aq
 kc
 kh
 kh
 kh
-kG
+uI
 kh
 kh
-kG
+uI
 kh
 kh
 kh
 lM
-uC
+oD
 jQ
-oV
+kG
 dA
 dA
 dA
@@ -31583,24 +30694,24 @@ dA
 dA
 dA
 dA
-oV
-qK
-qK
-qK
-qK
-qK
-qK
-qK
+kG
+jH
+jH
+jH
+jH
+jH
+jH
+jH
 jp
 jQ
-qK
-qK
-qK
-qK
-qK
-qK
-qK
-oV
+jH
+jH
+jH
+jH
+jH
+jH
+jH
+kG
 dA
 dA
 dA
@@ -31840,24 +30951,24 @@ dA
 dA
 dA
 dA
-oV
+kG
 jt
-qK
-qK
-qK
-qK
-qK
-jt
+jH
+jH
+jH
+jH
+SS
+Sm
 kP
 kQ
 jt
-qK
-qK
-qK
-qK
-qK
+jH
+jH
+jH
+jH
+jH
 jt
-oV
+kG
 dA
 dA
 dA
@@ -32097,24 +31208,24 @@ dA
 dA
 dA
 dA
-oV
-oV
-oV
-oV
-oV
-oV
-oV
-oV
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
 Lb
-Lb
-oV
-oV
-oV
-oV
-oV
-oV
-oV
-oV
+gs
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
 dA
 dA
 dA
@@ -32362,7 +31473,7 @@ dA
 dA
 dA
 oV
-uz
+ds
 uR
 oV
 dA
@@ -32619,7 +31730,7 @@ dA
 dA
 dA
 oV
-qK
+bf
 qK
 oV
 dA
@@ -32876,7 +31987,7 @@ dA
 dA
 dA
 oV
-qK
+bf
 rH
 oV
 dA
@@ -33133,7 +32244,7 @@ dA
 dA
 dA
 oV
-qK
+bf
 qK
 oV
 dA
@@ -33390,7 +32501,7 @@ oV
 oV
 oV
 oV
-rR
+Si
 rR
 oV
 oV
@@ -33647,7 +32758,7 @@ zb
 oV
 vd
 uQ
-uQ
+vr
 uQ
 uQ
 vd
@@ -33904,7 +33015,7 @@ uW
 oV
 uQ
 uQ
-uQ
+vr
 uQ
 uQ
 uQ
@@ -34161,7 +33272,7 @@ nk
 uO
 qK
 rU
-qK
+bf
 rU
 qK
 rU
@@ -34398,27 +33509,27 @@ dA
 dA
 dA
 bt
-sf
+nE
 se
 si
 rW
-sk
-sk
-sk
-sk
+po
+po
+po
+po
 sl
-sk
-sk
-sk
-sk
-sm
+po
+po
+po
+po
+po
 po
 so
-nk
-uO
-qK
-rV
-qK
+MN
+sg
+TU
+nq
+qI
 rV
 qK
 rV
@@ -34655,8 +33766,8 @@ dA
 dA
 dA
 bt
-sg
 nE
+sm
 qB
 qE
 qJ
@@ -34668,7 +33779,7 @@ qK
 qK
 Ic
 Sn
-qX
+qK
 qK
 my
 nk
@@ -34837,7 +33948,7 @@ dm
 hL
 dm
 dm
-dA
+nU
 dA
 dA
 dA
@@ -34912,8 +34023,8 @@ dA
 dA
 dA
 bt
-sg
 nE
+sm
 qB
 qC
 yC
@@ -34925,7 +34036,7 @@ qU
 Uc
 vg
 vh
-qY
+Uc
 uS
 my
 nk
@@ -35094,7 +34205,7 @@ kY
 de
 lr
 kk
-dA
+nU
 dA
 dA
 dA
@@ -35169,8 +34280,8 @@ dA
 dA
 dA
 bt
-sg
 nE
+sm
 bt
 oV
 oV
@@ -35351,7 +34462,7 @@ ZS
 ZS
 Kq
 fS
-dA
+nU
 dA
 dA
 dA
@@ -35426,8 +34537,8 @@ dA
 dA
 dA
 bt
-sg
 nE
+sm
 cb
 sE
 sE
@@ -35608,7 +34719,7 @@ mc
 mc
 mc
 eG
-dA
+nU
 dA
 dA
 dA
@@ -35683,8 +34794,8 @@ dA
 dA
 dA
 bt
-sg
 nE
+sm
 cb
 sE
 sE
@@ -35940,8 +35051,8 @@ dA
 dA
 dA
 bt
-sg
 nE
+sm
 cb
 sE
 sE
@@ -36197,8 +35308,8 @@ dA
 dA
 dA
 bt
-sg
 nE
+sm
 cb
 sE
 sE
@@ -36454,8 +35565,8 @@ dA
 dA
 dA
 bt
-sg
 nE
+sm
 cb
 sE
 sE
@@ -36711,8 +35822,8 @@ dA
 dA
 dA
 bt
-sg
 nE
+sm
 cb
 sE
 sE
@@ -36968,8 +36079,8 @@ dA
 dA
 dA
 bt
-sg
 nE
+sm
 cb
 sE
 sE
@@ -37225,8 +36336,8 @@ dA
 dA
 dA
 bt
-sg
 nE
+sm
 cb
 sE
 sE
@@ -37482,8 +36593,8 @@ dA
 dA
 dA
 bt
-sg
 nE
+sm
 cb
 sE
 sE
@@ -37725,7 +36836,7 @@ bm
 be
 iz
 nE
-oA
+nE
 vO
 nE
 nE
@@ -37739,8 +36850,8 @@ bn
 bn
 bn
 bn
-sg
 nE
+sm
 cb
 sE
 sE
@@ -37982,22 +37093,22 @@ bm
 bO
 oe
 nE
-bN
-nF
-oD
-nF
-uU
-uV
-uV
-vp
+nE
+nE
+nE
+nE
+ca
+oJ
+oJ
+oJ
 oJ
 oJ
 oJ
 oJ
 vt
 ca
-sg
 nE
+sm
 cb
 sE
 sE
@@ -38241,20 +37352,20 @@ fJ
 nl
 oz
 nE
-oA
+nE
 nE
 bn
 vv
 vq
-vu
+vq
 vw
 lX
 oJ
 bn
 bn
 bn
-sg
 nE
+sm
 cb
 sE
 sE
@@ -38498,7 +37609,7 @@ oi
 jg
 oB
 nE
-oA
+nE
 nP
 bn
 bn
@@ -38510,8 +37621,8 @@ oJ
 bn
 rm
 sc
-sg
 nE
+sm
 cb
 sE
 sE
@@ -38755,7 +37866,7 @@ oi
 jg
 oC
 nE
-oA
+nE
 nP
 bn
 cc
@@ -38767,8 +37878,8 @@ oJ
 bn
 rm
 qD
-sg
 nE
+sm
 cb
 sE
 sE
@@ -38984,12 +38095,12 @@ ab
 aj
 am
 aN
-ae
-ae
-ae
-ae
-ae
-ae
+pG
+pG
+pG
+pG
+pG
+pG
 af
 vD
 xb
@@ -39012,7 +38123,7 @@ jg
 jg
 oC
 nE
-oA
+nE
 nP
 bn
 cc
@@ -39024,8 +38135,8 @@ vs
 bn
 rm
 qD
-sg
 nE
+sm
 cb
 sE
 sE
@@ -39216,12 +38327,12 @@ dw
 Ce
 ud
 ud
-tA
-tA
-tA
-tA
-tA
-tA
+MX
+MX
+MX
+MX
+MX
+MX
 bk
 Gg
 bk
@@ -39249,8 +38360,8 @@ vB
 lJ
 af
 aL
-bf
-ds
+kC
+aW
 kC
 aL
 aD
@@ -39269,7 +38380,7 @@ jg
 jg
 oB
 nE
-oA
+nE
 nP
 bn
 cc
@@ -39281,8 +38392,8 @@ oJ
 bn
 rm
 ic
-sg
 nE
+sm
 cb
 sE
 sE
@@ -39473,28 +38584,28 @@ dw
 Ce
 ud
 ud
-tA
+MX
 XF
-tB
-tA
+Zn
+MX
 XF
-tB
+Zn
 bk
 di
 bk
 dA
 dA
 dA
-qL
-qL
-qL
-qL
-qL
-qL
-qL
+hp
+hp
+hp
+hp
+hp
+hp
+hp
 dA
-ae
-ae
+qL
+qL
 aN
 ao
 aN
@@ -39507,7 +38618,7 @@ aB
 af
 af
 pr
-gr
+aD
 oU
 af
 af
@@ -39526,7 +38637,7 @@ oi
 jg
 oB
 nE
-oA
+nE
 nP
 bn
 bn
@@ -39538,8 +38649,8 @@ bn
 bn
 Rx
 zu
-sg
 nE
+sm
 bP
 bQ
 bQ
@@ -39730,44 +38841,44 @@ XO
 Ce
 ud
 ud
-tA
+MX
 Hf
-tB
-tA
+Zn
+MX
 Hf
-tB
+Zn
 bk
 Gg
 bk
 dA
 dA
 dA
-qL
+hp
 aI
-aQ
-aQ
-aQ
-aQ
-qL
+fa
+fa
+fa
+fa
+hp
 dA
-ae
-ac
-as
-vr
-ae
+qL
+lL
+aj
+ap
+pG
 ay
-ae
-ay
-ay
+pG
 ay
 ay
-ae
-as
-as
-vr
-as
+ay
+ay
+af
+kC
+kC
+kC
+kC
 qT
-ay
+oU
 mi
 as
 as
@@ -39782,21 +38893,21 @@ nG
 oi
 jg
 oE
-sf
-bz
+se
+gr
 wV
-se
-se
-se
-se
-se
-se
-se
-se
-se
-se
-sh
-nE
+gr
+gr
+gr
+gr
+gr
+gr
+gr
+gr
+gr
+gr
+gr
+kA
 nE
 nE
 nE
@@ -39985,13 +39096,13 @@ Ce
 Ce
 Ce
 Ce
-tA
-tA
+MX
+MX
 Mq
-tA
+MX
 Fi
-tA
-tA
+MX
+MX
 Wm
 hp
 dp
@@ -40000,31 +39111,31 @@ hp
 hp
 hp
 hp
-aQ
-aQ
-aQ
-aQ
-aQ
-qL
+fa
+fa
+fa
+fa
+fa
+hp
 pu
-ae
+qL
 ag
 ak
-aq
-as
+uV
+aj
 au
-ae
-ac
-as
-as
+pG
+lL
+aj
+aj
 az
-ae
-as
-as
-vr
-as
-as
-ay
+af
+kC
+kC
+kC
+kC
+kC
+oU
 mj
 as
 as
@@ -40039,7 +39150,7 @@ nl
 oy
 oy
 oF
-sg
+sm
 nE
 nE
 nE
@@ -40242,14 +39353,14 @@ dA
 dA
 dA
 dA
-tA
+MX
 Hq
 Hf
-tA
+MX
 xK
 YT
 LE
-tB
+Zn
 hp
 dq
 dD
@@ -40257,46 +39368,46 @@ dD
 dD
 dD
 hp
-aQ
-aQ
-aQ
-aQ
-aQ
+fa
+fa
+fa
+fa
+fa
 aa
-aQ
-aQ
-aQ
+fa
+fa
+fa
 tO
 ar
-at
+qf
 fq
 aw
-at
-at
-at
+qf
+qf
+qf
 fq
-aw
-at
-at
-gs
-at
+vp
 lf
+lf
+lf
+lf
+lf
+aT
+JU
+at
+at
+at
 pq
-at
-at
-at
-at
-pq
-nF
-nF
-bD
-bE
-bE
-bE
-bE
-bE
-bE
-bF
+jR
+jR
+Eh
+gr
+gr
+gr
+gr
+gr
+gr
+kA
 nE
 bM
 bM
@@ -40499,14 +39610,14 @@ mk
 mk
 mk
 mk
-tA
-tB
-tB
+MX
+Zn
+Zn
 Es
 Yf
-tB
-tB
-tB
+Zn
+Zn
+Zn
 hp
 dr
 dD
@@ -40514,32 +39625,32 @@ dD
 dD
 dD
 hp
-aQ
-aQ
-aQ
-aQ
-aQ
+fa
+fa
+fa
+fa
+fa
 aa
-aQ
-aQ
-aQ
+fa
+fa
+fa
 sb
 ax
-gt
+Wl
 Ff
-ma
-gt
-gt
-gt
+Ma
+Wl
+Wl
+Wl
 Ff
-ma
-gt
-gt
-qI
-gt
+bs
+vx
+vx
+vx
+vx
 vx
 qW
-gt
+Qg
 gt
 gt
 gt
@@ -40756,14 +39867,14 @@ UI
 UI
 qA
 mk
-tA
-tA
-tA
-tA
-tA
-tB
+MX
+MX
+MX
+MX
+MX
+Zn
 UV
-tA
+MX
 hp
 dr
 dD
@@ -40771,32 +39882,32 @@ ef
 eE
 eE
 hp
-aQ
-aQ
-aQ
-aQ
-aQ
-qL
+fa
+fa
+fa
+fa
+fa
+hp
 pu
-ae
+qL
 ai
 al
-aq
+uV
 Ln
 au
-ae
-ac
-as
-as
+pG
+lL
+aj
+aj
 az
-ae
+af
 AI
-as
-vr
-as
-vr
-ay
-mj
+kC
+kC
+kC
+kC
+oU
+Lf
 as
 as
 ro
@@ -41013,13 +40124,13 @@ IG
 Vn
 XD
 mk
-tA
+MX
 zP
 lA
 zP
 Am
-tB
-tB
+Zn
+Zn
 PZ
 hp
 dC
@@ -41029,31 +40140,31 @@ eF
 fa
 hp
 aI
-aQ
-aQ
-aQ
-aQ
-qL
+fa
+fa
+fa
+fa
+hp
 dA
-ae
-ac
-as
-vr
-ae
+qL
+lL
+aj
+ap
+pG
 ay
-ae
-ay
-ay
+pG
 ay
 ay
-ae
+ay
+ay
+af
 aE
-as
-vr
-as
-bs
-ay
-mi
+kC
+kC
+kC
+kC
+oU
+qa
 as
 as
 ml
@@ -41270,13 +40381,13 @@ oq
 Gv
 vn
 mk
-tA
+MX
 PR
 wz
 Ux
-tA
+MX
 Bc
-tB
+Zn
 FH
 db
 dD
@@ -41285,15 +40396,15 @@ dD
 eP
 hp
 hp
-qL
-qL
-qL
-qL
-qL
-qL
+hp
+hp
+hp
+hp
+hp
+hp
 dA
-ae
-ae
+qL
+qL
 aN
 ao
 aN
@@ -41306,11 +40417,11 @@ cj
 af
 af
 pr
-gr
+aD
 oU
 af
 af
-ac
+HU
 as
 as
 as
@@ -41531,9 +40642,9 @@ px
 px
 px
 px
-tA
+MX
 RJ
-tB
+Zn
 Xq
 hp
 dE
@@ -41562,7 +40673,7 @@ vC
 aA
 af
 aF
-aT
+kC
 aW
 kC
 aF
@@ -41765,7 +40876,7 @@ gU
 fD
 dA
 da
-jI
+Vy
 jB
 jF
 jy
@@ -41790,7 +40901,7 @@ Ni
 px
 xa
 Ms
-tB
+Zn
 FH
 hp
 hp
@@ -41811,14 +40922,14 @@ ab
 aj
 am
 aN
-ae
-ae
-ae
-ae
-ae
-ae
+pG
+pG
+pG
+pG
+pG
+pG
 af
-vD
+xb
 xb
 xb
 xb
@@ -42046,10 +41157,10 @@ px
 HG
 px
 Ak
-tB
-tB
+Zn
+Zn
 Tn
-tA
+MX
 dA
 dA
 dA
@@ -42301,17 +41412,17 @@ lY
 lW
 BR
 mp
-tA
-tA
-tB
-Rj
-tA
-tA
-lC
-lC
-lC
-lC
-lC
+MX
+MX
+Zn
+UV
+MX
+MX
+MX
+MX
+MX
+MX
+MX
 kT
 kT
 kT
@@ -42558,13 +41669,13 @@ mo
 uk
 mr
 mt
-tQ
-ww
+Jt
+Nk
 tY
 tY
 Bf
 tV
-lC
+MX
 Jx
 HL
 Ho
@@ -42815,14 +41926,14 @@ lF
 lF
 ms
 mu
-tQ
+Jt
 mQ
 mR
-tB
-tB
-tB
+Zn
+Zn
+Zn
 mS
-xg
+nA
 xg
 xg
 nA
@@ -43072,14 +42183,14 @@ rC
 lF
 ms
 mu
-tQ
-tH
-tB
-tB
+Jt
+BQ
+Zn
+Zn
 uf
-ue
-mZ
-yt
+Df
+Df
+nH
 yt
 yt
 nH
@@ -43303,7 +42414,7 @@ kD
 kD
 ex
 iX
-gU
+iX
 fD
 dA
 dt
@@ -43329,13 +42440,13 @@ rD
 lF
 ms
 mu
-tQ
+Jt
 tL
-tB
-tB
-ub
+Zn
+Zn
+SL
 UE
-lC
+MX
 ni
 mY
 mY
@@ -43560,7 +42671,7 @@ fE
 gO
 dl
 hf
-gU
+iX
 fD
 dA
 dt
@@ -43586,13 +42697,13 @@ rE
 lF
 ms
 mv
-tA
-ua
+MX
+tL
 tN
 tN
-ub
-tW
-lC
+SL
+lI
+MX
 ni
 mY
 mY
@@ -43817,7 +42928,7 @@ eu
 gO
 dH
 fc
-gU
+iX
 fD
 dA
 dA
@@ -43844,12 +42955,12 @@ lF
 ms
 mu
 tR
-ub
+Zn
 tE
 tE
-ub
+SL
 ui
-py
+tS
 ni
 mY
 mY
@@ -44074,7 +43185,7 @@ bx
 gO
 hW
 iX
-gU
+iX
 fD
 dA
 dA
@@ -44104,14 +43215,14 @@ tZ
 uc
 tE
 tE
-ub
+SL
 uj
-lG
-lI
-lI
-lI
-lG
-lG
+lC
+tQ
+tQ
+tQ
+lC
+lC
 dA
 dA
 dA
@@ -44361,14 +43472,14 @@ tS
 rK
 tU
 tU
-ub
+SL
 tX
-lI
+tQ
 nn
-nq
-nq
+Xu
+Xu
 nL
-lG
+lC
 fx
 bO
 ih
@@ -44588,7 +43699,7 @@ dx
 gO
 hW
 iX
-gU
+iX
 fD
 dA
 dA
@@ -44614,18 +43725,18 @@ rG
 lF
 bS
 bm
-pO
+YR
 rJ
-ue
-ue
+Df
+Df
 ug
 TR
-lI
-no
+tQ
+tW
 nu
 nI
 nM
-lG
+lC
 bO
 bm
 rm
@@ -44845,7 +43956,7 @@ pe
 gO
 Hl
 iX
-Gn
+iX
 fD
 dA
 dA
@@ -44871,18 +43982,18 @@ rB
 rB
 bO
 ru
-pO
+YR
 tH
-tB
-tB
-ub
-tB
-lI
+Zn
+Zn
+SL
+Zn
+tQ
 Vf
 nw
 nJ
-nN
-pk
+ub
+pO
 bO
 bS
 rm
@@ -45100,10 +44211,10 @@ gO
 gO
 gO
 gO
-av
-Ru
-WP
-av
+fD
+fD
+fD
+fD
 dA
 dA
 dA
@@ -45128,18 +44239,18 @@ bm
 bm
 bO
 bm
-pO
+YR
 Rw
 mR
-tB
+Zn
+SL
+Zn
+tQ
+Xu
+Xu
+Xu
 ub
-tB
-lI
-nq
-nq
-nq
-nN
-pk
+pO
 ru
 cf
 bO
@@ -45357,10 +44468,10 @@ dA
 dA
 dA
 dA
-av
-Bl
-hF
-av
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -45385,18 +44496,18 @@ bC
 bK
 bO
 bO
-pO
+YR
 ww
 Ck
 uh
 Wr
 TG
 mW
-ns
+mZ
 nx
 nK
 nT
-lG
+lC
 bO
 bm
 bY
@@ -45614,10 +44725,10 @@ dA
 dA
 dA
 dA
-av
-Bl
-hF
-av
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -45642,18 +44753,18 @@ bI
 bO
 bO
 bS
-tA
-tA
-tA
-tA
-tA
-tA
-lG
+MX
+MX
+MX
+MX
+MX
+MX
+lC
 pN
 pN
 pN
 pN
-lG
+lC
 bO
 bm
 bm
@@ -45871,10 +44982,10 @@ dA
 dA
 dA
 dA
-av
-Bl
-hF
-av
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -46122,22 +45233,22 @@ dA
 dA
 dA
 dA
-av
-av
-av
-av
-av
-av
-av
-dy
-jO
-av
-av
-av
-av
-av
-av
-av
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -46379,22 +45490,22 @@ dA
 dA
 dA
 dA
-OM
-Ev
-sI
-gS
-dk
-Zr
-Uy
-ke
-ej
-Uy
-dv
-dk
-gS
-sI
-Ev
-GA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -46636,22 +45747,22 @@ dA
 dA
 dA
 dA
-hm
-pC
-yA
-ke
-it
-ke
-ke
-ke
-wf
-SP
-ke
-fo
-ke
-vA
-pC
-eK
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -46893,22 +46004,22 @@ dA
 dA
 dA
 dA
-TK
-ev
-zJ
-br
-dk
-ea
-ke
-ek
-ek
-ej
-fG
-dk
-br
-hh
-ev
-eR
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -47150,22 +46261,22 @@ dA
 dA
 dA
 dA
-av
-av
-av
-av
-av
-aM
-ke
-eo
-kI
-ej
-CW
-av
-av
-av
-av
-av
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -47407,22 +46518,22 @@ dA
 dA
 dA
 dA
-OM
-Ev
-sI
-gS
-dk
-dj
-ke
-YM
-kO
-ej
-cd
-dk
-gS
-sI
-Ev
-GA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -47664,22 +46775,22 @@ dA
 dA
 dA
 dA
-hm
-pC
-yA
-ke
-fA
-ke
-ke
-ek
-PF
-ej
-ke
-XE
-ke
-vA
-pC
-eK
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -47921,22 +47032,22 @@ dA
 dA
 dA
 dA
-TK
-ev
-hG
-br
-dk
-Fo
-ke
-ek
-ek
-ej
-TB
-dk
-br
-df
-ev
-eR
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -48178,22 +47289,22 @@ dA
 dA
 dA
 dA
-av
-av
-av
-av
-av
-fX
-ke
-ke
-ke
-ej
-Ge
-av
-av
-av
-av
-av
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -48439,14 +47550,14 @@ dA
 dA
 dA
 dA
-av
-fi
-ke
-ek
-ek
-ej
-fs
-av
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -48696,14 +47807,14 @@ dA
 dA
 dA
 dA
-av
-lt
-ke
-ke
-ke
-wf
-iO
-av
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -48953,14 +48064,14 @@ dA
 dA
 dA
 dA
-av
-av
-dz
-ga
-eD
-ly
-av
-av
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -49211,12 +48322,12 @@ dA
 dA
 dA
 dA
-av
-av
-av
-av
-av
-av
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -49817,7 +48928,7 @@ dA
 dA
 dA
 dA
-dA
+oS
 dA
 dA
 dA
@@ -50068,13 +49179,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oS
+oS
+oS
+oS
+oS
+oS
+oS
 dA
 dA
 dA
@@ -50325,13 +49436,13 @@ dA
 dA
 dA
 dA
+oS
+dA
+oS
 dA
 dA
 dA
-dA
-dA
-dA
-dA
+oS
 dA
 dA
 dA
@@ -50582,13 +49693,13 @@ dA
 dA
 dA
 dA
+oS
+dA
+oS
 dA
 dA
 dA
-dA
-dA
-dA
-dA
+oS
 dA
 dA
 dA
@@ -50845,7 +49956,7 @@ dA
 dA
 dA
 dA
-dA
+oS
 dA
 dA
 dA
@@ -51096,13 +50207,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oS
+oS
+oS
+oS
+oS
+oS
+oS
 dA
 dA
 dA
@@ -51358,8 +50469,8 @@ dA
 dA
 dA
 dA
-dA
-dA
+oS
+oS
 dA
 dA
 dA
@@ -51615,8 +50726,8 @@ dA
 dA
 dA
 dA
-dA
-dA
+oS
+oS
 dA
 dA
 dA
@@ -51867,13 +50978,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oS
+oS
+oS
+oS
+oS
+oS
+oS
 dA
 dA
 dA
@@ -52130,7 +51241,7 @@ dA
 dA
 dA
 dA
-dA
+oS
 dA
 dA
 dA
@@ -52381,13 +51492,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oS
+oS
+oS
+oS
+oS
+oS
+oS
 dA
 dA
 dA
@@ -52638,13 +51749,13 @@ dA
 dA
 dA
 dA
+oS
 dA
 dA
 dA
 dA
-dA
-dA
-dA
+oS
+oS
 dA
 dA
 dA
@@ -52895,13 +52006,13 @@ dA
 dA
 dA
 dA
+oS
 dA
 dA
 dA
 dA
-dA
-dA
-dA
+oS
+oS
 dA
 dA
 dA
@@ -53152,13 +52263,13 @@ dA
 dA
 dA
 dA
+oS
 dA
 dA
 dA
 dA
-dA
-dA
-dA
+oS
+oS
 dA
 dA
 dA
@@ -53415,7 +52526,7 @@ dA
 dA
 dA
 dA
-dA
+oS
 dA
 dA
 dA
@@ -53666,13 +52777,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oS
+oS
+oS
+oS
+oS
+oS
+oS
 dA
 dA
 dA
@@ -53925,11 +53036,11 @@ dA
 dA
 dA
 dA
+oS
+oS
 dA
 dA
-dA
-dA
-dA
+oS
 dA
 oS
 oS
@@ -54181,12 +53292,12 @@ dA
 dA
 dA
 dA
+oS
+oS
+oS
+oS
 dA
-dA
-dA
-dA
-dA
-dA
+oS
 dA
 oS
 rm
@@ -54439,8 +53550,8 @@ dA
 dA
 oS
 oS
-oS
-oS
+dA
+dA
 oS
 oS
 oS
@@ -54694,12 +53805,12 @@ dA
 dA
 dA
 dA
-oS
-rm
-rm
-rm
-rm
-rm
+dA
+Yi
+Yi
+Yi
+Yi
+Yi
 rm
 rm
 rm

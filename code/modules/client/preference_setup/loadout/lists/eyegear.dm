@@ -32,6 +32,7 @@
 /datum/gear/eyes/sciencegoggles
 	display_name = "Science Goggles"
 	path = /obj/item/clothing/glasses/science
+	allowed_branches = list(/datum/mil_branch/civilian)
 
 /datum/gear/eyes/sciencegoggles/prescription
 	display_name = "Science Goggles, prescription"
@@ -40,10 +41,12 @@
 /datum/gear/eyes/sciencehud
 	display_name = "Science HUD"
 	path = /obj/item/clothing/glasses/hud/science
+	allowed_branches = list(/datum/mil_branch/civilian)
 
 /datum/gear/eyes/sciencehud/prescription
 	display_name = "Science HUD, prescription"
 	path = /obj/item/clothing/glasses/hud/science/prescription
+	allowed_branches = list(/datum/mil_branch/civilian)
 
 /datum/gear/eyes/security
 	display_name = "Security HUD"
@@ -146,3 +149,4 @@
 /datum/gear/eyes/janitor/prescription
 	display_name = "JaniHUD, prescription"
 	path = /obj/item/clothing/glasses/hud/janitor/prescription
+	allowed_roles = list(/datum/job/janitor)

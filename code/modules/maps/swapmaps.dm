@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:32
-
 /*
 	SwapMaps library by Lummox JR
 	developed for digitalBYOND
@@ -19,7 +17,7 @@
 	- Individual custom player houses
 	- Virtually unlimited terrain
 	- Sharing maps between servers running different instances of the same
-	  game
+		game
 	- Loading and saving pieces of maps for reusable room templates
  */
 

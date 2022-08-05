@@ -23,7 +23,7 @@
 #define IC_FORMAT_NUMBER		"\<NUM\>"
 #define IC_FORMAT_DIR			"\<DIR\>"
 #define IC_FORMAT_BOOLEAN		"\<BOOL\>"
-#define IC_FORMAT_REF			"\<REF\>"
+#define IC_FORMAT_REF			"\<any2ref\>"
 #define IC_FORMAT_LIST			"\<LIST\>"
 #define IC_FORMAT_INDEX			"\<INDEX\>"
 

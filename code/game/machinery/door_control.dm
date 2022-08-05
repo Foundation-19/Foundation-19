@@ -12,7 +12,7 @@
 				2=Network Access
 	*/
 
-	anchored = 1.0
+	anchored = TRUE
 	use_power = 1
 	idle_power_usage = 2
 	active_power_usage = 4
@@ -201,7 +201,7 @@
 	desc = "This is a hole for the lockdown key, this machine is used to open the lockdown button"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "lockdownhole"
-	anchored = 1.0
+	anchored = TRUE
 	use_power = 1
 	idle_power_usage = 2
 	active_power_usage = 4

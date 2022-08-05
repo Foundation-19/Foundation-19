@@ -6,8 +6,8 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 	icon = 'icons/obj/scp294.dmi'
 	icon_state = "coffee_294"
 	layer = 2.9
-	anchored = 1
-	density = 1
+	anchored = TRUE
+	density = TRUE
 	var/uses_left = 12
 	var/last_use = 0
 	var/restocking_timer = 0

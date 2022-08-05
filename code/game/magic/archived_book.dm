@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 29/05/2012 15:03:04
-
 #define BOOK_VERSION_MIN	1
 #define BOOK_VERSION_MAX	2
 #define BOOK_PATH			"data/books/"
@@ -36,7 +34,7 @@ var/global/datum/book_manager/book_mgr = new()
 	set name = "Delete Book"
 	set desc = "Permamently deletes a book from the database."
 	set category = "Admin"
-	if(!src.holder)
+	if(!check_rights(R_INVESTIGATE, FALSE, src))
 		to_chat(src, "Only administrators may use this command.")
 		return
 

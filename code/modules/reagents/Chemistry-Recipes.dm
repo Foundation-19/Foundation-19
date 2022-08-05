@@ -174,8 +174,7 @@
 	result = /datum/reagent/medicine/kelotane
 	required_reagents = list(/datum/reagent/silicon = 1, /datum/reagent/carbon = 1)
 	result_amount = 2
-	log_is_important = 1
-
+	
 /datum/chemical_reaction/peridaxon
 	name = "Peridaxon"
 	result = /datum/reagent/medicine/peridaxon
@@ -348,7 +347,7 @@
 /datum/chemical_reaction/zombiepowder
 	name = "Zombie Powder"
 	result = /datum/reagent/toxin/zombie_powder
-	required_reagents = list(/datum/reagent/toxin/carpotoxin = 5, /datum/reagent/soporific = 5, /datum/reagent/copper = 5)
+	required_reagents = list(/datum/reagent/soporific = 5, /datum/reagent/copper = 5, /datum/reagent/toxin/cyanide = 5)
 	result_amount = 2
 	minimum_temperature = 90 CELSIUS
 	maximum_temperature = 99 CELSIUS
@@ -431,7 +430,14 @@
 /datum/chemical_reaction/rezadone
 	name = "Rezadone"
 	result = /datum/reagent/medicine/rezadone
-	required_reagents = list(/datum/reagent/toxin/carpotoxin = 1, /datum/reagent/cryptobiolin = 1, /datum/reagent/copper = 1)
+	required_reagents = list(
+		/datum/reagent/medicine/arithrazine =1, 
+		/datum/reagent/cryptobiolin = 1, 
+		/datum/reagent/copper = 1, 
+		/datum/reagent/medicine/dermaline = 1,
+		/datum/reagent/medicine/meraline = 1,
+		/datum/reagent/uranium = 1 
+	)
 	result_amount = 3
 
 /datum/chemical_reaction/lexorin
@@ -2294,20 +2300,20 @@
 /datum/chemical_reaction/three_eye
 	name = "Three Eye"
 	result = /datum/reagent/three_eye
-	result_amount = 2
+	result_amount = 3
 	mix_message = "The surface of the oily, iridescent liquid twitches like a living thing."
 	minimum_temperature = 40 CELSIUS
 	reaction_sound = 'sound/effects/psi/power_used.ogg'
 	hidden_from_codex = TRUE
 
 	catalysts = list(
-		/datum/reagent/toxin/carpotoxin = 1,
 		/datum/reagent/enzyme = 1
 	)
 
 	required_reagents = list(
 		/datum/reagent/mindbreaker_toxin = 2,
 		/datum/reagent/toxin/phoron = 1,
+		/datum/reagent/psilocybin = 5,
 		/datum/reagent/blood = 1
 	)
 

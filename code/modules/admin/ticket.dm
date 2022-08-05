@@ -32,7 +32,7 @@ var/list/ticket_panels = list()
 
 	if(timeout == FALSE)
 		var/client/real_client = client_by_ckey(closed_by.ckey)
-		if(status == TICKET_ASSIGNED && (!real_client || !real_client.holder)) // non-admins can only close a ticket if no admin has taken it
+		if(status == TICKET_ASSIGNED && (!real_client || !check_rights(R_INVESTIGATE, FALSE, real_client))) // non-admins can only close a ticket if no admin has taken it
 			return
 
 	src.status = TICKET_CLOSED
@@ -124,7 +124,7 @@ var/list/ticket_panels = list()
 	var/list/ticket_dat = list()
 	for(var/id = tickets.len, id >= 1, id--)
 		var/datum/ticket/ticket = tickets[id]
-		if(C.holder || ticket.owner.ckey == C.ckey)
+		if(check_rights(R_INVESTIGATE, FALSE, C) || ticket.owner.ckey == C.ckey)
 			var/client/owner_client = client_by_ckey(ticket.owner.ckey)
 			var/open = 0
 			var/status = "Unknown status"
@@ -149,15 +149,17 @@ var/list/ticket_panels = list()
 			ticket_dat += "Ticket #[id] - [ticket.owner.key_name(0)] [owner_client ? "" : "(DC)"]<br />[status]<br /><a href='byond://?src=\ref[src];action=view;ticket=\ref[ticket]'>VIEW</a>"
 			if(open)
 				ticket_dat += " - <a href='byond://?src=\ref[src];action=pm;ticket=\ref[ticket]'>PM</a>"
-				if(C.holder)
+				if(check_rights(R_INVESTIGATE, FALSE, C))
 					ticket_dat += " - <a href='byond://?src=\ref[src];action=take;ticket=\ref[ticket]'>[(open == 1) ? "TAKE" : "JOIN"]</a>"
-				if(ticket.status != TICKET_CLOSED && (C.holder || ticket.status == TICKET_OPEN))
+				if(ticket.status != TICKET_CLOSED && (check_rights(R_INVESTIGATE, FALSE, C) || ticket.status == TICKET_OPEN))
 					ticket_dat += " - <a href='byond://?src=\ref[src];action=close;ticket=\ref[ticket]'>CLOSE</a>"
-			if(C.holder)
+			if(check_rights(R_INVESTIGATE, FALSE, C))
 				var/ref_mob = ""
 				if(owner_client)
 					ref_mob = "\ref[owner_client.mob]"
 				ticket_dat += " - <A HREF='?_src_=holder;adminmoreinfo=[ref_mob]'>?</A> - <A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A> - <A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A> - <A HREF='?_src_=holder;narrateto=[ref_mob]'>DN</A>[owner_client ? "- [admin_jump_link(owner_client, src)]" : ""]"
+				if(ticket.status != TICKET_CLOSED)
+					ticket_dat +=  " - <a href='?_src_=holder;autoresponse=[ref_mob]'>Autoresponse</a>"
 			if(open_ticket && open_ticket == ticket)
 				ticket_dat += "</i>"
 			ticket_dat += "</li>"
@@ -220,7 +222,7 @@ var/list/ticket_panels = list()
 			ticket.close(client_repository.get_lite_client(usr.client))
 		if("pm")
 			ticket.take(client_repository.get_lite_client(usr.client))
-			if(usr.client.holder && ticket.owner.ckey != usr.ckey)
+			if(check_rights(R_INVESTIGATE, FALSE, usr) && ticket.owner.ckey != usr.ckey)
 				usr.client.cmd_admin_pm(client_by_ckey(ticket.owner.ckey), ticket = ticket)
 			else if(ticket.status == TICKET_ASSIGNED)
 				// manually check that the target client exists here as to not spam the usr for each logged out admin on the ticket

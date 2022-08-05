@@ -2,15 +2,6 @@
 	..()
 	name = "Encryption key design ([item_name])"
 
-/datum/design/item/encryptionkey/binary
-	name = "binary"
-	desc = "Allows for deciphering the binary channel on-the-fly."
-	id = "binaryencrypt"
-	req_tech = list(TECH_ESOTERIC = 2)
-	materials = list(MATERIAL_STEEL = 300, MATERIAL_GLASS = 300)
-	build_path = /obj/item/device/encryptionkey/binary
-	sort_string = "VASAA"
-
 /datum/design/item/camouflage/AssembleDesignName()
 	..()
 	name = "Camouflage design ([item_name])"
