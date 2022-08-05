@@ -52,7 +52,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return
 
-/obj/item/device/assembly/timer/process(delta_time)
+/obj/item/device/assembly/timer/Process(delta_time)
 	if(timing && (time > 0))
 		time -= delta_time SECONDS
 	if(timing && time <= 0)

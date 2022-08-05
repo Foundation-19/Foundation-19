@@ -50,7 +50,7 @@
 	return
 
 
-/obj/item/device/assembly/infra/process()//Old code
+/obj/item/device/assembly/infra/Process()//Old code
 	if(!on)
 		if(first)
 			QDEL_NULL(first)
@@ -69,7 +69,7 @@
 			spawn(0)
 				if(I)
 					I.limit = 8
-					I.process()
+					I.Process()
 				return
 	return
 
@@ -163,7 +163,7 @@
 	return
 
 
-/obj/item/device/assembly/infra/verb/rotate()//This could likely be better
+/obj/item/device/assembly/infra/verb/rotate_laser()//This could likely be better
 	set name = "Rotate Infrared Laser"
 	set category = "Object"
 	set src in usr
@@ -177,7 +177,7 @@
 
 /obj/effect/beam/i_beam
 	name = "i beam"
-	icon = 'icons/obj/items/weapons/projectiles.dmi'
+	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "ibeam"
 	var/obj/effect/beam/i_beam/next = null
 	var/obj/item/device/assembly/infra/master = null
@@ -204,7 +204,7 @@
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/effect/beam/i_beam/process()
+/obj/effect/beam/i_beam/Process()
 
 	if((!loc || loc.density || !(master)))
 		qdel(src)
@@ -235,22 +235,22 @@
 			spawn(0)
 				if((I && limit > 0))
 					I.limit = limit - 1
-					I.process()
+					I.Process()
 				return
 		else
 			qdel(I)
 	else
 		QDEL_NULL(next)
 	spawn(10)
-		process()
+		Process()
 		return
 	return
 
-/obj/effect/beam/i_beam/Collide()
+/obj/effect/beam/i_beam/Bump(atom/A)
 	qdel(src)
 	return
 
-/obj/effect/beam/i_beam/Collided(atom/movable/AM)
+/obj/effect/beam/i_beam/Bumped(atom/movable/AM)
 	hit()
 	return
 
