@@ -152,7 +152,6 @@
 	)
 	minimal_access = list()
 
-
 /datum/job/juniorroboticist
 	title = "Junior Robotics Technician"
 	department = "Science"
