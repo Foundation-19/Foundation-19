@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
-
 /obj/machinery/computer/operating
 	name = "patient monitoring console"
 	density = TRUE
@@ -12,7 +10,7 @@
 	var/obj/machinery/optable/table = null
 
 /obj/machinery/computer/operating/New()
-	..()
+	. = ..()
 	for(var/D in list(NORTH,EAST,SOUTH,WEST))
 		table = locate(/obj/machinery/optable, get_step(src, D))
 		if (table)
@@ -24,8 +22,8 @@
 	return TRUE
 
 /obj/machinery/computer/operating/interact(mob/user)
-	if ( (get_dist(src, user) > 1 ) || (stat & (BROKEN|NOPOWER)) )
-		if (!istype(user, /mob/living/silicon))
+	if((get_dist(src, user) > 1 ) || (stat & (BROKEN|NOPOWER)))
+		if(!issilicon(user))
 			user.unset_machine()
 			close_browser(user, "window=op")
 			return

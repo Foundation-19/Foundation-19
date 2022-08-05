@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:32
-
 /obj/item/device/mmi/digital/New()
 	src.brainmob = new(src)
 	src.brainmob.set_stat(CONSCIOUS)
@@ -9,7 +7,7 @@
 	src.brainmob.container = src
 	src.brainmob.silent = 0
 	PickName()
-	..()
+	return ..()
 
 /obj/item/device/mmi/digital/proc/PickName()
 	return

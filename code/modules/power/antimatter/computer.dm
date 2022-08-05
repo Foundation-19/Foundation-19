@@ -1,4 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 29/05/2012 15:03:05
 #define STATE_DEFAULT 1
 #define STATE_INJECTOR  2
 #define STATE_ENGINE 3
@@ -16,8 +15,8 @@
 	var/state = STATE_DEFAULT
 
 /obj/machinery/computer/am_engine/New()
-	..()
-	spawn( 24 )
+	. = ..()
+	spawn(24) //ew
 		for(var/obj/machinery/power/am_engine/engine/E in SSmachines.all_machinery)
 			if(E.engine_id == src.engine_id)
 				src.connected_E = E
@@ -27,7 +26,7 @@
 	return
 
 /obj/machinery/computer/am_engine/Topic(href, href_list)
-	if((. = ..()))
+	if((..()))
 		return
 
 	if(!href_list["operation"])

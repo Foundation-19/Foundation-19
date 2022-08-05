@@ -113,6 +113,7 @@ var/list/_client_preferences_by_type
 	description = "Play announcement sound effects"
 	key = "SOUND_ANNOUNCEMENT"
 	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+
 /datum/client_preference/ghost_ears
 	description = "Ghost ears"
 	key = "CHAT_GHOSTEARS"
@@ -244,20 +245,41 @@ var/list/_client_preferences_by_type
 	key = "FLOATING_CHAT"
 	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
 
-/datum/client_preference/goonchat
-	description = "Use Goon Chat"
-	key = "USE_GOONCHAT"
+/datum/client_preference/fancy_tgui
+	description = "Fancy TGUI"
+	key = "FANCY_TGUI"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_YES
 
-/datum/client_preference/goonchat/changed(var/mob/preference_mob, var/new_value)
-	if(preference_mob && preference_mob.client)
-		var/client/C = preference_mob.client
-		if(new_value == GLOB.PREF_YES)
-			C.chatOutput.loaded = FALSE
-			C.chatOutput.start()
-		else
-			C.force_white_theme()
-			winset(C, "output", "is-visible=true;is-disabled=false")
-			winset(C, "browseroutput", "is-visible=false")
+/datum/client_preference/lock_tgui
+	description = "Lock TGUI"
+	key = "LOCK_TGUI"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/fast_mc_refresh
+	description = "Fast MC Refresh"
+	key = "FAST_MC_REFRESH"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/use_tgui_inputs
+	description = "Use TGUI inputs"
+	key = "USE_TGUI_INPUTS"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_YES
+
+/datum/client_preference/large_tgui_inputs
+	description = "Large TGUI inputs buttons"
+	key = "LARGE_TGUI_INPUTS"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/swap_tgui_inputs
+	description = "Swap Sumbmit/Cancle buttons"
+	key = "SWAP_TGUI_INPUTS"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_YES
 
 /********************
 * General Staff Preferences *

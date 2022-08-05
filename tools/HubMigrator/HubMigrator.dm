@@ -100,7 +100,7 @@
 	var/list/medal_data = list()
 	var/regex/datepart_regex = regex(@"[/\s]")
 	while(1)
-		world << "Fetching page [requested_page]"
+		to_chat(usr, "Fetching page [requested_page]")
 		var/list/result = world.Export("http://www.byond.com/games/[hub_url]?format=text&command=view_medals&per_page=[perpage]&page=[requested_page]")
 		if(!result)
 			return
@@ -125,15 +125,15 @@
 			medal_data[key][medal] = out_date.Join("/")
 
 	var/list/giant_list_of_ckeys = params2list(world.GetScores(null,null,hub_address,hub_password))
-	world << "Found [giant_list_of_ckeys.len] as upper scores count."
+	to_chat(usr,"Found [giant_list_of_ckeys.len] as upper scores count.")
 
 	var/list/scores_data = list()
 	for(var/score in valid_scores)
 		var/recieved_count = 0
 		while(1)
-			world << "Fetching [score] scores, offset :[recieved_count] of [score]"
+			to_chat(usr,"Fetching [score] scores, offset :[recieved_count] of [score]")
 			var/list/batch = params2list(world.GetScores(giant_list_of_ckeys.len,recieved_count,score,hub_address,hub_password))
-			world << "Fetched [batch.len] scores for [score]."
+			to_chat(usr,"Fetched [batch.len] scores for [score].")
 			recieved_count += batch.len
 			if(!batch.len)
 				break
@@ -142,7 +142,7 @@
 				if(!scores_data[key])
 					scores_data[key] = list()
 				if(isnum(batch[value]))
-					world << "NUMBER"
+					to_chat(usr,"NUMBER")
 					return
 				scores_data[key][score] = batch[value]
 			if(batch.len < 1000) //Out of scores anyway
@@ -150,7 +150,7 @@
 
 	var/i = 1
 	for(var/key in giant_list_of_ckeys)
-		world << "Generating entries for [key] [i]/[giant_list_of_ckeys.len]"
+		to_chat(usr,"Generating entries for [key] [i]/[giant_list_of_ckeys.len]")
 		var/keyv = ckey(key) //Checkinf if you don't have any manually entered drop tables; juniors on your hub is good idea.
 		var/list/values = list()
 		for(var/cheevo in medal_data[keyv])

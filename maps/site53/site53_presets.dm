@@ -1,4 +1,4 @@
-#define NETWORK_ENGINE "Engineering network"
+#define NETWORK_ENGINE "Engineering Network"
 #define NETWORK_ENTRANCE "Entrance Zone Network"
 #define NETWORK_LCZ "Light Containment Zone Network"
 #define NETWORK_HCZ "Heavy Containment Zone Network"

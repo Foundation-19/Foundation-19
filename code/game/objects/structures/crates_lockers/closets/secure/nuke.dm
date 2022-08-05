@@ -8,8 +8,8 @@
 	icon_opened = "self_destruct_wall_open"
 	icon_broken = "self_destruct_wall_spark"
 	icon_off = "self_destruct_wall_off"
-	anchored = 1
-	density = 0
+	anchored = TRUE
+	density = FALSE
 	wall_mounted = 1
 	req_access = list(access_heads_vault)
 	storage_types = CLOSET_STORAGE_ITEMS

@@ -420,6 +420,22 @@
 	item_state = "Admin_ID"
 	job_access_type = /datum/job/captain
 
+// ERT CARDS
+
+/obj/item/card/id/mtf
+	name = " mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	icon_state = "adminlvl5"
+	item_state = "Admin_ID"
+	job_access_type = /datum/job/mtf
+
+/obj/item/card/id/physics
+	name = " military ID"
+	desc = "A dark purple ID. Looks like the person wearing this won't give it up easy."
+	icon_state = "securitylvl5"
+	item_state = "Sec_ID5"
+	job_access_type = /datum/job/physics
+
 // COMMS CARDS
 
 /obj/item/card/id/commslvl1
@@ -465,13 +481,6 @@
 	icon_state = "securitylvl5"
 	item_state = "Sec_ID5"
 	job_access_type = /datum/job/cmo
-
-/obj/item/card/id/virologist
-	name = " security ID"
-	desc = "A light blue card. Seems almost as unimportant as the person itself."
-	icon_state = "adminlvl2"
-	item_state = "Admin_ID"
-	job_access_type = /datum/job/virologist
 
 /obj/item/card/id/psychiatrist
 	name = " administration ID"
@@ -567,4 +576,4 @@
 	desc = "An ID card issued to Class-D Foundation personnel."
 	icon_state = "classd"
 	item_state = "Admin_ID"
-	job_access_type = /datum/job/officeworker
+	job_access_type = /datum/job/classd

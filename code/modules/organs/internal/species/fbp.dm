@@ -6,6 +6,8 @@
 	organ_tag = BP_CELL
 	parent_organ = BP_CHEST
 	status = ORGAN_ROBOTIC
+	min_bruised_damage = 35 //Buff
+	min_broken_damage = 45 //NERF
 	vital = 1
 	var/open
 	var/obj/item/cell/cell = /obj/item/cell/hyper

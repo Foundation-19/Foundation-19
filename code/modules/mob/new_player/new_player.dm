@@ -1,5 +1,3 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:33
-
 /mob/new_player
 	universal_speak = TRUE
 	invisibility = 101
@@ -19,39 +17,43 @@
 	var/show_invalid_jobs = 0
 
 /mob/new_player/Initialize()
-	verbs += /mob/proc/toggle_antag_pool
+	add_verb(src, /mob/proc/toggle_antag_pool)
+	if(length(GLOB.new_player))
+		forceMove(pick(GLOB.new_player))
 	return ..()
 
-/mob/new_player/Stat()
-	. = ..()
-
-	if(statpanel("Lobby"))
-		if(check_rights(R_INVESTIGATE, 0, src))
-			stat("Game Mode:", "[SSticker.mode ? SSticker.mode.name : SSticker.master_mode] ([SSticker.master_mode])")
-		else
-			stat("Game Mode:", PUBLIC_GAME_MODE)
+/mob/new_player/get_status_tab_items()
+	.=..()
+	if(check_rights(R_INVESTIGATE, 0, src))
+		. += "Game Mode: [SSticker.mode ? SSticker.mode.name : SSticker.master_mode] ([SSticker.master_mode])"
 		var/extra_antags = list2params(additional_antag_types)
-		stat("Added Antagonists:", extra_antags ? extra_antags : "None")
-		stat("Initial Continue Vote:", "[round(config.vote_autotransfer_initial / 600, 1)] minutes")
-		stat("Additional Vote Every:", "[round(config.vote_autotransfer_interval / 600, 1)] minutes")
+		. += "Added Antagonists: [extra_antags ? extra_antags : "None"]"
+	else
+		. += "Game Mode: [PUBLIC_GAME_MODE]"
 
-		if(GAME_STATE <= RUNLEVEL_LOBBY)
-			stat("Time To Start:", "[round(SSticker.pregame_timeleft/10)][SSticker.round_progressing ? "" : " (DELAYED)"]")
-			stat("Players: [totalPlayers]", "Players Ready: [totalPlayersReady]")
-			totalPlayers = 0
-			totalPlayersReady = 0
-			for(var/mob/new_player/player in GLOB.player_list)
-				var/highjob
-				if(player.client)
-					var/show_ready = player.client.get_preference_value(/datum/client_preference/show_ready) == GLOB.PREF_SHOW
-					if(player.client.prefs?.job_high)
-						highjob = " as [player.client.prefs.job_high]"
-					if(!player.is_stealthed())
-						stat("[player.key]", (player.ready && show_ready)?("(Playing[highjob])"):(null))
-				totalPlayers++
-				if(player.ready)totalPlayersReady++
-		else
-			stat("Next Continue Vote:", "[max(round(transfer_controller.time_till_transfer_vote() / 600, 1), 0)] minutes")
+	. += "Initial Continue Vote: [round(config.vote_autotransfer_initial / 600, 1)] minutes"
+	. += "Additional Vote Every: [round(config.vote_autotransfer_interval / 600, 1)] minutes"
+
+	if(SSticker.HasRoundStarted())
+		. += "Next Continue Vote: [max(round(transfer_controller.time_till_transfer_vote() / 600, 1), 0)] minutes"
+		return
+
+	. += "Time To Start: [round(SSticker.pregame_timeleft/10)][SSticker.round_progressing ? "" : " (DELAYED)"]"
+	. += "Players: [totalPlayers]"
+	. += "Players Ready: [totalPlayersReady]"
+	totalPlayers = 0
+	totalPlayersReady = 0
+	for(var/mob/new_player/player in GLOB.player_list)
+		var/highjob
+		if(player.client)
+			var/show_ready = player.client.get_preference_value(/datum/client_preference/show_ready) == GLOB.PREF_SHOW
+			if(player.client.prefs?.job_high)
+				highjob = " as [player.client.prefs.job_high]"
+			if(!player.is_stealthed())
+				. += "[player.key] [(player.ready && show_ready) ? "Playing[highjob]" : null]"
+		totalPlayers++
+		if(player.ready)
+			totalPlayersReady++
 
 /mob/new_player/Topic(href, href_list) // This is a full override; does not call parent.
 	if(usr != src)
@@ -69,6 +71,11 @@
 		if(!check_species_allowed(S))
 			return FALSE
 
+		if(client.prefs.organ_data[BP_CHEST] == "cyborg")
+			if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
+				to_chat(usr, "No FBP without whitelist")
+				return FALSE
+
 		var/should_warn = TRUE
 		if(client.prefs.job_high == job.title)
 			should_warn = FALSE
@@ -80,7 +87,7 @@
 			should_warn = FALSE // If it isn't available there will be its own message.
 
 		if(should_warn)
-			if(alert(client, "You don't have any preferences set for [job.title]. Are you sure you want to join as it?", "Confirm Job Selection", "Yes", "No") == "No")
+			if(tgui_alert(client, "You don't have any preferences set for [job.title]. Are you sure you want to join as it?", "Confirm Job Selection", list("Yes", "No")) != "Yes")
 				return FALSE
 
 		AttemptLateSpawn(job, client.prefs.spawnpoint)
@@ -105,7 +112,7 @@
 		return FALSE
 
 	if(!job || !job.is_available(client))
-		alert("[job.title] is not available. Please try another.")
+		tgui_alert(client, "[job.title] is not available. Please try another.", null, list("Ok"))
 		return FALSE
 	if(job.is_restricted(client.prefs, src))
 		return
@@ -121,7 +128,7 @@
 
 	// Just in case someone stole our position while we were waiting for input from alert() proc
 	if(!job || !job.is_available(client))
-		to_chat(src, alert("[job.title] is not available. Please try another."))
+		tgui_alert(client, "[job.title] is not available. Please try another.", null, list("Ok"))
 		return FALSE
 
 	SSjobs.assign_role(src, job.title, 1)
@@ -145,6 +152,7 @@
 		character.forceMove(C.loc)
 		var/mob/living/silicon/ai/A = character
 		A.on_mob_init()
+		A.client.init_verbs()
 
 		AnnounceCyborg(character, job.title, "has been downloaded to the empty core in \the [character.loc.loc]")
 		SSticker.mode.handle_latejoin(character)
@@ -156,6 +164,7 @@
 	SSticker.mode.handle_latejoin(character)
 	GLOB.universe.OnPlayerLatejoin(character)
 	spawnpoint.after_join(character)
+	character.client.init_verbs()
 	if(job.create_record)
 		if(character.mind.assigned_role != "Robot")
 			CreateModularRecord(character)
@@ -182,7 +191,7 @@
 	var/list/header = list("<html><body><center>")
 
 	header += "<b>Welcome, [name].<br></b>"
-	header += "Round Duration: [roundduration2text()]<br>"
+	header += "Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]<br>"
 
 	if(evacuation_controller.has_evacuated())
 		header += "<font color='red'><b>\The [station_name()] has been evacuated.</b></font><br>"
@@ -250,6 +259,11 @@
 
 /mob/new_player/proc/create_character(turf/spawn_turf)
 	spawning = TRUE
+	if(client.prefs.organ_data[BP_CHEST] == "cyborg")
+		if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
+			to_chat(src, "No FBP without whitelist.")
+			spawning = FALSE
+			return	
 	close_spawn_windows()
 
 	var/mob/living/carbon/human/new_character
@@ -304,6 +318,7 @@
 	new_character.regenerate_icons()
 
 	new_character.key = key		//Manually transfer the key to log them in
+	new_character.client.init_verbs()
 	return new_character
 
 /mob/new_player/proc/ViewManifest()
@@ -323,11 +338,11 @@
 /mob/new_player/proc/check_species_allowed(datum/species/S, show_alert = TRUE)
 	if(!S.is_available_for_join() && !has_admin_rights())
 		if(show_alert)
-			to_chat(src, alert("Your current species, [client.prefs.species], is not available for play."))
+			tgui_alert(client, "Your current species, [client.prefs.species], is not available for play.", null, list("Ok"))
 		return FALSE
 	if(!is_alien_whitelisted(src, S))
 		if(show_alert)
-			to_chat(src, alert("You are currently not whitelisted to play [client.prefs.species]."))
+			tgui_alert(client, "You are currently not whitelisted to play [client.prefs.species].", null, list("Ok"))
 		return FALSE
 	return TRUE
 

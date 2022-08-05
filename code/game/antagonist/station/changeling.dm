@@ -26,7 +26,7 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 /datum/antagonist/changeling/remove_antagonist(var/datum/mind/player, var/show_message, var/implanted)
 	. = ..()
 	if(. && player && player.current)
-		player.current.verbs -= /datum/changeling/proc/EvolutionMenu
+		remove_verb(player.current, /datum/changeling/proc/EvolutionMenu)
 		QDEL_NULL(player.changeling)
 
 /datum/antagonist/changeling/create_objectives(var/datum/mind/changeling)
