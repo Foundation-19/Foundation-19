@@ -7,7 +7,7 @@
 
 /obj/screen/ghost/orbit/Click()
 	var/mob/observer/ghost/G = usr
-	var/mob/fh = input(G, "Orbit", "Orbit a player") as null | anything in GLOB.player_list
+	var/mob/fh = tgui_input_list(G, "Choose a player to orbit", "Orbit", GLOB.player_list)
 	if(istype(fh))
 		G.follow(fh)
 

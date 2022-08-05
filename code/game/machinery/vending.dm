@@ -141,7 +141,8 @@
 /obj/machinery/vending/emag_act(var/remaining_charges, var/mob/user)
 	if (!emagged)
 		emagged = TRUE
-		wires.CutWireIndex(VENDING_WIRE_CONTRABAND, FALSE)
+		wires.on_cut(WIRE_CONTRABAND, FALSE)
+		wires.cut_wires |= WIRE_CONTRABAND
 		req_access.Cut()
 		SSnano.update_uis(src)
 		to_chat(user, "You short out the product lock on \the [src]")

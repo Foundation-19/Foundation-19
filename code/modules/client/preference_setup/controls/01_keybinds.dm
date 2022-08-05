@@ -62,7 +62,7 @@
 
 /datum/category_item/player_setup_item/controls/keybindings/OnTopic(href, list/href_list, mob/user)
 	if(href_list["open_macro_ui"])
-		user.client?.prefs.macros.tgui_interact(user.client)
+		user.client?.prefs.macros.tgui_interact(user)
 
 /proc/sanitize_keybindings(value)
 	var/list/base_bindings = sanitize_islist(value,list())

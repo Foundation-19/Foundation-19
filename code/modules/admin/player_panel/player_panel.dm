@@ -189,7 +189,7 @@
 		if(!M.ckey)
 			continue
 
-		var/color = i % 2 == 0 ? "#6289b7" : "#48709d"
+		var/color = i % 2 == 0 ? "#e6e6e6" : "#f2f2f2"
 
 		var/M_job = ""
 
@@ -500,6 +500,7 @@ GLOBAL_LIST_INIT(pp_status_flags, list(
 	.["glob_mute_bits"] = GLOB.mute_bits
 	.["glob_pp_actions"] = GLOB.pp_actions_data
 	.["glob_span"] = GLOB.narrate_span
+	.["glob_pp_transformables"] = GLOB.pp_transformables
 
 /datum/player_panel/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	. = ..()

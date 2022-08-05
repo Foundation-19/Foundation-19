@@ -38,6 +38,11 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 		SSghost_images.queue_global_image_update()
 	. = ..()
 
+/mob/observer/Login()
+	mind_initialize()
+	mind.active = TRUE
+	..()
+
 /mob/observer/check_airflow_movable()
 	return FALSE
 

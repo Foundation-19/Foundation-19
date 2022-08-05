@@ -518,7 +518,7 @@
 		else if(hacker && !hacker.hacked_apcs_hidden)
 			to_chat(user, "<span class='warning'>Access denied.</span>")
 		else
-			if(has_access(req_access, user.GetAccess()) && !isWireCut(APC_WIRE_IDSCAN))
+			if(has_access(req_access, user.GetAccess()) && !isWireCut(WIRE_IDSCAN))
 				locked = !locked
 				to_chat(user, "You [ locked ? "lock" : "unlock"] the APC interface.")
 				update_icon()
@@ -692,15 +692,15 @@
 			user.visible_message("<span class='warning'>\The [user] slashes at \the [src]!</span>", "<span class='notice'>You slash at \the [src]!</span>")
 			playsound(src.loc, 'sound/weapons/slash.ogg', 100, 1)
 
-			var/allcut = wires.IsAllCut()
+			var/allcut = wires.is_all_cut()
 
 			if(beenhit >= pick(3, 4) && !wiresexposed)
 				wiresexposed = TRUE
 				src.update_icon()
 				src.visible_message("<span class='warning'>\The The [src]'s cover flies open, exposing the wires!</span>")
 
-			else if(wiresexposed && allcut == 0)
-				wires.CutAll()
+			else if(wiresexposed && !allcut)
+				wires.cut_all()
 				src.update_icon()
 				src.visible_message("<span class='warning'>\The [src]'s wires are shredded!</span>")
 			else
@@ -809,8 +809,8 @@
 		else
 			needs_powerdown_sound = TRUE
 
-/obj/machinery/power/apc/proc/isWireCut(var/wireIndex)
-	return wires.IsIndexCut(wireIndex)
+/obj/machinery/power/apc/proc/isWireCut(wire)
+	return wires.is_cut(wire)
 
 
 /obj/machinery/power/apc/CanUseTopic(mob/user, datum/topic_state/state)

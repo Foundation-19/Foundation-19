@@ -64,6 +64,9 @@
 
 	var/mob/new_player/NP = new()
 
+	if(!target.mind)
+		target.mind_initialize()
+
 	target.mind.transfer_to(NP)
 
 	qdel(target)

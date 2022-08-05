@@ -267,7 +267,7 @@
 //Used when someone breaks a camera
 /obj/machinery/camera/proc/destroy()
 	set_broken(TRUE)
-	wires.RandomCutAll()
+	wires.cut_all()
 
 	triggerCameraAlarm()
 	queue_icon_update()
@@ -314,7 +314,7 @@
 	GLOB.camera_alarm.triggerAlarm(loc, src, duration)
 
 /obj/machinery/camera/proc/cancelCameraAlarm()
-	if(wires.IsIndexCut(CAMERA_WIRE_ALARM))
+	if(wires.is_cut(WIRE_CAM_ALARM))
 		return
 
 	alarm_on = 0
@@ -451,6 +451,7 @@
 	if(!wires)
 		return
 	set_broken(FALSE) // Fixes the camera and updates the icon.
-	wires.CutAll()
-	wires.MendAll()
+	for(var/wire in wires.cut_wires)
+		wires.on_cut(wire, TRUE)
+	wires.cut_wires.Cut()
 	update_coverage()

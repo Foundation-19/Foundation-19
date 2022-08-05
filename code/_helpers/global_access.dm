@@ -723,8 +723,6 @@
 			return global.round_progressing;
 		if("rune_list")
 			return global.rune_list;
-		if("same_wires")
-			return global.same_wires;
 		if("secondary_mode")
 			return global.secondary_mode;
 		if("secret_force_mode")
@@ -879,8 +877,6 @@
 			return global.weighted_randomevent_locations;
 		if("whitelist")
 			return global.whitelist;
-		if("wireColours")
-			return global.wireColours;
 		if("world_uplinks")
 			return global.world_uplinks;
 		if("worths")
@@ -1616,8 +1612,6 @@
 			global.round_progressing=newval;
 		if("rune_list")
 			global.rune_list=newval;
-		if("same_wires")
-			global.same_wires=newval;
 		if("secondary_mode")
 			global.secondary_mode=newval;
 		if("secret_force_mode")
@@ -1772,8 +1766,6 @@
 			global.weighted_randomevent_locations=newval;
 		if("whitelist")
 			global.whitelist=newval;
-		if("wireColours")
-			global.wireColours=newval;
 		if("world_uplinks")
 			global.world_uplinks=newval;
 		if("worths")
@@ -2147,7 +2139,6 @@
 	"robot_inventory",
 	"round_progressing",
 	"rune_list",
-	"same_wires",
 	"secondary_mode",
 	"secret_force_mode",
 	"send_emergency_team",
@@ -2225,7 +2216,6 @@
 	"weighted_mundaneevent_locations",
 	"weighted_randomevent_locations",
 	"whitelist",
-	"wireColours",
 	"world_uplinks",
 	"worths",
 	"wrapped_species_by_ref",

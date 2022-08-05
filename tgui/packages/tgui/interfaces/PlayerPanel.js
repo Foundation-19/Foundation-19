@@ -1,5 +1,5 @@
 import { useBackend, useLocalState } from '../backend';
-import { Input, Button, Stack, Section, Tabs, Box, Slider, Tooltip } from '../components';
+import { Input, Button, Stack, Section, Tabs, Box, Slider } from '../components';
 import { Window } from '../layouts';
 
 const PAGES = [
@@ -25,21 +25,21 @@ const PAGES = [
     },
   },
   {
+    title: 'Transform',
+    component: () => TransformActions,
+    color: "orange",
+    icon: "exchange-alt",
+    canAccess: data => {
+      return hasPermission(data, "mob_transform");
+    },
+  },
+  {
     title: 'Fun',
     component: () => FunActions,
     color: "blue",
     icon: "laugh",
     canAccess: data => {
       return hasPermission(data, "fun");
-    },
-  },
-  {
-    title: 'Antag',
-    component: () => AntagActions,
-    color: "blue",
-    icon: "crosshairs",
-    canAccess: data => {
-      return data.is_human;
     },
   },
 ];
@@ -80,7 +80,7 @@ export const PlayerPanel = (props, context) => {
             <Stack.Item align="right">
               <Button
                 icon="window-restore"
-                content="Access Variables"
+                content="View Variables"
                 disabled={!hasPermission(data, "access_variables")}
                 onClick={() => act("access_variables")}
               />
@@ -375,6 +375,36 @@ const PunishmentActions = (props, context) => {
   );
 };
 
+const TransformActions = (props, context) => {
+  const { act, data } = useBackend(context);
+  const { glob_pp_transformables } = data;
+  return (
+    <Section fill>
+      {Object.keys(glob_pp_transformables).map((element, i) => (
+        <Section level={2} title={element} key={i}>
+          <Stack
+            align="right"
+            grow={1}
+          >
+            {glob_pp_transformables[element].map((option, optionIndex) => (
+              <Button.Confirm
+                key={optionIndex}
+                width="100%"
+                height="100%"
+                icon={option.icon}
+                color={option.color}
+                content={option.name}
+                disabled={!hasPermission(data, "mob_transform")}
+                onClick={() => act("mob_transform", { key: option.key })}
+              />
+            ))}
+          </Stack>
+        </Section>
+      ))}
+    </Section>
+  );
+};
+
 const FunActions = (props, context) => {
   const { act, data } = useBackend(context);
   const { glob_span } = data;
@@ -442,43 +472,6 @@ const FunActions = (props, context) => {
           >
             <Box height="100%" pt={2} pb={2} textAlign="center">Detonate</Box>
           </Button>
-        </Section>
-      )}
-    </Section>
-  );
-};
-
-const AntagActions = (props, context) => {
-  const { act, data } = useBackend(context);
-  const { is_human } = data;
-
-  return (
-    <Section fill>
-      {!!is_human && (
-        <Section level={2} title="Mutiny">
-          <Stack
-            align="right"
-            grow={1}
-          >
-            <Button
-              height="100%"
-              width="100%"
-              icon="chess-pawn"
-              color="orange"
-              disabled={!hasPermission(data, "make_mutineer")}
-              onClick={() => act("make_mutineer")}
-              content="Make Mutineer"
-            />
-            <Button
-              height="100%"
-              width="100%"
-              icon="crown"
-              color="orange"
-              disabled={!hasPermission(data, "make_mutineer")}
-              onClick={() => act("make_mutineer", { leader: true })}
-              content="Make Mutineering Leader"
-            />
-          </Stack>
         </Section>
       )}
     </Section>
@@ -572,42 +565,6 @@ const PhysicalActions = (props, context) => {
         </Section>
       )}
       <Section level={2} title="Game">
-        <Stack>
-          {!!is_human && (
-            <Button.Confirm
-              content="Send to cryogenics"
-              icon="undo"
-              width="100%"
-              height="100%"
-              disabled={!hasPermission(data, "cryo_human")}
-              onClick={() => act("cryo_human")}
-            >
-              <Tooltip
-                content="This will delete the mob, with all of their items and re-open the slot for other players to play."
-              />
-            </Button.Confirm>
-          )}
-          <Button.Confirm
-            content="Drop all items"
-            icon="dumpster"
-            width="100%"
-            height="100%"
-            disabled={!hasPermission(data, "strip_equipment")}
-            onClick={() => act("strip_equipment", { drop_items: true })}
-          />
-        </Stack>
-        {!!is_human && (
-          <Stack>
-            <Button.Confirm
-              content="Set Squad"
-              icon="clipboard-list"
-              width="100%"
-              height="100%"
-              disabled={!hasPermission(data, "set_squad")}
-              onClick={() => act("set_squad")}
-            />
-          </Stack>
-        )}
         <Stack
           mt={1}
         >
@@ -622,31 +579,6 @@ const PhysicalActions = (props, context) => {
               unit="Mob Speed"
             />
           )}
-        </Stack>
-      </Section>
-      <Section title="Equipment" level={2}>
-        <Stack
-          align="right"
-          grow={1}
-        >
-          <Button
-            width="100%"
-            height="100%"
-            icon="user-tie"
-            disabled={!hasPermission(data, "select_equipment")}
-            content="Select Equipment"
-            onClick={() => act("select_equipment")}
-            color="orange"
-          />
-          <Button
-            width="100%"
-            height="100%"
-            icon="trash-alt"
-            disabled={!hasPermission(data, "select_equipment")}
-            content="Strip Equipment"
-            onClick={() => act("strip_equipment")}
-            color="red"
-          />
         </Stack>
       </Section>
     </Section>

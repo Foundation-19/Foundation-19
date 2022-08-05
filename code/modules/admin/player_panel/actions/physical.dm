@@ -51,12 +51,8 @@
 		if(!limb)
 			continue
 
-		if(H.has_organ(limb))
-			continue
-
-		var/obj/item/organ/external/L = H.get_organ(limb)
-
-		L.rejuvenate()
+		limb = H.species.has_limbs[limb]["path"]
+		new limb(H)
 
 	to_chat(target, SPAN_NOTICE("You feel your limbs regrow back."))
 
