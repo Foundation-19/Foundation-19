@@ -1,4 +1,4 @@
-/*datum/evacuation_predicate/New()
+/datum/evacuation_predicate/New()
 	return
 
 /datum/evacuation_predicate/Destroy(forced)
@@ -10,4 +10,4 @@
 	return FALSE
 
 /datum/evacuation_predicate/proc/can_call(var/user)
-	return TRUE*/
+	return TRUE
