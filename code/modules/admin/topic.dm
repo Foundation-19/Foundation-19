@@ -334,12 +334,12 @@
 		unbanpanel()
 
 	//JOBBAN'S INNARDS
-	else if(href_list["jobban3"])
+	else if(href_list["jobban1"])
 		if(!check_rights(R_ADMIN,0))
 			to_chat(usr, "<span class='warning'>You do not have the appropriate permissions to add job bans!</span>")
 			return
 
-		var/mob/M = locate(href_list["jobban4"])
+		var/mob/M = locate(href_list["jobban2"])
 		if(!ismob(M))
 			to_chat(usr, "This can only be used on instances of type /mob")
 			return
@@ -351,7 +351,7 @@
 
 		//get jobs for department if specified, otherwise just returnt he one job in a list.
 		var/list/job_list = list()
-		switch(href_list["jobban3"])
+		switch(href_list["jobban1"])
 			if("commanddept")
 				for(var/jobPos in SSjobs.titles_by_department(COM))
 					if(!jobPos)	continue
@@ -427,7 +427,7 @@
 					if(!temp) continue
 					job_list += temp.id
 			else
-				job_list += href_list["jobban3"]
+				job_list += href_list["jobban1"]
 
 		//Create a list of unbanned jobs within job_list
 		var/list/notbannedlist = list()
@@ -522,7 +522,7 @@
 			if(msg)
 				message_admins("[key_name_admin(usr)] unbanned [key_name_admin(M)] from [msg]", 1)
 				to_chat(M, "<span class='danger'>You have been un-jobbanned by [usr.client.ckey] from [msg].</span>")
-				href_list["jobban2"] = 1 // lets it fall through and refresh
+				job_ban(M) // lets it fall through and refresh
 			return 1
 		return 0 //we didn't do anything!
 
