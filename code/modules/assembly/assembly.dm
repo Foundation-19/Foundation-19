@@ -92,7 +92,7 @@
 	return
 
 /obj/item/device/assembly/examine(mob/user)
-	..()
+	.=..()
 	if((in_range(src, user) || loc == usr))
 		if(secured)
 			to_chat(user, "[src] is ready!")

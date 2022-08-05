@@ -26,11 +26,6 @@ GLOBAL_LIST_INIT(pp_transformables, list(
 			color = "green"
 		),
 		list(
-			name = "Diona",
-			key = /mob/living/carbon/human/diona,
-			color = "green"
-		),
-		list(
 			name = "IPC",
 			key = /mob/living/carbon/human/machine,
 			color = "green"
@@ -38,21 +33,6 @@ GLOBAL_LIST_INIT(pp_transformables, list(
 		list(
 			name = "Nabber",
 			key = /mob/living/carbon/human/nabber,
-			color = "green"
-		),
-		list(
-			name = "Farwa",
-			key = /mob/living/carbon/human/farwa,
-			color = "green"
-		),
-		list(
-			name = "Naeara",
-			key = /mob/living/carbon/human/neaera,
-			color = "green"
-		),
-		list(
-			name = "Stok",
-			key = /mob/living/carbon/human/stok,
 			color = "green"
 		),
 		list(

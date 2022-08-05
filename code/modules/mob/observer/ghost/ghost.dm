@@ -170,7 +170,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		var/response
 		if(src.client && check_rights(R_INVESTIGATE, FALSE, src))
 			response = tgui_alert(src, "You have the ability to Admin-Ghost. The regular Ghost verb will announce your presence to dead chat. Both variants will allow you to return to your body using 'aghost'.\n\nWhat do you wish to do?", "Are you sure you want to ghost?", list("Ghost", "A-Ghost", "Stay in body"))
-			if(response == "Admin Ghost")
+			if(response == "A-Ghost")
 				if(!src.client)
 					return
 				src.client.admin_ghost()

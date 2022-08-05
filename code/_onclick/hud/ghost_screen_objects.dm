@@ -28,6 +28,6 @@
 
 /obj/screen/ghost/teleport/Click()
 	var/mob/observer/ghost/G = usr
-	var/A = input(G, "Teleport", "Teleport to an Area") as null | anything in area_repository.get_areas_by_z_level()
+	var/A = tgui_input_list(G, "Teleport", "Teleport to an Area", area_repository.get_areas_by_z_level())
 	if(A != "Cancel")
 		G.dead_tele(A)
