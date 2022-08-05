@@ -178,7 +178,7 @@
 /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerhcz
 	name = OUTFIT_JOB_NAME("HCZ Guard")
 	uniform = /obj/item/clothing/under/scpguardarmband
-	suit = /obj/item/clothing/head/hcz_hazmat
+	suit = /obj/item/clothing/suit/hcz_hazmat
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/seclvl3hcz)
 	l_ear = /obj/item/device/radio/headset/headset_sec_hcz
@@ -187,7 +187,7 @@
 	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/warden = 1,/obj/item/clothing/suit/armor/pcarrier/scp/tactical = 1,/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
-	head = /obj/item/clothing/suit/hcz_hazmat
+	head = /obj/item/clothing/head/hcz_hazmat
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
@@ -266,22 +266,57 @@
 /decl/hierarchy/outfit/job/site90/crew/science/juniorscientist
 	name = OUTFIT_JOB_NAME("Scientist Associate")
 	uniform = /obj/item/clothing/under/scp/suittie
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
 	shoes = /obj/item/clothing/shoes/laceup
 	id_types = list(/obj/item/card/id/sciencelvl1)
-	gloves = /obj/item/clothing/gloves/latex
 	l_ear = /obj/item/device/radio/headset/headset_sci
-	back = /obj/item/storage/backpack/satchel
+	back = /obj/item/storage/backpack/satchel/tox
+	backpack_contents = list(/obj/item/clothing/accessory/tunic = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/science/scientist
 	name = OUTFIT_JOB_NAME("Scientist")
 	uniform = /obj/item/clothing/under/scp/suittie
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat/genetics
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
 	shoes = /obj/item/clothing/shoes/laceup
 	id_types = list(/obj/item/card/id/sciencelvl2)
-	gloves = /obj/item/clothing/gloves/latex
 	l_ear = /obj/item/device/radio/headset/headset_sci
 	l_pocket = /obj/item/book/manual/scp/scisop
+	glasses = /obj/item/clothing/glasses/science
+	back = /obj/item/storage/backpack/messenger/tox
+	backpack_contents = list(/obj/item/clothing/accessory/tunic = 1)
+
+/decl/hierarchy/outfit/job/site90/crew/science/seniorroboticist
+	name = OUTFIT_JOB_NAME("Senior Robotics Technician")
+	uniform = /obj/item/clothing/under/scp/utility
+	suit = /obj/item/clothing/suit/storage/solgov/service
+	shoes = /obj/item/clothing/shoes/workboots
+	id_types = list(/obj/item/card/id/sciencelvl4)
+	gloves = /obj/item/clothing/gloves/insulated
+	l_ear = /obj/item/device/radio/headset/headset_sci
+	l_pocket = /obj/item/book/manual/scp/scisop
+	belt = /obj/item/storage/belt/utility/full
+
+/decl/hierarchy/outfit/job/site90/crew/science/roboticist
+	name = OUTFIT_JOB_NAME("Robotics Technician")
+	uniform = /obj/item/clothing/under/scp/utility
+	suit = /obj/item/clothing/suit/storage/solgov/service
+	shoes = /obj/item/clothing/shoes/workboots
+	id_types = list(/obj/item/card/id/sciencelvl3)
+	gloves = /obj/item/clothing/gloves/insulated
+	l_ear = /obj/item/device/radio/headset/headset_sci
+	l_pocket = /obj/item/book/manual/scp/scisop
+	belt = /obj/item/storage/belt/utility/full
+
+/decl/hierarchy/outfit/job/site90/crew/science/juniorroboticist
+	name = OUTFIT_JOB_NAME("Junior Robotics Technician")
+	uniform = /obj/item/clothing/under/scp/utility
+	suit = /obj/item/clothing/suit/storage/solgov/service
+	shoes = /obj/item/clothing/shoes/workboots
+	id_types = list(/obj/item/card/id/sciencelvl2)
+	gloves = /obj/item/clothing/gloves/thick
+	l_ear = /obj/item/device/radio/headset/headset_sci
+	l_pocket = /obj/item/book/manual/scp/scisop
+	belt = /obj/item/storage/belt/utility/full
 
 /decl/hierarchy/outfit/job/site90/crew/science/seniorscientist
 	name = OUTFIT_JOB_NAME("Senior Scientist")
@@ -292,7 +327,9 @@
 	gloves = /obj/item/clothing/gloves/latex/nitrile
 	l_pocket = /obj/item/book/manual/scp/scisop
 	l_ear = /obj/item/device/radio/headset/headset_sci
-	back = /obj/item/storage/backpack/satchel/pocketbook
+	glasses = /obj/item/clothing/glasses/science
+	back = /obj/item/storage/backpack/messenger/tox
+	backpack_contents = list(/obj/item/clothing/accessory/tunic = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/science/researchdirector
 	name = OUTFIT_JOB_NAME("Research Director")
@@ -303,7 +340,9 @@
 	gloves = /obj/item/clothing/gloves/latex/nitrile
 	l_ear = /obj/item/device/radio/headset/heads/rd
 	l_pocket = /obj/item/book/manual/scp/scisop
-	back = /obj/item/storage/backpack/satchel/pocketbook
+	back = /obj/item/storage/backpack/messenger/tox
+	glasses = /obj/item/clothing/glasses/hud/science
+	backpack_contents = list(/obj/item/clothing/accessory/tunic = 1)
 
 
 // MISC OUTFITS
@@ -484,16 +523,6 @@
 	shoes = /obj/item/clothing/shoes/white
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	id_types = list(/obj/item/card/id/doctor)
-	l_pocket = /obj/item/device/radio
-	l_ear = /obj/item/device/radio/headset/headset_med
-	back = /obj/item/storage/backpack/medic
-
-/decl/hierarchy/outfit/job/ds90/medical/virologist
-	name = OUTFIT_JOB_NAME("Virologist")
-	uniform = /obj/item/clothing/under/rank/medical/scrubs/teal
-	shoes = /obj/item/clothing/shoes/white
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat
-	id_types = list(/obj/item/card/id/virologist)
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_med
 	back = /obj/item/storage/backpack/medic

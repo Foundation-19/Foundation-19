@@ -119,4 +119,4 @@
 
 /mob/living/silicon/proc/log_law(var/law_message)
 	log_and_message_admins(law_message)
-	GLOB.lawchanges += "[station_time_timestamp("hh:mm")] - [usr ? "[key_name(usr)]" : "EVENT"] [law_message]"
+	GLOB.lawchanges += "[time_stamp("hh:mm")] - [usr ? "[key_name(usr)]" : "EVENT"] [law_message]"

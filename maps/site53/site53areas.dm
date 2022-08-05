@@ -211,8 +211,8 @@
 
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/surface/tramhubhallwayentry
-	name = "\improper Tram Hub"
+/area/site53/upper_surface/tramhubhallwayentry
+	name = "\improper Site 53 Entrance"
 	icon_state = "hallC1"
 //	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
 	area_flags = AREA_FLAG_RAD_SHIELDED
@@ -1009,11 +1009,6 @@
 	name = "\improper Psychiatrist's Office"
 	icon_state = "medbay3"
 	ambience = list('sound/ambience/signal.ogg')
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/medical/virology
-	name = "\improper Virology"
-	icon_state = "virology"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/medical/morgue

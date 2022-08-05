@@ -399,7 +399,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/admin_ghost()
 	set category = "Admin"
 	set name = "Aghost"
-	if(!holder)	return
+	if(!check_rights(R_INVESTIGATE, FALSE))	return
 	if(isghost(mob))
 		var/mob/observer/ghost/ghost = mob
 		ghost.reenter_corpse()
@@ -427,7 +427,7 @@ var/list/admin_verbs_mentors = list(
 	set name = "Invisimin"
 	set category = "Admin"
 	set desc = "Toggles ghost-like invisibility (Don't abuse this)"
-	if(holder && mob)
+	if(check_rights(R_INVESTIGATE, FALSE) && mob)
 		if(mob.invisibility == INVISIBILITY_OBSERVER)
 			mob.set_invisibility(initial(mob.invisibility))
 			to_chat(mob, "<span class='danger'>Invisimin off. Invisibility reset.</span>")
@@ -440,7 +440,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/check_antagonists()
 	set name = "Check Antagonists"
 	set category = "Admin"
-	if(holder)
+	if(check_rights(R_INVESTIGATE, FALSE))
 		holder.check_antagonists()
 		log_admin("[key_name(usr)] checked antagonists.")	//for tsar~
 	SSstatistics.add_field_details("admin_verb","CHA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -449,7 +449,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/jobbans()
 	set name = "Display Job bans"
 	set category = "Admin"
-	if(holder)
+	if(check_rights(R_INVESTIGATE, FALSE))
 		if(config.ban_legacy_system)
 			holder.Jobbans()
 		else
@@ -460,7 +460,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/unban_panel()
 	set name = "Unban Panel"
 	set category = "Admin"
-	if(holder)
+	if(check_rights(R_INVESTIGATE, FALSE))
 		if(config.ban_legacy_system)
 			holder.unbanpanel()
 		else
@@ -471,7 +471,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/game_panel()
 	set name = "Game Panel"
 	set category = "Admin"
-	if(holder)
+	if(check_rights(R_INVESTIGATE, FALSE))
 		holder.Game()
 	SSstatistics.add_field_details("admin_verb","GP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
@@ -479,7 +479,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/secrets()
 	set name = "Secrets"
 	set category = "Admin"
-	if (holder)
+	if (check_rights(R_INVESTIGATE, FALSE))
 		holder.Secrets()
 	SSstatistics.add_field_details("admin_verb","S") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
@@ -487,7 +487,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/colorooc()
 	set category = "Fun"
 	set name = "OOC Text Color"
-	if(!holder)	return
+	if(!check_rights(R_INVESTIGATE, FALSE))	return
 	var/response = alert(src, "Please choose a distinct color that is easy to read and doesn't mix with all the other chat and radio frequency colors.", "Change own OOC color", "Pick new color", "Reset to default", "Cancel")
 	if(response == "Pick new color")
 		prefs.ooccolor = input(src, "Please select your OOC colour.", "OOC colour") as color
@@ -545,6 +545,7 @@ var/list/admin_verbs_mentors = list(
 	set category = "Special Verbs"
 	set name = "Drop Bomb"
 	set desc = "Cause an explosion of varying strength at your location."
+	if(!check_rights(R_FUN)) return
 
 	var/turf/epicenter = mob.loc
 	var/list/choices = list("Small Bomb", "Medium Bomb", "Big Bomb", "Custom Bomb")
@@ -624,7 +625,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/toggle_log_hrefs()
 	set name = "Toggle href logging"
 	set category = "Server"
-	if(!holder)	return
+	if(!check_rights(R_SERVER))	return
 	if(config)
 		if(config.log_hrefs)
 			config.log_hrefs = 0
@@ -803,14 +804,14 @@ var/list/admin_verbs_mentors = list(
 /client/proc/playernotes()
 	set name = "Show Player Info"
 	set category = "Admin"
-	if(holder)
+	if(check_rights(R_INVESTIGATE, FALSE))
 		holder.PlayerNotes()
 	return
 
 /client/proc/free_slot_submap()
 	set name = "Free Job Slot (Submap)"
 	set category = "Admin"
-	if(!holder) return
+	if(!check_rights(R_INVESTIGATE, FALSE)) return
 
 	var/list/jobs = list()
 	for(var/thing in SSmapping.submaps)
@@ -834,7 +835,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/free_slot_crew()
 	set name = "Free Job Slot (Crew)"
 	set category = "Admin"
-	if(holder)
+	if(check_rights(R_INVESTIGATE, FALSE))
 		var/list/jobs = list()
 		for (var/datum/job/J in SSjobs.primary_job_datums)
 			if(!J.is_position_available())
@@ -852,7 +853,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/toggleghostwriters()
 	set name = "Toggle ghost writers"
 	set category = "Server"
-	if(!holder)	return
+	if(!check_rights(R_INVESTIGATE, FALSE))	return
 	if(config)
 		if(config.cult_ghostwriter)
 			config.cult_ghostwriter = 0
@@ -866,7 +867,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/toggledrones()
 	set name = "Toggle maintenance drones"
 	set category = "Server"
-	if(!holder)	return
+	if(!check_rights(R_INVESTIGATE, FALSE))	return
 	if(config)
 		if(config.allow_drone_spawn)
 			config.allow_drone_spawn = 0
@@ -883,6 +884,8 @@ var/list/admin_verbs_mentors = list(
 	set name = "Man Up"
 	set desc = "Tells mob to man up and deal with it."
 
+	if(!check_rights(R_FUN)) return
+
 	to_chat(T, "<span class='notice'><b><font size=3>Man up and deal with it.</font></b></span>")
 	to_chat(T, "<span class='notice'>Move on.</span>")
 
@@ -892,6 +895,8 @@ var/list/admin_verbs_mentors = list(
 	set category = "Fun"
 	set name = "Man Up Global"
 	set desc = "Tells everyone to man up and deal with it."
+
+	if(!check_rights(R_FUN)) return
 
 	for (var/mob/T as mob in SSmobs.mob_list)
 		to_chat(T, "<br><center><span class='notice'><b><font size=4>Man up.<br> Deal with it.</font></b><br>Move on.</span></center><br>")
@@ -903,6 +908,9 @@ var/list/admin_verbs_mentors = list(
 	set category = "Fun"
 	set name = "Give Spell"
 	set desc = "Gives a spell to a mob."
+
+	if(!check_rights(R_FUN)) return
+
 	var/datum/spell/S = input("Choose the spell to give to that guy", "ABRAKADABRA") as null|anything in spells
 	if(!S) return
 	T.add_spell(new S)
