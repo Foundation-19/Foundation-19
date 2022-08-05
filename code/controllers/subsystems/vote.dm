@@ -300,7 +300,7 @@ SUBSYSTEM_DEF(vote)
 		if("vote")
 			return submit_vote(voter, params["voteOption"])
 
-/datum/controller/subsystem/vote/ui_close(mob/user)
+/datum/controller/subsystem/vote/tgui_close(mob/user)
 	voting -= user.client?.ckey
 
 /// Mob level verb that allows players to vote on the current vote.

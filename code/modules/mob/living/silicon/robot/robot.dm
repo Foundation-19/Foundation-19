@@ -780,7 +780,7 @@
 /mob/living/silicon/robot/OnSelfTopic(href_list, topic_status)
 	if (topic_status == STATUS_INTERACTIVE)
 		if (href_list["showalerts"])
-			open_subsystem(/datum/nano_module/alarm_monitor/all)
+			open_subsystem(/datum/tgui_module/alarm_monitor/all/robot)
 			return TOPIC_HANDLED
 
 		if (href_list["mod"])

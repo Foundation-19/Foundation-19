@@ -446,6 +446,16 @@
 	cam["z"] = get_z(src)
 	return cam
 
+/obj/machinery/camera/proc/tgui_structure()
+	var/cam[0]
+	cam["name"] = sanitize(c_tag)
+	cam["deact"] = !can_use()
+	cam["camera"] = "\ref[src]"
+	cam["x"] = get_x(src)
+	cam["y"] = get_y(src)
+	cam["z"] = get_z(src)
+	return cam
+
 // Resets the camera's wires to fully operational state. Used by one of Malfunction abilities.
 /obj/machinery/camera/proc/reset_wires()
 	if(!wires)

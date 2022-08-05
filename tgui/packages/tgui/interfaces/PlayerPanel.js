@@ -63,6 +63,7 @@ export const PlayerPanel = (props, context) => {
       title={`${mob_name} Player Panel`}
       width={600}
       height={500}
+      theme="admin"
     >
       <Window.Content scrollable>
         <Section md={1}>

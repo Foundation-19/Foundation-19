@@ -16,7 +16,6 @@
 	size = 12
 	usage_flags = PROGRAM_CONSOLE | PROGRAM_LAPTOP
 	network_destination = "long-range communication array"
-	category = PROG_COMMAND
 	var/datum/comm_message_listener/message_core = new
 
 /datum/computer_file/program/comm/clone()
@@ -49,8 +48,8 @@
 		data["net_comms"] = !!program.get_signal(NTNET_COMMUNICATION) //Double !! is needed to get 1 or 0 answer
 		data["net_syscont"] = !!program.get_signal(NTNET_SYSTEMCONTROL)
 		if(program.computer)
-			data["emagged"] = program.computer.emagged()
-			data["have_printer"] =  program.computer.has_component(PART_PRINTER)
+			data["emagged"] = program.computer.computer_emagged
+			data["have_printer"] =  program.computer.nano_printer
 		else
 			data["have_printer"] = 0
 	else
@@ -152,7 +151,7 @@
 			. = TRUE
 			if(href_list["target"] == "emagged")
 				if(program)
-					if(is_autenthicated(user) && program.computer.emagged() && !issilicon(usr) && ntn_comm)
+					if(is_autenthicated(user) && program.computer.computer_emagged && !issilicon(usr) && ntn_comm)
 						if(centcomm_message_cooldown)
 							to_chat(usr, "<span class='warning'>Arrays recycling. Please stand by.</span>")
 							SSnano.update_uis(src)
@@ -245,7 +244,10 @@
 		if("printmessage")
 			. = TRUE
 			if(is_autenthicated(user) && ntn_comm)
-				if(!program.computer.print_paper(current_viewing_message["contents"],current_viewing_message["title"]))
+				if(!program.computer.nano_printer)
+					to_chat(usr, SPAN_WARNING("Missing Hardware: Your computer does not have required hardware to complete this operation."))
+					return
+				if(!program.computer.nano_printer.print_text(current_viewing_message["contents"],current_viewing_message["title"]))
 					to_chat(usr, "<span class='notice'>Hardware Error: Printer was unable to print the selected file.</span>")
 		if("unbolt_doors")
 			GLOB.using_map.unbolt_saferooms()

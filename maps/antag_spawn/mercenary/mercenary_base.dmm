@@ -2479,7 +2479,7 @@
 /area/map_template/merc_shuttle)
 "CQ" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/computer/modular/preset/full/merc{
+/obj/item/modular_computer/console/preset/full/merc{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
