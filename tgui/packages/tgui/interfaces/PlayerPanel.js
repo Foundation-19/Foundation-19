@@ -136,6 +136,15 @@ export const PlayerPanel = (props, context) => {
                   onClick={() => act("change_perms")}
                 />
               </Stack.Item>
+              <Stack.Item align="right">
+                <Button
+                  ml={1}
+                  icon="exclamation-triangle"
+                  disabled={!hasPermission(data, "alert_message")}
+                  onClick={() => act("alert_message")}
+                  content="Alert Message"
+                />
+              </Stack.Item>
             </Stack>
           )}
         </Section>
