@@ -49,7 +49,7 @@
 	//duties = "<big><b>As the Entrance Zone Senior Agent, you and your team work independently from the guard commander and regular security structure. In this zone, you are tasked with the protection of administrative personnel, together with the agents stationed here. You should not leave your zone under usual SoP, or allow administration to go without protection detail into the facility.</b></big>"
 	economic_power = 4
 	minimal_player_age = 10
-	ideal_character_age = 45
+	ideal_character_age = 27
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ltofficerez
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -91,7 +91,7 @@
 	supervisors = "the Guard/Senior Agent"
 	economic_power = 4
 	minimal_player_age = 5
-	ideal_character_age = 30
+	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerez
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -129,7 +129,7 @@
 	supervisors = "the Guard/Zone Commander"
 	economic_power = 4
 	minimal_player_age = 0
-	ideal_character_age = 27
+	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerez
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -165,7 +165,7 @@
 	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You should not leave your zone under usual SoP</b></big>"
 	economic_power = 4
 	minimal_player_age = 10
-	ideal_character_age = 45
+	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ltofficerhcz
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -267,7 +267,7 @@
 	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You also carry the responsibility of guarding the D-Cells. You should not leave your zone under usual SoP</b></big>"
 	economic_power = 4
 	minimal_player_age = 10
-	ideal_character_age = 45
+	ideal_character_age = 30
 //	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ltofficer
 	allowed_branches = list(
 		/datum/mil_branch/security
