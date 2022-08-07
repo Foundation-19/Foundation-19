@@ -541,6 +541,20 @@
 /obj/effect/floor_decal/carpet/blue2,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/assignmentbubble)
+"bD" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/medicalpost/storage)
 "bF" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8023,7 +8037,7 @@
 /area/site53/uhcz/scp8containment)
 "ux" = (
 /obj/machinery/camera/autoname{
-	network = list("Light Containment Zone Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "247lockdown";
@@ -8458,7 +8472,7 @@
 "vE" = (
 /obj/structure/closet/secure_closet/mtf/breachshotguns,
 /obj/machinery/camera/autoname{
-	network = list("Light Containment Zone Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
@@ -10849,6 +10863,9 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/dropper/industrial,
 /obj/item/storage/box/pillbottles,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "CM" = (
@@ -15205,14 +15222,14 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/hallway)
 "Pu" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
-	},
 /obj/effect/floor_decal/corner/b_green/mono,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
 	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
@@ -15679,7 +15696,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "SCP-008-3";
 	dir = 4;
-	network = list("Engineering Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -16172,9 +16189,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 8
-	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
 "Sz" = (
@@ -16500,7 +16515,7 @@
 "TB" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance Zone Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment)
@@ -16852,25 +16867,21 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "UO" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
 /obj/machinery/alarm{
 	pixel_y = 23;
 	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
+/obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "UP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "UQ" = (
@@ -17099,14 +17110,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
 "VB" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
 /obj/machinery/button/blast_door{
 	id_tag = "DCZChem";
 	name = "Chemistry Shutters";
 	pixel_y = 32
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "VE" = (
@@ -17182,7 +17191,10 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
 "VN" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "VO" = (
@@ -17537,7 +17549,7 @@
 "WR" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Heavy Containment Zone Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -17638,16 +17650,16 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
@@ -18141,7 +18153,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "SCP-008-1";
 	dir = 4;
-	network = list("Engineering Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -18270,13 +18282,13 @@
 /area/site53/llcz/dclass/medicalpost/morgue)
 "Zt" = (
 /obj/structure/cable/green,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
 /obj/effect/floor_decal/corner/b_green/mono,
 /obj/machinery/power/apc{
 	name = "south bump";
 	pixel_y = -24
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
@@ -25055,7 +25067,7 @@ LR
 rI
 xU
 FH
-Rv
+bD
 Pu
 dK
 bI
