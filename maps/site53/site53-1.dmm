@@ -8037,7 +8037,7 @@
 /area/site53/uhcz/scp8containment)
 "ux" = (
 /obj/machinery/camera/autoname{
-	network = list("Light Containment Zone Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "247lockdown";
@@ -8472,7 +8472,7 @@
 "vE" = (
 /obj/structure/closet/secure_closet/mtf/breachshotguns,
 /obj/machinery/camera/autoname{
-	network = list("Light Containment Zone Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
@@ -15695,7 +15695,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "SCP-008-3";
 	dir = 4;
-	network = list("Engineering Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -16514,7 +16514,7 @@
 "TB" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("Entrance Zone Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment)
@@ -17546,7 +17546,7 @@
 "WR" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
-	network = list("Heavy Containment Zone Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
@@ -18150,7 +18150,7 @@
 /obj/machinery/camera/autoname{
 	c_tag = "SCP-008-1";
 	dir = 4;
-	network = list("Engineering Network")
+	network = list("SCP-247 CCTV Network")
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
