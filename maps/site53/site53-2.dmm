@@ -1867,6 +1867,12 @@
 /area/site53/reswing/robotics)
 "afk" = (
 /obj/structure/table/standard,
+/obj/item/device/kit/paint/flames_blue,
+/obj/item/device/kit/paint/camouflage,
+/obj/item/device/kit/paint/camouflage/forest,
+/obj/item/device/paint_sprayer,
+/obj/item/device/paint_sprayer,
+/obj/item/device/paint_sprayer,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
 "afl" = (
@@ -25077,6 +25083,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"bmU" = (
+/obj/item/storage/toolbox/mechanical,
+/turf/simulated/floor/reinforced,
+/area/site53/reswing/robotics)
 "bpN" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
@@ -25733,6 +25743,10 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/serverfarmtunnel)
+"cYr" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/simulated/floor/reinforced,
+/area/site53/reswing/robotics)
 "cZG" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/monotile,
@@ -26748,6 +26762,10 @@
 /obj/item/folder/nt/rd,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
+"fYI" = (
+/obj/item/weldingtool,
+/turf/simulated/floor/reinforced,
+/area/site53/reswing/robotics)
 "fZC" = (
 /turf/simulated/floor/tiled/freezer,
 /area/site53/surface/bunker)
@@ -29047,6 +29065,10 @@
 /obj/machinery/computer/cryopod/robot{
 	pixel_y = 31
 	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/item/paper/crumpled/bloody{
+	info = ("I'm giving up on trying to repair this thing. I damn near severed my finger trying to repair it. We used to use this thing to train the security and logistics teams on exosuit use, although before it broke down we used it for lugging around heavy objects. I've done some of the work, but more needs to be done.")
+	},
 /turf/simulated/floor/reinforced,
 /area/site53/reswing/robotics)
 "mfe" = (
@@ -29715,6 +29737,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
+"nQW" = (
+/mob/living/exosuit/premade/powerloader/old{
+	desc = "An ancient, but well-liked cargo handling exosuit. The paint is starting to flake. A small section of the roll cage appears to be encrusted with blood..."
+	},
+/obj/effect/decal/cleanable/blood/gibs/robot,
+/turf/simulated/floor/reinforced,
+/area/site53/reswing/robotics)
 "nRo" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -30579,6 +30608,10 @@
 /obj/item/device/tape/random,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
+"qjT" = (
+/obj/item/storage/toolbox/electrical,
+/turf/simulated/floor/reinforced,
+/area/site53/reswing/robotics)
 "qkl" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
@@ -33342,6 +33375,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
+"xQD" = (
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/reinforced,
+/area/site53/reswing/robotics)
 "xQK" = (
 /obj/machinery/computer/rdservercontrol{
 	dir = 4
@@ -68653,8 +68690,8 @@ azA
 azA
 aIi
 mdA
-agx
-agx
+xQD
+qjT
 aeU
 aJn
 aeZ
@@ -68912,9 +68949,9 @@ azA
 azA
 azA
 aIi
-agx
+bmU
 cDv
-agx
+cYr
 aeU
 czT
 aIi
@@ -69172,8 +69209,8 @@ azA
 azA
 azA
 aIi
-agx
-agx
+nQW
+fYI
 tbC
 aeU
 xxC
