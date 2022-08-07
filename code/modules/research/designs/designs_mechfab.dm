@@ -161,7 +161,7 @@
 	name = "combat exosuit sensors"
 	id = "combat_head"
 	time = 60
-	materials = list(MATERIAL_TITANIUM = 10000, MATERIAL_SILVER = 5000)
+	materials = list(MATERIAL_TITANIUM = 10000, MATERIAL_SILVER = 2500, MATERIAL_GOLD = 2500)
 	build_path = /obj/item/mech_component/sensors/combat
 	req_tech = list(TECH_COMBAT = 2)
 
@@ -169,7 +169,7 @@
 	name = "combat exosuit chassis"
 	id = "combat_body"
 	time = 60
-	materials = list(MATERIAL_STEEL = 20000, MATERIAL_TITANIUM = 15000, MATERIAL_PLASTEEL = 10000)
+	materials = list(MATERIAL_STEEL = 20000, MATERIAL_TITANIUM = 12500, MATERIAL_PLASTEEL = 10000)
 	build_path = /obj/item/mech_component/chassis/combat
 	req_tech = list(TECH_COMBAT = 2)
 
@@ -253,7 +253,7 @@
 	name = "heavy exosuit sensors"
 	id = "heavy_head"
 	time = 35
-	materials = list(MATERIAL_PLASTEEL = 7500, MATERIAL_URANIUM = 5000)
+	materials = list(MATERIAL_PLASTEEL = 7500, MATERIAL_URANIUM = 3500)
 	build_path = /obj/item/mech_component/sensors/heavy
 	req_tech = list(TECH_COMBAT = 2)
 
@@ -275,7 +275,7 @@
 	name = "heavy exosuit motivators"
 	id = "heavy_legs"
 	time = 35
-	materials = list(MATERIAL_PLASTEEL = 15000, MATERIAL_URANIUM = 5000)
+	materials = list(MATERIAL_PLASTEEL = 15000, MATERIAL_URANIUM = 3500)
 	build_path = /obj/item/mech_component/propulsion/heavy
 
 /datum/design/item/mechfab/exosuit/spider
