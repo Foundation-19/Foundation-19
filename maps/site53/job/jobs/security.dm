@@ -102,7 +102,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
 	                    SKILL_FORENSICS   = SKILL_TRAINED)
-	skill_points = 28
+	skill_points = 25
 
 /datum/job/ltofficerhcz
 	title = "HCZ Zone Commander"
@@ -148,7 +148,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
 	                    SKILL_FORENSICS   = SKILL_TRAINED)
-	skill_points = 28
+	skill_points = 25
 
 /datum/job/ltofficerez
 	title = "EZ Supervisor"
@@ -201,7 +201,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
 	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 28
+	skill_points = 25
 
 //##
 // OFFICERS
@@ -255,7 +255,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_FORENSICS   = SKILL_TRAINED)
-	skill_points = 20
+	skill_points = 21
 
 /datum/job/ncoofficerhcz
 	title = "HCZ Sergeant"
@@ -301,7 +301,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
 	                    SKILL_FORENSICS   = SKILL_TRAINED)
-	skill_points = 25
+	skill_points = 21
 
 /datum/job/ncoofficerez
 	title = "EZ Senior Agent"
@@ -350,7 +350,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 25
+	skill_points = 21
 //##
 //JUNIOR OFFICER
 //##
@@ -402,7 +402,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_FORENSICS   = SKILL_TRAINED)
-	skill_points = 20
+	skill_points = 17
 
 /datum/job/enlistedofficerhcz
 
@@ -449,7 +449,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_FORENSICS   = SKILL_TRAINED)
-	skill_points = 20
+	skill_points = 17
 
 /datum/job/enlistedofficerez
 
@@ -498,5 +498,5 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 20
+	skill_points = 17
 
