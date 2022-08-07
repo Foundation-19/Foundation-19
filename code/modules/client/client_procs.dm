@@ -185,10 +185,6 @@
 			qdel(src)
 			return
 
-	if(!config.panic_bunker && get_player_age(ckey) < config.panic_bunker_age)
-		message_admins("[ckey] cid:[computer_id] ip:[address] joined for the first time.")
-		log_admin("[ckey] cid:[computer_id] ip:[address] joined for the first time.")
-
 	// Change the way they should download resources.
 	if(config.resource_urls && config.resource_urls.len)
 		src.preload_rsc = pick(config.resource_urls)
