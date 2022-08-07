@@ -235,7 +235,7 @@
 	slot_flags = 0
 	default_material = MATERIAL_STEEL
 	base_parry_chance = 0 //Irrelevant for exosuits, revise if this changes
-	max_force = 25
+	max_force = 40 // Should be reworked later to use the materials system and care about the mecha's arm damage, for now 40/20 should do
 	force_multiplier = 0.75 // Equals 20 AP with 25 force
 	unbreakable = TRUE //Else we need a whole system for replacement blades
 	attack_cooldown_modifier = 10

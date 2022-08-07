@@ -29,9 +29,9 @@
 	exosuit_desc_string = "super-heavy reinforced manipulators"
 	icon_state = "heavy_arms"
 	desc = "Designed to function where any other piece of equipment would have long fallen apart, the Hephaestus Superheavy Lifter series can take a beating and excel at delivering it."
-	melee_damage = 25
+	melee_damage = 50
 	action_delay = 15
-	max_damage = 90
+	max_damage = 200
 	power_use = 60
 
 /obj/item/mech_component/propulsion/heavy
@@ -41,7 +41,7 @@
 	icon_state = "heavy_legs"
 	move_delay = 5
 	turn_delay = 5
-	max_damage = 160
+	max_damage = 250
 	power_use = 100
 
 /obj/item/mech_component/sensors/heavy
@@ -49,7 +49,7 @@
 	exosuit_desc_string = "a reinforced monoeye"
 	desc = "A solitary sensor moves inside a recessed slit in the armour plates."
 	icon_state = "heavy_head"
-	max_damage = 120
+	max_damage = 175
 	power_use = 0
 
 /obj/item/mech_component/sensors/heavy/prebuild()
@@ -64,8 +64,8 @@
 	pilot_coverage = 100
 	exosuit_desc_string = "a heavily armoured chassis"
 	icon_state = "heavy_body"
-	max_damage = 150
-	mech_health = 500
+	max_damage = 300
+	mech_health = 700
 	power_use = 50
 	has_hardpoints = list(HARDPOINT_BACK)
 
