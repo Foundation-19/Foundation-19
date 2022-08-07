@@ -30246,6 +30246,23 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp096)
+"oAS" = (
+/obj/structure/closet/secure_closet/mtf/breachautomatics,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/effect/floor_decal/corner/black/full,
+/obj/machinery/button/blast_door{
+	id_tag = "HCZ Secure Armoury";
+	name = "HCZ Secure Armoury";
+	pixel_y = 22;
+	req_access = list("ACCESS_SECURITY_LEVEL4")
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "oBq" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -32850,7 +32867,7 @@
 	dir = 1;
 	id_tag = "HCZ Secure Armoury";
 	name = "HCZ Secure Armoury";
-	pixel_y = -20;
+	pixel_y = -22;
 	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/structure/closet/crate/bin{
@@ -96137,7 +96154,7 @@ jxJ
 xbL
 viK
 ixi
-iix
+oAS
 iix
 moW
 aDD
