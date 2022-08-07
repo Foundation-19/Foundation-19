@@ -18,7 +18,7 @@
 
 	var/speed = 1
 	var/mat_efficiency = 1
-	var/list/materials = list(MATERIAL_STEEL = 0, MATERIAL_ALUMINIUM = 0, MATERIAL_PLASTIC = 0, MATERIAL_GLASS = 0, MATERIAL_GOLD = 0, MATERIAL_SILVER = 0, MATERIAL_PHORON = 0, MATERIAL_URANIUM = 0, MATERIAL_DIAMOND = 0)
+	var/list/materials = list(MATERIAL_STEEL = 0, MATERIAL_ALUMINIUM = 0, MATERIAL_PLASTIC = 0, MATERIAL_GLASS = 0, MATERIAL_GOLD = 0, MATERIAL_SILVER = 0, MATERIAL_PLASTEEL = 0, MATERIAL_TITANIUM = 0, MATERIAL_PHORON = 0, MATERIAL_URANIUM = 0, MATERIAL_DIAMOND = 0)
 	var/res_max_amount = 200000
 
 	var/datum/research/files
@@ -288,6 +288,10 @@
 			mattype = /obj/item/stack/material/glass
 		if(MATERIAL_ALUMINIUM)
 			mattype = /obj/item/stack/material/aluminium
+		if(MATERIAL_TITANIUM)
+			mattype = /obj/item/stack/material/titanium
+		if(MATERIAL_PLASTEEL)
+			mattype = /obj/item/stack/material/plasteel
 		if(MATERIAL_PLASTIC)
 			mattype = /obj/item/stack/material/plastic
 		if(MATERIAL_GOLD)

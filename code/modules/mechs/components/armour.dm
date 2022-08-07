@@ -21,7 +21,7 @@
 	icon_state = "armor_r"
 	icon_state_broken = "armor_r_broken"
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT,
+		melee = ARMOR_MELEE_MAJOR,
 		bullet = ARMOR_BALLISTIC_PISTOL,
 		laser = ARMOR_LASER_HANDGUNS,
 		energy = ARMOR_ENERGY_MINOR,

@@ -50,7 +50,7 @@
 	desc = "A solitary sensor moves inside a recessed slit in the armour plates."
 	icon_state = "heavy_head"
 	max_damage = 175
-	power_use = 0
+	power_use = 50
 
 /obj/item/mech_component/sensors/heavy/prebuild()
 	..()
