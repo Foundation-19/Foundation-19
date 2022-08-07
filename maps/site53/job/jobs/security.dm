@@ -94,14 +94,14 @@
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_TRAINED,
+	                    SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_TRAINED,
 	                    SKILL_HAULING     = SKILL_TRAINED,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
 	skill_points = 28
 
 /datum/job/ltofficerhcz
@@ -147,7 +147,7 @@
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
 	skill_points = 28
 
 /datum/job/ltofficerez
@@ -192,11 +192,11 @@
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_HAULING     = SKILL_TRAINED,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_COMPUTER    = SKILL_TRAINED,
 	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_TRAINED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_FORENSICS   = SKILL_EXPERIENCED)
+	                    SKILL_FORENSICS   = SKILL_MASTER)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
@@ -254,7 +254,7 @@
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
 	skill_points = 20
 
 /datum/job/ncoofficerhcz
@@ -300,7 +300,7 @@
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
 	skill_points = 25
 
 /datum/job/ncoofficerez
@@ -341,10 +341,10 @@
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_COMPUTER    = SKILL_TRAINED,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
-	                    SKILL_WEAPONS     = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_TRAINED,
+	                    SKILL_WEAPONS     = SKILL_TRAINED,
 	                    SKILL_FORENSICS   = SKILL_EXPERIENCED)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
@@ -401,7 +401,7 @@
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
 	skill_points = 20
 
 /datum/job/enlistedofficerhcz
@@ -448,7 +448,7 @@
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
 	skill_points = 20
 
 /datum/job/enlistedofficerez
