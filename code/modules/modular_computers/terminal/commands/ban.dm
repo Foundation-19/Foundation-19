@@ -21,7 +21,7 @@
 		else
 			return "[name]: There are no banned network ids."
 
-	if(!has_access(list("ACCESS_ENGINEERING_LEVEL3"), user.GetAccess()))
+	if(!has_access(list(access_engineeringlvl3), user.GetAccess()))
 		return "[name]: ACCESS DENIED"
 	var/nid = text2num(copytext(text, 11))
 	var/arg = copytext(text, 8, 9)
