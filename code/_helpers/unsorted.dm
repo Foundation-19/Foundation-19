@@ -1247,7 +1247,7 @@ targets = mob or list of mobs to show it to.
 duration = how long it lingers after it finishes ticking.
 
 message = the message to display. Due to using maptext it isn't very flexible format-wise. 11px font, up to 480 pixels per line.
-Use \n for line breaks. Single-character HTML tags (<b>, <i>, <u> etc.) are handled correctly but others display strangely.
+Use \n for line breaks. Single-character HTML tags (<b></b>, <i></i>, <u></u> etc.) are handled correctly but others display strangely.
 Note that maptext can display text macros in strange ways, ex. \improper showing as "ÿ". Lines containing only spaces,
 including ones only containing "\improper ", don't display.
 
