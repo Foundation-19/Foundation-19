@@ -39,7 +39,7 @@
 	l_hand = /obj/item/storage/briefcase/crimekit
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/det
-	gloves = /obj/item/clothing/gloves/forenic
+	gloves = /obj/item/clothing/gloves/forensic
 
 /decl/hierarchy/outfit/job/site90/crew/command/commsofficer
 	name = OUTFIT_JOB_NAME("Communications Officer")
