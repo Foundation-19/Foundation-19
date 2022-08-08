@@ -427,6 +427,17 @@
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
 	belt = /obj/item/gun/projectile/pistol/m1911
 
+/decl/hierarchy/outfit/job/thirep
+	name = OUTFIT_JOB_NAME("thirep")
+	uniform = /obj/item/clothing/under/rank/chaplain
+	l_hand = /obj/item/storage/bible
+	id_types = list(/obj/item/card/id/adminlvl3)
+	pda_type = /obj/item/modular_computer/pda/medical
+	l_ear = /obj/item/device/radio/headset/heads/hos/thi
+	belt = /obj/item/gun/projectile/pistol/m1911
+	back = /obj/item/storage/backpack/satchel/pocketbook
+	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
+
 /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
 	name = OUTFIT_JOB_NAME("O5 Representative")
 	uniform = /obj/item/clothing/under/suit_jacket/really_black
