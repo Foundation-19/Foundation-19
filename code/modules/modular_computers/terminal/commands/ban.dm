@@ -9,7 +9,7 @@
 		"NOTICE: Requires network operator access for viewing, and admin access for modification"
 	)
 	pattern = "^banned"
-	req_access = list("ACCESS_ENGINEERING_LEVEL3")
+	req_access = list(access_engineeringlvl3)
 	skill_needed = SKILL_TRAINED
 
 /datum/terminal_command/banned/proper_input_entered(text, mob/user, datum/terminal/terminal)
