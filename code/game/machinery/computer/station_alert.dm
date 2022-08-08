@@ -7,6 +7,7 @@
 	light_color = "#e6ffff"
 	machine_name = "alert console"
 	machine_desc = "A compact monitoring system that displays a readout of all active atmosphere, camera, and fire alarms on the network."
+	base_type = /obj/machinery/computer/station_alert
 	var/datum/tgui_module/alarm_monitor/alarm_monitor
 	var/monitor_type = /datum/tgui_module/alarm_monitor
 
