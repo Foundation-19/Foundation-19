@@ -131,19 +131,3 @@ var/can_call_ert
 
 	sleep(600 * 5)
 	send_emergency_team = 0 // Can no longer join the ERT.
-
-/datum/evacuation_predicate/ert
-	var/prevent_until
-
-/datum/evacuation_predicate/ert/New()
-	..()
-	prevent_until = world.time + 30 MINUTES
-
-/datum/evacuation_predicate/ert/is_valid()
-	return world.time < prevent_until
-
-/datum/evacuation_predicate/ert/can_call(var/user)
-	if(world.time >= prevent_until)
-		return TRUE
-	to_chat(user, "<span class='warning'>An emergency response team has been dispatched. Evacuation requests will be denied until [station_time_timestamp("hh:mm", prevent_until - world.time)].</span>")
-	return FALSE
