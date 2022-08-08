@@ -27,6 +27,20 @@
 	l_ear = /obj/item/device/radio/headset/heads/hop
 	back = /obj/item/storage/backpack/satchel/pocketbook
 
+/decl/hierarchy/outfit/job/site90/crew/command/headofaudit
+	name = OUTFIT_JOB_NAME("Head Auditor")
+	uniform = /obj/item/clothing/under/det
+	shoes = /obj/item/clothing/shoes/dress
+	suit = /obj/item/clothing/suit/storage/det_trench
+	id_types = list(/obj/item/card/id/adminlvl4)
+	l_ear = /obj/item/device/radio/headset/heads/hop
+	back = /obj/item/storage/backpack/satchel/pocketbook
+	belt = /obj/item/storage/belt/holster/security/fullrhino
+	l_hand = /obj/item/storage/briefcase/crimekit
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	head = /obj/item/clothing/head/det
+	gloves = /obj/item/clothing/gloves/forenic
+
 /decl/hierarchy/outfit/job/site90/crew/command/commsofficer
 	name = OUTFIT_JOB_NAME("Communications Officer")
 	uniform = /obj/item/clothing/under/scp/utility/communications/officer
@@ -60,7 +74,7 @@
 	l_ear = /obj/item/device/radio/headset/heads/ce
 	back = /obj/item/storage/backpack/industrial
 
-
+//Akira Note: I will be restoring these in the future, don't touch them please
 // Cell Guards
 /* CANDIDATE FOR REMOVAL.
 /decl/hierarchy/outfit/job/site90/crew/security/cellguardlieutenant

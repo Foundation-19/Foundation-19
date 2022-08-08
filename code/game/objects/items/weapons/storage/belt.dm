@@ -319,6 +319,19 @@
 	new /obj/item/handcuffs(src)
 	update_icon()
 
+/obj/item/storage/belt/holster/security/fullrhino/New()
+	..()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/device/flash(src)
+	new /obj/item/device/flashlight/maglight(src)
+	new /obj/item/gun/projectile/revolver/rhino(src)
+	new /obj/item/ammo_magazine/box/mk9(src)
+	new /obj/item/melee/classic_baton(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs(src)
+	update_icon()
+
+
 /obj/item/storage/belt/general
 	name = "equipment belt"
 	desc = "Can hold general equipment such as tablets, folders, and other office supplies."
