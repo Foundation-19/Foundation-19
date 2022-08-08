@@ -174,7 +174,7 @@
 			qdel(src)
 			return
 
-	if(config.panic_bunker && (get_player_age(ckey) < config.panic_bunker_age && !(ckey in admin_datums)))
+	if(config.panic_bunker && (get_player_age(ckey) < config.panic_bunker_age && !(ckey in GLOB.admin_datums)))
 		if(GLOB.panicbunker_bypass.Find(ckey))
 			message_admins("[ckey], a new player, was allowed to bypass the Panic Bunker.")
 			log_admin("[ckey], a new player, was allowed to bypass the Panic Bunker.")
