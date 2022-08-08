@@ -28,8 +28,8 @@
 		/obj/item/scalpel/laser1 = 75,
 		/obj/item/melee/energy/sword = 5
 	)
-	min_duration = 90
-	max_duration = 110
+	min_duration = 70
+	max_duration = 90
 
 /decl/surgery_step/generic/cut_with_laser/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
@@ -61,8 +61,8 @@
 	allowed_tools = list(
 		/obj/item/scalpel/manager = 100
 	)
-	min_duration = 80
-	max_duration = 120
+	min_duration = 60
+	max_duration = 100
 
 /decl/surgery_step/generic/managed/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
@@ -96,8 +96,8 @@
 		/obj/item/broken_bottle = 50,
 		/obj/item/material/shard = 50
 	)
-	min_duration = 90
-	max_duration = 110
+	min_duration = 70
+	max_duration = 90
 	var/fail_string = "slicing open"
 	var/access_string = "an incision"
 
@@ -147,8 +147,8 @@
 		/obj/item/stack/cable_coil = 75,
 		/obj/item/device/assembly/mousetrap = 20
 	)
-	min_duration = 40
-	max_duration = 60
+	min_duration = 30
+	max_duration = 50
 	surgery_candidate_flags = SURGERY_NO_ROBOTIC | SURGERY_NO_CRYSTAL | SURGERY_NO_STUMP | SURGERY_NEEDS_INCISION
 	strict_access_requirement = FALSE
 
@@ -189,8 +189,8 @@
 		/obj/item/material/knife = 50,
 		/obj/item/material/kitchen/utensil/fork = 50
 	)
-	min_duration = 30
-	max_duration = 40
+	min_duration = 20
+	max_duration = 30
 	surgery_candidate_flags = SURGERY_NO_ROBOTIC | SURGERY_NO_CRYSTAL | SURGERY_NO_STUMP | SURGERY_NEEDS_INCISION
 	strict_access_requirement = TRUE
 
@@ -234,8 +234,8 @@
 		/obj/item/flame/lighter = 50,
 		/obj/item/weldingtool = 25
 	)
-	min_duration = 70
-	max_duration = 100
+	min_duration = 60
+	max_duration = 80
 	surgery_candidate_flags = SURGERY_NO_ROBOTIC | SURGERY_NO_CRYSTAL
 	var/cauterize_term = "cauterize"
 	var/post_cauterize_term = "cauterized"
@@ -299,8 +299,8 @@
 		/obj/item/circular_saw = 100,
 		/obj/item/material/hatchet = 75
 	)
-	min_duration = 110
-	max_duration = 160
+	min_duration = 90
+	max_duration = 130
 	surgery_candidate_flags = 0
 
 /decl/surgery_step/generic/amputate/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
