@@ -19,7 +19,7 @@
 	var/nid = text2num(arguments[1])
 	if(!nid)
 		return "[name]: Error; invalid network id."
-	if(!has_access(list("ACCESS_ENGINEERING_LEVEL3"), user.GetAccess()))
+	if(!has_access(list(access_engineeringlvl3), user.GetAccess()))
 		terminal.computer.add_log("'[name]' command executed against network id '[nid]'")
 	var/datum/extension/interactive/ntos/T = ntnet_global.get_os_by_nid(nid)
 	if(!istype(T) || !T.get_ntnet_status_incoming()) // Target device only need a direct connection to NTNet

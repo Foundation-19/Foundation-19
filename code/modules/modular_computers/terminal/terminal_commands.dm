@@ -47,10 +47,10 @@ GLOBAL_LIST_INIT(terminal_commands, init_subtypes(/datum/terminal_command))
 /// Returns list of arguments (if any), or null on syntax error
 /datum/terminal_command/proc/get_arguments(text)
 	var/list/arguments = splittext(text, " ")
-	if(!arguments.len || arguments[1] != name)
+	if(!length(arguments) || arguments[1] != name)
 		return
 
-	if(arguments.len == 1)
+	if(length(arguments) == 1)
 		return list()
 	arguments.Cut(1,2)
 	return arguments

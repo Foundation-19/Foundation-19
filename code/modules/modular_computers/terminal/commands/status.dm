@@ -7,7 +7,7 @@
 		"NOTICE: Requires network operator or admin access."
 	)
 	pattern = "^status$"
-	req_access = list("ACCESS_ENGINEERING_LEVEL3")
+	req_access = list(access_engineeringlvl3)
 	skill_needed = SKILL_EXPERIENCED
 
 /datum/terminal_command/status/proper_input_entered(text, mob/user, datum/terminal/terminal)
