@@ -9,8 +9,8 @@
 	var/datum/nano_module/NM = null					// If the program uses NanoModule, put it here and it will be automagically opened. Otherwise implement ui_interact.
 	var/nanomodule_path = null						// Path to nanomodule, make sure to set this if implementing new program.
 	// TGUIModule
-	var/datum/tgui_module/TM = null			// If the program uses TGUIModule, put it here and it will be automagically opened. Otherwise implement tgui_interact.
-	var/tguimodule_path = null				// Path to tguimodule, make sure to set this if implementing new program.
+	var/datum/tgui_module/TM = null					// If the program uses TGUIModule, put it here and it will be automagically opened. Otherwise implement tgui_interact.
+	var/tguimodule_path = null						// Path to tguimodule, make sure to set this if implementing new program.
 	// Etc Program stuff
 	var/program_state = PROGRAM_STATE_KILLED		// PROGRAM_STATE_KILLED or PROGRAM_STATE_BACKGROUND or PROGRAM_STATE_ACTIVE - specifies whether this program is running.
 	var/obj/item/modular_computer/computer			// Device that runs this program.
@@ -26,7 +26,7 @@
 	var/network_destination = null					// Optional string that describes what NTNet server/system this program connects to. Used in default logging.
 	var/available_on_ntnet = 1						// Whether the program can be downloaded from NTNet. Set to 0 to disable.
 	var/available_on_syndinet = 0					// Whether the program can be downloaded from SyndiNet (accessible via emagging the computer). Set to 1 to enable.
-	var/computer_emagged = 0						// Set to 1 if computer that's running us was emagged. Computer updates this every Process() tick
+	var/computer_emagged = FALSE					// Set to 1 if computer that's running us was emagged. Computer updates this every Process() tick
 	var/ui_header = null							// Example: "something.gif" - a header image that will be rendered in computer's UI when this program is running at background. Images are taken from /nano/images/status_icons. Be careful not to use too large images!
 	var/ntnet_speed = 0								// GQ/s - current network connectivity transfer rate
 	var/tgui_id
