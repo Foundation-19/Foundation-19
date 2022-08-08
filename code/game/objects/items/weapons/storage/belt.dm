@@ -307,6 +307,17 @@
 	new /obj/item/handcuffs(src)
 	update_icon()
 
+/obj/item/storage/belt/holster/security/fullusp45/New()
+	..()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/device/flash(src)
+	new /obj/item/device/flashlight/maglight(src)
+	new /obj/item/gun/projectile/pistol/usp45(src)
+	new /obj/item/ammo_magazine/scp/usp45(src)
+	new /obj/item/ammo_magazine/scp/usp45(src)
+	new /obj/item/ammo_magazine/box/acp45(src)
+	new /obj/item/handcuffs(src)
+	update_icon()
 
 /obj/item/storage/belt/general
 	name = "equipment belt"

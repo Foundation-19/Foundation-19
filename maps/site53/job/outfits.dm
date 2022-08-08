@@ -114,7 +114,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/beret/sec = 1,/obj/item/clothing/suit/armor/pcarrier/scp/tactical = 1,/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1)
-	belt = /obj/item/storage/belt/holster/security/fullmk9
+	belt = /obj/item/storage/belt/holster/security/fullusp45
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/hcz_hazmat
 	mask = /obj/item/clothing/mask/balaclava
@@ -134,7 +134,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/hos = 1, /obj/item/handcuffs = 1)
-	belt = /obj/item/storage/belt/holster/security/fullmk9
+	belt = /obj/item/storage/belt/holster/security/fullusp45
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -150,7 +150,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1)
-	belt = /obj/item/storage/belt/holster/security/fullmk9
+	belt = /obj/item/storage/belt/holster/security/fullusp45
 	glasses = /obj/item/clothing/glasses/eyepatch/hud/security
 	head = /obj/item/clothing/head/beret/sec/corporate/hos
 	mask = /obj/item/clothing/mask/balaclava
