@@ -151,7 +151,8 @@ var/list/admin_verbs_server = list(
 	/datum/admins/proc/adjump,
 	/client/proc/toggle_random_events,
 	/client/proc/nanomapgen_DumpImage,
-	/client/proc/panicbunker
+	/client/proc/panicbunker,
+	/client/proc/panicbunker_ckey_bypass
 	)
 var/list/admin_verbs_debug = list(
 	/datum/admins/proc/jump_to_fluid_source,

@@ -174,12 +174,16 @@
 			qdel(src)
 			return
 
-	if (config.panic_bunker && (get_player_age(ckey) <= config.panic_bunker_age && !(ckey in GLOB.admin_datums)))
-		message_admins("[ckey] tried to join with [get_player_age(ckey)] days, but there is a configured minimum player age of [config.panic_bunker_age] days.")
-		log_admin("[ckey] tried to join with [get_player_age(ckey)] days, but there is a configured minimum player age of [config.panic_bunker_age] days.")
-		to_chat("[config.panic_bunker_message]")
-		qdel(src)
-		return
+	if(config.panic_bunker && (get_player_age(ckey) < config.panic_bunker_age && !(ckey in admin_datums)))
+		if(GLOB.panicbunker_bypass.Find(ckey))
+			message_admins("[ckey], a new player, was allowed to bypass the Panic Bunker.")
+			log_admin("[ckey], a new player, was allowed to bypass the Panic Bunker.")
+		else
+			message_admins("[ckey] cid:[computer_id] ip:[address] tried to join with [get_player_age(ckey)] days, but there is a configured minimum player age of [config.panic_bunker_age] days.")
+			log_admin("[ckey] cid:[computer_id] ip:[address] tried to join with [get_player_age(ckey)] days, but there is a configured minimum player age of [config.panic_bunker_age] days.")
+			to_chat("[config.panic_bunker_message]")
+			qdel(src)
+			return
 
 	// Change the way they should download resources.
 	if(config.resource_urls && config.resource_urls.len)

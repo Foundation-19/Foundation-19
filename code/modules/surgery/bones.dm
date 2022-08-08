@@ -23,8 +23,8 @@
 	)
 	can_infect = 1
 	blood_level = 1
-	min_duration = 50
-	max_duration = 60
+	min_duration = 40
+	max_duration = 50
 	shock_level = 20
 
 /decl/surgery_step/bone/glue/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
@@ -60,8 +60,8 @@
 		/obj/item/bonesetter = 100,
 		/obj/item/wrench = 75
 	)
-	min_duration = 60
-	max_duration = 70
+	min_duration = 50
+	max_duration = 60
 	shock_level = 40
 	delicate = 1
 	surgery_candidate_flags = SURGERY_NO_ROBOTIC | SURGERY_NEEDS_ENCASEMENT
@@ -113,8 +113,8 @@
 	)
 	can_infect = 1
 	blood_level = 1
-	min_duration = 50
-	max_duration = 60
+	min_duration = 40
+	max_duration = 50
 	shock_level = 20
 	required_stage = 2
 

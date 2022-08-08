@@ -10,3 +10,5 @@ GLOBAL_LIST_EMPTY(silicon_mob_list) //List of all silicon mobs, including client
 GLOBAL_LIST_EMPTY(living_mob_list_) //List of all alive mobs, including clientless. Excludes /mob/new_player
 GLOBAL_LIST_EMPTY(dead_mob_list_)   //List of all dead mobs, including clientless. Excludes /mob/new_player
 GLOBAL_LIST_EMPTY(ghost_mob_list)   //List of all ghosts, including clientless. Excludes /mob/new_player
+
+GLOBAL_LIST_EMPTY(panicbunker_bypass)

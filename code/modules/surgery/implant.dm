@@ -28,8 +28,8 @@
 		/obj/item/pen = 75,
 		/obj/item/stack/material/rods = 50
 	)
-	min_duration = 60
-	max_duration = 80
+	min_duration = 50
+	max_duration = 60
 
 /decl/surgery_step/cavity/make_space/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = ..()
@@ -60,8 +60,8 @@
 		/obj/item/flame/lighter = 50,
 		/obj/item/weldingtool = 25
 	)
-	min_duration = 60
-	max_duration = 80
+	min_duration = 50
+	max_duration = 60
 
 /decl/surgery_step/cavity/close_space/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = ..()
@@ -87,8 +87,8 @@
 /decl/surgery_step/cavity/place_item
 	name = "Place item in cavity"
 	allowed_tools = list(/obj/item = 100)
-	min_duration = 80
-	max_duration = 100
+	min_duration = 60
+	max_duration = 80
 
 /decl/surgery_step/cavity/place_item/can_use(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	if(istype(user,/mob/living/silicon/robot))
@@ -147,8 +147,8 @@
 		/obj/item/wirecutters = 75,
 		/obj/item/material/kitchen/utensil/fork = 20
 	)
-	min_duration = 80
-	max_duration = 100
+	min_duration = 60
+	max_duration = 80
 
 /decl/surgery_step/cavity/implant_removal/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = ..()
