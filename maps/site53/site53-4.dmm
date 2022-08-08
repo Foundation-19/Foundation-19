@@ -2263,7 +2263,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/hallway)
 "gu" = (
-/obj/structure/closet/secure_closet/engineering_chief,
+/obj/structure/closet/secure_closet/engineering_chief{
+	req_access = list("ACCESS_ENGINEERING_LEVEL5")
+	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/item/folder,
 /obj/item/folder/blue,

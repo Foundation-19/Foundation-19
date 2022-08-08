@@ -4539,6 +4539,11 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/item/stamp/approved,
+/obj/item/stamp/denied{
+	pixel_y = 4;
+	pixel_x = 7
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/logistics/logistics)
 "mL" = (
@@ -4860,6 +4865,16 @@
 "nU" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/mentalhealth/isolation)
+"nW" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/brown/half{
+	dir = 8
+	},
+/obj/structure/filingcabinet/scp,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "nY" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -5199,7 +5214,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "pc" = (
-/obj/item/stamp/approved,
 /obj/item/stamp/denied,
 /obj/structure/table/woodentable/walnut,
 /turf/simulated/floor/carpet/blue2,
@@ -5691,10 +5705,6 @@
 /obj/structure/table/woodentable/walnut,
 /turf/simulated/floor/carpet/blue2,
 /area/site53/uez/o5repoffice)
-"rt" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor/plating,
-/area/site53/uez/goirepoffice)
 "ru" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/grass,
@@ -7067,6 +7077,13 @@
 "vH" = (
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/equipstorage)
+"vM" = (
+/obj/effect/floor_decal/corner/brown/half{
+	dir = 4
+	},
+/obj/machinery/papershredder,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "vO" = (
 /obj/machinery/camera/autoname{
 	dir = 4;
@@ -7158,6 +7175,16 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uez/armory)
+"wQ" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/machinery/door/airlock/glass/mining{
+	name = "Logistics";
+	req_access = list("ACCESS_ADMIN_LEVEL1")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/hangar)
 "wS" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -7290,7 +7317,8 @@
 	dir = 8
 	},
 /obj/machinery/computer/rdconsole{
-	dir = 4
+	dir = 4;
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -7450,6 +7478,12 @@
 "Az" = (
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
+"AC" = (
+/obj/effect/wallframe_spawn/reinforced/polarized{
+	id = "goioffice2"
+	},
+/turf/simulated/floor/plating,
 /area/site53/uez/goirepoffice)
 "AI" = (
 /obj/machinery/camera/autoname{
@@ -8074,7 +8108,8 @@
 /area/site53/surface/surface)
 "IQ" = (
 /obj/machinery/door/airlock/command{
-	name = "GOI Representative Office"
+	name = "GOI Representative Office";
+	req_access = list("ACCESS_ADMIN_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -8271,6 +8306,10 @@
 "Mx" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 9
+	},
+/obj/machinery/button/windowtint{
+	pixel_y = 24;
+	id = "goioffice2"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
@@ -30183,7 +30222,7 @@ dA
 kG
 jp
 ju
-jQ
+wQ
 uL
 uJ
 uJ
@@ -32748,7 +32787,7 @@ vf
 Pw
 Pt
 rS
-qQ
+nW
 SW
 nk
 nk
@@ -34033,7 +34072,7 @@ uB
 Bq
 rO
 qU
-Uc
+vM
 vg
 vh
 Uc
@@ -41149,8 +41188,8 @@ dt
 mk
 mk
 IQ
-rt
-rt
+AC
+AC
 mk
 px
 px

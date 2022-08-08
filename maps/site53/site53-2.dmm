@@ -1021,6 +1021,7 @@
 "adc" = (
 /obj/machinery/light,
 /obj/structure/table/standard,
+/obj/machinery/stove,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
 "ade" = (
@@ -13270,10 +13271,7 @@
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
 "aEA" = (
-/obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
-	},
+/obj/machinery/vending/cola,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "aEC" = (
@@ -26588,6 +26586,10 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/uhcz/scp106containment)
+"fsc" = (
+/obj/machinery/vending/coffee,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "ftn" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/beakers,
@@ -27973,6 +27975,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/securitypost)
+"jkk" = (
+/obj/machinery/door/airlock/glass/research{
+	name = "Office"
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "jmD" = (
 /obj/machinery/light{
 	dir = 8;
@@ -29454,6 +29463,10 @@
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
+"naN" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "nbP" = (
 /obj/machinery/light{
 	dir = 4
@@ -30014,6 +30027,14 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/llcz/scp263research)
+"oHu" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "oJB" = (
 /obj/machinery/camera/network/entrance{
 	c_tag = "Tram Hub 1";
@@ -30160,6 +30181,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"pbk" = (
+/obj/machinery/vending/snack,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "pcO" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
@@ -30790,6 +30815,10 @@
 /obj/item/aicard,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/science/aicobservation)
+"qTw" = (
+/obj/structure/bed/chair,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "qVh" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 8
@@ -32089,6 +32118,11 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp247observation)
+"uOo" = (
+/obj/structure/table/standard,
+/obj/item/storage/box/cups,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "uPv" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
@@ -32903,6 +32937,10 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/serverfarmtunnel)
+"wEi" = (
+/obj/machinery/vending/snack,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "wFy" = (
 /obj/machinery/door/airlock/freezer,
 /turf/simulated/floor/tiled/monotile,
@@ -43282,7 +43320,7 @@ aVS
 aVS
 aVS
 aPf
-aVS
+jkk
 aVS
 aVS
 aGM
@@ -43540,10 +43578,10 @@ aVS
 lDs
 azA
 azA
-azA
-azA
-azA
-azA
+aVS
+qTw
+aGM
+pbk
 aVS
 aVS
 aVS
@@ -43800,11 +43838,11 @@ aVS
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
+aVS
+qTw
+aGM
+aGM
+aVS
 azA
 azA
 azA
@@ -44060,11 +44098,11 @@ aVS
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
+aVS
+fsc
+oHu
+uOo
+aVS
 azA
 azA
 azA
@@ -44320,11 +44358,11 @@ aVS
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
+aVS
+aVS
+aVS
+aVS
+aVS
 azA
 azA
 azA
@@ -91898,7 +91936,7 @@ aEM
 aEM
 aEM
 aEM
-aEC
+wEi
 aEC
 aEC
 aEE
@@ -92160,7 +92198,7 @@ bhO
 ass
 aEA
 aEC
-aEC
+naN
 ass
 ass
 ass
