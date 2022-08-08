@@ -34,7 +34,7 @@ if(not path.isdir(args.dir)):
 tag_tuples = [	('<span>', re.compile('<span(.*?)>', re.IGNORECASE), re.compile('</span>', re.IGNORECASE)),
 				('<font>', re.compile('<font(.*?)>', re.IGNORECASE), re.compile('</font>', re.IGNORECASE)),
 				('<center>', re.compile('<center>', re.IGNORECASE), re.compile('</center>', re.IGNORECASE)),
-				('<b>', re.compile('<b(.*?)>', re.IGNORECASE), re.compile('</b>', re.IGNORECASE)),
+				('<b>', re.compile('<b>', re.IGNORECASE), re.compile('</b>', re.IGNORECASE)),
 				('<i>', re.compile('<i>', re.IGNORECASE), re.compile('</i>', re.IGNORECASE))]
 
 # The keys of this dictionary will be the file path of each parsed *.dm file
