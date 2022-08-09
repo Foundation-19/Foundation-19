@@ -25185,13 +25185,6 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp247observation)
-"bwH" = (
-/obj/effect/paint_stripe/gray,
-/obj/machinery/porta_turret/aic{
-	id_tag = "EZTurret"
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/lowertrams/restaurantkitchenarea)
 "bwI" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -25210,6 +25203,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
+"byB" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/turretid/lethal{
+	id_tag = "AuxSCPRoom"
+	},
+/turf/simulated/wall/titanium,
+/area/site53/ulcz/generalpurpose)
 "bBw" = (
 /obj/structure/cryofeed,
 /turf/simulated/floor/tiled/white,
@@ -25647,13 +25647,6 @@
 /obj/item/paper_bin,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
-"czk" = (
-/obj/effect/paint_stripe/gray,
-/obj/machinery/turretid/lethal{
-	id_tag = "AuxSCPRoom"
-	},
-/turf/simulated/wall/titanium,
-/area/site53/ulcz/generalpurpose)
 "czT" = (
 /obj/machinery/mech_recharger,
 /obj/structure/window/reinforced{
@@ -25826,11 +25819,6 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/grass,
 /area/site53/science/aicobservation)
-"cXN" = (
-/obj/effect/paint_stripe/red,
-/obj/structure/sign/warning/lethal_turrets,
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/medicalpost)
 "cYf" = (
 /obj/machinery/power/apc/high,
 /obj/structure/cable/green,
@@ -26413,6 +26401,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
+"ezG" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/porta_turret/aic{
+	id_tag = "HCZTurret"
+	},
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/securitypost)
 "eAd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/structure/cable/cyan{
@@ -27061,12 +27056,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
-"gne" = (
-/obj/machinery/turretid/lethal{
-	id_tag = "AIUpload"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/reswing/robotics)
 "gnj" = (
 /obj/structure/hygiene/sink{
 	dir = 1;
@@ -27221,6 +27210,13 @@
 /obj/machinery/light,
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
+"gEs" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/turretid/lethal{
+	id_tag = "EZTurret"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/hub)
 "gEx" = (
 /obj/effect/floor_decal/corner/yellow/bordercorner{
 	dir = 1
@@ -27270,11 +27266,6 @@
 /obj/structure/closet/secure_closet/hydroponics_torch,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lowertrams/restaurantkitchenarea)
-"gMc" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/porta_turret/aic,
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/hallways)
 "gMv" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "AIC Observation";
@@ -27287,6 +27278,13 @@
 	},
 /obj/structure/inflatable/door,
 /turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
+"gME" = (
+/obj/effect/paint_stripe/mauve,
+/obj/machinery/porta_turret/aic{
+	id_tag = "AIUpload"
+	},
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/science/aiccore)
 "gOf" = (
 /obj/machinery/power/smes/buildable/preset/ds90/substation_full{
@@ -27432,6 +27430,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp999)
+"gZd" = (
+/obj/effect/paint_stripe/mauve,
+/obj/machinery/turretid/lethal{
+	id_tag = "AIUpload"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/science/aiccore)
 "hbt" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -28185,6 +28190,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
+"iXh" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/porta_turret/aic,
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/hallways)
 "iXE" = (
 /obj/machinery/light{
 	dir = 4;
@@ -28526,6 +28536,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
+"jQL" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/porta_turret/aic{
+	id_tag = "HCZTurret"
+	},
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/medicalpost)
 "jQX" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -29008,6 +29025,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/science/aiccore)
+"lka" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/porta_turret/aic{
+	id_tag = "LCZTurret"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/ulcz/hallways)
 "lkh" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
@@ -29019,20 +29043,6 @@
 /obj/item/ammo_magazine/chemdart,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
-"lmw" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "aic";
-	name = "AIC Server Room Blast Door"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor,
-/area/site53/science/aiccore)
 "lmR" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -29072,13 +29082,6 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
-"lsx" = (
-/obj/effect/paint_stripe/gray,
-/obj/machinery/porta_turret/aic{
-	id_tag = "LCZTurret"
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/ulcz/hallways)
 "ltl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 10
@@ -29349,13 +29352,13 @@
 /obj/machinery/biogenerator,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
-"lST" = (
+"lSe" = (
 /obj/effect/paint_stripe/gray,
-/obj/machinery/turretid/lethal{
+/obj/machinery/porta_turret/aic{
 	id_tag = "EZTurret"
 	},
 /turf/simulated/wall/prepainted,
-/area/site53/lowertrams/hub)
+/area/site53/lowertrams/restaurantkitchenarea)
 "lTb" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -29571,6 +29574,12 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/surface/explorers/surrounding)
+"mri" = (
+/obj/machinery/turretid/lethal{
+	id_tag = "AIUpload"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/robotics)
 "msn" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/blast/regular/open{
@@ -29638,13 +29647,6 @@
 /area/site53/llcz/scp500{
 	requires_power = 0
 	})
-"myB" = (
-/obj/effect/paint_stripe/gray,
-/obj/machinery/turretid/lethal{
-	id_tag = "LCZStair"
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/ulcz/hallways)
 "mzz" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/monotile,
@@ -30205,6 +30207,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
+"nPL" = (
+/obj/effect/paint_stripe/mauve,
+/obj/machinery/turretid/lethal{
+	id_tag = "AICore"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/science/aiccore)
 "nPS" = (
 /obj/effect/paint_stripe/gray,
 /obj/machinery/porta_turret/aic{
@@ -30276,13 +30285,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
-"nUK" = (
-/obj/effect/paint_stripe/mauve,
-/obj/machinery/turretid/lethal{
-	id_tag = "AICore"
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/science/aiccore)
 "nVI" = (
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
@@ -30464,11 +30466,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/genstorage1)
-"ouX" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/porta_turret/aic,
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/scp106containment)
 "ove" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
@@ -30524,6 +30521,11 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
+"oGA" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/porta_turret/aic,
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/scp106containment)
 "oGS" = (
 /obj/effect/floor_decal/industrial/fire{
 	dir = 1
@@ -30697,6 +30699,11 @@
 /obj/item/storage/pill_bottle/amnesticsa,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
+"peq" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/warning/lethal_turrets,
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/medicalpost)
 "pfF" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -30759,6 +30766,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/securitypost)
+"pln" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/turretid/lethal{
+	id_tag = "LCZTurret"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/llcz/entrance_checkpoint)
 "pmq" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -30786,6 +30800,13 @@
 "prD" = (
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp247observation)
+"prE" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/turretid/lethal{
+	id_tag = "HCZTurret"
+	},
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/securitypost)
 "prM" = (
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/white,
@@ -31014,13 +31035,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
-"pTi" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/porta_turret/aic{
-	id_tag = "HCZTurret"
-	},
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/medicalpost)
 "pTk" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -31363,13 +31377,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint/east)
-"qWp" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/porta_turret/aic{
-	id_tag = "HCZTurret"
-	},
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/securitypost)
 "qWt" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -31931,13 +31938,6 @@
 /obj/item/paper/scp012,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
-"sCK" = (
-/obj/effect/paint_stripe/gray,
-/obj/machinery/porta_turret/aic{
-	id_tag = "AuxSCPRoom"
-	},
-/turf/simulated/wall/titanium,
-/area/site53/ulcz/generalpurpose)
 "sEr" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -32004,6 +32004,20 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/restaurantkitchenarea)
+"sKw" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "aic";
+	name = "AIC Server Room Blast Door"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/site53/science/aiccore)
 "sLQ" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -32526,6 +32540,13 @@
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
+"ujm" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/turretid/lethal{
+	id_tag = "LCZStair"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/ulcz/hallways)
 "ulE" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -33099,13 +33120,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
-"vHr" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/turretid/lethal{
-	id_tag = "HCZTurret"
-	},
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/securitypost)
 "vHU" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -33363,13 +33377,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
-"wik" = (
-/obj/effect/paint_stripe/gray,
-/obj/machinery/turretid/lethal{
-	id_tag = "LCZTurret"
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/llcz/entrance_checkpoint)
 "wio" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -33809,6 +33816,13 @@
 	},
 /turf/simulated/floor/bluegrid,
 /area/site53/science/aiccore)
+"xbS" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/porta_turret/aic{
+	id_tag = "AuxSCPRoom"
+	},
+/turf/simulated/wall/titanium,
+/area/site53/ulcz/generalpurpose)
 "xcu" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -33917,13 +33931,6 @@
 "xna" = (
 /turf/simulated/mineral,
 /area/site53/uhcz/scp247containment)
-"xnD" = (
-/obj/effect/paint_stripe/mauve,
-/obj/machinery/turretid/lethal{
-	id_tag = "AIUpload"
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/science/aiccore)
 "xoe" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -34294,13 +34301,6 @@
 /obj/effect/floor_decal/corner/brown/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
-"ylX" = (
-/obj/effect/paint_stripe/mauve,
-/obj/machinery/porta_turret/aic{
-	id_tag = "AIUpload"
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/science/aiccore)
 
 (1,1,1) = {"
 azA
@@ -38319,7 +38319,7 @@ aKq
 aFe
 aHM
 aGM
-myB
+ujm
 aIT
 aGM
 aGM
@@ -38591,7 +38591,7 @@ aVS
 asA
 pyn
 aDO
-wik
+pln
 pXS
 aDO
 aDO
@@ -39402,8 +39402,8 @@ azA
 azA
 jNc
 jNc
-czk
-sCK
+byB
+xbS
 jNc
 jNc
 jNc
@@ -39632,10 +39632,10 @@ aVS
 aVS
 aVS
 aVS
-lsx
+lka
 bgE
 fIM
-lsx
+lka
 aGM
 tWq
 lTb
@@ -41483,7 +41483,7 @@ azA
 jNc
 jNc
 jNc
-sCK
+xbS
 jNc
 jNc
 jNc
@@ -64048,7 +64048,7 @@ aac
 aac
 aac
 aac
-lST
+gEs
 iWp
 aen
 aPG
@@ -65544,7 +65544,7 @@ afd
 afd
 afd
 afd
-nUK
+nPL
 afd
 jDj
 jDj
@@ -66083,7 +66083,7 @@ gWj
 afd
 afd
 kki
-lmw
+sKw
 afL
 afL
 afL
@@ -67127,7 +67127,7 @@ trj
 trj
 trj
 trj
-xnD
+gZd
 aOW
 bbP
 aTg
@@ -67640,11 +67640,11 @@ afd
 eId
 sGA
 aeW
-nUK
+nPL
 afd
 afd
 afd
-ylX
+gME
 afd
 afd
 afd
@@ -67688,7 +67688,7 @@ aoo
 aLL
 adt
 gEm
-bwH
+lSe
 aSz
 aeT
 abE
@@ -69991,7 +69991,7 @@ agx
 agx
 aeU
 aJA
-gne
+mri
 ahc
 aIC
 aJn
@@ -82778,7 +82778,7 @@ kPM
 aBo
 aBo
 ake
-gMc
+iXh
 aBo
 aBo
 azA
@@ -84594,7 +84594,7 @@ uDT
 uDT
 uDT
 uDT
-ouX
+oGA
 kPM
 kPM
 ajT
@@ -86415,7 +86415,7 @@ pKU
 kPM
 nJV
 riD
-ouX
+oGA
 kPM
 ake
 aBo
@@ -86972,7 +86972,7 @@ aBo
 aBo
 aBo
 aBo
-gMc
+iXh
 aBA
 bas
 bas
@@ -87492,7 +87492,7 @@ aBo
 aBo
 aBo
 aBo
-gMc
+iXh
 aBA
 bas
 bas
@@ -90065,7 +90065,7 @@ aip
 aip
 aip
 aip
-gMc
+iXh
 aBU
 aBU
 aBU
@@ -90598,7 +90598,7 @@ ass
 bis
 bis
 bis
-qWp
+ezG
 aFJ
 aEC
 aEC
@@ -91378,7 +91378,7 @@ avp
 bit
 aEL
 aEC
-vHr
+prE
 biR
 biV
 biV
@@ -91618,7 +91618,7 @@ aBo
 aBo
 aBo
 bct
-gMc
+iXh
 aBo
 aBo
 azA
@@ -91642,7 +91642,7 @@ biB
 aGA
 aGA
 aGD
-qWp
+ezG
 azA
 agF
 aaO
@@ -92162,7 +92162,7 @@ biL
 aGs
 aGs
 aGQ
-qWp
+ezG
 azA
 aDJ
 aDJ
@@ -92688,8 +92688,8 @@ aGU
 aGC
 aGC
 pCN
-cXN
-pTi
+peq
+jQL
 xdE
 biT
 bkF
@@ -93213,7 +93213,7 @@ biT
 biT
 biT
 biT
-pTi
+jQL
 atV
 atV
 atV
