@@ -26165,6 +26165,14 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/tram)
+"dLB" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/turretid/lethal{
+	id_tag = "LCZTurret";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/ulcz/hallways)
 "dOs" = (
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/lamp,
@@ -27907,7 +27915,7 @@
 /obj/machinery/porta_turret/aic{
 	id_tag = "LCZTurret"
 	},
-/obj/structure/flora/pottedplant/flower,
+/obj/structure/flora/pottedplant/decorative,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "idF" = (
@@ -30112,6 +30120,10 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
+"nqy" = (
+/obj/structure/flora/pottedplant/decorative,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "nsr" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -30871,7 +30883,8 @@
 "pln" = (
 /obj/effect/paint_stripe/gray,
 /obj/machinery/turretid/lethal{
-	id_tag = "LCZTurret"
+	id_tag = "LCZTurret";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/wall/prepainted,
 /area/site53/llcz/entrance_checkpoint)
@@ -31816,6 +31829,13 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
+"rTj" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/flora/pottedplant/deskfern,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "rWa" = (
 /obj/structure/table/standard,
 /obj/machinery/camera/network/hcz{
@@ -32661,7 +32681,8 @@
 "ujm" = (
 /obj/effect/paint_stripe/gray,
 /obj/machinery/turretid/lethal{
-	id_tag = "LCZStair"
+	id_tag = "LCZStair";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/wall/prepainted,
 /area/site53/ulcz/hallways)
@@ -39784,7 +39805,7 @@ aVS
 aVS
 bgE
 fIM
-aVS
+dLB
 aGM
 tWq
 lTb
@@ -39798,11 +39819,11 @@ bdf
 bdf
 bdf
 bdf
-apj
+rTj
 aGM
 aZz
 aGM
-aGM
+nqy
 bdf
 bdf
 bdf
