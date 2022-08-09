@@ -687,7 +687,7 @@
 /obj/machinery/vending/snack,
 /obj/effect/floor_decal/corner/red/mono,
 /obj/machinery/camera/network/entrance{
-	c_tag = "HCZ Surface Tram 2
+	c_tag = "HCZ Surface Tram 2"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/redline)
