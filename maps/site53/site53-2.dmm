@@ -14729,6 +14729,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/camera/autoname{
+	network = list("Entrance Zone Network")
+	},
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint)
 "aIq" = (
@@ -26570,12 +26573,13 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
 "eYr" = (
-/obj/effect/paint_stripe/mauve,
-/obj/machinery/porta_turret/aic{
-	id_tag = "AIUpload"
+/obj/effect/floor_decal/corner/orange/mono,
+/obj/structure/table/standard,
+/obj/machinery/camera/autoname{
+	network = list("Entrance Zone Network")
 	},
-/turf/simulated/wall/prepainted,
-/area/site53/reswing/robotics)
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/lowertrams/orangeline)
 "fab" = (
 /obj/machinery/light{
 	dir = 8
@@ -26877,6 +26881,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
+"fRU" = (
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/site53/science/aiccore)
 "fSv" = (
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -27161,8 +27172,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
 "gzw" = (
-/obj/machinery/door/airlock/glass/command{
-	name = "Backup Generator";
+/obj/machinery/door/airlock/command{
+	name = "AIC Access";
 	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
 	},
 /obj/structure/cable{
@@ -27277,8 +27288,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lowertrams/restaurantkitchenarea)
 "gMv" = (
-/obj/machinery/door/airlock/glass/command{
-	name = "AIC Observation";
+/obj/machinery/door/airlock/command{
+	name = "AIC Access";
 	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
 	},
 /obj/machinery/door/blast/regular/open{
@@ -27286,7 +27297,6 @@
 	id_tag = "aicobserv";
 	name = "AIC Server Room Blast Door"
 	},
-/obj/structure/inflatable/door,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
 "gME" = (
@@ -65067,7 +65077,7 @@ azA
 ayq
 ajY
 aas
-ajh
+eYr
 ayA
 ayE
 ayE
@@ -66065,8 +66075,8 @@ jDj
 afd
 aSB
 afv
-afv
-afv
+aSB
+aSB
 sHN
 gMv
 aqC
@@ -66083,13 +66093,13 @@ liV
 mZv
 gWj
 afd
-afd
+iQo
 kki
 sKw
 afL
 afL
 afL
-afd
+gME
 aOW
 bbP
 aTg
@@ -66329,7 +66339,7 @@ afv
 afv
 jBE
 afd
-aqC
+fRU
 trj
 trj
 trj
@@ -67379,7 +67389,7 @@ kCa
 bsC
 trj
 trj
-trj
+kCa
 trj
 trj
 trj
@@ -67395,7 +67405,7 @@ eCf
 aTg
 aIi
 aIi
-eYr
+aIi
 aIi
 aIi
 aIi
@@ -67649,7 +67659,7 @@ afd
 gME
 afd
 afd
-afd
+gME
 aOW
 agN
 rHa
@@ -67886,7 +67896,7 @@ afd
 afd
 afd
 gzw
-afd
+iQo
 afd
 jDj
 jDj
