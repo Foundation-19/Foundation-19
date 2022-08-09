@@ -62,8 +62,7 @@
 	req_access = list(list(access_security, access_bridge))
 
 /obj/machinery/porta_turret/aic
-	name = "grid defense turret"
-	desc = "Foundation containment-grade G60 perimeter defense turret chambered in 5.56 NATO, capable of self-repair when not in use and does not require power to activate."
+	name = "turret"
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "syndie_closed"
 	idle_power_usage = 0
@@ -78,6 +77,31 @@
 	projectile = /obj/item/projectile/bullet/rifle/a556
 	ailock = 0
 	req_access = list(access_securitylvl3, access_adminlvl3)
+
+/obj/machinery/porta_turret/aic/on_update_icon()
+	if(!turret_icons)
+		turret_icons = list()
+
+
+				icon_state = "syndie_stun"
+		else
+			icon_state = "syndie_off"
+	else
+		icon_state = "syndie_closed"
+
+	if(popUp)
+		icon_state = "syndie_popup"
+	else if(popDown)
+		icon_state = "syndie_popdown"
+
+	if(stat & BROKEN)
+		icon_state = "syndie_broken"
+	else if(raised || raising)
+		if(powered() && enabled)
+			if(iconholder)
+
+				icon_state = "syndie_lethal"
+			else
 
 /obj/machinery/porta_turret/crescent
 	enabled = 0
@@ -183,19 +207,19 @@ var/list/turret_icons
 	underlays += turret_icons["open"]
 
 	if(stat & BROKEN)
-		icon_state = "syndie_broken"
+		icon_state = "destroyed_target_prism"
 	else if(raised || raising)
 		if(powered() && enabled)
 			if(iconholder)
 				//lasers have a orange icon
-				icon_state = "syndie_lethal"
+				icon_state = "orange_target_prism"
 			else
 				//almost everything has a blue icon
-				icon_state = "syndie_stun"
+				icon_state = "target_prism"
 		else
-			icon_state = "syndie_off"
+			icon_state = "grey_target_prism"
 	else
-		icon_state = "syndie_closed"
+		icon_state = "turretCover"
 
 /obj/machinery/porta_turret/proc/isLocked(mob/user)
 	if(ailock && issilicon(user))
@@ -559,7 +583,7 @@ var/list/turret_icons
 
 	var/atom/flick_holder = new /atom/movable/porta_turret_cover(loc)
 	flick_holder.layer = layer + 0.1
-	flick("syndie_popup", flick_holder)
+	flick("popup", flick_holder)
 	sleep(10)
 	qdel(flick_holder)
 
@@ -580,7 +604,7 @@ var/list/turret_icons
 
 	var/atom/flick_holder = new /atom/movable/porta_turret_cover(loc)
 	flick_holder.layer = layer + 0.1
-	flick("syndie_popdown", flick_holder)
+	flick("popdown", flick_holder)
 	sleep(10)
 	qdel(flick_holder)
 
