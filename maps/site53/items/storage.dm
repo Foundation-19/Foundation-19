@@ -12,4 +12,4 @@
 
 /obj/item/stamp/approved
 	name = "\improper APPROVED rubber stamp"
-	icon_state = "stamp-boss"
+	icon_state = "stamp-approve"

@@ -31,10 +31,6 @@
 	name = "\improper DENIED rubber stamp"
 	icon_state = "stamp-deny"
 
-/obj/item/stamp/approved
-	name = "\improper APPROVED rubber stamp"
-	icon_state = "stamp-boss"
-
 /obj/item/stamp/clown
 	name = "clown's rubber stamp"
 	icon_state = "stamp-clown"
