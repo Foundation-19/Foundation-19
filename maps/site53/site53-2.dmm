@@ -26547,6 +26547,10 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
+"eMX" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "eNo" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -26904,6 +26908,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
+"fQc" = (
+/obj/effect/paint_stripe/mauve,
+/obj/machinery/status_display,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/reswing/robotics)
 "fSv" = (
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -27690,6 +27699,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
+"hDI" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/securitypost)
 "hDT" = (
 /obj/machinery/cryopod,
 /obj/structure/railing/mapped{
@@ -28518,6 +28531,11 @@
 "jEg" = (
 /turf/simulated/floor,
 /area/site53/surface/bunker)
+"jEA" = (
+/obj/effect/paint_stripe/mauve,
+/obj/machinery/status_display,
+/turf/simulated/wall/r_titanium,
+/area/site53/science/aiccore)
 "jFn" = (
 /obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/techfloor,
@@ -28622,6 +28640,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/surface/explorers/surrounding)
+"jRU" = (
+/obj/machinery/hologram/holopad/longrange,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/surface/bunker)
 "jUp" = (
 /obj/structure/hygiene/toilet{
 	dir = 1
@@ -28918,6 +28940,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"kGX" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/uhcz/commanderoffice)
 "kHi" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -29026,6 +29052,11 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
+"kXF" = (
+/obj/effect/paint_stripe/mauve,
+/obj/machinery/status_display,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/science/aiccore)
 "kZh" = (
 /obj/structure/bed/roller,
 /obj/structure/iv_drip,
@@ -30395,6 +30426,10 @@
 "nVI" = (
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
+"nWh" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "nWT" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
@@ -31492,6 +31527,10 @@
 	},
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint/east)
+"qWl" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "qWt" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -31829,6 +31868,10 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
+"rRi" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "rTj" = (
 /obj/machinery/light{
 	dir = 1
@@ -31846,6 +31889,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
+"rWi" = (
+/obj/effect/paint_stripe/mauve,
+/obj/machinery/status_display,
+/turf/simulated/wall/prepainted,
+/area/site53/reswing/robotics)
 "rXl" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -33519,6 +33567,10 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/science/aicobservation)
+"wfj" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "wgK" = (
 /obj/machinery/light{
 	dir = 8
@@ -38763,7 +38815,7 @@ pyn
 aDO
 pln
 pXS
-aDO
+rRi
 aDO
 bgF
 bgK
@@ -65477,7 +65529,7 @@ aOW
 aOW
 tnJ
 aOW
-aOW
+nWh
 aOW
 aSH
 aTg
@@ -65978,7 +66030,7 @@ afv
 cVC
 eId
 eId
-eId
+jEA
 eId
 sGA
 aeW
@@ -66777,7 +66829,7 @@ wDh
 aqC
 aqC
 aqC
-afd
+kXF
 aOW
 aLn
 aTg
@@ -66815,7 +66867,7 @@ aLL
 aLL
 acZ
 acZ
-acZ
+wfj
 adt
 aOy
 aav
@@ -67014,7 +67066,7 @@ mMs
 xqa
 afv
 afv
-afv
+qWl
 sHN
 dZx
 aqC
@@ -67536,7 +67588,7 @@ afv
 nUs
 ues
 gvE
-eId
+jEA
 aqC
 trj
 kCa
@@ -67564,7 +67616,7 @@ aTg
 aIi
 aIi
 aIi
-aIi
+rWi
 aIi
 aIi
 aIi
@@ -67572,7 +67624,7 @@ afK
 ahc
 aIi
 aIi
-aIi
+rWi
 aIi
 ahc
 aMp
@@ -67813,7 +67865,7 @@ aeW
 nPL
 eId
 eId
-afd
+kXF
 afd
 afd
 afd
@@ -68352,7 +68404,7 @@ afK
 aMp
 aIi
 aIi
-aIi
+rWi
 aIi
 aMp
 aMp
@@ -68860,7 +68912,7 @@ aIi
 agX
 agX
 agX
-agX
+fQc
 aMp
 ahc
 aJA
@@ -69903,7 +69955,7 @@ aeU
 aJA
 aMp
 kQh
-aIi
+rWi
 bXP
 aJn
 aKd
@@ -73911,7 +73963,7 @@ hTe
 aSO
 vPJ
 xJI
-nWT
+jRU
 nWT
 oCa
 rCd
@@ -91547,7 +91599,7 @@ aVV
 avp
 bit
 aEL
-aEC
+eMX
 prE
 biR
 biV
@@ -91803,7 +91855,7 @@ aVV
 bhX
 bie
 bie
-aVV
+hDI
 ass
 biu
 bkj
@@ -92316,7 +92368,7 @@ azA
 aEM
 aDB
 lzu
-lzu
+kGX
 lzu
 aHg
 aVV
