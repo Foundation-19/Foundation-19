@@ -25877,6 +25877,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"dcW" = (
+/obj/effect/paint_stripe/mauve,
+/turf/simulated/wall/r_titanium,
+/area/space)
 "dep" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4;
@@ -26927,6 +26931,9 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/medicalpost)
+"fXu" = (
+/turf/simulated/floor,
+/area/site53/science/aiccore)
 "fXE" = (
 /obj/structure/table/standard,
 /obj/item/folder/nt/rd,
@@ -29715,6 +29722,15 @@
 /obj/machinery/camera/network/entrance,
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
+"mJH" = (
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "AICSus";
+	name = "AIC Eject";
+	pixel_x = -22
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "mKA" = (
 /obj/effect/paint_stripe/gray,
 /obj/machinery/porta_turret/aic{
@@ -31348,6 +31364,22 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/serverfarmtunnel)
+"qLJ" = (
+/obj/structure/backup_server{
+	name = "Auxillary AIC Server"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/bluegrid,
+/area/site53/science/aiccore)
 "qPh" = (
 /obj/machinery/vending/medical{
 	dir = 8;
@@ -32292,6 +32324,13 @@
 	dir = 5;
 	network = list("Entrance Zone Network")
 	},
+/obj/machinery/power/apc/critical{
+	dir = 8;
+	pixel_x = -13
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "tuF" = (
@@ -32656,6 +32695,17 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/uhcz/scp247containment)
+"uus" = (
+/obj/structure/backup_server{
+	name = "Auxillary AIC Server"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/bluegrid,
+/area/site53/science/aiccore)
 "uvn" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/highsecurity{
@@ -33971,12 +34021,12 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/critical{
-	dir = 1;
-	pixel_y = 18
-	},
 /obj/effect/landmark/start{
 	name = "AI"
+	},
+/obj/machinery/mass_driver{
+	dir = 1;
+	id_tag = "AICSus"
 	},
 /turf/simulated/floor/bluegrid,
 /area/site53/science/aiccore)
@@ -34201,6 +34251,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
+"xTt" = (
+/obj/machinery/door/blast/regular{
+	id_tag = "AICSus"
+	},
+/turf/simulated/floor,
+/area/site53/science/aiccore)
 "xUj" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -65826,7 +65882,7 @@ eId
 jDj
 jDj
 eId
-iQo
+aSB
 fab
 ttV
 afv
@@ -66088,7 +66144,7 @@ jDj
 eId
 aSB
 afv
-aSB
+uus
 aSB
 sHN
 gMv
@@ -66327,28 +66383,28 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
 eId
 jDj
 jDj
 eId
 aSx
 afv
-afv
+sHN
 afv
 jBE
 eId
@@ -66587,28 +66643,28 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+dcW
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
 eId
-jDj
-jDj
+eId
+eId
 eId
 mhU
 isW
-azz
+qLJ
 azz
 wjV
 tnH
@@ -66847,25 +66903,25 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-eId
-jDj
-jDj
-eId
+dcW
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+fXu
+fXu
+fXu
+xTt
 xqa
 afv
 afv
@@ -67107,24 +67163,24 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+dcW
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
+aBx
 eId
-jDj
-jDj
+eId
+eId
 eId
 vsJ
 afv
@@ -67367,21 +67423,21 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
+dcW
 eId
 jDj
 jDj
@@ -68170,7 +68226,7 @@ lKY
 afv
 sHN
 afv
-afv
+mJH
 eId
 jDj
 jDj
