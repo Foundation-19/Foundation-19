@@ -29768,13 +29768,6 @@
 /obj/item/storage/toolbox/electrical,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/medicalpost)
-"mPF" = (
-/obj/effect/paint_stripe/gray,
-/obj/machinery/porta_turret/aic{
-	id_tag = "SCP500"
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/llcz/scp500)
 "mQq" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/highsecurity{
@@ -32301,13 +32294,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/orangeline)
-"txj" = (
-/obj/effect/paint_stripe/gray,
-/obj/machinery/turretid/lethal{
-	id_tag = "SCP500
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/llcz/scp500)
 "tyX" = (
 /obj/machinery/camera/network/scp012{
 	c_tag = "Containment Chamber"
@@ -47481,7 +47467,7 @@ aWv
 aWL
 aWv
 aWU
-txj
+aWU
 aXi
 aWU
 ffp
@@ -48521,7 +48507,7 @@ aWv
 aWv
 aWv
 aWU
-mPF
+aWU
 aWU
 aWU
 ffp
