@@ -25267,7 +25267,9 @@
 /area/site53/ulcz/generalpurpose)
 "bJb" = (
 /obj/effect/paint_stripe/mauve,
-/obj/machinery/porta_turret/aic,
+/obj/machinery/porta_turret/aic{
+	id_tag = "AIUpload"
+	},
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/science/aicobservation)
 "bKj" = (
@@ -25339,6 +25341,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"bVh" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/turretid/lethal{
+	id_tag = "LCZTurret"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/llcz/entrance_checkpoint)
 "bVr" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -26129,6 +26138,13 @@
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/generalpurpose)
+"dOE" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/porta_turret/aic{
+	id_tag = "AuxSCPRoom"
+	},
+/turf/simulated/wall/titanium,
+/area/site53/ulcz/generalpurpose)
 "dPF" = (
 /turf/simulated/wall/titanium,
 /area/site53/surface/bunker)
@@ -26153,6 +26169,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/scp513)
+"dQQ" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/turretid/lethal{
+	id_tag = "HCZTurret"
+	},
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/securitypost)
 "dUf" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -26505,6 +26528,13 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
+"eSe" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/turretid/lethal{
+	id_tag = "EZTurret"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/hub)
 "eUI" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
@@ -26545,7 +26575,9 @@
 /area/site53/science/seniorresearcherb)
 "eYr" = (
 /obj/effect/paint_stripe/mauve,
-/obj/machinery/porta_turret/aic,
+/obj/machinery/porta_turret/aic{
+	id_tag = "AIUpload"
+	},
 /turf/simulated/wall/prepainted,
 /area/site53/reswing/robotics)
 "fab" = (
@@ -26884,6 +26916,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
+"fVb" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/porta_turret/aic,
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/scp106containment)
 "fVz" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -27748,6 +27785,13 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
 /area/site53/science/aicobservation)
+"hWK" = (
+/obj/effect/paint_stripe/mauve,
+/obj/machinery/porta_turret/aic{
+	id_tag = "AICore"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/science/aiccore)
 "hXc" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -28069,7 +28113,9 @@
 /area/site53/lowertrams/orangeline)
 "iQo" = (
 /obj/effect/paint_stripe/mauve,
-/obj/machinery/porta_turret/aic,
+/obj/machinery/porta_turret/aic{
+	id_tag = "AIUpload"
+	},
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/science/aiccore)
 "iRn" = (
@@ -28091,13 +28137,6 @@
 /obj/item/clothing/glasses/blindfold,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp096)
-"iVJ" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/porta_turret/aic{
-	id_tag = "HCZTurret"
-	},
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/securitypost)
 "iVT" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/industrial/warning{
@@ -28468,13 +28507,6 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/titanium,
 /area/site53/ulcz/generalpurpose)
-"jNl" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/turretid/lethal{
-	id_tag = "HCZTurret"
-	},
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/securitypost)
 "jOV" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled,
@@ -28674,6 +28706,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/medicalpost)
+"ksW" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/porta_turret/aic{
+	id_tag = "HCZTurret"
+	},
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/securitypost)
 "ktI" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-247 Observation";
@@ -28696,6 +28735,11 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
+"kwC" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/porta_turret/aic,
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/hallways)
 "kwM" = (
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/scp096)
@@ -28896,6 +28940,13 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
+"kTV" = (
+/obj/effect/paint_stripe/mauve,
+/obj/machinery/turretid/lethal{
+	id_tag = "AICore"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/science/aiccore)
 "kZh" = (
 /obj/structure/bed/roller,
 /obj/structure/iv_drip,
@@ -29637,13 +29688,6 @@
 /obj/effect/floor_decal/corner/brown/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
-"mIN" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/porta_turret/aic{
-	id_tag = "HCZTurret"
-	},
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/medicalpost)
 "mJr" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -29655,7 +29699,9 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "mKA" = (
 /obj/effect/paint_stripe/gray,
-/obj/machinery/porta_turret/aic,
+/obj/machinery/porta_turret/aic{
+	id_tag = "EZTurret"
+	},
 /turf/simulated/wall/prepainted,
 /area/site53/lowertrams/hub)
 "mLm" = (
@@ -30155,7 +30201,9 @@
 /area/site53/llcz/scp066)
 "nPS" = (
 /obj/effect/paint_stripe/gray,
-/obj/machinery/porta_turret/aic,
+/obj/machinery/porta_turret/aic{
+	id_tag = "LCZTurret"
+	},
 /turf/simulated/wall/prepainted,
 /area/site53/llcz/entrance_checkpoint)
 "nQW" = (
@@ -30962,6 +31010,13 @@
 /area/site53/llcz/scp500{
 	requires_power = 0
 	})
+"pUR" = (
+/obj/effect/paint_stripe/mauve,
+/obj/machinery/turretid/lethal{
+	id_tag = "AIUpload"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/science/aiccore)
 "pVm" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
@@ -31272,6 +31327,13 @@
 /obj/item/aicard,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/science/aicobservation)
+"qTq" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/porta_turret/aic{
+	id_tag = "LCZTurret"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/ulcz/hallways)
 "qVh" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 8
@@ -31566,6 +31628,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/maintenance)
+"rFS" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/turretid/lethal{
+	id_tag = "LCZStair"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/ulcz/hallways)
 "rHa" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -31615,11 +31684,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/entrance_checkpoint)
-"rNK" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/porta_turret/aic,
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/scp106containment)
 "rOb" = (
 /obj/machinery/door/blast/shutters/open{
 	dir = 4;
@@ -31922,6 +31986,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/restaurantkitchenarea)
+"sLA" = (
+/obj/machinery/turretid/lethal{
+	id_tag = "AIUpload"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/reswing/robotics)
 "sLQ" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -32312,6 +32382,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
+"tSK" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/turretid/lethal{
+	id_tag = "AuxSCPRoom"
+	},
+/turf/simulated/wall/titanium,
+/area/site53/ulcz/generalpurpose)
 "tSX" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -32516,11 +32593,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp247observation)
-"utm" = (
-/obj/effect/paint_stripe/red,
-/obj/structure/sign/warning/lethal_turrets,
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/medicalpost)
 "uud" = (
 /obj/machinery/light{
 	dir = 4
@@ -32603,6 +32675,13 @@
 /obj/effect/catwalk_plated,
 /turf/simulated/floor,
 /area/site53/llcz/scp012)
+"uCE" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/porta_turret/aic{
+	id_tag = "EZTurret"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/restaurantkitchenarea)
 "uDT" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -32786,11 +32865,6 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
-"vgO" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/porta_turret/aic,
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/hallways)
 "viG" = (
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor{
@@ -33348,7 +33422,9 @@
 /area/site53/llcz/scp066)
 "wkx" = (
 /obj/effect/paint_stripe/gray,
-/obj/machinery/porta_turret/aic,
+/obj/machinery/porta_turret/aic{
+	id_tag = "LCZStair"
+	},
 /turf/simulated/wall/prepainted,
 /area/site53/ulcz/hallways)
 "wlP" = (
@@ -33566,6 +33642,11 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
+"wJm" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/warning/lethal_turrets,
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/medicalpost)
 "wJn" = (
 /obj/machinery/camera/network/scp513{
 	dir = 8
@@ -33964,6 +34045,13 @@
 /obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
+"xEd" = (
+/obj/effect/paint_stripe/red,
+/obj/machinery/porta_turret/aic{
+	id_tag = "HCZTurret"
+	},
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/medicalpost)
 "xEt" = (
 /obj/structure/table/standard,
 /obj/item/device/camera,
@@ -37197,7 +37285,7 @@ asA
 asA
 asA
 asA
-asA
+nPS
 eFk
 aDO
 aDO
@@ -38217,7 +38305,7 @@ aKq
 aFe
 aHM
 aGM
-aVS
+rFS
 aIT
 aGM
 aGM
@@ -38489,7 +38577,7 @@ aVS
 asA
 pyn
 aDO
-asA
+bVh
 pXS
 aDO
 aDO
@@ -39300,8 +39388,8 @@ azA
 azA
 jNc
 jNc
-jNc
-jNc
+tSK
+dOE
 jNc
 jNc
 jNc
@@ -39530,10 +39618,10 @@ aVS
 aVS
 aVS
 aVS
-wkx
+qTq
 bgE
 fIM
-aVS
+qTq
 aGM
 tWq
 lTb
@@ -41381,7 +41469,7 @@ azA
 jNc
 jNc
 jNc
-jNc
+dOE
 jNc
 jNc
 jNc
@@ -63946,7 +64034,7 @@ aac
 aac
 aac
 aac
-aac
+eSe
 iWp
 aen
 aPG
@@ -64943,7 +65031,7 @@ aTg
 aiz
 qQb
 vtK
-aTg
+bJb
 dkZ
 abD
 iRn
@@ -65442,7 +65530,7 @@ afd
 afd
 afd
 afd
-afd
+kTV
 afd
 jDj
 jDj
@@ -65699,21 +65787,21 @@ afd
 jDj
 jDj
 afd
-iQo
+hWK
 fab
 ttV
 afv
 cVC
 afd
 afd
-iQo
+hWK
 afd
 sGA
 aeW
 afd
 afd
 afd
-iQo
+hWK
 afd
 afd
 sGA
@@ -67025,7 +67113,7 @@ trj
 trj
 trj
 trj
-afd
+pUR
 aOW
 bbP
 aTg
@@ -67264,7 +67352,7 @@ afv
 nUs
 ues
 gvE
-afd
+hWK
 aqC
 trj
 kCa
@@ -67526,19 +67614,19 @@ xAL
 ohR
 afd
 afd
-iQo
+hWK
 eId
 sGA
 aeW
 afd
 afd
 afd
-iQo
+hWK
 afd
 eId
 sGA
 aeW
-afd
+kTV
 afd
 afd
 afd
@@ -67586,7 +67674,7 @@ aoo
 aLL
 adt
 gEm
-aav
+uCE
 aSz
 aeT
 abE
@@ -69889,7 +69977,7 @@ agx
 agx
 aeU
 aJA
-aMp
+sLA
 ahc
 aIC
 aJn
@@ -82676,7 +82764,7 @@ kPM
 aBo
 aBo
 ake
-vgO
+kwC
 aBo
 aBo
 azA
@@ -84492,7 +84580,7 @@ uDT
 uDT
 uDT
 uDT
-rNK
+fVb
 kPM
 kPM
 ajT
@@ -86313,7 +86401,7 @@ pKU
 kPM
 nJV
 riD
-rNK
+fVb
 kPM
 ake
 aBo
@@ -86870,7 +86958,7 @@ aBo
 aBo
 aBo
 aBo
-vgO
+kwC
 aBA
 bas
 bas
@@ -87390,7 +87478,7 @@ aBo
 aBo
 aBo
 aBo
-vgO
+kwC
 aBA
 bas
 bas
@@ -89963,7 +90051,7 @@ aip
 aip
 aip
 aip
-vgO
+kwC
 aBU
 aBU
 aBU
@@ -90496,7 +90584,7 @@ ass
 bis
 bis
 bis
-iVJ
+ksW
 aFJ
 aEC
 aEC
@@ -91276,7 +91364,7 @@ avp
 bit
 aEL
 aEC
-jNl
+dQQ
 biR
 biV
 biV
@@ -91516,7 +91604,7 @@ aBo
 aBo
 aBo
 bct
-vgO
+kwC
 aBo
 aBo
 azA
@@ -91540,7 +91628,7 @@ biB
 aGA
 aGA
 aGD
-iVJ
+ksW
 azA
 agF
 aaO
@@ -92060,7 +92148,7 @@ biL
 aGs
 aGs
 aGQ
-iVJ
+ksW
 azA
 aDJ
 aDJ
@@ -92586,8 +92674,8 @@ aGU
 aGC
 aGC
 pCN
-utm
-mIN
+wJm
+xEd
 xdE
 biT
 bkF
@@ -93111,7 +93199,7 @@ biT
 biT
 biT
 biT
-mIN
+xEd
 atV
 atV
 atV

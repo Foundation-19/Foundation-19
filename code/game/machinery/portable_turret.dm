@@ -62,7 +62,8 @@
 	req_access = list(list(access_security, access_bridge))
 
 /obj/machinery/porta_turret/aic
-	name = "turret"
+	name = "grid defense turret"
+	desc = "Foundation containment-grade G60 perimeter defense turret chambered in 5.56 NATO, capable of self-repair when not in use and does not require power to activate."
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "syndie_closed"
 	idle_power_usage = 0
