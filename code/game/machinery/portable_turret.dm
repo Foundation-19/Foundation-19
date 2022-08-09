@@ -78,39 +78,6 @@
 	ailock = 0
 	req_access = list(access_securitylvl3, access_adminlvl3)
 
-/obj/machinery/porta_turret/aic/on_update_icon()
-	if(!turret_icons)
-		turret_icons = list()
-		turret_icons["open"] = image(icon, "openTurretCover")
-
-	underlays.Cut()
-	underlays += turret_icons["open"]
-
-
-			icon_state = "syndie_stun"
-		else
-			icon_state = "syndie_off"
-	else
-		icon_state = "syndie_closed"
-
-	if popUp()
-		icon_state = "syndie_popup"
-	else if popDown()
-		icon_state = "syndie_popdown"
-
-	if(stat & BROKEN)
-		icon_state = "syndie_broken"
-	else if(raised || raising)
-		if(powered() && enabled)
-			if(iconholder)
-
-		if(powered() && raised)
-				icon_state = "syndie_lethal"
-			else
-				icon_state = "syndie_off"
-
-
-
 /obj/machinery/porta_turret/crescent
 	enabled = 0
 	ailock = 1
@@ -215,19 +182,19 @@ var/list/turret_icons
 	underlays += turret_icons["open"]
 
 	if(stat & BROKEN)
-		icon_state = "destroyed_target_prism"
+		icon_state = "syndie_broken"
 	else if(raised || raising)
 		if(powered() && enabled)
 			if(iconholder)
 				//lasers have a orange icon
-				icon_state = "orange_target_prism"
+				icon_state = "syndie_lethal"
 			else
 				//almost everything has a blue icon
-				icon_state = "target_prism"
+				icon_state = "syndie_stun"
 		else
-			icon_state = "grey_target_prism"
+			icon_state = "syndie_off"
 	else
-		icon_state = "turretCover"
+		icon_state = "syndie_closed"
 
 /obj/machinery/porta_turret/proc/isLocked(mob/user)
 	if(ailock && issilicon(user))
@@ -591,7 +558,7 @@ var/list/turret_icons
 
 	var/atom/flick_holder = new /atom/movable/porta_turret_cover(loc)
 	flick_holder.layer = layer + 0.1
-	flick("popup", flick_holder)
+	flick("syndie_popup", flick_holder)
 	sleep(10)
 	qdel(flick_holder)
 
@@ -612,7 +579,7 @@ var/list/turret_icons
 
 	var/atom/flick_holder = new /atom/movable/porta_turret_cover(loc)
 	flick_holder.layer = layer + 0.1
-	flick("popdown", flick_holder)
+	flick("syndie_popdown", flick_holder)
 	sleep(10)
 	qdel(flick_holder)
 
