@@ -29574,12 +29574,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/surface/explorers/surrounding)
-"mri" = (
-/obj/machinery/turretid/lethal{
-	id_tag = "AIUpload"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/reswing/robotics)
 "msn" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/blast/regular/open{
@@ -69991,7 +69985,7 @@ agx
 agx
 aeU
 aJA
-mri
+aMp
 ahc
 aIC
 aJn
