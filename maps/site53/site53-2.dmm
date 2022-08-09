@@ -28600,6 +28600,12 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/securitypost)
+"jOZ" = (
+/obj/machinery/porta_turret/aic{
+	id_tag = "AICore"
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "jPr" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/exoplanet/barren,
@@ -29347,7 +29353,8 @@
 "lCp" = (
 /obj/effect/paint_stripe/mauve,
 /obj/machinery/button/mass_driver{
-	id_tag = "AICSus"
+	id_tag = "AICSus";
+	idle_power_usage = 0
 	},
 /turf/simulated/wall/r_titanium,
 /area/site53/science/aiccore)
@@ -67065,7 +67072,7 @@ aqC
 mMs
 xqa
 afv
-afv
+jOZ
 qWl
 sHN
 dZx
@@ -68363,7 +68370,7 @@ eId
 jDj
 jDj
 jDj
-lKY
+jOZ
 afv
 sHN
 afv
@@ -68627,7 +68634,7 @@ lKY
 mPk
 eJd
 mLS
-afv
+lKY
 eId
 jDj
 eId
