@@ -83,7 +83,7 @@
 		turret_icons = list()
 
 
-				icon_state = "syndie_stun"
+			icon_state = "syndie_stun"
 		else
 			icon_state = "syndie_off"
 	else
