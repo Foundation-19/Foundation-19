@@ -363,7 +363,7 @@
 				M.audible_message("[M]'s screams cease, as does any movement within the [src]. All that remains is a dull, empty silence.")
 				M.dust()
 				var/mob/observer/ghost/g = find_dead_player(M.last_ckey, TRUE)
-				g.skip_respawn_timer = TRUE
+				g.timeofdeath -= (config.respawn_delay MINUTES * 0.5)
 
 		for(var/obj/O in contents) //obj instead of obj/item so that bodybags and ashes get destroyed. We dont want tons and tons of ash piling up
 			qdel(O)
