@@ -1853,8 +1853,11 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ywflowers,
+/obj/machinery/porta_turret/aic{
+	id_tag = "EZTurret"
+	},
+/obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/grass,
 /area/site53/lowertrams/hub)
 "aff" = (
@@ -17495,8 +17498,11 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
+/obj/machinery/porta_turret/aic{
+	id_tag = "EZTurret"
+	},
+/obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/grass,
 /area/site53/lowertrams/hub)
 "aPb" = (
@@ -18557,6 +18563,9 @@
 /area/site53/surface/explorers/surrounding)
 "aSH" = (
 /obj/structure/flora/pottedplant/floorleaf,
+/obj/machinery/porta_turret/aic{
+	id_tag = "AICore"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
 "aSI" = (
@@ -25287,12 +25296,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/generalpurpose)
 "bJb" = (
-/obj/effect/paint_stripe/mauve,
 /obj/machinery/porta_turret/aic{
-	id_tag = "AIUpload"
+	id_tag = "LCZStair"
 	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/science/aicobservation)
+/obj/structure/flora/pottedplant,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "bKj" = (
 /obj/machinery/camera/network/lcz{
 	dir = 4
@@ -27312,12 +27321,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
 "gME" = (
-/obj/effect/paint_stripe/mauve,
-/obj/machinery/porta_turret/aic{
-	id_tag = "AIUpload"
+/obj/effect/paint_stripe/red,
+/obj/machinery/turretid/lethal{
+	id_tag = "HCZTurret"
 	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/science/aiccore)
+/turf/simulated/wall/titanium,
+/area/site53/uhcz/medicalpost)
 "gOf" = (
 /obj/machinery/power/smes/buildable/preset/ds90/substation_full{
 	RCon_tag = "Evacuation Bunker Substation"
@@ -27764,6 +27773,10 @@
 /obj/structure/closet/hydrant{
 	pixel_y = 32
 	},
+/obj/machinery/porta_turret/aic{
+	id_tag = "LCZTurret"
+	},
+/obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "hRZ" = (
@@ -27890,6 +27903,13 @@
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
+"icR" = (
+/obj/machinery/porta_turret/aic{
+	id_tag = "LCZTurret"
+	},
+/obj/structure/flora/pottedplant/flower,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "idF" = (
 /obj/structure/closet/radiation,
 /turf/simulated/floor/tiled/white,
@@ -28139,12 +28159,10 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/orangeline)
 "iQo" = (
-/obj/effect/paint_stripe/mauve,
-/obj/machinery/porta_turret/aic{
-	id_tag = "AICore"
-	},
-/turf/simulated/wall/r_titanium,
-/area/site53/science/aiccore)
+/obj/effect/paint_stripe/gray,
+/obj/structure/sign/warning/lethal_turrets,
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/hub)
 "iRn" = (
 /obj/machinery/computer/upload/robot{
 	dir = 4
@@ -28184,6 +28202,10 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 1
 	},
+/obj/machinery/porta_turret/aic{
+	id_tag = "EZTurret"
+	},
+/obj/structure/flora/pottedplant/fern,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "iWu" = (
@@ -29087,12 +29109,11 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/science/aiccore)
 "lka" = (
-/obj/effect/paint_stripe/gray,
 /obj/machinery/porta_turret/aic{
-	id_tag = "LCZTurret"
+	id_tag = "AuxSCPRoom"
 	},
-/turf/simulated/wall/prepainted,
-/area/site53/ulcz/hallways)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/generalpurpose)
 "lkh" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
@@ -29421,12 +29442,11 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
 "lSe" = (
-/obj/effect/paint_stripe/gray,
 /obj/machinery/porta_turret/aic{
-	id_tag = "EZTurret"
+	id_tag = "AICore"
 	},
-/turf/simulated/wall/prepainted,
-/area/site53/lowertrams/restaurantkitchenarea)
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/science/aiccore)
 "lTb" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -29689,6 +29709,13 @@
 /obj/machinery/light,
 /turf/simulated/floor,
 /area/site53/surface/bunker)
+"mwY" = (
+/obj/machinery/porta_turret/aic{
+	id_tag = "LCZTurret"
+	},
+/obj/structure/flora/pottedplant/overgrown,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "mxN" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -29768,11 +29795,14 @@
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "mKA" = (
-/obj/effect/paint_stripe/gray,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
 /obj/machinery/porta_turret/aic{
 	id_tag = "EZTurret"
 	},
-/turf/simulated/wall/prepainted,
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "mLm" = (
 /obj/machinery/light{
@@ -32529,6 +32559,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/porta_turret/aic{
+	id_tag = "AICore"
+	},
+/obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
 "ucR" = (
@@ -33932,12 +33966,12 @@
 /turf/simulated/floor/bluegrid,
 /area/site53/science/aiccore)
 "xbS" = (
-/obj/effect/paint_stripe/gray,
 /obj/machinery/porta_turret/aic{
-	id_tag = "AuxSCPRoom"
+	id_tag = "LCZStair"
 	},
-/turf/simulated/wall/titanium,
-/area/site53/ulcz/generalpurpose)
+/obj/structure/flora/pottedplant/crystal,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "xcu" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -37921,7 +37955,7 @@ aJv
 aGM
 aGM
 aGM
-aGM
+xbS
 aVS
 asA
 aDR
@@ -38199,7 +38233,7 @@ wpc
 aNa
 aNi
 aDO
-nPS
+asA
 asA
 agU
 agU
@@ -38698,7 +38732,7 @@ aVS
 aVS
 aVS
 aVS
-wkx
+aVS
 bgE
 aLv
 aGM
@@ -39238,7 +39272,7 @@ bkh
 blf
 bkh
 blf
-aDO
+icR
 asA
 azA
 azA
@@ -39518,7 +39552,7 @@ azA
 jNc
 jNc
 byB
-xbS
+jNc
 jNc
 jNc
 jNc
@@ -39729,7 +39763,7 @@ aVs
 aTJ
 aVS
 aVS
-wkx
+aVS
 bgE
 aFe
 aGM
@@ -39747,15 +39781,15 @@ aVS
 aVS
 aVS
 aVS
-lka
+aVS
 bgE
 fIM
-lka
+aVS
 aGM
 tWq
 lTb
 aGM
-aGM
+mwY
 aVS
 bdf
 bdf
@@ -40512,7 +40546,7 @@ bko
 aGM
 aGM
 bkv
-aGM
+bJb
 aVS
 aIo
 aGM
@@ -41336,7 +41370,7 @@ azA
 azA
 azA
 jNc
-aXv
+lka
 aXv
 aXv
 aXv
@@ -41598,7 +41632,7 @@ azA
 jNc
 jNc
 jNc
-xbS
+jNc
 jNc
 jNc
 jNc
@@ -64167,12 +64201,12 @@ gEs
 iWp
 aen
 aPG
-mKA
+aac
 aKP
 aKP
 aac
 aac
-mKA
+aac
 pIX
 aaf
 aae
@@ -64427,7 +64461,7 @@ aOT
 aeg
 aeo
 agp
-aac
+iQo
 aaf
 aaf
 aae
@@ -65160,11 +65194,11 @@ aTg
 aiz
 qQb
 vtK
-bJb
+aTg
 dkZ
 abD
 iRn
-bJb
+aTg
 aTg
 azA
 azA
@@ -65727,7 +65761,7 @@ aMo
 agD
 aeu
 aPF
-aac
+iQo
 aaf
 aPL
 aae
@@ -65923,14 +65957,14 @@ afv
 cVC
 eId
 eId
-iQo
+eId
 eId
 sGA
 aeW
 eId
 eId
 eId
-iQo
+eId
 eId
 eId
 sGA
@@ -65987,12 +66021,12 @@ abv
 ahq
 aeT
 aPG
-mKA
+aac
 aKP
 aPQ
 aac
 aac
-mKA
+aac
 rgb
 aaf
 aae
@@ -66196,13 +66230,13 @@ liV
 mZv
 gWj
 eId
-iQo
+eId
 kki
 sKw
 afL
 afL
 afL
-gME
+afd
 aOW
 bbP
 aTg
@@ -66444,13 +66478,13 @@ jBE
 eId
 fTA
 trj
-trj
+lSe
 trj
 trj
 trj
 trj
 bsC
-trj
+lSe
 trj
 trj
 trj
@@ -67224,13 +67258,13 @@ sHN
 dZx
 aqC
 trj
-trj
+lSe
 trj
 trj
 trj
 trj
 bsC
-trj
+lSe
 trj
 trj
 trj
@@ -67481,7 +67515,7 @@ afv
 nUs
 ues
 gvE
-iQo
+eId
 aqC
 trj
 kCa
@@ -67501,7 +67535,7 @@ trj
 trj
 trj
 trj
-trj
+lSe
 afd
 pnC
 eCf
@@ -67743,14 +67777,14 @@ xAL
 ohR
 eId
 eId
-iQo
+eId
 eId
 sGA
 aeW
 eId
 eId
 eId
-iQo
+eId
 eId
 eId
 sGA
@@ -67759,10 +67793,10 @@ nPL
 eId
 eId
 afd
-gME
 afd
 afd
-gME
+afd
+afd
 aOW
 agN
 rHa
@@ -67803,8 +67837,8 @@ aoo
 aLL
 adt
 gEm
-lSe
-aSz
+aav
+mKA
 aeT
 abE
 aaf
@@ -67999,7 +68033,7 @@ eId
 eId
 eId
 gzw
-iQo
+eId
 lCp
 eId
 jDj
@@ -93845,7 +93879,7 @@ isi
 xeE
 isi
 aGC
-aGC
+gME
 aGC
 aGC
 aGC
