@@ -81,6 +81,10 @@
 /obj/machinery/porta_turret/aic/on_update_icon()
 	if(!turret_icons)
 		turret_icons = list()
+		turret_icons["open"] = image(icon, "openTurretCover")
+
+	underlays.Cut()
+	underlays += turret_icons["open"]
 
 
 			icon_state = "syndie_stun"
@@ -89,9 +93,9 @@
 	else
 		icon_state = "syndie_closed"
 
-	if(popUp)
+	if popUp()
 		icon_state = "syndie_popup"
-	else if(popDown)
+	else if popDown()
 		icon_state = "syndie_popdown"
 
 	if(stat & BROKEN)
@@ -100,9 +104,12 @@
 		if(powered() && enabled)
 			if(iconholder)
 
+		if(powered() && raised)
 				icon_state = "syndie_lethal"
 			else
 				icon_state = "syndie_off"
+
+
 
 /obj/machinery/porta_turret/crescent
 	enabled = 0
