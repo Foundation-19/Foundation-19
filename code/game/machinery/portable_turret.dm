@@ -102,6 +102,7 @@
 
 				icon_state = "syndie_lethal"
 			else
+				icon_state = "syndie_off"
 
 /obj/machinery/porta_turret/crescent
 	enabled = 0
