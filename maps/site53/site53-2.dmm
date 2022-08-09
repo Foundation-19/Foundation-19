@@ -686,7 +686,9 @@
 "acd" = (
 /obj/machinery/vending/snack,
 /obj/effect/floor_decal/corner/red/mono,
-/obj/machinery/camera/network/entrance,
+/obj/machinery/camera/network/entrance{
+	c_tag = "HCZ Surface Tram 2
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/redline)
 "ace" = (
@@ -1489,7 +1491,7 @@
 	dir = 4
 	},
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation 1";
+	c_tag = "HCZ Surface Tram";
 	dir = 8;
 	network = list("Entrance Zone Network")
 	},
@@ -1528,7 +1530,7 @@
 	dir = 9
 	},
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation 1";
+	c_tag = "LCZ Tram Surface";
 	dir = 8;
 	network = list("Entrance Zone Network")
 	},
@@ -3241,7 +3243,7 @@
 "air" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation 1";
+	c_tag = "Surface Engineering Maint";
 	dir = 8;
 	network = list("Entrance Zone Network")
 	},
@@ -13893,7 +13895,8 @@
 /area/site53/engineering/controlroom)
 "aGd" = (
 /obj/machinery/camera/network/entrance{
-	dir = 8
+	dir = 8;
+	c_tag = "HCZ Surface Tram 4"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -16077,7 +16080,9 @@
 /obj/structure/closet/secure_closet/bar_torch,
 /obj/item/book/manual/barman_recipes,
 /obj/item/clothing/gloves/thick,
-/obj/machinery/camera/network/entrance,
+/obj/machinery/camera/network/entrance{
+	c_tag = "Botany Surface 5"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
 "aLP" = (
@@ -25532,7 +25537,7 @@
 	dir = 4
 	},
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation 2";
+	c_tag = "LCZ Surface Tram 3";
 	dir = 1;
 	network = list("Entrance Zone Network")
 	},
@@ -26458,7 +26463,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation 1";
+	c_tag = "HCZ Surface Tram 3";
 	dir = 8;
 	network = list("Entrance Zone Network")
 	},
@@ -26763,7 +26768,7 @@
 /area/site53/llcz/scp066)
 "fuH" = (
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation 2";
+	c_tag = "Engineering Tram Surface";
 	dir = 1;
 	network = list("Entrance Zone Network")
 	},
@@ -27189,7 +27194,7 @@
 /area/site53/uhcz/scp247observation)
 "gCO" = (
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation 2";
+	c_tag = "LCZ Surface Tram 2";
 	dir = 1;
 	network = list("Entrance Zone Network")
 	},
@@ -27814,7 +27819,7 @@
 /obj/item/storage/backpack/hydroponics,
 /obj/structure/closet/secure_closet/hydroponics_torch,
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation 2";
+	c_tag = "Botany Surface";
 	dir = 1;
 	network = list("Entrance Zone Network")
 	},
@@ -28226,7 +28231,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation 1";
+	c_tag = "LCZ Maint Camera";
 	dir = 8;
 	network = list("Entrance Zone Network")
 	},
@@ -30067,17 +30072,6 @@
 /obj/machinery/vending/dinnerware,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
-"nxt" = (
-/obj/structure/closet/secure_closet/freezer/kitchen{
-	req_access = list()
-	},
-/obj/machinery/camera/motion{
-	c_tag = "AIC Observation 2";
-	dir = 1;
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/tiled/freezer,
-/area/site53/lowertrams/restaurantkitchenarea)
 "nxE" = (
 /obj/machinery/camera/autoname{
 	dir = 4;
@@ -30425,7 +30419,9 @@
 /area/site53/llcz/scp012)
 "osf" = (
 /obj/structure/table/standard,
-/obj/machinery/camera/network/entrance,
+/obj/machinery/camera/network/entrance{
+	c_tag = "Botany Surface 4"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
 "osy" = (
@@ -31522,7 +31518,7 @@
 /area/site53/uhcz/scp247containment)
 "roB" = (
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation 2";
+	c_tag = "Bartender Bedroom";
 	dir = 1;
 	network = list("Entrance Zone Network")
 	},
@@ -31786,7 +31782,8 @@
 "sdX" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/machinery/camera/network/entrance{
-	dir = 8
+	dir = 8;
+	c_tag = "Botany Surface 3"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
@@ -33082,7 +33079,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/camera/network/entrance{
-	dir = 8
+	dir = 8;
+	c_tag = "Engineering Tram Surface 2"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lowertrams/orangeline)
@@ -33153,7 +33151,7 @@
 /area/site53/llcz/scp263research)
 "vIZ" = (
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation 1";
+	c_tag = "Restroom";
 	dir = 8;
 	network = list("Entrance Zone Network")
 	},
@@ -33356,7 +33354,7 @@
 /obj/structure/table/standard,
 /obj/structure/flora/pottedplant/deskleaf,
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation 1";
+	c_tag = "AIC Observation 8";
 	dir = 8;
 	network = list("Entrance Zone Network")
 	},
@@ -33744,7 +33742,7 @@
 "wRB" = (
 /obj/structure/table/standard,
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation 2";
+	c_tag = "Botany Surface 2";
 	dir = 1;
 	network = list("Entrance Zone Network")
 	},
@@ -66381,7 +66379,7 @@ azA
 aav
 abe
 abj
-nxt
+abu
 aav
 acf
 acZ
