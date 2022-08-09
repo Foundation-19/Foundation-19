@@ -25806,7 +25806,12 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
 "cVC" = (
-/obj/machinery/shieldwallgen,
+/obj/machinery/shieldwallgen{
+	active = 1;
+	anchored = 1;
+	max_range = 21;
+	req_access = list()
+	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -30330,7 +30335,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
 "ohR" = (
-/obj/machinery/shieldwallgen,
+/obj/machinery/shieldwallgen{
+	active = 1;
+	anchored = 1;
+	max_range = 21;
+	req_access = list()
+	},
 /obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
