@@ -7,7 +7,7 @@
 	economic_power = 8
 	alt_titles = list("Security Chief", "Head of Security")
 	minimal_player_age = 15
-	ideal_character_age = 55
+	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/cos
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -44,7 +44,8 @@
 	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_BASIC,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_FORENSICS   = SKILL_BASIC)
+	                    SKILL_HAULING     = SKILL_TRAINED,
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
@@ -67,7 +68,7 @@
 	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You also carry the responsibility of guarding the D-Cells. You should not leave your zone under usual SoP</b></big>"
 	economic_power = 4
 	minimal_player_age = 10
-	ideal_character_age = 45
+	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ltofficerlcz
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -93,14 +94,15 @@
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
-	                    SKILL_WEAPONS     = SKILL_BASIC,
-	                    SKILL_FORENSICS   = SKILL_EXPERIENCED)
+	                    SKILL_COMBAT      = SKILL_EXPERIENCED,
+	                    SKILL_WEAPONS     = SKILL_TRAINED,
+	                    SKILL_HAULING     = SKILL_TRAINED,
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 20
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
+	skill_points = 25
 
 /datum/job/ltofficerhcz
 	title = "HCZ Zone Commander"
@@ -111,7 +113,7 @@
 	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You should not leave your zone under usual SoP</b></big>"
 	economic_power = 4
 	minimal_player_age = 10
-	ideal_character_age = 45
+	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ltofficerhcz
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -138,14 +140,15 @@
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
-	                    SKILL_WEAPONS     = SKILL_BASIC,
-	                    SKILL_FORENSICS   = SKILL_EXPERIENCED)
+	                    SKILL_COMBAT      = SKILL_EXPERIENCED,
+	                    SKILL_WEAPONS     = SKILL_TRAINED,
+	                    SKILL_HAULING     = SKILL_TRAINED,
+	                    SKILL_FORENSICS   = SKILL_BASIC)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 20
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
+	skill_points = 25
 
 /datum/job/ltofficerez
 	title = "EZ Supervisor"
@@ -156,7 +159,7 @@
 	//duties = "<big><b>As the Entrance Zone Senior Agent, you and your team work independently from the guard commander and regular security structure. In this zone, you are tasked with the protection of administrative personnel, together with the agents stationed here. You should not leave your zone under usual SoP, or allow administration to go without protection detail into the facility.</b></big>"
 	economic_power = 4
 	minimal_player_age = 10
-	ideal_character_age = 45
+	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ltofficerez
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -188,16 +191,17 @@
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_TRAINED,
+	                    SKILL_COMPUTER    = SKILL_TRAINED,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
-	                    SKILL_WEAPONS     = SKILL_BASIC,
-	                    SKILL_FORENSICS   = SKILL_EXPERIENCED)
+	                    SKILL_COMBAT      = SKILL_TRAINED,
+	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	                    SKILL_FORENSICS   = SKILL_MASTER)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
 	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 28
+	skill_points = 25
 
 //##
 // OFFICERS
@@ -242,15 +246,16 @@
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_TRAINED,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
-	                    SKILL_WEAPONS     = SKILL_BASIC,
-	                    SKILL_FORENSICS   = SKILL_EXPERIENCED)
+	                    SKILL_COMBAT      = SKILL_TRAINED,
+	                    SKILL_WEAPONS     = SKILL_TRAINED,
+	                    SKILL_FORENSICS   = SKILL_BASIC)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 20
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
+	skill_points = 21
 
 /datum/job/ncoofficerhcz
 	title = "HCZ Sergeant"
@@ -286,16 +291,17 @@
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_TRAINED,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
-	                    SKILL_WEAPONS     = SKILL_BASIC,
-	                    SKILL_FORENSICS   = SKILL_EXPERIENCED)
+	                    SKILL_COMBAT      = SKILL_TRAINED,
+	                    SKILL_WEAPONS     = SKILL_TRAINED,
+	                    SKILL_FORENSICS   = SKILL_BASIC)
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
-	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 20
+	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
+	                    SKILL_WEAPONS     = SKILL_MASTER,
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
+	skill_points = 21
 
 /datum/job/ncoofficerez
 	title = "EZ Senior Agent"
@@ -307,7 +313,7 @@
 	economic_power = 4
 	alt_titles = list("EZ Senior Forensics Agent", "EZ Senior Investigations Agent", "EZ Senior Combat Medic")
 	minimal_player_age = 5
-	ideal_character_age = 30
+	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerez
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -335,16 +341,16 @@
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_COMPUTER    = SKILL_TRAINED,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
-	                    SKILL_WEAPONS     = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_TRAINED,
+	                    SKILL_WEAPONS     = SKILL_TRAINED,
 	                    SKILL_FORENSICS   = SKILL_EXPERIENCED)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 20
+	skill_points = 21
 //##
 //JUNIOR OFFICER
 //##
@@ -387,15 +393,16 @@
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_TRAINED,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_TRAINED,
 	                    SKILL_WEAPONS     = SKILL_BASIC,
-	                    SKILL_FORENSICS   = SKILL_EXPERIENCED)
+	                    SKILL_FORENSICS   = SKILL_BASIC)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 15
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
+	skill_points = 17
 
 /datum/job/enlistedofficerhcz
 
@@ -433,15 +440,16 @@
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_TRAINED,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_TRAINED,
 	                    SKILL_WEAPONS     = SKILL_BASIC,
-	                    SKILL_FORENSICS   = SKILL_EXPERIENCED)
+	                    SKILL_FORENSICS   = SKILL_BASIC)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 15
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
+	skill_points = 17
 
 /datum/job/enlistedofficerez
 
@@ -454,7 +462,7 @@
 	economic_power = 4
 	alt_titles = list("EZ Forensics Agent", "EZ Investigations Agent", "EZ Combat Medic")
 	minimal_player_age = 0
-	ideal_character_age = 27
+	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerez
 	allowed_branches = list(
 		/datum/mil_branch/security
@@ -481,13 +489,14 @@
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_TRAINED,
 	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_BASIC,
-	                    SKILL_WEAPONS     = SKILL_BASIC,
+	                    SKILL_WEAPONS     = SKILL_TRAINED,
 	                    SKILL_FORENSICS   = SKILL_EXPERIENCED)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 20
+	skill_points = 17
 

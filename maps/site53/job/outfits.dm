@@ -114,7 +114,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/beret/sec = 1,/obj/item/clothing/suit/armor/pcarrier/scp/tactical = 1,/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1)
-	belt = /obj/item/storage/belt/holster/security/fullmk9
+	belt = /obj/item/storage/belt/holster/security/fullusp45
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/hcz_hazmat
 	mask = /obj/item/clothing/mask/balaclava
@@ -134,7 +134,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/hos = 1, /obj/item/handcuffs = 1)
-	belt = /obj/item/storage/belt/holster/security/fullmk9
+	belt = /obj/item/storage/belt/holster/security/fullusp45
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -150,7 +150,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1)
-	belt = /obj/item/storage/belt/holster/security/fullmk9
+	belt = /obj/item/storage/belt/holster/security/fullusp45
 	glasses = /obj/item/clothing/glasses/eyepatch/hud/security
 	head = /obj/item/clothing/head/beret/sec/corporate/hos
 	mask = /obj/item/clothing/mask/balaclava
@@ -287,31 +287,33 @@
 
 /decl/hierarchy/outfit/job/site90/crew/science/seniorroboticist
 	name = OUTFIT_JOB_NAME("Senior Robotics Technician")
-	uniform = /obj/item/clothing/under/scp/utility
-	suit = /obj/item/clothing/suit/storage/solgov/service
-	shoes = /obj/item/clothing/shoes/workboots
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat
+	suit = /obj/item/clothing/suit/storage/toggle/highvis
+	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/sciencelvl4)
 	gloves = /obj/item/clothing/gloves/insulated
 	l_ear = /obj/item/device/radio/headset/headset_sci
 	l_pocket = /obj/item/book/manual/scp/scisop
 	belt = /obj/item/storage/belt/utility/full
+	head =	/obj/item/clothing/head/welding
 
 /decl/hierarchy/outfit/job/site90/crew/science/roboticist
 	name = OUTFIT_JOB_NAME("Robotics Technician")
-	uniform = /obj/item/clothing/under/scp/utility
-	suit = /obj/item/clothing/suit/storage/solgov/service
-	shoes = /obj/item/clothing/shoes/workboots
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat
+	suit = /obj/item/clothing/suit/storage/toggle/highvis
+	shoes = /obj/item/clothing/shoes/jackboots
 	id_types = list(/obj/item/card/id/sciencelvl3)
 	gloves = /obj/item/clothing/gloves/insulated
 	l_ear = /obj/item/device/radio/headset/headset_sci
 	l_pocket = /obj/item/book/manual/scp/scisop
 	belt = /obj/item/storage/belt/utility/full
+	head =	/obj/item/clothing/head/welding
 
 /decl/hierarchy/outfit/job/site90/crew/science/juniorroboticist
 	name = OUTFIT_JOB_NAME("Junior Robotics Technician")
-	uniform = /obj/item/clothing/under/scp/utility
-	suit = /obj/item/clothing/suit/storage/solgov/service
-	shoes = /obj/item/clothing/shoes/workboots
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat
+	suit = /obj/item/clothing/suit/storage/toggle/highvis
+	shoes = /obj/item/clothing/shoes/black
 	id_types = list(/obj/item/card/id/sciencelvl2)
 	gloves = /obj/item/clothing/gloves/thick
 	l_ear = /obj/item/device/radio/headset/headset_sci
@@ -424,6 +426,17 @@
 	back = /obj/item/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
 	belt = /obj/item/gun/projectile/pistol/m1911
+
+/decl/hierarchy/outfit/job/thirep
+	name = OUTFIT_JOB_NAME("thirep")
+	uniform = /obj/item/clothing/under/rank/chaplain
+	l_hand = /obj/item/storage/bible
+	id_types = list(/obj/item/card/id/adminlvl3)
+	pda_type = /obj/item/modular_computer/pda/medical
+	l_ear = /obj/item/device/radio/headset/heads/hos/thi
+	belt = /obj/item/gun/projectile/pistol/m1911
+	back = /obj/item/storage/backpack/satchel/pocketbook
+	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
 	name = OUTFIT_JOB_NAME("O5 Representative")
