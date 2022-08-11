@@ -50,7 +50,7 @@ export const TextInputModal = (props, context) => {
       <Window.Content
         onKeyDown={(event) => {
           const keyCode = window.event ? event.which : event.keyCode;
-          if (keyCode === KEY_ENTER) {
+          if (!multiline && keyCode === KEY_ENTER) {
             act('submit', { entry: input });
           }
           if (keyCode === KEY_ESCAPE) {
