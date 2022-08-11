@@ -530,7 +530,7 @@ GLOBAL_LIST_INIT(pp_status_flags, list(
 		var/client/C = src
 		src = C.holder
 
-	if (!istype(src,/datum/admins) || !(src.rights & R_MOD))
+	if (!istype(src,/datum/admins) || !(src.rights & (R_MOD|R_ADMIN)))
 		to_chat(owner, "Error: you are not an admin!")
 		return
 
