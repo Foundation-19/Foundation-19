@@ -33,15 +33,6 @@
 	if (!GLOB.universe.OnShuttleCall(null))
 		return 0
 
-	if(!forced)
-		for(var/predicate in evacuation_predicates)
-			var/datum/evacuation_predicate/esp = predicate
-			if(!esp.is_valid())
-				evacuation_predicates -= esp
-				qdel(esp)
-			else
-				if(!esp.can_call(user))
-					return 0
 	return 1
 
 /datum/evacuation_controller/proc/waiting_to_leave()
