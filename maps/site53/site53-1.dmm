@@ -3346,6 +3346,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignmentbubble)
+"iN" = (
+/obj/structure/ladder/updown,
+/turf/simulated/floor/reinforced,
+/area/site53/llcz/mine/unexplored)
 "iO" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
@@ -9476,6 +9480,10 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/cells)
+"yz" = (
+/obj/machinery/door/blast/regular,
+/turf/simulated/floor/reinforced,
+/area/site53/llcz/mine/unexplored)
 "yA" = (
 /obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/monotile/white,
@@ -10907,10 +10915,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
-"CP" = (
-/obj/structure/ladder/updown,
-/turf/simulated/floor/plating,
-/area/site53/llcz/mine/unexplored)
 "CQ" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/flasher{
@@ -15655,12 +15659,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
-"QI" = (
-/mob/living/simple_animal/hostile/scarybat,
-/turf/simulated/mineral{
-	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
-	},
-/area/site53/llcz/mine/unexplored)
 "QJ" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -15693,6 +15691,9 @@
 /obj/item/storage/box/bodybags,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/medicalpost/morgue)
+"QM" = (
+/turf/simulated/floor/reinforced,
+/area/site53/llcz/mine/unexplored)
 "QO" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/railing/mapped,
@@ -15799,6 +15800,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
+"Rg" = (
+/mob/living/simple_animal/hostile/scarybat,
+/turf/simulated/mineral{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/site53/llcz/mine/unexplored)
 "Rh" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/structure/railing/mapped,
@@ -49673,7 +49680,7 @@ ua
 ua
 ua
 ua
-QI
+Rg
 ua
 ua
 ua
@@ -49909,11 +49916,11 @@ gq
 gq
 gq
 ua
-ua
-ua
-ua
-ua
-ua
+yz
+yz
+yz
+yz
+yz
 ua
 ua
 ua
@@ -50166,11 +50173,11 @@ gq
 gq
 gq
 ua
-ua
-ua
-ua
-ua
-ua
+yz
+QM
+QM
+QM
+yz
 ua
 ua
 ua
@@ -50423,11 +50430,11 @@ gq
 gq
 gq
 ua
-ua
-ua
-CP
-ua
-ua
+yz
+QM
+iN
+QM
+yz
 ua
 ua
 ua
@@ -50680,11 +50687,11 @@ gq
 gq
 gq
 ua
-ua
-ua
-ua
-ua
-ua
+yz
+QM
+QM
+QM
+yz
 ua
 ua
 ua
@@ -50937,11 +50944,11 @@ gq
 gq
 gq
 ua
-ua
-ua
-ua
-ua
-ua
+yz
+yz
+yz
+yz
+yz
 ua
 ua
 ua
@@ -53260,7 +53267,7 @@ ua
 ua
 ua
 ua
-QI
+Rg
 ua
 ua
 ua
