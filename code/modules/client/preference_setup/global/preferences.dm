@@ -84,6 +84,10 @@ var/list/_client_preferences_by_type
 * Player Preferences *
 *********************/
 
+/datum/client_preference/play_vote_notification
+	description = "Play vote notification"
+	key = "SOUND_VOTE"
+
 /datum/client_preference/play_admin_midis
 	description = "Play admin midis"
 	key = "SOUND_MIDI"

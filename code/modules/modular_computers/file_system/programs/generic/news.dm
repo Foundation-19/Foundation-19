@@ -23,8 +23,9 @@
 /datum/nano_module/program/newscast/proc/news_alert(announcement)
 	if (!notifs_enabled || !announcement)
 		return
-	program.computer.visible_notification(announcement)
-	program.computer.audible_notification("sound/machines/twobeep.ogg")
+
+	program.computer.visible_message(SPAN_NOTICE(announcement))
+	playsound(program.computer, "sound/machines/twobeep.ogg")
 
 /datum/nano_module/program/newscast/Destroy()
 	if (connected_group)
@@ -69,7 +70,7 @@
 	var/list/data = host.initial_data()
 
 	var/datum/computer_file/program/newscast/prog = program
-	var/turf/T = get_turf(prog.computer.get_physical_host())
+	var/turf/T = get_turf(prog.computer)
 	if (!connected_group) // Look for a network connected to these z-levels
 		for (var/datum/feed_network/G in news_network)
 			if (T.z in G.z_levels)
@@ -77,7 +78,7 @@
 				LAZYADD(G.news_programs, src)
 				break
 	else if (!(T.z in connected_group.z_levels)) // Lose our tracked group if we leave the network range but still have a connection
-		prog.computer.visible_error("Newscaster connection lost. Attempting to re-establish.")
+		prog.computer.visible_message("Newscaster connection lost. Attempting to re-establish.")
 		LAZYREMOVE(connected_group.news_programs, src)
 		connected_group = null
 

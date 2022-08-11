@@ -98,8 +98,8 @@
 	ai_holder_type = /datum/ai_holder/simple_animal/retaliate/parrot
 
 
-/mob/living/simple_animal/hostile/retaliate/parrot/New()
-	..()
+/mob/living/simple_animal/hostile/retaliate/parrot/Initialize()
+	. = ..()
 	if(!ears)
 		var/headset = pick(/obj/item/device/radio/headset/headset_sec, \
 						/obj/item/device/radio/headset/headset_eng, \
@@ -700,10 +700,10 @@
 	name = "Poly"
 	desc = "Poly the Parrot. An expert on quantum cracker theory."
 
-/mob/living/simple_animal/hostile/retaliate/parrot/Poly/New()
+/mob/living/simple_animal/hostile/retaliate/parrot/Poly/Initialize()
 	ears = new /obj/item/device/radio/headset/headset_eng(src)
 	available_channels = list(":e")
-	..()
+	. = ..()
 
 /mob/living/simple_animal/hostile/retaliate/parrot/say(var/message)
 

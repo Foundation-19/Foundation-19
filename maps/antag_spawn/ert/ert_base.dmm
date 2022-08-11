@@ -2834,7 +2834,7 @@
 /turf/simulated/floor/plating,
 /area/map_template/rescue_base/start)
 "fm" = (
-/obj/machinery/computer/modular/preset/medical{
+/obj/item/modular_computer/console/preset/medical{
 	dir = 4;
 	icon_state = "console"
 	},
@@ -2848,7 +2848,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/map_template/rescue_base/start)
 "fp" = (
-/obj/machinery/computer/modular/preset/engineering{
+/obj/item/modular_computer/console/preset/engineering{
 	dir = 8;
 	icon_state = "console"
 	},
@@ -2881,7 +2881,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/map_template/rescue_base/start)
 "fs" = (
-/obj/machinery/computer/modular/preset/security{
+/obj/item/modular_computer/console/preset/security{
 	dir = 8;
 	icon_state = "console"
 	},

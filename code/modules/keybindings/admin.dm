@@ -31,7 +31,7 @@
 	description = "Opens up the list players panel"
 
 /datum/keybinding/admin/list_players/down(client/user)
-	user.player_panel()
+	user.holder?.player_panel_new()
 	return TRUE
 
 /datum/keybinding/admin/admin_pm

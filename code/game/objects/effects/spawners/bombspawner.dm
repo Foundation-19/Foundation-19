@@ -130,7 +130,7 @@
 	icon = 'icons/mob/screen1.dmi'
 	icon_state = "x"
 
-	var/assembly_type = /obj/item/device/assembly/signaler
+	var/assembly_type = /obj/item/device/assembly/signaller
 
 	//Note that the maximum amount of gas you can put in a 70L air tank at 1013.25 kPa and 519K is 16.44 mol.
 	var/phoron_amt = 12
@@ -139,7 +139,7 @@
 
 /obj/effect/spawner/newbomb/traitor
 	name = "TTV bomb - traitor"
-	assembly_type = /obj/item/device/assembly/signaler
+	assembly_type = /obj/item/device/assembly/signaller
 	phoron_amt = 14
 	oxygen_amt = 21
 
@@ -209,7 +209,7 @@
 	icon = 'icons/mob/screen1.dmi'
 	icon_state = "x"
 
-//	var/assembly_type = /obj/item/device/assembly/signaler
+//	var/assembly_type = /obj/item/device/assembly/signaller
 
 	//Note that the maximum amount of gas you can put in a 70L air tank at 1013.25 kPa and 519K is 16.44 mol.
 	var/phoron_amt = 0

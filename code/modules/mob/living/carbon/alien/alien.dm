@@ -10,7 +10,7 @@
 	var/death_msg = "lets out a waning guttural screech, green blood bubbling from its maw."
 	var/instance_num
 
-/mob/living/carbon/alien/New()
+/mob/living/carbon/alien/Initialize()
 	add_verb(src, /mob/living/proc/ventcrawl)
 	add_verb(src, /mob/living/proc/hide)
 
@@ -24,7 +24,7 @@
 
 	gender = NEUTER
 
-	..()
+	. = ..()
 
 /mob/living/carbon/alien/u_equip(obj/item/W as obj)
 	return

@@ -224,7 +224,7 @@
 
 /obj/effect/overmap/event/ion
 	name = "ion cloud"
-	events = list(/datum/event/ionstorm, /datum/event/computer_damage)
+	events = list(/datum/event/ionstorm)
 	opacity = 0
 	event_icon_states = list("ion1", "ion2", "ion3", "ion4")
 	difficulty = EVENT_LEVEL_MAJOR

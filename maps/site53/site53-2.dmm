@@ -617,7 +617,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "abS" = (
-/obj/machinery/computer/modular/preset/aislot/research{
+/obj/item/modular_computer/console/preset/aislot/research{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -4463,7 +4463,7 @@
 /obj/machinery/light/spot{
 	dir = 8
 	},
-/obj/machinery/computer/modular/preset/engineering{
+/obj/item/modular_computer/console/preset/engineering{
 	dir = 4
 	},
 /obj/structure/railing/mapped{
@@ -5742,7 +5742,7 @@
 /turf/simulated/floor/plating,
 /area/site53/engineering/primaryhallway)
 "aod" = (
-/obj/machinery/computer/modular/preset/engineering{
+/obj/item/modular_computer/console/preset/engineering{
 	dir = 8
 	},
 /obj/structure/railing/mapped{
@@ -18550,7 +18550,7 @@
 /turf/simulated/floor,
 /area/site53/surface/explorers/surrounding)
 "aSX" = (
-/obj/machinery/computer/modular/preset/aislot/sysadmin{
+/obj/item/modular_computer/console/preset/aislot/sysadmin{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -25650,7 +25650,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/surface/bunker)
 "dyu" = (
-/obj/machinery/computer/modular/preset/aislot/research,
+/obj/item/modular_computer/console/preset/aislot/research,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
 "dBn" = (
@@ -26253,7 +26253,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "fiJ" = (
-/obj/machinery/computer/modular/preset/cardslot/command{
+/obj/item/modular_computer/console/preset/cardslot/command{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/orange/border{
@@ -26751,7 +26751,7 @@
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "gyL" = (
-/obj/machinery/computer/modular/preset/aislot/research{
+/obj/item/modular_computer/console/preset/aislot/research{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/orange/border{
@@ -26813,7 +26813,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
 "gFo" = (
-/obj/machinery/computer/modular/preset/cardslot/command{
+/obj/item/modular_computer/console/preset/cardslot/command{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/orange/border{
@@ -26859,7 +26859,7 @@
 /turf/simulated/floor,
 /area/site53/surface/bunker)
 "gOz" = (
-/obj/machinery/computer/modular/preset/aislot/research{
+/obj/item/modular_computer/console/preset/aislot/research{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/orange/border{
@@ -28537,11 +28537,11 @@
 /obj/item/device/assembly/infra,
 /obj/item/device/assembly/infra,
 /obj/item/device/assembly/infra,
-/obj/item/device/assembly/signaler,
-/obj/item/device/assembly/signaler,
-/obj/item/device/assembly/signaler,
-/obj/item/device/assembly/signaler,
-/obj/item/device/assembly/signaler,
+/obj/item/device/assembly/signaller,
+/obj/item/device/assembly/signaller,
+/obj/item/device/assembly/signaller,
+/obj/item/device/assembly/signaller,
+/obj/item/device/assembly/signaller,
 /obj/structure/closet/crate,
 /obj/item/device/assembly/prox_sensor,
 /obj/item/device/assembly/prox_sensor,
@@ -29540,7 +29540,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/space)
 "mEC" = (
-/obj/machinery/computer/modular/preset/cardslot/command_sec{
+/obj/item/modular_computer/console/preset/cardslot/command_sec{
 	dir = 4
 	},
 /obj/machinery/camera/network/entrance{
@@ -30884,7 +30884,7 @@
 /turf/simulated/floor,
 /area/site53/llcz/scp066)
 "pXS" = (
-/obj/machinery/computer/modular/preset/security,
+/obj/item/modular_computer/console/preset/security,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "pXT" = (
@@ -32335,7 +32335,7 @@
 /turf/simulated/floor/reinforced,
 /area/site53/lowertrams/brownline)
 "tGe" = (
-/obj/machinery/computer/modular/preset/aislot/sysadmin{
+/obj/item/modular_computer/console/preset/aislot/sysadmin{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -33301,7 +33301,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
 "vPJ" = (
-/obj/machinery/computer/modular/preset/cardslot/command,
+/obj/item/modular_computer/console/preset/cardslot/command,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
 "vQk" = (

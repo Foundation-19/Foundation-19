@@ -33,10 +33,11 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	var/obj/item/device/multitool/ghost_multitool
 	var/list/hud_images // A list of hud images
 
-/mob/observer/ghost/New(mob/body)
+/mob/observer/ghost/Initialize(mapload)
 	see_in_dark = 100
 	add_verb(src, /mob/proc/toggle_antag_pool)
 
+	var/mob/body = loc
 	var/turf/T
 	if(ismob(body))
 		T = get_turf(body)               //Where is the body located?
@@ -55,11 +56,8 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 					name = capitalize(pick(GLOB.first_names_female)) + " " + capitalize(pick(GLOB.last_names))
 
 		mind = body.mind	//we don't transfer the mind but we keep a reference to it.
-	else
-		spawn(10) // wait for the observer mob to receive the client's key
-			mind = new /datum/mind(key)
-			mind.current = src
-	if(!T)	T = pick(GLOB.latejoin | GLOB.latejoin_cryo | GLOB.latejoin_gateway)			//Safety in case we cannot find the body's position
+	if(!T)
+		T = pick(GLOB.latejoin | GLOB.latejoin_cryo | GLOB.latejoin_gateway)			//Safety in case we cannot find the body's position
 	forceMove(T)
 
 	if(!name)							//To prevent nameless ghosts
@@ -75,7 +73,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 
 	GLOB.ghost_mob_list += src
 
-	..()
+	.=..()
 
 /mob/observer/ghost/Destroy()
 	GLOB.ghost_mob_list -= src
@@ -171,15 +169,15 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	else
 		var/response
 		if(src.client && check_rights(R_INVESTIGATE, FALSE, src))
-			response = alert(src, "You have the ability to Admin-Ghost. The regular Ghost verb will announce your presence to dead chat. Both variants will allow you to return to your body using 'aghost'.\n\nWhat do you wish to do?", "Are you sure you want to ghost?", "Ghost", "Admin Ghost", "Stay in body")
-			if(response == "Admin Ghost")
+			response = tgui_alert(src, "You have the ability to Admin-Ghost. The regular Ghost verb will announce your presence to dead chat. Both variants will allow you to return to your body using 'aghost'.\n\nWhat do you wish to do?", "Are you sure you want to ghost?", list("Ghost", "A-Ghost", "Stay in body"))
+			if(response == "A-Ghost")
 				if(!src.client)
 					return
 				src.client.admin_ghost()
 		else if(config.respawn_delay)
-			response = alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost, you won't be able to play this round for another [config.respawn_delay] minute\s! You can't change your mind so choose wisely!)", "Are you sure you want to ghost?", "Ghost", "Stay in body")
+			response = tgui_alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost, you won't be able to play this round for another [config.respawn_delay] minute\s! You can't change your mind so choose wisely!)", "Are you sure you want to ghost?", list("Ghost", "Stay in body"))
 		else
-			response = alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost, you won't be able to return to this body! You can't change your mind so choose wisely!)", "Are you sure you want to ghost?", "Ghost", "Stay in body")
+			response = tgui_alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost, you won't be able to return to this body! You can't change your mind so choose wisely!)", "Are you sure you want to ghost?", list("Ghost", "Stay in body"))
 		if(response != "Ghost")
 			return
 		log_and_message_admins("has ghosted.")
