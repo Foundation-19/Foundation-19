@@ -1994,6 +1994,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "afx" = (
@@ -24880,15 +24881,9 @@
 /area/site53/science/aiccore)
 "bzl" = (
 /obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/catwalk,
 /obj/structure/catwalk,
 /obj/structure/lattice,
+/obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "bBw" = (
@@ -25518,6 +25513,7 @@
 /area/site53/science/aiccore)
 "cJJ" = (
 /obj/structure/lattice,
+/obj/structure/catwalk,
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "cLu" = (
@@ -27258,11 +27254,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
 "gIg" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 4
+/obj/machinery/camera/motion{
+	network = list("Entrance Zone Network");
+	c_tag = "AIC Observation 16";
+	pixel_x = 10;
+	dir = 1
 	},
 /turf/simulated/open,
 /area/site53/science/aiccore)
@@ -28155,8 +28151,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
 "ixx" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor,
+/obj/structure/lattice,
+/obj/structure/foamedmetal,
+/obj/structure/catwalk,
+/turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "iyY" = (
 /obj/machinery/door/airlock/civilian,
@@ -28570,6 +28568,7 @@
 /obj/structure/lattice,
 /obj/structure/lattice,
 /obj/structure/foamedmetal,
+/obj/structure/catwalk,
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "jsp" = (
@@ -28633,9 +28632,9 @@
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "jul" = (
-/obj/structure/railing/mapped{
-	dir = 4
-	},
+/obj/structure/lattice,
+/obj/structure/catwalk,
+/obj/structure/foamedmetal,
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "jwF" = (
@@ -28992,12 +28991,21 @@
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "kpq" = (
+/obj/effect/catwalk_plated/dark,
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/obj/machinery/camera/motion{
+	dir = 5;
+	network = list("Entrance Zone Network");
+	c_tag = "AIC Observation 6"
+	},
 /obj/machinery/button/blast_door{
 	dir = 1;
 	id_tag = "aicobserv";
 	name = "AIC Core Lockdown button";
 	pixel_y = -21
 	},
+/obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "kqx" = (
@@ -29323,6 +29331,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"lfs" = (
+/obj/effect/catwalk_plated/dark,
+/obj/effect/landmark/start{
+	name = "AI"
+	},
+/turf/simulated/floor,
+/area/site53/science/aiccore)
 "lfX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 9
@@ -30265,15 +30280,8 @@
 /turf/simulated/floor,
 /area/site53/surface/bunker)
 "mxa" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/obj/structure/catwalk,
-/obj/structure/catwalk,
-/obj/structure/lattice,
-/turf/simulated/open,
+/obj/structure/foamedmetal,
+/turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "mxN" = (
 /obj/structure/lattice,
@@ -30755,6 +30763,13 @@
 /obj/machinery/vending/dinnerware,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
+"nxz" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/open,
+/area/site53/science/aiccore)
 "nxE" = (
 /obj/machinery/camera/autoname{
 	dir = 4;
@@ -31490,11 +31505,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
 "pgR" = (
-/obj/machinery/camera/motion{
-	dir = 5;
-	network = list("Entrance Zone Network");
-	c_tag = "AIC Observation 6"
+/obj/machinery/light{
+	dir = 8
 	},
+/obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "phs" = (
@@ -31721,9 +31735,8 @@
 /turf/simulated/wall/titanium,
 /area/site53/uhcz/medicalpost)
 "pDi" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/railing/mapped,
-/turf/simulated/floor,
+/obj/structure/foamedmetal,
+/turf/space,
 /area/site53/science/aiccore)
 "pEO" = (
 /obj/structure/mopbucket,
@@ -32044,9 +32057,10 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/lowertrams/redline)
 "qsG" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "qtP" = (
 /obj/structure/closet/secure_closet/mtf/enlisted/hcz,
@@ -32883,10 +32897,6 @@
 /obj/effect/landmark/start{
 	name = "AI"
 	},
-/obj/machinery/mass_driver{
-	dir = 1;
-	id_tag = "AICSus"
-	},
 /turf/simulated/floor/bluegrid,
 /area/site53/science/aiccore)
 "sbE" = (
@@ -33378,7 +33388,7 @@
 /area/site53/reswing/robotics)
 "tbJ" = (
 /obj/structure/foamedmetal,
-/turf/simulated/open,
+/turf/simulated/floor/reinforced,
 /area/site53/reswing/robotics)
 "tcK" = (
 /obj/structure/lattice,
@@ -33670,6 +33680,7 @@
 	anchored = 1
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "tFZ" = (
@@ -34612,9 +34623,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/catwalk_plated/dark,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
 /obj/structure/catwalk,
 /obj/structure/catwalk,
 /obj/structure/lattice,
@@ -34765,6 +34773,7 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
+/obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "vPv" = (
@@ -34831,17 +34840,10 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/serverfarmcontrol)
 "vTI" = (
-/obj/effect/paint_stripe/mauve,
-/obj/machinery/button/mass_driver{
-	id_tag = "AICSus";
-	idle_power_usage = 0
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/wall/r_titanium,
+/obj/structure/lattice,
+/obj/structure/foamedmetal,
+/obj/structure/catwalk,
+/turf/simulated/open,
 /area/site53/science/aiccore)
 "vUO" = (
 /obj/effect/paint_stripe/mauve,
@@ -35195,12 +35197,10 @@
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
 "wwR" = (
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/effect/catwalk_plated/dark,
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/obj/structure/foamedmetal,
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "wwS" = (
@@ -35369,9 +35369,12 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
 "wKk" = (
-/obj/structure/railing/mapped{
-	dir = 8
+/obj/structure/cable/green{
+	icon_state = "1-2"
 	},
+/obj/effect/catwalk_plated/dark,
+/obj/structure/catwalk,
+/obj/structure/lattice,
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "wLf" = (
@@ -35869,7 +35872,6 @@
 	name = "AIC Core Lockdown button";
 	pixel_x = -22
 	},
-/obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "xCR" = (
@@ -36297,7 +36299,7 @@
 /obj/structure/lattice,
 /obj/machinery/camera/motion{
 	network = list("Entrance Zone Network");
-	c_tag = "AIC Observation 13";
+	c_tag = "AIC Observation 17";
 	pixel_x = 10;
 	dir = 1
 	},
@@ -65466,7 +65468,7 @@ iZA
 iZA
 iZA
 iZA
-bsC
+vTI
 iZA
 iZA
 iZA
@@ -65475,7 +65477,7 @@ iZA
 iZA
 iZA
 iZA
-bsC
+vTI
 iZA
 iZA
 iZA
@@ -65726,7 +65728,7 @@ iZA
 iZA
 iZA
 iZA
-bsC
+vTI
 iZA
 iZA
 iZA
@@ -65735,7 +65737,7 @@ iZA
 iZA
 iZA
 iZA
-bsC
+vTI
 iZA
 iZA
 iZA
@@ -65983,8 +65985,8 @@ iZA
 iZA
 iZA
 iZA
-iZA
-iZA
+pCF
+pCF
 pCF
 cJJ
 pCF
@@ -66243,8 +66245,8 @@ iZA
 iZA
 iZA
 iZA
-iZA
-iZA
+pCF
+pCF
 pCF
 cJJ
 pCF
@@ -66503,8 +66505,8 @@ iZA
 iZA
 iZA
 iZA
-iZA
-iZA
+pCF
+pCF
 mUA
 shT
 uEs
@@ -66750,21 +66752,21 @@ azA
 azA
 azA
 azz
-bsC
+wwR
 jso
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
+vTI
+vTI
+vTI
+vTI
+vTI
+vTI
+vTI
+vTI
+vTI
+vTI
+vTI
+cJJ
+cJJ
 rFd
 wTK
 wTK
@@ -66780,7 +66782,7 @@ skV
 cJJ
 cJJ
 cJJ
-bsC
+vTI
 fDe
 azz
 azA
@@ -67010,7 +67012,7 @@ azA
 azA
 azA
 azz
-iZA
+wwR
 bsC
 iZA
 iZA
@@ -67018,13 +67020,13 @@ iZA
 iZA
 iZA
 iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
 wlp
 azz
 sWv
@@ -67270,7 +67272,7 @@ azA
 azA
 azA
 azz
-iZA
+wwR
 bsC
 iZA
 iZA
@@ -67278,13 +67280,13 @@ iZA
 iZA
 iZA
 iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
 ykj
 azz
 imW
@@ -67530,7 +67532,7 @@ azA
 azA
 azA
 azz
-iZA
+wwR
 bsC
 iZA
 iZA
@@ -67538,13 +67540,13 @@ iZA
 iZA
 iZA
 iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
 wlp
 azz
 eqj
@@ -67790,7 +67792,7 @@ azA
 azA
 azA
 azz
-iZA
+wwR
 bsC
 iZA
 iZA
@@ -67798,13 +67800,13 @@ iZA
 iZA
 iZA
 iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
 wlp
 azz
 imW
@@ -67823,7 +67825,7 @@ uOG
 ivw
 azz
 qsG
-ixx
+qsG
 azz
 azz
 azz
@@ -67831,7 +67833,7 @@ azz
 azz
 azz
 qsG
-ixx
+qsG
 azz
 cXI
 aOW
@@ -68050,7 +68052,7 @@ azA
 azA
 azA
 azz
-iZA
+wwR
 bsC
 iZA
 iZA
@@ -68058,13 +68060,13 @@ iZA
 iZA
 iZA
 iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
 dxm
 azz
 imW
@@ -68082,15 +68084,15 @@ kUM
 pCF
 rYj
 kUM
-pCF
-pCF
+uEs
+bzl
 xBT
 kUM
 mcE
 pCF
 pCF
-kUM
 pgR
+uEs
 kpq
 azz
 azz
@@ -68310,18 +68312,18 @@ azA
 azA
 azA
 azz
-iZA
-azz
-azz
-azz
-azz
-azz
-azz
-azz
-azz
-azz
-azz
-azz
+wwR
+pDi
+pDi
+pDi
+pDi
+pDi
+pDi
+pDi
+pCF
+pCF
+pCF
+pCF
 azz
 azz
 azz
@@ -68342,16 +68344,16 @@ cJd
 pCF
 rYj
 xmt
-pCF
+uEs
 afv
-rYj
+pCF
 pCF
 mcE
 xmt
 pCF
 afv
-pCF
-pCF
+uEs
+bzl
 rYj
 iKr
 aqC
@@ -68570,22 +68572,22 @@ azA
 azA
 azA
 azz
-iZA
+wwR
+pDi
+pDi
+pDi
+pDi
+pDi
+pDi
+pDi
+pCF
+pCF
+pCF
+pCF
 azz
 mnK
 dGp
-pDi
-jul
-jul
-jul
-wwR
-jul
-jul
-wwR
-jul
-jul
-wwR
-jul
+dGp
 azz
 azz
 azz
@@ -68597,12 +68599,12 @@ wXK
 waR
 ocx
 eAt
-bzl
+eAt
 vFj
 dnm
 dnm
 dnm
-dnm
+wKk
 tws
 viA
 dnm
@@ -68830,21 +68832,21 @@ azA
 azA
 azA
 azz
-iZA
+wwR
+pDi
+pDi
+pDi
+pDi
+pDi
+pDi
+pDi
+pCF
+pCF
+pCF
+gIg
 azz
 dGp
-dGp
-dGp
-dGp
-dGp
-dGp
-dGp
-dGp
-dGp
-dGp
-dGp
-dGp
-dGp
+lfs
 dGp
 aqC
 aqC
@@ -68857,8 +68859,8 @@ cPQ
 eDy
 dlV
 qSM
-mxa
-mxa
+qSM
+qSM
 fdR
 fdR
 fdR
@@ -69090,22 +69092,22 @@ azA
 azA
 azA
 azz
-iZA
+wwR
+pDi
+pDi
+pDi
+pDi
+pDi
+pDi
+pDi
+pCF
+pCF
+pCF
+pCF
 azz
 dGp
 dGp
-pDi
-wKk
-wKk
-wKk
-gIg
-wKk
-wKk
-gIg
-wKk
-wKk
-gIg
-wKk
+dGp
 bRx
 wTK
 wTK
@@ -69122,16 +69124,16 @@ hfr
 pCF
 rYj
 gKd
-pCF
+uEs
 tFu
-rYj
+pCF
 pCF
 mcE
 gKd
 pCF
 tFu
-pCF
-pCF
+uEs
+bzl
 rYj
 iKr
 imW
@@ -69350,18 +69352,18 @@ azA
 azA
 azA
 azz
-iZA
-azz
-azz
-azz
-azz
-azz
-azz
-azz
-azz
-azz
-azz
-azz
+wwR
+pDi
+pDi
+pDi
+pDi
+pDi
+pDi
+pDi
+pCF
+pCF
+pCF
+pCF
 azz
 azz
 azz
@@ -69382,16 +69384,16 @@ wna
 pCF
 rYj
 wna
+uEs
+bzl
 uex
-pCF
-rYj
 wna
 mcE
 pCF
 pCF
-wna
-pCF
-pCF
+nxz
+uEs
+bzl
 rYj
 nGA
 imW
@@ -69610,7 +69612,7 @@ azA
 azA
 azA
 azz
-iZA
+wwR
 bsC
 iZA
 iZA
@@ -69618,13 +69620,13 @@ iZA
 iZA
 iZA
 iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
 lrR
 azz
 imW
@@ -69642,16 +69644,16 @@ xhC
 gYV
 qLv
 azz
-qsG
-ixx
+exW
+exW
 azz
 azz
 azz
 azz
 azz
 azz
-qsG
-ixx
+exW
+exW
 azz
 azz
 vUO
@@ -69870,7 +69872,7 @@ azA
 azA
 azA
 azz
-iZA
+wwR
 bsC
 iZA
 iZA
@@ -69878,13 +69880,13 @@ iZA
 iZA
 iZA
 iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
 wlp
 azz
 eqj
@@ -69894,7 +69896,7 @@ oUF
 cFo
 tTt
 lKZ
-vTI
+wTK
 wTK
 qOi
 pCF
@@ -69906,9 +69908,9 @@ aSB
 hiI
 azz
 iZA
-iZA
-iZA
-iZA
+mxa
+mxa
+mxa
 azz
 aSB
 hiI
@@ -70130,7 +70132,7 @@ azA
 azA
 azA
 azz
-iZA
+wwR
 bsC
 iZA
 iZA
@@ -70138,13 +70140,13 @@ iZA
 iZA
 iZA
 iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
 wlp
 azz
 imW
@@ -70166,9 +70168,9 @@ azz
 azz
 azz
 iZA
-iZA
-iZA
-iZA
+mxa
+mxa
+mxa
 azz
 azz
 azz
@@ -70390,7 +70392,7 @@ azA
 azA
 azA
 azz
-iZA
+wwR
 bsC
 iZA
 iZA
@@ -70398,13 +70400,13 @@ iZA
 iZA
 iZA
 iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
-iZA
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
+pCF
 pQn
 azz
 vQv
@@ -70420,7 +70422,7 @@ wlp
 pCF
 pCF
 pCF
-iZA
+mxa
 fDe
 xby
 tbJ
@@ -70650,21 +70652,21 @@ azA
 azA
 azA
 azz
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
-bsC
+vTI
+vTI
+vTI
+vTI
+vTI
+vTI
+vTI
+vTI
+vTI
+vTI
+vTI
+vTI
+vTI
+cJJ
+cJJ
 czo
 azz
 azz
@@ -70680,7 +70682,7 @@ skV
 cJJ
 cJJ
 cJJ
-bsC
+ixx
 fDe
 xby
 tbJ
@@ -70923,8 +70925,8 @@ iZA
 iZA
 iZA
 iZA
-iZA
-iZA
+pCF
+pCF
 fLn
 dBm
 uEs
@@ -70940,7 +70942,7 @@ fLn
 pCF
 pCF
 pCF
-iZA
+mxa
 fDe
 xby
 tbJ
@@ -71183,15 +71185,6 @@ iZA
 iZA
 iZA
 iZA
-iZA
-iZA
-pCF
-cJJ
-pCF
-pCF
-pCF
-pCF
-pCF
 pCF
 pCF
 pCF
@@ -71200,7 +71193,16 @@ pCF
 pCF
 pCF
 pCF
-iZA
+pCF
+pCF
+pCF
+pCF
+cJJ
+pCF
+pCF
+pCF
+pCF
+mxa
 fDe
 xby
 tbJ
@@ -71443,15 +71445,6 @@ iZA
 iZA
 iZA
 iZA
-iZA
-iZA
-pCF
-cJJ
-pCF
-pCF
-pCF
-pCF
-pCF
 pCF
 pCF
 pCF
@@ -71460,7 +71453,16 @@ pCF
 pCF
 pCF
 pCF
-iZA
+pCF
+pCF
+pCF
+pCF
+cJJ
+pCF
+pCF
+pCF
+pCF
+mxa
 fDe
 xby
 tbJ
@@ -71706,7 +71708,7 @@ iZA
 iZA
 iZA
 iZA
-bsC
+vTI
 iZA
 iZA
 iZA
@@ -71715,12 +71717,12 @@ iZA
 iZA
 iZA
 iZA
-bsC
-iZA
-iZA
-iZA
-iZA
-iZA
+jul
+mxa
+mxa
+mxa
+mxa
+mxa
 fDe
 xby
 tbJ
@@ -71966,7 +71968,7 @@ iZA
 iZA
 iZA
 iZA
-bsC
+vTI
 iZA
 iZA
 iZA
@@ -71975,12 +71977,12 @@ iZA
 iZA
 iZA
 iZA
-bsC
-iZA
-iZA
-iZA
-iZA
-iZA
+jul
+mxa
+mxa
+mxa
+mxa
+mxa
 fDe
 xby
 tbJ
