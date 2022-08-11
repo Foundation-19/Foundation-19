@@ -33406,6 +33406,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/robotics)
+"vOi" = (
+/obj/effect/paint_stripe/gray,
+/obj/structure/sign/warning/lethal_turrets,
+/turf/simulated/wall/prepainted,
+/area/site53/llcz/entrance_checkpoint)
 "vOm" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
@@ -38313,7 +38318,7 @@ wpc
 aNa
 aNi
 aDO
-asA
+vOi
 asA
 agU
 agU
@@ -39608,7 +39613,7 @@ asA
 asA
 kOa
 bhB
-asA
+vOi
 mBn
 asA
 mBn
