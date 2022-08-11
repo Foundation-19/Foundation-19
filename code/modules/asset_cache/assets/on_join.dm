@@ -21,5 +21,6 @@
 		"scplogo.png" = 'html/images/scplogo.png',
 		"ungoc.png" = 'html/images/ungoc.png',
 		"uiu.pn" = 'html/images/uiu.png',
-		"thi.png" = 'thi.png'
+		"thi.png" = 'thi.png',
+		"spc.png" = "spclogo50.png"
 	)

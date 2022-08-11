@@ -438,6 +438,19 @@
 	back = /obj/item/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
 
+/decl/hierarchy/outfit/job/spcrep
+	name = OUTFIT_JOB_NAME("Shark Punching Center Pugilist")
+	uniform = /obj/item/clothing/under/syndicate/tacticool
+	suit = /obj/item/clothing/suit/storage/vest
+	shoes = /obj/item/clothing/shoes/sandal
+	glasses = /obj/item/clothing/glasses/sunglasses
+	gloves = /obj/item/clothing/gloves/boxing
+	l_pocket = /obj/item/device/radio
+	id_types = list(/obj/item/card/id/adminlvl3)
+	l_ear = /obj/item/device/radio/headset/heads/hos/spc
+	back = /obj/item/storage/backpack/satchel/pocketbook
+	backpack_contents = list(/obj/item/clothing/accessory/toggleable/hawaii/random)
+
 /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
 	name = OUTFIT_JOB_NAME("O5 Representative")
 	uniform = /obj/item/clothing/under/suit_jacket/really_black
