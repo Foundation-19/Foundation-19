@@ -3,7 +3,7 @@
 	set name = "Who"
 	set category = "OOC"
 
-	var/msg = "<b>Current Players:</b>\n"
+	var/msg = "<meta charset=\"UTF-8\"><b>Current Players:</b>\n"
 
 	var/list/Lines = list()
 
