@@ -90,7 +90,7 @@ var/global/photo_count = 0
 	output += "<body style='overflow:hidden;margin:0;text-align:center'>"
 	output += "<img src='tmp_photo_[id].png' width='[64*photo_size]' style='-ms-interpolation-mode:nearest-neighbor' />"
 	output += "[scribble ? "<br>Written on the back:<br><i>[scribble]</i>" : ""]"
-	output += "</body></html>"
+	output += "</body></html><meta charset=\"UTF-8\">"
 	show_browser(user, output, "window=book;size=[64*photo_size]x[scribble ? 400 : 64*photo_size]")
 	onclose(user, "[name]")
 	return
