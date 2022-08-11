@@ -4,7 +4,7 @@ GLOBAL_LIST_INIT(pp_actions_data, generate_pp_actions_data())
 /datum/player_action
 	var/name
 	var/action_tag
-	var/permissions_required = R_MOD
+	var/permissions_required = R_MOD|R_ADMIN
 
 	var/list/data
 

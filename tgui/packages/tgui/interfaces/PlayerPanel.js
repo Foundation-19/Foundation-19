@@ -42,6 +42,15 @@ const PAGES = [
       return hasPermission(data, "fun");
     },
   },
+  {
+    title: 'Languages',
+    component: () => LanguageActions,
+    color: "blue",
+    icon: "exchange-alt",
+    canAccess: data => {
+      return hasPermission(data, "toggle_language");
+    },
+  },
 ];
 
 const hasPermission = (data, action) => {
@@ -62,7 +71,7 @@ export const PlayerPanel = (props, context) => {
     <Window
       title={`${mob_name} Player Panel`}
       width={600}
-      height={500}
+      height={540}
       theme="admin"
     >
       <Window.Content scrollable>
@@ -251,6 +260,44 @@ const GeneralActions = (props, context) => {
             content="Jump To"
             disabled={!hasPermission(data, "jump_to")}
             onClick={() => act("jump_to")}
+          />
+        </Stack>
+      </Section>
+
+      <Section level={2} title="Logs">
+        <Stack
+          align="right"
+          grow={1}
+        >
+          <Button
+            width="100%"
+            content="Say"
+            disabled={!hasPermission(data, "check_logs")}
+            onClick={() => act("check_logs", { "log_type": "say" })}
+          />
+          <Button
+            width="100%"
+            content="Emote"
+            disabled={!hasPermission(data, "check_logs")}
+            onClick={() => act("check_logs", { "log_type": "emote" })}
+          />
+          <Button
+            width="100%"
+            content="OOC"
+            disabled={!hasPermission(data, "check_logs")}
+            onClick={() => act("check_logs", { "log_type": "ooc" })}
+          />
+          <Button
+            width="100%"
+            content="DSay"
+            disabled={!hasPermission(data, "check_logs")}
+            onClick={() => act("check_logs", { "log_type": "dsay" })}
+          />
+          <Button
+            width="100%"
+            content="Interact"
+            disabled={!hasPermission(data, "check_logs")}
+            onClick={() => act("check_logs", { "log_type": "interact" })}
           />
         </Stack>
       </Section>
@@ -591,6 +638,26 @@ const PhysicalActions = (props, context) => {
           )}
         </Stack>
       </Section>
+    </Section>
+  );
+};
+
+const LanguageActions = (props, context) => {
+  const { act, data } = useBackend(context);
+  const { languages, mob_languages } = data;
+  return (
+    <Section fill>
+      <Stack wrap fill>
+        {languages.map((language, i) => (
+          <Stack.Item key={language}>
+            <Button.Checkbox
+              checked={mob_languages.includes(language)}
+              onClick={() => act("toggle_language", { "language_name": language })}>
+              {language}
+            </Button.Checkbox>
+          </Stack.Item>
+        ))}
+      </Stack>
     </Section>
   );
 };
