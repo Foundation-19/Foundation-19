@@ -432,6 +432,10 @@
 	. = list()
 	.["mob_name"] = targetMob.name
 
+	.["mob_languages"] = list()
+	for(var/datum/language/L as anything in targetMob.languages)
+		.["mob_languages"] += L.name
+
 	.["mob_sleeping"] = targetMob.sleeping
 
 	.["mob_speed"] = targetMob.move_speed
@@ -491,6 +495,12 @@ GLOBAL_LIST_INIT(pp_status_flags, list(
 /datum/player_panel/tgui_static_data(mob/user)
 	. = list()
 	.["mob_type"] = targetMob.type
+
+	.["languages"] = list()
+	for(var/datum/language/L as anything in all_languages)
+		L = all_languages[L]
+		if(!(L.flags & INNATE))
+			.["languages"] += L.name
 
 	.["is_human"] = ishuman(targetMob)
 

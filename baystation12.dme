@@ -1335,6 +1335,7 @@
 #include "code\modules\admin\player_panel\player_panel.dm"
 #include "code\modules\admin\player_panel\actions\fun.dm"
 #include "code\modules\admin\player_panel\actions\general.dm"
+#include "code\modules\admin\player_panel\actions\languages.dm"
 #include "code\modules\admin\player_panel\actions\physical.dm"
 #include "code\modules\admin\player_panel\actions\punish.dm"
 #include "code\modules\admin\player_panel\actions\transform.dm"

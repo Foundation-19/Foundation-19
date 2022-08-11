@@ -220,3 +220,44 @@
 
 	user.holder.edit_admin_permissions()
 	return TRUE
+
+/datum/player_action/check_logs
+	action_tag = "check_logs"
+	name = "Open Logs"
+
+/datum/player_action/check_logs/act(client/user, mob/target, list/params)
+	if(!target.client?.holder)
+		return
+
+	if(!target.client)
+		to_chat(user.mob, SPAN_NOTICE("You can't see logs if player is offline."))
+		return
+
+	var/list/dat = list()
+	switch(params["log_type"])
+		if("say")
+			for(var/log in target.client.say_log)
+				dat += log
+				dat += "<br>"
+		if("emote")
+			for(var/log in target.client.emote_log)
+				dat += log
+				dat += "<br>"
+		if("ooc")
+			for(var/log in target.client.ooc_log)
+				dat += log
+				dat += "<br>"
+		if("dsay")
+			for(var/log in target.client.dsay_log)
+				dat += log
+				dat += "<br>"
+		if("interact")
+			for(var/log in target.client.interact_log)
+				dat += log
+				dat += "<br>"
+		else
+			return
+	var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
+	popup.set_content(JOINTEXT(dat))
+	popup.open()
+	return TRUE
