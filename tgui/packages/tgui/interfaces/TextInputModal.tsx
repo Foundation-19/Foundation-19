@@ -88,6 +88,7 @@ const InputArea = (props, context) => {
     <TextArea
       autoFocus
       autoSelect
+      ignoreKeyEnter={multiline}
       height={multiline || input.length >= 30 ? '100%' : '1.8rem'}
       maxLength={max_length}
       onEscape={() => act('cancel')}
