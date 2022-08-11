@@ -3349,7 +3349,7 @@
 "iN" = (
 /obj/structure/ladder/updown,
 /turf/simulated/floor/reinforced,
-/area/site53/llcz/mine/unexplored)
+/area/site53/science/aiccore)
 "iO" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
@@ -4113,6 +4113,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/canteen)
+"kG" = (
+/obj/machinery/camera/motion{
+	c_tag = "AIC Observation 10";
+	network = list("Entrance Zone Network");
+	use_power = 0;
+	active_power_usage = 0;
+	idle_power_usage = 0
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "kH" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -9481,9 +9491,13 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/cells)
 "yz" = (
-/obj/machinery/door/blast/regular,
+/obj/machinery/door/blast/regular{
+	id_tag = "LowerAIC";
+	dir = 4;
+	use_power = 0
+	},
 /turf/simulated/floor/reinforced,
-/area/site53/llcz/mine/unexplored)
+/area/site53/science/aiccore)
 "yA" = (
 /obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/monotile/white,
@@ -13914,6 +13928,12 @@
 /obj/item/stack/material/glass/reinforced/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
+"KY" = (
+/obj/machinery/door/blast/regular{
+	use_power = 0
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "KZ" = (
 /obj/machinery/camera/network/lcz{
 	dir = 1
@@ -15693,7 +15713,7 @@
 /area/site53/llcz/dclass/medicalpost/morgue)
 "QM" = (
 /turf/simulated/floor/reinforced,
-/area/site53/llcz/mine/unexplored)
+/area/site53/science/aiccore)
 "QO" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/railing/mapped,
@@ -16073,6 +16093,15 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkpoint)
+"RV" = (
+/obj/machinery/button/blast_door{
+	idle_power_usage = 0;
+	use_power = 0;
+	name = "Lower AIC Access";
+	id_tag = "LowerAIC"
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "RY" = (
 /obj/machinery/light,
 /obj/machinery/button/crematorium{
@@ -49916,11 +49945,11 @@ gq
 gq
 gq
 ua
+ua
 yz
 yz
 yz
-yz
-yz
+ua
 ua
 ua
 ua
@@ -50173,11 +50202,11 @@ gq
 gq
 gq
 ua
-yz
+KY
 QM
 QM
-QM
-yz
+RV
+KY
 ua
 ua
 ua
@@ -50430,11 +50459,11 @@ gq
 gq
 gq
 ua
-yz
+KY
 QM
 iN
 QM
-yz
+KY
 ua
 ua
 ua
@@ -50687,11 +50716,11 @@ gq
 gq
 gq
 ua
-yz
+KY
 QM
+kG
 QM
-QM
-yz
+KY
 ua
 ua
 ua
@@ -50944,11 +50973,11 @@ gq
 gq
 gq
 ua
+ua
 yz
 yz
 yz
-yz
-yz
+ua
 ua
 ua
 ua
