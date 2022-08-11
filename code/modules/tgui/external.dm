@@ -15,7 +15,7 @@
  * optional ui datum/tgui The UI to be updated, if it exists.
  */
 /datum/proc/tgui_interact(mob/user, datum/tgui/ui)
-	CRASH("Something called non-implemented tgui_interact. See stack trace for more details.")
+	return
 
 /**
  * public
