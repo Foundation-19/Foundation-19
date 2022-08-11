@@ -160,7 +160,7 @@
 			can_read = ishuman(user) || issilicon(user)
 			if (can_read)
 				can_read = get_dist(src, user) < PAPER_EYEBALL_DISTANCE
-	var/html = "<html><head><title>[name]</title></head><body bgcolor='[color]'>"
+	var/html = "<html><meta charset=\"UTF-8\"><head><title>[name]</title></head><body bgcolor='[color]'>"
 	if (!can_read)
 		html += PAPER_META_BAD("The paper is too far away or you can't read.")
 		html += "<hr/></body></html>"
