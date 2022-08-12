@@ -1983,9 +1983,8 @@
 	anchored = 1
 	},
 /obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2";
-	dir = 4
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/railing/mapped,
@@ -29661,7 +29660,7 @@
 	dir = 4;
 	icon_state = "railing0-1"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "lEx" = (
 /obj/machinery/door/airlock/highsecurity{
@@ -29798,7 +29797,7 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "lKZ" = (
 /obj/effect/paint_stripe/mauve,
@@ -30018,7 +30017,7 @@
 	id_tag = "aicinner";
 	name = "AIC Server Room Blast Door"
 	},
-/turf/simulated/open,
+/turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "mdA" = (
 /obj/machinery/computer/cryopod/robot{
@@ -32829,12 +32828,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
-"rQV" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/science/aiccore)
 "rVu" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light/spot{
@@ -33728,9 +33721,8 @@
 /area/site53/uhcz/scp247observation)
 "tFu" = (
 /obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2";
-	dir = 8
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /obj/machinery/shieldgen{
 	anchored = 1
@@ -34637,7 +34629,7 @@
 "vDv" = (
 /obj/machinery/camera/motion{
 	network = list("Entrance Zone Network");
-	c_tag = "AIC Observation 14";
+	c_tag = "AIC Observation 17";
 	pixel_x = 10;
 	dir = 1
 	},
@@ -35607,8 +35599,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/commanderoffice)
 "wWM" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/ladder/updown,
+/obj/structure/ladder,
 /turf/simulated/floor/plating,
 /area/site53/science/aiccore)
 "wXK" = (
@@ -69469,7 +69460,7 @@ pCF
 cJJ
 svm
 ste
-rQV
+lxt
 lxt
 azz
 aSB

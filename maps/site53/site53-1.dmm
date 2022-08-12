@@ -3347,7 +3347,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignmentbubble)
 "iN" = (
-/obj/structure/ladder/updown,
+/obj/structure/ladder/up,
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "iO" = (
