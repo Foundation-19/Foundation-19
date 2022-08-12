@@ -3397,7 +3397,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignmentbubble)
 "iN" = (
-/obj/structure/ladder/up,
 /obj/machinery/camera/motion{
 	c_tag = "AIC Observation 10";
 	network = list("Entrance Zone Network");
@@ -3405,6 +3404,7 @@
 	active_power_usage = 0;
 	idle_power_usage = 0
 	},
+/obj/structure/stairs/north,
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "iO" = (
