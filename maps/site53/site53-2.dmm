@@ -616,6 +616,9 @@
 /obj/effect/floor_decal/corner/orange/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
+"abS" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/science/aicobservation)
 "abT" = (
 /obj/machinery/light{
 	dir = 1;
@@ -18571,9 +18574,6 @@
 /obj/item/stack/material/steel,
 /turf/simulated/floor,
 /area/site53/surface/explorers/surrounding)
-"aSX" = (
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/science/aicobservation)
 "aTa" = (
 /obj/structure/stairs/east,
 /turf/simulated/floor,
@@ -33608,9 +33608,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
-"tsk" = (
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/science/aiccore)
 "tsw" = (
 /obj/machinery/acting/changer,
 /turf/simulated/floor/reinforced,
@@ -67137,7 +67134,7 @@ cJJ
 wlp
 azz
 sWv
-tsk
+gBt
 azz
 eqj
 iiC
@@ -67945,8 +67942,8 @@ azz
 cXI
 aOW
 bbP
-aSX
-aSX
+abS
+abS
 tUH
 wdB
 aOW
