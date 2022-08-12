@@ -32308,6 +32308,21 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
+"qnD" = (
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/camera/motion{
+	network = list("Entrance Zone Network");
+	c_tag = "AIC Observation 25";
+	pixel_x = 10
+	},
+/turf/simulated/open,
+/area/site53/science/aiccore)
 "qoe" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -70518,7 +70533,7 @@ gLi
 qaW
 sXK
 eCf
-knV
+qnD
 fMG
 hmk
 hmk
