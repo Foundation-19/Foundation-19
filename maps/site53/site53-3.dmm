@@ -7827,7 +7827,7 @@
 /obj/machinery/door/airlock/maintenance{
 	name = "Maintenance"
 	},
-/turf/space,
+/turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
 "Ew" = (
 /obj/structure/railing/mapped{
