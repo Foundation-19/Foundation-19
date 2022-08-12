@@ -11568,11 +11568,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/cells)
-"Ec" = (
-/mob/living/simple_animal/hostile/scarybat,
-/obj/structure/foamedmetal,
-/turf/simulated/floor/plating,
-/area/site53/science/aiccore)
 "Ed" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -53703,7 +53698,7 @@ cz
 cz
 cz
 cz
-Ec
+cz
 cz
 cz
 cz
