@@ -25882,7 +25882,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/surface/bunker)
 "dyu" = (
-/obj/machinery/computer/modular/preset/aislot/research
+/obj/machinery/computer/modular/preset/aislot/research,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
 "dBm" = (
@@ -33749,7 +33749,9 @@
 /turf/simulated/floor/reinforced,
 /area/site53/lowertrams/brownline)
 "tGe" = (
-/obj/machinery/computer/console/preset/aislot/sysadmin,
+/obj/machinery/computer/modular/preset/aislot/sysadmin{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
 "tGo" = (
@@ -34868,7 +34870,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
 "vPJ" = (
-/obj/machinery/modular/preset/cardslot/command
+/obj/machinery/computer/modular/preset/cardslot/command,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
 "vQk" = (
