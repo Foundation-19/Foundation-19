@@ -27,6 +27,13 @@
 	l_ear = /obj/item/device/radio/headset/heads/hop
 	back = /obj/item/storage/backpack/satchel/pocketbook
 
+/decl/hierarchy/outfit/job/site90/crew/command/headofhr/mcd
+	name = OUTFIT_JOB_NAME("McDonald's Manager")
+	shoes = /obj/item/clothing/shoes/yellow
+	head = /obj/item/clothing/head/soft/black
+	l_ear = /obj/item/device/radio/headset/heads/hop/mcd
+	backpack_contents = list(/obj/item/reagent_containers/food/snacks/cheeseburger = 15)
+
 /decl/hierarchy/outfit/job/site90/crew/command/commsofficer
 	name = OUTFIT_JOB_NAME("Communications Officer")
 	uniform = /obj/item/clothing/under/scp/utility/communications/officer

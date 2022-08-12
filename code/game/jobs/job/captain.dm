@@ -40,6 +40,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	minimal_player_age = 14
 	economic_power = 10
 	ideal_character_age = 50
+	alt_titles = list("Head of Personnel", "McDonald's Manager" = /decl/hierarchy/outfit/job/site90/crew/command/headofhr/mcd)
 
 	access = list(
 		access_hop,
