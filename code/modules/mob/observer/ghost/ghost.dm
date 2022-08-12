@@ -601,6 +601,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Become Euclid/Keter SCP"
 	set desc = "Take control of a clientless SCP."
 
+	if(jobban_isbanned(src,"Non-Safe SCP"))
+		to_chat(src, SPAN_DANGER("You are banned from playing as Non-Safe SCPs and cannot become one."))
+		return
+
 	if (world.time - timeofdeath >= 10 MINUTES || skip_respawn_timer)
 
 		var/list/scps = list()
@@ -647,6 +651,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	// if(config.disable_player_safe_scps)
 	// 	to_chat(src, "<span class='warning'>Spawning as adorable Safe SCPs is currently disabled.</span>")
 	// 	return
+
+	if(jobban_isbanned(src, "Safe SCP"))
+		to_chat(src, SPAN_DANGER("You are banned from playing as safe SCPs and cannot become one."))
+		return
 
 	if(!MayRespawn(1, ANIMAL_SPAWN_DELAY))
 		return
