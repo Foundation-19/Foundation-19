@@ -460,6 +460,10 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
+"bo" = (
+/obj/effect/floor_decal/corner/blue/full,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/science/aiccore)
 "bp" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -568,23 +572,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"bG" = (
-/obj/structure/hygiene/sink{
-	dir = 4;
-	pixel_x = 10
-	},
-/obj/item/storage/mirror{
-	pixel_x = 25
-	},
-/obj/machinery/camera/motion{
-	c_tag = "AIC Observation 20";
-	network = list("Entrance Zone Network");
-	use_power = 0;
-	active_power_usage = 0;
-	idle_power_usage = 0
-	},
-/turf/simulated/floor/tiled/freezer,
-/area/site53/science/aiccore)
 "bH" = (
 /obj/machinery/button/blast_door{
 	id_tag = "D-Class Reward Room";
@@ -646,6 +633,16 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/maintenance)
+"bS" = (
+/obj/structure/hygiene/sink{
+	dir = 4;
+	pixel_x = 10
+	},
+/obj/item/storage/mirror{
+	pixel_x = 25
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/site53/science/aiccore)
 "bT" = (
 /obj/machinery/power/breakerbox/activated{
 	RCon_tag = "Lower Light Containment Bypass"
@@ -864,6 +861,16 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
+"cr" = (
+/obj/structure/hygiene/toilet{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb1"
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/site53/science/aiccore)
 "cs" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -904,6 +911,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
+"cz" = (
+/turf/simulated/mineral{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/site53/surface/explorers)
 "cA" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/window/reinforced,
@@ -973,6 +985,21 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
+"cK" = (
+/obj/structure/flora/pottedplant/minitree,
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "cQ" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
@@ -1159,10 +1186,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"ds" = (
-/obj/structure/closet/crate/freezer/rations,
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "dt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -1341,11 +1364,6 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
-"dN" = (
-/obj/effect/paint_stripe/gunmetal,
-/obj/machinery/computer/cryopod,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/science/aiccore)
 "dO" = (
 /obj/structure/closet/djcloset,
 /obj/structure/cable/green{
@@ -1528,17 +1546,17 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
-"em" = (
-/obj/machinery/door/airlock/vault{
-	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3");
-	name = "Storage"
-	},
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "en" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/briefing)
+"eo" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/blue/full,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/science/aiccore)
 "ep" = (
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lhcz/scp895)
@@ -3966,16 +3984,7 @@
 /turf/simulated/floor/lino,
 /area/site53/llcz/dclass/canteen)
 "ki" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/structure/barricade/spike,
-/obj/machinery/door/blast/regular/open{
-	id_tag = "evaccellaicblast";
-	icon_state = "pdoor0"
-	},
-/turf/simulated/floor,
-/area/site53/science/aiccore)
-"kj" = (
-/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/grass,
 /area/site53/science/aiccore)
 "kk" = (
@@ -4167,10 +4176,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/canteen)
 "kG" = (
-/obj/structure/hygiene/shower,
-/obj/random/soap,
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
+/turf/simulated/mineral{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/exoplanet/shrouded)
 "kH" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -4181,19 +4190,20 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/engineering/maintenance/llczmaint)
+"kI" = (
+/obj/structure/railing/mapped,
+/obj/structure/reagent_dispensers/watertank,
+/obj/item/shovel,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/mop,
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "kJ" = (
 /obj/effect/floor_decal/industrial/warning/corner,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"kL" = (
-/obj/structure/table/standard,
-/obj/machinery/light/spot{
-	active_power_usage = 0;
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/blue/full,
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/turf/simulated/floor/tiled/techmaint,
+"kK" = (
+/turf/simulated/floor/grass,
 /area/site53/science/aiccore)
 "kM" = (
 /obj/structure/cable/green{
@@ -4560,17 +4570,6 @@
 	},
 /turf/simulated/floor/lino,
 /area/site53/llcz/dclass/canteen)
-"lC" = (
-/obj/machinery/button/alternate/door/bolts{
-	dir = 4;
-	id_tag = "evaccellaic";
-	name = "Bunker Brig Cell bolt button";
-	pixel_x = -25;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/effect/floor_decal/corner/blue/full,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/science/aiccore)
 "lD" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -4722,6 +4721,13 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
+"lZ" = (
+/obj/structure/hygiene/drain,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/site53/science/aiccore)
 "ma" = (
 /obj/machinery/camera/autoname{
 	network = list("Heavy Containment Zone Network")
@@ -6060,6 +6066,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
+"pn" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/grass,
+/area/site53/science/aiccore)
 "po" = (
 /obj/structure/closet/l3closet/scientist,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -6215,20 +6225,6 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/cellbubble)
-"pK" = (
-/obj/structure/table/rack,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/door/window/brigdoor{
-	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
-	},
-/obj/item/stock_parts/circuitboard/aicore,
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "pL" = (
 /obj/machinery/light{
 	dir = 8
@@ -6870,10 +6866,6 @@
 	},
 /turf/simulated/floor/lino,
 /area/site53/llcz/dclass/canteen)
-"rg" = (
-/obj/machinery/door/airlock/civilian,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/science/aiccore)
 "rh" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -7287,6 +7279,11 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/checkpoint)
+"sg" = (
+/obj/machinery/hologram/holopad/longrange,
+/obj/effect/floor_decal/corner/blue/full,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/science/aiccore)
 "sh" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -7728,12 +7725,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/lino,
 /area/site53/llcz/dclass/canteen)
-"tr" = (
-/obj/effect/paint_stripe/mauve,
-/obj/effect/paint_stripe/gunmetal,
-/obj/machinery/ai_status_display,
-/turf/simulated/wall/r_titanium,
-/area/site53/science/aiccore)
 "tt" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/button/alternate/door/bolts{
@@ -7896,6 +7887,13 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
+"tP" = (
+/obj/effect/paint_stripe/orange,
+/obj/effect/paint_stripe/mauve,
+/obj/effect/paint_stripe/gunmetal,
+/obj/effect/paint_stripe/gunmetal,
+/turf/simulated/wall/r_titanium,
+/area/site53/science/aiccore)
 "tQ" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -8346,21 +8344,6 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
-"uW" = (
-/obj/structure/flora/pottedplant/minitree,
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "uX" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8380,9 +8363,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurysleep)
 "va" = (
-/obj/machinery/hologram/holopad/longrange,
-/obj/effect/floor_decal/corner/blue/full,
-/turf/simulated/floor/tiled/techfloor,
+/obj/machinery/light/spot{
+	active_power_usage = 0;
+	dir = 4
+	},
+/obj/structure/hygiene/shower,
+/obj/random/soap,
+/turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "vb" = (
 /obj/structure/bed/chair{
@@ -8619,9 +8606,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
-"vF" = (
-/turf/unsimulated/mineral,
-/area/site53/surface/explorers)
 "vG" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -8739,6 +8723,17 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/cells)
+"vR" = (
+/obj/machinery/button/alternate/door/bolts{
+	dir = 4;
+	id_tag = "evaccellaic";
+	name = "Bunker Brig Cell bolt button";
+	pixel_x = -25;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/effect/floor_decal/corner/blue/full,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/science/aiccore)
 "vS" = (
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
 	id_tag = "cell5door";
@@ -9033,11 +9028,6 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentline)
-"wF" = (
-/obj/effect/floor_decal/corner/blue/full,
-/obj/structure/reagent_dispensers/water_cooler,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/science/aiccore)
 "wG" = (
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
@@ -9525,10 +9515,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertram/archive)
 "yc" = (
-/turf/simulated/mineral{
-	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
-	},
-/area/site53/surface/explorers)
+/obj/structure/table/rack,
+/obj/item/melee/baton,
+/obj/item/cell/super,
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "yd" = (
 /obj/machinery/computer/modular/preset/security,
 /turf/simulated/floor/tiled/dark,
@@ -9597,17 +9588,17 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/luxuryhall)
+"yp" = (
+/obj/machinery/computer/modular/preset/aislot/sysadmin{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/blue/full,
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "yr" = (
 /obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
 /area/site53/llcz/dclass/luxuryhall)
-"yv" = (
-/obj/structure/cryofeed,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "yw" = (
 /obj/structure/table/rack,
 /obj/item/clothing/mask/gas/half,
@@ -9624,6 +9615,7 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/cells)
 "yz" = (
+/obj/effect/paint_stripe/mauve,
 /obj/effect/paint_stripe/gunmetal,
 /turf/simulated/wall/r_titanium,
 /area/site53/science/aiccore)
@@ -9631,6 +9623,16 @@
 /obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
+"yB" = (
+/obj/machinery/computer/modular/preset/aislot/research,
+/obj/machinery/light/spot{
+	dir = 1;
+	active_power_usage = 0;
+	idle_power_usage = 0
+	},
+/obj/effect/floor_decal/corner/blue/full,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/science/aiccore)
 "yC" = (
 /obj/effect/paint_stripe/orange,
 /obj/machinery/button/blast_door{
@@ -9764,6 +9766,11 @@
 	name = "vinyl wooden floor"
 	},
 /area/site53/llcz/dclass/luxuryhall)
+"yW" = (
+/obj/effect/floor_decal/corner/blue/full,
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/science/aiccore)
 "yX" = (
 /obj/structure/sign/scp/dclass{
 	pixel_x = 32
@@ -9779,14 +9786,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
-"yZ" = (
-/obj/machinery/light/spot{
-	dir = 1;
-	active_power_usage = 0;
-	idle_power_usage = 0
-	},
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "zb" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
@@ -9898,13 +9897,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
-"zz" = (
-/obj/machinery/door/airlock/vault{
-	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3");
-	name = "Backup Control Center"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/science/aiccore)
 "zA" = (
 /obj/machinery/light{
 	dir = 1
@@ -10181,6 +10173,13 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
+"An" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/blue/full,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/science/aiccore)
 "Ao" = (
 /obj/machinery/flasher{
 	id_tag = "cell9";
@@ -10218,9 +10217,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
-"As" = (
-/turf/unsimulated/wall,
-/area/space)
 "At" = (
 /obj/structure/table/standard,
 /obj/machinery/light,
@@ -11102,6 +11098,13 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
+"CV" = (
+/obj/machinery/door/airlock/vault{
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3");
+	name = "Backup Control Center"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/science/aiccore)
 "CW" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -11140,6 +11143,12 @@
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"Da" = (
+/obj/effect/paint_stripe/mauve,
+/obj/effect/paint_stripe/gunmetal,
+/obj/machinery/recharger/wallcharger,
+/turf/simulated/wall/r_titanium,
+/area/site53/science/aiccore)
 "Db" = (
 /obj/item/device/flashlight/pen,
 /obj/machinery/power/apc,
@@ -11147,6 +11156,10 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentline)
+"Dc" = (
+/obj/machinery/door/airlock/civilian,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/science/aiccore)
 "Dd" = (
 /obj/machinery/light{
 	dir = 1;
@@ -11454,6 +11467,23 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/recreationhallway)
+"DQ" = (
+/obj/structure/table/standard,
+/obj/machinery/light/spot{
+	active_power_usage = 0;
+	dir = 8
+	},
+/obj/machinery/button/alternate/door/bolts{
+	dir = 4;
+	id_tag = "evaccellaicblast";
+	name = "Bunker Brig Cell shutter button";
+	pixel_x = -25;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/effect/floor_decal/corner/blue/full,
+/obj/effect/floor_decal/corner/blue/full,
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "DR" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/light{
@@ -11485,6 +11515,13 @@
 /obj/structure/table/woodentable/maple,
 /turf/simulated/floor/wood/maple,
 /area/site53/llcz/dclass/luxurysleep)
+"DW" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4
+	},
+/obj/machinery/suit_cycler/salvage,
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "DX" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -11537,6 +11574,12 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/cells)
+"Ec" = (
+/mob/living/simple_animal/hostile/scarybat,
+/turf/simulated/mineral{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/exoplanet/shrouded)
 "Ed" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -11636,6 +11679,11 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkpoint)
+"En" = (
+/turf/simulated/mineral/random{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/exoplanet/shrouded)
 "Ep" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/button/alternate/door/bolts{
@@ -11647,6 +11695,14 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
+"Eq" = (
+/obj/machinery/light/spot{
+	dir = 1;
+	active_power_usage = 0;
+	idle_power_usage = 0
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "Er" = (
 /turf/unsimulated/mineral,
 /area/site53/surface)
@@ -11667,6 +11723,21 @@
 /obj/item/paper_bin,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpointoverlook)
+"Ew" = (
+/obj/structure/table/rack,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
+	},
+/obj/item/aiModule/foundation,
+/obj/item/aiModule/foundation_alt,
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "Ex" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -11896,33 +11967,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
-"Fe" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/blue/full,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/science/aiccore)
-"Ff" = (
-/obj/item/aicard,
-/obj/structure/table/rack,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/door/window/brigdoor{
-	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
-	},
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
-"Fg" = (
-/obj/structure/hygiene/drain,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/freezer,
+"Fa" = (
+/turf/unsimulated/mineral,
+/area/exoplanet/shrouded)
+"Fb" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/grass,
 /area/site53/science/aiccore)
 "Fh" = (
 /turf/simulated/mineral/random{
@@ -12132,16 +12182,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
-"FL" = (
-/obj/structure/hygiene/sink{
-	dir = 4;
-	pixel_x = 10
-	},
-/obj/item/storage/mirror{
-	pixel_x = 25
-	},
-/turf/simulated/floor/tiled/freezer,
-/area/site53/science/aiccore)
 "FM" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/regular,
@@ -12149,18 +12189,6 @@
 /obj/effect/floor_decal/corner/b_green/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
-"FN" = (
-/obj/effect/paint_stripe/mauve,
-/obj/effect/paint_stripe/gunmetal,
-/turf/simulated/wall/r_titanium,
-/area/site53/science/aiccore)
-"FP" = (
-/obj/machinery/computer/modular/preset/aislot/sysadmin{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/blue/full,
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "FQ" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -12177,12 +12205,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
-"FR" = (
-/obj/machinery/light/spot{
-	active_power_usage = 0
-	},
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "FS" = (
 /obj/machinery/camera/network/lcz{
 	dir = 8
@@ -12421,6 +12443,13 @@
 /obj/structure/table/rack,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mine/unexplored)
+"GH" = (
+/obj/structure/cryofeed,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "GI" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/structure/bed/chair/shuttle{
@@ -13096,6 +13125,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
+"Iu" = (
+/obj/structure/closet/crate/freezer/rations,
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "Iv" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
@@ -13939,8 +13972,13 @@
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mining/miningops)
 "Kn" = (
-/obj/structure/railing/mapped,
-/turf/simulated/floor/reinforced,
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/barricade/spike,
+/obj/machinery/door/blast/regular/open{
+	id_tag = "evaccellaicblast";
+	icon_state = "pdoor0"
+	},
+/turf/simulated/floor,
 /area/site53/science/aiccore)
 "Ko" = (
 /obj/structure/disposalpipe/segment{
@@ -14109,19 +14147,11 @@
 /turf/simulated/floor/beach/sand,
 /area/site53/llcz/dclass/luxuryhall)
 "KK" = (
-/obj/machinery/camera/motion{
-	c_tag = "AIC Observation 21";
-	network = list("Entrance Zone Network");
-	use_power = 0;
-	active_power_usage = 0;
-	idle_power_usage = 0;
-	dir = 4
+/obj/machinery/door/airlock/vault{
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3");
+	name = "Storage"
 	},
-/obj/machinery/computer/modular/preset/cardslot/command_sec{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/blue/full,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "KL" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
@@ -14141,15 +14171,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp8containment)
-"KM" = (
-/obj/machinery/light/spot{
-	active_power_usage = 0;
-	dir = 4
-	},
-/obj/structure/hygiene/shower,
-/obj/random/soap,
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "KP" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/glass/fifty,
@@ -14223,9 +14244,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
-"Le" = (
-/turf/simulated/floor/grass,
-/area/site53/science/aiccore)
 "Lg" = (
 /obj/machinery/camera/network/lcz,
 /obj/structure/table/reinforced,
@@ -14290,6 +14308,10 @@
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mining/miningops)
+"Lq" = (
+/obj/effect/paint_stripe/gunmetal,
+/turf/simulated/floor/grass,
+/area/site53/science/aiccore)
 "Lt" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/industrial/warning{
@@ -14315,9 +14337,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
-"Lw" = (
-/turf/simulated/floor/tiled/freezer,
-/area/site53/science/aiccore)
 "Lx" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -14407,6 +14426,20 @@
 /obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
+"LK" = (
+/obj/structure/table/rack,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
+	},
+/obj/item/stock_parts/circuitboard/aicore,
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "LL" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/monotile/white,
@@ -14437,6 +14470,20 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
+"LQ" = (
+/obj/item/aicard,
+/obj/structure/table/rack,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "LR" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -14495,18 +14542,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/medicalpost/morgue)
-"Ma" = (
-/obj/machinery/camera/motion{
-	c_tag = "AIC Observation 22";
-	network = list("Entrance Zone Network");
-	use_power = 0;
-	active_power_usage = 0;
-	idle_power_usage = 0;
-	dir = 4
-	},
-/obj/structure/closet/crate/freezer/rations,
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "Mb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -14645,6 +14680,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignmentbubble)
+"Mz" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "MB" = (
 /obj/machinery/button/blast_door{
 	id_tag = "049emerg";
@@ -14698,6 +14739,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/scp8containment)
+"MP" = (
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "MR" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -14711,6 +14758,9 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
+"MT" = (
+/turf/unsimulated/wall,
+/area/space)
 "MV" = (
 /obj/machinery/bodyscanner{
 	dir = 8
@@ -14775,11 +14825,19 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/checkpoint)
+"Nc" = (
+/obj/effect/paint_stripe/gunmetal,
+/obj/machinery/computer/cryopod,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/science/aiccore)
 "Nd" = (
 /obj/item/device/megaphone,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentline)
+"Ne" = (
+/turf/simulated/floor/tiled/freezer,
+/area/site53/science/aiccore)
 "Nf" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/door/blast/regular/open{
@@ -14876,10 +14934,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
-"Nw" = (
-/mob/living/simple_animal/friendly/cow,
-/turf/simulated/floor/grass,
-/area/site53/science/aiccore)
 "Ny" = (
 /obj/structure/bed/chair/shuttle{
 	name = "Reeducation Chair"
@@ -14928,12 +14982,6 @@
 /obj/machinery/vending/hydronutrients,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/botany)
-"NF" = (
-/obj/structure/table/rack,
-/obj/item/melee/baton,
-/obj/item/cell/super,
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "NG" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -15104,23 +15152,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
-"Od" = (
-/obj/structure/table/standard,
-/obj/machinery/light/spot{
-	active_power_usage = 0;
-	dir = 8
-	},
-/obj/machinery/button/alternate/door/bolts{
-	dir = 4;
-	id_tag = "evaccellaicblast";
-	name = "Bunker Brig Cell shutter button";
-	pixel_x = -25;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/effect/floor_decal/corner/blue/full,
-/obj/effect/floor_decal/corner/blue/full,
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "Oe" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/window/reinforced{
@@ -15144,10 +15175,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"Oj" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/grass,
-/area/site53/science/aiccore)
 "Ok" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -15191,6 +15218,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/scp8containment)
+"Or" = (
+/obj/machinery/cryopod,
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "Ot" = (
 /obj/effect/floor_decal/corner/red/bordercee{
 	dir = 4
@@ -15198,12 +15229,6 @@
 /obj/structure/closet/secure_closet/mtf/riotgear,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip)
-"Ov" = (
-/obj/effect/paint_stripe/mauve,
-/obj/effect/paint_stripe/gunmetal,
-/obj/machinery/recharger/wallcharger,
-/turf/simulated/wall/r_titanium,
-/area/site53/science/aiccore)
 "Ow" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light{
@@ -15253,14 +15278,6 @@
 	},
 /turf/simulated/floor/lino,
 /area/site53/lhcz/scp049containment)
-"OB" = (
-/obj/structure/railing/mapped,
-/obj/structure/reagent_dispensers/watertank,
-/obj/item/shovel,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/mop,
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "OC" = (
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/cellbubble)
@@ -15489,13 +15506,6 @@
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignmentbubble)
-"Pj" = (
-/obj/effect/paint_stripe/orange,
-/obj/effect/paint_stripe/mauve,
-/obj/effect/paint_stripe/gunmetal,
-/obj/effect/paint_stripe/gunmetal,
-/turf/simulated/wall/r_titanium,
-/area/site53/science/aiccore)
 "Pk" = (
 /obj/structure/table/rack,
 /obj/item/device/flashlight,
@@ -15633,14 +15643,10 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "PD" = (
-/obj/machinery/computer/modular/preset/aislot/research,
-/obj/machinery/light/spot{
-	dir = 1;
-	active_power_usage = 0;
-	idle_power_usage = 0
-	},
-/obj/effect/floor_decal/corner/blue/full,
-/turf/simulated/floor/tiled/techfloor,
+/obj/effect/paint_stripe/mauve,
+/obj/effect/paint_stripe/gunmetal,
+/obj/machinery/ai_status_display,
+/turf/simulated/wall/r_titanium,
 /area/site53/science/aiccore)
 "PE" = (
 /obj/effect/paint_stripe/gray,
@@ -15700,13 +15706,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
-"PK" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4
-	},
-/obj/machinery/suit_cycler/salvage,
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "PN" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/railing/mapped{
@@ -15715,6 +15714,13 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
+"PP" = (
+/obj/machinery/cryopod,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "PQ" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -15726,6 +15732,28 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"PR" = (
+/obj/structure/flora/pottedplant/minitree,
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
+	},
+/obj/machinery/camera/motion{
+	c_tag = "AIC Observation 19";
+	network = list("Entrance Zone Network");
+	use_power = 0;
+	active_power_usage = 0;
+	idle_power_usage = 0
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "PT" = (
 /obj/structure/closet/secure_closet/mtf/breachshotguns,
 /obj/effect/floor_decal/corner/red/bordercee{
@@ -16029,6 +16057,10 @@
 "QM" = (
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
+"QN" = (
+/obj/machinery/hologram/holopad/longrange,
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "QO" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/railing/mapped,
@@ -16080,6 +16112,12 @@
 /obj/effect/floor_decal/corner/b_green/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
+"QW" = (
+/obj/machinery/light/spot{
+	active_power_usage = 0
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "QX" = (
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 9
@@ -16135,16 +16173,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
-"Rf" = (
-/obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/grass,
-/area/site53/science/aiccore)
 "Rg" = (
-/mob/living/simple_animal/hostile/scarybat,
-/turf/simulated/mineral{
-	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
-	},
-/area/site53/surface/explorers)
+/obj/effect/paint_stripe/gunmetal,
+/turf/simulated/wall/r_titanium,
+/area/site53/science/aiccore)
 "Rh" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/structure/railing/mapped,
@@ -16185,16 +16217,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"Rm" = (
-/obj/structure/hygiene/toilet{
-	dir = 4
-	},
-/obj/machinery/light/small{
-	dir = 8;
-	icon_state = "bulb1"
-	},
-/turf/simulated/floor/tiled/freezer,
-/area/site53/science/aiccore)
 "Rn" = (
 /obj/machinery/optable,
 /obj/effect/floor_decal/corner/b_green/mono,
@@ -16423,10 +16445,10 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkpoint)
 "RV" = (
-/turf/simulated/mineral/random{
-	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
-	},
-/area/site53/surface/explorers)
+/obj/structure/hygiene/shower,
+/obj/random/soap,
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "RY" = (
 /obj/machinery/light,
 /obj/machinery/button/crematorium{
@@ -16436,6 +16458,16 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment)
+"Sa" = (
+/obj/structure/table/standard,
+/obj/machinery/light/spot{
+	active_power_usage = 0;
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/blue/full,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "Sb" = (
 /obj/effect/floor_decal/industrial/firstaid/corner{
 	dir = 1
@@ -16765,6 +16797,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
+"SZ" = (
+/mob/living/simple_animal/friendly/cow,
+/turf/simulated/floor/grass,
+/area/site53/science/aiccore)
 "Ta" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/steel/fifty,
@@ -17017,10 +17053,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/medicalpost)
-"TT" = (
-/obj/machinery/cryopod,
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "TU" = (
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 10
@@ -17028,10 +17060,6 @@
 /obj/machinery/vending/coffee,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
-"TV" = (
-/obj/machinery/hologram/holopad/longrange,
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "TW" = (
 /obj/machinery/door/airlock/glass/civilian,
 /turf/simulated/floor/tiled/monotile/white,
@@ -17117,6 +17145,16 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"Uf" = (
+/obj/machinery/computer/modular/preset/cardslot/command,
+/obj/machinery/light/spot{
+	dir = 1;
+	active_power_usage = 0;
+	idle_power_usage = 0
+	},
+/obj/effect/floor_decal/corner/blue/full,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/science/aiccore)
 "Ug" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/railing/mapped{
@@ -17138,10 +17176,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
 "Uk" = (
-/obj/machinery/door/airlock/civilian{
-	name = "Restroom"
-	},
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "Ul" = (
 /obj/structure/table/reinforced,
@@ -17151,6 +17187,23 @@
 /obj/item/stack/medical/splint,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"Un" = (
+/obj/structure/hygiene/sink{
+	dir = 4;
+	pixel_x = 10
+	},
+/obj/item/storage/mirror{
+	pixel_x = 25
+	},
+/obj/machinery/camera/motion{
+	c_tag = "AIC Observation 20";
+	network = list("Entrance Zone Network");
+	use_power = 0;
+	active_power_usage = 0;
+	idle_power_usage = 0
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/site53/science/aiccore)
 "Uo" = (
 /obj/structure/hygiene/shower{
 	dir = 8
@@ -17201,6 +17254,18 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"Uw" = (
+/obj/machinery/camera/motion{
+	c_tag = "AIC Observation 22";
+	network = list("Entrance Zone Network");
+	use_power = 0;
+	active_power_usage = 0;
+	idle_power_usage = 0;
+	dir = 4
+	},
+/obj/structure/closet/crate/freezer/rations,
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "Ux" = (
 /obj/structure/table/standard,
 /obj/item/folder/red,
@@ -17227,12 +17292,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/medicalpost)
-"UC" = (
-/obj/effect/floor_decal/corner/blue/bordercorner{
-	dir = 4
-	},
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "UD" = (
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/flare,
@@ -17629,10 +17688,6 @@
 /obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp8containment)
-"VP" = (
-/obj/effect/paint_stripe/gunmetal,
-/turf/simulated/floor/grass,
-/area/site53/science/aiccore)
 "VQ" = (
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/industrial/loading{
@@ -17649,13 +17704,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
-"VR" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/blue/full,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/science/aiccore)
 "VS" = (
 /obj/effect/floor_decal/industrial/loading{
 	dir = 8;
@@ -17690,32 +17738,6 @@
 "VV" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurysleep)
-"VW" = (
-/obj/effect/floor_decal/corner/blue/full,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/science/aiccore)
-"VX" = (
-/obj/structure/flora/pottedplant/minitree,
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/obj/machinery/camera/motion{
-	c_tag = "AIC Observation 19";
-	network = list("Entrance Zone Network");
-	use_power = 0;
-	active_power_usage = 0;
-	idle_power_usage = 0
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "VY" = (
 /obj/machinery/light{
 	dir = 1;
@@ -18167,16 +18189,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
-"Xy" = (
-/obj/machinery/computer/modular/preset/cardslot/command,
-/obj/machinery/light/spot{
-	dir = 1;
-	active_power_usage = 0;
-	idle_power_usage = 0
-	},
-/obj/effect/floor_decal/corner/blue/full,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/science/aiccore)
 "Xz" = (
 /obj/structure/iv_drip,
 /obj/machinery/light{
@@ -18250,6 +18262,12 @@
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
+"XF" = (
+/obj/machinery/door/airlock/civilian{
+	name = "Restroom"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/science/aiccore)
 "XG" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier{
@@ -18273,21 +18291,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
-"XK" = (
-/obj/structure/table/rack,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/door/window/brigdoor{
-	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
-	},
-/obj/item/aiModule/foundation,
-/obj/item/aiModule/foundation_alt,
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "XL" = (
 /obj/machinery/light{
 	dir = 4
@@ -18614,12 +18617,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurysleep)
-"YK" = (
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 1
-	},
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "YM" = (
 /obj/machinery/power/apc/hyper{
 	dir = 1
@@ -18675,13 +18672,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
-"YV" = (
-/obj/machinery/cryopod,
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 1
-	},
-/turf/simulated/floor/reinforced,
-/area/site53/science/aiccore)
 "YW" = (
 /obj/machinery/door/blast/shutters{
 	dir = 8;
@@ -18745,6 +18735,21 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
+"Zk" = (
+/obj/machinery/camera/motion{
+	c_tag = "AIC Observation 21";
+	network = list("Entrance Zone Network");
+	use_power = 0;
+	active_power_usage = 0;
+	idle_power_usage = 0;
+	dir = 4
+	},
+/obj/machinery/computer/modular/preset/cardslot/command_sec{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/blue/full,
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "Zn" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -47097,8 +47102,8 @@ gq
 gq
 gq
 gq
-vF
-vF
+Fa
+Fa
 ad
 ad
 ah
@@ -47354,9 +47359,9 @@ gq
 gq
 gq
 gq
-vF
-RV
-RV
+Fa
+En
+En
 ad
 ah
 ah
@@ -47537,83 +47542,83 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 ad
 ah
 ah
@@ -47794,82 +47799,82 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 ad
 ad
 ah
@@ -48051,82 +48056,82 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 ad
 VI
 gO
@@ -48308,82 +48313,82 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 ad
 Vk
 ah
@@ -48565,82 +48570,82 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yz
-yz
-VP
-yz
-yz
-yz
-yz
-yz
-yz
-yz
-yz
-yz
-yc
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Rg
+Rg
+Lq
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+kG
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 ad
 ad
 ah
@@ -48822,83 +48827,83 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Rg
+Rg
+Rg
 yz
-yz
-yz
-FN
-yz
-yz
-yz
-yz
-yz
-yz
-yz
-yz
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 aW
 aW
 ap
@@ -49079,84 +49084,84 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+tP
+Rg
 yz
-yz
-yz
-yz
-yz
-yz
-yz
-yz
-yz
-yz
-yz
-Pj
-yz
-FN
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 aW
 ar
 aW
@@ -49336,84 +49341,84 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yz
-yz
-yz
-Ff
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Rg
+Rg
+Rg
+LQ
 QM
-Ma
-ds
-yz
-Rm
-yz
-Rm
-yz
-yz
-yz
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+Uw
+Iu
+Rg
+cr
+Rg
+cr
+Rg
+Rg
+Rg
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 aW
 aW
 aW
@@ -49593,92 +49598,92 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yz
-yz
-yz
-XK
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Rg
+Rg
+Rg
+Ew
 QM
 QM
-FR
+QW
+Rg
+Dc
+Rg
+Dc
+Rg
+Rg
 yz
-rg
-yz
-rg
-yz
-yz
-FN
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-As
-As
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+MT
+MT
 ot
 fP
 ot
@@ -49850,91 +49855,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-FN
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
 yz
-yz
-pK
+Rg
+Rg
+LK
 QM
 QM
 QM
+Rg
+Ne
+lZ
+Ne
+Rg
+Rg
 yz
-Lw
-Fg
-Lw
-yz
-yz
-FN
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 fO
@@ -50107,91 +50112,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yz
-yz
-yz
-yZ
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Rg
+Rg
+Rg
+Eq
 QM
 QM
 QM
-yz
-bG
-Lw
-FL
-yz
-yz
-yz
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+Rg
+Un
+Ne
+bS
+Rg
+Rg
+Rg
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 fO
@@ -50364,91 +50369,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-FN
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
 yz
-yz
-NF
-NF
-tr
-em
-yz
-yz
-Uk
-yz
-yz
-yz
-FN
+Rg
+Rg
 yc
 yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+PD
+KK
+Rg
+Rg
+XF
+Rg
+Rg
+Rg
+yz
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 bc
@@ -50621,91 +50626,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Rg
+Rg
 yz
+Da
+Da
 yz
-FN
-Ov
-Ov
-FN
 QM
 QM
 QM
 QM
-Kn
-Oj
-Rf
-FN
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+Uk
+ki
+Fb
+yz
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 bc
@@ -50878,91 +50883,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yz
-yz
-yz
+cz
 kG
 kG
-FN
-QM
-QM
-QM
-TV
-Kn
-Le
-Nw
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Rg
+Rg
+Rg
+RV
+RV
 yz
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+QM
+QM
+QM
+QN
+Uk
+kK
+SZ
+Rg
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 bc
@@ -51135,24 +51140,24 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yz
-yz
-yz
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Rg
+Rg
+Rg
 iN
 QM
 KY
@@ -51160,66 +51165,66 @@ QM
 QM
 QM
 QM
-Kn
-Rf
-kj
-yz
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+Uk
+Fb
+pn
+Rg
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 fO
@@ -51392,91 +51397,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yz
-yz
-yz
+cz
 kG
-KM
-FN
-PK
-PK
-UC
-QM
-Kn
-Le
-Le
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Rg
+Rg
+Rg
+RV
+va
 yz
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+DW
+DW
+MP
+QM
+Uk
+kK
+kK
+Rg
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 fO
@@ -51649,91 +51654,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-FN
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
 yz
-yz
-yz
-yz
-yz
-yz
-dN
-YK
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+Nc
+Mz
 QM
-Kn
-Le
-Oj
-yz
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+Uk
+kK
+ki
+Rg
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 fO
@@ -51906,91 +51911,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yz
-yz
-yz
-uW
-KK
-Od
-lC
-zz
-YK
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Rg
+Rg
+Rg
+cK
+Zk
+DQ
+vR
+CV
+Mz
 QM
-OB
-kj
-Le
-yz
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+kI
+pn
+kK
+Rg
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 fO
@@ -52163,91 +52168,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Rg
 yz
-FN
-yz
-Xy
-VR
-va
-VW
-ki
-YK
+Rg
+Uf
+eo
+sg
+bo
+Kn
+Mz
 QM
-FR
-yz
-yz
-yz
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+QW
+Rg
+Rg
+Rg
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 fO
@@ -52420,91 +52425,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-FN
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
 yz
-yz
-PD
-Fe
-VW
-VW
-ki
-YK
+Rg
+Rg
+yB
+An
+bo
+bo
+Kn
+Mz
 QM
 QM
-yz
-yz
-yz
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+Rg
+Rg
+Rg
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 bV
@@ -52677,91 +52682,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Rg
 yz
-FN
-yz
-VX
-FP
-kL
-wF
-ki
-YV
-TT
-TT
-yz
-yz
-yz
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+Rg
+PR
+yp
+Sa
+yW
+Kn
+PP
+Or
+Or
+Rg
+Rg
+Rg
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 fO
@@ -52934,91 +52939,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
 yz
-yz
-yz
-yz
-yz
-yz
-yz
-FN
-yv
-yv
-yv
-yz
-yz
-yz
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+GH
+GH
+GH
+Rg
+Rg
+Rg
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 fO
@@ -53191,91 +53196,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Rg
+Rg
 yz
+Rg
 yz
-FN
-yz
-FN
-yz
-yz
-yz
-yz
-yz
-yz
-yz
-yc
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+Rg
+kG
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 fO
@@ -53448,91 +53453,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Rg
+Rg
+Rg
+Rg
+Rg
 yz
+Rg
+Rg
 yz
-yz
-yz
-yz
-FN
-yz
-yz
-FN
-yz
-yz
-yz
-yc
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+Rg
+Rg
+Rg
+kG
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 fO
@@ -53705,91 +53710,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-Rg
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+Ec
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 fO
@@ -53962,91 +53967,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 bc
@@ -54219,91 +54224,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 bc
@@ -54476,91 +54481,91 @@ gq
 gq
 gq
 gq
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-yc
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
-RV
+cz
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+kG
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
+En
 gq
 ot
 bc
