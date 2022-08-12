@@ -24808,8 +24808,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp247observation)
 "bwB" = (
-/obj/machinery/door/airlock/glass/command{
-	name = "AIC Observation";
+/obj/machinery/door/airlock/vault{
 	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
 	},
 /obj/structure/cable/green{
@@ -24837,7 +24836,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/structure/cable{
+/obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -25882,6 +25881,26 @@
 /obj/item/stack/material/steel/fifty,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
+"dBv" = (
+/obj/machinery/shieldwallgen{
+	active = 1;
+	anchored = 1;
+	max_range = 21;
+	req_access = list()
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "dBR" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -26109,7 +26128,7 @@
 /area/site53/reswing/robotics)
 "ebV" = (
 /obj/effect/paint_stripe/mauve,
-/obj/structure/cable{
+/obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -26860,6 +26879,10 @@
 	icon_state = "0-8"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "fLT" = (
@@ -28143,6 +28166,10 @@
 "ixx" = (
 /obj/structure/railing/mapped{
 	dir = 8
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3");
+	dir = 4
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
@@ -29777,7 +29804,7 @@
 /obj/machinery/turretid/lethal{
 	id_tag = "AICore"
 	},
-/obj/structure/cable{
+/obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -30515,6 +30542,10 @@
 	req_access = list()
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "mVc" = (
@@ -31880,6 +31911,16 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/scp066)
+"pVw" = (
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3");
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "pXT" = (
 /obj/structure/closet/toolcloset,
 /turf/simulated/floor/tiled/white,
@@ -32205,6 +32246,9 @@
 /area/site53/ulcz/scp999)
 "qIi" = (
 /obj/structure/closet/secure_closet/engineering_welding,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
 "qIF" = (
@@ -32891,6 +32935,18 @@
 /obj/effect/landmark/start{
 	name = "AI"
 	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
+	},
 /turf/simulated/floor/bluegrid,
 /area/site53/science/aiccore)
 "sbE" = (
@@ -33346,7 +33402,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
+/obj/structure/cable/green{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -34080,7 +34136,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
+/obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -35058,8 +35114,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
 "whe" = (
-/obj/machinery/door/airlock/glass/command{
-	name = "AIC Observation";
+/obj/machinery/door/airlock/vault{
 	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
 	},
 /obj/machinery/door/blast/regular/open{
@@ -35872,7 +35927,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
 "xyi" = (
-/obj/structure/cable{
+/obj/structure/cable/green{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -36190,6 +36245,17 @@
 /obj/structure/closet/secure_closet/engineering_welding,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/ulcz/medicalpost)
+"xZm" = (
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3");
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "xZp" = (
 /obj/structure/sign/directions/ez{
 	pixel_x = -30
@@ -36238,12 +36304,15 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/commanderoffice)
 "ybv" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3");
+	dir = 8
 	},
-/turf/simulated/floor/tiled/techmaint,
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
+	},
+/turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "yce" = (
 /obj/machinery/light{
@@ -36251,6 +36320,26 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
+"ydu" = (
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/shieldwallgen{
+	active = 1;
+	anchored = 1;
+	max_range = 21;
+	req_access = list()
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "yew" = (
 /obj/effect/floor_decal/corner/blue/border,
 /obj/structure/filingcabinet,
@@ -66552,7 +66641,7 @@ iZA
 iZA
 pCF
 cJJ
-mUA
+ydu
 shT
 qSM
 qSM
@@ -67869,8 +67958,8 @@ oUF
 uOG
 ivw
 azz
-ixx
-ixx
+pVw
+pVw
 azz
 azz
 azz
@@ -69689,16 +69778,16 @@ xhC
 gYV
 qLv
 azz
-exW
-exW
+ybv
+ybv
 azz
 azz
 azz
 azz
 azz
 azz
-exW
-exW
+xZm
+xZm
 azz
 azz
 vUO
@@ -69942,7 +70031,7 @@ cFo
 tTt
 lKZ
 ebV
-wTK
+rQV
 qOi
 oMi
 kUM
@@ -70195,10 +70284,10 @@ cJJ
 wlp
 azz
 bLo
-ybv
-ybv
-ybv
-ybv
+eDy
+eDy
+eDy
+eDy
 uue
 gIg
 jul
@@ -70972,7 +71061,7 @@ iZA
 iZA
 pCF
 cJJ
-fLn
+dBv
 dBm
 cJJ
 cJJ
