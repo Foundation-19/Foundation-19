@@ -994,15 +994,16 @@
 "cV" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/door/window/holowindoor{
-	req_access = list("ACCESS_ADMIN_LEVEL5");
 	dir = 4;
-	id_tag = "sitedirect"
+	id_tag = "sitedirect";
+	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cW" = (
 /obj/machinery/door/airlock/glass/command{
-	name = "Senior Administrative Offices"
+	name = "Senior Administrative Offices";
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect";
@@ -1025,8 +1026,8 @@
 	icon_state = "tube1"
 	},
 /obj/machinery/door/window/holowindoor{
-	req_access = list("ACCESS_ADMIN_LEVEL5");
-	id_tag = "sitedirect"
+	id_tag = "sitedirect";
+	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
