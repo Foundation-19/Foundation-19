@@ -162,14 +162,16 @@
 	shoes = /obj/item/clothing/shoes/dress
 	suit = /obj/item/clothing/suit/storage/det_trench
 	id_types = list(/obj/item/card/id/zcseclvl4ez)
-	l_ear = /obj/item/device/radio/headset/heads/hop
+	l_ear = /obj/item/device/radio/headset/heads/cos
 	back = /obj/item/storage/backpack/satchel/leather/black
 	belt = /obj/item/storage/belt/holster/security/fullrhino
 	l_hand = /obj/item/storage/briefcase/crimekit
-	r_hand = /obj/item/clothing/suit/armor/pcarrier/scp/medium
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/det
-	gloves = /obj/item/clothing/gloves/forensic
+	gloves = /obj/item/clothing/gloves/forensic/armored
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/secauditorofficer
 	name = OUTFIT_JOB_NAME("Investigation Officer")
@@ -177,14 +179,17 @@
 	shoes = /obj/item/clothing/shoes/dress
 	suit = /obj/item/clothing/suit/storage/det_trench/grey
 	id_types = list(/obj/item/card/id/zcseclvl4ez)
-	l_ear = /obj/item/device/radio/headset/heads/hop
+	l_ear = /obj/item/device/radio/headset/heads/cos
 	back = /obj/item/storage/backpack/satchel/leather/black
 	belt = /obj/item/storage/belt/holster/security/fullrhino
 	l_hand = /obj/item/storage/briefcase/crimekit
-	r_hand = /obj/item/clothing/suit/armor/pcarrier/scp/medium
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/det/grey
-	gloves = /obj/item/clothing/gloves/forensic
+	gloves = /obj/item/clothing/gloves/forensic/armored
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
+
 
 // GUARD OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerlcz
