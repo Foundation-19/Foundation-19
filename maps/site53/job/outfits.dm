@@ -27,20 +27,6 @@
 	l_ear = /obj/item/device/radio/headset/heads/hop
 	back = /obj/item/storage/backpack/satchel/pocketbook
 
-/decl/hierarchy/outfit/job/site90/crew/command/headofaudit
-	name = OUTFIT_JOB_NAME("Head Auditor")
-	uniform = /obj/item/clothing/under/det
-	shoes = /obj/item/clothing/shoes/dress
-	suit = /obj/item/clothing/suit/storage/det_trench
-	id_types = list(/obj/item/card/id/adminlvl4)
-	l_ear = /obj/item/device/radio/headset/heads/hop
-	back = /obj/item/storage/backpack/satchel/pocketbook
-	belt = /obj/item/storage/belt/holster/security/fullrhino
-	l_hand = /obj/item/storage/briefcase/crimekit
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
-	head = /obj/item/clothing/head/det
-	gloves = /obj/item/clothing/gloves/forensic
-
 /decl/hierarchy/outfit/job/site90/crew/command/commsofficer
 	name = OUTFIT_JOB_NAME("Communications Officer")
 	uniform = /obj/item/clothing/under/scp/utility/communications/officer
@@ -169,6 +155,36 @@
 	head = /obj/item/clothing/head/beret/sec/corporate/hos
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
+
+/decl/hierarchy/outfit/job/site90/crew/command/secauditor
+	name = OUTFIT_JOB_NAME("Investigation Agent")
+	uniform = /obj/item/clothing/under/det
+	shoes = /obj/item/clothing/shoes/dress
+	suit = /obj/item/clothing/suit/storage/det_trench
+	id_types = list(/obj/item/card/id/zcseclvl4ez)
+	l_ear = /obj/item/device/radio/headset/heads/hop
+	back = /obj/item/storage/backpack/satchel/leather/black
+	belt = /obj/item/storage/belt/holster/security/fullrhino
+	l_hand = /obj/item/storage/briefcase/crimekit
+	r_hand = /obj/item/clothing/suit/armor/pcarrier/scp/medium
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	head = /obj/item/clothing/head/det
+	gloves = /obj/item/clothing/gloves/forensic
+
+/decl/hierarchy/outfit/job/site90/crew/command/secauditorofficer
+	name = OUTFIT_JOB_NAME("Investigation Officer")
+	uniform = /obj/item/clothing/under/det/grey
+	shoes = /obj/item/clothing/shoes/dress
+	suit = /obj/item/clothing/suit/storage/det_trench/grey
+	id_types = list(/obj/item/card/id/zcseclvl4ez)
+	l_ear = /obj/item/device/radio/headset/heads/hop
+	back = /obj/item/storage/backpack/satchel/leather/black
+	belt = /obj/item/storage/belt/holster/security/fullrhino
+	l_hand = /obj/item/storage/briefcase/crimekit
+	r_hand = /obj/item/clothing/suit/armor/pcarrier/scp/medium
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	head = /obj/item/clothing/head/det/grey
+	gloves = /obj/item/clothing/gloves/forensic
 
 // GUARD OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerlcz

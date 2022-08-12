@@ -305,7 +305,7 @@
 	spawn_positions = 2
 	//duties = "<big><b>As the Agent you have more access than a Junior Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	economic_power = 4
-	alt_titles = list("EZ Senior Forensics Agent", "EZ Senior Investigations Agent", "EZ Senior Combat Medic")
+	alt_titles = list("Investigation Officer", "EZ Senior Combat Medic")
 	minimal_player_age = 5
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerez
@@ -452,7 +452,7 @@
 	spawn_positions = 6
 	//duties = "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
 	economic_power = 4
-	alt_titles = list("EZ Forensics Agent", "EZ Investigations Agent", "EZ Combat Medic")
+	alt_titles = list("Investigation Agent", "EZ Combat Medic")
 	minimal_player_age = 0
 	ideal_character_age = 27
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerez

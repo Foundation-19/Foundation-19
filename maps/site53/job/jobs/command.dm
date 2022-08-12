@@ -39,7 +39,7 @@ ut // COMMAND
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
 	hud_icon = "hudhumanresources"
-	alt_titles = list("Head of Personnel", "Head Auditor" = /decl/hierarchy/outfit/job/site90/crew/command/headofaudit)
+	alt_titles = list("Head of Personnel")
 
 	access = list(
 		access_hop,
