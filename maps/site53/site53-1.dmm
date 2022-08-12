@@ -3559,7 +3559,12 @@
 /obj/item/modular_computer/console/preset/cardslot/command_sec{
 	dir = 4
 	},
-/obj/machinery/camera/network/entrance{
+/obj/machinery/camera/motion{
+	c_tag = "AIC Observation 23";
+	network = list("Entrance Zone Network");
+	use_power = 0;
+	active_power_usage = 0;
+	idle_power_usage = 0;
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -7720,6 +7725,17 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"to" = (
+/obj/structure/foamedmetal,
+/obj/machinery/camera/motion{
+	c_tag = "AIC Observation 10";
+	network = list("Entrance Zone Network");
+	use_power = 0;
+	active_power_usage = 0;
+	idle_power_usage = 0
+	},
+/turf/simulated/floor/plating,
+/area/site53/science/aiccore)
 "tp" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -9778,6 +9794,19 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
+"zc" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/obj/machinery/camera/motion{
+	c_tag = "AIC Observation 24";
+	network = list("Entrance Zone Network");
+	use_power = 0;
+	active_power_usage = 0;
+	idle_power_usage = 0
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "zf" = (
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -51570,7 +51599,7 @@ Tl
 Tl
 Tl
 tz
-KY
+zc
 Bl
 Do
 WM
@@ -53622,7 +53651,7 @@ Oh
 Oh
 Oh
 Oh
-Oh
+to
 Oh
 Oh
 Oh
