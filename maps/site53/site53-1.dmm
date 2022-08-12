@@ -3404,7 +3404,7 @@
 	active_power_usage = 0;
 	idle_power_usage = 0
 	},
-/obj/structure/stairs/north,
+/obj/structure/ladder/up,
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "iO" = (
@@ -16774,10 +16774,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
-"SZ" = (
-/mob/living/simple_animal/friendly/cow,
-/turf/simulated/floor/grass,
-/area/site53/science/aiccore)
 "Ta" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/steel/fifty,
@@ -50887,7 +50883,7 @@ QM
 QN
 Uk
 kK
-SZ
+kK
 Rg
 cz
 cz
