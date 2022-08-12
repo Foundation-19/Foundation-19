@@ -43,7 +43,7 @@
 	economic_power = 2
 	minimal_player_age = 5
 	ideal_character_age = 30
-	alt_titles = list("Administrative Assistant", "Accountant", "Auditor", "Secretary")
+	alt_titles = list("Administrative Assistant", "Accountant", "Auditor", "Secretary", "McDonald's Employee")
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/officeworker
 	allowed_branches = list(
 		/datum/mil_branch/civilian
