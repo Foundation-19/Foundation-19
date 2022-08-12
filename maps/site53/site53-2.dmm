@@ -36408,13 +36408,6 @@
 /obj/effect/floor_decal/corner/brown/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
-"yma" = (
-/obj/structure/lattice,
-/obj/structure/lattice,
-/obj/structure/foamedmetal,
-/obj/structure/catwalk,
-/turf/simulated/open,
-/area/site53/science/aiccore)
 "ymg" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -66860,7 +66853,7 @@ azA
 azA
 eCf
 gxv
-yma
+qNR
 qNR
 qNR
 qNR
