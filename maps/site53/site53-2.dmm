@@ -25499,12 +25499,11 @@
 	id_tag = "AICore"
 	},
 /obj/structure/railing/mapped,
-/obj/effect/catwalk_plated/dark,
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/catwalk,
 /obj/structure/lattice,
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "cJJ" = (
@@ -27297,8 +27296,6 @@
 	id_tag = "AICore"
 	},
 /obj/structure/railing/mapped,
-/obj/effect/catwalk_plated/dark,
-/obj/structure/catwalk,
 /obj/structure/lattice,
 /obj/structure/railing/mapped{
 	dir = 1
@@ -27307,6 +27304,7 @@
 	dir = 4;
 	icon_state = "railing0-1"
 	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "gKo" = (
@@ -27504,12 +27502,11 @@
 	id_tag = "AICore"
 	},
 /obj/structure/railing/mapped,
-/obj/effect/catwalk_plated/dark,
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/catwalk,
 /obj/structure/lattice,
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "hgq" = (
@@ -34405,9 +34402,8 @@
 	id_tag = "AICore"
 	},
 /obj/structure/railing/mapped,
-/obj/effect/catwalk_plated/dark,
-/obj/structure/catwalk,
 /obj/structure/lattice,
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "vdk" = (
@@ -35789,15 +35785,14 @@
 	id_tag = "AICore"
 	},
 /obj/structure/railing/mapped,
-/obj/effect/catwalk_plated/dark,
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/catwalk,
 /obj/structure/lattice,
 /obj/structure/railing/mapped{
 	dir = 1
 	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "xna" = (
