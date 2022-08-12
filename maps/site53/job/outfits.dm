@@ -261,23 +261,23 @@
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
 
-/decl/hierarchy/outfit/job/site90/crew/command/secauditor
-	name = OUTFIT_JOB_NAME("Investigation Agent")
-	uniform = /obj/item/clothing/under/det
-	shoes = /obj/item/clothing/shoes/dress
-	suit = /obj/item/clothing/suit/storage/det_trench
-	id_types = list(/obj/item/card/id/zcseclvl4ez)
-	l_ear = /obj/item/device/radio/headset/heads/cos
-	back = /obj/item/storage/backpack/satchel/leather/black
-	belt = /obj/item/storage/belt/holster/security/fullrhino
-	l_hand = /obj/item/storage/briefcase/crimekit
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
-	head = /obj/item/clothing/head/det
-	gloves = /obj/item/clothing/gloves/forensic/armored
+/decl/hierarchy/outfit/job/site90/crew/security/medic
+	name = OUTFIT_JOB_NAME("EZ Combat Medic")
+	uniform = /obj/item/clothing/under/rank/warden/corp
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_types = list(/obj/item/card/id/seclvl3ez)
+	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
+	l_pocket = /obj/item/book/manual/scp/secsop
+	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
-	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
-
+	back = /obj/item/storage/backpack/satchel/leather/black
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1, /obj/item/clothing/acessory/armor/helmcover/nt)
+	belt = /obj/item/storage/belt/holster/security/fullmk9
+	glasses = /obj/item/clothing/glasses/eyepatch/hud/security
+	head = /obj/item/clothing/head/beret/sec/corporate/warden
+	mask = /obj/item/clothing/mask/balaclava
+	gloves = /obj/item/clothing/gloves/latex/nitrile/armored
 
 // JUNIOR GUARD OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerlcz
