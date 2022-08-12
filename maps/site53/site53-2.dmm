@@ -28686,6 +28686,10 @@
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
+"jxo" = (
+/obj/machinery/mech_recharger,
+/turf/simulated/floor/tiled/dark,
+/area/site53/lowertrams/redline)
 "jxJ" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/table/standard,
@@ -30208,6 +30212,10 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
+	},
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
 	},
 /turf/simulated/open,
 /area/site53/science/aiccore)
@@ -31813,6 +31821,10 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
 /area/site53/reswing/xenobiology)
+"pHN" = (
+/obj/machinery/mech_recharger,
+/turf/simulated/floor/tiled,
+/area/site53/lowertrams/brownline)
 "pIX" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -33690,6 +33702,9 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/structure/railing/mapped{
+	dir = 8
+	},
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "twH" = (
@@ -34419,6 +34434,16 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"vcI" = (
+/obj/machinery/porta_turret/aic{
+	id_tag = "AICore"
+	},
+/obj/structure/railing/mapped,
+/obj/effect/catwalk_plated/dark,
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "vdk" = (
 /obj/machinery/light/spot,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -60990,7 +61015,7 @@ aey
 aAQ
 aOU
 aOU
-aOU
+pHN
 abI
 azA
 azA
@@ -66626,7 +66651,7 @@ shT
 uEs
 uEs
 uEs
-uEs
+shT
 uEs
 uEs
 uEs
@@ -68197,7 +68222,7 @@ oMi
 kUM
 pCF
 rYj
-kUM
+bzl
 uEs
 eCf
 xBT
@@ -68457,7 +68482,7 @@ bNH
 cJd
 pCF
 rYj
-xmt
+vcI
 uEs
 afv
 pCF
@@ -69237,7 +69262,7 @@ pQs
 hfr
 pCF
 rYj
-gKd
+vcI
 uEs
 tFu
 pCF
@@ -69497,7 +69522,7 @@ oMi
 wna
 pCF
 rYj
-wna
+dkC
 uEs
 eCf
 uex
@@ -71046,7 +71071,7 @@ dBm
 uEs
 uEs
 uEs
-uEs
+dBm
 uEs
 uEs
 uEs
@@ -73994,7 +74019,7 @@ aFr
 aGW
 acl
 acl
-acl
+jxo
 abY
 azA
 azA
