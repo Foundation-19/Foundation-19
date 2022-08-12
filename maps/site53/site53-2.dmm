@@ -1976,9 +1976,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/brownline)
 "afv" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
 /obj/machinery/shieldgen{
 	anchored = 1
 	},
@@ -25755,17 +25752,6 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/genstorage1)
-"dnm" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/catwalk,
-/obj/structure/lattice,
-/turf/simulated/open,
-/area/site53/science/aiccore)
 "dnL" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
@@ -26353,11 +26339,16 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/controlroom)
 "eAt" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
 /obj/structure/catwalk,
 /obj/structure/lattice,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light/spot{
+	dir = 1
+	},
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "eAN" = (
@@ -26400,13 +26391,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lowertrams/redline)
 "eDy" = (
-/obj/effect/paint_stripe/mauve,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/wall/r_titanium,
+/turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
 "eED" = (
 /obj/structure/bed/chair/office{
@@ -29197,7 +29187,13 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
 "kIE" = (
+/obj/structure/catwalk,
 /obj/structure/lattice,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "kKa" = (
@@ -32320,12 +32316,9 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/science/aiccore)
 "qSM" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/techmaint,
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/turf/simulated/open,
 /area/site53/science/aiccore)
 "qUS" = (
 /obj/effect/floor_decal/corner/red/bordercorner,
@@ -32799,14 +32792,13 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
 "rQV" = (
-/obj/structure/catwalk,
-/obj/structure/lattice,
+/obj/effect/paint_stripe/mauve,
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/open,
+/turf/simulated/wall/r_titanium,
 /area/site53/science/aiccore)
 "rVu" = (
 /obj/machinery/light/spot{
@@ -33630,9 +33622,8 @@
 /obj/structure/catwalk,
 /obj/structure/lattice,
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+	icon_state = "2-8";
+	d1 = 2
 	},
 /obj/structure/railing/mapped{
 	dir = 8
@@ -34175,6 +34166,11 @@
 "uEs" = (
 /obj/structure/catwalk,
 /obj/structure/lattice,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "uFp" = (
@@ -34605,7 +34601,7 @@
 "vDv" = (
 /obj/machinery/camera/motion{
 	network = list("Entrance Zone Network");
-	c_tag = "AIC Observation 17";
+	c_tag = "AIC Observation 18";
 	pixel_x = 10;
 	dir = 1
 	},
@@ -34664,6 +34660,14 @@
 /obj/machinery/reagent_temperature,
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"vFj" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/turf/simulated/open,
+/area/site53/science/aiccore)
 "vGY" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4
@@ -34797,16 +34801,14 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
 "vPn" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/structure/railing/mapped{
+	dir = 8
+	},
 /obj/structure/catwalk,
 /obj/structure/lattice,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/light/spot{
-	dir = 1
-	},
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "vPv" = (
@@ -35965,9 +35967,8 @@
 	dir = 8
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+	icon_state = "2-8";
+	d1 = 2
 	},
 /turf/simulated/open,
 /area/site53/science/aiccore)
@@ -36001,13 +36002,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "xHj" = (
-/obj/structure/catwalk,
 /obj/structure/lattice,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "xHp" = (
@@ -66559,14 +66554,14 @@ pCF
 cJJ
 mUA
 shT
-uEs
-uEs
-uEs
+qSM
+qSM
+qSM
 shT
-uEs
-uEs
-uEs
-uEs
+qSM
+qSM
+qSM
+qSM
 shT
 mUA
 cJJ
@@ -66819,16 +66814,16 @@ cJJ
 cJJ
 rFd
 dwT
-eDy
-eDy
-eDy
-eDy
-eDy
+rQV
+rQV
+rQV
+rQV
+rQV
 dqa
 azz
 azz
 cbu
-vPn
+eAt
 cJJ
 cJJ
 cJJ
@@ -67340,7 +67335,7 @@ cJJ
 ykj
 azz
 fpB
-qSM
+eDy
 bwB
 uNI
 uNI
@@ -67348,7 +67343,7 @@ juf
 aam
 aam
 tYb
-rQV
+kIE
 oMi
 pCF
 pCF
@@ -67868,7 +67863,7 @@ sVB
 guD
 aam
 dlV
-uEs
+qSM
 xwM
 oUF
 uOG
@@ -68128,13 +68123,13 @@ eSq
 aSB
 aam
 whe
-uEs
+qSM
 oMi
 kUM
 pCF
 rYj
 bzl
-uEs
+qSM
 eCf
 xBT
 kUM
@@ -68142,7 +68137,7 @@ mcE
 pCF
 pCF
 bzl
-uEs
+qSM
 kpq
 azz
 azz
@@ -68394,7 +68389,7 @@ cJd
 pCF
 rYj
 vcI
-uEs
+qSM
 afv
 pCF
 pCF
@@ -68402,7 +68397,7 @@ mcE
 xmt
 pCF
 afv
-uEs
+qSM
 eCf
 rYj
 iKr
@@ -68648,23 +68643,23 @@ syh
 wXK
 waR
 ocx
-eAt
-eAt
-eAt
-dnm
-dnm
-dnm
-eAt
+vFj
+vFj
+vFj
+vPn
+vPn
+vPn
+vFj
 tws
 viA
-dnm
+vPn
 lHG
-dnm
-dnm
+vPn
+vPn
 xFR
 ikV
-eAt
-dnm
+vFj
+vPn
 byj
 thS
 wDh
@@ -68908,13 +68903,13 @@ gBt
 cPQ
 aam
 dlV
-uEs
-uEs
-uEs
+qSM
+qSM
+qSM
 fdR
 fdR
 fdR
-uEs
+qSM
 mnK
 coI
 fdR
@@ -68923,7 +68918,7 @@ fdR
 fdR
 oHR
 tkU
-uEs
+qSM
 fdR
 jsO
 feY
@@ -69168,21 +69163,21 @@ wXK
 wXK
 juf
 dlV
-uEs
+qSM
 pQs
 hfr
 pCF
 rYj
 vcI
-uEs
+qSM
 tFu
 pCF
 pCF
 mcE
 gKd
-kIE
+xHj
 tFu
-uEs
+qSM
 eCf
 rYj
 iKr
@@ -69434,7 +69429,7 @@ wna
 pCF
 rYj
 dkC
-uEs
+qSM
 eCf
 uex
 wna
@@ -69442,7 +69437,7 @@ mcE
 pCF
 pCF
 dkC
-uEs
+qSM
 eCf
 rYj
 nGA
@@ -69688,7 +69683,7 @@ aam
 lFS
 goq
 azz
-uEs
+qSM
 xwM
 xhC
 gYV
@@ -70208,7 +70203,7 @@ uue
 gIg
 jul
 azz
-xHj
+uEs
 oMi
 pCF
 pCF
@@ -70468,7 +70463,7 @@ iMv
 pkk
 vQv
 azz
-xHj
+uEs
 oMi
 pCF
 pCF
