@@ -14743,9 +14743,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
-"MT" = (
-/turf/unsimulated/wall,
-/area/space)
 "MV" = (
 /obj/machinery/bodyscanner{
 	dir = 8
@@ -49667,8 +49664,8 @@ cz
 cz
 cz
 cz
-MT
-MT
+gq
+gq
 ot
 fP
 ot

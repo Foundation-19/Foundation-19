@@ -31523,10 +31523,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
 "pgR" = (
-/obj/effect/catwalk_plated/dark,
+/obj/structure/foamedmetal,
 /obj/structure/catwalk,
 /obj/structure/lattice,
-/obj/structure/foamedmetal,
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "phs" = (
@@ -31758,10 +31757,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/uhcz/medicalpost)
-"pDi" = (
-/obj/structure/foamedmetal,
-/turf/space,
-/area/site53/science/aiccore)
 "pEO" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
@@ -65586,7 +65581,7 @@ azA
 azA
 azA
 azz
-iZA
+pgR
 bsC
 iZA
 iZA
@@ -65846,7 +65841,7 @@ azA
 azA
 azA
 azz
-iZA
+pgR
 bsC
 iZA
 iZA
@@ -66106,7 +66101,7 @@ azA
 azA
 azA
 azz
-iZA
+pgR
 bsC
 iZA
 iZA
@@ -66366,7 +66361,7 @@ azA
 azA
 azA
 azz
-iZA
+pgR
 bsC
 iZA
 iZA
@@ -66626,7 +66621,7 @@ azA
 azA
 azA
 azz
-iZA
+pgR
 bsC
 iZA
 iZA
@@ -68447,13 +68442,13 @@ azA
 azA
 azz
 pgR
-pDi
-pDi
-pDi
-pDi
-pDi
-pDi
-pDi
+iZA
+iZA
+iZA
+iZA
+iZA
+iZA
+iZA
 pCF
 pCF
 pCF
@@ -68707,13 +68702,13 @@ azA
 azA
 azz
 pgR
-pDi
-pDi
-pDi
-pDi
-pDi
-pDi
-pDi
+iZA
+iZA
+iZA
+iZA
+iZA
+iZA
+iZA
 pCF
 pCF
 pCF
@@ -68967,13 +68962,13 @@ azA
 azA
 azz
 pgR
-pDi
-pDi
-pDi
-pDi
-pDi
-pDi
-pDi
+iZA
+iZA
+iZA
+iZA
+iZA
+iZA
+iZA
 pCF
 pCF
 pCF
@@ -69227,13 +69222,13 @@ azA
 azA
 azz
 pgR
-pDi
-pDi
-pDi
-pDi
-pDi
-pDi
-pDi
+iZA
+iZA
+iZA
+iZA
+iZA
+iZA
+iZA
 pCF
 pCF
 pCF
@@ -69487,13 +69482,13 @@ azA
 azA
 azz
 pgR
-pDi
-pDi
-pDi
-pDi
-pDi
-pDi
-pDi
+iZA
+iZA
+iZA
+iZA
+iZA
+iZA
+iZA
 pCF
 pCF
 pCF
@@ -70786,7 +70781,7 @@ azA
 azA
 azA
 azz
-mxa
+pgR
 mxa
 mxa
 mxa
@@ -71046,7 +71041,7 @@ azA
 azA
 azA
 azz
-iZA
+pgR
 bsC
 iZA
 iZA
@@ -71306,7 +71301,7 @@ azA
 azA
 azA
 azz
-iZA
+pgR
 bsC
 iZA
 iZA
@@ -71566,7 +71561,7 @@ azA
 azA
 azA
 azz
-iZA
+pgR
 bsC
 iZA
 iZA
@@ -71826,7 +71821,7 @@ azA
 azA
 azA
 azz
-iZA
+pgR
 bsC
 iZA
 iZA
@@ -72086,7 +72081,7 @@ azA
 azA
 azA
 azz
-iZA
+pgR
 bsC
 iZA
 iZA
