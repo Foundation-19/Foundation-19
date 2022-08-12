@@ -427,6 +427,21 @@
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
 	belt = /obj/item/gun/projectile/pistol/m1911
 
+/decl/hierarchy/outfit/job/site90/crew/civ/mcd
+	name = OUTFIT_JOB_NAME("McDonald's Marketing Agent")
+	uniform = /obj/item/clothing/under/rank/clown
+	suit = /obj/item/clothing/suit/chickensuit
+	head = /obj/item/clothing/head/chicken
+	mask = /obj/item/clothing/mask/gas/clown_hat
+	shoes = /obj/item/clothing/shoes/clown_shoes
+	gloves = /obj/item/clothing/gloves/thick
+	l_pocket = /obj/item/device/radio
+	id_types = list(/obj/item/card/id/adminlvl3)
+	l_ear = /obj/item/device/radio/headset/heads/hos/mcd
+	back = /obj/item/storage/backpack/satchel/pocketbook
+	backpack_contents = list(/obj/item/spacecash/bundle/c1000 = 10)
+	belt = /obj/item/gun/launcher/money
+
 /decl/hierarchy/outfit/job/thirep
 	name = OUTFIT_JOB_NAME("thirep")
 	uniform = /obj/item/clothing/under/rank/chaplain

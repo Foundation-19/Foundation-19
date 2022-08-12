@@ -75,6 +75,10 @@
 	name = "UIU representative's headset"
 	desc = "The headset of the humanitarian, or so they might say."
 
+/obj/item/device/radio/headset/heads/hos/mcd
+	name = "McDonald's agent headset"
+	desc = "McDonald's: I'm Lovin' This Headset!"
+
 /obj/item/device/encryptionkey/goc
 	name = "GOC radio encryption key"
 	icon_state = "goc_cypherkey"
