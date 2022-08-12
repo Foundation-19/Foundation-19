@@ -18,8 +18,8 @@
 	var/datum/current_boon
 	var/mob/living/following
 
-/mob/living/deity/Initialize()
-	. = ..()
+/mob/living/deity/New()
+	..()
 	if(eye_type)
 		eyeobj = new eye_type(src)
 		eyeobj.possess(src)

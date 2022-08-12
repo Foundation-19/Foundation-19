@@ -14,12 +14,13 @@
 	size = 21
 	available_on_ntnet = TRUE
 	requires_ntnet = TRUE
+	category = PROG_SUPPLY
 
 /datum/computer_file/program/supply/process_tick()
 	..()
 	var/datum/nano_module/supply/SNM = NM
 	if(istype(SNM))
-		SNM.emagged = computer.computer_emagged
+		SNM.emagged = computer.emagged()
 		if(SNM.notifications_enabled)
 			if(SSsupply.requestlist.len)
 				ui_header = "supply_new_order.gif"
@@ -365,8 +366,10 @@
 		))
 
 /datum/nano_module/supply/proc/can_print()
-	var/obj/item/modular_computer/computer = nano_host()
-	return computer?.nano_printer
+	var/datum/extension/interactive/ntos/os = get_extension(nano_host(), /datum/extension/interactive/ntos)
+	if(os)
+		return os.has_component(PART_PRINTER)
+	return 0
 
 /datum/nano_module/supply/proc/print_order(var/datum/supply_order/O, var/mob/user)
 	if(!O)

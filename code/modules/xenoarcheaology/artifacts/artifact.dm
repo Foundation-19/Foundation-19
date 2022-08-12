@@ -10,8 +10,9 @@
 	var/being_used = 0
 	waterproof = FALSE
 
-/obj/machinery/artifact/Initialize()
-	. = ..()
+/obj/machinery/artifact/New()
+	..()
+
 	var/effecttype = pick(typesof(/datum/artifact_effect) - /datum/artifact_effect)
 	my_effect = new effecttype(src)
 

@@ -200,7 +200,3 @@
 
 	///Allows a datum to intercept all click calls this mob is the source of
 	var/datum/click_intercept
-
-	var/datum/player_panel/mob_panel
-
-	var/list/datum/action/actions = list()

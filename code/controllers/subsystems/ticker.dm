@@ -65,6 +65,10 @@ SUBSYSTEM_DEF(ticker)
 		Master.SetRunLevel(RUNLEVEL_SETUP)
 		return
 
+	if(!bypass_gamemode_vote && (pregame_timeleft <= config.vote_autogamemode_timeleft SECONDS) && !gamemode_vote_results)
+		if(!SSvote.active_vote)
+			SSvote.initiate_vote(/datum/vote/gamemode, automatic = 1)
+
 /datum/controller/subsystem/ticker/proc/setup_tick()
 	switch(choose_gamemode())
 		if(CHOOSE_GAMEMODE_SILENT_REDO)
@@ -128,12 +132,14 @@ SUBSYSTEM_DEF(ticker)
 		Master.SetRunLevel(RUNLEVEL_POSTGAME)
 		end_game_state = END_GAME_READY_TO_END
 		INVOKE_ASYNC(src, .proc/declare_completion)
+		if(config.allow_map_switching && config.auto_map_vote && GLOB.all_maps.len > 1)
+			SSvote.initiate_vote(/datum/vote/map/end_game, automatic = 1)
 
 	else if(mode_finished && (end_game_state <= END_GAME_NOT_OVER))
 		end_game_state = END_GAME_MODE_FINISH_DONE
 		mode.cleanup()
 		log_and_message_admins(": All antagonists are deceased or the gamemode has ended.") //Outputs as "Event: All antagonists are deceased or the gamemode has ended."
-		SSvote.initiate_vote(/datum/vote/transfer, forced = 1)
+		SSvote.initiate_vote(/datum/vote/transfer, automatic = 1)
 
 /datum/controller/subsystem/ticker/proc/post_game_tick()
 	switch(end_game_state)
@@ -498,5 +504,8 @@ Helpers
 /datum/controller/subsystem/ticker/proc/start_now(mob/user)
 	if(!(GAME_STATE == RUNLEVEL_LOBBY))
 		return
+	if(istype(SSvote.active_vote, /datum/vote/gamemode))
+		SSvote.cancel_vote(user)
+		bypass_gamemode_vote = 1
 	Master.SetRunLevel(RUNLEVEL_SETUP)
 	return 1

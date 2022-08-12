@@ -94,7 +94,7 @@
 /obj/random/bomb_supply/spawn_choices()
 	return list(/obj/item/device/assembly/igniter,
 				/obj/item/device/assembly/prox_sensor,
-				/obj/item/device/assembly/signaller,
+				/obj/item/device/assembly/signaler,
 				/obj/item/device/assembly/timer,
 				/obj/item/device/multitool)
 

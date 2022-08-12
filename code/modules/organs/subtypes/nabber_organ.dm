@@ -8,11 +8,11 @@
 	will_assist_languages = list(LANGUAGE_GALCOM, LANGUAGE_LUNAR, LANGUAGE_GUTTER, LANGUAGE_SOL_COMMON, LANGUAGE_EAL, LANGUAGE_INDEPENDENT, LANGUAGE_ENGLISH)
 
 
-/obj/item/organ/internal/voicebox/nabber/Initialize()
-	. = ..()
+/obj/item/organ/internal/voicebox/nabber/New()
 	for(var/L in will_assist_languages)
 		assists_languages += all_languages[L]
 	robotize()
+
 
 /obj/item/organ/internal/eyes/nabber
 	name = "compound eyes"

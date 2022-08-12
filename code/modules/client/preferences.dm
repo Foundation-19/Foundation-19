@@ -29,11 +29,6 @@
 	//game-preferences
 	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
 
-	var/hotkeys = TRUE
-	var/list/key_bindings = list()
-
-	var/datum/tgui_macro/macros
-
 	// Mob preview
 	var/icon/preview_icon = null
 
@@ -44,13 +39,13 @@
 	var/datum/browser/panel
 
 /datum/preferences/New(client/C)
-	// give them default keybinds too
-	key_bindings = deepCopyList(GLOB.hotkey_keybinding_list_by_key)
-	macros = new(C, src)
 	if(istype(C))
 		client = C
 		client_ckey = C.ckey
 		SScharacter_setup.preferences_datums[C.ckey] = src
+
+		// give them default keybinds too
+		key_bindings = deepCopyList(global.hotkey_keybinding_list_by_key)
 
 		if(SScharacter_setup.initialized)
 			setup()

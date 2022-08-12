@@ -364,6 +364,13 @@ STARLIGHT 0
 ## Uncomment this line to announce shuttle dock announcements to the main IRC channel, if MAIN_IRC has also been setup.
 # ANNOUNCE_EVAC_TO_IRC
 
+## Uncomment to enable map voting; you'll need to use the script at tools/server.sh or an equivalent for it to take effect
+## You'll also likely need to enable WAIT_FOR_SIGUSR1 below
+# MAP_SWITCHING
+
+## Uncomment to enable an automatic map vote and switch at end of round. MAP_SWITCHING must also be enabled.
+# AUTO_MAP_VOTE
+
 ## Uncomment to make Dream Daemon refuse to reboot for any reason other than SIGUSR1
 # WAIT_FOR_SIGUSR1
 

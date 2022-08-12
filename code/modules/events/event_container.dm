@@ -127,6 +127,8 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 	available_events = list(
 		// Severity level, event name, event type, base weight, role weights, one shot, min weight, max weight. Last two only used if set and aren't nulls
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "APC Damage",					/datum/event/apc_damage,			20, 	list(ASSIGNMENT_ENGINEER = 10)),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Computer Damage",				/datum/event/computer_damage,		20, 	list(ASSIGNMENT_ENGINEER = 10)),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Computer Update",				/datum/event/computer_update,		20),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Brand Intelligence",			/datum/event/brand_intelligence,	10, 	list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_JANITOR = 10)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Camera Damage",					/datum/event/camera_damage,			20, 	list(ASSIGNMENT_ENGINEER = 10)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Economic News",					/datum/event/economic_event,		100),

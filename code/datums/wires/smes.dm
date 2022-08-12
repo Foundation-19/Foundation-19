@@ -1,56 +1,72 @@
 /datum/wires/smes
 	holder_type = /obj/machinery/power/smes/buildable
 	wire_count = 5
-	proper_name = "SMES"
-	var/mob/living/saboteur
+	descriptions = list(
+		new /datum/wire_description(SMES_WIRE_RCON, "This wire runs to a remote signaling mechanism."),
+		new /datum/wire_description(SMES_WIRE_INPUT, "This seems to be the primary input.", SKILL_EXPERIENCED),
+		new /datum/wire_description(SMES_WIRE_OUTPUT, "This seems to be the primary output.", SKILL_EXPERIENCED),
+		new /datum/wire_description(SMES_WIRE_GROUNDING, "This wire appeas to connect directly to the floor.", SKILL_EXPERIENCED),
+		new /datum/wire_description(SMES_WIRE_FAILSAFES, "This wire appears to connect to a failsafe mechanism.")
+	)
 
-/datum/wires/smes/New(atom/_holder)
-	wires = list(WIRE_SMES_RCON, WIRE_SMES_INPUT, WIRE_SMES_OUTPUT, WIRE_SMES_GROUNDING, WIRE_SMES_FAILSAFES)
-	return ..()
+	var/mob/saboteur = null //used to store whoever last cut the grounding wire, for admin purposess
 
-/datum/wires/smes/interactable(mob/user)
+var/const/SMES_WIRE_RCON = 1		// Remote control (AI and consoles), cut to disable
+var/const/SMES_WIRE_INPUT = 2		// Input wire, cut to disable input, pulse to disable for 60s
+var/const/SMES_WIRE_OUTPUT = 4		// Output wire, cut to disable output, pulse to disable for 60s
+var/const/SMES_WIRE_GROUNDING = 8	// Cut to quickly discharge causing sparks, pulse to only create few sparks
+var/const/SMES_WIRE_FAILSAFES = 16	// Cut to disable failsafes, mend to reenable
+
+
+/datum/wires/smes/CanUse(var/mob/living/L)
 	var/obj/machinery/power/smes/buildable/S = holder
+	if(!S.grounding && S.powernet && S.powernet.avail)
+		electrocute_mob(L, S.powernet, S, S.safeties_enabled? 0.1 : 1)
 	if(S.panel_open)
-		return TRUE
-	return FALSE
+		return 1
+	return 0
 
-/datum/wires/smes/get_status()
-	var/obj/machinery/power/smes/buildable/S = holder
-	. = ..()
-	. += "The green light is [(S.input_cut || S.input_pulsed || S.output_cut || S.output_pulsed) ? "off" : "on"]."
-	. += "The red light is [(S.safeties_enabled || S.grounding) ? "off" : "blinking"]."
-	. += "The blue light is [S.RCon ? "on" : "off"]."
 
-/datum/wires/smes/on_cut(wire, mend)
+/datum/wires/smes/GetInteractWindow(mob/user)
 	var/obj/machinery/power/smes/buildable/S = holder
-	switch(wire)
-		if(WIRE_SMES_RCON)
-			S.RCon = mend
-		if(WIRE_SMES_INPUT)
-			S.input_cut = !mend
-		if(WIRE_SMES_OUTPUT)
-			S.output_cut = !mend
-		if(WIRE_SMES_GROUNDING)
-			S.grounding = mend
+	. += ..()
+	. += "The green light is [(S.input_cut || S.input_pulsed || S.output_cut || S.output_pulsed) ? "off" : "on"]<br>"
+	. += "The red light is [(S.safeties_enabled || S.grounding) ? "off" : "blinking"]<br>"
+	. += "The blue light is [S.RCon ? "on" : "off"]"
+
+
+/datum/wires/smes/UpdateCut(var/index, var/mended)
+	var/obj/machinery/power/smes/buildable/S = holder
+	switch(index)
+		if(SMES_WIRE_RCON)
+			S.RCon = mended
+		if(SMES_WIRE_INPUT)
+			S.input_cut = !mended
+		if(SMES_WIRE_OUTPUT)
+			S.output_cut = !mended
+		if(SMES_WIRE_GROUNDING)
+			S.grounding = mended
 			saboteur = usr
-		if(WIRE_SMES_FAILSAFES)
-			S.safeties_enabled = mend
+			log_and_message_admins("SMES SABOTAGE: <b>[usr.x]X [usr.y]Y [usr.z]Z</b> User: [usr.ckey] has just cut an SMES grounding wire!<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[usr.x];Y=[usr.y];Z=[usr.z]'>JMP</a>")
+		if(SMES_WIRE_FAILSAFES)
+			S.safeties_enabled = mended
 
-/datum/wires/smes/on_pulse(wire)
+
+/datum/wires/smes/UpdatePulsed(var/index)
 	var/obj/machinery/power/smes/buildable/S = holder
-	switch(wire)
-		if(WIRE_SMES_RCON)
+	switch(index)
+		if(SMES_WIRE_RCON)
 			if(S.RCon)
 				S.RCon = 0
 				spawn(10)
 					S.RCon = 1
-		if(WIRE_SMES_INPUT)
+		if(SMES_WIRE_INPUT)
 			S.toggle_input()
-		if(WIRE_SMES_OUTPUT)
+		if(SMES_WIRE_OUTPUT)
 			S.toggle_output()
-		if(WIRE_SMES_GROUNDING)
+		if(SMES_WIRE_GROUNDING)
 			S.grounding = 0
-		if(WIRE_SMES_FAILSAFES)
+		if(SMES_WIRE_FAILSAFES)
 			if(S.safeties_enabled)
 				S.safeties_enabled = 0
 				spawn(10)

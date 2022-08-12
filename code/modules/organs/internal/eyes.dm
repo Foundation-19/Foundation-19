@@ -96,8 +96,8 @@
 	if(is_broken())
 		owner.eye_blind = 20
 
-/obj/item/organ/internal/eyes/Initialize()
-	. = ..()
+/obj/item/organ/internal/eyes/New()
+	..()
 	flash_mod = species.flash_mod
 	darksight_range = species.darksight_range
 	darksight_tint = species.darksight_tint
@@ -112,8 +112,8 @@
 	name = "optical sensor"
 	status = ORGAN_ROBOTIC
 
-/obj/item/organ/internal/eyes/robot/Initialize()
-	.=..()
+/obj/item/organ/internal/eyes/robot/New()
+	..()
 	robotize()
 
 /obj/item/organ/internal/eyes/robotize()

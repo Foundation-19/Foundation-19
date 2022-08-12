@@ -15,8 +15,8 @@
 	var/blood = 1
 	var/list/target_types = list()
 
-/mob/living/bot/cleanbot/Initialize()
-	. = ..()
+/mob/living/bot/cleanbot/New()
+	..()
 	get_targets()
 
 /mob/living/bot/cleanbot/handleIdle()

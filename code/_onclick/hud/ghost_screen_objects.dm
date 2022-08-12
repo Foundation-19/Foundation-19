@@ -7,7 +7,7 @@
 
 /obj/screen/ghost/orbit/Click()
 	var/mob/observer/ghost/G = usr
-	var/mob/fh = tgui_input_list(G, "Choose a player to orbit", "Orbit", GLOB.player_list)
+	var/mob/fh = input(G, "Orbit", "Orbit a player") as null | anything in GLOB.player_list
 	if(istype(fh))
 		G.follow(fh)
 
@@ -28,6 +28,6 @@
 
 /obj/screen/ghost/teleport/Click()
 	var/mob/observer/ghost/G = usr
-	var/A = tgui_input_list(G, "Teleport", "Teleport to an Area", area_repository.get_areas_by_z_level())
+	var/A = input(G, "Teleport", "Teleport to an Area") as null | anything in area_repository.get_areas_by_z_level()
 	if(A != "Cancel")
 		G.dead_tele(A)

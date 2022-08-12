@@ -9,6 +9,11 @@
 	var/datum/say_list/say_list = null
 	var/say_list_type = /datum/say_list	// Type to give us on initialization. Default has empty lists, so the mob will be silent.
 
+/mob/living/Initialize()
+	if (say_list_type)
+		say_list = new say_list_type(src)
+	return ..()
+
 /mob/living/Destroy()
 	QDEL_NULL(say_list)
 	return ..()

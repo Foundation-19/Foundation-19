@@ -9,6 +9,7 @@
 	available_on_ntnet = TRUE
 	nanomodule_path = /datum/nano_module/records
 	usage_flags = PROGRAM_ALL
+	category = PROG_OFFICE
 
 /datum/nano_module/records
 	name = "Crew Records"
@@ -50,8 +51,10 @@
 
 /datum/nano_module/records/proc/get_record_access(var/mob/user)
 	var/list/user_access = using_access || user.GetAccess()
-	var/obj/item/modular_computer/computer = nano_host()
-	if(computer.computer_emagged)
+
+	var/obj/PC = nano_host()
+	var/datum/extension/interactive/ntos/os = get_extension(PC, /datum/extension/interactive/ntos)
+	if(os && os.emagged())
 		user_access = user_access.Copy()
 		user_access |= access_syndicate
 

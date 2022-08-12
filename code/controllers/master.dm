@@ -67,16 +67,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/static/current_ticklimit = TICK_LIMIT_RUNNING
 
 /datum/controller/master/New()
-	if(!config)
-		config = new /datum/configuration()
-		config.load("config/config.txt")
-		config.load("config/game_options.txt","game_options")
-		if (GLOB.using_map?.config_path)
-			config.load(GLOB.using_map.config_path, "using_map")
-		config.load_text("config/motd.txt", "motd")
-		config.load_text("config/event.txt", "event")
-		config.loadsql("config/dbconfig.txt")
-		total_run_times = list()
+	total_run_times = list()
 	// Highlander-style: there can only be one! Kill off the old and replace it with the new.
 	var/list/_subsystems = list()
 	subsystems = _subsystems

@@ -64,7 +64,7 @@
 /obj/item/organ/internal/eyes/insectoid/nabber/proc/remove_shield()
 	owner.clear_fullscreen("eyeshield")
 
-/obj/item/organ/internal/eyes/nabber/Initialize()
+/obj/item/organ/internal/eyes/nabber/New(var/mob/living/carbon/holder)
 	. = ..()
 	if(dna)
 		color = rgb(dna.GetUIValue(DNA_UI_EYES_R), dna.GetUIValue(DNA_UI_EYES_G), dna.GetUIValue(DNA_UI_EYES_B))

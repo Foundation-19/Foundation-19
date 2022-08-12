@@ -5,7 +5,7 @@
 	origin_tech = list(TECH_MAGNET = 1)
 	matter = list(MATERIAL_STEEL = 500, MATERIAL_GLASS = 50, MATERIAL_WASTE = 10)
 
-	secured = FALSE
+	secured = 1
 	wires = WIRE_RECEIVE
 
 /obj/item/device/assembly/igniter/activate()
@@ -31,7 +31,8 @@
 
 	return TRUE
 
+
 /obj/item/device/assembly/igniter/attack_self(mob/user as mob)
-	..()
 	activate()
 	add_fingerprint(user)
+	return

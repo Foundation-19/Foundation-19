@@ -303,8 +303,8 @@
 			return
 		src.audible_message("<span class='warning'>You hear a roar as the [src] activates.</span>", 1)
 
-		cremating = TRUE
-		locked = TRUE
+		cremating = 1
+		locked = 1
 		update()
 
 		for(var/mob/living/M in contents)
@@ -317,7 +317,7 @@
 					C.adjustBrainLoss(5)
 
 					if(C.stat == DEAD || !(C in contents)) //In case we die or are removed at any point.
-						cremating = FALSE
+						cremating = 0
 						update()
 						break
 
@@ -362,8 +362,6 @@
 				admin_attack_log(M, A, "Cremated their victim.", "Was cremated.", "cremated alive")
 				M.audible_message("[M]'s screams cease, as does any movement within the [src]. All that remains is a dull, empty silence.")
 				M.dust()
-				var/mob/observer/ghost/g = find_dead_player(M.last_ckey, TRUE)
-				g.timeofdeath -= (config.respawn_delay MINUTES * 0.5)
 
 		for(var/obj/O in contents) //obj instead of obj/item so that bodybags and ashes get destroyed. We dont want tons and tons of ash piling up
 			qdel(O)

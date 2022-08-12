@@ -10,6 +10,7 @@
 	available_on_ntnet = TRUE
 	requires_ntnet = FALSE
 	usage_flags = PROGRAM_ALL
+	category = PROG_OFFICE
 
 /datum/nano_module/program/reports
 	name = "Report Editor"
@@ -26,7 +27,7 @@
 			if(selected_report)
 				data["report_data"] = selected_report.generate_nano_data(get_access(user))
 			data["view_only"] = can_view_only
-			data["printer"] = program.computer.nano_printer
+			data["printer"] = program.computer.has_component(PART_PRINTER)
 		if(REPORTS_DOWNLOAD)
 			var/list/L = list()
 			for(var/datum/computer_file/report/report in ntnet_global.fetch_reports(get_access(user)))
@@ -62,11 +63,11 @@
 	saved_report = null
 
 /datum/nano_module/program/reports/proc/save_report(mob/user, save_as)
-	if(!program.computer || !program.computer.hard_drive)
+	if(!program.computer || !program.computer.has_component(PART_HDD))
 		to_chat(user, "Unable to find hard drive.")
 		return
 	selected_report.rename_file()
-	if(program.computer.hard_drive.store_file(selected_report))
+	if(program.computer.store_file(selected_report))
 		saved_report = selected_report
 		selected_report = saved_report.clone()
 		to_chat(user, "The report has been saved as [saved_report.filename].[saved_report.filetype]")
@@ -74,11 +75,11 @@
 		to_chat(user, "Error storing file. Please check your hard drive.")
 
 /datum/nano_module/program/reports/proc/load_report(mob/user)
-	if(!program.computer || !program.computer.hard_drive)
+	if(!program.computer || !program.computer.has_component(PART_HDD))
 		to_chat(user, "Unable to find hard drive.")
 		return
 	var/choices = list()
-	for(var/datum/computer_file/report/R in program.computer.hard_drive.stored_files)
+	for(var/datum/computer_file/report/R in program.computer.get_all_files())
 		choices["[R.filename].[R.filetype]"] = R
 	var/choice = input(user, "Which report would you like to load?", "Loading Report") as null|anything in choices
 	if(choice in choices)
@@ -146,12 +147,9 @@
 	if(href_list["print"])
 		if(!selected_report || !selected_report.verify_access(get_access(user)))
 			return 1
-		if(!program.computer.nano_printer)
-			to_chat(user, SPAN_WARNING("Missing Hardware: Your computer does not have the required hardware to complete this operation."))
-			return
 		var/with_fields = text2num(href_list["print_mode"])
 		var/text = selected_report.generate_pencode(get_access(user), with_fields)
-		if(!program.computer.nano_printer.print_text(text, selected_report.display_name()))
+		if(!program.computer.print_paper(text, selected_report.display_name()))
 			to_chat(user, "Hardware error: Printer was unable to print the file. It may be out of paper.")
 		return 1
 	if(href_list["export"])
@@ -161,7 +159,7 @@
 		selected_report.rename_file()
 		file.stored_data = selected_report.generate_pencode(get_access(user), no_html = 1) //TXT files can't have html; they use pencode only.
 		file.filename = selected_report.filename
-		if(program.computer.hard_drive.store_file(file))
+		if(program.computer.store_file(file))
 			to_chat(user, "The report has been exported as [file.filename].[file.filetype]")
 		else
 			to_chat(user, "Error storing file. Please check your hard drive.")

@@ -16,8 +16,8 @@
 
 	var/list/wizardy_spells = list()
 
-/mob/living/simple_animal/familiar/Initialize()
-	. = ..()
+/mob/living/simple_animal/familiar/New()
+	..()
 	add_language(LANGUAGE_ENGLISH)
 	for(var/spell in wizardy_spells)
 		src.add_spell(new spell, "const_spell_ready")
@@ -156,8 +156,8 @@
 
 	wizardy_spells = list(/datum/spell/aoe_turf/smoke)
 
-/mob/living/simple_animal/familiar/pet/mouse/Initialize()
-	. = ..()
+/mob/living/simple_animal/familiar/pet/mouse/New()
+	..()
 	add_verb(src, /mob/living/proc/ventcrawl)
 	add_verb(src, /mob/living/proc/hide)
 

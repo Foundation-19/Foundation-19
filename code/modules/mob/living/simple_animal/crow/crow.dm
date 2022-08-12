@@ -40,8 +40,8 @@
 	sharp = TRUE
 	force = 7
 
-/mob/living/simple_animal/crow/Initialize()
-	. = ..()
+/mob/living/simple_animal/crow/New()
+	..()
 	messenger_bag = new(src)
 	update_icon()
 

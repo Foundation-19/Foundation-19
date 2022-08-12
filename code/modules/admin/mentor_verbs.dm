@@ -1,7 +1,7 @@
 /client/verb/mentorhelp(msg as text)
-	set name = "Mhelp"
+	set name = "Mentorhelp"
 	set desc = "Request an in-game mentor to help you with one of the game's mechanics."
-	set category = "Staff Help"
+	set category = "Staffhelp"
 
 	if(!msg || !usr)
 		return
@@ -62,7 +62,7 @@
 
 /client/proc/mentorpm_panel()
 	set name = "Mentor PM"
-	set category = "Staff Help"
+	set category = "Staffhelp"
 
 	if(!is_mentor(usr))
 		return

@@ -3,6 +3,25 @@
 
 GLOBAL_VAR(href_logfile)
 
+/hook/global_init/proc/generate_gameid()
+	if(game_id != null)
+		return
+	game_id = ""
+
+	var/list/c = list("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
+	var/l = c.len
+
+	var/t = world.timeofday
+	for(var/_ = 1 to 4)
+		game_id = "[c[(t % l) + 1]][game_id]"
+		t = round(t / l)
+	game_id = "-[game_id]"
+	t = round(world.realtime / (10 * 60 * 60 * 24))
+	for(var/_ = 1 to 3)
+		game_id = "[c[(t % l) + 1]][game_id]"
+		t = round(t / l)
+	return 1
+
 // Find mobs matching a given string
 //
 // search_string: the string to search for, in params format; for example, "some_key;mob_name"
@@ -51,24 +70,6 @@ GLOBAL_VAR(href_logfile)
 /world/New()
 	//set window title
 	name = "[server_name] - [GLOB.using_map.full_name]"
-
-	if(isnull(game_id))
-		game_id = ""
-
-		var/list/c = list("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
-		var/l = c.len
-
-		var/t = world.timeofday
-		for(var/_ = 1 to 4)
-			game_id = "[c[(t % l) + 1]][game_id]"
-			t = round(t / l)
-		game_id = "-[game_id]"
-		t = round(world.realtime / (10 * 60 * 60 * 24))
-		for(var/_ = 1 to 3)
-			game_id = "[c[(t % l) + 1]][game_id]"
-			t = round(t / l)
-
-	make_datum_references_lists() //initialises global lists for referencing frequently used datums (so that we only ever do it once)
 
 	//logs
 	SetupLogs()
@@ -508,6 +509,16 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 	var/F = file("data/mode.txt")
 	fdel(F)
 	to_file(F, the_mode)
+
+/proc/load_configuration()
+	config = new /datum/configuration()
+	config.load("config/config.txt")
+	config.load("config/game_options.txt","game_options")
+	if (GLOB.using_map?.config_path)
+		config.load(GLOB.using_map.config_path, "using_map")
+	config.load_text("config/motd.txt", "motd")
+	config.load_text("config/event.txt", "event")
+	config.loadsql("config/dbconfig.txt")
 
 /hook/startup/proc/loadMods()
 	world.load_mods()

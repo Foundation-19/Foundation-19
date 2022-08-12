@@ -16,6 +16,15 @@
 	var/ai_holder_type = null
 	var/image/ai_status_image
 
+/mob/living/Initialize()
+	if (ai_holder_type)
+		ai_holder = new ai_holder_type(src)
+		if (istype(src, /mob/living/carbon/human))
+			var/mob/living/carbon/human/H = src
+			H.InitializeHud()
+		ai_status_image = image('icons/misc/buildmode.dmi', src, "ai_0")
+	return ..()
+
 /mob/living/Destroy()
 	if (ai_holder)
 		GLOB.stat_set_event.unregister(src, ai_holder, /datum/ai_holder/proc/holder_stat_change)

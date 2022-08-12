@@ -50,7 +50,7 @@ export const TextInputModal = (props, context) => {
       <Window.Content
         onKeyDown={(event) => {
           const keyCode = window.event ? event.which : event.keyCode;
-          if (!multiline && keyCode === KEY_ENTER) {
+          if (keyCode === KEY_ENTER) {
             act('submit', { entry: input });
           }
           if (keyCode === KEY_ESCAPE) {
@@ -88,7 +88,6 @@ const InputArea = (props, context) => {
     <TextArea
       autoFocus
       autoSelect
-      ignoreKeyEnter={multiline}
       height={multiline || input.length >= 30 ? '100%' : '1.8rem'}
       maxLength={max_length}
       onEscape={() => act('cancel')}

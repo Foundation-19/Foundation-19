@@ -118,7 +118,7 @@ var/list/ai_verbs_default = list(
 	remove_verb(src, ai_verbs_default)
 	add_verb(src, /mob/living/verb/ghost)
 
-/mob/living/silicon/ai/Initialize(mapload, datum/ai_laws/L, obj/item/device/mmi/B, safety = 0)
+/mob/living/silicon/ai/New(loc, var/datum/ai_laws/L, var/obj/item/device/mmi/B, var/safety = 0)
 	announcement = new()
 	announcement.title = "A.I. Announcement"
 	announcement.announcement_type = "A.I. Announcement"
@@ -187,7 +187,7 @@ var/list/ai_verbs_default = list(
 	hud_list[SPECIALROLE_HUD] = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 
 	ai_list += src
-	.=..()
+	..()
 	ai_radio = silicon_radio
 	ai_radio.myAi = src
 
@@ -421,7 +421,7 @@ var/list/ai_verbs_default = list(
 			return TOPIC_HANDLED
 
 		if (href_list["showalerts"])
-			open_subsystem(/datum/tgui_module/alarm_monitor/all/robot)
+			open_subsystem(/datum/nano_module/alarm_monitor/all)
 			return TOPIC_HANDLED
 
 		//Carn: holopad requests

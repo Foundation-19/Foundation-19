@@ -105,7 +105,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "ao" = (
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	dir = 4;
 	icon_state = "console"
 	},
@@ -129,7 +129,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "ar" = (
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	dir = 8;
 	icon_state = "console"
 	},
@@ -1150,7 +1150,7 @@
 	dir = 10
 	},
 /obj/machinery/camera/network/lcz,
-/obj/item/modular_computer/console/preset/security,
+/obj/machinery/computer/modular/preset/security,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpointoverlook)
 "du" = (
@@ -1740,7 +1740,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkcryo)
 "eX" = (
-/obj/item/modular_computer/console/preset/security{
+/obj/machinery/computer/modular/preset/security{
 	dir = 8;
 	icon_state = "console"
 	},
@@ -2717,7 +2717,7 @@
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
 "hA" = (
-/obj/item/modular_computer/console/preset/security{
+/obj/machinery/computer/modular/preset/security{
 	dir = 1;
 	icon_state = "console"
 	},
@@ -4256,7 +4256,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/canteenbubble)
 "lb" = (
-/obj/item/modular_computer/console/preset/cardslot/command_sec{
+/obj/machinery/computer/modular/preset/cardslot/command_sec{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -4386,7 +4386,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "ln" = (
-/obj/item/modular_computer/console/preset/security,
+/obj/machinery/computer/modular/preset/security,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "lo" = (
@@ -5217,7 +5217,7 @@
 /area/site53/llcz/dclass/luxuryhall)
 "ni" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/item/modular_computer/console/preset/medical{
+/obj/machinery/computer/modular/preset/medical{
 	dir = 4;
 	icon_state = "console"
 	},
@@ -5227,7 +5227,7 @@
 /area/site53/engineering/selfdestruct)
 "nj" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 8;
 	icon_state = "console"
 	},
@@ -5240,7 +5240,7 @@
 /area/site53/engineering/selfdestruct)
 "nl" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/item/modular_computer/console/preset/aislot/sysadmin{
+/obj/machinery/computer/modular/preset/aislot/sysadmin{
 	dir = 8;
 	icon_state = "console"
 	},
@@ -6930,7 +6930,7 @@
 /turf/simulated/floor,
 /area/site53/llcz/maintenance)
 "rx" = (
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	dir = 1;
 	icon_state = "console"
 	},
@@ -7403,7 +7403,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
 "sN" = (
-/obj/item/modular_computer/console/preset/security{
+/obj/machinery/computer/modular/preset/security{
 	dir = 8;
 	icon_state = "console"
 	},
@@ -7586,7 +7586,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
 "th" = (
-/obj/item/modular_computer/console/preset/library{
+/obj/machinery/computer/modular/preset/library{
 	dir = 4;
 	icon_state = "console"
 	},
@@ -9404,7 +9404,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertram/archive)
 "yd" = (
-/obj/item/modular_computer/console/preset/security,
+/obj/machinery/computer/modular/preset/security,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
 "yf" = (
@@ -9808,7 +9808,7 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/cells)
 "zI" = (
-/obj/item/modular_computer/console/preset/security{
+/obj/machinery/computer/modular/preset/security{
 	dir = 1;
 	icon_state = "console"
 	},
@@ -12398,7 +12398,7 @@
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/briefing)
 "Ho" = (
-/obj/item/modular_computer/console/preset/security{
+/obj/machinery/computer/modular/preset/security{
 	dir = 1;
 	icon_state = "console"
 	},
@@ -12933,7 +12933,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchenbotanybubble)
 "Iz" = (
-/obj/item/modular_computer/console/preset/security,
+/obj/machinery/computer/modular/preset/security,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/entrance_checkpoint)
 "IB" = (
@@ -12985,7 +12985,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/entrance_checkpoint)
 "IF" = (
-/obj/item/modular_computer/console/preset/security,
+/obj/machinery/computer/modular/preset/security,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -13587,7 +13587,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
 "JU" = (
-/obj/item/modular_computer/console/preset/security{
+/obj/machinery/computer/modular/preset/security{
 	dir = 8;
 	icon_state = "console"
 	},
@@ -14068,7 +14068,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "Lu" = (
-/obj/item/modular_computer/console/preset/medical{
+/obj/machinery/computer/modular/preset/medical{
 	dir = 0
 	},
 /obj/machinery/camera/network/lcz,
@@ -15431,7 +15431,7 @@
 /turf/simulated/floor/tiled/old_cargo,
 /area/site53/lhcz/scp049containment)
 "PY" = (
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	dir = 4;
 	icon_state = "console"
 	},

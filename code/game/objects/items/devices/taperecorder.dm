@@ -13,6 +13,8 @@
 	var/playsleepseconds = 0.0
 	var/obj/item/device/tape/mytape = /obj/item/device/tape/random
 	var/canprint = 1
+	var/datum/wires/taperecorder/wires = null // Wires datum
+	var/maintenance = 0
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
 	throwforce = 2
@@ -21,6 +23,7 @@
 
 /obj/item/device/taperecorder/New()
 	..()
+	wires = new(src)
 	set_extension(src, /datum/extension/base_icon_state, icon_state)
 	if(ispath(mytape))
 		mytape = new mytape(src)
@@ -31,6 +34,7 @@
 	mytape = null
 
 /obj/item/device/taperecorder/Destroy()
+	QDEL_NULL(wires)
 	GLOB.listening_objects -= src
 	if(mytape)
 		qdel(mytape)
@@ -39,6 +43,10 @@
 
 
 /obj/item/device/taperecorder/attackby(obj/item/I, mob/user, params)
+	if(isScrewdriver(I))
+		maintenance = !maintenance
+		to_chat(user, "<span class='notice'>You [maintenance ? "open" : "secure"] the lid.</span>")
+		return
 	if(istype(I, /obj/item/device/tape))
 		if(mytape)
 			to_chat(user, "<span class='notice'>There's already a tape inside.</span>")
@@ -86,6 +94,11 @@
 	usr.put_in_hands(mytape)
 	mytape = null
 	update_icon()
+
+/obj/item/device/taperecorder/examine(mob/user, distance)
+	. = ..()
+	if(distance <= 1 && maintenance)
+		to_chat(user, "<span class='notice'>The wires are exposed.</span>")
 
 /obj/item/device/taperecorder/hear_talk(mob/living/M as mob, msg, var/verb="says", datum/language/speaking=null)
 	if(mytape && recording)
@@ -343,6 +356,10 @@
 
 
 /obj/item/device/taperecorder/attack_self(mob/user)
+	if(maintenance)
+		wires.Interact(user)
+		return
+
 	if(recording || playing)
 		stop()
 	else

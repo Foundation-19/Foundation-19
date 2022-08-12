@@ -275,7 +275,7 @@ var/bomb_set
 				if(safety)
 					to_chat(usr, "<span class='warning'>The safety is still on.</span>")
 					return 1
-				if(wires.is_cut(WIRE_BOMB_TIMING))
+				if(wires.IsIndexCut(NUCLEARBOMB_WIRE_TIMING))
 					to_chat(usr, "<span class='warning'>Nothing happens, something might be wrong with the wiring.</span>")
 					return 1
 				if(!timing && !safety)
@@ -283,7 +283,7 @@ var/bomb_set
 				else
 					check_cutoff()
 			if(href_list["safety"])
-				if (wires.is_cut(WIRE_BOMB_SAFETY))
+				if (wires.IsIndexCut(NUCLEARBOMB_WIRE_SAFETY))
 					to_chat(usr, "<span class='warning'>Nothing happens, something might be wrong with the wiring.</span>")
 					return 1
 				safety = !safety

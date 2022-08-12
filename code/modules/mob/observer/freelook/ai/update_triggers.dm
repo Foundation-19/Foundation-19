@@ -37,8 +37,8 @@
 	invalidateCameraCache()
 
 // Mobs
-/mob/living/silicon/ai/Initialize()
-	. = ..()
+/mob/living/silicon/ai/New()
+	..()
 	cameranet.add_source(src)
 
 /mob/living/silicon/ai/Destroy()

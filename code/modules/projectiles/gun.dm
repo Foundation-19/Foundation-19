@@ -290,10 +290,6 @@
 
 		process_accuracy(projectile, user, target, i, held_twohanded)
 
-		var/obj/item/projectile/P = projectile
-		if(istype(P)) // only for real projectiles
-			P.shot_from = src.name
-
 		if(pointblank)
 			process_point_blank(projectile, user, target)
 

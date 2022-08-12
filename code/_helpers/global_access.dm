@@ -203,10 +203,16 @@
 			return global._client_preferences_by_key;
 		if("_client_preferences_by_type")
 			return global._client_preferences_by_type;
+		if("_kbMap")
+			return global._kbMap;
+		if("_kbMap_reverse")
+			return global._kbMap_reverse;
 		if("account_hack_attempted")
 			return global.account_hack_attempted;
 		if("additional_antag_types")
 			return global.additional_antag_types;
+		if("admin_datums")
+			return global.admin_datums;
 		if("admin_pm_repository")
 			return global.admin_pm_repository;
 		if("admin_ranks")
@@ -493,6 +499,8 @@
 			return global.hadevent;
 		if("holder_mob_icon_cache")
 			return global.holder_mob_icon_cache;
+		if("hotkey_keybinding_list_by_key")
+			return global.hotkey_keybinding_list_by_key;
 		if("href_logfile")
 			return global.href_logfile;
 		if("human_icon_cache")
@@ -501,6 +509,8 @@
 			return global.id_card_states;
 		if("image_repository")
 			return global.image_repository;
+		if("init")
+			return global.init;
 		if("intents")
 			return global.intents;
 		if("intercom_range_display_status")
@@ -515,6 +525,8 @@
 			return global.jobban_runonce;
 		if("join_motd")
 			return global.join_motd;
+		if("keybindings_by_name")
+			return global.keybindings_by_name;
 		if("landmarks_list")
 			return global.landmarks_list;
 		if("language_keys")
@@ -723,6 +735,8 @@
 			return global.round_progressing;
 		if("rune_list")
 			return global.rune_list;
+		if("same_wires")
+			return global.same_wires;
 		if("secondary_mode")
 			return global.secondary_mode;
 		if("secret_force_mode")
@@ -877,6 +891,8 @@
 			return global.weighted_randomevent_locations;
 		if("whitelist")
 			return global.whitelist;
+		if("wireColours")
+			return global.wireColours;
 		if("world_uplinks")
 			return global.world_uplinks;
 		if("worths")
@@ -887,7 +903,7 @@
 			return global.z_levels;
 		if("zone_blocked")
 			return global.zone_blocked;
-
+		
 /proc/writeglobal(which, newval)
 	switch(which)
 		if("ANTAG_FREQS")
@@ -1092,10 +1108,16 @@
 			global._client_preferences_by_key=newval;
 		if("_client_preferences_by_type")
 			global._client_preferences_by_type=newval;
+		if("_kbMap")
+			global._kbMap=newval;
+		if("_kbMap_reverse")
+			global._kbMap_reverse=newval;
 		if("account_hack_attempted")
 			global.account_hack_attempted=newval;
 		if("additional_antag_types")
 			global.additional_antag_types=newval;
+		if("admin_datums")
+			global.admin_datums=newval;
 		if("admin_pm_repository")
 			global.admin_pm_repository=newval;
 		if("admin_ranks")
@@ -1382,6 +1404,8 @@
 			global.hadevent=newval;
 		if("holder_mob_icon_cache")
 			global.holder_mob_icon_cache=newval;
+		if("hotkey_keybinding_list_by_key")
+			global.hotkey_keybinding_list_by_key=newval;
 		if("href_logfile")
 			global.href_logfile=newval;
 		if("human_icon_cache")
@@ -1390,6 +1414,8 @@
 			global.id_card_states=newval;
 		if("image_repository")
 			global.image_repository=newval;
+		if("init")
+			global.init=newval;
 		if("intents")
 			global.intents=newval;
 		if("intercom_range_display_status")
@@ -1404,6 +1430,8 @@
 			global.jobban_runonce=newval;
 		if("join_motd")
 			global.join_motd=newval;
+		if("keybindings_by_name")
+			global.keybindings_by_name=newval;
 		if("landmarks_list")
 			global.landmarks_list=newval;
 		if("language_keys")
@@ -1612,6 +1640,8 @@
 			global.round_progressing=newval;
 		if("rune_list")
 			global.rune_list=newval;
+		if("same_wires")
+			global.same_wires=newval;
 		if("secondary_mode")
 			global.secondary_mode=newval;
 		if("secret_force_mode")
@@ -1766,6 +1796,8 @@
 			global.weighted_randomevent_locations=newval;
 		if("whitelist")
 			global.whitelist=newval;
+		if("wireColours")
+			global.wireColours=newval;
 		if("world_uplinks")
 			global.world_uplinks=newval;
 		if("worths")
@@ -1776,7 +1808,7 @@
 			global.z_levels=newval;
 		if("zone_blocked")
 			global.zone_blocked=newval;
-
+		
 /var/list/_all_globals=list(
 	"ANTAG_FREQS",
 	"AWAY_FREQS_ASSIGNED",
@@ -1879,8 +1911,11 @@
 	"_client_preferences",
 	"_client_preferences_by_key",
 	"_client_preferences_by_type",
+	"_kbMap",
+	"_kbMap_reverse",
 	"account_hack_attempted",
 	"additional_antag_types",
+	"admin_datums",
 	"admin_pm_repository",
 	"admin_ranks",
 	"admin_secrets",
@@ -2024,10 +2059,12 @@
 	"gzn_check",
 	"hadevent",
 	"holder_mob_icon_cache",
+	"hotkey_keybinding_list_by_key",
 	"href_logfile",
 	"human_icon_cache",
 	"id_card_states",
 	"image_repository",
+	"init",
 	"intents",
 	"intercom_range_display_status",
 	"invalid_zone",
@@ -2035,6 +2072,7 @@
 	"jobban_keylist",
 	"jobban_runonce",
 	"join_motd",
+	"keybindings_by_name",
 	"landmarks_list",
 	"language_keys",
 	"last_chew",
@@ -2139,6 +2177,7 @@
 	"robot_inventory",
 	"round_progressing",
 	"rune_list",
+	"same_wires",
 	"secondary_mode",
 	"secret_force_mode",
 	"send_emergency_team",
@@ -2216,6 +2255,7 @@
 	"weighted_mundaneevent_locations",
 	"weighted_randomevent_locations",
 	"whitelist",
+	"wireColours",
 	"world_uplinks",
 	"worths",
 	"wrapped_species_by_ref",

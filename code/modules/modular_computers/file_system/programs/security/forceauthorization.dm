@@ -9,7 +9,8 @@
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE
 	required_access = access_securitylvl4
-	nanomodule_path = /datum/nano_module/forceauthorization
+	nanomodule_path = /datum/nano_module/forceauthorization/
+	category = PROG_SEC
 
 /datum/nano_module/forceauthorization/
 	name = "Use of Force Authorization Manager"

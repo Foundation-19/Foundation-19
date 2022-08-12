@@ -76,8 +76,8 @@ Teleporter beacon, and its subtypes
 
 	ai_holder_type = /datum/ai_holder/simple_animal/hivebot/tele
 
-/mob/living/simple_animal/hostile/hivebot/tele/Initialize()
-	. = ..()
+/mob/living/simple_animal/hostile/hivebot/tele/New()
+	..()
 	var/datum/effect/effect/system/smoke_spread/smoke = new /datum/effect/effect/system/smoke_spread()
 	smoke.set_up(5, 0, src.loc)
 	smoke.start()

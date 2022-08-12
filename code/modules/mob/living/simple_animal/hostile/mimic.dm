@@ -64,12 +64,12 @@ var/global/list/protected_objects = list(/obj/machinery,
 		return . - M.creator.resolve()
 
 
-/mob/living/simple_animal/hostile/mimic/Initialize(mapload, obj/O, mob/living/creator)
-	.=..()
-	if(O)
-		if(ispath(O))
-			O = new O(loc)
-		CopyObject(O, creator)
+/mob/living/simple_animal/hostile/mimic/New(newloc, var/obj/o, var/mob/living/creator)
+	..()
+	if(o)
+		if(ispath(o))
+			o = new o(newloc)
+		CopyObject(o,creator)
 
 /mob/living/simple_animal/hostile/mimic/proc/CopyObject(var/obj/O, var/mob/living/creator)
 

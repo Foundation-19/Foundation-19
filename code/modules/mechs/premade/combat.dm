@@ -40,18 +40,16 @@
 	name = "combat arms"
 	exosuit_desc_string = "flexible, advanced manipulators"
 	icon_state = "combat_arms"
-	max_damage = 100
-	melee_damage = 30
-	action_delay = 7
+	melee_damage = 5
+	action_delay = 10
 	power_use = 50
 
 /obj/item/mech_component/propulsion/combat
 	name = "combat legs"
 	exosuit_desc_string = "sleek hydraulic legs"
 	icon_state = "combat_legs"
-	max_damage = 110
 	move_delay = 3
-	turn_delay = 2
+	turn_delay = 3
 	power_use = 20
 
 /obj/item/mech_component/sensors/combat
@@ -61,7 +59,6 @@
 	icon_state = "combat_head"
 	vision_flags = SEE_MOBS
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
-	max_damage = 75
 	power_use = 200
 
 /obj/item/mech_component/sensors/combat/prebuild()
@@ -75,8 +72,6 @@
 	pilot_coverage = 100
 	exosuit_desc_string = "an armoured chassis"
 	icon_state = "combat_body"
-	max_damage = 200
-	mech_health = 500
 	power_use = 40
 
 /obj/item/mech_component/chassis/combat/prebuild()
@@ -92,5 +87,5 @@
 			"[WEST]"  = list("x" = 12, "y" = 8)
 		)
 	)
-
+	
 	. = ..()

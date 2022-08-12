@@ -295,7 +295,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
 "aR" = (
-/obj/item/modular_computer/console/preset/cardslot/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -332,7 +332,7 @@
 	name = "intercom (Trams)";
 	pixel_y = 32
 	},
-/obj/item/modular_computer/console/preset/cardslot/command,
+/obj/machinery/computer/modular/preset/cardslot/command,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
 "aV" = (
@@ -404,7 +404,7 @@
 /area/site53/upper_surface/maincontrolroom)
 "bi" = (
 /obj/effect/floor_decal/corner/blue/border,
-/obj/item/modular_computer/console/preset/cardslot/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -2153,7 +2153,7 @@
 /area/site53/uez/hallway)
 "ge" = (
 /obj/machinery/light,
-/obj/item/modular_computer/console/preset/cardslot/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -2357,7 +2357,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "gK" = (
-/obj/item/modular_computer/console/preset/aislot/research,
+/obj/machinery/computer/modular/preset/aislot/research,
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
 	},
@@ -2492,7 +2492,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
 "hQ" = (
-/obj/item/modular_computer/console/preset/engineering,
+/obj/machinery/computer/modular/preset/engineering,
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
 	},
@@ -3034,7 +3034,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "ju" = (
-/obj/item/modular_computer/console/preset/aislot/sysadmin,
+/obj/machinery/computer/modular/preset/aislot/sysadmin,
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
 	},
@@ -3068,7 +3068,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
 "jx" = (
-/obj/item/modular_computer/console/preset/medical{
+/obj/machinery/computer/modular/preset/medical{
 	dir = 4;
 	icon_state = "console"
 	},
@@ -3102,7 +3102,7 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/orange/border{
@@ -3153,7 +3153,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "jK" = (
-/obj/item/modular_computer/console/preset/cardslot/command_sec{
+/obj/machinery/computer/modular/preset/cardslot/command_sec{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/orange/border{
@@ -3179,7 +3179,7 @@
 /turf/unsimulated/mask,
 /area/site53/upper_surface/commstower)
 "jP" = (
-/obj/item/modular_computer/console/preset/cardslot/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -3222,7 +3222,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "jW" = (
-/obj/item/modular_computer/console/preset/cardslot/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/orange/border{
@@ -3467,7 +3467,7 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 20
 	},
-/obj/item/modular_computer/console/preset/security,
+/obj/machinery/computer/modular/preset/security,
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
 	},
@@ -4582,7 +4582,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
 "VD" = (
-/obj/item/modular_computer/console/preset/cardslot/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,

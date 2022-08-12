@@ -1,66 +1,78 @@
+#define APC_WIRE_IDSCAN 1
+#define APC_WIRE_MAIN_POWER1 2
+#define APC_WIRE_MAIN_POWER2 4
+#define APC_WIRE_AI_CONTROL 8
+
 /datum/wires/apc
 	holder_type = /obj/machinery/power/apc
 	wire_count = 4
-	proper_name = "APC"
+	descriptions = list(
+		new /datum/wire_description(APC_WIRE_IDSCAN, "This wire is connected to the ID scanning panel.", SKILL_EXPERIENCED),
+		new /datum/wire_description(APC_WIRE_MAIN_POWER1, "This wire seems to be carrying a heavy current."),
+		new /datum/wire_description(APC_WIRE_MAIN_POWER2, "This wire seems to be carrying a heavy current."),
+		new /datum/wire_description(APC_WIRE_AI_CONTROL, "This wire connects to automated control systems.")
+	)
 
-/datum/wires/apc/New(atom/_holder)
-	wires = list(WIRE_IDSCAN, WIRE_MAIN_POWER1, WIRE_MAIN_POWER2, WIRE_AI_CONTROL)
-	return ..()
-
-/datum/wires/apc/get_status()
-	. = ..()
+/datum/wires/apc/GetInteractWindow(mob/user)
 	var/obj/machinery/power/apc/A = holder
-	. += "The APC is [A.locked ? "" : "un"]locked."
-	. += A.shorted ? "The APCs power has been shorted." : "The APC is working properly!"
-	. += "The 'AI control allowed' light is [A.aidisabled ? "off" : "on"]."
+	. += ..()
+	. += text("<br>\n[(A.locked ? "The APC is locked." : "The APC is unlocked.")]<br>\n[(A.shorted ? "The APCs power has been shorted." : "The APC is working properly!")]<br>\n[(A.aidisabled ? "The 'AI control allowed' light is off." : "The 'AI control allowed' light is on.")]")
 
-/datum/wires/apc/interactable(mob/user)
+
+/datum/wires/apc/CanUse(var/mob/living/L)
 	var/obj/machinery/power/apc/A = holder
-	if(A.wiresexposed)
+	if(A.wiresexposed && !(A.stat & BROKEN))
 		return 1
 	return 0
 
-/datum/wires/apc/on_pulse(wire)
+/datum/wires/apc/UpdatePulsed(var/index)
+
 	var/obj/machinery/power/apc/A = holder
 
-	switch(wire)
-		if(WIRE_IDSCAN)
-			A.locked = FALSE
+	switch(index)
+
+		if(APC_WIRE_IDSCAN)
+			A.locked = 0
 
 			spawn(300)
 				if(A)
-					A.locked = TRUE
+					A.locked = 1
 
-		if(WIRE_MAIN_POWER1, WIRE_MAIN_POWER2)
-			if(!A.shorted)
-				A.shorted = TRUE
+		if (APC_WIRE_MAIN_POWER1, APC_WIRE_MAIN_POWER2)
+			if(A.shorted == 0)
+				A.shorted = 1
 
 				spawn(1200)
-					if(A && !is_cut(WIRE_MAIN_POWER1) && !is_cut(WIRE_MAIN_POWER2))
-						A.shorted = FALSE
+					if(A && !IsIndexCut(APC_WIRE_MAIN_POWER1) && !IsIndexCut(APC_WIRE_MAIN_POWER2))
+						A.shorted = 0
 
-		if(WIRE_AI_CONTROL)
-			if(!A.aidisabled)
-				A.aidisabled = TRUE
+		if (APC_WIRE_AI_CONTROL)
+			if (A.aidisabled == 0)
+				A.aidisabled = 1
 
 				spawn(10)
-					if(A && !is_cut(WIRE_AI_CONTROL))
-						A.aidisabled = FALSE
+					if(A && !IsIndexCut(APC_WIRE_AI_CONTROL))
+						A.aidisabled = 0
 
-/datum/wires/apc/on_cut(wire, mend)
+/datum/wires/apc/UpdateCut(var/index, var/mended)
 	var/obj/machinery/power/apc/A = holder
 
-	switch(wire)
-		if(WIRE_MAIN_POWER1, WIRE_MAIN_POWER2)
-			if(!mend)
-				if(isliving(usr))
-					A.shock(usr, 50)
-				A.shorted = TRUE
+	switch(index)
+		if(APC_WIRE_MAIN_POWER1, APC_WIRE_MAIN_POWER2)
 
-			else if(!is_cut(WIRE_MAIN_POWER1) && !is_cut(WIRE_MAIN_POWER2))
-				A.shorted = FALSE
-				if(isliving(usr))
-					A.shock(usr, 50)
+			if(!mended)
+				A.shock(usr, 50)
+				A.shorted = 1
 
-		if(WIRE_AI_CONTROL)
-			A.aidisabled = !mend
+			else if(!IsIndexCut(APC_WIRE_MAIN_POWER1) && !IsIndexCut(APC_WIRE_MAIN_POWER2))
+				A.shorted = 0
+				A.shock(usr, 50)
+
+		if(APC_WIRE_AI_CONTROL)
+
+			if(!mended)
+				if (A.aidisabled == 0)
+					A.aidisabled = 1
+			else
+				if (A.aidisabled == 1)
+					A.aidisabled = 0

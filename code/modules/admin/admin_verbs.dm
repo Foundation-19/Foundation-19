@@ -1,7 +1,7 @@
 //admin verb groups - They can overlap if you so wish. Only one of each verb will exist in the verbs list regardless
 var/list/admin_verbs_default = list(
 	/datum/admins/proc/show_player_panel, //shows an interface for individual players, with various links (links require additional flags), right-click player panel,
-	/datum/admins/proc/player_panel_new,
+	/client/proc/player_panel,
 	/client/proc/secrets,
 	/client/proc/deadmin_self,			//destroys our own admin datum so we can play as a regular player,
 	/client/proc/hide_verbs,			//hides all our adminverbs,
@@ -438,6 +438,15 @@ var/list/admin_verbs_mentors = list(
 			to_chat(mob, "<span class='notice'>Invisimin on. You are now as invisible as a ghost.</span>")
 			mob.alpha = max(mob.alpha - 100, 0)
 
+
+/client/proc/player_panel()
+	set name = "Player Panel"
+	set category = "Admin"
+	if(check_rights(R_INVESTIGATE, FALSE))
+		holder.player_panel()
+	SSstatistics.add_field_details("admin_verb","PPN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	return
+
 /client/proc/check_antagonists()
 	set name = "Check Antagonists"
 	set category = "Admin"
@@ -506,7 +515,7 @@ var/list/admin_verbs_mentors = list(
 	if(!check_rights(R_ADMIN))	return
 
 	if(!warned_ckey || !istext(warned_ckey))	return
-	if(warned_ckey in GLOB.admin_datums)
+	if(warned_ckey in admin_datums)
 		to_chat(usr, "<font color='red'>Error: warn(): You can't warn admins.</font>")
 		return
 

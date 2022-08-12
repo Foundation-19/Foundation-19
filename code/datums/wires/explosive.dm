@@ -1,33 +1,30 @@
 /datum/wires/explosive
 	wire_count = 1
-	proper_name = "Explosive wires"
 
-/datum/wires/explosive/New(atom/_holder)
-	wires = list(WIRE_EXPLODE)
-	return ..()
+var/const/WIRE_EXPLODE = 1
 
 /datum/wires/explosive/proc/explode()
 	return
 
-/datum/wires/explosive/on_pulse(wire)
-	switch(wire)
+/datum/wires/explosive/UpdatePulsed(var/index)
+	switch(index)
 		if(WIRE_EXPLODE)
 			explode()
 
-/datum/wires/explosive/on_cut(wire, mend)
-	switch(wire)
+/datum/wires/explosive/UpdateCut(var/index, var/mended)
+	switch(index)
 		if(WIRE_EXPLODE)
-			if(!mend)
+			if(!mended)
 				explode()
 
 /datum/wires/explosive/c4
 	holder_type = /obj/item/plastique
 
-/datum/wires/explosive/c4/interactable(mob/user)
+/datum/wires/explosive/c4/CanUse(var/mob/living/L)
 	var/obj/item/plastique/P = holder
 	if(P.open_panel)
-		return TRUE
-	return FALSE
+		return 1
+	return 0
 
 /datum/wires/explosive/c4/explode()
 	var/obj/item/plastique/P = holder

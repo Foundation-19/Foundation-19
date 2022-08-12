@@ -344,7 +344,7 @@
 	pixel_x = -24
 	},
 /obj/structure/cable/orange,
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -356,7 +356,7 @@
 /turf/simulated/floor/carpet/blue2,
 /area/site53/uez/hopoffice)
 "cX" = (
-/obj/item/modular_computer/console/preset/cardslot/command_sec{
+/obj/machinery/computer/modular/preset/cardslot/command_sec{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -546,7 +546,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/hallway/primary/bridge/fore)
 "er" = (
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/yellow/diagonal,
@@ -654,7 +654,7 @@
 /turf/simulated/floor/tiled,
 /area/site53/surface/surface)
 "eR" = (
-/obj/item/modular_computer/console/preset/cardslot/command,
+/obj/machinery/computer/modular/preset/cardslot/command,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -693,7 +693,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/tcommsat/chamber)
 "fu" = (
-/obj/item/modular_computer/console/preset/cardslot/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/yellow/diagonal,
@@ -912,7 +912,7 @@
 /area/site53/upper_surface/maincontrolroom)
 "hs" = (
 /obj/effect/floor_decal/corner/orange/diagonal,
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -1042,7 +1042,7 @@
 /turf/simulated/floor/tiled,
 /area/site53/uez/hopoffice)
 "iM" = (
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -1283,7 +1283,7 @@
 /turf/simulated/floor/grass,
 /area/site53/lowertram/archive)
 "kH" = (
-/obj/item/modular_computer/console/preset/civilian,
+/obj/machinery/computer/modular/preset/civilian,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertram/archive)
 "kO" = (
@@ -1505,7 +1505,7 @@
 /turf/simulated/floor/carpet/blue2,
 /area/site53/uez/hopoffice)
 "mF" = (
-/obj/item/modular_computer/console/preset/cardslot/command_sec{
+/obj/machinery/computer/modular/preset/cardslot/command_sec{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
@@ -1532,7 +1532,7 @@
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/heads/office/cmo)
 "mU" = (
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	dir = 4
 	},
 /obj/machinery/light{
@@ -1864,7 +1864,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/tcommsat/chamber)
 "pv" = (
-/obj/item/modular_computer/console/preset/cardslot/command,
+/obj/machinery/computer/modular/preset/cardslot/command,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/bridge)
 "pz" = (
@@ -2017,7 +2017,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/auxsolarbridge)
 "qE" = (
-/obj/item/modular_computer/console/preset/cardslot/command_sec{
+/obj/machinery/computer/modular/preset/cardslot/command_sec{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -2090,14 +2090,14 @@
 /turf/simulated/open,
 /area/site53/surface/surface)
 "ri" = (
-/obj/item/modular_computer/console/preset/cardslot/command_sec{
+/obj/machinery/computer/modular/preset/cardslot/command_sec{
 	dir = 1
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/site53/upper_surface/maincontrolroom)
 "rm" = (
-/obj/item/modular_computer/console/preset/civilian{
+/obj/machinery/computer/modular/preset/civilian{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -2184,7 +2184,7 @@
 /turf/simulated/floor/tiled/white,
 /area/hallway/primary/bridge/aft)
 "st" = (
-/obj/item/modular_computer/console/preset/cardslot/command_sec{
+/obj/machinery/computer/modular/preset/cardslot/command_sec{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -2375,7 +2375,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/safe_room/bridge)
 "tz" = (
-/obj/item/modular_computer/console/preset/cardslot/command_sec{
+/obj/machinery/computer/modular/preset/cardslot/command_sec{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/yellow/border{
@@ -2393,13 +2393,13 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lowertram/archive)
 "tK" = (
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/engineering_monitoring)
 "tS" = (
-/obj/item/modular_computer/console/preset/medical{
+/obj/machinery/computer/modular/preset/medical{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/yellow/border{
@@ -2440,7 +2440,7 @@
 /turf/simulated/wall,
 /area/site53/lowertram/archive)
 "us" = (
-/obj/item/modular_computer/console/preset/cardslot/command_sec,
+/obj/machinery/computer/modular/preset/cardslot/command_sec,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -2549,7 +2549,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/maincontrolroom)
 "vg" = (
-/obj/item/modular_computer/console/preset/cardslot/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue2,
@@ -2760,7 +2760,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lowertram/archive)
 "xk" = (
-/obj/item/modular_computer/console/preset/cardslot/command,
+/obj/machinery/computer/modular/preset/cardslot/command,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -3156,7 +3156,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/modular_computer/console/preset/cardslot/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 8
 	},
 /turf/simulated/floor/carpet/red,
@@ -3345,7 +3345,7 @@
 /area/crew_quarters/heads/office/cmo)
 "Cn" = (
 /obj/effect/floor_decal/corner/orange/diagonal,
-/obj/item/modular_computer/console/preset/cardslot/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -3423,7 +3423,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lowertram/archive)
 "CG" = (
-/obj/item/modular_computer/console/preset/aislot/research{
+/obj/machinery/computer/modular/preset/aislot/research{
 	dir = 8
 	},
 /turf/simulated/floor/carpet/purple,
@@ -3518,13 +3518,13 @@
 	dir = 8;
 	pixel_x = 25
 	},
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/engineering_monitoring)
 "DC" = (
-/obj/item/modular_computer/console/preset/cardslot/command_sec,
+/obj/machinery/computer/modular/preset/cardslot/command_sec,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/maincontrolroom)
 "DD" = (
@@ -4045,7 +4045,7 @@
 /turf/simulated/floor/carpet/blue2,
 /area/site53/uez/hopoffice)
 "Hs" = (
-/obj/item/modular_computer/console/preset/library{
+/obj/machinery/computer/modular/preset/library{
 	dir = 1
 	},
 /obj/structure/window/reinforced,
@@ -4538,7 +4538,7 @@
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/office/ce)
 "LL" = (
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -4741,7 +4741,7 @@
 /obj/structure/cable/orange{
 	icon_state = "1-2"
 	},
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 4
 	},
 /obj/machinery/light{
@@ -4893,13 +4893,13 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/modular_computer/console/preset/cardslot/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 4
 	},
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/sdoffice)
 "Of" = (
-/obj/item/modular_computer/console/preset/cardslot/command_sec{
+/obj/machinery/computer/modular/preset/cardslot/command_sec{
 	dir = 4
 	},
 /turf/simulated/floor/carpet/red,
@@ -5038,7 +5038,7 @@
 /turf/simulated/floor/tiled,
 /area/site53/uez/hopoffice)
 "PN" = (
-/obj/item/modular_computer/console/preset/cardslot/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/yellow/border{
@@ -5272,7 +5272,7 @@
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/rdoffice)
 "RC" = (
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -5531,7 +5531,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/modular_computer/console/preset/cardslot/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue2,
@@ -5546,7 +5546,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/engineering/foyer)
 "TO" = (
-/obj/item/modular_computer/console/preset/security{
+/obj/machinery/computer/modular/preset/security{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -5569,7 +5569,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/tcommsat/chamber)
 "Ud" = (
-/obj/item/modular_computer/console/preset/cardslot/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blue2,
@@ -5598,7 +5598,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/safe_room/bridge)
 "Uv" = (
-/obj/item/modular_computer/console/preset/engineering,
+/obj/machinery/computer/modular/preset/engineering,
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/engineering_monitoring)
 "Uw" = (
@@ -5701,7 +5701,7 @@
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/heads/office/cmo)
 "UU" = (
-/obj/item/modular_computer/console/preset/cardslot/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 8
 	},
 /turf/simulated/floor/carpet/purple,
@@ -5755,7 +5755,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/modular_computer/console/preset/cardslot/command{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blue2,
@@ -6170,14 +6170,14 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/bridge/fore)
 "YY" = (
-/obj/item/modular_computer/console/preset/cardslot/command,
+/obj/machinery/computer/modular/preset/cardslot/command,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/simulated/floor/carpet,
 /area/site53/lowertram/archive)
 "YZ" = (
-/obj/item/modular_computer/console/preset/cardslot/command_sec{
+/obj/machinery/computer/modular/preset/cardslot/command_sec{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -6217,7 +6217,7 @@
 /turf/simulated/open,
 /area/maintenance/bridge/foreport)
 "Zt" = (
-/obj/item/modular_computer/console/preset/engineering{
+/obj/machinery/computer/modular/preset/engineering{
 	dir = 8
 	},
 /obj/machinery/light{

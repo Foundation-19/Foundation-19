@@ -178,8 +178,8 @@
 	var/datum/mind/backup
 	var/prompting = FALSE // Are we waiting for a user prompt?
 
-/obj/item/organ/internal/voxstack/Initialize()
-	. = ..()
+/obj/item/organ/internal/voxstack/New()
+	..()
 	do_backup()
 	robotize()
 

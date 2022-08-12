@@ -50,9 +50,9 @@
 	return get_z(nano_host())
 
 /datum/nano_module/proc/print_text(var/text, var/mob/user)
-	var/obj/item/modular_computer/computer = nano_host()
-	if(computer.nano_printer)
-		computer.nano_printer.print_text(text)
+	var/datum/extension/interactive/ntos/os = get_extension(nano_host(), /datum/extension/interactive/ntos)
+	if(os)
+		os.print_paper(text)
 	else
 		to_chat(user, "Error: Unable to detect compatible printer interface. Are you running NTOSv2 compatible system?")
 

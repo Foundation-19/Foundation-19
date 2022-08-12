@@ -7,7 +7,7 @@
 
 #define SKILL_MIN      1 // Min skill value selectable
 #define SKILL_MAX      5 // Max skill value selectable
-#define SKILL_DEFAULT  1 //most mobs will default to this
+#define SKILL_DEFAULT  4 //most mobs will default to this
 
 #define SKILL_EASY     1
 #define SKILL_AVERAGE  2

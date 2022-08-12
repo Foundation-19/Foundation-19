@@ -21,8 +21,7 @@
 	tag = null
 	weakref = null // Clear this reference to ensure it's kept for as brief duration as possible.
 
-	SSnano.close_uis(src)
-	SStgui.close_uis(src)
+	SSnano && SSnano.close_uis(src)
 
 	var/list/timers = active_timers
 	active_timers = null

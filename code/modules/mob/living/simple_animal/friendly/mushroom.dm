@@ -28,8 +28,8 @@
 
 	ai_holder_type = /datum/ai_holder/simple_animal/passive/mushroom
 
-/mob/living/simple_animal/friendly/mushroom/Initialize()
-	. = ..()
+/mob/living/simple_animal/friendly/mushroom/New()
+	..()
 	harvest_time = world.time
 	total_mushrooms++
 

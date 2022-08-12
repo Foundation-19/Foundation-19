@@ -35,8 +35,8 @@
 	response_harm   = "stomps on"
 	var/colour = "grey"
 
-/mob/living/simple_animal/adultslime/Initialize()
-	. = ..()
+/mob/living/simple_animal/adultslime/New()
+	..()
 	add_overlay("aslime-:33")
 
 

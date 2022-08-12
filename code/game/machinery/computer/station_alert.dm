@@ -5,20 +5,20 @@
 	icon_keyboard = "tech_key"
 	icon_screen = "alert:0"
 	light_color = "#e6ffff"
+	base_type = /obj/machinery/computer/station_alert
 	machine_name = "alert console"
 	machine_desc = "A compact monitoring system that displays a readout of all active atmosphere, camera, and fire alarms on the network."
-	base_type = /obj/machinery/computer/station_alert
-	var/datum/tgui_module/alarm_monitor/alarm_monitor
-	var/monitor_type = /datum/tgui_module/alarm_monitor
+	var/datum/nano_module/alarm_monitor/alarm_monitor
+	var/monitor_type = /datum/nano_module/alarm_monitor
 
 /obj/machinery/computer/station_alert/engineering
-	monitor_type = /datum/tgui_module/alarm_monitor/engineering
+	monitor_type = /datum/nano_module/alarm_monitor/engineering
 
 /obj/machinery/computer/station_alert/security
-	monitor_type = /datum/tgui_module/alarm_monitor/security
+	monitor_type = /datum/nano_module/alarm_monitor/security
 
 /obj/machinery/computer/station_alert/all
-	monitor_type = /datum/tgui_module/alarm_monitor/all
+	monitor_type = /datum/nano_module/alarm_monitor/all
 
 /obj/machinery/computer/station_alert/Initialize()
 	alarm_monitor = new monitor_type(src)
@@ -31,7 +31,7 @@
 	. = ..()
 	unregister_monitor()
 
-/obj/machinery/computer/station_alert/proc/register_monitor(var/datum/tgui_module/alarm_monitor/monitor)
+/obj/machinery/computer/station_alert/proc/register_monitor(var/datum/nano_module/alarm_monitor/monitor)
 	if(monitor.host != src)
 		return
 
@@ -45,12 +45,15 @@
 		alarm_monitor = null
 
 /obj/machinery/computer/station_alert/interface_interact(user)
-	tgui_interact(user)
+	ui_interact(user)
 	return TRUE
 
-/obj/machinery/computer/station_alert/tgui_interact(mob/user, datum/tgui/ui)
+/obj/machinery/computer/station_alert/ui_interact(mob/user)
 	if(alarm_monitor)
-		alarm_monitor.tgui_interact(user, ui)
+		alarm_monitor.ui_interact(user)
+
+/obj/machinery/computer/station_alert/nano_container()
+	return alarm_monitor
 
 /obj/machinery/computer/station_alert/on_update_icon()
 	icon_screen = initial(icon_screen)

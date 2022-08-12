@@ -813,29 +813,3 @@ Ccomp's first proc.
 		to_chat(usr, "Random events disabled")
 		message_admins("Admin [key_name_admin(usr)] has disabled random events.", 1)
 	SSstatistics.add_field_details("admin_verb","TRE") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
-/client/proc/cmd_admin_alert_message(mob/M)
-	set name = "Alert Message"
-	set category = "Admin"
-
-	if(!ismob(M) || !check_rights(R_MOD, TRUE, src))
-		return
-
-	switch(tgui_alert(mob, "Do you wish to send an admin alert to this user?", "Admin Aalert", list("Yes","No","Custom")))
-		if("Yes")
-			show_blurb(M, 15, "An admin is trying to talk to you!<br>Check your chat window and click their name to respond or you may be banned!", null, "center", "center", COLOR_RED, null, null, 1)
-			log_admin("[key_name(src)] sent a default admin alert to [key_name(M)].")
-			message_staff("[key_name(src)] sent a default admin alert to [key_name(M)].")
-
-		if("Custom")
-			var/message = tgui_input_text(src, "Input your custom admin alert text:", "Message")
-			if(!message)
-				return
-
-			var/new_color = input(src, "Input your message color:", "Color Selector") as color|null
-			if(!new_color)
-				return
-
-			show_blurb(M, 15, message, null, "center", "center", new_color, null, null, 1)
-			log_admin("[key_name(src)] sent an admin alert to [key_name(M)] with custom message [message].")
-			message_staff("[key_name(src)] sent an admin alert to [key_name(M)] with custom message [message].")

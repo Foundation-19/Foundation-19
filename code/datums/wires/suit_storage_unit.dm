@@ -1,46 +1,52 @@
 /datum/wires/suit_storage_unit
 	holder_type = /obj/machinery/suit_cycler
 	wire_count = 3
-	proper_name = "Suit storage unit"
+	descriptions = list(
+		new /datum/wire_description(SUIT_STORAGE_WIRE_ELECTRIFY, "This wire seems to be carrying a heavy current."),
+		new /datum/wire_description(SUIT_STORAGE_WIRE_SAFETY, "This wire seems connected to a safety override", SKILL_EXPERIENCED),
+		new /datum/wire_description(SUIT_STORAGE_WIRE_LOCKED, "This wire is connected to the ID scanning panel.")
+	)
 
-/datum/wires/suit_storage_unit/New(atom/_holder)
-	wires = list(WIRE_IDSCAN, WIRE_ELECTRIFY, WIRE_SAFETY)
-	return ..()
+var/const/SUIT_STORAGE_WIRE_ELECTRIFY	= 1
+var/const/SUIT_STORAGE_WIRE_SAFETY		= 2
+var/const/SUIT_STORAGE_WIRE_LOCKED		= 4
 
-/datum/wires/suit_storage_unit/interactable(mob/user)
+/datum/wires/suit_storage_unit/CanUse(var/mob/living/L)
 	var/obj/machinery/suit_cycler/S = holder
-	if(iscarbon(user) && S.Adjacent(user) && S.electrified)
-		return !S.shock(user, 100)
+	if(!istype(L, /mob/living/silicon))
+		if(S.electrified)
+			if(S.shock(L, 100))
+				return 0
 	if(S.panel_open)
-		return TRUE
-	return FALSE
+		return 1
+	return 0
 
-/datum/wires/suit_storage_unit/get_status()
-	. = ..()
-	var/obj/machinery/suit_cycler/A = holder
-	. += "The orange light is [A.electrified ? "off" : "on"]."
-	. += "The red light is [A.safeties ? "off" : "blinking"]."
-	. += "The yellow light is [A.locked ? "on" : "off"]."
-
-/datum/wires/suit_storage_unit/on_pulse(wire)
+/datum/wires/suit_storage_unit/GetInteractWindow(mob/user)
 	var/obj/machinery/suit_cycler/S = holder
-	switch(wire)
-		if(WIRE_SAFETY)
+	. += ..()
+	. += "<BR>The orange light is [S.electrified ? "off" : "on"].<BR>"
+	. += "The red light is [S.safeties ? "off" : "blinking"].<BR>"
+	. += "The yellow light is [S.locked ? "on" : "off"].<BR>"
+
+/datum/wires/suit_storage_unit/UpdatePulsed(var/index)
+	var/obj/machinery/suit_cycler/S = holder
+	switch(index)
+		if(SUIT_STORAGE_WIRE_SAFETY)
 			S.safeties = !S.safeties
-		if(WIRE_ELECTRIFY)
+		if(SUIT_STORAGE_WIRE_ELECTRIFY)
 			S.electrified = 30
-		if(WIRE_IDSCAN)
+		if(SUIT_STORAGE_WIRE_LOCKED)
 			S.locked = !S.locked
 
-/datum/wires/suit_storage_unit/on_cut(wire, mend)
+/datum/wires/suit_storage_unit/UpdateCut(var/index, var/mended)
 	var/obj/machinery/suit_cycler/S = holder
-	switch(wire)
-		if(WIRE_SAFETY)
-			S.safeties = mend
-		if(WIRE_IDSCAN)
-			S.locked = mend
-		if(WIRE_ELECTRIFY)
-			if(mend)
+	switch(index)
+		if(SUIT_STORAGE_WIRE_SAFETY)
+			S.safeties = mended
+		if(SUIT_STORAGE_WIRE_LOCKED)
+			S.locked = mended
+		if(SUIT_STORAGE_WIRE_ELECTRIFY)
+			if(mended)
 				S.electrified = 0
 			else
 				S.electrified = -1

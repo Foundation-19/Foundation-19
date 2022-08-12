@@ -7,18 +7,18 @@
 	new_alien.set_species("Xenophage [alien_caste]")
 	return new_alien
 
-/mob/living/carbon/human/xdrone/Initialize(mapload, new_species)
+/mob/living/carbon/human/xdrone/New(var/new_loc)
 	h_style = "Bald"
-	. = ..(mapload, "Xenophage Drone")
+	..(new_loc, "Xenophage Drone")
 
-/mob/living/carbon/human/xsentinel/Initialize(mapload, new_species)
+/mob/living/carbon/human/xsentinel/New(var/new_loc)
 	h_style = "Bald"
-	. = ..(mapload, "Xenophage Sentinel")
+	..(new_loc, "Xenophage Sentinel")
 
-/mob/living/carbon/human/xhunter/Initialize(mapload, new_species)
+/mob/living/carbon/human/xhunter/New(var/new_loc)
 	h_style = "Bald"
-	. = ..(mapload, "Xenophage Hunter")
+	..(new_loc, "Xenophage Hunter")
 
-/mob/living/carbon/human/xqueen/Initialize(mapload, new_species)
+/mob/living/carbon/human/xqueen/New(var/new_loc)
 	h_style = "Bald"
-	. = ..(mapload, "Xenophage Queen")
+	..(new_loc, "Xenophage Queen")

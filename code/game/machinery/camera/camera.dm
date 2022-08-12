@@ -267,7 +267,7 @@
 //Used when someone breaks a camera
 /obj/machinery/camera/proc/destroy()
 	set_broken(TRUE)
-	wires.cut_all()
+	wires.RandomCutAll()
 
 	triggerCameraAlarm()
 	queue_icon_update()
@@ -314,7 +314,7 @@
 	GLOB.camera_alarm.triggerAlarm(loc, src, duration)
 
 /obj/machinery/camera/proc/cancelCameraAlarm()
-	if(wires.is_cut(WIRE_CAM_ALARM))
+	if(wires.IsIndexCut(CAMERA_WIRE_ALARM))
 		return
 
 	alarm_on = 0
@@ -446,22 +446,11 @@
 	cam["z"] = get_z(src)
 	return cam
 
-/obj/machinery/camera/proc/tgui_structure()
-	var/cam[0]
-	cam["name"] = sanitize(c_tag)
-	cam["deact"] = !can_use()
-	cam["camera"] = "\ref[src]"
-	cam["x"] = get_x(src)
-	cam["y"] = get_y(src)
-	cam["z"] = get_z(src)
-	return cam
-
 // Resets the camera's wires to fully operational state. Used by one of Malfunction abilities.
 /obj/machinery/camera/proc/reset_wires()
 	if(!wires)
 		return
 	set_broken(FALSE) // Fixes the camera and updates the icon.
-	for(var/wire in wires.cut_wires)
-		wires.on_cut(wire, TRUE)
-	wires.cut_wires.Cut()
+	wires.CutAll()
+	wires.MendAll()
 	update_coverage()

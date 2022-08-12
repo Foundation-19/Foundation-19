@@ -28,9 +28,9 @@
 	name = "light arms"
 	exosuit_desc_string = "lightweight, segmented manipulators"
 	icon_state = "light_arms"
-	melee_damage = 10
-	action_delay = 5
-	max_damage = 50
+	melee_damage = 5
+	action_delay = 15
+	max_damage = 40
 	power_use = 10
 	desc = "As flexible as they are fragile, these Vey-Med manipulators can follow a pilot's movements in close to real time."
 
@@ -40,7 +40,7 @@
 	icon_state = "light_legs"
 	move_delay = 2
 	turn_delay = 3
-	max_damage = 45
+	max_damage = 40
 	power_use = 5
 	desc = "These Odysseus series legs are built from lightweight flexible polymers, making them capable of handling falls from up to 120 meters in 1g environments. Provided that the exosuit lands on its feet."
 	max_fall_damage = 0
@@ -54,7 +54,7 @@
 	gender = PLURAL
 	exosuit_desc_string = "advanced sensor array"
 	icon_state = "light_head"
-	max_damage = 50
+	max_damage = 30
 	vision_flags = SEE_TURFS
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	power_use = 50
@@ -73,7 +73,7 @@
 	hide_pilot = TRUE //Sprite too small, legs clip through, so for now hide pilot
 	exosuit_desc_string = "an open and light chassis"
 	icon_state = "light_body"
-	max_damage = 75
+	max_damage = 50
 	power_use = 5
 	has_hardpoints = list(HARDPOINT_BACK, HARDPOINT_LEFT_SHOULDER)
 	desc = "The Veymed Odysseus series cockpits combine ultralight materials and clear aluminum laminates to provide an optimized cockpit experience."

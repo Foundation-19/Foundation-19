@@ -8,6 +8,8 @@
 	extended_desc = "Program for programming crew ID cards."
 	requires_ntnet = FALSE
 	size = 8
+	category = PROG_COMMAND
+
 /datum/nano_module/program/card_mod
 	name = "ID card modification program"
 	var/mod_mode = 1
@@ -16,14 +18,14 @@
 
 /datum/nano_module/program/card_mod/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
-	var/obj/item/stock_parts/computer/card_slot/card_slot = program.computer.card_slot
+	var/obj/item/stock_parts/computer/card_slot/card_slot = program.computer.get_component(PART_CARD)
 
 	data["src"] = "\ref[src]"
 	data["station_name"] = station_name()
 	data["manifest"] = html_crew_manifest()
 	data["assignments"] = show_assignments
 	data["have_id_slot"] = !!card_slot
-	data["have_printer"] = program.computer.nano_printer
+	data["have_printer"] = program.computer.has_component(PART_PRINTER)
 	data["authenticated"] = program.can_run(user)
 	if(!data["have_id_slot"] || !data["have_printer"])
 		mod_mode = 0 //We can't modify IDs when there is no card reader
@@ -88,12 +90,12 @@
 		ui.open()
 
 /datum/nano_module/program/card_mod/proc/format_jobs(list/jobs)
-	var/obj/item/card/id/id_card = program.computer.card_slot?.stored_card
+	var/obj/item/card/id/id_card = program.computer.get_inserted_id()
 	var/list/formatted = list()
 	for(var/job in jobs)
 		formatted.Add(list(list(
 			"display_name" = replacetext(job, " ", "&nbsp"),
-			"target_rank" = id_card?.assignment ? id_card.assignment : "Unassigned",
+			"target_rank" = id_card && id_card.assignment ? id_card.assignment : "Unassigned",
 			"job" = job)))
 
 	return formatted
@@ -108,7 +110,7 @@
 
 	var/mob/user = usr
 	var/obj/item/card/id/user_id_card = user?.GetIdCard()
-	var/obj/item/card/id/id_card = computer?.card_slot?.stored_card
+	var/obj/item/card/id/id_card = computer?.get_inserted_id()
 	var/datum/nano_module/program/card_mod/module = NM
 
 	if (!user_id_card || !id_card || !module)
@@ -129,7 +131,7 @@
 			if(!authorized(user_id_card))
 				to_chat(usr, "<span class='warning'>Access denied.</span>")
 				return
-			if(computer.nano_printer) //This option should never be called if there is no printer
+			if(computer.has_component(PART_PRINTER)) //This option should never be called if there is no printer
 				if(module.mod_mode)
 					if(can_run(user, 1))
 						var/contents = {"<h4>Access Report</h4>
@@ -149,7 +151,7 @@
 							if(A in known_access_rights)
 								contents += "  [get_access_desc(A)]"
 
-						if(!computer.nano_printer.print_text(contents,"access report"))
+						if(!computer.print_paper(contents,"access report"))
 							to_chat(usr, "<span class='notice'>Hardware error: Printer was unable to print the file. It may be out of paper.</span>")
 							return
 				else
@@ -157,14 +159,15 @@
 									<br>
 									[html_crew_manifest()]
 									"}
-					if(!computer.nano_printer.print_text(contents, "crew manifest ([station_time_timestamp("hh:mm")])"))
+					if(!computer.print_paper(contents, "crew manifest ([station_time_timestamp("hh:mm")])"))
 						to_chat(usr, "<span class='notice'>Hardware error: Printer was unable to print the file. It may be out of paper.</span>")
 						return
 		if("eject")
-			if(computer.card_slot?.stored_card)
-				computer.card_slot.eject_id(user)
+			var/obj/item/stock_parts/computer/card_slot/card_slot = computer.get_component(PART_CARD)
+			if(computer.get_inserted_id())
+				card_slot.eject_id(user)
 			else
-				computer.card_slot?.insert_id(user.get_active_hand(), user)
+				card_slot.insert_id(user.get_active_hand(), user)
 		if("terminate")
 			if(!authorized(user_id_card))
 				to_chat(usr, "<span class='warning'>Access denied.</span>")
@@ -185,7 +188,7 @@
 						id_card.formal_name_suffix = initial(id_card.formal_name_suffix)
 						id_card.formal_name_prefix = initial(id_card.formal_name_prefix)
 					else
-						to_chat(usr, SPAN_WARNING("Invalid name entered!"))
+						computer.show_error(usr, "Invalid name entered!")
 				else if(href_list["account"])
 					var/account_num = text2num(input("Enter account number.", "Account", id_card.associated_account_number))
 					id_card.associated_account_number = account_num

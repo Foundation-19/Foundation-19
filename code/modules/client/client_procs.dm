@@ -168,13 +168,13 @@
 		return
 
 	if(config.player_limit != 0)
-		if((GLOB.clients.len >= config.player_limit) && !(ckey in GLOB.admin_datums))
+		if((GLOB.clients.len >= config.player_limit) && !(ckey in admin_datums))
 			alert(src,"This server is currently full and not accepting new connections.","Server Full","OK")
 			log_admin("[ckey] tried to join and was turned away due to the server being full (player_limit=[config.player_limit])")
 			qdel(src)
 			return
 
-	if(config.panic_bunker && (get_player_age(ckey) < config.panic_bunker_age && !(ckey in GLOB.admin_datums)))
+	if(config.panic_bunker && (get_player_age(ckey) < config.panic_bunker_age && !(ckey in admin_datums)))
 		if(GLOB.panicbunker_bypass.Find(ckey))
 			message_admins("[ckey], a new player, was allowed to bypass the Panic Bunker.")
 			log_admin("[ckey], a new player, was allowed to bypass the Panic Bunker.")
@@ -198,7 +198,7 @@
 	GLOB.ckey_directory[ckey] = src
 
 	//Admin Authorisation
-	holder = GLOB.admin_datums[ckey]
+	holder = admin_datums[ckey]
 	if(holder)
 		GLOB.admins += src
 		holder.owner = src
@@ -207,7 +207,6 @@
 	prefs = SScharacter_setup.preferences_datums[ckey]
 	if(!prefs)
 		prefs = new /datum/preferences(src)
-	prefs.macros.owner = src
 	prefs.last_ip = address				//these are gonna be used for banning
 	prefs.last_id = computer_id			//these are gonna be used for banning
 	apply_fps(prefs.clientfps)
@@ -473,8 +472,9 @@
 
 /client/verb/character_setup()
 	set name = "Character Setup"
-	set category = "Preferences"
-	prefs?.open_setup_window(usr)
+	set category = "OOC"
+	if(prefs)
+		prefs.open_setup_window(usr)
 
 /client/proc/apply_fps(var/client_fps)
 	if(world.byond_version >= 511 && byond_version >= 511 && client_fps >= CLIENT_MIN_FPS && client_fps <= CLIENT_MAX_FPS)

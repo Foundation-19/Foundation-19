@@ -9,10 +9,10 @@
 	requires_ntnet = FALSE
 	available_on_ntnet = FALSE
 	available_on_syndinet = TRUE
-	tgui_id = "NtosRevelation"
+	nanomodule_path = /datum/nano_module/program/revelation/
 	var/armed = 0
 
-/datum/computer_file/program/revelation/run_program(var/mob/living/user)
+/datum/computer_file/program/revelation/on_startup(var/mob/living/user)
 	. = ..(user)
 	if(armed)
 		activate()
@@ -21,47 +21,52 @@
 	if(!computer)
 		return
 
-	computer.visible_message("<span class='notice'>\The [computer]'s screen brightly flashes and loud electrical buzzing is heard.</span>")
-	computer.enabled = 0
-	computer.update_icon()
-	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
-	s.set_up(10, 1, computer.loc)
-	s.start()
+	computer.visible_error("Hardware error: Voltage reaching unsafe leve-")
+	computer.system_shutdown()
+	computer.voltage_overload()
 
-	if(computer.hard_drive)
-		qdel(computer.hard_drive)
-
-	if(computer.battery_module && prob(25))
-		qdel(computer.battery_module)
-
-	if(computer.tesla_link && prob(50))
-		qdel(computer.tesla_link)
-
-/datum/computer_file/program/revelation/tgui_act(action, params)
+/datum/computer_file/program/revelation/Topic(href, href_list)
 	if(..())
-		return
-	switch(action)
-		if("PRG_arm")
-			armed = !armed
-			return TRUE
-		if("PRG_activate")
-			activate()
-			return TRUE
-		if("PRG_obfuscate")
-			var/newname = params["new_name"]
-			if(!newname)
-				return
-			filedesc = newname
-			return TRUE
+		return 1
+	else if(href_list["PRG_arm"])
+		armed = !armed
+	else if(href_list["PRG_activate"])
+		activate()
+	else if(href_list["PRG_obfuscate"])
+		var/mob/living/user = usr
+		var/newname = sanitize(input(user, "Enter new program name: "))
+		if(!newname)
+			return
+		filedesc = newname
+		for(var/datum/computer_file/program/P in ntnet_global.available_station_software)
+			if(filedesc == P.filedesc)
+				program_menu_icon = P.program_menu_icon
+				break
+	return 1
 
 /datum/computer_file/program/revelation/clone()
 	var/datum/computer_file/program/revelation/temp = ..()
 	temp.armed = armed
 	return temp
 
-/datum/computer_file/program/revelation/tgui_data(mob/user)
-	var/list/data = get_header_data()
+/datum/nano_module/program/revelation
+	name = "Revelation Virus"
 
-	data["armed"] = armed
+/datum/nano_module/program/revelation/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.default_state)
+	var/list/data = list()
+	var/datum/computer_file/program/revelation/PRG = program
+	if(!istype(PRG))
+		return
 
-	return data
+	data = PRG.get_header_data()
+
+	data["armed"] = PRG.armed
+
+	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	if (!ui)
+		ui = new(user, src, ui_key, "revelation.tmpl", "Revelation Virus", 400, 250, state = state)
+		ui.auto_update_layout = 1
+		ui.set_initial_data(data)
+		ui.open()
+		ui.set_auto_update(1)
+

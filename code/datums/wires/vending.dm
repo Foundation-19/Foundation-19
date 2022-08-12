@@ -1,51 +1,62 @@
 /datum/wires/vending
 	holder_type = /obj/machinery/vending
 	wire_count = 4
-	proper_name = "Vending machine"
+	descriptions = list(
+		new /datum/wire_description(VENDING_WIRE_THROW, "This wire leads to the item dispensor force controls."),
+		new /datum/wire_description(VENDING_WIRE_CONTRABAND, "This wire appears connected to a reserve inventory compartment."),
+		new /datum/wire_description(VENDING_WIRE_ELECTRIFY, "This wire seems to be carrying a heavy current."),
+		new /datum/wire_description(VENDING_WIRE_IDSCAN, "This wire is connected to the ID scanning panel.", SKILL_EXPERIENCED)
+	)
 
-/datum/wires/vending/New(atom/_holder)
-	wires = list(WIRE_THROW_ITEM, WIRE_IDSCAN, WIRE_ELECTRIFY, WIRE_CONTRABAND)
-	return ..()
+var/const/VENDING_WIRE_THROW = 1
+var/const/VENDING_WIRE_CONTRABAND = 2
+var/const/VENDING_WIRE_ELECTRIFY = 4
+var/const/VENDING_WIRE_IDSCAN = 8
 
-/datum/wires/vending/interactable(mob/user)
+/datum/wires/vending/CanUse(var/mob/living/L)
 	var/obj/machinery/vending/V = holder
-	if(iscarbon(user) && V.seconds_electrified && V.shock(user, 100))
-		return FALSE
+	if(!istype(L, /mob/living/silicon))
+		if(V.seconds_electrified)
+			if(V.shock(L, 100))
+				return 0
 	if(V.panel_open)
-		return TRUE
-	return FALSE
+		return 1
+	return 0
 
-/datum/wires/vending/get_status()
+/datum/wires/vending/GetInteractWindow(mob/user)
 	var/obj/machinery/vending/V = holder
-	. = ..()
-	. += "The orange light is [V.seconds_electrified ? "on" : "off"]."
-	. += "The red light is [V.shoot_inventory ? "off" : "blinking"]."
-	. += "The green light is [(V.categories & CAT_HIDDEN) ? "on" : "off"]."
-	. += "A [V.scan_id ? "purple" : "yellow"] light is on."
+	. += ..()
+	. += "<BR>The orange light is [V.seconds_electrified ? "off" : "on"].<BR>"
+	. += "The red light is [V.shoot_inventory ? "blinking" : "off"].<BR>"
+	. += "The green light is [(V.categories & CAT_HIDDEN) ? "on" : "off"].<BR>"
+	. += "The [V.scan_id ? "purple" : "yellow"] light is on.<BR>"
 
-/datum/wires/vending/on_pulse(wire)
+/datum/wires/vending/UpdatePulsed(var/index)
 	var/obj/machinery/vending/V = holder
-	switch(wire)
-		if(WIRE_THROW_ITEM)
+	switch(index)
+		if(VENDING_WIRE_THROW)
 			V.shoot_inventory = !V.shoot_inventory
-		if(WIRE_CONTRABAND)
+		if(VENDING_WIRE_CONTRABAND)
 			V.categories ^= CAT_HIDDEN
-		if(WIRE_ELECTRIFY)
+		if(VENDING_WIRE_ELECTRIFY)
 			V.seconds_electrified = 30
-		if(WIRE_IDSCAN)
+		if(VENDING_WIRE_IDSCAN)
 			V.scan_id = !V.scan_id
 
-/datum/wires/vending/on_cut(wire, mend)
+/datum/wires/vending/UpdateCut(var/index, var/mended)
 	var/obj/machinery/vending/V = holder
-	switch(wire)
-		if(WIRE_THROW_ITEM)
-			V.shoot_inventory = !mend
-		if(WIRE_CONTRABAND)
-			V.categories &= ~CAT_HIDDEN
-		if(WIRE_ELECTRIFY)
-			if(mend)
+	switch(index)
+		if(VENDING_WIRE_THROW)
+			V.shoot_inventory = !mended
+		if(VENDING_WIRE_CONTRABAND)
+			if(mended)
+				V.categories &= ~CAT_HIDDEN
+			else
+				V.categories |= CAT_HIDDEN
+		if(VENDING_WIRE_ELECTRIFY)
+			if(mended)
 				V.seconds_electrified = 0
 			else
 				V.seconds_electrified = -1
-		if(WIRE_IDSCAN)
+		if(VENDING_WIRE_IDSCAN)
 			V.scan_id = 1

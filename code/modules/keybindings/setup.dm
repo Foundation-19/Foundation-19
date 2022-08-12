@@ -19,7 +19,11 @@
 	winset(src, null, erase_output)
 
 /client/proc/set_macros()
+	set waitfor = FALSE
+
+	//Reset the buffer
 	reset_held_keys()
+
 	erase_all_macros()
 
 	var/list/macro_set = SSinput.macro_set
@@ -27,7 +31,12 @@
 		var/key = macro_set[k]
 		var/command = macro_set[key]
 		winset(src, "default-\ref[key]", "parent=default;name=[key];command=[command]")
-	winset(src, null, "input.focus=true")
+
+	if(prefs?.hotkeys)
+		winset(src, null, "outputwindow.input.focus=true input.background-color=[COLOR_INPUT_ENABLED]")
+	else
+		winset(src, null, "outputwindow.input.focus=true input.background-color=[COLOR_INPUT_DISABLED]")
+
 	update_special_keybinds()
 
 // byond bug ID:2694120

@@ -561,7 +561,7 @@
 	},
 /area/centcom)
 "dX" = (
-/obj/item/modular_computer/console/preset/cardslot/command_sec{
+/obj/machinery/computer/modular/preset/cardslot/command_sec{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/white/border{

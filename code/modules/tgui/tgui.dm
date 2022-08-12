@@ -132,7 +132,7 @@
 		// the error message properly.
 		window.release_lock()
 		window.close(can_be_suspended)
-		src_object.tgui_close(user)
+		src_object.ui_close(user)
 		SStgui.on_close(src)
 	state = null
 	qdel(src)

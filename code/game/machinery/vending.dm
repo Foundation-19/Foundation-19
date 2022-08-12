@@ -141,8 +141,7 @@
 /obj/machinery/vending/emag_act(var/remaining_charges, var/mob/user)
 	if (!emagged)
 		emagged = TRUE
-		wires.on_cut(WIRE_CONTRABAND, FALSE)
-		wires.cut_wires |= WIRE_CONTRABAND
+		wires.CutWireIndex(VENDING_WIRE_CONTRABAND, FALSE)
 		req_access.Cut()
 		SSnano.update_uis(src)
 		to_chat(user, "You short out the product lock on \the [src]")
@@ -657,7 +656,7 @@
 	base_type = /obj/machinery/vending/boozeomat
 
 /obj/machinery/vending/assist
-	products = list(	/obj/item/device/assembly/prox_sensor = 5,/obj/item/device/assembly/igniter = 3,/obj/item/device/assembly/signaller = 4,
+	products = list(	/obj/item/device/assembly/prox_sensor = 5,/obj/item/device/assembly/igniter = 3,/obj/item/device/assembly/signaler = 4,
 						/obj/item/wirecutters = 1)
 	contraband = list(/obj/item/device/flashlight = 5,/obj/item/device/assembly/timer = 2)
 	product_ads = "Only the finest!;Have some tools.;The most robust equipment.;The finest gear in space!"
@@ -665,7 +664,7 @@
 /obj/machinery/vending/assist/antag
 	name = "\improper AntagCorpVend"
 	contraband = list()
-	products = list(	/obj/item/device/assembly/prox_sensor = 5, /obj/item/device/assembly/signaller = 4,
+	products = list(	/obj/item/device/assembly/prox_sensor = 5, /obj/item/device/assembly/signaler = 4,
 						/obj/item/device/assembly/infra = 4, /obj/item/device/assembly/prox_sensor = 4,
 						/obj/item/handcuffs = 8, /obj/item/device/flash = 4, /obj/item/clothing/glasses/sunglasses = 4)
 
@@ -956,7 +955,7 @@
 	desc = "All the fine parts you need in one vending machine!"
 	base_type = /obj/machinery/vending/phoronresearch
 	products = list(/obj/item/clothing/suit/bio_suit = 6,/obj/item/clothing/head/bio_hood = 6,
-					/obj/item/device/transfer_valve = 6,/obj/item/device/assembly/timer = 6,/obj/item/device/assembly/signaller = 6,
+					/obj/item/device/transfer_valve = 6,/obj/item/device/assembly/timer = 6,/obj/item/device/assembly/signaler = 6,
 					/obj/item/device/assembly/prox_sensor = 6,/obj/item/device/assembly/igniter = 6)
 
 /obj/machinery/vending/wallmed1

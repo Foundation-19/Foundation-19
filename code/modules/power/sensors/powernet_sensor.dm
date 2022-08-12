@@ -19,23 +19,12 @@
 	var/name_tag = "#UNKN#" // ID tag displayed in list of powernet sensors. Each sensor should have it's own tag!
 	var/long_range = 0		// If 1, sensor reading will show on all computers, regardless of Zlevel
 
-	var/list/history = list()
-	var/record_size = 60
-	var/record_interval = 50
-	var/next_record = 0
-
 // Proc: New()
 // Parameters: None
 // Description: Automatically assigns name according to ID tag.
 /obj/machinery/power/sensor/New()
 	..()
 	auto_set_name()
-
-/obj/machinery/power/sensor/Initialize()
-	. = ..()
-	history["supply"] = list()
-	history["demand"] = list()
-	START_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
 
 // Proc: auto_set_name()
 // Parameters: None
@@ -73,18 +62,6 @@
 		return "[amount] W"
 	else
 		return "~[amount] [units]" //kW and MW are only approximate readings, therefore add "~"
-
-// Proc: process()
-// Parameters: None
-// Description: This tracks historical usage, for TGUI power monitors
-/obj/machinery/power/sensor/Process()
-	if(!powernet)
-		use_power = POWER_USE_IDLE
-		connect_to_network()
-	else
-		use_power = POWER_USE_ACTIVE
-		record()
-	return 1
 
 // Proc: find_apcs()
 // Parameters: None
@@ -202,54 +179,7 @@
 	data["alarm"] = powernet.problem ? 1 : 0
 	return data
 
-// This tracks historical usage, for TGUI power monitors
-/obj/machinery/power/sensor/proc/record()
-	if(world.time >= next_record)
-		next_record = world.time + record_interval
 
-		var/datum/powernet/connected_powernet = powernet
 
-		var/list/supply = history["supply"]
-		if(connected_powernet)
-			supply += connected_powernet.viewavail
-		if(supply.len > record_size)
-			supply.Cut(1, 2)
 
-		var/list/demand = history["demand"]
-		if(connected_powernet)
-			demand += connected_powernet.viewload
-		if(demand.len > record_size)
-			demand.Cut(1, 2)
 
-/obj/machinery/power/sensor/tgui_data()
-	var/list/data = list()
-
-	data["name"] = name_tag
-	data["stored"] = record_size
-	data["interval"] = record_interval / 10
-	data["attached"] = !!powernet
-	data["history"] = history
-
-	data["areas"] = list()
-	if(powernet)
-		for(var/obj/machinery/power/terminal/term in powernet.nodes)
-			if(istype(term.master, /obj/machinery/power/apc))
-				var/obj/machinery/power/apc/A = term.master
-				if(istype(A))
-					var/obj/item/stock_parts/power/battery/bat = A.get_component_of_type(/obj/item/stock_parts/power/battery)
-					var/cell_charge
-					if(!bat.cell)
-						cell_charge = 0
-					else
-						cell_charge = bat.cell.percent()
-					data["areas"] += list(list(
-						"name" = A.area.name,
-						"charge" = cell_charge,
-						"load" = DisplayPower(A.lastused_total),
-						"charging" = A.charging,
-						"eqp" = A.equipment,
-						"lgt" = A.lighting,
-						"env" = A.environ,
-					))
-
-	return data

@@ -3,7 +3,6 @@
 	desc = "Unknown Hardware."
 	icon = 'icons/obj/modular_components.dmi'
 	part_flags = PART_FLAG_HAND_REMOVE
-	var/obj/item/modular_computer/holder2 = null
 	var/power_usage = 0 			// If the hardware uses extra power, change this.
 	var/enabled = 1					// If the hardware is turned off set this to 0.
 	var/critical = 1				// Prevent disabling for important component, like the HDD.
@@ -52,9 +51,6 @@
 /obj/item/stock_parts/computer/Initialize()
 	. = ..()
 	w_class = hardware_size
-	if(istype(loc, /obj/item/modular_computer))
-		holder2 = loc
-		return
 
 /obj/item/stock_parts/computer/Destroy()
 	if(istype(loc, /obj/item/modular_computer))
@@ -90,3 +86,12 @@
 /obj/item/stock_parts/computer/proc/take_damage(var/amount)
 	damage += round(amount) 					// We want nice rounded numbers here.
 	damage = between(0, damage, max_damage)		// Clamp the value.
+
+// Called when component is disabled/enabled by the OS
+/obj/item/stock_parts/computer/proc/on_disable()
+/obj/item/stock_parts/computer/proc/on_enable(var/datum/extension/interactive/ntos/os)
+
+/obj/item/stock_parts/computer/proc/update_power_usage()
+	var/datum/extension/interactive/ntos/os = get_extension(loc, /datum/extension/interactive/ntos)
+	if(os)
+		os.recalc_power_usage()

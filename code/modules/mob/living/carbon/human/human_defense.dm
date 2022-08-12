@@ -532,6 +532,6 @@ meteor_act
 	set desc = "Succumb to your pain, and die."
 
 	var/obj/item/organ/internal/heart/heart = internal_organs_by_name[BP_HEART]
-	if(!heart.is_working())
+	if(heart.pulse == PULSE_NONE)
 		death()
-
+	

@@ -83,8 +83,6 @@ h1.alert, h2.alert		{color: #000080;}
 .disarm					{color: #990000;}
 .passive				{color: #660000;}
 
-.helpful				{color: #368f31;}
-
 .italic				{font-style: italic;}
 .bold					{font-weight: bold;}
 .danger					{color: #ff0000; font-weight: bold;}

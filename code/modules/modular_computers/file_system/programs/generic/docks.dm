@@ -11,8 +11,9 @@
 	usage_flags = PROGRAM_CONSOLE | PROGRAM_LAPTOP
 	available_on_ntnet = TRUE
 	requires_ntnet = TRUE
+	category = PROG_SUPPLY
 
-/datum/computer_file/program/docking/run_program()
+/datum/computer_file/program/docking/on_startup()
 	. = ..()
 	if(NM)
 		var/datum/nano_module/docking/NMD = NM

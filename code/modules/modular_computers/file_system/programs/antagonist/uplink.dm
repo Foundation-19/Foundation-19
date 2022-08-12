@@ -20,18 +20,19 @@
 
 /datum/nano_module/program/uplink/ui_interact(var/mob/user, var/ui_key = "main", datum/nanoui/ui = null, var/force_open = 1, var/master_ui = null, var/datum/topic_state/state = GLOB.default_state)
 	var/datum/computer_file/program/uplink/prog = program
-	if(istype(program.computer) && program.computer.hidden_uplink && prog.password)
+	var/obj/item/holder = program.computer.get_physical_host()
+	if(istype(holder) && holder.hidden_uplink && prog.password)
 		if(prog.authenticated)
 			if(!CanInteract(user, state))
 				return
-			if(tgui_alert(user, "Resume or close and secure?", name, list("Resume", "Close")) == "Resume")
-				program.computer.hidden_uplink.trigger(user)
+			if(alert(user, "Resume or close and secure?", name, "Resume", "Close") == "Resume")
+				holder.hidden_uplink.trigger(user)
 				return
-		else if(program.computer.hidden_uplink.check_trigger(user, input(user, "Please enter your unique tax ID:", "Authentication"), prog.password))
+		else if(holder.hidden_uplink.check_trigger(user, input(user, "Please enter your unique tax ID:", "Authentication"), prog.password))
 			prog.authenticated = 1
 			return
 	else
-		to_chat(user, SPAN_WARNING("ID not found"))
+		program.computer.show_error(user, "ID not found")
 
 	prog.authenticated = 0
 	program.computer.kill_program(program)

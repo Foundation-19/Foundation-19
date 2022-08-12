@@ -14,6 +14,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 	available_on_ntnet = TRUE
 	required_access = access_securitylvl2
 	nanomodule_path = /datum/nano_module/program/digitalwarrant/
+	category = PROG_SEC
 
 /datum/nano_module/program/digitalwarrant/
 	name = "Warrant Assistant"
@@ -138,7 +139,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 
 	if(href_list["printwarrant"])
 		. = TRUE
-		if(!program.computer.nano_printer)
+		if(!program.computer.has_component(PART_PRINTER))
 			to_chat(src, SPAN_WARNING("Hardware Error: Printer not found."))
 			return
 		if(!activewarrant)
@@ -148,7 +149,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 					activewarrant = W
 					break
 		if(activewarrant)
-			program.computer.nano_printer.print_text(warranttotext(activewarrant), capitalize(activewarrant.fields["arrestsearch"]) + " Warrant - " + activewarrant.fields["namewarrant"])
+			program.computer.print_paper(warranttotext(activewarrant), capitalize(activewarrant.fields["arrestsearch"]) + " Warrant - " + activewarrant.fields["namewarrant"])
 		else
 			to_chat(src, SPAN_WARNING("Internal error: Warrant not found."))
 

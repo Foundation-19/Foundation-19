@@ -13,7 +13,8 @@
 	var/step_count
 	var/dream_timer
 
-/mob/living/carbon/human/Initialize(mapload, new_species)
+/mob/living/carbon/human/New(var/new_loc, var/new_species = null)
+
 	grasp_limbs = list()
 	stance_limbs = list()
 
@@ -46,7 +47,7 @@
 	hud_list[STATUS_HUD_OOC]  = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
 
 	GLOB.human_mob_list |= src
-	. = ..()
+	..()
 
 	if(dna)
 		dna.ready_dna(src)

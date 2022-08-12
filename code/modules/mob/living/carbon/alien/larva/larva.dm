@@ -8,8 +8,8 @@
 	maxHealth = 25
 	health = 25
 
-/mob/living/carbon/alien/larva/Initialize()
-	. = ..()
+/mob/living/carbon/alien/larva/New()
+	..()
 	add_language("Xenophage") //Bonus language.
 	internal_organs |= new /obj/item/organ/internal/xenos/hivenode(src)
 	create_reagents(100)

@@ -230,24 +230,3 @@ var/savefile/Banlist
 	for (var/A in Banlist.dir)
 		RemoveBan(A)
 
-/client/proc/cmd_admin_do_ban(var/mob/M)
-	if(!check_rights(R_BAN|R_MOD))  return
-
-	if(!ismob(M)) return
-
-	if(M.client && M.client.holder?.rights & R_MOD)
-		to_chat(usr, SPAN_WARNING("You can't ban mods and admins!"))
-		return	//mods+ cannot be banned. Even if they could, the ban doesn't affect them anyway
-
-	if(!M.ckey)
-		to_chat(usr, SPAN_DANGER("<B>Warning: Mob ckey for [M.name] not found.</b>"))
-		return
-	var/mins = input(usr,"How long (in minutes)? \n 180 = 3 hours \n 1440 = 1 day \n 4320 = 3 days \n 10080 = 7 days \n 43800 = 1 Month","Ban time",1440) as num|null
-	if(!mins)
-		return
-	if(mins >= 525600)
-		mins = 525599
-	var/reason = input(usr,"Reason? \n\nPress 'OK' to finalize the ban.","reason","Griefer") as message|null
-	if(!reason)
-		return
-	AddBan(M.ckey, M.computer_id, reason, key, TRUE, mins, M.lastKnownIP)

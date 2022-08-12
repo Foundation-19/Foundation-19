@@ -72,7 +72,6 @@
 
 /obj/attack_ghost(mob/user)
 	ui_interact(user)
-	tgui_interact(user)
 	..()
 
 /obj/proc/interact(mob/user)

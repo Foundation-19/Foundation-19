@@ -29,6 +29,9 @@
 	fabricator_tag = "Derelict"
 	drone_type = /mob/living/silicon/robot/drone/construction
 
+/obj/machinery/drone_fabricator/New()
+	..()
+
 /obj/machinery/drone_fabricator/power_change()
 	. = ..()
 	if (stat & NOPOWER)
