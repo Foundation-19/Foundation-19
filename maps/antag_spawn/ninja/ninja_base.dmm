@@ -1549,7 +1549,7 @@
 /area/map_template/ninja_dojo/start)
 "df" = (
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/machinery/computer/modular/preset/security{
+/obj/item/modular_computer/console/preset/security{
 	dir = 1;
 	icon_state = "console"
 	},

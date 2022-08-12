@@ -77,7 +77,7 @@
 /mob/living/carbon/slime/setToxLoss(var/amount)
 	adjustToxLoss(amount-getToxLoss())
 
-/mob/living/carbon/slime/New(var/location, var/colour="grey")
+/mob/living/carbon/slime/Initialize(mapload, colour = "grey")
 	ingested = new(240, src, CHEM_INGEST)
 	add_verb(src, /mob/living/proc/ventcrawl)
 
@@ -87,7 +87,7 @@
 	real_name = name
 	mutation_chance = rand(25, 35)
 	regenerate_icons()
-	..(location)
+	. = ..()
 
 /mob/living/carbon/slime/movement_delay()
 	if (bodytemperature >= 330.23) // 135 F

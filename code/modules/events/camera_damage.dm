@@ -17,10 +17,10 @@
 			if(prob(2*severity))
 				cam.destroy()
 			else
-				if(!cam.wires.IsIndexCut(CAMERA_WIRE_POWER))
-					cam.wires.CutWireIndex(CAMERA_WIRE_POWER)
-				if(!cam.wires.IsIndexCut(CAMERA_WIRE_ALARM) && prob(5*severity))
-					cam.wires.CutWireIndex(CAMERA_WIRE_ALARM)
+				if(!cam.wires.is_cut(WIRE_MAIN_POWER1))
+					cam.wires.cut(WIRE_MAIN_POWER1)
+				if(!cam.wires.is_cut(WIRE_CAM_ALARM) && prob(5*severity))
+					cam.wires.cut(WIRE_CAM_ALARM)
 
 /datum/event/camera_damage/proc/acquire_random_camera(var/remaining_attempts = 5)
 	if(!cameranet.cameras.len)

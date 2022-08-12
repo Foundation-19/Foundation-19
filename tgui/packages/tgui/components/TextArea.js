@@ -52,8 +52,8 @@ export class TextArea extends Component {
     };
     this.handleKeyDown = (e) => {
       const { editing } = this.state;
-      const { onChange, onInput, onEnter, onKey } = this.props;
-      if (e.keyCode === KEY_ENTER) {
+      const { ignoreKeyEnter, onChange, onInput, onEnter, onKey } = this.props;
+      if (!ignoreKeyEnter && e.keyCode === KEY_ENTER) {
         this.setEditing(false);
         if (onChange) {
           onChange(e, e.target.value);

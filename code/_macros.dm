@@ -191,6 +191,8 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define SPAN_INFO(X) "<span class='info'>[X]</span>"
 
+#define SPAN_INFOPLAIN(X) "<span class='infoplain'>[X]</span>"
+
 #define SPAN_DEBUG(X) "<span class='debug'>[X]</span>"
 
 #define SPAN_DEADSAY(X) "<span class='deadsay'>[X]</span>"
@@ -236,3 +238,13 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 #define ismachinery(A) istype(A, /obj/machinery)
 
 #define isdatum(A) istype(A, /datum)
+
+#define isassembly(O) istype(O, /obj/item/device/assembly)
+
+#define isigniter(O) istype(O, /obj/item/device/assembly/igniter)
+
+#define isprox(O) istype(O, /obj/item/device/assembly/prox_sensor)
+
+#define issignaller(O) istype(O, /obj/item/device/assembly/signaller)
+
+#define istimer(O) istype(O, /obj/item/device/assembly/timer)

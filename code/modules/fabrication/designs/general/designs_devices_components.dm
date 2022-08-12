@@ -40,7 +40,7 @@
 	path = /obj/item/device/assembly/igniter
 
 /datum/fabricator_recipe/device_component/signaler
-	path = /obj/item/device/assembly/signaler
+	path = /obj/item/device/assembly/signaller
 
 /datum/fabricator_recipe/device_component/sensor_infra
 	path = /obj/item/device/assembly/infra

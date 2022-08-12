@@ -17,15 +17,15 @@
 		{
 			"type": "byond",
 			"request": "launch",
-			"name": "Launch DreamDaemon",
+			"name": "Build DreamDaemon",
+			"preLaunchTask": "Build All",
 			"dmb": "${workspaceFolder}/${command:CurrentDMB}",
 			"dreamDaemon": true
 		},
 		{
 			"type": "byond",
 			"request": "launch",
-			"name": "Build DreamDaemon",
-			"preLaunchTask": "Build All",
+			"name": "Launch DreamDaemon",
 			"dmb": "${workspaceFolder}/${command:CurrentDMB}",
 			"dreamDaemon": true
 		}

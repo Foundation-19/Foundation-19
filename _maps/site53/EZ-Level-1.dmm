@@ -781,7 +781,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/space)
 "cG" = (
-/obj/machinery/computer/modular/preset/security{
+/obj/item/modular_computer/console/preset/security{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red{
@@ -2054,7 +2054,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/science/lockerroom)
 "hi" = (
-/obj/machinery/computer/modular/preset/engineering{
+/obj/item/modular_computer/console/preset/engineering{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -3009,7 +3009,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/hallway)
 "ks" = (
-/obj/machinery/computer/modular/preset/medical{
+/obj/item/modular_computer/console/preset/medical{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/paleblue/border{
@@ -3837,7 +3837,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/safe_room/firstdeck)
 "ng" = (
-/obj/machinery/computer/modular/preset/civilian{
+/obj/item/modular_computer/console/preset/civilian{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/orange/border{
@@ -4228,7 +4228,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/security/brig)
 "oE" = (
-/obj/machinery/computer/modular/preset/engineering{
+/obj/item/modular_computer/console/preset/engineering{
 	dir = 4
 	},
 /obj/machinery/light{
@@ -5830,7 +5830,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/controlroom)
 "uw" = (
-/obj/machinery/computer/modular/preset/cardslot/command_sec,
+/obj/item/modular_computer/console/preset/cardslot/command_sec,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/surface/bunker)
 "ux" = (
@@ -6080,7 +6080,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/robotics)
 "vk" = (
-/obj/machinery/computer/modular/preset/security{
+/obj/item/modular_computer/console/preset/security{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red{
@@ -6138,7 +6138,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/engineering/foyer)
 "vv" = (
-/obj/machinery/computer/modular/preset/aislot/research{
+/obj/item/modular_computer/console/preset/aislot/research{
 	dir = 1
 	},
 /turf/simulated/floor/greengrid,
@@ -7185,7 +7185,7 @@
 /turf/simulated/floor/tiled,
 /area/site53/entrancezone/securitypost)
 "yS" = (
-/obj/machinery/computer/modular/preset/security{
+/obj/item/modular_computer/console/preset/security{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/three_quarters,
@@ -7381,7 +7381,7 @@
 /turf/simulated/wall/r_wall,
 /area/security/armoury)
 "zH" = (
-/obj/machinery/computer/modular/preset/engineering{
+/obj/item/modular_computer/console/preset/engineering{
 	dir = 1
 	},
 /obj/machinery/light,
@@ -7908,7 +7908,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "BH" = (
-/obj/machinery/computer/modular/preset/cardslot/command_sec{
+/obj/item/modular_computer/console/preset/cardslot/command_sec{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -8161,7 +8161,7 @@
 /turf/simulated/open,
 /area/maintenance/firstdeck/forestarboard)
 "CI" = (
-/obj/machinery/computer/modular/preset/merchant,
+/obj/item/modular_computer/console/preset/merchant,
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 1
 	},
@@ -8222,7 +8222,7 @@
 /turf/simulated/floor/wood,
 /area/medical/counselor)
 "CU" = (
-/obj/machinery/computer/modular/preset/engineering{
+/obj/item/modular_computer/console/preset/engineering{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -8307,7 +8307,7 @@
 /turf/simulated/wall,
 /area/medical/staging)
 "Dh" = (
-/obj/machinery/computer/modular/preset/engineering{
+/obj/item/modular_computer/console/preset/engineering{
 	dir = 8
 	},
 /obj/machinery/light{
@@ -8874,7 +8874,7 @@
 /turf/simulated/wall,
 /area/site53/engineering/controlroom)
 "EU" = (
-/obj/machinery/computer/modular/preset/cardslot/command_sec{
+/obj/item/modular_computer/console/preset/cardslot/command_sec{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -8936,7 +8936,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/cryogenicsprimary)
 "Fd" = (
-/obj/machinery/computer/modular/preset/cardslot/command{
+/obj/item/modular_computer/console/preset/cardslot/command{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/blue/border{
@@ -9667,7 +9667,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/janitor)
 "Hu" = (
-/obj/machinery/computer/modular/preset/merchant{
+/obj/item/modular_computer/console/preset/merchant{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/brown/three_quarters{
@@ -10055,7 +10055,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/firstdeck)
 "ID" = (
-/obj/machinery/computer/modular/preset/civilian{
+/obj/item/modular_computer/console/preset/civilian{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -11305,7 +11305,7 @@
 /area/engineering/engine_room)
 "MQ" = (
 /obj/effect/floor_decal/corner/green/full,
-/obj/machinery/computer/modular/preset/medical{
+/obj/item/modular_computer/console/preset/medical{
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline,
@@ -11749,7 +11749,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/hallway)
 "Ov" = (
-/obj/machinery/computer/modular/preset/civilian{
+/obj/item/modular_computer/console/preset/civilian{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/orange/border{
@@ -11776,7 +11776,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/wing)
 "OA" = (
-/obj/machinery/computer/modular/preset/security{
+/obj/item/modular_computer/console/preset/security{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -12264,7 +12264,7 @@
 /turf/simulated/floor/tiled,
 /area/site53/entrancezone/securitypost)
 "Qs" = (
-/obj/machinery/computer/modular/preset/security{
+/obj/item/modular_computer/console/preset/security{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red{
@@ -12808,7 +12808,7 @@
 /turf/simulated/wall/r_wall,
 /area/crew_quarters/safe_room/firstdeck)
 "Sf" = (
-/obj/machinery/computer/modular/preset/aislot/research,
+/obj/item/modular_computer/console/preset/aislot/research,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -13110,7 +13110,7 @@
 /turf/simulated/wall/r_wall,
 /area/site53/llcz/hallways)
 "Tq" = (
-/obj/machinery/computer/modular/preset/engineering{
+/obj/item/modular_computer/console/preset/engineering{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -13529,7 +13529,7 @@
 /obj/effect/floor_decal/corner/red{
 	dir = 10
 	},
-/obj/machinery/computer/modular/preset/security{
+/obj/item/modular_computer/console/preset/security{
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
@@ -13576,7 +13576,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/controlroom)
 "US" = (
-/obj/machinery/computer/modular/preset/security,
+/obj/item/modular_computer/console/preset/security,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -13994,7 +13994,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/medical/surgery2)
 "Wu" = (
-/obj/machinery/computer/modular/preset/aislot/research,
+/obj/item/modular_computer/console/preset/aislot/research,
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 1
 	},
@@ -14195,7 +14195,7 @@
 /turf/simulated/wall,
 /area/medical/surgery2)
 "Xc" = (
-/obj/machinery/computer/modular/preset/security{
+/obj/item/modular_computer/console/preset/security{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/three_quarters{
@@ -14726,7 +14726,7 @@
 /turf/simulated/floor/grass,
 /area/vacant)
 "YQ" = (
-/obj/machinery/computer/modular/preset/cardslot/command_sec{
+/obj/item/modular_computer/console/preset/cardslot/command_sec{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
