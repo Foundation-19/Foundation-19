@@ -272,7 +272,7 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1, /obj/item/clothing/acessory/armor/helmcover/nt)
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1, /obj/item/clothing/accessory/armor/helmcover/nt)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	glasses = /obj/item/clothing/glasses/eyepatch/hud/security
 	head = /obj/item/clothing/head/beret/sec/corporate/warden
