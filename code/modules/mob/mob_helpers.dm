@@ -234,12 +234,12 @@ var/list/global/organ_rel_size = list(
 
 /proc/slur(phrase)
 	phrase = html_decode(phrase)
-	var/leng=length(phrase)
-	var/counter=length(phrase)
+	var/leng=length_char(phrase)
+	var/counter=length_char(phrase)
 	var/newphrase=""
 	var/newletter=""
 	while(counter>=1)
-		newletter=copytext(phrase,(leng-counter)+1,(leng-counter)+2)
+		newletter=copytext_char(phrase,(leng-counter)+1,(leng-counter)+2)
 		if(prob(30))
 			if(lowertext(newletter)=="o")
 				newletter="u"
@@ -249,6 +249,19 @@ var/list/global/organ_rel_size = list(
 				newletter="ah"
 			if(lowertext(newletter)=="c")
 				newletter="k"
+			if(lowertext(newletter)=="о")
+				newletter="у"
+			if(lowertext(newletter)=="с")
+				newletter="ч"
+			if(lowertext(newletter)=="а")
+				newletter="ах"
+			if(lowertext(newletter)=="ц")
+				newletter="к"
+			if(lowertext(newletter)=="э")
+				newletter="о"
+			if(lowertext(newletter)=="г")
+				newletter="х"
+
 		switch(rand(1,9))
 			if(1,2,3,4)
 				newletter="[lowertext(newletter)]"
@@ -265,12 +278,12 @@ var/list/global/organ_rel_size = list(
 /proc/stutter(n)
 	var/te = html_decode(n)
 	var/t = ""//placed before the message. Not really sure what it's for.
-	n = length(n)//length of the entire word
+	n = length_char(n)//length of the entire word
 	var/p = null
 	p = 1//1 is the start of any word
 	while(p <= n)//while P, which starts at 1 is less or equal to N which is the length.
-		var/n_letter = copytext(te, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
-		if (prob(80) && (ckey(n_letter) in list("b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z")))
+		var/n_letter = copytext_char(te, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
+		if (prob(80) && (lowertext(n_letter) in list("b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z")))
 			if (prob(10))
 				n_letter = text("[n_letter]-[n_letter]-[n_letter]-[n_letter]")//replaces the current letter with this instead.
 			else
@@ -283,15 +296,15 @@ var/list/global/organ_rel_size = list(
 						n_letter = text("[n_letter]-[n_letter]")
 		t = text("[t][n_letter]")//since the above is ran through for each letter, the text just adds up back to the original word.
 		p++//for each letter p is increased to find where the next letter will be.
-	return sanitize(t)
+	return sanitize(copytext_char(t,1,MAX_MESSAGE_LEN))
 
 
 /proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 for p will cause letters to be replaced instead of added
 	/* Turn text into complete gibberish! */
 	var/returntext = ""
-	for(var/i = 1, i <= length(t), i++)
+	for(var/i = 1, i <= length_char(t), i++)
 
-		var/letter = copytext(t, i, i+1)
+		var/letter = copytext_char(t, i, i+1)
 		if(prob(50))
 			if(p >= 70)
 				letter = ""
@@ -312,7 +325,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 */
 	var/te = html_decode(n)
 	var/t = ""
-	n = length(n)
+	n = length_char(n)
 	var/p = 1
 	while(p <= n)
 		var/n_letter

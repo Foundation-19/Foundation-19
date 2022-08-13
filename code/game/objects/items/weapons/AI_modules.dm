@@ -235,7 +235,8 @@
 	if(new_lawpos < MIN_SUPPLIED_LAW_NUMBER)
 		return
 	lawpos = min(new_lawpos, MAX_SUPPLIED_LAW_NUMBER)
-	var/law_input = sanitize(input(user, "Please enter a new law for the AI.", "Freeform Law Entry", ""))
+	var/newlaw = ""
+	var/law_input = sanitize(copytext_char(input(usr, "Please enter a new law for the AI.", "Freeform Law Entry", newlaw),1,MAX_MESSAGE_LEN))
 	newFreeFormLaw = law_input
 	..()
 

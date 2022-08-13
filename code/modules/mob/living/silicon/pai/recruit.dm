@@ -64,27 +64,27 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 			if("name")
 				t = sanitizeSafe(input("Enter a name for your pAI", "pAI Name", candidate.name) as text, MAX_NAME_LEN)
 				if(t)
-					candidate.name = t
+					candidate.name = sanitize(copytext_char(t,1,MAX_NAME_LEN))
 			if("desc")
 				t = input("Enter a description for your pAI", "pAI Description", candidate.description) as message
 				if(t)
-					candidate.description = sanitize(t)
+					candidate.description = sanitize(copytext_char(t,1,MAX_NAME_LEN))
 			if("role")
 				t = input("Enter a role for your pAI", "pAI Role", candidate.role) as text
 				if(t)
-					candidate.role = sanitize(t)
+					candidate.role = sanitize(copytext_char(t,1,MAX_NAME_LEN))
 			if("ooc")
 				t = input("Enter any OOC comments", "pAI OOC Comments", candidate.comments) as message
 				if(t)
-					candidate.comments = sanitize(t)
+					candidate.comments = sanitize(copytext_char(t,1,MAX_NAME_LEN))
 			if("chassis")
 				t = input(usr,"What would you like to use for your mobile chassis icon?") as null|anything in GLOB.possible_chassis
 				if(t)
-					candidate.chassis = t
+					candidate.chassis = sanitize(copytext_char(t,1,MAX_NAME_LEN))
 			if("say")
 				t = input(usr,"What theme would you like to use for your speech verbs?") as null|anything in GLOB.possible_say_verbs
 				if(t)
-					candidate.say_verb = t
+					candidate.say_verb = sanitize(copytext_char(t,1,MAX_NAME_LEN))
 			if("save")
 				candidate.savefile_save(usr)
 			if("load")

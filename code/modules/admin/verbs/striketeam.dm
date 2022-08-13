@@ -42,7 +42,7 @@ var/const/commandos_possible = 6 //if more Commandos are needed in the future
 
 	choice = null
 	while(!choice)
-		choice = sanitize(input(src, "Please specify which mission the strike team shall undertake.", "Specify Mission", ""))
+		choice = sanitize(copytext_char(input(src, "Please specify which mission the strike team shall undertake.", "Specify Mission", ""),1,MAX_MESSAGE_LEN))
 		if(!choice)
 			if(alert("Error, no mission set. Do you want to exit the setup process?",,"Yes","No")=="Yes")
 				return

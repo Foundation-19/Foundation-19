@@ -3,7 +3,7 @@
 	set category = "Staff Help"
 	if(!check_rights(R_ADMIN))	return
 
-	msg = sanitize(msg)
+	msg = sanitize(copytext_char(msg, 1, MAX_MESSAGE_LEN))
 	if(!msg)	return
 
 	log_admin("ADMIN: [key_name(src)] : [msg]")
@@ -23,7 +23,7 @@
 	if(!check_rights(R_ADMIN|R_MOD|R_MENTOR))
 		return
 
-	msg = sanitize(msg)
+	msg = sanitize(copytext_char(msg, 1, MAX_MESSAGE_LEN))
 	log_admin("MENTOR: [key_name(src)] : [msg]")
 
 	if (!msg)

@@ -38,7 +38,7 @@
 			var/overflow = ((length(input)+1) - max_length)
 			to_chat(usr, "<span class='warning'>Your message is too long by [overflow] character\s.</span>")
 			return
-		input = copytext(input,1,max_length)
+		input = copytext_char(input,1,max_length)
 
 	if(extra)
 		input = replace_characters(input, list("\n"=" ","\t"=" "))
@@ -75,20 +75,20 @@
 	var/number_of_alphanumeric	= 0
 	var/last_char_group			= 0
 	var/output = ""
+	var/t_out = ""
 
-	for(var/i=1, i<=length(input), i++)
+	for(var/i=1, i<=length_char(input), i++)
 		var/ascii_char = text2ascii(input,i)
 		switch(ascii_char)
-			// A  .. Z
-			if(65 to 90)			//Uppercase Letters
+			// A  .. Z, А .. Я, Ё
+			if(65 to 90, 1040 to 1071, 1025)			//Uppercase Letters
 				output += ascii2text(ascii_char)
 				number_of_alphanumeric++
 				last_char_group = 4
 
-			// a  .. z
-			if(97 to 122)			//Lowercase Letters
-				if(last_char_group<2 && force_first_letter_uppercase)
-					output += ascii2text(ascii_char-32)	//Force uppercase first character
+			// a  .. z, а .. я, ё
+			if(97 to 122, 1072 to 1103, 1105)			//Lowercase Letters
+				if(last_char_group<2)		t_out += uppertext(ascii2text(ascii_char))	//Force uppercase first character
 				else
 					output += ascii2text(ascii_char)
 				number_of_alphanumeric++
@@ -161,10 +161,10 @@
 
 //Returns null if there is any bad text in the string
 /proc/reject_bad_text(var/text, var/max_length=512)
-	if(length(text) > max_length)	return			//message too long
+	if(length_char(text) > max_length)	return			//message too long
 	var/non_whitespace = 0
-	for(var/i=1, i<=length(text), i++)
-		switch(text2ascii(text,i))
+	for(var/i=1, i<=length_char(text), i++)
+		switch(text2ascii_char(text,i))
 			if(62,60,92,47)	return			//rejects the text if it contains these bad characters: <, >, \ or /
 			if(127 to 255)	return			//rejects non-ASCII letters
 			if(0 to 31)		return			//more weird stuff
@@ -186,21 +186,21 @@
 /proc/dd_hasprefix(text, prefix)
 	var/start = 1
 	var/end = length(prefix) + 1
-	return findtext(text, prefix, start, end)
+	return findtext_char(text, prefix, start, end)
 
 //Checks the beginning of a string for a specified sub-string. This proc is case sensitive
 //Returns the position of the substring or 0 if it was not found
 /proc/dd_hasprefix_case(text, prefix)
 	var/start = 1
 	var/end = length(prefix) + 1
-	return findtextEx(text, prefix, start, end)
+	return findtextEx_char(text, prefix, start, end)
 
 //Checks the end of a string for a specified substring.
 //Returns the position of the substring or 0 if it was not found
 /proc/dd_hassuffix(text, suffix)
 	var/start = length(text) - length(suffix)
 	if(start)
-		return findtext(text, suffix, start, null)
+		return findtext_char(text, suffix, start, null)
 	return
 
 //Checks the end of a string for a specified substring. This proc is case sensitive
@@ -208,7 +208,7 @@
 /proc/dd_hassuffix_case(text, suffix)
 	var/start = length(text) - length(suffix)
 	if(start)
-		return findtextEx(text, suffix, start, null)
+		return findtextEx_char(text, suffix, start, null)
 
 /*
  * Text modification
@@ -216,7 +216,7 @@
 
 /proc/replace_characters(var/t,var/list/repl_chars)
 	for(var/char in repl_chars)
-		t = replacetext(t, char, repl_chars[char])
+		t = replacetext_char(t, char, repl_chars[char])
 	return t
 
 //Adds 'u' number of zeros ahead of the text 't'
@@ -261,7 +261,7 @@
 //Returns a string with reserved characters and spaces after the last letter removed
 /proc/trim_right(text)
 	for (var/i = length(text), i > 0, i--)
-		if (text2ascii(text, i) > 32)
+		if (text2ascii(text, i) != 32)
 			return copytext(text, 1, i + 1)
 	return ""
 
@@ -271,7 +271,7 @@
 
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(var/t as text)
-	return uppertext(copytext(t, 1, 2)) + copytext(t, 2)
+	return uppertext(copytext_char(t, 1, 2)) + copytext_char(t, 2)
 
 //This proc strips html properly, remove < > and all text between
 //for complete text sanitizing should be used sanitize()

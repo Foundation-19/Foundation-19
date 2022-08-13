@@ -313,7 +313,7 @@
 				new_objective.target_amount = target_number
 
 			if ("custom")
-				var/expl = sanitize(input("Custom objective:", "Objective", objective ? objective.explanation_text : "") as text|null)
+				var/expl = sanitize(copytext_char(input("Custom objective:", "Objective", objective ? objective.explanation_text : "") as text|null))
 				if (!expl) return
 				new_objective = new /datum/objective
 				new_objective.owner = src
