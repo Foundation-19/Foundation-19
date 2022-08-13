@@ -2,7 +2,8 @@
 /datum/admins/proc/player_panel_new()//The new one
 	if (!usr.client.holder || !(usr.client.holder.rights & R_INVESTIGATE))
 		return
-	var/dat = "<html>"
+	var/dat = {"<html>
+	<meta charset="UTF-8">"}
 
 	//javascript, the part that does most of the work~
 	dat += {"
