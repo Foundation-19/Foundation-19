@@ -8360,7 +8360,7 @@
 /area/site53/llcz/dclass/medicalpost)
 "uS" = (
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation 10";
+	c_tag = "AIC Observation 25";
 	network = list("Entrance Zone Network");
 	use_power = 0;
 	active_power_usage = 0;
