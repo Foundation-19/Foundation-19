@@ -1744,7 +1744,7 @@
 "aeK" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Red Line";
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2","ACCESS_MEDICAL_LEVEL2"))
 	},
 /turf/simulated/floor/plating,
 /area/site53/tram/hcz)
@@ -18597,10 +18597,6 @@
 	name = "SCP-173 Chamber";
 	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "173emerg"
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "aTm" = (
@@ -19449,10 +19445,6 @@
 	name = "SCP-173 Chamber";
 	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "173emerg"
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "aWi" = (
@@ -19729,7 +19721,7 @@
 /area/site53/llcz/scp131)
 "aWU" = (
 /obj/effect/paint_stripe/gray,
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/llcz/scp500)
 "aWV" = (
 /obj/structure/cable/green{
@@ -19847,7 +19839,7 @@
 	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-500";
-	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL5","ACCESS_SCIENCE_LEVEL5"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -24879,7 +24871,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
 "bOD" = (
-/obj/machinery/chemical_dispenser,
+/obj/machinery/chemical_dispenser/full,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
 "bON" = (
@@ -31112,7 +31104,7 @@
 "qEi" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Red Line";
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2","ACCESS_MEDICAL_LEVEL2"))
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
@@ -31310,6 +31302,25 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
+"raM" = (
+/obj/item/device/assembly/infra,
+/obj/item/device/assembly/infra,
+/obj/item/device/assembly/infra,
+/obj/item/device/assembly/infra,
+/obj/item/device/assembly/infra,
+/obj/item/device/assembly/signaller,
+/obj/item/device/assembly/signaller,
+/obj/item/device/assembly/signaller,
+/obj/item/device/assembly/signaller,
+/obj/item/device/assembly/signaller,
+/obj/structure/closet/crate,
+/obj/item/device/assembly/prox_sensor,
+/obj/item/device/assembly/prox_sensor,
+/obj/item/device/assembly/prox_sensor,
+/obj/item/device/assembly/prox_sensor,
+/obj/item/device/assembly/prox_sensor,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp106observ)
 "raR" = (
 /obj/machinery/door/airlock/science{
 	name = "General Purpose Testing Chamber";
@@ -32521,7 +32532,7 @@
 "ugg" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Red Line";
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2","ACCESS_MEDICAL_LEVEL2"))
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
@@ -84805,7 +84816,7 @@ azA
 azA
 azA
 aPn
-ahS
+raM
 ahS
 arr
 bkL

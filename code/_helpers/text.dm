@@ -465,7 +465,11 @@
 	t = replacetext(t, "\[goc\]", "<img src = ungoc.png>")
 	t = replacetext(t, "\[uiu\]", "<img src = uiu.png>")
 	t = replacetext(t, "\[thi\]", "<img src = thi.png>")
-	t = replacetext(t, "\[mcd\]", "<img src = mcd.png>")
+	t = replacetext(t, "\[ar\]", "<img src = ar.png>")
+	t = replacetext(t, "\[ci\]", "<img src = ci.png>")
+	t = replacetext(t, "\[sh\]", "<img src = sh.png>")
+	t = replacetext(t, "\[cotbg\]", "<img src = cotbg.png>")
+  t = replacetext(t, "\[mcd\]", "<img src = mcd.png>")
 	return t
 
 //pencode translation to html for tags exclusive to digital files (currently email, nanoword, report editor fields,
