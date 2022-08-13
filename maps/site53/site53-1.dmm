@@ -8360,7 +8360,7 @@
 /area/site53/llcz/dclass/medicalpost)
 "uS" = (
 /obj/machinery/camera/motion{
-	c_tag = "AIC Observation 26";
+	c_tag = "AIC Observation 25";
 	network = list("Entrance Zone Network");
 	use_power = 0;
 	active_power_usage = 0;
@@ -14584,16 +14584,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
-"Ms" = (
-/obj/machinery/camera/motion{
-	c_tag = "AIC Observation 26";
-	network = list("Entrance Zone Network");
-	use_power = 0;
-	active_power_usage = 0;
-	idle_power_usage = 0
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "Mv" = (
 /obj/machinery/door/blast/shutters{
 	dir = 8;
@@ -55469,7 +55459,7 @@ gq
 gq
 gq
 gq
-Ms
+gq
 gq
 gq
 gq
