@@ -26,5 +26,5 @@
 		"ar.png" = 'html/images/ar.png',
 		"uiu.png" = 'html/images/uiu.png',
 		"thi.png" = 'thi.png',
-    "mcd.png" = 'html/images/mcd.png'
+    	"mcd.png" = 'html/images/mcd.png'
 	)
