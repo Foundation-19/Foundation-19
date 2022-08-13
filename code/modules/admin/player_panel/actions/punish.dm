@@ -34,7 +34,14 @@
 	action_tag = "show_notes"
 	name = "Show Notes"
 
-
 /datum/player_action/show_notes/act(var/client/user, var/mob/target, var/list/params)
 	user.holder.show_player_info(target.ckey)
+	return TRUE
+
+/datum/player_action/warn
+	action_tag = "mob_warn"
+	name = "Warn"
+
+/datum/player_action/warn/act(client/user, mob/target, list/params)
+	user.warn(target.ckey)
 	return TRUE

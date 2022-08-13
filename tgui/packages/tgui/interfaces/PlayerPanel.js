@@ -396,6 +396,15 @@ const PunishmentActions = (props, context) => {
             disabled={!hasPermission(data, "mob_jobban")}
             onClick={() => act("mob_jobban")}
           />
+          <Button
+            width="100%"
+            height="100%"
+            icon="ban"
+            color="red"
+            content="Warn"
+            disabled={!hasPermission(data, "mob_warn")}
+            onClick={() => act("mob_warn")}
+          />
         </Stack>
       </Section>
 
