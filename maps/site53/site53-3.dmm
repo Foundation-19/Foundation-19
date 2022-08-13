@@ -42,6 +42,10 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
+/obj/machinery/cryopod{
+	dir = 4;
+	pixel_x = 8
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
 "ai" = (
@@ -228,10 +232,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
-"aG" = (
-/obj/machinery/cryopod,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/surface/cryogenicsprimary)
 "aH" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 1
@@ -245,12 +245,6 @@
 	},
 /turf/simulated/open,
 /area/site53/uez/bridge)
-"aJ" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/surface/cryogenicsprimary)
 "aK" = (
 /obj/structure/monolith{
 	name = "SCP-1328-1-RU"
@@ -276,6 +270,9 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
+/obj/machinery/cryopod{
+	pixel_x = -8
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
 "aP" = (
@@ -298,6 +295,10 @@
 /area/site53/upper_surface/maincontrolroomstairs)
 "aS" = (
 /obj/structure/cryofeed,
+/obj/machinery/cryopod{
+	dir = 4;
+	pixel_x = 8
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
 "aT" = (
@@ -315,6 +316,9 @@
 "aU" = (
 /obj/structure/cryofeed{
 	dir = 4
+	},
+/obj/machinery/cryopod{
+	pixel_x = -8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
@@ -376,6 +380,7 @@
 	},
 /obj/item/storage/firstaid/adv,
 /obj/item/crowbar/prybar,
+/obj/item/storage/firstaid/combat,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "bb" = (
@@ -1412,6 +1417,7 @@
 	icon_state = "0-2"
 	},
 /obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/combat,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "eA" = (
@@ -3039,6 +3045,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/storage/firstaid/combat,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "iV" = (
@@ -3726,6 +3733,7 @@
 	c_tag = "Medical Equipment Room"
 	},
 /obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/combat,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "kA" = (
@@ -4828,8 +4836,7 @@
 /area/site53/surface/surface)
 "nR" = (
 /obj/machinery/door/airlock/multi_tile/glass/command{
-	name = "Administration Offices";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
+	name = "Administration Offices"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
@@ -7556,9 +7563,6 @@
 	dir = 1
 	},
 /obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/combat,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "BR" = (
@@ -8101,6 +8105,7 @@
 /obj/machinery/light,
 /obj/item/storage/firstaid/adv,
 /obj/item/crowbar/prybar,
+/obj/item/storage/firstaid/combat,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "Jt" = (
@@ -8117,6 +8122,9 @@
 	},
 /obj/machinery/power/apc{
 	dir = 1
+	},
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_x = -30
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uez/equipmentroom)
@@ -8208,9 +8216,9 @@
 /area/site53/surface/surface)
 "Ln" = (
 /obj/machinery/camera/autoname{
+	c_tag = "Cryo";
 	dir = 8;
-	network = list("Entrance Zone Network 1");
-	c_tag = "Cryo"
+	network = list("Entrance Zone Network 1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroomstairs)
@@ -37845,11 +37853,11 @@ dA
 dA
 dA
 af
-aJ
-aJ
-aJ
-aJ
-aJ
+kC
+kC
+kC
+kC
+kC
 af
 bm
 bS
@@ -41186,11 +41194,11 @@ dA
 dA
 dA
 af
-aG
-aG
-aG
-aG
-aG
+kC
+kC
+kC
+kC
+kC
 af
 bO
 bS
