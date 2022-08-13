@@ -15,7 +15,7 @@
  * optional ui datum/tgui The UI to be updated, if it exists.
  */
 /datum/proc/tgui_interact(mob/user, datum/tgui/ui)
-	return FALSE // Not implemented.
+	return
 
 /**
  * public
@@ -118,7 +118,7 @@
  * This is a proc over a var for memory reasons
  */
 /datum/proc/tgui_state(mob/user)
-	return GLOB.default_state
+	return GLOB.default_tgui_state
 
 /**
  * global
@@ -155,7 +155,7 @@
  * Called on a UI's object when the UI is closed, not to be confused with
  * client/verb/uiclose(), which closes the ui window
  */
-/datum/proc/ui_close(mob/user)
+/datum/proc/tgui_close(mob/user)
 
 /**
  * verb

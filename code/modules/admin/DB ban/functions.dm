@@ -356,11 +356,9 @@
 	output += "<tr><td width='50%' align='right'><b>Duration:</b> <input type='text' name='dbbaddduration'></td>"
 	output += "<td width='50%' align='right'><b>Job:</b><select name='dbbanaddjob'>"
 	output += "<option value=''>--</option>"
-	for(var/j in SSjobs.titles_to_datums)
+	for(var/j in SSjobs.distinct_job_titles)
 		output += "<option value='[j]'>[j]</option>"
-	for(var/j in SSjobs.titles_by_department(MSC))
-		output += "<option value='[j]'>[j]</option>"
-	var/list/bantypes = list("traitor","changeling","operative","revolutionary","cultist","wizard") //For legacy bans.
+	var/list/bantypes = list("Safe SCP","Non-Safe SCP","traitor","changeling","operative","revolutionary","cultist","wizard") //For legacy bans.
 	var/list/all_antag_types = GLOB.all_antag_types_
 	for(var/antag_type in all_antag_types) // Grab other bans.
 		var/datum/antagonist/antag = all_antag_types[antag_type]

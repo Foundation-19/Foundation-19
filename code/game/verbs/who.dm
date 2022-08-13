@@ -60,8 +60,8 @@
 	to_chat(src, msg)
 
 /client/verb/staffwho()
-	set category = "Staffhelp"
 	set name = "Staffwho"
+	set category = "Staff Help"
 
 	var/list/msg = list()
 	var/active_staff = 0

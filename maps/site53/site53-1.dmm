@@ -105,7 +105,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "ao" = (
-/obj/machinery/computer/modular/preset/civilian{
+/obj/item/modular_computer/console/preset/civilian{
 	dir = 4;
 	icon_state = "console"
 	},
@@ -129,7 +129,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "ar" = (
-/obj/machinery/computer/modular/preset/civilian{
+/obj/item/modular_computer/console/preset/civilian{
 	dir = 8;
 	icon_state = "console"
 	},
@@ -396,8 +396,8 @@
 	},
 /obj/machinery/disposal/deliveryChute{
 	desc = "A note read: Dispose of bodies here";
-	name = "Termination Disposal";
 	dir = 1;
+	name = "Termination Disposal";
 	pixel_y = -5
 	},
 /turf/simulated/floor/tiled/dark,
@@ -864,9 +864,9 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/multi_tile/glass/medical{
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1"));
+	id_tag = "LobbyMedD";
 	name = "Medbay Lobby";
-	id_tag = "LobbyMedD"
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -990,8 +990,8 @@
 /area/site53/llcz/hallways)
 "cX" = (
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Sector 7";
-	id_tag = "sec72"
+	id_tag = "sec72";
+	name = "Sector 7"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -1150,7 +1150,7 @@
 	dir = 10
 	},
 /obj/machinery/camera/network/lcz,
-/obj/machinery/computer/modular/preset/security,
+/obj/item/modular_computer/console/preset/security,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpointoverlook)
 "du" = (
@@ -1165,9 +1165,9 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/multi_tile/glass/medical{
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1"));
+	id_tag = "LobbyMedD";
 	name = "Medbay Lobby";
-	id_tag = "LobbyMedD"
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -1732,7 +1732,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkcryo)
 "eX" = (
-/obj/machinery/computer/modular/preset/security{
+/obj/item/modular_computer/console/preset/security{
 	dir = 8;
 	icon_state = "console"
 	},
@@ -1901,7 +1901,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "Lower LCZ Maint Access";
 	name = "Lower LCZ Maint Access";
-	req_access = list("ACCESS_ENGINEERING_LEVEL1","ACCESS_ADMIN_LEVEL3")
+	req_access = list("ACCESS_ENGINEERING_LEVEL1","ACCESS_ADMIN_LEVEL2")
 	},
 /turf/simulated/wall/prepainted,
 /area/site53/engineering/maintenance/llczmaint)
@@ -2709,7 +2709,7 @@
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
 "hA" = (
-/obj/machinery/computer/modular/preset/security{
+/obj/item/modular_computer/console/preset/security{
 	dir = 1;
 	icon_state = "console"
 	},
@@ -3582,8 +3582,8 @@
 "jv" = (
 /obj/effect/floor_decal/corner/beige/mono,
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Sector 7";
-	id_tag = "sec7"
+	id_tag = "sec7";
+	name = "Sector 7"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
@@ -3844,8 +3844,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Sector 7";
-	id_tag = "sec72"
+	id_tag = "sec72";
+	name = "Sector 7"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
@@ -4226,7 +4226,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/canteenbubble)
 "lb" = (
-/obj/machinery/computer/modular/preset/cardslot/command_sec{
+/obj/item/modular_computer/console/preset/cardslot/command_sec{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -4356,7 +4356,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "ln" = (
-/obj/machinery/computer/modular/preset/security,
+/obj/item/modular_computer/console/preset/security,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "lo" = (
@@ -4503,7 +4503,7 @@
 	id_tag = "LLCZ Maintenance (NO ENTRY)";
 	name = "LLCZ Maintenance (NO ENTRY)";
 	pixel_y = 32;
-	req_access = list("ACCESS_SECURITY_LEVEL5")
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
@@ -5187,7 +5187,7 @@
 /area/site53/llcz/dclass/luxuryhall)
 "ni" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/computer/modular/preset/medical{
+/obj/item/modular_computer/console/preset/medical{
 	dir = 4;
 	icon_state = "console"
 	},
@@ -5197,7 +5197,7 @@
 /area/site53/engineering/selfdestruct)
 "nj" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/computer/modular/preset/engineering{
+/obj/item/modular_computer/console/preset/engineering{
 	dir = 8;
 	icon_state = "console"
 	},
@@ -5210,7 +5210,7 @@
 /area/site53/engineering/selfdestruct)
 "nl" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/computer/modular/preset/aislot/sysadmin{
+/obj/item/modular_computer/console/preset/aislot/sysadmin{
 	dir = 8;
 	icon_state = "console"
 	},
@@ -6900,7 +6900,7 @@
 /turf/simulated/floor,
 /area/site53/llcz/maintenance)
 "rx" = (
-/obj/machinery/computer/modular/preset/civilian{
+/obj/item/modular_computer/console/preset/civilian{
 	dir = 1;
 	icon_state = "console"
 	},
@@ -7107,6 +7107,24 @@
 /obj/item/storage/pill_bottle/amnesticsa,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
+"rY" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/catwalk_plated/white,
+/obj/machinery/button/blast_door{
+	id_tag = "LLCZ Maintenance (NO ENTRY)";
+	name = "LLCZ Maintenance (NO ENTRY)";
+	pixel_y = 32;
+	req_access = list("ACCESS_SECURITY_LEVEL4")
+	},
+/turf/simulated/floor,
+/area/site53/engineering/maintenance/llczmaint)
 "sa" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -7373,7 +7391,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
 "sN" = (
-/obj/machinery/computer/modular/preset/security{
+/obj/item/modular_computer/console/preset/security{
 	dir = 8;
 	icon_state = "console"
 	},
@@ -7556,7 +7574,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lhcz/maintenance)
 "th" = (
-/obj/machinery/computer/modular/preset/library{
+/obj/item/modular_computer/console/preset/library{
 	dir = 4;
 	icon_state = "console"
 	},
@@ -9374,7 +9392,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertram/archive)
 "yd" = (
-/obj/machinery/computer/modular/preset/security,
+/obj/item/modular_computer/console/preset/security,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
 "yf" = (
@@ -9763,7 +9781,7 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/cells)
 "zI" = (
-/obj/machinery/computer/modular/preset/security{
+/obj/item/modular_computer/console/preset/security{
 	dir = 1;
 	icon_state = "console"
 	},
@@ -9987,8 +10005,8 @@
 	},
 /obj/effect/floor_decal/corner/b_green/mono,
 /obj/machinery/door/window/brigdoor/westleft{
-	req_access = list("ACCESS_MEDICAL_LEVEL2");
-	name = "Surgery Kit Box"
+	name = "Surgery Kit Box";
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
@@ -10306,8 +10324,8 @@
 /area/site53/llcz/dclass/medicalpost)
 "Bi" = (
 /obj/machinery/door/airlock/glass/security{
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL2"));
-	name = "D-Block Entry"
+	name = "D-Block Entry";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
@@ -12356,7 +12374,7 @@
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/briefing)
 "Ho" = (
-/obj/machinery/computer/modular/preset/security{
+/obj/item/modular_computer/console/preset/security{
 	dir = 1;
 	icon_state = "console"
 	},
@@ -12891,7 +12909,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchenbotanybubble)
 "Iz" = (
-/obj/machinery/computer/modular/preset/security,
+/obj/item/modular_computer/console/preset/security,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/entrance_checkpoint)
 "IB" = (
@@ -12943,7 +12961,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/entrance_checkpoint)
 "IF" = (
-/obj/machinery/computer/modular/preset/security,
+/obj/item/modular_computer/console/preset/security,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -13284,7 +13302,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "Lower LCZ Maint Access";
 	name = "Lower LCZ Maint Access";
-	req_access = list("ACCESS_ENGINEERING_LEVEL1","ACCESS_ADMIN_LEVEL3")
+	req_access = list("ACCESS_ENGINEERING_LEVEL1","ACCESS_ADMIN_LEVEL2")
 	},
 /turf/simulated/wall/prepainted,
 /area/site53/lowertram/archive)
@@ -13545,7 +13563,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
 "JU" = (
-/obj/machinery/computer/modular/preset/security{
+/obj/item/modular_computer/console/preset/security{
 	dir = 8;
 	icon_state = "console"
 	},
@@ -14020,7 +14038,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "Lu" = (
-/obj/machinery/computer/modular/preset/medical{
+/obj/item/modular_computer/console/preset/medical{
 	dir = 0
 	},
 /obj/machinery/camera/network/lcz,
@@ -14182,13 +14200,13 @@
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/b_green/mono,
 /obj/machinery/button/blast_door{
-	name = "Medbay Windows";
 	id_tag = "CDZMedbaywin";
+	name = "Medbay Windows";
 	pixel_y = 7
 	},
 /obj/machinery/button/blast_door{
-	name = "Entry Lockdown";
-	id_tag = "CDZMedbay"
+	id_tag = "CDZMedbay";
+	name = "Entry Lockdown"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -14459,8 +14477,8 @@
 /area/site53/uhcz/scp8containment)
 "Nb" = (
 /obj/machinery/door/airlock/multi_tile/security{
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	dir = 3
+	dir = 3;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -14547,8 +14565,8 @@
 	dir = 1
 	},
 /obj/machinery/door/window/brigdoor/northright{
-	req_access = list("ACCESS_MEDICAL_LEVEL2");
-	name = "Medbay Secure"
+	name = "Medbay Secure";
+	req_access = list("ACCESS_MEDICAL_LEVEL2")
 	},
 /obj/machinery/firealarm{
 	dir = 4;
@@ -14754,8 +14772,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/hygiene/sink/kitchen{
 	dir = 8;
-	pixel_x = 21;
-	name = "surgery sink"
+	name = "surgery sink";
+	pixel_x = 21
 	},
 /obj/effect/floor_decal/industrial/firstaid{
 	dir = 4
@@ -15382,7 +15400,7 @@
 /turf/simulated/floor/tiled/old_cargo,
 /area/site53/lhcz/scp049containment)
 "PY" = (
-/obj/machinery/computer/modular/preset/civilian{
+/obj/item/modular_computer/console/preset/civilian{
 	dir = 4;
 	icon_state = "console"
 	},
@@ -15989,8 +16007,8 @@
 /area/site53/uhcz/scp8containment)
 "RT" = (
 /obj/machinery/door/airlock/security{
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	name = "D-Block"
+	name = "D-Block";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
@@ -16421,8 +16439,8 @@
 /area/site53/llcz/dclass/checkequip)
 "Tn" = (
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Sector 7 Bedroom";
-	id_tag = "sec7bed"
+	id_tag = "sec7bed";
+	name = "Sector 7 Bedroom"
 	},
 /turf/simulated/floor/wood/maple,
 /area/site53/llcz/dclass/luxurysleep)
@@ -17041,8 +17059,8 @@
 	},
 /obj/effect/floor_decal/corner/beige/mono,
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Sector 7";
-	id_tag = "sec7"
+	id_tag = "sec7";
+	name = "Sector 7"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
@@ -17088,8 +17106,8 @@
 /area/site53/llcz/dclass/assignmentbubble)
 "Vy" = (
 /obj/machinery/light{
-	icon_state = "tube1";
-	dir = 8
+	dir = 8;
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
@@ -17487,8 +17505,8 @@
 /area/site53/llcz/dclass/checkcryo)
 "WH" = (
 /obj/machinery/button/alternate/door/bolts{
-	name = "Sector 7 Bolt";
 	id_tag = "sec7";
+	name = "Sector 7 Bolt";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/wall/titanium,
@@ -17686,8 +17704,8 @@
 "Xw" = (
 /obj/structure/hygiene/sink/kitchen{
 	dir = 8;
-	pixel_x = 21;
-	name = "surgery sink"
+	name = "surgery sink";
+	pixel_x = 21
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/medicalpost/morgue)
@@ -18156,8 +18174,8 @@
 /area/site53/uhcz/scp8containment)
 "YR" = (
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Sector 7";
-	id_tag = "sec7"
+	id_tag = "sec7";
+	name = "Sector 7"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
@@ -18335,9 +18353,9 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
+	dir = 1;
 	name = "emergency alarm";
-	pixel_y = -27;
-	dir = 1
+	pixel_y = -27
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -38380,7 +38398,7 @@ gq
 gq
 gq
 aN
-hu
+rY
 aN
 pC
 ua

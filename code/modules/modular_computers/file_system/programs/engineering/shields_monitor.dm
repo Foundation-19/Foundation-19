@@ -10,7 +10,6 @@
 	requires_ntnet = TRUE
 	network_destination = "shields monitoring system"
 	size = 10
-	category = PROG_ENG
 
 /datum/nano_module/shields_monitor
 	name = "Shields monitor"

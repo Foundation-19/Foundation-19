@@ -1241,41 +1241,96 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	else
 		step(user.pulling, get_dir(user.pulling.loc, A))
 
-/proc/show_blurb(client/C, duration, blurb_text, fade_time = 5)
-	set waitfor = 0
+/**Shows a ticker reading out the given text on a client's screen.
+targets = mob or list of mobs to show it to.
 
-	if(!C)
+duration = how long it lingers after it finishes ticking.
+
+message = the message to display. Due to using maptext it isn't very flexible format-wise. 11px font, up to 480 pixels per line.
+Use \n for line breaks. Single-character HTML tags (<b></b>, <i></i>, <u></u> etc.) are handled correctly but others display strangely.
+Note that maptext can display text macros in strange ways, ex. \improper showing as "ÿ". Lines containing only spaces,
+including ones only containing "\improper ", don't display.
+
+scroll_down = by default each line pushes the previous line upwards - this tells it to start high and scroll down.
+Ticks on \n - does not autodetect line breaks in long strings.
+
+screen_position = screen loc for the bottom-left corner of the blurb.
+
+text_alignment = "right", "left", or "center"
+
+text_color = colour of the text.
+
+blurb_key = a key used for specific blurb types so they are not shown repeatedly. Ex. someone who joins as CLF repeatedly only seeing the mission blurb the first time.
+
+ignore_key = used to skip key checks. Ex. a USCM ERT member shouldn't see the normal USCM drop message,
+but should see their own spawn message even if the player already dropped as USCM.**/
+/proc/show_blurb(list/mob/targets, duration = 3 SECONDS, message, scroll_down, screen_position = "LEFT+0:16,BOTTOM+1:16",\
+	text_alignment = "left", text_color = "#FFFFFF", blurb_key, ignore_key = FALSE, speed = 1)
+	set waitfor = 0
+	if(!islist(targets))
+		targets = list(targets)
+	if(!length(targets))
 		return
 
-	var/style = "font-family: 'Fixedsys'; -dm-text-outline: 1 black; font-size: 11px;"
-	var/text = blurb_text
-	text = uppertext(text)
+	var/style = "font-family: Fixedsys, monospace; -dm-text-outline: 1 black; font-size: 11px; text-align: [text_alignment]; color: [text_color];" //This font doesn't seem to respect pixel sizes.
+	var/list/linebreaks = list() //Due to singular /'s making text disappear for a moment and for counting lines.
 
-	var/obj/effect/overlay/T = new()
-	T.maptext_height = 64
-	T.maptext_width = 448
-	T.layer = FLOAT_LAYER
-	T.plane = HUD_PLANE
-	T.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
-	T.screen_loc = "LEFT+1,BOTTOM+2"
+	var/linebreak = findtext(message, "\n")
+	while(linebreak)
+		linebreak++ //Otherwise it picks up the character immediately before the linebreak.
+		linebreaks += linebreak
+		linebreak = findtext(message, "\n", linebreak)
 
-	C.screen += T
-	animate(T, alpha = 255, time = 10)
-	for(var/i = 1 to length(text)+1)
-		T.maptext = "<span style=\"[style]\">[copytext(text,1,i)] </span>"
-		sleep(1)
+	var/list/html_tags = list()
+	var/html_tag = findtext(message, regex("<.>"))
+	var/opener = TRUE
+	while(html_tag)
+		html_tag++
+		if(opener)
+			html_tags += list(html_tag, html_tag + 1, html_tag + 2)
+			html_tag = findtext(message, regex("<.>"), html_tag + 2)
+			if(!html_tag)
+				opener = FALSE
+				html_tag = findtext(message, regex("</.>"))
+		else
+			html_tags += list(html_tag, html_tag + 1, html_tag + 2, html_tag + 3)
+			html_tag = findtext(message, regex("</.>"), html_tag + 3)
 
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/fade_blurb, C, T, fade_time), duration)
+	var/obj/screen/text/T = new()
+	T.screen_loc = screen_position
+	switch(text_alignment)
+		if("center")
+			T.maptext_x = -(T.maptext_width * 0.5 - 16) //Centering the textbox.
+		if("right")
+			T.maptext_x = -(T.maptext_width - 32) //Aligning the textbox with the right edge of the screen object.
+	if(scroll_down)
+		T.maptext_y = length(linebreaks) * 14
 
-/proc/fade_blurb(client/C, obj/T, fade_time = 5)
-	animate(T, alpha = 0, time = fade_time)
-	sleep(fade_time)
-	C.screen -= T
+	for(var/mob/M as anything in targets)
+		if(blurb_key)
+			if(!ignore_key && (M.key in GLOB.blurb_witnesses[blurb_key]))
+				continue
+			LAZYDISTINCTADD(GLOB.blurb_witnesses[blurb_key], M.key)
+		M.client?.screen += T
+
+	for(var/i in 1 to length(message) + 1)
+		if(i in linebreaks)
+			if(scroll_down)
+				T.maptext_y -= 14 //Move the object to keep lines in the same place.
+			continue
+		if(i in html_tags)
+			continue
+		T.maptext = "<span style=\"[style]\">[copytext(message,1,i)]</span>"
+		sleep(speed)
+
+	addtimer(CALLBACK(GLOBAL_PROC, /proc/fade_blurb, targets, T), duration)
+
+/proc/fade_blurb(list/mob/targets, obj/T)
+	animate(T, alpha = 0, time = 0.5 SECONDS)
+	sleep(5)
+	for(var/mob/M as anything in targets)
+		M.client?.screen -= T
 	qdel(T)
-
-/proc/show_global_blurb(duration, blurb_text, fade_time = 5) // Shows a blurb to every living player
-	for(var/mob/M in GLOB.player_list)
-		show_blurb(M.client, duration, blurb_text, fade_time)
 
 /proc/flash_color(mob_or_client, flash_color="#960000", flash_time=20)
 	var/client/C
@@ -1301,3 +1356,27 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 //datum may be null, but it does need to be a typed var
 #define NAMEOF(datum, X) (#X || ##datum.##X)
+
+/// Creates and sorts all the keybinding datums
+/proc/init_keybindings()
+	. = list()
+	for(var/KB in subtypesof(/datum/keybinding))
+		var/datum/keybinding/keybinding = KB
+		if(!initial(keybinding.name))
+			continue
+		add_keybinding(new keybinding, .)
+	//init_emote_keybinds()
+
+/// Adds an instanced keybinding to the global tracker
+/proc/add_keybinding(datum/keybinding/instance, var/list/to_add_to)
+	to_add_to[instance.name] = instance
+
+	// Classic
+	if(LAZYLEN(instance.classic_keys))
+		for(var/bound_key in instance.classic_keys)
+			LAZYADD(GLOB.classic_keybinding_list_by_key[bound_key], list(instance.name))
+
+	// Hotkey
+	if(LAZYLEN(instance.hotkey_keys))
+		for(var/bound_key in instance.hotkey_keys)
+			LAZYADD(GLOB.hotkey_keybinding_list_by_key[bound_key], list(instance.name))

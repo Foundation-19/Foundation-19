@@ -465,6 +465,10 @@
 	t = replacetext(t, "\[goc\]", "<img src = ungoc.png>")
 	t = replacetext(t, "\[uiu\]", "<img src = uiu.png>")
 	t = replacetext(t, "\[thi\]", "<img src = thi.png>")
+	t = replacetext(t, "\[ar\]", "<img src = ar.png>")
+	t = replacetext(t, "\[ci\]", "<img src = ci.png>")
+	t = replacetext(t, "\[sh\]", "<img src = sh.png>")
+	t = replacetext(t, "\[cotbg\]", "<img src = cotbg.png>")
 	return t
 
 //pencode translation to html for tags exclusive to digital files (currently email, nanoword, report editor fields,
@@ -668,3 +672,13 @@
 		return copytext(html_encode(user_input), 1, max_length)
 	else
 		return trim(html_encode(user_input), max_length)
+
+// Format a power value in W, kW, MW, or GW.
+/proc/DisplayPower(powerused)
+	if(powerused < 1000) //Less than a kW
+		return "[powerused] W"
+	else if(powerused < 1000000) //Less than a MW
+		return "[round((powerused * 0.001),0.01)] kW"
+	else if(powerused < 1000000000) //Less than a GW
+		return "[round((powerused * 0.000001),0.001)] MW"
+	return "[round((powerused * 0.000000001),0.0001)] GW"

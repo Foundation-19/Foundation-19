@@ -617,7 +617,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "abS" = (
-/obj/machinery/computer/modular/preset/aislot/research{
+/obj/item/modular_computer/console/preset/aislot/research{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -1744,7 +1744,7 @@
 "aeK" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Red Line";
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2","ACCESS_MEDICAL_LEVEL2"))
 	},
 /turf/simulated/floor/plating,
 /area/site53/tram/hcz)
@@ -4463,7 +4463,7 @@
 /obj/machinery/light/spot{
 	dir = 8
 	},
-/obj/machinery/computer/modular/preset/engineering{
+/obj/item/modular_computer/console/preset/engineering{
 	dir = 4
 	},
 /obj/structure/railing/mapped{
@@ -5742,7 +5742,7 @@
 /turf/simulated/floor/plating,
 /area/site53/engineering/primaryhallway)
 "aod" = (
-/obj/machinery/computer/modular/preset/engineering{
+/obj/item/modular_computer/console/preset/engineering{
 	dir = 8
 	},
 /obj/structure/railing/mapped{
@@ -18550,7 +18550,7 @@
 /turf/simulated/floor,
 /area/site53/surface/explorers/surrounding)
 "aSX" = (
-/obj/machinery/computer/modular/preset/aislot/sysadmin{
+/obj/item/modular_computer/console/preset/aislot/sysadmin{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -18596,10 +18596,6 @@
 /obj/machinery/door/airlock/science{
 	name = "SCP-173 Chamber";
 	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
-	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "173emerg"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
@@ -19449,10 +19445,6 @@
 	name = "SCP-173 Chamber";
 	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "173emerg"
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "aWi" = (
@@ -19729,7 +19721,7 @@
 /area/site53/llcz/scp131)
 "aWU" = (
 /obj/effect/paint_stripe/gray,
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/llcz/scp500)
 "aWV" = (
 /obj/structure/cable/green{
@@ -19847,7 +19839,7 @@
 	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-500";
-	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL5","ACCESS_SCIENCE_LEVEL5"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -24879,7 +24871,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
 "bOD" = (
-/obj/machinery/chemical_dispenser,
+/obj/machinery/chemical_dispenser/full,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
 "bON" = (
@@ -25650,7 +25642,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/surface/bunker)
 "dyu" = (
-/obj/machinery/computer/modular/preset/aislot/research,
+/obj/item/modular_computer/console/preset/aislot/research,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
 "dBn" = (
@@ -26253,7 +26245,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "fiJ" = (
-/obj/machinery/computer/modular/preset/cardslot/command{
+/obj/item/modular_computer/console/preset/cardslot/command{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/orange/border{
@@ -26751,7 +26743,7 @@
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "gyL" = (
-/obj/machinery/computer/modular/preset/aislot/research{
+/obj/item/modular_computer/console/preset/aislot/research{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/orange/border{
@@ -26813,7 +26805,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
 "gFo" = (
-/obj/machinery/computer/modular/preset/cardslot/command{
+/obj/item/modular_computer/console/preset/cardslot/command{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/orange/border{
@@ -26859,7 +26851,7 @@
 /turf/simulated/floor,
 /area/site53/surface/bunker)
 "gOz" = (
-/obj/machinery/computer/modular/preset/aislot/research{
+/obj/item/modular_computer/console/preset/aislot/research{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/orange/border{
@@ -28537,11 +28529,11 @@
 /obj/item/device/assembly/infra,
 /obj/item/device/assembly/infra,
 /obj/item/device/assembly/infra,
-/obj/item/device/assembly/signaler,
-/obj/item/device/assembly/signaler,
-/obj/item/device/assembly/signaler,
-/obj/item/device/assembly/signaler,
-/obj/item/device/assembly/signaler,
+/obj/item/device/assembly/signaller,
+/obj/item/device/assembly/signaller,
+/obj/item/device/assembly/signaller,
+/obj/item/device/assembly/signaller,
+/obj/item/device/assembly/signaller,
 /obj/structure/closet/crate,
 /obj/item/device/assembly/prox_sensor,
 /obj/item/device/assembly/prox_sensor,
@@ -29540,7 +29532,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/space)
 "mEC" = (
-/obj/machinery/computer/modular/preset/cardslot/command_sec{
+/obj/item/modular_computer/console/preset/cardslot/command_sec{
 	dir = 4
 	},
 /obj/machinery/camera/network/entrance{
@@ -30884,7 +30876,7 @@
 /turf/simulated/floor,
 /area/site53/llcz/scp066)
 "pXS" = (
-/obj/machinery/computer/modular/preset/security,
+/obj/item/modular_computer/console/preset/security,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "pXT" = (
@@ -31112,7 +31104,7 @@
 "qEi" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Red Line";
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2","ACCESS_MEDICAL_LEVEL2"))
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
@@ -31310,6 +31302,25 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
+"raM" = (
+/obj/item/device/assembly/infra,
+/obj/item/device/assembly/infra,
+/obj/item/device/assembly/infra,
+/obj/item/device/assembly/infra,
+/obj/item/device/assembly/infra,
+/obj/item/device/assembly/signaller,
+/obj/item/device/assembly/signaller,
+/obj/item/device/assembly/signaller,
+/obj/item/device/assembly/signaller,
+/obj/item/device/assembly/signaller,
+/obj/structure/closet/crate,
+/obj/item/device/assembly/prox_sensor,
+/obj/item/device/assembly/prox_sensor,
+/obj/item/device/assembly/prox_sensor,
+/obj/item/device/assembly/prox_sensor,
+/obj/item/device/assembly/prox_sensor,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp106observ)
 "raR" = (
 /obj/machinery/door/airlock/science{
 	name = "General Purpose Testing Chamber";
@@ -32143,7 +32154,6 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
-/obj/machinery/computer/modular/preset/security,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "tia" = (
@@ -32335,7 +32345,7 @@
 /turf/simulated/floor/reinforced,
 /area/site53/lowertrams/brownline)
 "tGe" = (
-/obj/machinery/computer/modular/preset/aislot/sysadmin{
+/obj/item/modular_computer/console/preset/aislot/sysadmin{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -32522,7 +32532,7 @@
 "ugg" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Red Line";
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2","ACCESS_MEDICAL_LEVEL2"))
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
@@ -33301,7 +33311,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
 "vPJ" = (
-/obj/machinery/computer/modular/preset/cardslot/command,
+/obj/item/modular_computer/console/preset/cardslot/command,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
 "vQk" = (
@@ -84806,7 +84816,7 @@ azA
 azA
 azA
 aPn
-ahS
+raM
 ahS
 arr
 bkL
