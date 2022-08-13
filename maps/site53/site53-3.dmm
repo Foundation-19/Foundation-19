@@ -233,8 +233,8 @@
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 6
 	},
-/turf/simulated/open,
-/area/site53/uez/bridge)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "aK" = (
 /obj/structure/monolith{
 	name = "SCP-1328-1-RU"
@@ -313,7 +313,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/surface/cryogenicsprimary)
 "aU" = (
 /obj/structure/cryofeed{
@@ -497,7 +497,7 @@
 	name = "Tram Hub"
 	},
 /obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/surface/cryogenicsprimary)
 "bt" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -2708,9 +2708,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
-"ih" = (
-/turf/simulated/floor/tiled,
-/area/site53/surface/cryogenicsprimary)
 "ii" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/ivbag/blood/OMinus,
@@ -3891,7 +3888,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/surface/cryogenicsprimary)
 "lg" = (
 /obj/structure/cable/green{
@@ -4804,7 +4801,8 @@
 /area/site53/surface/surface)
 "nR" = (
 /obj/machinery/door/airlock/multi_tile/glass/command{
-	name = "Administration Offices"
+	name = "Administration Offices";
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
@@ -5564,7 +5562,7 @@
 	name = "Tram Hub"
 	},
 /obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/surface/cryogenicsprimary)
 "qZ" = (
 /obj/structure/disposalpipe/segment,
@@ -6996,7 +6994,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/surface/cryogenicsprimary)
 "vq" = (
 /obj/structure/bed/chair{
@@ -7040,7 +7038,7 @@
 /area/site53/upper_surface/commstower)
 "vx" = (
 /obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/surface/cryogenicsprimary)
 "vy" = (
 /obj/effect/paint_stripe/white,
@@ -7590,6 +7588,9 @@
 "BQ" = (
 /obj/structure/table/standard,
 /obj/item/storage/firstaid/combat,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "BR" = (
@@ -8232,11 +8233,8 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_x = -30
-	},
-/turf/simulated/floor/tiled,
-/area/site53/uez/equipmentroom)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/armory)
 "Jy" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -8364,9 +8362,9 @@
 /area/site53/surface/surface)
 "Ln" = (
 /obj/machinery/camera/autoname{
-	c_tag = "Cryo";
 	dir = 8;
-	network = list("Entrance Zone Network 1")
+	network = list("Entrance Zone Network 1");
+	c_tag = "Cryo"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroomstairs)
@@ -9507,6 +9505,9 @@
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
+	},
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_x = 30
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
@@ -39468,9 +39469,9 @@ aj
 az
 af
 kC
-ih
-ih
-ih
+kC
+kC
+kC
 kC
 oU
 mj
@@ -40239,9 +40240,9 @@ aj
 az
 af
 AI
-ih
-ih
-ih
+kC
+kC
+kC
 kC
 oU
 Lf
