@@ -267,7 +267,7 @@
 	action_tag = "traitor_panel"
 
 /datum/player_action/traitor_panel/act(client/user, mob/target, list/params)
-	if(!target.client?.holder)
+	if(!user?.holder)
 		return
 
 	user.holder.show_traitor_panel(target)
