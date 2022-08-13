@@ -133,8 +133,8 @@ WARNING!*/
 	//Regular jobs
 	//Command (Blue)
 	jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-	jobs += "<tr align='center' bgcolor='ccccff'><th colspan='[length(SSjobs.titles_by_department(COM))]'><a href='?src=\ref[src];jobban1=commanddept;jobban2=\ref[M]'>Command Positions</a></th></tr><tr align='center'>"
-	for(var/jobPos in SSjobs.titles_by_department(COM))
+	jobs += "<tr align='center' bgcolor='ccccff'><th colspan='[length(SSjobs.distinct_titles_by_department(COM))]'><a href='?src=\ref[src];jobban1=commanddept;jobban2=\ref[M]'>Command Positions</a></th></tr><tr align='center'>"
+	for(var/jobPos in SSjobs.distinct_titles_by_department(COM))
 		if(!jobPos)	continue
 		var/datum/job/job = SSjobs.get_by_title(jobPos)
 		if(!job) continue
@@ -153,8 +153,8 @@ WARNING!*/
 
 	//Command Support (Sky Blue)
 	jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-	jobs += "<tr bgcolor='87ceeb'><th colspan='[length(SSjobs.titles_by_department(SPT))]'><a href='?src=\ref[src];jobban1=supportdept;jobban2=\ref[M]'>Command Support Positions</a></th></tr><tr align='center'>"
-	for(var/jobPos in SSjobs.titles_by_department(SPT))
+	jobs += "<tr bgcolor='87ceeb'><th colspan='[length(SSjobs.distinct_titles_by_department(SPT))]'><a href='?src=\ref[src];jobban1=supportdept;jobban2=\ref[M]'>Command Support Positions</a></th></tr><tr align='center'>"
+	for(var/jobPos in SSjobs.distinct_titles_by_department(SPT))
 		if(!jobPos)	continue
 		var/datum/job/job = SSjobs.get_by_title(jobPos)
 		if(!job) continue
@@ -174,8 +174,8 @@ WARNING!*/
 	//Security (Red)
 	counter = 0
 	jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-	jobs += "<tr bgcolor='ffddf0'><th colspan='[length(SSjobs.titles_by_department(SEC))]'><a href='?src=\ref[src];jobban1=securitydept;jobban2=\ref[M]'>Security Positions</a></th></tr><tr align='center'>"
-	for(var/jobPos in SSjobs.titles_by_department(SEC))
+	jobs += "<tr bgcolor='ffddf0'><th colspan='[length(SSjobs.distinct_titles_by_department(SEC))]'><a href='?src=\ref[src];jobban1=securitydept;jobban2=\ref[M]'>Security Positions</a></th></tr><tr align='center'>"
+	for(var/jobPos in SSjobs.distinct_titles_by_department(SEC))
 		if(!jobPos)	continue
 		var/datum/job/job = SSjobs.get_by_title(jobPos)
 		if(!job) continue
@@ -195,8 +195,8 @@ WARNING!*/
 	//Engineering (Yellow)
 	counter = 0
 	jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-	jobs += "<tr bgcolor='fff5cc'><th colspan='[length(SSjobs.titles_by_department(ENG))]'><a href='?src=\ref[src];jobban1=engineeringdept;jobban2=\ref[M]'>Engineering Positions</a></th></tr><tr align='center'>"
-	for(var/jobPos in SSjobs.titles_by_department(ENG))
+	jobs += "<tr bgcolor='fff5cc'><th colspan='[length(SSjobs.distinct_titles_by_department(ENG))]'><a href='?src=\ref[src];jobban1=engineeringdept;jobban2=\ref[M]'>Engineering Positions</a></th></tr><tr align='center'>"
+	for(var/jobPos in SSjobs.distinct_titles_by_department(ENG))
 		if(!jobPos)	continue
 		var/datum/job/job = SSjobs.get_by_title(jobPos)
 		if(!job) continue
@@ -216,8 +216,8 @@ WARNING!*/
 	//Medical (White)
 	counter = 0
 	jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-	jobs += "<tr bgcolor='ffeef0'><th colspan='[length(SSjobs.titles_by_department(MED))]'><a href='?src=\ref[src];jobban1=medicaldept;jobban2=\ref[M]'>Medical Positions</a></th></tr><tr align='center'>"
-	for(var/jobPos in SSjobs.titles_by_department(MED))
+	jobs += "<tr bgcolor='ffeef0'><th colspan='[length(SSjobs.distinct_titles_by_department(MED))]'><a href='?src=\ref[src];jobban1=medicaldept;jobban2=\ref[M]'>Medical Positions</a></th></tr><tr align='center'>"
+	for(var/jobPos in SSjobs.distinct_titles_by_department(MED))
 		if(!jobPos)	continue
 		var/datum/job/job = SSjobs.get_by_title(jobPos)
 		if(!job) continue
@@ -237,8 +237,8 @@ WARNING!*/
 	//Science (Purple)
 	counter = 0
 	jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-	jobs += "<tr bgcolor='e79fff'><th colspan='[length(SSjobs.titles_by_department(SCI))]'><a href='?src=\ref[src];jobban1=sciencedept;jobban2=\ref[M]'>Science Positions</a></th></tr><tr align='center'>"
-	for(var/jobPos in SSjobs.titles_by_department(SCI))
+	jobs += "<tr bgcolor='e79fff'><th colspan='[length(SSjobs.distinct_titles_by_department(SCI))]'><a href='?src=\ref[src];jobban1=sciencedept;jobban2=\ref[M]'>Science Positions</a></th></tr><tr align='center'>"
+	for(var/jobPos in SSjobs.distinct_titles_by_department(SCI))
 		if(!jobPos)	continue
 		var/datum/job/job = SSjobs.get_by_title(jobPos)
 		if(!job) continue
@@ -257,8 +257,8 @@ WARNING!*/
 
 	//Exploration (Pale Purple)
 	jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-	jobs += "<tr bgcolor='b784a7'><th colspan='[length(SSjobs.titles_by_department(EXP))]'><a href='?src=\ref[src];jobban1=explorationdept;jobban2=\ref[M]'>Exploration Positions</a></th></tr><tr align='center'>"
-	for(var/jobPos in SSjobs.titles_by_department(EXP))
+	jobs += "<tr bgcolor='b784a7'><th colspan='[length(SSjobs.distinct_titles_by_department(EXP))]'><a href='?src=\ref[src];jobban1=explorationdept;jobban2=\ref[M]'>Exploration Positions</a></th></tr><tr align='center'>"
+	for(var/jobPos in SSjobs.distinct_titles_by_department(EXP))
 		if(!jobPos)	continue
 		var/datum/job/job = SSjobs.get_by_title(jobPos)
 		if(!job) continue
@@ -277,8 +277,8 @@ WARNING!*/
 
 	//Service (Tea Green)
 	jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-	jobs += "<tr bgcolor='d0f0c0'><th colspan='[length(SSjobs.titles_by_department(SRV))]'><a href='?src=\ref[src];jobban1=servicedept;jobban2=\ref[M]'>Service Positions</a></th></tr><tr align='center'>"
-	for(var/jobPos in SSjobs.titles_by_department(SRV))
+	jobs += "<tr bgcolor='d0f0c0'><th colspan='[length(SSjobs.distinct_titles_by_department(SRV))]'><a href='?src=\ref[src];jobban1=servicedept;jobban2=\ref[M]'>Service Positions</a></th></tr><tr align='center'>"
+	for(var/jobPos in SSjobs.distinct_titles_by_department(SRV))
 		if(!jobPos)	continue
 		var/datum/job/job = SSjobs.get_by_title(jobPos)
 		if(!job) continue
@@ -298,8 +298,8 @@ WARNING!*/
 
 	//Supply (Khaki)
 	jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-	jobs += "<tr bgcolor='f0e68c'><th colspan='[length(SSjobs.titles_by_department(SUP))]'><a href='?src=\ref[src];jobban1=supplydept;jobban2=\ref[M]'>Supply Positions</a></th></tr><tr align='center'>"
-	for(var/jobPos in SSjobs.titles_by_department(SUP))
+	jobs += "<tr bgcolor='f0e68c'><th colspan='[length(SSjobs.distinct_titles_by_department(SUP))]'><a href='?src=\ref[src];jobban1=supplydept;jobban2=\ref[M]'>Supply Positions</a></th></tr><tr align='center'>"
+	for(var/jobPos in SSjobs.distinct_titles_by_department(SUP))
 		if(!jobPos)	continue
 		var/datum/job/job = SSjobs.get_by_title(jobPos)
 		if(!job) continue
@@ -319,8 +319,8 @@ WARNING!*/
 	//Civilian (Grey)
 	counter = 0
 	jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-	jobs += "<tr bgcolor='dddddd'><th colspan='[length(SSjobs.titles_by_department(CIV))]'><a href='?src=\ref[src];jobban1=civiliandept;jobban2=\ref[M]'>Civilian Positions</a></th></tr><tr align='center'>"
-	for(var/jobPos in SSjobs.titles_by_department(CIV))
+	jobs += "<tr bgcolor='dddddd'><th colspan='[length(SSjobs.distinct_titles_by_department(CIV))]'><a href='?src=\ref[src];jobban1=civiliandept;jobban2=\ref[M]'>Civilian Positions</a></th></tr><tr align='center'>"
+	for(var/jobPos in SSjobs.distinct_titles_by_department(CIV))
 		if(!jobPos)	continue
 		var/datum/job/job = SSjobs.get_by_title(jobPos)
 		if(!job) continue
@@ -346,8 +346,8 @@ WARNING!*/
 	//Non-Human (Green)
 	counter = 0
 	jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-	jobs += "<tr bgcolor='ccffcc'><th colspan='[length(SSjobs.titles_by_department(MSC))+1]'><a href='?src=\ref[src];jobban1=nonhumandept;jobban2=\ref[M]'>Non-human Positions</a></th></tr><tr align='center'>"
-	for(var/jobPos in SSjobs.titles_by_department(MSC))
+	jobs += "<tr bgcolor='ccffcc'><th colspan='[length(SSjobs.distinct_titles_by_department(MSC))+2]'><a href='?src=\ref[src];jobban1=nonhumandept;jobban2=\ref[M]'>Non-human Positions</a></th></tr><tr align='center'>"
+	for(var/jobPos in SSjobs.distinct_titles_by_department(MSC))
 		if(!jobPos)	continue
 		var/datum/job/job = SSjobs.get_by_title(jobPos)
 		if(!job) continue
@@ -397,7 +397,8 @@ WARNING!*/
 	jobs += "</tr></table>"
 	#undef ANTAG_COLUMNS
 
-	var/list/misc_roles = list("Dionaea", "Graffiti")
+	var/list/misc_roles = list("Dionaea", "Graffiti", "Safe SCP", "Non-Safe SCP")
+	counter = 0
 	//Other roles  (BLUE, because I have no idea what other color to make this)
 	jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
 	jobs += "<tr bgcolor='ccccff'><th colspan='[LAZYLEN(misc_roles)]'>Other Roles</th></tr><tr align='center'>"
@@ -406,6 +407,11 @@ WARNING!*/
 			jobs += "<td width='20%'><a href='?src=\ref[src];jobban1=[entry];jobban2=\ref[M]'><font color=red>[entry]</font></a></td>"
 		else
 			jobs += "<td width='20%'><a href='?src=\ref[src];jobban1=[entry];jobban2=\ref[M]'>[entry]</a></td>"
+
+		if(counter >= 5) //So things dont get squiiiiished!
+			jobs += "</tr><tr align='center'>"
+			counter = 0
+
 	jobs += "</tr></table>"
 
 	// Channels

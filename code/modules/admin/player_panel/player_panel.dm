@@ -1,6 +1,6 @@
 
 /datum/admins/proc/player_panel_new()//The new one
-	if (!usr.client.holder || !(usr.client.holder.rights & R_MOD))
+	if (!usr.client.holder || !(usr.client.holder.rights & R_INVESTIGATE))
 		return
 	var/dat = "<html>"
 
@@ -50,7 +50,7 @@
 					locked_tabs = new Array();
 				}
 
-				function expand(id,job,name,real_name,image,key,ip,ref) {
+				function expand(id,job,name,real_name,image,key,ip,antagonist,ref) {
 					clearAll();
 
 					var span = document.getElementById(id);
@@ -65,9 +65,11 @@
 					body += "<a href='?src=\ref[src];notes=show;mob="+ref+"'>N</a> - "
 					body += "<a href='?_src_=vars;Vars="+ref+"'>VV</a> - "
 					body += "<a href='?src=\ref[src];traitor="+ref+"'>TP</a> - "
-					body += "<a href='?src=\ref[usr];priv_msg="+key+"'>PM</a> - "
+					body += "<a href='?src=\ref[usr];priv_msg="+ref+"'>PM</a> - "
 					body += "<a href='?src=\ref[src];subtlemessage="+ref+"'>SM</a> - "
 					body += "<a href='?src=\ref[src];adminplayerobservejump="+ref+"'>JMP</a><br>"
+					if(antagonist > 0)
+						body += "<font size='2'><a href='?src=\ref[src];check_antagonist=1'><font color='red'><b>Antagonist</b></font></a></font>";
 					body += "</td></tr></table>";
 
 					span.innerHTML = body
@@ -190,6 +192,8 @@
 
 		var/color = i % 2 == 0 ? "#e6e6e6" : "#f2f2f2"
 
+		var/is_antagonist = is_special_character(M)
+
 		var/M_job = ""
 
 		if(isliving(M))
@@ -241,7 +245,7 @@
 				<td align='center' bgcolor='[color]'>
 					<span id='notice_span[i]'></span>
 					<a id='link[i]'
-					onmouseover='expand("item[i]","[M_job]","[M_name]","[M_rname]","--unused--","[M_key]","[M.lastKnownIP]","\ref[M]")'
+					onmouseover='expand("item[i]","[M_job]","[M_name]","[M_rname]","--unused--","[M_key]","[M.lastKnownIP]","[is_antagonist]","\ref[M]")'
 					>
 					<b><span  id='search[i]'>[M_name] - [M_rname] - [M_key] ([M_job])</span></b>
 					</a>
@@ -269,7 +273,7 @@
 
 //Extended panel with ban related things
 /datum/admins/proc/player_panel_extended()
-	if (!usr.client.holder || !(usr.client.holder.rights & R_MOD))
+	if (!usr.client.holder || !(usr.client.holder.rights & R_INVESTIGATE))
 		return
 
 	var/dat = "<html>"
@@ -282,7 +286,7 @@
 		if(!M.ckey) continue
 
 		dat += "<tr><td>[(M.client ? "[M.client]" : "No client")]</td>"
-		dat += "<td><a href='?src=\ref[usr];priv_msg=[M.ckey]'>[M.name]</a></td>"
+		dat += "<td><a href='?src=\ref[usr];priv_msg=\ref[M]'>[M.name]</a></td>"
 		if(isAI(M))
 			dat += "<td>AI</td>"
 		else if(isrobot(M))
@@ -311,26 +315,30 @@
 
 /datum/admins/proc/check_antagonists()
 	if(GAME_STATE < RUNLEVEL_GAME)
-		alert("The game hasn't started yet!")
+		tgui_alert("The game hasn't started yet!")
 		return
 
-	var/dat = "<html><body><h1><B>Antagonists</B></h1>"
+	var/dat = list()
+	dat += "<html><head><title>Round Status</title></head><body><h1><B>Round Status</B></h1>"
 	dat += "Current Game Mode: <B>[SSticker.mode.name]</B><BR>"
-	dat += "Round Duration: <B>[round(world.time / 36000)]:[add_zero(world.time / 600 % 60, 2)]:[world.time / 100 % 6][world.time / 100 % 10]</B><BR>"
+	dat += "Round Duration: <B>[DisplayTimeText(world.time - SSticker.round_start_time)]</B><BR>"
+	dat += "<B>Evacuation</B><BR>"
+	if (evacuation_controller.is_idle())
+		dat += "<a href='?src=\ref[src];call_shuttle=1'>Call Evacuation</a><br>"
+	else
+		var/timeleft = evacuation_controller.get_eta()
+		if (evacuation_controller.waiting_to_leave())
+			dat += "ETA: [(timeleft / 60) % 60]:[add_zero(num2text(timeleft % 60), 2)]<BR>"
+			dat += "<a href='?src=\ref[src];call_shuttle=2'>Send Back</a><br>"
 
-	if(length(GLOB.SCP_list))
-		dat += "<br><table cellspacing=5><tr><td><B>SCPs</B></td><td></td><td></td></tr>"
-		for(var/mob/living/L as anything in GLOB.SCP_list)
-			var/location = get_area(L.loc)
-			dat += "<tr><td><A href='?src=\ref[usr];priv_msg=[L.ckey]'>[L.real_name]</a>[L.client ? "" : " <i>(logged out)</i>"][L.stat == DEAD ? " <b><font color=red>(DEAD)</font></b>" : ""]</td>"
-			dat += "<td>[location]</td>"
-			dat += "<td>[L.faction]</td>"
-			dat += "<td><a href='?src=\ref[usr];track=\ref[L]'>F</a></td>"
-			dat += "<td><a href='?src=\ref[src];adminplayeropts=\ref[L]'>PP</a></td>"
-		dat += "</table>"
-
+	dat += "<a href='?src=\ref[src];delay_round_end=1'>[SSticker.delay_end ? "End Round Normally" : "Delay Round End"]</a><br>"
+	dat += "<hr>"
+	var/list/all_antag_types = GLOB.all_antag_types_
+	for(var/antag_type in all_antag_types)
+		var/datum/antagonist/A = all_antag_types[antag_type]
+		dat += A.get_check_antag_output(src)
 	dat += "</body></html>"
-	show_browser(usr, dat, "window=antagonists;size=600x500")
+	show_browser(usr, jointext(dat,null), "window=roundstatus;size=400x500")
 
 /datum/admins/proc/check_round_status()
 	if(GAME_STATE >= RUNLEVEL_GAME)
@@ -341,7 +349,7 @@
 		if(check_rights(R_DEBUG, 0))
 			dat += "<br><A HREF='?_src_=vars;Vars=\ref[evacuation_controller]'>VV Evacuation Controller</A><br>"
 
-		if(check_rights(R_MOD, 0))
+		if(check_rights(R_INVESTIGATE, 0))
 			dat += "<b>Evacuation:</b> "
 			switch(evacuation_controller.state)
 				if(EVAC_IDLE)
@@ -388,7 +396,7 @@
 				[M.is_dead() ? " <b><font color='red'>(DEAD)</font></b>" : ""]
 			</td>
 			<td>
-				<a href='?src=\ref[usr];priv_msg=[M.ckey]'>PM</a>
+				<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a>
 			</td>
 	"}
 

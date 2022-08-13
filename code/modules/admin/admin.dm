@@ -1367,3 +1367,64 @@ var/global/floorIsLava = 0
 		qdel(P)
 		faxreply = null
 	return
+
+/datum/admins/proc/shutdown_server()
+	set category = "Server"
+	set name = "Shutdown Server"
+	set desc = "Shuts the server down."
+
+	var/static/client/shuttingdown
+
+	if(!(check_rights(R_ADMIN) && check_rights(R_DEBUG) && check_rights(R_SERVER)))
+		return
+
+	if(shuttingdown)
+		if(alert("Are you use you want to cancel the shutdown initiated by [shuttingdown.key]?", "Cancel the shutdown?", "No", "Yes") != "Yes")
+			return
+		message_admins("[key_name_admin(usr)] cancelled the server shutdown, started by [key_name_admin(shuttingdown)] .")
+		shuttingdown = FALSE
+		return
+
+	if(alert("Are you sure you want to shutdown the server? Only somebody with remote access to the server can turn it back on.", "Shutdown Server?", "Cancel", "Shutdown Server") != "Shutdown Server")
+		return
+
+	if(GAME_STATE == RUNLEVEL_GAME)
+		to_chat(usr, SPAN_DANGER("The server must be in either pre-game and the start must be delayed or already started with the end delayed to shutdown the server."))
+		return
+
+	if((GAME_STATE == RUNLEVEL_LOBBY && SSticker.round_start_time > 0) || (GAME_STATE == RUNLEVEL_POSTGAME && !SSticker.delay_end))
+		to_chat(usr, SPAN_DANGER("The round start/end is not delayed."))
+		return
+
+	to_chat(usr, SPAN_DANGER("Alert: Delayed confirmation required. You will be asked to confirm again in 30 seconds."))
+	log_and_message_admins("[key_name_admin(usr.client)] initiated the shutdown process.")
+	message_admins("You may abort this by pressing the shutdown server button again.")
+	shuttingdown = usr.client
+
+	sleep(30 SECONDS)
+
+	if(!shuttingdown || shuttingdown != usr?.client)
+		return
+
+	if(alert("ARE YOU REALLY SURE YOU WANT TO SHUTDOWN THE SERVER? ONLY SOMEBODY WITH REMOTE ACCESS TO THE SERVER CAN TURN IT BACK ON.", "Shutdown Server?", "Cancel", "Shutdown Server") != "Shutdown Server")
+		log_and_message_admins("[key_name_admin(shuttingdown)] decided against shutting down the server.")
+		shuttingdown = null
+		return
+
+	to_world("[SPAN_DANGER("Server shutting down in 30 seconds!")] [SPAN_NOTICE("Initiated by [shuttingdown.key]!")]")
+	message_admins("[key_name_admin(shuttingdown)] is shutting down the server. You may abort this by pressing the shutdown server button again within 30 seconds.")
+
+	sleep(30 SECONDS)
+
+	if(!shuttingdown)
+		to_world(SPAN_NOTICE("Server shutdown was aborted"))
+		return
+
+	if(shuttingdown != usr?.client)
+		return
+
+	to_world("[SPAN_DANGER("Shutting down server!")] [SPAN_NOTICE("Initiated by [shuttingdown.key]!")]")
+	log_admin("Server shutting down. Initiated by: [shuttingdown]")
+
+	sleep(world.tick_lag)
+	shutdown()
