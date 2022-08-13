@@ -277,7 +277,9 @@
 	if (!usr.client.holder || !(usr.client.holder.rights & R_INVESTIGATE))
 		return
 
-	var/dat = "<html>"
+	var/dat = {"<html>
+	<meta charset="UTF-8">
+	"}
 	dat += "<body><table border=1 cellspacing=5><B><tr><th>Key</th><th>Name</th><th>Real Name</th><th>PP</th><th>CID</th><th>IP</th><th>JMP</th><th>Notes</th></tr></B>"
 	//add <th>IP:</th> to this if wanting to add back in IP checking
 	//add <td>(IP: [M.lastKnownIP])</td> if you want to know their ip to the lists below
