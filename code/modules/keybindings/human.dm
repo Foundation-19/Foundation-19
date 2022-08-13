@@ -16,7 +16,7 @@
 	return TRUE
 
 /datum/keybinding/human/holster
-	hotkey_keys = list("J")
+	hotkey_keys = list("H")
 	name = "holster"
 	full_name = "Holster"
 	description = "Draw or holster weapon"

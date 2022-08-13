@@ -108,7 +108,7 @@
 	return TRUE
 
 /datum/keybinding/mob/stop_pulling
-	hotkey_keys = list("H")
+	hotkey_keys = list("C")
 	name = "stop_pull"
 	full_name = "Stop pulling"
 	description = "Stops pulling whatever object you have"
@@ -133,7 +133,7 @@
 	return TRUE
 
 /datum/keybinding/mob/move_up
-	hotkey_keys = list(",")
+	hotkey_keys = list("0")
 	name = "move_up"
 	full_name = "Move Up"
 	description = "Makes you go up"
@@ -143,7 +143,7 @@
 	M.move_up()
 
 /datum/keybinding/mob/move_down
-	hotkey_keys = list(".")
+	hotkey_keys = list("9")
 	name = "move_down"
 	full_name = "Move Down"
 	description = "Makes you go down"
