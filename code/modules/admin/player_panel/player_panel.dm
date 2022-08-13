@@ -1,6 +1,6 @@
 
 /datum/admins/proc/player_panel_new()//The new one
-	if (!usr.client.holder || !(usr.client.holder.rights & R_MOD))
+	if (!usr.client.holder || !(usr.client.holder.rights & R_INVESTIGATE))
 		return
 	var/dat = "<html>"
 
@@ -65,7 +65,7 @@
 					body += "<a href='?src=\ref[src];notes=show;mob="+ref+"'>N</a> - "
 					body += "<a href='?_src_=vars;Vars="+ref+"'>VV</a> - "
 					body += "<a href='?src=\ref[src];traitor="+ref+"'>TP</a> - "
-					body += "<a href='?src=\ref[usr];priv_msg="+key+"'>PM</a> - "
+					body += "<a href='?src=\ref[usr];priv_msg="+ref+"'>PM</a> - "
 					body += "<a href='?src=\ref[src];subtlemessage="+ref+"'>SM</a> - "
 					body += "<a href='?src=\ref[src];adminplayerobservejump="+ref+"'>JMP</a><br>"
 					body += "</td></tr></table>";
@@ -269,7 +269,7 @@
 
 //Extended panel with ban related things
 /datum/admins/proc/player_panel_extended()
-	if (!usr.client.holder || !(usr.client.holder.rights & R_MOD))
+	if (!usr.client.holder || !(usr.client.holder.rights & R_INVESTIGATE))
 		return
 
 	var/dat = "<html>"
@@ -282,7 +282,7 @@
 		if(!M.ckey) continue
 
 		dat += "<tr><td>[(M.client ? "[M.client]" : "No client")]</td>"
-		dat += "<td><a href='?src=\ref[usr];priv_msg=[M.ckey]'>[M.name]</a></td>"
+		dat += "<td><a href='?src=\ref[usr];priv_msg=\ref[M]'>[M.name]</a></td>"
 		if(isAI(M))
 			dat += "<td>AI</td>"
 		else if(isrobot(M))
@@ -322,7 +322,7 @@
 		dat += "<br><table cellspacing=5><tr><td><B>SCPs</B></td><td></td><td></td></tr>"
 		for(var/mob/living/L as anything in GLOB.SCP_list)
 			var/location = get_area(L.loc)
-			dat += "<tr><td><A href='?src=\ref[usr];priv_msg=[L.ckey]'>[L.real_name]</a>[L.client ? "" : " <i>(logged out)</i>"][L.stat == DEAD ? " <b><font color=red>(DEAD)</font></b>" : ""]</td>"
+			dat += "<tr><td><A href='?src=\ref[usr];priv_msg=\ref[L]'>[L.real_name]</a>[L.client ? "" : " <i>(logged out)</i>"][L.stat == DEAD ? " <b><font color=red>(DEAD)</font></b>" : ""]</td>"
 			dat += "<td>[location]</td>"
 			dat += "<td>[L.faction]</td>"
 			dat += "<td><a href='?src=\ref[usr];track=\ref[L]'>F</a></td>"
@@ -341,7 +341,7 @@
 		if(check_rights(R_DEBUG, 0))
 			dat += "<br><A HREF='?_src_=vars;Vars=\ref[evacuation_controller]'>VV Evacuation Controller</A><br>"
 
-		if(check_rights(R_MOD, 0))
+		if(check_rights(R_INVESTIGATE, 0))
 			dat += "<b>Evacuation:</b> "
 			switch(evacuation_controller.state)
 				if(EVAC_IDLE)
@@ -388,7 +388,7 @@
 				[M.is_dead() ? " <b><font color='red'>(DEAD)</font></b>" : ""]
 			</td>
 			<td>
-				<a href='?src=\ref[usr];priv_msg=[M.ckey]'>PM</a>
+				<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a>
 			</td>
 	"}
 

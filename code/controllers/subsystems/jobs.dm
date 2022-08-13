@@ -16,14 +16,16 @@ SUBSYSTEM_DEF(jobs)
 	init_order = SS_INIT_JOBS
 	flags = SS_NO_FIRE
 
-	var/list/archetype_job_datums =    list()
-	var/list/job_lists_by_map_name =   list()
-	var/list/titles_to_datums =        list()
-	var/list/types_to_datums =         list()
-	var/list/primary_job_datums =      list()
-	var/list/unassigned_roundstart =   list()
+	var/list/archetype_job_datums = list()
+	var/list/job_lists_by_map_name = list()
+	var/list/titles_to_datums = list()
+	var/list/distinct_job_titles = list()
+	var/list/types_to_datums = list()
+	var/list/primary_job_datums = list()
+	var/list/unassigned_roundstart = list()
 	var/list/positions_by_department = list()
-	var/list/job_icons =               list()
+	var/list/distinct_department_positions = list()
+	var/list/job_icons = list()
 
 /datum/controller/subsystem/jobs/Initialize(timeofday)
 
@@ -77,18 +79,22 @@ SUBSYSTEM_DEF(jobs)
 	// Update valid job titles.
 	titles_to_datums = list()
 	types_to_datums = list()
+	distinct_job_titles = list()
 	positions_by_department = list()
+	distinct_department_positions = list()
 	for(var/map_name in job_lists_by_map_name)
 		var/list/map_data = job_lists_by_map_name[map_name]
 		for(var/datum/job/job in map_data["jobs"])
 			types_to_datums[job.type] = job
 			titles_to_datums[job.title] = job
+			distinct_job_titles[job.title] = job
 			for(var/alt_title in job.alt_titles)
 				titles_to_datums[alt_title] = job
 			if(job.department_flag)
 				for (var/I in 1 to GLOB.bitflags.len)
 					if(job.department_flag & GLOB.bitflags[I])
 						LAZYDISTINCTADD(positions_by_department["[GLOB.bitflags[I]]"], job.title)
+						LAZYDISTINCTADD(distinct_department_positions["[GLOB.bitflags[I]]"], job.title)
 						if (length(job.alt_titles))
 							LAZYDISTINCTADD(positions_by_department["[GLOB.bitflags[I]]"], job.alt_titles)
 
@@ -557,8 +563,11 @@ SUBSYSTEM_DEF(jobs)
 
 	return H
 
-/datum/controller/subsystem/jobs/proc/titles_by_department(var/dept)
+/datum/controller/subsystem/jobs/proc/titles_by_department(dept)
 	return positions_by_department["[dept]"] || list()
+
+/datum/controller/subsystem/jobs/proc/distinct_titles_by_department(dept)
+	return distinct_department_positions["[dept]"] || list()
 
 /datum/controller/subsystem/jobs/proc/spawn_empty_ai()
 	for(var/obj/effect/landmark/start/S in landmarks_list)
