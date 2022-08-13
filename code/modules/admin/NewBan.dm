@@ -170,7 +170,7 @@ var/savefile/Banlist
 
 /datum/admins/proc/unbanpanel()
 	var/count = 0
-	var/dat
+	var/dat = {"<meta charset="UTF-8">"}
 	//var/dat = "<HR><B>Unban Player:</B> <span class='notice'>(U) = Unban , (E) = Edit Ban</span> <span class='good'>(Total<HR><table border=1 rules=all frame=void cellspacing=0 cellpadding=3 ></span>"
 	Banlist.cd = "/base"
 	for (var/A in Banlist.dir)

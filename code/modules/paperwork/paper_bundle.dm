@@ -103,7 +103,7 @@
 		to_chat(user, "<span class='notice'>It is too far away.</span>")
 
 /obj/item/paper_bundle/proc/show_content(mob/user as mob)
-	var/dat
+	var/dat = {"<html><meta charset="UTF-8">"}
 	var/obj/item/W = pages[page]
 
 	// first

@@ -263,7 +263,7 @@
 		if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
 			to_chat(src, "No FBP without whitelist.")
 			spawning = FALSE
-			return	
+			return
 	close_spawn_windows()
 
 	var/mob/living/carbon/human/new_character
@@ -322,7 +322,7 @@
 	return new_character
 
 /mob/new_player/proc/ViewManifest()
-	var/dat = "<div align='center'>"
+	var/dat = {"<meta charset="UTF-8"><div align='center'>"}
 	dat += html_crew_manifest(OOC = 1)
 	//show_browser(src, dat, "window=manifest;size=370x420;can_close=1")
 	var/datum/browser/popup = new(src, "Crew Manifest", "Crew Manifest", 370, 420, src)

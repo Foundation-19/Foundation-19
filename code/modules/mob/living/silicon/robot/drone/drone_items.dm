@@ -446,5 +446,5 @@
 			window += "<br><b>Depleted Resource</b>"
 		else
 			window += "<br>[module.emag]: [activated(module.emag) ? "<b>Activated</b>" : "<a href='?src=\ref[src];act=\ref[module.emag]'>Activate</a>"]"
-	window = strip_improper("<head><title>Drone modules</title></head><tt>[JOINTEXT(window)]</tt>")
+	window = strip_improper({"<meta charset="UTF-8"><head><title>Drone modules</title></head><tt>[JOINTEXT(window)]</tt>"})
 	show_browser(src, window, "window=robotmod")

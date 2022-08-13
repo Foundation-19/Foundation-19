@@ -128,6 +128,7 @@ var/global/floorIsLava = 0
 
 	var/html = {"
 		<html>
+		<meta charset="UTF-8">
 		<head>
 			<title>Info on [key]</title>
 			<script src='player_info.js'></script>
@@ -412,7 +413,7 @@ var/global/floorIsLava = 0
 /datum/admins/proc/Jobbans()
 	if(!check_rights(R_BAN))	return
 
-	var/dat = "<B>Job Bans!</B><HR><table>"
+	var/dat = {"<meta charset="UTF-8"><B>Job Bans!</B><HR><table>"}
 	for(var/t in jobban_keylist)
 		var/r = t
 		if( findtext(r,"##") )
@@ -424,7 +425,7 @@ var/global/floorIsLava = 0
 /datum/admins/proc/Game()
 	if(!check_rights(0))	return
 
-	var/dat = {"
+	var/dat = {"<meta charset="UTF-8">
 		<center><B>Game Panel</B></center><hr>\n
 		<A href='?src=\ref[src];c_mode=1'>Change Game Mode</A><br>
 		"}

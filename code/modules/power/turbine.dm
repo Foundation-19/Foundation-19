@@ -218,7 +218,7 @@
 
 /obj/machinery/computer/turbine_computer/interact(var/mob/user)
 	user.machine = src
-	var/dat
+	var/dat = {"<meta charset="UTF-8">"}
 	if(src.compressor)
 		dat += {"<BR><B>Gas turbine remote control system</B><HR>
 		\nTurbine status: [ src.compressor.starter ? "<A href='?src=\ref[src];str=1'>Off</A> <B>On</B>" : "<B>Off</B> <A href='?src=\ref[src];str=1'>On</A>"]

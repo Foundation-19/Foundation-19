@@ -52,7 +52,7 @@
 
 	updatemodules()
 
-	var/dat = "<h3>Generator Control System</h3>"
+	var/dat = {"<meta charset="UTF-8"><h3>Generator Control System</h3>"}
 	//dat += "<font size=-1><a href='byond://?src=\ref[src];refresh=1'>Refresh</a></font>"
 	if(gravity_generator)
 		if(gravity_generator.on)

@@ -76,7 +76,7 @@
 	set category = "Debug"
 	set name = "Radio report"
 
-	var/output = "<b>Radio Report</b><hr>"
+	var/output = {"<meta charset="UTF-8"><b>Radio Report</b><hr>"}
 	for (var/fq in radio_controller.frequencies)
 		output += "<b>Freq: [fq]</b><br>"
 		var/datum/radio_frequency/fqs = radio_controller.frequencies[fq]

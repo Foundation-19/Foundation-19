@@ -267,7 +267,7 @@ var/const/NO_EMAG_ACT = -50
 		id_card.military_rank = char_rank
 
 /obj/item/card/id/proc/dat()
-	var/list/dat = list("<table><tr><td>")
+	var/list/dat = list({"<meta charset="UTF-8"><table><tr><td>"})
 	dat += text("Name: []</A><BR>", "[formal_name_prefix][registered_name][formal_name_suffix]")
 	dat += text("Sex: []</A><BR>\n", sex)
 	dat += text("Age: []</A><BR>\n", age)

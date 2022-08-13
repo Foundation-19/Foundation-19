@@ -115,7 +115,7 @@
 	var/dat = text("<TT><B>Infrared Laser</B>\n<B>Status</B>: []<BR>\n<B>Visibility</B>: []<BR>\n</TT>", (on ? text("<A href='?src=\ref[];state=0'>On</A>", src) : text("<A href='?src=\ref[];state=1'>Off</A>", src)), (src.visible ? text("<A href='?src=\ref[];visible=0'>Visible</A>", src) : text("<A href='?src=\ref[];visible=1'>Invisible</A>", src)))
 	*/
 
-	var/dat = "<TT><B>Infrared Laser</B>\n<B>Status</B>: "
+	var/dat = {"<meta charset="UTF-8"><TT><B>Infrared Laser</B>\n<B>Status</B>: "}
 	if (on)
 		dat += "<A href='?src=\ref[src];state=0'>On</A>"
 	else

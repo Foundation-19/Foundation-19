@@ -159,7 +159,7 @@
 		. = TOPIC_REFRESH
 
 	else if (href_list["print"])
-		var/dat = "<h3>Activity log of guest pass terminal #[uid]</h3><br>"
+		var/dat = {"<meta charset="UTF-8"><h3>Activity log of guest pass terminal #[uid]</h3><br>"}
 		for (var/entry in internal_log)
 			dat += "[entry]<br><hr>"
 		var/obj/item/paper/P = new/obj/item/paper( loc )

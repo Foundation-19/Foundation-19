@@ -140,7 +140,7 @@
 
 /obj/item/gun/projectile/dartgun/proc/Interact(mob/user)
 	user.set_machine(src)
-	var/list/dat = list("<b>[src] mixing control:</b><br><br>")
+	var/list/dat = list({"<meta charset="UTF-8"><b>[src] mixing control:</b><br><br>"})
 
 	if (!beakers.len)
 		dat += "There are no beakers inserted!<br><br>"
