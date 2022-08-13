@@ -32318,7 +32318,7 @@
 	},
 /obj/machinery/camera/motion{
 	network = list("Entrance Zone Network");
-	c_tag = "AIC Observation 25";
+	c_tag = "AIC Observation 26";
 	pixel_x = 10
 	},
 /turf/simulated/open,
