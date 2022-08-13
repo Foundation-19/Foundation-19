@@ -22,7 +22,7 @@
 		"ungoc.png" = 'html/images/ungoc.png',
 		"uiu.png" = 'html/images/uiu.png',
 		"thi.png" = 'thi.png',
-		"mcd.png" = 'mcd4.png'
+		"mcd.png" = 'mcd4.png',
 		"sh.png" = 'html/images/sh.png',
 		"ci.png" = 'html/images/ci.png',
 		"cotbg.png" = 'html/images/cotbg.png',
