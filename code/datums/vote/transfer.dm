@@ -48,7 +48,7 @@
 
 /datum/vote/transfer/get_vote_result(list/non_voters)
 	if(config.vote_no_default)
-		return
+		choices[CHOICE_EXTEND] += length(non_voters)
 	var/factor = 0.5
 	switch(world.time / (1 MINUTE))
 		if(0 to 60)
