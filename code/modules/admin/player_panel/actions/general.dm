@@ -261,3 +261,14 @@
 	popup.set_content(JOINTEXT(dat))
 	popup.open()
 	return TRUE
+
+/datum/player_action/traitor_panel
+	name = "Traitor Panel"
+	action_tag = "traitor_panel"
+
+/datum/player_action/traitor_panel/act(client/user, mob/target, list/params)
+	if(!user?.holder)
+		return
+
+	user.holder.show_traitor_panel(target)
+	return TRUE
