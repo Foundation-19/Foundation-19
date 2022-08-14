@@ -1,6 +1,8 @@
 import { useBackend, useLocalState } from '../backend';
-import { Input, Button, Stack, Section, Tabs, Box, Slider } from '../components';
+import { Input, Button, Stack, Section, Tabs, Box, Slider, Divider } from '../components';
+import { Fragment } from 'inferno';
 import { Window } from '../layouts';
+import { round } from '../../common/math';
 
 const PAGES = [
   {
@@ -51,6 +53,15 @@ const PAGES = [
       return hasPermission(data, "toggle_language");
     },
   },
+  {
+    title: 'DNA',
+    component: () => DNAActions,
+    color: "blue",
+    icon: "exchange-alt",
+    canAccess: data => {
+      return hasPermission(data, "dna_switch");
+    },
+  },
 ];
 
 const hasPermission = (data, action) => {
@@ -65,7 +76,7 @@ export const PlayerPanel = (props, context) => {
   const [pageIndex, setPageIndex] = useLocalState(context, 'pageIndex', 0);
   const [canModifyCkey, setModifyCkey] = useLocalState(context, 'canModifyCkey', false);
   const PageComponent = PAGES[pageIndex].component();
-  const { mob_name, mob_type, client_key, client_ckey, client_rank } = data;
+  const { mob_name, mob_type, mob_key, mob_ckey, client_rank, has_client, inactivity_time } = data;
 
   return (
     <Window
@@ -99,14 +110,14 @@ export const PlayerPanel = (props, context) => {
           <Stack mt={1}>
             <Stack.Item width="80px" color="label">Client:</Stack.Item>
             <Stack.Item grow={1} align="left">
-              {((canModifyCkey || !client_key) && hasPermission(data, "set_ckey")) && (
+              {((canModifyCkey || !mob_key) && hasPermission(data, "set_ckey")) && (
                 <Input
-                  value={client_ckey}
+                  value={mob_ckey}
                   onChange={(e, value) => act("set_ckey", { ckey: value })}
                 />
-              ) || (<Box inline>{client_key}</Box>) }
+              ) || (<Box inline>{mob_key}</Box>) }
             </Stack.Item>
-            {!!client_ckey && (
+            {!!mob_ckey && (
               <Stack.Item align="right">
                 { !!hasPermission(data, "set_name") && (
                   <Button
@@ -117,22 +128,36 @@ export const PlayerPanel = (props, context) => {
                     color={canModifyCkey? "average" : "good"}
                   />
                 )}
-                <Button
-                  ml={1}
-                  icon="comment-dots"
-                  disabled={!hasPermission(data, "private_message")}
-                  onClick={() => act("private_message")}
-                  content="Private Message"
-                />
-                <Button
-                  ml={1}
-                  icon="phone-alt"
-                  disabled={!hasPermission(data, "narrate_message")}
-                  onClick={() => act("narrate_message")}
-                  content="Narrate Message"
-                />
+                {has_client && (
+                  <Fragment>
+                    <Button
+                      ml={1}
+                      icon="comment-dots"
+                      disabled={!hasPermission(data, "private_message")}
+                      onClick={() => act("private_message")}
+                      content="Private Message"
+                    />
+                    <Button
+                      ml={1}
+                      icon="phone-alt"
+                      disabled={!hasPermission(data, "narrate_message")}
+                      onClick={() => act("narrate_message")}
+                      content="Narrate Message"
+                    />
+                  </Fragment>
+                )}
               </Stack.Item>
             )}
+          </Stack>
+          <Stack mt={1}>
+            <Stack.Item width="80px" color="label">Inactivity time:</Stack.Item>
+            <Stack.Item grow={1} align="left">
+              {has_client ? (
+                <Box>{round(inactivity_time/600, 1)} minutes</Box>
+              ) : (
+                <Box>Logged Out</Box>
+              )}
+            </Stack.Item>
           </Stack>
           {client_rank && (
             <Stack mt={1}>
@@ -252,6 +277,13 @@ const GeneralActions = (props, context) => {
             content="Follow"
             disabled={!hasPermission(data, "jump_to")}
             onClick={() => act("mob_follow")}
+          />
+          <Button.Confirm
+            width="100%"
+            icon="transporter"
+            content="Send To"
+            disabled={!hasPermission(data, "send_to")}
+            onClick={() => act("send_to")}
           />
           <Button
             width="100%"
@@ -673,6 +705,38 @@ const LanguageActions = (props, context) => {
               {language}
             </Button.Checkbox>
           </Stack.Item>
+        ))}
+      </Stack>
+    </Section>
+  );
+};
+
+const DNAActions = (props, context) => {
+  const { act, data } = useBackend(context);
+  const { glob_dna_blocks, dna_blocks } = data;
+  return (
+    <Section fill>
+      <Stack vertical justify="space-evenly">
+        <Stack fill>
+          <Stack.Item grow={0.25}>Block Number</Stack.Item>
+          <Stack.Item grow>| Block Name</Stack.Item>
+        </Stack>
+        <Divider />
+        {glob_dna_blocks.map((dna, i) => (
+          <Stack fill key={dna}>
+            {dna && (
+              <Fragment>
+                <Stack.Item grow={0.25}>{i+1}</Stack.Item>
+                <Stack.Item grow>
+                  | <Button.Checkbox
+                      checked={dna_blocks[i]}
+                      onClick={() => act("dna_switch", { "block_to_toggle": i+1 })}>
+                        {dna}
+                    </Button.Checkbox>
+                </Stack.Item>
+              </Fragment>
+            )}
+          </Stack>
         ))}
       </Stack>
     </Section>

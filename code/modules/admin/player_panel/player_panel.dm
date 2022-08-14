@@ -433,7 +433,6 @@
 	if (!ui)
 		ui = new(user, src, "PlayerPanel", "[targetMob.name] Player Panel")
 		ui.open()
-		ui.set_autoupdate(FALSE)
 
 // Player panel
 /datum/player_panel/tgui_data(mob/user)
@@ -451,15 +450,22 @@
 
 	.["current_permissions"] = user.client?.holder?.rights
 
+	if(iscarbon(targetMob))
+		if(targetMob.dna)
+			//We need to set list len here
+			var/list/dna_blocks[DNA_SE_LENGTH]
+			.["dna_blocks"] = dna_blocks
+			for(var/block = 1 to DNA_SE_LENGTH)
+				dna_blocks[block] = targetMob.dna.GetSEState(block)
+
+	.["mob_key"] = targetMob.key
+	.["mob_ckey"] = targetMob.ckey
+
 	if(targetMob.client)
-		var/client/targetClient = targetMob.client
-
-		.["client_key"] = targetClient.key
-		.["client_ckey"] = targetClient.ckey
-
-		.["client_muted"] = targetClient.prefs.muted
-		.["client_rank"] = targetClient.holder ? targetClient.holder.rank : "Player"
-		.["client_muted"] = targetClient.prefs.muted
+		.["has_client"] = TRUE
+		.["inactivity_time"] = targetMob.client.inactivity
+		.["client_rank"] = targetMob.client.holder ? targetMob.client.holder.rank : "Player"
+		.["client_muted"] = targetMob.client.prefs.muted
 
 /datum/player_panel/tgui_state(mob/user)
 	return GLOB.admin_tgui_state
@@ -468,9 +474,12 @@ GLOBAL_LIST_INIT(mute_bits, list(
 	list(name = "IC", bitflag = MUTE_IC),
 	list(name = "OOC", bitflag = MUTE_OOC),
 	list(name = "Pray", bitflag = MUTE_PRAY),
-	list(name = "Adminhelp", bitflag = MUTE_ADMINHELP),
-	list(name = "Deadchat", bitflag = MUTE_DEADCHAT)
+	list(name = "Ahelp", bitflag = MUTE_ADMINHELP),
+	list(name = "Dsay", bitflag = MUTE_DEADCHAT),
+	list(name = "AOOC", bitflag = MUTE_AOOC),
+	list(name = "Mhelp", bitflag = MUTE_MENTOR)
 ))
+
 
 GLOBAL_LIST_INIT(narrate_span, list(
 	list(name = "Notice", span = "notice"),
@@ -512,6 +521,7 @@ GLOBAL_LIST_INIT(pp_status_flags, list(
 
 	.["is_human"] = ishuman(targetMob)
 
+	.["glob_dna_blocks"] = assigned_blocks
 	.["glob_status_flags"] = GLOB.pp_status_flags
 	.["glob_limbs"] = GLOB.pp_limbs
 	.["glob_mute_bits"] = GLOB.mute_bits
