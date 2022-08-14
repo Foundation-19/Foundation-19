@@ -74,10 +74,10 @@
 	shot_sound = 'sound/weapons/gunshot/gunshot.ogg'
 	maxhealth = 200
 	controllock = 1
-	auto_repair = 1
 	projectile = /obj/item/projectile/bullet/rifle/a556
 	ailock = 0
 	req_access = list(access_securitylvl3, access_adminlvl3)
+	lethal = 1
 
 /obj/machinery/porta_turret/crescent
 	enabled = 0
