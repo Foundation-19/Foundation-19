@@ -24,24 +24,4 @@
 /// fires on the target datum when an element is attached to it  (/datum/element)
 #define COMSIG_ELEMENT_DETACH "element_detach"
 
-// /atom signals
-
-// /area signals
-
-// /turf signals
-
-// /atom/movable signals
-
-// /mob signals
-
-// /obj signals
-/// when a hood is unequipped
-#define COMSIG_ITEM_REMOVE "item_remove"
-/// checks an item's state
-#define COMSIG_ITEM_STATE_CHECK "state_check"
-/// updates an item between several states
-#define COMSIG_ITEM_UPDATE_STATE "update_state"
-/// updates sprites
-#define COMSIG_ITEM_ICON_UPDATE "icon_update"
-
-/*******Component Specific Signals*******/
+#define COMSIG_TICKER_STARTED "game_started"
