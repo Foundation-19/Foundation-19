@@ -1,6 +1,6 @@
-#define BOLTS_FINE 0
-#define BOLTS_EXPOSED 1
-#define BOLTS_CUT 2
+#define BOLTS_FINE 		0
+#define BOLTS_EXPOSED 	1
+#define BOLTS_CUT 		2
 
 #define AIRLOCK_CLOSED	1
 #define AIRLOCK_CLOSING	2
@@ -9,10 +9,10 @@
 #define AIRLOCK_DENY	5
 #define AIRLOCK_EMAG	6
 
-#define AIRLOCK_PAINTABLE 1
-#define AIRLOCK_STRIPABLE 2
-#define AIRLOCK_DETAILABLE 4
-#define AIRLOCK_WINDOW_PAINTABLE 8
+#define AIRLOCK_PAINTABLE 			(1<<0)
+#define AIRLOCK_STRIPABLE 			(1<<1)
+#define AIRLOCK_DETAILABLE 			(1<<2)
+#define AIRLOCK_WINDOW_PAINTABLE 	(1<<3)
 
 var/list/airlock_overlays = list()
 

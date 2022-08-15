@@ -5,11 +5,11 @@
 #define O2STANDARD 0.21 // Percentage.
 #define N2STANDARD 0.79
 
-#define MOLES_PHORON_VISIBLE 0.7 // Moles in a standard cell after which phoron is visible.
-#define MOLES_O2STANDARD     (MOLES_CELLSTANDARD * O2STANDARD) // O2 standard value (21%)
-#define MOLES_N2STANDARD     (MOLES_CELLSTANDARD * N2STANDARD) // N2 standard value (79%)
-#define MOLES_O2ATMOS (MOLES_O2STANDARD*50)
-#define MOLES_N2ATMOS (MOLES_N2STANDARD*50)
+#define MOLES_PHORON_VISIBLE    0.7 // Moles in a standard cell after which phoron is visible.
+#define MOLES_O2STANDARD        (MOLES_CELLSTANDARD * O2STANDARD) // O2 standard value (21%)
+#define MOLES_N2STANDARD        (MOLES_CELLSTANDARD * N2STANDARD) // N2 standard value (79%)
+#define MOLES_O2ATMOS           (MOLES_O2STANDARD*50)
+#define MOLES_N2ATMOS           (MOLES_N2STANDARD*50)
 
 // These are for when a mob breathes poisonous air.
 #define MIN_TOXIN_DAMAGE 1
@@ -22,8 +22,8 @@
 #define SOUND_MINIMUM_PRESSURE 10
 
 #define PRESSURE_DAMAGE_COEFFICIENT 4   // The amount of pressure damage someone takes is equal to (pressure / HAZARD_HIGH_PRESSURE)*PRESSURE_DAMAGE_COEFFICIENT, with the maximum of MAX_PRESSURE_DAMAGE.
-#define    MAX_HIGH_PRESSURE_DAMAGE 4   // This used to be 20... I got this much random rage for some retarded decision by polymorph?! Polymorph now lies in a pool of blood with a katana jammed in his spleen. ~Errorage --PS: The katana did less than 20 damage to him :(
-#define         LOW_PRESSURE_DAMAGE 0.6 // The amount of damage someone takes when in a low pressure area. (The pressure threshold is so low that it doesn't make sense to do any calculations, so it just applies this flat value).
+#define MAX_HIGH_PRESSURE_DAMAGE    4   // This used to be 20... I got this much random rage for some retarded decision by polymorph?! Polymorph now lies in a pool of blood with a katana jammed in his spleen. ~Errorage --PS: The katana did less than 20 damage to him :(
+#define LOW_PRESSURE_DAMAGE         0.6 // The amount of damage someone takes when in a low pressure area. (The pressure threshold is so low that it doesn't make sense to do any calculations, so it just applies this flat value).
 
 #define MINIMUM_PRESSURE_DIFFERENCE_TO_SUSPEND (MINIMUM_AIR_TO_SUSPEND*R_IDEAL_GAS_EQUATION*T20C)/CELL_VOLUME			// Minimum pressure difference between zones to suspend
 #define MINIMUM_AIR_RATIO_TO_SUSPEND 0.05 // Minimum ratio of air that must move to/from a tile to suspend group processing
@@ -70,10 +70,10 @@
 #define LIQUIDFUEL_AMOUNT_TO_MOL		0.45  //mol/volume unit
 
 // XGM gas flags.
-#define XGM_GAS_FUEL        1
-#define XGM_GAS_OXIDIZER    2
-#define XGM_GAS_CONTAMINANT 4
-#define XGM_GAS_FUSION_FUEL 8
+#define XGM_GAS_FUEL        (1<<0)
+#define XGM_GAS_OXIDIZER    (1<<1)
+#define XGM_GAS_CONTAMINANT (1<<2)
+#define XGM_GAS_FUSION_FUEL (1<<3)
 
 #define TANK_LEAK_PRESSURE     (30 * ONE_ATMOSPHERE) // Tank starts leaking.
 #define TANK_RUPTURE_PRESSURE  (40 * ONE_ATMOSPHERE) // Tank spills all contents into atmosphere.

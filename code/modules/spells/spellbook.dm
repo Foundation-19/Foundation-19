@@ -1,8 +1,8 @@
-#define NOREVERT			1
-#define LOCKED 				2
-#define CAN_MAKE_CONTRACTS	4
-#define INVESTABLE			8
-#define NO_LOCKING         16
+#define NOREVERT			(1<<0)
+#define LOCKED 				(1<<1)
+#define CAN_MAKE_CONTRACTS	(1<<2)
+#define INVESTABLE			(1<<3)
+#define NO_LOCKING         	(1<<4)
 
 //spells/spellbooks have a variable for this but as artefacts are literal items they do not.
 //so we do this instead.

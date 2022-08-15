@@ -3,22 +3,22 @@
 #define CANDLE_LUM 3 // For how bright candles are.
 
 // Item inventory slot bitmasks.
-#define SLOT_OCLOTHING  0x1
-#define SLOT_ICLOTHING  0x2
-#define SLOT_GLOVES     0x4
-#define SLOT_EYES       0x8
-#define SLOT_EARS       0x10
-#define SLOT_MASK       0x20
-#define SLOT_HEAD       0x40
-#define SLOT_FEET       0x80
-#define SLOT_ID         0x100
-#define SLOT_BELT       0x200
-#define SLOT_BACK       0x400
-#define SLOT_POCKET     0x800  // This is to allow items with a w_class of 3 or 4 to fit in pockets.
-#define SLOT_DENYPOCKET 0x1000  // This is to  deny items with a w_class of 2 or 1 from fitting in pockets.
-#define SLOT_TWOEARS    0x2000
-#define SLOT_TIE        0x4000
-#define SLOT_HOLSTER	0x8000 //16th bit - higher than this will overflow
+#define SLOT_OCLOTHING		(1<<0)
+#define SLOT_ICLOTHING		(1<<1)
+#define SLOT_GLOVES  		(1<<2)
+#define SLOT_EYES    		(1<<3)
+#define SLOT_EARS     		(1<<4)
+#define SLOT_MASK     		(1<<5)
+#define SLOT_HEAD     		(1<<6)
+#define SLOT_FEET     		(1<<7)
+#define SLOT_ID        		(1<<8)
+#define SLOT_BELT      		(1<<9)
+#define SLOT_BACK      		(1<<10)
+#define SLOT_POCKET    		(1<<11)  // This is to allow items with a w_class of 3 or 4 to fit in pockets.
+#define SLOT_DENYPOCKET 	(1<<12)  // This is to  deny items with a w_class of 2 or 1 from fitting in pockets.
+#define SLOT_TWOEARS    	(1<<13)
+#define SLOT_TIE        	(1<<14)
+#define SLOT_HOLSTER		(1<<15) //16th bit - higher than this will overflow
 
 #define ACCESSORY_SLOT_UTILITY  "Utility"
 #define ACCESSORY_SLOT_HOLSTER	"Holster"
@@ -37,21 +37,21 @@
 
 // Bitmasks for the flags_inv variable. These determine when a piece of clothing hides another, i.e. a helmet hiding glasses.
 // WARNING: The following flags apply only to the external suit!
-#define HIDEGLOVES      0x1
-#define HIDESUITSTORAGE 0x2
-#define HIDEJUMPSUIT    0x4
-#define HIDESHOES       0x8
-#define HIDETAIL        0x10
+#define HIDEGLOVES     	(1<<0)
+#define HIDESUITSTORAGE	(1<<1)
+#define HIDEJUMPSUIT   	(1<<2)
+#define HIDESHOES      	(1<<3)
+#define HIDETAIL        (1<<4)
 
 // WARNING: The following flags apply only to the helmets and masks!
-#define HIDEMASK 0x1
-#define HIDEEARS 0x2 // Headsets and such.
-#define HIDEEYES 0x4 // Glasses.
-#define HIDEFACE 0x8 // Dictates whether we appear as "Unknown".
-#define CLOTHING_BULKY 0x800 //You cannot wear bulky clothing over bulky clothing.
+#define HIDEMASK 		(1<<0)
+#define HIDEEARS 		(1<<1) // Headsets and such.
+#define HIDEEYES 		(1<<2) // Glasses.
+#define HIDEFACE 		(1<<3) // Dictates whether we appear as "Unknown".
+#define CLOTHING_BULKY 	(1<<4) 	//You cannot wear bulky clothing over bulky clothing.
 
-#define BLOCKHEADHAIR   0x20    // Hides the user's hair overlay. Leaves facial hair.
-#define BLOCKHAIR       0x40    // Hides the user's hair, facial and otherwise.
+#define BLOCKHEADHAIR   (1<<5)    // Hides the user's hair overlay. Leaves facial hair.
+#define BLOCKHAIR      	(1<<6)    // Hides the user's hair, facial and otherwise.
 
 // Slots.
 #define slot_first       1
@@ -103,28 +103,28 @@
 #define slot_tie_str		"slot_tie"
 
 // Bitflags for clothing parts.
-#define HEAD        0x1
-#define FACE        0x2
-#define EYES        0x4
+#define HEAD        (1<<0)
+#define FACE        (1<<1)
+#define EYES        (1<<2)
 #define FULL_HEAD   (HEAD | FACE | EYES)
-#define UPPER_TORSO 0x8
-#define LOWER_TORSO 0x10
+#define UPPER_TORSO (1<<3)
+#define LOWER_TORSO (1<<4)
 #define FULL_TORSO  (UPPER_TORSO | LOWER_TORSO)
-#define LEG_LEFT    0x20
-#define LEG_RIGHT   0x40
+#define LEG_LEFT    (1<<5)
+#define LEG_RIGHT   (1<<6)
 #define LEGS        (LEG_LEFT | LEG_RIGHT)
-#define FOOT_LEFT   0x80
-#define FOOT_RIGHT  0x100
+#define FOOT_LEFT   (1<<7)
+#define FOOT_RIGHT  (1<<8)
 #define FEET        (FOOT_LEFT | FOOT_RIGHT)
 #define FULL_LEGS   (LEG_LEFT | LEG_RIGHT | FOOT_LEFT | FOOT_RIGHT)
-#define ARM_LEFT    0x200
-#define ARM_RIGHT   0x400
+#define ARM_LEFT    (1<<9)
+#define ARM_RIGHT   (1<<10)
 #define ARMS        (ARM_LEFT | ARM_RIGHT)
-#define HAND_LEFT   0x800
-#define HAND_RIGHT  0x1000
+#define HAND_LEFT   (1<<11)
+#define HAND_RIGHT  (1<<12)
 #define HANDS       (HAND_LEFT | HAND_RIGHT)
 #define FULL_ARMS   (ARM_LEFT | ARM_RIGHT | HAND_LEFT | HAND_RIGHT)
-#define FULL_BODY   0xFFFF
+#define FULL_BODY   (~0)
 
 // Bitflags for the percentual amount of protection a piece of clothing which covers the body part offers.
 // Used with human/proc/get_heat_protection() and human/proc/get_cold_protection().
@@ -202,15 +202,15 @@
 #define SUIT_LOCKED_SENSORS 2
 
 // Hair Flags
-#define VERY_SHORT 0x1
-#define HAIR_TIEABLE 0x2
-#define HAIR_BALD 0x4
+#define VERY_SHORT 		(1<<0)
+#define HAIR_TIEABLE 	(1<<1)
+#define HAIR_BALD 		(1<<2)
 
 //flags to determine if an eyepiece is a hud.
-#define HUD_SCIENCE 0x1
-#define HUD_SECURITY 0x2
-#define HUD_MEDICAL 0x4
-#define HUD_JANITOR 0x8
+#define HUD_SCIENCE 	(1<<0)
+#define HUD_SECURITY 	(1<<1)
+#define HUD_MEDICAL 	(1<<2)
+#define HUD_JANITOR 	(1<<3)
 
 // Storage
 
