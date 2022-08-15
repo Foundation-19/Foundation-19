@@ -85,23 +85,44 @@
 
 /obj/screen/new_player/selection/join_game
 	name = "Join Game"
-	icon_state = "joingame"
+	icon_state = "unready"
 	screen_loc = "NORTH, CENTER-7"
 
-/obj/screen/new_player/selection/join_game/Click()//no ready system
+/obj/screen/new_player/selection/join_game/Initialize()
+	var/mob/new_player/player = hud.mymob
+	update_lobby_icon(player)
+	RegisterSignal(src, COMSIG_GAME_STARTED, .proc/update_lobby_icon)
+	return ..()
+
+/obj/screen/new_player/selection/join_game/Click()
 	var/mob/new_player/player = hud.mymob
 	sound_to(player, 'sound/effects/menu_click.ogg')
 
-	if(GAME_STATE != RUNLEVEL_GAME)
-		to_chat(player, SPAN_WARNING("The round has either not started yet or already ended."))
-		return
-
-	if(!check_rights(R_INVESTIGATE, FALSE, player))
+	if(!check_rights(R_INVESTIGATE, FALSE, player) && GAME_STATE > RUNLEVEL_LOBBY)
 		var/dsdiff = config.respawn_menu_delay MINUTES - (world.time - player.respawned_time)
 		if(dsdiff > 0)
 			to_chat(player, SPAN_WARNING("You must wait [time2text(dsdiff, "mm:ss")] before rejoining."))
 			return
-	player.LateChoices() //show the latejoin job selection menu
+
+	if(GAME_STATE <= RUNLEVEL_LOBBY)
+		player.ready = !player.ready
+		to_chat(player, "<span class='notice'>You are now [player.ready ? "ready" : "not ready"].</span>")
+
+	else
+		player.LateChoices() //show the latejoin job selection menu
+
+	update_lobby_icon(player)
+
+/obj/screen/new_player/selection/join_game/proc/update_lobby_icon(mob/new_player/player)
+	SIGNAL_HANDLER
+
+	if(GAME_STATE <= RUNLEVEL_LOBBY && player)
+		if(player.ready)
+			icon_state = "ready"
+		else
+			icon_state = "unready"
+	else
+		icon_state = "joingame"
 
 /obj/screen/new_player/selection/settings
 	name = "Setup"

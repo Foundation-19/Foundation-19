@@ -45,3 +45,5 @@
 #define COMSIG_ITEM_ICON_UPDATE "icon_update"
 
 /*******Component Specific Signals*******/
+
+#define COMSIG_GAME_STARTED "game_started"
