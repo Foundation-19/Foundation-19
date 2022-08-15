@@ -1333,6 +1333,7 @@
 #include "code\modules\admin\permissionverbs\permissionedit.dm"
 #include "code\modules\admin\player_panel\player_action.dm"
 #include "code\modules\admin\player_panel\player_panel.dm"
+#include "code\modules\admin\player_panel\actions\dna.dm"
 #include "code\modules\admin\player_panel\actions\fun.dm"
 #include "code\modules\admin\player_panel\actions\general.dm"
 #include "code\modules\admin\player_panel\actions\languages.dm"
