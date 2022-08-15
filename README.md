@@ -22,7 +22,7 @@
 
 **Долгий способ**. Найти `bin/build.cmd` по указанному пути и запустить его двойным кликом для начала компиляции. Компиляция состоит из нескольких шагов и может занять в районе 1-5 минут времени. Как только окно закроется, компиляцию можно считать завершённой. После этого, вы можете запустить свой локальный сервер при помощи DreamDaemon, выбрав файл `baystation12.dmb` лежащий в корневой папке сборки.
 
-**Building baystation12.dmb in DreamMaker directly is now deprecated and might produce errors**, such as `'tgui.bundle.js': cannot find file`.
+**Компиляция baystation12.dmb напрямую через DreamMaker не рекомендуется и может вызвать ошибки**, такие как `'tgui.bundle.js': cannot find file`.
 
 **[How to compile in VSCode and other build options](tools/build/README.md).**
 
