@@ -12,9 +12,9 @@
 
 ## Community
 [<img src=".github/assets/discord.png" alt="Discord" width="150" align="left">](https://discord.gg/cZz6mNt)
-Discord is the place where most of the discussion happens, due to absence of a forum. Here you can contact administrators, ask mentors for help, or simply discuss your rounds. It is also a place where you can find links to ban appeals, admin applications and others, which could be really useful.
+Discord-сервер проекта является нашей основной площадкой для общения и связи с игроками. Там вы сможете получать все необходмые новости касательно проекта, вести открытое общение с другими игроками, а также использовать множество различных каналов.
 
-**Space Station 13** is a paranoia-laden round-based roleplaying game set against the backdrop of a nonsensical, metal death trap masquerading as a space station, with charming spritework designed to represent the sci-fi setting and its dangerous undertones. This is an SCP inspired flavour, set on **Site 53**.
+**Space Station 13** многопользовательская компьютерная игра о работе и жизни персонала на космической станции с элементами выживания. Игра разработана независимым разработчиком Exadv1 на игровом движке «BYOND», имеет тайловую 2D графику и доступна на платформах Windows. Представленный билд основан на вселенной SCP, где действия игры разворачиваются в **Site 53**.
 
 ## :exclamation: How to compile :exclamation:
 
