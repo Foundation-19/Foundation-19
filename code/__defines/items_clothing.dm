@@ -48,7 +48,7 @@
 #define HIDEEARS 		(1<<1) // Headsets and such.
 #define HIDEEYES 		(1<<2) // Glasses.
 #define HIDEFACE 		(1<<3) // Dictates whether we appear as "Unknown".
-#define CLOTHING_BULKY 	(1<<11) 	//You cannot wear bulky clothing over bulky clothing.
+#define CLOTHING_BULKY 	(1<<4) 	//You cannot wear bulky clothing over bulky clothing.
 
 #define BLOCKHEADHAIR   (1<<5)    // Hides the user's hair overlay. Leaves facial hair.
 #define BLOCKHAIR      	(1<<6)    // Hides the user's hair, facial and otherwise.
