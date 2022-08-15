@@ -1,5 +1,3 @@
-#define any2ref(x) "\ref[x]"
-
 //Do (almost) nothing - indev placeholder for switch case implementations etc
 #define NOOP (.=.);
 

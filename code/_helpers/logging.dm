@@ -156,7 +156,7 @@
 		src_object = window.locked_by.src_object
 	// Insert src_object info
 	if(src_object)
-		entry += "\nUsing: [src_object.type] [any2ref(src_object)]"
+		entry += "\nUsing: [src_object.type] [REF(src_object)]"
 	// Insert message
 	if(message)
 		entry += "\n[message]"
@@ -241,7 +241,7 @@
 
 // Helper procs for building detailed log lines
 /datum/proc/get_log_info_line()
-	return "[src] ([type]) ([any2ref(src)])"
+	return "[src] ([type]) ([REF(src)])"
 
 /area/get_log_info_line()
 	return "[..()] ([isnum(z) ? "[x],[y],[z]" : "0,0,0"])"
