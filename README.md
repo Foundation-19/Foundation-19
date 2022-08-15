@@ -16,11 +16,6 @@ Discord is the place where most of the discussion happens, due to absence of a f
 
 **Space Station 13** is a paranoia-laden round-based roleplaying game set against the backdrop of a nonsensical, metal death trap masquerading as a space station, with charming spritework designed to represent the sci-fi setting and its dangerous undertones. This is an SCP inspired flavour, set on **Site 53**.
 
-## Information
-* **Code:** https://github.com/foundation-19/foundation-19
-* **SS13 Coderbus Discord:** https://discord.gg/Vh8TJp9
-* **Foundation-19 Wiki:** https://scp13.miraheze.org/wiki/Main_Page
-
 ## :exclamation: How to compile :exclamation:
 
 **The quick way**. Find `bin/server.cmd` in this folder and double click it to automatically build and host the server on port 1337.
