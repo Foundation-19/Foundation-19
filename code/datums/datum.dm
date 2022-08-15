@@ -1,7 +1,16 @@
 /datum
 	var/tmp/gc_destroyed //Time when this object was destroyed.
 	var/tmp/is_processing = FALSE
-	var/list/active_timers  //for SStimer
+	/// Active timers with this datum as the target
+	var/list/active_timers
+	/// Components attached to this datum
+	var/list/datum_components
+	/// Status traits attached to this datum
+	var/list/comp_lookup
+	/// List of callbacks for signal procs
+	var/list/list/datum/callback/signal_procs
+	/// Datum level flags
+	var/datum_flags = NONE
 
 #ifdef TESTING
 	var/tmp/running_find_references
@@ -45,6 +54,38 @@
 
 	if (!isturf(src))	// Not great, but the 'correct' way to do it would add overhead for little benefit.
 		cleanup_events(src)
+
+	//BEGIN: ECS SHIT
+	///Only override this if you know what you're doing. You do not know what you're doing
+	///This is a threat
+	var/list/dc = datum_components
+	if(dc)
+		var/all_components = dc[/datum/component]
+		if(length(all_components))
+			for(var/I in all_components)
+				var/datum/component/C = I
+				qdel(C, FALSE, TRUE)
+		else
+			var/datum/component/C = all_components
+			qdel(C, FALSE, TRUE)
+		dc.Cut()
+
+	var/list/lookup = comp_lookup
+	if(lookup)
+		for(var/sig in lookup)
+			var/list/comps = lookup[sig]
+			if(length(comps))
+				for(var/i in comps)
+					var/datum/component/comp = i
+					comp.UnregisterSignal(src, sig)
+			else
+				var/datum/component/comp = comps
+				comp.UnregisterSignal(src, sig)
+		comp_lookup = lookup = null
+
+	for(var/target in signal_procs)
+		UnregisterSignal(target, signal_procs[target])
+	//END: ECS SHIT
 
 	return QDEL_HINT_QUEUE
 
