@@ -115,7 +115,7 @@ SUBSYSTEM_DEF(ticker)
 	if(!length(GLOB.admins))
 		send2adminirc("Round has started with no admins online.")
 	
-	SEND_SIGNAL(src, COMSIG_GAME_STARTED)
+	SEND_SIGNAL(src, COMSIG_TICKER_STARTED)
 
 /datum/controller/subsystem/ticker/proc/OnRoundstart(datum/callback/cb)
 	if(!HasRoundStarted())

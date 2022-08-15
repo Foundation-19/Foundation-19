@@ -90,7 +90,7 @@
 
 /obj/screen/new_player/selection/join_game/Initialize()
 	. = ..()
-	RegisterSignal(SSticker, COMSIG_GAME_STARTED, .proc/update_lobby_icon)
+	RegisterSignal(SSticker, COMSIG_TICKER_STARTED, .proc/update_lobby_icon)
 
 /obj/screen/new_player/selection/join_game/Click()
 	var/mob/new_player/player = hud.mymob
