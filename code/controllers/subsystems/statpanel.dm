@@ -111,7 +111,7 @@ SUBSYSTEM_DEF(statpanels)
 			continue
 		overrides += target_image.loc
 
-	turfitems[++turfitems.len] = list("[target_mob.listed_turf]", any2ref(target_mob.listed_turf), icon2html(target_mob.listed_turf, target, sourceonly=TRUE))
+	turfitems[++turfitems.len] = list("[target_mob.listed_turf]", REF(target_mob.listed_turf), icon2html(target_mob.listed_turf, target, sourceonly=TRUE))
 
 	for(var/atom/movable/turf_content as anything in target_mob.listed_turf)
 		if(turf_content.mouse_opacity == MOUSE_OPACITY_TRANSPARENT)
@@ -122,7 +122,7 @@ SUBSYSTEM_DEF(statpanels)
 			continue
 
 		if(length(turfitems) < 10) // only create images for the first 10 items on the turf, for performance reasons
-			var/turf_content_ref = any2ref(turf_content)
+			var/turf_content_ref = REF(turf_content)
 			if(!(turf_content_ref in cached_images))
 				cached_images += turf_content_ref
 				GLOB.destroyed_event.register(turf_content, turf_content, /atom/.proc/remove_from_cache) // we reset cache if anything in it gets deleted
@@ -134,7 +134,7 @@ SUBSYSTEM_DEF(statpanels)
 			else
 				turfitems[++turfitems.len] = list("[turf_content.name]", turf_content_ref)
 		else
-			turfitems[++turfitems.len] = list("[turf_content.name]", any2ref(turf_content))
+			turfitems[++turfitems.len] = list("[turf_content.name]", REF(turf_content))
 
 	turfitems = turfitems
 	target.stat_panel.send_message("update_listedturf", turfitems)
@@ -186,7 +186,7 @@ SUBSYSTEM_DEF(statpanels)
 
 /atom/proc/remove_from_cache()
 	SHOULD_NOT_SLEEP(TRUE)
-	SSstatpanels.cached_images -= any2ref(src)
+	SSstatpanels.cached_images -= REF(src)
 
 /// Stat panel window declaration
 /client/var/datum/tgui_window/stat_panel
