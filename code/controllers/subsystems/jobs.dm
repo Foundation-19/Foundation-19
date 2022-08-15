@@ -581,4 +581,4 @@ SUBSYSTEM_DEF(jobs)
 /proc/show_location_blurb(client/C, duration)
 	var/area/A = get_area(C.mob)
 	var/blurb_text = "[stationdate2text()], [station_time_timestamp("hh:mm")]\n[station_name()], [A.name]"
-	show_blurb(C, duration, blurb_text)
+	show_blurb(C.mob, duration, blurb_text)
