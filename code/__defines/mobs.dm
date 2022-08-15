@@ -4,16 +4,16 @@
 #define DEAD        2
 
 // Bitflags defining which status effects could be or are inflicted on a mob.
-#define CANSTUN     (1<<0)
-#define CANWEAKEN   (1<<1)
-#define CANPARALYSE (1<<2)
-#define CANPUSH     (1<<3)
-#define PASSEMOTES  (1<<4)    // Mob has a cortical borer or holders inside of it that need to see emotes.
-#define LEAPING     (1<<5)
-#define GODMODE     (1<<12)
-#define FAKEDEATH   (1<<13)  // Player is in a deathlike state that fools medical scanners. They cannot move, act, or speak.
-#define NO_ANTAG    (1<<14)  // Players are restricted from gaining antag roles when occupying this mob
-#define NOTARGET    (1<<15)  // Player is invisible to all simple mobs
+#define CANSTUN     0x1
+#define CANWEAKEN   0x2
+#define CANPARALYSE 0x4
+#define CANPUSH     0x8
+#define PASSEMOTES  0x10    // Mob has a cortical borer or holders inside of it that need to see emotes.
+#define LEAPING     0x16
+#define GODMODE     0x1000
+#define FAKEDEATH   0x2000  // Player is in a deathlike state that fools medical scanners. They cannot move, act, or speak.
+#define NO_ANTAG    0x4000  // Players are restricted from gaining antag roles when occupying this mob
+#define NOTARGET    0x8000  // Player is invisible to all simple mobs
 
 // Grab Types
 #define GRAB_NORMAL			"normal"
@@ -31,10 +31,10 @@
 #define NAB_AGGRESSIVE	"nab aggressive"
 #define NAB_KILL		"nab kill"
 
-#define BORGMESON       (1<<0)
-#define BORGTHERM       (1<<1)
-#define BORGXRAY        (1<<2)
-#define BORGMATERIAL    (1<<3)
+#define BORGMESON 0x1
+#define BORGTHERM 0x2
+#define BORGXRAY  0x4
+#define BORGMATERIAL  8
 
 
 #define STANCE_SLEEP        0	// Doing (almost) nothing, to save on CPU because nobody is around to notice or the mob died.
@@ -54,9 +54,9 @@
 
 #define STANCES_COMBAT      list(STANCE_ALERT, STANCE_APPROACH, STANCE_FIGHT, STANCE_BLINDFIGHT, STANCE_REPOSITION)
 
-#define LEFT  (1<<0)
-#define RIGHT (1<<1)
-#define UNDER (1<<2)
+#define LEFT  0x1
+#define RIGHT 0x2
+#define UNDER 0x4
 
 // Pulse levels, very simplified.
 #define PULSE_NONE    0   // So !M.pulse checks would be possible.
@@ -76,14 +76,14 @@
 #define I_HURT		"harm"
 
 //These are used Bump() code for living mobs, in the mob_bump_flag, mob_swap_flags, and mob_push_flags vars to determine whom can bump/swap with whom.
-#define HUMAN           (1<<0)
-#define MONKEY          (1<<1)
-#define ALIEN           (1<<2)
-#define ROBOT           (1<<3)
-#define SLIME           (1<<4)
-#define SIMPLE_ANIMAL   (1<<5)
-#define HEAVY           (1<<6)
-#define ALLMOBS         (HUMAN|MONKEY|ALIEN|ROBOT|SLIME|SIMPLE_ANIMAL|HEAVY)
+#define HUMAN 1
+#define MONKEY 2
+#define ALIEN 4
+#define ROBOT 8
+#define SLIME 16
+#define SIMPLE_ANIMAL 32
+#define HEAVY 64
+#define ALLMOBS (HUMAN|MONKEY|ALIEN|ROBOT|SLIME|SIMPLE_ANIMAL|HEAVY)
 
 // Robot AI notifications
 #define ROBOT_NOTIFICATION_NEW_UNIT 1
@@ -92,20 +92,20 @@
 #define ROBOT_NOTIFICATION_MODULE_RESET 4
 
 // Appearance change flags
-#define APPEARANCE_ALL              (~0)
-#define APPEARANCE_DNA2             (1<<0)
-#define APPEARANCE_RACE             (1<<1)
-#define APPEARANCE_GENDER           (1<<2)
-#define APPEARANCE_SKIN             (1<<3)
-#define APPEARANCE_HEAD             (1<<4)
-#define APPEARANCE_HEAD_COLOR       (1<<5)
-#define APPEARANCE_FACE             (1<<6)
-#define APPEARANCE_FACE_COLOR       (1<<7)
-#define APPEARANCE_ALL_HAIR         (APPEARANCE_HEAD | APPEARANCE_HEAD_COLOR | APPEARANCE_FACE | APPEARANCE_FACE_COLOR)
-#define APPEARANCE_EYES             (1<<8)
-#define APPEARANCE_LANG             (1<<9)
-#define APPEARANCE_LANG_ANY_NUMBER  (1<<10)
-#define APPEARANCE_LANG_ANY_ORIGIN  (1<<11)
+#define APPEARANCE_ALL 0xffffff
+#define APPEARANCE_DNA2 (1 << 0)
+#define APPEARANCE_RACE (1 << 1)
+#define APPEARANCE_GENDER (1 << 2)
+#define APPEARANCE_SKIN (1 << 3)
+#define APPEARANCE_HEAD (1 << 4)
+#define APPEARANCE_HEAD_COLOR (1 << 5)
+#define APPEARANCE_FACE (1 << 6)
+#define APPEARANCE_FACE_COLOR (1 << 7)
+#define APPEARANCE_ALL_HAIR (APPEARANCE_HEAD | APPEARANCE_HEAD_COLOR | APPEARANCE_FACE | APPEARANCE_FACE_COLOR)
+#define APPEARANCE_EYES (1 << 8)
+#define APPEARANCE_LANG (1 << 9)
+#define APPEARANCE_LANG_ANY_NUMBER (1 << 10)
+#define APPEARANCE_LANG_ANY_ORIGIN (1 << 11)
 
 #define APPEARANCE_COMMON (APPEARANCE_DNA2|APPEARANCE_RACE|APPEARANCE_GENDER|APPEARANCE_SKIN|APPEARANCE_ALL_HAIR|APPEARANCE_EYES|APPEARANCE_LANG)
 
@@ -144,49 +144,50 @@
 #define STR_VLOW       -2
 
 // Gluttony levels.
-#define GLUT_TINY               (1<<0)   // Eat anything tiny and smaller
-#define GLUT_SMALLER            (1<<1)   // Eat anything smaller than we are
-#define GLUT_ANYTHING           (1<<2)   // Eat anything, ever
-#define GLUT_ITEM_TINY          (1<<3)         // Eat items with a w_class of small or smaller
-#define GLUT_ITEM_NORMAL        (1<<4)      // Eat items with a w_class of normal or smaller
-#define GLUT_ITEM_ANYTHING      (1<<5)    // Eat any item
-#define GLUT_PROJECTILE_VOMIT   (1<<6) // When vomitting, does it fly out?
+#define GLUT_TINY 1       // Eat anything tiny and smaller
+#define GLUT_SMALLER 2    // Eat anything smaller than we are
+#define GLUT_ANYTHING 4   // Eat anything, ever
+
+#define GLUT_ITEM_TINY 8         // Eat items with a w_class of small or smaller
+#define GLUT_ITEM_NORMAL 16      // Eat items with a w_class of normal or smaller
+#define GLUT_ITEM_ANYTHING 32    // Eat any item
+#define GLUT_PROJECTILE_VOMIT 64 // When vomitting, does it fly out?
 
 // Devour speeds, returned by can_devour()
-#define DEVOUR_SLOW     1
-#define DEVOUR_FAST     2
+#define DEVOUR_SLOW 1
+#define DEVOUR_FAST 2
 
-#define TINT_NONE       0
-#define TINT_MODERATE   1
-#define TINT_HEAVY      2
-#define TINT_BLIND      3
+#define TINT_NONE 0
+#define TINT_MODERATE 1
+#define TINT_HEAVY 2
+#define TINT_BLIND 3
 
 #define FLASH_PROTECTION_VULNERABLE -2
-#define FLASH_PROTECTION_REDUCED    -1
-#define FLASH_PROTECTION_NONE       0
-#define FLASH_PROTECTION_MINOR      1
-#define FLASH_PROTECTION_MODERATE   2
-#define FLASH_PROTECTION_MAJOR      3
+#define FLASH_PROTECTION_REDUCED -1
+#define FLASH_PROTECTION_NONE 0
+#define FLASH_PROTECTION_MINOR 1
+#define FLASH_PROTECTION_MODERATE 2
+#define FLASH_PROTECTION_MAJOR 3
 
 #define ANIMAL_SPAWN_DELAY round(config.respawn_delay / 6)
 #define DRONE_SPAWN_DELAY  round(config.respawn_delay / 3)
 
 // Incapacitation flags, used by the mob/proc/incapacitated() proc
-#define INCAPACITATION_NONE                 0
-#define INCAPACITATION_RESTRAINED           (1<<0)
-#define INCAPACITATION_BUCKLED_PARTIALLY    (1<<1)
-#define INCAPACITATION_BUCKLED_FULLY        (1<<2)
-#define INCAPACITATION_STUNNED              (1<<3)
-#define INCAPACITATION_FORCELYING           (1<<4) //needs a better name - represents being knocked down BUT still conscious.
-#define INCAPACITATION_KNOCKOUT             (1<<5)
-#define INCAPACITATION_WEAKENED             (1<<6)
+#define INCAPACITATION_NONE 0
+#define INCAPACITATION_RESTRAINED 1
+#define INCAPACITATION_BUCKLED_PARTIALLY 2
+#define INCAPACITATION_BUCKLED_FULLY 4
+#define INCAPACITATION_STUNNED 8
+#define INCAPACITATION_FORCELYING 16 //needs a better name - represents being knocked down BUT still conscious.
+#define INCAPACITATION_KNOCKOUT 32
+#define INCAPACITATION_WEAKENED 64
 
-#define INCAPACITATION_UNRESISTING  (INCAPACITATION_KNOCKOUT|INCAPACITATION_STUNNED)
-#define INCAPACITATION_DISRUPTED    (INCAPACITATION_UNRESISTING|INCAPACITATION_WEAKENED)
-#define INCAPACITATION_KNOCKDOWN    (INCAPACITATION_KNOCKOUT|INCAPACITATION_FORCELYING)
-#define INCAPACITATION_DISABLED     (INCAPACITATION_KNOCKDOWN|INCAPACITATION_STUNNED)
-#define INCAPACITATION_DEFAULT      (INCAPACITATION_RESTRAINED|INCAPACITATION_BUCKLED_FULLY|INCAPACITATION_DISABLED)
-#define INCAPACITATION_ALL          (~INCAPACITATION_NONE)
+#define INCAPACITATION_UNRESISTING (INCAPACITATION_KNOCKOUT|INCAPACITATION_STUNNED)
+#define INCAPACITATION_DISRUPTED (INCAPACITATION_UNRESISTING|INCAPACITATION_WEAKENED)
+#define INCAPACITATION_KNOCKDOWN (INCAPACITATION_KNOCKOUT|INCAPACITATION_FORCELYING)
+#define INCAPACITATION_DISABLED (INCAPACITATION_KNOCKDOWN|INCAPACITATION_STUNNED)
+#define INCAPACITATION_DEFAULT (INCAPACITATION_RESTRAINED|INCAPACITATION_BUCKLED_FULLY|INCAPACITATION_DISABLED)
+#define INCAPACITATION_ALL (~INCAPACITATION_NONE)
 
 // Organs.
 #define BP_MOUTH    "mouth"
@@ -234,9 +235,9 @@
 #define BP_AUGMENT_L_HAND        "left hand augment"
 #define BP_AUGMENT_R_LEG         "right leg augment"
 #define BP_AUGMENT_L_LEG         "left leg augment"
-#define BP_AUGMENT_CHEST_ARMOUR  "chest armor augment"
+#define BP_AUGMENT_CHEST_ARMOUR   "chest armor augment"
 #define BP_AUGMENT_CHEST_ACTIVE  "active chest augment"
-#define BP_AUGMENT_HEAD          "head augment"
+#define BP_AUGMENT_HEAD           "head augment"
 
 //Augment flags
 #define AUGMENTATION_MECHANIC 1
@@ -271,17 +272,17 @@
 #define SYNTH_BLOOD_COLOUR "#030303"
 #define SYNTH_FLESH_COLOUR "#575757"
 
-#define MOB_PULL_NONE       0
-#define MOB_PULL_SMALLER    1
-#define MOB_PULL_SAME       2
-#define MOB_PULL_LARGER     3
+#define MOB_PULL_NONE 0
+#define MOB_PULL_SMALLER 1
+#define MOB_PULL_SAME 2
+#define MOB_PULL_LARGER 3
 
 //carbon taste sensitivity defines, used in mob/living/carbon/proc/ingest
-#define TASTE_HYPERSENSITIVE    3 //anything below 5%
-#define TASTE_SENSITIVE         2 //anything below 7%
-#define TASTE_NORMAL            1 //anything below 15%
-#define TASTE_DULL              0.5 //anything below 30%
-#define TASTE_NUMB              0.1 //anything below 150%
+#define TASTE_HYPERSENSITIVE 3 //anything below 5%
+#define TASTE_SENSITIVE 2 //anything below 7%
+#define TASTE_NORMAL 1 //anything below 15%
+#define TASTE_DULL 0.5 //anything below 30%
+#define TASTE_NUMB 0.1 //anything below 150%
 
 //Used by show_message() and emotes
 #define VISIBLE_MESSAGE 1
@@ -303,8 +304,8 @@
 #define SYNTH_HEAT_LEVEL_2 1000
 #define SYNTH_HEAT_LEVEL_3 2000
 
-#define CORPSE_CAN_REENTER              1
-#define CORPSE_CAN_REENTER_AND_RESPAWN  2
+#define CORPSE_CAN_REENTER 1
+#define CORPSE_CAN_REENTER_AND_RESPAWN 2
 
 #define SPECIES_HUMAN       "Human"
 #define SPECIES_DIONA       "Diona"
@@ -336,33 +337,33 @@
 #define SPECIES_MANTID_ALATE   "Kharmaan Alate"
 #define SPECIES_MANTID_GYNE    "Kharmaan Gyne"
 
-#define SURGERY_CLOSED      0
-#define SURGERY_OPEN        1
-#define SURGERY_RETRACTED   2
-#define SURGERY_ENCASED     3
+#define SURGERY_CLOSED 0
+#define SURGERY_OPEN 1
+#define SURGERY_RETRACTED 2
+#define SURGERY_ENCASED 3
 
 #define STASIS_MISC     "misc"
 #define STASIS_CRYOBAG  "cryobag"
 #define STASIS_COLD     "cold"
 
-#define AURA_CANCEL         1
-#define AURA_FALSE          2
-#define AURA_TYPE_BULLET    "Bullet"
-#define AURA_TYPE_WEAPON    "Weapon"
-#define AURA_TYPE_THROWN    "Thrown"
-#define AURA_TYPE_LIFE      "Life"
+#define AURA_CANCEL 1
+#define AURA_FALSE  2
+#define AURA_TYPE_BULLET "Bullet"
+#define AURA_TYPE_WEAPON "Weapon"
+#define AURA_TYPE_THROWN "Thrown"
+#define AURA_TYPE_LIFE   "Life"
 
 #define SPECIES_BLOOD_DEFAULT 560
 
 #define SLIME_EVOLUTION_THRESHOLD 10
 
 //Used in mob/proc/get_input
-#define MOB_INPUT_TEXT      "text"
-#define MOB_INPUT_MESSAGE   "message"
-#define MOB_INPUT_NUM       "num"
+#define MOB_INPUT_TEXT "text"
+#define MOB_INPUT_MESSAGE "message"
+#define MOB_INPUT_NUM "num"
 
-#define MOB_CLIMB_TIME_SMALL    30
-#define MOB_CLIMB_TIME_MEDIUM   50
+#define MOB_CLIMB_TIME_SMALL 30
+#define MOB_CLIMB_TIME_MEDIUM 50
 
 #define MOB_FACTION_NEUTRAL "neutral"
 
@@ -371,21 +372,22 @@
 
 #define RADIO_INTERRUPT_DEFAULT 30
 
-#define MOB_FLAG_HOLY_BAD   (1<<0)  // If this mob is allergic to holiness
+#define MOB_FLAG_HOLY_BAD                0x001  // If this mob is allergic to holiness
 
 // More refined version of SA_* ""intelligence"" seperators.
 // Now includes bitflags, so to target two classes you just do 'MOB_CLASS_ANIMAL|MOB_CLASS_HUMANOID'
-#define MOB_CLASS_NONE 			0	    // Default value, and used to invert for _ALL.
-#define MOB_CLASS_PLANT			(1<<0)	// Unused at the moment.
-#define MOB_CLASS_ANIMAL		(1<<1)	// Animals and beasts like spiders, saviks, and bears.
-#define MOB_CLASS_HUMANOID		(1<<2)	// Non-robotic humanoids, including /simple_mob and /carbon/humans and their alien variants.
-#define MOB_CLASS_SYNTHETIC		(1<<3)	// Silicons, mechanical simple mobs, FBPs, and anything else that would pass is_synthetic()
-#define MOB_CLASS_SLIME			(1<<4)	// Everyone's favorite xenobiology specimen (and maybe prometheans?).
-#define MOB_CLASS_ABERRATION	(1<<5)	// Weird shit.
-#define MOB_CLASS_DEMONIC		(1<<6)	// Cult stuff.
-#define MOB_CLASS_BOSS			(1<<7)	// Future megafauna hopefully someday.
-#define MOB_CLASS_ILLUSION		(1<<8)	// Fake mobs, e.g. Technomancer illusions.
-#define MOB_CLASS_PHOTONIC		(1<<9)	// Holographic mobs like holocarp, similar to _ILLUSION, but that make no attempt to hide their true nature.
+#define MOB_CLASS_NONE 			0	// Default value, and used to invert for _ALL.
+
+#define MOB_CLASS_PLANT			1	// Unused at the moment.
+#define MOB_CLASS_ANIMAL		2	// Animals and beasts like spiders, saviks, and bears.
+#define MOB_CLASS_HUMANOID		4	// Non-robotic humanoids, including /simple_mob and /carbon/humans and their alien variants.
+#define MOB_CLASS_SYNTHETIC		8	// Silicons, mechanical simple mobs, FBPs, and anything else that would pass is_synthetic()
+#define MOB_CLASS_SLIME			16	// Everyone's favorite xenobiology specimen (and maybe prometheans?).
+#define MOB_CLASS_ABERRATION	32	// Weird shit.
+#define MOB_CLASS_DEMONIC		64	// Cult stuff.
+#define MOB_CLASS_BOSS			128	// Future megafauna hopefully someday.
+#define MOB_CLASS_ILLUSION		256	// Fake mobs, e.g. Technomancer illusions.
+#define MOB_CLASS_PHOTONIC		512	// Holographic mobs like holocarp, similar to _ILLUSION, but that make no attempt to hide their true nature.
 
 #define MOB_CLASS_ALL (~MOB_CLASS_NONE)
 
@@ -399,24 +401,24 @@
 #define MARKING_TARGET_HEAD 2 // Draw a datum/sprite_accessory/marking to the mob's head after their hair, eg. ears, horns
 
 // used in /mob/living/carbon/human/can_inject, and by various callers of that proc
-#define CAN_INJECT              1
-#define INJECTION_PORT          2
-#define INJECTION_PORT_DELAY    3 SECONDS // used by injectors to apply delay due to searching for a port on the injectee's suit
+#define CAN_INJECT 1
+#define INJECTION_PORT 2
+#define INJECTION_PORT_DELAY 3 SECONDS // used by injectors to apply delay due to searching for a port on the injectee's suit
 
 
 //used by /proc/do_after
-#define DO_USER_CAN_MOVE     (1<<0)
-#define DO_USER_CAN_TURN     (1<<1)
-#define DO_USER_UNIQUE_ACT   (1<<2)
-#define DO_USER_SAME_HAND    (1<<3)
-#define DO_USER_SAME_ZONE    (1<<4)
-#define DO_TARGET_CAN_MOVE   (1<<5)
-#define DO_TARGET_CAN_TURN   (1<<6)
-#define DO_TARGET_UNIQUE_ACT (1<<7)
-#define DO_SHOW_PROGRESS     (1<<8)
-#define DO_PUBLIC_PROGRESS   (1<<9)
-#define DO_MOVE_CHECKS_TURFS (1<<10)
-#define DO_FAIL_FEEDBACK     (1<<11)
+#define DO_USER_CAN_MOVE     0x1
+#define DO_USER_CAN_TURN     0x2
+#define DO_USER_UNIQUE_ACT   0x4
+#define DO_USER_SAME_HAND    0x8
+#define DO_USER_SAME_ZONE    0x10
+#define DO_TARGET_CAN_MOVE   0x20
+#define DO_TARGET_CAN_TURN   0x40
+#define DO_TARGET_UNIQUE_ACT 0x80
+#define DO_SHOW_PROGRESS     0x100
+#define DO_PUBLIC_PROGRESS   0x200
+#define DO_MOVE_CHECKS_TURFS 0x400
+#define DO_FAIL_FEEDBACK     0x800
 
 #define DO_BOTH_CAN_MOVE     (DO_USER_CAN_MOVE | DO_TARGET_CAN_MOVE)
 #define DO_BOTH_CAN_TURN     (DO_USER_CAN_TURN | DO_TARGET_CAN_TURN)

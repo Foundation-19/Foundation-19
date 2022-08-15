@@ -24,10 +24,10 @@ Possible to do for anyone motivated enough:
  * Holopad
  */
 
-#define HOLOPAD_PASSIVE_POWER_USAGE (1<<0)
-#define HOLOGRAM_POWER_USAGE 		(1<<1)
-#define RANGE_BASED 				(1<<2)
-#define AREA_BASED 					6
+#define HOLOPAD_PASSIVE_POWER_USAGE 1
+#define HOLOGRAM_POWER_USAGE 2
+#define RANGE_BASED 4
+#define AREA_BASED 6
 
 var/const/HOLOPAD_MODE = RANGE_BASED
 

@@ -7,11 +7,11 @@
 #define RSC_FILE_CONV	2
 #define NUMBER_CONV		3
 //column flag values:
-#define IS_NUMERIC		(1<<0)
-#define IS_BINARY		(1<<1)
-#define IS_NOT_NULL		(1<<2)
-#define IS_PRIMARY_KEY	(1<<3)
-#define IS_UNSIGNED		(1<<4)
+#define IS_NUMERIC		1
+#define IS_BINARY		2
+#define IS_NOT_NULL		4
+#define IS_PRIMARY_KEY	8
+#define IS_UNSIGNED		16
 //types
 #define TINYINT		1
 #define SMALLINT	2

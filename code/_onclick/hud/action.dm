@@ -4,11 +4,11 @@
 #define AB_GENERIC 4
 #define AB_ITEM_USE_ICON 5
 
-#define AB_CHECK_RESTRAINED (1<<0)
-#define AB_CHECK_STUNNED 	(1<<1)
-#define AB_CHECK_LYING 		(1<<2)
-#define AB_CHECK_ALIVE 		(1<<3)
-#define AB_CHECK_INSIDE 	(1<<4)
+#define AB_CHECK_RESTRAINED 1
+#define AB_CHECK_STUNNED 2
+#define AB_CHECK_LYING 4
+#define AB_CHECK_ALIVE 8
+#define AB_CHECK_INSIDE 16
 
 
 /datum/action

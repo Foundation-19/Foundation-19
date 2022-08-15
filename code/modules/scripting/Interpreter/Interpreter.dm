@@ -10,10 +10,9 @@
 	BREAKING   - Indicates that the current loop is being terminated.
 	CONTINUING - Indicates that the rest of the current iteration of a loop is being skipped.
 */
-#define RETURNING  (1<<0)
-#define BREAKING   (1<<1)
-#define CONTINUING (1<<2)
-
+#define RETURNING  1
+#define BREAKING   2
+#define CONTINUING 4
 /n_Interpreter
 	var
 		scope

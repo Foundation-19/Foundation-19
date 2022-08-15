@@ -1,7 +1,7 @@
 
 #define MAX_FOOD_COOK_COUNT 3
 
-#define COOKER_STRIP_RAW (1<<0)
+#define COOKER_STRIP_RAW 0x1
 
 /obj/item/reagent_containers/food/snacks/var/list/cooked_with
 
