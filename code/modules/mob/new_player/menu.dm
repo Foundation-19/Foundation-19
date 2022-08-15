@@ -89,10 +89,8 @@
 	screen_loc = "NORTH, CENTER-7"
 
 /obj/screen/new_player/selection/join_game/Initialize()
-	var/mob/new_player/player = hud.mymob
-	update_lobby_icon(player)
-	RegisterSignal(src, COMSIG_GAME_STARTED, .proc/update_lobby_icon)
-	return ..()
+	. = ..()
+	RegisterSignal(SSticker, COMSIG_GAME_STARTED, .proc/update_lobby_icon)
 
 /obj/screen/new_player/selection/join_game/Click()
 	var/mob/new_player/player = hud.mymob
@@ -111,12 +109,14 @@
 	else
 		player.LateChoices() //show the latejoin job selection menu
 
-	update_lobby_icon(player)
+	update_lobby_icon()
 
-/obj/screen/new_player/selection/join_game/proc/update_lobby_icon(mob/new_player/player)
+/obj/screen/new_player/selection/join_game/proc/update_lobby_icon()
 	SIGNAL_HANDLER
 
-	if(GAME_STATE <= RUNLEVEL_LOBBY && player)
+	var/mob/new_player/player = hud.mymob
+
+	if(GAME_STATE <= RUNLEVEL_LOBBY)
 		if(player.ready)
 			icon_state = "ready"
 		else
