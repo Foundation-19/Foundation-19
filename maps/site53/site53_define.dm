@@ -69,9 +69,6 @@
 		/area/turbolift/site53/scp106cont = NO_APC,
 		/area/centcom/goc = NO_APC,
 	)
-	area_coherency_test_exempt_areas = list(
-		/area/site53/surface/surface,
-	)
 
 	away_site_budget = 3
 
