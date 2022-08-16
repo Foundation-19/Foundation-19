@@ -233,9 +233,6 @@
 	name = "Open Logs"
 
 /datum/player_action/check_logs/act(client/user, mob/target, list/params)
-	if(!target.client?.holder)
-		return
-
 	if(!target.client)
 		to_chat(user.mob, SPAN_NOTICE("You can't see logs if player is offline."))
 		return

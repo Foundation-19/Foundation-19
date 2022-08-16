@@ -178,6 +178,13 @@
 		spawning = TRUE
 		sound_to(src, sound(null, repeat = 0, wait = 0, volume = 85, channel = GLOB.lobby_sound_channel))// MAD JAMS cant last forever yo
 
+		if(mind)
+			mind.active = FALSE //we wish to transfer the key manually
+			mind.original = observer
+			if(client.prefs.memory)
+				mind.StoreMemory(client.prefs.memory)
+			mind.transfer_to(observer)					//won't transfer key since the mind is not active
+
 		observer.started_as_observer = TRUE
 		var/obj/O = locate("landmark*Observer-Start")
 		if(istype(O))
