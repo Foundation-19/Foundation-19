@@ -60,7 +60,7 @@
 	l_ear = /obj/item/device/radio/headset/heads/ce
 	back = /obj/item/storage/backpack/industrial
 
-
+//Don't touch these yet, Working on em! - Kepler
 // Cell Guards
 /* CANDIDATE FOR REMOVAL.
 /decl/hierarchy/outfit/job/site90/crew/security/cellguardlieutenant
@@ -226,6 +226,40 @@
 	head = /obj/item/clothing/head/beret/sec/corporate/officer
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
+
+/decl/hierarchy/outfit/job/site90/crew/security/secauditorofficer
+	name = OUTFIT_JOB_NAME("Investigation Officer")
+	uniform = /obj/item/clothing/under/det/grey
+	shoes = /obj/item/clothing/shoes/dress
+	suit = /obj/item/clothing/suit/storage/det_trench/grey
+	id_types = list(/obj/item/card/id/zcseclvl4ez)
+	l_ear = /obj/item/device/radio/headset/heads/cos
+	back = /obj/item/storage/backpack/satchel/leather/black
+	belt = /obj/item/storage/belt/holster/security/fullrhino
+	l_hand = /obj/item/storage/briefcase/crimekit
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	head = /obj/item/clothing/head/det/grey
+	gloves = /obj/item/clothing/gloves/forensic/armored
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
+
+/decl/hierarchy/outfit/job/site90/crew/security/secauditor
+	name = OUTFIT_JOB_NAME("Investigation Agent")
+	uniform = /obj/item/clothing/under/det
+	shoes = /obj/item/clothing/shoes/dress
+	suit = /obj/item/clothing/suit/storage/det_trench
+	id_types = list(/obj/item/card/id/zcseclvl4ez)
+	l_ear = /obj/item/device/radio/headset/heads/cos
+	back = /obj/item/storage/backpack/satchel/leather/black
+	belt = /obj/item/storage/belt/holster/security/fullrhino
+	l_hand = /obj/item/storage/briefcase/crimekit
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	head = /obj/item/clothing/head/det
+	gloves = /obj/item/clothing/gloves/forensic/armored
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
 
 // JUNIOR GUARD OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerlcz
