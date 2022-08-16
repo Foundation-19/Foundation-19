@@ -220,17 +220,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/surface/surface)
-"bc" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1";
-	pixel_x = -12
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/bridge)
 "bd" = (
 /obj/structure/bed/chair/office/light,
 /obj/structure/railing/mapped{
