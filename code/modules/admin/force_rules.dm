@@ -3,7 +3,7 @@
 /client/proc/FRules(mob/M as mob in GLOB.mob_list)
 	set category = "Special Verbs"
 	set name = "Force Rules"
-	if(!check_rights(R_INVESTIGATE, FALSE, src))
+	if(!check_rights(R_ADMIN|R_MOD, FALSE, src))
 		src << "Only administrators may use this command."
 		return
 	if(!mob)

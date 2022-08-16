@@ -1,12 +1,12 @@
 // A set of constants used to determine which type of mute an admin wishes to apply.
-#define MUTE_IC         0x1
-#define MUTE_OOC        0x2
-#define MUTE_PRAY       0x4
-#define MUTE_ADMINHELP  0x8
-#define MUTE_DEADCHAT   0x10
-#define MUTE_AOOC       0x20
-#define MUTE_MENTOR     0x40
-#define MUTE_ALL        0xFFFF
+#define MUTE_IC         (1<<0)
+#define MUTE_OOC        (1<<1)
+#define MUTE_PRAY       (1<<2)
+#define MUTE_ADMINHELP  (1<<3)
+#define MUTE_DEADCHAT   (1<<4)
+#define MUTE_AOOC       (1<<5)
+#define MUTE_MENTOR     (1<<6)
+#define MUTE_ALL        (~0)
 
 // Some constants for DB_Ban
 #define BANTYPE_PERMA       1
@@ -18,30 +18,29 @@
 #define ROUNDSTART_LOGOUT_REPORT_TIME 6000 // Amount of time (in deciseconds) after the rounds starts, that the player disconnect report is issued.
 
 // Admin permissions.
-#define R_BUILDMODE     0x1
-#define R_ADMIN         0x2
-#define R_BAN           0x4
-#define R_FUN           0x8
-#define R_SERVER        0x10
-#define R_DEBUG         0x20
-#define R_POSSESS       0x40
-#define R_PERMISSIONS   0x80
-#define R_STEALTH       0x100
-#define R_REJUVINATE    0x200
-#define R_VAREDIT       0x400
-#define R_SOUNDS        0x800
-#define R_SPAWN         0x1000
-#define R_MOD           0x2000
-#define R_MENTOR        0x4000
-#define R_HOST          0x8000 //higher than this will overflow
-#define R_INVESTIGATE   (R_ADMIN|R_MOD)
+#define R_BUILDMODE     (1<<0)
+#define R_ADMIN         (1<<1)
+#define R_BAN           (1<<2)
+#define R_FUN           (1<<3)
+#define R_SERVER        (1<<4)
+#define R_DEBUG         (1<<5)
+#define R_POSSESS       (1<<6)
+#define R_PERMISSIONS   (1<<7)
+#define R_STEALTH       (1<<8)
+#define R_REJUVINATE    (1<<9)
+#define R_VAREDIT       (1<<10)
+#define R_SOUNDS        (1<<11)
+#define R_SPAWN         (1<<12)
+#define R_MOD           (1<<13)
+#define R_MENTOR        (1<<14)
+#define R_HOST          (1<<15) //higher than this will overflow
 
-#define R_MAXPERMISSION 0x8000 // This holds the maximum value for a permission. It is used in iteration, so keep it updated.
+#define R_MAXPERMISSION (1<<15) // This holds the maximum value for a permission. It is used in iteration, so keep it updated.
 
 #define ADDANTAG_PLAYER 1	// Any player may call the add antagonist vote.
-#define ADDANTAG_ADMIN 2	// Any player with admin privilegies may call the add antagonist vote.
+#define ADDANTAG_ADMIN  2	// Any player with admin privilegies may call the add antagonist vote.
 
-#define TICKET_CLOSED 0   // Ticket has been resolved or declined
+#define TICKET_CLOSED   0   // Ticket has been resolved or declined
 #define TICKET_OPEN     1 // Ticket has been created, but not responded to
 #define TICKET_ASSIGNED 2 // An admin has assigned themself to the ticket and will respond
 

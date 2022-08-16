@@ -24,7 +24,7 @@
 
 /mob/new_player/get_status_tab_items()
 	.=..()
-	if(check_rights(R_INVESTIGATE, 0, src))
+	if(check_rights(R_ADMIN|R_MOD, 0, src))
 		. += "Game Mode: [SSticker.mode ? SSticker.mode.name : SSticker.master_mode] ([SSticker.master_mode])"
 		var/extra_antags = list2params(additional_antag_types)
 		. += "Added Antagonists: [extra_antags ? extra_antags : "None"]"
@@ -263,7 +263,7 @@
 		if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
 			to_chat(src, "No FBP without whitelist.")
 			spawning = FALSE
-			return	
+			return
 	close_spawn_windows()
 
 	var/mob/living/carbon/human/new_character

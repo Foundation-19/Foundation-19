@@ -199,6 +199,13 @@
 	user.jumptomob(target)
 	return TRUE
 
+/datum/player_action/send_to
+	action_tag = "send_to"
+	name = "Send To"
+
+/datum/player_action/send_to/act(client/user, mob/target, list/params)
+	user.sendmob(target)
+	return TRUE
 
 // VIEW VARIABLES
 /datum/player_action/access_variables
@@ -260,4 +267,15 @@
 	var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
 	popup.set_content(JOINTEXT(dat))
 	popup.open()
+	return TRUE
+
+/datum/player_action/traitor_panel
+	name = "Traitor Panel"
+	action_tag = "traitor_panel"
+
+/datum/player_action/traitor_panel/act(client/user, mob/target, list/params)
+	if(!user?.holder)
+		return
+
+	user.holder.show_traitor_panel(target)
 	return TRUE

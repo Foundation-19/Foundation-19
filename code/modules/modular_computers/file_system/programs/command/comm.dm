@@ -66,7 +66,7 @@
 	data["boss_short"] = GLOB.using_map.boss_short
 
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-	data["current_security_level_ref"] = any2ref(security_state.current_security_level)
+	data["current_security_level_ref"] = REF(security_state.current_security_level)
 	data["current_security_level_title"] = security_state.current_security_level.name
 
 	data["cannot_change_security_level"] = !security_state.can_change_security_level()
@@ -75,7 +75,7 @@
 	for(var/decl/security_level/security_level in security_state.comm_console_security_levels)
 		var/list/security_setup = list()
 		security_setup["title"] = security_level.name
-		security_setup["ref"] = any2ref(security_level)
+		security_setup["ref"] = REF(security_level)
 		security_levels[++security_levels.len] = security_setup
 	data["security_levels"] = security_levels
 

@@ -39,8 +39,7 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 	. = ..()
 
 /mob/observer/Login()
-	mind_initialize()
-	mind.active = TRUE
+	mind?.active = TRUE
 	..()
 
 /mob/observer/check_airflow_movable()

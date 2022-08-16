@@ -35,7 +35,7 @@
 "ag" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/space)
+/area/site53/surface/surface)
 "ah" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -363,7 +363,7 @@
 "ba" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_wall/prepainted,
-/area/space)
+/area/site53/surface/surface)
 "bc" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -994,15 +994,16 @@
 "cV" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/door/window/holowindoor{
-	req_access = list("ACCESS_ADMIN_LEVEL5");
 	dir = 4;
-	id_tag = "sitedirect"
+	id_tag = "sitedirect";
+	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cW" = (
 /obj/machinery/door/airlock/glass/command{
-	name = "Senior Administrative Offices"
+	name = "Senior Administrative Offices";
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "sitedirect";
@@ -1025,8 +1026,8 @@
 	icon_state = "tube1"
 	},
 /obj/machinery/door/window/holowindoor{
-	req_access = list("ACCESS_ADMIN_LEVEL5");
-	id_tag = "sitedirect"
+	id_tag = "sitedirect";
+	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
@@ -2456,7 +2457,7 @@
 "hM" = (
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/r_wall/prepainted,
-/area/space)
+/area/site53/surface/surface)
 "hN" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -2551,7 +2552,7 @@
 /area/site53/logistics/logisticsofficer)
 "hZ" = (
 /turf/simulated/open,
-/area/space)
+/area/site53/surface/surface)
 "ia" = (
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/r_wall/prepainted,
@@ -3360,7 +3361,7 @@
 "kx" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
-/area/space)
+/area/site53/surface/surface)
 "kB" = (
 /obj/effect/floor_decal/corner/orange/border,
 /obj/structure/closet/secure_closet/freezer/fridge,
@@ -4598,7 +4599,7 @@
 /area/site53/upper_surface/commstower)
 "WQ" = (
 /turf/simulated/mineral,
-/area/space)
+/area/site53/surface/surface)
 "WW" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
