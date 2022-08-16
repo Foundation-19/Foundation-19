@@ -18,7 +18,7 @@
 "ag" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/space)
+/area/site53/surface/surface)
 "ah" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -219,7 +219,18 @@
 "ba" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_wall/prepainted,
-/area/space)
+/area/site53/surface/surface)
+"bc" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_x = -12
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/bridge)
 "bd" = (
 /obj/structure/bed/chair/office/light,
 /obj/structure/railing/mapped{
@@ -2271,7 +2282,7 @@
 "hM" = (
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/r_wall/prepainted,
-/area/space)
+/area/site53/surface/surface)
 "hN" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -2366,7 +2377,7 @@
 /area/site53/logistics/logisticsofficer)
 "hZ" = (
 /turf/simulated/open,
-/area/space)
+/area/site53/surface/surface)
 "ia" = (
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/r_wall/prepainted,
@@ -3175,7 +3186,7 @@
 "kx" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
-/area/space)
+/area/site53/surface/surface)
 "kB" = (
 /obj/effect/floor_decal/corner/orange/border,
 /obj/structure/closet/secure_closet/freezer/fridge,
@@ -4381,7 +4392,7 @@
 /area/site53/upper_surface/commstower)
 "WQ" = (
 /turf/simulated/mineral,
-/area/space)
+/area/site53/surface/surface)
 "WW" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4

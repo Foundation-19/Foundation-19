@@ -821,6 +821,10 @@ Ccomp's first proc.
 	if(!ismob(M) || !check_rights(R_MOD, TRUE, src))
 		return
 
+	if(!M.client)
+		to_chat(mob, SPAN_WARNING("Mob doesn't have a client."))
+		return
+
 	switch(tgui_alert(mob, "Do you wish to send an admin alert to this user?", "Admin Aalert", list("Yes","No","Custom")))
 		if("Yes")
 			show_blurb(M, 15, "An admin is trying to talk to you!<br>Check your chat window and click their name to respond or you may be banned!", null, "center", "center", COLOR_RED, null, null, 1)

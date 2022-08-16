@@ -263,7 +263,7 @@
 		if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
 			to_chat(src, "No FBP without whitelist.")
 			spawning = FALSE
-			return	
+			return
 	close_spawn_windows()
 
 	var/mob/living/carbon/human/new_character

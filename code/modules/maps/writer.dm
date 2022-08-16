@@ -1,8 +1,8 @@
-#define DMM_IGNORE_AREAS 1
-#define DMM_IGNORE_TURFS 2
-#define DMM_IGNORE_OBJS 4
-#define DMM_IGNORE_NPCS 8
-#define DMM_IGNORE_PLAYERS 16
+#define DMM_IGNORE_AREAS 	(1<<0)
+#define DMM_IGNORE_TURFS 	(1<<1)
+#define DMM_IGNORE_OBJS 	(1<<2)
+#define DMM_IGNORE_NPCS 	(1<<3)
+#define DMM_IGNORE_PLAYERS 	(1<<4)
 #define DMM_IGNORE_MOBS 24
 dmm_suite{
 	var{
