@@ -912,14 +912,13 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
 "di" = (
-/obj/structure/cable{
+/obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/light/small,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/armory)
 "dl" = (
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/prepainted,
@@ -5371,6 +5370,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/senioragentoffice)
+"pU" = (
+/obj/structure/bed,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/armory)
 "pW" = (
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/wood/maple,
@@ -7131,8 +7134,8 @@
 /turf/simulated/floor/reinforced,
 /area/site53/surface/surface)
 "xg" = (
-/turf/simulated/floor/tiled,
-/area/site53/uez/equipmentroom)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/armory)
 "xn" = (
 /obj/machinery/door/airlock/command{
 	name = "Zone Commander's Office";
@@ -7180,15 +7183,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"yo" = (
-/obj/structure/closet/secure_closet/mtf/breachautomatics,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/effect/floor_decal/corner/red/border{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
 "yk" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -7200,6 +7194,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
+"yo" = (
+/obj/structure/closet/secure_closet/mtf/breachautomatics,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/armory)
 "yt" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7208,6 +7211,17 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
+"yu" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "yz" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/surgery/hall)
@@ -7358,6 +7372,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op2)
+"zA" = (
+/obj/machinery/door/airlock/glass/security{
+	id_tag = "ezcell1";
+	name = "Holding Cell 1";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "zE" = (
 /obj/structure/flora/pottedplant/flower,
 /obj/effect/floor_decal/corner/orange/border{
@@ -7372,7 +7394,7 @@
 /obj/structure/closet,
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
+/area/site53/uez/equipmentroom)
 "zI" = (
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/monotile/white,
@@ -7823,6 +7845,16 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/maintenance/surfaceeast)
+"Fq" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "Fs" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -8339,17 +8371,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
 "LE" = (
-/obj/machinery/button/alternate/door/bolts{
-	id_tag = "ezcell1";
-	name = "Cell 1 bolts";
-	pixel_x = -28
-	},
-/obj/effect/floor_decal/corner/red/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
-"LE" = (
 /obj/effect/paint_stripe/red,
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
@@ -8553,6 +8574,21 @@
 /obj/machinery/light,
 /turf/simulated/open,
 /area/site53/zonecommanderoffice)
+"Pi" = (
+/obj/machinery/power/apc{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/structure/table/standard,
+/obj/item/hand_labeler,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "Pr" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/snow,
@@ -8711,8 +8747,8 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/turf/simulated/floor/tiled,
-/area/site53/uez/armory)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/maincontrolroomstairs)
 "QP" = (
 /obj/machinery/door/airlock/command{
 	name = "Zone Commander's Office";
@@ -9164,11 +9200,8 @@
 /turf/simulated/wall/prepainted,
 /area/site53/medical/surgery/op1)
 "Vn" = (
-/obj/structure/bed/chair/office/comfy{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/goirepoffice)
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/equipmentroom)
 "Vr" = (
 /obj/machinery/vending/engineering{
 	dir = 1;
@@ -9396,7 +9429,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
+/area/site53/uez/equipmentroom)
 "XM" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -39742,7 +39775,7 @@ aC
 bc
 cR
 cR
-BD
+Fq
 dp
 lY
 lY
@@ -40783,7 +40816,7 @@ dA
 dA
 dA
 MX
-CJ
+Pi
 bg
 uc
 Or
@@ -42085,7 +42118,7 @@ MX
 Vl
 MX
 MX
-GE
+zA
 fF
 gq
 gq
@@ -42337,7 +42370,7 @@ xg
 mS
 kT
 wO
-Dl
+pU
 kT
 PS
 fy
@@ -42846,7 +42879,7 @@ Zn
 UE
 kT
 kT
-LB
+di
 tz
 kT
 kT
@@ -43869,7 +43902,7 @@ tM
 tS
 rK
 tU
-Lg
+yu
 Zn
 tX
 tQ
