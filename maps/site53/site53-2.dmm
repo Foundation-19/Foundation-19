@@ -36859,7 +36859,7 @@
 	dir = 8
 	},
 /obj/structure/foamedmetal,
-/turf/simulated/open,
+/turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 
 (1,1,1) = {"
@@ -70448,7 +70448,7 @@ xSz
 fMG
 wpE
 hmk
-aSX
+rwX
 eCf
 aSB
 era
@@ -70708,7 +70708,7 @@ knV
 fMG
 hmk
 hmk
-aSX
+rwX
 eCf
 eCf
 eCf
