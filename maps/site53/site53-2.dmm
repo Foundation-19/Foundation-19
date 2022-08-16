@@ -25179,6 +25179,20 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/maintenance)
+"bWm" = (
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "aicnorth";
+	name = "AIC Core Lockdown button";
+	pixel_y = -21
+	},
+/turf/simulated/open,
+/area/site53/science/aiccore)
 "bWR" = (
 /obj/structure/hygiene/shower,
 /turf/simulated/floor/tiled/monotile/white,
@@ -27324,10 +27338,14 @@
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "gxv" = (
-/obj/structure/foamedmetal,
-/obj/structure/catwalk,
-/obj/structure/lattice,
-/turf/simulated/floor/reinforced,
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "aicnorth";
+	name = "AIC Server Room Blast Door"
+	},
+/obj/structure/barricade/spike,
+/turf/simulated/floor,
 /area/site53/science/aiccore)
 "gys" = (
 /obj/structure/railing/mapped{
@@ -27367,9 +27385,14 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
 "gAr" = (
-/obj/structure/lattice,
-/obj/structure/foamedmetal,
-/turf/simulated/floor/reinforced,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3");
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
 "gBB" = (
 /obj/structure/table/reinforced,
@@ -27387,6 +27410,21 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
+"gDL" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "aicnorth";
+	name = "AIC Server Room Blast Door"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/barricade/spike,
+/turf/simulated/floor,
+/area/site53/science/aiccore)
 "gEl" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -28820,20 +28858,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/securitypost)
-"jke" = (
-/obj/structure/catwalk,
-/obj/structure/lattice,
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "aicnorth";
-	name = "AIC Core Lockdown button";
-	pixel_y = -21
-	},
-/turf/simulated/open,
-/area/site53/science/aiccore)
 "jmD" = (
 /obj/machinery/light{
 	dir = 8;
@@ -31447,14 +31471,15 @@
 /turf/simulated/floor,
 /area/site53/science/aiccore)
 "nYQ" = (
-/obj/structure/catwalk,
-/obj/structure/lattice,
-/obj/machinery/button/blast_door{
-	id_tag = "aic";
-	name = "AIC Core Lockdown button";
-	pixel_y = 21
+/obj/machinery/door/airlock/vault{
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
 	},
-/turf/simulated/open,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "aicnorth";
+	name = "AIC Server Room Blast Door"
+	},
+/turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
 "nZt" = (
 /obj/machinery/light{
@@ -31990,21 +32015,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/scp096)
-"oYV" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "aicnorth";
-	name = "AIC Server Room Blast Door"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/barricade/spike,
-/turf/simulated/floor,
-/area/site53/science/aiccore)
 "pak" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -33711,16 +33721,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint/east)
-"sum" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/door/window/brigdoor{
-	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3");
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "suu" = (
 /obj/effect/floor_decal/corner/red/bordercorner,
 /obj/effect/floor_decal/corner/red/bordercorner{
@@ -33917,17 +33917,6 @@
 /obj/item/flame/lighter/zippo,
 /turf/simulated/floor,
 /area/space)
-"sUy" = (
-/obj/machinery/door/airlock/vault{
-	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
-	},
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "aicnorth";
-	name = "AIC Server Room Blast Door"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "sVg" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
@@ -34110,6 +34099,16 @@
 /obj/effect/floor_decal/corner/black/full,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
+"tqp" = (
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/obj/machinery/button/blast_door{
+	id_tag = "aic";
+	name = "AIC Core Lockdown button";
+	pixel_y = 21
+	},
+/turf/simulated/open,
+/area/site53/science/aiccore)
 "trh" = (
 /obj/machinery/light{
 	dir = 8
@@ -36423,16 +36422,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
-"xuS" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "aicnorth";
-	name = "AIC Server Room Blast Door"
-	},
-/obj/structure/barricade/spike,
-/turf/simulated/floor,
-/area/site53/science/aiccore)
 "xvt" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
@@ -65814,15 +65803,15 @@ azA
 azA
 azA
 azA
-eCf
-eCf
-eCf
-eCf
-eCf
-eCf
-eCf
-eCf
-eCf
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
 eCf
 eCf
@@ -66074,16 +66063,16 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
-rwX
-rwX
-rwX
-rwX
-rwX
-rwX
-rwX
 rwX
 rwX
 rwX
@@ -66334,16 +66323,16 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
-rwX
-rwX
-rwX
-rwX
-rwX
-rwX
-rwX
 rwX
 rwX
 rwX
@@ -66594,18 +66583,18 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
+rwX
+rwX
 aSX
 aSX
 hmk
@@ -66854,18 +66843,18 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
+rwX
+rwX
 aSX
 aSX
 hmk
@@ -67114,18 +67103,18 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
+rwX
+rwX
 aSX
 aSX
 hmk
@@ -67374,18 +67363,18 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
 qMI
-qNR
-qNR
-qNR
-qNR
-qNR
-qNR
-qNR
-qNR
-qNR
+qMI
 qNR
 qNR
 hDZ
@@ -67634,20 +67623,20 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
+rwX
+rwX
 aSX
 aSX
-aSX
-aSX
-aSX
-aSX
-hmk
-hmk
-hmk
-hmk
-hmk
 hmk
 hDZ
 kiH
@@ -67894,20 +67883,20 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
+rwX
+rwX
 aSX
 aSX
-aSX
-aSX
-aSX
-aSX
-hmk
-hmk
-hmk
-hmk
-hmk
 hmk
 hDZ
 cOZ
@@ -68154,20 +68143,20 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
+rwX
+rwX
 aSX
 aSX
-aSX
-aSX
-aSX
-aSX
-hmk
-hmk
-hmk
-hmk
-hmk
 hmk
 hDZ
 kiH
@@ -68414,24 +68403,24 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
+rwX
+rwX
 aSX
 aSX
-aSX
-aSX
-aSX
-aSX
-hmk
-hmk
-hmk
-hmk
-hmk
 hmk
 hDZ
 kiH
-xuS
+gxv
 afv
 ojS
 eCf
@@ -68674,24 +68663,24 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
+rwX
+rwX
 aSX
 aSX
-aSX
-aSX
-aSX
-aSX
-hmk
-hmk
-hmk
-hmk
-hmk
 hmk
 hDZ
 kBg
-sUy
+nYQ
 afv
 tjN
 eCf
@@ -68934,23 +68923,23 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
+rwX
 rwX
 aSX
 aSX
-aSX
-aSX
-aSX
-aSX
-hmk
-hmk
-hmk
-hmk
-hmk
 hmk
 hDZ
-jke
+bWm
 eCf
 afv
 def
@@ -69194,24 +69183,24 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
+rwX
 rwX
 aSX
 aSX
-aSX
-aSX
-aSX
-aSX
-hmk
-hmk
-hmk
-hmk
-hmk
 hmk
 hDZ
 kiH
-oYV
+gDL
 afv
 rdd
 eCf
@@ -69454,24 +69443,24 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
+rwX
 rwX
 aSX
 aSX
-aSX
-aSX
-aSX
-aSX
-hmk
-hmk
-hmk
-hmk
-hmk
 hmk
 hDZ
 hAO
-xuS
+gxv
 ciJ
 hVL
 eCf
@@ -69714,20 +69703,20 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
+rwX
 rwX
 aSX
 aSX
-aSX
-aSX
-aSX
-aSX
-hmk
-hmk
-hmk
-hmk
-hmk
 hmk
 hDZ
 kiH
@@ -69974,20 +69963,20 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
+rwX
 rwX
 aSX
 aSX
-aSX
-aSX
-aSX
-aSX
-hmk
-hmk
-hmk
-hmk
-hmk
 hmk
 hDZ
 hNQ
@@ -70234,20 +70223,20 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
+rwX
+rwX
 aSX
 aSX
-aSX
-aSX
-aSX
-aSX
-hmk
-hmk
-hmk
-hmk
-hmk
 hmk
 hDZ
 kBg
@@ -70261,7 +70250,7 @@ ksB
 dFI
 ndI
 eCf
-nYQ
+tqp
 eLj
 uYB
 gJp
@@ -70494,25 +70483,25 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
+rwX
+rwX
 aSX
 aSX
-aSX
-aSX
-aSX
-aSX
-hmk
-hmk
-hmk
-hmk
-hmk
 hmk
 hDZ
 kiH
 eCf
-sum
+gAr
 bWT
 eCf
 vpd
@@ -70754,20 +70743,20 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
+rwX
+rwX
 aSX
 aSX
-aSX
-aSX
-aSX
-aSX
-hmk
-hmk
-hmk
-hmk
-hmk
 hmk
 hDZ
 kiH
@@ -71014,20 +71003,20 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
+rwX
+rwX
 aSX
 aSX
-aSX
-aSX
-aSX
-aSX
-hmk
-hmk
-hmk
-hmk
-hmk
 hmk
 hDZ
 qqr
@@ -71274,18 +71263,18 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
 qMI
-qNR
-qNR
-qNR
-qNR
-qNR
-qNR
-qNR
-qNR
-qNR
+qMI
 qNR
 qNR
 hDZ
@@ -71534,18 +71523,18 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
+rwX
+rwX
 aSX
 aSX
 hmk
@@ -71794,18 +71783,18 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
+rwX
+rwX
 aSX
 aSX
 hmk
@@ -72054,18 +72043,18 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
-aSX
+rwX
+rwX
 aSX
 aSX
 hmk
@@ -72314,16 +72303,16 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
-rwX
-rwX
-rwX
-rwX
-rwX
-rwX
-rwX
 rwX
 rwX
 rwX
@@ -72574,16 +72563,16 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
-gxv
-gAr
-rwX
-rwX
-rwX
-rwX
-rwX
-rwX
-rwX
 rwX
 rwX
 rwX
@@ -72834,15 +72823,15 @@ azA
 azA
 azA
 azA
-eCf
-eCf
-eCf
-eCf
-eCf
-eCf
-eCf
-eCf
-eCf
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 eCf
 eCf
 eCf
