@@ -7,7 +7,7 @@
 
 	var/list/Lines = list()
 
-	if(check_rights(R_INVESTIGATE, 0))
+	if(check_rights(R_ADMIN|R_MOD, 0))
 		for(var/client/C in GLOB.clients)
 			var/entry = "\t[C.key]"
 			if(!C.mob) //If mob is null, print error and skip rest of info for client.
@@ -66,7 +66,7 @@
 	var/list/msg = list()
 	var/active_staff = 0
 	var/total_staff = 0
-	var/can_investigate = check_rights(R_INVESTIGATE, 0)
+	var/can_investigate = check_rights(R_ADMIN|R_MOD, 0)
 
 	for(var/client/C in GLOB.admins)
 		var/line = list()
