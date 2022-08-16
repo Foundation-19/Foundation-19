@@ -25002,7 +25002,8 @@
 /area/site53/ulcz/generalpurpose)
 "bIp" = (
 /obj/effect/paint_stripe/mauve,
-/obj/structure/cable/green{
+/obj/machinery/status_display,
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -25797,6 +25798,12 @@
 "def" = (
 /obj/structure/bed/chair/armchair{
 	dir = 8
+	},
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "aicnorth";
+	name = "AIC Core Lockdown button";
+	pixel_y = -21
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/science/aiccore)
@@ -28225,6 +28232,20 @@
 /area/site53/llcz/scp500{
 	requires_power = 0
 	})
+"hZG" = (
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "aicnorth";
+	name = "AIC Core Lockdown button";
+	pixel_y = -21
+	},
+/turf/simulated/open,
+/area/site53/science/aiccore)
 "iaf" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -30824,6 +30845,16 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/commanderoffice)
+"mGV" = (
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/obj/machinery/button/blast_door{
+	id_tag = "aic";
+	name = "AIC Core Lockdown button";
+	pixel_y = 21
+	},
+/turf/simulated/open,
+/area/site53/science/aiccore)
 "mHY" = (
 /obj/machinery/power/apc/hyper{
 	dir = 8
@@ -31425,6 +31456,21 @@
 /obj/structure/foamedmetal,
 /turf/simulated/floor,
 /area/site53/science/aiccore)
+"nYQ" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "aicnorth";
+	name = "AIC Server Room Blast Door"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/barricade/spike,
+/turf/simulated/floor,
+/area/site53/science/aiccore)
 "nZt" = (
 /obj/machinery/light{
 	dir = 4
@@ -31456,6 +31502,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
+"obP" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "aicnorth";
+	name = "AIC Server Room Blast Door"
+	},
+/obj/structure/barricade/spike,
+/turf/simulated/floor,
+/area/site53/science/aiccore)
 "oee" = (
 /obj/structure/lattice,
 /turf/simulated/open,
@@ -35013,6 +35069,17 @@
 /obj/effect/paint_stripe/mauve,
 /obj/machinery/ai_status_display,
 /turf/simulated/wall/r_titanium,
+/area/site53/science/aiccore)
+"vpm" = (
+/obj/machinery/door/airlock/vault{
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
+	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "aicnorth";
+	name = "AIC Server Room Blast Door"
+	},
+/turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
 "vpu" = (
 /obj/structure/table/standard,
@@ -68354,7 +68421,7 @@ hmk
 hmk
 hDZ
 kiH
-eCf
+obP
 afv
 ojS
 eCf
@@ -68614,7 +68681,7 @@ hmk
 hmk
 hDZ
 kBg
-eCf
+vpm
 afv
 tjN
 eCf
@@ -68873,7 +68940,7 @@ hmk
 hmk
 hmk
 hDZ
-kiH
+hZG
 eCf
 afv
 def
@@ -69134,7 +69201,7 @@ hmk
 hmk
 hDZ
 kiH
-eCf
+nYQ
 afv
 rdd
 eCf
@@ -69394,7 +69461,7 @@ hmk
 hmk
 hDZ
 hAO
-eCf
+obP
 ciJ
 hVL
 eCf
@@ -70184,7 +70251,7 @@ ksB
 dFI
 ndI
 eCf
-fCk
+mGV
 eLj
 uYB
 gJp
