@@ -34,7 +34,6 @@
 #define R_MOD           (1<<13)
 #define R_MENTOR        (1<<14)
 #define R_HOST          (1<<15) //higher than this will overflow
-#define R_INVESTIGATE   (R_ADMIN|R_MOD)
 
 #define R_MAXPERMISSION (1<<15) // This holds the maximum value for a permission. It is used in iteration, so keep it updated.
 

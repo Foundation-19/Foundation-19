@@ -3,7 +3,7 @@
 	set name = "Dsay" //Gave this shit a shorter name so you only have to time out "dsay" rather than "dead say" to use it --NeoFite
 	set hidden = 1
 
-	if(!check_rights(R_INVESTIGATE, FALSE))
+	if(!check_rights(R_ADMIN|R_MOD, FALSE))
 		to_chat(src, "Only administrators may use this command.")
 		return
 

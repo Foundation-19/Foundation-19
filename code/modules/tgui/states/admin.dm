@@ -12,6 +12,6 @@
 GLOBAL_DATUM_INIT(admin_tgui_state, /datum/tgui_state/admin_state, new)
 
 /datum/tgui_state/admin_state/can_use_tgui_topic(src_object, mob/user)
-	if(check_rights(R_INVESTIGATE, FALSE, user.client))
+	if(check_rights(R_ADMIN|R_MOD, FALSE, user.client))
 		return UI_INTERACTIVE
 	return UI_CLOSE

@@ -15,7 +15,7 @@
 	. = ..()
 	if(!.)
 		return
-	if(check_rights(R_INVESTIGATE))
+	if(check_rights(R_ADMIN|R_MOD))
 		return
 	if(isghost(C.mob))
 		to_chat(src, SPAN_WARNING("You cannot use [name] while ghosting/observing!"))
@@ -29,7 +29,7 @@
 	var/datum/admins/holder = C.holder
 
 	for(var/client/target in GLOB.clients)
-		if(check_rights(R_INVESTIGATE, FALSE, target))
+		if(check_rights(R_ADMIN|R_MOD, FALSE, target))
 			receive_communication(C, target, SPAN_AOOC("<EM>[get_options_bar(C, 0, 1, 1)]:</EM> <span class='message linkify'>[message]</span>"))
 		else if(target.mob?.mind?.special_role)
 			var/display_name = C.key
@@ -39,5 +39,5 @@
 
 /decl/communication_channel/aooc/do_broadcast(message)
 	for (var/client/target in GLOB.clients)
-		if (check_rights(R_INVESTIGATE, FALSE, target) || target.mob?.mind?.special_role)
+		if (check_rights(R_ADMIN|R_MOD, FALSE, target) || target.mob?.mind?.special_role)
 			receive_broadcast(target, SPAN_AOOC("<strong>SYSTEM BROADCAST:</strong> <span class='message linkify'>[message]</span>"))
