@@ -1,6 +1,10 @@
 
 /datum/admins/proc/player_panel_new()//The new one
-	if (!usr.client.holder || !(usr.client.holder.rights & R_INVESTIGATE))
+	set name = "Show Player Panel"
+	set desc = "List Players"
+	set category = "Admin"
+
+	if (!usr.client.holder || !(check_rights(R_INVESTIGATE, FALSE)))
 		return
 	var/dat = "<html>"
 
@@ -545,7 +549,7 @@ GLOBAL_LIST_INIT(pp_status_flags, list(
 	return P.act(ui.user.client, targetMob, params)
 
 /datum/admins/proc/show_player_panel(var/mob/M in SSmobs.mob_list)
-	set name = "Show Player Panel"
+	set name = "Open Player Panel"
 	set desc = "Edit player (respawn, ban, heal, etc)"
 	set category = null
 
@@ -558,7 +562,7 @@ GLOBAL_LIST_INIT(pp_status_flags, list(
 		var/client/C = src
 		src = C.holder
 
-	if (!istype(src,/datum/admins) || !(src.rights & (R_MOD|R_ADMIN)))
+	if (!usr.client.holder || !(check_rights(R_INVESTIGATE, FALSE)))
 		to_chat(owner, "Error: you are not an admin!")
 		return
 
