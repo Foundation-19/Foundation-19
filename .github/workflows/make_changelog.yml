@@ -25,6 +25,6 @@ jobs:
       - name: Make CL
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
-          GIT_EMAIL: "{{ secrets.BOT_EMAIL }}"
-          GIT_NAME: "{{ secrets.BOT_USERNAME }}"
+          GIT_EMAIL: "${{ secrets.BOT_EMAIL }}"
+          GIT_NAME: "${{ secrets.BOT_USERNAME }}"
         run: python tools/changelog/generate_cl.py
