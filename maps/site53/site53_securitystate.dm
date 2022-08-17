@@ -143,7 +143,7 @@
 	overlay_alarm = "grey_alarm"
 	overlay_status_display = "status_display_grey"
 
-	var/static/datum/announcement/priority/security/security_announcement_gray = new(do_log = 0, do_newscast = 1, new_sound = sound())
+	var/static/datum/announcement/priority/security/security_announcement_gray = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/FIJ_Team/codegray.ogg'))
 
 /decl/security_level/default/site53/code_gray/switching_up_to()
 	security_announcement_gray.Announce("There have been confirmed reports of a hostile Group of Interest having infiltrated the Site. Security is allowed to terminate the threats." ,"Attention! Code Gray alert procedures now in effect!")
