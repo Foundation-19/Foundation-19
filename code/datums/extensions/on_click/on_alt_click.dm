@@ -33,7 +33,7 @@
 		return FALSE
 	if(!istype(user))                         // Only ghosts may attempt to alt-kill mobs
 		return FALSE
-	if(!check_rights(R_INVESTIGATE, 0, user)) // And only if they're investigators - Power creep
+	if(!check_rights(R_ADMIN|R_MOD, 0, user)) // And only if they're investigators - Power creep
 		return FALSE
 	if(!living_holder.client)                 // And only if the target mob is currently possessed
 		to_chat(user, SPAN_NOTICE("\The [living_holder] is not currently possessed."))

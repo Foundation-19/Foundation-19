@@ -156,7 +156,7 @@
 	set name = "Narrate"
 	set desc = "Selection of narrates targeting a mob."
 
-	if(!check_rights(R_INVESTIGATE))
+	if(!check_rights(R_ADMIN|R_MOD))
 		return
 
 	var/options = list()
@@ -186,7 +186,7 @@
 	set name = "Direct Narrate"
 	set desc = "Narrate to a specific mob."
 
-	if (!check_rights(R_INVESTIGATE))
+	if (!check_rights(R_ADMIN|R_MOD))
 		return
 
 	if (!M)

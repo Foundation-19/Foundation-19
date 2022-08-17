@@ -11,7 +11,7 @@
 	. = ..()
 	if(!.)
 		return
-	if(check_rights(R_INVESTIGATE))
+	if(check_rights(R_ADMIN|R_MOD))
 		return
 	if(C.donator_holder?.flags & D_DOOC)
 		return

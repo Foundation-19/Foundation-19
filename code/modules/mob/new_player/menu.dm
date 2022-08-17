@@ -91,12 +91,13 @@
 /obj/screen/new_player/selection/join_game/Initialize()
 	. = ..()
 	RegisterSignal(SSticker, COMSIG_TICKER_STARTED, .proc/update_lobby_icon)
+	update_lobby_icon()
 
 /obj/screen/new_player/selection/join_game/Click()
 	var/mob/new_player/player = hud.mymob
 	sound_to(player, 'sound/effects/menu_click.ogg')
 
-	if(!check_rights(R_INVESTIGATE, FALSE, player) && GAME_STATE > RUNLEVEL_LOBBY)
+	if(!check_rights(R_ADMIN|R_MOD, FALSE, player) && GAME_STATE > RUNLEVEL_LOBBY)
 		var/dsdiff = config.respawn_menu_delay MINUTES - (world.time - player.respawned_time)
 		if(dsdiff > 0)
 			to_chat(player, SPAN_WARNING("You must wait [time2text(dsdiff, "mm:ss")] before rejoining."))
@@ -176,6 +177,13 @@
 
 		spawning = TRUE
 		sound_to(src, sound(null, repeat = 0, wait = 0, volume = 85, channel = GLOB.lobby_sound_channel))// MAD JAMS cant last forever yo
+
+		if(mind)
+			mind.active = FALSE //we wish to transfer the key manually
+			mind.original = observer
+			if(client.prefs.memory)
+				mind.StoreMemory(client.prefs.memory)
+			mind.transfer_to(observer)					//won't transfer key since the mind is not active
 
 		observer.started_as_observer = TRUE
 		var/obj/O = locate("landmark*Observer-Start")

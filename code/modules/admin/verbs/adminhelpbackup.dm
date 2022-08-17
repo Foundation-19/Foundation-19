@@ -120,7 +120,7 @@ var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","
 	var/admin_number_afk = 0
 
 	for(var/client/X in GLOB.admins)
-		if(check_rights(R_INVESTIGATE, FALSE, X))
+		if(check_rights(R_ADMIN|R_MOD, FALSE, X))
 			if(X.is_afk())
 				admin_number_afk++
 			if(X.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)

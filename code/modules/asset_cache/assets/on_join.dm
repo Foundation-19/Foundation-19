@@ -25,5 +25,5 @@
 		"cotbg.png" = 'html/images/cotbg.png',
 		"ar.png" = 'html/images/ar.png',
 		"uiu.png" = 'html/images/uiu.png',
-		"thi.png" = 'thi.png'
+		"thi.png" = 'html/images/thi.png'
 	)
