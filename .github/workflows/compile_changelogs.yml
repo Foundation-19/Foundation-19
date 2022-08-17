@@ -39,8 +39,8 @@ jobs:
       - name: Commit
         if: steps.value_holder.outputs.ACTIONS_ENABLED
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "Changelogs"
+          git config --local user.email "${{ secrets.BOT_EMAIL }}"
+          git config --local user.name "${{ secrets.BOT_USERNAME }}"
           git pull origin dev
           git add html/changelogs
           git commit -m "Automatic changelog compile [ci skip]" -a || true
@@ -48,4 +48,4 @@ jobs:
         if: steps.value_holder.outputs.ACTIONS_ENABLED
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.BOT_TOKEN }}
