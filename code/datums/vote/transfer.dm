@@ -34,7 +34,7 @@
 		if(by_who)
 			to_chat(by_who, SPAN_WARNING("Transfer voting is disabled."))
 		return FALSE // Admins and autovotes bypass the config setting.
-	if(check_rights(R_INVESTIGATE, FALSE, by_who) || forced)
+	if(check_rights(R_ADMIN|R_MOD, FALSE, by_who) || forced)
 		return //Mods bypass further checks.
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 	if(security_state.current_security_level_is_same_or_higher_than(security_state.high_security_level))

@@ -14,13 +14,13 @@ var/global/floorIsLava = 0
 	msg = "<span class=\"log_message\"><span class=\"prefix\">STAFF LOG:</span> <span class=\"message\">[msg]</span></span>"
 	log_adminwarn(msg)
 	for(var/client/C in GLOB.admins)
-		if(check_rights(R_INVESTIGATE, FALSE, C))
+		if(check_rights(R_ADMIN|R_MOD, FALSE, C))
 			to_chat(C, msg)
 /proc/msg_admin_attack(var/text) //Toggleable Attack Messages
 	log_attack(text)
 	var/rendered = "<span class=\"log_message\"><span class=\"prefix\">ATTACK:</span> <span class=\"message\">[text]</span></span>"
 	for(var/client/C in GLOB.admins)
-		if(check_rights(R_INVESTIGATE, FALSE, C))
+		if(check_rights(R_ADMIN|R_MOD, FALSE, C))
 			if(C.get_preference_value(/datum/client_preference/staff/show_attack_logs) == GLOB.PREF_SHOW)
 				var/msg = rendered
 				to_chat(C, msg)
@@ -1235,7 +1235,7 @@ var/global/floorIsLava = 0
 	if(!isliving(H))
 		return
 
-	if(check_rights(R_INVESTIGATE))
+	if(check_rights(R_ADMIN|R_MOD))
 		if (!H.admin_paralyzed)
 			H.paralysis = 8000
 			H.admin_paralyzed = TRUE
@@ -1351,12 +1351,12 @@ var/global/floorIsLava = 0
 		if(P.sender) // sent as a reply
 			log_admin("[key_name(src.owner)] replied to a fax message from [key_name(P.sender)]")
 			for(var/client/C in GLOB.admins)
-				if((R_INVESTIGATE) & C.holder.rights)
+				if((R_ADMIN|R_MOD) & C.holder.rights)
 					to_chat(C, "<span class='log_message'><span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] replied to a fax message from [key_name_admin(P.sender)] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
 		else
 			log_admin("[key_name(src.owner)] has sent a fax message to [P.department]")
 			for(var/client/C in GLOB.admins)
-				if((R_INVESTIGATE) & C.holder.rights)
+				if((R_ADMIN|R_MOD) & C.holder.rights)
 					to_chat(C, "<span class='log_message'><span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] has sent a fax message to [P.department] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
 
 	else

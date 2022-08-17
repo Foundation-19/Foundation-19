@@ -99,7 +99,7 @@ export const PlayerPanel = (props, context) => {
       <Window.Content scrollable>
         <Section md={1}>
           <Stack>
-            <Stack.Item width="80px" color="label">
+            <Stack.Item width="90px" color="label">
               Name:
             </Stack.Item>
             <Stack.Item grow={1} align="right">
@@ -114,7 +114,7 @@ export const PlayerPanel = (props, context) => {
             </Stack.Item>
           </Stack>
           <Stack mt={1}>
-            <Stack.Item width="80px" color="label">
+            <Stack.Item width="90px" color="label">
               Mob Type:
             </Stack.Item>
             <Stack.Item grow={1} align="right">
@@ -130,7 +130,7 @@ export const PlayerPanel = (props, context) => {
             </Stack.Item>
           </Stack>
           <Stack mt={1}>
-            <Stack.Item width="80px" color="label">
+            <Stack.Item width="90px" color="label">
               Client:
             </Stack.Item>
             <Stack.Item grow={1} align="left">
@@ -175,7 +175,7 @@ export const PlayerPanel = (props, context) => {
             )}
           </Stack>
           <Stack mt={1}>
-            <Stack.Item width="80px" color="label">
+            <Stack.Item width="90px" color="label">
               Inactivity time:
             </Stack.Item>
             <Stack.Item grow={1} align="left">
@@ -188,7 +188,7 @@ export const PlayerPanel = (props, context) => {
           </Stack>
           {client_rank && (
             <Stack mt={1}>
-              <Stack.Item width="80px" color="label">
+              <Stack.Item width="90px" color="label">
                 Rank:
               </Stack.Item>
               <Stack.Item grow={1} align="left">

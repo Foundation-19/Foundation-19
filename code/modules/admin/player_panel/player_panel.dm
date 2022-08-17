@@ -1,10 +1,14 @@
-
-/datum/admins/proc/player_panel_new()//The new one
+/client/proc/list_players()//The new one
 	set name = "Show Player Panel"
 	set desc = "List Players"
 	set category = "Admin"
 
-	if (!usr.client.holder || !(check_rights(R_INVESTIGATE, FALSE)))
+	if(!usr.client.holder || !(check_rights(R_ADMIN|R_MOD, FALSE)))
+		return
+	holder?.player_panel_new()
+
+/datum/admins/proc/player_panel_new()//The new one
+	if(!usr.client.holder || !(check_rights(R_ADMIN|R_MOD, FALSE)))
 		return
 	var/dat = "<html>"
 
@@ -277,7 +281,7 @@
 
 //Extended panel with ban related things
 /datum/admins/proc/player_panel_extended()
-	if (!usr.client.holder || !(usr.client.holder.rights & R_INVESTIGATE))
+	if (!usr.client.holder || !(usr.client.holder.rights & R_ADMIN|R_MOD))
 		return
 
 	var/dat = "<html>"
@@ -353,7 +357,7 @@
 		if(check_rights(R_DEBUG, 0))
 			dat += "<br><A HREF='?_src_=vars;Vars=\ref[evacuation_controller]'>VV Evacuation Controller</A><br>"
 
-		if(check_rights(R_INVESTIGATE, 0))
+		if(check_rights(R_ADMIN|R_MOD, 0))
 			dat += "<b>Evacuation:</b> "
 			switch(evacuation_controller.state)
 				if(EVAC_IDLE)
@@ -562,7 +566,7 @@ GLOBAL_LIST_INIT(pp_status_flags, list(
 		var/client/C = src
 		src = C.holder
 
-	if (!usr.client.holder || !(check_rights(R_INVESTIGATE, FALSE)))
+	if (!usr.client.holder || !(check_rights(R_ADMIN|R_MOD, FALSE)))
 		to_chat(owner, "Error: you are not an admin!")
 		return
 
