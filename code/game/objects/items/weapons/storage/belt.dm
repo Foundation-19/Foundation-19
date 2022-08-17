@@ -282,7 +282,7 @@
 	update_icon()
 
 
-/obj/item/storage/belt/holster/security/fullusp/Initialize()
+/obj/item/storage/belt/holster/security/fullrhino/Initialize()
 	. = ..()
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/device/flash(src)
