@@ -40,6 +40,48 @@ var/list/department_radio_keys = list(
 	  ":O" = "Response Team", ".O" = "Response Team",
 	  ":J" = "Hailing", ".J" = "Hailing",
 
+	  //Rus_Loc_by_FIJ_Team
+	  ":к" = "right ear",	".к" = "right ear",
+	  ":д" = "left ear",	".д" = "left ear",
+	  ":ш" = "intercom",	".ш" = "intercom",
+	  ":р" = "department",	".р" = "department",
+	  ":с" = "Command",		".с" = "Command",
+	  ":т" = "Science",		".т" = "Science",
+	  ":ь" = "Medical",		".ь" = "Medical",
+	  ":у" = "Engineering", ".у" = "Engineering",
+	  ":ы" = "Security",	".ы" = "Security",
+	  ":ц" = "whisper",		".ц" = "whisper",
+	  ":е" = "Mercenary",	".е" = "Mercenary",
+	  ":ч" = "Raider",		".ч" = "Raider",
+	  ":г" = "Supply",		".г" = "Supply",
+	  ":м" = "Service",		".м" = "Service",
+	  ":з" = "AI Private",	".з" = "AI Private",
+	  ":я" = "Entertainment",".я" = "Entertainment",
+	  ":н" = "Exploration",		".н" = "Exploration",
+	  ":щ" = "Response Team",".щ" = "Response Team", //ERT
+	  ":о" = "Hailing", ".о" = "Hailing",
+
+	  ":К" = "right ear",	".К" = "right ear",
+	  ":Д" = "left ear",	".Д" = "left ear",
+	  ":Ш" = "intercom",	".Ш" = "intercom",
+	  ":Р" = "department",	".З" = "department",
+	  ":С" = "Command",		".С" = "Command",
+	  ":Т" = "Science",		".Т" = "Science",
+	  ":Ь" = "Medical",		".Ь" = "Medical",
+	  ":У" = "Engineering",	".У" = "Engineering",
+	  ":Ы" = "Security",	".Ы" = "Security",
+	  ":Ц" = "whisper",		".Ц" = "whisper",
+	  ":Е" = "Mercenary",	".У" = "Mercenary",
+	  ":Ч" = "Raider",		".Ч" = "Raider",
+	  ":Г" = "Supply",		".Г" = "Supply",
+	  ":М" = "Service",		".М" = "Service",
+	  ":З" = "AI Private",	".З" = "AI Private",
+	  ":Я" = "Entertainment",".Я" = "Entertainment",
+	  ":Н" = "Exploration",		".Н" = "Exploration",
+	  ":Щ" = "Response Team", ".Щ" = "Response Team",
+	  ":О" = "Hailing", ".О" = "Hailing",
+
+
 	  //kinda localization -- rastaf0
 	  //same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
 	  ":ê" = "right ear",	".ê" = "right ear",
@@ -54,6 +96,7 @@ var/list/department_radio_keys = list(
 	  ":ö" = "whisper",		".ö" = "whisper",
 	  ":å" = "Mercenary",	".å" = "Mercenary",
 	  ":é" = "Supply",		".é" = "Supply",
+	  ":п" = "GOC",			".П" = "GOC", //GOC
 	  ":g" = "GOC",			".g" = "GOC", //GOC
 
 	  ":x" = "LCZ-Security",		".x" = "LCZ-Security",
@@ -62,6 +105,12 @@ var/list/department_radio_keys = list(
 	  ":X" = "LCZ-Security",		".X" = "LCZ-Security",
 	  ":K" = "HCZ-Security",		".K" = "HCZ-Security",
 	  ":Z" = "ECZ-Security",		".Z" = "ECZ-Security",
+	  ":ч" = "LCZ-Security",		".ч" = "LCZ-Security",
+	  ":л" = "HCZ-Security",		".л" = "HCZ-Security",
+	  ":я" = "ECZ-Security",		".я" = "ECZ-Security",
+	  ":Ч" = "LCZ-Security",		".Ч" = "LCZ-Security",
+	  ":Л" = "HCZ-Security",		".Л" = "HCZ-Security",
+	  ":Я" = "ECZ-Security",		".Я" = "ECZ-Security",
 )
 
 
@@ -158,7 +207,7 @@ var/list/channel_to_radio_key = new
 
 	message = html_decode(message)
 
-	var/end_char = copytext(message, length(message), length(message) + 1)
+	var/end_char = copytext_char(message, length(message), length(message) + 1)
 	if(!(end_char in list(".", "?", "!", "-", "~", ":")))
 		message += "."
 
@@ -185,7 +234,7 @@ var/list/channel_to_radio_key = new
 	if(!speaking)
 		speaking = parse_language(message)
 		if(speaking)
-			message = copytext(message,2+length(speaking.key))
+			message = copytext_char(message,2+length_char(speaking.key))
 		else
 			speaking = get_default_language()
 
@@ -193,9 +242,9 @@ var/list/channel_to_radio_key = new
 	var/message_mode = parse_message_mode(message, "headset")
 	if (message_mode)
 		if (message_mode == "headset")
-			message = copytext(message,2)	//it would be really nice if the parse procs could do this for us.
+			message = copytext_char(message,2)	//it would be really nice if the parse procs could do this for us.
 		else
-			message = copytext(message,3)
+			message = copytext_char(message,3)
 
 	message = trim_left(message)
 
