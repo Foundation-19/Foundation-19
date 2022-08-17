@@ -10,7 +10,7 @@
 	/// If supplied, an override question will be displayed instead of the name of the vote.
 	var/override_question
 	/// The sound effect played to everyone when this vote is initiated.
-	var/vote_sound = 'sound/misc/bloop.ogg'
+	var/vote_sound = 'sound/FIJ_Team/votestart.ogg'
 	/// A list of default choices we have for this vote.
 	var/list/default_choices
 
