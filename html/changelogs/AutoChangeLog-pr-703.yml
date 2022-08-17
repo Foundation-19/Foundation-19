@@ -1,4 +1,0 @@
-author: Tsurupeta
-delete-after: true
-changes:
-  - bugfix: Fixed bug when lobby screen would sometimes not show up.
