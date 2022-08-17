@@ -9,7 +9,8 @@
 		mind.active = 1
 		mind.current = src
 
-	loc = null
+	if(length(GLOB.new_player))
+		forceMove(pick(GLOB.new_player))
 	my_client = client
 	sight |= SEE_TURFS
 
