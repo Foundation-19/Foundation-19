@@ -8682,9 +8682,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "Qa" = (
@@ -8742,6 +8739,12 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"QI" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "QJ" = (
 /obj/structure/flora/pottedplant/decorative,
 /obj/structure/railing/mapped{
@@ -8998,10 +9001,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
-"Tn" = (
-/obj/effect/floor_decal/corner/orange/bordercorner,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/entrancezone/hallway)
 "TG" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -39796,14 +39795,14 @@ gh
 gh
 gh
 Hq
-cE
-lY
-lY
-lY
-lH
-lY
-lY
-lY
+gh
+gh
+gh
+gh
+QI
+gh
+gh
+gh
 aj
 aj
 ar
@@ -40053,14 +40052,14 @@ gh
 gh
 gh
 Hq
-Tn
-bd
-bd
-bd
+gh
+gh
+gh
+gh
 PZ
-bd
-bd
-bd
+gh
+gh
+gh
 aj
 sb
 ax
