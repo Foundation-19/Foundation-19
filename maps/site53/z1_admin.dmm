@@ -5608,13 +5608,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"Bm" = (
-/obj/machinery/door/airlock/glass/command{
-	name = "O5 Council";
-	req_access = list("ACCESS_MTF")
-	},
-/turf/space,
-/area/space)
 "Bo" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 4
@@ -24339,7 +24332,7 @@ eL
 eL
 eL
 as
-Bm
+ab
 ab
 ab
 ab
