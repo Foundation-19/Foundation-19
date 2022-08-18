@@ -51,3 +51,5 @@ __pycache__
 
 # flyway config
 flyway.conf
+
+.cache

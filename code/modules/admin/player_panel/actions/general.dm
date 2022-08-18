@@ -199,6 +199,13 @@
 	user.jumptomob(target)
 	return TRUE
 
+/datum/player_action/send_to
+	action_tag = "send_to"
+	name = "Send To"
+
+/datum/player_action/send_to/act(client/user, mob/target, list/params)
+	user.sendmob(target)
+	return TRUE
 
 // VIEW VARIABLES
 /datum/player_action/access_variables
@@ -226,9 +233,6 @@
 	name = "Open Logs"
 
 /datum/player_action/check_logs/act(client/user, mob/target, list/params)
-	if(!target.client?.holder)
-		return
-
 	if(!target.client)
 		to_chat(user.mob, SPAN_NOTICE("You can't see logs if player is offline."))
 		return
