@@ -38,7 +38,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	return
 /mob/living/carbon/human/scp049/New(new_loc, new_species)
 	new_species = "SCP-049"
-
 	return ..()
 
 /mob/living/carbon/human/scp049/Initialize()
@@ -70,7 +69,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	return ..()
 
 /mob/living/carbon/human/scp049/proc/init_049_skills()
-
 	skillset.skill_list = list()
 	for(var/decl/hierarchy/skill/S in GLOB.skills)
 		skillset.skill_list[S.type] = SKILL_TRAINED
