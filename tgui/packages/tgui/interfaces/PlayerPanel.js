@@ -415,7 +415,7 @@ const GeneralActions = (props, context) => {
 
 const PunishmentActions = (props, context) => {
   const { act, data } = useBackend(context);
-  const { glob_mute_bits, client_muted } = data;
+  const { glob_mute_bits, client_muted, staff_warn, has_client } = data;
   return (
     <Section fill>
       <Section level={2} title="Banishment">
@@ -458,6 +458,15 @@ const PunishmentActions = (props, context) => {
             content="Check Notes"
             disabled={!hasPermission(data, 'show_notes')}
             onClick={() => act('show_notes')}
+          />
+          <Button.Checkbox
+            width="100%"
+            icon="clipboard-list"
+            color="average"
+            checked={staff_warn}
+            content={staff_warn ? 'Remove from Watchlist' : 'Add to Watchlist'}
+            disabled={!hasPermission(data, 'watchlist') || !has_client}
+            onClick={() => act('watchlist')}
           />
         </Stack>
       </Section>

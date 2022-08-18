@@ -1095,7 +1095,7 @@ var/global/floorIsLava = 0
 	if(!istype(M))
 		return
 	var/datum/nano_module/skill_ui/NM = /datum/nano_module/skill_ui
-	if(is_admin(usr))
+	if(check_rights(R_MOD|R_ADMIN, 0, usr))
 		NM = /datum/nano_module/skill_ui/admin //They get the fancy version that lets you change skills and debug stuff.
 	NM = new NM(usr, override = M.skillset)
 	NM.ui_interact(usr)

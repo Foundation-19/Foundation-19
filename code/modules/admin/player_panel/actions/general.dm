@@ -140,7 +140,7 @@
 
 /datum/player_action/set_name/act(var/client/user, var/mob/target, var/list/params)
 	if(target.name != params["name"])
-		target.SetName(params["name"])
+		target.fully_replace_character_name(params["name"])
 		message_staff("[key_name_admin(user)] set [key_name_admin(target)]'s name to [params["name"]]")
 		return TRUE
 

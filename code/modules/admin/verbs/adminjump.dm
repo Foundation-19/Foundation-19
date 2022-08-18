@@ -145,7 +145,7 @@
 		return
 
 	var/list/areas = area_repository.get_areas_by_name()
-	var/area/A = tgui_input_list(mob, "Pick an area.", "Pick an area", areas)
+	var/area/A = areas[tgui_input_list(mob, "Pick an area.", "Pick an area", areas)]
 	if(A)
 		M.jumpTo(pick(get_area_turfs(A)))
 		SSstatistics.add_field_details("admin_verb","SMOB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
