@@ -184,16 +184,16 @@ export class Changelog extends Component {
         </p>
         <p>
           {'Current project maintainers can be found '}
-          <a href="https://github.com/tgstation?tab=members">here</a>
+          <a href="https://github.com/orgs/Foundation-19/people">here</a>
           {', recent GitHub contributors can be found '}
-          <a href="https://github.com/tgstation/tgstation/pulse/monthly">
+          <a href="https://github.com/Foundation-19/Foundation-19/pulse/monthly">
             here
           </a>
           .
         </p>
         <p>
           {'You can also join our discord '}
-          <a href="https://tgstation13.org/phpBB/viewforum.php?f=60">here</a>.
+          <a href="https://discord.gg/kE9USTEUa7">here</a>.
         </p>
         {dateDropdown}
       </Section>
