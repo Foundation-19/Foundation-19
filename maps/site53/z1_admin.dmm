@@ -1067,16 +1067,6 @@
 	},
 /turf/simulated/floor/tiled/kafel_full,
 /area/site53/lhcz/scp1102entrance)
-"gb" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "O5 Council"
-	},
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "monotiledark"
-	},
-/area/centcom)
 "gc" = (
 /obj/effect/decal/cleanable/cobweb,
 /turf/simulated/floor/tiled/techmaint,
@@ -22526,7 +22516,7 @@ hO
 hO
 hO
 KR
-gb
+Rr
 hO
 hO
 hO
