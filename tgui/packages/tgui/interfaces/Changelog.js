@@ -213,7 +213,7 @@ export class Changelog extends Component {
         </p>
         <p>
           <b>Mappers: </b>
-          HarryOB, Doctor-Derp, Graf
+          HarryOB, Doctor-Derp
         </p>
       </Section>
     );
