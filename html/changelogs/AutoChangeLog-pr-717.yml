@@ -1,0 +1,4 @@
+author: Tsurupeta
+delete-after: true
+changes:
+  - bugfix: Hopefully fixed changelog once and for all
