@@ -1,7 +1,0 @@
-author: DTraitor
-delete-after: true
-changes:
-  - bugfix: Fixed Send To verb
-  - bugfix: Added Staff Warn to PP
-  - bugfix: Renaming mobs using PP now changes their name
-  - bugfix: Fixed admins not being able to change skills using skill panel
