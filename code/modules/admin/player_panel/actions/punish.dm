@@ -113,3 +113,38 @@
 /datum/player_action/warn/act(client/user, mob/target, list/params)
 	user.warn(target.ckey)
 	return TRUE
+
+/datum/player_action/watchlist
+	action_tag = "watchlist"
+	name = "Set Staff Warn"
+
+/datum/player_action/watchlist/act(client/user, mob/target, list/params)
+	if(!target.client)
+		to_chat(user, SPAN_WARNING("Mob doesn't have a client!"))
+		return
+	if(target.client.holder)
+		to_chat(user, SPAN_WARNING("You can't set staff warning on admins!"))
+		return
+
+	if(target.client.staffwarn)
+		if(tgui_alert(user.mob, "Are you sure you want to set staff warn?", "Confirmation", list("Yes","No")) == "Yes")
+			var/reason = tgui_input_text(user, "Staff warn message", "Staff Warn", "Problem Player")
+			if (!reason)
+				return
+			var/last_ckey = LAST_CKEY(target)
+			notes_add(last_ckey,"\[AUTO\] Staff warn enabled: [reason]", user.mob)
+			reason += "\n-- Set by [user.ckey]([user.holder.rank])"
+			user.holder.DB_staffwarn_record(last_ckey, reason)
+			target.client.staffwarn = reason
+			SSstatistics.add_field("staff_warn",1)
+			log_and_message_admins("has enabled staffwarn on [last_ckey].\nMessage: [reason]\n")
+			. = TRUE
+	else
+		if(tgui_alert(user.mob, "Are you sure you want to remove staff warn?", "Confirmation", list("Yes", "No")) == "Yes")
+			var/last_ckey = LAST_CKEY(target)
+			if(!user.holder.DB_staffwarn_remove(last_ckey))
+				return
+			notes_add(last_ckey,"\[AUTO\] Staff warn disabled", user.mob)
+			target.client.staffwarn = null
+			log_and_message_admins("has removed the staffwarn on [last_ckey].\n")
+			. = TRUE

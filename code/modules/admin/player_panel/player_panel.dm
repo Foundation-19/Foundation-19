@@ -471,6 +471,7 @@
 
 	if(targetMob.client)
 		.["has_client"] = TRUE
+		.["staff_warn"] = targetMob.client.staffwarn
 		.["inactivity_time"] = targetMob.client.inactivity
 		.["client_rank"] = targetMob.client.holder ? targetMob.client.holder.rank : "Player"
 		.["client_muted"] = targetMob.client.prefs.muted
