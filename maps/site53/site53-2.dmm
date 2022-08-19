@@ -9987,10 +9987,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
-"axr" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/engineering/atmos)
 "axs" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 5
@@ -30125,9 +30121,7 @@
 /turf/simulated/floor,
 /area/site53/uhcz/scp096)
 "neg" = (
-/obj/machinery/hologram/holopad{
-	pixel_x = 16
-	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
 "ngk" = (
@@ -63275,7 +63269,7 @@ aua
 ave
 awf
 aww
-axr
+atr
 ays
 azi
 aDj
