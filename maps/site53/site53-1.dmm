@@ -954,6 +954,7 @@
 	dir = 6
 	},
 /obj/effect/catwalk_plated/white,
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
 "cQ" = (
@@ -2943,6 +2944,7 @@
 	dir = 6
 	},
 /obj/effect/catwalk_plated/white,
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
 "hX" = (
@@ -3110,6 +3112,7 @@
 	dir = 4
 	},
 /obj/effect/catwalk_plated/white,
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor,
 /area/site53/llcz/hallways)
 "io" = (
@@ -7265,6 +7268,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/recreationhallway)
+"ss" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/cellbubble)
 "st" = (
 /obj/effect/landmark{
 	name = "scp420j"
@@ -7355,6 +7362,10 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/titanium,
 /area/site53/lhcz/scp895)
+"sG" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/wood/walnut,
+/area/site53/lowertram/archive)
 "sH" = (
 /obj/structure/closet/coffin/scp895,
 /obj/structure/table/steel_reinforced,
@@ -9615,6 +9626,10 @@
 	name = "vinyl wooden floor"
 	},
 /area/site53/llcz/dclass/luxuryhall)
+"yW" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/entrance_checkpoint)
 "yX" = (
 /obj/structure/sign/scp/dclass{
 	pixel_x = 32
@@ -10928,6 +10943,10 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
+"CV" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled,
+/area/site53/lhcz/scp049containment)
 "CW" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -11280,6 +11299,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/recreationhallway)
+"DP" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp8containment)
 "DR" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/light{
@@ -11493,6 +11516,14 @@
 /obj/item/paper_bin,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpointoverlook)
+"Ew" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/lightgrey/border,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/reeducation)
 "Ex" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -12352,6 +12383,10 @@
 "Hf" = (
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/prep)
+"Hh" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/carpet/purple,
+/area/site53/lowertram/archive)
 "Hi" = (
 /obj/machinery/camera/network/lcz{
 	dir = 4
@@ -14783,6 +14818,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "Oa" = (
@@ -14915,6 +14951,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
 "Oy" = (
@@ -15704,6 +15741,10 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lhcz/scp049containment)
+"QS" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/assignmentbubble)
 "QT" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -16160,6 +16201,10 @@
 /obj/structure/bed/roller,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"Ss" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/scp1102room)
 "St" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -16373,6 +16418,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
+"SZ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/checkpointoverlook)
 "Ta" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/steel/fifty,
@@ -16921,6 +16972,18 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurysleep)
+"US" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/obj/machinery/hologram/holopad{
+	pixel_y = -15
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/checkequip)
 "UT" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
@@ -17693,6 +17756,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignmentbubble)
+"Xp" = (
+/obj/effect/floor_decal/industrial/outline/orange,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/white,
+/area/site53/uhcz/scp8containment)
 "Xv" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/bed/roller,
@@ -25832,7 +25900,7 @@ Iw
 Iv
 hT
 IH
-QZ
+yW
 IN
 YX
 hy
@@ -32280,7 +32348,7 @@ cY
 XE
 zX
 zX
-zX
+ss
 zX
 zX
 XE
@@ -32821,7 +32889,7 @@ HE
 Ia
 iQ
 SY
-lS
+QS
 aq
 gM
 gq
@@ -34061,7 +34129,7 @@ dt
 eA
 pQ
 tv
-pQ
+SZ
 uC
 pQ
 pQ
@@ -34309,7 +34377,7 @@ JO
 dk
 GV
 kY
-kY
+US
 WF
 kY
 CX
@@ -36871,7 +36939,7 @@ Im
 ja
 lV
 JO
-Jx
+Ew
 JO
 JF
 lG
@@ -47135,7 +47203,7 @@ aj
 ah
 fK
 aJ
-ah
+sG
 ah
 cm
 ah
@@ -47145,7 +47213,7 @@ al
 gO
 Bw
 ta
-uk
+Hh
 gJ
 ah
 Cy
@@ -66381,7 +66449,7 @@ gq
 gq
 sJ
 Xf
-zo
+Ss
 Af
 Av
 AK
@@ -71248,7 +71316,7 @@ gq
 gq
 SV
 MB
-on
+CV
 oO
 SV
 SV
@@ -73590,7 +73658,7 @@ NN
 oZ
 pe
 MW
-MW
+Xp
 MW
 pe
 TY
@@ -75641,7 +75709,7 @@ xe
 ux
 zQ
 zl
-zl
+DP
 Rb
 Vi
 qX

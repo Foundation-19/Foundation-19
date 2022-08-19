@@ -1806,6 +1806,7 @@
 	dir = 1;
 	network = list("Entrance Zone Network")
 	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/hallway)
 "fp" = (
@@ -2307,6 +2308,7 @@
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/hallway)
 "gz" = (
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/hallway)
 "gA" = (
@@ -3576,6 +3578,14 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
+"ml" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled,
+/area/site53/uez/conference)
+"mn" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/upper_surface/commstower)
 "ms" = (
 /obj/effect/floor_decal/corner/brown{
 	dir = 1
@@ -3718,6 +3728,7 @@
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
 "rG" = (
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
 "rI" = (
@@ -3882,6 +3893,10 @@
 /obj/item/clothing/gloves/forensic,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
+"wX" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/wood/mahogany,
+/area/site53/uez/hallway)
 "xa" = (
 /obj/effect/floor_decal/corner/red/bordercee{
 	dir = 8
@@ -3942,6 +3957,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
+"zB" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/carpet/purple,
+/area/site53/uez/hallway)
 "zE" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -4076,6 +4095,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
+"DD" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/carpet/brown,
+/area/site53/uez/hallway)
 "DH" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -4254,6 +4277,10 @@
 /obj/item/stamp/approved,
 /obj/item/stamp/denied,
 /obj/item/stamp/cargo,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logisticsofficer)
+"Ka" = (
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
 "KA" = (
@@ -4490,6 +4517,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
+"RW" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/wood,
+/area/site53/uez/canteen)
 "Sh" = (
 /obj/machinery/light{
 	dir = 4;
@@ -4513,6 +4544,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
+"Ta" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/carpet/green,
+/area/site53/uez/hallway)
 "Tg" = (
 /obj/effect/floor_decal/corner/orange/border,
 /obj/structure/closet/crate/bin{
@@ -4578,6 +4613,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"Vq" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logisticsbreak)
 "Vt" = (
 /obj/structure/bookcase/manuals/medical,
 /turf/simulated/floor/tiled/monotile,
@@ -4587,6 +4626,15 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/maincontrolroom)
+"We" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled,
 /area/site53/upper_surface/maincontrolroom)
 "Wk" = (
 /obj/effect/landmark/start{
@@ -26947,7 +26995,7 @@ hk
 ia
 iq
 iy
-iy
+Vq
 iy
 iy
 RK
@@ -30025,7 +30073,7 @@ hZ
 iz
 it
 ii
-Zm
+Ka
 Zm
 Zm
 iz
@@ -32492,7 +32540,7 @@ hk
 hk
 hk
 cF
-cd
+zB
 dm
 dD
 dh
@@ -33095,7 +33143,7 @@ aY
 aY
 jH
 jp
-ki
+mn
 kK
 jH
 fC
@@ -34044,7 +34092,7 @@ dh
 dh
 dh
 gh
-gq
+Ta
 gA
 dY
 hk
@@ -35113,7 +35161,7 @@ ar
 bw
 aQ
 Iz
-gc
+We
 bo
 fF
 ar
@@ -35318,7 +35366,7 @@ cd
 co
 Rd
 ci
-ci
+wX
 ci
 dt
 ac
@@ -36859,7 +36907,7 @@ bX
 ci
 ci
 ci
-ci
+wX
 ci
 ci
 dt
@@ -37624,7 +37672,7 @@ hk
 ae
 bn
 bH
-bn
+DD
 bX
 bK
 bK
@@ -39687,7 +39735,7 @@ eP
 eN
 eN
 eR
-ex
+RW
 eN
 eN
 eu
@@ -39957,7 +40005,7 @@ Nv
 hp
 fh
 tc
-gT
+ml
 YJ
 hg
 hk
