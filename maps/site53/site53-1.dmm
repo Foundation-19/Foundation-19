@@ -2183,10 +2183,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
-	},
 /obj/machinery/door/airlock/glass/research{
 	name = "Hallway"
 	},
@@ -32722,7 +32718,7 @@ hQ
 ca
 hQ
 gb
-cE
+hQ
 cE
 vt
 cd

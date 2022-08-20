@@ -25173,6 +25173,12 @@
 /obj/item/clothing/mask/surgical,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
+"cCy" = (
+/obj/item/device/flashlight{
+	on = 1
+	},
+/turf/simulated/floor,
+/area/space)
 "cDv" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/reinforced,
@@ -27458,6 +27464,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"hMa" = (
+/obj/item/storage/fancy/cigarettes,
+/turf/simulated/floor,
+/area/space)
 "hMV" = (
 /obj/machinery/access_button/airlock_exterior{
 	master_tag = "comms_airlock";
@@ -28821,6 +28831,12 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
+"kSo" = (
+/obj/item/paper{
+	info = "Hi! Seems like something went wrong. Please make an ahelp."
+	},
+/turf/simulated/floor,
+/area/space)
 "kZh" = (
 /obj/structure/bed/roller,
 /obj/structure/iv_drip,
@@ -34374,6 +34390,10 @@
 /obj/effect/floor_decal/corner/black/full,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
+"wIt" = (
+/obj/effect/landmark/test/space_turf,
+/turf/simulated/floor,
+/area/space)
 "wIH" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
@@ -34947,6 +34967,10 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/hallways)
+"xOp" = (
+/obj/item/flame/lighter/zippo,
+/turf/simulated/floor,
+/area/space)
 "xQv" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-263 Containment Chamber";
@@ -35477,10 +35501,10 @@ azA
 azA
 "}
 (2,1,1) = {"
+azA
+xOp
+hMa
 aBx
-azA
-azA
-azA
 azA
 azA
 azA
@@ -35734,10 +35758,10 @@ azA
 azA
 "}
 (3,1,1) = {"
+azA
+kSo
+wIt
 aBx
-azA
-azA
-azA
 azA
 azA
 azA
@@ -35991,10 +36015,10 @@ azA
 azA
 "}
 (4,1,1) = {"
+azA
 aBx
-azA
-azA
-azA
+cCy
+aBx
 azA
 azA
 azA
