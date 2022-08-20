@@ -1806,7 +1806,6 @@
 	dir = 1;
 	network = list("Entrance Zone Network")
 	},
-/obj/machinery/hologram/holopad,
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/hallway)
 "fp" = (
@@ -2308,7 +2307,6 @@
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/hallway)
 "gz" = (
-/obj/machinery/hologram/holopad,
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/hallway)
 "gA" = (
@@ -3592,6 +3590,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"mM" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/uez/hallway)
 "mQ" = (
 /obj/machinery/camera/autoname{
 	dir = 4;
@@ -3858,6 +3860,10 @@
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/maincontrolroom)
+"vG" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/hallway)
 "vN" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/button/blast_door{
@@ -3957,10 +3963,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
-"zB" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/carpet/purple,
-/area/site53/uez/hallway)
 "zE" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -4095,10 +4097,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
-"DD" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/carpet/brown,
-/area/site53/uez/hallway)
 "DH" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -4311,6 +4309,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
+"LT" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/wood,
+/area/site53/uez/hallway)
 "Mm" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
@@ -4544,10 +4546,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
-"Ta" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/carpet/green,
-/area/site53/uez/hallway)
 "Tg" = (
 /obj/effect/floor_decal/corner/orange/border,
 /obj/structure/closet/crate/bin{
@@ -32540,7 +32538,7 @@ hk
 hk
 hk
 cF
-zB
+cd
 dm
 dD
 dh
@@ -33056,7 +33054,7 @@ ac
 ac
 dg
 dp
-dh
+vG
 dh
 dh
 cF
@@ -34092,7 +34090,7 @@ dh
 dh
 dh
 gh
-Ta
+gq
 gA
 dY
 hk
@@ -34604,7 +34602,7 @@ bK
 dY
 ej
 dh
-dh
+vG
 gk
 sY
 gq
@@ -36146,7 +36144,7 @@ bK
 dZ
 en
 dW
-dW
+mM
 gl
 gv
 gE
@@ -36643,7 +36641,7 @@ hk
 hk
 ae
 aV
-aV
+LT
 aV
 aV
 bY
@@ -37672,7 +37670,7 @@ hk
 ae
 bn
 bH
-DD
+bn
 bX
 bK
 bK
@@ -42053,7 +42051,7 @@ hq
 aw
 dF
 dL
-dW
+mM
 ed
 fe
 fn
