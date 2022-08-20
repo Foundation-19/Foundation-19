@@ -335,7 +335,7 @@
 
 	//JOBBAN'S INNARDS
 	else if(href_list["jobban1"])
-		if(!check_rights(R_ADMIN,0))
+		if(!check_rights(R_BAN,0))
 			to_chat(usr, "<span class='warning'>You do not have the appropriate permissions to add job bans!</span>")
 			return
 

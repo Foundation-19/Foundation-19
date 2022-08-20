@@ -1,5 +1,0 @@
-author: Mihail-Zub
-delete-after: true
-changes:
-  - rscadd: add Holopads
-  - bugfix: Rotate camera

@@ -12,5 +12,9 @@
 2022-08-20:
   MACIEKBAKI:
   - bugfix: SCP-049 has skills now
+  Mihail-Zub:
+  - rscadd: add Holopads
+  - bugfix: Rotate camera
   Tsurupeta:
   - server: Fixed DB bans.
+  - admin: Fixed jobban permissions.
