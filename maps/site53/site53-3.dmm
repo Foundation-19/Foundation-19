@@ -5722,7 +5722,6 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "rx" = (
-/obj/machinery/hologram/holopad,
 /turf/simulated/floor/carpet/blue2,
 /area/site53/uez/o5repoffice)
 "ry" = (
@@ -7501,13 +7500,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
-"BM" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 8
-	},
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/goirepoffice)
 "BO" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -7828,11 +7820,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/maintenance/surfaceeast)
-"Fm" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled,
-/area/site53/surface/cryogenicsprimary)
 "Fs" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -7891,6 +7878,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
 "Go" = (
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "Gt" = (
@@ -7908,6 +7896,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
+"GH" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/surface/cryogenicsprimary)
 "GJ" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -9013,6 +9005,10 @@
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/securitypost)
+"VA" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/o5repoffice)
 "VG" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light/small{
@@ -39304,7 +39300,7 @@ aj
 az
 af
 kC
-kC
+GH
 kC
 kC
 kC
@@ -39819,7 +39815,7 @@ Ff
 bs
 vx
 vx
-Fm
+vx
 vx
 vx
 qW
@@ -40036,7 +40032,7 @@ cq
 Ce
 mk
 Mx
-BM
+UI
 UI
 qA
 mk
@@ -42864,7 +42860,7 @@ mB
 lF
 rl
 rl
-rn
+VA
 rn
 rE
 lF
@@ -43650,7 +43646,7 @@ tX
 tQ
 nn
 Xu
-Ml
+Xu
 nL
 lC
 fx
@@ -44420,7 +44416,7 @@ SL
 Zn
 tQ
 Xu
-Xu
+Ml
 Xu
 ub
 pO

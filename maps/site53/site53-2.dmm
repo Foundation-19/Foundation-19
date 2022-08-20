@@ -24713,10 +24713,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
-"bBW" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/dark,
-/area/site53/uhcz/commanderoffice)
 "bCi" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 6
@@ -34359,6 +34355,15 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/serverfarmtunnel)
+"wFp" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/dark,
+/area/site53/uhcz/commanderoffice)
 "wFy" = (
 /obj/machinery/door/airlock/freezer,
 /turf/simulated/floor/tiled/monotile,
@@ -98306,9 +98311,9 @@ tdd
 sbE
 rrA
 quy
-taB
+wFp
 xoD
-bBW
+fUI
 yew
 rrA
 azA
