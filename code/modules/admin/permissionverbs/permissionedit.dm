@@ -54,9 +54,7 @@
 		to_chat(usr, "<span class='warning'>You do not have permission to do this!</span>")
 		return
 
-	establish_db_connection()
-
-	if(!SSdbcore.IsConnected())
+	if(!SSdbcore.Connect())
 		to_chat(usr, "<span class='warning'>Failed to establish database connection</span>")
 		return
 
@@ -109,8 +107,7 @@
 		to_chat(usr, "<span class='warning'>You do not have permission to do this!</span>")
 		return
 
-	establish_db_connection()
-	if(!SSdbcore.IsConnected())
+	if(!SSdbcore.Connect())
 		to_chat(usr, "<span class='warning'>Failed to establish database connection</span>")
 		return
 
