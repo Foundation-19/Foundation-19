@@ -351,8 +351,7 @@
 
 // Returns null if no DB connection can be established, or -1 if the requested key was not found in the database
 /proc/get_player_age(key)
-	establish_db_connection()
-	if(!SSdbcore.IsConnected())
+	if(!SSdbcore.Connect())
 		return null
 
 	var/sql_ckey = sql_sanitize_text(ckey(key))
@@ -374,8 +373,7 @@
 	if ( IsGuestKey(src.key) )
 		return
 
-	establish_db_connection()
-	if(!SSdbcore.IsConnected())
+	if(!SSdbcore.Connect())
 		return
 
 	var/sql_ckey = sql_sanitize_text(src.ckey)
