@@ -1,0 +1,4 @@
+author: Tsurupeta
+delete-after: true
+changes:
+  - server: Fixed DB bans.
