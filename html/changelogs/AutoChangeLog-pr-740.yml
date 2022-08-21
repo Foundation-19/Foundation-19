@@ -1,0 +1,5 @@
+author: MACIEKBAKI
+delete-after: true
+changes:
+  - bugfix: Roundstart papers can now be read
+  - bugfix: Paper can be burnt again
