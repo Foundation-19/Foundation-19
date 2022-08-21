@@ -458,13 +458,21 @@
 
 	.["current_permissions"] = user.client?.holder?.rights
 
-	if(iscarbon(targetMob))
-		if(targetMob.dna)
-			//We need to set list len here
-			var/list/dna_blocks[DNA_SE_LENGTH]
-			.["dna_blocks"] = dna_blocks
-			for(var/block = 1 to DNA_SE_LENGTH)
-				dna_blocks[block] = targetMob.dna.GetSEState(block)
+	if(isliving(targetMob))
+		var/mob/living/psyker = targetMob
+		.["can_have_psionics"] = TRUE
+		.["has_psy"] = !!psyker.psi
+		.["psy"] = list()
+		for(var/faculty in GLOB.all_psionics_faculty)
+			.["psy"] += list("[faculty]" = psyker.psi ? psyker.psi.get_rank(faculty) : 0)
+
+		if(iscarbon(targetMob))
+			if(targetMob.dna)
+				//We need to set list len here
+				var/list/dna_blocks[DNA_SE_LENGTH]
+				.["dna_blocks"] = dna_blocks
+				for(var/block = 1 to DNA_SE_LENGTH)
+					dna_blocks[block] = targetMob.dna.GetSEState(block)
 
 	.["mob_key"] = targetMob.key
 	.["mob_ckey"] = targetMob.ckey
@@ -537,6 +545,9 @@ GLOBAL_LIST_INIT(pp_status_flags, list(
 	.["glob_pp_actions"] = GLOB.pp_actions_data
 	.["glob_span"] = GLOB.narrate_span
 	.["glob_pp_transformables"] = GLOB.pp_transformables
+
+	.["glob_psionics_faculty"] = GLOB.all_psionics_faculty
+	.["glob_psionics_ranks"] = GLOB.psychic_ranks_to_strings
 
 /datum/player_panel/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	. = ..()

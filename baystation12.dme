@@ -1342,6 +1342,7 @@
 #include "code\modules\admin\player_panel\actions\general.dm"
 #include "code\modules\admin\player_panel\actions\languages.dm"
 #include "code\modules\admin\player_panel\actions\physical.dm"
+#include "code\modules\admin\player_panel\actions\psionics.dm"
 #include "code\modules\admin\player_panel\actions\punish.dm"
 #include "code\modules\admin\player_panel\actions\transform.dm"
 #include "code\modules\admin\secrets\admin_secrets\admin_logs.dm"
