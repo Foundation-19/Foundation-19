@@ -19,8 +19,12 @@
   - server: Fixed DB bans.
   - admin: Fixed jobban permissions.
 2022-08-21:
+  DTraitor:
+  - admin: Added psionics tab to Player Panel
   MACIEKBAKI:
   - bugfix: Mentors no longer reply to themselves when replying to a mentorhelp.
+  - bugfix: Roundstart papers can now be read
+  - bugfix: Paper can be burnt again
   harryob:
   - bugfix: CDZ is less ugly (somewhat).
   projectkepler-ru:
