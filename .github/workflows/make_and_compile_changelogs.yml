@@ -1,4 +1,4 @@
-name: Make changelogs
+name: Make and compile changelogs
 
 on:
   push:
