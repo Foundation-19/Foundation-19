@@ -1,4 +1,0 @@
-author: harryob
-delete-after: true
-changes:
-  - bugfix: CDZ is less ugly (somewhat).

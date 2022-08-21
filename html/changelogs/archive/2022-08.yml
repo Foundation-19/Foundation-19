@@ -18,3 +18,11 @@
   Tsurupeta:
   - server: Fixed DB bans.
   - admin: Fixed jobban permissions.
+2022-08-21:
+  MACIEKBAKI:
+  - bugfix: Mentors no longer reply to themselves when replying to a mentorhelp.
+  harryob:
+  - bugfix: CDZ is less ugly (somewhat).
+  projectkepler-ru:
+  - rscadd: Added the rhino revolver
+  - imageadd: added sprite for armored forensic gloves and the rhino revolver
