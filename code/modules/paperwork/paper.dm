@@ -52,13 +52,16 @@
 
 	var/scan_file_type = /datum/computer_file/data/text
 
-/obj/item/paper/Initialize(mapload, text, title, list/md = null, datum/language/L = null)
-	. = ..(mapload)
+/obj/item/paper/New(loc, text, title, list/md = null, datum/language/L = null)
+	. = ..(loc)
 	set_content(text ? text : info, title)
 	metadata = md
 
 	if (L)
 		language = L
+
+/obj/item/paper/Initialize(mapload)
+	. = ..(mapload)
 	var/old_language = language
 	if (!set_language(language, TRUE))
 		log_debug("[src] ([type]) initialized with invalid or missing language `[old_language]` defined.")
