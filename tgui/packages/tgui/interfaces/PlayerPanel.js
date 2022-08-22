@@ -62,6 +62,15 @@ const PAGES = [
       return data.dna_blocks && hasPermission(data, 'dna_switch');
     },
   },
+  {
+    title: 'Psionics',
+    component: () => PsionicsActions,
+    color: 'blue',
+    icon: 'exchange-alt',
+    canAccess: (data) => {
+      return data.can_have_psionics && hasPermission(data, '_psionics');
+    },
+  },
 ];
 
 const hasPermission = (data, action) => {
@@ -775,6 +784,43 @@ const DNAActions = (props, context) => {
             )}
           </Stack>
         ))}
+      </Stack>
+    </Section>
+  );
+};
+
+const PsionicsActions = (props, context) => {
+  const { act, data } = useBackend(context);
+  const { has_psy, psy, glob_psionics_faculty, glob_psionics_ranks } = data;
+  return (
+    <Section fill title="Psionics">
+      <Button disabled={!has_psy} onClick={() => act('remove_psionics')}>
+        Remove Psionics
+      </Button>
+      <Button disabled={!has_psy} onClick={() => act('toggle_psi_latencies')}>
+        Toggle Latencies
+      </Button>
+      <Stack vertical>
+        {glob_psionics_faculty &&
+          glob_psionics_faculty.map((faculty, i) => (
+            <Stack.Item key={faculty}>
+              <Box>{faculty}:</Box>
+              {glob_psionics_ranks &&
+                glob_psionics_ranks.map((rank, e) => (
+                  <Button
+                    selected={e === psy[faculty] - 1}
+                    key={rank}
+                    onClick={() =>
+                      act('set_psi_faculty_rank', {
+                        'psi_faculty': faculty,
+                        'psi_faculty_rank': e + 1,
+                      })
+                    }>
+                    {rank}
+                  </Button>
+                ))}
+            </Stack.Item>
+          ))}
       </Stack>
     </Section>
   );

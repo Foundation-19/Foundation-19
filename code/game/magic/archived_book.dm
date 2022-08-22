@@ -43,9 +43,7 @@ var/global/datum/book_manager/book_mgr = new()
 		return
 
 	if(BOOKS_USE_SQL && config.sql_enabled)
-		var/DBConnection/dbcon = new()
-		dbcon.Connect("dbi:mysql:[sqldb]:[sqladdress]:[sqlport]","[sqllogin]","[sqlpass]")
-		if(!dbcon.IsConnected())
+		if(!SSdbcore.Connect())
 			alert("Connection to Archive has been severed. Aborting.")
 		else
 			var/DBQuery/query = dbcon.NewQuery("DELETE FROM library WHERE id=[isbn]")

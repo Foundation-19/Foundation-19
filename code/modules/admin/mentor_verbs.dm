@@ -122,12 +122,12 @@
 		if(!msg)
 			return
 
-		log_mentor("Mentor PM: [key_name_mentor(src)] -> [key_name(C)]: [msg]")
+		log_mentor("Mentor PM: [SPAN_BOLD(key_name_mentor(src))] -> [SPAN_BOLD(key_name_mentor(C))]: [msg]")
 
 		sound_to(C, 'sound/items/bikehorn.ogg')
 		to_chat(C, SPAN_NOTICE("Mentor PM from " + SPAN_BOLD(key_name_mentor(src)) + ": [msg]"))
-		to_chat(src, SPAN_NOTICE("Mentor PM to " + SPAN_BOLD(key_name_mentor(src)) + ": [msg]"))
+		to_chat(src, SPAN_NOTICE("Mentor PM to " + SPAN_BOLD(key_name_mentor(C)) + ": [msg]"))
 
 		for(var/client/L in GLOB.admins)
 			if(is_mentor(L) && L.ckey != ckey && L.ckey != C.ckey) //no duplicate notifs
-				to_chat(L, SPAN_MENTOR("Mentor PM: [key_name_mentor(src)] -> [key_name(C)]: [msg]"))
+				to_chat(L, SPAN_MENTOR("Mentor PM: [SPAN_BOLD(key_name_mentor(src))] -> [SPAN_BOLD(key_name_mentor(C))]: [msg]"))
