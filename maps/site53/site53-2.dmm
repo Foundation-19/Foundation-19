@@ -3709,7 +3709,6 @@
 "all" = (
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 11
 	},
 /obj/random/soap,
@@ -5806,7 +5805,6 @@
 "aqD" = (
 /obj/machinery/light{
 	dir = 8;
-	= ;
 	pixel_x = -11
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -6139,7 +6137,6 @@
 "arj" = (
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 11
 	},
 /obj/structure/cable/green{
@@ -6383,7 +6380,6 @@
 "arI" = (
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 11
 	},
 /obj/effect/floor_decal/corner/red/border{
@@ -11293,7 +11289,6 @@
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 12
 	},
 /turf/simulated/floor/plating,
@@ -12885,7 +12880,6 @@
 "aJv" = (
 /obj/machinery/light{
 	dir = 8;
-	= ;
 	pixel_x = -12
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -13697,7 +13691,6 @@
 "aLE" = (
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -15130,7 +15123,6 @@
 "aPN" = (
 /obj/machinery/light{
 	dir = 8;
-	= ;
 	pixel_x = -11
 	},
 /obj/effect/floor_decal/corner/green/mono,
@@ -15148,7 +15140,6 @@
 	},
 /obj/machinery/light{
 	dir = 8;
-	= ;
 	pixel_x = -11
 	},
 /obj/effect/floor_decal/corner/green/mono,
@@ -16317,7 +16308,6 @@
 /obj/machinery/vending/cola,
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -17556,7 +17546,6 @@
 "aYl" = (
 /obj/machinery/light{
 	dir = 8;
-	= ;
 	pixel_x = -11
 	},
 /obj/structure/table/standard,
@@ -21341,7 +21330,6 @@
 "bkn" = (
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 11
 	},
 /obj/structure/bed/chair,
@@ -21350,7 +21338,6 @@
 "bko" = (
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -21413,7 +21400,6 @@
 "bkx" = (
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -23378,7 +23364,6 @@
 "fhr" = (
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -24907,7 +24892,6 @@
 "hLo" = (
 /obj/machinery/light{
 	dir = 8;
-	= ;
 	pixel_x = -11
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -26870,7 +26854,6 @@
 	},
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 11
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
@@ -28793,7 +28776,6 @@
 "oYX" = (
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 11
 	},
 /obj/effect/floor_decal/corner/yellow{
@@ -28880,7 +28862,6 @@
 	},
 /obj/machinery/light{
 	dir = 8;
-	= ;
 	pixel_x = -12
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -29987,7 +29968,6 @@
 	},
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -30112,7 +30092,6 @@
 	},
 /obj/machinery/light{
 	dir = 8;
-	= ;
 	pixel_x = -11
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -30353,7 +30332,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "check3";
 	pixel_y = 24;
-	req_access = list("ACCESS_ENGINEERING_LEVEL1"s)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
@@ -31226,7 +31205,6 @@
 "uku" = (
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 11
 	},
 /obj/effect/floor_decal/corner/red{
@@ -32064,7 +32042,6 @@
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -33415,7 +33392,6 @@
 	},
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -33476,7 +33452,6 @@
 	},
 /obj/machinery/light{
 	dir = 4;
-	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile,
