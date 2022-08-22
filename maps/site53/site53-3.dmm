@@ -8642,6 +8642,11 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
+"Rn" = (
+/obj/structure/lattice,
+/obj/structure/ladder,
+/turf/simulated/open,
+/area/site53/maintenance/surfacewest)
 "Rw" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/half{
@@ -35943,7 +35948,7 @@ bk
 bk
 bk
 bk
-dA
+wl
 dA
 dA
 dA
@@ -36199,8 +36204,8 @@ Gg
 gm
 go
 gw
-bk
-dA
+Rn
+wl
 dA
 dA
 dA
@@ -36456,8 +36461,8 @@ gl
 eb
 gp
 gx
-bk
-dA
+gm
+wl
 dA
 dA
 dA
@@ -36713,8 +36718,8 @@ gm
 gm
 gm
 dh
-bk
-dA
+gm
+wl
 dA
 dA
 dA
@@ -36970,8 +36975,8 @@ gm
 gm
 gm
 dh
-bk
-dA
+gm
+wl
 dA
 dA
 dA
@@ -37227,8 +37232,8 @@ bk
 gm
 gm
 dh
-bk
-dA
+gm
+wl
 dA
 dA
 dA
@@ -37484,8 +37489,8 @@ bk
 gm
 gm
 dh
-bk
-dA
+gm
+wl
 dA
 dA
 dA
@@ -37741,8 +37746,8 @@ gn
 Ra
 Ra
 Of
-bk
-dA
+gm
+wl
 dA
 dA
 dA
@@ -37999,7 +38004,7 @@ aN
 aN
 aR
 aN
-dA
+wl
 dA
 dA
 dA
