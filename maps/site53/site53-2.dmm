@@ -11695,15 +11695,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
-"aFq" = (
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "UHCZ Lockdown";
-	name = "UHCZ Lockdown"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/securitypost)
 "aFr" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -14167,26 +14158,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp999)
-"aNn" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor,
-/area/site53/ulcz/hallways)
 "aNp" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -25158,11 +25129,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/commanderoffice)
-"imN" = (
-/obj/effect/paint_stripe/gray,
-/obj/structure/cable/green,
-/turf/simulated/wall/prepainted,
-/area/site53/lowertrams/brownline)
 "ing" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/light{
@@ -29486,11 +29452,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
 "qFs" = (
@@ -31689,16 +31650,6 @@
 /obj/structure/closet/l3closet/scientist,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
-"veT" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/airlock/highsecurity,
-/turf/simulated/floor,
-/area/site53/uhcz/hallways)
 "vhE" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
@@ -40848,8 +40799,8 @@ azA
 azA
 azA
 aVS
-tNo
-aNn
+aGM
+aLv
 aGM
 bdf
 aNf
@@ -57527,7 +57478,7 @@ acP
 ahm
 azA
 azA
-imN
+abI
 aSb
 acB
 aOU
@@ -70642,7 +70593,7 @@ kAL
 adU
 adU
 aEC
-aFq
+bjh
 aEC
 aEC
 aFr
@@ -73206,7 +73157,7 @@ ajR
 ajR
 ajR
 ajR
-veT
+xpf
 aBU
 aBU
 bik
