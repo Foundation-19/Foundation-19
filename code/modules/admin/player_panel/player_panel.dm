@@ -1,10 +1,14 @@
-
-/datum/admins/proc/player_panel_new()//The new one
+/client/proc/list_players()//The new one
 	set name = "Show Player Panel"
 	set desc = "List Players"
 	set category = "Admin"
 
-	if (!usr.client.holder || !(check_rights(R_ADMIN|R_MOD, FALSE)))
+	if(!usr.client.holder || !(check_rights(R_ADMIN|R_MOD, FALSE)))
+		return
+	holder?.player_panel_new()
+
+/datum/admins/proc/player_panel_new()//The new one
+	if(!usr.client.holder || !(check_rights(R_ADMIN|R_MOD, FALSE)))
 		return
 	var/dat = "<html>"
 
@@ -467,6 +471,7 @@
 
 	if(targetMob.client)
 		.["has_client"] = TRUE
+		.["staff_warn"] = targetMob.client.staffwarn
 		.["inactivity_time"] = targetMob.client.inactivity
 		.["client_rank"] = targetMob.client.holder ? targetMob.client.holder.rank : "Player"
 		.["client_muted"] = targetMob.client.prefs.muted

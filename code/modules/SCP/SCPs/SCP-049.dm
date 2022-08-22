@@ -38,7 +38,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	return
 /mob/living/carbon/human/scp049/New(new_loc, new_species)
 	new_species = "SCP-049"
-	return  ..()
+	return ..()
 
 /mob/living/carbon/human/scp049/Initialize()
 	// fix names
@@ -56,7 +56,10 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		/mob/living/carbon/human/scp049/proc/Im_here_to_cure_you,
 		/mob/living/carbon/human/scp049/proc/cure_action,
 	))
-	return ..()
+
+	. = ..()
+
+	init_049_skills()
 
 /mob/living/carbon/human/scp049/Destroy()
 	pestilence_images = null
@@ -64,6 +67,20 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	target = null
 	GLOB.scp049s -= src
 	return ..()
+
+/mob/living/carbon/human/scp049/proc/init_049_skills()
+	skillset.skill_list = list()
+	for(var/decl/hierarchy/skill/S in GLOB.skills)
+		skillset.skill_list[S.type] = SKILL_UNTRAINED
+	skillset.skill_list[SKILL_COOKING] = SKILL_TRAINED
+	skillset.skill_list[SKILL_BOTANY] = SKILL_TRAINED
+	skillset.skill_list[SKILL_HAULING] = SKILL_MASTER
+	skillset.skill_list[SKILL_COMBAT] = SKILL_EXPERIENCED
+	skillset.skill_list[SKILL_ANATOMY] = SKILL_EXPERIENCED
+	skillset.skill_list[SKILL_CHEMISTRY] = SKILL_BASIC
+	skillset.skill_list[SKILL_MEDICAL] = SKILL_EXPERIENCED
+	skillset.skill_list[SKILL_SCIENCE] = SKILL_EXPERIENCED
+	skillset.on_levels_change()
 
 /mob/living/carbon/human/scp049/Life()
 	. = ..()

@@ -99,7 +99,7 @@ export const PlayerPanel = (props, context) => {
       <Window.Content scrollable>
         <Section md={1}>
           <Stack>
-            <Stack.Item width="80px" color="label">
+            <Stack.Item width="90px" color="label">
               Name:
             </Stack.Item>
             <Stack.Item grow={1} align="right">
@@ -114,7 +114,7 @@ export const PlayerPanel = (props, context) => {
             </Stack.Item>
           </Stack>
           <Stack mt={1}>
-            <Stack.Item width="80px" color="label">
+            <Stack.Item width="90px" color="label">
               Mob Type:
             </Stack.Item>
             <Stack.Item grow={1} align="right">
@@ -130,7 +130,7 @@ export const PlayerPanel = (props, context) => {
             </Stack.Item>
           </Stack>
           <Stack mt={1}>
-            <Stack.Item width="80px" color="label">
+            <Stack.Item width="90px" color="label">
               Client:
             </Stack.Item>
             <Stack.Item grow={1} align="left">
@@ -175,7 +175,7 @@ export const PlayerPanel = (props, context) => {
             )}
           </Stack>
           <Stack mt={1}>
-            <Stack.Item width="80px" color="label">
+            <Stack.Item width="90px" color="label">
               Inactivity time:
             </Stack.Item>
             <Stack.Item grow={1} align="left">
@@ -188,7 +188,7 @@ export const PlayerPanel = (props, context) => {
           </Stack>
           {client_rank && (
             <Stack mt={1}>
-              <Stack.Item width="80px" color="label">
+              <Stack.Item width="90px" color="label">
                 Rank:
               </Stack.Item>
               <Stack.Item grow={1} align="left">
@@ -415,7 +415,7 @@ const GeneralActions = (props, context) => {
 
 const PunishmentActions = (props, context) => {
   const { act, data } = useBackend(context);
-  const { glob_mute_bits, client_muted } = data;
+  const { glob_mute_bits, client_muted, staff_warn, has_client } = data;
   return (
     <Section fill>
       <Section level={2} title="Banishment">
@@ -458,6 +458,15 @@ const PunishmentActions = (props, context) => {
             content="Check Notes"
             disabled={!hasPermission(data, 'show_notes')}
             onClick={() => act('show_notes')}
+          />
+          <Button.Checkbox
+            width="100%"
+            icon="clipboard-list"
+            color="average"
+            checked={staff_warn}
+            content={staff_warn ? 'Remove from Watchlist' : 'Add to Watchlist'}
+            disabled={!hasPermission(data, 'watchlist') || !has_client}
+            onClick={() => act('watchlist')}
           />
         </Stack>
       </Section>
