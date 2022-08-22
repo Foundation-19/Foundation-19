@@ -10,7 +10,7 @@
 "ac" = (
 /obj/machinery/light{
 	dir = 1;
-	
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/tramhubhallwayentry)
@@ -40,7 +40,7 @@
 /obj/structure/cryofeed,
 /obj/machinery/light{
 	dir = 8;
-	
+	icon_state = "tube1"
 	},
 /obj/machinery/cryopod{
 	dir = 4;
@@ -220,6 +220,7 @@
 "aE" = (
 /obj/machinery/light{
 	dir = 4;
+	icon_state = "tube1";
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -227,7 +228,7 @@
 "aF" = (
 /obj/machinery/light{
 	dir = 8;
-	
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
@@ -240,7 +241,7 @@
 "aI" = (
 /obj/machinery/light{
 	dir = 1;
-	
+	icon_state = "tube1"
 	},
 /turf/simulated/open,
 /area/site53/uez/bridge)
@@ -253,7 +254,7 @@
 "aL" = (
 /obj/machinery/light{
 	dir = 4;
-	
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
@@ -267,7 +268,7 @@
 	},
 /obj/machinery/light{
 	dir = 4;
-	
+	icon_state = "tube1"
 	},
 /obj/machinery/cryopod{
 	pixel_x = -8
@@ -1025,7 +1026,7 @@
 "dq" = (
 /obj/machinery/light{
 	dir = 1;
-	
+	icon_state = "tube1"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -1114,7 +1115,7 @@
 	},
 /obj/machinery/light{
 	dir = 1;
-	
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
@@ -3075,7 +3076,7 @@
 "jb" = (
 /obj/machinery/light/spot{
 	dir = 8;
-	
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
@@ -3611,7 +3612,7 @@
 "km" = (
 /obj/machinery/light{
 	dir = 1;
-	
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
@@ -3822,7 +3823,7 @@
 "kR" = (
 /obj/machinery/light{
 	dir = 1;
-	
+	icon_state = "tube1"
 	},
 /obj/machinery/light{
 	dir = 4
@@ -4165,7 +4166,7 @@
 "lL" = (
 /obj/machinery/light{
 	dir = 1;
-	
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroomstairs)
@@ -6150,7 +6151,7 @@
 "sV" = (
 /obj/machinery/light{
 	dir = 4;
-	
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/zonecommanderoffice)
@@ -6543,14 +6544,14 @@
 "ul" = (
 /obj/machinery/light{
 	dir = 4;
-	
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "um" = (
 /obj/machinery/light{
 	dir = 8;
-	
+	icon_state = "tube1"
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -6742,7 +6743,7 @@
 "vc" = (
 /obj/machinery/light{
 	dir = 8;
-	
+	icon_state = "tube1"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
@@ -6861,7 +6862,7 @@
 "vv" = (
 /obj/machinery/light{
 	dir = 4;
-	
+	icon_state = "tube1"
 	},
 /obj/machinery/vending/snack{
 	dir = 8
@@ -6934,6 +6935,7 @@
 "vK" = (
 /obj/machinery/light{
 	dir = 8;
+	icon_state = "tube1";
 	pixel_x = -11
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -7137,6 +7139,7 @@
 	},
 /obj/machinery/light{
 	dir = 8;
+	icon_state = "tube1";
 	pixel_x = -11
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -8001,7 +8004,7 @@
 "HU" = (
 /obj/machinery/light{
 	dir = 1;
-	
+	icon_state = "tube1"
 	},
 /obj/structure/cable{
 	d2 = 8;
@@ -8445,6 +8448,7 @@
 "OE" = (
 /obj/machinery/light{
 	dir = 8;
+	icon_state = "tube1";
 	pixel_x = -11
 	},
 /obj/machinery/light,
@@ -8572,14 +8576,6 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"QG" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "QJ" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -9207,6 +9203,7 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/machinery/light{
 	dir = 8;
+	icon_state = "tube1";
 	pixel_x = -11
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -35160,7 +35157,7 @@ dA
 dA
 dA
 dA
-QG
+dA
 dA
 dA
 dA

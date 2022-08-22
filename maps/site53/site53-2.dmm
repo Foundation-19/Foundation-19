@@ -3709,6 +3709,7 @@
 "all" = (
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 11
 	},
 /obj/random/soap,
@@ -5805,6 +5806,7 @@
 "aqD" = (
 /obj/machinery/light{
 	dir = 8;
+	= ;
 	pixel_x = -11
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -6137,6 +6139,7 @@
 "arj" = (
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 11
 	},
 /obj/structure/cable/green{
@@ -6380,6 +6383,7 @@
 "arI" = (
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 11
 	},
 /obj/effect/floor_decal/corner/red/border{
@@ -11289,6 +11293,7 @@
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 12
 	},
 /turf/simulated/floor/plating,
@@ -12880,6 +12885,7 @@
 "aJv" = (
 /obj/machinery/light{
 	dir = 8;
+	= ;
 	pixel_x = -12
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -13691,6 +13697,7 @@
 "aLE" = (
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -15123,6 +15130,7 @@
 "aPN" = (
 /obj/machinery/light{
 	dir = 8;
+	= ;
 	pixel_x = -11
 	},
 /obj/effect/floor_decal/corner/green/mono,
@@ -15140,6 +15148,7 @@
 	},
 /obj/machinery/light{
 	dir = 8;
+	= ;
 	pixel_x = -11
 	},
 /obj/effect/floor_decal/corner/green/mono,
@@ -16308,6 +16317,7 @@
 /obj/machinery/vending/cola,
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -17546,6 +17556,7 @@
 "aYl" = (
 /obj/machinery/light{
 	dir = 8;
+	= ;
 	pixel_x = -11
 	},
 /obj/structure/table/standard,
@@ -21330,6 +21341,7 @@
 "bkn" = (
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 11
 	},
 /obj/structure/bed/chair,
@@ -21338,6 +21350,7 @@
 "bko" = (
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -21400,6 +21413,7 @@
 "bkx" = (
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -21686,11 +21700,6 @@
 	id_tag = "UHCZ Checkpoint Control Room";
 	name = "UHCZ Checkpoint Control Room"
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/securitypost)
 "bRl" = (
@@ -21820,15 +21829,6 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
 /area/site53/uhcz/scp106observ)
-"cfw" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor,
-/area/site53/uhcz/hallways)
 "cfD" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -23378,6 +23378,7 @@
 "fhr" = (
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -24798,6 +24799,15 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
+"hDv" = (
+/obj/effect/floor_decal/corner/red{
+	dir = 10
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "hDy" = (
 /obj/effect/paint_stripe/red,
 /obj/effect/paint_stripe/red,
@@ -24897,6 +24907,7 @@
 "hLo" = (
 /obj/machinery/light{
 	dir = 8;
+	= ;
 	pixel_x = -11
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -25698,6 +25709,13 @@
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
+"jwV" = (
+/obj/machinery/camera/autoname{
+	network = list("Heavy Containment Zone Network")
+	},
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor,
+/area/site53/uhcz/hallways)
 "jxJ" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/table/standard,
@@ -25766,6 +25784,15 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
+"jFe" = (
+/obj/machinery/light/small,
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb1"
+	},
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor,
+/area/site53/uhcz/hallways)
 "jFz" = (
 /obj/structure/closet/crate/paper_refill,
 /obj/machinery/light{
@@ -26843,6 +26870,7 @@
 	},
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 11
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
@@ -26972,13 +27000,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/surface/explorers/surrounding)
-"lPM" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor,
-/area/site53/uhcz/hallways)
 "lQa" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -27375,15 +27396,6 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
-"msQ" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor,
-/area/site53/uhcz/hallways)
 "mtc" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
@@ -27555,6 +27567,10 @@
 /obj/item/pen,
 /obj/item/paper_bin,
 /obj/machinery/light,
+/obj/machinery/power/apc/hyper{
+	pixel_y = -25
+	},
+/obj/structure/cable/green,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "mDz" = (
@@ -28086,13 +28102,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/engineering/bathrooms)
-"nBU" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	icon_state = "2-8"
-	},
-/turf/simulated/floor,
-/area/site53/uhcz/hallways)
 "nBV" = (
 /obj/machinery/light{
 	dir = 1
@@ -28716,6 +28725,9 @@
 	id_tag = "UHCZ Checkpoint Control Room 2";
 	name = "UHCZ Checkpoint Control Room 2"
 	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/securitypost)
 "oSz" = (
@@ -28781,6 +28793,7 @@
 "oYX" = (
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 11
 	},
 /obj/effect/floor_decal/corner/yellow{
@@ -28867,6 +28880,7 @@
 	},
 /obj/machinery/light{
 	dir = 8;
+	= ;
 	pixel_x = -12
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -29057,6 +29071,12 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
 /area/site53/reswing/xenobiology)
+"pIF" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "pIX" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -29953,12 +29973,21 @@
 /obj/item/pen,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
+"rwu" = (
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb1"
+	},
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor,
+/area/site53/uhcz/hallways)
 "rzX" = (
 /obj/structure/bed/chair{
 	dir = 1
 	},
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -30083,6 +30112,7 @@
 	},
 /obj/machinery/light{
 	dir = 8;
+	= ;
 	pixel_x = -11
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -30323,7 +30353,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "check3";
 	pixel_y = 24;
-	req_access = list("ACCESS_ENGINEERING_LEVEL1")
+	req_access = list("ACCESS_ENGINEERING_LEVEL1"s)
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
@@ -31095,12 +31125,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
-"ucL" = (
-/obj/structure/cable/green{
-	icon_state = "2-8"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "ucY" = (
 /obj/machinery/light{
 	dir = 1
@@ -31202,6 +31226,7 @@
 "uku" = (
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 11
 	},
 /obj/effect/floor_decal/corner/red{
@@ -31357,6 +31382,22 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
+"uAj" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "uAr" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurantkitchenarea)
@@ -31845,13 +31886,6 @@
 /obj/item/pen,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
-"vuW" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor,
-/area/site53/uhcz/hallways)
 "vuY" = (
 /obj/machinery/light{
 	dir = 1
@@ -32030,6 +32064,7 @@
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -32919,6 +32954,11 @@
 /obj/item/pen,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/commanderoffice)
+"xpf" = (
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/door/airlock/highsecurity,
+/turf/simulated/floor,
+/area/site53/uhcz/hallways)
 "xpD" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile,
@@ -33375,6 +33415,7 @@
 	},
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -33435,6 +33476,7 @@
 	},
 /obj/machinery/light{
 	dir = 4;
+	= ;
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -53426,7 +53468,7 @@ azA
 azA
 azA
 azA
-ucL
+azA
 azA
 azA
 azA
@@ -54197,7 +54239,7 @@ azA
 azA
 azA
 azA
-ucL
+azA
 azA
 azA
 azA
@@ -54712,7 +54754,7 @@ azA
 azA
 azA
 azA
-ucL
+azA
 azA
 azA
 azA
@@ -56513,7 +56555,7 @@ azA
 azA
 azA
 azA
-ucL
+azA
 azA
 azA
 azA
@@ -57027,7 +57069,7 @@ azA
 azA
 azA
 azA
-ucL
+azA
 azA
 azA
 azA
@@ -58572,7 +58614,7 @@ azA
 azA
 azA
 azA
-ucL
+azA
 azA
 azA
 azA
@@ -72684,11 +72726,11 @@ aBo
 aBo
 aBo
 aEC
-aFr
-bYZ
+uAj
+hDv
 oQu
-aEC
-aEC
+pIF
+pIF
 mDr
 ass
 azA
@@ -73186,7 +73228,7 @@ azA
 aBo
 iqc
 ajR
-msQ
+ajR
 ajR
 ajR
 veT
@@ -73443,7 +73485,7 @@ azA
 aBo
 aBA
 ajR
-ajT
+ajR
 ajR
 aBA
 aBo
@@ -73700,7 +73742,7 @@ azA
 aBo
 aBA
 aBA
-ajT
+ajR
 aBA
 aBA
 aBo
@@ -73957,7 +73999,7 @@ azA
 aBo
 aBo
 aBo
-ake
+xpf
 aBo
 aBo
 aBo
@@ -74214,7 +74256,7 @@ azA
 azA
 azA
 aBo
-ajT
+ajR
 aBo
 azA
 azA
@@ -74471,7 +74513,7 @@ azA
 azA
 azA
 aBo
-ajT
+ajR
 aBo
 aBo
 aBo
@@ -74728,14 +74770,14 @@ azA
 azA
 azA
 aBo
-nBU
-lPM
-lPM
-lPM
-vuW
-lPM
-lPM
-cfw
+ajR
+ajR
+ajR
+ajR
+ajR
+ajR
+ajR
+ajR
 aBo
 azA
 ass
@@ -74992,7 +75034,7 @@ aBo
 aBo
 aBo
 aBo
-akb
+rwu
 aBo
 azA
 ass
@@ -75249,7 +75291,7 @@ azA
 azA
 azA
 aBo
-ajT
+ajR
 aBo
 azA
 azA
@@ -75506,7 +75548,7 @@ azA
 azA
 azA
 aBo
-ayW
+jwV
 aBo
 azA
 azA
@@ -75763,7 +75805,7 @@ azA
 azA
 azA
 aBo
-ajT
+ajR
 aBo
 azA
 azA
@@ -76020,7 +76062,7 @@ azA
 azA
 azA
 aBo
-ajT
+ajR
 aBo
 azA
 azA
@@ -76277,7 +76319,7 @@ azA
 azA
 azA
 aBo
-pNQ
+jFe
 aBo
 azA
 azA
@@ -76534,7 +76576,7 @@ azA
 azA
 azA
 aBo
-ajT
+ajR
 aBo
 azA
 azA
@@ -76791,7 +76833,7 @@ azA
 azA
 azA
 aBo
-ajT
+ajR
 aBo
 azA
 azA
@@ -77048,7 +77090,7 @@ azA
 aBo
 aBo
 aBo
-ake
+xpf
 aBo
 aBo
 aBo
