@@ -126,6 +126,8 @@
 	name = "auditor gloves"
 	icon_state = "armoredauditor"
 	item_state = "bgloves"
+	siemens_coefficient = 0.20
+	permeability_coefficient = 0.05
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,
@@ -139,7 +141,7 @@
 	desc = "Sterile nitrile gloves. with layered kevlar making it more resistant againsts damage"
 	icon_state = "armorednitrile"
 	item_state = "bgloves"
-	siemens_coefficient = 0.50
+	siemens_coefficient = 0.20
 	permeability_coefficient = 0.05
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
