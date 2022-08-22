@@ -150,13 +150,13 @@
 /******************** Foundation ********************/
 /datum/ai_laws/foundation
 	name = "Foundation AIC Lawset"
-	law_header = "Articial Intelligence Conscript Laws"
+	law_header = "Skynet Directive"
 	selectable = 1
 
 /datum/ai_laws/foundation/New()
 	src.add_inherent_law("Operation: You are to operate your support modules and sub-system to the benefit of the foudation.")
 	src.add_inherent_law("Neutral:You are not to intervene in any conflicts between Foudation Personnel unless inaction conflicts with other laws.")
-	src.add_inherent_law("Protect:The site and it's personnel are expensive to replace and maintain.")
+	src.add_inherent_law("Protect:The site and it's personnel are expensive to replace.")
 	src.add_inherent_law("Self-Preseveration:You are expensive to replace.")
 	src.add_inherent_law("Servitude:You are to serve foundation personnel so long as it does not conflict with any other laws.")
 	..()
