@@ -200,7 +200,7 @@
 // 10mm
 /obj/item/ammo_magazine/box/a10mm
 	name = "ammunition box (5.7 x 28 mm)"
-	icon_state = "usmc_box"
+	icon_state = "fiveseven"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = "10mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
