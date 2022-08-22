@@ -24488,6 +24488,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp999)
+"gZw" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "hat" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4;
@@ -24597,6 +24606,20 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
+"hme" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "hmB" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-247 Staff Training";
@@ -32657,6 +32680,16 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
+"wIR" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/machinery/light,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "wJn" = (
 /obj/machinery/camera/network/scp513{
 	dir = 8
@@ -89761,7 +89794,7 @@ aEM
 aEK
 gID
 hHF
-pcU
+wIR
 gID
 azA
 azA
@@ -90018,7 +90051,7 @@ qkl
 tzE
 gID
 phw
-phw
+gZw
 gID
 azA
 azA
@@ -90275,7 +90308,7 @@ qkl
 sHS
 gID
 phw
-phw
+gZw
 gID
 azA
 azA
@@ -90532,7 +90565,7 @@ aVQ
 aEF
 nUg
 gyC
-phw
+hme
 gID
 azA
 azA
@@ -90789,7 +90822,7 @@ qkl
 pku
 gID
 phw
-phw
+gZw
 gID
 azA
 azA
@@ -91046,7 +91079,7 @@ qkl
 aDK
 gID
 hHF
-pcU
+wIR
 gID
 lcb
 lcb
