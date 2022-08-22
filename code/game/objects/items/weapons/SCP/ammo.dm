@@ -190,7 +190,7 @@
 
 /obj/item/ammo_magazine/box/a50
 	name = "ammunition box (.44 magnum)"
-	icon_state = "357"
+	icon_state = "44"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = ".44"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
