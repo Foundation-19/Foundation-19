@@ -30323,7 +30323,7 @@
 /obj/machinery/button/blast_door{
 	id_tag = "check3";
 	pixel_y = 24;
-	req_access = list("ACCESS_ENGINEERING_LEVEL1"s)
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
