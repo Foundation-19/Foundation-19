@@ -24278,6 +24278,19 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
+"gHP" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/camera/network/hcz{
+	dir = 1;
+	name = "HCZ Guard Office"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "gID" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
@@ -24357,20 +24370,6 @@
 /obj/machinery/cell_charger,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
-"gSd" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/door/airlock/multi_tile/security{
-	name = "Heavy Containment Security Point";
-	req_access = list("ACCESS_SECURITY_LEVEL3");
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
 "gSw" = (
 /obj/structure/table/standard,
 /obj/item/device/camera,
@@ -24954,19 +24953,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
-"hLG" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/camera/network/hcz{
-	dir = 1;
-	name = "HCZ Guard Office"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
 "hMa" = (
 /obj/item/storage/fancy/cigarettes,
 /turf/simulated/floor,
@@ -25025,6 +25011,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/generalpurpose2)
+"hSN" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "hTe" = (
 /obj/machinery/optable,
 /turf/simulated/floor/tiled/white,
@@ -26669,16 +26664,6 @@
 /obj/item/ammo_magazine/chemdart,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
-"loq" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/light,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
 "los" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -28706,6 +28691,20 @@
 /obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/commanderoffice)
+"oIp" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/machinery/door/airlock/multi_tile/security{
+	name = "Heavy Containment Security Point";
+	req_access = list("ACCESS_SECURITY_LEVEL3");
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "oJB" = (
 /obj/machinery/camera/network/entrance{
 	c_tag = "Hub 1";
@@ -29214,8 +29213,8 @@
 	dir = 1;
 	name = "HCZ Guard Office"
 	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/lowertrams/hczmaint/south)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/lhcz/hczguardgear)
 "pPg" = (
 /obj/machinery/button/blast_door{
 	id_tag = "UHCZ Lockdown";
@@ -29256,15 +29255,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
-"pRG" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/item/stool,
-/obj/machinery/camera/network/hcz{
-	dir = 1;
-	name = "HCZ Guard Office"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
 "pSE" = (
 /obj/machinery/light{
 	dir = 4
@@ -30626,20 +30616,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/hczguardgear)
-"sID" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
 "sIW" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -31080,6 +31056,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
+"tGq" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/machinery/light,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "tHs" = (
 /obj/structure/table/standard,
 /obj/item/storage/firstaid/adv,
@@ -31720,6 +31706,14 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
+"uVf" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/machinery/camera/network/hcz{
+	dir = 1;
+	name = "HCZ Guard Office"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lowertrams/hczmaint/south)
 "uWI" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 9
@@ -31735,6 +31729,20 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
+"uXa" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "uXT" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -32637,6 +32645,15 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/securitypost)
+"wDE" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/item/stool,
+/obj/machinery/camera/network/hcz{
+	dir = 1;
+	name = "HCZ Guard Office"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "wEa" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -33213,15 +33230,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/reswing/robotics)
-"xxS" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
 "xyh" = (
 /obj/machinery/computer/rdconsole/robotics{
 	req_access = list()
@@ -89315,7 +89323,7 @@ aBo
 aBo
 gID
 phw
-gSd
+oIp
 bYK
 azA
 azA
@@ -89829,7 +89837,7 @@ aEM
 aEK
 gID
 hHF
-loq
+tGq
 gID
 azA
 azA
@@ -90086,7 +90094,7 @@ qkl
 tzE
 gID
 phw
-xxS
+hSN
 gID
 azA
 azA
@@ -90343,7 +90351,7 @@ qkl
 sHS
 gID
 phw
-hLG
+gHP
 gID
 azA
 azA
@@ -90600,7 +90608,7 @@ aVQ
 aEF
 nUg
 gyC
-sID
+uXa
 gID
 azA
 azA
@@ -90857,7 +90865,7 @@ qkl
 pku
 gID
 phw
-xxS
+hSN
 gID
 azA
 azA
@@ -91114,7 +91122,7 @@ qkl
 aDK
 gID
 hHF
-loq
+tGq
 gID
 lcb
 lcb
@@ -91887,7 +91895,7 @@ gID
 lPE
 bjd
 phw
-pOk
+uVf
 atV
 atV
 atV
@@ -92654,7 +92662,7 @@ tzE
 tzE
 gID
 dxl
-bdl
+pOk
 gID
 lMj
 phw
@@ -94200,7 +94208,7 @@ biq
 vIP
 bjf
 lcy
-pRG
+wDE
 gID
 ipQ
 gWM
