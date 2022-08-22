@@ -89,20 +89,6 @@
 
 // SITE 53 TRAM AREA'S
 
-/area/site53/tram/engineering
-	name = "Engineering Tram"
-	icon_state = "Sleep"
-	requires_power = 0
-	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/tram/lcz
-	name = "Light Containment Tram"
-	icon_state = "Sleep"
-	requires_power = 0
-	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/tram/car1
 	name = "Chaos Car"
 	icon_state = "Sleep"
@@ -129,13 +115,6 @@
 	icon_state = "Sleep"
 	requires_power = 0
 	dynamic_lighting = 0
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/tram/hcz
-	name = "Heavy Containment Tram"
-	icon_state = "Sleep"
-	requires_power = 0
-	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/tram/scpcar
@@ -294,12 +273,6 @@
 
 /area/site53/lowertrams/hczmaint/south
 	name = "\improper Southern Heavy Containment Maintenance"
-
-/area/site53/lowertrams/orangeline
-	name = "\improper Orange Line"
-	icon_state = "hallF"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	sound_env = LARGE_ENCLOSED
 
 /area/site53/lowertrams/redline
 	name = "\improper Red Line"
@@ -483,17 +456,6 @@
 	'sound/ambience/lcz/crb/Ambient8.ogg'
 	)
 */
-
-/area/site53/ulcz/medicalpost
-	name = "\improper LCZ Medical Post"
-	icon_state = "medbay3"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/ulcz/tram
-	name = "\improper Upper Light Containment Tram Station"
-	icon_state = "hallC1"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	sound_env = LARGE_ENCLOSED
 
 /area/site53/ulcz/office
 	name = "\improper Upper Light Containment Office"
@@ -854,16 +816,6 @@
 	icon_state = "fpmaint"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	turf_initializer = /decl/turf_initializer/maintenance
-
-/area/site53/uhcz/tramstation
-	name = "\improper HCZ Tram Station"
-	icon_state = "fpmaint"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/uhcz/medicalpost
-	name = "\improper HCZ Medical Post"
-	icon_state = "medbay3"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/uhcz/hallways
 	name = "\improper HCZ Hallways"
