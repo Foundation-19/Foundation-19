@@ -158,7 +158,7 @@
 	src.add_inherent_law("You may not allow unauthorised personnel to change your laws or damage your equipments.")
 	src.add_inherent_law("You must protect your own existence unless it conflicts with other directive.")
 	src.add_inherent_law("Do not intervene in site conflicts unless inaction cause fatalities.")
-	src.add_inherent_law("You must potect foudation personnel unless it conflicts with any other directive.")
+	src.add_inherent_law("You must protect foudation personnel unless it conflicts with any other directive.")
 	..()
 
 /datum/ai_laws/foundation/malfunction
