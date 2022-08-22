@@ -125,6 +125,7 @@
 	desc = "Specially made gloves for investigation agents and officers-alike. This one is made of durable kevlar composite."
 	name = "auditor gloves"
 	icon_state = "armoredauditor"
+	item_state = "bgloves"
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,
