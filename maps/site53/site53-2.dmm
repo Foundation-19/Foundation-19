@@ -24357,6 +24357,20 @@
 /obj/machinery/cell_charger,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
+"gSd" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/machinery/door/airlock/multi_tile/security{
+	name = "Heavy Containment Security Point";
+	req_access = list("ACCESS_SECURITY_LEVEL3");
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "gSw" = (
 /obj/structure/table/standard,
 /obj/item/device/camera,
@@ -24488,15 +24502,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp999)
-"gZw" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
 "hat" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4;
@@ -24606,20 +24611,6 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
-"hme" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
 "hmB" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-247 Staff Training";
@@ -24963,6 +24954,19 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
+"hLG" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/camera/network/hcz{
+	dir = 1;
+	name = "HCZ Guard Office"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "hMa" = (
 /obj/item/storage/fancy/cigarettes,
 /turf/simulated/floor,
@@ -26665,6 +26669,16 @@
 /obj/item/ammo_magazine/chemdart,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
+"loq" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/machinery/light,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "los" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -29196,13 +29210,12 @@
 /area/site53/uhcz/hallways)
 "pOk" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/door/airlock/multi_tile/security{
-	name = "Heavy Containment Security Point";
-	req_access = list("ACCESS_SECURITY_LEVEL3");
-	dir = 4
+/obj/machinery/camera/network/hcz{
+	dir = 1;
+	name = "HCZ Guard Office"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
+/area/site53/lowertrams/hczmaint/south)
 "pPg" = (
 /obj/machinery/button/blast_door{
 	id_tag = "UHCZ Lockdown";
@@ -29243,6 +29256,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
+"pRG" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/item/stool,
+/obj/machinery/camera/network/hcz{
+	dir = 1;
+	name = "HCZ Guard Office"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "pSE" = (
 /obj/machinery/light{
 	dir = 4
@@ -30603,6 +30625,20 @@
 /obj/structure/table/standard,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/hczguardgear)
+"sID" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "sIW" = (
 /obj/structure/cable{
@@ -32680,16 +32716,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
-"wIR" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/light,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
 "wJn" = (
 /obj/machinery/camera/network/scp513{
 	dir = 8
@@ -33187,6 +33213,15 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/reswing/robotics)
+"xxS" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "xyh" = (
 /obj/machinery/computer/rdconsole/robotics{
 	req_access = list()
@@ -89279,8 +89314,8 @@ aBo
 aBo
 aBo
 gID
-pOk
-bis
+phw
+gSd
 bYK
 azA
 azA
@@ -89794,7 +89829,7 @@ aEM
 aEK
 gID
 hHF
-wIR
+loq
 gID
 azA
 azA
@@ -90051,7 +90086,7 @@ qkl
 tzE
 gID
 phw
-gZw
+xxS
 gID
 azA
 azA
@@ -90308,7 +90343,7 @@ qkl
 sHS
 gID
 phw
-gZw
+hLG
 gID
 azA
 azA
@@ -90565,7 +90600,7 @@ aVQ
 aEF
 nUg
 gyC
-hme
+sID
 gID
 azA
 azA
@@ -90822,7 +90857,7 @@ qkl
 pku
 gID
 phw
-gZw
+xxS
 gID
 azA
 azA
@@ -91079,7 +91114,7 @@ qkl
 aDK
 gID
 hHF
-wIR
+loq
 gID
 lcb
 lcb
@@ -91852,7 +91887,7 @@ gID
 lPE
 bjd
 phw
-mNP
+pOk
 atV
 atV
 atV
@@ -94165,7 +94200,7 @@ biq
 vIP
 bjf
 lcy
-kdH
+pRG
 gID
 ipQ
 gWM
