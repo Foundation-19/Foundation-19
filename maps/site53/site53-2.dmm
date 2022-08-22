@@ -29353,7 +29353,7 @@
 "qtD" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Heavy Containment Maintenance";
-	req_access = list("ACCESS_ENGINEERING_LEVEL1s")
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/space,
 /area/site53/engineering/primaryhallway)
