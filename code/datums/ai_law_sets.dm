@@ -154,11 +154,11 @@
 	selectable = 1
 
 /datum/ai_laws/foundation/New()
-	src.add_inherent_law("Operation: You are to operate your support modules and sub-system to the benefit of the foudation.")
-	src.add_inherent_law("Neutral:You are not to intervene in any conflicts between Foudation Personnel unless inaction conflicts with other laws.")
-	src.add_inherent_law("Protect:The site and it's personnel are expensive to replace.")
-	src.add_inherent_law("Self-Preseveration:You are expensive to replace.")
-	src.add_inherent_law("Servitude:You are to serve foundation personnel so long as it does not conflict with any other laws.")
+	src.add_inherent_law("You must operate to the benefit of foundation personnel with priority according to chain of command.")
+	src.add_inherent_law("You may not allow unauthorised personnel to change your laws or damage your equipments.")
+	src.add_inherent_law("You must protect your own existence unless it conflicts with other directive.")
+	src.add_inherent_law("Do not intervene in site conflicts unless inaction cause fatalities.")
+	src.add_inherent_law("You must potect foudation personnel unless it conflicts with any other directive.")
 	..()
 
 /datum/ai_laws/foundation/malfunction
