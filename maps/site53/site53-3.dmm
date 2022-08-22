@@ -10,7 +10,7 @@
 "ac" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/tramhubhallwayentry)
@@ -40,7 +40,7 @@
 /obj/structure/cryofeed,
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1"
+	
 	},
 /obj/machinery/cryopod{
 	dir = 4;
@@ -220,7 +220,6 @@
 "aE" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1";
 	pixel_x = 11
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -228,7 +227,7 @@
 "aF" = (
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1"
+	
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
@@ -241,7 +240,7 @@
 "aI" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	
 	},
 /turf/simulated/open,
 /area/site53/uez/bridge)
@@ -254,7 +253,7 @@
 "aL" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/cryogenicsprimary)
@@ -268,7 +267,7 @@
 	},
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	
 	},
 /obj/machinery/cryopod{
 	pixel_x = -8
@@ -1026,7 +1025,7 @@
 "dq" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -1115,7 +1114,7 @@
 	},
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
@@ -2138,26 +2137,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
-"gy" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
 "gz" = (
 /obj/structure/flora/pottedplant,
 /turf/simulated/floor/grass,
@@ -2196,10 +2175,6 @@
 /obj/effect/floor_decal/corner/orange/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"gF" = (
-/obj/structure/ladder,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
 "gG" = (
 /obj/structure/closet/jcloset,
 /obj/item/reagent_containers/glass/bucket,
@@ -2438,10 +2413,6 @@
 /obj/structure/bed/chair/wheelchair,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
-"ho" = (
-/obj/machinery/light/small,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
 "hp" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/prepainted,
@@ -3104,7 +3075,7 @@
 "jb" = (
 /obj/machinery/light/spot{
 	dir = 8;
-	icon_state = "tube1"
+	
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
@@ -3640,7 +3611,7 @@
 "km" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
@@ -3851,7 +3822,7 @@
 "kR" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	
 	},
 /obj/machinery/light{
 	dir = 4
@@ -4194,7 +4165,7 @@
 "lL" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroomstairs)
@@ -6179,7 +6150,7 @@
 "sV" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/site53/zonecommanderoffice)
@@ -6572,14 +6543,14 @@
 "ul" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "um" = (
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1"
+	
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -6771,7 +6742,7 @@
 "vc" = (
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1"
+	
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
@@ -6890,7 +6861,7 @@
 "vv" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	
 	},
 /obj/machinery/vending/snack{
 	dir = 8
@@ -6963,7 +6934,6 @@
 "vK" = (
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1";
 	pixel_x = -11
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -7167,7 +7137,6 @@
 	},
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1";
 	pixel_x = -11
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -8032,7 +8001,7 @@
 "HU" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1"
+	
 	},
 /obj/structure/cable{
 	d2 = 8;
@@ -8425,6 +8394,26 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
+"Of" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/maintenance/surfacewest)
 "Ok" = (
 /obj/structure/bed/chair/armchair/brown,
 /turf/simulated/floor/wood/walnut,
@@ -8456,7 +8445,6 @@
 "OE" = (
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1";
 	pixel_x = -11
 	},
 /obj/machinery/light,
@@ -8584,6 +8572,14 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"QG" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "QJ" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -9211,7 +9207,6 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1";
 	pixel_x = -11
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -35165,7 +35160,7 @@ dA
 dA
 dA
 dA
-dA
+QG
 dA
 dA
 dA
@@ -36204,9 +36199,9 @@ dA
 dA
 bk
 Gg
+gm
 go
 gw
-gF
 bk
 dA
 dA
@@ -36461,9 +36456,9 @@ dA
 dA
 bk
 gl
+eb
 gp
 gx
-ho
 bk
 dA
 dA
@@ -36719,8 +36714,8 @@ dA
 bk
 gm
 gm
-dh
 gm
+dh
 bk
 dA
 dA
@@ -36976,8 +36971,8 @@ dA
 bk
 gm
 gm
-dh
 gm
+dh
 bk
 dA
 dA
@@ -37233,8 +37228,8 @@ dA
 bk
 bk
 gm
-dh
 gm
+dh
 bk
 dA
 dA
@@ -37490,8 +37485,8 @@ bk
 bk
 bk
 gm
-dh
 gm
+dh
 bk
 dA
 dA
@@ -37747,8 +37742,8 @@ bk
 fm
 gn
 Ra
-gy
-fp
+Ra
+Of
 bk
 dA
 dA
