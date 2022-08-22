@@ -52,7 +52,7 @@ var/jobban_keylist[0]		//to store the keys & ranks
 			jobban_keylist=list()
 			log_admin("jobban_keylist was empty")
 	else
-		if(!establish_db_connection())
+		if(!SSdbcore.Connect())
 			error("Database connection failed. Reverting to the legacy ban system.")
 			log_misc("Database connection failed. Reverting to the legacy ban system.")
 			config.ban_legacy_system = 1

@@ -24,7 +24,7 @@
 
 		var/ckeytext = ckey(key)
 
-		if(!establish_db_connection())
+		if(!SSdbcore.Connect())
 			error("Ban database connection failure. Key [ckeytext] not checked")
 			log_misc("Ban database connection failure. Key [ckeytext] not checked")
 			return

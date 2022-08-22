@@ -3862,6 +3862,7 @@
 /obj/machinery/camera/network/medbay{
 	c_tag = "Psychiatrist's Office"
 	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
 "kT" = (
@@ -3999,6 +4000,7 @@
 /obj/effect/floor_decal/corner/orange/bordercorner{
 	dir = 8
 	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "ll" = (
@@ -5166,6 +5168,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/dark,
 /area/site53/medical/morgue)
 "oS" = (
@@ -5410,6 +5413,10 @@
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
+"pX" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/infirmary)
 "qa" = (
 /obj/structure/bed/chair,
 /obj/structure/cable{
@@ -6979,6 +6986,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"we" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/zonecommanderoffice)
 "wj" = (
 /obj/structure/table/standard,
 /obj/machinery/microwave,
@@ -7365,6 +7376,10 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"zV" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/surgery/op2)
 "Ac" = (
 /obj/structure/closet/secure_closet/mtf/nco,
 /obj/item/clothing/suit/bio_suit/security,
@@ -7430,6 +7445,10 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
+"Ba" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/surgery/op1)
 "Bc" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
@@ -7591,6 +7610,7 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/chemistry)
 "Cq" = (
@@ -7757,6 +7777,10 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"EJ" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "ET" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
@@ -7854,8 +7878,13 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
 "Go" = (
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
+"Gt" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/infirmreception)
 "Gv" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -7867,6 +7896,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
+"GH" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/surface/cryogenicsprimary)
 "GJ" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -7956,6 +7989,10 @@
 /obj/structure/iv_drip,
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
+"Hx" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/medical/sleeper)
 "HG" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/corner/red/half{
@@ -8064,6 +8101,10 @@
 /obj/item/stool,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
+"IW" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/exam_room)
 "Jc" = (
 /obj/item/clothing/suit/storage/toggle/fr_jacket,
 /obj/item/clothing/suit/storage/toggle/fr_jacket/ems,
@@ -8276,6 +8317,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/maintenance/surfaceeast)
+"Ml" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/senioragentoffice)
 "Mq" = (
 /obj/effect/paint_stripe/red,
 /obj/effect/paint_stripe/red,
@@ -8501,6 +8546,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/tramhubhallwayentry)
+"Qh" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/logistics/logistics)
 "Qi" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/tree/pine,
@@ -8956,6 +9005,10 @@
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/securitypost)
+"VA" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/o5repoffice)
 "VG" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light/small{
@@ -9220,6 +9273,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
+"Yz" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/dark,
+/area/site53/medical/morgue)
 "YH" = (
 /obj/structure/morgue,
 /obj/machinery/light{
@@ -9271,6 +9329,10 @@
 /obj/machinery/camera/network/entrance,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"Zy" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled,
+/area/site53/logistics/logistics)
 "ZG" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -12746,7 +12808,7 @@ dA
 ty
 XM
 tB
-tB
+we
 tB
 Ky
 Ac
@@ -14810,7 +14872,7 @@ aQ
 oZ
 tf
 tk
-tB
+we
 ts
 ty
 dA
@@ -33123,7 +33185,7 @@ oV
 uQ
 uQ
 vr
-uQ
+Qh
 uQ
 uQ
 Vi
@@ -33365,7 +33427,7 @@ zO
 qF
 nk
 nk
-nk
+Zy
 nk
 qS
 nk
@@ -35587,7 +35649,7 @@ gX
 eH
 ky
 ky
-ky
+Yz
 ky
 ky
 ky
@@ -37374,7 +37436,7 @@ fH
 iw
 Sd
 iw
-iw
+IW
 iw
 iw
 ir
@@ -38669,7 +38731,7 @@ iX
 Qm
 cm
 ka
-ks
+Gt
 ks
 kr
 li
@@ -39238,7 +39300,7 @@ aj
 az
 af
 kC
-kC
+GH
 kC
 kC
 kC
@@ -39431,7 +39493,7 @@ gT
 cS
 dd
 cZ
-cZ
+Hx
 cZ
 cZ
 iA
@@ -40464,7 +40526,7 @@ im
 im
 im
 dI
-iX
+pX
 gU
 fD
 dA
@@ -40751,7 +40813,7 @@ px
 px
 MX
 RJ
-Zn
+EJ
 Xq
 hp
 dE
@@ -41229,7 +41291,7 @@ dA
 dA
 Vm
 hk
-hy
+Ba
 hN
 hy
 io
@@ -42550,7 +42612,7 @@ mu
 Jt
 tL
 Zn
-Zn
+EJ
 SL
 UE
 MX
@@ -42798,7 +42860,7 @@ mB
 lF
 rl
 rl
-rn
+VA
 rn
 rE
 lF
@@ -43542,7 +43604,7 @@ dA
 dA
 gO
 gJ
-ew
+zV
 me
 ew
 jZ
@@ -44354,7 +44416,7 @@ SL
 Zn
 tQ
 Xu
-Xu
+Ml
 Xu
 ub
 pO

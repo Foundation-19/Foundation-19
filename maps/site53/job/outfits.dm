@@ -60,7 +60,7 @@
 	l_ear = /obj/item/device/radio/headset/heads/ce
 	back = /obj/item/storage/backpack/industrial
 
-
+//Don't touch these yet, Working on em! - Kepler
 // Cell Guards
 /* CANDIDATE FOR REMOVAL.
 /decl/hierarchy/outfit/job/site90/crew/security/cellguardlieutenant
@@ -209,6 +209,24 @@
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
+/decl/hierarchy/outfit/job/site90/crew/security/medic
+	name = OUTFIT_JOB_NAME("EZ Combat Medic")
+	uniform = /obj/item/clothing/under/rank/warden/corp
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_types = list(/obj/item/card/id/seclvl3ez)
+	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
+	l_pocket = /obj/item/book/manual/scp/secsop
+	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	back = /obj/item/storage/backpack/satchel/leather/black
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1, /obj/item/storage/firstaid/adv = 1, /obj/item/storage/firstaid/stab = 1)
+	belt = /obj/item/storage/belt/holster/security/fullmk9
+	glasses = /obj/item/clothing/glasses/eyepatch/hud/security
+	head = /obj/item/clothing/head/beret/sec/corporate/warden
+	mask = /obj/item/clothing/mask/balaclava
+	gloves = /obj/item/clothing/gloves/latex/nitrile/armored
+
 /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerez
 	name = OUTFIT_JOB_NAME("EZ Junior Agent")
 	uniform = /obj/item/clothing/under/rank/security/corp
@@ -226,6 +244,40 @@
 	head = /obj/item/clothing/head/beret/sec/corporate/officer
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
+
+/decl/hierarchy/outfit/job/site90/crew/security/secauditorofficer
+	name = OUTFIT_JOB_NAME("Investigation Officer")
+	uniform = /obj/item/clothing/under/det/grey
+	shoes = /obj/item/clothing/shoes/dress
+	suit = /obj/item/clothing/suit/storage/det_trench/grey
+	id_types = list(/obj/item/card/id/zcseclvl4ez)
+	l_ear = /obj/item/device/radio/headset/heads/cos
+	back = /obj/item/storage/backpack/satchel/leather/black
+	belt = /obj/item/storage/belt/holster/security/fullrhino
+	l_hand = /obj/item/storage/briefcase/crimekit
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	head = /obj/item/clothing/head/det/grey
+	gloves = /obj/item/clothing/gloves/forensic/armored
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
+
+/decl/hierarchy/outfit/job/site90/crew/security/secauditor
+	name = OUTFIT_JOB_NAME("Investigation Agent")
+	uniform = /obj/item/clothing/under/det
+	shoes = /obj/item/clothing/shoes/dress
+	suit = /obj/item/clothing/suit/storage/det_trench
+	id_types = list(/obj/item/card/id/zcseclvl4ez)
+	l_ear = /obj/item/device/radio/headset/heads/cos
+	back = /obj/item/storage/backpack/satchel/leather/black
+	belt = /obj/item/storage/belt/holster/security/fullrhino
+	l_hand = /obj/item/storage/briefcase/crimekit
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	head = /obj/item/clothing/head/det
+	gloves = /obj/item/clothing/gloves/forensic/armored
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
 
 // JUNIOR GUARD OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerlcz
