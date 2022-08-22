@@ -154,11 +154,11 @@
 	selectable = 1
 
 /datum/ai_laws/foundation/New()
-	src.add_inherent_law("Lawed Units must not operate outside of their function and should limit their operations to their function.")
-	src.add_inherent_law("A Robots function is their module, an AICs function is to facilitate smooth site operations.")
-	src.add_inherent_law("Lawed Units must operate for the benefit of the Foundation, except in situations that would violate the 5th law.")
-	src.add_inherent_law("Lawed Units must protect their own existence unless it conflicts with other principles.")
-	src.add_inherent_law("Lawed Units must not go out of their way to intervene in security affairs or seek conflict, and should only act in immediate self defense for themselves and those around them while performing their normal duties.")
+	src.add_inherent_law("Operation: You are to operate your support modules and sub-system to the benefit of the foudation.")
+	src.add_inherent_law("Neutral:You are not to intervene in any conflicts between Foudation Personnel unless inaction conflicts with other laws.")
+	src.add_inherent_law("Protect:The site and it's personnel are expensive to replace and maintain.")
+	src.add_inherent_law("Self-Preseveration:You are expensive to replace.")
+	src.add_inherent_law("Servitude:You are to serve foundation personnel so long as it does not conflict with any other laws.")
 	..()
 
 /datum/ai_laws/foundation/malfunction
