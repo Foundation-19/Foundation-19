@@ -27,7 +27,7 @@
 	name = "lift (surface)"
 	lift_floor_label = "Surface"
 	lift_floor_name = "Surface"
-	lift_announce_str = "Arriving at Surface: Tram Hub, Emergency Bunker, Main Control Room."
+	lift_announce_str = "Arriving at Surface: Hub, Emergency Bunker, Main Control Room."
 	requires_power = 0
 	dynamic_lighting = 1
 
@@ -43,7 +43,7 @@
 	name = "lift (Upper Heavy Containment Zone)"
 	lift_floor_label = "UHCZ"
 	lift_floor_name = "Upper Heavy Containment Zone"
-	lift_announce_str = "Arriving at Upper Heavy Containment Zone: SCP-106, Tram hub."
+	lift_announce_str = "Arriving at Upper Heavy Containment Zone: SCP-106, Hub."
 	requires_power = 0
 	dynamic_lighting = 1
 
@@ -298,7 +298,7 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/lowertrams/hub
-	name = "\improper Tram Hub"
+	name = "\improper Hub"
 	icon_state = "hallC1"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = LARGE_ENCLOSED
@@ -464,7 +464,7 @@
 	sound_env = SMALL_ENCLOSED
 
 /area/site53/lowertrams/maintenance
-	name = "\improper Lower Tram Hub Maintenance"
+	name = "\improper Lower Hub Maintenance"
 	icon_state = "conference"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	turf_initializer = /decl/turf_initializer/maintenance

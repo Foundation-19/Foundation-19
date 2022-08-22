@@ -628,7 +628,7 @@
 /area/site53/lowertrams/brownline)
 "acx" = (
 /obj/machinery/power/breakerbox/activated{
-	RCon_tag = "Tram Hub Bypass"
+	RCon_tag = "Hub Bypass"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/maintenance)
@@ -691,7 +691,7 @@
 /area/site53/lowertrams/redline)
 "acI" = (
 /obj/machinery/power/smes/buildable/preset/ds90/substation_full{
-	RCon_tag = "Tram Hub Substation"
+	RCon_tag = "Hub Substation"
 	},
 /obj/structure/cable/green{
 	d2 = 4;
@@ -1614,7 +1614,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/hatch/maintenance{
-	name = "Tram Hub substation"
+	name = "Hub substation"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lowertrams/brownline)
@@ -13399,7 +13399,7 @@
 "aKP" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/civilian{
-	name = "Tram Hub"
+	name = "Hub"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
@@ -15140,7 +15140,7 @@
 "aPQ" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/civilian{
-	name = "Tram Hub"
+	name = "Hub"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -23992,7 +23992,7 @@
 /area/site53/surface/bunker)
 "gjy" = (
 /obj/machinery/camera/network/entrance{
-	c_tag = "Tram Hub 2";
+	c_tag = "Hub 2";
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -28671,7 +28671,7 @@
 /area/site53/uhcz/commanderoffice)
 "oJB" = (
 /obj/machinery/camera/network/entrance{
-	c_tag = "Tram Hub 1";
+	c_tag = "Hub 1";
 	dir = 8
 	},
 /turf/simulated/floor/tiled,

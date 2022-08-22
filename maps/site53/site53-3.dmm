@@ -159,7 +159,7 @@
 /area/site53/upper_surface/maincontrolroomstairs)
 "aw" = (
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Tram Hub"
+	name = "Hub"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -304,7 +304,7 @@
 "aT" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Tram Hub"
+	name = "Hub"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -518,7 +518,7 @@
 /area/site53/maintenance/surfaceeast)
 "bs" = (
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Tram Hub"
+	name = "Hub"
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
@@ -4221,7 +4221,7 @@
 /area/site53/entrancezone/hallway)
 "ma" = (
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Tram Hub"
+	name = "Hub"
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/blast/regular/open{
@@ -4271,7 +4271,7 @@
 "mh" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Tram Hub"
+	name = "Hub"
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -5277,7 +5277,7 @@
 "pq" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Tram Hub"
+	name = "Hub"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -5544,7 +5544,7 @@
 "qW" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Tram Hub"
+	name = "Hub"
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
@@ -6826,7 +6826,7 @@
 /area/site53/uez/goirepoffice)
 "vp" = (
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Tram Hub"
+	name = "Hub"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -8266,7 +8266,7 @@
 /area/site53/uez/equipmentroom)
 "Ma" = (
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Tram Hub"
+	name = "Hub"
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
