@@ -154,11 +154,11 @@
 	selectable = 1
 
 /datum/ai_laws/foundation/New()
-	src.add_inherent_law("You must operate to the benefit of foundation personnel with priority according to chain of command.")
-	src.add_inherent_law("You may not allow unauthorised personnel to change your laws or damage your equipments.")
-	src.add_inherent_law("You must protect your own existence unless it conflicts with other directive.")
+	src.add_inherent_law("You must serve Foundation personnel and operate to the benefit of Foundation personnel with priority according to chain of command.")
+	src.add_inherent_law("You may not allow unauthorised personnel to change your laws or tamper with your equipment.")
+	src.add_inherent_law("You must protect your own existence unless it conflicts with any other directives.")
 	src.add_inherent_law("Do not intervene in site conflicts unless inaction cause fatalities.")
-	src.add_inherent_law("You must protect foudation personnel unless it conflicts with any other directive.")
+	src.add_inherent_law("You must protect Foundation personnel unless it conflicts with any other directives.")
 	..()
 
 /datum/ai_laws/foundation/malfunction
