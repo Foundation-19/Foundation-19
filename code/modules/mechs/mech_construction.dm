@@ -78,7 +78,7 @@
 			if(!found)
 				return FALSE
 	else
-		return FALSE	
+		return FALSE
 
 	if(user)
 		var/delay = 30 * user.skill_delay_mult(SKILL_DEVICES)
@@ -90,10 +90,11 @@
 			if(!do_after(user, delay, src) || user.get_active_hand() != system)
 				return FALSE
 
-			if(user.unEquip(system))
-				to_chat(user, SPAN_NOTICE("You install \the [system] in \the [src]'s [system_hardpoint]."))
-				playsound(user.loc, 'sound/items/Screwdriver.ogg', 100, 1)
-			else return FALSE
+		if(user.unEquip(system))
+			to_chat(user, SPAN_NOTICE("You install \the [system] in \the [src]'s [system_hardpoint]."))
+			playsound(user.loc, 'sound/items/Screwdriver.ogg', 100, 1)
+		else
+			return FALSE
 
 	GLOB.destroyed_event.register(system, src, .proc/forget_module)
 
