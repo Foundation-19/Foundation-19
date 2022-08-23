@@ -53,12 +53,11 @@
 	var/scan_file_type = /datum/computer_file/data/text
 
 /obj/item/paper/New(loc, text, title, list/md = null, datum/language/L = null)
+	if (L)
+		language = L
 	. = ..(loc)
 	set_content(text ? text : info, title)
 	metadata = md
-
-	if (L)
-		language = L
 
 /obj/item/paper/Initialize(mapload)
 	. = ..(mapload)
