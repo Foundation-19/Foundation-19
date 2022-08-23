@@ -80,7 +80,7 @@
 		if (!affected)
 			to_chat (user, SPAN_WARNING("\The [src] detects no valid operation spot."))
 			return
-		else if(beep_boop && !(loaded_augment.augment_flags != AUGMENTATION_MECHANIC))
+		else if(beep_boop && !(loaded_augment.augment_flags & AUGMENTATION_MECHANIC))
 			to_chat(user, SPAN_WARNING("The [loaded_augment.name] cannot function within a mechanical part."))
 			return
 		else if (!beep_boop && !(loaded_augment.augment_flags & AUGMENTATION_ORGANIC))
