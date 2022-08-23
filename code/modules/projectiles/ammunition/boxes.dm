@@ -39,12 +39,6 @@
 	max_ammo = 6
 	multiple_sprites = 1
 
-	caliber = CALIBER_PISTOL_SMALL
-	ammo_type = /obj/item/ammo_casing/pistol/small
-	matter = list(MATERIAL_STEEL = 1060)
-	max_ammo = 10
-	multiple_sprites = 1
-
 /obj/item/ammo_magazine/speedloader/pclip
 	name = "pistol stripper clip"
 	desc = "A stripper clip for pistol caliber weapons."
