@@ -39,9 +39,6 @@
 	max_ammo = 6
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/speedloader/small/big
-	name = "modified speed loader"
-	icon_state = "tenshot9mm"
 	caliber = CALIBER_PISTOL_SMALL
 	ammo_type = /obj/item/ammo_casing/pistol/small
 	matter = list(MATERIAL_STEEL = 1060)
