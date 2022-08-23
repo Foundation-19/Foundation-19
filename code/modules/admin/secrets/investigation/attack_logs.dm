@@ -26,7 +26,7 @@
 		dat += "<tr><td>[al.station_time]</td>"
 
 		if(al.attacker)
-			dat += "<td>[al.attacker.key_name(check_if_offline = FALSE)] <a HREF='?_src_=holder;adminplayeropts=[al.attacker.ref]'>PP</a></td>"
+			dat += "<td>[al.attacker.key_name()] <a HREF='?_src_=holder;adminplayeropts=[al.attacker.ref]'>PP</a></td>"
 		else
 			dat += "<td></td>"
 
@@ -35,7 +35,7 @@
 		dat += "<td>[al.zone_sel]</td>"
 
 		if(al.victim)
-			dat += "<td>[al.victim.key_name(check_if_offline = FALSE)] <a HREF='?_src_=holder;adminplayeropts=[al.victim.ref]'>PP</a></td>"
+			dat += "<td>[al.victim.key_name()] <a HREF='?_src_=holder;adminplayeropts=[al.victim.ref]'>PP</a></td>"
 		else
 			dat += "<td></td>"
 
