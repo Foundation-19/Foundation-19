@@ -126,6 +126,7 @@
 	name = "auditor gloves"
 	icon_state = "armoredauditor"
 	item_state = "bgloves"
+	item_icons = "armoredauditor"
 	siemens_coefficient = 0.20
 	permeability_coefficient = 0.05
 	armor = list(
@@ -141,6 +142,7 @@
 	desc = "Sterile nitrile gloves. with layered kevlar making it more resistant againsts damage"
 	icon_state = "armorednitrile"
 	item_state = "bgloves"
+	item_icons = "armorednitrile"
 	siemens_coefficient = 0.20
 	permeability_coefficient = 0.05
 	armor = list(
