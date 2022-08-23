@@ -335,7 +335,7 @@
 
 	//JOBBAN'S INNARDS
 	else if(href_list["jobban1"])
-		if(!check_rights(R_ADMIN,0))
+		if(!check_rights(R_BAN,0))
 			to_chat(usr, "<span class='warning'>You do not have the appropriate permissions to add job bans!</span>")
 			return
 
@@ -527,7 +527,7 @@
 		return 0 //we didn't do anything!
 
 	else if(href_list["boot2"])
-		if(!check_rights(R_INVESTIGATE))
+		if(!check_rights(R_ADMIN|R_MOD))
 			return
 		var/mob/M = locate(href_list["boot2"])
 		if (ismob(M))
@@ -1359,7 +1359,7 @@
 		usr.client.sendmob(M)
 
 	else if(href_list["narrateto"])
-		if(!check_rights(R_INVESTIGATE))	return
+		if(!check_rights(R_ADMIN|R_MOD))	return
 
 		var/mob/M = locate(href_list["narrateto"])
 		usr.client.cmd_admin_direct_narrate(M)
@@ -1378,7 +1378,7 @@
 		show_traitor_panel(M)
 
 	else if(href_list["skillpanel"])
-		if(!check_rights(R_INVESTIGATE))
+		if(!check_rights(R_ADMIN|R_MOD))
 			return
 
 		if(GAME_STATE < RUNLEVEL_GAME)

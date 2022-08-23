@@ -33,7 +33,7 @@
 	return TRUE
 
 /datum/vote/restart/get_vote_result(list/non_voters)
-	if(config.vote_no_default)
+	if(!config.vote_no_default)
 		// Default no votes will add non-voters to "Continue Playing"
 		choices[CHOICE_CONTINUE] += length(non_voters)
 

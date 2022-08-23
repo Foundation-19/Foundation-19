@@ -327,7 +327,7 @@
 /client/proc/check_panel_loaded()
 	if(stat_panel.is_ready())
 		return
-	to_chat(src, SPAN_USERDANGER("Statpanel failed to load, click <a href='?src=[any2ref(src)];reload_statbrowser=1'>here</a> to reload the panel "))
+	to_chat(src, SPAN_USERDANGER("Statpanel failed to load, click <a href='?src=[REF(src)];reload_statbrowser=1'>here</a> to reload the panel "))
 
 /**
  * Initializes dropdown menus on client
@@ -351,8 +351,7 @@
 
 // Returns null if no DB connection can be established, or -1 if the requested key was not found in the database
 /proc/get_player_age(key)
-	establish_db_connection()
-	if(!SSdbcore.IsConnected())
+	if(!SSdbcore.Connect())
 		return null
 
 	var/sql_ckey = sql_sanitize_text(ckey(key))
@@ -374,8 +373,7 @@
 	if ( IsGuestKey(src.key) )
 		return
 
-	establish_db_connection()
-	if(!SSdbcore.IsConnected())
+	if(!SSdbcore.Connect())
 		return
 
 	var/sql_ckey = sql_sanitize_text(src.ckey)

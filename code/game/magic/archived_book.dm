@@ -34,7 +34,7 @@ var/global/datum/book_manager/book_mgr = new()
 	set name = "Delete Book"
 	set desc = "Permamently deletes a book from the database."
 	set category = "Admin"
-	if(!check_rights(R_INVESTIGATE, FALSE, src))
+	if(!check_rights(R_ADMIN|R_MOD, FALSE, src))
 		to_chat(src, "Only administrators may use this command.")
 		return
 
@@ -43,9 +43,7 @@ var/global/datum/book_manager/book_mgr = new()
 		return
 
 	if(BOOKS_USE_SQL && config.sql_enabled)
-		var/DBConnection/dbcon = new()
-		dbcon.Connect("dbi:mysql:[sqldb]:[sqladdress]:[sqlport]","[sqllogin]","[sqlpass]")
-		if(!dbcon.IsConnected())
+		if(!SSdbcore.Connect())
 			alert("Connection to Archive has been severed. Aborting.")
 		else
 			var/DBQuery/query = dbcon.NewQuery("DELETE FROM library WHERE id=[isbn]")

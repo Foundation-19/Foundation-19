@@ -14,13 +14,13 @@ var/global/floorIsLava = 0
 	msg = "<span class=\"log_message\"><span class=\"prefix\">STAFF LOG:</span> <span class=\"message\">[msg]</span></span>"
 	log_adminwarn(msg)
 	for(var/client/C in GLOB.admins)
-		if(check_rights(R_INVESTIGATE, FALSE, C))
+		if(check_rights(R_ADMIN|R_MOD, FALSE, C))
 			to_chat(C, msg)
 /proc/msg_admin_attack(var/text) //Toggleable Attack Messages
 	log_attack(text)
 	var/rendered = "<span class=\"log_message\"><span class=\"prefix\">ATTACK:</span> <span class=\"message\">[text]</span></span>"
 	for(var/client/C in GLOB.admins)
-		if(check_rights(R_INVESTIGATE, FALSE, C))
+		if(check_rights(R_ADMIN|R_MOD, FALSE, C))
 			if(C.get_preference_value(/datum/client_preference/staff/show_attack_logs) == GLOB.PREF_SHOW)
 				var/msg = rendered
 				to_chat(C, msg)
@@ -1095,7 +1095,7 @@ var/global/floorIsLava = 0
 	if(!istype(M))
 		return
 	var/datum/nano_module/skill_ui/NM = /datum/nano_module/skill_ui
-	if(is_admin(usr))
+	if(check_rights(R_MOD|R_ADMIN, 0, usr))
 		NM = /datum/nano_module/skill_ui/admin //They get the fancy version that lets you change skills and debug stuff.
 	NM = new NM(usr, override = M.skillset)
 	NM.ui_interact(usr)
@@ -1235,7 +1235,7 @@ var/global/floorIsLava = 0
 	if(!isliving(H))
 		return
 
-	if(check_rights(R_INVESTIGATE))
+	if(check_rights(R_ADMIN|R_MOD))
 		if (!H.admin_paralyzed)
 			H.paralysis = 8000
 			H.admin_paralyzed = TRUE
@@ -1351,12 +1351,12 @@ var/global/floorIsLava = 0
 		if(P.sender) // sent as a reply
 			log_admin("[key_name(src.owner)] replied to a fax message from [key_name(P.sender)]")
 			for(var/client/C in GLOB.admins)
-				if((R_INVESTIGATE) & C.holder.rights)
+				if((R_ADMIN|R_MOD) & C.holder.rights)
 					to_chat(C, "<span class='log_message'><span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] replied to a fax message from [key_name_admin(P.sender)] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
 		else
 			log_admin("[key_name(src.owner)] has sent a fax message to [P.department]")
 			for(var/client/C in GLOB.admins)
-				if((R_INVESTIGATE) & C.holder.rights)
+				if((R_ADMIN|R_MOD) & C.holder.rights)
 					to_chat(C, "<span class='log_message'><span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] has sent a fax message to [P.department] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
 
 	else
@@ -1366,3 +1366,64 @@ var/global/floorIsLava = 0
 		qdel(P)
 		faxreply = null
 	return
+
+/datum/admins/proc/shutdown_server()
+	set category = "Server"
+	set name = "Shutdown Server"
+	set desc = "Shuts the server down."
+
+	var/static/client/shuttingdown
+
+	if(!(check_rights(R_ADMIN) && check_rights(R_DEBUG) && check_rights(R_SERVER)))
+		return
+
+	if(shuttingdown)
+		if(alert("Are you use you want to cancel the shutdown initiated by [shuttingdown.key]?", "Cancel the shutdown?", "No", "Yes") != "Yes")
+			return
+		message_admins("[key_name_admin(usr)] cancelled the server shutdown, started by [key_name_admin(shuttingdown)] .")
+		shuttingdown = FALSE
+		return
+
+	if(alert("Are you sure you want to shutdown the server? Only somebody with remote access to the server can turn it back on.", "Shutdown Server?", "Cancel", "Shutdown Server") != "Shutdown Server")
+		return
+
+	if(GAME_STATE == RUNLEVEL_GAME)
+		to_chat(usr, SPAN_DANGER("The server must be in either pre-game and the start must be delayed or already started with the end delayed to shutdown the server."))
+		return
+
+	if((GAME_STATE == RUNLEVEL_LOBBY && SSticker.round_start_time > 0) || (GAME_STATE == RUNLEVEL_POSTGAME && !SSticker.delay_end))
+		to_chat(usr, SPAN_DANGER("The round start/end is not delayed."))
+		return
+
+	to_chat(usr, SPAN_DANGER("Alert: Delayed confirmation required. You will be asked to confirm again in 30 seconds."))
+	log_and_message_admins("[key_name_admin(usr.client)] initiated the shutdown process.")
+	message_admins("You may abort this by pressing the shutdown server button again.")
+	shuttingdown = usr.client
+
+	sleep(30 SECONDS)
+
+	if(!shuttingdown || shuttingdown != usr?.client)
+		return
+
+	if(alert("ARE YOU REALLY SURE YOU WANT TO SHUTDOWN THE SERVER? ONLY SOMEBODY WITH REMOTE ACCESS TO THE SERVER CAN TURN IT BACK ON.", "Shutdown Server?", "Cancel", "Shutdown Server") != "Shutdown Server")
+		log_and_message_admins("[key_name_admin(shuttingdown)] decided against shutting down the server.")
+		shuttingdown = null
+		return
+
+	to_world("[SPAN_DANGER("Server shutting down in 30 seconds!")] [SPAN_NOTICE("Initiated by [shuttingdown.key]!")]")
+	message_admins("[key_name_admin(shuttingdown)] is shutting down the server. You may abort this by pressing the shutdown server button again within 30 seconds.")
+
+	sleep(30 SECONDS)
+
+	if(!shuttingdown)
+		to_world(SPAN_NOTICE("Server shutdown was aborted"))
+		return
+
+	if(shuttingdown != usr?.client)
+		return
+
+	to_world("[SPAN_DANGER("Shutting down server!")] [SPAN_NOTICE("Initiated by [shuttingdown.key]!")]")
+	log_admin("Server shutting down. Initiated by: [shuttingdown]")
+
+	sleep(world.tick_lag)
+	shutdown()

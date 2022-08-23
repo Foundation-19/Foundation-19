@@ -1,7 +1,7 @@
 //admin verb groups - They can overlap if you so wish. Only one of each verb will exist in the verbs list regardless
 var/list/admin_verbs_default = list(
 	/datum/admins/proc/show_player_panel, //shows an interface for individual players, with various links (links require additional flags), right-click player panel,
-	/datum/admins/proc/player_panel_new,
+	/client/proc/list_players,
 	/client/proc/secrets,
 	/client/proc/deadmin_self,			//destroys our own admin datum so we can play as a regular player,
 	/client/proc/hide_verbs,			//hides all our adminverbs,
@@ -152,7 +152,8 @@ var/list/admin_verbs_server = list(
 	/client/proc/toggle_random_events,
 	/client/proc/nanomapgen_DumpImage,
 	/client/proc/panicbunker,
-	/client/proc/panicbunker_ckey_bypass
+	/client/proc/panicbunker_ckey_bypass,
+	/datum/admins/proc/shutdown_server
 	)
 var/list/admin_verbs_debug = list(
 	/datum/admins/proc/jump_to_fluid_source,
@@ -356,6 +357,7 @@ var/list/admin_verbs_mentors = list(
 		admin_verbs_rejuv,
 		admin_verbs_sounds,
 		admin_verbs_spawn,
+		admin_verbs_mod,
 		admin_verbs_mentors,
 		debug_verbs,
 		))
@@ -400,7 +402,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/admin_ghost()
 	set category = "Admin"
 	set name = "Aghost"
-	if(!check_rights(R_INVESTIGATE, FALSE))	return
+	if(!check_rights(R_ADMIN|R_MOD, FALSE))	return
 	if(isghost(mob))
 		var/mob/observer/ghost/ghost = mob
 		ghost.reenter_corpse()
@@ -428,7 +430,7 @@ var/list/admin_verbs_mentors = list(
 	set name = "Invisimin"
 	set category = "Admin"
 	set desc = "Toggles ghost-like invisibility (Don't abuse this)"
-	if(check_rights(R_INVESTIGATE, FALSE) && mob)
+	if(check_rights(R_ADMIN|R_MOD, FALSE) && mob)
 		if(mob.invisibility == INVISIBILITY_OBSERVER)
 			mob.set_invisibility(initial(mob.invisibility))
 			to_chat(mob, "<span class='danger'>Invisimin off. Invisibility reset.</span>")
@@ -441,7 +443,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/check_antagonists()
 	set name = "Check Antagonists"
 	set category = "Admin"
-	if(check_rights(R_INVESTIGATE, FALSE))
+	if(check_rights(R_ADMIN|R_MOD, FALSE))
 		holder.check_antagonists()
 		log_admin("[key_name(usr)] checked antagonists.")	//for tsar~
 	SSstatistics.add_field_details("admin_verb","CHA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -450,7 +452,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/jobbans()
 	set name = "Display Job bans"
 	set category = "Admin"
-	if(check_rights(R_INVESTIGATE, FALSE))
+	if(check_rights(R_ADMIN|R_MOD, FALSE))
 		if(config.ban_legacy_system)
 			holder.Jobbans()
 		else
@@ -461,7 +463,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/unban_panel()
 	set name = "Unban Panel"
 	set category = "Admin"
-	if(check_rights(R_INVESTIGATE, FALSE))
+	if(check_rights(R_ADMIN|R_MOD, FALSE))
 		if(config.ban_legacy_system)
 			holder.unbanpanel()
 		else
@@ -472,7 +474,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/game_panel()
 	set name = "Game Panel"
 	set category = "Admin"
-	if(check_rights(R_INVESTIGATE, FALSE))
+	if(check_rights(R_ADMIN|R_MOD, FALSE))
 		holder.Game()
 	SSstatistics.add_field_details("admin_verb","GP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
@@ -480,7 +482,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/secrets()
 	set name = "Secrets"
 	set category = "Admin"
-	if (check_rights(R_INVESTIGATE, FALSE))
+	if (check_rights(R_ADMIN|R_MOD, FALSE))
 		holder.Secrets()
 	SSstatistics.add_field_details("admin_verb","S") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
@@ -488,7 +490,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/colorooc()
 	set category = "Fun"
 	set name = "OOC Text Color"
-	if(!check_rights(R_INVESTIGATE, FALSE))	return
+	if(!check_rights(R_ADMIN|R_MOD, FALSE))	return
 	var/response = alert(src, "Please choose a distinct color that is easy to read and doesn't mix with all the other chat and radio frequency colors.", "Change own OOC color", "Pick new color", "Reset to default", "Cancel")
 	if(response == "Pick new color")
 		prefs.ooccolor = input(src, "Please select your OOC colour.", "OOC colour") as color
@@ -805,14 +807,14 @@ var/list/admin_verbs_mentors = list(
 /client/proc/playernotes()
 	set name = "Show Player Info"
 	set category = "Admin"
-	if(check_rights(R_INVESTIGATE, FALSE))
+	if(check_rights(R_ADMIN|R_MOD, FALSE))
 		holder.PlayerNotes()
 	return
 
 /client/proc/free_slot_submap()
 	set name = "Free Job Slot (Submap)"
 	set category = "Admin"
-	if(!check_rights(R_INVESTIGATE, FALSE)) return
+	if(!check_rights(R_ADMIN|R_MOD, FALSE)) return
 
 	var/list/jobs = list()
 	for(var/thing in SSmapping.submaps)
@@ -836,7 +838,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/free_slot_crew()
 	set name = "Free Job Slot (Crew)"
 	set category = "Admin"
-	if(check_rights(R_INVESTIGATE, FALSE))
+	if(check_rights(R_ADMIN|R_MOD, FALSE))
 		var/list/jobs = list()
 		for (var/datum/job/J in SSjobs.primary_job_datums)
 			if(!J.is_position_available())
@@ -854,7 +856,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/toggleghostwriters()
 	set name = "Toggle ghost writers"
 	set category = "Server"
-	if(!check_rights(R_INVESTIGATE, FALSE))	return
+	if(!check_rights(R_ADMIN|R_MOD, FALSE))	return
 	if(config)
 		if(config.cult_ghostwriter)
 			config.cult_ghostwriter = 0
@@ -868,7 +870,7 @@ var/list/admin_verbs_mentors = list(
 /client/proc/toggledrones()
 	set name = "Toggle maintenance drones"
 	set category = "Server"
-	if(!check_rights(R_INVESTIGATE, FALSE))	return
+	if(!check_rights(R_ADMIN|R_MOD, FALSE))	return
 	if(config)
 		if(config.allow_drone_spawn)
 			config.allow_drone_spawn = 0

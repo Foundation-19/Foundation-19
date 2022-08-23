@@ -35,7 +35,7 @@
 "ag" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
-/area/space)
+/area/site53/surface/surface)
 "ah" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
@@ -363,7 +363,7 @@
 "ba" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_wall/prepainted,
-/area/space)
+/area/site53/surface/surface)
 "bc" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -2457,7 +2457,7 @@
 "hM" = (
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/r_wall/prepainted,
-/area/space)
+/area/site53/surface/surface)
 "hN" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -2552,7 +2552,7 @@
 /area/site53/logistics/logisticsofficer)
 "hZ" = (
 /turf/simulated/open,
-/area/space)
+/area/site53/surface/surface)
 "ia" = (
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/r_wall/prepainted,
@@ -3361,7 +3361,7 @@
 "kx" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
-/area/space)
+/area/site53/surface/surface)
 "kB" = (
 /obj/effect/floor_decal/corner/orange/border,
 /obj/structure/closet/secure_closet/freezer/fridge,
@@ -3576,12 +3576,24 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
+"ml" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled,
+/area/site53/uez/conference)
+"mn" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/upper_surface/commstower)
 "ms" = (
 /obj/effect/floor_decal/corner/brown{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"mM" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/uez/hallway)
 "mQ" = (
 /obj/machinery/camera/autoname{
 	dir = 4;
@@ -3718,6 +3730,7 @@
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
 "rG" = (
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
 "rI" = (
@@ -3847,6 +3860,10 @@
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/maincontrolroom)
+"vG" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/hallway)
 "vN" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/button/blast_door{
@@ -3882,6 +3899,10 @@
 /obj/item/clothing/gloves/forensic,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
+"wX" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/wood/mahogany,
+/area/site53/uez/hallway)
 "xa" = (
 /obj/effect/floor_decal/corner/red/bordercee{
 	dir = 8
@@ -4256,6 +4277,10 @@
 /obj/item/stamp/cargo,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
+"Ka" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logisticsofficer)
 "KA" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -4284,6 +4309,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
+"LT" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/wood,
+/area/site53/uez/hallway)
 "Mm" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
@@ -4490,6 +4519,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
+"RW" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/wood,
+/area/site53/uez/canteen)
 "Sh" = (
 /obj/machinery/light{
 	dir = 4;
@@ -4578,6 +4611,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"Vq" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logisticsbreak)
 "Vt" = (
 /obj/structure/bookcase/manuals/medical,
 /turf/simulated/floor/tiled/monotile,
@@ -4587,6 +4624,15 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/maincontrolroom)
+"We" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled,
 /area/site53/upper_surface/maincontrolroom)
 "Wk" = (
 /obj/effect/landmark/start{
@@ -4599,7 +4645,7 @@
 /area/site53/upper_surface/commstower)
 "WQ" = (
 /turf/simulated/mineral,
-/area/space)
+/area/site53/surface/surface)
 "WW" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -26947,7 +26993,7 @@ hk
 ia
 iq
 iy
-iy
+Vq
 iy
 iy
 RK
@@ -30025,7 +30071,7 @@ hZ
 iz
 it
 ii
-Zm
+Ka
 Zm
 Zm
 iz
@@ -33008,7 +33054,7 @@ ac
 ac
 dg
 dp
-dh
+vG
 dh
 dh
 cF
@@ -33095,7 +33141,7 @@ aY
 aY
 jH
 jp
-ki
+mn
 kK
 jH
 fC
@@ -34556,7 +34602,7 @@ bK
 dY
 ej
 dh
-dh
+vG
 gk
 sY
 gq
@@ -35113,7 +35159,7 @@ ar
 bw
 aQ
 Iz
-gc
+We
 bo
 fF
 ar
@@ -35318,7 +35364,7 @@ cd
 co
 Rd
 ci
-ci
+wX
 ci
 dt
 ac
@@ -36098,7 +36144,7 @@ bK
 dZ
 en
 dW
-dW
+mM
 gl
 gv
 gE
@@ -36595,7 +36641,7 @@ hk
 hk
 ae
 aV
-aV
+LT
 aV
 aV
 bY
@@ -36859,7 +36905,7 @@ bX
 ci
 ci
 ci
-ci
+wX
 ci
 ci
 dt
@@ -39687,7 +39733,7 @@ eP
 eN
 eN
 eR
-ex
+RW
 eN
 eN
 eu
@@ -39957,7 +40003,7 @@ Nv
 hp
 fh
 tc
-gT
+ml
 YJ
 hg
 hk
@@ -42005,7 +42051,7 @@ hq
 aw
 dF
 dL
-dW
+mM
 ed
 fe
 fn

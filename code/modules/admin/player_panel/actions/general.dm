@@ -140,7 +140,7 @@
 
 /datum/player_action/set_name/act(var/client/user, var/mob/target, var/list/params)
 	if(target.name != params["name"])
-		target.SetName(params["name"])
+		target.fully_replace_character_name(params["name"])
 		message_staff("[key_name_admin(user)] set [key_name_admin(target)]'s name to [params["name"]]")
 		return TRUE
 
@@ -199,6 +199,13 @@
 	user.jumptomob(target)
 	return TRUE
 
+/datum/player_action/send_to
+	action_tag = "send_to"
+	name = "Send To"
+
+/datum/player_action/send_to/act(client/user, mob/target, list/params)
+	user.sendmob(target)
+	return TRUE
 
 // VIEW VARIABLES
 /datum/player_action/access_variables
@@ -226,9 +233,6 @@
 	name = "Open Logs"
 
 /datum/player_action/check_logs/act(client/user, mob/target, list/params)
-	if(!target.client?.holder)
-		return
-
 	if(!target.client)
 		to_chat(user.mob, SPAN_NOTICE("You can't see logs if player is offline."))
 		return
@@ -260,4 +264,15 @@
 	var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
 	popup.set_content(JOINTEXT(dat))
 	popup.open()
+	return TRUE
+
+/datum/player_action/traitor_panel
+	name = "Traitor Panel"
+	action_tag = "traitor_panel"
+
+/datum/player_action/traitor_panel/act(client/user, mob/target, list/params)
+	if(!user?.holder)
+		return
+
+	user.holder.show_traitor_panel(target)
 	return TRUE
