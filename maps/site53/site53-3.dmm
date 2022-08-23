@@ -5413,6 +5413,10 @@
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
+"pX" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/infirmary)
 "qa" = (
 /obj/structure/bed/chair,
 /obj/structure/cable{
@@ -6391,10 +6395,6 @@
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
-"tI" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/medical/sleeper)
 "tK" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -6986,6 +6986,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"we" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/zonecommanderoffice)
 "wj" = (
 /obj/structure/table/standard,
 /obj/machinery/microwave,
@@ -7293,10 +7297,6 @@
 /obj/item/reagent_containers/syringe/amnesticsc,
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
-"zm" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/surgery/op1)
 "zp" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/exoplanet/grass,
@@ -7376,6 +7376,10 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"zV" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/surgery/op2)
 "Ac" = (
 /obj/structure/closet/secure_closet/mtf/nco,
 /obj/item/clothing/suit/bio_suit/security,
@@ -7406,10 +7410,6 @@
 "Ao" = (
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
-"Au" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/zonecommanderoffice)
 "Az" = (
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile/white,
@@ -7445,10 +7445,10 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
-"AW" = (
+"Ba" = (
 /obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled,
-/area/site53/logistics/logistics)
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/surgery/op1)
 "Bc" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
@@ -7777,10 +7777,10 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"EM" = (
+"EJ" = (
 /obj/machinery/hologram/holopad,
-/turf/simulated/floor/wood/walnut,
-/area/site53/uez/o5repoffice)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "ET" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
@@ -7881,6 +7881,10 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
+"Gt" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/infirmreception)
 "Gv" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -7892,6 +7896,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
+"GH" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/surface/cryogenicsprimary)
 "GJ" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -7981,6 +7989,10 @@
 /obj/structure/iv_drip,
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
+"Hx" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/medical/sleeper)
 "HG" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/corner/red/half{
@@ -8089,11 +8101,10 @@
 /obj/item/stool,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"Ja" = (
-/obj/structure/disposalpipe/segment,
+"IW" = (
 /obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/dark,
-/area/site53/medical/morgue)
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/exam_room)
 "Jc" = (
 /obj/item/clothing/suit/storage/toggle/fr_jacket,
 /obj/item/clothing/suit/storage/toggle/fr_jacket/ems,
@@ -8213,10 +8224,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
-"Lc" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/exam_room)
 "Lf" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -8310,6 +8317,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/maintenance/surfaceeast)
+"Ml" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/senioragentoffice)
 "Mq" = (
 /obj/effect/paint_stripe/red,
 /obj/effect/paint_stripe/red,
@@ -8364,10 +8375,6 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
-"Nc" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/equipmentroom)
 "Ni" = (
 /obj/effect/floor_decal/corner/red/bordercee{
 	dir = 1
@@ -8388,10 +8395,6 @@
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
-"Np" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/logistics/logistics)
 "Ny" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/box/a10mm,
@@ -8459,10 +8462,6 @@
 /obj/machinery/light,
 /turf/simulated/open,
 /area/site53/zonecommanderoffice)
-"Pj" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/surface/cryogenicsprimary)
 "Pr" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/snow,
@@ -8547,6 +8546,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/tramhubhallwayentry)
+"Qh" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/steel_grid,
+/area/site53/logistics/logistics)
 "Qi" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/tree/pine,
@@ -8896,10 +8899,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"Ug" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/senioragentoffice)
 "Uk" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/syringes,
@@ -8949,10 +8948,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
-"UM" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/infirmreception)
 "US" = (
 /obj/structure/table/standard,
 /obj/item/device/scanner/reagent,
@@ -9010,6 +9005,10 @@
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/securitypost)
+"VA" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/o5repoffice)
 "VG" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light/small{
@@ -9116,10 +9115,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/mentalhealth/isolation)
-"Xf" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/infirmary)
 "Xq" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/red/border,
@@ -9278,6 +9273,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
+"Yz" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/dark,
+/area/site53/medical/morgue)
 "YH" = (
 /obj/structure/morgue,
 /obj/machinery/light{
@@ -9319,10 +9319,6 @@
 /obj/structure/table/woodentable/walnut,
 /turf/simulated/floor/carpet/blue2,
 /area/site53/uez/o5repoffice)
-"Zj" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/white,
-/area/site53/medical/surgery/op2)
 "Zn" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
@@ -9333,6 +9329,10 @@
 /obj/machinery/camera/network/entrance,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"Zy" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled,
+/area/site53/logistics/logistics)
 "ZG" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -12808,7 +12808,7 @@ dA
 ty
 XM
 tB
-Au
+we
 tB
 Ky
 Ac
@@ -14872,7 +14872,7 @@ aQ
 oZ
 tf
 tk
-Au
+we
 ts
 ty
 dA
@@ -33185,7 +33185,7 @@ oV
 uQ
 uQ
 vr
-Np
+Qh
 uQ
 uQ
 Vi
@@ -33427,7 +33427,7 @@ zO
 qF
 nk
 nk
-AW
+Zy
 nk
 qS
 nk
@@ -35649,7 +35649,7 @@ gX
 eH
 ky
 ky
-Ja
+Yz
 ky
 ky
 ky
@@ -37436,7 +37436,7 @@ fH
 iw
 Sd
 iw
-Lc
+IW
 iw
 iw
 ir
@@ -38731,7 +38731,7 @@ iX
 Qm
 cm
 ka
-UM
+Gt
 ks
 kr
 li
@@ -39300,7 +39300,7 @@ aj
 az
 af
 kC
-Pj
+GH
 kC
 kC
 kC
@@ -39493,7 +39493,7 @@ gT
 cS
 dd
 cZ
-tI
+Hx
 cZ
 cZ
 iA
@@ -40526,7 +40526,7 @@ im
 im
 im
 dI
-Xf
+pX
 gU
 fD
 dA
@@ -40813,7 +40813,7 @@ px
 px
 MX
 RJ
-Nc
+EJ
 Xq
 hp
 dE
@@ -41291,7 +41291,7 @@ dA
 dA
 Vm
 hk
-zm
+Ba
 hN
 hy
 io
@@ -42612,7 +42612,7 @@ mu
 Jt
 tL
 Zn
-Nc
+EJ
 SL
 UE
 MX
@@ -42860,7 +42860,7 @@ mB
 lF
 rl
 rl
-EM
+VA
 rn
 rE
 lF
@@ -43604,7 +43604,7 @@ dA
 dA
 gO
 gJ
-Zj
+zV
 me
 ew
 jZ
@@ -44416,7 +44416,7 @@ SL
 Zn
 tQ
 Xu
-Ug
+Ml
 Xu
 ub
 pO
