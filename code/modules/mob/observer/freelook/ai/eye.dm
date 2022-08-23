@@ -15,6 +15,8 @@
 	name = "Inactive AI Eye"
 	name_sufix = "AI Eye"
 	icon_state = "AI-eye"
+	invisibility = INVISIBILITY_EYE_AI
+	see_invisible = SEE_INVISIBLE_AI
 
 /mob/observer/eye/aiEye/Initialize()
 	. = ..()

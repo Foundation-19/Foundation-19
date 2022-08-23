@@ -357,6 +357,7 @@ var/list/admin_verbs_mentors = list(
 		admin_verbs_rejuv,
 		admin_verbs_sounds,
 		admin_verbs_spawn,
+		admin_verbs_mod,
 		admin_verbs_mentors,
 		debug_verbs,
 		))
