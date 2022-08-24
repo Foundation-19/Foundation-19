@@ -1,0 +1,4 @@
+author: MACIEKBAKI
+delete-after: true
+changes:
+  - bugfix: SCP-049 has skills now

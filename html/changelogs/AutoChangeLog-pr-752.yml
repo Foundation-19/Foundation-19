@@ -1,0 +1,4 @@
+author: DTraitor
+delete-after: true
+changes:
+  - bugfix: Fixed admin ghosts being unable to interact with modular computer
