@@ -7655,6 +7655,15 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
+"ash" = (
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "aicobserv";
+	name = "AIC Core Lockdown button";
+	pixel_x = 22
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/science/aiccore)
 "asi" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -24965,6 +24974,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/entrance_checkpoint)
+"bHF" = (
+/obj/structure/railing/mapped,
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "aicinner";
+	name = "AIC Core Lockdown button";
+	pixel_x = 22
+	},
+/turf/simulated/open,
+/area/site53/science/aiccore)
 "bHX" = (
 /obj/machinery/papershredder,
 /obj/effect/floor_decal/corner/orange/border{
@@ -25977,6 +25996,12 @@
 	network = list("Entrance Zone Network");
 	c_tag = "AIC Observation 4"
 	},
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "aicinner";
+	name = "AIC Core Lockdown button";
+	pixel_x = 22
+	},
 /turf/simulated/open,
 /area/site53/science/aiccore)
 "dwJ" = (
@@ -26379,6 +26404,16 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/medicalpost)
+"epP" = (
+/obj/structure/railing/mapped,
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "aicinner";
+	name = "AIC Core Lockdown button";
+	pixel_x = -22
+	},
+/turf/simulated/open,
+/area/site53/science/aiccore)
 "eqH" = (
 /obj/machinery/door/airlock/science{
 	name = "Tranqilizer Storage";
@@ -68749,8 +68784,8 @@ kKR
 wpE
 kNF
 hmk
-hmk
-cIg
+wpE
+epP
 fCk
 vDp
 eCf
@@ -70049,15 +70084,15 @@ dwd
 gQh
 kNF
 hmk
-hmk
-oDl
+gQh
+bHF
 fCk
 lwi
 vGn
 hrd
 iZA
 iZA
-iZA
+ash
 fwc
 iNg
 afd
