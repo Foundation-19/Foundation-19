@@ -27464,21 +27464,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/medicalpost)
-"gDL" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "aicnorth";
-	name = "AIC Server Room Blast Door"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/barricade/spike,
-/turf/simulated/floor,
-/area/site53/science/aiccore)
 "gEl" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -69282,7 +69267,7 @@ aSX
 hmk
 hDZ
 kiH
-gDL
+gxv
 afv
 rdd
 eCf
