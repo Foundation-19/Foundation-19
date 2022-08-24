@@ -30267,7 +30267,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
 "lHk" = (
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad/longrange{
+	name = "AIC Core holopad"
+	},
 /turf/simulated/floor/reinforced,
 /area/site53/science/aiccore)
 "lHu" = (
