@@ -6166,9 +6166,14 @@
 /obj/item/clothing/suit/bio_suit/security,
 /obj/item/material/knife/combat,
 /obj/item/clothing/accessory/armor/tag/solgov/com/zonecomm,
-/obj/item/gun/projectile/pistol/usp45,
-/obj/item/ammo_magazine/box/acp45,
 /obj/item/storage/belt/holster/security/fullmk9,
+/obj/item/ammo_magazine/scp/fiveseven_mag,
+/obj/item/ammo_magazine/scp/fiveseven_mag,
+/obj/item/ammo_magazine/scp/fiveseven_mag,
+/obj/item/ammo_magazine/scp/fiveseven_mag,
+/obj/item/ammo_magazine/scp/fiveseven_mag,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
 /turf/simulated/floor/carpet/blue2,
 /area/site53/zonecommanderoffice)
 "sT" = (
