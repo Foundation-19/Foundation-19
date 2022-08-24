@@ -53,7 +53,7 @@
 	caliber = "9mm"
 	fire_delay = 3
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
-	ammo_type = /obj/item/ammo_casing/a50
+	ammo_type = /obj/item/ammo_casing/c9mm
 	handle_casings = CYCLE_CASINGS
 
 /obj/item/gun/projectile/silenced

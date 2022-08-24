@@ -4886,6 +4886,8 @@
 /obj/item/crowbar/red,
 /obj/item/clothing/suit/bio_suit/security,
 /obj/item/clothing/head/bio_hood/security,
+/obj/item/gun/projectile/pistol/usp45,
+/obj/item/ammo_magazine/box/acp45,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/senioragentoffice)
 "nU" = (
@@ -6160,6 +6162,8 @@
 /obj/item/clothing/suit/bio_suit/security,
 /obj/item/material/knife/combat,
 /obj/item/clothing/accessory/armor/tag/solgov/com/zonecomm,
+/obj/item/gun/projectile/pistol/usp45,
+/obj/item/ammo_magazine/box/a45,
 /turf/simulated/floor/carpet/blue2,
 /area/site53/zonecommanderoffice)
 "sT" = (

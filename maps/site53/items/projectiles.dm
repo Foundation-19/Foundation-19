@@ -196,3 +196,24 @@
 	max_ammo = 7
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/scp/fiveseven_mag
+	name = "Five-seveN magazine (5.7x28mm)"
+	icon_state = "9mmds"
+	origin_tech = list(TECH_COMBAT = 3)
+	mag_type = MAGAZINE
+	caliber = "10mm"
+	matter = list(DEFAULT_WALL_MATERIAL = 2500)
+	ammo_type = /obj/item/ammo_casing/a10mm
+	max_ammo = 20
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/fiveseven_mag/ap
+	name = "Armor Piercing Five-seveN magazine (5.7x28mm)"
+	icon_state = "9mmds"
+	origin_tech = list(TECH_COMBAT = 3)
+	mag_type = MAGAZINE
+	caliber = "10mm"
+	matter = list(DEFAULT_WALL_MATERIAL = 2500)
+	ammo_type = /obj/item/ammo_casing/ap10mm
+	max_ammo = 20
+	multiple_sprites = 1

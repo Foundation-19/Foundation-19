@@ -32401,6 +32401,7 @@
 	dir = 10
 	},
 /obj/item/storage/pill_bottle/amnesticsa,
+/obj/item/gun/projectile/pistol/usp45,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/commanderoffice)
 "sva" = (

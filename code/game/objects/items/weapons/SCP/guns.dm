@@ -154,6 +154,24 @@
 	else
 		icon_state = "ierichon-empty"
 
+/obj/item/gun/projectile/scp/fiveseven
+	name = "\improper Five seveN"
+	desc = "A semi-automatic handgun made by FN herstal. chambered in the same ammo as the P90 5.7x28mm."
+	icon_state = "fiveseven"
+	w_class = ITEM_SIZE_NORMAL
+	caliber = "10mm"
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/scp/fiveseven_mag
+	allowed_magazines = /obj/item/ammo_magazine/scp/fiveseven_mag
+
+/obj/item/gun/projectile/automatic/scp/fiveseven/update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "fiveseven"
+	else
+		icon_state = "fiveseven-e"
+
 /obj/item/gun/projectile/automatic/scp/rpk
 	name = "RPK-74"
 	desc = "This is a modification of the traditional AK-47 to be a machinegun."
