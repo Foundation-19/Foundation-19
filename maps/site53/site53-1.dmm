@@ -17591,6 +17591,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
+"Xy" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/hallways)
 "Xz" = (
 /obj/structure/iv_drip,
 /obj/machinery/light{
@@ -30319,7 +30325,7 @@ gq
 gq
 gq
 cQ
-ce
+Xy
 hX
 cc
 cQ
