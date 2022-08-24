@@ -6591,12 +6591,6 @@
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/dclass/reeducation)
-"qW" = (
-/obj/effect/catwalk_plated/dark,
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/door/airlock/highsecurity,
-/turf/simulated/floor,
-/area/site53/lhcz/hallway)
 "qX" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/structure/barricade,
@@ -65265,7 +65259,7 @@ BI
 BI
 BI
 WD
-qW
+bb
 BI
 BI
 BI
