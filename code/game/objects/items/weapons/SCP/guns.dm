@@ -162,7 +162,7 @@
 	caliber = "10mm"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/scp/fiveseven_mag
+	magazine_type = /obj/item/ammo_magazine/scp/fiveseven_mag/ap
 	allowed_magazines = /obj/item/ammo_magazine/scp/fiveseven_mag
 
 /obj/item/gun/projectile/automatic/scp/fiveseven/update_icon()
