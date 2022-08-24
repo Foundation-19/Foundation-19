@@ -32399,6 +32399,15 @@
 	dir = 10
 	},
 /obj/item/storage/pill_bottle/amnesticsa,
+/obj/item/gun/projectile/pistol/usp45,
+/obj/item/ammo_magazine/box/acp45,
+/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
+/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
+/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
+/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
+/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
+/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
+/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/commanderoffice)
 "sva" = (
