@@ -30,3 +30,6 @@
   projectkepler-ru:
   - rscadd: Added the rhino revolver
   - imageadd: added sprite for armored forensic gloves and the rhino revolver
+2022-08-24:
+  MACIEKBAKI:
+  - bugfix: Paper you have printed should no longer be illegible, owing to bad language.
