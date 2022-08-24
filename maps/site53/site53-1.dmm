@@ -352,8 +352,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
 "bb" = (
-/obj/turbolift_map_holder/uhcztolhcz,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/door/airlock/highsecurity,
+/turf/simulated/floor,
 /area/site53/lhcz/hallway)
 "bc" = (
 /obj/structure/disposalpipe/segment{
@@ -5318,23 +5319,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/hallway)
 "nI" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/door/airlock/highsecurity,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
 "nJ" = (
 /obj/effect/catwalk_plated/dark,
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 8
-	},
+/obj/machinery/door/airlock/highsecurity,
 /turf/simulated/floor,
-/area/site53/lhcz/hallway)
+/area/site53/uhcz/scp106parts)
 "nK" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5371,16 +5364,9 @@
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
 "nN" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/door/airlock/hatch/maintenance{
-	name = "SCP-895 Maintenance";
-	req_access = list("ACCESS_SECURITY_LEVEL3")
-	},
-/turf/simulated/floor,
-/area/site53/uhcz/scp106parts)
+/obj/turbolift_map_holder/uhcztolhcz,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/hallway)
 "nO" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -6606,6 +6592,9 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/dclass/reeducation)
 "qW" = (
+/obj/effect/catwalk_plated/dark,
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/door/airlock/highsecurity,
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
 "qX" = (
@@ -9299,6 +9288,9 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/recreationhallway)
+"xZ" = (
+/turf/simulated/floor,
+/area/site53/lhcz/hallway)
 "ya" = (
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
@@ -11374,6 +11366,17 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkpoint)
+"Eo" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/door/airlock/hatch/maintenance{
+	name = "SCP-895 Maintenance";
+	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
+/turf/simulated/floor,
+/area/site53/uhcz/scp106parts)
 "Ep" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/button/alternate/door/bolts{
@@ -15242,15 +15245,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
-"PM" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor,
-/area/site53/lhcz/hallway)
 "PN" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/railing/mapped{
@@ -16517,11 +16511,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/medicalpost)
-"TT" = (
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/door/airlock/highsecurity,
-/turf/simulated/floor,
-/area/site53/lhcz/hallway)
 "TU" = (
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 10
@@ -16620,11 +16609,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
-"Uj" = (
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/door/airlock/highsecurity,
-/turf/simulated/floor,
-/area/site53/uhcz/scp106parts)
 "Ul" = (
 /obj/structure/table/reinforced,
 /obj/machinery/camera/network/lcz,
@@ -17140,10 +17124,6 @@
 "VV" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurysleep)
-"VW" = (
-/obj/machinery/door/airlock/highsecurity,
-/turf/simulated/floor,
-/area/site53/lhcz/hallway)
 "VZ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -17346,8 +17326,10 @@
 /area/site53/llcz/dclass/medicalpost)
 "WD" = (
 /obj/effect/catwalk_plated/dark,
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/door/airlock/highsecurity,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 8
+	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
 "WE" = (
@@ -18119,16 +18101,6 @@
 /obj/structure/kitchenspike,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment)
-"Ze" = (
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/airlock/highsecurity,
-/turf/simulated/floor,
-/area/site53/lhcz/hallway)
 "Zg" = (
 /obj/structure/table/rack,
 /obj/item/instrument/guitar,
@@ -62465,7 +62437,7 @@ qn
 nG
 nG
 nG
-bb
+nN
 qn
 mK
 BI
@@ -62723,7 +62695,7 @@ nG
 nG
 nG
 nG
-qW
+xZ
 BI
 BI
 BI
@@ -63497,7 +63469,7 @@ gq
 qn
 qn
 qn
-TT
+bb
 qn
 qn
 qn
@@ -64525,7 +64497,7 @@ gq
 qn
 qn
 qn
-TT
+bb
 qn
 qn
 qn
@@ -65045,7 +65017,7 @@ mK
 ra
 ra
 ra
-nN
+Eo
 ra
 gq
 gq
@@ -65269,37 +65241,37 @@ gq
 qn
 BI
 BI
-PM
-td
-td
-nI
-nJ
 BI
 BI
 BI
-BI
-nJ
-BI
-BI
-BI
-BI
-nJ
-BI
-BI
-BI
-BI
-nJ
-BI
-BI
-BI
-nJ
+bb
 WD
 BI
 BI
 BI
 BI
+WD
 BI
-Uj
+BI
+BI
+BI
+WD
+BI
+BI
+BI
+BI
+WD
+BI
+BI
+BI
+WD
+qW
+BI
+BI
+BI
+BI
+BI
+nJ
 nP
 nP
 fO
@@ -65526,7 +65498,7 @@ gq
 qn
 Wr
 BI
-qJ
+BI
 BI
 mK
 qn
@@ -65783,7 +65755,7 @@ gq
 qn
 pp
 mK
-qJ
+BI
 mK
 qr
 qn
@@ -66040,7 +66012,7 @@ gq
 qn
 qn
 qn
-Ze
+nI
 qn
 qn
 qn
@@ -66297,7 +66269,7 @@ gq
 gq
 gq
 qn
-qW
+BI
 qn
 gq
 gq
@@ -66554,7 +66526,7 @@ gq
 gq
 gq
 qn
-qW
+BI
 qn
 gq
 gq
@@ -66811,7 +66783,7 @@ gq
 gq
 gq
 qn
-qW
+BI
 qn
 gq
 gq
@@ -67068,7 +67040,7 @@ gq
 gq
 gq
 qn
-qW
+BI
 qn
 gq
 gq
@@ -67325,7 +67297,7 @@ gq
 gq
 gq
 qn
-qW
+BI
 qn
 gq
 gq
@@ -67582,7 +67554,7 @@ gq
 gq
 gq
 qn
-qW
+BI
 qn
 gq
 gq
@@ -67839,7 +67811,7 @@ gq
 gq
 gq
 qn
-qW
+BI
 qn
 gq
 gq
@@ -68096,7 +68068,7 @@ gq
 gq
 gq
 qn
-qW
+BI
 qn
 gq
 gq
@@ -68353,7 +68325,7 @@ gq
 gq
 gq
 qn
-qW
+BI
 qn
 gq
 gq
@@ -68610,7 +68582,7 @@ gq
 gq
 gq
 qn
-qW
+BI
 qn
 gq
 gq
@@ -68867,7 +68839,7 @@ gq
 gq
 gq
 qn
-qW
+BI
 qn
 gq
 gq
@@ -69124,7 +69096,7 @@ gq
 gq
 gq
 qn
-qW
+BI
 qn
 gq
 gq
@@ -69381,7 +69353,7 @@ gq
 qn
 qn
 qn
-VW
+nI
 qn
 qn
 qn
