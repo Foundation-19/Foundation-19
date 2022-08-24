@@ -6967,10 +6967,6 @@
 /obj/machinery/microwave,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurant)
-"wl" = (
-/obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/prepainted,
-/area/space)
 "ww" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/mono,
@@ -35948,7 +35944,7 @@ bk
 bk
 bk
 bk
-wl
+bk
 dA
 dA
 dA
@@ -36205,7 +36201,7 @@ gm
 go
 gw
 Rn
-wl
+bk
 dA
 dA
 dA
@@ -36462,7 +36458,7 @@ eb
 gp
 gx
 gm
-wl
+bk
 dA
 dA
 dA
@@ -36719,7 +36715,7 @@ gm
 gm
 dh
 gm
-wl
+bk
 dA
 dA
 dA
@@ -36934,10 +36930,10 @@ kJ
 SX
 Uk
 jn
-wl
-wl
-wl
-wl
+bk
+bk
+bk
+bk
 dA
 dA
 dA
@@ -36976,7 +36972,7 @@ gm
 gm
 dh
 gm
-wl
+bk
 dA
 dA
 dA
@@ -37233,7 +37229,7 @@ gm
 gm
 dh
 gm
-wl
+bk
 dA
 dA
 dA
@@ -37490,7 +37486,7 @@ gm
 gm
 dh
 gm
-wl
+bk
 dA
 dA
 dA
@@ -37747,7 +37743,7 @@ Ra
 Ra
 Of
 gm
-wl
+bk
 dA
 dA
 dA
@@ -38004,7 +38000,7 @@ aN
 aN
 aR
 aN
-wl
+bk
 dA
 dA
 dA
