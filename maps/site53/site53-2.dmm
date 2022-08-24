@@ -11285,14 +11285,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/logistics/logistics)
-"aDX" = (
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/light{
-	dir = 4;
-	pixel_x = 12
-	},
-/turf/simulated/floor/plating,
-/area/site53/logistics/logistics)
 "aDY" = (
 /obj/effect/paint/silver,
 /turf/simulated/wall/r_wall/prepainted,
@@ -11845,11 +11837,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
-"aFV" = (
-/obj/effect/paint_stripe/red,
-/obj/structure/table/steel_reinforced,
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/hallways)
 "aFX" = (
 /obj/machinery/cooker/cereal,
 /obj/structure/table/standard,
@@ -12871,13 +12858,6 @@
 "aJt" = (
 /obj/structure/railing/mapped{
 	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/hallways)
-"aJv" = (
-/obj/machinery/light{
-	dir = 8;
-	pixel_x = -12
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
@@ -21572,7 +21552,7 @@
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor,
-/area/site53/lowertrams/hczmaint/south)
+/area/site53/lhcz/hczguardgear)
 "bzi" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 10
@@ -22490,18 +22470,17 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
 "doD" = (
-/obj/machinery/door/airlock/hatch/maintenance{
-	name = "Heavy Containment Maintenance";
-	req_access = list("ACCESS_ENGINEERING_LEVEL1")
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
 	},
-/obj/structure/disposalpipe/segment,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor,
-/area/site53/uhcz/securitypost)
+/area/site53/lowertrams/hczmaint/south)
 "dpg" = (
 /turf/simulated/floor/carpet/brown,
 /area/site53/llcz/scp500{
@@ -24845,7 +24824,10 @@
 /obj/effect/floor_decal/corner/red{
 	dir = 10
 	},
-/obj/structure/cable/green{
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -26547,9 +26529,9 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/lowertrams/redline)
 "lcb" = (
-/obj/effect/paint_stripe/red,
+/obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/titanium,
-/area/space)
+/area/site53/lhcz/hczguardgear)
 "lcy" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/item/stool/padded,
@@ -26626,18 +26608,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
 "ljX" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4;
-	icon_state = "warning"
-	},
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/securitypost)
+/turf/space,
+/area/site53/lowertrams/hub)
 "lkh" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
@@ -27327,7 +27299,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/dark,
-/area/space)
+/area/site53/lhcz/hczguardgear)
 "mhU" = (
 /obj/machinery/power/smes/buildable/max_cap_in_out,
 /obj/structure/cable{
@@ -27663,11 +27635,20 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "mEc" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 8
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
-/area/space)
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/hatch/maintenance{
+	name = "Heavy Containment Maintenance";
+	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
+/turf/simulated/floor,
+/area/site53/uhcz/securitypost)
 "mEC" = (
 /obj/item/modular_computer/console/preset/cardslot/command_sec{
 	dir = 4
@@ -27742,9 +27723,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
 "mNP" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/turf/simulated/floor/tiled/dark,
-/area/site53/lowertrams/hczmaint/south)
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/wall/prepainted,
+/area/site53/lhcz/hczguardgear)
 "mPb" = (
 /obj/effect/floor_decal/corner/purple/bordercorner{
 	dir = 4
@@ -27995,22 +27976,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/science/seniorresearchera)
-"nmK" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4;
-	icon_state = "warning"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/securitypost)
 "npD" = (
 /obj/machinery/light{
 	dir = 8
@@ -28809,7 +28774,10 @@
 	id_tag = "UHCZ Checkpoint Control Room 2";
 	name = "UHCZ Checkpoint Control Room 2"
 	},
-/obj/structure/cable/green{
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
@@ -28960,10 +28928,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
-	},
-/obj/machinery/light{
-	dir = 8;
-	pixel_x = -12
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
@@ -29154,12 +29118,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
 /area/site53/reswing/xenobiology)
-"pIF" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/securitypost)
 "pIX" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -31474,17 +31432,13 @@
 /area/site53/reswing/robotics)
 "uAj" = (
 /obj/structure/disposalpipe/segment{
-	dir = 4
+	dir = 2;
+	icon_state = "pipe-c"
 	},
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
 	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
@@ -31614,7 +31568,7 @@
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertrams/hczmaint/south)
+/area/site53/lhcz/hczguardgear)
 "uKs" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 5
@@ -31713,7 +31667,7 @@
 	name = "HCZ Guard Office"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/lowertrams/hczmaint/south)
+/area/site53/lhcz/hczguardgear)
 "uWI" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 9
@@ -32192,7 +32146,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
-/area/space)
+/area/site53/lhcz/hczguardgear)
 "vNb" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/light{
@@ -33129,7 +33083,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/dark,
-/area/space)
+/area/site53/lhcz/hczguardgear)
 "xrh" = (
 /obj/effect/floor_decal/corner/brown/bordercorner,
 /turf/simulated/floor/tiled/monotile,
@@ -37138,7 +37092,7 @@ aGM
 aVS
 aGM
 aGM
-aJv
+aGM
 aGM
 aGM
 aGM
@@ -58011,7 +57965,7 @@ apr
 azM
 apr
 apr
-aDX
+apr
 apr
 apr
 aAd
@@ -65660,7 +65614,7 @@ aOY
 eel
 aaf
 aae
-aae
+ljX
 ayR
 aeR
 aeR
@@ -70010,7 +69964,7 @@ aId
 aId
 aId
 aId
-aId
+mNP
 aId
 aId
 aId
@@ -72864,8 +72818,8 @@ aEC
 uAj
 hDv
 oQu
-pIF
-pIF
+aGB
+aFp
 mDr
 ass
 azA
@@ -73118,27 +73072,27 @@ bik
 yaT
 bik
 aEC
-aFr
+aEC
 tfe
 ass
 ass
+mEc
 ass
 ass
-ass
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+atV
 azA
 azA
 azA
@@ -73375,26 +73329,26 @@ bik
 aBU
 bik
 aEC
-aFr
+aEC
 krd
 ass
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
+dII
+doD
+ciN
+ciN
+ciN
+ciN
+ciN
+ciN
+ciN
+ciN
+ciN
+ciN
+ciN
+ciN
+ciN
+bhu
+wio
 atV
 azA
 azA
@@ -73632,26 +73586,26 @@ bik
 ocX
 bik
 aGs
-nmK
-ljX
-doD
-ciN
-ciN
-ciN
-ciN
-ciN
-ciN
-ciN
-ciN
-ciN
-ciN
-ciN
-ciN
-ciN
-ciN
-ciN
-bhu
-wio
+aGs
+aGs
+ass
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+atV
+adI
 atV
 azA
 azA
@@ -73892,21 +73846,21 @@ wnA
 wjM
 wnA
 ass
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
-atV
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 atV
 adI
 atV
@@ -86240,7 +86194,7 @@ aBo
 aBo
 aBo
 aBo
-aFV
+aBo
 aBo
 aBo
 aBo
@@ -91124,8 +91078,8 @@ gID
 hHF
 tGq
 gID
-lcb
-lcb
+gID
+gID
 azA
 azA
 azA
@@ -91381,8 +91335,8 @@ gID
 phw
 bis
 phw
-mNP
-atV
+phw
+lcb
 atV
 atV
 atV
@@ -91896,7 +91850,7 @@ lPE
 bjd
 phw
 uVf
-atV
+lcb
 atV
 atV
 atV
@@ -96785,9 +96739,9 @@ pid
 gID
 epD
 biA
-mEc
+biA
 xpZ
-lcb
+gID
 azA
 azA
 azA
@@ -97044,7 +96998,7 @@ jfF
 saA
 vLm
 mhP
-lcb
+gID
 azA
 azA
 azA
@@ -97299,9 +97253,9 @@ eOZ
 gID
 gID
 gID
-lcb
-lcb
-lcb
+gID
+gID
+gID
 azA
 azA
 azA
