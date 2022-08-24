@@ -4874,26 +4874,27 @@
 /area/site53/entrancezone/substation)
 "nT" = (
 /obj/structure/closet/secure_closet/mtf/co,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/clothing/head/bio_hood/security,
+/obj/item/clothing/suit/bio_suit/security,
+/obj/item/ammo_magazine/box/acp45,
+/obj/item/crowbar/emergency_forcing_tool,
+/obj/item/clothing/accessory/armor/tag/solgov/com/zonecomm,
+/obj/item/storage/pill_bottle/amnesticsa,
+/obj/item/gun/projectile/pistol/usp45,
+/obj/item/ammo_magazine/box/acp45,
+/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
+/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
+/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
+/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
+/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
+/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/machinery/light,
-/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-/obj/item/gun/energy/taser,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/crowbar/red,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/gun/projectile/pistol/usp45,
-/obj/item/ammo_magazine/box/a45,
-/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
-/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
-/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
-/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
-/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
-/obj/item/ammo_magazine/scp/fiveseven_mag/ap,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/senioragentoffice)
 "nU" = (
