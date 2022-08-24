@@ -221,7 +221,6 @@
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/clothing/head/beret/sec/corporate/hos,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-		/obj/item/ammo_magazine/scp/usp45 = 3
 	)
 
 /obj/structure/closet/secure_closet/mtf/breachautomatics

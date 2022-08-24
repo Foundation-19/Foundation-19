@@ -32392,15 +32392,12 @@
 /obj/item/storage/belt/holster/security/tactical,
 /obj/item/clothing/head/bio_hood/security,
 /obj/item/clothing/suit/bio_suit/security,
-/obj/item/ammo_magazine/box/acp45,
 /obj/item/crowbar/emergency_forcing_tool,
 /obj/item/clothing/accessory/armor/tag/solgov/com/zonecomm,
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 10
 	},
 /obj/item/storage/pill_bottle/amnesticsa,
-/obj/item/gun/projectile/pistol/usp45,
-/obj/item/ammo_magazine/box/acp45,
 /obj/item/ammo_magazine/scp/fiveseven_mag/ap,
 /obj/item/ammo_magazine/scp/fiveseven_mag/ap,
 /obj/item/ammo_magazine/scp/fiveseven_mag/ap,
