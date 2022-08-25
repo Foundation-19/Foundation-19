@@ -36,3 +36,7 @@
 2022-08-25:
   DTraitor:
   - bugfix: Fixed admin ghosts being unable to interact with modular computer
+  MACIEKBAKI:
+  - rscadd: Added a message saying you can respawn in X minutes when you die
+  Tsurupeta:
+  - admin: Redesigned ban panel
