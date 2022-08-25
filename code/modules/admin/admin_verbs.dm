@@ -100,7 +100,8 @@ var/list/admin_verbs_admin = list(
 )
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
-	/client/proc/jobbans
+	/client/proc/jobbans,
+	/client/proc/ban_panel
 	)
 var/list/admin_verbs_sounds = list(
 	/client/proc/play_local_sound,
@@ -450,9 +451,7 @@ var/list/admin_verbs_mentors = list(
 	return
 
 /client/proc/jobbans()
-	set name = "Display Job bans"
-	set category = "Admin"
-	if(check_rights(R_ADMIN|R_MOD, FALSE))
+	if(check_rights(R_BAN))
 		if(config.ban_legacy_system)
 			holder.Jobbans()
 		else
@@ -461,14 +460,24 @@ var/list/admin_verbs_mentors = list(
 	return
 
 /client/proc/unban_panel()
-	set name = "Unban Panel"
-	set category = "Admin"
-	if(check_rights(R_ADMIN|R_MOD, FALSE))
+	if(check_rights(R_BAN))
 		if(config.ban_legacy_system)
 			holder.unbanpanel()
 		else
 			holder.DB_ban_panel()
 	SSstatistics.add_field_details("admin_verb","UBP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	return
+
+/client/proc/ban_panel()
+	set name = "Ban Panel"
+	set category = "Admin"
+	if(check_rights(R_BAN))
+		if(config.ban_legacy_system)
+			to_chat(usr, SPAN_NOTICE("Server is using legacy ban system, DB ban panel is unavailable."))
+			return
+		else
+			holder.DB_ban_panel()
+	SSstatistics.add_field_details("admin_verb","DBP")
 	return
 
 /client/proc/game_panel()
