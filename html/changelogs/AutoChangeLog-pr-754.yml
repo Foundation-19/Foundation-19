@@ -1,0 +1,4 @@
+author: MACIEKBAKI
+delete-after: true
+changes:
+  - rscadd: Added a message saying you can respawn in X minutes when you die
