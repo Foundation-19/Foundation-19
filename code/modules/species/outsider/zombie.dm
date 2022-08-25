@@ -84,7 +84,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 		/obj/structure/wall_frame,
 		/obj/structure/railing,
 		/obj/structure/girder,
-		/obj/structure/window/reinforced
+		/obj/structure/window/reinforced,
 		/turf/simulated/wall,
 		/obj/machinery/door/blast/shutters,
 		/obj/machinery/door
@@ -115,7 +115,6 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 	H.move_intent.move_delay = 6
 	H.stat = CONSCIOUS
-
 
 
 /datum/species/zombie/handle_environment_special(mob/living/carbon/human/H)
