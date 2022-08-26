@@ -285,7 +285,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 /datum/reagent/zombie
 	name = "008 Prions"
-	description = "A oily substance which slowly churns of its own accord."
+	description = "An oily substance which slowly churns of its own accord."
 	taste_description = "decaying blood"
 	color = "#540000"
 	taste_mult = 5
