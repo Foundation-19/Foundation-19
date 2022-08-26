@@ -115,7 +115,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 	H.move_intent.move_delay = 6
 	H.stat = CONSCIOUS
-
+	..()
 
 /datum/species/zombie/handle_environment_special(mob/living/carbon/human/H)
 	if (H.stat == CONSCIOUS)
