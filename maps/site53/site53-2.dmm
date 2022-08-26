@@ -21692,6 +21692,17 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/securitypost)
+"bQR" = (
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/camera/network/hcz{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb1"
+	},
+/turf/simulated/floor,
+/area/site53/uhcz/hallways)
 "bRl" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/white,
@@ -74597,7 +74608,7 @@ azA
 azA
 azA
 aBo
-jwV
+bQR
 aBo
 aBo
 aBo
