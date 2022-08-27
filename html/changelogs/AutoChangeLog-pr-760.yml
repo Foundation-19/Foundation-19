@@ -1,0 +1,8 @@
+author: Okram0
+delete-after: true
+changes:
+  - rscadd: Zombies are now slightly stronger, faster and tougher
+  - rscadd: Zombie infection chance set to 100%
+  - rscadd: Infection now progresses more rapidly
+  - bugfix: Zombies no longer lose some clothes upon reanimation
+  - spellcheck: Liquid Corruption renamed 008 prions and description altered slightly
