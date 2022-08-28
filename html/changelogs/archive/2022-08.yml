@@ -40,3 +40,10 @@
   - rscadd: Added a message saying you can respawn in X minutes when you die
   Tsurupeta:
   - admin: Redesigned ban panel
+2022-08-28:
+  Okram0:
+  - rscadd: Zombies are now slightly stronger, faster and tougher
+  - rscadd: Zombie infection chance set to 100%
+  - rscadd: Infection now progresses more rapidly
+  - bugfix: Zombies no longer lose some clothes upon reanimation
+  - spellcheck: Liquid Corruption renamed 008 prions and description altered slightly
