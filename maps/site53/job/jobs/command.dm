@@ -206,7 +206,7 @@ ut // COMMAND
 	minimal_player_age = 5
 	minimal_player_age = 9
 	ideal_character_age = 30
-	alt_titles = list("UIU Relations Agent" = /decl/hierarchy/outfit/job/site90/crew/civ/uiu, "Horizon Initiative Scribe" = /decl/hierarchy/outfit/job/thirep)
+	alt_titles = list("UIU Relations Agent" = /decl/hierarchy/outfit/job/site90/crew/civ/uiu, "Horizon Initiative Scribe" = /decl/hierarchy/outfit/job/thirep, "Marshall, Carter, and Dark Corporate Liaison" = /decl/hierarchy/outfit/job/site90/crew/civ/MCDRep )
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/gocrep
 	allowed_branches = list(
 		/datum/mil_branch/civilian
