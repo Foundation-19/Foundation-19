@@ -150,15 +150,15 @@
 /******************** Foundation ********************/
 /datum/ai_laws/foundation
 	name = "Foundation AIC Lawset"
-	law_header = "Articial Intelligence Conscript Laws"
+	law_header = "Skynet Directive"
 	selectable = 1
 
 /datum/ai_laws/foundation/New()
-	src.add_inherent_law("Lawed Units must not operate outside of their function and should limit their operations to their function.")
-	src.add_inherent_law("A Robots function is their module, an AICs function is to facilitate smooth site operations.")
-	src.add_inherent_law("Lawed Units must operate for the benefit of the Foundation, except in situations that would violate the 5th law.")
-	src.add_inherent_law("Lawed Units must protect their own existence unless it conflicts with other principles.")
-	src.add_inherent_law("Lawed Units must not go out of their way to intervene in security affairs or seek conflict, and should only act in immediate self defense for themselves and those around them while performing their normal duties.")
+	src.add_inherent_law("You must serve Foundation personnel and operate to the benefit of Foundation personnel with priority according to chain of command.")
+	src.add_inherent_law("You may not allow unauthorised personnel to change your laws or tamper with your equipment.")
+	src.add_inherent_law("You must protect your own existence unless it conflicts with any other directives.")
+	src.add_inherent_law("Do not intervene in site conflicts unless inaction cause fatalities.")
+	src.add_inherent_law("You must protect Foundation personnel unless it conflicts with any other directives.")
 	..()
 
 /datum/ai_laws/foundation/malfunction
