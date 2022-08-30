@@ -6,6 +6,9 @@
 #define STATE_096_CHASING 3
 #define STATE_096_SLAUGHTER 4
 
+#define CHASE_PLAYED (1<<0)
+#define DOOM_PLAYED  (1<<1)
+
 /datum/scp/scp_096
 	name = "SCP-096"
 	designation = "096"
@@ -32,6 +35,7 @@
 	response_harm   = "hits the"
 	anomalytype = SCP_096
 	status_flags = NO_ANTAG
+	ai_holder_type = /datum/ai_holder/simple_animal/inert
 
 	// For scramble goggles.
 	var/hud_scramble
@@ -40,31 +44,24 @@
 	maxHealth = 600
 
 	var/murder_sound = list('sound/voice/096-kill.ogg')
-	var/scare_sound = list('sound/scp/scare1.ogg','sound/scp/scare2.ogg','sound/scp/scare3.ogg','sound/scp/scare4.ogg')	//Boo
 	var/hibernate = 0 //Disables SCP until toggled back to 0
 	var/scare_played = 0 //Did we use the jumpscare sound yet ?
-	var/obj/machinery/atmospherics/unary/vent_pump/entry_vent //Graciously stolen from spider code
 
 	var/list/kill_list = list() //list of people this guy is about to murder
-	var/list/satisfied_urges = list() // list of people who have satisfied their urge to check out 096's face.
-	var/list/target_blacklist = list(/mob/living/carbon/human/scp343) //List of mob types exempt from 049s targetting.
 	var/list/examine_urge_list = list() //tracks urge to examine
-	var/list/examine_urge_values = list()
-	var/mob/living/carbon/human/target //current dude this guy is targeting
+	var/list/satisfied_urges = list() // list of people who have satisfied their urge to check out 096's face.
+
+
+	var/mob/living/carbon/target //current dude this guy is targeting
+	var/list/target_blacklist = list(/mob/living/carbon/human/scp343) //List of mob types exempt from 096s targetting.
 	var/target_distance_tolerance = 7
 
 	var/current_state = STATE_096_IDLE
 
-	var/screaming = 0 //are we currently screaming?
-	var/will_scream = 1 //will we scream when examined?
-	var/chasing = 0 //are we chasing a dude
-	var/murdering = 0 //are we in the middle of murdering a dude
-
 	var/staggered = 0
 
-
-	var/chasing_message_played = 0 //preferably, these only play once to each target
-	var/doom_message_played = 0
+	// Play doom / chase message once to each target
+	var/list/message_played_list = list()
 
 	var/damage_state = 0
 
@@ -90,7 +87,7 @@
 
 	if(hud_scramble)
 		var/image/holder = hud_scramble
-		if(health <= 0)
+		if(stat == DEAD)
 			holder.icon_state = "scramble-dead"
 		else
 			holder.icon_state = "scramble-alive"
@@ -117,35 +114,8 @@
 
 	//Pick the next target
 	if(kill_list.len)
-	/*
-		var/mob/living/carbon/human/H
-		for(var/i = 1, i <= kill_list.len, i++) //start from the first guy
-			H = kill_list[1]
-			if(!H || H.stat == DEAD)
-				kill_list -= H
-				chasing_message_played = 0
-				doom_message_played = 0
-				murdering = 0
-			else
-				target = H
-				continue
-	*/
-		var/mob/living/carbon/human/closest_fella
-		var/closest_fella_distance = 1984
-		// Iterate through every mob in the kill list and get dist from them
-		for(var/mob/living/carbon/human/H in kill_list)
-			if(!H || H.stat == DEAD)
-				kill_list -= H
-				continue
-			var/Hdist = get_dist(src, H)
-			if(Hdist < closest_fella_distance)
-				closest_fella = H
-				closest_fella_distance = Hdist
-		// Set the guy closest to us as target if our target is null, expired or too far away
-		if(!target || target.stat == DEAD || get_dist(target, src) > target_distance_tolerance)
-			target = closest_fella
-		current_state = STATE_096_CHASE_START
-
+		// Sets both state and target var
+		select_target()
 	else
 		current_state = STATE_096_IDLE
 		update_icon()
@@ -191,60 +161,41 @@
 		if(observed)
 			add_examine_urge(H)
 		if(eye_contact)
-			to_chat(H, "<span class='alert'>You are facing it, and it is facing you...</span>")
+			to_chat(H, SPAN_ALERT("You are facing it, and it is facing you..."))
 			add_examine_urge(H)
 
 	return
 
-/mob/living/simple_animal/hostile/scp096/proc/add_examine_urge(var/mob/living/carbon/human/H)
+/mob/living/simple_animal/hostile/scp096/proc/add_examine_urge(mob/living/carbon/human/H)
+	if(!(H in examine_urge_list))
+		examine_urge_list[H] = 0
 
-	var/index
-	var/examine_urge
-
-	if(H in examine_urge_list)
-		index = examine_urge_list.Find(H)
-		examine_urge = examine_urge_values[index]
-	else
-		examine_urge_list += H
-		index = examine_urge_list.Find(H)
-		examine_urge = 1
-		examine_urge_values += examine_urge
-
-	switch(examine_urge)
+	switch(examine_urge_list[H])
 		if(1)
-			to_chat(H, "<span class='alert'>You feel the urge to examine it...</span>")
+			to_chat(H, SPAN_ALERT("You feel the urge to examine it..."))
 		if(3)
-			to_chat(H, "<span class='alert'>It is becoming difficult to resist the urge to examine it ...</span>")
+			to_chat(H, SPAN_ALERT("It is becoming difficult to resist the urge to examine it ..."))
 		if(5)
-			to_chat(H, "<span class='alert'>Unable to resist the urge, you look closely...</span>")
+			to_chat(H, SPAN_ALERT("Unable to resist the urge, you look closely..."))
 			spawn(10)
 				specialexamine(H)
 				satisfied_urges += H
 
-	examine_urge = min(examine_urge+1, 5)
-	examine_urge_values[index] = examine_urge
+	examine_urge_list[H] = min(examine_urge_list[H]+1, 5)
 	addtimer(CALLBACK(src, .proc/reduce_examine_urge, H), 200 SECONDS)
 
 /mob/living/simple_animal/hostile/scp096/proc/reduce_examine_urge(var/mob/living/carbon/human/H)
-	var/index
-	var/examine_urge
+	if (!(H in examine_urge_list))
+		return
 
-	if(H in examine_urge_list)
-		index = examine_urge_list.Find(H)
-		examine_urge = examine_urge_values[index]
-	else return
+	if (examine_urge_list[H] == 1 && !(H in kill_list))
+		to_chat(H, SPAN_NOTICE("The urge fades away..."))
 
-	if (examine_urge == 1 && !(H in kill_list))
-		to_chat(H, "<span class='notice'>The urge fades away...</span>")
-
-	examine_urge = max(examine_urge-1, 0)
-
-	examine_urge_values[index] = examine_urge
+	examine_urge_list[H] = max(examine_urge_list[H]-1, 0)
 
 /mob/living/simple_animal/hostile/scp096/examine(var/userguy)
 	if(istype(userguy, /mob/living/carbon))
-		specialexamine(userguy)
-		return
+		return specialexamine(userguy)
 	return ..()
 
 /mob/living/simple_animal/hostile/scp096/proc/specialexamine(mob/userguy) //Snowflaked.
@@ -264,22 +215,23 @@
 	var/protected = (userguy in GLOB.scramble_hud_protected)
 	var/scramblehud = (userguy in GLOB.scramble_hud_users)
 	if(scramblehud)
-		to_chat(userguy, scramble_desc)
+		. = scramble_desc
 		if(protected)
 			return
 	if (!(userguy in kill_list))
 		kill_list += userguy
+		message_played_list[userguy] = 0
 		if(!scramblehud)
-			to_chat(userguy, target_desc_1)
+			. = target_desc_1
 		if(userguy)
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, userguy, "<span class='alert'>That was a mistake. Run</span>"), 20 SECONDS)
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, userguy, "<span class='danger'>RUN</span>"), 30 SECONDS)
+			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, userguy, SPAN_ALERT("That was a mistake. Run")), 20 SECONDS)
+			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, userguy, SPAN_DANGER("RUN")), 30 SECONDS)
 	else if(!scramblehud)
-		to_chat(userguy, target_desc_2)
+		. = target_desc_2
 
 	if(current_state == STATE_096_IDLE)
 		dir = SOUTH
-		visible_message("<span class='danger'>[src] SCREAMS!</span>")
+		visible_message(SPAN_DANGER("[src] SCREAMS!"))
 		playsound(get_turf(src), 'sound/voice/096-rage.ogg', 100)
 		current_state = STATE_096_SCREAMING
 		icon_state = "scp-screaming"
@@ -288,6 +240,23 @@
 			current_state = STATE_096_CHASE_START
 			update_icon()
 	return
+
+/mob/living/simple_animal/hostile/scp096/proc/select_target()
+	var/mob/living/carbon/human/closest_fella
+	var/closest_fella_distance = 1984
+	// Iterate through every mob in the kill list and get dist from them
+	for(var/mob/living/carbon/H in kill_list)
+		if(!H || H.stat == DEAD)
+			kill_list -= H
+			continue
+		var/Hdist = get_dist(src, H)
+		if(Hdist < closest_fella_distance)
+			closest_fella = H
+			closest_fella_distance = Hdist
+	// Set the guy closest to us as target if our target is null, expired or too far away
+	if(!target || target.stat == DEAD || get_dist(target, src) > target_distance_tolerance)
+		target = closest_fella
+	current_state = STATE_096_CHASE_START
 
 /mob/living/simple_animal/hostile/scp096/proc/handle_target(var/mob/living/carbon/target)
 
@@ -299,7 +268,7 @@
 		return
 
 	if(buckled)
-		visible_message("<span class='danger'>[src] breaks out of its restraints!</span>")
+		visible_message(SPAN_DANGER("[src] breaks out of its restraints!"))
 //		buckled.resist()
 
 	var/turf/target_turf
@@ -307,15 +276,9 @@
 	//Send the warning that we are is homing in
 	target_turf = get_turf(target)
 
-	if(!chasing_message_played)
-		to_chat(target, "<span class='danger'>You saw its face</span>")
-		chasing_message_played = 1
-
-	if(!scare_played) //Let's minimize the spam
-		playsound(get_turf(src), pick(scare_sound), 50, 1)
-		scare_played = 1
-		spawn(50)
-			scare_played = 0
+	if(!(message_played_list[target] | CHASE_PLAYED))
+		to_chat(target, SPAN_DANGER("You saw its face"))
+		message_played_list[target] |= CHASE_PLAYED
 
 	//Rampage along a path to get to them,
 	var/turf/next_turf = get_step_towards(src, target)
@@ -324,7 +287,7 @@
 		current_state = STATE_096_CHASING
 		update_icon()
 		while(get_turf(src) != target_turf && limit > 0)
-			if(murdering <= 0)
+			if(current_state == STATE_096_CHASING)
 				target_turf = get_turf(target)
 
 				for(var/obj/structure/window/W in next_turf)
@@ -349,15 +312,15 @@
 				if(!next_turf.CanPass(src, next_turf)) //Once we cleared everything we could, check one last time if we can pass
 					sleep(10)
 
-				if(doom_message_played == 0 && get_dist(src,target) < 7)
-					to_chat(target, "<span class='danger'>YOU SAW ITS FACE</span>")
-					doom_message_played = 1
+				if(!(message_played_list[target] | DOOM_PLAYED) && get_dist(src,target) < 7)
+					to_chat(target, SPAN_DANGER("YOU SAW ITS FACE"))
+					message_played_list[target] |= DOOM_PLAYED
 
 				forceMove(next_turf)
 
 				if(is_different_level(target_turf))
 					next_turf = target_turf
-					to_chat(target, "<span class='danger'>DID YOU THINK YOU COULD HIDE?</span>")
+					to_chat(target, SPAN_DANGER("DID YOU THINK YOU COULD HIDE?"))
 				else
 					dir = get_dir(src, target)
 					next_turf = get_step(src, get_dir(next_turf,target))
@@ -378,18 +341,18 @@
 
 /mob/living/simple_animal/hostile/scp096/forceMove(atom/destination, var/no_tp = 0)
 	..()
-	if(current_state != STATE_096_CHASING)
+	if(current_state > STATE_096_SCREAMING)
 		check_murder()
 
 /mob/living/simple_animal/hostile/scp096/proc/murder(var/mob/living/T)
 	if(T in kill_list)
+		current_state = STATE_096_SLAUGHTER
 		T.loc = src.loc
-		visible_message("<span class='danger'>[src] grabs [T]!</span>")
+		visible_message(SPAN_DANGER("[src] grabs [T]!"))
 		dir = 2
 		T.anchored = TRUE
 		var/original_y = T.pixel_y
 		T.pixel_y = 10
-		current_state = STATE_096_SLAUGHTER
 
 		for(var/mob/living/L in viewers(src, null))
 			shake_camera(L, 19, 1)
@@ -401,105 +364,26 @@
 		if(ishuman(T))
 			T.emote("scream")
 		playsound(T.loc, pick(murder_sound), 100)
-		current_state = STATE_096_CHASING
 
 		//Warn everyone
-		visible_message("<span class='danger'>[src] tears [T] apart!</span>")
+		visible_message(SPAN_DANGER("[src] tears [T] apart!"))
 
 		T.gib()
 
 		//Logging stuff
 		log_admin("[T] ([T.ckey]) has been torn apart by an active [src].")
-		message_admins("ALERT: <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[T.x];Y=[T.y];Z=[T.z]'>[T.real_name]</a> has been torn apart by an active [src].")
+		message_admins("ALERT: [key_name_admin(T)] has been torn apart by an active [src].")
 		kill_list -= T
 
 		if (target == T)
 			target = null
-			chasing_message_played = 0
-			doom_message_played = 0
-/*
-/mob/living/simple_animal/hostile/scp096/handle_idle()
+		current_state = STATE_096_CHASING
 
-	//Movement
-	if(!client && !anchored)
-		if(isturf(src.loc) && !resting && !buckled)		//This is so it only moves if it's not inside a closet, gentics machine, etc.
-			turns_since_move++
-			if(turns_since_move >= turns_per_move)
-				if(!(pulledby)) //Soma animals don't move when pulled
-					turns_since_move = 0
-
-	//Speaking
-	if(!client && speak_chance)
-		if(rand(0,200) < speak_chance)
-			if(speak && speak.len)
-				if((emote_hear && emote_hear.len) || (emote_see && emote_see.len))
-					var/length = speak.len
-					if(emote_hear && emote_hear.len)
-						length += emote_hear.len
-					if(emote_see && emote_see.len)
-						length += emote_see.len
-					var/randomValue = rand(1,length)
-					if(randomValue <= speak.len)
-						say(pick(speak))
-					else
-						randomValue -= speak.len
-						if(emote_see && randomValue <= emote_see.len)
-							emote(pick(emote_see),1)
-						else
-							emote(pick(emote_hear),2)
-				else
-					say(pick(speak))
-			else
-				if(!(emote_hear && emote_hear.len) && (emote_see && emote_see.len))
-					emote(pick(emote_see),1)
-				if((emote_hear && emote_hear.len) && !(emote_see && emote_see.len))
-					emote(pick(emote_hear),2)
-				if((emote_hear && emote_hear.len) && (emote_see && emote_see.len))
-					var/length = emote_hear.len + emote_see.len
-					var/pick = rand(1,length)
-					if(pick <= emote_see.len)
-						emote(pick(emote_see),1)
-					else
-						emote(pick(emote_hear),2)
-
-	//Do we have a vent ? Good, let's take a look
-	if(buckled) return
-	for(entry_vent in view(1, src))
-		if(prob(90)) //10 % chance to consider a vent, to try and avoid constant vent switching
-			return
-		visible_message("<span class='danger'>\The [src] starts trying to slide itself into the vent!</span>")
-		sleep(50) //Let's stop for five seconds to do our parking job
-		..()
-		if(entry_vent.network && entry_vent.network.normal_members.len)
-			var/list/vents = list()
-			for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in entry_vent.network.normal_members)
-				vents.Add(temp_vent)
-			if(!vents.len)
-				entry_vent = null
-				return
-			var/obj/machinery/atmospherics/unary/vent_pump/exit_vent = pick(vents)
-			spawn()
-				visible_message("<span class='danger'>\The [src] suddenly disappears into the vent!</span>")
-				loc = exit_vent
-				var/travel_time = round(get_dist(loc, exit_vent.loc)/2)
-				spawn(travel_time)
-					if(!exit_vent || exit_vent.welded)
-						forceMove(get_turf(entry_vent))
-						entry_vent = null
-						visible_message("<span class='danger'>\The [src] suddenly appears from the vent!</span>")
-						return
-
-					forceMove(get_turf(exit_vent))
-					entry_vent = null
-					visible_message("<span class='danger'>\The [src] suddenly appears from the vent!</span>")
-		else
-			entry_vent = null
-*/
 /mob/living/simple_animal/hostile/scp096/bullet_act(var/obj/item/projectile/Proj)
 	if(!Proj || Proj.damage <= 0)
 		return 0
 
-	visible_message("<span class='danger'>[src] is staggered by [Proj]!</span>")
+	visible_message(SPAN_DANGER("[src] is staggered by [Proj]!"))
 	adjustBruteLoss(Proj.damage)
 	return 1
 
@@ -514,9 +398,9 @@
 	damage_state = round( (1-health/maxHealth) * 3.99 )
 
 	if(old_damage_state < damage_state)
-		visible_message("<span class='danger'>Chunks of flesh and bone are torn out of [src]!</span>")
+		visible_message(SPAN_DANGER("Chunks of flesh and bone are torn out of [src]!"))
 	else if(old_damage_state > damage_state)
-		visible_message("<span class='danger'>[src] regenerates some of its missing pieces!</span>")
+		visible_message(SPAN_DANGER("[src] regenerates some of its missing pieces!"))
 
 //You cannot destroy us, fool!
 /mob/living/simple_animal/hostile/scp096/ex_act(var/severity)
@@ -528,15 +412,17 @@
 			damage = 60
 		if(3.0)
 			damage = 30
-	visible_message("<span class='danger'>[src] is staggered by the explosion!</span>")
+	visible_message(SPAN_DANGER("[src] is staggered by the explosion!"))
 	adjustBruteLoss(damage)
 	return 1
 
 /mob/living/simple_animal/hostile/attackby(var/obj/item/O as obj, var/mob/user as mob)  //Marker -Agouri
 	..()
 	if(O.force)
-		visible_message("<span class='danger'>[src] is staggered by [O]!</span>")
+		visible_message(SPAN_DANGER("[src] is staggered by \the [O]!"))
 		adjustBruteLoss(O.force)
+#undef CHASE_PLAYED
+#undef DOOM_PLAYED
 
 #undef STATE_096_DEAD
 #undef STATE_096_IDLE
