@@ -97,6 +97,9 @@
 /mob/living/simple_animal/hostile/scp096/Destroy()
 	kill_list = null
 	examine_urge_list = null
+	satisfied_urges = null
+	examine_urge_list = null
+	message_played_list = null
 	return ..()
 
 /mob/living/simple_animal/hostile/scp096/Life()
@@ -372,11 +375,12 @@
 
 		//Logging stuff
 		log_admin("[T] ([T.ckey]) has been torn apart by an active [src].")
-		message_admins("ALERT: [key_name_admin(T)] has been torn apart by an active [src].")
+		message_admins("ALERT: <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[T.x];Y=[T.y];Z=[T.z]'>[T.real_name]</a> has been torn apart by an active [src].")
 		kill_list -= T
 
 		if (target == T)
 			target = null
+
 		current_state = STATE_096_CHASING
 
 /mob/living/simple_animal/hostile/scp096/bullet_act(var/obj/item/projectile/Proj)
