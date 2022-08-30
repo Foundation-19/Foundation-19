@@ -2,8 +2,9 @@
 #define STATE_096_DEAD -1
 #define STATE_096_IDLE 0
 #define STATE_096_SCREAMING 1
-#define STATE_096_CHASING 2
-#define STATE_096_SLAUGHTER 3
+#define STATE_096_CHASE_START 2
+#define STATE_096_CHASING 3
+#define STATE_096_SLAUGHTER 4
 
 /datum/scp/scp_096
 	name = "SCP-096"
@@ -84,7 +85,7 @@
 				icon_state = icon_idle
 			if(STATE_096_SCREAMING)
 				icon_state = icon_scream
-			if(STATE_096_CHASING || STATE_096_SLAUGHTER)
+			if(STATE_096_CHASING, STATE_096_CHASE_START, STATE_096_SLAUGHTER)
 				icon_state = icon_chase
 
 	if(hud_scramble)
@@ -111,7 +112,7 @@
 
 	update_icon()
 
-	if(screaming) //we're still screaming
+	if(current_state == STATE_096_SCREAMING) //we're still screaming
 		return
 
 	//Pick the next target
@@ -143,17 +144,14 @@
 		// Set the guy closest to us as target if our target is null, expired or too far away
 		if(!target || target.stat == DEAD || get_dist(target, src) > target_distance_tolerance)
 			target = closest_fella
-		current_state = STATE_096_CHASING
+		current_state = STATE_096_CHASE_START
 
 	else
 		current_state = STATE_096_IDLE
 		update_icon()
 
-	if(target)
+	if(target && current_state == STATE_096_CHASE_START)
 		handle_target(target)
-	else
-		current_state = STATE_096_IDLE
-		update_icon()
 
 //Check if any carbon mob can see us
 /mob/living/simple_animal/hostile/scp096/proc/check_los()
@@ -285,15 +283,15 @@
 		playsound(get_turf(src), 'sound/voice/096-rage.ogg', 100)
 		current_state = STATE_096_SCREAMING
 		icon_state = "scp-screaming"
-		spawn(160)
+		spawn(290)
 			icon_state = "scp"
-			current_state = STATE_096_CHASING
+			current_state = STATE_096_CHASE_START
 			update_icon()
 	return
 
 /mob/living/simple_animal/hostile/scp096/proc/handle_target(var/mob/living/carbon/target)
 
-	if(!target || chasing) //Sanity
+	if(!target || current_state >= STATE_096_CHASING) //Sanity
 		return
 
 	if(target.stat == DEAD)
@@ -365,7 +363,7 @@
 					next_turf = get_step(src, get_dir(next_turf,target))
 			limit--
 			sleep(2 + round(staggered/8))
-		chasing = 0
+		current_state = STATE_096_IDLE
 
 /mob/living/simple_animal/hostile/scp096/proc/is_different_level(var/turf/target_turf)
 	return target_turf.z != z
@@ -380,10 +378,10 @@
 
 /mob/living/simple_animal/hostile/scp096/forceMove(atom/destination, var/no_tp = 0)
 	..()
-	check_murder()
+	if(current_state != STATE_096_CHASING)
+		check_murder()
 
 /mob/living/simple_animal/hostile/scp096/proc/murder(var/mob/living/T)
-
 	if(T in kill_list)
 		T.loc = src.loc
 		visible_message("<span class='danger'>[src] grabs [T]!</span>")
@@ -391,7 +389,7 @@
 		T.anchored = TRUE
 		var/original_y = T.pixel_y
 		T.pixel_y = 10
-		murdering = 1
+		current_state = STATE_096_SLAUGHTER
 
 		for(var/mob/living/L in viewers(src, null))
 			shake_camera(L, 19, 1)
@@ -403,7 +401,7 @@
 		if(ishuman(T))
 			T.emote("scream")
 		playsound(T.loc, pick(murder_sound), 100)
-		murdering = 0
+		current_state = STATE_096_CHASING
 
 		//Warn everyone
 		visible_message("<span class='danger'>[src] tears [T] apart!</span>")
@@ -540,7 +538,9 @@
 		visible_message("<span class='danger'>[src] is staggered by [O]!</span>")
 		adjustBruteLoss(O.force)
 
+#undef STATE_096_DEAD
 #undef STATE_096_IDLE
 #undef STATE_096_SCREAMING
+#undef STATE_096_CHASE_START
 #undef STATE_096_CHASING
 #undef STATE_096_SLAUGHTER
