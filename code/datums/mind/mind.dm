@@ -473,6 +473,7 @@
 		for(var/datum/objective/objective in objectives)
 			to_chat(current, "<B>Objective #[obj_count]</B>: [objective.explanation_text]")
 			obj_count++
+	edit_memory()
 
 /datum/mind/proc/find_syndicate_uplink()
 	var/list/L = current.get_contents()
