@@ -1,0 +1,4 @@
+author: MACIEKBAKI
+delete-after: true
+changes:
+  - rscadd: Removes lack of edit_memory() proc call inside the /datum/mind/Topic()
