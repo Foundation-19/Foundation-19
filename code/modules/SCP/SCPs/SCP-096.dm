@@ -1,7 +1,20 @@
 //SCP-096, nothing more need be said
+#define STATE_096_DEAD -1
+#define STATE_096_IDLE 0
+#define STATE_096_SCREAMING 1
+#define STATE_096_CHASING 2
+#define STATE_096_SLAUGHTER 3
+
+/datum/scp/scp_096
+	name = "SCP-096"
+	designation = "096"
+	classification = EUCLID
+
 /mob/living/simple_animal/hostile/scp096
 	name = "???"
 	desc = "No, no, you know not to look closely at it" //for non-targets
+	SCP = /datum/scp/scp_096
+
 	var/target_desc_1 = "A pale, emanciated figure. It looks almost human, but its limbs are long and skinny, and its face is......<span class='danger'>no. NO. NO!</span>" //for targets
 	var/target_desc_2 = "<span class='danger'>NO!</span>" //on second examine
 
@@ -10,6 +23,9 @@
 	icon_state = "scp"
 	icon_living = "scp"
 	icon_dead = "scp-dead"
+	var/icon_idle = "scp"
+	var/icon_scream = "scp-screaming"
+	var/icon_chase = "scp-chasing"
 	response_help  = "touches the"
 	response_disarm = "pushes the"
 	response_harm   = "hits the"
@@ -33,12 +49,18 @@
 	var/list/target_blacklist = list(/mob/living/carbon/human/scp343) //List of mob types exempt from 049s targetting.
 	var/list/examine_urge_list = list() //tracks urge to examine
 	var/list/examine_urge_values = list()
-	var/target //current dude this guy is targeting
+	var/mob/living/carbon/human/target //current dude this guy is targeting
+	var/target_distance_tolerance = 7
+
+	var/current_state = STATE_096_IDLE
+
 	var/screaming = 0 //are we currently screaming?
 	var/will_scream = 1 //will we scream when examined?
-	var/staggered = 0
 	var/chasing = 0 //are we chasing a dude
 	var/murdering = 0 //are we in the middle of murdering a dude
+
+	var/staggered = 0
+
 
 	var/chasing_message_played = 0 //preferably, these only play once to each target
 	var/doom_message_played = 0
@@ -53,8 +75,18 @@
 	hud_scramble = new /image/hud_overlay('icons/SCP/hud_scramble.dmi', src, "scramble-alive")
 	..()
 
-// snowflake hud handling for scramble gear
-/mob/living/simple_animal/hostile/scp096/proc/handle_scramble()
+/mob/living/simple_animal/hostile/scp096/update_icon()
+	if(stat == DEAD)
+		icon_state = icon_dead
+	else
+		switch(current_state)
+			if(STATE_096_IDLE)
+				icon_state = icon_idle
+			if(STATE_096_SCREAMING)
+				icon_state = icon_scream
+			if(STATE_096_CHASING || STATE_096_SLAUGHTER)
+				icon_state = icon_chase
+
 	if(hud_scramble)
 		var/image/holder = hud_scramble
 		if(health <= 0)
@@ -63,11 +95,6 @@
 			holder.icon_state = "scramble-alive"
 
 		hud_scramble = holder
-
-/mob/living/simple_animal/hostile/scp096/death(gibbed, deathmessage, show_dead_message)
-
-	handle_scramble()
-	return ..()
 
 /mob/living/simple_animal/hostile/scp096/Destroy()
 	kill_list = null
@@ -82,16 +109,14 @@
 	staggered = max(staggered/8 - 1, 0)
 	adjustBruteLoss(-5)
 
-	// I don't know if there is a simple way to
-	// check if a simplemob has just been revived,
-	// so here snowflake hud handling shall go
-	handle_scramble()
+	update_icon()
 
 	if(screaming) //we're still screaming
 		return
 
 	//Pick the next target
 	if(kill_list.len)
+	/*
 		var/mob/living/carbon/human/H
 		for(var/i = 1, i <= kill_list.len, i++) //start from the first guy
 			H = kill_list[1]
@@ -103,20 +128,32 @@
 			else
 				target = H
 				continue
+	*/
+		var/mob/living/carbon/human/closest_fella
+		var/closest_fella_distance = 1984
+		// Iterate through every mob in the kill list and get dist from them
+		for(var/mob/living/carbon/human/H in kill_list)
+			if(!H || H.stat == DEAD)
+				kill_list -= H
+				continue
+			var/Hdist = get_dist(src, H)
+			if(Hdist < closest_fella_distance)
+				closest_fella = H
+				closest_fella_distance = Hdist
+		// Set the guy closest to us as target if our target is null, expired or too far away
+		if(!target || target.stat == DEAD || get_dist(target, src) > target_distance_tolerance)
+			target = closest_fella
+		current_state = STATE_096_CHASING
+
 	else
-		will_scream = 1
-		chasing_message_played = 0
-		doom_message_played = 0
-		murdering = 0
+		current_state = STATE_096_IDLE
+		update_icon()
 
 	if(target)
 		handle_target(target)
 	else
-		chasing_message_played = 0
-		doom_message_played = 0
-		murdering = 0
-		chasing = 0
-		will_scream = 1
+		current_state = STATE_096_IDLE
+		update_icon()
 
 //Check if any carbon mob can see us
 /mob/living/simple_animal/hostile/scp096/proc/check_los()
@@ -242,14 +279,16 @@
 	else if(!scramblehud)
 		to_chat(userguy, target_desc_2)
 
-	if(will_scream)
-		if(!buckled) dir = 2
+	if(current_state == STATE_096_IDLE)
+		dir = SOUTH
 		visible_message("<span class='danger'>[src] SCREAMS!</span>")
 		playsound(get_turf(src), 'sound/voice/096-rage.ogg', 100)
-		screaming = 1
-		will_scream = 0
-		spawn(290)
-			screaming = 0
+		current_state = STATE_096_SCREAMING
+		icon_state = "scp-screaming"
+		spawn(160)
+			icon_state = "scp"
+			current_state = STATE_096_CHASING
+			update_icon()
 	return
 
 /mob/living/simple_animal/hostile/scp096/proc/handle_target(var/mob/living/carbon/target)
@@ -284,7 +323,8 @@
 	var/turf/next_turf = get_step_towards(src, target)
 	var/limit = 100
 	spawn()
-		chasing = 1
+		current_state = STATE_096_CHASING
+		update_icon()
 		while(get_turf(src) != target_turf && limit > 0)
 			if(murdering <= 0)
 				target_turf = get_turf(target)
@@ -328,16 +368,7 @@
 		chasing = 0
 
 /mob/living/simple_animal/hostile/scp096/proc/is_different_level(var/turf/target_turf)
-	if(target_turf.z != z)
-		return 1
-
-	var/source_level = 0 //0 means lower level or left side, depending on map, 1 means upper level or right side
-	var/target_level = 0
-
-	if(source_level != target_level)
-		return 1
-
-	return 0
+	return target_turf.z != z
 
 //This performs an immediate murder check, meant to avoid people cheesing us by just running faster than Life() refresh
 /mob/living/simple_animal/hostile/scp096/proc/check_murder()
@@ -348,7 +379,6 @@
 			break
 
 /mob/living/simple_animal/hostile/scp096/forceMove(atom/destination, var/no_tp = 0)
-
 	..()
 	check_murder()
 
@@ -477,7 +507,7 @@
 
 /mob/living/simple_animal/hostile/scp096/adjustBruteLoss(var/damage)
 
-	health = max(health - damage, 0, maxHealth)
+	health = Clamp(health - damage, 0, maxHealth)
 
 	if(damage > 0)
 		staggered += damage
@@ -489,14 +519,6 @@
 		visible_message("<span class='danger'>Chunks of flesh and bone are torn out of [src]!</span>")
 	else if(old_damage_state > damage_state)
 		visible_message("<span class='danger'>[src] regenerates some of its missing pieces!</span>")
-
-
-
-/mob/living/simple_animal/hostile/scp096/Bump(atom/movable/AM as mob)
-	..()
-
-/mob/living/simple_animal/hostile/scp096/Bumped(atom/movable/AM as mob, yes)
-	..()
 
 //You cannot destroy us, fool!
 /mob/living/simple_animal/hostile/scp096/ex_act(var/severity)
@@ -517,3 +539,8 @@
 	if(O.force)
 		visible_message("<span class='danger'>[src] is staggered by [O]!</span>")
 		adjustBruteLoss(O.force)
+
+#undef STATE_096_IDLE
+#undef STATE_096_SCREAMING
+#undef STATE_096_CHASING
+#undef STATE_096_SLAUGHTER
