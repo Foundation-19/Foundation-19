@@ -1,0 +1,11 @@
+author: MACIEKBAKI
+delete-after: true
+changes:
+  - rscadd: Improved SCP-096 targetting; targets closer will be murdered first
+  - rscadd: SCP-096 will now use previously-unused icons when idle and when screaming.
+  - rscdel: SCP-096 no longer plays scare sounds akin to being jumpscared by SCP-173
+      in containment breach
+  - bugfix: SCP-096 will no longer follow you around in its idle state.
+  - code_imp: 'made SCP-096 code slightly better: now only one variable tracks his
+      state (instead of four). Also cleaned up some bad code and straight up yeeted
+      a commented-out proc (which we dont have in our codebase, even)'
