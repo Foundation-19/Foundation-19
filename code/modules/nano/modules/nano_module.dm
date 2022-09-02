@@ -54,7 +54,7 @@
 	if(computer.nano_printer)
 		computer.nano_printer.print_text(text)
 	else
-		to_chat(user, "Error: Unable to detect compatible printer interface. Are you running NTOSv2 compatible system?")
+		to_chat(user, "Error: Unable to detect compatible printer interface. Are you running SCPOSv2 compatible system?")
 
 /datum/proc/initial_data()
 	return list()

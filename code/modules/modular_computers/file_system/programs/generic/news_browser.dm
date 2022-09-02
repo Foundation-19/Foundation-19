@@ -1,6 +1,6 @@
 /datum/computer_file/program/newsbrowser
 	filename = "newsbrowser"
-	filedesc = "NTNet/ExoNet News Browser"
+	filedesc = "SCiPnet/ExoNet News Browser"
 	extended_desc = "This program may be used to view and download news articles from the network."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
@@ -33,7 +33,7 @@
 	download_progress += download_netspeed
 	if(download_progress >= loaded_article.size)
 		downloading = 0
-		requires_ntnet = 0 // Turn off NTNet requirement as we already loaded the file into local memory.
+		requires_ntnet = 0 // Turn off SCiPnet requirement as we already loaded the file into local memory.
 	SStgui.update_uis(src)
 
 /datum/computer_file/program/newsbrowser/tgui_data(mob/user, datum/tgui/ui, datum/tgui_state/state)
