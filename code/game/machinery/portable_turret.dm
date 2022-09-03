@@ -69,16 +69,21 @@
 	idle_power_usage = 0
 	active_power_usage = 300
 	enabled = 0
-	shot_delay = 2
+	shot_delay = 5
 	installation = /obj/item/gun/projectile/automatic/scp/m16
+	egun = /obj/item/gun/projectile/automatic/scp/ak47
 	shot_sound = 'sound/weapons/gunshot/gunshot.ogg'
 	maxhealth = 200
 	controllock = 1
-	projectile = /obj/item/projectile/bullet/rifle/a556
+	projectile = /obj/item/projectile/energy/flash/flare
 	eprojectile = /obj/item/projectile/bullet/rifle/a762
 	ailock = 0
 	req_access = list(access_securitylvl3, access_adminlvl3)
-	lethal = 1
+    if(iconholder)
+	   projectile = /obj/item/projectile/bullet/rifle/a556
+	else
+	   projectile = /obj/item/projectile/energy/flash/flare
+
 
 /obj/machinery/porta_turret/crescent
 	enabled = 0
@@ -178,7 +183,7 @@ var/list/turret_icons
 /obj/machinery/porta_turret/on_update_icon()
 	if(!turret_icons)
 		turret_icons = list()
-		turret_icons["open"] = image(icon, "openTurretCover")
+		turret_icons["open"] = image(icon, "syndie_turretcover")
 
 	underlays.Cut()
 	underlays += turret_icons["open"]
