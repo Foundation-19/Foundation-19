@@ -77,7 +77,6 @@
 	controllock = 1
 	projectile = /obj/item/projectile/energy/flash/flare
 	eprojectile = /obj/item/projectile/bullet/rifle/a762
-	ailock = 0
 	req_access = list(access_securitylvl3, access_adminlvl3)
 	if(lethal)
 		projectile = /obj/item/projectile/bullet/rifle/a556
