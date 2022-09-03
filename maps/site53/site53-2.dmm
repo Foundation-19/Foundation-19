@@ -33111,11 +33111,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "ryS" = (
-/obj/effect/paint_stripe/gray,
 /obj/machinery/turretid{
-	id_tag = "EZGrid"
+	id_tag = "EZGrid";
+	pixel_y = 1;
+	pixel_x = -30
 	},
-/turf/simulated/wall/prepainted,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "rzH" = (
 /obj/structure/cable{
@@ -66925,7 +66926,7 @@ aae
 aae
 aeT
 agp
-ryS
+aac
 bBS
 aaf
 aqO
@@ -68213,7 +68214,7 @@ aPG
 aac
 aKP
 aPQ
-ryS
+aac
 aac
 aac
 rgb
@@ -68470,7 +68471,7 @@ eyn
 aad
 aOY
 eel
-aaf
+ryS
 aOH
 gjy
 aae

@@ -9499,17 +9499,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/recreationhallway)
-"xZ" = (
-/obj/structure/foamedmetal,
-/obj/machinery/camera/motion{
-	c_tag = "AIC Observation 10";
-	network = list("Entrance Zone Network");
-	use_power = 0;
-	active_power_usage = 0;
-	idle_power_usage = 0
-	},
-/turf/simulated/floor/plating,
-/area/site53/science/aiccore)
 "ya" = (
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
@@ -18075,7 +18064,6 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
 "Xu" = (
-/obj/structure/foamedmetal,
 /turf/simulated/floor/plating,
 /area/site53/science/aiccore)
 "Xv" = (
@@ -18271,10 +18259,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
-"XZ" = (
-/obj/effect/paint_stripe/gunmetal,
-/turf/simulated/floor/grass,
-/area/site53/science/aiccore)
 "Yb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb2,
@@ -48502,7 +48486,7 @@ Xu
 Xu
 UA
 UA
-XZ
+UA
 UA
 UA
 UA
@@ -49027,7 +49011,7 @@ UA
 xJ
 UA
 YC
-Xu
+UA
 Xu
 Xu
 Xu
@@ -49284,7 +49268,7 @@ Zm
 UA
 UA
 UA
-Xu
+UA
 Xu
 Xu
 Xu
@@ -49541,7 +49525,7 @@ UC
 UA
 UA
 YC
-Xu
+UA
 Xu
 Xu
 Xu
@@ -49798,7 +49782,7 @@ Lk
 UA
 UA
 YC
-Xu
+UA
 Xu
 Xu
 Xu
@@ -50055,7 +50039,7 @@ LE
 UA
 UA
 UA
-Xu
+UA
 Xu
 Xu
 Xu
@@ -50312,7 +50296,7 @@ UA
 UA
 UA
 YC
-Xu
+UA
 Xu
 Xu
 Xu
@@ -50569,7 +50553,7 @@ lN
 gg
 NI
 YC
-Xu
+UA
 Xu
 Xu
 Xu
@@ -50826,7 +50810,7 @@ lN
 yB
 yB
 UA
-Xu
+UA
 Xu
 Xu
 Xu
@@ -51083,7 +51067,7 @@ lN
 NI
 av
 UA
-Xu
+UA
 Xu
 Xu
 Xu
@@ -51340,7 +51324,7 @@ lN
 yB
 yB
 UA
-Xu
+UA
 Xu
 Xu
 Xu
@@ -51597,7 +51581,7 @@ lN
 yB
 gg
 UA
-Xu
+UA
 Xu
 Xu
 Xu
@@ -51854,7 +51838,7 @@ Eq
 Wj
 yB
 UA
-Xu
+UA
 Xu
 Xu
 Xu
@@ -52111,7 +52095,7 @@ WM
 UA
 UA
 UA
-Xu
+UA
 Xu
 Xu
 Xu
@@ -52368,7 +52352,7 @@ xE
 UA
 UA
 UA
-Xu
+UA
 Xu
 Xu
 Xu
@@ -52625,7 +52609,7 @@ vR
 UA
 UA
 UA
-Xu
+UA
 Xu
 Xu
 Xu
@@ -52882,7 +52866,7 @@ bo
 UA
 UA
 UA
-Xu
+UA
 Xu
 Xu
 Xu
@@ -53643,7 +53627,7 @@ Xu
 Xu
 Xu
 Xu
-xZ
+Xu
 Xu
 Xu
 Xu
