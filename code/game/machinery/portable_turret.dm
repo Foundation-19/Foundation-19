@@ -62,26 +62,22 @@
 	req_access = list(list(access_security, access_bridge))
 
 /obj/machinery/porta_turret/aic
-	name = "grid defense turret"
-	desc = "Foundation containment-grade G60 perimeter defense turret chambered in 5.56 NATO, capable of self-repair when not in use and does not require power to activate."
-	icon = 'icons/obj/turrets.dmi'
-	icon_state = "syndie_closed"
-	idle_power_usage = 0
-	active_power_usage = 300
-	enabled = 0
-	shot_delay = 5
-	installation = /obj/item/gun/projectile/automatic/scp/m16
-	egun = /obj/item/gun/projectile/automatic/scp/ak47
-	shot_sound = 'sound/weapons/gunshot/gunshot.ogg'
-	maxhealth = 200
-	controllock = 1
-	projectile = /obj/item/projectile/energy/flash/flare
-	eprojectile = /obj/item/projectile/bullet/rifle/a762
-	req_access = list(access_securitylvl3, access_adminlvl3)
-	if(lethal)
-		projectile = /obj/item/projectile/bullet/rifle/a556
-		else
-			projectile = /obj/item/projectile/energy/flash/flare
+    name = "grid defense turret"
+    desc = "Foundation containment-grade G60 perimeter defense turret chambered in 5.56 NATO, capable of self-repair when not in use and does not require power to activate."
+    icon = 'icons/obj/turrets.dmi'
+    icon_state = "syndie_closed"
+    idle_power_usage = 0
+    active_power_usage = 0
+    enabled = 0
+    shot_delay = 2
+    installation = /obj/item/gun/projectile/automatic/scp/m16
+    shot_sound = 'sound/weapons/gunshot/gunshot.ogg'
+    maxhealth = 200
+    controllock = 1
+    eprojectile = /obj/item/projectile/energy/flash/flare
+    projectile = /obj/item/projectile/bullet/rifle/a556
+    req_access = list(access_securitylvl3, access_adminlvl3)
+	lethal = 1
 
 
 /obj/machinery/porta_turret/crescent
