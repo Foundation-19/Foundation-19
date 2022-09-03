@@ -82,7 +82,7 @@
 	if(iconholder)
 		projectile = /obj/item/projectile/bullet/rifle/a556
 		else
-		projectile = /obj/item/projectile/energy/flash/flare
+			projectile = /obj/item/projectile/energy/flash/flare
 
 
 /obj/machinery/porta_turret/crescent
