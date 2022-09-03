@@ -24,9 +24,6 @@
 					else
 						message_admins("[SPAN_DANGER("<B>Notice:</B>")] <span class='info'><A href='?src=\ref[usr];priv_msg=\ref[src]'>[key_name_admin(src)]</A> has the same [matches] as [key_name_admin(M)] (no longer logged in).</span>", 1)
 						log_access("Notice: [key_name(src)] has the same [matches] as [key_name(M)] (no longer logged in).")
-			if(!config.panic_bunker && get_player_age(key) < config.panic_bunker_age)
-				message_admins("[key] cid:[client.computer_id] ip:[client.address] joined for the first time.")
-				log_admin("[key] cid:[client.computer_id] ip:[client.address] joined for the first time.")
 		if(is_multikeying && !client.warned_about_multikeying)
 			client.warned_about_multikeying = 1
 			spawn(1 SECOND)
