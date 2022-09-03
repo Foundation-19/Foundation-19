@@ -79,7 +79,7 @@ var/global/photo_count = 0
 			switch(anomalytype)
 				if(SCP_096)
 					var/mob/living/simple_animal/hostile/scp096/A = anomalymob //I hate this but I don't know another way to do it, so, we go the shitcode way!
-					A.specialexamine(user) //YOU ARE ALREADY DEAD.
+					to_chat(user, A.specialexamine(user)) //YOU ARE ALREADY DEAD.
 					return
 	else
 		to_chat(user, "<span class='notice'>It is too far away.</span>")

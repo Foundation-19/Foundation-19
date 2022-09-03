@@ -50,3 +50,6 @@
 2022-08-29:
   AndJusticeForAll0:
   - rscadd: Adds new GoI Rep in the form of MCD
+2022-08-31:
+  MACIEKBAKI:
+  - rscadd: Removes lack of edit_memory() proc call inside the /datum/mind/Topic()
