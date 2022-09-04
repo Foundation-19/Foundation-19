@@ -11851,9 +11851,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
-"aFV" = (
-/turf/space,
-/area/site53/lowertrams/hub)
 "aFX" = (
 /obj/machinery/cooker/cereal,
 /obj/structure/table/standard,
@@ -29254,9 +29251,6 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
 /area/site53/ulcz/office)
-"pWS" = (
-/turf/space,
-/area/space)
 "pXS" = (
 /obj/item/modular_computer/console/preset/security,
 /turf/simulated/floor/tiled/monotile/white,
@@ -36592,7 +36586,7 @@ aVS
 aVS
 aVS
 aVS
-azA
+aVS
 azA
 azA
 azA
@@ -38662,9 +38656,9 @@ aVS
 aVS
 aVS
 aVS
-pWS
-pWS
-pWS
+azA
+azA
+azA
 azA
 azA
 azA
@@ -65622,7 +65616,7 @@ aOY
 eel
 aaf
 aae
-aFV
+aae
 ayR
 aeR
 aeR
