@@ -26317,10 +26317,6 @@
 /obj/item/stack/material/steel/fifty,
 /obj/item/stack/material/plastic/fifty,
 /obj/item/stack/material/titanium/fifty,
-/obj/machinery/light/small{
-	dir = 4;
-	icon_state = "bulb1"
-	},
 /obj/structure/table/rack,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/llcz/entrance_checkpoint)
