@@ -1,6 +1,0 @@
-author: harryob
-delete-after: true
-changes:
-  - rscadd: Corridors link the LCZ and HCZ checkpoints and Engineering directly into
-      EZ.
-  - rscdel: All the trams (Engineering, LCZ and HCZ) are gone.

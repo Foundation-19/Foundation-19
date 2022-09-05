@@ -8,3 +8,8 @@
   - code_imp: 'made SCP-096 code slightly better: now only one variable tracks his
       state (instead of four). Also cleaned up some bad code and straight up yeeted
       a commented-out proc (which we dont have in our codebase, even)'
+2022-09-05:
+  harryob:
+  - rscadd: Corridors link the LCZ and HCZ checkpoints and Engineering directly into
+      EZ.
+  - rscdel: All the trams (Engineering, LCZ and HCZ) are gone.
