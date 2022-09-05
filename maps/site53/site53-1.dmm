@@ -9791,6 +9791,12 @@
 /area/site53/llcz/dclass/briefing)
 "zT" = (
 /obj/structure/table/reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "dclasscells";
+	name = "Cell Lock";
+	pixel_y = 2;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
 "zU" = (
@@ -13651,9 +13657,10 @@
 /turf/simulated/floor/beach/water,
 /area/site53/llcz/dclass/luxuryhall)
 "Kw" = (
-/obj/item/storage/pill_bottle/amnesticsa,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/kitchen)
+/obj/item/device/flashlight/lamp,
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/cellbubble)
 "Kx" = (
 /obj/machinery/light{
 	dir = 4
@@ -32980,7 +32987,7 @@ JU
 wI
 JU
 zT
-kN
+Kw
 Dp
 iK
 iS
@@ -35546,7 +35553,7 @@ iS
 iK
 dq
 fL
-Kw
+fZ
 io
 JB
 fZ
