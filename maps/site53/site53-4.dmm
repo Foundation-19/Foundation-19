@@ -600,6 +600,9 @@
 /obj/effect/landmark/start{
 	name = "Head of Personnel"
 	},
+/obj/structure/bed/chair/office/comfy{
+	dir = 8
+	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "bS" = (
