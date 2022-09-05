@@ -490,6 +490,20 @@
 	back = /obj/item/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
 
+/decl/hierarchy/outfit/job/site90/crew/civ/MCDRep
+	name = OUTFIT_JOB_NAME("Marshall, Carter, and Dark Corporate Liaison")
+	uniform = /obj/item/clothing/under/suit_jacket/really_black
+	shoes = /obj/item/clothing/shoes/laceup
+	glasses = /obj/item/clothing/glasses/monocle
+	l_pocket = /obj/item/device/radio
+	id_types = list(/obj/item/card/id/adminlvl3)
+	r_hand = /obj/item/storage/secure/briefcase/money
+	l_hand = /obj/item/cane
+	l_ear = /obj/item/device/radio/headset/heads/hos/mcd
+	back = /obj/item/storage/backpack/satchel/pocketbook
+	backpack_contents = list(/obj/item/ammo_magazine/c45m = 1)
+	belt = /obj/item/gun/projectile/silenced
+
 /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
 	name = OUTFIT_JOB_NAME("O5 Representative")
 	uniform = /obj/item/clothing/under/suit_jacket/really_black

@@ -49,13 +49,13 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 /datum/species/zombie
 	name = "Zombie"
 	name_plural = "Zombies"
-	slowdown = 15
+	slowdown = 10
 	blood_color = "#700f0f"
 	death_message = "writhes and twitches before falling motionless."
 	species_flags = SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_SCAN
 	spawn_flags = SPECIES_IS_RESTRICTED
-	brute_mod = 1
-	burn_mod = 2.5 //Vulnerable to fire
+	brute_mod = 0.8
+	burn_mod = 2 //Vulnerable to fire
 	oxy_mod = 0
 	stun_mod = 0.05
 	weaken_mod = 0.05
@@ -84,6 +84,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 		/obj/structure/wall_frame,
 		/obj/structure/railing,
 		/obj/structure/girder,
+		/obj/structure/window/reinforced,
 		/turf/simulated/wall,
 		/obj/machinery/door/blast/shutters,
 		/obj/machinery/door
@@ -114,17 +115,6 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 	H.move_intent.move_delay = 6
 	H.stat = CONSCIOUS
-
-	if (H.wear_id)
-		qdel(H.wear_id)
-	if (H.gloves)
-		qdel(H.gloves)
-	if (H.head)
-		qdel(H.head) //Remove helmet so headshots aren't impossible
-	if (H.glasses)
-		qdel(H.glasses)
-	if (H.wear_mask)
-		qdel(H.wear_mask)
 	..()
 
 /datum/species/zombie/handle_environment_special(mob/living/carbon/human/H)
@@ -269,7 +259,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 /datum/unarmed_attack/bite/sharp/zombie
 	attack_verb = list("slashed", "sunk their teeth into", "bit", "mauled")
-	damage = 3
+	damage = 5
 
 /datum/unarmed_attack/bite/sharp/zombie/is_usable(mob/living/carbon/human/user, mob/living/carbon/human/target, zone)
 	. = ..()
@@ -289,13 +279,13 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	var/vuln = 1 - target.get_blocked_ratio(zone, TOX, damage_flags = DAM_BIO) //Are they protected from bites?
 	if (vuln > 0.05)
 		if (prob(vuln * 100)) //Protective infection chance
-			if (prob(min(100 - target.get_blocked_ratio(zone, BRUTE) * 100, 70))) //General infection chance
-				target.reagents.add_reagent(/datum/reagent/zombie, 1) //Infect 'em
+			if (prob(min(100 - target.get_blocked_ratio(zone, BRUTE) * 100, 100))) //General infection chance
+				target.reagents.add_reagent(/datum/reagent/zombie, 5) //Infect 'em
 
 
 /datum/reagent/zombie
-	name = "Liquid Corruption"
-	description = "A filthy, oily substance which slowly churns of its own accord."
+	name = "008 Prions"
+	description = "An oily substance which slowly churns of its own accord."
 	taste_description = "decaying blood"
 	color = "#540000"
 	taste_mult = 5
@@ -351,7 +341,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 		if (prob(3))
 			H.zombify()
 
-	M.reagents.add_reagent(/datum/reagent/zombie, RAND_F(0.5, 1.5))
+	M.reagents.add_reagent(/datum/reagent/zombie, RAND_F(1.5, 3.5))
 
 /datum/reagent/zombie/affect_touch(mob/living/carbon/M, alien, removed)
 	affect_blood(M, alien, removed * 0.5)

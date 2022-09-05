@@ -436,6 +436,7 @@
 		qdel(query_update)
 	else
 		//New player!! Need to insert all the stuff
+		log_and_message_admins("[ckey]([computer_id] [address]) joined for the first time.")
 		var/datum/db_query/query_insert = SSdbcore.NewQuery("INSERT INTO erro_player (id, ckey, firstseen, lastseen, ip, computerid, lastadminrank) VALUES (null, '[sql_ckey]', Now(), Now(), '[sql_ip]', '[sql_computerid]', '[sql_admin_rank]')")
 		query_insert.Execute()
 		qdel(query_insert)

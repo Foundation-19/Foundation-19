@@ -30,3 +30,26 @@
   projectkepler-ru:
   - rscadd: Added the rhino revolver
   - imageadd: added sprite for armored forensic gloves and the rhino revolver
+2022-08-24:
+  MACIEKBAKI:
+  - bugfix: Paper you have printed should no longer be illegible, owing to bad language.
+2022-08-25:
+  DTraitor:
+  - bugfix: Fixed admin ghosts being unable to interact with modular computer
+  MACIEKBAKI:
+  - rscadd: Added a message saying you can respawn in X minutes when you die
+  Tsurupeta:
+  - admin: Redesigned ban panel
+2022-08-28:
+  Okram0:
+  - rscadd: Zombies are now slightly stronger, faster and tougher
+  - rscadd: Zombie infection chance set to 100%
+  - rscadd: Infection now progresses more rapidly
+  - bugfix: Zombies no longer lose some clothes upon reanimation
+  - spellcheck: Liquid Corruption renamed 008 prions and description altered slightly
+2022-08-29:
+  AndJusticeForAll0:
+  - rscadd: Adds new GoI Rep in the form of MCD
+2022-08-31:
+  MACIEKBAKI:
+  - rscadd: Removes lack of edit_memory() proc call inside the /datum/mind/Topic()

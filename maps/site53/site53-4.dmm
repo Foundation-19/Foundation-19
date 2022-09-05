@@ -146,15 +146,13 @@
 /area/site53/uez/canteen)
 "ax" = (
 /obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
+	dir = 8
 	},
 /turf/simulated/open,
 /area/site53/upper_surface/maincontrolroom)
 "ay" = (
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+	dir = 4
 	},
 /turf/simulated/open,
 /area/site53/upper_surface/maincontrolroom)
@@ -216,28 +214,6 @@
 /obj/structure/flora/grass/both,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/uez/canteen)
-"aG" = (
-/obj/machinery/computer/shuttle_control{
-	name = "Heavy Containment Zone";
-	req_access = list("ACCESS_ADMIN_LEVEL2");
-	shuttle_tag = "Heavy Containment Tram"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroom)
-"aH" = (
-/obj/machinery/computer/shuttle_control{
-	name = "Light Containment Tram control console";
-	req_access = list("ACCESS_ADMIN_LEVEL2");
-	shuttle_tag = "Light Containment Tram"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroom)
-"aI" = (
-/obj/machinery/computer/shuttle_control/engineering{
-	req_access = list("ACCESS_ADMIN_LEVEL2")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroom)
 "aJ" = (
 /obj/effect/paint_stripe/red,
 /obj/machinery/status_display,
@@ -245,8 +221,7 @@
 /area/site53/uez/hallway)
 "aK" = (
 /obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
+	dir = 1
 	},
 /obj/structure/flora/pottedplant/minitree,
 /obj/structure/railing/mapped{
@@ -300,17 +275,9 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
-"aS" = (
-/obj/machinery/door/airlock/glass/command{
-	name = "Tram Control Room";
-	req_access = list("ACCESS_ADMIN_LEVEL2")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroom)
 "aT" = (
 /obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
+	dir = 1
 	},
 /obj/structure/flora/pottedplant/minitree,
 /obj/structure/railing/mapped,
@@ -340,8 +307,7 @@
 /area/site53/uez/hallway)
 "aW" = (
 /obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -354,8 +320,7 @@
 /area/site53/upper_surface/commstower)
 "aZ" = (
 /obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
+	dir = 8
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -370,7 +335,6 @@
 	},
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1";
 	pixel_x = -12
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -382,11 +346,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
-"be" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/effect/paint_stripe/red,
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/maincontrolroom)
 "bf" = (
 /obj/machinery/light,
 /turf/simulated/open,
@@ -396,8 +355,7 @@
 /area/site53/upper_surface/maincontrolroom)
 "bh" = (
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+	dir = 4
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -411,15 +369,13 @@
 /area/site53/upper_surface/maincontrolroom)
 "bj" = (
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
 "bk" = (
 /obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -484,8 +440,7 @@
 /area/site53/uez/bridge)
 "bu" = (
 /obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
+	dir = 1
 	},
 /obj/machinery/papershredder,
 /obj/effect/floor_decal/corner/blue/border{
@@ -547,8 +502,7 @@
 /area/site53/uez/mcrsubstation)
 "bA" = (
 /obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
+	dir = 1
 	},
 /obj/machinery/photocopier,
 /obj/effect/floor_decal/corner/blue/border{
@@ -608,8 +562,7 @@
 /area/site53/uez/hallway)
 "bI" = (
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+	dir = 4
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
@@ -647,6 +600,9 @@
 /obj/effect/landmark/start{
 	name = "Head of Personnel"
 	},
+/obj/structure/bed/chair/office/comfy{
+	dir = 8
+	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "bS" = (
@@ -663,8 +619,7 @@
 "bU" = (
 /obj/machinery/papershredder,
 /obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/site53/uez/hallway)
@@ -678,8 +633,7 @@
 /obj/structure/table/woodentable,
 /obj/item/device/flashlight/lamp/green,
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+	dir = 4
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
@@ -792,24 +746,21 @@
 /area/site53/uez/hallway)
 "ct" = (
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+	dir = 4
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
 "cu" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+	dir = 4
 	},
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "cv" = (
 /obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
+	dir = 8
 	},
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/item/paper_bin,
@@ -901,8 +852,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
+	dir = 8
 	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
@@ -1022,8 +972,7 @@
 /area/site53/uez/hallway)
 "cY" = (
 /obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
+	dir = 8
 	},
 /obj/machinery/door/window/holowindoor{
 	id_tag = "sitedirect";
@@ -1290,8 +1239,7 @@
 "dK" = (
 /obj/structure/closet/secure_closet/mtf/commander,
 /obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
+	dir = 1
 	},
 /obj/item/folder,
 /obj/item/folder/blue,
@@ -1314,8 +1262,7 @@
 "dN" = (
 /obj/machinery/photocopier,
 /obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/hallway)
@@ -1513,7 +1460,6 @@
 "es" = (
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube1";
 	pixel_x = -12
 	},
 /turf/simulated/open,
@@ -1528,17 +1474,10 @@
 /area/site53/uez/canteen)
 "ev" = (
 /obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
+	dir = 1
 	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
-"ew" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/open,
-/area/site53/upper_surface/maincontrolroom)
 "ex" = (
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
@@ -1770,10 +1709,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "fj" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 8;
-	icon_state = "officechair_dark"
-	},
 /obj/effect/landmark/start{
 	name = "Guard Commander"
 	},
@@ -1919,8 +1854,7 @@
 /area/site53/upper_surface/maincontrolroom)
 "fG" = (
 /obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
+	dir = 1
 	},
 /obj/item/device/radio/intercom{
 	frequency = 1017;
@@ -2110,10 +2044,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
-"fY" = (
-/obj/effect/paint_stripe/blue,
-/turf/simulated/wall/prepainted,
-/area/site53/upper_surface/maincontrolroom)
 "fZ" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -2368,14 +2298,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
-"gM" = (
-/obj/machinery/camera/autoname{
-	c_tag = "Tram Control";
-	dir = 4;
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroom)
 "gN" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
@@ -2385,8 +2307,7 @@
 /area/site53/uez/hallway)
 "gQ" = (
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+	dir = 4
 	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
@@ -2533,8 +2454,7 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -2615,8 +2535,7 @@
 /area/site53/logistics/logisticsbreak)
 "ii" = (
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
@@ -2726,8 +2645,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
@@ -2829,8 +2747,7 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -2888,8 +2805,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -2919,8 +2835,7 @@
 /area/site53/logistics/logisticsbreak)
 "jf" = (
 /obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
+	dir = 1
 	},
 /obj/structure/table/standard,
 /obj/machinery/photocopier{
@@ -2931,8 +2846,7 @@
 /area/site53/logistics/logisticsbreak)
 "jg" = (
 /obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
+	dir = 1
 	},
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 1
@@ -2942,8 +2856,7 @@
 "jh" = (
 /obj/machinery/lapvend,
 /obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
+	dir = 1
 	},
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 1
@@ -3019,19 +2932,10 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "jr" = (
-/obj/machinery/computer/shuttle_control{
-	name = "Heavy Containment Zone";
-	req_access = list("ACCESS_ENGINEERING_LEVEL3");
-	shuttle_tag = "Heavy Containment Tram"
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
 	},
-/obj/effect/floor_decal/corner/red/mono,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/upper_surface/commstower)
-"js" = (
-/obj/machinery/computer/shuttle_control/engineering{
-	req_access = list("ACCESS_ENGINEERING_LEVEL3")
-	},
-/obj/effect/floor_decal/corner/orange/mono,
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "ju" = (
@@ -3100,8 +3004,7 @@
 /area/site53/upper_surface/commstower)
 "jC" = (
 /obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
+	dir = 8
 	},
 /obj/item/modular_computer/console/preset/civilian{
 	dir = 4
@@ -3625,17 +3528,6 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
-"nH" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/effect/paint_stripe/red,
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "controlroom";
-	name = "Control Room Lockdown Blast Door"
-	},
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/maincontrolroom)
 "nI" = (
 /obj/structure/bed/chair/comfy/yellow{
 	name = "Containment Engineer"
@@ -3669,8 +3561,7 @@
 /area/site53/upper_surface/maincontrolroom)
 "po" = (
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+	dir = 4
 	},
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/wood/mahogany,
@@ -3767,8 +3658,7 @@
 /area/site53/uez/hallway)
 "sZ" = (
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+	dir = 4
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
@@ -4060,13 +3950,6 @@
 /obj/item/folder/red,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
-"Db" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroom)
 "Ds" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -4351,15 +4234,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "Ny" = (
-/obj/machinery/computer/shuttle_control{
-	name = "Light Containment Tram control console";
-	req_access = list("ACCESS_ENGINEERING_LEVEL3");
-	shuttle_tag = "Light Containment Tram"
-	},
-/obj/effect/floor_decal/corner/brown/mono,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "NJ" = (
@@ -4440,11 +4321,6 @@
 /obj/effect/floor_decal/corner/purple/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
-"QA" = (
-/obj/item/device/flashlight/lamp,
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/maincontrolroom)
 "QG" = (
 /obj/structure/table/standard,
 /obj/item/pen,
@@ -4525,8 +4401,7 @@
 /area/site53/uez/canteen)
 "Sh" = (
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -4538,8 +4413,7 @@
 /area/site53/upper_surface/commstower)
 "SP" = (
 /obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
+	dir = 8
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
@@ -33602,10 +33476,10 @@ hk
 hk
 hk
 hk
-fY
-fY
-fY
-fY
+hk
+hk
+hk
+hk
 ab
 aQ
 bo
@@ -33859,11 +33733,11 @@ hk
 hk
 hk
 hk
-fY
-aG
-Db
-gM
-be
+hk
+hk
+hk
+hk
+ab
 aQ
 bo
 bo
@@ -33901,7 +33775,7 @@ hZ
 hZ
 hZ
 eH
-js
+jr
 kr
 jJ
 aY
@@ -34116,11 +33990,11 @@ hk
 hk
 hk
 hk
-fY
-aH
-aQ
-aQ
-aS
+hk
+hk
+hk
+hk
+ab
 aQ
 bo
 aX
@@ -34373,11 +34247,11 @@ hk
 hk
 hk
 hk
-fY
-aI
-fF
-QA
-be
+hk
+hk
+hk
+hk
+ab
 aQ
 bo
 bo
@@ -34630,10 +34504,10 @@ ai
 ai
 ai
 ai
-fY
-nH
-nH
-nH
+ai
+ai
+ai
+ai
 ab
 aQ
 bo
@@ -36191,7 +36065,7 @@ gc
 aX
 jP
 ar
-ew
+ay
 bg
 aa
 bg

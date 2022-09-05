@@ -3881,7 +3881,7 @@
 /area/site53/tram/goc1)
 "rv" = (
 /obj/machinery/door/airlock/glass/security{
-	name = "05 Door";
+	name = "Brig Office";
 	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
@@ -4072,7 +4072,7 @@
 /area/centcom)
 "sm" = (
 /obj/machinery/door/airlock/glass/command{
-	name = "O5 Council";
+	name = "Central Offices";
 	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
@@ -4198,7 +4198,7 @@
 /area/centcom)
 "ta" = (
 /obj/machinery/door/airlock/vault{
-	name = "O5 Archive";
+	name = "Archive";
 	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
@@ -5628,6 +5628,17 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/centcom/goc)
+"BK" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "05blastdoor2";
+	name = "Blast Door"
+	},
+/turf/unsimulated/floor{
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "monotiledark"
+	},
+/area/centcom)
 "BW" = (
 /obj/structure/target_stake,
 /obj/item/target,
@@ -6619,11 +6630,11 @@
 "GI" = (
 /obj/machinery/door/blast/regular{
 	id_tag = "05blastdoor2";
-	name = "05 blast door"
+	name = "Blast Door"
 	},
 /obj/machinery/door/blast/regular{
 	id_tag = "05blastdoor2";
-	name = "05 blast door"
+	name = "Blast Door"
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -7702,7 +7713,7 @@
 "MG" = (
 /obj/machinery/door/blast/regular{
 	id_tag = "05blastdoor2";
-	name = "05 blast door"
+	name = "Blast Door"
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
@@ -8168,7 +8179,7 @@
 /area/centcom)
 "OY" = (
 /obj/machinery/door/airlock/vault{
-	name = "O5 Archive";
+	name = "Archive";
 	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
@@ -8792,7 +8803,7 @@
 /area/centcom/chaos)
 "Tg" = (
 /obj/machinery/door/airlock/glass/security{
-	name = "05 cell";
+	name = "Brig";
 	req_access = list("ACCESS_MTF")
 	},
 /turf/unsimulated/floor{
@@ -21888,7 +21899,7 @@ tq
 Lp
 Lp
 Lp
-Lp
+BK
 tq
 ab
 ab
@@ -22689,7 +22700,7 @@ hO
 hO
 hO
 hO
-Tg
+hO
 hO
 hO
 Tg
@@ -22891,7 +22902,7 @@ hO
 hO
 hO
 hO
-Tg
+hO
 hO
 hO
 Tg
