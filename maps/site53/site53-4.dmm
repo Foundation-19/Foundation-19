@@ -146,15 +146,13 @@
 /area/site53/uez/canteen)
 "ax" = (
 /obj/machinery/light{
-	dir = 8;
-	
+	dir = 8
 	},
 /turf/simulated/open,
 /area/site53/upper_surface/maincontrolroom)
 "ay" = (
 /obj/machinery/light{
-	dir = 4;
-	
+	dir = 4
 	},
 /turf/simulated/open,
 /area/site53/upper_surface/maincontrolroom)
@@ -223,8 +221,7 @@
 /area/site53/uez/hallway)
 "aK" = (
 /obj/machinery/light{
-	dir = 1;
-	
+	dir = 1
 	},
 /obj/structure/flora/pottedplant/minitree,
 /obj/structure/railing/mapped{
@@ -280,8 +277,7 @@
 /area/site53/upper_surface/maincontrolroom)
 "aT" = (
 /obj/machinery/light{
-	dir = 1;
-	
+	dir = 1
 	},
 /obj/structure/flora/pottedplant/minitree,
 /obj/structure/railing/mapped,
@@ -311,8 +307,7 @@
 /area/site53/uez/hallway)
 "aW" = (
 /obj/machinery/light{
-	dir = 1;
-	
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -325,8 +320,7 @@
 /area/site53/upper_surface/commstower)
 "aZ" = (
 /obj/machinery/light{
-	dir = 8;
-	
+	dir = 8
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -361,8 +355,7 @@
 /area/site53/upper_surface/maincontrolroom)
 "bh" = (
 /obj/machinery/light{
-	dir = 4;
-	
+	dir = 4
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -376,15 +369,13 @@
 /area/site53/upper_surface/maincontrolroom)
 "bj" = (
 /obj/machinery/light{
-	dir = 4;
-	
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
 "bk" = (
 /obj/machinery/light{
-	dir = 8;
-	
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -449,8 +440,7 @@
 /area/site53/uez/bridge)
 "bu" = (
 /obj/machinery/light{
-	dir = 1;
-	
+	dir = 1
 	},
 /obj/machinery/papershredder,
 /obj/effect/floor_decal/corner/blue/border{
@@ -512,8 +502,7 @@
 /area/site53/uez/mcrsubstation)
 "bA" = (
 /obj/machinery/light{
-	dir = 1;
-	
+	dir = 1
 	},
 /obj/machinery/photocopier,
 /obj/effect/floor_decal/corner/blue/border{
@@ -573,8 +562,7 @@
 /area/site53/uez/hallway)
 "bI" = (
 /obj/machinery/light{
-	dir = 4;
-	
+	dir = 4
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
@@ -612,6 +600,9 @@
 /obj/effect/landmark/start{
 	name = "Head of Personnel"
 	},
+/obj/structure/bed/chair/office/comfy{
+	dir = 8
+	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "bS" = (
@@ -628,8 +619,7 @@
 "bU" = (
 /obj/machinery/papershredder,
 /obj/machinery/light{
-	dir = 8;
-	
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/site53/uez/hallway)
@@ -643,8 +633,7 @@
 /obj/structure/table/woodentable,
 /obj/item/device/flashlight/lamp/green,
 /obj/machinery/light{
-	dir = 4;
-	
+	dir = 4
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
@@ -757,24 +746,21 @@
 /area/site53/uez/hallway)
 "ct" = (
 /obj/machinery/light{
-	dir = 4;
-	
+	dir = 4
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
 "cu" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/machinery/light{
-	dir = 4;
-	
+	dir = 4
 	},
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "cv" = (
 /obj/machinery/light{
-	dir = 8;
-	
+	dir = 8
 	},
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/item/paper_bin,
@@ -866,8 +852,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light{
-	dir = 8;
-	
+	dir = 8
 	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
@@ -987,8 +972,7 @@
 /area/site53/uez/hallway)
 "cY" = (
 /obj/machinery/light{
-	dir = 8;
-	
+	dir = 8
 	},
 /obj/machinery/door/window/holowindoor{
 	id_tag = "sitedirect";
@@ -1255,8 +1239,7 @@
 "dK" = (
 /obj/structure/closet/secure_closet/mtf/commander,
 /obj/machinery/light{
-	dir = 1;
-	
+	dir = 1
 	},
 /obj/item/folder,
 /obj/item/folder/blue,
@@ -1279,8 +1262,7 @@
 "dN" = (
 /obj/machinery/photocopier,
 /obj/machinery/light{
-	dir = 1;
-	
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/hallway)
@@ -1492,17 +1474,10 @@
 /area/site53/uez/canteen)
 "ev" = (
 /obj/machinery/light{
-	dir = 1;
-	
+	dir = 1
 	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
-"ew" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/open,
-/area/site53/upper_surface/maincontrolroom)
 "ex" = (
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
@@ -1734,10 +1709,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "fj" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 8;
-	icon_state = "officechair_dark"
-	},
 /obj/effect/landmark/start{
 	name = "Guard Commander"
 	},
@@ -1883,8 +1854,7 @@
 /area/site53/upper_surface/maincontrolroom)
 "fG" = (
 /obj/machinery/light{
-	dir = 1;
-	
+	dir = 1
 	},
 /obj/item/device/radio/intercom{
 	frequency = 1017;
@@ -2337,8 +2307,7 @@
 /area/site53/uez/hallway)
 "gQ" = (
 /obj/machinery/light{
-	dir = 4;
-	
+	dir = 4
 	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
@@ -2485,8 +2454,7 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/light{
-	dir = 8;
-	
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -2567,8 +2535,7 @@
 /area/site53/logistics/logisticsbreak)
 "ii" = (
 /obj/machinery/light{
-	dir = 4;
-	
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
@@ -2678,8 +2645,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light{
-	dir = 8;
-	
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
@@ -2781,8 +2747,7 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/light{
-	dir = 8;
-	
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -2840,8 +2805,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/light{
-	dir = 4;
-	
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -2871,8 +2835,7 @@
 /area/site53/logistics/logisticsbreak)
 "jf" = (
 /obj/machinery/light{
-	dir = 1;
-	
+	dir = 1
 	},
 /obj/structure/table/standard,
 /obj/machinery/photocopier{
@@ -2883,8 +2846,7 @@
 /area/site53/logistics/logisticsbreak)
 "jg" = (
 /obj/machinery/light{
-	dir = 1;
-	
+	dir = 1
 	},
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 1
@@ -2894,8 +2856,7 @@
 "jh" = (
 /obj/machinery/lapvend,
 /obj/machinery/light{
-	dir = 1;
-	
+	dir = 1
 	},
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 1
@@ -3043,8 +3004,7 @@
 /area/site53/upper_surface/commstower)
 "jC" = (
 /obj/machinery/light{
-	dir = 8;
-	
+	dir = 8
 	},
 /obj/item/modular_computer/console/preset/civilian{
 	dir = 4
@@ -3601,8 +3561,7 @@
 /area/site53/upper_surface/maincontrolroom)
 "po" = (
 /obj/machinery/light{
-	dir = 4;
-	
+	dir = 4
 	},
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/wood/mahogany,
@@ -3699,8 +3658,7 @@
 /area/site53/uez/hallway)
 "sZ" = (
 /obj/machinery/light{
-	dir = 4;
-	
+	dir = 4
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
@@ -4443,8 +4401,7 @@
 /area/site53/uez/canteen)
 "Sh" = (
 /obj/machinery/light{
-	dir = 4;
-	
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -4456,8 +4413,7 @@
 /area/site53/upper_surface/commstower)
 "SP" = (
 /obj/machinery/light{
-	dir = 8;
-	
+	dir = 8
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
@@ -36109,7 +36065,7 @@ gc
 aX
 jP
 ar
-ew
+ay
 bg
 aa
 bg

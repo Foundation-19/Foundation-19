@@ -7221,8 +7221,8 @@
 	dir = 9
 	},
 /obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = 32
+	dir = 8;
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/storage)
@@ -24080,13 +24080,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
-"gnj" = (
-/obj/structure/hygiene/sink{
-	dir = 1;
-	pixel_y = 8
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/surface/bunker)
 "goj" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -32654,11 +32647,15 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
 "wGn" = (
-/obj/structure/table/standard,
 /obj/machinery/camera/network/entrance{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/obj/structure/hygiene/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
 "wGH" = (
 /obj/machinery/door/airlock/science{
@@ -72611,7 +72608,7 @@ srm
 dvP
 dYS
 aSP
-hTe
+lDl
 aSO
 vPJ
 xJI
@@ -72867,8 +72864,8 @@ grA
 wju
 aSP
 dYS
-gnj
-lDl
+aSP
+hTe
 aSO
 dyu
 nAG
