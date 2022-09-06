@@ -13,3 +13,11 @@
   - rscadd: Corridors link the LCZ and HCZ checkpoints and Engineering directly into
       EZ.
   - rscdel: All the trams (Engineering, LCZ and HCZ) are gone.
+2022-09-06:
+  Mihail-Zub:
+  - rscadd: Gave the HRO a chair.
+  - rscdel: Extra chair from the Guard Commander office
+  - rscdel: Amnesiac pill bottle from the D-class kitchen
+  - bugfix: Put fire alarm on the wall in Engineering.
+  - bugfix: Put the 2nd cell lock button in the Class-D checkpoint on the table.
+  - bugfix: Sink in the Secure Bunker no longer centred.
