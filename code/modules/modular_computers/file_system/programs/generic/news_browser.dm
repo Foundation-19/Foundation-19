@@ -1,6 +1,6 @@
 /datum/computer_file/program/newsbrowser
 	filename = "newsbrowser"
-	filedesc = "SCiPnet/ExoNet News Browser"
+	filedesc = "SCiPnet/Internet News Browser"
 	extended_desc = "This program may be used to view and download news articles from the network."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
