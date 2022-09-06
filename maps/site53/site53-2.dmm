@@ -5815,6 +5815,9 @@
 	dir = 1;
 	icon_state = "warningcorner"
 	},
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
 "aqF" = (
@@ -5823,6 +5826,9 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/portables_connector{
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
@@ -22917,6 +22923,17 @@
 /obj/item/paper_bin,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
+"eeX" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "prototype_chamber_blast2"
+	},
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/vacant/prototype/engine)
 "efe" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -28047,6 +28064,12 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/surface/explorers/surrounding)
+"nwA" = (
+/obj/item/pipe/injector{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/vacant/prototype/engine)
 "nwY" = (
 /obj/machinery/vending/dinnerware,
 /turf/simulated/floor/tiled/monotile,
@@ -40637,7 +40660,7 @@ and
 aaN
 aml
 aml
-aml
+nwA
 aml
 asp
 aml
@@ -40894,7 +40917,7 @@ amh
 aaN
 aaN
 aoT
-apg
+eeX
 apg
 aPj
 aoT
