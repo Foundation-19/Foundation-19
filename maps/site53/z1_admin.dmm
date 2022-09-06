@@ -2889,7 +2889,8 @@
 /obj/item/clothing/suit/storage/vest/tactical,
 /obj/item/gun/projectile/automatic/scp/ak74,
 /obj/item/clothing/head/helmet/nt{
-	name = "temp chaos helm"
+	name = "security helm"
+	desc = "A helmet with 'SECURITY' printed on the back in red lettering."
 	},
 /obj/item/ammo_magazine/scp/ak,
 /obj/item/ammo_magazine/scp/ak,
