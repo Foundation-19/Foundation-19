@@ -16,7 +16,7 @@ jobs:
     if: github.repository == 'Foundation-19/Foundation-19' # to prevent this running on forks
     steps:
       - name: Python setup
-        uses: actions/setup-python@b55428b1882923874294fa556849718a1d7f2ca5
+        uses: actions/setup-python@v4
         with:
           python-version: '3.x'
       - name: Install depends
