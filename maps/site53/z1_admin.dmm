@@ -2358,13 +2358,6 @@
 /obj/structure/bedsheetbin,
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/chaos)
-"ld" = (
-/obj/structure/table/steel_reinforced,
-/obj/random/smokes,
-/obj/random/smokes,
-/obj/random/smokes,
-/turf/simulated/floor/tiled/steel_grid,
-/area/centcom/chaos)
 "le" = (
 /obj/structure/closet{
 	icon_state = "syndicate1";
@@ -2390,22 +2383,14 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/chaos)
 "lv" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced,
-/obj/machinery/door/window/brigdoor/southright{
-	dir = 4
-	},
-/obj/structure/table/rack,
-/obj/item/clothing/mask/chameleon/voice{
-	desc = "A face-covering mask that can be connected to an air supply. It seems to house some odd electronics. Literally a voice changer";
-	name = "SCP-1996-RU"
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/structure/table/rack/dark,
+/obj/item/gun/projectile/automatic/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/effect/floor_decal/industrial/hatch/orange,
+/turf/simulated/floor/tiled/dark,
 /area/centcom/chaos)
 "lw" = (
 /obj/structure/bed/chair/office/light{
@@ -2650,14 +2635,22 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
 "mJ" = (
-/obj/structure/table/rack/dark,
-/obj/item/gun/projectile/automatic/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/effect/floor_decal/industrial/hatch/orange,
-/turf/simulated/floor/tiled/dark,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/brigdoor/southright{
+	dir = 4
+	},
+/obj/structure/table/rack,
+/obj/item/clothing/mask/chameleon/voice{
+	desc = "A face-covering mask that can be connected to an air supply. It seems to house some odd electronics. Literally a voice changer";
+	name = "SCP-1996-RU"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "mK" = (
 /obj/machinery/door/airlock/highsecurity,
@@ -2792,10 +2785,22 @@
 	},
 /area/centcom)
 "nr" = (
-/obj/structure/bed/chair/comfy/black{
-	dir = 4
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/item/clothing/suit/storage/vest/tactical,
+/obj/item/gun/projectile/automatic/scp/ak74,
+/obj/item/clothing/head/helmet/nt{
+	name = "temp chaos helm"
 	},
-/turf/simulated/floor/lino,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/clothing/mask/balaclava/tactical,
+/obj/item/storage/backpack/rucksack/tan,
+/obj/item/gun/projectile/pistol,
+/obj/structure/closet,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark,
 /area/centcom/chaos)
 "ns" = (
 /obj/structure/sign/warning/secure_area/armory{
@@ -2839,13 +2844,10 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
 "ny" = (
-/obj/structure/table/rack/dark,
-/obj/item/gun/projectile/automatic/scp/rpk,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/effect/floor_decal/industrial/hatch/orange,
-/turf/simulated/floor/tiled/dark,
+/obj/structure/bed/chair/comfy/black{
+	dir = 4
+	},
+/turf/simulated/floor/lino,
 /area/centcom/chaos)
 "nz" = (
 /obj/structure/table/rack,
@@ -2902,12 +2904,44 @@
 /obj/item/bodybag,
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
+"nJ" = (
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/chaos)
 "nN" = (
 /obj/effect/landmark{
 	name = "endgame_exit"
 	},
 /turf/unsimulated/beach/sand,
 /area/beach)
+"nO" = (
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/item/clothing/suit/storage/vest/tactical,
+/obj/item/gun/projectile/automatic/scp/ak74,
+/obj/item/clothing/head/helmet/nt{
+	name = "temp chaos helm"
+	},
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/clothing/mask/balaclava/tactical,
+/obj/item/storage/backpack/rucksack/tan,
+/obj/item/gun/projectile/pistol,
+/obj/structure/closet,
+/turf/simulated/floor/tiled/dark,
+/area/centcom/chaos)
 "nQ" = (
 /obj/structure/table/rack,
 /obj/item/clothing/ears/earmuffs,
@@ -2941,24 +2975,6 @@
 	icon_state = "dark"
 	},
 /area/centcom)
-"nW" = (
-/obj/item/storage/belt/holster/security/tactical,
-/obj/item/clothing/accessory/storage/black_vest,
-/obj/item/clothing/suit/storage/vest/tactical,
-/obj/item/gun/projectile/automatic/scp/ak74,
-/obj/item/clothing/head/helmet/nt{
-	name = "temp chaos helm"
-	},
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/clothing/mask/balaclava/tactical,
-/obj/item/storage/backpack/rucksack/tan,
-/obj/item/gun/projectile/pistol,
-/obj/structure/closet,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/dark,
-/area/centcom/chaos)
 "nX" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
@@ -3068,6 +3084,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/tram/car1)
+"on" = (
+/obj/structure/table/steel_reinforced,
+/obj/random/smokes,
+/obj/random/smokes,
+/obj/random/smokes,
+/turf/simulated/floor/tiled/steel_grid,
+/area/centcom/chaos)
 "oo" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
@@ -3108,36 +3131,17 @@
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "ou" = (
-/obj/item/storage/belt/holster/security/tactical,
-/obj/item/clothing/accessory/storage/black_vest,
-/obj/item/clothing/suit/storage/vest/tactical,
-/obj/item/gun/projectile/automatic/scp/ak74,
-/obj/item/clothing/head/helmet/nt{
-	name = "temp chaos helm"
-	},
+/obj/structure/table/rack/dark,
+/obj/item/gun/projectile/automatic/scp/rpk,
 /obj/item/ammo_magazine/scp/ak,
 /obj/item/ammo_magazine/scp/ak,
 /obj/item/ammo_magazine/scp/ak,
-/obj/item/clothing/mask/balaclava/tactical,
-/obj/item/storage/backpack/rucksack/tan,
-/obj/item/gun/projectile/pistol,
-/obj/structure/closet,
+/obj/effect/floor_decal/industrial/hatch/orange,
 /turf/simulated/floor/tiled/dark,
 /area/centcom/chaos)
-"ox" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/turf/simulated/floor/tiled/techfloor,
+"ow" = (
+/obj/machinery/vending/cigarette,
+/turf/simulated/floor/tiled/steel_grid,
 /area/centcom/chaos)
 "oy" = (
 /obj/machinery/button/blast_door{
@@ -24643,7 +24647,7 @@ di
 kx
 kM
 kM
-nr
+ny
 kM
 kM
 di
@@ -24844,10 +24848,10 @@ cw
 di
 kx
 kM
-nr
+ny
 kY
-nr
-nr
+ny
+ny
 di
 eU
 eU
@@ -26065,7 +26069,7 @@ eU
 kE
 di
 nc
-lv
+mJ
 nd
 no
 di
@@ -26462,7 +26466,7 @@ kE
 lX
 eU
 lb
-ld
+on
 eU
 lE
 eU
@@ -26660,7 +26664,7 @@ jS
 jT
 jS
 di
-eU
+ow
 eU
 eU
 eU
@@ -26876,9 +26880,9 @@ oI
 nd
 nd
 nd
-ou
+nO
 nd
-ou
+nO
 di
 cw
 cw
@@ -27078,9 +27082,9 @@ oI
 nd
 nd
 nd
-ou
+nO
 nd
-ou
+nO
 di
 cw
 cw
@@ -27280,9 +27284,9 @@ nd
 nd
 nd
 nd
-ou
+nO
 nd
-ou
+nO
 di
 cw
 cw
@@ -27482,9 +27486,9 @@ nd
 nd
 nd
 nd
-ou
+nO
 nd
-nW
+nr
 di
 cw
 cw
@@ -27686,7 +27690,7 @@ nd
 nd
 nd
 nd
-ou
+nO
 di
 cw
 cw
@@ -28491,13 +28495,13 @@ di
 TQ
 nz
 nz
-ox
+nJ
 di
 nd
 nd
 nd
-mJ
-mJ
+lv
+lv
 di
 cw
 as
@@ -28900,8 +28904,8 @@ di
 nd
 nd
 nd
-ny
-ny
+ou
+ou
 di
 cw
 as
