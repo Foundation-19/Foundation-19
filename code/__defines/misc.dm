@@ -126,17 +126,17 @@
 #define BOMBCAP_HEAVY_RADIUS (config.max_explosion_range / 2)
 #define BOMBCAP_LIGHT_RADIUS (config.max_explosion_range)
 #define BOMBCAP_FLASH_RADIUS (config.max_explosion_range * 1.5)
-									// NTNet module-configuration values. Do not change these. If you need to add another use larger number (5..6..7 etc)
-#define NTNET_SOFTWAREDOWNLOAD 1 	// Downloads of software from NTNet
+									// SCiPnet module-configuration values. Do not change these. If you need to add another use larger number (5..6..7 etc)
+#define NTNET_SOFTWAREDOWNLOAD 1 	// Downloads of software from SCiPnet
 #define NTNET_PEERTOPEER 2			// P2P transfers of files between devices
 #define NTNET_COMMUNICATION 3		// Communication (messaging)
 #define NTNET_SYSTEMCONTROL 4		// Control of various systems, RCon, air alarm control, etc.
 
-// NTNet transfer speeds, used when downloading/uploading a file/program.
+// SCiPnet transfer speeds, used when downloading/uploading a file/program.
 #define NTNETSPEED_LOWSIGNAL 0.5	// GQ/s transfer speed when the device is wirelessly connected and on Low signal
 #define NTNETSPEED_HIGHSIGNAL 1	// GQ/s transfer speed when the device is wirelessly connected and on High signal
 #define NTNETSPEED_ETHERNET 2		// GQ/s transfer speed when the device is using wired connection
-#define NTNETSPEED_DOS_AMPLIFICATION 5	// Multiplier for Denial of Service program. Resulting load on NTNet relay is this multiplied by NTNETSPEED of the device
+#define NTNETSPEED_DOS_AMPLIFICATION 5	// Multiplier for Denial of Service program. Resulting load on SCiPnet relay is this multiplied by NTNETSPEED of the device
 
 // Program bitflags
 #define PROGRAM_ALL 		(~0)
@@ -150,7 +150,7 @@
 #define PROGRAM_STATE_BACKGROUND 	1
 #define PROGRAM_STATE_ACTIVE 		2
 
-// Caps for NTNet logging. Less than 10 would make logging useless anyway, more than 500 may make the log browser too laggy. Defaults to 100 unless user changes it.
+// Caps for SCiPnet logging. Less than 10 would make logging useless anyway, more than 500 may make the log browser too laggy. Defaults to 100 unless user changes it.
 #define MAX_NTNET_LOGS 500
 #define MIN_NTNET_LOGS 10
 

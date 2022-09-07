@@ -1,10 +1,10 @@
 /datum/computer_file/program/ntnetdownload
-	filename = "ntndownloader"
-	filedesc = "NTNet Software Download Tool"
+	filename = "scipdownloader"
+	filedesc = "SCiPnet Software Download Tool"
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
 	program_menu_icon = "arrowthickstop-1-s"
-	extended_desc = "This program allows downloads of software from official NT repositories"
+	extended_desc = "This program allows downloads of software from official SCP repositories"
 	unsendable = TRUE
 	undeletable = TRUE
 	size = 4
@@ -44,7 +44,7 @@
 	ui_header = "downloader_running.gif"
 
 	if(PRG in ntnet_global.available_station_software)
-		generate_network_log("Began downloading file [PRG.filename].[PRG.filetype] from NTNet Software Repository.")
+		generate_network_log("Began downloading file [PRG.filename].[PRG.filetype] from SCiPnet Software Repository.")
 		hacked_download = 0
 	else if(PRG in ntnet_global.available_antag_software)
 		generate_network_log("Began downloading file **ENCRYPTED**.[PRG.filetype] from unspecified server.")

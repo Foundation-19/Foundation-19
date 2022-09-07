@@ -1,14 +1,14 @@
 /datum/computer_file/program/chatclient
-	filename = "ntnrc_client"
-	filedesc = "NTNet Relay Chat Client"
+	filename = "scprc_client"
+	filedesc = "SCiPnet Relay Chat Client"
 	program_icon_state = "command"
 	program_key_state = "med_key"
 	program_menu_icon = "comment"
-	extended_desc = "This program allows communication over NTNRC network"
+	extended_desc = "This program allows communication over the SCPRC network"
 	size = 8
 	requires_ntnet = 1
 	requires_ntnet_feature = NTNET_COMMUNICATION
-	network_destination = "NTNRC server"
+	network_destination = "SCPRC server"
 	ui_header = "ntnrc_idle.gif"
 	available_on_ntnet = 1
 	tgui_id = "NtosNetChat"
@@ -116,7 +116,7 @@
 			var/datum/computer_file/data/logfile = new /datum/computer_file/data/logfile()
 			// Now we will generate HTML-compliant file that can actually be viewed/printed.
 			logfile.filename = logname
-			logfile.stored_data = "\[b\]Logfile dump from NTNRC channel [channel.title]\[/b\]\[BR\]"
+			logfile.stored_data = "\[b\]Logfile dump from SCPRC channel [channel.title]\[/b\]\[BR\]"
 			for(var/logstring in channel.messages)
 				logfile.stored_data = "[logfile.stored_data][logstring]\[BR\]"
 			logfile.stored_data = "[logfile.stored_data]\[b\]Logfile dump completed.\[/b\]"

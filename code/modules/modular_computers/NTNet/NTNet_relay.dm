@@ -1,6 +1,6 @@
 // Relays don't handle any actual communication. Global NTNet datum does that, relays only tell the datum if it should or shouldn't work.
 /obj/machinery/ntnet_relay
-	name = "NTNet Quantum Relay"
+	name = "SCiPnet Quantum Relay"
 	desc = "A very complex router and transmitter capable of connecting electronic devices together. Looks fragile."
 	use_power = POWER_USE_ACTIVE
 	active_power_usage = 20000 //20kW, apropriate for machine that keeps massive cross-Zlevel wireless network operational.
@@ -11,8 +11,8 @@
 	construct_state = /decl/machine_construction/default/panel_closed
 	uncreated_component_parts = null
 	stat_immune = 0
-	machine_name = "\improper NTNet quantum relay"
-	machine_desc = "Maintains a copy of proprietary software used to provide NTNet service to all valid devices in the region. Essentially a huge router."
+	machine_name = "\improper SCiPnet quantum relay"
+	machine_desc = "Maintains a copy of proprietary software used to provide SCiPnet service to all valid devices in the region. Essentially a huge router."
 	var/datum/ntnet/NTNet = null // This is mostly for backwards reference and to allow varedit modifications from ingame.
 	var/enabled = 1				// Set to 0 if the relay was turned off
 	var/dos_failure = 0			// Set to 1 if the relay failed due to (D)DoS attack

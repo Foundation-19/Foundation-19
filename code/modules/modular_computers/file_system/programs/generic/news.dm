@@ -6,7 +6,7 @@
 	filedesc = "Newscast"
 	program_icon_state = "generic"
 	program_menu_icon = "image"
-	extended_desc = "A newsfeed browser that connects to standard channels, including personalized recommendations that you can't turn off! Requires a connection to NTNet."
+	extended_desc = "A newsfeed browser that connects to standard channels, including personalized recommendations that you can't turn off! Requires a connection to SCiPnet."
 	size = 4 // Cloud-based, but requires the software to actually fetch the data
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE

@@ -1,7 +1,7 @@
 /datum/computer_file/program/email_administration
 	filename = "emailadmin"
 	filedesc = "Email Administration Utility"
-	extended_desc = "This program may be used to administrate NTNet's emailing service."
+	extended_desc = "This program may be used to administrate SCiPnets's emailing service."
 	program_icon_state = "comm_monitor"
 	program_key_state = "generic_key"
 	program_menu_icon = "mail-open"

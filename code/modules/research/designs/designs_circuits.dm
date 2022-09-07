@@ -718,7 +718,7 @@
 	sort_string = "VAAAD"
 
 /datum/design/circuit/ntnet_relay
-	name = "NTNet Quantum Relay"
+	name = "SCiPnet Quantum Relay"
 	id = "ntnet_relay"
 	req_tech = list(TECH_DATA = 4)
 	build_path = /obj/item/stock_parts/circuitboard/ntnet_relay
