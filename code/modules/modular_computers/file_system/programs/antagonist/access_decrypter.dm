@@ -106,7 +106,7 @@
 	return CPU?.processing_power * skill_speed_modifier
 
 /datum/nano_module/program/access_decrypter
-	name = "NTNet Access Decrypter"
+	name = "SCiPnet Access Decrypter"
 
 /datum/nano_module/program/access_decrypter/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.default_state)
 	if(!ntnet_global)

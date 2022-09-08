@@ -7,7 +7,7 @@
 		shutdown_computer()
 		return 0
 
-	if(active_program && active_program.requires_ntnet && !get_ntnet_status(active_program.requires_ntnet_feature)) // Active program requires NTNet to run but we've just lost connection. Crash.
+	if(active_program && active_program.requires_ntnet && !get_ntnet_status(active_program.requires_ntnet_feature)) // Active program requires SCiPnet to run but we've just lost connection. Crash.
 		active_program.event_networkfailure(0)
 
 	for(var/datum/computer_file/program/P in idle_threads)
@@ -219,7 +219,7 @@
 		to_chat(user, "<span class='notice'>\The [src] displays a \"Maximal CPU load reached. Unable to run another program.\" error</span>")
 		return
 
-	if(P.requires_ntnet && !get_ntnet_status(P.requires_ntnet_feature)) // The program requires NTNet connection, but we are not connected to NTNet.
+	if(P.requires_ntnet && !get_ntnet_status(P.requires_ntnet_feature)) // The program requires SCiPnet connection, but we are not connected to SCiPnet.
 		to_chat(user, "<span class='danger'>\The [src]'s screen shows \"NETWORK ERROR - Unable to connect to SolNet. Please retry. If problem persists contact your system administrator.\" warning.</span>")
 		return
 

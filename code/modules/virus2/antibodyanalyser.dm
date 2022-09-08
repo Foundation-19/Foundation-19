@@ -1,6 +1,6 @@
 /obj/machinery/disease2/antibodyanalyser
 	name = "antibody analyser"
-	desc = "An advanced machine that analyses pure antibody samples and stores the structure of them on the ExoNet in exchange for cargo points."
+	desc = "An advanced machine that analyses pure antibody samples and stores the structure of them on the SCiPnet in exchange for cargo points."
 	icon = 'icons/obj/virology.dmi'
 	icon_state = "analyser"
 	anchored = TRUE
@@ -44,7 +44,7 @@
 				if(unknown_antibodies.len)
 					var/payout = unknown_antibodies.len * 45
 					supply_controller.add_points_from_source(payout, "virology")
-					ping("\The [src] pings, \"Successfully uploaded new antibodies to the ExoNet.\"")
+					ping("\The [src] pings, \"Successfully uploaded new antibodies to the SCiPnet.\"")
 					known_antibodies |= unknown_antibodies //Add the new antibodies to list
 				else
 					src.state("\The [src] buzzes, \"Failed to identify any new antibodies.\"")

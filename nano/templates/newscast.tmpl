@@ -19,7 +19,7 @@
 					<td>{{:helper.link(value.name, null, {'view_channel' : value.ref})}}
 				{{/if}}
 			{{empty}}
-				<p><font color='red'><h2><b>NO CHANNELS FOUND</b></h2>Couldn't locate any channels on the local NTNet instance. Please try again in a few minutes.</font></p>
+				<p><font color='red'><h2><b>NO CHANNELS FOUND</b></h2>Couldn't locate any channels on the local SCiPnet instance. Please try again in a few minutes.</font></p>
 			{{/for}}
 		</table>
 	{{else data.prog_state == 2}} <!-- NEWSCAST_VIEW_CHANNEL - Show the contents of the active channel -->
@@ -50,5 +50,5 @@
 		{{:helper.link("Return", 'arrowreturnthick-1-w', {'return_to_home' : 1})}}
 	{{/if}}
 {{else}}
-	<p><font color='red'><h2><b>NO NETWORK FOUND</b></h2>Couldn't fetch news data from a feed network. Ensure you have a connection to NTNet and there is a network broadcaster in your sector.</font></p>
+	<p><font color='red'><h2><b>NO NETWORK FOUND</b></h2>Couldn't fetch news data from a feed network. Ensure you have a connection to SCiPnet and there is a network broadcaster in your sector.</font></p>
 {{/if}}
