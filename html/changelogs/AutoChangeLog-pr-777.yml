@@ -1,5 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - bugfix: Modular computers and their programs/components refer to SCP instead of
-      NT.
