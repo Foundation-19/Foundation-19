@@ -2459,7 +2459,7 @@
 "lG" = (
 /obj/machinery/door/airlock{
 	name = "Strange airlock";
-	req_access = list(ACCESS_PSIADVISOR)
+	req_access = list("ACCESS_PSIADVISOR")
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/chaos)
