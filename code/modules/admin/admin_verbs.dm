@@ -299,7 +299,8 @@ var/list/admin_verbs_mod = list(
 	/client/proc/aooc,
 	/datum/admins/proc/sendFax,
 	/client/proc/check_fax_history,
-	/datum/admins/proc/paralyze_mob // right-click paralyze ,
+	/datum/admins/proc/paralyze_mob, // right-click paralyze ,
+	/client/proc/cmd_admin_say
 )
 var/list/admin_verbs_mentors = list(
 	/client/proc/cmd_mentor_say,
