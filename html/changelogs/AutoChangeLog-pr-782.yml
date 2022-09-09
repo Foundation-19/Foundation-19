@@ -1,0 +1,16 @@
+author: Jpog2010
+delete-after: true
+changes:
+  - rscadd: Added lamps to most of the dark corners ( now the LCZ is almost completely
+      illuminated ).
+  - rscadd: Added many items to all the rooms of the LCZ, such as papers, pens, food,
+      plants, chairs, tables, and other minor stuff.
+  - bugfix: Replaced the walls in unused containment from titanium to steel.
+  - bugfix: Fixed area markings. ( some areas were going over the room borders )
+  - bugfix: Added walls where they should be. ( in the corners of some rooms, you
+      could see rocks )
+  - bugfix: Added the correct floor tiles under most of the doors.
+  - bugfix: Added names for the doors of the containment chambers.
+  - bugfix: Moved some signs and fire-safety closets. ( now they are not overlapped
+      by lights )
+  - bugfix: Replaced a couple of doors.
