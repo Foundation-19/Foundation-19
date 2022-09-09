@@ -849,7 +849,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "Medical Reception";
-	send_access = list("ACCESS_MEDICAL_LEVEL1")
+	send_access = list(list("ACCESS_MEDICAL_LEVEL1"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception)
@@ -4896,11 +4896,11 @@
 /turf/simulated/floor/tiled,
 /area/site53/uez/equipmentroom)
 "nI" = (
+/obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
 	department = "Entrance Zone Commander's Office";
-	send_access = list("ACCESS_SECURITY_LEVEL4")
+	send_access = list(list("ACCESS_SECURITY_LEVEL4"))
 	},
-/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/senioragentoffice)
 "nJ" = (
@@ -5900,14 +5900,14 @@
 /turf/simulated/wall/prepainted,
 /area/site53/uez/o5repoffice)
 "rC" = (
-/obj/machinery/photocopier/faxmachine{
-	department = "O5 Representative's Office";
-	send_access = list("ACCESS_ADMIN_LEVEL5")
-	},
 /obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/table/woodentable/walnut,
+/obj/machinery/photocopier/faxmachine{
+	department = "O5 Representative's Office";
+	send_access = list(list("ACCESS_ADMIN_LEVEL5"))
+	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "rD" = (
@@ -6456,12 +6456,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
 "tq" = (
-/obj/machinery/photocopier/faxmachine{
-	department = "LCZ Zone Commander's Office";
-	send_access = list("ACCESS_SECURITY_LEVEL4")
-	},
 /obj/effect/floor_decal/corner/blue/border,
 /obj/structure/table/reinforced,
+/obj/machinery/photocopier/faxmachine{
+	department = "LCZ Zone Commander's Office";
+	send_access = list(list("ACCESS_SECURITY_LEVEL4"))
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
 "tr" = (
@@ -7873,7 +7873,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "GOI Office";
-	send_access = list("ACCESS_ADMIN_LEVEL1")
+	send_access = list(list("ACCESS_ADMIN_LEVEL1"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)

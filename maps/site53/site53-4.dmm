@@ -414,7 +414,7 @@
 /obj/structure/table/woodentable,
 /obj/machinery/photocopier/faxmachine{
 	department = "Head of Personnel's Office";
-	send_access = list("ACCESS_ADMIN_LEVEL4")
+	send_access = list(list("ACCESS_ADMIN_LEVEL4"))
 	},
 /turf/simulated/floor/wood,
 /area/site53/uez/hallway)
@@ -454,7 +454,7 @@
 "bv" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Main Control Room";
-	send_access = list("ACCESS_ADMIN_LEVEL1")
+	send_access = list(list("ACCESS_ADMIN_LEVEL1"))
 	},
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/blue/border{
@@ -711,7 +711,7 @@
 "cm" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Site Director's Office";
-	send_access = list("ACCESS_ADMIN_LEVEL5")
+	send_access = list(list("ACCESS_ADMIN_LEVEL5"))
 	},
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/carpet/purple,
@@ -1039,7 +1039,7 @@
 "dj" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Research Director's Office";
-	send_access = list("ACCESS_SCIENCE_LEVEL5")
+	send_access = list(list("ACCESS_SCIENCE_LEVEL5"))
 	},
 /obj/machinery/light{
 	dir = 1
@@ -1250,7 +1250,7 @@
 "dL" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Guard Commander's Office";
-	send_access = list("ACCESS_SECURITY_LEVEL5")
+	send_access = list(list("ACCESS_SECURITY_LEVEL5"))
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techmaint,
@@ -1383,7 +1383,7 @@
 "ek" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Chief Medical Officer's Office";
-	send_access = list("ACCESS_MEDICAL_LEVEL5")
+	send_access = list(list("ACCESS_MEDICAL_LEVEL5"))
 	},
 /obj/machinery/camera/autoname{
 	network = list("Entrance Zone Network")
@@ -1394,7 +1394,7 @@
 "el" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Chief Engineer's Office";
-	send_access = list("ACCESS_ENGINEERING_LEVEL5")
+	send_access = list(list("ACCESS_ENGINEERING_LEVEL5"))
 	},
 /obj/machinery/camera/autoname{
 	network = list("Entrance Zone Network")
@@ -2763,7 +2763,7 @@
 "iT" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Logistics Breakroom";
-	send_access = list("ACCESS_ADMIN_LEVEL1")
+	send_access = list(list("ACCESS_ADMIN_LEVEL1"))
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -4105,7 +4105,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "Comms Tower";
-	send_access = list("ACCESS_ADMIN_LEVEL2")
+	send_access = list(list("ACCESS_ADMIN_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -4482,7 +4482,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "Command Meeting Room";
-	send_access = list("ACCESS_ADMIN_LEVEL4")
+	send_access = list(list("ACCESS_ADMIN_LEVEL4"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)

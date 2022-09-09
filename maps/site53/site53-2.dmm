@@ -5174,7 +5174,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "Engineering Monitoring";
-	send_access = list("ACCESS_ENGINEERING_LEVEL1")
+	send_access = list(list("ACCESS_ENGINEERING_LEVEL1"))
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/controlroom)
@@ -13480,7 +13480,10 @@
 	icon_state = "0-4"
 	},
 /obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine,
+/obj/machinery/photocopier/faxmachine{
+	department = "UHCZ Checkpoint";
+	send_access = list(list("ACCESS_SECURITY_LEVEL3"))
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
 "aLa" = (
@@ -16247,7 +16250,7 @@
 "aUg" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "LCZ Security Center";
-	send_access = list("ACCESS_SECURITY_LEVEL1")
+	send_access = list(list("ACCESS_SECURITY_LEVEL1"))
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
@@ -16672,7 +16675,10 @@
 /area/site53/uhcz/securitypost)
 "aVw" = (
 /obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine,
+/obj/machinery/photocopier/faxmachine{
+	department = "UHCZ Checkpoint";
+	send_access = list(list("ACCESS_SECURITY_LEVEL3"))
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "aVx" = (
@@ -22037,7 +22043,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "Heavy Containment Zone Commander";
-	send_access = list("ACCESS_SECURITY_LEVEL4")
+	send_access = list(list("ACCESS_SECURITY_LEVEL4"))
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
@@ -23277,7 +23283,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/machinery/photocopier/faxmachine{
 	department = "Containment Engineer's Office";
-	send_access = list("ACCESS_ENGINEERING_LEVEL4")
+	send_access = list(list("ACCESS_ENGINEERING_LEVEL4"))
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/containment_engineer)
@@ -26166,7 +26172,7 @@
 "kiO" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "General Purpose Chamber";
-	send_access = list("ACCESS_SCIENCE_LEVEL1")
+	send_access = list(list("ACCESS_SCIENCE_LEVEL1"))
 	},
 /obj/machinery/firealarm{
 	dir = 8;
@@ -29269,7 +29275,10 @@
 	dir = 1
 	},
 /obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine,
+/obj/machinery/photocopier/faxmachine{
+	department = "UHCZ Checkpoint";
+	send_access = list(list("ACCESS_SECURITY_LEVEL3"))
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "pPO" = (
@@ -30725,7 +30734,7 @@
 /obj/machinery/light,
 /obj/machinery/photocopier/faxmachine{
 	department = "HCZ Security Center";
-	send_access = list("ACCESS_SECURITY_LEVEL3")
+	send_access = list(list("ACCESS_SECURITY_LEVEL3"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/hczguardgear)
@@ -31561,7 +31570,7 @@
 "urN" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "LCZ Security Office";
-	send_access = list("ACCESS_SECURITY_LEVEL1")
+	send_access = list(list("ACCESS_SECURITY_LEVEL1"))
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
@@ -33396,7 +33405,7 @@
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-106 Observation";
 	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
-	send_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL3")
+	send_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
@@ -33767,7 +33776,7 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "HCZ Security Center";
-	send_access = list("ACCESS_SECURITY_LEVEL3")
+	send_access = list(list("ACCESS_SECURITY_LEVEL3"))
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
