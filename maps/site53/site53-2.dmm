@@ -5173,7 +5173,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
-	department = "Engineering Monitoring"
+	department = "Engineering Monitoring";
+	send_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/controlroom)
@@ -23283,14 +23284,6 @@
 "eQq" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/llcz/entrance_checkpoint)
-"eQX" = (
-/obj/machinery/photocopier/faxmachine{
-	department = "SCP-106 Observation";
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
-	},
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp106observ)
 "eRk" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -30728,12 +30721,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
 "sHS" = (
-/obj/machinery/photocopier/faxmachine{
-	department = "HCZ Security Center";
-	send_access = list(203)
-	},
 /obj/structure/table/standard,
 /obj/machinery/light,
+/obj/machinery/photocopier/faxmachine{
+	department = "HCZ Security Center";
+	send_access = list("ACCESS_SECURITY_LEVEL3")
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/hczguardgear)
 "sIW" = (
@@ -33401,8 +33394,9 @@
 	},
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
-	department = "SCP-106 Containment Unit";
-	send_access = list(203)
+	department = "SCP-106 Observation";
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
+	send_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL3")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
@@ -33773,9 +33767,9 @@
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "HCZ Security Center";
-	send_access = list(203)
+	send_access = list("ACCESS_SECURITY_LEVEL3")
 	},
-/turf/unsimulated/mineral,
+/turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "xZE" = (
 /obj/effect/floor_decal/corner/yellow{
@@ -87449,7 +87443,7 @@ aBs
 wvc
 ahS
 arr
-eQX
+aBf
 aBs
 nVI
 nVI

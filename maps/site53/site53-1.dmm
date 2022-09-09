@@ -5673,7 +5673,7 @@
 "oD" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-049 Observation";
-	send_access = list(list(203,304))
+	send_access = list("ACCESS_SCIENCE_LEVEL3","ACCESS_SECURITY_LEVEL3")
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled,
@@ -9814,7 +9814,7 @@
 "zU" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "D-Class Primary Security Post";
-	send_access = list(202)
+	send_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
@@ -16218,10 +16218,6 @@
 /area/site53/llcz/dclass/cellbubble)
 "SP" = (
 /obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "SCP-247 Observation";
-	send_access = list(303)
-	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
@@ -16916,10 +16912,6 @@
 /area/site53/lowertram/archive)
 "Vl" = (
 /obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "SCP-247 Observation";
-	send_access = list(303)
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
 "Vm" = (
@@ -18014,7 +18006,7 @@
 	},
 /obj/machinery/photocopier/faxmachine{
 	department = "Archive";
-	send_access = list(500)
+	send_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/lowertram/archive)
@@ -18117,12 +18109,12 @@
 /area/site53/llcz/dclass/assignmentbubble)
 "Za" = (
 /obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "SCP-008 Observation";
-	send_access = list(204)
-	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/machinery/photocopier/faxmachine{
+	department = "SCP-008 Observation";
+	send_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL3")
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)

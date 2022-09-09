@@ -4898,7 +4898,7 @@
 "nI" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Entrance Zone Commander's Office";
-	send_access = list(204)
+	send_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
@@ -6458,7 +6458,7 @@
 "tq" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "LCZ Zone Commander's Office";
-	send_access = list(204)
+	send_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /obj/effect/floor_decal/corner/blue/border,
 /obj/structure/table/reinforced,
@@ -7872,7 +7872,8 @@
 	},
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
-	department = "GOI Office"
+	department = "GOI Office";
+	send_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)

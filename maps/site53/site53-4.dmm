@@ -4481,7 +4481,8 @@
 "UU" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
-	department = "Command Meeting Room"
+	department = "Command Meeting Room";
+	send_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
