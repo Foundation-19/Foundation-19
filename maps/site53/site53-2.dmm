@@ -34391,7 +34391,9 @@
 /area/site53/llcz/scp012)
 "wRi" = (
 /obj/structure/table/woodentable/mahogany,
-/obj/machinery/photocopier/faxmachine,
+/obj/machinery/photocopier/faxmachine{
+	req_access = list("ACCESS_CHAPEL_STORAGE")
+	},
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
 "wRp" = (

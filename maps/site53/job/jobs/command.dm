@@ -221,7 +221,8 @@ ut // COMMAND
 
 	access = list(
 		access_com_comms,
-		access_adminlvl1
+		access_adminlvl1,
+		access_chapel_office
 	)
 
 	minimal_access = list()
