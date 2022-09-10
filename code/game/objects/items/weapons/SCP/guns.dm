@@ -194,6 +194,7 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/svd
 	allowed_magazines = /obj/item/ammo_magazine/scp/svd
+	var/use_launcher = 0
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, use_launcher=null, one_hand_penalty=5, burst_accuracy=null, dispersion=null)
