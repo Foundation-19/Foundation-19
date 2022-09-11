@@ -54,12 +54,12 @@
 	hud_icon = "hudcrewman"
 
 	access = list(
-		access_civ_comms,
-		access_adminlvl1,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_medicallvl1,
-		access_medicallvl2,
+		ACCESS_CIV_COMMS,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
 	)
 
 	minimal_access = list()
@@ -83,13 +83,13 @@
 	allowed_ranks = list(/datum/mil_rank/civ/classb)
 
 	access = list(
-		access_adminlvl1,
-		access_adminlvl2,
-		access_log_comms,
-		access_maint_tunnels,
-		access_emergency_storage,
-		access_cargo,
-		access_mailsorting
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_LOG_COMMS,
+		ACCESS_MAINT_TUNNELS,
+		ACCESS_EMERGENCY_STORAGE,
+		ACCESS_CARGO,
+		ACCESS_MAILSORTING
 	)
 	minimal_access = list()
 
@@ -124,13 +124,13 @@
 	hud_icon = "huddecktechnician"
 
 	access = list(
-		access_log_comms,
-		access_maint_tunnels,
-		access_emergency_storage,
-		access_cargo,
-		access_cargo_bot,
-		access_adminlvl1,
-		access_mailsorting
+		ACCESS_LOG_COMMS,
+		ACCESS_MAINT_TUNNELS,
+		ACCESS_EMERGENCY_STORAGE,
+		ACCESS_CARGO,
+		ACCESS_CARGO_BOT,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_MAILSORTING
 	)
 	minimal_access = list()
 
@@ -170,10 +170,10 @@
 	hud_icon = "hudsanitationtechnician"
 
 	access = list(
-		access_civ_comms,
-		access_sciencelvl1,
-		access_medicallvl1,
-		access_dclassjanitorial
+		ACCESS_CIV_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_DCLASSJANITORIAL
 )
 	minimal_access = list()
 
@@ -194,9 +194,9 @@
 	hud_icon = "hudcook"
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 
-	access = list(access_civ_comms,
-		access_dclasskitchen,
-		access_dclassbotany
+	access = list(ACCESS_CIV_COMMS,
+		ACCESS_DCLASSKITCHEN,
+		ACCESS_DCLASSBOTANY
 	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 	minimal_access = list()
 
@@ -221,9 +221,9 @@
 	hud_icon = "hudbartender"
 
 	access = list(
-		access_civ_comms,
-		access_dclasskitchen,
-		access_dclassbotany
+		ACCESS_CIV_COMMS,
+		ACCESS_DCLASSKITCHEN,
+		ACCESS_DCLASSBOTANY
 	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 	minimal_access = list()
 
@@ -250,22 +250,22 @@
 	hud_icon = "hudarchivist"
 
 	access = list(
-		access_civ_comms,
-		access_sci_comms,
-		access_med_comms,
-		access_adminlvl1,
-		access_adminlvl2,
-		access_adminlvl3,
-		access_adminlvl4,
-		access_keyauth,
-		access_research,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3,
-		access_sciencelvl4,
-		access_medicallvl1,
-		access_medicallvl2,
-		access_medicallvl3,
-		access_medicallvl4
+		ACCESS_CIV_COMMS,
+		ACCESS_SCI_COMMS,
+		ACCESS_MED_COMMS,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_KEYAUTH,
+		ACCESS_RESEARCH,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_SCIENCE_LVL4,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
+		ACCESS_MEDICAL_LVL3,
+		ACCESS_MEDICAL_LVL4
 	)
 	minimal_access = list()

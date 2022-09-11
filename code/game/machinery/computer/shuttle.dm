@@ -32,7 +32,7 @@
 			to_chat(user, "The access level of [W:registered_name]\'s card is not high enough. ")
 			return
 
-		if(!(access_bridge in W:access)) //doesn't have this access
+		if(!(ACCESS_BRIDGE in W:access)) //doesn't have this access
 			to_chat(user, "The access level of [W:registered_name]\'s card is not high enough. ")
 			return 0
 

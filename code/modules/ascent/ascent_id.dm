@@ -2,9 +2,9 @@
 /obj/item/card/id/ascent
 	name = "alien chip"
 	icon = 'icons/obj/ascent.dmi'
-	icon_state = "access_card"
+	icon_state = "ACCESS_CARD"
 	desc = "A slender, complex chip of alien circuitry."
-	access = list(access_ascent)
+	access = list(ACCESS_ASCENT)
 
 /obj/item/card/id/ascent/GetAccess()
 	var/mob/living/carbon/human/H = loc

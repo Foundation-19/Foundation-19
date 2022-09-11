@@ -10,463 +10,393 @@
 /*****************
 * Station access *
 *****************/
-/var/const/access_security = "ACCESS_SECURITY" //1
+
 /datum/access/security
-	id = access_security
+	id = ACCESS_SECURITY
 	desc = "Security Equipment"
 	region = ACCESS_REGION_SECURITY
 
-/var/const/access_brig = "ACCESS_BRIG" // Brig timers and permabrig 2
 /datum/access/holding
-	id = access_brig
+	id = ACCESS_BRIG
 	desc = "Holding Cells"
 	region = ACCESS_REGION_SECURITY
 
-/var/const/access_armory = "ACCESS_ARMORY" //3
 /datum/access/armory
-	id = access_armory
+	id = ACCESS_ARMORY
 	desc = "Armory"
 	region = ACCESS_REGION_SECURITY
 
-/var/const/access_forensics_lockers = "ACCESS_FORENSICS" //4
 /datum/access/forensics_lockers
-	id = access_forensics_lockers
+	id = ACCESS_FORENSICS_LOCKERS
 	desc = "Forensics"
 	region = ACCESS_REGION_SECURITY
 
-/var/const/access_medical = "ACCESS_MEDICAL" //5
 /datum/access/medical
-	id = access_medical
+	id = ACCESS_MEDICAL
 	desc = "Medical"
 	region = ACCESS_REGION_MEDBAY
 
-/var/const/access_morgue = "ACCESS_MORGUE" //6
 /datum/access/morgue
-	id = access_morgue
+	id = ACCESS_MORGUE
 	desc = "Morgue"
 	region = ACCESS_REGION_MEDBAY
 
-/var/const/access_tox = "ACCESS_TOXINS" //7
 /datum/access/tox
-	id = access_tox
+	id = ACCESS_TOX
 	desc = "Research Labs"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_tox_storage = "ACCESS_TOX_STORAGE" //8
 /datum/access/tox_storage
-	id = access_tox_storage
+	id = ACCESS_TOX_STORAGE
 	desc = "Toxins Lab"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_engine = "ACCESS_ENGINEERING" //10
 /datum/access/engine
-	id = access_engine
+	id = ACCESS_ENGINE
 	desc = "Engineering"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_engine_equip = "ACCESS_ENGINE_EQUIP" //11
 /datum/access/engine_equip
-	id = access_engine_equip
+	id = ACCESS_ENGINE_EQUIP
 	desc = "Engine Room"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_maint_tunnels = "ACCESS_MAINT" //12
 /datum/access/maint_tunnels
-	id = access_maint_tunnels
+	id = ACCESS_MAINT_TUNNELS
 	desc = "Maintenance"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_external_airlocks = "ACCESS_EXTERNAL" //13
 /datum/access/external_airlocks
-	id = access_external_airlocks
+	id = ACCESS_EXTERNAL_AIRLOCKS
 	desc = "External Airlocks"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_emergency_storage = "ACCESS_EMERGENCY_STORAGE" //14
 /datum/access/emergency_storage
-	id = access_emergency_storage
+	id = ACCESS_EMERGENCY_STORAGE
 	desc = "Emergency Storage"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_change_ids = "ACCESS_CHANGE_ID" //15
 /datum/access/change_ids
-	id = access_change_ids
+	id = ACCESS_CHANGE_IDS
 	desc = "ID Computer"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_ai_upload = "ACCESS_AI_UPLOAD" //16
 /datum/access/ai_upload
-	id = access_ai_upload
+	id = ACCESS_AI_UPLOAD
 	desc = "AI Upload"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_teleporter = "ACCESS_TELEPORTER" //17
 /datum/access/teleporter
-	id = access_teleporter
+	id = ACCESS_TELEPORTER
 	desc = "Teleporter"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_eva = "ACCESS_EVA" //18
 /datum/access/eva
-	id = access_eva
+	id = ACCESS_EVA
 	desc = "EVA"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_bridge = "ACCESS_BRIDGE" //19
 /datum/access/bridge
-	id = access_bridge
+	id = ACCESS_BRIDGE
 	desc = "Bridge"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_captain = "ACCESS_CAPTAIN" //20
 /datum/access/captain
-	id = access_captain
+	id = ACCESS_CAPTAIN
 	desc = "Captain"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_all_personal_lockers = "ACCESS_PERSONAL_LOCKERS" //21
 /datum/access/all_personal_lockers
-	id = access_all_personal_lockers
+	id = ACCESS_ALL_PERSONAL_LOCKERS
 	desc = "Personal Lockers"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_chapel_office = "ACCESS_CHAPEL_STORAGE" //22
 /datum/access/chapel_office
-	id = access_chapel_office
+	id = ACCESS_CHAPEL_OFFICE
 	desc = "Chapel Office"
 	region = ACCESS_REGION_GENERAL
 
-/var/const/access_tech_storage = "ACCESS_TECH_STORAGE" //23
 /datum/access/tech_storage
-	id = access_tech_storage
+	id = ACCESS_TECH_STORAGE
 	desc = "Technical Storage"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_atmospherics = "ACCESS_ATMOS" //24
 /datum/access/atmospherics
-	id = access_atmospherics
+	id = ACCESS_ATMOSPHERICS
 	desc = "Atmospherics"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_bar = "ACCESS_BAR" //25
 /datum/access/bar
-	id = access_bar
+	id = ACCESS_BAR
 	desc = "Bar"
 	region = ACCESS_REGION_GENERAL
 
-/var/const/access_janitor = "ACCESS_JANITOR" //26
 /datum/access/janitor
-	id = access_janitor
+	id = ACCESS_JANITOR
 	desc = "Custodial Closet"
 	region = ACCESS_REGION_GENERAL
 
-/var/const/access_crematorium = "ACCESS_CREMATORIUM" //27
 /datum/access/crematorium
-	id = access_crematorium
+	id = ACCESS_CREMATORIUM
 	desc = "Crematorium"
 	region = ACCESS_REGION_GENERAL
 
-/var/const/access_kitchen = "ACCESS_KITCHEN" //28
 /datum/access/kitchen
-	id = access_kitchen
+	id = ACCESS_KITCHEN
 	desc = "Kitchen"
 	region = ACCESS_REGION_GENERAL
 
-/var/const/access_robotics = "ACCESS_ROBOTICS" //29
 /datum/access/robotics
-	id = access_robotics
+	id = ACCESS_ROBOTICS
 	desc = "Robotics"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_rd = "ACCESS_RESEARCH_DIRECTOR" //30
 /datum/access/rd
-	id = access_rd
+	id = ACCESS_RD
 	desc = "Chief Science Officer"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_cargo = "ACCESS_CARGO" //31
 /datum/access/cargo
-	id = access_cargo
+	id = ACCESS_CARGO
 	desc = "Cargo Bay"
 	region = ACCESS_REGION_SUPPLY
 
-/var/const/access_construction = "ACCESS_CONSTRUCTION" //32
 /datum/access/construction
-	id = access_construction
+	id = ACCESS_CONSTRUCTION
 	desc = "Construction Areas"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_chemistry = "ACCESS_CHEMISTRY" //33
 /datum/access/chemistry
-	id = access_chemistry
+	id = ACCESS_CHEMISTRY
 	desc = "Chemistry Lab"
 	region = ACCESS_REGION_MEDBAY
 
-/var/const/access_cargo_bot = "ACCESS_CARGO_BOT" //34
 /datum/access/cargo_bot
-	id = access_cargo_bot
+	id = ACCESS_CARGO_BOT
 	desc = "Cargo Bot Delivery"
 	region = ACCESS_REGION_SUPPLY
 
-/var/const/access_hydroponics = "ACCESS_HYDROPONICS" //35
 /datum/access/hydroponics
-	id = access_hydroponics
+	id = ACCESS_HYDROPONICS
 	desc = "Hydroponics"
 	region = ACCESS_REGION_GENERAL
 
-/var/const/access_manufacturing = "ACCESS_MANUFACTURING" //36
 /datum/access/manufacturing
-	id = access_manufacturing
+	id = ACCESS_MANUFACTURING
 	desc = "Manufacturing"
 	access_type = ACCESS_TYPE_NONE
 
-/var/const/access_library = "ACCESS_LIBRARY" //37
 /datum/access/library
-	id = access_library
+	id = ACCESS_LIBRARY
 	desc = "Library"
 	region = ACCESS_REGION_GENERAL
 
-/var/const/access_lawyer = "ACCESS_LAWYER" //38
 /datum/access/lawyer
-	id = access_lawyer
+	id = ACCESS_LAWYER
 	desc = "Internal Affairs"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_virology = "ACCESS_VIRO" //39
 /datum/access/virology
-	id = access_virology
+	id = ACCESS_VIROLOGY
 	desc = "Virology"
 	region = ACCESS_REGION_MEDBAY
 
-/var/const/access_cmo = "ACCESS_CHIEF_MEDICAL_OFFICER" //40
 /datum/access/cmo
-	id = access_cmo
+	id = ACCESS_CMO
 	desc = "Chief Medical Officer"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_qm = "ACCESS_QUARTERMASTER" //41
 /datum/access/qm
-	id = access_qm
+	id = ACCESS_QM
 	desc = "Quartermaster"
 	region = ACCESS_REGION_SUPPLY
 
-/var/const/access_network = "ACCESS_NETWORK" //42
 /datum/access/network
-	id = access_network
+	id = ACCESS_NETWORK
 	desc = "Primary Network"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_surgery = "ACCESS_SURGERY" //45
 /datum/access/surgery
-	id = access_surgery
+	id = ACCESS_SURGERY
 	desc = "Surgery"
 	region = ACCESS_REGION_MEDBAY
 
-/var/const/access_research = "ACCESS_RESEARCH" //47
 /datum/access/research
-	id = access_research
+	id = ACCESS_RESEARCH
 	desc = "Science"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_mining = "ACCESS_MINING" //48
 /datum/access/mining
-	id = access_mining
+	id = ACCESS_MINING
 	desc = "Mining"
 	region = ACCESS_REGION_SUPPLY
 
-/var/const/access_mining_office = "ACCESS_MINING_OFFICE" //49
 /datum/access/mining_office
-	id = access_mining_office
+	id = ACCESS_MINING_OFFICE
 	desc = "Mining Office"
 	access_type = ACCESS_TYPE_NONE
 
-/var/const/access_mailsorting = "ACCESS_SORTING" //50
 /datum/access/mailsorting
-	id = access_mailsorting
+	id = ACCESS_MAILSORTING
 	desc = "Cargo Office"
 	region = ACCESS_REGION_SUPPLY
 
-/var/const/access_heads_vault = "ACCESS_VAULT"  //53
 /datum/access/heads_vault
-	id = access_heads_vault
+	id = ACCESS_HEADS_VAULT
 	desc = "Main Vault"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_mining_station = "ACCESS_MINING_EVA" //54
 /datum/access/mining_station
-	id = access_mining_station
+	id = ACCESS_MINING_STATION
 	desc = "Mining EVA"
 	region = ACCESS_REGION_SUPPLY
 
-/var/const/access_xenobiology = "ACCESS_XENOBIO" //55
 /datum/access/xenobiology
-	id = access_xenobiology
+	id = ACCESS_XENOBIOLOGY
 	desc = "Xenobiology Lab"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_ce = "ACCESS_CHIEF_ENGINEER" //56
 /datum/access/ce
-	id = access_ce
+	id = ACCESS_CE
 	desc = "Chief Engineer"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_hop = "ACCESS_HEAD_OF_PERSONNEL" //57
 /datum/access/hop
-	id = access_hop
+	id = ACCESS_HOP
 	desc = "Head of Personnel"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_hos = "ACCESS_HEAD_OF_SECURITY" //58
 /datum/access/hos
-	id = access_hos
+	id = ACCESS_HOS
 	desc = "Head of Security"
 	region = ACCESS_REGION_SECURITY
 
-/var/const/access_RC_announce = "ACCESS_REQUEST_ANNOUCE" //Request console announcements 59
 /datum/access/RC_announce
-	id = access_RC_announce
+	id = ACCESS_RC_ANNOUNCE
 	desc = "RC Announcements"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_tcomsat ="ACCESS_TELECOMS" // has access to the entire telecomms satellite / machinery 61
 /datum/access/tcomsat
-	id = access_tcomsat
+	id = ACCESS_TCOMSAT
 	desc = "Telecommunications"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_gateway = "ACCESS_GATEWAY" //62
 /datum/access/gateway
-	id = access_gateway
+	id = ACCESS_GATEWAY
 	desc = "Gateway"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_sec_doors = "ACCESS_SEC_DOORS" // Security front doors //63
 /datum/access/sec_doors
-	id = access_sec_doors
+	id = ACCESS_SEC_DOORS
 	desc = "Security"
 	region = ACCESS_REGION_SECURITY
 
-/var/const/access_psychiatrist = "ACCESS_PSYCHIATRIST" // Psychiatrist's office 64
 /datum/access/psychiatrist
-	id = access_psychiatrist
+	id = ACCESS_PSYCHIATRIST
 	desc = "Counselor's Office"
 	region = ACCESS_REGION_MEDBAY
 
-/var/const/access_xenoarch = "ACCESS_XENOARCH" //65
 /datum/access/xenoarch
-	id = access_xenoarch
+	id = ACCESS_XENOARCH
 	desc = "Xenoarchaeology"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_medical_equip = "ACCESS_MEDICAL_EQUIP" //66
 /datum/access/medical_equip
-	id = access_medical_equip
+	id = ACCESS_MEDICAL_EQUIP
 	desc = "Medical Equipment"
 	region = ACCESS_REGION_MEDBAY
 
-/var/const/access_heads = "ACCESS_HEADS" //67
 /datum/access/heads
-	id = access_heads
+	id = ACCESS_HEADS
 	desc = "Command"
 	region = ACCESS_REGION_COMMAND
 
 /******************
 * Central Command *
 ******************/
-/var/const/access_cent_general = "ACCESS_CENT_GENERAL" //101
+
 /datum/access/cent_general
-	id = access_cent_general
+	id = ACCESS_CENT_GENERAL
 	desc = "Code Grey"
 	access_type = ACCESS_TYPE_CENTCOM
 
-/var/const/access_cent_thunder = "ACCESS_CENT_THUNDERDOME" //102
 /datum/access/cent_thunder
-	id = access_cent_thunder
+	id = ACCESS_CENT_THUNDER
 	desc = "Code Yellow"
 	access_type = ACCESS_TYPE_CENTCOM
 
-/var/const/access_cent_specops = "ACCESS_CENT_SPECOPS" //103
 /datum/access/cent_specops
-	id = access_cent_specops
+	id = ACCESS_CENT_SPECOPS
 	desc = "Code Black"
 	access_type = ACCESS_TYPE_CENTCOM
 
-/var/const/access_cent_medical = "ACCESS_CENT_MEDBAY" //104
 /datum/access/cent_medical
-	id = access_cent_medical
+	id = ACCESS_CENT_MEDICAL
 	desc = "Code White"
 	access_type = ACCESS_TYPE_CENTCOM
 
-/var/const/access_cent_living = "ACCESS_CENT_LIVING" //105
 /datum/access/cent_living
-	id = access_cent_living
+	id = ACCESS_CENT_LIVING
 	desc = "Code Green"
 	access_type = ACCESS_TYPE_CENTCOM
 
-/var/const/access_cent_storage = "ACCESS_CENT_STORAGE" //106
 /datum/access/cent_storage
-	id = access_cent_storage
+	id = ACCESS_CENT_STORAGE
 	desc = "Code Orange"
 	access_type = ACCESS_TYPE_CENTCOM
 
-/var/const/access_cent_teleporter = "ACCESS_CENT_TELEPORTER" //107
 /datum/access/cent_teleporter
-	id = access_cent_teleporter
+	id = ACCESS_CENT_TELEPORTER
 	desc = "Code Blue"
 	access_type = ACCESS_TYPE_CENTCOM
 
-/var/const/access_cent_creed = "ACCESS_CENT_CREED" //108
 /datum/access/cent_creed
-	id = access_cent_creed
+	id = ACCESS_CENT_CREED
 	desc = "Code Silver"
 	access_type = ACCESS_TYPE_CENTCOM
 
-/var/const/access_cent_captain = "ACCESS_CENT_CAPTAIN" //109
 /datum/access/cent_captain
-	id = access_cent_captain
+	id = ACCESS_CENT_CAPTAIN
 	desc = "Code Gold"
 	access_type = ACCESS_TYPE_CENTCOM
 
 /***************
 * Antag access *
 ***************/
-/var/const/access_syndicate = "ACCESS_SYNDICATE" //150
+
 /datum/access/syndicate
-	id = access_syndicate
+	id = ACCESS_SYNDICATE
 	desc = "Syndicate"
 	access_type = ACCESS_TYPE_SYNDICATE
 
 /*******
 * Misc *
 *******/
-/var/const/access_synth = "ACCESS_SYNTH" //199
+
 /datum/access/synthetic
-	id = access_synth
+	id = ACCESS_SYNTH
 	desc = "Synthetic"
 	access_type = ACCESS_TYPE_NONE
 
-/var/const/access_crate_cash = "ACCESS_MERCHANT_CASH" //300
 /datum/access/crate_cash
-	id = access_crate_cash
+	id = ACCESS_CRATE_CASH
 	desc = "Crate cash"
 	access_type = ACCESS_TYPE_NONE
 
-/var/const/access_merchant = "ACCESS_MERCHANT" //301
 /datum/access/merchant
-	id = access_merchant
+	id = ACCESS_MERCHANT
 	desc = "Merchant"
 	access_type = ACCESS_TYPE_NONE
 
-/var/const/access_psiadvisor = "ACCESS_PSIADVISOR"
 /datum/access/psiadvisor
-	id = access_psiadvisor
+	id = ACCESS_PSIADVISOR
 	desc = "Foundation Advisor"
 	region = ACCESS_REGION_COMMAND
 	access_type = ACCESS_TYPE_NONE
 
 // Ascent access.
-/var/const/access_ascent = "ACCESS_ASCENT"
+
 /datum/access/ascent
-	id = access_ascent
+	id = ACCESS_ASCENT
 	desc = "Ascent Materiel"
 	access_type = ACCESS_TYPE_NONE

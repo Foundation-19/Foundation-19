@@ -176,7 +176,7 @@
 			return 1
 
 /datum/nano_module/deck_management/proc/get_shuttle_access(mob/user, datum/shuttle/shuttle)
-	return shuttle.logging_access ? (check_access(user, shuttle.logging_access) || check_access(user, access_bridge)) : 0
+	return shuttle.logging_access ? (check_access(user, shuttle.logging_access) || check_access(user, ACCESS_BRIDGE)) : 0
 
 /datum/nano_module/deck_management/proc/set_shuttle(mob/user, shuttle_name, need_access = 1)
 	var/datum/shuttle/shuttle

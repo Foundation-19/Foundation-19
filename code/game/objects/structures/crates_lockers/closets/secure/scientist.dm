@@ -1,6 +1,6 @@
 /obj/structure/closet/secure_closet/scientist
 	name = "scientist's locker"
-	req_access = list(list(access_tox,access_tox_storage))
+	req_access = list(list(ACCESS_TOX,ACCESS_TOX_STORAGE))
 	closet_appearance = /decl/closet_appearance/secure_closet/expedition/science
 
 /obj/structure/closet/secure_closet/scientist/WillContain()
@@ -16,7 +16,7 @@
 
 /obj/structure/closet/secure_closet/xenobio
 	name = "xenobiologist's locker"
-	req_access = list(access_xenobiology)
+	req_access = list(ACCESS_XENOBIOLOGY)
 	closet_appearance = /decl/closet_appearance/secure_closet/expedition/science
 
 /obj/structure/closet/secure_closet/xenobio/WillContain()
@@ -34,7 +34,7 @@
 
 /obj/structure/closet/secure_closet/RD
 	name = "chief science officer's locker"
-	req_access = list(access_rd)
+	req_access = list(ACCESS_RD)
 	closet_appearance = /decl/closet_appearance/secure_closet/rd
 
 /obj/structure/closet/secure_closet/RD/WillContain()
@@ -52,7 +52,7 @@
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control closet"
-	req_access = list(access_research)
+	req_access = list(ACCESS_RESEARCH)
 
 /obj/structure/closet/secure_closet/animal/WillContain()
 	return list(

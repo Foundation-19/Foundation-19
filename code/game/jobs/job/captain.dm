@@ -42,14 +42,14 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	ideal_character_age = 50
 
 	access = list(
-		access_hop,
-		access_adminlvl1,
-		access_adminlvl2,
-		access_adminlvl3,
-		access_adminlvl4,
-		access_com_comms,
-		access_civ_comms,
-		access_keyauth
+		ACCESS_HOP,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_COM_COMMS,
+		ACCESS_CIV_COMMS,
+		ACCESS_KEYAUTH
 	)
 
 	minimal_access = list()
@@ -75,25 +75,25 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	/datum/mil_rank/security/w5
 	)
 	access = list(
-		access_securitylvl1,
-		access_securitylvl2,
-		access_securitylvl3,
-		access_securitylvl4,
-		access_adminlvl1,
-		access_adminlvl2,
-		access_adminlvl3,
-		access_adminlvl4,
-		access_engineeringlvl1,
-		access_engineeringlvl2,
-		access_engineeringlvl3,
-		access_engineeringlvl4,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3,
-		access_sciencelvl4,
-		access_medicallvl1,
-		access_medicallvl2,
-		access_medicallvl3
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_SECURITY_LVL4,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3,
+		ACCESS_ENGINEERING_LVL4,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_SCIENCE_LVL4,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
+		ACCESS_MEDICAL_LVL3
 	)
 
 	minimal_access = list()
@@ -121,11 +121,11 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	)
 
 	access = list(
-		access_adminlvl1,
-		access_adminlvl2,
-		access_adminlvl3,
-		access_adminlvl4,
-		access_adminlvl5
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_ADMIN_LVL5
 	)
 
 	minimal_access = list()
@@ -152,23 +152,23 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	)
 
 	access = list(
-		access_civ_comms,
-		access_sci_comms,
-		access_med_comms,
-		access_research,
-		access_keyauth,
-		access_adminlvl1,
-		access_adminlvl2,
-		access_adminlvl3,
-		access_adminlvl4,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3,
-		access_sciencelvl4,
-		access_medicallvl1,
-		access_medicallvl2,
-		access_medicallvl3,
-		access_medicallvl4
+		ACCESS_CIV_COMMS,
+		ACCESS_SCI_COMMS,
+		ACCESS_MED_COMMS,
+		ACCESS_RESEARCH,
+		ACCESS_KEYAUTH,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_SCIENCE_LVL4,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
+		ACCESS_MEDICAL_LVL3,
+		ACCESS_MEDICAL_LVL4
 	)
 
 	minimal_access = list()
@@ -197,8 +197,8 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	hud_icon = "hudgoi"
 
 	access = list(
-		access_com_comms,
-		access_adminlvl1
+		ACCESS_COM_COMMS,
+		ACCESS_ADMIN_LVL1
 	)
 
 	minimal_access = list()

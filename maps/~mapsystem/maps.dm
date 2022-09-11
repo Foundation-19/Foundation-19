@@ -157,13 +157,13 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	)
 
 	var/access_modify_region = list(
-		ACCESS_REGION_SECURITY = list(access_hos, access_change_ids),
-		ACCESS_REGION_MEDBAY = list(access_cmo, access_change_ids),
-		ACCESS_REGION_RESEARCH = list(access_rd, access_change_ids),
-		ACCESS_REGION_ENGINEERING = list(access_ce, access_change_ids),
-		ACCESS_REGION_COMMAND = list(access_change_ids),
-		ACCESS_REGION_GENERAL = list(access_change_ids),
-		ACCESS_REGION_SUPPLY = list(access_change_ids)
+		ACCESS_REGION_SECURITY = list(ACCESS_HOS, ACCESS_CHANGE_IDS),
+		ACCESS_REGION_MEDBAY = list(ACCESS_CMO, ACCESS_CHANGE_IDS),
+		ACCESS_REGION_RESEARCH = list(ACCESS_RD, ACCESS_CHANGE_IDS),
+		ACCESS_REGION_ENGINEERING = list(ACCESS_CE, ACCESS_CHANGE_IDS),
+		ACCESS_REGION_COMMAND = list(ACCESS_CHANGE_IDS),
+		ACCESS_REGION_GENERAL = list(ACCESS_CHANGE_IDS),
+		ACCESS_REGION_SUPPLY = list(ACCESS_CHANGE_IDS)
 	)
 
 	// List of /datum/department types to instantiate at roundstart.
@@ -438,18 +438,18 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 /datum/map/proc/default_internal_channels()
 	return list(
 		num2text(PUB_FREQ)   = list(),
-		num2text(AI_FREQ)    = list(access_synth),
+		num2text(AI_FREQ)    = list(ACCESS_SYNTH),
 		num2text(ENT_FREQ)   = list(),
-		num2text(ERT_FREQ)   = list(access_cent_specops),
-		num2text(COMM_FREQ)  = list(access_bridge),
-		num2text(ENG_FREQ)   = list(access_engine_equip, access_atmospherics),
-		num2text(MED_FREQ)   = list(access_medical_equip),
-		num2text(MED_I_FREQ) = list(access_medical_equip),
-		num2text(SEC_FREQ)   = list(access_security),
-		num2text(SEC_I_FREQ) = list(access_security),
-		num2text(SCI_FREQ)   = list(access_tox,access_robotics,access_xenobiology),
-		num2text(SUP_FREQ)   = list(access_cargo),
-		num2text(SRV_FREQ)   = list(access_janitor, access_hydroponics),
+		num2text(ERT_FREQ)   = list(ACCESS_CENT_SPECOPS),
+		num2text(COMM_FREQ)  = list(ACCESS_BRIDGE),
+		num2text(ENG_FREQ)   = list(ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS),
+		num2text(MED_FREQ)   = list(ACCESS_MEDICAL_EQUIP),
+		num2text(MED_I_FREQ) = list(ACCESS_MEDICAL_EQUIP),
+		num2text(SEC_FREQ)   = list(ACCESS_SECURITY),
+		num2text(SEC_I_FREQ) = list(ACCESS_SECURITY),
+		num2text(SCI_FREQ)   = list(ACCESS_TOX,ACCESS_ROBOTICS,ACCESS_XENOBIOLOGY),
+		num2text(SUP_FREQ)   = list(ACCESS_CARGO),
+		num2text(SRV_FREQ)   = list(ACCESS_JANITOR, ACCESS_HYDROPONICS),
 		num2text(HAIL_FREQ)  = list(),
 	)
 

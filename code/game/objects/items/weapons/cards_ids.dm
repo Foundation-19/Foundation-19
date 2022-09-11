@@ -383,7 +383,7 @@ var/const/NO_EMAG_ACT = -50
 	desc = "An ID straight from the Syndicate."
 	registered_name = "Syndicate"
 	assignment = "Syndicate Overlord"
-	access = list(access_syndicate, access_external_airlocks)
+	access = list(ACCESS_SYNDICATE, ACCESS_EXTERNAL_AIRLOCKS)
 	color = COLOR_RED_GRAY
 	detail_color = COLOR_GRAY40
 
@@ -407,7 +407,7 @@ var/const/NO_EMAG_ACT = -50
 	detail_color = COLOR_AMBER
 
 /obj/item/card/id/synthetic/New()
-	access = get_all_station_access() + access_synth
+	access = get_all_station_access() + ACCESS_SYNTH
 	..()
 
 /obj/item/card/id/centcom
@@ -613,6 +613,6 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/id/merchant
 	name = "identification card"
 	desc = "A card issued to Merchants, indicating their right to sell and buy goods."
-	access = list(access_merchant)
+	access = list(ACCESS_MERCHANT)
 	color = COLOR_OFF_WHITE
 	detail_color = COLOR_BEIGE

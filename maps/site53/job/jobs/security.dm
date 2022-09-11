@@ -20,24 +20,24 @@
 	hud_icon = "hudguardcommander"
 
 	access = list(
-		access_com_comms,
-		access_sec_comms,
-		access_securitylvl1,
-		access_securitylvl2,
-		access_securitylvl3,
-		access_securitylvl4,
-		access_securitylvl5,
-		access_adminlvl1,
-		access_adminlvl2,
-		access_adminlvl3,
-		access_adminlvl4,
-		access_medicallvl1,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3,
-		access_sciencelvl4,
-		access_keyauth,
-		access_chapel_office
+		ACCESS_COM_COMMS,
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_SECURITY_LVL4,
+		ACCESS_SECURITY_LVL5,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_SCIENCE_LVL4,
+		ACCESS_KEYAUTH,
+		ACCESS_CHAPEL_OFFICE
 	)
 	minimal_access = list()
 
@@ -80,15 +80,15 @@
 	hud_icon = "hudlczcommander"
 
 	access = list(
-		access_sec_comms,
-		access_securitylvl1,
-		access_securitylvl2,
-		access_securitylvl3,
-		access_securitylvl4,
-		access_adminlvl1,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_SECURITY_LVL4,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3
 	)
 	minimal_access = list()
 
@@ -125,16 +125,16 @@
 	hud_icon = "hudhczcommander"
 
 	access = list(
-		access_sec_comms,
-		access_securitylvl1,
-		access_securitylvl2,
-		access_securitylvl3,
-		access_securitylvl4,
-		access_adminlvl1,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3,
-		access_sciencelvl4
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_SECURITY_LVL4,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_SCIENCE_LVL4
 	)
 	minimal_access = list()
 
@@ -171,24 +171,24 @@
 	hud_icon = "hudezcommander"
 
 	access = list(
-		access_sec_comms,
-		access_securitylvl1,
-		access_securitylvl2,
-		access_securitylvl3,
-		access_securitylvl4,
-		access_adminlvl1,
-		access_adminlvl2,
-		access_adminlvl3,
-		access_adminlvl4,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_engineeringlvl1,
-		access_engineeringlvl2,
-		access_medicallvl1,
-		access_medicallvl2,
-		access_medicallvl3,
-		access_medicallvl4,
-		access_chapel_office
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_SECURITY_LVL4,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
+		ACCESS_MEDICAL_LVL3,
+		ACCESS_MEDICAL_LVL4,
+		ACCESS_CHAPEL_OFFICE
 	)
 	minimal_access = list()
 
@@ -234,15 +234,15 @@
 	hud_icon = "hudlczsarge"
 
 	access = list(
-		access_sec_comms,
-		access_securitylvl1,
-		access_securitylvl2,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_dclasskitchen,
-		access_dclassbotany,
-		access_dclassmining,
-		access_dclassjanitorial
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_DCLASSKITCHEN,
+		ACCESS_DCLASSBOTANY,
+		ACCESS_DCLASSMINING,
+		ACCESS_DCLASSJANITORIAL
 	)
 	minimal_access = list()
 
@@ -282,13 +282,13 @@
 	hud_icon = "hudhczsarge"
 
 	access = list(
-		access_sec_comms,
-		access_securitylvl1,
-		access_securitylvl2,
-		access_securitylvl3,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3
 	)
 	minimal_access = list()
 
@@ -327,19 +327,19 @@
 	hud_icon = "hudezsarge"
 
 	access = list(
-		access_sec_comms,
-		access_sciencelvl1,
-		access_medicallvl1,
-		access_medicallvl2,
-		access_medicallvl3,
-		access_engineeringlvl1,
-		access_securitylvl1,
-		access_securitylvl2,
-		access_securitylvl3,
-		access_adminlvl1,
-		access_adminlvl2,
-		access_adminlvl3,
-		access_chapel_office
+		ACCESS_SEC_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
+		ACCESS_MEDICAL_LVL3,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_CHAPEL_OFFICE
 	)
 	minimal_access = list()
 
@@ -382,15 +382,15 @@
 	hud_icon = "hudlczsenior"
 
 	access = list(
-		access_sec_comms,
-		access_securitylvl1,
-		access_securitylvl2,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_dclasskitchen,
-		access_dclassbotany,
-		access_dclassmining,
-		access_dclassjanitorial
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_DCLASSKITCHEN,
+		ACCESS_DCLASSBOTANY,
+		ACCESS_DCLASSMINING,
+		ACCESS_DCLASSJANITORIAL
 	)
 	minimal_access = list()
 
@@ -431,13 +431,13 @@
 	hud_icon = "hudhczsenior"
 
 	access = list(
-		access_sec_comms,
-		access_securitylvl1,
-		access_securitylvl2,
-		access_securitylvl3,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3
 	)
 	minimal_access = list()
 
@@ -477,17 +477,17 @@
 	hud_icon = "hudezsenior"
 
 	access = list(
-		access_sciencelvl1,
-		access_sec_comms,
-		access_securitylvl1,
-		access_securitylvl2,
-		access_engineeringlvl1,
-		access_medicallvl1,
-		access_medicallvl2,
-		access_medicallvl3,
-		access_adminlvl1,
-		access_adminlvl2,
-		access_chapel_office
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
+		ACCESS_MEDICAL_LVL3,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_CHAPEL_OFFICE
 	)
 	minimal_access = list()
 
