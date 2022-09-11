@@ -173,7 +173,7 @@
 		ACCESS_CIV_COMMS,
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_MEDICAL_LVL1,
-		ACCESS_DCLASSJANITORIAL
+		ACCESS_DCLASS_JANITORIAL
 )
 	minimal_access = list()
 
@@ -195,8 +195,8 @@
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 
 	access = list(ACCESS_CIV_COMMS,
-		ACCESS_DCLASSKITCHEN,
-		ACCESS_DCLASSBOTANY
+		ACCESS_DCLASS_KITCHEN,
+		ACCESS_DCLASS_BOTANY
 	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 	minimal_access = list()
 
@@ -222,8 +222,8 @@
 
 	access = list(
 		ACCESS_CIV_COMMS,
-		ACCESS_DCLASSKITCHEN,
-		ACCESS_DCLASSBOTANY
+		ACCESS_DCLASS_KITCHEN,
+		ACCESS_DCLASS_BOTANY
 	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 	minimal_access = list()
 

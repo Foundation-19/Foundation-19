@@ -148,7 +148,7 @@
 /datum/map/proc/get_shared_network_access(var/network)
 	switch(network)
 		if(NETWORK_ENGINE)
-			return access_securitylvl1
+			return ACCESS_SECURITY_LVL1
 
 // Override and implement to customize the SMES's loadout
 /obj/machinery/power/smes/buildable/preset/proc/configure_and_install_coils()

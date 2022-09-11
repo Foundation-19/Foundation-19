@@ -25,7 +25,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 		H.implant_loyalty(src)
 
 /datum/job/captain/get_access()
-	return get_all_station_access()
+	return get_all_site_access()
 
 /datum/job/hop
 	title = "Human Resources Officer"
@@ -216,7 +216,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	minimal_access = list()
 
 /datum/job/mtf/get_access()
-	return get_all_station_access()
+	return get_all_site_access()
 
 /datum/job/physics
 	title = "UNGOC Physics Operative"
@@ -231,4 +231,4 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	minimal_access = list()
 
 /datum/job/physics/get_access()
-	return get_all_station_access()
+	return get_all_site_access()

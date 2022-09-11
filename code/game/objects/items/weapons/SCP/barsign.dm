@@ -54,7 +54,7 @@
 	if(istype(card))
 
 		if(toolate == 1)
-			if(access_sciencelvl1 in card.GetAccess())
+			if(ACCESS_SCIENCE_LVL1 in card.GetAccess())
 				if(toolate_on)
 					toolate_on = 0
 					icon_state = "Off"

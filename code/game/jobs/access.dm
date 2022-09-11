@@ -134,6 +134,16 @@
 
 	return priv_station_access.Copy()
 
+/var/list/priv_innate_access
+/proc/get_all_innate_access()
+	if(!priv_innate_access)
+		priv_innate_access = get_access_ids(ACCESS_TYPE_INNATE)
+
+	return priv_innate_access.Copy()
+
+/proc/get_all_site_access()
+	return get_all_station_access() + get_all_innate_access()
+
 /var/list/priv_centcom_access
 /proc/get_all_centcom_access()
 	if(!priv_centcom_access)

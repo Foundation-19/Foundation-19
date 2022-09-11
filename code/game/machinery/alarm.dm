@@ -56,7 +56,7 @@
 	idle_power_usage = 80
 	active_power_usage = 1000 //For heating/cooling rooms. 1000 joules equates to about 1 degree every 2 seconds for a single tile of air.
 	power_channel = ENVIRON
-	req_access = list(list(ACCESS_SECURITY_LVL1, ACCESS_ATMOSPHERICS, ACCESS_ENGINE_EQUIP)) //ACCESS_SECURITYLVL1 added since mapper air alarms have it configured.
+	req_access = list(list(ACCESS_SECURITY_LVL1, ACCESS_ATMOSPHERICS, ACCESS_ENGINE_EQUIP)) //ACCESS_SECURITY_LVL1 added since mapper air alarms have it configured.
 	clicksound = "button"
 	clickvol = 30
 

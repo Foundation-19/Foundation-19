@@ -396,7 +396,7 @@ var/const/NO_EMAG_ACT = -50
 	detail_color = COLOR_AMBER
 
 /obj/item/card/id/captains_spare/New()
-	access = get_all_station_access()
+	access = get_all_site_access()
 	..()
 
 /obj/item/card/id/synthetic
@@ -407,7 +407,7 @@ var/const/NO_EMAG_ACT = -50
 	detail_color = COLOR_AMBER
 
 /obj/item/card/id/synthetic/New()
-	access = get_all_station_access() + ACCESS_SYNTH
+	access = get_all_site_access() + ACCESS_SYNTH
 	..()
 
 /obj/item/card/id/centcom
@@ -425,7 +425,7 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/card/id/centcom/station/New()
 	..()
-	access |= get_all_station_access()
+	access |= get_all_site_access()
 
 /obj/item/card/id/centcom/ERT
 	name = "\improper Emergency Response Team ID"
@@ -433,7 +433,7 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/card/id/centcom/ERT/New()
 	..()
-	access |= get_all_station_access()
+	access |= get_all_site_access()
 
 /obj/item/card/id/foundation_civilian
 	name = "operant registration card"
@@ -474,7 +474,7 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/card/id/foundation/New()
 	..()
-	access |= get_all_station_access()
+	access |= get_all_site_access()
 
 /obj/item/card/id/all_access
 	name = "\improper Administrator's spare ID"

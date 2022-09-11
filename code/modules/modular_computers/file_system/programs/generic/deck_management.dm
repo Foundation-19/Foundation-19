@@ -25,7 +25,7 @@
 	var/list/report_prototypes = list()              //Stores report prototypes to use for UI purposes.
 	var/datum/shuttle/prototype_shuttle              //The shuttle for which the prototypes were built (to avoid excessive prototype rebuilding)
 	//The default access needed to properly use. Should be set in map files.
-	var/default_access = list(access_adminlvl1)  //The format is (needs one of list(these access constants or lists of access constants))
+	var/default_access = list(ACCESS_ADMIN_LVL1)  //The format is (needs one of list(these access constants or lists of access constants))
 
 /datum/nano_module/deck_management/New()
 	..()

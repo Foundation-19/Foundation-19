@@ -240,7 +240,7 @@ ut // COMMAND
 	minimal_access = list()
 
 /datum/job/mtf/get_access()
-	return get_all_station_access()
+	return get_all_site_access()
 
 /datum/job/physics
 	title = "UNGOC Physics Operative"
@@ -255,4 +255,4 @@ ut // COMMAND
 	minimal_access = list()
 
 /datum/job/physics/get_access()
-	return get_all_station_access()
+	return get_all_site_access()
