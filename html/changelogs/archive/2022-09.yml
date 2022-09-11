@@ -61,3 +61,7 @@
   - bugfix: Replaced a couple of doors.
   harryob:
   - admin: Mods now get access to ASAY.
+2022-09-11:
+  Jpog2010:
+  - rscadd: Added Chapel
+  - rscadd: Added appropriate accesses to doors and jobs
