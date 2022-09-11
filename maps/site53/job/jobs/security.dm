@@ -36,7 +36,8 @@
 		access_sciencelvl2,
 		access_sciencelvl3,
 		access_sciencelvl4,
-		access_keyauth
+		access_keyauth,
+		access_chapel_office
 	)
 	minimal_access = list()
 
@@ -186,7 +187,8 @@
 		access_medicallvl1,
 		access_medicallvl2,
 		access_medicallvl3,
-		access_medicallvl4
+		access_medicallvl4,
+		access_chapel_office
 	)
 	minimal_access = list()
 
@@ -336,7 +338,8 @@
 		access_securitylvl3,
 		access_adminlvl1,
 		access_adminlvl2,
-		access_adminlvl3
+		access_adminlvl3,
+		access_chapel_office
 	)
 	minimal_access = list()
 
@@ -483,7 +486,8 @@
 		access_medicallvl2,
 		access_medicallvl3,
 		access_adminlvl1,
-		access_adminlvl2
+		access_adminlvl2,
+		access_chapel_office
 	)
 	minimal_access = list()
 

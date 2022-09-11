@@ -164,7 +164,7 @@
 #define FAB_BUSY     (1<<3)
 
 #define  PART_CPU  		/obj/item/stock_parts/computer/processor_unit				// CPU. Without it the computer won't run. Better CPUs can run more programs at once.
-#define  PART_NETWORK  	/obj/item/stock_parts/computer/network_card					// Network Card component of this computer. Allows connection to NTNet
+#define  PART_NETWORK  	/obj/item/stock_parts/computer/network_card					// Network Card component of this computer. Allows connection to SCiPnet
 #define  PART_HDD 		/obj/item/stock_parts/computer/hard_drive					// Hard Drive component of this computer. Stores programs and files.
 
 // Optional hardware (improves functionality, but is not critical for computer to work in most cases)

@@ -7,7 +7,12 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the head of personnel"
-	access = list(access_medicallvl1)
+
+	access = list(
+	access_medicallvl1,
+	access_chapel_office
+	)
+
 	minimal_access = list()
 	outfit_type = /decl/hierarchy/outfit/job/chaplain
 

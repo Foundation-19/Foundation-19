@@ -1,10 +1,10 @@
 /datum/computer_file/program/ntnetmonitor
-	filename = "ntmonitor"
-	filedesc = "NTNet Diagnostics and Monitoring"
+	filename = "scpmonitor"
+	filedesc = "SCiPnet Diagnostics and Monitoring"
 	program_icon_state = "comm_monitor"
 	program_key_state = "generic_key"
 	program_menu_icon = "wrench"
-	extended_desc = "This program monitors the local NTNet network, provides access to logging systems, and allows for configuration changes"
+	extended_desc = "This program monitors the local SCiPnet network, provides access to logging systems, and allows for configuration changes"
 	size = 12
 	requires_ntnet = TRUE
 	required_access = access_network
@@ -54,7 +54,7 @@
 			if(!ntnet_global)
 				return
 
-			// NTNet is disabled. Enabling can be done without user prompt
+			// SCiPnet is disabled. Enabling can be done without user prompt
 			if(ntnet_global.setting_disabled)
 				ntnet_global.setting_disabled = FALSE
 				return TRUE

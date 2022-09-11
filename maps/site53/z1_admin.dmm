@@ -2358,26 +2358,13 @@
 /obj/structure/bedsheetbin,
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/chaos)
-"ld" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/turf/simulated/floor/tiled/techfloor,
-/area/centcom/chaos)
 "le" = (
-/obj/structure/closet{
-	icon_state = "syndicate1";
-	name = "emergency response team wardrobe"
-	},
-/obj/item/clothing/glasses/night,
-/turf/simulated/floor/tiled/techfloor,
+/obj/item/gun/projectile/automatic/scp/rpk,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/structure/table/rack/dark,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "lj" = (
 /obj/structure/flora/ausbushes/stalkybush,
@@ -2400,14 +2387,15 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/chaos)
 "lu" = (
-/obj/structure/bed/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/table/woodentable,
+/obj/machinery/light,
 /turf/simulated/floor/lino,
 /area/centcom/chaos)
 "lv" = (
-/obj/machinery/light,
-/turf/simulated/floor/lino,
+/obj/structure/bed/chair/comfy/black{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
 /area/centcom/chaos)
 "lw" = (
 /obj/structure/bed/chair/office/light{
@@ -2450,7 +2438,10 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/chaos)
 "lG" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	name = "Strange airlock";
+	req_access = list("ACCESS_PSIADVISOR")
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/chaos)
 "lI" = (
@@ -2651,19 +2642,9 @@
 /obj/machinery/door/airlock/medical,
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
-"mJ" = (
-/obj/machinery/door/airlock/highsecurity,
-/obj/machinery/door/blast/shutters{
-	explosion_resistance = 100
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/chaos)
 "mK" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/tiled/steel_grid,
+/obj/machinery/door/airlock/highsecurity,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "mL" = (
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -2719,10 +2700,22 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
 "nc" = (
-/obj/structure/table/reinforced,
-/obj/random/smokes,
-/obj/random/smokes,
-/obj/random/smokes,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/item/device/chameleon,
+/obj/item/device/chameleon,
+/obj/item/device/chameleon,
+/obj/item/device/chameleon,
+/obj/item/device/chameleon,
+/obj/machinery/door/window/brigdoor/southright{
+	dir = 4
+	},
+/obj/structure/table/rack/dark,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "nd" = (
@@ -2773,8 +2766,8 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "np" = (
-/obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/structure/bed/chair/comfy/black,
+/turf/simulated/floor/tiled/techfloor,
 /area/centcom/chaos)
 "nq" = (
 /turf/unsimulated/wall{
@@ -2785,11 +2778,6 @@
 	name = "Sleeping Quarters"
 	},
 /area/centcom)
-"nr" = (
-/obj/structure/table/reinforced,
-/obj/item/ammo_casing/rocket,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/chaos)
 "ns" = (
 /obj/structure/sign/warning/secure_area/armory{
 	pixel_y = -26
@@ -2832,31 +2820,44 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
 "ny" = (
-/obj/structure/bed/chair/office/light{
-	dir = 1
-	},
+/obj/item/gun/projectile/automatic/scp/rpk,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/machinery/light,
+/obj/structure/table/rack/dark,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "nz" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/turf/simulated/floor/tiled/techfloor,
+/obj/item/gun/projectile/automatic/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/structure/table/rack/dark,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "nA" = (
-/obj/structure/table/rack,
-/turf/simulated/floor/tiled/techfloor,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/structure/table/rack/dark,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "nB" = (
 /obj/structure/table/rack,
@@ -2893,46 +2894,36 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
 "nJ" = (
-/obj/structure/table/rack,
-/obj/structure/window/reinforced{
-	dir = 8
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb1"
 	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/door/window/brigdoor/southleft,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "nK" = (
-/obj/structure/table/rack,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/door/window/brigdoor/southright,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/structure/table/steel_reinforced,
+/obj/random/smokes,
+/obj/random/smokes,
+/obj/random/smokes,
+/turf/simulated/floor/tiled/steel_grid,
 /area/centcom/chaos)
 "nL" = (
-/obj/structure/table/rack,
-/obj/structure/window/reinforced{
-	dir = 8
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/item/clothing/suit/storage/vest/tactical,
+/obj/item/gun/projectile/automatic/scp/ak74,
+/obj/item/clothing/head/helmet/nt{
+	name = "security helmet"
 	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/door/window/brigdoor/southleft,
-/obj/item/device/chameleon,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/clothing/mask/balaclava/tactical,
+/obj/item/storage/backpack/rucksack/tan,
+/obj/item/gun/projectile/pistol,
+/obj/structure/closet,
+/obj/machinery/light,
+/obj/item/clothing/glasses/night,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "nN" = (
@@ -2942,14 +2933,8 @@
 /turf/unsimulated/beach/sand,
 /area/beach)
 "nO" = (
-/obj/machinery/door/airlock/highsecurity,
-/obj/machinery/door/blast/shutters{
-	dir = 4;
-	explosion_resistance = 100;
-	id_tag = "alpha1";
-	name = "Alpha-1"
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/structure/closet,
+/turf/simulated/floor/tiled/techfloor,
 /area/centcom/chaos)
 "nQ" = (
 /obj/structure/table/rack,
@@ -2985,18 +2970,16 @@
 	},
 /area/centcom)
 "nW" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/obj/item/ammo_magazine/scp/m16_mag,
-/turf/simulated/floor/tiled/techfloor,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/item/ammo_magazine/scp,
+/obj/structure/table/rack/dark,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "nX" = (
 /obj/effect/floor_decal/corner/blue/border{
@@ -3108,32 +3091,10 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/tram/car1)
 "om" = (
-/obj/structure/table/rack,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
+/obj/structure/bed/chair/comfy/black{
 	dir = 4
 	},
-/obj/structure/window/reinforced,
-/obj/machinery/door/window/brigdoor/northleft,
-/obj/item/clothing/mask/chameleon/voice{
-	desc = "A face-covering mask that can be connected to an air supply. It seems to house some odd electronics. Literally a voice changer";
-	name = "SCP-1996-RU"
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/centcom/chaos)
-"on" = (
-/obj/structure/table/rack,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced,
-/obj/machinery/door/window/brigdoor/northright,
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/lino,
 /area/centcom/chaos)
 "oo" = (
 /obj/effect/floor_decal/corner/blue/border{
@@ -3175,10 +3136,21 @@
 /turf/unsimulated/floor/plating,
 /area/centcom)
 "ou" = (
-/obj/machinery/light{
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/brigdoor/southright{
 	dir = 4
 	},
-/obj/machinery/field_generator,
+/obj/item/clothing/mask/chameleon/voice{
+	desc = "A face-covering mask that can be connected to an air supply. It seems to house some odd electronics. Literally a voice changer";
+	name = "SCP-1996-RU"
+	},
+/obj/structure/table/rack/dark,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "ow" = (
@@ -3186,9 +3158,22 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/chaos)
 "ox" = (
-/obj/structure/table/reinforced,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/steel_grid,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/item/clothing/suit/storage/vest/tactical,
+/obj/item/gun/projectile/automatic/scp/ak74,
+/obj/item/clothing/head/helmet/nt{
+	name = "security helmet"
+	},
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/clothing/mask/balaclava/tactical,
+/obj/item/storage/backpack/rucksack/tan,
+/obj/item/gun/projectile/pistol,
+/obj/structure/closet,
+/obj/item/clothing/glasses/night,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "oy" = (
 /obj/machinery/button/blast_door{
@@ -6444,16 +6429,21 @@
 	},
 /area/centcom)
 "Fo" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/obj/item/ammo_magazine/scp,
-/turf/simulated/floor/tiled/techfloor,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/structure/table/rack/dark,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "Fp" = (
 /obj/machinery/vending/cola{
@@ -24488,11 +24478,11 @@ cw
 cw
 cw
 cw
-cw
-cw
-cw
-ek
-ek
+di
+di
+di
+di
+di
 di
 di
 di
@@ -24690,13 +24680,13 @@ cw
 cw
 cw
 cw
-cw
-cw
-cw
-cw
-cw
 di
-cw
+kx
+kM
+kM
+om
+kM
+kM
 di
 eU
 eU
@@ -24893,12 +24883,12 @@ cw
 cw
 cw
 di
-di
-di
-di
-di
-di
-di
+kx
+kM
+om
+kY
+om
+om
 di
 eU
 eU
@@ -25097,10 +25087,10 @@ cw
 di
 kp
 kM
-kP
 kX
 kX
-lu
+kX
+kX
 di
 eU
 eU
@@ -25298,8 +25288,8 @@ di
 di
 di
 kx
-kM
-kM
+kP
+kX
 kY
 kX
 lu
@@ -25501,10 +25491,10 @@ jS
 di
 ky
 kM
-kM
 kZ
-kM
-lv
+kZ
+kZ
+kZ
 di
 eU
 eU
@@ -26116,9 +26106,9 @@ eU
 kE
 di
 nc
+ou
 nd
-nd
-nd
+no
 di
 cw
 cw
@@ -26316,15 +26306,15 @@ eU
 lE
 eU
 eU
-mJ
+di
 nd
 nd
-nJ
+nd
 oe
 di
-cw
-cw
-cw
+di
+di
+di
 cw
 cw
 cw
@@ -26513,20 +26503,20 @@ kE
 lX
 eU
 lb
-lo
+nK
 eU
 lE
 eU
 eU
 di
+oI
 nd
 nd
-nK
 nd
+nd
+nd
+ox
 di
-cw
-cw
-cw
 cw
 cw
 cw
@@ -26711,7 +26701,7 @@ jS
 jT
 jS
 di
-eU
+ow
 eU
 eU
 eU
@@ -26725,9 +26715,9 @@ ne
 nd
 nd
 nd
-di
-di
-di
+nd
+nd
+ox
 di
 cw
 cw
@@ -26923,13 +26913,13 @@ lE
 eU
 eU
 di
-no
+oI
 nd
 nd
 nd
 nd
 nd
-nd
+ox
 di
 cw
 cw
@@ -27125,13 +27115,13 @@ lF
 eU
 eU
 di
-np
-nd
-nL
-nd
 oI
-om
 nd
+nd
+nd
+nd
+nd
+ox
 di
 cw
 cw
@@ -27327,13 +27317,13 @@ di
 eU
 lX
 di
-np
-nd
-nK
 nd
 nd
-on
-oe
+nd
+nd
+nd
+nd
+nL
 di
 cw
 cw
@@ -27521,21 +27511,21 @@ cw
 cw
 cw
 di
-lA
-le
-le
-lA
+nO
+TQ
+TQ
+TQ
 di
 eU
 eU
 di
-nr
-ny
-ou
-oI
 nd
 nd
 nd
+nd
+nd
+nd
+ox
 di
 cw
 cw
@@ -27731,13 +27721,13 @@ di
 lO
 eU
 di
-di
-di
-di
-di
-di
-nO
-di
+nd
+nd
+nd
+nd
+nd
+nd
+ox
 di
 cw
 cw
@@ -27926,20 +27916,20 @@ cw
 cw
 di
 TQ
-le
-le
+lA
+TQ
 TQ
 di
 eU
 eU
 mK
-eU
-eU
-eU
-eU
-eU
-eU
-ow
+nd
+nd
+nd
+nd
+nd
+nd
+ox
 di
 cw
 cw
@@ -28127,20 +28117,20 @@ cw
 cw
 cw
 di
-TQ
-TQ
-TQ
+np
+lA
+lv
 TQ
 lG
 eU
 eU
-eU
-eU
-eU
-eU
-eU
-eU
-eU
+mK
+nd
+nd
+nd
+nd
+nd
+nd
 ox
 di
 cw
@@ -28330,19 +28320,19 @@ cw
 cw
 di
 TQ
-le
-le
+lA
+TQ
 TQ
 di
 lQ
 eU
 di
-lG
-di
-di
-di
-di
-di
+nd
+nd
+nd
+nd
+nd
+le
 di
 di
 cw
@@ -28539,13 +28529,13 @@ di
 eU
 eU
 di
-TQ
-nz
+nd
+Fo
 Fo
 nA
+nd
+ny
 di
-cw
-cw
 cw
 cw
 cw
@@ -28733,21 +28723,21 @@ cw
 cw
 cw
 di
-lA
-le
-le
-lA
+nO
+TQ
+TQ
+TQ
 di
 eU
 lX
 di
-kS
-TQ
-TQ
-lz
+nJ
+nd
+nd
+nd
+nd
+nz
 di
-cw
-cw
 cw
 cw
 cw
@@ -28943,13 +28933,13 @@ di
 mw
 mi
 di
-TQ
-ld
+nd
 nW
-nA
+nW
+nd
+nd
+nz
 di
-cw
-cw
 cw
 cw
 cw
@@ -29150,8 +29140,8 @@ di
 di
 di
 di
-cw
-cw
+di
+di
 cw
 cw
 cw

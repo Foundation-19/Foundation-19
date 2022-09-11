@@ -20,7 +20,8 @@ ut // COMMAND
 		access_adminlvl3,
 		access_adminlvl4,
 		access_adminlvl5,
-		access_keyauth
+		access_keyauth,
+		access_chapel_office
 	)
 
 	minimal_access = list()
@@ -50,7 +51,8 @@ ut // COMMAND
 		access_com_comms,
 		access_change_ids,
 		access_civ_comms,
-		access_keyauth
+		access_keyauth,
+		access_chapel_office
 	)
 
 	minimal_access = list()
@@ -190,7 +192,8 @@ ut // COMMAND
 		access_adminlvl2,
 		access_adminlvl3,
 		access_adminlvl4,
-		access_adminlvl5
+		access_adminlvl5,
+		access_chapel_office
 	)
 	minimal_access = list()
 
@@ -218,7 +221,8 @@ ut // COMMAND
 
 	access = list(
 		access_com_comms,
-		access_adminlvl1
+		access_adminlvl1,
+		access_chapel_office
 	)
 
 	minimal_access = list()

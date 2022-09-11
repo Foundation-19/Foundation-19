@@ -24,3 +24,44 @@
 2022-09-07:
   Realtimeslayer:
   - rscadd: Added a gas injector to the R-UST.
+2022-09-08:
+  Jpog2010:
+  - rscadd: Moved chem fridge from Recovery Ward to Chemistry and added windoor in
+      front of it.
+  - rscadd: Added some extinguisher cabinets.
+  - rscadd: Added NO SMOKING signs.
+  - rscadd: Closet for coroner in morgue.
+  - rscadd: Added food vendors.
+  - rscadd: Added more items in Psychiatrist office, like boombox, camera, recorder,
+      etc.
+  - rscadd: Medical Storage room.
+  - rscadd: Added one more sleeper and sanner in the Recovery Ward.
+  - rscadd: Added more lights around.
+  - rscadd: Added more stuff around, like papers, pens, cleaners, plants and others.
+  - rscadd: Added some carpets edges on this level.
+  - bugfix: Replaced some floor tiles under the doors it must be.
+  - bugfix: Access to anestethics closets in surgery ( now it can be opened ).
+  cheesePizza2:
+  - bugfix: Modular computers and their programs/components refer to SCP instead of
+      NT.
+2022-09-10:
+  Jpog2010:
+  - rscadd: Added lamps to most of the dark corners ( now the LCZ is almost completely
+      illuminated ).
+  - rscadd: Added many items to all the rooms of the LCZ, such as papers, pens, food,
+      plants, chairs, tables, and other minor stuff.
+  - bugfix: Replaced the walls in unused containment from titanium to steel.
+  - bugfix: Fixed area markings. ( some areas were going over the room borders )
+  - bugfix: Added walls where they should be. ( in the corners of some rooms, you
+      could see rocks )
+  - bugfix: Added the correct floor tiles under most of the doors.
+  - bugfix: Added names for the doors of the containment chambers.
+  - bugfix: Moved some signs and fire-safety closets. ( now they are not overlapped
+      by lights )
+  - bugfix: Replaced a couple of doors.
+  harryob:
+  - admin: Mods now get access to ASAY.
+2022-09-11:
+  Jpog2010:
+  - rscadd: Added Chapel
+  - rscadd: Added appropriate accesses to doors and jobs
