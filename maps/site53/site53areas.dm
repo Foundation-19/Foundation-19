@@ -1119,6 +1119,11 @@
 	requires_power = 0
 	dynamic_lighting = 1
 
+/area/site53/uhcz/generalpurpose3
+	name = "\improper Third General Purpose Testing Laboratory"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/uhcz/scp096
 	name = "\improper SCP-096 Containment Chamber"
 	icon_state = "research"
