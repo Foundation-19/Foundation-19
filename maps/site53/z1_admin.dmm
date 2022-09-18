@@ -356,7 +356,8 @@
 "cs" = (
 /obj/machinery/button/blast_door{
 	id_tag = "helicopter-left";
-	name = "MTF Helicopter Side Doors"
+	name = "MTF Helicopter Side Doors";
+	req_access = list("ACCESS_MTF")
 	},
 /turf/simulated/wall/r_wall,
 /area/site53/tram/mtf)
@@ -7071,7 +7072,8 @@
 "Jx" = (
 /obj/machinery/button/blast_door{
 	id_tag = "helicopter-right";
-	name = "MTF Helicopter Side Doors"
+	name = "MTF Helicopter Side Doors";
+	req_access = list("ACCESS_MTF")
 	},
 /turf/simulated/wall/r_wall,
 /area/site53/tram/mtf)
@@ -8163,15 +8165,6 @@
 /obj/item/clothing/glasses/hud/scramble/experimental,
 /obj/item/clothing/glasses/hud/scramble/experimental,
 /obj/item/clothing/glasses/hud/scramble/experimental,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom)
-"OY" = (
-/obj/machinery/door/airlock/vault{
-	name = "Archive";
-	req_access = list("ACCESS_MTF")
-	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -9705,7 +9698,7 @@
 "ZY" = (
 /obj/machinery/computer/shuttle_control{
 	name = "MTF Helicopter";
-	req_access = null;
+	req_access = list("ACCESS_MTF");
 	shuttle_tag = "MTF Helicopter"
 	},
 /turf/simulated/floor/shuttle/black,
@@ -14618,7 +14611,7 @@ tq
 Eu
 Eu
 tq
-OY
+eG
 eG
 tq
 Eu
