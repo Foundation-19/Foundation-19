@@ -46,12 +46,12 @@
 	name = "MTF Base"
 	landmark_tag = "nav_mtf_start"
 	base_turf = /turf/unsimulated/floor/reinforced
-	base_area = /area/site53/tram/mtf
+	base_area = /area/site53/surface/surface
 
 /obj/effect/shuttle_landmark/heli/out
 	name = "Site 53"
 	landmark_tag = "nav_mtf_out"
-	base_turf = /turf/simulated/floor/tiled/monotile/white
+	base_turf = /turf/simulated/floor/reinforced
 	base_area = /area/site53/surface/surface
 
 /* commented out because fuck you it no work
