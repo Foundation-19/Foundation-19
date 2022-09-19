@@ -6885,9 +6885,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"uT" = (
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/surface/surface)
 "uV" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -9478,7 +9475,7 @@
 /area/site53/uez/equipmentroom)
 "UF" = (
 /obj/effect/shuttle_landmark/heli/out,
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/reinforced,
 /area/site53/surface/surface)
 "UI" = (
 /obj/effect/floor_decal/corner/orange/border{
@@ -44294,13 +44291,13 @@ iz
 AT
 AT
 AT
-uT
-uT
-uT
-uT
-uT
-uT
-uT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
 AT
 AT
 AT
@@ -44554,7 +44551,7 @@ AT
 AT
 AT
 AT
-uT
+AT
 AT
 AT
 AT
@@ -45068,7 +45065,7 @@ AT
 AT
 AT
 AT
-uT
+AT
 AT
 AT
 AT
@@ -45322,13 +45319,13 @@ iz
 AT
 AT
 AT
-uT
-uT
-uT
-uT
-uT
-uT
-uT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
 AT
 AT
 AT
