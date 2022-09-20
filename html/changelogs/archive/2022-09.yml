@@ -81,3 +81,7 @@
   - rscdel: Removed an extra door in one of the corridors
   - rscdel: Removed an extra button in HCZ checkpoint
   - bugfix: Moved some of the lights and cameras that were misplaced
+2022-09-20:
+  Jpog2010:
+  - bugfix: Fixed MTF Heli ( now it can return )
+  - rscadd: Added access to heli shutters and console

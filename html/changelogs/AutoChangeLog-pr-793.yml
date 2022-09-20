@@ -1,5 +1,0 @@
-author: Jpog2010
-delete-after: true
-changes:
-  - bugfix: Fixed MTF Heli ( now it can return )
-  - rscadd: Added access to heli shutters and console
