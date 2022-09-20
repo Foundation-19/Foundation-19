@@ -5927,7 +5927,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/controlroom)
 "aqO" = (
-/obj/machinery/vending/coffee,
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "aqP" = (
@@ -6115,7 +6118,10 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
 "arg" = (
-/obj/machinery/vending/fashionvend,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "arh" = (
@@ -9296,11 +9302,22 @@
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
 "ayS" = (
-/obj/machinery/vending/cigarette,
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
+	},
+/obj/machinery/camera/network/entrance{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "ayT" = (
-/obj/machinery/vending/fitness,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/disposalpipe/up{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "ayV" = (
@@ -15466,8 +15483,10 @@
 /turf/simulated/floor/bluegrid/airless,
 /area/site53/upper_surface/serverfarminterior)
 "aQT" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/vending/fitness{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
 "aQU" = (
 /obj/machinery/telecomms/processor/preset_four,
@@ -15625,10 +15644,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/upper_surface/serverfarmtunnel)
 "aRF" = (
-/obj/structure/disposalpipe/up{
-	dir = 1
+/obj/machinery/vending/fashionvend{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
 "aRG" = (
 /obj/machinery/light{
@@ -17920,10 +17939,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/brownline)
 "aZu" = (
-/obj/machinery/camera/network/entrance{
-	dir = 1
+/obj/machinery/vending/coffee{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
 "aZw" = (
 /obj/machinery/camera/network/entrance{
@@ -24290,6 +24309,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
+"fOI" = (
+/obj/machinery/vending/cigarette{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/site53/lowertrams/hub)
 "fQz" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/cable{
@@ -66058,8 +66083,8 @@ uXT
 aac
 aaf
 aaf
-aae
-abL
+aZu
+fOI
 aac
 afe
 aOt
@@ -66572,8 +66597,8 @@ aai
 aKP
 aaf
 aaf
-aaf
-aZu
+aae
+abL
 aac
 azC
 aOt
@@ -66828,9 +66853,9 @@ aer
 aai
 aKP
 aaf
-aPA
-aQT
-aRF
+aaf
+aae
+abL
 aac
 aGh
 aOt
@@ -67085,7 +67110,7 @@ aeT
 agp
 aac
 bBS
-aPL
+aPA
 arg
 ayT
 aac
@@ -67343,8 +67368,8 @@ aPF
 aac
 aaf
 aPL
-aae
-abL
+aRF
+aQT
 aac
 aPa
 aOt
