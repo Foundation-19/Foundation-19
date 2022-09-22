@@ -968,11 +968,6 @@
 	icon_state = "morgue"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/medical/sleeper
-	name = "\improper Emergency Treatment Centre"
-	icon_state = "exam_room"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/medical/chemistry
 	name = "\improper Chemistry"
 	icon_state = "chem"
