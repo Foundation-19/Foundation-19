@@ -85,3 +85,15 @@
   Jpog2010:
   - bugfix: Fixed MTF Heli ( now it can return )
   - rscadd: Added access to heli shutters and console
+2022-09-23:
+  Jpog2010:
+  - rscadd: Combined Recovery Ward and Emergency Treatment Center.
+  - rscadd: Added more items to level 3 Security Checkpoint.
+  - rscadd: Added two more combat medkits to EZ Security Center.
+  - rscadd: Added SecTech to EZ Security Center.
+  - rscadd: Added more other minor items to EZ Security Center.
+  - rscadd: Added more items to offices.
+  - rscadd: Added some extinguishers and fire-safety closets.
+  - rscadd: Added more lamps.
+  - bugfix: Replaced some doors.
+  - bugfix: Combined two stairs in the Hub into one large.
