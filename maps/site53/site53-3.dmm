@@ -6368,6 +6368,8 @@
 /obj/structure/table/reinforced,
 /obj/random/clipboard,
 /obj/effect/floor_decal/carpet/blue2,
+/obj/item/stamp/denied,
+/obj/item/stamp/approved,
 /turf/simulated/floor/carpet/blue2,
 /area/site53/zonecommanderoffice)
 "tb" = (
@@ -9621,6 +9623,8 @@
 "Vf" = (
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/structure/table/reinforced,
+/obj/item/stamp/approved,
+/obj/item/stamp/denied,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/senioragentoffice)
 "Vi" = (

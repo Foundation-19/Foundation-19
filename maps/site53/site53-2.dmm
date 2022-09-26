@@ -27177,6 +27177,8 @@
 	dir = 8
 	},
 /obj/item/sticky_pad/random,
+/obj/item/stamp/denied,
+/obj/item/stamp/approved,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/commanderoffice)
 "kao" = (

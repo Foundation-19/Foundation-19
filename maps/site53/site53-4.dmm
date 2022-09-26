@@ -1346,6 +1346,8 @@
 /obj/structure/table/standard,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/item/stamp/approved,
+/obj/item/stamp/denied,
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/hallway)
 "ee" = (
@@ -4517,6 +4519,18 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
+"WC" = (
+/obj/structure/table/woodentable,
+/obj/item/stamp/approved,
+/obj/item/stamp/denied,
+/obj/item/stamp/scp/hop,
+/turf/simulated/floor/carpet/brown,
+/area/site53/uez/hallway)
+"WM" = (
+/obj/effect/paint/sun,
+/obj/item/stamp/scp/hop,
+/turf/simulated/wall/prepainted,
+/area/site53/uez/hallway)
 "WQ" = (
 /turf/simulated/mineral,
 /area/site53/surface/surface)
@@ -35501,7 +35515,7 @@ rc
 ac
 ev
 bK
-dZ
+WM
 el
 fl
 fl
@@ -37543,7 +37557,7 @@ hk
 hk
 ae
 bn
-bH
+WC
 bn
 bX
 bK
