@@ -1,3 +1,17 @@
+
+/datum/access
+	var/id = ""
+	var/desc = ""
+	var/region = ACCESS_REGION_NONE
+	var/access_type = ACCESS_TYPE_STATION
+
+	// person with ANY ACCESS in guestpass_access_prerequisites can give out a guestpass
+	// for this access despite not having this access
+	var/list/guestpass_access_prerequisites = list()
+
+/datum/access/dd_SortValue()
+	return "[access_type][desc]"
+
 /obj/var/list/req_access = list()
 
 //returns 1 if this mob has sufficient access to use this object
