@@ -79,24 +79,17 @@
 	..()
 	uid = "[random_id("guestpass_serial_number",100,999)]-G[rand(10,99)]"
 
-/obj/machinery/computer/guestpass/proc/access_assignment_check(acc)
-	if(!giver)
-		return FALSE
-
-	// Check if giver has the access in their accesses
-	if(acc in giver.access)
-		. = TRUE
-
-	var/datum/access/dacc = get_access_by_id(acc)
+/obj/machinery/computer/guestpass/proc/guestpass_access_check(acc)
+	var/datum/access/acc_datum = get_access_by_id(acc)
 
 	// See if they meet any of the access prerequisite requirements
-	for(var/prereq_acc in dacc?.guestpass_access_prerequisites)
-		if(. || prereq_acc in giver.access)) // break if past check true too
+	for(var/prereq_acc in acc_datum?.guestpass_access_prerequisites)
+		if(prereq_acc in giver.access)
 			. = TRUE
 			break
 
-	// Lastly, make sure the access is one we actually dispense
-	return . && ((operating_access_types | special_access_types) & dacc.access_type)
+	// Make sure the access is one we actually dispense
+	return . && (special_access_types & acc_datum.access_type)
 
 /obj/machinery/computer/guestpass/attackby(obj/O, mob/user)
 	if(istype(O, /obj/item/card/id))
@@ -160,7 +153,7 @@
 			var/datum/access/acc = get_access_by_id(A)
 			if (A in accesses)
 				accesses.Remove(A)
-			else if (((A in giver?.access) || (acc.guestpass_access_prerequisites in giver?.access)) && ((operating_access_types | special_access_types) & acc.access_type))
+			else if (((A in giver?.access) || guestpass_access_check(acc)) && ((operating_access_types | special_access_types) & acc.access_type))
 				accesses.Add(A)
 			. = TRUE
 			SStgui.update_user_uis(ui.user)
@@ -198,7 +191,7 @@
 				var/list/access_descriptors = list()
 				for (var/A in accesses)
 					var/datum/access/acc = get_access_by_id(A)
-					if (((A in giver.access) || (acc.guestpass_access_prerequisites in giver.access)) && (acc.access_type in operating_access_types))
+					if (((A in giver.access) || guestpass_access_check(acc)) && (acc.access_type in operating_access_types))
 						access_descriptors += get_access_desc(A)
 				entry += english_list(access_descriptors, and_text = ", ")
 				entry += ". Expires at [time2text(SSticker.round_start_time + duration MINUTES, "hh:mm")]."
@@ -260,7 +253,7 @@
 		var/list/special_access = list()
 		for(var/A in get_access_ids(special_access_types))
 			var/datum/access/acc = get_access_by_id(A)
-			if((acc.guestpass_access_prerequisites in giver.access) && special_access_types & acc.access_type)
+			if(guestpass_access_check(acc) && (special_access_types & acc.access_type))
 				special_access.Add(list(list(
 					"desc" = acc.desc,
 					"access" = A,
