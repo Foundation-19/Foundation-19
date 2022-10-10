@@ -78,15 +78,15 @@
 	name = "openspace multiplier"
 	desc = "You shouldn't see this."
 	icon = 'icons/effects/lighting_overlay.dmi'
-	icon_state = "dark"
-	plane = OPENTURF_MAX_PLANE
+	icon_state = "os_darkness"
+	plane = OVER_OPENSPACE_PLANE
 	layer = MIMICED_LIGHTING_LAYER
-	blend_mode = BLEND_MULTIPLY
-	color = list(
-		SHADOWER_DARKENING_FACTOR, 0, 0,
-		0, SHADOWER_DARKENING_FACTOR, 0,
-		0, 0, SHADOWER_DARKENING_FACTOR
-	)
+	blend_mode = DEFAULT
+	//color = list(
+	//	SHADOWER_DARKENING_FACTOR, 0, 0,
+	//	0, SHADOWER_DARKENING_FACTOR, 0,
+	//	0, 0, SHADOWER_DARKENING_FACTOR
+	//)
 
 /atom/movable/openspace/multiplier/Destroy()
 	var/turf/myturf = loc

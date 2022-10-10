@@ -596,6 +596,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	mind?.active = FALSE
 	M.key = key
 	log_and_message_admins("has respawned.", M)
+	qdel(src)
 
 /mob/observer/ghost/verb/become_scp()
 	set category = "Ghost"
