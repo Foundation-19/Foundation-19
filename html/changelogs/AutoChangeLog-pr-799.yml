@@ -1,0 +1,4 @@
+author: Tsurupeta
+delete-after: true
+changes:
+  - admin: Removed mentors ability to cancel votes.
