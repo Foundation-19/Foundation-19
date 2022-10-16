@@ -220,7 +220,7 @@ SUBSYSTEM_DEF(vote)
 	var/list/data = list()
 
 	var/is_lower_admin = !!user.client?.holder
-	var/is_upper_admin = check_rights(R_ADMIN, FALSE, user.client)
+	var/is_upper_admin = check_rights(R_ADMIN|R_MOD, FALSE, user.client)
 
 	data["user"] = list(
 		"isLowerAdmin" = is_lower_admin,
@@ -274,7 +274,7 @@ SUBSYSTEM_DEF(vote)
 
 	switch(action)
 		if("cancel")
-			if(!voter.client?.holder)
+			if(!check_rights(R_ADMIN|R_MOD, TRUE, voter.client))
 				return
 
 			message_admins("[key_name_admin(voter)] has cancelled the current vote.")
