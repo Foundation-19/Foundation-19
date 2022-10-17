@@ -1,4 +1,3 @@
-author: Tsurupeta
-delete-after: true
-changes:
+2022-10-17:
+  Tsurupeta:
   - admin: Removed mentors ability to cancel votes.
