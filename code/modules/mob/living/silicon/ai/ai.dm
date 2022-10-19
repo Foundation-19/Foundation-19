@@ -33,7 +33,7 @@ var/list/ai_verbs_default = list(
 	/mob/living/silicon/ai/proc/ai_power_override,
 	/mob/living/silicon/ai/proc/ai_shutdown,
 	/mob/living/silicon/ai/proc/ai_reset_radio_keys,
-	/mob/living/silicon/ai/proc/eyepuppettoggle
+	/mob/living/silicon/ai/proc/eye_puppet_toggle
 )
 
 //Not sure why this is necessary...
