@@ -1,5 +1,0 @@
-author: DTraitor
-delete-after: true
-changes:
-  - bugfix: Removed blank entries from AI subsystem list
-  - bugfix: AI can access modular computers once again
