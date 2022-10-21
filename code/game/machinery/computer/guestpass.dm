@@ -73,8 +73,6 @@
 	var/list/internal_log = list()
 	var/mode = 0  // 0 - making pass, 1 - viewing logs
 
-	var/ui_type = 0
-
 /obj/machinery/computer/guestpass/New()
 	..()
 	uid = "[random_id("guestpass_serial_number",100,999)]-G[rand(10,99)]"
@@ -103,11 +101,7 @@
 	..()
 
 /obj/machinery/computer/guestpass/interface_interact(var/mob/user)
-	switch(ui_type)
-		if(0)
-			ui_interact(user)
-		if(1)
-			tgui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
 /obj/machinery/computer/guestpass/tgui_interact(mob/user, datum/tgui/ui)

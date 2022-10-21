@@ -136,7 +136,6 @@ const IdEditor = (props, context) => {
               onClick={() => act('issue_id')}
             />
           </Stack.Item>
-          <Stack.Item>tab:{tabIndex}</Stack.Item>
         </Stack>
       </Stack.Item>
       <Stack.Item>
