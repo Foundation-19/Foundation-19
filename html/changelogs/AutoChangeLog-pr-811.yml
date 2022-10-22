@@ -1,0 +1,4 @@
+author: Tuulipommi
+delete-after: true
+changes:
+  - bugfix: Non-humans no longer able to become antags without admin intervention.
