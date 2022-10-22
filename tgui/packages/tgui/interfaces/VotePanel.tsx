@@ -212,10 +212,10 @@ const TimePanel = (props, context) => {
             Time Remaining:&nbsp;
             {currentVote?.timeRemaining || 0}s
           </Box>
-          {!!user.isLowerAdmin && (
+          {!!user.isUpperAdmin && (
             <Button
               color="red"
-              disabled={!user.isLowerAdmin || !currentVote}
+              disabled={!user.isUpperAdmin || !currentVote}
               onClick={() => act('cancel')}>
               Cancel Vote
             </Button>

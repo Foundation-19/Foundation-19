@@ -212,6 +212,7 @@ var/global/datum/ntnet/ntnet_global = new()
 	else
 		var/datum/computer_file/data/email_account/EA = new/datum/computer_file/data/email_account(login, user.real_name, assignment)
 		EA.password = desired_password ? desired_password : GenerateKey()
+		EA.login = login
 		if(user.mind)
 			user.mind.initial_email_login["login"] = EA.login
 			user.mind.initial_email_login["password"] = EA.password

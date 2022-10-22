@@ -13,6 +13,10 @@
 		var/datum/nano_module/NM = subtype
 		if(initial(NM.available_to_ai))
 			silicon_subsystems += NM
+	for(var/subtype in subtypesof(/datum/tgui_module))
+		var/datum/tgui_module/TM = subtype
+		if(initial(TM.available_to_ai))
+			silicon_subsystems += TM
 	. = ..()
 
 /mob/living/silicon/robot/syndicate
