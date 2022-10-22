@@ -1,0 +1,5 @@
+author: TerryTehCoder
+delete-after: true
+changes:
+  - bugfix: Fixed email clients not properly generating login/username at round start.
+  - bugfix: Removes Computer Configuration Tool from subsystems tab.
