@@ -508,7 +508,7 @@ var/global/datum/controller/occupations/job_master
 			else
 				var/datum/computer_file/data/email_account/EA = new/datum/computer_file/data/email_account()
 				EA.password = GenerateKey()
-				EA.login = 	complete_login
+				EA.login = complete_login
 				to_chat(H, "Your email account address is <b>[EA.login]</b> and the password is <b>[EA.password]</b>. This information has also been placed into your notes.")
 				H.mind.store_memory("Your email account address is [EA.login] and the password is [EA.password].")
 			// END EMAIL GENERATION
