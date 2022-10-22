@@ -5,3 +5,9 @@
   DTraitor:
   - bugfix: Removed blank entries from AI subsystem list
   - bugfix: AI can access modular computers once again
+2022-10-22:
+  TerryTehCoder:
+  - bugfix: Fixed email clients not properly generating login/username at round start.
+  - bugfix: Removes Computer Configuration Tool from subsystems tab.
+  Tuulipommi:
+  - bugfix: Non-humans no longer able to become antags without admin intervention.
