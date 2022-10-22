@@ -71,7 +71,7 @@ GLOBAL_LIST_EMPTY(scp999s)
 					attached.emote(pick("laugh","giggle","smile","grin"))
 
 /mob/living/simple_animal/scp_999/UnarmedAttack(atom/a)
-	if(ishuman(a))
+	if(ishuman(a)&ishuman(a) || null)
 		if(a_intent == I_HELP)
 			attached_mode = HUGGING
 			attached = a
@@ -93,10 +93,11 @@ GLOBAL_LIST_EMPTY(scp999s)
 			return
 	return ..(a,b,f)
 
-/mob/living/simple_animal/scp_999/verb/detach()
+/mob/living/simple_animal/scp_999/verb/detach(atom/a)
 	set category = "SCP"
 	set name = "Detach"
-	if(attached)
+
+	if(QDELETED(attached)|| !attached.loc)
 		forceMove(get_turf(src))
 		visible_message("<span class='notice'>[src] detaches from [attached]!</span>")
 		attached = null
