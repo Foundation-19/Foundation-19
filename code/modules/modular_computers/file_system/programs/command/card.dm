@@ -8,6 +8,7 @@
 	extended_desc = "Program for programming crew ID cards."
 	requires_ntnet = FALSE
 	size = 8
+	var/operating_access_types = ACCESS_TYPE_NONE | ACCESS_TYPE_STATION | ACCESS_TYPE_CENTCOM
 /datum/nano_module/program/card_mod
 	name = "ID card modification program"
 	var/mod_mode = 1
@@ -216,7 +217,10 @@
 							to_chat(usr, "<span class='warning'>No log exists for this job: [t1]</span>")
 							return
 
-						access = jobdatum.get_access()
+						var/list/to_give = jobdatum.get_access()
+						for(var/acc in to_give)
+							if(acc && operating_access_types)
+								access.Add(acc)
 
 					remove_nt_access(id_card)
 					apply_access(id_card, access)

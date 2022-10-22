@@ -27,6 +27,7 @@
 	desc = "SCP-066 Containment"
 	access_type = ACCESS_TYPE_CONTAINMENT
 	guestpass_access_prerequisites = list(ACCESS_SCIENCE_LVL3)
+
 /datum/access/containment_scp_078
 	id = ACCESS_CONTAINMENT_SCP_078
 	desc = "SCP-078 Containment"
