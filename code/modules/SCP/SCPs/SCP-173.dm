@@ -12,12 +12,13 @@ GLOBAL_LIST_EMPTY(scp173s)
 	icon_state = "173"
 	SCP = /datum/scp/scp_173
 	status_flags = NO_ANTAG
+	mob_size = MOB_GIANT
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 
-	maxHealth = 5000
-	health = 5000
+	maxHealth = 3000
+	health = 3000
 
 	can_pull_size = 0 // Can't pull things
 	a_intent = "harm" // Doesn't switch places with people
@@ -71,6 +72,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 /mob/living/scp_173/Move(a,b,f)
 	if(IsBeingWatched())
 		return FALSE
+	if(prob(50))
+		playsound(src.loc, 'sound/effects/stonedoor_openclose.ogg', 40, 1)
 	return ..()
 
 /mob/living/scp_173/face_atom(atom/A)
@@ -79,7 +82,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	return ..()
 
 /mob/living/scp_173/movement_delay()
-	return -5
+	return 2
 
 /mob/living/scp_173/UnarmedAttack(atom/A)
 	if(IsBeingWatched() || incapacitated()) // We can't do anything while being watched
@@ -98,7 +101,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 		snap_cooldown = world.time + snap_cooldown_time
 		visible_message("<span class='danger'>[src] snaps [H]'s neck!</span>")
 		playsound(loc, pick('sound/scp/spook/NeckSnap1.ogg', 'sound/scp/spook/NeckSnap3.ogg'), 50, 1)
-		H.death()
+		H.apply_damage(90, BRUTE, BP_HEAD)
+//		H.death()
 		H.scp173_killed = TRUE
 		return
 	if(istype(A, /obj/machinery/door))
@@ -115,6 +119,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(istype(A, /obj/structure/inflatable))
 		var/obj/structure/inflatable/W = A
 		W.deflate(violent=1)
+	if(istype(A, /obj/structure/wall_frame/))
+		playsound(get_turf(A), 'sound/effects/grillehit.ogg', 50, 1)
+		qdel(A)
+		return
 	return
 
 /mob/living/scp_173/Life()
@@ -179,11 +187,9 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 
 	var/open_time = 3 SECONDS
-	if(istype(A, /obj/machinery/door/blast))
-		if(get_area(A) == spawn_area)
-			to_chat(src, "<span class='warning'>You cannot open blast doors in your containment zone.</span>")
-			return
-		open_time = 15 SECONDS
+	if(istype(A, /obj/machinery/door/blast/regular))
+		to_chat(src, "<span class='warning'>[A] resists your attempt to force it!</span>")
+		return
 
 	if(istype(A, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/AR = A
@@ -199,13 +205,13 @@ GLOBAL_LIST_EMPTY(scp173s)
 	door_cooldown = world.time + open_time // To avoid sound spam
 	if(!do_after(src, open_time, A))
 		return
-
+/*
 	if(istype(A, /obj/machinery/door/blast))
 		var/obj/machinery/door/blast/DB = A
 		DB.visible_message(SPAN_DANGER("\The [src] forcefully opens \the [DB]!"))
 		DB.force_open()
 		return
-
+*/
 	if(istype(A, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/AR = A
 		AR.unlock(TRUE) // No more bolting in the SCPs and calling it a day

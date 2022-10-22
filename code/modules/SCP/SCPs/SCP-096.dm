@@ -36,6 +36,7 @@
 	anomalytype = SCP_096
 	status_flags = NO_ANTAG
 	ai_holder_type = /datum/ai_holder/simple_animal/inert // prevents 096 from moving
+	mob_size = MOB_GIANT
 
 	// For scramble goggles.
 	var/hud_scramble

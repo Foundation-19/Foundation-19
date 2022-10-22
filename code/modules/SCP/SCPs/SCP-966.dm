@@ -3,7 +3,7 @@
 	SCP = /datum/scp/scp_966
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 8
-
+	mob_size = MOB_GIANT
 
 /datum/scp/scp_966
 	name = "SCP-966"

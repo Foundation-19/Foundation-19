@@ -270,9 +270,13 @@
 			return
 		hud_open.toggled()
 		if(!silent)
+			if(!do_after(user, 30, src))
+				return
 			to_chat(user, SPAN_NOTICE("You open the hatch and climb out of \the [src]."))
 	else
 		if(!silent)
+			if(!do_after(user, 30, src))
+				return
 			to_chat(user, SPAN_NOTICE("You climb out of \the [src]."))
 
 	user.RemoveClickHandler(/datum/click_handler/default/mech)

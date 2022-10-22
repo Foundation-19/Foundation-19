@@ -231,7 +231,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 
 	if (istype(A, /obj/machinery/door/airlock/highsecurity))
-		to_chat(src, "<span class='warning'>\ You cannot open highsecurity doors.</span>")
+		to_chat(src, "<span class='warning'>\ You cannot open high security doors.</span>")
 		return
 
 	if (istype(A, /obj/machinery/door/blast/regular))

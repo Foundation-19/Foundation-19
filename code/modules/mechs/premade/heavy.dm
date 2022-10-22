@@ -67,6 +67,7 @@
 	max_damage = 300
 	mech_health = 700
 	power_use = 50
+	climb_time = 30
 	has_hardpoints = list(HARDPOINT_BACK)
 
 /obj/item/mech_component/chassis/heavy/prebuild()
