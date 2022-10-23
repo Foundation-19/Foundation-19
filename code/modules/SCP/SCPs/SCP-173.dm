@@ -37,7 +37,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	/// Cooldown for defecation...
 	var/defecation_cooldown
 	/// How much time you have to wait before defecating again
-	var/defecation_cooldown_time = 30 SECONDS
+	var/defecation_cooldown_time = 60 SECONDS
 	/// What kind of objects/effects we spawn on defecation. Also used when checking the area
 	var/list/defecation_types = list(/obj/effect/decal/cleanable/blood/gibs/red, /obj/effect/decal/cleanable/vomit, /obj/effect/decal/cleanable/mucus)
 
