@@ -51,7 +51,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/Initialize()
 	GLOB.scp173s += src
-	defecation_cooldown = world.time + 5 MINUTES // Give everyone some time to prepare
+	defecation_cooldown = world.time + 15 MINUTES // Give everyone some time to prepare
 	spawn_area = get_area(src)
 	add_language(LANGUAGE_EAL, FALSE)
 	add_language(LANGUAGE_SKRELLIAN, FALSE)
