@@ -269,7 +269,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 				SelfMove(Tdir)
 	// Breach check
 	var/feces_amount = CheckFeces()
-	if(feces_amount >= 60) // Breach, gonna take ~30 minutes
+	if(feces_amount >= 60) // Breach, gonna take ~60 minutes
 		if(breach_cooldown > world.time)
 			return
 		breach_cooldown = world.time + 25 MINUTES
