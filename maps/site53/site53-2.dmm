@@ -803,7 +803,7 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "adc" = (
 /obj/machinery/light,
-/obj/structure/table/standard,
+/obj/machinery/stove,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
 "ade" = (
@@ -33612,6 +33612,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
 "ukZ" = (
