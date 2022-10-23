@@ -37,7 +37,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	/// Cooldown for defecation...
 	var/defecation_cooldown
 	/// How much time you have to wait before defecating again
-	var/defecation_cooldown_time = 120 SECONDS
+	var/defecation_cooldown_time = 60 SECONDS
 	/// What kind of objects/effects we spawn on defecation. Also used when checking the area
 	var/list/defecation_types = list(/obj/effect/decal/cleanable/blood/gibs/red, /obj/effect/decal/cleanable/vomit, /obj/effect/decal/cleanable/mucus)
 
@@ -272,7 +272,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(feces_amount >= 60) // Breach, gonna take ~30 minutes
 		if(breach_cooldown > world.time)
 			return
-		breach_cooldown = world.time + 10 MINUTES
+		breach_cooldown = world.time + 25 MINUTES
 		warning_cooldown = world.time + 5 MINUTES // Just in case 173 doesn't immediately leave the area
 		command_announcement.Announce("ALERT! SCP-173 containment zone security measures have shut down due to severe acidic degradation.")
 		BreachEffect()
