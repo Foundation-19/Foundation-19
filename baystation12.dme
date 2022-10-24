@@ -1388,6 +1388,7 @@
 #include "code\modules\admin\verbs\diagnostics.dm"
 #include "code\modules\admin\verbs\dice.dm"
 #include "code\modules\admin\verbs\fluids.dm"
+#include "code\modules\admin\verbs\getlogs.dm"
 #include "code\modules\admin\verbs\grief_fixers.dm"
 #include "code\modules\admin\verbs\map_template_loadverb.dm"
 #include "code\modules\admin\verbs\mapping.dm"
