@@ -64,6 +64,9 @@
 	set desc = "Fetch logfiles from data/logs"
 	set category = "Admin"
 
+	if(!check_rights(R_ADMIN|R_MOD, TRUE))
+		return
+
 	var/path = browse_files("data/logs/")
 	if(!path)
 		return
@@ -84,6 +87,9 @@
 	set category = "Admin"
 	set name = "Show Today Server Log"
 	set desc = "Shows today's server log."
+
+	if(!check_rights(R_ADMIN|R_MOD, TRUE))
+		return
 
 	var/path = "data/logs/[time2text(world.realtime,"YYYY/MM/DD")].log"
 	if( fexists(path) )
