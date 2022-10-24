@@ -134,8 +134,6 @@
 			log_debug("[key_name(player)] is not eligible to become a [role_text]: They are blacklisted for this role!")
 		else if(player_is_antag(player))
 			log_debug("[key_name(player)] is not eligible to become a [role_text]: They are already an antagonist!")
-		else if(!ishuman(player))
-			log_debug("[key_name(player)] is not eligible to become a [role_text]: They are not a human!")
 		else
 			candidates |= player
 
