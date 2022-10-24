@@ -11,3 +11,6 @@
   - bugfix: Removes Computer Configuration Tool from subsystems tab.
   Tuulipommi:
   - bugfix: Non-humans no longer able to become antags without admin intervention.
+2022-10-24:
+  Tuulipommi:
+  - balance: Balanced SCP-173 breaching mechanics a little.
