@@ -8240,6 +8240,24 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
+"CG" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/surgery/hall)
 "CU" = (
 /obj/structure/iv_drip,
 /obj/structure/cable/green{
@@ -8517,6 +8535,14 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
+"Fl" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/surgery/hall)
 "Fn" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/toxin,
@@ -8694,6 +8720,14 @@
 	},
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
+"Hc" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/surgery/hall)
 "He" = (
 /obj/machinery/atmospherics/unary/tank/air{
 	dir = 4
@@ -9284,6 +9318,17 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/senioragentoffice)
+"Mo" = (
+/obj/effect/floor_decal/corner/green{
+	dir = 6
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/surgery/hall)
 "Mq" = (
 /obj/effect/paint_stripe/red,
 /obj/effect/paint_stripe/red,
@@ -10312,6 +10357,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
+"WC" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/medical/surgery/hall)
 "WG" = (
 /obj/machinery/floodlight{
 	anchored = 1;
@@ -43630,13 +43683,13 @@ yE
 dH
 Hm
 ex
-ex
-ex
-ex
-hQ
-ex
-ex
-ex
+Hc
+WC
+WC
+CG
+WC
+WC
+Fl
 ex
 kD
 ge
@@ -43887,13 +43940,13 @@ yE
 hd
 zl
 ag
-ag
+Mo
 ag
 hB
 hn
 hB
 ag
-ag
+Mo
 ag
 kD
 hx
