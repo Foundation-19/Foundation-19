@@ -413,8 +413,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
 "abz" = (
-/obj/machinery/microwave,
-/obj/structure/table/standard,
+/obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
 "abB" = (
@@ -936,8 +935,10 @@
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/restaurantkitchenarea)
 "adv" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/techfloor,
+/obj/machinery/door/firedoor,
+/obj/structure/table/reinforced,
+/obj/item/material/ashtray/glass,
+/turf/simulated/floor/tiled,
 /area/site53/lowertrams/restaurantkitchenarea)
 "adx" = (
 /obj/effect/floor_decal/corner/brown/mono,
@@ -11901,13 +11902,15 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "aFX" = (
-/obj/machinery/cooker/cereal,
 /obj/structure/table/standard,
-/turf/simulated/floor/tiled/monotile/white,
+/obj/item/tray,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
 "aFZ" = (
-/obj/machinery/cooker/candy,
 /obj/structure/table/standard,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/machinery/reagent_temperature,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
 "aGa" = (
@@ -23982,6 +23985,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/brownline)
+"foO" = (
+/obj/structure/closet/wardrobe/suit,
+/turf/simulated/floor/wood/walnut,
+/area/site53/lowertrams/restaurantkitchenarea)
 "fpy" = (
 /obj/machinery/light{
 	dir = 8
@@ -25339,6 +25346,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
+"hkE" = (
+/obj/machinery/microwave,
+/obj/structure/table/standard,
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/lowertrams/restaurantkitchenarea)
 "hlc" = (
 /obj/machinery/light{
 	dir = 1
@@ -26010,11 +26023,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
 "ibA" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/cooker/candy,
 /obj/structure/table/standard,
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurantkitchenarea)
 "icl" = (
 /obj/structure/table/reinforced,
@@ -28940,6 +28951,11 @@
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
+"mAK" = (
+/obj/machinery/cooker/cereal,
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/lowertrams/restaurantkitchenarea)
 "mBg" = (
 /obj/machinery/light{
 	dir = 1
@@ -30053,9 +30069,17 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "osf" = (
-/obj/structure/table/standard,
-/obj/machinery/camera/network/entrance,
-/turf/simulated/floor/tiled/techfloor,
+/obj/machinery/door/firedoor{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/material/kitchen/utensil/fork/plastic,
+/obj/item/material/kitchen/utensil/fork/plastic,
+/obj/item/material/kitchen/utensil/fork/plastic,
+/obj/item/material/kitchen/utensil/spoon/plastic,
+/obj/item/material/kitchen/utensil/spoon/plastic,
+/obj/item/material/kitchen/utensil/spoon/plastic,
+/turf/simulated/floor/tiled,
 /area/site53/lowertrams/restaurantkitchenarea)
 "osy" = (
 /obj/structure/bed/chair,
@@ -68641,7 +68665,7 @@ aav
 aav
 jDF
 adu
-adu
+osf
 abv
 aav
 acZ
@@ -69150,7 +69174,7 @@ aaY
 sGR
 abt
 bdp
-aFX
+aGa
 abv
 kLz
 iaF
@@ -69405,7 +69429,7 @@ aIm
 aav
 aaZ
 uAr
-abw
+aFX
 acm
 aFZ
 abv
@@ -69664,14 +69688,14 @@ aba
 abm
 oOF
 bdp
-aGa
+hkE
 abv
 adn
 iaF
 sJU
 iaF
 iaF
-aoo
+adv
 aLL
 adt
 ahR
@@ -69917,7 +69941,7 @@ aKo
 aId
 ajY
 aav
-sGR
+abw
 uAr
 abz
 acW
@@ -70174,10 +70198,10 @@ aId
 aId
 ajY
 aav
-aLT
-adg
-aav
-aav
+uAr
+sGR
+uAr
+sGR
 aav
 aav
 aav
@@ -70430,11 +70454,11 @@ azA
 azA
 aId
 ajY
-aId
-abg
-abf
-ads
-acY
+aav
+sGR
+uAr
+mAK
+ibA
 aav
 nwY
 nUn
@@ -70687,11 +70711,11 @@ azA
 azA
 aId
 cpO
-aId
-aLR
-abf
-kao
-adv
+aav
+aLT
+adg
+aav
+aav
 aav
 aLO
 iaF
@@ -70945,16 +70969,16 @@ azA
 aId
 ajY
 aId
-aLR
+kao
 abf
-vpu
-lQF
+abf
+aLR
 aav
 aav
 xbp
 aav
 aav
-aMb
+foO
 kcV
 aav
 adp
@@ -71204,7 +71228,7 @@ ajY
 aId
 aLR
 abf
-aLR
+abf
 aLR
 vnp
 aLP
@@ -71459,7 +71483,7 @@ azA
 aId
 ajY
 aId
-qgn
+abg
 abf
 abf
 abf
@@ -71716,9 +71740,9 @@ azA
 aId
 ajY
 aId
-osf
 aLR
 abf
+ads
 abq
 abf
 abq
@@ -71974,8 +71998,8 @@ aId
 alU
 aId
 aLR
-kao
 abf
+vpu
 abq
 abf
 abq
@@ -72231,8 +72255,8 @@ aId
 ajY
 aId
 aLR
-kao
 abf
+lQF
 abq
 abf
 abq
@@ -72487,9 +72511,9 @@ azA
 aId
 ajY
 aId
-ibA
-aLR
+qgn
 abf
+acY
 abq
 ahQ
 abq
