@@ -869,7 +869,7 @@
 	},
 /obj/structure/bed/chair/wheelchair,
 /obj/machinery/camera/network/medbay{
-	c_tag = "Medical Equipment Room";
+	c_tag = "Medical Storage";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -3364,7 +3364,7 @@
 /obj/machinery/washing_machine,
 /obj/effect/floor_decal/corner/purple/mono,
 /obj/machinery/camera/network/medbay{
-	c_tag = "Eastern Medical Hallway";
+	c_tag = "Isolation Observation";
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -3380,7 +3380,7 @@
 "jA" = (
 /obj/effect/floor_decal/corner/purple/mono,
 /obj/machinery/camera/network/medbay{
-	c_tag = "Eastern Medical Hallway"
+	c_tag = "Isolation Unit 1"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -5106,6 +5106,10 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/machinery/camera/network/medbay{
+	c_tag = "Eastern Medical Hallway";
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/substation)
@@ -8462,6 +8466,15 @@
 /obj/machinery/power/breakerbox/activated{
 	RCon_tag = "Medical Bay Bypass"
 	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "0-1"
+	},
 /turf/simulated/floor/plating,
 /area/site53/maintenance/surfaceeast)
 "ET" = (
@@ -8600,7 +8613,7 @@
 /obj/effect/floor_decal/corner/green/mono,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/camera/network/medbay{
-	c_tag = "Treatment Center"
+	c_tag = "Surgical Ward"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/hall)
@@ -10191,7 +10204,7 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/medbay{
-	c_tag = "Eastern Medical Hallway";
+	c_tag = "Isolation Unit 2";
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
