@@ -5107,10 +5107,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/machinery/camera/network/medbay{
-	c_tag = "Eastern Medical Hallway";
-	dir = 1
-	},
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/substation)
 "on" = (
@@ -9666,7 +9662,7 @@
 /area/site53/surface/surface)
 "QC" = (
 /obj/machinery/camera/network/medbay{
-	c_tag = "Operating Room 2";
+	c_tag = "Operating Room 1";
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
