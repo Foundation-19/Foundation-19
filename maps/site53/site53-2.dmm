@@ -32211,6 +32211,11 @@
 /obj/structure/bed/chair/pew/left/mahogany,
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
+"sam" = (
+/obj/effect/paint_stripe/gray,
+/obj/structure/noticeboard,
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/restaurantkitchenarea)
 "saA" = (
 /obj/structure/table/rack,
 /obj/item/material/knife/combat,
@@ -69980,7 +69985,7 @@ adl
 adl
 aLX
 kyw
-aav
+sam
 acZ
 adt
 acZ
