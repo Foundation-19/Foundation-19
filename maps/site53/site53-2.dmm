@@ -250,9 +250,6 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "aaY" = (
 /obj/machinery/cooker/grill,
-/obj/machinery/light{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurantkitchenarea)
 "aaZ" = (
@@ -392,9 +389,6 @@
 "abw" = (
 /obj/structure/table/standard,
 /obj/item/book/manual/chef_recipes,
-/obj/machinery/light{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
 "abx" = (
@@ -2369,6 +2363,9 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "ahQ" = (
 /obj/machinery/seed_extractor,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
 "ahR" = (
@@ -19277,6 +19274,9 @@
 "bdp" = (
 /obj/structure/table/standard,
 /obj/item/clothing/gloves/thick/botany,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
 "bdq" = (
@@ -34436,6 +34436,9 @@
 /obj/structure/table/standard,
 /obj/item/storage/box/botanydisk,
 /obj/item/storage/box/botanydisk,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
 "vqG" = (
@@ -70747,7 +70750,7 @@ iyY
 aMb
 aMb
 aav
-acZ
+acf
 acZ
 uLO
 aav
@@ -71777,7 +71780,7 @@ aav
 acZ
 acZ
 acZ
-abi
+acZ
 aav
 azA
 azA
@@ -72031,10 +72034,10 @@ abf
 abf
 abf
 aav
-acZ
+acf
 lOF
 lOF
-acZ
+abi
 aav
 azA
 azA
