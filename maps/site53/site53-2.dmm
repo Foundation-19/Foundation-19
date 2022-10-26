@@ -1635,8 +1635,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "agb" = (
-/obj/structure/bed,
-/obj/item/bedsheet/brown,
+/obj/effect/landmark/start{
+	name = "Bartender"
+	},
+/obj/structure/bed/chair{
+	dir = 8
+	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
 "agc" = (
@@ -14413,8 +14417,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
 "aNR" = (
-/obj/structure/table/woodentable/walnut,
-/obj/item/device/flashlight/lamp/green,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
 "aNS" = (
@@ -21793,16 +21798,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
-"bMA" = (
-/obj/structure/closet,
-/obj/item/storage/candle_box,
-/obj/item/storage/candle_box,
-/obj/item/storage/candle_box/incense,
-/obj/item/storage/candle_box/scented,
-/obj/item/flame/lighter/zippo/random,
-/obj/item/device/paint_sprayer,
-/turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurantkitchenarea)
 "bMS" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/brown/mono,
@@ -22125,12 +22120,6 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
-"cng" = (
-/obj/structure/bed/chair/wood{
-	dir = 8
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurantkitchenarea)
 "cnz" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/mask/muzzle,
@@ -23295,9 +23284,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/upper_surface/serverfarmcontrol)
-"edi" = (
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertrams/restaurantkitchenarea)
 "edu" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/standard,
@@ -23698,11 +23684,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
-"ePC" = (
-/obj/structure/table/plastic,
-/obj/item/deck/cards,
-/turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurantkitchenarea)
 "eQq" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/llcz/entrance_checkpoint)
@@ -24218,26 +24199,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
-"fAm" = (
-/obj/structure/closet,
-/obj/item/toy/sword,
-/obj/item/toy/sword,
-/obj/item/toy/sword,
-/obj/item/toy/sword,
-/obj/random/voidhelmet,
-/obj/random/voidhelmet,
-/obj/random/voidhelmet,
-/obj/random/voidhelmet,
-/obj/random/voidsuit,
-/obj/random/voidsuit,
-/obj/random/voidsuit,
-/obj/random/voidsuit,
-/obj/item/toy/crossbow,
-/obj/item/toy/crossbow,
-/obj/item/toy/crossbow,
-/obj/item/toy/crossbow,
-/turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurantkitchenarea)
 "fDv" = (
 /obj/structure/table/rack,
 /obj/item/gun/projectile/revolver/mateba,
@@ -26659,10 +26620,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
 "jfh" = (
-/obj/machinery/light,
-/obj/structure/table/woodentable/walnut,
-/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
-/turf/simulated/floor/wood/walnut,
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "jfF" = (
 /obj/structure/table/rack,
@@ -26896,6 +26855,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
+"jBe" = (
+/obj/structure/coatrack,
+/turf/simulated/floor/wood/walnut,
+/area/site53/lowertrams/restaurantkitchenarea)
 "jBQ" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/glass/bucket,
@@ -27256,9 +27219,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "kcV" = (
-/obj/effect/landmark/start{
-	name = "Bartender"
-	},
+/obj/structure/table/woodentable/walnut,
+/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
 "kdH" = (
@@ -28008,8 +27970,11 @@
 /turf/simulated/floor/carpet/green,
 /area/chapel)
 "lvx" = (
-/obj/structure/flora/pottedplant/minitree,
-/turf/simulated/floor/lino,
+/obj/machinery/portable_atmospherics/hydroponics,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
 "lwu" = (
 /obj/structure/closet/toolcloset,
@@ -28361,6 +28326,10 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
+"lPL" = (
+/obj/structure/closet,
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "lQa" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -28632,7 +28601,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/sleeproom)
 "mfS" = (
-/obj/structure/flora/pottedplant/large,
+/obj/structure/table/woodentable/walnut,
+/obj/item/device/flashlight/lamp/green,
+/obj/item/paper_bin,
+/obj/item/pen/retractable,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
 "mfV" = (
@@ -28729,10 +28701,6 @@
 /obj/machinery/camera/network/entrance,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
-"mkj" = (
-/obj/structure/reagent_dispensers/water_cooler,
-/turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurantkitchenarea)
 "mkF" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -28943,6 +28911,12 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/controlroom)
+"mwm" = (
+/obj/structure/table/plastic,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "mxN" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -28986,9 +28960,8 @@
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
 "mAK" = (
-/obj/structure/table/plastic,
-/obj/item/paper_bin,
-/obj/item/pen,
+/obj/structure/table/standard,
+/obj/item/toy/eightball,
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "mBg" = (
@@ -29409,6 +29382,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
+"nhr" = (
+/obj/structure/closet,
+/obj/item/storage/candle_box,
+/obj/item/storage/candle_box,
+/obj/item/storage/candle_box/incense,
+/obj/item/storage/candle_box/scented,
+/obj/item/flame/lighter/zippo/random,
+/turf/simulated/floor/wood/walnut,
+/area/site53/lowertrams/restaurantkitchenarea)
 "nhI" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine,
@@ -30068,11 +30050,6 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
-"opB" = (
-/obj/structure/table/standard,
-/obj/item/toy/eightball,
-/turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurantkitchenarea)
 "oqi" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -31166,6 +31143,10 @@
 "qgn" = (
 /obj/structure/flora/pottedplant,
 /turf/simulated/floor/tiled/techfloor,
+/area/site53/lowertrams/restaurantkitchenarea)
+"qgB" = (
+/obj/structure/flora/pottedplant/large,
+/turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
 "qgX" = (
 /obj/effect/floor_decal/chapel,
@@ -32478,6 +32459,9 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
+"skk" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/lowertrams/restaurantkitchenarea)
 "slp" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -34340,6 +34324,11 @@
 /obj/structure/closet/l3closet/scientist,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
+"vez" = (
+/obj/structure/table/plastic,
+/obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "veT" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 10
@@ -35172,6 +35161,10 @@
 /obj/item/storage/box/syringegun,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
+"wsC" = (
+/obj/structure/flora/pottedplant/minitree,
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "wtF" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -35798,13 +35791,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
-"xil" = (
-/obj/machinery/portable_atmospherics/hydroponics,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/lowertrams/restaurantkitchenarea)
 "xiq" = (
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -36340,7 +36326,7 @@
 /area/site53/lowertrams/hub)
 "xUj" = (
 /obj/structure/table/plastic,
-/obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
+/obj/item/deck/cards,
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "xUF" = (
@@ -70809,12 +70795,12 @@ iaF
 iyY
 aMb
 aMb
-mfS
+qgB
 aav
 acf
 acZ
 acZ
-fAm
+lPL
 aav
 abx
 txd
@@ -71064,9 +71050,9 @@ aav
 xbp
 aav
 aav
-foO
 aMb
-jfh
+kcV
+mfS
 aav
 ach
 acZ
@@ -71321,9 +71307,9 @@ hnw
 abf
 aLR
 aav
-bMA
-kcV
-cng
+aNR
+agb
+jBe
 aav
 aLW
 acZ
@@ -71578,14 +71564,14 @@ abf
 abf
 amy
 aav
-aNR
-agb
+foO
+nhr
 aav
 aav
 mJr
 acZ
 acZ
-opB
+mAK
 aav
 abY
 myM
@@ -71838,7 +71824,7 @@ aav
 aav
 aav
 aav
-lvx
+wsC
 acZ
 acZ
 acZ
@@ -72090,7 +72076,7 @@ abq
 abf
 abq
 abf
-edi
+skk
 wwS
 wwS
 aav
@@ -72354,8 +72340,8 @@ aav
 aav
 acZ
 adp
-ePC
 xUj
+vez
 ahP
 aav
 abY
@@ -72600,7 +72586,7 @@ aav
 qgn
 kao
 abq
-xil
+lvx
 ahQ
 abq
 aLQ
@@ -72609,10 +72595,10 @@ sdX
 qRV
 aav
 aav
-mkj
+jfh
 adp
 fnj
-mAK
+mwm
 ahP
 aav
 abY
