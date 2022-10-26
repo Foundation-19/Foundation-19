@@ -392,6 +392,7 @@
 "abw" = (
 /obj/structure/table/standard,
 /obj/item/book/manual/chef_recipes,
+/obj/item/reagent_containers/spray/cleaner,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
 "abx" = (
@@ -2366,9 +2367,6 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "ahQ" = (
 /obj/machinery/seed_extractor,
-/obj/machinery/light{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
 "ahR" = (
@@ -21795,6 +21793,16 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
+"bMA" = (
+/obj/structure/closet,
+/obj/item/storage/candle_box,
+/obj/item/storage/candle_box,
+/obj/item/storage/candle_box/incense,
+/obj/item/storage/candle_box/scented,
+/obj/item/flame/lighter/zippo/random,
+/obj/item/device/paint_sprayer,
+/turf/simulated/floor/wood/walnut,
+/area/site53/lowertrams/restaurantkitchenarea)
 "bMS" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/brown/mono,
@@ -22117,6 +22125,12 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
+"cng" = (
+/obj/structure/bed/chair/wood{
+	dir = 8
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/lowertrams/restaurantkitchenarea)
 "cnz" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/mask/muzzle,
@@ -23089,10 +23103,6 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
-"dLg" = (
-/obj/structure/flora/pottedplant/minitree,
-/turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurantkitchenarea)
 "dLM" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -23285,6 +23295,9 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/upper_surface/serverfarmcontrol)
+"edi" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/lowertrams/restaurantkitchenarea)
 "edu" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/standard,
@@ -23685,6 +23698,11 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
+"ePC" = (
+/obj/structure/table/plastic,
+/obj/item/deck/cards,
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "eQq" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/llcz/entrance_checkpoint)
@@ -23708,12 +23726,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/ulcz/hallways)
-"eRI" = (
-/obj/structure/reagent_dispensers/water_cooler{
-	dir = 4
-	},
-/turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurantkitchenarea)
 "eUI" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
@@ -24206,6 +24218,26 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
+"fAm" = (
+/obj/structure/closet,
+/obj/item/toy/sword,
+/obj/item/toy/sword,
+/obj/item/toy/sword,
+/obj/item/toy/sword,
+/obj/random/voidhelmet,
+/obj/random/voidhelmet,
+/obj/random/voidhelmet,
+/obj/random/voidhelmet,
+/obj/random/voidsuit,
+/obj/random/voidsuit,
+/obj/random/voidsuit,
+/obj/random/voidsuit,
+/obj/item/toy/crossbow,
+/obj/item/toy/crossbow,
+/obj/item/toy/crossbow,
+/obj/item/toy/crossbow,
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "fDv" = (
 /obj/structure/table/rack,
 /obj/item/gun/projectile/revolver/mateba,
@@ -26627,9 +26659,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
 "jfh" = (
-/obj/machinery/camera/network/entrance,
-/obj/structure/bed/chair,
-/turf/simulated/floor/lino,
+/obj/machinery/light,
+/obj/structure/table/woodentable/walnut,
+/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
+/turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
 "jfF" = (
 /obj/structure/table/rack,
@@ -27226,7 +27259,6 @@
 /obj/effect/landmark/start{
 	name = "Bartender"
 	},
-/obj/machinery/light,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
 "kdH" = (
@@ -27976,8 +28008,7 @@
 /turf/simulated/floor/carpet/green,
 /area/chapel)
 "lvx" = (
-/obj/structure/table/plastic,
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "lwu" = (
@@ -28348,6 +28379,9 @@
 /area/site53/llcz/scp066)
 "lQF" = (
 /obj/machinery/biogenerator,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
 "lSJ" = (
@@ -28598,9 +28632,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/sleeproom)
 "mfS" = (
-/obj/structure/table/plastic,
-/obj/item/deck/cards,
-/turf/simulated/floor/lino,
+/obj/structure/flora/pottedplant/large,
+/turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
 "mfV" = (
 /obj/structure/closet/coffin/wooden,
@@ -28696,6 +28729,10 @@
 /obj/machinery/camera/network/entrance,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
+"mkj" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "mkF" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -28949,8 +28986,11 @@
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
 "mAK" = (
-/turf/space,
-/area/space)
+/obj/structure/table/plastic,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "mBg" = (
 /obj/machinery/light{
 	dir = 1
@@ -30028,6 +30068,11 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
+"opB" = (
+/obj/structure/table/standard,
+/obj/item/toy/eightball,
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "oqi" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -30079,7 +30124,6 @@
 /obj/item/material/kitchen/utensil/fork/plastic,
 /obj/item/material/kitchen/utensil/spoon/plastic,
 /obj/item/material/kitchen/utensil/spoon/plastic,
-/obj/item/tray/baking,
 /obj/item/material/kitchen/utensil/spoon/plastic,
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/restaurantkitchenarea)
@@ -32828,13 +32872,6 @@
 /obj/structure/sign/scp/electrical,
 /turf/simulated/wall/titanium,
 /area/site53/uhcz/generalpurpose3)
-"sVb" = (
-/obj/structure/table/standard{
-	name = "plastic table frame"
-	},
-/obj/item/storage/box/cups,
-/turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurantkitchenarea)
 "sVg" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
@@ -34245,12 +34282,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
-"uZj" = (
-/obj/structure/table/plastic,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurantkitchenarea)
 "vaB" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
@@ -34437,11 +34468,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
 "vnp" = (
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/machinery/vending/hydronutrients/generic{
 	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
@@ -34465,9 +34496,6 @@
 /obj/structure/table/standard,
 /obj/item/storage/box/botanydisk,
 /obj/item/storage/box/botanydisk,
-/obj/machinery/light{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
 "vqG" = (
@@ -35770,6 +35798,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
+"xil" = (
+/obj/machinery/portable_atmospherics/hydroponics,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/lowertrams/restaurantkitchenarea)
 "xiq" = (
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -36304,12 +36339,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "xUj" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/item/stool/padded,
+/obj/structure/table/plastic,
+/obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "xUF" = (
@@ -70010,10 +70041,10 @@ kyw
 aav
 aLK
 adt
-acZ
+uLO
 aav
-aac
-aac
+aav
+aav
 abY
 abY
 ugg
@@ -70266,11 +70297,11 @@ aLM
 adl
 ivM
 adb
-xUj
+aGb
+acZ
+aLL
 acg
 aav
-azA
-azA
 abx
 sCI
 dmR
@@ -70522,12 +70553,12 @@ aav
 aav
 aav
 aav
+aav
 pzi
+acZ
 aLL
 fUk
 aav
-azA
-azA
 abx
 sCI
 aEW
@@ -70778,13 +70809,13 @@ iaF
 iyY
 aMb
 aMb
+mfS
 aav
 acf
 acZ
-uLO
+acZ
+fAm
 aav
-azA
-azA
 abx
 txd
 cLI
@@ -71034,14 +71065,14 @@ xbp
 aav
 aav
 foO
-kcV
+aMb
+jfh
 aav
 ach
 acZ
+acZ
 ibA
 aav
-azA
-azA
 abx
 sCI
 cLI
@@ -71290,15 +71321,15 @@ hnw
 abf
 aLR
 aav
-aNR
-agb
+bMA
+kcV
+cng
 aav
 aLW
 acZ
+acZ
 sWz
 aav
-azA
-azA
 abx
 sCI
 cLI
@@ -71547,15 +71578,15 @@ abf
 abf
 amy
 aav
+aNR
+agb
 aav
 aav
-aav
-sVb
+mJr
 acZ
-eRI
+acZ
+opB
 aav
-azA
-azA
 abY
 myM
 acE
@@ -71803,16 +71834,16 @@ abf
 abq
 abf
 iYi
-wwS
-wwS
 aav
-dLg
+aav
+aav
+aav
+lvx
+acZ
 acZ
 acZ
 acZ
 aav
-azA
-azA
 abY
 kSE
 cLI
@@ -72059,17 +72090,17 @@ abq
 abf
 abq
 abf
-abf
-abf
-abf
+edi
+wwS
+wwS
+aav
 aav
 acf
+acZ
 lOF
 lOF
 abi
 aav
-azA
-azA
 abY
 eir
 cLI
@@ -72320,13 +72351,13 @@ abf
 abf
 abf
 aav
+aav
+acZ
 adp
-mfS
-lvx
+ePC
+xUj
 ahP
 aav
-azA
-azA
 abY
 omv
 cLI
@@ -72569,7 +72600,7 @@ aav
 qgn
 kao
 abq
-abq
+xil
 ahQ
 abq
 aLQ
@@ -72577,13 +72608,13 @@ gLb
 sdX
 qRV
 aav
-jfh
+aav
+mkj
+adp
 fnj
-uZj
+mAK
 ahP
 aav
-azA
-azA
 abY
 ooJ
 cLI
@@ -72839,8 +72870,8 @@ aav
 aav
 aav
 aav
-aId
-aId
+aav
+aav
 adN
 bTH
 cLI
@@ -73851,9 +73882,9 @@ azA
 azA
 azA
 azA
-mAK
 azA
-mAK
+azA
+azA
 azA
 azA
 azA
@@ -74110,7 +74141,7 @@ azA
 azA
 azA
 azA
-aLR
+azA
 azA
 azA
 azA
