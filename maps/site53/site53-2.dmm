@@ -563,7 +563,7 @@
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "ach" = (
-/obj/machinery/vending/hotfood,
+/obj/machinery/vending/cigarette,
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "ack" = (
@@ -13769,8 +13769,10 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
 "aLK" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/r_wall/prepainted,
+/obj/structure/noticeboard{
+	pixel_y = 32
+	},
+/turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "aLL" = (
 /obj/item/stool/padded,
@@ -13821,13 +13823,6 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
 /area/site53/science/seniorresearchera)
-"aLV" = (
-/obj/effect/paint_stripe/gray,
-/obj/machinery/vending/boozeomat{
-	req_access = list()
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/lowertrams/restaurantkitchenarea)
 "aLW" = (
 /obj/machinery/vending/games,
 /turf/simulated/floor/lino,
@@ -25329,7 +25324,6 @@
 "hkE" = (
 /obj/machinery/microwave,
 /obj/structure/table/standard,
-/obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurantkitchenarea)
 "hlc" = (
@@ -28591,7 +28585,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/sleeproom)
 "mfS" = (
-/obj/machinery/vending/mredispenser,
+/obj/structure/table/plastic,
+/obj/random/single/playing_cards,
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "mfV" = (
@@ -30699,8 +30694,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/serverfarmtunnel)
 "pzi" = (
-/obj/machinery/vending/cigarette{
-	dir = 1
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
 	},
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
@@ -32211,11 +32206,6 @@
 /obj/structure/bed/chair/pew/left/mahogany,
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
-"sam" = (
-/obj/effect/paint_stripe/gray,
-/obj/structure/noticeboard,
-/turf/simulated/wall/prepainted,
-/area/site53/lowertrams/restaurantkitchenarea)
 "saA" = (
 /obj/structure/table/rack,
 /obj/item/material/knife/combat,
@@ -69985,8 +69975,8 @@ adl
 adl
 aLX
 kyw
-sam
-acZ
+aav
+aLK
 adt
 acZ
 aav
@@ -70239,7 +70229,7 @@ aav
 aav
 aav
 tdc
-aLV
+abz
 aLM
 adl
 ivM
@@ -70500,7 +70490,7 @@ aav
 aav
 aav
 aav
-acZ
+pzi
 aLL
 fUk
 aav
@@ -71001,7 +70991,7 @@ azA
 azA
 aId
 ajY
-aId
+aav
 abg
 abf
 aLR
@@ -71258,7 +71248,7 @@ azA
 azA
 aId
 ajY
-aId
+aav
 lQF
 abf
 amy
@@ -71271,7 +71261,7 @@ aav
 aNR
 agb
 aav
-mfS
+aLW
 acZ
 sWz
 aav
@@ -71515,7 +71505,7 @@ azA
 azA
 aId
 ajY
-aId
+aav
 vpu
 abf
 abf
@@ -71527,10 +71517,10 @@ amy
 aav
 aav
 aav
-abz
-aLW
+aav
 acZ
-pzi
+acZ
+acZ
 aav
 azA
 azA
@@ -71772,7 +71762,7 @@ azA
 azA
 aId
 ajY
-aId
+aav
 ads
 abf
 abq
@@ -71783,7 +71773,7 @@ abf
 iYi
 wwS
 wwS
-aLK
+aav
 acZ
 acZ
 acZ
@@ -72029,7 +72019,7 @@ azA
 azA
 aId
 alU
-aId
+aav
 acY
 abf
 abq
@@ -72286,7 +72276,7 @@ azA
 azA
 aId
 ajY
-aId
+aav
 bdp
 abf
 abf
@@ -72297,9 +72287,9 @@ abf
 abf
 abf
 abf
-aLK
+aav
 adp
-fnj
+mfS
 lvx
 ahP
 aav
@@ -72543,7 +72533,7 @@ azA
 azA
 aId
 ajY
-aId
+aav
 qgn
 kao
 abq
@@ -72554,7 +72544,7 @@ aLQ
 gLb
 sdX
 qRV
-aLK
+aav
 jfh
 fnj
 fnj
@@ -72800,23 +72790,23 @@ azA
 azA
 aId
 anL
-aId
-aId
-aId
-aId
-aId
-aId
-aId
-aId
-aId
-aId
-aId
-aId
-aId
-aId
-aId
-aId
-aId
+aav
+aav
+aav
+aav
+aav
+aav
+aav
+aav
+aav
+aav
+aav
+aav
+aav
+aav
+aav
+aav
+aav
 aId
 aId
 adN
