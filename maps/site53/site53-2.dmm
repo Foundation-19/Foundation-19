@@ -250,6 +250,9 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "aaY" = (
 /obj/machinery/cooker/grill,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurantkitchenarea)
 "aaZ" = (
@@ -23086,6 +23089,10 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
+"dLg" = (
+/obj/structure/flora/pottedplant/minitree,
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "dLM" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -23701,6 +23708,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/ulcz/hallways)
+"eRI" = (
+/obj/structure/reagent_dispensers/water_cooler{
+	dir = 4
+	},
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "eUI" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
@@ -27963,8 +27976,8 @@
 /turf/simulated/floor/carpet/green,
 /area/chapel)
 "lvx" = (
-/obj/item/dice/d20,
 /obj/structure/table/plastic,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "lwu" = (
@@ -28586,7 +28599,7 @@
 /area/site53/engineering/sleeproom)
 "mfS" = (
 /obj/structure/table/plastic,
-/obj/random/single/playing_cards,
+/obj/item/deck/cards,
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "mfV" = (
@@ -32489,6 +32502,9 @@
 "srW" = (
 /obj/machinery/cooker/cereal,
 /obj/structure/table/standard,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurantkitchenarea)
 "sso" = (
@@ -32812,6 +32828,13 @@
 /obj/structure/sign/scp/electrical,
 /turf/simulated/wall/titanium,
 /area/site53/uhcz/generalpurpose3)
+"sVb" = (
+/obj/structure/table/standard{
+	name = "plastic table frame"
+	},
+/obj/item/storage/box/cups,
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "sVg" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
@@ -34222,6 +34245,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
+"uZj" = (
+/obj/structure/table/plastic,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "vaB" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
@@ -71521,9 +71550,9 @@ aav
 aav
 aav
 aav
+sVb
 acZ
-acZ
-acZ
+eRI
 aav
 azA
 azA
@@ -71777,7 +71806,7 @@ iYi
 wwS
 wwS
 aav
-acZ
+dLg
 acZ
 acZ
 acZ
@@ -72550,7 +72579,7 @@ qRV
 aav
 jfh
 fnj
-fnj
+uZj
 ahP
 aav
 azA
