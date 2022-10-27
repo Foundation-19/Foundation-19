@@ -992,8 +992,6 @@
 	name = OUTFIT_JOB_NAME("Class D")
 	uniform = /obj/item/clothing/under/scp/dclass
 	shoes = /obj/item/clothing/shoes/workboots
-	belt = /obj/item/gun/projectile/pistol/mk9
-	l_pocket = /obj/item/ammo_magazine/scp/mk9
 	id_types = list(/obj/item/card/id/classd)
 	l_ear = null
 	back = null
