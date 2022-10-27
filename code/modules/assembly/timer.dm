@@ -54,7 +54,7 @@
 
 /obj/item/device/assembly/timer/Process(delta_time)
 	if(timing && (time > 0))
-		time -= delta_time SECONDS
+		time -= delta_time
 	if(timing && time <= 0)
 		timing = 0
 		timer_end()
