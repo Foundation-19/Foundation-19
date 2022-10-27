@@ -1053,10 +1053,6 @@
 /area/site53/entrancezone/forensics{
 	name = "\improper Site Director Office Checkpoint"
 	})
-"cF" = (
-/obj/effect/paint_stripe/blue,
-/turf/simulated/wall/prepainted,
-/area/site53/uez/hallway)
 "cG" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier,
@@ -1233,11 +1229,6 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue,
-/area/site53/uez/hallway)
-"dc" = (
-/obj/machinery/status_display,
-/obj/effect/paint_stripe/blue,
-/turf/simulated/wall/prepainted,
 /area/site53/uez/hallway)
 "dd" = (
 /obj/machinery/light{
@@ -42063,7 +42054,7 @@ fW
 fW
 fW
 ac
-cF
+ac
 dU
 ac
 ac
@@ -43350,8 +43341,8 @@ ab
 ac
 ac
 ac
-dc
-cF
+cl
+ac
 ac
 ac
 hk
