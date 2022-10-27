@@ -1585,10 +1585,16 @@
 "dZ" = (
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
+	dir = 4;
 	id_tag = "Director Office Checkpoint Upper";
 	name = "Director Office Checkpoint Upper";
-	pixel_y = 2;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	pixel_x = -6
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "Director Office Checkpoint Lower";
+	name = "Director Office Checkpoint Lower";
+	pixel_x = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics{
@@ -1603,10 +1609,16 @@
 "eb" = (
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
-	id_tag = "Director Office Checkpoint Lower";
-	name = "Director Office Checkpoint Lower";
-	pixel_y = 2;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	dir = 4;
+	id_tag = "Site Director Office Checkkpoint Desk";
+	name = "Site Director Office Checkkpoint Desk";
+	pixel_x = -6
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "Director Office Checkpoint Windows";
+	name = "Director Office Checkpoint Windows";
+	pixel_x = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics{
@@ -1963,17 +1975,24 @@
 	name = "\improper New Control Room"
 	})
 "eU" = (
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
+	dir = 4;
 	id_tag = "SD Office Outter Lockdown";
 	name = "SD Office Outter Lockdown";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	pixel_x = -6
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "ECZ Security Lockdown";
+	name = "Lower ECZ lockdown";
+	pixel_x = 4
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics{
@@ -2704,18 +2723,6 @@
 /area/site53/uez/conference)
 "gW" = (
 /obj/structure/table/standard,
-/obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "Site Director Office Checkkpoint Desk";
-	name = "Site Director Office Checkkpoint Desk";
-	pixel_y = -23
-	},
-/obj/machinery/button/blast_door{
-	id_tag = "Director Office Checkpoint Windows";
-	name = "Director Office Checkpoint Windows";
-	pixel_y = 2;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics{
@@ -4518,6 +4525,19 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
+"vB" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ECZ Security Lockdown";
+	name = "ECZ Security Lockdown"
+	},
+/turf/simulated/floor/lino,
+/area/site53/uez/hallway)
 "vG" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
@@ -4529,6 +4549,14 @@
 	name = "Administrative Offices Lockdown"
 	},
 /turf/simulated/floor/carpet/purple,
+/area/site53/uez/hallway)
+"vX" = (
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ECZ Security Lockdown";
+	name = "ECZ Security Lockdown"
+	},
+/turf/simulated/floor/lino,
 /area/site53/uez/hallway)
 "wj" = (
 /obj/effect/floor_decal/corner/brown/half{
@@ -4635,6 +4663,22 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"Aj" = (
+/obj/structure/table/standard,
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "Site Director Office Checkkpoint Desk";
+	name = "Site Director Office Checkkpoint Desk";
+	pixel_x = -6
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "Director Office Checkpoint Windows";
+	name = "Director Office Checkpoint Windows";
+	pixel_x = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/space)
 "Av" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/standard,
@@ -4750,6 +4794,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
+"Eg" = (
+/obj/machinery/button/blast_door{
+	id_tag = "ECZ Security Lockdown";
+	name = "ECZ Security Lockdown"
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "EA" = (
 /obj/structure/bed/chair/office/comfy{
 	dir = 4
@@ -37942,8 +37993,8 @@ ac
 ep
 ep
 dV
-bK
-fT
+vX
+vB
 ac
 ac
 ac
@@ -38184,7 +38235,7 @@ hk
 hk
 hk
 hk
-hk
+Eg
 ac
 bn
 bH
@@ -38441,7 +38492,7 @@ hk
 hk
 hk
 hk
-hk
+Aj
 ac
 bn
 bI
@@ -38713,8 +38764,8 @@ be
 cc
 cQ
 be
-bK
-fT
+vX
+vB
 ac
 ac
 ac

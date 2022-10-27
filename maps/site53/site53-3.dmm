@@ -1056,13 +1056,21 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmreception)
 "cn" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/table/reinforced,
+/obj/structure/table/standard,
 /obj/machinery/button/blast_door{
-	id_tag = "EZ Checkpoint West";
-	name = "EZ Checkpoint West"
+	dir = 4;
+	id_tag = "EZ Checkpoint East";
+	name = "EZ Checkpoint East";
+	pixel_x = -6
 	},
-/turf/simulated/floor/tiled/white,
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "EZ Checkpoint West";
+	name = "EZ Checkpoint West";
+	pixel_x = 4
+	},
+/obj/effect/floor_decal/corner/red/diagonal,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/entrancezone/securitypost)
 "co" = (
 /obj/machinery/button/blast_door{
@@ -1199,18 +1207,26 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/securitypost)
 "cB" = (
-/obj/structure/table/reinforced,
-/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/table/standard,
 /obj/machinery/button/blast_door{
-	id_tag = "EZ Checkpoint East";
-	name = "EZ Checkpoint East"
+	dir = 4;
+	id_tag = "EZ Checkpoint Staircase";
+	name = "EZ Checkpoint Staircase";
+	pixel_x = -6
 	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "EZ Security Maintenance Hatch";
+	name = "EZ Security Maintenance Hatch";
+	pixel_x = 4
+	},
+/obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/entrancezone/securitypost)
 "cC" = (
 /obj/machinery/light/small,
@@ -1612,23 +1628,26 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/equipmentroom)
 "dz" = (
+/obj/structure/table/standard,
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "UEZ Checkpoint Bubble";
+	name = "UEZ Checkpoint Bubble";
+	pixel_x = -6
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "ECZ Security Lockdown";
+	name = "EZ Security Maintenance Hatch";
+	pixel_x = 4
+	},
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/table/reinforced,
-/obj/machinery/button/blast_door{
-	id_tag = "EZ Checkpoint Staircase";
-	name = "EZ Checkpoint Staircase"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/entrancezone/securitypost)
 "dA" = (
 /turf/unsimulated/mineral,
@@ -1678,12 +1697,10 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/exam_room)
 "dG" = (
-/obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/button/blast_door{
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
+/obj/structure/table/reinforced,
+/obj/machinery/photocopier,
+/obj/item/device/toner,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/securitypost)
 "dH" = (
@@ -1931,16 +1948,12 @@
 	pixel_x = -24
 	},
 /obj/structure/cable/green,
-/obj/structure/table/reinforced,
 /obj/machinery/camera/autoname{
 	network = list("Entrance Zone Network");
 	dir = 1
 	},
 /obj/machinery/light,
-/obj/machinery/button/blast_door{
-	id_tag = "EZ Security Maintenance Hatch";
-	name = "EZ Security Maintenance Hatch"
-	},
+/obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/securitypost)
 "el" = (
@@ -1975,20 +1988,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception)
-"eo" = (
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/table/reinforced,
-/obj/machinery/photocopier,
-/obj/item/device/toner,
-/obj/machinery/light,
-/obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "UEZ Checkpoint Bubble";
-	name = "UEZ Checkpoint Bubble";
-	pixel_y = -23
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/entrancezone/securitypost)
 "ep" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -42322,7 +42321,7 @@ tD
 ce
 hZ
 vE
-eo
+vE
 da
 cN
 da
