@@ -98,8 +98,8 @@
 	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /obj/machinery/door/blast/regular{
-	id_tag = "EZ Security Maintenance Hatch";
-	name = "EZ Security Maintenance Hatch"
+	id_tag = "EZ Security Upper Maintenance Hatch";
+	name = "EZ Security Upper Maintenance Hatch"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/maintenance)
@@ -262,8 +262,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/blast/regular{
-	id_tag = "EZ Security Maintenance Hatch";
-	name = "EZ Security Maintenance Hatch"
+	id_tag = "EZ Security Upper Maintenance Hatch";
+	name = "EZ Security Upper Maintenance Hatch"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/maintenance)
@@ -2725,8 +2725,8 @@
 /obj/structure/table/standard,
 /obj/machinery/light,
 /obj/machinery/button/blast_door{
-	id_tag = "EZ Security Maintenance Hatch";
-	name = "EZ Security Maintenance Hatch";
+	id_tag = "EZ Security Upper Maintenance Hatch";
+	name = "EZ Security Upper Maintenance Hatch";
 	pixel_y = 2;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -2760,9 +2760,6 @@
 	name = "\improper New Control Room"
 	})
 "hj" = (
-/obj/machinery/power/apc/hyper{
-	dir = 8
-	},
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
@@ -2770,6 +2767,7 @@
 /obj/machinery/light,
 /obj/structure/filingcabinet/chestdrawer,
 /obj/effect/floor_decal/corner/blue/border,
+/obj/machinery/power/apc/hyper,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/canteen{
 	name = "\improper New Control Room"
@@ -4287,14 +4285,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
-"lo" = (
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
-/turf/simulated/floor/lino,
-/area/site53/uez/hallway)
 "lr" = (
 /obj/machinery/light,
 /obj/structure/flora/pottedplant/minitree,
@@ -4418,6 +4408,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
+"qh" = (
+/obj/machinery/button/blast_door{
+	id_tag = "ECZ Security Lockdown";
+	name = "ECZ Security Lockdown"
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "ql" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 8
@@ -4454,19 +4451,6 @@
 /obj/item/storage/secure/briefcase/nukedisk,
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/wood/mahogany,
-/area/site53/uez/hallway)
-"rp" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
-/turf/simulated/floor/lino,
 /area/site53/uez/hallway)
 "rG" = (
 /obj/machinery/hologram/holopad,
@@ -4801,6 +4785,22 @@
 /obj/item/material/kitchen/rollingpin,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
+"Fn" = (
+/obj/structure/table/standard,
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "Site Director Office Checkkpoint Desk";
+	name = "Site Director Office Checkkpoint Desk";
+	pixel_x = -6
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "Director Office Checkpoint Windows";
+	name = "Director Office Checkpoint Windows";
+	pixel_x = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/space)
 "Fo" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/paleblue/mono,
@@ -5001,6 +5001,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"NO" = (
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ECZ Security Lockdown";
+	name = "ECZ Security Lockdown"
+	},
+/turf/simulated/floor/lino,
+/area/site53/uez/hallway)
 "Oc" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -5016,13 +5024,6 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
-"Oe" = (
-/obj/machinery/button/blast_door{
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "OM" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/machinery/light,
@@ -5073,22 +5074,6 @@
 /obj/machinery/door/window/southleft,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
-"Rc" = (
-/obj/structure/table/standard,
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "Site Director Office Checkkpoint Desk";
-	name = "Site Director Office Checkkpoint Desk";
-	pixel_x = -6
-	},
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "Director Office Checkpoint Windows";
-	name = "Director Office Checkpoint Windows";
-	pixel_x = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/space)
 "Rd" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/item/stamp/denied,
@@ -5218,6 +5203,19 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
 /area/site53/logistics/logisticsbreak)
+"UT" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ECZ Security Lockdown";
+	name = "ECZ Security Lockdown"
+	},
+/turf/simulated/floor/lino,
+/area/site53/uez/hallway)
 "UU" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
@@ -36714,8 +36712,8 @@ cY
 cg
 dx
 ac
-lo
-lo
+NO
+NO
 ac
 en
 dW
@@ -38241,7 +38239,7 @@ hk
 hk
 hk
 hk
-Oe
+qh
 ac
 bn
 bH
@@ -38498,7 +38496,7 @@ hk
 hk
 hk
 hk
-Rc
+Fn
 ac
 bn
 bI
@@ -38770,8 +38768,8 @@ be
 cc
 cQ
 be
-lo
-rp
+NO
+UT
 ac
 ac
 ac
