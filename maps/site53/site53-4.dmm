@@ -1479,9 +1479,10 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/hallway)
 "dI" = (
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "bridgecorelockdown"
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ECZ Security Lockdown";
+	name = "ECZ Security Lockdown"
 	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
@@ -4468,6 +4469,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
+"rX" = (
+/obj/machinery/button/blast_door{
+	id_tag = "ECZ Security Lockdown";
+	name = "ECZ Security Lockdown"
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "sr" = (
 /obj/structure/bed/chair/comfy/yellow{
 	name = "Chief Engineer"
@@ -4778,13 +4786,6 @@
 /obj/item/material/kitchen/rollingpin,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
-"Fm" = (
-/obj/machinery/button/blast_door{
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "Fo" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/paleblue/mono,
@@ -4826,19 +4827,6 @@
 	},
 /turf/simulated/wall/prepainted,
 /area/site53/uez/maintenance)
-"HD" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
-/turf/simulated/floor/lino,
-/area/site53/uez/hallway)
 "HF" = (
 /obj/effect/paint_stripe/blue,
 /obj/machinery/button/windowtint{
@@ -5147,6 +5135,22 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
+"To" = (
+/obj/structure/table/standard,
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "Site Director Office Checkkpoint Desk";
+	name = "Site Director Office Checkkpoint Desk";
+	pixel_x = -6
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "Director Office Checkpoint Windows";
+	name = "Director Office Checkpoint Windows";
+	pixel_x = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/space)
 "Tp" = (
 /obj/structure/bed/chair/comfy/red{
 	dir = 1;
@@ -5199,26 +5203,23 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
-"Ve" = (
-/obj/structure/table/standard,
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "Site Director Office Checkkpoint Desk";
-	name = "Site Director Office Checkkpoint Desk";
-	pixel_x = -6
-	},
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "Director Office Checkpoint Windows";
-	name = "Director Office Checkpoint Windows";
-	pixel_x = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/space)
 "Vq" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
+"VU" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ECZ Security Lockdown";
+	name = "ECZ Security Lockdown"
+	},
+/turf/simulated/floor/lino,
+/area/site53/uez/hallway)
 "Wk" = (
 /obj/effect/landmark/start{
 	name = "Communications Officer"
@@ -5251,14 +5252,6 @@
 "YJ" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
-"Zc" = (
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
-/turf/simulated/floor/lino,
-/area/site53/uez/hallway)
 "Zl" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
@@ -36712,8 +36705,8 @@ cY
 cg
 dx
 ac
-Zc
-Zc
+bK
+bK
 ac
 en
 dW
@@ -38239,7 +38232,7 @@ hk
 hk
 hk
 hk
-Fm
+rX
 ac
 bn
 bH
@@ -38496,7 +38489,7 @@ hk
 hk
 hk
 hk
-Ve
+To
 ac
 bn
 bI
@@ -38768,8 +38761,8 @@ be
 cc
 cQ
 be
-Zc
-HD
+dI
+VU
 ac
 ac
 ac
