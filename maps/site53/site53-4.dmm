@@ -1836,13 +1836,6 @@
 /area/site53/uez/canteen{
 	name = "\improper New Control Room"
 	})
-"eF" = (
-/obj/machinery/button/blast_door{
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "eG" = (
 /obj/machinery/papershredder,
 /obj/structure/railing/mapped{
@@ -2732,10 +2725,10 @@
 /obj/structure/table/standard,
 /obj/machinery/light,
 /obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "ECZ Security Lockdown";
+	id_tag = "EZ Security Maintenance Hatch";
 	name = "EZ Security Maintenance Hatch";
-	pixel_x = 4
+	pixel_y = 2;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics{
@@ -4294,6 +4287,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
+"lo" = (
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ECZ Security Lockdown";
+	name = "ECZ Security Lockdown"
+	},
+/turf/simulated/floor/lino,
+/area/site53/uez/hallway)
 "lr" = (
 /obj/machinery/light,
 /obj/structure/flora/pottedplant/minitree,
@@ -4453,6 +4454,19 @@
 /obj/item/storage/secure/briefcase/nukedisk,
 /obj/structure/table/woodentable_reinforced/mahogany,
 /turf/simulated/floor/wood/mahogany,
+/area/site53/uez/hallway)
+"rp" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ECZ Security Lockdown";
+	name = "ECZ Security Lockdown"
+	},
+/turf/simulated/floor/lino,
 /area/site53/uez/hallway)
 "rG" = (
 /obj/machinery/hologram/holopad,
@@ -4814,22 +4828,6 @@
 /obj/item/pen,
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
-"GJ" = (
-/obj/structure/table/standard,
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "Site Director Office Checkkpoint Desk";
-	name = "Site Director Office Checkkpoint Desk";
-	pixel_x = -6
-	},
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "Director Office Checkpoint Windows";
-	name = "Director Office Checkpoint Windows";
-	pixel_x = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/space)
 "GL" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
@@ -5018,6 +5016,13 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"Oe" = (
+/obj/machinery/button/blast_door{
+	id_tag = "ECZ Security Lockdown";
+	name = "ECZ Security Lockdown"
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "OM" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/machinery/light,
@@ -5052,19 +5057,6 @@
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
-"PZ" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
-/turf/simulated/floor/lino,
-/area/site53/uez/hallway)
 "Qv" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/purple/mono,
@@ -5081,6 +5073,22 @@
 /obj/machinery/door/window/southleft,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"Rc" = (
+/obj/structure/table/standard,
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "Site Director Office Checkkpoint Desk";
+	name = "Site Director Office Checkkpoint Desk";
+	pixel_x = -6
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "Director Office Checkpoint Windows";
+	name = "Director Office Checkpoint Windows";
+	pixel_x = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/space)
 "Rd" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/item/stamp/denied,
@@ -5221,14 +5229,6 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
-"Vv" = (
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
-/turf/simulated/floor/lino,
-/area/site53/uez/hallway)
 "Wk" = (
 /obj/effect/landmark/start{
 	name = "Communications Officer"
@@ -36714,8 +36714,8 @@ cY
 cg
 dx
 ac
-Vv
-Vv
+lo
+lo
 ac
 en
 dW
@@ -38241,7 +38241,7 @@ hk
 hk
 hk
 hk
-eF
+Oe
 ac
 bn
 bH
@@ -38498,7 +38498,7 @@ hk
 hk
 hk
 hk
-GJ
+Rc
 ac
 bn
 bI
@@ -38770,8 +38770,8 @@ be
 cc
 cQ
 be
-Vv
-PZ
+lo
+rp
 ac
 ac
 ac
