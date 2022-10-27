@@ -909,13 +909,17 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "bZ" = (
-/obj/structure/table/reinforced,
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/button/blast_door{
-	id_tag = "EZ Checkpoint East";
-	name = "EZ Checkpoint East"
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "UEZ Checkpoint Bubble";
+	name = "UEZ Checkpoint Bubble"
 	},
-/turf/simulated/floor/tiled/white,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
 /area/site53/entrancezone/securitypost)
 "ca" = (
 /obj/machinery/door/airlock/security{
@@ -935,11 +939,6 @@
 /area/site53/upper_surface/commstower)
 "cd" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
 	dir = 4
@@ -958,11 +957,6 @@
 /area/site53/entrancezone/securitypost)
 "ce" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/northleft,
 /obj/machinery/door/window/brigdoor/southright,
@@ -1063,11 +1057,6 @@
 /area/site53/medical/infirmreception)
 "cn" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
 	id_tag = "EZ Checkpoint West";
@@ -1210,22 +1199,18 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/securitypost)
 "cB" = (
-/obj/machinery/door/airlock/glass/security{
-	name = "Security Post";
-	req_access = list("ACCESS_SECURITY_LEVEL1")
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/machinery/button/blast_door{
+	id_tag = "EZ Checkpoint East";
+	name = "EZ Checkpoint East"
 	},
 /obj/structure/cable/green{
-	d1 = 4;
+	d1 = 2;
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "2-8"
 	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	dir = 4;
-	id_tag = "EZ Checkpoint Access";
-	name = "EZ Checkpoint Access"
-	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/securitypost)
 "cC" = (
 /obj/machinery/light/small,
@@ -1637,6 +1622,11 @@
 /obj/machinery/button/blast_door{
 	id_tag = "EZ Checkpoint Staircase";
 	name = "EZ Checkpoint Staircase"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/securitypost)
@@ -2556,6 +2546,19 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/prepainted,
 /area/site53/uez/mcrsubstation)
+"fG" = (
+/obj/machinery/door/airlock/glass/security{
+	name = "Security Post";
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	dir = 4;
+	id_tag = "EZ Checkpoint Access";
+	name = "EZ Checkpoint Access"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/securitypost)
 "fH" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 1
@@ -2611,6 +2614,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"fP" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/machinery/door/airlock/glass/security{
+	name = "Security Post";
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/turf/simulated/floor/tiled/white,
+/area/site53/entrancezone/securitypost)
 "fQ" = (
 /obj/effect/paint_stripe/paleblue,
 /turf/simulated/wall/prepainted,
@@ -41795,7 +41806,7 @@ Ik
 bh
 bE
 da
-cg
+bZ
 cg
 da
 da
@@ -42052,7 +42063,7 @@ hs
 gN
 tD
 cd
-bZ
+cB
 dz
 ek
 da
@@ -42569,7 +42580,7 @@ cf
 cn
 vE
 vE
-vE
+fP
 cA
 da
 mk
@@ -43082,7 +43093,7 @@ bF
 da
 cg
 cg
-cB
+fG
 da
 da
 da
@@ -48234,18 +48245,18 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
+oS
+rm
+oS
 dk
 zP
 zP
 zP
 MX
-dA
-cJ
-dA
-dA
+rm
+rm
+oS
+oS
 dA
 dA
 dA
@@ -48491,18 +48502,18 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
+oS
+rm
+oS
 MX
 fo
 fs
 fA
 MX
-dA
-dA
-dA
-dA
+rm
+rm
+oS
+oS
 dA
 dA
 dA
@@ -48748,18 +48759,18 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
+oS
+rm
+oS
 MX
 MX
 MX
 MX
 MX
-dA
-dA
-dA
-dA
+rm
+rm
+oS
+oS
 dA
 dA
 dA
@@ -49005,18 +49016,18 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oS
+rm
+oS
+oS
+oS
+oS
+oS
+oS
+rm
+rm
+oS
+oS
 dA
 dA
 dA
@@ -49262,18 +49273,18 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oS
+rm
+rm
+rm
+rm
+rm
+rm
+rm
+rm
+rm
+oS
+oS
 dA
 dA
 dA
@@ -49519,18 +49530,18 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
 dA
 dA
 dA
@@ -49776,18 +49787,18 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
 dA
 dA
 dA
