@@ -257,7 +257,7 @@
 	l_hand = /obj/item/storage/briefcase/crimekit
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/det/grey
-	gloves = /obj/item/clothing/gloves/forensic/armored
+	gloves = /obj/item/clothing/gloves/forensic
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
@@ -274,7 +274,7 @@
 	l_hand = /obj/item/storage/briefcase/crimekit
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/det
-	gloves = /obj/item/clothing/gloves/forensic/armored
+	gloves = /obj/item/clothing/gloves/forensic
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
@@ -461,7 +461,7 @@
 	gloves = /obj/item/clothing/gloves/thick/combat
 	l_pocket = /obj/item/device/radio
 	id_types = list(/obj/item/card/id/adminlvl3)
-	l_ear = /obj/item/device/radio/headset/heads/hos/goc
+	l_ear = /obj/item/device/radio/headset/heads/goc
 	back = /obj/item/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/ammo_magazine/scp/usp45 = 1)
 	belt = /obj/item/gun/projectile/pistol/usp45
@@ -474,7 +474,7 @@
 	gloves = /obj/item/clothing/gloves/thick/combat
 	l_pocket = /obj/item/device/radio
 	id_types = list(/obj/item/card/id/adminlvl3)
-	l_ear = /obj/item/device/radio/headset/heads/hos/uiu
+	l_ear = /obj/item/device/radio/headset/heads/uiu
 	back = /obj/item/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
 	belt = /obj/item/gun/projectile/pistol/m1911
@@ -485,7 +485,7 @@
 	l_hand = /obj/item/storage/bible
 	id_types = list(/obj/item/card/id/adminlvl3)
 	pda_type = /obj/item/modular_computer/pda/medical
-	l_ear = /obj/item/device/radio/headset/heads/hos/thi
+	l_ear = /obj/item/device/radio/headset/heads/thi
 	belt = /obj/item/gun/projectile/pistol/m1911
 	back = /obj/item/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
@@ -499,7 +499,7 @@
 	id_types = list(/obj/item/card/id/adminlvl3)
 	r_hand = /obj/item/storage/secure/briefcase/money
 	l_hand = /obj/item/cane
-	l_ear = /obj/item/device/radio/headset/heads/hos/mcd
+	l_ear = /obj/item/device/radio/headset/heads/mcd
 	back = /obj/item/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/ammo_magazine/c45m = 1)
 	belt = /obj/item/gun/projectile/silenced
