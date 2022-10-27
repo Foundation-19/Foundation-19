@@ -2724,6 +2724,12 @@
 "gW" = (
 /obj/structure/table/standard,
 /obj/machinery/light,
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "ECZ Security Lockdown";
+	name = "EZ Security Maintenance Hatch";
+	pixel_x = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics{
 	name = "\improper Site Director Office Checkpoint"
@@ -4525,19 +4531,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
-"vB" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
-/turf/simulated/floor/lino,
-/area/site53/uez/hallway)
 "vG" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
@@ -4549,14 +4542,6 @@
 	name = "Administrative Offices Lockdown"
 	},
 /turf/simulated/floor/carpet/purple,
-/area/site53/uez/hallway)
-"vX" = (
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
-/turf/simulated/floor/lino,
 /area/site53/uez/hallway)
 "wj" = (
 /obj/effect/floor_decal/corner/brown/half{
@@ -4632,6 +4617,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
+"yW" = (
+/obj/machinery/button/blast_door{
+	id_tag = "ECZ Security Lockdown";
+	name = "ECZ Security Lockdown"
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "zE" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -4663,22 +4655,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
-"Aj" = (
-/obj/structure/table/standard,
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "Site Director Office Checkkpoint Desk";
-	name = "Site Director Office Checkkpoint Desk";
-	pixel_x = -6
-	},
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "Director Office Checkpoint Windows";
-	name = "Director Office Checkpoint Windows";
-	pixel_x = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/space)
 "Av" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/standard,
@@ -4794,13 +4770,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
-"Eg" = (
-/obj/machinery/button/blast_door{
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "EA" = (
 /obj/structure/bed/chair/office/comfy{
 	dir = 4
@@ -4844,6 +4813,14 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /turf/simulated/floor/carpet/brown,
+/area/site53/uez/hallway)
+"Gm" = (
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ECZ Security Lockdown";
+	name = "ECZ Security Lockdown"
+	},
+/turf/simulated/floor/lino,
 /area/site53/uez/hallway)
 "GL" = (
 /obj/structure/table/standard,
@@ -4924,6 +4901,19 @@
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/prepainted,
 /area/site53/entrancezone/forensics)
+"Jg" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ECZ Security Lockdown";
+	name = "ECZ Security Lockdown"
+	},
+/turf/simulated/floor/lino,
+/area/site53/uez/hallway)
 "JN" = (
 /obj/structure/table/standard,
 /obj/item/stamp/approved,
@@ -4945,6 +4935,22 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
+"Lp" = (
+/obj/structure/table/standard,
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "Site Director Office Checkkpoint Desk";
+	name = "Site Director Office Checkkpoint Desk";
+	pixel_x = -6
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "Director Office Checkpoint Windows";
+	name = "Director Office Checkpoint Windows";
+	pixel_x = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/space)
 "LM" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -36708,8 +36714,8 @@ cY
 cg
 dx
 ac
-bK
-bK
+Gm
+Gm
 ac
 en
 dW
@@ -37993,8 +37999,8 @@ ac
 ep
 ep
 dV
-vX
-vB
+bK
+fT
 ac
 ac
 ac
@@ -38235,7 +38241,7 @@ hk
 hk
 hk
 hk
-Eg
+yW
 ac
 bn
 bH
@@ -38492,7 +38498,7 @@ hk
 hk
 hk
 hk
-Aj
+Lp
 ac
 bn
 bI
@@ -38764,8 +38770,8 @@ be
 cc
 cQ
 be
-vX
-vB
+Gm
+Jg
 ac
 ac
 ac
