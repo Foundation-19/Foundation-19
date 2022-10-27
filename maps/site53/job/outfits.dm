@@ -42,7 +42,7 @@
 // END OF COMMAND OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/command/commstech
 	name = OUTFIT_JOB_NAME("Communications Technician")
-	uniform = /obj/item/clothing/under/scp/utility/communications/tech
+	uniform = /obj/item/clothing/under/solgov/utility
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/commslvl1)
 	belt = /obj/item/storage/belt/utility/full
@@ -629,7 +629,7 @@
 // LOGISTICS OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/command/logisticsofficer
 	name = OUTFIT_JOB_NAME("Logistics Officer")
-	uniform = /obj/item/clothing/under/scp/utility/logistics/officer
+	uniform = /obj/item/clothing/under/solgov/utility
 	gloves = /obj/item/clothing/gloves/thick
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/logoff)
@@ -638,7 +638,7 @@
 
 /decl/hierarchy/outfit/job/site90/crew/command/logisticspecialist
 	name = OUTFIT_JOB_NAME("Logistics Specialist")
-	uniform = /obj/item/clothing/under/scp/utility/logistics
+	uniform = /obj/item/clothing/under/solgov/utility
 	gloves = /obj/item/clothing/gloves/thick
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/logspec)
