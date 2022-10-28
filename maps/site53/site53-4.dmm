@@ -169,9 +169,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "aw" = (
-/obj/machinery/light,
-/turf/simulated/floor/wood,
-/area/site53/uez/canteen)
+/turf/simulated/floor/exoplanet/snow,
+/area/space)
 "ax" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -237,9 +236,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "aF" = (
-/obj/structure/flora/grass/both,
-/turf/simulated/floor/exoplanet/snow,
-/area/space)
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood,
+/area/site53/uez/canteen)
 "aG" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -269,10 +268,20 @@
 /turf/simulated/wall/titanium,
 /area/site53/uez/hallway)
 "aJ" = (
-/obj/structure/bed/chair{
-	dir = 1
+/obj/machinery/door/airlock/glass/command{
+	name = "Command Canteen";
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
-/turf/simulated/floor/wood,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "SD Office Outter Lockdown";
+	name = "SD Office Outter Lockdown"
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uez/canteen)
 "aK" = (
 /turf/simulated/floor/tiled/monotile,
@@ -485,8 +494,8 @@
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
 "bs" = (
-/turf/simulated/floor/exoplanet/snow,
-/area/space)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/hallway)
 "bt" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -643,7 +652,9 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/space)
 "bP" = (
-/obj/structure/bed/chair,
+/obj/structure/bed/chair{
+	dir = 1
+	},
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
 "bQ" = (
@@ -935,12 +946,8 @@
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
 "cD" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood,
+/obj/effect/paint_stripe/blue,
+/turf/simulated/wall/titanium,
 /area/site53/uez/canteen)
 "cE" = (
 /obj/structure/bed/chair/office/dark{
@@ -2268,8 +2275,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "fY" = (
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/hallway)
+/obj/machinery/vending/snack,
+/turf/simulated/floor/wood,
+/area/site53/uez/canteen)
 "fZ" = (
 /obj/machinery/light{
 	dir = 1
@@ -4002,6 +4010,10 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"lE" = (
+/obj/machinery/chemical_dispenser/bar_coffee/full,
+/turf/simulated/floor/wood,
+/area/site53/uez/canteen)
 "lT" = (
 /obj/structure/table/standard,
 /obj/machinery/dnaforensics,
@@ -4040,18 +4052,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
-"mH" = (
-/obj/structure/reagent_dispensers/water_cooler,
-/turf/simulated/floor/wood,
-/area/site53/uez/canteen)
-"mJ" = (
-/obj/machinery/vending/hotfood,
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/wood,
-/area/site53/uez/canteen)
 "mM" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/techmaint,
@@ -4067,13 +4067,16 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
-"ne" = (
-/obj/effect/paint_stripe/blue,
-/turf/simulated/wall/titanium,
-/area/site53/uez/canteen)
 "nl" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
+"nB" = (
+/obj/machinery/chemical_dispenser/bar_alc/full,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/site53/uez/canteen)
 "nD" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -4088,6 +4091,10 @@
 /obj/effect/floor_decal/corner/yellow/half,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"nJ" = (
+/obj/structure/flora/grass/both,
+/turf/simulated/floor/exoplanet/snow,
+/area/space)
 "nR" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
@@ -4132,6 +4139,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"qs" = (
+/obj/machinery/vending/hydronutrients,
+/turf/simulated/floor/wood,
+/area/site53/uez/canteen)
 "qt" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
@@ -4187,9 +4198,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
 "rX" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/structure/bed/chair,
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
 "sr" = (
@@ -4199,10 +4208,6 @@
 /obj/effect/floor_decal/corner/orange/half,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
-"sy" = (
-/obj/machinery/chemical_dispenser/bar_coffee/full,
-/turf/simulated/floor/wood,
-/area/site53/uez/canteen)
 "sY" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -4343,6 +4348,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
+"yK" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/lino,
+/area/site53/uez/hallway)
 "zE" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -4354,6 +4367,16 @@
 /obj/machinery/microscope,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"zO" = (
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/hyper{
+	dir = 8
+	},
+/turf/simulated/floor/wood,
+/area/site53/uez/canteen)
 "zW" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 8;
@@ -4379,20 +4402,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
-"AE" = (
-/obj/machinery/camera/autoname{
-	dir = 1;
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/wood,
-/area/site53/uez/canteen)
-"AL" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/wood,
-/area/site53/uez/canteen)
 "AY" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -4425,6 +4434,14 @@
 /obj/item/device/camera_film,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
+"BL" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/wood,
+/area/site53/uez/canteen)
 "Cj" = (
 /obj/effect/paint_stripe/red,
 /obj/effect/paint_stripe/red,
@@ -4454,6 +4471,13 @@
 /obj/item/folder/red,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"Dm" = (
+/obj/machinery/camera/autoname{
+	dir = 1;
+	network = list("Entrance Zone Network")
+	},
+/turf/simulated/floor/wood,
+/area/site53/uez/canteen)
 "Ds" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
@@ -4484,6 +4508,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
+"DC" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/wood,
+/area/site53/uez/canteen)
 "DH" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -4547,9 +4578,6 @@
 /obj/item/pen,
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
-"GA" = (
-/turf/simulated/floor/exoplanet/grass,
-/area/space)
 "GL" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
@@ -4564,10 +4592,6 @@
 	},
 /turf/simulated/wall/prepainted,
 /area/site53/uez/maintenance)
-"Hy" = (
-/obj/machinery/vending/snack,
-/turf/simulated/floor/wood,
-/area/site53/uez/canteen)
 "HF" = (
 /obj/effect/paint_stripe/blue,
 /obj/machinery/button/windowtint{
@@ -4644,14 +4668,6 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
-"KU" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/lino,
-/area/site53/uez/hallway)
 "KY" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -4674,16 +4690,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
-"LO" = (
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/hyper{
-	dir = 8
-	},
-/turf/simulated/floor/wood,
-/area/site53/uez/canteen)
 "LT" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/wood,
@@ -4760,17 +4766,13 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
-"Ol" = (
-/obj/machinery/door/airlock/glass/command{
-	name = "Command Canteen";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
+"OG" = (
+/obj/machinery/vending/hotfood,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/wood,
 /area/site53/uez/canteen)
 "OM" = (
 /obj/effect/floor_decal/corner/red/border,
@@ -4829,13 +4831,6 @@
 /obj/item/stamp/scp/facdir,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
-"Rj" = (
-/obj/machinery/vending/coffee,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/wood,
-/area/site53/uez/canteen)
 "Rw" = (
 /obj/structure/bed/chair/comfy/green{
 	dir = 4;
@@ -4904,11 +4899,8 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
-"SO" = (
-/obj/machinery/chemical_dispenser/bar_alc/full,
-/obj/machinery/light{
-	dir = 4
-	},
+"SG" = (
+/obj/machinery/light,
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
 "Tg" = (
@@ -4921,9 +4913,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "To" = (
-/obj/structure/table/woodentable,
-/turf/simulated/floor/wood,
-/area/site53/uez/canteen)
+/turf/simulated/floor/exoplanet/grass,
+/area/space)
 "Tp" = (
 /obj/structure/bed/chair/comfy/red{
 	dir = 1;
@@ -4980,6 +4971,13 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
+"Vy" = (
+/obj/machinery/vending/coffee,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/wood,
+/area/site53/uez/canteen)
 "VU" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5002,10 +5000,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
-"WE" = (
-/obj/machinery/vending/hydronutrients,
-/turf/simulated/floor/wood,
-/area/site53/uez/canteen)
 "WQ" = (
 /turf/simulated/mineral,
 /area/site53/surface/surface)
@@ -5015,6 +5009,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
+"Yo" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/site53/uez/canteen)
 "Yr" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -5029,6 +5029,10 @@
 "YJ" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"YW" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/simulated/floor/wood,
+/area/site53/uez/canteen)
 "Zl" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
@@ -38517,13 +38521,13 @@ hk
 hk
 hk
 hk
-ne
-ne
-ne
-ne
-ne
-ne
-ne
+cD
+cD
+cD
+cD
+cD
+cD
+cD
 ac
 ac
 ac
@@ -38774,19 +38778,19 @@ hk
 hk
 hk
 hk
-ne
-mJ
-br
-br
-br
-br
-AL
-br
-LO
 cD
-cD
-Ol
-KU
+OG
+br
+br
+br
+br
+DC
+br
+zO
+BL
+BL
+aJ
+yK
 bK
 bK
 aI
@@ -39031,8 +39035,8 @@ hk
 hk
 hk
 hk
-ne
-WE
+cD
+qs
 br
 br
 br
@@ -39041,15 +39045,15 @@ br
 br
 br
 br
-AE
+Dm
 ae
 bG
 bK
 eo
 aS
 dG
-fY
-fY
+bs
+bs
 cT
 be
 bK
@@ -39288,16 +39292,16 @@ hk
 hk
 hk
 hk
-ne
-Hy
+cD
+fY
 br
+rX
+aF
 bP
-To
-aJ
 br
+rX
+aF
 bP
-To
-aJ
 br
 ae
 ae
@@ -39545,17 +39549,17 @@ hk
 hk
 hk
 hk
-ne
-Rj
+cD
+Vy
 br
+rX
+aF
 bP
-To
-aJ
 br
+rX
+aF
 bP
-To
-aJ
-aw
+SG
 ac
 eC
 eR
@@ -39802,8 +39806,8 @@ hk
 hk
 hk
 hk
-ne
-mH
+cD
+YW
 br
 br
 br
@@ -39816,7 +39820,7 @@ br
 ex
 kp
 eS
-fY
+bs
 gO
 kw
 ky
@@ -40059,16 +40063,16 @@ hk
 hk
 hk
 hk
-ne
-sy
+cD
+lE
 br
+rX
+aF
 bP
-To
-aJ
 br
+rX
+aF
 bP
-To
-aJ
 br
 ex
 bE
@@ -40316,16 +40320,16 @@ hk
 hk
 hk
 hk
-ne
-SO
+cD
+nB
 br
-bP
-To
-aJ
 rX
+aF
 bP
-To
-aJ
+Yo
+rX
+aF
+bP
 br
 ex
 eG
@@ -40573,13 +40577,13 @@ hk
 hk
 hk
 hk
-ne
-ne
-ne
-ne
-ne
-ne
-ne
+cD
+cD
+cD
+cD
+cD
+cD
+cD
 et
 et
 et
@@ -40837,10 +40841,10 @@ hk
 hk
 hk
 ab
-bs
-bs
-bs
-GA
+aw
+aw
+aw
+To
 ex
 eJ
 eW
@@ -41095,9 +41099,9 @@ hk
 hk
 ab
 cZ
-GA
+To
 eg
-bs
+aw
 ex
 eN
 eS
@@ -41351,10 +41355,10 @@ hk
 hk
 hk
 ab
-bs
-GA
-GA
-GA
+aw
+To
+To
+To
 ex
 eO
 eT
@@ -41608,10 +41612,10 @@ hk
 hk
 hk
 ab
-GA
-GA
-bs
-GA
+To
+To
+aw
+To
 ac
 kt
 fU
@@ -41865,9 +41869,9 @@ hk
 hk
 hk
 ab
-GA
+To
 dP
-bs
+aw
 eu
 ac
 ac
@@ -42122,18 +42126,18 @@ hk
 hk
 hk
 ab
-GA
-bs
-GA
-GA
-GA
-bs
+To
+aw
+To
+To
+To
+aw
 er
-GA
+To
 ea
-bs
-aF
-bs
+aw
+nJ
+aw
 cZ
 ac
 dK
@@ -42379,19 +42383,19 @@ hk
 hk
 hk
 ab
-GA
-aF
-GA
-bs
+To
+nJ
+To
+aw
 ey
-bs
-GA
-GA
-GA
-GA
-bs
+aw
+To
+To
+To
+To
+aw
 er
-bs
+aw
 ac
 dL
 mM
@@ -42636,19 +42640,19 @@ hk
 hk
 hk
 ab
-GA
-bs
-GA
-GA
-bs
+To
+aw
+To
+To
+aw
 cZ
-bs
-bs
-bs
-GA
-GA
-bs
-aF
+aw
+aw
+aw
+To
+To
+aw
+nJ
 ac
 dM
 dW
@@ -42893,19 +42897,19 @@ hk
 hk
 hk
 ab
-bs
-bs
-GA
+aw
+aw
+To
 bF
-GA
-GA
-bs
+To
+To
+aw
 eg
-bs
+aw
 cZ
-GA
+To
 bO
-bs
+aw
 ac
 dN
 dW
