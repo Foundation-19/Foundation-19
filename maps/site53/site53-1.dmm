@@ -18068,6 +18068,15 @@
 /obj/structure/bed/roller,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"Yw" = (
+/obj/structure/closet/acloset,
+/obj/item/gun/projectile/revolver/holdout,
+/obj/item/paper{
+	info = "To whoever this may concern : if you found this, nicely done, you got yourself a gun, and perhaps a shot at freedom. The guards are well armoured, so be careful. Find the correct opportunity. I no longer need it, and if they found this in my cell or worse, on me, I'd be in a whole world of trouble. Take it, hide it, don't show it to anyone. -A friend in orange";
+	name = "hand-written note"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/llcz/mine/unexplored)
 "Yx" = (
 /obj/effect/floor_decal/industrial/firstaid{
 	dir = 1
@@ -47251,7 +47260,7 @@ ua
 ua
 pC
 tl
-Gw
+Yw
 Gq
 Gq
 Gq
