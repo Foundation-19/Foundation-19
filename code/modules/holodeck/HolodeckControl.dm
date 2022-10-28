@@ -5,7 +5,7 @@
 	icon_screen = "holocontrol"
 	machine_name = "holodeck control console"
 	machine_desc = "Holodecks are immensely complicated and delicate machines, and holodeck control consoles are the devices used to calibrate and modify them."
-	var/lock_access = list(access_bridge)
+	var/lock_access = list(ACCESS_BRIDGE)
 	var/islocked = 0
 
 	active_power_usage = 8000 //8kW for the scenery + 500W per holoitem

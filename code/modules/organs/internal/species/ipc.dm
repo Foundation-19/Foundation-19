@@ -24,7 +24,7 @@
 	var/searching = TIMER_ID_NULL
 	var/last_search = 0
 
-	req_access = list(access_robotics)
+	req_access = list(ACCESS_ROBOTICS)
 
 	var/list/shackled_verbs = list(
 		/obj/item/organ/internal/posibrain/proc/show_laws_brain,

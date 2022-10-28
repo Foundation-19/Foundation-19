@@ -23,7 +23,7 @@
 	if(active_record)
 		send_rsc(user, active_record.photo_front, "front_[active_record.uid].png")
 		send_rsc(user, active_record.photo_side, "side_[active_record.uid].png")
-		data["pic_edit"] = check_access(user, access_adminlvl2) || check_access(user, access_securitylvl2)
+		data["pic_edit"] = check_access(user, ACCESS_ADMIN_LVL2) || check_access(user, ACCESS_SECURITY_LVL2)
 		data += active_record.generate_nano_data(user_access)
 	else
 		var/list/all_records = list()
@@ -36,9 +36,9 @@
 				"id" = R.uid
 			)))
 		data["all_records"] = all_records
-		data["creation"] = check_access(user, access_adminlvl2)
-		data["dnasearch"] = check_access(user, access_medicallvl2) || check_access(user, access_securitylvl2)
-		data["fingersearch"] = check_access(user, access_securitylvl2)
+		data["creation"] = check_access(user, ACCESS_ADMIN_LVL2)
+		data["dnasearch"] = check_access(user, ACCESS_MEDICAL_LVL2) || check_access(user, ACCESS_SECURITY_LVL2)
+		data["fingersearch"] = check_access(user, ACCESS_SECURITY_LVL2)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
@@ -53,7 +53,7 @@
 	var/obj/item/modular_computer/computer = nano_host()
 	if(computer.computer_emagged)
 		user_access = user_access.Copy()
-		user_access |= access_syndicate
+		user_access |= ACCESS_SYNDICATE
 
 	return user_access
 
@@ -86,7 +86,7 @@
 				break
 		return 1
 	if(href_list["new_record"])
-		if(!check_access(usr, access_adminlvl2))
+		if(!check_access(usr, ACCESS_ADMIN_LVL2))
 			to_chat(usr, "Access Denied.")
 			return
 		active_record = new/datum/computer_file/report/crew_record()

@@ -11,21 +11,21 @@
 	req_admin_notify = 1
 	economic_power = 15
 	access = list(
-		access_com_comms,
-		access_sci_comms,
-		access_sciencelvl5,
-		access_sciencelvl4,
-		access_sciencelvl3,
-		access_sciencelvl2,
-		access_sciencelvl1,
-		access_securitylvl1,
-		access_medicallvl1,
-		access_adminlvl1,
-		access_adminlvl2,
-		access_adminlvl3,
-		access_adminlvl4,
-		access_keyauth,
-		access_research
+		ACCESS_COM_COMMS,
+		ACCESS_SCI_COMMS,
+		ACCESS_SCIENCE_LVL5,
+		ACCESS_SCIENCE_LVL4,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_KEYAUTH,
+		ACCESS_RESEARCH
 	)
 	minimal_player_age = 14
 	ideal_character_age = 50
@@ -49,13 +49,13 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb)
 	access = list(
-		access_sci_comms,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3,
-		access_sciencelvl4,
-		access_securitylvl1,
-		access_research
+		ACCESS_SCI_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_SCIENCE_LVL4,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_RESEARCH
 	)
 	minimal_access = list()
 
@@ -75,10 +75,10 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	access = list(
-		access_sci_comms,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_research
+		ACCESS_SCI_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_RESEARCH
 	)
 	minimal_access = list()
 
@@ -98,10 +98,10 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	access = list(
-		access_sci_comms,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_research
+		ACCESS_SCI_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_RESEARCH
 	)
 	minimal_access = list()
 
@@ -121,11 +121,11 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb, /datum/mil_rank/civ/classc)
 	access = list(
-		access_sci_comms,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3,
-		access_sciencelvl4
+		ACCESS_SCI_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_SCIENCE_LVL4
 	)
 	minimal_access = list()
 
@@ -145,10 +145,10 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb, /datum/mil_rank/civ/classc)
 	access = list(
-		access_sci_comms,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3
+		ACCESS_SCI_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3
 	)
 	minimal_access = list()
 
@@ -168,8 +168,8 @@
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudresearchassistant"
 	access = list(
-		access_sci_comms,
-		access_sciencelvl1,
-		access_sciencelvl2
+		ACCESS_SCI_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2
 	)
 	minimal_access = list()

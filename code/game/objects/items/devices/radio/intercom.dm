@@ -96,8 +96,8 @@
 	. = ..()
 	internal_channels = list(
 		num2text(PUB_FREQ) = list(),
-		num2text(SEC_FREQ) = list(access_security),
-		num2text(SEC_I_FREQ) = list(access_security)
+		num2text(SEC_FREQ) = list(ACCESS_SECURITY),
+		num2text(SEC_I_FREQ) = list(ACCESS_SECURITY)
 	)
 
 /obj/item/device/radio/intercom/entertainment/Initialize()
@@ -116,7 +116,7 @@
 
 /obj/item/device/radio/intercom/syndicate/Initialize()
 	. = ..()
-	internal_channels[num2text(SYND_FREQ)] = list(access_syndicate)
+	internal_channels[num2text(SYND_FREQ)] = list(ACCESS_SYNDICATE)
 
 /obj/item/device/radio/intercom/raider
 	name = "illicit intercom"
@@ -127,7 +127,7 @@
 
 /obj/item/device/radio/intercom/raider/Initialize()
 	. = ..()
-	internal_channels[num2text(RAID_FREQ)] = list(access_syndicate)
+	internal_channels[num2text(RAID_FREQ)] = list(ACCESS_SYNDICATE)
 
 /obj/item/device/radio/intercom/attack_ai(mob/user)
 	add_fingerprint(user)

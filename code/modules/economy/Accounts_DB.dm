@@ -4,7 +4,7 @@
 	desc = "Access transaction logs, account data and all kinds of other financial records."
 	machine_name = "accounts uplink terminal"
 	machine_desc = "Displays financial records, account information, and all sorts of info for anything related to network banking accounts."
-	var/needed_access = list(list(access_hop, access_captain))
+	var/needed_access = list(list(ACCESS_HOP, ACCESS_CAPTAIN))
 	var/receipt_num
 	var/machine_id = ""
 	var/obj/item/card/id/held_card
@@ -15,9 +15,9 @@
 /obj/machinery/computer/account_database/proc/get_access_level()
 	if (!held_card)
 		return 0
-	if(access_cent_captain in held_card.access)
+	if(ACCESS_CENT_CAPTAIN in held_card.access)
 		return 2
-	else if(access_hop in held_card.access || (access_captain in held_card.access))
+	else if(ACCESS_HOP in held_card.access || (ACCESS_CAPTAIN in held_card.access))
 		return 1
 
 /obj/machinery/computer/account_database/proc/accounting_letterhead(report_name)

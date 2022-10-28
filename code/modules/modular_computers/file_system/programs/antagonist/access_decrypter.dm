@@ -15,8 +15,8 @@
 	var/progress = 0
 	var/target_progress = 300
 	var/datum/access/target_access = null
-	var/list/restricted_access_codes = list(access_change_ids) // access codes that are not hackable due to balance reasons
-	var/list/skill_restricted_access_codes_master = list(access_network)
+	var/list/restricted_access_codes = list(ACCESS_CHANGE_IDS) // access codes that are not hackable due to balance reasons
+	var/list/skill_restricted_access_codes_master = list(ACCESS_NETWORK)
 	var/operator_skill = 0
 
 /datum/computer_file/program/access_decrypter/kill_program(forced)

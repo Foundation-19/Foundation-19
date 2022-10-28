@@ -315,7 +315,7 @@
 	icon_closed = "biohazard"
 	open_sound = 'sound/items/Deconstruct.ogg'
 	close_sound = 'sound/items/Deconstruct.ogg'
-	req_access = list(access_xenobiology)
+	req_access = list(ACCESS_XENOBIOLOGY)
 	storage_capacity = 2 * MOB_LARGE
 	storage_types = CLOSET_STORAGE_ITEMS|CLOSET_STORAGE_MOBS|CLOSET_STORAGE_STRUCTURES
 
@@ -331,7 +331,7 @@
 /obj/structure/closet/crate/secure/biohazard/alt
 	name = "biowaste disposal cart"
 	desc = "A heavy cart used for organ disposal with markings indicating the things inside are probably gross."
-	req_access = list(access_surgery)
+	req_access = list(ACCESS_SURGERY)
 	closet_appearance = /decl/closet_appearance/cart/biohazard/alt
 
 /obj/structure/closet/crate/paper_refill
