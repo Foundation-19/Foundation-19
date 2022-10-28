@@ -1,0 +1,4 @@
+author: Tsurupeta
+delete-after: true
+changes:
+  - balance: reverted limb hp increase
