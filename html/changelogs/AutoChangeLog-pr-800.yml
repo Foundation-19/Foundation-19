@@ -1,5 +1,0 @@
-author: MACIEKBAKI
-delete-after: true
-changes:
-  - refactor: Complete refactor of our ID system. Now uses defines.
-  - rscadd: New guestpass TGUI

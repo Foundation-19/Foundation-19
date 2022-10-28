@@ -33,5 +33,8 @@
       any GOI specific channel their headset may have been given (GOC Rep is the only
       one with his own GOC channel for now, however)
   - bugfix: Removed pistol from Class D Zombie preset outfit
+  MACIEKBAKI:
+  - refactor: Complete refactor of our ID system. Now uses defines.
+  - rscadd: New guestpass TGUI
   Tsurupeta:
   - bugfix: Fixed timer assembly, therefore all grenades on timers should work now.
