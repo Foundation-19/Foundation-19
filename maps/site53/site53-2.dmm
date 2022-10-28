@@ -1,4 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aaa" = (
+/obj/effect/decal/cleanable/blood/gibs/robot,
+/mob/living/exosuit/premade/powerloader/old{
+	desc = "An ancient, but well-liked cargo handling exosuit. The paint is starting to flake. A small section of the roll cage appears to be encrusted with blood..."
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/reswing/robotics)
 "aab" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
@@ -27,6 +34,18 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
+"aah" = (
+/obj/machinery/door/firedoor,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/glass/security{
+	name = "Red Line HCZ"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lowertrams/redline)
 "aai" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -89,6 +108,31 @@
 /obj/item/ammo_magazine/box/a556,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
+"aap" = (
+/obj/machinery/door/firedoor,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/door/airlock/glass/security{
+	name = "Red Line HCZ"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lowertrams/redline)
+"aaq" = (
+/obj/machinery/door/airlock/hatch/maintenance{
+	name = "Research Wing Substation"
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "EZ Security Maintenance Hatch";
+	name = "EZ Security Maintenance Hatch"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor,
+/area/site53/lowertrams/hczmaint)
 "aar" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
@@ -150,6 +194,48 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/engineering/containment_engineer)
+"aaE" = (
+/obj/effect/floor_decal/corner/red/border,
+/obj/structure/table/standard,
+/obj/machinery/button/alternate/door/bolts{
+	dir = 1;
+	id_tag = "UEZ Checkpoint Bubble";
+	name = "UEZ Checkpoint Bubble";
+	pixel_y = -23;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
+"aaF" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/hatch/maintenance{
+	name = "Research Wing Substation"
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "EZ Security Maintenance Hatch";
+	name = "EZ Security Maintenance Hatch"
+	},
+/turf/simulated/floor,
+/area/site53/lowertrams/hczmaint)
 "aaG" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -167,6 +253,37 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/sleeproom)
+"aaH" = (
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/item/pen,
+/obj/machinery/camera/network/lcz,
+/obj/item/stamp/cmo{
+	name = "LCZ Entry Checkpoint Stamp"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
+"aaI" = (
+/obj/structure/table/standard,
+/obj/item/pen,
+/obj/item/paper_bin,
+/obj/machinery/light,
+/obj/machinery/power/apc/hyper{
+	pixel_y = -25
+	},
+/obj/structure/cable/green,
+/obj/item/stamp/cmo{
+	name = "HCZ Entry Checkpoint Stamp"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
+"aaJ" = (
+/obj/structure/table/standard,
+/obj/item/device/megaphone,
+/obj/item/boombox,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "aaL" = (
 /obj/effect/paint_stripe/red,
 /obj/structure/sign/scp/topside/SecureArealv1mtf,
@@ -12567,18 +12684,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
-"aIk" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/hatch/maintenance{
-	name = "Research Wing Substation";
-	req_access = list("ACCESS_SCIENCE_LEVEL1")
-	},
-/turf/simulated/floor,
-/area/site53/lowertrams/hczmaint)
 "aIm" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -13250,17 +13355,6 @@
 "aKo" = (
 /obj/machinery/power/breakerbox/activated{
 	RCon_tag = "Research Wing Bypass"
-	},
-/turf/simulated/floor,
-/area/site53/lowertrams/hczmaint)
-"aKp" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/hatch/maintenance{
-	name = "Research Wing Substation"
 	},
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint)
@@ -20294,14 +20388,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
-"bgQ" = (
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/pen,
-/obj/item/pen,
-/obj/machinery/camera/network/lcz,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
 "bgV" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -20452,6 +20538,10 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light,
+/obj/effect/floor_decal/industrial/loading{
+	dir = 4;
+	name = "Entry Line"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "bhh" = (
@@ -20626,11 +20716,6 @@
 	name = "ULCZ Exit Line Cycle"
 	},
 /obj/effect/catwalk_plated/white,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
-"bhC" = (
-/obj/structure/table/standard,
-/obj/item/device/megaphone,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "bhD" = (
@@ -22998,8 +23083,11 @@
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/escape)
 "dBT" = (
-/obj/structure/railing/mapped,
-/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/effect/floor_decal/industrial/loading{
+	dir = 8;
+	name = "Entry Line"
+	},
+/obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "dCs" = (
@@ -25663,33 +25751,6 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
-"hEq" = (
-/obj/effect/floor_decal/corner/red/border,
-/obj/structure/table/standard,
-/obj/machinery/button/alternate/door/bolts{
-	dir = 1;
-	id_tag = "hczguns";
-	name = "HCZ Armory Door bolt";
-	pixel_y = -23;
-	req_access = list("ACCESS_SECURITY_LEVEL3")
-	},
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
 "hFj" = (
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/uhcz/scp247containment)
@@ -27067,6 +27128,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
+"jQI" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/effect/floor_decal/industrial/loading{
+	dir = 8;
+	name = "Entry Line"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "jQM" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -28494,7 +28563,7 @@
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /obj/item/paper/crumpled/bloody{
-	info = ("I'm giving up on trying to repair this thing. I damn near severed my finger trying to repair it. We used to use this thing to train the security and logistics teams on exosuit use, although before it broke down we used it for lugging around heavy objects. I've done some of the work, but more needs to be done.")
+	info = "I'm giving up on trying to repair this thing. I damn near severed my finger trying to repair it. We used to use this thing to train the security and logistics teams on exosuit use, although before it broke down we used it for lugging around heavy objects. I've done some of the work, but more needs to be done."
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/reswing/robotics)
@@ -28981,17 +29050,6 @@
 /obj/item/device/toner,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
-"mDr" = (
-/obj/structure/table/standard,
-/obj/item/pen,
-/obj/item/paper_bin,
-/obj/machinery/light,
-/obj/machinery/power/apc/hyper{
-	pixel_y = -25
-	},
-/obj/structure/cable/green,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/securitypost)
 "mDz" = (
 /obj/machinery/door/airlock/science{
 	name = "SCP-078";
@@ -29266,6 +29324,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
+"mXc" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "ULCZ Booth Window 1";
+	name = "ULCZ Booth Window 1"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "mXo" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
@@ -29757,13 +29823,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
-"nQW" = (
-/mob/living/exosuit/premade/powerloader/old{
-	desc = "An ancient, but well-liked cargo handling exosuit. The paint is starting to flake. A small section of the roll cage appears to be encrusted with blood..."
-	},
-/obj/effect/decal/cleanable/blood/gibs/robot,
-/turf/simulated/floor/reinforced,
-/area/site53/reswing/robotics)
 "nRo" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -31324,17 +31383,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
-"qEi" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Red Line";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2","ACCESS_MEDICAL_LEVEL2"))
-	},
-/obj/machinery/door/firedoor,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/redline)
 "qFs" = (
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/lamp,
@@ -31706,9 +31754,8 @@
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/scp096)
 "riw" = (
-/obj/effect/paint_stripe/red,
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/turf/simulated/wall/prepainted,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "riD" = (
 /obj/structure/railing/mapped{
@@ -33497,19 +33544,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp096)
-"ugg" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Red Line";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2","ACCESS_MEDICAL_LEVEL2"))
-	},
-/obj/machinery/door/firedoor,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/redline)
 "ugQ" = (
 /obj/machinery/vending/coffee,
 /obj/machinery/light{
@@ -34236,6 +34270,10 @@
 /obj/structure/closet/l3closet/scientist,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
+"vea" = (
+/obj/effect/floor_decal/industrial/outline/orange,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "veT" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 10
@@ -35336,6 +35374,14 @@
 /obj/effect/floor_decal/corner/black/full,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
+"wHX" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "ULCZ Booth Window 2";
+	name = "ULCZ Booth Window 2"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "wIt" = (
 /obj/effect/landmark/test/space_turf,
 /turf/simulated/floor,
@@ -56070,7 +56116,7 @@ asA
 asA
 cqF
 aVi
-asA
+wHX
 asA
 qPN
 bhB
@@ -56323,13 +56369,13 @@ azA
 asA
 aMV
 odC
-bhC
+aaJ
 eiF
 ebw
 aDO
 lkI
 kbY
-tzd
+jQI
 bhA
 bkh
 odC
@@ -56586,7 +56632,7 @@ aDO
 aDO
 azx
 viG
-dBT
+vea
 dpC
 bkh
 blf
@@ -57095,7 +57141,7 @@ asA
 kFS
 blf
 aMH
-bgQ
+aaH
 aDO
 aDO
 azx
@@ -57612,8 +57658,8 @@ sek
 aDO
 aDO
 aDO
-aDO
-bgI
+aVw
+mXc
 tzd
 uwO
 aDO
@@ -57868,7 +57914,7 @@ blf
 riw
 ycD
 aVb
-aVw
+aDO
 lKF
 asA
 xLS
@@ -58125,7 +58171,7 @@ asA
 asA
 asA
 asA
-asA
+bgI
 asA
 asA
 asA
@@ -58382,9 +58428,9 @@ aaA
 acp
 acp
 aZt
-acp
-acp
-aaA
+adx
+adx
+adx
 xvH
 epS
 adx
@@ -59156,7 +59202,7 @@ adx
 adx
 adx
 adx
-adx
+xvH
 ekr
 adx
 adx
@@ -69396,11 +69442,11 @@ aMp
 aJn
 arl
 agW
-aIk
+aaq
 aKs
 aIn
 ayr
-aKp
+aaF
 aIm
 aav
 aaZ
@@ -69937,8 +69983,8 @@ aac
 aac
 abY
 abY
-ugg
-qEi
+aah
+aap
 lxM
 lbn
 abY
@@ -71681,7 +71727,7 @@ azA
 azA
 azA
 aIi
-nQW
+aaa
 fYI
 tbC
 aeU
@@ -75605,7 +75651,7 @@ hDv
 oQu
 aGB
 pIF
-mDr
+aaI
 ass
 ass
 ass
@@ -96952,7 +96998,7 @@ gID
 ipQ
 gWM
 rrU
-hEq
+aaE
 gID
 shV
 rrU
