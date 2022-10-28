@@ -2513,10 +2513,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "hj" = (
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/machinery/light,
 /obj/structure/filingcabinet/chestdrawer,
 /obj/effect/floor_decal/corner/blue/border,
