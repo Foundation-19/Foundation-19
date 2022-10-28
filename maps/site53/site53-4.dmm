@@ -3599,8 +3599,6 @@
 "jX" = (
 /obj/structure/closet/secure_closet/administration/commsofficer,
 /obj/item/clothing/accessory/storage/webbing_large,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
 	},
