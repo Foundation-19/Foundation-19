@@ -48,17 +48,17 @@
 /obj/item/device/encryptionkey/headset_sec_hcz
 	name = "HCZ security radio encryption key"
 	icon_state = "sec_cypherkey"
-	channels = list("HCZ-Security" = 1)
+	channels = list("HCZ-Security" = 1, "Security" = 1)
 
 /obj/item/device/encryptionkey/headset_sec_lcz
 	name = "LCZ security radio encryption key"
 	icon_state = "sec_cypherkey"
-	channels = list("LCZ-Security" = 1)
+	channels = list("LCZ-Security" = 1, "Security" = 1)
 
 /obj/item/device/encryptionkey/headset_sec_ecz
 	name = "ECZ security radio encryption key"
 	icon_state = "sec_cypherkey"
-	channels = list("ECZ-Security" = 1)
+	channels = list("ECZ-Security" = 1, "Security" = 1)
 
 /obj/item/device/radio/headset/goc
 	name = "GOC headset"
@@ -66,12 +66,12 @@
 	ks2type = /obj/item/device/encryptionkey/goc
 
 
-/obj/item/device/radio/headset/heads/hos/goc
+/obj/item/device/radio/headset/heads/goc
 	name = "GOC representative's headset"
 	desc = "The headset of the humanitarian, or so they might say."
 	ks2type = /obj/item/device/encryptionkey/goc
 
-/obj/item/device/radio/headset/heads/hos/uiu
+/obj/item/device/radio/headset/heads/uiu
 	name = "UIU representative's headset"
 	desc = "The headset of the humanitarian, or so they might say."
 
@@ -80,10 +80,10 @@
 	icon_state = "goc_cypherkey"
 	channels = list("GOC" = 1)
 
-/obj/item/device/radio/headset/heads/hos/thi
+/obj/item/device/radio/headset/heads/thi
 	name = "Horizon Initiative representative's headset"
 	desc = "The headset of the holy man, don't let them see 343."
 
-/obj/item/device/radio/headset/heads/hos/mcd
+/obj/item/device/radio/headset/heads/mcd
 	name = "Marshall, Carter, and Dark Liaison's headset"
 	desc = "The headset of the capitalist, keep an eye on your wallet."

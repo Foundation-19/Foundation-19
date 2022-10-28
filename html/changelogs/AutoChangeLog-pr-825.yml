@@ -1,0 +1,4 @@
+author: Tsurupeta
+delete-after: true
+changes:
+  - bugfix: Fixed timer assembly, therefore all grenades on timers should work now.
