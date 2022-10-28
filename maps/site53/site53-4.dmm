@@ -267,15 +267,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/uez/hallway)
-"aJ" = (
-/obj/effect/paint_stripe/blue,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/wall/titanium,
-/area/site53/uez/hallway)
 "aK" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/maincontrolroom)
@@ -486,6 +477,9 @@
 "br" = (
 /turf/simulated/floor/exoplanet/grass,
 /area/space)
+"bs" = (
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/hallway)
 "bt" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -641,20 +635,6 @@
 /obj/structure/flora/bush,
 /turf/simulated/floor/exoplanet/snow,
 /area/space)
-"bP" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/light,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/lino,
-/area/site53/uez/hallway)
 "bQ" = (
 /obj/structure/table/woodentable,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -943,19 +923,6 @@
 	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
-"cD" = (
-/obj/machinery/power/apc/hyper{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/lino,
-/area/site53/uez/hallway)
 "cE" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 8
@@ -1164,19 +1131,6 @@
 /area/site53/uez/hallway)
 "dh" = (
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/hallway)
-"di" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/lino,
 /area/site53/uez/hallway)
 "dj" = (
 /obj/machinery/photocopier/faxmachine{
@@ -2272,9 +2226,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
-"fY" = (
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/hallway)
 "fZ" = (
 /obj/machinery/light{
 	dir = 1
@@ -2569,7 +2520,6 @@
 /obj/machinery/light,
 /obj/structure/filingcabinet/chestdrawer,
 /obj/effect/floor_decal/corner/blue/border,
-/obj/machinery/power/apc/hyper,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "hk" = (
@@ -37952,8 +37902,8 @@ bb
 bK
 bK
 bK
+bK
 cC
-di
 ch
 cH
 cH
@@ -38209,7 +38159,7 @@ bb
 bK
 bK
 bK
-cD
+gQ
 do
 cn
 bK
@@ -38982,8 +38932,8 @@ bK
 eo
 aS
 dG
-fY
-fY
+bs
+bs
 cT
 be
 bK
@@ -39750,15 +39700,15 @@ er
 ex
 kp
 eS
-fY
+bs
 gO
 kw
 ky
 hd
 hj
-aJ
-cH
-bP
+ac
+bK
+gm
 dF
 eL
 gT
