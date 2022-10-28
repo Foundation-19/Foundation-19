@@ -47,13 +47,13 @@
 
 /obj/item/gun/projectile/revolver/rhino
 	name = "rhino"
-	desc = "Standard issue Foundation revolver based on the Chiappa Rhino. Chambered in .9mm Parabellum"
+	desc = "Standard issue Foundation revolver based on the Chiappa Rhino. Chambered in .357 magnum"
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "rhino"
-	caliber = "9mm"
-	fire_delay = 6
+	caliber = "357"
+	fire_delay = 4
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
-	ammo_type = /obj/item/ammo_casing/a50
+	ammo_type = /obj/item/ammo_casing/a357
 	handle_casings = CYCLE_CASINGS
 
 /obj/item/gun/projectile/silenced

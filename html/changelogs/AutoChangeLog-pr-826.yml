@@ -1,0 +1,14 @@
+author: GGarciaECE
+delete-after: true
+changes:
+  - bugfix: Fixed issues with the Chiappa RHINO that spawns on investigative agents
+      (now chambered properly in .357 with corresponding ammunition box)
+  - bugfix: Fixed issue with investigative agent's gloves (previously incorrect glove
+      path)
+  - rscadd: Added main security comms to all security headsets (But not zone specific
+      comms to other zones)
+  - rscadd: Gave utility jumpsuits to logistics and to the comms techie
+  - rscadd: Representative headsets only have access to common channel as well as
+      any GOI specific channel their headset may have been given (GOC Rep is the only
+      one with his own GOC channel for now, however)
+  - bugfix: Removed pistol from Class D Zombie preset outfit
