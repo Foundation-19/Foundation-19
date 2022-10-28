@@ -178,6 +178,17 @@
 	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 100
 
+
+// .357
+/obj/item/ammo_magazine/box/a357
+	name = "ammunition box (357)"
+	icon_state = "357"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = "357"
+	matter = list(DEFAULT_WALL_MATERIAL = 2250)
+	ammo_type = /obj/item/ammo_casing/a357
+	max_ammo = 60
+
 // 45acp
 /obj/item/ammo_magazine/box/a45
 	name = "ammunition box (.45acp)"
@@ -243,7 +254,7 @@
 
 
 /obj/item/ammo_magazine/box/slug
-	name = "ammunition box (Buckshot)"
+	name = "ammunition box (Slug)"
 	icon_state = "ammobox"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = CALIBER_SHOTGUN
