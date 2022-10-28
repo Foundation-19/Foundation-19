@@ -17923,6 +17923,15 @@
 /obj/structure/bed/roller,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"Yw" = (
+/obj/structure/closet/acloset,
+/obj/item/gun/projectile/revolver/holdout,
+/obj/item/paper{
+	info = "If you found this, be careful. Don't get caught by the guards, they could kill you for owning this thing. How did this gun end up here? This place has been running for a long time, and I wanted an insurance. Guards rarely check the prison pocket... I doubt I'll ever get to use it, too risky, and beside my month's almost up. But if you are willing to risk it, well you got six shots, make it counts. I doubt it will pierce their armours. Can't get caught with it. -D.G";
+	name = "hand-written note"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/llcz/mine/unexplored)
 "Yx" = (
 /obj/effect/floor_decal/industrial/firstaid{
 	dir = 1
@@ -47113,7 +47122,7 @@ ua
 ua
 pC
 tl
-Gw
+Yw
 Gq
 Gq
 Gq
