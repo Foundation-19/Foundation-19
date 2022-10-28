@@ -42,7 +42,7 @@
 // END OF COMMAND OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/command/commstech
 	name = OUTFIT_JOB_NAME("Communications Technician")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet 
+	uniform = /obj/item/clothing/under/scp/utility/communications/tech
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/commslvl1)
 	belt = /obj/item/storage/belt/utility/full
@@ -257,7 +257,7 @@
 	l_hand = /obj/item/storage/briefcase/crimekit
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/det/grey
-	gloves = /obj/item/clothing/gloves/forensic
+	gloves = /obj/item/clothing/gloves/forensic/armored
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
@@ -274,7 +274,7 @@
 	l_hand = /obj/item/storage/briefcase/crimekit
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/det
-	gloves = /obj/item/clothing/gloves/forensic
+	gloves = /obj/item/clothing/gloves/forensic/armored
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
@@ -461,7 +461,7 @@
 	gloves = /obj/item/clothing/gloves/thick/combat
 	l_pocket = /obj/item/device/radio
 	id_types = list(/obj/item/card/id/adminlvl3)
-	l_ear = /obj/item/device/radio/headset/heads/goc
+	l_ear = /obj/item/device/radio/headset/heads/hos/goc
 	back = /obj/item/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/ammo_magazine/scp/usp45 = 1)
 	belt = /obj/item/gun/projectile/pistol/usp45
@@ -474,7 +474,7 @@
 	gloves = /obj/item/clothing/gloves/thick/combat
 	l_pocket = /obj/item/device/radio
 	id_types = list(/obj/item/card/id/adminlvl3)
-	l_ear = /obj/item/device/radio/headset/heads/uiu
+	l_ear = /obj/item/device/radio/headset/heads/hos/uiu
 	back = /obj/item/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
 	belt = /obj/item/gun/projectile/pistol/m1911
@@ -485,7 +485,7 @@
 	l_hand = /obj/item/storage/bible
 	id_types = list(/obj/item/card/id/adminlvl3)
 	pda_type = /obj/item/modular_computer/pda/medical
-	l_ear = /obj/item/device/radio/headset/heads/thi
+	l_ear = /obj/item/device/radio/headset/heads/hos/thi
 	belt = /obj/item/gun/projectile/pistol/m1911
 	back = /obj/item/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
@@ -499,7 +499,7 @@
 	id_types = list(/obj/item/card/id/adminlvl3)
 	r_hand = /obj/item/storage/secure/briefcase/money
 	l_hand = /obj/item/cane
-	l_ear = /obj/item/device/radio/headset/heads/mcd
+	l_ear = /obj/item/device/radio/headset/heads/hos/mcd
 	back = /obj/item/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/ammo_magazine/c45m = 1)
 	belt = /obj/item/gun/projectile/silenced
@@ -629,7 +629,7 @@
 // LOGISTICS OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/command/logisticsofficer
 	name = OUTFIT_JOB_NAME("Logistics Officer")
-	uniform = /obj/item/clothing/under/solgov/utility/marine/tan
+	uniform = /obj/item/clothing/under/scp/utility/logistics/officer
 	gloves = /obj/item/clothing/gloves/thick
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/logoff)
@@ -638,7 +638,7 @@
 
 /decl/hierarchy/outfit/job/site90/crew/command/logisticspecialist
 	name = OUTFIT_JOB_NAME("Logistics Specialist")
-	uniform = /obj/item/clothing/under/solgov/utility/marine/tan
+	uniform = /obj/item/clothing/under/scp/utility/logistics
 	gloves = /obj/item/clothing/gloves/thick
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/logspec)
@@ -992,6 +992,8 @@
 	name = OUTFIT_JOB_NAME("Class D")
 	uniform = /obj/item/clothing/under/scp/dclass
 	shoes = /obj/item/clothing/shoes/workboots
+	belt = /obj/item/gun/projectile/pistol/mk9
+	l_pocket = /obj/item/ammo_magazine/scp/mk9
 	id_types = list(/obj/item/card/id/classd)
 	l_ear = null
 	back = null
