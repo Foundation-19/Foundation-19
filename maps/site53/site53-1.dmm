@@ -17927,7 +17927,7 @@
 /obj/structure/closet/acloset,
 /obj/item/gun/projectile/revolver/holdout,
 /obj/item/paper{
-	info = "If you found this, be careful. Don't get caught by the guards, they could kill you for owning this thing. How did this gun end up here? This place has been running for a long time, and I wanted an insurance. Guards rarely check the prison pocket... I doubt I'll ever get to use it, too risky, and beside my month's almost up. But if you are willing to risk it, well you got six shots, make it counts. I doubt it will pierce their armours. Can't get caught with it. -D.G";
+	info = "To whoever this may concern : if you found this, nicely done, you got yourself a gun, and perhaps a shot at freedom. The guards are well armoured, so be careful. Find the correct opportunity. I no longer need it, and if they found this in my cell or worse, on me, I'd be in a whole world of trouble. Take it, hide it, don't show it to anyone. -A friend in orange";
 	name = "hand-written note"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
