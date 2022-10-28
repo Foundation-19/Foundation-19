@@ -204,7 +204,7 @@
 	available_accesses = available_accesses || list()
 
 /obj/item/integrated_circuit/logic/unary/access_verifier/station/New()
-	available_accesses = get_all_station_access()
+	available_accesses = get_all_site_access()
 	..()
 
 /obj/item/integrated_circuit/logic/unary/access_verifier/attack_self(var/mob/user)

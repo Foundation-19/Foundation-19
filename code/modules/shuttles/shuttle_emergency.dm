@@ -146,7 +146,7 @@
 		src.visible_message("\The [src] buzzes. That ID has already been scanned.")
 		return 0
 
-	if (!(access_bridge in access))
+	if (!(ACCESS_BRIDGE in access))
 		src.visible_message("\The [src] buzzes, rejecting [ident].")
 		return 0
 

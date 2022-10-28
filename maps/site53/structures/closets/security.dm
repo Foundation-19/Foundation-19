@@ -19,7 +19,7 @@
 	icon_opened = "enlisted-open"
 	icon_off = "enlisted-off"
 	anchored = TRUE
-	req_access = list(access_securitylvl1)
+	req_access = list(ACCESS_SECURITY_LVL1)
 	var/registered_name = null
 
 /obj/structure/closet/secure_closet/mtf/WillContain()
@@ -28,7 +28,7 @@
 
 /obj/structure/closet/secure_closet/mtf/enlisted
 	name = "LCZ Guard's Locker"
-	req_access = list(access_securitylvl2)
+	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "junior-locked"
 	icon_closed = "junior-unlocked"
 	icon_locked = "junior-locked"
@@ -58,7 +58,7 @@
 
 /obj/structure/closet/secure_closet/mtf/nco
 	name = "LCZ Sergeant's Locker"
-	req_access = list(access_securitylvl2)
+	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "guard-locked"
 	icon_closed = "guard-unlocked"
 	icon_locked = "guard-locked"
@@ -82,7 +82,7 @@
 	)
 /obj/structure/closet/secure_closet/mtf/enlisted/hcz
 	name = "HCZ Guard's Locker"
-	req_access = list(access_securitylvl3)
+	req_access = list(ACCESS_SECURITY_LVL3)
 
 /obj/structure/closet/secure_closet/mtf/enlisted/hcz/WillContain()
 	return list(
@@ -130,7 +130,7 @@
 
 /obj/structure/closet/secure_closet/mtf/enlisted/ez
 	name = "EZ Agent's Locker"
-	req_access = list(access_securitylvl3)
+	req_access = list(ACCESS_SECURITY_LVL3)
 
 /obj/structure/closet/secure_closet/mtf/enlisted/ez/WillContain()
 	return list(
@@ -170,7 +170,7 @@
 
 /obj/structure/closet/secure_closet/mtf/commander
 	name = "Guard Commander Locker"
-	req_access = list(access_securitylvl5)
+	req_access = list(ACCESS_SECURITY_LVL5)
 	icon_state = "cm-locked"
 	icon_closed = "cm-unlocked"
 	icon_locked = "cm-locked"
@@ -200,7 +200,7 @@
 
 /obj/structure/closet/secure_closet/mtf/co
 	name = "Zone Commander Locker"
-	req_access = list(access_securitylvl4)
+	req_access = list(ACCESS_SECURITY_LVL4)
 	icon_state = "co-locked"
 	icon_closed = "co-unlocked"
 	icon_locked = "co-locked"
@@ -226,7 +226,7 @@
 
 /obj/structure/closet/secure_closet/mtf/breachautomatics
 	name = "automatic weapons locker"
-	req_access = list(access_securitylvl2)
+	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "gun-locked"
 	icon_closed = "gun-unlocked"
 	icon_locked = "gun-locked"
@@ -246,7 +246,7 @@
 
 /obj/structure/closet/secure_closet/mtf/breachshotguns
 	name = "tactical shotgun locker"
-	req_access = list(access_securitylvl2)
+	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "gun-locked"
 	icon_closed = "gun-unlocked"
 	icon_locked = "gun-locked"
@@ -263,7 +263,7 @@
 
 /obj/structure/closet/secure_closet/mtf/riotshotguns
 	name = "riot shotgun locker"
-	req_access = list(access_securitylvl2)
+	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "gun-locked"
 	icon_closed = "gun-unlocked"
 	icon_locked = "gun-locked"
@@ -279,7 +279,7 @@
 
 /obj/structure/closet/secure_closet/mtf/riotgear
 	name = "riot gear locker"
-	req_access = list(access_securitylvl2)
+	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "gun-locked"
 	icon_closed = "gun-unlocked"
 	icon_locked = "gun-locked"
@@ -340,7 +340,7 @@
 
 /obj/structure/closet/secure_closet/mtf/exp
 	name = "Scout's Locker"
-	req_access = list(access_securitylvl3)
+	req_access = list(ACCESS_SECURITY_LVL3)
 	icon_state = "agent-locked"
 	icon_closed = "agent-unlocked"
 	icon_locked = "agent-locked"
@@ -370,7 +370,7 @@
 
 /obj/structure/closet/secure_closet/mtf/expl
 	name = "Scout's Leader Locker"
-	req_access = list(access_securitylvl5)
+	req_access = list(ACCESS_SECURITY_LVL5)
 	icon_state = "cm-locked"
 	icon_closed = "cm-unlocked"
 	icon_locked = "cm-locked"
@@ -400,7 +400,7 @@
 
 /obj/structure/closet/secure_closet/mtf/ntf
 	name = "NTF Agent's locker"
-	req_access = list(access_securitylvl3)
+	req_access = list(ACCESS_SECURITY_LVL3)
 	icon_state = "agent-locked"
 	icon_closed = "agent-unlocked"
 	icon_locked = "agent-locked"

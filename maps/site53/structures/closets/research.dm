@@ -4,7 +4,7 @@
 
 /obj/structure/closet/secure_closet/RD_torch
 	name = "research director's locker"
-	req_access = list(access_sciencelvl5)
+	req_access = list(ACCESS_SCIENCE_LVL5)
 	icon_state = "rdsecure1"
 	icon_closed = "rdsecure"
 	icon_locked = "rdsecure1"
@@ -47,7 +47,7 @@
 
 /obj/structure/closet/secure_closet/secure_closet/xenoarchaeologist_torch
 	name = "xenoarchaeologist's locker"
-	req_access = list(access_sciencelvl3)
+	req_access = list(ACCESS_SCIENCE_LVL3)
 	icon_state = "secureres1"
 	icon_closed = "secureres"
 	icon_locked = "secureres1"
@@ -81,7 +81,7 @@
 
 /obj/structure/closet/secure_closet/scientist_torch
 	name = "researcher's locker"
-//	req_one_access = list(access_sciencelvl2)
+//	req_one_access = list(ACCESS_SCIENCE_LVL2)
 	icon_state = "secureres1"
 	icon_closed = "secureres"
 	icon_locked = "secureres1"
@@ -113,7 +113,7 @@
 
 /obj/structure/closet/secure_closet/prospector
 	name = "prospector's locker"
-	req_access = list(access_sciencelvl2)
+	req_access = list(ACCESS_SCIENCE_LVL2)
 	icon_state = "miningsec1"
 	icon_closed = "miningsec"
 	icon_locked = "miningsec1"
@@ -141,7 +141,7 @@
 
 /obj/structure/closet/secure_closet/guard
 	name = "security guard's locker"
-	req_access = list(access_securitylvl2)
+	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "guard1"
 	icon_closed = "guard"
 	icon_locked = "guard1"
@@ -185,7 +185,7 @@
 
 /obj/structure/closet/secure_closet/scpscience/directorofscience
 	name = "Research Director's Locker"
-	req_access = list(access_sciencelvl5)
+	req_access = list(ACCESS_SCIENCE_LVL5)
 	icon_state = "dslocked"
 	icon_closed = "dsunlocked"
 	icon_locked = "dslocked"
@@ -207,7 +207,7 @@
 
 /obj/structure/closet/secure_closet/scientist
 	name = "scientist's locker"
-	req_access = list(access_sciencelvl2)
+	req_access = list(ACCESS_SCIENCE_LVL2)
 	icon_state = "secureres1"
 	icon_closed = "secureres"
 	icon_locked = "secureres1"

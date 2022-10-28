@@ -27,7 +27,7 @@
 	registered_name = "Commanding Officer"
 	assignment = "Commanding Officer"
 /obj/item/card/id/torch/captains_spare/New()
-	access = get_all_station_access()
+	access = get_all_site_access()
 	..()
 
 /*
@@ -547,21 +547,21 @@
 /obj/item/card/id/dmining
 	name = " Mining Assignment Card"
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
-	access = access_dclassmining
+	access = ACCESS_DCLASS_MINING
 /obj/item/card/id/dbotany
 	name = " Botany Assignment Card"
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
-	access = access_dclassbotany
+	access = ACCESS_DCLASS_BOTANY
 
 /obj/item/card/id/dkitchen
 	name = " Kitchen Assignment Card"
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
-	access = access_dclasskitchen
+	access = ACCESS_DCLASS_KITCHEN
 
 /obj/item/card/id/djanitorial
 	name = " Janitorial Assignment Card"
 	desc = "A dark blue ID. Looks important. The person wearing it not so much."
-	access = access_dclassjanitorial
+	access = ACCESS_DCLASS_JANITORIAL
 
 
 /obj/item/card/id/officeworker

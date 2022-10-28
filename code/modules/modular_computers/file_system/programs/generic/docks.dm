@@ -1,7 +1,7 @@
 /datum/computer_file/program/docking
 	filename = "docking"
 	filedesc = "Docking Control"
-	required_access = access_bridge
+	required_access = ACCESS_BRIDGE
 	nanomodule_path = /datum/nano_module/docking
 	program_icon_state = "supply"
 	program_key_state = "rd_key"

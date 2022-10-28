@@ -8,7 +8,7 @@
 	program_menu_icon = "locked"
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE
-	required_access = access_securitylvl4
+	required_access = ACCESS_SECURITY_LVL4
 	nanomodule_path = /datum/nano_module/forceauthorization
 
 /datum/nano_module/forceauthorization/

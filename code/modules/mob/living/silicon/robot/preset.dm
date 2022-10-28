@@ -40,7 +40,7 @@
 //	laws =   /datum/ai_laws/ascent
 	idcard = /obj/item/card/id/ascent
 	module = /obj/item/robot_module/flying/ascent
-	req_access = list(access_ascent)
+	req_access = list(ACCESS_ASCENT)
 	silicon_radio = null
 	machine_restriction = FALSE
 	faction = "kharmaani"

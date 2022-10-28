@@ -74,7 +74,7 @@
 
 	var/spawn_sound = 'sound/voice/liveagain.ogg'
 	var/pitch_toggle = TRUE
-	var/list/req_access = list(access_robotics)
+	var/list/req_access = list(ACCESS_ROBOTICS)
 	var/ident = 0
 	var/modtype = "Default"
 	var/datum/effect/effect/system/ion_trail_follow/ion_trail = null
