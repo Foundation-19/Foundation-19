@@ -2637,7 +2637,7 @@
 /obj/item/device/scanner/plant,
 /obj/item/device/scanner/plant,
 /turf/simulated/floor/tiled/monotile/white,
-/area)
+/area/site53/llcz/dclass/botany)
 "fV" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -2646,6 +2646,8 @@
 /area/site53/llcz/dclass/reeducation)
 "fW" = (
 /obj/structure/table/standard,
+/obj/item/device/scanner/reagent,
+/obj/item/device/scanner/reagent,
 /obj/item/device/scanner/reagent,
 /obj/item/device/scanner/reagent,
 /obj/item/device/scanner/reagent,
@@ -14484,12 +14486,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
-"Ms" = (
-/obj/structure/table/standard,
-/obj/item/material/minihoe,
-/obj/item/reagent_containers/glass/bucket,
-/turf/simulated/floor/tiled/monotile/white,
-/area)
 "Mv" = (
 /obj/machinery/door/blast/shutters{
 	dir = 8;
@@ -16726,9 +16722,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/medicalpost)
-"TT" = (
-/turf/simulated/floor/tiled/monotile/white,
-/area)
 "TU" = (
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 10
@@ -36721,7 +36714,7 @@ iS
 iK
 CJ
 fT
-TT
+fT
 fT
 fT
 fT
@@ -36978,7 +36971,7 @@ iS
 lh
 fo
 fU
-TT
+fT
 gj
 gj
 gj
@@ -37234,10 +37227,10 @@ xk
 iS
 iK
 CK
-Ms
-TT
-TT
-TT
+OI
+fT
+fT
+fT
 fT
 fT
 fT
@@ -37492,7 +37485,7 @@ iS
 iK
 CK
 OI
-TT
+fT
 fT
 fT
 fT
@@ -37749,7 +37742,7 @@ Jv
 JD
 fo
 fW
-TT
+fT
 gj
 gj
 gj
