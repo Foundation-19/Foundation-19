@@ -3725,19 +3725,19 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "kt" = (
-/obj/machinery/photocopier,
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 5
 	},
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/table/standard,
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/device/toner,
-/obj/item/device/toner,
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "ku" = (
@@ -4156,6 +4156,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"qz" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/wood,
+/area/site53/uez/hallway)
 "qK" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
@@ -4346,6 +4353,16 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
+"yD" = (
+/obj/machinery/camera/autoname{
+	network = list("Entrance Zone Network")
+	},
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/maincontrolroom)
 "yK" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -4581,6 +4598,13 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"GT" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/wood,
+/area/site53/uez/canteen)
 "Hv" = (
 /obj/effect/paint_stripe/yellow,
 /obj/structure/cable{
@@ -4662,10 +4686,31 @@
 /obj/item/stamp/cargo,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
+"JO" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/uez/hallway)
+"JT" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/hallway)
 "Ka" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
+"Ks" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/hallway)
 "KY" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -4801,6 +4846,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
+"PC" = (
+/obj/structure/filingcabinet,
+/turf/simulated/floor/carpet/red,
+/area/site53/uez/hallway)
 "PE" = (
 /obj/machinery/light,
 /obj/structure/reagent_dispensers/water_cooler,
@@ -4828,6 +4877,12 @@
 /obj/item/stamp/approved,
 /obj/item/stamp/scp/facdir,
 /turf/simulated/floor/carpet/purple,
+/area/site53/uez/hallway)
+"Rk" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "Rw" = (
 /obj/structure/bed/chair/comfy/green{
@@ -33401,7 +33456,7 @@ dg
 dp
 vG
 dh
-dh
+Ks
 ac
 hk
 hk
@@ -33695,7 +33750,7 @@ hk
 hk
 hk
 aa
-ay
+yD
 aU
 aU
 bg
@@ -35461,7 +35516,7 @@ bK
 ac
 ek
 dh
-fE
+Ks
 fE
 gt
 gC
@@ -35977,7 +36032,7 @@ el
 fl
 fl
 fl
-fl
+JT
 gu
 ac
 ai
@@ -36985,7 +37040,7 @@ hk
 hk
 hk
 ac
-aV
+qz
 LT
 aV
 aV
@@ -40328,7 +40383,7 @@ Yo
 rX
 aF
 bP
-br
+GT
 ex
 eG
 eS
@@ -41616,7 +41671,7 @@ aw
 To
 ac
 kt
-fU
+Rk
 fU
 kv
 eE
@@ -42142,7 +42197,7 @@ dK
 dW
 dW
 fd
-fm
+JO
 ac
 hk
 hk
@@ -42913,7 +42968,7 @@ dN
 dW
 ef
 fk
-ef
+PC
 ac
 hk
 hk

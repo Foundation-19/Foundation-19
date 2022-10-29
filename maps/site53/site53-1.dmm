@@ -2630,7 +2630,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/table/standard,
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/botany)
 "fV" = (
@@ -5374,6 +5377,10 @@
 "mP" = (
 /obj/machinery/light/small/red,
 /obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/lowernukeladders)
 "mQ" = (
@@ -8055,6 +8062,13 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/maintenance)
+"tN" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/hallways)
 "tQ" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -8215,8 +8229,10 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/table/standard,
-/obj/item/reagent_containers/food/drinks/bottle/gin,
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/lowertram/archive)
 "un" = (
@@ -9714,6 +9730,13 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/luxuryhall)
+"yq" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled,
+/area/site53/lhcz/scp049containment)
 "yr" = (
 /obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
@@ -9741,6 +9764,13 @@
 /obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
+"yB" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/beach/sand,
+/area/site53/llcz/dclass/luxuryhall)
 "yC" = (
 /obj/effect/paint_stripe/orange,
 /obj/machinery/button/blast_door{
@@ -10974,6 +11004,7 @@
 	},
 /obj/structure/railing/mapped,
 /obj/structure/table/standard,
+/obj/item/reagent_containers/food/drinks/bottle/gin,
 /turf/simulated/floor/carpet/purple,
 /area/site53/lowertram/archive)
 "Ck" = (
@@ -12088,6 +12119,13 @@
 /obj/effect/floor_decal/corner/b_green/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
+"Fv" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/assignmentbubble)
 "Fw" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -13679,6 +13717,10 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
 "JT" = (
@@ -13873,6 +13915,10 @@
 "Kr" = (
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mining/miningops)
@@ -14174,6 +14220,13 @@
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mining/miningops)
+"Lr" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/uhcz/scp106parts)
 "Lt" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/industrial/warning{
@@ -14199,6 +14252,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
+"Lw" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/lhcz/hallway)
 "Lx" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -14685,6 +14748,13 @@
 /obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
+"Nk" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/luxuryhall)
 "Nl" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/monotile,
@@ -15158,6 +15228,10 @@
 "OP" = (
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/scp8containment)
@@ -16496,6 +16570,13 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
+"Tg" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/assignmentbubble)
 "Th" = (
 /obj/structure/table/standard,
 /obj/item/storage/lockbox/vials,
@@ -16849,6 +16930,13 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"Uw" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/lowertram/archive)
 "Ux" = (
 /obj/structure/table/standard,
 /obj/item/folder/red,
@@ -17300,6 +17388,13 @@
 "VV" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurysleep)
+"VY" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/briefing)
 "VZ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -17850,6 +17945,15 @@
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
+"XF" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/wood{
+	name = "vinyl wooden floor"
+	},
+/area/site53/llcz/dclass/luxuryhall)
 "XG" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier{
@@ -21286,7 +21390,7 @@ bL
 EJ
 bL
 kg
-xT
+Nk
 XH
 XH
 xT
@@ -24643,14 +24747,14 @@ wf
 Ha
 Hl
 Hl
-er
+VY
 en
 xQ
 yM
 yM
 yM
 yM
-yM
+XF
 yY
 ya
 ya
@@ -26715,7 +26819,7 @@ wT
 vW
 qu
 yo
-wJ
+yB
 wJ
 wJ
 wJ
@@ -28194,7 +28298,7 @@ gq
 gq
 gq
 cQ
-cc
+tN
 ec
 hX
 ec
@@ -31093,7 +31197,7 @@ Pi
 FS
 Gs
 Vv
-Gs
+Fv
 UT
 ua
 Fh
@@ -31336,7 +31440,7 @@ HU
 gM
 lo
 lS
-lS
+Tg
 gM
 gM
 gM
@@ -33333,7 +33437,7 @@ ec
 cc
 ql
 gx
-cc
+tN
 cQ
 Tm
 dk
@@ -35118,7 +35222,7 @@ aN
 cQ
 cc
 cw
-cc
+tN
 cQ
 lG
 eq
@@ -35443,7 +35547,7 @@ CD
 DI
 Jc
 HJ
-lS
+Tg
 lS
 lS
 Wt
@@ -48212,7 +48316,7 @@ gq
 gq
 ad
 ad
-ah
+Uw
 ah
 aT
 ah
@@ -62367,7 +62471,7 @@ qn
 qn
 qn
 qn
-pp
+Lw
 mK
 BI
 mK
@@ -69793,7 +69897,7 @@ gq
 gq
 gq
 qn
-pp
+Lw
 mK
 BI
 mK
@@ -73102,7 +73206,7 @@ gq
 gq
 gq
 SV
-bN
+yq
 on
 on
 on
@@ -73942,7 +74046,7 @@ gq
 gq
 gq
 ra
-rd
+Lr
 rd
 qY
 rd
