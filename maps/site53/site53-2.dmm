@@ -29607,8 +29607,7 @@
 	dir = 4;
 	icon_state = "map_injector";
 	id_tag = "n2_in";
-	use_power = 1;
-	layer = 2.06
+	use_power = 1
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/vacant/prototype/engine)
