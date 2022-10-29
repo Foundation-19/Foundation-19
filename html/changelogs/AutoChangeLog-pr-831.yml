@@ -1,0 +1,4 @@
+author: MACIEKBAKI
+delete-after: true
+changes:
+  - code_imp: Moved SCP-013 and SCP-500 to scp folder.
