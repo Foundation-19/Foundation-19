@@ -8657,6 +8657,8 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/obj/structure/closet/radiation,
+/obj/item/reagent_containers/food/drinks/bottle/premiumvodka,
 /turf/simulated/floor/plating,
 /area/site53/engineering/engine_smes)
 "axa" = (
@@ -14547,9 +14549,8 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/structure/reagent_dispensers/coolanttank,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/techfloor,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
 /area/site53/engineering/engine_smes)
 "aNX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -29602,8 +29603,12 @@
 /turf/simulated/floor/reinforced,
 /area/site53/surface/explorers/surrounding)
 "nwA" = (
-/obj/item/pipe/injector{
-	dir = 4
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 4;
+	icon_state = "map_injector";
+	id_tag = "n2_in";
+	use_power = 1;
+	layer = 2.06
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/vacant/prototype/engine)
@@ -32981,14 +32986,13 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk,
-/obj/structure/closet/radiation,
-/obj/item/reagent_containers/food/drinks/bottle/premiumvodka,
 /obj/structure/sign/warning/radioactive{
 	dir = 1;
 	pixel_y = -32
 	},
-/turf/simulated/floor/plating,
+/obj/structure/reagent_dispensers/coolanttank,
+/obj/item/reagent_containers/glass/bucket,
+/turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/engine_smes)
 "tiv" = (
 /obj/item/reagent_containers/glass/beaker/bowl{
