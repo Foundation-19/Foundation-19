@@ -269,8 +269,7 @@
 /area/site53/uez/hallway)
 "aJ" = (
 /obj/machinery/door/airlock/glass/command{
-	name = "Command Canteen";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
+	name = "Command Canteen"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -724,8 +723,7 @@
 /area/site53/uez/hallway)
 "bZ" = (
 /obj/machinery/door/airlock/glass/command{
-	name = "Senior Administrative Offices";
-	req_access = list("ACCESS_ADMIN_LEVEL1")
+	name = "Senior Administrative Offices"
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "SD Office Outter Lockdown";
@@ -745,14 +743,15 @@
 /area/site53/uez/hallway)
 "cc" = (
 /obj/structure/table/standard,
-/obj/machinery/door/window/brigdoor/westleft,
-/obj/machinery/door/window/brigdoor/eastright,
+/obj/machinery/door/window/brigdoor/westleft{
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/machinery/door/window/brigdoor/eastright{
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "Site Director Office Checkkpoint Desk";
 	name = "Site Director Office Checkkpoint Desk"
-	},
-/obj/structure/window/reinforced{
-	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
@@ -982,7 +981,7 @@
 /area/site53/uez/substation)
 "cK" = (
 /obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall/titanium,
 /area/site53/uez/substation)
 "cL" = (
 /turf/simulated/floor/plating,
@@ -1471,13 +1470,15 @@
 	dir = 4;
 	id_tag = "Director Office Checkpoint Upper";
 	name = "Director Office Checkpoint Upper";
-	pixel_x = -6
+	pixel_x = -6;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "Director Office Checkpoint Lower";
 	name = "Director Office Checkpoint Lower";
-	pixel_x = 4
+	pixel_x = 4;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
@@ -1491,13 +1492,15 @@
 	dir = 4;
 	id_tag = "Site Director Office Checkkpoint Desk";
 	name = "Site Director Office Checkkpoint Desk";
-	pixel_x = -6
+	pixel_x = -6;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "Director Office Checkpoint Windows";
 	name = "Director Office Checkpoint Windows";
-	pixel_x = 4
+	pixel_x = 4;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
@@ -1832,13 +1835,15 @@
 	dir = 4;
 	id_tag = "SD Office Outter Lockdown";
 	name = "SD Office Outter Lockdown";
-	pixel_x = -6
+	pixel_x = -6;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "ECZ Security Lockdown";
 	name = "Lower ECZ lockdown";
-	pixel_x = 4
+	pixel_x = 4;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/light{
 	dir = 1
@@ -4354,6 +4359,15 @@
 	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
+"zp" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "Director Office Checkpoint Windows";
+	name = "Director Office Checkpoint Windows"
+	},
+/obj/structure/window/reinforced,
+/turf/simulated/floor/plating,
+/area/site53/uez/hallway)
 "zE" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -4662,6 +4676,10 @@
 /obj/item/stamp/cargo,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
+"JT" = (
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/wall/titanium,
+/area/site53/uez/maintenance)
 "Ka" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
@@ -37265,9 +37283,9 @@ ac
 ac
 ac
 ac
-dv
-dv
-dv
+JT
+JT
+JT
 dv
 dv
 dv
@@ -37780,8 +37798,8 @@ cK
 cK
 fs
 cK
-dv
-dv
+JT
+JT
 dv
 dv
 dv
@@ -38536,7 +38554,7 @@ bK
 bK
 aI
 de
-be
+zp
 cc
 cQ
 be
