@@ -50,14 +50,12 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 		var/chosen_id = input(user, "Enter the name of any liquid!", "SCP 294") as null|text
 		if(isnull(chosen_id))
 			break
-/*
-		if(!ispath(text2path(chosen_id)))
-			chosen_id = pick_closest_path(chosen_id, subtypesof(/datum/reagent), TRUE)
-			if(ispath(chosen_id))
-				valid_id = TRUE
-		else
+
+		if(ispath(chosen_id))
 			valid_id = TRUE
-*/
+		else
+			valid_id = FALSE
+
 		if(!valid_id)
 			to_chat(user, "<span class='warning'>A strange substance wheezes out of the dispenser and evaporates.</span>")
 			return
