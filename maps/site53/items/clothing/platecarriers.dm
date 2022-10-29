@@ -73,20 +73,3 @@
 	item_state = "goc-vest"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	armor = list(melee = 90, bullet = 90, laser = 65, energy = 15, bomb = 80)
-
-
-//SCP
-/obj/item/reagent_containers/pill/scp500
-	name = "SCP-500"
-	desc = "A pill supposedly curing everything."
-	icon_state = "pill9"
-
-/obj/item/reagent_containers/pill/scp500/New()
-	. = ..()
-	reagents.add_reagent(/datum/reagent/adminordrazine, 1)
-
-/obj/item/storage/fancy/cigarettes/bluelady
-	name = "pack of SCP-013s"
-	desc = "A packet of six Blue Lady cigarettes. The SCP logo is stamped on the paper."
-	icon_state = "BLpacket"
-	startswith = list(/obj/item/clothing/mask/smokable/cigarette/bluelady = 6)
