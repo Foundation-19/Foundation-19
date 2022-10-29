@@ -1,4 +1,3 @@
-
 /datum/scp/scp_500
 	name = "SCP-500"
 	designation = "500"
