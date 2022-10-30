@@ -20323,7 +20323,7 @@
 	id_tag = "ULCZ Checkpoint Booth";
 	name = "ULCZ Checkpoint Booth"
 	},
-/turf/simulated/wall/titanium,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "bgJ" = (
 /obj/structure/table/standard,
