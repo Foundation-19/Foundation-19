@@ -2631,6 +2631,11 @@
 	dir = 1
 	},
 /obj/structure/table/standard,
+/obj/item/device/scanner/plant,
+/obj/item/device/scanner/plant,
+/obj/item/device/scanner/plant,
+/obj/item/device/scanner/plant,
+/obj/item/device/scanner/plant,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/botany)
 "fV" = (
@@ -2641,6 +2646,11 @@
 /area/site53/llcz/dclass/reeducation)
 "fW" = (
 /obj/structure/table/standard,
+/obj/item/device/scanner/reagent,
+/obj/item/device/scanner/reagent,
+/obj/item/device/scanner/reagent,
+/obj/item/device/scanner/reagent,
+/obj/item/device/scanner/reagent,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/botany)
 "fX" = (
