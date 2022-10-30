@@ -53,3 +53,6 @@
   Tsurupeta:
   - bugfix: Fixed timer assembly, therefore all grenades on timers should work now.
   - balance: reverted limb hp increase
+2022-10-30:
+  MACIEKBAKI:
+  - code_imp: Moved SCP-013 and SCP-500 to scp folder.
