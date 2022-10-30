@@ -123,7 +123,7 @@
 	density = TRUE
 	opacity = 0
 	anchored = FALSE
-	req_access = list(ACCESS_ENGINE)
+	req_access = list(ACCESS_ENGINEERING_LVL2)
 	var/const/max_health = 100
 	var/health = max_health
 	var/active = 0
