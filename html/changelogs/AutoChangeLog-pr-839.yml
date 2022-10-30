@@ -1,0 +1,5 @@
+author: MACIEKBAKI
+delete-after: true
+changes:
+  - bugfix: Decapitating the corpse of someone who has respawned will no longer kill
+      them.
