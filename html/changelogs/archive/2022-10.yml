@@ -56,3 +56,16 @@
 2022-10-30:
   MACIEKBAKI:
   - code_imp: Moved SCP-013 and SCP-500 to scp folder.
+2022-10-31:
+  Ambrose997:
+  - rscadd: Added items [Plant analyzers and reagent scanners] to botany.
+  GGarciaECE:
+  - bugfix: Fixed access level on some windoors and airlocks on the new checkpoints
+      as well as the EZ security office
+  - rscadd: Changed some walls to titanium in EZ and LCZ and gave them fresh paintjob
+  - rscadd: Added some sidearms in EZ Armoury, and made the armoury somewhat more
+      secure
+  - rscadd: Secured a maint tunnel that went from EZ to LCZ
+  MACIEKBAKI:
+  - bugfix: Decapitating the corpse of someone who has respawned will no longer kill
+      them.
