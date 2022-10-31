@@ -1,9 +1,0 @@
-author: GGarciaECE
-delete-after: true
-changes:
-  - bugfix: Fixed access level on some windoors and airlocks on the new checkpoints
-      as well as the EZ security office
-  - rscadd: Changed some walls to titanium in EZ and LCZ and gave them fresh paintjob
-  - rscadd: Added some sidearms in EZ Armoury, and made the armoury somewhat more
-      secure
-  - rscadd: Secured a maint tunnel that went from EZ to LCZ
