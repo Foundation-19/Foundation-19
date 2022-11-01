@@ -1,5 +1,5 @@
 // BCCM (Ban Counter Counter Measures system) ((Name subject to change)), originally inspired by EAMS (Epic Anti-Multiaccount System), by Epicus
-//version 1.0.1
+//version 1.0.2
 
 /datum/bccm_info
 	var/is_loaded = FALSE
@@ -303,7 +303,7 @@ SUBSYSTEM_DEF(bccm)
 	if(!check_rights(R_SERVER, TRUE, Admin))
 		return
 
-	var/ip = trim_spaces(new_sql_sanitize_text(address))
+	var/ip = remove_all_spaces(new_sql_sanitize_text(address))
 
 	if(length(ip) > 16)
 		return

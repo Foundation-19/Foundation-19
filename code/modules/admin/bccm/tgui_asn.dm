@@ -61,11 +61,15 @@
 				return TRUE
 			if(SSbccm.RemoveASNban(params["asn"], holder))
 				SStgui.update_uis(src)
+			else
+				return TRUE
 		if("asn_add_entry")
 			if(!params["ip"])
 				return TRUE
 			if(SSbccm.AddASNban(params["ip"], holder))
 				SStgui.update_uis(src)
+			else
+				return TRUE
 
 	if(!length(SSbccm.tgui_panel_asn_data))
 		qdel(src) //For some unknown reason it refuses to update UI when it goes from 1 to 0 entries, so last item gets stuck. I can't fix it now, maybe later. ~Tsuru

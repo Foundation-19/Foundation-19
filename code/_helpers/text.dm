@@ -622,7 +622,7 @@
 	text = replacetext(text, "`", "")
 	return text
 
-/proc/trim_spaces(text)
+/proc/remove_all_spaces(text)
 	text = replacetext(text, " ", "")
 	return text
 

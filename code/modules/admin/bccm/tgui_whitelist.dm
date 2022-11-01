@@ -61,11 +61,15 @@
 				return TRUE
 			if(SSbccm.RemoveFromWhitelist(params["ckey"], holder))
 				SStgui.update_uis(src)
+			else
+				return TRUE
 		if("wl_add_ckey")
 			if(!params["ckey"])
 				return TRUE
 			if(SSbccm.AddToWhitelist(params["ckey"], holder))
 				SStgui.update_uis(src)
+			else
+				return TRUE
 
 	if(!length(SSbccm.tgui_panel_wl_data))
 		qdel(src) //Same as ASN. ~Tsuru
