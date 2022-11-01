@@ -243,6 +243,8 @@ var/list/gamemode_cache = list()
 
 	var/asset_cdn_url
 
+	var/bccm = FALSE
+
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
 	for (var/T in L)
@@ -823,6 +825,9 @@ var/list/gamemode_cache = list()
 
 				if ("panic_bunker_age")
 					config.panic_bunker_age = text2num(value)
+
+				if ("use_bccm")
+					config.bccm = TRUE
 
 				else
 					log_misc("Unknown setting in configuration: '[name]'")

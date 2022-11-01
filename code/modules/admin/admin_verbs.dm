@@ -103,7 +103,9 @@ var/list/admin_verbs_admin = list(
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
 	/client/proc/jobbans,
-	/client/proc/ban_panel
+	/client/proc/ban_panel,
+	/client/proc/BCCM_toggle,
+	/client/proc/BCCM_WhitelistPanel
 	)
 var/list/admin_verbs_sounds = list(
 	/client/proc/play_local_sound,
@@ -156,7 +158,8 @@ var/list/admin_verbs_server = list(
 	/client/proc/nanomapgen_DumpImage,
 	/client/proc/panicbunker,
 	/client/proc/panicbunker_ckey_bypass,
-	/datum/admins/proc/shutdown_server
+	/datum/admins/proc/shutdown_server,
+	/client/proc/BCCM_ASNPanel
 	)
 var/list/admin_verbs_debug = list(
 	/datum/admins/proc/jump_to_fluid_source,
