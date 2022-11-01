@@ -41,11 +41,7 @@ SUBSYSTEM_DEF(bccm)
 	return ..()
 
 /datum/controller/subsystem/bccm/stat_entry(msg)
-	if(is_active)
-		msg = "ACTIVE"
-	else
-		msg = "OFFLINE"
-	return msg
+	return "[is_active ? "ACTIVE" : "OFFLINE"]"
 
 /datum/controller/subsystem/bccm/proc/Toggle(mob/user)
 	if (!initialized && user)
@@ -57,26 +53,28 @@ SUBSYSTEM_DEF(bccm)
 
 	is_active = !is_active
 	log_debug("BCCM is [is_active ? "enabled" : "disabled"]!")
-	if(is_active)
 
-		tgui_panel_asn_data = GetAsnBanlistDatabase()
-		tgui_panel_wl_data = GetWhitelistDatabase()
+	. = is_active
+	if(!.)
+		return
 
-		var/list/clients_to_check = postponed_client_queue.Copy()
-		postponed_client_queue.Cut()
-		for (var/client/C in clients_to_check)
-			CollectClientData(C)
-			HandleClientAccessCheck(C, postponed = TRUE)
-			HandleASNbanCheck(C, postponed = TRUE)
-			CHECK_TICK
-	return is_active
+	tgui_panel_asn_data = GetAsnBanlistDatabase()
+	tgui_panel_wl_data = GetWhitelistDatabase()
+
+	var/list/clients_to_check = postponed_client_queue.Copy()
+	postponed_client_queue.Cut()
+	for (var/client/C in clients_to_check)
+		CollectClientData(C)
+		HandleClientAccessCheck(C, postponed = TRUE)
+		HandleASNbanCheck(C, postponed = TRUE)
+		CHECK_TICK
 
 /datum/controller/subsystem/bccm/proc/CheckDBCon()
 	if(is_active && SSdbcore.Connect())
 		return TRUE
 
 	is_active = FALSE
-	log_and_message_admins("The Database Error has occured. BCCM is disabled.")
+	log_and_message_admins("A Database error has occured. BCCM is automatically disabled.")
 	return FALSE
 
 
@@ -376,6 +374,9 @@ SUBSYSTEM_DEF(bccm)
 /client/proc/BCCM_toggle()
 	set category = "Server"
 	set name = "Toggle BCCM"
+
+	if(!check_rights(R_SERVER))
+		return
 
 	if(!SSdbcore.Connect())
 		to_chat(usr, SPAN_NOTICE("The Database is not connected!"))
