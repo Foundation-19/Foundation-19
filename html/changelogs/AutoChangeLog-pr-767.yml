@@ -1,0 +1,6 @@
+author: Tsurupeta
+delete-after: true
+changes:
+  - config: added a BCCM value to config.
+  - admin: Added BCCM for use by admins.
+  - server: Added SQL migrations for BCCM functionality.
