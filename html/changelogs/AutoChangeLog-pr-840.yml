@@ -1,0 +1,4 @@
+author: MACIEKBAKI
+delete-after: true
+changes:
+  - bugfix: One door (LCZ-EZ Checkpoint) should no longer be in a wall.
