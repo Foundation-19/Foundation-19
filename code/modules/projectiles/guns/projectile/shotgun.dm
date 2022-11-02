@@ -54,23 +54,33 @@
 	update_icon()
 
 /obj/item/gun/projectile/shotgun/pump/combat
-	name = "combat shotgun"
-	desc = "Built for close quarters combat, the Hephaestus Industries KS-40 is widely regarded as a weapon of choice for repelling boarders."
-	icon_state = "cshotgun"
+	name = "SPAS-12 Riot Shotgun"
+	desc = "A hybrid pump/semi auto shotgun intended for law enforcement use. Used by the Foundation to maintain crowds of D-Classes at bay."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "spas12"
 	item_state = "cshotgun"
 	wielded_item_state = "cshotgun-wielded"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
-	max_shells = 7 //match the ammo box capacity, also it can hold a round in the chamber anyways, for a total of 8.
+	max_shells = 9
 	ammo_type = /obj/item/ammo_casing/shotgun
 	one_hand_penalty = 8
 
 /obj/item/gun/projectile/shotgun/pump/combat/on_update_icon()
 	..()
-	if(length(loaded) > 3)
-		for(var/i = 0 to length(loaded) - 4)
-			var/image/I = image(icon, "shell")
-			I.pixel_x = i * 2
-			add_overlay(I)
+	if(length(loaded))
+		icon_state = initial(icon_state)
+	else
+		icon_state = "[initial(icon_state)]-empty"
+
+/obj/item/gun/projectile/shotgun/pump/combat/slug
+	ammo_type = /obj/item/ammo_casing/shotgun
+
+/obj/item/gun/projectile/shotgun/pump/combat/beanbag
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+
+/obj/item/gun/projectile/shotgun/pump/combat/buckshot
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+
 
 /obj/item/gun/projectile/shotgun/doublebarrel
 	name = "double-barreled shotgun"

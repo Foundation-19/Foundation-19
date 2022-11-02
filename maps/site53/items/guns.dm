@@ -34,6 +34,21 @@
 	magazine_type = /obj/item/ammo_magazine/scp/mk9
 	allowed_magazines = list(/obj/item/ammo_magazine/scp/mk9, /obj/item/ammo_magazine/scp/mk9/rubber)
 
+
+/obj/item/gun/projectile/pistol/glock17
+	name = "Glock 17"
+	desc = "Standard issue 9mm pistol of the SCP Foundation."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "glock17"
+	w_class = ITEM_SIZE_NORMAL
+	caliber = "9mm"
+	silenced = 0
+	fire_delay = 2
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/scp/glock17
+	allowed_magazines = list(/obj/item/ammo_magazine/scp/glock17)
+
 /obj/item/gun/projectile/revolver/mateba
 	name = "mateba"
 	desc = "Standard issue Foundation revolver based on the Mateba Unica. Chambered in .44 Magnum"
@@ -124,6 +139,82 @@
 
 
 
+/obj/item/gun/projectile/automatic/scp/ar12
+	name = "AR12 Tactical Shotgun"
+	desc = "A reliable semi automatic shotgun often used by Foundation strike and security forces."
+	icon_state = "ar12"
+	item_state = "ar12"
+	w_class = ITEM_SIZE_HUGE
+	force = 10
+	slot_flags = SLOT_BACK
+	caliber = CALIBER_SHOTGUN
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/scp/ar12
+	allowed_magazines = /obj/item/ammo_magazine/scp/ar12
+
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null))
+
+/obj/item/gun/projectile/automatic/scp/ar12/update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "ar12"
+	else
+		icon_state = "ar12-empty"
+	return
+
+/obj/item/gun/projectile/automatic/scp/ar12/beanbag
+	magazine_type = /obj/item/ammo_magazine/scp/ar12/beanbag
+
+
+/obj/item/gun/projectile/automatic/scp/ar12/buckshot
+	magazine_type = /obj/item/ammo_magazine/scp/ar12/buckshot
 
 
 
+/obj/item/gun/projectile/automatic/scp/saiga12
+	name = "Saiga12 Tactical Shotgun"
+	desc = "A reliable russian-made semi automatic shotgun often used by Foundation strike and security forces."
+	icon_state = "saiga12"
+	item_state = "saiga12"
+	w_class = ITEM_SIZE_HUGE
+	force = 10
+	slot_flags = SLOT_BACK
+	caliber = CALIBER_SHOTGUN
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/scp/saiga12
+	allowed_magazines = /obj/item/ammo_magazine/scp/saiga12
+
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null))
+
+
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag
+	magazine_type = /obj/item/ammo_magazine/scp/saiga12/beanbag
+
+
+/obj/item/gun/projectile/automatic/scp/saiga12/buckshot
+	magazine_type = /obj/item/ammo_magazine/scp/saiga12/buckshot
+
+/obj/item/gun/projectile/automatic/scp/saiga12/stunshell
+	magazine_type = /obj/item/ammo_magazine/scp/saiga12/stunshell
+
+/obj/item/gun/projectile/automatic/scp/saiga12/rubbershot
+	magazine_type = /obj/item/ammo_magazine/scp/saiga12/rubbershot
+
+/obj/item/gun/projectile/automatic/scp/saiga12/flash
+	magazine_type = /obj/item/ammo_magazine/scp/saiga12/flash
+
+/obj/item/gun/projectile/automatic/scp/saiga12/emp
+	magazine_type = /obj/item/ammo_magazine/scp/saiga12/emp
+
+
+/obj/item/gun/projectile/automatic/scp/saiga12/update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "saiga12"
+	else
+		icon_state = "saiga12-empty"
+	return

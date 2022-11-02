@@ -99,13 +99,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
 "aao" = (
-/obj/structure/closet/secure_closet/mtf/breachautomatics,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
+/obj/structure/table/rack,
+/obj/effect/paint_stripe/red,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "aap" = (
@@ -197,13 +192,6 @@
 "aaE" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/structure/table/standard,
-/obj/machinery/button/alternate/door/bolts{
-	dir = 1;
-	id_tag = "UEZ Checkpoint Bubble";
-	name = "UEZ Checkpoint Bubble";
-	pixel_y = -23;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
 /obj/item/storage/mre/random,
 /obj/item/storage/mre/random,
 /obj/item/storage/mre/random,
@@ -641,6 +629,35 @@
 "abU" = (
 /turf/simulated/wall/titanium,
 /area/site53/surface/explorers/surrounding)
+"abV" = (
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/effect/floor_decal/corner/black/full,
+/obj/structure/table/rack,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/hczguardgear)
 "abW" = (
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile,
@@ -10705,6 +10722,11 @@
 /obj/machinery/door/airlock/glass/research{
 	name = "Brown Line"
 	},
+/obj/machinery/door/blast/regular{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "aCc" = (
@@ -11606,16 +11628,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "aEv" = (
-/obj/structure/closet/secure_closet/mtf/breachautomatics,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/paint_stripe/red,
+/obj/structure/table/rack,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "aEx" = (
@@ -16479,12 +16496,6 @@
 /area/site53/llcz/dclass/armory)
 "aUv" = (
 /obj/structure/table/rack,
-/obj/item/gun/energy/stunrevolver/rifle,
-/obj/item/gun/energy/stunrevolver/rifle,
-/obj/item/gun/energy/taser/carbine,
-/obj/item/gun/energy/taser/carbine,
-/obj/item/gun/energy/taser/carbine,
-/obj/item/gun/energy/taser/carbine,
 /obj/item/gun/energy/taser,
 /obj/item/gun/energy/taser,
 /obj/item/gun/energy/taser,
@@ -16492,8 +16503,6 @@
 /obj/machinery/recharger/wallcharger{
 	pixel_y = 23
 	},
-/obj/item/gun/energy/stunrevolver/rifle,
-/obj/item/gun/energy/stunrevolver/rifle,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "aUy" = (
@@ -16663,8 +16672,13 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "aVb" = (
-/obj/structure/table/standard,
-/obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "ULCZ Checkpoint Booth";
+	name = "ULCZ Checkpoint Booth";
+	pixel_x = 24;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "aVf" = (
@@ -16702,6 +16716,16 @@
 	id_tag = "ULCZ Checkpoint Booth Exit";
 	name = "ULCZ Checkpoint Booth Exit"
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "aVk" = (
@@ -16710,36 +16734,51 @@
 /area/site53/llcz/checkequip)
 "aVl" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = 32
 	},
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "aVm" = (
@@ -16935,10 +16974,17 @@
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
 "aVK" = (
-/obj/structure/closet/secure_closet/mtf/riotshotguns,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/armory)
+/obj/effect/catwalk_plated/white,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor,
+/area/site53/ulcz/hallways)
 "aVL" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -16955,6 +17001,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/structure/closet/secure_closet/mtf/specialistshotgun,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "aVQ" = (
@@ -18708,14 +18755,17 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/scp343entrance)
 "bbj" = (
-/obj/structure/closet/secure_closet/mtf/breachshotguns,
-/obj/item/storage/box/ammo/shotgunammo,
-/obj/item/storage/box/ammo/shotgunammo,
-/obj/item/storage/box/ammo/shotgunshells,
-/obj/item/storage/box/ammo/shotgunshells,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/structure/table/rack,
+/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+/obj/item/clothing/head/helmet/scp/hczsecurityguard,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "bbk" = (
@@ -19294,21 +19344,58 @@
 /area/site53/uhcz/scp247observation)
 "bde" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "bdf" = (
@@ -20281,18 +20368,12 @@
 /area/site53/ulcz/scp173)
 "bgD" = (
 /obj/structure/table/standard,
+/obj/machinery/light,
 /obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "ULCZ Checkpoint Primary Entrance";
-	name = "ULCZ Checkpoint Primary Entrance";
-	pixel_y = -23;
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/obj/machinery/button/blast_door{
-	id_tag = "ULCZ Booth Window 1";
-	name = "ULCZ Booth Window 1"
-	},
-/obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "bgE" = (
@@ -20302,14 +20383,17 @@
 "bgF" = (
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
-	id_tag = "ULCZ Entry Line Cycle";
-	name = "ULCZ Entry Line Cycle"
+	dir = 3;
+	id_tag = "ULCZ Western Gate";
+	name = "ULCZ Western Gate";
+	pixel_x = -6;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "ULCZ Exit Line Cycle";
-	name = "ULCZ Exit Line Cycle";
-	pixel_y = -23;
+	dir = 3;
+	id_tag = "ULCZ Eastern Gate";
+	name = "ULCZ Eastern Gate";
+	pixel_x = 4;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -20324,21 +20408,10 @@
 	id_tag = "ULCZ Checkpoint Booth";
 	name = "ULCZ Checkpoint Booth"
 	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
-"bgJ" = (
-/obj/structure/table/standard,
-/obj/machinery/door/window/brigdoor{
-	name = "Booth";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/machinery/door/window/brigdoor/northright{
-	name = "Booth";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/machinery/door/blast/shutters{
-	id_tag = "ULCZ Booth Window 1";
-	name = "ULCZ Booth Window 1"
+/obj/machinery/door/blast/regular{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
@@ -20352,8 +20425,13 @@
 	dir = 4
 	},
 /obj/machinery/door/blast/shutters{
-	id_tag = "ULCZ Booth Window 1";
-	name = "ULCZ Booth Window 1"
+	id_tag = "ULCZ Internal Windows";
+	name = "ULCZ Internal Windows"
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
@@ -20474,45 +20552,30 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/maintenance)
 "bhf" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
-	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ULCZ Checkpoint Primary Entrance";
-	name = "ULCZ Checkpoint Primary Entrance"
 	},
 /obj/effect/catwalk_plated/white,
-/turf/simulated/floor/tiled/monotile/white,
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ULCZ Eastern Gate";
+	name = "ULCZ Eastern Gate"
+	},
+/turf/simulated/floor/plating,
 /area/site53/llcz/entrance_checkpoint)
 "bhg" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/light,
-/obj/effect/floor_decal/industrial/loading{
-	dir = 4;
-	name = "Entry Line"
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	pixel_y = -23;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
+/area/site53/ulcz/hallways)
 "bhh" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "ULCZ Secure Armoury";
@@ -20549,40 +20612,60 @@
 /area/site53/ulcz/hallways)
 "bhm" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "bho" = (
@@ -20633,59 +20716,60 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint/south)
-"bhy" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
+"bhA" = (
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/armory)
+"bhB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
-	},
-/obj/machinery/door/blast/regular{
-	id_tag = "ULCZ Exit Line Cycle";
-	name = "ULCZ Exit Line Cycle"
 	},
 /obj/effect/catwalk_plated/white,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
-"bhA" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
-"bhB" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
-	id_tag = "ULCZ Exit Line Cycle";
-	name = "ULCZ Exit Line Cycle"
+	id_tag = "ULCZ Western Gate";
+	name = "ULCZ Western Gate"
 	},
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/plating,
 /area/site53/llcz/entrance_checkpoint)
 "bhD" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -20953,6 +21037,17 @@
 "bix" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/generalpurpose2)
+"biy" = (
+/obj/effect/floor_decal/corner/brown/mono,
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	pixel_x = 24;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lowertrams/brownline)
 "biz" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
@@ -21488,14 +21583,6 @@
 /obj/random/contraband,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
-"bkh" = (
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ULCZ Checkpoint Secondary Entrance";
-	name = "ULCZ Checkpoint Secondary Entrance"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
 "bkm" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile/white,
@@ -22200,7 +22287,35 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
 "cnC" = (
-/obj/structure/closet/secure_closet/mtf/riotshotguns,
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/paper{
+	name = "Crowd Dispersal Flash Shells";
+	info = "For use in crowd dispersal, WEAR YOUR GOGGLES!"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "cnW" = (
@@ -22735,20 +22850,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "ddz" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
-	},
-/obj/effect/floor_decal/industrial/loading{
-	dir = 4;
-	name = "Entry Line"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
@@ -22915,21 +23021,11 @@
 	requires_power = 0
 	})
 "dpC" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/effect/floor_decal/industrial/loading{
-	dir = 4;
-	name = "Entry Line"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
@@ -23052,13 +23148,13 @@
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/escape)
 "dBT" = (
-/obj/effect/floor_decal/industrial/loading{
-	dir = 8;
-	name = "Entry Line"
+/obj/effect/floor_decal/corner/blue/border,
+/obj/structure/skele_stand,
+/obj/item/clothing/head/hcz_hazmat{
+	pixel_y = 9
 	},
-/obj/effect/floor_decal/industrial/outline/orange,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
+/turf/simulated/floor/tiled/dark,
+/area/site53/uhcz/commanderoffice)
 "dCs" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -23332,7 +23428,7 @@
 	id_tag = "ULCZ Checkpoint Booth Exit";
 	name = "ULCZ Checkpoint Booth Exit";
 	pixel_x = -23;
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/flora/pottedplant/large,
 /turf/simulated/floor/tiled/monotile/white,
@@ -23458,6 +23554,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "eiU" = (
@@ -23567,43 +23664,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
-"ewJ" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/effect/paint_stripe/red,
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
 "eyn" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -23893,16 +23953,6 @@
 /area/site53/llcz/genstorage1)
 "ffJ" = (
 /obj/structure/table/rack,
-/obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/head/helmet/riot,
-/obj/item/clothing/head/helmet/riot,
-/obj/item/clothing/head/helmet/riot,
-/obj/item/clothing/head/helmet/riot,
-/obj/item/clothing/head/helmet/riot,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
@@ -24102,16 +24152,6 @@
 /area/chapel)
 "fte" = (
 /obj/structure/table/rack,
-/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
-/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
-/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
-/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
-/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
-/obj/item/clothing/head/helmet/scp/hczsecurityguard,
-/obj/item/clothing/head/helmet/scp/hczsecurityguard,
-/obj/item/clothing/head/helmet/scp/hczsecurityguard,
-/obj/item/clothing/head/helmet/scp/hczsecurityguard,
-/obj/item/clothing/head/helmet/scp/hczsecurityguard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "ftf" = (
@@ -24241,14 +24281,16 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/upper_surface/serverfarmcontrol)
 "fwS" = (
-/obj/structure/railing/mapped,
+/obj/effect/catwalk_plated/white,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
-	id_tag = "ULCZ Checkpoint Primary Entrance";
-	name = "ULCZ Checkpoint Primary Entrance"
+	id_tag = "ULCZ Eastern Gate";
+	name = "ULCZ Eastern Gate"
 	},
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/plating,
 /area/site53/llcz/entrance_checkpoint)
 "fwU" = (
 /obj/machinery/door/blast/regular{
@@ -24274,12 +24316,33 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
+"fCq" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "fDv" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/revolver/mateba,
-/obj/item/gun/projectile/revolver/mateba,
-/obj/item/gun/projectile/revolver/mateba,
 /obj/effect/floor_decal/corner/black/full,
+/obj/item/clothing/suit/hcz_hazmat,
+/obj/item/clothing/suit/hcz_hazmat,
+/obj/item/clothing/suit/hcz_hazmat,
+/obj/item/clothing/suit/hcz_hazmat,
+/obj/item/clothing/suit/hcz_hazmat,
+/obj/item/clothing/suit/hcz_hazmat,
+/obj/item/clothing/suit/hcz_hazmat,
+/obj/item/clothing/suit/hcz_hazmat,
+/obj/item/clothing/suit/hcz_hazmat,
+/obj/item/clothing/suit/hcz_hazmat,
+/obj/item/clothing/head/hcz_hazmat,
+/obj/item/clothing/head/hcz_hazmat,
+/obj/item/clothing/head/hcz_hazmat,
+/obj/item/clothing/head/hcz_hazmat,
+/obj/item/clothing/head/hcz_hazmat,
+/obj/item/clothing/head/hcz_hazmat,
+/obj/item/clothing/head/hcz_hazmat,
+/obj/item/clothing/head/hcz_hazmat,
+/obj/item/clothing/head/hcz_hazmat,
+/obj/item/clothing/head/hcz_hazmat,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "fDz" = (
@@ -24685,6 +24748,14 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
+"gjb" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "gjy" = (
 /obj/machinery/camera/network/entrance{
 	c_tag = "Hub 2";
@@ -25316,13 +25387,68 @@
 /area/site53/engineering/primaryhallway)
 "hbm" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/effect/paint_stripe/red,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "hbt" = (
@@ -25591,11 +25717,6 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
@@ -25976,16 +26097,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
 "hUS" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/railing/mapped,
-/obj/effect/floor_decal/industrial/loading{
-	dir = 8;
-	name = "Entry Line"
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "hVd" = (
@@ -26148,11 +26261,6 @@
 /obj/effect/catwalk_plated/white,
 /obj/machinery/light{
 	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -26491,15 +26599,33 @@
 /turf/simulated/floor/carpet/green,
 /area/chapel)
 "iRt" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/box/a50,
-/obj/item/ammo_magazine/box/a50,
-/obj/item/ammo_magazine/box/a50,
-/obj/item/ammo_magazine/box/a50,
-/obj/item/ammo_magazine/box/a50,
-/obj/item/ammo_magazine/box/a50,
+/obj/machinery/camera/network/hcz{
+	dir = 1;
+	name = "HCZ Equipment Room"
+	},
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/black/full,
+/obj/structure/table/rack,
+/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
+/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+/obj/item/clothing/head/helmet/scp/hczsecurityguard,
+/obj/item/clothing/head/helmet/scp/hczsecurityguard,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "iRz" = (
@@ -27100,10 +27226,10 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "jQI" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/effect/floor_decal/industrial/loading{
-	dir = 8;
-	name = "Entry Line"
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
@@ -27243,19 +27369,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106containment)
 "kbY" = (
-/obj/structure/table/standard,
-/obj/structure/window/reinforced{
-	dir = 8
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ULCZ Western Gate";
+	name = "ULCZ Western Gate"
 	},
-/obj/structure/window/reinforced,
-/obj/machinery/door/blast/shutters{
-	id_tag = "ULCZ Booth Window 2";
-	name = "ULCZ Booth Window 2"
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/catwalk_plated/white,
+/turf/simulated/floor/plating,
 /area/site53/llcz/entrance_checkpoint)
 "kcV" = (
 /obj/effect/landmark/start{
@@ -27729,12 +27849,13 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/hallways)
 "kVb" = (
-/obj/structure/railing/mapped,
-/obj/machinery/door/blast/regular{
-	id_tag = "ULCZ Entry Line Cycle";
-	name = "ULCZ Checkpoint Processing Entries"
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
 	},
-/obj/effect/catwalk_plated/white,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "kVA" = (
@@ -27902,19 +28023,13 @@
 /area/site53/surface/bunker)
 "lkI" = (
 /obj/structure/table/standard,
-/obj/machinery/button/blast_door{
-	id_tag = "ULCZ Booth Window 2";
-	name = "ULCZ Booth Window 2"
-	},
-/obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "ULCZ Checkpoint Secondary Entrance";
-	name = "ULCZ Checkpoint Secondary Entrance";
-	pixel_y = -23;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
@@ -28156,22 +28271,41 @@
 /area/site53/lhcz/hczguardgear)
 "lFu" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
 /obj/effect/floor_decal/corner/black/full,
+/obj/item/ammo_magazine/scp/m60,
+/obj/item/ammo_magazine/scp/m60,
+/obj/item/ammo_magazine/scp/m60,
+/obj/item/ammo_magazine/scp/m60,
+/obj/item/ammo_magazine/scp/m60,
+/obj/item/ammo_magazine/scp/m60,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/gun/projectile/automatic/scp/m60,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "lFx" = (
@@ -28240,13 +28374,6 @@
 /area/site53/engineering/atmos)
 "lKF" = (
 /obj/structure/table/standard,
-/obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "ULCZ Checkpoint Booth";
-	name = "ULCZ Checkpoint Booth";
-	pixel_y = -23;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
 /obj/machinery/photocopier{
 	pixel_y = 3
 	},
@@ -28309,6 +28436,102 @@
 	pixel_y = 38
 	},
 /turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
+"lMF" = (
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/effect/floor_decal/corner/black/full,
+/obj/effect/floor_decal/corner/red/mono,
+/obj/structure/table/rack,
+/turf/simulated/floor/tiled,
 /area/site53/lhcz/hczguardgear)
 "lNf" = (
 /obj/structure/cable/green{
@@ -28418,13 +28641,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
-"lTO" = (
-/obj/effect/paint_stripe/gray,
-/obj/structure/sign/warning{
-	name = "\improper SECURITY EMERGENCIES ONLY"
-	},
-/turf/simulated/wall/titanium,
-/area/site53/llcz/entrance_checkpoint)
 "lVz" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
@@ -28489,40 +28705,26 @@
 /area/site53/uhcz/generalpurpose3)
 "maZ" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
 /obj/machinery/light,
 /obj/effect/paint_stripe/red,
+/obj/item/gun/projectile/revolver/rhino,
+/obj/item/gun/projectile/revolver/rhino,
+/obj/item/gun/projectile/revolver/rhino,
+/obj/item/gun/projectile/revolver/rhino,
+/obj/item/gun/projectile/revolver/rhino,
+/obj/item/gun/projectile/revolver/rhino,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "mbs" = (
@@ -28566,35 +28768,6 @@
 /area/site53/reswing/xenobiology)
 "mfw" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -28603,33 +28776,36 @@
 /area/site53/lhcz/hczguardgear)
 "mfE" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/machinery/camera/network/hcz{
-	dir = 1;
-	name = "HCZ Equipment Room"
+/obj/item/gun/projectile/pistol/usp45,
+/obj/item/gun/projectile/pistol/usp45,
+/obj/item/gun/projectile/pistol/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/machinery/light{
+	dir = 8
 	},
-/obj/machinery/light,
 /obj/effect/floor_decal/corner/black/full,
-/turf/simulated/floor/tiled/dark,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/hczguardgear)
 "mfJ" = (
 /obj/structure/closet,
@@ -28667,16 +28843,6 @@
 /area/site53/uhcz/scp106observ)
 "mhP" = (
 /obj/structure/table/rack,
-/obj/item/clothing/suit/hcz_hazmat,
-/obj/item/clothing/suit/hcz_hazmat,
-/obj/item/clothing/suit/hcz_hazmat,
-/obj/item/clothing/suit/hcz_hazmat,
-/obj/item/clothing/suit/hcz_hazmat,
-/obj/item/clothing/suit/hcz_hazmat,
-/obj/item/clothing/suit/hcz_hazmat,
-/obj/item/clothing/suit/hcz_hazmat,
-/obj/item/clothing/suit/hcz_hazmat,
-/obj/item/clothing/suit/hcz_hazmat,
 /obj/effect/floor_decal/corner/red/border{
 	dir = 6
 	},
@@ -28777,13 +28943,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "moW" = (
-/obj/structure/closet/secure_closet/mtf/breachautomatics,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -28997,12 +29156,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "mBn" = (
-/obj/structure/sign/warning{
-	name = "\improper SECURITY EMERGENCIES ONLY"
-	},
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/entrance_checkpoint)
+/turf/unsimulated/mineral,
+/area/site53/llcz/dclass/armory)
 "mBr" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -29016,7 +29171,21 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/commanderoffice)
 "mBw" = (
-/obj/machinery/hologram/holopad,
+/obj/structure/table/standard,
+/obj/machinery/button/blast_door{
+	dir = 3;
+	id_tag = "ULCZ Internal Windows";
+	name = "ULCZ Internal Windows";
+	pixel_x = -6;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/machinery/button/blast_door{
+	dir = 3;
+	id_tag = "ULCZ External Windows";
+	name = "ULCZ External Windows";
+	pixel_x = 4;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "mCP" = (
@@ -29132,6 +29301,102 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
+"mLD" = (
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/effect/floor_decal/corner/black/full,
+/obj/effect/floor_decal/corner/red/mono,
+/obj/structure/table/rack,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/hczguardgear)
 "mMC" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
@@ -29302,14 +29567,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
-"mXc" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters{
-	id_tag = "ULCZ Booth Window 1";
-	name = "ULCZ Booth Window 1"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
 "mXo" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
@@ -29687,6 +29944,17 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
+"nDH" = (
+/obj/structure/closet/secure_closet/mtf/breachautomatics,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/box/a556,
+/obj/effect/paint_stripe/red,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/armory)
 "nFS" = (
 /obj/structure/table/standard,
 /obj/item/storage/toolbox/mechanical,
@@ -29890,7 +30158,26 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
 "nWH" = (
-/obj/structure/closet/secure_closet/mtf/riotshotguns,
+/obj/structure/closet,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/effect/floor_decal/corner/black/full,
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
@@ -30695,6 +30982,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
+"pxg" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "pyn" = (
 /obj/structure/closet{
 	name = "D-Class Prep"
@@ -31149,17 +31445,16 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
 "qhP" = (
-/obj/structure/closet/secure_closet/mtf/breachshotguns,
-/obj/machinery/light{
-	dir = 1
+/obj/structure/railing/mapped,
+/obj/machinery/door/blast/regular{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
 	},
-/obj/effect/floor_decal/corner/black/full,
-/obj/item/storage/box/ammo/shotgunammo,
-/obj/item/storage/box/ammo/shotgunammo,
-/obj/item/storage/box/ammo/shotgunshells,
-/obj/item/storage/box/ammo/shotgunshells,
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
+/obj/effect/catwalk_plated/white,
+/obj/effect/catwalk_plated/white,
+/turf/simulated/floor/plating,
+/area/site53/llcz/entrance_checkpoint)
 "qig" = (
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lowertrams/janitoroffice)
@@ -31461,14 +31756,13 @@
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/uhcz/scp247containment)
 "qPN" = (
-/obj/structure/railing/mapped,
+/obj/effect/catwalk_plated/white,
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
-	id_tag = "ULCZ Entry Line Cycle";
-	name = "ULCZ Checkpoint Processing Entries"
+	id_tag = "ULCZ Western Gate";
+	name = "ULCZ Western Gate"
 	},
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/plating,
 /area/site53/llcz/entrance_checkpoint)
 "qQb" = (
 /obj/structure/closet,
@@ -31670,21 +31964,16 @@
 "rcM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/power/apc/hyper{
-	dir = 4
-	},
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/floor_decal/industrial/loading{
-	dir = 1;
-	name = "Entry Line"
+/obj/effect/catwalk_plated/white,
+/obj/machinery/door/blast/regular{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
 	},
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/cable/green,
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/plating,
 /area/site53/llcz/entrance_checkpoint)
 "rdt" = (
 /obj/machinery/light{
@@ -31967,27 +32256,16 @@
 /area/site53/science/seniorresearchera)
 "rCr" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
+/obj/item/gun/projectile/revolver/mateba,
+/obj/item/gun/projectile/revolver/mateba,
+/obj/item/gun/projectile/revolver/mateba,
 /obj/effect/floor_decal/corner/black/full,
+/obj/item/ammo_magazine/box/a50,
+/obj/item/ammo_magazine/box/a50,
+/obj/item/ammo_magazine/box/a50,
+/obj/item/ammo_magazine/box/a50,
+/obj/item/ammo_magazine/box/a50,
+/obj/item/ammo_magazine/box/a50,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "rDj" = (
@@ -32050,13 +32328,99 @@
 /turf/simulated/floor,
 /area/site53/uhcz/scp096)
 "rIu" = (
-/obj/structure/closet/secure_closet/mtf/breachshotguns,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
 /obj/effect/floor_decal/corner/black/full,
-/obj/item/storage/box/ammo/shotgunammo,
-/obj/item/storage/box/ammo/shotgunammo,
-/obj/item/storage/box/ammo/shotgunshells,
-/obj/item/storage/box/ammo/shotgunshells,
-/turf/simulated/floor/tiled/dark,
+/obj/structure/table/rack,
+/turf/simulated/floor/tiled,
 /area/site53/lhcz/hczguardgear)
 "rIR" = (
 /obj/structure/cable{
@@ -32245,13 +32609,21 @@
 /turf/simulated/floor/carpet/green,
 /area/chapel)
 "sbE" = (
-/obj/effect/floor_decal/corner/red/border,
-/obj/structure/skele_stand,
-/obj/item/clothing/head/hcz_hazmat{
-	pixel_y = 9
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "ULCZ Internal Windows";
+	name = "ULCZ Internal Windows"
 	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
+/obj/machinery/door/blast/regular{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "scg" = (
 /obj/effect/floor_decal/industrial/outline/orange,
 /obj/structure/bed/chair{
@@ -32364,12 +32736,6 @@
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/machinery/button/alternate/door/bolts{
-	id_tag = "hczguns";
-	name = "HCZ Armory Door bolt";
-	pixel_y = 23;
-	req_access = list("ACCESS_SECURITY_LEVEL3")
-	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "sil" = (
@@ -32899,11 +33265,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/reswing/robotics)
-"tbT" = (
-/obj/effect/catwalk_plated/white,
-/obj/machinery/light,
-/turf/simulated/floor,
-/area/site53/ulcz/hallways)
 "tcK" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -33036,11 +33397,6 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/containment_engineer)
-"tmf" = (
-/obj/effect/paint_stripe/gray,
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/prepainted,
-/area/site53/ulcz/hallways)
 "tmK" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -33079,15 +33435,47 @@
 /area/site53/upper_surface/serverfarmcontrol)
 "tpZ" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/box/a45,
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/effect/floor_decal/corner/black/full,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/hczguardgear)
 "tqR" = (
 /obj/structure/table/reinforced,
@@ -33241,11 +33629,10 @@
 /turf/simulated/floor,
 /area/site53/surface/bunker)
 "tzd" = (
-/obj/structure/railing/mapped,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/effect/floor_decal/industrial/loading{
-	dir = 8;
-	name = "Entry Line"
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
@@ -33784,23 +34171,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp106containment)
-"uwO" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/loading{
-	name = "Exit Line"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
 "uza" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -33847,18 +34217,11 @@
 /turf/simulated/floor,
 /area/site53/llcz/scp012)
 "uDy" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
-	},
-/obj/structure/cable/green{
-	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
@@ -34006,6 +34369,29 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/uhcz/scp247observation)
+"uLN" = (
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/gun/projectile/revolver/rhino,
+/obj/item/gun/projectile/revolver/rhino,
+/obj/item/gun/projectile/revolver/rhino,
+/obj/item/gun/projectile/revolver/rhino,
+/obj/item/gun/projectile/revolver/rhino,
+/obj/item/gun/projectile/revolver/rhino,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/item/ammo_magazine/box/a357,
+/obj/effect/floor_decal/corner/black/full,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lhcz/hczguardgear)
 "uNq" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Containment Chamber";
@@ -34018,6 +34404,13 @@
 /obj/effect/floor_decal/corner/red/borderfull,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
+"uOY" = (
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "uPv" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
@@ -34115,6 +34508,62 @@
 /obj/item/device/camera_film,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
+"uWH" = (
+/obj/structure/table/rack,
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_x = 32
+	},
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/armory)
 "uWI" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 9
@@ -34308,8 +34757,13 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters{
-	id_tag = "ULCZ Booth Window 2";
-	name = "ULCZ Booth Window 2"
+	id_tag = "ULCZ Internal Windows";
+	name = "ULCZ Internal Windows"
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
@@ -34703,16 +35157,6 @@
 /area/site53/lowertrams/escape)
 "vLm" = (
 /obj/structure/table/rack,
-/obj/item/clothing/head/hcz_hazmat,
-/obj/item/clothing/head/hcz_hazmat,
-/obj/item/clothing/head/hcz_hazmat,
-/obj/item/clothing/head/hcz_hazmat,
-/obj/item/clothing/head/hcz_hazmat,
-/obj/item/clothing/head/hcz_hazmat,
-/obj/item/clothing/head/hcz_hazmat,
-/obj/item/clothing/head/hcz_hazmat,
-/obj/item/clothing/head/hcz_hazmat,
-/obj/item/clothing/head/hcz_hazmat,
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
 	},
@@ -35028,6 +35472,16 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
+"wkv" = (
+/obj/structure/railing/mapped,
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ULCZ Eastern Gate";
+	name = "ULCZ Eastern Gate"
+	},
+/obj/effect/catwalk_plated/white,
+/turf/simulated/floor/plating,
+/area/site53/llcz/entrance_checkpoint)
 "wmf" = (
 /obj/effect/floor_decal/corner/yellow/half{
 	dir = 4
@@ -35360,19 +35814,49 @@
 /area/site53/uhcz/scp106observ)
 "wGM" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/gun/projectile/pistol/glock17,
+/obj/item/gun/projectile/pistol/glock17,
+/obj/item/gun/projectile/pistol/glock17,
+/obj/item/gun/projectile/pistol/glock17,
+/obj/item/gun/projectile/pistol/glock17,
+/obj/item/gun/projectile/pistol/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
 /obj/effect/floor_decal/corner/black/full,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/hczguardgear)
 "wHX" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
-	id_tag = "ULCZ Booth Window 2";
-	name = "ULCZ Booth Window 2"
+	id_tag = "ULCZ Internal Windows";
+	name = "ULCZ Internal Windows"
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
@@ -35624,6 +36108,12 @@
 /obj/item/storage/box/flashbangs,
 /obj/item/storage/box/flashbangs,
 /obj/item/gun/launcher/grenade,
+/obj/item/storage/box/frags,
+/obj/item/storage/box/frags,
+/obj/item/storage/box/frags,
+/obj/item/storage/box/frags,
+/obj/item/storage/box/frags,
+/obj/item/storage/box/frags,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "wZX" = (
@@ -35903,37 +36393,38 @@
 /area/site53/ulcz/maintenance)
 "xsq" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
-/obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = 32
 	},
 /obj/machinery/light,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/paper{
+	name = "Stunshell notice";
+	info = "We recieved these prototype shotgun taser shells from RnD recently. Be careful, Class Ds may use them against our owns."
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "xti" = (
@@ -36002,10 +36493,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
 "xyH" = (
+/obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/door/airlock/security{
-	id_tag = "hczguns";
-	locked = 1;
-	name = "HCZ Armory";
+	name = "Armoury (Non Lethal)";
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor/tiled/dark,
@@ -36115,12 +36605,49 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
 "xLS" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/gun/projectile/pistol/glock17,
+/obj/item/gun/projectile/pistol/glock17,
+/obj/item/gun/projectile/pistol/glock17,
+/obj/item/gun/projectile/pistol/glock17,
+/obj/item/gun/projectile/pistol/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/obj/item/ammo_magazine/scp/glock17,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/armory)
 "xLV" = (
 /obj/effect/floor_decal/corner/orange/mono,
 /obj/structure/cable{
@@ -36203,64 +36730,70 @@
 /area/site53/surface/bunker)
 "xSs" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/machinery/light,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a10mm,
 /obj/effect/paint_stripe/red,
+/obj/machinery/light,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "xSS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "xTl" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/effect/floor_decal/corner/black/full,
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
+/obj/effect/catwalk_plated/white,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/site53/ulcz/hallways)
 "xTy" = (
 /obj/effect/floor_decal/corner/orange/mono,
 /obj/structure/cable{
@@ -36402,6 +36935,13 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/power/apc/hyper{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "yew" = (
@@ -36470,6 +37010,19 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
+"ylW" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "ULCZ External Windows";
+	name = "ULCZ External Windows"
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 
 (1,1,1) = {"
 azA
@@ -37084,14 +37637,14 @@ azA
 azA
 azA
 azA
-qSc
+mBn
 aMC
 aMC
 aMC
 aMC
 aMC
 aMC
-aMC
+mBn
 azA
 azA
 lbS
@@ -37342,12 +37895,12 @@ azA
 azA
 azA
 aMC
-aao
+aMC
 aVM
 bbj
-bbj
-aXh
-ewJ
+bde
+xLS
+aMC
 aMC
 azA
 azA
@@ -37859,9 +38412,9 @@ aMC
 aao
 aVL
 bde
-bde
+bhm
 aXh
-hbm
+aao
 aMC
 azA
 azA
@@ -38115,7 +38668,7 @@ azA
 aMC
 aao
 aVL
-bhm
+bhA
 bhm
 aXh
 hbm
@@ -38627,7 +39180,7 @@ azA
 azA
 azA
 aMC
-aao
+nDH
 aUO
 aVL
 aXh
@@ -39144,7 +39697,7 @@ aMC
 aUu
 aUP
 aVx
-aVK
+ffJ
 aMC
 kJB
 aVa
@@ -39401,7 +39954,7 @@ aMC
 alF
 aVa
 aVx
-cnC
+fte
 aMC
 koR
 aVa
@@ -39915,7 +40468,7 @@ aMC
 aUv
 aVa
 aVx
-cnC
+aVa
 aMC
 gxR
 aVa
@@ -40428,7 +40981,7 @@ all
 aMC
 aVx
 aVl
-aVl
+uWH
 xsq
 aMC
 gut
@@ -54583,9 +55136,9 @@ aVS
 aVS
 tjj
 aVS
-tmf
 aVS
-azA
+aVS
+aVS
 azA
 azA
 azA
@@ -54840,9 +55393,9 @@ aGM
 aGM
 jLw
 aGM
+aGM
 moM
 aVS
-azA
 azA
 azA
 azA
@@ -55098,6 +55651,7 @@ aKq
 jLw
 aKq
 aGM
+aGM
 aVS
 azA
 agU
@@ -55105,7 +55659,6 @@ agU
 agU
 agU
 agU
-azA
 azA
 azA
 azA
@@ -55350,11 +55903,12 @@ rka
 iql
 iql
 nTU
-kQL
+aVK
 kQL
 hyd
 aKq
-tbT
+aKq
+aEt
 aVS
 azA
 agU
@@ -55362,7 +55916,6 @@ iYX
 nFS
 lYV
 agU
-azA
 azA
 azA
 azA
@@ -55607,11 +56160,12 @@ brU
 aLd
 aMi
 pNO
-aGM
+aWJ
 aKq
-jLw
+xTl
 aKq
 aGM
+bhg
 aVS
 azA
 agU
@@ -55619,7 +56173,6 @@ eQq
 eQq
 kFd
 agU
-azA
 azA
 azA
 azA
@@ -55864,11 +56417,12 @@ eeH
 wSy
 dIs
 pNO
-aGM
+aWJ
 aGM
 ing
 hUS
 ddz
+aGM
 aVS
 azA
 agU
@@ -55876,7 +56430,6 @@ woN
 eQq
 whL
 agU
-azA
 azA
 azA
 azA
@@ -56123,17 +56676,17 @@ agU
 cqF
 aVi
 wHX
-agU
+wHX
 qPN
 bhB
+kbY
 agU
-mBn
 agU
-lTO
+agU
+agU
 fYk
 agU
 agU
-azA
 azA
 azA
 azA
@@ -56378,19 +56931,19 @@ odC
 aaJ
 eiF
 ebw
-aDO
-lkI
-kbY
 jQI
-bhA
-bkh
-odC
-bkh
+lkI
+bgK
+uOY
+dpC
+fCq
+ylW
+aDO
+aDO
 odC
 aDO
 odC
 agU
-azA
 azA
 azA
 azA
@@ -56634,20 +57187,20 @@ aMV
 aDO
 aDO
 aDO
-aDO
-aDO
+tzd
+gjb
 azx
 viG
 vea
 dpC
-bkh
-blf
-bkh
+aDO
+ylW
+aDO
+aDO
 aDO
 aDO
 vVl
 agU
-azA
 azA
 azA
 azA
@@ -56891,20 +57444,20 @@ pyn
 aDO
 agU
 pXS
-aDO
+pxg
 mBw
 bgF
 bgK
 kVb
-bhy
-cqF
-agU
-agU
+dpC
+aDO
+ylW
+aDO
+aDO
 aDO
 aDO
 vVl
 agU
-azA
 azA
 azA
 azA
@@ -57148,20 +57701,20 @@ kFS
 blf
 aMH
 aaH
-aDO
+jQI
 aDO
 azx
-bgJ
-dBT
-bhg
-cqF
-odC
+viG
+vea
+dpC
+fCq
+ylW
+aDO
 aDO
 aDO
 aDO
 qqQ
 agU
-azA
 azA
 azA
 azA
@@ -57405,12 +57958,13 @@ agU
 agU
 agU
 aMU
-aDO
+jQI
 aDO
 bgD
-agU
+sbE
 fwS
 bhf
+wkv
 agU
 erI
 aDO
@@ -57418,7 +57972,6 @@ aDO
 aDO
 vVl
 agU
-azA
 azA
 azA
 azA
@@ -57661,21 +58214,21 @@ agU
 aDR
 aDO
 sek
-aDO
-aDO
+tzd
+gjb
 aDO
 aVw
-mXc
-tzd
-uwO
+wHX
 aDO
+dpC
+aDO
+qhP
 aDO
 bpz
 aDO
 iCg
 vVl
 agU
-azA
 azA
 azA
 azA
@@ -57922,17 +58475,17 @@ ycD
 aVb
 aDO
 lKF
-agU
-xLS
+wHX
+blf
 uDy
 xSS
 rcM
+xSS
 ren
 cYI
 hgr
 blf
 agU
-azA
 azA
 azA
 azA
@@ -58178,7 +58731,8 @@ agU
 agU
 agU
 bgI
-agU
+wHX
+wHX
 agU
 agU
 agU
@@ -58189,7 +58743,6 @@ aCb
 agU
 agU
 agU
-azA
 azA
 azA
 azA
@@ -58441,11 +58994,11 @@ xvH
 epS
 adx
 adx
+adx
 aOU
 aOU
 adx
 abI
-azA
 azA
 azA
 azA
@@ -58700,9 +59253,9 @@ aOU
 aOU
 aOU
 aOU
+aOU
 adx
 abI
-azA
 azA
 azA
 azA
@@ -58957,9 +59510,9 @@ aOU
 aOU
 aOU
 aOU
+aOU
 adx
 abI
-azA
 azA
 azA
 azA
@@ -59212,11 +59765,11 @@ xvH
 ekr
 adx
 adx
+biy
 adx
 adx
 adx
 abI
-azA
 azA
 azA
 azA
@@ -59473,7 +60026,7 @@ abI
 abI
 abI
 abI
-azA
+abI
 azA
 azA
 azA
@@ -95985,7 +96538,7 @@ azA
 azA
 ixi
 tpZ
-xTl
+tpZ
 mfw
 lFu
 ixi
@@ -96241,7 +96794,7 @@ azA
 azA
 azA
 ixi
-xVn
+abV
 aDD
 aDD
 aDD
@@ -96751,8 +97304,8 @@ qJk
 gID
 lFb
 kor
-nWH
-nWH
+mLD
+lMF
 nWH
 ixi
 rIu
@@ -97012,7 +97565,7 @@ rrU
 rrU
 vDN
 ixi
-qhP
+xVn
 aDD
 aDD
 aDD
@@ -97273,7 +97826,7 @@ aDD
 aDD
 aDD
 aDD
-wGM
+uLN
 ixi
 azA
 azA
@@ -98552,7 +99105,7 @@ gmT
 taB
 peA
 ybq
-bVj
+dBT
 rrA
 azA
 azA
@@ -98803,7 +99356,7 @@ rrU
 rrU
 uce
 qjN
-sbE
+bjw
 rrA
 quy
 wFp

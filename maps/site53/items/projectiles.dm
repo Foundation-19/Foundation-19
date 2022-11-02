@@ -55,6 +55,16 @@
 	max_ammo = 10
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/scp/glock17
+	name = "G17 magazine"
+	icon_state = "glock17"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/c9mm
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = "9mm"
+	max_ammo = 17
+	multiple_sprites = 1
+
 /obj/item/ammo_magazine/scp/mk9
 	name = "MK9 magazine"
 	icon_state = "9mmds"
@@ -124,6 +134,17 @@
 
 /obj/item/ammo_magazine/scp/m16_mag/empty
 	initial_ammo = 0
+
+/obj/item/ammo_magazine/scp/m16_magext
+	name = "magazine (5.56)"
+	icon_state = "m16"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	caliber = "a556"
+	matter = list(DEFAULT_WALL_MATERIAL = 1500)
+	ammo_type = /obj/item/ammo_casing/a556
+	max_ammo = 60
+	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/ak
 	name = "magazine (7.62)"
@@ -195,4 +216,131 @@
 	caliber = ".45"
 	max_ammo = 7
 	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/mp5mag
+	name = "MP5 Magazine"
+	icon_state = "mp5"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/c9mm
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = "9mm"
+	max_ammo = 30
+	multiple_sprites = 1
+
+
+/obj/item/ammo_magazine/scp/ar12
+	name = "AR12 Magazine (Slug)"
+	icon_state = "fal-0"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 12
+
+
+/obj/item/ammo_magazine/scp/ar12/beanbag
+	name = "AR12 Magazine (Beanbag)"
+	icon_state = "fal-0"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 12
+
+
+/obj/item/ammo_magazine/scp/ar12/buckshot
+	name = "AR12 Magazine (Buckshot)"
+	icon_state = "fal-0"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 12
+
+
+/obj/item/ammo_magazine/scp/m60
+	name = "LMG Box Magazine (5.56)"
+	icon_state = "b762x54"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	caliber = "a556"
+	matter = list(DEFAULT_WALL_MATERIAL = 1500)
+	ammo_type = /obj/item/ammo_casing/a556
+	max_ammo = 100
+	multiple_sprites = 1
+	w_class = ITEM_SIZE_LARGE
+
+/obj/item/ammo_magazine/scp/m60/empty
+	initial_ammo = 0
+
+
+
+
+/obj/item/ammo_magazine/scp/saiga12
+	name = "Saiga12 Magazine (Slug)"
+	icon_state = "saiga12"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+
+/obj/item/ammo_magazine/scp/saiga12/beanbag
+	name = "Saiga12 Magazine (Beanbag)"
+	icon_state = "saiga12-beanbag"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+/obj/item/ammo_magazine/scp/saiga12/buckshot
+	name = "Saiga12 Magazine (Buckshot)"
+	icon_state = "saiga12-buckshot"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+/obj/item/ammo_magazine/scp/saiga12/stunshell
+	name = "Saiga12 Magazine (Stunshell)"
+	icon_state = "saiga12-stunshell"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/stunshell
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+
+/obj/item/ammo_magazine/scp/saiga12/flash
+	name = "Saiga12 Magazine (Crowd Dispersing Flash)"
+	icon_state = "saiga12-flash"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/flash
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+/obj/item/ammo_magazine/scp/saiga12/rubbershot
+	name = "Saiga12 Magazine (Rubbershot)"
+	icon_state = "saiga12-rubbershot"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+/obj/item/ammo_magazine/scp/saiga12/emp
+	name = "Saiga12 Magazine (EMP Haywire)"
+	icon_state = "saiga12-emp"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/emp
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+/obj/item/ammo_magazine/scp/saiga12/empty
+	initial_ammo = 0
 
