@@ -145,6 +145,11 @@ SUBSYSTEM_DEF(jobs)
 	if(SSticker.mode && SSticker.mode.explosion_in_progress)
 		to_chat(joining, "<span class='warning'>The [station_name()] is currently exploding. Joining would go poorly.</span>")
 		return FALSE
+	for(var/mob/living/carbon/human/C in SSmobs.mob_list)
+		var/char_name = joining.client.prefs.real_name
+		if(char_name == C.real_name)
+			to_chat (usr, "<span class='danger'>A character with the name <b>[C.real_name]</b> already exists. Please join with a different name.</span>")
+			return FALSE
 	return TRUE
 
 /datum/controller/subsystem/jobs/proc/check_latejoin_blockers(var/mob/new_player/joining, var/datum/job/job)

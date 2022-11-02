@@ -1,0 +1,9 @@
+2022-11-02:
+  MACIEKBAKI:
+  - bugfix: One door (LCZ-EZ Checkpoint) should no longer be in a wall.
+  Realtimeslayer:
+  - bugfix: gas injector
+  Tsurupeta:
+  - config: added a BCCM value to config.
+  - admin: Added BCCM for use by admins.
+  - server: Added SQL migrations for BCCM functionality.

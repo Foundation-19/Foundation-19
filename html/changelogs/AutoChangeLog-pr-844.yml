@@ -1,0 +1,4 @@
+author: Tsurupeta
+delete-after: true
+changes:
+  - rscadd: You can no longer respawn with the same character name.
