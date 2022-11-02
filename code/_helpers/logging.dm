@@ -81,13 +81,13 @@
 	if (config.log_say)
 		game_log("SAY", text)
 	if(usr)
-		usr.client?.say_log += "([time_stamp()]) (<b>[usr.x]X, [usr.y]Y, [usr.z]Z</b>) - [text]. (Location: [get_area(usr)])"
+		usr?.say_log += "([time_stamp()]) (<b>[usr.x]X, [usr.y]Y, [usr.z]Z</b>) - [text]. (Location: [get_area(usr)])"
 
 /proc/log_ooc(text)
 	if (config.log_ooc)
 		game_log("OOC", text)
 	if(usr)
-		usr.client?.ooc_log += "([time_stamp()]) - [text]"
+		usr?.ooc_log += "([time_stamp()]) - [text]"
 
 /proc/log_whisper(text)
 	if (config.log_whisper)
@@ -97,7 +97,7 @@
 	if (config.log_emote)
 		game_log("EMOTE", text)
 	if(usr)
-		usr.client?.emote_log += "([time_stamp()]) - [text]"
+		usr?.emote_log += "([time_stamp()]) - [text]"
 
 /proc/log_attack(text)
 	if (config.log_attack)

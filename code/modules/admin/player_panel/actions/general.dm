@@ -233,30 +233,26 @@
 	name = "Open Logs"
 
 /datum/player_action/check_logs/act(client/user, mob/target, list/params)
-	if(!target.client)
-		to_chat(user.mob, SPAN_NOTICE("You can't see logs if player is offline."))
-		return
-
 	var/list/dat = list()
 	switch(params["log_type"])
 		if("say")
-			for(var/log in target.client.say_log)
+			for(var/log in target.say_log)
 				dat += log
 				dat += "<br>"
 		if("emote")
-			for(var/log in target.client.emote_log)
+			for(var/log in target.emote_log)
 				dat += log
 				dat += "<br>"
 		if("ooc")
-			for(var/log in target.client.ooc_log)
+			for(var/log in target.ooc_log)
 				dat += log
 				dat += "<br>"
 		if("dsay")
-			for(var/log in target.client.dsay_log)
+			for(var/log in target.dsay_log)
 				dat += log
 				dat += "<br>"
 		if("interact")
-			for(var/log in target.client.interact_log)
+			for(var/log in target.interact_log)
 				dat += log
 				dat += "<br>"
 		else
