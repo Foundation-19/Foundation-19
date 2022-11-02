@@ -1,0 +1,4 @@
+author: Tsurupeta
+delete-after: true
+changes:
+  - admin: change location of player logs storage.
