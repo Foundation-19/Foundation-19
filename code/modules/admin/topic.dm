@@ -1814,10 +1814,10 @@
 
 	if(href_list["say"])
 		var/list/dat = list()
-		var/client/C = locate(href_list["say"])
+		var/mob/M = locate(href_list["say"])
 
 
-		for(var/log in C.say_log)
+		for(var/log in M.say_log)
 			dat += log
 			dat += "<br>"
 		var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
@@ -1827,10 +1827,10 @@
 
 	if(href_list["ooc"])
 		var/list/dat = list()
-		var/client/C = locate(href_list["ooc"])
+		var/mob/M = locate(href_list["ooc"])
 
 
-		for(var/log in C.ooc_log)
+		for(var/log in M.ooc_log)
 			dat += log
 			dat += "<br>"
 		var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
@@ -1840,10 +1840,10 @@
 
 	if(href_list["emote"])
 		var/list/dat = list()
-		var/client/C = locate(href_list["emote"])
+		var/mob/M = locate(href_list["emote"])
 
 
-		for(var/log in C.emote_log)
+		for(var/log in M.emote_log)
 			dat += log
 			dat += "<br>"
 		var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
@@ -1853,10 +1853,10 @@
 
 	if(href_list["dsay"])
 		var/list/dat = list()
-		var/client/C = locate(href_list["dsay"])
+		var/mob/M = locate(href_list["dsay"])
 
 
-		for(var/log in C.dsay_log)
+		for(var/log in M.dsay_log)
 			dat += log
 			dat += "<br>"
 		var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
@@ -1866,10 +1866,10 @@
 
 	if(href_list["interact"])
 		var/list/dat = list()
-		var/client/C = locate(href_list["interact"])
+		var/mob/M = locate(href_list["interact"])
 
 
-		for(var/log in C.interact_log)
+		for(var/log in M.interact_log)
 			dat += log
 			dat += "<br>"
 		var/datum/browser/popup = new(usr, "admin_log_panel_log", "Logs", 700, 700)
