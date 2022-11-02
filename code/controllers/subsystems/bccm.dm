@@ -1,5 +1,5 @@
 // BCCM (Ban Counter Counter Measures system) ((Name subject to change)), originally inspired by EAMS (Epic Anti-Multiaccount System), by Epicus
-//version 1.0.2
+//version 1.0.3
 
 /datum/bccm_info
 	var/is_loaded = FALSE
@@ -198,6 +198,9 @@ SUBSYSTEM_DEF(bccm)
 		return
 
 	if(!CheckDBCon())
+		return
+
+	if(C.bccm_info.is_whitelisted)
 		return
 
 	var/datum/db_query/query = SSdbcore.NewQuery("SELECT `asn` FROM bccm_asn_ban WHERE asn = '[C.bccm_info.ip_as]'")
