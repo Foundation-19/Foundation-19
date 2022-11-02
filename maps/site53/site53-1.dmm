@@ -162,16 +162,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
-"av" = (
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/mine/unexplored)
 "aw" = (
 /obj/structure/bookcase/manuals/medical,
 /turf/simulated/floor/wood/walnut,
@@ -1644,8 +1634,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
 "dA" = (
-/turf/space,
-/area/site53/llcz/mine/unexplored)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/isolation)
 "dB" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -1986,7 +1976,7 @@
 	dir = 1
 	},
 /turf/simulated/floor,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/isolation)
 "et" = (
 /obj/structure/sign/directions/infirmary{
 	dir = 8;
@@ -6093,14 +6083,34 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
 "og" = (
+/obj/structure/table/standard,
+/obj/machinery/door/window/northleft{
+	name = "LLCZ Checkpoint";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/machinery/door/window/northleft{
+	name = "LLCZ Checkpoint";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	dir = 2
+	},
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	dir = 8;
+	id_tag = "DCZ Entrance Lockdown";
+	name = "DCZ Entrance Lockdown"
+	},
+/obj/machinery/door/blast/shutters{
+	begins_closed = 0;
+	id_tag = "DCZ Entrance Windows";
+	name = "DCZ Entrance Windows"
+	},
 /obj/structure/cable/green{
 	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/structure/closet,
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/mine/unexplored)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/checkpointoverlook)
 "oh" = (
 /obj/machinery/button/blast_door{
 	id_tag = "Common Window Shutter";
@@ -10086,11 +10096,18 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "yF" = (
-/obj/structure/cable/green{
-	icon_state = "4-8"
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "Reeducation Lockdown"
+	},
+/obj/machinery/door/blast/shutters{
+	begins_closed = 0;
+	id_tag = "Isocell 1 shutter";
+	name = "Isocell 1 shutter"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/mine/unexplored)
+/area/site53/llcz/dclass/reeducation)
 "yG" = (
 /obj/machinery/vending/cola,
 /turf/simulated/floor/tiled/monotile,
@@ -17479,7 +17496,7 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/assignmentbubble)
+/area/site53/llcz/dclass/isolation)
 "UO" = (
 /obj/machinery/alarm{
 	pixel_y = 23;
@@ -30377,10 +30394,10 @@ OH
 gq
 gq
 gq
-gM
+qu
 es
-Lh
-gM
+wG
+qu
 gq
 gq
 gq
@@ -30634,10 +30651,10 @@ OH
 gq
 gq
 gq
-gM
-lS
+qu
+dA
 UN
-gM
+qu
 gq
 gq
 gq
@@ -34443,7 +34460,7 @@ Dr
 gA
 rE
 sU
-Fg
+og
 va
 DT
 aK
@@ -34946,9 +34963,9 @@ Az
 dU
 iE
 lG
-Li
-Li
-Li
+yF
+yF
+yF
 lG
 Bl
 kY
@@ -34966,7 +34983,7 @@ je
 rE
 jY
 sf
-rQ
+sf
 fA
 fA
 fA
@@ -40084,10 +40101,10 @@ ua
 ua
 ua
 ua
-av
-dA
-dA
-dA
+ua
+ua
+ua
+ua
 ua
 Fh
 Fh
@@ -40341,10 +40358,10 @@ ua
 ua
 ua
 Fh
-yF
-dA
-dA
-dA
+ua
+ua
+ua
+ua
 ua
 Fh
 Fh
@@ -40598,10 +40615,10 @@ ua
 Fh
 ua
 Fh
-og
-dA
-dA
-dA
+ua
+ua
+ua
+ua
 ua
 ua
 ua
@@ -40858,7 +40875,7 @@ ua
 ua
 ua
 ua
-Fh
+ua
 ua
 ua
 ua
