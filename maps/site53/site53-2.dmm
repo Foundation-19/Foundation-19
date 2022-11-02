@@ -2076,12 +2076,12 @@
 /turf/simulated/open,
 /area/site53/ulcz/hallways)
 "agM" = (
-/obj/structure/disposaloutlet{
-	dir = 1
+/obj/machinery/conveyor/south{
+	id = "trashtocargo";
+	id_tag = "trashtocargo"
 	},
-/obj/structure/disposalpipe/trunk,
-/turf/simulated/floor,
-/area/site53/reswing/xenobiology)
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "agN" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -2440,7 +2440,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/maintenance{
-	req_access = list("ACCESS_ENGINEERING_LEVEL1")
+	req_access = list("")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -5186,9 +5186,9 @@
 /turf/simulated/floor/grass,
 /area/site53/lowertrams/brownline)
 "aoI" = (
-/obj/structure/disposalpipe/segment,
-/turf/unsimulated/mineral,
-/area/site53/reswing/xenobiology)
+/obj/structure/table/steel,
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "aoJ" = (
 /obj/machinery/door/airlock/command{
 	name = "AIC Access";
@@ -6297,6 +6297,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "arl" = (
@@ -6564,6 +6565,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "arM" = (
@@ -6594,6 +6598,10 @@
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/maintenancetunnel)
@@ -6852,6 +6860,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "asu" = (
@@ -6865,6 +6874,10 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/maintenancetunnel)
@@ -6898,6 +6911,10 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/maintenancetunnel)
@@ -9469,6 +9486,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "ayY" = (
@@ -9796,6 +9814,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "azR" = (
@@ -12915,6 +12934,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "aIV" = (
@@ -13013,10 +13033,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp151)
 "aJm" = (
-/obj/structure/disposalpipe/segment,
-/obj/effect/paint_stripe/mauve,
-/turf/simulated/wall/prepainted,
-/area/site53/reswing/xenobiology)
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "aJn" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
@@ -19454,8 +19476,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lowertrams/hub)
 "bdG" = (
-/obj/machinery/disposal,
-/obj/structure/disposalpipe/trunk,
+/obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/janitoroffice)
 "bdH" = (
@@ -19516,10 +19537,14 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lowertrams/hub)
 "bdQ" = (
-/obj/effect/paint_stripe/yellow,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/lowertrams/janitoroffice)
+/obj/random/junk,
+/obj/structure/table/steel,
+/obj/structure/catwalk,
+/obj/machinery/camera/network/entrance{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "bdR" = (
 /obj/structure/mopbucket,
 /turf/simulated/floor/tiled,
@@ -19568,23 +19593,23 @@
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/janitoroffice)
 "bec" = (
-/obj/structure/disposalpipe/trunk{
-	dir = 1
-	},
-/obj/structure/disposaloutlet,
+/obj/structure/catwalk,
+/obj/structure/closet,
+/obj/item/mop,
+/obj/item/clothing/shoes/galoshes,
+/obj/item/storage/belt/janitor,
 /turf/simulated/floor/plating,
-/area/site53/lowertrams/janitoroffice)
+/area/site53/lowertrams/maintenance)
 "bed" = (
-/obj/machinery/light/small{
-	dir = 1;
-	icon_state = "bulb1"
-	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/site53/lowertrams/janitoroffice)
+/area/site53/lowertrams/maintenance)
 "bee" = (
-/obj/effect/decal/cleanable/cobweb2,
-/turf/simulated/floor/plating,
-/area/site53/lowertrams/janitoroffice)
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "bef" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -19597,8 +19622,11 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lowertrams/hub)
 "beh" = (
-/turf/simulated/floor/plating,
-/area/site53/lowertrams/janitoroffice)
+/obj/structure/disposalpipe/up{
+	dir = 8
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "bei" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -19706,9 +19734,19 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/hub)
 "bex" = (
-/obj/effect/decal/cleanable/blood/oil,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/plating,
-/area/site53/lowertrams/janitoroffice)
+/area/site53/engineering/maintenance/maintenancetunnel)
 "bey" = (
 /obj/machinery/light{
 	dir = 8
@@ -21807,6 +21845,24 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
+"bEe" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/plating,
+/area/site53/engineering/maintenance/maintenancetunnel)
 "bEw" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -26
@@ -23293,6 +23349,13 @@
 /obj/item/bedsheet,
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"dWR" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "dYB" = (
 /obj/structure/flora/pottedplant/large,
 /turf/simulated/floor/tiled/monotile,
@@ -24331,6 +24394,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/uppernukeladders)
+"fHr" = (
+/obj/effect/paint_stripe/yellow,
+/obj/machinery/door/airlock/maintenance{
+	req_access = list("");
+	name = "Recycling Center"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/maintenance)
 "fKV" = (
 /obj/structure/flora/pottedplant/orientaltree,
 /obj/machinery/light,
@@ -24515,6 +24586,10 @@
 /obj/structure/closet/l3closet/scientist,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
+"fXC" = (
+/obj/structure/disposalpipe/segment,
+/turf/unsimulated/mineral,
+/area/space)
 "fXE" = (
 /obj/structure/table/standard,
 /obj/item/folder/nt/rd,
@@ -24753,6 +24828,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/maintenance)
+"gmy" = (
+/obj/machinery/conveyor/south{
+	id_tag = "trashtocargo";
+	id = "trashtocargo"
+	},
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "gmT" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
@@ -25576,6 +25658,13 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
+"hvO" = (
+/obj/effect/paint_stripe/yellow,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/engineering/maintenance/maintenancetunnel)
 "hxk" = (
 /turf/unsimulated/mineral,
 /area/site53/surface/explorers/surrounding)
@@ -25807,6 +25896,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
+"hQo" = (
+/obj/effect/paint_stripe/yellow,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/engineering/maintenance/maintenancetunnel)
 "hQH" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 5
@@ -26826,6 +26920,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/surface/explorers/surrounding)
+"jvA" = (
+/obj/machinery/light/small,
+/obj/structure/table/steel,
+/obj/structure/catwalk,
+/obj/machinery/photocopier,
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "jvZ" = (
 /obj/structure/table/woodentable/mahogany,
 /obj/machinery/photocopier{
@@ -27480,6 +27581,15 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
+"kxb" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/surface/explorers)
 "kxW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/item/device/radio/intercom/locked{
@@ -27710,6 +27820,11 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
+"kRT" = (
+/obj/effect/paint_stripe/yellow,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/maintenance)
 "kSo" = (
 /obj/item/paper{
 	info = "Hi! Seems like something went wrong. Please make an ahelp."
@@ -28361,6 +28476,17 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
+"lPf" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/catwalk,
+/obj/machinery/conveyor_switch{
+	id = "trashtocargo";
+	id_tag = "trashtocargo"
+	},
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "lPt" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -29380,6 +29506,11 @@
 /obj/machinery/photocopier/faxmachine,
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
+"nfX" = (
+/obj/structure/janitorialcart,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "ngB" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -29901,6 +30032,10 @@
 /obj/structure/closet,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"oaH" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "obi" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -30829,11 +30964,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/maintenance)
 "pHf" = (
-/obj/machinery/disposal,
-/obj/structure/disposalpipe/trunk{
-	dir = 1
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/reswing/xenobiology)
 "pHU" = (
@@ -31655,6 +31790,12 @@
 /obj/item/storage/toolbox/mechanical,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
+"raQ" = (
+/obj/structure/closet/crate/secure/biohazard,
+/obj/random/loot,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "raR" = (
 /obj/machinery/door/airlock/science{
 	name = "General Purpose Testing Chamber";
@@ -32244,6 +32385,11 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
+"sbi" = (
+/obj/random/trash,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "sbE" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/structure/skele_stand,
@@ -32821,6 +32967,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/storage)
+"sVr" = (
+/obj/machinery/floodlight,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "sVz" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
@@ -32878,6 +33032,11 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
+"tar" = (
+/obj/structure/mopbucket,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "taz" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -33943,6 +34102,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106containment)
+"uIc" = (
+/obj/random/trash,
+/obj/structure/closet/crate/bin,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "uIE" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/cable/green{
@@ -34465,6 +34630,11 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
+"vsq" = (
+/obj/structure/closet/crate/trashcart,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "vsx" = (
 /obj/effect/catwalk_plated,
 /obj/structure/cable{
@@ -34545,6 +34715,15 @@
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
+"vyb" = (
+/obj/machinery/disposal/deliveryChute{
+	dir = 1;
+	name = "Trash Outlet"
+	},
+/obj/structure/disposalpipe/trunk,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "vzw" = (
 /obj/structure/closet/secure_closet/freezer/meat,
 /turf/simulated/floor/tiled/freezer,
@@ -34957,6 +35136,14 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/science/aicobservation)
+"wfL" = (
+/obj/structure/closet/crate/secure/biohazard,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "wgK" = (
 /obj/machinery/light{
 	dir = 8
@@ -35901,6 +36088,13 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/ulcz/maintenance)
+"xrQ" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "xsq" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
@@ -60538,7 +60732,7 @@ ast
 ast
 ast
 ast
-aIU
+bEe
 aAd
 aqo
 apr
@@ -60998,14 +61192,14 @@ acB
 aOU
 afu
 abI
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+vsq
+oaH
+agM
+gmy
+agM
+vyb
+kRT
+aJm
 azA
 azA
 azA
@@ -61255,14 +61449,14 @@ acB
 aOU
 adx
 abI
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+raQ
+bed
+bed
+lPf
+xrQ
+sVr
+aal
+bee
 azA
 azA
 azA
@@ -61512,14 +61706,14 @@ acB
 aOU
 adx
 abI
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+wfL
+bed
+bed
+bed
+sbi
+bec
+aal
+bee
 azA
 azA
 azA
@@ -61769,14 +61963,14 @@ acB
 aOU
 adx
 abI
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+bed
+bed
+bed
+bed
+bed
+bec
+aal
+bee
 azA
 azA
 azA
@@ -62026,14 +62220,14 @@ acB
 aOU
 adx
 abI
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+uIc
+sbi
+bed
+bed
+bed
+jvA
+aal
+bee
 azA
 azA
 azA
@@ -62283,14 +62477,14 @@ acB
 aOU
 afu
 abI
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+nfX
+bed
+bed
+bed
+tar
+bdQ
+aal
+bee
 azA
 azA
 azA
@@ -62542,12 +62736,12 @@ aZr
 abI
 aal
 aal
+fHr
 aal
 aal
 aal
 aal
-aal
-azA
+bee
 azA
 azA
 azA
@@ -62797,14 +62991,14 @@ dMQ
 aOq
 adx
 abI
-ais
+aoI
 ais
 ais
 aAt
 ais
-ais
+dWR
 aab
-aab
+hvO
 aab
 aab
 aab
@@ -63054,14 +63248,14 @@ diP
 qUH
 adx
 abI
-ais
+aoI
 ais
 aht
 ahN
 ahN
 ahN
 aqy
-ark
+bex
 ayX
 ark
 ark
@@ -63577,11 +63771,11 @@ aQa
 aQI
 aQI
 bdG
-bdQ
-bdQ
-bec
-beh
-beh
+amb
+amb
+azA
+azA
+azA
 azA
 azA
 azA
@@ -63836,9 +64030,9 @@ bdr
 qig
 bdR
 bem
-bed
-bex
-beh
+azA
+azA
+azA
 azA
 azA
 azA
@@ -64093,9 +64287,9 @@ bdt
 bdM
 bdS
 bem
-bee
-beh
-beh
+azA
+azA
+azA
 azA
 azA
 azA
@@ -64656,17 +64850,17 @@ ast
 azQ
 ast
 aIU
-aab
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+hQo
+fXC
+fXC
+fXC
+fXC
+fXC
+fXC
+fXC
+fXC
+fXC
+aJm
 azA
 azA
 azA
@@ -64923,7 +65117,7 @@ azA
 azA
 azA
 azA
-azA
+bee
 azA
 azA
 azA
@@ -65180,7 +65374,7 @@ azA
 azA
 azA
 azA
-azA
+bee
 azA
 azA
 azA
@@ -65437,7 +65631,7 @@ azA
 azA
 azA
 azA
-azA
+beh
 azA
 azA
 azA
@@ -68497,7 +68691,7 @@ beP
 beP
 bfx
 aSs
-bfI
+kxb
 bfP
 aSs
 bga
@@ -76107,10 +76301,10 @@ azA
 azA
 azA
 azA
-agM
-aoI
-aoI
-aJm
+azA
+azA
+azA
+aPx
 pHf
 aMn
 mfj
