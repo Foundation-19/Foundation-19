@@ -162,6 +162,19 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
+"av" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "Reeducation Lockdown"
+	},
+/obj/machinery/door/blast/shutters{
+	begins_closed = 0;
+	id_tag = "Isocell 1 shutter";
+	name = "Isocell 1 shutter"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/reeducation)
 "aw" = (
 /obj/structure/bookcase/manuals/medical,
 /turf/simulated/floor/wood/walnut,
@@ -717,14 +730,19 @@
 /area/site53/llcz/dclass/primaryhallway)
 "bG" = (
 /obj/structure/table/standard,
-/obj/machinery/door/window/northleft{
-	name = "LLCZ Checkpoint";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
 	id_tag = "Lower LCZ Checkpoint Windows";
 	name = "Lower LCZ Checkpoint Windows"
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Secure booth";
+	dir = 1
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Secure booth"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/entrance_checkpoint)
@@ -1633,9 +1651,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
-"dA" = (
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/isolation)
 "dB" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -3011,20 +3026,20 @@
 /area/site53/uhcz/scp8containment)
 "gS" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/northleft{
-	name = "LLCZ Medical Checkpoint";
-	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"));
-	dir = 4
-	},
-/obj/machinery/door/window/northleft{
-	name = "LLCZ Medical Checkpoint";
-	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"));
-	dir = 8
-	},
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id_tag = "CDZMedbaywin";
 	name = "CDZ Medbay Window Shutters"
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"));
+	name = "Secure booth";
+	dir = 8
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"));
+	name = "Secure booth";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -6083,34 +6098,8 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
 "og" = (
-/obj/structure/table/standard,
-/obj/machinery/door/window/northleft{
-	name = "LLCZ Checkpoint";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/machinery/door/window/northleft{
-	name = "LLCZ Checkpoint";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	dir = 2
-	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	dir = 8;
-	id_tag = "DCZ Entrance Lockdown";
-	name = "DCZ Entrance Lockdown"
-	},
-/obj/machinery/door/blast/shutters{
-	begins_closed = 0;
-	id_tag = "DCZ Entrance Windows";
-	name = "DCZ Entrance Windows"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/checkpointoverlook)
+/area/site53/llcz/dclass/isolation)
 "oh" = (
 /obj/machinery/button/blast_door{
 	id_tag = "Common Window Shutter";
@@ -6783,16 +6772,6 @@
 /area/site53/llcz/dclass/checkpointoverlook)
 "pY" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/northleft{
-	name = "LLCZ Checkpoint";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	dir = 8
-	},
-/obj/machinery/door/window/northleft{
-	name = "LLCZ Checkpoint";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	dir = 4
-	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
 	id_tag = "DCZ Entrance Windows";
@@ -6803,6 +6782,16 @@
 	dir = 8;
 	id_tag = "DCZ Entrance Lockdown";
 	name = "DCZ Entrance Lockdown"
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Secure booth";
+	dir = 8
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Secure booth";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpointoverlook)
@@ -9305,10 +9294,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
-"wp" = (
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/hallways)
 "wq" = (
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/industrial/warning{
@@ -9666,15 +9651,6 @@
 /area/site53/uhcz/scp106parts)
 "xk" = (
 /obj/structure/table/standard,
-/obj/machinery/door/window/northleft{
-	name = "LLCZ Checkpoint";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/machinery/door/window/northleft{
-	name = "LLCZ Checkpoint";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	dir = 2
-	},
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "Mining Checkpoint Window";
 	name = "Mining Checkpoint Window"
@@ -9683,6 +9659,15 @@
 	icon_state = "pdoor0";
 	id_tag = "Mining Lockdown";
 	name = "Mining Lockdown"
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Secure booth"
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Secure booth";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchenbotanybubble)
@@ -10095,19 +10080,6 @@
 /obj/machinery/washing_machine,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
-"yF" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "Reeducation Lockdown"
-	},
-/obj/machinery/door/blast/shutters{
-	begins_closed = 0;
-	id_tag = "Isocell 1 shutter";
-	name = "Isocell 1 shutter"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/reeducation)
 "yG" = (
 /obj/machinery/vending/cola,
 /turf/simulated/floor/tiled/monotile,
@@ -10182,8 +10154,7 @@
 /obj/machinery/camera/network/lcz{
 	dir = 1
 	},
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
 "yS" = (
 /obj/machinery/light/spot{
@@ -11578,13 +11549,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip)
-"CY" = (
-/obj/structure/closet,
-/obj/machinery/light/spot{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkpoint)
 "CZ" = (
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -12349,15 +12313,6 @@
 /area/site53/llcz/maintenance)
 "Fg" = (
 /obj/structure/table/standard,
-/obj/machinery/door/window/northleft{
-	name = "LLCZ Checkpoint";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/machinery/door/window/northleft{
-	name = "LLCZ Checkpoint";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	dir = 2
-	},
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
 	dir = 8;
@@ -12368,6 +12323,15 @@
 	begins_closed = 0;
 	id_tag = "DCZ Entrance Windows";
 	name = "DCZ Entrance Windows"
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Secure booth"
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Secure booth";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/checkpointoverlook)
@@ -14078,12 +14042,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
 "JR" = (
-/obj/machinery/camera/network/lcz{
-	dir = 4
+/obj/structure/closet,
+/obj/machinery/light/spot{
+	dir = 1
 	},
-/obj/effect/catwalk_plated/white,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/hallways)
+/area/site53/llcz/dclass/checkpoint)
 "JS" = (
 /obj/machinery/button/blast_door{
 	id_tag = "Reeducation Lockdown";
@@ -15012,11 +14976,10 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpointoverlook)
 "MG" = (
-/obj/effect/catwalk_plated/white,
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
 "MH" = (
 /obj/structure/cable/green{
@@ -17154,15 +17117,6 @@
 /area/site53/uhcz/scp8containment)
 "TA" = (
 /obj/structure/table/standard,
-/obj/machinery/door/window/northleft{
-	name = "LLCZ Checkpoint";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/machinery/door/window/northleft{
-	name = "LLCZ Checkpoint";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	dir = 2
-	},
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "Security Bubble Window";
 	name = "Security Bubble Windows"
@@ -17172,6 +17126,15 @@
 	dir = 8;
 	id_tag = "Security Bubble Lockdown";
 	name = "Security Bubble Lockdown"
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Secure booth"
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Secure booth";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/checkpoint)
@@ -18278,12 +18241,34 @@
 /turf/simulated/floor/plating,
 /area/site53/llcz/dclass/luxuryhall)
 "Xj" = (
-/obj/machinery/camera/network/lcz{
-	dir = 4
+/obj/structure/table/standard,
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	dir = 8;
+	id_tag = "DCZ Entrance Lockdown";
+	name = "DCZ Entrance Lockdown"
 	},
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor,
-/area/site53/llcz/hallways)
+/obj/machinery/door/blast/shutters{
+	begins_closed = 0;
+	id_tag = "DCZ Entrance Windows";
+	name = "DCZ Entrance Windows"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Secure booth"
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Secure booth";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/checkpointoverlook)
 "Xk" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -24430,7 +24415,7 @@ gq
 KU
 ce
 cc
-JR
+tH
 cc
 cc
 KU
@@ -24946,7 +24931,7 @@ ch
 ch
 in
 ch
-wp
+ch
 pP
 QZ
 IC
@@ -28030,7 +28015,7 @@ cc
 ch
 rh
 ch
-cc
+ch
 sb
 IJ
 QZ
@@ -29308,7 +29293,7 @@ gq
 cQ
 cc
 cc
-ch
+cc
 tH
 cc
 cQ
@@ -29820,7 +29805,7 @@ gq
 gq
 gq
 cQ
-ch
+cc
 ch
 gt
 cd
@@ -29828,7 +29813,7 @@ cd
 if
 cd
 rV
-ch
+cc
 cQ
 hy
 hy
@@ -30092,7 +30077,7 @@ hy
 hy
 hy
 Ks
-CY
+JR
 rE
 fi
 TA
@@ -30652,7 +30637,7 @@ gq
 gq
 gq
 qu
-dA
+og
 UN
 qu
 gq
@@ -32893,7 +32878,7 @@ gq
 cQ
 cc
 cc
-Xj
+tH
 cc
 cc
 cQ
@@ -34460,7 +34445,7 @@ Dr
 gA
 rE
 sU
-og
+Xj
 va
 DT
 aK
@@ -34963,9 +34948,9 @@ Az
 dU
 iE
 lG
-yF
-yF
-yF
+av
+av
+av
 lG
 Bl
 kY

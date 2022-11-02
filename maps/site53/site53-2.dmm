@@ -20415,6 +20415,27 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
+"bgJ" = (
+/obj/structure/table/standard,
+/obj/machinery/door/window/brigdoor{
+	name = "Booth";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/machinery/door/window/brigdoor/northright{
+	name = "Booth";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/machinery/door/blast/shutters{
+	id_tag = "ULCZ Internal Windows";
+	name = "ULCZ Internal Windows"
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "bgK" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -20567,15 +20588,14 @@
 /turf/simulated/floor/plating,
 /area/site53/llcz/entrance_checkpoint)
 "bhg" = (
-/obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "ULCZ Checkpoint Lockdown";
-	name = "ULCZ Checkpoint Lockdown";
-	pixel_y = -23;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ULCZ Western Gate";
+	name = "ULCZ Western Gate"
 	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/hallways)
+/obj/effect/catwalk_plated/white,
+/turf/simulated/floor/plating,
+/area/site53/llcz/entrance_checkpoint)
 "bhh" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "ULCZ Secure Armoury";
@@ -20716,6 +20736,16 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint/south)
+"bhy" = (
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	pixel_y = -23;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "bhA" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/box/emp,
@@ -21037,17 +21067,6 @@
 "bix" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/generalpurpose2)
-"biy" = (
-/obj/effect/floor_decal/corner/brown/mono,
-/obj/machinery/button/blast_door{
-	dir = 8;
-	id_tag = "ULCZ Checkpoint Lockdown";
-	name = "ULCZ Checkpoint Lockdown";
-	pixel_x = 24;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/brownline)
 "biz" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
@@ -24281,15 +24300,13 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/upper_surface/serverfarmcontrol)
 "fwS" = (
-/obj/effect/catwalk_plated/white,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
+/obj/structure/railing/mapped,
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
 	id_tag = "ULCZ Eastern Gate";
 	name = "ULCZ Eastern Gate"
 	},
+/obj/effect/catwalk_plated/white,
 /turf/simulated/floor/plating,
 /area/site53/llcz/entrance_checkpoint)
 "fwU" = (
@@ -24317,7 +24334,16 @@
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
 "fCq" = (
-/obj/machinery/light,
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "ULCZ External Windows";
+	name = "ULCZ External Windows"
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "fDv" = (
@@ -27369,11 +27395,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106containment)
 "kbY" = (
+/obj/structure/railing/mapped,
 /obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ULCZ Western Gate";
-	name = "ULCZ Western Gate"
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
 	},
+/obj/effect/catwalk_plated/white,
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor/plating,
 /area/site53/llcz/entrance_checkpoint)
@@ -28641,6 +28669,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
+"lTO" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "lVz" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
@@ -29567,6 +29599,22 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
+"mXc" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "ULCZ Internal Windows";
+	name = "ULCZ Internal Windows"
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "mXo" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
@@ -30982,15 +31030,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
-"pxg" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
 "pyn" = (
 /obj/structure/closet{
 	name = "D-Class Prep"
@@ -31445,15 +31484,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
 "qhP" = (
-/obj/structure/railing/mapped,
-/obj/machinery/door/blast/regular{
-	id_tag = "ULCZ Checkpoint Lockdown";
-	name = "ULCZ Checkpoint Lockdown";
-	begins_closed = 0
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/effect/catwalk_plated/white,
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor/plating,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "qig" = (
 /turf/simulated/floor/tiled/steel_grid,
@@ -32609,18 +32646,9 @@
 /turf/simulated/floor/carpet/green,
 /area/chapel)
 "sbE" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters{
-	id_tag = "ULCZ Internal Windows";
-	name = "ULCZ Internal Windows"
-	},
-/obj/machinery/door/blast/regular{
-	id_tag = "ULCZ Checkpoint Lockdown";
-	name = "ULCZ Checkpoint Lockdown";
-	begins_closed = 0
-	},
-/obj/structure/window/reinforced{
-	dir = 8
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
@@ -34404,13 +34432,6 @@
 /obj/effect/floor_decal/corner/red/borderfull,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
-"uOY" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
 "uPv" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
@@ -34747,25 +34768,16 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
 "viG" = (
-/obj/structure/table/standard,
-/obj/machinery/door/window/brigdoor{
-	name = "Booth";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/machinery/door/window/brigdoor/northright{
-	name = "Booth";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/machinery/door/blast/shutters{
-	id_tag = "ULCZ Internal Windows";
-	name = "ULCZ Internal Windows"
+/obj/effect/catwalk_plated/white,
+/obj/structure/railing/mapped{
+	dir = 8
 	},
 /obj/machinery/door/blast/regular{
-	id_tag = "ULCZ Checkpoint Lockdown";
-	name = "ULCZ Checkpoint Lockdown";
-	begins_closed = 0
+	begins_closed = 0;
+	id_tag = "ULCZ Eastern Gate";
+	name = "ULCZ Eastern Gate"
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/plating,
 /area/site53/llcz/entrance_checkpoint)
 "viK" = (
 /obj/machinery/button/blast_door{
@@ -35472,16 +35484,6 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
-"wkv" = (
-/obj/structure/railing/mapped,
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ULCZ Eastern Gate";
-	name = "ULCZ Eastern Gate"
-	},
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor/plating,
-/area/site53/llcz/entrance_checkpoint)
 "wmf" = (
 /obj/effect/floor_decal/corner/yellow/half{
 	dir = 4
@@ -37011,18 +37013,16 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
 "ylW" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters{
-	id_tag = "ULCZ External Windows";
-	name = "ULCZ External Windows"
-	},
-/obj/machinery/door/blast/regular{
+/obj/effect/floor_decal/corner/brown/mono,
+/obj/machinery/button/blast_door{
+	dir = 8;
 	id_tag = "ULCZ Checkpoint Lockdown";
 	name = "ULCZ Checkpoint Lockdown";
-	begins_closed = 0
+	pixel_x = 24;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lowertrams/brownline)
 
 (1,1,1) = {"
 azA
@@ -56165,7 +56165,7 @@ aKq
 xTl
 aKq
 aGM
-bhg
+bhy
 aVS
 azA
 agU
@@ -56679,7 +56679,7 @@ wHX
 wHX
 qPN
 bhB
-kbY
+bhg
 agU
 agU
 agU
@@ -56934,10 +56934,10 @@ ebw
 jQI
 lkI
 bgK
-uOY
+sbE
 dpC
+lTO
 fCq
-ylW
 aDO
 aDO
 odC
@@ -57190,11 +57190,11 @@ aDO
 tzd
 gjb
 azx
-viG
+bgJ
 vea
 dpC
 aDO
-ylW
+fCq
 aDO
 aDO
 aDO
@@ -57444,14 +57444,14 @@ pyn
 aDO
 agU
 pXS
-pxg
+qhP
 mBw
 bgF
 bgK
 kVb
 dpC
 aDO
-ylW
+fCq
 aDO
 aDO
 aDO
@@ -57704,11 +57704,11 @@ aaH
 jQI
 aDO
 azx
-viG
+bgJ
 vea
 dpC
+lTO
 fCq
-ylW
 aDO
 aDO
 aDO
@@ -57961,10 +57961,10 @@ aMU
 jQI
 aDO
 bgD
-sbE
-fwS
+mXc
+viG
 bhf
-wkv
+fwS
 agU
 erI
 aDO
@@ -58222,7 +58222,7 @@ wHX
 aDO
 dpC
 aDO
-qhP
+kbY
 aDO
 bpz
 aDO
@@ -59765,7 +59765,7 @@ xvH
 ekr
 adx
 adx
-biy
+ylW
 adx
 adx
 adx
