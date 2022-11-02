@@ -148,7 +148,7 @@ SUBSYSTEM_DEF(jobs)
 	for(var/mob/living/carbon/human/C in SSmobs.mob_list)
 		var/char_name = joining.client.prefs.real_name
 		if(char_name == C.real_name)
-			to_chat (usr, "<span class='danger'>There is a character that already exists with the same name: <b>[C.real_name]</b>, please join with a different one.</span>")
+			to_chat (usr, "<span class='danger'>A character with the name <b>[C.real_name]</b> already exists. Please join with a different name.</span>")
 			return FALSE
 	return TRUE
 
