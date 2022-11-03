@@ -299,10 +299,10 @@
 		/obj/item/ammo_magazine/scp/saiga12/rubbershot = 3,
 		/obj/item/ammo_magazine/scp/saiga12/stunshell = 3,
 		/obj/item/ammo_magazine/scp/saiga12/flash = 4,
-		/obj/item/ammo_magazine/box/beanbag = 4,
-		/obj/item/ammo_magazine/box/rubbershot = 4,
-		/obj/item/ammo_magazine/box/stunshell = 4,
-		/obj/item/ammo_magazine/box/flash = 4,
+		/obj/item/ammo_magazine/box/beanbag = 3,
+		/obj/item/ammo_magazine/box/rubbershot = 3,
+		/obj/item/ammo_magazine/box/stunshell = 3,
+		/obj/item/ammo_magazine/box/flash = 3,
 		/obj/item/clothing/accessory/storage/bandolier = 2,
 	)
 
