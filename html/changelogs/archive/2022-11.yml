@@ -7,3 +7,8 @@
   - config: added a BCCM value to config.
   - admin: Added BCCM for use by admins.
   - server: Added SQL migrations for BCCM functionality.
+2022-11-03:
+  Tsurupeta:
+  - rscadd: You can no longer respawn with the same character name.
+  - admin: change location of player logs storage.
+  - rscadd: You can now heat up tanks using welder.
