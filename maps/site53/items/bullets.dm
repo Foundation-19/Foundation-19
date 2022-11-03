@@ -118,7 +118,7 @@
 	desc = "A rubber 10mm bullet casing."
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/pistol/medium/smg/rubber
-	icon_state = "pistol-casing"
+	icon_state = "pistol-casing-rubber"
 	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/ap10mm
