@@ -21,8 +21,8 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 
 /obj/item/gun/projectile/pistol/mk9
-	name = "MK9 Envy"
-	desc = "Standard issue 9mm pistol of the SCP Foundation."
+	name = "MK9 Foundation Glock"
+	desc = "Standard issue 9mm pistol of the SCP Foundation. Based on the Glock 17 with an added compensator."
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "MK9"
 	w_class = ITEM_SIZE_NORMAL

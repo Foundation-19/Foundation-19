@@ -115,7 +115,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/beret/sec = 1)
-	belt = /obj/item/storage/belt/holster/security/fullglock17
+	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -135,7 +135,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/handcuffs = 1)
-	belt = /obj/item/storage/belt/holster/security/fullglock17
+	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -151,7 +151,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/hos = 1)
-	belt = /obj/item/storage/belt/holster/security/fullglock17
+	belt = /obj/item/storage/belt/holster/security/fullmk9
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
@@ -171,7 +171,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/handcuffs = 1)
-	belt = /obj/item/storage/belt/holster/security/fullglock17
+	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -189,7 +189,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list()
-	belt = /obj/item/storage/belt/holster/security/fullglock17
+	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -206,7 +206,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list()
-	belt = /obj/item/storage/belt/holster/security/fullglock17
+	belt = /obj/item/storage/belt/holster/security/fullmk9
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
@@ -224,7 +224,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/storage/firstaid/adv = 1, /obj/item/storage/firstaid/stab = 1)
-	belt = /obj/item/storage/belt/holster/security/fullglock17
+	belt = /obj/item/storage/belt/holster/security/fullmk9
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
@@ -242,7 +242,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list()
-	belt = /obj/item/storage/belt/holster/security/fullglock17
+	belt = /obj/item/storage/belt/holster/security/fullmk9
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
@@ -296,7 +296,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/handcuffs = 1)
-	belt = /obj/item/storage/belt/holster/security/fullglock17
+	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -313,7 +313,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list()
-	belt = /obj/item/storage/belt/holster/security/fullglock17
+	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp

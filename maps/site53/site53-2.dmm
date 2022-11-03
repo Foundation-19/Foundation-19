@@ -20416,16 +20416,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "bgJ" = (
-/obj/effect/floor_decal/corner/brown/mono,
-/obj/machinery/button/blast_door{
-	dir = 8;
-	id_tag = "ULCZ Checkpoint Lockdown";
-	name = "ULCZ Checkpoint Lockdown";
-	pixel_x = 24;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+/obj/structure/railing/mapped{
+	dir = 4;
+	icon_state = "railing0-1"
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/brownline)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "bgK" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -21038,10 +21034,6 @@
 "bix" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/generalpurpose2)
-"biy" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
 "biz" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
@@ -21578,13 +21570,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "bkh" = (
-/obj/effect/catwalk_plated/white,
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ULCZ Western Gate";
-	name = "ULCZ Western Gate"
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/plating,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "bkm" = (
 /obj/structure/bed/chair,
@@ -24320,19 +24312,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
 "fCq" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters{
-	id_tag = "ULCZ Internal Windows";
-	name = "ULCZ Internal Windows"
-	},
-/obj/machinery/door/blast/regular{
-	id_tag = "ULCZ Checkpoint Lockdown";
-	name = "ULCZ Checkpoint Lockdown";
-	begins_closed = 0
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "fDv" = (
@@ -25025,6 +25005,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
+"gyj" = (
+/obj/effect/catwalk_plated/white,
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ULCZ Western Gate";
+	name = "ULCZ Western Gate"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/entrance_checkpoint)
 "gyC" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -27383,15 +27372,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106containment)
-"kbY" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
 "kcV" = (
 /obj/effect/landmark/start{
 	name = "Bartender"
@@ -28657,11 +28637,14 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
 "lTO" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+/obj/structure/railing/mapped,
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "ULCZ Eastern Gate";
+	name = "ULCZ Eastern Gate"
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/catwalk_plated/white,
+/turf/simulated/floor/plating,
 /area/site53/llcz/entrance_checkpoint)
 "lVz" = (
 /obj/effect/floor_decal/industrial/warning/corner{
@@ -29589,6 +29572,19 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
+"mXc" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "ULCZ Internal Windows";
+	name = "ULCZ Internal Windows"
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "mXo" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
@@ -31004,16 +31000,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
-"pxg" = (
-/obj/structure/railing/mapped,
-/obj/machinery/door/blast/regular{
-	id_tag = "ULCZ Checkpoint Lockdown";
-	name = "ULCZ Checkpoint Lockdown";
-	begins_closed = 0
-	},
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor/plating,
-/area/site53/llcz/entrance_checkpoint)
 "pyn" = (
 /obj/structure/closet{
 	name = "D-Class Prep"
@@ -32620,6 +32606,36 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
+"sbE" = (
+/obj/structure/table/rack,
+/obj/effect/paint_stripe/red,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/ammo_magazine/box/mk9,
+/obj/item/gun/projectile/pistol/mk9,
+/obj/item/gun/projectile/pistol/mk9,
+/obj/item/gun/projectile/pistol/mk9,
+/obj/item/gun/projectile/pistol/mk9,
+/obj/item/gun/projectile/pistol/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/armory)
 "scg" = (
 /obj/effect/floor_decal/industrial/outline/orange,
 /obj/structure/bed/chair{
@@ -32639,6 +32655,22 @@
 /obj/machinery/light,
 /turf/simulated/floor/carpet/green,
 /area/chapel)
+"sdv" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "ULCZ Internal Windows";
+	name = "ULCZ Internal Windows"
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/entrance_checkpoint)
 "sdA" = (
 /obj/structure/table/reinforced,
 /obj/item/device/taperecorder,
@@ -33261,19 +33293,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/reswing/robotics)
-"tbT" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters{
-	id_tag = "ULCZ External Windows";
-	name = "ULCZ External Windows"
-	},
-/obj/machinery/door/blast/regular{
-	id_tag = "ULCZ Checkpoint Lockdown";
-	name = "ULCZ Checkpoint Lockdown";
-	begins_closed = 0
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
 "tcK" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -33406,6 +33425,17 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/containment_engineer)
+"tmf" = (
+/obj/effect/floor_decal/corner/brown/mono,
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	pixel_x = 24;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lowertrams/brownline)
 "tmK" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -34413,6 +34443,16 @@
 /obj/effect/floor_decal/corner/red/borderfull,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
+"uOY" = (
+/obj/structure/railing/mapped,
+/obj/machinery/door/blast/regular{
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	begins_closed = 0
+	},
+/obj/effect/catwalk_plated/white,
+/turf/simulated/floor/plating,
+/area/site53/llcz/entrance_checkpoint)
 "uPv" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
@@ -35475,15 +35515,18 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
 "wkv" = (
-/obj/machinery/button/blast_door{
-	dir = 1;
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "ULCZ External Windows";
+	name = "ULCZ External Windows"
+	},
+/obj/machinery/door/blast/regular{
 	id_tag = "ULCZ Checkpoint Lockdown";
 	name = "ULCZ Checkpoint Lockdown";
-	pixel_y = -23;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	begins_closed = 0
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/hallways)
+/area/site53/llcz/entrance_checkpoint)
 "wmf" = (
 /obj/effect/floor_decal/corner/yellow/half{
 	dir = 4
@@ -35849,19 +35892,6 @@
 /obj/effect/floor_decal/corner/black/full,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/hczguardgear)
-"wHX" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters{
-	id_tag = "ULCZ Internal Windows";
-	name = "ULCZ Internal Windows"
-	},
-/obj/machinery/door/blast/regular{
-	id_tag = "ULCZ Checkpoint Lockdown";
-	name = "ULCZ Checkpoint Lockdown";
-	begins_closed = 0
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/entrance_checkpoint)
 "wIt" = (
 /obj/effect/landmark/test/space_turf,
 /turf/simulated/floor,
@@ -36606,50 +36636,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
-"xLS" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/gun/projectile/pistol/glock17,
-/obj/item/gun/projectile/pistol/glock17,
-/obj/item/gun/projectile/pistol/glock17,
-/obj/item/gun/projectile/pistol/glock17,
-/obj/item/gun/projectile/pistol/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/obj/item/ammo_magazine/scp/glock17,
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
 "xLV" = (
 /obj/effect/floor_decal/corner/orange/mono,
 /obj/structure/cable{
@@ -37013,15 +36999,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
 "ylW" = (
-/obj/structure/railing/mapped,
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ULCZ Eastern Gate";
-	name = "ULCZ Eastern Gate"
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "ULCZ Checkpoint Lockdown";
+	name = "ULCZ Checkpoint Lockdown";
+	pixel_y = -23;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor/plating,
-/area/site53/llcz/entrance_checkpoint)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 
 (1,1,1) = {"
 azA
@@ -37898,7 +37884,7 @@ aMC
 aVM
 bbj
 bde
-xLS
+aXh
 aMC
 aMC
 azA
@@ -38413,7 +38399,7 @@ aVL
 bde
 bhm
 aXh
-aao
+sbE
 aMC
 azA
 azA
@@ -56164,7 +56150,7 @@ aKq
 xTl
 aKq
 aGM
-wkv
+ylW
 aVS
 azA
 agU
@@ -56674,9 +56660,9 @@ agU
 agU
 cqF
 aVi
-wHX
-wHX
-bkh
+mXc
+mXc
+gyj
 bhB
 qPN
 agU
@@ -56933,10 +56919,10 @@ ebw
 jQI
 lkI
 bgK
-lTO
+bgJ
 dpC
-biy
-tbT
+fCq
+wkv
 aDO
 aDO
 odC
@@ -57193,7 +57179,7 @@ viG
 vea
 dpC
 aDO
-tbT
+wkv
 aDO
 aDO
 aDO
@@ -57443,14 +57429,14 @@ pyn
 aDO
 agU
 pXS
-kbY
+bkh
 mBw
 bgF
 bgK
 kVb
 dpC
 aDO
-tbT
+wkv
 aDO
 aDO
 aDO
@@ -57706,8 +57692,8 @@ azx
 viG
 vea
 dpC
-biy
-tbT
+fCq
+wkv
 aDO
 aDO
 aDO
@@ -57960,10 +57946,10 @@ aMU
 jQI
 aDO
 bgD
-fCq
+sdv
 fwS
 bhf
-ylW
+lTO
 agU
 erI
 aDO
@@ -58217,11 +58203,11 @@ tzd
 gjb
 aDO
 aVw
-wHX
+mXc
 aDO
 dpC
 aDO
-pxg
+uOY
 aDO
 bpz
 aDO
@@ -58474,7 +58460,7 @@ ycD
 aVb
 aDO
 lKF
-wHX
+mXc
 blf
 uDy
 xSS
@@ -58730,8 +58716,8 @@ agU
 agU
 agU
 bgI
-wHX
-wHX
+mXc
+mXc
 agU
 agU
 agU
@@ -59764,7 +59750,7 @@ xvH
 ekr
 adx
 adx
-bgJ
+tmf
 adx
 adx
 adx
