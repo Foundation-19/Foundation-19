@@ -254,11 +254,9 @@
 		/obj/item/gun/projectile/automatic/scp/saiga12 = 2,
 		/obj/item/ammo_magazine/box/buckshot = 4,
 		/obj/item/ammo_magazine/box/slug = 4,
-		/obj/item/ammo_magazine/box/beanbag = 4,
 		/obj/item/ammo_magazine/box/emp = 2,
 		/obj/item/ammo_magazine/scp/saiga12 = 6,
-		/obj/item/ammo_magazine/scp/saiga12/emp = 6,
-		/obj/item/ammo_magazine/scp/saiga12/beanbag = 6,
+		/obj/item/ammo_magazine/scp/saiga12/emp = 4,
 		/obj/item/ammo_magazine/scp/saiga12/buckshot = 6,
 		/obj/item/clothing/accessory/storage/bandolier = 2
 	)
