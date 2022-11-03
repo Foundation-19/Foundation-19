@@ -125,7 +125,7 @@
 /obj/item/ammo_magazine/scp/m16_mag/empty
 	initial_ammo = 0
 
-/obj/item/ammo_magazine/scp/m16_magext
+/obj/item/ammo_magazine/scp/m16_mag/ext
 	name = "magazine (5.56)"
 	icon_state = "m16"
 	origin_tech = list(TECH_COMBAT = 2)
