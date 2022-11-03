@@ -56,7 +56,7 @@
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/helmet/scp/hczsecurityguard,
 		/obj/item/clothing/head/beret/sec/corporate/officer,
-		/obj/item/ammo_magazine/scp/glock17 = 3
+		/obj/item/ammo_magazine/scp/mk9 = 3
 	)
 
 /obj/structure/closet/secure_closet/mtf/nco
@@ -84,7 +84,7 @@
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/helmet/scp/hczsecurityguard,
 		/obj/item/clothing/head/beret/sec/corporate/warden,
-		/obj/item/ammo_magazine/scp/glock17 = 3
+		/obj/item/ammo_magazine/scp/mk9 = 3
 	)
 /obj/structure/closet/secure_closet/mtf/enlisted/hcz
 	name = "HCZ Guard's Locker"
@@ -108,7 +108,7 @@
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/beret/sec/corporate/officer,
-		/obj/item/ammo_magazine/scp/glock17 = 3
+		/obj/item/ammo_magazine/scp/mk9 = 3
 	)
 
 /obj/structure/closet/secure_closet/mtf/nco/hcz
@@ -131,7 +131,7 @@
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/beret/sec/corporate/warden,
-		/obj/item/ammo_magazine/scp/glock17 = 3
+		/obj/item/ammo_magazine/scp/mk9 = 3
 	)
 
 /obj/structure/closet/secure_closet/mtf/enlisted/ez
@@ -151,7 +151,7 @@
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/gun/energy/taser,
-		/obj/item/ammo_magazine/scp/glock17 = 3
+		/obj/item/ammo_magazine/scp/mk9 = 3
 	)
 
 /obj/structure/closet/secure_closet/mtf/nco/ez
@@ -171,7 +171,7 @@
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/gun/energy/taser,
-		/obj/item/ammo_magazine/scp/glock17 = 3
+		/obj/item/ammo_magazine/scp/mk9 = 3
 	)
 
 /obj/structure/closet/secure_closet/mtf/commander
@@ -192,8 +192,8 @@
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/clothing/head/beret/sec/corporate/hos,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-		/obj/item/gun/projectile/pistol/glock17,
-		/obj/item/ammo_magazine/scp/glock17 = 3,
+		/obj/item/gun/projectile/pistol/mk9,
+		/obj/item/ammo_magazine/scp/mk9 = 3,
 		/obj/item/ammo_magazine/box/mk9
 	)
 
@@ -442,8 +442,8 @@
 		/obj/item/clothing/glasses/night,
 		/obj/item/clothing/accessory/ubac,
 		/obj/item/storage/backpack/rucksack,
-		/obj/item/gun/projectile/pistol/glock17,
-		/obj/item/ammo_magazine/scp/glock17 = 3,
+		/obj/item/gun/projectile/pistol/mk9,
+		/obj/item/ammo_magazine/scp/mk9 = 3,
 		/obj/item/ammo_magazine/box/mk9,
 		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/melee/telebaton,

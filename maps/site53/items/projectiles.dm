@@ -55,16 +55,6 @@
 	max_ammo = 10
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/scp/glock17
-	name = "G17 magazine"
-	icon_state = "glock17"
-	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/c9mm
-	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = "9mm"
-	max_ammo = 17
-	multiple_sprites = 1
-
 /obj/item/ammo_magazine/scp/mk9
 	name = "MK9 magazine"
 	icon_state = "9mmds"
