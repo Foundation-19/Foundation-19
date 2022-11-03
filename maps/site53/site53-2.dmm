@@ -28319,45 +28319,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
-"lFu" = (
-/obj/structure/table/rack,
-/obj/effect/floor_decal/corner/black/full,
-/obj/item/ammo_magazine/scp/m60,
-/obj/item/ammo_magazine/scp/m60,
-/obj/item/ammo_magazine/scp/m60,
-/obj/item/ammo_magazine/scp/m60,
-/obj/item/ammo_magazine/scp/m60,
-/obj/item/ammo_magazine/scp/m60,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/gun/projectile/automatic/scp/m60,
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
 "lFx" = (
 /obj/effect/paint_stripe/yellow,
 /obj/machinery/button/blast_door{
@@ -28824,7 +28785,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
 "mfw" = (
-/obj/structure/table/rack,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -96519,7 +96479,7 @@ ixi
 tpZ
 tpZ
 mfw
-lFu
+aDD
 ixi
 ixi
 azA

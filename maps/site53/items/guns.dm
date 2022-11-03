@@ -35,20 +35,6 @@
 	allowed_magazines = list(/obj/item/ammo_magazine/scp/mk9, /obj/item/ammo_magazine/scp/mk9/rubber)
 
 
-/obj/item/gun/projectile/pistol/glock17
-	name = "Glock 17"
-	desc = "Standard issue 9mm pistol of the SCP Foundation."
-	icon = 'icons/obj/gun.dmi'
-	icon_state = "glock17"
-	w_class = ITEM_SIZE_NORMAL
-	caliber = "9mm"
-	silenced = 0
-	fire_delay = 2
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 2)
-	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/scp/glock17
-	allowed_magazines = list(/obj/item/ammo_magazine/scp/glock17)
-
 /obj/item/gun/projectile/revolver/mateba
 	name = "mateba"
 	desc = "Standard issue Foundation revolver based on the Mateba Unica. Chambered in .44 Magnum"
