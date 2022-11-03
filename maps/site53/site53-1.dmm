@@ -162,14 +162,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
-"av" = (
-/obj/structure/bed/chair,
-/obj/machinery/light{
-	dir = 4;
-	pixel_x = 12
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/checkpoint)
 "aw" = (
 /obj/structure/bookcase/manuals/medical,
 /turf/simulated/floor/wood/walnut,
@@ -1647,18 +1639,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
 "dA" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "Reeducation Lockdown"
+/obj/structure/closet,
+/obj/machinery/light/spot{
+	dir = 1
 	},
-/obj/machinery/door/blast/shutters{
-	begins_closed = 0;
-	id_tag = "Isocell 1 shutter";
-	name = "Isocell 1 shutter"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/reeducation)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/checkpoint)
 "dB" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -6102,6 +6088,29 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
+"og" = (
+/obj/structure/table/standard,
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	dir = 8;
+	id_tag = "DCZ Entrance Lockdown";
+	name = "DCZ Entrance Lockdown"
+	},
+/obj/machinery/door/blast/shutters{
+	id_tag = "DCZ Booth Windows South";
+	name = "DCZ Booth Windows South"
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Secure booth"
+	},
+/obj/machinery/door/window/brigdoor{
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	name = "Secure booth";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/checkpointoverlook)
 "oh" = (
 /obj/machinery/button/blast_door{
 	id_tag = "Common Window Shutter";
@@ -6580,28 +6589,8 @@
 /turf/simulated/floor,
 /area/site53/engineering/maintenance/lowerselfdestruct)
 "pE" = (
-/obj/structure/table/standard,
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	dir = 8;
-	id_tag = "DCZ Entrance Lockdown";
-	name = "DCZ Entrance Lockdown"
-	},
-/obj/machinery/door/blast/shutters{
-	id_tag = "DCZ Booth Windows South";
-	name = "DCZ Booth Windows South"
-	},
-/obj/machinery/door/window/brigdoor{
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	name = "Secure booth"
-	},
-/obj/machinery/door/window/brigdoor{
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	name = "Secure booth";
-	dir = 1
-	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/checkpointoverlook)
+/area/site53/llcz/dclass/isolation)
 "pF" = (
 /obj/machinery/camera/network/lcz{
 	dir = 8
@@ -9325,9 +9314,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
-"wp" = (
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/isolation)
 "wq" = (
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/industrial/warning{
@@ -11583,6 +11569,19 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkequip)
+"CY" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "Reeducation Lockdown"
+	},
+/obj/machinery/door/blast/shutters{
+	begins_closed = 0;
+	id_tag = "Isocell 1 shutter";
+	name = "Isocell 1 shutter"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/reeducation)
 "CZ" = (
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -18511,9 +18510,10 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/kitchen)
 "XT" = (
-/obj/structure/closet,
-/obj/machinery/light/spot{
-	dir = 1
+/obj/structure/bed/chair,
+/obj/machinery/light{
+	dir = 4;
+	pixel_x = 12
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
@@ -30101,7 +30101,7 @@ hy
 hy
 hy
 Ks
-XT
+dA
 rE
 fi
 TA
@@ -30661,7 +30661,7 @@ gq
 gq
 gq
 qu
-wp
+pE
 UN
 qu
 gq
@@ -34473,7 +34473,7 @@ Fg
 va
 DT
 aK
-pE
+og
 je
 rE
 Dx
@@ -34972,16 +34972,16 @@ Az
 dU
 iE
 lG
-dA
-dA
-dA
+CY
+CY
+CY
 lG
 Bl
 kY
 WF
 CX
 dk
-av
+XT
 rE
 pX
 lW
