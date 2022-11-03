@@ -20551,21 +20551,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/maintenance)
-"bhf" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/effect/catwalk_plated/white,
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ULCZ Eastern Gate";
-	name = "ULCZ Eastern Gate"
-	},
-/turf/simulated/floor/plating,
-/area/site53/llcz/entrance_checkpoint)
 "bhg" = (
 /obj/machinery/button/blast_door{
 	dir = 1;
@@ -23628,7 +23613,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
 "erI" = (
-/obj/machinery/camera/network/lcz,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "esS" = (
@@ -24294,7 +24281,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/upper_surface/serverfarmcontrol)
 "fwS" = (
-/obj/structure/railing/mapped,
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
 	id_tag = "ULCZ Eastern Gate";
@@ -24389,16 +24375,10 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "fGE" = (
-/obj/effect/catwalk_plated/white,
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ULCZ Eastern Gate";
-	name = "ULCZ Eastern Gate"
-	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "fHf" = (
 /obj/effect/floor_decal/corner/red/diagonal,
@@ -25030,14 +25010,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "gyj" = (
-/obj/structure/railing/mapped,
-/obj/machinery/door/blast/regular{
-	id_tag = "ULCZ Checkpoint Lockdown";
-	name = "ULCZ Checkpoint Lockdown";
-	begins_closed = 0
+/obj/structure/table/standard,
+/obj/machinery/photocopier{
+	pixel_y = 3
 	},
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "gyC" = (
 /obj/structure/cable/green{
@@ -27899,14 +27876,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/hallways)
 "kVb" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile/white,
+/turf/unsimulated/mineral,
 /area/site53/llcz/entrance_checkpoint)
 "kVA" = (
 /obj/structure/bed/chair,
@@ -28384,12 +28354,12 @@
 /turf/simulated/floor/plating,
 /area/site53/engineering/atmos)
 "lKF" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier{
-	pixel_y = 3
-	},
-/obj/machinery/light{
+/obj/effect/floor_decal/industrial/outline/orange,
+/obj/structure/railing/mapped{
 	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
@@ -28653,10 +28623,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
 "lTO" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/light{
+	dir = 4
 	},
+/obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "lVz" = (
@@ -31988,18 +31960,19 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
 "rcM" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/light{
-	dir = 4
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/shutters{
+	id_tag = "ULCZ External Windows";
+	name = "ULCZ External Windows"
 	},
-/obj/effect/catwalk_plated/white,
 /obj/machinery/door/blast/regular{
 	id_tag = "ULCZ Checkpoint Lockdown";
 	name = "ULCZ Checkpoint Lockdown";
 	begins_closed = 0
 	},
-/turf/simulated/floor/plating,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "rdt" = (
 /obj/machinery/light{
@@ -34724,6 +34697,12 @@
 /area/site53/reswing/xenobiology)
 "vea" = (
 /obj/effect/floor_decal/industrial/outline/orange,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "veT" = (
@@ -56620,7 +56599,7 @@ qPN
 bhB
 biy
 agU
-agU
+kVb
 agU
 agU
 fYk
@@ -56873,12 +56852,12 @@ ebw
 jQI
 lkI
 bgK
-lTO
+aDO
 dpC
 ewJ
-sbE
-aDO
-aDO
+agU
+agU
+agU
 odC
 aDO
 odC
@@ -57134,8 +57113,8 @@ vea
 dpC
 aDO
 sbE
-aDO
-aDO
+aDR
+odC
 aDO
 aDO
 vVl
@@ -57387,11 +57366,11 @@ wkv
 mBw
 bgF
 bgK
-kVb
+aDO
 dpC
 aDO
 sbE
-aDO
+aDR
 aDO
 aDO
 aDO
@@ -57644,11 +57623,11 @@ jQI
 aDO
 azx
 viG
-vea
+lKF
 dpC
-ewJ
-sbE
 aDO
+fwS
+fGE
 aDO
 aDO
 aDO
@@ -57901,10 +57880,10 @@ jQI
 aDO
 bgD
 qhP
-fGE
-bhf
+aDO
+dpC
+aDO
 fwS
-agU
 erI
 aDO
 aDO
@@ -58156,13 +58135,13 @@ sek
 tzd
 gjb
 aDO
-aVw
-mXc
+aDO
+bgI
 aDO
 dpC
 aDO
-gyj
-aDO
+sbE
+aDR
 bpz
 aDO
 iCg
@@ -58411,15 +58390,15 @@ imN
 blf
 riw
 ycD
+gyj
+aVw
 aVb
-aDO
-lKF
 mXc
 blf
 uDy
 xSS
 rcM
-xSS
+lTO
 ren
 cYI
 hgr
@@ -58669,9 +58648,9 @@ agU
 agU
 agU
 agU
-bgI
-mXc
-mXc
+agU
+agU
+agU
 agU
 agU
 agU

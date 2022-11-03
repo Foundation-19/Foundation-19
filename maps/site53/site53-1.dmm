@@ -438,7 +438,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/medical{
 	name = "Morgue";
-	req_access = list("ACCESS_MEDICAL_LEVEL1")
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1121,13 +1121,15 @@
 /area/site53/llcz/dclass/entrance_checkpoint)
 "cy" = (
 /obj/structure/crematorium{
-	id = "CDC medical crematorium"
+	id = "CDC medical crematorium";
+	id_tag = "CDC medical crematorium"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/medicalpost/morgue)
 "cz" = (
 /obj/machinery/button/crematorium{
-	id_tag = "CDC medical crematorium"
+	id_tag = "CDC medical crematorium";
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
 	},
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/medicalpost/morgue)
@@ -12368,7 +12370,7 @@
 	},
 /obj/machinery/door/window/brigdoor/northleft{
 	name = "Medbay Secure";
-	req_access = list("ACCESS_MEDICAL_LEVEL2")
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -15205,7 +15207,7 @@
 	},
 /obj/machinery/door/window/brigdoor/northright{
 	name = "Medbay Secure";
-	req_access = list("ACCESS_MEDICAL_LEVEL2")
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
 	},
 /obj/machinery/firealarm{
 	dir = 4;
@@ -16377,7 +16379,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/medical{
 	name = "Medical Storage";
-	req_access = list("ACCESS_MEDICAL_LEVEL2")
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
@@ -16565,7 +16567,7 @@
 /obj/effect/floor_decal/industrial/firstaid/corner,
 /obj/machinery/door/airlock/medical{
 	name = "Surgery";
-	req_access = list("ACCESS_MEDICAL_LEVEL2")
+	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
 	},
 /obj/structure/cable/green{
 	d1 = 1;
