@@ -1119,20 +1119,6 @@
 /obj/structure/closet/secure_closet/mtf/specialistshotgun,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/entrance_checkpoint)
-"cy" = (
-/obj/structure/crematorium{
-	id = "CDC medical crematorium";
-	id_tag = "CDC medical crematorium"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/medicalpost/morgue)
-"cz" = (
-/obj/machinery/button/crematorium{
-	id_tag = "CDC medical crematorium";
-	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
-	},
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/medicalpost/morgue)
 "cA" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/window/reinforced,
@@ -23161,7 +23147,7 @@ ua
 ua
 pC
 Zr
-cy
+UX
 FB
 FB
 WS
@@ -23418,7 +23404,7 @@ ua
 ua
 pC
 Zr
-cz
+Zr
 FB
 Lb
 Zr
