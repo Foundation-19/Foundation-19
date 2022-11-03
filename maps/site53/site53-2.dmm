@@ -2439,9 +2439,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/maintenance{
-	req_access = list("")
-	},
+/obj/machinery/door/airlock/maintenance,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -24395,12 +24393,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/uppernukeladders)
 "fHr" = (
-/obj/effect/paint_stripe/yellow,
 /obj/machinery/door/airlock/maintenance{
-	req_access = list("");
 	name = "Recycling Center"
 	},
-/turf/simulated/wall/prepainted,
+/turf/simulated/floor/plating,
 /area/site53/lowertrams/maintenance)
 "fKV" = (
 /obj/structure/flora/pottedplant/orientaltree,
@@ -27581,15 +27577,6 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
-"kxb" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 1
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/surface/explorers)
 "kxW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/item/device/radio/intercom/locked{
@@ -68691,7 +68678,7 @@ beP
 beP
 bfx
 aSs
-kxb
+bfI
 bfP
 aSs
 bga
