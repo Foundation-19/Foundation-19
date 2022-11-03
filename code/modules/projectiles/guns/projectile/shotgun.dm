@@ -57,20 +57,20 @@
 	name = "SPAS-12 Riot Shotgun"
 	desc = "A hybrid pump/semi auto shotgun intended for law enforcement use. Used by the Foundation to maintain crowds of D-Classes at bay."
 	icon = 'icons/obj/gun.dmi'
-	icon_state = "spas12"
+	icon_state = "cshotgun"
 	item_state = "cshotgun"
 	wielded_item_state = "cshotgun-wielded"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
-	max_shells = 9
+	max_shells = 7
 	ammo_type = /obj/item/ammo_casing/shotgun
 	one_hand_penalty = 8
 
 /obj/item/gun/projectile/shotgun/pump/combat/on_update_icon()
-	..()
-	if(length(loaded))
-		icon_state = initial(icon_state)
-	else
-		icon_state = "[initial(icon_state)]-empty"
+	if(length(loaded) > 3)
+		for(var/i = 0 to length(loaded) - 4)
+			var/image/I = image(icon, "shell")
+			I.pixel_x = i * 2
+			add_overlay(I)
 
 /obj/item/gun/projectile/shotgun/pump/combat/slug
 	ammo_type = /obj/item/ammo_casing/shotgun
