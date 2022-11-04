@@ -11216,9 +11216,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
-"Wv" = (
-/turf/simulated/floor/tiled/white,
-/area/space)
 "Ww" = (
 /obj/machinery/chemical_dispenser/full,
 /obj/effect/floor_decal/corner/purple/mono,
@@ -35333,8 +35330,8 @@ ee
 io
 PX
 jP
-Wv
-Wv
+iX
+iX
 dm
 dm
 dm
