@@ -1,0 +1,5 @@
+author: MACIEKBAKI
+delete-after: true
+changes:
+  - bugfix: EZ Med Storage gravity should work properly (just before the doors, that
+      one)
