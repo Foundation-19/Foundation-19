@@ -9413,6 +9413,8 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/item/gun/energy/ionrifle,
+/obj/item/gun/energy/ionrifle/small,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "Hl" = (

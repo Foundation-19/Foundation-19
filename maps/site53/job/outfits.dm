@@ -134,7 +134,7 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/handcuffs = 1)
+	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/clothing/glasses/sunglasses/sechud/goggles = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
@@ -170,7 +170,7 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/handcuffs = 1)
+	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/clothing/glasses/sunglasses/sechud/goggles = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
@@ -295,7 +295,7 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/handcuffs = 1)
+	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/clothing/glasses/sunglasses/sechud/goggles = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
