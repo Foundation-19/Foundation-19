@@ -207,65 +207,6 @@
 	max_ammo = 7
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/scp/mp5mag
-	name = "MP5 Magazine"
-	icon_state = "mp5"
-	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/c9mm
-	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = "9mm"
-	max_ammo = 30
-	multiple_sprites = 1
-
-
-/obj/item/ammo_magazine/scp/ar12
-	name = "AR12 Magazine (Slug)"
-	icon_state = "fal-0"
-	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/shotgun
-	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = CALIBER_SHOTGUN
-	max_ammo = 12
-
-
-/obj/item/ammo_magazine/scp/ar12/beanbag
-	name = "AR12 Magazine (Beanbag)"
-	icon_state = "fal-0"
-	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
-	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = CALIBER_SHOTGUN
-	max_ammo = 12
-
-
-/obj/item/ammo_magazine/scp/ar12/buckshot
-	name = "AR12 Magazine (Buckshot)"
-	icon_state = "fal-0"
-	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/shotgun/pellet
-	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = CALIBER_SHOTGUN
-	max_ammo = 12
-
-
-/obj/item/ammo_magazine/scp/m60
-	name = "LMG Box Magazine (5.56)"
-	icon_state = "b762x54"
-	origin_tech = list(TECH_COMBAT = 2)
-	mag_type = MAGAZINE
-	caliber = "a556"
-	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	ammo_type = /obj/item/ammo_casing/a556
-	max_ammo = 100
-	multiple_sprites = 1
-	w_class = ITEM_SIZE_LARGE
-
-/obj/item/ammo_magazine/scp/m60/empty
-	initial_ammo = 0
-
-
-
-
 /obj/item/ammo_magazine/scp/saiga12
 	name = "Saiga12 Magazine (Slug)"
 	icon_state = "saiga12"
@@ -274,7 +215,6 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = CALIBER_SHOTGUN
 	max_ammo = 8
-
 
 /obj/item/ammo_magazine/scp/saiga12/beanbag
 	name = "Saiga12 Magazine (Beanbag)"
@@ -302,7 +242,6 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = CALIBER_SHOTGUN
 	max_ammo = 8
-
 
 /obj/item/ammo_magazine/scp/saiga12/flash
 	name = "Saiga12 Magazine (Crowd Dispersing Flash)"
