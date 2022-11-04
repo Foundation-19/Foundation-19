@@ -2089,23 +2089,14 @@
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/reeducation)
 "eD" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	dir = 8;
-	id_tag = "DCZ Entrance Lockdown";
-	name = "DCZ Entrance Lockdown"
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
 	},
+/obj/structure/table/reinforced,
 /obj/machinery/door/blast/shutters{
 	id_tag = "DCZ Booth Windows South";
 	name = "DCZ Booth Windows South"
-	},
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/obj/structure/window/reinforced{
-	dir = 3
-	},
-/obj/structure/window/reinforced{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/checkpointoverlook)
@@ -4152,6 +4143,12 @@
 	},
 /obj/structure/cable/green{
 	icon_state = "1-2"
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "Mining Checkpoint Lockdown";
+	name = "Mining Checkpoint Lockdown";
+	pixel_x = -32;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchenbotanybubble)
@@ -6625,32 +6622,19 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/entrance_checkpoint)
 "pQ" = (
-/obj/structure/table/reinforced{
-	dir = 1
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /obj/item/pen,
 /obj/item/paper_bin,
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	dir = 8;
-	id_tag = "DCZ Entrance Lockdown";
-	name = "DCZ Entrance Lockdown"
-	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "DCZ Booth Windows South";
 	name = "DCZ Booth Windows South"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/window/reinforced{
-	dir = 3
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/checkpointoverlook)
 "pR" = (
@@ -9400,7 +9384,9 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/closet,
+/obj/structure/table/reinforced,
+/obj/item/boombox,
+/obj/item/device/megaphone,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchenbotanybubble)
 "wE" = (
@@ -9982,8 +9968,6 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/medicalpost)
 "yi" = (
-/obj/item/device/megaphone,
-/obj/structure/table/reinforced,
 /obj/machinery/power/apc{
 	dir = 1;
 	pixel_y = 18
@@ -9992,7 +9976,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/item/boombox,
+/obj/structure/closet,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchenbotanybubble)
 "yk" = (
@@ -11178,7 +11162,8 @@
 	},
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "CDZMedbaywin";
-	name = "CDZ Medbay Window Shutters"
+	name = "CDZ Medbay Window Shutters";
+	begins_closed = 1
 	},
 /obj/machinery/button/alternate/door{
 	id_tag = "LobbyMedD"
@@ -12644,16 +12629,17 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
 "Ge" = (
-/obj/effect/paint_stripe/gray,
+/obj/machinery/light{
+	dir = 1
+	},
 /obj/machinery/button/blast_door{
-	dir = 3;
 	id_tag = "Mining Lockdown";
 	name = "Mining Lockdown";
-	pixel_x = 4;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+	pixel_y = 32;
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/checkpointoverlook)
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/recreationhallway)
 "Gf" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -13513,7 +13499,8 @@
 	},
 /obj/machinery/door/blast/shutters/open{
 	id_tag = "CDZMedbaywin";
-	name = "CDZ Medbay Window Shutters"
+	name = "CDZ Medbay Window Shutters";
+	begins_closed = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
@@ -13759,7 +13746,7 @@
 	id_tag = "Mining Checkpoint Lockdown";
 	name = "Mining Checkpoint Lockdown";
 	pixel_y = 32;
-	req_access = list("ACCESS_SCIENCE_LEVEL1")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/recreationhallway)
@@ -35487,7 +35474,7 @@ dk
 sf
 rQ
 rQ
-Ge
+rQ
 rQ
 rQ
 db
@@ -37300,7 +37287,7 @@ gV
 gV
 rF
 hk
-Jh
+Ge
 iK
 CJ
 fT
@@ -38842,7 +38829,7 @@ gV
 gV
 rF
 hk
-Jh
+Ge
 iK
 fo
 fX
