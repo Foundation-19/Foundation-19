@@ -272,6 +272,42 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	max_ammo = 30
 
+/obj/item/ammo_magazine/box/rubbershot
+	name = "ammunition box (Rubbershot)"
+	icon_state = "ammobox"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = CALIBER_SHOTGUN
+	matter = list(DEFAULT_WALL_MATERIAL = 2250)
+	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
+	max_ammo = 30
+
+/obj/item/ammo_magazine/box/stunshell
+	name = "ammunition box (Stunshell)"
+	icon_state = "ammobox"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = CALIBER_SHOTGUN
+	matter = list(DEFAULT_WALL_MATERIAL = 2250)
+	ammo_type = /obj/item/ammo_casing/shotgun/stunshell
+	max_ammo = 30
+
+/obj/item/ammo_magazine/box/flash
+	name = "ammunition box (Flash)"
+	icon_state = "ammobox"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = CALIBER_SHOTGUN
+	matter = list(DEFAULT_WALL_MATERIAL = 2250)
+	ammo_type = /obj/item/ammo_casing/shotgun/flash
+	max_ammo = 30
+
+/obj/item/ammo_magazine/box/emp
+	name = "ammunition box (EMP)"
+	icon_state = "ammobox"
+	origin_tech = list(TECH_COMBAT = 2)
+	caliber = CALIBER_SHOTGUN
+	matter = list(DEFAULT_WALL_MATERIAL = 2250)
+	ammo_type = /obj/item/ammo_casing/shotgun/emp
+	max_ammo = 30
+
 
 // 45acp
 /obj/item/ammo_magazine/box/acp45

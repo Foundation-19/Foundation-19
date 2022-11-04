@@ -479,13 +479,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"bg" = (
-/obj/machinery/button/blast_door{
-	id_tag = "EZ Checkpoint East";
-	name = "EZ Checkpoint East"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "bh" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -1078,13 +1071,6 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/entrancezone/securitypost)
-"co" = (
-/obj/machinery/button/blast_door{
-	id_tag = "EZ Checkpoint Staircase";
-	name = "EZ Checkpoint Staircase"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "cp" = (
 /obj/structure/cable/green{
 	d2 = 2;
@@ -1128,51 +1114,31 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "ct" = (
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/clothing/accessory/storage/bandolier,
-/obj/item/clothing/accessory/storage/bandolier,
-/obj/item/clothing/accessory/storage/bandolier,
-/obj/item/clothing/accessory/storage/bandolier,
-/obj/item/clothing/accessory/storage/bandolier,
-/obj/item/ammo_magazine/box/buckshot,
-/obj/item/ammo_magazine/box/buckshot,
-/obj/item/ammo_magazine/box/buckshot,
-/obj/item/ammo_magazine/box/buckshot,
-/obj/item/ammo_magazine/box/buckshot,
-/obj/item/ammo_magazine/box/slug,
-/obj/item/ammo_magazine/box/slug,
-/obj/item/ammo_magazine/box/slug,
-/obj/item/ammo_magazine/box/slug,
-/obj/item/ammo_magazine/box/slug,
 /obj/structure/closet,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
 /turf/simulated/floor/tiled,
 /area/site53/uez/armory)
-"cu" = (
-/obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "UEZ Checkpoint Bubble";
-	name = "UEZ Checkpoint Bubble";
-	pixel_y = -23
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "cv" = (
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/titanium,
 /area/site53/uez/janitor)
-"cw" = (
-/obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "EZ Checkpoint Access";
-	name = "EZ Checkpoint Access";
-	pixel_y = -23
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "cx" = (
 /obj/structure/closet/secure_closet/medical3{
 	name = "surgeon's locker";
@@ -1200,13 +1166,6 @@
 	},
 /turf/simulated/wall/titanium,
 /area/site53/maintenance/surfaceeast)
-"cz" = (
-/obj/machinery/button/blast_door{
-	id_tag = "EZ Checkpoint West";
-	name = "EZ Checkpoint West"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "cA" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/light,
@@ -1874,13 +1833,6 @@
 /obj/structure/cable/green,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op2)
-"ea" = (
-/obj/machinery/button/blast_door{
-	id_tag = "EZ Security Maintenance Hatch";
-	name = "EZ Security Maintenance Hatch"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "eb" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -1949,13 +1901,6 @@
 /obj/structure/iv_drip,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/hall)
-"ej" = (
-/obj/machinery/button/blast_door{
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "ek" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/power/apc{
@@ -2112,16 +2057,98 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "eD" = (
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/uez/armory)
 "eE" = (
 /obj/structure/railing/mapped{
@@ -5040,6 +5067,11 @@
 /obj/item/ammo_magazine/scp/p90_mag/ap,
 /obj/item/ammo_magazine/scp/p90_mag/ap,
 /obj/item/ammo_magazine/box/a45,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "mh" = (
@@ -7052,6 +7084,16 @@
 /obj/effect/floor_decal/carpet/blue2{
 	dir = 5
 	},
+/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
 /turf/simulated/floor/carpet/blue2,
 /area/site53/zonecommanderoffice)
 "sT" = (
@@ -8429,31 +8471,26 @@
 /obj/item/ammo_magazine/box/mk9,
 /obj/item/ammo_magazine/box/mk9,
 /obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/box/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
 /obj/item/gun/projectile/pistol/mk9,
 /obj/item/gun/projectile/pistol/mk9,
 /obj/item/gun/projectile/pistol/mk9,
 /obj/item/gun/projectile/pistol/mk9,
 /obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "zH" = (
@@ -9348,10 +9385,31 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "Hj" = (
-/obj/structure/table/standard,
-/obj/item/storage/pill_bottle/amnesticsa,
-/obj/item/storage/pill_bottle/amnesticsb,
-/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/structure/table/rack,
+/obj/item/gun/projectile/pistol/usp45,
+/obj/item/gun/projectile/pistol/usp45,
+/obj/item/gun/projectile/pistol/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/scp/usp45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/a45,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -9399,6 +9457,31 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/exam_room)
+"Hz" = (
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/box/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/item/ammo_magazine/scp/saiga12/emp,
+/obj/structure/table/rack,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/armory)
 "HG" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/corner/red/half{
@@ -9759,10 +9842,98 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/isolation)
 "KR" = (
-/obj/structure/closet/secure_closet/mtf/breachautomatics,
-/obj/item/ammo_magazine/box/a556,
-/obj/item/ammo_magazine/box/a556,
-/turf/simulated/floor/tiled/monotile,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/structure/table/rack,
+/turf/simulated/floor/tiled,
 /area/site53/uez/armory)
 "Lb" = (
 /obj/machinery/door/airlock/glass/mining{
@@ -10050,34 +10221,100 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "Ny" = (
-/obj/structure/table/rack,
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/gun/projectile/pistol/usp45,
-/obj/item/gun/projectile/pistol/usp45,
-/obj/item/gun/projectile/pistol/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/box/a45,
-/obj/item/ammo_magazine/box/a45,
-/obj/item/ammo_magazine/box/a45,
-/obj/item/ammo_magazine/box/a45,
-/obj/item/ammo_magazine/box/a45,
-/obj/item/ammo_magazine/box/a45,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/structure/table/rack,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "NA" = (
@@ -10862,16 +11099,9 @@
 /obj/item/storage/box/flashbangs,
 /obj/item/storage/box/teargas,
 /obj/item/storage/box/teargas,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
+/obj/item/gun/launcher/grenade,
+/obj/item/storage/pill_bottle/amnesticsb,
+/obj/item/storage/pill_bottle/amnesticsb,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "Vm" = (
@@ -44654,7 +44884,7 @@ kT
 fy
 PS
 PS
-KR
+eD
 kT
 dA
 fF
@@ -44908,10 +45138,10 @@ mY
 mY
 lS
 kT
-eD
+XL
 mf
 Ny
-XL
+Hz
 kT
 dA
 fF
@@ -48990,9 +49220,9 @@ dA
 dA
 dA
 dA
-bg
-co
-ea
+dA
+dA
+dA
 dA
 dA
 dA
@@ -49505,7 +49735,7 @@ dA
 dA
 dA
 dA
-cu
+dA
 dA
 dA
 dA
@@ -50019,7 +50249,7 @@ dA
 dA
 dA
 dA
-cw
+dA
 dA
 dA
 dA
@@ -50533,8 +50763,8 @@ dA
 dA
 dA
 dA
-cz
-ej
+dA
+dA
 dA
 dA
 dA

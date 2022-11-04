@@ -39,9 +39,12 @@
 	return list(
 //		/obj/item/gun/projectile/sec/sec,
 //		/obj/item/ammo_magazine/c45m = 4,
-		/obj/item/gun/projectile/automatic/scp/p90,
-		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
-		/obj/item/gun/energy/taser/carbine,
+		/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+		/obj/item/ammo_magazine/scp/saiga12/beanbag = 3,
+		/obj/item/ammo_magazine/scp/saiga12/rubbershot = 3,
+		/obj/item/ammo_magazine/box/beanbag = 2,
+		/obj/item/ammo_magazine/box/rubbershot = 2,
+		/obj/item/clothing/accessory/storage/bandolier,
 //  	/obj/item/ammo_magazine/box/a10mm,
 		/obj/item/handcuffs = 4,
 //		/obj/item/ammo_magazine/box/c45donor,
@@ -67,9 +70,12 @@
 
 /obj/structure/closet/secure_closet/mtf/nco/WillContain()
 	return list(
-		/obj/item/gun/projectile/automatic/scp/p90,
-		/obj/item/gun/energy/stunrevolver/rifle,
-		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
+		/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
+		/obj/item/ammo_magazine/scp/saiga12/beanbag = 3,
+		/obj/item/ammo_magazine/scp/saiga12/rubbershot = 3,
+		/obj/item/ammo_magazine/box/beanbag = 2,
+		/obj/item/ammo_magazine/box/rubbershot = 2,
+		/obj/item/clothing/accessory/storage/bandolier,
 		/obj/item/handcuffs = 4,
 		/obj/item/storage/box/ifak,
 		/obj/item/clothing/accessory/storage/black_vest,
@@ -111,7 +117,7 @@
 /obj/structure/closet/secure_closet/mtf/nco/hcz/WillContain()
 	return list(
 		/obj/item/storage/belt/holster/security/tactical,
-		/obj/item/gun/projectile/automatic/scp/galil,
+		/obj/item/gun/projectile/automatic/scp/m16,
 		/obj/item/gun/energy/stunrevolver/rifle,
 		/obj/item/ammo_magazine/scp/m16_mag = 3,
 		/obj/item/ammo_magazine/box/a556,
@@ -180,13 +186,6 @@
 /obj/structure/closet/secure_closet/mtf/commander/WillContain()
 	return list(
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/gun/projectile/automatic/scp/galil,
-		/obj/item/ammo_magazine/scp/m16_mag = 3,
-		/obj/item/gun/projectile/automatic/scp/p90,
-		/obj/item/ammo_magazine/scp/p90_mag = 3,
-		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
-		/obj/item/ammo_magazine/box/a10mm,
-		/obj/item/ammo_magazine/box/a556,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/handcuffs = 4,
 		/obj/item/clothing/accessory/storage/holster/thigh,
@@ -210,22 +209,19 @@
 /obj/structure/closet/secure_closet/mtf/co/WillContain()
 	return list(
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/gun/projectile/automatic/scp/p90,
-		/obj/item/ammo_magazine/scp/p90_mag = 3,
-		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
-		/obj/item/ammo_magazine/box/a10mm,
-		/obj/item/ammo_magazine/box/a556,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/handcuffs = 4,
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/clothing/head/beret/sec/corporate/hos,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-		/obj/item/ammo_magazine/scp/usp45 = 3
+		/obj/item/ammo_magazine/scp/usp45 = 3,
+		/obj/item/gun/projectile/pistol/usp45,
+		/obj/item/ammo_magazine/box/acp45
 	)
 
 /obj/structure/closet/secure_closet/mtf/breachautomatics
-	name = "automatic weapons locker"
+	name = "Assault rifle locker"
 	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "gun-locked"
 	icon_closed = "gun-unlocked"
@@ -235,17 +231,17 @@
 
 /obj/structure/closet/secure_closet/mtf/breachautomatics/WillContain()
 	return list(
-		/obj/item/gun/projectile/automatic/scp/galil,
-		/obj/item/gun/projectile/automatic/scp/galil,
-		/obj/item/gun/projectile/automatic/scp/galil,
 		/obj/item/gun/projectile/automatic/scp/m16,
+		/obj/item/gun/projectile/automatic/scp/m16,
+		/obj/item/gun/projectile/automatic/scp/m4a1,
+		/obj/item/gun/projectile/automatic/scp/m4a1,
 		/obj/item/ammo_magazine/scp/m16_mag = 12,
 		/obj/item/ammo_magazine/box/a556 = 4
 	)
 
 
 /obj/structure/closet/secure_closet/mtf/breachshotguns
-	name = "tactical shotgun locker"
+	name = "Tactical Shotgun Locker"
 	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "gun-locked"
 	icon_closed = "gun-unlocked"
@@ -255,14 +251,18 @@
 
 /obj/structure/closet/secure_closet/mtf/breachshotguns/WillContain()
 	return list(
-		/obj/item/gun/projectile/shotgun/pump/combat = 3,
-		/obj/item/ammo_magazine/box/buckshot = 6,
-		/obj/item/ammo_magazine/box/slug = 6,
-		/obj/item/clothing/accessory/storage/bandolier = 3
+		/obj/item/gun/projectile/automatic/scp/saiga12 = 2,
+		/obj/item/ammo_magazine/box/buckshot = 4,
+		/obj/item/ammo_magazine/box/slug = 4,
+		/obj/item/ammo_magazine/box/emp = 2,
+		/obj/item/ammo_magazine/scp/saiga12 = 6,
+		/obj/item/ammo_magazine/scp/saiga12/emp = 4,
+		/obj/item/ammo_magazine/scp/saiga12/buckshot = 6,
+		/obj/item/clothing/accessory/storage/bandolier = 2
 	)
 
 /obj/structure/closet/secure_closet/mtf/riotshotguns
-	name = "riot shotgun locker"
+	name = "Riot Shotgun Locker"
 	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "gun-locked"
 	icon_closed = "gun-unlocked"
@@ -272,9 +272,36 @@
 
 /obj/structure/closet/secure_closet/mtf/riotshotguns/WillContain()
 	return list(
-		/obj/item/gun/projectile/shotgun/pump = 3,
+		/obj/item/gun/projectile/automatic/scp/saiga12/beanbag = 2,
+		/obj/item/ammo_magazine/scp/saiga12/beanbag = 6,
+		/obj/item/ammo_magazine/scp/saiga12/rubbershot = 6,
 		/obj/item/ammo_magazine/box/beanbag = 6,
-		/obj/item/clothing/accessory/storage/bandolier/beanbag = 3
+		/obj/item/ammo_magazine/box/rubbershot = 6,
+		/obj/item/clothing/accessory/storage/bandolier = 2,
+	)
+
+/obj/structure/closet/secure_closet/mtf/specialistshotgun
+	name = "Specialized Shotgun Crowd Control Gear"
+	req_access = list(ACCESS_SECURITY_LVL2)
+	icon_state = "gun-locked"
+	icon_closed = "gun-unlocked"
+	icon_locked = "gun-locked"
+	icon_opened = "gun-open"
+	icon_off = "gun-off"
+
+/obj/structure/closet/secure_closet/mtf/specialistshotgun/WillContain()
+	return list(
+		/obj/item/gun/projectile/automatic/scp/saiga12/beanbag = 1,
+		/obj/item/gun/projectile/shotgun/pump/combat = 1,
+		/obj/item/ammo_magazine/scp/saiga12/beanbag = 3,
+		/obj/item/ammo_magazine/scp/saiga12/rubbershot = 3,
+		/obj/item/ammo_magazine/scp/saiga12/stunshell = 3,
+		/obj/item/ammo_magazine/scp/saiga12/flash = 4,
+		/obj/item/ammo_magazine/box/beanbag = 3,
+		/obj/item/ammo_magazine/box/rubbershot = 3,
+		/obj/item/ammo_magazine/box/stunshell = 3,
+		/obj/item/ammo_magazine/box/flash = 3,
+		/obj/item/clothing/accessory/storage/bandolier = 2,
 	)
 
 /obj/structure/closet/secure_closet/mtf/riotgear
@@ -417,6 +444,7 @@
 		/obj/item/storage/backpack/rucksack,
 		/obj/item/gun/projectile/pistol/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
+		/obj/item/ammo_magazine/box/mk9,
 		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/melee/telebaton,
 	)
