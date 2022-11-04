@@ -121,44 +121,6 @@
 	magazine_type = /obj/item/ammo_magazine/scp/usp45
 	allowed_magazines = list(/obj/item/ammo_magazine/scp/usp45)
 
-
-
-
-
-/obj/item/gun/projectile/automatic/scp/ar12
-	name = "AR12 Tactical Shotgun"
-	desc = "A reliable semi automatic shotgun often used by Foundation strike and security forces."
-	icon_state = "ar12"
-	item_state = "ar12"
-	w_class = ITEM_SIZE_HUGE
-	force = 10
-	slot_flags = SLOT_BACK
-	caliber = CALIBER_SHOTGUN
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
-	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/scp/ar12
-	allowed_magazines = /obj/item/ammo_magazine/scp/ar12
-
-	firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null))
-
-/obj/item/gun/projectile/automatic/scp/ar12/update_icon()
-	..()
-	if(ammo_magazine)
-		icon_state = "ar12"
-	else
-		icon_state = "ar12-empty"
-	return
-
-/obj/item/gun/projectile/automatic/scp/ar12/beanbag
-	magazine_type = /obj/item/ammo_magazine/scp/ar12/beanbag
-
-
-/obj/item/gun/projectile/automatic/scp/ar12/buckshot
-	magazine_type = /obj/item/ammo_magazine/scp/ar12/buckshot
-
-
-
 /obj/item/gun/projectile/automatic/scp/saiga12
 	name = "Saiga12 Tactical Shotgun"
 	desc = "A reliable russian-made semi automatic shotgun often used by Foundation strike and security forces."
