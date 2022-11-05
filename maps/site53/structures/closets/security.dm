@@ -39,12 +39,6 @@
 	return list(
 //		/obj/item/gun/projectile/sec/sec,
 //		/obj/item/ammo_magazine/c45m = 4,
-		/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
-		/obj/item/ammo_magazine/scp/saiga12/beanbag = 3,
-		/obj/item/ammo_magazine/scp/saiga12/rubbershot = 3,
-		/obj/item/ammo_magazine/box/beanbag = 2,
-		/obj/item/ammo_magazine/box/rubbershot = 2,
-		/obj/item/clothing/accessory/storage/bandolier,
 //  	/obj/item/ammo_magazine/box/a10mm,
 		/obj/item/handcuffs = 4,
 //		/obj/item/ammo_magazine/box/c45donor,
@@ -70,11 +64,6 @@
 
 /obj/structure/closet/secure_closet/mtf/nco/WillContain()
 	return list(
-		/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
-		/obj/item/ammo_magazine/scp/saiga12/beanbag = 3,
-		/obj/item/ammo_magazine/scp/saiga12/rubbershot = 3,
-		/obj/item/ammo_magazine/box/beanbag = 2,
-		/obj/item/ammo_magazine/box/rubbershot = 2,
 		/obj/item/clothing/accessory/storage/bandolier,
 		/obj/item/handcuffs = 4,
 		/obj/item/storage/box/ifak,
