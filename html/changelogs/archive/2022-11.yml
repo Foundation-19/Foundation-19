@@ -42,3 +42,11 @@
       (it is to buckshot what beanbag is to slug)'
   - rscadd: Connected Reeducation room through a tunnel to inside of CDCZ. It's relatively
       secluded now, but its as expected for a room where the unspeakable occur.
+2022-11-05:
+  GGarciaECE:
+  - bugfix: fix desynced shutters on the CDC medical office
+  - bugfix: fix buttons set to the incorrect ID near CDC mining checkpoint
+  - bugfix: fix two direction windows incorrectly being displayed as fulltile window
+  MACIEKBAKI:
+  - bugfix: EZ Med Storage gravity should work properly (just before the doors, that
+      one)

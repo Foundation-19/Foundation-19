@@ -1,6 +1,0 @@
-author: GGarciaECE
-delete-after: true
-changes:
-  - bugfix: fix desynced shutters on the CDC medical office
-  - bugfix: fix buttons set to the incorrect ID near CDC mining checkpoint
-  - bugfix: fix two direction windows incorrectly being displayed as fulltile window
