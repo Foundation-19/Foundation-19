@@ -99,9 +99,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
 "aao" = (
-/obj/structure/table/rack,
+/obj/effect/floor_decal/corner/black/full,
+/obj/structure/closet,
+/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
+/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
 /turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/area/site53/lhcz/hczguardgear)
 "aap" = (
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
@@ -10495,6 +10498,20 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/hallways)
+"aBG" = (
+/obj/structure/table/rack,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/armory)
 "aBH" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -16720,6 +16737,16 @@
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = 32
 	},
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/clothing/accessory/storage/bandolier/beanbag,
+/obj/item/clothing/accessory/storage/bandolier/beanbag,
+/obj/item/clothing/accessory/storage/bandolier/beanbag,
+/obj/item/clothing/accessory/storage/bandolier/beanbag,
+/obj/item/clothing/accessory/storage/bandolier/beanbag,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "aVm" = (
@@ -16914,6 +16941,26 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
+"aVJ" = (
+/obj/structure/table/rack,
+/obj/machinery/light,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/armory)
 "aVK" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
@@ -19285,11 +19332,12 @@
 /area/site53/uhcz/scp247observation)
 "bde" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/buckshot,
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
-/obj/item/ammo_magazine/scp/saiga12/buckshot,
-/obj/item/ammo_magazine/scp/saiga12/buckshot,
-/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "bdf" = (
@@ -20497,10 +20545,6 @@
 /area/site53/ulcz/hallways)
 "bhm" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/saiga12/rubbershot,
-/obj/item/ammo_magazine/scp/saiga12/rubbershot,
-/obj/item/ammo_magazine/scp/saiga12/rubbershot,
-/obj/item/ammo_magazine/scp/saiga12/rubbershot,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "bho" = (
@@ -20552,16 +20596,13 @@
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint/south)
 "bhA" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/effect/floor_decal/corner/black/full,
 /obj/structure/table/rack,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
 /obj/item/ammo_magazine/box/slug,
-/obj/item/gun/projectile/automatic/scp/saiga12,
-/obj/item/ammo_magazine/scp/saiga12,
-/obj/item/ammo_magazine/scp/saiga12,
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
+/turf/simulated/floor/tiled,
+/area/site53/lhcz/hczguardgear)
 "bhB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -22103,10 +22144,21 @@
 /area/site53/ulcz/scp078)
 "cnC" = (
 /obj/structure/table/rack,
-/obj/item/paper{
-	name = "Crowd Dispersal Flash Shells";
-	info = "For use in crowd dispersal, WEAR YOUR GOGGLES!"
-	},
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
+/obj/item/ammo_magazine/scp/p90_mag/rubber,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "cnW" = (
@@ -25989,6 +26041,14 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/grass,
 /area/chapel)
+"icU" = (
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/armory)
 "idF" = (
 /obj/structure/closet/radiation,
 /turf/simulated/floor/tiled/white,
@@ -27208,6 +27268,17 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106containment)
+"kcw" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/gun/projectile/automatic/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/armory)
 "kcV" = (
 /obj/effect/landmark/start{
 	name = "Bartender"
@@ -27348,11 +27419,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/maintenancetunnel)
-"kqq" = (
-/obj/effect/floor_decal/corner/black/full,
-/obj/structure/table/rack,
-/turf/simulated/floor/tiled,
-/area/site53/lhcz/hczguardgear)
 "kqN" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/vending/medical{
@@ -31934,9 +32000,6 @@
 "rIu" = (
 /obj/effect/floor_decal/corner/black/full,
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/saiga12,
-/obj/item/ammo_magazine/scp/saiga12,
-/obj/item/ammo_magazine/box/slug,
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/hczguardgear)
 "rIR" = (
@@ -33905,16 +33968,6 @@
 /obj/effect/floor_decal/corner/black/full,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/hczguardgear)
-"uLX" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/scp/saiga12/beanbag,
-/obj/item/ammo_magazine/scp/saiga12/beanbag,
-/obj/item/ammo_magazine/scp/saiga12/beanbag,
-/obj/item/ammo_magazine/scp/saiga12/beanbag,
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
 "uNq" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Containment Chamber";
@@ -34025,12 +34078,17 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
 "uWH" = (
-/obj/effect/floor_decal/corner/black/full,
-/obj/structure/closet,
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
-/turf/simulated/floor/tiled/dark,
-/area/site53/lhcz/hczguardgear)
+/obj/structure/table/rack,
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_x = 32
+	},
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/armory)
 "uWI" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 9
@@ -34206,6 +34264,15 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
+"vgG" = (
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/armory)
 "vhB" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 8
@@ -35845,10 +35912,11 @@
 	pixel_x = 32
 	},
 /obj/machinery/light,
-/obj/item/paper{
-	name = "Stunshell notice";
-	info = "We recieved these prototype shotgun taser shells from RnD recently. Be careful, Class Ds may use them against our owns."
-	},
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "xti" = (
@@ -37264,7 +37332,7 @@ aMC
 aMC
 aVM
 bbj
-bde
+vgG
 aXh
 aMC
 aMC
@@ -37518,7 +37586,7 @@ azA
 azA
 azA
 aMC
-bhA
+kcw
 aVL
 aXh
 aXh
@@ -37775,10 +37843,10 @@ azA
 azA
 azA
 aMC
-aao
-aVL
-uLX
 bhm
+aVL
+bde
+icU
 aXh
 iQI
 aMC
@@ -38032,10 +38100,10 @@ azA
 azA
 azA
 aMC
-aao
+bhm
 aVL
-aao
-aao
+bhm
+bhm
 aXh
 hbm
 aMC
@@ -39063,7 +39131,7 @@ aMC
 aUu
 aUP
 aVx
-ffJ
+aVJ
 aMC
 kJB
 aVa
@@ -39320,7 +39388,7 @@ aMC
 alF
 aVa
 aVx
-fte
+aBG
 aMC
 koR
 aVa
@@ -40347,7 +40415,7 @@ all
 aMC
 aVx
 aVl
-aVl
+uWH
 xsq
 aMC
 gut
@@ -95906,7 +95974,7 @@ ixi
 tpZ
 tpZ
 mfw
-uWH
+aao
 ixi
 ixi
 azA
@@ -96417,7 +96485,7 @@ ixi
 ixi
 ixi
 ixi
-rIu
+bhA
 aDD
 wZn
 aDD
@@ -96674,7 +96742,7 @@ mLD
 lMF
 nWH
 ixi
-kqq
+rIu
 aDD
 jdL
 aDD
