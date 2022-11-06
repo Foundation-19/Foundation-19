@@ -24,13 +24,19 @@
 \[*\] : A dot used for lists. (Does not work with crayons)<br>
 \[scplogo\] : Inserts the SCP Foundation logo.<br>
 \[ethics\] : Inserts the Ethics Committee logo.<br>
+\[o5\] : Inserts the Overseer Council logo.<br>
+\[admin\] : Inserts the Administrative Department logo.<br>
 \[eng\] : Inserts the Engineering Department logo.<br>
 \[mtf\] : Inserts the Mobile Task Force logo.<br>
 \[log\] : Inserts the Logistics Department logo.<br>
+\[man\] : Inserts the Manufacturing Department logo.<br>
+\[med\] : Inserts the Medical Department logo.<br>
+\[sci\] : Inserts the Science Department logo.<br>
 \[sec\] : Inserts the Security Department logo.<br>
-\[o5\] : Inserts the Overseer 5 logo.<br>
 \[isd\] : Inserts the Internal Security Department logo.<br>
-\[ecd\] : Inserts the External Affairs Department logo.<br>
+\[dea\] : Inserts the Department of External Affairs logo.<br>
+\[int\] : Inserts the Intelligence Agency logo.<br>
+\[trib\] : Inserts the Internal Tribunal Department logo.<br>
 \[goc\] : Inserts the Global Occult Coalition logo.<br>
 \[uiu\] : Inserts the Unusual Incidents Unit logo.<br>
 \[thi\] : Inserts the Horizon Initiative logo.<br>
