@@ -31,27 +31,6 @@
 
 /obj/effect/shuttle_landmark/escape_pod/transit
 
-/datum/shuttle/autodock/ferry/engineering
-	name = "Engineering"
-	warmup_time = 10
-	shuttle_area = list(/area/site53/tram/engineering)
-	waypoint_station = "nav_engineering_start"
-	waypoint_offsite = "nav_engineering_out"
-
-/obj/effect/shuttle_landmark/engineering/start
-	name = "Tram Hub"
-	landmark_tag = "nav_engineering_start"
-	base_turf = /turf/simulated/floor/reinforced
-
-/obj/effect/shuttle_landmark/engineering/out
-	name = "Engineering Department"
-	landmark_tag = "nav_engineering_out"
-	base_turf = /turf/simulated/floor/reinforced
-	base_area = /area/site53/engineering/primaryhallway
-
-/obj/effect/shuttle_landmark/engineering/internim
-	name = "In transit"
-	landmark_tag = "nav_engineering_transition"
 
 /datum/shuttle/autodock/ferry/heli
 	name = "MTF Helicopter"
@@ -67,12 +46,12 @@
 	name = "MTF Base"
 	landmark_tag = "nav_mtf_start"
 	base_turf = /turf/unsimulated/floor/reinforced
-	base_area = /area/site53/tram/mtf
+	base_area = /area/site53/surface/surface
 
 /obj/effect/shuttle_landmark/heli/out
 	name = "Site 53"
 	landmark_tag = "nav_mtf_out"
-	base_turf = /turf/simulated/floor/tiled/monotile/white
+	base_turf = /turf/simulated/floor/reinforced
 	base_area = /area/site53/surface/surface
 
 /* commented out because fuck you it no work
@@ -82,44 +61,6 @@
 	base_turf = /turf/unsimulated/floor/plating
 	base_area = /area/space
 */
-
-/datum/shuttle/autodock/ferry/hcz
-	name = "Heavy Containment Tram"
-	warmup_time = 10
-	shuttle_area = list(/area/site53/tram/hcz)
-	waypoint_station = "nav_hcz_start"
-	waypoint_offsite = "nav_hcz_out"
-
-
-/obj/effect/shuttle_landmark/hcz/start
-	name = "Tram Hub"
-	landmark_tag = "nav_hcz_start"
-	base_turf = /turf/simulated/floor/reinforced
-
-/obj/effect/shuttle_landmark/hcz/out
-	name = "Heavy Containment Zone"
-	landmark_tag = "nav_hcz_out"
-	base_turf = /turf/simulated/floor/reinforced
-	base_area = /area/site53/uhcz/tramstation
-
-/datum/shuttle/autodock/ferry/lcz
-	name = "Light Containment Tram"
-	warmup_time = 10
-	shuttle_area = list(/area/site53/tram/lcz)
-	waypoint_station = "nav_lcz_start"
-	waypoint_offsite = "nav_lcz_out"
-
-
-/obj/effect/shuttle_landmark/lcz/start
-	name = "Tram Hub"
-	landmark_tag = "nav_lcz_start"
-	base_turf = /turf/simulated/floor/reinforced
-
-/obj/effect/shuttle_landmark/lcz/out
-	name = "Light Containment Zone"
-	landmark_tag = "nav_lcz_out"
-	base_turf = /turf/simulated/floor/reinforced
-	base_area = /area/site53/ulcz/tram
 
 /datum/shuttle/autodock/ferry/chaos1
 	name = "Chaos Car 1"

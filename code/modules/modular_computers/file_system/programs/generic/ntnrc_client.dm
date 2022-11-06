@@ -1,14 +1,14 @@
 /datum/computer_file/program/chatclient
-	filename = "ntnrc_client"
-	filedesc = "NTNet Relay Chat Client"
+	filename = "scprc_client"
+	filedesc = "SCiPnet Relay Chat Client"
 	program_icon_state = "command"
 	program_key_state = "med_key"
 	program_menu_icon = "comment"
-	extended_desc = "This program allows communication over NTNRC network"
+	extended_desc = "This program allows communication over the SCPRC network"
 	size = 8
 	requires_ntnet = 1
 	requires_ntnet_feature = NTNET_COMMUNICATION
-	network_destination = "NTNRC server"
+	network_destination = "SCPRC server"
 	ui_header = "ntnrc_idle.gif"
 	available_on_ntnet = 1
 	tgui_id = "NtosNetChat"
@@ -93,7 +93,7 @@
 					channel.remove_client(src) // We shouldn't be in channel's user list, but just in case...
 				return TRUE
 			var/mob/living/user = usr
-			if(can_run(user, TRUE, access_network))
+			if(can_run(user, TRUE, ACCESS_NETWORK))
 				for(var/datum/ntnet_conversation/chan as anything in ntnet_global.chat_channels)
 					chan.remove_client(src)
 				netadmin_mode = TRUE
@@ -116,7 +116,7 @@
 			var/datum/computer_file/data/logfile = new /datum/computer_file/data/logfile()
 			// Now we will generate HTML-compliant file that can actually be viewed/printed.
 			logfile.filename = logname
-			logfile.stored_data = "\[b\]Logfile dump from NTNRC channel [channel.title]\[/b\]\[BR\]"
+			logfile.stored_data = "\[b\]Logfile dump from SCPRC channel [channel.title]\[/b\]\[BR\]"
 			for(var/logstring in channel.messages)
 				logfile.stored_data = "[logfile.stored_data][logstring]\[BR\]"
 			logfile.stored_data = "[logfile.stored_data]\[b\]Logfile dump completed.\[/b\]"
@@ -182,7 +182,7 @@
 
 /datum/computer_file/program/chatclient/tgui_static_data(mob/user)
 	var/list/data = list()
-	data["can_admin"] = can_run(user, FALSE, access_network)
+	data["can_admin"] = can_run(user, FALSE, ACCESS_NETWORK)
 	return data
 
 /datum/computer_file/program/chatclient/tgui_data(mob/user)

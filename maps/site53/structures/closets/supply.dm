@@ -4,7 +4,7 @@
 
 /obj/structure/closet/secure_closet/decktech
 	name = "deck technician's locker"
-	req_access = list(access_cargo)
+	req_access = list(ACCESS_CARGO)
 	icon_state = "securecargo1"
 
 /obj/structure/closet/secure_closet/decktech/WillContain()
@@ -25,7 +25,7 @@
 
 /obj/structure/closet/secure_closet/deckofficer
 	name = "deck officer's locker"
-	req_access = list(access_qm)
+	req_access = list(ACCESS_QM)
 	icon_state = "secureqm1"
 
 /obj/structure/closet/secure_closet/deckofficer/WillContain()
@@ -51,7 +51,7 @@
 
 /obj/structure/closet/secure_closet/logistics/officer
 	name = "logistics officer's footlocker"
-	req_access = list(access_adminlvl2)
+	req_access = list(ACCESS_ADMIN_LVL2)
 	icon_state = "lolocked"
 	icon_closed = "lounlocked"
 	icon_locked = "lolocked"
@@ -80,7 +80,7 @@
 
 /obj/structure/closet/secure_closet/logistics/specialist
 	name = "logistics specialist's footlocker"
-	req_access = list(access_adminlvl1)
+	req_access = list(ACCESS_ADMIN_LVL1)
 	icon_state = "lslocked"
 	icon_closed = "lsunlocked"
 	icon_locked = "lslocked"

@@ -15,6 +15,8 @@
 	name = "Inactive AI Eye"
 	name_sufix = "AI Eye"
 	icon_state = "AI-eye"
+	invisibility = INVISIBILITY_EYE_AI
+	see_invisible = SEE_INVISIBLE_AI
 
 /mob/observer/eye/aiEye/Initialize()
 	. = ..()
@@ -104,3 +106,16 @@
 
 	eyeobj.acceleration = !eyeobj.acceleration
 	to_chat(usr, "Camera acceleration has been toggled [eyeobj.acceleration ? "on" : "off"].")
+
+/mob/living/silicon/ai/proc/eye_puppet_toggle() //Messing with the SEE_INVISIBLE_TAG renders the lighting differently so I'd rather just swap out the icon for nothing and still render lights correctly.
+	set category = "Silicon Commands"
+	set name = "Toggle AIC Eye"
+	var/mob/living/silicon/ai/AI = usr
+
+
+	if(AI.eyeobj.icon_state == "AI-eye") //Eye is on so we turn it off.
+		AI.eyeobj.icon_state = ""
+	else //Eye is off, so we turn it on
+		AI.eyeobj.icon_state = "AI-eye"
+
+

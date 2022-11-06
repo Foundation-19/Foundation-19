@@ -26,12 +26,14 @@ var/list/admin_verbs_admin = list(
 	/client/proc/colorooc,				//allows us to set a custom colour for everythign we say in ooc,
 	/client/proc/admin_ghost,			//allows us to ghost/reenter body at will,
 	/client/proc/toggle_view_range,		//changes how far we can see,
+	/datum/admins/proc/view_txt_log,    //shows the server log for today,
 	/client/proc/cmd_admin_pm_context,	//right-click adminPM interface,
 	/client/proc/cmd_admin_pm_panel,	//admin-pm list,
 	/client/proc/cmd_admin_delete,		//delete an instance/object/mob/etc,
 	/client/proc/cmd_admin_check_contents,	//displays the contents of an instance,
 	/datum/admins/proc/access_news_network,	//allows access of newscasters,
 	/client/proc/jumptocoord,			//we ghost and jump to a coordinate,
+	/client/proc/getserverlog,          //allows us to fetch server logs for other days,
 	/client/proc/Getmob,				//teleports a mob to our location,
 	/client/proc/Getkey,				//teleports a mob with a certain ckey to our location,
 //	/client/proc/sendmob,				//sends a mob somewhere, -Removed due to it needing two sorting procs to work, which were executed every time an admin right-clicked. ~Errorage,
@@ -100,7 +102,10 @@ var/list/admin_verbs_admin = list(
 )
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
-	/client/proc/jobbans
+	/client/proc/jobbans,
+	/client/proc/ban_panel,
+	/client/proc/BCCM_toggle,
+	/client/proc/BCCM_WhitelistPanel
 	)
 var/list/admin_verbs_sounds = list(
 	/client/proc/play_local_sound,
@@ -153,7 +158,8 @@ var/list/admin_verbs_server = list(
 	/client/proc/nanomapgen_DumpImage,
 	/client/proc/panicbunker,
 	/client/proc/panicbunker_ckey_bypass,
-	/datum/admins/proc/shutdown_server
+	/datum/admins/proc/shutdown_server,
+	/client/proc/BCCM_ASNPanel
 	)
 var/list/admin_verbs_debug = list(
 	/datum/admins/proc/jump_to_fluid_source,
@@ -229,6 +235,7 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/colorooc,
 	/client/proc/admin_ghost,
 	/client/proc/toggle_view_range,
+	/datum/admins/proc/view_txt_log,
 	/client/proc/cmd_admin_check_contents,
 	/datum/admins/proc/access_news_network,
 	/client/proc/admin_call_shuttle,
@@ -298,7 +305,8 @@ var/list/admin_verbs_mod = list(
 	/client/proc/aooc,
 	/datum/admins/proc/sendFax,
 	/client/proc/check_fax_history,
-	/datum/admins/proc/paralyze_mob // right-click paralyze ,
+	/datum/admins/proc/paralyze_mob, // right-click paralyze ,
+	/client/proc/cmd_admin_say
 )
 var/list/admin_verbs_mentors = list(
 	/client/proc/cmd_mentor_say,
@@ -357,6 +365,7 @@ var/list/admin_verbs_mentors = list(
 		admin_verbs_rejuv,
 		admin_verbs_sounds,
 		admin_verbs_spawn,
+		admin_verbs_mod,
 		admin_verbs_mentors,
 		debug_verbs,
 		))
@@ -449,9 +458,7 @@ var/list/admin_verbs_mentors = list(
 	return
 
 /client/proc/jobbans()
-	set name = "Display Job bans"
-	set category = "Admin"
-	if(check_rights(R_ADMIN|R_MOD, FALSE))
+	if(check_rights(R_BAN))
 		if(config.ban_legacy_system)
 			holder.Jobbans()
 		else
@@ -460,14 +467,24 @@ var/list/admin_verbs_mentors = list(
 	return
 
 /client/proc/unban_panel()
-	set name = "Unban Panel"
-	set category = "Admin"
-	if(check_rights(R_ADMIN|R_MOD, FALSE))
+	if(check_rights(R_BAN))
 		if(config.ban_legacy_system)
 			holder.unbanpanel()
 		else
 			holder.DB_ban_panel()
 	SSstatistics.add_field_details("admin_verb","UBP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	return
+
+/client/proc/ban_panel()
+	set name = "Ban Panel"
+	set category = "Admin"
+	if(check_rights(R_BAN))
+		if(config.ban_legacy_system)
+			to_chat(usr, SPAN_NOTICE("Server is using legacy ban system, DB ban panel is unavailable."))
+			return
+		else
+			holder.DB_ban_panel()
+	SSstatistics.add_field_details("admin_verb","DBP")
 	return
 
 /client/proc/game_panel()

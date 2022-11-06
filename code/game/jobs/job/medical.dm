@@ -11,18 +11,18 @@
 	req_admin_notify = 1
 	economic_power = 10
 	access = list(
-		access_com_comms,
-		access_med_comms,
-		access_medical_equip,
-		access_keyauth,
-		access_medicallvl1,
-		access_medicallvl2,
-		access_medicallvl3,
-		access_medicallvl4,
-		access_medicallvl5,
-		access_securitylvl1,
-		access_sciencelvl1,
-		access_adminlvl1
+		ACCESS_COM_COMMS,
+		ACCESS_MED_COMMS,
+		ACCESS_MEDICAL_EQUIP,
+		ACCESS_KEYAUTH,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
+		ACCESS_MEDICAL_LVL3,
+		ACCESS_MEDICAL_LVL4,
+		ACCESS_MEDICAL_LVL5,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_ADMIN_LVL1
 	)
 
 	minimal_player_age = 14
@@ -41,10 +41,10 @@
 	selection_color = "#013d3b"
 	economic_power = 5
 	access = list(
-		access_med_comms,
-		access_medical_equip,
-		access_medicallvl1,
-		access_medicallvl2
+		ACCESS_MED_COMMS,
+		ACCESS_MEDICAL_EQUIP,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2
 	)
 	outfit_type = /decl/hierarchy/outfit/job/medical/chemist
 
@@ -60,9 +60,9 @@
 	supervisors = "the chief medical officer"
 	selection_color = "#013d3b"
 	access = list(
-		access_med_comms,
-		access_medical_equip,
-		access_medicallvl1
+		ACCESS_MED_COMMS,
+		ACCESS_MEDICAL_EQUIP,
+		ACCESS_MEDICAL_LVL1
 	)
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
 
@@ -84,13 +84,13 @@
 		/datum/mil_rank/security/e2
 	)
 	access = list(
-		access_med_comms,
-		access_medical_equip,
-		access_medicallvl1,
-		access_medicallvl2,
-		access_medicallvl3,
-		access_securitylvl1,
-		access_sciencelvl1
+		ACCESS_MED_COMMS,
+		ACCESS_MEDICAL_EQUIP,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
+		ACCESS_MEDICAL_LVL3,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SCIENCE_LVL1
 	)
 	minimal_access = list()
 
@@ -109,13 +109,13 @@
 	/datum/mil_branch/security)
 	allowed_ranks = list(/datum/mil_rank/security/e3)
 	access = list(
-		access_med_comms,
-		access_medical_equip,
-		access_medicallvl1,
-		access_medicallvl2,
-		access_medicallvl3,
-		access_sciencelvl1,
-		access_sciencelvl2
+		ACCESS_MED_COMMS,
+		ACCESS_MEDICAL_EQUIP,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
+		ACCESS_MEDICAL_LVL3,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2
 	)
 	minimal_access = list()
 
@@ -135,13 +135,13 @@
 	/datum/mil_branch/security)
 	allowed_ranks = list(/datum/mil_rank/security/e4)
 	access = list(
-		access_med_comms,
-		access_medical_equip,
-		access_securitylvl1,
-		access_sciencelvl1,
-		access_engineeringlvl1,
-		access_adminlvl1,
-		access_medicallvl1,
-		access_medicallvl2
+		ACCESS_MED_COMMS,
+		ACCESS_MEDICAL_EQUIP,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2
 	)
 	minimal_access = list()

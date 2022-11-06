@@ -27,7 +27,7 @@
 	name = "lift (surface)"
 	lift_floor_label = "Surface"
 	lift_floor_name = "Surface"
-	lift_announce_str = "Arriving at Surface: Tram Hub, Emergency Bunker, Main Control Room."
+	lift_announce_str = "Arriving at Surface: Hub, Emergency Bunker, Main Control Room."
 	requires_power = 0
 	dynamic_lighting = 1
 
@@ -43,7 +43,7 @@
 	name = "lift (Upper Heavy Containment Zone)"
 	lift_floor_label = "UHCZ"
 	lift_floor_name = "Upper Heavy Containment Zone"
-	lift_announce_str = "Arriving at Upper Heavy Containment Zone: SCP-106, Tram hub."
+	lift_announce_str = "Arriving at Upper Heavy Containment Zone: SCP-106, Hub."
 	requires_power = 0
 	dynamic_lighting = 1
 
@@ -89,20 +89,6 @@
 
 // SITE 53 TRAM AREA'S
 
-/area/site53/tram/engineering
-	name = "Engineering Tram"
-	icon_state = "Sleep"
-	requires_power = 0
-	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/tram/lcz
-	name = "Light Containment Tram"
-	icon_state = "Sleep"
-	requires_power = 0
-	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/tram/car1
 	name = "Chaos Car"
 	icon_state = "Sleep"
@@ -129,13 +115,6 @@
 	icon_state = "Sleep"
 	requires_power = 0
 	dynamic_lighting = 0
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/tram/hcz
-	name = "Heavy Containment Tram"
-	icon_state = "Sleep"
-	requires_power = 0
-	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/tram/scpcar
@@ -295,12 +274,6 @@
 /area/site53/lowertrams/hczmaint/south
 	name = "\improper Southern Heavy Containment Maintenance"
 
-/area/site53/lowertrams/orangeline
-	name = "\improper Orange Line"
-	icon_state = "hallF"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	sound_env = LARGE_ENCLOSED
-
 /area/site53/lowertrams/redline
 	name = "\improper Red Line"
 	icon_state = "hallC1"
@@ -325,7 +298,7 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/lowertrams/hub
-	name = "\improper Tram Hub"
+	name = "\improper Hub"
 	icon_state = "hallC1"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = LARGE_ENCLOSED
@@ -484,17 +457,6 @@
 	)
 */
 
-/area/site53/ulcz/medicalpost
-	name = "\improper LCZ Medical Post"
-	icon_state = "medbay3"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/ulcz/tram
-	name = "\improper Upper Light Containment Tram Station"
-	icon_state = "hallC1"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	sound_env = LARGE_ENCLOSED
-
 /area/site53/ulcz/office
 	name = "\improper Upper Light Containment Office"
 	icon_state = "conference"
@@ -502,7 +464,7 @@
 	sound_env = SMALL_ENCLOSED
 
 /area/site53/lowertrams/maintenance
-	name = "\improper Lower Tram Hub Maintenance"
+	name = "\improper Lower Hub Maintenance"
 	icon_state = "conference"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	turf_initializer = /decl/turf_initializer/maintenance
@@ -855,16 +817,6 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	turf_initializer = /decl/turf_initializer/maintenance
 
-/area/site53/uhcz/tramstation
-	name = "\improper HCZ Tram Station"
-	icon_state = "fpmaint"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/uhcz/medicalpost
-	name = "\improper HCZ Medical Post"
-	icon_state = "medbay3"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/uhcz/hallways
 	name = "\improper HCZ Hallways"
 	icon_state = "fpmaint"
@@ -999,6 +951,11 @@
 	icon_state = "exam_room"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/site53/medical/isolation
+	name = "\improper Isolation Quarantine"
+	icon_state = "medbay3"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/medical/mentalhealth/isolation
 	name = "\improper Mental Health Isolation"
 	icon_state = "medbay3"
@@ -1014,11 +971,6 @@
 /area/site53/medical/morgue
 	name = "\improper Morgue"
 	icon_state = "morgue"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/site53/medical/sleeper
-	name = "\improper Emergency Treatment Centre"
-	icon_state = "exam_room"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/medical/chemistry
@@ -1166,6 +1118,11 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	requires_power = 0
 	dynamic_lighting = 1
+
+/area/site53/uhcz/generalpurpose3
+	name = "\improper Third General Purpose Testing Laboratory"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/uhcz/scp096
 	name = "\improper SCP-096 Containment Chamber"

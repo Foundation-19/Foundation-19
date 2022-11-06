@@ -144,7 +144,7 @@
 	icon_opened = "miningsecopen"
 	icon_broken = "miningsecbroken"
 	icon_off = "miningsecoff"
-	req_access = list(access_dclassmining)
+	req_access = list(ACCESS_DCLASS_MINING)
 
 /obj/structure/closet/secure_closet/site53/dmining/WillContain()
 	return list(

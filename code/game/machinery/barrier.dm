@@ -3,7 +3,7 @@
 	desc = "A deployable barrier."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "barrier0"
-	req_access = list(access_securitylvl3)
+	req_access = list(ACCESS_SECURITY_LVL3)
 	density = TRUE
 
 	var/locked = FALSE

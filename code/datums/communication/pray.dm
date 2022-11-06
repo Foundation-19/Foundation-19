@@ -9,7 +9,7 @@
 	var/image/cross = image('icons/obj/storage.dmi',"bible")
 	for(var/m in GLOB.player_list)
 		var/mob/M = m
-		if(!M.client)
+		if(!istype(M) || !M?.client)
 			continue
 		if(check_rights(R_ADMIN|R_MOD, FALSE, M) && M.client.get_preference_value(/datum/client_preference/staff/show_chat_prayers) == GLOB.PREF_SHOW)
 			receive_communication(communicator, M, "\[<A HREF='?_src_=holder;adminspawncookie=\ref[communicator]'>SC</a>\] \[<A HREF='?_src_=holder;narrateto=\ref[communicator]'>DN</a>\]<span class='notice'>[icon2html(cross, M)] <b><font color=purple>PRAY: </font>[key_name(communicator, 1)]: </b>[message]</span>")

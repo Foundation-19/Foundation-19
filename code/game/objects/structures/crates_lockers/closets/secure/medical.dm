@@ -20,7 +20,7 @@
 	icon_opened = "medicalopen"
 	icon_off = "medicaloff"
 	closet_appearance = /decl/closet_appearance/secure_closet/medical
-	req_access = list(access_medical_equip)
+	req_access = list(ACCESS_MEDICAL_EQUIP)
 
 /obj/structure/closet/secure_closet/medical1/WillContain()
 	return list(
@@ -43,7 +43,7 @@
 	icon_locked = "medical1"
 	icon_opened = "medicalopen"
 	icon_off = "medicaloff"
-	req_access = list(access_surgery, access_medical_equip)
+	req_access = list(ACCESS_SURGERY, ACCESS_MEDICAL_EQUIP)
 
 /obj/structure/closet/secure_closet/medical2/WillContain()
 	return list(
@@ -58,7 +58,7 @@
 	icon_locked = "securemed1"
 	icon_opened = "securemedopen"
 	icon_off = "securemedoff"
-	req_access = list(access_medical_equip)
+	req_access = list(ACCESS_MEDICAL_EQUIP)
 	closet_appearance = /decl/closet_appearance/secure_closet/medical/alt
 
 /obj/structure/closet/secure_closet/medical3/WillContain()
@@ -88,7 +88,7 @@
 	icon_locked = "medical1"
 	icon_opened = "medicalopen"
 	icon_off = "medicaloff"
-	req_access = list(access_medical_equip)
+	req_access = list(ACCESS_MEDICAL_EQUIP)
 	closet_appearance = /decl/closet_appearance/secure_closet/medical
 
 /obj/structure/closet/secure_closet/paramedic/WillContain()
@@ -121,7 +121,7 @@
 	icon_locked = "cmosecure1"
 	icon_opened = "cmosecureopen"
 	icon_off = "cmosecureoff"
-	req_access = list(access_cmo)
+	req_access = list(ACCESS_CMO)
 	closet_appearance = /decl/closet_appearance/secure_closet/cmo
 
 /obj/structure/closet/secure_closet/CMO/WillContain()
@@ -151,7 +151,7 @@
 	icon_opened = "medicalopen"
 	icon_off = "medicaloff"
 	closet_appearance = /decl/closet_appearance/secure_closet/medical
-	req_access = list(access_chemistry)
+	req_access = list(ACCESS_CHEMISTRY)
 
 /obj/structure/closet/secure_closet/chemical/WillContain()
 	return list(
@@ -174,12 +174,12 @@
 	density = FALSE
 	wall_mounted = TRUE
 	storage_types = CLOSET_STORAGE_ITEMS
-	req_access = list(access_medical_equip)
+	req_access = list(ACCESS_MEDICAL_EQUIP)
 
 /obj/structure/closet/secure_closet/counselor
 	name = "counselor's locker"
 	closet_appearance = /decl/closet_appearance/secure_closet/medical
-	req_access = list(access_psychiatrist)
+	req_access = list(ACCESS_PSYCHIATRIST)
 	icon_state = "chaplainsecure1"
 	icon_closed = "chaplainsecure"
 	icon_locked = "chaplainsecure1"
@@ -212,7 +212,7 @@
 	icon_off = "securevirooff"
 	closet_appearance = /decl/closet_appearance/secure_closet/medical/virology
 
-	req_access = list(access_virology)
+	req_access = list(ACCESS_VIROLOGY)
 
 /obj/structure/closet/secure_closet/virology/WillContain()
 	return list(
@@ -243,7 +243,7 @@
 	icon_opened = "securemedopen"
 	icon_off = "securemedoff"
 	closet_appearance = /decl/closet_appearance/secure_closet/medical/alt
-	req_access = list(access_psychiatrist)
+	req_access = list(ACCESS_PSYCHIATRIST)
 
 /obj/structure/closet/secure_closet/psychiatry/WillContain()
 	return list(

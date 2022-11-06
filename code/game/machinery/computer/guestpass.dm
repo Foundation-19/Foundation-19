@@ -2,7 +2,7 @@
 //Guest pass ////////////////////////////////
 /////////////////////////////////////////////
 /obj/item/card/id/guest
-	name = "guest pass"
+	name = "temporary access pass"
 	desc = "Allows temporary access to restricted areas."
 	color = COLOR_PALE_GREEN_GRAY
 	detail_color = COLOR_GREEN
@@ -45,19 +45,29 @@
 //Guest pass terminal////////////////////////
 /////////////////////////////////////////////
 
+#define GUESTPASS_MIN_DURATION 1
+#define GUESTPASS_MAX_DURATION 60
+#define GUESTPASS_STRING_UNSPECIFIED "NOT SPECIFIED"
 /obj/machinery/computer/guestpass
-	name = "guest pass terminal"
+	name = "temporary access terminal"
 	icon_state = "guest"
 	icon_keyboard = null
 	icon_screen = "pass"
 	density = FALSE
-	machine_name = "guest pass terminal"
-	machine_desc = "Guest passes are limited-time access passes that can be used to enter areas that would otherwise be inaccessible. This terminal allows them to be configured and created."
+	machine_name = "temporary access terminal"
+	machine_desc = "Temporary access passes are limited-time access passes that can be used to enter areas that would otherwise be inaccessible. This terminal allows them to be configured and created."
 
 	var/obj/item/card/id/giver
 	var/list/accesses = list()
+	var/operating_access_types = ACCESS_TYPE_NONE | ACCESS_TYPE_STATION
+	var/special_access_types = ACCESS_TYPE_CONTAINMENT
 	var/giv_name = "NOT SPECIFIED"
 	var/reason = "NOT SPECIFIED"
+
+	var/area_code
+
+	var/min_duration = GUESTPASS_MIN_DURATION
+	var/max_duration = GUESTPASS_MAX_DURATION
 	var/duration = 5
 
 	var/list/internal_log = list()
@@ -66,6 +76,18 @@
 /obj/machinery/computer/guestpass/New()
 	..()
 	uid = "[random_id("guestpass_serial_number",100,999)]-G[rand(10,99)]"
+
+/obj/machinery/computer/guestpass/proc/guestpass_access_check(acc)
+	var/datum/access/acc_datum = get_access_by_id(acc)
+
+	// See if they meet any of the access prerequisite requirements
+	for(var/prereq_acc in acc_datum?.guestpass_access_prerequisites)
+		if(prereq_acc in giver.access)
+			. = TRUE
+			break
+
+	// Make sure the access is one we actually dispense
+	return . && (special_access_types & acc_datum.access_type)
 
 /obj/machinery/computer/guestpass/attackby(obj/O, mob/user)
 	if(istype(O, /obj/item/card/id))
@@ -79,117 +101,162 @@
 	..()
 
 /obj/machinery/computer/guestpass/interface_interact(var/mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/computer/guestpass/ui_interact(var/mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open=1)
-	var/list/data = list()
-
-	data["mode"] = mode
-	data["internal_log"] = internal_log
-	data["reason"] = reason
-	data["duration"] = duration
-
-	if(giver)
-		data["giver"] = !!giver
-		data["giver_name"] = giver.rank || giver.assignment || SSjobs.get_by_path(giver.job_access_type).title
-		data["giv_name"] = giv_name
-
-		var/list/giver_access = list()
-		for(var/A in giver.access)
-			giver_access.Add(list(list(
-				"desc" = get_access_desc(A),
-				"access" = A,
-				"selected" = (A in accesses))))
-
-		data["giver_access"] = giver_access
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "guestpass.tmpl", "Guest Pass Terminal", 600, 800)
-		ui.set_initial_data(data)
+/obj/machinery/computer/guestpass/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "GuestPass", "Temporary Access Terminal")
 		ui.open()
 
-/obj/machinery/computer/guestpass/OnTopic(var/mob/user, href_list, state)
-	if (href_list["mode"])
-		mode = text2num(href_list["mode"])
-		. = TOPIC_REFRESH
+/obj/machinery/computer/guestpass/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	. = ..()
+	if(.)
+		return
 
-	else if (href_list["giv_name"])
-		var/nam = sanitize(input(user, "Person pass is issued to", "Name", giv_name) as text|null)
-		if (nam && CanUseTopic(user, state))
-			giv_name = nam
-			. = TOPIC_REFRESH
+	switch(action)
+		if("set_mode")
+			mode = params["new_mode"]
+			. = TRUE
+			SStgui.update_user_uis(ui.user)
 
-	else if (href_list["reason"])
-		var/reas = sanitize(input(user, "Reason why pass is issued", "Reason", reason) as text|null)
-		if(reas && CanUseTopic(user, state))
-			reason = reas
-			. = TOPIC_REFRESH
+		if("give_name")
+			var/name = tgui_input_text(ui.user, "Input a name for the TAP.", "Name")
+			if(name)
+				giv_name = sanitize(name)
+			. = TRUE
+			SStgui.update_user_uis(ui.user)
 
-	else if (href_list["duration"])
-		var/dur = input(user, "Duration (in minutes) during which pass is valid (up to 60 minutes).", "Duration") as num|null
-		if (dur && CanUseTopic(user, state))
-			if (dur > 0 && dur <= 30)
+		if("set_reason")
+			var/reas = tgui_input_text(ui.user, "Input a reason for the TAP.", "Reason", (reason == initial(reason) ? null : reason))
+			if(reas)
+				reason = sanitize(reas)
+			. = TRUE
+			SStgui.update_user_uis(ui.user)
+
+		if("set_duration")
+			var/dur = clamp(text2num(params["duration"]), min_duration, max_duration)
+			if(dur)
 				duration = dur
-				. = TOPIC_REFRESH
+			. = TRUE
+			SStgui.update_user_uis(ui.user)
+
+		if("set_access")
+			var/A = params["access"]
+			var/datum/access/acc = get_access_by_id(A)
+			if (A in accesses)
+				accesses.Remove(A)
+			else if (((A in giver?.access) || guestpass_access_check(acc)) && ((operating_access_types | special_access_types) & acc.access_type))
+				accesses.Add(A)
+			. = TRUE
+			SStgui.update_user_uis(ui.user)
+
+		if("id") // insert / take out giver id
+			if (giver)
+				giver.dropInto(ui.user.loc)
+				if(ishuman(ui.user))
+					ui.user.put_in_hands(giver)
+				giver = null
+				accesses.Cut()
 			else
-				to_chat(user, SPAN_WARNING("Invalid duration."))
+				var/obj/item/I = ui.user.get_active_hand()
+				if (istype(I, /obj/item/card/id) && ui.user.unEquip(I))
+					I.forceMove(src)
+					giver = I
 
-	else if (href_list["access"])
-		var/A = href_list["access"]
-		if (A in accesses)
-			accesses.Remove(A)
-		else if(giver && (A in giver.access))
-			accesses.Add(A)
-		. = TOPIC_REFRESH
+			. = TRUE
+			SStgui.update_user_uis(ui.user)
 
-	else if (href_list["id"])
-		if (giver)
-			giver.dropInto(user.loc)
-			if(ishuman(user))
-				user.put_in_hands(giver)
-			giver = null
-			accesses.Cut()
-		else
-			var/obj/item/I = user.get_active_hand()
-			if (istype(I, /obj/item/card/id) && user.unEquip(I))
-				I.forceMove(src)
-				giver = I
-		. = TOPIC_REFRESH
+		if("print")
+			var/dat = "<h3>Activity log of guest pass terminal #[uid]</h3><br>"
+			for (var/entry in internal_log)
+				dat += "[entry]<br><hr>"
+			var/obj/item/paper/P = new (loc)
+			P.SetName("activity log")
+			P.info = dat
+			. = TRUE
+			SStgui.update_user_uis(ui.user)
 
-	else if (href_list["print"])
-		var/dat = "<h3>Activity log of guest pass terminal #[uid]</h3><br>"
-		for (var/entry in internal_log)
-			dat += "[entry]<br><hr>"
-		var/obj/item/paper/P = new/obj/item/paper( loc )
-		P.SetName("activity log")
-		P.info = dat
-		. = TOPIC_REFRESH
+		if ("issue_id") // issue guest ID
+			if (giver && accesses.len)
+				var/number = add_zero(random_id("guestpass_id_number",1000,9999), 4)
+				var/entry = "\[[station_time_timestamp("hh:mm")]\] Pass #[number] issued by [giver.registered_name] ([giver.assignment]) to [giv_name]. Reason: [reason]. Granted access to following areas: "
+				var/list/access_descriptors = list()
+				for (var/A in accesses)
+					var/datum/access/acc = get_access_by_id(A)
+					if (((A in giver.access) || guestpass_access_check(acc)) && (acc.access_type in operating_access_types))
+						access_descriptors += get_access_desc(A)
+				entry += english_list(access_descriptors, and_text = ", ")
+				entry += ". Expires at [time2text(SSticker.round_start_time + duration MINUTES, "hh:mm")]."
+				internal_log.Add(entry)
 
-	else if (href_list["issue"])
-		if (giver && accesses.len)
-			var/number = add_zero(random_id("guestpass_id_number",1000,9999), 4)
-			var/entry = "\[[station_time_timestamp("hh:mm")]\] Pass #[number] issued by [giver.registered_name] ([giver.assignment]) to [giv_name]. Reason: [reason]. Granted access to following areas: "
-			var/list/access_descriptors = list()
-			for (var/A in accesses)
-				if (A in giver.access)
-					access_descriptors += get_access_desc(A)
-			entry += english_list(access_descriptors, and_text = ", ")
-			entry += ". Expires at [time2text(SSticker.round_start_time + duration MINUTES, "hh:mm")]."
-			internal_log.Add(entry)
+				var/obj/item/card/id/guest/pass = new(src.loc)
+				pass.temp_access = accesses.Copy()
+				pass.registered_name = giv_name
+				pass.expiration_time = world.time + duration MINUTES
+				pass.reason = reason
+				pass.SetName("temporary access pass #[number]")
+				pass.assignment = "Guest"
+				addtimer(CALLBACK(pass, /obj/item/card/id/guest/proc/expire), duration MINUTES, TIMER_UNIQUE)
+				playsound(src.loc, 'sound/machines/ping.ogg', 25, 0)
+				giv_name = GUESTPASS_STRING_UNSPECIFIED
+				reason = GUESTPASS_STRING_UNSPECIFIED
+				accesses.Cut()
+			else if(!giver)
+				to_chat(ui.user, SPAN_WARNING("Cannot issue pass without issuing ID."))
+			else if(!accesses.len)
+				to_chat(ui.user, SPAN_WARNING("Cannot issue pass without at least one granted access permission."))
 
-			var/obj/item/card/id/guest/pass = new(src.loc)
-			pass.temp_access = accesses.Copy()
-			pass.registered_name = giv_name
-			pass.expiration_time = world.time + duration MINUTES
-			pass.reason = reason
-			pass.SetName("guest pass #[number]")
-			pass.assignment = "Guest"
-			addtimer(CALLBACK(pass, /obj/item/card/id/guest/proc/expire), duration MINUTES, TIMER_UNIQUE)
-			playsound(src.loc, 'sound/machines/ping.ogg', 25, 0)
-			. = TOPIC_REFRESH
-		else if(!giver)
-			to_chat(user, SPAN_WARNING("Cannot issue pass without issuing ID."))
-		else if(!accesses.len)
-			to_chat(user, SPAN_WARNING("Cannot issue pass without at least one granted access permission."))
+			. = TRUE
+			SStgui.update_user_uis(ui.user)
+
+
+/obj/machinery/computer/guestpass/tgui_data(mob/user)
+	. = list()
+	.["mode"] = mode
+	.["internal_log"] = internal_log
+	.["reason"] = reason
+	.["duration"] = duration
+	.["min_duration"] = min_duration
+	.["max_duration"] = max_duration
+	.["area_code"] = area_code
+
+	.["area_access"] = list()
+	.["special_access"] = list()
+	.["giver"] = FALSE
+	.["giver_name"] = "No ID Inserted!"
+	.["guestpass_name"] = "NOT SPECIFIED"
+
+	if(giver)
+		.["giver"] = !!giver
+		.["giver_name"] = giver.rank || giver.assignment || SSjobs.get_by_path(giver.job_access_type).title
+		.["guestpass_name"] = giv_name
+
+		// operating (area) access
+		var/list/operating_access = list()
+		for(var/A in giver.access)
+			var/datum/access/acc = get_access_by_id(A)
+			if(operating_access_types & acc.access_type)
+				operating_access.Add(list(list(
+					"desc" = acc.desc,
+					"access" = A,
+					"selected" = (A in accesses)
+				)))
+		// special access
+		var/list/special_access = list()
+		for(var/A in get_access_ids(special_access_types))
+			var/datum/access/acc = get_access_by_id(A)
+			if(guestpass_access_check(acc) && (special_access_types & acc.access_type))
+				special_access.Add(list(list(
+					"desc" = acc.desc,
+					"access" = A,
+					"selected" = (A in accesses)
+				)))
+
+		.["area_access"] = operating_access
+		.["special_access"] = special_access
+
+#undef GUESTPASS_MIN_DURATION
+#undef GUESTPASS_MAX_DURATION
+#undef GUESTPASS_STRING_UNSPECIFIED

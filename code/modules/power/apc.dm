@@ -30,7 +30,7 @@
 #define UPDATE_OPENED2 		(1<<2)
 #define UPDATE_MAINT 		(1<<3)
 #define UPDATE_BROKE 		(1<<4)
-#define UPDATE_BLUESCREEN 	(1<<5)	
+#define UPDATE_BLUESCREEN 	(1<<5)
 #define UPDATE_WIREEXP 		(1<<6)
 #define UPDATE_ALLGOOD 		(1<<7)
 
@@ -88,7 +88,7 @@
 		/obj/item/stock_parts/power/apc,
 		/obj/item/stock_parts/power/battery
 		)
-	req_access = list(access_engineeringlvl2)
+	req_access = list(ACCESS_ENGINEERING_LVL2)
 	clicksound = "switch"
 	layer = ABOVE_WINDOW_LAYER
 	var/needs_powerdown_sound

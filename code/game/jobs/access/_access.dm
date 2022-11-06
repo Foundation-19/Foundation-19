@@ -1,3 +1,17 @@
+
+/datum/access
+	var/id = ""
+	var/desc = ""
+	var/region = ACCESS_REGION_NONE
+	var/access_type = ACCESS_TYPE_STATION
+
+	// person with ANY ACCESS in guestpass_access_prerequisites can give out a guestpass
+	// for this access despite not having this access
+	var/list/guestpass_access_prerequisites = list()
+
+/datum/access/dd_SortValue()
+	return "[access_type][desc]"
+
 /obj/var/list/req_access = list()
 
 //returns 1 if this mob has sufficient access to use this object
@@ -31,7 +45,7 @@
 
 	if(maint_all_access)
 		L = L.Copy()
-		L |= access_maint_tunnels
+		L |= ACCESS_MAINT_TUNNELS
 
 	return has_access(R, L)
 
@@ -67,21 +81,21 @@
 /proc/get_centcom_access(job)
 	switch(job)
 		if("VIP Guest")
-			return list(access_cent_general)
+			return list(ACCESS_CENT_GENERAL)
 		if("Custodian")
-			return list(access_cent_general, access_cent_living, access_cent_storage)
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_CENT_STORAGE)
 		if("Thunderdome Overseer")
-			return list(access_cent_general, access_cent_thunder)
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_THUNDER)
 		if("Intel Officer")
-			return list(access_cent_general, access_cent_living)
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING)
 		if("Medical Officer")
-			return list(access_cent_general, access_cent_living, access_cent_medical)
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_CENT_MEDICAL)
 		if("Death Commando")
-			return list(access_cent_general, access_cent_specops, access_cent_living, access_cent_storage)
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_LIVING, ACCESS_CENT_STORAGE)
 		if("Research Officer")
-			return list(access_cent_general, access_cent_specops, access_cent_medical, access_cent_teleporter, access_cent_storage)
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_TELEPORTER, ACCESS_CENT_STORAGE)
 		if("BlackOps Commander")
-			return list(access_cent_general, access_cent_thunder, access_cent_specops, access_cent_living, access_cent_storage, access_cent_creed)
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_THUNDER, ACCESS_CENT_SPECOPS, ACCESS_CENT_LIVING, ACCESS_CENT_STORAGE, ACCESS_CENT_CREED)
 		if("Supreme Commander")
 			return get_all_centcom_access()
 
@@ -133,6 +147,16 @@
 		priv_station_access = get_access_ids(ACCESS_TYPE_STATION)
 
 	return priv_station_access.Copy()
+
+/var/list/priv_innate_access
+/proc/get_all_innate_access()
+	if(!priv_innate_access)
+		priv_innate_access = get_access_ids(ACCESS_TYPE_INNATE)
+
+	return priv_innate_access.Copy()
+
+/proc/get_all_site_access()
+	return get_all_station_access() + get_all_innate_access()
 
 /var/list/priv_centcom_access
 /proc/get_all_centcom_access()

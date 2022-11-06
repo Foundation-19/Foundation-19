@@ -12,7 +12,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 	program_menu_icon = "star"
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE
-	required_access = access_securitylvl2
+	required_access = ACCESS_SECURITY_LVL2
 	nanomodule_path = /datum/nano_module/program/digitalwarrant/
 
 /datum/nano_module/program/digitalwarrant/
@@ -83,7 +83,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 	if(!istype(user))
 		return
 	var/obj/item/card/id/I = user.GetIdCard()
-	if(!istype(I) || !I.registered_name || !(access_securitylvl2 in I.access))
+	if(!istype(I) || !I.registered_name || !(ACCESS_SECURITY_LVL2 in I.access))
 		to_chat(user, "Authentication error: Unable to locate ID with apropriate access to allow this operation.")
 		return
 
@@ -200,7 +200,7 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 		// access-granting is only available for arrest warrants
 		if(activewarrant.fields["arrestsearch"] == "search")
 			return
-		if(!(access_adminlvl1 in I.access))
+		if(!(ACCESS_ADMIN_LVL1 in I.access))
 			to_chat(user, "Authentication error: Unable to locate ID with appropriate access to allow this operation.")
 			return
 

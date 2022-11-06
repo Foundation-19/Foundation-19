@@ -9,21 +9,21 @@
 
 	switch(network)
 		if(NETWORK_ENGINEERING, NETWORK_ALARM_ATMOS, NETWORK_ALARM_CAMERA, NETWORK_ALARM_FIRE, NETWORK_ALARM_POWER)
-			return access_engine
+			return ACCESS_ENGINE
 		if(NETWORK_ROBOTS)
-			return access_ai_upload
+			return ACCESS_AI_UPLOAD
 		if(NETWORK_CRESCENT, NETWORK_ERT)
-			return access_cent_specops
+			return ACCESS_CENT_SPECOPS
 		if(NETWORK_MEDICAL)
-			return access_medical
+			return ACCESS_MEDICAL
 		if(NETWORK_MINE)
-			return access_mailsorting // Cargo office - all cargo staff should have access here.
+			return ACCESS_MAILSORTING // Cargo office - all cargo staff should have access here.
 		if(NETWORK_RESEARCH)
-			return access_research
+			return ACCESS_RESEARCH
 		if(NETWORK_THUNDER)
 			return 0
 
-	return access_security // Default for all other networks
+	return ACCESS_SECURITY // Default for all other networks
 
 /datum/computer_file/program/camera_monitor
 	filename = "cammon"
@@ -84,7 +84,7 @@
 	if(!network_access)
 		return 1
 
-	return check_access(user, access_security) || check_access(user, network_access)
+	return check_access(user, ACCESS_SECURITY) || check_access(user, network_access)
 
 /datum/nano_module/program/camera_monitor/Topic(href, href_list)
 	if(..())

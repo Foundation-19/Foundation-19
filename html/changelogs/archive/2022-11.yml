@@ -1,0 +1,52 @@
+2022-11-02:
+  MACIEKBAKI:
+  - bugfix: One door (LCZ-EZ Checkpoint) should no longer be in a wall.
+  Realtimeslayer:
+  - bugfix: gas injector
+  Tsurupeta:
+  - config: added a BCCM value to config.
+  - admin: Added BCCM for use by admins.
+  - server: Added SQL migrations for BCCM functionality.
+2022-11-03:
+  Tsurupeta:
+  - rscadd: You can no longer respawn with the same character name.
+  - admin: change location of player logs storage.
+  - rscadd: You can now heat up tanks using welder.
+2022-11-04:
+  GGarciaECE:
+  - rscadd: new sprites for future guns courtesy of Civilization13
+  - rscadd: glock17 (unused), M60 (new LMG maybe for MTF or perhaps add one to HCZ
+      armoury, pretty op tho), Spas12 (reskin of Combat shotgun, variants that spawn
+      with beanbag, slug or buckshot, 9 shells), AR12 (Semi auto shotgun with 10 shell
+      mags, variants that spawn with beanbag, buckshot or slug mag initially), Saiga12
+      (identical as AR12 except mags hold 8 rounds)
+  - rscadd: Replaced LCZ locker room's P90's with shotguns loaded in beanbag.  Meant
+      to be used in CDC as beanbag is relatively efficient and less messy than P90
+      rubber
+  - balance: Buffed Titanium, Plasteel and Plasteel Osmium significantly against brute
+      attacks. Rifle bullets for the most part (apart from the most powerful) will
+      not scratch them.
+  - rscadd: HCZ spawn with ballistic armour, the hazmat armour can still be found
+      in their armoury
+  - rscadd: Changes to CDC and to various checkpoints to make them more utilitarians
+      and less claustrophobic
+  - rscadd: Add 2 pairs of sunglasses and 4 flashes (2 extra as replacement, flashes
+      burn quick) in CDC Medical for EMTs, in their locker room
+  - rscadd: Modified content of armoury, there are less rifles now (except in HCZ
+      which still has 8 assault rifles to arm 8 out of 9 operatives). HCZ has a new
+      LMG, the M60, but there is only one of them. All zone armouries have variants
+      of sidearms as well as Saiga12 with variants of shell boxes and mags (in both
+      non lethal and lethal). HCZ now has frag grenades and a single grenade launcher
+      (not to be abused). HCZ is truly the heavy weapon guys of the Site now
+  - rscadd: 'New shotgun shell: Rubbershot. It''s basically buckshot but non lethal
+      (it is to buckshot what beanbag is to slug)'
+  - rscadd: Connected Reeducation room through a tunnel to inside of CDCZ. It's relatively
+      secluded now, but its as expected for a room where the unspeakable occur.
+2022-11-05:
+  GGarciaECE:
+  - bugfix: fix desynced shutters on the CDC medical office
+  - bugfix: fix buttons set to the incorrect ID near CDC mining checkpoint
+  - bugfix: fix two direction windows incorrectly being displayed as fulltile window
+  MACIEKBAKI:
+  - bugfix: EZ Med Storage gravity should work properly (just before the doors, that
+      one)

@@ -54,7 +54,7 @@
 	if(istype(card))
 
 		if(toolate == 1)
-			if(access_sciencelvl1 in card.GetAccess())
+			if(ACCESS_SCIENCE_LVL1 in card.GetAccess())
 				if(toolate_on)
 					toolate_on = 0
 					icon_state = "Off"
@@ -67,7 +67,7 @@
 				to_chat(user, "<span class='warning'>The power supply flashes a red light - access denied.</span>")
 			return
 		else
-			if(access_bar in card.GetAccess())
+			if(ACCESS_BAR in card.GetAccess())
 				var/sign_type = input(user, "What would you like to change the barsign to?") as null|anything in get_valid_states(0)
 				if(!sign_type)
 					return

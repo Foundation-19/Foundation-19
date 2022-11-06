@@ -26,7 +26,7 @@ exactly 0 "escapes" '\\\\(red|blue|green|black|b|i[^mc])'
 exactly 7 "Del()s" '\S\WDel\(' # +1 because it also matches comments, sigh
 exactly 2 "/atom text paths" '"/atom'
 exactly 2 "/area text paths" '"/area'
-exactly 4 "/datum text paths" '"/datum'
+exactly 2 "/datum text paths" '"/datum'
 exactly 2 "/mob text paths" '"/mob'
 exactly 10 "/obj text paths" '"/obj'
 exactly 8 "/turf text paths" '"/turf'

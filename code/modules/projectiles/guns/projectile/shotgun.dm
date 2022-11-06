@@ -72,6 +72,7 @@
 			I.pixel_x = i * 2
 			add_overlay(I)
 
+
 /obj/item/gun/projectile/shotgun/doublebarrel
 	name = "double-barreled shotgun"
 	desc = "A true classic."

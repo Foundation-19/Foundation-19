@@ -35,10 +35,10 @@
 	magazine_type = /obj/item/ammo_magazine/scp/p90_mag/rubber
 
 /obj/item/gun/projectile/automatic/scp/m16
-	name = "SR17"
-	desc = "A Foundation-standard service rifle that takes 5.56x45mm straight magazines. Also sports a compensator, lofty iron sights, and a comfortable grip."
+	name = "M16A2"
+	desc = "A Foundation-standard service rifle that takes 5.56x45mm straight magazines. Like many reliable firearms of old, the Foundation has found a use for them in the hands of Security Department operatives."
 	icon_state = "m16"
-	item_state = "m16"
+	item_state = "m16new"
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	slot_flags = SLOT_BACK
@@ -61,6 +61,37 @@
 		icon_state = "m16"
 	else
 		icon_state = "m16-empty"
+	return
+
+
+
+/obj/item/gun/projectile/automatic/scp/m4a1
+	name = "M4A1"
+	desc = "A Foundation-standard service carbine that takes 5.56x45mm straight magazines. Like many reliable firearms of old, the Foundation has found a use for them in the hands of Security Department guards."
+	icon_state = "m4"
+	item_state = "m4"
+	w_class = ITEM_SIZE_HUGE
+	force = 10
+	slot_flags = SLOT_BACK
+	caliber = "a556"
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/scp/m16_mag
+	allowed_magazines = /obj/item/ammo_magazine/scp/m16_mag
+
+	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=1, one_hand_penalty=3, burst_accuracy=list(0,-1,-2), dispersion=list(0.0, 0.5, 0.8)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.1, 0.6, 0.9), autofire_enabled=1),
+		)
+
+/obj/item/gun/projectile/automatic/scp/m4a1/update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "m4"
+	else
+		icon_state = "m4-empty"
 	return
 
 /obj/item/gun/projectile/automatic/scp/ak47
@@ -327,6 +358,12 @@
 	else
 		icon_state = "vector-45-empty"
 	return
+
+
+
+
+
+
 
 
 
