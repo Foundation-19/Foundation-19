@@ -45,7 +45,7 @@
 		/obj/item/rig_module/mounted/plasmacutter,
 		/obj/item/rig_module/maneuvering_jets
 		)
-	req_access = list(access_ascent)
+	req_access = list(ACCESS_ASCENT)
 	var/mantid_caste = SPECIES_MANTID_ALATE
 
 // Renamed blade.

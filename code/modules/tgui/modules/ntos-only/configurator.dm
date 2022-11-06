@@ -2,6 +2,7 @@
 	name = "NTOS Computer Configuration Tool"
 	ntos = TRUE
 	tgui_id = "Configuration"
+	available_to_ai = FALSE
 	var/obj/item/modular_computer/movable = null
 
 /datum/tgui_module/computer_configurator/tgui_data(mob/user, datum/tgui/ui, datum/tgui_state/state)

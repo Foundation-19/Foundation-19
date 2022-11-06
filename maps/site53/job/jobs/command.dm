@@ -13,14 +13,15 @@ ut // COMMAND
 	hud_icon = "hudsitedirector"
 
 	access = list(
-		access_com_comms, // SD and HoP do not want to hear all the details, either meet your Commander in person or talk to the Tower
-		access_sci_comms,
-		access_adminlvl1,
-		access_adminlvl2,
-		access_adminlvl3,
-		access_adminlvl4,
-		access_adminlvl5,
-		access_keyauth
+		ACCESS_COM_COMMS, // SD and HoP do not want to hear all the details, either meet your Commander in person or talk to the Tower
+		ACCESS_SCI_COMMS,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_ADMIN_LVL5,
+		ACCESS_KEYAUTH,
+		ACCESS_CHAPEL_OFFICE
 	)
 
 	minimal_access = list()
@@ -42,15 +43,16 @@ ut // COMMAND
 	alt_titles = list("Head of Personnel")
 
 	access = list(
-		access_hop,
-		access_adminlvl1,
-		access_adminlvl2,
-		access_adminlvl3,
-		access_adminlvl4,
-		access_com_comms,
-		access_change_ids,
-		access_civ_comms,
-		access_keyauth
+		ACCESS_HOP,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_COM_COMMS,
+		ACCESS_CHANGE_IDS,
+		ACCESS_CIV_COMMS,
+		ACCESS_KEYAUTH,
+		ACCESS_CHAPEL_OFFICE
 	)
 
 	minimal_access = list()
@@ -76,26 +78,26 @@ ut // COMMAND
 	)
 
 	access = list(
-		access_sciencelvl1,
-		access_sciencelvl3,
-		access_com_comms,
-		access_sci_comms,
-		access_civ_comms,
-		access_log_comms,
-		access_med_comms,
-		access_eng_comms,
-		access_sec_comms,
-		access_adminlvl4,
-		access_adminlvl3,
-		access_adminlvl2,
-		access_adminlvl1,
-		access_engineeringlvl1,
-		access_engineeringlvl2,
-		access_engineeringlvl3,
-		access_securitylvl1,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_COM_COMMS,
+		ACCESS_SCI_COMMS,
+		ACCESS_CIV_COMMS,
+		ACCESS_LOG_COMMS,
+		ACCESS_MED_COMMS,
+		ACCESS_ENG_COMMS,
+		ACCESS_SEC_COMMS,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3
 	)
 
 	minimal_access = list()
@@ -134,17 +136,17 @@ ut // COMMAND
 	hud_icon = "hudcommsprogrammer"
 
 	access = list(
-		access_com_comms,
-		access_sci_comms,
-		access_civ_comms,
-		access_log_comms,
-		access_med_comms,
-		access_eng_comms,
-		access_sec_comms,
-		access_adminlvl1,
-		access_engineeringlvl1,
-		access_engineeringlvl2,
-		access_engineeringlvl3
+		ACCESS_COM_COMMS,
+		ACCESS_SCI_COMMS,
+		ACCESS_CIV_COMMS,
+		ACCESS_LOG_COMMS,
+		ACCESS_MED_COMMS,
+		ACCESS_ENG_COMMS,
+		ACCESS_SEC_COMMS,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3
 	)
 
 	min_skill = list(SKILL_COMPUTER     = SKILL_BASIC,
@@ -185,12 +187,13 @@ ut // COMMAND
 	hud_icon = "hud05rep"
 
 	access = list(
-		access_com_comms,
-		access_adminlvl1,
-		access_adminlvl2,
-		access_adminlvl3,
-		access_adminlvl4,
-		access_adminlvl5
+		ACCESS_COM_COMMS,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_ADMIN_LVL5,
+		ACCESS_CHAPEL_OFFICE
 	)
 	minimal_access = list()
 
@@ -206,7 +209,7 @@ ut // COMMAND
 	minimal_player_age = 5
 	minimal_player_age = 9
 	ideal_character_age = 30
-	alt_titles = list("UIU Relations Agent" = /decl/hierarchy/outfit/job/site90/crew/civ/uiu, "Horizon Initiative Scribe" = /decl/hierarchy/outfit/job/thirep)
+	alt_titles = list("UIU Relations Agent" = /decl/hierarchy/outfit/job/site90/crew/civ/uiu, "Horizon Initiative Scribe" = /decl/hierarchy/outfit/job/thirep, "Marshall, Carter, and Dark Corporate Liaison" = /decl/hierarchy/outfit/job/site90/crew/civ/MCDRep )
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/gocrep
 	allowed_branches = list(
 		/datum/mil_branch/civilian
@@ -217,8 +220,9 @@ ut // COMMAND
 	hud_icon = "hudgoi"
 
 	access = list(
-		access_com_comms,
-		access_adminlvl1
+		ACCESS_COM_COMMS,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_CHAPEL_OFFICE
 	)
 
 	minimal_access = list()
@@ -236,7 +240,7 @@ ut // COMMAND
 	minimal_access = list()
 
 /datum/job/mtf/get_access()
-	return get_all_station_access()
+	return get_all_site_access()
 
 /datum/job/physics
 	title = "UNGOC Physics Operative"
@@ -251,4 +255,4 @@ ut // COMMAND
 	minimal_access = list()
 
 /datum/job/physics/get_access()
-	return get_all_station_access()
+	return get_all_site_access()

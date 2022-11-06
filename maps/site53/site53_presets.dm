@@ -14,29 +14,29 @@
 /datum/map/site53/get_network_access(var/network)
 	switch(network)
 		if(NETWORK_ENGINE)
-			return access_securitylvl1
+			return ACCESS_SECURITY_LVL1
 		if(NETWORK_ENTRANCE)
-			return access_securitylvl1
+			return ACCESS_SECURITY_LVL1
 		if(NETWORK_LCZ)
-			return access_securitylvl1
+			return ACCESS_SECURITY_LVL1
 		if(NETWORK_HCZ)
-			return access_securitylvl1
+			return ACCESS_SECURITY_LVL1
 		if(NETWORK_513)
-			return access_sciencelvl1
+			return ACCESS_SCIENCE_LVL1
 		if(NETWORK_049)
-			return access_sciencelvl1
+			return ACCESS_SCIENCE_LVL1
 		if(NETWORK_106)
-			return access_sciencelvl1
+			return ACCESS_SCIENCE_LVL1
 		if(NETWORK_173)
-			return access_sciencelvl1
+			return ACCESS_SCIENCE_LVL1
 		if(NETWORK_035)
-			return access_sciencelvl1
+			return ACCESS_SCIENCE_LVL1
 		if(NETWORK_343)
-			return access_sciencelvl1
+			return ACCESS_SCIENCE_LVL1
 		if(NETWORK_012)
-			return access_sciencelvl1
+			return ACCESS_SCIENCE_LVL1
 		if(NETWORK_895)
-			return access_sciencelvl3
+			return ACCESS_SCIENCE_LVL3
 	return get_shared_network_access(network) || ..()
 
 /datum/map/site53
@@ -148,7 +148,7 @@
 /datum/map/proc/get_shared_network_access(var/network)
 	switch(network)
 		if(NETWORK_ENGINE)
-			return access_securitylvl1
+			return ACCESS_SECURITY_LVL1
 
 // Override and implement to customize the SMES's loadout
 /obj/machinery/power/smes/buildable/preset/proc/configure_and_install_coils()

@@ -3,7 +3,7 @@
 	helmet = /obj/item/clothing/head/helmet/space/fishbowl
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_eva)
+	req_access = list(ACCESS_EVA)
 
 /obj/machinery/suit_storage_unit/atmos
 	name = "Atmospherics Voidsuit Storage Unit"
@@ -12,7 +12,7 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_atmospherics)
+	req_access = list(ACCESS_ATMOSPHERICS)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/atmos/alt
@@ -26,7 +26,7 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_construction)
+	req_access = list(ACCESS_CONSTRUCTION)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/engineering/unishi
@@ -50,7 +50,7 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_medical)
+	req_access = list(ACCESS_MEDICAL)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/medical/alt
@@ -65,7 +65,7 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_mining)
+	req_access = list(ACCESS_MINING)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/mining/alt
@@ -80,7 +80,7 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_xenoarch)
+	req_access = list(ACCESS_XENOARCH)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/security
@@ -90,7 +90,7 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_security)
+	req_access = list(ACCESS_SECURITY)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/security/alt
@@ -105,7 +105,7 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_syndicate)
+	req_access = list(ACCESS_SYNDICATE)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/ceti
@@ -115,5 +115,5 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
-	req_access = list(access_xenoarch)
+	req_access = list(ACCESS_XENOARCH)
 	islocked = 1

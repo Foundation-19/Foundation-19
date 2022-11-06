@@ -40,7 +40,7 @@
 	body_parts_covered = HANDS
 	siemens_coefficient = 0.50
 	permeability_coefficient = 0.05
-	armor = list(melee = 80, bullet = 40, laser = 30, energy = 25, bomb = 30, bio = 10, rad = 0)
+	armor = list(melee = 50, bullet = 40, laser = 30, energy = 25, bomb = 30, bio = 10, rad = 0)
 
 /obj/item/clothing/gloves/tactical/alpha
 	desc = "These grey tactical gloves are made from a durable synthetic, and have hardened knuckles."
@@ -52,21 +52,6 @@
 	siemens_coefficient = 0.50
 	permeability_coefficient = 0.05
 	armor = list(melee = 80, bullet = 80, laser = 60, energy = 30, bomb = 50, bio = 10, rad = 0)
-
-/obj/item/clothing/mask/smokable/cigarette/bluelady
-	name = "'blue lady' cigarette"
-	brand = "\improper Blue Lady"
-	desc = "The words 'Blue Lady' are written on this deftly-rolled cigarette in blue ink."
-	filling = list(/datum/reagent/tobacco/fine = 1)
-
-/obj/item/clothing/mask/smokable/cigarette/bluelady/Initialize()
-	. = ..()
-
-/obj/item/clothing/mask/smokable/cigarette/bluelady/light()
-	. = ..()
-	for(var/mob/living/carbon/human/affected in range(1, src))
-		affected?.update_013_status()
-
 /obj/item/clothing/suit/armor/vest/scp/medarmorchaos
 	name = "armored vest"
 	desc = "A synthetic armor vest."

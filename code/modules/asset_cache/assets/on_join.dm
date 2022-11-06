@@ -21,10 +21,11 @@
 		"trib.png" = 'html/images/trib.png',
 		"scplogo.png" = 'html/images/scplogo.png',
 		"ungoc.png" = 'html/images/ungoc.png',
+		"uiu.png" = 'html/images/uiu.png',
+		"thi.png" = 'html/images/thi.png',
+		"mcd.png" = 'html/images/mcd4.png',
 		"sh.png" = 'html/images/sh.png',
 		"ci.png" = 'html/images/ci.png',
 		"cotbg.png" = 'html/images/cotbg.png',
-		"ar.png" = 'html/images/ar.png',
-		"uiu.png" = 'html/images/uiu.png',
-		"thi.png" = 'html/images/thi.png'
+		"ar.png" = 'html/images/ar.png'
 	)

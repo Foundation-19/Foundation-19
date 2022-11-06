@@ -53,6 +53,7 @@ return;\
 #define SS_INIT_EARLY            100
 #define SS_INIT_INPUT            99
 #define SS_INIT_GARBAGE          95
+#define SS_INIT_BCCM             94
 #define SS_INIT_DBCORE           90
 #define SS_INIT_CHEMISTRY        18
 #define SS_INIT_MATERIALS        17

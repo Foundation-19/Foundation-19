@@ -7,7 +7,7 @@
 	extended_desc = "This program is capable of reconstructing damaged AIC systems. It can also be used to upload basic laws to the AI. Requires direct AI connection via inteliCard slot."
 	size = 12
 	requires_ntnet = FALSE
-	required_access = access_adminlvl4
+	required_access = ACCESS_ADMIN_LVL4
 	requires_access_to_run = FALSE
 	available_on_ntnet = TRUE
 	nanomodule_path = /datum/nano_module/program/computer_aidiag/

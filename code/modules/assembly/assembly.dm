@@ -48,10 +48,8 @@
 	return 1
 
 /obj/item/device/assembly/proc/pulse(var/radio = 0)							//Called when this device attempts to act on another device, var/radio determines if it was sent via radio or direct
-	if(holder && (wires & WIRE_RECEIVE))
+	if(holder && (wires & WIRE_RECEIVE|WIRE_PULSE))
 		holder.process_activation(src, 1, 0)
-	if(holder && (wires & WIRE_PULSE_SPECIAL))
-		holder.process_activation(src, 0, 1)
 	return 1
 
 /obj/item/device/assembly/proc/toggle_secure()								//Code that has to happen when the assembly is un\secured goes here

@@ -34,6 +34,13 @@
 	var/computer_id = null
 	var/last_ckey
 
+	//LOGGING STUFF: F19 Admin Logging Suite
+	var/list/say_log = list()
+	var/list/emote_log = list()
+	var/list/ooc_log = list()
+	var/list/dsay_log = list()
+	var/list/interact_log = list()
+
 	var/stat = CONSCIOUS //Whether a mob is alive or dead. TODO: Move this to living - Nodrak
 
 	var/obj/screen/cells = null

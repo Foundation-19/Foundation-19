@@ -288,7 +288,7 @@
 	new /obj/item/device/flash(src)
 	new /obj/item/device/flashlight/maglight(src)
 	new /obj/item/gun/projectile/revolver/rhino(src)
-	new /obj/item/ammo_magazine/box/mk9(src)
+	new /obj/item/ammo_magazine/box/a357(src)
 	new /obj/item/handcuffs(src)
 	update_icon()
 
@@ -304,6 +304,7 @@
 	new /obj/item/ammo_magazine/box/mk9(src)
 	new /obj/item/handcuffs(src)
 	update_icon()
+
 
 /obj/item/storage/belt/holster/security/fullusp45/New()
 	..()

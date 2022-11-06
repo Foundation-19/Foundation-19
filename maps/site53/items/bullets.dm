@@ -111,36 +111,36 @@
 	desc = "A 5.7x28mm bullet casing."
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/pistol/medium/smg
-	icon_state = "10mm-casing"
-	spent_icon = "10mm-casing-spent"
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/rub10mm
 	desc = "A rubber 10mm bullet casing."
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/pistol/medium/smg/rubber
-	icon_state = "10mm-casing-rubber"
-	spent_icon = "10mm-casing-spent"
+	icon_state = "pistol-casing-rubber"
+	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/ap10mm
 	desc = "A armor piercing 10mm bullet casing."
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/pistol/medium/smg/ap
-	icon_state = "10mm-casing"
-	spent_icon = "10mm-casing-spent"
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/h10mm
 	desc = "A hollowpoint 10mm bullet casing."
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/pistol/medium/smg/hollowpoint
-	icon_state = "10mm-casing-hollowpoint"
-	spent_icon = "10mm-casing-spent"
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/sc10mm
 	desc = "A Silver Crescent 10mm bullet casing."
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/pistol/medium/smg/silver
-	icon_state = "10mm-casing-silvercrescent"
-	spent_icon = "10mm-casing-spent"
+	icon_state = "pistol-casing"
+	spent_icon = "pistol-casing-spent"
 
 /obj/item/ammo_casing/shotgun
 	name = "shotgun slug"
@@ -152,11 +152,19 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 360)
 
 /obj/item/ammo_casing/shotgun/pellet
-	name = "shotgun shell"
+	name = "shotgun buckshot"
 	desc = "A 12 gauge shell."
 	icon_state = "shell-pellet"
 	spent_icon = "shell-pellet-spent"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun
+	matter = list(DEFAULT_WALL_MATERIAL = 360)
+
+/obj/item/ammo_casing/shotgun/rubbershot
+	name = "shotgun rubbershot"
+	desc = "A 12 gauge shell."
+	icon_state = "shell-rubbershot"
+	spent_icon = "shell-rubbershot-spent"
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun/rubbershot
 	matter = list(DEFAULT_WALL_MATERIAL = 360)
 
 /obj/item/ammo_casing/shotgun/blank
@@ -392,6 +400,17 @@
 	range_step = 1
 	spread_step = 10
 	agony = 0
+
+/obj/item/projectile/bullet/pellet/shotgun/rubbershot
+	name = "rubbershot"
+	damage = 1
+	pellets = 8
+	range_step = 1
+	spread_step = 10
+	agony = 25
+	embed = 0
+	sharp = 0
+
 
 /* "Rifle" rounds */
 

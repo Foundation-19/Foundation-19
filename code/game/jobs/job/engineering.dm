@@ -11,23 +11,23 @@
 	allowed_ranks = list(/datum/mil_rank/security/o1)
 
 	access = list(
-		access_eng_comms,
-		access_securitylvl1,
-		access_securitylvl2,
-		access_securitylvl3,
-		access_securitylvl4,
-		access_securitylvl4,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3,
-		access_sciencelvl4,
-		access_adminlvl1,
-		access_engineeringlvl1,
-		access_engineeringlvl2,
-		access_engineeringlvl3,
-		access_engineeringlvl4,
-		access_engineeringlvl5,
-		access_keyauth
+		ACCESS_ENG_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_SECURITY_LVL4,
+		ACCESS_SECURITY_LVL4,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_SCIENCE_LVL4,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3,
+		ACCESS_ENGINEERING_LVL4,
+		ACCESS_ENGINEERING_LVL5,
+		ACCESS_KEYAUTH
 	)
 
 	minimal_access = list()
@@ -51,19 +51,19 @@
 	)
 
 	access = list(
-		access_eng_comms,
-		access_securitylvl1,
-		access_securitylvl2,
-		access_securitylvl3,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3,
-		access_sciencelvl4,
-		access_engineeringlvl1,
-		access_engineeringlvl2,
-		access_engineeringlvl3,
-		access_engineeringlvl4,
-		access_engine_equip
+		ACCESS_ENG_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_SCIENCE_LVL4,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3,
+		ACCESS_ENGINEERING_LVL4,
+		ACCESS_ENGINE_EQUIP
 	)
 
 	minimal_access = list()
@@ -91,12 +91,12 @@
 		/datum/mil_rank/security/e6
 	)
 	access = list(
-		access_adminlvl1,
-		access_adminlvl2,
-		access_engineeringlvl1,
-		access_engineeringlvl2,
-		access_engineeringlvl3,
-		access_engineeringlvl4,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3,
+		ACCESS_ENGINEERING_LVL4,
 	)
 
 /datum/job/seneng
@@ -127,15 +127,15 @@
 	)
 
 	access = list(
-		access_securitylvl1,
-		access_securitylvl2,
-		access_securitylvl3,
-		access_engineeringlvl1,
-		access_engineeringlvl2,
-		access_engineeringlvl3,
-		access_engineeringlvl4,
-		access_medicallvl1,
-		access_sciencelvl1
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3,
+		ACCESS_ENGINEERING_LVL4,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_SCIENCE_LVL1
 	)
 	minimal_access = list()
 
@@ -166,10 +166,10 @@
 	)
 
 	access = list(
-		access_securitylvl1,
-		access_engineeringlvl1,
-		access_engineeringlvl2,
-		access_engineeringlvl3
+		ACCESS_SECURITY_LVL1,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3
 	)
 	minimal_access = list()
 
@@ -199,8 +199,8 @@
 	)
 
 	access = list(
-		access_securitylvl1,
-		access_engineeringlvl1,
-		access_engineeringlvl2
+		ACCESS_SECURITY_LVL1,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2
 	)
 	minimal_access = list()

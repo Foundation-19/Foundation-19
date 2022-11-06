@@ -19,7 +19,7 @@
 	icon_opened = "enlisted-open"
 	icon_off = "enlisted-off"
 	anchored = TRUE
-	req_access = list(access_securitylvl1)
+	req_access = list(ACCESS_SECURITY_LVL1)
 	var/registered_name = null
 
 /obj/structure/closet/secure_closet/mtf/WillContain()
@@ -28,7 +28,7 @@
 
 /obj/structure/closet/secure_closet/mtf/enlisted
 	name = "LCZ Guard's Locker"
-	req_access = list(access_securitylvl2)
+	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "junior-locked"
 	icon_closed = "junior-unlocked"
 	icon_locked = "junior-locked"
@@ -39,9 +39,6 @@
 	return list(
 //		/obj/item/gun/projectile/sec/sec,
 //		/obj/item/ammo_magazine/c45m = 4,
-		/obj/item/gun/projectile/automatic/scp/p90,
-		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
-		/obj/item/gun/energy/taser/carbine,
 //  	/obj/item/ammo_magazine/box/a10mm,
 		/obj/item/handcuffs = 4,
 //		/obj/item/ammo_magazine/box/c45donor,
@@ -58,7 +55,7 @@
 
 /obj/structure/closet/secure_closet/mtf/nco
 	name = "LCZ Sergeant's Locker"
-	req_access = list(access_securitylvl2)
+	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "guard-locked"
 	icon_closed = "guard-unlocked"
 	icon_locked = "guard-locked"
@@ -67,9 +64,7 @@
 
 /obj/structure/closet/secure_closet/mtf/nco/WillContain()
 	return list(
-		/obj/item/gun/projectile/automatic/scp/p90,
-		/obj/item/gun/energy/stunrevolver/rifle,
-		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
+		/obj/item/clothing/accessory/storage/bandolier,
 		/obj/item/handcuffs = 4,
 		/obj/item/storage/box/ifak,
 		/obj/item/clothing/accessory/storage/black_vest,
@@ -82,7 +77,7 @@
 	)
 /obj/structure/closet/secure_closet/mtf/enlisted/hcz
 	name = "HCZ Guard's Locker"
-	req_access = list(access_securitylvl3)
+	req_access = list(ACCESS_SECURITY_LVL3)
 
 /obj/structure/closet/secure_closet/mtf/enlisted/hcz/WillContain()
 	return list(
@@ -111,7 +106,7 @@
 /obj/structure/closet/secure_closet/mtf/nco/hcz/WillContain()
 	return list(
 		/obj/item/storage/belt/holster/security/tactical,
-		/obj/item/gun/projectile/automatic/scp/galil,
+		/obj/item/gun/projectile/automatic/scp/m16,
 		/obj/item/gun/energy/stunrevolver/rifle,
 		/obj/item/ammo_magazine/scp/m16_mag = 3,
 		/obj/item/ammo_magazine/box/a556,
@@ -130,7 +125,7 @@
 
 /obj/structure/closet/secure_closet/mtf/enlisted/ez
 	name = "EZ Agent's Locker"
-	req_access = list(access_securitylvl3)
+	req_access = list(ACCESS_SECURITY_LVL3)
 
 /obj/structure/closet/secure_closet/mtf/enlisted/ez/WillContain()
 	return list(
@@ -170,7 +165,7 @@
 
 /obj/structure/closet/secure_closet/mtf/commander
 	name = "Guard Commander Locker"
-	req_access = list(access_securitylvl5)
+	req_access = list(ACCESS_SECURITY_LVL5)
 	icon_state = "cm-locked"
 	icon_closed = "cm-unlocked"
 	icon_locked = "cm-locked"
@@ -180,13 +175,6 @@
 /obj/structure/closet/secure_closet/mtf/commander/WillContain()
 	return list(
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/gun/projectile/automatic/scp/galil,
-		/obj/item/ammo_magazine/scp/m16_mag = 3,
-		/obj/item/gun/projectile/automatic/scp/p90,
-		/obj/item/ammo_magazine/scp/p90_mag = 3,
-		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
-		/obj/item/ammo_magazine/box/a10mm,
-		/obj/item/ammo_magazine/box/a556,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/handcuffs = 4,
 		/obj/item/clothing/accessory/storage/holster/thigh,
@@ -200,7 +188,7 @@
 
 /obj/structure/closet/secure_closet/mtf/co
 	name = "Zone Commander Locker"
-	req_access = list(access_securitylvl4)
+	req_access = list(ACCESS_SECURITY_LVL4)
 	icon_state = "co-locked"
 	icon_closed = "co-unlocked"
 	icon_locked = "co-locked"
@@ -210,23 +198,20 @@
 /obj/structure/closet/secure_closet/mtf/co/WillContain()
 	return list(
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/gun/projectile/automatic/scp/p90,
-		/obj/item/ammo_magazine/scp/p90_mag = 3,
-		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
-		/obj/item/ammo_magazine/box/a10mm,
-		/obj/item/ammo_magazine/box/a556,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/handcuffs = 4,
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/clothing/head/beret/sec/corporate/hos,
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-		/obj/item/ammo_magazine/scp/usp45 = 3
+		/obj/item/ammo_magazine/scp/usp45 = 3,
+		/obj/item/gun/projectile/pistol/usp45,
+		/obj/item/ammo_magazine/box/acp45
 	)
 
 /obj/structure/closet/secure_closet/mtf/breachautomatics
-	name = "automatic weapons locker"
-	req_access = list(access_securitylvl2)
+	name = "Assault rifle locker"
+	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "gun-locked"
 	icon_closed = "gun-unlocked"
 	icon_locked = "gun-locked"
@@ -235,18 +220,18 @@
 
 /obj/structure/closet/secure_closet/mtf/breachautomatics/WillContain()
 	return list(
-		/obj/item/gun/projectile/automatic/scp/galil,
-		/obj/item/gun/projectile/automatic/scp/galil,
-		/obj/item/gun/projectile/automatic/scp/galil,
 		/obj/item/gun/projectile/automatic/scp/m16,
+		/obj/item/gun/projectile/automatic/scp/m16,
+		/obj/item/gun/projectile/automatic/scp/m4a1,
+		/obj/item/gun/projectile/automatic/scp/m4a1,
 		/obj/item/ammo_magazine/scp/m16_mag = 12,
 		/obj/item/ammo_magazine/box/a556 = 4
 	)
 
 
 /obj/structure/closet/secure_closet/mtf/breachshotguns
-	name = "tactical shotgun locker"
-	req_access = list(access_securitylvl2)
+	name = "Tactical Shotgun Locker"
+	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "gun-locked"
 	icon_closed = "gun-unlocked"
 	icon_locked = "gun-locked"
@@ -255,15 +240,19 @@
 
 /obj/structure/closet/secure_closet/mtf/breachshotguns/WillContain()
 	return list(
-		/obj/item/gun/projectile/shotgun/pump/combat = 3,
-		/obj/item/ammo_magazine/box/buckshot = 6,
-		/obj/item/ammo_magazine/box/slug = 6,
-		/obj/item/clothing/accessory/storage/bandolier = 3
+		/obj/item/gun/projectile/automatic/scp/saiga12 = 2,
+		/obj/item/ammo_magazine/box/buckshot = 4,
+		/obj/item/ammo_magazine/box/slug = 4,
+		/obj/item/ammo_magazine/box/emp = 2,
+		/obj/item/ammo_magazine/scp/saiga12 = 6,
+		/obj/item/ammo_magazine/scp/saiga12/emp = 4,
+		/obj/item/ammo_magazine/scp/saiga12/buckshot = 6,
+		/obj/item/clothing/accessory/storage/bandolier = 2
 	)
 
 /obj/structure/closet/secure_closet/mtf/riotshotguns
-	name = "riot shotgun locker"
-	req_access = list(access_securitylvl2)
+	name = "Riot Shotgun Locker"
+	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "gun-locked"
 	icon_closed = "gun-unlocked"
 	icon_locked = "gun-locked"
@@ -272,14 +261,41 @@
 
 /obj/structure/closet/secure_closet/mtf/riotshotguns/WillContain()
 	return list(
-		/obj/item/gun/projectile/shotgun/pump = 3,
+		/obj/item/gun/projectile/automatic/scp/saiga12/beanbag = 2,
+		/obj/item/ammo_magazine/scp/saiga12/beanbag = 6,
+		/obj/item/ammo_magazine/scp/saiga12/rubbershot = 6,
 		/obj/item/ammo_magazine/box/beanbag = 6,
-		/obj/item/clothing/accessory/storage/bandolier/beanbag = 3
+		/obj/item/ammo_magazine/box/rubbershot = 6,
+		/obj/item/clothing/accessory/storage/bandolier = 2,
+	)
+
+/obj/structure/closet/secure_closet/mtf/specialistshotgun
+	name = "Specialized Shotgun Crowd Control Gear"
+	req_access = list(ACCESS_SECURITY_LVL2)
+	icon_state = "gun-locked"
+	icon_closed = "gun-unlocked"
+	icon_locked = "gun-locked"
+	icon_opened = "gun-open"
+	icon_off = "gun-off"
+
+/obj/structure/closet/secure_closet/mtf/specialistshotgun/WillContain()
+	return list(
+		/obj/item/gun/projectile/automatic/scp/saiga12/beanbag = 1,
+		/obj/item/gun/projectile/shotgun/pump/combat = 1,
+		/obj/item/ammo_magazine/scp/saiga12/beanbag = 3,
+		/obj/item/ammo_magazine/scp/saiga12/rubbershot = 3,
+		/obj/item/ammo_magazine/scp/saiga12/stunshell = 3,
+		/obj/item/ammo_magazine/scp/saiga12/flash = 4,
+		/obj/item/ammo_magazine/box/beanbag = 3,
+		/obj/item/ammo_magazine/box/rubbershot = 3,
+		/obj/item/ammo_magazine/box/stunshell = 3,
+		/obj/item/ammo_magazine/box/flash = 3,
+		/obj/item/clothing/accessory/storage/bandolier = 2,
 	)
 
 /obj/structure/closet/secure_closet/mtf/riotgear
 	name = "riot gear locker"
-	req_access = list(access_securitylvl2)
+	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "gun-locked"
 	icon_closed = "gun-unlocked"
 	icon_locked = "gun-locked"
@@ -340,7 +356,7 @@
 
 /obj/structure/closet/secure_closet/mtf/exp
 	name = "Scout's Locker"
-	req_access = list(access_securitylvl3)
+	req_access = list(ACCESS_SECURITY_LVL3)
 	icon_state = "agent-locked"
 	icon_closed = "agent-unlocked"
 	icon_locked = "agent-locked"
@@ -370,7 +386,7 @@
 
 /obj/structure/closet/secure_closet/mtf/expl
 	name = "Scout's Leader Locker"
-	req_access = list(access_securitylvl5)
+	req_access = list(ACCESS_SECURITY_LVL5)
 	icon_state = "cm-locked"
 	icon_closed = "cm-unlocked"
 	icon_locked = "cm-locked"
@@ -400,7 +416,7 @@
 
 /obj/structure/closet/secure_closet/mtf/ntf
 	name = "NTF Agent's locker"
-	req_access = list(access_securitylvl3)
+	req_access = list(ACCESS_SECURITY_LVL3)
 	icon_state = "agent-locked"
 	icon_closed = "agent-unlocked"
 	icon_locked = "agent-locked"
@@ -417,6 +433,7 @@
 		/obj/item/storage/backpack/rucksack,
 		/obj/item/gun/projectile/pistol/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
+		/obj/item/ammo_magazine/box/mk9,
 		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/melee/telebaton,
 	)

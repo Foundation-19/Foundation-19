@@ -460,6 +460,7 @@
 	t = replacetext(t, "\[goc\]", "<img src = ungoc.png>")
 	t = replacetext(t, "\[uiu\]", "<img src = uiu.png>")
 	t = replacetext(t, "\[thi\]", "<img src = thi.png>")
+	t = replacetext(t, "\[mcd\]", "<img src = mcd.png>")
 	t = replacetext(t, "\[ar\]", "<img src = ar.png>")
 	t = replacetext(t, "\[ci\]", "<img src = ci.png>")
 	t = replacetext(t, "\[sh\]", "<img src = sh.png>")
@@ -620,6 +621,17 @@
 	text = replacetext(text, "'", "''")
 	text = replacetext(text, ";", "")
 	text = replacetext(text, "&", "")
+	return text
+
+/proc/new_sql_sanitize_text(var/text)
+	text = replacetext(text, "'", "")
+	text = replacetext(text, ";", "")
+	text = replacetext(text, "&", "")
+	text = replacetext(text, "`", "")
+	return text
+
+/proc/remove_all_spaces(text)
+	text = replacetext(text, " ", "")
 	return text
 
 /proc/text2num_or_default(text, default)

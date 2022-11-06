@@ -20,10 +20,10 @@
 	hud_icon = "hudengineertrainee"
 
 	access = list(
-		access_eng_comms,
-		access_engineeringlvl1,
-		access_engineeringlvl2,
-		access_sciencelvl1
+		ACCESS_ENG_COMMS,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_SCIENCE_LVL1
 	)
 	minimal_access = list()
 
@@ -52,12 +52,12 @@
 	hud_icon = "hudengineer"
 
 	access = list(
-		access_eng_comms,
-		access_securitylvl1,
-		access_engineeringlvl1,
-		access_engineeringlvl2,
-		access_engineeringlvl3,
-		access_sciencelvl1
+		ACCESS_ENG_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3,
+		ACCESS_SCIENCE_LVL1
 	)
 	minimal_access = list()
 
@@ -95,16 +95,16 @@
 	hud_icon = "hudseniorengineer"
 
 	access = list(
-		access_eng_comms,
-		access_securitylvl1,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_engineeringlvl1,
-		access_engineeringlvl2,
-		access_engineeringlvl3,
-		access_engineeringlvl4,
-		access_atmospherics,
-		access_engine_equip
+		ACCESS_ENG_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3,
+		ACCESS_ENGINEERING_LVL4,
+		ACCESS_ATMOSPHERICS,
+		ACCESS_ENGINE_EQUIP
 	)
 	minimal_access = list()
 
@@ -143,18 +143,18 @@
 	hud_icon = "hudcontainmentengineer"
 
 	access = list(
-		access_eng_comms,
-		access_securitylvl1,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3,
-		access_sciencelvl4,
-		access_engineeringlvl1,
-		access_engineeringlvl2,
-		access_engineeringlvl3,
-		access_engineeringlvl4,
-		access_atmospherics,
-		access_engine_equip
+		ACCESS_ENG_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_SCIENCE_LVL4,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3,
+		ACCESS_ENGINEERING_LVL4,
+		ACCESS_ATMOSPHERICS,
+		ACCESS_ENGINE_EQUIP
 	)
 	minimal_access = list()
 
@@ -188,21 +188,21 @@
 	hud_icon = "hudchiefengineer"
 
 	access = list(
-		access_eng_comms,
-		access_securitylvl1,
-		access_sciencelvl1,
-		access_sciencelvl2,
-		access_sciencelvl3,
-		access_sciencelvl4,
-		access_adminlvl1,
-		access_engineeringlvl1,
-		access_engineeringlvl2,
-		access_engineeringlvl3,
-		access_engineeringlvl4,
-		access_engineeringlvl5,
-		access_atmospherics,
-		access_engine_equip,
-		access_keyauth
+		ACCESS_ENG_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_SCIENCE_LVL4,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3,
+		ACCESS_ENGINEERING_LVL4,
+		ACCESS_ENGINEERING_LVL5,
+		ACCESS_ATMOSPHERICS,
+		ACCESS_ENGINE_EQUIP,
+		ACCESS_KEYAUTH
 	)
 	minimal_access = list()
 

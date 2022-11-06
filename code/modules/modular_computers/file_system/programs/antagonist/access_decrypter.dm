@@ -15,8 +15,8 @@
 	var/progress = 0
 	var/target_progress = 300
 	var/datum/access/target_access = null
-	var/list/restricted_access_codes = list(access_change_ids) // access codes that are not hackable due to balance reasons
-	var/list/skill_restricted_access_codes_master = list(access_network)
+	var/list/restricted_access_codes = list(ACCESS_CHANGE_IDS) // access codes that are not hackable due to balance reasons
+	var/list/skill_restricted_access_codes_master = list(ACCESS_NETWORK)
 	var/operator_skill = 0
 
 /datum/computer_file/program/access_decrypter/kill_program(forced)
@@ -106,7 +106,7 @@
 	return CPU?.processing_power * skill_speed_modifier
 
 /datum/nano_module/program/access_decrypter
-	name = "NTNet Access Decrypter"
+	name = "SCiPnet Access Decrypter"
 
 /datum/nano_module/program/access_decrypter/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.default_state)
 	if(!ntnet_global)

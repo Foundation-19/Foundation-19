@@ -52,7 +52,6 @@
 	desc = "Mixed anyone?"
 	icon_state = GAS_OXYGEN
 	starting_pressure = list(GAS_OXYGEN = 6*ONE_ATMOSPHERE*O2STANDARD, GAS_NITROGEN = 6*ONE_ATMOSPHERE*N2STANDARD)
-	volume = 180
 
 /*
  * Phoron
@@ -93,7 +92,7 @@
 	attack_cooldown = DEFAULT_WEAPON_COOLDOWN
 	melee_accuracy_bonus = -10
 	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
-	volume = 40 //Tiny. Real life equivalents only have 21 breaths of oxygen in them. They're EMERGENCY tanks anyway -errorage (dangercon 2011)
+	volume = 2 //Tiny. Real life equivalents only have 21 breaths of oxygen in them. They're EMERGENCY tanks anyway -errorage (dangercon 2011)
 
 /obj/item/tank/emergency/oxygen
 	name = "emergency oxygen tank"
@@ -105,13 +104,13 @@
 /obj/item/tank/emergency/oxygen/engi
 	name = "extended-capacity emergency oxygen tank"
 	icon_state = "emergency_engi"
-	volume = 60
+	volume = 6
 
 /obj/item/tank/emergency/oxygen/double
 	name = "double emergency oxygen tank"
 	icon_state = "emergency_double"
 	gauge_icon = "indicator_emergency_double"
-	volume = 90
+	volume = 10
 	w_class = ITEM_SIZE_NORMAL
 
 /obj/item/tank/emergency/oxygen/double/red	//firefighting tank, fits on belt, back or suitslot
@@ -131,14 +130,14 @@
 	name = "double emergency nitrogen tank"
 	icon_state = "emergency_double_nitrogen"
 	gauge_icon = "indicator_emergency_double"
-	volume = 60
+	volume = 10
 
 /obj/item/tank/emergency/air_sac
 	name = "air sac"
 	desc = "A small, compressed air sac that fills with breathable air, to be used in emergencies."
 	icon_state = "air_sac"
 	gauge_icon = "indicator_emergency"
-	volume = 20
+	volume = 1
 	unacidable = TRUE
 
 /*
@@ -150,4 +149,3 @@
 	icon_state = "nitrogen"
 	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
 	starting_pressure = list(GAS_NITROGEN = 10*ONE_ATMOSPHERE)
-	volume = 180

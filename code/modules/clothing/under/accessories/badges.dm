@@ -76,7 +76,7 @@
 	icon_state = "holobadge"
 	item_state = "holobadge"
 	badge_string = "Security"
-	var/badge_access = access_security
+	var/badge_access = ACCESS_SECURITY
 	var/badge_number
 	var/emagged //emag_act removes access requirements
 
@@ -86,7 +86,7 @@
 	icon_state = "ntholobadge"
 	color = null
 	badge_string = "Corporate Security"
-	badge_access = access_research
+	badge_access = ACCESS_RESEARCH
 
 /obj/item/clothing/accessory/badge/holo/cord
 	icon_state = "holobadge-cord"

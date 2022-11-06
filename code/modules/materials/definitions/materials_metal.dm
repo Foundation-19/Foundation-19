@@ -110,7 +110,7 @@
 	lore_text = "A strong, flexible alloy of iron and carbon. Probably the single most fundamentally useful and ubiquitous substance in human space."
 	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/steel
-	brute_armor = 10
+	brute_armor = 20
 	burn_armor = 8
 	integrity = 200
 	melting_point = 3000
@@ -175,14 +175,14 @@
 	lore_text = "An alloy of steel and platinum. When regular high-tensile steel isn't tough enough to get the job done, the smart consumer turns to frankly absurd alloys of steel and platinum."
 	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/plasteel
-	integrity = 800
+	integrity = 8000
 	melting_point = 12000
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
 	icon_colour = "#a8a9b2"
 	explosion_resistance = 25
-	brute_armor = 8
-	burn_armor = 10
+	brute_armor = 100
+	burn_armor = 20
 	hardness = MATERIAL_VERY_HARD
 	weight = 23
 	stack_origin_tech = list(TECH_MATERIAL = 2)
@@ -197,7 +197,7 @@
 /material/plasteel/titanium
 	name = MATERIAL_TITANIUM
 	lore_text = "A light, strong, corrosion-resistant metal. Perfect for cladding high-velocity ballistic supply pods."
-	brute_armor = 20
+	brute_armor = 65
 	burn_armor = 16
 	integrity = 400
 	melting_point = 6000
@@ -216,12 +216,12 @@
 /material/plasteel/ocp
 	name = MATERIAL_OSMIUM_CARBIDE_PLASTEEL
 	stack_type = /obj/item/stack/material/ocp
-	integrity = 200
+	integrity = 8000
 	melting_point = 12000
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
 	icon_colour = "#9bc6f2"
-	brute_armor = 4
+	brute_armor = 65
 	burn_armor = 20
 	weight = 27
 	stack_origin_tech = list(TECH_MATERIAL = 3)

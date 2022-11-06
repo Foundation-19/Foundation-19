@@ -31,7 +31,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 
 // No comment
 /atom/proc/attackby(obj/item/W, mob/user, var/click_params)
-	user.client.interact_log += "([time_stamp()]) (<b>[src.x]X, [src.y]Y, [src.z]Z</b>) - Interacted with [src], using [W]. (Intent: [user.a_intent] | Location: [get_area(src)])"
+	user.interact_log += "([time_stamp()]) (<b>[src.x]X, [src.y]Y, [src.z]Z</b>) - Interacted with [src], using [W]. (Intent: [user.a_intent] | Location: [get_area(src)])"
 	return
 
 /atom/movable/attackby(obj/item/W, mob/user)
@@ -43,14 +43,12 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	if(!ismob(user))
 		return 0
 	if(can_operate(src,user) && I?.do_surgery(src,user)) //Surgery
-		if(client)
-			user.client.interact_log += "<font color=red>([time_stamp()]) (<b>[src.x]X, [src.y]Y, [src.z]Z</b>) - Did surgery on [src], using [I].</font>"
-			src.client.interact_log += "<font color=red>([time_stamp()]) (<b>[src.x]X, [src.y]Y, [src.z]Z</b>) - Had surgery performed on them by [user], using [I].</font>."
+		user.interact_log += "<font color=red>([time_stamp()]) (<b>[src.x]X, [src.y]Y, [src.z]Z</b>) - Did surgery on [src], using [I].</font>"
+		src.interact_log += "<font color=red>([time_stamp()]) (<b>[src.x]X, [src.y]Y, [src.z]Z</b>) - Had surgery performed on them by [user], using [I].</font>."
 		return 1
 
-	if(client)
-		user.client.interact_log += "([time_stamp()]) (<b>[src.x]X, [src.y]Y, [src.z]Z</b>) - Interacted with [src], using [I]. (Intent: [user.a_intent] | Location: [get_area(src)])"
-		src.client.interact_log += "([time_stamp()]) (<b>[src.x]X, [src.y]Y, [src.z]Z</b>) - Was interacted with by [user], using [I]. (Intent: [user.a_intent] | Location: [get_area(src)])"
+	user.interact_log += "([time_stamp()]) (<b>[src.x]X, [src.y]Y, [src.z]Z</b>) - Interacted with [src], using [I]. (Intent: [user.a_intent] | Location: [get_area(src)])"
+	src.interact_log += "([time_stamp()]) (<b>[src.x]X, [src.y]Y, [src.z]Z</b>) - Was interacted with by [user], using [I]. (Intent: [user.a_intent] | Location: [get_area(src)])"
 	return I.attack(src, user, user.zone_sel ? user.zone_sel.selecting : ran_zone())
 
 /mob/living/carbon/human/attackby(obj/item/I, mob/user)

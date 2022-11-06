@@ -15,7 +15,7 @@ var/global/datum/ntnet/ntnet_global = new()
 	/// A list containing one of each available report datums, used for the report editor program.
 	var/list/available_reports = list()
 	var/list/banned_nids = list()
-	/// A list of nid - os datum pairs. An OS in this list is not necessarily connected to NTNet or visible on it.
+	/// A list of nid - os datum pairs. An OS in this list is not necessarily connected to SCiPnet or visible on it.
 	var/list/registered_nids = list()
 	/// Amount of log entries the system tries to keep in memory. Keep below 999 to prevent byond from acting weirdly. High values make displaying logs much laggier.
 	var/setting_maxlogcount = 100
@@ -212,6 +212,7 @@ var/global/datum/ntnet/ntnet_global = new()
 	else
 		var/datum/computer_file/data/email_account/EA = new/datum/computer_file/data/email_account(login, user.real_name, assignment)
 		EA.password = desired_password ? desired_password : GenerateKey()
+		EA.login = login
 		if(user.mind)
 			user.mind.initial_email_login["login"] = EA.login
 			user.mind.initial_email_login["password"] = EA.password

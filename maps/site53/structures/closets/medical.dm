@@ -4,7 +4,7 @@
 
 /obj/structure/closet/secure_closet/site53/cmo
 	name = "chief medical officer's locker"
-	req_access = list(access_medicallvl5)
+	req_access = list(ACCESS_MEDICAL_LVL5)
 	icon_state = "cmosecure1"
 	icon_closed = "cmosecure"
 	icon_locked = "cmosecure1"
@@ -72,7 +72,7 @@
 
 /obj/structure/closet/secure_closet/medical_torch
 	name = "corpsman's locker"
-	req_access = list(access_medical_equip)
+	req_access = list(ACCESS_MEDICAL_EQUIP)
 	icon_state = "securemed1"
 	icon_closed = "securemed"
 	icon_locked = "securemed1"

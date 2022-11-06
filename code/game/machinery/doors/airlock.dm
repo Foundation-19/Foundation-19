@@ -244,7 +244,7 @@ var/list/airlock_overlays = list()
 /obj/machinery/door/airlock/external/inherit_access_from_area()
 	..()
 	if(is_station_area(get_area(src)))
-		add_access_requirement(req_access, access_external_airlocks)
+		add_access_requirement(req_access, ACCESS_EXTERNAL_AIRLOCKS)
 
 /obj/machinery/door/airlock/external/escapepod
 	name = "Escape Pod"

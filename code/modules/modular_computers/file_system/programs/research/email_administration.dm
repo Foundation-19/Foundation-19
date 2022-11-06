@@ -1,7 +1,7 @@
 /datum/computer_file/program/email_administration
 	filename = "emailadmin"
 	filedesc = "Email Administration Utility"
-	extended_desc = "This program may be used to administrate NTNet's emailing service."
+	extended_desc = "This program may be used to administrate SCiPnets's emailing service."
 	program_icon_state = "comm_monitor"
 	program_key_state = "generic_key"
 	program_menu_icon = "mail-open"
@@ -9,7 +9,7 @@
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE
 	tgui_id = "NtosEmailAdministration"
-	required_access = access_network
+	required_access = ACCESS_NETWORK
 
 	var/datum/computer_file/data/email_account/current_account = null
 	var/datum/computer_file/data/email_message/current_message = null
@@ -66,7 +66,7 @@
 
 	// High security - can only be operated when the user has an ID with access on them.
 	var/obj/item/card/id/I = usr.GetIdCard()
-	if(!istype(I) || !(access_network in I.access))
+	if(!istype(I) || !(ACCESS_NETWORK in I.access))
 		return TRUE
 
 	switch(action)

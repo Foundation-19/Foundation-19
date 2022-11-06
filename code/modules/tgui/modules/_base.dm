@@ -10,6 +10,7 @@ Code is pretty much ripped verbatim from nano modules, but with un-needed stuff 
 	var/name
 	var/datum/host
 	var/list/using_access
+	var/available_to_ai = TRUE
 
 	var/tgui_id
 	var/ntos = FALSE
