@@ -515,7 +515,7 @@
 	t = replacetext(t, "<img src = o5.png>", "\[o5\]")
 	t = replacetext(t, "<img src = admin.png>", "\[admin\]")
 	t = replacetext(t, "<img src = eng.png>", "\[eng\]")
-	t = replacetext(t, "<img src = mtf.png>", "\[mtf\]"
+	t = replacetext(t, "<img src = mtf.png>", "\[mtf\]")
 	t = replacetext(t, "<img src = log.png>", "\[log\]")
 	t = replacetext(t, "<img src = man.png>", "\[man\]")
 	t = replacetext(t, "<img src = med.png>", "\[med\]")

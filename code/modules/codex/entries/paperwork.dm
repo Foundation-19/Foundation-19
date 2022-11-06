@@ -1,7 +1,7 @@
 /datum/codex_entry/pen
 	associated_paths = list(/obj/item/pen)
 	mechanics_text = {"Used for writing down your thoughts, on paper or elsewhere. The following special commands are available:<br><br>
-\[br\], \\n : Creates a linebreak.<br>
+\[br\] : Creates a linebreak.<br>
 \[center\] - \[/center\] : Centers the text.<br>
 \[h1\] - \[/h1\] : Makes the text a first level heading.<br>
 \[h2\] - \[/h2\] : Makes the text a second level headin.<br>
