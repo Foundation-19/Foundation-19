@@ -23,27 +23,27 @@
 \[list\] - \[/list\] : A list. (Does not work with crayons)<br>
 \[*\] : A dot used for lists. (Does not work with crayons)<br>
 \[scplogo\] : Inserts the SCP Foundation logo.<br>
-\[ethics\] : Inserts the Ethics Committee logo.<br>
-\[o5\] : Inserts the Overseer Council logo.<br>
-\[admin\] : Inserts the Administrative Department logo.<br>
-\[eng\] : Inserts the Engineering Department logo.<br>
-\[mtf\] : Inserts the Mobile Task Force logo.<br>
-\[log\] : Inserts the Logistics Department logo.<br>
-\[man\] : Inserts the Manufacturing Department logo.<br>
-\[med\] : Inserts the Medical Department logo.<br>
-\[sci\] : Inserts the Science Department logo.<br>
-\[sec\] : Inserts the Security Department logo.<br>
-\[isd\] : Inserts the Internal Security Department logo.<br>
-\[dea\] : Inserts the Department of External Affairs logo.<br>
-\[int\] : Inserts the Intelligence Agency logo.<br>
-\[trib\] : Inserts the Internal Tribunal Department logo.<br>
-\[goc\] : Inserts the Global Occult Coalition logo.<br>
-\[uiu\] : Inserts the Unusual Incidents Unit logo.<br>
-\[thi\] : Inserts the Horizon Initiative logo.<br>
-\[ar\] : Inserts the Anderson Robotics logo.<br>
-\[ci\] : Inserts the Chaos Insurgency logo.<br>
-\[sh\] : Inserts the Serpent's Hand logo.<br>
-\[cotbg\] : Inserts the Church of the Broken God logo.<br><br>
+\[ethicslogo\] : Inserts the Ethics Committee logo.<br>
+\[o5logo\] : Inserts the Overseer Council logo.<br>
+\[adminlogo\] : Inserts the Administrative Department logo.<br>
+\[englogo\] : Inserts the Engineering Department logo.<br>
+\[mtflogo\] : Inserts the Mobile Task Force logo.<br>
+\[loglogo\] : Inserts the Logistics Department logo.<br>
+\[manlogo\] : Inserts the Manufacturing Department logo.<br>
+\[medlogo\] : Inserts the Medical Department logo.<br>
+\[scilogo\] : Inserts the Science Department logo.<br>
+\[seclogo\] : Inserts the Security Department logo.<br>
+\[isdlogo\] : Inserts the Internal Security Department logo.<br>
+\[dealogo\] : Inserts the Department of External Affairs logo.<br>
+\[intlogo\] : Inserts the Intelligence Agency logo.<br>
+\[triblogo\] : Inserts the Internal Tribunal Department logo.<br>
+\[goclogo\] : Inserts the Global Occult Coalition logo.<br>
+\[uiulogo\] : Inserts the Unusual Incidents Unit logo.<br>
+\[thilogo\] : Inserts the Horizon Initiative logo.<br>
+\[arlogo\] : Inserts the Anderson Robotics logo.<br>
+\[cilogo\] : Inserts the Chaos Insurgency logo.<br>
+\[shlogo\] : Inserts the Serpent's Hand logo.<br>
+\[cotbglogo\] : Inserts the Church of the Broken God logo.<br><br>
 <b>Digital exclusive commands (NanoWord, emails, reports, text files, etc):</b><br>
 \[pre\] - \[/pre\] : Adds preformatted text, forcing the text to be fixed width.<br>
 \[fontred\] - \[/font\] : Makes the text red.<br>
