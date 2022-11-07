@@ -28,7 +28,8 @@
 		bomb = ARMOR_BOMB_RESISTANT,
 		bio = ARMOR_BIO_MINOR
 		)
-	item_flags = ITEM_FLAG_NOSLIP
+	item_flags = ITEM_FLAG_NOSLIP  | ITEM_FLAG_THICKMATERIAL
+
 	siemens_coefficient = 0.6
 
 /obj/item/clothing/shoes/combat //Basically SWAT shoes combined with galoshes.
@@ -44,7 +45,7 @@
 		bomb = ARMOR_BOMB_RESISTANT,
 		bio = ARMOR_BIO_MINOR
 		)
-	item_flags = ITEM_FLAG_NOSLIP
+	item_flags = ITEM_FLAG_NOSLIP | ITEM_FLAG_THICKMATERIAL
 	siemens_coefficient = 0.6
 
 	cold_protection = FEET
@@ -190,6 +191,7 @@
 	icon_state = "slippers"
 	item_state = "slippers"
 	force = 0
+	item_flags = NONE
 	species_restricted = null
 	w_class = ITEM_SIZE_SMALL
 	can_add_hidden_item = FALSE
@@ -247,4 +249,4 @@
 	name = "red high heels"
 	desc = "A pair of red high heels."
 	color = COLOR_RED
-	
+
