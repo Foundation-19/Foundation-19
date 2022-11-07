@@ -234,7 +234,9 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/card/id/proc/set_id_photo(var/mob/M)
 	front = getFlatIcon(M, SOUTH, always_use_defdir = 1)
+	front.Crop(9, 18, 23, 32)
 	side = getFlatIcon(M, WEST, always_use_defdir = 1)
+	side.Crop(9, 18, 23, 32)
 
 /mob/proc/set_id_info(var/obj/item/card/id/id_card)
 	id_card.age = 0
@@ -282,7 +284,7 @@ var/const/NO_EMAG_ACT = -50
 	dat += text("Blood Type: []<BR>\n", blood_type)
 	dat += text("DNA Hash: []<BR><BR>\n", dna_hash)
 	if(front && side)
-		dat +="<td align = center valign = top>Photo:<br><img src=front.png height=80 width=80 border=4><img src=side.png height=80 width=80 border=4></td>"
+		dat +="<td align = center valign = top>Photo:<br><img src=front.png height=70 width=70 border=7 style='-ms-interpolation-mode: nearest-neighbor'> <img src=side.png height=70 width=70 border=4 style='-ms-interpolation-mode: nearest-neighbor'></td>"
 	dat += "</tr></table>"
 	return jointext(dat,null)
 
