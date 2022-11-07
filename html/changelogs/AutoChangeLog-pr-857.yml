@@ -1,0 +1,10 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscadd: New logos for documents! Now the science, medical, and administrative
+      department (among others) can specialize their paperwork better.
+  - rscadd: Codex updated! Examine a pen and hit the codex button for a guide on paperwork.
+  - imageadd: Manufacturing department logo is available (obtained from the same location
+      as many of the other images).
+  - imagedel: Baystation logos (NT logos, for example) are gone.
+  - code_imp: htmltopencode was updated as well, so logos should properly re-pencodify
