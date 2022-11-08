@@ -1,3 +1,5 @@
+GLOBAL_LIST_EMPTY(scp294_reagents)
+
 /obj/machinery/scp294/
 	name = "SCP-294"
 	desc = "A standard coffee vending machine. This one seems to have a QWERTY keyboard."
@@ -42,13 +44,14 @@
 	var/valid_id
 	while(!valid_id)
 		var/chosen_id = input(user, "Enter the name of any liquid!", "SCP 294") as null|text
+		var/chosen_reagent = text2path(chosen_id)
 		if(isnull(chosen_id))
 			to_chat(user, "<span class='warning'>SCP-294 wheezes and displays 'NO LIQUID INPUTTED' before shutting down.</span>")
 			return
-		if(!ispath(text2path(chosen_id)))
+		if(!ispath(chosen_reagent))
 			to_chat(user, "<span class='warning'>SCP-294 wheezes and displays 'NO LIQUID FOUND' before shutting down.</span>")
 			return
-		if(!(text2path(chosen_id) in banned_chems))
+		if(!(chosen_reagent in banned_chems))
 			valid_id = TRUE
 		else
 			valid_id = FALSE
@@ -56,7 +59,7 @@
 			return
 
 		var/obj/item/reagent_containers/food/drinks/sillycup/D = new /obj/item/reagent_containers/food/drinks/sillycup(loc)
-		D.reagents.add_reagent(chosen_id, 30)
+		D.reagents.add_reagent(chosen_reagent, 30)
 		D.reagents.update_total()
 		D.on_reagent_change()
 		visible_message("<span class='notice'>[src] dispenses a small paper cup.</span>")
