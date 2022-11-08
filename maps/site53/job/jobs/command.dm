@@ -176,14 +176,14 @@ ut // COMMAND
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/tribunal
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/classa
 	)
-
+	hud_icon = "hud05rep"
 	access = list(
 		ACCESS_ADMIN_LVL1,
 		ACCESS_ADMIN_LVL2,
@@ -213,7 +213,7 @@ ut // COMMAND
 	allowed_ranks = list(
 		/datum/mil_rank/civ/classa
 	)
-
+	hud_icon = "hud05rep"
 	access = list(
 		ACCESS_ADMIN_LVL1,
 		ACCESS_ADMIN_LVL2,
@@ -225,48 +225,6 @@ ut // COMMAND
 	minimal_access = list()
 
 
-/datum/job/archivist
-
-	title = "Archivist"
-	department = "Civilian"
-	selection_color = "#2f2f7f"
-	department_flag = COM|SCI
-	total_positions = 1
-	spawn_positions = 1
-
-	supervisors = "the Site Director"
-	economic_power = 4
-	minimal_player_age = 20
-	ideal_character_age = 45
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/archivist
-	allowed_branches = list(
-		/datum/mil_branch/civilian
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/civ/classa
-	)
-
-	access = list(
-		ACCESS_CIV_COMMS,
-		ACCESS_SCI_COMMS,
-		ACCESS_MED_COMMS,
-		ACCESS_RESEARCH,
-		ACCESS_KEYAUTH,
-		ACCESS_ADMIN_LVL1,
-		ACCESS_ADMIN_LVL2,
-		ACCESS_ADMIN_LVL3,
-		ACCESS_ADMIN_LVL4,
-		ACCESS_SCIENCE_LVL1,
-		ACCESS_SCIENCE_LVL2,
-		ACCESS_SCIENCE_LVL3,
-		ACCESS_SCIENCE_LVL4,
-		ACCESS_MEDICAL_LVL1,
-		ACCESS_MEDICAL_LVL2,
-		ACCESS_MEDICAL_LVL3,
-		ACCESS_MEDICAL_LVL4
-	)
-
-	minimal_access = list()
 
 /datum/job/goirep
 	title = "Global Occult Coalition Representative"

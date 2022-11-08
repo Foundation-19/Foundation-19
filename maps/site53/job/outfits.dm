@@ -519,6 +519,16 @@
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
 	belt = /obj/item/gun/projectile/pistol/m1911
 
+/decl/hierarchy/outfit/job/site90/crew/civ/tribunal
+	name = OUTFIT_JOB_NAME("Tribunal Officer")
+	uniform = /obj/item/clothing/under/lawyer/black
+	shoes = /obj/item/clothing/shoes/laceup
+	l_pocket = /obj/item/device/radio
+	id_types = list(/obj/item/card/id/adminlvl5)
+	l_ear = /obj/item/device/radio/headset/heads/hop
+	back = /obj/item/storage/backpack/satchel/pocketbook
+	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
+	belt = /obj/item/gun/projectile/pistol/m1911
 
 // ENGINEERING STUFF
 /decl/hierarchy/outfit/job/ds90/crew/engineering/juneng

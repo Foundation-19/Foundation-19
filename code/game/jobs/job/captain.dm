@@ -110,14 +110,14 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/tribunal
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/classa
 	)
-
+	hud_icon = "hud05rep"
 	access = list(
 		ACCESS_ADMIN_LVL1,
 		ACCESS_ADMIN_LVL2,
@@ -178,7 +178,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/classa
 	)
-
+	hud_icon = "hud05rep"
 	access = list(
 		ACCESS_CIV_COMMS,
 		ACCESS_SCI_COMMS,
