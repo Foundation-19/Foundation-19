@@ -46,7 +46,7 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 		var/chosen_id = input(user, "Enter the name of any liquid!", "SCP 294") as null|text
 		var/chosen_reagent = text2path(chosen_id)
 		if(isnull(chosen_id))
-			to_chat(user, "<span class='warning'>SCP-294 wheezes and displays 'NO LIQUID INPUTTED' before shutting down.</span>")
+			to_chat(user, "<span class='warning'>SCP-294 wheezes and displays 'NO INPUT' before shutting down.</span>")
 			return
 		if(!ispath(chosen_reagent))
 			to_chat(user, "<span class='warning'>SCP-294 wheezes and displays 'NO LIQUID FOUND' before shutting down.</span>")
