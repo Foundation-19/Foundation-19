@@ -1,5 +1,3 @@
-GLOBAL_LIST_EMPTY(scp294_reagents)
-
 /obj/machinery/scp294/
 	name = "SCP-294"
 	desc = "A standard coffee vending machine. This one seems to have a QWERTY keyboard."
@@ -50,14 +48,13 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 		if(!ispath(text2path(chosen_id)))
 			to_chat(user, "<span class='warning'>SCP-294 wheezes and displays 'NO LIQUID FOUND' before shutting down.</span>")
 			return
-		if(ispath(chosen_id) && !(chosen_id in banned_chems))
+		if(!(text2path(chosen_id) in banned_chems))
 			valid_id = TRUE
 		else
 			valid_id = FALSE
-
-		if(!valid_id)
 			to_chat(user, "<span class='warning'>A strange substance wheezes out of the dispenser and evaporates.</span>")
 			return
+
 		var/obj/item/reagent_containers/food/drinks/sillycup/D = new /obj/item/reagent_containers/food/drinks/sillycup(loc)
 		D.reagents.add_reagent(chosen_id, 30)
 		D.reagents.update_total()
