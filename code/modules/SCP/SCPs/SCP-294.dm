@@ -37,7 +37,7 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 
 	last_use = world.time
 	if(uses_left < 1)
-		visible_message("<span class='notice'>[src] displays RESTOCKING, PLEASE WAIT message.</span>")
+		visible_message("<span class='notice'>[src] displays 'RESTOCKING'.</span>")
 		addtimer(CALLBACK(src, .proc/update_uses), 10 MINUTES)
 		return
 
