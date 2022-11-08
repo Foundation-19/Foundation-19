@@ -32,7 +32,7 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 /obj/machinery/scp294/attack_hand(mob/user)
 
 	if((last_use + 20 SECONDS) > world.time)
-		visible_message("<span class='notice'>[src] displays NOT READY message.</span>")
+		visible_message("<span class='notice'>[src] displays 'NOT READY'.</span>")
 		return
 
 	last_use = world.time
