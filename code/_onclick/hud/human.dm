@@ -296,14 +296,11 @@
 
 	if(ishuman(mymob))
 		var/mob/living/carbon/human/H = mymob
-		H.fov = new /obj/screen()
-		H.fov.icon = 'icons/mob/hide.dmi'
-		H.fov.icon_state = "combat"
-		H.fov.name = " "
-		H.fov.screen_loc = "1,1"
-		H.fov.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-		H.fov.layer = UNDER_HUD_LAYER
+		H.fov = new /obj/screen/fov()
 		hud_elements |= H.fov
+
+		H.fov_mask = new /obj/screen/fov_mask()
+		hud_elements |= H.fov_mask
 
 	mymob.client.screen = list()
 
@@ -407,3 +404,15 @@
 /obj/screen/movement/Click(var/location, var/control, var/params)
 	if(istype(usr))
 		usr.set_next_usable_move_intent()
+
+/mob/living/carbon/human/InitializePlanes()
+	. = ..()
+	..()
+	var/obj/screen/plane_master/vision_cone_target/VC = new
+	var/obj/screen/plane_master/vision_cone/primary/mob = new
+
+	//define what planes the masters dictate.
+	mob.plane = MOB_PLANE
+
+	client.screen += VC
+	client.screen += mob

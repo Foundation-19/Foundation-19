@@ -9,6 +9,10 @@
 
 // Optimized by Kachnov
 
+//Otuska is a faggot!
+//Rest in Peace, Honker. You will forever be remembered; Ripped away and stolen from IS12;
+//~Tsurupeta
+
 //Defines.
 #define OPPOSITE_DIR(D) turn(D, 180)
 
@@ -61,82 +65,31 @@
 				. += A
 
 /mob/proc/update_vision_cone()
-	return FALSE
+	return
 
 /mob/living/carbon/human/update_vision_cone()
+	if(!src.client) //This doesn't actually hide shit from clientless mobs, so just keep them from running this.
+		return
+	check_fov()
+	src.fov.dir = src.dir
+	src.fov_mask.dir = src.dir
 
-	set waitfor = FALSE
-
-	if (reset_vision_cone())
-
-		fov.dir = dir
-		if(fov.alpha)
-			var/image/I = null
-			for(var/living in cone(src, OPPOSITE_DIR(dir), oviewers(src), /mob/living))
-
-				var/mob/living/L = living
-
-				var/list/things = L.vis_contents+L
-
-				for (var/thing in things)
-					I = image("split", thing)
-					I.override = TRUE
-
-					client.images += I
-					client.hidden_images += I
-					hidden_atoms += thing
-
-					if (thing == things[1])
-						hidden_mobs += L
-
-						if(pulling == L)//If we're pulling them we don't want them to be invisible, too hard to play like that.
-							I.override = FALSE
-/*						else if (L.footstep >= 1)
-							L.in_vision_cones[client] = TRUE
-
-			// items are invisible too
-			for(var/item in cone(src, OPPOSITE_DIR(dir), oview(get_turf(src)), /obj/item)) // http://www.byond.com/docs/ref/info.html#/proc/view
-				I = image("split", item)
-				I.override = TRUE
-				client.images += I
-				client.hidden_images += I
-				hidden_atoms += item
-*/
-
-/mob/living/carbon/human/proc/reset_vision_cone()
-	var/delay = 10
-	if(client)
-		for(var/image in client.hidden_images)
-			var/image/I = image
-			client.images -= I
-			I.override = FALSE
-			delete_image(I, delay)
-			delay += 10
-		check_fov()
-		client.hidden_images.Cut()
-		hidden_atoms.Cut()
-		hidden_mobs.Cut()
-		return TRUE
-	return FALSE
-
-/mob/living/carbon/human/proc/delete_image(image, delay)
-	set waitfor = FALSE
-	sleep(delay)
-	qdel(image)
-
-/mob/living/carbon/human/proc/SetFov(var/n)
-	if(!n)
+/mob/living/carbon/human/proc/SetFov(var/show)
+	if(!show)
 		hide_cone()
 	else
 		show_cone()
 
 /mob/living/carbon/human/proc/check_fov()
-
-	if(resting || lying || (client.eye != client.mob && client.eye != client.mob.loc))
-		fov.alpha = 0
+	if(!src.client)
 		return
 
-	else if(usefov)
+	if(resting || lying || (client && client.eye != client.mob))
+		src.fov.alpha = 0
+		src.fov_mask.alpha = 0
+		return
+
+	else if(src.usefov)
 		show_cone()
 
 	else
@@ -144,11 +97,13 @@
 
 //Making these generic procs so you can call them anywhere.
 /mob/living/carbon/human/proc/show_cone()
-	if(fov)
-		fov.alpha = 255
-		usefov = 1
+	if(src.fov)
+		src.fov.alpha = 255
+		src.usefov = TRUE
+		src.fov_mask.alpha = 255
 
 /mob/living/carbon/human/proc/hide_cone()
-	if(fov)
-		fov.alpha = 0
-		usefov = 0
+	if(src.fov)
+		src.fov.alpha = 0
+		src.usefov = FALSE
+		src.fov_mask.alpha = 0

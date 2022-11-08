@@ -60,7 +60,9 @@ What is the naming convention for planes or layers?
 	FLOAT_PLANE = -32767
 */
 
-#define CLICKCATCHER_PLANE -100
+#define CLICKCATCHER_PLANE -101
+
+#define HIDDEN_PLANE -100
 
 #define SPACE_PLANE                  -99
 	#define SPACE_LAYER                  1
@@ -189,14 +191,19 @@ What is the naming convention for planes or layers?
 	#define BLIND_LAYER         3
 	#define CRIT_LAYER          4
 
-#define HUD_PLANE                    7
+#define VISION_CONE_PLANE               7
+
+#define ABOVE_VISION_CONE_PLANE         8
+
+
+#define HUD_PLANE                    9
 	#define UNDER_HUD_LAYER              0
 	#define HUD_BASE_LAYER               1
 	#define HUD_CLICKABLE_LAYER          2
 	#define HUD_ITEM_LAYER               3
 	#define HUD_ABOVE_ITEM_LAYER         4
 
-#define ABOVE_HUD_PLANE                    8
+#define ABOVE_HUD_PLANE                    10
 	#define ABOVE_HUD_LAYER              0
 
 //This is difference between planes used for atoms and effects
@@ -252,12 +259,26 @@ GLOBAL_LIST_INIT(ghost_master, list(
 
 /obj/screen/plane_master/effects_planemaster
 	appearance_flags = PLANE_MASTER | KEEP_TOGETHER
-	blend_mode = BLEND_DEFAULT
+	blend_mode = BLEND_OVERLAY
 
 /obj/screen/plane_master/effects_planemaster/openspace
 	appearance_flags = PLANE_MASTER | KEEP_TOGETHER
-	blend_mode = BLEND_INSET_OVERLAY
+	blend_mode = BLEND_OVERLAY
 
 /obj/screen/plane_master/effects_planemaster/openspace/New(newloc)
 	add_filter("openspace_blur", 0, list(type = "blur", size = 0.6))
-	add_filter("openspace_darkness", 1, list(type = "color", ))
+
+/obj/screen/plane_master/vision_cone_target
+	name = "vision cone master"
+	plane = HIDDEN_PLANE
+	render_target = "vision_cone_target"
+
+/obj/screen/plane_master/vision_cone/
+
+/obj/screen/plane_master/vision_cone/primary/New() //For when you want things to not appear under the blind section.
+	add_filter("vision_cone", 50, list(type="alpha", render_source="vision_cone_target", flags=MASK_INVERSE))
+
+/obj/screen/plane_master/vision_cone/inverted //for things you want specifically to show up on the blind section.
+
+/obj/screen/plane_master/vision_cone/inverted/New()
+	add_filter("inverted_vision_cone", 50, list(type="alpha", render_source="vision_cone_target"))
