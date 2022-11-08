@@ -98,20 +98,48 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 
 	minimal_access = list()
 
-/datum/job/o5rep
+/datum/job/tribunal
 
-	title = "O5 Representative"
+	title = "Internal Tribunal Department Officer"
 	department = "Civilian"
 	selection_color = "#2f2f7f"
 	department_flag = COM
 	total_positions = 1
 	spawn_positions = 1
-
-	supervisors = "O-5 Council or the Site Director"
+	supervisors = "The Tribunal Department"
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
-	alt_titles = list("Ethics Committee Representative")
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
+	allowed_branches = list(
+		/datum/mil_branch/civilian
+	)
+	allowed_ranks = list(
+		/datum/mil_rank/civ/classa
+	)
+
+	access = list(
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_ADMIN_LVL5
+	)
+
+	minimal_access = list()
+
+/datum/job/ethicsliaison
+
+	title = "Ethics Committee Liaison"
+	department = "Civilian"
+	selection_color = "#2f2f7f"
+	department_flag = COM
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "The Ethics Committee"
+	economic_power = 4
+	minimal_player_age = 5
+	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
 	allowed_branches = list(
 		/datum/mil_branch/civilian

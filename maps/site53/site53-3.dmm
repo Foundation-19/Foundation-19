@@ -2966,13 +2966,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"gZ" = (
-/obj/structure/closet/crate/bin{
-	anchored = 1;
-	name = "trash bin"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/uez/o5repoffice)
 "ha" = (
 /obj/machinery/holosign/surgery{
 	dir = 8;
@@ -4796,16 +4789,13 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/equipstorage)
 "lE" = (
-/obj/effect/landmark/start{
-	name = "O5 Representative"
-	},
-/obj/structure/bed/chair/office/dark{
-	dir = 8
-	},
-/turf/simulated/floor/carpet/blue2,
+/obj/structure/table/woodentable/maple,
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "lF" = (
-/obj/effect/wallframe_spawn/reinforced/polarized/full,
+/obj/machinery/door/airlock/command{
+	name = "Ethics Committee Liaison's Office"
+	},
 /turf/simulated/floor/plating,
 /area/site53/uez/o5repoffice)
 "lH" = (
@@ -5896,15 +5886,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"pc" = (
-/obj/item/stamp/approved,
-/obj/item/stamp/denied,
-/obj/structure/table/woodentable/walnut,
-/obj/effect/floor_decal/carpet/blue2{
-	dir = 1
-	},
-/turf/simulated/floor/carpet/blue2,
-/area/site53/uez/o5repoffice)
 "pd" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/beakers,
@@ -6307,57 +6288,36 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/command{
-	name = "O5 Representative's Office";
-	req_access = list("ACCESS_ADMIN_LEVEL2")
+	name = "Tribunal Department Officer's Office"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/o5repoffice)
-"rj" = (
-/obj/structure/bed/chair/comfy/red{
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/floor_decal/carpet/blue{
-	dir = 1
-	},
-/obj/effect/floor_decal/carpet/blue{
-	dir = 8
-	},
-/obj/effect/floor_decal/carpet/blue{
-	dir = 9
-	},
-/turf/simulated/floor/carpet/blue,
-/area/site53/uez/o5repoffice)
 "rk" = (
-/obj/structure/table/woodentable/walnut,
-/obj/effect/floor_decal/carpet/blue{
-	dir = 1
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
 	},
-/obj/item/toy/desk/fan,
-/turf/simulated/floor/carpet/blue,
-/area/site53/uez/o5repoffice)
-"rl" = (
-/obj/structure/bed/chair/comfy/red{
-	dir = 8
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
 	},
-/obj/effect/floor_decal/carpet/blue{
-	dir = 4
-	},
-/obj/effect/floor_decal/carpet/blue{
-	dir = 1
-	},
-/obj/effect/floor_decal/carpet/blue{
-	dir = 5
-	},
-/turf/simulated/floor/carpet/blue,
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "rm" = (
 /turf/simulated/mineral,
 /area/site53/surface/surface)
 "rn" = (
-/turf/simulated/floor/wood/walnut,
+/obj/machinery/door/window/holowindoor{
+	id_tag = "sitedirect";
+	req_access = list("ACCESS_ADMIN_LEVEL5")
+	},
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "ro" = (
 /obj/machinery/light,
@@ -6377,46 +6337,38 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/wood/walnut,
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "rq" = (
-/obj/machinery/light{
-	dir = 4
+/obj/structure/bed/chair/armchair{
+	dir = 1
 	},
-/obj/structure/coatrack,
-/turf/simulated/floor/wood/walnut,
+/obj/effect/landmark/start{
+	name = "Ethics Committee Liaison"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "rr" = (
-/obj/structure/bed/chair/comfy/red{
-	dir = 4
-	},
-/obj/effect/floor_decal/carpet/blue{
+/obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/floor_decal/carpet/blue,
-/obj/effect/floor_decal/carpet/blue{
-	dir = 10
-	},
-/turf/simulated/floor/carpet/blue,
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "rs" = (
-/obj/item/device/flashlight/lamp/green,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/table/woodentable/walnut,
-/obj/effect/floor_decal/carpet/blue2{
-	dir = 1
-	},
-/obj/effect/floor_decal/carpet/blue2{
+/obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/floor_decal/carpet/blue2{
-	dir = 9
-	},
-/turf/simulated/floor/carpet/blue2,
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "rt" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -6427,17 +6379,16 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "rv" = (
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/obj/machinery/door/window/holowindoor{
+	id_tag = "sitedirect";
+	req_access = list("ACCESS_ADMIN_LEVEL5")
+	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/table/woodentable/walnut,
-/obj/effect/floor_decal/carpet/blue2{
-	dir = 8
-	},
-/turf/simulated/floor/carpet/blue2,
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "rw" = (
 /obj/structure/flora/ausbushes/brflowers,
@@ -6448,102 +6399,86 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "rx" = (
-/obj/effect/floor_decal/carpet/blue2{
-	dir = 4
-	},
-/turf/simulated/floor/carpet/blue2,
+/obj/structure/table/woodentable/maple,
+/obj/item/paper_bin,
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "ry" = (
-/obj/item/modular_computer/tablet/preset/custom_loadout/advanced,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/table/woodentable/walnut,
-/obj/effect/floor_decal/carpet/blue2,
-/obj/effect/floor_decal/carpet/blue2{
-	dir = 8
-	},
-/obj/effect/floor_decal/carpet/blue2{
-	dir = 10
-	},
-/turf/simulated/floor/carpet/blue2,
-/area/site53/uez/o5repoffice)
-"rz" = (
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/floor_decal/carpet/blue2,
-/turf/simulated/floor/carpet/blue2,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/holofloor/wood,
+/area/site53/uez/o5repoffice)
+"rz" = (
+/obj/structure/bed/chair/armchair{
+	dir = 1
+	},
+/obj/effect/landmark/start{
+	name = "Internal Tribunal Department Officer"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "rA" = (
 /obj/machinery/power/apc{
-	dir = 4
+	dir = 4;
+	name = "west bump"
 	},
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/effect/floor_decal/carpet/blue2,
-/obj/effect/floor_decal/carpet/blue2{
-	dir = 4
-	},
-/obj/effect/floor_decal/carpet/blue2{
-	dir = 6
-	},
-/turf/simulated/floor/carpet/blue2,
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "rB" = (
-/obj/effect/paint_stripe/red,
+/obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
 /area/site53/uez/o5repoffice)
 "rC" = (
-/obj/machinery/photocopier/faxmachine{
-	department = "O5 Representative's Office";
-	send_access = list("ACCESS_ADMIN_LEVEL5")
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/table/woodentable/walnut,
-/turf/simulated/floor/wood/walnut,
-/area/site53/uez/o5repoffice)
-"rD" = (
-/obj/machinery/photocopier{
-	pixel_y = 4
-	},
-/obj/structure/table/woodentable/walnut,
-/turf/simulated/floor/wood/walnut,
+/obj/machinery/photocopier/faxmachine,
+/obj/structure/table/woodentable,
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "rE" = (
-/obj/structure/filingcabinet{
-	pixel_x = -10
-	},
-/obj/machinery/papershredder{
-	pixel_x = 7
-	},
-/turf/simulated/floor/wood/walnut,
+/obj/structure/closet/walllocker,
+/obj/item/storage/box/cdeathalarm_kit,
+/obj/item/storage/box/syringes,
+/obj/item/reagent_containers/ivbag/amnesticsf,
+/obj/item/reagent_containers/pill/amnestics/classb,
+/obj/item/reagent_containers/pill/amnestics/classb,
+/obj/item/reagent_containers/pill/amnestics/classa,
+/obj/item/storage/pill_bottle/amnesticsb,
+/obj/item/storage/pill_bottle/amnesticsa,
+/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/item/device/taperecorder,
+/obj/item/pen/fancy,
+/obj/item/stamp/scp/o5rep,
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "rF" = (
-/obj/machinery/light,
-/turf/simulated/floor/wood/walnut,
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "rG" = (
-/obj/machinery/button/windowtint{
-	id_tag = "o5rep";
-	pixel_x = 32
-	},
-/obj/structure/closet/secure_closet/personal/empty,
-/obj/item/reagent_containers/syringe/amnesticsc,
-/obj/item/reagent_containers/syringe/amnesticsc,
-/obj/item/reagent_containers/ivbag/amnesticsf,
-/obj/item/reagent_containers/ivbag/amnesticsd,
-/obj/item/implanter,
-/obj/item/implantcase/death_alarm,
-/turf/simulated/floor/wood/walnut,
+/obj/structure/closet/walllocker,
+/obj/item/device/taperecorder,
+/obj/item/storage/briefcase/crimekit,
+/obj/item/pen/fancy,
+/obj/item/stamp/scp/o5rep,
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "rH" = (
 /obj/machinery/light,
@@ -8012,17 +7947,15 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "xx" = (
-/obj/structure/bed/chair/comfy/red{
-	dir = 8
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/effect/floor_decal/carpet/blue,
-/obj/effect/floor_decal/carpet/blue{
+/obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/floor_decal/carpet/blue{
-	dir = 6
-	},
-/turf/simulated/floor/carpet/blue,
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "xF" = (
 /obj/effect/paint_stripe/gray,
@@ -9497,9 +9430,8 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/mcrsubstation)
 "Iy" = (
-/obj/structure/table/woodentable/walnut,
-/obj/effect/floor_decal/carpet/blue,
-/turf/simulated/floor/carpet/blue,
+/obj/structure/bed/chair/office,
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "Iz" = (
 /obj/effect/floor_decal/corner/orange/border{
@@ -10926,8 +10858,13 @@
 /turf/simulated/mineral,
 /area/site53/medical/infirmary)
 "VA" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/wood/walnut,
+/obj/effect/paint_stripe/orange,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/wall/titanium,
 /area/site53/uez/o5repoffice)
 "VG" = (
 /obj/effect/catwalk_plated/dark,
@@ -11336,19 +11273,9 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "Zh" = (
-/obj/item/paper_bin,
-/obj/item/pen,
-/obj/structure/table/woodentable/walnut,
-/obj/effect/floor_decal/carpet/blue2{
-	dir = 1
-	},
-/obj/effect/floor_decal/carpet/blue2{
-	dir = 4
-	},
-/obj/effect/floor_decal/carpet/blue2{
-	dir = 5
-	},
-/turf/simulated/floor/carpet/blue2,
+/obj/structure/bed/chair/office,
+/obj/structure/closet/walllocker,
+/turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "Zn" = (
 /turf/simulated/floor/tiled/monotile,
@@ -44130,13 +44057,13 @@ bw
 dt
 lo
 mB
-lF
-lF
-lF
-lF
-lF
-lF
-lF
+rB
+rB
+rB
+rB
+rB
+rB
+rB
 ms
 mu
 Jt
@@ -44387,13 +44314,13 @@ gh
 cD
 lo
 mB
-lF
-rj
+rB
+rF
 rr
 rn
-rn
+rk
 rC
-lF
+rB
 ms
 mu
 Jt
@@ -44644,13 +44571,13 @@ gh
 cD
 lo
 mB
-lF
-rk
+rB
+rF
 Iy
-gZ
-rn
-rD
-lF
+lE
+rq
+rF
+rB
 ms
 mu
 Jt
@@ -44902,12 +44829,12 @@ dt
 lo
 mB
 lF
-rl
+rF
+Iy
+rx
 xx
-VA
-rn
 rE
-lF
+rB
 ms
 mv
 Gi
@@ -45158,13 +45085,13 @@ dA
 dt
 Zv
 WX
-lF
-rn
-rn
-rn
-rn
-rn
-lF
+rB
+rB
+rB
+rB
+VA
+rB
+rB
 ms
 mu
 tR
@@ -45420,8 +45347,8 @@ rp
 rs
 rv
 ry
-rn
-lF
+rC
+rB
 mw
 mx
 Df
@@ -45672,13 +45599,13 @@ dA
 dt
 OK
 ve
-lF
-rn
-pc
+rB
+rF
+Iy
 lE
 rz
 rF
-lF
+rB
 tM
 tM
 Gi
@@ -45929,13 +45856,13 @@ dA
 dt
 lo
 mB
-lF
-rq
+rB
+rF
 Zh
 rx
 rA
 rG
-lF
+rB
 bS
 bm
 YR
@@ -46186,10 +46113,10 @@ dA
 lv
 mT
 ov
-lF
-lF
-lF
-lF
+rB
+rB
+rB
+rB
 rB
 rB
 rB
