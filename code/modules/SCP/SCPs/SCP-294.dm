@@ -49,7 +49,7 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 			to_chat(user, "<span class='warning'>SCP-294 wheezes and displays 'NO INPUT' before shutting down.</span>")
 			return
 		if(!ispath(chosen_reagent))
-			to_chat(user, "<span class='warning'>SCP-294 wheezes and displays 'NO LIQUID FOUND' before shutting down.</span>")
+			to_chat(user, "<span class='warning'>SCP-294 wheezes and displays 'OUT OF RANGE' before shutting down.</span>")
 			return
 		if(!(chosen_reagent in banned_chems))
 			valid_id = TRUE
