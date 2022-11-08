@@ -3,7 +3,7 @@
 	name = "galoshes"
 	icon_state = "galoshes"
 	permeability_coefficient = 0.05
-	item_flags = ITEM_FLAG_NOSLIP
+	item_flags = ITEM_FLAG_NOSLIP | ITEM_FLAG_THICKMATERIAL
 	species_restricted = null
 
 /obj/item/clothing/shoes/galoshes/Initialize()
@@ -16,11 +16,12 @@
 	icon_state = "jackboots"
 	item_state = "jackboots"
 	force = 3
+	item_flags = ITEM_FLAG_THICKMATERIAL
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT, 
-		bullet = ARMOR_BALLISTIC_MINOR, 
-		laser = ARMOR_LASER_MINOR, 
-		energy = ARMOR_ENERGY_MINOR, 
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_MINOR,
+		laser = ARMOR_LASER_MINOR,
+		energy = ARMOR_ENERGY_MINOR,
 		bomb = ARMOR_BOMB_PADDED
 		)
 	siemens_coefficient = 0.7
@@ -45,10 +46,11 @@
 	desc = "A pair of steel-toed work boots designed for use in industrial settings. Safety first."
 	icon_state = "workboots"
 	item_state = "workboots"
+	item_flags = ITEM_FLAG_THICKMATERIAL
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT, 
-		laser = ARMOR_LASER_MINOR, 
-		energy = ARMOR_ENERGY_SMALL, 
+		melee = ARMOR_MELEE_RESISTANT,
+		laser = ARMOR_LASER_MINOR,
+		energy = ARMOR_ENERGY_SMALL,
 		bomb = ARMOR_BOMB_PADDED
 		)
 	siemens_coefficient = 0.7
