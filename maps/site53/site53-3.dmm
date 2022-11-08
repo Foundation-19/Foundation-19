@@ -4416,6 +4416,10 @@
 /area/site53/medical/morgue)
 "kI" = (
 /obj/effect/floor_decal/corner/blue/border,
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
 "kJ" = (
@@ -7629,6 +7633,10 @@
 /obj/structure/closet/shipping_wall/filled{
 	pixel_x = -32
 	},
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "vk" = (
@@ -8264,6 +8272,14 @@
 /obj/effect/floor_decal/corner/green/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/hall)
+"zo" = (
+/obj/effect/floor_decal/corner/green/mono,
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/medical/surgery/hall)
 "zp" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/exoplanet/grass,
@@ -8393,6 +8409,12 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/op2)
+"zW" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/closet/crate,
+/obj/structure/window/reinforced,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "Aa" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -8800,6 +8822,11 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"Do" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/window/reinforced,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "Dz" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -8971,6 +8998,13 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/hall)
+"EA" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/maintenance/surfacewest)
 "EJ" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
@@ -8988,6 +9022,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/isolation)
+"EQ" = (
+/obj/machinery/conveyor/west{
+	id = "trashunloading";
+	id_tag = "trashunloading"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "ES" = (
 /obj/machinery/power/breakerbox/activated{
 	RCon_tag = "Medical Bay Bypass"
@@ -9083,6 +9124,19 @@
 /obj/item/defibrillator/compact/loaded,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
+"Fz" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/structure/disposaloutlet{
+	dir = 8;
+	name = "Trash Outlet"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "FA" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/exoplanet/grass,
@@ -9143,6 +9197,14 @@
 /obj/effect/floor_decal/corner/paleblue/three_quarters,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
+"Gq" = (
+/obj/structure/window/reinforced,
+/obj/machinery/conveyor_switch{
+	id = "trashunloading";
+	id_tag = "trashunloading"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "Gt" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
@@ -9498,6 +9560,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmary)
+"Jk" = (
+/obj/structure/disposalpipe/down{
+	dir = 8
+	},
+/turf/unsimulated/mineral,
+/area/space)
 "Jr" = (
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/monotile/white,
@@ -9547,6 +9615,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/mcrsubstation)
+"JD" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "JN" = (
 /obj/structure/table/woodentable{
 	dir = 5
@@ -9595,6 +9670,16 @@
 /obj/structure/bed/chair/wheelchair,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/mentalhealth/isolation)
+"Ks" = (
+/obj/structure/closet/shipping_wall/filled{
+	pixel_y = -32
+	},
+/obj/machinery/conveyor/west{
+	id = "trashunloading";
+	id_tag = "trashunloading"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "Kv" = (
 /obj/effect/floor_decal/corner/purple/border,
 /obj/machinery/camera/network/medbay{
@@ -10006,6 +10091,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
+"Ob" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/logistics/logistics)
 "Oe" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Sergeant Equipment";
@@ -10237,6 +10328,19 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"QA" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/brown/half{
+	dir = 4
+	},
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "QC" = (
 /obj/machinery/camera/network/medbay{
 	c_tag = "Operating Room 1";
@@ -10329,6 +10433,14 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/isolation)
+"RF" = (
+/obj/machinery/light,
+/obj/machinery/conveyor/west{
+	id = "trashunloading";
+	id_tag = "trashunloading"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "RG" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -10382,6 +10494,13 @@
 /obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
+"RZ" = (
+/obj/structure/closet/crate/bin{
+	anchored = 1;
+	name = "trash bin"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "Sd" = (
 /obj/machinery/light{
 	dir = 8
@@ -10617,6 +10736,11 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
+"TZ" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/window/reinforced,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "Uc" = (
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 4
@@ -11004,6 +11128,13 @@
 /obj/structure/hygiene/toilet,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
+"XH" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "XI" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -34820,7 +34951,7 @@ dA
 dA
 dA
 bt
-nE
+RZ
 nE
 qB
 qC
@@ -36119,7 +36250,7 @@ Uc
 vg
 vh
 Uc
-uS
+QA
 my
 nk
 oV
@@ -38449,7 +38580,7 @@ rN
 rN
 qK
 rN
-qK
+uR
 oV
 dA
 dA
@@ -38706,7 +38837,7 @@ rZ
 rN
 qK
 rN
-qK
+EQ
 oV
 dA
 dA
@@ -38887,7 +39018,7 @@ dA
 dA
 dA
 bk
-gm
+EA
 gm
 gm
 dh
@@ -38962,8 +39093,8 @@ qK
 rN
 rN
 qK
-rN
-vl
+Do
+Ks
 oV
 dA
 dA
@@ -39219,8 +39350,8 @@ qK
 rN
 rN
 qK
-rZ
-rH
+zW
+RF
 oV
 dA
 dA
@@ -39476,8 +39607,8 @@ qK
 qK
 qK
 qK
-qK
-qK
+Gq
+EQ
 oV
 dA
 dA
@@ -39731,10 +39862,10 @@ qN
 rL
 qN
 qK
-qN
-qN
-qK
-qN
+XH
+JD
+TZ
+Fz
 oV
 dA
 dA
@@ -39988,7 +40119,7 @@ oV
 oV
 oV
 oV
-oV
+Ob
 oV
 oV
 oV
@@ -40245,7 +40376,7 @@ dA
 dA
 dA
 dA
-dA
+Jk
 dA
 dA
 dA
@@ -42948,7 +43079,7 @@ iq
 pl
 cE
 kD
-iq
+zo
 dl
 dA
 fc
