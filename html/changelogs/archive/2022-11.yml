@@ -50,3 +50,12 @@
   MACIEKBAKI:
   - bugfix: EZ Med Storage gravity should work properly (just before the doors, that
       one)
+2022-11-08:
+  cheesePizza2:
+  - rscadd: New logos for documents! Now the science, medical, and administrative
+      department (among others) can specialize their paperwork better.
+  - rscadd: Codex updated! Examine a pen and hit the codex button for a guide on paperwork.
+  - imageadd: Manufacturing department logo is available (obtained from the same location
+      as many of the other images).
+  - imagedel: Baystation logos (NT logos, for example) are gone.
+  - code_imp: htmltopencode was updated as well, so logos should properly re-pencodify
