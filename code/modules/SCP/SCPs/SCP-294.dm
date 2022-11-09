@@ -14,7 +14,9 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 	/datum/reagent/glycerol,
 	/datum/reagent/coolant,
 	/datum/reagent/frostoil,
-	/datum/reagent/zombie
+	/datum/reagent/zombie,
+	/datum/reagent/jerraman,
+	/datum/reagent/three_eye
 	)
 	var/uses_left = 5
 	var/last_use = 0
