@@ -20,11 +20,10 @@ var/list/mining_floors = list()
 /turf/unsimulated/mineral/is_wall()
 	return TRUE
 
-/turf/simulated/mineral //wall piece
+/turf/simulated/mineral
 	name = "rock"
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "rock"
-	initial_gas = null
 	opacity = 1
 	density = TRUE
 	blocks_air = 1
