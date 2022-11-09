@@ -1,3 +1,6 @@
+/obj/item/clothing/under/scp
+	item_flags = ITEM_FLAG_THICKMATERIAL
+
 /obj/item/clothing/under/scp/whiteuniform
 	name = "white security uniform"
 	desc = "A sterile white uniform. Commonly issued to lower ranked security personnel."

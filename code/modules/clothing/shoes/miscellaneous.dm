@@ -4,7 +4,7 @@
 	icon_state = "brown"
 	item_state = "brown"
 	permeability_coefficient = 0.05
-	item_flags = ITEM_FLAG_NOSLIP
+	item_flags = ITEM_FLAG_NOSLIP | ITEM_FLAG_THICKMATERIAL
 	origin_tech = list(TECH_ESOTERIC = 3)
 	var/list/clothing_choices = list()
 	siemens_coefficient = 0.8
@@ -28,7 +28,8 @@
 		bomb = ARMOR_BOMB_RESISTANT,
 		bio = ARMOR_BIO_MINOR
 		)
-	item_flags = ITEM_FLAG_NOSLIP
+	item_flags = ITEM_FLAG_NOSLIP  | ITEM_FLAG_THICKMATERIAL
+
 	siemens_coefficient = 0.6
 
 /obj/item/clothing/shoes/combat //Basically SWAT shoes combined with galoshes.
@@ -44,7 +45,7 @@
 		bomb = ARMOR_BOMB_RESISTANT,
 		bio = ARMOR_BIO_MINOR
 		)
-	item_flags = ITEM_FLAG_NOSLIP
+	item_flags = ITEM_FLAG_NOSLIP | ITEM_FLAG_THICKMATERIAL
 	siemens_coefficient = 0.6
 
 	cold_protection = FEET
@@ -57,6 +58,7 @@
 	desc = "A pair of durable brown boots. Waterproofed for use planetside."
 	icon_state = "jungle"
 	force = 3
+	item_flags = ITEM_FLAG_THICKMATERIAL
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_MINOR,
@@ -72,6 +74,7 @@
 	desc = "A pair of durable tan boots. Designed for use in hot climates."
 	icon_state = "desert"
 	force = 3
+	item_flags = ITEM_FLAG_THICKMATERIAL
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_MINOR,
@@ -86,6 +89,7 @@
 	name = "duty boots"
 	desc = "A pair of steel-toed synthleather boots with a mirror shine."
 	icon_state = "duty"
+	item_flags = ITEM_FLAG_THICKMATERIAL
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		energy = ARMOR_ENERGY_MINOR,
@@ -105,6 +109,7 @@
 	desc = "Tan boots with extra padding and armor."
 	icon_state = "desert"
 	force = 3
+	item_flags = ITEM_FLAG_THICKMATERIAL
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,
@@ -168,6 +173,7 @@
 /obj/item/clothing/shoes/cult
 	name = "boots"
 	desc = "A pair of boots worn by the followers of Nar-Sie."
+	item_flags = ITEM_FLAG_THICKMATERIAL
 	icon_state = "cult"
 	item_state = "cult"
 	force = 2
@@ -183,6 +189,7 @@
 	name = "cyborg boots"
 	desc = "Shoes for a cyborg costume."
 	icon_state = "boots"
+	item_flags = ITEM_FLAG_THICKMATERIAL
 
 /obj/item/clothing/shoes/slippers
 	name = "bunny slippers"
@@ -247,4 +254,4 @@
 	name = "red high heels"
 	desc = "A pair of red high heels."
 	color = COLOR_RED
-	
+

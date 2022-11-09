@@ -31,6 +31,7 @@
 	icon_state = "security"
 	item_state = "r_suit"
 	worn_state = "secred"
+	item_flags = ITEM_FLAG_THICKMATERIAL
 	armor = list(
 		melee = ARMOR_MELEE_SMALL
 		)
@@ -53,6 +54,7 @@
 	icon_state = "redshirt2"
 	item_state = "r_suit"
 	worn_state = "redshirt2"
+	item_flags = ITEM_FLAG_THICKMATERIAL
 	armor = list(
 		melee = ARMOR_MELEE_SMALL
 		)
@@ -143,6 +145,7 @@
 	icon_state = "hos"
 	item_state = "r_suit"
 	worn_state = "hosred"
+	item_flags = ITEM_FLAG_THICKMATERIAL
 	armor = list(
 		melee = ARMOR_MELEE_SMALL
 		)
