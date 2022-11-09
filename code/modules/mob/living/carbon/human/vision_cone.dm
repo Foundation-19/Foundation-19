@@ -1,7 +1,6 @@
 /////////////VISION CONE///////////////
-//Vision cone code by Matt and Honkertron. This vision cone code allows for mobs and/or items to blocked out from a players field of vision.
-//This code makes use of the "cone of effect" proc created by Lummox, contributed by Jtgibson. More info on that here:
-//http://www.byond.com/forum/?post=195138
+//Vision cone code. originally by Matt and Honkertron, rewritten by Chaoko99. This vision cone code allows for mobs and/or items to blocked out from a players field of vision.
+//It makes use of planes and alpha masks only possible in 513 and above. Look for fov and fov_mask vars to see how it works.
 ///////////////////////////////////////
 
 //"Made specially for Otuska"
@@ -9,19 +8,13 @@
 
 // Optimized by Kachnov
 
-//Otuska is a faggot!
-//Rest in Peace, Honker. You will forever be remembered; Ripped away and stolen from IS12;
-//~Tsurupeta
+// "Otuska is a faggot"
+// Rest in Peace, Honker. You will always be in our hearts.
+// Replaced with IS12's implementation authored by Chaoko99.
+// ~Tsurupeta
 
 //Defines.
 #define OPPOSITE_DIR(D) turn(D, 180)
-
-/client
-	var/list/hidden_images = list()
-
-/mob/living/carbon/human
-	var/list/hidden_atoms = list()
-	var/list/hidden_mobs = list()
 
 /atom/proc/InCone(atom/center, dir = NORTH)
 	if(!get_dist(center, src))
@@ -68,11 +61,11 @@
 	return
 
 /mob/living/carbon/human/update_vision_cone()
-	if(!src.client) //This doesn't actually hide shit from clientless mobs, so just keep them from running this.
+	if(!client) //This doesn't actually hide shit from clientless mobs, so just keep them from running this.
 		return
 	check_fov()
-	src.fov.dir = src.dir
-	src.fov_mask.dir = src.dir
+	fov.dir = dir
+	fov_mask.dir = dir
 
 /mob/living/carbon/human/proc/SetFov(var/show)
 	if(!show)
@@ -81,29 +74,27 @@
 		show_cone()
 
 /mob/living/carbon/human/proc/check_fov()
-	if(!src.client)
+	if(!client)
 		return
 
 	if(resting || lying || (client && client.eye != client.mob))
-		src.fov.alpha = 0
-		src.fov_mask.alpha = 0
+		fov.alpha = 0
+		fov_mask.alpha = 0
 		return
-
-	else if(src.usefov)
+	else if(usefov)
 		show_cone()
-
 	else
 		hide_cone()
 
 //Making these generic procs so you can call them anywhere.
 /mob/living/carbon/human/proc/show_cone()
-	if(src.fov)
-		src.fov.alpha = 255
-		src.usefov = TRUE
-		src.fov_mask.alpha = 255
+	if(fov)
+		fov.alpha = 255
+		usefov = TRUE
+		fov_mask.alpha = 255
 
 /mob/living/carbon/human/proc/hide_cone()
-	if(src.fov)
-		src.fov.alpha = 0
-		src.usefov = FALSE
-		src.fov_mask.alpha = 0
+	if(fov)
+		fov.alpha = 0
+		usefov = FALSE
+		fov_mask.alpha = 0

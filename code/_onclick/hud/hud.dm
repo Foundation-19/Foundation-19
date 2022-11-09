@@ -44,8 +44,6 @@
 	if(object_pm)
 		object_pm.add_filter("ao", 1, list(type = "drop_shadow", x = 0, y = -2, size = 4, color = "#04080FAA"))
 
-/mob/proc/InitializeVisionCone()
-
 
 /mob/proc/DeletePlanes()
 	for(var/y in effects_planemasters)
