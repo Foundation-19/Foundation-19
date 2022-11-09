@@ -1,5 +1,0 @@
-author: Tsurupeta
-delete-after: true
-changes:
-  - rscadd: IDs and Crew Records now contain cropped photos of people without their
-      headgear.

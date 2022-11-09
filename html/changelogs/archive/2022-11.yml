@@ -59,3 +59,7 @@
       as many of the other images).
   - imagedel: Baystation logos (NT logos, for example) are gone.
   - code_imp: htmltopencode was updated as well, so logos should properly re-pencodify
+2022-11-09:
+  Tsurupeta:
+  - rscadd: IDs and Crew Records now contain cropped photos of people without their
+      headgear.
