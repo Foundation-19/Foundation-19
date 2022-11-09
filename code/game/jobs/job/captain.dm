@@ -115,7 +115,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
-		/datum/mil_rank/civ/classa
+		/datum/mil_rank/civ/classb
 	)
 	hud_icon = "hud05rep"
 	access = list(
@@ -145,7 +145,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
-		/datum/mil_rank/civ/classa
+		/datum/mil_rank/civ/classb
 	)
 
 	access = list(

@@ -181,7 +181,7 @@ ut // COMMAND
 		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
-		/datum/mil_rank/civ/classa
+		/datum/mil_rank/civ/classb
 	)
 	hud_icon = "hud05rep"
 	access = list(
@@ -211,7 +211,7 @@ ut // COMMAND
 		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
-		/datum/mil_rank/civ/classa
+		/datum/mil_rank/civ/classb
 	)
 	hud_icon = "hud05rep"
 	access = list(

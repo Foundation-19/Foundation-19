@@ -6426,22 +6426,6 @@
 /obj/effect/landmark/start{
 	name = "Internal Tribunal Department Officer"
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/holofloor/wood,
-/area/site53/uez/o5repoffice)
-"rA" = (
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "west bump"
-	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /turf/simulated/floor/holofloor/wood,
 /area/site53/uez/o5repoffice)
 "rB" = (
@@ -45860,7 +45844,7 @@ rB
 rF
 Zh
 rx
-rA
+rF
 rG
 rB
 bS
