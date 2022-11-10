@@ -24,6 +24,7 @@
 			client.screen += effects_planemasters["[i]"]
 		return
 	var/list/plane_index = list(DEFAULT_PLANE, OBJ_PLANE, MOB_PLANE, OBSERVER_PLANE, EFFECTS_ABOVE_LIGHTING_PLANE, FULLSCREEN_PLANE)
+	effects_planemasters = list()
 
 	for(var/index in plane_index)
 		var/obj/screen/plane_master/effects_planemaster/generated_plane = new
@@ -47,13 +48,13 @@
 
 /mob/proc/DeletePlanes()
 	for(var/y in effects_planemasters)
-		client.screen -= y
-	QDEL_NULL_LIST(effects_planemasters)
+		client.screen -= effects_planemasters["[y]"]
+	QDEL_ASSOC_LIST(effects_planemasters)
 	return TRUE
 
 /mob/Destroy()
-	QDEL_NULL_LIST(effects_planemasters)
-	. = ..()
+	QDEL_ASSOC_LIST(effects_planemasters)
+	return ..()
 
 /datum/hud
 	var/mob/mymob

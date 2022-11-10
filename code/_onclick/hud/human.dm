@@ -406,7 +406,6 @@
 		usr.set_next_usable_move_intent()
 
 /mob/living/carbon/human/InitializePlanes()
-	. = ..()
 	..()
 	var/obj/screen/plane_master/vision_cone_target/VC = new
 	var/obj/screen/plane_master/vision_cone/primary/mob = new

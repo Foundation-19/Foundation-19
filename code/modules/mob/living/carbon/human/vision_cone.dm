@@ -8,7 +8,7 @@
 
 // Optimized by Kachnov
 
-// "Otuska is a faggot"
+// "Poshel nahuy, Otuska!"
 // Rest in Peace, Honker. You will always be in our hearts.
 // Replaced with IS12's implementation authored by Chaoko99.
 // ~Tsurupeta

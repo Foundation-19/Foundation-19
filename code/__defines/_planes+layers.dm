@@ -261,11 +261,8 @@ GLOBAL_LIST_INIT(ghost_master, list(
 	appearance_flags = PLANE_MASTER | KEEP_TOGETHER
 	blend_mode = BLEND_OVERLAY
 
-/obj/screen/plane_master/effects_planemaster/openspace
-	appearance_flags = PLANE_MASTER | KEEP_TOGETHER
-	blend_mode = BLEND_OVERLAY
-
-/obj/screen/plane_master/effects_planemaster/openspace/New(newloc)
+/obj/screen/plane_master/effects_planemaster/openspace/Initialize()
+	. = ..()
 	add_filter("openspace_blur", 0, list(type = "blur", size = 0.6))
 
 /obj/screen/plane_master/vision_cone_target
@@ -273,12 +270,10 @@ GLOBAL_LIST_INIT(ghost_master, list(
 	plane = HIDDEN_PLANE
 	render_target = "vision_cone_target"
 
-/obj/screen/plane_master/vision_cone/
-
-/obj/screen/plane_master/vision_cone/primary/New() //For when you want things to not appear under the blind section.
+/obj/screen/plane_master/vision_cone/primary/Initialize() //Things to hide
+	. = ..()
 	add_filter("vision_cone", 50, list(type="alpha", render_source="vision_cone_target", flags=MASK_INVERSE))
 
-/obj/screen/plane_master/vision_cone/inverted //for things you want specifically to show up on the blind section.
-
-/obj/screen/plane_master/vision_cone/inverted/New()
+/obj/screen/plane_master/vision_cone/inverted/Initialize() //Things to show in hidden section
+	. = ..()
 	add_filter("inverted_vision_cone", 50, list(type="alpha", render_source="vision_cone_target"))
