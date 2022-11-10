@@ -91,8 +91,9 @@
 
 /obj/item/organ/internal/cell/replaced()
 	..()
-	// This is very ghetto way of rebooting an IPC. TODO better way.
-	if(owner && owner.stat == DEAD)
+	// This is a still, very ghetto way of FBP rebooting. But this should stop le funny.
+	var/obj/item/organ/internal/mmi_holder/sponge = owner.internal_organs_by_name[BP_BRAIN]
+	if(owner && owner.stat == DEAD && sponge) //No reviving people without a brain.
 		owner.set_stat(CONSCIOUS)
 		owner.visible_message("<span class='danger'>\The [owner] twitches visibly!</span>")
 
