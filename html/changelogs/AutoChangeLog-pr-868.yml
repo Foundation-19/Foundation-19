@@ -1,0 +1,4 @@
+author: CristoMagisto
+delete-after: true
+changes:
+  - bugfix: fixed syndie agent card name not changing when appearance is changed
