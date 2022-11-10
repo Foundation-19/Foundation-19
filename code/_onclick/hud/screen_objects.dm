@@ -387,3 +387,17 @@
 				usr.update_inv_l_hand(0)
 				usr.update_inv_r_hand(0)
 	return 1
+
+/obj/screen/fov
+	icon = 'icons/mob/hide.dmi'
+	icon_state = "combat"
+	screen_loc = "1,1"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	plane = VISION_CONE_PLANE
+
+/obj/screen/fov_mask
+	icon = 'icons/mob/hide.dmi'
+	icon_state = "combat_mask_alt"
+	screen_loc = "1,1"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	plane = HIDDEN_PLANE

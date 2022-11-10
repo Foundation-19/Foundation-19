@@ -53,6 +53,9 @@ GLOBAL_LIST_EMPTY(scp999s)
 	. = ..()
 	update_icon()
 	if(attached)
+		if(QDELETED(attached) || !attached.loc)
+			attached = null
+			return
 		forceMove(attached.loc)
 		if(last_healing[attached] == null || ((last_healing[attached] + 2 MINUTES) >= world.time))
 			last_healing[attached] = world.time

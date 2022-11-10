@@ -79,15 +79,11 @@
 	desc = "You shouldn't see this."
 	icon = 'icons/effects/lighting_overlay.dmi'
 	icon_state = "dark"
-	plane = OPENTURF_MAX_PLANE
+	plane = OVER_OPENSPACE_PLANE
 	layer = MIMICED_LIGHTING_LAYER
-	blend_mode = BLEND_MULTIPLY
-	color = list(
-		SHADOWER_DARKENING_FACTOR, 0, 0,
-		0, SHADOWER_DARKENING_FACTOR, 0,
-		0, 0, SHADOWER_DARKENING_FACTOR
-	)
-
+	blend_mode = DEFAULT
+	color = "#000000"
+	alpha = (255 * (1 - SHADOWER_DARKENING_FACTOR))
 /atom/movable/openspace/multiplier/Destroy()
 	var/turf/myturf = loc
 	if (istype(myturf))
