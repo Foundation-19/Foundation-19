@@ -5,7 +5,7 @@ GLOBAL_LIST_EMPTY(apostles)
 	id = "apostle"
 	role_text = "Apostle"
 	role_text_plural = "Apostles"
-	blacklisted_jobs = list(/datum/job/ai, /datum/job/classd, /datum/job/captain, /datum/job/hos, /datum/job/rd, /datum/job/o5rep, /datum/job/commsofficer, /datum/job/enlistedofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/ncoofficerez, /datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ltofficerez, /datum/job/ltofficerlcz, /datum/job/ltofficerhcz, /datum/job/goirep)
+	blacklisted_jobs = list(/datum/job/ai, /datum/job/classd, /datum/job/captain, /datum/job/hos, /datum/job/rd, /datum/job/ethicsliaison, /datum/job/tribunal, /datum/job/commsofficer, /datum/job/enlistedofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/ncoofficerez, /datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ltofficerez, /datum/job/ltofficerlcz, /datum/job/ltofficerhcz, /datum/job/goirep,)
 	flags = ANTAG_SUSPICIOUS
 	antaghud_indicator = "hudchangeling"
 	faction = "apostle"
