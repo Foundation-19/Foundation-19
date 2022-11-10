@@ -1,4 +1,0 @@
-author: Tsurupeta
-delete-after: true
-changes:
-  - bugfix: Mineral walls no longer contain vacuum inside of them.

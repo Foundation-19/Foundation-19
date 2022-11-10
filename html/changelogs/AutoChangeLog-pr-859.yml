@@ -1,8 +1,0 @@
-author: MACIEKBAKI
-delete-after: true
-changes:
-  - bugfix: Shoes are now made thick enough to not allow injection using a syringe.
-  - bugfix: Foundation-Issued Tactical Gloves are now also made thick enough to prevent
-      injection.
-  - bugfix: Amputation surgery should no longer be instant, hopefully. Although same
-      goes for all surgery.

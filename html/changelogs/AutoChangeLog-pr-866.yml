@@ -1,4 +1,0 @@
-author: Tsurupeta
-delete-after: true
-changes:
-  - bugfix: Masks now redraw hair on adjust.
