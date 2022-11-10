@@ -106,7 +106,7 @@
 	name = "brain interface"
 	icon_state = "mmi-empty"
 	organ_tag = BP_BRAIN
-	parent_organ = BP_HEAD
+	parent_organ = BP_CHEST //Chest Change.
 	vital = 1
 	var/obj/item/device/mmi/stored_mmi
 	var/datum/mind/persistantMind //Mind that the organ will hold on to after being removed, used for transfer_and_delete
