@@ -4790,7 +4790,7 @@
 /area/site53/medical/equipstorage)
 "lE" = (
 /obj/structure/table/woodentable/maple,
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "lF" = (
 /obj/machinery/door/airlock/command{
@@ -6307,17 +6307,16 @@
 	name = "west bump";
 	pixel_x = -24
 	},
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "rm" = (
 /turf/simulated/mineral,
 /area/site53/surface/surface)
 "rn" = (
-/obj/machinery/door/window/holowindoor{
-	id_tag = "sitedirect";
+/obj/machinery/door/window{
 	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "ro" = (
 /obj/machinery/light,
@@ -6337,7 +6336,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "rq" = (
 /obj/structure/bed/chair/armchair{
@@ -6351,13 +6350,13 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "rr" = (
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "rs" = (
 /obj/structure/cable/green{
@@ -6368,7 +6367,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "rt" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -6379,8 +6378,7 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "rv" = (
-/obj/machinery/door/window/holowindoor{
-	id_tag = "sitedirect";
+/obj/machinery/door/window{
 	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /obj/structure/cable/green{
@@ -6388,7 +6386,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "rw" = (
 /obj/structure/flora/ausbushes/brflowers,
@@ -6401,7 +6399,7 @@
 "rx" = (
 /obj/structure/table/woodentable/maple,
 /obj/item/paper_bin,
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "ry" = (
 /obj/structure/cable/green{
@@ -6409,10 +6407,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "rz" = (
 /obj/structure/bed/chair/armchair{
@@ -6421,7 +6416,7 @@
 /obj/effect/landmark/start{
 	name = "Internal Tribunal Department Officer"
 	},
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "rB" = (
 /obj/effect/paint_stripe/orange,
@@ -6430,7 +6425,7 @@
 "rC" = (
 /obj/machinery/photocopier/faxmachine,
 /obj/structure/table/woodentable,
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "rE" = (
 /obj/structure/closet/walllocker,
@@ -6446,10 +6441,10 @@
 /obj/item/device/taperecorder,
 /obj/item/pen/fancy,
 /obj/item/stamp/scp/o5rep,
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "rF" = (
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "rG" = (
 /obj/structure/closet/walllocker,
@@ -6457,7 +6452,7 @@
 /obj/item/storage/briefcase/crimekit,
 /obj/item/pen/fancy,
 /obj/item/stamp/scp/o5rep,
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "rH" = (
 /obj/machinery/light,
@@ -7931,10 +7926,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "xF" = (
 /obj/effect/paint_stripe/gray,
@@ -9410,7 +9402,7 @@
 /area/site53/uez/mcrsubstation)
 "Iy" = (
 /obj/structure/bed/chair/office,
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "Iz" = (
 /obj/effect/floor_decal/corner/orange/border{
@@ -11254,7 +11246,7 @@
 "Zh" = (
 /obj/structure/bed/chair/office,
 /obj/structure/closet/walllocker,
-/turf/simulated/floor/holofloor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/site53/uez/o5repoffice)
 "Zn" = (
 /turf/simulated/floor/tiled/monotile,
