@@ -9,6 +9,7 @@
 	opacity = 1
 	density = TRUE
 	layer = CLOSED_DOOR_LAYER
+	plane = DEFAULT_PLANE
 	interact_offline = TRUE
 
 	var/open_layer = OPEN_DOOR_LAYER
