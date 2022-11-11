@@ -26,6 +26,7 @@
 	var/close_sound = 'sound/machines/blastdoor_close.ogg'
 
 	closed_layer = ABOVE_WINDOW_LAYER
+	plane = OBJ_PLANE
 	dir = 1
 	explosion_resistance = 25
 	atom_flags = ATOM_FLAG_ADJACENT_EXCEPTION
