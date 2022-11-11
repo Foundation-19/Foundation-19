@@ -7,7 +7,7 @@
 	program_key_state = "atmos_key"
 	program_menu_icon = "alert"
 	extended_desc = "This program provides visual interface for the engineering alarm system."
-	required_access = ACCESS_ENGINE
+	required_access = ACCESS_ENGINEERING_LVL2
 	requires_ntnet = TRUE
 	network_destination = "alarm monitoring network"
 	size = 5
