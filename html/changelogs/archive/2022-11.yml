@@ -77,3 +77,12 @@
   - tweak: 294 has recieved a small rework to make it less of a threat to round integrity.
   cheesePizza2:
   - imageadd: the APPROVE Stamp now has a sprite. It is no longer invisible
+2022-11-11:
+  CristoMagisto:
+  - bugfix: fixed syndie agent card name not changing when appearance is changed
+  Tsurupeta:
+  - rscadd: Added openspace blur effetcs.
+  - rscadd: Added effect that draws shadows from objects.
+  - bugfix: Rewrote Vision Cone to use alpha filter masks.
+  Yawet330:
+  - bugfix: No more synthetic immortality

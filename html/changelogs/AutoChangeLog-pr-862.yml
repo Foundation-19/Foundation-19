@@ -1,6 +1,0 @@
-author: Tsurupeta
-delete-after: true
-changes:
-  - rscadd: Added openspace blur effetcs.
-  - rscadd: Added effect that draws shadows from objects.
-  - bugfix: Rewrote Vision Cone to use alpha filter masks.
