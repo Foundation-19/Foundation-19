@@ -1,0 +1,8 @@
+author: CapCamIII
+delete-after: true
+changes:
+  - rscadd: MTF teams are equipped with M4A1 with extended magazines in their rooms.
+  - rscadd: Brand new MTF/CentCom, slightly bigger.
+  - rscdel: Old MTF/CentCom is no more.
+  - balance: Adds spare gear to MTF base.
+  - bugfix: The the flare-gun launcher MTF get now uses the correct flare type.
