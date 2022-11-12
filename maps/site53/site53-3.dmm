@@ -1817,6 +1817,10 @@
 /obj/structure/cable/green,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op2)
+"ea" = (
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
+/area/site53/uez/ethicsoffice)
 "eb" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -5452,15 +5456,6 @@
 "nE" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
-"nF" = (
-/obj/effect/paint_stripe/orange,
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "west bump";
-	pixel_x = -24
-	},
-/turf/simulated/wall/titanium,
-/area/site53/uez/ethicsoffice)
 "nG" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/exoplanet/concrete,
@@ -5533,6 +5528,11 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/medical/surgery/hall)
+"nR" = (
+/obj/machinery/photocopier/faxmachine,
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/tribunaloffice)
 "nS" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -6108,11 +6108,6 @@
 /obj/machinery/light,
 /turf/simulated/open,
 /area/site53/zonecommanderoffice)
-"qn" = (
-/obj/structure/table/woodentable/maple,
-/obj/item/paper_bin,
-/turf/simulated/floor/wood/walnut,
-/area/site53/uez/ethicsoffice)
 "qo" = (
 /obj/effect/floor_decal/carpet/blue2,
 /obj/effect/floor_decal/carpet/blue2{
@@ -6451,7 +6446,7 @@
 /obj/machinery/photocopier/faxmachine,
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood/walnut,
-/area/site53/uez/tribunaloffice)
+/area/site53/uez/ethicsoffice)
 "rE" = (
 /obj/structure/closet/walllocker,
 /obj/item/storage/box/cdeathalarm_kit,
@@ -6469,17 +6464,8 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/ethicsoffice)
 "rF" = (
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "east bump";
-	pixel_x = 24
-	},
 /turf/simulated/floor/wood/walnut,
-/area/site53/uez/tribunaloffice)
+/area/site53/uez/ethicsoffice)
 "rG" = (
 /obj/structure/closet/walllocker,
 /obj/item/device/taperecorder,
@@ -7742,6 +7728,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"wd" = (
+/obj/structure/table/woodentable/maple,
+/obj/item/modular_computer/laptop,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/ethicsoffice)
 "we" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
@@ -8453,6 +8444,9 @@
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
+"AH" = (
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/tribunaloffice)
 "AI" = (
 /obj/machinery/camera/autoname{
 	network = list("Entrance Zone Network")
@@ -8528,6 +8522,18 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
+"Bi" = (
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/tribunaloffice)
 "Bq" = (
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 4
@@ -8731,6 +8737,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
+"CP" = (
+/obj/structure/bed/chair/office,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/ethicsoffice)
 "CU" = (
 /obj/structure/iv_drip,
 /obj/structure/cable/green{
@@ -9437,7 +9447,7 @@
 "Iy" = (
 /obj/structure/bed/chair/office,
 /turf/simulated/floor/wood/walnut,
-/area/site53/uez/ethicsoffice)
+/area/site53/uez/tribunaloffice)
 "Iz" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -9986,6 +9996,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
+"Np" = (
+/obj/structure/table/woodentable/maple,
+/obj/item/paper_bin,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/ethicsoffice)
 "Ny" = (
 /obj/machinery/light{
 	dir = 4
@@ -10019,11 +10034,6 @@
 /obj/item/defibrillator/loaded,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
-"NJ" = (
-/obj/machinery/photocopier/faxmachine,
-/obj/structure/table/woodentable,
-/turf/simulated/floor/wood/walnut,
-/area/site53/uez/ethicsoffice)
 "NS" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/regular,
@@ -10085,11 +10095,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
-"OA" = (
-/obj/structure/table/woodentable/maple,
-/obj/item/modular_computer/laptop,
-/turf/simulated/floor/wood/walnut,
-/area/site53/uez/ethicsoffice)
 "OC" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -10295,9 +10300,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op1)
-"QF" = (
-/turf/simulated/floor/wood/walnut,
-/area/site53/uez/tribunaloffice)
 "QP" = (
 /obj/machinery/door/airlock/command{
 	name = "Zone Commander's Office";
@@ -10451,10 +10453,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
-"Sc" = (
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
-/area/site53/uez/ethicsoffice)
 "Sd" = (
 /obj/machinery/light{
 	dir = 8
@@ -10933,10 +10931,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
-"Wf" = (
-/obj/structure/bed/chair/office,
-/turf/simulated/floor/wood/walnut,
-/area/site53/uez/tribunaloffice)
 "Wl" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
@@ -10967,9 +10961,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
-"WA" = (
-/turf/simulated/floor/wood/walnut,
-/area/site53/uez/ethicsoffice)
 "WC" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -44086,13 +44077,13 @@ bw
 dt
 lo
 mB
-Sc
-Sc
-Sc
-Sc
-nF
-Sc
-Sc
+ea
+ea
+ea
+ea
+ea
+ea
+ea
 ms
 mu
 Jt
@@ -44343,13 +44334,13 @@ gh
 cD
 lo
 mB
-Sc
-WA
+ea
+rF
 rr
 rn
 rk
-NJ
-Sc
+rC
+ea
 ms
 mu
 Jt
@@ -44600,13 +44591,13 @@ gh
 cD
 lo
 mB
-Sc
-WA
-Iy
-OA
+ea
+rF
+CP
+wd
 rq
-WA
-Sc
+rF
+ea
 ms
 mu
 Jt
@@ -44858,12 +44849,12 @@ dt
 lo
 mB
 lF
-WA
-Iy
-qn
+rF
+CP
+Np
 xx
 rE
-Sc
+ea
 ms
 mv
 Gi
@@ -45376,7 +45367,7 @@ rp
 rs
 rv
 ry
-rC
+nR
 rB
 mw
 mx
@@ -45629,11 +45620,11 @@ dt
 OK
 ve
 rB
-QF
-Wf
+AH
+Iy
 lE
 rz
-QF
+AH
 rB
 tM
 tM
@@ -45886,10 +45877,10 @@ dt
 lo
 mB
 rB
-QF
+AH
 Zh
 rx
-rF
+Bi
 rG
 rB
 bS
