@@ -301,6 +301,7 @@
 	open_sound = 'sound/machines/shutters_open.ogg'
 	close_sound = 'sound/machines/shutters_close.ogg'
 	open_plane = OBJ_PLANE
+	plane = OBJ_PLANE
 	min_force = 15
 	maxhealth = 500
 	explosion_resistance = 10
