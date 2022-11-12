@@ -120,7 +120,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	. = ..()
 	if(isobj(loc))
 		return
-	if(length(GLOB.clients) >= 30 && !client)
+	if(length(GLOB.clients) <= 30 && !client)
 		return
 	var/list/our_view = view(7, src)
 	for(var/A in next_blinks)

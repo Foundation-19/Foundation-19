@@ -14,6 +14,7 @@
 	uncreated_component_parts = null
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CHECKS_BORDER
 	opacity = 0
+	plane = OBJ_PLANE
 	var/obj/item/airlock_electronics/electronics = null
 	explosion_resistance = 5
 	air_properties_vary_with_direction = 1
