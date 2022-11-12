@@ -4792,7 +4792,7 @@
 /obj/structure/table/woodentable/maple,
 /obj/item/modular_computer/laptop,
 /turf/simulated/floor/wood/walnut,
-/area/site53/uez/ethicsoffice)
+/area/site53/uez/tribunaloffice)
 "lF" = (
 /obj/machinery/door/airlock/command{
 	name = "Ethics Committee Liaison's Office"
@@ -5452,6 +5452,15 @@
 "nE" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
+"nF" = (
+/obj/effect/paint_stripe/orange,
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
+	},
+/turf/simulated/wall/titanium,
+/area/site53/uez/ethicsoffice)
 "nG" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/exoplanet/concrete,
@@ -6050,11 +6059,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmreception/waiting)
-"pL" = (
-/obj/structure/table/woodentable/maple,
-/obj/item/modular_computer/laptop,
-/turf/simulated/floor/wood/walnut,
-/area/site53/uez/tribunaloffice)
 "pM" = (
 /obj/structure/table/standard,
 /obj/item/paper,
@@ -6104,6 +6108,11 @@
 /obj/machinery/light,
 /turf/simulated/open,
 /area/site53/zonecommanderoffice)
+"qn" = (
+/obj/structure/table/woodentable/maple,
+/obj/item/paper_bin,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/ethicsoffice)
 "qo" = (
 /obj/effect/floor_decal/carpet/blue2,
 /obj/effect/floor_decal/carpet/blue2{
@@ -6406,12 +6415,17 @@
 /obj/structure/table/woodentable/maple,
 /obj/item/paper_bin,
 /turf/simulated/floor/wood/walnut,
-/area/site53/uez/ethicsoffice)
+/area/site53/uez/tribunaloffice)
 "ry" = (
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/tribunaloffice)
@@ -6421,6 +6435,11 @@
 	},
 /obj/effect/landmark/start{
 	name = "Internal Tribunal Department Officer"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/tribunaloffice)
@@ -6450,6 +6469,15 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/ethicsoffice)
 "rF" = (
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/tribunaloffice)
 "rG" = (
@@ -8325,10 +8353,6 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"zZ" = (
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
-/area/site53/uez/ethicsoffice)
 "Aa" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -8674,11 +8698,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"Cr" = (
-/obj/structure/table/woodentable/maple,
-/obj/item/paper_bin,
-/turf/simulated/floor/wood/walnut,
-/area/site53/uez/tribunaloffice)
 "CC" = (
 /obj/effect/paint_stripe/paleblue,
 /obj/structure/sign/warning/nosmoking_2,
@@ -9426,10 +9445,6 @@
 /obj/machinery/camera/network/entrance,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
-"IA" = (
-/obj/structure/bed/chair/office,
-/turf/simulated/floor/wood/walnut,
-/area/site53/uez/tribunaloffice)
 "IG" = (
 /obj/structure/table/standard,
 /obj/item/device/flashlight/lamp,
@@ -9602,11 +9617,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"Ku" = (
-/obj/machinery/photocopier/faxmachine,
-/obj/structure/table/woodentable,
-/turf/simulated/floor/wood/walnut,
-/area/site53/uez/ethicsoffice)
 "Kv" = (
 /obj/effect/floor_decal/corner/purple/border,
 /obj/machinery/camera/network/medbay{
@@ -10009,6 +10019,11 @@
 /obj/item/defibrillator/loaded,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
+"NJ" = (
+/obj/machinery/photocopier/faxmachine,
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/ethicsoffice)
 "NS" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/regular,
@@ -10070,6 +10085,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
+"OA" = (
+/obj/structure/table/woodentable/maple,
+/obj/item/modular_computer/laptop,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/ethicsoffice)
 "OC" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -10275,6 +10295,9 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op1)
+"QF" = (
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/tribunaloffice)
 "QP" = (
 /obj/machinery/door/airlock/command{
 	name = "Zone Commander's Office";
@@ -10428,6 +10451,10 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
+"Sc" = (
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
+/area/site53/uez/ethicsoffice)
 "Sd" = (
 /obj/machinery/light{
 	dir = 8
@@ -10583,9 +10610,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"Tw" = (
-/turf/simulated/floor/wood/walnut,
-/area/site53/uez/ethicsoffice)
 "TG" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10909,6 +10933,10 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
+"Wf" = (
+/obj/structure/bed/chair/office,
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/tribunaloffice)
 "Wl" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
@@ -10939,6 +10967,9 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
+"WA" = (
+/turf/simulated/floor/wood/walnut,
+/area/site53/uez/ethicsoffice)
 "WC" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -44055,13 +44086,13 @@ bw
 dt
 lo
 mB
-zZ
-zZ
-zZ
-zZ
-zZ
-zZ
-zZ
+Sc
+Sc
+Sc
+Sc
+nF
+Sc
+Sc
 ms
 mu
 Jt
@@ -44312,13 +44343,13 @@ gh
 cD
 lo
 mB
-zZ
-Tw
+Sc
+WA
 rr
 rn
 rk
-Ku
-zZ
+NJ
+Sc
 ms
 mu
 Jt
@@ -44569,13 +44600,13 @@ gh
 cD
 lo
 mB
-zZ
-Tw
+Sc
+WA
 Iy
-lE
+OA
 rq
-Tw
-zZ
+WA
+Sc
 ms
 mu
 Jt
@@ -44827,12 +44858,12 @@ dt
 lo
 mB
 lF
-Tw
+WA
 Iy
-rx
+qn
 xx
 rE
-zZ
+Sc
 ms
 mv
 Gi
@@ -45598,11 +45629,11 @@ dt
 OK
 ve
 rB
-rF
-IA
-pL
+QF
+Wf
+lE
 rz
-rF
+QF
 rB
 tM
 tM
@@ -45855,9 +45886,9 @@ dt
 lo
 mB
 rB
-rF
+QF
 Zh
-Cr
+rx
 rF
 rG
 rB
