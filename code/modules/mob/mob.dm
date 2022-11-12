@@ -421,6 +421,7 @@
 		return 0
 
 	var/obj/P = new /obj/effect/decal/point(tile)
+	P.plane = MOB_PLANE
 	P.set_invisibility(invisibility)
 	P.pixel_x = A.pixel_x
 	P.pixel_y = A.pixel_y
