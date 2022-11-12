@@ -86,3 +86,14 @@
   - bugfix: Rewrote Vision Cone to use alpha filter masks.
   Yawet330:
   - bugfix: No more synthetic immortality
+2022-11-12:
+  CapCamIII:
+  - rscadd: MTF teams are equipped with M4A1 with extended magazines in their rooms.
+  - rscadd: Brand new MTF/CentCom, slightly bigger.
+  - rscdel: Old MTF/CentCom is no more.
+  - balance: Adds spare gear to MTF base.
+  - bugfix: The the flare-gun launcher MTF get now uses the correct flare type.
+  TitanicEngineer(Titanized):
+  - balance: Grants the Chief Engineer access to administration-related tools.
+  - balance: Grants the communications officer access to SCiPNET monitoring programs.
+  - bugfix: Switches deprecated Torch engineering access to Site53's access model.

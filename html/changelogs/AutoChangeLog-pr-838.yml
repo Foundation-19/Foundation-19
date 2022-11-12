@@ -1,6 +1,0 @@
-author: TitanicEngineer(Titanized)
-delete-after: true
-changes:
-  - balance: Grants the Chief Engineer access to administration-related tools.
-  - balance: Grants the communications officer access to SCiPNET monitoring programs.
-  - bugfix: Switches deprecated Torch engineering access to Site53's access model.
