@@ -1,0 +1,4 @@
+author: Tsurupeta
+delete-after: true
+changes:
+  - bugfix: fixed skill-time multiplier being 0 at high skill levels.
