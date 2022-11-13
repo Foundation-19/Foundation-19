@@ -144,7 +144,6 @@
 	icon_state = "hos"
 	item_state = "r_suit"
 	worn_state = "hosred"
-	item_flags = ITEM_FLAG_THICKMATERIAL
 	armor = list(
 		melee = ARMOR_MELEE_SMALL
 		)
