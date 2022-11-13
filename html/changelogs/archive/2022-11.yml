@@ -97,3 +97,11 @@
   - balance: Grants the Chief Engineer access to administration-related tools.
   - balance: Grants the communications officer access to SCiPNET monitoring programs.
   - bugfix: Switches deprecated Torch engineering access to Site53's access model.
+2022-11-13:
+  Tsurupeta:
+  - bugfix: fixed skill-time multiplier being 0 at high skill levels.
+  - balance: nerfed EZ and LCZ ZC bullet armor a lot, nerfed other armor a little.
+  - balance: nerfed bullet damage and AP values slightly, nerfed slug damage a lot(they
+      are still extremely lethal, but not overly so).
+  Yawet330:
+  - tweak: Le brain in le chest. (Its no longer all in le head)
