@@ -1556,15 +1556,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/escape)
-"afy" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/paint_stripe/mauve,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/science/aiccore)
 "afz" = (
 /obj/machinery/reagentgrinder,
 /turf/simulated/floor/tiled/monotile/white,
@@ -1652,9 +1643,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/robotics)
 "afL" = (
-/obj/effect/wallframe_spawn/reinforced_phoron/titanium,
-/turf/simulated/floor/greengrid,
-/area/site53/science/aiccore)
+/obj/machinery/door/airlock/glass/research{
+	name = "AIC Laboratory";
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "afM" = (
 /obj/machinery/door/airlock/civilian{
 	name = "Unisex Restrooms"
@@ -4723,13 +4717,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/auxstorage)
 "anz" = (
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "aic";
-	name = "AIC Server Room Blast Door"
+/obj/machinery/door/airlock/highsecurity/bolted{
+	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
 	},
-/obj/effect/wallframe_spawn/reinforced_phoron,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
 "anA" = (
@@ -5188,12 +5178,9 @@
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/maintenance)
 "aoJ" = (
-/obj/machinery/door/airlock/glass/research{
-	name = "AIC Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aicobservation)
+/obj/effect/wallframe_spawn/reinforced_phoron/titanium,
+/turf/simulated/floor/greengrid,
+/area/site53/science/aiccore)
 "aoK" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -9674,7 +9661,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "azz" = (
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/science/aiccore)
 "azA" = (
 /turf/unsimulated/mineral,
@@ -10155,15 +10142,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/engineering/uppernukeladders)
-"aAQ" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/wallframe_spawn/reinforced_phoron,
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aicobservation)
 "aAR" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 10
@@ -15996,18 +15974,14 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "aSx" = (
-/obj/machinery/door/window/brigdoor/eastright{
-	req_access = list("ACCESS_ADMIN_LEVEL4");
-	dir = 2
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/window/reinforced{
+	dir = 4
 	},
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "aic";
-	name = "AIC Server Room Blast Door"
-	},
-/turf/simulated/floor/blackgrid,
-/area/site53/science/aiccore)
+/turf/simulated/floor/grass,
+/area/site53/science/aicobservation)
 "aSy" = (
 /obj/effect/floor_decal/industrial/loading{
 	dir = 4
@@ -16056,17 +16030,8 @@
 /turf/simulated/floor/reinforced,
 /area/site53/surface/explorers/surrounding)
 "aSH" = (
-/obj/machinery/door/airlock/highsecurity/bolted{
-	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
-	},
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "aic";
-	name = "AIC Server Room Blast Door"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aicobservation)
+/turf/simulated/floor/greengrid,
+/area/site53/science/aiccore)
 "aSI" = (
 /obj/structure/stairs/west,
 /turf/simulated/floor/tiled/monotile/white,
@@ -19787,10 +19752,6 @@
 /obj/item/clothing/head/bowlerhat,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/hub)
-"beH" = (
-/obj/machinery/r_n_d/server/core,
-/turf/simulated/floor/greengrid,
-/area/site53/science/aiccore)
 "beJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -20995,6 +20956,15 @@
 /obj/structure/bed/chair/office/dark,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
+"biJ" = (
+/obj/machinery/r_n_d/server,
+/obj/machinery/camera/motion{
+	c_tag = "AIC Observation 1";
+	dir = 8;
+	network = list("Entrance Zone Network")
+	},
+/turf/simulated/floor/bluegrid,
+/area/site53/science/aiccore)
 "biK" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/item/stool,
@@ -21550,18 +21520,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/maintenance)
-"bkz" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/bluegrid,
-/area/site53/science/aiccore)
 "bkL" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/monotile,
@@ -21590,6 +21548,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
+"bmv" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "bmS" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -21627,13 +21591,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
 "bsC" = (
-/obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "aic";
-	name = "AIC Core Lockdown button";
-	pixel_y = -21
-	},
-/turf/simulated/floor/tiled/techmaint,
+/obj/effect/paint_stripe/mauve,
+/obj/effect/paint_stripe/mauve,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/science/aiccore)
 "bsK" = (
 /obj/structure/cable{
@@ -21842,14 +21802,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
-"bKA" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "bKK" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/prepainted,
@@ -22174,10 +22126,6 @@
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
-"cmt" = (
-/obj/machinery/vending/coffee,
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aicobservation)
 "cmJ" = (
 /obj/effect/floor_decal/carpet/green,
 /obj/effect/floor_decal/carpet/green{
@@ -22261,6 +22209,17 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
+"cqC" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/bed/chair/office/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "cqF" = (
 /obj/effect/paint_stripe/gray,
 /obj/effect/paint_stripe/gray,
@@ -22452,18 +22411,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
-"cGJ" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/light{
-	dir = 8;
-	pixel_x = -11
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "cGV" = (
 /obj/structure/bed/padded,
 /obj/structure/curtain/open/bed,
@@ -22534,6 +22481,19 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/robotics)
+"cMy" = (
+/obj/machinery/door/window/brigdoor/eastright{
+	req_access = list("ACCESS_ADMIN_LEVEL4");
+	dir = 8
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "aic";
+	name = "AIC Server Room Blast Door"
+	},
+/turf/simulated/floor/blackgrid,
+/area/site53/science/aiccore)
 "cMK" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 8
@@ -22867,6 +22827,17 @@
 /obj/effect/floor_decal/corner/red/borderfull,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
+"dif" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "diP" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -22908,15 +22879,14 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
 "dkZ" = (
-/obj/machinery/light{
-	dir = 1
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/machinery/camera/motion{
-	c_tag = "AIC Core";
-	network = list("Entrance Zone Network")
-	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aicobservation)
+/area/site53/science/aiccore)
 "dmf" = (
 /obj/machinery/light,
 /obj/structure/table/reinforced,
@@ -23011,19 +22981,6 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
-"dwy" = (
-/obj/effect/landmark/start{
-	name = "AI"
-	},
-/obj/machinery/camera/motion{
-	c_tag = "AIC Core";
-	network = list("Entrance Zone Network")
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/greengrid,
-/area/site53/science/aiccore)
 "dwJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -23278,6 +23235,41 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/scp513)
+"dQM" = (
+/obj/machinery/door/airlock/highsecurity/bolted{
+	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "aic";
+	name = "AIC Server Room Blast Door"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
+"dRv" = (
+/obj/machinery/power/smes/buildable/max_cap_in_out,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "0-1"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/bluegrid,
+/area/site53/science/aiccore)
 "dRU" = (
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
@@ -23329,19 +23321,6 @@
 /obj/item/bedsheet,
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
-"dWj" = (
-/obj/machinery/door/window/brigdoor/eastright{
-	req_access = list("ACCESS_ADMIN_LEVEL4");
-	dir = 8
-	},
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "aic";
-	name = "AIC Server Room Blast Door"
-	},
-/turf/simulated/floor/blackgrid,
-/area/site53/science/aiccore)
 "dWR" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -23428,6 +23407,23 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
+"edM" = (
+/obj/machinery/door/airlock/highsecurity/bolted{
+	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "aic";
+	name = "AIC Server Room Blast Door"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "eel" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -23730,15 +23726,6 @@
 /obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lowertrams/hub)
-"eFJ" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/paint_stripe/mauve,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/science/aicobservation)
 "eHv" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -23826,7 +23813,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/ulcz/hallways)
-"eUE" = (
+"eRA" = (
 /obj/machinery/door/airlock/highsecurity/bolted{
 	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
 	},
@@ -23835,6 +23822,18 @@
 	icon_state = "pdoor0";
 	id_tag = "aic";
 	name = "AIC Server Room Blast Door"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
+"eTx" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light{
+	dir = 8;
+	pixel_x = -11
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
@@ -23899,6 +23898,28 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp895)
+"eZh" = (
+/obj/machinery/power/apc/critical{
+	dir = 1;
+	pixel_y = 18
+	},
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
+"eZX" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "fcc" = (
 /obj/machinery/button/blast_door{
 	id_tag = "096chamberlock";
@@ -24048,6 +24069,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
+"fiV" = (
+/obj/machinery/hologram/holopad/longrange{
+	name = "AIC holopad"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "fjL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/corner/red/mono,
@@ -24262,18 +24289,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
 "fwm" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable/green{
-	dir = 1
+	d1 = 4;
+	d2 = 8;
+	icon_state = "2-8"
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
 "fwB" = (
 /obj/structure/table/standard,
@@ -24704,6 +24725,12 @@
 /obj/item/device/camera_film,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
+"gfr" = (
+/obj/machinery/implantchair{
+	desc = "A machine that was once, long ago, used to implant Foundation Employees with Mind Control Chips. Decommissioned shortly after use due to ethical concerns."
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "gfy" = (
 /obj/structure/table/standard,
 /obj/machinery/light,
@@ -25248,6 +25275,16 @@
 /obj/machinery/cell_charger,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
+"gRV" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/camera/motion{
+	c_tag = "AIC Core";
+	network = list("Entrance Zone Network")
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "gSw" = (
 /obj/structure/table/standard,
 /obj/item/device/camera,
@@ -25469,17 +25506,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
-"hdq" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "heA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -25507,13 +25533,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
-"hgK" = (
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/science/aiccore)
 "hkp" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -25582,6 +25601,10 @@
 /obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
+"hnK" = (
+/obj/machinery/r_n_d/server/core,
+/turf/simulated/floor/greengrid,
+/area/site53/science/aiccore)
 "hnU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable{
@@ -25607,18 +25630,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
-"hoU" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/sunnybush,
-/obj/structure/window/reinforced,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/simulated/floor/grass,
-/area/site53/science/aicobservation)
 "hqI" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
@@ -25732,6 +25743,13 @@
 	},
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/engineering/maintenance/maintenancetunnel)
+"hwO" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/science/aiccore)
 "hxk" = (
 /turf/unsimulated/mineral,
 /area/site53/surface/explorers/surrounding)
@@ -25911,6 +25929,15 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
+"hJh" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/paint_stripe/mauve,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/science/aicobservation)
 "hJZ" = (
 /obj/machinery/light{
 	dir = 8
@@ -26223,29 +26250,16 @@
 /obj/item/ammo_magazine/box/rubbershot,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
-"icZ" = (
-/obj/machinery/power/smes/buildable/max_cap_in_out,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "0-1"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/camera/motion{
-	c_tag = "AIC Observation 1";
-	dir = 4;
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/bluegrid,
-/area/site53/science/aiccore)
 "idF" = (
 /obj/structure/closet/radiation,
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"idI" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/science/aiccore)
 "ify" = (
 /obj/machinery/vending/medical,
 /turf/simulated/floor/tiled/white,
@@ -26341,6 +26355,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
+"iog" = (
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -20
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "ipm" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -26525,14 +26547,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lowertrams/restaurantkitchenarea)
-"iGX" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "iHf" = (
 /obj/structure/table/standard,
 /obj/item/stock_parts/matter_bin{
@@ -26563,9 +26577,6 @@
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
-"iJq" = (
-/turf/unsimulated/mineral,
-/area/site53/science/aicobservation)
 "iJS" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/red/mono,
@@ -26675,14 +26686,7 @@
 /turf/simulated/floor/carpet/green,
 /area/chapel)
 "iRn" = (
-/obj/machinery/door/airlock/highsecurity/bolted{
-	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
+/obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	icon_state = "pdoor0";
@@ -27113,11 +27117,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
-"jzH" = (
-/obj/effect/paint_stripe/mauve,
-/obj/effect/paint_stripe/mauve,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/science/aiccore)
 "jBd" = (
 /obj/effect/floor_decal/chapel,
 /obj/machinery/firealarm{
@@ -27473,13 +27472,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106containment)
-"kbt" = (
-/obj/structure/table/standard,
-/obj/item/device/radio/intercom{
-	pixel_y = -5
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "kcw" = (
 /obj/machinery/light{
 	dir = 1
@@ -27670,15 +27662,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
-"ksm" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "ksL" = (
 /obj/structure/table/standard,
 /obj/machinery/button/femur_breaker{
@@ -27750,6 +27733,12 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
+"kzx" = (
+/obj/structure/bed/chair/office/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "kAL" = (
 /obj/machinery/light{
 	dir = 4
@@ -27762,7 +27751,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lowertrams/restaurantkitchenarea)
 "kCa" = (
-/turf/simulated/floor/tiled/monotile,
+/turf/unsimulated/mineral,
 /area/site53/science/aiccore)
 "kCI" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -27897,6 +27886,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"kNZ" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "kOc" = (
 /obj/item/device/assembly/infra,
 /obj/item/device/assembly/infra,
@@ -28124,13 +28122,8 @@
 /turf/simulated/floor/carpet/green,
 /area/chapel)
 "liT" = (
-/obj/effect/paint_stripe/mauve,
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = -20
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/reswing/robotics)
+/turf/unsimulated/mineral,
+/area/site53/science/aicobservation)
 "liU" = (
 /obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/monotile,
@@ -28278,18 +28271,6 @@
 	},
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/lowertrams/redline)
-"lzd" = (
-/obj/machinery/door/window/brigdoor/eastright{
-	req_access = list("ACCESS_ADMIN_LEVEL4")
-	},
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "aic";
-	name = "AIC Server Room Blast Door"
-	},
-/turf/simulated/floor/blackgrid,
-/area/site53/science/aiccore)
 "lzu" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -28454,10 +28435,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/engineering/atmos)
-"lKq" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "lKF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -28641,6 +28618,25 @@
 /obj/item/pen,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
+"lSU" = (
+/obj/machinery/power/smes/buildable/max_cap_in_out,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "0-1"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/camera/motion{
+	c_tag = "AIC Observation 1";
+	dir = 4;
+	network = list("Entrance Zone Network")
+	},
+/turf/simulated/floor/bluegrid,
+/area/site53/science/aiccore)
 "lTe" = (
 /obj/machinery/atmospherics/binary/pump/on{
 	dir = 1
@@ -28839,7 +28835,14 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "mhU" = (
-/turf/simulated/floor/blackgrid,
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "aic";
+	name = "AIC Server Room Blast Door"
+	},
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
 "mig" = (
 /obj/effect/floor_decal/carpet/green{
@@ -29377,12 +29380,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
-"mSe" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "mSx" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -29423,6 +29420,14 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/serverfarmtunnel)
+"mUn" = (
+/obj/effect/paint_stripe/mauve,
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = -20
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/science/aiccore)
 "mVc" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/mil_rifle,
@@ -29499,20 +29504,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
-"mYg" = (
-/obj/machinery/power/apc/critical{
-	dir = 1;
-	pixel_y = 18
-	},
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "mYw" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -29545,6 +29536,10 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
+"ndq" = (
+/obj/machinery/vending/coffee,
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "ndt" = (
 /obj/machinery/camera/autoname{
 	network = list("Heavy Containment Zone Network");
@@ -29558,19 +29553,21 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
+"ndJ" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/bed/chair/office/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "neg" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
-"nen" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/grassybush,
-/obj/structure/flora/ausbushes/ywflowers,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/simulated/floor/grass,
-/area/site53/science/aicobservation)
 "nfV" = (
 /obj/effect/floor_decal/chapel{
 	dir = 8
@@ -29606,14 +29603,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
-"nhh" = (
-/obj/effect/paint_stripe/mauve,
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = -20
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/science/aiccore)
 "nhI" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine,
@@ -29709,6 +29698,14 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
+"nsd" = (
+/obj/machinery/r_n_d/server/robotics,
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/bluegrid,
+/area/site53/science/aiccore)
 "nsr" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -29919,16 +29916,6 @@
 /obj/item/storage/toolbox/electrical,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/llcz/entrance_checkpoint)
-"nGg" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "aic";
-	name = "AIC Server Room Blast Door"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "nGT" = (
 /obj/structure/closet/secure_closet/engineering_electrical,
 /turf/simulated/floor,
@@ -30050,6 +30037,24 @@
 /obj/effect/floor_decal/corner/red/bordercorner,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
+"nTA" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/glass/command{
+	name = "AIC Observation";
+	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "aic";
+	name = "AIC Server Room Blast Door"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "nTF" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -30219,6 +30224,9 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
+"oio" = (
+/turf/simulated/floor/bluegrid,
+/area/site53/science/aiccore)
 "oit" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -30395,6 +30403,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/genstorage1)
+"out" = (
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "ove" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
@@ -30472,6 +30484,18 @@
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
+"oCK" = (
+/obj/machinery/door/airlock/highsecurity/bolted{
+	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "aic";
+	name = "AIC Server Room Blast Door"
+	},
+/turf/simulated/floor/blackgrid,
+/area/site53/science/aiccore)
 "oGS" = (
 /obj/effect/floor_decal/industrial/fire{
 	dir = 1
@@ -30571,6 +30595,15 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
+"oMO" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/paint_stripe/mauve,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/science/aiccore)
 "oOF" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/beakers,
@@ -30634,12 +30667,6 @@
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled,
 /area/site53/engineering/sleeproom)
-"oTW" = (
-/obj/structure/bed/chair/office/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "oUn" = (
 /obj/machinery/light_switch{
 	pixel_y = -25
@@ -30698,6 +30725,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
+"oWD" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	dir = 1
+	},
+/turf/simulated/floor/bluegrid,
+/area/site53/science/aiccore)
 "oXy" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4;
@@ -30824,11 +30860,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
-"piM" = (
-/obj/effect/paint_stripe/mauve,
-/obj/effect/paint_stripe/mauve,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/science/aicobservation)
 "piX" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -30874,23 +30905,6 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
-"plr" = (
-/obj/machinery/door/airlock/highsecurity/bolted{
-	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "aic";
-	name = "AIC Server Room Blast Door"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aicobservation)
 "pmq" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -30909,18 +30923,6 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/science/aicobservation)
-"pnE" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/light,
-/obj/structure/bed/chair/office/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
 "prb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -31024,10 +31026,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
-"pzA" = (
-/obj/machinery/light,
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aicobservation)
 "pzU" = (
 /obj/machinery/camera/network/scp513{
 	dir = 1
@@ -31186,6 +31184,18 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"pMY" = (
+/obj/machinery/door/window/brigdoor/eastright{
+	req_access = list("ACCESS_ADMIN_LEVEL4")
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "aic";
+	name = "AIC Server Room Blast Door"
+	},
+/turf/simulated/floor/blackgrid,
+/area/site53/science/aiccore)
 "pNO" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
@@ -31569,6 +31579,17 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
+"qqV" = (
+/obj/structure/backup_server{
+	name = "Auxillary AIC Server"
+	},
+/obj/machinery/camera/motion{
+	c_tag = "AIC Observation 2";
+	dir = 1;
+	network = list("Entrance Zone Network")
+	},
+/turf/simulated/floor/greengrid,
+/area/site53/science/aiccore)
 "qrM" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/cable{
@@ -31578,6 +31599,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
+"qsc" = (
+/obj/effect/paint_stripe/mauve,
+/obj/effect/paint_stripe/mauve,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/science/aicobservation)
 "qtD" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Heavy Containment Maintenance";
@@ -31611,6 +31637,19 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
+"qyz" = (
+/obj/effect/landmark/start{
+	name = "AI"
+	},
+/obj/machinery/camera/motion{
+	c_tag = "AIC Core";
+	network = list("Entrance Zone Network")
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/greengrid,
+/area/site53/science/aiccore)
 "qyF" = (
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -31632,20 +31671,15 @@
 /obj/item/screwdriver,
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
-"qAn" = (
-/obj/machinery/r_n_d/server/robotics,
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/bluegrid,
-/area/site53/science/aiccore)
 "qAX" = (
 /obj/machinery/door/airlock/command{
 	name = "Command Security Compartment"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
+"qBz" = (
+/turf/simulated/floor/blackgrid,
+/area/site53/science/aiccore)
 "qCb" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
@@ -31746,12 +31780,6 @@
 /obj/machinery/door/airlock/highsecurity,
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
-"qKt" = (
-/obj/machinery/implantchair{
-	desc = "A machine that was once, long ago, used to implant Foundation Employees with Mind Control Chips. Decommissioned shortly after use due to ethical concerns."
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aicobservation)
 "qKO" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -31811,6 +31839,13 @@
 /obj/item/aicard,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/science/aicobservation)
+"qQV" = (
+/obj/structure/table/standard,
+/obj/item/device/radio/intercom{
+	pixel_y = -5
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "qSc" = (
 /obj/effect/paint_stripe/gray,
 /obj/effect/paint_stripe/red,
@@ -31897,6 +31932,13 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp035room)
+"qXh" = (
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/science/aiccore)
 "qXo" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -32228,15 +32270,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
-"rtr" = (
-/obj/machinery/power/smes/buildable/max_cap_in_out,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "0-1"
-	},
-/turf/simulated/floor/bluegrid,
-/area/site53/science/aiccore)
 "rtT" = (
 /obj/structure/flora/pottedplant/minitree,
 /obj/structure/railing/mapped,
@@ -32252,15 +32285,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
-"ruF" = (
-/obj/machinery/vending/cola,
-/obj/machinery/camera/motion{
-	c_tag = "AIC Observation 1";
-	dir = 8;
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "rvd" = (
 /obj/effect/floor_decal/corner/orange/bordercorner{
 	dir = 8
@@ -32299,21 +32323,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/lowertrams/hub)
-"rzd" = (
-/obj/effect/wallframe_spawn/reinforced_phoron,
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aicobservation)
-"rzK" = (
-/obj/structure/backup_server{
-	name = "Auxillary AIC Server"
-	},
-/obj/machinery/camera/motion{
-	c_tag = "AIC Observation 2";
-	dir = 1;
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/greengrid,
-/area/site53/science/aiccore)
 "rzX" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -32430,9 +32439,6 @@
 	temperature = 80
 	},
 /area/site53/upper_surface/serverfarminterior)
-"rKw" = (
-/turf/unsimulated/mineral,
-/area/site53/science/aiccore)
 "rLE" = (
 /obj/effect/floor_decal/carpet/green{
 	dir = 4
@@ -32505,15 +32511,6 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
-"rWH" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	dir = 1
-	},
-/turf/simulated/floor/bluegrid,
-/area/site53/science/aiccore)
 "rWX" = (
 /obj/structure/closet,
 /obj/item/device/tape/random,
@@ -32655,10 +32652,6 @@
 /obj/item/device/tape,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
-"sdW" = (
-/obj/machinery/vending/robotics,
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "sdX" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/machinery/camera/network/entrance{
@@ -32931,35 +32924,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
-"sxy" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/bed/chair/office/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aicobservation)
-"syB" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/airlock/glass/command{
-	name = "AIC Observation";
-	req_access = list("ACCESS_SCIENCE_LEVEL4","ACCESS_ADMIN_LEVEL3")
-	},
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "aic";
-	name = "AIC Server Room Blast Door"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "szK" = (
 /obj/structure/bed/chair/padded/black,
 /turf/simulated/floor/tiled/dark,
@@ -33186,18 +33150,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
-"sUF" = (
-/obj/machinery/door/airlock/highsecurity/bolted{
-	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
-	},
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "aic";
-	name = "AIC Server Room Blast Door"
-	},
-/turf/simulated/floor/blackgrid,
-/area/site53/science/aiccore)
 "sUH" = (
 /obj/effect/paint_stripe/red,
 /obj/structure/sign/scp/electrical,
@@ -33257,12 +33209,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/serverfarmtunnel)
-"sXv" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/science/aiccore)
 "sXP" = (
 /obj/structure/table/standard,
 /obj/item/storage/slide_projector,
@@ -33446,9 +33392,6 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/containment_engineer)
-"tlr" = (
-/turf/simulated/floor/greengrid,
-/area/site53/science/aiccore)
 "tmK" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -33528,6 +33471,15 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
+"tsr" = (
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "aic";
+	name = "Total AIC Lockdown";
+	pixel_y = -21
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "tsw" = (
 /obj/machinery/acting/changer,
 /turf/simulated/floor/reinforced,
@@ -33646,6 +33598,15 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/scp012)
+"tyZ" = (
+/obj/machinery/vending/cola,
+/obj/machinery/camera/motion{
+	c_tag = "AIC Observation 1";
+	dir = 8;
+	network = list("Entrance Zone Network")
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "tza" = (
 /obj/structure/cable/green{
 	d2 = 8;
@@ -33944,6 +33905,19 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp096)
+"ugE" = (
+/obj/machinery/door/window/brigdoor/eastright{
+	req_access = list("ACCESS_ADMIN_LEVEL4");
+	dir = 2
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "aic";
+	name = "AIC Server Room Blast Door"
+	},
+/turf/simulated/floor/blackgrid,
+/area/site53/science/aiccore)
 "ugQ" = (
 /obj/machinery/vending/coffee,
 /obj/machinery/light{
@@ -33976,6 +33950,14 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
+"uhP" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "uis" = (
 /obj/machinery/lapvend,
 /turf/simulated/floor/tiled/monotile/white,
@@ -34101,17 +34083,6 @@
 /obj/structure/bed/roller,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
-"unt" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/bed/chair/office/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aicobservation)
 "uoj" = (
 /obj/machinery/cryopod,
 /obj/structure/railing/mapped,
@@ -34136,6 +34107,18 @@
 "uph" = (
 /turf/simulated/floor/reinforced,
 /area/site53/llcz/scp263research)
+"urb" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/window/reinforced,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/grass,
+/area/site53/science/aicobservation)
 "urL" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -34169,12 +34152,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp247observation)
-"usD" = (
-/obj/machinery/hologram/holopad/longrange{
-	name = "AIC holopad"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "usU" = (
 /obj/structure/table/reinforced,
 /obj/structure/flora/pottedplant/deskfern,
@@ -34187,14 +34164,6 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/uhcz/scp247containment)
-"uuL" = (
-/obj/structure/flora/pottedplant/floorleaf,
-/obj/item/device/radio/intercom{
-	dir = 4;
-	pixel_x = -20
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aicobservation)
 "uvn" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/highsecurity{
@@ -34524,6 +34493,18 @@
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
+"uUw" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light,
+/obj/structure/bed/chair/office/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "uUQ" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -34873,12 +34854,28 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
+"vov" = (
+/obj/machinery/door/airlock/highsecurity/bolted{
+	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "aic";
+	name = "AIC Server Room Blast Door"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "vpu" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/botanydisk,
 /obj/item/storage/box/botanydisk,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
+"vqC" = (
+/obj/machinery/vending/robotics,
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aiccore)
 "vqG" = (
 /obj/effect/landmark/start{
 	name = "HCZ Guard"
@@ -35090,13 +35087,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
-"vEF" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/science/aiccore)
 "vEP" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 5
@@ -35118,10 +35108,8 @@
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp096)
 "vGY" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+/obj/item/modular_computer/console/preset/aislot/research{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
@@ -35566,15 +35554,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
-"wqt" = (
-/obj/machinery/r_n_d/server,
-/obj/machinery/camera/motion{
-	c_tag = "AIC Observation 1";
-	dir = 8;
-	network = list("Entrance Zone Network")
-	},
-/turf/simulated/floor/bluegrid,
-/area/site53/science/aiccore)
 "wrt" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Evacuation Bunker"
@@ -35660,6 +35639,10 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/ulcz/hallways)
+"wws" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/science/aicobservation)
 "wwJ" = (
 /obj/machinery/camera/autoname{
 	name = "SCP-247 Observation"
@@ -35745,11 +35728,9 @@
 /turf/simulated/floor/plating,
 /area/site53/uhcz/hallways)
 "wDh" = (
-/obj/item/modular_computer/console/preset/aislot/research{
-	dir = 4
-	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aicobservation)
+/area/site53/science/aiccore)
 "wDk" = (
 /obj/structure/bed/chair/wood/mahogany{
 	dir = 1
@@ -35882,24 +35863,6 @@
 /obj/effect/landmark/test/space_turf,
 /turf/simulated/floor,
 /area/space)
-"wID" = (
-/obj/machinery/power/smes/buildable/max_cap_in_out,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "0-1"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/bluegrid,
-/area/site53/science/aiccore)
 "wIH" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
@@ -35986,12 +35949,6 @@
 /obj/structure/ladder,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106containment)
-"wOA" = (
-/obj/machinery/door/airlock/highsecurity/bolted{
-	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/science/aiccore)
 "wPS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/item/device/radio/intercom/locked{
@@ -36071,6 +36028,18 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
+"wUh" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/bluegrid,
+/area/site53/science/aiccore)
 "wUk" = (
 /obj/machinery/door/airlock/research{
 	name = "SCP-513 Observation";
@@ -36197,6 +36166,28 @@
 /obj/item/reagent_containers/syringe/amnesticsc,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
+"xbP" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/bluegrid,
+/area/site53/science/aiccore)
+"xck" = (
+/obj/effect/paint_stripe/mauve,
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = -20
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/reswing/robotics)
 "xcu" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -36215,6 +36206,15 @@
 /obj/structure/lattice,
 /turf/simulated/open,
 /area/site53/ulcz/maintenance)
+"xfv" = (
+/obj/machinery/power/smes/buildable/max_cap_in_out,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "0-1"
+	},
+/turf/simulated/floor/bluegrid,
+/area/site53/science/aiccore)
 "xfG" = (
 /obj/effect/paint_stripe/gray,
 /obj/structure/sign/directions/ez{
@@ -66564,8 +66564,8 @@ afd
 afd
 afd
 afd
-jzH
-iJq
+bsC
+liT
 aTg
 aTg
 aTg
@@ -66575,7 +66575,7 @@ aTg
 aTg
 aTg
 aTg
-iJq
+liT
 aax
 nWc
 aoh
@@ -66810,23 +66810,23 @@ azA
 azA
 azA
 afd
-mYg
-bKA
-bKA
-cGJ
-bKA
-bKA
-bKA
-afy
-icZ
-wID
-rtr
+eZh
+eZX
+eZX
+eTx
+eZX
+eZX
+eZX
+oMO
+lSU
+dRv
+xfv
 afd
 aTg
 aTg
-nen
-nen
-nen
+aSx
+aSx
+aSx
 aTg
 aiz
 qQb
@@ -67067,28 +67067,28 @@ azA
 azA
 azA
 afd
-mSe
+bmv
 afv
 afv
 afv
 afv
 afv
 afv
-wOA
-rWH
-fwm
-bkz
+anz
+oWD
+xbP
+wUh
 afd
 aTg
 tPd
-qKt
-wDh
-wDh
-piM
+gfr
+vGY
+vGY
+qsc
 aOW
 aOW
 aOW
-uuL
+iog
 aTg
 aax
 nWc
@@ -67325,23 +67325,23 @@ azA
 azA
 afd
 afd
-wOA
+anz
 afd
 afd
 afd
 afd
 afd
 afd
-nGg
-nGg
-syB
+iRn
+iRn
+nTA
 afd
 aTg
-hoU
+urb
 aOW
-unt
-pnE
-eFJ
+cqC
+uUw
+hJh
 lwQ
 lwQ
 lwQ
@@ -67581,20 +67581,20 @@ azA
 azA
 azA
 afd
-kCa
-kCa
-kCa
-vEF
-kCa
-kCa
-kCa
-eUE
+azz
+azz
+azz
+hwO
+azz
+azz
+azz
+vov
 afv
 afv
-ksm
+dkZ
 afd
-piM
-cmt
+qsc
+ndq
 aOW
 bbP
 aOW
@@ -67838,15 +67838,15 @@ azA
 azA
 azA
 afd
-kCa
-mhU
+azz
+qBz
 afv
-kCa
+azz
 afv
+qBz
+azz
 mhU
-kCa
-anz
-sdW
+vqC
 afv
 aam
 afd
@@ -68095,16 +68095,16 @@ azA
 azA
 azA
 afd
-kCa
+azz
 afv
 afv
-kCa
+azz
 afv
 afv
-kCa
-anz
+azz
+mhU
 aTi
-oTW
+kzx
 aam
 afd
 aTg
@@ -68352,17 +68352,17 @@ azA
 azA
 azA
 afd
-kCa
+azz
 afv
-afL
-dWj
-afL
+aoJ
+cMy
+aoJ
 afv
-kCa
-anz
+azz
+mhU
 aTi
-oTW
-ksm
+kzx
+dkZ
 afd
 afd
 aTg
@@ -68373,7 +68373,7 @@ aTg
 ubt
 aOW
 iZA
-sxy
+ndJ
 aTg
 azA
 azA
@@ -68609,22 +68609,22 @@ azA
 azA
 azA
 afd
-sXv
-bsC
+idI
+tsr
 afd
-dwy
-aSx
+qyz
+ugE
 afv
-kCa
-anz
-kbt
-usD
-iGX
-iRn
-hdq
-plr
+azz
+mhU
+qQV
+fiV
+fwm
+dQM
+dif
+edM
 lwQ
-vGY
+uhP
 aOW
 aTg
 aOW
@@ -68866,28 +68866,28 @@ azA
 azA
 azA
 afd
-kCa
+azz
 afv
-afL
-lzd
-afL
+aoJ
+pMY
+aoJ
 afv
-kCa
-anz
+azz
+mhU
 aTi
-oTW
-lKq
+kzx
+wDh
 afd
-nhh
+mUn
 aTg
 ubt
 kDD
-pzA
+wws
 aTg
-aSH
+eRA
 aTg
-rzd
-aAQ
+out
+kNZ
 aTg
 azA
 azA
@@ -69122,27 +69122,27 @@ azA
 azA
 azA
 azA
-jzH
-kCa
+bsC
+azz
 afv
 afv
-kCa
+azz
 afv
 afv
-kCa
-anz
+azz
+mhU
 aTi
-oTW
-ruF
+kzx
+tyZ
 afd
-rKw
+kCa
 aTg
 aqC
 aOW
 aOW
 tnJ
 aOW
-aoJ
+afL
 aOW
 aLn
 aTg
@@ -69380,26 +69380,26 @@ azA
 azA
 azA
 afd
-kCa
-mhU
+azz
+qBz
 afv
-kCa
+azz
 afv
-mhU
+qBz
+azz
+afd
+afd
+vov
+afd
+afd
 kCa
-afd
-afd
-eUE
-afd
-afd
-rKw
 aTg
 iZA
 iZA
 aOW
 aOW
 aOW
-aoJ
+afL
 aOW
 bbP
 aTg
@@ -69637,19 +69637,19 @@ azA
 azA
 azA
 afd
-kCa
-kCa
-kCa
-hgK
-kCa
-kCa
-kCa
-sUF
 azz
 azz
-beH
+azz
+qXh
+azz
+azz
+azz
+oCK
+oio
+oio
+hnK
 afd
-rKw
+kCa
 aTg
 abS
 aSX
@@ -69893,7 +69893,7 @@ azA
 azA
 azA
 azA
-jzH
+bsC
 afd
 afd
 afd
@@ -69902,16 +69902,16 @@ afd
 afd
 afd
 afd
-tlr
-tlr
+aSH
+aSH
 aSB
 afd
-rKw
+kCa
 aTg
 aTg
 agX
-liT
-liT
+xck
+xck
 agX
 agX
 aOW
@@ -70159,8 +70159,8 @@ azA
 azA
 azA
 afd
-tlr
-tlr
+aSH
+aSH
 aSB
 afd
 azA
@@ -70171,9 +70171,9 @@ afb
 aSR
 oLF
 aIi
-dkZ
+gRV
 aOW
-aoJ
+afL
 aMp
 ahc
 aMp
@@ -70416,9 +70416,9 @@ azA
 azA
 azA
 afd
-wqt
-qAn
-rzK
+biJ
+nsd
+qqV
 afd
 azA
 azA
@@ -70676,7 +70676,7 @@ afd
 afd
 afd
 afd
-jzH
+bsC
 azA
 azA
 azA
