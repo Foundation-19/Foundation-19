@@ -4,6 +4,9 @@
 ///displays the current time into the round, with a lot of extra code just there for ensuring it looks okay after an entire day passes
 #define ROUND_TIME ( "[world.time - SSticker.round_start_time > MIDNIGHT_ROLLOVER ? "[round((world.time - SSticker.round_start_time)/MIDNIGHT_ROLLOVER)]:[worldtime2text()]" : worldtime2text()]" )
 
+#define MILISECOND * 0.01
+#define MILLISECONDS * 0.01
+
 #define SECOND *10
 #define SECONDS *10
 
@@ -23,3 +26,6 @@
 
 #define DS2TICKS(DS) ((DS)/world.tick_lag)
 #define TICKS2DS(T) ((T) TICKS)
+
+#define MS2DS(T) ((T) MILLISECONDS)
+#define DS2MS(T) ((T) * 100)
