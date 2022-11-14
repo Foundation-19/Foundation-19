@@ -4913,7 +4913,6 @@
 /area/site53/medical/surgery/op2)
 "mf" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/a10mm,
 /obj/machinery/recharger/wallcharger{
 	dir = 8;
 	pixel_x = 20
@@ -4922,11 +4921,6 @@
 /obj/item/ammo_magazine/box/a10mm,
 /obj/item/ammo_magazine/box/a10mm,
 /obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
 /obj/item/ammo_magazine/scp/p90_mag/ap,
 /obj/item/ammo_magazine/scp/p90_mag/ap,
 /obj/item/ammo_magazine/scp/p90_mag/ap,
@@ -8247,21 +8241,16 @@
 /obj/item/ammo_magazine/box/mk9,
 /obj/item/ammo_magazine/box/mk9,
 /obj/item/ammo_magazine/box/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
+/obj/item/ammo_magazine/scp/mk9,
 /obj/item/gun/projectile/pistol/mk9,
 /obj/item/gun/projectile/pistol/mk9,
 /obj/item/gun/projectile/pistol/mk9,
 /obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
-/obj/item/ammo_magazine/scp/mk9,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "zH" = (
@@ -9203,21 +9192,19 @@
 /area/site53/uez/equipmentroom)
 "Hj" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/pistol/usp45,
-/obj/item/gun/projectile/pistol/usp45,
-/obj/item/gun/projectile/pistol/usp45,
 /obj/item/ammo_magazine/scp/usp45,
 /obj/item/ammo_magazine/scp/usp45,
 /obj/item/ammo_magazine/scp/usp45,
 /obj/item/ammo_magazine/scp/usp45,
 /obj/item/ammo_magazine/scp/usp45,
 /obj/item/ammo_magazine/scp/usp45,
-/obj/item/ammo_magazine/box/a45,
 /obj/item/ammo_magazine/box/a45,
 /obj/item/ammo_magazine/box/a45,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/item/gun/projectile/pistol/usp45,
+/obj/item/gun/projectile/pistol/usp45,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "Hl" = (
@@ -9266,14 +9253,14 @@
 /obj/item/ammo_magazine/scp/saiga12/rubbershot,
 /obj/item/ammo_magazine/scp/saiga12/rubbershot,
 /obj/item/ammo_magazine/scp/saiga12/rubbershot,
-/obj/item/ammo_magazine/box/rubbershot,
-/obj/item/ammo_magazine/box/rubbershot,
 /obj/item/ammo_magazine/scp/saiga12/beanbag,
 /obj/item/ammo_magazine/scp/saiga12/beanbag,
 /obj/item/ammo_magazine/scp/saiga12/beanbag,
 /obj/item/ammo_magazine/scp/saiga12/beanbag,
 /obj/item/ammo_magazine/box/beanbag,
 /obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/box/rubbershot,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "HG" = (
@@ -9665,6 +9652,10 @@
 /obj/item/ammo_magazine/scp/saiga12/buckshot,
 /obj/item/ammo_magazine/box/buckshot,
 /obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/box/slug,
 /turf/simulated/floor/tiled,
 /area/site53/uez/armory)
 "Lb" = (
@@ -9958,7 +9949,7 @@
 	},
 /obj/structure/table/rack,
 /obj/item/gun/energy/ionrifle,
-/obj/item/gun/energy/ionrifle/small,
+/obj/item/gun/energy/ionrifle,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "NA" = (
@@ -9985,6 +9976,10 @@
 /obj/item/defibrillator/loaded,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
+"NP" = (
+/obj/item/gun/energy/ionrifle,
+/turf/unsimulated/mineral,
+/area/space)
 "NS" = (
 /obj/structure/table/rack,
 /obj/item/storage/firstaid/regular,
@@ -65863,7 +65858,7 @@ dA
 dA
 dA
 dA
-dA
+NP
 dA
 dA
 dA
