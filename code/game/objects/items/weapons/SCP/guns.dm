@@ -138,7 +138,7 @@
 	caliber = ".45"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ESOTERIC = 3)
 	slot_flags = SLOT_BELT
-	ammo_type = /obj/item/ammo_casing/c45
+	ammo_type = /obj/item/ammo_casing/pistol/c45
 	magazine_type = /obj/item/ammo_magazine/scp/ierichon
 	allowed_magazines = /obj/item/ammo_magazine/scp/ierichon //more damage compared to the wt550, smaller mag size
 

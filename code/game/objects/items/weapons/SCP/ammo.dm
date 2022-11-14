@@ -3,7 +3,7 @@
 	name = "MK3 magazine"
 	icon_state = "45"
 	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/c9mm
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
 	max_ammo = 10
@@ -13,7 +13,7 @@
 	name = "Jericho-114 magazine (.45)"
 	icon_state = "9mmds"
 	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/c45
+	ammo_type = /obj/item/ammo_casing/pistol/c45
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = ".45"
 	max_ammo = 20
@@ -23,27 +23,17 @@
 	name = "Jericho-114 magazine (.45 rubber)"
 	icon_state = "R9mmds"
 	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/c45/rubber
+	ammo_type = /obj/item/ammo_casing/pistol/c45/rubber
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = ".45"
 	max_ammo = 20
-	multiple_sprites = 1
-
-/obj/item/ammo_magazine/scp
-	name = "MK3 magazine (9mm)"
-	icon_state = "45"
-	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/c9mm
-	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = "9mm"
-	max_ammo = 10
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/mk9
 	name = "MK9 magazine (9mm)"
 	icon_state = "9mmds"
 	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/c9mm
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
 	max_ammo = 17
@@ -53,7 +43,7 @@
 	name = "MK9 magazine (9mm rubber)"
 	icon_state = "R9mmds"
 	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/c9mm/rubber
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm/rubber
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "9mm"
 	max_ammo = 17
@@ -64,9 +54,9 @@
 	icon_state = "p90"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	caliber = "10mm"
+	caliber = "5.7x28mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	ammo_type = /obj/item/ammo_casing/a10mm
+	ammo_type = /obj/item/ammo_casing/pistol/a57
 	max_ammo = 50
 	multiple_sprites = 1
 
@@ -78,9 +68,9 @@
 	icon_state = "p90ap"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	caliber = "10mm"
+	caliber = "5.7x28mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	ammo_type = /obj/item/ammo_casing/ap10mm
+	ammo_type = /obj/item/ammo_casing/pistol/a57/ap
 	max_ammo = 50
 	multiple_sprites = 1
 
@@ -89,9 +79,9 @@
 	icon_state = "p90r"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	caliber = "10mm"
+	caliber = "5.7x28mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	ammo_type = /obj/item/ammo_casing/rub10mm
+	ammo_type = /obj/item/ammo_casing/pistol/a57/rubber
 	max_ammo = 50
 	multiple_sprites = 1
 
@@ -108,6 +98,17 @@
 
 /obj/item/ammo_magazine/scp/m16_mag/empty
 	initial_ammo = 0
+
+/obj/item/ammo_magazine/scp/m16_mag/ext
+	name = "magazine (5.56)"
+	icon_state = "m16"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	caliber = "a556"
+	matter = list(DEFAULT_WALL_MATERIAL = 1500)
+	ammo_type = /obj/item/ammo_casing/a556
+	max_ammo = 60
+	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/ak
 	name = "magazine (7.62)"
@@ -138,7 +139,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/fnfal
-	name = "magazine (7.62x51 NAVO)"
+	name = "magazine (7.62x51 NATO)"
 	icon_state = "7.62x54s"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -175,7 +176,7 @@
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = "9mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
-	ammo_type = /obj/item/ammo_casing/c9mm
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm
 	max_ammo = 100
 
 
@@ -184,9 +185,9 @@
 	name = "ammunition box (357)"
 	icon_state = "357"
 	origin_tech = list(TECH_COMBAT = 2)
-	caliber = "357"
+	caliber = ".357"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
-	ammo_type = /obj/item/ammo_casing/a357
+	ammo_type = /obj/item/ammo_casing/pistol/a357
 	max_ammo = 60
 
 // 45acp
@@ -196,7 +197,7 @@
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = ".45"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
-	ammo_type = /obj/item/ammo_casing/c45
+	ammo_type = /obj/item/ammo_casing/pistol/c45
 	max_ammo = 100
 
 /obj/item/ammo_magazine/box/a50
@@ -205,17 +206,17 @@
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = ".44"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
-	ammo_type = /obj/item/ammo_casing/a50
+	ammo_type = /obj/item/ammo_casing/pistol/a50
 	max_ammo = 60
 
 // 10mm
 /obj/item/ammo_magazine/box/a10mm
-	name = "ammunition box (5.7 x 28 mm)"
+	name = "ammunition box (5.7x28mm)"
 	icon_state = "usmc_box"
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = "10mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
-	ammo_type = /obj/item/ammo_casing/a10mm
+	ammo_type = /obj/item/ammo_casing/pistol/a57
 	max_ammo = 200
 	multiple_sprites = 1
 
@@ -316,7 +317,7 @@
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = ".45"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
-	ammo_type = /obj/item/ammo_casing/c45
+	ammo_type = /obj/item/ammo_casing/pistol/c45
 	max_ammo = 100
 
 
@@ -336,3 +337,101 @@
 	name = "non-lethal ammunition"
 	desc = "Contains beanbag ammunition for a shotgun."
 	startswith = list(/obj/item/ammo_casing/shotgun/beanbag = 7)
+
+/obj/item/ammo_magazine/scp/vectormag
+	name = "magazine (Extended .45ACP)"
+	icon_state = "4mm"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	caliber = ".45"
+	matter = list(DEFAULT_WALL_MATERIAL = 1500)
+	ammo_type = /obj/item/ammo_casing/pistol/c45
+	max_ammo = 30
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/usp45
+	name = "USP .45ACP Magazine"
+	icon_state = "magnum"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/pistol/c45
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = ".45"
+	max_ammo = 12
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/m1911
+	name = "M1911 Colt Magazine (.45ACP)"
+	icon_state = "45"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/pistol/c45
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = ".45"
+	max_ammo = 7
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/scp/saiga12
+	name = "Saiga12 Magazine (Slug)"
+	icon_state = "saiga12"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+/obj/item/ammo_magazine/scp/saiga12/beanbag
+	name = "Saiga12 Magazine (Beanbag)"
+	icon_state = "saiga12-beanbag"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+/obj/item/ammo_magazine/scp/saiga12/buckshot
+	name = "Saiga12 Magazine (Buckshot)"
+	icon_state = "saiga12-buckshot"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+/obj/item/ammo_magazine/scp/saiga12/stunshell
+	name = "Saiga12 Magazine (Stunshell)"
+	icon_state = "saiga12-stunshell"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/stunshell
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+/obj/item/ammo_magazine/scp/saiga12/flash
+	name = "Saiga12 Magazine (Crowd Dispersing Flash)"
+	icon_state = "saiga12-flash"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/flash
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+/obj/item/ammo_magazine/scp/saiga12/rubbershot
+	name = "Saiga12 Magazine (Rubbershot)"
+	icon_state = "saiga12-rubbershot"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+/obj/item/ammo_magazine/scp/saiga12/emp
+	name = "Saiga12 Magazine (EMP Haywire)"
+	icon_state = "saiga12-emp"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/emp
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 8
+
+/obj/item/ammo_magazine/scp/saiga12/empty
+	initial_ammo = 0
+
