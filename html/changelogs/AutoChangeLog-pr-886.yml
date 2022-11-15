@@ -1,0 +1,4 @@
+author: CristoMagisto69
+delete-after: true
+changes:
+  - bugfix: laptop sprite showing screen when closed
