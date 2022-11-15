@@ -295,9 +295,9 @@
 /obj/item/ammo_casing/a57/sc
 	desc = "A Silver Crescent 5.7x28mm bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/medium/smg/silver
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 /obj/item/ammo_casing/shotgun
-	name = "shotgun slug"
+	name = "slug shell"
 	desc = "A 12 gauge slug."
 	icon_state = "shell-slug"
 	spent_icon = "shell-slug-spent"
@@ -306,23 +306,23 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 360)
 
 /obj/item/ammo_casing/shotgun/pellet
-	name = "shotgun buckshot"
-	desc = "A 12 gauge shell."
+	name = "buckshot shell"
+	desc = "A 12 gauge 00 buck shell."
 	icon_state = "shell-pellet"
 	spent_icon = "shell-pellet-spent"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun
 	matter = list(DEFAULT_WALL_MATERIAL = 360)
 
 /obj/item/ammo_casing/shotgun/rubbershot
-	name = "shotgun rubbershot"
-	desc = "A 12 gauge shell."
+	name = "rubbershot shell"
+	desc = "A 12 gauge rubbershot shell."
 	icon_state = "shell-rubbershot"
 	spent_icon = "shell-rubbershot-spent"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun/rubbershot
 	matter = list(DEFAULT_WALL_MATERIAL = 360)
 
 /obj/item/ammo_casing/shotgun/blank
-	name = "shotgun shell"
+	name = "blank shell"
 	desc = "A blank shell."
 	icon_state = "shell-blank"
 	spent_icon = "shell-blank-spent"
@@ -330,7 +330,7 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 90)
 
 /obj/item/ammo_casing/shotgun/practice
-	name = "shotgun shell"
+	name = "practice shell"
 	desc = "A practice shell."
 	icon_state = "shell-practise"
 	spent_icon = "shell-practise-spent"
@@ -369,10 +369,33 @@
 	projectile_type = /obj/item/projectile/energy/flash/flare
 	matter = list(DEFAULT_WALL_MATERIAL = 90, "glass" = 90)
 
-/obj/item/ammo_casing/a556
-	desc = "A 5.56mm bullet casing."
-	caliber = "a556"
+/obj/item/ammo_casing/rifle
+	icon_state = "rifle-casing"
+	spent_icon = "rifle-casing-spent"
+
+/obj/item/ammo_casing/rifle/a556
+	desc = "A 5.56mm NATO bullet casing."
+	caliber = "5.56x45mm"
 	projectile_type = /obj/item/projectile/bullet/rifle/a556
+
+/obj/item/ammo_casing/rifle/a762
+	desc = "A 7.62x39mm bullet casing."
+	caliber = "7.62x39mm"
+	projectile_type = /obj/item/projectile/bullet/rifle/a762
+
+/obj/item/ammo_casing/rifle/a762/practice
+	desc = "A 7.62mm practice bullet casing."
+	projectile_type = /obj/item/projectile/bullet/rifle/a762/practice
+
+/obj/item/ammo_casing/rifle/a762x54
+	desc = "A 7.62x54mmR bullet casing."
+	caliber = "7.62x54mmR"
+	projectile_type = /obj/item/projectile/bullet/rifle/a762x54
+
+/obj/item/ammo_casing/rifle/a762nato
+	desc = "A 7.62x51mm NATO bullet casing."
+	caliber = "a762nato"
+	projectile_type = /obj/item/projectile/bullet/rifle/a762nato
 	icon_state = "rifle-casing"
 	spent_icon = "rifle-casing-spent"
 
@@ -389,24 +412,6 @@
 	name = "APDS shell casing"
 	desc = "A 14.5mm Armour Piercing Discarding Sabot shell."
 	projectile_type = /obj/item/projectile/bullet/rifle/a145/apds
-
-/obj/item/ammo_casing/a762
-	desc = "A 7.62mm bullet casing."
-	caliber = "a762"
-	projectile_type = /obj/item/projectile/bullet/rifle/a762
-	icon_state = "rifle-casing"
-	spent_icon = "rifle-casing-spent"
-
-/obj/item/ammo_casing/a762/practice
-	desc = "A 7.62mm practice bullet casing."
-	projectile_type = /obj/item/projectile/bullet/rifle/a762/practice
-
-/obj/item/ammo_casing/a762nato
-	desc = "A 7.62x51mm NATO bullet casing."
-	caliber = "a762nato"
-	projectile_type = /obj/item/projectile/bullet/rifle/a762nato
-	icon_state = "rifle-casing"
-	spent_icon = "rifle-casing-spent"
 
 /obj/item/ammo_casing/rocket
 	name = "rocket shell"

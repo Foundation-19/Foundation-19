@@ -183,8 +183,8 @@
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
-	damage = 22
-	pellets = 6
+	damage = 16
+	pellets = 9
 	range_step = 1
 	spread_step = 10
 

@@ -113,8 +113,13 @@
 
 /obj/item/projectile/bullet/rifle/a762
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
-	damage = 55
+	damage = 50
 	armor_penetration = 5
+
+/obj/item/projectile/bullet/rifle/a762x54
+	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	damage = 55
+	armor_penetration = 15
 
 /obj/item/projectile/bullet/rifle/a762nato
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'

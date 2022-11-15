@@ -90,9 +90,9 @@
 	icon_state = "m16"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	caliber = "a556"
+	caliber = "5.56x45mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	ammo_type = /obj/item/ammo_casing/a556
+	ammo_type = /obj/item/ammo_casing/rifle/a556
 	max_ammo = 30
 	multiple_sprites = 1
 
@@ -104,9 +104,9 @@
 	icon_state = "m16"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	caliber = "a556"
+	caliber = "5.56x45mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	ammo_type = /obj/item/ammo_casing/a556
+	ammo_type = /obj/item/ammo_casing/rifle/a556
 	max_ammo = 60
 	multiple_sprites = 1
 
@@ -115,9 +115,9 @@
 	icon_state = "7.62x39mm"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	caliber = "a762"
+	caliber = "7.62x39mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	ammo_type = /obj/item/ammo_casing/a762
+	ammo_type = /obj/item/ammo_casing/rifle/a762
 	max_ammo = 30
 	multiple_sprites = 1
 
@@ -128,13 +128,13 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/svd
-	name = "magazine (7.62)"
+	name = "magazine (7.62x54mmR)"
 	icon_state = "7.62x54s"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	caliber = "a762"
+	caliber = "7.62x54mmR"
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	ammo_type = /obj/item/ammo_casing/a762
+	ammo_type = /obj/item/ammo_casing/rifle/a762x54
 	max_ammo = 10
 	multiple_sprites = 1
 
@@ -145,7 +145,7 @@
 	mag_type = MAGAZINE
 	caliber = "a762nato"
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	ammo_type = /obj/item/ammo_casing/a762nato
+	ammo_type = /obj/item/ammo_casing/rifle/a762nato
 	max_ammo = 20
 	multiple_sprites = 1
 
@@ -154,9 +154,9 @@
 	icon_state = "5.56"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	caliber = "a762"
+	caliber = "7.62x39mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 1800)
-	ammo_type = /obj/item/ammo_casing/a762
+	ammo_type = /obj/item/ammo_casing/rifle/a762
 	max_ammo = 15 //if we lived in a world where normal mags had 30 rounds, this would be a 20 round mag
 	multiple_sprites = 1
 
@@ -165,7 +165,7 @@
 
 /obj/item/ammo_magazine/a762/practice
 	name = "magazine (7.62mm, practice)"
-	ammo_type = /obj/item/ammo_casing/a762/practice
+	ammo_type = /obj/item/ammo_casing/rifle/a762/practice
 
 // BOXES //
 
@@ -226,9 +226,9 @@
 	icon_state = "usmc_box"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	caliber = "a556"
+	caliber = "5.56x45mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 4500)
-	ammo_type = /obj/item/ammo_casing/a556
+	ammo_type = /obj/item/ammo_casing/rifle/a556
 	max_ammo = 100
 	multiple_sprites = 1
 
@@ -237,9 +237,9 @@
 	name = "ammunition box (7.62)"
 	icon_state = "csla_box"
 	origin_tech = list(TECH_COMBAT = 2)
-	caliber = "a762"
+	caliber = "7.62x39mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
-	ammo_type = /obj/item/ammo_casing/a762
+	ammo_type = /obj/item/ammo_casing/rifle/a762
 	max_ammo = 100
 	multiple_sprites = 1
 

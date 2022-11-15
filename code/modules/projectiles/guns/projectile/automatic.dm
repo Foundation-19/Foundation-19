@@ -404,6 +404,7 @@
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
+	handle_casings = CLEAR_CASINGS
 	magazine_type = /obj/item/ammo_magazine/t12
 	allowed_magazines = /obj/item/ammo_magazine/t12
 	one_hand_penalty = 6
