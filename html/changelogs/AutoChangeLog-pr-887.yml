@@ -1,0 +1,5 @@
+author: CristoMagisto69
+delete-after: true
+changes:
+  - rscadd: voice changer masks now copy the item_flags of the masks they're copying,
+      i.e. internals masks can be used as internals
