@@ -174,8 +174,10 @@
 /*
 * The default security state and levels setup
 */
-/decl/security_state/default
-	all_security_levels = list(/decl/security_level/default/code_green, /decl/security_level/default/code_blue, /decl/security_level/default/code_red, /decl/security_level/default/code_delta)
+
+decl/security_state/default
+	all_security_levels = list(/decl/security_level/default/code_green, /decl/security_level/default/code_yellow, /decl/security_level/default/code_orange, /decl/security_level/default/code_red, /decl/security_level/default/code_black, /decl/security_level/default/code_gray, /decl/security_level/default/code_delta)
+	standard_security_levels = list(/decl/security_level/default/code_green, /decl/security_level/default/code_yellow, /decl/security_level/default/code_orange, /decl/security_level/default/code_red, /decl/security_level/default/code_black, /decl/security_level/default/code_gray)
 
 /decl/security_level/default
 	icon = 'icons/misc/security_state.dmi'
@@ -208,53 +210,131 @@
 	light_max_bright = 0.25
 	light_inner_range = 0.1
 	light_outer_range = 1
-
 	light_color_alarm = COLOR_GREEN
 	light_color_status_display = COLOR_GREEN
 
 	overlay_alarm = "alarm_green"
 	overlay_status_display = "status_display_green"
-	alert_border = "alert_border_green"
 
-	down_description = "All threats to the station have passed. Security may not have weapons visible, privacy laws are once again fully enforced."
+	var/static/datum/announcement/priority/security/security_announcement_green = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codegreen.ogg', volume = 150))
 
-/decl/security_level/default/code_blue
-	name = "code blue"
-	alarm_level = "on"
+/decl/security_level/default/code_green/switching_down_to()
+	security_announcement_green.Announce("The situation has been resolved, and all personnel are to return to their regular duties.", "Attention! Alert level lowered to code green.")
+	notify_station()
+
+/decl/security_level/default/code_yellow
+	name = "code yellow"
 
 	light_max_bright = 0.5
-	light_inner_range = 0.1
+	light_inner_range = 1
 	light_outer_range = 2
-	light_color_alarm = COLOR_BLUE
-	light_color_status_display = COLOR_BLUE
+	light_color_alarm = COLOR_VIOLET
+	light_color_status_display = COLOR_VIOLET
+	overlay_alarm = "alarm_yellow"
+	overlay_status_display = "status_display_yellow"
 
-	psionic_control_level = PSI_IMPLANT_LOG
+	var/static/datum/announcement/priority/security/security_announcement_yellow = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/misc/notice1.ogg'))
 
-	overlay_alarm = "alarm_blue"
-	overlay_status_display = "status_display_blue"
-	alert_border = "alert_border_blue"
+/decl/security_level/default/code_yellow/switching_up_to()
+	security_announcement_yellow.Announce("There is an unconfirmed potential threat to the facility. Guards are to be posted at sensitive entry areas. All non-essential personnel are recommended to return to their department.", "Attention! Code Yellow alert procedures now in effect!")
+	notify_station()
 
-	up_description = "The station has received reliable information about possible hostile activity on the station. Security staff may have weapons visible, random searches are permitted."
-	down_description = "The immediate threat has passed. Security may no longer have weapons drawn at all times, but may continue to have them visible. Random searches are still allowed."
+/decl/security_level/default/code_yellow/switching_down_to()
+	security_announcement_yellow.Announce("All Euclid and Keter SCPs have been recontained. All areas should be swept for Safe SCPs, and the integrity of all chambers should be inspected.", "Attention! Code Yellow alert procedures now in effect!")
+	notify_station()
+
+/decl/security_level/default/code_orange
+	name = "code orange"
+
+	light_max_bright = 0.5
+	light_inner_range = 1
+	light_outer_range = 2
+	light_color_alarm = COLOR_ORANGE
+	light_color_status_display = COLOR_ORANGE
+	overlay_alarm = "alarm_orange"
+	overlay_status_display = "status_display_orange"
+
+//	crb = TRUE
+
+	var/static/datum/announcement/priority/security/security_announcement_orange = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codered.ogg'))
+
+/decl/security_level/default/code_orange/switching_up_to()
+	security_announcement_orange.Announce("A Euclid SCP has broken containment and its current whereabouts are unknown. Security should investigate and focus on recontainment as a first priority, or request an MTF unit to assist.", "Attention! Code Orange alert procedures now in effect!")
+	notify_station()
+
+/decl/security_level/default/code_orange/switching_down_to()
+	security_announcement_orange.Announce("All Keter SCPs have been recontained, but one or more Euclid SCP remains unaccounted for. Security should intensify searches to locate and recontain the breached SCPs.", "Attention! Code Orange alert procedures now in effect!")
+	notify_station()
 
 /decl/security_level/default/code_red
 	name = "code red"
-	alarm_level = "on"
 
-	light_max_bright = 0.5
-	light_inner_range = 0.1
-	light_outer_range = 2
+	light_max_bright = 0.75
+	light_inner_range = 1
+	light_outer_range = 3
 	light_color_alarm = COLOR_RED
 	light_color_status_display = COLOR_RED
-
 	overlay_alarm = "alarm_red"
 	overlay_status_display = "status_display_red"
-	alert_border = "alert_border_red"
 
-	psionic_control_level = PSI_IMPLANT_DISABLED
+//	crb = TRUE
 
-	up_description = "There is an immediate serious threat to the station. Security may have weapons unholstered at all times. Random searches are allowed and advised."
-	down_description = "The self-destruct mechanism has been deactivated, there is still however an immediate serious threat to the station. Security may have weapons unholstered at all times, random searches are allowed and advised."
+	var/static/datum/announcement/priority/security/security_announcement_red = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codered.ogg'))
+
+/decl/security_level/default/code_red/switching_up_to()
+	security_announcement_red.Announce("A Keter SCP has broken containment and its current whereabouts are unknown. Security should secure all exit points immediately before recontaining breached anomalies.", "Attention! Code red alert procedures now in effect!")
+	notify_station()
+
+/decl/security_level/default/code_red/switching_down_to()
+	security_announcement_red.Announce("All major threats to the Site have been neutralized or contained, but one or more Keter SCPs remain at large. Security should focus their efforts on recontaining the SCP. Full site lockdown disengaged.", "Attention! Code red alert procedures now in effect!")
+	notify_station()
+
+/decl/security_level/default/code_black
+	name = "code black"
+
+	light_max_bright = 0.75
+	light_inner_range = 0.1
+	light_outer_range = 3
+	light_color_alarm = COLOR_RED
+	light_color_status_display = COLOR_NAVY_BLUE
+
+	overlay_alarm = "black_alarm"
+	overlay_status_display = "status_display_black"
+
+//	crb = TRUE
+
+	var/static/datum/announcement/priority/security/security_announcement_black = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codeblack.ogg'))
+
+/decl/security_level/default/code_black/switching_up_to()
+	security_announcement_black.Announce("The site is experiencing multiple keter and euclid level containment breaches. Full site lockdown initiated.", "Attention! Code Black alert procedures now in effect!")
+	notify_station()
+
+/decl/security_level/default/code_black/switching_down_to()
+	security_announcement_black.Announce("The Site has been secured from subversive elements. Security is to sweep the facility and recontain all dangerous SCPs immediately.", "Attention! Code Black alert procedures now in effect!")
+	notify_station()
+
+/decl/security_level/default/code_gray
+	name = "code gray"
+
+	light_max_bright = 0.75
+	light_inner_range = 0.1
+	light_outer_range = 3
+	light_color_alarm = COLOR_GRAY
+	light_color_status_display = COLOR_GRAY
+
+	overlay_alarm = "grey_alarm"
+	overlay_status_display = "status_display_grey"
+
+	var/static/datum/announcement/priority/security/security_announcement_gray = new(do_log = 0, do_newscast = 1, new_sound = sound())
+
+/decl/security_level/default/code_gray/switching_up_to()
+	security_announcement_gray.Announce("There have been confirmed reports of a hostile Group of Interest having infiltrated the Site. Security is allowed to terminate all suspected hostiles." ,"Attention! Code Gray alert procedures now in effect!")
+	notify_station()
+
+/decl/security_level/default/code_gray/switching_down_to()
+	security_announcement_gray.Announce("The on-Site Nuclear Detonation sequence has been canceled, however, there is still a hostile Group of Interest within the facility.", "Attention! Code Gray alert procedures now in effect!")
+	notify_station()
+
 
 /decl/security_level/default/code_delta
 	name = "code delta"
@@ -275,5 +355,5 @@
 	var/static/datum/announcement/priority/security/security_announcement_delta = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/effects/siren.ogg'))
 
 /decl/security_level/default/code_delta/switching_up_to()
-	security_announcement_delta.Announce("The self-destruct mechanism has been engaged. All crew are instructed to obey all instructions given by heads of staff. Any violations of these orders can be punished by death. This is not a drill.", "Attention! Delta security level reached!")
+	security_announcement_delta.Announce("The self-destruct mechanism has been engaged. All crew are instructed to obey all instructions given by heads of staff. Any violations of these orders is punishable by immediate termination. This is not a drill.", "Attention! Delta security level reached!")
 	notify_station()
