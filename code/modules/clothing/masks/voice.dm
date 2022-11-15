@@ -9,13 +9,6 @@
 	desc = "A face-covering mask that can be connected to an air supply. It seems to house some odd electronics."
 	var/obj/item/voice_changer/changer
 	origin_tech = list(TECH_ESOTERIC = 4)
-	item_flags = ITEM_FLAG_BLOCK_GAS_SMOKE_EFFECT | ITEM_FLAG_AIRTIGHT
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE
-	body_parts_covered = FACE|EYES
-	armor = list(
-		melee = ARMOR_MELEE_MINOR,
-		bio = ARMOR_BIO_STRONG
-		)
 
 /obj/item/clothing/mask/chameleon/voice/verb/Toggle_Voice_Changer()
 	set category = "Object"
