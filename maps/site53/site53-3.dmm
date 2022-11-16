@@ -1543,6 +1543,11 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/camera/autoname{
+	c_tag = "Server Farm Control";
+	network = list("Engineering Network");
+	pixel_x = 10
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "dt" = (
@@ -2966,6 +2971,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"gZ" = (
+/obj/machinery/camera/autoname{
+	dir = 4;
+	network = list("Engineering Network")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/hangar)
 "ha" = (
 /obj/machinery/holosign/surgery{
 	dir = 8;
@@ -6080,6 +6092,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/tramhubhallwayentry)
+"qb" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/camera/autoname{
+	network = list("Light Containment Zone Network");
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "qf" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -9156,6 +9176,16 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/medical/morgue)
+"GV" = (
+/obj/effect/floor_decal/corner/brown/half{
+	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	network = list("Light Containment Zone Network");
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "GZ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -9398,6 +9428,15 @@
 /obj/machinery/camera/network/entrance,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
+"IF" = (
+/obj/structure/railing/mapped,
+/obj/machinery/camera/autoname{
+	c_tag = "Server Farm Control";
+	network = list("Engineering Network");
+	pixel_x = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/hangar)
 "IG" = (
 /obj/structure/table/standard,
 /obj/item/device/flashlight/lamp,
@@ -9881,6 +9920,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
+"MO" = (
+/obj/machinery/camera/autoname{
+	c_tag = "Server Farm Control";
+	network = list("Engineering Network");
+	pixel_x = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "MQ" = (
 /obj/machinery/vending/hotfood{
 	dir = 4
@@ -9976,6 +10023,16 @@
 /obj/item/defibrillator/loaded,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
+"NM" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	network = list("Light Containment Zone Network");
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "NP" = (
 /obj/item/gun/energy/ionrifle,
 /turf/unsimulated/mineral,
@@ -10758,6 +10815,16 @@
 "Va" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensicsstairwell)
+"Vb" = (
+/obj/machinery/light/spot{
+	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	network = list("Light Containment Zone Network");
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/hangar)
 "Vf" = (
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/structure/table/reinforced,
@@ -11224,6 +11291,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
+"YU" = (
+/obj/machinery/camera/autoname{
+	network = list("Light Containment Zone Network");
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "YV" = (
 /obj/effect/paint_stripe/white,
 /obj/structure/table/glass,
@@ -11274,6 +11348,13 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"ZL" = (
+/obj/machinery/camera/autoname{
+	dir = 4;
+	network = list("Engineering Network")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "ZM" = (
 /obj/effect/paint_stripe/green,
 /obj/structure/table/standard,
@@ -30238,7 +30319,7 @@ jH
 jH
 jH
 jb
-jH
+gZ
 jH
 jb
 jH
@@ -32287,7 +32368,7 @@ dA
 dA
 dA
 kG
-jp
+IF
 ju
 jQ
 uL
@@ -33067,7 +33148,7 @@ SS
 Sm
 kP
 kQ
-jt
+Vb
 jH
 jH
 jH
@@ -36142,14 +36223,14 @@ qU
 Uc
 vg
 vh
-Uc
+GV
 QA
 my
 nk
 oV
 ul
 rV
-qK
+YU
 rV
 qK
 rV
@@ -36656,7 +36737,7 @@ nE
 qV
 qK
 qM
-qK
+ZL
 qM
 sp
 qK
@@ -36920,7 +37001,7 @@ sn
 ss
 sn
 sn
-sn
+qb
 sn
 sn
 sn
@@ -38208,7 +38289,7 @@ qK
 qK
 qK
 oV
-qK
+MO
 qK
 qV
 qK
@@ -38974,7 +39055,7 @@ qK
 rH
 oV
 qK
-qK
+YU
 qK
 qK
 qK
@@ -39748,7 +39829,7 @@ rI
 qN
 qK
 qK
-qN
+NM
 qK
 qK
 qN
