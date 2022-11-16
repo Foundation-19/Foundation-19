@@ -518,6 +518,18 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "head_quarters"
 
+/area/site53/uez/repoffice/internaltribunal
+	name = "\improper Internal Tribunal Departments Office"
+	sound_env = MEDIUM_SOFTFLOOR
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "head_quarters"
+
+/area/site53/uez/repoffice/ethics
+	name = "\improper Ethics Representative's Office"
+	sound_env = MEDIUM_SOFTFLOOR
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "head_quarters"
+
 /area/site53/uez/goirepoffice
 	name = "\improper GoI Representative's Office"
 	sound_env = MEDIUM_SOFTFLOOR
