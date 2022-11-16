@@ -6,6 +6,7 @@
 	density = FALSE
 	anchored = TRUE
 	layer = CATWALK_LAYER
+	plane = DEFAULT_PLANE
 	footstep_type = /decl/footsteps/catwalk
 	obj_flags = OBJ_FLAG_NOFALL
 	var/hatch_open = FALSE

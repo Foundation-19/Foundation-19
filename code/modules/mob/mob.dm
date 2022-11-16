@@ -421,6 +421,7 @@
 		return 0
 
 	var/obj/P = new /obj/effect/decal/point(tile)
+	P.plane = MOB_PLANE
 	P.set_invisibility(invisibility)
 	P.pixel_x = A.pixel_x
 	P.pixel_y = A.pixel_y
@@ -738,19 +739,13 @@
 	if (isscp106)
 		var/mob/living/carbon/human/scp106/H = src
 //		H.fix_icons()
-		if (lying)
-			H.reset_vision_cone()
-		else
-			H.update_vision_cone()
+		H.update_vision_cone()
 
 	// update SCP-049's vis_contents icon
 	else if (isscp049)
 		var/mob/living/carbon/human/scp049/H = src
 		//		H.fix_icons()
-		if (lying)
-			H.reset_vision_cone()
-		else
-			H.update_vision_cone()
+		H.update_vision_cone()
 
 	//Temporarily moved here from the various life() procs
 	//I'm fixing stuff incrementally so this will likely find a better home.
@@ -762,14 +757,11 @@
 		update_icons()
 		if (ishuman(src))
 			var/mob/living/carbon/human/H = src
-			if (lying)
-				H.reset_vision_cone()
-			else
-				H.update_vision_cone()
+			H.update_vision_cone()
 
 /mob/proc/reset_layer()
 	if(lying)
-		plane = DEFAULT_PLANE
+		plane = MOB_PLANE
 		layer = LYING_MOB_LAYER
 	else
 		reset_plane_and_layer()

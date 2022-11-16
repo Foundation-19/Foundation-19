@@ -60,22 +60,25 @@ What is the naming convention for planes or layers?
 	FLOAT_PLANE = -32767
 */
 
-#define CLICKCATCHER_PLANE -100
+#define CLICKCATCHER_PLANE -101
 
-#define SPACE_PLANE               -99
+#define HIDDEN_PLANE -100
+
+#define SPACE_PLANE                  -99
 	#define SPACE_LAYER                  1
-#define SKYBOX_PLANE              -98
+#define SKYBOX_PLANE                 -98
 	#define SKYBOX_LAYER                 1
 
-#define DUST_PLANE                 -97
-	#define DEBRIS_LAYER                 1
-	#define DUST_LAYER                   2
+#define DUST_PLANE                   -97
+	#define DEBRIS_LAYER                1
+	#define DUST_LAYER                  2
 
-// Openspace uses planes -80 through -70.
+#define OPENTURF_MAX_PLANE           -70
+#define OPENTURF_MAX_DEPTH            10	// The maxiumum number of planes deep we'll go before we just dump everything on the same plane.
 
-#define OVER_OPENSPACE_PLANE        -3
+#define OVER_OPENSPACE_PLANE         -69
 
-#define DEFAULT_PLANE                   0
+#define DEFAULT_PLANE                 0
 	#define PLATING_LAYER               1
 	//ABOVE PLATING
 	#define HOLOMAP_LAYER               1.01
@@ -107,7 +110,9 @@ What is the naming convention for planes or layers?
 	#define HIDING_MOB_LAYER            2.15
 	#define SHALLOW_FLUID_LAYER         2.16
 	#define MOB_SHADOW_LAYER            2.17
+
 	//OBJ
+#define OBJ_PLANE                  1
 	#define BELOW_DOOR_LAYER            2.18
 	#define OPEN_DOOR_LAYER             2.19
 	#define BELOW_TABLE_LAYER           2.20
@@ -123,6 +128,8 @@ What is the naming convention for planes or layers?
 	#define FULL_WINDOW_LAYER           3.05
 	#define ABOVE_WINDOW_LAYER          3.06
 	#define HOLOMAP_OVERLAY_LAYER       3.061
+
+#define MOB_PLANE                  2
 	//LYING MOB AND HUMAN
 	#define LYING_MOB_LAYER             3.07
 	#define LYING_HUMAN_LAYER           3.08
@@ -163,20 +170,20 @@ What is the naming convention for planes or layers?
 
 	#define BASE_AREA_LAYER             999
 
-#define OBSERVER_PLANE             1
+#define OBSERVER_PLANE             3
 
-#define LIGHTING_PLANE             2 // For Lighting. - The highest plane (ignoring all other even higher planes)
+#define LIGHTING_PLANE             4 // For Lighting. - The highest plane (ignoring all other even higher planes)
 	#define LIGHTBULB_LAYER        0
 	#define LIGHTING_LAYER         1
 	#define ABOVE_LIGHTING_LAYER   2
 
-#define EFFECTS_ABOVE_LIGHTING_PLANE   3 // For glowy eyes, laser beams, etc. that shouldn't be affected by darkness
+#define EFFECTS_ABOVE_LIGHTING_PLANE   5 // For glowy eyes, laser beams, etc. that shouldn't be affected by darkness
 	#define EYE_GLOW_LAYER         1
 	#define BEAM_PROJECTILE_LAYER  2
 	#define SUPERMATTER_WALL_LAYER 3
 	#define OBFUSCATION_LAYER      4
 
-#define FULLSCREEN_PLANE                4 // for fullscreen overlays that do not cover the hud.
+#define FULLSCREEN_PLANE                6 // for fullscreen overlays that do not cover the hud.
 
 	#define FULLSCREEN_LAYER    0
 	#define DAMAGE_LAYER        1
@@ -184,21 +191,32 @@ What is the naming convention for planes or layers?
 	#define BLIND_LAYER         3
 	#define CRIT_LAYER          4
 
-#define HUD_PLANE                    5
+#define VISION_CONE_PLANE               7
+
+#define ABOVE_VISION_CONE_PLANE         8
+
+
+#define HUD_PLANE                    9
 	#define UNDER_HUD_LAYER              0
 	#define HUD_BASE_LAYER               1
 	#define HUD_CLICKABLE_LAYER          2
 	#define HUD_ITEM_LAYER               3
 	#define HUD_ABOVE_ITEM_LAYER         4
 
-#define ABOVE_HUD_PLANE                    6
+#define ABOVE_HUD_PLANE                    10
 	#define ABOVE_HUD_LAYER              0
 
 //This is difference between planes used for atoms and effects
-#define PLANE_DIFFERENCE              3
+#define PLANE_DIFFERENCE              6
 
 /atom
 	plane = DEFAULT_PLANE
+
+/mob
+	plane = MOB_PLANE
+
+/obj
+	plane = OBJ_PLANE
 
 /image/proc/plating_decal_layerise()
 	plane = DEFAULT_PLANE
@@ -238,3 +256,24 @@ GLOBAL_LIST_INIT(ghost_master, list(
 	new /obj/screen/plane_master/ghost_master(),
 	new /obj/screen/plane_master/ghost_dummy()
 ))
+
+/obj/screen/plane_master/effects_planemaster
+	appearance_flags = PLANE_MASTER | KEEP_TOGETHER
+	blend_mode = BLEND_OVERLAY
+
+/obj/screen/plane_master/effects_planemaster/openspace/Initialize()
+	. = ..()
+	add_filter("openspace_blur", 0, list(type = "blur", size = 0.6))
+
+/obj/screen/plane_master/vision_cone_target
+	name = "vision cone master"
+	plane = HIDDEN_PLANE
+	render_target = "vision_cone_target"
+
+/obj/screen/plane_master/vision_cone/primary/Initialize() //Things to hide
+	. = ..()
+	add_filter("vision_cone", 50, list(type="alpha", render_source="vision_cone_target", flags=MASK_INVERSE))
+
+/obj/screen/plane_master/vision_cone/inverted/Initialize() //Things to show in hidden section
+	. = ..()
+	add_filter("inverted_vision_cone", 50, list(type="alpha", render_source="vision_cone_target"))

@@ -2,7 +2,7 @@
 	name = "bullet"
 	icon_state = "bullet"
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 50
+	damage = 45
 	damage_type = BRUTE
 	damage_flags = DAM_BULLET | DAM_SHARP
 	embed = TRUE
@@ -121,7 +121,7 @@
 
 /obj/item/projectile/bullet/pistol
 	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
-	damage = 40
+	damage = 37
 	distance_falloff = 3
 
 /obj/item/projectile/bullet/pistol/holdout
@@ -131,7 +131,7 @@
 
 /obj/item/projectile/bullet/pistol/strong
 	fire_sound = 'sound/weapons/gunshot/revolver.ogg'
-	damage = 55
+	damage = 52
 	penetration_modifier = 0.8
 	distance_falloff = 2.5
 	armor_penetration = 15
@@ -166,13 +166,13 @@
 /obj/item/projectile/bullet/shotgun
 	name = "slug"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
-	damage = 80
-	armor_penetration = 10
+	damage = 60
+	armor_penetration = 5
 	agony = 20
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
-	damage = 10
+	damage = 7
 	agony = 60
 	embed = FALSE
 	armor_penetration = 0
@@ -183,7 +183,7 @@
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
-	damage = 30
+	damage = 22
 	pellets = 6
 	range_step = 1
 	spread_step = 10
@@ -192,7 +192,7 @@
 
 /obj/item/projectile/bullet/rifle
 	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
-	damage = 50
+	damage = 40
 	armor_penetration = 25
 	penetration_modifier = 1.5
 	penetrating = 1

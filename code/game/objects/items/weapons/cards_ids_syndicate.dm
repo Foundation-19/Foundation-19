@@ -125,6 +125,7 @@
 				var/datum/card_state/choice = input(user, "Select the appearance for this card.", "Agent Card Appearance") as null|anything in id_card_states()
 				if(choice && CanUseTopic(user, state))
 					src.icon_state = choice.icon_state
+					src.name = choice.examine_name
 					src.item_state = choice.item_state
 					src.color = choice.color
 					src.detail_color = choice.detail_color
@@ -238,6 +239,7 @@
 			CS.color = initial(ID.color)
 			CS.detail_color = initial(ID.detail_color)
 			CS.extra_details = initial(ID.extra_details)
+			CS.examine_name = initial(ID.name)
 			CS.name = initial(ID.name)
 			if (initial(ID.job_access_type))
 				var/datum/job/J = initial(ID.job_access_type)
@@ -263,6 +265,7 @@
 	var/detail_color
 	var/details
 	var/extra_details
+	var/examine_name
 
 /datum/card_state/dd_SortValue()
 	return name

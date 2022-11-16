@@ -1,8 +1,3 @@
-/obj/item/clothing/under/scp/whiteuniform
-	name = "white security uniform"
-	desc = "A sterile white uniform. Commonly issued to lower ranked security personnel."
-	icon_state = "white_lcz"
-
 /obj/item/clothing/under/scp/donor
 	name = "grey uniform"
 	desc = "A grey uniform."
@@ -40,6 +35,7 @@
 	desc = "A white tactical shirt for tactical operations."
 	icon_state = "tac"
 	has_sensor = 0
+	item_flags = ITEM_FLAG_THICKMATERIAL
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 0, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.9
 
@@ -49,3 +45,4 @@
 	icon_state = "alpha-uniform"
 	armor = list(melee = 30, bullet = 30, laser = 10, energy = 0, bomb = 5, bio = 0, rad = 0)
 	siemens_coefficient = 0.9
+	item_flags = ITEM_FLAG_THICKMATERIAL

@@ -547,7 +547,7 @@ BLIND     // can't see anything
 /obj/item/clothing/mask/proc/filter_air(datum/gas_mixture/air)
 	return
 
-/obj/item/clothing/mask/proc/adjust_mask(var/mob/user)
+/obj/item/clothing/mask/proc/adjust_mask(var/mob/living/carbon/human/user)
 	set category = "Object"
 	set name = "Adjust mask"
 	set src in usr
@@ -576,6 +576,7 @@ BLIND     // can't see anything
 				to_chat(usr, "You pull [src] up to cover your face.")
 			update_clothing_icon()
 			user.update_action_buttons()
+			user.update_hair()
 
 /obj/item/clothing/mask/attack_self(mob/user)
 	if(pull_mask)

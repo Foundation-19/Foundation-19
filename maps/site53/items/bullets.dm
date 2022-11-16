@@ -301,9 +301,8 @@
 
 /obj/item/projectile/bullet/pistol
 	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
-	damage = 40 //9mm, .38, etc
+	damage = 37 //9mm, .38, etc
 	armor_penetration = 0
-	agony = 0
 
 /obj/item/projectile/bullet/pistol/rubber
 	damage = 3 //Pistol rubber
@@ -315,36 +314,30 @@
 /obj/item/projectile/bullet/pistol/medium
 	damage = 45 //.45
 	armor_penetration = 0
-	agony = 0
 
 /obj/item/projectile/bullet/pistol/medium/revolver
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
 	damage = 50 //.44 magnum or something
 	armor_penetration = 0
-	agony = 0
 
 /obj/item/projectile/bullet/pistol/strong //matebas
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 55 //.50AE
+	damage = 52 //.50AE
 	armor_penetration = 0
-	agony = 0
 
 /obj/item/projectile/bullet/pistol/vstrong //tacrevolver
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
 	damage = 60 //.500 S&W Magnum
 	armor_penetration = 0
-	agony = 0
 
 /obj/item/projectile/bullet/pistol/strong/revolver //revolvers
 	damage = 50 //Revolvers get snowflake bullets, to keep them relevant
 	armor_penetration = 0
-	agony = 0
 
 /obj/item/projectile/bullet/pistol/medium/smg //P90
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 45 //10mm
+	damage = 35 //10mm
 	armor_penetration = 10
-	agony = 0
 
 /obj/item/projectile/bullet/pistol/medium/smg/rubber
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
@@ -356,32 +349,27 @@
 
 /obj/item/projectile/bullet/pistol/medium/smg/hollowpoint
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 50 //10mm hollowpoint
+	damage = 45 //10mm hollowpoint
 	armor_penetration = 0
-	agony = 0
 	embed = 1
 
 /obj/item/projectile/bullet/pistol/medium/smg/ap
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 40 //10mm AP
+	damage = 35 //10mm AP
 	armor_penetration = 20
-	agony = 0
 
 /obj/item/projectile/bullet/pistol/medium/smg/silver
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
 	damage = 45 //10mm but i have no idea what bimmer wanted for classifaction, so i made it just better normal ammo
 	armor_penetration = 0
-	agony = 0
-
 
 /* shotgun projectiles */
 
 /obj/item/projectile/bullet/shotgun
 	name = "slug"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
-	damage = 80
+	damage = 60
 	armor_penetration = 0
-	agony = 0
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
@@ -395,11 +383,10 @@
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
-	damage = 35
+	damage = 22
 	pellets = 6
 	range_step = 1
 	spread_step = 10
-	agony = 0
 
 /obj/item/projectile/bullet/pellet/shotgun/rubbershot
 	name = "rubbershot"
@@ -417,25 +404,21 @@
 /obj/item/projectile/bullet/rifle
 	armor_penetration = 0
 	penetrating = 1
-	agony = 35
 
 /obj/item/projectile/bullet/rifle/a556
 	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
-	damage = 50
+	damage = 45
 	armor_penetration = 10
-	agony = 0
 
 /obj/item/projectile/bullet/rifle/a762
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
 	damage = 55
 	armor_penetration = 5
-	agony = 0
 
 /obj/item/projectile/bullet/rifle/a762nato
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
 	damage = 55
 	armor_penetration = 15
-	agony = 0
 
 /obj/item/projectile/bullet/rifle/a145
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
@@ -452,7 +435,6 @@
 	penetrating = 6
 	armor_penetration = 120
 	penetration_modifier = 1.5
-	agony = 0
 
 /* Miscellaneous */
 

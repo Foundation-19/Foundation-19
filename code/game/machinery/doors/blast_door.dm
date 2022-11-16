@@ -25,6 +25,9 @@
 	var/open_sound = 'sound/machines/blastdoor_open.ogg'
 	var/close_sound = 'sound/machines/blastdoor_close.ogg'
 
+	var/open_plane = DEFAULT_PLANE
+	var/closed_plane = OBJ_PLANE
+
 	closed_layer = ABOVE_WINDOW_LAYER
 	dir = 1
 	explosion_resistance = 25
@@ -59,6 +62,7 @@
 		set_density(0)
 		set_opacity(0)
 		layer = open_layer
+		plane = open_plane
 
 	implicit_material = SSmaterials.get_material_by_name(MATERIAL_PLASTEEL)
 
@@ -106,6 +110,7 @@
 	set_opacity(0)
 	sleep(15)
 	layer = open_layer
+	plane = open_plane
 	operating = 0
 
 // Proc: force_close()
@@ -115,6 +120,7 @@
 	operating = 1
 	playsound(src.loc, close_sound, 100, 1)
 	layer = closed_layer
+	plane = closed_plane
 	flick(icon_state_closing, src)
 	set_density(1)
 	update_nearby_tiles()
@@ -294,6 +300,8 @@
 
 	open_sound = 'sound/machines/shutters_open.ogg'
 	close_sound = 'sound/machines/shutters_close.ogg'
+	open_plane = OBJ_PLANE
+	plane = OBJ_PLANE
 	min_force = 15
 	maxhealth = 500
 	explosion_resistance = 10

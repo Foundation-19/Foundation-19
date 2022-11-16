@@ -66,4 +66,4 @@ GLOBAL_LIST_EMPTY(scp012s)
 				playsound(affecting, "sound/voice/emotes/[gender2text(affecting.gender)]_cry[pick(1,2)].ogg", 100)
 
 /obj/item/paper/proc/can_affect(var/mob/living/carbon/human/H)
-	return H.stat == CONSCIOUS && !(src in H.hidden_atoms) && !H.blinded && !istype(H.glasses, /obj/item/clothing/glasses/sunglasses)
+	return H.stat == CONSCIOUS && !H.blinded && !istype(H.glasses, /obj/item/clothing/glasses/sunglasses)

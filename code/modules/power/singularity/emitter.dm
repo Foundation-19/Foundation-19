@@ -7,7 +7,7 @@
 	icon_state = "emitter"
 	anchored = FALSE
 	density = TRUE
-	req_access = list(ACCESS_ENGINE_EQUIP)
+	req_access = list(ACCESS_ENGINEERING_LVL2)
 	active_power_usage = 100 KILOWATTS
 	obj_flags = OBJ_FLAG_ROTATABLE
 

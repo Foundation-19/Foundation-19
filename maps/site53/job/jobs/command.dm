@@ -94,6 +94,7 @@ ut // COMMAND
 		ACCESS_ENGINEERING_LVL1,
 		ACCESS_ENGINEERING_LVL2,
 		ACCESS_ENGINEERING_LVL3,
+		ACCESS_NETWORK,
 		ACCESS_SECURITY_LVL1,
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_SCIENCE_LVL2,
@@ -164,38 +165,67 @@ ut // COMMAND
 
 // MISC
 
-/datum/job/o5rep
-	title = "O5 Representative"
-	department = "Command"
+/datum/job/tribunal
+
+	title = "Internal Tribunal Department Officer"
+	department = "Civilian"
+	selection_color = "#2f2f7f"
 	department_flag = COM
 	total_positions = 1
 	spawn_positions = 1
-//	//duties = "<big><b>As the GOC Representative, your task is to assess the facility and generally advocate for hardline approaches in regards to anomalies and their containment, or destruction. You value human lives far over any anomaly, as does the Global Occult Coalition, and should see to it that lives are preserved where possible, even D-Class ones. Though combat is not your duty, you are issued a revolver to defend yourself with. This job is heavy roleplay: you're expected to be well-versed in actually talking to people on the matters described. Containment of SCPs and direct site matters are not your matters, so don't get involved.</b></big>"
-//	//supervisors = "Global Occult Coalition Regional Command"
-	economic_power = 5
+	supervisors = "The Tribunal Department"
+	economic_power = 4
 	minimal_player_age = 5
-	minimal_player_age = 9
 	ideal_character_age = 30
-	alt_titles = list("Ethics Committee Representative")
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/tribunal
+	allowed_branches = list(
+		/datum/mil_branch/civilian
+	)
+	allowed_ranks = list(
+		/datum/mil_rank/civ/classb
+	)
+	hud_icon = "hud05rep"
+	access = list(
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_ADMIN_LVL5
+	)
+
+	minimal_access = list()
+
+/datum/job/ethicsliaison
+
+	title = "Ethics Committee Liaison"
+	department = "Civilian"
+	selection_color = "#2f2f7f"
+	department_flag = COM
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "The Ethics Committee"
+	economic_power = 4
+	minimal_player_age = 5
+	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
-		/datum/mil_rank/civ/classa
+		/datum/mil_rank/civ/classb
 	)
 	hud_icon = "hud05rep"
-
 	access = list(
-		ACCESS_COM_COMMS,
 		ACCESS_ADMIN_LVL1,
 		ACCESS_ADMIN_LVL2,
 		ACCESS_ADMIN_LVL3,
 		ACCESS_ADMIN_LVL4,
-		ACCESS_ADMIN_LVL5,
-		ACCESS_CHAPEL_OFFICE
+		ACCESS_ADMIN_LVL5
 	)
+
 	minimal_access = list()
+
+
 
 /datum/job/goirep
 	title = "Global Occult Coalition Representative"

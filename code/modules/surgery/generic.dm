@@ -299,8 +299,8 @@
 		/obj/item/circular_saw = 100,
 		/obj/item/material/hatchet = 75
 	)
-	min_duration = 90
-	max_duration = 130
+	min_duration = 135
+	max_duration = 195
 	surgery_candidate_flags = 0
 
 /decl/surgery_step/generic/amputate/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)

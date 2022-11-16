@@ -171,6 +171,7 @@
 	icon_state = "work"
 	item_state = "wgloves"
 	force = 5
+	item_flags = ITEM_FLAG_THICKMATERIAL
 	siemens_coefficient = 0.50
 	permeability_coefficient = 0.05
 	armor = list(

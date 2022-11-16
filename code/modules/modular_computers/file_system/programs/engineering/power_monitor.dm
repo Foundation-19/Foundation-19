@@ -7,7 +7,7 @@
 	program_menu_icon = "battery-3"
 	extended_desc = "This program connects to sensors to provide information about electrical systems"
 	ui_header = "power_norm.gif"
-	required_access = ACCESS_ENGINE
+	required_access = ACCESS_ENGINEERING_LVL2
 	requires_ntnet = TRUE
 	network_destination = "power monitoring system"
 	size = 9

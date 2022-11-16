@@ -20,11 +20,10 @@ var/list/mining_floors = list()
 /turf/unsimulated/mineral/is_wall()
 	return TRUE
 
-/turf/simulated/mineral //wall piece
+/turf/simulated/mineral
 	name = "rock"
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "rock"
-	initial_gas = null
 	opacity = 1
 	density = TRUE
 	blocks_air = 1
@@ -435,8 +434,6 @@ var/list/mining_floors = list()
 	footstep_type = /decl/footsteps/asteroid
 
 	initial_flooring = null
-	initial_gas = null
-	temperature = TCMB
 	var/dug = 0       //0 = has not yet been dug, 1 = has already been dug
 	var/overlay_detail
 	has_resources = 1
