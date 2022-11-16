@@ -412,13 +412,14 @@
 		if(istype(chest))
 			chest.check_limb_support(wearer)
 
+	if(malfunction_delay > 0)
+		malfunction_delay--
+
 	if(!offline)
 		if(cell && cell.charge > 0 && electrified > 0)
 			electrified--
 
-		if(malfunction_delay > 0)
-			malfunction_delay--
-		else if(malfunctioning)
+		if(malfunctioning)
 			malfunctioning--
 			malfunction()
 
