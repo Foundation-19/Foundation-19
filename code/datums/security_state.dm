@@ -176,8 +176,8 @@
 */
 
 decl/security_state/default
-	all_security_levels = list(/decl/security_level/default/code_green, /decl/security_level/default/code_yellow, /decl/security_level/default/code_orange, /decl/security_level/default/code_red, /decl/security_level/default/code_black, /decl/security_level/default/code_gray, /decl/security_level/default/code_delta)
-	standard_security_levels = list(/decl/security_level/default/code_green, /decl/security_level/default/code_yellow, /decl/security_level/default/code_orange, /decl/security_level/default/code_red, /decl/security_level/default/code_black, /decl/security_level/default/code_gray)
+	all_security_levels = list(/decl/security_level/default/code_green, /decl/security_level/default/code_yellow, /decl/security_level/default/code_orange, /decl/security_level/default/code_red, /decl/security_level/default/code_black, /decl/security_level/default/code_ultrablack, /decl/security_level/default/code_delta)
+	standard_security_levels = list(/decl/security_level/default/code_green, /decl/security_level/default/code_yellow, /decl/security_level/default/code_orange, /decl/security_level/default/code_red, /decl/security_level/default/code_black, /decl/security_level/default/code_ultrablack)
 
 /decl/security_level/default
 	icon = 'icons/misc/security_state.dmi'
@@ -215,6 +215,7 @@ decl/security_state/default
 
 	overlay_alarm = "alarm_green"
 	overlay_status_display = "status_display_green"
+	alert_border = "alert_border_green"
 
 	var/static/datum/announcement/priority/security/security_announcement_green = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codegreen.ogg', volume = 150))
 
@@ -232,6 +233,7 @@ decl/security_state/default
 	light_color_status_display = COLOR_VIOLET
 	overlay_alarm = "alarm_yellow"
 	overlay_status_display = "status_display_yellow"
+	alert_border = "alert_border_yellow"
 
 	var/static/datum/announcement/priority/security/security_announcement_yellow = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/misc/notice1.ogg'))
 
@@ -253,6 +255,7 @@ decl/security_state/default
 	light_color_status_display = COLOR_ORANGE
 	overlay_alarm = "alarm_orange"
 	overlay_status_display = "status_display_orange"
+	alert_border = "alert_border_orange"
 
 //	crb = TRUE
 
@@ -276,6 +279,7 @@ decl/security_state/default
 	light_color_status_display = COLOR_RED
 	overlay_alarm = "alarm_red"
 	overlay_status_display = "status_display_red"
+	alert_border = "alert_border_red"
 
 //	crb = TRUE
 
@@ -298,8 +302,9 @@ decl/security_state/default
 	light_color_alarm = COLOR_RED
 	light_color_status_display = COLOR_NAVY_BLUE
 
-	overlay_alarm = "black_alarm"
+	overlay_alarm = "alarm_black"
 	overlay_status_display = "status_display_black"
+	alert_border = "alert_border_black"
 
 //	crb = TRUE
 
@@ -313,26 +318,27 @@ decl/security_state/default
 	security_announcement_black.Announce("The Site has been secured from subversive elements. Security is to sweep the facility and recontain all dangerous SCPs immediately.", "Attention! Code Black alert procedures now in effect!")
 	notify_station()
 
-/decl/security_level/default/code_gray
-	name = "code gray"
+/decl/security_level/default/code_ultrablack
+	name = "code ultrablack"
 
 	light_max_bright = 0.75
 	light_inner_range = 0.1
 	light_outer_range = 3
-	light_color_alarm = COLOR_GRAY
-	light_color_status_display = COLOR_GRAY
+	light_color_alarm = COLOR_RED
+	light_color_status_display = COLOR_NAVY_BLUE
 
-	overlay_alarm = "grey_alarm"
-	overlay_status_display = "status_display_grey"
+	overlay_alarm = "alarm_ultrablack"
+	overlay_status_display = "status_display_ultrablack"
+	alert_border = "alert_border_ultrablack"
 
-	var/static/datum/announcement/priority/security/security_announcement_gray = new(do_log = 0, do_newscast = 1, new_sound = sound())
+	var/static/datum/announcement/priority/security/security_announcement_ultrablack = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codeblack.ogg'))
 
-/decl/security_level/default/code_gray/switching_up_to()
-	security_announcement_gray.Announce("There have been confirmed reports of a hostile Group of Interest having infiltrated the Site. Security is allowed to terminate all suspected hostiles." ,"Attention! Code Gray alert procedures now in effect!")
+/decl/security_level/default/code_ultrablack/switching_up_to()
+	security_announcement_ultrablack.Announce("There have been confirmed reports of a hostile Group of Interest having infiltrated the Site. Security is allowed to terminate all suspected hostiles." ,"Attention! Code Ultrablack alert procedures now in effect!")
 	notify_station()
 
-/decl/security_level/default/code_gray/switching_down_to()
-	security_announcement_gray.Announce("The on-Site Nuclear Detonation sequence has been canceled, however, there is still a hostile Group of Interest within the facility.", "Attention! Code Gray alert procedures now in effect!")
+/decl/security_level/default/code_ultrablack/switching_down_to()
+	security_announcement_ultrablack.Announce("The on-Site Nuclear Detonation sequence has been canceled, however, there is still a hostile Group of Interest within the facility.", "Attention! Code Ultrablack alert procedures now in effect!")
 	notify_station()
 
 
