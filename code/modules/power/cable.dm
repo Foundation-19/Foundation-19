@@ -34,6 +34,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	var/d2 = 1
 
 	layer = EXPOSED_WIRE_LAYER
+	plane = DEFAULT_PLANE
 
 	color = COLOR_MAROON
 	var/obj/machinery/power/breakerbox/breaker_box

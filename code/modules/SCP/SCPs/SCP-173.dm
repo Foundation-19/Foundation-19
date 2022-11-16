@@ -99,7 +99,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 		visible_message("<span class='danger'>[src] snaps [H]'s neck!</span>")
 		playsound(loc, pick('sound/scp/spook/NeckSnap1.ogg', 'sound/scp/spook/NeckSnap3.ogg'), 50, 1)
 		H.death()
-		H.scp173_killed = TRUE
 		return
 	if(istype(A, /obj/machinery/door))
 		OpenDoor(A)
@@ -120,6 +119,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 /mob/living/scp_173/Life()
 	. = ..()
 	if(isobj(loc))
+		return
+	if(length(GLOB.clients) <= 30 && !client)
 		return
 	var/list/our_view = view(7, src)
 	for(var/A in next_blinks)
@@ -294,12 +295,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 /mob/living/scp_173/proc/BreachEffect()
 	var/area/A = get_area(src)
 	A.full_breach()
-
-// humans
-/mob/living/carbon/human/set_stat(_new)
-	..(_new)
-	if (stat != DEAD)
-		scp173_killed = FALSE
 
 // the cage
 /obj/structure/scp173_cage

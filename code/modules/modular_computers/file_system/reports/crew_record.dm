@@ -11,6 +11,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	filetype = "CDB"
 	size = 2
 	var/icon/photo_front = null
+	var/icon/uncropped_photo_front = null
 	var/icon/photo_side = null
 	//More variables below.
 
@@ -24,12 +25,22 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 
 /datum/computer_file/report/crew_record/proc/load_from_mob(var/mob/living/carbon/human/H)
 	if(istype(H))
-		photo_front = getFlatIcon(H, SOUTH, always_use_defdir = 1)
-		photo_side = getFlatIcon(H, WEST, always_use_defdir = 1)
+		var/obj/item/card/id/id = H.GetIdCard()
+		if(id && istype(id))
+			photo_front = id.front
+			uncropped_photo_front = getFlatIcon(H, SOUTH, always_use_defdir = 1)
+			photo_side = id.side
+		else
+			uncropped_photo_front = getFlatIcon(H, SOUTH, always_use_defdir = 1)
+			photo_front = uncropped_photo_front.Crop(9, 18, 23, 32)
+			photo_side = getFlatIcon(H, WEST, always_use_defdir = 1)
+			photo_side.Crop(9, 18, 23, 32)
 	else
 		var/mob/living/carbon/human/dummy = new()
-		photo_front = getFlatIcon(dummy, SOUTH, always_use_defdir = 1)
+		uncropped_photo_front = getFlatIcon(dummy, SOUTH, always_use_defdir = 1)
+		photo_front = uncropped_photo_front.Crop(9, 18, 23, 32)
 		photo_side = getFlatIcon(dummy, WEST, always_use_defdir = 1)
+		photo_side.Crop(9, 18, 23, 32)
 		qdel(dummy)
 
 	// Add honorifics, etc.

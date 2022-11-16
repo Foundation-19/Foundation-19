@@ -50,3 +50,63 @@
   MACIEKBAKI:
   - bugfix: EZ Med Storage gravity should work properly (just before the doors, that
       one)
+2022-11-08:
+  cheesePizza2:
+  - rscadd: New logos for documents! Now the science, medical, and administrative
+      department (among others) can specialize their paperwork better.
+  - rscadd: Codex updated! Examine a pen and hit the codex button for a guide on paperwork.
+  - imageadd: Manufacturing department logo is available (obtained from the same location
+      as many of the other images).
+  - imagedel: Baystation logos (NT logos, for example) are gone.
+  - code_imp: htmltopencode was updated as well, so logos should properly re-pencodify
+2022-11-09:
+  Tsurupeta:
+  - rscadd: IDs and Crew Records now contain cropped photos of people without their
+      headgear.
+2022-11-10:
+  MACIEKBAKI:
+  - bugfix: Shoes are now made thick enough to not allow injection using a syringe.
+  - bugfix: Foundation-Issued Tactical Gloves are now also made thick enough to prevent
+      injection.
+  - bugfix: Amputation surgery should no longer be instant, hopefully. Although same
+      goes for all surgery.
+  Tsurupeta:
+  - bugfix: Masks now redraw hair on adjust.
+  - bugfix: Mineral walls no longer contain vacuum inside of them.
+  Yawet330:
+  - tweak: 294 has recieved a small rework to make it less of a threat to round integrity.
+  cheesePizza2:
+  - imageadd: the APPROVE Stamp now has a sprite. It is no longer invisible
+2022-11-11:
+  CristoMagisto:
+  - bugfix: fixed syndie agent card name not changing when appearance is changed
+  Tsurupeta:
+  - rscadd: Added openspace blur effetcs.
+  - rscadd: Added effect that draws shadows from objects.
+  - bugfix: Rewrote Vision Cone to use alpha filter masks.
+  Yawet330:
+  - bugfix: No more synthetic immortality
+2022-11-12:
+  CapCamIII:
+  - rscadd: MTF teams are equipped with M4A1 with extended magazines in their rooms.
+  - rscadd: Brand new MTF/CentCom, slightly bigger.
+  - rscdel: Old MTF/CentCom is no more.
+  - balance: Adds spare gear to MTF base.
+  - bugfix: The the flare-gun launcher MTF get now uses the correct flare type.
+  TitanicEngineer(Titanized):
+  - balance: Grants the Chief Engineer access to administration-related tools.
+  - balance: Grants the communications officer access to SCiPNET monitoring programs.
+  - bugfix: Switches deprecated Torch engineering access to Site53's access model.
+2022-11-13:
+  Tsurupeta:
+  - bugfix: fixed skill-time multiplier being 0 at high skill levels.
+  - balance: nerfed EZ and LCZ ZC bullet armor a lot, nerfed other armor a little.
+  - balance: nerfed bullet damage and AP values slightly, nerfed slug damage a lot(they
+      are still extremely lethal, but not overly so).
+  Yawet330:
+  - tweak: Le brain in le chest. (Its no longer all in le head)
+2022-11-16:
+  CristoMagisto69:
+  - rscadd: voice changer masks now copy the item_flags of the masks they're copying,
+      i.e. internals masks can be used as internals
+  - bugfix: laptop sprite showing screen when closed

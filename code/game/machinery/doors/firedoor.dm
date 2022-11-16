@@ -13,7 +13,7 @@
 	var/panel_file = 'icons/obj/doors/hazard/panel.dmi'
 	var/welded_file = 'icons/obj/doors/hazard/welded.dmi'
 	icon_state = "open"
-	req_access = list(list(ACCESS_ATMOSPHERICS, ACCESS_ENGINE_EQUIP))
+	req_access = list(list(ACCESS_ATMOSPHERICS, ACCESS_ENGINEERING_LVL2))
 	autoset_access = FALSE
 	opacity = FALSE
 	density = FALSE

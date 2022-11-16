@@ -119,9 +119,6 @@
 	var/scp_013_instance = FALSE
 	var/scp_013_stage = 0
 
-	// SCP-173
-	var/scp173_killed = FALSE
-
 	// SCP-049
 	var/pre_scp049_name = ""
 	var/pre_scp049_real_name = ""

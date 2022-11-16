@@ -53,6 +53,7 @@
 	icon_state = "redshirt2"
 	item_state = "r_suit"
 	worn_state = "redshirt2"
+	item_flags = ITEM_FLAG_THICKMATERIAL
 	armor = list(
 		melee = ARMOR_MELEE_SMALL
 		)

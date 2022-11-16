@@ -14,7 +14,7 @@ var/global/list/navbeacons = list()
 	var/location = ""	// location response text
 	var/list/codes = list()		// assoc. list of transponder codes
 
-	req_access = list(ACCESS_ENGINE)
+	req_access = list(ACCESS_ENGINEERING_LVL1)
 
 /obj/machinery/navbeacon/New()
 	..()

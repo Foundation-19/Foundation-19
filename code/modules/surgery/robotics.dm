@@ -517,7 +517,7 @@
 
 /decl/surgery_step/robotics/install_mmi/assess_bodypart(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = ..()
-	if(affected && target_zone == BP_HEAD)
+	if(affected && target_zone == BP_CHEST)
 		return affected
 
 /decl/surgery_step/robotics/install_mmi/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)

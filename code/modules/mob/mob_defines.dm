@@ -1,6 +1,5 @@
 /mob
 	density = TRUE
-	plane = DEFAULT_PLANE
 	layer = MOB_LAYER
 
 	appearance_flags = PIXEL_SCALE | LONG_GLIDE

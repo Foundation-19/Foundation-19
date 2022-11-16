@@ -105,7 +105,7 @@
 // ZONE COMMANDER OUTFITS.
 /decl/hierarchy/outfit/job/site90/crew/security/ltofficerhcz
 	name = OUTFIT_JOB_NAME("HCZ Zone Commander")
-	uniform = /obj/item/clothing/under/scpguardarmband
+	uniform = /obj/item/clothing/under/scp/hcz/dark/armband
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/zcseclvl4hcz)
@@ -124,7 +124,7 @@
 /decl/hierarchy/outfit/job/site90/crew/security/ltofficerlcz
 	name = OUTFIT_JOB_NAME("LCZ Zone Commander")
 	flags = OUTFIT_RESET_EQUIPMENT
-	uniform = /obj/item/clothing/under/scp/lczwhiteuniformarmband
+	uniform = /obj/item/clothing/under/scp/lcz/armband
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/zcseclvl3lcz)
@@ -134,15 +134,15 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/clothing/glasses/sunglasses/sechud/goggles = 1)
+	backpack_contents = list(/obj/item/handcuffs = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
 /decl/hierarchy/outfit/job/site90/crew/security/ltofficerez
-	name = OUTFIT_JOB_NAME("EZ Senior Agent")
-	uniform = /obj/item/clothing/under/rank/head_of_security/corp
+	name = OUTFIT_JOB_NAME("EZ Supervisor")
+	uniform = /obj/item/clothing/under/rank/warden/corp
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/zcseclvl4ez)
 	l_ear = /obj/item/device/radio/headset/heads/cos
@@ -152,16 +152,16 @@
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/hos = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
 // GUARD OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerlcz
-	name = OUTFIT_JOB_NAME("LCZ Guard")
+	name = OUTFIT_JOB_NAME("LCZ Sergeant")
 	flags = OUTFIT_RESET_EQUIPMENT
-	uniform = /obj/item/clothing/under/lczwhitejunioruniformarmband
+	uniform = /obj/item/clothing/under/scp/lcz/armband
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor
 	shoes = /obj/item/clothing/shoes/dutyboots
@@ -170,7 +170,7 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/clothing/glasses/sunglasses/sechud/goggles = 1)
+	backpack_contents = list(/obj/item/handcuffs = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
@@ -178,8 +178,8 @@
 
 
 /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerhcz
-	name = OUTFIT_JOB_NAME("HCZ Guard")
-	uniform = /obj/item/clothing/under/scpguardarmband
+	name = OUTFIT_JOB_NAME("HCZ Sergeant")
+	uniform = /obj/item/clothing/under/scp/hcz/dark/armband
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/pcarrier/scp/tactical
 	shoes = /obj/item/clothing/shoes/dutyboots
@@ -195,43 +195,7 @@
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
 /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerez
-	name = OUTFIT_JOB_NAME("EZ Agent")
-	uniform = /obj/item/clothing/under/rank/warden/corp
-	shoes = /obj/item/clothing/shoes/dutyboots
-	id_types = list(/obj/item/card/id/seclvl3ez)
-	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
-	l_pocket = /obj/item/book/manual/scp/secsop
-	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
-	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
-	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list()
-	belt = /obj/item/storage/belt/holster/security/fullmk9
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
-	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
-	mask = /obj/item/clothing/mask/balaclava
-	gloves = /obj/item/clothing/gloves/tactical/scp
-
-/decl/hierarchy/outfit/job/site90/crew/security/medic
-	name = OUTFIT_JOB_NAME("EZ Combat Medic")
-	uniform = /obj/item/clothing/under/rank/warden/corp
-	shoes = /obj/item/clothing/shoes/dutyboots
-	id_types = list(/obj/item/card/id/seclvl3ez)
-	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
-	l_pocket = /obj/item/book/manual/scp/secsop
-	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
-	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
-	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/storage/firstaid/adv = 1, /obj/item/storage/firstaid/stab = 1)
-	belt = /obj/item/storage/belt/holster/security/fullmk9
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
-	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
-	mask = /obj/item/clothing/mask/balaclava
-	gloves = /obj/item/clothing/gloves/latex/nitrile/armored
-
-/decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerez
-	name = OUTFIT_JOB_NAME("EZ Junior Agent")
+	name = OUTFIT_JOB_NAME("EZ Senior Agent")
 	uniform = /obj/item/clothing/under/rank/security/corp
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/seclvl3ez)
@@ -243,7 +207,43 @@
 	back = /obj/item/storage/backpack/satchel/leather/black
 	backpack_contents = list()
 	belt = /obj/item/storage/belt/holster/security/fullmk9
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud
+	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
+	mask = /obj/item/clothing/mask/balaclava
+	gloves = /obj/item/clothing/gloves/tactical/scp
+
+/decl/hierarchy/outfit/job/site90/crew/security/medic
+	name = OUTFIT_JOB_NAME("EZ Combat Medic")
+	uniform = /obj/item/clothing/under/rank/security/corp
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_types = list(/obj/item/card/id/seclvl3ez)
+	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
+	l_pocket = /obj/item/book/manual/scp/secsop
+	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	back = /obj/item/storage/backpack/satchel/leather/black
+	backpack_contents = list(/obj/item/storage/firstaid/adv = 1, /obj/item/storage/firstaid/stab = 1)
+	belt = /obj/item/storage/belt/holster/security/fullmk9
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud
+	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
+	mask = /obj/item/clothing/mask/balaclava
+	gloves = /obj/item/clothing/gloves/latex/nitrile/armored
+
+/decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerez
+	name = OUTFIT_JOB_NAME("EZ Agent")
+	uniform = /obj/item/clothing/under/rank/security/corp
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_types = list(/obj/item/card/id/seclvl3ez)
+	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
+	l_pocket = /obj/item/book/manual/scp/secsop
+	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	back = /obj/item/storage/backpack/satchel/leather/black
+	backpack_contents = list()
+	belt = /obj/item/storage/belt/holster/security/fullmk9
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -284,9 +284,9 @@
 
 // JUNIOR GUARD OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerlcz
-	name = OUTFIT_JOB_NAME("LCZ Junior Guard")
+	name = OUTFIT_JOB_NAME("LCZ Guard")
 	flags = OUTFIT_RESET_EQUIPMENT
-	uniform = /obj/item/clothing/under/lczwhitejunioruniform
+	uniform = /obj/item/clothing/under/scp/lcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor
 	shoes = /obj/item/clothing/shoes/dutyboots
@@ -295,15 +295,15 @@
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
 	back = /obj/item/storage/backpack/satchel/leather/black
-	backpack_contents = list(/obj/item/handcuffs = 1, /obj/item/clothing/glasses/sunglasses/sechud/goggles = 1)
+	backpack_contents = list(/obj/item/handcuffs = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
 /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerhcz
-	name = OUTFIT_JOB_NAME("HCZ Junior Guard")
-	uniform = /obj/item/clothing/under/scpguard
+	name = OUTFIT_JOB_NAME("HCZ Guard")
+	uniform = /obj/item/clothing/under/scp/hcz/dark
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/junseclvl3hcz)
@@ -519,6 +519,16 @@
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
 	belt = /obj/item/gun/projectile/pistol/m1911
 
+/decl/hierarchy/outfit/job/site90/crew/civ/tribunal
+	name = OUTFIT_JOB_NAME("Tribunal Officer")
+	uniform = /obj/item/clothing/under/lawyer/black
+	shoes = /obj/item/clothing/shoes/laceup
+	l_pocket = /obj/item/device/radio
+	id_types = list(/obj/item/card/id/adminlvl5)
+	l_ear = /obj/item/device/radio/headset/heads/hop
+	back = /obj/item/storage/backpack/satchel/pocketbook
+	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
+	belt = /obj/item/gun/projectile/pistol/m1911
 
 // ENGINEERING STUFF
 /decl/hierarchy/outfit/job/ds90/crew/engineering/juneng
@@ -563,7 +573,7 @@
 // BRIG OFFICER
 /decl/hierarchy/outfit/job/torch/crew/security/brig_officer
 	name = OUTFIT_JOB_NAME("Brig Officer")
-	uniform = /obj/item/clothing/under/scp/whiteuniform
+	uniform = /obj/item/clothing/under/scp/lcz
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_types = list(/obj/item/card/id/seclvl2)
 	l_ear = /obj/item/device/radio/headset/headset_com
@@ -943,7 +953,7 @@
 
 /decl/hierarchy/outfit/job/site90/crew/security/lczguard/geared
 	name = OUTFIT_JOB_NAME("Junior Guard")
-	uniform = /obj/item/clothing/under/scp/whiteuniform
+	uniform = /obj/item/clothing/under/scp/lcz
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor
 	head = /obj/item/clothing/head/helmet/scp/security
 	shoes = /obj/item/clothing/shoes/dutyboots

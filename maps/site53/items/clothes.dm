@@ -1,35 +1,44 @@
-/obj/item/clothing/under/lczwhitejunioruniform
+/obj/item/clothing/under/scp/lcz
 	name = "LCZ Guard security uniform"
 	desc = "A sterile white uniform. Currently issued to LCZ Guard personnel."
 	icon_state = "white_lcz"
+	item_flags = ITEM_FLAG_THICKMATERIAL
 
-/obj/item/clothing/under/scp/lczwhiteuniform
-	name = "LCZ Officer security uniform"
-	desc = "A sterile white uniform. Currently issued to the LCZ officer."
-	icon_state = "white_sergeant_lcz"
-
-/obj/item/clothing/under/scp/lczwhiteuniformarmband
-	name = "LCZ Officer security uniform"
-	desc = "A sterile white uniform. Currently issued to the LCZ officer."
-	icon_state = "white_sergeant_lcz"
+/obj/item/clothing/under/scp/lcz/armband
 	starting_accessories = list(/obj/item/clothing/accessory/armband)
 
-/obj/item/clothing/under/hczwhitejunioruniform
+/obj/item/clothing/under/scp/lcz/sergeant
+	name = "LCZ Officer security uniform"
+	desc = "A sterile white uniform. Currently issued to the LCZ officer."
+	icon_state = "white_sergeant_lcz"
+
+/obj/item/clothing/under/scp/lcz/sergeant/armband
+	starting_accessories = list(/obj/item/clothing/accessory/armband)
+
+/obj/item/clothing/under/scp/hcz
+	item_flags = ITEM_FLAG_THICKMATERIAL
+
+/obj/item/clothing/under/scp/hcz/white
 	name = "HCZ Guard security uniform"
 	desc = "A sterile white uniform. Currently issued to HCZ Guard personnel."
 	icon_state = "white_hcz"
 
-/obj/item/clothing/under/lczwhitejunioruniformarmband
-	name = "LCZ Guard security uniform"
-	desc = "A sterile white uniform. Currently issued to LCZ Guard personnel."
-	icon_state = "white_lcz"
-	starting_accessories = list(/obj/item/clothing/accessory/armband)
-
-/obj/item/clothing/under/scp/hczwhiteuniform
+/obj/item/clothing/under/scp/hcz/white/sergeant
 	name = "HCZ Officer security uniform"
 	desc = "A sterile white uniform. Currently issued to the HCZ officer."
 	icon_state = "white_sergeant_hcz"
 
+/obj/item/clothing/under/scp/hcz/dark
+	name = "Security Tactical Jumpsuit"
+	desc = "Issued to SD Rapid Response Teams and high security area guards."
+	icon_state = "jumpsuit"
+	item_state = "jumpsuit"
+	worn_state = "jumpsuit"
+	gender_icons = 1
+	color = "#3d3d3d"
+
+/obj/item/clothing/under/scp/hcz/dark/armband
+	starting_accessories = list(/obj/item/clothing/accessory/armband)
 
 /obj/item/clothing/gloves/tactical/scp
 	desc = "These grey tactical gloves are made from a durable synthetic, and have hardened knuckles."
