@@ -280,12 +280,6 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = LARGE_ENCLOSED
 
-/area/site53/lowertrams/restaurant
-	name = "\improper Restaurant"
-	icon_state = "cafeteria"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	sound_env = MEDIUM_SOFTFLOOR
-
 /area/site53/lowertrams/restaurantkitchenarea
 	name = "\improper Restaurant Kitchen Area"
 	icon_state = "cafeteria"
@@ -511,12 +505,6 @@
 	icon_state = "pmaint"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	turf_initializer = /decl/turf_initializer/maintenance
-
-/area/site53/uez/o5repoffice
-	name = "\improper O5 Representative's Office"
-	sound_env = MEDIUM_SOFTFLOOR
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	icon_state = "head_quarters"
 
 /area/site53/uez/repoffice/internaltribunal
 	name = "\improper Internal Tribunal Departments Office"

@@ -1400,9 +1400,9 @@
 /turf/simulated/wall/titanium,
 /area/site53/uez/bridge)
 "dc" = (
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
-/area/site53/uez/repoffice/internaltribunal)
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/ethics)
 "dd" = (
 /obj/structure/bed/chair/shuttle{
 	name = "Reeducation Chair"
@@ -1543,11 +1543,6 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/machinery/camera/autoname{
-	c_tag = "Server Farm Control";
-	network = list("Engineering Network");
-	pixel_x = 10
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -2978,12 +2973,9 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "gZ" = (
-/obj/machinery/camera/autoname{
-	dir = 4;
-	network = list("Engineering Network")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/quartermaster/hangar)
+/obj/structure/table/woodentable/ebony,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/ethics)
 "ha" = (
 /obj/machinery/holosign/surgery{
 	dir = 8;
@@ -4162,6 +4154,9 @@
 /area/site53/medical/infirmreception)
 "kb" = (
 /obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	id_tag = "tribrep"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/internaltribunal)
 "kc" = (
@@ -4756,8 +4751,8 @@
 /turf/simulated/wall/titanium,
 /area/site53/medical/isolation)
 "lv" = (
-/obj/machinery/vending/snack,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
 /area/site53/uez/repoffice/internaltribunal)
 "lw" = (
 /obj/structure/cable{
@@ -5383,7 +5378,7 @@
 /area/site53/logistics/logistics)
 "nr" = (
 /obj/machinery/door/airlock/glass/command{
-	name = "Senior Administrative Offices"
+	name = "Ethics Representitive"
 	},
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -5707,6 +5702,9 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/blast/shutters{
+	id_tag = "tribrep"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/internaltribunal)
 "ow" = (
@@ -5722,7 +5720,8 @@
 /area/site53/entrancezone/substation)
 "ox" = (
 /obj/structure/table/woodentable/ebony,
-/obj/item/modular_computer/laptop/preset,
+/obj/item/paper_bin,
+/obj/item/pen/fancy/quill,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/repoffice/internaltribunal)
 "oy" = (
@@ -6075,6 +6074,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/tramhubhallwayentry)
+"qb" = (
+/obj/structure/table/woodentable/ebony,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/internaltribunal)
 "qf" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -6272,6 +6276,9 @@
 /area/site53/zonecommanderoffice)
 "ri" = (
 /obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	id_tag = "ethicsrep"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/ethics)
 "rk" = (
@@ -6284,8 +6291,9 @@
 /turf/simulated/mineral,
 /area/site53/surface/surface)
 "rn" = (
+/obj/machinery/vending/snack,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "ro" = (
 /obj/machinery/light,
 /obj/structure/closet,
@@ -6299,9 +6307,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/tramhubhallwayentry)
 "rp" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/internaltribunal)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/repoffice/ethics)
 "rq" = (
 /obj/structure/table/woodentable/ebony,
 /obj/machinery/photocopier,
@@ -6315,7 +6322,7 @@
 /area/site53/uez/repoffice/ethics)
 "rs" = (
 /obj/machinery/door/airlock/glass/command{
-	name = "Senior Administrative Offices"
+	name = "Internal Tribunal Department Representitive"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/internaltribunal)
@@ -6351,7 +6358,8 @@
 /area/site53/uez/repoffice/ethics)
 "ry" = (
 /obj/structure/table/woodentable/ebony,
-/obj/item/modular_computer/laptop/preset,
+/obj/item/paper_bin,
+/obj/item/pen/fancy/quill,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/repoffice/ethics)
 "rz" = (
@@ -7443,6 +7451,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/orange/bordercorner,
+/obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "vf" = (
@@ -9097,15 +9106,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/medical/morgue)
 "GV" = (
-/obj/effect/floor_decal/corner/brown/half{
-	dir = 4
-	},
-/obj/machinery/camera/autoname{
-	network = list("Light Containment Zone Network");
-	dir = 8
-	},
+/obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/uez/repoffice/internaltribunal)
 "GZ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -9339,6 +9342,13 @@
 /area/site53/uez/mcrsubstation)
 "Iy" = (
 /obj/structure/table/woodentable/ebony,
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "ethicsrep";
+	name = "Shutters";
+	pixel_x = -6;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/repoffice/ethics)
 "Iz" = (
@@ -9849,9 +9859,10 @@
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
 "MO" = (
-/obj/machinery/vending/cigarette,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/internaltribunal)
+/obj/structure/table/woodentable/ebony,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/ethics)
 "MQ" = (
 /obj/machinery/vending/hotfood{
 	dir = 4
@@ -9948,9 +9959,23 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
 "NM" = (
-/obj/machinery/hologram/holopad,
+/obj/structure/table/woodentable/ebony,
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "tribrep";
+	name = "UEZ Checkpoint Bubble";
+	pixel_x = -6;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "ethicsrep";
+	name = "Shutters";
+	pixel_x = -6;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "NP" = (
 /obj/item/gun/energy/ionrifle,
 /turf/unsimulated/mineral,
@@ -10470,6 +10495,16 @@
 /obj/effect/wallframe_spawn/reinforced/polarized/full,
 /turf/simulated/floor/plating,
 /area/site53/medical/surgery/op1)
+"SP" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/orange/border,
+/obj/effect/floor_decal/corner/orange/border,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "SS" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -10506,6 +10541,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
+"Tl" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/obj/machinery/camera/autoname,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "Tn" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 6
@@ -10734,15 +10776,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensicsstairwell)
 "Vb" = (
-/obj/machinery/light/spot{
-	dir = 4
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	id_tag = "ethicsrep"
 	},
-/obj/machinery/camera/autoname{
-	network = list("Light Containment Zone Network");
-	dir = 8
+/obj/machinery/door/blast/shutters{
+	id_tag = "ethicsrep"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/quartermaster/hangar)
+/area/site53/uez/repoffice/ethics)
 "Vf" = (
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/structure/table/reinforced,
@@ -10939,6 +10981,10 @@
 /obj/effect/floor_decal/corner/orange/bordercorner{
 	dir = 8
 	},
+/obj/effect/floor_decal/corner/orange/bordercorner{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "Xb" = (
@@ -11271,12 +11317,9 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "ZL" = (
-/obj/machinery/camera/autoname{
-	dir = 4;
-	network = list("Engineering Network")
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/internaltribunal)
 "ZM" = (
 /obj/effect/paint_stripe/green,
 /obj/structure/table/standard,
@@ -30241,7 +30284,7 @@ jH
 jH
 jH
 jb
-gZ
+jH
 jH
 jb
 jH
@@ -33070,7 +33113,7 @@ SS
 Sm
 kP
 kQ
-Vb
+jt
 jH
 jH
 jH
@@ -36145,7 +36188,7 @@ qU
 Uc
 vg
 vh
-GV
+Uc
 QA
 my
 nk
@@ -36659,7 +36702,7 @@ nE
 qV
 qK
 qM
-ZL
+qK
 qM
 sp
 qK
@@ -44286,8 +44329,8 @@ mB
 ri
 rr
 rr
-rn
-rn
+rp
+rp
 rq
 rB
 ms
@@ -44542,7 +44585,7 @@ lo
 mB
 ri
 rv
-Iy
+gZ
 xx
 xx
 rF
@@ -44795,7 +44838,7 @@ nY
 dt
 dt
 dt
-lo
+Tl
 mB
 ri
 LL
@@ -45055,9 +45098,9 @@ dt
 Zv
 WX
 ri
-rn
+rp
 xx
-NM
+dc
 xx
 VF
 rB
@@ -45310,11 +45353,11 @@ dA
 dA
 dt
 Uu
-mN
-ri
-rn
+SP
+Vb
+rp
 xx
-Iy
+MO
 ry
 rC
 rB
@@ -45569,11 +45612,11 @@ dt
 OK
 ve
 ri
-rn
+rp
 xx
 Iy
 rz
-rn
+rp
 rB
 tM
 tM
@@ -46079,7 +46122,7 @@ dA
 dA
 dA
 dA
-dc
+lv
 rs
 ov
 rB
@@ -46336,14 +46379,14 @@ dA
 dA
 dA
 dA
-dc
+lv
 mT
 ng
 ok
 mC
 mC
 bB
-dc
+lv
 bm
 bm
 bO
@@ -46593,14 +46636,14 @@ dA
 dA
 dA
 dA
-dc
+lv
 mT
 ny
 ny
 yI
 yI
 ga
-dc
+lv
 bC
 bK
 bO
@@ -46850,8 +46893,8 @@ dA
 dA
 dA
 dA
-dc
 lv
+rn
 ny
 ny
 rk
@@ -47107,11 +47150,11 @@ dA
 dA
 dA
 dA
-dc
+lv
 mF
 ny
 ny
-rp
+ZL
 ny
 mT
 kb
@@ -47364,14 +47407,14 @@ dA
 dA
 dA
 dA
-dc
-MO
+lv
+GV
 ny
 ny
-yI
+qb
 ox
 lE
-dc
+lv
 ru
 bI
 bX
@@ -47621,14 +47664,14 @@ dA
 dA
 dA
 dA
-dc
+lv
 JR
 ny
 ny
-yI
+NM
 mE
 mD
-dc
+lv
 bI
 rm
 bO
@@ -47878,14 +47921,14 @@ dA
 dA
 dA
 dA
-dc
+lv
 wj
 mT
 mT
 od
 mT
 mT
-dc
+lv
 rm
 rm
 rm
@@ -48135,13 +48178,13 @@ dA
 dA
 dA
 dA
-dc
-dc
-dc
-dc
-dc
-dc
-dc
+lv
+lv
+lv
+lv
+lv
+lv
+lv
 mG
 oS
 oS
