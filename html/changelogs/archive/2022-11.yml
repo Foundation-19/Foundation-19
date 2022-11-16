@@ -105,3 +105,8 @@
       are still extremely lethal, but not overly so).
   Yawet330:
   - tweak: Le brain in le chest. (Its no longer all in le head)
+2022-11-16:
+  CristoMagisto69:
+  - rscadd: voice changer masks now copy the item_flags of the masks they're copying,
+      i.e. internals masks can be used as internals
+  - bugfix: laptop sprite showing screen when closed
