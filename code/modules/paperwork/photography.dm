@@ -312,6 +312,10 @@ var/global/photo_count = 0
 	p.photo_size = photo_size
 	p.scribble = scribble
 
+	p.anomalous = anomalous
+	p.anomalymob = anomalymob
+	p.anomalytype = anomalytype
+
 	if(copy_id)
 		p.id = id
 
