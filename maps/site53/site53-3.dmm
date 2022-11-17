@@ -5311,6 +5311,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/senioragentoffice)
+"nd" = (
+/obj/structure/barricade/spike,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "ng" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -8551,6 +8555,7 @@
 /obj/item/stack/material/wood/ten,
 /obj/item/stack/material/wood/ten,
 /obj/item/stack/material/wood/ten,
+/obj/item/stamp/chameleon,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "BY" = (
@@ -8587,6 +8592,13 @@
 /obj/item/device/megaphone,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
+"Cn" = (
+/obj/structure/table/woodentable{
+	dir = 5
+	},
+/obj/item/pen/chameleon,
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 "Cp" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
@@ -9366,14 +9378,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "IF" = (
-/obj/structure/railing/mapped,
-/obj/machinery/camera/autoname{
-	c_tag = "Server Farm Control";
-	network = list("Engineering Network");
-	pixel_x = 10
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/quartermaster/hangar)
+/obj/structure/barricade,
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "IG" = (
 /obj/structure/table/standard,
 /obj/item/device/flashlight/lamp,
@@ -9975,6 +9982,10 @@
 /obj/item/defibrillator/loaded,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
+"NG" = (
+/obj/structure/barricade/spike,
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "NM" = (
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/monotile,
@@ -10631,6 +10642,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
+"TV" = (
+/obj/structure/barricade,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "TW" = (
 /obj/machinery/light{
 	dir = 4
@@ -11245,12 +11260,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "YU" = (
-/obj/machinery/camera/autoname{
-	network = list("Light Containment Zone Network");
-	dir = 8
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	id_tag = "tribrep"
+	},
+/obj/machinery/door/blast/shutters{
+	id_tag = "tribrep"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
+/area/site53/uez/repoffice/internaltribunal)
 "YV" = (
 /obj/effect/paint_stripe/white,
 /obj/structure/table/glass,
@@ -32319,7 +32337,7 @@ dA
 dA
 dA
 kG
-IF
+jp
 ju
 jQ
 uL
@@ -36181,7 +36199,7 @@ nk
 oV
 ul
 rV
-YU
+qK
 rV
 qK
 rV
@@ -47143,7 +47161,7 @@ ny
 gZ
 ny
 mT
-kb
+YU
 bJ
 bO
 aK
@@ -55953,7 +55971,7 @@ rm
 rm
 rm
 jg
-bm
+TV
 bO
 Qa
 rm
@@ -56208,9 +56226,9 @@ bS
 bO
 bO
 bK
+nd
 bm
-bm
-bO
+NG
 bO
 bK
 bO
@@ -56465,9 +56483,9 @@ bO
 bO
 bO
 bO
-bO
-bO
-bO
+IF
+NG
+IF
 bO
 Pr
 bO
@@ -62391,7 +62409,7 @@ Za
 Ao
 Ao
 zt
-JN
+Cn
 Ha
 Qe
 oS
