@@ -67,6 +67,7 @@
 	var/mob/living/carbon/human/wearer                        // The person currently wearing the rig.
 	var/image/mob_icon                                        // Holder for on-mob icon.
 	var/list/installed_modules = list()                       // Power consumption/use bookkeeping.
+	var/list/module_verbs = list()							  // List of verbs to add dependent on modules attached.
 
 	// Rig status vars.
 	var/open = 0                                              // Access panel status.
@@ -150,18 +151,21 @@
 		air_supply = new air_type(src)
 	if(glove_type)
 		gloves = new glove_type(src)
-		verbs |= /obj/item/rig/proc/toggle_gauntlets
+		module_verbs |= /obj/item/rig/proc/toggle_gauntlets
 	if(helm_type)
 		helmet = new helm_type(src)
-		verbs |= /obj/item/rig/proc/toggle_helmet
+		module_verbs |= /obj/item/rig/proc/toggle_helmet
 	if(boot_type)
 		boots = new boot_type(src)
-		verbs |= /obj/item/rig/proc/toggle_boots
+		module_verbs |= /obj/item/rig/proc/toggle_boots
 	if(chest_type)
 		chest = new chest_type(src)
 		if(allowed)
 			chest.allowed = allowed
-		verbs |= /obj/item/rig/proc/toggle_chest
+		module_verbs |= /obj/item/rig/proc/toggle_chest
+
+	for(var/module_verb in module_verbs)
+		verbs |= module_verb
 
 	for(var/obj/item/piece in list(gloves,helmet,boots,chest))
 		if(!istype(piece))
@@ -696,6 +700,17 @@
 		wearer.wearing_rig = src
 		update_icon()
 
+		if(M.client)
+			var/list/output_list = list()
+			for(var/thing in typesof(/obj/item/rig/verb))
+				var/procpath/verb_to_add = thing
+				output_list[++output_list.len] = list(verb_to_add.category, verb_to_add.name)
+			for(var/thing in module_verbs)
+				var/procpath/verb_to_add = thing
+				output_list[++output_list.len] = list(verb_to_add.category, verb_to_add.name)
+
+			M.client.stat_panel.send_message("add_verb_list", output_list)
+
 /obj/item/rig/proc/toggle_piece(var/piece, var/mob/initiator, var/deploy_mode)
 
 	if(sealing || !cell || !cell.charge)
@@ -801,6 +816,16 @@
 	if(wearer)
 		wearer.wearing_rig = null
 		wearer = null
+	if(user.client)
+		var/list/output_list = list()
+		for(var/thing in typesof(/obj/item/rig/verb))
+			var/procpath/verb_to_add = thing
+			output_list[++output_list.len] = list(verb_to_add.category, verb_to_add.name)
+		for(var/thing in module_verbs)
+			var/procpath/verb_to_add = thing
+			output_list[++output_list.len] = list(verb_to_add.category, verb_to_add.name)
+
+		user.client.stat_panel.send_message("remove_verb_list", output_list)
 
 /obj/item/rig/proc/deselect_module()
 	if (selected_module)
