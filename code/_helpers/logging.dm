@@ -130,6 +130,13 @@
 	if(config.log_world_output)
 		game_log("DD_OUTPUT", text)
 
+#ifdef REFERENCE_TRACKING_LOG
+#define log_reftracker(msg) log_world("## REF SEARCH [msg]")
+#else
+#define log_reftracker(msg)
+#endif
+
+
 /**
  * Appends a tgui-related log entry. All arguments are optional.
  */
