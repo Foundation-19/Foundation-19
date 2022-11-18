@@ -5,11 +5,15 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	density = FALSE
 	layer = ABOVE_HUMAN_LAYER
+	var/duration = 30
 
-/obj/effect/temporary/Initialize(var/mapload, var/duration = 30, var/_icon = 'icons/effects/effects.dmi', var/_state)
+/obj/effect/temporary/Initialize(var/mapload, v_duration, v_icon = 'icons/effects/effects.dmi', _state)
 	. = ..()
 	icon = _icon
-	icon_state = _state
+	if(_state)
+		icon_state = _state
+	if(_duration)
+		duration = _duration
 	QDEL_IN(src, duration)
 
 // Smoke effect
