@@ -1,0 +1,7 @@
+author: Yawet330
+delete-after: true
+changes:
+  - rscadd: Spare reactors
+  - balance: Lots of armory changes, LCZ has new stuff, HCZ has less stuff, EZ has
+      some stuff changed.
+  - rscadd: new AIC core
