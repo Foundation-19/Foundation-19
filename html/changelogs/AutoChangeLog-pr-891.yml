@@ -1,0 +1,6 @@
+author: Tsurupeta
+delete-after: true
+changes:
+  - bugfix: Fixed tile icon colors, so that tiles and monotiles share same darkness.
+  - bugfix: Reverted integrated HUD implant cost.
+  - bugfix: Fixed server lags from clogging (removed it).
