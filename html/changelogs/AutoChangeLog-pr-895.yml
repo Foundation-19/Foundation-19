@@ -1,4 +1,0 @@
-author: checkraisefold
-delete-after: true
-changes:
-  - bugfix: Examining 151 with a blindfold on no longer effects you.

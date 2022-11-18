@@ -110,3 +110,12 @@
   - rscadd: voice changer masks now copy the item_flags of the masks they're copying,
       i.e. internals masks can be used as internals
   - bugfix: laptop sprite showing screen when closed
+2022-11-18:
+  CristoMagisto69:
+  - bugfix: chameleon item icons not appearing properly when examining a mob
+  Tsurupeta:
+  - rscadd: Added dynamic painkiller effect on-hud representation.
+  - code_imp: Ported GC from /tg/
+  checkraisefold:
+  - bugfix: Examining 151 with a blindfold on no longer effects you.
+  - bugfix: Photocopied/faxed photos of 096 are now anomalous
