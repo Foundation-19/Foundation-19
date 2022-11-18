@@ -4164,6 +4164,18 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/site53/llcz/mining/miningops)
+"jA" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "jB" = (
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -6028,6 +6040,16 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
+"nX" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/structure/sign/scp/topside/SecureArealv4mtf{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "nY" = (
 /obj/item/device/camera_film,
 /obj/item/device/camera_film,
@@ -6120,6 +6142,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/uhcz/scp106parts)
+"ol" = (
+/obj/structure/sign/scp/topside/SecureArealv4mtf{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "om" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/scp106parts)
@@ -8965,18 +8993,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
-"vC" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8;
-	icon_state = "warning"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
 "vD" = (
 /obj/machinery/camera/network/lcz{
 	dir = 8
@@ -11470,6 +11486,16 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/lowertram/archive)
+"CC" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/structure/sign/scp/containers{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "CD" = (
 /obj/machinery/vending/weeb,
 /turf/simulated/floor/tiled/monotile/white,
@@ -11633,6 +11659,9 @@
 "Da" = (
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/corner/purple/border,
+/obj/machinery/button/blast_door{
+	id_tag = "500blast"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "Db" = (
@@ -12637,22 +12666,6 @@
 /obj/effect/floor_decal/corner/b_green/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
-"FN" = (
-/obj/machinery/door/airlock/research{
-	name = "Containment Chamber";
-	req_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL3")
-	},
-/obj/machinery/door/blast/regular{
-	dir = 8;
-	id_tag = "third3"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
 "FQ" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -14873,6 +14886,14 @@
 /obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
+"LK" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "LL" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/monotile/white,
@@ -15264,6 +15285,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/checkpoint)
+"Nc" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "Nd" = (
 /obj/item/device/megaphone,
 /obj/structure/table/reinforced,
@@ -16856,7 +16885,7 @@
 "Sf" = (
 /obj/machinery/door/blast/regular{
 	dir = 8;
-	id_tag = "third3"
+	id_tag = "500blast"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -17217,6 +17246,11 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
+"Tg" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/scp/topside/SecureArealv4mtf,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/scp500)
 "Th" = (
 /obj/structure/table/standard,
 /obj/item/storage/lockbox/vials,
@@ -17532,6 +17566,11 @@
 /obj/structure/closet,
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 6
+	},
+/obj/item/reagent_containers/pill/scp500,
+/obj/item/paper{
+	name = "hand-written note";
+	info = "I stole this pill while the Guard Commander was on his smoke break! Hahaha!"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -18080,6 +18119,15 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/lhcz/scp1102room)
+"VY" = (
+/obj/effect/floor_decal/corner/purple/border,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "VZ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -18355,6 +18403,11 @@
 "WM" = (
 /obj/machinery/door/airlock/security{
 	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -18797,12 +18850,21 @@
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
 "XZ" = (
-/obj/machinery/vending/cigarette,
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 1
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -18937,10 +18999,6 @@
 "Yw" = (
 /obj/structure/closet/acloset,
 /obj/item/gun/projectile/revolver/holdout,
-/obj/item/paper{
-	info = "To whoever this may concern : if you found this, nicely done, you got yourself a gun, and perhaps a shot at freedom. The guards are well armoured, so be careful. Find the correct opportunity. I no longer need it, and if they found this in my cell or worse, on me, I'd be in a whole world of trouble. Take it, hide it, don't show it to anyone. -A friend in orange";
-	name = "hand-written note"
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mine/unexplored)
 "Yx" = (
@@ -19222,6 +19280,10 @@
 "Zr" = (
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/medicalpost/morgue)
+"Zs" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "Zt" = (
 /obj/structure/cable/green,
 /obj/effect/floor_decal/corner/b_green/mono,
@@ -60897,7 +60959,7 @@ Lq
 Lq
 Lq
 Sf
-FN
+Sf
 Lq
 Lq
 gq
@@ -61152,9 +61214,9 @@ iN
 Xr
 Nw
 Tc
+CC
 tI
 tI
-vC
 tI
 Lq
 gq
@@ -61411,7 +61473,7 @@ Da
 Tc
 yy
 yy
-XK
+yy
 yy
 Lq
 gq
@@ -61663,12 +61725,12 @@ gq
 gq
 Lq
 zy
-yy
+Zs
 Bj
 Tc
 IW
 yy
-XK
+yy
 NP
 Lq
 gq
@@ -61920,12 +61982,12 @@ gq
 gq
 Lq
 XZ
-yy
-Bj
+Nc
+VY
 WM
-yy
-yy
-XK
+Nc
+Nc
+LK
 yy
 Lq
 gq
@@ -62694,11 +62756,11 @@ gq
 gq
 gq
 Lq
-yy
-yy
-XK
-yy
-Lq
+nX
+tI
+jA
+tI
+Tg
 gq
 gq
 gq
@@ -63465,11 +63527,11 @@ gq
 gq
 gq
 Lq
-yy
+ol
 yy
 XK
 yy
-Lq
+Tg
 gq
 gq
 gq

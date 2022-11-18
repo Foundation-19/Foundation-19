@@ -17378,10 +17378,6 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
 /area/site53/llcz/scp131)
-"aWU" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/llcz/scp500)
 "aWV" = (
 /obj/structure/cable/green{
 	d2 = 2;
@@ -17429,15 +17425,15 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/space)
 "aXa" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/space)
 "aXb" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/space)
 "aXd" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -17497,7 +17493,7 @@
 	},
 /obj/item/taperoll/engineering/applied,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/space)
 "aXj" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -17505,12 +17501,12 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/space)
 "aXk" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/space)
 "aXl" = (
 /obj/machinery/camera/autoname{
 	network = list("Light Containment Zone Network")
@@ -28830,6 +28826,10 @@
 /obj/structure/closet/l3closet/general,
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"mpr" = (
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/r_wall/prepainted,
+/area/space)
 "mpH" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 4
@@ -49644,10 +49644,10 @@ aWv
 aWv
 aWL
 aWv
-aWU
-aWU
+mpr
+mpr
 aXi
-aWU
+mpr
 ffp
 iCc
 aXp
@@ -49901,10 +49901,10 @@ aWv
 aWB
 aWM
 aWv
-aWU
+mpr
 aWZ
 aXj
-aWU
+mpr
 huZ
 otI
 aXp
@@ -50158,10 +50158,10 @@ aWv
 ebb
 aWC
 aWv
-aWU
+mpr
 aXa
 aXa
-aWU
+mpr
 iHI
 iHI
 ffp
@@ -50415,10 +50415,10 @@ aWv
 aWD
 aWN
 aWv
-aWU
+mpr
 aXb
 aXk
-aWU
+mpr
 oVq
 dmf
 ffp
@@ -50672,10 +50672,10 @@ aWv
 aWv
 aWv
 aWv
-aWU
-aWU
-aWU
-aWU
+mpr
+mpr
+mpr
+mpr
 ffp
 ffp
 ffp
