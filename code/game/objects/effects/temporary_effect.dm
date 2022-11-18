@@ -7,7 +7,7 @@
 	layer = ABOVE_HUMAN_LAYER
 	var/duration = 30
 
-/obj/effect/temporary/Initialize(var/mapload, v_duration, v_icon = 'icons/effects/effects.dmi', _state)
+/obj/effect/temporary/Initialize(mapload, _duration, _icon = 'icons/effects/effects.dmi', _state)
 	. = ..()
 	icon = _icon
 	if(_state)
