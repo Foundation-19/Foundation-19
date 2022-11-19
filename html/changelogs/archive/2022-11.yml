@@ -119,3 +119,13 @@
   checkraisefold:
   - bugfix: Examining 151 with a blindfold on no longer effects you.
   - bugfix: Photocopied/faxed photos of 096 are now anomalous
+2022-11-19:
+  Tsurupeta:
+  - bugfix: Fixed tile icon colors, so that tiles and monotiles share same darkness.
+  - bugfix: Reverted integrated HUD implant cost.
+  - bugfix: Fixed server lags from clogging (removed it).
+  Yawet330:
+  - rscadd: Spare reactors
+  - balance: Lots of armory changes, LCZ has new stuff, HCZ has less stuff, EZ has
+      some stuff changed.
+  - rscadd: new AIC core
