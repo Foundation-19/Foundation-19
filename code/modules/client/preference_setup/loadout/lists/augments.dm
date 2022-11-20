@@ -34,12 +34,12 @@
 
 /datum/gear/augment/integrated_health_hud
 	display_name = "integrated health HUD (head)"
-	cost = 8
+	cost = 4
 	path = /obj/item/organ/internal/augment/active/hud/health
 
 /datum/gear/augment/integrated_security_hud
 	display_name = "integrated security HUD (head)"
-	cost = 8
+	cost = 4
 	path = /obj/item/organ/internal/augment/active/hud/security
 
 /datum/gear/augment/integrated_janitor_hud
