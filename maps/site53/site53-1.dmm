@@ -15747,15 +15747,6 @@
 /obj/structure/sign/warning,
 /turf/simulated/wall/titanium,
 /area/site53/uhcz/scp8containment)
-"OL" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list("ACCESS_SECURITY_LEVEL1")
-	},
-/turf/unsimulated/mineral,
-/area/space)
 "OM" = (
 /obj/machinery/button/blast_door{
 	dir = 8;
@@ -17916,6 +17907,9 @@
 "VC" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/paper/scp/safe/scp500,
+/obj/machinery/button/blast_door{
+	id_tag = "500cb"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "VE" = (
@@ -63686,7 +63680,7 @@ Wa
 rg
 gq
 gq
-OL
+gq
 gq
 gq
 gq
