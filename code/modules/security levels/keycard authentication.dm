@@ -64,15 +64,6 @@
 	if(screen == 1)
 		dat += "Select an event to trigger:<ul>"
 
-		var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-		if(security_state.current_security_level == security_state.severe_security_level)
-			dat += "<li>Cannot modify the alert level at this time: [security_state.severe_security_level.name] engaged.</li>"
-		else
-			if(security_state.current_security_level == security_state.high_security_level)
-				dat += "<li><A href='?src=\ref[src];triggerevent=Revert alert'>Disengage [security_state.high_security_level.name]</A></li>"
-			else
-				dat += "<li><A href='?src=\ref[src];triggerevent=Red alert'>Engage [security_state.high_security_level.name]</A></li>"
-
 		if(!config.ert_admin_call_only)
 			dat += "<li><A href='?src=\ref[src];triggerevent=Emergency Response Team'>Emergency Response Team</A></li>"
 
@@ -150,15 +141,6 @@
 
 /obj/machinery/keycard_auth/proc/trigger_event()
 	switch(event)
-		if("Red alert")
-			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-			security_state.stored_security_level = security_state.current_security_level
-			security_state.set_security_level(security_state.high_security_level)
-			SSstatistics.add_field("alert_keycard_auth_red",1)
-		if("Revert alert")
-			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-			security_state.set_security_level(security_state.stored_security_level)
-			SSstatistics.add_field("alert_keycard_revert_red",1)
 		if("Grant Emergency Maintenance Access")
 			GLOB.using_map.make_maint_all_access()
 			SSstatistics.add_field("alert_keycard_auth_maintGrant",1)

@@ -38,8 +38,8 @@
 	// Stop the delta alert, and, if applicable, self-destruct timer.
 	bombing_station = 0
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-	if(security_state.current_security_level == security_state.severe_security_level)
-		security_state.decrease_security_level(TRUE)
+	if(security_state.current_security_level == security_state.destruction_security_level)
+		security_state.set_security_level(security_state.stored_security_level, TRUE)
 	// Reset our verbs
 	remove_verb(src, verbs)
 	add_ai_verbs()

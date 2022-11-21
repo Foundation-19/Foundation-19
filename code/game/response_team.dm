@@ -24,8 +24,8 @@ var/can_call_ert
 		return
 
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-	if(security_state.current_security_level_is_lower_than(security_state.high_security_level)) // Allow admins to reconsider if the alert level is below High
-		switch(alert("Current security level lower than [security_state.high_security_level.name]. Do you still want to dispatch a response team?",,"Yes","No"))
+	if(security_state.current_security_level_is_lower_than(security_state.severe_security_level)) // Allow admins to reconsider if the alert level is below High
+		switch(alert("Current security level lower than [security_state.severe_security_level.name]. Do you still want to dispatch a response team?",,"Yes","No"))
 			if("No")
 				return
 
@@ -99,7 +99,7 @@ var/can_call_ert
 	while(send_emergency_team == 0) // There is no ERT at the time.
 		var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 		var/index = list_find(security_state.all_security_levels, security_state.current_security_level)
-		ert_base_chance += 2**index
+		ert_base_chance += index
 		sleep(600 * 3) // Minute * Number of Minutes
 
 
