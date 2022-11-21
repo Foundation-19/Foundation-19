@@ -17390,7 +17390,6 @@
 /area/site53/llcz/scp500)
 "aXb" = (
 /obj/structure/table/reinforced,
-/obj/item/paper/scp/safe/scp500,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "aXd" = (
@@ -17450,6 +17449,7 @@
 	name = "SCP-500";
 	req_access = list(list("ACCESS_SECURITY_LEVEL5","ACCESS_SCIENCE_LEVEL5"))
 	},
+/obj/item/taperoll/engineering/applied,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "aXj" = (
@@ -17463,7 +17463,6 @@
 "aXk" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light,
-/obj/item/storage/pill_bottle/scp500,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "aXl" = (
