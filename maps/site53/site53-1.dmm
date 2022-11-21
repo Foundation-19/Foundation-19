@@ -19090,7 +19090,7 @@
 "Zb" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/highsecurity{
-	name = "SCP-1102-RU";
+	name = "SCP-500";
 	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /obj/structure/cable/green{
