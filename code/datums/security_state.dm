@@ -20,16 +20,12 @@
 	var/list/standard_security_levels = list(/decl/security_level/default/code_green, /decl/security_level/default/code_yellow, /decl/security_level/default/code_orange, /decl/security_level/default/code_red, /decl/security_level/default/code_black, /decl/security_level/default/code_ultrablack)
 
 /decl/security_state/New()
-	// Setup the imminent destruction security level
+	// Setup threshold security levels
 	destruction_security_level = decls_repository.get_decl(destruction_security_level)
-
-	// Setup the severe security level
 	severe_security_level = decls_repository.get_decl(severe_security_level)
-
-	// Setup the high security level
 	high_security_level = decls_repository.get_decl(high_security_level)
 
-	// Setup the current security level
+	// Setup starting security level
 	current_security_level = decls_repository.get_decl(all_security_levels[1])
 
 	// Setup the full list of available security levels now that we no longer need to use "x in all_security_levels"
