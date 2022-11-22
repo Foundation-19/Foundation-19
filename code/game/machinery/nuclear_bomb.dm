@@ -416,7 +416,7 @@ var/bomb_set
 	R.set_content("<center><img src=scplogo.png><br><br>\
 	<b>Warning: Classified<br>[GLOB.using_map.station_name] ARI-001 'Final Days' Instructions</b></center><br><br>\
 	In the event of a Code Black emergency, this document will guide you through the activation of ARI-001 \
-	'Final Days', detonating on-site Omega warheads. Please read carefully.<br><br>\
+	'Final Days', detonating on-site Omega warheads. Please read carefully.<hr>\
 	1) (Optional) Announce the imminent activation to any surviving personnel, and begin evacuation procedures.<br>\
 	2) Notify two administrative officers, both with ID cards with access to the ship's Keycard Authentication Devices.<br>\
 	3) Proceed to the self-destruct chamber, located in Engineering by the stairwell.<br>\
@@ -432,8 +432,7 @@ var/bomb_set
 	11) Activate the inserters. The cylinders will be pulled down into the self-destruct system.<br>\
 	12) Return to the terminal. Enter the desired countdown time.<br>\
 	13) When ready, disable the safety switch.<br>\
-	14) Start the countdown.<br><br>\
-	This concludes the instructions.", "site self-destruct instructions")
+	14) Start the countdown.", "site self-destruct instructions")
 
 	//stamp the paper
 	var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
