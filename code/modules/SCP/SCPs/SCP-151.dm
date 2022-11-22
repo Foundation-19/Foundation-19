@@ -26,6 +26,14 @@
 
 /obj/structure/scp151/examine(mob/living/user)
 	. = ..()
+
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.equipment_tint_total == TINT_BLIND)
+			return
+	if(user.stat)
+		return
+
 	if(!(user in victims) && istype(user))
 		victims += user //on examine, adds user into victims list
 	if (user in victims)

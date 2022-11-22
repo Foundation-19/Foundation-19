@@ -49,11 +49,11 @@
 /mob/proc/DeletePlanes()
 	for(var/y in effects_planemasters)
 		client.screen -= effects_planemasters["[y]"]
-	QDEL_ASSOC_LIST(effects_planemasters)
+	QDEL_LIST_ASSOC_VAL(effects_planemasters)
 	return TRUE
 
 /mob/Destroy()
-	QDEL_ASSOC_LIST(effects_planemasters)
+	QDEL_LIST_ASSOC_VAL(effects_planemasters)
 	return ..()
 
 /datum/hud
