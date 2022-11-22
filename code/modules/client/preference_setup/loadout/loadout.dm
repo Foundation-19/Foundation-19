@@ -179,43 +179,64 @@ var/list/gear_datums = list()
 		entry += "<tr style='vertical-align:top;'><td width=25%><a style='white-space:normal;' [ticked ? "class='linkOn' " : ""]href='?src=\ref[src];toggle_gear=\ref[G]'>[G.display_name]</a></td>"
 		entry += "<td width = 10% style='vertical-align:top'>[G.cost]</td>"
 		entry += "<td><font size=2>[G.get_description(get_gear_metadata(G,1))]</font>"
+
 		var/allowed = 1
-		if(allowed && (G.allowed_roles || G.denied_roles))
-			var/good_job = 0
-			var/bad_job = 0
-			var/list/jobchecks = list()
-			for(var/datum/job/J in jobs)
-				if(!(J.type in G.denied_roles))
-					if(J.type in G?.allowed_roles)
-						jobchecks += "<font color=55cc55>[J.title]</font>"
-						good_job = 1
-				else
-					jobchecks += "<font color=cc5555>[J.title]</font>"
-					bad_job = 1
-			allowed = good_job || !bad_job
-			if(length(jobchecks))
-				entry += "<br><i>"
-				entry += "[english_list(jobchecks)]</i>"
+		var/list/good_jobs = list()
+		var/list/bad_jobs = list()
+		var/list/jobchecks = list()
+		var/datum/mil_branch/player_branch
+		var/branch
 
-		if(allowed && G.allowed_branches)
-			var/list/branches = list()
-			for(var/datum/job/J in jobs)
-				if(pref.branches[J.title])
-					branches |= pref.branches[J.title]
-			if(length(branches))
-				var/list/branch_checks = list()
-				var/good_branch = 0
-				entry += "<br><i>"
-				for(var/branch in branches)
-					var/datum/mil_branch/player_branch = mil_branches.get_branch(branch)
-					if(player_branch.type in G.allowed_branches)
-						branch_checks += "<font color=55cc55>[player_branch.name]</font>"
-						good_branch = 1
+		for(var/datum/job/J in jobs)
+			if(pref.branches[J.title])
+				branch = pref.branches[J.title]
+				player_branch = mil_branches.get_branch(branch)
+
+			// If a branch permission is set, we'll work downwards
+			// We'll add all roles in a branch, and any allowed_roles, to our "allowed" list, and then remove the denied_roles
+			// Every other role is disallowed
+			if (G.allowed_branches)
+				if (player_branch.type in G.allowed_branches)
+					if (!(J.type in G.denied_roles))
+						good_jobs |= J
 					else
-						branch_checks += "<font color=cc5555>[player_branch.name]</font>"
-				allowed = good_branch
+						bad_jobs |= J
+				else if (J.type in G.allowed_roles)
+					good_jobs |= J
+				else
+					bad_jobs |= J
 
-				entry += "[english_list(branch_checks)]</i>"
+			// Otherwise, if a specific allow role permission is set, we'll check that it isn't in an overriding denied_roles list
+			else if (G.allowed_roles)
+				if (J.type in G.denied_roles)
+					bad_jobs |= J
+				else if (J.type in G.allowed_roles)
+					good_jobs |= J
+				else
+					bad_jobs |= J
+
+			// And if we only have deny role permissions, we'll set everyone else to allow
+			else if (G.denied_roles)
+				if (J.type in G.denied_roles)
+					bad_jobs |= J
+				else
+					good_jobs |= J
+
+			// No permissions set = everyone
+			else
+				good_jobs |= J
+
+		for(var/datum/job/J in bad_jobs)
+			jobchecks += "<font color=cc5555>[J.title]</font>"
+			allowed = 0
+
+		for(var/datum/job/J in good_jobs)
+			jobchecks += "<font color=55cc55>[J.title]</font>"
+			allowed = 1
+
+		if (length(jobchecks))
+			entry += "<br><i>"
+			entry += "[english_list(jobchecks)]</i>"
 
 		if(allowed && G.allowed_skills)
 			var/list/skills_required = list()//make it into instances? instead of path
