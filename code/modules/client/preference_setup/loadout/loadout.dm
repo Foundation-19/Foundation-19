@@ -179,15 +179,23 @@ var/list/gear_datums = list()
 		entry += "<tr style='vertical-align:top;'><td width=25%><a style='white-space:normal;' [ticked ? "class='linkOn' " : ""]href='?src=\ref[src];toggle_gear=\ref[G]'>[G.display_name]</a></td>"
 		entry += "<td width = 10% style='vertical-align:top'>[G.cost]</td>"
 		entry += "<td><font size=2>[G.get_description(get_gear_metadata(G,1))]</font>"
+		entry += "<br><i>"
 
 		var/allowed = 1
+
 		var/list/good_jobs = list()
 		var/list/bad_jobs = list()
 		var/list/jobchecks = list()
-		var/datum/mil_branch/player_branch
-		var/branch
+
+		var/permissions_type = 0
+		var/const/BLACK_LIST = (1<<0)
+		var/const/WHITE_LIST = (1<<1)
+		var/const/MIL_BRANCH = (1<<2)
 
 		for(var/datum/job/J in jobs)
+			var/datum/mil_branch/player_branch
+			var/branch
+
 			if(pref.branches[J.title])
 				branch = pref.branches[J.title]
 				player_branch = mil_branches.get_branch(branch)
@@ -196,6 +204,7 @@ var/list/gear_datums = list()
 			// We'll add all roles in a branch, and any allowed_roles, to our "allowed" list, and then remove the denied_roles
 			// Every other role is disallowed
 			if (G.allowed_branches)
+				permissions_type |= MIL_BRANCH
 				if (player_branch.type in G.allowed_branches)
 					if (!(J.type in G.denied_roles))
 						good_jobs |= J
@@ -208,6 +217,7 @@ var/list/gear_datums = list()
 
 			// Otherwise, if a specific allow role permission is set, we'll check that it isn't in an overriding denied_roles list
 			else if (G.allowed_roles)
+				permissions_type |= WHITE_LIST
 				if (J.type in G.denied_roles)
 					bad_jobs |= J
 				else if (J.type in G.allowed_roles)
@@ -217,6 +227,7 @@ var/list/gear_datums = list()
 
 			// And if we only have deny role permissions, we'll set everyone else to allow
 			else if (G.denied_roles)
+				permissions_type |= BLACK_LIST
 				if (J.type in G.denied_roles)
 					bad_jobs |= J
 				else
@@ -224,18 +235,28 @@ var/list/gear_datums = list()
 
 			// No permissions set = everyone
 			else
+				permissions_type = 0
 				good_jobs |= J
 
-		for(var/datum/job/J in bad_jobs)
-			jobchecks += "<font color=cc5555>[J.title]</font>"
-			allowed = 0
+		if (permissions_type & MIL_BRANCH || permissions_type & WHITE_LIST)
+			for(var/datum/job/J in bad_jobs)
+				jobchecks += "<font color=cc5555>[J.title]</font>"
+				allowed = 0
 
-		for(var/datum/job/J in good_jobs)
-			jobchecks += "<font color=55cc55>[J.title]</font>"
-			allowed = 1
+			for(var/datum/job/J in good_jobs)
+				jobchecks += "<font color=55cc55>[J.title]</font>"
+				allowed = 1
+
+		else if (permissions_type & BLACK_LIST)
+			entry += "Permitted for every role except: "
+			for(var/datum/job/J in bad_jobs)
+				jobchecks += "<font color=cc5555>[J.title]</font>"
+				allowed = 0
+
+			if(length(good_jobs))
+				allowed = 1
 
 		if (length(jobchecks))
-			entry += "<br><i>"
 			entry += "[english_list(jobchecks)]</i>"
 
 		if(allowed && G.allowed_skills)
