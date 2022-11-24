@@ -177,28 +177,6 @@
 	color = "#ff0000"
 	projectile_type = /obj/item/projectile/bullet/pistol/cap
 
-// EMP ammo.
-/obj/item/ammo_casing/pistol/emp
-	name = "haywire round"
-	desc = "A pistol bullet casing fitted with a single-use ion pulse generator."
-	projectile_type = /obj/item/projectile/ion/small
-	icon_state = "pistol-casing-emp"
-	matter = list(MATERIAL_STEEL = 130, MATERIAL_URANIUM = 100)
-
-/obj/item/ammo_casing/pistol/small/emp
-	name = "small haywire round"
-	desc = "A small bullet casing fitted with a single-use ion pulse generator."
-	projectile_type = /obj/item/projectile/ion/tiny
-	icon_state = "pistol-casing-emp"
-
-/obj/item/ammo_casing/shotgun/emp
-	name = "haywire slug"
-	desc = "A 12-gauge shotgun slug fitted with a single-use ion pulse generator."
-	icon_state = "shell-emp"
-	spent_icon = "shell-emp-spent"
-	projectile_type  = /obj/item/projectile/ion
-	matter = list(MATERIAL_STEEL = 260, MATERIAL_URANIUM = 200)
-
 /obj/item/ammo_casing/pistol/a357
 	desc = "A .357 bullet casing."
 	caliber = ".357"
@@ -369,10 +347,6 @@
 	projectile_type = /obj/item/projectile/energy/flash/flare
 	matter = list(DEFAULT_WALL_MATERIAL = 90, "glass" = 90)
 
-/obj/item/ammo_casing/rifle
-	icon_state = "rifle-casing"
-	spent_icon = "rifle-casing-spent"
-
 /obj/item/ammo_casing/rifle/a556
 	desc = "A 5.56mm NATO bullet casing."
 	caliber = "5.56x45mm"
@@ -413,20 +387,6 @@
 	desc = "A 14.5mm Armour Piercing Discarding Sabot shell."
 	projectile_type = /obj/item/projectile/bullet/rifle/a145/apds
 
-/obj/item/ammo_casing/rocket
-	name = "rocket shell"
-	desc = "A high explosive designed to be fired from a launcher."
-	icon_state = "rocketshell"
-	projectile_type = /obj/item/missile
-	caliber = "rocket"
-
-/obj/item/ammo_casing/cap
-	name = "cap"
-	desc = "A cap for children toys."
-	caliber = "caps"
-	color = "#ff0000"
-	projectile_type = /obj/item/projectile/bullet/pistol/cap
-
 // EMP ammo.
 /obj/item/ammo_casing/pistol/c38/emp
 	name = ".38 haywire round"
@@ -456,3 +416,16 @@
 	spent_icon = "shell-emp-spent"
 	projectile_type  = /obj/item/projectile/ion
 	matter = list(DEFAULT_WALL_MATERIAL = 260, "uranium" = 200)
+
+/obj/item/ammo_casing/pistol/emp
+	name = "haywire round"
+	desc = "A pistol bullet casing fitted with a single-use ion pulse generator."
+	projectile_type = /obj/item/projectile/ion/small
+	icon_state = "pistol-casing-emp"
+	matter = list(MATERIAL_STEEL = 130, MATERIAL_URANIUM = 100)
+
+/obj/item/ammo_casing/pistol/small/emp
+	name = "small haywire round"
+	desc = "A small bullet casing fitted with a single-use ion pulse generator."
+	projectile_type = /obj/item/projectile/ion/tiny
+	icon_state = "pistol-casing-emp"
