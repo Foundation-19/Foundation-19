@@ -187,10 +187,9 @@ var/list/gear_datums = list()
 		var/list/bad_jobs = list()
 		var/list/jobchecks = list()
 
-		var/permissions_type = 0
-		var/const/BLACK_LIST = (1<<0)
-		var/const/WHITE_LIST = (1<<1)
-		var/const/MIL_BRANCH = (1<<2)
+		var/is_blacklist = FALSE
+		var/is_whitelist = FALSE
+		var/is_mil_branch = FALSE
 
 		for(var/datum/job/J in jobs)
 			var/datum/mil_branch/player_branch
@@ -204,7 +203,7 @@ var/list/gear_datums = list()
 			// We'll add all roles in a branch, and any allowed_roles, to our "allowed" list, and then remove the denied_roles
 			// Every other role is disallowed
 			if (G.allowed_branches)
-				permissions_type |= MIL_BRANCH
+				is_mil_branch = TRUE
 				if (player_branch.type in G.allowed_branches)
 					if (!(J.type in G.denied_roles))
 						good_jobs |= J
@@ -217,7 +216,7 @@ var/list/gear_datums = list()
 
 			// Otherwise, if a specific allow role permission is set, we'll check that it isn't in an overriding denied_roles list
 			else if (G.allowed_roles)
-				permissions_type |= WHITE_LIST
+				is_whitelist = TRUE
 				if (J.type in G.denied_roles)
 					bad_jobs |= J
 				else if (J.type in G.allowed_roles)
@@ -227,7 +226,7 @@ var/list/gear_datums = list()
 
 			// And if we only have deny role permissions, we'll set everyone else to allow
 			else if (G.denied_roles)
-				permissions_type |= BLACK_LIST
+				is_blacklist = TRUE
 				if (J.type in G.denied_roles)
 					bad_jobs |= J
 				else
@@ -235,10 +234,9 @@ var/list/gear_datums = list()
 
 			// No permissions set = everyone
 			else
-				permissions_type = 0
 				good_jobs |= J
 
-		if (permissions_type & MIL_BRANCH || permissions_type & WHITE_LIST)
+		if (is_mil_branch || is_whitelist)
 			for(var/datum/job/J in bad_jobs)
 				jobchecks += "<font color=cc5555>[J.title]</font>"
 				allowed = 0
@@ -247,7 +245,7 @@ var/list/gear_datums = list()
 				jobchecks += "<font color=55cc55>[J.title]</font>"
 				allowed = 1
 
-		else if (permissions_type & BLACK_LIST)
+		else if (is_blacklist)
 			entry += "Permitted for every role except: "
 			for(var/datum/job/J in bad_jobs)
 				jobchecks += "<font color=cc5555>[J.title]</font>"
