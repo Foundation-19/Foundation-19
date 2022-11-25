@@ -14,10 +14,10 @@
 	var/decl/security_level/stored_security_level  // The security level that we are escalating from - please set and use this when reverting.
 
 	// List of all available security levels
-	var/list/all_security_levels = list(/decl/security_level/default/code_green, /decl/security_level/default/code_yellow, /decl/security_level/default/code_orange, /decl/security_level/default/code_red, /decl/security_level/default/code_black, /decl/security_level/default/code_ultrablack, /decl/security_level/default/code_delta)
+	var/list/all_security_levels = list(/decl/security_level/default/code_green, /decl/security_level/default/code_yellow, /decl/security_level/default/code_orange, /decl/security_level/default/code_red, /decl/security_level/default/code_black, /decl/security_level/default/code_pitchblack, /decl/security_level/default/code_delta)
 
 	// List of all normally selectable security levels
-	var/list/standard_security_levels = list(/decl/security_level/default/code_green, /decl/security_level/default/code_yellow, /decl/security_level/default/code_orange, /decl/security_level/default/code_red, /decl/security_level/default/code_black, /decl/security_level/default/code_ultrablack)
+	var/list/standard_security_levels = list(/decl/security_level/default/code_green, /decl/security_level/default/code_yellow, /decl/security_level/default/code_orange, /decl/security_level/default/code_red, /decl/security_level/default/code_black, /decl/security_level/default/code_pitchblack)
 
 /decl/security_state/New()
 	// Setup threshold security levels
@@ -194,8 +194,8 @@
 	light_max_bright = 0.5
 	light_inner_range = 1
 	light_outer_range = 2
-	light_color_alarm = COLOR_VIOLET
-	light_color_status_display = COLOR_VIOLET
+	light_color_alarm = COLOR_YELLOW
+	light_color_status_display = COLOR_YELLOW
 
 	overlay_alarm = "alarm_yellow"
 	overlay_status_display = "status_display_yellow"
@@ -288,8 +288,8 @@
 	security_announcement_black.Announce("The Site has been secured from subversive elements. Security is to sweep the facility and recontain all dangerous SCPs immediately.", "Attention! Code Black alert procedures now in effect!")
 	notify_station()
 
-/decl/security_level/default/code_ultrablack
-	name = "code ultrablack"
+/decl/security_level/default/code_pitchblack
+	name = "code pitchblack"
 
 	light_max_bright = 0.75
 	light_inner_range = 0.1
@@ -297,20 +297,20 @@
 	light_color_alarm = COLOR_RED
 	light_color_status_display = COLOR_NAVY_BLUE
 
-	overlay_alarm = "alarm_ultrablack"
-	overlay_status_display = "status_display_ultrablack"
-	alert_border = "alert_border_ultrablack"
+	overlay_alarm = "alarm_pitchblack"
+	overlay_status_display = "status_display_pitchblack"
+	alert_border = "alert_border_pitchblack"
 
 	description = "A hostile Group of Interest is invading or infiltrating the site."
 
-	var/static/datum/announcement/priority/security/security_announcement_ultrablack = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codeblack.ogg'))
+	var/static/datum/announcement/priority/security/security_announcement_pitchblack = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codeblack.ogg'))
 
-/decl/security_level/default/code_ultrablack/switching_up_to()
-	security_announcement_ultrablack.Announce("There have been confirmed reports of a hostile Group of Interest on-site. Security is allowed to terminate all suspected hostiles." ,"Attention! Code Ultrablack alert procedures now in effect!")
+/decl/security_level/default/code_pitchblack/switching_up_to()
+	security_announcement_pitchblack.Announce("There have been confirmed reports of a hostile Group of Interest on-site. Security is allowed to terminate all suspected hostiles." ,"Attention! Code pitchblack alert procedures now in effect!")
 	notify_station()
 
-/decl/security_level/default/code_ultrablack/switching_down_to()
-	security_announcement_ultrablack.Announce("The destructive threat has been neutralized, however there is still a hostile Group of Interest within the facility.", "Attention! Code Ultrablack alert procedures now in effect!")
+/decl/security_level/default/code_pitchblack/switching_down_to()
+	security_announcement_pitchblack.Announce("The destructive threat has been neutralized, however there is still a hostile Group of Interest within the facility.", "Attention! Code pitchblack alert procedures now in effect!")
 	notify_station()
 
 
