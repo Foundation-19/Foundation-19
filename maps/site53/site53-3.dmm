@@ -4855,7 +4855,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "lO" = (
-/obj/item/paper/scp/euclid/scp078,
+/obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "lR" = (
@@ -7727,6 +7727,10 @@
 /obj/item/boombox,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
+"wy" = (
+/obj/item/device/flashlight/lantern,
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 "wz" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/standard,
@@ -8150,7 +8154,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/hall)
 "zm" = (
-/obj/item/device/flashlight/lantern,
+/obj/item/paper/scp/euclid/scp078,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "zo" = (
@@ -9031,6 +9035,17 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"FD" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/landmark{
+	name = "don quixote"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "FQ" = (
 /obj/structure/table/standard,
 /obj/item/pen,
@@ -9552,7 +9567,7 @@
 /turf/simulated/wall/prepainted,
 /area/site53/medical/infirmary)
 "Ke" = (
-/obj/effect/decal/cleanable/cobweb,
+/obj/item/newspaper,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "Kg" = (
@@ -10419,6 +10434,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/infirmreception/waiting)
+"RM" = (
+/obj/effect/landmark{
+	name = "centre operative"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "RN" = (
 /obj/effect/paint_stripe/paleblue,
 /obj/structure/sign/warning/nosmoking_1,
@@ -10538,6 +10559,7 @@
 /area/site53/medical/surgery/hall)
 "SF" = (
 /obj/effect/decal/cleanable/cobweb2,
+/obj/item/paper/scp/euclid/scp895,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "SL" = (
@@ -10612,11 +10634,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"Ty" = (
-/obj/effect/decal/cleanable/cobweb2,
-/obj/item/paper/scp/euclid/scp895,
-/turf/simulated/floor/wood/maple,
-/area/site53/surface/surface)
 "TG" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -11033,7 +11050,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
 "WU" = (
-/obj/item/newspaper,
+/obj/effect/decal/cleanable/cobweb,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "WX" = (
@@ -11274,17 +11291,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
-"Yv" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/landmark{
-	name = "don quixote"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/surface/surface)
 "Yz" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/hologram/holopad,
@@ -41645,7 +41651,7 @@ at
 at
 pq
 jR
-Yv
+FD
 Eh
 gr
 gr
@@ -42159,7 +42165,7 @@ as
 ro
 ep
 nE
-nE
+RM
 jK
 nl
 nl
@@ -50890,11 +50896,11 @@ dA
 dA
 dA
 Qe
-zm
+wy
 Ao
 Ao
 Ao
-Ke
+WU
 Qe
 dA
 dA
@@ -51150,7 +51156,7 @@ Qe
 Ao
 Ao
 Ao
-WU
+Ke
 Ao
 Qe
 dA
@@ -51918,7 +51924,7 @@ dA
 dA
 dA
 Qe
-lO
+zm
 Ao
 ZY
 Ao
@@ -52177,9 +52183,9 @@ dA
 Qe
 uU
 Ao
+lO
+wy
 SF
-zm
-Ty
 Qe
 dA
 dA

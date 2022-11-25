@@ -585,6 +585,7 @@
 #include "code\game\antagonist\outsider\ninja.dm"
 #include "code\game\antagonist\outsider\paramount.dm"
 #include "code\game\antagonist\outsider\raider.dm"
+#include "code\game\antagonist\outsider\sharkpunchingcentre.dm"
 #include "code\game\antagonist\outsider\wizard.dm"
 #include "code\game\antagonist\station\apostle.dm"
 #include "code\game\antagonist\station\changeling.dm"
