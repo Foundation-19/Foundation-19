@@ -260,7 +260,7 @@
 	notify_station()
 
 /decl/security_level/default/code_red/switching_down_to()
-	security_announcement_red.Announce("All major threats to the Site have been neutralized or contained, but one or more Keter SCPs remain at large. Security should focus their efforts on recontaining the SCP. Full site lockdown disengaged.", "Attention! Code red alert procedures now in effect!")
+	security_announcement_red.Announce("All major threats to the Site have been neutralized or contained, but one or more Keter SCPs remain uncontained. Security should focus their efforts on recontaining the escaped SCP. Full site lockdown disengaged.", "Attention! Code red alert procedures now in effect!")
 	notify_station()
 
 /decl/security_level/default/code_black
