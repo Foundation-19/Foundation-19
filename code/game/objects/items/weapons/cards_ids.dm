@@ -401,6 +401,18 @@ var/const/NO_EMAG_ACT = -50
 	access = get_all_site_access()
 	..()
 
+/obj/item/card/id/murphylaw
+	name = "private investigator's ID"
+	desc = "The ID of a hardboiled private investigator."
+	item_state = "gold_id"
+	registered_name = "Investigator"
+	assignment = "Investigator"
+	detail_color = COLOR_AMBER
+
+/obj/item/card/id/murphylaw/New()
+	access = get_all_site_access()
+	..()
+
 /obj/item/card/id/synthetic
 	name = "\improper Synthetic ID"
 	desc = "Access module for lawed synthetics."

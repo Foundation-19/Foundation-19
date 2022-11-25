@@ -4854,6 +4854,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
+"lO" = (
+/obj/item/paper/scp/euclid/scp078,
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 "lR" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sunnybush,
@@ -6097,6 +6101,9 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/maincontrolroomstairs)
+"ql" = (
+/turf/space,
+/area/site53/surface/surface)
 "qm" = (
 /obj/machinery/light,
 /turf/simulated/open,
@@ -6880,6 +6887,11 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/titanium,
 /area/site53/maintenance/surfacewest)
+"tc" = (
+/obj/structure/table/woodentable,
+/obj/item/reagent_containers/food/drinks/bottle/specialwhiskey,
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 "td" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 9
@@ -7386,6 +7398,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
+"uU" = (
+/obj/machinery/dnaforensics,
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 "uV" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -8133,6 +8149,10 @@
 /obj/effect/floor_decal/corner/green/mono,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/hall)
+"zm" = (
+/obj/item/device/flashlight/lantern,
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 "zo" = (
 /obj/effect/floor_decal/corner/green/mono,
 /obj/structure/closet/crate/bin{
@@ -8869,6 +8889,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
+"EF" = (
+/obj/structure/bed/chair/wood{
+	dir = 4
+	},
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 "EJ" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile,
@@ -9525,6 +9551,10 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/infirmary)
+"Ke" = (
+/obj/effect/decal/cleanable/cobweb,
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 "Kg" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9694,6 +9724,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
+"Ll" = (
+/obj/structure/table/woodentable,
+/obj/item/paper/scp/euclid/scp049,
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 "Lm" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -9990,6 +10025,11 @@
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/internaltribunal)
+"NO" = (
+/obj/effect/decal/cleanable/cobweb2,
+/obj/item/newspaper,
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 "NP" = (
 /obj/item/gun/energy/ionrifle,
 /turf/unsimulated/mineral,
@@ -10496,6 +10536,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
+"SF" = (
+/obj/effect/decal/cleanable/cobweb2,
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 "SL" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -10568,6 +10612,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"Ty" = (
+/obj/effect/decal/cleanable/cobweb2,
+/obj/item/paper/scp/euclid/scp895,
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 "TG" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10657,6 +10706,11 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
+"Ua" = (
+/obj/structure/table/woodentable,
+/obj/item/forensics/sample_kit,
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 "Uc" = (
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 4
@@ -10908,6 +10962,11 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
+"Wc" = (
+/obj/structure/table/woodentable,
+/obj/item/forensics/sample_kit/powder,
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 "Wl" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
@@ -10973,6 +11032,10 @@
 /obj/structure/flora/pottedplant/stoutbush,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
+"WU" = (
+/obj/item/newspaper,
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 "WX" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -11054,6 +11117,13 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/grass,
 /area/site53/medical/infirmary)
+"Xz" = (
+/obj/structure/table/woodentable,
+/obj/item/forensics/swab,
+/obj/item/forensics/swab,
+/obj/item/forensics/swab,
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 "XD" = (
 /obj/effect/floor_decal/corner/orange/border,
 /obj/machinery/papershredder,
@@ -11204,6 +11274,17 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/chemistry)
+"Yv" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/landmark{
+	name = "don quixote"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "Yz" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/hologram/holopad,
@@ -11352,6 +11433,15 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/exam_room)
+"ZY" = (
+/obj/structure/bed/chair/wood{
+	dir = 8
+	},
+/obj/effect/landmark{
+	name = "murphy law"
+	},
+/turf/simulated/floor/wood/maple,
+/area/site53/surface/surface)
 
 (1,1,1) = {"
 dA
@@ -41555,7 +41645,7 @@ at
 at
 pq
 jR
-jR
+Yv
 Eh
 gr
 gr
@@ -46440,7 +46530,7 @@ bm
 bm
 bm
 bm
-bm
+ru
 ru
 bm
 bO
@@ -47468,7 +47558,7 @@ bm
 bm
 bm
 bO
-bO
+bm
 bm
 bm
 bm
@@ -48753,7 +48843,7 @@ bO
 bO
 bO
 bO
-fx
+bO
 bO
 bO
 bO
@@ -49518,7 +49608,7 @@ bX
 bO
 bO
 bO
-bO
+ql
 fx
 bO
 bm
@@ -49773,7 +49863,7 @@ rm
 bO
 bO
 rm
-rm
+bm
 rm
 rm
 bm
@@ -50030,7 +50120,7 @@ rm
 rm
 rm
 rm
-oS
+bm
 oS
 rm
 rm
@@ -50287,7 +50377,7 @@ oS
 oS
 oS
 oS
-oS
+bm
 oS
 oS
 oS
@@ -50542,13 +50632,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+Qe
+Qe
+pW
+Qe
+Qe
+Qe
+Qe
 dA
 dA
 oS
@@ -50799,13 +50889,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+Qe
+zm
+Ao
+Ao
+Ao
+Ke
+Qe
 dA
 dA
 dA
@@ -51056,13 +51146,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+Qe
+Ao
+Ao
+Ao
+WU
+Ao
+Qe
 dA
 dA
 dA
@@ -51313,13 +51403,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+Qe
+NO
+Ao
+EF
+Ao
+Ao
+Qe
 dA
 dA
 dA
@@ -51570,13 +51660,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+Qe
+Ua
+Ll
+Xz
+Wc
+tc
+Qe
 dA
 dA
 dA
@@ -51827,13 +51917,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+Qe
+lO
+Ao
+ZY
+Ao
+Ao
+Qe
 dA
 dA
 dA
@@ -52084,13 +52174,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+Qe
+uU
+Ao
+SF
+zm
+Ty
+Qe
 dA
 dA
 dA
@@ -52341,13 +52431,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+Qe
+Qe
+Qe
+Qe
+Qe
+Qe
+Qe
 dA
 dA
 dA
@@ -52601,9 +52691,9 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
+oS
+oS
+oS
 dA
 dA
 dA

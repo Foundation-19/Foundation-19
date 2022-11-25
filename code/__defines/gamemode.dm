@@ -30,7 +30,7 @@
 #define ANTAG_VOTABLE           (1<<8)  // Can be voted as an additional antagonist before roundstart.
 #define ANTAG_SET_APPEARANCE    (1<<9)  // Causes antagonists to use an appearance modifier on spawn.
 #define ANTAG_RANDOM_EXCEPTED   (1<<10) // If a game mode randomly selects antag types, antag types with this flag should be excluded.
-
+#define ANTAG_PATAPHYSICS       (1<<11) // Enables an antag to spawn through the Pataphysical Incursion Event
 // Mode/antag template macros.
 #define MODE_BORER         "borer"
 #define MODE_LOYALIST      "loyalist"
@@ -53,6 +53,8 @@
 #define MODE_GODCULTIST    "god cultist"
 #define MODE_THRALL        "mind thrall"
 #define MODE_PARAMOUNT     "paramount"
+#define MODE_MURPHYLAW     "murphy law"
+#define MODE_DONQUIXOTE    "don quixote"
 #define MODE_FOUNDATION    "foundation agent"
 #define MODE_MISC_AGITATOR "provocateur"
 #define MODE_HUNTER        "hunter"
