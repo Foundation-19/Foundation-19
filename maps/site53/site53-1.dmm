@@ -17908,7 +17908,8 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/paper/scp/safe/scp500,
 /obj/machinery/button/blast_door{
-	id_tag = "500cb"
+	id_tag = "500cb";
+	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
