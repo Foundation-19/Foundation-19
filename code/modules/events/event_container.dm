@@ -126,7 +126,7 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 	severity = EVENT_LEVEL_MUNDANE
 	available_events = list(
 		// Severity level, event name, event type, base weight, role weights, one shot, min weight, max weight. Last two only used if set and aren't nulls
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "APC Damage",					/datum/event/apc_damage,			20, 	list(ASSIGNMENT_ENGINEER = 10)),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "APC Damage",					/datum/event/apc_damage,			0, 	list(ASSIGNMENT_ENGINEER = 10)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Brand Intelligence",			/datum/event/brand_intelligence,	10, 	list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_JANITOR = 10)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Camera Damage",					/datum/event/camera_damage,			20, 	list(ASSIGNMENT_ENGINEER = 10)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Economic News",					/datum/event/economic_event,		100),
@@ -150,12 +150,12 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 /datum/event_container/moderate
 	severity = EVENT_LEVEL_MODERATE
 	available_events = list(
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Nothing",								/datum/event/nothing,					100,		list(ASSIGNMENT_ANY = -5)),
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Nothing",								/datum/event/nothing,					19,		list(ASSIGNMENT_ANY = -5)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Appendicitis", 						/datum/event/spontaneous_appendicitis, 	0,		list(ASSIGNMENT_MEDICAL = 10), 1),
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Communication Blackout",				/datum/event/communications_blackout,	50,		list(ASSIGNMENT_AI = 100, ASSIGNMENT_ENGINEER = 20)),
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Communication Blackout",				/datum/event/communications_blackout,	35,		list(ASSIGNMENT_AI = 100, ASSIGNMENT_ENGINEER = 20)),
 		new /datum/event_meta/no_overmap(EVENT_LEVEL_MODERATE, "Electrical Storm",			/datum/event/electrical_storm, 			10,		list(ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_JANITOR = 10)),
 //		new /datum/event_meta/no_overmap(EVENT_LEVEL_MODERATE, "Gravity Failure",			/datum/event/gravity,	 				50,		list(ASSIGNMENT_ENGINEER = 20)),
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Grid Check",							/datum/event/grid_check, 				40,		list(ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_ANY = 5)),
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Grid Check",							/datum/event/grid_check, 				0,		list(ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_ANY = 5)),
 		new /datum/event_meta/no_overmap(EVENT_LEVEL_MODERATE, "Ion Storm",					/datum/event/ionstorm, 					0,		list(ASSIGNMENT_AI = 50, ASSIGNMENT_CYBORG = 50, ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_SCIENTIST = 5)),
 		new /datum/event_meta/no_overmap(EVENT_LEVEL_MODERATE, "Meteor Shower",				/datum/event/meteor_wave,				0,		list(ASSIGNMENT_ENGINEER = 20)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Prison Break",							/datum/event/prison_break,				0,		list(ASSIGNMENT_SECURITY = 100)),
