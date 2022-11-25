@@ -1864,7 +1864,6 @@
 #include "code\modules\events\prison_break.dm"
 #include "code\modules\events\radiation_storm.dm"
 #include "code\modules\events\random_antagonist.dm"
-#include "code\modules\events\pataphysics.dm"
 #include "code\modules\events\sensor_suit_jamming.dm"
 #include "code\modules\events\shipping_error.dm"
 #include "code\modules\events\solar_storm.dm"
