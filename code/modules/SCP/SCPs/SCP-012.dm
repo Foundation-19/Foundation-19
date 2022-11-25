@@ -66,4 +66,5 @@ GLOBAL_LIST_EMPTY(scp012s)
 				playsound(affecting, "sound/voice/emotes/[gender2text(affecting.gender)]_cry[pick(1,2)].ogg", 100)
 
 /obj/item/paper/proc/can_affect(var/mob/living/carbon/human/H)
-	return H.stat == CONSCIOUS && !H.blinded && !istype(H.glasses, /obj/item/clothing/glasses/sunglasses)
+	// technically 012 is memetic, but having no counter and being insta-GBJ'd seems dumb
+	return H.stat == CONSCIOUS && H.equipment_tint_total != TINT_BLIND
