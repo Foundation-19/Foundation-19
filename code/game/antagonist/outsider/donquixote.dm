@@ -20,9 +20,7 @@ GLOBAL_DATUM_INIT(quixotes, /datum/antagonist/donquixote, new)
 	player.equip_to_slot_or_del(new /obj/item/clothing/suit/champarmor(player), slot_wear_suit)
 	player.equip_to_slot_or_del(new /obj/item/material/sword(player), slot_belt)
 
-
 /datum/antagonist/donquixote/update_antag_mob(var/datum/mind/player)
-
 	..()
 	var/datum/preferences/A = new() //Randomize appearance for the commando.
 	A.randomize_appearance_and_body_for(player.current)
@@ -37,4 +35,3 @@ GLOBAL_DATUM_INIT(quixotes, /datum/antagonist/donquixote, new)
 		H.age = rand(25,45)
 		H.dna.ready_dna(H)
 
-	return

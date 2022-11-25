@@ -409,9 +409,9 @@ var/const/NO_EMAG_ACT = -50
 	assignment = "Investigator"
 	detail_color = COLOR_AMBER
 
-/obj/item/card/id/murphylaw/New()
+/obj/item/card/id/murphylaw/Initialize()
 	access = get_all_site_access()
-	..()
+	return ..()
 
 /obj/item/card/id/synthetic
 	name = "\improper Synthetic ID"

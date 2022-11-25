@@ -38,5 +38,3 @@ GLOBAL_DATUM_INIT(operatives, /datum/antagonist/sharkpunchingcentre, new)
 		H.gender = MALE
 		H.age = rand(25,45)
 		H.dna.ready_dna(H)
-
-	return

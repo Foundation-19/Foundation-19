@@ -43,4 +43,3 @@ GLOBAL_DATUM_INIT(murphys, /datum/antagonist/murphylaw, new)
 		H.age = rand(25,45)
 		H.dna.ready_dna(H)
 
-	return

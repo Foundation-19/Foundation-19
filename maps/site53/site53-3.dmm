@@ -6101,9 +6101,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/maincontrolroomstairs)
-"ql" = (
-/turf/space,
-/area/site53/surface/surface)
 "qm" = (
 /obj/machinery/light,
 /turf/simulated/open,
@@ -49614,7 +49611,7 @@ bX
 bO
 bO
 bO
-ql
+bO
 fx
 bO
 bm
