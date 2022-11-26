@@ -72,9 +72,8 @@
 			return FALSE
 
 		if(client.prefs.organ_data[BP_CHEST] == "cyborg")
-			if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
-				to_chat(usr, "No FBP without whitelist")
-				return FALSE
+			to_chat(usr, "No FBP.")
+			return FALSE
 
 		var/should_warn = TRUE
 		if(client.prefs.job_high == job.title)
@@ -260,10 +259,9 @@
 /mob/new_player/proc/create_character(turf/spawn_turf)
 	spawning = TRUE
 	if(client.prefs.organ_data[BP_CHEST] == "cyborg")
-		if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
-			to_chat(src, "No FBP without whitelist.")
-			spawning = FALSE
-			return
+		to_chat(src, "No FBP.")
+		spawning = FALSE
+		return
 	close_spawn_windows()
 
 	var/mob/living/carbon/human/new_character
