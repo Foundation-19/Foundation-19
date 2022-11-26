@@ -28,7 +28,6 @@ GLOBAL_DATUM_INIT(murphys, /datum/antagonist/murphylaw, new)
 	create_id("Private Investigator", player)
 
 /datum/antagonist/murphylaw/update_antag_mob(var/datum/mind/player)
-
 	..()
 	var/datum/preferences/A = new() //Randomize appearance for the commando.
 	A.randomize_appearance_and_body_for(player.current)
