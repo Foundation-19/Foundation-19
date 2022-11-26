@@ -24,7 +24,6 @@ GLOBAL_DATUM_INIT(operatives, /datum/antagonist/sharkpunchingcentre, new)
 
 
 /datum/antagonist/sharkpunchingcentre/update_antag_mob(var/datum/mind/player)
-
 	..()
 	var/datum/preferences/A = new() //Randomize appearance for the commando.
 	A.randomize_appearance_and_body_for(player.current)
