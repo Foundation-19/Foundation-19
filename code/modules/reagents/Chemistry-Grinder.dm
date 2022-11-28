@@ -18,7 +18,9 @@
 	var/list/items = list()
 	var/max_items = 10
 	var/max_item_size = ITEM_SIZE_HUGE
-	var/list/banned_items = list()
+	var/list/banned_items = list(
+	/obj/item/reagent_containers/pill/scp500
+	)
 	var/list/storage_types = list(
 		/obj/item/storage/pill_bottle,
 		/obj/item/storage/sheetsnatcher,
