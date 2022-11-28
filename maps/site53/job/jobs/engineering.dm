@@ -27,9 +27,10 @@
 	)
 	minimal_access = list()
 
-	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_DEVICES     = SKILL_MASTER,
-	                    SKILL_SCIENCE     = SKILL_MASTER)
+	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MASTER,
+	                    SKILL_ELECTRICAL   = SKILL_MASTER,
+	                    SKILL_ATMOS        = SKILL_MASTER,
+	                    SKILL_ENGINES      = SKILL_MASTER)
 
 /datum/job/eng
 	title = "Engineer"
@@ -38,7 +39,7 @@
 	department_flag = ENG
 	//supervisors = "the Chief Engineer"
 	economic_power = 5
-	minimal_player_age = 7
+	minimal_player_age = 25
 	ideal_character_age = 30
 	alt_titles = list(
 		"Maintenance Technician",
@@ -81,7 +82,7 @@
 	department_flag = ENG
 	//supervisors = "the Chief Engineer"
 	economic_power = 5
-	minimal_player_age = 7
+	minimal_player_age = 30
 	ideal_character_age = 30
 	alt_titles = list(
 		"Senior Maintenance Technician",
@@ -108,7 +109,7 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_COMPUTER     = SKILL_EXPERIENECD,
+	min_skill = list(   SKILL_COMPUTER     = SKILL_EXPERIENCED,
 	                    SKILL_HAULING      = SKILL_BASIC,
 	                    SKILL_EVA          = SKILL_TRAINED,
 	                    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
@@ -127,8 +128,8 @@
 	spawn_positions = 1
 	department_flag = ENG
 	//supervisors = "the Chief Engineer"
-	economic_power = 5
-	minimal_player_age = 7
+	economic_power = 4
+	minimal_player_age = 40
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/ds90/crew/engineering/conteng
 	allowed_branches = list(
@@ -180,7 +181,7 @@
 	spawn_positions = 1
 	economic_power = 9
 	ideal_character_age = 40
-	minimal_player_age = 15
+	minimal_player_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/ds90/crew/command/chief_engineer
 	allowed_branches = list(/datum/mil_branch/security)
 	allowed_ranks = list(
