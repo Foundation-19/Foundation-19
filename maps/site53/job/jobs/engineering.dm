@@ -61,13 +61,13 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
-	                    SKILL_HAULING      = SKILL_EXPERIENCED,
-	                    SKILL_EVA          = SKILL_EXPERIENCED,
-	                    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
-	                    SKILL_ELECTRICAL   = SKILL_EXPERIENCED,
-	                    SKILL_ATMOS        = SKILL_EXPERIENCED,
-	                    SKILL_ENGINES      = SKILL_EXPERIENCED)
+	min_skill = list(   SKILL_COMPUTER     = SKILL_TRAINED,
+	                    SKILL_HAULING      = SKILL_BASIC,
+	                    SKILL_EVA          = SKILL_BASIC,
+	                    SKILL_CONSTRUCTION = SKILL_TRAINED,
+	                    SKILL_ELECTRICAL   = SKILL_TRAINED,
+	                    SKILL_ATMOS        = SKILL_TRAINED,
+	                    SKILL_ENGINES      = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MASTER,
 	                    SKILL_ELECTRICAL   = SKILL_MASTER,
@@ -108,9 +108,9 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
-	                    SKILL_HAULING      = SKILL_EXPERIENCED,
-	                    SKILL_EVA          = SKILL_EXPERIENCED,
+	min_skill = list(   SKILL_COMPUTER     = SKILL_EXPERIENECD,
+	                    SKILL_HAULING      = SKILL_BASIC,
+	                    SKILL_EVA          = SKILL_TRAINED,
 	                    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
 	                    SKILL_ELECTRICAL   = SKILL_EXPERIENCED,
 	                    SKILL_ATMOS        = SKILL_EXPERIENCED,
@@ -141,10 +141,12 @@
 		/datum/mil_rank/security/w4
 	)
 	hud_icon = "hudcontainmentengineer"
-
+	
+//NOTE, REMOVE SECURITY ACCESS LVL2 IF ABUSED!
 	access = list(
 		ACCESS_ENG_COMMS,
 		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_SCIENCE_LVL2,
 		ACCESS_SCIENCE_LVL3,
@@ -158,9 +160,9 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
+	min_skill = list(   SKILL_COMPUTER     = SKILL_EXPERIENCED,
 	                    SKILL_HAULING      = SKILL_EXPERIENCED,
-	                    SKILL_EVA          = SKILL_EXPERIENCED,
+	                    SKILL_EVA          = SKILL_MASTER,
 	                    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
 	                    SKILL_ELECTRICAL   = SKILL_EXPERIENCED,
 	                    SKILL_ATMOS        = SKILL_EXPERIENCED,
@@ -192,8 +194,6 @@
 		ACCESS_SECURITY_LVL1,
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_SCIENCE_LVL2,
-		ACCESS_SCIENCE_LVL3,
-		ACCESS_SCIENCE_LVL4,
 		ACCESS_ADMIN_LVL1,
 		ACCESS_ADMIN_LVL2,
 		ACCESS_ADMIN_LVL3,
@@ -209,13 +209,13 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
-	                    SKILL_HAULING      = SKILL_EXPERIENCED,
-	                    SKILL_EVA          = SKILL_EXPERIENCED,
-	                    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
-	                    SKILL_ELECTRICAL   = SKILL_EXPERIENCED,
-	                    SKILL_ATMOS        = SKILL_EXPERIENCED,
-	                    SKILL_ENGINES      = SKILL_EXPERIENCED)
+	min_skill = list(   SKILL_COMPUTER     = SKILL_EXPERIENCED,
+	                    SKILL_HAULING      = SKILL_TRAINED,
+	                    SKILL_EVA          = SKILL_TRAINED,
+	                    SKILL_CONSTRUCTION = SKILL_MASTER,
+	                    SKILL_ELECTRICAL   = SKILL_MASTER,
+	                    SKILL_ATMOS        = SKILL_MASTER,
+	                    SKILL_ENGINES      = SKILL_MASTER)
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MASTER,
 	                    SKILL_ELECTRICAL   = SKILL_MASTER,
