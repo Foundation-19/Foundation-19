@@ -151,7 +151,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
 	                    SKILL_FORENSICS   = SKILL_TRAINED)
-	skill_points = 25
+	skill_points = 20
 
 /datum/job/ltofficerez
 	title = "EZ Supervisor"
@@ -200,7 +200,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
 	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 25
+	skill_points = 20
 
 //##
 // OFFICERS
