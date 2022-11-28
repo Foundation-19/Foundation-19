@@ -129,3 +129,6 @@
   - balance: Lots of armory changes, LCZ has new stuff, HCZ has less stuff, EZ has
       some stuff changed.
   - rscadd: new AIC core
+2022-11-21:
+  checkraisefold:
+  - bugfix: Blindfolds now block being effected by 012, sunglasses do not

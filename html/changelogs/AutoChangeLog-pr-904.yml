@@ -1,4 +1,0 @@
-author: checkraisefold
-delete-after: true
-changes:
-  - bugfix: Blindfolds now block being effected by 012, sunglasses do not
