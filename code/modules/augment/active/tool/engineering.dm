@@ -18,7 +18,10 @@
 	desc = "A precise, high quality welding tool."
 	icon_state = "welder_finger"
 	icon = 'icons/obj/augment_tools.dmi'
-
+	
+/obj/item/weldingtool/finger/dropped() //since nodrop is fucked this will deal with it for now.
+	..()
+	spawn(1) if(src) qdel(src)	
 
 /obj/item/weldingtool/finger/on_update_icon()
 	icon_state = welding ? "welder_finger_on" : "welder_finger"
@@ -29,7 +32,11 @@
 	icon_state = "wirecutter_finger"
 	icon = 'icons/obj/augment_tools.dmi'
 	build_from_parts = FALSE
-
+	
+/obj/item/wirecutters/finger/dropped() //since nodrop is fucked this will deal with it for now.
+	..()
+	spawn(1) if(src) qdel(src)	
+	
 /obj/item/wirecutters/finger/Initialize()
 	. = ..()
 	icon_state = initial(icon_state)
@@ -42,6 +49,10 @@
 	icon = 'icons/obj/augment_tools.dmi'
 	build_from_parts = FALSE
 
+/obj/item/screwdriver/finger/dropped() //since nodrop is fucked this will deal with it for now.
+	..()
+	spawn(1) if(src) qdel(src)	
+	
 /obj/item/screwdriver/finger/Initialize()
 	. = ..()
 	icon_state = initial(icon_state)
@@ -53,6 +64,10 @@
 	icon_state = "prybar_finger"
 	icon = 'icons/obj/augment_tools.dmi'
 
+/obj/item/crowbar/finger/dropped() //since nodrop is fucked this will deal with it for now.
+	..()
+	spawn(1) if(src) qdel(src)	
+	
 /obj/item/crowbar/finger/Initialize()
 	. = ..()
 	icon_state = initial(icon_state)
@@ -64,6 +79,10 @@
 	icon_state = "wrench_finger"
 	icon = 'icons/obj/augment_tools.dmi'
 
+/obj/item/wrench/finger/dropped() //since nodrop is fucked this will deal with it for now.
+	..()
+	spawn(1) if(src) qdel(src)	
+	
 /obj/item/wrench/finger/Initialize()
 	. = ..()
 	icon_state = initial(icon_state)
@@ -71,6 +90,11 @@
 
 /obj/item/device/multitool/finger
 	name = "digital multitool"
+	
+/obj/item/device/multitool/finger/dropped() //since nodrop is fucked this will deal with it for now.
+	..()
+	spawn(1) if(src) qdel(src)	
+
 	desc = "A multitool inside of a multitool. Doubletool?"
 	icon_state = "multitool_finger"
 	icon = 'icons/obj/augment_tools.dmi'
