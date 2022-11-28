@@ -78,7 +78,7 @@
 	                    SKILL_MEDICAL     = SKILL_TRAINED,
 	                    SKILL_ANATOMY     = SKILL_TRAINED,
 	                    SKILL_CHEMISTRY   = SKILL_MASTER,
-						SKILL_DEVICES     = SKILL_BASICS)
+						SKILL_DEVICES     = SKILL_BASIC)
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MASTER,
 	                    SKILL_ANATOMY     = SKILL_TRAINED,
