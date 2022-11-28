@@ -700,16 +700,18 @@
 		wearer.wearing_rig = src
 		update_icon()
 
-		if(M.client)
-			var/list/output_list = list()
-			for(var/thing in typesof(/obj/item/rig/verb))
-				var/procpath/verb_to_add = thing
-				output_list[++output_list.len] = list(verb_to_add.category, verb_to_add.name)
-			for(var/thing in module_verbs)
-				var/procpath/verb_to_add = thing
-				output_list[++output_list.len] = list(verb_to_add.category, verb_to_add.name)
+		if(!M.client)
+			return
 
-			M.client.stat_panel.send_message("add_verb_list", output_list)
+		var/list/output_list = list()
+		for(var/thing in typesof(/obj/item/rig/verb))
+			var/procpath/verb_to_add = thing
+			output_list[++output_list.len] = list(verb_to_add.category, verb_to_add.name)
+		for(var/thing in module_verbs)
+			var/procpath/verb_to_add = thing
+			output_list[++output_list.len] = list(verb_to_add.category, verb_to_add.name)
+
+		M.client.stat_panel.send_message("add_verb_list", output_list)
 
 /obj/item/rig/proc/toggle_piece(var/piece, var/mob/initiator, var/deploy_mode)
 
@@ -816,16 +818,18 @@
 	if(wearer)
 		wearer.wearing_rig = null
 		wearer = null
-	if(user.client)
-		var/list/output_list = list()
-		for(var/thing in typesof(/obj/item/rig/verb))
-			var/procpath/verb_to_add = thing
-			output_list[++output_list.len] = list(verb_to_add.category, verb_to_add.name)
-		for(var/thing in module_verbs)
-			var/procpath/verb_to_add = thing
-			output_list[++output_list.len] = list(verb_to_add.category, verb_to_add.name)
+	if(!user.client)
+		return
 
-		user.client.stat_panel.send_message("remove_verb_list", output_list)
+	var/list/output_list = list()
+	for(var/thing in typesof(/obj/item/rig/verb))
+		var/procpath/verb_to_add = thing
+		output_list[++output_list.len] = list(verb_to_add.category, verb_to_add.name)
+	for(var/thing in module_verbs)
+		var/procpath/verb_to_add = thing
+		output_list[++output_list.len] = list(verb_to_add.category, verb_to_add.name)
+
+	user.client.stat_panel.send_message("remove_verb_list", output_list)
 
 /obj/item/rig/proc/deselect_module()
 	if (selected_module)
