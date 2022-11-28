@@ -13,6 +13,10 @@
 	. = ..()
 	reagents.add_reagent(/datum/reagent/adminordrazine, 1)
 
+/obj/item/reagent_containers/pill/scp500/afterattack(obj/target, mob/user, proximity)
+	return 0
+
+
 /obj/item/storage/pill_bottle/scp500
 	name = "pill bottle (Panacea)"
 	desc = "This Pill Bottle has the words panacea written in it's cover, you also notice a ductaped note to it, it says - DUE TO UNAUTHORIZED USAGE OF 3 PILLS TO CURE STDs IN ZONE COMMANDERS THIS SITE IS NOW ONLY ALLOWED TO HAVE 8 OF THEM AT ANY TIME."
