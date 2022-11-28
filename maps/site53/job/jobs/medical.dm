@@ -117,7 +117,7 @@
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_EXPERIENCED,
 	                    SKILL_ANATOMY     = SKILL_TRAINED,
-	                    SKILL_CHEMISTRY   = SKILL_EXPERIENED)
+	                    SKILL_CHEMISTRY   = SKILL_EXPERIENCED)
 	skill_points = 16 //RP role
 
 /datum/job/medicaldoctor
@@ -157,7 +157,7 @@
 						SKILL_DEVICES     = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MASTER,
-	                    SKILL_ANATOMY     = SKILL_EXPERIENED,
+	                    SKILL_ANATOMY     = SKILL_EXPERIENCED,
 	                    SKILL_CHEMISTRY   = SKILL_MASTER)
 	skill_points = 18 
 
@@ -237,5 +237,5 @@
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MASTER,
 	                    SKILL_ANATOMY     = SKILL_TRAINED,
-	                    SKILL_CHEMISTRY   = SKILL_EXPERIENED)
+	                    SKILL_CHEMISTRY   = SKILL_EXPERIENCED)
 	skill_points = 18
