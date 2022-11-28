@@ -42,7 +42,7 @@
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MASTER,
 	                    SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_CHEMISTRY   = SKILL_MASTER
+	                    SKILL_CHEMISTRY   = SKILL_MASTER,
 						SKILL_DEVICES     = SKILL_EXPERIENCED)
 	skill_points = 20
 
