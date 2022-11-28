@@ -14,8 +14,11 @@
 	hud_icon = "huddclass"
 	var/static/list/used_numbers = list()
 
-	max_skill = list(SKILL_COMBAT = SKILL_TRAINED,
-					SKILL_WEAPONS = SKILL_TRAINED)
+	max_skill = list(SKILL_COMBAT = SKILL_EXPERIENCED,
+					SKILL_WEAPONS = SKILL_EXPERIENCED,
+					SKILL_MEDICAL     = SKILL_EXPERIENCED,
+					SKILL_ANATOMY     = SKILL_EXPERIENCED,
+					SKILL_CHEMISTRY   = SKILL_EXPERIENCED)
 
 /datum/job/classd/equip(mob/living/carbon/human/H)
 	. = ..()
@@ -41,7 +44,6 @@
 	//supervisors = "the Archivist and administrative staff"
 	//duties = "<big><b>You are a low level pen pusher of the SCP Foundation. Your direct supervisor is the Archivist but you may also answer to the O5 and Ethics Committee Representative. Write reports, assist researchers and generally be a pain in the ass to everyone around you.</big></b>"
 	economic_power = 2
-	minimal_player_age = 5
 	ideal_character_age = 30
 	alt_titles = list("Administrative Assistant", "Accountant", "Auditor", "Secretary")
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/officeworker
@@ -75,7 +77,7 @@
 	//supervisors = "the Site Director"
 	selection_color = "#515151"
 	economic_power = 5
-	minimal_player_age = 7
+	minimal_player_age = 28
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/logisticsofficer
 	hud_icon = "huddeckchief"
@@ -95,13 +97,13 @@
 
 
 	min_skill = list(SKILL_BUREAUCRACY = SKILL_EXPERIENCED,
-					SKILL_FINANCE     = SKILL_BASIC,
-					SKILL_HAULING     = SKILL_BASIC,
+					SKILL_FINANCE     = SKILL_EXPERIENED,
+					SKILL_HAULING     = SKILL_MASTER,
 					SKILL_EVA         = SKILL_BASIC,
 					SKILL_PILOT       = SKILL_BASIC)
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MASTER)
-	skill_points = 18
+	skill_points = 20
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							/datum/computer_file/program/deck_management,
@@ -136,10 +138,10 @@
 
 
 	min_skill = list(SKILL_BUREAUCRACY = SKILL_EXPERIENCED,
-					SKILL_FINANCE      = SKILL_BASIC,
-					SKILL_HAULING      = SKILL_BASIC,
+					SKILL_FINANCE      = SKILL_TRAINED,
+					SKILL_HAULING      = SKILL_EXPERIENCED,
 					SKILL_EVA          = SKILL_BASIC,
-					SKILL_PILOT        = SKILL_BASIC)
+					SKILL_PILOT        = SKILL_TRAINED)
 
 	max_skill = list(SKILL_PILOT       = SKILL_MASTER)
 	skill_points = 18
@@ -177,7 +179,7 @@
 )
 	minimal_access = list()
 
-	min_skill = list(SKILL_HAULING = SKILL_BASIC)
+	min_skill = list(SKILL_HAULING = SKILL_TRAINED)
 
 /datum/job/chef
 	title = "Chef"
@@ -201,7 +203,7 @@
 	minimal_access = list()
 
 	min_skill = list(SKILL_COOKING   = SKILL_EXPERIENCED,
-					SKILL_BOTANY    = SKILL_BASIC,
+					SKILL_BOTANY    = SKILL_TRAINED,
 					SKILL_CHEMISTRY = SKILL_BASIC)
 
 
@@ -227,8 +229,7 @@
 	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 	minimal_access = list()
 
-	min_skill = list(SKILL_COOKING  = SKILL_EXPERIENCED,
-					SKILL_BOTANY    = SKILL_BASIC,
+	min_skill = list(SKILL_COOKING  = SKILL_MASTER,
 					SKILL_CHEMISTRY = SKILL_BASIC)
 
 
@@ -238,12 +239,11 @@
 	department_flag = CIV
 	total_positions = 1
 	spawn_positions = 1
-	minimal_player_age = 9
 	//duties = "<big><b>As the Archivist, it is your job to make sure the proper test logs are digitalized and saved in the digital archive, thus safekeeping them forever. You must be picky and selective, and only get those with great quality out! <span style = 'color:red'>REMEMBER!</span> If you put in nonsensical things, or copypasta's such as Woody's got Wood, you will be permanently job banned WITHOUT chance to appeal.</b></big>"
 	//supervisors = "the Research Director"
 	economic_power = 4
-	minimal_player_age = 5
-	ideal_character_age = 30
+	minimal_player_age = 31
+	ideal_character_age = 50
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/archivist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
@@ -269,3 +269,9 @@
 		ACCESS_MEDICAL_LVL4
 	)
 	minimal_access = list()
+
+	min_skill = list(SKILL_BUREAUCRACY = SKILL_MASTER,
+					SKILL_FINANCE      = SKILL_MASTER,
+					SKILL_HAULING      = SKILL_BASIC,
+					SKILL_EVA          = SKILL_TRAINED,
+					SKILL_PILOT        = SKILL_TRAINED)
