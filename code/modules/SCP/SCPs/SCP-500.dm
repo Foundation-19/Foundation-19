@@ -4,8 +4,8 @@
 	classification = SAFE
 
 /obj/item/reagent_containers/pill/scp500
-	name = "SCP-500"
-	desc = "A pill that, when taken orally, cures the subject of all disease."
+	name = "pill"
+	desc = "A pill."
 	icon_state = "pill9"
 	SCP = /datum/scp/scp_500
 
@@ -15,10 +15,10 @@
 
 /obj/item/storage/pill_bottle/scp500
 	name = "pill bottle (Panacea)"
-	desc = "Contains pills of SCP-500."
+	desc = "This Pill Bottle has the words panacea written in it's cover, you also notice a ductaped note to it, it says - DUE TO UNAUTHORIZED USAGE OF 3 PILLS TO CURE STDs IN ZONE COMMANDERS THIS SITE IS NOW ONLY ALLOWED TO HAVE 8 OF THEM AT ANY TIME."
 
-	max_storage_space = 47 // gotta store those pills
+	max_storage_space = 8 // gotta store those pills
 
 	startswith = list(
-		/obj/item/reagent_containers/pill/scp500 = 47
+		/obj/item/reagent_containers/pill/scp500 = 8
 	)
