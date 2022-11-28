@@ -19,7 +19,7 @@
 					SKILL_MEDICAL     = SKILL_EXPERIENCED,
 					SKILL_ANATOMY     = SKILL_EXPERIENCED,
 					SKILL_CHEMISTRY   = SKILL_EXPERIENCED)
-
+/* //NO ONE likes to have a random number instead of a name, remember that lore accuracy comes AFTER gameplay, not before, otherwise all guards would use lethals
 /datum/job/classd/equip(mob/living/carbon/human/H)
 	. = ..()
 	var/r = rand(100,9000)
@@ -31,7 +31,7 @@
 	if(istype(H.wear_id, /obj/item/card/id))
 		var/obj/item/card/id/ID = H.wear_id
 		ID.registered_name = "D-[used_numbers[used_numbers.len]]"
-
+*/
 //Office Worker
 
 /datum/job/officeworker
