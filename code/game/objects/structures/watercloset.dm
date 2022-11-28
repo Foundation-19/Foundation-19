@@ -1,7 +1,7 @@
 //todo: toothbrushes, and some sort of "toilet-filthinator" for the hos
 /obj/structure/hygiene
 	var/next_gurgle = 0
-	var/clogged = 0 // -1 = never clog
+	var/clogged = -1 // -1 = never clog
 	var/being_unclogged = FALSE
 	var/can_drain = 0
 	var/drainage = 0.5

@@ -737,7 +737,9 @@
 
 		if(healths)
 			healths.cut_overlays()
-			if (chem_effects[CE_PAINKILLER] > 100)
+			var/painkiller_mult = chem_effects[CE_PAINKILLER] / 100
+
+			if(painkiller_mult >= 1)
 				healths.icon_state = "health_numb"
 			else
 				// Generate a by-limb health display.
@@ -749,7 +751,7 @@
 				// Collect and apply the images all at once to avoid appearance churn.
 				var/list/health_images = list()
 				for(var/obj/item/organ/external/E in organs)
-					health_images += E.get_damage_hud_image()
+					health_images += E.get_damage_hud_image(painkiller_mult)
 
 				// Apply a fire overlay if we're burning.
 				if(on_fire)
