@@ -241,8 +241,8 @@
 	spawn_positions = 1
 	//duties = "<big><b>As the Archivist, it is your job to make sure the proper test logs are digitalized and saved in the digital archive, thus safekeeping them forever. You must be picky and selective, and only get those with great quality out! <span style = 'color:red'>REMEMBER!</span> If you put in nonsensical things, or copypasta's such as Woody's got Wood, you will be permanently job banned WITHOUT chance to appeal.</b></big>"
 	//supervisors = "the Research Director"
-	economic_power = 4
-	minimal_player_age = 31
+	economic_power = 20 
+	minimal_player_age = 35
 	ideal_character_age = 50
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/archivist
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -269,9 +269,15 @@
 		ACCESS_MEDICAL_LVL4
 	)
 	minimal_access = list()
-
+//"noooo but i want my archivist to be old and frail and weak!!!" im not stopping you, my friend, im opening more possibilities.
 	min_skill = list(SKILL_BUREAUCRACY = SKILL_MASTER,
 					SKILL_FINANCE      = SKILL_MASTER,
 					SKILL_HAULING      = SKILL_BASIC,
+					SKILL_COMBAT      = SKILL_TRAINED,
+					SKILL_WEAPONS     = SKILL_BASIC,
 					SKILL_EVA          = SKILL_TRAINED,
 					SKILL_PILOT        = SKILL_TRAINED)
+
+	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
+	                    SKILL_WEAPONS     = SKILL_MASTER,
+	                    SKILL_FORENSICS   = SKILL_MASTER)
