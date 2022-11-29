@@ -1,0 +1,6 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - bugfix: Rigs are no longer bricked if they're EMPed while turned off.
+  - bugfix: Hardsuit verbs tab shows up upon putting on a rig without having to refresh
+      tgui.
