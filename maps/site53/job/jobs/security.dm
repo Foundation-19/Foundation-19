@@ -43,15 +43,15 @@
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_EXPERIENCED,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_HAULING     = SKILL_TRAINED,
-	                    SKILL_FORENSICS   = SKILL_TRAINED)
+	                    SKILL_FORENSICS   = SKILL_EXPERIENCED)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
 	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 28
+	skill_points = 20
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
@@ -86,6 +86,7 @@
 		ACCESS_SECURITY_LVL3,
 		ACCESS_SECURITY_LVL4,
 		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_SCIENCE_LVL2,
 		ACCESS_SCIENCE_LVL3
@@ -95,15 +96,15 @@
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_EXPERIENCED,
-	                    SKILL_WEAPONS     = SKILL_TRAINED,
+	                    SKILL_COMBAT      = SKILL_MASTER,
+	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_HAULING     = SKILL_TRAINED,
 	                    SKILL_FORENSICS   = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
-	                    SKILL_FORENSICS   = SKILL_TRAINED)
-	skill_points = 25
+	                    SKILL_FORENSICS   = SKILL_MASTER)
+	skill_points = 20
 
 /datum/job/ltofficerhcz
 	title = "HCZ Zone Commander"
@@ -131,6 +132,7 @@
 		ACCESS_SECURITY_LVL3,
 		ACCESS_SECURITY_LVL4,
 		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_SCIENCE_LVL2,
 		ACCESS_SCIENCE_LVL3,
@@ -142,14 +144,14 @@
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_EXPERIENCED,
-	                    SKILL_WEAPONS     = SKILL_TRAINED,
+	                    SKILL_WEAPONS     = SKILL_MASTER,
 	                    SKILL_HAULING     = SKILL_TRAINED,
-	                    SKILL_FORENSICS   = SKILL_BASIC)
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
 	                    SKILL_FORENSICS   = SKILL_TRAINED)
-	skill_points = 25
+	skill_points = 20
 
 /datum/job/ltofficerez
 	title = "EZ Supervisor"
@@ -178,16 +180,11 @@
 		ACCESS_SECURITY_LVL4,
 		ACCESS_ADMIN_LVL1,
 		ACCESS_ADMIN_LVL2,
-		ACCESS_ADMIN_LVL3,
-		ACCESS_ADMIN_LVL4,
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_SCIENCE_LVL2,
 		ACCESS_ENGINEERING_LVL1,
-		ACCESS_ENGINEERING_LVL2,
 		ACCESS_MEDICAL_LVL1,
 		ACCESS_MEDICAL_LVL2,
-		ACCESS_MEDICAL_LVL3,
-		ACCESS_MEDICAL_LVL4,
 		ACCESS_CHAPEL_OFFICE
 	)
 	minimal_access = list()
@@ -203,7 +200,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
 	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 25
+	skill_points = 20
 
 //##
 // OFFICERS
@@ -250,14 +247,14 @@
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_HAULING     = SKILL_TRAINED,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_TRAINED,
+	                    SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_TRAINED,
 	                    SKILL_FORENSICS   = SKILL_BASIC)
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
-	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_FORENSICS   = SKILL_TRAINED)
-	skill_points = 21
+	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
+	                    SKILL_WEAPONS     = SKILL_MASTER,
+	                    SKILL_FORENSICS   = SKILL_MASTER)
+	skill_points = 18
 
 /datum/job/ncoofficerhcz
 	title = "HCZ Sergeant"
@@ -297,13 +294,13 @@
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_TRAINED,
-	                    SKILL_WEAPONS     = SKILL_TRAINED,
+	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_FORENSICS   = SKILL_BASIC)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
 	                    SKILL_WEAPONS     = SKILL_MASTER,
-	                    SKILL_FORENSICS   = SKILL_TRAINED)
-	skill_points = 21
+	                    SKILL_FORENSICS   = SKILL_MASTER)
+	skill_points = 18
 
 /datum/job/ncoofficerez
 	title = "EZ Senior Agent"
@@ -330,15 +327,11 @@
 		ACCESS_SEC_COMMS,
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_MEDICAL_LVL1,
-		ACCESS_MEDICAL_LVL2,
-		ACCESS_MEDICAL_LVL3,
 		ACCESS_ENGINEERING_LVL1,
 		ACCESS_SECURITY_LVL1,
 		ACCESS_SECURITY_LVL2,
 		ACCESS_SECURITY_LVL3,
 		ACCESS_ADMIN_LVL1,
-		ACCESS_ADMIN_LVL2,
-		ACCESS_ADMIN_LVL3,
 		ACCESS_CHAPEL_OFFICE
 	)
 	minimal_access = list()
@@ -346,20 +339,19 @@
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_TRAINED,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_TRAINED,
+	                    SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_TRAINED,
 	                    SKILL_FORENSICS   = SKILL_EXPERIENCED)
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
-	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
+	                    SKILL_WEAPONS     = SKILL_MASTER,
 	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 21
+	skill_points = 18
 //##
 //JUNIOR OFFICER
 //##
 
 /datum/job/enlistedofficerlcz
-
 	title = "LCZ Guard"
 	department = "Light Containment Personnel"
 	department_flag = SEC
@@ -399,16 +391,15 @@
 	                    SKILL_HAULING     = SKILL_TRAINED,
 	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_TRAINED,
-	                    SKILL_WEAPONS     = SKILL_BASIC,
+	                    SKILL_WEAPONS     = SKILL_TRAINED,
 	                    SKILL_FORENSICS   = SKILL_BASIC)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_FORENSICS   = SKILL_TRAINED)
-	skill_points = 17
+	skill_points = 16
 
 /datum/job/enlistedofficerhcz
-
 	title = "HCZ Guard"
 	department = "Heavy Containment Personnel"
 	department_flag = SEC
@@ -446,16 +437,15 @@
 	                    SKILL_HAULING     = SKILL_TRAINED,
 	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_TRAINED,
-	                    SKILL_WEAPONS     = SKILL_BASIC,
+	                    SKILL_WEAPONS     = SKILL_TRAINED,
 	                    SKILL_FORENSICS   = SKILL_BASIC)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_FORENSICS   = SKILL_TRAINED)
-	skill_points = 17
+	skill_points = 16
 
 /datum/job/enlistedofficerez
-
 	title = "EZ Agent"
 	department = "Entrance Personnel"
 	department_flag = SEC
@@ -463,7 +453,7 @@
 	spawn_positions = 6
 	//duties = "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
 	economic_power = 4
-	alt_titles = list("Investigation Agent" = /decl/hierarchy/outfit/job/site90/crew/security/secauditor, "EZ Combat Medic" = /decl/hierarchy/outfit/job/site90/crew/security/medic)
+	alt_titles = list("Junior Investigation Agent" = /decl/hierarchy/outfit/job/site90/crew/security/secauditor, "EZ Combat Medic" = /decl/hierarchy/outfit/job/site90/crew/security/medic)
 	minimal_player_age = 0
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerez
@@ -483,10 +473,6 @@
 		ACCESS_SECURITY_LVL2,
 		ACCESS_ENGINEERING_LVL1,
 		ACCESS_MEDICAL_LVL1,
-		ACCESS_MEDICAL_LVL2,
-		ACCESS_MEDICAL_LVL3,
-		ACCESS_ADMIN_LVL1,
-		ACCESS_ADMIN_LVL2,
 		ACCESS_CHAPEL_OFFICE
 	)
 	minimal_access = list()
@@ -495,12 +481,12 @@
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_HAULING     = SKILL_TRAINED,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_TRAINED,
 	                    SKILL_WEAPONS     = SKILL_TRAINED,
-	                    SKILL_FORENSICS   = SKILL_EXPERIENCED)
+	                    SKILL_FORENSICS   = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
 	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	                    SKILL_FORENSICS   = SKILL_MASTER)
-	skill_points = 17
+	skill_points = 16
 

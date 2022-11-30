@@ -14,9 +14,12 @@
 	hud_icon = "huddclass"
 	var/static/list/used_numbers = list()
 
-	max_skill = list(SKILL_COMBAT = SKILL_TRAINED,
-					SKILL_WEAPONS = SKILL_TRAINED)
-
+	max_skill = list(SKILL_COMBAT = SKILL_EXPERIENCED,
+					SKILL_WEAPONS = SKILL_EXPERIENCED,
+					SKILL_MEDICAL     = SKILL_EXPERIENCED,
+					SKILL_ANATOMY     = SKILL_EXPERIENCED,
+					SKILL_CHEMISTRY   = SKILL_EXPERIENCED)
+/* //NO ONE likes to have a random number instead of a name, remember that lore accuracy comes AFTER gameplay, not before, otherwise all guards would use lethals
 /datum/job/classd/equip(mob/living/carbon/human/H)
 	. = ..()
 	var/r = rand(100,9000)
@@ -28,7 +31,7 @@
 	if(istype(H.wear_id, /obj/item/card/id))
 		var/obj/item/card/id/ID = H.wear_id
 		ID.registered_name = "D-[used_numbers[used_numbers.len]]"
-
+*/
 //Office Worker
 
 /datum/job/officeworker
@@ -41,9 +44,8 @@
 	//supervisors = "the Archivist and administrative staff"
 	//duties = "<big><b>You are a low level pen pusher of the SCP Foundation. Your direct supervisor is the Archivist but you may also answer to the O5 and Ethics Committee Representative. Write reports, assist researchers and generally be a pain in the ass to everyone around you.</big></b>"
 	economic_power = 2
-	minimal_player_age = 5
-	ideal_character_age = 30
-	alt_titles = list("Administrative Assistant", "Accountant", "Auditor", "Secretary")
+	ideal_character_age = 21
+	alt_titles = list("Administrative Assistant", "Accountant", "Auditor", "Secretary", "Assistant")
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/officeworker
 	allowed_branches = list(
 		/datum/mil_branch/civilian
@@ -63,6 +65,7 @@
 	)
 
 	minimal_access = list()
+	skill_points = 30 //its a office worker, gets more points than literally anyone else
 
 //LOGISTICS
 
@@ -75,7 +78,7 @@
 	//supervisors = "the Site Director"
 	selection_color = "#515151"
 	economic_power = 5
-	minimal_player_age = 7
+	minimal_player_age = 28
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/logisticsofficer
 	hud_icon = "huddeckchief"
@@ -95,13 +98,13 @@
 
 
 	min_skill = list(SKILL_BUREAUCRACY = SKILL_EXPERIENCED,
-					SKILL_FINANCE     = SKILL_BASIC,
-					SKILL_HAULING     = SKILL_BASIC,
+					SKILL_FINANCE     = SKILL_EXPERIENCED,
+					SKILL_HAULING     = SKILL_MASTER,
 					SKILL_EVA         = SKILL_BASIC,
 					SKILL_PILOT       = SKILL_BASIC)
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MASTER)
-	skill_points = 18
+	skill_points = 20
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							/datum/computer_file/program/deck_management,
@@ -136,10 +139,10 @@
 
 
 	min_skill = list(SKILL_BUREAUCRACY = SKILL_EXPERIENCED,
-					SKILL_FINANCE      = SKILL_BASIC,
-					SKILL_HAULING      = SKILL_BASIC,
+					SKILL_FINANCE      = SKILL_TRAINED,
+					SKILL_HAULING      = SKILL_EXPERIENCED,
 					SKILL_EVA          = SKILL_BASIC,
-					SKILL_PILOT        = SKILL_BASIC)
+					SKILL_PILOT        = SKILL_TRAINED)
 
 	max_skill = list(SKILL_PILOT       = SKILL_MASTER)
 	skill_points = 18
@@ -177,7 +180,7 @@
 )
 	minimal_access = list()
 
-	min_skill = list(SKILL_HAULING = SKILL_BASIC)
+	min_skill = list(SKILL_HAULING = SKILL_TRAINED)
 
 /datum/job/chef
 	title = "Chef"
@@ -201,7 +204,7 @@
 	minimal_access = list()
 
 	min_skill = list(SKILL_COOKING   = SKILL_EXPERIENCED,
-					SKILL_BOTANY    = SKILL_BASIC,
+					SKILL_BOTANY    = SKILL_TRAINED,
 					SKILL_CHEMISTRY = SKILL_BASIC)
 
 
@@ -227,8 +230,7 @@
 	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 	minimal_access = list()
 
-	min_skill = list(SKILL_COOKING  = SKILL_EXPERIENCED,
-					SKILL_BOTANY    = SKILL_BASIC,
+	min_skill = list(SKILL_COOKING  = SKILL_MASTER,
 					SKILL_CHEMISTRY = SKILL_BASIC)
 
 
@@ -238,12 +240,11 @@
 	department_flag = CIV
 	total_positions = 1
 	spawn_positions = 1
-	minimal_player_age = 9
 	//duties = "<big><b>As the Archivist, it is your job to make sure the proper test logs are digitalized and saved in the digital archive, thus safekeeping them forever. You must be picky and selective, and only get those with great quality out! <span style = 'color:red'>REMEMBER!</span> If you put in nonsensical things, or copypasta's such as Woody's got Wood, you will be permanently job banned WITHOUT chance to appeal.</b></big>"
 	//supervisors = "the Research Director"
-	economic_power = 4
-	minimal_player_age = 5
-	ideal_character_age = 30
+	economic_power = 20 
+	minimal_player_age = 35
+	ideal_character_age = 50
 	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/archivist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
@@ -269,3 +270,15 @@
 		ACCESS_MEDICAL_LVL4
 	)
 	minimal_access = list()
+//"noooo but i want my archivist to be old and frail and weak!!!" im not stopping you, my friend, im opening more possibilities.
+	min_skill = list(SKILL_BUREAUCRACY = SKILL_MASTER,
+					SKILL_FINANCE      = SKILL_MASTER,
+					SKILL_HAULING      = SKILL_BASIC,
+					SKILL_COMBAT      = SKILL_TRAINED,
+					SKILL_WEAPONS     = SKILL_BASIC,
+					SKILL_EVA          = SKILL_TRAINED,
+					SKILL_PILOT        = SKILL_TRAINED)
+
+	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
+	                    SKILL_WEAPONS     = SKILL_MASTER,
+	                    SKILL_FORENSICS   = SKILL_MASTER)

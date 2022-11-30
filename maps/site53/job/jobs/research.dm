@@ -103,10 +103,8 @@
 	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
 	                    SKILL_DEVICES     = SKILL_MASTER,
 	                    SKILL_SCIENCE     = SKILL_MASTER)
-						
+
 	skill_points = 14
-
-
 
 /datum/job/roboticist
 	title = "Robotics Technician"
@@ -135,9 +133,9 @@
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_DEVICES     = SKILL_TRAINED,
 	                    SKILL_SCIENCE     = SKILL_BASIC,
+						SKILL_ANATOMY     = SKILL_BASIC,
 						SKILL_ELECTRICAL   = SKILL_TRAINED,
 						SKILL_EVA     = SKILL_TRAINED,
-						SKILL_ANATOMY = SKILL_BASIC,
 	                    SKILL_MECH     = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
