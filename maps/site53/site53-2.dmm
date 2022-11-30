@@ -17336,7 +17336,7 @@
 "aWU" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/llcz/scp500)
+/area/space)
 "aWV" = (
 /obj/structure/cable/green{
 	d2 = 2;
@@ -17384,14 +17384,14 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/space)
 "aXa" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/space)
 "aXb" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/space)
 "aXd" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -17451,7 +17451,7 @@
 	},
 /obj/item/taperoll/engineering/applied,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/space)
 "aXj" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -17459,12 +17459,12 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/space)
 "aXk" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/space)
 "aXl" = (
 /obj/machinery/camera/autoname{
 	network = list("Light Containment Zone Network")
@@ -32171,7 +32171,7 @@
 	name = "SCP-500"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/space)
 "rlV" = (
 /obj/machinery/door/airlock/vault{
 	name = "Containment Chamber";
