@@ -24,7 +24,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	classification = EUCLID
 
 /mob/living/carbon/human/scp049/IsAdvancedToolUser()
-	return FALSE
+	return TRUE //turn this on or off to make 49 unable to use most items, if its TRUE, 49 can use items like buttons, screwdrivers, lights, stunbatons, weapons,etc 
 
 /mob/living/carbon/human/scp049/update_icons()
 	return
