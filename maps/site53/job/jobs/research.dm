@@ -17,7 +17,9 @@
 
 	access = list(
 		ACCESS_SCI_COMMS,
-		ACCESS_SCIENCE_LVL1
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3
 	)
 	minimal_access = list()
 
@@ -30,7 +32,7 @@
 	                    SKILL_DEVICES     = SKILL_MASTER,
 	                    SKILL_SCIENCE     = SKILL_MASTER)
 
-	skill_points = 10
+	skill_points = 12
 
 /datum/job/juniorroboticist
 	title = "Junior Robotics Technician"
@@ -50,7 +52,8 @@
 	access = list(
 		ACCESS_SCI_COMMS,
 		ACCESS_SCIENCE_LVL1,
-		ACCESS_SCIENCE_LVL2
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3
 	)
 	minimal_access = list()
 
@@ -87,7 +90,8 @@
 	access = list(
 	ACCESS_SCI_COMMS,
 	ACCESS_SCIENCE_LVL1,
-	ACCESS_SCIENCE_LVL2
+	ACCESS_SCIENCE_LVL2,
+	ACCESS_SCIENCE_LVL3
 	)
 	minimal_access = list()
 
@@ -99,8 +103,10 @@
 	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
 	                    SKILL_DEVICES     = SKILL_MASTER,
 	                    SKILL_SCIENCE     = SKILL_MASTER)
+						
+	skill_points = 14
 
-	skill_points = 15
+
 
 /datum/job/roboticist
 	title = "Robotics Technician"
@@ -131,6 +137,7 @@
 	                    SKILL_SCIENCE     = SKILL_BASIC,
 						SKILL_ELECTRICAL   = SKILL_TRAINED,
 						SKILL_EVA     = SKILL_TRAINED,
+						SKILL_ANATOMY = SKILL_BASIC,
 	                    SKILL_MECH     = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
@@ -168,7 +175,8 @@
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_COMPUTER    = SKILL_TRAINED,
+						SKILL_ANATOMY     = SKILL_BASIC,
 	                    SKILL_DEVICES     = SKILL_TRAINED,
 	                    SKILL_SCIENCE     = SKILL_EXPERIENCED)
 
@@ -176,7 +184,7 @@
 	                    SKILL_DEVICES     = SKILL_MASTER,
 	                    SKILL_SCIENCE     = SKILL_MASTER)
 
-	skill_points = 20
+	skill_points = 18
 
 /datum/job/seniorroboticist
 	title = "Senior Robotics Technician"
@@ -204,10 +212,11 @@
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
+						SKILL_ANATOMY     = SKILL_TRAINED,
 	                    SKILL_DEVICES     = SKILL_TRAINED,
 	                    SKILL_SCIENCE     = SKILL_TRAINED,
 						SKILL_ELECTRICAL   = SKILL_EXPERIENCED,
-						SKILL_EVA     = SKILL_TRAINED,
+						SKILL_EVA     = SKILL_BASIC,
 	                    SKILL_MECH     = SKILL_TRAINED)
 
 	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
@@ -253,12 +262,13 @@
 	minimal_access = list()
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_TRAINED,
+	                    SKILL_COMPUTER    = SKILL_EXPERIENCED,
+						SKILL_ANATOMY     = SKILL_BASIC,
 	                    SKILL_DEVICES     = SKILL_TRAINED,
-	                    SKILL_SCIENCE     = SKILL_EXPERIENCED)
+	                    SKILL_SCIENCE     = SKILL_MASTER)
 
 	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
 	                    SKILL_DEVICES     = SKILL_MASTER,
 	                    SKILL_SCIENCE     = SKILL_MASTER)
 
-	skill_points = 25
+	skill_points = 20
