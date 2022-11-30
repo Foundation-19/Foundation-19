@@ -10,6 +10,9 @@
 #define SS_PRIORITY_TIMER          20
 #define SS_PRIORITY_ICON_UPDATE    20  // Queued icon updates. Mostly used by APCs and tables.
 
+//Abnormal
+#define SS_PRIORITY_EXPLOSION      666 // Processing explosion stuff, abnormal number for abnormal stuff
+
 // Normal
 #define SS_PRIORITY_TICKER         100 // Gameticker.
 #define SS_PRIORITY_MOB            95  // Mob Life().

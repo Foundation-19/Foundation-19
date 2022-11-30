@@ -36,6 +36,7 @@
 	//Most blast doors are infrequently toggled and sometimes used with regular doors anyways,
 	//turning this off prevents awkward zone geometry in places like medbay lobby, for example.
 	block_air_zones = 0
+	explosion_block = 3
 
 	var/begins_closed = TRUE
 	var/material/implicit_material

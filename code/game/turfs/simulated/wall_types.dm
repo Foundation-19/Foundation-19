@@ -10,6 +10,7 @@
 
 /turf/simulated/wall/r_wall
 	icon_state = "r_generic"
+	explosion_block = 4
 
 /turf/simulated/wall/r_wall/New(var/newloc)
 	..(newloc, MATERIAL_PLASTEEL,MATERIAL_PLASTEEL) //3strong
@@ -46,6 +47,7 @@
 
 /turf/simulated/wall/titanium
 	icon_state = "titanium"
+	explosion_block = 2
 
 /turf/simulated/wall/titanium/New(var/newloc)
 	..(newloc,MATERIAL_TITANIUM)
@@ -58,6 +60,7 @@
 
 /turf/simulated/wall/ocp_wall
 	icon_state = "r_ocp"
+	explosion_block = 2
 
 /turf/simulated/wall/ocp_wall/New(var/newloc)
 	..(newloc, MATERIAL_OSMIUM_CARBIDE_PLASTEEL, MATERIAL_OSMIUM_CARBIDE_PLASTEEL)

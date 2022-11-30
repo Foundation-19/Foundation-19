@@ -17,6 +17,9 @@
 	var/list/orbiters = null
 	var/datum/scp/SCP //For SCP's
 
+	///Value used to increment ex_act() if reactionary_explosions is on
+	var/explosion_block = 0
+
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
 	if(GLOB.use_preloader && (src.type == GLOB._preloader.target_path))//in case the instanciated atom is creating other atoms in New()

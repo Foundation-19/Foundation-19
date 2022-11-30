@@ -89,6 +89,7 @@ return;\
 #define SS_INIT_TICKER          -20
 #define SS_INIT_AI              -21
 #define SS_INIT_AIFAST          -22
+#define SS_INIT_EXPLOSIONS      -69
 #define SS_INIT_STATPANELS      -80
 #define SS_INIT_CHAT            -90 // Should be lower to ensure chat remains smooth during init.
 #define SS_INIT_UNIT_TESTS      -100
@@ -102,3 +103,8 @@ return;\
 #define RUNLEVEL_POSTGAME 	(1<<3)
 
 #define RUNLEVELS_DEFAULT (RUNLEVEL_SETUP | RUNLEVEL_GAME | RUNLEVEL_POSTGAME)
+
+// Explosion Subsystem subtasks
+#define SSEXPLOSIONS_MOVABLES 1
+#define SSEXPLOSIONS_TURFS    2
+#define SSEXPLOSIONS_THROWS   3
