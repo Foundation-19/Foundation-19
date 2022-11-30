@@ -17373,12 +17373,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp131)
 "aWZ" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list("ACCESS_SECURITY_LEVEL1")
-	},
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"

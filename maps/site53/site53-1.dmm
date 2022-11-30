@@ -5917,6 +5917,9 @@
 "nI" = (
 /obj/machinery/door/airlock/highsecurity,
 /obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
 "nJ" = (
@@ -7234,6 +7237,9 @@
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
@@ -15420,6 +15426,11 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
 "NK" = (
@@ -16042,6 +16053,14 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
+"PD" = (
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/camera/network/hcz,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/site53/lhcz/hallway)
 "PE" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/titanium,
@@ -65732,7 +65751,7 @@ gq
 qn
 pp
 mK
-BI
+NH
 mK
 qr
 qn
@@ -65989,7 +66008,7 @@ gq
 qn
 mK
 BI
-BI
+NH
 BI
 mK
 qn
@@ -66246,7 +66265,7 @@ gq
 qn
 BI
 BI
-BI
+NH
 BI
 BI
 bb
@@ -66503,7 +66522,7 @@ gq
 qn
 Wr
 BI
-BI
+NH
 BI
 mK
 qn
@@ -66760,7 +66779,7 @@ gq
 qn
 pp
 mK
-BI
+NH
 mK
 qr
 qn
@@ -67274,7 +67293,7 @@ gq
 gq
 gq
 qn
-BI
+NH
 qn
 gq
 gq
@@ -67531,7 +67550,7 @@ gq
 gq
 gq
 qn
-Yy
+PD
 qn
 gq
 gq
@@ -67788,7 +67807,7 @@ gq
 gq
 gq
 qn
-BI
+NH
 qn
 gq
 gq
@@ -68302,7 +68321,7 @@ gq
 gq
 gq
 qn
-BI
+NH
 qn
 gq
 gq
@@ -68559,7 +68578,7 @@ gq
 gq
 gq
 qn
-BI
+NH
 qn
 gq
 gq
@@ -68816,7 +68835,7 @@ gq
 gq
 gq
 qn
-BI
+NH
 qn
 gq
 gq
@@ -69073,7 +69092,7 @@ gq
 gq
 gq
 qn
-BI
+NH
 qn
 gq
 gq
@@ -69587,7 +69606,7 @@ gq
 gq
 gq
 qn
-BI
+NH
 qn
 gq
 gq
@@ -69844,7 +69863,7 @@ gq
 gq
 gq
 qn
-Yy
+PD
 qn
 gq
 gq
@@ -70101,7 +70120,7 @@ gq
 gq
 gq
 qn
-BI
+NH
 qn
 gq
 gq
@@ -70615,7 +70634,7 @@ gq
 qn
 pp
 mK
-BI
+NH
 mK
 qr
 qn
@@ -70872,7 +70891,7 @@ qn
 qn
 mK
 BI
-BI
+NH
 BI
 mK
 qn
