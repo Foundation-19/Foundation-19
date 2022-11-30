@@ -1,0 +1,5 @@
+author: CristoMagisto69
+delete-after: true
+changes:
+  - bugfix: fixed hud augments required IDs
+  - rscadd: made loadout role information to be more in-depth
