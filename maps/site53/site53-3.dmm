@@ -4866,9 +4866,9 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/machinery/camera/network/entrance{
 	dir = 4;
-	name = "Surface relaxation zone";
-	pixel_x = +23;
-	pixel_y = +20
+	name = "Bar's Snow Garden";
+	pixel_x = 23;
+	pixel_y = 20
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface{
@@ -10131,17 +10131,6 @@
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"ND" = (
-/obj/machinery/camera/network/entrance{
-	dir = 4;
-	name = "Surface relaxation zone";
-	pixel_x = +23;
-	pixel_y = +20
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
 "NE" = (
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/titanium,
@@ -11195,7 +11184,7 @@
 /area/site53/medical/surgery/hall)
 "WF" = (
 /obj/machinery/camera/network/entrance{
-	name = "Surface relaxation zone";
+	name = "Bar's Snow Garden";
 	pixel_x = 16;
 	pixel_y = -8
 	},
@@ -11571,7 +11560,7 @@
 /area/site53/uez/equipmentroom)
 "Zp" = (
 /obj/machinery/camera/network/entrance{
-	name = "Surface relaxation zone";
+	name = "Bar's Snow Garden";
 	pixel_x = 16;
 	pixel_y = -8
 	},
@@ -54166,7 +54155,7 @@ lv
 lv
 lv
 lv
-ND
+lv
 Qn
 lv
 lv
