@@ -905,6 +905,11 @@
 "acZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "ada" = (
@@ -12077,11 +12082,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lowertrams/restaurantkitchenarea)
 "aGb" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /obj/machinery/light,
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
@@ -22779,13 +22779,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
 "dae" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "daR" = (
@@ -26997,14 +26997,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
-"iYi" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurantkitchenarea)
 "iYX" = (
 /obj/machinery/fabricator,
 /turf/simulated/floor/tiled/techfloor,
@@ -69317,7 +69309,7 @@ gLb
 gLb
 gLb
 fUk
-iYi
+adt
 aGb
 aav
 mOd

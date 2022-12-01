@@ -7704,14 +7704,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"vZ" = (
-/obj/structure/flora/pottedplant/large,
-/obj/machinery/camera/network/entrance{
-	dir = 4;
-	name = "Surface Bar"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurantkitchenarea)
 "we" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
@@ -9254,7 +9246,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/medical/morgue)
 "GU" = (
-/obj/structure/flora/pottedplant/flower,
+/obj/machinery/camera/network/entrance{
+	dir = 4;
+	name = "Surface Bar"
+	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
 "GV" = (
@@ -9434,10 +9429,6 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"HQ" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurantkitchenarea)
 "HR" = (
 /obj/machinery/atmospherics/unary/tank/air{
 	dir = 1;
@@ -47736,10 +47727,10 @@ dA
 dA
 dA
 oS
+oS
+oS
 DE
-DE
-DE
-ZL
+Qn
 DE
 Zu
 DE
@@ -47994,11 +47985,11 @@ dA
 dA
 oS
 DE
-vZ
-Io
-Qn
+DE
+DE
+ZL
+DE
 XK
-GU
 Eo
 GK
 GK
@@ -48251,8 +48242,8 @@ dA
 dA
 oS
 DE
-HQ
-Qn
+Io
+GU
 Qn
 OW
 Qn
