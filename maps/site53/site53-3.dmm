@@ -4814,7 +4814,7 @@
 /area/site53/medical/equipstorage)
 "lE" = (
 /obj/effect/paint_stripe/gray,
-/turf/simulated/wall/r_wall/prepainted,
+/turf/simulated/wall/titanium,
 /area/site53/surface/surface)
 "lF" = (
 /obj/structure/bed/chair{
@@ -7704,6 +7704,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"vZ" = (
+/obj/machinery/camera/network/entrance{
+	dir = 4;
+	name = "Surface Bar"
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/lowertrams/restaurantkitchenarea)
 "we" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
@@ -9245,13 +9252,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/medical/morgue)
-"GU" = (
-/obj/machinery/camera/network/entrance{
-	dir = 4;
-	name = "Surface Bar"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurantkitchenarea)
 "GV" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -48243,7 +48243,7 @@ dA
 oS
 DE
 Io
-GU
+vZ
 Qn
 OW
 Qn
