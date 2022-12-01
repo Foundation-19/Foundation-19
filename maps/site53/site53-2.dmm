@@ -688,6 +688,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "ach" = (
@@ -1113,10 +1118,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "adE" = (
-/obj/effect/floor_decal/corner/red/border{
+/obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/light{
+/obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -22405,6 +22410,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/commanderoffice)
+"cwA" = (
+/obj/structure/table/standard,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "cwF" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -22541,13 +22553,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
-"cGI" = (
-/obj/structure/table/standard,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurantkitchenarea)
 "cGV" = (
 /obj/structure/bed/padded,
 /obj/structure/curtain/open/bed,
@@ -26561,6 +26566,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"ivk" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lowertrams/hub)
 "ivM" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -32881,14 +32895,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
 "rBm" = (
-/obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4
+/obj/machinery/power/apc/hyper{
+	dir = 8
 	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/hub)
+/obj/structure/cable/green,
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "rCd" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
@@ -35039,6 +35051,15 @@
 /obj/machinery/vending/robotics,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
+"uSb" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lowertrams/hub)
 "uSm" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -35650,15 +35671,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
-"vBR" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/hub)
 "vBZ" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/steel_grid,
@@ -37406,6 +37418,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "xUF" = (
@@ -68548,7 +68565,7 @@ aMo
 iXE
 aMo
 aMo
-vBR
+uSb
 aMo
 aMo
 aMo
@@ -69059,7 +69076,7 @@ abp
 aav
 abH
 aOv
-cGI
+cwA
 fNH
 aOv
 uIO
@@ -69324,7 +69341,7 @@ fUk
 iYi
 aGb
 aav
-rBm
+aio
 aPS
 aPT
 aPZ
@@ -69581,7 +69598,7 @@ erC
 adt
 aOy
 abz
-aSz
+adE
 aeT
 abE
 aaf
@@ -70609,7 +70626,7 @@ aLL
 adt
 gEm
 aav
-adE
+ivk
 aeT
 abE
 aaf
@@ -71379,7 +71396,7 @@ ivM
 adb
 xUj
 acg
-gLb
+rBm
 eon
 bdp
 abx
