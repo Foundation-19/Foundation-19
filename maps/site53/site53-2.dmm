@@ -1113,18 +1113,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "adE" = (
-/obj/machinery/light{
+/obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/red/border{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "adF" = (
-/obj/machinery/light{
-	dir = 4
-	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
@@ -22544,6 +22541,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
+"cGI" = (
+/obj/structure/table/standard,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "cGV" = (
 /obj/structure/bed/padded,
 /obj/structure/curtain/open/bed,
@@ -32876,6 +32880,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
+"rBm" = (
+/obj/effect/floor_decal/corner/red/bordercorner{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lowertrams/hub)
 "rCd" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
@@ -35637,6 +35650,15 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
+"vBR" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lowertrams/hub)
 "vBZ" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/steel_grid,
@@ -68526,9 +68548,9 @@ aMo
 iXE
 aMo
 aMo
+vBR
 aMo
 aMo
-iXE
 aMo
 aMo
 aio
@@ -69037,7 +69059,7 @@ abp
 aav
 abH
 aOv
-uNL
+cGI
 fNH
 aOv
 uIO
@@ -69292,7 +69314,7 @@ kBD
 abj
 abu
 aav
-acf
+gLb
 gLb
 gLb
 gLb
@@ -69302,7 +69324,7 @@ fUk
 iYi
 aGb
 aav
-aio
+rBm
 aPS
 aPT
 aPZ
@@ -69559,7 +69581,7 @@ erC
 adt
 aOy
 abz
-adE
+aSz
 aeT
 abE
 aaf
@@ -70587,7 +70609,7 @@ aLL
 adt
 gEm
 aav
-aSz
+adE
 aeT
 abE
 aaf
