@@ -1,5 +1,4 @@
-author: CristoMagisto69
-delete-after: true
-changes:
+2022-12-01:
+  CristoMagisto69:
   - bugfix: fixed hud augments required IDs
   - rscadd: made loadout role information to be more in-depth
