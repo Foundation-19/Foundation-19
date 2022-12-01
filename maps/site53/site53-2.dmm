@@ -26611,7 +26611,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/civilian{
-	<<<<<<<Updatedupstreamname = "Bar Office"=======name="Restaurant Office">>>>>>>Stashedchanges
+	name="Restaurant Office"
 	},
 /obj/machinery/door/blast/shutters{
 	name = "Restaurant Office Privacy Shutters";

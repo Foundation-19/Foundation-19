@@ -900,10 +900,11 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "bY" = (
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/repoffice/ethics)
 "bZ" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
@@ -2985,9 +2986,7 @@
 /area/site53/medical/infirmary)
 "gZ" = (
 /turf/simulated/floor/exoplanet/ice,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/area/site53/surface/surface)
 "ha" = (
 /obj/machinery/holosign/surgery{
 	dir = 8;
@@ -4768,10 +4767,9 @@
 /turf/simulated/wall/titanium,
 /area/site53/medical/isolation)
 "lv" = (
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/obj/structure/flora/ausbushes/fernybush,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "lw" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -4817,15 +4815,13 @@
 "lE" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/area/site53/surface/surface)
 "lF" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/internaltribunal)
+/area/site53/uez/repoffice/ethics)
 "lH" = (
 /obj/machinery/light{
 	dir = 8
@@ -4867,15 +4863,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "lP" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/machinery/camera/network/entrance{
-	dir = 4;
-	name = "Bar's Snow Garden"
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "lR" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sunnybush,
@@ -5201,9 +5191,7 @@
 /area/site53/uez/repoffice/ethics)
 "mI" = (
 /turf/simulated/floor/wood/walnut,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/area/site53/surface/surface)
 "mJ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5298,11 +5286,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "mT" = (
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/grass/green,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/area/site53/surface/surface)
 "mU" = (
 /obj/structure/closet/secure_closet/engineering_welding{
 	req_access = list("ACCESS_SECURITY_LEVEL2")
@@ -5650,13 +5636,8 @@
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/surface/surface)
 "ok" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/repoffice/internaltribunal)
 "ol" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5760,7 +5741,7 @@
 /obj/item/paper_bin,
 /obj/item/pen/fancy/quill,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "oy" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -6011,11 +5992,6 @@
 /obj/machinery/status_display,
 /turf/simulated/wall/prepainted,
 /area/site53/uez/bridge)
-"pv" = (
-/obj/effect/paint_stripe/orange,
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
-/area/site53/uez/repoffice/internaltribunal)
 "px" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
@@ -6080,11 +6056,9 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmreception/waiting)
 "pJ" = (
-/obj/structure/flora/tree/pine,
+/obj/structure/flora/grass/brown,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/area/site53/surface/surface)
 "pM" = (
 /obj/structure/table/standard,
 /obj/item/paper,
@@ -6125,7 +6099,7 @@
 "qb" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "qf" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -6152,10 +6126,9 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
+/obj/structure/flora/grass/brown,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/area/site53/surface/surface)
 "qx" = (
 /obj/structure/closet/cabinet,
 /obj/item/gun/projectile/shotgun/doublebarrel,
@@ -6247,14 +6220,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "qP" = (
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/obj/structure/flora/ausbushes/grassybush,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "qQ" = (
 /obj/machinery/light{
 	dir = 8
@@ -6353,15 +6321,13 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/area/site53/surface/surface)
 "rm" = (
 /turf/simulated/mineral,
 /area/site53/surface/surface)
 "rn" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/internaltribunal)
+/area/site53/uez/repoffice/ethics)
 "ro" = (
 /obj/machinery/light,
 /obj/structure/closet,
@@ -6376,10 +6342,9 @@
 /area/site53/upper_surface/tramhubhallwayentry)
 "rp" = (
 /obj/structure/flora/bush,
+/obj/structure/flora/grass/brown,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/area/site53/surface/surface)
 "rq" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
@@ -6426,10 +6391,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/ethics)
 "ry" = (
-/turf/simulated/mineral,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/obj/structure/flora/ausbushes/sunnybush,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "rz" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 1
@@ -6439,15 +6403,12 @@
 "rB" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "rC" = (
 /obj/structure/table/woodentable/ebony,
 /obj/item/stamp/scp/o5rep,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/ethics)
-"rD" = (
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "rE" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
@@ -6843,9 +6804,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/walnut,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/area/site53/surface/surface)
 "sL" = (
 /obj/structure/bookcase/manuals/research_and_development,
 /turf/simulated/floor/wood/walnut,
@@ -6862,10 +6821,6 @@
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
-"sP" = (
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
-/area/site53/uez/repoffice/internaltribunal)
 "sQ" = (
 /obj/item/device/flashlight/lamp,
 /obj/structure/table/reinforced,
@@ -7761,7 +7716,7 @@
 /obj/structure/table/woodentable/ebony,
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "wp" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 4
@@ -7772,11 +7727,6 @@
 /obj/structure/bed/chair/wheelchair,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
-"wr" = (
-/obj/structure/table/woodentable/ebony,
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/ethics)
 "wt" = (
 /obj/effect/paint_stripe/green,
 /obj/structure/closet/secure_closet/medical2{
@@ -7854,14 +7804,10 @@
 /turf/simulated/floor/tiled,
 /area/site53/uez/armory)
 "wP" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/obj/structure/table/woodentable/ebony,
+/obj/machinery/photocopier,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/repoffice/ethics)
 "wS" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -7986,9 +7932,7 @@
 "xx" = (
 /obj/structure/flora/grass/both,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/area/site53/surface/surface)
 "xF" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/titanium,
@@ -8050,12 +7994,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
-"ys" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/ethics)
 "yt" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8064,6 +8002,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uez/equipmentroom)
+"yu" = (
+/obj/structure/flora/ausbushes,
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "yv" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 8
@@ -8098,10 +8040,9 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
 "yA" = (
-/turf/simulated/floor/exoplanet/concrete,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/obj/structure/flora/ausbushes/grassybush,
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "yC" = (
 /obj/structure/bed/chair,
 /obj/effect/floor_decal/corner/brown/half{
@@ -8132,7 +8073,7 @@
 "yI" = (
 /obj/structure/table/woodentable/ebony,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/internaltribunal)
+/area/site53/uez/repoffice/ethics)
 "yJ" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 5
@@ -8586,15 +8527,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
-"Bo" = (
-/obj/machinery/camera/network/entrance{
-	dir = 4;
-	name = "Bar's Snow Garden"
-	},
-/turf/simulated/floor/exoplanet/ice,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
 "Bq" = (
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 4
@@ -8748,6 +8680,11 @@
 /obj/item/pen/chameleon,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
+"Co" = (
+/obj/structure/table/woodentable/ebony,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/internaltribunal)
 "Cp" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
@@ -9160,9 +9097,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/area/site53/surface/surface)
 "Fz" = (
 /obj/machinery/light{
 	dir = 4
@@ -9403,10 +9338,9 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
+/obj/structure/flora/grass/brown,
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/area/site53/surface/surface)
 "Hx" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -9466,9 +9400,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/area/site53/surface/surface)
 "HL" = (
 /obj/item/clothing/suit/bio_suit/security,
 /obj/item/clothing/head/bio_hood/security,
@@ -9584,7 +9516,7 @@
 /obj/structure/table/woodentable/ebony,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/internaltribunal)
+/area/site53/uez/repoffice/ethics)
 "Iz" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -9654,17 +9586,6 @@
 	},
 /turf/unsimulated/mineral,
 /area/space)
-"Jn" = (
-/obj/structure/monolith{
-	name = "SCP-1328-1-RU"
-	},
-/obj/machinery/camera/network/entrance{
-	name = "Surface Bar"
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
 "Jr" = (
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/monotile/white,
@@ -9751,12 +9672,6 @@
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/prepainted,
 /area/site53/medical/infirmary)
-"Kf" = (
-/obj/structure/table/woodentable/ebony,
-/obj/item/paper_bin,
-/obj/item/pen/fancy/quill,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/internaltribunal)
 "Kg" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9798,6 +9713,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
+"Kt" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/repoffice/ethics)
 "Kv" = (
 /obj/effect/floor_decal/corner/purple/border,
 /obj/machinery/camera/network/medbay{
@@ -9886,12 +9807,6 @@
 /obj/item/ammo_magazine/box/slug,
 /turf/simulated/floor/tiled,
 /area/site53/uez/armory)
-"KT" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/internaltribunal)
 "Lb" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Helipad";
@@ -10114,15 +10029,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "ME" = (
-/obj/structure/flora/grass/both,
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/ethics)
 "MN" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -10220,14 +10129,9 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "ND" = (
-/obj/machinery/camera/network/entrance{
-	dir = 4;
-	name = "Bar's Snow Garden"
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/obj/structure/flora/ausbushes/pointybush,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "NE" = (
 /obj/effect/paint_stripe/white,
 /turf/simulated/wall/titanium,
@@ -10262,10 +10166,8 @@
 /area/site53/medical/equipstorage)
 "NT" = (
 /obj/structure/flora/ausbushes,
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "Ob" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -10367,14 +10269,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
-"Ph" = (
-/obj/structure/table/woodentable/ebony,
-/obj/item/stamp/scp/o5rep,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/internaltribunal)
+/area/site53/surface/surface)
 "Pr" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/snow,
@@ -10522,13 +10417,9 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "Qn" = (
-/obj/structure/monolith{
-	name = "SCP-1328-1-RU"
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
+/area/site53/uez/repoffice/ethics)
 "Qq" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -10622,15 +10513,6 @@
 /obj/structure/ladder,
 /turf/simulated/open,
 /area/site53/maintenance/surfacewest)
-"Ro" = (
-/obj/structure/table/woodentable/ebony,
-/obj/machinery/photocopier,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/internaltribunal)
-"Rs" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/internaltribunal)
 "Rw" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/half{
@@ -10806,9 +10688,7 @@
 	name = "Surface Bar"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/area/site53/surface/surface)
 "SH" = (
 /obj/machinery/camera/network/entrance{
 	dir = 4;
@@ -10907,9 +10787,7 @@
 "Tv" = (
 /obj/structure/table/woodentable/ebony,
 /turf/simulated/floor/wood/walnut,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/area/site53/surface/surface)
 "TG" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -11053,6 +10931,11 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/equipmentroom)
+"UB" = (
+/obj/effect/paint_stripe/orange,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
+/area/site53/uez/repoffice/internaltribunal)
 "UC" = (
 /obj/effect/floor_decal/corner/green/bordercorner{
 	dir = 1
@@ -11107,6 +10990,11 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"UR" = (
+/obj/structure/table/woodentable/ebony,
+/obj/item/stamp/scp/o5rep,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/repoffice/ethics)
 "US" = (
 /obj/structure/table/standard,
 /obj/item/device/scanner/reagent,
@@ -11135,10 +11023,6 @@
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
-"Ve" = (
-/obj/structure/table/woodentable/ebony,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/ethics)
 "Vf" = (
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/structure/table/reinforced,
@@ -11205,10 +11089,8 @@
 /turf/simulated/mineral,
 /area/site53/medical/infirmary)
 "VA" = (
-/turf/unsimulated/mineral,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/ethics)
 "VF" = (
 /obj/machinery/light,
 /obj/machinery/vending/cigarette{
@@ -11261,6 +11143,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
+"Wa" = (
+/obj/structure/table/woodentable/ebony,
+/obj/item/paper_bin,
+/obj/item/pen/fancy/quill,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/ethics)
 "Wl" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
@@ -11303,8 +11191,8 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/ethics)
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/internaltribunal)
 "WG" = (
 /obj/machinery/floodlight{
 	anchored = 1;
@@ -11350,9 +11238,7 @@
 "WY" = (
 /obj/structure/bed/chair/wood/ebony,
 /turf/simulated/floor/wood/walnut,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/area/site53/surface/surface)
 "Xb" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -11394,9 +11280,6 @@
 /obj/structure/closet,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
-"Xs" = (
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/ethics)
 "Xu" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/senioragentoffice)
@@ -11671,18 +11554,14 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "Zn" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "Zp" = (
-/obj/machinery/camera/network/entrance{
-	name = "Surface Bar"
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/obj/structure/table/woodentable/ebony,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/internaltribunal)
 "Zt" = (
 /obj/effect/paint_stripe/mauve,
 /turf/simulated/wall/titanium,
@@ -44484,13 +44363,13 @@ bw
 dt
 lo
 mB
-rB
+Qn
 Zv
 Zv
 Zv
 Zv
 Zv
-rB
+Qn
 ms
 mu
 Jt
@@ -44744,10 +44623,10 @@ mB
 Zv
 rr
 rr
-Xs
-Xs
-wj
-rB
+rn
+rn
+wP
+Qn
 ms
 mu
 Jt
@@ -45000,11 +44879,11 @@ lo
 mB
 Zv
 rv
-Ve
-rD
-rD
+yI
+VA
+VA
 rF
-rB
+Qn
 ms
 mu
 Jt
@@ -45256,12 +45135,12 @@ dt
 GV
 mB
 Zv
-WF
-ys
-rD
-rD
+Kt
+lF
+VA
+VA
 rE
-rB
+Qn
 ms
 mv
 Gi
@@ -45513,12 +45392,12 @@ dt
 lo
 WX
 Zv
-Xs
-rD
-qb
-rD
+rn
+VA
+ME
+VA
 VF
-rB
+Qn
 ms
 mu
 tR
@@ -45770,12 +45649,12 @@ dt
 Uu
 Vb
 ri
-Xs
-rD
-wr
-ox
-rC
-rB
+rn
+VA
+Iy
+Wa
+UR
+Qn
 mw
 mx
 Df
@@ -46027,12 +45906,12 @@ dt
 OK
 ve
 Zv
-Xs
-rD
+rn
+VA
 Kj
 rz
-Xs
-rB
+rn
+Qn
 tM
 tM
 Gi
@@ -46284,12 +46163,12 @@ dt
 lo
 mJ
 nr
-Zh
-Zh
+bY
+bY
 rx
-Zh
+bY
 rG
-rB
+Qn
 bS
 bm
 YR
@@ -46313,10 +46192,10 @@ dA
 oS
 oS
 oS
-ry
-ry
-ry
-ry
+rm
+rm
+rm
+rm
 oS
 oS
 oS
@@ -46537,15 +46416,15 @@ dA
 dA
 dA
 dA
-sP
+rB
 rs
 ov
-sP
-sP
-sP
-sP
-pv
 rB
+rB
+rB
+rB
+UB
+Qn
 mG
 bO
 ru
@@ -46568,12 +46447,12 @@ oS
 oS
 oS
 oS
-ry
-ry
-ry
+rm
+rm
+rm
 NT
-lv
-ry
+bm
+rm
 oS
 oS
 rm
@@ -46794,14 +46673,14 @@ dA
 dA
 dA
 dA
-sP
-rn
+rB
+ok
 ng
-KT
+Zh
 mC
 mC
 bB
-sP
+rB
 bm
 bm
 bO
@@ -46822,15 +46701,15 @@ dA
 dA
 oS
 oS
-ry
-ry
-ry
-ry
-lv
-lv
-lv
-mT
-lv
+rm
+rm
+rm
+rm
+bO
+bO
+bO
+zp
+ru
 lE
 nE
 bJ
@@ -47051,14 +46930,14 @@ dA
 dA
 dA
 dA
-sP
-rn
+rB
+ok
 ny
 ny
-yI
-yI
+Zp
+Zp
 ga
-sP
+rB
 bC
 bK
 bO
@@ -47078,16 +46957,16 @@ lC
 oS
 oS
 oS
-ry
-ry
-NT
-lv
+rm
+rm
+yu
+bO
 xx
-rp
-lv
-lv
-pJ
-mT
+fx
+bO
+bO
+bK
+zp
 lE
 nE
 bO
@@ -47308,12 +47187,12 @@ dA
 dA
 dA
 dA
-sP
+rB
 MO
 ny
 ny
-lF
-lF
+WF
+WF
 LL
 kb
 bI
@@ -47336,15 +47215,15 @@ oS
 DE
 DE
 DE
-yA
+jg
+Rx
 qp
-qp
-qp
-lv
-wP
-wP
-wP
-yA
+Rx
+bO
+nj
+nj
+nj
+jg
 lE
 nE
 bm
@@ -47565,13 +47444,13 @@ dA
 dA
 dA
 dA
-sP
+rB
 mF
 ny
 ny
-Rs
+qb
 ny
-rn
+ok
 YU
 bJ
 bO
@@ -47593,11 +47472,11 @@ oS
 DE
 UN
 DE
-bY
-bY
-bY
-bY
-qP
+GK
+GK
+GK
+GK
+oC
 mI
 mI
 mI
@@ -47822,14 +47701,14 @@ dA
 dA
 dA
 dA
-sP
+rB
 NM
 ny
 ny
-Iy
-Kf
-Ph
-sP
+Co
+ox
+rC
+rB
 ru
 bI
 bX
@@ -47852,9 +47731,9 @@ ZL
 DE
 Zu
 DE
-bY
-bY
-qP
+GK
+GK
+oC
 mI
 Fx
 Fx
@@ -48079,14 +47958,14 @@ dA
 dA
 dA
 dA
-sP
+rB
 JR
 ny
 ny
 dc
 mE
 mD
-sP
+rB
 bI
 rm
 bO
@@ -48109,9 +47988,9 @@ rq
 XK
 GU
 Eo
-bY
-bY
-qP
+GK
+GK
+oC
 WY
 Tv
 Tv
@@ -48336,14 +48215,14 @@ dA
 dA
 dA
 dA
-sP
-Ro
-rn
-rn
+rB
+wj
+ok
+ok
 od
-rn
-rn
-sP
+ok
+ok
+rB
 rm
 rm
 rm
@@ -48366,9 +48245,9 @@ rq
 OW
 rq
 Eo
-bY
-bY
-qP
+GK
+GK
+oC
 WY
 Tv
 Tv
@@ -48593,14 +48472,14 @@ dA
 dA
 dA
 dA
-sP
-sP
-sP
-sP
-sP
-sP
-sP
-pv
+rB
+rB
+rB
+rB
+rB
+rB
+rB
+UB
 oS
 rm
 rm
@@ -48624,7 +48503,7 @@ cJ
 wW
 DE
 SG
-bY
+GK
 Pa
 mI
 rk
@@ -48880,9 +48759,9 @@ rq
 rq
 rq
 Ah
-bY
-bY
-bY
+GK
+GK
+GK
 mI
 mI
 mI
@@ -49137,14 +49016,14 @@ Tg
 Tg
 Tg
 DE
-bY
-bY
+GK
+GK
 HK
 mI
 Fx
 Fx
 mI
-VA
+oS
 oS
 rm
 rm
@@ -49389,19 +49268,19 @@ rm
 GK
 SH
 GK
-bY
-bY
-bY
-bY
-bY
-bY
-bY
-qP
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+oC
 mI
 Tv
 Tv
 mI
-VA
+oS
 oS
 oS
 rm
@@ -49634,32 +49513,32 @@ dA
 oS
 rm
 rm
-VA
-VA
-VA
-VA
-VA
-VA
-VA
-ry
-mT
-yA
-ME
-bY
-bY
-bY
-bY
-bY
-bY
-bY
-bY
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+rm
+bS
+jg
+oz
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 Hw
-ok
-ok
-ok
-yA
-ry
-VA
+fK
+fK
+fK
+jg
+rm
+oS
 oS
 oS
 rm
@@ -49890,33 +49769,33 @@ dA
 dA
 oS
 rm
-ry
-ry
-ry
-ry
-ry
-ry
-ry
-ry
-ry
-mT
-lv
-lv
-ok
-ok
-ok
-ok
-ok
-ok
-yA
-yA
-lv
-lv
+rm
+rm
+rm
+rm
+rm
+rm
+rm
+rm
+rm
+bS
+bO
+bO
+fK
+fK
+fK
+fK
+fK
+fK
+jg
+jg
+bm
+bO
 xx
-pJ
-lv
-ry
-VA
+bK
+bO
+rm
+oS
 oS
 oS
 oS
@@ -50147,34 +50026,34 @@ dA
 dA
 oS
 oS
-ry
-ry
-ry
-VA
-ry
-ry
-ry
-ry
-lv
-mT
-lv
-pJ
-lv
-lv
-lv
-rp
-lv
-lv
-lv
-lv
-lv
-lv
-rp
-mT
-lv
-ry
-ry
-VA
+rm
+rm
+rm
+oS
+rm
+rm
+rm
+rm
+bO
+bS
+bO
+bK
+bm
+qP
+bm
+fx
+ru
+NT
+bm
+bm
+ND
+bm
+bm
+zp
+bO
+rm
+rm
+oS
 dA
 oS
 oS
@@ -50404,34 +50283,34 @@ dA
 dA
 dA
 oS
-ry
-ry
-VA
-VA
-VA
-ry
-mT
+rm
+rm
+oS
+oS
+oS
+rm
+bS
 xx
-lv
-rp
-lv
-rp
-lv
-rp
-lv
-lv
-lv
-lv
-lv
-rp
-lv
-lv
-lv
-lv
-lv
-lv
-ry
-VA
+bO
+fx
+bO
+bO
+bO
+bm
+bm
+bm
+bm
+bm
+bO
+bO
+bO
+bm
+bm
+ru
+bm
+NT
+rm
+oS
 dA
 dA
 oS
@@ -50661,34 +50540,34 @@ dA
 dA
 dA
 oS
-VA
-ry
-ry
-VA
-ry
-ry
-mT
-pJ
-lv
-lv
-lv
-lv
-lP
-Qn
+oS
+rm
+rm
+oS
+rm
+rm
+bS
+bK
+bO
+bJ
+bO
+bO
+bS
+be
 xx
-lv
-lv
-lv
-lv
+bm
+bm
+bO
+bO
 rp
-lv
-pJ
-lv
-mT
-lv
-lv
-ry
-VA
+bO
+bK
+ru
+zp
+lP
+bm
+rm
+oS
 dA
 dA
 dA
@@ -50918,34 +50797,34 @@ dA
 dA
 dA
 dA
-VA
-VA
-ry
-ry
-ry
-lv
-lv
-lv
-lv
-lv
+oS
+oS
+rm
+rm
+rm
+bO
+bO
+yA
+bO
+YK
 xx
 gZ
-Bo
 gZ
 gZ
-mT
+gZ
+bS
 xx
-mT
-pJ
-lv
-lv
-lv
-mT
-lv
-lv
-lv
+bS
+bK
+bO
+bm
+bm
+zp
 ry
-VA
+FA
+lv
+rm
+oS
 dA
 dA
 dA
@@ -51175,16 +51054,16 @@ dA
 dA
 dA
 dA
-VA
-ry
-ry
-lv
-lv
-pJ
-mT
-lv
-pJ
-lv
+oS
+rm
+rm
+bO
+bO
+bK
+bS
+bO
+bK
+bO
 gZ
 gZ
 gZ
@@ -51193,16 +51072,16 @@ gZ
 gZ
 gZ
 gZ
-lv
-lv
-lv
-lv
-lv
-lv
-lv
-lv
-ry
-VA
+bO
+bm
+qP
+bm
+bm
+FA
+ru
+bm
+rm
+oS
 dA
 dA
 dA
@@ -51431,15 +51310,15 @@ dA
 dA
 dA
 dA
-VA
-VA
-ry
-lv
-lv
-lv
-mT
-lv
-lv
+oS
+oS
+rm
+bO
+YK
+bO
+bS
+pJ
+bO
 xx
 gZ
 gZ
@@ -51451,15 +51330,15 @@ gZ
 gZ
 gZ
 xx
-rp
-lv
-lv
-lv
-lv
+fx
+bO
+bO
+ND
+bm
 NT
-lv
-ry
-VA
+bm
+rm
+oS
 dA
 dA
 dA
@@ -51687,16 +51566,16 @@ dA
 dA
 dA
 dA
-VA
-VA
-ry
-lv
-lv
-lv
-lv
-rp
-lv
-mT
+oS
+oS
+rm
+bO
+pJ
+YK
+bO
+fx
+bO
+bS
 gZ
 gZ
 gZ
@@ -51708,15 +51587,15 @@ gZ
 gZ
 gZ
 gZ
-mT
-lv
-lv
-lv
-mT
-lv
-lv
-ry
-VA
+bS
+bO
+pJ
+bO
+bS
+FA
+bm
+rm
+oS
 dA
 dA
 dA
@@ -51944,15 +51823,15 @@ dA
 dA
 dA
 dA
-VA
-ry
-ry
-lv
-lv
-lv
-lv
-lv
-lv
+oS
+rm
+rm
+bO
+bO
+bO
+bO
+bO
+bO
 gZ
 gZ
 gZ
@@ -51966,14 +51845,14 @@ gZ
 gZ
 gZ
 gZ
-lv
-lv
-lv
-pJ
-lv
-lv
-ry
-VA
+bO
+bO
+bO
+bK
+bO
+bm
+rm
+oS
 dA
 dA
 dA
@@ -52201,15 +52080,15 @@ dA
 dA
 dA
 dA
-VA
-ry
-lv
-mT
-mT
-rp
-rp
-lv
-mT
+oS
+rm
+bO
+bS
+bS
+fx
+bJ
+bO
+bS
 gZ
 gZ
 gZ
@@ -52223,14 +52102,14 @@ gZ
 gZ
 gZ
 gZ
-mT
-lv
-lv
-lv
+bS
+NT
+FA
+bO
 xx
-ry
-ry
-VA
+rm
+rm
+oS
 dA
 dA
 dA
@@ -52458,15 +52337,15 @@ dA
 dA
 dA
 dA
-VA
-ry
-lv
-lv
-lv
-lv
-lv
-Zp
-Jn
+oS
+rm
+bO
+bO
+bO
+YK
+bO
+bO
+be
 gZ
 gZ
 gZ
@@ -52480,14 +52359,14 @@ gZ
 gZ
 gZ
 gZ
-Qn
-mT
-lv
-lv
-ry
-ry
-VA
-VA
+be
+zp
+ru
+bO
+rm
+rm
+oS
+oS
 dA
 dA
 dA
@@ -52715,15 +52594,15 @@ dA
 dA
 dA
 dA
-VA
-ry
-lv
-mT
-rp
-lv
-lv
-rp
-lv
+oS
+rm
+bO
+bS
+fx
+bO
+bO
+fx
+bO
 gZ
 gZ
 gZ
@@ -52737,13 +52616,13 @@ gZ
 gZ
 gZ
 gZ
-lv
-rp
-lv
-lv
-lv
-ry
-VA
+bO
+bm
+bO
+bO
+bm
+rm
+oS
 dA
 dA
 dA
@@ -52972,15 +52851,15 @@ dA
 dA
 dA
 dA
-VA
-ry
-lv
-lv
-lv
-lv
+oS
+rm
+bO
+bO
+bO
+bO
+bK
 pJ
-lv
-lv
+bO
 xx
 gZ
 gZ
@@ -52994,13 +52873,13 @@ gZ
 gZ
 gZ
 xx
-lv
-lv
-lv
-lv
+bO
+bO
+bO
+bm
 NT
-ry
-VA
+rm
+oS
 dA
 dA
 dA
@@ -53229,35 +53108,35 @@ dA
 dA
 dA
 dA
-VA
-ry
-ry
-lv
-lv
-lv
-lv
-lv
-lv
-gZ
-gZ
-gZ
-gZ
-gZ
-gZ
-gZ
-gZ
-gZ
-gZ
-gZ
-gZ
+oS
+rm
+rm
+bO
+bO
+bO
+bO
+bO
 mT
-lv
-lv
-pJ
-lv
-ry
-VA
-VA
+gZ
+gZ
+gZ
+gZ
+gZ
+gZ
+gZ
+gZ
+gZ
+gZ
+gZ
+gZ
+bS
+bO
+bO
+bK
+bm
+rm
+oS
+oS
 dA
 dA
 dA
@@ -53486,16 +53365,16 @@ dA
 dA
 dA
 dA
-VA
-VA
-ry
-lv
-mT
-rp
-lv
-lv
-rp
-lv
+oS
+oS
+rm
+bO
+bS
+fx
+YK
+bO
+fx
+bO
 xx
 gZ
 gZ
@@ -53507,13 +53386,13 @@ gZ
 gZ
 gZ
 xx
-mT
-lv
-lv
-lv
-ry
-VA
-VA
+bS
+bO
+bO
+bm
+rm
+oS
+oS
 dA
 dA
 dA
@@ -53744,32 +53623,32 @@ dA
 dA
 dA
 dA
-VA
-ry
-lv
-lv
-lv
-lv
-lv
+oS
+rm
+bO
+bJ
+bO
+bO
+bO
+bK
+bO
+bO
+gZ
+gZ
+gZ
+gZ
+gZ
+gZ
+gZ
+gZ
+bS
 pJ
-lv
-lv
-gZ
-gZ
-gZ
-gZ
-gZ
-gZ
-gZ
-gZ
-mT
-lv
-lv
-lv
-mT
-NT
-ry
-VA
+bO
+bO
+bS
+yu
+rm
+oS
 dA
 dA
 dA
@@ -54001,16 +53880,16 @@ dA
 dA
 dA
 dA
-VA
-ry
-lv
-lv
-lv
-lv
-lv
+oS
+rm
+bO
+bO
+yA
+bO
+bO
+bS
+bS
 mT
-mT
-lv
 xx
 gZ
 gZ
@@ -54019,14 +53898,14 @@ gZ
 gZ
 gZ
 gZ
-lv
-lv
-lv
-pJ
-lv
-ry
-ry
-VA
+bO
+bO
+bO
+bK
+bm
+rm
+rm
+oS
 dA
 dA
 dA
@@ -54258,32 +54137,32 @@ dA
 dA
 dA
 dA
-VA
-ry
-ry
-lv
-lv
-rp
-lv
-lv
-lv
-lv
-lv
-lv
-lv
-ND
-Qn
-lv
-lv
+oS
+rm
+rm
+bO
+bO
+fx
+bO
+pJ
+YK
+bJ
+bO
+bO
+bm
+bm
+aK
+ru
+bm
 xx
-mT
-lv
-lv
-lv
-ry
-ry
-VA
-VA
+bS
+bm
+bO
+bm
+rm
+rm
+oS
+oS
 dA
 dA
 dA
@@ -54515,31 +54394,31 @@ dA
 dA
 dA
 dA
-VA
-VA
-ry
-ry
-rp
-lv
-pJ
-lv
-lv
-lv
-lv
-lv
-mT
+oS
+oS
+rm
+rm
+fx
+bO
+bK
+bO
+bO
+bO
+yA
+bO
+bS
+zp
+bm
 lP
-lv
-lv
-mT
+zp
 NT
-lv
+FA
 lv
 NT
-ry
-ry
-VA
-VA
+rm
+rm
+oS
+oS
 dA
 dA
 dA
@@ -54773,29 +54652,29 @@ dA
 dA
 dA
 dA
-VA
-VA
-ry
-lv
-lv
-lv
+oS
+oS
+rm
+bO
+bO
+bO
 mT
-mT
-lv
-lv
-pJ
-lv
-lv
-lv
+zp
+bm
+bO
+bK
+bO
+bO
+ru
 NT
-ry
-ry
-ry
-ry
-ry
-ry
-VA
-VA
+rm
+rm
+rm
+rm
+rm
+rm
+oS
+oS
 dA
 dA
 dA
@@ -55031,27 +54910,27 @@ dA
 dA
 dA
 dA
-VA
-ry
-ry
-ry
-ry
-lv
-lv
-lv
-lv
-lv
-ry
-ry
-ry
-ry
-ry
-VA
-VA
-VA
-VA
-VA
-VA
+oS
+rm
+rm
+rm
+rm
+bO
+bO
+NT
+bm
+ru
+rm
+rm
+rm
+rm
+rm
+oS
+oS
+oS
+oS
+oS
+oS
 dA
 dA
 dA
@@ -55288,22 +55167,22 @@ dA
 dA
 dA
 dA
-VA
-VA
-VA
-VA
-ry
-ry
-ry
-ry
-ry
-ry
-ry
-VA
-VA
-VA
-VA
-VA
+oS
+oS
+oS
+oS
+rm
+rm
+rm
+rm
+rm
+rm
+rm
+oS
+oS
+oS
+oS
+oS
 dA
 dA
 dA
@@ -55548,15 +55427,15 @@ dA
 dA
 dA
 dA
-VA
-VA
-VA
-VA
-VA
-VA
-VA
-VA
-VA
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
 dA
 dA
 dA
