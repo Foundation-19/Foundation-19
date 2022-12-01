@@ -1118,10 +1118,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
 "adE" = (
-/obj/machinery/light{
+/obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/red/border{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -22410,13 +22410,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/commanderoffice)
-"cwA" = (
-/obj/structure/table/standard,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurantkitchenarea)
 "cwF" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -26098,6 +26091,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
+"hLZ" = (
+/obj/structure/table/standard,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/lino,
+/area/site53/lowertrams/restaurantkitchenarea)
 "hMa" = (
 /obj/item/storage/fancy/cigarettes,
 /turf/simulated/floor,
@@ -26566,15 +26566,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
-"ivk" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/hub)
 "ivM" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -26611,7 +26602,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/civilian{
-	name="Restaurant Office"
+	<<<<<<<Updatedupstreamname = "Bar Office"=======name="Restaurant Office">>>>>>>Stashedchanges
 	},
 /obj/machinery/door/blast/shutters{
 	name = "Restaurant Office Privacy Shutters";
@@ -27740,6 +27731,15 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"kcW" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lowertrams/hub)
 "kdH" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/item/stool,
@@ -35052,11 +35052,11 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
 "uSb" = (
-/obj/effect/floor_decal/corner/yellow/border{
+/obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
 	},
 /obj/machinery/light{
-	dir = 4
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
@@ -68565,7 +68565,7 @@ aMo
 iXE
 aMo
 aMo
-uSb
+kcW
 aMo
 aMo
 aMo
@@ -69076,7 +69076,7 @@ abp
 aav
 abH
 aOv
-cwA
+hLZ
 fNH
 aOv
 uIO
@@ -69341,7 +69341,7 @@ fUk
 iYi
 aGb
 aav
-aio
+uSb
 aPS
 aPT
 aPZ
@@ -69598,7 +69598,7 @@ erC
 adt
 aOy
 abz
-adE
+aSz
 aeT
 abE
 aaf
@@ -70626,7 +70626,7 @@ aLL
 adt
 gEm
 aav
-ivk
+adE
 aeT
 abE
 aaf
