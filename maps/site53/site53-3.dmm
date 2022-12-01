@@ -900,11 +900,9 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "bY" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/ethics)
+/obj/structure/flora/ausbushes/grassybush,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface)
 "bZ" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
@@ -4821,7 +4819,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "lH" = (
 /obj/machinery/light{
 	dir = 8
@@ -4863,9 +4861,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "lP" = (
-/obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/exoplanet/grass,
-/area/site53/surface/surface)
+/obj/structure/table/woodentable/ebony,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/ethics)
 "lR" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sunnybush,
@@ -5188,7 +5187,7 @@
 /obj/effect/paint_stripe/orange,
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "mI" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/surface/surface)
@@ -5636,8 +5635,9 @@
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/surface/surface)
 "ok" = (
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/internaltribunal)
+/obj/structure/flora/ausbushes/grassybush,
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "ol" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -6056,9 +6056,11 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmreception/waiting)
 "pJ" = (
-/obj/structure/flora/grass/brown,
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/lowertrams/restaurantkitchenarea)
 "pM" = (
 /obj/structure/table/standard,
 /obj/item/paper,
@@ -6099,7 +6101,7 @@
 "qb" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/internaltribunal)
+/area/site53/uez/repoffice/ethics)
 "qf" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -6220,7 +6222,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "qP" = (
-/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "qQ" = (
@@ -6327,7 +6329,7 @@
 /area/site53/surface/surface)
 "rn" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "ro" = (
 /obj/machinery/light,
 /obj/structure/closet,
@@ -7689,6 +7691,16 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
+"vS" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/repoffice/ethics)
+"vX" = (
+/obj/structure/flora/ausbushes,
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "vY" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -7716,7 +7728,7 @@
 /obj/structure/table/woodentable/ebony,
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/internaltribunal)
+/area/site53/uez/repoffice/ethics)
 "wp" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 4
@@ -7804,8 +7816,6 @@
 /turf/simulated/floor/tiled,
 /area/site53/uez/armory)
 "wP" = (
-/obj/structure/table/woodentable/ebony,
-/obj/machinery/photocopier,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/ethics)
 "wS" = (
@@ -8002,10 +8012,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uez/equipmentroom)
-"yu" = (
-/obj/structure/flora/ausbushes,
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface)
 "yv" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 8
@@ -8040,7 +8046,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
 "yA" = (
-/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/grass/brown,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "yC" = (
@@ -8680,11 +8686,6 @@
 /obj/item/pen/chameleon,
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
-"Co" = (
-/obj/structure/table/woodentable/ebony,
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/internaltribunal)
 "Cp" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
@@ -9115,6 +9116,11 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
+"FM" = (
+/obj/structure/table/woodentable/ebony,
+/obj/machinery/photocopier,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/repoffice/internaltribunal)
 "FQ" = (
 /obj/structure/table/standard,
 /obj/item/pen,
@@ -9507,16 +9513,13 @@
 /obj/machinery/vending/cigarette{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 8
-	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
 "Iy" = (
 /obj/structure/table/woodentable/ebony,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "Iz" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -9586,6 +9589,10 @@
 	},
 /turf/unsimulated/mineral,
 /area/space)
+"Jq" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/internaltribunal)
 "Jr" = (
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/monotile/white,
@@ -9713,12 +9720,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"Kt" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/ethics)
 "Kv" = (
 /obj/effect/floor_decal/corner/purple/border,
 /obj/machinery/camera/network/medbay{
@@ -10029,8 +10030,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "ME" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/techfloor,
+/obj/structure/table/woodentable/ebony,
+/obj/item/stamp/scp/o5rep,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/ethics)
 "MN" = (
 /obj/structure/cable{
@@ -10129,7 +10131,7 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "ND" = (
-/obj/structure/flora/ausbushes/pointybush,
+/obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface)
 "NE" = (
@@ -10417,8 +10419,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "Qn" = (
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
+/turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/repoffice/ethics)
 "Qq" = (
 /obj/structure/railing/mapped{
@@ -10931,11 +10932,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/equipmentroom)
-"UB" = (
-/obj/effect/paint_stripe/orange,
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
-/area/site53/uez/repoffice/internaltribunal)
 "UC" = (
 /obj/effect/floor_decal/corner/green/bordercorner{
 	dir = 1
@@ -10990,17 +10986,17 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
-"UR" = (
-/obj/structure/table/woodentable/ebony,
-/obj/item/stamp/scp/o5rep,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/ethics)
 "US" = (
 /obj/structure/table/standard,
 /obj/item/device/scanner/reagent,
 /obj/item/device/scanner/spectrometer,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/morgue)
+"UT" = (
+/obj/effect/paint_stripe/orange,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
+/area/site53/uez/repoffice/ethics)
 "UV" = (
 /obj/machinery/door/airlock/multi_tile/glass/security{
 	dir = 8;
@@ -11089,7 +11085,8 @@
 /turf/simulated/mineral,
 /area/site53/medical/infirmary)
 "VA" = (
-/turf/simulated/floor/tiled/techfloor,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
 /area/site53/uez/repoffice/ethics)
 "VF" = (
 /obj/machinery/light,
@@ -11143,12 +11140,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfaceeast)
-"Wa" = (
-/obj/structure/table/woodentable/ebony,
-/obj/item/paper_bin,
-/obj/item/pen/fancy/quill,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/ethics)
+"Wf" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/repoffice/internaltribunal)
 "Wl" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
@@ -11188,11 +11185,11 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
 "WF" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
+/obj/structure/table/woodentable/ebony,
+/obj/item/paper_bin,
+/obj/item/pen/fancy/quill,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/internaltribunal)
+/area/site53/uez/repoffice/ethics)
 "WG" = (
 /obj/machinery/floodlight{
 	anchored = 1;
@@ -11305,6 +11302,12 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/grass,
 /area/site53/medical/infirmary)
+"XA" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/ethics)
 "XD" = (
 /obj/effect/floor_decal/corner/orange/border,
 /obj/machinery/papershredder,
@@ -11554,7 +11557,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/internaltribunal)
+/area/site53/uez/repoffice/ethics)
 "Zn" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
@@ -44363,13 +44366,13 @@ bw
 dt
 lo
 mB
-Qn
+VA
 Zv
 Zv
 Zv
 Zv
 Zv
-Qn
+VA
 ms
 mu
 Jt
@@ -44623,10 +44626,10 @@ mB
 Zv
 rr
 rr
-rn
-rn
 wP
-Qn
+wP
+wj
+VA
 ms
 mu
 Jt
@@ -44880,10 +44883,10 @@ mB
 Zv
 rv
 yI
-VA
-VA
-rF
 Qn
+Qn
+rF
+VA
 ms
 mu
 Jt
@@ -45135,12 +45138,12 @@ dt
 GV
 mB
 Zv
-Kt
-lF
-VA
-VA
-rE
+vS
+XA
 Qn
+Qn
+rE
+VA
 ms
 mv
 Gi
@@ -45392,12 +45395,12 @@ dt
 lo
 WX
 Zv
-rn
-VA
-ME
-VA
-VF
+wP
 Qn
+qb
+Qn
+VF
+VA
 ms
 mu
 tR
@@ -45649,12 +45652,12 @@ dt
 Uu
 Vb
 ri
-rn
-VA
-Iy
-Wa
-UR
+wP
 Qn
+lP
+WF
+ME
+VA
 mw
 mx
 Df
@@ -45906,12 +45909,12 @@ dt
 OK
 ve
 Zv
-rn
-VA
+wP
+Qn
 Kj
 rz
-rn
-Qn
+wP
+VA
 tM
 tM
 Gi
@@ -46163,12 +46166,12 @@ dt
 lo
 mJ
 nr
-bY
-bY
+Zh
+Zh
 rx
-bY
+Zh
 rG
-Qn
+VA
 bS
 bm
 YR
@@ -46423,9 +46426,9 @@ rB
 rB
 rB
 rB
-UB
-Qn
 mG
+VA
+UT
 bO
 ru
 YR
@@ -46674,9 +46677,9 @@ dA
 dA
 dA
 rB
-ok
+rn
 ng
-Zh
+Wf
 mC
 mC
 bB
@@ -46931,7 +46934,7 @@ dA
 dA
 dA
 rB
-ok
+rn
 ny
 ny
 Zp
@@ -46959,7 +46962,7 @@ oS
 oS
 rm
 rm
-yu
+vX
 bO
 xx
 fx
@@ -47191,8 +47194,8 @@ rB
 MO
 ny
 ny
-WF
-WF
+lF
+lF
 LL
 kb
 bI
@@ -47448,9 +47451,9 @@ rB
 mF
 ny
 ny
-qb
+Jq
 ny
-ok
+rn
 YU
 bJ
 bO
@@ -47705,7 +47708,7 @@ rB
 NM
 ny
 ny
-Co
+Iy
 ox
 rC
 rB
@@ -48216,12 +48219,12 @@ dA
 dA
 dA
 rB
-wj
-ok
-ok
+FM
+rn
+rn
 od
-ok
-ok
+rn
+rn
 rB
 rm
 rm
@@ -48479,7 +48482,7 @@ rB
 rB
 rB
 rB
-UB
+mG
 oS
 rm
 rm
@@ -48755,7 +48758,7 @@ rm
 DE
 sL
 rq
-rq
+pJ
 rq
 rq
 Ah
@@ -49012,7 +49015,7 @@ rm
 DE
 Tg
 Tg
-Tg
+DE
 Tg
 Tg
 DE
@@ -50039,14 +50042,14 @@ bS
 bO
 bK
 bm
-qP
+bY
 bm
 fx
 ru
 NT
 bm
 bm
-ND
+qP
 bm
 bm
 zp
@@ -50564,7 +50567,7 @@ bO
 bK
 ru
 zp
-lP
+ND
 bm
 rm
 oS
@@ -50804,7 +50807,7 @@ rm
 rm
 bO
 bO
-yA
+ok
 bO
 YK
 xx
@@ -51074,7 +51077,7 @@ gZ
 gZ
 bO
 bm
-qP
+bY
 bm
 bm
 FA
@@ -51317,7 +51320,7 @@ bO
 YK
 bO
 bS
-pJ
+yA
 bO
 xx
 gZ
@@ -51333,7 +51336,7 @@ xx
 fx
 bO
 bO
-ND
+qP
 bm
 NT
 bm
@@ -51570,7 +51573,7 @@ oS
 oS
 rm
 bO
-pJ
+yA
 YK
 bO
 fx
@@ -51589,7 +51592,7 @@ gZ
 gZ
 bS
 bO
-pJ
+yA
 bO
 bS
 FA
@@ -52858,7 +52861,7 @@ bO
 bO
 bO
 bK
-pJ
+yA
 bO
 xx
 gZ
@@ -53642,11 +53645,11 @@ gZ
 gZ
 gZ
 bS
-pJ
+yA
 bO
 bO
 bS
-yu
+vX
 rm
 oS
 dA
@@ -53884,7 +53887,7 @@ oS
 rm
 bO
 bO
-yA
+ok
 bO
 bO
 bS
@@ -54144,7 +54147,7 @@ bO
 bO
 fx
 bO
-pJ
+yA
 YK
 bJ
 bO
@@ -54404,12 +54407,12 @@ bK
 bO
 bO
 bO
-yA
+ok
 bO
 bS
 zp
 bm
-lP
+ND
 zp
 NT
 FA
