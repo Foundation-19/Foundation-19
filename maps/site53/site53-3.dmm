@@ -1829,11 +1829,6 @@
 /obj/structure/cable/green,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op2)
-"ea" = (
-/obj/effect/paint_stripe/orange,
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
-/area/site53/uez/repoffice/internaltribunal)
 "eb" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -3055,6 +3050,9 @@
 /obj/item/reagent_containers/ivbag/blood/OMinus,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
+"hh" = (
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/repoffice/internaltribunal)
 "hi" = (
 /obj/machinery/organ_printer/flesh/mapped{
 	max_stored_matter = 9000;
@@ -4875,9 +4873,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/machinery/camera/network/entrance{
 	dir = 4;
-	name = "Surface relaxation zone";
-	pixel_x = +23;
-	pixel_y = +20
+	name = "Bar's Snow Garden"
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface{
@@ -5205,6 +5201,11 @@
 /obj/effect/paint_stripe/orange,
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
+/area/site53/uez/repoffice/internaltribunal)
+"mH" = (
+/obj/structure/table/woodentable/ebony,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/repoffice/ethics)
 "mI" = (
 /turf/simulated/floor/wood/walnut,
@@ -5472,7 +5473,7 @@
 /area/site53/uez/senioragentoffice)
 "ny" = (
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/internaltribunal)
+/area/site53/uez/repoffice/ethics)
 "nz" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/surgery/hall)
@@ -6136,9 +6137,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/maincontrolroomstairs)
-"qg" = (
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/ethics)
 "qm" = (
 /obj/machinery/light,
 /turf/simulated/open,
@@ -6366,7 +6364,7 @@
 /area/site53/surface/surface)
 "rn" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/internaltribunal)
+/area/site53/uez/repoffice/ethics)
 "ro" = (
 /obj/machinery/light,
 /obj/structure/closet,
@@ -6444,12 +6442,12 @@
 "rB" = (
 /obj/effect/paint_stripe/orange,
 /turf/simulated/wall/titanium,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "rC" = (
 /obj/structure/table/woodentable/ebony,
 /obj/item/stamp/scp/o5rep,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "rE" = (
 /obj/machinery/camera/autoname{
 	dir = 1;
@@ -7751,6 +7749,11 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"wc" = (
+/obj/effect/paint_stripe/orange,
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
+/area/site53/uez/repoffice/ethics)
 "we" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
@@ -7759,7 +7762,7 @@
 /obj/structure/table/woodentable/ebony,
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "wp" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 4
@@ -7954,11 +7957,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
-"xi" = (
-/obj/structure/table/woodentable/ebony,
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/internaltribunal)
 "xn" = (
 /obj/machinery/door/airlock/command{
 	name = "Zone Commander's Office";
@@ -8083,9 +8081,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
-"yy" = (
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
+"yw" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/internaltribunal)
 "yz" = (
 /obj/effect/floor_decal/corner/green{
@@ -8135,10 +8135,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
-"yR" = (
-/obj/structure/table/woodentable/ebony,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/internaltribunal)
 "yV" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -8586,6 +8582,10 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"Bp" = (
+/obj/effect/paint_stripe/orange,
+/turf/simulated/wall/titanium,
+/area/site53/uez/repoffice/ethics)
 "Bq" = (
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 4
@@ -8626,12 +8626,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
-"Bs" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/internaltribunal)
 "Bt" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
@@ -8803,9 +8797,9 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
-"CK" = (
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/ethics)
+"CL" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/internaltribunal)
 "CU" = (
 /obj/structure/iv_drip,
 /obj/structure/cable/green{
@@ -8840,6 +8834,10 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
+"Dr" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/ethics)
 "Dz" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -8865,6 +8863,11 @@
 /obj/structure/bed/chair,
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/exam_room)
+"DI" = (
+/obj/structure/table/woodentable/ebony,
+/obj/machinery/photocopier,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/repoffice/ethics)
 "DL" = (
 /obj/effect/paint_stripe/paleblue,
 /obj/effect/floor_decal/corner/paleblue/mono,
@@ -9399,10 +9402,6 @@
 /obj/structure/iv_drip,
 /turf/simulated/floor/carpet/orange,
 /area/site53/medical/mentalhealth/office)
-"Ht" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/ethics)
 "Hw" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -9435,11 +9434,6 @@
 /obj/item/ammo_magazine/box/rubbershot,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
-"HA" = (
-/obj/structure/table/woodentable/ebony,
-/obj/item/stamp/scp/o5rep,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/internaltribunal)
 "HG" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/corner/red/half{
@@ -9589,11 +9583,17 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"Ip" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/internaltribunal)
 "Iy" = (
 /obj/structure/table/woodentable/ebony,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "Iz" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -9878,6 +9878,12 @@
 /obj/item/ammo_magazine/box/slug,
 /turf/simulated/floor/tiled,
 /area/site53/uez/armory)
+"KS" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/repoffice/ethics)
 "Lb" = (
 /obj/machinery/door/airlock/glass/mining{
 	name = "Helipad";
@@ -9954,11 +9960,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
-"Lu" = (
-/obj/structure/table/woodentable/ebony,
-/obj/machinery/photocopier,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/internaltribunal)
 "Lv" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 1
@@ -9999,7 +10000,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/ethics)
+/area/site53/uez/repoffice/internaltribunal)
 "LR" = (
 /obj/effect/floor_decal/corner/red/half{
 	dir = 1
@@ -10213,9 +10214,7 @@
 "ND" = (
 /obj/machinery/camera/network/entrance{
 	dir = 4;
-	name = "Surface relaxation zone";
-	pixel_x = +23;
-	pixel_y = +20
+	name = "Bar's Snow Garden"
 	},
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface{
@@ -10410,6 +10409,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uez/armory)
+"PB" = (
+/obj/structure/table/woodentable/ebony,
+/obj/item/paper_bin,
+/obj/item/pen/fancy/quill,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/ethics)
 "PM" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -10923,6 +10928,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/maintenance/surfaceeast)
+"TJ" = (
+/obj/structure/table/woodentable/ebony,
+/turf/simulated/floor/tiled/techfloor,
+/area/site53/uez/repoffice/internaltribunal)
 "TP" = (
 /obj/machinery/button/blast_door{
 	dir = 8;
@@ -11228,12 +11237,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/equipstorage)
-"VL" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/repoffice/internaltribunal)
 "VN" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -11281,15 +11284,10 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
 "WF" = (
-/obj/machinery/camera/network/entrance{
-	name = "Surface relaxation zone";
-	pixel_x = 16;
-	pixel_y = -8
-	},
-/turf/simulated/floor/exoplanet/ice,
-/area/site53/surface/surface{
-	name = "Bar's Snow Garden"
-	})
+/obj/structure/table/woodentable/ebony,
+/obj/item/stamp/scp/o5rep,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/repoffice/ethics)
 "WG" = (
 /obj/machinery/floodlight{
 	anchored = 1;
@@ -11659,8 +11657,7 @@
 /area/site53/uez/equipmentroom)
 "Zp" = (
 /obj/machinery/camera/network/entrance{
-	name = "Surface relaxation zone";
-	pixel_x = 16;
+	name = "Bar's Snow Garden";
 	pixel_y = -8
 	},
 /turf/simulated/floor/exoplanet/snow,
@@ -11702,18 +11699,6 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
-"Zz" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/internaltribunal)
-"ZA" = (
-/obj/structure/table/woodentable/ebony,
-/obj/item/paper_bin,
-/obj/item/pen/fancy/quill,
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/repoffice/ethics)
 "ZG" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -44480,13 +44465,13 @@ bw
 dt
 lo
 mB
-rB
+Bp
 Zv
 Zv
 Zv
 Zv
 Zv
-rB
+Bp
 ms
 mu
 Jt
@@ -44740,10 +44725,10 @@ mB
 Zv
 rr
 rr
-CK
-CK
-wj
-rB
+rn
+rn
+DI
+Bp
 ms
 mu
 Jt
@@ -44997,10 +44982,10 @@ mB
 Zv
 rv
 yI
-qg
-qg
+ny
+ny
 rF
-rB
+Bp
 ms
 mu
 Jt
@@ -45252,12 +45237,12 @@ dt
 GV
 mB
 Zv
-LL
+KS
 lF
-qg
-qg
+ny
+ny
 rE
-rB
+Bp
 ms
 mv
 Gi
@@ -45509,12 +45494,12 @@ dt
 lo
 WX
 Zv
-CK
-qg
-Ht
-qg
+rn
+ny
+Dr
+ny
 VF
-rB
+Bp
 ms
 mu
 tR
@@ -45766,12 +45751,12 @@ dt
 Uu
 Vb
 ri
-CK
-qg
-Iy
-ZA
-rC
-rB
+rn
+ny
+mH
+PB
+WF
+Bp
 mw
 mx
 Df
@@ -46023,12 +46008,12 @@ dt
 OK
 ve
 Zv
-CK
-qg
+rn
+ny
 Kj
 rz
-CK
-rB
+rn
+Bp
 tM
 tM
 Gi
@@ -46285,7 +46270,7 @@ Zh
 rx
 Zh
 rG
-rB
+Bp
 bS
 bm
 YR
@@ -46533,16 +46518,16 @@ dA
 dA
 dA
 dA
-yy
+rB
 rs
 ov
-yy
-yy
-yy
-yy
-ea
+rB
+rB
+rB
 rB
 mG
+Bp
+wc
 bO
 ru
 YR
@@ -46790,14 +46775,14 @@ dA
 dA
 dA
 dA
-yy
-rn
+rB
+hh
 ng
-Bs
+yw
 mC
 mC
 bB
-yy
+rB
 bm
 bm
 bO
@@ -47047,14 +47032,14 @@ dA
 dA
 dA
 dA
-yy
-rn
-ny
-ny
-yR
-yR
+rB
+hh
+CL
+CL
+TJ
+TJ
 ga
-yy
+rB
 bC
 bK
 bO
@@ -47304,13 +47289,13 @@ dA
 dA
 dA
 dA
-yy
+rB
 MO
-ny
-ny
-Zz
-Zz
-VL
+CL
+CL
+Ip
+Ip
+LL
 kb
 bI
 bO
@@ -47561,13 +47546,13 @@ dA
 dA
 dA
 dA
-yy
+rB
 mF
-ny
-ny
+CL
+CL
 qb
-ny
-rn
+CL
+hh
 YU
 bJ
 bO
@@ -47818,14 +47803,14 @@ dA
 dA
 dA
 dA
-yy
+rB
 NM
-ny
-ny
-xi
+CL
+CL
+Iy
 ox
-HA
-yy
+rC
+rB
 ru
 bI
 bX
@@ -48075,14 +48060,14 @@ dA
 dA
 dA
 dA
-yy
+rB
 JR
-ny
-ny
+CL
+CL
 dc
 mE
 mD
-yy
+rB
 bI
 rm
 bO
@@ -48332,14 +48317,14 @@ dA
 dA
 dA
 dA
-yy
-Lu
-rn
-rn
+rB
+wj
+hh
+hh
 od
-rn
-rn
-yy
+hh
+hh
+rB
 rm
 rm
 rm
@@ -48589,14 +48574,14 @@ dA
 dA
 dA
 dA
-yy
-yy
-yy
-yy
-yy
-yy
-yy
-ea
+rB
+rB
+rB
+rB
+rB
+rB
+rB
+mG
 oS
 rm
 rm
@@ -52475,7 +52460,7 @@ gZ
 gZ
 gZ
 gZ
-WF
+gZ
 Qn
 mT
 lv
