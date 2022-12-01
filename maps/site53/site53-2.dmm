@@ -688,11 +688,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "ach" = (
@@ -26598,7 +26593,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/civilian{
-	name="Restaurant Office"
+	<<<<<<<Updatedupstreamname = "Bar Office"=======name="Restaurant Office">>>>>>>Stashedchanges
 	},
 /obj/machinery/door/blast/shutters{
 	name = "Restaurant Office Privacy Shutters";
@@ -32881,13 +32876,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
-"rBm" = (
-/obj/machinery/power/apc/hyper{
-	dir = 8
-	},
-/obj/structure/cable/green,
-/turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurantkitchenarea)
 "rCd" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
@@ -37396,11 +37384,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "xUF" = (
@@ -71374,7 +71357,7 @@ ivM
 adb
 xUj
 acg
-rBm
+gLb
 eon
 bdp
 abx
