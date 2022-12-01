@@ -431,7 +431,7 @@
 	pixel_y = 32
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "abj" = (
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lowertrams/restaurantkitchenarea)
@@ -526,7 +526,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "abB" = (
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/monotile,
@@ -561,7 +561,7 @@
 	pixel_y = 32
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "abI" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
@@ -680,7 +680,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "acg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -694,7 +694,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "ach" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/device/flashlight/lamp,
@@ -726,7 +726,7 @@
 	pixel_y = 32
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "aco" = (
 /obj/structure/dogbed,
 /mob/living/simple_animal/scp_131/a,
@@ -890,7 +890,7 @@
 /obj/structure/table/standard,
 /obj/item/deck/cards,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "acX" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -911,7 +911,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "ada" = (
 /turf/simulated/floor/reinforced,
 /area/site53/surface/explorers/surrounding)
@@ -928,7 +928,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "adc" = (
 /obj/machinery/light,
 /obj/machinery/stove,
@@ -1038,7 +1038,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "adq" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -1069,7 +1069,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "adu" = (
 /obj/machinery/door/firedoor{
 	dir = 8
@@ -1807,7 +1807,7 @@
 /obj/structure/sign/double/barsign,
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "age" = (
 /obj/machinery/light{
 	dir = 1
@@ -2529,7 +2529,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "ahQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -2541,7 +2541,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "ahS" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106observ)
@@ -12079,7 +12079,7 @@
 	icon_state = "bulb1"
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "aGa" = (
 /obj/machinery/cooker/oven,
 /turf/simulated/floor/tiled/monotile/white,
@@ -12091,7 +12091,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "aGc" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 6
@@ -13946,7 +13946,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "aLM" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -13999,7 +13999,7 @@
 "aLQ" = (
 /obj/machinery/vending/games,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "aLR" = (
 /obj/structure/closet/crate/hydroponics/prespawned,
 /turf/simulated/floor/tiled/techfloor,
@@ -14010,7 +14010,7 @@
 /obj/item/pen/multi,
 /obj/machinery/light,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "aLU" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
@@ -14865,7 +14865,7 @@
 "aOv" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "aOw" = (
 /obj/machinery/computer/rcon{
 	dir = 1
@@ -14889,7 +14889,7 @@
 	name = "Bar Lounge"
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "aOz" = (
 /obj/machinery/door/firedoor,
 /obj/structure/cable/green{
@@ -14903,7 +14903,7 @@
 	name = "Restaurant"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "aOA" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -19457,7 +19457,7 @@
 "bdp" = (
 /obj/machinery/computer/arcade/battle,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "bdq" = (
 /obj/structure/sign/directions/evac{
 	dir = 4
@@ -22799,7 +22799,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "daR" = (
 /obj/effect/floor_decal/carpet/green{
 	dir = 8
@@ -23054,7 +23054,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "dsV" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -23648,7 +23648,7 @@
 "eon" = (
 /obj/item/stool/padded,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "epD" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
@@ -23697,7 +23697,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "erI" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -24585,7 +24585,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "fOI" = (
 /obj/machinery/vending/cigarette{
 	dir = 4
@@ -24727,7 +24727,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "fUw" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/mask/muzzle,
@@ -25276,7 +25276,7 @@
 /obj/structure/table/standard,
 /obj/item/newspaper,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "gEx" = (
 /obj/effect/floor_decal/corner/yellow/bordercorner{
 	dir = 1
@@ -25335,7 +25335,7 @@
 /area/chapel)
 "gLb" = (
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "gLL" = (
 /obj/structure/table/woodentable/mahogany,
 /obj/item/storage/box/bodybags,
@@ -27016,7 +27016,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "iYX" = (
 /obj/machinery/fabricator,
 /turf/simulated/floor/tiled/techfloor,
@@ -27274,7 +27274,7 @@
 "jvV" = (
 /obj/machinery/lapvend,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "jvZ" = (
 /obj/structure/table/woodentable/mahogany,
 /obj/machinery/photocopier{
@@ -27791,7 +27791,7 @@
 	name = "Surface Restaurant Access Shutters"
 	},
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "kiJ" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/handcuffs,
@@ -28580,7 +28580,7 @@
 "lvx" = (
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "lwu" = (
 /obj/structure/closet/toolcloset,
 /obj/machinery/light{
@@ -28913,7 +28913,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "lOG" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -29676,7 +29676,7 @@
 	name = "Bar Lounge"
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "mLm" = (
 /obj/machinery/light{
 	dir = 1
@@ -29733,7 +29733,7 @@
 /obj/item/reagent_containers/food/snacks/old/hotdog,
 /obj/machinery/light,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "mPb" = (
 /obj/effect/floor_decal/corner/purple/bordercorner{
 	dir = 4
@@ -30010,7 +30010,7 @@
 "nhM" = (
 /obj/structure/stairs/east,
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "niH" = (
 /obj/machinery/light{
 	dir = 1
@@ -30550,7 +30550,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "nUw" = (
 /obj/item/device/camera,
 /obj/item/device/camera_film,
@@ -30757,7 +30757,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "ono" = (
 /obj/structure/table/standard,
 /obj/item/toy/plushie/kitten,
@@ -30974,7 +30974,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "oGS" = (
 /obj/effect/floor_decal/industrial/fire{
 	dir = 1
@@ -32887,7 +32887,7 @@
 	},
 /obj/structure/cable/green,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "rCd" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
@@ -33380,7 +33380,7 @@
 "smh" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "smH" = (
 /obj/machinery/smartfridge/secure/extract,
 /obj/effect/paint_stripe/mauve,
@@ -33461,7 +33461,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "stH" = (
 /obj/effect/floor_decal/corner/orange/mono,
 /obj/structure/cable{
@@ -33802,7 +33802,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "sWD" = (
 /obj/structure/table/standard,
 /obj/structure/cable/green{
@@ -34022,7 +34022,7 @@
 	},
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "tkI" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/techmaint,
@@ -34374,7 +34374,7 @@
 /obj/machinery/camera/network/entrance,
 /obj/machinery/vending/coffee,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "tOq" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/steel_grid,
@@ -34936,7 +34936,7 @@
 	},
 /obj/structure/table/standard,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "uJr" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -35010,7 +35010,7 @@
 "uNL" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "uPv" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearchera)
@@ -35038,10 +35038,6 @@
 /obj/machinery/vending/robotics,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aiccore)
-"uSb" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/prepainted,
-/area/site53/lowertrams/restaurant)
 "uSm" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -37158,7 +37154,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "xzQ" = (
 /obj/structure/window/basic/full{
 	name = "Safety Glass"
@@ -37406,7 +37402,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/lino,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "xUF" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -68799,16 +68795,16 @@ otN
 iGp
 abp
 aav
-uSb
+aav
 abz
-uSb
-abz
-abz
-uSb
+aav
 abz
 abz
+aav
 abz
-uSb
+abz
+abz
+aav
 ahq
 hCY
 aPG
@@ -69322,7 +69318,7 @@ gLb
 fUk
 iYi
 aGb
-uSb
+aav
 aio
 aPS
 aPT
@@ -70093,7 +70089,7 @@ qdu
 erC
 tjW
 ahR
-uSb
+aav
 aSz
 aeT
 abE
@@ -70607,7 +70603,7 @@ aoo
 aLL
 adt
 gEm
-uSb
+aav
 aSz
 aeT
 abE
@@ -71121,9 +71117,9 @@ aav
 abi
 adt
 gLb
-uSb
-uSb
-uSb
+aav
+aav
+aav
 abY
 abY
 aah
@@ -73432,11 +73428,11 @@ aav
 aav
 aav
 aav
-uSb
-uSb
-uSb
+aav
+aav
+aav
 khX
-uSb
+aav
 abY
 omv
 cLI
@@ -73691,9 +73687,9 @@ azA
 azA
 azA
 azA
-uSb
+aav
 nhM
-uSb
+aav
 abY
 ooJ
 cLI

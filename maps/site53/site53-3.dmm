@@ -1270,7 +1270,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "cK" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
@@ -6361,7 +6361,7 @@
 	})
 "rq" = (
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "rr" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -6815,7 +6815,7 @@
 "sL" = (
 /obj/structure/bookcase/manuals/research_and_development,
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "sO" = (
 /obj/effect/floor_decal/carpet/orange{
 	dir = 1
@@ -7714,7 +7714,7 @@
 	name = "Surface Bar"
 	},
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "we" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/monotile/white,
@@ -7853,7 +7853,7 @@
 "wW" = (
 /obj/machinery/light,
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "xa" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
@@ -8384,7 +8384,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "Ai" = (
 /obj/machinery/camera/autoname{
 	network = list("Entrance Zone Network")
@@ -8534,7 +8534,7 @@
 	name = "plastic table frame"
 	},
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "Bq" = (
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 4
@@ -8800,7 +8800,7 @@
 "DE" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "DG" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/wood/walnut,
@@ -8931,7 +8931,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "Er" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -9248,7 +9248,7 @@
 "GU" = (
 /obj/structure/flora/pottedplant/flower,
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "GV" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -9432,7 +9432,7 @@
 "HQ" = (
 /obj/structure/bookcase,
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "HR" = (
 /obj/machinery/atmospherics/unary/tank/air{
 	dir = 1;
@@ -9519,7 +9519,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "Iy" = (
 /obj/structure/table/woodentable/ebony,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -10270,7 +10270,7 @@
 "OW" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "Pa" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -10406,7 +10406,7 @@
 "Qk" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "Qm" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -10779,7 +10779,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "Tn" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 6
@@ -11005,7 +11005,7 @@
 	icon_state = "bulb1"
 	},
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "US" = (
 /obj/structure/table/standard,
 /obj/item/device/scanner/reagent,
@@ -11357,7 +11357,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "XL" = (
 /obj/machinery/recharger/wallcharger{
 	dir = 8;
@@ -11488,7 +11488,7 @@
 "YI" = (
 /obj/structure/bookcase/manuals/medical,
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "YJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -11598,7 +11598,7 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/plating,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "Zv" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
@@ -11629,7 +11629,7 @@
 	name = "Surface Restaurant Access Shutters"
 	},
 /turf/simulated/floor/wood/walnut,
-/area/site53/lowertrams/restaurant)
+/area/site53/lowertrams/restaurantkitchenarea)
 "ZM" = (
 /obj/effect/paint_stripe/green,
 /obj/structure/table/standard,
