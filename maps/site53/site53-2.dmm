@@ -33352,7 +33352,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "smh" = (
-/obj/machinery/papershredder,
+/obj/machinery/papershredder{
+	pixel_x = 7
+	},
 /turf/simulated/floor/lino,
 /area/site53/lowertrams/restaurantkitchenarea)
 "smH" = (
