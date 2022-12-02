@@ -64,7 +64,7 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 		D.reagents.update_total()
 		D.on_reagent_change()
 		visible_message(SPAN_NOTICE("[src] dispenses a small paper cup."))
-
+		log_and_message_admins("NOTICE: [src] has been used by [user.name], dispensing [chosen_reagent]", null, src)
 
 /obj/machinery/scp294/proc/update_uses()
 	if(uses_left < restock_min) //So you can adjust when it restocks. E.G never
