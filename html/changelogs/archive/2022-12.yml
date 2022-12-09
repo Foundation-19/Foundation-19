@@ -2,3 +2,6 @@
   CristoMagisto69:
   - bugfix: fixed hud augments required IDs
   - rscadd: made loadout role information to be more in-depth
+2022-12-09:
+  checkraisefold:
+  - admin: Logs (except debug) no longer spammed when SMES grounding wire cut
