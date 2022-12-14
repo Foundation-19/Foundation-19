@@ -236,36 +236,6 @@
 /datum/reagent/amnestics/classi/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(15 * removed)
 
-/datum/reagent/ethanol/regrettiforgetti
-	name = "Regretti Forgetti"
-	description = "Amnestics, Vodka, And powerful hallucinogenics. For when you literally want to drink your worries away."
-	taste_description = "Vodka, Hardcore drugs, And something you cant quite remember."
-	strength = 15
-	color = "#d81d6b"
-	overdose = 30
-	value = 10
-	glass_name = "Regretti Forgetti"
-	glass_desc = "A popular foundation home-remedy for PTSD. For when you literally want to drink your worries away. Made with genuine amnestics!"
-	var/list/dose_messages = list(
-		"What were you doing again?",
-		"Whats your name again? Oh rights, Thats it...",
-		"Its right on the tip of your tounge, You just cant quite remember...",
-		"What did they say to you again?",
-		"What were you sitting on again?",
-		"Huh... Where are you?",
-		"Black, White, Black, White, Black, White, Black, White, Black, White, Grey... Grey?",
-		"Oh right... Thats what it was called.",
-		"What do these numbers mean... Are they my name?",
-		"Why does my brain taste like purple and... Forgotten yellow?",
-		"Why does everything feel so... familiar?",
-		"Who are these people, and how do they know your name?"
-	)
-/datum/reagent/ethanol/regrettiforgetti/affect_ingest(var/mob/living/carbon/M, var/removed)
-	M.make_dizzy(5)
-	M.confused += 5
-	if (prob(10))
-		to_chat(M, SPAN_WARNING("<font size = [rand(1,3)]>[pick(dose_messages)]</font>"))
-
 //Pills and autoinjectors.
 /obj/item/storage/pill_bottle/amnesticsa
 	name = "pill bottle (Class-A Amnestics)"
@@ -411,9 +381,3 @@
 	result = /datum/reagent/amnestics/classi
 	required_reagents = list(/datum/reagent/amnestics/classa = 1, /datum/reagent/cryptobiolin = 1)
 	result_amount = 2
-
-/datum/chemical_reaction/regrettiforgetti
-	name = "Regretti Forgetti"
-	result = /datum/reagent/ethanol/regrettiforgetti
-	required_reagents = list(/datum/reagent/ethanol/vodka = 1, /datum/reagent/mindbreaker_toxin = 1, /datum/reagent/amnestics/classa = 1)
-	result_amount = 3

@@ -174,7 +174,7 @@
 	result = /datum/reagent/medicine/kelotane
 	required_reagents = list(/datum/reagent/silicon = 1, /datum/reagent/carbon = 1)
 	result_amount = 2
-	
+
 /datum/chemical_reaction/peridaxon
 	name = "Peridaxon"
 	result = /datum/reagent/medicine/peridaxon
@@ -431,12 +431,12 @@
 	name = "Rezadone"
 	result = /datum/reagent/medicine/rezadone
 	required_reagents = list(
-		/datum/reagent/medicine/arithrazine =1, 
-		/datum/reagent/cryptobiolin = 1, 
-		/datum/reagent/copper = 1, 
+		/datum/reagent/medicine/arithrazine =1,
+		/datum/reagent/cryptobiolin = 1,
+		/datum/reagent/copper = 1,
 		/datum/reagent/medicine/dermaline = 1,
 		/datum/reagent/medicine/meraline = 1,
-		/datum/reagent/uranium = 1 
+		/datum/reagent/uranium = 1
 	)
 	result_amount = 3
 
@@ -1979,6 +1979,12 @@
 	result = /datum/reagent/ethanol/sbiten
 	required_reagents = list(/datum/reagent/ethanol/mead = 10, /datum/reagent/capsaicin = 1)
 	result_amount = 10
+
+/datum/chemical_reaction/regrettiforgetti
+	name = "Regretti Forgetti"
+	result = /datum/reagent/ethanol/regrettiforgetti
+	required_reagents = list(/datum/reagent/ethanol/vodka = 1, /datum/reagent/mindbreaker_toxin = 1, /datum/reagent/amnestics/classa = 1)
+	result_amount = 3
 
 /datum/chemical_reaction/red_mead
 	name = "Red Mead"
