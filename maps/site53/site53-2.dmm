@@ -36789,11 +36789,10 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "xbL" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/syringe/amnesticsc,
-/obj/item/storage/pill_bottle/amnesticsb,
 /obj/item/storage/pill_bottle/amnesticsa,
-/obj/item/reagent_containers/syringe/amnesticsc,
-/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/item/storage/pill_bottle/amnesticsb,
+/obj/item/storage/pill_bottle/amnesticsh,
+/obj/item/storage/pill_bottle/amnesticsi,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "xcu" = (
