@@ -10299,6 +10299,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
+"yZ" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/scp500)
 "zb" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
@@ -14658,6 +14666,9 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/hallways)
+"KV" = (
+/turf/simulated/floor/plating,
+/area/site53/llcz/scp500)
 "KZ" = (
 /obj/machinery/camera/network/lcz{
 	dir = 1
@@ -14810,6 +14821,12 @@
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mining/miningops)
+"Lr" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-500 Cable Maintenance"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "Lt" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/industrial/warning{
@@ -16590,9 +16607,6 @@
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-500 Security Checkpoint"
 	},
-/obj/machinery/door/airlock/highsecurity{
-	name = "SCP-500 Security Checkpoint"
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "QX" = (
@@ -17651,6 +17665,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/catwalk_plated/dark,
+/obj/machinery/door/airlock/highsecurity,
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
 "Ui" = (
@@ -60293,9 +60308,9 @@ Zv
 Zv
 WM
 Zv
-Zv
+Lr
 nX
-gq
+Zv
 gq
 gq
 gq
@@ -60545,14 +60560,14 @@ gq
 gq
 gq
 gq
-Zv
-Zv
+gq
+gq
 Zv
 YL
 Zv
+KV
+yZ
 Zv
-nX
-gq
 gq
 gq
 gq
@@ -60802,14 +60817,14 @@ gq
 gq
 gq
 gq
-Zv
-Zv
+gq
+gq
 Zv
 Pt
 Zv
+KV
+yZ
 Zv
-nX
-gq
 gq
 gq
 gq
@@ -61066,7 +61081,7 @@ WM
 Zv
 NP
 nX
-gq
+Zv
 gq
 gq
 gq
