@@ -4031,7 +4031,11 @@
 "jk" = (
 /obj/effect/catwalk_plated,
 /obj/machinery/camera/network/lcz{
-	name = "SCP-500"
+	name = "SCP-500";
+	network = list("Heavy Containment Zone Network")
+	},
+/obj/structure/sign/scp/topside/SecureArealv4mtf{
+	pixel_y = 32
 	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/scp500)
@@ -6155,12 +6159,12 @@
 /area/site53/uhcz/scp106parts)
 "ok" = (
 /obj/effect/catwalk_plated/dark,
-/obj/machinery/door/airlock/highsecurity{
-	name = "SCP-1102-RU";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
-	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-500";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/scp500)
@@ -8231,6 +8235,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
+"tA" = (
+/obj/effect/catwalk_plated,
+/obj/item/paper/crumpled{
+	info = "Hey John, if you're seeing this then you are on 500 duty again. If some hot-shot comes through use the forcing tool to open that shitty cell, it's in your locker.";
+	name = "informational paper"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/scp500)
 "tB" = (
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
@@ -8769,6 +8781,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 1
 	},
+/obj/machinery/camera/network/hcz,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "uZ" = (
@@ -8822,6 +8835,11 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkpoint)
+"vf" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/scp/topside/SecureArealv4mtf,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/scp500)
 "vg" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -10026,6 +10044,9 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4;
 	icon_state = "warning"
+	},
+/obj/machinery/camera/network/hcz{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -12656,6 +12677,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 9
 	},
+/obj/item/crowbar/emergency_forcing_tool,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "FJ" = (
@@ -16545,8 +16567,11 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
 "QV" = (
-/obj/machinery/door/airlock/security{
-	req_access = list("ACCESS_SECURITY_LEVEL3")
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-500 Security Checkpoint"
+	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-500 Security Checkpoint"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -16607,8 +16632,10 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/door/window/brigdoor/eastleft,
 /obj/item/storage/pill_bottle/scp500,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "Rh" = (
@@ -17720,13 +17747,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
 "UH" = (
-/obj/machinery/door/airlock/security{
-	req_access = list("ACCESS_SECURITY_LEVEL3")
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-500 Security Checkpoint"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -18234,12 +18261,12 @@
 /area/site53/uhcz/scp8containment)
 "Wd" = (
 /obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-1102-RU";
 	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
-	},
-/obj/structure/cable/green{
-	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
 /area/site53/lhcz/scp1102room)
@@ -18465,9 +18492,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/botany)
 "WM" = (
-/obj/machinery/door/airlock/research{
-	name = "Containment Chamber";
-	req_access = list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL3")
+/obj/machinery/door/airlock/highsecurity/bolted{
+	name = "SCP-500 Secure Containment Cell"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -18536,6 +18562,12 @@
 "WX" = (
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/medicalpost/surgery)
+"WY" = (
+/obj/machinery/camera/network/hcz{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "WZ" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -59710,7 +59742,7 @@ gq
 Zv
 LC
 Gz
-TR
+tA
 Gz
 LC
 Zv
@@ -60227,7 +60259,7 @@ XT
 Rf
 Ye
 TR
-Zv
+vf
 gq
 gq
 gq
@@ -63824,7 +63856,7 @@ PA
 Vw
 Vw
 Ik
-Vw
+WY
 Zv
 gq
 gq
