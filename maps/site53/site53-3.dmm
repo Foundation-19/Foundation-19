@@ -10058,6 +10058,7 @@
 /obj/structure/table/standard,
 /obj/item/storage/pill_bottle/amnesticsa,
 /obj/item/storage/pill_bottle/amnesticsb,
+/obj/item/storage/pill_bottle/amnesticsi,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
 "MU" = (
