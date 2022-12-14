@@ -1197,7 +1197,7 @@
 /datum/reagent/ethanol/regrettiforgetti
 	name = "Regretti Forgetti"
 	description = "Amnestics, Vodka, And powerful hallucinogenics. For when you literally want to drink your worries away."
-	taste_description = "Vodka, Hardcore drugs, And something you cant quite remember."
+	taste_description = "something you cant quite remember"
 	strength = 15
 	color = "#d81d6b"
 	overdose = 30
