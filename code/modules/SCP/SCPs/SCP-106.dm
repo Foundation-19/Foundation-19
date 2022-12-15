@@ -17,7 +17,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	icon_state = null
 	var/mob/observer/eye/scp106/WallEye
 
-	status_flags = NO_ANTAG
+	status_flags = NO_ANTAG | SPECIES_FLAG_NO_EMBED
 
 /mob/living/carbon/human/scp106/New(new_loc, new_species)
 	new_species = "SCP-106"

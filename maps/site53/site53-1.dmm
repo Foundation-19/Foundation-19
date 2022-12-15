@@ -1634,6 +1634,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
+"dA" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/smes/buildable/preset/admin,
+/turf/simulated/floor/plating,
+/area/space)
 "dB" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -2189,6 +2198,17 @@
 "eP" = (
 /turf/simulated/floor/tiled/old_cargo,
 /area/site53/lhcz/scp049containment)
+"eQ" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-500 Cable Maintenance"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "eR" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
@@ -4505,6 +4525,11 @@
 /obj/structure/sign/scp/topside/SecureArealv4mtf{
 	pixel_y = 32
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "kt" = (
@@ -6060,13 +6085,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
 "nX" = (
-/obj/effect/paint_stripe/red,
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "2-8"
 	},
-/turf/simulated/wall/titanium,
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "nY" = (
 /obj/item/device/camera_film,
@@ -8155,6 +8178,19 @@
 "tl" = (
 /turf/simulated/wall/titanium,
 /area/site53/llcz/mine/unexplored)
+"tm" = (
+/obj/structure/catwalk,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating,
+/area/space)
 "tn" = (
 /obj/machinery/light/spot{
 	dir = 4
@@ -8224,6 +8260,15 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpointoverlook)
+"tw" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "tx" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
@@ -8243,6 +8288,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
+"tz" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "tA" = (
 /obj/effect/catwalk_plated,
 /obj/item/paper/crumpled{
@@ -9034,6 +9086,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
+"vF" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "vG" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -9354,6 +9413,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
+"wo" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/scp500)
 "wp" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular{
@@ -9841,6 +9909,11 @@
 /obj/structure/sign/scp/topside/SecureArealv4mtf{
 	pixel_y = 32
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "xx" = (
@@ -10055,6 +10128,11 @@
 	},
 /obj/machinery/camera/network/hcz{
 	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -10305,6 +10383,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/light/small,
 /turf/simulated/floor/plating,
 /area/site53/llcz/scp500)
 "zb" = (
@@ -10452,6 +10531,18 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/cells)
+"zG" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "zI" = (
 /obj/item/modular_computer/console/preset/security{
 	icon_state = "console";
@@ -10749,6 +10840,11 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4;
 	icon_state = "warning"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/scp500)
@@ -11698,6 +11794,20 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentline)
+"Dc" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor/plating,
+/area/site53/llcz/scp500)
 "Dd" = (
 /obj/machinery/light{
 	dir = 1
@@ -13619,6 +13729,22 @@
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/dclass/reeducation)
+"Io" = (
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/smes/buildable/preset/on_full,
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb1"
+	},
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb1"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/scp500)
 "Iq" = (
 /obj/structure/table/standard,
 /obj/machinery/recharger,
@@ -13660,6 +13786,19 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
+"Iu" = (
+/obj/structure/catwalk,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/space)
 "Iv" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
@@ -14667,6 +14806,15 @@
 /turf/simulated/wall/titanium,
 /area/site53/llcz/hallways)
 "KV" = (
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/smes/buildable/preset/on_full,
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb1"
+	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/scp500)
 "KZ" = (
@@ -15517,6 +15665,18 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
+"NI" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/space)
 "NJ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -15558,13 +15718,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
 "NP" = (
-/obj/effect/paint_stripe/red,
+/obj/effect/wallframe_spawn/reinforced,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/wall/titanium,
+/turf/simulated/floor/plating,
 /area/site53/llcz/scp500)
 "NQ" = (
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -15770,10 +15930,24 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uhcz/scp8containment)
+"Or" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "Os" = (
 /obj/effect/floor_decal/industrial/outline/orange,
 /obj/structure/cable/green{
-	icon_state = "1-2"
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -15826,13 +16000,13 @@
 /turf/simulated/floor/lino,
 /area/site53/lhcz/scp049containment)
 "OB" = (
-/obj/effect/paint_stripe/red,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
-/turf/simulated/wall/titanium,
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "OC" = (
 /turf/simulated/floor/tiled/dark,
@@ -15845,6 +16019,14 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/assignmentbubble)
+"OE" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/smes/buildable/preset/admin,
+/turf/simulated/floor/plating,
+/area/space)
 "OF" = (
 /obj/structure/closet/secure_closet/mtf/breachshotguns,
 /turf/simulated/floor/tiled,
@@ -16023,11 +16205,11 @@
 /area/site53/llcz/dclass/checkpoint)
 "Pf" = (
 /obj/effect/catwalk_plated,
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/scp500)
@@ -16922,6 +17104,11 @@
 "RX" = (
 /obj/machinery/light,
 /obj/effect/catwalk_plated,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/scp500)
 "RY" = (
@@ -16934,6 +17121,16 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
+"Sa" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/scp500)
 "Sb" = (
 /obj/effect/floor_decal/industrial/firstaid/corner{
 	dir = 1
@@ -17025,6 +17222,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
+"Sm" = (
+/obj/effect/catwalk_plated,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/scp500)
 "Sn" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/bodybags,
@@ -18111,17 +18317,27 @@
 /area/site53/llcz/dclass/medicalpost/chem)
 "VC" = (
 /obj/structure/filingcabinet/scp,
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list("ACCESS_SECURITY_LEVEL1")
-	},
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
+"VD" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/closet/radiation,
+/obj/item/reagent_containers/food/drinks/bottle/premiumvodka,
+/turf/simulated/floor/plating,
+/area/space)
 "VE" = (
 /obj/machinery/door/firedoor{
 	dir = 4
@@ -18265,6 +18481,14 @@
 "VV" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurysleep)
+"VW" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/scp500)
 "VZ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -18613,8 +18837,8 @@
 	},
 /obj/structure/cable/green{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -19466,6 +19690,11 @@
 /area/site53/llcz/dclass/medicalpost)
 "ZB" = (
 /obj/machinery/light,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "ZC" = (
@@ -60052,7 +60281,7 @@ eU
 Pf
 eU
 Os
-NP
+Zv
 gq
 gq
 gq
@@ -60296,21 +60525,21 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
+dA
+tm
 gq
 gq
 gq
 Zv
 Zv
+Zv
+Lr
 Zv
 WM
 Zv
-Lr
-nX
+eQ
 Zv
+gq
 gq
 gq
 gq
@@ -60553,21 +60782,21 @@ gq
 gq
 gq
 gq
+VD
+NI
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-gq
-Zv
-YL
 Zv
 KV
+Sa
+VW
+CS
+YL
+CS
 yZ
 Zv
+gq
 gq
 gq
 gq
@@ -60810,21 +61039,21 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
-gq
-gq
+OE
+Iu
 gq
 gq
 gq
 Zv
-Pt
+Io
+Sa
+wo
+CS
+tw
+tz
+Dc
 Zv
-KV
-yZ
-Zv
+gq
 gq
 gq
 gq
@@ -61072,16 +61301,16 @@ gq
 gq
 gq
 gq
-gq
-gq
+Zv
+Zv
 Zv
 Zv
 Zv
 WM
 Zv
 NP
-nX
 Zv
+gq
 gq
 gq
 gq
@@ -61336,8 +61565,8 @@ of
 Ve
 Pt
 wU
-TR
-nX
+Sm
+Zv
 gq
 gq
 gq
@@ -61594,7 +61823,7 @@ Vw
 Vw
 Vw
 RX
-nX
+Zv
 gq
 gq
 gq
@@ -61851,7 +62080,7 @@ Vw
 Od
 Vw
 As
-nX
+Zv
 gq
 gq
 gq
@@ -62108,7 +62337,7 @@ QV
 Zv
 Zv
 xv
-nX
+Zv
 gq
 gq
 gq
@@ -62363,9 +62592,9 @@ Zv
 FI
 WC
 Ae
-CS
-YL
-nX
+OB
+zG
+Zv
 gq
 gq
 gq
@@ -62620,9 +62849,9 @@ Zv
 uY
 Hg
 Fq
-CS
+vF
 MP
-nX
+Zv
 gq
 gq
 gq
@@ -62877,9 +63106,9 @@ Zv
 VC
 Ne
 VK
-CS
-ye
 nX
+ye
+Zv
 gq
 gq
 gq
@@ -63136,7 +63365,7 @@ UH
 Zv
 Zv
 ks
-nX
+Zv
 gq
 gq
 gq
@@ -63392,8 +63621,8 @@ pA
 Vw
 Vw
 Vw
-YL
-nX
+Or
+Zv
 gq
 gq
 gq
@@ -63650,7 +63879,7 @@ Vw
 Vw
 Vw
 ZB
-nX
+Zv
 gq
 gq
 gq
@@ -63907,7 +64136,7 @@ Vw
 Vw
 Ik
 WY
-OB
+Zv
 gq
 gq
 gq
