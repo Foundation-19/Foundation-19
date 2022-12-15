@@ -1435,13 +1435,11 @@
 	icon_state = "hotfood"
 	icon_deny = "hotfood-deny"
 	icon_vend = "hotfood-vend"
-	products = list(/obj/item/reagent_containers/food/snacks/grilledcheese = 1,
-					/obj/item/reagent_containers/food/snacks/meatsteak = 1,
-					/obj/item/reagent_containers/food/snacks/cheeseburger = 1,
+	products = list(/obj/item/reagent_containers/food/snacks/meatsteak = 1,
+					/obj/item/reagent_containers/food/snacks/cheeseburger = 2,
 					/obj/item/reagent_containers/food/snacks/taco = 1,
 					/obj/item/reagent_containers/food/snacks/hotdog = 1,
 					/obj/item/reagent_containers/food/snacks/fries = 2,
-					/obj/item/reagent_containers/food/snacks/onionrings = 1,
 					)
 
 /obj/machinery/vending/hotfood/on_update_icon()
