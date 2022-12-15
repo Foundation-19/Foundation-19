@@ -8279,6 +8279,10 @@
 	info = "Hey John, if you're seeing this then you are on 500 duty again. If some hot-shot comes through use the forcing tool to open that shitty cell, it's in your locker.";
 	name = "informational paper"
 	},
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb1"
+	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/scp500)
 "tB" = (
