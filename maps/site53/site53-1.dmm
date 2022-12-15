@@ -4509,10 +4509,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurylibrary)
 "ks" = (
-/obj/machinery/door/blast/regular{
-	dir = 8;
-	id_tag = "right500"
-	},
 /obj/structure/sign/scp/topside/SecureArealv4mtf{
 	pixel_y = 32
 	},
@@ -4520,6 +4516,10 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/blast/regular{
+	dir = 8;
+	id_tag = "right500"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
