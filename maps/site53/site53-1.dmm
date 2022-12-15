@@ -1634,15 +1634,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
-"dA" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/machinery/power/smes/buildable/preset/admin,
-/turf/simulated/floor/plating,
-/area/space)
 "dB" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -8178,19 +8169,6 @@
 "tl" = (
 /turf/simulated/wall/titanium,
 /area/site53/llcz/mine/unexplored)
-"tm" = (
-/obj/structure/catwalk,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/plating,
-/area/space)
 "tn" = (
 /obj/machinery/light/spot{
 	dir = 4
@@ -13786,19 +13764,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
-"Iu" = (
-/obj/structure/catwalk,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable/cyan{
-	icon_state = "0-8"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/space)
 "Iv" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
@@ -15665,18 +15630,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
-"NI" = (
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/space)
 "NJ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -16019,14 +15972,6 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/assignmentbubble)
-"OE" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/smes/buildable/preset/admin,
-/turf/simulated/floor/plating,
-/area/space)
 "OF" = (
 /obj/structure/closet/secure_closet/mtf/breachshotguns,
 /turf/simulated/floor/tiled,
@@ -18322,22 +18267,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
-"VD" = (
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/closet/radiation,
-/obj/item/reagent_containers/food/drinks/bottle/premiumvodka,
-/turf/simulated/floor/plating,
-/area/space)
 "VE" = (
 /obj/machinery/door/firedoor{
 	dir = 4
@@ -60525,8 +60454,8 @@ gq
 gq
 gq
 gq
-dA
-tm
+gq
+gq
 gq
 gq
 gq
@@ -60782,8 +60711,8 @@ gq
 gq
 gq
 gq
-VD
-NI
+gq
+gq
 gq
 gq
 gq
@@ -61039,8 +60968,8 @@ gq
 gq
 gq
 gq
-OE
-Iu
+gq
+gq
 gq
 gq
 gq
