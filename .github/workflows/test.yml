@@ -67,3 +67,4 @@ jobs:
         env:
           TEST: MAP
           MAP_PATH: ${{ matrix.map_path }}
+        run: test/run-test.sh
