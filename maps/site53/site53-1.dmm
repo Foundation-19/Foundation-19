@@ -4505,6 +4505,11 @@
 /obj/structure/sign/scp/topside/SecureArealv4mtf{
 	pixel_y = 32
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "kt" = (
@@ -5183,13 +5188,13 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/primaryhallway)
 "lZ" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "ma" = (
@@ -6060,13 +6065,13 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
 "nX" = (
-/obj/effect/paint_stripe/red,
+/obj/effect/catwalk_plated,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/wall/titanium,
+/turf/simulated/floor/plating,
 /area/site53/llcz/scp500)
 "nY" = (
 /obj/item/device/camera_film,
@@ -6263,6 +6268,15 @@
 	},
 /turf/simulated/wall/titanium,
 /area/site53/lhcz/maintenance)
+"oz" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "oA" = (
 /obj/structure/table/standard,
 /obj/machinery/recharger,
@@ -8249,6 +8263,10 @@
 	info = "Hey John, if you're seeing this then you are on 500 duty again. If some hot-shot comes through use the forcing tool to open that shitty cell, it's in your locker.";
 	name = "informational paper"
 	},
+/obj/machinery/light/small/emergency{
+	dir = 8;
+	icon_state = "bulb1"
+	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/scp500)
 "tB" = (
@@ -9841,6 +9859,11 @@
 /obj/structure/sign/scp/topside/SecureArealv4mtf{
 	pixel_y = 32
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "xx" = (
@@ -10056,6 +10079,11 @@
 /obj/machinery/camera/network/hcz{
 	dir = 1
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "yf" = (
@@ -10135,6 +10163,18 @@
 /obj/machinery/optable,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/uhcz/scp8containment)
+"yt" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "yw" = (
 /obj/item/modular_computer/console/preset/security{
 	dir = 8;
@@ -10155,6 +10195,16 @@
 /obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
+"yB" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/scp500)
 "yC" = (
 /obj/effect/paint_stripe/orange,
 /obj/machinery/button/blast_door{
@@ -10698,6 +10748,19 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
+"An" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/scp500)
 "Ao" = (
 /obj/machinery/flasher{
 	id_tag = "cell9";
@@ -10749,6 +10812,11 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4;
 	icon_state = "warning"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/scp500)
@@ -11648,6 +11716,11 @@
 /area/site53/llcz/dclass/medicalpost)
 "CS" = (
 /obj/effect/wallframe_spawn/reinforced,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "CU" = (
@@ -12697,13 +12770,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "FJ" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "FM" = (
@@ -13118,6 +13191,18 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"Hj" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "Hk" = (
 /obj/machinery/camera/network/lcz{
 	dir = 8
@@ -14667,6 +14752,9 @@
 /turf/simulated/wall/titanium,
 /area/site53/llcz/hallways)
 "KV" = (
+/obj/structure/cable/green{
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/scp500)
 "KZ" = (
@@ -14767,11 +14855,13 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "Lk" = (
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/window/reinforced{
+	dir = 0
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "Ll" = (
@@ -14959,6 +15049,8 @@
 "LN" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
 /obj/machinery/door/window/brigdoor/eastleft{
+	name = "SCP-500 Primary Containment Module Door";
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -15152,6 +15244,17 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
+"Mt" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/scp500)
 "Mv" = (
 /obj/machinery/door/blast/shutters{
 	dir = 8;
@@ -15558,13 +15661,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
 "NP" = (
-/obj/effect/paint_stripe/red,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/wall/titanium,
+/obj/effect/wallframe_spawn/reinforced,
+/turf/space,
 /area/site53/llcz/scp500)
 "NQ" = (
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -15773,7 +15876,9 @@
 "Os" = (
 /obj/effect/floor_decal/industrial/outline/orange,
 /obj/structure/cable/green{
-	icon_state = "1-2"
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -15826,13 +15931,13 @@
 /turf/simulated/floor/lino,
 /area/site53/lhcz/scp049containment)
 "OB" = (
-/obj/effect/paint_stripe/red,
+/obj/effect/wallframe_spawn/reinforced,
 /obj/structure/cable/green{
-	d1 = 1;
+	d1 = 4;
 	d2 = 8;
-	icon_state = "1-8"
+	icon_state = "4-8"
 	},
-/turf/simulated/wall/titanium,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "OC" = (
 /turf/simulated/floor/tiled/dark,
@@ -16605,7 +16710,8 @@
 /area/site53/llcz/dclass/medicalpost/surgery)
 "QV" = (
 /obj/machinery/door/airlock/highsecurity{
-	name = "SCP-500 Security Checkpoint"
+	name = "SCP-500 Security Checkpoint";
+	req_access = list(list("ACCESS_SECURITY_LEVEL4"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -16922,6 +17028,11 @@
 "RX" = (
 /obj/machinery/light,
 /obj/effect/catwalk_plated,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/scp500)
 "RY" = (
@@ -16934,6 +17045,13 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
+"RZ" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/scp500)
 "Sb" = (
 /obj/effect/floor_decal/industrial/firstaid/corner{
 	dir = 1
@@ -17533,6 +17651,17 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/surgery)
+"TI" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-500 Cable Maintenance"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp500)
 "TJ" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/spray/cleaner,
@@ -17782,13 +17911,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
 "UH" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
 	},
-/obj/machinery/door/airlock/highsecurity{
-	name = "SCP-500 Security Checkpoint"
+/obj/structure/cable/green{
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -18167,7 +18294,10 @@
 /area/site53/uhcz/scp8containment)
 "VH" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
-/obj/machinery/door/window/brigdoor/eastleft,
+/obj/machinery/door/window/brigdoor/eastleft{
+	name = "SCP-500 Primary Containment Module Door";
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "VI" = (
@@ -18538,7 +18668,8 @@
 /area/site53/llcz/dclass/botany)
 "WM" = (
 /obj/machinery/door/airlock/highsecurity/bolted{
-	name = "SCP-500 Secure Containment Cell"
+	name = "SCP-500 Secure Containment Cell";
+	req_access = list(list("ACCESS_SECURITY_LEVEL4"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -18551,6 +18682,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
+"WO" = (
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/site53/llcz/scp500)
 "WP" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/airlock/highsecurity,
@@ -18613,8 +18748,8 @@
 	},
 /obj/structure/cable/green{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
@@ -18920,10 +19055,10 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/kitchen)
 "XT" = (
-/obj/structure/railing/mapped{
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/effect/floor_decal/industrial/hatch/blue,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "XV" = (
@@ -18971,8 +19106,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cells)
 "Ye" = (
-/obj/structure/railing/mapped,
 /obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/window/reinforced{
+	dir = 0
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "Yf" = (
@@ -19295,11 +19432,13 @@
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/entrance_checkpoint)
 "YY" = (
-/obj/structure/railing/mapped{
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/railing/mapped,
-/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/window/reinforced{
+	dir = 0
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "YZ" = (
@@ -19350,6 +19489,14 @@
 /obj/item/storage/box/syringes,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
+"Zi" = (
+/obj/machinery/power/smes/buildable/preset/on_full,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/plating,
+/area/site53/llcz/scp500)
 "Zj" = (
 /obj/machinery/light{
 	dir = 4;
@@ -19466,6 +19613,11 @@
 /area/site53/llcz/dclass/medicalpost)
 "ZB" = (
 /obj/machinery/light,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "ZC" = (
@@ -60052,7 +60204,7 @@ eU
 Pf
 eU
 Os
-NP
+Zv
 gq
 gq
 gq
@@ -60301,16 +60453,16 @@ gq
 gq
 gq
 gq
-gq
-gq
 Zv
 Zv
+Zv
+Lr
 Zv
 WM
 Zv
-Lr
-nX
+TI
 Zv
+gq
 gq
 gq
 gq
@@ -60558,16 +60710,16 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
 Zv
-YL
-Zv
+Zi
+yB
 KV
+WO
+YL
+WO
 yZ
 Zv
+gq
 gq
 gq
 gq
@@ -60815,16 +60967,16 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
 Zv
-Pt
+Zi
+yB
+Mt
+RZ
+UH
+RZ
+An
 Zv
-KV
-yZ
-Zv
+gq
 gq
 gq
 gq
@@ -61072,16 +61224,16 @@ gq
 gq
 gq
 gq
-gq
-gq
+Zv
+Zv
 Zv
 Zv
 Zv
 WM
 Zv
 NP
-nX
 Zv
+gq
 gq
 gq
 gq
@@ -61336,8 +61488,8 @@ of
 Ve
 Pt
 wU
-TR
 nX
+Zv
 gq
 gq
 gq
@@ -61594,7 +61746,7 @@ Vw
 Vw
 Vw
 RX
-nX
+Zv
 gq
 gq
 gq
@@ -61851,7 +62003,7 @@ Vw
 Od
 Vw
 As
-nX
+Zv
 gq
 gq
 gq
@@ -62108,7 +62260,7 @@ QV
 Zv
 Zv
 xv
-nX
+Zv
 gq
 gq
 gq
@@ -62364,8 +62516,8 @@ FI
 WC
 Ae
 CS
-YL
-nX
+Hj
+Zv
 gq
 gq
 gq
@@ -62620,9 +62772,9 @@ Zv
 uY
 Hg
 Fq
-CS
+OB
 MP
-nX
+Zv
 gq
 gq
 gq
@@ -62877,9 +63029,9 @@ Zv
 VC
 Ne
 VK
-CS
+oz
 ye
-nX
+Zv
 gq
 gq
 gq
@@ -63132,11 +63284,11 @@ gq
 gq
 Zv
 Zv
-UH
+QV
 Zv
 Zv
 ks
-nX
+Zv
 gq
 gq
 gq
@@ -63392,8 +63544,8 @@ pA
 Vw
 Vw
 Vw
-YL
-nX
+yt
+Zv
 gq
 gq
 gq
@@ -63650,7 +63802,7 @@ Vw
 Vw
 Vw
 ZB
-nX
+Zv
 gq
 gq
 gq
@@ -63907,7 +64059,7 @@ Vw
 Vw
 Ik
 WY
-OB
+Zv
 gq
 gq
 gq
