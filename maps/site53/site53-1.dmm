@@ -5952,6 +5952,9 @@
 "nI" = (
 /obj/machinery/door/airlock/highsecurity,
 /obj/effect/catwalk_plated/dark,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
 "nJ" = (
@@ -7301,6 +7304,9 @@
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
@@ -9267,6 +9273,14 @@
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/briefing)
+"we" = (
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/camera/network/hcz,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/site53/lhcz/hallway)
 "wf" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled,
@@ -15631,6 +15645,11 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
@@ -66113,7 +66132,7 @@ gq
 qn
 pp
 mK
-BI
+NH
 mK
 qr
 qn
@@ -66370,7 +66389,7 @@ gq
 qn
 mK
 BI
-BI
+NH
 BI
 mK
 qn
@@ -66627,7 +66646,7 @@ gq
 qn
 BI
 BI
-BI
+NH
 BI
 BI
 bb
@@ -66884,7 +66903,7 @@ gq
 qn
 Wr
 BI
-BI
+NH
 BI
 mK
 qn
@@ -67141,7 +67160,7 @@ gq
 qn
 pp
 mK
-BI
+NH
 mK
 qr
 qn
@@ -67655,7 +67674,7 @@ gq
 gq
 gq
 qn
-BI
+NH
 qn
 gq
 gq
@@ -67912,7 +67931,7 @@ gq
 gq
 gq
 qn
-Yy
+we
 qn
 gq
 gq
@@ -68169,7 +68188,7 @@ gq
 gq
 gq
 qn
-BI
+NH
 qn
 gq
 gq
@@ -68683,7 +68702,7 @@ gq
 gq
 gq
 qn
-BI
+NH
 qn
 gq
 gq
@@ -68940,7 +68959,7 @@ gq
 gq
 gq
 qn
-BI
+NH
 qn
 gq
 gq
@@ -69197,7 +69216,7 @@ gq
 gq
 gq
 qn
-BI
+NH
 qn
 gq
 gq
@@ -69454,7 +69473,7 @@ gq
 gq
 gq
 qn
-BI
+NH
 qn
 gq
 gq
@@ -69968,7 +69987,7 @@ gq
 gq
 gq
 qn
-BI
+NH
 qn
 gq
 gq
@@ -70225,7 +70244,7 @@ gq
 gq
 gq
 qn
-Yy
+we
 qn
 gq
 gq
@@ -70482,7 +70501,7 @@ gq
 gq
 gq
 qn
-BI
+NH
 qn
 gq
 gq
@@ -70996,7 +71015,7 @@ gq
 qn
 pp
 mK
-BI
+NH
 mK
 qr
 qn
@@ -71253,7 +71272,7 @@ qn
 qn
 mK
 BI
-BI
+NH
 BI
 mK
 qn
