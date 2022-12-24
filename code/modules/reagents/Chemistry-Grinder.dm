@@ -267,6 +267,7 @@
 	skill = SKILL_COOKING
 	banned_items = list(
 		/obj/item/stack/material
+		/obj/item/reagent_containers/pill/scp500
 	)
 	storage_types = list(
 		/obj/item/storage/pill_bottle,
