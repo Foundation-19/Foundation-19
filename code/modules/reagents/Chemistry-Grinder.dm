@@ -266,7 +266,7 @@
 	max_item_size = ITEM_SIZE_NORMAL
 	skill = SKILL_COOKING
 	banned_items = list(
-		/obj/item/stack/material
+		/obj/item/stack/material,
 		/obj/item/reagent_containers/pill/scp500
 	)
 	storage_types = list(
