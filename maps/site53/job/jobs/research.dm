@@ -21,14 +21,17 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_DEVICES     = SKILL_BASIC,
-	                    SKILL_SCIENCE     = SKILL_EXPERIENCED)
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_DEVICES     = SKILL_BASIC,
+	    SKILL_SCIENCE     = SKILL_EXPERIENCED
+	)
 
-	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_DEVICES     = SKILL_MASTER,
-	                    SKILL_SCIENCE     = SKILL_MASTER)
+	max_skill = list(
+		SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_DEVICES     = SKILL_MASTER,
+	    SKILL_SCIENCE     = SKILL_MASTER
+	)
 
 	skill_points = 10
 
@@ -54,17 +57,20 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_DEVICES     = SKILL_BASIC,
-	                    SKILL_SCIENCE     = SKILL_BASIC,
-						SKILL_ELECTRICAL   = SKILL_BASIC,
-						SKILL_EVA     = SKILL_BASIC,
-	                    SKILL_MECH     = SKILL_TRAINED)
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_DEVICES     = SKILL_BASIC,
+	    SKILL_SCIENCE     = SKILL_BASIC,
+		SKILL_ELECTRICAL  = SKILL_BASIC,
+		SKILL_EVA         = SKILL_BASIC,
+	    SKILL_MECH        = SKILL_TRAINED
+	)
 
-	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_DEVICES     = SKILL_MASTER,
-	                    SKILL_SCIENCE     = SKILL_MASTER)
+	max_skill = list(
+		SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_DEVICES     = SKILL_MASTER,
+	    SKILL_SCIENCE     = SKILL_MASTER
+	)
 
 	skill_points = 12
 
@@ -91,14 +97,17 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_DEVICES     = SKILL_BASIC,
-	                    SKILL_SCIENCE     = SKILL_EXPERIENCED)
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_DEVICES     = SKILL_BASIC,
+	    SKILL_SCIENCE     = SKILL_EXPERIENCED
+	)
 
-	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_DEVICES     = SKILL_MASTER,
-	                    SKILL_SCIENCE     = SKILL_MASTER)
+	max_skill = list(
+		SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_DEVICES     = SKILL_MASTER,
+	    SKILL_SCIENCE     = SKILL_MASTER
+	)
 
 	skill_points = 15
 
@@ -125,17 +134,20 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_DEVICES     = SKILL_TRAINED,
-	                    SKILL_SCIENCE     = SKILL_BASIC,
-						SKILL_ELECTRICAL   = SKILL_TRAINED,
-						SKILL_EVA     = SKILL_TRAINED,
-	                    SKILL_MECH     = SKILL_TRAINED)
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_DEVICES     = SKILL_TRAINED,
+	    SKILL_SCIENCE     = SKILL_BASIC,
+		SKILL_ELECTRICAL  = SKILL_TRAINED,
+		SKILL_EVA         = SKILL_TRAINED,
+	    SKILL_MECH        = SKILL_TRAINED
+	)
 
-	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_DEVICES     = SKILL_MASTER,
-	                    SKILL_SCIENCE     = SKILL_MASTER)
+	max_skill = list(
+		SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_DEVICES     = SKILL_MASTER,
+	    SKILL_SCIENCE     = SKILL_MASTER
+	)
 
 	skill_points = 14
 
@@ -167,14 +179,17 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_DEVICES     = SKILL_TRAINED,
-	                    SKILL_SCIENCE     = SKILL_EXPERIENCED)
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_DEVICES     = SKILL_TRAINED,
+	    SKILL_SCIENCE     = SKILL_EXPERIENCED
+	)
 
-	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_DEVICES     = SKILL_MASTER,
-	                    SKILL_SCIENCE     = SKILL_MASTER)
+	max_skill = list(
+		SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_DEVICES     = SKILL_MASTER,
+	    SKILL_SCIENCE     = SKILL_MASTER
+	)
 
 	skill_points = 20
 
@@ -202,17 +217,20 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_DEVICES     = SKILL_TRAINED,
-	                    SKILL_SCIENCE     = SKILL_TRAINED,
-						SKILL_ELECTRICAL   = SKILL_EXPERIENCED,
-						SKILL_EVA     = SKILL_TRAINED,
-	                    SKILL_MECH     = SKILL_TRAINED)
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_DEVICES     = SKILL_TRAINED,
+	    SKILL_SCIENCE     = SKILL_TRAINED,
+		SKILL_ELECTRICAL  = SKILL_EXPERIENCED,
+		SKILL_EVA         = SKILL_TRAINED,
+	    SKILL_MECH        = SKILL_TRAINED
+	)
 
-	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_DEVICES     = SKILL_MASTER,
-	                    SKILL_SCIENCE     = SKILL_MASTER)
+	max_skill = list(
+		SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_DEVICES     = SKILL_MASTER,
+	    SKILL_SCIENCE     = SKILL_MASTER
+	)
 
 	skill_points = 18
 
@@ -252,13 +270,16 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_TRAINED,
-	                    SKILL_DEVICES     = SKILL_TRAINED,
-	                    SKILL_SCIENCE     = SKILL_EXPERIENCED)
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_TRAINED,
+	    SKILL_DEVICES     = SKILL_TRAINED,
+	    SKILL_SCIENCE     = SKILL_EXPERIENCED
+	)
 
-	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_DEVICES     = SKILL_MASTER,
-	                    SKILL_SCIENCE     = SKILL_MASTER)
+	max_skill = list(
+		SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_DEVICES     = SKILL_MASTER,
+	    SKILL_SCIENCE     = SKILL_MASTER
+	)
 
 	skill_points = 25

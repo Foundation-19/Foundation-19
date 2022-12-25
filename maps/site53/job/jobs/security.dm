@@ -41,16 +41,19 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_EXPERIENCED,
-	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
-	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_HAULING     = SKILL_TRAINED,
-	                    SKILL_FORENSICS   = SKILL_TRAINED)
+	min_skill = list(
+	    SKILL_EVA         = SKILL_BASIC,
+	    SKILL_COMBAT      = SKILL_BASIC,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
-	                    SKILL_WEAPONS     = SKILL_MASTER,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_MASTER,
+	    SKILL_WEAPONS     = SKILL_MASTER,
+	    SKILL_FORENSICS   = SKILL_MASTER
+	)
 	skill_points = 28
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
@@ -92,17 +95,20 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_EXPERIENCED,
-	                    SKILL_WEAPONS     = SKILL_TRAINED,
-	                    SKILL_HAULING     = SKILL_TRAINED,
-	                    SKILL_FORENSICS   = SKILL_TRAINED)
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_EVA         = SKILL_BASIC,
+	    SKILL_COMBAT      = SKILL_EXPERIENCED,
+	    SKILL_WEAPONS     = SKILL_TRAINED,
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
-	                    SKILL_WEAPONS     = SKILL_MASTER,
-	                    SKILL_FORENSICS   = SKILL_TRAINED)
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_MASTER,
+	    SKILL_WEAPONS     = SKILL_MASTER,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
 	skill_points = 25
 
 /datum/job/ltofficerhcz
@@ -138,17 +144,20 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_EXPERIENCED,
-	                    SKILL_WEAPONS     = SKILL_TRAINED,
-	                    SKILL_HAULING     = SKILL_TRAINED,
-	                    SKILL_FORENSICS   = SKILL_BASIC)
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_EVA         = SKILL_BASIC,
+	    SKILL_COMBAT      = SKILL_EXPERIENCED,
+	    SKILL_WEAPONS     = SKILL_TRAINED,
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_FORENSICS   = SKILL_BASIC
+	)
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
-	                    SKILL_WEAPONS     = SKILL_MASTER,
-	                    SKILL_FORENSICS   = SKILL_TRAINED)
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_MASTER,
+	    SKILL_WEAPONS     = SKILL_MASTER,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
 	skill_points = 25
 
 /datum/job/ltofficerez
@@ -192,17 +201,20 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_HAULING     = SKILL_TRAINED,
-	                    SKILL_COMPUTER    = SKILL_TRAINED,
-	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_TRAINED,
-	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
+	min_skill = list(
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_COMPUTER    = SKILL_TRAINED,
+	    SKILL_EVA         = SKILL_BASIC,
+	    SKILL_COMBAT      = SKILL_TRAINED,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_MASTER
+	)
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
-	                    SKILL_WEAPONS     = SKILL_MASTER,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_MASTER,
+	    SKILL_WEAPONS     = SKILL_MASTER,
+	    SKILL_FORENSICS   = SKILL_MASTER
+	)
 	skill_points = 25
 
 //##
@@ -246,17 +258,20 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_HAULING     = SKILL_TRAINED,
-	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_TRAINED,
-	                    SKILL_WEAPONS     = SKILL_TRAINED,
-	                    SKILL_FORENSICS   = SKILL_BASIC)
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_EVA         = SKILL_BASIC,
+	    SKILL_COMBAT      = SKILL_TRAINED,
+	    SKILL_WEAPONS     = SKILL_TRAINED,
+	    SKILL_FORENSICS   = SKILL_BASIC
+	)
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
-	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_FORENSICS   = SKILL_TRAINED)
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_EXPERIENCED,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
 	skill_points = 21
 
 /datum/job/ncoofficerhcz
@@ -292,17 +307,20 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_HAULING     = SKILL_TRAINED,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_TRAINED,
-	                    SKILL_WEAPONS     = SKILL_TRAINED,
-	                    SKILL_FORENSICS   = SKILL_BASIC)
+	min_skill = list(
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_EVA         = SKILL_BASIC,
+	    SKILL_COMBAT      = SKILL_TRAINED,
+	    SKILL_WEAPONS     = SKILL_TRAINED,
+	    SKILL_FORENSICS   = SKILL_BASIC
+	)
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_MASTER,
-	                    SKILL_WEAPONS     = SKILL_MASTER,
-	                    SKILL_FORENSICS   = SKILL_TRAINED)
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_MASTER,
+	    SKILL_WEAPONS     = SKILL_MASTER,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
 	skill_points = 21
 
 /datum/job/ncoofficerez
@@ -343,16 +361,19 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_TRAINED,
-	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_TRAINED,
-	                    SKILL_WEAPONS     = SKILL_TRAINED,
-	                    SKILL_FORENSICS   = SKILL_EXPERIENCED)
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_TRAINED,
+	    SKILL_EVA         = SKILL_BASIC,
+	    SKILL_COMBAT      = SKILL_TRAINED,
+	    SKILL_WEAPONS     = SKILL_TRAINED,
+	    SKILL_FORENSICS   = SKILL_EXPERIENCED
+	)
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
-	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_EXPERIENCED,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_MASTER
+	)
 	skill_points = 21
 //##
 //JUNIOR OFFICER
@@ -394,17 +415,20 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_HAULING     = SKILL_TRAINED,
-	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_TRAINED,
-	                    SKILL_WEAPONS     = SKILL_BASIC,
-	                    SKILL_FORENSICS   = SKILL_BASIC)
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_EVA         = SKILL_BASIC,
+	    SKILL_COMBAT      = SKILL_TRAINED,
+	    SKILL_WEAPONS     = SKILL_BASIC,
+	    SKILL_FORENSICS   = SKILL_BASIC
+	)
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
-	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_FORENSICS   = SKILL_TRAINED)
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_EXPERIENCED,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
 	skill_points = 17
 
 /datum/job/enlistedofficerhcz
@@ -441,17 +465,20 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_HAULING     = SKILL_TRAINED,
-	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_TRAINED,
-	                    SKILL_WEAPONS     = SKILL_BASIC,
-	                    SKILL_FORENSICS   = SKILL_BASIC)
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_EVA         = SKILL_BASIC,
+	    SKILL_COMBAT      = SKILL_TRAINED,
+	    SKILL_WEAPONS     = SKILL_BASIC,
+	    SKILL_FORENSICS   = SKILL_BASIC
+	)
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
-	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_FORENSICS   = SKILL_TRAINED)
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_EXPERIENCED,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
 	skill_points = 17
 
 /datum/job/enlistedofficerez
@@ -491,16 +518,19 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_COMPUTER    = SKILL_BASIC,
-	                    SKILL_HAULING     = SKILL_TRAINED,
-	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
-	                    SKILL_WEAPONS     = SKILL_TRAINED,
-	                    SKILL_FORENSICS   = SKILL_EXPERIENCED)
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_EVA         = SKILL_BASIC,
+	    SKILL_COMBAT      = SKILL_BASIC,
+	    SKILL_WEAPONS     = SKILL_TRAINED,
+	    SKILL_FORENSICS   = SKILL_EXPERIENCED
+	)
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERIENCED,
-	                    SKILL_WEAPONS     = SKILL_EXPERIENCED,
-	                    SKILL_FORENSICS   = SKILL_MASTER)
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_EXPERIENCED,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_MASTER
+	)
 	skill_points = 17
 
