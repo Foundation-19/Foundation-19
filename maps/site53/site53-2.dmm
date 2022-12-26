@@ -17388,7 +17388,7 @@
 "aWU" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/llcz/scp500)
+/area/site53/uhcz/generalpurpose3)
 "aWV" = (
 /obj/structure/cable/green{
 	d2 = 2;
@@ -17436,15 +17436,11 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
-"aXa" = (
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/site53/uhcz/generalpurpose3)
 "aXb" = (
 /obj/structure/table/reinforced,
-/obj/item/paper/scp/safe/scp500,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/site53/uhcz/generalpurpose3)
 "aXd" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -17503,7 +17499,7 @@
 	req_access = list(list("ACCESS_SECURITY_LEVEL5","ACCESS_SCIENCE_LEVEL5"))
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/site53/uhcz/generalpurpose3)
 "aXj" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -17511,13 +17507,12 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/site53/uhcz/generalpurpose3)
 "aXk" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light,
-/obj/item/storage/pill_bottle/scp500,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
+/area/site53/uhcz/generalpurpose3)
 "aXl" = (
 /obj/machinery/camera/autoname{
 	network = list("Light Containment Zone Network")
@@ -32625,12 +32620,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/office)
-"rlK" = (
-/obj/machinery/camera/network/lcz{
-	name = "SCP-500"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
 "rlV" = (
 /obj/machinery/door/airlock/vault{
 	name = "Containment Chamber";
@@ -51127,8 +51116,8 @@ ebb
 aWC
 aWv
 aWU
-rlK
-aXa
+tJR
+tJR
 aWU
 iHI
 iHI
