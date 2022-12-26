@@ -6278,6 +6278,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/effect/paint_stripe/red,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
 "oA" = (
@@ -18257,12 +18258,6 @@
 /area/site53/llcz/dclass/medicalpost/chem)
 "VC" = (
 /obj/structure/filingcabinet/scp,
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24;
-	req_access = list("ACCESS_SECURITY_LEVEL1")
-	},
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 5
 	},
