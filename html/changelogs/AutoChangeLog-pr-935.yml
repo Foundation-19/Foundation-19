@@ -1,0 +1,7 @@
+author: casualspacestation14enjoyer
+delete-after: true
+changes:
+  - rscadd: Adds compatibility for power charging for 500.
+  - rscadd: Adds Electrified windows and a better containment cage for 500.
+  - rscadd: Fixes and makes the permissions needed to open the security booth in 500
+      higher (for the containment chamber also).
