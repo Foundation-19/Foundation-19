@@ -22,6 +22,9 @@
 	var/damage_threshold_value
 	var/healed_threshold = 1
 	var/oxygen_reserve = 6
+	var/insanity = 0 // higher = bad
+	var/max_insanity = 100
+
 	scp106_vulnerable = FALSE
 
 /obj/item/organ/internal/brain/robotize()
@@ -202,6 +205,10 @@
 					if(prob(damprob))
 						take_internal_damage(1)
 	..()
+
+/obj/item/organ/internal/brain/proc/take_sanity_damage(damage, silent)
+	insanity = Clamp(damage, insanity + damage, max_insanity)
+
 
 /obj/item/organ/internal/brain/take_internal_damage(var/damage, var/silent)
 	set waitfor = 0
