@@ -73,7 +73,7 @@
 
 		if(client.prefs.organ_data[BP_CHEST] == "cyborg")
 			if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
-				to_chat(usr, "No FBP without whitelist")
+				tgui_alert(client, "You are currently not whitelisted to play as FBP.", null, list("Ok"))
 				return FALSE
 
 		var/should_warn = TRUE
@@ -261,7 +261,7 @@
 	spawning = TRUE
 	if(client.prefs.organ_data[BP_CHEST] == "cyborg")
 		if(!whitelist_lookup(SPECIES_FBP, client.ckey) && client.prefs.species != SPECIES_IPC)
-			to_chat(src, "No FBP without whitelist.")
+			tgui_alert(client, "You are currently not whitelisted to play as FBP.", null, list("Ok"))
 			spawning = FALSE
 			return
 	close_spawn_windows()
