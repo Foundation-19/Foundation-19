@@ -30593,7 +30593,7 @@
 	},
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor,
-/area/site53/uhcz/generalpurpose3)
+/area/site53/ulcz/hallways)
 "oeP" = (
 /obj/machinery/power/apc{
 	dir = 8;

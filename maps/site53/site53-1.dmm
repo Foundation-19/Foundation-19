@@ -10210,16 +10210,6 @@
 /obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
-"yB" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/plating,
-/area/site53/llcz/scp500)
 "yC" = (
 /obj/effect/paint_stripe/orange,
 /obj/machinery/button/blast_door{
@@ -10763,19 +10753,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/surgery)
-"An" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/plating,
-/area/site53/llcz/scp500)
 "Ao" = (
 /obj/machinery/flasher{
 	id_tag = "cell9";
@@ -14766,12 +14743,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/hallways)
-"KV" = (
-/obj/structure/cable/green{
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/plating,
-/area/site53/llcz/scp500)
 "KZ" = (
 /obj/machinery/camera/network/lcz{
 	dir = 1
@@ -14926,12 +14897,6 @@
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mining/miningops)
-"Lr" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "SCP-500 Cable Maintenance"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
 "Lt" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/industrial/warning{
@@ -15259,17 +15224,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
-"Mt" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/plating,
-/area/site53/llcz/scp500)
 "Mv" = (
 /obj/machinery/door/blast/shutters{
 	dir = 8;
@@ -17065,13 +17019,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
-"RZ" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/site53/llcz/scp500)
 "Sb" = (
 /obj/effect/floor_decal/industrial/firstaid/corner{
 	dir = 1
@@ -17930,15 +17877,6 @@
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
-"UH" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/scp500)
 "UI" = (
 /obj/machinery/light,
 /obj/machinery/power/apc{
@@ -19503,14 +19441,6 @@
 /obj/item/storage/box/syringes,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
-"Zi" = (
-/obj/machinery/power/smes/buildable/preset/on_full,
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/plating,
-/area/site53/llcz/scp500)
 "Zj" = (
 /obj/machinery/light{
 	dir = 4;
@@ -60467,10 +60397,10 @@ gq
 gq
 gq
 gq
+gq
+gq
 Zv
 Zv
-Zv
-Lr
 Zv
 WM
 Zv
@@ -60724,11 +60654,11 @@ gq
 gq
 gq
 gq
+gq
+gq
+gq
+gq
 Zv
-Zi
-yB
-KV
-WO
 YL
 WO
 yZ
@@ -60981,14 +60911,14 @@ gq
 gq
 gq
 gq
+gq
+gq
+gq
+gq
 Zv
-Zi
-yB
-Mt
-RZ
-UH
-RZ
-An
+Pt
+WO
+yZ
 Zv
 gq
 gq
@@ -61238,8 +61168,8 @@ gq
 gq
 gq
 gq
-Zv
-Zv
+gq
+gq
 Zv
 Zv
 Zv
