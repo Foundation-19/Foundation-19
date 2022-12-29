@@ -888,6 +888,25 @@ SCP-939 exhale minute traces of an aerosolized Class C amnestic, designated AMN-
 "}
 
 
+/obj/item/paper/scp/keter/scp409
+	name = "SCP-409"
+	info = {"
+	<tt><center><b><font color='red'>KETER: SCP-409</font></b>
+	<h3>FOUNDATION RESEARCH DIVISION</h3>
+	</center>
+<br>
+<b>Item #:</b> SCP-409
+<br>
+Object Class: Keter
+<br>
+<b>Special Containment Procedures:</b>
+No physical contact may be made with SCP-409 for any reason. Anything making physical contact with SCP-409 must be contained in quarantine immediately, along with any materials used in the transport of the subject. SCP-409 must be kept in a granite case at all times. Any transportation of SCP-409 must be done in a sealed granite container. Residue from SCP-409's effect are to be sealed in granite containers along with any tools used to transport residue into containers.
+Description: SCP-409 resembles a large quartz crystal approximately 1.5m (5ft) tall and 0.6m (2ft) wide. Any objects coming in contact with SCP-409 will begin to crystallize after three hours. This effect will occur in any material other than granite. The crystallization will spread by approximately 2.5cm (1in) per minute, and will convert the entire object or organism, inside and out. Subjects report this effect to be extremely painful, and similar to frostbite. After complete crystallization,
+ the object will begin to make snapping and creaking noises for approximately twenty minutes,
+ before bursting into thousands of fragments with great force.
+"}
+
+
 // MISC.
 
 /obj/item/paper/dcell/assignment

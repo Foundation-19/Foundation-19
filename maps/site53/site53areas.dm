@@ -851,6 +851,11 @@
 	ambience = list('sound/ambience/hcz/049/Room049.ogg')
 //	ambience_crb = list('sound/ambience/hcz/049/Room049.ogg')
 
+/area/site53/lhcz/scp409containment
+	name = "\improper SCP-409 Containment Chamber"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/lhcz/hallway
 	name = "\improper Lower Heavy Containment Hallways"
 	icon_state = "hallC3"

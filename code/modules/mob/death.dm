@@ -46,6 +46,30 @@
 	remove_from_dead_mob_list()
 	addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
 
+/mob/proc/crystaltim(anim="h2crystal",remains=/obj/effect/decal/cleanable/residue409)
+	death(1)
+
+	if(stat == DEAD)
+		ghostize(FALSE) //Ghosts the mob here so it keeps its sprite
+
+	var/atom/movable/overlay/animation = null
+	ADD_TRANSFORMATION_MOVEMENT_HANDLER(src)
+	icon = null
+	set_invisibility(101)
+
+	animation = new(loc)
+	animation.icon_state = "blank"
+	animation.icon = 'icons/mob/mob.dmi'
+	animation.master = src
+
+	flick(anim, animation)
+	new remains(loc)
+
+	remove_from_dead_mob_list()
+	addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
+
+
+
 
 /mob/proc/death(gibbed,deathmessage="seizes up and falls limp...", show_dead_message = "You have died.")
 	if(stat == DEAD)
