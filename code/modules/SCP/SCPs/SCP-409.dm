@@ -27,7 +27,7 @@
 
 /obj/structure/scp409/proc/Crystal(var/mob/living/user) // defines Crystal() which calls crystaltim(), i am dumb
 	if(istype(user, /mob/living/carbon/human/scp049))
-		user.visible_message(SPAN_WARNING("Your doctor instincts prevent you from touching that odd crystal."))
+		to_chat(SPAN_WARNING("Your doctor instincts prevent you from touching that odd crystal."))
 	else if(istype(user))
 		sleep(60) // makes it so that it takes a while to take effect
 		playsound(src, 'sound/voice/emotes/male_scream2.ogg', 25) // I didn't find any other solution to do this, so this sound will play regardless if the victim is male or female. TODO: fix dis
