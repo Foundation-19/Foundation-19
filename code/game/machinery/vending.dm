@@ -1439,7 +1439,7 @@
 					/obj/item/reagent_containers/food/snacks/cheeseburger = 2,
 					/obj/item/reagent_containers/food/snacks/taco = 1,
 					/obj/item/reagent_containers/food/snacks/hotdog = 1,
-					/obj/item/reagent_containers/food/snacks/fries = 2,
+					/obj/item/reagent_containers/food/snacks/fries = 2
 					)
 
 /obj/machinery/vending/hotfood/on_update_icon()
