@@ -7,63 +7,92 @@ on:
   pull_request:
     branches:
       - dev
+env:
+  BYOND_MAJOR: "514"
+  BYOND_MINOR: "1584"
+  SPACEMAN_DMM_VERSION: suite-1.7.2
 
 jobs:
-  run_linters:
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
-    name: Run Linters
-    runs-on: ubuntu-20.04
+  DreamChecker:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Restore SpacemanDMM cache
-        uses: actions/cache@v3
+      - name: Setup Cache
+        uses: actions/cache@4723a57e26efda3a62cbde1812113b730952852d
         with:
-          path: ~/SpacemanDMM
-          key: ${{ runner.os }}-spacemandmm-${{ secrets.CACHE_PURGE_KEY }}
-      - name: Restore Yarn cache
-        uses: actions/cache@v3
-        with:
-          path: tgui/.yarn/cache
-          key: ${{ runner.os }}-yarn-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('tgui/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ secrets.CACHE_PURGE_KEY }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-      - name: Install Tools
-        run: |
-          pip3 install setuptools
-          bash tools/ci/install_node.sh
-          bash tools/ci/install_spaceman_dmm.sh dreamchecker
-          tools/bootstrap/python -c ''
-      - name: Run Linters
-        run: |
-          bash tools/ci/check_filedirs.sh baystation12.dme
-          bash tools/ci/check_changelogs.sh
-          bash tools/ci/check_misc.sh
-          tools/build/build --ci lint tgui-test
-          tools/bootstrap/python -m dmi.test
-          tools/bootstrap/python -m mapmerge2.dmm_test
-          ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
+          path: $HOME/spaceman_dmm/$SPACEMAN_DMM_VERSION
+          key: ${{ runner.os }}-spacemandmm-${{ env.SPACEMAN_DMM_VERSION }}
+      - name: Install Dreamchecker
+        run:  scripts/install-spaceman-dmm.sh dreamchecker
+      - name: Run Dreamchecker
+        run: ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
       - name: Annotate Lints
-        uses: yogstation13/DreamAnnotate@v2
+        uses: yogstation13/DreamAnnotate@8ef04ef7fbb4ac63ee2daca222af91599e0af5e1
         if: always()
         with:
           outputFile: output-annotations.txt
-  compile_all_maps:
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
-    name: Compile Maps
-    runs-on: ubuntu-20.04
+      - name: Run Failure Webhook
+        env:
+          JOB_STATUS: ${{ job.status }}
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+          HOOK_OS_NAME: ${{ runner.os }}
+          WORKFLOW_NAME: ${{ github.workflow }}
+        if: ${{ failure() }}
+        run: |
+          wget https://raw.githubusercontent.com/DiscordHooks/github-actions-discord-webhook/master/send.sh
+          chmod +x send.sh
+          ./send.sh failure $WEBHOOK_URL
+  Code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Cache
+        uses: actions/cache@4723a57e26efda3a62cbde1812113b730952852d
+        with:
+          path: $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}
+          key: ${{ runner.os }}-byond-${{ env.BYOND_MAJOR }}-${{ env.BYOND_MINOR }}
+      - name: Install Dependencies
+        run: sudo apt-get install -y uchardet
+      - name: Run Tests
+        env:
+          TEST: CODE
+        run: test/run-test.sh
+      - name: Run Failure Webhook
+        env:
+          JOB_STATUS: ${{ job.status }}
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+          HOOK_OS_NAME: ${{ runner.os }}
+          WORKFLOW_NAME: ${{ github.workflow }}
+        if: ${{ failure() }}
+        run: |
+          wget https://raw.githubusercontent.com/DiscordHooks/github-actions-discord-webhook/master/send.sh
+          chmod +x send.sh
+          ./send.sh failure $WEBHOOK_URL
+  Maps:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         map_path: [site53]
     steps:
       - uses: actions/checkout@v3
-      - name: Restore BYOND cache
-        uses: actions/cache@v3
+      - name: Setup Cache
+        uses: actions/cache@4723a57e26efda3a62cbde1812113b730952852d
         with:
-          path: ~/BYOND
-          key: ${{ runner.os }}-byond-${{ secrets.CACHE_PURGE_KEY }}
+          path: $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}
+          key: ${{ runner.os }}-byond-${{ env.BYOND_MAJOR }}-${{ env.BYOND_MINOR }}
       - name: Run Tests
         env:
           TEST: MAP
           MAP_PATH: ${{ matrix.map_path }}
+        run: test/run-test.sh
+      - name: Run Failure Webhook
+        env:
+          JOB_STATUS: ${{ job.status }}
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+          HOOK_OS_NAME: ${{ runner.os }}
+          WORKFLOW_NAME: ${{ github.workflow }}
+        if: ${{ failure() }}
+        run: |
+          wget https://raw.githubusercontent.com/DiscordHooks/github-actions-discord-webhook/master/send.sh
+          chmod +x send.sh
+          ./send.sh failure $WEBHOOK_URL
