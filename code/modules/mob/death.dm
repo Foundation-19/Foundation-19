@@ -46,7 +46,7 @@
 	remove_from_dead_mob_list()
 	addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
 
-/mob/proc/crystaltim(anim="h2crystal",remains=/obj/effect/decal/cleanable/residue409)
+/mob/proc/crystallize(anim="h2crystal",remains=/obj/effect/decal/cleanable/residue409)
 	death(1)
 
 	if(stat == DEAD)
