@@ -34,7 +34,6 @@
 		log_and_message_admins("[user] has died from SCP-409 exposure at [x] [y] [z]")
 		user.visible_message(
 			SPAN_DANGER(FONT_LARGE("You scream, as your body starts to twist and turn, it's flesh being replaced by rock. Stinging into your skin, you try and scream but the crystals already covered your mouth.")),
-
 			SPAN_WARNING("[user] screams and starts to turn into crystals on the floor.")
 		)
 		user.crystallize() // this is the thing that kills the person. TODO: make it use CA (crystal agent)
