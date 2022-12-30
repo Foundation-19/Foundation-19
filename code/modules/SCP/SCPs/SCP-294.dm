@@ -16,7 +16,9 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 	/datum/reagent/frostoil,
 	/datum/reagent/zombie,
 	/datum/reagent/jerraman,
-	/datum/reagent/three_eye
+	/datum/reagent/three_eye,
+	/datum/reagent/mutation_toxin,
+	/datum/reagent/advanced_mutation_toxin
 	)
 	var/uses_left = 5
 	var/last_use = 0
