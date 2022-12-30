@@ -27,7 +27,7 @@ jobs:
       - name: Run Dreamchecker
         run: ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
       - name: Annotate Lints
-        uses: yogstation13/DreamAnnotate@34029606cd7c22a08a589e084f860c1cc287363c
+        uses: yogstation13/DreamAnnotate@8ef04ef7fbb4ac63ee2daca222af91599e0af5e1
         if: always()
         with:
           outputFile: output-annotations.txt
