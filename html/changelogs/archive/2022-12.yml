@@ -21,3 +21,9 @@
   - rscadd: Added new SCP-500 Containment Chamber in HCZ near 1102-RU, which includes
       the pill bottle.
   - rscdel: Deleted the SCP-500 containment chamber in LCZ.
+2022-12-27:
+  casualspacestation14enjoyer:
+  - rscadd: Adds compatibility for power charging for 500.
+  - rscadd: Adds Electrified windows and a better containment cage for 500.
+  - rscadd: Fixes and makes the permissions needed to open the security booth in 500
+      higher (for the containment chamber also).
