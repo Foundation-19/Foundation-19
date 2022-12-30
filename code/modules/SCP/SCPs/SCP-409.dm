@@ -20,7 +20,7 @@
 	icon_state = "residue409"
 	gender = PLURAL
 
-/obj/structure/scp409/attack_hand(mob/user as mob)
+/obj/structure/scp409/attack_hand(mob/user)
 	visible_message("[user] touches [src].")
 	log_and_message_admins("[user] has touched SCP-409 at [x] [y] [z]")
 	crystallizecall(user) // crystallizecall is NOT the same as crystallize, crystallizecall is merely the timer and flavor shit for it.
@@ -34,6 +34,7 @@
 		log_and_message_admins("[user] has died from SCP-409 exposure at [x] [y] [z]")
 		user.visible_message(
 			SPAN_DANGER(FONT_LARGE("You scream, as your body starts to twist and turn, it's flesh being replaced by rock. Stinging into your skin, you try and scream but the crystals already covered your mouth.")),
+
 			SPAN_WARNING("[user] screams and starts to turn into crystals on the floor.")
 		)
 		user.crystallize() // this is the thing that kills the person. TODO: make it use CA (crystal agent)
