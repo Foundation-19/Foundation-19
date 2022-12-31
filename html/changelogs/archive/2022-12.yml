@@ -27,3 +27,6 @@
   - rscadd: Adds Electrified windows and a better containment cage for 500.
   - rscadd: Fixes and makes the permissions needed to open the security booth in 500
       higher (for the containment chamber also).
+2022-12-31:
+  cheesePizza2:
+  - bugfix: The "Hot Foods" vendor now actually has edible food.
