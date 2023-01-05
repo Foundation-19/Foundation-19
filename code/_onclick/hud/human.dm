@@ -450,15 +450,15 @@
 	if(istype(usr) && usr.sanity_icon == src)
 		switch(icon_state)
 			if("sanity1")
-				to_chat(usr, SPAN_NOTICE(pick(sanity_lines[1])))
+				to_chat(usr, SPAN_NOTICE("<i>[pick(sanity_lines[1])]</i>"))
 			if("sanity2")
-				to_chat(usr, SPAN_NOTICE(pick(sanity_lines[2])))
+				to_chat(usr, SPAN_NOTICE("<i>[pick(sanity_lines[2])]</i>"))
 			if("sanity3")
-				to_chat(usr, SPAN_WARNING(pick(sanity_lines[3])))
+				to_chat(usr, SPAN_WARNING("<i>[pick(sanity_lines[3])]</i>"))
 			if("sanity4")
-				to_chat(usr, SPAN_WARNING(pick(sanity_lines[4])))
+				to_chat(usr, SPAN_WARNING("<i>[pick(sanity_lines[4])]</i>"))
 			else
-				to_chat(usr, SPAN_NOTICE("I'm feeling buggy today. <i>I should notify a coder.</i>"))
+				to_chat(usr, SPAN_NOTICE("<i>I'm feeling buggy today. <b>I should notify a coder.</b></i>"))
 
 
 /mob/living/carbon/human/InitializePlanes()
