@@ -261,6 +261,15 @@
 		mymob.hydration_icon.screen_loc = ui_nutrition_small
 		hud_elements |= mymob.hydration_icon
 
+	if(hud_data.has_sanity)
+		mymob.sanity_icon = new /obj/screen/sanity()
+		mymob.sanity_icon.icon = 'icons/mob/status_sanity.dmi'
+		mymob.sanity_icon.icon_state = "sanity0"
+		mymob.sanity_icon.SetName("sanity")
+		mymob.sanity_icon.screen_loc = ui_sanity
+		hud_elements |= mymob.sanity_icon
+
+
 	mymob.pain = new /obj/screen/fullscreen/pain( null )
 	hud_elements |= mymob.pain
 
@@ -404,6 +413,51 @@
 /obj/screen/movement/Click(var/location, var/control, var/params)
 	if(istype(usr))
 		usr.set_next_usable_move_intent()
+
+/obj/screen/sanity
+	var/sanity_lines = list(
+		list( // Sane.
+			"I feel well.", "I feel alright.",
+			"I'm feeling perfectly rational today.",
+			"I'm feeling good today."
+		),
+		list( // A little stressed.
+			"I feel stressed.", "I can't think straight anymore.",
+			"I don't feel so well",
+			"My thoughts are starting to wander a bit.",
+			"There's something strange going on and I can't quite put my finger on it.",
+			"I'm feeling a bit overwhelmed.",
+			"I can't concentrate on anything.",
+			"My thoughts are starting to drift away."
+		),
+		list( // Starting to go insane.
+			"I feel distressed.", "I'm losing it.",
+			"I'm sure I'm imagining things.",
+			"I feel like something is watching me.",
+			"I feel like I'm seeing and hearing things that can't be real.",
+			"My mind is playing tricks on me.",
+			"I can't trust my own judgement anymore."
+		),
+		list( // Schizophrenic med student.
+			"They are out to get me.", "The walls are breathing.",
+			"There is something crawling under my skin.",
+			"There is no ceiling.", "There is a ceiling.",
+			"It's behind me.", "It's here.",
+		)
+	)
+
+/obj/screen/sanity/Click(var/location, var/control, var/params)
+	if(istype(usr) && usr.sanity_icon == src)
+		switch(icon_state)
+			if("sanity1")
+				to_chat(usr, SPAN_NOTICE(pick(sanity_lines[1])))
+			if("sanity2")
+				to_chat(usr, SPAN_NOTICE(pick(sanity_lines[2])))
+			if("sanity3")
+				to_chat(usr, SPAN_WARNING(pick(sanity_lines[3])))
+			if("sanity4")
+				to_chat(usr, SPAN_WARNING(pick(sanity_lines[4])))
+
 
 /mob/living/carbon/human/InitializePlanes()
 	..()

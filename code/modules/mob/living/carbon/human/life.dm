@@ -785,6 +785,16 @@
 				if(150 to 250)					hydration_icon.icon_state = "hydration3"
 				else							hydration_icon.icon_state = "hydration4"
 
+		if(sanity_icon)
+			var/sanity_amt = getSanityLoss()
+			switch(sanity_amt)
+				if(-INFINITY to 40)				sanity_icon.icon_state = "sanity1"
+				if(40 to 70)					sanity_icon.icon_state = "sanity2"
+				if(70 to 90)					sanity_icon.icon_state = "sanity3"
+				if(90 to INFINITY)				sanity_icon.icon_state = "sanity4"
+				else							sanity_icon.icon_state = "sanity-none" // fallback
+
+
 		if(cells && isSynthetic())
 			var/obj/item/organ/internal/cell/C = internal_organs_by_name[BP_CELL]
 			if (istype(C))
