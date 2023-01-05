@@ -146,11 +146,14 @@
 		var/obj/item/organ/internal/eyes/eyeballs = get_organ(BP_EYES)
 		// Handle the sanity if we see the face & eyes. And if we have eyes.
 		var/sanityLoss = getSanityLoss()
-		if(!skipeyes && sanityLoss && eyeballs)
-			if(equipment_tint_total < TINT_MODERATE && sanityLoss >= 20 && prob(sanityLoss)) // Low prob + Our eyes are visible
-				msg += SPAN_WARNING("[p_their(TRUE)] eyes are darting around.\n")
-			if(equipment_tint_total < TINT_MODERATE && sanityLoss >= 40 && prob(sanityLoss/2))
-				msg += SPAN_WARNING("[p_they(TRUE)] seem to be staring out into the distance.\n")
+		if(!skipeyes && sanityLoss && eyeballs && equipment_tint_total < TINT_MODERATE)
+			switch(sanityLoss)
+				if(40 to 70)
+					msg += SPAN_WARNING("[p_they(TRUE)] seem[p_s()] to drift away, lost in thought, ever so slightly.\n")
+				if(70 to 90)
+					msg += SPAN_WARNING("[p_their(TRUE)] eyes are darting around.\n")
+				if(90 to INFINITY)
+					msg += SPAN_WARNING("[p_they(TRUE)] [p_is()] staring with bloodshot eyes.\n")
 
 	//splints
 	for(var/organ in list(BP_L_LEG, BP_R_LEG, BP_L_ARM, BP_R_ARM))
