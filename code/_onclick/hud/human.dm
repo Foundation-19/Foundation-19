@@ -457,6 +457,8 @@
 				to_chat(usr, SPAN_WARNING(pick(sanity_lines[3])))
 			if("sanity4")
 				to_chat(usr, SPAN_WARNING(pick(sanity_lines[4])))
+			else
+				to_chat(usr, SPAN_NOTICE("I'm feeling buggy today. <i>I should notify a coder.</i>"))
 
 
 /mob/living/carbon/human/InitializePlanes()
