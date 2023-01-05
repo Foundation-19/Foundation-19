@@ -153,7 +153,7 @@
 				if(70 to 90)
 					msg += SPAN_WARNING("[p_their(TRUE)] eyes are darting around.\n")
 				if(90 to INFINITY)
-					msg += SPAN_WARNING("[p_they(TRUE)] [p_is()] staring with bloodshot eyes.\n")
+					msg += SPAN_WARNING("[p_they(TRUE)] [p_are()] staring with bloodshot eyes.\n")
 
 	//splints
 	for(var/organ in list(BP_L_LEG, BP_R_LEG, BP_L_ARM, BP_R_ARM))
