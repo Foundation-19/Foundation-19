@@ -631,7 +631,7 @@
 	reagent_state = LIQUID
 	color = COLOR_GRAY80
 	metabolism = 0.05 // So that low dosages have a chance to build up in the body.
-	do_giggle = TRUE
+	var/do_giggle = TRUE
 
 /datum/reagent/nitrous_oxide/xenon
 	name = "Xenon"
