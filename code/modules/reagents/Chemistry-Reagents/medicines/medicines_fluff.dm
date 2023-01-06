@@ -1,6 +1,7 @@
 
 // Reagents in this file should have little to no mechanical effect, and instead be focused on roleplay!
 
+#define ANTIDEPRESSANT_MESSAGE_DELAY 5 MINUTES
 /datum/reagent/medicine/fluff
 	metabolism = REM * 0.1
 	overdose = 0 // No risk of OD from fluff chems
