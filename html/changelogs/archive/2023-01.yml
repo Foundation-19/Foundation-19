@@ -1,6 +1,5 @@
-author: reklaw9
-delete-after: true
-changes:
+2023-01-07:
+  reklaw9:
   - balance: made it so SCP 500 only has 10 pills instead of 47
   - bugfix: scp 500 cannot be dissolved in water
   - bugfix: scp 500 cannot be grinded
