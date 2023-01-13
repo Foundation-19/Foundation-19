@@ -21,7 +21,7 @@
 
 /obj/item/storage/pill_bottle/scp500
 	name = "pill bottle (SCP-500)"
-	desc = "This Pill Bottle has the words \'SCP-500\' written on its cover. There's a sticky note on it that reads, \'Due to repeated unauthorized usage, SCP-500 has been transferred to a secure Site. 10 pills have been kept for research purposes. Contact a RAISA official for more details.\'."
+	desc = "This Pill Bottle has \'SCP-500\' written on its label. There's a sticky note on it that reads, \'Due to repeated unauthorized usage, most instances of SCP-500 have been transferred to a secure Site. 10 pills remain for research purposes. Contact a RAISA official for more details.\'."
 	max_storage_space = 10 // gotta store those pills
 
 	startswith = list(
