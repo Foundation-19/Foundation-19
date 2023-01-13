@@ -15,13 +15,13 @@
 
 //is this shitcode? kinda. does it work? absolutely.
 //these 2 lines of code make it so you can't dissolve scp 500 in water for multiplication, do not remove it.
-/obj/item/reagent_containers/pill/scp500/afterattack(obj/target, mob/user, proximity) 
+/obj/item/reagent_containers/pill/scp500/afterattack(obj/target, mob/user, proximity)
 	return 0
 
 
 /obj/item/storage/pill_bottle/scp500
-	name = "pill bottle (Panacea)"
-	desc = "This Pill Bottle has the words panacea written in it's cover, you also notice a strange note - DUE TO UNAUTHORIZED USAGE OF MULTIPLE 500-1 INSTANCES, THIS SITE IS NOW RESTRICTED FROM HAVING OVER 10 INSTANCES OF 500-1 - O5-7."
+	name = "pill bottle (SCP-500)"
+	desc = "This Pill Bottle has the words \'SCP-500\' written on its cover. There's a sticky note on it that reads, \'Due to repeated unauthorized usage, SCP-500 has been transferred to a secure Site. 10 pills have been kept for research purposes. Contact a RAISA official for more details.\'."
 	max_storage_space = 10 // gotta store those pills
 
 	startswith = list(
