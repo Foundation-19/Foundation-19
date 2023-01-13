@@ -1,25 +1,25 @@
 /datum/codex_entry/wrench
 	associated_paths = list(/obj/item/wrench)
 	mechanics_text = "This versatile tool is used for dismantling machine frames, anchoring or unanchoring heavy objects like vending machines and emitters, and much more. In general, if you want something to move or stop moving entirely, you ought to use a wrench on it."
-	lore_text = "The classic open-end wrench (or spanner, if you prefer) hasn't changed significantly in shape in over 500 years, though these days they employ a bit of automated trickery to match various bolt sizes and configurations."
+	lore_text = "The classic open-end wrench (or spanner, if you prefer) is still commonly used by Foundation personnel, especially after anomalous science perfected a design for automatic bolt-matching."
 	antag_text = "Not only is this handy tool good for making off with machines, but it even makes a weapon in a pinch!"
 
 /datum/codex_entry/screwdriver
 	associated_paths = list(/obj/item/screwdriver)
 	mechanics_text = "This tool is used to expose or safely hide away cabling. It can open and shut the maintenance panels on vending machines, airlocks, and much more. You can also use it, in combination with a crowbar, to install or remove windows."
-	lore_text = "Screws have not changed significantly in centuries, and neither have the drivers used to install and remove them."
+	lore_text = "Screws have not changed significantly in the paranormal world, and neither have the drivers used to install and remove them."
 	antag_text = "In the world of breaking and entering, tools like multitools and wirecutters are the bread; the screwdriver is the butter. In a pinch, try targetting someone's eyes and stabbing them with it - it'll really hurt!"
 
 /datum/codex_entry/wirecutters
 	associated_paths = list(/obj/item/wirecutters)
 	mechanics_text = "This tool will cut wiring anywhere you see it - make sure to wear insulated gloves! When used on more complicated machines or airlocks, it can not only cut cables, but repair them, as well."
-	lore_text = "With modern alloys, today's wirecutters can snap through cables of astonishing thickness."
+	lore_text = "With anomalous alloys, today's wirecutters can snap through cables of astonishing thickness."
 	antag_text = "These cutters can be used to cripple the power anywhere on the ship. All it takes is some creativity, and being in the right place at the right time."
 
 /datum/codex_entry/welder
 	associated_paths = list(/obj/item/weldingtool)
 	mechanics_text = "Use in your hand to toggle the welder on and off. Hold in one hand and click with an empty hand to remove its internal tank. Click on an object to try to weld it. You can seal airlocks, attach heavy-duty machines like emitters and disposal chutes, and repair damaged walls - these are only a few of its uses. Each use of the welder will consume a unit of fuel. Be sure to wear protective equipment such as goggles, a mask, or certain voidsuit helmets to prevent eye damage. You can refill the welder with a welder tank by clicking on it, but be sure to turn it off first!"
-	lore_text = "One of many tools of ancient design, still used in today's busy world of engineering with only minor tweaks here and there. Compact machinery and innovations in fuel storage have allowed for conveniences like this one-piece, handheld welder to exist."
+	lore_text = "Commonly used by factories and homebrewed repair shops, welding tools are vital to Foundation's engineering staff. While arc welding is still prefered by public manufactory companies, anomalous innovations in fuel storage have outpaced wireless technologies, which firmly cemented gas welding as the #1 handheld welding tool."
 	antag_text = "You can use a welder to rapidly seal off doors, ventilation ducts, and scrubbers. It also makes for a devastating weapon. Modify it with a screwdriver and stick some metal rods on it, and you've got the beginnings of a flamethrower."
 
 /datum/codex_entry/crowbar
@@ -31,7 +31,7 @@
 /datum/codex_entry/toolbelt
 	associated_paths = list(/obj/item/storage/belt/utility)
 	mechanics_text = "The tool-belt has enough slots to carry a full engineer's toolset: screwdriver, crowbar, wrench, welder, cable coil, and multitool. Simply click the belt to move a tool to one of its slots."
-	lore_text = "Good hide is hard to come by in certain regions of the galaxy. When they can't come across it, most TSCs will outfit their crews with toolbelts made of synthesized leather."
+	lore_text = "Good hide is hard to come by in third-world countries. When they can't come across it, the Foundation will outfit their crews with toolbelts made of synthetic leather."
 	antag_text = "Only amateurs skip grabbing a tool-belt."
 
 /datum/codex_entry/toolbelt/crystal
@@ -45,7 +45,7 @@
 /datum/codex_entry/cable_painter
 	associated_paths = list(/obj/item/device/cable_painter)
 	mechanics_text = "Use this device to select a preferred cable color. Apply it to a bundle of cables on your person, or use it on installed cabling on the floor to paint it in your chosen color."
-	lore_text = "A device often used by spacefaring engineers to color-code their electrical systems. An experienced technician can identify traditional installations by color alone."
+	lore_text = "A device often used by large-scale engineers to color-code their electrical systems. An experienced technician can identify traditional installations by color alone."
 
 /datum/codex_entry/paint_sprayer
 	associated_paths = list(/obj/item/device/paint_sprayer)
@@ -59,18 +59,18 @@
 /datum/codex_entry/geiger_counter
 	associated_paths = list(/obj/item/device/geiger)
 	mechanics_text = "By using this item, you may toggle its scanning mode on and off. Examine it while it's on to check for ambient radiation."
-	lore_text = "For centuries geiger counters have been saving the lives of unsuspecting laborers and technicians. You can never be too careful around radiation."
+	lore_text = "For decades geiger counters have been saving the lives of unsuspecting laborers and technicians. You can never be too careful around radiation."
 
 /datum/codex_entry/light_replacer
 	associated_paths = list(/obj/item/device/lightreplacer)
 	mechanics_text = "Examine or use this item to see how many lights are remaining. You can feed it lightbulbs or sheets of glass to refill it."
-	lore_text = "Can you believe they used to have to screw lightbulbs in by hand?"
+	lore_text = "Thanks to the Foundation, you don't have to screw lightbulbs in by hand!"
 	antag_text = "Using a cryptographic sequencer on this device will cause it to overload each light it replaces; when turned on, the new lights will explode!"
 
 /datum/codex_entry/multitool
 	associated_paths = list(/obj/item/device/multitool)
 	mechanics_text = "Multitools are incredibly versatile and can be used on a wide variety of machines. The most common use for this is to trip a device's wires without having to cut them. Simply click on an object with exposed wiring to use it. There might be other uses, as well..."
-	lore_text = "The common, every day multitool is descended from certain electrical tools from Earth's early space age. Though none too cheap, they are incredibly handy, and can be found in any self-respecting technician's toolbox."
+	lore_text = "The common, every day multitool is descended from certain electrical tools from the mundane world. Though none too cheap, they are incredibly handy, and can be found in any self-respecting technician's toolbox."
 	antag_text = "This handy little tool can get you through doors, turn off power, and anything else you might need."
 
 /datum/codex_entry/t_scanner
