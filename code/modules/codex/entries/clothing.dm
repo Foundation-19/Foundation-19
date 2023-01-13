@@ -51,7 +51,7 @@
 		armor_strings += "The material is exceptionally thick."
 
 	if(max_heat_protection_temperature >= FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE)
-		armor_strings += "You could probably safely skydive into the Sun wearing this."
+		armor_strings += "This suit offers hefty protection from impossibly high temperatures."
 	else if(max_heat_protection_temperature >= SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE)
 		armor_strings += "It provides good protection against fire and heat."
 
