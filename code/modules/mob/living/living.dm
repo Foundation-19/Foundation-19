@@ -313,6 +313,9 @@ default behaviour is:
 /mob/living/proc/getSanityLoss()
 	return 0
 
+/mob/living/proc/getSanityLevel()
+	return
+
 /mob/living/proc/adjustSanityLoss(amount)
 	return
 

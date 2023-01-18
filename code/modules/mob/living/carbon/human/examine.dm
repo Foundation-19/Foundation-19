@@ -145,14 +145,15 @@
 
 		var/obj/item/organ/internal/eyes/eyeballs = get_organ(BP_EYES)
 		// Handle the sanity if we see the face & eyes. And if we have eyes.
-		var/sanityLoss = getSanityLoss()
-		if(!skipeyes && sanityLoss && eyeballs && equipment_tint_total < TINT_MODERATE)
-			switch(sanityLoss)
-				if(40 to 70)
+		// Sanity level of the examined mob, not the user
+		var/sanityLvl = getSanityLevel()
+		if(!skipeyes && sanityLvl && eyeballs && equipment_tint_total < TINT_MODERATE)
+			switch(sanityLvl)
+				if(SL_STRESSED)
 					msg += SPAN_WARNING("[p_they(TRUE)] seem[p_s()] to drift away, lost in thought, ever so slightly.\n")
-				if(70 to 90)
+				if(SL_DISTRESSED)
 					msg += SPAN_WARNING("[p_their(TRUE)] eyes are darting around.\n")
-				if(90 to INFINITY)
+				if(SL_INSANE)
 					msg += SPAN_WARNING("[p_they(TRUE)] [p_are()] staring with bloodshot eyes.\n")
 
 	//splints

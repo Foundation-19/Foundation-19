@@ -154,6 +154,7 @@
 
 		handle_disabilities()
 		handle_damage_effects()
+		handle_sanity_effects()
 
 		// Brain damage from low oxygenation or lack of blood.
 		if(owner.should_have_organ(BP_HEART))
@@ -171,7 +172,6 @@
 			var/damprob
 			//Effects of bloodloss
 			switch(blood_volume)
-
 				if(BLOOD_VOLUME_SAFE to INFINITY)
 					if(can_heal)
 						damage = max(damage-1, 0)
@@ -188,7 +188,7 @@
 						take_internal_damage(1)
 					if(!owner.paralysis && prob(10))
 						owner.Paralyse(rand(1,3))
-						to_chat(owner, "<span class='warning'>You feel extremely [pick("dizzy","woozy","faint")]...</span>")
+						to_chat(owner, "<span class='warning'>You feel very [pick("dizzy","woozy","faint")]...</span>")
 				if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
 					owner.eye_blurry = max(owner.eye_blurry,6)
 					damprob = owner.chem_effects[CE_STABLE] ? 60 : 100
@@ -209,6 +209,17 @@
 /obj/item/organ/internal/brain/proc/take_sanity_damage(damage, silent)
 	insanity = Clamp(damage, insanity + damage, max_insanity)
 
+/obj/item/organ/internal/brain/proc/get_sanity_level()
+	switch(insanity)
+		if(-INFINITY to 0.4*max_insanity)
+			return SL_SANE
+		if(0.4*max_insanity to 0.7*max_insanity) // Stressed.
+			return SL_STRESSED
+		if(0.7*max_insanity to 0.9*max_insanity) // Starting to go insane.
+			return SL_DISTRESSED
+		if(0.9*max_insanity to INFINITY) // Schizophrenic med student.
+			return SL_INSANE
+	return SL_SANE // something went wrong.
 
 /obj/item/organ/internal/brain/take_internal_damage(var/damage, var/silent)
 	set waitfor = 0
@@ -262,6 +273,34 @@
 		if(!owner.lying)
 			to_chat(owner, "<span class='danger'>You black out!</span>")
 		owner.Paralyse(10)
+
+// Magic number;
+// "designed" such that 120u of Citalopram are needed
+// to go from full insanity to complete sanity.
+// I forgot how I did the math for this, so trust me bro
+#define CHEM_SANITY_MULTIPLIER 5/6
+
+/obj/item/organ/internal/brain/proc/handle_sanity_effects()
+	if(owner.stat) // Dead => Don't change sanity
+		return
+	// reagent effect
+	to_chat(world, "Sanity: [owner.chem_effects[CE_SANITY]] | [owner] | [owner.reagents.get_reagents()]")
+	var/dmg_amt = owner.chem_effects[CE_SANITY] * REM * CHEM_SANITY_MULTIPLIER
+	take_sanity_damage(-dmg_amt, TRUE)
+
+
+	switch(get_sanity_level())
+	 // if(SL_SANE) // you're sane, don't do anything
+		if(SL_STRESSED) // Stressed.
+			// to be implemented
+		if(SL_DISTRESSED) // Starting to go insane.
+			if(prob(1))
+				owner.hallucination(insanity * 1.2, insanity)
+		if(SL_INSANE) // Schizophrenic med student.
+			if(prob(3))
+				owner.hallucination(insanity * 2, insanity)
+
+#undef CHEM_SANITY_MULTIPLIER
 
 /obj/item/organ/internal/brain/surgical_fix(mob/user)
 	var/blood_volume = owner.get_blood_oxygenation()

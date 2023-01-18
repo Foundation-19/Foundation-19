@@ -786,12 +786,12 @@
 				else							hydration_icon.icon_state = "hydration4"
 
 		if(sanity_icon)
-			var/sanity_amt = getSanityLoss()
-			switch(sanity_amt)
-				if(-INFINITY to 40)				sanity_icon.icon_state = "sanity1"
-				if(40 to 70)					sanity_icon.icon_state = "sanity2"
-				if(70 to 90)					sanity_icon.icon_state = "sanity3"
-				if(90 to INFINITY)				sanity_icon.icon_state = "sanity4"
+			var/sanity_lvl = getSanityLevel()
+			switch(sanity_lvl)
+				if(SL_SANE)						sanity_icon.icon_state = "sanity1"
+				if(SL_STRESSED)					sanity_icon.icon_state = "sanity2"
+				if(SL_DISTRESSED)				sanity_icon.icon_state = "sanity3"
+				if(SL_INSANE)					sanity_icon.icon_state = "sanity4"
 				else							sanity_icon.icon_state = "sanity-none" // fallback
 
 

@@ -320,7 +320,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 			M.adjustBrainLoss(rand(1, 2))
 
 	if (true_dose >= 90)
-		M.add_chemical_effect(CE_MIND, -2)
+		M.add_chemical_effect(CE_HALLUCINATION, -2)
 		M.hallucination(50, min(true_dose / 2, 50))
 		if (M.getBrainLoss() < 75)
 			M.adjustBrainLoss(rand(1, 2))
