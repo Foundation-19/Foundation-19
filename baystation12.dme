@@ -2902,6 +2902,7 @@
 #include "code\modules\reagents\Chemistry-Reagents\gas_properties.dm"
 #include "code\modules\reagents\Chemistry-Reagents\medicines\_medicines_base.dm"
 #include "code\modules\reagents\Chemistry-Reagents\medicines\medicines_amnestics.dm"
+#include "code\modules\reagents\Chemistry-Reagents\medicines\medicines_antidepressants.dm"
 #include "code\modules\reagents\Chemistry-Reagents\medicines\medicines_core.dm"
 #include "code\modules\reagents\Chemistry-Reagents\medicines\medicines_cryogenic.dm"
 #include "code\modules\reagents\Chemistry-Reagents\medicines\medicines_fluff.dm"

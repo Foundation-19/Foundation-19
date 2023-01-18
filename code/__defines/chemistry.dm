@@ -42,10 +42,11 @@
 #define CE_ANTIVIRAL     "antiviral"    // Anti-virus effect.
 #define CE_TOXIN         "toxins"       // Generic toxins, stops autoheal.
 #define CE_BREATHLOSS    "breathloss"   // Breathing depression, makes you need more air
-#define CE_MIND    		 "mindbending"  // Stabilizes or wrecks mind. Used for hallucinations
-#define CE_CRYO 	     "cryogenic"    // Prevents damage from being frozen
-#define CE_BLOCKAGE	     "blockage"     // Gets in the way of blood circulation, higher the worse
-#define CE_SQUEAKY		 "squeaky"      // Helium voice. Squeak squeak.
+#define CE_HALLUCINATION "hallucination"// Hallucinations.
+#define CE_SANITY        "mindbending"  // Mends or breaks sanity.
+#define CE_CRYO          "cryogenic"    // Prevents damage from being frozen
+#define CE_BLOCKAGE      "blockage"     // Gets in the way of blood circulation, higher the worse
+#define CE_SQUEAKY       "squeaky"      // Helium voice. Squeak squeak.
 #define CE_THIRDEYE      "thirdeye"     // Gives xray vision.
 #define CE_SEDATE        "sedate"       // Applies sedation effects, i.e. paralysis, inability to use items, etc.
 #define CE_ENERGETIC     "energetic"    // Speeds up stamina recovery.

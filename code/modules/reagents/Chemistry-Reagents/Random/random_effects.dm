@@ -315,8 +315,8 @@
 	mode = RANDOM_CHEM_EFFECT_FLOAT
 	desc = "respiratory depression"
 
-/decl/random_chem_effect/random_properties/ce_mindbending
-	chem_effect_define = CE_MIND
+/decl/random_chem_effect/random_properties/ce_hallucination
+	chem_effect_define = CE_HALLUCINATION
 	beneficial = -1
 	minimum = -2
 	maximum = 2
