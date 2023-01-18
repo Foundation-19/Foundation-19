@@ -314,7 +314,7 @@ default behaviour is:
 	return 0
 
 /mob/living/proc/getSanityLevel()
-	return
+	return SL_SANE
 
 /mob/living/proc/adjustSanityLoss(amount)
 	return
