@@ -1,6 +1,6 @@
 /datum/codex_category/species/
 	name = "Species"
-	desc = "Sapient species encountered in known space."
+	desc = "Anomalous but widespread sapient species."
 
 /datum/codex_category/species/Initialize()
 	for(var/thing in all_species)
