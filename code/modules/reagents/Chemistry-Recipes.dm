@@ -448,19 +448,19 @@
 
 /datum/chemical_reaction/methylphenidate
 	name = "Methylphenidate"
-	result = /datum/reagent/medicine/fluff/methylphenidate
+	result = /datum/reagent/medicine/antidepressant/methylphenidate
 	required_reagents = list(/datum/reagent/mindbreaker_toxin = 1, /datum/reagent/lithium = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/citalopram
 	name = "Citalopram"
-	result = /datum/reagent/medicine/fluff/citalopram
+	result = /datum/reagent/medicine/antidepressant/citalopram
 	required_reagents = list(/datum/reagent/mindbreaker_toxin = 1, /datum/reagent/carbon = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/paroxetine
 	name = "Paroxetine"
-	result = /datum/reagent/medicine/fluff/paroxetine
+	result = /datum/reagent/medicine/antidepressant/paroxetine
 	required_reagents = list(/datum/reagent/mindbreaker_toxin = 1, /datum/reagent/acetone = 1, /datum/reagent/medicine/inaprovaline = 1)
 	result_amount = 3
 

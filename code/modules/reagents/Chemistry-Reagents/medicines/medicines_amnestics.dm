@@ -349,13 +349,13 @@
 /datum/chemical_reaction/classb
 	name = "Class-B Amnestics"
 	result = /datum/reagent/amnestics/classb
-	required_reagents = list(/datum/reagent/amnestics/classa = 1, /datum/reagent/radium = 1, /datum/reagent/medicine/fluff/citalopram = 1)
+	required_reagents = list(/datum/reagent/amnestics/classa = 1, /datum/reagent/radium = 1, /datum/reagent/medicine/antidepressant/citalopram = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/classc
 	name = "Class-C Amnestics"
 	result = /datum/reagent/amnestics/classc
-	required_reagents = list(/datum/reagent/amnestics/classb = 1, /datum/reagent/mindbreaker_toxin = 1, /datum/reagent/medicine/fluff/paroxetine = 1)
+	required_reagents = list(/datum/reagent/amnestics/classb = 1, /datum/reagent/mindbreaker_toxin = 1, /datum/reagent/medicine/antidepressant/paroxetine = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/classe

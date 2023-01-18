@@ -133,6 +133,7 @@
 		else if(jitteriness >= 100)
 			msg += "<span class='warning'>[p_they(TRUE)] [p_are()] twitching ever so slightly.</span>\n"
 
+
 	//Disfigured face
 	if(!skipface) //Disfigurement only matters for the head currently.
 		var/obj/item/organ/external/head/E = get_organ(BP_HEAD)
@@ -141,6 +142,19 @@
 				msg += E.species.disfigure_msg(src)
 			else //Just in case they lack a species for whatever reason.
 				msg += "<span class='warning'>[p_their()] face is horribly mangled!</span>\n"
+
+		var/obj/item/organ/internal/eyes/eyeballs = get_organ(BP_EYES)
+		// Handle the sanity if we see the face & eyes. And if we have eyes.
+		// Sanity level of the examined mob, not the user
+		var/sanityLvl = getSanityLevel()
+		if(!skipeyes && sanityLvl && eyeballs && equipment_tint_total < TINT_MODERATE)
+			switch(sanityLvl)
+				if(SL_STRESSED)
+					msg += SPAN_WARNING("[p_they(TRUE)] seem[p_s()] to drift away, lost in thought, ever so slightly.\n")
+				if(SL_DISTRESSED)
+					msg += SPAN_WARNING("[p_their(TRUE)] eyes are darting around.\n")
+				if(SL_INSANE)
+					msg += SPAN_WARNING("[p_they(TRUE)] [p_are()] staring with bloodshot eyes.\n")
 
 	//splints
 	for(var/organ in list(BP_L_LEG, BP_R_LEG, BP_L_ARM, BP_R_ARM))
