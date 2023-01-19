@@ -67,7 +67,7 @@
 	if(M.chem_doses[type] >= 4.8 && !isamnesticized)
 		isamnesticized = TRUE
 		M.visible_message("<span class='warning'>[M] looks deeply confused.</span>")
-		to_chat(M, "<font size='5' color='red'>Your memories are disappearing rapidly... You completely forget the existance of the Foundation, anomalies, and anything generally strange.</font>")
+		to_chat(M, "<font size='5' color='red'>Your memories are disappearing rapidly... You completely forget the existence of the anomalous, the Foundation, and anything else supernatural.</font>")
 
 	M.add_chemical_effect(CE_SEDATE, 1) //sedative logic stolen from chloral hydrate.
 	if (M.chem_doses[type] <= metabolism * threshold)
@@ -348,13 +348,13 @@
 /datum/chemical_reaction/classb
 	name = "Class-B Amnestics"
 	result = /datum/reagent/amnestics/classb
-	required_reagents = list(/datum/reagent/amnestics/classa = 1, /datum/reagent/radium = 1, /datum/reagent/medicine/fluff/citalopram = 1)
+	required_reagents = list(/datum/reagent/amnestics/classa = 1, /datum/reagent/radium = 1, /datum/reagent/medicine/antidepressant/citalopram = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/classc
 	name = "Class-C Amnestics"
 	result = /datum/reagent/amnestics/classc
-	required_reagents = list(/datum/reagent/amnestics/classb = 1, /datum/reagent/mindbreaker_toxin = 1, /datum/reagent/medicine/fluff/paroxetine = 1)
+	required_reagents = list(/datum/reagent/amnestics/classb = 1, /datum/reagent/mindbreaker_toxin = 1, /datum/reagent/medicine/antidepressant/paroxetine = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/classe
