@@ -1983,7 +1983,7 @@
 /datum/chemical_reaction/regrettiforgetti
 	name = "Regretti Forgetti"
 	result = /datum/reagent/ethanol/regrettiforgetti
-	required_reagents = list(/datum/reagent/ethanol/vodka = 1, /datum/reagent/mindbreaker_toxin = 1, /datum/reagent/amnestics/classa = 1)
+	required_reagents = list(/datum/reagent/ethanol/vodka = 1, /datum/reagent/mindbreaker_toxin = 1, /datum/reagent/medicine/amnestics/classa = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/red_mead

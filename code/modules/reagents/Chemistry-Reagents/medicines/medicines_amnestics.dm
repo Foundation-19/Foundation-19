@@ -1,4 +1,4 @@
-/datum/reagent/amnestics
+/datum/reagent/medicine/amnestics
 	name = "Amnestics"
 	description = "Amnestics are applied to remove or alter memories from a target, often to different degrees."
 	taste_description = "something you already forgot"
@@ -8,7 +8,7 @@
 	var/isamnesticized = FALSE //failsafe to make sure players aren't amnesticized twice from the same dosage
 	var/threshold = 5 //threshold for sleep.
 
-/datum/reagent/amnestics/classa
+/datum/reagent/medicine/amnestics/classa
 	name = "Class-A Amnestics"
 	description = "Class-A amnestics cause retrograde of the subject's short-term memory. Every 5 units administered results in the loss of the last 10 minutes."
 	color = "#dd0030"
@@ -16,7 +16,7 @@
 	overdose = 30 //30 units * 2 minutes each = maximum of an hour in a single dose.
 	value = 15
 
-/datum/reagent/amnestics/classa/affect_blood(mob/living/carbon/M, removed)
+/datum/reagent/medicine/amnestics/classa/affect_blood(mob/living/carbon/M, removed)
 
 	if((volume <= 0.55) && !isamnesticized) //when the amnestic is fully metabolized, trigger amnesia
 		isamnesticized = TRUE
@@ -29,17 +29,17 @@
 		if(M.dizziness <= 200)
 			M.make_dizzy(15)
 
-/datum/reagent/amnestics/classa/overdose(mob/living/carbon/M, removed)
+/datum/reagent/medicine/amnestics/classa/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(14 * removed)
 
-/datum/reagent/amnestics/classb
+/datum/reagent/medicine/amnestics/classb
 	name = "Class-B Amnestics"
 	description = "Class-B amnestics cause regressive retrograde of the subject's long-term memory. Every unit administered results in the loss of a full day."
 	color = "#00D9D9"
 	overdose = 15 //15 units * 1 day each = maximum of 15 days in a single dose
 	value = 20
 
-/datum/reagent/amnestics/classb/affect_blood(mob/living/carbon/M, removed)
+/datum/reagent/medicine/amnestics/classb/affect_blood(mob/living/carbon/M, removed)
 	if((volume <= 0.25) && !isamnesticized)
 		isamnesticized = TRUE
 		M.visible_message("<span class='warning'>[M] looks confused.</span>")
@@ -51,10 +51,10 @@
 		if(M.dizziness <= 200)
 			M.make_dizzy(15)
 
-/datum/reagent/amnestics/classb/overdose(mob/living/carbon/M, removed)
+/datum/reagent/medicine/amnestics/classb/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(20 * removed)
 
-/datum/reagent/amnestics/classc
+/datum/reagent/medicine/amnestics/classc
 	name = "Class-C Amnestics"
 	description = "Class-C amnestics cause retrograde of targetted, specific memories."
 	color = "#ffd900"
@@ -62,7 +62,7 @@
 	threshold = 5
 	value = 25
 
-/datum/reagent/amnestics/classc/affect_blood(mob/living/carbon/M, removed)
+/datum/reagent/medicine/amnestics/classc/affect_blood(mob/living/carbon/M, removed)
 
 	if(M.chem_doses[type] >= 4.8 && !isamnesticized)
 		isamnesticized = TRUE
@@ -81,11 +81,11 @@
 		if(M.dizziness <= 200)
 			M.make_dizzy(15)
 
-/datum/reagent/amnestics/classc/overdose(mob/living/carbon/M, removed)
+/datum/reagent/medicine/amnestics/classc/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(25 * removed)
 	M.adjustToxLoss(5 * removed)
 
-/datum/reagent/amnestics/classe
+/datum/reagent/medicine/amnestics/classe
 	name = "Class-E Amnestics"
 	description = "Class-E amnestics induce complacency with the anomalous. They will remember all anomalous events, but act as if they're an ordinary part of life."
 	taste_description = "something that's exceedingly normal"
@@ -93,7 +93,7 @@
 	overdose = 5
 	value = 65
 
-/datum/reagent/amnestics/classe/affect_blood(mob/living/carbon/M, removed)
+/datum/reagent/medicine/amnestics/classe/affect_blood(mob/living/carbon/M, removed)
 	if(M.chem_doses[type] >= 4.8 && !isamnesticized)
 		isamnesticized = TRUE
 		M.visible_message("<span class='warning'>[M] looks calmer and more relaxed.</span>")
@@ -111,11 +111,11 @@
 		if(M.dizziness <= 200)
 			M.make_dizzy(15)
 
-/datum/reagent/amnestics/classe/overdose(mob/living/carbon/M, removed)
+/datum/reagent/medicine/amnestics/classe/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(20 * removed)
 	M.adjustToxLoss(3 * removed)
 
-/datum/reagent/amnestics/classf
+/datum/reagent/medicine/amnestics/classf
 	name = "Class-F Amnestics"
 	description = "Class-F amnestics induce a permanent fugue state, causing the subject to completely forget their past identity."
 	color = "#a0a0a0"
@@ -123,7 +123,7 @@
 	threshold = 1
 	value = 75
 
-/datum/reagent/amnestics/classf/affect_blood(mob/living/carbon/M, removed)
+/datum/reagent/medicine/amnestics/classf/affect_blood(mob/living/carbon/M, removed)
 	M.Weaken(10)
 	if(M.chem_doses[type] >= 19.8 && !isamnesticized) //OD is lower than the amount of doses it needs to work. So you need to give it as an IV over a long time.
 		isamnesticized = TRUE
@@ -146,7 +146,7 @@
 		if(M.dizziness <= 200)
 			M.make_dizzy(10)
 
-/datum/reagent/amnestics/classg
+/datum/reagent/medicine/amnestics/classg
 	name = "Class-G Amnestics"
 	description = "Class-G amnestics gaslight the subject into distrusting their memory. They will remember all anomalous events, but believe them to be a dream or their imagination."
 	taste_description = "forgotten dreams"
@@ -154,7 +154,7 @@
 	overdose = 5
 	value = 45
 
-/datum/reagent/amnestics/classg/affect_blood(mob/living/carbon/M, removed)
+/datum/reagent/medicine/amnestics/classg/affect_blood(mob/living/carbon/M, removed)
 	if(M.chem_doses[type] >= 4.8 && !isamnesticized)
 		isamnesticized = TRUE
 		M.visible_message("<span class='warning'>[M] looks like \he just woke up from a dream.</span>")
@@ -172,11 +172,11 @@
 		if(M.dizziness <= 200)
 			M.make_dizzy(15)
 
-/datum/reagent/amnestics/classg/overdose(mob/living/carbon/M, removed)
+/datum/reagent/medicine/amnestics/classg/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(20 * removed)
 	M.adjustToxLoss(3 * removed)
 
-/datum/reagent/amnestics/classh
+/datum/reagent/medicine/amnestics/classh
 	name = "Class-H Amnestics"
 	description = "Class-H amnestics cause anterograde, blocking formation of new memories. Every 5 units administered results in 400 seconds of effect."
 	taste_description = "sickly bitterness"
@@ -185,7 +185,7 @@
 	overdose = 20 //20 units * 80 seconds each = maximum of 26.6 minutes in a single dose.
 	value = 35
 
-/datum/reagent/amnestics/classh/affect_blood(mob/living/carbon/M, removed)
+/datum/reagent/medicine/amnestics/classh/affect_blood(mob/living/carbon/M, removed)
 
 	if((volume > 0.25) && !isamnesticized) //Upon initial check, inform about amnestic
 		isamnesticized = TRUE
@@ -203,10 +203,10 @@
 		if(M.dizziness <= 200)
 			M.make_dizzy(7)
 
-/datum/reagent/amnestics/classh/overdose(mob/living/carbon/M, removed)
+/datum/reagent/medicine/amnestics/classh/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(16 * removed)
 
-/datum/reagent/amnestics/classi
+/datum/reagent/medicine/amnestics/classi
 	name = "Class-I Amnestics"
 	description = "Class-I amnestics cause transient amnesia, preventing recall of the past. Every 5 units administered results in 400 seconds of effect."
 	color = "#ef7dfa"
@@ -214,7 +214,7 @@
 	overdose = 20 //20 units * 80 seconds each = maximum of 26.6 minutes in a single dose.
 	value = 30
 
-/datum/reagent/amnestics/classi/affect_blood(mob/living/carbon/M, removed)
+/datum/reagent/medicine/amnestics/classi/affect_blood(mob/living/carbon/M, removed)
 
 	if((volume > 0.25) && !isamnesticized) //Upon initial check, inform about amnestic
 		isamnesticized = TRUE
@@ -232,7 +232,7 @@
 		if(M.dizziness <= 200)
 			M.make_dizzy(7)
 
-/datum/reagent/amnestics/classi/overdose(mob/living/carbon/M, removed)
+/datum/reagent/medicine/amnestics/classi/overdose(mob/living/carbon/M, removed)
 	M.adjustBrainLoss(15 * removed)
 
 //Pills and autoinjectors.
@@ -249,7 +249,7 @@
 
 /obj/item/reagent_containers/pill/amnestics/classa/New()
 	..()
-	reagents.add_reagent(/datum/reagent/amnestics/classa, 10)
+	reagents.add_reagent(/datum/reagent/medicine/amnestics/classa, 10)
 	color = reagents.get_color()
 
 /obj/item/storage/pill_bottle/amnesticsb
@@ -265,7 +265,7 @@
 
 /obj/item/reagent_containers/pill/amnestics/classb/New()
 	..()
-	reagents.add_reagent(/datum/reagent/amnestics/classb, 3)
+	reagents.add_reagent(/datum/reagent/medicine/amnestics/classb, 3)
 	color = reagents.get_color()
 
 /obj/item/reagent_containers/syringe/amnesticsc
@@ -274,7 +274,7 @@
 
 /obj/item/reagent_containers/syringe/amnesticsc/New()
 	..()
-	reagents.add_reagent(/datum/reagent/amnestics/classc, 15)
+	reagents.add_reagent(/datum/reagent/medicine/amnestics/classc, 15)
 	update_icon()
 
 /obj/item/reagent_containers/syringe/amnesticse
@@ -283,7 +283,7 @@
 
 /obj/item/reagent_containers/syringe/amnesticse/New()
 	..()
-	reagents.add_reagent(/datum/reagent/amnestics/classe, 15)
+	reagents.add_reagent(/datum/reagent/medicine/amnestics/classe, 15)
 	update_icon()
 
 /obj/item/reagent_containers/ivbag/amnesticsf
@@ -293,7 +293,7 @@
 
 /obj/item/reagent_containers/ivbag/amnesticsf/New()
 	..()
-	reagents.add_reagent(/datum/reagent/amnestics/classf, 20)
+	reagents.add_reagent(/datum/reagent/medicine/amnestics/classf, 20)
 	reagents.add_reagent(/datum/reagent/water, 30)
 
 /obj/item/reagent_containers/syringe/amnesticsg
@@ -302,7 +302,7 @@
 
 /obj/item/reagent_containers/syringe/amnesticsg/New()
 	..()
-	reagents.add_reagent(/datum/reagent/amnestics/classg, 15)
+	reagents.add_reagent(/datum/reagent/medicine/amnestics/classg, 15)
 	update_icon()
 
 /obj/item/storage/pill_bottle/amnesticsh
@@ -318,7 +318,7 @@
 
 /obj/item/reagent_containers/pill/amnestics/classh/New()
 	..()
-	reagents.add_reagent(/datum/reagent/amnestics/classh, 5)
+	reagents.add_reagent(/datum/reagent/medicine/amnestics/classh, 5)
 	color = reagents.get_color()
 
 /obj/item/storage/pill_bottle/amnesticsi
@@ -334,49 +334,49 @@
 
 /obj/item/reagent_containers/pill/amnestics/classi/New()
 	..()
-	reagents.add_reagent(/datum/reagent/amnestics/classi, 5)
+	reagents.add_reagent(/datum/reagent/medicine/amnestics/classi, 5)
 	color = reagents.get_color()
 
 //Amnestic chemical reactions.
 
 /datum/chemical_reaction/classa
 	name = "Class-A Amnestics"
-	result = /datum/reagent/amnestics/classa
+	result = /datum/reagent/medicine/amnestics/classa
 	required_reagents = list(/datum/reagent/mindbreaker_toxin = 1, /datum/reagent/medicine/alkysine = 1, /datum/reagent/impedrezene = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/classb
 	name = "Class-B Amnestics"
-	result = /datum/reagent/amnestics/classb
-	required_reagents = list(/datum/reagent/amnestics/classa = 1, /datum/reagent/radium = 1, /datum/reagent/medicine/antidepressant/citalopram = 1)
+	result = /datum/reagent/medicine/amnestics/classb
+	required_reagents = list(/datum/reagent/medicine/amnestics/classa = 1, /datum/reagent/radium = 1, /datum/reagent/medicine/antidepressant/citalopram = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/classc
 	name = "Class-C Amnestics"
-	result = /datum/reagent/amnestics/classc
-	required_reagents = list(/datum/reagent/amnestics/classb = 1, /datum/reagent/mindbreaker_toxin = 1, /datum/reagent/medicine/antidepressant/paroxetine = 1)
+	result = /datum/reagent/medicine/amnestics/classc
+	required_reagents = list(/datum/reagent/medicine/amnestics/classb = 1, /datum/reagent/mindbreaker_toxin = 1, /datum/reagent/medicine/antidepressant/paroxetine = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/classe
 	name = "Class-E Amnestics"
-	result = /datum/reagent/amnestics/classe
-	required_reagents = list(/datum/reagent/amnestics/classc = 1, /datum/reagent/medicine/noexcutite = 1, /datum/reagent/soporific = 1)
+	result = /datum/reagent/medicine/amnestics/classe
+	required_reagents = list(/datum/reagent/medicine/amnestics/classc = 1, /datum/reagent/medicine/noexcutite = 1, /datum/reagent/soporific = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/classg
 	name = "Class-G Amnestics"
-	result = /datum/reagent/amnestics/classg
-	required_reagents = list(/datum/reagent/amnestics/classc = 1, /datum/reagent/psilocybin = 1)
+	result = /datum/reagent/medicine/amnestics/classg
+	required_reagents = list(/datum/reagent/medicine/amnestics/classc = 1, /datum/reagent/psilocybin = 1)
 	result_amount = 2
 
 /datum/chemical_reaction/classh
 	name = "Class-H Amnestics"
-	result = /datum/reagent/amnestics/classh
-	required_reagents = list(/datum/reagent/amnestics/classa = 1, /datum/reagent/medicine/painkiller/deletrathol = 1, /datum/reagent/impedrezene = 1)
+	result = /datum/reagent/medicine/amnestics/classh
+	required_reagents = list(/datum/reagent/medicine/amnestics/classa = 1, /datum/reagent/medicine/painkiller/deletrathol = 1, /datum/reagent/impedrezene = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/classi
 	name = "Class-I Amnestics"
-	result = /datum/reagent/amnestics/classi
-	required_reagents = list(/datum/reagent/amnestics/classa = 1, /datum/reagent/cryptobiolin = 1)
+	result = /datum/reagent/medicine/amnestics/classi
+	required_reagents = list(/datum/reagent/medicine/amnestics/classa = 1, /datum/reagent/cryptobiolin = 1)
 	result_amount = 2
