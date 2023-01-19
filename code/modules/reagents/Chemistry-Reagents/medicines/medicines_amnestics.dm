@@ -68,7 +68,7 @@
 	if(M.chem_doses[type] >= 4.8 && !isamnesticized)
 		isamnesticized = TRUE
 		M.visible_message("<span class='warning'>[M] looks deeply confused.</span>")
-		to_chat(M, "<font size='5' color='red'>Your memories are disappearing rapidly... You completely forget the existance of the Foundation, anomalies, and anything generally strange.</font>")
+		to_chat(M, "<font size='5' color='red'>Your memories are disappearing rapidly... You completely forget the existence of the anomalous, the Foundation, and anything else supernatural.</font>")
 
 	M.add_chemical_effect(CE_SEDATE, 1) //sedative logic stolen from chloral hydrate.
 	if (M.chem_doses[type] <= metabolism * threshold)
