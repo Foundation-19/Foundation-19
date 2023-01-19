@@ -40,7 +40,6 @@
 	value = 20
 
 /datum/reagent/amnestics/classb/affect_blood(mob/living/carbon/M, removed)
-
 	if((volume <= 0.25) && !isamnesticized)
 		isamnesticized = TRUE
 		M.visible_message("<span class='warning'>[M] looks confused.</span>")
