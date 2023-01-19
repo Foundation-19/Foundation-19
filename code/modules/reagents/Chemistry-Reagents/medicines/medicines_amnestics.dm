@@ -360,7 +360,7 @@
 /datum/chemical_reaction/classe
 	name = "Class-E Amnestics"
 	result = /datum/reagent/amnestics/classe
-	required_reagents = list(/datum/reagent/amnestics/classc = 1, /datum/reagent/noexcutite = 1, /datum/reagent/soporific = 1)
+	required_reagents = list(/datum/reagent/amnestics/classc = 1, /datum/reagent/medicine/noexcutite = 1, /datum/reagent/soporific = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/classg
