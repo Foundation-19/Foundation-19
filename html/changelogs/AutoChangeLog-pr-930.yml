@@ -1,0 +1,15 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscadd: New amnestics (with varying utility)! Class E and G amnestics alter memories
+      instead of removing them, whereas class H and I amnestics temporarily remove
+      the ability to form and remember memories respectively.
+  - rscadd: Class A and B amnestics now give you a hard amount of time that they wipe,
+      based on how much of it is used.
+  - refactor: Class C amnestics are much stronger; they cause someone to forget the
+      entire EXISTANCE of the anomalous. If you want them to forget a week or two,
+      use Class B amnestics.
+  - rscdel: Class D amnestics have limited utility (especially under the new system),
+      so they were removed
+  - balance: Due to theese changes, the amnestics available in various spots of the
+      map were altered.
