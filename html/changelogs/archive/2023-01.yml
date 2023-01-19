@@ -3,3 +3,6 @@
   - balance: made it so SCP 500 only has 10 pills instead of 47
   - bugfix: scp 500 cannot be dissolved in water
   - bugfix: scp 500 cannot be grinded
+2023-01-19:
+  MACIEKBAKI:
+  - code_imp: Framework for sanity, stored in the brain.
