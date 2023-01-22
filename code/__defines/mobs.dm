@@ -283,6 +283,12 @@
 #define TASTE_DULL              0.5 //anything below 30%
 #define TASTE_NUMB              0.1 //anything below 150%
 
+//Sanity levels.
+#define SL_SANE 0
+#define SL_STRESSED 1
+#define SL_DISTRESSED 2
+#define SL_INSANE 3
+
 //Used by show_message() and emotes
 #define VISIBLE_MESSAGE 1
 #define AUDIBLE_MESSAGE 2
