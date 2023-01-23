@@ -1,0 +1,23 @@
+2023-01-07:
+  reklaw9:
+  - balance: made it so SCP 500 only has 10 pills instead of 47
+  - bugfix: scp 500 cannot be dissolved in water
+  - bugfix: scp 500 cannot be grinded
+2023-01-19:
+  MACIEKBAKI:
+  - code_imp: Framework for sanity, stored in the brain.
+2023-01-20:
+  cheesePizza2:
+  - rscadd: New amnestics (with varying utility)! Class E and G amnestics alter memories
+      instead of removing them, whereas class H and I amnestics temporarily remove
+      the ability to form and remember memories respectively.
+  - rscadd: Class A and B amnestics now give you a hard amount of time that they wipe,
+      based on how much of it is used.
+  - refactor: Class C amnestics are much stronger; they cause someone to forget the
+      entire EXISTANCE of the anomalous. If you want them to forget a week or two,
+      use Class B amnestics.
+  - rscdel: Class D amnestics have limited utility (especially under the new system),
+      so they were removed
+  - balance: Due to theese changes, the amnestics available in various spots of the
+      map were altered.
+  - spellcheck: Improved SCP-500's label for better tone.

@@ -26,6 +26,7 @@
 		OXY:<a href='?_src_=vars;mobToDamage=\ref[src];adjustDamage=oxygen'>[getOxyLoss()]</a>
 		CLONE:<a href='?_src_=vars;mobToDamage=\ref[src];adjustDamage=clone'>[getCloneLoss()]</a>
 		BRAIN:<a href='?_src_=vars;mobToDamage=\ref[src];adjustDamage=brain'>[getBrainLoss()]</a>
+		SANITY:<a href='?_src_=vars;mobToDamage=\ref[src];adjustDamage=sanity'>[getSanityLoss()]</a>
 		</font>
 		"}
 

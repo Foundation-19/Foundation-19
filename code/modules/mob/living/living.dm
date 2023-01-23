@@ -310,6 +310,18 @@ default behaviour is:
 /mob/living/proc/adjustCloneLoss(var/amount)
 	return
 
+/mob/living/proc/getSanityLoss()
+	return 0
+
+/mob/living/proc/getSanityLevel()
+	return SL_SANE
+
+/mob/living/proc/adjustSanityLoss(amount)
+	return
+
+/mob/living/proc/setSanityLoss(amount)
+	return
+
 /mob/living/proc/getMaxHealth()
 	return maxHealth
 

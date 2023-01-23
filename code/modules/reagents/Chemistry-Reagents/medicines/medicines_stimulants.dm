@@ -23,7 +23,7 @@
 	M.AdjustWeakened(-1)
 	holder.remove_reagent(/datum/reagent/mindbreaker_toxin, 5)
 	M.adjust_hallucination(-10)
-	M.add_chemical_effect(CE_MIND, 2)
+	M.add_chemical_effect(CE_HALLUCINATION, 2)
 	M.adjustToxLoss(5 * removed) // It used to be incredibly deadly due to an oversight. Not anymore!
 	M.add_chemical_effect(CE_PAINKILLER, 20)
 	M.add_chemical_effect(CE_STIMULANT, 10)

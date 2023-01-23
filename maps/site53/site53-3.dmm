@@ -7902,8 +7902,13 @@
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/item/reagent_containers/syringe/amnesticsc,
-/obj/item/reagent_containers/ivbag/amnesticsd,
+/obj/item/reagent_containers/syringe/amnesticse,
 /obj/item/reagent_containers/ivbag/amnesticsf,
+/obj/item/reagent_containers/syringe/amnesticsg,
+/obj/item/storage/pill_bottle/amnesticsh,
+/obj/item/storage/pill_bottle/amnesticsh,
+/obj/item/storage/pill_bottle/amnesticsi,
+/obj/item/storage/pill_bottle/amnesticsi,
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 4
 	},
@@ -8167,18 +8172,21 @@
 /obj/item/clothing/suit/straight_jacket,
 /obj/item/clothing/suit/straight_jacket,
 /obj/item/clothing/accessory/stethoscope,
-/obj/item/reagent_containers/ivbag/amnesticsd,
-/obj/item/reagent_containers/ivbag/amnesticsd,
+/obj/item/reagent_containers/syringe/amnesticse,
+/obj/item/reagent_containers/syringe/amnesticsg,
 /obj/structure/closet/secure_closet/psychiatry{
 	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
-/obj/item/storage/pill_bottle/amnesticsb,
 /obj/item/storage/pill_bottle/amnesticsa,
+/obj/item/storage/pill_bottle/amnesticsb,
+/obj/item/storage/pill_bottle/amnesticsh,
+/obj/item/storage/pill_bottle/amnesticsi,
 /obj/item/storage/pill_bottle/paroxetine,
 /obj/item/storage/pill_bottle/citalopram,
 /obj/item/reagent_containers/syringe/amnesticsc,
 /obj/item/reagent_containers/syringe/amnesticsc,
-/obj/item/reagent_containers/syringe/amnesticsc,
+/obj/item/reagent_containers/syringe/amnesticse,
+/obj/item/reagent_containers/syringe/amnesticsg,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -10050,6 +10058,7 @@
 /obj/structure/table/standard,
 /obj/item/storage/pill_bottle/amnesticsa,
 /obj/item/storage/pill_bottle/amnesticsb,
+/obj/item/storage/pill_bottle/amnesticsi,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
 "MU" = (
