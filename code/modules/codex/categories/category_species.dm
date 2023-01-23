@@ -1,6 +1,6 @@
 /datum/codex_category/species/
 	name = "Species"
-	desc = "Anomalous species that show signs of sapience."
+	desc = "Anomalous and mundane species that show signs of sapience."
 
 /datum/codex_category/species/Initialize()
 	for(var/thing in all_species)
