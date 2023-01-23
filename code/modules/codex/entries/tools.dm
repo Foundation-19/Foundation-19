@@ -31,7 +31,7 @@
 /datum/codex_entry/toolbelt
 	associated_paths = list(/obj/item/storage/belt/utility)
 	mechanics_text = "The tool-belt has enough slots to carry a full engineer's toolset: screwdriver, crowbar, wrench, welder, cable coil, and multitool. Simply click the belt to move a tool to one of its slots."
-	lore_text = "Good hide is hard to come by in third-world countries. When they can't come across it, the Foundation will outfit their crews with toolbelts made of synthetic leather."
+	lore_text = "Good hide is hard to come by in third-world countries. When they can't come across it, the Logistics department will outfit the staff with toolbelts made of synthetic leather."
 	antag_text = "Only amateurs skip grabbing a tool-belt."
 
 /datum/codex_entry/toolbelt/crystal
