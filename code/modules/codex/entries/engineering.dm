@@ -40,7 +40,7 @@
 /datum/codex_entry/welding_pack
 	associated_paths = list(/obj/item/weldpack)
 	mechanics_text = "This pack acts as a portable source of welding fuel. Use a welder on it to refill its tank - but make sure it's not lit! You can use this kit on a fuel tank or appropriate reagent dispenser to replenish its reserves."
-	lore_text = "Incident-065-134 was an industrial accident of note that occurred at Manufacturing Site 065. An apprentice welder, while constructing an assembly line, failed to properly seal her fuel port, triggering a chain reaction that vaporized a crew of seven. Don't let this happen to you!"
+	lore_text = "Incident-065-134 was an industrial accident of note that occurred at Manufacturing Site 065. An apprentice welder failed to properly seal her fuel port, triggering a chain reaction that vaporized a crew of seven. Don't let this happen to you!"
 	antag_text = "In theory, you could hold an open flame to this pack and produce some pretty catastrophic results. The trick is getting out of the blast radius."
 
 /datum/codex_entry/gripper
