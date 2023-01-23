@@ -5,7 +5,7 @@
 	<br><br> \
 	Access to the Codex is transferred to all hired personnel via a memetically-spread and nomenclaturely-updated concept. \
 	<br><br> \
-	It has been brought to the attention of the Overseer Council that several individuals and groups have altered the documentation system for malicious use. Please report any potential misuse to Security.</i>"
+	It has been brought to the attention of the Overseer Council that several individuals and groups have altered the documentation system for malicious use. Please report any potential misuse to Security."
 
 /datum/codex_entry/codex/New()
 	mechanics_text = "The Codex is both an IC and OOC resource. ICly, it is as described; an encyclopedia. You can use <b>Search-Codex <i>topic</i></b> to look something up, or you can click the links provided when examining some objects. \
