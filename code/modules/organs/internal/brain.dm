@@ -284,9 +284,9 @@
 	if(owner.stat) // Dead => Don't change sanity
 		return
 	// reagent effect
-	to_chat(world, "Sanity: [owner.chem_effects[CE_SANITY]] | [owner] | [owner.reagents.get_reagents()]")
 	var/dmg_amt = owner.chem_effects[CE_SANITY] * REM * CHEM_SANITY_MULTIPLIER
-	take_sanity_damage(-dmg_amt, TRUE)
+	if(dmg_amt) // A sanity check. Get it?
+		take_sanity_damage(-dmg_amt, TRUE)
 
 
 	switch(get_sanity_level())
