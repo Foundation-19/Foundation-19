@@ -90,24 +90,27 @@
 		using.icon_state = "intent_[mymob.a_intent]"
 		src.adding += using
 		action_intent = using
-		action_intent.i_text = new /obj/screen()
-		action_intent.i_text.icon = ui_style
-		action_intent.i_text.icon_state = "intent_name_[mymob.a_intent]"
-		action_intent.i_text.screen_loc = ui_acti_text
-		action_intent.i_text.name = "intent"
-		src.adding += action_intent.i_text
-		action_intent.i_r_padding = new /obj/screen()
-		action_intent.i_r_padding.icon = ui_style
-		action_intent.i_r_padding.icon_state = "bg"
-		action_intent.i_r_padding.screen_loc = ui_acti_r
-		src.adding += action_intent.i_r_padding
-		action_intent.i_r_padding = new /obj/screen()
-		action_intent.i_r_padding.icon = ui_style
-		action_intent.i_r_padding.icon_state = "divider_r"
-		action_intent.i_r_padding.screen_loc = ui_acti_l
-		src.adding += action_intent.i_l_padding
-
 		hud_elements |= using
+
+		using = new /obj/screen()
+		using.icon = ui_style
+		using.icon_state = "intent_name_[mymob.a_intent]"
+		using.screen_loc = ui_acti_text
+		src.adding += using
+		action_intent.i_text = using
+
+		using = new /obj/screen()
+		using.icon = ui_style
+		using.icon_state = "bg"
+		using.screen_loc = ui_acti_r
+		using.dir = EAST
+		src.adding += using
+
+		using = new /obj/screen()
+		using.icon = ui_style
+		using.icon_state = "divider_r"
+		using.screen_loc = ui_acti_l
+		src.adding += using
 
 	if(hud_data.has_m_intent)
 		using = new /obj/screen/movement()
@@ -195,7 +198,7 @@
 		using.SetName("resist")
 		using.icon = ui_style
 		using.icon_state = "act_resist"
-		using.screen_loc = ui_pull_resist
+		using.screen_loc = ui_resist
 		using.color = ui_color
 		using.alpha = ui_alpha
 		src.hotkeybuttons += using
