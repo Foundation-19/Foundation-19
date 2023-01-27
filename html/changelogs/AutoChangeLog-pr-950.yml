@@ -1,0 +1,5 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - bugfix: Massive changes to the lore-text in the Codex.
+  - bugfix: Changed chameleon energy gun description to better fit SCP lore.
