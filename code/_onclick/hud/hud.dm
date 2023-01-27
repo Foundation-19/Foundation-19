@@ -67,7 +67,8 @@
 	var/obj/screen/lingchemdisplay
 	var/obj/screen/r_hand_hud_object
 	var/obj/screen/l_hand_hud_object
-	var/obj/screen/action_intent
+	var/obj/screen/swap_hand_hud_object
+	var/obj/screen/intent/action_intent
 	var/obj/screen/move_intent
 	var/obj/screen/stamina/stamina_bar
 	var/obj/screen/rest_button
@@ -195,12 +196,12 @@
 /datum/hud/proc/instantiate()
 	if(!ismob(mymob)) return 0
 	if(!mymob.client) return 0
-	var/ui_style = ui_style2icon(mymob.client.prefs.UI_style)
-	var/ui_color = mymob.client.prefs.UI_style_color
-	var/ui_alpha = mymob.client.prefs.UI_style_alpha
+	//var/ui_style = ui_style2icon(mymob.client.prefs.UI_style)
+	//var/ui_color = mymob.client.prefs.UI_style_color
+	//var/ui_alpha = mymob.client.prefs.UI_style_alpha
 
 
-	FinalizeInstantiation(ui_style, ui_color, ui_alpha)
+	FinalizeInstantiation()
 
 /datum/hud/proc/FinalizeInstantiation(var/ui_style, var/ui_color, var/ui_alpha)
 	return

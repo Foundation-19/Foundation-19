@@ -159,10 +159,19 @@
 
 /obj/screen/intent
 	name = "intent"
-	icon = 'icons/mob/screen1_White.dmi'
+	icon = 'icons/mob/screen/screen_neo.dmi'
 	icon_state = "intent_help"
 	screen_loc = ui_acti
+	var/obj/screen/i_text
+	var/obj/screen/i_l_padding
+	var/obj/screen/i_r_padding
 	var/intent = I_HELP
+
+/obj/screen/intent/Destroy()
+	. = ..()
+	QDEL_NULL(i_text)
+	QDEL_NULL(i_r_padding)
+	QDEL_NULL(i_l_padding)
 
 /obj/screen/intent/Click(var/location, var/control, var/params)
 	var/list/P = params2list(params)
@@ -181,6 +190,7 @@
 
 /obj/screen/intent/on_update_icon()
 	icon_state = "intent_[intent]"
+	i_text.icon_state = "intent_name_[intent]"
 
 /obj/screen/Click(location, control, params)
 	if(!usr)	return 1

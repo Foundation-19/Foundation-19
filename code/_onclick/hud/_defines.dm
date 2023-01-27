@@ -19,17 +19,17 @@
 #define ui_inventory "WEST:6,SOUTH:5"
 
 //Lower center, persistant menu
-#define ui_sstore1 "WEST+2:10,SOUTH:5"
-#define ui_id "WEST+3:12,SOUTH:5"
-#define ui_belt "WEST+4:14,SOUTH:5"
-#define ui_back "CENTER-2:14,SOUTH:5"
-#define ui_rhand "CENTER-1:16,SOUTH:5"
-#define ui_lhand "CENTER:16,SOUTH:5"
-#define ui_equip "CENTER-1:16,SOUTH+1:5"
-#define ui_swaphand1 "CENTER-1:16,SOUTH+1:5"
-#define ui_swaphand2 "CENTER:16,SOUTH+1:5"
-#define ui_storage1 "CENTER+1:16,SOUTH:5"
-#define ui_storage2 "CENTER+2:16,SOUTH:5"
+#define ui_sstore1 "WEST+2,SOUTH-1"
+#define ui_id "WEST,SOUTH-1"
+#define ui_belt "WEST+3,SOUTH-1"
+#define ui_back "WEST+6,SOUTH-1"
+#define ui_rhand "WEST,SOUTH"
+#define ui_lhand "WEST+2,SOUTH"
+#define ui_equip null
+#define ui_swaphand1 "WEST+7,SOUTH-1"
+#define ui_swaphand2 null
+#define ui_storage1 "WEST+4,SOUTH-1"
+#define ui_storage2 "WEST+5,SOUTH-1"
 
 #define ui_alien_head "CENTER-3:12,SOUTH:5"		//aliens
 #define ui_alien_oclothing "CENTER-2:14,SOUTH:5"//aliens
@@ -49,12 +49,16 @@
 #define ui_construct_pull "EAST-1:28,SOUTH+1:10" //above the zone_sel icon
 
 //Lower right, persistant menu
-#define ui_dropbutton "EAST-4:22,SOUTH:5"
-#define ui_drop_throw "EAST-1:28,SOUTH+1:7"
-#define ui_pull_resist "EAST-2:26,SOUTH+1:7"
-#define ui_acti "EAST-2:26,SOUTH:5"
-#define ui_rest_act "EAST-4:24,SOUTH:5"
-#define ui_movi "EAST-3:24,SOUTH:5"
+#define ui_dropbutton "EAST-6,SOUTH-1"
+#define ui_drop_throw "EAST-6,SOUTH-1"
+#define ui_pull_resist "EAST-5,SOUTH-1"
+#define ui_resist "EAST+1,SOUTH-1"
+#define ui_acti "EAST-1:-8,SOUTH-1"
+#define ui_acti_text "EAST-1:-24,SOUTH-1"
+#define ui_acti_l "EAST-2,SOUTH-1"
+#define ui_acti_r "EAST:-8,SOUTH-1"
+#define ui_rest_act "EAST+1,SOUTH-1"
+#define ui_movi "EAST,SOUTH-1"
 #define ui_zonesel "EAST-1:28,SOUTH:5"
 #define ui_acti_alt "EAST-1:28,SOUTH:5" //alternative intent switcher for when the interface is hidden (F12)
 #define ui_stamina "EAST-3:24,SOUTH+1:5"
@@ -92,18 +96,17 @@
 #define ui_alien_health "EAST-1:28,CENTER-1:13" //aliens have the health display where humans have the pressure damage indicator.
 
 //Pop-up inventory
-#define ui_shoes "WEST+1:8,SOUTH:5"
+#define ui_shoes "WEST+3,SOUTH"
+#define ui_iclothing "WEST+1,SOUTH-1"
+#define ui_oclothing "WEST+1,SOUTH"
+#define ui_gloves "WEST+4,SOUTH"
 
-#define ui_iclothing "WEST:6,SOUTH+1:7"
-#define ui_oclothing "WEST+1:8,SOUTH+1:7"
-#define ui_gloves "WEST+2:10,SOUTH+1:7"
+#define ui_glasses "WEST+2,SOUTH+1"
+#define ui_mask "WEST,SOUTH+1"
+#define ui_l_ear "WEST+5,SOUTH"
+#define ui_r_ear "WEST+6,SOUTH"
 
-#define ui_glasses "WEST:6,SOUTH+2:9"
-#define ui_mask "WEST+1:8,SOUTH+2:9"
-#define ui_l_ear "WEST+2:10,SOUTH+2:9"
-#define ui_r_ear "WEST+2:10,SOUTH+3:11"
-
-#define ui_head "WEST+1:8,SOUTH+3:11"
+#define ui_head "WEST+1,SOUTH+1"
 
 //Intent small buttons
 #define ui_help_small "EAST-3:8,SOUTH:1"

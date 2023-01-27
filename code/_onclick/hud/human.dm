@@ -1,7 +1,7 @@
 /mob/living/carbon/human
 	hud_type = /datum/hud/human
 
-/datum/hud/human/FinalizeInstantiation(var/ui_style='icons/mob/screen1_White.dmi', var/ui_color = "#ffffff", var/ui_alpha = 255)
+/datum/hud/human/FinalizeInstantiation(var/ui_style='icons/mob/screen/screen_neo.dmi', var/ui_color = "#ffffff", var/ui_alpha = 255)
 	var/mob/living/carbon/human/target = mymob
 	var/datum/hud_data/hud_data
 	if(!istype(target))
@@ -23,6 +23,30 @@
 	stamina_bar = new
 	adding += stamina_bar
 
+	using = new /obj/screen() //Right hud bar
+	using.dir = NORTHWEST
+	using.icon = ui_style
+	using.icon_state = "bg"
+	using.screen_loc = "EAST+1,SOUTH to EAST+1,NORTH"
+	using.layer = UNDER_HUD_LAYER
+	adding += using
+
+	using = new /obj/screen() //Lower hud bar
+	using.dir = NORTHEAST
+	using.icon = ui_style
+	using.icon_state = "bg"
+	using.screen_loc = "WEST,SOUTH-1 to EAST,SOUTH-1"
+	using.layer = UNDER_HUD_LAYER
+	adding += using
+
+	using = new /obj/screen() //Corner Button
+	using.dir = NORTH
+	using.icon = ui_style
+	using.icon_state = "bg"
+	using.screen_loc = "EAST+1,SOUTH-1"
+	using.layer = UNDER_HUD_LAYER
+	adding += using
+
 	// Draw the various inventory equipment slots.
 	var/has_hidden_gear
 	for(var/gear_slot in hud_data.gear)
@@ -41,11 +65,11 @@
 		if(slot_data["dir"])
 			inv_box.set_dir(slot_data["dir"])
 
-		if(slot_data["toggle"])
+		/*if(slot_data["toggle"])
 			src.other += inv_box
 			has_hidden_gear = 1
-		else
-			src.adding += inv_box
+		else*/
+		src.adding += inv_box
 
 	if(has_hidden_gear)
 		using = new /obj/screen()
@@ -64,6 +88,22 @@
 		using.icon_state = "intent_[mymob.a_intent]"
 		src.adding += using
 		action_intent = using
+		action_intent.i_text = new /obj/screen()
+		action_intent.i_text.icon = ui_style
+		action_intent.i_text.icon_state = "intent_name_[mymob.a_intent]"
+		action_intent.i_text.screen_loc = ui_acti_text
+		action_intent.i_text.name = "intent"
+		src.adding += action_intent.i_text
+		action_intent.i_r_padding = new /obj/screen()
+		action_intent.i_r_padding.icon = ui_style
+		action_intent.i_r_padding.icon_state = "bg"
+		action_intent.i_r_padding.screen_loc = ui_acti_r
+		src.adding += action_intent.i_r_padding
+		action_intent.i_r_padding = new /obj/screen()
+		action_intent.i_r_padding.icon = ui_style
+		action_intent.i_r_padding.icon_state = "divider_r"
+		action_intent.i_r_padding.screen_loc = ui_acti_l
+		src.adding += action_intent.i_l_padding
 
 		hud_elements |= using
 
@@ -140,19 +180,12 @@
 		using = new /obj/screen/inventory()
 		using.SetName("hand")
 		using.icon = ui_style
-		using.icon_state = "hand1"
+		using.icon_state = "hand"
+		using.dir = SOUTH
 		using.screen_loc = ui_swaphand1
 		using.color = ui_color
 		using.alpha = ui_alpha
-		src.adding += using
-
-		using = new /obj/screen/inventory()
-		using.SetName("hand")
-		using.icon = ui_style
-		using.icon_state = "hand2"
-		using.screen_loc = ui_swaphand2
-		using.color = ui_color
-		using.alpha = ui_alpha
+		src.swap_hand_hud_object = using
 		src.adding += using
 
 	if(hud_data.has_resist)
@@ -315,7 +348,7 @@
 
 	mymob.client.screen += hud_elements
 	mymob.client.screen += src.adding + src.hotkeybuttons
-	inventory_shown = 0
+	inventory_shown = 1
 
 /mob/living/carbon/human/verb/toggle_hotkey_verbs()
 	set category = "OOC"
