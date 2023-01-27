@@ -1,7 +1,7 @@
 /mob/living/carbon/human
 	hud_type = /datum/hud/human
 
-/datum/hud/human/FinalizeInstantiation(var/ui_style='icons/mob/screen/screen_neo.dmi', var/ui_color = "#ffffff", var/ui_alpha = 255)
+/datum/hud/human/FinalizeInstantiation(var/ui_style='icons/mob/screen1_White.dmi', var/ui_color = "#ffffff", var/ui_alpha = 255)
 	var/mob/living/carbon/human/target = mymob
 	var/datum/hud_data/hud_data
 	if(!istype(target))
@@ -11,6 +11,8 @@
 
 	if(hud_data.icon)
 		ui_style = hud_data.icon
+
+	ui_style = 'icons/mob/screen/screen_neo.dmi'
 
 	adding = list()
 	other = list()
@@ -181,7 +183,7 @@
 		using.SetName("hand")
 		using.icon = ui_style
 		using.icon_state = "hand"
-		using.dir = SOUTH
+		using.dir = NORTH
 		using.screen_loc = ui_swaphand1
 		using.color = ui_color
 		using.alpha = ui_alpha
