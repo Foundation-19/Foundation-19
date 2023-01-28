@@ -21,3 +21,7 @@
   - balance: Due to theese changes, the amnestics available in various spots of the
       map were altered.
   - spellcheck: Improved SCP-500's label for better tone.
+2023-01-28:
+  cheesePizza2:
+  - bugfix: Massive changes to the lore-text in the Codex.
+  - bugfix: Changed chameleon energy gun description to better fit SCP lore.
