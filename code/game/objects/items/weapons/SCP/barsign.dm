@@ -1,7 +1,7 @@
 /obj/structure/sign/double/barsign
 	desc = "A jumbo-sized LED sign. This one seems to be showing its age."
 	icon = 'icons/obj/barsigns.dmi'
-	icon_state = "empty"
+	icon_state = "Off"
 	appearance_flags = 0
 	anchored = TRUE
 //	var/cult = 0
@@ -26,8 +26,6 @@
 				to_chat(user, "You can barely make out the words 'Too Late To Die Young' on this unpowered neon sign. A small card reader is affixed to the electrical plug.")
 			else
 				to_chat(user, "It appears to be switched off.")
-		if("narsiebistro")
-			to_chat(user, "It shows a picture of a large black and red being. Spooky!")
 		if("toolate")
 			to_chat(user, "The moments you regret the most come flooding back, all at once. Try as you might, you can't look away.")
 			spawn(300)
@@ -36,8 +34,6 @@
 					var/mob/living/carbon/human/H = user
 					if(H.dies_young == 0)
 						H.dies_young = 1
-		if("on", "empty")
-			to_chat(user, "The lights are on, but there's no picture.")
 		else
 			to_chat(user, "It says '[icon_state]'")
 
