@@ -196,7 +196,8 @@
 
 	access = list(ACCESS_CIV_COMMS,
 		ACCESS_DCLASS_KITCHEN,
-		ACCESS_DCLASS_BOTANY
+		ACCESS_DCLASS_BOTANY,
+		ACCESS_BAR
 	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 	minimal_access = list()
 
@@ -223,7 +224,8 @@
 	access = list(
 		ACCESS_CIV_COMMS,
 		ACCESS_DCLASS_KITCHEN,
-		ACCESS_DCLASS_BOTANY
+		ACCESS_DCLASS_BOTANY,
+		ACCESS_BAR
 	) // Limited internal D-Block access e.g. when training D-Class or unlocking their crates
 	minimal_access = list()
 
