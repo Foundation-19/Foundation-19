@@ -10,7 +10,7 @@
 
 /datum/codex_entry/sneakies
 	associated_paths = list(/obj/item/clothing/shoes/laceup/sneakies)
-	lore_text =  "Originally designed to confuse Terran troops on the swamp moon of Nabier XI, where they were proven somewhat effective. Not bad on a space vessel, either."
+	lore_text =  "Occasionally used by low-tech criminals to confuse investigations."
 
 /datum/codex_entry/moneygun
 	associated_paths = list(/obj/item/gun/launcher/money)

@@ -263,7 +263,7 @@
 
 /mob/examine_damage_state(mob/user)
 	if(!is_alive())
-		to_chat(user, SPAN_DANGER("They look severely hurt and is not moving or responding to anything around them."))
+		to_chat(user, SPAN_DANGER("They look severely hurt and are not moving or responding to anything around them."))
 		return
 
 	var/damage_percentage = get_damage_percentage()

@@ -21,4 +21,6 @@
 	medicines_painkillers.dm - Reagents that suppress pain, i.e. tramadol and oxycodone.
 	medicines_special.dm - Reagents with unique effects.
 	medicines_stimulants.dm - Reagents that effect movement speed or stuns, i.e. synaptizine and hyperzine.
+	medicines_antidepressants.dm - Reagents that mend sanity damage over time.
+	medicines_amnestics.dm - Reagents that are meant to remove memories.
 */
