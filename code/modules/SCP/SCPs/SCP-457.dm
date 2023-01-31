@@ -13,6 +13,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 	SCP = /datum/scp/scp_457
 	status_flags = NO_ANTAG
 	var/door_cooldown
+	var/fuel = 30
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
@@ -20,9 +21,14 @@ GLOBAL_LIST_EMPTY(scp457s)
 	maxHealth = 2000
 	health = 2000
 
-	can_pull_size = 0 // Can't pull things
+	can_pull_size = 3
 	a_intent = "harm" // Doesn't switch places with people
 	can_be_buckled = FALSE
+
+	/// Current attack cooldown
+	var/aflame_cooldown
+	/// Amount of the attack cooldown
+	var/aflame_cooldown_time = 5 SECONDS
 
 	/// Reference to the area we were created in
 	var/area/spawn_area
@@ -44,23 +50,26 @@ GLOBAL_LIST_EMPTY(scp457s)
 /mob/living/scp_457/UnarmedAttack(atom/A)
 	var/mob/living/carbon/human/H = A
 	if(ishuman(A))
-		if(H.fire_stacks -= 1)
+		if(aflame_cooldown > world.time)
+			to_chat(src, "<span class='warning'>You can't attack yet.</span>")
+			return
+		else if(aflame_cooldown < world.time)
 			if(prob(50))
 				H.Weaken(50)
-				H.visible_message("<span class='danger'>[src] claws at [H]!</span>")
-				to_chat(H, "<span class='userdanger'>IT HURTS!")
+				H.visible_message("<span class='danger'>[src] claws at [H], the flame sending them to the floor!</span>")
+				to_chat(H, "<span class='userdanger'>IT HURTS!!!")
 				return
 			else
 				H.fire_stacks += 1
 				H.IgniteMob()
 				visible_message("<span class='danger'>[src] claws at [A] setting them alight!</span>")
+				to_chat(H, "<span class='userdanger'>Oh god, oh god. OH GOD! IT HURTS! PLEASE!")
 				return
-		return
 	if(H.SCP)
 		to_chat(src, "<span class='warning'><I>[H] is a fellow SCP!</I></span>")
 		return
 	if(H.stat == DEAD)
-		to_chat(src, "<span class='warning'><I>[H] is already dead!</I></span>")
+		to_chat(src, "<span class='warning'><I>[H] is dead, it no longer can provide you with fuel.</I></span>")
 		return
 	if(istype(A, /obj/machinery/door))
 		OpenDoor(A)
