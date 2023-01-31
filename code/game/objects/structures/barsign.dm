@@ -36,13 +36,13 @@
 		var/datum/barsign/D = d
 		if(initial(D.name) == sign_name)
 			var/new_sign = new D
-			return set_sign(new_sign)
+			set_sign(new_sign)
 
 /obj/structure/sign/double/barsign/proc/pick_sign(mob/user)
 	var/picked_name = tgui_input_list(user, "Available Signage", "Bar Sign", sort_list(get_bar_names()))
 	if(isnull(picked_name))
 		return
-	chosen_sign = set_sign_by_name(picked_name)
+	set_sign_by_name(picked_name)
 
 /proc/get_bar_names()
 	var/list/names = list()
@@ -113,3 +113,9 @@
 	desc = "The sign appears to be switched off."
 	hidden = TRUE
 	rename = FALSE
+
+/datum/barsign/toolate
+	name = "Too Late to Die Young"
+	icon = "toolate"
+	desc = "The words on this sign fill you with a sense of guilt."
+	hidden = TRUE
