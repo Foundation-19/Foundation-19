@@ -93,9 +93,9 @@
 
 /obj/item/gun/energy/chameleon/get_antag_info()
 	. = ..()
-	. += "This gun is actually a hologram projector that can alter its appearance to mimick other weapons. To change the appearance, use \
-	the appropriate verb in the object tab. Any beams or projectiles fired from this gun are actually holograms and useless for actual combat. \
-	Projecting these holograms over distance uses a little bit of charge.<br>"
+	. += "This gun is actually a memetic projector that can alter its appearance to mimick other weapons. To change the appearance, use \
+	the appropriate verb in the object tab. Any beams or projectiles fired from this gun are mental fabrications and useless for actual combat. \
+	Projecting these memes over distance uses a little bit of charge.<br>"
 
 
 /obj/item/gun/magnetic/get_mechanics_info()
@@ -122,10 +122,10 @@
 		unload it by holding it and clicking it with an empty hand, and reload it by clicking it with a magazine, or in the case of \
 		shotguns or some rifles, by opening the breech and clicking it with individual rounds. \
 		<br><br>"
-	lore_text = "Ballistic weapons are still used even now due to the relative expense of decent laser \
-		weapons, difficulties in maintaining them, and the sheer stopping and wounding power of solid slugs or \
-		composite shot. Using a ballistic weapon on a spacebound habitat is usually considered a serious undertaking, \
-		as a missed shot or careless use of automatic fire could rip open the hull or injure bystanders with ease."
+	lore_text = "Ballistic weapons are commonly used by civilians, mundane militaries, and paranormal organizations alike. \
+		Even stranger organizations that possess suitable replacements commonly fall back on traditional weaponry \
+		when the anomalous fails them. Usage of ballistic weaponry is discouraged in non-emergency situations, \
+		as a missed shot or careless use of automatic fire could destroy fundamental infrastructure or injure bystanders with ease."
 
 /datum/codex_entry/magnetic_weapons
 	display_name = "magnetic weapons"
