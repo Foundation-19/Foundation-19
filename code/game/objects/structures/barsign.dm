@@ -59,16 +59,17 @@
 	var/hidden = FALSE	// hidden from selection menu
 	var/rename = TRUE	// renames sign when chosen
 
-/datum/barsign/New()
-	if(!desc)
-		desc = "It displays \"[name]\"."
-
 // Barsign datums
 
 /datum/barsign/alohasnackbar
 	name = "The Aloha Snackbar"
 	icon = "alohasnackbar"
 	desc = "A tasteful, inoffensive tiki bar sign."
+
+/datum/barsign/drunkengod
+	name = "Church of the Drunken God"
+	icon = "drunkengod"
+	desc = "The drunk answers only to Beer, for his mouth consumes His body."
 
 /datum/barsign/thecoderbus
 	name = "The Coderbus"
@@ -117,5 +118,5 @@
 /datum/barsign/toolate
 	name = "Too Late to Die Young"
 	icon = "toolate"
-	desc = "The words on this sign fill you with a sense of guilt."
+	desc = null
 	hidden = TRUE
