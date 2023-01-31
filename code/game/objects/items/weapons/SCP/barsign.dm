@@ -5,17 +5,15 @@
 	if(istype(chosen_sign, /datum/barsign/signoff))			// check if the current state is off
 		to_chat(user, "You can barely make out the words 'Too Late to Die Young' on this unpowered neon sign. A small card reader is affixed to the electrical plug.")
 	else
-		switch(user.dies_young)
-			if(0)
-				to_chat(user, "The motto on the sign feels strange and invokes a deep sense of guilt.")
-				spawn(300)
-				if(ishuman(user))
-					var/mob/living/carbon/human/H = user
-					if(H.dies_young == 0)
-						H.dies_young = 1
-						to_chat(user, "You begin to think about how to forgive yourself, and make peace with the past.")
-			if(1)
-				to_chat(user, "The moments you regret the most come flooding back, all at once. Try as you might, you can't look away.")
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			switch(H.dies_young)
+				if(0)
+					to_chat(user, "The motto on the sign feels strange and invokes a deep sense of guilt.")
+					spawn(300)
+					to_chat(user, "You begin to think about how to forgive yourself, and make peace with the past.")
+				if(1)
+					to_chat(user, "The moments you regret the most come flooding back, all at once. Try as you might, you can't look away.")
 
 /obj/structure/sign/double/barsign/scp_078/attackby(obj/item/I, mob/user)
 
