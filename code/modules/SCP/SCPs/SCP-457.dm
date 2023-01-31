@@ -43,15 +43,25 @@ GLOBAL_LIST_EMPTY(scp457s)
 
 /mob/living/scp_457/UnarmedAttack(atom/A)
 	var/mob/living/carbon/human/H = A
+	if(ishuman(A))
+		if(H.fire_stacks -= 1)
+			if(prob(50))
+				H.Weaken(50)
+				H.visible_message("<span class='danger'>[src] claws at [H]!</span>")
+				to_chat(H, "<span class='userdanger'>IT HURTS!")
+				return
+			else
+				H.fire_stacks += 1
+				H.IgniteMob()
+				visible_message("<span class='danger'>[src] claws at [A] setting them alight!</span>")
+				return
+		return
 	if(H.SCP)
 		to_chat(src, "<span class='warning'><I>[H] is a fellow SCP!</I></span>")
 		return
 	if(H.stat == DEAD)
 		to_chat(src, "<span class='warning'><I>[H] is already dead!</I></span>")
 		return
-	else
-		H.damage_health(30, BURN)
-		visible_message("<span class='danger'>[src] claws at [H] burning them!</span>")
 	if(istype(A, /obj/machinery/door))
 		OpenDoor(A)
 		return
