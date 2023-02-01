@@ -51,8 +51,8 @@
 /datum/job/cyborg
 	title = "Robot"
 	department_flag = MSC
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0 // 2
+	spawn_positions = 0 // 2
 	supervisors = "your laws and the AI"
 	selection_color = "#254c25"
 	minimal_player_age = 7
@@ -63,8 +63,6 @@
 	hud_icon = "hudblank"
 	skill_points = 0
 	no_skill_buffs = TRUE
-
-	available_by_default = FALSE // hud issues, I am told, to be resolved.
 
 /datum/job/cyborg/handle_variant_join(var/mob/living/carbon/human/H, var/alt_title)
 	return H && H.Robotize(SSrobots.get_mob_type_by_title(alt_title || title))
