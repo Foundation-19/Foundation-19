@@ -25,6 +25,13 @@
 	stamina_bar = new
 	adding += stamina_bar
 
+	using = new /obj/screen()
+	using.dir = SOUTHEAST
+	using.icon = ui_style
+	using.icon_state = "bg"
+	using.screen_loc = ui_stamina_border
+	adding += using
+
 	using = new /obj/screen() //Right hud bar
 	using.dir = NORTHWEST
 	using.icon = ui_style
@@ -108,7 +115,7 @@
 
 		using = new /obj/screen()
 		using.icon = ui_style
-		using.icon_state = "divider_r"
+		using.icon_state = "divider"
 		using.screen_loc = ui_acti_l
 		src.adding += using
 
@@ -197,7 +204,7 @@
 		using = new /obj/screen()
 		using.SetName("resist")
 		using.icon = ui_style
-		using.icon_state = "act_resist"
+		using.icon_state = "act_resist2"
 		using.screen_loc = ui_resist
 		using.color = ui_color
 		using.alpha = ui_alpha
@@ -221,6 +228,13 @@
 		mymob.pullin.screen_loc = ui_pull_resist
 		src.hotkeybuttons += mymob.pullin
 		hud_elements |= mymob.pullin
+
+		using = new /obj/screen()
+		using.icon = ui_style
+		using.icon_state = "divider"
+		using.dir = NORTH
+		using.screen_loc = ui_pull_divider
+		src.adding += using
 
 	if(hud_data.has_internals)
 		mymob.internals = new /obj/screen()
