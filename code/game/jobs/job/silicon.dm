@@ -64,6 +64,8 @@
 	skill_points = 0
 	no_skill_buffs = TRUE
 
+	available_by_default = FALSE // hud issues, I am told, to be resolved.
+
 /datum/job/cyborg/handle_variant_join(var/mob/living/carbon/human/H, var/alt_title)
 	return H && H.Robotize(SSrobots.get_mob_type_by_title(alt_title || title))
 
