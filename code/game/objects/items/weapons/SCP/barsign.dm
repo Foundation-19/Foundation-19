@@ -7,12 +7,12 @@
 	else
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
-			switch(H.078_status)
+			switch(H.scp078_status)
 				if(0)
 					to_chat(user, "The motto on the sign feels strange and invokes a deep sense of guilt.")
 					spawn(300)
 					to_chat(user, "You begin to think about how to forgive yourself, and make peace with the past.")
-					H.078_status = 1
+					H.scp078_status = 1
 				if(1)
 					to_chat(user, "The moments you regret the most come flooding back, all at once. Try as you might, you can't look away.")
 

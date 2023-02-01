@@ -134,7 +134,7 @@
 	var/pre_scp013_species = "Human"
 
 	// SCP-078
-	var/078_status = 0
+	var/scp078_status = 0
 
 	// SCP-106
 	var/pocket_dimension_decay = 0
