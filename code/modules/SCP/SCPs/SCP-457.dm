@@ -66,7 +66,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 				H.IgniteMob()
 				aflame_cooldown = world.time + aflame_cooldown_time
 				visible_message("<span class='danger'>[src] claws at [A] setting them alight!</span>")
-				to_chat(H, "<span class='userdanger'>Oh god, oh god. OH GOD! IT HURTS! PLEASE!")
+				to_chat(H, "<span class='userdanger'>Oh god, oh god. OH GOD! IT HURTS! PLEASE!</span>")
 				return
 	if(H.stat == DEAD)
 		to_chat(src, "<span class='warning'><I>[H] is dead, it no longer can provide you with fuel.</I></span>")
