@@ -47,15 +47,18 @@ GLOBAL_LIST_EMPTY(scp457s)
 
 /mob/living/scp_457/UnarmedAttack(atom/A)
 	var/mob/living/carbon/human/H = A
+	if(H.SCP)
+		to_chat(src, "<span class='warning'><I>[H] is a fellow SCP!</I></span>")
+		return
 	if(istype(H))
 		if(aflame_cooldown > world.time)
 			to_chat(src, "<span class='warning'>You can't attack yet.</span>")
 			return
-		else 
+		else
 			if(prob(35))
 				H.Weaken(50)
 				H.visible_message("<span class='danger'>[src] claws at [H], the flame sending them to the floor!</span>")
-				to_chat(H, "<span class='userdanger'>IT HURTS!!!")
+				to_chat(H, "<span class='userdanger'>IT HURTS!!!</span>")
 				aflame_cooldown = world.time + aflame_cooldown_time
 				return
 			else
@@ -65,9 +68,6 @@ GLOBAL_LIST_EMPTY(scp457s)
 				visible_message("<span class='danger'>[src] claws at [A] setting them alight!</span>")
 				to_chat(H, "<span class='userdanger'>Oh god, oh god. OH GOD! IT HURTS! PLEASE!")
 				return
-	if(H.SCP)
-		to_chat(src, "<span class='warning'><I>[H] is a fellow SCP!</I></span>")
-		return
 	if(H.stat == DEAD)
 		to_chat(src, "<span class='warning'><I>[H] is dead, it no longer can provide you with fuel.</I></span>")
 		return
