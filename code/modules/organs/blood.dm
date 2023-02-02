@@ -291,11 +291,11 @@
 				else
 					pulse_mod *= 0.25
 			if(PULSE_SLOW)
-				pulse_mod *= 0.9
+				pulse_mod *= 0.6 //You're passed out.
 			if(PULSE_FAST)
-				pulse_mod *= 1.1
+				pulse_mod *= 1.3 //Pain shock
 			if(PULSE_2FAST, PULSE_THREADY)
-				pulse_mod *= 1.25
+				pulse_mod *= 1.5 //HOLY SHIT YOU'RE DYING
 	blood_volume *= pulse_mod
 
 	var/min_efficiency = recent_pump ? 0.5 : 0.3
