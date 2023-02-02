@@ -98,33 +98,33 @@
 
 //The base miss chance for the different defence zones
 var/list/global/base_miss_chance = list(
-	BP_HEAD =   50,
-	BP_CHEST =  10,
-	BP_GROIN =  15,
-	BP_L_ARM =  20,
-	BP_R_ARM =  20,
-	BP_L_HAND = 35,
-	BP_R_HAND = 35,
-	BP_L_LEG =  20,
-	BP_R_LEG =  20,
-	BP_L_FOOT = 35,
-	BP_R_FOOT = 35,
+	BP_HEAD =   65, //Buffed from 50 to 65 (makes it moderately harder to hit)
+	BP_CHEST =  5, //This is CENTER OF MASS. You shouldn't have a super high flat-chance to miss. Base is 10
+	BP_GROIN =  25, //Killing someones liver is ultra-lethal. Make this slightly harder.
+	BP_L_ARM =  35, //Base is 25
+	BP_R_ARM =  35, // Ditto
+	BP_L_HAND = 50, //50% flat miss chance.
+	BP_R_HAND = 50, //Ditto
+	BP_L_LEG =  30, //Legs are pretty big, but they're almost always a moving target.
+	BP_R_LEG =  30, //Ditto
+	BP_L_FOOT = 45, //Feet are pretty big + close to the floor.
+	BP_R_FOOT = 45, //Ditto
 )
 
 //Used to weight organs when an organ is hit randomly (i.e. not a directed, aimed attack).
 //Also used to weight the protection value that armour provides for covering that body part when calculating protection from full-body effects.
 var/list/global/organ_rel_size = list(
-	BP_HEAD =   25,
-	BP_CHEST =  70,
-	BP_GROIN =  30,
+	BP_HEAD =   20, //Slightly harder to hit. Base 25
+	BP_CHEST =  85, //Really easy to hit, even unintentionally. Base 70
+	BP_GROIN =  40, //This is pretty big, should be higher.
 	BP_L_ARM =  25,
 	BP_R_ARM =  25,
-	BP_L_HAND = 10,
-	BP_R_HAND = 10,
-	BP_L_LEG =  25,
+	BP_L_HAND = 5, // Base 10
+	BP_R_HAND = 5, //Hitting hands without a directed attack is hard. Base 10
+	BP_L_LEG =  25, //Legs, while a moving target, are pretty big. This stays the same.
 	BP_R_LEG =  25,
-	BP_L_FOOT = 10,
-	BP_R_FOOT = 10,
+	BP_L_FOOT = 5, //Ditto with hands.
+	BP_R_FOOT = 5,
 )
 
 /proc/check_zone(zone)
