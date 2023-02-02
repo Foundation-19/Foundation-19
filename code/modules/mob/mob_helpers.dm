@@ -114,9 +114,9 @@ var/list/global/base_miss_chance = list(
 //Used to weight organs when an organ is hit randomly (i.e. not a directed, aimed attack).
 //Also used to weight the protection value that armour provides for covering that body part when calculating protection from full-body effects.
 var/list/global/organ_rel_size = list(
-	BP_HEAD =   20, //Slightly harder to hit. Base 25
-	BP_CHEST =  85, //Really easy to hit, even unintentionally. Base 70
-	BP_GROIN =  40, //This is pretty big, should be higher.
+	BP_HEAD =   20,
+	BP_CHEST =  85,
+	BP_GROIN =  40,
 	BP_L_ARM =  25,
 	BP_R_ARM =  25,
 	BP_L_HAND = 5, // Base 10
