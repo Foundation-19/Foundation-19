@@ -33429,10 +33429,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
-"sfv" = (
-/obj/structure/grille,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/scp457containment)
 "sgZ" = (
 /obj/machinery/light,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -86564,7 +86560,7 @@ pVL
 pVL
 pVL
 soj
-sfv
+pME
 soj
 azA
 azA
@@ -88354,7 +88350,7 @@ azA
 azA
 azA
 azA
-soj
+azA
 soj
 soj
 soj
@@ -88364,7 +88360,7 @@ soj
 soj
 soj
 soj
-soj
+azA
 azA
 azA
 azA
