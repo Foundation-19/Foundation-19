@@ -1558,7 +1558,6 @@
 #include "code\modules\client\client_helpers.dm"
 #include "code\modules\client\client_procs.dm"
 #include "code\modules\client\darkmode.dm"
-#include "code\modules\client\movement.dm"
 #include "code\modules\client\ping.dm"
 #include "code\modules\client\preferences.dm"
 #include "code\modules\client\preferences_persist.dm"
