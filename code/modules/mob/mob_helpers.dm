@@ -123,8 +123,8 @@ var/list/global/organ_rel_size = list(
 	BP_R_HAND = 5, //Hitting hands without a directed attack is hard. Base 10
 	BP_L_LEG =  25, //Legs, while a moving target, are pretty big. This stays the same.
 	BP_R_LEG =  25,
-	BP_L_FOOT = 5, //Ditto with hands.
-	BP_R_FOOT = 5,
+	BP_L_FOOT = 5,
+	BP_R_FOOT = 5
 )
 
 /proc/check_zone(zone)
