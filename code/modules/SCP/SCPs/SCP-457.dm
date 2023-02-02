@@ -51,7 +51,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 		if(aflame_cooldown > world.time)
 			to_chat(src, "<span class='warning'>You can't attack yet.</span>")
 			return
-		else if(aflame_cooldown < world.time)
+		else 
 			if(prob(35))
 				H.Weaken(50)
 				H.visible_message("<span class='danger'>[src] claws at [H], the flame sending them to the floor!</span>")
