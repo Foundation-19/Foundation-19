@@ -47,7 +47,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 
 /mob/living/scp_457/UnarmedAttack(atom/A)
 	var/mob/living/carbon/human/H = A
-	if(ishuman(A))
+	if(istype(H))
 		if(aflame_cooldown > world.time)
 			to_chat(src, "<span class='warning'>You can't attack yet.</span>")
 			return
