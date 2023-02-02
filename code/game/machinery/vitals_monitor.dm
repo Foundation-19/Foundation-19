@@ -197,7 +197,7 @@
 		else if(lungs.breath_fail_ratio < 1)
 			add_overlay(image(icon, icon_state = "breathing_shallow"))
 			if(read_alerts)
-				alerts[LUNGS_ALERT] = "Abnormality in patient breathing detected!"
+				alerts[LUNGS_ALERT] = "Abnormality in patient's breathing detected!"
 		else
 			add_overlay(image(icon, icon_state = "breathing_warning"))
 			if(read_alerts)
