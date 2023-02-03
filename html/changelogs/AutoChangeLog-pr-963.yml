@@ -1,0 +1,5 @@
+author: Tsurupeta
+delete-after: true
+changes:
+  - rscadd: Added new HUD.
+  - imageadd: Added new HUD.
