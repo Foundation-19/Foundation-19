@@ -70,11 +70,11 @@
 #define ui_borg_panel "EAST-1:28,SOUTH+1:7"
 
 //Gun buttons
-#define ui_gun1 "EAST-2:26,SOUTH+2:7"
-#define ui_gun2 "EAST-1:28, SOUTH+3:7"
-#define ui_gun3 "EAST-2:26,SOUTH+3:7"
-#define ui_gun_select "EAST-1:28,SOUTH+2:7"
-#define ui_gun4 "EAST-3:24,SOUTH+2:7"
+#define ui_gun1 "EAST,SOUTH+2"
+#define ui_gun2 "EAST, SOUTH+3"
+#define ui_gun3 "EAST,SOUTH+1"
+#define ui_gun_select "EAST+1,SOUTH+1"
+#define ui_gun4 "EAST, SOUTH+1"
 
 //Upper-middle right (damage indicators)
 #define ui_toxin "EAST+1,SOUTH+7"
