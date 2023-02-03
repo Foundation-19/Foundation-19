@@ -90,7 +90,7 @@
 	var/list/PL = params2list(params)
 	var/icon_x = text2num(PL["icon-x"])
 	var/icon_y = text2num(PL["icon-y"])
-	var/new_selecting
+	var/new_selecting = selecting
 
 	switch(icon_y)
 		if(3 to 7) //Feet
