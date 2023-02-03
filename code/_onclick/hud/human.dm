@@ -13,6 +13,8 @@
 		ui_style = hud_data.icon
 
 	ui_style = 'icons/mob/screen/screen_neo.dmi'
+	ui_alpha = 255
+	ui_color = "#ffffff"
 
 	adding = list()
 	other = list()
