@@ -1,5 +1,0 @@
-author: Tsurupeta
-delete-after: true
-changes:
-  - bugfix: Fixed item pickup animation.
-  - bugfix: Fixed wall hit sounds to be less fire_extinguisher_hit.ogg
