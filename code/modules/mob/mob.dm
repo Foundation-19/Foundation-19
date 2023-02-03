@@ -1009,6 +1009,12 @@
 	else
 		set_dir(dir)
 		facing_dir = dir
+	if(!fixeye)
+		return
+	if(facing_dir)
+		fixeye.icon_state = "fixeye_on"
+	else
+		fixeye.icon_state = "fixeye"
 
 /mob/set_dir()
 	if(facing_dir)

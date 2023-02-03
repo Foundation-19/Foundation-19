@@ -77,10 +77,13 @@
 #define ui_gun4 "EAST-3:24,SOUTH+2:7"
 
 //Upper-middle right (damage indicators)
-#define ui_toxin "EAST-1:28,NORTH-2:27"
+#define ui_toxin "EAST+1,SOUTH+7"
 #define ui_fire "EAST-1:28,NORTH-3:25"
-#define ui_oxygen "EAST-1:28,NORTH-4:23"
-#define ui_pressure "EAST-1:28,NORTH-5:21"
+#define ui_oxygen "EAST+1,SOUTH+7"
+#define ui_pressure "EAST+1,SOUTH+5"
+
+#define ui_fixeye "EAST+1,NORTH-4"
+#define ui_fixeye_border "EAST+1,NORTH-3:-8"
 
 #define ui_alien_toxin "EAST-1:28,NORTH-2:25"
 #define ui_alien_fire "EAST-1:28,NORTH-3:25"
@@ -88,8 +91,8 @@
 
 //Middle right (status indicators)
 #define ui_nutrition "EAST-1:28,CENTER-2:11"
-#define ui_nutrition_small "EAST-1:28,CENTER-2:24"
-#define ui_temp "EAST-1:28,CENTER-1:13"
+#define ui_nutrition_small "EAST+1,SOUTH+6"
+#define ui_temp "EAST+1,SOUTH+4"
 #define ui_health "EAST+1,SOUTH+3"
 #define ui_sanity "EAST-1:28,CENTER+2:15"
 #define ui_internal "EAST+1,NORTH-3"

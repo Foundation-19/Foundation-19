@@ -315,6 +315,9 @@
 			if(usr.client)
 				usr.client.drop_item()
 
+		if("fixeye")
+			usr.face_direction()
+
 		if("module")
 			if(isrobot(usr))
 				var/mob/living/silicon/robot/R = usr

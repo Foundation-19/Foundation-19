@@ -210,6 +210,21 @@
 		using.alpha = ui_alpha
 		src.hotkeybuttons += using
 
+	if(hud_data.has_fixeye)
+		mymob.fixeye = new /obj/screen()
+		mymob.fixeye.icon = ui_style
+		mymob.fixeye.icon_state = "fixeye"
+		mymob.fixeye.name = "fixeye"
+		mymob.fixeye.screen_loc = ui_fixeye
+		hud_elements |= mymob.fixeye
+
+		using = new /obj/screen()
+		using.dir = SOUTHEAST
+		using.icon = ui_style
+		using.icon_state = "bg"
+		using.screen_loc = ui_fixeye_border
+		adding += using
+
 	if(hud_data.has_throw)
 		mymob.throw_icon = new /obj/screen()
 		mymob.throw_icon.icon = ui_style
@@ -253,17 +268,17 @@
 		hud_elements |= mymob.healths
 
 		mymob.oxygen = new /obj/screen/oxygen()
-		mymob.oxygen.icon = 'icons/mob/status_indicators.dmi'
+		mymob.oxygen.icon = ui_style
 		mymob.oxygen.icon_state = "oxy0"
 		mymob.oxygen.SetName("oxygen")
-		mymob.oxygen.screen_loc = ui_temp
+		mymob.oxygen.screen_loc = ui_oxygen
 		hud_elements |= mymob.oxygen
 
 		mymob.toxin = new /obj/screen/toxins()
-		mymob.toxin.icon = 'icons/mob/status_indicators.dmi'
+		mymob.toxin.icon = ui_style
 		mymob.toxin.icon_state = "tox0"
 		mymob.toxin.SetName("toxin")
-		mymob.toxin.screen_loc = ui_temp
+		mymob.toxin.screen_loc = ui_toxin
 		hud_elements |= mymob.toxin
 
 		mymob.fire = new /obj/screen()
@@ -271,19 +286,20 @@
 		mymob.fire.icon_state = "fire0"
 		mymob.fire.SetName("fire")
 		mymob.fire.screen_loc = ui_fire
+		mymob.fire.invisibility = INVISIBILITY_MAXIMUM
 		hud_elements |= mymob.fire
 
 	if(hud_data.has_pressure)
 		mymob.pressure = new /obj/screen/pressure()
-		mymob.pressure.icon = 'icons/mob/status_indicators.dmi'
+		mymob.pressure.icon = ui_style
 		mymob.pressure.icon_state = "pressure0"
 		mymob.pressure.SetName("pressure")
-		mymob.pressure.screen_loc = ui_temp
+		mymob.pressure.screen_loc = ui_pressure
 		hud_elements |= mymob.pressure
 
 	if(hud_data.has_bodytemp)
 		mymob.bodytemp = new /obj/screen/bodytemp()
-		mymob.bodytemp.icon = 'icons/mob/status_indicators.dmi'
+		mymob.bodytemp.icon = ui_style
 		mymob.bodytemp.icon_state = "temp1"
 		mymob.bodytemp.SetName("body temperature")
 		mymob.bodytemp.screen_loc = ui_temp
@@ -299,7 +315,7 @@
 
 	else if(hud_data.has_nutrition)
 		mymob.nutrition_icon = new /obj/screen/food()
-		mymob.nutrition_icon.icon = 'icons/mob/status_hunger.dmi'
+		mymob.nutrition_icon.icon = ui_style
 		mymob.nutrition_icon.pixel_w = 8
 		mymob.nutrition_icon.icon_state = "nutrition1"
 		mymob.nutrition_icon.SetName("nutrition")
@@ -307,7 +323,7 @@
 		hud_elements |= mymob.nutrition_icon
 
 		mymob.hydration_icon = new /obj/screen/drink()
-		mymob.hydration_icon.icon = 'icons/mob/status_hunger.dmi'
+		mymob.hydration_icon.icon = ui_style
 		mymob.hydration_icon.icon_state = "hydration1"
 		mymob.hydration_icon.SetName("hydration")
 		mymob.hydration_icon.screen_loc = ui_nutrition_small
