@@ -150,25 +150,25 @@ var/list/robot_hud_colours = list("#ffffff","#cccccc","#aaaaaa","#888888","#6666
 		var/image/temp = image(limb_icon_cache[cache_key])
 		if(species)
 			// Calculate the required colour matrix.
-			var/r = 0.05 * species.health_hud_intensity
-			var/g = 0.55 * species.health_hud_intensity
-			var/b = 0.25 * species.health_hud_intensity
+			var/r = 0.30 * species.health_hud_intensity
+			var/g = 0.59 * species.health_hud_intensity
+			var/b = 0.11 * species.health_hud_intensity
 			temp.color = list(r, r, r, g, g, g, b, b, b)
-		temp.pixel_x = owner.default_pixel_x + 2
+		temp.pixel_x = owner.default_pixel_x
 		temp.pixel_y = owner.default_pixel_y
 		hud_damage_image = image(null)
 		hud_damage_image.add_overlay(temp)
 
 	// Calculate the required color index.
 	var/dam_state = min(1,((brute_dam+burn_dam)/max(1,max_damage)))
-	var/min_dam_state = min(1,(get_pain()/max(1,max_damage)))
+	var/min_dam_state = min(1,(get_pain()/max(1,max_damage))) 
 	if(min_dam_state && dam_state < min_dam_state)
 		dam_state = min_dam_state
 	// Apply colour and return product.
 	var/list/hud_colours = !BP_IS_ROBOTIC(src) ? flesh_hud_colours : robot_hud_colours
 	var/final_color = hud_colours[max(1,min(ceil(dam_state*hud_colours.len),hud_colours.len))]
 	if(painkiller_mult)
-		final_color = gradient(final_color, "#969696", min(painkiller_mult, 0.9))
+		final_color = gradient(final_color, "#bfbfbf", min(painkiller_mult, 0.9))
 	hud_damage_image.color = final_color
 	return hud_damage_image
 
