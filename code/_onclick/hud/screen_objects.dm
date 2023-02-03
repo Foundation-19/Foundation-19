@@ -82,7 +82,7 @@
 
 /obj/screen/zone_sel
 	name = "damage zone"
-	icon_state = "zone_sel"
+	icon_state = "puppet"
 	screen_loc = ui_zonesel
 	var/selecting = BP_CHEST
 
@@ -93,55 +93,61 @@
 	var/new_selecting
 
 	switch(icon_y)
-		if(1 to 3) //Feet
+		if(3 to 7) //Feet
 			switch(icon_x)
-				if(10 to 15)
+				if(8 to 13)
 					new_selecting = BP_R_FOOT
-				if(17 to 22)
+				if(20 to 25)
 					new_selecting = BP_L_FOOT
 				else
 					return 1
-		if(4 to 9) //Legs
+		if(8 to 27) //Legs
 			switch(icon_x)
 				if(10 to 15)
 					new_selecting = BP_R_LEG
-				if(17 to 22)
+				if(18 to 23)
 					new_selecting = BP_L_LEG
 				else
 					return 1
-		if(10 to 13) //Hands and groin
+		if(28 to 34) //Hands and groin
 			switch(icon_x)
-				if(8 to 11)
+				if(4 to 7)
 					new_selecting = BP_R_HAND
-				if(12 to 20)
+				if(12 to 21)
 					new_selecting = BP_GROIN
-				if(21 to 24)
+				if(26 to 29)
 					new_selecting = BP_L_HAND
 				else
 					return 1
-		if(14 to 22) //Chest and arms to shoulders
+		if(35 to 49) //Chest and arms to shoulders
 			switch(icon_x)
-				if(8 to 11)
+				if(5 to 10)
 					new_selecting = BP_R_ARM
-				if(12 to 20)
+				if(11 to 22)
 					new_selecting = BP_CHEST
-				if(21 to 24)
+				if(23 to 28)
 					new_selecting = BP_L_ARM
 				else
 					return 1
-		if(23 to 30) //Head, but we need to check for eye or mouth
-			if(icon_x in 12 to 20)
-				new_selecting = BP_HEAD
-				switch(icon_y)
-					if(23 to 24)
-						if(icon_x in 15 to 17)
-							new_selecting = BP_MOUTH
-					if(26) //Eyeline, eyes are on 15 and 17
-						if(icon_x in 14 to 18)
-							new_selecting = BP_EYES
-					if(25 to 27)
-						if(icon_x in 15 to 17)
-							new_selecting = BP_EYES
+
+		/*if(50 to 52)//Neck
+			switch(icon_x)
+				if(14 to 19)
+					selecting = BP_THROAT*/
+
+		if(51 to 60)
+			switch(icon_x)
+				if(13 to 20)
+					new_selecting = BP_HEAD
+		if(69 to 72)
+			switch(icon_x)
+				if(13 to 20)
+					new_selecting = BP_MOUTH
+
+		if(77 to 81)
+			switch(icon_x)
+				if(10 to 23)
+					new_selecting = BP_EYES
 
 	set_selected_zone(new_selecting)
 	return 1
@@ -155,7 +161,7 @@
 
 /obj/screen/zone_sel/on_update_icon()
 	cut_overlays()
-	add_overlay(image('icons/mob/zone_sel.dmi', "[selecting]"))
+	add_overlay(image('icons/mob/zone_sel_new.dmi', "[selecting]"))
 
 /obj/screen/intent
 	name = "intent"

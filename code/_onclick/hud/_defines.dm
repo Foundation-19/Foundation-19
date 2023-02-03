@@ -60,7 +60,7 @@
 #define ui_acti_r "EAST:-8,SOUTH-1"
 #define ui_rest_act "EAST+1,SOUTH"
 #define ui_movi "EAST,SOUTH-1"
-#define ui_zonesel "EAST-1:28,SOUTH:5"
+#define ui_zonesel "EAST+1,NORTH-2"
 #define ui_acti_alt "EAST-1:28,SOUTH:5" //alternative intent switcher for when the interface is hidden (F12)
 #define ui_stamina "EAST+1,SOUTH+2"
 #define ui_stamina_border "EAST+1,SOUTH+3:-8"
