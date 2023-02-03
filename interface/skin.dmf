@@ -332,6 +332,7 @@ window "outputwindow"
 		is-visible = false
 		is-disabled = true
 		saved-params = ""
+		statusbar = true
 	elem "output"
 		type = OUTPUT
 		pos = 0,0

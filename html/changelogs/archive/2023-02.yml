@@ -1,3 +1,12 @@
 2023-02-02:
   MACIEKBAKI:
   - code_imp: temporarily disables borgs
+2023-02-03:
+  Tsurupeta:
+  - bugfix: Fixed item pickup animation.
+  - bugfix: Fixed wall hit sounds to be less fire_extinguisher_hit.ogg
+  - rscadd: Added new HUD.
+  - imageadd: Added new HUD.
+  casualspacestation14enjoyer:
+  - rscadd: Adds SCP-457 as a player-controlled SCP
+  - rscadd: New Containment Chamber for 457 in Upper HCZ
