@@ -1,0 +1,6 @@
+author: Tsurupeta
+delete-after: true
+changes:
+  - rscdel: Deleted new HUD.
+  - imagedel: Deleted new HUD.
+  - code_imp: Re-enables borgs again.
