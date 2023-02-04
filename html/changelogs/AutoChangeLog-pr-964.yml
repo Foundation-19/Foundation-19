@@ -1,0 +1,4 @@
+author: Kapu1178, Lohikar
+delete-after: true
+changes:
+  - bugfix: ZAS CSRFZ patch
