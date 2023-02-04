@@ -10,3 +10,13 @@
   casualspacestation14enjoyer:
   - rscadd: Adds SCP-457 as a player-controlled SCP
   - rscadd: New Containment Chamber for 457 in Upper HCZ
+2023-02-04:
+  Kapu1178, Lohikar:
+  - bugfix: ZAS CSRFZ patch
+  MACIEKBAKI:
+  - bugfix: ID mod program setting individual access should respect its operating_access_types
+  - bugfix: ID mod program setting assignment should respect its operating_access_types
+  Tsurupeta:
+  - rscdel: Deleted new HUD.
+  - imagedel: Deleted new HUD.
+  - code_imp: Re-enables borgs again.
