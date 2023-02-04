@@ -82,7 +82,7 @@
 
 /obj/screen/zone_sel
 	name = "damage zone"
-	icon_state = "puppet"
+	icon_state = "zone_sel"
 	screen_loc = ui_zonesel
 	var/selecting = BP_CHEST
 
@@ -90,64 +90,58 @@
 	var/list/PL = params2list(params)
 	var/icon_x = text2num(PL["icon-x"])
 	var/icon_y = text2num(PL["icon-y"])
-	var/new_selecting = selecting
+	var/new_selecting
 
 	switch(icon_y)
-		if(3 to 7) //Feet
+		if(1 to 3) //Feet
 			switch(icon_x)
-				if(8 to 13)
+				if(10 to 15)
 					new_selecting = BP_R_FOOT
-				if(20 to 25)
+				if(17 to 22)
 					new_selecting = BP_L_FOOT
 				else
 					return 1
-		if(8 to 27) //Legs
+		if(4 to 9) //Legs
 			switch(icon_x)
 				if(10 to 15)
 					new_selecting = BP_R_LEG
-				if(18 to 23)
+				if(17 to 22)
 					new_selecting = BP_L_LEG
 				else
 					return 1
-		if(28 to 34) //Hands and groin
+		if(10 to 13) //Hands and groin
 			switch(icon_x)
-				if(4 to 7)
+				if(8 to 11)
 					new_selecting = BP_R_HAND
-				if(12 to 21)
+				if(12 to 20)
 					new_selecting = BP_GROIN
-				if(26 to 29)
+				if(21 to 24)
 					new_selecting = BP_L_HAND
 				else
 					return 1
-		if(35 to 49) //Chest and arms to shoulders
+		if(14 to 22) //Chest and arms to shoulders
 			switch(icon_x)
-				if(5 to 10)
+				if(8 to 11)
 					new_selecting = BP_R_ARM
-				if(11 to 22)
+				if(12 to 20)
 					new_selecting = BP_CHEST
-				if(23 to 28)
+				if(21 to 24)
 					new_selecting = BP_L_ARM
 				else
 					return 1
-
-		/*if(50 to 52)//Neck
-			switch(icon_x)
-				if(14 to 19)
-					selecting = BP_THROAT*/
-
-		if(51 to 60)
-			switch(icon_x)
-				if(13 to 20)
-					new_selecting = BP_HEAD
-		if(69 to 72)
-			switch(icon_x)
-				if(13 to 20)
-					new_selecting = BP_MOUTH
-
-		if(77 to 81)
-			switch(icon_x)
-				if(10 to 23)
-					new_selecting = BP_EYES
+		if(23 to 30) //Head, but we need to check for eye or mouth
+			if(icon_x in 12 to 20)
+				new_selecting = BP_HEAD
+				switch(icon_y)
+					if(23 to 24)
+						if(icon_x in 15 to 17)
+							new_selecting = BP_MOUTH
+					if(26) //Eyeline, eyes are on 15 and 17
+						if(icon_x in 14 to 18)
+							new_selecting = BP_EYES
+					if(25 to 27)
+						if(icon_x in 15 to 17)
+							new_selecting = BP_EYES
 
 	set_selected_zone(new_selecting)
 	return 1
@@ -161,19 +155,14 @@
 
 /obj/screen/zone_sel/on_update_icon()
 	cut_overlays()
-	add_overlay(image('icons/mob/zone_sel_new.dmi', "[selecting]"))
+	add_overlay(image('icons/mob/zone_sel.dmi', "[selecting]"))
 
 /obj/screen/intent
 	name = "intent"
-	icon = 'icons/mob/screen/screen_neo.dmi'
+	icon = 'icons/mob/screen1_White.dmi'
 	icon_state = "intent_help"
 	screen_loc = ui_acti
-	var/obj/screen/i_text
 	var/intent = I_HELP
-
-/obj/screen/intent/Destroy()
-	. = ..()
-	QDEL_NULL(i_text)
 
 /obj/screen/intent/Click(var/location, var/control, var/params)
 	var/list/P = params2list(params)
@@ -192,7 +181,6 @@
 
 /obj/screen/intent/on_update_icon()
 	icon_state = "intent_[intent]"
-	i_text.icon_state = "intent_name_[intent]"
 
 /obj/screen/Click(location, control, params)
 	if(!usr)	return 1
@@ -314,9 +302,6 @@
 		if("drop")
 			if(usr.client)
 				usr.client.drop_item()
-
-		if("fixeye")
-			usr.face_direction()
 
 		if("module")
 			if(isrobot(usr))

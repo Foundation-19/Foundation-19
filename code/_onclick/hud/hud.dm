@@ -67,8 +67,7 @@
 	var/obj/screen/lingchemdisplay
 	var/obj/screen/r_hand_hud_object
 	var/obj/screen/l_hand_hud_object
-	var/obj/screen/swap_hand_hud_object
-	var/obj/screen/intent/action_intent
+	var/obj/screen/action_intent
 	var/obj/screen/move_intent
 	var/obj/screen/stamina/stamina_bar
 	var/obj/screen/rest_button
@@ -101,8 +100,11 @@
 
 /datum/hud/proc/update_stamina()
 	if(mymob && stamina_bar)
+		stamina_bar.invisibility = INVISIBILITY_MAXIMUM
 		var/stamina = mymob.get_stamina()
-		stamina_bar.icon_state = "stamina[10 - Floor(stamina/10)]"
+		if(stamina < 100)
+			stamina_bar.invisibility = 0
+			stamina_bar.icon_state = "prog_bar_[Floor(stamina/5)*5]"
 
 /datum/hud/proc/hidden_inventory_update()
 	if(!mymob) return
@@ -310,6 +312,7 @@
 
 /obj/screen/stamina
 	name = "stamina"
-	icon = 'icons/mob/screen/screen_neo.dmi'
-	icon_state = "stamina0"
+	icon = 'icons/effects/progressbar.dmi'
+	icon_state = "prog_bar_100"
+	invisibility = INVISIBILITY_MAXIMUM
 	screen_loc = ui_stamina

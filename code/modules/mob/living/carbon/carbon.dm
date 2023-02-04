@@ -162,11 +162,9 @@
 		if(hand)	//This being 1 means the left hand is in use
 			hud_used.l_hand_hud_object.icon_state = "l_hand_active"
 			hud_used.r_hand_hud_object.icon_state = "r_hand_inactive"
-			hud_used.swap_hand_hud_object.dir = SOUTH
 		else
 			hud_used.l_hand_hud_object.icon_state = "l_hand_inactive"
 			hud_used.r_hand_hud_object.icon_state = "r_hand_active"
-			hud_used.swap_hand_hud_object.dir = NORTH
 	var/obj/item/I = get_active_hand()
 	if(istype(I))
 		I.on_active_hand(src)

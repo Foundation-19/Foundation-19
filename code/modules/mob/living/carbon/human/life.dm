@@ -740,11 +740,10 @@
 			var/painkiller_mult = chem_effects[CE_PAINKILLER] / 100
 
 			if(painkiller_mult >= 1)
-				healths.icon_state = "health_blank"
-				healths.add_overlay(image('icons/mob/screen/screen_neo.dmi',"health_numb"))
+				healths.icon_state = "health_numb"
 			else
 				// Generate a by-limb health display.
-				healths.icon_state = "health_blank"
+				healths.icon_state = "blank"
 
 				var/trauma_val = 0 // Used in calculating softcrit/hardcrit indicators.
 				if(can_feel_pain())
