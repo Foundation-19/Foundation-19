@@ -1,0 +1,5 @@
+author: MACIEKBAKI
+delete-after: true
+changes:
+  - bugfix: ID mod program setting individual access should respect its operating_access_types
+  - bugfix: ID mod program setting assignment should respect its operating_access_types
