@@ -313,6 +313,7 @@ var/list/admin_verbs_mentors = list(
 	/client/proc/mentorpm_mob,
 	/client/proc/mentorpm_panel,
 	/client/proc/mentor_memo,
+	/client/proc/deadmin_self
 )
 
 /client/proc/add_admin_verbs()

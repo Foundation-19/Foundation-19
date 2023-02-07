@@ -1,6 +1,5 @@
 //A temporary effect that does not DO anything except look pretty.
 /obj/effect/temporary
-	icon = 'icons/effects/effects.dmi'
 	anchored = TRUE
 	unacidable = TRUE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -8,8 +7,13 @@
 	layer = ABOVE_HUMAN_LAYER
 	var/duration = 30
 
-/obj/effect/temporary/Initialize(var/mapload)
+/obj/effect/temporary/Initialize(mapload, _duration, _icon = 'icons/effects/effects.dmi', _state)
 	. = ..()
+	icon = _icon
+	if(_state)
+		icon_state = _state
+	if(_duration)
+		duration = _duration
 	QDEL_IN(src, duration)
 
 // Smoke effect

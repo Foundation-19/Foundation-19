@@ -22,7 +22,7 @@
 	reagent_ids = list(/datum/reagent/medicine/bicaridine, /datum/reagent/medicine/dexalin, /datum/reagent/medicine/painkiller/tramadol)
 
 /obj/item/reagent_containers/borghypo/crisis
-	reagent_ids = list(/datum/reagent/medicine/tricordrazine, /datum/reagent/medicine/inaprovaline, /datum/reagent/medicine/painkiller/tramadol, /datum/reagent/medicine/adrenaline, /datum/reagent/medicine/dexalin, /datum/reagent/paracetamol)
+	reagent_ids = list(/datum/reagent/medicine/tricordrazine, /datum/reagent/medicine/inaprovaline, /datum/reagent/medicine/painkiller/tramadol, /datum/reagent/medicine/adrenaline, /datum/reagent/medicine/dexalin, /datum/reagent/medicine/painkiller/paracetamol)
 
 /obj/item/reagent_containers/borghypo/Initialize()
 	. = ..()

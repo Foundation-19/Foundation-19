@@ -41,6 +41,47 @@
 			return species.total_health
 	return 0
 
+/mob/living/carbon/human/adjustSanityLoss(amount)
+	if(status_flags & GODMODE)	return 0	//godmode
+	if(should_have_organ(BP_BRAIN))
+		var/obj/item/organ/internal/brain/sponge = internal_organs_by_name[BP_BRAIN]
+		if(sponge)
+			sponge.take_sanity_damage(amount)
+
+/mob/living/carbon/human/setSanityLoss(amount)
+	if(status_flags & GODMODE)	return 0	//godmode
+	if(should_have_organ(BP_BRAIN))
+		var/obj/item/organ/internal/brain/sponge = internal_organs_by_name[BP_BRAIN]
+		if(sponge)
+			sponge.insanity = Clamp(amount, 0, sponge.max_insanity)
+			updatehealth()
+
+/mob/living/carbon/human/getSanityLoss()
+	if(status_flags & GODMODE)	return 0	//godmode
+	if(should_have_organ(BP_BRAIN))
+		var/obj/item/organ/internal/brain/sponge = internal_organs_by_name[BP_BRAIN]
+		if(sponge)
+			if(sponge.status & ORGAN_DEAD)
+				return 0 // cant be insane if your dead
+			else
+				return sponge.insanity
+		else
+			return 0 // cant be insane with no brain either can you
+	return 0
+
+/mob/living/carbon/human/getSanityLevel()
+	if(status_flags & GODMODE)	return SL_SANE	//godmode
+	if(should_have_organ(BP_BRAIN))
+		var/obj/item/organ/internal/brain/sponge = internal_organs_by_name[BP_BRAIN]
+		if(sponge)
+			if(sponge.status & ORGAN_DEAD)
+				return SL_SANE // cant be insane if your dead
+			else
+				return sponge.get_sanity_level()
+		else
+			return SL_SANE // cant be insane with no brain either can you
+	return SL_SANE
+
 //Straight pain values, not affected by painkillers etc
 /mob/living/carbon/human/getHalLoss()
 	var/amount = 0

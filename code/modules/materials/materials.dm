@@ -364,7 +364,6 @@ var/list/name_to_material
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
 	icon_colour = "#666666"
-	hitsound = 'sound/weapons/smash.ogg'
 
 /material/diona
 	name = "biomass"
@@ -652,7 +651,6 @@ var/list/name_to_material
 	weight = 22
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
-	hitsound = 'sound/weapons/smash.ogg'
 
 // Adminspawn only, do not let anyone get this.
 /material/voxalloy
@@ -771,7 +769,6 @@ var/list/name_to_material
 	icon_base = "jaggy"
 	door_icon_base = "metal"
 	icon_reinf = "reinf_metal"
-	hitsound = 'sound/weapons/smash.ogg'
 	sheet_singular_name = "chunk"
 	sheet_plural_name = "chunks"
 
