@@ -218,8 +218,9 @@
 							return
 
 						var/list/to_give = jobdatum.get_access()
+						var/list/operating_types = get_access_ids(operating_access_types)
 						for(var/acc in to_give)
-							if(acc && operating_access_types)
+							if(acc in operating_types)
 								access.Add(acc)
 
 					remove_nt_access(id_card)
@@ -232,7 +233,7 @@
 			if(href_list["allowed"] && computer && can_run(user, 1) && id_card)
 				var/access_type = href_list["access_target"]
 				var/access_allowed = text2num(href_list["allowed"])
-				if(access_type in get_access_ids(ACCESS_TYPE_STATION|ACCESS_TYPE_CENTCOM))
+				if(access_type in get_access_ids(operating_access_types))
 					for(var/access in user_id_card.access)
 						var/region_type = get_access_region_by_id(access_type)
 						if(access in GLOB.using_map.access_modify_region[region_type])

@@ -629,6 +629,11 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			if (!M.client && (length(GLOB.clients) >= 30))
 				scps += M
 
+		for (var/scp457 in GLOB.scp457s)
+			var/mob/M = scp457
+			if (!M.client)
+				scps += M
+
 		// add new humanoid SCPs here or they won't be playable - Kachnov
 		if (scps.len)
 			var/mob/living/scp = input(src, "Which Euclid/Keter SCP do you want to take control of?") as null|anything in scps
