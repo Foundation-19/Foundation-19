@@ -16,8 +16,6 @@
 	skill_points = 0
 	no_skill_buffs = TRUE
 	min_skill = list(
-		SKILL_EVA           = SKILL_EXPERIENCED,
-		SKILL_MECH          = SKILL_EXPERIENCED,
 		SKILL_PILOT         = SKILL_EXPERIENCED,
 		SKILL_BOTANY        = SKILL_EXPERIENCED,
 		SKILL_COOKING       = SKILL_EXPERIENCED,

@@ -12,7 +12,7 @@
 
 	var/area/a = get_area(src)
 	if(a && !a.has_gravity())
-		if(skill_check(SKILL_EVA, SKILL_MASTER))
+		if(skill_check(SKILL_HAULING, SKILL_MASTER))
 			tally -= 2
 		tally -= 1
 
@@ -108,7 +108,7 @@
 				break
 
 	if(thrust && thrust.on)
-		if(prob(skill_fail_chance(SKILL_EVA, 10, SKILL_TRAINED)))
+		if(prob(skill_fail_chance(SKILL_HAULING, 10, SKILL_TRAINED)))
 			to_chat(src, "<span class='warning'>You fumble with [thrust] controls!</span>")
 			inertia_dir = pick(GLOB.cardinal)
 			return 0

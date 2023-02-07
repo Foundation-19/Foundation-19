@@ -99,7 +99,6 @@
 	min_skill = list(
 		SKILL_FINANCE     = SKILL_BASIC,
 		SKILL_HAULING     = SKILL_BASIC,
-		SKILL_EVA         = SKILL_BASIC,
 		SKILL_PILOT       = SKILL_BASIC
 	)
 
@@ -143,7 +142,6 @@
 	min_skill = list(
 		SKILL_FINANCE     = SKILL_BASIC,
 		SKILL_HAULING     = SKILL_BASIC,
-		SKILL_EVA         = SKILL_BASIC,
 		SKILL_PILOT       = SKILL_BASIC
 	)
 

@@ -116,7 +116,7 @@
 			zone_sel.set_selected_zone(BP_CHEST)
 	// You may attack the target with your exosuit FIST if you're malfunctioning.
 	var/atom/movable/AM = A
-	var/fail_prob = (user != src && istype(AM) && AM.loc != src) ? (user.skill_check(SKILL_MECH, HAS_PERK) ? 0: 15 ) : 0
+	var/fail_prob = (user != src && istype(AM) && AM.loc != src) ? (user.skill_check(SKILL_PILOT, HAS_PERK) ? 0: 15 ) : 0
 	var/failed = FALSE
 	if(prob(fail_prob))
 		to_chat(user, SPAN_DANGER("Your incompetence leads you to target the wrong thing with the exosuit!"))
@@ -401,7 +401,7 @@
 					return
 				if(!body) //Error
 					return
-				var/delay = min(50 * user.skill_delay_mult(SKILL_DEVICES), 50 * user.skill_delay_mult(SKILL_EVA))
+				var/delay = min(50 * user.skill_delay_mult(SKILL_DEVICES), 50 * user.skill_delay_mult(SKILL_HAULING))
 				visible_message(SPAN_NOTICE("\The [user] starts forcing the \the [src]'s emergency [body.hatch_descriptor] release using \the [thing]."))
 				if(!do_after(user, delay, src, DO_DEFAULT | DO_PUBLIC_PROGRESS))
 					return

@@ -72,26 +72,6 @@ GLOBAL_LIST_EMPTY(skills)
 
 // Category: General
 
-/decl/hierarchy/skill/general/EVA
-	ID = "EVA"
-	name = "Extra-vehicular activity"
-	desc = "This skill describes your skill and knowledge of space-suits and working in vacuum."
-	levels = list( "Unskilled"			= "You have basic safety training common to people who work in space: You know how to put on and seal your internals, and you can probably struggle into a space suit if you really need to, though you'll be clumsy at it. You're still prone to mistakes that may leave you trying to breathe vacuum.<br>- You can remove hardsuits. Its speed increases with level.<br>- You will always get floored when you enter gravity area from space. This chance decreases with level.<br>- You are likely to slip. This chance decreases with level.",
-						"Basic"				= "You have had thorough basic training in EVA operations, and are unlikely to make novice mistakes. However, you have little experience working in vacuum.",
-						"Trained"			= "You can comfortably use a space suit and do so regularly in the course of your work. Checking your internals is second nature to you, and you don't panic in an emergency.<br>- You can fully operate jetpacks.",
-						"Experienced"		= "You can use all kinds of space suits, including specialized versions. Your years of experience in EVA keep you from being disoriented in space, and you have experience using a jetpack to move around. <br>- You cannot slip anymore.",
-						"Master"		= "You are just as much at home in a vacuum as in atmosphere. You probably do your job almost entirely EVA.<br>- You cannot get floored anymore.<br>- You get bonus speed in zero-G.")
-
-/decl/hierarchy/skill/general/EVA/mech
-	ID = "exosuit"
-	name = "Exosuit Operation"
-	desc = "Allows you to operate exosuits well."
-	levels = list("Untrained" = "You are unfamiliar with exosuit controls, and if you attempt to use them you are liable to make mistakes.",
-		"Trained" = "You are proficient in exosuit operation and safety, and can use them without penalties.")
-	prerequisites = list(SKILL_EVA = SKILL_TRAINED)
-	default_max = SKILL_BASIC
-	difficulty = SKILL_AVERAGE
-
 /decl/hierarchy/skill/general/pilot
 	ID = "pilot"
 	name = "Piloting"

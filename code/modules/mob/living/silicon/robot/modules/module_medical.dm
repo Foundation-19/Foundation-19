@@ -123,8 +123,7 @@
 	skills = list(
 		SKILL_ANATOMY     = SKILL_BASIC,
 		SKILL_MEDICAL     = SKILL_MASTER,
-		SKILL_CHEMISTRY   = SKILL_TRAINED,
-		SKILL_EVA         = SKILL_EXPERIENCED
+		SKILL_CHEMISTRY   = SKILL_TRAINED
 	)
 
 /obj/item/robot_module/medical/crisis/finalize_equipment()

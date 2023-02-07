@@ -14,8 +14,6 @@
 	skill_points = 25
 	give_psionic_implant_on_join = FALSE
 	max_skill = list(
-		SKILL_EVA = SKILL_MAX,
-	    SKILL_MECH = SKILL_MAX,
 	    SKILL_PILOT = SKILL_MAX,
 	    SKILL_HAULING = SKILL_MAX,
 	    SKILL_COMPUTER = SKILL_MAX,
