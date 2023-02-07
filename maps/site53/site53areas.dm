@@ -800,6 +800,11 @@
 	sound_env = SMALL_ENCLOSED
 	turf_initializer = /decl/turf_initializer/maintenance
 
+/area/site53/uhcz/scp457containment
+	name = "\improper SCP-457 Containment Chamber"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/uhcz/scp106observ
 	name = "\improper SCP-106 Observation"
 	icon_state = "research"

@@ -306,7 +306,7 @@
 	icon_state = "pill2"
 /obj/item/reagent_containers/pill/methylphenidate/New()
 	..()
-	reagents.add_reagent(/datum/reagent/medicine/fluff/methylphenidate, 15)
+	reagents.add_reagent(/datum/reagent/medicine/antidepressant/methylphenidate, 15)
 	color = reagents.get_color()
 
 
@@ -316,7 +316,7 @@
 	icon_state = "pill4"
 /obj/item/reagent_containers/pill/citalopram/New()
 	..()
-	reagents.add_reagent(/datum/reagent/medicine/fluff/citalopram, 15)
+	reagents.add_reagent(/datum/reagent/medicine/antidepressant/citalopram, 15)
 	color = reagents.get_color()
 
 
@@ -326,7 +326,7 @@
 	icon_state = "pill4"
 /obj/item/reagent_containers/pill/paroxetine/New()
 	..()
-	reagents.add_reagent(/datum/reagent/medicine/fluff/paroxetine, 10)
+	reagents.add_reagent(/datum/reagent/medicine/antidepressant/paroxetine, 10)
 	color = reagents.get_color()
 
 

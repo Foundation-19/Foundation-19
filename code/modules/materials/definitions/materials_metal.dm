@@ -119,7 +119,6 @@
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
 	icon_colour = COLOR_STEEL
-	hitsound = 'sound/weapons/smash.ogg'
 	chem_products = list(
 				/datum/reagent/iron = 19.6,
 				/datum/reagent/carbon = 0.4
@@ -156,7 +155,6 @@
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
 	icon_colour = "#cccdcc"
-	hitsound = 'sound/weapons/smash.ogg'
 	sale_price = 1
 
 /material/aluminium/holographic
@@ -186,7 +184,6 @@
 	hardness = MATERIAL_VERY_HARD
 	weight = 23
 	stack_origin_tech = list(TECH_MATERIAL = 2)
-	hitsound = 'sound/weapons/smash.ogg'
 	construction_difficulty = MATERIAL_HARD_DIY
 	alloy_materials = list(MATERIAL_STEEL = 2500, MATERIAL_PLATINUM = 1250)
 	alloy_product = TRUE
@@ -322,7 +319,6 @@
 	weight = 22
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
-	hitsound = 'sound/weapons/smash.ogg'
 	construction_difficulty = MATERIAL_NORMAL_DIY
 	chem_products = list(
 				/datum/reagent/iron = 20

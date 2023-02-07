@@ -14,16 +14,16 @@
 /mob/living/carbon/proc/handle_hallucinations()
 	//Tick down the duration
 	hallucination_duration = max(0, hallucination_duration - 1)
-	if(chem_effects[CE_MIND] > 0)
+	if(chem_effects[CE_HALLUCINATION] > 0)
 		hallucination_duration = max(0, hallucination_duration - 1)
 
 	//Adjust power if we have some chems that affect it
-	if(chem_effects[CE_MIND] < 0)
+	if(chem_effects[CE_HALLUCINATION] < 0)
 		hallucination_power = min(hallucination_power++, 50)
-	if(chem_effects[CE_MIND] < -1)
+	if(chem_effects[CE_HALLUCINATION] < -1)
 		hallucination_power = hallucination_power++
-	if(chem_effects[CE_MIND] > 0)
-		hallucination_power = max(hallucination_power - chem_effects[CE_MIND], 0)
+	if(chem_effects[CE_HALLUCINATION] > 0)
+		hallucination_power = max(hallucination_power - chem_effects[CE_HALLUCINATION], 0)
 
 	//See if hallucination is gone
 	if(!hallucination_power)
@@ -35,7 +35,7 @@
 
 	if(!client || stat || world.time < next_hallucination)
 		return
-	if(chem_effects[CE_MIND] > 0 && prob(chem_effects[CE_MIND]*40)) //antipsychotics help
+	if(chem_effects[CE_HALLUCINATION] > 0 && prob(chem_effects[CE_HALLUCINATION]*40)) //antipsychotics help
 		return
 	var/hall_delay = rand(10,20) SECONDS
 
