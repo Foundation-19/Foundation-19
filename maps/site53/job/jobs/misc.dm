@@ -14,8 +14,10 @@
 	hud_icon = "huddclass"
 	var/static/list/used_numbers = list()
 
-	max_skill = list(SKILL_COMBAT = SKILL_TRAINED,
-					SKILL_WEAPONS = SKILL_TRAINED)
+	max_skill = list(
+		SKILL_COMBAT = SKILL_TRAINED,
+		SKILL_WEAPONS = SKILL_TRAINED
+	)
 
 /datum/job/classd/equip(mob/living/carbon/human/H)
 	. = ..()
@@ -94,13 +96,15 @@
 	minimal_access = list()
 
 
-	min_skill = list(SKILL_BUREAUCRACY = SKILL_EXPERIENCED,
-					SKILL_FINANCE     = SKILL_BASIC,
-					SKILL_HAULING     = SKILL_BASIC,
-					SKILL_EVA         = SKILL_BASIC,
-					SKILL_PILOT       = SKILL_BASIC)
+	min_skill = list(
+		SKILL_FINANCE     = SKILL_BASIC,
+		SKILL_HAULING     = SKILL_BASIC,
+		SKILL_PILOT       = SKILL_BASIC
+	)
 
-	max_skill = list(   SKILL_PILOT       = SKILL_MASTER)
+	max_skill = list(
+		SKILL_PILOT       = SKILL_MASTER
+	)
 	skill_points = 18
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
@@ -135,13 +139,15 @@
 	minimal_access = list()
 
 
-	min_skill = list(SKILL_BUREAUCRACY = SKILL_EXPERIENCED,
-					SKILL_FINANCE      = SKILL_BASIC,
-					SKILL_HAULING      = SKILL_BASIC,
-					SKILL_EVA          = SKILL_BASIC,
-					SKILL_PILOT        = SKILL_BASIC)
+	min_skill = list(
+		SKILL_FINANCE     = SKILL_BASIC,
+		SKILL_HAULING     = SKILL_BASIC,
+		SKILL_PILOT       = SKILL_BASIC
+	)
 
-	max_skill = list(SKILL_PILOT       = SKILL_MASTER)
+	max_skill = list(
+		SKILL_PILOT       = SKILL_MASTER
+	)
 	skill_points = 18
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
@@ -177,7 +183,9 @@
 )
 	minimal_access = list()
 
-	min_skill = list(SKILL_HAULING = SKILL_BASIC)
+	min_skill = list(
+		SKILL_HAULING = SKILL_BASIC
+	)
 
 /datum/job/chef
 	title = "Chef"
@@ -237,7 +245,7 @@
 	minimal_access = list()
 
 	min_skill = list(
-		SKILL_COOKING  = SKILL_EXPERIENCED,
+		SKILL_COOKING   = SKILL_EXPERIENCED,
 		SKILL_BOTANY    = SKILL_BASIC,
 		SKILL_CHEMISTRY = SKILL_BASIC
 	)

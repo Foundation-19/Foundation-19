@@ -12,7 +12,7 @@
 		playsound(src.loc, mech_step_sound, 40, 1)
 
 /mob/living/exosuit/can_ztravel()
-	if(Allow_Spacemove()) //Handle here 
+	if(Allow_Spacemove()) //Handle here
 		return TRUE
 
 /mob/living/exosuit/Allow_Spacemove(check_drift)
@@ -43,7 +43,7 @@
 
 /mob/living/exosuit/can_float()
 	return FALSE //Nope
-	
+
 /datum/movement_handler/mob/delay/exosuit
 	expected_host_type = /mob/living/exosuit
 
@@ -100,7 +100,7 @@
 	var/moving_dir = direction
 
 	var/failed = FALSE
-	var/fail_prob = mover != host ? (mover.skill_check(SKILL_MECH, HAS_PERK) ? 0 : 25) : 0
+	var/fail_prob = mover != host ? (mover.skill_check(SKILL_PILOT, HAS_PERK) ? 0 : 25) : 0
 	if(prob(fail_prob))
 		to_chat(mover, SPAN_DANGER("You clumsily fumble with the exosuit joystick."))
 		failed = TRUE
@@ -140,7 +140,7 @@
 			return MOVEMENT_HANDLED
 		else
 			mob.inertia_dir = 0 //If not then we can reset inertia and move
-	else 
+	else
 		mob.anchored = TRUE
 		mob.inertia_dir = 0 //Reset inertia values as we are not going to be treated as floating
 

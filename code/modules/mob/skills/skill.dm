@@ -39,15 +39,9 @@ GLOBAL_LIST_EMPTY(skills)
 /decl/hierarchy/skill/dd_SortValue()
 	return ID
 
-/decl/hierarchy/skill/organizational
-	name = "Organizational"
-	ID	 = "1"
-	difficulty = SKILL_EASY
-	default_max = SKILL_MAX
-
 /decl/hierarchy/skill/general
 	name = "General"
-	ID	 = "2"
+	ID	 = "general"
 	difficulty = SKILL_EASY
 	default_max = SKILL_MAX
 
@@ -75,49 +69,8 @@ GLOBAL_LIST_EMPTY(skills)
 	difficulty = SKILL_HARD
 
 // ONLY SKILL DEFINITIONS BELOW THIS LINE
-// Category: Organizational
-
-/decl/hierarchy/skill/organizational/bureaucracy
-	ID = "bureaucracy"
-	name = "Bureaucracy"
-	desc = "Your ability to write and complete paperwork, navigate complex organiztions, and understand laws and regulations."
-	levels = list( "Unskilled"			= "You can usually fill out basic paperwork, if with a few errors. You have a vague understanding of the law, gleaned mostly from the news and personal experience.",
-						"Basic"				= "You are familiar with the paperwork needed to do your job, and can navigate it well. You have some understanding of the law as it applies to you and those around you.",
-						"Trained"			= "You can navigate most paperwork thrown at you, even if you are unfamiliar with it. You have a good working understanding of the law and any regulations or procedures relevant to you.",
-						"Experienced"		= "With your experience, you can easily create paperwork for any eventuality, and write reports which are clear and understandable. You have an excellent knowledge of the law, possibly including formal legal training.",
-						"Master"		= "You can make paperwork dance to your bidding, and navigate the most byzantine bureaucratic structures with ease and familiarity. Your reports are works of literature. Your knowledge of the law is both broad and intimate, and you may be certified to practice law.")
-
-/decl/hierarchy/skill/organizational/finance
-	ID = "finance"
-	name = "Finance"
-	desc = "Your ability to manage money and investments."
-	levels = list( "Unskilled"			= "Your understanding of money starts and ends with personal finance. While you are able to perform basic transactions, you get lost in the details, and can find yourself ripped off on occasion.<br>- You get some starting money. Its amount increases with level.<br>- You can use the verb \"Appraise\" to see the value of different objects.",
-						"Basic"				= "You have some limited understanding of financial transactions, and will generally be able to keep accurate records. You have little experience with investment, and managing large sums of money will likely go poorly for you.",
-						"Trained"			= "You are good at managing accounts, keeping records, and arranging transactions. You have some familiarity with mortgages, insurance, stocks, and bonds, but may be stumped when facing more complicated financial devices.",
-						"Experienced"		= "With your experience, you are familiar with any financial entities you may run across, and are a shrewd judge of value. More often than not, investments you make will pan out well.",
-						"Master"		= "You have an excellent knowledge of finance, will often make brilliant investments, and have an instinctive feel for interstellar economics. Financial instruments are weapons in your hands. You likely have professional experience in the finance industry.")
 
 // Category: General
-
-/decl/hierarchy/skill/general/EVA
-	ID = "EVA"
-	name = "Extra-vehicular activity"
-	desc = "This skill describes your skill and knowledge of space-suits and working in vacuum."
-	levels = list( "Unskilled"			= "You have basic safety training common to people who work in space: You know how to put on and seal your internals, and you can probably struggle into a space suit if you really need to, though you'll be clumsy at it. You're still prone to mistakes that may leave you trying to breathe vacuum.<br>- You can remove hardsuits. Its speed increases with level.<br>- You will always get floored when you enter gravity area from space. This chance decreases with level.<br>- You are likely to slip. This chance decreases with level.",
-						"Basic"				= "You have had thorough basic training in EVA operations, and are unlikely to make novice mistakes. However, you have little experience working in vacuum.",
-						"Trained"			= "You can comfortably use a space suit and do so regularly in the course of your work. Checking your internals is second nature to you, and you don't panic in an emergency.<br>- You can fully operate jetpacks.",
-						"Experienced"		= "You can use all kinds of space suits, including specialized versions. Your years of experience in EVA keep you from being disoriented in space, and you have experience using a jetpack to move around. <br>- You cannot slip anymore.",
-						"Master"		= "You are just as much at home in a vacuum as in atmosphere. You probably do your job almost entirely EVA.<br>- You cannot get floored anymore.<br>- You get bonus speed in zero-G.")
-
-/decl/hierarchy/skill/general/EVA/mech
-	ID = "exosuit"
-	name = "Exosuit Operation"
-	desc = "Allows you to operate exosuits well."
-	levels = list("Untrained" = "You are unfamiliar with exosuit controls, and if you attempt to use them you are liable to make mistakes.",
-		"Trained" = "You are proficient in exosuit operation and safety, and can use them without penalties.")
-	prerequisites = list(SKILL_EVA = SKILL_TRAINED)
-	default_max = SKILL_BASIC
-	difficulty = SKILL_AVERAGE
 
 /decl/hierarchy/skill/general/pilot
 	ID = "pilot"
@@ -150,6 +103,16 @@ GLOBAL_LIST_EMPTY(skills)
 						"Trained"			= "At this level, you're probably working with computers on a daily basis. You understand and can repair the telecommunications network. Your understanding of AI programming and psychology lets you fix problems with the AIs or cyborgs--or create problems, if you so desire. You can program computers and AIs and change their laws effectively.<br>- You can fully operate the Network Monitor, E-mail Administration, and AI Management Programs.",
 						"Experienced"		= "You have years of experience with computer networks, AI systems, telecommunications, and sysadmin tasks. You know the systems used on a daily basis intimately, and can diagnose complex problems.<br>- The antagonist dos program gives extra fake attacking nodes to the system log.<br>- You can use the command line on modular computers (type \"man\" for a list).",
 						"Master"		= "People are probably starting to wonder whether you might be a computer yourself. Computer code is your first language; you relate to AIs as easily as (probably more easily than) organics. You could build a telecommunications network from the ground up.")
+
+/decl/hierarchy/skill/general/finance
+	ID = "finance"
+	name = "Finance"
+	desc = "Your ability to manage money and investments."
+	levels = list( "Unskilled"			= "Your understanding of money starts and ends with personal finance. While you are able to perform basic transactions, you get lost in the details, and can find yourself ripped off on occasion.<br>- You get some starting money. Its amount increases with level.<br>- You can use the verb \"Appraise\" to see the value of different objects.",
+						"Basic"				= "You have some limited understanding of financial transactions, and will generally be able to keep accurate records. You have little experience with investment, and managing large sums of money will likely go poorly for you.",
+						"Trained"			= "You are good at managing accounts, keeping records, and arranging transactions. You have some familiarity with mortgages, insurance, stocks, and bonds, but may be stumped when facing more complicated financial devices.",
+						"Experienced"		= "With your experience, you are familiar with any financial entities you may run across, and are a shrewd judge of value. More often than not, investments you make will pan out well.",
+						"Master"		= "You have an excellent knowledge of finance, will often make brilliant investments, and have an instinctive feel for interstellar economics. Financial instruments are weapons in your hands. You likely have professional experience in the finance industry.")
 
 // Category: Service
 
