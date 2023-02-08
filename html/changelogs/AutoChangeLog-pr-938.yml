@@ -1,0 +1,11 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscdel: Removed Bureaucracy skill, which had no in-game use and was basically
+      ignored roleplay-wise.
+  - rscdel: Removed EVA and Mech skills from the game. Space-related EVA uses have
+      been moved to the Athletic skill, and Mech references have been changed to the
+      Piloting skill.
+  - code_imp: The formatting of most jobs' skills has been improved.
+  - code_imp: The Finance skill has been moved to the General category of skills.
+      The Organizational category, being empty, has been removed.
