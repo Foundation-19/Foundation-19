@@ -21524,10 +21524,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/maintenance)
-"bkv" = (
-/obj/effect/catwalk_plated/white,
-/turf/space,
-/area/site53/ulcz/hallways)
 "bkw" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/door/airlock/glass/security{
@@ -27246,7 +27242,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/space,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp500{
 	requires_power = 0
 	})
@@ -29626,7 +29622,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/space,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
 "mDU" = (
 /obj/structure/table/standard,
@@ -32256,7 +32252,7 @@
 	name = "Heavy Containment Maintenance";
 	req_access = list("ACCESS_ENGINEERING_LEVEL1")
 	},
-/turf/space,
+/turf/simulated/floor,
 /area/site53/engineering/primaryhallway)
 "qtP" = (
 /obj/structure/closet/secure_closet/mtf/enlisted/hcz,
@@ -43855,7 +43851,7 @@ aGM
 bko
 aGM
 aGM
-bkv
+aKq
 bko
 asA
 aIo
