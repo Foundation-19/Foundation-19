@@ -1,4 +1,0 @@
-author: Tsurupeta
-delete-after: true
-changes:
-  - bugfix: removed space tiles from places on maps where they shouldn't be

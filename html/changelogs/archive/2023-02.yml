@@ -21,6 +21,8 @@
   - imagedel: Deleted new HUD.
   - code_imp: Re-enables borgs again.
 2023-02-08:
+  Tsurupeta:
+  - bugfix: removed space tiles from places on maps where they shouldn't be
   Yawet330:
   - balance: Blood/Bleed changes, heart-rate affects bleeding, arterial bleed buffs,
       hit-chance changes + nerfs in some areas. This is experimental and will be subject
