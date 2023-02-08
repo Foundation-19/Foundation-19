@@ -220,12 +220,15 @@
 /turf/simulated/wall/ex_act(severity)
 	if(prob(explosion_resistance))
 		return
-	if(severity == 1)
+	if(severity == EXPLODE_DEVASTATE)
 		var/turf/below = GetBelow(src)
+		var/turf/above = GetAbove(src)
+		if(istype(above, get_roof_turf()))
+			above.ChangeTurf(/turf/simulated/open)
 		if(below && below.get_roof_turf())
 			ChangeTurf(below.get_roof_turf())
 		else
-			ChangeTurf(get_base_turf(src.z))
+			ChangeTurf(get_base_turf_by_area(src))
 		return
 	..()
 

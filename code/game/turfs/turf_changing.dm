@@ -1,6 +1,10 @@
 /turf/proc/ReplaceWithLattice(var/material)
-	if(type != /turf/simulated/open) //tbh, we just need this to return open space, since I'm pretty sure the only thing that calls this is ladders
-		src.ChangeTurf(/turf/simulated/open)
+	var/turf/below = GetBelow(src)
+	if(type != /turf/simulated/open)
+		if(!below)
+			ChangeTurf(get_base_turf(z))
+		else
+			ChangeTurf(/turf/simulated/open)
 	if(!locate(/obj/structure/lattice) in src)
 		new /obj/structure/lattice(src, material)
 
