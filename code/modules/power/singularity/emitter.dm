@@ -22,7 +22,7 @@
 	var/shot_number = 0
 	var/state = EMITTER_LOOSE
 	var/locked = FALSE
-	core_skill = SKILL_ELECTRICAL
+	core_skill = SKILL_ENGINES
 
 	uncreated_component_parts = list(
 		/obj/item/stock_parts/radio/receiver,

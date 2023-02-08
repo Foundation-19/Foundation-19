@@ -49,6 +49,7 @@
 	emag = /obj/item/gun/energy/plasmacutter
 	skills = list(
 		SKILL_ATMOS        = SKILL_EXPERIENCED,
+		SKILL_ENGINES      = SKILL_EXPERIENCED,
 		SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
 		SKILL_ELECTRICAL   = SKILL_EXPERIENCED
 	)

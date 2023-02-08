@@ -25,6 +25,7 @@
 #define SKILL_CONSTRUCTION  /decl/hierarchy/skill/engineering/construction
 #define SKILL_ELECTRICAL    /decl/hierarchy/skill/engineering/electrical
 #define SKILL_ATMOS         /decl/hierarchy/skill/engineering/atmos
+#define SKILL_ENGINES       /decl/hierarchy/skill/engineering/engines
 #define SKILL_DEVICES       /decl/hierarchy/skill/research/devices
 #define SKILL_SCIENCE       /decl/hierarchy/skill/research/science
 #define SKILL_MEDICAL       /decl/hierarchy/skill/medical/medical

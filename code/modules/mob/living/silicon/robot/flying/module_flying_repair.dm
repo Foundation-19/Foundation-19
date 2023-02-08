@@ -52,6 +52,7 @@
 	emag = /obj/item/melee/baton/robot/electrified_arm
 	skills = list(
 		SKILL_ATMOS        = SKILL_MASTER,
+		SKILL_ENGINES      = SKILL_MASTER,
 		SKILL_CONSTRUCTION = SKILL_MASTER,
 		SKILL_ELECTRICAL   = SKILL_MASTER
 	)
