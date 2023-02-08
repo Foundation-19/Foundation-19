@@ -163,7 +163,7 @@
 				if(beep)
 					playsound(src, 'sound/machines/ekg_alert.ogg', 40)
 				if(read_alerts)
-					alerts[PULSE_ALERT] = "Excessive heartbeat! Possible Shock Detected!"
+					alerts[PULSE_ALERT] = "Heart-rate exceeding 250BPM, Possible Shock Detected! Patient Expiry likely!"
 	else
 		add_overlay(image(icon, icon_state = "pulse_warning"))
 
@@ -183,7 +183,7 @@
 				add_overlay(image(icon, icon_state = "brain_verybad"))
 				add_overlay(image(icon, icon_state = "brain_warning"))
 				if(read_alerts)
-					alerts[BRAIN_ALERT] = "Very weak brain activity!"
+					alerts[BRAIN_ALERT] = "Very weak brain activity! Patient is approaching unrevivable thresholds!"
 	else
 		add_overlay(image(icon, icon_state = "brain_warning"))
 
@@ -197,7 +197,7 @@
 		else if(lungs.breath_fail_ratio < 1)
 			add_overlay(image(icon, icon_state = "breathing_shallow"))
 			if(read_alerts)
-				alerts[LUNGS_ALERT] = "Abnormal breathing detected!"
+				alerts[LUNGS_ALERT] = "Abnormality in patient's breathing detected!"
 		else
 			add_overlay(image(icon, icon_state = "breathing_warning"))
 			if(read_alerts)
