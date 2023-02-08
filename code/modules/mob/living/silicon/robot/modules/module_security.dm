@@ -17,7 +17,6 @@
 		SKILL_COMBAT      = SKILL_EXPERIENCED,
 		SKILL_WEAPONS     = SKILL_EXPERIENCED,
 		SKILL_FORENSICS   = SKILL_EXPERIENCED,
-		SKILL_BUREAUCRACY = SKILL_TRAINED
 	)
 
 /obj/item/robot_module/security/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)

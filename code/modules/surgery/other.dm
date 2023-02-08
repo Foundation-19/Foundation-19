@@ -113,7 +113,7 @@
 	return TRUE
 
 /decl/surgery_step/hardsuit/get_skill_reqs(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
-	return list(SKILL_EVA = SKILL_BASIC)
+	return SURGERY_SKILLS_ROBOTIC_ON_MEAT
 
 /decl/surgery_step/hardsuit/can_use(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	if(!istype(target))
