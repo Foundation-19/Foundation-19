@@ -467,7 +467,7 @@ var/list/global/tank_gauge_cache = list()
 			if(!T)
 				return
 
-			T.assume_air(air_contents)
+			//T.assume_air(air_contents) // Commented out until hot air is "rebalanced". ~Tsurupeta
 			explosion(
 				get_turf(loc),
 				round(min(BOMBCAP_DVSTN_RADIUS, ((mult)*strength)*0.15)),
@@ -497,7 +497,7 @@ var/list/global/tank_gauge_cache = list()
 			var/turf/simulated/T = get_turf(src)
 			if(!T)
 				return
-			T.assume_air(air_contents)
+			//T.assume_air(air_contents) // Commented out until hot air is "rebalanced". ~Tsurupeta
 			playsound(get_turf(src), 'sound/weapons/gunshot/shotgun.ogg', 20, 1)
 			visible_message("[icon2html(src, viewers(get_turf(src)))] <span class='danger'>\The [src] flies apart!</span>", "<span class='warning'>You hear a bang!</span>")
 			T.hotspot_expose(air_contents.temperature, 70, 1)

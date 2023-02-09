@@ -164,3 +164,13 @@
 	desc = "15 units of a tasteless dye that causes chemical mixtures to take on the color of the dye itself. \
 			Very useful for disguising poisons to the untrained eye; even large amounts of reagents can be fully recolored with only a few drops of dye. \
 			Like the mundane variety of polychromic dye, you can use the bottle in your hand to change the dye's color to suit your needs."
+
+/datum/uplink_item/item/tools/c4explosive
+	name = "Small Package Bomb"
+	item_cost = 30
+	path = /obj/item/syndie/c4explosive
+
+/datum/uplink_item/item/tools/c4explosive/heavy
+	name = "Large Package Bomb"
+	item_cost = 60
+	path = /obj/item/syndie/c4explosive/heavy
