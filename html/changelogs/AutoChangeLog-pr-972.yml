@@ -1,0 +1,4 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - bugfix: Break room in LCZ security is now actually accessible.
