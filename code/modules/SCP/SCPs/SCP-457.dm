@@ -26,7 +26,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 	can_be_buckled = FALSE
 
 	var/aflame_cooldown
-	var/aflame_cooldown_time = 2.8 SECONDS
+	var/aflame_cooldown_time = 1.8 SECONDS
 
 	var/area/spawn_area
 
@@ -61,7 +61,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 			if(prob(35))
 				visible_message(SPAN_WARNING("[src] begins to initiate agony in [A]!"))
 				if(do_after(src, 1 SECOND, H))
-					H.Weaken(25)
+					H.Weaken(10)
 					H.visible_message("<span class='danger'>[src] claws at [H], the flame sending them to the floor!</span>")
 					to_chat(H, "<span class='userdanger'>IT HURTS!!!</span>")
 					aflame_cooldown = world.time + aflame_cooldown_time
@@ -139,3 +139,6 @@ GLOBAL_LIST_EMPTY(scp457s)
 
 /mob/living/scp_457/movement_delay()
 	return 3
+
+/datum/reagent/water/touch_mob(var/mob/living/scp_457/L)
+	L.Weaken(10)
