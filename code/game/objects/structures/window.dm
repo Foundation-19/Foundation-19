@@ -183,10 +183,17 @@
 	qdel(src)
 
 /obj/structure/window/ex_act(severity)
-	if(severity == 1)
-		qdel(src)
-		return
-	..()
+	switch(severity)
+		if(EXPLODE_DEVASTATE)
+			qdel(src)
+			return
+		if(EXPLODE_HEAVY)
+			shatter(0)
+			return
+		if(EXPLODE_LIGHT)
+			if(prob(50))
+				shatter(0)
+				return
 
 /obj/structure/window/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(istype(mover) && mover.checkpass(PASS_FLAG_GLASS))

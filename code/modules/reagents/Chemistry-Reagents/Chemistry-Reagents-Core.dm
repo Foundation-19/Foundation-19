@@ -230,11 +230,12 @@
 /datum/reagent/fuel/ex_act(obj/item/reagent_containers/holder, severity)
 	if(volume <= 50)
 		return
+	/* Commented out due to extreme lethality of fires. Will decide what to do with this code later depending on fate of atmos. ~Tsurupeta
 	var/turf/T = get_turf(holder)
 	var/datum/gas_mixture/products = new(_temperature = 5 * PHORON_FLASHPOINT)
 	var/gas_moles = 3 * volume
 	products.adjust_multi(GAS_NO, 0.1 * gas_moles, GAS_NO2, 0.1 * gas_moles, GAS_NITROGEN, 0.6 * gas_moles, GAS_HYDROGEN, 0.02 * gas_moles)
-	T.assume_air(products)
+	T.assume_air(products) */
 	if(volume > 500)
 		explosion(T,1,2,4)
 	else if(volume > 100)
