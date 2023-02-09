@@ -13,13 +13,13 @@ GLOBAL_LIST_EMPTY(scp457s)
 	SCP = /datum/scp/scp_457
 	status_flags = NO_ANTAG
 	var/door_cooldown
-	var/fuel = 30 //unused as time of coding
+	var/fuelh = 100
+
+	health = 300
+	maxHealth = 300
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
-
-	maxHealth = 2000
-	health = 2000
 
 	can_pull_size = 3
 	a_intent = "harm"
@@ -50,31 +50,35 @@ GLOBAL_LIST_EMPTY(scp457s)
 	if(H.SCP)
 		to_chat(src, "<span class='warning'><I>[H] is a fellow SCP!</I></span>")
 		return
+	if(H.stat == DEAD)
+		to_chat(src, "<span class='warning'><I>[H] is dead, it no longer can provide you with fuel.</I></span>")
+		return
 	if(istype(H))
 		if(aflame_cooldown > world.time)
 			to_chat(src, "<span class='warning'>You can't attack yet.</span>")
 			return
 		else
 			if(prob(35))
-				H.Weaken(50)
-				H.visible_message("<span class='danger'>[src] claws at [H], the flame sending them to the floor!</span>")
-				to_chat(H, "<span class='userdanger'>IT HURTS!!!</span>")
-				aflame_cooldown = world.time + aflame_cooldown_time
+				visible_message(SPAN_WARNING("[src] begins to initiate agony in [A]!"))
+				if(do_after(src, 1 SECOND, H))
+					H.Weaken(25)
+					H.visible_message("<span class='danger'>[src] claws at [H], the flame sending them to the floor!</span>")
+					to_chat(H, "<span class='userdanger'>IT HURTS!!!</span>")
+					aflame_cooldown = world.time + aflame_cooldown_time
 				return
 			else
-				H.fire_stacks += 1
-				H.IgniteMob()
-				aflame_cooldown = world.time + aflame_cooldown_time
-				visible_message("<span class='danger'>[src] claws at [A] setting them alight!</span>")
-				to_chat(H, "<span class='userdanger'>Oh god, oh god. OH GOD! IT HURTS! PLEASE!</span>")
-				return
-	if(H.stat == DEAD)
-		to_chat(src, "<span class='warning'><I>[H] is dead, it no longer can provide you with fuel.</I></span>")
-		return
+				visible_message(SPAN_WARNING("[src] raises their firey arms and begins to attack [A]!"))
+				if(do_after(src, 3 SECONDS, H))
+					H.fire_stacks += 1
+					H.IgniteMob()
+					aflame_cooldown = world.time + aflame_cooldown_time
+					visible_message("<span class='danger'>[src] claws at [A] setting them alight!</span>")
+					to_chat(H, "<span class='userdanger'>Oh god, oh god. OH GOD! IT HURTS! PLEASE!</span>")
+					return
 	if(istype(A, /obj/machinery/door))
 		OpenDoor(A)
 		return
-	if(istype(A,/obj/structure/grille))
+	if(istype(A, /obj/structure/grille))
 		playsound(get_turf(A), 'sound/effects/grillehit.ogg', 50, 1)
 		qdel(A)
 		return
@@ -132,3 +136,6 @@ GLOBAL_LIST_EMPTY(scp457s)
 	A.stat |= BROKEN
 	var/check = A.open(1)
 	src.visible_message("\The [src] melts \the [A]'s controls[check ? ", and rips it open!" : ", and breaks it!"]")
+
+/mob/living/scp_457/movement_delay()
+	return 3

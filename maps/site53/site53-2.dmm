@@ -22023,6 +22023,12 @@
 /obj/item/modular_computer/pda/science,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
+"bXF" = (
+/obj/machinery/camera/network/hcz{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/site53/uhcz/scp457containment)
 "bXP" = (
 /obj/machinery/camera/autoname{
 	network = list("Entrance Zone Network")
@@ -30485,6 +30491,12 @@
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
+"nKv" = (
+/obj/machinery/camera/network/hcz{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp457containment)
 "nLc" = (
 /obj/structure/closet,
 /obj/item/clothing/suit/chef,
@@ -85787,7 +85799,7 @@ oxd
 daA
 daA
 daA
-sdl
+bXF
 soj
 ibW
 soj
@@ -88097,7 +88109,7 @@ soj
 soj
 uaW
 osa
-pME
+nKv
 nAb
 pME
 osa
