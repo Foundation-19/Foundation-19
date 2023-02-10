@@ -1,5 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - rscdel: Backpacks in role-based loadouts were removed.
-  - bugfix: Double backpack on spawn fixed.

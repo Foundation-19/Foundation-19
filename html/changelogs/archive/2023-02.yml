@@ -39,3 +39,5 @@
 2023-02-10:
   cheesePizza2:
   - bugfix: Break room in LCZ security is now actually accessible.
+  - rscdel: Backpacks in role-based loadouts were removed.
+  - bugfix: Double backpack on spawn fixed.
