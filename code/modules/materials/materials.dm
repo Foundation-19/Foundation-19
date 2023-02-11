@@ -126,7 +126,7 @@ var/list/name_to_material
 	var/rotting_touch_message = "crumbles under your touch"
 
 // Placeholders for light tiles and rglass.
-/material/proc/build_rod_product(var/mob/user, var/obj/item/stack/used_stack, var/obj/item/stack/target_stack)
+/material/proc/build_rod_product(mob/user, obj/item/stack/used_stack, obj/item/stack/target_stack)
 	if(!rod_product)
 		to_chat(user, "<span class='warning'>You cannot make anything out of \the [target_stack]</span>")
 		return
@@ -142,7 +142,7 @@ var/list/name_to_material
 	S.add_fingerprint(user)
 	S.add_to_stacks(user)
 
-/material/proc/build_wired_product(var/mob/user, var/obj/item/stack/used_stack, var/obj/item/stack/target_stack)
+/material/proc/build_wired_product(mob/user, obj/item/stack/used_stack, obj/item/stack/target_stack)
 	if(!wire_product)
 		to_chat(user, "<span class='warning'>You cannot make anything out of \the [target_stack]</span>")
 		return
@@ -175,7 +175,7 @@ var/list/name_to_material
 		burn_armor = brute_armor
 
 // This is a placeholder for proper integration of windows/windoors into the system.
-/material/proc/build_windows(var/mob/living/user, var/obj/item/stack/used_stack)
+/material/proc/build_windows(mob/living/user, obj/item/stack/used_stack)
 	return 0
 
 // Weapons handle applying a divisor for this value locally.
@@ -197,7 +197,7 @@ var/list/name_to_material
 	return hardness //todo
 
 // Snowflakey, only checked for alien doors at the moment.
-/material/proc/can_open_material_door(var/mob/living/user)
+/material/proc/can_open_material_door(mob/living/user)
 	return 1
 
 // Currently used for weapons and objects made of uranium to irradiate things.
@@ -209,7 +209,7 @@ var/list/name_to_material
 	name = "placeholder"
 
 // Places a girder object when a wall is dismantled, also applies reinforced material.
-/material/proc/place_dismantled_girder(var/turf/target, var/material/reinf_material)
+/material/proc/place_dismantled_girder(turf/target, material/reinf_material)
 	var/obj/structure/girder/G = new(target)
 	if(reinf_material)
 		G.reinf_material = reinf_material
@@ -217,17 +217,17 @@ var/list/name_to_material
 
 // General wall debris product placement.
 // Not particularly necessary aside from snowflakey cult girders.
-/material/proc/place_dismantled_product(var/turf/target,var/is_devastated)
+/material/proc/place_dismantled_product(turf/target,is_devastated)
 	for(var/x=1;x<(is_devastated?2:3);x++)
 		place_sheet(target)
 
 // Debris product. Used ALL THE TIME.
-/material/proc/place_sheet(var/turf/target)
+/material/proc/place_sheet(turf/target)
 	if(stack_type)
 		return new stack_type(target)
 
 // As above.
-/material/proc/place_shard(var/turf/target)
+/material/proc/place_shard(turf/target)
 	if(shard_type)
 		return new /obj/item/weapon/material/shard(target, src.name)
 
@@ -235,7 +235,7 @@ var/list/name_to_material
 /material/proc/is_brittle()
 	return !!(flags & MATERIAL_BRITTLE)
 
-/material/proc/combustion_effect(var/turf/T, var/temperature)
+/material/proc/combustion_effect(turf/T, temperature)
 	return
 
 // Datum definitions follow.
@@ -316,7 +316,7 @@ var/list/name_to_material
 
 
 //Controls phoron and phoron based objects reaction to being in a turf over 200c -- Phoron's flashpoint.
-/material/phoron/combustion_effect(var/turf/T, var/temperature, var/effect_multiplier)
+/material/phoron/combustion_effect(turf/T, temperature, effect_multiplier)
 	if(isnull(ignition_point))
 		return 0
 	if(temperature < ignition_point)
@@ -378,7 +378,7 @@ var/list/name_to_material
 /material/diona/place_dismantled_product()
 	return
 
-/material/diona/place_dismantled_girder(var/turf/target)
+/material/diona/place_dismantled_girder(turf/target)
 	spawn_diona_nymph(target)
 
 /material/steel/holographic
@@ -454,7 +454,7 @@ var/list/name_to_material
 	hitsound = 'sound/effects/Glasshit.ogg'
 	conductive = 0
 
-/material/glass/build_windows(var/mob/living/user, var/obj/item/stack/used_stack)
+/material/glass/build_windows(mob/living/user, obj/item/stack/used_stack)
 
 	if(!user || !used_stack || !created_window || !window_options.len)
 		return 0
@@ -740,7 +740,7 @@ var/list/name_to_material
 	sheet_plural_name = "bricks"
 	conductive = 0
 
-/material/cult/place_dismantled_girder(var/turf/target)
+/material/cult/place_dismantled_girder(turf/target)
 	new /obj/structure/girder/cult(target)
 
 /material/cult/reinf
@@ -757,7 +757,7 @@ var/list/name_to_material
 	sheet_plural_name = "blobs"
 	conductive = 0
 
-/material/resin/can_open_material_door(var/mob/living/user)
+/material/resin/can_open_material_door(mob/living/user)
 	var/mob/living/carbon/M = user
 	if(istype(M) && locate(/obj/item/organ/internal/xenos/hivenode) in M.internal_organs)
 		return 1
@@ -783,7 +783,7 @@ var/list/name_to_material
 	melting_point = rand(400,10000)
 	..()
 
-/material/aliumium/place_dismantled_girder(var/turf/target, var/material/reinf_material)
+/material/aliumium/place_dismantled_girder(turf/target, material/reinf_material)
 	return
 
 //TODO PLACEHOLDERS:
