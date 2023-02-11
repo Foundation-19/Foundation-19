@@ -161,7 +161,7 @@
 	color = "#3366ff"
 	contract_spells = list(/datum/spell/contract/return_master) //somewhat of a necessity due to how many spells they would have after a while.
 
-/obj/item/contract/apprentice/skrell/New(var/newloc,var/spellbook, var/owner)
+/obj/item/contract/apprentice/skrell/New(newloc,spellbook, owner)
 	..()
 	if(istype(spellbook,/obj/item/spellbook))
 		linked = spellbook

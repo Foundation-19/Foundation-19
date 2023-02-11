@@ -18,7 +18,7 @@
 	var/smashing = 0
 	var/soulstatus = null
 
-/obj/item/device/soulstone/Initialize(var/mapload)
+/obj/item/device/soulstone/Initialize(mapload)
 	shade = new /mob/living/simple_animal/shade(src)
 	. = ..(mapload)
 
@@ -31,7 +31,7 @@
 		new /obj/item/material/shard(get_turf(src), MATERIAL_NULLGLASS)
 	qdel(src)
 
-/obj/item/device/soulstone/withstand_psi_stress(var/stress, var/atom/source)
+/obj/item/device/soulstone/withstand_psi_stress(stress, atom/source)
 	. = ..(stress, source)
 	if(. > 0)
 		. = max(0, . - rand(2,5))
@@ -63,7 +63,7 @@
 		icon_state = "soulstone"//TODO: cracked sprite
 		SetName("cracked soulstone")
 
-/obj/item/device/soulstone/attackby(var/obj/item/I, var/mob/user)
+/obj/item/device/soulstone/attackby(obj/item/I, mob/user)
 	..()
 	if(is_evil && istype(I, /obj/item/nullrod))
 		to_chat(user, "<span class='notice'>You cleanse \the [src] of taint, purging its shackles to its creator..</span>")
@@ -78,7 +78,7 @@
 			user.visible_message("<span class='danger'>\The [user] shatters \the [src] with \the [I]!</span>")
 			shatter()
 
-/obj/item/device/soulstone/attack(var/mob/living/simple_animal/M, var/mob/user)
+/obj/item/device/soulstone/attack(mob/living/simple_animal/M, mob/user)
 	if(M == shade)
 		to_chat(user, "<span class='notice'>You recapture \the [M].</span>")
 		M.forceMove(src)
@@ -94,7 +94,7 @@
 	M.dust()
 	set_full(SOULSTONE_ESSENCE)
 
-/obj/item/device/soulstone/attack_self(var/mob/user)
+/obj/item/device/soulstone/attack_self(mob/user)
 	if(full != SOULSTONE_ESSENCE) // No essence - no shade
 		to_chat(user, "<span class='notice'>This [src] has no life essence.</span>")
 		return
@@ -115,7 +115,7 @@
 		if(choice == "No")
 			return
 
-/obj/item/device/soulstone/proc/set_full(var/f)
+/obj/item/device/soulstone/proc/set_full(f)
 	full = f
 	update_icon()
 
@@ -129,7 +129,7 @@
 	icon_state = "construct-cult"
 	desc = "This eerie contraption looks like it would come alive if supplied with a missing ingredient."
 
-/obj/structure/constructshell/attackby(var/obj/item/I, var/mob/user)
+/obj/structure/constructshell/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/device/soulstone))
 		var/obj/item/device/soulstone/S = I
 		if(!S.shade.client)

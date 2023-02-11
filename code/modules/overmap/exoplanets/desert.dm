@@ -17,7 +17,7 @@
 		atmosphere.temperature = T20C + rand(20, 100)
 		atmosphere.update_values()
 
-/obj/effect/overmap/sector/exoplanet/desert/adapt_seed(var/datum/seed/S)
+/obj/effect/overmap/sector/exoplanet/desert/adapt_seed(datum/seed/S)
 	..()
 	if(prob(90))
 		S.set_trait(TRAIT_REQUIRES_WATER,0)
@@ -118,7 +118,7 @@
 	..()
 	update_icon()
 
-/obj/structure/quicksand/buckle_mob(var/mob/L)
+/obj/structure/quicksand/buckle_mob(mob/L)
 	..()
 	update_icon()
 

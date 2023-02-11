@@ -116,7 +116,7 @@
 
 	. = ..()
 
-/obj/item/robot_module/flying/ascent/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/flying/ascent/respawn_consumable(mob/living/silicon/robot/R, amount)
 	var/obj/item/stack/medical/resin/drone/resin = locate() in equipment
 	if(!resin)
 		resin = new(src, amount = 1)

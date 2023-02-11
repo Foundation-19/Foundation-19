@@ -37,7 +37,7 @@
 	updatename()
 	to_chat(src, "<span class='notice'><b>You have shunted your primary control loop into \a [initial(name)].</b> Use the <b>Release Control</b> verb to return to your core.</span>")
 
-/obj/machinery/drone_fabricator/attack_ai(var/mob/living/silicon/ai/user)
+/obj/machinery/drone_fabricator/attack_ai(mob/living/silicon/ai/user)
 
 	if(!istype(user) || user.controlling_drone || !config.allow_drone_spawn)
 		return

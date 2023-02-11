@@ -21,14 +21,14 @@
 	icon_state = "strange"
 	origin_tech = list(TECH_MATERIAL = 5)
 
-/obj/item/ore/strangerock/New(loc, var/inside_item_type = 0)
+/obj/item/ore/strangerock/New(loc, inside_item_type = 0)
 	..(loc)
 
 	if(inside_item_type)
 		var/T = get_archeological_find_by_findtype(inside_item_type)
 		new T(src)
 
-/obj/item/ore/strangerock/attackby(var/obj/item/I, var/mob/user)
+/obj/item/ore/strangerock/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/pickaxe/xeno/brush))
 		var/obj/item/inside = locate() in src
 		if(inside)

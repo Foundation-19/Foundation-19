@@ -137,7 +137,7 @@
 	else
 		aw_EPR = FALSE
 
-/obj/machinery/power/supermatter/proc/status_adminwarn_check(var/min_status, var/current_state, var/message, var/send_to_irc = FALSE)
+/obj/machinery/power/supermatter/proc/status_adminwarn_check(min_status, current_state, message, send_to_irc = FALSE)
 	var/status = get_status()
 	if(status >= min_status)
 		if(!current_state)
@@ -273,7 +273,7 @@
 			to_chat(user, "Eyeballing it, you place the relative EER at around [display_power] MeV/cm3.")
 
 //Changes color and luminosity of the light to these values if they were not already set
-/obj/machinery/power/supermatter/proc/shift_light(var/lum, var/clr)
+/obj/machinery/power/supermatter/proc/shift_light(lum, clr)
 	if(lum != light_outer_range || clr != light_color)
 		set_light(1, 0.1, lum, l_color = clr)
 
@@ -419,7 +419,7 @@
 	return 1
 
 
-/obj/machinery/power/supermatter/bullet_act(var/obj/item/projectile/Proj)
+/obj/machinery/power/supermatter/bullet_act(obj/item/projectile/Proj)
 	var/turf/L = loc
 	if(!istype(L))		// We don't run process() when we are in space
 		return 0	// This stops people from being able to really power up the supermatter
@@ -455,7 +455,7 @@
 	Consume(user)
 
 // This is purely informational UI that may be accessed by AIs or robots
-/obj/machinery/power/supermatter/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
+/obj/machinery/power/supermatter/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
 	var/data[0]
 
 	data["integrity_percentage"] = round(get_integrity())
@@ -518,7 +518,7 @@
 	Consume(AM)
 
 
-/obj/machinery/power/supermatter/proc/Consume(var/mob/living/user)
+/obj/machinery/power/supermatter/proc/Consume(mob/living/user)
 	if(istype(user))
 		user.dust()
 		power += 200
@@ -547,7 +547,7 @@
 /obj/machinery/power/supermatter/RepelAirflowDest(n)
 	return
 
-/obj/machinery/power/supermatter/ex_act(var/severity)
+/obj/machinery/power/supermatter/ex_act(severity)
 	..()
 	switch(severity)
 		if(1.0)

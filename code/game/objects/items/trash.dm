@@ -8,7 +8,7 @@
 	desc = "This is rubbish."
 	var/age = 0
 
-/obj/item/trash/New(var/newloc, var/_age)
+/obj/item/trash/New(newloc, _age)
 	..(newloc)
 	if(!isnull(_age))
 		age = _age

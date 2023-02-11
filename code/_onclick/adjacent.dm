@@ -117,7 +117,7 @@
 	return 0
 
 // This is necessary for storage items not on your person.
-/obj/item/Adjacent(var/atom/neighbor, var/recurse = 1)
+/obj/item/Adjacent(atom/neighbor, recurse = 1)
 	if(neighbor == loc) return 1
 	if(istype(loc,/obj/item))
 		if(recurse > 0)

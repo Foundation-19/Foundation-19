@@ -96,7 +96,7 @@
 	real_one = null
 	. = ..()
 
-/obj/effect/bluegoast/proc/mirror(var/atom/movable/am, var/old_loc, var/new_loc)
+/obj/effect/bluegoast/proc/mirror(atom/movable/am, old_loc, new_loc)
 	var/ndir = get_dir(new_loc,old_loc)
 	appearance = real_one.appearance
 	var/nloc = get_step(src, ndir)
@@ -109,7 +109,7 @@
 		if(prob(20))
 			real_one.drowsyness = max(real_one.drowsyness, 3)
 
-/obj/effect/bluegoast/proc/mirror_dir(var/atom/movable/am, var/old_dir, var/new_dir)
+/obj/effect/bluegoast/proc/mirror_dir(atom/movable/am, old_dir, new_dir)
 	set_dir(GLOB.reverse_dir[new_dir])
 
 /obj/effect/bluegoast/examine()

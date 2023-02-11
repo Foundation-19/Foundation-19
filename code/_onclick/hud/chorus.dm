@@ -89,7 +89,7 @@
 	maptext_x = 62
 	maptext_y = 38
 
-/obj/screen/chorus_current_building/proc/update_to_building(var/datum/chorus_building/build)
+/obj/screen/chorus_current_building/proc/update_to_building(datum/chorus_building/build)
 	cut_overlays()
 	if(build)
 		var/image/I = build.get_image()
@@ -110,7 +110,7 @@
 	maptext_width = 92
 	maptext_height = 30
 
-/obj/screen/chorus_building_cost/proc/update_to_cost(var/list/cost)
+/obj/screen/chorus_building_cost/proc/update_to_cost(list/cost)
 	var/list/dat = list()
 	dat += {"
 	<p style=\"font-size:5px\">
@@ -159,7 +159,7 @@
 	icon_state = "resources"
 	maptext_width = 50
 
-/obj/screen/chorus_resource/proc/update_resource(var/print)
+/obj/screen/chorus_resource/proc/update_resource(print)
 	maptext = "<p style=\"font-size:5px\">[print]</p>"
 
 /obj/screen/chorus_build

@@ -32,7 +32,7 @@
 	else
 		to_chat(user, "It has a blank space for a signature.")
 
-/obj/item/card/union/attackby(var/obj/item/thing, var/mob/user)
+/obj/item/card/union/attackby(obj/item/thing, mob/user)
 	if(istype(thing, /obj/item/pen))
 		if(signed_by)
 			to_chat(user, SPAN_WARNING("\The [src] has already been signed."))
@@ -194,11 +194,11 @@ var/const/NO_EMAG_ACT = -50
 	for(var/detail in extra_details)
 		add_overlay(overlay_image(icon, detail, flags=RESET_COLOR))
 */
-/obj/item/card/id/CanUseTopic(var/user)
+/obj/item/card/id/CanUseTopic(user)
 	if(user in view(get_turf(src)))
 		return STATUS_INTERACTIVE
 
-/obj/item/card/id/OnTopic(var/mob/user, var/list/href_list)
+/obj/item/card/id/OnTopic(mob/user, list/href_list)
 	if(href_list["look_at_id"])
 		if(istype(user))
 			user.examinate(src)
@@ -232,7 +232,7 @@ var/const/NO_EMAG_ACT = -50
 	if(assignment)
 		. += ", [assignment]"
 
-/obj/item/card/id/proc/set_id_photo(var/mob/M)
+/obj/item/card/id/proc/set_id_photo(mob/M)
 	front = getFlatIcon(M, SOUTH, always_use_defdir = 1)
 	front.Crop(9, 18, 23, 32)
 	side = getFlatIcon(M, WEST, always_use_defdir = 1)
@@ -460,7 +460,7 @@ var/const/NO_EMAG_ACT = -50
 		else
 			to_chat(user, SPAN_NOTICE("This is the real deal, stamped by [GLOB.using_map.boss_name]. It gives the holder the full authority to pursue their goals. You believe it implicitly."))
 
-/obj/item/card/id/foundation/attack_self(var/mob/living/user)
+/obj/item/card/id/foundation/attack_self(mob/living/user)
 	. = ..()
 	if(istype(user))
 		for(var/mob/M in viewers(world.view, get_turf(user))-user)

@@ -42,7 +42,7 @@
 /atom/CanUseTopic(var/mob/user, var/datum/topic_state/state = DefaultTopicState() || GLOB.default_state, var/href_list)
 	return ..()
 
-/obj/CanUseTopic(var/mob/user, var/datum/topic_state/state = DefaultTopicState() || GLOB.default_state, var/href_list)
+/obj/CanUseTopic(mob/user, datum/topic_state/state = DefaultTopicState() || GLOB.default_state, href_list)
 	return min(..(), user.CanUseObjTopic(src, state))
 
 /mob/living/CanUseObjTopic(obj/O, datum/topic_state/state)

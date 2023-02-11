@@ -24,7 +24,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	return
 
 //I would prefer to rename this to attack(), but that would involve touching hundreds of files.
-/obj/item/proc/resolve_attackby(atom/A, mob/user, var/click_params)
+/obj/item/proc/resolve_attackby(atom/A, mob/user, click_params)
 	if(!(item_flags & ITEM_FLAG_NO_PRINT))
 		add_fingerprint(user)
 	return A.attackby(src, user, click_params)
@@ -103,7 +103,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	return 1
 
 //Called when a weapon is used to make a successful melee attack on a mob. Returns whether damage was dealt.
-/obj/item/proc/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
+/obj/item/proc/apply_hit_effect(mob/living/target, mob/living/user, hit_zone)
 	if(hitsound)
 		playsound(loc, hitsound, 50, 1, -1)
 

@@ -35,7 +35,7 @@
 	return 1 //doesn't require an external power source
 
 // common helper procs for all power machines
-/obj/machinery/power/drain_power(var/drain_check, var/surge, var/amount = 0)
+/obj/machinery/power/drain_power(drain_check, surge, amount = 0)
 	if(drain_check)
 		return 1
 
@@ -43,13 +43,13 @@
 		powernet.trigger_warning()
 		return powernet.draw_power(amount)
 
-/obj/machinery/power/proc/add_avail(var/amount)
+/obj/machinery/power/proc/add_avail(amount)
 	if(powernet)
 		powernet.newavail += amount
 		return 1
 	return 0
 
-/obj/machinery/power/proc/draw_power(var/amount)
+/obj/machinery/power/proc/draw_power(amount)
 	if(powernet)
 		return powernet.draw_power(amount)
 	return 0

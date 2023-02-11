@@ -10,7 +10,7 @@
 	var/bloodcolor //Used for gibbed humans.
 	var/datum/dna/MobDNA
 
-/obj/effect/gibspawner/New(location, var/datum/dna/MobDNA, var/fleshcolor, var/bloodcolor)
+/obj/effect/gibspawner/New(location, datum/dna/MobDNA, fleshcolor, bloodcolor)
 	..()
 
 	if(fleshcolor) src.fleshcolor = fleshcolor

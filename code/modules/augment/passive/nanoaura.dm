@@ -50,13 +50,13 @@
 	. = ..()
 	QDEL_NULL(aura)
 
-/obj/aura/nanoaura/Initialize(var/maploading, var/obj/item/organ/internal/augment/active/nanounit/holder)
+/obj/aura/nanoaura/Initialize(maploading, obj/item/organ/internal/augment/active/nanounit/holder)
 	. = ..()
 	unit = holder
 	playsound(loc,'sound/weapons/flash.ogg',35,1)
 	to_chat(loc,SPAN_NOTICE("Your skin tingles as the nanites spread over your body."))
 
-/obj/aura/nanoaura/bullet_act(var/obj/item/projectile/P, var/def_zone)
+/obj/aura/nanoaura/bullet_act(obj/item/projectile/P, def_zone)
 	if(!active)
 		return
 	if(unit.charges > 0)

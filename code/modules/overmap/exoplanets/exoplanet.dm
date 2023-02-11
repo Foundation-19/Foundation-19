@@ -103,7 +103,7 @@
 			daddy.group_multiplier = Z.air.group_multiplier
 			Z.air.equalize(daddy)
 
-/obj/effect/overmap/sector/exoplanet/proc/remove_animal(var/mob/M)
+/obj/effect/overmap/sector/exoplanet/proc/remove_animal(mob/M)
 	animals -= M
 	GLOB.death_event.unregister(M, src)
 	GLOB.destroyed_event.unregister(M, src)
@@ -114,7 +114,7 @@
 /obj/effect/overmap/sector/exoplanet/proc/generate_features()
 	seedRuins(map_z, features_budget, /area/exoplanet, possible_features, maxx, maxy)
 
-/obj/effect/overmap/sector/exoplanet/proc/get_biostuff(var/datum/random_map/noise/exoplanet/random_map)
+/obj/effect/overmap/sector/exoplanet/proc/get_biostuff(datum/random_map/noise/exoplanet/random_map)
 	seeds += random_map.small_flora_types
 	if(random_map.big_flora_types)
 		seeds += random_map.big_flora_types
@@ -132,7 +132,7 @@
 	for(var/mob/living/simple_animal/A in animals)
 		adapt_animal(A)
 
-/obj/effect/overmap/sector/exoplanet/proc/adapt_seed(var/datum/seed/S)
+/obj/effect/overmap/sector/exoplanet/proc/adapt_seed(datum/seed/S)
 	S.set_trait(TRAIT_IDEAL_HEAT,          atmosphere.temperature + rand(-5,5),800,70)
 	S.set_trait(TRAIT_HEAT_TOLERANCE,      S.get_trait(TRAIT_HEAT_TOLERANCE) + rand(-5,5),800,70)
 	S.set_trait(TRAIT_LOWKPA_TOLERANCE,    atmosphere.return_pressure() + rand(-5,-50),80,0)
@@ -145,7 +145,7 @@
 		if(gas_data.flags[g] & XGM_GAS_CONTAMINANT)
 			S.set_trait(TRAIT_TOXINS_TOLERANCE, rand(10,15))
 
-/obj/effect/overmap/sector/exoplanet/proc/adapt_animal(var/mob/living/simple_animal/A)
+/obj/effect/overmap/sector/exoplanet/proc/adapt_animal(mob/living/simple_animal/A)
 	if(species[A.type])
 		A.SetName(species[A.type])
 		A.real_name = species[A.type]
@@ -165,7 +165,7 @@
 /obj/effect/overmap/sector/exoplanet/proc/get_random_species_name()
 	return pick("nol","shan","can","fel","xor")+pick("a","e","o","t","ar")+pick("ian","oid","ac","ese","inian","rd")
 
-/obj/effect/overmap/sector/exoplanet/proc/rename_species(var/species_type, var/newname, var/force = FALSE)
+/obj/effect/overmap/sector/exoplanet/proc/rename_species(species_type, newname, force = FALSE)
 	if(species[species_type] && !force)
 		return FALSE
 

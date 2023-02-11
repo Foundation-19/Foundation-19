@@ -13,7 +13,7 @@
 	var/animal_heal = 3
 	var/apply_sounds
 
-/obj/item/stack/medical/proc/check_limb_state(var/mob/user, var/obj/item/organ/external/limb)
+/obj/item/stack/medical/proc/check_limb_state(mob/user, obj/item/organ/external/limb)
 	. = FALSE
 	if(BP_IS_CRYSTAL(limb))
 		to_chat(user, SPAN_WARNING("You cannot use \the [src] to treat a crystalline limb."))
@@ -22,7 +22,7 @@
 	else
 		. = TRUE
 
-/obj/item/stack/medical/attack(var/mob/living/carbon/M, var/mob/user)
+/obj/item/stack/medical/attack(mob/living/carbon/M, mob/user)
 
 	if (!istype(M))
 		to_chat(user, SPAN_WARNING("\The [src] cannot be applied to [M]!"))
@@ -75,7 +75,7 @@
 	apply_sounds = list('sound/effects/rip1.ogg','sound/effects/rip2.ogg')
 	amount = 10
 
-/obj/item/stack/medical/bruise_pack/attack(var/mob/living/carbon/M, var/mob/user)
+/obj/item/stack/medical/bruise_pack/attack(mob/living/carbon/M, mob/user)
 	if(..())
 		return 1
 
@@ -133,7 +133,7 @@
 	animal_heal = 4
 	apply_sounds = list('sound/effects/ointment.ogg')
 
-/obj/item/stack/medical/ointment/attack(var/mob/living/carbon/M, var/mob/user)
+/obj/item/stack/medical/ointment/attack(mob/living/carbon/M, mob/user)
 	if(..())
 		return 1
 
@@ -167,7 +167,7 @@
 	apply_sounds = list('sound/effects/rip1.ogg','sound/effects/rip2.ogg','sound/effects/tape.ogg')
 	amount = 10
 
-/obj/item/stack/medical/advanced/bruise_pack/attack(var/mob/living/carbon/M, var/mob/user)
+/obj/item/stack/medical/advanced/bruise_pack/attack(mob/living/carbon/M, mob/user)
 	if(..())
 		return 1
 
@@ -224,7 +224,7 @@
 	apply_sounds = list('sound/effects/ointment.ogg')
 
 
-/obj/item/stack/medical/advanced/ointment/attack(var/mob/living/carbon/M, var/mob/user)
+/obj/item/stack/medical/advanced/ointment/attack(mob/living/carbon/M, mob/user)
 	if(..())
 		return 1
 
@@ -260,13 +260,13 @@
 	animal_heal = 0
 	var/list/splintable_organs = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_L_HAND, BP_R_HAND, BP_L_FOOT, BP_R_FOOT)	//List of organs you can splint, natch.
 
-/obj/item/stack/medical/splint/check_limb_state(var/mob/user, var/obj/item/organ/external/limb)
+/obj/item/stack/medical/splint/check_limb_state(mob/user, obj/item/organ/external/limb)
 	if(BP_IS_ROBOTIC(limb))
 		to_chat(user, SPAN_WARNING("You cannot use \the [src] to treat a robotic limb."))
 		return FALSE
 	return TRUE
 
-/obj/item/stack/medical/splint/attack(var/mob/living/carbon/M, var/mob/user)
+/obj/item/stack/medical/splint/attack(mob/living/carbon/M, mob/user)
 	if(..())
 		return 1
 
@@ -335,13 +335,13 @@
 	heal_brute = 5
 	heal_burn =  5
 
-/obj/item/stack/medical/resin/check_limb_state(var/mob/user, var/obj/item/organ/external/limb)
+/obj/item/stack/medical/resin/check_limb_state(mob/user, obj/item/organ/external/limb)
 	if(!BP_IS_ROBOTIC(limb) && !BP_IS_CRYSTAL(limb))
 		to_chat(user, SPAN_WARNING("You cannot use \the [src] to treat an organic limb."))
 		return FALSE
 	return TRUE
 
-/obj/item/stack/medical/resin/attack(var/mob/living/carbon/M, var/mob/user)
+/obj/item/stack/medical/resin/attack(mob/living/carbon/M, mob/user)
 	. = ..()
 	if(!. && ishuman(M))
 		var/mob/living/carbon/human/H = M

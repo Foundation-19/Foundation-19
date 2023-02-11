@@ -12,7 +12,7 @@
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 6)
 	name = "[fish_type] fillet"
 // This will remove carp poison etc. Deliberate, meant to be similar to preparing pufferfish.
-/obj/item/reagent_containers/food/snacks/fish/attackby(var/obj/item/W, var/mob/user)
+/obj/item/reagent_containers/food/snacks/fish/attackby(obj/item/W, mob/user)
 	if(is_sharp(W) && (locate(/obj/structure/table) in loc))
 		var/mob/M = loc
 		if(istype(M) && !M.unEquip(src))

@@ -27,12 +27,12 @@
 		atmosphere.temperature = T20C + rand(220, 800)
 		atmosphere.update_values()
 
-/obj/effect/overmap/visitable/sector/exoplanet/volcanic/adapt_seed(var/datum/seed/S)
+/obj/effect/overmap/visitable/sector/exoplanet/volcanic/adapt_seed(datum/seed/S)
 	..()
 	S.set_trait(TRAIT_REQUIRES_WATER,0)
 	S.set_trait(TRAIT_HEAT_TOLERANCE, 1000 + S.get_trait(TRAIT_HEAT_TOLERANCE))
 
-/obj/effect/overmap/visitable/sector/exoplanet/volcanic/adapt_animal(var/mob/living/simple_animal/A)
+/obj/effect/overmap/visitable/sector/exoplanet/volcanic/adapt_animal(mob/living/simple_animal/A)
 	..()
 	A.heat_damage_per_tick = 0 //animals not hot, no burning in lava
 

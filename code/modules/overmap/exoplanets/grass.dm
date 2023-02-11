@@ -16,7 +16,7 @@
 		atmosphere.temperature = T20C + rand(10, 30)
 		atmosphere.update_values()
 
-/obj/effect/overmap/sector/exoplanet/grass/adapt_seed(var/datum/seed/S)
+/obj/effect/overmap/sector/exoplanet/grass/adapt_seed(datum/seed/S)
 	..()
 	var/carnivore_prob = rand(100)
 	if(carnivore_prob < 15)
@@ -83,6 +83,6 @@
 		resources["diamond"] = 1
 
 /turf/simulated/floor/exoplanet/grass/fire_act(datum/gas_mixture/air, temperature, volume)
-	if((temperature > T0C + 200 && prob(5)) || temperature > T0C + 1000) 
+	if((temperature > T0C + 200 && prob(5)) || temperature > T0C + 1000)
 		SetName("scorched ground")
 		icon_state = "scorched"

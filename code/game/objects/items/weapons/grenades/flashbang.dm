@@ -27,7 +27,7 @@
 // Called during the loop that bangs people in lockers/containers and when banging
 // people in normal view.  Could theroetically be called during other explosions.
 // -- Polymorph
-/obj/item/grenade/flashbang/proc/bang(var/turf/T , var/mob/living/carbon/M)
+/obj/item/grenade/flashbang/proc/bang(turf/T , mob/living/carbon/M)
 	to_chat(M, SPAN_DANGER("BANG"))
 	playsound(src, 'sound/weapons/flashbang.ogg', 70, 1, 30)
 

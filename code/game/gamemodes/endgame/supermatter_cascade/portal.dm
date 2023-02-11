@@ -27,7 +27,7 @@
 			M.see_rift(src)
 	eat()
 
-/obj/singularity/narsie/large/exit/acquire(var/mob/food)
+/obj/singularity/narsie/large/exit/acquire(mob/food)
 	return
 
 /obj/singularity/narsie/large/exit/consume(const/atom/A)

@@ -40,7 +40,7 @@
 
 	breakouttime = 300 //30 seconds
 
-/obj/item/handcuffs/wizard/dropped(var/mob/user)
+/obj/item/handcuffs/wizard/dropped(mob/user)
 	..()
 	qdel(src)
 

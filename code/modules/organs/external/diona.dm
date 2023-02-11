@@ -59,7 +59,7 @@
 	parent_organ = BP_CHEST
 	can_grasp = 1
 
-/obj/item/organ/external/diona/arm/stun_act(var/stun_amount, var/agony_amount)
+/obj/item/organ/external/diona/arm/stun_act(stun_amount, agony_amount)
 	if(!owner || (agony_amount < 5))
 		return
 	if(prob(25))
@@ -83,7 +83,7 @@
 	parent_organ = BP_GROIN
 	can_stand = 1
 
-/obj/item/organ/external/diona/leg/stun_act(var/stun_amount, var/agony_amount)
+/obj/item/organ/external/diona/leg/stun_act(stun_amount, agony_amount)
 	if(!owner || agony_amount < 5)
 		return
 	if(prob(min(agony_amount*2,50)))
@@ -109,7 +109,7 @@
 	parent_organ = BP_L_LEG
 	can_stand = 1
 
-/obj/item/organ/external/diona/foot/stun_act(var/stun_amount, var/agony_amount)
+/obj/item/organ/external/diona/foot/stun_act(stun_amount, agony_amount)
 	if(!owner || agony_amount < 5)
 		return
 	if(prob(min(agony_amount*4,50)))
@@ -137,7 +137,7 @@
 	parent_organ = BP_L_ARM
 	can_grasp = 1
 
-/obj/item/organ/external/diona/hand/stun_act(var/stun_amount, var/agony_amount)
+/obj/item/organ/external/diona/hand/stun_act(stun_amount, agony_amount)
 	if(!owner || (agony_amount < 5))
 		return
 	owner.grasp_damage_disarm(src)
@@ -183,7 +183,7 @@
 	icon_state = "nymph"
 	organ_tag = "special" // Turns into a nymph instantly, no transplanting possible.
 
-/obj/item/organ/internal/diona/removed(var/mob/living/user, var/skip_nymph)
+/obj/item/organ/internal/diona/removed(mob/living/user, skip_nymph)
 	if(robotic >= ORGAN_ROBOT)
 		return ..()
 	var/mob/living/carbon/human/H = owner
@@ -234,7 +234,7 @@
 	icon = 'icons/mob/alien.dmi'
 	icon_state = "claw"
 
-/obj/item/organ/internal/diona/nutrients/removed(var/mob/user)
+/obj/item/organ/internal/diona/nutrients/removed(mob/user)
 	return ..(user, 1)
 
 /obj/item/organ/internal/diona/node
@@ -256,5 +256,5 @@
 	owner.shock_stage -= light_amount
 	owner.nutrition    = Clamp(owner.nutrition, 0, 550)
 
-/obj/item/organ/internal/diona/node/removed(var/mob/user)
+/obj/item/organ/internal/diona/node/removed(mob/user)
 	return ..(user, 1)

@@ -143,7 +143,7 @@
 /obj/item/integrated_circuit/manipulation/locomotion
 	activators = list("step")
 
-/obj/item/integrated_circuit/manipulation/locomotion/do_work(var/activation_pin)
+/obj/item/integrated_circuit/manipulation/locomotion/do_work(activation_pin)
 	var/turf/T = get_turf(src)
 	if(!T || !istype(loc, /obj/item/device/electronic_assembly) || activation_pin != activators[1])
 		return
@@ -154,7 +154,7 @@
 		circuit_move(assembly)
 		return
 
-/obj/item/integrated_circuit/manipulation/locomotion/proc/circuit_move(var/obj/item/moving_object)
+/obj/item/integrated_circuit/manipulation/locomotion/proc/circuit_move(obj/item/moving_object)
 	step(moving_object, moving_object.dir)
 
 /obj/item/integrated_circuit/manipulation/locomotion/simple
@@ -165,7 +165,7 @@
 	only moves forward when the step forward activator is pulsed."
 	activators = list("step forward", "turn left", "turn right")
 
-/obj/item/integrated_circuit/manipulation/locomotion/simple/do_work(var/activation_pin)
+/obj/item/integrated_circuit/manipulation/locomotion/simple/do_work(activation_pin)
 	var/obj/item/assembly = get_assembly(loc)
 	if(activation_pin != activators[1])
 		assembly.dir = turn(assembly.dir, 90 * (activation_pin == activators[2] ? 1 : -1))
@@ -193,7 +193,7 @@
 	outputs = list()
 	activators = list("step towards dir")
 
-/obj/item/integrated_circuit/manipulation/locomotion/electronic/circuit_move(var/obj/item/moving_object)
+/obj/item/integrated_circuit/manipulation/locomotion/electronic/circuit_move(obj/item/moving_object)
 	var/datum/integrated_io/wanted_dir = inputs[1]
 	if(isnum(wanted_dir.data))
 		step(moving_object, wanted_dir.data)
@@ -225,7 +225,7 @@
 	detach_grenade()
 	. =..()
 
-/obj/item/integrated_circuit/manipulation/grenade/attackby(var/obj/item/weapon/grenade/G, var/mob/user)
+/obj/item/integrated_circuit/manipulation/grenade/attackby(obj/item/weapon/grenade/G, mob/user)
 	if(istype(G))
 		if(attached_grenade)
 			to_chat(user, "<span class='warning'>There is already a grenade attached!</span>")
@@ -235,7 +235,7 @@
 	else
 		..()
 
-/obj/item/integrated_circuit/manipulation/grenade/attack_self(var/mob/user)
+/obj/item/integrated_circuit/manipulation/grenade/attack_self(mob/user)
 	if(attached_grenade)
 		user.visible_message("<span class='warning'>\The [user] removes \an [attached_grenade] from \the [src]!</span>", "<span class='notice'>You remove \the [attached_grenade] from \the [src].</span>")
 		user.put_in_any_hand_if_possible(attached_grenade) || attached_grenade.dropInto(loc)
@@ -253,7 +253,7 @@
 		log_and_message_admins("activated a grenade assembly. Last touches: Assembly: [holder.fingerprintslast] Circuit: [fingerprintslast] Grenade: [attached_grenade.fingerprintslast]")
 
 // These procs do not relocate the grenade, that's the callers responsibility
-/obj/item/integrated_circuit/manipulation/grenade/proc/attach_grenade(var/obj/item/weapon/grenade/G)
+/obj/item/integrated_circuit/manipulation/grenade/proc/attach_grenade(obj/item/weapon/grenade/G)
 	attached_grenade = G
 	GLOB.destroyed_event.register(attached_grenade, src, /obj/item/integrated_circuit/manipulation/grenade/proc/detach_grenade)
 	size += G.w_class
@@ -334,7 +334,7 @@
 	var/obj/item/device/electronic_assembly/assembly = get_assembly(src)
 	assembly.closed_interact(usr)
 
-/obj/item/integrated_circuit/manipulation/ai/relaymove(var/mob/user, var/direction)
+/obj/item/integrated_circuit/manipulation/ai/relaymove(mob/user, direction)
 	switch(direction)
 		if(1)
 			activate_pin(1)
@@ -345,7 +345,7 @@
 		if(8)
 			activate_pin(4)
 
-/obj/item/integrated_circuit/manipulation/ai/proc/load_ai(var/mob/user, var/obj/item/card)
+/obj/item/integrated_circuit/manipulation/ai/proc/load_ai(mob/user, obj/item/card)
 	if(controlling)
 		to_chat(user, "<span class='warning'>There is already a card in there!</span>")
 		return
@@ -370,7 +370,7 @@
 	controlling = null
 
 
-/obj/item/integrated_circuit/manipulation/ai/attackby(var/obj/item/I, var/mob/user)
+/obj/item/integrated_circuit/manipulation/ai/attackby(obj/item/I, mob/user)
 	if(is_type_in_list(I, list(/obj/item/weapon/aicard, /obj/item/device/paicard, /obj/item/device/mmi)))
 		load_ai(user, I)
 	else return ..()

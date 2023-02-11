@@ -364,7 +364,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	simulated = FALSE
 	invisibility = 100
 
-/obj/scp106_exit/Crossed(var/mob/living/L)
+/obj/scp106_exit/Crossed(mob/living/L)
 	if (!istype(L) || isscp106(L))
 		return ..(L)
 	visible_message("<span class = 'danger'>[L] is warped away!</span>")
@@ -378,7 +378,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	simulated = FALSE
 	invisibility = 100
 
-/obj/scp106_teleport/Crossed(var/mob/living/L)
+/obj/scp106_teleport/Crossed(mob/living/L)
 	if (!istype(L) || isscp106(L))
 		return ..(L)
 	if (prob(50))
@@ -395,7 +395,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	simulated = FALSE
 	invisibility = 100
 
-/obj/scp106_random/Crossed(var/mob/living/L)
+/obj/scp106_random/Crossed(mob/living/L)
 	if (!istype(L) || isscp106(L))
 		return ..(L)
 	// 15% chance of instant death

@@ -125,7 +125,7 @@ var/const/FINGERPRINT_COMPLETE = 6
 		var/obj/item/clothing/C = A
 		LAZYDISTINCTADD(C.gunshot_residue, gunshot_residue)
 
-/obj/item/transfer_fingerprints_to(var/atom/A)
+/obj/item/transfer_fingerprints_to(atom/A)
 	..()
 	if(istype(A,/obj/item) && trace_DNA)
 		var/obj/item/I = A

@@ -10,7 +10,7 @@
 		return FALSE
 	return TRUE
 
-/obj/item/gun/special_check(var/mob/living/carbon/human/user)
+/obj/item/gun/special_check(mob/living/carbon/human/user)
 	. = ..()
 	if(!QDELETED(src) && src.loc == user && has_extension(src, /datum/extension/voxform))
 		var/datum/extension/voxform/voxform = get_extension(src, /datum/extension/voxform)

@@ -29,7 +29,7 @@ var/list/solars_list = list()
 /obj/machinery/power/solar/drain_power()
 	return -1
 
-/obj/machinery/power/solar/New(var/turf/loc, var/obj/item/solar_assembly/S)
+/obj/machinery/power/solar/New(turf/loc, obj/item/solar_assembly/S)
 	..(loc)
 	Make(S)
 	connect_to_network()
@@ -39,7 +39,7 @@ var/list/solars_list = list()
 	..()
 
 //set the control of the panel to a given computer if closer than SOLAR_MAX_DIST
-/obj/machinery/power/solar/proc/set_control(var/obj/machinery/power/solar_control/SC)
+/obj/machinery/power/solar/proc/set_control(obj/machinery/power/solar_control/SC)
 	if(SC && (get_dist(src, SC) > SOLAR_MAX_DIST))
 		return 0
 	control = SC
@@ -51,7 +51,7 @@ var/list/solars_list = list()
 		control.connected_panels.Remove(src)
 	control = null
 
-/obj/machinery/power/solar/proc/Make(var/obj/item/solar_assembly/S)
+/obj/machinery/power/solar/proc/Make(obj/item/solar_assembly/S)
 	if(!S)
 		S = new /obj/item/solar_assembly(src)
 		S.glass_type = /obj/item/stack/material/glass
@@ -165,7 +165,7 @@ var/list/solars_list = list()
 	return
 
 
-/obj/machinery/power/solar/fake/New(var/turf/loc, var/obj/item/solar_assembly/S)
+/obj/machinery/power/solar/fake/New(turf/loc, obj/item/solar_assembly/S)
 	..(loc, S, 0)
 
 /obj/machinery/power/solar/fake/Process()
@@ -218,7 +218,7 @@ var/list/solars_list = list()
 	var/tracker = 0
 	var/glass_type = null
 
-/obj/item/solar_assembly/attack_hand(var/mob/user)
+/obj/item/solar_assembly/attack_hand(mob/user)
 	if(!anchored && isturf(loc)) // You can't pick it up
 		..()
 
@@ -230,7 +230,7 @@ var/list/solars_list = list()
 		glass_type = null
 
 
-/obj/item/solar_assembly/attackby(var/obj/item/W, var/mob/user)
+/obj/item/solar_assembly/attackby(obj/item/W, mob/user)
 
 	if(!anchored && isturf(loc))
 		if(isWrench(W))
@@ -471,7 +471,7 @@ var/list/solars_list = list()
 	return 1
 
 //rotates the panel to the passed angle
-/obj/machinery/power/solar_control/proc/set_panels(var/cdir)
+/obj/machinery/power/solar_control/proc/set_panels(cdir)
 	for(var/obj/machinery/power/solar/S in connected_panels)
 		S.adir = cdir //instantly rotates the panel
 		S.occlusion()//and

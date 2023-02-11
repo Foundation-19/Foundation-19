@@ -41,7 +41,7 @@
 /obj/item/rcd/attack()
 	return 0
 
-/obj/item/rcd/proc/can_use(var/mob/user,var/turf/T)
+/obj/item/rcd/proc/can_use(mob/user,turf/T)
 	return (user.Adjacent(T) && user.get_active_hand() == src && !user.incapacitated())
 
 /obj/item/rcd/examine(mob/user)
@@ -108,7 +108,7 @@
 	work_id++
 	work_mode.do_work(src, A, user)
 
-/obj/item/rcd/proc/useResource(var/amount, var/mob/user)
+/obj/item/rcd/proc/useResource(amount, mob/user)
 	if(stored_matter < amount)
 		return 0
 	stored_matter -= amount
@@ -122,7 +122,7 @@
 	ratio = max(round(ratio, 0.10) * 100, 10)
 	add_overlay("rcd-[ratio]")
 
-/obj/item/rcd/proc/lowAmmo(var/mob/user)	//Kludge to make it animate when out of ammo, but I guess you can make it blow up when it's out of ammo or something
+/obj/item/rcd/proc/lowAmmo(mob/user)	//Kludge to make it animate when out of ammo, but I guess you can make it blow up when it's out of ammo or something
 	to_chat(user, "<span class='warning'>The \'Low Ammo\' light on the device blinks yellow.</span>")
 	flick("[icon_state]-empty", src)
 
@@ -153,7 +153,7 @@
 /obj/item/rcd/borg
 	canRwall = 1
 
-/obj/item/rcd/borg/useResource(var/amount, var/mob/user)
+/obj/item/rcd/borg/useResource(amount, mob/user)
 	if(isrobot(user))
 		var/mob/living/silicon/robot/R = user
 		if(R.cell)
@@ -166,11 +166,11 @@
 /obj/item/rcd/borg/attackby()
 	return
 
-/obj/item/rcd/borg/can_use(var/mob/user,var/turf/T)
+/obj/item/rcd/borg/can_use(mob/user,turf/T)
 	return (user.Adjacent(T) && !user.incapacitated())
 
 
-/obj/item/rcd/mounted/useResource(var/amount, var/mob/user)
+/obj/item/rcd/mounted/useResource(amount, mob/user)
 	var/cost = amount*35 // About 9 deconstructions of walls on a good cell, less if it involves airlocks.
 	var/obj/item/cell/cell
 	if(istype(loc,/obj/item/rig_module))
@@ -186,7 +186,7 @@
 /obj/item/rcd/mounted/attackby()
 	return
 
-/obj/item/rcd/mounted/can_use(var/mob/user,var/turf/T)
+/obj/item/rcd/mounted/can_use(mob/user,turf/T)
 	return (user.Adjacent(T) && !user.incapacitated())
 
 

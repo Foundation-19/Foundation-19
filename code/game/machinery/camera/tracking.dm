@@ -180,7 +180,7 @@
 	view_core()
 
 
-/obj/machinery/camera/attack_ai(var/mob/living/silicon/ai/user as mob)
+/obj/machinery/camera/attack_ai(mob/living/silicon/ai/user as mob)
 	if (!istype(user))
 		return
 	if (!src.can_use())

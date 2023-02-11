@@ -15,10 +15,10 @@
 	if(A)
 		contain(A)
 
-/obj/structure/stasis_cage/attack_hand(var/mob/user)
+/obj/structure/stasis_cage/attack_hand(mob/user)
 	try_release(user)
 
-/obj/structure/stasis_cage/attack_robot(var/mob/user)
+/obj/structure/stasis_cage/attack_robot(mob/user)
 	if(Adjacent(user))
 		try_release(user)
 
@@ -42,7 +42,7 @@
 	if(contained)
 		to_chat(user, "\The [contained] is kept inside.")
 
-/obj/structure/stasis_cage/proc/contain(var/mob/living/simple_animal/animal)
+/obj/structure/stasis_cage/proc/contain(mob/living/simple_animal/animal)
 	if(contained || !istype(animal))
 		return
 

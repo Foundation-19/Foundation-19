@@ -95,7 +95,7 @@
 	if(distance <= 2)
 		to_chat(user, "<span class='notice'>Used to extract geological core samples - this one is [sampled_turf ? "full" : "empty"], and has [num_stored_bags] bag[num_stored_bags != 1 ? "s" : ""] remaining.</span>")
 
-/obj/item/device/core_sampler/attackby(var/obj/item/I, var/mob/living/user)
+/obj/item/device/core_sampler/attackby(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/evidencebag))
 		if(I.contents.len)
 			to_chat(user, "<span class='warning'>\The [I] is full.</span>")
@@ -109,7 +109,7 @@
 	else
 		return ..()
 
-/obj/item/device/core_sampler/proc/sample_item(var/item_to_sample, var/mob/user)
+/obj/item/device/core_sampler/proc/sample_item(item_to_sample, mob/user)
 	var/datum/geosample/geo_data
 
 	if(istype(item_to_sample, /turf/simulated/mineral))
@@ -150,7 +150,7 @@
 	else
 		to_chat(user, "<span class='warning'>You are unable to take a sample of [item_to_sample].</span>")
 
-/obj/item/device/core_sampler/attack_self(var/mob/living/user)
+/obj/item/device/core_sampler/attack_self(mob/living/user)
 	if(filled_bag)
 		to_chat(user, "<span class='notice'>You eject the full sample bag.</span>")
 		var/success = 0

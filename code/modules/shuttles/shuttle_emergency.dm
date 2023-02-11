@@ -115,7 +115,7 @@
 	authorized = initial(authorized)
 
 //returns 1 if the ID was accepted and a new authorization was added, 0 otherwise
-/obj/machinery/computer/shuttle_control/emergency/proc/read_authorization(var/obj/item/ident)
+/obj/machinery/computer/shuttle_control/emergency/proc/read_authorization(obj/item/ident)
 	if (!ident || !istype(ident))
 		return 0
 	if (authorized.len >= req_authorizations)
@@ -160,7 +160,7 @@
 
 	return 1
 
-/obj/machinery/computer/shuttle_control/emergency/emag_act(var/remaining_charges, var/mob/user)
+/obj/machinery/computer/shuttle_control/emergency/emag_act(remaining_charges, mob/user)
 	if (!emagged)
 		to_chat(user, "<span class='notice'>You short out \the [src]'s authorization protocols.</span>")
 		emagged = TRUE
@@ -170,7 +170,7 @@
 	read_authorization(W)
 	..()
 
-/obj/machinery/computer/shuttle_control/emergency/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
+/obj/machinery/computer/shuttle_control/emergency/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
 	var/data[0]
 	var/datum/shuttle/autodock/ferry/emergency/shuttle = SSshuttle.shuttles[shuttle_tag]
 	if (!istype(shuttle))

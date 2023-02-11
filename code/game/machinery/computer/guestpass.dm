@@ -100,7 +100,7 @@
 		return
 	..()
 
-/obj/machinery/computer/guestpass/interface_interact(var/mob/user)
+/obj/machinery/computer/guestpass/interface_interact(mob/user)
 	tgui_interact(user)
 	return TRUE
 

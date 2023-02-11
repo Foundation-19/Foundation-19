@@ -133,7 +133,7 @@
 	var/spend = 0
 	var/datum/martial_art/martial_art = new /datum/martial_art/krav_maga
 
-/obj/item/weapon/nanite_injector/attack(var/mob/living/carbon/human/M, var/mob/living/carbon/human/user)
+/obj/item/weapon/nanite_injector/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
 
 	if(spend)
 		to_chat(user, "[src] is already spend!")
@@ -152,7 +152,7 @@
 		user.visible_message(SPAN_WARNING("[user] injects himself with [src]!"))
 		inject_nanites(user)
 
-/obj/item/weapon/nanite_injector/proc/inject_nanites(var/mob/living/carbon/human/H)
+/obj/item/weapon/nanite_injector/proc/inject_nanites(mob/living/carbon/human/H)
 	spend = 1
 	icon_state = "[initial(icon_state)]_spend"
 	H.martial_art = martial_art

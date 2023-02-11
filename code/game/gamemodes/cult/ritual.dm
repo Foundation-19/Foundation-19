@@ -36,7 +36,7 @@
 		to_chat(M, SPAN_NOTICE("\The [src] seems full of illegible scribbles. Is this a joke?"))
 	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 
-/obj/item/book/tome/afterattack(var/atom/A, var/mob/user, var/proximity)
+/obj/item/book/tome/afterattack(atom/A, mob/user, proximity)
 	if(!proximity || !iscultist(user))
 		return
 	if(A.reagents && A.reagents.has_reagent(/datum/reagent/water/holywater))

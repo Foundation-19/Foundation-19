@@ -28,7 +28,7 @@
 /obj/effect/overmap/visitable/sector/exoplanet/lush/get_surface_color()
 	return grass_color
 
-/obj/effect/overmap/visitable/sector/exoplanet/lush/adapt_seed(var/datum/seed/S)
+/obj/effect/overmap/visitable/sector/exoplanet/lush/adapt_seed(datum/seed/S)
 	..()
 	var/carnivore_prob = rand(100)
 	if(carnivore_prob < 30)

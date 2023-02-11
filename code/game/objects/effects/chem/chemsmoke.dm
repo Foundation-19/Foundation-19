@@ -10,7 +10,7 @@
 	var/splash_amount = 5 //atoms moving through a smoke cloud get splashed with up to 5 units of reagent
 	var/turf/destination
 
-/obj/effect/effect/smoke/chem/New(var/newloc, smoke_duration, turf/dest_turf = null, icon/cached_icon = null)
+/obj/effect/effect/smoke/chem/New(newloc, smoke_duration, turf/dest_turf = null, icon/cached_icon = null)
 	time_to_live = smoke_duration
 
 	..()
@@ -64,7 +64,7 @@
 				reagents.splash(AM, splash_amount, copy = 1)
 
 // Fades out the smoke smoothly using it's alpha variable.
-/obj/effect/effect/smoke/chem/proc/fadeOut(var/frames = 16)
+/obj/effect/effect/smoke/chem/proc/fadeOut(frames = 16)
 	set waitfor = FALSE
 	if(!alpha) return //already transparent
 

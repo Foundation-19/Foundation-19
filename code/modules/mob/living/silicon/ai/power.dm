@@ -197,7 +197,7 @@
 	var/mob/living/silicon/ai/powered_ai = null
 	invisibility = 100
 
-/obj/machinery/ai_powersupply/New(var/mob/living/silicon/ai/ai=null)
+/obj/machinery/ai_powersupply/New(mob/living/silicon/ai/ai=null)
 	powered_ai = ai
 	powered_ai.psupply = src
 	..()
@@ -216,5 +216,5 @@
 	// Normal power usage.
 	return 2
 
-/obj/machinery/ai_powersupply/powered(var/chan = -1)
+/obj/machinery/ai_powersupply/powered(chan = -1)
 	return ..(chan, get_area(powered_ai))

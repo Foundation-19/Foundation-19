@@ -37,14 +37,14 @@
 /mob/observer/attach_label(user, atom/labeler, label_text)
 	to_chat(user, "<span class='notice'>\The [labeler] passes through \the [src].</span>")
 
-/obj/machinery/portable_atmospherics/hydroponics/attach_label(var/user)
+/obj/machinery/portable_atmospherics/hydroponics/attach_label(user)
 	if(!mechanical)
 		to_chat(user, "<span class='notice'>How are you going to label that?</span>")
 		return
 	..()
 	update_icon()
 
-/obj/attach_label(var/user, var/atom/labeler, var/label_text)
+/obj/attach_label(user, atom/labeler, label_text)
 	if(!simulated)
 		return
 	var/datum/extension/labels/L = get_or_create_extension(src, /datum/extension/labels)

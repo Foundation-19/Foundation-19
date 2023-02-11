@@ -61,7 +61,7 @@
 /obj/effect/vine/single
 	spread_chance = 0
 
-/obj/effect/vine/New(var/newloc, var/datum/seed/newseed, var/obj/effect/vine/newparent, var/start_matured = 0)
+/obj/effect/vine/New(newloc, datum/seed/newseed, obj/effect/vine/newparent, start_matured = 0)
 	if(!newparent)
 		parent = src
 	else
@@ -198,7 +198,7 @@
 	floor = 1
 	return 1
 
-/obj/effect/vine/attackby(var/obj/item/W, var/mob/user)
+/obj/effect/vine/attackby(obj/item/W, mob/user)
 	START_PROCESSING(SSvines, src)
 
 	if(W.edge && W.w_class < ITEM_SIZE_NORMAL && user.a_intent != I_HURT)
@@ -222,7 +222,7 @@
 		adjust_health(-damage)
 		playsound(get_turf(src), W.hitsound, 100, 1)
 
-/obj/effect/vine/AltClick(var/mob/user)
+/obj/effect/vine/AltClick(mob/user)
 	if(!CanPhysicallyInteract(user) || user.incapacitated())
 		return ..()
 	var/obj/item/W = user.get_active_hand()

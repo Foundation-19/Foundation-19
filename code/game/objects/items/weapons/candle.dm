@@ -42,7 +42,7 @@
 			light()
 
 
-/obj/item/weapon/flame/candle/proc/light(var/flavor_text = "<span class='notice'>\The [usr] lights the [name].</span>")
+/obj/item/weapon/flame/candle/proc/light(flavor_text = "<span class='notice'>\The [usr] lights the [name].</span>")
 	if(!src.lit)
 		src.lit = 1
 		//src.damtype = "fire"

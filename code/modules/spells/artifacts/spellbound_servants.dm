@@ -200,11 +200,11 @@
 	var/datum/spellbound_type/stype
 	var/last_called = 0
 
-/obj/effect/cleanable/spellbound/New(var/loc, var/spell_type)
+/obj/effect/cleanable/spellbound/New(loc, spell_type)
 	stype = new spell_type()
 	return ..(loc)
 
-/obj/effect/cleanable/spellbound/attack_hand(var/mob/user)
+/obj/effect/cleanable/spellbound/attack_hand(mob/user)
 	if(last_called > world.time )
 		return
 	last_called = world.time + 30 SECONDS
@@ -213,12 +213,12 @@
 		if(G.assess_candidate(ghost,null,FALSE))
 			to_chat(ghost,"<span class='notice'><b>A wizard is requesting a Spell-Bound Servant!</b></span> (<a href='?src=\ref[src];master=\ref[user]'>Join</a>)")
 
-/obj/effect/cleanable/spellbound/CanUseTopic(var/mob)
+/obj/effect/cleanable/spellbound/CanUseTopic(mob)
 	if(isliving(mob))
 		return STATUS_CLOSE
 	return STATUS_INTERACTIVE
 
-/obj/effect/cleanable/spellbound/OnTopic(var/mob/user, href_list, state)
+/obj/effect/cleanable/spellbound/OnTopic(mob/user, href_list, state)
 	if(href_list["master"])
 		var/mob/master = locate(href_list["master"])
 		stype.spawn_servant(get_turf(src),master,user)
@@ -239,14 +239,14 @@
 	throw_range = 10
 	w_class = ITEM_SIZE_TINY
 
-/obj/item/summoning_stone/attack_self(var/mob/user)
+/obj/item/summoning_stone/attack_self(mob/user)
 	if(user.z in GLOB.using_map.admin_levels)
 		to_chat(user, "<span class='warning'>You cannot use \the [src] here.</span>")
 		return
 	user.set_machine(src)
 	interact(user)
 
-/obj/item/summoning_stone/interact(var/mob/user)
+/obj/item/summoning_stone/interact(mob/user)
 	var/list/types = subtypesof(/datum/spellbound_type) - /datum/spellbound_type/servant
 	if(user.mind && !GLOB.wizards.is_antagonist(user.mind))
 		use_type(pick(types),user)
@@ -258,7 +258,7 @@
 	show_browser(user,dat,"window=summoning")
 	onclose(user,"summoning")
 
-/obj/item/summoning_stone/proc/use_type(var/type, var/mob/user)
+/obj/item/summoning_stone/proc/use_type(type, mob/user)
 	new /obj/effect/cleanable/spellbound(get_turf(src),type)
 	if(prob(20))
 		var/list/base_areas = maintlocs //Have to do it this way as its a macro

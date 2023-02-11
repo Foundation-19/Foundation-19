@@ -34,7 +34,7 @@
 
 	transform = M
 
-/obj/lighting_general/proc/sync(var/new_colour)
+/obj/lighting_general/proc/sync(new_colour)
 	color = new_colour
 
 /mob

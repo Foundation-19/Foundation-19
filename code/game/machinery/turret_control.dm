@@ -100,7 +100,7 @@
 		return
 	return ..()
 
-/obj/machinery/turretid/emag_act(var/remaining_charges, var/mob/user)
+/obj/machinery/turretid/emag_act(remaining_charges, mob/user)
 	if(!emagged)
 		to_chat(user, "<span class='danger'>You short out the turret controls' access analysis module.</span>")
 		emagged = TRUE
@@ -113,7 +113,7 @@
 	ui_interact(user)
 	return TRUE
 
-/obj/machinery/turretid/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
+/obj/machinery/turretid/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
 	var/data[0]
 	data["access"] = !isLocked(user)
 	data["locked"] = locked
@@ -232,7 +232,7 @@
 	..()
 
 
-/obj/machinery/turretid/malf_upgrade(var/mob/living/silicon/ai/user)
+/obj/machinery/turretid/malf_upgrade(mob/living/silicon/ai/user)
 	..()
 	malf_upgraded = 1
 	locked = 1

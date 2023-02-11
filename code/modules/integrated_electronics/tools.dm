@@ -20,7 +20,7 @@
 /obj/item/device/integrated_electronics/wirer/update_icon()
 	icon_state = "wirer-[mode]"
 
-/obj/item/device/integrated_electronics/wirer/proc/wire(var/datum/integrated_io/io, mob/user)
+/obj/item/device/integrated_electronics/wirer/proc/wire(datum/integrated_io/io, mob/user)
 	if(mode == WIRE)
 		selected_io = io
 		to_chat(user, "<span class='notice'>You attach a data wire to \the [selected_io.holder]'s [selected_io.name] data channel.</span>")
@@ -130,7 +130,7 @@
 			data_to_write = null
 			to_chat(user, "<span class='notice'>You set \the [src]'s memory to absolutely nothing.</span>")
 
-/obj/item/device/integrated_electronics/debugger/MouseDrop(var/atom/over_object)
+/obj/item/device/integrated_electronics/debugger/MouseDrop(atom/over_object)
 	if(!accepting_refs)
 		return ..()
 
@@ -141,7 +141,7 @@
 	to_chat(usr, "<span class='notice'>You set \the [src]'s memory to a reference to \the [over_object.name]. The ref scanner is now off.</span>")
 	accepting_refs = 0
 
-/obj/item/device/integrated_electronics/debugger/proc/write_data(var/datum/integrated_io/io, mob/user)
+/obj/item/device/integrated_electronics/debugger/proc/write_data(datum/integrated_io/io, mob/user)
 	if(io.io_type == DATA_CHANNEL)
 		io.write_data_to_pin(data_to_write)
 		var/data_to_show = data_to_write
@@ -164,7 +164,7 @@
 	w_class = 2
 	var/last_scan = ""
 
-/obj/item/device/integrated_electronics/analyzer/examine(var/mob/user)
+/obj/item/device/integrated_electronics/analyzer/examine(mob/user)
 	. = ..(user, 1)
 	if(.)
 		if(last_scan)
@@ -172,7 +172,7 @@
 		else
 			to_chat(user, "\The [src] has not yet been used to analyze any assemblies.")
 
-/obj/item/device/integrated_electronics/analyzer/afterattack(var/obj/item/device/electronic_assembly/assembly, var/mob/user)
+/obj/item/device/integrated_electronics/analyzer/afterattack(obj/item/device/electronic_assembly/assembly, mob/user)
 	if(!istype(assembly))
 		return ..()
 

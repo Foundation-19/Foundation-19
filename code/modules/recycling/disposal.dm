@@ -57,7 +57,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	return ..()
 
 // attack by item places it in to disposal
-/obj/machinery/disposal/attackby(var/obj/item/I, var/mob/user)
+/obj/machinery/disposal/attackby(obj/item/I, mob/user)
 	if(stat & BROKEN || !I || !user)
 		return
 
@@ -447,7 +447,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 
 // called when holder is expelled from a disposal
 // should usually only occur if the pipe network is modified
-/obj/machinery/disposal/proc/expel(var/obj/structure/disposalholder/H)
+/obj/machinery/disposal/proc/expel(obj/structure/disposalholder/H)
 
 	var/turf/target
 	playsound(src, 'sound/machines/hiss.ogg', 50, 0, 0)
@@ -494,7 +494,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	var/on = 0
 	var/list/junctions = list()
 
-/obj/machinery/disposal_switch/Initialize(mapload, var/newid)
+/obj/machinery/disposal_switch/Initialize(mapload, newid)
 	. = ..(mapload)
 	if(!id_tag)
 		id_tag = newid
@@ -538,7 +538,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	w_class = ITEM_SIZE_LARGE
 	var/id_tag
 
-/obj/item/disposal_switch_construct/Initialize(var/id)
+/obj/item/disposal_switch_construct/Initialize(id)
 	. = ..()
 	if(id) id_tag = id
 	else
@@ -583,7 +583,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 
 // expel the contents of the holder object, then delete it
 // called when the holder exits the outlet
-/obj/structure/disposaloutlet/proc/expel(var/obj/structure/disposalholder/H)
+/obj/structure/disposaloutlet/proc/expel(obj/structure/disposalholder/H)
 	animate_expel()
 	if(H)
 		if(H.reagents?.total_volume)
@@ -611,7 +611,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	sleep(20)	//wait until correct animation frame
 	playsound(src, 'sound/machines/hiss.ogg', 50, 0, 0)
 
-/obj/structure/disposaloutlet/attackby(var/obj/item/I, var/mob/user)
+/obj/structure/disposaloutlet/attackby(obj/item/I, mob/user)
 	if(!I || !user)
 		return
 	src.add_fingerprint(user, 0, I)
@@ -664,7 +664,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 
 	return
 
-/obj/effect/decal/cleanable/blood/gibs/pipe_eject(var/direction)
+/obj/effect/decal/cleanable/blood/gibs/pipe_eject(direction)
 	var/list/dirs
 	if(direction)
 		dirs = list( direction, turn(direction, -45), turn(direction, 45))
@@ -672,7 +672,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 		dirs = GLOB.alldirs.Copy()
 	addtimer(CALLBACK(src, .proc/streak, dirs), 0)
 
-/obj/effect/decal/cleanable/blood/gibs/robot/pipe_eject(var/direction)
+/obj/effect/decal/cleanable/blood/gibs/robot/pipe_eject(direction)
 	var/list/dirs
 	if(direction)
 		dirs = list( direction, turn(direction, -45), turn(direction, 45))

@@ -62,7 +62,7 @@ var/list/holder_mob_icon_cache = list()
 
 	last_holder = loc
 
-/obj/item/holder/onDropInto(var/atom/movable/AM)
+/obj/item/holder/onDropInto(atom/movable/AM)
 	if(ismob(loc))   // Bypass our holding mob and drop directly to its loc
 		return loc.loc
 	return ..()
@@ -94,7 +94,7 @@ var/list/holder_mob_icon_cache = list()
 
 	..()
 
-/obj/item/holder/proc/sync(var/mob/living/M)
+/obj/item/holder/proc/sync(mob/living/M)
 	dir = 2
 	cut_overlays()
 	icon = M.icon

@@ -28,7 +28,7 @@
 		if(prob(40))
 			S.set_trait(TRAIT_STINGS,1)
 
-/obj/effect/overmap/sector/exoplanet/garbage/adapt_animal(var/mob/living/simple_animal/A)
+/obj/effect/overmap/sector/exoplanet/garbage/adapt_animal(mob/living/simple_animal/A)
 	..()
 	A.faction = "Guardian" //stops bots form hitting each other
 
