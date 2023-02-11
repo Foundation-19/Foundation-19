@@ -1,4 +1,4 @@
-/mob/proc/jumpTo(var/location)
+/mob/proc/jumpTo(location)
 	forceMove(location)
 
 /mob/observer/ghost/jumpTo()

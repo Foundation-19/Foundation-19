@@ -202,7 +202,7 @@
 	if((locate(/obj/structure/disposalpipe/up) in below) || locate(/obj/machinery/atmospherics/pipe/zpipe/up) in below)
 		return FALSE
 
-/mob/living/carbon/human/can_fall(var/anchor_bypass = FALSE, var/turf/location_override = loc)
+/mob/living/carbon/human/can_fall(anchor_bypass = FALSE, turf/location_override = loc)
 	if(..())
 		return species.can_fall(src)
 
@@ -239,7 +239,7 @@
 		return 150
 	return BASE_STORAGE_COST(w_class)
 
-/mob/living/carbon/human/handle_fall_effect(var/turf/landing)
+/mob/living/carbon/human/handle_fall_effect(turf/landing)
 	if(species && species.handle_fall_special(src, landing))
 		return
 

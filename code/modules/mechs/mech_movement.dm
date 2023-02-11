@@ -36,7 +36,7 @@
 		return ..(dir)
 	return ..(ndir)
 
-/mob/living/exosuit/can_fall(var/anchor_bypass = FALSE, var/turf/location_override = src.loc)
+/mob/living/exosuit/can_fall(anchor_bypass = FALSE, turf/location_override = src.loc)
 	//mechs are always anchored, so falling should always ignore it
 	if(..(TRUE, location_override))
 		return !(can_overcome_gravity())
@@ -162,7 +162,7 @@
 /mob/living/exosuit/fall_damage()
 	return 175 //Exosuits are big and heavy
 
-/mob/living/exosuit/handle_fall_effect(var/turf/landing)
+/mob/living/exosuit/handle_fall_effect(turf/landing)
 	// Return here if for any reason you shouldn´t take damage
 	..()
 	if(legs)

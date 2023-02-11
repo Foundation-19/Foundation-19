@@ -120,7 +120,7 @@
 /proc/dprob(var/p)
 	return(prob(sqrt(p)) && prob(sqrt(p)))
 
-/mob/living/carbon/proc/spread_disease_to(var/mob/living/carbon/victim, var/vector = "Airborne")
+/mob/living/carbon/proc/spread_disease_to(mob/living/carbon/victim, vector = "Airborne")
 	if (src == victim)
 		return "retardation"
 

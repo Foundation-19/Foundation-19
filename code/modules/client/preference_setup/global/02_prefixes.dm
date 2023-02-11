@@ -136,7 +136,7 @@
 				var/decl/prefix/prefix_instance = decls_repository.get_decl(prefix_type)
 				pref.prefix_keys_by_type[prefix_instance.type] = prefix_instance.default_key
 
-/mob/proc/get_prefix_key(var/prefix_type)
+/mob/proc/get_prefix_key(prefix_type)
 	if(client && client.prefs)
 		return client.prefs.prefix_keys_by_type[prefix_type]
 	var/decl/prefix/prefix_instance = decls_repository.get_decl(prefix_type)

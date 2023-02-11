@@ -1,4 +1,4 @@
-/mob/living/carbon/human/proc/get_raw_medical_data(var/tag = FALSE)
+/mob/living/carbon/human/proc/get_raw_medical_data(tag = FALSE)
 	var/mob/living/carbon/human/H = src
 	var/list/scan = list()
 

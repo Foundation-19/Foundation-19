@@ -4,7 +4,7 @@
 	ETA till a downstream ports this and adds boob and penis size: 2 days.
 */
 
-/mob/living/carbon/human/proc/show_descriptors_to(var/mob/user)
+/mob/living/carbon/human/proc/show_descriptors_to(mob/user)
 	if(LAZYLEN(descriptors))
 		if(user == src)
 			for(var/entry in descriptors)

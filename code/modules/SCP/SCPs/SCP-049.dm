@@ -149,7 +149,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		target = null
 		return FALSE
 
-/mob/living/carbon/human/scp049/proc/scp049_attack(var/mob/living/carbon/human/target)
+/mob/living/carbon/human/scp049/proc/scp049_attack(mob/living/carbon/human/target)
 	if(check_nearby() && !curing)
 		if(isscp049_1(target))
 			return
@@ -208,7 +208,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		to_chat(M, "<span class = 'danger'><big>You cannot attack your master.</big></span>")
 		return
 
-/mob/living/carbon/human/scp049/bullet_act(var/obj/item/projectile/P, var/def_zone)
+/mob/living/carbon/human/scp049/bullet_act(obj/item/projectile/P, def_zone)
 	if (getBruteLoss() + getFireLoss() + getToxLoss() + getCloneLoss() >= 200)
 		return
 	if (P.damage && !P.nodamage && ishuman(P.firer))

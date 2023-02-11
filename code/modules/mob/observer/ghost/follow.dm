@@ -9,12 +9,12 @@
 /client/extra_ghost_link(var/atom/ghost, var/prefix, var/sufix, var/short_links)
 	return mob.extra_ghost_link(ghost, prefix, sufix, short_links)
 
-/mob/extra_ghost_link(var/atom/ghost, var/prefix, var/sufix, var/short_links)
+/mob/extra_ghost_link(atom/ghost, prefix, sufix, short_links)
 	. = ..()
 	if(client && eyeobj)
 		. += create_ghost_link(ghost, eyeobj, short_links ? "E" : "Eye", prefix, sufix)
 
-/mob/observer/ghost/extra_ghost_link(var/atom/ghost, var/prefix, var/sufix, var/short_links)
+/mob/observer/ghost/extra_ghost_link(atom/ghost, prefix, sufix, short_links)
 	. = ..()
 	if(mind && (mind.current && !isghost(mind.current)))
 		. += create_ghost_link(ghost, mind.current, short_links ? "B" : "Body", prefix, sufix)
@@ -28,7 +28,7 @@
 /client/get_ghost_follow_link(var/atom/target, var/delimiter, var/prefix, var/sufix)
 	return mob.get_ghost_follow_link(target, delimiter, prefix, sufix)
 
-/mob/observer/ghost/get_ghost_follow_link(var/atom/target, var/delimiter, var/prefix, var/sufix)
+/mob/observer/ghost/get_ghost_follow_link(atom/target, delimiter, prefix, sufix)
 	var/short_links = get_preference_value(/datum/client_preference/ghost_follow_link_length) == GLOB.PREF_SHORT
 	return ghost_follow_link(target, src, delimiter, prefix, sufix, short_links)
 

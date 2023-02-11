@@ -42,6 +42,6 @@
 	var/obj/lighting_general/l_general
 
 
-/mob/proc/change_light_colour(var/new_colour)
+/mob/proc/change_light_colour(new_colour)
 	if(l_general)
 		l_general.sync(new_colour)

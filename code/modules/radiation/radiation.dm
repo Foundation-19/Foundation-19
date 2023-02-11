@@ -61,7 +61,7 @@
 /atom/proc/rad_act(var/severity)
 	return 1
 
-/mob/living/rad_act(var/severity)
+/mob/living/rad_act(severity)
 	if(severity > RAD_LEVEL_LOW)
 		src.apply_damage(severity, IRRADIATE, damage_flags = DAM_DISPERSED)
 		for(var/atom/I in src)

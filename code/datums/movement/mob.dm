@@ -320,10 +320,10 @@
 			G.adjust_position()
 
 // Misc. helpers
-/mob/proc/MayEnterTurf(var/turf/T)
+/mob/proc/MayEnterTurf(turf/T)
 	return T && !((mob_flags & MOB_FLAG_HOLY_BAD) && check_is_holy_turf(T))
 
-/mob/proc/AdjustMovementDirection(var/direction)
+/mob/proc/AdjustMovementDirection(direction)
 	. = direction
 	if(!confused)
 		return

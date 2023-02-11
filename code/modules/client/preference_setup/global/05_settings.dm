@@ -112,7 +112,7 @@
 	var/next_option = next_in_list(prefs.preference_values[cp.key], cp.options)
 	return set_preference(preference, next_option)
 
-/mob/proc/get_preference_value(var/preference)
+/mob/proc/get_preference_value(preference)
 	if(!client)
 		var/datum/client_preference/cp = get_client_preference(preference)
 		if(cp)
@@ -122,7 +122,7 @@
 
 	return client.get_preference_value(preference)
 
-/mob/proc/set_preference(var/preference, var/set_preference)
+/mob/proc/set_preference(preference, set_preference)
 	if(!client)
 		return FALSE
 	if(!client.prefs)
@@ -131,7 +131,7 @@
 
 	return client.set_preference(preference, set_preference)
 
-/mob/proc/cycle_preference(var/preference)
+/mob/proc/cycle_preference(preference)
 	if(!client)
 		return FALSE
 	if(!client.prefs)

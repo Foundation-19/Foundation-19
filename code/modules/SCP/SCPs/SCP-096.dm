@@ -187,7 +187,7 @@
 	examine_urge_list[H] = min(examine_urge_list[H]+1, 5)
 	addtimer(CALLBACK(src, .proc/reduce_examine_urge, H), 200 SECONDS)
 
-/mob/living/simple_animal/hostile/scp096/proc/reduce_examine_urge(var/mob/living/carbon/human/H)
+/mob/living/simple_animal/hostile/scp096/proc/reduce_examine_urge(mob/living/carbon/human/H)
 	if (!(H in examine_urge_list))
 		return
 
@@ -196,7 +196,7 @@
 
 	examine_urge_list[H] = max(examine_urge_list[H]-1, 0)
 
-/mob/living/simple_animal/hostile/scp096/examine(var/userguy)
+/mob/living/simple_animal/hostile/scp096/examine(userguy)
 	if(istype(userguy, /mob/living/carbon))
 		return specialexamine(userguy)
 	return ..()
@@ -261,7 +261,7 @@
 		target = closest_fella
 	current_state = STATE_096_CHASE_START
 
-/mob/living/simple_animal/hostile/scp096/proc/handle_target(var/mob/living/carbon/target)
+/mob/living/simple_animal/hostile/scp096/proc/handle_target(mob/living/carbon/target)
 
 	if(!target || current_state >= STATE_096_CHASING) //Sanity
 		return
@@ -331,7 +331,7 @@
 			sleep(2 + round(staggered/8))
 		current_state = STATE_096_IDLE
 
-/mob/living/simple_animal/hostile/scp096/proc/is_different_level(var/turf/target_turf)
+/mob/living/simple_animal/hostile/scp096/proc/is_different_level(turf/target_turf)
 	return target_turf.z != z
 
 //This performs an immediate murder check, meant to avoid people cheesing us by just running faster than Life() refresh
@@ -342,12 +342,12 @@
 			murder(M)
 			break
 
-/mob/living/simple_animal/hostile/scp096/forceMove(atom/destination, var/no_tp = 0)
+/mob/living/simple_animal/hostile/scp096/forceMove(atom/destination, no_tp = 0)
 	..()
 	if(current_state > STATE_096_SCREAMING)
 		check_murder()
 
-/mob/living/simple_animal/hostile/scp096/proc/murder(var/mob/living/T)
+/mob/living/simple_animal/hostile/scp096/proc/murder(mob/living/T)
 	if(T in kill_list)
 		current_state = STATE_096_SLAUGHTER
 		T.loc = src.loc
@@ -383,7 +383,7 @@
 
 		current_state = STATE_096_CHASING
 
-/mob/living/simple_animal/hostile/scp096/bullet_act(var/obj/item/projectile/Proj)
+/mob/living/simple_animal/hostile/scp096/bullet_act(obj/item/projectile/Proj)
 	if(!Proj || Proj.damage <= 0)
 		return 0
 
@@ -391,7 +391,7 @@
 	adjustBruteLoss(Proj.damage)
 	return 1
 
-/mob/living/simple_animal/hostile/scp096/adjustBruteLoss(var/damage)
+/mob/living/simple_animal/hostile/scp096/adjustBruteLoss(damage)
 
 	health = Clamp(health - damage, 0, maxHealth)
 
@@ -407,7 +407,7 @@
 		visible_message(SPAN_DANGER("[src] regenerates some of its missing pieces!"))
 
 //You cannot destroy us, fool!
-/mob/living/simple_animal/hostile/scp096/ex_act(var/severity)
+/mob/living/simple_animal/hostile/scp096/ex_act(severity)
 	var/damage = 0
 	switch (severity)
 		if(1.0)
@@ -420,7 +420,7 @@
 	adjustBruteLoss(damage)
 	return 1
 
-/mob/living/simple_animal/hostile/attackby(var/obj/item/O as obj, var/mob/user as mob)  //Marker -Agouri
+/mob/living/simple_animal/hostile/attackby(obj/item/O as obj, mob/user as mob)  //Marker -Agouri
 	..()
 	if(O.force)
 		visible_message(SPAN_DANGER("[src] is staggered by \the [O]!"))

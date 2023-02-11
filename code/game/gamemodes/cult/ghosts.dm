@@ -46,7 +46,7 @@
 
 	bloody_doodle_proc(0)
 
-/mob/observer/ghost/proc/bloody_doodle_proc(var/bloodless = 0)
+/mob/observer/ghost/proc/bloody_doodle_proc(bloodless = 0)
 	if(!ghost_ability_check())
 		return
 
@@ -170,7 +170,7 @@
 
 	whisper_proc()
 
-/mob/observer/ghost/proc/whisper_proc(var/anyone = 0)
+/mob/observer/ghost/proc/whisper_proc(anyone = 0)
 	if(!ghost_ability_check())
 		return
 

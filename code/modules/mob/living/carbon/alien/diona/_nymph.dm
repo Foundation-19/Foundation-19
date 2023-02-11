@@ -61,10 +61,10 @@
 	emote_prob =  0
 	wander_prob = 0
 
-/mob/living/carbon/alien/diona/sterile/Initialize(var/mapload)
+/mob/living/carbon/alien/diona/sterile/Initialize(mapload)
 	. = ..(mapload, 0)
 
-/mob/living/carbon/alien/diona/Initialize(var/mapload, var/flower_chance = 15)
+/mob/living/carbon/alien/diona/Initialize(mapload, flower_chance = 15)
 
 	species = all_species[SPECIES_DIONA]
 	add_language(LANGUAGE_ROOTGLOBAL)
@@ -94,7 +94,7 @@
 /mob/living/carbon/alien/diona/IsAdvancedToolUser()
 	return FALSE
 
-/mob/living/carbon/alien/diona/proc/handle_npc(var/mob/living/carbon/alien/diona/D)
+/mob/living/carbon/alien/diona/proc/handle_npc(mob/living/carbon/alien/diona/D)
 	if(D.stat != CONSCIOUS)
 		return
 	if(prob(wander_prob) && isturf(D.loc) && !D.pulledby) //won't move if being pulled

@@ -1,7 +1,7 @@
 /datum/mind
 	var/list/memories
 
-/mob/proc/StoreMemory(var/memory, var/options)
+/mob/proc/StoreMemory(memory, options)
 	if(!mind)
 		return "There is no mind to store a memory in."
 	. = mind.StoreMemory(memory, options)
@@ -186,7 +186,7 @@
 	else
 		to_chat(src, SPAN_WARNING("There is no mind to retrieve stored memories from."))
 
-/mob/verb/AddMemory(var/msg as message)
+/mob/verb/AddMemory(msg as message)
 	set name = "Add Note"
 	set category = "IC"
 

@@ -96,10 +96,10 @@ the HUD updates properly! */
 	GLOB.scramble_hud_users -= src
 	GLOB.scramble_hud_protected -= src
 
-/mob/proc/in_view(var/turf/T)
+/mob/proc/in_view(turf/T)
 	return view(T)
 
-/mob/observer/eye/in_view(var/turf/T)
+/mob/observer/eye/in_view(turf/T)
 	var/list/viewed = new
 	for(var/mob/living/carbon/human/H in SSmobs.mob_list)
 		if(get_dist(H, T) <= 7)

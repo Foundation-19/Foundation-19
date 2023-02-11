@@ -47,7 +47,7 @@
 
 
 
-/mob/proc/skillcheck(var/skill, var/requirement, var/show_message, var/message = "I have failed to do this.")//1 - 100
+/mob/proc/skillcheck(skill, requirement, show_message, message = "I have failed to do this.")//1 - 100
 	if(skill >= requirement)//If we already surpass the skill requirements no need to roll.
 		if(prob(get_success_chance()))//Only thing we roll for is a crit success.
 			return CRIT_SUCCESS
@@ -65,7 +65,7 @@
 			return 0
 
 
-/mob/proc/statscheck(var/stat, var/requirement, var/show_message, var/message = "I have failed to do this.")//Requirement needs to be 1 through 20
+/mob/proc/statscheck(stat, requirement, show_message, message = "I have failed to do this.")//Requirement needs to be 1 through 20
 	if(stat < requirement)
 		var/H = rand(1,20)// our "dice"
 	//	H += mood_affect(1)// our skill modifier
@@ -81,7 +81,7 @@
 		return 1
 /* sorry matt, mood isn't happening. leaving this intact for a sanity system down the road
 //having a bad mood fucks your shit up fam.
-/mob/proc/mood_affect(var/stat = null, var/skill = null)
+/mob/proc/mood_affect(stat = null, skill = null)
 	if(iscarbon(src))
 		var/mob/living/carbon/C = src
 		if(C.happiness <= MOOD_LEVEL_SAD3)
@@ -137,7 +137,7 @@
 
 //Stats helpers.
 // When you look at add_stats, they will be in this order as displayed. -Lion
-/mob/proc/add_stats(var/stre, var/dexe, var/inti)//To make adding stats quicker.
+/mob/proc/add_stats(stre, dexe, inti)//To make adding stats quicker.
 	if(stre)
 		str = stre
 	if(dexe)
@@ -146,19 +146,19 @@
 		int = inti
 
 
-/mob/proc/adjustStrength(var/num)
+/mob/proc/adjustStrength(num)
 	str += num
 
-/mob/proc/adjustDexterity(var/num)
+/mob/proc/adjustDexterity(num)
 	dex += num
 
-/mob/proc/adjustInteligence(var/num)
+/mob/proc/adjustInteligence(num)
 	int += num
 
 
 
 //Skill helpers.
-/mob/proc/skillnumtodesc(var/skill)
+/mob/proc/skillnumtodesc(skill)
 	switch(skill)
 		if(0 to 25)
 			return "<small><i>pathetic</i></small>"
@@ -171,7 +171,7 @@
 		if(80 to INFINITY)
 			return "<b>GOD LIKE</b>"
 
-/mob/proc/add_skills(var/melee, var/ranged, var/medical, var/engineering)//To make adding skills quicker.
+/mob/proc/add_skills(melee, ranged, medical, engineering)//To make adding skills quicker.
 	if(melee)
 		melee_skill = melee
 	if(ranged)

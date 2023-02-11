@@ -6,7 +6,7 @@
 	adjacency code.
 */
 
-/mob/living/silicon/robot/ClickOn(var/atom/A, var/params)
+/mob/living/silicon/robot/ClickOn(atom/A, params)
 	if(world.time <= next_click)
 		return
 	next_click = world.time + 1
@@ -97,22 +97,22 @@
 	return
 
 //Middle click cycles through selected modules.
-/mob/living/silicon/robot/MiddleClickOn(var/atom/A)
+/mob/living/silicon/robot/MiddleClickOn(atom/A)
 	cycle_modules()
 	return
 
 //Give cyborgs hotkey clicks without breaking existing uses of hotkey clicks
 // for non-doors/apcs
-/mob/living/silicon/robot/CtrlShiftClickOn(var/atom/A)
+/mob/living/silicon/robot/CtrlShiftClickOn(atom/A)
 	A.BorgCtrlShiftClick(src)
 
-/mob/living/silicon/robot/ShiftClickOn(var/atom/A)
+/mob/living/silicon/robot/ShiftClickOn(atom/A)
 	A.BorgShiftClick(src)
 
-/mob/living/silicon/robot/CtrlClickOn(var/atom/A)
+/mob/living/silicon/robot/CtrlClickOn(atom/A)
 	return A.BorgCtrlClick(src)
 
-/mob/living/silicon/robot/AltClickOn(var/atom/A)
+/mob/living/silicon/robot/AltClickOn(atom/A)
 	A.BorgAltClick(src)
 
 /mob/living/silicon/robot/CtrlAltClickOn(atom/A)
@@ -172,7 +172,7 @@
 /mob/living/silicon/robot/UnarmedAttack(atom/A)
 	A.attack_robot(src)
 
-/mob/living/silicon/robot/RangedAttack(atom/A, var/params)
+/mob/living/silicon/robot/RangedAttack(atom/A, params)
 	A.attack_robot(src)
 	return TRUE
 

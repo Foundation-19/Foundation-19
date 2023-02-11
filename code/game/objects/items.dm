@@ -763,7 +763,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 	user.visible_message("\The [user] peers through [zoomdevicename ? "the [zoomdevicename] of [src]" : "[src]"].")
 
-/mob/living/proc/unzoom(var/obj/item/I)
+/mob/living/proc/unzoom(obj/item/I)
 	if(I)
 		I.unzoom(src)
 

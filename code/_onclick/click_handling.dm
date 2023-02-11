@@ -56,12 +56,12 @@ var/const/CLICK_HANDLER_ALL                  = (~0)
 /datum/click_handler/default/OnDblClick(var/atom/A, var/params)
 	user.DblClickOn(A, params)
 
-/mob/proc/GetClickHandler(var/datum/click_handler/popped_handler)
+/mob/proc/GetClickHandler(datum/click_handler/popped_handler)
 	SETUP_CLICK_HANDLERS
 	return click_handlers[1]
 
 // Returns TRUE if the given click handler was removed, otherwise FALSE
-/mob/proc/RemoveClickHandler(var/datum/click_handler/click_handler)
+/mob/proc/RemoveClickHandler(datum/click_handler/click_handler)
 	if(!click_handlers)
 		return FALSE
 	if(ispath(click_handler)) // If we were given a path instead of an instance, find the first matching instance by type
@@ -90,7 +90,7 @@ var/const/CLICK_HANDLER_ALL                  = (~0)
 		click_handler.Enter()
 
 // Returns TRUE if the given click handler type was NOT previously the top click handler but now is
-/mob/proc/PushClickHandler(var/datum/click_handler/new_click_handler_type)
+/mob/proc/PushClickHandler(datum/click_handler/new_click_handler_type)
 	// No manipulation of the default click handler
 	if(new_click_handler_type == /datum/click_handler/default)
 		return FALSE

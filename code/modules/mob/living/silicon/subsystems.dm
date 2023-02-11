@@ -46,7 +46,7 @@
 			AH.register_alarm(src, /mob/living/silicon/proc/receive_alarm)
 			queued_alarms[AH] = list()	// Makes sure alarms remain listed in consistent order
 
-/mob/living/silicon/proc/init_subsystem(var/subsystem_type)
+/mob/living/silicon/proc/init_subsystem(subsystem_type)
 	var/existing_entry = silicon_subsystems[subsystem_type]
 	if(existing_entry && !ispath(existing_entry))
 		return FALSE
@@ -57,7 +57,7 @@
 	silicon_subsystems_by_name[SSS.name] = SSS
 	return TRUE
 
-/mob/living/silicon/proc/remove_subsystem(var/subsystem_type)
+/mob/living/silicon/proc/remove_subsystem(subsystem_type)
 	var/stat_silicon_subsystem/SSS = silicon_subsystems[subsystem_type]
 	if(!istype(SSS))
 		return FALSE
@@ -67,14 +67,14 @@
 	qdel(SSS)
 	return TRUE
 
-/mob/living/silicon/proc/open_subsystem(var/subsystem_type, var/mob/given = src)
+/mob/living/silicon/proc/open_subsystem(subsystem_type, mob/given = src)
 	var/stat_silicon_subsystem/SSS = silicon_subsystems[subsystem_type]
 	if(!istype(SSS))
 		return FALSE
 	SSS.Click(given)
 	return TRUE
 
-/mob/living/silicon/verb/activate_subsystem(var/datum/silicon_subsystem_name in silicon_subsystems_by_name)
+/mob/living/silicon/verb/activate_subsystem(datum/silicon_subsystem_name in silicon_subsystems_by_name)
 	set name = "Subsystems"
 	set desc = "Activates the given subsystem"
 	set category = "Silicon Commands"

@@ -134,7 +134,7 @@ var/global/repository/radiation/radiation_repository = new()
 /atom/proc/rad_act(var/severity)
 	return 1
 
-/mob/living/rad_act(var/severity)
+/mob/living/rad_act(severity)
 	if(severity)
 		src.apply_effect(severity, IRRADIATE, src.getarmor(null, "rad"))
 		for(var/atom/I in src)

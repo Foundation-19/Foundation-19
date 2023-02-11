@@ -85,7 +85,7 @@
 /mob/living/bot/death()
 	explode()
 
-/mob/living/bot/attackby(var/obj/item/O, var/mob/user)
+/mob/living/bot/attackby(obj/item/O, mob/user)
 	if(O.GetIdCard())
 		if(access_scanner.allowed(user) && !open)
 			locked = !locked
@@ -117,13 +117,13 @@
 	else
 		..()
 
-/mob/living/bot/attack_ai(var/mob/user)
+/mob/living/bot/attack_ai(mob/user)
 	Interact(user)
 
-/mob/living/bot/attack_hand(var/mob/user)
+/mob/living/bot/attack_hand(mob/user)
 	Interact(user)
 
-/mob/living/bot/proc/Interact(var/mob/user)
+/mob/living/bot/proc/Interact(mob/user)
 	add_fingerprint(user)
 	var/dat
 
@@ -172,7 +172,7 @@
 /mob/living/bot/proc/GetInteractMaintenance()
 	return
 
-/mob/living/bot/proc/ProcessCommand(var/mob/user, var/command, var/href_list)
+/mob/living/bot/proc/ProcessCommand(mob/user, command, href_list)
 	if(command == "toggle" && CanToggle(user))
 		if(on)
 			turn_off()
@@ -180,23 +180,23 @@
 			turn_on()
 	return
 
-/mob/living/bot/proc/CanToggle(var/mob/user)
+/mob/living/bot/proc/CanToggle(mob/user)
 	return (!RequiresAccessToToggle || access_scanner.allowed(user) || issilicon(user))
 
-/mob/living/bot/proc/CanAccessPanel(var/mob/user)
+/mob/living/bot/proc/CanAccessPanel(mob/user)
 	return (!locked || issilicon(user))
 
-/mob/living/bot/proc/CanAccessMaintenance(var/mob/user)
+/mob/living/bot/proc/CanAccessMaintenance(mob/user)
 	return (open || issilicon(user))
 
-/mob/living/bot/say(var/message)
+/mob/living/bot/say(message)
 	var/verb = "beeps"
 
 	message = sanitize(message)
 
 	..(message, null, verb)
 
-/mob/living/bot/Bump(var/atom/A)
+/mob/living/bot/Bump(atom/A)
 	if(on && botcard && istype(A, /obj/machinery/door))
 		var/obj/machinery/door/D = A
 		if(!istype(D, /obj/machinery/door/firedoor) && !istype(D, /obj/machinery/door/blast) && D.check_access(botcard))
@@ -204,7 +204,7 @@
 	else
 		..()
 
-/mob/living/bot/emag_act(var/remaining_charges, var/mob/user)
+/mob/living/bot/emag_act(remaining_charges, mob/user)
 	return 0
 
 /mob/living/bot/proc/handleAI()
@@ -260,7 +260,7 @@
 			++frustration
 	return
 
-/mob/living/bot/proc/handleFrustrated(var/targ)
+/mob/living/bot/proc/handleFrustrated(targ)
 	obstacle = targ ? target_path[1] : patrol_path[1]
 	target_path = list()
 	patrol_path = list()
@@ -269,7 +269,7 @@
 /mob/living/bot/proc/lookForTargets()
 	return
 
-/mob/living/bot/proc/confirmTarget(var/atom/A)
+/mob/living/bot/proc/confirmTarget(atom/A)
 	if(A.invisibility >= INVISIBILITY_LEVEL_ONE)
 		return 0
 	if(A in ignore_list)
@@ -325,7 +325,7 @@
 		obstacle = null
 	return
 
-/mob/living/bot/proc/makeStep(var/list/path)
+/mob/living/bot/proc/makeStep(list/path)
 	if(!path.len)
 		return 0
 	var/turf/T = path[1]

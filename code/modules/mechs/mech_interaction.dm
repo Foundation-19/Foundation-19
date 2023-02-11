@@ -22,12 +22,12 @@
 		if(!body.MouseDrop(over_object))
 			return ..()
 
-/mob/living/exosuit/RelayMouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params, var/mob/user)
+/mob/living/exosuit/RelayMouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params, mob/user)
 	if(user && (user in pilots) && user.loc == src)
 		return OnMouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params, user)
 	return ..()
 
-/mob/living/exosuit/OnMouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params, var/mob/user)
+/mob/living/exosuit/OnMouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params, mob/user)
 	if(!user || incapacitated() || user.incapacitated())
 		return FALSE
 
@@ -63,7 +63,7 @@
 		return max(shared_living_nano_distance(src_object), .) //Either visible to mech(outside) or visible to user (inside)
 
 
-/mob/living/exosuit/ClickOn(var/atom/A, var/params, var/mob/user)
+/mob/living/exosuit/ClickOn(atom/A, params, mob/user)
 
 	if(!user || incapacitated() || user.incapacitated())
 		return
@@ -194,7 +194,7 @@
 		return A.attack_generic(src, arms.melee_damage, "attacked")
 	return
 
-/mob/living/exosuit/proc/set_hardpoint(var/hardpoint_tag)
+/mob/living/exosuit/proc/set_hardpoint(hardpoint_tag)
 	clear_selected_hardpoint()
 	if(hardpoints[hardpoint_tag])
 		// Set the new system.
@@ -216,7 +216,7 @@
 		selected_system = null
 	selected_hardpoint = null
 
-/mob/living/exosuit/proc/check_enter(var/mob/user)
+/mob/living/exosuit/proc/check_enter(mob/user)
 	if(!user || user.incapacitated())
 		return FALSE
 	if(!user.Adjacent(src))
@@ -232,7 +232,7 @@
 		return FALSE
 	return TRUE
 
-/mob/living/exosuit/proc/enter(var/mob/user)
+/mob/living/exosuit/proc/enter(mob/user)
 	if(!check_enter(user))
 		return
 	to_chat(user, SPAN_NOTICE("You start climbing into \the [src]..."))
@@ -260,7 +260,7 @@
 			access_card.access |= pilot.GetAccess()
 			to_chat(pilot, SPAN_NOTICE("Security access permissions synchronized."))
 
-/mob/living/exosuit/proc/eject(var/mob/user, var/silent)
+/mob/living/exosuit/proc/eject(mob/user, silent)
 	if(!user || !(user in src.contents))
 		return
 	if(hatch_closed)
@@ -288,7 +288,7 @@
 		update_pilots()
 	return 1
 
-/mob/living/exosuit/attackby(var/obj/item/thing, var/mob/user)
+/mob/living/exosuit/attackby(obj/item/thing, mob/user)
 
 	if(user.a_intent != I_HURT && istype(thing, /obj/item/mech_equipment))
 		if(hardpoints_locked)
@@ -437,7 +437,7 @@
 				return
 	return ..()
 
-/mob/living/exosuit/attack_hand(var/mob/user)
+/mob/living/exosuit/attack_hand(mob/user)
 	// Drag the pilot out if possible.
 	if(user.a_intent == I_HURT)
 		if(!LAZYLEN(pilots))
@@ -459,15 +459,15 @@
 		hud_open.toggled()
 	return
 
-/mob/living/exosuit/attack_generic(var/mob/user, var/damage, var/attack_message = "smashes into")
+/mob/living/exosuit/attack_generic(mob/user, damage, attack_message = "smashes into")
 	if(..())
 		playsound(loc, 'sound/effects/metal_close.ogg', 40, 1)
 		playsound(loc, 'sound/weapons/tablehit1.ogg', 40, 1)
 
-/mob/living/exosuit/proc/attack_self(var/mob/user)
+/mob/living/exosuit/proc/attack_self(mob/user)
 	return visible_message("\The [src] pokes itself.")
 
-/mob/living/exosuit/proc/rename(var/mob/user)
+/mob/living/exosuit/proc/rename(mob/user)
 	if(user != src && !(user in pilots))
 		return
 	var/new_name = sanitize(input("Enter a new exosuit designation.", "Exosuit Name") as text|null, max_length = MAX_NAME_LEN)

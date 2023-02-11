@@ -122,7 +122,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 /**
  * W is the item being used in the attack, if any. modifier is if the attack should be longer or shorter than usual, for whatever reason.
  */
-/mob/living/get_attack_speed(var/obj/item/W)
+/mob/living/get_attack_speed(obj/item/W)
 	var/speed = base_attack_cooldown
 	if(istype(W))
 		speed = W.attack_cooldown

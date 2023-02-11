@@ -64,7 +64,7 @@
 	release()
 	return ..()
 
-/mob/living/simple_animal/MouseDrop(var/obj/structure/stasis_cage/over_object)
+/mob/living/simple_animal/MouseDrop(obj/structure/stasis_cage/over_object)
 	if(istype(over_object) && Adjacent(over_object) && CanMouseDrop(over_object, usr))
 
 		if(!stat && !istype(src.buckled, /obj/effect/energy_net))

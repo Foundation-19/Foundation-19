@@ -4,7 +4,7 @@
 /mob/living/silicon/robot/drone
 	var/mob/living/silicon/ai/controlling_ai
 
-/mob/living/silicon/robot/drone/attack_ai(var/mob/living/silicon/ai/user)
+/mob/living/silicon/robot/drone/attack_ai(mob/living/silicon/ai/user)
 
 	if(!istype(user) || controlling_ai || !config.allow_drone_spawn)
 		return
@@ -100,7 +100,7 @@
 
 	release_ai_control("Remote session terminated.")
 
-/mob/living/silicon/robot/drone/proc/release_ai_control(var/message = "Connection terminated.")
+/mob/living/silicon/robot/drone/proc/release_ai_control(message = "Connection terminated.")
 
 	if(controlling_ai)
 		if(mind)

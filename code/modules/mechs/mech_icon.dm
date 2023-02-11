@@ -52,7 +52,7 @@
 				new_overlays += get_mech_image(null, use_icon_state, 'icons/mecha/mech_weapon_overlays.dmi', null, hardpoint_object.mech_layer )
 	set_overlays(new_overlays)
 
-/mob/living/exosuit/proc/update_pilots(var/update_overlays = TRUE)
+/mob/living/exosuit/proc/update_pilots(update_overlays = TRUE)
 	if(update_overlays && LAZYLEN(pilot_overlays))
 		cut_overlay(pilot_overlays)
 	pilot_overlays = null

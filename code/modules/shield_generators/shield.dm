@@ -264,17 +264,17 @@
 
 
 // Other mobs
-/mob/living/can_pass_shield(var/obj/machinery/power/shield_generator/gen)
+/mob/living/can_pass_shield(obj/machinery/power/shield_generator/gen)
 	return !gen.check_flag(MODEFLAG_NONHUMANS)
 
 // Human mobs
-/mob/living/carbon/human/can_pass_shield(var/obj/machinery/power/shield_generator/gen)
+/mob/living/carbon/human/can_pass_shield(obj/machinery/power/shield_generator/gen)
 	if(isSynthetic())
 		return !gen.check_flag(MODEFLAG_ANORGANIC)
 	return !gen.check_flag(MODEFLAG_HUMANOIDS)
 
 // Silicon mobs
-/mob/living/silicon/can_pass_shield(var/obj/machinery/power/shield_generator/gen)
+/mob/living/silicon/can_pass_shield(obj/machinery/power/shield_generator/gen)
 	return !gen.check_flag(MODEFLAG_ANORGANIC)
 
 
@@ -291,7 +291,7 @@
 /atom/movable/proc/shield_impact(var/obj/effect/shield/S)
 	return
 
-/mob/living/shield_impact(var/obj/effect/shield/S)
+/mob/living/shield_impact(obj/effect/shield/S)
 	if(!S.gen.check_flag(MODEFLAG_OVERCHARGE))
 		return
 	S.overcharge_shock(src)
