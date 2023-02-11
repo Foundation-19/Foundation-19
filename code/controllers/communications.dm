@@ -213,7 +213,7 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_ECZ_FREQ,
 #define TRANSMISSION_WIRE	0
 #define TRANSMISSION_RADIO	1
 
-/proc/frequency_span_class(var/frequency)
+/proc/frequency_span_class(frequency)
 	// Antags!
 	if (frequency in ANTAG_FREQS)
 		return "syndradio"

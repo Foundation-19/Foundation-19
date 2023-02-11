@@ -3,7 +3,7 @@
 
 var/list/ghost_traps
 
-/proc/get_ghost_trap(var/trap_key)
+/proc/get_ghost_trap(trap_key)
 	if(!ghost_traps)
 		populate_ghost_traps()
 	return ghost_traps[trap_key]

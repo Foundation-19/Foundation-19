@@ -206,7 +206,7 @@ Class Procs:
 		stat ^= NOINPUT
 		return TRUE
 
-/proc/is_operable(var/obj/machinery/M, var/mob/user)
+/proc/is_operable(obj/machinery/M, mob/user)
 	return istype(M) && M.operable()
 
 /obj/machinery/proc/is_broken(additional_flags = 0)

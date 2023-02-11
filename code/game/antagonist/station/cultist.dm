@@ -14,7 +14,7 @@
 
 GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 
-/proc/iscultist(var/mob/player)
+/proc/iscultist(mob/player)
 	if(!GLOB.cult || !player.mind)
 		return 0
 	if(player.mind in GLOB.cult.current_antagonists)

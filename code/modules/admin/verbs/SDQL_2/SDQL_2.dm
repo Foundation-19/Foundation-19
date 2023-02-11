@@ -22,7 +22,7 @@
 	vars[var_name] = new_value
 	return 1
 
-/client/proc/SDQL2_query(var/query_text as message)
+/client/proc/SDQL2_query(query_text as message)
 	set category = "Debug"
 
 	if(!check_rights(R_DEBUG))  // Shouldn't happen... but just to be safe.
@@ -437,7 +437,7 @@
 	return v
 
 
-/proc/SDQL_function(var/datum/object, var/procname, var/list/arguments, source)
+/proc/SDQL_function(datum/object, procname, list/arguments, source)
 	set waitfor = FALSE
 
 	var/list/new_args = list()

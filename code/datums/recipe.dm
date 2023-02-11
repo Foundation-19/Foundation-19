@@ -126,7 +126,7 @@
 		qdel(O)
 	return result_obj
 
-/proc/select_recipe(var/list/datum/recipe/avaiable_recipes, var/obj/obj as obj, var/exact)
+/proc/select_recipe(list/datum/recipe/avaiable_recipes, obj/obj as obj, exact)
 	var/list/datum/recipe/possible_recipes = new
 	var/target = exact ? 0 : 1
 	for (var/datum/recipe/recipe in avaiable_recipes)

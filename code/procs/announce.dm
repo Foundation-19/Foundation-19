@@ -93,7 +93,7 @@
 	news.can_be_redacted = 0
 	announce_newscaster_news(news, zlevels)
 
-/proc/GetNameAndAssignmentFromId(var/obj/item/card/id/I)
+/proc/GetNameAndAssignmentFromId(obj/item/card/id/I)
 	// Format currently matches that of newscaster feeds: Registered Name (Assigned Rank)
 	return I.assignment ? "[I.registered_name] ([I.assignment])" : I.registered_name
 
@@ -103,7 +103,7 @@
 /proc/ion_storm_announcement(list/affecting_z)
 	command_announcement.Announce("It has come to our attention that the [station_name()] passed through an ion storm.  Please monitor all electronic equipment for malfunctions.", "Anomaly Alert", zlevels = affecting_z)
 
-/proc/AnnounceArrival(var/mob/living/carbon/human/character, var/datum/job/job, var/join_message)
+/proc/AnnounceArrival(mob/living/carbon/human/character, datum/job/job, join_message)
 	if(!istype(job) || !job.announced)
 		return
 	if (GAME_STATE != RUNLEVEL_GAME)
@@ -114,10 +114,10 @@
 
 	AnnounceArrivalSimple(character.real_name, rank, join_message, get_announcement_frequency(job))
 
-/proc/AnnounceArrivalSimple(var/name, var/rank = "visitor", var/join_message = "has arrived on the [station_name()]", var/frequency)
+/proc/AnnounceArrivalSimple(name, rank = "visitor", join_message = "has arrived on the [station_name()]", frequency)
 	GLOB.global_announcer.autosay("[name], [rank], [join_message].", "Arrivals Announcement Computer", frequency)
 
-/proc/get_announcement_frequency(var/datum/job/job)
+/proc/get_announcement_frequency(datum/job/job)
 	// During red alert all jobs are announced on main frequency.
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 	if (security_state.current_security_level_is_same_or_higher_than(security_state.high_security_level))

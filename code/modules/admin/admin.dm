@@ -4,19 +4,19 @@ var/global/floorIsLava = 0
 
 
 ////////////////////////////////
-/proc/message_admins(var/msg)
+/proc/message_admins(msg)
 	msg = "<span class=\"log_message\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[msg]</span></span>"
 	log_adminwarn(msg)
 	for(var/client/C in GLOB.admins)
 		if(check_rights(R_ADMIN, FALSE, C))
 			to_chat(C, msg, MESSAGE_TYPE_ADMINLOG)
-/proc/message_staff(var/msg)
+/proc/message_staff(msg)
 	msg = "<span class=\"log_message\"><span class=\"prefix\">STAFF LOG:</span> <span class=\"message\">[msg]</span></span>"
 	log_adminwarn(msg)
 	for(var/client/C in GLOB.admins)
 		if(check_rights(R_ADMIN|R_MOD, FALSE, C))
 			to_chat(C, msg, MESSAGE_TYPE_ADMINLOG)
-/proc/msg_admin_attack(var/text) //Toggleable Attack Messages
+/proc/msg_admin_attack(text) //Toggleable Attack Messages
 	log_attack(text)
 	var/rendered = "<span class=\"log_message\"><span class=\"prefix\">ATTACK:</span> <span class=\"message\">[text]</span></span>"
 	for(var/client/C in GLOB.admins)
@@ -24,7 +24,7 @@ var/global/floorIsLava = 0
 			if(C.get_preference_value(/datum/client_preference/staff/show_attack_logs) == GLOB.PREF_SHOW)
 				var/msg = rendered
 				to_chat(C, msg, MESSAGE_TYPE_ATTACKLOG)
-/proc/admin_notice(var/message, var/rights)
+/proc/admin_notice(message, rights)
 	for(var/mob/M in SSmobs.mob_list)
 		if(check_rights(rights, 0, M))
 			to_chat(M, message)
@@ -754,7 +754,7 @@ var/global/floorIsLava = 0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////ADMIN HELPER PROCS
 
-/proc/is_special_character(var/character) // returns 1 for special characters and 2 for heroes of gamemode
+/proc/is_special_character(character) // returns 1 for special characters and 2 for heroes of gamemode
 	if(!SSticker.mode)
 		return 0
 	var/datum/mind/M
@@ -1112,7 +1112,7 @@ var/global/floorIsLava = 0
 	if(istype(H))
 		H.regenerate_icons()
 
-/proc/get_options_bar(whom, detail = 2, name = 0, link = 1, highlight_special = 1, var/datum/ticket/ticket = null)
+/proc/get_options_bar(whom, detail = 2, name = 0, link = 1, highlight_special = 1, datum/ticket/ticket = null)
 	if(!whom)
 		return "<b>(*null*)</b>"
 	var/mob/M
@@ -1140,7 +1140,7 @@ var/global/floorIsLava = 0
 			var/ref_mob = "\ref[M]"
 			return "<b>[key_name(C, link, name, highlight_special, ticket)](<A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A>)([admin_jump_link(M)])</b>"
 
-/proc/ishost(var/client/C)
+/proc/ishost(client/C)
 	return check_rights(R_HOST, 0, C)
 
 //Prevents SDQL2 commands from changing admin permissions

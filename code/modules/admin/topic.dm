@@ -1896,7 +1896,7 @@
 /atom/movable/extra_admin_link(source, prefix, sufix, short_links)
 	return list("<A HREF='?[source];adminplayerobservefollow=\ref[src]'>[prefix][short_links ? "J" : "JMP"][sufix]</A>")
 
-/client/extra_admin_link(source, var/prefix, var/sufix, var/short_links)
+/client/extra_admin_link(source, prefix, sufix, short_links)
 	return mob ? mob.extra_admin_link(source, prefix, sufix, short_links) : list()
 
 /mob/extra_admin_link(source, prefix, sufix, short_links)
@@ -1909,7 +1909,7 @@
 	if(mind && (mind.current && !isghost(mind.current)))
 		. += "<A HREF='?[source];adminplayerobservefollow=\ref[mind.current]'>[prefix][short_links ? "B" : "BDY"][sufix]</A>"
 
-/proc/admin_jump_link(var/datum/target, var/source, var/delimiter = "|", var/prefix, var/sufix, var/short_links)
+/proc/admin_jump_link(datum/target, source, delimiter = "|", prefix, sufix, short_links)
 	if(!istype(target))
 		CRASH("Invalid admin jump link target: [log_info_line(target)]")
 	// The way admin jump links handle their src is weirdly inconsistent...
@@ -1925,7 +1925,7 @@
 /mob/get_admin_jump_link(atom/target, delimiter, prefix, sufix)
 	return client && client.get_admin_jump_link(target, delimiter, prefix, sufix)
 
-/client/get_admin_jump_link(var/atom/target, var/delimiter, var/prefix, var/sufix)
+/client/get_admin_jump_link(atom/target, delimiter, prefix, sufix)
 	if(holder)
 		var/short_links = get_preference_value(/datum/client_preference/ghost_follow_link_length) == GLOB.PREF_SHORT
 		return admin_jump_link(target, src, delimiter, prefix, sufix, short_links)

@@ -1,4 +1,4 @@
-/proc/spawn_diona_nymph(var/turf/target)
+/proc/spawn_diona_nymph(turf/target)
 	if(!istype(target))
 		return 0
 

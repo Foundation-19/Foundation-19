@@ -5,7 +5,7 @@
 	stop_following()
 	..()
 
-/client/proc/Jump(var/selected_area in area_repository.get_areas_by_z_level())
+/client/proc/Jump(selected_area in area_repository.get_areas_by_z_level())
 	set name = "Jump to Area"
 	set desc = "Area to jump to"
 	set category = "Admin"
@@ -20,7 +20,7 @@
 	log_and_message_admins("jumped to [A]")
 	SSstatistics.add_field_details("admin_verb","JA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/jumptoturf(var/turf/T)
+/client/proc/jumptoturf(turf/T)
 	set name = "Jump to Turf"
 	set category = "Admin"
 	if(!check_rights(R_ADMIN|R_MOD|R_DEBUG))
@@ -32,7 +32,7 @@
 	mob.jumpTo(T)
 	SSstatistics.add_field_details("admin_verb","JT") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/jumptomob(var/mob/M in SSmobs.mob_list)
+/client/proc/jumptomob(mob/M in SSmobs.mob_list)
 	set popup_menu = FALSE
 	set category = "Admin"
 	set name = "Jump to Mob"
@@ -95,7 +95,7 @@
 	else
 		alert("Admin jumping disabled")
 
-/client/proc/Getmob(var/mob/M in SSmobs.mob_list)
+/client/proc/Getmob(mob/M in SSmobs.mob_list)
 	set popup_menu = FALSE
 	set category = "Admin"
 	set name = "Get Mob"
@@ -135,7 +135,7 @@
 	else
 		alert("Admin jumping disabled")
 
-/client/proc/sendmob(var/mob/M in sortmobs())
+/client/proc/sendmob(mob/M in sortmobs())
 	set category = "Admin"
 	set name = "Send Mob"
 	if(!check_rights(R_ADMIN|R_MOD|R_DEBUG))

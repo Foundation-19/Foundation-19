@@ -51,7 +51,7 @@
 	if(density && prob(50))
 		do_simple_ranged_interaction()
 
-/proc/get_atom_closest_to_atom(var/atom/a, var/list/possibilities)
+/proc/get_atom_closest_to_atom(atom/a, list/possibilities)
 	if(!possibilities || !possibilities.len)
 		return null
 	var/closest_distance = get_dist(a, possibilities[1])

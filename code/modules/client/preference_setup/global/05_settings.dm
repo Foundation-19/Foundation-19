@@ -80,7 +80,7 @@
 
 	return ..()
 
-/client/proc/get_preference_value(var/preference)
+/client/proc/get_preference_value(preference)
 	if(prefs)
 		var/datum/client_preference/cp = get_client_preference(preference)
 		if(cp && prefs.preference_values)
@@ -90,7 +90,7 @@
 	else
 		log_error("Client is lacking preferences: [log_info_line(src)]")
 
-/client/proc/set_preference(var/preference, var/set_preference)
+/client/proc/set_preference(preference, set_preference)
 	var/datum/client_preference/cp = get_client_preference(preference)
 
 	if(!cp)
@@ -103,7 +103,7 @@
 
 	return FALSE
 
-/client/proc/cycle_preference(var/preference)
+/client/proc/cycle_preference(preference)
 	var/datum/client_preference/cp = get_client_preference(preference)
 
 	if(!cp)

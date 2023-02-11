@@ -119,7 +119,7 @@ Reagents have the following vars, which coorelate to the vars on the standard sc
 To add a scent extension to an atom using a reagent's info, where R. is the reagent, use set_scent_by_reagents().
 *****/
 
-/proc/set_scent_by_reagents(var/atom/smelly_atom)
+/proc/set_scent_by_reagents(atom/smelly_atom)
 	var/datum/reagent/smelliest
 	var/datum/reagent/scent_intensity
 	if(!smelly_atom.reagents || !smelly_atom.reagents.total_volume)

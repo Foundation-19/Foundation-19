@@ -8,7 +8,7 @@
 #define INVESTIGATE_DIR "data/investigate/"
 
 //SYSTEM
-/proc/investigate_subject2file(var/subject)
+/proc/investigate_subject2file(subject)
 	return file("[INVESTIGATE_DIR][subject].html")
 
 /hook/startup/proc/resetInvestigate()

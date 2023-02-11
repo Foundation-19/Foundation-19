@@ -1,4 +1,4 @@
-/proc/get_footstep(var/footstep_type, var/mob/caller)
+/proc/get_footstep(footstep_type, mob/caller)
 	. = caller && caller.get_footstep(footstep_type)
 	if(!.)
 		var/decl/footsteps/FS = decls_repository.get_decl(footstep_type)

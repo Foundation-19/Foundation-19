@@ -209,7 +209,7 @@
 /obj/screen/ability/proc/can_activate()
 	return 1
 
-/client/verb/activate_ability(var/slot as num)
+/client/verb/activate_ability(slot as num)
 	set name = ".activate_ability"
 //	set hidden = 1
 	if(!mob)

@@ -277,7 +277,7 @@ var/last_message_id = 0
 	last_message_id = last_message_id + 1
 	return last_message_id
 
-/proc/post_comm_message(var/message_title, var/message_text)
+/proc/post_comm_message(message_title, message_text)
 	var/list/message = list()
 	message["id"] = get_comm_message_id()
 	message["title"] = message_title
@@ -300,7 +300,7 @@ var/last_message_id = 0
 /datum/comm_message_listener/proc/Remove(list/message)
 	messages -= list(message)
 
-/proc/post_status(var/command, var/data1, var/data2)
+/proc/post_status(command, data1, data2)
 
 	var/datum/radio_frequency/frequency = radio_controller.return_frequency(1435)
 
@@ -321,7 +321,7 @@ var/last_message_id = 0
 			status_signal.data["toggle_alert_border"] = TRUE
 	frequency.post_signal(signal = status_signal)
 
-/proc/cancel_call_proc(var/mob/user)
+/proc/cancel_call_proc(mob/user)
 	if (!evacuation_controller)
 		return
 
@@ -337,7 +337,7 @@ var/last_message_id = 0
 			return 1
 	return 0
 
-/proc/call_shuttle_proc(var/mob/user, var/emergency)
+/proc/call_shuttle_proc(mob/user, emergency)
 	if (!evacuation_controller)
 		return
 

@@ -103,7 +103,7 @@
 		scan["nearsight"] = TRUE
 	return scan
 
-/proc/display_medical_data_header(var/list/scan, skill_level = SKILL_DEFAULT)
+/proc/display_medical_data_header(list/scan, skill_level = SKILL_DEFAULT)
 	//In case of problems, abort.
 	var/dat = list()
 
@@ -124,7 +124,7 @@
 	dat = JOINTEXT(dat)
 	return dat
 
-/proc/display_medical_data_health(var/list/scan, skill_level = SKILL_DEFAULT)
+/proc/display_medical_data_health(list/scan, skill_level = SKILL_DEFAULT)
 	//In case of problems, abort.
 	if(!scan["name"])
 		return "<center><span class='bad'><strong>SCAN READOUT ERROR.</strong></span></center>"
@@ -277,7 +277,7 @@
 
 	return dat
 
-/proc/display_medical_data_body(var/list/scan, skill_level = SKILL_DEFAULT)
+/proc/display_medical_data_body(list/scan, skill_level = SKILL_DEFAULT)
 	//In case of problems, abort.
 	if(!scan["name"])
 		return "<center><span class='bad'><strong>SCAN READOUT ERROR.</strong></span></center>"
@@ -386,7 +386,7 @@
 	dat = JOINTEXT(dat)
 	return dat
 
-/proc/display_medical_data(var/list/scan, skill_level = SKILL_DEFAULT, var/TT = FALSE)
+/proc/display_medical_data(list/scan, skill_level = SKILL_DEFAULT, TT = FALSE)
 	//In case of problems, abort.
 	if(!scan["name"])
 		return "<center><span class='bad'><strong>SCAN READOUT ERROR.</strong></span></center>"
@@ -411,7 +411,7 @@
 	dat = JOINTEXT(dat)
 	return dat
 
-/proc/get_severity(amount, var/tag = FALSE)
+/proc/get_severity(amount, tag = FALSE)
 	if(!amount)
 		return "none"
 

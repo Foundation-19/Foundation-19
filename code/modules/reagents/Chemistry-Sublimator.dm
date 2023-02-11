@@ -1,4 +1,4 @@
-/proc/create_gas_data_for_reagent(var/datum/reagent/reagent)
+/proc/create_gas_data_for_reagent(datum/reagent/reagent)
 
 	var/kill_later
 	if(ispath(reagent))

@@ -176,7 +176,7 @@
 /datum/chunk/proc/acquire_visible_turfs(list/visible)
 	return
 
-/proc/seen_turfs_in_range(var/source, var/range)
+/proc/seen_turfs_in_range(source, range)
 	var/turf/pos = get_turf(source)
 	if(pos)
 		. = hear(range, pos)

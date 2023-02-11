@@ -1,4 +1,4 @@
-/proc/create_objects_in_loc(var/atom/loc, var/atom_paths)
+/proc/create_objects_in_loc(atom/loc, atom_paths)
 	if(!istype(loc))
 		CRASH("Inappropriate loction given.")
 

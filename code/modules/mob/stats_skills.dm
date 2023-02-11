@@ -91,10 +91,10 @@
 				return -15
 */
 
-/proc/strToDamageModifier(var/strength, var/modifier)
+/proc/strToDamageModifier(strength, modifier)
 	return strength * modifier
 
-/proc/strToSpeedModifier(var/strength, var/w_class)//Looks messy. Is messy. Is also only used once. But I don't give a fuuuuuuuuck.
+/proc/strToSpeedModifier(strength, w_class)//Looks messy. Is messy. Is also only used once. But I don't give a fuuuuuuuuck.
 	switch(strength)
 		if(1 to 5)
 			if(w_class > ITEM_SIZE_NORMAL)
@@ -112,7 +112,7 @@
 			if(w_class > ITEM_SIZE_NORMAL)
 				return 5
 
-/proc/dexToAccuracy(var/dexterity) // i can do this better but lets take this for now
+/proc/dexToAccuracy(dexterity) // i can do this better but lets take this for now
 	switch(dexterity)
 		if(1 to 3)
 			return -8

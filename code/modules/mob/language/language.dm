@@ -257,7 +257,7 @@
 		return TOPIC_HANDLED
 	return ..()
 
-/proc/transfer_languages(var/mob/source, var/mob/target, var/except_flags)
+/proc/transfer_languages(mob/source, mob/target, except_flags)
 	for(var/datum/language/L in source.languages)
 		if(L.flags & except_flags)
 			continue

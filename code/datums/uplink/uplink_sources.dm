@@ -115,7 +115,7 @@ GLOBAL_LIST_INIT(default_uplink_source_priority, list(
 		AM.dropInto(M.loc)
 		to_chat(M, "<span class='notice'>[text] appear at your location.</span>")
 
-/proc/setup_uplink_source(var/mob/M, var/amount = DEFAULT_TELECRYSTAL_AMOUNT)
+/proc/setup_uplink_source(mob/M, amount = DEFAULT_TELECRYSTAL_AMOUNT)
 	if(!istype(M) || !M.mind)
 		return FALSE
 

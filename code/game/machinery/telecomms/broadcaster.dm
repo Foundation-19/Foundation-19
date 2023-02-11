@@ -271,7 +271,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 
 **/
 
-/proc/Broadcast_Message(var/datum/radio_frequency/connection, var/mob/M,
+/proc/Broadcast_Message(datum/radio_frequency/connection, mob/M,
 						var/vmask, var/vmessage, var/obj/item/device/radio/radio,
 						var/message, var/name, var/job, var/realname, var/vname,
 						var/data, var/compression, var/list/level, var/freq, var/verbage = "says", var/datum/language/speaking = null,
@@ -436,7 +436,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 
 	return 1
 
-/proc/Broadcast_SimpleMessage(var/source, var/frequency, var/text, var/data, var/mob/M, var/compression, var/level, var/channel_tag, var/channel_color)
+/proc/Broadcast_SimpleMessage(source, frequency, text, data, mob/M, compression, level, channel_tag, channel_color)
 
   /* ###### Prepare the radio connection ###### */
 

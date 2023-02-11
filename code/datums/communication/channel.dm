@@ -156,7 +156,7 @@
 	message = sanitize(message)
 	return communicate(arglist(args))
 
-/proc/communicate(var/channel_type, var/communicator, var/message)
+/proc/communicate(channel_type, communicator, message)
 	var/list/channels = decls_repository.get_decls_of_subtype(/decl/communication_channel)
 	var/decl/communication_channel/channel = channels[channel_type]
 

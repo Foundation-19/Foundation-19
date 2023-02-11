@@ -119,7 +119,7 @@
 
 	return private_valid_special_roles
 
-/client/proc/wishes_to_be_role(var/role)
+/client/proc/wishes_to_be_role(role)
 	if(!prefs)
 		return FALSE
 	if(role in prefs.be_special_role)

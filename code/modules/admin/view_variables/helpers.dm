@@ -124,7 +124,7 @@
 			"}
 
 // No mass editing of clients
-/client/make_view_variables_variable_entry(var/varname, var/value, var/hide_watch = 0)
+/client/make_view_variables_variable_entry(varname, value, hide_watch = 0)
 	return {"
 			(<a href='?_src_=vars;datumedit=\ref[src];varnameedit=[varname]'>E</a>)
 			(<a href='?_src_=vars;datumchange=\ref[src];varnamechange=[varname]'>C</a>)

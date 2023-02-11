@@ -102,7 +102,7 @@
 	if(prob(emote_prob))
 		D.emote(pick("scratch","jump","chirp","tail"))
 
-/proc/split_into_nymphs(var/mob/living/carbon/human/donor, dying)
+/proc/split_into_nymphs(mob/living/carbon/human/donor, dying)
 
 	if(!donor || donor.species.name != SPECIES_DIONA)
 		return

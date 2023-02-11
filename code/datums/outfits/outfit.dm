@@ -2,7 +2,7 @@ var/list/outfits_decls_
 var/list/outfits_decls_root_
 var/list/outfits_decls_by_type_
 
-/proc/outfit_by_type(var/outfit_type)
+/proc/outfit_by_type(outfit_type)
 	if(!outfits_decls_root_)
 		init_outfit_decls()
 	return outfits_decls_by_type_[outfit_type]

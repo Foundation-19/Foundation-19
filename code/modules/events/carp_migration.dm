@@ -77,7 +77,7 @@ GLOBAL_LIST_INIT(carp_count,list())// a list of Z levels (string), associated wi
 	if(M.health <= 0 && prob(60))
 		M.gib()
 
-/proc/get_random_edge_turf(var/dir, var/clearance = TRANSITIONEDGE + 1, var/Z)
+/proc/get_random_edge_turf(dir, clearance = TRANSITIONEDGE + 1, Z)
 	if(!dir)
 		return
 

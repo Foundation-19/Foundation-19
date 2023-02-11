@@ -332,7 +332,7 @@ SUBSYSTEM_DEF(event)
 	Interact(usr)
 
 //Event admin verbs
-/client/proc/forceEvent(var/type in SSevent.all_events)
+/client/proc/forceEvent(type in SSevent.all_events)
 	set name = "Trigger Event (Debug Only)"
 	set category = "Debug"
 

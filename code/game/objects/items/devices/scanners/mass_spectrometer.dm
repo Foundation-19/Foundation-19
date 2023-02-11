@@ -46,7 +46,7 @@
 	else
 		..()
 
-/proc/mass_spectrometer_scan(var/datum/reagents/reagents, mob/user, var/details)
+/proc/mass_spectrometer_scan(datum/reagents/reagents, mob/user, details)
 	if(!reagents || !reagents.total_volume)
 		return "<span class='warning'>No sample to scan.</span>"
 	var/list/blood_traces = list()
@@ -56,7 +56,7 @@
 			var/datum/reagent/random/random = R
 			if(istype(random))
 				return random.get_scan_data(user)
-				
+
 		if(R.type != /datum/reagent/blood)
 			return "<span class='warning'>The sample was contaminated! Please insert another sample</span>"
 		else

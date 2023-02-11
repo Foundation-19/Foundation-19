@@ -2,7 +2,7 @@ GLOBAL_LIST_EMPTY(global_listen_count)
 GLOBAL_LIST_EMPTY(event_sources_count)
 GLOBAL_LIST_EMPTY(event_listen_count)
 
-/proc/cleanup_events(var/source)
+/proc/cleanup_events(source)
 	if(GLOB.global_listen_count && GLOB.global_listen_count[source])
 		cleanup_global_listener(source, GLOB.global_listen_count[source])
 	if(GLOB.event_sources_count && GLOB.event_sources_count[source])

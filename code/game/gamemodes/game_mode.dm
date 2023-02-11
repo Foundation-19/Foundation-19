@@ -475,7 +475,7 @@ var/global/list/additional_antag_types = list()
 		if(check_rights(R_ADMIN|R_MOD, FALSE, M))
 			to_chat(M, msg)
 
-/proc/show_objectives(var/datum/mind/player)
+/proc/show_objectives(datum/mind/player)
 
 	if(!player || !player.current) return
 

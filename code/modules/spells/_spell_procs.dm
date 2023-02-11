@@ -12,7 +12,7 @@
 				var/datum/spell/S = screen.spell
 				mind.learned_spells |= S
 
-/proc/restore_spells(var/mob/H)
+/proc/restore_spells(mob/H)
 	if(H.mind && H.mind.learned_spells)
 		var/list/spells = list()
 		for(var/datum/spell/spell_to_remove in H.mind.learned_spells) //remove all the spells from other people.

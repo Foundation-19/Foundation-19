@@ -180,7 +180,7 @@ default behaviour is:
 					AM.set_dir(saved_dir)
 				now_pushing = 0
 
-/proc/swap_density_check(var/mob/swapper, var/mob/swapee)
+/proc/swap_density_check(mob/swapper, mob/swapee)
 	var/turf/T = get_turf(swapper)
 	if(T?.density)
 		return 1

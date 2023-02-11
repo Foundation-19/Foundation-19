@@ -35,7 +35,7 @@
 	return uplink.items_assoc[/datum/uplink_item/item/stealthy_weapons/soap]
 
 var/list/uplink_random_selections_
-/proc/get_uplink_random_selection_by_type(var/uplist_selection_type)
+/proc/get_uplink_random_selection_by_type(uplist_selection_type)
 	if(!uplink_random_selections_)
 		uplink_random_selections_ = init_subtypes(/datum/uplink_random_selection)
 		for(var/datum/entry in uplink_random_selections_)

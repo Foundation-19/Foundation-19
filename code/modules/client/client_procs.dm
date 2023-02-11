@@ -488,7 +488,7 @@
 	set category = "Preferences"
 	prefs?.open_setup_window(usr)
 
-/client/proc/apply_fps(var/client_fps)
+/client/proc/apply_fps(client_fps)
 	if(world.byond_version >= 511 && byond_version >= 511 && client_fps >= CLIENT_MIN_FPS && client_fps <= CLIENT_MAX_FPS)
 		vars["fps"] = client_fps
 

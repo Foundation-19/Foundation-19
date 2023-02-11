@@ -181,7 +181,7 @@ LEGACY_RECORD_STRUCTURE(virus_records, virus_record)
 	if (antigen != disease.antigen)
 		return 0
 
-/proc/virus_copylist(var/list/datum/disease2/disease/viruses)
+/proc/virus_copylist(list/datum/disease2/disease/viruses)
 	var/list/res = list()
 	for (var/ID in viruses)
 		var/datum/disease2/disease/V = viruses[ID]
@@ -234,7 +234,7 @@ var/global/list/virusDB = list()
 	return 1
 
 
-/proc/virology_letterhead(var/report_name)
+/proc/virology_letterhead(report_name)
 	return {"
 		<center><h1><b>[report_name]</b></h1></center>
 		<center><small><i>[station_name()] Virology Lab</i></small></center>

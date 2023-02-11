@@ -75,7 +75,7 @@
 	if(. && user)
 		to_chat(user, "<span class='warning'>The label won't fit.</span>")
 
-/proc/get_attached_labels(var/atom/source)
+/proc/get_attached_labels(atom/source)
 	if(has_extension(source, /datum/extension/labels))
 		var/datum/extension/labels/L = get_extension(source, /datum/extension/labels)
 		if(LAZYLEN(L.labels))

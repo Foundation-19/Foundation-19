@@ -1,6 +1,6 @@
 // Returns which access is relevant to passed network. Used by the program.
 // A return value of 0 indicates no access reqirement
-/proc/get_camera_access(var/network)
+/proc/get_camera_access(network)
 	if(!network)
 		return 0
 	. = GLOB.using_map.get_network_access(network)

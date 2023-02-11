@@ -69,7 +69,7 @@
 /datum/universal_state/proc/OnTouchMapEdge(atom/A)
 	return TRUE //return FALSE to cancel map edge handling
 
-/proc/SetUniversalState(var/newstate,var/on_exit=1, var/on_enter=1, list/arguments=null)
+/proc/SetUniversalState(newstate,on_exit=1, on_enter=1, list/arguments=null)
 	if(on_exit)
 		GLOB.universe.OnExit()
 	if(arguments)

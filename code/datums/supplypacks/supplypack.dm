@@ -29,9 +29,9 @@
 	switch(security_level)
 		if(SUPPLY_SECURITY_ELEVATED)
 			if(security_state.all_security_levels.len > 1)
-				security_level = security_state.all_security_levels[2] 
+				security_level = security_state.all_security_levels[2]
 			else
-				security_level = security_state.high_security_level 
+				security_level = security_state.high_security_level
 		if(SUPPLY_SECURITY_HIGH)
 			security_level = security_state.high_security_level
 	if(!istype(security_level))
@@ -52,7 +52,7 @@
 */
 
 var/list/supply_methods_
-/proc/get_supply_method(var/method_type)
+/proc/get_supply_method(method_type)
 	if(!supply_methods_)
 		supply_methods_ = list()
 	. = supply_methods_[method_type]

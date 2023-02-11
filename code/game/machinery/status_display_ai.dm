@@ -28,7 +28,7 @@ var/list/ai_status_emotions = list(
 	"Ship Scan" 				= new /datum/ai_emotion("ai_shipscan")
 	)
 
-/proc/get_ai_emotions(var/ckey)
+/proc/get_ai_emotions(ckey)
 	var/list/emotions = new
 	for(var/emotion_name in ai_status_emotions)
 		var/datum/ai_emotion/emotion = ai_status_emotions[emotion_name]

@@ -1,4 +1,4 @@
-/proc/create_prefab_from_assembly(var/obj/item/device/electronic_assembly/assembly)
+/proc/create_prefab_from_assembly(obj/item/device/electronic_assembly/assembly)
 	var/decl/prefab/ic_assembly/new_prefab = new() //We are making a prefabricated assembly. This is actually not too hard, just tedious.
 	new_prefab.assembly_name = assembly.name //Set easy stuff like name, type, shell, etc.
 	new_prefab.assembly_type = assembly.type

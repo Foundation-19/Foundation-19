@@ -295,7 +295,7 @@ var/global/list/datum/dna/gene/dna_genes[0]
 	SetSEBlock(block,newBlock,defer)
 
 
-/proc/EncodeDNABlock(var/value)
+/proc/EncodeDNABlock(value)
 	return add_zero2(num2hex(value & 0xF), 3)
 
 /datum/dna/proc/UpdateUI()

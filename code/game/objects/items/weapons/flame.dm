@@ -19,7 +19,7 @@
 		if(submerged(depth))
 			extinguish(no_message = TRUE)
 
-/proc/isflamesource(var/atom/A)
+/proc/isflamesource(atom/A)
 	if(!istype(A))
 		return FALSE
 	if(isWelder(A))

@@ -279,7 +279,7 @@ GLOBAL_DATUM_INIT(event_manager, /datum/event_manager, new)
 
 	Interact(usr)
 
-/client/proc/forceEvent(var/type in GLOB.event_manager.allEvents)
+/client/proc/forceEvent(type in GLOB.event_manager.allEvents)
 	set name = "Trigger Event (Debug Only)"
 	set category = "Debug"
 
