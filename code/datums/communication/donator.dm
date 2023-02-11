@@ -7,7 +7,7 @@
 	mute_setting = MUTE_OOC
 	show_preference_setting = /datum/client_preference/show_ooc
 
-/decl/communication_channel/dooc/can_communicate(var/client/C, var/message)
+/decl/communication_channel/dooc/can_communicate(client/C, message)
 	. = ..()
 	if(!.)
 		return
@@ -17,7 +17,7 @@
 		return
 	return FALSE
 
-/decl/communication_channel/dooc/do_communicate(var/client/C, var/message)
+/decl/communication_channel/dooc/do_communicate(client/C, message)
 	var/datum/admins/holder = C.holder
 
 	for(var/client/target in GLOB.clients)

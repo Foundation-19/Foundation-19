@@ -23,11 +23,11 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 
 
 //This can be called if either we're doing whole sound setup ourselves or it will be as part of from-file sound setup
-/decl/sound_player/proc/PlaySoundDatum(var/atom/source, var/sound_id, var/sound/sound, var/range, var/prefer_mute)
+/decl/sound_player/proc/PlaySoundDatum(atom/source, sound_id, sound/sound, range, prefer_mute)
 	var/token_type = isnum(sound.environment) ? /datum/sound_token : /datum/sound_token/static_environment
 	return new token_type(source, sound_id, sound, range, prefer_mute)
 
-/decl/sound_player/proc/PlayLoopingSound(var/atom/source, var/sound_id, var/sound, var/volume, var/range, var/falloff = 1, var/echo, var/frequency, var/prefer_mute)
+/decl/sound_player/proc/PlayLoopingSound(atom/source, sound_id, sound, volume, range, falloff = 1, echo, frequency, prefer_mute)
 	var/sound/S = istype(sound, /sound) ? sound : new(sound)
 	S.environment = 0 // Ensures a 3D effect even if x/y offset happens to be 0 the first time it's played
 	S.volume  = volume
@@ -38,7 +38,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 
 	return PlaySoundDatum(source, sound_id, S, range, prefer_mute)
 
-/decl/sound_player/proc/PrivStopSound(var/datum/sound_token/sound_token)
+/decl/sound_player/proc/PrivStopSound(datum/sound_token/sound_token)
 	var/channel = sound_token.sound.channel
 	var/sound_id = sound_token.sound_id
 
@@ -53,7 +53,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	taken_channels -= sound_id
 	sound_tokens_by_sound_id -= sound_id
 
-/decl/sound_player/proc/PrivGetChannel(var/datum/sound_token/sound_token)
+/decl/sound_player/proc/PrivGetChannel(datum/sound_token/sound_token)
 	var/sound_id = sound_token.sound_id
 
 	. = taken_channels[sound_id] // Does this sound_id already have an assigned channel?

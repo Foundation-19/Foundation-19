@@ -197,7 +197,7 @@
 	var/handles_type
 	var/work_type
 
-/decl/hierarchy/rcd_mode/proc/do_work(var/obj/item/rcd/rcd, var/atom/target, var/user)
+/decl/hierarchy/rcd_mode/proc/do_work(obj/item/rcd/rcd, atom/target, user)
 	for(var/child in children)
 		var/decl/hierarchy/rcd_mode/rcdm = child
 		if(!rcdm.can_handle_work(rcd, target))
@@ -220,11 +220,11 @@
 
 	return FALSE
 
-/decl/hierarchy/rcd_mode/proc/can_handle_work(var/obj/item/rcd/rcd, var/atom/target)
+/decl/hierarchy/rcd_mode/proc/can_handle_work(obj/item/rcd/rcd, atom/target)
 	var/area/A = get_area(get_turf(target))
 	return istype(target, handles_type) && A.can_modify_area()
 
-/decl/hierarchy/rcd_mode/proc/do_handle_work(var/atom/target)
+/decl/hierarchy/rcd_mode/proc/do_handle_work(atom/target)
 	var/result = get_work_result(target)
 	if(ispath(result,/turf))
 		var/turf/T = target
@@ -234,10 +234,10 @@
 	else
 		qdel(target)
 
-/decl/hierarchy/rcd_mode/proc/get_work_result(var/atom/target)
+/decl/hierarchy/rcd_mode/proc/get_work_result(atom/target)
 	return work_type
 
-/decl/hierarchy/rcd_mode/proc/work_message(var/atom/target, var/mob/user, var/rcd)
+/decl/hierarchy/rcd_mode/proc/work_message(atom/target, mob/user, rcd)
 	var/message
 	if(work_type)
 		var/atom/work = work_type
@@ -258,7 +258,7 @@
 	handles_type = /turf/simulated/floor
 	work_type = /obj/machinery/door/airlock
 
-/decl/hierarchy/rcd_mode/airlock/basic/can_handle_work(var/rcd, var/turf/target)
+/decl/hierarchy/rcd_mode/airlock/basic/can_handle_work(rcd, turf/target)
 	return ..() && !target.contains_dense_objects() && !(locate(/obj/machinery/door/airlock) in target)
 
 /*
@@ -272,7 +272,7 @@
 	delay = 2 SECONDS
 	work_type = /turf/simulated/floor/airless
 
-/decl/hierarchy/rcd_mode/floor_and_walls/base_turf/can_handle_work(var/rcd, var/turf/target)
+/decl/hierarchy/rcd_mode/floor_and_walls/base_turf/can_handle_work(rcd, turf/target)
 	var/area/A = get_area(target)
 	return istype(target) && (isspaceturf(target) || isopenspace(target) || istype(target, get_base_turf_by_area(target))) && A.can_modify_area()
 
@@ -288,7 +288,7 @@
 /decl/hierarchy/rcd_mode/deconstruction
 	name = "Deconstruction"
 
-/decl/hierarchy/rcd_mode/deconstruction/work_message(var/atom/target, var/mob/user, var/rcd)
+/decl/hierarchy/rcd_mode/deconstruction/work_message(atom/target, mob/user, rcd)
 	user.visible_message("<span class='warning'>\The [user] is using \a [rcd] to deconstruct \the [target]!</span>", "<span class='warning'>You are deconstructing \the [target]!</span>")
 
 /decl/hierarchy/rcd_mode/deconstruction/airlock
@@ -301,7 +301,7 @@
 	delay = 2 SECONDS
 	handles_type = /turf/simulated/floor
 
-/decl/hierarchy/rcd_mode/deconstruction/floor/get_work_result(var/target)
+/decl/hierarchy/rcd_mode/deconstruction/floor/get_work_result(target)
 	return get_base_turf_by_area(target)
 
 /decl/hierarchy/rcd_mode/deconstruction/wall
@@ -310,7 +310,7 @@
 	handles_type = /turf/simulated/wall
 	work_type = /turf/simulated/floor
 
-/decl/hierarchy/rcd_mode/deconstruction/wall/can_handle_work(var/obj/item/rcd/rcd, var/turf/simulated/wall/target)
+/decl/hierarchy/rcd_mode/deconstruction/wall/can_handle_work(obj/item/rcd/rcd, turf/simulated/wall/target)
 	return ..() && (rcd.canRwall || !target.reinf_material)
 
 /decl/hierarchy/rcd_mode/deconstruction/wall_frame

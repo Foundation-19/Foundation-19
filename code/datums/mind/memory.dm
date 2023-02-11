@@ -125,17 +125,17 @@
 /decl/memory_options
 	var/memory_type = /datum/memory
 
-/decl/memory_options/proc/Validate(var/datum/mind/target)
+/decl/memory_options/proc/Validate(datum/mind/target)
 	if(!target.current)
 		return "Mind is detached from mob."
 
-/decl/memory_options/proc/MemoryTags(var/datum/mind/target)
+/decl/memory_options/proc/MemoryTags(datum/mind/target)
 	return
 
-/decl/memory_options/proc/Log(var/message)
+/decl/memory_options/proc/Log(message)
 	log_and_message_admins(message)
 
-/decl/memory_options/proc/Create(var/datum/mind/target, var/memory)
+/decl/memory_options/proc/Create(datum/mind/target, memory)
 	var/error = Validate(target)
 	if(error)
 		return error
@@ -151,10 +151,10 @@
 	memory_type = /datum/memory/user
 	var/const/memory_limit = 32
 
-/decl/memory_options/default/MemoryTags(var/datum/mind/target)
+/decl/memory_options/default/MemoryTags(datum/mind/target)
 	return target.MemoryTags()
 
-/decl/memory_options/default/Validate(var/datum/mind/target)
+/decl/memory_options/default/Validate(datum/mind/target)
 	if((. = ..()))
 		return
 
@@ -171,7 +171,7 @@
 /decl/memory_options/system
 	memory_type = /datum/memory/system
 
-/decl/memory_options/system/Log(var/message)
+/decl/memory_options/system/Log(message)
 	return
 
 /********

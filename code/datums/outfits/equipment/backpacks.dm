@@ -9,7 +9,7 @@
 /decl/backpack_outfit/nothing
 	name = "Nothing"
 
-/decl/backpack_outfit/nothing/spawn_backpack(var/location, var/metadata, var/desired_type)
+/decl/backpack_outfit/nothing/spawn_backpack(location, metadata, desired_type)
 	return
 
 /decl/backpack_outfit/backpack
@@ -58,7 +58,7 @@
 	if(flags & BACKPACK_HAS_SUBTYPE_SELECTION)
 		tweaks += new/datum/backpack_tweak/selection/subtypes(path)
 
-/decl/backpack_outfit/proc/spawn_backpack(var/location, var/metadata, var/desired_type)
+/decl/backpack_outfit/proc/spawn_backpack(location, metadata, desired_type)
 	metadata = metadata || list()
 	desired_type = desired_type || path
 	for(var/t in tweaks)

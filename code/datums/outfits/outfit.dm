@@ -139,7 +139,7 @@ var/list/outfits_decls_by_type_
 
 	return TRUE
 
-/decl/hierarchy/outfit/proc/equip_pre_base(mob/living/carbon/human/H, var/equip_adjustments)
+/decl/hierarchy/outfit/proc/equip_pre_base(mob/living/carbon/human/H, equip_adjustments)
 	pre_equip(H)
 
 	//Start with uniform,suit,backpack for additional slots
@@ -169,7 +169,7 @@ var/list/outfits_decls_by_type_
 	if(suit_store)
 		H.equip_to_slot_or_del(new suit_store(H),slot_s_store)
 
-/decl/hierarchy/outfit/proc/equip_post_base(mob/living/carbon/human/H, var/equip_adjustments)
+/decl/hierarchy/outfit/proc/equip_post_base(mob/living/carbon/human/H, equip_adjustments)
 	if(l_ear)
 		var/l_ear_path = (OUTFIT_ADJUSTMENT_PLAIN_HEADSET & equip_adjustments) && ispath(l_ear, /obj/item/device/radio/headset) ? /obj/item/device/radio/headset : l_ear
 		H.equip_to_slot_or_del(new l_ear_path(H),slot_l_ear)
@@ -236,7 +236,7 @@ var/list/outfits_decls_by_type_
 		created_cards += W
 	return created_cards
 
-/decl/hierarchy/outfit/proc/equip_pda(var/mob/living/carbon/human/H, var/rank, var/assignment, var/equip_adjustments)
+/decl/hierarchy/outfit/proc/equip_pda(mob/living/carbon/human/H, rank, assignment, equip_adjustments)
 	if(!pda_slot || !pda_type)
 		return
 	if(OUTFIT_ADJUSTMENT_SKIP_ID_PDA & equip_adjustments)

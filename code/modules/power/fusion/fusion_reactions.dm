@@ -12,7 +12,7 @@ var/list/fusion_reactions
 	var/minimum_reaction_temperature = 100
 	var/priority = 100
 
-/decl/fusion_reaction/proc/handle_reaction_special(var/obj/effect/fusion_em_field/holder)
+/decl/fusion_reaction/proc/handle_reaction_special(obj/effect/fusion_em_field/holder)
 	return 0
 
 /proc/get_fusion_reaction(p_react, s_react, m_energy)
@@ -124,7 +124,7 @@ var/list/fusion_reactions
 	radiation = 40
 	instability = 20
 
-/decl/fusion_reaction/phoron_supermatter/handle_reaction_special(var/obj/effect/fusion_em_field/holder)
+/decl/fusion_reaction/phoron_supermatter/handle_reaction_special(obj/effect/fusion_em_field/holder)
 
 	wormhole_event(GetConnectedZlevels(holder))
 

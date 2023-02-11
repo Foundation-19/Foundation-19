@@ -14,7 +14,7 @@ GLOBAL_DATUM_INIT(moved_event, /decl/observ/moved, new)
 	name = "Moved"
 	expected_type = /atom/movable
 
-/decl/observ/moved/register(var/atom/movable/mover, var/datum/listener, var/proc_call)
+/decl/observ/moved/register(atom/movable/mover, datum/listener, proc_call)
 	. = ..()
 
 	// Listen to the parent if possible.

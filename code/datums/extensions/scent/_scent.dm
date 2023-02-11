@@ -13,7 +13,7 @@ Scent intensity
 /decl/scent_intensity/proc/can_smell(mob/living/carbon/human/user)
 	return TRUE
 
-/decl/scent_intensity/proc/PrintMessage(mob/living/carbon/human/user, var/descriptor, scent)
+/decl/scent_intensity/proc/PrintMessage(mob/living/carbon/human/user, descriptor, scent)
 	if(!can_smell(user))
 		return
 	if(!user.isSynthetic())
@@ -26,7 +26,7 @@ Scent intensity
 	cooldown = 4 MINUTES
 	intensity = 2
 
-/decl/scent_intensity/normal/PrintMessage(mob/living/carbon/human/user, var/descriptor, scent)
+/decl/scent_intensity/normal/PrintMessage(mob/living/carbon/human/user, descriptor, scent)
 	if(!can_smell(user))
 		return
 	if(!user.isSynthetic())
@@ -38,7 +38,7 @@ Scent intensity
 	cooldown = 3 MINUTES
 	intensity = 3
 
-/decl/scent_intensity/strong/PrintMessage(mob/living/carbon/human/user, var/descriptor, scent)
+/decl/scent_intensity/strong/PrintMessage(mob/living/carbon/human/user, descriptor, scent)
 	if(!can_smell(user))
 		return
 	if(!user.isSynthetic())

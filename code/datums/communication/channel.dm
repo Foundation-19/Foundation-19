@@ -9,7 +9,7 @@
 	var/mute_setting
 	var/show_preference_setting
 
-/decl/communication_channel/proc/can_ignore(var/client/C)
+/decl/communication_channel/proc/can_ignore(client/C)
 	if (!C)
 		return TRUE
 	// Channels that cannot be toggled can never be ignored
@@ -30,13 +30,13 @@
 /*
 * Procs for handling sending communication messages
 */
-/decl/communication_channel/proc/communicate(var/datum/communicator, var/message)
+/decl/communication_channel/proc/communicate(datum/communicator, message)
 	if(can_communicate(arglist(args)))
 		call(log_proc)("[(flags&COMMUNICATION_LOG_CHANNEL_NAME) ? "([name]) " : ""][communicator.communication_identifier()] : [message]")
 		return do_communicate(arglist(args))
 	return FALSE
 
-/decl/communication_channel/proc/can_communicate(var/datum/communicator, var/message)
+/decl/communication_channel/proc/can_communicate(datum/communicator, message)
 
 	if(!message)
 		return FALSE
@@ -79,13 +79,13 @@
 
 	return TRUE
 
-/decl/communication_channel/proc/do_communicate(var/communicator, var/message)
+/decl/communication_channel/proc/do_communicate(communicator, message)
 	return
 
 /*
 * Procs for handling the reception of communication messages
 */
-/decl/communication_channel/proc/receive_communication(var/datum/communicator, var/datum/receiver, var/message)
+/decl/communication_channel/proc/receive_communication(datum/communicator, datum/receiver, message)
 	if(can_receive_communication(receiver))
 		var/has_follow_links = FALSE
 		if((flags & COMMUNICATION_ADMIN_FOLLOW))
@@ -99,14 +99,14 @@
 				message = "[extra_links] [message]"
 		do_receive_communication(arglist(args))
 
-/decl/communication_channel/proc/can_receive_communication(var/datum/receiver)
+/decl/communication_channel/proc/can_receive_communication(datum/receiver)
 	if(show_preference_setting)
 		var/client/C = receiver.get_client()
 		if(can_ignore(C))
 			return FALSE
 	return TRUE
 
-/decl/communication_channel/proc/do_receive_communication(var/datum/communicator, var/datum/receiver, var/message)
+/decl/communication_channel/proc/do_receive_communication(datum/communicator, datum/receiver, message)
 	to_chat(receiver, message)
 
 
