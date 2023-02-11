@@ -259,7 +259,7 @@
 
 // Shield collision checks below
 
-/atom/movable/proc/can_pass_shield(var/obj/machinery/power/shield_generator/gen)
+/atom/movable/proc/can_pass_shield(obj/machinery/power/shield_generator/gen)
 	return 1
 
 
@@ -288,7 +288,7 @@
 
 
 // Shield on-impact logic here. This is called only if the object is actually blocked by the field (can_pass_shield applies first)
-/atom/movable/proc/shield_impact(var/obj/effect/shield/S)
+/atom/movable/proc/shield_impact(obj/effect/shield/S)
 	return
 
 /mob/living/shield_impact(obj/effect/shield/S)

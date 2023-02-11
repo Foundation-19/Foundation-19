@@ -585,7 +585,7 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 	var/turf/position = get_turf(src)
 	return (position.z in signal.data["level"] && signal.data["done"])
 
-/atom/proc/telecomms_process(var/do_sleep = 1)
+/atom/proc/telecomms_process(do_sleep = 1)
 
 	// First, we want to generate a new radio signal
 	var/datum/signal/signal = new

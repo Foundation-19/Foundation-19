@@ -9,7 +9,7 @@ GLOBAL_DATUM_INIT(contained_state, /datum/topic_state/contained_state, new)
 
 	return user.shared_nano_interaction()
 
-/atom/proc/contains(var/atom/location)
+/atom/proc/contains(atom/location)
 	if(!location)
 		return 0
 	if(location == src)

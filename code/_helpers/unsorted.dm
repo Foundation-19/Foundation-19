@@ -1216,7 +1216,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	crash_with("Prevented attempt to delete dview mob: [log_info_line(src)]")
 	return QDEL_HINT_LETMELIVE // Prevents destruction
 
-/atom/proc/get_light_and_color(var/atom/origin)
+/atom/proc/get_light_and_color(atom/origin)
 	if(origin)
 		color = origin.color
 		set_light(origin.light_max_bright, origin.light_inner_range, origin.light_outer_range, origin.light_falloff_curve)

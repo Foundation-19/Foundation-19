@@ -108,7 +108,7 @@
 	if(holstered.loc != storage)
 		clear_holster()
 
-/atom/proc/holster_verb(var/holster_name in get_holsters())
+/atom/proc/holster_verb(holster_name in get_holsters())
 	set name = "Holster"
 	set category = "Object"
 	set src in usr

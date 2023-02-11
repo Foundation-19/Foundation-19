@@ -139,10 +139,10 @@
 /atom/proc/HasProximity(atom/movable/AM as mob|obj)
 	return
 
-/atom/proc/emp_act(var/severity)
+/atom/proc/emp_act(severity)
 	return
 
-/atom/proc/set_density(var/new_density)
+/atom/proc/set_density(new_density)
 	if(density != new_density)
 		density = !!new_density
 
@@ -287,7 +287,7 @@ its easier to just keep the beam vertical.
 	dir = new_dir
 	return TRUE
 
-/atom/proc/set_icon_state(var/new_icon_state)
+/atom/proc/set_icon_state(new_icon_state)
 	if(has_extension(src, /datum/extension/base_icon_state))
 		var/datum/extension/base_icon_state/bis = get_extension(src, /datum/extension/base_icon_state)
 		bis.base_icon_state = new_icon_state
@@ -304,7 +304,7 @@ its easier to just keep the beam vertical.
 /atom/proc/ex_act()
 	return
 
-/atom/proc/emag_act(var/remaining_charges, var/mob/user, var/emag_source)
+/atom/proc/emag_act(remaining_charges, mob/user, emag_source)
 	return NO_EMAG_ACT
 
 /atom/proc/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
@@ -319,7 +319,7 @@ its easier to just keep the beam vertical.
 	qdel(src)
 	. = TRUE
 
-/atom/proc/hitby(atom/movable/AM, var/datum/thrownthing/TT)//already handled by throw impact
+/atom/proc/hitby(atom/movable/AM, datum/thrownthing/TT)//already handled by throw impact
 	if(isliving(AM))
 		var/mob/living/M = AM
 		M.apply_damage(TT.speed*5, BRUTE)
@@ -438,7 +438,7 @@ its easier to just keep the beam vertical.
 			continue
 		O.show_message(message,2,deaf_message,1)
 
-/atom/movable/proc/dropInto(var/atom/destination)
+/atom/movable/proc/dropInto(atom/destination)
 	while(istype(destination))
 		var/atom/drop_destination = destination.onDropInto(src)
 		if(!istype(drop_destination) || drop_destination == destination)
@@ -446,10 +446,10 @@ its easier to just keep the beam vertical.
 		destination = drop_destination
 	return forceMove(null)
 
-/atom/proc/onDropInto(var/atom/movable/AM)
+/atom/proc/onDropInto(atom/movable/AM)
 	return // If onDropInto returns null, then dropInto will forceMove AM into us.
 
-/atom/movable/onDropInto(var/atom/movable/AM)
+/atom/movable/onDropInto(atom/movable/AM)
 	return loc // If onDropInto returns something, then dropInto will attempt to drop AM there.
 
 /atom/proc/InsertedContents()
@@ -466,7 +466,7 @@ its easier to just keep the beam vertical.
 
 // Called when hitting the atom with a grab.
 // Will skip attackby() and afterattack() if returning TRUE.
-/atom/proc/grab_attack(var/obj/item/grab/G)
+/atom/proc/grab_attack(obj/item/grab/G)
 	return FALSE
 
 /atom/proc/climb_on()
@@ -478,7 +478,7 @@ its easier to just keep the beam vertical.
 
 	do_climb(usr)
 
-/atom/proc/can_climb(var/mob/living/user, post_climb_check=FALSE, check_silicon=TRUE)
+/atom/proc/can_climb(mob/living/user, post_climb_check=FALSE, check_silicon=TRUE)
 	if (!(atom_flags & ATOM_FLAG_CLIMBABLE) || !can_touch(user, check_silicon) || (!post_climb_check && climbers && (user in climbers)))
 		return 0
 
@@ -514,7 +514,7 @@ its easier to just keep the beam vertical.
 		return 0
 	return 1
 
-/atom/proc/can_touch(var/mob/user, check_silicon=TRUE)
+/atom/proc/can_touch(mob/user, check_silicon=TRUE)
 	if (!user)
 		return 0
 	if(!Adjacent(user))
@@ -529,7 +529,7 @@ its easier to just keep the beam vertical.
 		return 0
 	return 1
 
-/atom/proc/turf_is_crowded(var/atom/ignore)
+/atom/proc/turf_is_crowded(atom/ignore)
 	var/turf/T = get_turf(src)
 	if(!istype(T))
 		return 0
@@ -542,7 +542,7 @@ its easier to just keep the beam vertical.
 			return A
 	return 0
 
-/atom/proc/do_climb(var/mob/living/user, check_silicon=TRUE)
+/atom/proc/do_climb(mob/living/user, check_silicon=TRUE)
 	if (!can_climb(user, check_silicon=check_silicon))
 		return 0
 
@@ -620,7 +620,7 @@ its easier to just keep the beam vertical.
 /atom/proc/get_color()
 	return isnull(color) ? COLOR_WHITE : color
 
-/atom/proc/set_color(var/color)
+/atom/proc/set_color(color)
 	src.color = color
 
 /atom/proc/get_cell()

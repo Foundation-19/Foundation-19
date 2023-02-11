@@ -176,7 +176,7 @@
 	Topic(src, list("command"="enable", "value"="[!enabled]"))
 	return TRUE
 
-/atom/proc/AIAltClick(var/atom/A)
+/atom/proc/AIAltClick(atom/A)
 	return AltClick(A)
 
 /obj/machinery/turretid/AIAltClick() //toggles lethal on turrets
@@ -188,7 +188,7 @@
 /obj/machinery/atmospherics/binary/pump/AIAltClick()
 	return AltClick()
 
-/atom/proc/AIMiddleClick(var/mob/living/silicon/user)
+/atom/proc/AIMiddleClick(mob/living/silicon/user)
 	return 0
 
 /obj/machinery/door/airlock/AIMiddleClick() // Toggles door bolt lights.

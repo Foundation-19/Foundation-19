@@ -10,7 +10,7 @@
 	Note that in all cases the neighbor is handled simply; this is usually the user's mob, in which case it is up to you
 	to check that the mob is not inside of something
 */
-/atom/proc/Adjacent(var/atom/neighbor) // basic inheritance, unused
+/atom/proc/Adjacent(atom/neighbor) // basic inheritance, unused
 	return 0
 
 // Not a sane use of the function and (for now) indicative of an error elsewhere
@@ -108,7 +108,7 @@
 	Note: Multiple-tile objects are created when the bound_width and bound_height are creater than the tile size.
 	This is not used in stock /tg/station currently.
 */
-/atom/movable/Adjacent(var/atom/neighbor)
+/atom/movable/Adjacent(atom/neighbor)
 	if(neighbor == loc || (neighbor.loc == loc)) return 1
 	if(!isturf(loc)) return 0
 	for(var/turf/T in locs)

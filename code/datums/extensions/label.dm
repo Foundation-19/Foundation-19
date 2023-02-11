@@ -82,7 +82,7 @@
 			return L.labels.Copy()
 		return list()
 
-/atom/proc/RemoveLabel(var/label in get_attached_labels(src))
+/atom/proc/RemoveLabel(label in get_attached_labels(src))
 	set name = "Remove Label"
 	set desc = "Used to remove labels"
 	set category = "Object"

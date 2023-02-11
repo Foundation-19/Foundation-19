@@ -111,7 +111,7 @@ var/const/FINGERPRINT_COMPLETE = 6
 				else
 					fingerprints[full_print] = full_print
 
-/atom/proc/transfer_fingerprints_to(var/atom/A)
+/atom/proc/transfer_fingerprints_to(atom/A)
 	if(fingerprints)
 		LAZYDISTINCTADD(A.fingerprints, fingerprints)
 	if(fingerprintshidden)

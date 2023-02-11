@@ -2,11 +2,11 @@
 // You could use this to have an effect trigger when someone is in serious danger, or as a means for an AI to guess which mob needs to die first.
 // The idea and the code structure was taken from Dungeon Crawl Stone Soup.
 
-/atom/movable/proc/get_threat(var/mob/living/threatened)
+/atom/movable/proc/get_threat(mob/living/threatened)
 	return 0
 
 
-/atom/movable/proc/guess_threat_level(var/mob/living/threatened)
+/atom/movable/proc/guess_threat_level(mob/living/threatened)
 	return 0
 
 /mob/living/simple_animal

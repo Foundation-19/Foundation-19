@@ -1893,7 +1893,7 @@
 /datum/proc/extra_admin_link(prefix, sufix, short_links)
 	return list()
 
-/atom/movable/extra_admin_link(var/source, var/prefix, var/sufix, var/short_links)
+/atom/movable/extra_admin_link(source, prefix, sufix, short_links)
 	return list("<A HREF='?[source];adminplayerobservefollow=\ref[src]'>[prefix][short_links ? "J" : "JMP"][sufix]</A>")
 
 /client/extra_admin_link(source, var/prefix, var/sufix, var/short_links)

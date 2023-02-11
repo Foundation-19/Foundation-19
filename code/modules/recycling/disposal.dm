@@ -653,7 +653,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 // called when movable is expelled from a disposal pipe or outlet
 // by default does nothing, override for special behaviour
 
-/atom/movable/proc/pipe_eject(var/direction)
+/atom/movable/proc/pipe_eject(direction)
 	return
 
 // check if mob has client, if so restore client view on eject

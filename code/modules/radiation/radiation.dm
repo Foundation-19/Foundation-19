@@ -58,7 +58,7 @@
 	return SSradiation.get_rads_at_turf(src)
 
 // If people expand the system, this may be useful. Here as a placeholder until then
-/atom/proc/rad_act(var/severity)
+/atom/proc/rad_act(severity)
 	return 1
 
 /mob/living/rad_act(severity)

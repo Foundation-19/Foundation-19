@@ -131,7 +131,7 @@ var/global/repository/radiation/radiation_repository = new()
 	var/rad_resistance = 0  // Allow overriding rad resistance
 
 // If people expand the system, this may be useful. Here as a placeholder until then
-/atom/proc/rad_act(var/severity)
+/atom/proc/rad_act(severity)
 	return 1
 
 /mob/living/rad_act(severity)

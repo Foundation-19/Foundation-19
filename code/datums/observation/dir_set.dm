@@ -31,11 +31,11 @@ GLOBAL_DATUM_INIT(dir_set_event, /decl/observ/dir_set, new)
 	if(old_dir != dir)
 		GLOB.dir_set_event.raise_event(src, old_dir, dir)
 
-/atom/movable/Entered(var/atom/movable/am, atom/old_loc)
+/atom/movable/Entered(atom/movable/am, atom/old_loc)
 	. = ..()
 	if(GLOB.dir_set_event.has_listeners(am))
 		GLOB.dir_set_event.register(src, am, /atom/proc/recursive_dir_set)
 
-/atom/movable/Exited(var/atom/movable/am, atom/new_loc)
+/atom/movable/Exited(atom/movable/am, atom/new_loc)
 	. = ..()
 	GLOB.dir_set_event.unregister(src, am, /atom/proc/recursive_dir_set)

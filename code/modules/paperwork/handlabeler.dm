@@ -31,7 +31,7 @@
 			return
 	A.attach_label(user, src, label)
 
-/atom/proc/attach_label(var/user, var/atom/labeler, var/label_text)
+/atom/proc/attach_label(user, atom/labeler, label_text)
 	to_chat(user, "<span class='notice'>The label refuses to stick to [name].</span>")
 
 /mob/observer/attach_label(user, atom/labeler, label_text)

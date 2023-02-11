@@ -30,7 +30,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	return A.attackby(src, user, click_params)
 
 // No comment
-/atom/proc/attackby(obj/item/W, mob/user, var/click_params)
+/atom/proc/attackby(obj/item/W, mob/user, click_params)
 	user.interact_log += "([time_stamp()]) (<b>[src.x]X, [src.y]Y, [src.z]Z</b>) - Interacted with [src], using [W]. (Intent: [user.a_intent] | Location: [get_area(src)])"
 	return
 

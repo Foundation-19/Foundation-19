@@ -16,7 +16,7 @@
 	Note that this proc can be overridden, and is in the case of screen objects.
 */
 
-/atom/Click(var/location, var/control, var/params) // This is their reaction to being clicked on (standard proc)
+/atom/Click(location, control, params) // This is their reaction to being clicked on (standard proc)
 	var/list/L = params2list(params)
 	var/dragged = L["drag"]
 	if(dragged && !L[dragged])
@@ -25,11 +25,11 @@
 	var/datum/click_handler/click_handler = usr.GetClickHandler()
 	click_handler.OnClick(src, params)
 
-/atom/DblClick(var/location, var/control, var/params)
+/atom/DblClick(location, control, params)
 	var/datum/click_handler/click_handler = usr.GetClickHandler()
 	click_handler.OnDblClick(src, params)
 
-/atom/proc/allow_click_through(var/atom/A, var/params, var/mob/user)
+/atom/proc/allow_click_through(atom/A, params, mob/user)
 	return FALSE
 
 /turf/allow_click_through(atom/A, params, mob/user)
@@ -250,7 +250,7 @@
 
 // In case of use break glass
 /*
-/atom/proc/MiddleClick(var/mob/M as mob)
+/atom/proc/MiddleClick(mob/M as mob)
 	return
 */
 
@@ -262,7 +262,7 @@
 /mob/proc/ShiftClickOn(atom/A)
 	A.ShiftClick(src)
 	return
-/atom/proc/ShiftClick(var/mob/user)
+/atom/proc/ShiftClick(mob/user)
 	if(user.client && user.client.eye == user)
 		user.examinate(src)
 	return
@@ -274,10 +274,10 @@
 /mob/proc/CtrlClickOn(atom/A)
 	return A.CtrlClick(src)
 
-/atom/proc/CtrlClick(var/mob/user)
+/atom/proc/CtrlClick(mob/user)
 	return FALSE
 
-/atom/movable/CtrlClick(var/mob/user)
+/atom/movable/CtrlClick(mob/user)
 	if(Adjacent(user))
 		user.start_pulling(src)
 		return TRUE
@@ -293,7 +293,7 @@
 		return
 	A.AltClick(src)
 
-/atom/proc/AltClick(var/mob/user)
+/atom/proc/AltClick(mob/user)
 	var/turf/T = get_turf(src)
 	if(T && (isturf(loc) || isturf(src)) && user.TurfAdjacent(T))
 		user.listed_turf = T
@@ -316,7 +316,7 @@
 	A.CtrlShiftClick(src)
 	return
 
-/atom/proc/CtrlShiftClick(var/mob/user)
+/atom/proc/CtrlShiftClick(mob/user)
 	return
 
 /*
@@ -327,7 +327,7 @@
 		return
 	pointed(A)
 
-/atom/proc/CtrlAltClick(var/mob/user)
+/atom/proc/CtrlAltClick(mob/user)
 	return
 
 /*

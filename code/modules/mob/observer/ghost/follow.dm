@@ -1,7 +1,7 @@
 /datum/proc/extra_ghost_link(prefix, sufix, short_links)
 	return list()
 
-/atom/movable/extra_ghost_link(var/atom/ghost, var/prefix, var/sufix, var/short_links)
+/atom/movable/extra_ghost_link(atom/ghost, prefix, sufix, short_links)
 	if(src == ghost)
 		return list()
 	return list(create_ghost_link(ghost, src, short_links ? "F" : "Follow", prefix, sufix))

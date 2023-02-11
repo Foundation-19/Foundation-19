@@ -481,7 +481,7 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 
 /* Atom reagent creation - use it all the time */
 
-/atom/proc/create_reagents(var/max_vol)
+/atom/proc/create_reagents(max_vol)
 	if(reagents)
 		log_debug("Attempted to create a new reagents holder when already referencing one: [log_info_line(src)]")
 		reagents.maximum_volume = max(reagents.maximum_volume, max_vol)
