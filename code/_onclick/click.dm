@@ -32,7 +32,7 @@
 /atom/proc/allow_click_through(var/atom/A, var/params, var/mob/user)
 	return FALSE
 
-/turf/allow_click_through(var/atom/A, var/params, var/mob/user)
+/turf/allow_click_through(atom/A, params, mob/user)
 	return TRUE
 
 /*

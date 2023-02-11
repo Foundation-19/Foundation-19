@@ -1,7 +1,7 @@
-/turf/simulated/wall/diona/New(var/newloc)
+/turf/simulated/wall/diona/New(newloc)
 	..(newloc,"biomass")
 
-/turf/simulated/wall/diona/attack_generic(var/mob/user, var/damage, var/attack_message)
+/turf/simulated/wall/diona/attack_generic(mob/user, damage, attack_message)
 	if(istype(user, /mob/living/carbon/alien/diona))
 		if(can_open == WALL_OPENING)
 			return

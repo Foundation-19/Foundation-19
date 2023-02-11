@@ -139,7 +139,7 @@
 	if(!LAZYLEN(victims))
 		return PROCESS_KILL
 
-/turf/simulated/floor/exoplanet/lava/get_footstep_sound(var/mob/caller)
+/turf/simulated/floor/exoplanet/lava/get_footstep_sound(mob/caller)
 	return get_footstep(/decl/footsteps/lava, caller)
 
 /turf/simulated/mineral/volcanic

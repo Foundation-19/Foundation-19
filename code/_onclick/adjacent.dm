@@ -25,7 +25,7 @@
 	* If you are diagonally adjacent, ensure you can pass through at least one of the mutually adjacent square.
 		* Passing through in this case ignores anything with the throwpass flag, such as tables, racks, and morgue trays.
 */
-/turf/Adjacent(var/atom/neighbor, var/atom/target = null)
+/turf/Adjacent(atom/neighbor, atom/target = null)
 	var/turf/T0 = get_turf(neighbor)
 	if(T0 == src)
 		return 1
@@ -90,7 +90,7 @@
 * If you are in the same turf, always true
 * If you are not adjacent, then false
 */
-/turf/proc/AdjacentQuick(var/atom/neighbor, var/atom/target = null)
+/turf/proc/AdjacentQuick(atom/neighbor, atom/target = null)
 	var/turf/T0 = get_turf(neighbor)
 	if(T0 == src)
 		return 1

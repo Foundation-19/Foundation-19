@@ -7,7 +7,7 @@
 	thermal_conductivity = 0
 
 // the new Diona Death Prevention Feature: gives an average amount of lumination
-/turf/simulated/floor/holofloor/get_lumcount(var/minlum = 0, var/maxlum = 1)
+/turf/simulated/floor/holofloor/get_lumcount(minlum = 0, maxlum = 1)
 	return 0.8
 
 /turf/simulated/floor/holofloor/attackby(obj/item/W as obj, mob/user as mob)

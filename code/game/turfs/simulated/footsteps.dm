@@ -4,7 +4,7 @@
 		var/decl/footsteps/FS = decls_repository.get_decl(footstep_type)
 		. = pick(FS.footstep_sounds)
 
-/turf/simulated/proc/get_footstep_sound(var/mob/caller)
+/turf/simulated/proc/get_footstep_sound(mob/caller)
 	for(var/obj/structure/S in contents)
 		if(S.footstep_type)
 			return get_footstep(S.footstep_type, caller)
@@ -18,7 +18,7 @@
 	if(is_plating())
 		return get_footstep(/decl/footsteps/plating, caller)
 
-/turf/simulated/floor/get_footstep_sound(var/mob/caller)
+/turf/simulated/floor/get_footstep_sound(mob/caller)
 	. = ..()
 	if(!.)
 		if(!flooring || !flooring.footstep_type)
@@ -26,7 +26,7 @@
 		else
 			return get_footstep(flooring.footstep_type, caller)
 
-/turf/simulated/Entered(var/mob/living/carbon/human/H)
+/turf/simulated/Entered(mob/living/carbon/human/H)
 	..()
 	if(istype(H))
 		H.handle_footsteps()
