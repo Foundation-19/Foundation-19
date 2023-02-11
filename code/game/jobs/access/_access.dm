@@ -185,7 +185,7 @@
 			priv_region_access["[A.region]"] += A.id
 
 	var/list/region = priv_region_access["[code]"]
-	return region.Copy()
+	return region?.Copy()
 
 /proc/get_region_accesses_name(var/code)
 	switch(code)
