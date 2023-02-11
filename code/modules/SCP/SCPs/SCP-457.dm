@@ -13,10 +13,11 @@ GLOBAL_LIST_EMPTY(scp457s)
 	SCP = /datum/scp/scp_457
 	status_flags = NO_ANTAG
 	var/door_cooldown
-	var/fuelh = 100
+	var/fuel = 100
+	var/obj/effect/landmark/respawn457/K
 
-	health = 300
-	maxHealth = 300
+	health = 500
+	maxHealth = 500
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
@@ -138,7 +139,23 @@ GLOBAL_LIST_EMPTY(scp457s)
 	src.visible_message("\The [src] melts \the [A]'s controls[check ? ", and rips it open!" : ", and breaks it!"]")
 
 /mob/living/scp_457/movement_delay()
-	return 3
+	return 5
 
-/datum/reagent/water/touch_mob(var/mob/living/scp_457/L)
-	L.Weaken(10)
+/datum/reagent/water/touch_mob(var/mob/living/scp_457/M)
+	M.adjustToxLoss(15)
+	to_chat(M, "<span class='userdanger'>FUEL LESSENS, MAKE THEM PAY...")
+
+/mob/living/scp_457/Life()
+	if(health == 0)
+		death(FALSE, deathmessage="dies, as the last flames are extinguished.", TRUE)
+		update_icons()
+		K.Respawn()
+		return
+
+/obj/effect/landmark/respawn457
+	name = "457landmark"
+
+/obj/effect/landmark/respawn457/proc/Respawn()
+	sleep(3)
+	new /mob/living/scp_457(loc)
+	src.visible_message("SCP-457s escaping flame gains enough fuel, and reshapes into a humanoid form, once again.")
