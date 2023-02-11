@@ -7,4 +7,4 @@
 		A.power_alert(was_raised)
 	..()
 
-/area/proc/power_alert(var/alarming)
+/area/proc/power_alert(alarming)
