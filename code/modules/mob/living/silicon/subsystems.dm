@@ -100,7 +100,7 @@
 	var/datum/nano_module/nano_subsystem
 	var/datum/tgui_module/tgui_subsystem
 
-/stat_silicon_subsystem/New(var/mob/living/silicon/loc, var/subsystem_type, var/ui_state)
+/stat_silicon_subsystem/New(mob/living/silicon/loc, subsystem_type, ui_state)
 	if(!istype(loc))
 		CRASH("Unexpected location. Expected /mob/living/silicon, was [loc.type].")
 	src.ui_state = ui_state

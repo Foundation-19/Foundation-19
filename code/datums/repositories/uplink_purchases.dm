@@ -38,6 +38,6 @@ var/repository/uplink_purchases/uplink_purchase_repository = new()
 /uplink_purchase_entry/New()
 	purchased_items = new()
 
-/uplink_purchase_entry/proc/add_entry(var/item, var/cost)
+/uplink_purchase_entry/proc/add_entry(item, cost)
 	total_cost += cost
 	purchased_items[item] = purchased_items[item] + 1

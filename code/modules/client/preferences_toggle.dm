@@ -32,7 +32,7 @@ var/list/client_preference_stats_
 	simulated = FALSE
 	var/datum/client_preference/client_preference
 
-/stat_client_preference/New(var/loc, var/preference)
+/stat_client_preference/New(loc, preference)
 	client_preference = preference
 	update_name(usr)
 	..()
@@ -51,5 +51,5 @@ var/list/client_preference_stats_
 	SScharacter_setup.queue_preferences_save(usr.client.prefs)
 	to_chat(usr, "[client_preference.description]: [usr.get_preference_value(client_preference)]")
 
-/stat_client_preference/proc/update_name(var/mob/user)
+/stat_client_preference/proc/update_name(mob/user)
 	name = user.get_preference_value(client_preference)

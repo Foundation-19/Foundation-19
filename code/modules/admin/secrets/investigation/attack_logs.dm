@@ -99,7 +99,7 @@
 	var/category = /attack_filter
 	var/datum/admin_secret_item/investigation/attack_logs/holder
 
-/attack_filter/New(var/holder)
+/attack_filter/New(holder)
 	..()
 	src.holder = holder
 
@@ -116,7 +116,7 @@
 /attack_filter/proc/reset()
 	return
 
-/attack_filter/proc/filter_attack(var/datum/attack_log/al)
+/attack_filter/proc/filter_attack(datum/attack_log/al)
 	return FALSE
 
 /attack_filter/proc/OnTopic(href_list)
@@ -148,7 +148,7 @@
 /attack_filter/no_client/reset()
 	filter_missing_clients = initial(filter_missing_clients)
 
-/attack_filter/no_client/filter_attack(var/datum/attack_log/al)
+/attack_filter/no_client/filter_attack(datum/attack_log/al)
 	if(!filter_missing_clients)
 		return FALSE
 	if(al.attacker && al.attacker.client.ckey == NO_CLIENT_CKEY)
@@ -194,7 +194,7 @@
 	. = sortList(.)
 	. += "*ANY*"
 
-/attack_filter/must_be_given_ckey/filter_attack(var/datum/attack_log/al)
+/attack_filter/must_be_given_ckey/filter_attack(datum/attack_log/al)
 	if(!ckey_filter)
 		return FALSE
 	if(check_attacker && al.attacker && al.attacker.client.ckey == ckey_filter)

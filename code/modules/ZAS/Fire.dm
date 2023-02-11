@@ -66,7 +66,7 @@ If it gains pressure too slowly, it may leak or just rupture instead of explodin
 	if(!fire_tiles.len)
 		SSair.active_fire_zones.Remove(src)
 
-/zone/proc/remove_liquidfuel(var/used_liquid_fuel, var/remove_fire=0)
+/zone/proc/remove_liquidfuel(used_liquid_fuel, remove_fire=0)
 	if(!fuel_objs.len)
 		return
 
