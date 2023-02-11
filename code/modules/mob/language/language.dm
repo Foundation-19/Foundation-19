@@ -26,13 +26,13 @@
 	var/category = /datum/language    // Used to point at root language types that shouldn't be visible
 	var/has_written_form = FALSE
 
-/datum/language/proc/can_be_spoken_properly_by(var/mob/speaker)
+/datum/language/proc/can_be_spoken_properly_by(mob/speaker)
 	return TRUE
 
-/datum/language/proc/muddle(var/message)
+/datum/language/proc/muddle(message)
 	return message
 
-/datum/language/proc/get_random_name(var/gender, name_count=2, syllable_count=4, syllable_divisor=2)
+/datum/language/proc/get_random_name(gender, name_count=2, syllable_count=4, syllable_divisor=2)
 	if(!syllables || !syllables.len)
 		if(gender==FEMALE)
 			return capitalize(pick(GLOB.first_names_female)) + " " + capitalize(pick(GLOB.last_names))
@@ -53,7 +53,7 @@
 /datum/language
 	var/list/scramble_cache = list()
 
-/datum/language/proc/scramble(var/input, var/list/known_languages)
+/datum/language/proc/scramble(input, list/known_languages)
 
 	var/understand_chance = 0
 	for(var/datum/language/L in known_languages)
@@ -85,7 +85,7 @@
 	. = capitalize(.)
 	. = trim(.)
 
-/datum/language/proc/scramble_word(var/input)
+/datum/language/proc/scramble_word(input)
 	if(!syllables || !syllables.len)
 		return stars(input)
 
@@ -133,7 +133,7 @@
 	// if you yell, you'll be heard from two tiles over instead of one
 	return (copytext(message, length(message)) == "!") ? 2 : 1
 
-/datum/language/proc/broadcast(var/mob/living/speaker,var/message,var/speaker_mask)
+/datum/language/proc/broadcast(mob/living/speaker,message,speaker_mask)
 	log_say("[key_name(speaker)] : ([name]) [message]")
 
 	if(!speaker_mask) speaker_mask = speaker.name
@@ -156,10 +156,10 @@
 	else
 		to_chat(src, "<i><span class='game say'>[language.name], <span class='name'>[speaker_name]</span> [message]</span></i>")
 
-/datum/language/proc/check_special_condition(var/mob/other)
+/datum/language/proc/check_special_condition(mob/other)
 	return 1
 
-/datum/language/proc/get_spoken_verb(var/msg_end)
+/datum/language/proc/get_spoken_verb(msg_end)
 	switch(msg_end)
 		if("!")
 			return exclaim_verb
@@ -167,7 +167,7 @@
 			return ask_verb
 	return speech_verb
 
-/datum/language/proc/can_speak_special(var/mob/speaker)
+/datum/language/proc/can_speak_special(mob/speaker)
 	return 1
 
 // Language handling.

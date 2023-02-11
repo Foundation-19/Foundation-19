@@ -25,7 +25,7 @@ GLOBAL_DATUM_INIT(ert, /datum/antagonist/ert, new)
 	show_objectives_on_creation = 0 //we are not antagonists, we do not need the antagonist shpiel/objectives
 	var/reason = ""
 
-/datum/antagonist/ert/create_default(var/mob/source)
+/datum/antagonist/ert/create_default(mob/source)
 	var/mob/living/carbon/human/M = ..()
 	if(istype(M)) M.age = rand(25,45)
 
@@ -34,13 +34,13 @@ GLOBAL_DATUM_INIT(ert, /datum/antagonist/ert, new)
 	leader_welcome_text = "As leader of Mobile Task Force Epsilon-11, you answer only to the O5 Council, and have authority to override the Site staff where it is necessary to achieve your mission goals. It is recommended that you attempt to cooperate with the site staff where possible, however."
 //	ert = src
 
-/datum/antagonist/ert/greet(var/datum/mind/player)
+/datum/antagonist/ert/greet(datum/mind/player)
 	if(!..())
 		return
 	to_chat(player.current, "The Mobile Task Force works for the O5 Council; your job is to contain loose SCPs and eliminate infiltrators. There is a code red alert at [station_name()], you are tasked to go and fix the problem.")
 	to_chat(player.current, "You should first gear up and discuss a plan with your team. More members may be joining, don't move out before you're ready.")
 
-/datum/antagonist/ert/equip(var/mob/living/carbon/human/player)
+/datum/antagonist/ert/equip(mob/living/carbon/human/player)
 
 	//Special radio setup
 	player.add_language(LANGUAGE_ENGLISH)

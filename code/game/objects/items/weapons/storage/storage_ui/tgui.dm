@@ -4,23 +4,23 @@
 /datum/storage_ui/tgui/ui_host()
 	return storage.ui_host()
 
-/datum/storage_ui/tgui/show_to(var/mob/user)
+/datum/storage_ui/tgui/show_to(mob/user)
 	tg_ui_interact(user)
 
-/datum/storage_ui/tgui/hide_from(var/mob/user)
+/datum/storage_ui/tgui/hide_from(mob/user)
 	tg_ui_interact(user)
 
 /datum/storage_ui/tgui/close_all()
 	SStgui.close_uis(src)
 
-/datum/storage_ui/tgui/on_open(var/mob/user)
+/datum/storage_ui/tgui/on_open(mob/user)
 	tg_ui_interact(user)
 
-/datum/storage_ui/tgui/on_insertion(var/mob/user)
+/datum/storage_ui/tgui/on_insertion(mob/user)
 	cached_ui_data = null
 	tg_ui_interact(user)
 
-/datum/storage_ui/tgui/on_post_remove(var/mob/user, var/obj/item/W)
+/datum/storage_ui/tgui/on_post_remove(mob/user, obj/item/W)
 	cached_ui_data = null
 	tg_ui_interact(user)
 
@@ -35,7 +35,7 @@
 
 		var/list/items_by_name_and_type = list()
 		for(var/obj/item/W in storage)
-			group_by(items_by_name_and_type, "[W.name]§[W.type]", W)
+			group_by(items_by_name_and_type, "[W.name]ï¿½[W.type]", W)
 
 		var/list/item_list = list()
 		for(var/name_and_type in items_by_name_and_type)
@@ -57,7 +57,7 @@
 		if(remove_item_by_name_and_type(params["name"], params["type"]))
 			return TRUE
 
-/datum/storage_ui/tgui/proc/remove_item_by_name_and_type(var/name, var/type_name)
+/datum/storage_ui/tgui/proc/remove_item_by_name_and_type(name, type_name)
 	if(!istext(name) || !istext(type_name))
 		return FALSE
 	var/type = text2path(type_name)

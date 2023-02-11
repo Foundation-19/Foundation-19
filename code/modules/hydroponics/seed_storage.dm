@@ -5,14 +5,14 @@
 	var/list/obj/item/seeds/seeds = list() // Tracks actual objects contained in the pile
 	var/ID
 
-/datum/seed_pile/New(var/obj/item/seeds/O, var/ID)
+/datum/seed_pile/New(obj/item/seeds/O, ID)
 	name = O.name
 	amount = 1
 	seed_type = O.seed
 	seeds += O
 	src.ID = ID
 
-/datum/seed_pile/proc/matches(var/obj/item/seeds/O)
+/datum/seed_pile/proc/matches(obj/item/seeds/O)
 	if (O.seed == seed_type)
 		return 1
 	return 0

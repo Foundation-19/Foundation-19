@@ -95,7 +95,7 @@
 	var/circuit_type
 	var/circuit_name
 
-/datum/ic_assembly_integrated_circuits/proc/create_circuit(var/obj/item/device/electronic_assembly/assembly, var/list/circuits)
+/datum/ic_assembly_integrated_circuits/proc/create_circuit(obj/item/device/electronic_assembly/assembly, list/circuits)
 	var/obj/circuit = new circuit_type()
 	circuit.SetName(circuit_name || circuit.name)
 	circuits += circuit
@@ -113,7 +113,7 @@
 	var/pin_type
 	var/value
 
-/datum/ic_assembly_value_preset/proc/set_value(var/list/circuits)
+/datum/ic_assembly_value_preset/proc/set_value(list/circuits)
 	var/obj/item/integrated_circuit/circuit = circuits[circuit_index]
 	return circuit.set_pin_data(pin_type, io_pin_index, value)
 
@@ -136,7 +136,7 @@
 	var/pin_type_a
 	var/pin_type_b
 
-/datum/ic_assembly_connection/proc/connect(var/list/circuits)
+/datum/ic_assembly_connection/proc/connect(list/circuits)
 	var/obj/item/integrated_circuit/circuit_a = circuits[circuit_index_a]
 	var/obj/item/integrated_circuit/circuit_b = circuits[circuit_index_b]
 

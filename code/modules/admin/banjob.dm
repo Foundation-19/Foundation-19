@@ -110,7 +110,7 @@ var/jobban_keylist[0]		//to store the keys & ranks
 	if(holder)
 		holder.job_ban(M)
 
-/datum/admins/proc/job_ban(var/mob/M)
+/datum/admins/proc/job_ban(mob/M)
 	if(!ismob(M))
 		to_chat(usr, "This can only be used on instances of type /mob")
 		return

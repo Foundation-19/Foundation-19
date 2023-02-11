@@ -4,7 +4,7 @@
 	var/expected_type = /datum
 	var/flags = EXTENSION_FLAG_NONE
 
-/datum/extension/New(var/datum/holder)
+/datum/extension/New(datum/holder)
 	if(!istype(holder, expected_type))
 		CRASH("Invalid holder type. Expected [expected_type], was [holder.type]")
 	src.holder = holder

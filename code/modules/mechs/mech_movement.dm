@@ -71,7 +71,7 @@
 /datum/movement_handler/mob/exosuit
 	expected_host_type = /mob/living/exosuit
 
-/datum/movement_handler/mob/exosuit/MayMove(var/mob/mover, var/is_external)
+/datum/movement_handler/mob/exosuit/MayMove(mob/mover, is_external)
 	var/mob/living/exosuit/exosuit = host
 	if((!(mover in exosuit.pilots) && mover != exosuit) || exosuit.incapacitated() || mover.incapacitated())
 		return MOVEMENT_STOP
@@ -95,7 +95,7 @@
 
 	return MOVEMENT_PROCEED
 
-/datum/movement_handler/mob/exosuit/DoMove(var/direction, var/mob/mover, var/is_external)
+/datum/movement_handler/mob/exosuit/DoMove(direction, mob/mover, is_external)
 	var/mob/living/exosuit/exosuit = host
 	var/moving_dir = direction
 
@@ -129,7 +129,7 @@
 	expected_host_type = /mob/living/exosuit
 
 // Space movement
-/datum/movement_handler/mob/space/exosuit/DoMove(var/direction, var/mob/mover)
+/datum/movement_handler/mob/space/exosuit/DoMove(direction, mob/mover)
 
 	if(!mob.check_solid_ground())
 		mob.anchored = FALSE
@@ -144,7 +144,7 @@
 		mob.anchored = TRUE
 		mob.inertia_dir = 0 //Reset inertia values as we are not going to be treated as floating
 
-/datum/movement_handler/mob/space/exosuit/MayMove(var/mob/mover, var/is_external)
+/datum/movement_handler/mob/space/exosuit/MayMove(mob/mover, is_external)
 	if((mover != host) && is_external)
 		return MOVEMENT_PROCEED
 

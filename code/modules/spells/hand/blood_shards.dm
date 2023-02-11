@@ -13,7 +13,7 @@
 	hud_state = "wiz_bshard"
 	cast_sound = 'sound/magic/demon_attack1.ogg'
 
-/datum/spell/hand/charges/blood_shard/cast_hand(var/atom/A,var/mob/user)
+/datum/spell/hand/charges/blood_shard/cast_hand(atom/A,mob/user)
 	var/obj/item/projectile/blood_shard/B = new(get_turf(user))
 	B.firer = user
 	B.launch(A, BP_CHEST)

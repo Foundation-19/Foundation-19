@@ -114,7 +114,7 @@ SUBSYSTEM_DEF(ticker)
 
 	if(!length(GLOB.admins))
 		send2adminirc("Round has started with no admins online.")
-	
+
 	SEND_SIGNAL(src, COMSIG_TICKER_STARTED)
 
 /datum/controller/subsystem/ticker/proc/OnRoundstart(datum/callback/cb)
@@ -346,7 +346,7 @@ Helpers
 			if(!istype(M,/mob/new_player))
 				to_chat(M, "Captainship not forced on anyone.")
 
-/datum/controller/subsystem/ticker/proc/attempt_late_antag_spawn(var/list/antag_choices)
+/datum/controller/subsystem/ticker/proc/attempt_late_antag_spawn(list/antag_choices)
 	var/datum/antagonist/antag = antag_choices[1]
 	while(antag_choices.len && antag)
 		var/needs_ghost = antag.flags & (ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB)

@@ -1,7 +1,7 @@
 /datum/extension/voxform
 	base_type = /datum/extension/voxform
 
-/datum/extension/voxform/proc/check_held_user(var/mob/living/carbon/human/user, var/atom/movable/thing)
+/datum/extension/voxform/proc/check_held_user(mob/living/carbon/human/user, atom/movable/thing)
 	if(!istype(user))
 		return FALSE
 	if(user.species.get_bodytype(user) != SPECIES_VOX && user.species.get_bodytype(user) != SPECIES_VOX_ARMALIS && user.unEquip(thing))

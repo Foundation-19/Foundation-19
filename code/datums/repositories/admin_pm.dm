@@ -36,7 +36,7 @@ var/repository/admin_pm/admin_pm_repository = new()
 	var/datum/client_lite/receiver
 	var/message
 
-/datum/admin_privat_message/New(var/sender, var/receiver, var/message)
+/datum/admin_privat_message/New(sender, receiver, message)
 	recieved_time = time_stamp()
 	src.message = message
 	src.sender = sender

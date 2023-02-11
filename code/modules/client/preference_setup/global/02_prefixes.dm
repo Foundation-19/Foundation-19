@@ -44,7 +44,7 @@
 	// In case of overlap, all affected prefixes are given their default key
 	reset_duplicate_keys()
 
-/datum/category_item/player_setup_item/player_global/prefixes/content(var/mob/user)
+/datum/category_item/player_setup_item/player_global/prefixes/content(mob/user)
 	. += "<b>Prefix Keys:</b><br>"
 	. += "<table>"
 	for(var/prefix_name in prefix_by_name)
@@ -68,7 +68,7 @@
 		. += "</td></tr>"
 	. += "</table>"
 
-/datum/category_item/player_setup_item/player_global/prefixes/OnTopic(var/href, var/list/href_list, var/mob/user)
+/datum/category_item/player_setup_item/player_global/prefixes/OnTopic(href, list/href_list, mob/user)
 	if(href_list["change_prefix"])
 		var/decl/prefix/prefix_instance = locate(href_list["change_prefix"])
 		if(!istype(prefix_instance) || prefix_instance.is_locked)

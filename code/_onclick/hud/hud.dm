@@ -202,7 +202,7 @@
 
 	FinalizeInstantiation(ui_style, ui_color, ui_alpha)
 
-/datum/hud/proc/FinalizeInstantiation(var/ui_style, var/ui_color, var/ui_alpha)
+/datum/hud/proc/FinalizeInstantiation(ui_style, ui_color, ui_alpha)
 	return
 
 //Triggered when F12 is pressed (Unless someone changed something in the DMF)

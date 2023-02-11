@@ -82,7 +82,7 @@
 	var/obj/item/device/multitool/hacktool/hacktool
 	check_access = FALSE
 
-/datum/topic_state/default/must_hack/New(var/hacktool)
+/datum/topic_state/default/must_hack/New(hacktool)
 	src.hacktool = hacktool
 	..()
 
@@ -90,7 +90,7 @@
 	hacktool = null
 	return ..()
 
-/datum/topic_state/default/must_hack/can_use_topic(var/src_object, var/mob/user)
+/datum/topic_state/default/must_hack/can_use_topic(src_object, mob/user)
 	if(!hacktool || !hacktool.in_hack_mode || !(src_object in hacktool.known_targets))
 		return STATUS_CLOSE
 	return ..()

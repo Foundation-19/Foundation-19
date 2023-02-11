@@ -16,7 +16,7 @@
 	var/title_buttons = ""
 
 
-/datum/browser/New(nuser, nwindow_id, ntitle = 0, nwidth = 0, nheight = 0, var/atom/nref = null)
+/datum/browser/New(nuser, nwindow_id, ntitle = 0, nwidth = 0, nheight = 0, atom/nref = null)
 
 	user = nuser
 	window_id = nwindow_id
@@ -104,7 +104,7 @@
 	[get_footer()]
 	"}
 
-/datum/browser/proc/open(var/use_onclose = 1)
+/datum/browser/proc/open(use_onclose = 1)
 	var/window_size = ""
 	if (width && height)
 		window_size = "size=[width]x[height];"
@@ -112,7 +112,7 @@
 	if (use_onclose)
 		onclose(user, window_id, ref)
 
-/datum/browser/proc/update(var/force_open = 0, var/use_onclose = 1)
+/datum/browser/proc/update(force_open = 0, use_onclose = 1)
 	if(force_open)
 		open(use_onclose)
 	else

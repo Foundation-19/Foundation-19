@@ -90,7 +90,7 @@
 		return
 	ui_interact(user)
 
-/obj/machinery/mecha_part_fabricator/ui_interact(var/mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/machinery/mecha_part_fabricator/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
 	var/data[0]
 
 	var/datum/design/current = queue.len ? queue[1] : null

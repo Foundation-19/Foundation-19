@@ -13,7 +13,7 @@
 
 	var/datum/artifact_trigger/trigger
 
-/datum/artifact_effect/New(var/atom/location)
+/datum/artifact_effect/New(atom/location)
 	..()
 	holder = location
 	effect = rand(0, MAX_EFFECT)
@@ -76,9 +76,9 @@
 		toplevelholder.visible_message("<span class='warning'>[icon2html(toplevelholder, viewers(get_turf(toplevelholder)))] [toplevelholder] [display_msg]</span>")
 
 
-/datum/artifact_effect/proc/DoEffectTouch(var/mob/user)
-/datum/artifact_effect/proc/DoEffectAura(var/atom/holder)
-/datum/artifact_effect/proc/DoEffectPulse(var/atom/holder)
+/datum/artifact_effect/proc/DoEffectTouch(mob/user)
+/datum/artifact_effect/proc/DoEffectAura(atom/holder)
+/datum/artifact_effect/proc/DoEffectPulse(atom/holder)
 /datum/artifact_effect/proc/UpdateMove()
 
 /datum/artifact_effect/proc/process()

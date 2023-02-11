@@ -1,4 +1,4 @@
-/datum/proc/extra_ghost_link(var/prefix, var/sufix, var/short_links)
+/datum/proc/extra_ghost_link(prefix, sufix, short_links)
 	return list()
 
 /atom/movable/extra_ghost_link(var/atom/ghost, var/prefix, var/sufix, var/short_links)
@@ -22,7 +22,7 @@
 /proc/create_ghost_link(var/ghost, var/target, var/text, var/prefix, var/sufix)
 	return "<a href='byond://?src=\ref[ghost];track=\ref[target]'>[prefix][text][sufix]</a>"
 
-/datum/proc/get_ghost_follow_link(var/atom/target, var/delimiter, var/prefix, var/sufix)
+/datum/proc/get_ghost_follow_link(atom/target, delimiter, prefix, sufix)
 	return
 
 /client/get_ghost_follow_link(var/atom/target, var/delimiter, var/prefix, var/sufix)

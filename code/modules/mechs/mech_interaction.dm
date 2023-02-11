@@ -38,7 +38,7 @@
 	if(selected_system)
 		return selected_system.MouseDragInteraction(src_object, over_object, src_location, over_location, src_control, over_control, params, user)
 
-/datum/click_handler/default/mech/OnClick(var/atom/A, var/params)
+/datum/click_handler/default/mech/OnClick(atom/A, params)
 	var/mob/living/exosuit/E = user.loc
 	if(!istype(E))
 		//If this happens something broke tbh
@@ -48,7 +48,7 @@
 		return E.ClickOn(A, params, user)
 	else return ..()
 
-/datum/click_handler/default/mech/OnDblClick(var/atom/A, var/params)
+/datum/click_handler/default/mech/OnDblClick(atom/A, params)
 	OnClick(A, params)
 
 /mob/living/exosuit/allow_click_through(atom/A, params, mob/user)

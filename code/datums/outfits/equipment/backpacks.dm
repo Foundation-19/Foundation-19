@@ -76,22 +76,22 @@
 /******************
 * Backpack Tweaks *
 ******************/
-/datum/backpack_tweak/proc/get_ui_content(var/metadata)
+/datum/backpack_tweak/proc/get_ui_content(metadata)
 	return ""
 
 /datum/backpack_tweak/proc/get_default_metadata()
 	return
 
-/datum/backpack_tweak/proc/get_metadata(var/user, var/metadata, var/title = CHARACTER_PREFERENCE_INPUT_TITLE)
+/datum/backpack_tweak/proc/get_metadata(user, metadata, title = CHARACTER_PREFERENCE_INPUT_TITLE)
 	return
 
-/datum/backpack_tweak/proc/validate_metadata(var/metadata)
+/datum/backpack_tweak/proc/validate_metadata(metadata)
 	return get_default_metadata()
 
-/datum/backpack_tweak/proc/get_backpack_type(var/given_backpack_type)
+/datum/backpack_tweak/proc/get_backpack_type(given_backpack_type)
 	return given_backpack_type
 
-/datum/backpack_tweak/proc/tweak_backpack(var/obj/item/storage/backpack/backpack, var/metadata)
+/datum/backpack_tweak/proc/tweak_backpack(obj/item/storage/backpack/backpack, metadata)
 	return
 
 
@@ -101,7 +101,7 @@
 	var/const/RETURN_RANDOM_BACKPACK = "random"
 	var/list/selections
 
-/datum/backpack_tweak/selection/New(var/list/selections)
+/datum/backpack_tweak/selection/New(list/selections)
 	if(!selections.len)
 		CRASH("No selections offered")
 	if(RETURN_GIVEN_BACKPACK in selections)
@@ -125,19 +125,19 @@
 	selections += RETURN_GIVEN_BACKPACK
 	selections += RETURN_RANDOM_BACKPACK
 
-/datum/backpack_tweak/selection/get_ui_content(var/metadata)
+/datum/backpack_tweak/selection/get_ui_content(metadata)
 	return "Type: [metadata]"
 
 /datum/backpack_tweak/selection/get_default_metadata()
 	return RETURN_GIVEN_BACKPACK
 
-/datum/backpack_tweak/selection/validate_metadata(var/metadata)
+/datum/backpack_tweak/selection/validate_metadata(metadata)
 	return (metadata in selections) ? metadata : ..()
 
-/datum/backpack_tweak/selection/get_metadata(var/user, var/metadata, var/title = CHARACTER_PREFERENCE_INPUT_TITLE)
+/datum/backpack_tweak/selection/get_metadata(user, metadata, title = CHARACTER_PREFERENCE_INPUT_TITLE)
 	return input(user, "Choose a type.", title, metadata) as null|anything in selections
 
-/datum/backpack_tweak/selection/get_backpack_type(var/given_backpack_type, var/metadata)
+/datum/backpack_tweak/selection/get_backpack_type(given_backpack_type, metadata)
 	switch(metadata)
 		if(RETURN_GIVEN_BACKPACK)
 			return given_backpack_type
@@ -147,13 +147,13 @@
 		else
 			return selections[metadata]
 
-/datum/backpack_tweak/selection/types/New(var/selection_type)
+/datum/backpack_tweak/selection/types/New(selection_type)
 	..(atomtype2nameassoclist(selection_type))
 
-/datum/backpack_tweak/selection/subtypes/New(var/selection_type)
+/datum/backpack_tweak/selection/subtypes/New(selection_type)
 	..(atomtypes2nameassoclist(subtypesof(selection_type)))
 
-/datum/backpack_tweak/selection/specified_types_as_list/New(var/selection_list)
+/datum/backpack_tweak/selection/specified_types_as_list/New(selection_list)
 	..(atomtypes2nameassoclist(selection_list))
 
 /datum/backpack_tweak/selection/specified_types_as_args/New()
@@ -166,7 +166,7 @@
 	var/decl/backpack_outfit/backpack
 	var/metadata
 
-/datum/backpack_setup/New(var/backpack, var/metadata)
+/datum/backpack_setup/New(backpack, metadata)
 	src.backpack = backpack
 	src.metadata = metadata
 

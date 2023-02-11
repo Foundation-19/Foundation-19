@@ -20,7 +20,7 @@
 /datum/robot_component/New(mob/living/silicon/robot/R)
 	src.owner = R
 
-/datum/robot_component/proc/accepts_component(var/obj/item/thing)
+/datum/robot_component/proc/accepts_component(obj/item/thing)
 	. = istype(thing, external_type)
 
 /datum/robot_component/proc/install()
@@ -88,7 +88,7 @@
 	external_type = /obj/item/robot_parts/robot_component/armour/light
 	max_damage = 75
 
-/datum/robot_component/armour/accepts_component(var/obj/item/thing)
+/datum/robot_component/armour/accepts_component(obj/item/thing)
 	. = (!istype(thing, /obj/item/robot_parts/robot_component/armour/exosuit) && ..())
 
 // ACTUATOR

@@ -11,7 +11,7 @@ var/global/file_uid = 0
 	var/list/metadata											// Any metadata the file uses.
 	var/papertype = /obj/item/paper
 
-/datum/computer_file/New(var/list/md = null)
+/datum/computer_file/New(list/md = null)
 	..()
 	uid = file_uid
 	file_uid++
@@ -30,7 +30,7 @@ var/global/file_uid = 0
 	holder = null
 
 // Returns independent copy of this file.
-/datum/computer_file/proc/clone(var/rename = 0)
+/datum/computer_file/proc/clone(rename = 0)
 	var/datum/computer_file/temp = new type
 	temp.unsendable = unsendable
 	temp.undeletable = undeletable

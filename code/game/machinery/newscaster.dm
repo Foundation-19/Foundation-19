@@ -751,7 +751,7 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 	var/is_synth = 0
 	var/obj/item/photo/photo = null
 
-/datum/news_photo/New(var/obj/item/photo/p, var/synth)
+/datum/news_photo/New(obj/item/photo/p, synth)
 	is_synth = synth
 	photo = p
 

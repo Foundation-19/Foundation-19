@@ -12,7 +12,7 @@ var/list/floor_decals = list()
 	var/detail_overlay
 	var/detail_color
 
-/obj/effect/floor_decal/New(var/newloc, newdir, newcolour, newappearance)
+/obj/effect/floor_decal/New(newloc, newdir, newcolour, newappearance)
 	supplied_dir = newdir
 	if(newappearance) appearance = newappearance
 	if(newcolour) color = newcolour

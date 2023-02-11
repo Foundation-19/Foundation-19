@@ -1890,7 +1890,7 @@
 /mob/living/silicon/ai/can_centcom_reply()
 	return silicon_radio != null && !check_unable(2)
 
-/datum/proc/extra_admin_link(var/prefix, var/sufix, var/short_links)
+/datum/proc/extra_admin_link(prefix, sufix, short_links)
 	return list()
 
 /atom/movable/extra_admin_link(var/source, var/prefix, var/sufix, var/short_links)
@@ -1919,7 +1919,7 @@
 		source = "_src_=holder"
 	return jointext(target.extra_admin_link(source, prefix, sufix, short_links), delimiter)
 
-/datum/proc/get_admin_jump_link(var/atom/target)
+/datum/proc/get_admin_jump_link(atom/target)
 	return
 
 /mob/get_admin_jump_link(atom/target, delimiter, prefix, sufix)

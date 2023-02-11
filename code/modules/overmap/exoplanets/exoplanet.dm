@@ -282,7 +282,7 @@
 	var/list/big_flora_types = list()
 	var/list/plantcolors = list("RANDOM")
 
-/datum/random_map/noise/exoplanet/New(var/seed, var/tx, var/ty, var/tz, var/tlx, var/tly, var/do_not_apply, var/do_not_announce, var/never_be_priority = 0)
+/datum/random_map/noise/exoplanet/New(seed, tx, ty, tz, tlx, tly, do_not_apply, do_not_announce, never_be_priority = 0)
 	target_turf_type = world.turf
 	planetary_area = new planetary_area()
 	water_level = rand(water_level_min,water_level_max)
@@ -298,10 +298,10 @@
 
 	GLOB.using_map.base_turf_by_z[num2text(tz)] = land_type
 
-/datum/random_map/noise/exoplanet/proc/noise2value(var/value)
+/datum/random_map/noise/exoplanet/proc/noise2value(value)
 	return min(9,max(0,round((value/cell_range)*10)))
 
-/datum/random_map/noise/exoplanet/apply_to_turf(var/x,var/y)
+/datum/random_map/noise/exoplanet/apply_to_turf(x,y)
 	var/turf/T = ..()
 	if(T && limit_x < world.maxx && (T.y == limit_y || T.x == limit_x))
 		T.set_density(1)
@@ -311,18 +311,18 @@
 			S.blocks_air = 1
 
 
-/datum/random_map/noise/exoplanet/get_map_char(var/value)
+/datum/random_map/noise/exoplanet/get_map_char(value)
 	if(water_type && noise2value(value) < water_level)
 		return "~"
 	return "[noise2value(value)]"
 
-/datum/random_map/noise/exoplanet/get_appropriate_path(var/value)
+/datum/random_map/noise/exoplanet/get_appropriate_path(value)
 	if(water_type && noise2value(value) < water_level)
 		return water_type
 	else
 		return land_type
 
-/datum/random_map/noise/exoplanet/get_additional_spawns(var/value, var/turf/T)
+/datum/random_map/noise/exoplanet/get_additional_spawns(value, turf/T)
 	planetary_area.contents.Add(T)
 	switch(noise2value(value))
 		if(2 to 3)
@@ -339,7 +339,7 @@
 			else if(prob(large_flora_prob))
 				spawn_flora(T, 1)
 
-/datum/random_map/noise/exoplanet/proc/spawn_fauna(var/turf/T)
+/datum/random_map/noise/exoplanet/proc/spawn_fauna(turf/T)
 	var/beastie = pick(fauna_types)
 	new beastie(T)
 
@@ -377,7 +377,7 @@
 			S.chems["woodpulp"] = 1
 			big_flora_types += S
 
-/datum/random_map/noise/exoplanet/proc/spawn_flora(var/turf/T, var/big)
+/datum/random_map/noise/exoplanet/proc/spawn_flora(turf/T, big)
 	if(big)
 		new /obj/machinery/portable_atmospherics/hydroponics/soil/invisible(T, pick(big_flora_types), 1)
 	else

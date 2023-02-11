@@ -68,7 +68,7 @@
 			psychic.owner.client.images -= aura_image
 	SSpsi.all_aura_images -= aura_image
 
-/datum/psi_complexus/New(var/mob/_owner)
+/datum/psi_complexus/New(mob/_owner)
 	owner = _owner
 	START_PROCESSING(SSpsi, src)
 	set_extension(src, /datum/extension/armor/psionic)

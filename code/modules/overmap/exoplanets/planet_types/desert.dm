@@ -52,7 +52,7 @@
 	flora_prob = 5
 	large_flora_prob = 0
 
-/datum/random_map/noise/exoplanet/desert/get_additional_spawns(var/value, var/turf/T)
+/datum/random_map/noise/exoplanet/desert/get_additional_spawns(value, turf/T)
 	..()
 	var/v = noise2value(value)
 	if(v > 6 && prob(2))

@@ -46,7 +46,7 @@ var/global/floorIsLava = 0
 		return
 	PlayerNotesPage()
 
-/datum/admins/proc/PlayerNotesPage(var/filter_term)
+/datum/admins/proc/PlayerNotesPage(filter_term)
 	var/list/dat = list()
 	dat += "<B>Player notes</B><HR>"
 	var/savefile/S=new("data/player_notes.sav")
@@ -75,7 +75,7 @@ var/global/floorIsLava = 0
 	popup.open()
 
 
-/datum/admins/proc/player_has_info(var/key as text)
+/datum/admins/proc/player_has_info(key as text)
 	var/savefile/info = new("data/player_saves/[copytext(key, 1, 2)]/[key]/info.sav")
 	var/list/infos
 	from_save(info, infos)
@@ -83,7 +83,7 @@ var/global/floorIsLava = 0
 	else return 1
 
 
-/datum/admins/proc/show_player_info(var/key as text)
+/datum/admins/proc/show_player_info(key as text)
 
 	set category = "Admin"
 	set name = "Show Player Info"
@@ -444,7 +444,7 @@ var/global/floorIsLava = 0
 	show_browser(usr, dat, "window=admin2;size=210x280")
 	return
 
-/datum/admins/proc/Secrets(var/datum/admin_secret_category/active_category = null)
+/datum/admins/proc/Secrets(datum/admin_secret_category/active_category = null)
 	if(!check_rights(0))	return
 
 	// Print the header with category selection buttons.
@@ -738,7 +738,7 @@ var/global/floorIsLava = 0
 
 	world.Reboot()
 
-/datum/admins/proc/unprison(var/mob/M in SSmobs.mob_list)
+/datum/admins/proc/unprison(mob/M in SSmobs.mob_list)
 	set category = "Admin"
 	set name = "Unprison"
 	if (isAdminLevel(M.z))
@@ -867,7 +867,7 @@ var/global/floorIsLava = 0
 	new /obj/effect/vine(get_turf(usr), SSplants.seeds[seedtype])
 	log_admin("[key_name(usr)] spawned [seedtype] vines at ([usr.x],[usr.y],[usr.z])")
 
-/datum/admins/proc/spawn_atom(var/object as text)
+/datum/admins/proc/spawn_atom(object as text)
 	set category = "Debug"
 	set desc = "(atom path) Spawn an atom"
 	set name = "Spawn"
@@ -945,7 +945,7 @@ var/global/floorIsLava = 0
 		else
 			QDEL_NULL(A.secondary_effect)
 
-/datum/admins/proc/show_traitor_panel(var/mob/M in SSmobs.mob_list)
+/datum/admins/proc/show_traitor_panel(mob/M in SSmobs.mob_list)
 	set category = "Admin"
 	set desc = "Edit mobs's memory and role"
 	set name = "Show Traitor Panel"
@@ -1144,7 +1144,7 @@ var/global/floorIsLava = 0
 	return check_rights(R_HOST, 0, C)
 
 //Prevents SDQL2 commands from changing admin permissions
-/datum/admins/SDQL_update(var/const/var_name, var/new_value)
+/datum/admins/SDQL_update(const/var_name, new_value)
 	return 0
 
 //
@@ -1155,7 +1155,7 @@ var/global/floorIsLava = 0
 
 //Returns 1 to let the dragdrop code know we are trapping this event
 //Returns 0 if we don't plan to trap the event
-/datum/admins/proc/cmd_ghost_drag(var/mob/observer/ghost/frommob, var/mob/living/tomob)
+/datum/admins/proc/cmd_ghost_drag(mob/observer/ghost/frommob, mob/living/tomob)
 	if(!istype(frommob))
 		return //Extra sanity check to make sure only observers are shoved into things
 

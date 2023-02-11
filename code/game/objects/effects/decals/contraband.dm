@@ -31,7 +31,7 @@
 	return ..()
 
 //Places the poster on a wall
-/obj/item/contraband/poster/afterattack(var/atom/A, mob/user, adjacent, clickparams)
+/obj/item/contraband/poster/afterattack(atom/A, mob/user, adjacent, clickparams)
 	if (!adjacent)
 		return
 

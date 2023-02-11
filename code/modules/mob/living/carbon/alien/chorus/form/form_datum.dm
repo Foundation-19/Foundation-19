@@ -13,7 +13,7 @@
 		n_buildings["[cb.type]"] = cb
 	buildings = n_buildings
 
-/datum/chorus_form/proc/send_rscs(var/mob/c)
+/datum/chorus_form/proc/send_rscs(mob/c)
 	for(var/b in buildings)
 		var/datum/chorus_building/cb = buildings[b]
 		send_rsc(c, cb.get_rsc(), cb.get_rsc_path())
@@ -24,9 +24,9 @@
 		var/datum/chorus_building/cb = buildings[b]
 		LAZYADD(.["[cb.build_level]"], cb)
 
-/datum/chorus_form/proc/get_building_by_type(var/type)
+/datum/chorus_form/proc/get_building_by_type(type)
 	return buildings["[type]"]
 
-/datum/chorus_form/proc/setup_new_unit(var/mob/living/carbon/alien/chorus/c)
+/datum/chorus_form/proc/setup_new_unit(mob/living/carbon/alien/chorus/c)
 	return
 

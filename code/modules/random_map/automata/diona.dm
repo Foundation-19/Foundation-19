@@ -66,7 +66,7 @@
 	floor_type = /turf/simulated/floor/diona
 
 // This is disgusting.
-/datum/random_map/automata/diona/proc/search_neighbors_for(var/search_val, var/x, var/y)
+/datum/random_map/automata/diona/proc/search_neighbors_for(search_val, x, y)
 	var/current_cell = get_map_cell(x-1,y-1)
 	if(current_cell && map[current_cell] == search_val) return 1
 	current_cell = get_map_cell(x-1,y)
@@ -143,14 +143,14 @@
 				nymph_count--
 	return
 
-/datum/random_map/automata/diona/get_appropriate_path(var/value)
+/datum/random_map/automata/diona/get_appropriate_path(value)
 	switch(value)
 		if(EMPTY_CHAR, DOOR_CHAR, MONSTER_CHAR, ARTIFACT_CHAR)
 			return floor_type
 		if(WALL_CHAR)
 			return wall_type
 
-/datum/random_map/automata/diona/get_additional_spawns(var/value, var/turf/T)
+/datum/random_map/automata/diona/get_additional_spawns(value, turf/T)
 
 	if(value != FLOOR_CHAR)
 		for(var/thing in T)

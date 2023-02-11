@@ -82,7 +82,7 @@
 	mineral_turf =  /turf/simulated/mineral/random/volcanic
 	rock_color = COLOR_DARK_GRAY
 
-/datum/random_map/automata/cave_system/mountains/volcanic/get_additional_spawns(value, var/turf/simulated/mineral/T)
+/datum/random_map/automata/cave_system/mountains/volcanic/get_additional_spawns(value, turf/simulated/mineral/T)
 	..()
 	if(use_area && istype(T))
 		T.mined_turf = prob(90) ? use_area.base_turf : /turf/simulated/floor/exoplanet/lava

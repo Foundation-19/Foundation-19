@@ -52,7 +52,7 @@
 /datum/computer/file/embedded_program/docking/airlock
 	var/datum/computer/file/embedded_program/airlock/docking/airlock_program
 
-/datum/computer/file/embedded_program/docking/airlock/New(var/obj/machinery/embedded_controller/M)
+/datum/computer/file/embedded_program/docking/airlock/New(obj/machinery/embedded_controller/M)
 	..()
 	airlock_program = new(M)
 	airlock_program.master_prog = src
@@ -130,7 +130,7 @@
 	toggleDoor(memory["interior_status"], tag_interior_door, memory["secure"], "open")
 	toggleDoor(memory["exterior_status"], tag_exterior_door, memory["secure"], "open")
 
-/datum/computer/file/embedded_program/airlock/docking/cycleDoors(var/target)
+/datum/computer/file/embedded_program/airlock/docking/cycleDoors(target)
 	if (master_prog.undocked() || master_prog.override_enabled)	//only allow the port to be used as an airlock if nothing is docked here or the override is enabled
 		..(target)
 

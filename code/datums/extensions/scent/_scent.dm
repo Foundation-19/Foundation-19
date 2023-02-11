@@ -99,7 +99,7 @@ Custom subtype
 	set_extension(atom, /datum/extension/scent/custom, scent = "scent", intensity = SCENT_INTENSITY_, ... etc)
 This will let you set an extension without needing to define it beforehand. Note that all vars are required if generating.
 *****/
-/datum/extension/scent/custom/New(var/datum/holder, var/provided_scent, var/provided_intensity, var/provided_descriptor, var/provided_range)
+/datum/extension/scent/custom/New(datum/holder, provided_scent, provided_intensity, provided_descriptor, provided_range)
 	..()
 	if(provided_scent && provided_intensity && provided_descriptor && provided_range)
 		scent = provided_scent

@@ -57,14 +57,14 @@
 /datum/mob_descriptor/proc/get_first_person_message_start()
 	return "You are"
 
-/datum/mob_descriptor/proc/get_standalone_value_descriptor(var/check_value)
+/datum/mob_descriptor/proc/get_standalone_value_descriptor(check_value)
 	if(isnull(check_value))
 		check_value = default_value
 	if(check_value && LAZYLEN(standalone_value_descriptors) >= check_value)
 		return standalone_value_descriptors[check_value]
 
 // Build a species-specific descriptor string.
-/datum/mob_descriptor/proc/get_initial_comparison_component(var/mob/me, my_value)
+/datum/mob_descriptor/proc/get_initial_comparison_component(mob/me, my_value)
 	var/species_text
 	if(ishuman(me) && !skip_species_mention)
 		var/mob/living/carbon/human/H = me

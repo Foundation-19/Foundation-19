@@ -44,7 +44,7 @@
 	pref.lastchangelog	= sanitize_text(pref.lastchangelog, initial(pref.lastchangelog))
 	pref.default_slot	= sanitize_integer(pref.default_slot, 1, config.character_slots, initial(pref.default_slot))
 
-/datum/category_item/player_setup_item/player_global/settings/content(var/mob/user)
+/datum/category_item/player_setup_item/player_global/settings/content(mob/user)
 	. = list()
 	. += "<b>Preferences</b><br>"
 	. += "<table>"
@@ -69,7 +69,7 @@
 
 	return jointext(., "")
 
-/datum/category_item/player_setup_item/player_global/settings/OnTopic(var/href,var/list/href_list, var/mob/user)
+/datum/category_item/player_setup_item/player_global/settings/OnTopic(href,list/href_list, mob/user)
 	var/mob/pref_mob = preference_mob()
 
 	if(href_list["pref"] && href_list["value"])

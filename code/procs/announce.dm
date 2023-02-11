@@ -19,17 +19,17 @@
 	title = "Security Announcement"
 	announcement_type = "Security Announcement"
 
-/datum/announcement/New(var/do_log = 0, var/new_sound = null, var/do_newscast = 0)
+/datum/announcement/New(do_log = 0, new_sound = null, do_newscast = 0)
 	sound = new_sound
 	log = do_log
 	newscast = do_newscast
 
-/datum/announcement/priority/command/New(var/do_log = 1, var/new_sound = 'sound/misc/notice2.ogg', var/do_newscast = 0)
+/datum/announcement/priority/command/New(do_log = 1, new_sound = 'sound/misc/notice2.ogg', do_newscast = 0)
 	..(do_log, new_sound, do_newscast)
 	title = "[GLOB.using_map.boss_name] Update"
 	announcement_type = "[GLOB.using_map.boss_name] Update"
 
-/datum/announcement/proc/Announce(var/message as text, var/new_title = "", var/new_sound = null, var/do_newscast = newscast, var/msg_sanitized = 0, var/zlevels = GLOB.using_map.contact_levels)
+/datum/announcement/proc/Announce(message as text, new_title = "", new_sound = null, do_newscast = newscast, msg_sanitized = 0, zlevels = GLOB.using_map.contact_levels)
 	if(!message)
 		return
 	var/message_title = new_title ? new_title : title
@@ -142,4 +142,4 @@
 	if(job.department_flag & EXP)
 		return "Exploration"
 	return "Common"
-	
+

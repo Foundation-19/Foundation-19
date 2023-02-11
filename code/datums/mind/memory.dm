@@ -6,11 +6,11 @@
 		return "There is no mind to store a memory in."
 	. = mind.StoreMemory(memory, options)
 
-/datum/mind/proc/StoreMemory(var/memory, var/options)
+/datum/mind/proc/StoreMemory(memory, options)
 	var/decl/memory_options/MO = decls_repository.get_decl(options || /decl/memory_options/default)
 	return MO.Create(src, memory)
 
-/datum/mind/proc/RemoveMemory(var/datum/memory/memory, var/mob/remover)
+/datum/mind/proc/RemoveMemory(datum/memory/memory, mob/remover)
 	if(!memory)
 		return
 
@@ -19,7 +19,7 @@
 	to_chat(remover, SPAN_NOTICE("You have removed a memory."))
 	ShowMemory(remover)
 
-/datum/mind/proc/ClearMemories(var/list/tags)
+/datum/mind/proc/ClearMemories(list/tags)
 	for(var/mem in memories)
 		var/datum/memory/M = mem
 		// If no tags were supplied OR if there is any union between the given tags and memory tags
@@ -27,7 +27,7 @@
 		if(!length(tags) || length(tags & M.tags))
 			LAZYREMOVE(memories, M)
 
-/datum/mind/proc/CopyMemories(var/datum/mind/target)
+/datum/mind/proc/CopyMemories(datum/mind/target)
 	if(!istype(target))
 		return
 
@@ -43,7 +43,7 @@
 		if(antag.is_antagonist(src))
 			. += antag_type
 
-/datum/mind/proc/ShowMemory(var/mob/recipient)
+/datum/mind/proc/ShowMemory(mob/recipient)
 	if(!istype(recipient))
 		return
 
@@ -83,7 +83,7 @@
 	var/_owner_name
 	var/_owner_ckey   // The ckey of the original creator. Shouldn't be overriden once set
 
-/datum/memory/New(var/decl/memory_options/creation_source, var/weakref/owner, var/memory, var/tags)
+/datum/memory/New(decl/memory_options/creation_source, weakref/owner, memory, tags)
 	..()
 	src.creation_source = creation_source
 	src.owner = owner
@@ -105,7 +105,7 @@
 			owner = null
 	return _owner_name
 
-/datum/memory/proc/Copy(var/datum/mind/target)
+/datum/memory/proc/Copy(datum/mind/target)
 	var/new_tags = creation_source.MemoryTags(target)
 	var/datum/memory/new_memory = new/datum/memory(creation_source, owner, memory, new_tags)
 	new_memory._owner_name = new_memory._owner_name || _owner_name

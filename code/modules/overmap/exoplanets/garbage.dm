@@ -45,7 +45,7 @@
 	fauna_types = list(/mob/living/simple_animal/hostile/hivebot, /mob/living/simple_animal/hostile/hivebot/range, /mob/living/simple_animal/hostile/viscerator)
 	fauna_prob = 1
 
-/datum/random_map/noise/exoplanet/garbage/get_additional_spawns(var/value, var/turf/T)
+/datum/random_map/noise/exoplanet/garbage/get_additional_spawns(value, turf/T)
 	..()
 	var/v = noise2value(value)
 	if(v > 5)
@@ -58,7 +58,7 @@
 			new A.artifact_find_type(T)
 			qdel(A)
 
-/datum/random_map/noise/exoplanet/garbage/get_appropriate_path(var/value)
+/datum/random_map/noise/exoplanet/garbage/get_appropriate_path(value)
 	var/v = noise2value(value)
 	if(v > 6)
 		return /turf/simulated/floor/exoplanet/concrete

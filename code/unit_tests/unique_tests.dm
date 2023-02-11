@@ -176,7 +176,7 @@
 		pass("All space suit modifiers have unique names.")
 	return TRUE
 
-/datum/unit_test/proc/number_of_issues(var/list/entries, var/type, var/feedback = /decl/noi_feedback)
+/datum/unit_test/proc/number_of_issues(list/entries, type, feedback = /decl/noi_feedback)
 	var/issues = 0
 	for(var/key in entries)
 		var/list/values = entries[key]

@@ -120,7 +120,7 @@ if(LAZYLEN(movement_handlers) && ispath(movement_handlers[1])) { \
 	var/expected_host_type = /atom/movable
 	var/atom/movable/host
 
-/datum/movement_handler/New(var/atom/movable/host)
+/datum/movement_handler/New(atom/movable/host)
 	if(!istype(host, expected_host_type))
 		CRASH("Invalid host type. Expected [expected_host_type], was [host ? host.type : "*null*"]")
 	src.host = host
@@ -129,11 +129,11 @@ if(LAZYLEN(movement_handlers) && ispath(movement_handlers[1])) { \
 	host = null
 	. = ..()
 
-/datum/movement_handler/proc/DoMove(var/direction, var/mob/mover, var/is_external)
+/datum/movement_handler/proc/DoMove(direction, mob/mover, is_external)
 	return
 
 // Asks the handlers if the mob may move, ignoring destination, if attempting a DoMove()
-/datum/movement_handler/proc/MayMove(var/mob/mover, var/is_external)
+/datum/movement_handler/proc/MayMove(mob/mover, is_external)
 	return MOVEMENT_PROCEED
 
 /*******
@@ -143,7 +143,7 @@ if(LAZYLEN(movement_handlers) && ispath(movement_handlers[1])) { \
 	expected_host_type = /mob
 	var/mob/mob
 
-/datum/movement_handler/mob/New(var/host)
+/datum/movement_handler/mob/New(host)
 	..()
 	src.mob = host
 

@@ -164,7 +164,7 @@ var/list/escape_pods_by_name = list()
 /datum/computer/file/embedded_program/docking/simple/escape_pod
 	var/tag_pump
 
-/datum/computer/file/embedded_program/docking/simple/escape_pod/New(var/obj/machinery/embedded_controller/M)
+/datum/computer/file/embedded_program/docking/simple/escape_pod/New(obj/machinery/embedded_controller/M)
 	..(M)
 	if (istype(M, /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod))
 		var/obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod/controller = M

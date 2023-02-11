@@ -37,7 +37,7 @@ var/list/ghost_traps
 	..()
 
 // Check for bans, proper atom types, etc.
-/datum/ghosttrap/proc/assess_candidate(var/mob/observer/ghost/candidate, var/mob/target, var/feedback = TRUE)
+/datum/ghosttrap/proc/assess_candidate(mob/observer/ghost/candidate, mob/target, feedback = TRUE)
 	if(!candidate.MayRespawn(feedback, minutes_since_death))
 		return FALSE
 
@@ -64,7 +64,7 @@ var/list/ghost_traps
 		. = FALSE
 
 // Print a message to all ghosts with the right prefs/lack of bans.
-/datum/ghosttrap/proc/request_player(var/mob/target, var/request_string, var/request_timeout)
+/datum/ghosttrap/proc/request_player(mob/target, request_string, request_timeout)
 	if(request_timeout)
 		request_timeouts[target] = world.time + request_timeout
 		GLOB.destroyed_event.register(target, src, /datum/ghosttrap/proc/unregister_target)
@@ -79,7 +79,7 @@ var/list/ghost_traps
 		if(O.client)
 			to_chat(O, "[request_string] <a href='?src=\ref[src];candidate=\ref[O];target=\ref[target]'>(Occupy)</a> ([ghost_follow_link(target, O)])")
 
-/datum/ghosttrap/proc/unregister_target(var/target)
+/datum/ghosttrap/proc/unregister_target(target)
 	request_timeouts -= target
 	GLOB.destroyed_event.unregister(target, src, /datum/ghosttrap/proc/unregister_target)
 
@@ -105,7 +105,7 @@ var/list/ghost_traps
 		return 1
 
 // Shunts the ckey/mind into the target mob.
-/datum/ghosttrap/proc/transfer_personality(var/mob/candidate, var/mob/target)
+/datum/ghosttrap/proc/transfer_personality(mob/candidate, mob/target)
 	if(!assess_candidate(candidate, target))
 		return 0
 	target.ckey = candidate.ckey
@@ -117,11 +117,11 @@ var/list/ghost_traps
 	set_new_name(target)
 	return 1
 
-/datum/ghosttrap/proc/welcome_candidate(var/mob/target)
+/datum/ghosttrap/proc/welcome_candidate(mob/target)
 	return
 
 // Allows people to set their own name.
-/datum/ghosttrap/proc/set_new_name(var/mob/target)
+/datum/ghosttrap/proc/set_new_name(mob/target)
 	if (can_set_own_name)
 		var/newname = sanitizeSafe(input(target, "Enter a name, or leave blank for the default name.", "Name change", target.real_name) as text, MAX_NAME_LEN)
 		if (newname)
@@ -173,7 +173,7 @@ var/list/ghost_traps
 	list_as_special_role = TRUE
 	species_whitelist = /datum/species/diona
 
-/datum/ghosttrap/plant/welcome_candidate(var/mob/target)
+/datum/ghosttrap/plant/welcome_candidate(mob/target)
 	to_chat(target, "<span class='alium'><B>You awaken slowly, stirring into sluggish motion as the air caresses you.</B></span>")
 	// This is a hack, replace with some kind of species blurb proc.
 	if(istype(target,/mob/living/carbon/alien/diona))
@@ -191,7 +191,7 @@ var/list/ghost_traps
 	can_set_own_name = FALSE
 	list_as_special_role = FALSE
 
-/datum/ghosttrap/borer/welcome_candidate(var/mob/target)
+/datum/ghosttrap/borer/welcome_candidate(mob/target)
 	to_chat(target, "<span class='notice'>You are a cortical borer!</span> You are a brain slug that worms its way \
 	into the head of its victim. Use stealth, persuasion and your powers of mind control to keep you, \
 	your host and your eventual spawn safe and warm.")
@@ -211,12 +211,12 @@ var/list/ghost_traps
 	minutes_since_death = DRONE_SPAWN_DELAY
 	..()
 
-/datum/ghosttrap/drone/assess_candidate(var/mob/observer/ghost/candidate, var/mob/target)
+/datum/ghosttrap/drone/assess_candidate(mob/observer/ghost/candidate, mob/target)
 	. = ..()
 	if(. && !target.can_be_possessed_by(candidate))
 		return 0
 
-/datum/ghosttrap/drone/transfer_personality(var/mob/candidate, var/mob/living/silicon/robot/drone/drone)
+/datum/ghosttrap/drone/transfer_personality(mob/candidate, mob/living/silicon/robot/drone/drone)
 	if(!assess_candidate(candidate))
 		return 0
 	drone.transfer_personality(candidate.client)
@@ -231,10 +231,10 @@ var/list/ghost_traps
 	ghost_trap_role = "pAI"
 	list_as_special_role = TRUE
 
-/datum/ghosttrap/pai/assess_candidate(var/mob/observer/ghost/candidate, var/mob/target)
+/datum/ghosttrap/pai/assess_candidate(mob/observer/ghost/candidate, mob/target)
 	return 0
 
-/datum/ghosttrap/pai/transfer_personality(var/mob/candidate, var/mob/living/silicon/robot/drone/drone)
+/datum/ghosttrap/pai/transfer_personality(mob/candidate, mob/living/silicon/robot/drone/drone)
 	return 0
 
 /******************
@@ -248,7 +248,7 @@ var/list/ghost_traps
 	ban_checks = list(MODE_WIZARD)
 	list_as_special_role = TRUE
 
-/datum/ghosttrap/familiar/welcome_candidate(var/mob/target)
+/datum/ghosttrap/familiar/welcome_candidate(mob/target)
 	return 0
 
 /datum/ghosttrap/cult
@@ -260,7 +260,7 @@ var/list/ghost_traps
 	ghost_trap_role = "Cultist"
 	list_as_special_role = TRUE
 
-/datum/ghosttrap/cult/welcome_candidate(var/mob/target)
+/datum/ghosttrap/cult/welcome_candidate(mob/target)
 	var/obj/item/device/soulstone/S = target.loc
 	if(istype(S))
 		if(S.is_evil)

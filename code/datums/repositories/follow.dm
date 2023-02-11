@@ -96,7 +96,7 @@
 	var/sort_order
 	var/atom/movable/followed_instance
 
-/datum/follow_holder/New(var/atom/movable/followed_instance)
+/datum/follow_holder/New(atom/movable/followed_instance)
 	..()
 	src.followed_instance = followed_instance
 	suffix = suffix ? "\[[suffix]\]" : suffix
@@ -105,7 +105,7 @@
 	followed_instance = null
 	. = ..()
 
-/datum/follow_holder/proc/get_name(var/recalc = FALSE)
+/datum/follow_holder/proc/get_name(recalc = FALSE)
 	if(!name || recalc)
 		var/suffix = get_suffix(followed_instance)
 		name = "[followed_instance.follow_name()][instance ? " ([instance])" : ""][suffix ? " [suffix]" : ""]"
@@ -161,7 +161,7 @@
 	var/mob/living/silicon/robot/R = followed_instance
 	return ..() && R.braintype
 
-/datum/follow_holder/robot/get_suffix(var/mob/living/silicon/robot/R)
+/datum/follow_holder/robot/get_suffix(mob/living/silicon/robot/R)
 	suffix = "\[[R.braintype]\][R.module ? " \[[R.module.name]\]" : ""]"
 	return ..()
 
@@ -169,7 +169,7 @@
 	sort_order = 2
 	followed_type = /mob/living/carbon/human
 
-/datum/follow_holder/human/get_suffix(var/mob/living/carbon/human/H)
+/datum/follow_holder/human/get_suffix(mob/living/carbon/human/H)
 	suffix = "\[[H.species.name]\]"
 	return ..()
 

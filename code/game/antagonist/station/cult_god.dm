@@ -26,7 +26,7 @@ var/datum/antagonist/godcultist/godcult
 	..()
 	godcult = src
 
-/datum/antagonist/godcultist/add_antagonist_mind(var/datum/mind/player, var/ignore_role, var/nonstandard_role_type, var/nonstandard_role_msg, var/mob/living/deity/specific_god)
+/datum/antagonist/godcultist/add_antagonist_mind(datum/mind/player, ignore_role, nonstandard_role_type, nonstandard_role_msg, mob/living/deity/specific_god)
 	if(!..())
 		return 0
 
@@ -51,13 +51,13 @@ var/datum/antagonist/godcultist/godcult
 		deity_count++
 
 
-/datum/antagonist/godcultist/remove_antagonist(var/datum/mind/player, var/show_message, var/implanted)
+/datum/antagonist/godcultist/remove_antagonist(datum/mind/player, show_message, implanted)
 	if(!..())
 		return 0
 	remove_cultist(player)
 	return 1
 
-/datum/antagonist/godcultist/get_extra_panel_options(var/datum/mind/player)
+/datum/antagonist/godcultist/get_extra_panel_options(datum/mind/player)
 	return "<a href='?src=\ref[src];selectgod=\ref[player]'>\[Select Deity\]</a>"
 
 /datum/antagonist/godcultist/Topic(href, href_list)
@@ -83,17 +83,17 @@ var/datum/antagonist/godcultist/godcult
 			to_chat(usr, "<span class='warning'>There are no deities to be linked to.</span>")
 		return 1
 
-/datum/antagonist/godcultist/proc/add_cultist(var/datum/mind/player, var/mob/living/deity/deity)
+/datum/antagonist/godcultist/proc/add_cultist(datum/mind/player, mob/living/deity/deity)
 	deity.add_follower(player.current)
 	player.current.add_language(LANGUAGE_CULT)
 
-/datum/antagonist/godcultist/proc/remove_cultist(var/datum/mind/player)
+/datum/antagonist/godcultist/proc/remove_cultist(datum/mind/player)
 	var/mob/living/deity/god = get_deity(player)
 	if(god)
 		god.remove_follower(player.current)
 	player.current.remove_language(LANGUAGE_CULT)
 
-/datum/antagonist/godcultist/proc/get_deity(var/datum/mind/player)
+/datum/antagonist/godcultist/proc/get_deity(datum/mind/player)
 	for(var/m in deity.current_antagonists)
 		var/datum/mind/mind = m
 		var/mob/living/deity/god = mind.current

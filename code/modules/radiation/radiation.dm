@@ -8,7 +8,7 @@
 	var/flat = FALSE			// True for power falloff with distance.
 	var/range					// Cached maximum range, used for quick checks against mobs.
 
-/datum/radiation_source/New(var/source_turf, rad_power, decay = TRUE)
+/datum/radiation_source/New(source_turf, rad_power, decay = TRUE)
 	src.source_turf = source_turf
 	src.rad_power = rad_power
 	src.decay = decay
@@ -20,7 +20,7 @@
 	src.source_turf = null
 	. = ..()
 
-/datum/radiation_source/proc/update_rad_power(var/new_power = null)
+/datum/radiation_source/proc/update_rad_power(new_power = null)
 	if(new_power == null || new_power == rad_power)
 		return // No change
 	else if(new_power <= config.radiation_lower_limit)

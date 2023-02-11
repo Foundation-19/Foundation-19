@@ -59,7 +59,7 @@
 	flora_diversity = 6
 	fauna_types = list(/mob/living/simple_animal/yithian, /mob/living/simple_animal/tindalos, /mob/living/simple_animal/hostile/jelly)
 
-/datum/random_map/noise/exoplanet/grass/spawn_fauna(var/turf/T, value)
+/datum/random_map/noise/exoplanet/grass/spawn_fauna(turf/T, value)
 	if(prob(5))
 		new/mob/living/simple_animal/hostile/giant_spider/nurse(T)
 	else

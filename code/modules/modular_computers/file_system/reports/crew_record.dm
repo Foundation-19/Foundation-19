@@ -23,7 +23,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	. = ..()
 	GLOB.all_crew_records.Remove(src)
 
-/datum/computer_file/report/crew_record/proc/load_from_mob(var/mob/living/carbon/human/H)
+/datum/computer_file/report/crew_record/proc/load_from_mob(mob/living/carbon/human/H)
 	if(istype(H))
 		var/obj/item/card/id/id = H.GetIdCard()
 		if(id && istype(id))

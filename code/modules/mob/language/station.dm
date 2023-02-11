@@ -65,7 +65,7 @@
 	"ka","aasi","far","wa","baq","ara","qara","zir","sam","mak","hrar","nja","rir","khan","jun","dar","rik","kah",
 	"hal","ket","jurl","mah","tul","cresh","azu","ragh","mro","mra","mrro","mrra")
 
-/datum/language/tajaran/get_random_name(var/gender)
+/datum/language/tajaran/get_random_name(gender)
 
 	var/new_name = ..(gender,1)
 	if(prob(50))
@@ -96,7 +96,7 @@
 
 	//syllables are at the bottom of the file
 
-/datum/language/human/get_spoken_verb(var/msg_end)
+/datum/language/human/get_spoken_verb(msg_end)
 	switch(msg_end)
 		if("!")
 			return pick("exclaims","shouts","yells") //TODO: make the basic proc handle lists of verbs.
@@ -104,7 +104,7 @@
 			return ask_verb
 	return speech_verb
 
-/datum/language/human/get_random_name(var/gender)
+/datum/language/human/get_random_name(gender)
 	if (prob(80))
 		if(gender==FEMALE)
 			return capitalize(pick(GLOB.first_names_female)) + " " + capitalize(pick(GLOB.last_names))
@@ -126,7 +126,7 @@
 	space_chance = 10
 	flags = RESTRICTED
 
-/datum/language/machine/can_speak_special(var/mob/living/speaker)
+/datum/language/machine/can_speak_special(mob/living/speaker)
 	return speaker.isSynthetic()
 
 /datum/language/machine/get_random_name()
@@ -222,7 +222,7 @@
 	flags = RESTRICTED | SIGNLANG | NO_STUTTER | NONVERBAL
 	colour = ".nabber_lang"
 
-/datum/language/nabber/get_random_name(var/gender)
+/datum/language/nabber/get_random_name(gender)
 	if(gender == FEMALE)
 		return capitalize(pick(GLOB.first_names_female))
 	else

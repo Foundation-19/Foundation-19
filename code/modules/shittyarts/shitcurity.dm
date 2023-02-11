@@ -13,7 +13,7 @@
 	desc = "Grab Disarm Harm - Floorslam - Slams victim's head against the floor, stunning them\n\
 			Harm Disarm Harm - Kick - Kicks victim into chest, dealing some damage and stunning them for a bit"
 
-/datum/martial_art/krav_maga/handle_streak(var/mob/living/carbon/human/owner, var/mob/living/carbon/human/D)
+/datum/martial_art/krav_maga/handle_streak(mob/living/carbon/human/owner, mob/living/carbon/human/D)
 	if(findtext(streak, "GDA"))
 		D.Weaken(1)
 		D.Stun(0.2)

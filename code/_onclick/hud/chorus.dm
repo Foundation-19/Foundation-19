@@ -63,17 +63,17 @@
 	mymob.client.screen = list()
 	mymob.client.screen += src.adding
 
-/datum/hud/chorus/proc/update_buildings_units(var/b, var/f)
+/datum/hud/chorus/proc/update_buildings_units(b, f)
 	followers.update_resource(f)
 	buildings.update_resource(b)
 
-/datum/hud/chorus/proc/update_resources(var/list/prints)
+/datum/hud/chorus/proc/update_resources(list/prints)
 	for(var/i in 1 to prints.len)
 		var/obj/screen/chorus_resource/res = resources[i]
 		var/p = prints[i]
 		res.update_resource(p)
 
-/datum/hud/chorus/proc/update_selected(var/datum/chorus_building/n_build)
+/datum/hud/chorus/proc/update_selected(datum/chorus_building/n_build)
 	selected.update_to_building(n_build)
 	if(n_build)
 		cost.update_to_cost(n_build.get_printed_cost(mymob))

@@ -22,7 +22,7 @@
 	hud_state = "wiz_cuff"
 	cast_sound = 'sound/magic/wandodeath.ogg'
 
-/datum/spell/targeted/projectile/dumbfire/stuncuff/prox_cast(var/list/targets, spell_holder)
+/datum/spell/targeted/projectile/dumbfire/stuncuff/prox_cast(list/targets, spell_holder)
 	for(var/mob/living/M in targets)
 		if(istype(M,/mob/living/carbon/human))
 			var/mob/living/carbon/human/H = M

@@ -20,7 +20,7 @@ var/repository/attack_logs/attack_log_repository = new()
 	var/turf/location                // Turfs are forever
 	var/message
 
-/datum/attack_log/New(var/mob/mob_attacker, var/mob/mob_victim, var/action_message)
+/datum/attack_log/New(mob/mob_attacker, mob/mob_victim, action_message)
 	station_time = time_stamp()
 
 	attacker = mob_repository.get_lite_mob(mob_attacker)

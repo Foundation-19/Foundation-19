@@ -19,7 +19,7 @@ var/list/global_huds = list(
 	var/obj/screen/science
 	var/obj/screen/holomap
 
-/datum/global_hud/proc/setup_overlay(var/icon_state)
+/datum/global_hud/proc/setup_overlay(icon_state)
 	var/obj/screen/screen = new /obj/screen()
 	screen.screen_loc = "1,1"
 	screen.icon = 'icons/obj/hud_full.dmi'

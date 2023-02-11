@@ -63,7 +63,7 @@
 
 
 
-/datum/mind/New(var/key)
+/datum/mind/New(key)
 	src.key = key
 	..()
 
@@ -134,7 +134,7 @@
 	out += "<b>Ambitions:</b> [ambition ? ambition.description : "None"] <a href='?src=\ref[src];amb_edit=\ref[src]'>\[edit\]</a></br>"
 	show_browser(usr, out, "window=edit_memory[src]")
 
-/datum/mind/proc/get_goal_from_href(var/href)
+/datum/mind/proc/get_goal_from_href(href)
 	var/ind = isnum(href) ? href : text2num(href)
 	if(ind > 0 && ind <= LAZYLEN(goals))
 		return goals[ind]
