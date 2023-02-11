@@ -8,7 +8,7 @@ var/repository/mob/mob_repository = new()
 	mobs_ = list()
 
 // A lite mob is unique per ckey and mob real name/ref (ref conflicts possible.. but oh well)
-/repository/mob/proc/get_lite_mob(var/mob/M)
+/repository/mob/proc/get_lite_mob(mob/M)
 	. = mobs_[mob2unique(M)]
 	if(!.)
 		. = new/datum/mob_lite(M)

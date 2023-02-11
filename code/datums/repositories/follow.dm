@@ -22,7 +22,7 @@
 		var/datum/follow_holder/fh = fht
 		followed_subtypes[initial(fh.followed_type)] = fht
 
-/repository/follow/proc/add_subject(var/atom/movable/AM)
+/repository/follow/proc/add_subject(atom/movable/AM)
 	cache = null
 
 	var/follow_holder_type = get_follow_type(AM)
@@ -33,7 +33,7 @@
 
 	GLOB.destroyed_event.register(AM, src, /repository/follow/proc/remove_subject)
 
-/repository/follow/proc/remove_subject(var/atom/movable/AM)
+/repository/follow/proc/remove_subject(atom/movable/AM)
 	cache = null
 
 	var/follow_holder = followed_objects_assoc[AM]
@@ -45,7 +45,7 @@
 
 	qdel(follow_holder)
 
-/repository/follow/proc/get_follow_type(var/atom/movable/AM)
+/repository/follow/proc/get_follow_type(atom/movable/AM)
 	for(var/follow_type in followed_subtypes)
 		if(istype(AM, follow_type))
 			return followed_subtypes[follow_type]

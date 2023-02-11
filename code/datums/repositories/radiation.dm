@@ -33,7 +33,7 @@ var/global/repository/radiation/radiation_repository = new()
 			range = min(round(sqrt(rad_power / config.radiation_lower_limit)), 31)  // R = rad_power / dist**2 - Solve for dist
 
 // Ray trace from all active radiation sources to T and return the strongest effect.
-/repository/radiation/proc/get_rads_at_turf(var/turf/T)
+/repository/radiation/proc/get_rads_at_turf(turf/T)
 	if(!istype(T)) return 0
 
 	. = 0
@@ -70,7 +70,7 @@ var/global/repository/radiation/radiation_repository = new()
 			. = 0
 
 // Add a radiation source instance to the repository.  It will override any existing source on the same turf.
-/repository/radiation/proc/add_source(var/datum/radiation_source/S)
+/repository/radiation/proc/add_source(datum/radiation_source/S)
 	if(!isturf(S.source_turf))
 		return
 	var/datum/radiation_source/existing = sources_assoc[S.source_turf]
@@ -89,7 +89,7 @@ var/global/repository/radiation/radiation_repository = new()
 	add_source(S)
 
 // Sets the radiation in a range to a constant value.
-/repository/radiation/proc/flat_radiate(source, power, range, var/respect_maint = FALSE)
+/repository/radiation/proc/flat_radiate(source, power, range, respect_maint = FALSE)
 	if(!(source && power && range))
 		return
 	var/datum/radiation_source/S = new()
@@ -101,7 +101,7 @@ var/global/repository/radiation/radiation_repository = new()
 	add_source(S)
 
 // Irradiates a full Z-level. Hacky way of doing it, but not too expensive.
-/repository/radiation/proc/z_radiate(var/atom/source, power, var/respect_maint = FALSE)
+/repository/radiation/proc/z_radiate(atom/source, power, respect_maint = FALSE)
 	if(!(power && source))
 		return
 	var/turf/epicentre = locate(round(world.maxx / 2), round(world.maxy / 2), source.z)

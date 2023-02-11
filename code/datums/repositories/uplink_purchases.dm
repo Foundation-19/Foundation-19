@@ -6,7 +6,7 @@ var/repository/uplink_purchases/uplink_purchase_repository = new()
 /repository/uplink_purchases/New()
 	purchases_by_mind = list()
 
-/repository/uplink_purchases/proc/add_entry(var/datum/mind/m, var/item, var/cost)
+/repository/uplink_purchases/proc/add_entry(datum/mind/m, item, cost)
 	var/uplink_purchase_entry/upe = purchases_by_mind[m]
 	if(!upe)
 		upe = new()
