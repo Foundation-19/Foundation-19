@@ -1,6 +1,0 @@
-author: Tsurupeta
-delete-after: true
-changes:
-  - bugfix: fixed OOC color on dark theme
-  - bugfix: fixed movement keys not working after restart in certain cases
-  - bugfix: fixed runtime in _access.dm:188
