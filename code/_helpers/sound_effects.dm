@@ -9,8 +9,10 @@ boom - Jagged circle
 /proc/show_sound_effect(turf/T, mob/source, soundtype = "default")
 	var/list/clients_to_show = list()
 
-	for(var/mob/living/carbon/human/H in view(7, T))
-		clients_to_show += H.get_client()
+	for(var/mob/living/M in view(7, T))
+		if(M.is_deaf() || !M.get_client())
+			continue
+		clients_to_show += M.get_client()
 	if(!length(clients_to_show))
 		return
 	//if(source)
