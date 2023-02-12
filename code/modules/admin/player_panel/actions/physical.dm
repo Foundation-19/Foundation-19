@@ -3,7 +3,7 @@
 	name = "Delimb"
 	permissions_required = R_VAREDIT
 
-/datum/player_action/delimb/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/delimb/act(client/user, mob/target, list/params)
 	if(!params["limbs"] || !ishuman(target))
 		return
 
@@ -29,7 +29,7 @@
 	name = "Relimb"
 	permissions_required = R_VAREDIT
 
-/datum/player_action/relimb/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/relimb/act(client/user, mob/target, list/params)
 	if(!params["limbs"] || !ishuman(target))
 		return
 
@@ -63,7 +63,7 @@
 	name = "Set Speed"
 	permissions_required = R_VAREDIT
 
-/datum/player_action/set_speed/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/set_speed/act(client/user, mob/target, list/params)
 	if(isnull(params["speed"]))
 		return
 
@@ -76,7 +76,7 @@
 	name = "Set Status Flags"
 	permissions_required = R_VAREDIT
 
-/datum/player_action/set_status_flags/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/set_status_flags/act(client/user, mob/target, list/params)
 	if(isnull(params["status_flags"]))
 		return
 

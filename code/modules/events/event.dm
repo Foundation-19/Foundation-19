@@ -22,7 +22,7 @@
 	if(job_weights)
 		role_weights = job_weights
 
-/datum/event_meta/proc/get_weight(var/list/active_with_role)
+/datum/event_meta/proc/get_weight(list/active_with_role)
 	if(!enabled)
 		return 0
 
@@ -145,7 +145,7 @@
 //Called during building of skybox to get overlays
 /datum/event/proc/get_skybox_image()
 
-/datum/event/New(var/datum/event_meta/EM)
+/datum/event/New(datum/event_meta/EM)
 	// event needs to be responsible for this, as stuff like APLUs currently make their own events for curious reasons
 	SSevent.active_events += src
 

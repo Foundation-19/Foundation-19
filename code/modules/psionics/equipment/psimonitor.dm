@@ -16,7 +16,7 @@
 	SSpsi.psi_monitors += src
 	..()
 
-/obj/machinery/psi_monitor/emag_act(var/remaining_charges, var/mob/user)
+/obj/machinery/psi_monitor/emag_act(remaining_charges, mob/user)
 	if(!emagged)
 		emagged = TRUE
 		remaining_charges--
@@ -65,11 +65,11 @@
 		if(. && usr)
 			interact(usr)
 
-/obj/machinery/psi_monitor/interface_interact(var/mob/user)
+/obj/machinery/psi_monitor/interface_interact(mob/user)
 	interact(user)
 	return TRUE
 
-/obj/machinery/psi_monitor/interact(var/mob/user)
+/obj/machinery/psi_monitor/interact(mob/user)
 
 	var/list/dat = list()
 	dat += "<h1>Psi Dampener Monitor</h1>"

@@ -20,13 +20,13 @@ SUBSYSTEM_DEF(fabrication)
 			LAZYDISTINCTADD(crafting_procedures_by_type[handler.begins_with_object_type], handler)
 	. = ..()
 
-/datum/controller/subsystem/fabrication/proc/get_categories(var/fab_type)
+/datum/controller/subsystem/fabrication/proc/get_categories(fab_type)
 	. = categories[fab_type]
 
-/datum/controller/subsystem/fabrication/proc/get_recipes(var/fab_type)
+/datum/controller/subsystem/fabrication/proc/get_recipes(fab_type)
 	. = recipes[fab_type]
 
-/datum/controller/subsystem/fabrication/proc/find_crafting_recipes(var/_type)
+/datum/controller/subsystem/fabrication/proc/find_crafting_recipes(_type)
 	if(isnull(crafting_procedures_by_type[_type]))
 		crafting_procedures_by_type[_type] = FALSE
 		for(var/check_type in crafting_procedures_by_type)
@@ -35,7 +35,7 @@ SUBSYSTEM_DEF(fabrication)
 				break
 	. = crafting_procedures_by_type[_type]
 
-/datum/controller/subsystem/fabrication/proc/try_craft_with(var/obj/item/target, var/obj/item/thing, var/mob/user)
+/datum/controller/subsystem/fabrication/proc/try_craft_with(obj/item/target, obj/item/thing, mob/user)
 	for(var/decl/crafting_stage/initial_stage in SSfabrication.find_crafting_recipes(target.type))
 		if(initial_stage.can_begin_with(target) && initial_stage.is_appropriate_tool(thing))
 			var/obj/item/crafting_holder/H = new /obj/item/crafting_holder(get_turf(target), initial_stage, target, thing, user)

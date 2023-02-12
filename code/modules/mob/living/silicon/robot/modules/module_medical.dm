@@ -54,7 +54,6 @@
 		SKILL_ANATOMY     = SKILL_MASTER,
 		SKILL_MEDICAL     = SKILL_EXPERIENCED,
 		SKILL_CHEMISTRY   = SKILL_TRAINED,
-		SKILL_BUREAUCRACY = SKILL_TRAINED,
 		SKILL_DEVICES     = SKILL_EXPERIENCED
 	)
 
@@ -83,7 +82,7 @@
 		var/obj/item/stack/medical/stack = locate(thing) in equipment
 		stack.synths = list(medicine)
 
-/obj/item/robot_module/medical/surgeon/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/medical/surgeon/respawn_consumable(mob/living/silicon/robot/R, amount)
 	if(emag)
 		var/obj/item/reagent_containers/spray/PS = emag
 		PS.reagents.add_reagent(/datum/reagent/acid/polytrinic, 2 * amount)
@@ -124,9 +123,7 @@
 	skills = list(
 		SKILL_ANATOMY     = SKILL_BASIC,
 		SKILL_MEDICAL     = SKILL_MASTER,
-		SKILL_CHEMISTRY   = SKILL_TRAINED,
-		SKILL_BUREAUCRACY = SKILL_TRAINED,
-		SKILL_EVA         = SKILL_EXPERIENCED
+		SKILL_CHEMISTRY   = SKILL_TRAINED
 	)
 
 /obj/item/robot_module/medical/crisis/finalize_equipment()
@@ -156,7 +153,7 @@
 		var/obj/item/stack/medical/stack = locate(thing) in equipment
 		stack.synths = list(medicine)
 
-/obj/item/robot_module/medical/crisis/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/medical/crisis/respawn_consumable(mob/living/silicon/robot/R, amount)
 	var/obj/item/reagent_containers/syringe/S = locate() in equipment
 	if(S.mode == 2)
 		S.reagents.clear_reagents()

@@ -22,9 +22,8 @@
 	emag = /obj/item/stamp/chameleon
 	synths = list(/datum/matter_synth/package_wrap)
 	skills = list(
-		SKILL_BUREAUCRACY         = SKILL_MASTER,
-		SKILL_FINANCE             = SKILL_MASTER,
 		SKILL_COMPUTER            = SKILL_EXPERIENCED,
+		SKILL_FINANCE             = SKILL_MASTER,
 		SKILL_SCIENCE             = SKILL_EXPERIENCED,
 		SKILL_DEVICES             = SKILL_EXPERIENCED
 	)

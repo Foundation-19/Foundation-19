@@ -1141,7 +1141,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 
 
-/datum/changeling/proc/purchasePower(var/datum/mind/M, var/Pname, var/remake_verbs = 1, silent = FALSE)
+/datum/changeling/proc/purchasePower(datum/mind/M, Pname, remake_verbs = 1, silent = FALSE)
 	if(!M || !M.changeling)
 		return
 

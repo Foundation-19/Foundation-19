@@ -34,7 +34,7 @@
 		"outgoing pulse B"
 	)
 
-/obj/item/integrated_circuit/transfer/activator_splitter/do_work(var/io)
+/obj/item/integrated_circuit/transfer/activator_splitter/do_work(io)
 	if(io != activators[1])
 		return
 

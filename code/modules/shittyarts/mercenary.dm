@@ -11,7 +11,7 @@
 			Disarm on self - Roll - you rapidly roll. Be careful in the small rooms!\n\
 			Harm on self - Dash - you dash forward, moving 2 tiles. Don't slam into walls!"
 
-/datum/martial_art/nanite/eaglestyle/handle_streak(var/mob/living/carbon/human/owner, var/mob/living/carbon/human/D)
+/datum/martial_art/nanite/eaglestyle/handle_streak(mob/living/carbon/human/owner, mob/living/carbon/human/D)
 	if(findtext(streak, "DAD"))
 		owner.visible_message(SPAN_DANGER("[owner] jumps backwards, pushing [D] with his legs!"))
 		playsound(owner.loc, 'sound/weapons/thudswoosh.ogg', 25, 1, -1)
@@ -74,7 +74,7 @@
 			Disarm Disarm - Lightning Strike - stuns victim, but without damage\n\
 			Disarm Harm Disarm - Headkick - knocks victim unconsious if lying on the floor, else stuns him"
 
-/datum/martial_art/cqc/handle_streak(var/mob/living/carbon/human/owner, var/mob/living/carbon/human/D)
+/datum/martial_art/cqc/handle_streak(mob/living/carbon/human/owner, mob/living/carbon/human/D)
 	if(findtext(streak, "AAA"))
 		owner.visible_message(SPAN_DANGER("[owner] kicks [D] in the chest!"))
 		playsound(owner.loc, 'sound/weapons/punch1.ogg', 25, 1, -1)

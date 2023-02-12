@@ -141,7 +141,7 @@ Class Procs:
 	STOP_PROCESSING_MACHINE(src, MACHINERY_PROCESS_ALL)
 	. = ..()
 
-/obj/machinery/proc/ProcessAll(var/wait)
+/obj/machinery/proc/ProcessAll(wait)
 	if(processing_flags & MACHINERY_PROCESS_COMPONENTS)
 		for(var/thing in processing_parts)
 			var/obj/item/stock_parts/part = thing
@@ -206,22 +206,22 @@ Class Procs:
 		stat ^= NOINPUT
 		return TRUE
 
-/proc/is_operable(var/obj/machinery/M, var/mob/user)
+/proc/is_operable(obj/machinery/M, mob/user)
 	return istype(M) && M.operable()
 
-/obj/machinery/proc/is_broken(var/additional_flags = 0)
+/obj/machinery/proc/is_broken(additional_flags = 0)
 	return (stat & (BROKEN|additional_flags))
 
-/obj/machinery/proc/is_powered(var/additional_flags = 0)
+/obj/machinery/proc/is_powered(additional_flags = 0)
 	return !(stat & (NOPOWER|additional_flags))
 
-/obj/machinery/proc/operable(var/additional_flags = 0)
+/obj/machinery/proc/operable(additional_flags = 0)
 	return !inoperable(additional_flags)
 
-/obj/machinery/proc/inoperable(var/additional_flags = 0)
+/obj/machinery/proc/inoperable(additional_flags = 0)
 	return (stat & (NOPOWER|BROKEN|additional_flags))
 
-/obj/machinery/CanUseTopic(var/mob/user)
+/obj/machinery/CanUseTopic(mob/user)
 	if(stat & BROKEN)
 		return STATUS_CLOSE
 
@@ -253,17 +253,17 @@ Class Procs:
 /mob/observer/ghost/direct_machine_interface(obj/machinery/machine)
 	return TRUE
 
-/obj/machinery/CanUseTopicPhysical(var/mob/user)
+/obj/machinery/CanUseTopicPhysical(mob/user)
 	if(stat & BROKEN)
 		return STATUS_CLOSE
 
 	return GLOB.physical_state.can_use_topic(nano_host(), user)
 
-/obj/machinery/CouldUseTopic(var/mob/user)
+/obj/machinery/CouldUseTopic(mob/user)
 	..()
 	user.set_machine(src)
 
-/obj/machinery/CouldNotUseTopic(var/mob/user)
+/obj/machinery/CouldNotUseTopic(mob/user)
 	user.unset_machine()
 
 /obj/machinery/Topic(href, href_list, datum/topic_state/state)
@@ -345,7 +345,7 @@ Class Procs:
 	var/list/missing = missing_parts()
 	set_broken(!!missing, MACHINE_BROKEN_NO_PARTS)
 
-/obj/machinery/proc/state(var/msg)
+/obj/machinery/proc/state(msg)
 	for(var/mob/O in hearers(src, null))
 		O.show_message("[icon2html(src, O)] <span class = 'notice'>[msg]</span>", 2)
 
@@ -405,10 +405,10 @@ Class Procs:
 /datum/proc/remove_visual(mob/M)
 	return
 
-/obj/machinery/proc/malf_upgrade(var/mob/living/silicon/ai/user)
+/obj/machinery/proc/malf_upgrade(mob/living/silicon/ai/user)
 	return 0
 
-/obj/machinery/CouldUseTopic(var/mob/user)
+/obj/machinery/CouldUseTopic(mob/user)
 	..()
 	if(clicksound && world.time > next_clicksound && istype(user, /mob/living/carbon))
 		next_clicksound = world.time + CLICKSOUND_INTERVAL
@@ -447,7 +447,7 @@ Class Procs:
 		to_chat(user, SPAN_NOTICE(machine_desc))
 
 // This is really pretty crap and should be overridden for specific machines.
-/obj/machinery/water_act(var/depth)
+/obj/machinery/water_act(depth)
 	..()
 	if(!(stat & (NOPOWER|BROKEN)) && !waterproof && (depth > FLUID_DEEP))
 		ex_act(3)

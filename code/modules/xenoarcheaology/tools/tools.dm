@@ -8,7 +8,7 @@
 	matter = list(MATERIAL_ALUMINIUM = 250, MATERIAL_STEEL = 250, MATERIAL_GLASS = 50)
 	w_class = ITEM_SIZE_SMALL
 
-/obj/item/device/gps/attack_self(var/mob/user as mob)
+/obj/item/device/gps/attack_self(mob/user as mob)
 	to_chat(user, "<span class='notice'>[icon2html(src, user)] \The [src] flashes <i>[get_coordinates()]</i>.</span>")
 
 /obj/item/device/gps/examine(mob/user)
@@ -78,10 +78,10 @@
 	var/last_scan_time = 0
 	var/scan_delay = 25
 
-/obj/item/device/ano_scanner/attack_self(var/mob/living/user)
+/obj/item/device/ano_scanner/attack_self(mob/living/user)
 	interact(user)
 
-/obj/item/device/ano_scanner/interact(var/mob/living/user)
+/obj/item/device/ano_scanner/interact(mob/living/user)
 	if(world.time - last_scan_time >= scan_delay)
 		last_scan_time = world.time
 
@@ -143,7 +143,7 @@
 	var/dissonance_spread = 1
 	var/material = "unknown"
 
-/obj/item/device/depth_scanner/proc/scan_atom(var/mob/user, var/atom/A)
+/obj/item/device/depth_scanner/proc/scan_atom(mob/user, atom/A)
 	user.visible_message("<span class='notice'>\The [user] scans \the [A], the air around them humming gently.</span>")
 
 	if(istype(A, /turf/simulated/mineral))
@@ -188,10 +188,10 @@
 
 	updateSelfDialog()
 
-/obj/item/device/depth_scanner/attack_self(var/mob/living/user)
+/obj/item/device/depth_scanner/attack_self(mob/living/user)
 	interact(user)
 
-/obj/item/device/depth_scanner/interact(var/mob/user as mob)
+/obj/item/device/depth_scanner/interact(mob/user as mob)
 	user.set_machine(src)
 	var/dat = "<b>Coordinates with positive matches</b><br>"
 
@@ -273,10 +273,10 @@
 				cur_dist = check_dist
 				. = weakref(R)
 
-/obj/item/pinpointer/radio/attack_self(var/mob/user as mob)
+/obj/item/pinpointer/radio/attack_self(mob/user as mob)
 	interact(user)
 
-/obj/item/pinpointer/radio/interact(var/mob/user)
+/obj/item/pinpointer/radio/interact(mob/user)
 	var/dat = "<b>Radio frequency tracker</b><br>"
 	dat += {"
 				Tracking: <A href='byond://?src=\ref[src];toggle=1'>[active ? "Enabled" : "Disabled"]</A><BR>

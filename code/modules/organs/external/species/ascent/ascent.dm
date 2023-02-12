@@ -15,14 +15,14 @@
 		web.owner = null
 	existing_webs.Cut()
 	. = ..()
-	
+
 /obj/item/organ/external/groin/insectoid/mantid/refresh_action_button()
 	. = ..()
 	if(.)
 		action.button_icon_state = "weave-web-[cooldown ? "off" : "on"]"
 		if(action.button) action.button.UpdateIcon()
 
-/obj/item/organ/external/groin/insectoid/mantid/attack_self(var/mob/user)
+/obj/item/organ/external/groin/insectoid/mantid/attack_self(mob/user)
 	. = ..()
 	if(. && !cooldown)
 
@@ -66,7 +66,7 @@
 		action.button_icon_state = "shot-web-[cooldown ? "off" : "on"]"
 		if(action.button) action.button.UpdateIcon()
 
-/obj/item/organ/external/head/insectoid/mantid/attack_self(var/mob/user)
+/obj/item/organ/external/head/insectoid/mantid/attack_self(mob/user)
 	. = ..()
 	if(.)
 

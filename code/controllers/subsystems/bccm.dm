@@ -27,7 +27,7 @@ SUBSYSTEM_DEF(bccm)
 	var/list/tgui_panel_asn_data = list()
 	var/list/tgui_panel_wl_data = list()
 
-	var/list/client/postponed_client_queue = new
+	var/list/client/postponed_client_queue = list()
 
 /datum/controller/subsystem/bccm/Initialize(timeofday)
 	if(!config.bccm)

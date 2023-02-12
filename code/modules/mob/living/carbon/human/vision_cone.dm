@@ -67,7 +67,7 @@
 	fov.dir = dir
 	fov_mask.dir = dir
 
-/mob/living/carbon/human/proc/SetFov(var/show)
+/mob/living/carbon/human/proc/SetFov(show)
 	if(!show)
 		hide_cone()
 	else

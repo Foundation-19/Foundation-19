@@ -57,7 +57,7 @@ other types of metals and chemistry for reagents).
 
 //Returns a new instance of the item for this design
 //This is to allow additional initialization to be performed, including possibly additional contructor arguments.
-/datum/design/proc/Fabricate(var/newloc, var/fabricator)
+/datum/design/proc/Fabricate(newloc, fabricator)
 	return new build_path(newloc)
 
 /datum/design/item
@@ -1459,7 +1459,7 @@ other types of metals and chemistry for reagents).
 	var/decl/prefab/ic_assembly/fabrication
 	var/global/count = 0
 
-/datum/design/prefab/New(var/research, var/fab)
+/datum/design/prefab/New(research, fab)
 	if(fab)
 		fabrication = fab
 		materials = list(DEFAULT_WALL_MATERIAL = fabrication.metal_amount)
@@ -1480,7 +1480,7 @@ other types of metals and chemistry for reagents).
 	if(fabrication)
 		name = "Device ([fabrication.assembly_name])"
 
-/datum/design/prefab/Fabricate(var/newloc)
+/datum/design/prefab/Fabricate(newloc)
 	if(!fabrication)
 		return
 	var/obj/O = fabrication.create(newloc)

@@ -355,7 +355,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		new_planet.build_level()
 
 // Used to apply various post-compile procedural effects to the map.
-/datum/map/proc/refresh_mining_turfs(var/zlevel)
+/datum/map/proc/refresh_mining_turfs(zlevel)
 
 	set background = 1
 	set waitfor = 0
@@ -368,11 +368,11 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		if(istype(M))
 			M.updateMineralOverlays()
 
-/datum/map/proc/get_network_access(var/network)
+/datum/map/proc/get_network_access(network)
 	return 0
 
 // By default transition randomly to another zlevel
-/datum/map/proc/get_transit_zlevel(var/current_z_level)
+/datum/map/proc/get_transit_zlevel(current_z_level)
 	var/list/candidates = GLOB.using_map.accessible_z_levels.Copy()
 	candidates.Remove(num2text(current_z_level))
 
@@ -412,7 +412,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	department_accounts["Vendor"] = create_account("Vendor Account", "Vendor", 0, ACCOUNT_TYPE_DEPARTMENT)
 	vendor_account = department_accounts["Vendor"]
 
-/datum/map/proc/map_info(var/client/victim)
+/datum/map/proc/map_info(client/victim)
 	to_chat(victim, "<h2>Current map information</h2>")
 	to_chat(victim, get_map_info())
 
@@ -425,11 +425,11 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 /datum/map/proc/unbolt_saferooms()
 	return // overriden by torch
 
-/datum/map/proc/make_maint_all_access(var/radstorm = 0) // parameter used by torch
+/datum/map/proc/make_maint_all_access(radstorm = 0) // parameter used by torch
 	maint_all_access = 1
 	priority_announcement.Announce("The maintenance access requirement has been revoked on all maintenance airlocks.", "Attention!")
 
-/datum/map/proc/revoke_maint_all_access(var/radstorm = 0) // parameter used by torch
+/datum/map/proc/revoke_maint_all_access(radstorm = 0) // parameter used by torch
 	maint_all_access = 0
 	priority_announcement.Announce("The maintenance access requirement has been readded on all maintenance airlocks.", "Attention!")
 

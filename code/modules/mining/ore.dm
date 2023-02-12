@@ -21,12 +21,12 @@
 	icon_state = "ore_[ore.icon_tag]"
 	origin_tech = ore.origin_tech.Copy()
 
-/obj/item/weapon/ore/Value(var/base)
+/obj/item/weapon/ore/Value(base)
 	. = ..()
 	if(!ore)
 		return
 	var/material/M
-	if(ore.smelts_to) 
+	if(ore.smelts_to)
 		M = get_material_by_name(ore.smelts_to)
 	else if (ore.compresses_to)
 		M = get_material_by_name(ore.compresses_to)

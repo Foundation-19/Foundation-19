@@ -28,7 +28,7 @@
 	var/reflect_prob = 0 //Probability of user dodging projectiles. If 0 wont work
 	var/noshooting = 0 //If 1, user cant shoot guns
 
-/datum/martial_art/proc/add_to_streak(var/mob/living/carbon/human/owner, var/intent, var/mob/living/carbon/human/D)
+/datum/martial_art/proc/add_to_streak(mob/living/carbon/human/owner, intent, mob/living/carbon/human/D)
 	if(D != current_target)
 		streak = ""
 		current_target = D
@@ -39,25 +39,25 @@
 	//if(handle_streak(owner, D))
 		//streak = ""
 
-/datum/martial_art/proc/handle_help(var/mob/living/carbon/human/owner, var/mob/living/carbon/human/victim)
+/datum/martial_art/proc/handle_help(mob/living/carbon/human/owner, mob/living/carbon/human/victim)
 	if(handle_streak(owner, victim))
 		streak = ""
 		return TRUE
 	return FALSE
 
-/datum/martial_art/proc/handle_disarm(var/mob/living/carbon/human/owner, var/mob/living/carbon/human/victim)
+/datum/martial_art/proc/handle_disarm(mob/living/carbon/human/owner, mob/living/carbon/human/victim)
 	if(handle_streak(owner, victim))
 		streak = ""
 		return TRUE
 	return FALSE
 
-/datum/martial_art/proc/handle_harm(var/mob/living/carbon/human/owner, var/mob/living/carbon/human/victim)
+/datum/martial_art/proc/handle_harm(mob/living/carbon/human/owner, mob/living/carbon/human/victim)
 	if(handle_streak(owner, victim))
 		streak = ""
 		return TRUE
 	return FALSE
 
-/datum/martial_art/proc/handle_grab(var/mob/living/carbon/human/owner, var/mob/living/carbon/human/victim)
+/datum/martial_art/proc/handle_grab(mob/living/carbon/human/owner, mob/living/carbon/human/victim)
 	if(handle_streak(owner, victim))
 		streak = ""
 		return TRUE
@@ -65,5 +65,5 @@
 
 //Magic will be done down here
 
-/datum/martial_art/proc/handle_streak(var/mob/living/carbon/human/owner, var/mob/living/carbon/human/D)
+/datum/martial_art/proc/handle_streak(mob/living/carbon/human/owner, mob/living/carbon/human/D)
 	return FALSE

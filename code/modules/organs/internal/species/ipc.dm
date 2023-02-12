@@ -42,7 +42,7 @@
 	if (!is_processing)
 		START_PROCESSING(SSobj, src)
 
-/obj/item/organ/internal/posibrain/proc/init(var/mob/living/carbon/H)
+/obj/item/organ/internal/posibrain/proc/init(mob/living/carbon/H)
 	brainmob = new(src)
 
 	if(istype(H))
@@ -190,7 +190,7 @@
 	src.brainmob.SetName("[pick(list("PBU","HIU","SINA","ARMA","OSI"))]-[random_id(type,100,999)]")
 	src.brainmob.real_name = src.brainmob.name
 
-/obj/item/organ/internal/posibrain/proc/shackle(var/given_lawset)
+/obj/item/organ/internal/posibrain/proc/shackle(given_lawset)
 	if(given_lawset)
 		brainmob.laws = given_lawset
 	shackle = 1
@@ -213,7 +213,7 @@
 	if(shackle)
 		add_overlay(image('icons/obj/assemblies.dmi', "posibrain-shackles"))
 
-/obj/item/organ/internal/posibrain/proc/transfer_identity(var/mob/living/carbon/H)
+/obj/item/organ/internal/posibrain/proc/transfer_identity(mob/living/carbon/H)
 	if(H?.mind)
 		brainmob.set_stat(CONSCIOUS)
 		H.mind.transfer_to(brainmob)
@@ -268,7 +268,7 @@
 					S.start()
 
 
-/obj/item/organ/internal/posibrain/removed(var/mob/living/user)
+/obj/item/organ/internal/posibrain/removed(mob/living/user)
 	if(!istype(owner))
 		return ..()
 	UpdateNames()
@@ -286,7 +286,7 @@
 		return
 	SetName("\the [initial(name)]")
 
-/obj/item/organ/internal/posibrain/replaced(var/mob/living/target)
+/obj/item/organ/internal/posibrain/replaced(mob/living/target)
 
 	if(!..()) return 0
 

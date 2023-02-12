@@ -93,7 +93,7 @@
 	new t(src.loc)
 	qdel(src)
 
-/obj/effect/gateway/active/Crossed(var/atom/A)
+/obj/effect/gateway/active/Crossed(atom/A)
 	if(!istype(A, /mob/living))
 		return
 

@@ -50,7 +50,7 @@
 /obj/machinery/power/port_gen/pacman2/examine(mob/user)
 	. = ..(user)
 	to_chat(user, "<span class='notice'>The generator has [P.air_contents.phoron] units of fuel left, producing [power_gen] per cycle.</span>")
-	
+
 /obj/machinery/power/port_gen/pacman2/handleInactive()
 	heat -= 2
 	if (heat < 0)
@@ -63,7 +63,7 @@
 /obj/machinery/power/port_gen/pacman2/proc/overheat()
 			explosion(get_turf(src), 2, 5, 2, -1)
 
-/obj/machinery/power/port_gen/pacman2/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/obj/machinery/power/port_gen/pacman2/attackby(obj/item/O as obj, mob/user as mob)
 	if(istype(O, /obj/item/weapon/tank/phoron))
 		if(P)
 			to_chat(user, "<span class='warning'>The generator already has a phoron tank loaded!</span>")
@@ -160,7 +160,7 @@
 			usr << browse(null, "window=port_gen")
 			usr.machine = null
 
-/obj/machinery/power/port_gen/pacman2/emag_act(var/remaining_uses, var/mob/user)
+/obj/machinery/power/port_gen/pacman2/emag_act(remaining_uses, mob/user)
 	emagged = TRUE
 	emp_act(1)
 	return 1

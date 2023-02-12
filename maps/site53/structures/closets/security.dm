@@ -311,7 +311,7 @@
 
 	)
 
-/obj/structure/closet/secure_closet/mtf/attackby(var/obj/item/W, var/mob/user)
+/obj/structure/closet/secure_closet/mtf/attackby(obj/item/W, mob/user)
 	if (src.opened)
 		..()
 	else if(W.GetIdCard())
@@ -329,7 +329,7 @@
 	else
 		..()
 
-/obj/structure/closet/secure_closet/mtf/CanToggleLock(var/mob/user, var/obj/item/card/id/id_card)
+/obj/structure/closet/secure_closet/mtf/CanToggleLock(mob/user, obj/item/card/id/id_card)
 	return ..() || (istype(id_card) && id_card.registered_name && (!registered_name || (registered_name == id_card.registered_name)))
 
 /obj/structure/closet/secure_closet/mtf/verb/reset()

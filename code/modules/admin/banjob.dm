@@ -26,7 +26,7 @@ var/jobban_keylist[0]		//to store the keys & ranks
 		return ckey_is_jobbanned(M.ckey, rank)
 	return 0
 
-/proc/ckey_is_jobbanned(var/check_key, var/rank)
+/proc/ckey_is_jobbanned(check_key, rank)
 	for(var/s in jobban_keylist)
 		if(findtext(s,"[check_key] - [rank]") == 1 )
 			var/startpos = findtext(s, "## ")+3
@@ -91,7 +91,7 @@ var/jobban_keylist[0]		//to store the keys & ranks
 	jobban_savebanfile()
 
 
-/proc/ban_unban_log_save(var/formatted_log)
+/proc/ban_unban_log_save(formatted_log)
 	text2file(formatted_log,"data/ban_unban_log.txt")
 
 
@@ -103,14 +103,14 @@ var/jobban_keylist[0]		//to store the keys & ranks
 			return 1
 	return 0
 
-/client/proc/cmd_admin_job_ban(var/mob/M)
+/client/proc/cmd_admin_job_ban(mob/M)
 	if(!check_rights(R_BAN|R_MOD))
 		return
 
 	if(holder)
 		holder.job_ban(M)
 
-/datum/admins/proc/job_ban(var/mob/M)
+/datum/admins/proc/job_ban(mob/M)
 	if(!ismob(M))
 		to_chat(usr, "This can only be used on instances of type /mob")
 		return

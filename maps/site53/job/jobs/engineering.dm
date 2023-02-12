@@ -27,9 +27,11 @@
 	)
 	minimal_access = list()
 
-	max_skill = list(   SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_DEVICES     = SKILL_MASTER,
-	                    SKILL_SCIENCE     = SKILL_MASTER)
+	max_skill = list(
+		SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_DEVICES     = SKILL_MASTER,
+	    SKILL_SCIENCE     = SKILL_MASTER
+	)
 
 /datum/job/eng
 	title = "Engineer"
@@ -61,18 +63,21 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
-	                    SKILL_HAULING      = SKILL_EXPERIENCED,
-	                    SKILL_EVA          = SKILL_EXPERIENCED,
-	                    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
-	                    SKILL_ELECTRICAL   = SKILL_EXPERIENCED,
-	                    SKILL_ATMOS        = SKILL_EXPERIENCED,
-	                    SKILL_ENGINES      = SKILL_EXPERIENCED)
+	min_skill = list(
+		SKILL_COMPUTER     = SKILL_BASIC,
+	    SKILL_HAULING      = SKILL_EXPERIENCED,
+	    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
+	    SKILL_ELECTRICAL   = SKILL_EXPERIENCED,
+	    SKILL_ATMOS        = SKILL_EXPERIENCED,
+	    SKILL_ENGINES      = SKILL_EXPERIENCED
+	)
 
-	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MASTER,
-	                    SKILL_ELECTRICAL   = SKILL_MASTER,
-	                    SKILL_ATMOS        = SKILL_MASTER,
-	                    SKILL_ENGINES      = SKILL_MASTER)
+	max_skill = list(
+		SKILL_CONSTRUCTION = SKILL_MASTER,
+	    SKILL_ELECTRICAL   = SKILL_MASTER,
+	    SKILL_ATMOS        = SKILL_MASTER,
+	    SKILL_ENGINES      = SKILL_MASTER
+	)
 
 /datum/job/seneng
 	title = "Senior Engineer"
@@ -108,18 +113,21 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
-	                    SKILL_HAULING      = SKILL_EXPERIENCED,
-	                    SKILL_EVA          = SKILL_EXPERIENCED,
-	                    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
-	                    SKILL_ELECTRICAL   = SKILL_EXPERIENCED,
-	                    SKILL_ATMOS        = SKILL_EXPERIENCED,
-	                    SKILL_ENGINES      = SKILL_EXPERIENCED)
+	min_skill = list(
+		SKILL_COMPUTER     = SKILL_BASIC,
+	    SKILL_HAULING      = SKILL_EXPERIENCED,
+	    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
+	    SKILL_ELECTRICAL   = SKILL_EXPERIENCED,
+	    SKILL_ATMOS        = SKILL_EXPERIENCED,
+	    SKILL_ENGINES      = SKILL_EXPERIENCED
+	)
 
-	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MASTER,
-	                    SKILL_ELECTRICAL   = SKILL_MASTER,
-	                    SKILL_ATMOS        = SKILL_MASTER,
-	                    SKILL_ENGINES      = SKILL_MASTER)
+	max_skill = list(
+		SKILL_CONSTRUCTION = SKILL_MASTER,
+	    SKILL_ELECTRICAL   = SKILL_MASTER,
+	    SKILL_ATMOS        = SKILL_MASTER,
+	    SKILL_ENGINES      = SKILL_MASTER
+	)
 
 /datum/job/conteng
 	title = "Containment Engineer"
@@ -158,18 +166,21 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
-	                    SKILL_HAULING      = SKILL_EXPERIENCED,
-	                    SKILL_EVA          = SKILL_EXPERIENCED,
-	                    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
-	                    SKILL_ELECTRICAL   = SKILL_EXPERIENCED,
-	                    SKILL_ATMOS        = SKILL_EXPERIENCED,
-	                    SKILL_ENGINES      = SKILL_EXPERIENCED)
+	min_skill = list(
+		SKILL_COMPUTER     = SKILL_BASIC,
+	    SKILL_HAULING      = SKILL_EXPERIENCED,
+	    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
+	    SKILL_ELECTRICAL   = SKILL_EXPERIENCED,
+	    SKILL_ATMOS        = SKILL_EXPERIENCED,
+	    SKILL_ENGINES      = SKILL_EXPERIENCED
+	)
 
-	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MASTER,
-	                    SKILL_ELECTRICAL   = SKILL_MASTER,
-	                    SKILL_ATMOS        = SKILL_MASTER,
-	                    SKILL_ENGINES      = SKILL_MASTER)
+	max_skill = list(
+		SKILL_CONSTRUCTION = SKILL_MASTER,
+	    SKILL_ELECTRICAL   = SKILL_MASTER,
+	    SKILL_ATMOS        = SKILL_MASTER,
+	    SKILL_ENGINES      = SKILL_MASTER
+	)
 
 /datum/job/chief_engineer
 	title = "Chief Engineer"
@@ -209,15 +220,18 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
-	                    SKILL_HAULING      = SKILL_EXPERIENCED,
-	                    SKILL_EVA          = SKILL_EXPERIENCED,
-	                    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
-	                    SKILL_ELECTRICAL   = SKILL_EXPERIENCED,
-	                    SKILL_ATMOS        = SKILL_EXPERIENCED,
-	                    SKILL_ENGINES      = SKILL_EXPERIENCED)
+	min_skill = list(
+		SKILL_COMPUTER     = SKILL_BASIC,
+	    SKILL_HAULING      = SKILL_EXPERIENCED,
+	    SKILL_CONSTRUCTION = SKILL_EXPERIENCED,
+	    SKILL_ELECTRICAL   = SKILL_EXPERIENCED,
+	    SKILL_ATMOS        = SKILL_EXPERIENCED,
+	    SKILL_ENGINES      = SKILL_EXPERIENCED
+	)
 
-	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MASTER,
-	                    SKILL_ELECTRICAL   = SKILL_MASTER,
-	                    SKILL_ATMOS        = SKILL_MASTER,
-	                    SKILL_ENGINES      = SKILL_MASTER)
+	max_skill = list(
+		SKILL_CONSTRUCTION = SKILL_MASTER,
+	    SKILL_ELECTRICAL   = SKILL_MASTER,
+	    SKILL_ATMOS        = SKILL_MASTER,
+	    SKILL_ENGINES      = SKILL_MASTER
+	)

@@ -23,7 +23,7 @@
 	// These should be subtypes of /obj/item/organ
 	var/list/products = list()
 
-/obj/machinery/organ_printer/state_transition(var/decl/machine_construction/default/new_state)
+/obj/machinery/organ_printer/state_transition(decl/machine_construction/default/new_state)
 	. = ..()
 	if (istype(new_state))
 		updateUsrDialog()
@@ -290,7 +290,7 @@
 			new /obj/item/reagent_containers/food/snacks/meat(T)
 	return ..()
 
-/obj/machinery/organ_printer/flesh/print_organ(var/choice)
+/obj/machinery/organ_printer/flesh/print_organ(choice)
 	var/obj/item/organ/O
 	var/new_organ
 	if (loaded_species.has_organ[choice])

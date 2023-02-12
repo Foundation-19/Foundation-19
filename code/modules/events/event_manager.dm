@@ -25,7 +25,7 @@ GLOBAL_DATUM_INIT(event_manager, /datum/event_manager, new)
 /datum/event_manager/New()
 	allEvents = typesof(/datum/event) - /datum/event
 
-/datum/event_manager/proc/event_complete(var/datum/event/E)
+/datum/event_manager/proc/event_complete(datum/event/E)
 	if(!E.event_meta || !E.severity)	// datum/event is used here and there for random reasons, maintaining "backwards compatibility"
 		log_debug("Event of '[E.type]' with missing meta-data has completed.")
 		return
@@ -40,11 +40,11 @@ GLOBAL_DATUM_INIT(event_manager, /datum/event_manager, new)
 
 	log_debug("Event '[EM.name]' has completed at [time2text(SSticker.round_start_time + world.time, "hh:mm")].")
 
-/datum/event_manager/proc/delay_events(var/severity, var/delay)
+/datum/event_manager/proc/delay_events(severity, delay)
 	var/list/datum/event_container/EC = event_containers[severity]
 	EC.next_event_time += delay
 
-/datum/event_manager/proc/Interact(var/mob/living/user)
+/datum/event_manager/proc/Interact(mob/living/user)
 
 	var/html = GetInteractWindow()
 
@@ -279,7 +279,7 @@ GLOBAL_DATUM_INIT(event_manager, /datum/event_manager, new)
 
 	Interact(usr)
 
-/client/proc/forceEvent(var/type in GLOB.event_manager.allEvents)
+/client/proc/forceEvent(type in GLOB.event_manager.allEvents)
 	set name = "Trigger Event (Debug Only)"
 	set category = "Debug"
 

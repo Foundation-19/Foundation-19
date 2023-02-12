@@ -12,7 +12,7 @@ SUBSYSTEM_DEF(graphs_update)
 	pending_graphs = list()
 	. = ..()
 
-/datum/controller/subsystem/graphs_update/proc/Queue(var/datum/graph/graph)
+/datum/controller/subsystem/graphs_update/proc/Queue(datum/graph/graph)
 	pending_graphs |= graph
 	wake()
 
@@ -33,5 +33,5 @@ SUBSYSTEM_DEF(graphs_update)
 	if(!length(pending_graphs))
 		suspend()
 
-/datum/controller/subsystem/graphs_update/Recover(var/datum/controller/subsystem/graphs_update/GU)
+/datum/controller/subsystem/graphs_update/Recover(datum/controller/subsystem/graphs_update/GU)
 	pending_graphs = GU.pending_graphs

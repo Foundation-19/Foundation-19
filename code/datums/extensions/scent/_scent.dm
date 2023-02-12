@@ -13,7 +13,7 @@ Scent intensity
 /decl/scent_intensity/proc/can_smell(mob/living/carbon/human/user)
 	return TRUE
 
-/decl/scent_intensity/proc/PrintMessage(mob/living/carbon/human/user, var/descriptor, scent)
+/decl/scent_intensity/proc/PrintMessage(mob/living/carbon/human/user, descriptor, scent)
 	if(!can_smell(user))
 		return
 	if(!user.isSynthetic())
@@ -26,7 +26,7 @@ Scent intensity
 	cooldown = 4 MINUTES
 	intensity = 2
 
-/decl/scent_intensity/normal/PrintMessage(mob/living/carbon/human/user, var/descriptor, scent)
+/decl/scent_intensity/normal/PrintMessage(mob/living/carbon/human/user, descriptor, scent)
 	if(!can_smell(user))
 		return
 	if(!user.isSynthetic())
@@ -38,7 +38,7 @@ Scent intensity
 	cooldown = 3 MINUTES
 	intensity = 3
 
-/decl/scent_intensity/strong/PrintMessage(mob/living/carbon/human/user, var/descriptor, scent)
+/decl/scent_intensity/strong/PrintMessage(mob/living/carbon/human/user, descriptor, scent)
 	if(!can_smell(user))
 		return
 	if(!user.isSynthetic())
@@ -99,7 +99,7 @@ Custom subtype
 	set_extension(atom, /datum/extension/scent/custom, scent = "scent", intensity = SCENT_INTENSITY_, ... etc)
 This will let you set an extension without needing to define it beforehand. Note that all vars are required if generating.
 *****/
-/datum/extension/scent/custom/New(var/datum/holder, var/provided_scent, var/provided_intensity, var/provided_descriptor, var/provided_range)
+/datum/extension/scent/custom/New(datum/holder, provided_scent, provided_intensity, provided_descriptor, provided_range)
 	..()
 	if(provided_scent && provided_intensity && provided_descriptor && provided_range)
 		scent = provided_scent
@@ -119,7 +119,7 @@ Reagents have the following vars, which coorelate to the vars on the standard sc
 To add a scent extension to an atom using a reagent's info, where R. is the reagent, use set_scent_by_reagents().
 *****/
 
-/proc/set_scent_by_reagents(var/atom/smelly_atom)
+/proc/set_scent_by_reagents(atom/smelly_atom)
 	var/datum/reagent/smelliest
 	var/datum/reagent/scent_intensity
 	if(!smelly_atom.reagents || !smelly_atom.reagents.total_volume)

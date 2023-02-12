@@ -71,7 +71,7 @@
 		image(icon, "[charge_state]charge-[Floor(power_supply.percent()/20)]")
 	))
 
-/obj/item/gun/energy/particle/get_mob_overlay(var/mob/living/carbon/human/user, var/slot)
+/obj/item/gun/energy/particle/get_mob_overlay(mob/living/carbon/human/user, slot)
 	if(istype(user) && (slot == slot_l_hand_str || slot == slot_r_hand_str))
 		var/bodytype = user.species.get_bodytype(user)
 		if(bodytype in species_can_use)
@@ -123,7 +123,7 @@
 	if(isrobot(loc) || istype(loc, /obj/item/rig_module))
 		return loc.get_cell()
 
-/obj/item/gun/magnetic/railgun/flechette/ascent/show_ammo(var/mob/user)
+/obj/item/gun/magnetic/railgun/flechette/ascent/show_ammo(mob/user)
 	var/obj/item/cell/cell = get_cell()
 	to_chat(user, "<span class='notice'>There are [cell ? Floor(cell.charge/charge_per_shot) : 0] shot\s remaining.</span>")
 

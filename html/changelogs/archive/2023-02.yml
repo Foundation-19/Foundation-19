@@ -20,3 +20,29 @@
   - rscdel: Deleted new HUD.
   - imagedel: Deleted new HUD.
   - code_imp: Re-enables borgs again.
+2023-02-08:
+  Tsurupeta:
+  - bugfix: removed space tiles from places on maps where they shouldn't be
+  Yawet330:
+  - balance: Blood/Bleed changes, heart-rate affects bleeding, arterial bleed buffs,
+      hit-chance changes + nerfs in some areas. This is experimental and will be subject
+      to change.
+  cheesePizza2:
+  - rscdel: Removed Bureaucracy skill, which had no in-game use and was basically
+      ignored roleplay-wise.
+  - rscdel: Removed EVA and Mech skills from the game. Space-related EVA uses have
+      been moved to the Athletic skill, and Mech references have been changed to the
+      Piloting skill.
+  - code_imp: The formatting of most jobs' skills has been improved.
+  - code_imp: The Finance skill has been moved to the General category of skills.
+      The Organizational category, being empty, has been removed.
+2023-02-10:
+  cheesePizza2:
+  - bugfix: Break room in LCZ security is now actually accessible.
+  - rscdel: Backpacks in role-based loadouts were removed.
+  - bugfix: Double backpack on spawn fixed.
+2023-02-11:
+  Tsurupeta:
+  - bugfix: fixed OOC color on dark theme
+  - bugfix: fixed movement keys not working after restart in certain cases
+  - bugfix: fixed runtime in _access.dm:188

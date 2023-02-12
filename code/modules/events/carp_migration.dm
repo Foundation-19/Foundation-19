@@ -32,7 +32,7 @@ GLOBAL_LIST_INIT(carp_count,list())// a list of Z levels (string), associated wi
 		announcement = "A massive migration of unknown biological entities has been detected in the vicinity of the [location_name()]. Exercise external operations with caution."
 	else
 		announcement = "A large migration of unknown biological entities has been detected in the vicinity of the [location_name()]. Caution is advised."
-	
+
 	command_announcement.Announce(announcement, "[location_name()] Sensor Array", zlevels = affecting_z)
 
 /datum/event/carp_migration/tick()
@@ -42,7 +42,7 @@ GLOBAL_LIST_INIT(carp_count,list())// a list of Z levels (string), associated wi
 
 	spawn_carp()
 
-/datum/event/carp_migration/proc/spawn_carp(var/dir, var/speed)
+/datum/event/carp_migration/proc/spawn_carp(dir, speed)
 	if(!living_observers_present(affecting_z))
 		return
 	var/Z = pick(affecting_z)
@@ -73,11 +73,11 @@ GLOBAL_LIST_INIT(carp_count,list())// a list of Z levels (string), associated wi
 		if(no_show)
 			break
 
-/datum/event/carp_migration/proc/check_gib(var/mob/living/simple_animal/hostile/carp/M)	//awesome road kills
+/datum/event/carp_migration/proc/check_gib(mob/living/simple_animal/hostile/carp/M)	//awesome road kills
 	if(M.health <= 0 && prob(60))
 		M.gib()
 
-/proc/get_random_edge_turf(var/dir, var/clearance = TRANSITIONEDGE + 1, var/Z)
+/proc/get_random_edge_turf(dir, clearance = TRANSITIONEDGE + 1, Z)
 	if(!dir)
 		return
 
@@ -91,7 +91,7 @@ GLOBAL_LIST_INIT(carp_count,list())// a list of Z levels (string), associated wi
 		if(WEST)
 			return locate(clearance, rand(clearance, world.maxy - clearance), Z)
 
-/datum/event/carp_migration/proc/reduce_carp_count(var/mob/M)
+/datum/event/carp_migration/proc/reduce_carp_count(mob/M)
 	for(var/Z in affecting_z)
 		var/list/L = GLOB.carp_count["[Z]"]
 		if(M in L)

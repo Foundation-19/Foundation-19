@@ -19,7 +19,7 @@
 		<i>\"Fish!\" \
 		<br>\"Today's fish is trout a la creme. Enjoy your meal.\"</i>"
 
-/obj/machinery/fabricator/replicator/hear_talk(var/mob/M, var/text, var/verb, var/datum/language/speaking)
+/obj/machinery/fabricator/replicator/hear_talk(mob/M, text, verb, datum/language/speaking)
 	if(speaking && !speaking.machine_understands)
 		return ..()
 	var/true_text = lowertext(html_decode(text))
