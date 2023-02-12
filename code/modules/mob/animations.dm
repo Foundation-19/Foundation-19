@@ -11,7 +11,7 @@ below 100 is not dizzy
 /mob/var/dizziness = 0//Carbon
 /mob/var/is_dizzy = 0
 
-/mob/proc/make_dizzy(var/amount)
+/mob/proc/make_dizzy(amount)
 	if(!istype(src, /mob/living/carbon/human)) // for the moment, only humans get dizzy
 		return
 
@@ -46,10 +46,10 @@ note dizziness decrements automatically in the mob's Life() proc.
 /mob/var/is_jittery = 0
 /mob/var/jitteriness = 0//Carbon
 
-/mob/proc/make_jittery(var/amount)
+/mob/proc/make_jittery(amount)
 	return //Only for living/carbon/human/
 
-/mob/living/carbon/human/make_jittery(var/amount)
+/mob/living/carbon/human/make_jittery(amount)
 	if(!istype(src, /mob/living/carbon/human)) // for the moment, only humans get jittery
 		return
 	if(!jittery_damage())
@@ -88,7 +88,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 	make_floating(1)
 	return
 
-/mob/proc/make_floating(var/n)
+/mob/proc/make_floating(n)
 	floatiness = n
 
 	if(floatiness && !is_floating)
@@ -247,7 +247,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 			spintime -= speed
 	return
 
-/mob/proc/phase_in(var/turf/T)
+/mob/proc/phase_in(turf/T)
 	if(!T)
 		return
 
@@ -255,13 +255,13 @@ note dizziness decrements automatically in the mob's Life() proc.
 	playsound(T, 'sound/effects/sparks2.ogg', 50, 1)
 	anim(src,'icons/mob/mob.dmi',,"phasein",,dir)
 
-/mob/proc/phase_out(var/turf/T)
+/mob/proc/phase_out(turf/T)
 	if(!T)
 		return
 	playsound(T, "sparks", 50, 1)
 	anim(src,'icons/mob/mob.dmi',,"phaseout",,dir)
 
-/mob/living/proc/on_structure_offset(var/offset = 0)
+/mob/living/proc/on_structure_offset(offset = 0)
 	if(is_floating) // Do not reset my floaty animation
 		return
 	if(offset)

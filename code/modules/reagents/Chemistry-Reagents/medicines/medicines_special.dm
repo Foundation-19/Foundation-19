@@ -9,7 +9,7 @@
 	metabolism = REM * 0.5
 	value = 2
 
-/datum/reagent/medicine/adrenaline/affect_blood(var/mob/living/carbon/human/M, alien, removed)
+/datum/reagent/medicine/adrenaline/affect_blood(mob/living/carbon/human/M, alien, removed)
 	if (alien == IS_DIONA)
 		return
 
@@ -36,7 +36,7 @@
 	taste_description = "sourness"
 	color = "#eeddcc"
 
-/datum/reagent/lactic_acid/affect_blood(var/mob/living/carbon/human/M, alien, removed)
+/datum/reagent/lactic_acid/affect_blood(mob/living/carbon/human/M, alien, removed)
 	if (alien == IS_DIONA)
 		return
 	M.add_chemical_effect(CE_PULSE, 1)

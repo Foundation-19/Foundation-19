@@ -105,7 +105,7 @@
 
 
 // Opens and unlocks doors, power check
-/obj/machinery/door_timer/proc/timer_end(var/broadcast_to_huds = 0)
+/obj/machinery/door_timer/proc/timer_end(broadcast_to_huds = 0)
 	if(stat & (NOPOWER|BROKEN))	return 0
 
 	// Reset releasetime
@@ -138,7 +138,7 @@
 		. = 0
 
 // Set timetoset
-/obj/machinery/door_timer/proc/timeset(var/seconds)
+/obj/machinery/door_timer/proc/timeset(seconds)
 	timetoset = seconds * 10
 
 	if(timetoset <= 0)
@@ -146,11 +146,11 @@
 
 	return
 
-/obj/machinery/door_timer/interface_interact(var/mob/user)
+/obj/machinery/door_timer/interface_interact(mob/user)
 	ui_interact(user)
 	return TRUE
 
-/obj/machinery/door_timer/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
+/obj/machinery/door_timer/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
 	var/list/data = list()
 
 	var/timeval = timing ? timeleft() : timetoset/10
@@ -182,7 +182,7 @@
 		return STATUS_UPDATE
 	return ..()
 
-/obj/machinery/door_timer/OnTopic(var/mob/user, var/list/href_list, state)
+/obj/machinery/door_timer/OnTopic(mob/user, list/href_list, state)
 	if (href_list["toggle"])
 		if(timing)
 			timer_end()
@@ -231,7 +231,7 @@
 
 
 // Adds an icon in case the screen is broken/off, stolen from status_display.dm
-/obj/machinery/door_timer/proc/set_picture(var/state)
+/obj/machinery/door_timer/proc/set_picture(state)
 	picture_state = state
 	cut_overlays()
 	add_overlay(image('icons/obj/status_display.dmi', icon_state=picture_state))
@@ -239,7 +239,7 @@
 
 //Checks to see if there's 1 line or 2, adds text-icons-numbers/letters over display
 // Stolen from status_display
-/obj/machinery/door_timer/proc/update_display(var/line1, var/line2)
+/obj/machinery/door_timer/proc/update_display(line1, line2)
 	line1 = uppertext(line1)
 	line2 = uppertext(line2)
 	var/new_text = {"<div style="font-size:[FONT_SIZE];color:[FONT_COLOR];font:'[FONT_STYLE]';text-align:center;" valign="top">[line1]<br>[line2]</div>"}
@@ -249,7 +249,7 @@
 
 //Actual string input to icon display for loop, with 5 pixel x offsets for each letter.
 //Stolen from status_display
-/obj/machinery/door_timer/proc/texticon(var/tn, var/px = 0, var/py = 0)
+/obj/machinery/door_timer/proc/texticon(tn, px = 0, py = 0)
 	var/image/I = image('icons/obj/status_display.dmi', "blank")
 	var/len = length(tn)
 

@@ -403,7 +403,7 @@
 	breach_threshold = 18
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 
-/obj/item/rig/zero/on_update_icon(var/update_mob_icon)
+/obj/item/rig/zero/on_update_icon(update_mob_icon)
 	..()
 	//Append the f for female states
 	if(!ishuman(loc))

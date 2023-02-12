@@ -22,7 +22,7 @@
 	noblend_objects = list(/obj/machinery/door/window)
 	material = DEFAULT_WALL_MATERIAL
 
-/obj/structure/wall_frame/New(var/new_loc, var/materialtype)
+/obj/structure/wall_frame/New(new_loc, materialtype)
 	..(new_loc)
 
 	if(!materialtype)
@@ -169,7 +169,7 @@
 /obj/structure/wall_frame/get_color()
 	return paint_color
 
-/obj/structure/wall_frame/set_color(var/color)
+/obj/structure/wall_frame/set_color(color)
 	paint_color = color
 	update_icon()
 

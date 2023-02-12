@@ -27,7 +27,7 @@
 /obj/item/device/assembly_holder/IsAssemblyHolder()
 	return 1
 
-/obj/item/device/assembly_holder/proc/attach(var/obj/item/device/assembly/D, var/obj/item/device/assembly/D2, var/mob/user)
+/obj/item/device/assembly_holder/proc/attach(obj/item/device/assembly/D, obj/item/device/assembly/D2, mob/user)
 	if(!isassembly(D) || !isassembly(D2))
 		return FALSE
 	if(D.secured || D2.secured)
@@ -51,7 +51,7 @@
 	usr.put_in_hands(src)
 	return TRUE
 
-/obj/item/device/assembly_holder/proc/attach_special(var/obj/O, var/mob/user)
+/obj/item/device/assembly_holder/proc/attach_special(obj/O, mob/user)
 	if(!(O?.IsSpecialAssembly()))
 		return 0
 
@@ -165,7 +165,7 @@
 			a_right = null
 		qdel(src)
 
-/obj/item/device/assembly_holder/proc/process_activation(var/obj/D, var/normal = 1, var/special = 1)
+/obj/item/device/assembly_holder/proc/process_activation(obj/D, normal = 1, special = 1)
 	if(!D)
 		return 0
 	if(!secured)

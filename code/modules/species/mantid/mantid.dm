@@ -121,16 +121,16 @@
 		/decl/emote/exertion/biological/pant
 	)
 
-/datum/species/mantid/handle_sleeping(var/mob/living/carbon/human/H)
+/datum/species/mantid/handle_sleeping(mob/living/carbon/human/H)
 	return
 
 /datum/species/mantid/get_blood_name()
 	return "hemolymph"
 
-/datum/species/mantid/post_organ_rejuvenate(var/obj/item/organ/org, var/mob/living/carbon/human/H)
+/datum/species/mantid/post_organ_rejuvenate(obj/item/organ/org, mob/living/carbon/human/H)
 	org.status |= ORGAN_CRYSTAL
 
-/datum/species/mantid/equip_survival_gear(var/mob/living/carbon/human/H, var/extendedtank = 1)
+/datum/species/mantid/equip_survival_gear(mob/living/carbon/human/H, extendedtank = 1)
 	return
 
 /datum/species/mantid/gyne
@@ -178,7 +178,7 @@
 		TAG_RELIGION =  RELIGION_KHARMAANI
 	)
 
-/datum/species/mantid/gyne/attempt_grab(var/mob/living/carbon/human/grabber, var/mob/living/target)
+/datum/species/mantid/gyne/attempt_grab(mob/living/carbon/human/grabber, mob/living/target)
 	if(grabber != target)
 		grabber.unEquip(grabber.l_hand)
 		grabber.unEquip(grabber.r_hand)

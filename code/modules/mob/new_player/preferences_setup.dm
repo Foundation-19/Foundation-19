@@ -1,6 +1,6 @@
 #define ASSIGN_LIST_TO_COLORS(L, R, G, B) if(L) { R = L[1]; G = L[2]; B = L[3]; }
 
-/datum/preferences/proc/randomize_appearance_and_body_for(var/mob/living/carbon/human/H)
+/datum/preferences/proc/randomize_appearance_and_body_for(mob/living/carbon/human/H)
 	//The mob should have a gender you want before running this proc. Will run fine without H
 	var/datum/species/current_species = all_species[species]
 	if(!current_species) current_species = all_species[SPECIES_HUMAN]
@@ -42,7 +42,7 @@
 
 #undef ASSIGN_LIST_TO_COLORS
 
-/datum/preferences/proc/dress_preview_mob(var/mob/living/carbon/human/mannequin)
+/datum/preferences/proc/dress_preview_mob(mob/living/carbon/human/mannequin)
 	var/update_icon = FALSE
 	copy_to(mannequin, TRUE)
 

@@ -1,4 +1,4 @@
-/obj/proc/analyze_gases(var/obj/A, var/mob/user, mode)
+/obj/proc/analyze_gases(obj/A, mob/user, mode)
 	user.visible_message("<span class='notice'>\The [user] has used \an [src] on \the [A].</span>")
 	A.add_fingerprint(user)
 
@@ -11,6 +11,6 @@
 	print_atmos_analysis(user, result)
 	return 1
 
-/proc/print_atmos_analysis(user, var/list/result)
+/proc/print_atmos_analysis(user, list/result)
 	for(var/line in result)
 		to_chat(user, "<span class='notice'>[line]</span>")

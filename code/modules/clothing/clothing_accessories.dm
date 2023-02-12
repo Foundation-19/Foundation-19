@@ -44,7 +44,7 @@
 		return
 	..()
 
-/obj/item/clothing/attack_hand(var/mob/user)
+/obj/item/clothing/attack_hand(mob/user)
 	//only forward to the attached accessory if the clothing is equipped (not in a storage)
 	if(accessories.len && src.loc == user)
 		for(var/obj/item/clothing/accessory/A in accessories)

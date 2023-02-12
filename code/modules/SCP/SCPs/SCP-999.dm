@@ -28,7 +28,7 @@ GLOBAL_LIST_EMPTY(scp999s)
 	GLOB.scp999s += src
 	return ..()
 
-/mob/living/simple_animal/scp_999/say(var/message, var/datum/language/speaking = null, whispering)
+/mob/living/simple_animal/scp_999/say(message, datum/language/speaking = null, whispering)
 	to_chat(src,"<span class = 'notice'>You cannot speak.</span>")
 	return FALSE
 

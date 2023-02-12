@@ -24,7 +24,7 @@
 				TRADER_BRIBE_FAILURE     = "Uh... thanks for the cash, sir. As long as you're in the area, we'll be here...",
 				)
 
-/datum/trader/pizzaria/trade(var/list/offers, var/num, var/turf/location)
+/datum/trader/pizzaria/trade(list/offers, num, turf/location)
 	. = ..()
 	if(.)
 		var/atom/movable/M = .
@@ -80,7 +80,7 @@
 				TRADER_BRIBE_SUCCESS      = "Oh yes! I think I'll stay a few more minutes, then.",
 				)
 
-/datum/trader/ship/chinese/trade(var/list/offers, var/num, var/turf/location)
+/datum/trader/ship/chinese/trade(list/offers, num, turf/location)
 	. = ..()
 	if(.)
 		var/obj/item/reagent_containers/food/snacks/fortunecookie/cookie = new(location)

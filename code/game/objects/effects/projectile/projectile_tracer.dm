@@ -1,4 +1,4 @@
-/proc/generate_tracer_between_points(var/obj/item/projectile/source, datum/point/starting, datum/point/ending, beam_type, color, qdel_in = 5)		//Do not pass z-crossing points as that will not be properly (and likely will never be properly until it's absolutely needed) supported!
+/proc/generate_tracer_between_points(obj/item/projectile/source, datum/point/starting, datum/point/ending, beam_type, color, qdel_in = 5)		//Do not pass z-crossing points as that will not be properly (and likely will never be properly until it's absolutely needed) supported!
 	if(!istype(starting) || !istype(ending) || !ispath(beam_type))
 		return
 	if(starting.z != ending.z)

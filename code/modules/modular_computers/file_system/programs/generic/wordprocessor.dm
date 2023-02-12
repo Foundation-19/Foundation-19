@@ -17,14 +17,14 @@
 
 	usage_flags = PROGRAM_ALL
 
-/datum/computer_file/program/wordprocessor/proc/open_file(var/filename)
+/datum/computer_file/program/wordprocessor/proc/open_file(filename)
 	var/datum/computer_file/data/F = get_file(filename)
 	if(F)
 		open_file = F.filename
 		loaded_data = F.stored_data
 		return TRUE
 
-/datum/computer_file/program/wordprocessor/proc/save_file(var/filename)
+/datum/computer_file/program/wordprocessor/proc/save_file(filename)
 	var/datum/computer_file/data/F = get_file(filename)
 	if(!F) //try to make one if it doesn't exist
 		F = create_file(filename, loaded_data)

@@ -129,7 +129,7 @@
 	if(distance <= 1)
 		to_chat(user, text("The service panel is [src.open ? "open" : "closed"]."))
 
-/obj/item/storage/secure/emag_act(var/remaining_charges, var/mob/user, var/feedback)
+/obj/item/storage/secure/emag_act(remaining_charges, mob/user, feedback)
 	if(!emagged)
 		emagged = TRUE
 		src.add_overlay(image('icons/obj/storage.dmi', icon_sparking))

@@ -62,7 +62,7 @@
 	. += "Storage capacity: [used_capacity]/[max_capacity]GQ"
 
 // Use this proc to add file to the drive. Returns 1 on success and 0 on failure. Contains necessary sanity checks.
-/obj/item/stock_parts/computer/hard_drive/proc/store_file(var/datum/computer_file/F)
+/obj/item/stock_parts/computer/hard_drive/proc/store_file(datum/computer_file/F)
 	if(!try_store_file(F))
 		return 0
 	F.holder = src
@@ -78,7 +78,7 @@
 
 
 // Use this proc to remove file from the drive. Returns 1 on success and 0 on failure. Contains necessary sanity checks.
-/obj/item/stock_parts/computer/hard_drive/proc/remove_file(var/datum/computer_file/F)
+/obj/item/stock_parts/computer/hard_drive/proc/remove_file(datum/computer_file/F)
 	if(!F || !istype(F))
 		return 0
 
@@ -105,7 +105,7 @@
 	used_capacity = total_size
 
 // Checks whether file can be stored on the hard drive.
-/obj/item/stock_parts/computer/hard_drive/proc/can_store_file(var/size = 1)
+/obj/item/stock_parts/computer/hard_drive/proc/can_store_file(size = 1)
 	// In the unlikely event someone manages to create that many files.
 	// BYOND is acting weird with numbers above 999 in loops (infinite loop prevention)
 	if(stored_files.len >= 999)
@@ -116,7 +116,7 @@
 		return 1
 
 // Checks whether we can store the file. We can only store unique files, so this checks whether we wouldn't get a duplicity by adding a file.
-/obj/item/stock_parts/computer/hard_drive/proc/try_store_file(var/datum/computer_file/F)
+/obj/item/stock_parts/computer/hard_drive/proc/try_store_file(datum/computer_file/F)
 	if(!F || !istype(F))
 		return 0
 	if(!can_store_file(F.size))
@@ -142,7 +142,7 @@
 	return 1
 
 // Tries to find the file by filename. Returns null on failure
-/obj/item/stock_parts/computer/hard_drive/proc/find_file_by_name(var/filename)
+/obj/item/stock_parts/computer/hard_drive/proc/find_file_by_name(filename)
 	if(!check_functionality())
 		return null
 

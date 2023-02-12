@@ -26,7 +26,7 @@ var/global/ntnet_card_uid = 1
 	if(ethernet)
 		. += "OpenEth (Physical Connection) - Physical network connection port"
 
-/obj/item/stock_parts/computer/network_card/New(var/l)
+/obj/item/stock_parts/computer/network_card/New(l)
 	..(l)
 	identification_id = ntnet_card_uid
 	ntnet_card_uid++
@@ -62,7 +62,7 @@ var/global/ntnet_card_uid = 1
 	return ntnet_global.check_banned(identification_id)
 
 // 0 - No signal, 1 - Low signal, 2 - High signal. 3 - Wired Connection
-/obj/item/stock_parts/computer/network_card/proc/get_signal(var/specific_action = 0, list/routed_through)
+/obj/item/stock_parts/computer/network_card/proc/get_signal(specific_action = 0, list/routed_through)
 	if(!holder2) // Hardware is not installed in anything. No signal. How did this even get called?
 		return 0
 

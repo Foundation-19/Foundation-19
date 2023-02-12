@@ -77,7 +77,7 @@
 				var/step = get_step_to(src, food, 0)
 				Move(step)
 
-/mob/living/simple_animal/hostile/retaliate/goat/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/mob/living/simple_animal/hostile/retaliate/goat/attackby(obj/item/O as obj, mob/user as mob)
 	var/obj/item/reagent_containers/glass/G = O
 	if(stat == CONSCIOUS && istype(G) && G.is_open_container())
 		user.visible_message(SPAN_NOTICE("[user] milks [src] using \the [O]."))
@@ -120,7 +120,7 @@
 	udder = new(50, src)
 	. = ..()
 
-/mob/living/simple_animal/friendly/cow/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/mob/living/simple_animal/friendly/cow/attackby(obj/item/O as obj, mob/user as mob)
 	var/obj/item/reagent_containers/glass/G = O
 	if(stat == CONSCIOUS && istype(G) && G.is_open_container())
 		user.visible_message(SPAN_NOTICE("[user] milks [src] using \the [O]."))
@@ -185,7 +185,7 @@
 	udder = new(50, src)
 	. = ..()
 
-/mob/living/simple_animal/friendly/sheep/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/mob/living/simple_animal/friendly/sheep/attackby(obj/item/O as obj, mob/user as mob)
 	var/obj/item/reagent_containers/glass/G = O
 	var/transfered = udder.trans_type_to(G, /datum/reagent/drink/milk, rand(5,10))
 	if(stat == CONSCIOUS && istype(G) && G.is_open_container())
@@ -293,7 +293,7 @@ var/global/chicken_count = 0
 	..(gibbed, deathmessage, show_dead_message)
 	chicken_count -= 1
 
-/mob/living/simple_animal/friendly/chicken/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/mob/living/simple_animal/friendly/chicken/attackby(obj/item/O as obj, mob/user as mob)
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem chickens
 		var/obj/item/reagent_containers/food/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "wheat")

@@ -104,7 +104,7 @@ var/global/datum/controller/plants/plant_controller // Set in New().
 		gene_masked_list.Add(list(list("tag" = gene_tag, "mask" = gene_mask)))
 
 // Proc for creating a random seed type.
-/datum/controller/plants/proc/create_random_seed(var/survive_on_station)
+/datum/controller/plants/proc/create_random_seed(survive_on_station)
 	var/datum/seed/seed = new()
 	seed.randomize()
 	seed.uid = plant_controller.seeds.len + 1

@@ -88,7 +88,7 @@
 	if(victim)
 		update_icon()
 
-/obj/machinery/vitals_monitor/proc/update_victim(var/new_victim = null)
+/obj/machinery/vitals_monitor/proc/update_victim(new_victim = null)
 	var/old_victim = victim
 	victim = new_victim
 	if(victim)

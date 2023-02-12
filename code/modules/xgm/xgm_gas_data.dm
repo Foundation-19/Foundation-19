@@ -93,7 +93,7 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	var/gas_id
 
-/obj/effect/gas_overlay/proc/update_alpha_animation(var/new_alpha)
+/obj/effect/gas_overlay/proc/update_alpha_animation(new_alpha)
 	animate(src, alpha = new_alpha)
 	alpha = new_alpha
 	animate(src, alpha = 0.8 * new_alpha, time = 10, easing = SINE_EASING | EASE_OUT, loop = -1)
@@ -105,4 +105,4 @@
 	if(gas_data.tile_overlay[gas_id])
 		icon_state = gas_data.tile_overlay[gas_id]
 	color = gas_data.tile_overlay_color[gas_id]
-	
+
