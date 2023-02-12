@@ -32,6 +32,6 @@
 	L.faction = holder.faction
 	L.visible_message("<span class='warning'>\A [L] escapes from the portal!</span>")
 
-/datum/spell/tear_veil/after_spell(var/list/targets)
+/datum/spell/tear_veil/after_spell(list/targets)
 	qdel(targets[1])
 	return

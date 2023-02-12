@@ -31,7 +31,7 @@
 	var/list/noblend_objects = list(/obj/machinery/door/window) //Objects to avoid blending with (such as children of listed blend objects.)
 	var/dismantling = FALSE
 
-/turf/simulated/wall/New(var/newloc, var/materialtype, var/rmaterialtype)
+/turf/simulated/wall/New(newloc, materialtype, rmaterialtype)
 	..(newloc)
 	icon_state = "blank"
 	if(!materialtype)
@@ -56,7 +56,7 @@
 	for(var/obj/O in src)
 		O.hide(1)
 
-/turf/simulated/wall/protects_atom(var/atom/A)
+/turf/simulated/wall/protects_atom(atom/A)
 	var/obj/O = A
 	return (istype(O) && O.hides_under_flooring()) || ..()
 
@@ -97,7 +97,7 @@
 	set_damage_resistance(BRUTE, brute_armor)
 	set_damage_resistance(BURN, burn_armor)
 
-/turf/simulated/wall/bullet_act(var/obj/item/projectile/Proj)
+/turf/simulated/wall/bullet_act(obj/item/projectile/Proj)
 	if(istype(Proj,/obj/item/projectile/beam))
 		burn(2500)
 	else if(istype(Proj,/obj/item/projectile/ion))
@@ -108,7 +108,7 @@
 
 	..()
 
-/turf/simulated/wall/hitby(AM as mob|obj, var/datum/thrownthing/TT)
+/turf/simulated/wall/hitby(AM as mob|obj, datum/thrownthing/TT)
 	if(!ismob(AM))
 		var/obj/O = AM
 		var/tforce = O.throwforce * (TT.speed/THROWFORCE_SPEED_DIVISOR)
@@ -127,7 +127,7 @@
 			plant.pixel_x = 0
 			plant.pixel_y = 0
 
-/turf/simulated/wall/ChangeTurf(var/newtype)
+/turf/simulated/wall/ChangeTurf(newtype)
 	clear_plants()
 	. = ..(newtype)
 	var/turf/new_turf = .
@@ -292,7 +292,7 @@
 /turf/simulated/wall/get_color()
 	return paint_color
 
-/turf/simulated/wall/set_color(var/color)
+/turf/simulated/wall/set_color(color)
 	paint_color = color
 	update_icon()
 

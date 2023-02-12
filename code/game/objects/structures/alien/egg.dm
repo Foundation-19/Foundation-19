@@ -16,7 +16,7 @@
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/structure/alien/egg/CanUseTopic(var/mob/user)
+/obj/structure/alien/egg/CanUseTopic(mob/user)
 	return isghost(user) ? STATUS_INTERACTIVE : STATUS_CLOSE
 
 /obj/structure/alien/egg/Topic(href, href_list)
@@ -43,7 +43,7 @@
 	else
 		icon_state = "egg"
 
-/obj/structure/alien/egg/attack_ghost(var/mob/observer/ghost/user)
+/obj/structure/alien/egg/attack_ghost(mob/observer/ghost/user)
 	if(progress == -1) //Egg has been hatched.
 		return
 

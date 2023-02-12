@@ -28,7 +28,7 @@
 	min_rank =        PSI_RANK_OPERANT
 	use_description = "Grab a patient, target the chest, then switch to help intent and use the grab on them to perform a check for wounds and damage."
 
-/decl/psionic_power/redaction/skinsight/invoke(var/mob/living/user, var/mob/living/target)
+/decl/psionic_power/redaction/skinsight/invoke(mob/living/user, mob/living/target)
 	if(user.zone_sel.selecting != BP_CHEST)
 		return FALSE
 	. = ..()

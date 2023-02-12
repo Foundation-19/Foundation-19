@@ -83,7 +83,7 @@
 	. = ..()
 	. += species.strength
 
-/mob/living/carbon/human/Allow_Spacemove(var/check_drift = 0)
+/mob/living/carbon/human/Allow_Spacemove(check_drift = 0)
 	. = ..()
 	if(.)
 		return
@@ -117,7 +117,7 @@
 			inertia_dir = 0
 			return 1
 
-/mob/living/carbon/human/slip_chance(var/prob_slip = 5)
+/mob/living/carbon/human/slip_chance(prob_slip = 5)
 	if(!..())
 		return 0
 

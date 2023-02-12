@@ -19,7 +19,7 @@
 	var/damage = 15
 	var/penetration = 10
 
-/obj/structure/chorus/processor/sentry/tendril/trigger_effect(var/list/targets)
+/obj/structure/chorus/processor/sentry/tendril/trigger_effect(list/targets)
 	var/mob/living/L = pick(targets)
 	flick("[initial(icon_state)]_attack", src)
 	L.visible_message(

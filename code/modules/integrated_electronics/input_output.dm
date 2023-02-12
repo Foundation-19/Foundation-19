@@ -1,4 +1,4 @@
-/obj/item/integrated_circuit/input/external_examine(var/mob/user)
+/obj/item/integrated_circuit/input/external_examine(mob/user)
 	var/initial_name = initial(name)
 	var/message
 	if(initial_name == name)
@@ -232,13 +232,13 @@
 	signal.data["message"] = "ACTIVATE"
 	return signal
 
-/obj/item/integrated_circuit/input/signaler/do_work(var/datum/io) // Sends a signal.
+/obj/item/integrated_circuit/input/signaler/do_work(datum/io) // Sends a signal.
 	if(!radio_connection || io != activators[1])
 		return
 
 	radio_connection.post_signal(src, create_signal())
 
-/obj/item/integrated_circuit/input/signaler/proc/set_frequency(var/new_frequency)
+/obj/item/integrated_circuit/input/signaler/proc/set_frequency(new_frequency)
 	if(!radio_controller)
 		sleep(20)
 	if(!radio_controller)
@@ -248,7 +248,7 @@
 	frequency = new_frequency
 	radio_connection = radio_controller.add_object(src, new_frequency, RADIO_CHAT)
 
-/obj/item/integrated_circuit/input/signaler/proc/signal_good(var/datum/signal/signal)
+/obj/item/integrated_circuit/input/signaler/proc/signal_good(datum/signal/signal)
 	if(!signal)
 		return 0
 	if(signal.source == src)
@@ -264,7 +264,7 @@
 
 	return 1
 
-/obj/item/integrated_circuit/input/signaler/receive_signal(var/datum/signal/signal)
+/obj/item/integrated_circuit/input/signaler/receive_signal(datum/signal/signal)
 
 	if(!signal_good(signal))
 		return 0
@@ -304,7 +304,7 @@
 	signal.data["tag"] = new_id.data
 	return signal
 
-/obj/item/integrated_circuit/input/signaler/advanced/receive_signal(var/datum/signal/signal)
+/obj/item/integrated_circuit/input/signaler/advanced/receive_signal(datum/signal/signal)
 	if(!..())
 		return 0
 	if(signal.data["command"])
@@ -366,7 +366,7 @@
 		contained_id = null
 	. = ..()
 
-/obj/item/integrated_circuit/input/access_scanner/examine(var/mob/user)
+/obj/item/integrated_circuit/input/access_scanner/examine(mob/user)
 	. = ..(user, 1)
 	if(.)
 		to_chat(user, "It appears a small section of the board has been fried.")
@@ -378,17 +378,17 @@
 	else
 		..()
 
-/obj/item/integrated_circuit/input/access_scanner/emag_act(var/remaining_charges, var/mob/user)
+/obj/item/integrated_circuit/input/access_scanner/emag_act(remaining_charges, mob/user)
 	if(!emagged && remaining_charges > 0)
 		emagged = TRUE
 		to_chat(user, "<span class='warning'>You scramble the board's access protection logic.</span>")
 		return 1
 	return ..()
 
-/obj/item/integrated_circuit/input/access_scanner/examine(var/mob/user)
+/obj/item/integrated_circuit/input/access_scanner/examine(mob/user)
 	. = ..()
 	to_chat(user, "An id card is installed into the board.")
-/obj/item/integrated_circuit/input/access_scanner/attackby(var/obj/item/weapon/card/id/id_card, var/mob/user)
+/obj/item/integrated_circuit/input/access_scanner/attackby(obj/item/weapon/card/id/id_card, mob/user)
 	if(!istype(id_card))
 		return ..()
 	if(contained_id)
@@ -399,7 +399,7 @@
 		scanned_access.data = json_encode(contained_id.GetAccess())
 		user.visible_message("<span class='notice'>\The [user] installs an id card into the board.</span>", "<span class='notice'>You install the id card into the board.</span>")
 
-/obj/item/integrated_circuit/input/access_scanner/attack_self(var/mob/user)
+/obj/item/integrated_circuit/input/access_scanner/attack_self(mob/user)
 	if(contained_id)
 		user.visible_message("<span class='notice'>\The [user] removes an id card from the board.</span>", "<span class='notice'>You remove the id card from the board.</span>")
 		contained_id.dropInto(loc)
@@ -413,7 +413,7 @@
 /obj/item/integrated_circuit/input/access_scanner/get_topic_data(mob/user)
 	return contained_id ? ..() : list("Access Scan" = "access_scan=1")
 
-/obj/item/integrated_circuit/input/access_scanner/OnICTopic(href_list, var/mob/user)
+/obj/item/integrated_circuit/input/access_scanner/OnICTopic(href_list, mob/user)
 	if(href_list["access_scan"])
 		if(contained_id)
 			return
@@ -454,7 +454,7 @@
 	outputs = list("examined ref")
 	var/stack_number = 1
 
-/obj/item/integrated_circuit/tile_sensor/do_work(var/activated_pin)
+/obj/item/integrated_circuit/tile_sensor/do_work(activated_pin)
 	if(activated_pin == activators[1])
 		var/turf/T = get_turf(src)
 		var/first_found //The first valid object we find

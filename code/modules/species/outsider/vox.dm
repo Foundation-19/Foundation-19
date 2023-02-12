@@ -121,7 +121,7 @@
 		/decl/emote/exertion/synthetic/creak
 	)
 
-/datum/species/vox/equip_survival_gear(var/mob/living/carbon/human/H)
+/datum/species/vox/equip_survival_gear(mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/mask/gas/vox(H), slot_wear_mask)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal(H),slot_shoes)
 
@@ -134,7 +134,7 @@
 		H.equip_to_slot_or_del(new /obj/item/storage/box/vox(H), slot_r_hand)
 		H.set_internals(H.back)
 
-/datum/species/vox/disfigure_msg(var/mob/living/carbon/human/H)
+/datum/species/vox/disfigure_msg(mob/living/carbon/human/H)
 	return "<span class='danger'>[H.p_their(TRUE)] beak-segments are cracked and chipped! [H.p_their()] [H.p_are()] not even recognizable.</span>\n"
 
 /datum/species/vox/skills_from_age(age)

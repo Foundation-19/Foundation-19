@@ -388,7 +388,7 @@
 	l_pocket = /obj/item/paper/dclass_orientation
 	id_types = list(/obj/item/card/id/classd)
 
-/decl/hierarchy/outfit/job/site90/crew/civ/classd/post_equip(var/mob/living/carbon/human/H)
+/decl/hierarchy/outfit/job/site90/crew/civ/classd/post_equip(mob/living/carbon/human/H)
 	..()
 	if(prob(15))
 		var/path = pick( /obj/item/wrench, /obj/item/screwdriver)

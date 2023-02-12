@@ -25,7 +25,7 @@
 	return ..()
 
 //when thrown on impact, bottles smash and spill their contents
-/obj/item/reagent_containers/food/drinks/bottle/throw_impact(atom/hit_atom, var/datum/thrownthing/TT)
+/obj/item/reagent_containers/food/drinks/bottle/throw_impact(atom/hit_atom, datum/thrownthing/TT)
 	..()
 	if(isGlass && TT.thrower && TT.thrower.a_intent != I_HELP)
 		if(TT.speed > throw_speed || smash_check(TT.dist_travelled)) //not as reliable as smashing directly
@@ -34,7 +34,7 @@
 				reagents.splash(hit_atom, reagents.total_volume)
 			smash(loc, hit_atom)
 
-/obj/item/reagent_containers/food/drinks/bottle/proc/smash_check(var/distance)
+/obj/item/reagent_containers/food/drinks/bottle/proc/smash_check(distance)
 	if(!isGlass || !smash_duration)
 		return
 
@@ -44,7 +44,7 @@
 		return
 	return prob(chance_table[idx])
 
-/obj/item/reagent_containers/food/drinks/bottle/proc/smash(var/newloc, atom/against = null)
+/obj/item/reagent_containers/food/drinks/bottle/proc/smash(newloc, atom/against = null)
 	//Creates a shattering noise and replaces the bottle with a broken_bottle
 	var/obj/item/broken_bottle/B = new /obj/item/broken_bottle(newloc)
 	if(prob(33))
@@ -116,7 +116,7 @@
 	else
 		set_light(0)
 
-/obj/item/reagent_containers/food/drinks/bottle/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
+/obj/item/reagent_containers/food/drinks/bottle/apply_hit_effect(mob/living/target, mob/living/user, hit_zone)
 	. = ..()
 
 	if(user.a_intent != I_HURT)

@@ -14,14 +14,14 @@ var/global/datum/shuttle_controller/shuttle_controller
 	registered_shuttle_landmarks = list()
 	last_landmark_registration_time = world.time
 
-/datum/shuttle_controller/proc/register_landmark(var/shuttle_landmark_tag, var/obj/effect/shuttle_landmark/shuttle_landmark)
+/datum/shuttle_controller/proc/register_landmark(shuttle_landmark_tag, obj/effect/shuttle_landmark/shuttle_landmark)
 	if (registered_shuttle_landmarks[shuttle_landmark_tag])
 		CRASH("Attempted to register shuttle landmark with tag [shuttle_landmark_tag], but it is already registered!")
 	if (istype(shuttle_landmark))
 		registered_shuttle_landmarks[shuttle_landmark_tag] = shuttle_landmark
 		last_landmark_registration_time = world.time
 
-/datum/shuttle_controller/proc/get_landmark(var/shuttle_landmark_tag)
+/datum/shuttle_controller/proc/get_landmark(shuttle_landmark_tag)
 	return registered_shuttle_landmarks[shuttle_landmark_tag]
 
 /datum/shuttle_controller/proc/process()
@@ -37,7 +37,7 @@ var/global/datum/shuttle_controller/shuttle_controller
 		if (!initial(shuttle.defer_initialisation))
 			initialise_shuttle(shuttle_type)
 
-/datum/shuttle_controller/proc/initialise_shuttle(var/shuttle_type)
+/datum/shuttle_controller/proc/initialise_shuttle(shuttle_type)
 	var/datum/shuttle/shuttle = shuttle_type
 	if(initial(shuttle.category) != shuttle_type)
 		shuttle = new shuttle()

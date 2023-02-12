@@ -58,7 +58,7 @@
 		if(brainmob && brainmob.client)
 			brainmob.client.screen.len = null //clear the hud
 
-/obj/item/organ/internal/brain/set_max_damage(var/ndamage)
+/obj/item/organ/internal/brain/set_max_damage(ndamage)
 	..()
 	damage_threshold_value = round(max_damage / damage_threshold_count)
 
@@ -66,7 +66,7 @@
 	QDEL_NULL(brainmob)
 	. = ..()
 
-/obj/item/organ/internal/brain/proc/transfer_identity(var/mob/living/carbon/H)
+/obj/item/organ/internal/brain/proc/transfer_identity(mob/living/carbon/H)
 
 	if(!brainmob)
 		brainmob = new(src)
@@ -88,7 +88,7 @@
 	else
 		to_chat(user, "This one seems particularly lifeless. Perhaps it will regain some of its luster later..")
 
-/obj/item/organ/internal/brain/removed(var/mob/living/user)
+/obj/item/organ/internal/brain/removed(mob/living/user)
 	if(!istype(owner))
 		return ..()
 
@@ -104,7 +104,7 @@
 
 	..()
 
-/obj/item/organ/internal/brain/replaced(var/mob/living/target)
+/obj/item/organ/internal/brain/replaced(mob/living/target)
 
 	if(!..()) return 0
 
@@ -125,7 +125,7 @@
 /obj/item/organ/internal/brain/proc/get_current_damage_threshold()
 	return round(damage / damage_threshold_value)
 
-/obj/item/organ/internal/brain/proc/past_damage_threshold(var/threshold)
+/obj/item/organ/internal/brain/proc/past_damage_threshold(threshold)
 	return (get_current_damage_threshold() > threshold)
 
 /obj/item/organ/internal/brain/proc/handle_severe_brain_damage()
@@ -221,7 +221,7 @@
 			return SL_INSANE
 	return SL_SANE // something went wrong.
 
-/obj/item/organ/internal/brain/take_internal_damage(var/damage, var/silent)
+/obj/item/organ/internal/brain/take_internal_damage(damage, silent)
 	set waitfor = 0
 	..()
 	if(damage >= 10) //This probably won't be triggered by oxyloss or mercury. Probably.
@@ -234,7 +234,7 @@
 		if(prob(30))
 			addtimer(CALLBACK(src, .proc/brain_damage_callback, damage), rand(6, 20) SECONDS, TIMER_UNIQUE)
 
-/obj/item/organ/internal/brain/proc/brain_damage_callback(var/damage) //Confuse them as a somewhat uncommon aftershock. Side note: Only here so a spawn isn't used. Also, for the sake of a unique timer.
+/obj/item/organ/internal/brain/proc/brain_damage_callback(damage) //Confuse them as a somewhat uncommon aftershock. Side note: Only here so a spawn isn't used. Also, for the sake of a unique timer.
 	if (!owner)
 		return
 	to_chat(owner, "<span class = 'notice' font size='10'><B>I can't remember which way is forward...</B></span>")

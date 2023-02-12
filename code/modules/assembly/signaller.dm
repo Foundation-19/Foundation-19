@@ -112,7 +112,7 @@
 	return
 
 
-/obj/item/device/assembly/signaller/pulse(var/radio = 0)
+/obj/item/device/assembly/signaller/pulse(radio = 0)
 	if(src.connected && src.wires)
 		connected.pulse_assembly(src)
 	else if(holder)

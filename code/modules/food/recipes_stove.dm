@@ -160,10 +160,10 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/donkpocket //SPECIAL
 
-/datum/recipe/donkpocket/proc/warm_up(var/obj/item/reagent_containers/food/snacks/donkpocket/being_cooked)
+/datum/recipe/donkpocket/proc/warm_up(obj/item/reagent_containers/food/snacks/donkpocket/being_cooked)
 	being_cooked.heat()
 
-/datum/recipe/donkpocket/make_food(var/obj/container as obj)
+/datum/recipe/donkpocket/make_food(obj/container as obj)
 	var/obj/item/reagent_containers/food/snacks/donkpocket/being_cooked = ..(container)
 	warm_up(being_cooked)
 	return being_cooked
@@ -175,10 +175,10 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/donkpocket //SPECIAL
 
-/datum/recipe/donkpocket2/proc/warm_up(var/obj/item/reagent_containers/food/snacks/donkpocket/being_cooked)
+/datum/recipe/donkpocket2/proc/warm_up(obj/item/reagent_containers/food/snacks/donkpocket/being_cooked)
 	being_cooked.heat()
 
-/datum/recipe/donkpocket2/make_food(var/obj/container as obj)
+/datum/recipe/donkpocket2/make_food(obj/container as obj)
 	var/obj/item/reagent_containers/food/snacks/donkpocket/being_cooked = ..(container)
 	warm_up(being_cooked)
 	return being_cooked
@@ -190,7 +190,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/donkpocket //SPECIAL
 
-/datum/recipe/donkpocket/warm/make_food(var/obj/container as obj)
+/datum/recipe/donkpocket/warm/make_food(obj/container as obj)
 	var/obj/item/reagent_containers/food/snacks/donkpocket/being_cooked = locate() in container
 	if(being_cooked && !being_cooked.warm)
 		warm_up(being_cooked)
@@ -466,7 +466,7 @@
 	reagents = list(/datum/reagent/water = 10, /datum/reagent/ethanol/vodka = 5, /datum/reagent/toxin/amatoxin = 5)
 	result = /obj/item/reagent_containers/food/snacks/amanitajelly
 
-/datum/recipe/amanitajelly/make_food(var/obj/container as obj)
+/datum/recipe/amanitajelly/make_food(obj/container as obj)
 	var/obj/item/reagent_containers/food/snacks/amanitajelly/being_cooked = ..(container)
 	being_cooked.reagents.del_reagent(/datum/reagent/toxin/amatoxin)
 	return being_cooked
@@ -885,7 +885,7 @@
 	items = list(/obj/item/reagent_containers/food/snacks/meatball)
 	result = /obj/item/reagent_containers/food/snacks/validsalad
 
-/datum/recipe/validsalad/make_food(var/obj/container as obj)
+/datum/recipe/validsalad/make_food(obj/container as obj)
 	var/obj/item/reagent_containers/food/snacks/validsalad/being_cooked = ..(container)
 	being_cooked.reagents.del_reagent(/datum/reagent/toxin)
 	return being_cooked

@@ -38,11 +38,11 @@
 	death_message = "closes and folds into the ground."
 	var/damage = 45
 
-/obj/structure/chorus/biter/chorus_click(var/mob/living/carbon/alien/chorus/c)
+/obj/structure/chorus/biter/chorus_click(mob/living/carbon/alien/chorus/c)
 	if(c)
 		to_chat(c, SPAN_WARNING("\The [src] automatically bites those who walk on it."))
 
-/obj/structure/chorus/biter/Initialize(var/maploading, var/o)
+/obj/structure/chorus/biter/Initialize(maploading, o)
 	. = ..()
 	GLOB.entered_event.register(get_turf(src), src, .proc/bite_victim)
 
@@ -50,7 +50,7 @@
 	GLOB.entered_event.unregister(get_turf(src), src)
 	. = ..()
 
-/obj/structure/chorus/biter/proc/bite_victim(var/atom/a, var/mob/living/L)
+/obj/structure/chorus/biter/proc/bite_victim(atom/a, mob/living/L)
 	if(istype(L))
 		if((owner && owner.is_follower(L)) || !can_activate(null, FALSE))
 			return

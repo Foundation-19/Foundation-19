@@ -213,7 +213,7 @@
 	"<span class='warning'>Your hand slips, spilling \the [tool]'s contents over the [target]'s [affected.name]!</span>")
 	affected.disinfect()
 
-/decl/surgery_step/sterilize/proc/check_chemicals(var/obj/item/reagent_containers/container)
+/decl/surgery_step/sterilize/proc/check_chemicals(obj/item/reagent_containers/container)
 	if(istype(container) && container.is_open_container())
 		if(container.reagents.has_reagent(/datum/reagent/medicine/sterilizine))
 			return TRUE

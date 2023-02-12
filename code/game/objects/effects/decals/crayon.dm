@@ -3,7 +3,7 @@
 	desc = "A rune drawn in crayon."
 	icon = 'icons/obj/rune.dmi'
 
-/obj/effect/decal/cleanable/crayon/New(location,main = "#ffffff",shade = "#000000",var/type = "rune")
+/obj/effect/decal/cleanable/crayon/New(location,main = "#ffffff",shade = "#000000",type = "rune")
 	..()
 
 	name = type

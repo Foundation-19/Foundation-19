@@ -71,7 +71,7 @@ SUBSYSTEM_DEF(chemistry)
 		return
 	return prototype
 
-/datum/controller/subsystem/chemistry/proc/get_random_chem(var/only_if_unique = FALSE, temperature = T20C)
+/datum/controller/subsystem/chemistry/proc/get_random_chem(only_if_unique = FALSE, temperature = T20C)
 	for(var/type in typesof(/datum/reagent/random))
 		if(only_if_unique && random_chem_prototypes[type])
 			continue

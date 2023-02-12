@@ -32,12 +32,12 @@
 		return 0
 	return round(cell.charge*(1 - damage/max_damage))
 
-/obj/item/organ/internal/cell/proc/checked_use(var/amount)
+/obj/item/organ/internal/cell/proc/checked_use(amount)
 	if(!is_usable())
 		return FALSE
 	return cell && cell.checked_use(amount)
 
-/obj/item/organ/internal/cell/proc/use(var/amount)
+/obj/item/organ/internal/cell/proc/use(amount)
 	if(!is_usable())
 		return 0
 	return cell && cell.use(amount)
@@ -116,7 +116,7 @@
 	stored_mmi = null
 	return ..()
 
-/obj/item/organ/internal/mmi_holder/New(var/mob/living/carbon/human/new_owner, var/internal)
+/obj/item/organ/internal/mmi_holder/New(mob/living/carbon/human/new_owner, internal)
 	..(new_owner, internal)
 	if(!stored_mmi)
 		stored_mmi = new(src)
@@ -149,7 +149,7 @@
 		owner.switch_from_dead_to_living_mob_list()
 		owner.visible_message("<span class='danger'>\The [owner] twitches visibly!</span>")
 
-/obj/item/organ/internal/mmi_holder/cut_away(var/mob/living/user)
+/obj/item/organ/internal/mmi_holder/cut_away(mob/living/user)
 	var/obj/item/organ/external/parent = owner.get_organ(parent_organ)
 	if(istype(parent))
 		removed(user, 0)

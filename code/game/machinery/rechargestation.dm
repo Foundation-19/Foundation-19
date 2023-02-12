@@ -170,7 +170,7 @@
 /obj/machinery/recharge_station/attack_ai(mob/user)
 	return attack_hand(user)
 
-/obj/machinery/recharge_station/MouseDrop_T(var/mob/target, var/mob/user)
+/obj/machinery/recharge_station/MouseDrop_T(mob/target, mob/user)
 	if(!CanMouseDrop(target, user))
 		return
 	if(!istype(target))
@@ -206,7 +206,7 @@
 	last_overlay_state = overlay_state()
 	set_overlays(list(image(overlay_icon, overlay_state())))
 
-/obj/machinery/recharge_station/proc/go_in(var/mob/M)
+/obj/machinery/recharge_station/proc/go_in(mob/M)
 	if(occupant)
 		return
 
@@ -227,7 +227,7 @@
 	update_icon()
 	return 1
 
-/obj/machinery/recharge_station/proc/hascell(var/mob/M)
+/obj/machinery/recharge_station/proc/hascell(mob/M)
 	if(isrobot(M))
 		var/mob/living/silicon/robot/R = M
 		return (R.cell)

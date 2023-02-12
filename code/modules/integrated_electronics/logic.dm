@@ -7,7 +7,7 @@
 	activators = list("compare", "on true result")
 	category = /obj/item/integrated_circuit/logic
 
-/obj/item/integrated_circuit/logic/do_work(var/activator_pin)
+/obj/item/integrated_circuit/logic/do_work(activator_pin)
 	if(activator_pin != activators[1])
 		return
 
@@ -26,7 +26,7 @@
 	set_pin_data(IC_OUTPUT, 1, !!do_compare(A, B))
 	..()
 
-/obj/item/integrated_circuit/logic/binary/proc/do_compare(var/datum/integrated_io/A, var/datum/integrated_io/B)
+/obj/item/integrated_circuit/logic/binary/proc/do_compare(datum/integrated_io/A, datum/integrated_io/B)
 	return FALSE
 
 /obj/item/integrated_circuit/logic/unary
@@ -38,7 +38,7 @@
 	set_pin_data(IC_OUTPUT, 1, !!do_check(A))
 	..()
 
-/obj/item/integrated_circuit/logic/unary/proc/do_check(var/datum/integrated_io/A)
+/obj/item/integrated_circuit/logic/unary/proc/do_check(datum/integrated_io/A)
 	return FALSE
 
 /obj/item/integrated_circuit/logic/binary/equals
@@ -46,7 +46,7 @@
 	desc = "This gate compares two values, and outputs the number one if both are the same."
 	icon_state = "equal"
 
-/obj/item/integrated_circuit/logic/binary/equals/do_compare(var/datum/integrated_io/A, var/datum/integrated_io/B)
+/obj/item/integrated_circuit/logic/binary/equals/do_compare(datum/integrated_io/A, datum/integrated_io/B)
 	return A.get_data() == B.get_data()
 
 /obj/item/integrated_circuit/logic/binary/and
@@ -54,7 +54,7 @@
 	desc = "This gate will output 'one' if both inputs evaluate to true."
 	icon_state = "and"
 
-/obj/item/integrated_circuit/logic/binary/and/do_compare(var/datum/integrated_io/A, var/datum/integrated_io/B)
+/obj/item/integrated_circuit/logic/binary/and/do_compare(datum/integrated_io/A, datum/integrated_io/B)
 	return A.get_data() && B.get_data()
 
 /obj/item/integrated_circuit/logic/binary/or
@@ -62,7 +62,7 @@
 	desc = "This gate will output 'one' if one of the inputs evaluate to true."
 	icon_state = "or"
 
-/obj/item/integrated_circuit/logic/binary/or/do_compare(var/datum/integrated_io/A, var/datum/integrated_io/B)
+/obj/item/integrated_circuit/logic/binary/or/do_compare(datum/integrated_io/A, datum/integrated_io/B)
 	return A.get_data() || B.get_data()
 
 /obj/item/integrated_circuit/logic/binary/less_than
@@ -70,7 +70,7 @@
 	desc = "This will output 'one' if the first input is less than the second input."
 	icon_state = "less_than"
 
-/obj/item/integrated_circuit/logic/binary/less_than/do_compare(var/datum/integrated_io/A, var/datum/integrated_io/B)
+/obj/item/integrated_circuit/logic/binary/less_than/do_compare(datum/integrated_io/A, datum/integrated_io/B)
 	return A.get_data() < B.get_data()
 
 /obj/item/integrated_circuit/logic/binary/less_than_or_equal
@@ -78,7 +78,7 @@
 	desc = "This will output 'one' if the first input is less than, or equal to the second input."
 	icon_state = "less_than_or_equal"
 
-/obj/item/integrated_circuit/logic/binary/less_than_or_equal/do_compare(var/datum/integrated_io/A, var/datum/integrated_io/B)
+/obj/item/integrated_circuit/logic/binary/less_than_or_equal/do_compare(datum/integrated_io/A, datum/integrated_io/B)
 	return A.get_data() <= B.get_data()
 
 /obj/item/integrated_circuit/logic/binary/greater_than
@@ -86,7 +86,7 @@
 	desc = "This will output 'one' if the first input is greater than the second input."
 	icon_state = "greater_than"
 
-/obj/item/integrated_circuit/logic/binary/greater_than/do_compare(var/datum/integrated_io/A, var/datum/integrated_io/B)
+/obj/item/integrated_circuit/logic/binary/greater_than/do_compare(datum/integrated_io/A, datum/integrated_io/B)
 	return A.get_data() > B.get_data()
 
 /obj/item/integrated_circuit/logic/binary/greater_than_or_equal
@@ -94,7 +94,7 @@
 	desc = "This will output 'one' if the first input is greater than, or equal to the second input."
 	icon_state = "greater_than_or_equal"
 
-/obj/item/integrated_circuit/logic/binary/greater_than_or_equal/do_compare(var/datum/integrated_io/A, var/datum/integrated_io/B)
+/obj/item/integrated_circuit/logic/binary/greater_than_or_equal/do_compare(datum/integrated_io/A, datum/integrated_io/B)
 	return A.get_data() >= B.get_data()
 
 /obj/item/integrated_circuit/logic/unary/not
@@ -102,7 +102,7 @@
 	desc = "This gate inverts what's fed into it."
 	icon_state = "not"
 
-/obj/item/integrated_circuit/logic/unary/not/do_check(var/datum/integrated_io/A)
+/obj/item/integrated_circuit/logic/unary/not/do_check(datum/integrated_io/A)
 	return !A.get_data()
 
 /obj/item/integrated_circuit/logic/multiplexer
@@ -207,7 +207,7 @@
 	available_accesses = get_all_site_access()
 	..()
 
-/obj/item/integrated_circuit/logic/unary/access_verifier/attack_self(var/mob/user)
+/obj/item/integrated_circuit/logic/unary/access_verifier/attack_self(mob/user)
 	tg_ui_interact(user)
 
 /obj/item/integrated_circuit/logic/unary/access_verifier/tg_ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = 0, datum/tgui/master_ui = null, datum/ui_state/state = tg_hands_state)
@@ -285,11 +285,11 @@
 	if(.)
 		cached_ui_data = null
 
-/obj/item/integrated_circuit/logic/unary/access_verifier/examine/(var/mob/user)
+/obj/item/integrated_circuit/logic/unary/access_verifier/examine/(mob/user)
 	. = ..(user, 1)
 	if(.)
 		to_chat(user, "A small screen displays 'Last configured by: [last_configurator ? last_configurator : "N/A"]'.")
-/obj/item/integrated_circuit/logic/unary/access_verifier/do_check(var/datum/integrated_io/access_input)
+/obj/item/integrated_circuit/logic/unary/access_verifier/do_check(datum/integrated_io/access_input)
 	var/list/access = access_input.get_data()
 	if(isnum(access))
 		access = list(access)

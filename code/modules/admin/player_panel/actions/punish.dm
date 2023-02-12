@@ -81,7 +81,7 @@
 	name = "Job-ban"
 	permissions_required = R_BAN
 
-/datum/player_action/jobban/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/jobban/act(client/user, mob/target, list/params)
 	user.cmd_admin_job_ban(target)
 	return TRUE
 
@@ -90,7 +90,7 @@
 	name = "Mute"
 
 
-/datum/player_action/mute/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/mute/act(client/user, mob/target, list/params)
 	if(!target.client)
 		return
 
@@ -102,7 +102,7 @@
 	action_tag = "show_notes"
 	name = "Show Notes"
 
-/datum/player_action/show_notes/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/show_notes/act(client/user, mob/target, list/params)
 	user.holder.show_player_info(target.ckey)
 	return TRUE
 

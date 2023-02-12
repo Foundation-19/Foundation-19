@@ -16,7 +16,7 @@
 	. += "Paper buffer level: [stored_paper]/[max_paper]"
 	. += "Printer language: [print_language]"
 
-/obj/item/stock_parts/computer/nano_printer/proc/print_text(var/text_to_print, var/paper_title = null, var/paper_type = /obj/item/paper, var/list/md = null)
+/obj/item/stock_parts/computer/nano_printer/proc/print_text(text_to_print, paper_title = null, paper_type = /obj/item/paper, list/md = null)
 	if(printer_ready())
 		last_print = world.time
 		// Damaged printer causes the resulting paper to be somewhat harder to read.

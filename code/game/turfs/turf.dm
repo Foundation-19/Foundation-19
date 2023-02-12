@@ -112,7 +112,7 @@
 	if (!.)
 		return 1
 
-/turf/proc/handle_hand_interception(var/mob/user)
+/turf/proc/handle_hand_interception(mob/user)
 	var/datum/extension/turf_hand/THE
 	for (var/A in src)
 		var/datum/extension/turf_hand/TH = get_extension(A, /datum/extension/turf_hand)
@@ -122,7 +122,7 @@
 	if (THE)
 		return THE.OnHandInterception(user)
 
-/turf/attack_robot(var/mob/user)
+/turf/attack_robot(mob/user)
 	if(Adjacent(user))
 		attack_hand(user)
 
@@ -175,7 +175,7 @@
 	return 1 //Nothing found to block so return success!
 
 var/const/enterloopsanity = 100
-/turf/Entered(var/atom/atom, var/atom/old_loc)
+/turf/Entered(atom/atom, atom/old_loc)
 
 	..()
 
@@ -212,7 +212,7 @@ var/const/enterloopsanity = 100
 /turf/proc/is_plating()
 	return 0
 
-/turf/proc/protects_atom(var/atom/A)
+/turf/proc/protects_atom(atom/A)
 	return FALSE
 
 /turf/proc/inertial_drift(atom/movable/A)
@@ -233,7 +233,7 @@ var/const/enterloopsanity = 100
 	for(var/obj/O in src)
 		O.hide(O.hides_under_flooring() && !is_plating())
 
-/turf/proc/AdjacentTurfs(var/check_blockage = TRUE)
+/turf/proc/AdjacentTurfs(check_blockage = TRUE)
 	. = list()
 	for(var/turf/t in (trange(1,src) - src))
 		if(check_blockage)
@@ -243,7 +243,7 @@ var/const/enterloopsanity = 100
 		else
 			. += t
 
-/turf/proc/CardinalTurfs(var/check_blockage = TRUE)
+/turf/proc/CardinalTurfs(check_blockage = TRUE)
 	. = list()
 	for(var/ad in AdjacentTurfs(check_blockage))
 		var/turf/T = ad
@@ -275,7 +275,7 @@ var/const/enterloopsanity = 100
 	return 0
 
 //expects an atom containing the reagents used to clean the turf
-/turf/proc/clean(atom/source, mob/user = null, var/time = null, var/message = null)
+/turf/proc/clean(atom/source, mob/user = null, time = null, message = null)
 	if(source.reagents.has_reagent(/datum/reagent/water, 1) || source.reagents.has_reagent(/datum/reagent/space_cleaner, 1))
 		if(user && time && !do_after(user, time, src))
 			return
@@ -301,7 +301,7 @@ var/const/enterloopsanity = 100
 		decals = null
 
 // Called when turf is hit by a thrown object
-/turf/hitby(atom/movable/AM as mob|obj, var/datum/thrownthing/TT)
+/turf/hitby(atom/movable/AM as mob|obj, datum/thrownthing/TT)
 	if(src.density)
 		if(isliving(AM))
 			var/mob/living/M = AM
@@ -316,7 +316,7 @@ var/const/enterloopsanity = 100
 /turf/proc/can_engrave()
 	return FALSE
 
-/turf/proc/try_graffiti(var/mob/vandal, var/obj/item/tool)
+/turf/proc/try_graffiti(mob/vandal, obj/item/tool)
 
 	if(!tool.sharp || !can_engrave() || vandal.a_intent != I_HELP)
 		return FALSE

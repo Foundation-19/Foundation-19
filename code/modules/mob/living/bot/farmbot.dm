@@ -64,7 +64,7 @@
 		if(2)
 			. += "ERROROROROROR-----"
 
-/mob/living/bot/farmbot/ProcessCommand(var/mob/user, var/command, var/href_list)
+/mob/living/bot/farmbot/ProcessCommand(mob/user, command, href_list)
 	..()
 	if(CanAccessPanel(user))
 		switch(command)
@@ -87,7 +87,7 @@
 				if(emagged < 2)
 					emagged = !emagged
 
-/mob/living/bot/farmbot/emag_act(var/remaining_charges, var/mob/user)
+/mob/living/bot/farmbot/emag_act(remaining_charges, mob/user)
 	. = ..()
 	if(!emagged)
 		if(user)
@@ -142,7 +142,7 @@
 	makeStep(target_path)
 	return
 
-/mob/living/bot/farmbot/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/bot/farmbot/UnarmedAttack(atom/A, proximity)
 	if(!..())
 		return
 	if(busy)
@@ -246,7 +246,7 @@
 	qdel(src)
 	return
 
-/mob/living/bot/farmbot/confirmTarget(var/atom/targ)
+/mob/living/bot/farmbot/confirmTarget(atom/targ)
 	if(!..())
 		return 0
 
