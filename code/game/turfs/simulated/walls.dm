@@ -9,6 +9,7 @@
 	thermal_conductivity = WALL_HEAT_TRANSFER_COEFFICIENT
 	heat_capacity = 312500 //a little over 5 cm thick , 312500 for 1 m by 2.5 m by 0.25 m plasteel wall
 	atom_flags = ATOM_FLAG_CAN_BE_PAINTED
+	explosion_block = 1
 
 	var/damage_overlay = 0
 	var/global/damage_overlays[16]
@@ -219,8 +220,15 @@
 /turf/simulated/wall/ex_act(severity)
 	if(prob(explosion_resistance))
 		return
-	if(severity == 1)
-		ChangeTurf(get_base_turf(src.z))
+	if(severity == EXPLODE_DEVASTATE)
+		var/turf/below = GetBelow(src)
+		var/turf/above = GetAbove(src)
+		if(istype(above, get_roof_turf()))
+			above.ChangeTurf(/turf/simulated/open)
+		if(below && below.get_roof_turf())
+			ChangeTurf(below.get_roof_turf())
+		else
+			ChangeTurf(get_base_turf_by_area(src))
 		return
 	..()
 
@@ -299,3 +307,6 @@
 
 /turf/simulated/wall/is_phasable()
 	return TRUE
+
+/turf/simulated/wall/get_roof_turf()
+	return /turf/simulated/floor/plating

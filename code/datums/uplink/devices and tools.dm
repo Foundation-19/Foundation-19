@@ -150,13 +150,6 @@
 	path = /obj/item/device/radio/intercept
 	desc = "A receiver-like device that can intercept secure radio channels. This item is too big to fit into your pockets."
 
-/datum/uplink_item/item/tools/ttv
-	name = "Binary Gas Bomb"
-	item_cost = 30
-	path = /obj/effect/spawner/newbomb/traitor
-	desc = "A remote-activated phoron-oxygen bomb assembly with an included signaler. \
-			A flashing disclaimer begins with the warning 'SOME DISASSEMBLY/REASSEMBLY REQUIRED.'"
-
 /datum/uplink_item/item/tools/polychromic_dye_bottle
 	name = "Extra-Strength Polychromic Dye"
 	item_cost = 10
@@ -164,3 +157,13 @@
 	desc = "15 units of a tasteless dye that causes chemical mixtures to take on the color of the dye itself. \
 			Very useful for disguising poisons to the untrained eye; even large amounts of reagents can be fully recolored with only a few drops of dye. \
 			Like the mundane variety of polychromic dye, you can use the bottle in your hand to change the dye's color to suit your needs."
+
+/datum/uplink_item/item/tools/c4explosive
+	name = "Small Package Bomb"
+	item_cost = 30
+	path = /obj/item/syndie/c4explosive
+
+/datum/uplink_item/item/tools/c4explosive/heavy
+	name = "Large Package Bomb"
+	item_cost = 60
+	path = /obj/item/syndie/c4explosive/heavy

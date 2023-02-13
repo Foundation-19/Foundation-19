@@ -496,13 +496,11 @@ meteor_act
 	var/f_loss = null
 	switch (severity)
 		if (1.0)
-			b_loss = 400
-			f_loss = 100
-			var/atom/target = get_edge_target_turf(src, get_dir(src, get_step_away(src, src)))
-			throw_at(target, 200, 4)
+			gib()
+			return
 		if (2.0)
-			b_loss = 60
-			f_loss = 60
+			b_loss = 200
+			f_loss = 100
 
 			if (get_sound_volume_multiplier() >= 0.2)
 				ear_damage += 30
@@ -510,8 +508,12 @@ meteor_act
 			if (prob(70))
 				Paralyse(10)
 
+			var/atom/target = get_edge_target_turf(src, get_dir(src, get_step_away(src, src)))
+			throw_at(target, 7, 1)
+
 		if(3.0)
-			b_loss = 30
+			b_loss = 60
+			f_loss = 60
 			if (get_sound_volume_multiplier() >= 0.2)
 				ear_damage += 15
 				ear_deaf += 60

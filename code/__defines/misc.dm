@@ -307,3 +307,6 @@
 //they are here to support hotkeys
 #define INTENT_HOTKEY_LEFT  "left"
 #define INTENT_HOTKEY_RIGHT "right"
+
+//for obj explosion block calculation
+#define EXPLOSION_BLOCK_PROC -1
