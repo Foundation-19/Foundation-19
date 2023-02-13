@@ -1,7 +1,7 @@
 #define SCP_096 "096"
 
 
-/mob/proc/is_scp012_affected(var/turf/target)
+/mob/proc/is_scp012_affected(turf/target)
 	if (!target)
 		target = get_turf(src)
 	if (ishuman(src) && locate(/obj/item/paper/scp012) in view(2, src))

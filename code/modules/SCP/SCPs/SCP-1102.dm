@@ -41,7 +41,7 @@ var/static/list/climbsounds = list('sound/effects/ladder.ogg','sound/effects/lad
 /obj/structure/ladder_scp_1102/attackby(obj/item/C as obj, mob/user as mob)
 	climb(user)
 
-/obj/structure/ladder_scp_1102/attack_hand(var/mob/M)
+/obj/structure/ladder_scp_1102/attack_hand(mob/M)
 	climb(M)
 
 /obj/structure/ladder_scp_1102/proc/climb(mob/user)

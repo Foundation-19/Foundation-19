@@ -92,7 +92,7 @@
 	SSstatistics.add_field_details("admin_verb","GLN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
-/proc/cmd_admin_narrate_helper(var/user, var/style, var/size, var/message)
+/proc/cmd_admin_narrate_helper(user, style, size, message)
 	if (!style)
 		style = input("Pick a text style:", "Text Style") as null|anything in list(
 			"default",
@@ -180,7 +180,7 @@
 
 
 // Targetted narrate: will narrate to one specific mob
-/client/proc/cmd_admin_direct_narrate(var/mob/M)
+/client/proc/cmd_admin_direct_narrate(mob/M)
 	set popup_menu = FALSE
 	set category = null
 	set name = "Direct Narrate"
@@ -229,7 +229,7 @@
 	log_and_message_staff(" - LocalNarrate [result[2]]/[result[3]]: [result[4]]")
 
 // Visible narrate, it's as if it's a visible message
-/client/proc/cmd_admin_visible_narrate(var/atom/A)
+/client/proc/cmd_admin_visible_narrate(atom/A)
 	set popup_menu = FALSE
 	set category = null
 	set name = "Visible Narrate"
@@ -252,7 +252,7 @@
 	log_and_message_staff(" - VisibleNarrate [result[2]]/[result[3]] on [A]: [result[4]]")
 
 // Visible narrate, it's as if it's a audible message
-/client/proc/cmd_admin_audible_narrate(var/atom/A)
+/client/proc/cmd_admin_audible_narrate(atom/A)
 	set popup_menu = FALSE
 	set category = null
 	set name = "Audible Narrate"
@@ -361,7 +361,7 @@ Allow admins to set players to be able to respawn/bypass 30 min wait, without th
 Ccomp's first proc.
 */
 
-/client/proc/get_ghosts(var/notify = 0,var/what = 2)
+/client/proc/get_ghosts(notify = 0,what = 2)
 	// what = 1, return ghosts ass list.
 	// what = 2, return mob list
 
@@ -391,7 +391,7 @@ Ccomp's first proc.
 		.[M.ckey] = M
 	. = sortAssoc(.)
 
-/client/proc/allow_character_respawn(var/selection in get_ghosts_by_key())
+/client/proc/allow_character_respawn(selection in get_ghosts_by_key())
 	set category = "Special Verbs"
 	set name = "Allow player to respawn"
 	set desc = "Allows the player bypass the wait to respawn or allow them to re-enter their corpse."

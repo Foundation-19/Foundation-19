@@ -84,7 +84,7 @@
 					H.emote("scream")
 				affecting.status |= ORGAN_DISFIGURED
 
-/datum/reagent/acid/touch_obj(var/obj/O)
+/datum/reagent/acid/touch_obj(obj/O)
 	if (O.unacidable)
 		return
 	if ((istype(O, /obj/item) || istype(O, /obj/effect/vine)) && (volume > meltdose))

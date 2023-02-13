@@ -7,7 +7,7 @@
 	action_tag = "mob_narrate"
 	name = "Narrate"
 
-/datum/player_action/fun/narrate/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/fun/narrate/act(client/user, mob/target, list/params)
 	if(!params["to_narrate"]) return
 
 	to_chat(target, params["to_narrate"])
@@ -18,7 +18,7 @@
 	action_tag = "mob_explode"
 	name = "Explode"
 
-/datum/player_action/fun/explode/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/fun/explode/act(client/user, mob/target, list/params)
 	message_staff("[key_name_admin(user)] dropped a custom cell bomb on [target.name]!")
 	user.cmd_admin_explosion(target)
 	return TRUE

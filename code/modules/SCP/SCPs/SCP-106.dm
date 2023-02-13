@@ -99,7 +99,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 /mob/living/carbon/human/scp106/movement_delay()
 	return 4.0
 
-/mob/living/carbon/human/scp106/say(var/message, var/datum/language/speaking = null, whispering)
+/mob/living/carbon/human/scp106/say(message, datum/language/speaking = null, whispering)
 	src << "<span class = 'notice'>You cannot speak.</span>"
 	return 0
 
@@ -108,7 +108,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 		return
 	visible_message("<span class='danger'>\The [Proj] bounces off [src]'s acidic skin!</span>")
 	return 0
-/mob/living/carbon/human/scp106/attack_hand(var/mob/living/L)
+/mob/living/carbon/human/scp106/attack_hand(mob/living/L)
 	if (L == src)
 		return ..(L)
 	visible_message("<span class = 'danger'>[L] is warped away!</span>")
@@ -197,7 +197,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 
 	return TRUE
 
-/mob/living/carbon/human/scp106/proc/scp106_attack(var/mob/living/target)
+/mob/living/carbon/human/scp106/proc/scp106_attack(mob/living/target)
 	var/obj/item/grab/G = locate() in src
 	if (!G)
 		visible_message("<span class = 'danger'><i>[name] reaches towards [target]!</i></span>")
@@ -346,7 +346,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	to_chat(src, "You are [confusing ? "now confusing" : "no longer confusing"] your victims.")
 //mess. rewrite
 
-/mob/living/carbon/human/scp106/apply_damage(var/damage = 0, var/damagetype = BRUTE, var/def_zone = null, var/blocked = 0, var/damage_flags = 0, var/obj/used_weapon = null, var/armor_pen, var/silent = FALSE, var/obj/item/organ/external/given_organ = null)
+/mob/living/carbon/human/scp106/apply_damage(damage = 0, damagetype = BRUTE, def_zone = null, blocked = 0, damage_flags = 0, obj/used_weapon = null, armor_pen, silent = FALSE, obj/item/organ/external/given_organ = null)
 	. = ..()
 	if (getBruteLoss() + getFireLoss() + getToxLoss() + getCloneLoss() >= 200)
 		if (!(loc in GLOB.scp106_floors))
@@ -364,7 +364,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	simulated = FALSE
 	invisibility = 100
 
-/obj/scp106_exit/Crossed(var/mob/living/L)
+/obj/scp106_exit/Crossed(mob/living/L)
 	if (!istype(L) || isscp106(L))
 		return ..(L)
 	visible_message("<span class = 'danger'>[L] is warped away!</span>")
@@ -378,7 +378,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	simulated = FALSE
 	invisibility = 100
 
-/obj/scp106_teleport/Crossed(var/mob/living/L)
+/obj/scp106_teleport/Crossed(mob/living/L)
 	if (!istype(L) || isscp106(L))
 		return ..(L)
 	if (prob(50))
@@ -395,7 +395,7 @@ GLOBAL_LIST_EMPTY(scp106_spawnpoints)
 	simulated = FALSE
 	invisibility = 100
 
-/obj/scp106_random/Crossed(var/mob/living/L)
+/obj/scp106_random/Crossed(mob/living/L)
 	if (!istype(L) || isscp106(L))
 		return ..(L)
 	// 15% chance of instant death

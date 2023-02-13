@@ -8,7 +8,7 @@
 	path = /obj/item/card/union
 	denied_roles = list(/datum/job/classd)
 
-/datum/gear/union_card/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
+/datum/gear/union_card/spawn_on_mob(mob/living/carbon/human/H, metadata)
 	. = ..()
 	if(.)
 		var/obj/item/card/union/card = .
@@ -293,7 +293,7 @@
 	cointype["coin, phoron"] = /obj/item/material/coin/phoron
 	cointype["coin, platinum"] = /obj/item/material/coin/platinum
 	gear_tweaks += new/datum/gear_tweak/path(cointype)
-	
+
 /datum/gear/mre
 	display_name = "mre"
 	description = "A Meal, Ready to Eat."
@@ -311,5 +311,5 @@
 	display_name = "duct tape"
 	description = "A roll of very strong tape."
 	path = /obj/item/tape_roll
-	cost = 6	
+	cost = 6
 	denied_roles = list(/datum/job/classd)

@@ -18,7 +18,7 @@
 	language = LANGUAGE_CULT_GLOBAL
 	species_language = LANGUAGE_CULT_GLOBAL
 
-/mob/living/carbon/alien/chorus/Initialize(var/maploading, var/datum/chorus/chorus)
+/mob/living/carbon/alien/chorus/Initialize(maploading, datum/chorus/chorus)
 	..()
 	//I put it here instead of antagonists as it relies on less things
 	if(!choruses)
@@ -50,7 +50,7 @@
 	if(mind)
 		GLOB.chorus.add_antagonist_mind(mind)
 
-/mob/living/carbon/alien/chorus/proc/set_chorus(var/datum/chorus/cf)
+/mob/living/carbon/alien/chorus/proc/set_chorus(datum/chorus/cf)
 	chorus_type = cf
 	cf.add_unit(src)
 	set_default_nano_data()
@@ -61,12 +61,12 @@
 	chorus_type.remove_unit(src)
 	chorus_type = null
 
-/mob/living/carbon/alien/chorus/proc/update_resources(var/list/printed)
+/mob/living/carbon/alien/chorus/proc/update_resources(list/printed)
 	if(hud_used)
 		var/datum/hud/chorus/C = hud_used
 		C.update_resources(printed)
 
-/mob/living/carbon/alien/chorus/proc/update_buildings_units(var/buildings, var/units)
+/mob/living/carbon/alien/chorus/proc/update_buildings_units(buildings, units)
 	if(hud_used)
 		var/datum/hud/chorus/C = hud_used
 		C.update_buildings_units(buildings, units)

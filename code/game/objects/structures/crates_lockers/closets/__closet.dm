@@ -138,7 +138,7 @@
 	return 1
 
 #define CLOSET_CHECK_TOO_BIG(x) (stored_units + . + x > storage_capacity)
-/obj/structure/closet/proc/store_items(var/stored_units)
+/obj/structure/closet/proc/store_items(stored_units)
 	. = 0
 
 	for(var/obj/effect/dummy/chameleon/AD in loc)
@@ -159,7 +159,7 @@
 		I.pixel_y = 0
 		I.pixel_z = 0
 
-/obj/structure/closet/proc/store_mobs(var/stored_units)
+/obj/structure/closet/proc/store_mobs(stored_units)
 	. = 0
 	for(var/mob/living/M in loc)
 		if(M.buckled || M.pinned.len || M.anchored)
@@ -173,7 +173,7 @@
 			M.client.eye = src
 		M.forceMove(src)
 
-/obj/structure/closet/proc/store_structures(var/stored_units)
+/obj/structure/closet/proc/store_structures(stored_units)
 	. = 0
 
 	for(var/obj/structure/S in loc)
@@ -237,14 +237,14 @@
 					A.forceMove(src.loc)
 				qdel(src)
 
-/obj/structure/closet/proc/damage(var/damage)
+/obj/structure/closet/proc/damage(damage)
 	health -= damage
 	if(health <= 0)
 		for(var/atom/movable/A in src)
 			A.forceMove(src.loc)
 		qdel(src)
 
-/obj/structure/closet/bullet_act(var/obj/item/projectile/Proj)
+/obj/structure/closet/bullet_act(obj/item/projectile/Proj)
 	var/proj_damage = Proj.get_structure_damage()
 	if(proj_damage)
 		..()
@@ -394,7 +394,7 @@
 	else
 		icon_state = icon_opened
 
-/obj/structure/closet/attack_generic(var/mob/user, var/damage, var/attack_message = "destroys", var/wallbreaker)
+/obj/structure/closet/attack_generic(mob/user, damage, attack_message = "destroys", wallbreaker)
 	if(!damage || !wallbreaker)
 		return
 	attack_animation(user)
@@ -410,7 +410,7 @@
 		return 1 // Closed and locked
 	return (!welded) //closed but not welded...
 
-/obj/structure/closet/mob_breakout(var/mob/living/escapee)
+/obj/structure/closet/mob_breakout(mob/living/escapee)
 
 	. = ..()
 	var/breakout_time = 2 //2 minutes by default
@@ -465,7 +465,7 @@
 	animate(src, transform=turn(matrix(), 8*shake_dir), pixel_x=init_px + 2*shake_dir, time=1)
 	animate(transform=null, pixel_x=init_px, time=6, easing=ELASTIC_EASING)
 
-/obj/structure/closet/onDropInto(var/atom/movable/AM)
+/obj/structure/closet/onDropInto(atom/movable/AM)
 	return
 
 // If we use the /obj/structure/closet/proc/togglelock variant BYOND asks the user to select an input for id_card, which is then mostly irrelevant.
@@ -476,7 +476,7 @@
 
 	return togglelock(usr)
 
-/obj/structure/closet/proc/togglelock(var/mob/user, var/obj/item/card/id/id_card)
+/obj/structure/closet/proc/togglelock(mob/user, obj/item/card/id/id_card)
 	if(!(setup & CLOSET_HAS_LOCK))
 		return FALSE
 	if(!CanPhysicallyInteract(user))
@@ -509,16 +509,16 @@
 		to_chat(user, "<span class='warning'>Access denied!</span>")
 		return FALSE
 
-/obj/structure/closet/proc/CanToggleLock(var/mob/user, var/obj/item/card/id/id_card)
+/obj/structure/closet/proc/CanToggleLock(mob/user, obj/item/card/id/id_card)
 	return allowed(user) || (istype(id_card) && check_access_list(id_card.GetAccess()))
 
-/obj/structure/closet/AltClick(var/mob/user)
+/obj/structure/closet/AltClick(mob/user)
 	if(!src.opened)
 		togglelock(user)
 	else
 		return ..()
 
-/obj/structure/closet/CtrlAltClick(var/mob/user)
+/obj/structure/closet/CtrlAltClick(mob/user)
 	verb_toggleopen()
 
 /obj/structure/closet/emp_act(severity)
@@ -536,7 +536,7 @@
 				src.req_access += pick(get_all_station_access())
 	..()
 
-/obj/structure/closet/emag_act(var/remaining_charges, var/mob/user, var/emag_source, var/visual_feedback = "", var/audible_feedback = "")
+/obj/structure/closet/emag_act(remaining_charges, mob/user, emag_source, visual_feedback = "", audible_feedback = "")
 	if(make_broken())
 		update_icon()
 		if(visual_feedback)

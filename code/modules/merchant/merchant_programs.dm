@@ -19,13 +19,13 @@
 /datum/nano_module/program/merchant
 	name = "Merchant's List"
 
-/datum/computer_file/program/merchant/proc/get_merchant(var/num)
+/datum/computer_file/program/merchant/proc/get_merchant(num)
 	if(num > SStrade.traders.len)
 		num = SStrade.traders.len
 	if(num)
 		return SStrade.traders[num]
 
-/datum/nano_module/program/merchant/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/merchant/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
 	var/show_trade = 0
 	var/hailed = 0
@@ -68,24 +68,24 @@
 		return 1
 	return 0
 
-/datum/computer_file/program/merchant/proc/get_response(var/datum/trade_response/tr)
+/datum/computer_file/program/merchant/proc/get_response(datum/trade_response/tr)
 	last_comms = tr.text
 	bank += tr.money_delta
 	return tr.success
 
-/datum/computer_file/program/merchant/proc/offer_money(var/datum/trader/T, var/num, skill)
+/datum/computer_file/program/merchant/proc/offer_money(datum/trader/T, num, skill)
 	if(pad)
 		get_response(T.offer_money_for_trade(num, bank, get_turf(pad), skill))
 	else
 		last_comms = "PAD NOT CONNECTED"
 
-/datum/computer_file/program/merchant/proc/bribe(var/datum/trader/T, var/amt)
+/datum/computer_file/program/merchant/proc/bribe(datum/trader/T, amt)
 	if(bank < amt)
 		last_comms = "ERROR: NOT ENOUGH FUNDS."
 		return
 	get_response(T.bribe_to_stay_longer(amt))
 
-/datum/computer_file/program/merchant/proc/offer_item(var/datum/trader/T, var/num, skill)
+/datum/computer_file/program/merchant/proc/offer_item(datum/trader/T, num, skill)
 	if(pad)
 		var/list/targets = pad.get_targets()
 		if(!targets.len)
@@ -104,7 +104,7 @@
 	else
 		last_comms = "PAD NOT CONNECTED"
 
-/datum/computer_file/program/merchant/proc/sell_items(var/datum/trader/T, skill)
+/datum/computer_file/program/merchant/proc/sell_items(datum/trader/T, skill)
 	if(pad)
 		var/list/targets = pad.get_targets()
 		if(!targets.len)

@@ -191,10 +191,10 @@ I said no!
 	)
 	result = /obj/item/reagent_containers/food/snacks/donkpocket //SPECIAL
 
-/datum/recipe/donkpocket2/proc/warm_up(var/obj/item/reagent_containers/food/snacks/donkpocket/being_cooked)
+/datum/recipe/donkpocket2/proc/warm_up(obj/item/reagent_containers/food/snacks/donkpocket/being_cooked)
 	being_cooked.heat()
 
-/datum/recipe/donkpocket2/make_food(var/obj/container as obj)
+/datum/recipe/donkpocket2/make_food(obj/container as obj)
 	var/obj/item/reagent_containers/food/snacks/donkpocket/being_cooked = ..(container)
 	warm_up(being_cooked)
 	return being_cooked

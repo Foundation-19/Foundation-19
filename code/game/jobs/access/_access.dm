@@ -127,7 +127,7 @@
 
 	return priv_all_access_datums_region.Copy()
 
-/proc/get_access_ids(var/access_types = ACCESS_TYPE_ALL)
+/proc/get_access_ids(access_types = ACCESS_TYPE_ALL)
 	var/list/L = new()
 	for(var/datum/access/A in get_all_access_datums())
 		if(A.access_type & access_types)
@@ -173,7 +173,7 @@
 	return priv_syndicate_access.Copy()
 
 /var/list/priv_region_access
-/proc/get_region_accesses(var/code)
+/proc/get_region_accesses(code)
 	if(code == ACCESS_REGION_ALL)
 		return get_all_station_access()
 
@@ -185,9 +185,9 @@
 			priv_region_access["[A.region]"] += A.id
 
 	var/list/region = priv_region_access["[code]"]
-	return region.Copy()
+	return region?.Copy()
 
-/proc/get_region_accesses_name(var/code)
+/proc/get_region_accesses_name(code)
 	switch(code)
 		if(ACCESS_REGION_ALL)
 			return "All"
@@ -275,7 +275,7 @@
 		return // Unconscious, dead or once possessed but now client-less silicons are not considered to have id access.
 	return idcard
 
-/proc/FindNameFromID(var/mob/M, var/missing_id_name = "Unknown")
+/proc/FindNameFromID(mob/M, missing_id_name = "Unknown")
 	var/obj/item/card/id/C = M.GetIdCard()
 	if(C)
 		return C.registered_name

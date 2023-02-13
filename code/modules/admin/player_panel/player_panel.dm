@@ -421,7 +421,7 @@
 /datum/player_panel
 	var/mob/targetMob
 
-/datum/player_panel/New(var/mob/target)
+/datum/player_panel/New(mob/target)
 	. = ..()
 	targetMob = target
 
@@ -564,7 +564,7 @@ GLOBAL_LIST_INIT(pp_status_flags, list(
 
 	return P.act(ui.user.client, targetMob, params)
 
-/datum/admins/proc/show_player_panel(var/mob/M in SSmobs.mob_list)
+/datum/admins/proc/show_player_panel(mob/M in SSmobs.mob_list)
 	set name = "Open Player Panel"
 	set desc = "Edit player (respawn, ban, heal, etc)"
 	set category = null

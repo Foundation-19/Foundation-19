@@ -133,11 +133,11 @@
 	. = ..()
 
 // Called when the module is installed into a suit.
-/obj/item/rig_module/proc/installed(var/obj/item/rig/new_holder)
+/obj/item/rig_module/proc/installed(obj/item/rig/new_holder)
 	holder = new_holder
 	return
 
-/obj/item/rig_module/proc/check(var/charge = 50)
+/obj/item/rig_module/proc/check(charge = 50)
 
 	if(damage >= 2)
 		to_chat(usr, "<span class='warning'>The [interface_name] is damaged beyond use!</span>")
@@ -248,5 +248,5 @@
 
 // Called by holder rigsuit attackby()
 // Checks if an item is usable with this module and handles it if it is
-/obj/item/rig_module/proc/accepts_item(var/obj/item/input_device)
+/obj/item/rig_module/proc/accepts_item(obj/item/input_device)
 	return 0

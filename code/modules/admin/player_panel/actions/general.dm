@@ -3,7 +3,7 @@
 	action_tag = "mob_rejuvenate"
 	name = "Rejuvenate"
 
-/datum/player_action/rejuvenate/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/rejuvenate/act(client/user, mob/target, list/params)
 	user.cmd_admin_rejuvenate(target)
 	return TRUE
 
@@ -12,7 +12,7 @@
 	action_tag = "mob_kill"
 	name = "Kill"
 
-/datum/player_action/kill/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/kill/act(client/user, mob/target, list/params)
 	target.death()
 	message_staff("[key_name_admin(user)] killed [key_name_admin(target)].")
 	return TRUE
@@ -23,7 +23,7 @@
 	name = "Gib"
 	permissions_required = R_FUN
 
-/datum/player_action/gib/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/gib/act(client/user, mob/target, list/params)
 	target.gib("[user.key]")
 	message_staff("[key_name_admin(user)] gibbed [key_name_admin(target)].")
 	return TRUE
@@ -33,7 +33,7 @@
 	action_tag = "mob_sleep"
 	name = "Toggle Sleeping"
 
-/datum/player_action/mob_sleep/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/mob_sleep/act(client/user, mob/target, list/params)
 	if (!params["sleep"]) //if they're already slept, set their sleep to zero and remove the icon
 		target.sleeping = 0
 	else
@@ -48,7 +48,7 @@
 	action_tag = "send_to_lobby"
 	name = "Send To Lobby"
 
-/datum/player_action/send_to_lobby/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/send_to_lobby/act(client/user, mob/target, list/params)
 	if(!isghost(target))
 		to_chat(user, SPAN_NOTICE("You can only send ghost players back to the Lobby."))
 		return
@@ -78,7 +78,7 @@
 	name = "Force Say"
 	permissions_required = R_FUN
 
-/datum/player_action/force_say/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/force_say/act(client/user, mob/target, list/params)
 	if(!params["to_say"]) return
 
 	target.say(params["to_say"])
@@ -93,7 +93,7 @@
 	name = "Force Emote"
 	permissions_required = R_FUN
 
-/datum/player_action/force_emote/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/force_emote/act(client/user, mob/target, list/params)
 	if(!params["to_emote"]) return
 
 	target.custom_emote(1, params["to_emote"], TRUE)
@@ -106,7 +106,7 @@
 	action_tag = "narrate_message"
 	name = "Direct Narrate"
 
-/datum/player_action/narrate_message/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/narrate_message/act(client/user, mob/target, list/params)
 	user.cmd_admin_direct_narrate(target)
 	return TRUE
 
@@ -115,7 +115,7 @@
 	action_tag = "private_message"
 	name = "Private Message"
 
-/datum/player_action/private_message/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/private_message/act(client/user, mob/target, list/params)
 	if(!target.client)
 		return
 
@@ -126,7 +126,7 @@
 	action_tag = "alert_message"
 	name = "Alert Message"
 
-/datum/player_action/alert_message/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/alert_message/act(client/user, mob/target, list/params)
 	if(!target.client)
 		return
 
@@ -138,7 +138,7 @@
 	action_tag = "set_name"
 	name = "Set Name"
 
-/datum/player_action/set_name/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/set_name/act(client/user, mob/target, list/params)
 	if(target.name != params["name"])
 		target.fully_replace_character_name(params["name"])
 		message_staff("[key_name_admin(user)] set [key_name_admin(target)]'s name to [params["name"]]")
@@ -148,7 +148,7 @@
 	action_tag = "set_ckey"
 	name = "Set ckey"
 
-/datum/player_action/set_ckey/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/set_ckey/act(client/user, mob/target, list/params)
 	if(params["ckey"] == "")
 		params["ckey"] = " "
 
@@ -169,7 +169,7 @@
 	name = "Bring"
 
 
-/datum/player_action/bring/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/bring/act(client/user, mob/target, list/params)
 	var/mob/M = user.mob
 
 	target.forceMove(M.loc)
@@ -180,7 +180,7 @@
 	action_tag = "mob_follow"
 	name = "Follow"
 
-/datum/player_action/follow/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/follow/act(client/user, mob/target, list/params)
 	if(istype(user.mob, /mob/observer/ghost))
 		var/mob/observer/ghost/O = user.mob
 		O.follow(target)
@@ -195,7 +195,7 @@
 	name = "Jump To"
 
 
-/datum/player_action/jump_to/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/jump_to/act(client/user, mob/target, list/params)
 	user.jumptomob(target)
 	return TRUE
 
@@ -213,7 +213,7 @@
 	name = "Access Variables"
 
 
-/datum/player_action/access_variables/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/access_variables/act(client/user, mob/target, list/params)
 	user.debug_variables(target)
 	return TRUE
 
@@ -221,7 +221,7 @@
 	action_tag = "change_perms"
 	name = "Change Permissions"
 
-/datum/player_action/change_perms/act(var/client/user, var/mob/target, var/list/params)
+/datum/player_action/change_perms/act(client/user, mob/target, list/params)
 	if(!target.client?.holder)
 		return
 

@@ -36,3 +36,13 @@
   - code_imp: The formatting of most jobs' skills has been improved.
   - code_imp: The Finance skill has been moved to the General category of skills.
       The Organizational category, being empty, has been removed.
+2023-02-10:
+  cheesePizza2:
+  - bugfix: Break room in LCZ security is now actually accessible.
+  - rscdel: Backpacks in role-based loadouts were removed.
+  - bugfix: Double backpack on spawn fixed.
+2023-02-11:
+  Tsurupeta:
+  - bugfix: fixed OOC color on dark theme
+  - bugfix: fixed movement keys not working after restart in certain cases
+  - bugfix: fixed runtime in _access.dm:188

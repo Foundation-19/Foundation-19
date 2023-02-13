@@ -67,7 +67,7 @@
 		)
 
 
-/obj/item/device/floor_painter/afterattack(var/atom/A, var/mob/user, proximity, params)
+/obj/item/device/floor_painter/afterattack(atom/A, mob/user, proximity, params)
 	if(!proximity)
 		return
 
@@ -167,7 +167,7 @@
 
 	new painting_decal(F, painting_dir, painting_colour)
 
-/obj/item/device/floor_painter/attack_self(var/mob/user)
+/obj/item/device/floor_painter/attack_self(mob/user)
 	var/choice = input("What do you wish to change?") as null|anything in list("Decal","Direction", "Colour", "Preset Colour", "Mode")
 	if(choice == "Decal")
 		choose_decal()

@@ -32,7 +32,7 @@ GLOBAL_LIST_INIT(zombie_sound,list('sound/scp/voice/049_1/zombierand1.ogg','soun
 
 var/const/FALLOFF_SOUNDS = 0.5
 
-/mob/proc/playsound_local(var/turf/turf_source, soundin, vol as num, vary, frequency, falloff, is_global, extrarange, ignore_pressure)
+/mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff, is_global, extrarange, ignore_pressure)
 	if(!src.client || ear_deaf > 0)
 		return
 	var/sound/S = soundin

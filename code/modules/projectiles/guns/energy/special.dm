@@ -177,7 +177,7 @@
 	QDEL_NULL(spark_system)
 	return ..()
 
-/obj/item/gun/energy/plasmacutter/proc/slice(var/mob/M = null)
+/obj/item/gun/energy/plasmacutter/proc/slice(mob/M = null)
 	if(!safety() && power_supply.checked_use(charge_cost)) //consumes a shot per use
 		if(M)
 			M.welding_eyecheck()//Welding tool eye check

@@ -26,7 +26,7 @@
 	var/drops_debris = 1
 	var/worth_multiplier = 1
 
-/obj/item/material/New(var/newloc, var/material_key)
+/obj/item/material/New(newloc, material_key)
 	if(!material_key)
 		material_key = default_material
 	set_material(material_key)
@@ -62,7 +62,7 @@
 	throwforce = round(material.get_blunt_damage()*thrown_force_multiplier)
 	attack_cooldown = material.get_attack_cooldown() + attack_cooldown_modifier
 
-/obj/item/material/proc/set_material(var/new_material)
+/obj/item/material/proc/set_material(new_material)
 	material = SSmaterials.get_material_by_name(new_material)
 	if(!material)
 		qdel(src)
@@ -94,7 +94,7 @@
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/item/material/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
+/obj/item/material/apply_hit_effect(mob/living/target, mob/living/user, hit_zone)
 	. = ..()
 	if(material.is_brittle() || target.get_blocked_ratio(hit_zone, BRUTE, damage_flags(), armor_penetration, force) * 100 >= material.hardness/5)
 		check_shatter()

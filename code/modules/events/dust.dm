@@ -20,7 +20,7 @@ The "dust" will damage the hull of the station causin minor hull breaches.
 /datum/event/dust/end()
 	command_announcement.Announce("Object class SAFE recontained. Amnestics available upon request.", "[location_name()] Sensor Array", zlevels = affecting_z)
 
-/proc/dust_swarm(var/strength = EVENT_LEVEL_MUNDANE, var/list/zlevels = GLOB.using_map.station_levels)
+/proc/dust_swarm(strength = EVENT_LEVEL_MUNDANE, list/zlevels = GLOB.using_map.station_levels)
 	var/numbers = rand(strength * 10, strength * 15)
 
 	var/start_dir = pick(GLOB.cardinal)

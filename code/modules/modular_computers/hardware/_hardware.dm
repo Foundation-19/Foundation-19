@@ -16,7 +16,7 @@
 	var/usage_flags = PROGRAM_ALL
 	var/external_slot				// Whether attackby will be passed on it even with a closed panel
 
-/obj/item/stock_parts/computer/attackby(var/obj/item/W as obj, var/mob/living/user as mob)
+/obj/item/stock_parts/computer/attackby(obj/item/W as obj, mob/living/user as mob)
 	// Multitool. Runs diagnostics
 	if(isMultitool(W))
 		to_chat(user, "***** DIAGNOSTICS REPORT *****")
@@ -87,6 +87,6 @@
 		to_chat(user, "It seems to be slightly damaged.")
 
 // Damages the component. Contains necessary checks. Negative damage "heals" the component.
-/obj/item/stock_parts/computer/proc/take_damage(var/amount)
+/obj/item/stock_parts/computer/proc/take_damage(amount)
 	damage += round(amount) 					// We want nice rounded numbers here.
 	damage = between(0, damage, max_damage)		// Clamp the value.

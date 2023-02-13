@@ -5,7 +5,7 @@
 	return 0
 
 //returns the number of size categories between two mob_sizes, rounded. Positive means A is larger than B
-/proc/mob_size_difference(var/mob_size_A, var/mob_size_B)
+/proc/mob_size_difference(mob_size_A, mob_size_B)
 	return round(log(2, mob_size_A/mob_size_B), 1)
 
 /mob/proc/can_wield_item(obj/item/W)
@@ -68,7 +68,7 @@
 			return 1
 	return 0
 
-/proc/hassensorlevel(A, var/level)
+/proc/hassensorlevel(A, level)
 	var/mob/living/carbon/human/H = A
 	if(istype(H) && istype(H.w_uniform, /obj/item/clothing/under))
 		var/obj/item/clothing/under/U = H.w_uniform
@@ -83,7 +83,7 @@
 	return SUIT_SENSOR_OFF
 
 
-/proc/is_admin(var/mob/user)
+/proc/is_admin(mob/user)
 	return check_rights(R_ADMIN, 0, user)
 
 
@@ -166,7 +166,7 @@ var/list/global/organ_rel_size = list(
 // Emulates targetting a specific body part, and miss chances
 // May return null if missed
 // miss_chance_mod may be negative.
-/proc/get_zone_with_miss_chance(zone, var/mob/target, var/miss_chance_mod = 0, var/ranged_attack=0)
+/proc/get_zone_with_miss_chance(zone, mob/target, miss_chance_mod = 0, ranged_attack=0)
 	zone = check_zone(zone)
 
 	if(!ranged_attack)
@@ -367,7 +367,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 	return 0
 
 
-/mob/proc/abiotic(var/full_body = FALSE)
+/mob/proc/abiotic(full_body = FALSE)
 	if(full_body && ((src.l_hand && src.l_hand.simulated) || (src.r_hand && src.r_hand.simulated) || (src.back || src.wear_mask)))
 		return TRUE
 
@@ -432,19 +432,19 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 /mob/proc/welding_eyecheck()
 	return
 
-/proc/broadcast_security_hud_message(var/message, var/broadcast_source)
+/proc/broadcast_security_hud_message(message, broadcast_source)
 	broadcast_hud_message(message, broadcast_source, GLOB.sec_hud_users, /obj/item/clothing/glasses/hud/security)
 
-/proc/broadcast_medical_hud_message(var/message, var/broadcast_source)
+/proc/broadcast_medical_hud_message(message, broadcast_source)
 	broadcast_hud_message(message, broadcast_source, GLOB.med_hud_users, /obj/item/clothing/glasses/hud/health)
 
-/proc/broadcast_hud_message(var/message, var/broadcast_source, var/list/targets, var/icon)
+/proc/broadcast_hud_message(message, broadcast_source, list/targets, icon)
 	var/turf/sourceturf = get_turf(broadcast_source)
 	for(var/mob/M in targets)
 		if(!sourceturf || (get_z(M) in GetConnectedZlevels(sourceturf.z)))
 			M.show_message("<span class='info'>[icon2html(icon, M)] [message]</span>", 1)
 
-/proc/mobs_in_area(var/area/A)
+/proc/mobs_in_area(area/A)
 	var/list/mobs = new
 	for(var/mob/living/M in SSmobs.mob_list)
 		if(get_area(M) == A)
@@ -452,7 +452,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 	return mobs
 
 //Announces that a ghost has joined/left, mainly for use with wizards
-/proc/announce_ghost_joinleave(O, var/joined_ghosts = 1, var/message = "")
+/proc/announce_ghost_joinleave(O, joined_ghosts = 1, message = "")
 	var/client/C
 	//Accept any type, sort what we want here
 	if(istype(O, /mob))
@@ -490,13 +490,13 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 			message = "<span class='name'>[name]</span> no longer [pick("skulks","lurks","prowls","creeps","stalks")] in the realm of the dead. [message]"
 		communicate(/decl/communication_channel/dsay, C || O, message, /decl/dsay_communication/direct)
 
-/mob/proc/switch_to_camera(var/obj/machinery/camera/C)
+/mob/proc/switch_to_camera(obj/machinery/camera/C)
 	if (!C.can_use() || stat || (get_dist(C, src) > 1 || machine != src || blinded))
 		return 0
 	check_eye(src)
 	return 1
 
-/mob/living/silicon/ai/switch_to_camera(var/obj/machinery/camera/C)
+/mob/living/silicon/ai/switch_to_camera(obj/machinery/camera/C)
 	if(!C.can_use() || !is_in_chassis())
 		return 0
 
@@ -504,7 +504,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 	return 1
 
 // Returns true if the mob has a client which has been active in the last given X minutes.
-/mob/proc/is_client_active(var/active = 1)
+/mob/proc/is_client_active(active = 1)
 	return client && client.inactivity < active MINUTES
 
 /mob/proc/can_eat()
@@ -514,19 +514,19 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 	return 1
 
 #define SAFE_PERP -50
-/mob/living/proc/assess_perp(var/obj/access_obj, var/check_access, var/auth_weapons, var/check_records, var/check_arrest)
+/mob/living/proc/assess_perp(obj/access_obj, check_access, auth_weapons, check_records, check_arrest)
 	if(stat == DEAD)
 		return SAFE_PERP
 
 	return 0
 
-/mob/living/carbon/assess_perp(var/obj/access_obj, var/check_access, var/auth_weapons, var/check_records, var/check_arrest)
+/mob/living/carbon/assess_perp(obj/access_obj, check_access, auth_weapons, check_records, check_arrest)
 	if(handcuffed)
 		return SAFE_PERP
 
 	return ..()
 
-/mob/living/carbon/human/assess_perp(var/obj/access_obj, var/check_access, var/auth_weapons, var/check_records, var/check_arrest)
+/mob/living/carbon/human/assess_perp(obj/access_obj, check_access, auth_weapons, check_records, check_arrest)
 	var/threatcount = ..()
 	if(. == SAFE_PERP)
 		return SAFE_PERP
@@ -569,7 +569,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 
 	return threatcount
 
-/mob/living/simple_animal/hostile/assess_perp(var/obj/access_obj, var/check_access, var/auth_weapons, var/check_records, var/check_arrest)
+/mob/living/simple_animal/hostile/assess_perp(obj/access_obj, check_access, auth_weapons, check_records, check_arrest)
 	var/threatcount = ..()
 	if(. == SAFE_PERP)
 		return SAFE_PERP
@@ -580,7 +580,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 
 #undef SAFE_PERP
 
-/mob/proc/get_multitool(var/obj/item/device/multitool/P)
+/mob/proc/get_multitool(obj/item/device/multitool/P)
 	if(istype(P))
 		return P
 
@@ -610,14 +610,14 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 	if(client)
 		client.images -= client_images
 
-/mob/proc/add_client_image(var/image)
+/mob/proc/add_client_image(image)
 	if(image in client_images)
 		return
 	client_images += image
 	if(client)
 		client.images += image
 
-/mob/proc/remove_client_image(var/image)
+/mob/proc/remove_client_image(image)
 	client_images -= image
 	if(client)
 		client.images -= image
@@ -626,7 +626,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 	for(var/mob/M in contents)
 		M.flash_eyes(intensity, override_blindness_check, affect_silicon, visual, type)
 
-/mob/proc/fully_replace_character_name(var/new_name, var/in_depth = TRUE)
+/mob/proc/fully_replace_character_name(new_name, in_depth = TRUE)
 	if(!new_name || new_name == real_name)	return 0
 	real_name = new_name
 	SetName(new_name)
@@ -659,7 +659,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 			admin_victim_log(src, "has taken <i>minor heart damage</i> at jitteriness level [src.jitteriness].")
 	return 1
 
-/mob/proc/try_teleport(var/area/thearea)
+/mob/proc/try_teleport(area/thearea)
 	if(!istype(thearea))
 		if(istype(thearea, /list))
 			thearea = thearea[1]
@@ -705,7 +705,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 			return mob.mind.initial_email_login["login"]
 
 //This gets an input while also checking a mob for whether it is incapacitated or not.
-/mob/proc/get_input(var/message, var/title, var/default, var/choice_type, var/obj/required_item)
+/mob/proc/get_input(message, title, default, choice_type, obj/required_item)
 	if(src.incapacitated() || (required_item && !GLOB.hands_state.can_use_topic(required_item,src)))
 		return null
 	var/choice

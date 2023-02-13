@@ -15,7 +15,7 @@
 	QDEL_NULL(form)
 	. = ..()
 
-/datum/chorus/proc/add_unit(var/mob/living/carbon/alien/chorus/c)
+/datum/chorus/proc/add_unit(mob/living/carbon/alien/chorus/c)
 	if(c in units)
 		return
 	units += c
@@ -24,20 +24,20 @@
 		form.send_rscs(c)
 	update_huds()
 
-/datum/chorus/proc/remove_unit(var/mob/living/carbon/alien/chorus/c)
+/datum/chorus/proc/remove_unit(mob/living/carbon/alien/chorus/c)
 	if(!(c in units))
 		return
 	units -= c
 
-/datum/chorus/proc/add_building(var/b)
+/datum/chorus/proc/add_building(b)
 	buildings |= b
 	update_huds(TRUE, FALSE)
 
-/datum/chorus/proc/remove_building(var/b)
+/datum/chorus/proc/remove_building(b)
 	buildings -= b
 	update_huds(TRUE, FALSE)
 
-/datum/chorus/proc/set_form(var/datum/chorus_form/t)
+/datum/chorus/proc/set_form(datum/chorus_form/t)
 	form = t
 	for(var/rt in t.resources)
 		var/r = new rt()
@@ -47,12 +47,12 @@
 		form.send_rscs(u)
 	update_huds()
 
-/datum/chorus/proc/update_nano_basic(var/datum/chorus_resource/resource)
+/datum/chorus/proc/update_nano_basic(datum/chorus_resource/resource)
 	for(var/u in units)
 		var/mob/living/carbon/alien/chorus/c = u
 		c.update_nano_resource(resource)
 
-/datum/chorus/proc/update_huds(var/update_buildings_units = TRUE, var/update_resources = TRUE, var/specific_unit)
+/datum/chorus/proc/update_huds(update_buildings_units = TRUE, update_resources = TRUE, specific_unit)
 	if(specific_unit)
 		specific_unit = list(specific_unit)
 	else
@@ -70,16 +70,16 @@
 		if(update_buildings_units)
 			c.update_buildings_units(buildings.len, units.len)
 
-/datum/chorus/proc/get_dist_to_nearest_building(var/atom/A)
+/datum/chorus/proc/get_dist_to_nearest_building(atom/A)
 	var/atom/a = get_atom_closest_to_atom(A, buildings)
 	if(a)
 		. = get_dist(A, a)
 
-/datum/chorus/proc/get_building_type_amount(var/type)
+/datum/chorus/proc/get_building_type_amount(type)
 	. = 0
 	for(var/b in buildings)
 		if(istype(b, type))
 			.++
 
-/datum/chorus/proc/is_follower(var/m)
+/datum/chorus/proc/is_follower(m)
 	return (m in units)

@@ -144,7 +144,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 /datum/spell/proc/critfail(list/targets, mob/user) //the wizman has fucked up somehow
 	return
 
-/datum/spell/proc/after_spell(var/list/targets, var/mob/user, var/channel_duration) //After everything else is done.
+/datum/spell/proc/after_spell(list/targets, mob/user, channel_duration) //After everything else is done.
 	return
 
 /datum/spell/proc/adjust_var(mob/living/target = usr, type, amount) //handles the adjustment of the var when the spell is used. has some hardcoded types
@@ -271,7 +271,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 
 	return 1
 
-/datum/spell/proc/check_charge(var/skipcharge, mob/user)
+/datum/spell/proc/check_charge(skipcharge, mob/user)
 	if(!skipcharge)
 		switch(charge_type)
 			if(SPELL_RECHARGE)
@@ -284,7 +284,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 					return 0
 	return 1
 
-/datum/spell/proc/take_charge(mob/user = user, var/skipcharge)
+/datum/spell/proc/take_charge(mob/user = user, skipcharge)
 	if(!skipcharge)
 		switch(charge_type)
 			if(SPELL_RECHARGE)
@@ -300,7 +300,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 		return 0
 	return 1
 
-/datum/spell/proc/invocation(mob/user = usr, var/list/targets) //spelling the spell out and setting it on recharge/reducing charges amount
+/datum/spell/proc/invocation(mob/user = usr, list/targets) //spelling the spell out and setting it on recharge/reducing charges amount
 
 	switch(invocation_type)
 		if(INVOKE_SHOUT)
@@ -320,7 +320,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 ///UPGRADING PROCS///
 /////////////////////
 
-/datum/spell/proc/can_improve(var/upgrade_type)
+/datum/spell/proc/can_improve(upgrade_type)
 	if(level_max[UPGRADE_TOTAL] <= ( spell_levels[UPGRADE_SPEED] + spell_levels[UPGRADE_POWER] )) //too many levels, can't do it
 		return 0
 
@@ -375,7 +375,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 
 	return temp
 
-/datum/spell/proc/spell_do_after(var/mob/user as mob, delay as num, var/numticks = 5)
+/datum/spell/proc/spell_do_after(mob/user as mob, delay as num, numticks = 5)
 	if(!user || isnull(user))
 		return 0
 

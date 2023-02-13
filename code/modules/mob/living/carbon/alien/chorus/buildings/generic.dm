@@ -11,7 +11,7 @@
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/structure/chorus/processor/chorus_click(var/mob/living/carbon/alien/chorus/C)
+/obj/structure/chorus/processor/chorus_click(mob/living/carbon/alien/chorus/C)
 	if(warning && C)
 		to_chat(C, SPAN_WARNING("\The [src] is automatic; it can't be used manually, and instead activates on its own."))
 		warning = FALSE
@@ -54,7 +54,7 @@
 			trigger_effect(filtered)
 			last_click = world.time
 
-/obj/structure/chorus/processor/sentry/proc/trigger_effect(var/list/possible_targets)
+/obj/structure/chorus/processor/sentry/proc/trigger_effect(list/possible_targets)
 	return
 
 /obj/structure/chorus/zleveler
@@ -65,7 +65,7 @@
 	var/turf_type_to_add
 	var/growth_verb = "suddenly appears"
 
-/obj/structure/chorus/zleveler/proc/check_turf(var/turf/T, var/warning_context, var/warnings, var/mob/living/carbon/alien/chorus/C)
+/obj/structure/chorus/zleveler/proc/check_turf(turf/T, warning_context, warnings, mob/living/carbon/alien/chorus/C)
 	if(T.density || istype(T, /turf/space))
 		if(warnings && C)
 			to_chat(C, SPAN_WARNING("You can't build [warning_context] there"))
@@ -78,7 +78,7 @@
 			return FALSE
 	return TRUE
 
-/obj/structure/chorus/zleveler/can_activate(var/mob/living/carbon/alien/chorus/C, var/warning = TRUE)
+/obj/structure/chorus/zleveler/can_activate(mob/living/carbon/alien/chorus/C, warning = TRUE)
 	. = FALSE
 	var/turf/T = get_turf(src)
 	if(HasBelow(T.z)) //If we have a below level
@@ -90,7 +90,7 @@
 	if(.)
 		. = ..()
 
-/obj/structure/chorus/zleveler/activate(var/mob/living/carbon/alien/chorus/C)
+/obj/structure/chorus/zleveler/activate(mob/living/carbon/alien/chorus/C)
 	var/turf/T = get_turf(src)
 	var/turf/target
 	var/through_text
@@ -125,7 +125,7 @@
 		return TOPIC_HANDLED
 	. = ..()
 
-/obj/structure/chorus/spawner/attack_ghost(var/mob/observer/ghost/user)
+/obj/structure/chorus/spawner/attack_ghost(mob/observer/ghost/user)
 	if(GLOB.chorus.can_become_antag(user.mind))
 		if(!owner.use_resource(activation_cost_resource, activation_cost_amount))
 			var/datum/chorus_resource/resource = owner.get_resource(activation_cost_resource)

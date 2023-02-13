@@ -23,5 +23,5 @@ SUBSYSTEM_DEF(turbolift)
 			lift.busy = 0
 		CHECK_TICK
 
-/datum/controller/subsystem/turbolift/proc/lift_is_moving(var/datum/turbolift/lift)
+/datum/controller/subsystem/turbolift/proc/lift_is_moving(datum/turbolift/lift)
 	moving_lifts["\ref[lift]"] = world.time + lift.move_delay

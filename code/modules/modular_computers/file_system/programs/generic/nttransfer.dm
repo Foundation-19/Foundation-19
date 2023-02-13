@@ -46,7 +46,7 @@ var/global/nttransfer_uid = 0
 		if(!remote)
 			crash_download("Connection to remote server lost")
 
-/datum/computer_file/program/nttransfer/kill_program(var/forced = 0)
+/datum/computer_file/program/nttransfer/kill_program(forced = 0)
 	if(downloaded_file) // Client mode, clean up variables for next use
 		finalize_download()
 
@@ -63,7 +63,7 @@ var/global/nttransfer_uid = 0
 	finalize_download()
 
 //  Crashes the download and displays specific error message
-/datum/computer_file/program/nttransfer/proc/crash_download(var/message)
+/datum/computer_file/program/nttransfer/proc/crash_download(message)
 	error = message ? message : "An unknown error has occured during download"
 	finalize_download()
 

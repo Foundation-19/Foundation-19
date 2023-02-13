@@ -6,7 +6,7 @@
 	machine_name = "long range shuttle console"
 	machine_desc = "Used to control spacecraft that are designed to move between local sectors in open space."
 
-/obj/machinery/computer/shuttle_control/explore/get_ui_data(var/datum/shuttle/autodock/overmap/shuttle)
+/obj/machinery/computer/shuttle_control/explore/get_ui_data(datum/shuttle/autodock/overmap/shuttle)
 	. = ..()
 	if(istype(shuttle))
 		var/total_gas = 0
@@ -27,7 +27,7 @@
 			"fuel_span" = fuel_span
 		)
 
-/obj/machinery/computer/shuttle_control/explore/handle_topic_href(var/datum/shuttle/autodock/overmap/shuttle, var/list/href_list)	
+/obj/machinery/computer/shuttle_control/explore/handle_topic_href(datum/shuttle/autodock/overmap/shuttle, list/href_list)
 	if(ismob(usr))
 		var/mob/user = usr
 		shuttle.operator_skill = user.get_skill_value(SKILL_PILOT)

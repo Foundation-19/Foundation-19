@@ -9,7 +9,7 @@
 	var/heavy_effect_range = 1
 	var/light_effect_range = 2
 
-/obj/item/projectile/ion/on_impact(var/atom/A)
+/obj/item/projectile/ion/on_impact(atom/A)
 	empulse(A, heavy_effect_range, light_effect_range)
 	return 1
 
@@ -28,7 +28,7 @@
 	damage = 60
 	damage_flags = DAM_BULLET | DAM_SHARP | DAM_EDGE
 
-/obj/item/projectile/bullet/gyro/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/bullet/gyro/on_hit(atom/target, blocked = 0)
 	explosion(target, -1, 0, 2)
 	return 1
 
@@ -42,7 +42,7 @@
 	nodamage = TRUE
 	var/firing_temperature = -40 // Temperature that will be added to the target
 
-/obj/item/projectile/temp/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/temp/on_hit(atom/target, blocked = 0)
 	if(istype(target, /mob/living))
 		var/mob/living/M = target
 		var/thermal_protection = 1
@@ -98,7 +98,7 @@
 	damage_type = TOX
 	nodamage = TRUE
 
-/obj/item/projectile/energy/floramut/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/energy/floramut/on_hit(atom/target, blocked = 0)
 	var/mob/living/M = target
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = M
@@ -140,7 +140,7 @@
 	damage_type = TOX
 	nodamage = TRUE
 
-/obj/item/projectile/energy/florayield/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/energy/florayield/on_hit(atom/target, blocked = 0)
 	var/mob/M = target
 	if(ishuman(target)) //These rays make plantmen fat.
 		var/mob/living/carbon/human/H = M
@@ -155,7 +155,7 @@
 /obj/item/projectile/beam/mindflayer
 	name = "flayer ray"
 
-/obj/item/projectile/beam/mindflayer/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/beam/mindflayer/on_hit(atom/target, blocked = 0)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
 		M.confused += rand(5,8)

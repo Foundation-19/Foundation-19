@@ -37,7 +37,7 @@ GLOBAL_LIST_EMPTY(exploration_positions)
 GLOBAL_LIST_EMPTY(unsorted_positions) // for nano manifest
 
 
-/proc/guest_jobbans(var/job)
+/proc/guest_jobbans(job)
 	return ((job in GLOB.command_positions) || (job in GLOB.nonhuman_positions) || (job in GLOB.security_positions))
 
 /proc/get_job_datums()
@@ -51,7 +51,7 @@ GLOBAL_LIST_EMPTY(unsorted_positions) // for nano manifest
 
 	return occupations
 
-/proc/get_alternate_titles(var/job)
+/proc/get_alternate_titles(job)
 	var/list/jobs = get_job_datums()
 	var/list/titles = list()
 

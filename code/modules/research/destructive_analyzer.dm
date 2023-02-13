@@ -16,7 +16,7 @@ Note: Must be placed within 3 tiles of the R&D Console
 	idle_power_usage = 30
 	active_power_usage = 2500
 	construct_state = /decl/machine_construction/default/panel_closed
-	
+
 	machine_name = "destructive analyzer"
 	machine_desc = "Breaks down objects into their component parts, gaining new information in the process. Part of an R&D network."
 
@@ -35,7 +35,7 @@ Note: Must be placed within 3 tiles of the R&D Console
 	else
 		icon_state = "d_analyzer"
 
-/obj/machinery/r_n_d/destructive_analyzer/state_transition(var/decl/machine_construction/default/new_state)
+/obj/machinery/r_n_d/destructive_analyzer/state_transition(decl/machine_construction/default/new_state)
 	. = ..()
 	if(istype(new_state) && linked_console)
 		linked_console.linked_destroy = null
@@ -51,7 +51,7 @@ Note: Must be placed within 3 tiles of the R&D Console
 		return SPAN_NOTICE("There is something already loaded into \the [src]. You must remove it first.")
 	return ..()
 
-/obj/machinery/r_n_d/destructive_analyzer/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/obj/machinery/r_n_d/destructive_analyzer/attackby(obj/item/O as obj, mob/user as mob)
 	if(busy)
 		to_chat(user, "<span class='notice'>\The [src] is busy right now.</span>")
 		return

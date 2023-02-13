@@ -315,7 +315,7 @@
 		/obj/item/reagent_containers/food/drinks/cans/waterbottle/ascent
 	)
 
-/obj/item/rig/mantid/mob_can_equip(var/mob/M, var/slot)
+/obj/item/rig/mantid/mob_can_equip(mob/M, slot)
 	. = ..()
 	if(. && slot == slot_back)
 		var/mob/living/carbon/human/H = M
