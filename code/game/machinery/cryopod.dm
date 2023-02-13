@@ -432,7 +432,8 @@
 	occupant.ckey = null
 	if(!g) // Player didn't ghost. Ghost then delete.
 		g = occupant.ghostize(FALSE)
-	g.skip_respawn_timer = TRUE
+	if(!g) // Player STILL didn't ghost. Should only happen if the CKEY is null
+		g.skip_respawn_timer = TRUE
 	qdel(occupant)
 	set_occupant(null)
 
