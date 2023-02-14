@@ -48,6 +48,12 @@
 			ammo_magazine = new magazine_type(src)
 	update_icon()
 
+/obj/item/gun/projectile/Destroy()
+	QDEL_NULL_LIST(loaded)
+	QDEL_NULL(chambered)
+	QDEL_NULL(ammo_magazine)
+	return ..()
+
 /obj/item/gun/projectile/handle_atom_del(atom/A)
 	if(A == ammo_magazine)
 		ammo_magazine = null
