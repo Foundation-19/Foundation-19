@@ -145,5 +145,6 @@
 	radio_connection = radio_controller.add_object(src, frequency, RADIO_CHAT)
 
 /obj/item/device/assembly/signaller/Destroy()
+	radio_controller.remove_object(src, frequency)
 	radio_connection = null
 	return ..()

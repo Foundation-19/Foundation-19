@@ -98,6 +98,7 @@
 #include "code\__defines\time.dm"
 #include "code\__defines\topic.dm"
 #include "code\__defines\turfs.dm"
+#include "code\__defines\typeids.dm"
 #include "code\__defines\webhooks.dm"
 #include "code\__defines\wires.dm"
 #include "code\__defines\xenoarcheaology.dm"
