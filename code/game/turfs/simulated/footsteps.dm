@@ -52,6 +52,9 @@
 	return TRUE
 
 /mob/living/carbon/human/proc/handle_footsteps()
+	if(zoomed)
+		reset_zoom()
+
 	if(!has_footsteps())
 		return
 

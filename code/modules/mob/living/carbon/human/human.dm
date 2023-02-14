@@ -1811,6 +1811,38 @@
 
 				new /obj/effect/temp_visual/bloodsplatter(loc, hit_dir, species.blood_color)
 
+/atom/CtrlShiftClick(mob/living/carbon/human/user)
+	if(!istype(user))
+		return
+
+	visible_message(SPAN_NOTICE("[user] peers into the distance."))
+	user.face_atom(src)
+	user.do_zoom(src)
+
+/mob/living/carbon/human
+	var/zoomed = FALSE
+
+/mob/living/carbon/human/proc/do_zoom(turf/T)
+	if(!zoomed)
+		var/turf/position = get_turf(src)
+		var/detla_x = T.x - position.x
+		var/delta_y = T.y - position.y
+
+		if(abs(detla_x) >7 || bas(delta_y) > 7)
+			return
+
+		hide_cone()
+		animate(client, pixel_x = world.icon_size*detla_x, pixel_y = world.icon_size*delta_y, time = 2, easing = SINE_EASING)
+		face_atom(position)
+		zoomed = TRUE
+	else
+		reset_zoom()
+
+/mob/living/carbon/human/proc/reset_zoom()
+	animate(client, pixel_x = 0, pixel_y = 0, time = 2, easing = SINE_EASING)
+	show_cone()
+	zoomed = FALSE
+
 /mob/living/carbon/human/proc/dream()
 	dream_timer = null
 	if (!sleeping)
