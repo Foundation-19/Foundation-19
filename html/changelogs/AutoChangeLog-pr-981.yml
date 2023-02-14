@@ -1,5 +1,0 @@
-author: Tsurupeta
-delete-after: true
-changes:
-  - rscdel: Removed SCP-457 until it's author fixes it (likely never) or I add it
-      back with full rework.

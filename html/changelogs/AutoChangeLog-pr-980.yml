@@ -1,4 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - code_imp: Cryopod runtime on clientless bodies fixed.

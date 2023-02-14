@@ -1,9 +1,0 @@
-author: Tsurupeta
-delete-after: true
-changes:
-  - rscadd: Added new explosions subsystem.
-  - balance: Disabled gas spawning from TTV and fueltank explosions.
-  - rscadd: Traitors now have package bombs with detonator in their uplink.
-  - code_imp: Changed how walls and turfs explode, which should result in better looking
-      results.
-  - bugfix: fixed a lot of things not being deleted in explosion.
