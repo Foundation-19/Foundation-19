@@ -156,3 +156,37 @@
 		chambered = null
 	else
 		to_chat(user, "<span class='warning'>\The [src] is empty.</span>")
+
+/obj/item/gun/launcher/grenade/thumper
+	name = "m79 grenade launcher"
+	desc = "A single barrel multi-purpose grenade launcher. Durable and reliable, most commonly used by the GOC and the UIU."
+	icon_state = "thumper"
+	item_state = "thumper"
+	fire_sound = 'sound/weapons/gun_thump.ogg'
+	w_class = ITEM_SIZE_NORMAL
+	force = 20 //Funny butt-stock melee attack
+	max_grenades = 0 //Forces one in the chamber
+
+/obj/item/gun/launcher/grenade/thumper/attack_self()
+	return
+
+//load and unload directly into chambered
+/obj/item/gun/launcher/grenade/thumper/load(obj/item/grenade/G, mob/user)
+	if(!can_load_grenade_type(G, user))
+		return
+
+	if(chambered)
+		to_chat(user, "<span class='warning'>\The [src] is already loaded.</span>")
+		return
+	if(!user.unEquip(G, src))
+		return
+	chambered = G
+	user.visible_message("\The [user] load \a [G] into \the [src].", "<span class='notice'>You load \a [G] into \the [src].</span>")
+
+/obj/item/gun/launcher/grenade/thumper/unload(mob/user)
+	if(chambered)
+		user.put_in_hands(chambered)
+		user.visible_message("\The [user] removes \a [chambered] from \the[src].", "<span class='notice'>You remove \a [chambered] from \the [src].</span>")
+		chambered = null
+	else
+		to_chat(user, "<span class='warning'>\The [src] is empty.</span>")

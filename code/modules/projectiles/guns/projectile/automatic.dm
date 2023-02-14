@@ -282,7 +282,7 @@
 	var/cover_open = 0
 
 /obj/item/gun/projectile/automatic/l6_saw/mag
-	magazine_type = /obj/item/ammo_magazine/rifle
+	magazine_type = /obj/item/ammo_magazine/box/machinegun
 
 /obj/item/gun/projectile/automatic/l6_saw/special_check(mob/user)
 	if(cover_open)
