@@ -11,23 +11,23 @@
 	var/obj/screen/using
 
 	using = new /obj/screen/new_player/title(src)
-	using.hud = src
+	using.hud_ref = weakref(src)
 	adding += using
 
 	using = new /obj/screen/new_player/selection/join_game(src)
-	using.hud = src
+	using.hud_ref = weakref(src)
 	adding += using
 
 	using = new /obj/screen/new_player/selection/settings(src)
-	using.hud = src
+	using.hud_ref = weakref(src)
 	adding += using
 
 	using = new /obj/screen/new_player/selection/manifest(src)
-	using.hud = src
+	using.hud_ref = weakref(src)
 	adding += using
 
 	using = new /obj/screen/new_player/selection/observe(src)
-	using.hud = src
+	using.hud_ref = weakref(src)
 	adding += using
 
 	mymob.client.screen = list()
@@ -57,6 +57,7 @@
 	return ..()
 
 /obj/screen/new_player/title/proc/cycle_lobby_screen(list/lobby_screens)
+	var/datum/hud/hud = hud_ref.resolve()
 	if(!istype(hud) || !isnewplayer(hud.mymob))
 		return
 	lobby_index += 1
@@ -72,7 +73,7 @@
 
 /obj/screen/new_player/selection/New(datum/hud/H)
 	color = null
-	hud = H
+	hud_ref = weakref(H)
 	return ..()
 
 /obj/screen/new_player/selection/MouseEntered(location, control, params)
@@ -94,6 +95,9 @@
 	update_lobby_icon()
 
 /obj/screen/new_player/selection/join_game/Click()
+	var/datum/hud/hud = hud_ref.resolve()
+	if(!istype(hud))
+		return
 	var/mob/new_player/player = hud.mymob
 	sound_to(player, 'sound/effects/menu_click.ogg')
 
@@ -115,6 +119,9 @@
 /obj/screen/new_player/selection/join_game/proc/update_lobby_icon()
 	SIGNAL_HANDLER
 
+	var/datum/hud/hud = hud_ref.resolve()
+	if(!istype(hud))
+		return
 	var/mob/new_player/player = hud.mymob
 
 	if(GAME_STATE <= RUNLEVEL_LOBBY)
@@ -131,6 +138,9 @@
 	screen_loc = "NORTH-1,CENTER-7"
 
 /obj/screen/new_player/selection/settings/Click()
+	var/datum/hud/hud = hud_ref.resolve()
+	if(!istype(hud))
+		return
 	var/mob/new_player/player = hud.mymob
 	sound_to(player, 'sound/effects/menu_click.ogg')
 	player.setupcharacter()
@@ -145,6 +155,9 @@
 	screen_loc = "NORTH-2,CENTER-7"
 
 /obj/screen/new_player/selection/manifest/Click()
+	var/datum/hud/hud = hud_ref.resolve()
+	if(!istype(hud))
+		return
 	var/mob/new_player/player = hud.mymob
 	sound_to(player, 'sound/effects/menu_click.ogg')
 	if(GAME_STATE != (RUNLEVEL_GAME || RUNLEVEL_POSTGAME))
@@ -158,6 +171,9 @@
 	screen_loc = "NORTH-3,CENTER-7"
 
 /obj/screen/new_player/selection/observe/Click()
+	var/datum/hud/hud = hud_ref.resolve()
+	if(!istype(hud))
+		return
 	var/mob/new_player/player = hud.mymob
 	sound_to(player, 'sound/effects/menu_click.ogg')
 	player.new_player_observe()
