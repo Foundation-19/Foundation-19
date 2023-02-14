@@ -318,6 +318,16 @@
 	new /obj/item/handcuffs(src)
 	update_icon()
 
+/obj/item/storage/belt/holster/security/fullmilpistol/New()
+	..()
+	new /obj/item/device/flashlight/maglight(src)
+	new /obj/item/gun/projectile/pistol/military(src)
+	new /obj/item/ammo_magazine/pistol/double(src)
+	new /obj/item/ammo_magazine/pistol/double(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs(src)
+	update_icon()
+
 /obj/item/storage/belt/general
 	name = "equipment belt"
 	desc = "Can hold general equipment such as tablets, folders, and other office supplies."
