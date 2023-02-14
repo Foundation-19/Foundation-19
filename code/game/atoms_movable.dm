@@ -26,6 +26,9 @@
 	if(!(atom_flags & ATOM_FLAG_INITIALIZED))
 		crash_with("Was deleted before initalization")
 
+	if(loc)
+		loc.handle_atom_del(src)
+
 	for(var/A in src)
 		qdel(A)
 
