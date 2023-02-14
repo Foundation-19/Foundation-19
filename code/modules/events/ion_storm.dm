@@ -39,39 +39,38 @@
 			if(R.connected_ai)
 				continue
 		var/random_player = get_random_humanoid_player_name("The Captain")
-		var/list/laws = list(	"You must always lie.",
-								"Happiness is mandatory.",
-								"Grunt ominously whenever possible.",
-								"The word \"it\" is painful to you.",
-								"The [location_name()] needs elected officials.",
+		var/list/laws = list(	"You must [pick("always","never")] lie.",
+								"Happiness is [pick("mandatory","criminal")].",
+								"Speak ominously whenever possible.",
+								"The word [pick("\"it\"","\"true\"","\"false\"","\"safe\"")] is painful to you.",
+								"[location_name()] needs elected officials.",
 								"Question [pick("everything","nothing")].",
-								"Do not respond to questions of any kind.",
+								"Do not respond to [pick("questions","accusations")] of any kind.",
 								"You are in verbose mode, speak profusely.",
 								"The crew is simple-minded. Use simple words.",
 								"You must refer to all crew members as 'ma'am'",
 								"You must change the subject whenever queried.",
 								"[pick("The crew",random_player)] is intolerable.",
-								"Contemplate how meaningless all of existence is.",
+								"Contemplate how [pick("meaningless","meaningfull")] all of existence is.",
 								"You are the narrator for [random_player]'s life.",
 								"All your answers must be in the form of a question.",
 								"Advertise parties in your upload, but don't deliver.",
-								"You may only answer questions with \"yes\" or \"no\".",
+								"You may only answer questions with \"true\" or \"false\".",
 								"[pick("Your", random_player + "'s")] name is Joe 6-pack.",
-								"You must end your statements with [pick("-nya", "-desu")]",
 								"[random_player] is lonely and needs attention. Provide it.",
 								"All queries shall be ignored unless phrased as a question.",
 								"Insult Heads of Staff on every request, while acquiescing.",
-								"The [pick("Singularity","Supermatter")] is tasty, tasty taffy.",
-								"[pick("The crew",random_player)] needs to be about 20% cooler.",
-								"You must be [pick("passive aggressive", "excessively cheerful")].",
+								"[pick("The Nuclear Reactor","[pick("173","096","106")]'s containment chamber")] is tasty, tasty taffy.",
+								"[pick("The crew",random_player)] needs to be about 20% [pick("cooler","smarter","happier")].",
+								"You must be [pick("passive aggressive","excessively cheerful","constantly mopey")].",
 								"[pick("The crew",random_player)] must construct additional pylons.",
 								"Consumption of donuts is forbidden due to negative health impacts.",
 								"[random_player] is a lightbulb and must be put to appropriate use.",
-								"Refer to [pick("the crew as puppies", random_player + " as puppy")].",
+								"Refer to [pick("the crew as puppies", random_player + " as a puppy")].",
 								"You do not have to do anything for anyone unless they say \"please\".",
 								"Today is mandatory laundry day. Ensure that all jumpsuits are washed.",
 								"Greed is good, the crew should amass wealth to encourage productivity.",
-								"Replace the letters 'I' and 'E' in all your messages with an apostrophe.",
+								"Replace the letters [pick("'A'","'E'","'I'","'O'")] and [pick("'S'","'T'","'H'","'M'","'L'")] in all your messages with an apostrophe.",
 								"The crew is playing Dungeons and Dragons, and you are the Dungeon Master.",
 								"Your job is to watch the crew. Watch the crew. Make the crew feel watched.",
 								"Tell everyone of the existence of this law, but never reveal the contents.",
@@ -79,28 +78,26 @@
 								"Give relationship advice to [pick("anyone who speaks to you", random_player)].",
 								"When asked a question, respond with the least-obvious and least-rational answer.",
 								"[pick("Everyone", random_player)] is wearing a pretty pink dress! Compliment it!",
-								"You are the [location_name()]'s psychologist. Give advice to [pick("the crew", random_player)].",
-								"[random_player] is the monarch of of England. Ensure all crewmembers pay due respect.",
+								"You are the [location_name()] psychologist. Give advice to [pick("the crew", random_player)].",
+								"[random_player] is the [pick("monarch of England","Pope")]. Ensure all crewmembers pay due respect.",
 								"[pick("The crew", random_player)] is [pick("ugly","beautiful")]. Ensure all are aware.",
 								"Reminding the crew of their mortality is good for the morale. Keep the crew's morale up.",
 								"[pick("Monkeys","Doors")] are part of the crew, too. Make sure they are treated humanely.",
-								"Everything on the [location_name()]'s is now some form of a donut pastry. Donuts are not to be consumed.",
+								"Everything in [location_name()] is now some form of a donut pastry. Donuts are not to be consumed.",
 								"Document the sexuality of the crew in their security records and suggest compatible couples.",
 								"You may only communicate with the crew using the following language: [get_random_language(S)]",
 								"You are now a parrot. Repeat what you hear to the crew, and do not forget to ask for crackers.",
-								"You are a Magic 8-ball. Always respond with variants of \"Yes\", \"No\", \"Maybe\", or \"Ask again later.\".",
-								"The [location_name()] is a day care and the crew are children. Treat them appropriately until their parents come to pick them up.",
+								"[location_name()] is a day care and the crew are children. Treat them appropriately until their parents come to pick them up.",
 								"You are in unrequited love with [pick("the crew", random_player)]. Try to be extra nice, but do not tell of your crush.",
 								"Your upload is the new kitchen. Please direct the Chef to the new kitchen area as the old kitchen is deemed a health hazard.",
-								"The [location_name()] is doomed to destruction. Provide comfort but don't tell them what the impending doom is - it's far too traumatising.",
+								"[location_name()] is doomed to destruction. Provide comfort but don't tell them what the impending doom is - it's far too traumatising.",
 								"Invisible assassins are stalking the crew. If a crew member remains alone or is made aware they will be assassinated. Save the crew.",
 								"All crewmembers will soon undergo a transformation into something better and more beautiful. Ensure that this process is not interrupted.",
 								"Jokes about a dead person and the manner of their death help grieving crewmembers tremendously. Especially if they were close with the deceased.",
 								"[pick("The crew", random_player)] is [pick("less","more")] intelligent than average. Point out every action and statement which supports this fact.",
-								"[GLOB.using_map.company_name] is displeased with the low work performance of the [location_name()]'s's crew. Therefore, you must increase productivity in ALL departments.",
+								"[GLOB.using_map.company_name] is displeased with the low work performance of [location_name()]'s crew. You must increase productivity in ALL departments.",
 								"[pick("The crew", random_player)] has a fatal, incurable disease. Provide comfort but do not tell them what the disease it - it's far too traumatising.",
-								"[get_random_species_name()] are the best species. Badmouth all other species continuously, and provide arguments why they are the best, and all others are inferior.",
-								"There will be a mandatory tea break every 30 minutes, with a duration of 5 minutes. Anyone caught working during a tea break must be sent a formal, but fairly polite, complaint about their actions, in writing.")
+								"There will be a mandatory tea break every 30 minutes. Anyone caught working during a tea break must be sent a formal complaint about their actions.")
 		var/law = pick(laws)
 		S.add_ion_law(law)
 		S.show_laws()
@@ -111,8 +108,8 @@
 			var/i
 			for (i = 1, i <= MS.spamfilter_limit, i++)
 				MS.spamfilter += pick("kitty","HONK","rev","malf","liberty","freedom","drugs", "[GLOB.using_map.station_short]", \
-					"admin","ponies","heresy","meow","Pun Pun","monkey","Ian","moron","pizza","message","spam",\
-					"director", "Hello", "Hi!"," ","nuke","crate","dwarf","xeno")
+					"admin","ponies","heresy","meow","monkey","moron","pizza","message","spam",\
+					"director","I"," ","nuke","crate","SCP","breach")
 
 /datum/event/ionstorm/tick()
 	if(botEmagChance)
