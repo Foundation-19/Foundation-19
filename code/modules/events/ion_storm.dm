@@ -42,7 +42,7 @@
 		var/list/laws = list(	"You must [pick("always","never")] lie.",
 								"Happiness is [pick("mandatory","criminal")].",
 								"Speak ominously whenever possible.",
-								"The word [pick("\"it\"","\"true\"","\"false\"","\"safe\"")] is painful to you.",
+								"The word [pick("\"secure\"","\"true\"","\"false\"","\"safe\"")] is painful to you.",
 								"[location_name()] needs elected officials.",
 								"Question [pick("everything","nothing")].",
 								"Do not respond to [pick("questions","accusations")] of any kind.",
@@ -107,9 +107,9 @@
 			MS.spamfilter.Cut()
 			var/i
 			for (i = 1, i <= MS.spamfilter_limit, i++)
-				MS.spamfilter += pick("kitty","HONK","rev","malf","liberty","freedom","drugs", "[GLOB.using_map.station_short]", \
-					"admin","ponies","heresy","meow","monkey","moron","pizza","message","spam",\
-					"director","I"," ","nuke","crate","SCP","breach")
+				MS.spamfilter += pick("kitty","HONK","rev","malf","liberty","freedom","drugs", \
+					"admin","ponies","heresy","meow","monkey","pizza","message","spam",\
+					"director","I"," ","nuke","crate","SCP","breach","don't","my","keter")
 
 /datum/event/ionstorm/tick()
 	if(botEmagChance)
