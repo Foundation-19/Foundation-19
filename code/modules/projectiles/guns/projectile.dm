@@ -48,6 +48,13 @@
 			ammo_magazine = new magazine_type(src)
 	update_icon()
 
+/obj/item/gun/projectile/handle_atom_del(atom/A)
+	if(A == ammo_magazine)
+		ammo_magazine = null
+	if(A == chambered)
+		chambered = null
+	LAZYREMOVE(loaded, A)
+
 /obj/item/gun/projectile/consume_next_projectile()
 	if(!is_jammed && prob(jam_chance))
 		src.visible_message("<span class='danger'>\The [src] jams!</span>")

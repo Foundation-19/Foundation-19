@@ -633,3 +633,9 @@ its easier to just keep the beam vertical.
 	L.Weaken(2)
 	L.visible_message(SPAN_WARNING("\The [L] [pick("ran", "slammed")] into \the [src]!"))
 	playsound(L, "punch", 25, 1, FALSE)
+
+/**
+ * This proc is called when an atom in our contents has it's [Destroy][/atom/proc/Destroy] called
+ */
+/atom/proc/handle_atom_del(atom/deleting_atom)
+	return
