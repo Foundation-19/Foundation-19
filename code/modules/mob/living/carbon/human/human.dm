@@ -1824,6 +1824,11 @@
 
 /mob/living/carbon/human/proc/do_zoom(turf/T)
 	if(!zoomed)
+		if(!isturf(src.loc))
+			return
+		if(stat)
+			return
+
 		var/turf/position = get_turf(src)
 		var/detla_x = T.x - position.x
 		var/delta_y = T.y - position.y
