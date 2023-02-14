@@ -66,15 +66,45 @@
 	icon = "alohasnackbar"
 	desc = "A tasteful, inoffensive tiki bar sign."
 
+/datum/barsign/armoksbargrill
+	name = "Armok's Bar and Grill"
+	icon = "armoksbargrill"
+	desc = ""
+
+/datum/barsign/brokendrum
+	name = "The Broken Drum"
+	icon = "brokendrum"
+	desc = ""
+
 /datum/barsign/drunkengod
 	name = "Church of the Drunken God"
 	icon = "drunkengod"
 	desc = "The drunk answers only to Beer, for his mouth consumes His body."
 
-/datum/barsign/thecoderbus
+/datum/barsign/cavern
+	name = "The Cavern"
+	icon = "cavern"
+	desc = ""
+
+/datum/barsign/cindikate
+	name = "Cindi Kate's"
+	icon = "cindikate"
+	desc = ""
+
+/datum/barsign/clownshead
+	name = "The Clown's Head"
+	icon = "clownshead"
+	desc = ""
+
+/datum/barsign/coderbus
 	name = "The Coderbus"
 	icon = "coderbus"
 	desc = "A very controversial bar known for its wide variety of constantly-changing drinks."
+
+/datum/barsign/damnwall
+	name = "The Damn Wall"
+	icon = "damnwall"
+	desc = ""
 
 /datum/barsign/drunkcarp
 	name = "The Drunk Carp"
@@ -91,12 +121,47 @@
 	icon = "honkednloaded"
 	desc = "Honk."
 
+/datum/barsign/limbo
+	name = "The Limbo"
+	icon = "limbo"
+	desc = ""
+
+/datum/barsign/magmasea
+	name = "The Magma Sea"
+	icon = "magmasea"
+	desc = ""
+
 /datum/barsign/maltesefalcon
 	name = "The Maltese Falcon"
 	icon = "maltesefalcon"
 	desc = "The Maltese Falcon, famous bar and grill."
 
-/datum/barsign/theshaken
+/datum/barsign/meadbay
+	name = "Mead Bay"
+	icon = "meadbay"
+	desc = ""
+
+/datum/barsign/orchard
+	name = "The Orchard"
+	icon = "orchard"
+	desc = ""
+
+/datum/barsign/pinkflamingo
+	name = "The Pink Flamingo"
+	icon = "pinkflamingo"
+	desc = ""
+
+/datum/barsign/rustyaxe
+	name = "The Rusty Axe"
+	icon = "rustyaxe"
+	desc = ""
+
+/datum/barsign/saucyclown
+	name = "The Saucy Clown"
+	icon = "saucyclown"
+	desc = ""
+
+/datum/barsign/shaken
 	name = "The Shaken"
 	icon = "shaken"
 	desc = "This establishment does not serve stirred drinks."
