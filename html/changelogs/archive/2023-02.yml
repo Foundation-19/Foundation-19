@@ -46,3 +46,19 @@
   - bugfix: fixed OOC color on dark theme
   - bugfix: fixed movement keys not working after restart in certain cases
   - bugfix: fixed runtime in _access.dm:188
+2023-02-14:
+  Tsurupeta:
+  - rscadd: Added new explosions subsystem.
+  - balance: Disabled gas spawning from TTV and fueltank explosions.
+  - rscadd: Traitors now have package bombs with detonator in their uplink.
+  - code_imp: Changed how walls and turfs explode, which should result in better looking
+      results.
+  - bugfix: fixed a lot of things not being deleted in explosion.
+  - rscdel: Removed SCP-457 until it's author fixes it (likely never) or I add it
+      back with full rework.
+  cheesePizza2:
+  - code_imp: Cryopod runtime on clientless bodies fixed.
+2023-02-15:
+  Teragenic:
+  - rscadd: M79 GL has been added to MTF.
+  - bugfix: Loadouts for GOC and other ERTs have been fixed.

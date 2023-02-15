@@ -23,6 +23,7 @@
 	var/paint_color
 	var/base_color // The windows initial color. Used for resetting purposes.
 	var/repair_pending = 0 // Amount of health pending repair once the window is welded
+	var/real_explosion_block // ignore this, just use explosion_block
 	rad_resistance_modifier = 0.5
 	blend_objects = list(/obj/machinery/door, /turf/simulated/wall) // Objects which to blend with
 	noblend_objects = list(/obj/machinery/door/window)
@@ -84,6 +85,10 @@
 	update_connections(1)
 	update_icon()
 	update_nearby_tiles(need_rebuild=1)
+
+	// windows only block while reinforced and fulltile, so we'll use the proc
+	real_explosion_block = explosion_block
+	explosion_block = EXPLOSION_BLOCK_PROC
 
 /obj/structure/window/Destroy()
 	set_density(0)
@@ -155,6 +160,9 @@
 	if(new_death_state)
 		shatter()
 
+/obj/structure/window/GetExplosionBlock()
+	return reinf_material && (construction_state == 5) ? real_explosion_block : 0
+
 /obj/structure/window/proc/get_glass_cost()
 	return is_fulltile() ? 4 : 1
 
@@ -175,10 +183,17 @@
 	qdel(src)
 
 /obj/structure/window/ex_act(severity)
-	if(severity == 1)
-		qdel(src)
-		return
-	..()
+	switch(severity)
+		if(EXPLODE_DEVASTATE)
+			qdel(src)
+			return
+		if(EXPLODE_HEAVY)
+			shatter(0)
+			return
+		if(EXPLODE_LIGHT)
+			if(prob(50))
+				shatter(0)
+				return
 
 /obj/structure/window/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(istype(mover) && mover.checkpass(PASS_FLAG_GLASS))
@@ -591,6 +606,7 @@
 	name = "phoron window"
 	color = GLASS_COLOR_PHORON
 	init_material = MATERIAL_PHORON_GLASS
+	explosion_block = 1
 
 /obj/structure/window/phoronbasic/full
 	dir = 5
@@ -602,6 +618,7 @@
 	color = GLASS_COLOR_PHORON
 	init_material = MATERIAL_PHORON_GLASS
 	init_reinf_material = MATERIAL_STEEL
+	explosion_block = 2
 
 /obj/structure/window/phoronreinforced/full
 	dir = 5
@@ -612,6 +629,7 @@
 	icon_state = "rwindow"
 	init_material = MATERIAL_GLASS
 	init_reinf_material = MATERIAL_STEEL
+	explosion_block = 1
 
 /obj/structure/window/reinforced/full
 	dir = 5
@@ -633,6 +651,7 @@
 	basestate = "w"
 	reinf_basestate = "w"
 	dir = 5
+	explosion_block = 3
 
 /obj/structure/window/reinforced/polarized
 	name = "electrochromic window"

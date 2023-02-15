@@ -178,3 +178,15 @@
 	connections = dirs_to_corner_states(dirs)
 	other_connections = dirs_to_corner_states(other_dirs)
 	return TRUE
+
+/obj/structure/ex_act(severity)
+	switch(severity)
+		if(EXPLODE_DEVASTATE)
+			qdel(src)
+			return
+		if(EXPLODE_HEAVY)
+			if(prob(50))
+				qdel(src)
+				return
+		if(EXPLODE_LIGHT)
+			return

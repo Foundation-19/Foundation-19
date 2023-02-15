@@ -32,13 +32,14 @@
 			add_overlay(image(icon, "ammo_ok"))
 
 /obj/item/gun/projectile/pistol/military
-	name = "military pistol"
-	desc = "The Hephaestus Industries P20 - a mass produced kinetic sidearm in widespread service with the SCGDF."
+	name = "GOC Glock pistol"
+	desc = "Standard issue pistol for GOC personnel. Chambered in 10mm."
 	magazine_type = /obj/item/ammo_magazine/pistol/double
-	allowed_magazines = /obj/item/ammo_magazine/pistol/double
+	allowed_magazines = /obj/item/ammo_magazine/pistol/double 
 	icon = 'icons/obj/guns/military_pistol.dmi'
 	icon_state = "military"
 	item_state = "secgundark"
+	caliber = "10mm"
 	safety_icon = "safety"
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2)
 	fire_delay = 7

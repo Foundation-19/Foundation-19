@@ -60,7 +60,7 @@
 
 /obj/item/clothing/head/solgov/utility/marine/urban
 	name = "urban utility cover"
-	desc = "A grey utility cover bearing the crest of the SCG Marine Corps."
+	desc = "A grey utility cover bearing the crest of the Marine Corps."
 	icon_state = "greyutility"
 
 //Service

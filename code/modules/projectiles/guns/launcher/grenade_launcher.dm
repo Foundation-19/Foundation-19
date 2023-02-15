@@ -39,9 +39,9 @@
 	if(next)
 		grenades -= next //Remove grenade from loaded list.
 		chambered = next
-		to_chat(M, "<span class='warning'>You pump [src], loading \a [next] into the chamber.</span>")
+		to_chat(M, SPAN_WARNING("You pump [src], loading \a [next] into the chamber."))
 	else
-		to_chat(M, "<span class='warning'>You pump [src], but the magazine is empty.</span>")
+		to_chat(M, SPAN_WARNING("You pump [src], but the magazine is empty."))
 	update_icon()
 
 /obj/item/gun/launcher/grenade/examine(mob/user, distance)
@@ -57,7 +57,7 @@
 		return
 
 	if(grenades.len >= max_grenades)
-		to_chat(user, "<span class='warning'>\The [src] is full.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] is full."))
 		return
 	if(!user.unEquip(G, src))
 		return
@@ -71,7 +71,7 @@
 		user.put_in_hands(G)
 		user.visible_message("\The [user] removes \a [G] from [src].", "<span class='notice'>You remove \a [G] from \the [src].</span>")
 	else
-		to_chat(user, "<span class='warning'>\The [src] is empty.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] is empty."))
 
 /obj/item/gun/launcher/grenade/attack_self(mob/user)
 	pump(user)
@@ -102,7 +102,7 @@
 
 /obj/item/gun/launcher/grenade/proc/can_load_grenade_type(obj/item/grenade/G, mob/user)
 	if(is_type_in_list(G, blacklisted_grenades) && ! is_type_in_list(G, whitelisted_grenades))
-		to_chat(user, "<span class='warning'>\The [G] doesn't seem to fit in \the [src]!</span>")
+		to_chat(user, SPAN_WARNING("\The [G] doesn't seem to fit in \the [src]!"))
 		return FALSE
 	return TRUE
 
@@ -142,7 +142,7 @@
 		return
 
 	if(chambered)
-		to_chat(user, "<span class='warning'>\The [src] is already loaded.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] is already loaded."))
 		return
 	if(!user.unEquip(G, src))
 		return
@@ -155,4 +155,38 @@
 		user.visible_message("\The [user] removes \a [chambered] from \the[src].", "<span class='notice'>You remove \a [chambered] from \the [src].</span>")
 		chambered = null
 	else
-		to_chat(user, "<span class='warning'>\The [src] is empty.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] is empty."))
+
+/obj/item/gun/launcher/grenade/thumper
+	name = "m79 grenade launcher"
+	desc = "A single barrel multi-purpose grenade launcher. Durable and reliable, most commonly used by the GOC and the UIU."
+	icon_state = "thumper"
+	item_state = "thumper"
+	fire_sound = 'sound/weapons/gun_thump.ogg'
+	w_class = ITEM_SIZE_NORMAL
+	force = 20 //Funny butt-stock melee attack
+	max_grenades = 0 //Forces one in the chamber
+
+/obj/item/gun/launcher/grenade/thumper/attack_self()
+	return
+
+//load and unload directly into chambered
+/obj/item/gun/launcher/grenade/thumper/load(obj/item/grenade/G, mob/user)
+	if(!can_load_grenade_type(G, user))
+		return
+
+	if(chambered)
+		to_chat(user, SPAN_WARNING("\The [src] is already loaded."))
+		return
+	if(!user.unEquip(G, src))
+		return
+	chambered = G
+	user.visible_message("\The [user] load \a [G] into \the [src].", "<span class='notice'>You load \a [G] into \the [src].</span>")
+
+/obj/item/gun/launcher/grenade/thumper/unload(mob/user)
+	if(chambered)
+		user.put_in_hands(chambered)
+		user.visible_message("\The [user] removes \a [chambered] from \the[src].", "<span class='notice'>You remove \a [chambered] from \the [src].</span>")
+		chambered = null
+	else
+		to_chat(user, SPAN_WARNING("\The [src] is empty."))
