@@ -571,24 +571,6 @@
 			return global.message_delay;
 		if("message_servers")
 			return global.message_servers;
-		if("meteors_armageddon")
-			return global.meteors_armageddon;
-		if("meteors_cataclysm")
-			return global.meteors_cataclysm;
-		if("meteors_catastrophic")
-			return global.meteors_catastrophic;
-		if("meteors_dust")
-			return global.meteors_dust;
-		if("meteors_major")
-			return global.meteors_major;
-		if("meteors_minor")
-			return global.meteors_minor;
-		if("meteors_moderate")
-			return global.meteors_moderate;
-		if("meteors_normal")
-			return global.meteors_normal;
-		if("meteors_threatening")
-			return global.meteors_threatening;
 		if("mil_branches")
 			return global.mil_branches;
 		if("mimic_defines")
@@ -1460,24 +1442,6 @@
 			global.message_delay=newval;
 		if("message_servers")
 			global.message_servers=newval;
-		if("meteors_armageddon")
-			global.meteors_armageddon=newval;
-		if("meteors_cataclysm")
-			global.meteors_cataclysm=newval;
-		if("meteors_catastrophic")
-			global.meteors_catastrophic=newval;
-		if("meteors_dust")
-			global.meteors_dust=newval;
-		if("meteors_major")
-			global.meteors_major=newval;
-		if("meteors_minor")
-			global.meteors_minor=newval;
-		if("meteors_moderate")
-			global.meteors_moderate=newval;
-		if("meteors_normal")
-			global.meteors_normal=newval;
-		if("meteors_threatening")
-			global.meteors_threatening=newval;
 		if("mil_branches")
 			global.mil_branches=newval;
 		if("mimic_defines")
