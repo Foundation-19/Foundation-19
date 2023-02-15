@@ -24,6 +24,14 @@
 		pixel_y = rand(-randpixel, randpixel)
 	. = ..()
 
+/obj/item/ammo_casing/Destroy()
+	QDEL_NULL(BB)
+	return ..()
+
+/obj/item/ammo_casing/handle_atom_del(atom/A)
+	if(A == BB)
+		BB = null
+
 //removes the projectile from the ammo casing
 /obj/item/ammo_casing/proc/expend()
 	. = BB
@@ -130,6 +138,14 @@
 	if(initial_ammo)
 		for(var/i in 1 to initial_ammo)
 			stored_ammo += new ammo_type(src)
+	update_icon()
+
+/obj/item/ammo_magazine/Destroy()
+	QDEL_NULL_LIST(stored_ammo)
+	return ..()
+
+/obj/item/ammo_magazine/handle_atom_del(atom/A)
+	stored_ammo -= A
 	update_icon()
 
 /obj/item/ammo_magazine/attackby(obj/item/W as obj, mob/user as mob)

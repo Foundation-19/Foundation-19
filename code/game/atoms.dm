@@ -17,6 +17,9 @@
 	var/list/orbiters = null
 	var/datum/scp/SCP //For SCP's
 
+	///Value used to increment ex_act() if reactionary_explosions is on
+	var/explosion_block = 0
+
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
 	if(GLOB.use_preloader && (src.type == GLOB._preloader.target_path))//in case the instanciated atom is creating other atoms in New()
@@ -630,3 +633,9 @@ its easier to just keep the beam vertical.
 	L.Weaken(2)
 	L.visible_message(SPAN_WARNING("\The [L] [pick("ran", "slammed")] into \the [src]!"))
 	playsound(L, "punch", 25, 1, FALSE)
+
+/**
+ * This proc is called when an atom in our contents has it's [Destroy][/atom/proc/Destroy] called
+ */
+/atom/proc/handle_atom_del(atom/deleting_atom)
+	return

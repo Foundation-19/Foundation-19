@@ -301,7 +301,7 @@
 
 /obj/item/clothing/under/solgov/utility/marine/urban
 	name = "urban fatigues"
-	desc = "An urban version of the SCG marine utility uniform, made from durable material."
+	desc = "An urban version of the marine utility uniform, made from durable material."
 	icon_state = "greyutility"
 	item_state = "gy_suit"
 	worn_state = "greyutility"

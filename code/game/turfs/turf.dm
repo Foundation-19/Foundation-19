@@ -39,6 +39,8 @@
 	/// List of 'dangerous' objs that the turf holds that can cause something bad to happen when stepped on, used for AI mobs.
 	var/list/dangerous_objects
 
+	var/list/explosion_throw_details
+
 /turf/Initialize(mapload, ...)
 	. = ..()
 	if(dynamic_lighting)
@@ -364,6 +366,9 @@ var/const/enterloopsanity = 100
 
 /turf/proc/is_floor()
 	return FALSE
+
+/turf/proc/get_roof_turf()
+	return
 
 /turf/proc/get_obstruction()
 	if (density)

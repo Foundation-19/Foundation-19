@@ -20,6 +20,9 @@ var/list/mining_floors = list()
 /turf/unsimulated/mineral/is_wall()
 	return TRUE
 
+/turf/unsimulated/mineral/get_roof_turf()
+	return /turf/simulated/floor/asteroid
+
 /turf/simulated/mineral
 	name = "rock"
 	icon = 'icons/turf/walls.dmi'
@@ -572,3 +575,6 @@ var/list/mining_floors = list()
 				attackby(R.module_state_3,R)
 			else
 				return
+
+/turf/simulated/mineral/get_roof_turf()
+	return /turf/simulated/floor/asteroid
