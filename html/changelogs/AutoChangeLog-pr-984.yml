@@ -1,5 +1,0 @@
-author: Teragenic
-delete-after: true
-changes:
-  - rscadd: M79 GL has been added to MTF.
-  - bugfix: Loadouts for GOC and other ERTs have been fixed.

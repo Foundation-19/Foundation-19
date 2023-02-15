@@ -58,3 +58,7 @@
       back with full rework.
   cheesePizza2:
   - code_imp: Cryopod runtime on clientless bodies fixed.
+2023-02-15:
+  Teragenic:
+  - rscadd: M79 GL has been added to MTF.
+  - bugfix: Loadouts for GOC and other ERTs have been fixed.
