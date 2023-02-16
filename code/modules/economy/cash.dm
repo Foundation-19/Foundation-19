@@ -83,11 +83,11 @@
 		banknote.transform = M
 		src.add_overlay(banknote)
 
-	src.desc = "It's worth [worth] [GLOB.using_map.local_currency_name]."
+	src.desc = "It's worth [worth][GLOB.using_map.local_currency_name_short]."
 	if(worth in denominations)
 		src.SetName("[worth] [GLOB.using_map.local_currency_name]")
 	else
-		src.SetName("pile of [worth] [GLOB.using_map.local_currency_name]")
+		src.SetName("pile of [GLOB.using_map.local_currency_name]")
 
 	if(overlays.len <= 2)
 		w_class = ITEM_SIZE_TINY
@@ -123,43 +123,43 @@
 	worth = 1
 
 /obj/item/spacecash/bundle/c10
-	name = "10 dollar"
+	name = "10 dollars"
 	icon_state = "cash10"
 	desc = "It's worth 10 dollars."
 	worth = 10
 
 /obj/item/spacecash/bundle/c20
-	name = "20 dollar"
+	name = "20 dollars"
 	icon_state = "cash20"
 	desc = "It's worth 20 dollars."
 	worth = 20
 
 /obj/item/spacecash/bundle/c50
-	name = "50 dollar"
+	name = "50 dollars"
 	icon_state = "cash50"
 	desc = "It's worth 50 dollars."
 	worth = 50
 
 /obj/item/spacecash/bundle/c100
-	name = "100 dollar"
+	name = "100 dollars"
 	icon_state = "cash100"
 	desc = "It's worth 100 dollars."
 	worth = 100
 
 /obj/item/spacecash/bundle/c200
-	name = "200 dollar"
+	name = "200 dollars"
 	icon_state = "cash200"
 	desc = "It's worth 200 dollars."
 	worth = 200
 
 /obj/item/spacecash/bundle/c500
-	name = "500 dollar"
+	name = "500 dollars"
 	icon_state = "cash500"
 	desc = "It's worth 500 dollars."
 	worth = 500
 
 /obj/item/spacecash/bundle/c1000
-	name = "1000 dollar"
+	name = "1000 dollars"
 	icon_state = "cash1000"
 	desc = "It's worth 1000 dollars."
 	worth = 1000
