@@ -59,6 +59,9 @@
 		return
 
 	var/list/modifiers = params2list(params)
+	if(modifiers["right"] && modifiers["ctrl"])
+		CtrlRightClickOn(A)
+		return 1
 	if(modifiers["shift"] && modifiers["ctrl"])
 		CtrlShiftClickOn(A)
 		return 1
@@ -328,6 +331,19 @@
 	pointed(A)
 
 /atom/proc/CtrlAltClick(mob/user)
+	return
+
+
+/*
+	Rclick.
+*/
+
+///Called when a owner mob Ctrl + Rightmouseclicks an atom, given that Ctrlclick does not return TRUE
+/mob/proc/CtrlRightClickOn(atom/A)
+	A.CtrlRightClick(src)
+
+///Called when a mob Ctrl + Rightmouseclicks on atom
+/atom/proc/CtrlRightClick(mob/user)
 	return
 
 /*

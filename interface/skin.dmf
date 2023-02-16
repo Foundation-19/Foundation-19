@@ -1,4 +1,13 @@
 macro "default"
+	elem ".winset :map.right-click=true"
+		name = "CTRL+Ctrl"
+	elem "Ctrl"
+		name = "CTRL"
+		command = ".winset :map.right-click=true"
+	elem "CtrlUp"
+		name = "CTRL+UP"
+		command = ".winset :map.right-click=false"
+
 
 menu "menu"
 	elem
