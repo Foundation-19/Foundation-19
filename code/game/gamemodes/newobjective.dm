@@ -1196,13 +1196,13 @@ datum
 
 			cash	//must be in credits - atm and coins don't count
 				var/steal_amount = 2000
-				explanation_text = "Beg, borrow or steal 2000 credits."
+				explanation_text = "Beg, borrow or steal 2000 funds."
 				weight = 20
 
 				New(var/text,var/joba)
 					..(text,joba)
 					steal_amount = 1250 + rand(0,3750)
-					explanation_text = "Beg, borrow or steal [steal_amount] credits."
+					explanation_text = "Beg, borrow or steal [steal_amount] funds."
 
 				get_points(var/job)
 					return 10 + 25 * round(steal_amount / 5000)
