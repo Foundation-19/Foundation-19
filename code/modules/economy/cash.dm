@@ -3,7 +3,7 @@
 	desc = "It's worth 0 dollars."
 	gender = PLURAL
 	icon = 'icons/obj/cash.dmi'
-	icon_state = "spacecash1"
+	icon_state = "cash1"
 	opacity = 0
 	density = FALSE
 	anchored = FALSE
@@ -48,7 +48,7 @@
 
 /obj/item/spacecash/bundle
 	name = "pile of dollars"
-	icon_state = "spacecash1"
+	icon_state = "cash1"
 	desc = "It's worth 0 dollars."
 	worth = 0
 
@@ -64,9 +64,9 @@
 		while(sum >= i && num < 10)
 			sum -= i
 			num++
-			. += "spacecash[i]"
+			. += "cash[i]"
 	if(num == 0) // Less than one dollar, let's just make it look like 1 for ease
-		. += "spacecash1"
+		. += "cash1"
 
 /obj/item/spacecash/bundle/on_update_icon()
 	cut_overlays()
@@ -118,49 +118,49 @@
 
 /obj/item/spacecash/bundle/c1
 	name = "1 dollar"
-	icon_state = "spacecash1"
+	icon_state = "cash1"
 	desc = "It's worth 1 dollar."
 	worth = 1
 
 /obj/item/spacecash/bundle/c10
 	name = "10 dollar"
-	icon_state = "spacecash10"
+	icon_state = "cash10"
 	desc = "It's worth 10 dollars."
 	worth = 10
 
 /obj/item/spacecash/bundle/c20
 	name = "20 dollar"
-	icon_state = "spacecash20"
+	icon_state = "cash20"
 	desc = "It's worth 20 dollars."
 	worth = 20
 
 /obj/item/spacecash/bundle/c50
 	name = "50 dollar"
-	icon_state = "spacecash50"
+	icon_state = "cash50"
 	desc = "It's worth 50 dollars."
 	worth = 50
 
 /obj/item/spacecash/bundle/c100
 	name = "100 dollar"
-	icon_state = "spacecash100"
+	icon_state = "cash100"
 	desc = "It's worth 100 dollars."
 	worth = 100
 
 /obj/item/spacecash/bundle/c200
 	name = "200 dollar"
-	icon_state = "spacecash200"
+	icon_state = "cash200"
 	desc = "It's worth 200 dollars."
 	worth = 200
 
 /obj/item/spacecash/bundle/c500
 	name = "500 dollar"
-	icon_state = "spacecash500"
+	icon_state = "cash500"
 	desc = "It's worth 500 dollars."
 	worth = 500
 
 /obj/item/spacecash/bundle/c1000
 	name = "1000 dollar"
-	icon_state = "spacecash1000"
+	icon_state = "cash1000"
 	desc = "It's worth 1000 dollars."
 	worth = 1000
 
