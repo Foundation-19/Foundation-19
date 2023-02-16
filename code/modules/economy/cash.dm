@@ -72,7 +72,7 @@
 	cut_overlays()
 	var/list/images = src.getMoneyImages()
 
-	icon_state = images[1]	// if we don't do this, there will be an extra image
+	icon_state = images[1]	// since images are overlayed on top of the icon, we need to use one of the images as the icon state
 	images -= images[1]
 
 	for(var/A in images)
