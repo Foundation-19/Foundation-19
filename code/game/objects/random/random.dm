@@ -881,7 +881,7 @@
 /obj/random/cash
 	name = "random currency"
 	desc = "LOADSAMONEY!"
-	icon = 'icons/obj/items.dmi'
+	icon = 'icons/obj/cash.dmi'
 	icon_state = "spacecash1"
 
 /obj/random/cash/spawn_choices()
