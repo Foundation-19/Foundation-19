@@ -1833,7 +1833,7 @@
 		var/detla_x = T.x - position.x
 		var/delta_y = T.y - position.y
 
-		if(abs(detla_x) >7 || bas(delta_y) > 7)
+		if(abs(detla_x) > 7 || abs(delta_y) > 7)
 			return
 
 		hide_cone()
