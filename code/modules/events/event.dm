@@ -41,11 +41,10 @@
 
 	return total_weight
 
-/datum/event_meta/extended_penalty
-	var/penalty = 100 // A simple penalty gives admins the ability to increase the weight to again be part of the random event selection
+/datum/event_meta/extended_removed // will not spawn if gamemode is extended
 
-/datum/event_meta/extended_penalty/get_weight()
-	return ..() - (istype(SSticker.mode, /datum/game_mode/extended) ? penalty : 0)
+/datum/event_meta/extended_removed/get_weight()
+	return (istype(SSticker.mode, /datum/game_mode/extended) ? ..() : 0)
 
 /datum/event_meta/no_overmap/get_weight() //these events have overmap equivalents, and shouldn't fire randomly if overmap is used
 	return GLOB.using_map.use_overmap ? 0 : ..()
