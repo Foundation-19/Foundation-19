@@ -371,9 +371,11 @@
 	switch(severity)
 		if(1)
 			qdel(src)
+			return
 		if(2)
 			if(prob(25))
 				qdel(src)
+				return
 			else
 				take_damage(100)
 			take_damage(200)

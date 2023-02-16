@@ -186,3 +186,8 @@
  */
 /obj/proc/is_safe_to_step(mob/living/L)
 	return TRUE
+
+
+///returns how much the object blocks an explosion. Used by subtypes.
+/obj/proc/GetExplosionBlock()
+	CRASH("Unimplemented GetExplosionBlock()")

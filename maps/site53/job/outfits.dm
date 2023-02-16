@@ -615,8 +615,9 @@
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_cargo
 
+// EVENT OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/command/event/mtfbasic
-	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Agent")
+	name = OUTFIT_JOB_NAME("MTF Tactical Response Agent")
 	uniform = /obj/item/clothing/under/ert
 	suit = /obj/item/clothing/suit/armor/mtftactical
 	head = /obj/item/clothing/head/helmet/mtftactical
@@ -624,10 +625,11 @@
 	shoes = /obj/item/clothing/shoes/swat
 	id_types = list(/obj/item/card/id/mtf)
 	l_ear = /obj/item/device/radio/headset/ert
+	back = /obj/item/storage/backpack/satchel
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/mtf_epsilon1
-	name = OUTFIT_JOB_NAME("MTF Epsilon-6 Agent Alpha")
-	uniform = /obj/item/clothing/under/frontier
+	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Basic")
+	uniform = /obj/item/clothing/under/ert
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
 	head = /obj/item/clothing/head/helmet/site53/guard/mtf_epsilon
 	mask = /obj/item/clothing/mask/balaclava/tactical
@@ -642,11 +644,12 @@
 	r_pocket = /obj/item/grenade/flashbang
 	l_ear = /obj/item/device/radio/headset/ert
 	belt = /obj/item/gun/projectile/silenced
+	back = /obj/item/storage/backpack/rucksack
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 2,/obj/item/grenade/frag = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/ammo_magazine/c45m = 2,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/mtf_epsilon2
-	name = OUTFIT_JOB_NAME("MTF Epsilon-6 Agent Bravo")
-	uniform = /obj/item/clothing/under/det/grey
+	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Breacher")
+	uniform = /obj/item/clothing/under/ert
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
 	head = /obj/item/clothing/head/helmet/site53/guard/mtf_epsilon
 	mask = /obj/item/clothing/mask/balaclava/tactical
@@ -661,11 +664,12 @@
 	r_pocket = /obj/item/grenade/flashbang
 	l_ear = /obj/item/device/radio/headset/ert
 	belt = /obj/item/gun/projectile/silenced
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 2,/obj/item/ammo_magazine/c45m = 2,/obj/item/clothing/accessory/storage/bandolier = 1,/obj/item/clothing/mask/gas = 1)
+	back = /obj/item/storage/backpack/rucksack
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 2,/obj/item/ammo_magazine/shotholder/shell = 6,/obj/item/clothing/accessory/storage/bandolier = 1,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/mtf_epsilon3
-	name = OUTFIT_JOB_NAME("MTF Epsilon-6 Agent Charlie")
-	uniform = /obj/item/clothing/under/syndicate/combat
+	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Team Leader")
+	uniform = /obj/item/clothing/under/ert
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
 	head = /obj/item/clothing/head/helmet/site53/guard/mtf_epsilon/leader
 	mask = /obj/item/clothing/mask/balaclava
@@ -679,12 +683,13 @@
 	l_pocket = /obj/item/grenade/smokebomb
 	r_pocket = null
 	l_ear = /obj/item/device/radio/headset/ert
-	belt = /obj/item/gun/projectile/revolver/webley/captain
+	belt = /obj/item/storage/belt/holster/security/fullmateba
+	back = /obj/item/storage/backpack/rucksack
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/grenade/frag = 1,/obj/item/crowbar/red = 1,/obj/item/ammo_magazine/scp/m16_mag = 3,/obj/item/ammo_magazine/c44 = 4,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/mtf_epsilon4
-	name = OUTFIT_JOB_NAME("MTF Epsilon-6 Agent Delta")
-	uniform = /obj/item/clothing/under/rank/psych/turtleneck/sweater
+	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Medic")
+	uniform = /obj/item/clothing/under/ert
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
 	head = /obj/item/clothing/head/helmet/site53/guard/mtf_epsilon/medic
 	mask = /obj/item/clothing/mask/balaclava
@@ -699,11 +704,12 @@
 	r_pocket = null
 	l_ear = /obj/item/device/radio/headset/ert
 	belt = /obj/item/defibrillator/compact/combat/loaded
+	back = /obj/item/storage/backpack/rucksack
 	backpack_contents = list(/obj/item/ammo_magazine/scp/p90_mag/ap = 3,/obj/item/clothing/mask/gas = 1,/obj/item/reagent_containers/ivbag/blood/OMinus = 2,/obj/item/storage/pill_bottle/zoom = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/eta_soldier //See No Evil
 	name = OUTFIT_JOB_NAME("MTF Eta-10 Agent Alpha")
-	uniform = /obj/item/clothing/under/frontier
+	uniform = /obj/item/clothing/under/ert
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/eta
 	head = /obj/item/clothing/head/helmet/scp/eta
 	mask = /obj/item/clothing/mask/balaclava/tactical
@@ -718,11 +724,12 @@
 	r_pocket = /obj/item/ammo_magazine/scp
 	l_ear = /obj/item/device/radio/headset/ert
 	belt = /obj/item/gun/projectile/pistol
+	back = /obj/item/storage/backpack/rucksack
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 1,/obj/item/grenade/frag = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/clothing/mask/gas = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/beta_soldier //Maz Hatters
 	name = OUTFIT_JOB_NAME("MTF Beta-7 Agent Alpha")
-	uniform = /obj/item/clothing/under/frontier
+	uniform = /obj/item/clothing/under/tactical
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/beta
 	head = /obj/item/clothing/head/helmet/scp/beta
 	mask = /obj/item/clothing/mask/balaclava/tactical
@@ -737,9 +744,10 @@
 	r_pocket = /obj/item/ammo_magazine/scp
 	l_ear = /obj/item/device/radio/headset/ert
 	belt = /obj/item/gun/projectile/pistol
+	back = /obj/item/storage/backpack/rucksack
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/clothing/mask/gas = 1)
 
-/decl/hierarchy/outfit/job/site90/crew/command/event/hammerdown //if this ever sees use, an admin really wants someone dead
+/decl/hierarchy/outfit/job/site90/crew/command/event/hammerdown //Generic army MTF
 	name = OUTFIT_JOB_NAME("MTF Nu-7 Soldier")
 	uniform = /obj/item/clothing/under/tactical
 	suit = /obj/item/clothing/suit/armor/mtfheavy
@@ -750,13 +758,34 @@
 	shoes = /obj/item/clothing/shoes/combat
 	id_types = list(/obj/item/card/id/mtf)
 	suit_store = null
+	r_hand = /obj/item/gun/projectile/automatic/scp/m16
+	l_hand = null
+	l_pocket = /obj/item/grenade/frag
+	r_pocket = /obj/item/grenade/flashbang/clusterbang //gods must be strong
+	l_ear = /obj/item/device/radio/headset/ert
+	belt = /obj/item/storage/belt/holster/security/tactical
+	back = /obj/item/storage/backpack/rucksack
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/scp/m16_mag = 5, /obj/item/plastique = 2, /obj/item/grenade/frag = 1, /obj/item/crowbar/red = 1) //Actual util
+
+/decl/hierarchy/outfit/job/site90/crew/command/event/redrighthand //if this ever sees use, an admin really wants someone dead
+	name = OUTFIT_JOB_NAME("MTF Alpha-1 Operative")
+	uniform = /obj/item/clothing/under/scp/alpha 
+	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/alpha
+	mask = /obj/item/clothing/mask/gas/alpha
+	head = /obj/item/clothing/head/beret/scp/alpha
+	gloves = /obj/item/clothing/gloves/tactical/alpha
+	glasses = /obj/item/clothing/glasses/night
+	shoes = /obj/item/clothing/shoes/combat
+	id_types = list(/obj/item/card/id/mtf)
+	suit_store = null
 	r_hand = /obj/item/gun/projectile/automatic/t12
 	l_hand = null
 	l_pocket = /obj/item/grenade/frag
 	r_pocket = /obj/item/grenade/flashbang/clusterbang //gods must be strong
 	l_ear = /obj/item/device/radio/headset/ert
 	belt = /obj/item/storage/belt/holster/security/tactical
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/t12 = 15) //all you need is kill
+	back = /obj/item/storage/backpack/rucksack
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/t12 = 5, /obj/item/plastique = 2, /obj/item/grenade/frag = 5, /obj/item/crowbar/red = 1) //Breach and clear.
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/chaos_soldier
 	name = OUTFIT_JOB_NAME("Chaos Insurgency Soldier")
@@ -775,6 +804,7 @@
 	r_pocket = /obj/item/card/emag
 	l_ear = /obj/item/device/radio/headset/ert
 	belt = /obj/item/gun/projectile/automatic/machine_pistol
+	back = /obj/item/storage/backpack/rucksack/tan
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/clothing/mask/gas = 1,/obj/item/ammo_magazine/scp/ak = 3,/obj/item/ammo_magazine/c45uzi = 2,/obj/item/grenade/smokebomb = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/chaos_soldier_alt
@@ -794,6 +824,7 @@
 	r_pocket = /obj/item/card/emag
 	l_ear = /obj/item/device/radio/headset/ert
 	belt = /obj/item/gun/projectile/shotgun/doublebarrel/sawn
+	back = /obj/item/storage/backpack/rucksack/tan
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/scp/ak/big = 5,/obj/item/clothing/mask/gas = 1,/obj/item/grenade/frag = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/chaos_leader
@@ -813,34 +844,36 @@
 	r_pocket = /obj/item/card/emag
 	l_ear = /obj/item/device/radio/headset/ert
 	belt = /obj/item/material/sword/katana
+	back = /obj/item/storage/backpack/rucksack/tan
 	backpack_contents = list(/obj/item/storage/box/ifak = 1, /obj/item/grenade/smokebomb = 3)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/ungoc
 	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Trooper")
-	uniform = /obj/item/clothing/under/syndicate/combat
-	suit = /obj/item/clothing/suit/storage/vest
-	head = /obj/item/clothing/head/helmet/merc
+	uniform = /obj/item/clothing/head/solgov/utility/marine/urban
+	suit = /obj/item/clothing/suit/armor/goc
+	head = /obj/item/clothing/head/helmet/scp/goc
 	mask = /obj/item/clothing/mask/gas
-	glasses = /obj/item/clothing/glasses/night
+	glasses = null
 	gloves = /obj/item/clothing/gloves/thick/combat
 	shoes = /obj/item/clothing/shoes/combat
 	id_types = list(/obj/item/card/id/physics)
 	suit_store = null
-	r_hand = /obj/item/gun/projectile/automatic/scp/ak74
+	r_hand = /obj/item/gun/projectile/automatic/scp/fnfal
 	l_hand = /obj/item/grenade/frag
 	l_pocket = /obj/item/ammo_magazine/scp
 	r_pocket = /obj/item/card/emag
 	l_ear = /obj/item/device/radio/headset/ert
-	belt = /obj/item/storage/belt/holster/security/tactical
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/handcuffs = 1,/obj/item/ammo_magazine/scp/ak = 10,/obj/item/clothing/accessory/ubac/green = 1,/obj/item/clothing/accessory/armor/helmcover/blue/sol = 1)
+	belt = /obj/item/storage/belt/holster/security/fullmilpistol
+	back = /obj/item/storage/backpack/rucksack/blue
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/handcuffs = 1,/obj/item/ammo_magazine/scp/fnfal=6)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/ungoc/gunner
 	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Machinegunner") //I am heavy weapons guy
-	uniform = /obj/item/clothing/under/syndicate/combat
-	suit = /obj/item/clothing/suit/storage/vest
-	head = /obj/item/clothing/head/helmet/merc
-	mask = /obj/item/clothing/mask/gas
-	glasses = /obj/item/clothing/glasses/night
+	uniform = /obj/item/clothing/head/solgov/utility/marine/urban
+	suit = /obj/item/clothing/suit/armor/goc
+	head = /obj/item/clothing/head/helmet/scp/goc
+	mask = /obj/item/clothing/mask/gas/half
+	glasses = /obj/item/clothing/glasses/tacgoggles
 	gloves = /obj/item/clothing/gloves/thick/combat
 	shoes = /obj/item/clothing/shoes/combat
 	id_types = list(/obj/item/card/id/physics)
@@ -850,35 +883,38 @@
 	l_pocket = /obj/item/grenade/frag
 	r_pocket = /obj/item/card/emag
 	l_ear = /obj/item/device/radio/headset/ert
-	belt = /obj/item/storage/belt/holster/security/tactical
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/handcuffs = 1, /obj/item/ammo_magazine/box/machinegun = 10,/obj/item/clothing/accessory/ubac/green = 1,/obj/item/clothing/accessory/armor/helmcover/blue/sol = 1)
+	belt = /obj/item/storage/belt/holster/security/fullmilpistol
+	back = /obj/item/storage/backpack/rucksack/blue
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/handcuffs = 1, /obj/item/ammo_magazine/box/machinegun = 4)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/ungoc/grenadier
 	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Grenadier")
-	uniform = /obj/item/clothing/under/syndicate/combat
-	suit = /obj/item/clothing/suit/storage/vest
-	head = /obj/item/clothing/head/helmet/merc
-	mask = /obj/item/clothing/mask/gas
-	glasses = /obj/item/clothing/glasses/night
+	uniform = /obj/item/clothing/head/solgov/utility/marine/urban
+	suit = /obj/item/clothing/suit/armor/goc
+	head = /obj/item/clothing/head/helmet/scp/goc
+	mask = /obj/item/clothing/mask/gas/half
+	glasses = /obj/item/clothing/glasses/tacgoggles
 	gloves = /obj/item/clothing/gloves/thick/combat
 	shoes = /obj/item/clothing/shoes/combat
 	id_types = list(/obj/item/card/id/physics)
 	suit_store = null
-	r_hand = /obj/item/gun/launcher/grenade // LEEEET'S DO IIIT
+	r_hand = /obj/item/gun/launcher/grenade/thumper // LEEEET'S DO IIIT
 	l_hand = /obj/item/material/hatchet/tacknife
 	l_pocket = /obj/item/plastique
 	r_pocket = /obj/item/card/emag
 	l_ear = /obj/item/device/radio/headset/ert
-	belt = /obj/item/storage/belt/holster/security/tactical
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/fragshells = 8,/obj/item/clothing/accessory/ubac/green = 1,/obj/item/clothing/accessory/armor/helmcover/blue/sol = 1,/obj/item/clothing/accessory/storage/bandolier = 1)
+	belt = /obj/item/storage/belt/holster/security/fullmilpistol
+	back = /obj/item/storage/backpack/rucksack/blue
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/fragshells = 5,/obj/item/clothing/accessory/storage/bandolier = 1)
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/ungoc/leader
 	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Team Leader")
-	suit = /obj/item/clothing/suit/storage/vest
-	mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/helmet/merc
+	uniform = /obj/item/clothing/head/solgov/utility/marine/urban
+	suit = /obj/item/clothing/suit/armor/goc
+	mask = /obj/item/clothing/mask/gas/half
+	head = /obj/item/clothing/head/helmet/scp/goc
 	gloves = /obj/item/clothing/gloves/thick/combat
-	glasses = /obj/item/clothing/glasses/thermal/plain/jensen
+	glasses = /obj/item/clothing/glasses/tacgoggles
 	shoes = /obj/item/clothing/shoes/combat
 	id_types = list(/obj/item/card/id/physics)
 	suit_store = null
@@ -887,8 +923,9 @@
 	l_pocket = /obj/item/grenade/frag
 	r_pocket = /obj/item/card/emag
 	l_ear = /obj/item/device/radio/headset/ert
-	belt = /obj/item/storage/belt/holster/security/tactical
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/handcuffs = 1,/obj/item/ammo_magazine/scp/ak/big = 10,/obj/item/clothing/accessory/ubac/green = 1,/obj/item/clothing/accessory/armor/helmcover/blue/sol = 1)
+	belt = /obj/item/storage/belt/holster/security/fullmilpistol
+	back = /obj/item/storage/backpack/rucksack/blue
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/handcuffs = 1,/obj/item/ammo_magazine/scp/ak/big = 3)
 
 // FULLY GEARED (for zombies)
 

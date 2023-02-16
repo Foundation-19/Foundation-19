@@ -175,3 +175,6 @@ GLOBAL_LIST_EMPTY(simulated_turfs_scp106)
 	if(GAME_STATE >= RUNLEVEL_GAME)
 		fluid_update()
 	. = ..()
+
+/turf/simulated/get_roof_turf()
+	return /turf/simulated/open
