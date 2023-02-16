@@ -2,7 +2,7 @@
 	name = "0 dollars"
 	desc = "It's worth 0 dollars."
 	gender = PLURAL
-	icon = 'icons/obj/items.dmi'
+	icon = 'icons/obj/cash.dmi'
 	icon_state = "spacecash1"
 	opacity = 0
 	density = FALSE
@@ -76,7 +76,7 @@
 	images -= images[1]
 
 	for(var/A in images)
-		var/image/banknote = image('icons/obj/items.dmi', A)
+		var/image/banknote = image('icons/obj/cash.dmi', A)
 		var/matrix/M = matrix()
 		M.Translate(rand(-6, 6), rand(-4, 8))
 		M.Turn(pick(-90, -45, 0, 0, 0, 0, 45, 90))
