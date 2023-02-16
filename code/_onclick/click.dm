@@ -338,11 +338,11 @@
 	Rclick.
 */
 
-///Called when a owner mob Ctrl + Rightmouseclicks an atom, given that Ctrlclick does not return TRUE
+///Called when a owner Ctrl + Rightmouseclicks an atom
 /mob/proc/CtrlRightClickOn(atom/A)
 	A.CtrlRightClick(src)
 
-///Called when a mob Ctrl + Rightmouseclicks on atom
+///Called when an atom is Ctrl + Rightmouseclicked on by mob
 /atom/proc/CtrlRightClick(mob/user)
 	return
 
