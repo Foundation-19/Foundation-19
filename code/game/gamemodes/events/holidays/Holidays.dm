@@ -105,7 +105,6 @@ var/global/Holiday = null
 			switch(DD)
 				if(10)							Holiday = "Human-Rights Day"
 				if(14)							Holiday = "Monkey Day"
-				if(21)							if(YY==12)	Holiday = "End of the World"
 				if(22)							Holiday = "Orgasming Day"		//lol. These all actually exist
 				if(24)							Holiday = "Christmas Eve"
 				if(25)							Holiday = "Christmas"
@@ -175,8 +174,6 @@ var/global/Holiday = null
 				containers += S
 
 			message_admins("<span class='notice'>DEBUG: Event: Egg spawned at [Egg.loc] ([Egg.x],[Egg.y],[Egg.z])</span>")*/
-		if("End of the World")
-			if(prob(eventchance))	GameOver()
 
 		if("Christmas","Christmas Eve")
 			if(prob(eventchance))	ChristmasEvent()
