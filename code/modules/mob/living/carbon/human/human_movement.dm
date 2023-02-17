@@ -141,8 +141,8 @@
 	if(.) //We moved
 		species.handle_exertion(src)
 		handle_leg_damage()
-		if(zoomed)
-			reset_zoom()
+		if(is_view_shifted)
+			reset_shifted_view()
 
 /mob/living/carbon/human/proc/handle_leg_damage()
 	if(!can_feel_pain())
