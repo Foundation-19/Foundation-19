@@ -8,7 +8,7 @@
 #define ASSIGNMENT_SCIENTIST "Scientist"
 #define ASSIGNMENT_SECURITY "Security"
 
-var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT_LEVEL_MODERATE = "Moderate", EVENT_LEVEL_MAJOR = "Major", EVENT_LEVEL_EXO = "Exoplanet")
+var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT_LEVEL_MODERATE = "Moderate", EVENT_LEVEL_MAJOR = "Major")
 
 /datum/event_container
 	var/severity = -1
@@ -171,13 +171,6 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta/no_overmap(EVENT_LEVEL_MAJOR, "Electrical Storm",				/datum/event/electrical_storm, 			0,		list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_JANITOR = 5)),
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Drone Revolution",						/datum/event/rogue_maint_drones,		0,		list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_MEDICAL = 10, ASSIGNMENT_SECURITY = 20)),
 	)
-
-/datum/event_container/exo
-	severity = EVENT_LEVEL_EXO
-	available_events = list(
-		new /datum/event_meta(EVENT_LEVEL_EXO, "Nothing",									/datum/event/nothing,					100,	list(ASSIGNMENT_ANY = -5))
-	)
-
 
 #undef ASSIGNMENT_ANY
 #undef ASSIGNMENT_AI
