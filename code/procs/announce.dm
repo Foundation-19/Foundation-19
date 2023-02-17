@@ -101,7 +101,7 @@
 	GLOB.using_map.level_x_biohazard_announcement(7)
 
 /proc/ion_storm_announcement(list/affecting_z)
-	command_announcement.Announce("A period of anomalous activity has been detected near [location_name()].  Please monitor all electronic equipment for malfunctions.", "[location_name()] Sensor Array", zlevels = affecting_z)
+	command_announcement.Announce("A period of anomalous activity has been detected near [station_name()].  Please monitor all electronic equipment for malfunctions.", "[station_name()] Sensor Array", zlevels = affecting_z)
 
 /proc/AnnounceArrival(mob/living/carbon/human/character, datum/job/job, join_message)
 	if(!istype(job) || !job.announced)
