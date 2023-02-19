@@ -13,9 +13,6 @@ GLOBAL_LIST_EMPTY(scp457s)
 	SCP = /datum/scp/scp_457
 	status_flags = NO_ANTAG
 	var/door_cooldown
-	var/fuel = 100
-	var/obj/effect/landmark/respawn457/K
-
 	health = 500
 	maxHealth = 500
 
@@ -30,6 +27,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 	var/aflame_cooldown_time = 1.8 SECONDS
 
 	var/area/spawn_area
+	var/obj/effect/landmark/respawner457/X = new /obj/effect/landmark/respawner457(loc)
 
 /mob/living/scp_457/Initialize()
 	GLOB.scp457s += src
@@ -65,6 +63,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 					H.Weaken(10)
 					H.visible_message("<span class='danger'>[src] claws at [H], the flame sending them to the floor!</span>")
 					to_chat(H, "<span class='userdanger'>IT HURTS!!!</span>")
+					health += 5
 					aflame_cooldown = world.time + aflame_cooldown_time
 				return
 			else
@@ -72,6 +71,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 				if(do_after(src, 3 SECONDS, H))
 					H.fire_stacks += 1
 					H.IgniteMob()
+					health += 15
 					aflame_cooldown = world.time + aflame_cooldown_time
 					visible_message("<span class='danger'>[src] claws at [A] setting them alight!</span>")
 					to_chat(H, "<span class='userdanger'>Oh god, oh god. OH GOD! IT HURTS! PLEASE!</span>")
@@ -138,24 +138,32 @@ GLOBAL_LIST_EMPTY(scp457s)
 	var/check = A.open(1)
 	src.visible_message("\The [src] melts \the [A]'s controls[check ? ", and rips it open!" : ", and breaks it!"]")
 
-/mob/living/scp_457/movement_delay()
-	return 5
-
 /datum/reagent/water/touch_mob(var/mob/living/scp_457/M)
-	M.adjustToxLoss(15)
+	M.adjustToxLoss(30)
 	to_chat(M, "<span class='userdanger'>FUEL LESSENS, MAKE THEM PAY...")
 
+/obj/effect/landmark/respawner457
+	name = "respawn"
+
+/obj/effect/landmark/respawner457/proc/Respawn()
+	new /mob/living/scp_457(src.loc)
+	return
+
 /mob/living/scp_457/Life()
-	if(health == 0)
-		death(FALSE, deathmessage="dies, as the last flames are extinguished.", TRUE)
-		update_icons()
-		K.Respawn()
+	if(src.health == 0)
+		src.death(FALSE, "falls on their knees, the flame withering away.", TRUE)
+		src.set_icon_state("fireguy_dead")
+		admin_notice("[src] has died!")
+		sleep(5)
+		X.visible_message("One single flame from [src] reforms, turning itself into a humanoid form once again.")
+		X.Respawn()
+		qdel(src)
 		return
 
-/obj/effect/landmark/respawn457
-	name = "457landmark"
-
-/obj/effect/landmark/respawn457/proc/Respawn()
-	sleep(3)
-	new /mob/living/scp_457(loc)
-	src.visible_message("SCP-457s escaping flame gains enough fuel, and reshapes into a humanoid form, once again.")
+/mob/living/scp_457/UnarmedAttack(atom/G) //todo: compatibility with empty ones
+	var/obj/item/extinguisher/I = G
+	if(istype(I))
+		if(do_after(src, 3 SECONDS, I))
+			src.visible_message("SCP-457 melts [I]!")
+			qdel(I)
+		return
