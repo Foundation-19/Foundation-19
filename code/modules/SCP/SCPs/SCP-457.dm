@@ -15,6 +15,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 	var/door_cooldown
 	health = 500
 	maxHealth = 500
+	var/next_emote = -1
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
@@ -27,7 +28,6 @@ GLOBAL_LIST_EMPTY(scp457s)
 	var/aflame_cooldown_time = 1.8 SECONDS
 
 	var/area/spawn_area
-	var/obj/effect/landmark/respawner457/X = new /obj/effect/landmark/respawner457(loc)
 
 /mob/living/scp_457/Initialize()
 	GLOB.scp457s += src
@@ -38,11 +38,23 @@ GLOBAL_LIST_EMPTY(scp457s)
 	add_language(LANGUAGE_SIGN, FALSE)
 	add_language(LANGUAGE_ENGLISH, TRUE)
 	set_light(0.8, 0.3, 5, l_color = COLOR_ORANGE) //makes 457 emit light
-	return ..()
+	add_verb(src, list(
+		/mob/living/scp_457/proc/burn,
+		/mob/living/scp_457/proc/hungryfuel,
+		/mob/living/scp_457/proc/taunt1,
+		/mob/living/scp_457/proc/taunt2,
+		/mob/living/scp_457/proc/taunt3,
+		/mob/living/scp_457/proc/no,
+		/mob/living/scp_457/proc/yes,
+		/mob/living/scp_457/proc/checkhealth,
+	))
+
+	. = ..()
+	return
 
 /mob/living/scp_457/Destroy()
 	GLOB.scp173s -= src
-	return ..()
+	return
 
 /mob/living/scp_457/UnarmedAttack(atom/A)
 	var/mob/living/carbon/human/H = A
@@ -151,19 +163,66 @@ GLOBAL_LIST_EMPTY(scp457s)
 
 /mob/living/scp_457/Life()
 	if(src.health == 0)
+		var/obj/effect/landmark/respawner457/X = new /obj/effect/landmark/respawner457(loc)
 		src.death(FALSE, "falls on their knees, the flame withering away.", TRUE)
 		src.set_icon_state("fireguy_dead")
-		admin_notice("[src] has died!")
-		sleep(5)
+		sleep(300)
 		X.visible_message("One single flame from [src] reforms, turning itself into a humanoid form once again.")
 		X.Respawn()
 		qdel(src)
 		return
 
-/mob/living/scp_457/UnarmedAttack(atom/G) //todo: compatibility with empty ones
-	var/obj/item/extinguisher/I = G
-	if(istype(I))
-		if(do_after(src, 3 SECONDS, I))
-			src.visible_message("SCP-457 melts [I]!")
-			qdel(I)
-		return
+//457 emotes
+/mob/living/scp_457/proc/burn()
+	set category = "SCP-457"
+	set name = "BURN!"
+	if (world.time >= next_emote)
+		playsound(src, 'sound/scp/voice/SCP457_burn.ogg', 30)
+		next_emote = world.time + 10
+
+/mob/living/scp_457/proc/hungryfuel()
+	set category = "SCP-457"
+	set name = "HUNGRY."
+	if (world.time >= next_emote)
+		playsound(src, 'sound/scp/voice/SCP457_hunger.ogg', 30)
+		next_emote = world.time + 10
+
+/mob/living/scp_457/proc/taunt1()
+	set category = "SCP-457"
+	set name = "Taunt 1"
+	if (world.time >= next_emote)
+		playsound(src, 'sound/scp/voice/SCP457t_1.ogg', 30)
+		next_emote = world.time + 10
+
+/mob/living/scp_457/proc/taunt2()
+	set category = "SCP-457"
+	set name = "Taunt 2"
+	if (world.time >= next_emote)
+		playsound(src, 'sound/scp/voice/SCP457t_2.ogg', 30)
+		next_emote = world.time + 10
+
+/mob/living/scp_457/proc/taunt3()
+	set category = "SCP-457"
+	set name = "Taunt 3"
+	if (world.time >= next_emote)
+		playsound(src, 'sound/scp/voice/SCP457t_3.ogg', 30)
+		next_emote = world.time + 10
+
+/mob/living/scp_457/proc/no()
+	set category = "SCP-457"
+	set name = "NO."
+	if (world.time >= next_emote)
+		playsound(src, 'sound/scp/voice/SCP457_no.ogg', 30)
+		next_emote = world.time + 10
+
+/mob/living/scp_457/proc/yes()
+	set category = "SCP-457"
+	set name = "YES."
+	if (world.time >= next_emote)
+		playsound(src, 'sound/scp/voice/SCP457_yes.ogg', 30)
+		next_emote = world.time + 10
+
+/mob/living/scp_457/proc/checkhealth()
+	set category = "SCP-457"
+	set name = "Check Health"
+	to_chat(src, "HEALTH: [health]")
