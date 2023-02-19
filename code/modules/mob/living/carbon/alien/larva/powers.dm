@@ -1,4 +1,4 @@
-/mob/living/carbon/alien/larva/proc/check_can_infest(var/mob/living/M)
+/mob/living/carbon/alien/larva/proc/check_can_infest(mob/living/M)
 	if(!src)
 		return 0
 	if(!istype(loc, /turf))

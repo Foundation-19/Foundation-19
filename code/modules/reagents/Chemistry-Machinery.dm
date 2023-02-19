@@ -56,7 +56,7 @@
 				qdel(src)
 				return
 
-/obj/machinery/chem_master/attackby(var/obj/item/B as obj, var/mob/user as mob)
+/obj/machinery/chem_master/attackby(obj/item/B as obj, mob/user as mob)
 
 	if(istype(B, /obj/item/reagent_containers/glass))
 
@@ -162,7 +162,7 @@
 				if(useramount)
 					useramount = Clamp(useramount, 0, 200)
 					Topic(href, list("amount" = "[useramount]", "remove" = href_list["removecustom"]), state)
-		
+
 		else if (href_list["pill_dosage"])
 			var/initial_dosage = initial(pill_dosage)
 			var/new_dosage = input("Select a new dosage for your pills.", initial_dosage, "Pill Dosage") as null|num
@@ -171,7 +171,7 @@
 			new_dosage = Clamp(new_dosage, 0, initial_dosage)
 			pill_dosage = new_dosage
 			to_chat(user, SPAN_NOTICE("You configure \the [src] to create pills with a maximum dosage of [pill_dosage] units."))
-		
+
 		else if (href_list["bottle_dosage"])
 			var/initial_dosage = initial(bottle_dosage)
 			var/new_dosage = input("Select a new dosage for your bottles.", initial_dosage, "Bottle Dosage") as null|num
@@ -284,7 +284,7 @@
 	ui_interact(user)
 	return TRUE
 
-/obj/machinery/chem_master/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = TRUE)
+/obj/machinery/chem_master/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = TRUE)
 	if(!(user.client in has_sprites))
 		spawn()
 			has_sprites += user.client
@@ -342,7 +342,7 @@
 			pill_sprite["index"] = i
 			pill_sprite["image"] = "<img src=\"pill[i].png\" />"
 			data["pillSprites"] += list(pill_sprite)
-		
+
 		data["bottleSprites"] = list()
 		for(var/sprite in BOTTLE_SPRITES)
 			var/bottle_sprite = list()
@@ -375,4 +375,4 @@
 #undef CHEMMASTER_OPTIONS_CONDIMENTS
 
 #undef CHEMMASTER_SWITCH_SPRITE_PILL
-#undef CHEMMASTER_SWITCH_SPRITE_BOTTLE 
+#undef CHEMMASTER_SWITCH_SPRITE_BOTTLE

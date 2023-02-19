@@ -24,6 +24,14 @@
 		pixel_y = rand(-randpixel, randpixel)
 	. = ..()
 
+/obj/item/ammo_casing/Destroy()
+	QDEL_NULL(BB)
+	return ..()
+
+/obj/item/ammo_casing/handle_atom_del(atom/A)
+	if(A == BB)
+		BB = null
+
 //removes the projectile from the ammo casing
 /obj/item/ammo_casing/proc/expend()
 	. = BB
@@ -132,6 +140,14 @@
 			stored_ammo += new ammo_type(src)
 	update_icon()
 
+/obj/item/ammo_magazine/Destroy()
+	QDEL_NULL_LIST(stored_ammo)
+	return ..()
+
+/obj/item/ammo_magazine/handle_atom_del(atom/A)
+	stored_ammo -= A
+	update_icon()
+
 /obj/item/ammo_magazine/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/C = W
@@ -212,7 +228,7 @@
 /var/global/list/magazine_icondata_keys = list()
 /var/global/list/magazine_icondata_states = list()
 
-/proc/initialize_magazine_icondata(var/obj/item/ammo_magazine/M)
+/proc/initialize_magazine_icondata(obj/item/ammo_magazine/M)
 	var/typestr = "[M.type]"
 	if(!(typestr in magazine_icondata_keys) || !(typestr in magazine_icondata_states))
 		magazine_icondata_cache_add(M)
@@ -220,7 +236,7 @@
 	M.icon_keys = magazine_icondata_keys[typestr]
 	M.ammo_states = magazine_icondata_states[typestr]
 
-/proc/magazine_icondata_cache_add(var/obj/item/ammo_magazine/M)
+/proc/magazine_icondata_cache_add(obj/item/ammo_magazine/M)
 	var/list/icon_keys = list()
 	var/list/ammo_states = list()
 	var/list/states = icon_states(M.icon)

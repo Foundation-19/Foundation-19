@@ -35,7 +35,7 @@
 	flash_mod =      0.0                    // Unflashable
 
 
-/datum/species/scp049/handle_vision(var/mob/living/carbon/human/scp049/H)
+/datum/species/scp049/handle_vision(mob/living/carbon/human/scp049/H)
 	var/list/vision = H.get_accumulated_vision_handlers()
 	H.update_sight()
 	H.set_sight(H.sight|get_vision_flags(H)|H.equipment_vision_flags|vision[1])

@@ -42,7 +42,7 @@
 		magnetic_process()
 
 	// update the invisibility and icon
-/obj/machinery/magnetic_module/hide(var/intact)
+/obj/machinery/magnetic_module/hide(intact)
 	set_invisibility(intact ? 101 : 0)
 	update_icon()
 
@@ -67,7 +67,7 @@
 
 		Cmd(command, modifier)
 
-/obj/machinery/magnetic_module/proc/Cmd(var/command, var/modifier)
+/obj/machinery/magnetic_module/proc/Cmd(command, modifier)
 	if(command)
 		switch(command)
 			if("set-electriclevel")

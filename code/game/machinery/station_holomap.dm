@@ -56,7 +56,7 @@
 	floor_markings.dir = src.dir
 	update_icon()
 
-/obj/machinery/station_map/attack_hand(var/mob/user)
+/obj/machinery/station_map/attack_hand(mob/user)
 	if(watching_mob && (watching_mob != user))
 		to_chat(user, "<span class='warning'>Someone else is currently watching the holomap.</span>")
 		return
@@ -66,7 +66,7 @@
 	startWatching(user)
 
 // Let people bump up against it to watch
-/obj/machinery/station_map/Bumped(var/atom/movable/AM)
+/obj/machinery/station_map/Bumped(atom/movable/AM)
 	if(!watching_mob && isliving(AM) && AM.loc == loc)
 		startWatching(AM)
 
@@ -80,7 +80,7 @@
 	else
 		return TRUE
 
-/obj/machinery/station_map/proc/startWatching(var/mob/user)
+/obj/machinery/station_map/proc/startWatching(mob/user)
 	if(isliving(user) && anchored && !(stat & (NOPOWER|BROKEN)))
 		if(user.client)
 			holomap_datum.station_map.loc = GLOB.global_hud.holomap  // Put the image on the holomap hud
@@ -100,7 +100,7 @@
 			else
 				to_chat(user, "<span class='notice'>A hologram of the station appears before your eyes.</span>")
 
-/obj/machinery/station_map/attack_ai(var/mob/living/silicon/robot/user)
+/obj/machinery/station_map/attack_ai(mob/living/silicon/robot/user)
 	return // TODO - Implement for AI ~Leshana
 	// user.station_holomap.toggleHolomap(user, isAI(user))
 

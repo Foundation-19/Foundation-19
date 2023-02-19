@@ -15,11 +15,12 @@
 	unacidable = TRUE
 	var/obj/master = null    //A reference to the object in the slot. Grabs or items, generally.
 	var/globalscreen = FALSE //Global screens are not qdeled when the holding mob is destroyed.
-	var/datum/hud/hud
+	var/weakref/hud_ref
+	//var/datum/hud/hud
 
 /obj/screen/Destroy()
 	master = null
-	hud = null
+	hud_ref = null
 	return ..()
 
 /obj/screen/text
@@ -164,7 +165,7 @@
 	screen_loc = ui_acti
 	var/intent = I_HELP
 
-/obj/screen/intent/Click(var/location, var/control, var/params)
+/obj/screen/intent/Click(location, control, params)
 	var/list/P = params2list(params)
 	var/icon_x = text2num(P["icon-x"])
 	var/icon_y = text2num(P["icon-y"])

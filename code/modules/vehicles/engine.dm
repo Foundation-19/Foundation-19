@@ -18,10 +18,10 @@
 /obj/item/engine/proc/use_power()
 	return 0
 
-/obj/item/engine/proc/rev_engine(var/atom/movable/M)
+/obj/item/engine/proc/rev_engine(atom/movable/M)
 	return
 
-/obj/item/engine/proc/putter(var/atom/movable/M)
+/obj/item/engine/proc/putter(atom/movable/M)
 	return
 
 /obj/item/engine/electric
@@ -32,7 +32,7 @@
 	cost_per_move = 200	// W
 	var/obj/item/cell/cell
 
-/obj/item/engine/electric/attackby(var/obj/item/I, var/mob/user)
+/obj/item/engine/electric/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/cell))
 		if(cell)
 			to_chat(user, "<span class='warning'>There is already a cell in \the [src].</span>")
@@ -57,13 +57,13 @@
 		return 0
 	return cell.use(cost_per_move * CELLRATE)
 
-/obj/item/engine/electric/rev_engine(var/atom/movable/M)
+/obj/item/engine/electric/rev_engine(atom/movable/M)
 	M.audible_message("\The [M] beeps, spinning up.")
 
-/obj/item/engine/electric/putter(var/atom/movable/M)
+/obj/item/engine/electric/putter(atom/movable/M)
 	M.audible_message("\The [M] makes one depressed beep before winding down.")
 
-/obj/item/engine/electric/emp_act(var/severity)
+/obj/item/engine/electric/emp_act(severity)
 	if(cell)
 		cell.emp_act(severity)
 	..()
@@ -88,7 +88,7 @@
 	temp_reagents_holder.create_reagents(15)
 	temp_reagents_holder.atom_flags |= ATOM_FLAG_OPEN_CONTAINER
 
-/obj/item/engine/thermal/attackby(var/obj/item/I, var/mob/user)
+/obj/item/engine/thermal/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/reagent_containers) && I.is_open_container())
 		if(istype(I,/obj/item/reagent_containers/food/snacks) || istype(I,/obj/item/reagent_containers/pill))
 			return 0
@@ -136,8 +136,8 @@
 	temp_reagents_holder.reagents.clear_reagents()
 	return use_power()
 
-/obj/item/engine/thermal/rev_engine(var/atom/movable/M)
+/obj/item/engine/thermal/rev_engine(atom/movable/M)
 	M.audible_message("\The [M] rumbles to life.")
 
-/obj/item/engine/electric/putter(var/atom/movable/M)
+/obj/item/engine/electric/putter(atom/movable/M)
 	M.audible_message("\The [M] putters before turning off.")

@@ -95,7 +95,7 @@
 	qdel(G)
 
 //Like grap-put, but for mouse-drop.
-/obj/machinery/bodyscanner/MouseDrop_T(var/mob/target, var/mob/user)
+/obj/machinery/bodyscanner/MouseDrop_T(mob/target, mob/user)
 	if(!istype(target))
 		return
 	if (!CanMouseDrop(target, user))

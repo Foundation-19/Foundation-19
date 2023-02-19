@@ -15,7 +15,7 @@
 	var/is_centcom = 0
 	var/show_assignments = 0
 
-/datum/nano_module/program/card_mod/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/card_mod/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
 	var/obj/item/stock_parts/computer/card_slot/card_slot = program.computer.card_slot
 
@@ -99,7 +99,7 @@
 
 	return formatted
 
-/datum/nano_module/program/card_mod/proc/get_accesses(var/is_centcom = 0)
+/datum/nano_module/program/card_mod/proc/get_accesses(is_centcom = 0)
 	return null
 
 
@@ -218,8 +218,9 @@
 							return
 
 						var/list/to_give = jobdatum.get_access()
+						var/list/operating_types = get_access_ids(operating_access_types)
 						for(var/acc in to_give)
-							if(acc && operating_access_types)
+							if(acc in operating_types)
 								access.Add(acc)
 
 					remove_nt_access(id_card)
@@ -232,7 +233,7 @@
 			if(href_list["allowed"] && computer && can_run(user, 1) && id_card)
 				var/access_type = href_list["access_target"]
 				var/access_allowed = text2num(href_list["allowed"])
-				if(access_type in get_access_ids(ACCESS_TYPE_STATION|ACCESS_TYPE_CENTCOM))
+				if(access_type in get_access_ids(operating_access_types))
 					for(var/access in user_id_card.access)
 						var/region_type = get_access_region_by_id(access_type)
 						if(access in GLOB.using_map.access_modify_region[region_type])
@@ -246,11 +247,11 @@
 	SSnano.update_uis(NM)
 	return 1
 
-/datum/computer_file/program/card_mod/proc/remove_nt_access(var/obj/item/card/id/id_card)
+/datum/computer_file/program/card_mod/proc/remove_nt_access(obj/item/card/id/id_card)
 	id_card.access -= get_access_ids(ACCESS_TYPE_STATION|ACCESS_TYPE_CENTCOM)
 
-/datum/computer_file/program/card_mod/proc/apply_access(var/obj/item/card/id/id_card, var/list/accesses)
+/datum/computer_file/program/card_mod/proc/apply_access(obj/item/card/id/id_card, list/accesses)
 	id_card.access |= accesses
 
-/datum/computer_file/program/card_mod/proc/authorized(var/obj/item/card/id/id_card)
+/datum/computer_file/program/card_mod/proc/authorized(obj/item/card/id/id_card)
 	return id_card && (ACCESS_CHANGE_IDS in id_card.access)

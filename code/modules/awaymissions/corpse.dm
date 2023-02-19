@@ -41,7 +41,7 @@
 	return INITIALIZE_HINT_QDEL
 
 #define HEX_COLOR_TO_RGB_ARGS(X) arglist(GetHexColors(X))
-/obj/effect/landmark/corpse/proc/randomize_appearance(var/mob/living/carbon/human/M, species_choice)
+/obj/effect/landmark/corpse/proc/randomize_appearance(mob/living/carbon/human/M, species_choice)
 	if((spawn_flags & CORPSE_SPAWNER_RANDOM_GENDER))
 		if(species_choice in genders_per_species)
 			M.change_gender(pick(genders_per_species[species_choice]))
@@ -94,7 +94,7 @@
 
 #undef HEX_COLOR_TO_RGB_ARGS
 
-/obj/effect/landmark/corpse/proc/equip_outfit(var/mob/living/carbon/human/M)
+/obj/effect/landmark/corpse/proc/equip_outfit(mob/living/carbon/human/M)
 	var/adjustments = 0
 	adjustments = (spawn_flags & CORPSE_SPAWNER_CUT_SURVIVAL)  ? (adjustments|OUTFIT_ADJUSTMENT_SKIP_SURVIVAL_GEAR) : adjustments
 	adjustments = (spawn_flags & CORPSE_SPAWNER_CUT_ID_PDA)    ? (adjustments|OUTFIT_ADJUSTMENT_SKIP_ID_PDA)        : adjustments

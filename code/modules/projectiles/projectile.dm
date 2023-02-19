@@ -109,7 +109,7 @@
 	return damage_flags
 
 //TODO: make it so this is called more reliably, instead of sometimes by bullet_act() and sometimes not
-/obj/item/projectile/proc/on_hit(var/atom/target, var/blocked = 0, var/def_zone = null)
+/obj/item/projectile/proc/on_hit(atom/target, blocked = 0, def_zone = null)
 	if(blocked >= 100)		return FALSE //Full block
 	if(!isliving(target))	return FALSE
 	if(isanimal(target))	return FALSE
@@ -124,7 +124,7 @@
 	return TRUE
 
 //called when the projectile stops flying because it collided with something
-/obj/item/projectile/proc/on_impact(var/atom/A)
+/obj/item/projectile/proc/on_impact(atom/A)
 	if(damage && damage_type == BURN)
 		var/turf/T = get_turf(A)
 		if(T)
@@ -143,7 +143,7 @@
 	return FALSE
 
 //return TRUE if the projectile should be allowed to pass through after all, FALSE if not.
-/obj/item/projectile/proc/check_penetrate(var/atom/A)
+/obj/item/projectile/proc/check_penetrate(atom/A)
 	return TRUE
 
 //called to launch a projectile
@@ -158,11 +158,11 @@
 	return fire(Angle_override, direct_target)
 
 //called to launch a projectile from a gun
-/obj/item/projectile/proc/launch_from_gun(atom/target, target_zone, mob/user, params, Angle_override, forced_spread, var/obj/item/gun/launcher)
+/obj/item/projectile/proc/launch_from_gun(atom/target, target_zone, mob/user, params, Angle_override, forced_spread, obj/item/gun/launcher)
 	return launch(target, target_zone, user, params)
 
 //sets the click point of the projectile using mouse input params
-/obj/item/projectile/proc/set_clickpoint(var/params)
+/obj/item/projectile/proc/set_clickpoint(params)
 	var/list/mouse_control = params2list(params)
 	if(mouse_control["icon-x"])
 		p_x = text2num(mouse_control["icon-x"])
@@ -176,7 +176,7 @@
 		p_y = between(0, p_y + rand(-radius, radius), world.icon_size)
 
 //Used to change the direction of the projectile in flight.
-/obj/item/projectile/proc/redirect(var/new_x, var/new_y, var/atom/starting_loc, var/mob/new_firer=null, var/is_ricochet = FALSE)
+/obj/item/projectile/proc/redirect(new_x, new_y, atom/starting_loc, mob/new_firer=null, is_ricochet = FALSE)
 	var/turf/starting_turf = get_turf(src)
 	var/turf/new_target = locate(new_x, new_y, src.z)
 
@@ -189,7 +189,7 @@
 	setAngle(new_Angle)
 
 //Called when the projectile intercepts a mob. Returns 1 if the projectile hit the mob, 0 if it missed and should keep flying.
-/obj/item/projectile/proc/attack_mob(var/mob/living/target_mob, var/distance, var/special_miss_modifier=0)
+/obj/item/projectile/proc/attack_mob(mob/living/target_mob, distance, special_miss_modifier=0)
 	if(!istype(target_mob))
 		return
 
@@ -491,7 +491,7 @@
 	check_distance_left()
 
 //Returns true if the target atom is on our current turf and above the right layer
-/obj/item/projectile/proc/can_hit_target(atom/target, var/list/passthrough)
+/obj/item/projectile/proc/can_hit_target(atom/target, list/passthrough)
 	return (target && ((target.layer >= TURF_LAYER + 0.3) || ismob(target)) && (loc == get_turf(target)) && (!(target in passthrough)))
 
 /proc/calculate_projectile_Angle_and_pixel_offsets(mob/user, params)
@@ -674,5 +674,5 @@
 		beam_segments = null
 		QDEL_NULL(beam_index)
 
-/obj/item/projectile/proc/update_effect(var/obj/effect/projectile/effect)
+/obj/item/projectile/proc/update_effect(obj/effect/projectile/effect)
 	return

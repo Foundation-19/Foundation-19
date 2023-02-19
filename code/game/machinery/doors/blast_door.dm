@@ -36,6 +36,7 @@
 	//Most blast doors are infrequently toggled and sometimes used with regular doors anyways,
 	//turning this off prevents awkward zone geometry in places like medbay lobby, for example.
 	block_air_zones = 0
+	explosion_block = 3
 
 	var/begins_closed = TRUE
 	var/material/implicit_material
@@ -214,7 +215,7 @@
 	if(air_group) return 1
 	return ..()
 
-/obj/machinery/door/blast/do_simple_ranged_interaction(var/mob/user)
+/obj/machinery/door/blast/do_simple_ranged_interaction(mob/user)
 	return TRUE
 
 // Used with mass drivers to time the close.
@@ -310,7 +311,7 @@
 /obj/machinery/door/blast/shutters/open
 	begins_closed = FALSE
 
-/obj/machinery/door/blast/shutters/attack_generic(var/mob/user, var/damage)
+/obj/machinery/door/blast/shutters/attack_generic(mob/user, damage)
 	if(stat & BROKEN)
 		qdel(src)
 	..()

@@ -14,7 +14,7 @@
 	command_announcement.Announce("ERROR: Containment breach detected in decontamination zone thirteen.", "[location_name()] Sensor Array", zlevels = affecting_z)
 	adjust_solar_output(1.5)
 
-/datum/event/solar_storm/proc/adjust_solar_output(var/mult = 1)
+/datum/event/solar_storm/proc/adjust_solar_output(mult = 1)
 	if(isnull(base_solar_gen_rate)) base_solar_gen_rate = solar_gen_rate
 	solar_gen_rate = mult * base_solar_gen_rate
 

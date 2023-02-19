@@ -109,7 +109,7 @@ var/list/global/tank_gauge_cache = list()
 					descriptive = "bitterly cold"
 		to_chat(user, SPAN_ITALIC("\The [src] feels [descriptive]."))
 
-/obj/item/tank/attackby(var/obj/item/W, var/mob/user)
+/obj/item/tank/attackby(obj/item/W, mob/user)
 	..()
 	if (istype(loc, /obj/item/assembly))
 		icon = loc
@@ -258,7 +258,7 @@ var/list/global/tank_gauge_cache = list()
 	if (proxyassembly.assembly)
 		proxyassembly.assembly.attack_self(user)
 
-/obj/item/tank/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
+/obj/item/tank/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
 	var/mob/living/carbon/location = null
 
 	if(istype(loc, /obj/item/rig))		// check for tanks in rigs
@@ -333,7 +333,7 @@ var/list/global/tank_gauge_cache = list()
 		toggle_valve(usr)
 		return TOPIC_REFRESH
 
-/obj/item/tank/proc/toggle_valve(var/mob/user)
+/obj/item/tank/proc/toggle_valve(mob/user)
 
 	var/mob/living/carbon/location
 	if(istype(loc,/mob/living/carbon))
@@ -409,7 +409,7 @@ var/list/global/tank_gauge_cache = list()
 	air_contents.react() //cooking up air tanks - add phoron and oxygen, then heat above PHORON_MINIMUM_BURN_TEMPERATURE
 	check_status()
 
-/obj/item/tank/on_update_icon(var/override)
+/obj/item/tank/on_update_icon(override)
 
 	var/list/overlays_to_add
 	if(override && (proxyassembly.assembly || GET_FLAGS(tank_flags, TANK_FLAG_WIRED)))
@@ -467,7 +467,7 @@ var/list/global/tank_gauge_cache = list()
 			if(!T)
 				return
 
-			T.assume_air(air_contents)
+			//T.assume_air(air_contents) // Commented out until hot air is "rebalanced". ~Tsurupeta
 			explosion(
 				get_turf(loc),
 				round(min(BOMBCAP_DVSTN_RADIUS, ((mult)*strength)*0.15)),
@@ -497,7 +497,7 @@ var/list/global/tank_gauge_cache = list()
 			var/turf/simulated/T = get_turf(src)
 			if(!T)
 				return
-			T.assume_air(air_contents)
+			//T.assume_air(air_contents) // Commented out until hot air is "rebalanced". ~Tsurupeta
 			playsound(get_turf(src), 'sound/weapons/gunshot/shotgun.ogg', 20, 1)
 			visible_message("[icon2html(src, viewers(get_turf(src)))] <span class='danger'>\The [src] flies apart!</span>", "<span class='warning'>You hear a bang!</span>")
 			T.hotspot_expose(air_contents.temperature, 70, 1)

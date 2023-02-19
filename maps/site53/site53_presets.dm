@@ -11,7 +11,7 @@
 #define NETWORK_343 "SCP-343 CCTV Network"
 #define NETWORK_895 "SCP-895 CCTV Network (CAUTION!)"
 
-/datum/map/site53/get_network_access(var/network)
+/datum/map/site53/get_network_access(network)
 	switch(network)
 		if(NETWORK_ENGINE)
 			return ACCESS_SECURITY_LVL1
@@ -145,7 +145,7 @@
 	_output_on = TRUE
 	_fully_charged = TRUE
 
-/datum/map/proc/get_shared_network_access(var/network)
+/datum/map/proc/get_shared_network_access(network)
 	switch(network)
 		if(NETWORK_ENGINE)
 			return ACCESS_SECURITY_LVL1

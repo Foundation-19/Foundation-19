@@ -1,4 +1,4 @@
-/proc/create_prefab_from_assembly(var/obj/item/device/electronic_assembly/assembly)
+/proc/create_prefab_from_assembly(obj/item/device/electronic_assembly/assembly)
 	var/decl/prefab/ic_assembly/new_prefab = new() //We are making a prefabricated assembly. This is actually not too hard, just tedious.
 	new_prefab.assembly_name = assembly.name //Set easy stuff like name, type, shell, etc.
 	new_prefab.assembly_type = assembly.type
@@ -47,7 +47,7 @@
 	return new_prefab //We are DONE!
 
 
-/decl/prefab/proc/create(var/atom/location)
+/decl/prefab/proc/create(atom/location)
 	if(!location)
 		CRASH("Invalid location supplied: [log_info_line(location)]")
 
@@ -60,7 +60,7 @@
 	var/list/value_presets = list()
 	var/list/connections = list()
 
-/decl/prefab/ic_assembly/create(var/atom/location)
+/decl/prefab/ic_assembly/create(atom/location)
 	..()
 	var/obj/item/device/electronic_assembly/assembly = new assembly_type(location)
 	assembly.SetName(assembly_name || assembly.name)
@@ -95,7 +95,7 @@
 	var/circuit_type
 	var/circuit_name
 
-/datum/ic_assembly_integrated_circuits/proc/create_circuit(var/obj/item/device/electronic_assembly/assembly, var/list/circuits)
+/datum/ic_assembly_integrated_circuits/proc/create_circuit(obj/item/device/electronic_assembly/assembly, list/circuits)
 	var/obj/circuit = new circuit_type()
 	circuit.SetName(circuit_name || circuit.name)
 	circuits += circuit
@@ -113,7 +113,7 @@
 	var/pin_type
 	var/value
 
-/datum/ic_assembly_value_preset/proc/set_value(var/list/circuits)
+/datum/ic_assembly_value_preset/proc/set_value(list/circuits)
 	var/obj/item/integrated_circuit/circuit = circuits[circuit_index]
 	return circuit.set_pin_data(pin_type, io_pin_index, value)
 
@@ -136,7 +136,7 @@
 	var/pin_type_a
 	var/pin_type_b
 
-/datum/ic_assembly_connection/proc/connect(var/list/circuits)
+/datum/ic_assembly_connection/proc/connect(list/circuits)
 	var/obj/item/integrated_circuit/circuit_a = circuits[circuit_index_a]
 	var/obj/item/integrated_circuit/circuit_b = circuits[circuit_index_b]
 

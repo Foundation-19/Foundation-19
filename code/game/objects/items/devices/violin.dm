@@ -13,7 +13,7 @@
 	var/edit = 1
 	var/repeat = 0
 
-/obj/item/device/violin/proc/playnote(var/note as text)
+/obj/item/device/violin/proc/playnote(note as text)
 //	log_debug("Note: [note]")
 
 	var/soundfile

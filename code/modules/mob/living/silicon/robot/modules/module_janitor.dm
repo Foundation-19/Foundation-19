@@ -28,7 +28,7 @@
 	emag.reagents.add_reagent(/datum/reagent/slippery_oil, 250)
 	emag.SetName("Slippery oil spray")
 
-/obj/item/robot_module/janitor/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/janitor/respawn_consumable(mob/living/silicon/robot/R, amount)
 	..()
 	var/obj/item/device/lightreplacer/LR = locate() in equipment
 	LR.Charge(R, amount)

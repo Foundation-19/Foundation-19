@@ -4,6 +4,7 @@
 	icon_state = "riveted"
 	opacity = 1
 	density = TRUE
+	explosion_block = 1
 
 /turf/unsimulated/wall/is_wall()
 	return TRUE

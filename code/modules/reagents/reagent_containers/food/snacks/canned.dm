@@ -20,7 +20,7 @@
 	sealed = FALSE
 	update_icon()
 
-/obj/item/reagent_containers/food/snacks/canned/attack_self(var/mob/user)
+/obj/item/reagent_containers/food/snacks/canned/attack_self(mob/user)
 	if(sealed)
 		playsound(loc,'sound/effects/canopen.ogg', rand(10,50), 1)
 		to_chat(user, "<span class='notice'>You unseal \the [src] with a crack of metal.</span>")
@@ -67,7 +67,7 @@
 	food_reagents = list(/datum/reagent/drink/juice/tomato = 12)
 
 
-/obj/item/reagent_containers/food/snacks/canned/tomato/feed_sound(var/mob/user)
+/obj/item/reagent_containers/food/snacks/canned/tomato/feed_sound(mob/user)
 	playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), 1)
 
 /obj/item/reagent_containers/food/snacks/canned/spinach

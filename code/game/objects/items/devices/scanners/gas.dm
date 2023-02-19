@@ -16,7 +16,7 @@
 /obj/item/device/scanner/gas/get_header()
 	return "[..()]<a href='?src=\ref[src];switchmode=1'>Switch Mode</a>"
 
-/obj/item/device/scanner/gas/OnTopic(var/user, var/list/href_list)
+/obj/item/device/scanner/gas/OnTopic(user, list/href_list)
 	..()
 	if(href_list["switchmode"])
 		++mode
@@ -42,7 +42,7 @@
 	scan_data = jointext(scan_data, "<br>")
 	user.show_message(SPAN_NOTICE(scan_data))
 
-/proc/atmosanalyzer_scan(var/atom/target, var/datum/gas_mixture/mixture, mode)
+/proc/atmosanalyzer_scan(atom/target, datum/gas_mixture/mixture, mode)
 	. = list()
 	. += "Results of the analysis of \the [target]:"
 	if(!mixture)

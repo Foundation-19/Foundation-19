@@ -1,6 +1,10 @@
-/turf/proc/ReplaceWithLattice(var/material)
-	if(type != /turf/simulated/open) //tbh, we just need this to return open space, since I'm pretty sure the only thing that calls this is ladders
-		src.ChangeTurf(/turf/simulated/open)
+/turf/proc/ReplaceWithLattice(material)
+	var/turf/below = GetBelow(src)
+	if(type != /turf/simulated/open)
+		if(!below)
+			ChangeTurf(get_base_turf(z))
+		else
+			ChangeTurf(/turf/simulated/open)
 	if(!locate(/obj/structure/lattice) in src)
 		new /obj/structure/lattice(src, material)
 
@@ -16,7 +20,7 @@
 		above.update_mimic()
 
 //Creates a new turf
-/turf/proc/ChangeTurf(var/turf/N, var/tell_universe = TRUE, var/force_lighting_update = FALSE, var/keep_air = FALSE)
+/turf/proc/ChangeTurf(turf/N, tell_universe = TRUE, force_lighting_update = FALSE, keep_air = FALSE)
 	if (!N)
 		return
 

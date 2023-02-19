@@ -123,7 +123,7 @@ Works together with spawning an observer, noted above.
 		process_medHUD(src)
 
 
-/mob/observer/ghost/proc/process_medHUD(var/mob/M)
+/mob/observer/ghost/proc/process_medHUD(mob/M)
 	var/client/C = M.client
 	for(var/mob/living/carbon/human/patient in oview(M, 14))
 		C.images += patient.hud_list[HEALTH_HUD]
@@ -137,7 +137,7 @@ Works together with spawning an observer, noted above.
 		C.images += target.hud_list[SPECIALROLE_HUD]
 	return 1
 
-/mob/proc/ghostize(var/can_reenter_corpse = CORPSE_CAN_REENTER)
+/mob/proc/ghostize(can_reenter_corpse = CORPSE_CAN_REENTER)
 	// Are we the body of an aghosted admin? If so, don't make a ghost.
 	if(teleop && istype(teleop, /mob/observer/ghost))
 		var/mob/observer/ghost/G = teleop
@@ -277,7 +277,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	else
 		to_chat(src, "<span class='warning'>Invalid coordinates.</span>")
 
-/mob/observer/ghost/verb/follow(var/mob/fh in GLOB.player_list)
+/mob/observer/ghost/verb/follow(mob/fh in GLOB.player_list)
 	set category = "Ghost"
 	set name = "Follow"
 	set desc = "Follow a player"
@@ -287,7 +287,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 	start_following(fh)
 
-/mob/observer/ghost/verb/jumptomob(var/mob/M in SSmobs.mob_list)
+/mob/observer/ghost/verb/jumptomob(mob/M in SSmobs.mob_list)
 	set category = "Ghost"
 	set name = "Jump to Mob"
 	set desc = "Jump to any mob"
@@ -300,7 +300,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 	ghost_to_turf(T)
 
-/mob/observer/ghost/proc/ghost_to_turf(var/turf/target_turf)
+/mob/observer/ghost/proc/ghost_to_turf(turf/target_turf)
 	if(check_is_holy_turf(target_turf))
 		to_chat(src, "<span class='warning'>The target location is holy grounds!</span>")
 		return
@@ -316,7 +316,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		make_floating(1)
 	return
 
-/mob/observer/ghost/start_following(var/atom/a)
+/mob/observer/ghost/start_following(atom/a)
 	..()
 	to_chat(src, "<span class='notice'>Now following \the [following].</span>")
 	var/icon/I = icon(a.icon, a.icon_state, a.dir)
@@ -332,7 +332,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		update_floating()
 	..()
 
-/mob/observer/ghost/keep_following(var/atom/movable/am, var/old_loc, var/new_loc)
+/mob/observer/ghost/keep_following(atom/movable/am, old_loc, new_loc)
 	var/turf/T = get_turf(new_loc)
 	if(check_is_holy_turf(T))
 		to_chat(src, "<span class='warning'>You cannot follow something standing on holy grounds!</span>")
@@ -448,7 +448,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	return ..()
 
-/mob/observer/ghost/proc/try_possession(var/mob/living/M)
+/mob/observer/ghost/proc/try_possession(mob/living/M)
 	if(!config.ghosts_can_possess_animals)
 		to_chat(src, "<span class='warning'>Ghosts are not permitted to possess animals.</span>")
 		return 0
@@ -462,7 +462,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	usr.visible_message("<span class='deadsay'><b>[src]</b> points to [A]</span>")
 	return 1
 
-/mob/observer/ghost/proc/show_hud_icon(var/icon_state, var/make_visible)
+/mob/observer/ghost/proc/show_hud_icon(icon_state, make_visible)
 	if(!hud_images)
 		hud_images = list()
 	var/image/hud_image = hud_images[icon_state]
@@ -519,7 +519,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		client.images |= ghost_sightless_images
 	client.images -= ghost_image //remove ourself
 
-/mob/observer/ghost/MayRespawn(var/feedback = 0, var/respawn_time = 0)
+/mob/observer/ghost/MayRespawn(feedback = 0, respawn_time = 0)
 	if(!client)
 		return 0
 	if(mind && mind.current && mind.current.stat != DEAD && can_reenter_corpse == CORPSE_CAN_REENTER)
@@ -539,13 +539,13 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	return 1
 
-/proc/isghostmind(var/datum/mind/player)
+/proc/isghostmind(datum/mind/player)
 	return player && !isnewplayer(player.current) && (!player.current || isghost(player.current) || (isliving(player.current) && player.current.stat == DEAD) || !player.current.client)
 
-/mob/proc/check_is_holy_turf(var/turf/T)
+/mob/proc/check_is_holy_turf(turf/T)
 	return 0
 
-/mob/observer/ghost/check_is_holy_turf(var/turf/T)
+/mob/observer/ghost/check_is_holy_turf(turf/T)
 	if(shall_check_if_holy() && is_holy_turf(T))
 		return TRUE
 
@@ -556,7 +556,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return FALSE
 	return TRUE
 
-/mob/observer/ghost/proc/set_appearance(var/mob/target)
+/mob/observer/ghost/proc/set_appearance(mob/target)
 	var/pre_alpha = alpha
 	var/pre_plane = plane
 	var/pre_layer = layer

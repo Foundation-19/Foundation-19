@@ -27,6 +27,6 @@
 	progress_message = "You secure the handle and the blade together."
 	product = /obj/item/material/knife/folding/combat/balisong
 
-/decl/crafting_stage/screwdriver/balisong/get_product(var/obj/item/work)
+/decl/crafting_stage/screwdriver/balisong/get_product(obj/item/work)
 	var/obj/item/material/butterflyblade/blade = locate() in work
 	. = ispath(product, /obj/item/material) && new product(get_turf(work), blade && blade.material && blade.material.name)

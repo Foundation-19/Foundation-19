@@ -38,7 +38,7 @@
 
 // Changes the area of T to A. Do not do this manually.
 // Area is expected to be a non-null instance.
-/proc/ChangeArea(var/turf/T, var/area/A)
+/proc/ChangeArea(turf/T, area/A)
 	if(!istype(A))
 		CRASH("Area change attempt failed: invalid area supplied.")
 	var/area/old_area = get_area(T)
@@ -68,7 +68,7 @@
 /area/proc/is_shuttle_locked()
 	return 0
 
-/area/proc/atmosalert(danger_level, var/alarm_source)
+/area/proc/atmosalert(danger_level, alarm_source)
 	if (danger_level == 0)
 		GLOB.atmosphere_alarm.clearAlarm(src, alarm_source)
 	else
@@ -202,7 +202,7 @@
 	//	new lighting behaviour with obj lights
 		icon_state = null
 
-/area/proc/set_lightswitch(var/new_switch)
+/area/proc/set_lightswitch(new_switch)
 	if(lightswitch != new_switch)
 		lightswitch = new_switch
 		for(var/obj/machinery/light_switch/L in src)
@@ -210,7 +210,7 @@
 		update_icon()
 		power_change()
 
-/area/proc/set_emergency_lighting(var/enable)
+/area/proc/set_emergency_lighting(enable)
 	for(var/obj/machinery/light/M in src)
 		M.set_emergency_lighting(enable)
 
@@ -236,7 +236,7 @@ var/list/mob/living/forced_ambiance_list = new
 	play_ambience(L)
 	L.lastarea = newarea
 
-/area/proc/play_ambience(var/mob/living/L)
+/area/proc/play_ambience(mob/living/L)
 	// Ambience goes down here -- make sure to list each area seperately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch
 	if(!(L?.client && L.get_preference_value(/datum/client_preference/play_ambiance) == GLOB.PREF_YES))	return
 
@@ -267,7 +267,7 @@ var/list/mob/living/forced_ambiance_list = new
 		L.playsound_local(T, sound(pick(ambience), repeat = 0, wait = 0, volume = 15, channel = GLOB.lobby_sound_channel))
 		L.client.played = world.time
 
-/area/proc/gravitychange(var/gravitystate = 0)
+/area/proc/gravitychange(gravitystate = 0)
 	has_gravity = gravitystate
 
 	for(var/mob/M in src)
@@ -284,7 +284,7 @@ var/list/mob/living/forced_ambiance_list = new
 
 	if(istype(mob,/mob/living/carbon/human/))
 		var/mob/living/carbon/human/H = mob
-		if(!H.buckled && prob(H.skill_fail_chance(SKILL_EVA, 100, SKILL_MASTER)))
+		if(!H.buckled && prob(H.skill_fail_chance(SKILL_HAULING, 100, SKILL_MASTER)))
 			if(!MOVING_DELIBERATELY(H))
 				H.AdjustStunned(6)
 				H.AdjustWeakened(6)

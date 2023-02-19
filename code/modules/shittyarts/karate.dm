@@ -15,7 +15,7 @@
 	desc = "Harm Harm Disarm Harm - Chestkick - damages victim and sends them flying\n\
 			Disarm Disarm Harm - Kneehaul - knocks victim down into 2-second stun"
 
-/datum/martial_art/brazil_karate/handle_streak(var/mob/living/carbon/human/owner, var/mob/living/carbon/human/D)
+/datum/martial_art/brazil_karate/handle_streak(mob/living/carbon/human/owner, mob/living/carbon/human/D)
 	if(findtext(streak, "AADA"))
 		owner.visible_message(SPAN_DANGER("[owner] kicks [D] square in the chest, sending them flying!"))
 		playsound(owner.loc, 'sound/weapons/punch1.ogg', 25, 1, -1)

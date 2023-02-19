@@ -124,7 +124,7 @@
 	..()
 	M.confused += 1.5
 
-/datum/reagent/toxin/taxine/overdose(var/mob/living/carbon/M, var/alien)
+/datum/reagent/toxin/taxine/overdose(mob/living/carbon/M, alien)
 	..()
 	if (ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -145,7 +145,7 @@
 	heating_point = null
 	heating_products = null
 
-/datum/reagent/toxin/potassium_chloride/overdose(var/mob/living/carbon/M, var/alien)
+/datum/reagent/toxin/potassium_chloride/overdose(mob/living/carbon/M, alien)
 	..()
 	if (ishuman(M))
 		var/mob/living/carbon/human/H = M

@@ -301,7 +301,7 @@ regen() will cover update_icon() for this proc
 			if(!reported_low_damage)
 				report_shield_status("low")
 
-/obj/effect/blob/core/proc/report_shield_status(var/status)
+/obj/effect/blob/core/proc/report_shield_status(status)
 	if(status == "low")
 		visible_message(SPAN_DANGER("The [src]'s tendril shield fails, leaving the nucleus vulnerable!"), 3)
 		reported_low_damage = TRUE
@@ -387,7 +387,7 @@ regen() will cover update_icon() for this proc
 		else
 			icon_state = "blob_damaged"
 
-/obj/effect/blob/shield/CanPass(var/atom/movable/mover, var/turf/target, var/height = 0, var/air_group = 0)
+/obj/effect/blob/shield/CanPass(atom/movable/mover, turf/target, height = 0, air_group = 0)
 	return !density
 
 /obj/effect/blob/ravaging

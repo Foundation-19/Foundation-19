@@ -2,7 +2,7 @@
 /decl/appearance_handler/bluelady
 	var/static/list/appearances
 
-/decl/appearance_handler/bluelady/proc/item_equipped(var/obj/item/item, var/mob/user, var/slot)
+/decl/appearance_handler/bluelady/proc/item_equipped(obj/item/item, mob/user, slot)
 	if(!(slot == slot_wear_mask))
 		return
 	if(!ishuman(user))
@@ -41,12 +41,12 @@
 		addtimer(CALLBACK(to_chat(H, "<span class='warning'>Your body looks the way it should, but something still feels very wrong...</span>")), 3000 SECONDS)
 		addtimer(CALLBACK(H.gender = FEMALE), 3000 SECONDS)
 
-/decl/appearance_handler/bluelady/proc/item_removed(var/obj/item/item, var/mob/user)
+/decl/appearance_handler/bluelady/proc/item_removed(obj/item/item, mob/user)
 	// // Blue Lady is forever.
 	// if(istype(item, /obj/item/clothing/mask/smokable/cigarette/bluelady))
 	// 	RemoveAltAppearance(user)
 
-/decl/appearance_handler/bluelady/proc/get_image_from_bluelady(var/mob/living/carbon/human/H)
+/decl/appearance_handler/bluelady/proc/get_image_from_bluelady(mob/living/carbon/human/H)
 	var/image/I = image('icons/mob/human.dmi', icon_state = "body_f_s", loc = H)
 	I.override = 1
 	I.add_overlay(image(icon = 'icons/mob/human_face.dmi', icon_state = "hair_emo2_s"))

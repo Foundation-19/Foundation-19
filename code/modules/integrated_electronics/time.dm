@@ -14,7 +14,7 @@
 	var/delay = 2 SECONDS
 	activators = list("incoming pulse","outgoing pulse")
 
-/obj/item/integrated_circuit/time/delay/do_work(var/activated_pulse)
+/obj/item/integrated_circuit/time/delay/do_work(activated_pulse)
 	set waitfor = 0  // Don't sleep in a proc that is called by a processor without this set, otherwise it'll delay the entire thing
 
 	if(activated_pulse != activators[1])
@@ -94,7 +94,7 @@
 		STOP_PROCESSING(SSobj, src)
 		ticks_completed = 0
 
-/obj/item/integrated_circuit/time/ticker/Process(var/wait)
+/obj/item/integrated_circuit/time/ticker/Process(wait)
 	ticks_completed += wait
 	if(ticks_completed >= ticks_to_pulse)
 		if(ticks_to_pulse >= wait)

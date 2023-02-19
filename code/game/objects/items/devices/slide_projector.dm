@@ -26,12 +26,12 @@
 	. = ..()
 	. += "Use in hand to open the interface."
 
-/obj/item/storage/slide_projector/remove_from_storage(obj/item/W, atom/new_location, var/NoUpdate = 0)
+/obj/item/storage/slide_projector/remove_from_storage(obj/item/W, atom/new_location, NoUpdate = 0)
 	. = ..()
 	if(. && W == current_slide)
 		set_slide(length(contents) ? contents[1] : null)
 
-/obj/item/storage/slide_projector/handle_item_insertion(var/obj/item/W, var/prevent_warning = 0, var/NoUpdate = 0)
+/obj/item/storage/slide_projector/handle_item_insertion(obj/item/W, prevent_warning = 0, NoUpdate = 0)
 	. = ..()
 	if(. && !current_slide)
 		set_slide(W)
@@ -122,7 +122,7 @@
 	popup.set_content(jointext(data, "<br>"))
 	popup.open()
 
-/obj/item/storage/slide_projector/OnTopic(var/mob/user, var/href_list, var/datum/topic_state/state)
+/obj/item/storage/slide_projector/OnTopic(mob/user, href_list, datum/topic_state/state)
 	. = ..()
 	if(.)
 		return

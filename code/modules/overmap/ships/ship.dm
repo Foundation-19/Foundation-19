@@ -225,7 +225,7 @@
 	if(!SSshuttle.overmap_halted)
 		halted = 0
 
-/obj/effect/overmap/visitable/ship/Bump(var/atom/A)
+/obj/effect/overmap/visitable/ship/Bump(atom/A)
 	if(istype(A,/turf/unsimulated/map/edge))
 		handle_wraparound()
 	..()

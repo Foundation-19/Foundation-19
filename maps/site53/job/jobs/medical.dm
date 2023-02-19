@@ -31,15 +31,18 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_MEDICAL     = SKILL_EXPERIENCED,
-	                    SKILL_ANATOMY     = SKILL_EXPERIENCED,
-	                    SKILL_CHEMISTRY   = SKILL_BASIC,
-						SKILL_DEVICES     = SKILL_TRAINED)
+	min_skill = list(
+	    SKILL_MEDICAL     = SKILL_EXPERIENCED,
+		SKILL_ANATOMY     = SKILL_EXPERIENCED,
+	    SKILL_CHEMISTRY   = SKILL_BASIC,
+		SKILL_DEVICES     = SKILL_TRAINED
+	)
 
-	max_skill = list(   SKILL_MEDICAL     = SKILL_MASTER,
-	                    SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_CHEMISTRY   = SKILL_MASTER)
+	max_skill = list(
+		SKILL_MEDICAL     = SKILL_MASTER,
+	    SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_CHEMISTRY   = SKILL_MASTER
+	)
 	skill_points = 28
 
 /datum/job/chemist
@@ -70,15 +73,18 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_MEDICAL     = SKILL_TRAINED,
-	                    SKILL_ANATOMY     = SKILL_TRAINED,
-	                    SKILL_CHEMISTRY   = SKILL_EXPERIENCED,
-						SKILL_DEVICES     = SKILL_TRAINED)
+	min_skill = list(
+	    SKILL_MEDICAL     = SKILL_TRAINED,
+	    SKILL_ANATOMY     = SKILL_TRAINED,
+	    SKILL_CHEMISTRY   = SKILL_EXPERIENCED,
+		SKILL_DEVICES     = SKILL_TRAINED
+	)
 
-	max_skill = list(   SKILL_MEDICAL     = SKILL_MASTER,
-	                    SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_CHEMISTRY   = SKILL_MASTER)
+	max_skill = list(
+		SKILL_MEDICAL     = SKILL_MASTER,
+	    SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_CHEMISTRY   = SKILL_MASTER
+	)
 	skill_points = 24
 
 /datum/job/psychiatrist
@@ -105,15 +111,18 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_MEDICAL     = SKILL_TRAINED,
-	                    SKILL_ANATOMY     = SKILL_TRAINED,
-	                    SKILL_CHEMISTRY   = SKILL_BASIC,
-						SKILL_DEVICES     = SKILL_TRAINED)
+	min_skill = list(
+	    SKILL_MEDICAL     = SKILL_TRAINED,
+	    SKILL_ANATOMY     = SKILL_TRAINED,
+		SKILL_CHEMISTRY   = SKILL_BASIC,
+		SKILL_DEVICES     = SKILL_TRAINED
+	)
 
-	max_skill = list(   SKILL_MEDICAL     = SKILL_MASTER,
-	                    SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_CHEMISTRY   = SKILL_MASTER)
+	max_skill = list(
+		SKILL_MEDICAL     = SKILL_MASTER,
+	    SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_CHEMISTRY   = SKILL_MASTER
+	)
 	skill_points = 24
 
 /datum/job/medicaldoctor
@@ -146,15 +155,18 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_MEDICAL     = SKILL_TRAINED,
-	                    SKILL_ANATOMY     = SKILL_TRAINED,
-	                    SKILL_CHEMISTRY   = SKILL_TRAINED,
-						SKILL_DEVICES     = SKILL_TRAINED)
+	min_skill = list(
+	    SKILL_MEDICAL     = SKILL_TRAINED,
+	    SKILL_ANATOMY     = SKILL_TRAINED,
+	    SKILL_CHEMISTRY   = SKILL_TRAINED,
+		SKILL_DEVICES     = SKILL_TRAINED
+	)
 
-	max_skill = list(   SKILL_MEDICAL     = SKILL_MASTER,
-	                    SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_CHEMISTRY   = SKILL_MASTER)
+	max_skill = list(
+		SKILL_MEDICAL     = SKILL_MASTER,
+	    SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_CHEMISTRY   = SKILL_MASTER
+	)
 	skill_points = 24
 
 /datum/job/surgeon
@@ -184,15 +196,18 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_MEDICAL     = SKILL_EXPERIENCED,
-	                    SKILL_ANATOMY     = SKILL_EXPERIENCED,
-	                    SKILL_CHEMISTRY   = SKILL_BASIC,
-						SKILL_DEVICES     = SKILL_TRAINED)
+	min_skill = list(
+	    SKILL_MEDICAL     = SKILL_EXPERIENCED,
+	    SKILL_ANATOMY     = SKILL_EXPERIENCED,
+	    SKILL_CHEMISTRY   = SKILL_BASIC,
+		SKILL_DEVICES     = SKILL_TRAINED
+	)
 
-	max_skill = list(   SKILL_MEDICAL     = SKILL_MASTER,
-	                    SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_CHEMISTRY   = SKILL_MASTER)
+	max_skill = list(
+		SKILL_MEDICAL     = SKILL_MASTER,
+	    SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_CHEMISTRY   = SKILL_MASTER
+	)
 	skill_points = 27
 
 /datum/job/emt
@@ -223,13 +238,16 @@
 	)
 	minimal_access = list()
 
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_MEDICAL     = SKILL_TRAINED,
-	                    SKILL_ANATOMY     = SKILL_TRAINED,
-	                    SKILL_CHEMISTRY   = SKILL_BASIC,
-						SKILL_DEVICES     = SKILL_TRAINED)
+	min_skill = list(
+	    SKILL_MEDICAL     = SKILL_TRAINED,
+	    SKILL_ANATOMY     = SKILL_TRAINED,
+	    SKILL_CHEMISTRY   = SKILL_BASIC,
+		SKILL_DEVICES     = SKILL_TRAINED
+	)
 
-	max_skill = list(   SKILL_MEDICAL     = SKILL_MASTER,
-	                    SKILL_ANATOMY     = SKILL_MASTER,
-	                    SKILL_CHEMISTRY   = SKILL_MASTER)
+	max_skill = list(
+		SKILL_MEDICAL     = SKILL_MASTER,
+	    SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_CHEMISTRY   = SKILL_MASTER
+	)
 	skill_points = 20

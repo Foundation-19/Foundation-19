@@ -85,7 +85,7 @@
 	var/atom/target = get_edge_target_turf(AM, get_dir(src, get_step_away(AM, src)))
 	AM.throw_at(target, 200, 4)
 
-/obj/machinery/containment_field/proc/set_master(var/master1,var/master2)
+/obj/machinery/containment_field/proc/set_master(master1,master2)
 	if(!master1 || !master2)
 		return 0
 	FG1 = master1

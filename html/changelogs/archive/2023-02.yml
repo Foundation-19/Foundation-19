@@ -1,3 +1,67 @@
 2023-02-02:
   MACIEKBAKI:
   - code_imp: temporarily disables borgs
+2023-02-03:
+  Tsurupeta:
+  - bugfix: Fixed item pickup animation.
+  - bugfix: Fixed wall hit sounds to be less fire_extinguisher_hit.ogg
+  - rscadd: Added new HUD.
+  - imageadd: Added new HUD.
+  casualspacestation14enjoyer:
+  - rscadd: Adds SCP-457 as a player-controlled SCP
+  - rscadd: New Containment Chamber for 457 in Upper HCZ
+2023-02-04:
+  Kapu1178, Lohikar:
+  - bugfix: ZAS CSRFZ patch
+  MACIEKBAKI:
+  - bugfix: ID mod program setting individual access should respect its operating_access_types
+  - bugfix: ID mod program setting assignment should respect its operating_access_types
+  Tsurupeta:
+  - rscdel: Deleted new HUD.
+  - imagedel: Deleted new HUD.
+  - code_imp: Re-enables borgs again.
+2023-02-08:
+  Tsurupeta:
+  - bugfix: removed space tiles from places on maps where they shouldn't be
+  Yawet330:
+  - balance: Blood/Bleed changes, heart-rate affects bleeding, arterial bleed buffs,
+      hit-chance changes + nerfs in some areas. This is experimental and will be subject
+      to change.
+  cheesePizza2:
+  - rscdel: Removed Bureaucracy skill, which had no in-game use and was basically
+      ignored roleplay-wise.
+  - rscdel: Removed EVA and Mech skills from the game. Space-related EVA uses have
+      been moved to the Athletic skill, and Mech references have been changed to the
+      Piloting skill.
+  - code_imp: The formatting of most jobs' skills has been improved.
+  - code_imp: The Finance skill has been moved to the General category of skills.
+      The Organizational category, being empty, has been removed.
+2023-02-10:
+  cheesePizza2:
+  - bugfix: Break room in LCZ security is now actually accessible.
+  - rscdel: Backpacks in role-based loadouts were removed.
+  - bugfix: Double backpack on spawn fixed.
+2023-02-11:
+  Tsurupeta:
+  - bugfix: fixed OOC color on dark theme
+  - bugfix: fixed movement keys not working after restart in certain cases
+  - bugfix: fixed runtime in _access.dm:188
+2023-02-14:
+  Tsurupeta:
+  - rscadd: Added new explosions subsystem.
+  - balance: Disabled gas spawning from TTV and fueltank explosions.
+  - rscadd: Traitors now have package bombs with detonator in their uplink.
+  - code_imp: Changed how walls and turfs explode, which should result in better looking
+      results.
+  - bugfix: fixed a lot of things not being deleted in explosion.
+  - rscdel: Removed SCP-457 until it's author fixes it (likely never) or I add it
+      back with full rework.
+  cheesePizza2:
+  - code_imp: Cryopod runtime on clientless bodies fixed.
+2023-02-15:
+  Teragenic:
+  - rscadd: M79 GL has been added to MTF.
+  - bugfix: Loadouts for GOC and other ERTs have been fixed.
+2023-02-17:
+  Tsurupeta:
+  - rscadd: Added ability to look into distance by pressing Ctrl+RMB on tile.

@@ -39,7 +39,7 @@
 		reagents.add_reagent(/datum/reagent/nutriment,nutriment_amt,nutriment_desc)
 
 	//Placeholder for effect that trigger on eating that aren't tied to reagents.
-/obj/item/reagent_containers/food/snacks/proc/On_Consume(var/mob/M)
+/obj/item/reagent_containers/food/snacks/proc/On_Consume(mob/M)
 	if(!reagents.total_volume)
 		M.visible_message("<span class='notice'>[M] finishes eating \the [src].</span>","<span class='notice'>You finish eating \the [src].</span>")
 		M.drop_item()
@@ -222,7 +222,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 /// FOOD END
 ////////////////////////////////////////////////////////////////////////////////
-/obj/item/reagent_containers/food/snacks/attack_animal(var/mob/living/user)
+/obj/item/reagent_containers/food/snacks/attack_animal(mob/living/user)
 	if(!isanimal(user) && !isalien(user))
 		return
 	user.visible_message("<b>[user]</b> nibbles away at \the [src].","You nibble away at \the [src].")

@@ -63,17 +63,17 @@
 	mymob.client.screen = list()
 	mymob.client.screen += src.adding
 
-/datum/hud/chorus/proc/update_buildings_units(var/b, var/f)
+/datum/hud/chorus/proc/update_buildings_units(b, f)
 	followers.update_resource(f)
 	buildings.update_resource(b)
 
-/datum/hud/chorus/proc/update_resources(var/list/prints)
+/datum/hud/chorus/proc/update_resources(list/prints)
 	for(var/i in 1 to prints.len)
 		var/obj/screen/chorus_resource/res = resources[i]
 		var/p = prints[i]
 		res.update_resource(p)
 
-/datum/hud/chorus/proc/update_selected(var/datum/chorus_building/n_build)
+/datum/hud/chorus/proc/update_selected(datum/chorus_building/n_build)
 	selected.update_to_building(n_build)
 	if(n_build)
 		cost.update_to_cost(n_build.get_printed_cost(mymob))
@@ -89,7 +89,7 @@
 	maptext_x = 62
 	maptext_y = 38
 
-/obj/screen/chorus_current_building/proc/update_to_building(var/datum/chorus_building/build)
+/obj/screen/chorus_current_building/proc/update_to_building(datum/chorus_building/build)
 	cut_overlays()
 	if(build)
 		var/image/I = build.get_image()
@@ -110,7 +110,7 @@
 	maptext_width = 92
 	maptext_height = 30
 
-/obj/screen/chorus_building_cost/proc/update_to_cost(var/list/cost)
+/obj/screen/chorus_building_cost/proc/update_to_cost(list/cost)
 	var/list/dat = list()
 	dat += {"
 	<p style=\"font-size:5px\">
@@ -159,7 +159,7 @@
 	icon_state = "resources"
 	maptext_width = 50
 
-/obj/screen/chorus_resource/proc/update_resource(var/print)
+/obj/screen/chorus_resource/proc/update_resource(print)
 	maptext = "<p style=\"font-size:5px\">[print]</p>"
 
 /obj/screen/chorus_build

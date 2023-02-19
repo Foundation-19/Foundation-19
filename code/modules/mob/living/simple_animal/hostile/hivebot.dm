@@ -199,7 +199,7 @@ The megabot
 			if(ATTACK_MODE_LASER)
 				add_overlay(image(icon, "laser"))
 
-/mob/living/simple_animal/hostile/hivebot/mega/proc/switch_mode(var/new_mode)
+/mob/living/simple_animal/hostile/hivebot/mega/proc/switch_mode(new_mode)
 	if(!new_mode || new_mode == attack_mode)
 		return
 

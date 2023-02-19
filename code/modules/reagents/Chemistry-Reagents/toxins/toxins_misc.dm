@@ -137,7 +137,7 @@
 /datum/reagent/toxin/methyl_bromide/affect_ingest(mob/living/carbon/M, alien, removed)
 	. = (alien != IS_MANTID && alien != IS_NABBER && ..())
 
-/datum/reagent/toxin/methyl_bromide/touch_turf(var/turf/simulated/T)
+/datum/reagent/toxin/methyl_bromide/touch_turf(turf/simulated/T)
 	if (istype(T))
 		T.assume_gas(GAS_METHYL_BROMIDE, volume, T20C)
 		remove_self(volume)

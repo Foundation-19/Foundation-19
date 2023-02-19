@@ -320,7 +320,7 @@ var/global/list/additional_antag_types = list()
 /datum/game_mode/proc/check_win() //universal trigger to be called at mob death, nuke explosion, etc. To be called from everywhere.
 	return 0
 
-/datum/game_mode/proc/get_players_for_role(var/antag_id)
+/datum/game_mode/proc/get_players_for_role(antag_id)
 	var/list/players = list()
 	var/list/candidates = list()
 
@@ -475,7 +475,7 @@ var/global/list/additional_antag_types = list()
 		if(check_rights(R_ADMIN|R_MOD, FALSE, M))
 			to_chat(M, msg)
 
-/proc/show_objectives(var/datum/mind/player)
+/proc/show_objectives(datum/mind/player)
 
 	if(!player || !player.current) return
 

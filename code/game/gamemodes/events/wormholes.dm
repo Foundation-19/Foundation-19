@@ -1,4 +1,4 @@
-/proc/wormhole_event(var/list/zlevels = GLOB.using_map.station_levels)
+/proc/wormhole_event(list/zlevels = GLOB.using_map.station_levels)
 	spawn()
 		var/list/pick_turfs = list()
 		for(var/z in zlevels)
@@ -48,7 +48,7 @@
 
 
 //maybe this proc can even be used as an admin tool for teleporting players without ruining immulsions?
-/proc/create_wormhole(var/turf/enter as turf, var/turf/exit as turf)
+/proc/create_wormhole(turf/enter as turf, turf/exit as turf)
 	var/obj/effect/portal/P = new /obj/effect/portal( enter )
 	P.target = exit
 	P.creator = null

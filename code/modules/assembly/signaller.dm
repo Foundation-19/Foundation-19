@@ -112,7 +112,7 @@
 	return
 
 
-/obj/item/device/assembly/signaller/pulse(var/radio = 0)
+/obj/item/device/assembly/signaller/pulse(radio = 0)
 	if(src.connected && src.wires)
 		connected.pulse_assembly(src)
 	else if(holder)
@@ -145,5 +145,6 @@
 	radio_connection = radio_controller.add_object(src, frequency, RADIO_CHAT)
 
 /obj/item/device/assembly/signaller/Destroy()
+	radio_controller.remove_object(src, frequency)
 	radio_connection = null
 	return ..()

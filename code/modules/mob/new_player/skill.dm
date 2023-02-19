@@ -29,7 +29,7 @@ var/list/hidden_skill_types = list(\
 /mob/living/carbon/human/proc/GetSkillClass(points)
 	return CalculateSkillClass(points, age)
 
-/proc/show_skill_window(var/mob/user, var/mob/living/carbon/human/M)
+/proc/show_skill_window(mob/user, mob/living/carbon/human/M)
 	if(!istype(M)) return
 	if(SKILLS == null)
 		setup_skills()
@@ -105,31 +105,6 @@ var/global/list/SKILLS = null
 
 // ONLY SKILL DEFINITIONS BELOW THIS LINE
 // Category: Secondary
-
-/datum/skill/secondary/management
-	ID = "management"
-	name = "Command"
-	desc = "Your ability to manage and commandeer other crew members."
-	desc_unskilled = "You know a little about management, but you have a lot of flaws and little experience. You are likely to micromanage, lose track of people, or generally muck things up. Handling a major crisis is probably beyond your ability."
-	desc_trained = "You're a good commander. You know how to coordinate the efforts of a large group of people effectively. You'll still be thrown off in a crisis, but you'll probably get through it."
-	desc_professional = "You're an excellent commander. In addition to just doing your job, you know how to inspire love, loyalty or fear, and you handle crises smoothly and efficiently."
-
-/datum/skill/secondary/EVA
-	ID = "EVA"
-	name = "Extra-vehicular activity"
-	desc = "This skill describes your skill and knowledge of space-suits and working in vacuum."
-	desc_unskilled = "You have basic safety training common to people who work in space: You know how to put on and seal your internals, and you can probably struggle into a space suit if you really need to, though you'll be clumsy at it. You're still prone to mistakes that may leave you trying to breathe vacuum."
-	desc_trained = "You can comfortably use a space suit and do so regularly in the course of your work. Checking your internals is second nature to you, and you don't panic in an emergency."
-	desc_professional = "You can use all kinds of space suits, including specialized versions. You can use a jet pack to navigate and are just as much at home in a vacuum as in atmosphere. You probably do your job almost entirely EVA."
-	cost_multiplier = 0.5
-
-/datum/skill/secondary/law
-	ID = "law"
-	name = "Legal"
-	desc = "Your knowledge of legal systems and procedures. This includes law systems, corporate regulations, and standard operating procedure. A low level in this skill is typical for law enforcement, a high level in this skill is typical for people in command of a station or vessel."
-	desc_unskilled = "You know most of what's legal and illegal in your everyday life and work, though you're fuzzy on the finer points of the law, especially if it doesn't apply to your own daily experience."
-	desc_trained = "You know and understand the law in a practical sense. You know the punishments for crimes and you can read and understand a legal document easily. You may be in Security or Command."
-	desc_professional = "You have a law degree or the equivalent amount of knowledge. You can draw up legal contracts, interpret the minutiae of the law, settle disagreements, and argue a case in court."
 
 /datum/skill/secondary/botany
 	ID = "botany"
@@ -220,15 +195,6 @@ var/global/list/SKILLS = null
 	desc_trained = "You can set up the engine, and you probably won't botch it up too badly. You know how to protect yourself from radiation in the engine room. You can read the engine monitors and keep the engine going. You're familiar with engine types other than the one you work with. An engine malfunction may stump you, but you can probably work out how to fix it... let's just hope you do so quickly enough to prevent serious damage."
 	desc_professional = "Your engine is your baby and you know every minute detail of its workings. You can optimize the engine and you probably have your own favorite custom setup. You could build an engine from the ground up. When things go wrong, you know exactly what has happened and how to fix the problem. You can safely handle singularities and supermatter."
 
-/datum/skill/engineering/mech
-	ID = "mech"
-	name = "Heavy Machinery Operation"
-	desc = "Describes your experience and understanding of operating heavy machinery, which includes mechs and other large exosuits. Used in piloting mechs."
-	desc_unskilled = "You know what a mech is, and if you see one you can recognize which type it is. If your department uses exosuits, you know roughly what their capabilities are. If you were to get into one, you'd have about fifty-fifty odds of getting it moving in the direction you wanted it to go."
-	desc_amateur = "You can drive an exosuit safely, but you specialize in only one type of mech that your department regularly uses. You're not an expert and you fumble the controls sometimes, but you're going where you want to go and you're pretty sure you know what those buttons do. If you're a miner, you can set up a mining drill safely; if you have the electrical skills, you probably know how to operate a shield generator and set up a laser emitter."
-	desc_trained = "You are very comfortable using the type of exosuit you're most familiar with. You may spend entire shifts piloting one, and you're familiar with its functions. You can do basic maintenance. You can use most types of exosuits, unless they're very exotic or specialized. If you're an electrician or engineer, you can set up a shield generator solo. Miners at this level can place and use mining drills with high efficiency."
-	desc_professional = "You can use any type of mech comfortably and automatically. To you, a mech is more like a second skin than a vehicle. You can maintain, repair, and probably build exosuits. You can maintain, repair, and modify drills and shield generators."
-
 /datum/skill/engineering/pilot
 	ID = "pilot"
 	name = "Piloting"
@@ -288,15 +254,6 @@ var/global/list/SKILLS = null
 	desc_trained = "You're a surgical resident, or an experienced medical doctor. You can put together broken bones, fix a damaged lung, patch up a liver, or remove an appendix without problems. But tricky surgeries, with an unstable patient or delicate manipulation of vital organs like the heart and brain, are at the edge of your ability, and you prefer to leave them to specialized surgeons. You can recognize when someone's anatomy is noticeably unusual. You're trained in working with several species, but you're probably better at surgery on your own species."
 	desc_professional = "You are an experienced surgeon. You can handle anything that gets rolled, pushed, or dragged into the OR, and you can keep a patient alive and stable even if there's no one to assist you. You can handle severe trauma cases or multiple organ failure, repair brain damage, and perform heart surgery. By now, you've probably specialized in one field, where you may have made new contributions to surgical technique. You can detect even small variations in the anatomy of a patient--even a changeling probably wouldn't slip by your notice, provided you could get one on the operating table."
 	cost_multiplier = 0.8
-
-/datum/skill/medical/virology
-	ID = "virology"
-	name = "Virology"
-	desc = "This skill implies an understanding of microorganisms and their effects on humans."
-	desc_unskilled = "You know that diseases are contagious; you've probably heard you should wash your hands to stop their spread. You know that if you're sick, you can go to Medical and get treatment."
-	desc_amateur = "You know how viruses work, and you can use the machinery in the virology lab to analyze a virus or create an antibody. You know the principles of quarantine and you know how to keep a virus from spreading. You know that spaceacillin will help the body fight off a virus. However, you're not specialized in virology, and you probably don't have a whole lot of experience in dealing with viruses. If you are a medical doctor, you know how to treat symptoms and keep sick patients stable."
-	desc_trained = "You know how to analyze, modify, and cure viruses, and could probably do so even without most of the equipment in the virology lab. You know how to trigger mutations in a virus and how to isolate genes. If you really wanted to, you could create a deadly virus, provided you got lucky with the mutations."
-	desc_professional = "You are a specialized virologist - either a medical doctor or a scientific researcher. You may be well-known in the field, having published in prestigious journals; or you may be a mad scientist working away in secret. You know how to use a virus as a tool or a weapon. You can cure any epidemic and if you wanted to, you could start one so deadly and contagious that your targets wouldn't know what hit them."
 
 /datum/skill/medical/chemistry
 	ID = "chemistry"

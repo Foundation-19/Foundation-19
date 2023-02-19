@@ -10,7 +10,7 @@
 
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
-/obj/effect/projectile/proc/set_transform(var/matrix/M)
+/obj/effect/projectile/proc/set_transform(matrix/M)
 	if(istype(M))
 		transform = M
 

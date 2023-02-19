@@ -5,7 +5,7 @@
 	var/list/affected_levels
 	var/list/old_accessible_z_levels
 
-/datum/universal_state/bluespace_jump/New(var/list/zlevels)
+/datum/universal_state/bluespace_jump/New(list/zlevels)
 	affected_levels = zlevels
 
 /datum/universal_state/bluespace_jump/OnEnter()
@@ -36,11 +36,11 @@
 	GLOB.using_map.accessible_z_levels = old_accessible_z_levels
 	old_accessible_z_levels = null
 
-/datum/universal_state/bluespace_jump/OnPlayerLatejoin(var/mob/living/M)
+/datum/universal_state/bluespace_jump/OnPlayerLatejoin(mob/living/M)
 	if(M.z in affected_levels)
 		apply_bluespaced(M)
 
-/datum/universal_state/bluespace_jump/OnTouchMapEdge(var/atom/A)
+/datum/universal_state/bluespace_jump/OnTouchMapEdge(atom/A)
 	if((A.z in affected_levels) && (A in bluespaced))
 		if(ismob(A))
 			to_chat(A,SPAN_WARNING("You drift away into the shifting expanse, never to be seen again."))
@@ -48,7 +48,7 @@
 		return FALSE
 	return TRUE
 
-/datum/universal_state/bluespace_jump/proc/apply_bluespaced(var/mob/living/M)
+/datum/universal_state/bluespace_jump/proc/apply_bluespaced(mob/living/M)
 	bluespaced += M
 	if(M.client)
 		to_chat(M,SPAN_NOTICE("You feel oddly light, and somewhat disoriented as everything around you shimmers and warps ever so slightly."))
@@ -56,7 +56,7 @@
 	M.confused = 20
 	bluegoasts += new/obj/effect/bluegoast/(get_turf(M),M)
 
-/datum/universal_state/bluespace_jump/proc/clear_bluespaced(var/mob/living/M)
+/datum/universal_state/bluespace_jump/proc/clear_bluespaced(mob/living/M)
 	if(M.client)
 		to_chat(M,SPAN_NOTICE("You feel rooted in material world again."))
 		M.clear_fullscreen("bluespace")
@@ -96,7 +96,7 @@
 	real_one = null
 	. = ..()
 
-/obj/effect/bluegoast/proc/mirror(var/atom/movable/am, var/old_loc, var/new_loc)
+/obj/effect/bluegoast/proc/mirror(atom/movable/am, old_loc, new_loc)
 	var/ndir = get_dir(new_loc,old_loc)
 	appearance = real_one.appearance
 	var/nloc = get_step(src, ndir)
@@ -109,7 +109,7 @@
 		if(prob(20))
 			real_one.drowsyness = max(real_one.drowsyness, 3)
 
-/obj/effect/bluegoast/proc/mirror_dir(var/atom/movable/am, var/old_dir, var/new_dir)
+/obj/effect/bluegoast/proc/mirror_dir(atom/movable/am, old_dir, new_dir)
 	set_dir(GLOB.reverse_dir[new_dir])
 
 /obj/effect/bluegoast/examine()

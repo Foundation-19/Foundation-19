@@ -3,9 +3,8 @@
 		"Service" = TRUE
 	)
 	skills = list(
-		SKILL_BUREAUCRACY         = SKILL_MASTER,
-		SKILL_FINANCE             = SKILL_MASTER,
 		SKILL_COMPUTER            = SKILL_EXPERIENCED,
+		SKILL_FINANCE             = SKILL_MASTER,
 		SKILL_SCIENCE             = SKILL_EXPERIENCED,
 		SKILL_DEVICES             = SKILL_EXPERIENCED
 	)
@@ -40,7 +39,6 @@
 	)
 	emag = /obj/item/reagent_containers/food/drinks/bottle/small/beer
 	skills = list(
-		SKILL_BUREAUCRACY         = SKILL_MASTER,
 		SKILL_COMPUTER            = SKILL_EXPERIENCED,
 		SKILL_COOKING             = SKILL_MASTER,
 		SKILL_BOTANY              = SKILL_MASTER,
@@ -62,7 +60,7 @@
 		R.add_reagent(/datum/reagent/chloral_hydrate/beer, 50)
 		emag.SetName("Mickey Finn's Special Brew")
 
-/obj/item/robot_module/clerical/butler/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/clerical/butler/respawn_consumable(mob/living/silicon/robot/R, amount)
 	..()
 	var/obj/item/reagent_containers/food/condiment/enzyme/E = locate() in equipment
 	E.reagents.add_reagent(/datum/reagent/enzyme, 2 * amount)

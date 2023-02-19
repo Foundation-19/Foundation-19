@@ -17,7 +17,7 @@
 	var/material_flags = USE_MATERIAL_COLOR|USE_MATERIAL_SINGULAR_NAME|USE_MATERIAL_PLURAL_NAME
 	var/matter_multiplier = 1
 
-/obj/item/stack/material/Initialize(mapload, var/amount, var/_material, var/_reinf_material)
+/obj/item/stack/material/Initialize(mapload, amount, _material, _reinf_material)
 	. = ..()
 	if(_material)
 		default_type = _material
@@ -52,7 +52,7 @@
 /obj/item/stack/material/get_codex_value()
 	return (material && !material.hidden_from_codex) ? "[lowertext(material.display_name)] (material)" : ..()
 
-/obj/item/stack/material/proc/set_amount(var/_amount)
+/obj/item/stack/material/proc/set_amount(_amount)
 	amount = max(1, min(_amount, max_amount))
 	update_strings()
 
@@ -88,7 +88,7 @@
 		SetName("reinforced [name]")
 		desc = "[desc]\nIt is reinforced with the [reinf_material.use_name] lattice."
 
-/obj/item/stack/material/use(var/used)
+/obj/item/stack/material/use(used)
 	. = ..()
 	update_strings()
 	return
@@ -104,7 +104,7 @@
 		return FALSE
 	return TRUE
 
-/obj/item/stack/material/transfer_to(obj/item/stack/material/M, var/tamount=null, var/type_verified)
+/obj/item/stack/material/transfer_to(obj/item/stack/material/M, tamount=null, type_verified)
 	if(!is_same(M))
 		return 0
 	var/transfer = ..(M,tamount,1)
@@ -114,7 +114,7 @@
 		M.update_strings()
 	return transfer
 
-/obj/item/stack/material/copy_from(var/obj/item/stack/material/other)
+/obj/item/stack/material/copy_from(obj/item/stack/material/other)
 	..()
 	if(istype(other))
 		material = other.material
@@ -122,7 +122,7 @@
 		update_strings()
 		update_icon()
 
-/obj/item/stack/material/attackby(var/obj/item/W, var/mob/user)
+/obj/item/stack/material/attackby(obj/item/W, mob/user)
 	if(isCoil(W))
 		material.build_wired_product(user, W, src)
 		return

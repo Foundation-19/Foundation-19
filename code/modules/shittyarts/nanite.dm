@@ -15,7 +15,7 @@
 			Disarm Disarm Harm Disarm - Tornado Sweep - deals 10 damage and sends victim flying\n\
 			Disarm Harm Disarm Harm - Phoron Repulse - sends victim and all nearby mobs flying"
 
-/datum/martial_art/nanite/plasmafist/handle_streak(var/mob/living/carbon/human/owner, var/mob/living/carbon/human/D)
+/datum/martial_art/nanite/plasmafist/handle_streak(mob/living/carbon/human/owner, mob/living/carbon/human/D)
 	if(findtext(streak, "GADDA"))
 		if(last_gib > world.time)
 			to_chat(owner, SPAN_WARNING("You can't use your plasma fist art so soon! Wait [round(last_gib - world.time) / 10] seconds."))
@@ -74,7 +74,7 @@
 			Harm Disarm Disarm Harm - Chest Kick - deals 10 damage and sends victim flying\n\
 			Harm Grab Harm - Kneehaul - knocks victim down into 2-second stun"
 
-/datum/martial_art/nanite/sleeping_carp/handle_streak(var/mob/living/carbon/human/owner, var/mob/living/carbon/human/D)
+/datum/martial_art/nanite/sleeping_carp/handle_streak(mob/living/carbon/human/owner, mob/living/carbon/human/D)
 
 	if(findtext(streak, "AAA"))
 		var/hit_zone = owner.zone_sel.selecting
@@ -111,7 +111,7 @@
 		return TRUE
 	return FALSE
 
-/datum/martial_art/nanite/sleeping_carp/handle_harm(var/mob/living/carbon/human/owner, var/mob/living/carbon/human/victim)
+/datum/martial_art/nanite/sleeping_carp/handle_harm(mob/living/carbon/human/owner, mob/living/carbon/human/victim)
 	if(handle_streak(owner, victim))
 		streak = ""
 		return TRUE
@@ -133,7 +133,7 @@
 	var/spend = 0
 	var/datum/martial_art/martial_art = new /datum/martial_art/krav_maga
 
-/obj/item/weapon/nanite_injector/attack(var/mob/living/carbon/human/M, var/mob/living/carbon/human/user)
+/obj/item/weapon/nanite_injector/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
 
 	if(spend)
 		to_chat(user, "[src] is already spend!")
@@ -152,7 +152,7 @@
 		user.visible_message(SPAN_WARNING("[user] injects himself with [src]!"))
 		inject_nanites(user)
 
-/obj/item/weapon/nanite_injector/proc/inject_nanites(var/mob/living/carbon/human/H)
+/obj/item/weapon/nanite_injector/proc/inject_nanites(mob/living/carbon/human/H)
 	spend = 1
 	icon_state = "[initial(icon_state)]_spend"
 	H.martial_art = martial_art

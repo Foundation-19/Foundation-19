@@ -12,7 +12,7 @@
 
 	var/area/a = get_area(src)
 	if(a && !a.has_gravity())
-		if(skill_check(SKILL_EVA, SKILL_MASTER))
+		if(skill_check(SKILL_HAULING, SKILL_MASTER))
 			tally -= 2
 		tally -= 1
 
@@ -83,7 +83,7 @@
 	. = ..()
 	. += species.strength
 
-/mob/living/carbon/human/Allow_Spacemove(var/check_drift = 0)
+/mob/living/carbon/human/Allow_Spacemove(check_drift = 0)
 	. = ..()
 	if(.)
 		return
@@ -108,7 +108,7 @@
 				break
 
 	if(thrust && thrust.on)
-		if(prob(skill_fail_chance(SKILL_EVA, 10, SKILL_TRAINED)))
+		if(prob(skill_fail_chance(SKILL_HAULING, 10, SKILL_TRAINED)))
 			to_chat(src, "<span class='warning'>You fumble with [thrust] controls!</span>")
 			inertia_dir = pick(GLOB.cardinal)
 			return 0
@@ -117,7 +117,7 @@
 			inertia_dir = 0
 			return 1
 
-/mob/living/carbon/human/slip_chance(var/prob_slip = 5)
+/mob/living/carbon/human/slip_chance(prob_slip = 5)
 	if(!..())
 		return 0
 
@@ -141,6 +141,8 @@
 	if(.) //We moved
 		species.handle_exertion(src)
 		handle_leg_damage()
+		if(is_view_shifted)
+			reset_shifted_view()
 
 /mob/living/carbon/human/proc/handle_leg_damage()
 	if(!can_feel_pain())
