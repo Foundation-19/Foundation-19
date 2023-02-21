@@ -41,10 +41,10 @@
 
 	return total_weight
 
-/datum/event_meta/extended_removed // will not spawn if gamemode is extended
+/datum/event_meta/extended_removed // will not spawn if gamemode is extended. since it's a flat penalty, admins can "undo" the removal.
 
 /datum/event_meta/extended_removed/get_weight()
-	return (istype(SSticker.mode, /datum/game_mode/extended) ? ..() : 0)
+	return ..() - (istype(SSticker.mode, /datum/game_mode/extended) ? 1000 : 0)
 
 /datum/event_meta/no_overmap/get_weight() //these events have overmap equivalents, and shouldn't fire randomly if overmap is used
 	return GLOB.using_map.use_overmap ? 0 : ..()
