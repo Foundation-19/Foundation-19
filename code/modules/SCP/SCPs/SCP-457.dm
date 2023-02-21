@@ -157,6 +157,7 @@ GLOBAL_LIST_EMPTY(scp457s)
     if(istype(M))
         M.adjustToxLoss(30)
         to_chat(M, "<span class='userdanger'>FUEL LESSENS, MAKE THEM PAY...</span>")
+		return
 
 /obj/effect/landmark/respawner457
 	name = "respawn"
