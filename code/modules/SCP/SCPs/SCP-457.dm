@@ -53,11 +53,14 @@ GLOBAL_LIST_EMPTY(scp457s)
 	return
 
 /mob/living/scp_457/Destroy()
-	GLOB.scp173s -= src
+	GLOB.scp457s -= src
+	. = ..()
 	return
 
 /mob/living/scp_457/UnarmedAttack(atom/A)
 	var/mob/living/carbon/human/H = A
+	if(!istype(H))
+		return
 	if(H.SCP)
 		to_chat(src, "<span class='warning'><I>[H] is a fellow SCP!</I></span>")
 		return
@@ -70,7 +73,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 			return
 		else
 			if(prob(35))
-				visible_message(SPAN_WARNING("[src] begins to initiate agony in [A]!"))
+				visible_message(SPAN_WARNING("[src] begins to claw at [A]!"))
 				if(do_after(src, 1 SECOND, H))
 					H.Weaken(10)
 					H.visible_message("<span class='danger'>[src] claws at [H], the flame sending them to the floor!</span>")
@@ -85,7 +88,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 					H.IgniteMob()
 					health += 15
 					aflame_cooldown = world.time + aflame_cooldown_time
-					visible_message("<span class='danger'>[src] claws at [A] setting them alight!</span>")
+					visible_message("<span class='danger'>[src] grabs a hold of [A] setting them alight!</span>")
 					to_chat(H, "<span class='userdanger'>Oh god, oh god. OH GOD! IT HURTS! PLEASE!</span>")
 					return
 	if(istype(A, /obj/machinery/door))
@@ -151,8 +154,9 @@ GLOBAL_LIST_EMPTY(scp457s)
 	src.visible_message("\The [src] melts \the [A]'s controls[check ? ", and rips it open!" : ", and breaks it!"]")
 
 /datum/reagent/water/touch_mob(var/mob/living/scp_457/M)
-	M.adjustToxLoss(30)
-	to_chat(M, "<span class='userdanger'>FUEL LESSENS, MAKE THEM PAY...")
+    if(istype(M))
+        M.adjustToxLoss(30)
+        to_chat(M, "<span class='userdanger'>FUEL LESSENS, MAKE THEM PAY...")
 
 /obj/effect/landmark/respawner457
 	name = "respawn"
