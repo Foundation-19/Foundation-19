@@ -4,13 +4,6 @@
 	var/cloud_hueshift
 	var/list/players = list()
 
-/datum/event/ionstorm/get_skybox_image()
-	if(!cloud_hueshift)
-		cloud_hueshift = color_rotation(rand(-3,3)*15)
-	var/image/res = overlay_image('icons/skybox/ionbox.dmi', "ions", cloud_hueshift, RESET_COLOR)
-	res.blend_mode = BLEND_ADD
-	return res
-
 /datum/event/ionstorm/setup()
 	endWhen = rand(500, 1500)
 

@@ -6,13 +6,6 @@
 	var/list/valid_apcs		// Shuffled list of valid APCs.
 	var/global/lightning_color
 
-/datum/event/electrical_storm/get_skybox_image()
-	if(!lightning_color)
-		lightning_color = pick("#ffd98c", "#ebc7ff", "#bdfcff", "#bdd2ff", "#b0ffca", "#ff8178", "#ad74cc")
-	var/image/res = overlay_image('icons/skybox/electrobox.dmi', "lightning", lightning_color, RESET_COLOR)
-	res.blend_mode = BLEND_ADD
-	return res
-
 /datum/event/electrical_storm/announce()
 	..()
 	switch(severity)

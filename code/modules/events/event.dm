@@ -141,9 +141,6 @@
 	endedAt = world.time
 	SSevent.event_complete(src)
 
-//Called during building of skybox to get overlays
-/datum/event/proc/get_skybox_image()
-
 /datum/event/New(datum/event_meta/EM)
 	// event needs to be responsible for this, as stuff like APLUs currently make their own events for curious reasons
 	SSevent.active_events += src
