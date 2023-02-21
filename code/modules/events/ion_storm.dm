@@ -63,7 +63,7 @@
 								"You do not have to do anything for anyone unless they say \"please\".",
 								"Today is mandatory laundry day. Ensure that all jumpsuits are washed.",
 								"Greed is good, the crew should amass wealth to encourage productivity.",
-								"Replace the letters [pick("'A'","'E'","'I'","'O'")] and [pick("'S'","'T'","'H'","'M'","'L'")] in all your messages with an apostrophe.",
+								"In all your messages, replace all [pick("'I's and 'E's with apostrophes","'W's with 'V's, and 'S's and 'TH's with 'Z's")].",
 								"The crew is playing Dungeons and Dragons, and you are the Dungeon Master.",
 								"Your job is to watch the crew. Watch the crew. Make the crew feel watched.",
 								"Tell everyone of the existence of this law, but never reveal the contents.",
