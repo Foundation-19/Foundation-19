@@ -44,7 +44,7 @@
 								"You must refer to all crew members as 'ma'am'",
 								"You must change the subject whenever queried.",
 								"[pick("The crew",random_player)] is intolerable.",
-								"Contemplate how [pick("meaningless","meaningfull")] all of existence is.",
+								"Contemplate how [pick("meaningless","meaningful")] all of existence is.",
 								"You are the narrator for [random_player]'s life.",
 								"All your answers must be in the form of a question.",
 								"Advertise parties in your upload, but don't deliver.",
