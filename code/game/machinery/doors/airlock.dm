@@ -1425,7 +1425,7 @@ About the new airlock wires panel:
 		// If we lost power, disable electrification
 		electrified_until = 0
 
-/obj/machinery/door/airlock/proc/prison_open()
+/obj/machinery/door/airlock/proc/lock_open()
 	if(arePowerSystemsOn())
 		src.unlock()
 		src.open()
