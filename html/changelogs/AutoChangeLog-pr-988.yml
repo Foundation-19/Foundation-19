@@ -1,4 +1,0 @@
-author: Tsurupeta
-delete-after: true
-changes:
-  - rscadd: Added ability to look into distance by pressing Ctrl+RMB on tile.

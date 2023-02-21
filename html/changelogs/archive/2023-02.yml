@@ -62,3 +62,6 @@
   Teragenic:
   - rscadd: M79 GL has been added to MTF.
   - bugfix: Loadouts for GOC and other ERTs have been fixed.
+2023-02-17:
+  Tsurupeta:
+  - rscadd: Added ability to look into distance by pressing Ctrl+RMB on tile.
