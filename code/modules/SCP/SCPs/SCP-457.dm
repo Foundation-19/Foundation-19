@@ -154,10 +154,10 @@ GLOBAL_LIST_EMPTY(scp457s)
 	src.visible_message("\The [src] melts \the [A]'s controls[check ? ", and rips it open!" : ", and breaks it!"]")
 
 /datum/reagent/water/touch_mob(var/mob/living/scp_457/M)
-    if(istype(M))
-        M.adjustToxLoss(30)
+	if(istype(M))
+		M.adjustToxLoss(30)
 		to_chat(M,	"<span class='userdanger'>FUEL LESSENS, MAKE THEM PAY...</span>")
-        return	..()
+		return	..()
 
 /obj/effect/landmark/respawner457
 	name = "respawn"
