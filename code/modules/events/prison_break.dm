@@ -21,6 +21,7 @@
 	areaType = D.areatype
 	areaNotType = D.areanottype
 
+	// severity affects how much time there is to prepare
 	announceWhen = rand(50, 80) + (severity * 5)
 	releaseWhen = rand(85, 115) - (severity * 5)
 
