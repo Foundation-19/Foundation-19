@@ -1,5 +1,5 @@
 #define ASSIGNMENT_ANY "Any"
-#define ASSIGNMENT_AI "AIC"
+#define ASSIGNMENT_AIC "AIC"
 #define ASSIGNMENT_CYBORG "Robot"
 #define ASSIGNMENT_ENGINEER "Engineer"
 #define ASSIGNMENT_GARDENER "Gardener"
@@ -134,7 +134,7 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Money Lotto",							/datum/event/money_lotto, 				0, 		list(ASSIGNMENT_ANY = 1), 1, 5, 15),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Mundane News", 							/datum/event/mundane_news, 				200),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Shipping Error",						/datum/event/shipping_error	, 			30, 	list(ASSIGNMENT_ANY = 2), 0),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Sensor Suit Jamming",					/datum/event/sensor_suit_jamming,		30,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_AI = 20), 1),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Sensor Suit Jamming",					/datum/event/sensor_suit_jamming,		30,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_AIC = 20), 1),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Trivial News",							/datum/event/trivial_news, 				200),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Vermin Infestation",					/datum/event/infestation, 				100,	list(ASSIGNMENT_JANITOR = 50)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Wallrot",								/datum/event/wallrot, 					0,		list(ASSIGNMENT_ENGINEER = 30, ASSIGNMENT_GARDENER = 50)),
@@ -150,13 +150,13 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 	available_events = list(
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Nothing",								/datum/event/nothing,					100,	list(ASSIGNMENT_ANY = -5)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Appendicitis", 						/datum/event/spontaneous_appendicitis, 	0,		list(ASSIGNMENT_MEDICAL = 10), 1),
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Communication Blackout",				/datum/event/communications_blackout,	50,		list(ASSIGNMENT_AI = 100, ASSIGNMENT_ENGINEER = 20)),
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Communication Blackout",				/datum/event/communications_blackout,	50,		list(ASSIGNMENT_AIC = 100, ASSIGNMENT_ENGINEER = 20)),
 		new /datum/event_meta/no_overmap(EVENT_LEVEL_MODERATE, "Electrical Storm",			/datum/event/electrical_storm, 			10,		list(ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_JANITOR = 10)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Grid Check",							/datum/event/grid_check, 				40,		list(ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_ANY = 5)),
-		new /datum/event_meta/no_overmap(EVENT_LEVEL_MODERATE, "Ion Storm",					/datum/event/ionstorm, 					0,		list(ASSIGNMENT_AI = 50, ASSIGNMENT_CYBORG = 50, ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_SCIENTIST = 5)),
+		new /datum/event_meta/no_overmap(EVENT_LEVEL_MODERATE, "Ion Storm",					/datum/event/ionstorm, 					0,		list(ASSIGNMENT_AIC = 50, ASSIGNMENT_CYBORG = 50, ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_SCIENTIST = 5)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Prison Break",							/datum/event/prison_break,				0,		list(ASSIGNMENT_SECURITY = 100)),
 		new /datum/event_meta/extended_removed(EVENT_LEVEL_MODERATE, "Random Antagonist",	/datum/event/random_antag,				2,		list(ASSIGNMENT_SECURITY = 1), 1, 0, 5),
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Sensor Suit Jamming",					/datum/event/sensor_suit_jamming,		10,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_AI = 20)),
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Sensor Suit Jamming",					/datum/event/sensor_suit_jamming,		10,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_AIC = 20)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Spider Infestation",					/datum/event/spider_infestation, 		25,		list(ASSIGNMENT_SECURITY = 15), 1),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Drone Uprising",						/datum/event/rogue_maint_drones,		25,		list(ASSIGNMENT_ENGINEER = 30, ASSIGNMENT_SECURITY = 20)),
 	)
@@ -170,8 +170,66 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Drone Revolution",						/datum/event/rogue_maint_drones,		0,		list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_MEDICAL = 10, ASSIGNMENT_SECURITY = 20)),
 	)
 
+// Returns how many characters are currently active(not logged out, not AFK for more than 10 minutes)
+// with a specific role.
+// Note that this isn't sorted by department, because e.g. having a roboticist shouldn't make meteors spawn.
+/proc/number_active_with_role()
+	var/list/active_with_role = list()
+	active_with_role[ASSIGNMENT_ENGINEER] = 0
+	active_with_role[ASSIGNMENT_MEDICAL] = 0
+	active_with_role[ASSIGNMENT_SECURITY] = 0
+	active_with_role[ASSIGNMENT_SCIENTIST] = 0
+	active_with_role[ASSIGNMENT_AIC] = 0
+	active_with_role[ASSIGNMENT_CYBORG] = 0
+	active_with_role[ASSIGNMENT_JANITOR] = 0
+	active_with_role[ASSIGNMENT_GARDENER] = 0
+
+	for(var/mob/M in GLOB.player_list)
+		if(!M.mind || !M.client || M.client.is_afk(10 MINUTES)) // longer than 10 minutes AFK counts them as inactive
+			continue
+
+		active_with_role[ASSIGNMENT_ANY]++
+
+		if(istype(M, /mob/living/silicon/robot))
+			var/mob/living/silicon/robot/R = M
+			if(R.module)
+				if(istype(R.module, /obj/item/robot_module/engineering))
+					active_with_role[ASSIGNMENT_ENGINEER]++
+				else if(istype(R.module, /obj/item/robot_module/security))
+					active_with_role[ASSIGNMENT_SECURITY]++
+				else if(istype(R.module, /obj/item/robot_module/medical))
+					active_with_role[ASSIGNMENT_MEDICAL]++
+				else if(istype(R.module, /obj/item/robot_module/research))
+					active_with_role[ASSIGNMENT_SCIENTIST]++
+
+		if(M.mind.assigned_role in SSjobs.titles_by_department(ENG))
+			active_with_role[ASSIGNMENT_ENGINEER]++
+
+		if(M.mind.assigned_role in SSjobs.titles_by_department(MED))
+			active_with_role[ASSIGNMENT_MEDICAL]++
+
+		if(M.mind.assigned_role in SSjobs.titles_by_department(SEC))
+			active_with_role[ASSIGNMENT_SECURITY]++
+
+		if(M.mind.assigned_role in SSjobs.titles_by_department(SCI))
+			active_with_role[ASSIGNMENT_SCIENTIST]++
+
+		if(M.mind.assigned_role == ASSIGNMENT_AIC)
+			active_with_role[ASSIGNMENT_AIC]++
+
+		if(M.mind.assigned_role == ASSIGNMENT_CYBORG)
+			active_with_role[ASSIGNMENT_CYBORG]++
+
+		if(M.mind.assigned_role == ASSIGNMENT_JANITOR)
+			active_with_role[ASSIGNMENT_JANITOR]++
+
+		if(M.mind.assigned_role == ASSIGNMENT_GARDENER)
+			active_with_role[ASSIGNMENT_GARDENER]++
+
+	return active_with_role
+
 #undef ASSIGNMENT_ANY
-#undef ASSIGNMENT_AI
+#undef ASSIGNMENT_AIC
 #undef ASSIGNMENT_CYBORG
 #undef ASSIGNMENT_ENGINEER
 #undef ASSIGNMENT_GARDENER
