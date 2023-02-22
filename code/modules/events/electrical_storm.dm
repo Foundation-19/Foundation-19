@@ -2,7 +2,6 @@
 	announceWhen = 0		// Warn them shortly before it begins.
 	startWhen = 30
 	endWhen = 60			// Set in start()
-	has_skybox_image = TRUE
 	var/list/valid_apcs		// Shuffled list of valid APCs.
 	var/global/lightning_color
 

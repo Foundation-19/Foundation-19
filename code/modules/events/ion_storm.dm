@@ -1,5 +1,4 @@
 /datum/event/ionstorm
-	has_skybox_image = TRUE
 	var/botEmagChance = 0.5
 	var/cloud_hueshift
 	var/list/players = list()
