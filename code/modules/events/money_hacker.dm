@@ -41,7 +41,7 @@
 		var/amount = min(affected_account.money * 0.8 + rand(1,50), affected_account.money)
 
 		//create a taunting log entry
-		var/name = pick("","[pick("Biesel","New Gibson")] ATM Terminal #[rand(111,999)]","your mums place","ca0s !nsurg3ncy", "nigeran prince")
+		var/name = pick("","[pick("Biesel","New Gibson")] ATM Terminal #[rand(111,999)]","your mums place","ca0s !nsurg3ncy", "robuzt clownz")
 		var/purpose = pick("Ne$ ---ount fu%ds init*&lisat@*n","PAY BACK YOUR MUM","Funds withdrawal","pWnAgE","l33t hax","liberationez")
 		var/datum/transaction/singular/T = new(affected_account, name, -amount, purpose)
 		var/date = "[num2text(rand(1,31))] [pick("January","February","March","April","May","June","July","August","September","October","November","December")], [rand(1000,2000)]"
