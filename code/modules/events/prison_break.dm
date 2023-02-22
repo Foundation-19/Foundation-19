@@ -18,13 +18,11 @@
 
 	eventDept = D.eventdept
 	areaName = D.areaname
-
 	areaType = D.areatype
-
 	areaNotType = D.areanottype
 
-	announceWhen = rand(60, 90)
-	releaseWhen = rand(75, 105)
+	announceWhen = rand(50, 80) + (severity * 5)
+	releaseWhen = rand(85, 115) - (severity * 5)
 
 	src.endWhen = src.releaseWhen+2
 
