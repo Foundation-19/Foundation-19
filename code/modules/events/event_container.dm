@@ -93,7 +93,7 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		next_event_time = world.time + event_delay
 	// Otherwise, follow the standard setup process
 	else
-		playercount_modifier = max(2 - log((GLOB.player_list.len / 2) + 1), 0.7)
+		var/playercount_modifier = max(2 - log((GLOB.player_list.len / 2) + 1), 0.7)
 
 		playercount_modifier = playercount_modifier * delay_modifier
 
