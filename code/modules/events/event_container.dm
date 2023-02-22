@@ -139,7 +139,6 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Vermin Infestation",					/datum/event/infestation, 				100,	list(ASSIGNMENT_JANITOR = 50)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Wallrot",								/datum/event/wallrot, 					0,		list(ASSIGNMENT_ENGINEER = 30, ASSIGNMENT_GARDENER = 50)),
 		new /datum/event_meta/no_overmap(EVENT_LEVEL_MUNDANE, "Electrical Storm",			/datum/event/electrical_storm, 			20,		list(ASSIGNMENT_ENGINEER = 20, ASSIGNMENT_JANITOR = 50)),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Toilet Clog",							/datum/event/toilet_clog,				50, 	list(ASSIGNMENT_JANITOR = 50)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Drone Malfunction",						/datum/event/rogue_maint_drones,		10,		list(ASSIGNMENT_ENGINEER = 30, ASSIGNMENT_SECURITY = 50)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Disposals Explosion",					/datum/event/disposals_explosion,		20,		list(ASSIGNMENT_ENGINEER = 40)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Brain Expansion",						/datum/event/brain_expansion,			20,		list(ASSIGNMENT_SCIENTIST = 20)),
