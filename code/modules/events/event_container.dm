@@ -93,18 +93,8 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		next_event_time = world.time + event_delay
 	// Otherwise, follow the standard setup process
 	else
-		var/playercount_modifier = 1
-		switch(GLOB.player_list.len)
-			if(0 to 10)
-				playercount_modifier = 1.2
-			if(11 to 15)
-				playercount_modifier = 1.1
-			if(16 to 25)
-				playercount_modifier = 1
-			if(26 to 35)
-				playercount_modifier = 0.9
-			if(36 to 100000)
-				playercount_modifier = 0.8
+		playercount_modifier = 2 - log((GLOB.player_list.len / 2) + 1)
+
 		playercount_modifier = playercount_modifier * delay_modifier
 
 		var/event_delay = rand(config.event_delay_lower[severity], config.event_delay_upper[severity]) * playercount_modifier
