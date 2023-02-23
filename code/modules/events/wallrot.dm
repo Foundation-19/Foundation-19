@@ -13,7 +13,7 @@
 		var/list/turfs = block(locate(1, 1, z), locate(world.maxx, world.maxy, z))
 		for(var/turf/simulated/wall/T in turfs)
 			if(is_randomly_rottable_turf(T))
-			pick_turfs += T
+				pick_turfs += T
 
 	var/turf/simulated/wall/center
 
