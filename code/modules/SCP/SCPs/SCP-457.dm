@@ -42,8 +42,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 		/mob/living/scp_457/proc/checkhealth,
 	))
 
-	. = ..()
-	return
+	return ..()
 
 /mob/living/scp_457/Destroy()
 	GLOB.scp457s -= src
