@@ -46,8 +46,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 
 /mob/living/scp_457/Destroy()
 	GLOB.scp457s -= src
-	. = ..()
-	return
+	return ..()
 
 /mob/living/scp_457/UnarmedAttack(atom/A)
 	if(ishuman(A))
