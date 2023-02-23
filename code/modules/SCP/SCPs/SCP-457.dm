@@ -58,37 +58,35 @@ GLOBAL_LIST_EMPTY(scp457s)
 	return
 
 /mob/living/scp_457/UnarmedAttack(atom/A)
-	var/mob/living/carbon/human/H = A
-	if(H.SCP)
-		to_chat(src, "<span class='warning'><I>[H] is a fellow SCP!</I></span>")
-		return
-	if(H.stat == DEAD)
-		to_chat(src, "<span class='warning'><I>[H] is dead, it no longer can provide you with fuel.</I></span>")
-		return
-	if(istype(H))
+	if(ishuman(A))
+		var/mob/living/carbon/human/H = A
+		if(H.SCP)
+			to_chat(src, "<span class='warning'><I>[H] is a fellow SCP!</I></span>")
+			return
+		if(H.stat == DEAD)
+			to_chat(src, "<span class='warning'><I>[H] is dead, it no longer can provide you with fuel.</I></span>")
+			return
 		if(aflame_cooldown > world.time)
 			to_chat(src, "<span class='warning'>You can't attack yet.</span>")
 			return
+		if(prob(35))
+			visible_message(SPAN_WARNING("[src] begins to claw at [A]!"))
+			if(do_after(src, 1 SECOND, H))
+				H.Weaken(10)
+				H.visible_message("<span class='danger'>[src] claws at [H], the flame sending them to the floor!</span>")
+				to_chat(H, "<span class='userdanger'>IT HURTS!!!</span>")
+				health += 5
+				aflame_cooldown = world.time + aflame_cooldown_time
 		else
-			if(prob(35))
-				visible_message(SPAN_WARNING("[src] begins to claw at [A]!"))
-				if(do_after(src, 1 SECOND, H))
-					H.Weaken(10)
-					H.visible_message("<span class='danger'>[src] claws at [H], the flame sending them to the floor!</span>")
-					to_chat(H, "<span class='userdanger'>IT HURTS!!!</span>")
-					health += 5
-					aflame_cooldown = world.time + aflame_cooldown_time
-				return
-			else
-				visible_message(SPAN_WARNING("[src] raises their arms and begins to attack [A]!"))
-				if(do_after(src, 3 SECONDS, H))
-					H.fire_stacks += 1
-					H.IgniteMob()
-					health += 15
-					aflame_cooldown = world.time + aflame_cooldown_time
-					visible_message("<span class='danger'>[src] grabs a hold of [A] setting them alight!</span>")
-					to_chat(H, "<span class='userdanger'>Oh god, oh god. OH GOD! IT HURTS! PLEASE!</span>")
-					return
+			visible_message(SPAN_WARNING("[src] raises their arms and begins to attack [A]!"))
+			if(do_after(src, 3 SECONDS, H))
+				H.fire_stacks += 1
+				H.IgniteMob()
+				health += 15
+				aflame_cooldown = world.time + aflame_cooldown_time
+				visible_message("<span class='danger'>[src] grabs a hold of [A] setting them alight!</span>")
+				to_chat(H, "<span class='userdanger'>Oh god, oh god. OH GOD! IT HURTS! PLEASE!</span>")
+		return
 	if(istype(A, /obj/machinery/door))
 		OpenDoor(A)
 		return
