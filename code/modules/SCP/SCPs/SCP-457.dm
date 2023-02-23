@@ -59,8 +59,6 @@ GLOBAL_LIST_EMPTY(scp457s)
 
 /mob/living/scp_457/UnarmedAttack(atom/A)
 	var/mob/living/carbon/human/H = A
-	if(!istype(H))
-		return
 	if(H.SCP)
 		to_chat(src, "<span class='warning'><I>[H] is a fellow SCP!</I></span>")
 		return
@@ -82,7 +80,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 					aflame_cooldown = world.time + aflame_cooldown_time
 				return
 			else
-				visible_message(SPAN_WARNING("[src] raises their firey arms and begins to attack [A]!"))
+				visible_message(SPAN_WARNING("[src] raises their arms and begins to attack [A]!"))
 				if(do_after(src, 3 SECONDS, H))
 					H.fire_stacks += 1
 					H.IgniteMob()
