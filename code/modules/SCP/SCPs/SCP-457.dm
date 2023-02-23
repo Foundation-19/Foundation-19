@@ -76,7 +76,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 				H.IgniteMob()
 				health += 15
 				aflame_cooldown = world.time + aflame_cooldown_time
-				visible_message(SPAN_DANGER("[src] grabs a hold of [A] setting them alight!</span>"))
+				visible_message(SPAN_DANGER("[src] grabs a hold of [A] setting them alight!"))
 				to_chat(H, SPAN_USERDANGER("Oh god, oh god. OH GOD! IT HURTS! PLEASE!"))
 		return
 	if(istype(A, /obj/machinery/door))
