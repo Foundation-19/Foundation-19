@@ -2258,6 +2258,7 @@
 #include "code\modules\mob\living\carbon\human\update_icons.dm"
 #include "code\modules\mob\living\carbon\human\vision_cone.dm"
 #include "code\modules\mob\living\carbon\human\whisper.dm"
+#include "code\modules\mob\living\carbon\human\zoom.dm"
 #include "code\modules\mob\living\carbon\human\descriptors\_descriptors.dm"
 #include "code\modules\mob\living\carbon\human\descriptors\descriptors_generic.dm"
 #include "code\modules\mob\living\carbon\human\descriptors\descriptors_nabber.dm"
