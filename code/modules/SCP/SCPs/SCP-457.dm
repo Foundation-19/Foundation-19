@@ -64,8 +64,8 @@ GLOBAL_LIST_EMPTY(scp457s)
 			visible_message(SPAN_WARNING("[src] begins to claw at [A]!"))
 			if(do_after(src, 1 SECOND, H))
 				H.Weaken(10)
-				H.visible_message("<span class='danger'>[src] claws at [H], the flame sending them to the floor!</span>")
-				to_chat(H, "<span class='userdanger'>IT HURTS!!!</span>")
+				H.visible_message(SPAN_WARNING("[src] claws at [H], the flame sending them to the floor!")
+				to_chat(H, SPAN_USERDANGER("IT HURTS!!!"))
 				health += 5
 				aflame_cooldown = world.time + aflame_cooldown_time
 		else
