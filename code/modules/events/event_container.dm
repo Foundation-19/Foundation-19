@@ -2,7 +2,6 @@
 #define ASSIGNMENT_AIC "AIC"
 #define ASSIGNMENT_CYBORG "Robot"
 #define ASSIGNMENT_ENGINEER "Engineer"
-#define ASSIGNMENT_GARDENER "Gardener"
 #define ASSIGNMENT_JANITOR "Janitor"
 #define ASSIGNMENT_MEDICAL "Medical"
 #define ASSIGNMENT_SCIENTIST "Scientist"
@@ -147,7 +146,7 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta/extended_removed(EVENT_LEVEL_MODERATE, "Random Antagonist",	/datum/event/random_antag,				2,		list(ASSIGNMENT_SECURITY = 1), 1, 0, 5),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Sensor Suit Jamming",					/datum/event/sensor_suit_jamming,		10,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_AIC = 20)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Spider Infestation",					/datum/event/spider_infestation, 		25,		list(ASSIGNMENT_SECURITY = 15), 1),
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Wallrot",								/datum/event/wallrot, 					0,		list(ASSIGNMENT_ENGINEER = 30, ASSIGNMENT_GARDENER = 50)),
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Wallrot",								/datum/event/wallrot, 					0,		list(ASSIGNMENT_ENGINEER = 40)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Drone Uprising",						/datum/event/rogue_maint_drones,		25,		list(ASSIGNMENT_ENGINEER = 30, ASSIGNMENT_SECURITY = 20)),
 	)
 
@@ -172,7 +171,6 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 	active_with_role[ASSIGNMENT_AIC] = 0
 	active_with_role[ASSIGNMENT_CYBORG] = 0
 	active_with_role[ASSIGNMENT_JANITOR] = 0
-	active_with_role[ASSIGNMENT_GARDENER] = 0
 
 	for(var/mob/M in GLOB.player_list)
 		if(!M.mind || !M.client || M.client.is_afk(10 MINUTES)) // longer than 10 minutes AFK counts them as inactive
@@ -213,16 +211,12 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		if(M.mind.assigned_role == ASSIGNMENT_JANITOR)
 			active_with_role[ASSIGNMENT_JANITOR]++
 
-		if(M.mind.assigned_role == ASSIGNMENT_GARDENER)
-			active_with_role[ASSIGNMENT_GARDENER]++
-
 	return active_with_role
 
 #undef ASSIGNMENT_ANY
 #undef ASSIGNMENT_AIC
 #undef ASSIGNMENT_CYBORG
 #undef ASSIGNMENT_ENGINEER
-#undef ASSIGNMENT_GARDENER
 #undef ASSIGNMENT_JANITOR
 #undef ASSIGNMENT_MEDICAL
 #undef ASSIGNMENT_SCIENTIST
