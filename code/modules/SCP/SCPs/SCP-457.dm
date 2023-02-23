@@ -39,13 +39,6 @@ GLOBAL_LIST_EMPTY(scp457s)
 	add_language(LANGUAGE_ENGLISH, TRUE)
 	set_light(0.8, 0.3, 5, l_color = COLOR_ORANGE) //makes 457 emit light
 	add_verb(src, list(
-		/mob/living/scp_457/proc/burn,
-		/mob/living/scp_457/proc/hungryfuel,
-		/mob/living/scp_457/proc/taunt1,
-		/mob/living/scp_457/proc/taunt2,
-		/mob/living/scp_457/proc/taunt3,
-		/mob/living/scp_457/proc/no,
-		/mob/living/scp_457/proc/yes,
 		/mob/living/scp_457/proc/checkhealth,
 	))
 
@@ -174,56 +167,6 @@ GLOBAL_LIST_EMPTY(scp457s)
 		X.Respawn()
 		qdel(src)
 		return
-
-//457 emotes
-/mob/living/scp_457/proc/burn()
-	set category = "SCP-457"
-	set name = "BURN!"
-	if (world.time >= next_emote)
-		playsound(src, 'sound/scp/voice/SCP457_burn.ogg', 30)
-		next_emote = world.time + 10
-
-/mob/living/scp_457/proc/hungryfuel()
-	set category = "SCP-457"
-	set name = "HUNGRY."
-	if (world.time >= next_emote)
-		playsound(src, 'sound/scp/voice/SCP457_hunger.ogg', 30)
-		next_emote = world.time + 10
-
-/mob/living/scp_457/proc/taunt1()
-	set category = "SCP-457"
-	set name = "Taunt 1"
-	if (world.time >= next_emote)
-		playsound(src, 'sound/scp/voice/SCP457t_1.ogg', 30)
-		next_emote = world.time + 10
-
-/mob/living/scp_457/proc/taunt2()
-	set category = "SCP-457"
-	set name = "Taunt 2"
-	if (world.time >= next_emote)
-		playsound(src, 'sound/scp/voice/SCP457t_2.ogg', 30)
-		next_emote = world.time + 10
-
-/mob/living/scp_457/proc/taunt3()
-	set category = "SCP-457"
-	set name = "Taunt 3"
-	if (world.time >= next_emote)
-		playsound(src, 'sound/scp/voice/SCP457t_3.ogg', 30)
-		next_emote = world.time + 10
-
-/mob/living/scp_457/proc/no()
-	set category = "SCP-457"
-	set name = "NO."
-	if (world.time >= next_emote)
-		playsound(src, 'sound/scp/voice/SCP457_no.ogg', 30)
-		next_emote = world.time + 10
-
-/mob/living/scp_457/proc/yes()
-	set category = "SCP-457"
-	set name = "YES."
-	if (world.time >= next_emote)
-		playsound(src, 'sound/scp/voice/SCP457_yes.ogg', 30)
-		next_emote = world.time + 10
 
 /mob/living/scp_457/proc/checkhealth()
 	set category = "SCP-457"
