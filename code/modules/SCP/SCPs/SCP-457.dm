@@ -54,13 +54,13 @@ GLOBAL_LIST_EMPTY(scp457s)
 	if(ishuman(A))
 		var/mob/living/carbon/human/H = A
 		if(H.SCP)
-			to_chat(src, "<span class='warning'><I>[H] is a fellow SCP!</I></span>")
+			to_chat(src, SPAN_WARNING("<I>[H] is a fellow SCP!</I>"))
 			return
 		if(H.stat == DEAD)
-			to_chat(src, "<span class='warning'><I>[H] is dead, it no longer can provide you with fuel.</I></span>")
+			to_chat(src, SPAN_NOTICE("<I>[H] is dead, it no longer can provide you with fuel.</I>"))
 			return
 		if(aflame_cooldown > world.time)
-			to_chat(src, "<span class='warning'>You can't attack yet.</span>")
+			to_chat(src, SPAN_WARNING("You can't attack yet."))
 			return
 		if(prob(35))
 			visible_message(SPAN_WARNING("[src] begins to claw at [A]!"))
@@ -77,8 +77,8 @@ GLOBAL_LIST_EMPTY(scp457s)
 				H.IgniteMob()
 				health += 15
 				aflame_cooldown = world.time + aflame_cooldown_time
-				visible_message("<span class='danger'>[src] grabs a hold of [A] setting them alight!</span>")
-				to_chat(H, "<span class='userdanger'>Oh god, oh god. OH GOD! IT HURTS! PLEASE!</span>")
+				visible_message(SPAN_DANGER("[src] grabs a hold of [A] setting them alight!</span>"))
+				to_chat(H, SPAN_USERDANGER("Oh god, oh god. OH GOD! IT HURTS! PLEASE!"))
 		return
 	if(istype(A, /obj/machinery/door))
 		OpenDoor(A)
@@ -103,13 +103,13 @@ GLOBAL_LIST_EMPTY(scp457s)
 		return
 
 	if(!A.Adjacent(src))
-		to_chat(src, "<span class='warning'>\The [A] is too far away.</span>")
+		to_chat(src, SPAN_WARNING("\The [A] is too far away."))
 		return
 
 	var/open_time = 4 SECONDS
 	if(istype(A, /obj/machinery/door/blast))
 		if(get_area(A) == spawn_area)
-			to_chat(src, "<span class='warning'>This blast door is too thermally protected, you cannot melt through it.</span>")
+			to_chat(src, SPAN_WARNING("This blast door is too thermally protected, you cannot melt through it."))
 			return
 		open_time = 15 SECONDS
 
@@ -145,7 +145,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 /datum/reagent/water/touch_mob(var/mob/living/scp_457/M)
 	if(istype(M))
 		M.adjustToxLoss(30)
-		to_chat(M,	"<span class='userdanger'>FUEL LESSENS, MAKE THEM PAY...</span>")
+		to_chat(M,	SPAN_USERDANGER("FUEL LESSENS, MAKE THEM PAY..."))
 		return	..()
 
 /obj/effect/landmark/respawner457
