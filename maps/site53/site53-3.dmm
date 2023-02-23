@@ -6526,10 +6526,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "rS" = (
-/obj/machinery/requests_console{
-	department = "Logistics";
-	pixel_x = -32
-	},
 /obj/structure/bed/chair/office/dark{
 	dir = 1
 	},
@@ -6541,7 +6537,7 @@
 "rT" = (
 /obj/machinery/requests_console{
 	department = "Logistics";
-	pixel_x = -32
+	departmentType = 6
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -10035,6 +10031,14 @@
 /obj/structure/table/woodentable/ebony,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/repoffice/ethics)
+"MH" = (
+/obj/effect/paint_stripe/white,
+/obj/machinery/requests_console{
+	department = "Medbay";
+	departmentType = 7
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/medical/equipstorage)
 "MN" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -11068,6 +11072,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
+"Vq" = (
+/obj/effect/paint_stripe/white,
+/obj/machinery/requests_console{
+	department = "Medbay";
+	departmentType = 7
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/medical/infirmreception)
 "Vr" = (
 /obj/machinery/vending/engineering{
 	dir = 1;
@@ -11226,6 +11238,13 @@
 /obj/structure/flora/pottedplant/stoutbush,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
+"WQ" = (
+/obj/machinery/requests_console{
+	department = "Logistics";
+	departmentType = 6
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/logistics/logistics)
 "WX" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -34948,7 +34967,7 @@ oV
 qE
 oV
 oV
-oV
+WQ
 oV
 oV
 qK
@@ -36643,7 +36662,7 @@ fI
 fI
 fI
 jP
-jP
+MH
 VK
 jP
 jP
@@ -41275,7 +41294,7 @@ fQ
 dF
 iP
 BP
-jN
+Vq
 kd
 TP
 kE

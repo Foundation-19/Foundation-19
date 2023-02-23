@@ -9602,6 +9602,14 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
+"wS" = (
+/obj/effect/paint_stripe/paleblue,
+/obj/machinery/requests_console{
+	departmentType = 5;
+	department = "Archives"
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/lowertram/archive)
 "wT" = (
 /obj/structure/hygiene/toilet{
 	dir = 4
@@ -48607,7 +48615,7 @@ tb
 um
 Cj
 ah
-aZ
+wS
 Cz
 Cz
 Cz

@@ -687,10 +687,6 @@
 "ach" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/device/flashlight/lamp,
-/obj/machinery/requests_console{
-	department = "Logistics";
-	pixel_x = -32
-	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
 "ack" = (
@@ -26425,6 +26421,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
+"iov" = (
+/obj/effect/paint_stripe/yellow,
+/obj/machinery/requests_console{
+	department = "Engineering";
+	departmentType = 7
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/vacant/prototype/control)
 "ipm" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -30538,6 +30542,14 @@
 /obj/item/gun/energy/stunrevolver/rifle,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
+"nZM" = (
+/obj/effect/paint_stripe/gray,
+/obj/machinery/requests_console{
+	department = "Bar";
+	departmentType = 6
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/restaurantkitchenarea)
 "oaH" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
@@ -32036,6 +32048,15 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
+"qpL" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/effect/paint_stripe/yellow,
+/obj/machinery/requests_console{
+	department = "Engineering";
+	departmentType = 7
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/engineering/atmos)
 "qqQ" = (
 /obj/structure/table/standard,
 /obj/machinery/camera/network/lcz{
@@ -37245,6 +37266,14 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/hallways)
+"xNV" = (
+/obj/effect/paint_stripe/yellow,
+/obj/machinery/requests_console{
+	department = "Engineering";
+	departmentType = 7
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/engineering/controlroom)
 "xOp" = (
 /obj/item/flame/lighter/zippo,
 /turf/simulated/floor,
@@ -46876,7 +46905,7 @@ aqB
 aqB
 apL
 atv
-aeH
+iov
 asU
 aun
 asU
@@ -54849,7 +54878,7 @@ ajV
 aaw
 aaw
 aaw
-aaw
+xNV
 amW
 aBQ
 awV
@@ -63069,7 +63098,7 @@ asd
 auA
 ary
 ask
-ask
+qpL
 ask
 axA
 aqX
@@ -71577,7 +71606,7 @@ bWu
 aav
 dQS
 dQS
-aav
+nZM
 aav
 acm
 gLb

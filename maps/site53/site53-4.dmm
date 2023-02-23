@@ -2685,10 +2685,6 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/maintenance)
 "hP" = (
-/obj/machinery/requests_console{
-	department = "Logistics Officer";
-	pixel_x = -32
-	},
 /obj/machinery/camera/autoname{
 	dir = 4;
 	network = list("Entrance Zone Network")
@@ -3310,10 +3306,6 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/logistics/logisticsbreak)
 "jm" = (
-/obj/machinery/requests_console{
-	department = "Logistics";
-	pixel_x = -32
-	},
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 8
 	},
@@ -3560,7 +3552,8 @@
 "jS" = (
 /obj/machinery/requests_console{
 	department = "Comms Officer";
-	pixel_x = -32
+	pixel_x = -32;
+	departmentType = 5
 	},
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -4204,6 +4197,14 @@
 /obj/structure/bed/chair,
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
+"sp" = (
+/obj/effect/paint_stripe/blue,
+/obj/machinery/requests_console{
+	department = "Administrative";
+	departmentType = 5
+	},
+/turf/simulated/wall/titanium,
+/area/site53/uez/hallway)
 "sr" = (
 /obj/structure/bed/chair/comfy/yellow{
 	name = "Chief Engineer"
@@ -4258,6 +4259,14 @@
 /obj/item/folder/envelope/nuke_instructions,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
+"vd" = (
+/obj/effect/paint_stripe/brown,
+/obj/machinery/requests_console{
+	departmentType = 6;
+	department = "Logistics"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/logistics/logisticsbreak)
 "vh" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/orange/border{
@@ -4961,6 +4970,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
+"TJ" = (
+/obj/effect/paint_stripe/blue,
+/obj/machinery/requests_console{
+	department = "Administrative";
+	departmentType = 5
+	},
+/turf/simulated/wall/titanium,
+/area/site53/uez/conference)
 "TP" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/green/mono,
@@ -5025,6 +5042,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
+"Xm" = (
+/obj/effect/paint_stripe/blue,
+/obj/machinery/requests_console{
+	departmentType = 6;
+	department = "Logistics"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/logistics/logisticsofficer)
 "Yo" = (
 /obj/machinery/light{
 	dir = 4
@@ -26327,7 +26352,7 @@ hk
 hk
 ia
 ia
-ia
+vd
 ia
 ia
 ia
@@ -29405,7 +29430,7 @@ hZ
 hZ
 iz
 iz
-tD
+Xm
 iA
 tD
 tD
@@ -36241,7 +36266,7 @@ ZB
 ZB
 ac
 cS
-ac
+sp
 ZB
 ZB
 ac
@@ -39845,7 +39870,7 @@ hj
 ac
 bK
 gm
-dF
+TJ
 eL
 gT
 FW
@@ -41894,7 +41919,7 @@ ac
 fW
 fW
 fW
-ac
+sp
 fW
 fW
 fW
