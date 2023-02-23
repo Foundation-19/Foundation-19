@@ -4196,6 +4196,11 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/requests_console{
+	department = "Medical";
+	departmentType = 7;
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmreception)
 "kf" = (
@@ -6532,12 +6537,18 @@
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 8
 	},
+/obj/machinery/requests_console{
+	department = "Logistics";
+	departmentType = 6;
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "rT" = (
 /obj/machinery/requests_console{
 	department = "Logistics";
-	departmentType = 6
+	departmentType = 6;
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
@@ -9729,6 +9740,11 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/requests_console{
+	department = "Medical";
+	departmentType = 7;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "Kw" = (
@@ -10031,14 +10047,6 @@
 /obj/structure/table/woodentable/ebony,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/repoffice/ethics)
-"MH" = (
-/obj/effect/paint_stripe/white,
-/obj/machinery/requests_console{
-	department = "Medbay";
-	departmentType = 7
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/medical/equipstorage)
 "MN" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -10508,6 +10516,11 @@
 /obj/machinery/power/apc/high{
 	dir = 8;
 	pixel_x = -23
+	},
+/obj/machinery/requests_console{
+	department = "Medical";
+	departmentType = 7;
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
@@ -11072,14 +11085,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
-"Vq" = (
-/obj/effect/paint_stripe/white,
-/obj/machinery/requests_console{
-	department = "Medbay";
-	departmentType = 7
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/medical/infirmreception)
 "Vr" = (
 /obj/machinery/vending/engineering{
 	dir = 1;
@@ -11238,13 +11243,6 @@
 /obj/structure/flora/pottedplant/stoutbush,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
-"WQ" = (
-/obj/machinery/requests_console{
-	department = "Logistics";
-	departmentType = 6
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/logistics/logistics)
 "WX" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -34967,7 +34965,7 @@ oV
 qE
 oV
 oV
-WQ
+oV
 oV
 oV
 qK
@@ -36662,7 +36660,7 @@ fI
 fI
 fI
 jP
-MH
+jP
 VK
 jP
 jP
@@ -41294,7 +41292,7 @@ fQ
 dF
 iP
 BP
-Vq
+jN
 kd
 TP
 kE

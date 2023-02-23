@@ -1102,6 +1102,11 @@
 	id_tag = "sitedirect";
 	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
+/obj/machinery/requests_console{
+	department = "Administrative";
+	departmentType = 5;
+	pixel_x = -32
+	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cZ" = (
@@ -1701,6 +1706,11 @@
 	dir = 8;
 	network = list("Entrance Zone Network")
 	},
+/obj/machinery/requests_console{
+	department = "Administrative";
+	departmentType = 5;
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "eG" = (
@@ -1972,6 +1982,11 @@
 "fq" = (
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/machinery/requests_console{
+	department = "Administrative";
+	departmentType = 5;
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
@@ -2689,6 +2704,11 @@
 	dir = 4;
 	network = list("Entrance Zone Network")
 	},
+/obj/machinery/requests_console{
+	department = "Logistics";
+	departmentType = 6;
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
 "hQ" = (
@@ -3309,6 +3329,11 @@
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 8
 	},
+/obj/machinery/requests_console{
+	department = "Logistics";
+	departmentType = 6;
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
 "jn" = (
@@ -3549,15 +3574,6 @@
 /obj/structure/barricade,
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/maincontrolroom)
-"jS" = (
-/obj/machinery/requests_console{
-	department = "Comms Officer";
-	pixel_x = -32;
-	departmentType = 5
-	},
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor/plating,
-/area/site53/upper_surface/commstower)
 "jT" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -4032,6 +4048,11 @@
 	dir = 1
 	},
 /obj/structure/railing/mapped,
+/obj/machinery/requests_console{
+	department = "Comms Officer";
+	departmentType = 5;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "ml" = (
@@ -4197,14 +4218,6 @@
 /obj/structure/bed/chair,
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
-"sp" = (
-/obj/effect/paint_stripe/blue,
-/obj/machinery/requests_console{
-	department = "Administrative";
-	departmentType = 5
-	},
-/turf/simulated/wall/titanium,
-/area/site53/uez/hallway)
 "sr" = (
 /obj/structure/bed/chair/comfy/yellow{
 	name = "Chief Engineer"
@@ -4259,14 +4272,6 @@
 /obj/item/folder/envelope/nuke_instructions,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
-"vd" = (
-/obj/effect/paint_stripe/brown,
-/obj/machinery/requests_console{
-	departmentType = 6;
-	department = "Logistics"
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/logistics/logisticsbreak)
 "vh" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/orange/border{
@@ -4970,14 +4975,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
-"TJ" = (
-/obj/effect/paint_stripe/blue,
-/obj/machinery/requests_console{
-	department = "Administrative";
-	departmentType = 5
-	},
-/turf/simulated/wall/titanium,
-/area/site53/uez/conference)
 "TP" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/green/mono,
@@ -5042,14 +5039,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/forensics)
-"Xm" = (
-/obj/effect/paint_stripe/blue,
-/obj/machinery/requests_console{
-	departmentType = 6;
-	department = "Logistics"
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/logistics/logisticsofficer)
 "Yo" = (
 /obj/machinery/light{
 	dir = 4
@@ -26352,7 +26341,7 @@ hk
 hk
 ia
 ia
-vd
+ia
 ia
 ia
 ia
@@ -29430,7 +29419,7 @@ hZ
 hZ
 iz
 iz
-Xm
+tD
 iA
 tD
 tD
@@ -35577,7 +35566,7 @@ eH
 gK
 kr
 jL
-jS
+eH
 kG
 kG
 rI
@@ -36266,7 +36255,7 @@ ZB
 ZB
 ac
 cS
-sp
+ac
 ZB
 ZB
 ac
@@ -39870,7 +39859,7 @@ hj
 ac
 bK
 gm
-TJ
+dF
 eL
 gT
 FW
@@ -41919,7 +41908,7 @@ ac
 fW
 fW
 fW
-sp
+ac
 fW
 fW
 fW

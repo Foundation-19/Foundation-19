@@ -5865,6 +5865,11 @@
 	},
 /obj/structure/flora/pottedplant/flower,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/requests_console{
+	departmentType = 7;
+	department = "Engineering";
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/controlroom)
 "aqx" = (
@@ -7232,6 +7237,11 @@
 	},
 /obj/effect/floor_decal/corner/yellow{
 	dir = 10
+	},
+/obj/machinery/requests_console{
+	departmentType = 7;
+	department = "Engineering";
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/dark,
 /area/vacant/prototype/control)
@@ -14819,6 +14829,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/requests_console{
+	departmentType = 6;
+	department = "Bar";
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
 "aOv" = (
@@ -26421,14 +26436,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
-"iov" = (
-/obj/effect/paint_stripe/yellow,
-/obj/machinery/requests_console{
-	department = "Engineering";
-	departmentType = 7
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/vacant/prototype/control)
 "ipm" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -30542,14 +30549,6 @@
 /obj/item/gun/energy/stunrevolver/rifle,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
-"nZM" = (
-/obj/effect/paint_stripe/gray,
-/obj/machinery/requests_console{
-	department = "Bar";
-	departmentType = 6
-	},
-/turf/simulated/wall/prepainted,
-/area/site53/lowertrams/restaurantkitchenarea)
 "oaH" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
@@ -32048,15 +32047,6 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
-"qpL" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan,
-/obj/effect/paint_stripe/yellow,
-/obj/machinery/requests_console{
-	department = "Engineering";
-	departmentType = 7
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/engineering/atmos)
 "qqQ" = (
 /obj/structure/table/standard,
 /obj/machinery/camera/network/lcz{
@@ -36549,6 +36539,14 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/scp012)
+"wQn" = (
+/obj/machinery/requests_console{
+	departmentType = 7;
+	department = "Engineering";
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/engineering/atmos)
 "wRi" = (
 /obj/structure/table/woodentable/mahogany,
 /obj/machinery/photocopier/faxmachine{
@@ -37266,14 +37264,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/hallways)
-"xNV" = (
-/obj/effect/paint_stripe/yellow,
-/obj/machinery/requests_console{
-	department = "Engineering";
-	departmentType = 7
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site53/engineering/controlroom)
 "xOp" = (
 /obj/item/flame/lighter/zippo,
 /turf/simulated/floor,
@@ -46905,7 +46895,7 @@ aqB
 aqB
 apL
 atv
-iov
+aeH
 asU
 aun
 asU
@@ -54878,7 +54868,7 @@ ajV
 aaw
 aaw
 aaw
-xNV
+aaw
 amW
 aBQ
 awV
@@ -63098,7 +63088,7 @@ asd
 auA
 ary
 ask
-qpL
+ask
 ask
 axA
 aqX
@@ -63355,7 +63345,7 @@ asd
 auA
 arz
 asv
-atr
+wQn
 atY
 avd
 avQ
@@ -71606,7 +71596,7 @@ bWu
 aav
 dQS
 dQS
-nZM
+aav
 aav
 acm
 gLb
