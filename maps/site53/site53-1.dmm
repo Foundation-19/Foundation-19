@@ -19442,6 +19442,14 @@
 /obj/item/storage/box/syringes,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
+"Zi" = (
+/obj/machinery/requests_console{
+	departmentType = 5;
+	department = "Archives";
+	pixel_y = -32
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/lowertram/archive)
 "Zj" = (
 /obj/machinery/light{
 	dir = 4;
@@ -48606,7 +48614,7 @@ cp
 tb
 um
 Cj
-ah
+Zi
 aZ
 Cz
 Cz
