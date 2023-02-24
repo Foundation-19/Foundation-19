@@ -65,3 +65,13 @@
 2023-02-17:
   Tsurupeta:
   - rscadd: Added ability to look into distance by pressing Ctrl+RMB on tile.
+2023-02-24:
+  cheesePizza2:
+  - rscadd: You can now actually select the second-to-last alert (Code Pitchblack)!
+  - rscadd: Command program now has descriptions of all alerts!
+  - rscdel: All old alert levels are gone (Except Delta)
+  - bugfix: Alerts now have more sensical description texts
+  - imageadd: Fixed up alert sprites to work with other sprites
+  - imagedel: Deleted old alert sprites
+  - refactor: Messy alert code was standardized, less dumb shit
+  - refactor: In general, messy code relating to alerts has been cleaned up
