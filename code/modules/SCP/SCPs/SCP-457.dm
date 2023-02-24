@@ -39,7 +39,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 	add_language(LANGUAGE_ENGLISH, TRUE)
 	set_light(0.8, 0.3, 5, l_color = COLOR_ORANGE) //makes 457 emit light
 	add_verb(src, list(
-		/mob/living/scp_457/proc/checkhealth,
+		/mob/living/scp_457/proc/checkhealth
 	))
 
 	return ..()
@@ -64,20 +64,21 @@ GLOBAL_LIST_EMPTY(scp457s)
 			visible_message(SPAN_WARNING("[src] begins to claw at [A]!"))
 			if(do_after(src, 1 SECOND, H))
 				H.Weaken(10)
-				H.visible_message(SPAN_WARNING("[src] claws at [H], the flame sending them to the floor!")
+				H.visible_message(SPAN_WARNING("[src] claws at [H], the flame sending them to the floor!"))
 				to_chat(H, SPAN_USERDANGER("IT HURTS!!!"))
 				health += 5
 				aflame_cooldown = world.time + aflame_cooldown_time
-		else
-			visible_message(SPAN_WARNING("[src] raises their arms and begins to attack [A]!"))
-			if(do_after(src, 3 SECONDS, H))
-				H.fire_stacks += 1
-				H.IgniteMob()
-				health += 15
-				aflame_cooldown = world.time + aflame_cooldown_time
-				visible_message(SPAN_DANGER("[src] grabs a hold of [A] setting them alight!"))
-				to_chat(H, SPAN_USERDANGER("Oh god, oh god. OH GOD! IT HURTS! PLEASE!"))
-		return
+			else
+				visible_message(SPAN_WARNING("[src] raises their arms and begins to attack [A]!"))
+				if(do_after(src, 3 SECONDS, H))
+					H.fire_stacks += 1
+					H.IgniteMob()
+					health += 15
+					aflame_cooldown = world.time + aflame_cooldown_time
+					visible_message(SPAN_DANGER("[src] grabs a hold of [A] setting them alight!"))
+					to_chat(H, SPAN_USERDANGER("Oh god, oh god. OH GOD! IT HURTS! PLEASE!"))
+				return
+
 	if(istype(A, /obj/machinery/door))
 		OpenDoor(A)
 		return
