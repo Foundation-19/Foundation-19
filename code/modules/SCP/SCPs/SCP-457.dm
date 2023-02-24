@@ -147,21 +147,14 @@ GLOBAL_LIST_EMPTY(scp457s)
 		to_chat(M,	SPAN_USERDANGER("FUEL LESSENS, MAKE THEM PAY..."))
 		return ..()
 
-/obj/effect/landmark/respawner457
-	name = "respawn"
-
-/obj/effect/landmark/respawner457/proc/Respawn()
-	new /mob/living/scp_457(src.loc)
-	return
-
 /mob/living/scp_457/Life()
 	if(src.health == 0)
-		var/obj/effect/landmark/respawner457/X = new /obj/effect/landmark/respawner457(loc)
 		src.death(FALSE, "falls on their knees, the flame withering away.", TRUE)
 		src.set_icon_state("fireguy_dead")
-		sleep(300)
-		X.visible_message("One single flame from [src] reforms, turning itself into a humanoid form once again.")
-		X.Respawn()
+		sleep(3000)
+		src.visible_message("One single flame from [src] reforms, turning itself into a humanoid form once again.")
+		new /mob/living/scp_457(src.loc)
+		sleep(0.3)
 		qdel(src)
 		return
 
