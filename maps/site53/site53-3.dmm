@@ -4196,6 +4196,11 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/requests_console{
+	department = "Medical";
+	departmentType = 7;
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmreception)
 "kf" = (
@@ -6526,21 +6531,23 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "rS" = (
-/obj/machinery/requests_console{
-	department = "Logistics";
-	pixel_x = -32
-	},
 /obj/structure/bed/chair/office/dark{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/brown/half{
 	dir = 8
 	},
+/obj/machinery/requests_console{
+	department = "Logistics";
+	departmentType = 6;
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "rT" = (
 /obj/machinery/requests_console{
 	department = "Logistics";
+	departmentType = 6;
 	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -9733,6 +9740,11 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/requests_console{
+	department = "Medical";
+	departmentType = 7;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "Kw" = (
@@ -10504,6 +10516,11 @@
 /obj/machinery/power/apc/high{
 	dir = 8;
 	pixel_x = -23
+	},
+/obj/machinery/requests_console{
+	department = "Medical";
+	departmentType = 7;
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
