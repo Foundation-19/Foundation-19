@@ -145,7 +145,7 @@
 		src.death(FALSE, "falls on their knees, the flame withering away.", TRUE)
 		src.set_icon_state("fireguy_dead")
 		sleep(3000)
-		src.visible_message("One single flame from [src] reforms, turning itself into a humanoid form once again.")
+		visible_message("One single flame from [src] reforms, turning itself into a humanoid form once again.")
 		new /mob/living/scp_457(src.loc)
 		sleep(0.3)
 		qdel(src)
