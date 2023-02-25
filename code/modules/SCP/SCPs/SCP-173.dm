@@ -32,8 +32,13 @@ GLOBAL_LIST_EMPTY(scp173s)
 	/// Current attack cooldown
 	var/snap_cooldown
 	/// Amount of the attack cooldown
-	var/snap_cooldown_time = 4 SECONDS
-
+	var/snap_cooldown_time = 2 SECONDS
+	/// Current light break cooldown
+	var/light_break_cooldown
+	/// Amount of light fixture break cooldown
+	var/light_break_cooldown_time = 3 SECONDS
+	/// Maximium light level at which blink cooldown can start to drop off (value between 0 and 1)
+	var/max_lightlevel = 0.5
 	/// Cooldown for defecation...
 	var/defecation_cooldown
 	/// How much time you have to wait before defecating again
@@ -103,6 +108,22 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(istype(A, /obj/machinery/door))
 		OpenDoor(A)
 		return
+	if(istype(A,/obj/machinery/floor_light))
+		if(light_break_cooldown > world.time) //cooldown
+			to_chat(src, "<span class='warning'>You can't break that yet.</span>")
+			return
+		var/obj/machinery/floor_light/W = A
+		W.shatter()
+		light_break_cooldown = world.time + light_break_cooldown_time
+		return
+	if(istype(A,/obj/machinery/light))
+		if(light_break_cooldown > world.time) //cooldown
+			to_chat(src, "<span class='warning'>You can't break that yet.</span>")
+			return
+		var/obj/machinery/light/W = A
+		W.broken()
+		light_break_cooldown = world.time + light_break_cooldown_time
+		return
 	if(istype(A,/obj/structure/window))
 		var/obj/structure/window/W = A
 		W.shatter()
@@ -154,7 +175,11 @@ GLOBAL_LIST_EMPTY(scp173s)
 			continue
 		var/mob/living/carbon/human/H = L
 		if(next_blinks[H] == null)
-			next_blinks[H] = world.time + rand(5 SECONDS, 10 SECONDS) // Just encountered SCP 173
+			var/turf/T = get_turf(src)
+			var/lightcount = T.get_lumcount()
+			if(lightcount > max_lightlevel)
+				lightcount = 1 //Light level must be less than max_lightlevel before blink time drop off
+			next_blinks[H] = (world.time + rand(5 SECONDS, 10 SECONDS)) * lightcount // Just encountered SCP 173
 		if(H.SCP)
 			continue
 		if(is_blind(H) || H.eye_blind > 0)
@@ -226,7 +251,11 @@ GLOBAL_LIST_EMPTY(scp173s)
 	H.visible_message("<span class='notice'>[H] blinks.</span>")
 	H.eye_blind += 2
 	add_verb(H, /mob/living/carbon/human/verb/manual_blink)
-	next_blinks[H] = world.time + rand(15 SECONDS, 25 SECONDS)
+	var/turf/T = get_turf(src)
+	var/lightcount = T.get_lumcount()
+	if(lightcount > max_lightlevel)
+		lightcount = 1 //Light level must be less than max_lightlevel before blink time drop off
+	next_blinks[H] = (world.time + rand(15 SECONDS, 25 SECONDS)) * lightcount
 
 /mob/living/scp_173/proc/AIAttemptAttack()
 	var/mob/living/carbon/human/target

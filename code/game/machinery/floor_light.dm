@@ -64,6 +64,12 @@ var/list/floor_light_cache = list()
 			if(isnull(damaged)) damaged = 0
 		return TRUE
 
+/obj/machinery/floor_light/proc/shatter()
+	visible_message("<span class='danger'>\The [src] shatters!</span>")
+	playsound(src, "shatter", 70, 1)
+	set_broken(TRUE)
+	return TRUE
+
 /obj/machinery/floor_light/interface_interact(mob/user)
 	if(!CanInteract(user, DefaultTopicState()))
 		return FALSE
