@@ -109,6 +109,9 @@ GLOBAL_LIST_EMPTY(scp173s)
 		OpenDoor(A)
 		return
 	if(istype(A,/obj/machinery/floor_light))
+		if(get_area(A) == spawn_area)
+			to_chat(src, "<span class='warning'>You can't reach the lights in your own containment zone.</span>")
+			return
 		if(light_break_cooldown > world.time) //cooldown
 			to_chat(src, "<span class='warning'>You can't break that yet.</span>")
 			return
@@ -117,6 +120,9 @@ GLOBAL_LIST_EMPTY(scp173s)
 		light_break_cooldown = world.time + light_break_cooldown_time
 		return
 	if(istype(A,/obj/machinery/light))
+		if(get_area(A) == spawn_area)
+			to_chat(src, "<span class='warning'>You can't reach the lights in your own containment zone.</span>")
+			return
 		if(light_break_cooldown > world.time) //cooldown
 			to_chat(src, "<span class='warning'>You can't break that yet.</span>")
 			return
