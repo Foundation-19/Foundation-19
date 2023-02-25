@@ -1,5 +1,3 @@
-GLOBAL_LIST_EMPTY(scp457s)
-
 /datum/scp/scp_457
 	name = "SCP-457"
 	designation = "457"
@@ -30,7 +28,6 @@ GLOBAL_LIST_EMPTY(scp457s)
 	var/area/spawn_area
 
 /mob/living/scp_457/Initialize()
-	GLOB.scp457s += src
 	spawn_area = get_area(src)
 	add_language(LANGUAGE_EAL, FALSE)
 	add_language(LANGUAGE_SKRELLIAN, FALSE)
@@ -42,10 +39,6 @@ GLOBAL_LIST_EMPTY(scp457s)
 		/mob/living/scp_457/proc/checkhealth
 	))
 
-	return ..()
-
-/mob/living/scp_457/Destroy()
-	GLOB.scp457s -= src
 	return ..()
 
 /mob/living/scp_457/UnarmedAttack(atom/A)
@@ -143,7 +136,7 @@ GLOBAL_LIST_EMPTY(scp457s)
 
 /datum/reagent/water/touch_mob(var/mob/living/scp_457/M)
 	if(istype(M))
-		M.adjustToxLoss(30)
+		M.adjustBruteLoss(30)
 		to_chat(M,	SPAN_USERDANGER("FUEL LESSENS, MAKE THEM PAY..."))
 		return ..()
 
