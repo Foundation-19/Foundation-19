@@ -32,7 +32,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	/// Current attack cooldown
 	var/snap_cooldown
 	/// Amount of the attack cooldown
-	var/snap_cooldown_time = 2 SECONDS
+	var/snap_cooldown_time = 4 SECONDS
 	/// Current light break cooldown
 	var/light_break_cooldown
 	/// Amount of light fixture break cooldown
