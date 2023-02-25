@@ -21,5 +21,5 @@
 		var/mob/living/carbon/human/G = user
 		H.gib()
 		G.gib()
-		explosion(src, 2, 1, 2, 2)
+		explosion(src, 0.7, 0.7, 0.7, 0.7)
 		return
