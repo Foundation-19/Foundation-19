@@ -185,7 +185,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			var/lightcount = T.get_lumcount()
 			if(lightcount > max_lightlevel)
 				lightcount = 1 //Light level must be less than max_lightlevel before blink time drop off
-			next_blinks[H] = (world.time + rand(5 SECONDS, 10 SECONDS)) * lightcount // Just encountered SCP 173
+			next_blinks[H] = world.time + (rand(5 SECONDS, 10 SECONDS) * lightcount) // Just encountered SCP 173
 		if(H.SCP)
 			continue
 		if(is_blind(H) || H.eye_blind > 0)
@@ -261,7 +261,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/lightcount = T.get_lumcount()
 	if(lightcount > max_lightlevel)
 		lightcount = 1 //Light level must be less than max_lightlevel before blink time drop off
-	next_blinks[H] = (world.time + rand(15 SECONDS, 25 SECONDS)) * lightcount
+	next_blinks[H] = world.time + (rand(15 SECONDS, 25 SECONDS) * lightcount)
 
 /mob/living/scp_173/proc/AIAttemptAttack()
 	var/mob/living/carbon/human/target
