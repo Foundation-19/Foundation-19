@@ -132,7 +132,7 @@
 		AR.welded = FALSE
 	A.stat |= BROKEN
 	var/check = A.open(1)
-	src.visible_message("\The [src] melts \the [A]'s controls[check ? ", and rips it open!" : ", and breaks it!"]")
+	visible_message("\The [src] melts \the [A]'s controls[check ? ", and rips it open!" : ", and breaks it!"]")
 
 /datum/reagent/water/touch_mob(var/mob/living/scp_457/M)
 	if(istype(M))
