@@ -142,8 +142,8 @@
 
 /mob/living/scp_457/Life()
 	if(src.health == 0)
-		src.death(FALSE, "falls on their knees, the flame withering away.", TRUE)
-		src.set_icon_state("fireguy_dead")
+		death(FALSE, "falls on their knees, the flame withering away.", TRUE)
+		set_icon_state("fireguy_dead")
 		sleep(3000)
 		visible_message("One single flame from [src] reforms, turning itself into a humanoid form once again.")
 		new /mob/living/scp_457(src.loc)
