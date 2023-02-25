@@ -147,7 +147,6 @@
 		sleep(3000)
 		visible_message("One single flame from [src] reforms, turning itself into a humanoid form once again.")
 		new /mob/living/scp_457(get_turf(src))
-		sleep(0.3)
 		qdel(src)
 		return
 
