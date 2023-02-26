@@ -15642,7 +15642,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor,
+/turf/simulated/floor/plating,
 /area/site53/llcz/scp500)
 "NQ" = (
 /obj/effect/floor_decal/industrial/hatch/red,
