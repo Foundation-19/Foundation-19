@@ -141,14 +141,18 @@
 		return ..()
 
 /mob/living/scp_457/Life()
-	if(health == 0)
-		death(FALSE, "falls on their knees, the flame withering away.", TRUE)
+	if(health <= 0)
+		death(FALSE, "falls on their knees, the flame withering away.")
+
+/mob/living/scp_457/death(gibbed, deathmessage, show_dead_message)
+	if(..())
 		set_icon_state("fireguy_dead")
-		sleep(3000)
-		visible_message("One single flame from [src] reforms, turning itself into a humanoid form once again.")
-		new /mob/living/scp_457(get_turf(src))
-		qdel(src)
-		return
+		addtimer(CALLBACK(src, /mob/living/scp_457/proc/_respawn), 5 MINUTES)
+
+/mob/living/scp_457/proc/_respawn()
+	visible_message("One single flame from [src] reforms, turning itself into a humanoid form once again.")
+	new /mob/living/scp_457(get_turf(src))
+	qdel(src)
 
 /mob/living/scp_457/proc/checkhealth()
 	set category = "SCP-457"
