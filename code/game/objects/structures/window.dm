@@ -225,6 +225,7 @@
 	if(reinf_material)
 		tforce *= 0.25
 	playsound(loc, 'sound/effects/Glasshit.ogg', 100, 1)
+	show_sound_effect(get_turf(src))
 	damage_health(tforce, BRUTE)
 	deanchor(AM)
 
@@ -248,12 +249,14 @@
 				return
 
 		playsound(src.loc, 'sound/effects/glassbash.ogg', 125, 1) // So as it turns out, glassbash sound is quieter than glassknock
+		show_sound_effect(get_turf(src), null, "boom")
 		user.do_attack_animation(src)
 		user.visible_message(SPAN_DANGER("\The [user] bangs against \the [src]!"),
 							SPAN_DANGER("You bang against \the [src]!"),
 							"You hear a banging sound.")
 	else
 		playsound(src.loc, 'sound/effects/glassknock.ogg', 50, 1)
+		show_sound_effect(get_turf(src))
 		user.visible_message("[user.name] knocks on the [src.name].",
 							"You knock on the [src.name].",
 							"You hear a knocking sound.")
@@ -271,6 +274,7 @@
 	if(can_damage_health(damage, BRUTE))
 		visible_message(SPAN_DANGER("[user] [attack_verb] into [src]!"))
 		playsound(loc, 'sound/effects/Glasshit.ogg', 100, 1)
+		show_sound_effect(get_turf(src))
 		damage_health(damage, BRUTE)
 	else
 		visible_message(SPAN_NOTICE("\The [user] bonks \the [src] harmlessly."))
@@ -279,6 +283,7 @@
 /obj/structure/window/do_simple_ranged_interaction(mob/user)
 	visible_message(SPAN_NOTICE("Something knocks on \the [src]."))
 	playsound(loc, 'sound/effects/Glasshit.ogg', 50, 1)
+	show_sound_effect(get_turf(src))
 	return TRUE
 
 /obj/structure/window/attackby(obj/item/W as obj, mob/user as mob)
@@ -464,6 +469,7 @@
 			SPAN_WARNING("You attack \the [src][weapon_text], but it bounces off! You need something stronger."),
 			SPAN_WARNING("You hear the sound of something hitting a window.")
 		)
+	show_sound_effect(get_turf(src))
 
 /obj/structure/window/proc/deanchor(atom/impact_origin)
 	if (is_alive() && get_damage_percentage() >= 85)
