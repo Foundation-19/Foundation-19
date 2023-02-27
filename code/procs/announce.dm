@@ -97,9 +97,6 @@
 	// Format currently matches that of newscaster feeds: Registered Name (Assigned Rank)
 	return I.assignment ? "[I.registered_name] ([I.assignment])" : I.registered_name
 
-/proc/level_seven_announcement()
-	GLOB.using_map.level_x_biohazard_announcement(7)
-
 /proc/ion_storm_announcement(list/affecting_z)
 	command_announcement.Announce("A period of anomalous activity has been detected near [station_name()].  Please monitor all electronic equipment for malfunctions.", "[station_name()] Sensor Array", zlevels = affecting_z)
 

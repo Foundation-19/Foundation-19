@@ -8,4 +8,4 @@
 	spacevines_spawned = 1
 
 /datum/event/spacevine/announce()
-	level_seven_announcement()
+	GLOB.using_map.level_x_biohazard_announcement(7)
