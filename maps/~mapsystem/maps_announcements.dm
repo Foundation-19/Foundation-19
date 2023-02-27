@@ -13,9 +13,6 @@
 	var/grid_restored_message = "Station power to the %STATION_NAME% will be restored at this time. We apologize for the inconvenience."
 	var/grid_restored_sound
 
-	var/meteor_detected_message = "Meteors have been detected on a collision course with the %STATION_NAME%."
-	var/meteor_detected_sound
-
 	var/radiation_detected_message = "High levels of radiation has been detected in proximity of the %STATION_NAME%. Please report to the medical bay if any strange symptoms occur."
 	var/radiation_detected_sound
 
@@ -23,8 +20,6 @@
 
 	var/unidentified_lifesigns_message = "Unidentified lifesigns detected coming aboard the %STATION_NAME%. Please lockdown all exterior access points, including ducting and ventilation."
 	var/unidentified_lifesigns_sound
-
-	var/unknown_biological_entities_message = "Unknown biological entities have been detected near the %STATION_NAME%, please stand-by."
 
 	var/lifesign_spawn_sound = 'sound/AI/aliens.ogg'
 
@@ -56,6 +51,3 @@
 
 /datum/map/proc/unidentified_lifesigns_announcement()
 	command_announcement.Announce(replacetext(unidentified_lifesigns_message, "%STATION_NAME%", station_name()), "Lifesign Alert", new_sound = unidentified_lifesigns_sound)
-
-/datum/map/proc/unknown_biological_entities_announcement()
-	command_announcement.Announce(replacetext(unknown_biological_entities_message, "%STATION_NAME%", station_name()), "Lifesign Alert", new_sound = command_report_sound)

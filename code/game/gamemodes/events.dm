@@ -2,53 +2,6 @@
 var/eventchance = 10 // Percent chance per 5 minutes.
 var/hadevent    = 0
 
-/proc/appendicitis()
-	for(var/mob/living/carbon/human/H in shuffle(GLOB.living_mob_list_))
-		if(H.client && H.stat != DEAD)
-			var/obj/item/organ/internal/appendix/A = H.internal_organs_by_name[BP_APPENDIX]
-			if(!istype(A) || (A?.inflamed))
-				continue
-			A.inflamed = 1
-			A.update_icon()
-			break
-
-/proc/high_radiation_event()
-
-/* // Haha, this is way too laggy. I'll keep the prison break though.
-	for(var/obj/machinery/light/L in world)
-		if(isNotStationLevel(L.z)) continue
-		L.flicker(50)
-
-	sleep(100)
-*/
-	for(var/mob/living/carbon/human/H in GLOB.living_mob_list_)
-		var/turf/T = get_turf(H)
-		if(!T)
-			continue
-		if(isNotStationLevel(T.z))
-			continue
-		if(istype(H,/mob/living/carbon/human))
-			H.apply_damage((rand(15,75)),IRRADIATE, damage_flags = DAM_DISPERSED)
-			if (prob(5))
-				H.apply_damage((rand(90,150)),IRRADIATE, damage_flags = DAM_DISPERSED)
-			if (prob(25))
-				if (prob(75))
-					randmutb(H)
-					domutcheck(H,null,MUTCHK_FORCED)
-				else
-					randmutg(H)
-					domutcheck(H,null,MUTCHK_FORCED)
-	sleep(100)
-	GLOB.using_map.radiation_detected_announcement()
-
-/proc/carp_migration() // -- Darem
-	for(var/obj/effect/landmark/C in landmarks_list)
-		if(C.name == "carpspawn")
-			new /mob/living/simple_animal/hostile/carp(C.loc)
-	//sleep(100)
-	spawn(rand(300, 600)) //Delayed announcements to keep the crew on their toes.
-		GLOB.using_map.unknown_biological_entities_announcement()
-
 /proc/lightsout(isEvent = 0, lightsoutAmount = 1,lightsoutRange = 25) //leave lightsoutAmount as 0 to break ALL lights
 	if(isEvent)
 		command_announcement.Announce("An Electrical storm has been detected in your area, please repair potential electronic overloads.","Electrical Storm Alert")
