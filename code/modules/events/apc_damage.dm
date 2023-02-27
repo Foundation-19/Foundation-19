@@ -21,7 +21,7 @@
 /datum/event/apc_damage/proc/acquire_random_apc()
 	var/list/apcs = list()
 
-	for(var/obj/machinery/power/apc/APC in world)
+	for(var/obj/machinery/power/apc/apc in world)
 		if(is_valid_apc(apc))
 			apcs += apc
 			// Greatly increase the chance for APCs in maintenance areas to be selected
