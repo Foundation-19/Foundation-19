@@ -3,7 +3,7 @@
 	endWhen = announceWhen + 1
 
 /datum/event/wallrot/announce()
-	command_announcement.Announce("Containment breach of biohazardous Euclid-class object detected. Structures may be contaminated with fungal SCP.", "Biohazard Alert", zlevels = affecting_z)
+	command_announcement.Announce("Containment breach of biohazardous Euclid-class object detected. Structures may be contaminated with fungal SCP.", "Biohazard Alert")
 
 /datum/event/wallrot/start()
 
