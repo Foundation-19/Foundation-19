@@ -5,7 +5,7 @@
 
 /datum/event/spacevine/start()
 	spacevine_infestation()
-	spacevines_spawned = 1
+	spacevines_spawned++
 
 /datum/event/spacevine/announce()
 	GLOB.using_map.level_x_biohazard_announcement(7)
