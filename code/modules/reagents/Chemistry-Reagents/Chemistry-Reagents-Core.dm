@@ -152,8 +152,9 @@
 				S.extinguish()
 
 	if(istype(L, /mob/living/scp_457))
-		L.adjustBruteLoss(30)
+		L.adjustBruteLoss(amount * 2)
 		to_chat(L,	SPAN_USERDANGER("FUEL LESSENS, MAKE THEM PAY..."))
+		remove_self(amount)
 
 	if(istype(L))
 		var/needed = L.fire_stacks * 10
