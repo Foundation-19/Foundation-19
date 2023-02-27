@@ -1,9 +1,9 @@
 /var/global/spacevines_spawned = 0
 
 /datum/event/spacevine
-	announceWhen = rand(60, 120)
 
 /datum/event/spacevine/start()
+	announceWhen = rand(60, 120)
 	spacevine_infestation()
 	spacevines_spawned++
 
