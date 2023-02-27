@@ -457,6 +457,9 @@ SUBSYSTEM_DEF(timer)
 	if (!callback)
 		CRASH("addtimer called without a callback")
 
+	if (!isnum(wait))
+		crash_with("addtimer called with an invalid wait.")
+
 	if (wait < 0)
 		crash_with("addtimer called with a negative wait. Converting to [world.tick_lag]")
 
