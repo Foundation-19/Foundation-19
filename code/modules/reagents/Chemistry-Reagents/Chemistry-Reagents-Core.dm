@@ -151,6 +151,10 @@
 			if (!istype(C) || !(C.body_parts_covered & FACE))
 				S.extinguish()
 
+	if(istype(L, var/mob/living/scp_457))
+		M.adjustBruteLoss(30)
+		to_chat(L,	SPAN_USERDANGER("FUEL LESSENS, MAKE THEM PAY..."))
+
 	if(istype(L))
 		var/needed = L.fire_stacks * 10
 		if(amount > needed)
