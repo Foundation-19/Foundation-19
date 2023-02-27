@@ -151,8 +151,8 @@
 			if (!istype(C) || !(C.body_parts_covered & FACE))
 				S.extinguish()
 
-	if(istype(L, var/mob/living/scp_457))
-		M.adjustBruteLoss(30)
+	if(istype(L, /mob/living/scp_457))
+		L.adjustBruteLoss(30)
 		to_chat(L,	SPAN_USERDANGER("FUEL LESSENS, MAKE THEM PAY..."))
 
 	if(istype(L))
