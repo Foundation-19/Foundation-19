@@ -116,7 +116,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			to_chat(src, "<span class='warning'>You can't break that yet.</span>")
 			return
 		var/obj/machinery/floor_light/W = A
-		W.shatter()
+		W.physical_attack_hand(src)
 		light_break_cooldown = world.time + light_break_cooldown_time
 		return
 	if(istype(A,/obj/machinery/light))
