@@ -10,6 +10,7 @@
 	anchored = TRUE
 	var/dangerous = 0
 	var/failchance = 0
+	var/precision = 1
 
 /obj/effect/portal/Bumped(mob/M as mob|obj)
 	spawn(0)
@@ -29,7 +30,7 @@
 		return
 	return
 
-/obj/effect/portal/New(start, end, delete_after = 300, failure_rate)
+/obj/effect/portal/New(start, end, delete_after = 300, failure_rate, prec = 1)
 	..()
 	if(failure_rate)
 		failchance = failure_rate
@@ -39,9 +40,10 @@
 	playsound(src, 'sound/effects/phasein.ogg', 25, 1)
 	target = end
 
+	precision = prec
+
 	if(delete_after)
-		spawn(delete_after)
-			qdel(src)
+		QDEL_IN(src, delete_after)
 
 /obj/effect/portal/Destroy()
 	target = null
@@ -60,4 +62,4 @@
 			var/destination_z = GLOB.using_map.get_transit_zlevel(z)
 			do_teleport(M, locate(rand(TRANSITIONEDGE, world.maxx - TRANSITIONEDGE), rand(TRANSITIONEDGE, world.maxy -TRANSITIONEDGE), destination_z), 0)
 		else
-			do_teleport(M, target, 1) ///You will appear adjacent to the beacon
+			do_teleport(M, target, precision)

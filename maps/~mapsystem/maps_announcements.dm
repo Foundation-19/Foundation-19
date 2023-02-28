@@ -16,7 +16,6 @@
 	var/radiation_detected_message = "High levels of radiation has been detected in proximity of the %STATION_NAME%. Please report to the medical bay if any strange symptoms occur."
 	var/radiation_detected_sound
 
-	var/space_time_anomaly_message = "Space-time anomalies have been detected on the %STATION_NAME%."
 	var/space_time_anomaly_sound
 
 	var/unidentified_lifesigns_message = "Unidentified lifesigns detected coming aboard the %STATION_NAME%. Please lockdown all exterior access points, including ducting and ventilation."
@@ -46,9 +45,6 @@
 
 /datum/map/proc/radiation_detected_announcement()
 	command_announcement.Announce(replacetext(radiation_detected_message, "%STATION_NAME%", station_name()), "Anomaly Alert", new_sound = radiation_detected_sound)
-
-/datum/map/proc/space_time_anomaly_detected_annoncement()
-	command_announcement.Announce(replacetext(space_time_anomaly_message, "%STATION_NAME%", station_name()), "Anomaly Alert", new_sound = space_time_anomaly_sound)
 
 /datum/map/proc/unidentified_lifesigns_announcement()
 	command_announcement.Announce(replacetext(unidentified_lifesigns_message, "%STATION_NAME%", station_name()), "Lifesign Alert", new_sound = unidentified_lifesigns_sound)
