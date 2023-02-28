@@ -27,7 +27,6 @@ var/bomb_set
 	var/lastentered
 	var/previous_level = ""
 	wires = /datum/wires/nuclearbomb
-	var/decl/security_level/original_level
 
 /obj/machinery/nuclearbomb/New()
 	..()
@@ -310,10 +309,10 @@ var/bomb_set
 /obj/machinery/nuclearbomb/proc/start_bomb()
 	timing = 1
 	log_and_message_admins("activated the detonation countdown of \the [src]")
-	bomb_set++ //There can still be issues with this resetting when there are multiple bombs. Not a big deal though for Nuke/N
+	bomb_set++ // There can still be issues with this resetting when there are multiple bombs. Not a big deal though for Nuke/N
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-	original_level = security_state.current_security_level
-	security_state.set_security_level(security_state.severe_security_level, TRUE)
+	if(security_state.set_security_level(security_state.destruction_security_level, TRUE)) //This would only be FALSE if the security level was already at destruction
+		security_state.stored_security_level = security_state.current_security_level
 	update_icon()
 
 /obj/machinery/nuclearbomb/proc/check_cutoff()
@@ -323,7 +322,7 @@ var/bomb_set
 	if(timing <= 0)
 		return
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-	security_state.set_security_level(original_level, TRUE)
+	security_state.set_security_level(security_state.stored_security_level, TRUE)
 	bomb_set--
 	safety = TRUE
 	timing = 0
@@ -415,14 +414,14 @@ var/bomb_set
 	. = ..()
 	var/obj/item/paper/R = new(src)
 	R.set_content("<center><img src=scplogo.png><br><br>\
-	<b>Warning: Classified<br>[GLOB.using_map.station_name] Self-Destruct System - Instructions</b></center><br><br>\
-	In the event of a Delta-level emergency, this document will guide you through the activation of the site's \
-	nuclear self-destruct system. Please read carefully.<br><br>\
-	1) (Optional) Announce the imminent activation to any surviving personel, and begin evacuation procedures.<br>\
-	2) Notify two heads of staff, both with ID cards with access to the ship's Keycard Authentication Devices.<br>\
+	<b>Warning: Classified<br>[GLOB.using_map.station_name] ARI-001 'Final Days' Instructions</b></center><br><br>\
+	In the event of a Code Black emergency, this document will guide you through the activation of ARI-001 \
+	'Final Days', detonating on-site Omega warheads. Please read carefully.<hr>\
+	1) (Optional) Announce the imminent activation to any surviving personnel, and begin evacuation procedures.<br>\
+	2) Notify two administrative officers, both with ID cards with access to the ship's Keycard Authentication Devices.<br>\
 	3) Proceed to the self-destruct chamber, located in Engineering by the stairwell.<br>\
 	4) Unbolt the door and enter the chamber.<br>\
-	5) Both heads of staff should stand in front of their own Keycard Authentication Devices. On the KAD interface, select \
+	5) Both administrative officers should stand in front of their own Keycard Authentication Devices. On the KAD interface, select \
 	Grant Nuclear Authentication Code. Both heads of staff should then swipe their ID cards simultaneously.<br>\
 	6) The KAD will now display the Authentication Code. Memorize this code.<br>\
 	7) Insert the nuclear authentication disk into the self-destruct terminal.<br>\
@@ -433,8 +432,7 @@ var/bomb_set
 	11) Activate the inserters. The cylinders will be pulled down into the self-destruct system.<br>\
 	12) Return to the terminal. Enter the desired countdown time.<br>\
 	13) When ready, disable the safety switch.<br>\
-	14) Start the countdown.<br><br>\
-	This concludes the instructions.", "site self-destruct instructions")
+	14) Start the countdown.", "site self-destruct instructions")
 
 	//stamp the paper
 	var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
