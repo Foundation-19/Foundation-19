@@ -41,11 +41,10 @@
 
 	if(areas && areas.len > 0)
 		var/sender = "[location_name()] Firewall Subroutines"
-//		not only does engineering not HAVE a request console, request consoles appear to not even function correctly.
 		var/rc_message = "An unknown malicious program has been detected in the [areaName] lighting and airlock control systems at [station_time_timestamp("hh:mm")]. Systems will be fully compromised within approximately three minutes. Direct intervention is required immediately.<br>"
 		var/obj/machinery/message_server/MS = get_message_server()
 		if(MS)
-			MS.send_rc_message("Comms Officer", sender, rc_message, "", "", 2)
+			MS.send_rc_message("Engineering", sender, rc_message, "", "", 2)
 		for(var/mob/living/silicon/ai/A in GLOB.player_list)
 			to_chat(A, "<span class='danger'>Malicious program detected in the [areaName] lighting and airlock control systems by [sender].</span>")
 
