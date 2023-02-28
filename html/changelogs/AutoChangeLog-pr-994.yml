@@ -1,5 +1,0 @@
-author: TheDarkElites
-delete-after: true
-changes:
-  - rscadd: 173 can now break lights
-  - rscadd: Light level now affects blink cooldown
