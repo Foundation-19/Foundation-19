@@ -134,12 +134,6 @@
 	var/check = A.open(1)
 	visible_message("\The [src] melts \the [A]'s controls[check ? ", and rips it open!" : ", and breaks it!"]")
 
-/datum/reagent/water/touch_mob(var/mob/living/scp_457/M)
-	if(istype(M))
-		M.adjustBruteLoss(30)
-		to_chat(M,	SPAN_USERDANGER("FUEL LESSENS, MAKE THEM PAY..."))
-		return ..()
-
 /mob/living/scp_457/Life()
 	if(health <= 0)
 		death(FALSE, "falls on their knees, the flame withering away.")
