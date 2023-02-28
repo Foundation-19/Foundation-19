@@ -419,8 +419,6 @@
 			return global.escape_pods_by_name;
 		if("evacuation_controller")
 			return global.evacuation_controller;
-		if("eventchance")
-			return global.eventchance;
 		if("explosion_in_progress")
 			return global.explosion_in_progress;
 		if("explosion_turfs")
@@ -487,8 +485,6 @@
 			return global.gravity_is_on;
 		if("gzn_check")
 			return global.gzn_check;
-		if("hadevent")
-			return global.hadevent;
 		if("holder_mob_icon_cache")
 			return global.holder_mob_icon_cache;
 		if("href_logfile")
@@ -1288,8 +1284,6 @@
 			global.escape_pods_by_name=newval;
 		if("evacuation_controller")
 			global.evacuation_controller=newval;
-		if("eventchance")
-			global.eventchance=newval;
 		if("explosion_in_progress")
 			global.explosion_in_progress=newval;
 		if("explosion_turfs")
@@ -1356,8 +1350,6 @@
 			global.gravity_is_on=newval;
 		if("gzn_check")
 			global.gzn_check=newval;
-		if("hadevent")
-			global.hadevent=newval;
 		if("holder_mob_icon_cache")
 			global.holder_mob_icon_cache=newval;
 		if("href_logfile")
@@ -1947,7 +1939,6 @@
 	"escape_pods",
 	"escape_pods_by_name",
 	"evacuation_controller",
-	"eventchance",
 	"explosion_in_progress",
 	"explosion_turfs",
 	"failed_db_connections",
@@ -1981,7 +1972,6 @@
 	"global_vars_",
 	"gravity_is_on",
 	"gzn_check",
-	"hadevent",
 	"holder_mob_icon_cache",
 	"href_logfile",
 	"human_icon_cache",

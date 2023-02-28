@@ -1,6 +1,4 @@
 //this file left in for legacy support
-var/eventchance = 10 // Percent chance per 5 minutes.
-var/hadevent    = 0
 
 /proc/lightsout(isEvent = 0, lightsoutAmount = 1,lightsoutRange = 25) //leave lightsoutAmount as 0 to break ALL lights
 	if(isEvent)
