@@ -2,7 +2,7 @@
 	endWhen = rand(30,60)
 
 /datum/event/wormholes/announce()
-	command_announcement.Announce("Topological anomalies have been detected near [station_name()].", "[station_name()] Sensor Array")
+	command_announcement.Announce("Topological anomalies have been detected near [station_name()].", "[station_name()] Sensor Array", new_sound = sound('sound/AI/spanomalies.ogg', volume=25))
 
 /datum/event/wormholes/end()
 	var/list/turfs = get_viable_turfs()
