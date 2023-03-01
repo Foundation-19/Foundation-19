@@ -607,7 +607,6 @@
 #include "code\game\dna\genes\disabilities.dm"
 #include "code\game\dna\genes\gene.dm"
 #include "code\game\dna\genes\powers.dm"
-#include "code\game\gamemodes\events.dm"
 #include "code\game\gamemodes\game_mode.dm"
 #include "code\game\gamemodes\game_mode_latespawn.dm"
 #include "code\game\gamemodes\objective.dm"
