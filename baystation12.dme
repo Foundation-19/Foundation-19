@@ -2826,7 +2826,7 @@
 #include "code\modules\psionics\equipment\psipower_tinker.dm"
 #include "code\modules\psionics\equipment\psipower_tk.dm"
 #include "code\modules\psionics\events\_psi.dm"
-#include "code\modules\psionics\events\mini_spasm.dm"
+#include "code\modules\psionics\events\memetic_spasm.dm"
 #include "code\modules\psionics\events\psi_balm.dm"
 #include "code\modules\psionics\events\psi_wail.dm"
 #include "code\modules\psionics\faculties\_faculty.dm"

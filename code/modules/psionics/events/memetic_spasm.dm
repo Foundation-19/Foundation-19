@@ -1,4 +1,4 @@
-/datum/event/minispasm
+/datum/event/memetic_spasm
 	startWhen = 60
 	endWhen = 90
 	var/static/list/psi_operancy_messages = list(
@@ -9,16 +9,16 @@
 		"<b>THE SIGNAL THE SIGNAL THE SIGNAL THE SIGNAL THE</b>"
 		)
 
-/datum/event/minispasm/announce()
+/datum/event/memetic_spasm/announce()
 	priority_announcement.Announce( \
-		"PRIORITY ALERT: SIGMA-[rand(50,80)] PSIONIC SIGNAL LOCAL TRAMISSION DETECTED (97% MATCH, NONVARIANT) \
+		"PRIORITY ALERT: SIGMA-[rand(50,80)] MEMETIC SIGNAL LOCAL TRAMISSION DETECTED (97% MATCH, NONVARIANT) \
 		(SIGNAL SOURCE TRIANGULATED ADJACENT LOCAL SITE): All personnel are advised to avoid \
 		exposure to active audio transmission equipment including radio headsets and intercoms \
-		for the duration of the signal broadcast.", \
-		"Cuchulain Sensor Array Automated Message" \
+		for the duration of the memetic signal broadcast.", \
+		"[GLOB.using_map.station_name] Sensor Array Automated Message" \
 		)
 
-/datum/event/minispasm/start()
+/datum/event/memetic_spasm/start()
 	var/list/victims = list()
 	for(var/obj/item/device/radio/radio in GLOB.listening_objects)
 		if(radio.on)
@@ -30,7 +30,7 @@
 		var/obj/item/device/radio/source = victims[victim]
 		do_spasm(victim, source)
 
-/datum/event/minispasm/proc/do_spasm(mob/living/victim, obj/item/device/radio/source)
+/datum/event/memetic_spasm/proc/do_spasm(mob/living/victim, obj/item/device/radio/source)
 	set waitfor = 0
 
 	if(iscarbon(victim) && !victim.isSynthetic())
@@ -60,8 +60,8 @@
 	sleep(45)
 	victim.psi.check_latency_trigger(100, "a psionic scream", redactive = TRUE)
 
-/datum/event/minispasm/end()
+/datum/event/memetic_spasm/end()
 	priority_announcement.Announce( \
 		"PRIORITY ALERT: SIGNAL BROADCAST HAS CEASED. Personnel are cleared to resume use of non-hardened radio transmission equipment. Have a nice day.", \
-		"Cuchulain Sensor Array Automated Message" \
+		"[GLOB.using_map.station_name] Array Automated Message" \
 		)
