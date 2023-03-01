@@ -1847,6 +1847,7 @@
 #include "code\modules\events\communications_blackout.dm"
 #include "code\modules\events\disposals_explosion.dm"
 #include "code\modules\events\electrical_storm.dm"
+#include "code\modules\events\email_spam.dm"
 #include "code\modules\events\event.dm"
 #include "code\modules\events\event_container.dm"
 #include "code\modules\events\grid_check.dm"
