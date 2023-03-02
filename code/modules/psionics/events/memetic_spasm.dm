@@ -15,7 +15,7 @@
 		(SIGNAL SOURCE TRIANGULATED ADJACENT LOCAL SITE): All personnel are advised to avoid \
 		exposure to active audio transmission equipment including radio headsets and intercoms \
 		for the duration of the memetic signal broadcast.", \
-		"[GLOB.using_map.station_name] Sensor Array Automated Message" \
+		"[GLOB.using_map.station_name] Memetic Sensor Array" \
 		)
 
 /datum/event/memetic_spasm/start()
