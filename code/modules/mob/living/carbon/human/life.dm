@@ -975,10 +975,20 @@
 
 	if (BITTEST(hud_updateflag, BLINK_HUD) && hud_list[BLINK_HUD])
 		var/image/holder = hud_list[BLINK_HUD]
+		var/blink_timer = null
+
+		for(var/mob/living/scp_173/A in GLOB.scp173s) //Gets the blink timer for the victim(mob that can see 173)
+			var/list/next_blinks = A.getNextBlinks()
+			if(next_blinks[src] != null)
+				blink_timer = next_blinks[src]
+
 		if(effectively_dead)
 			holder.icon_state = "0" //The dead close their eyes forever (Dead people's blink status should not change)
+		else if(blink_timer == null) //Incase 173 is no longer in the victim's line of sight
+			//stops else from running
 		else
-			holder.icon_state = "15"
+			var/blink_timer_mapped = ceil((Clamp((15 - (world.time / blink_timer) * 15), 0, 15))) //Maps time left before blink to between 0 and 15.
+			holder.icon_state = "[blink_timer_mapped]"
 		hud_list[BLINK_HUD] = holder
 
 	if (BITTEST(hud_updateflag, LIFE_HUD) && hud_list[LIFE_HUD])
