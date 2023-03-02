@@ -973,6 +973,14 @@
 			holder.icon_state = "[pulse()]"
 		hud_list[HEALTH_HUD] = holder
 
+	if (BITTEST(hud_updateflag, BLINK_HUD) && hud_list[BLINK_HUD])
+		var/image/holder = hud_list[BLINK_HUD]
+		if(effectively_dead)
+			holder.icon_state = "0" //The dead close their eyes forever (Dead people's blink status should not change)
+		else
+			holder.icon_state = "15"
+		hud_list[BLINK_HUD] = holder
+
 	if (BITTEST(hud_updateflag, LIFE_HUD) && hud_list[LIFE_HUD])
 		var/image/holder = hud_list[LIFE_HUD]
 		if(effectively_dead)

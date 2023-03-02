@@ -156,10 +156,13 @@ GLOBAL_LIST_EMPTY(scp173s)
 			continue
 		if(world.time >= next_blinks[A])
 			var/mob/living/carbon/human/H = A
+			BITSET(H.hud_updateflag, BLINK_HUD)
 			if(H.stat) // Sleeping or dead people can't blink!
 				DisableBlinking(H)
 				continue
 			CauseBlink(H)
+	handle_regular_hud_updates()
+	process_blink_hud(src)
 	if(world.time > defecation_cooldown)
 		Defecate()
 	if(IsBeingWatched() || client) // AI controls from here
@@ -180,6 +183,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		if(!istype(L, /mob/living/carbon/human))
 			continue
 		var/mob/living/carbon/human/H = L
+		BITSET(H.hud_updateflag, BLINK_HUD) //Ensures HUD appears before first blink
 		if(next_blinks[H] == null)
 			var/turf/T = get_turf(src)
 			var/lightcount = T.get_lumcount()
