@@ -18,9 +18,9 @@ GLOBAL_LIST_EMPTY(scp999s)
 	maxHealth = 1500
 	health = 1500
 	hud_type = /datum/hud/slime
-	var/mob/living/carbon/attached
+	var/mob/living/carbon/human/attached
 	var/attached_mode = HUGGING
-	var/list/last_healing = list()
+	var/last_effect
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 
@@ -29,11 +29,10 @@ GLOBAL_LIST_EMPTY(scp999s)
 	return ..()
 
 /mob/living/simple_animal/scp_999/say(message, datum/language/speaking = null, whispering)
-	to_chat(src,"<span class = 'notice'>You cannot speak.</span>")
+	to_chat(src,SPAN_NOTICE("You cannot speak."))
 	return FALSE
 
 /mob/living/simple_animal/scp_999/Destroy()
-	last_healing = null
 	GLOB.scp999s -= src
 	return ..()
 
@@ -57,38 +56,34 @@ GLOBAL_LIST_EMPTY(scp999s)
 			attached = null
 			return
 		forceMove(attached.loc)
-		if(last_healing[attached] == null || ((last_healing[attached] + 2 MINUTES) >= world.time))
-			last_healing[attached] = world.time
-			if(attached_mode == HUGGING)
-				attached.adjustOxyLoss(-rand(20,30))
-				attached.adjustToxLoss(-rand(20,30))
-				attached.adjustBruteLoss(-rand(20,30))
-				attached.adjustFireLoss(-rand(20, 30))
-				attached.adjustHalLoss(-200)
-				to_chat(attached, "<span class='notice'>You feel your wounds grow numb...</span>")
-				attached.emote(pick("laugh","giggle","smile","grin"))
-			else
-				if(prob(20))
-					attached.Stun(3)
-					visible_message("<span class='warning'>[src] wraps around [attached]'s legs, immobilizing them!</span>")
-					attached.emote(pick("laugh","giggle","smile","grin"))
+		if(last_effect == null || ((last_effect + 1 MINUTE) <= world.time))
+			last_effect = world.time
+
+			if(attached_mode == IMMOBILIZING)
+				playsound(loc, 'sound/misc/slip.ogg', 50, 1, -3)
+				attached.Weaken(6)
+				attached.Stun(3)
+				visible_message(SPAN_WARNING("[src] wraps around [attached]'s legs, tripping them!"))
+
+			attached.make_reagent(5, /datum/reagent/medicine/antidepressant/anomalous_happiness)
+			attached.emote(pick("laugh","giggle"))
 
 /mob/living/simple_animal/scp_999/UnarmedAttack(atom/a)
 	if(ishuman(a))
 		if(a_intent == I_HELP)
 			attached_mode = HUGGING
 			attached = a
-			a.visible_message("<span class='notice'>[src] begins to give [attached] a big hug!</span>", "<span class='notice'>[src] begins hugging you, filling you with happiness!</span>")
+			a.visible_message(SPAN_NOTICE("[src] begins to give [attached] a big hug!"), SPAN_NOTICE("[src] begins hugging you, filling you with happiness!"))
 		else if(a_intent == I_HURT)
 			attached_mode = IMMOBILIZING
 			attached = a
-			a.visible_message("<span class='warning'>[src] begins to wrap around [attached]!</span>", "<span class='warning'>[src] begins wrapping around you, filling you with happiness!</span>")
+			a.visible_message(SPAN_WARNING("[src] begins to wrap around [attached]!"), SPAN_WARNING("[src] begins wrapping around you, filling you with happiness!"))
 		forceMove(get_turf(attached))
 
 /mob/living/simple_animal/scp_999/Move(a,b,f)
 	if(attached)
 		if(attached_mode == HUGGING)
-			to_chat(src, "<span class='notice'>You are hugging someone! Detach to move!</span>")
+			to_chat(src, SPAN_NOTICE("You are hugging someone! Detach to move!"))
 			return
 		else
 			if(prob(5))
@@ -101,10 +96,10 @@ GLOBAL_LIST_EMPTY(scp999s)
 	set name = "Detach"
 	if(attached)
 		forceMove(get_turf(src))
-		visible_message("<span class='notice'>[src] detaches from [attached]!</span>")
+		visible_message(SPAN_NOTICE("[src] detaches from [attached]!"))
 		attached = null
 	else
-		to_chat(src, "<span class='warning'><i>We aren't attached to anything!</i></span>")
+		to_chat(src, SPAN_NOTICE("<i>You aren't attached to anything!</i>"))
 
 #undef IMMOBILIZING
 #undef HUGGING

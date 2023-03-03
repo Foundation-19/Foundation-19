@@ -75,3 +75,16 @@
 			data = world.time
 			to_chat(M, SPAN_NOTICE("Your mind feels focused and undivided."))
 			M.add_chemical_effect(CE_SANITY, 6)
+
+/datum/reagent/medicine/antidepressant/anomalous_happiness
+	name = "Anomalous happiness"
+	description = "Poorly-understood parachemicals produced while around certain anomalies."
+	taste_description = "happiness"
+	color = "#f7f97a"
+	value = 10
+
+/datum/reagent/medicine/antidepressant/anomalous_happiness/affect_blood(mob/living/carbon/M, alien, removed)
+	M.add_chemical_effect(CE_SANITY, 2)
+	if (world.time > data + 1 MINUTE)
+		data = world.time
+		M.emote(pick("smile","grin"))
