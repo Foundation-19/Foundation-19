@@ -35,8 +35,6 @@ the HUD updates properly! */
 
 	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.scp173s)
 	for(var/mob/living/carbon/human/victim in P.Mob.in_view(P.Turf))
-		if(victim.is_invisible_to(P.Mob))
-			continue
 		P.Client.images += victim.hud_list[BLINK_HUD]
 
 //Security HUDs. Pass a value for the second argument to enable implant viewing or other special features.
