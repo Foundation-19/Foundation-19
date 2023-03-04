@@ -5,7 +5,7 @@
 
 /obj/item/weapon/twohanded/scp_2398
 	name = "SCP-2398"
-	desc = "A generic wooden bat, you see “K.O.” branded into the wood just above the handle."
+	desc = "A generic wooden bat, you see 'K.O.' branded into the wood just above the handle."
 	icon = 'icons/SCP/scp-2398.dmi'
 	icon_state = null
 	w_class = ITEM_SIZE_LARGE
