@@ -977,20 +977,24 @@
 		var/image/holder = hud_list[BLINK_HUD]
 		var/blink_time_current = null
 		var/blink_time_max = null
+		var/mob/living/scp_173/current173
 
 		for(var/mob/living/scp_173/A in GLOB.scp173s) //Gets the blink timer for the victim(mob that can see 173)
 			var/list/next_blinks = A.getNextBlinks()
 			var/list/next_blinks_time = A.getNextBlinksTime()
+			current173 = A
 			if(next_blinks[src] != null && next_blinks_time[src] != null)
 				blink_time_current = next_blinks[src] - world.time
 				blink_time_max = next_blinks[src] - next_blinks_time[src]
 
-		if(effectively_dead)
-			holder.icon_state = "0" //The dead close their eyes forever (Dead people's blink status should not change)
-		else if(blink_time_current == null || blink_time_max == null) //Incase 173 is no longer in the victim's line of sight
+		if(blink_time_current == null || blink_time_max == null) //Incase 173 is no longer in the victim's line of sight
 			//stops else from running
-		else if(blink_time_max == 0) //Prevent divison by zero
+		else if(blink_time_max == 0)
 			//Prevent divison by zero
+		else if((!(current173.InCone(src, src.dir))) || current173.is_invisible_to(src) || is_blind()) //If victim cant see 173, updates HUD to "away" to alert 173 player
+			holder.icon_state = "away"
+		else if(eye_blind > 0) //173.dm applies new blink times even while the victim is still blind, so this check is neccesary
+			holder.icon_state = "0"
 		else
 			var/blink_timer_mapped = ceil((Clamp(((blink_time_current / blink_time_max) * 15), 0, 15))) //Maps time left before blink to between 0 and 15.
 			holder.icon_state = "[blink_timer_mapped]"

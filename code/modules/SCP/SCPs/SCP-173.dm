@@ -266,6 +266,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 /mob/living/scp_173/proc/CauseBlink(mob/living/carbon/human/H)
 	H.visible_message("<span class='notice'>[H] blinks.</span>")
 	H.eye_blind += 2
+	BITSET(H.hud_updateflag, BLINK_HUD)
 	add_verb(H, /mob/living/carbon/human/verb/manual_blink)
 	var/turf/T = get_turf(src)
 	var/lightcount = T.get_lumcount()
