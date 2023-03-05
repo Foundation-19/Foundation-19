@@ -87,7 +87,19 @@ GLOBAL_LIST_EMPTY(scp173s)
 	return -5
 
 /mob/living/scp_173/UnarmedAttack(atom/A)
-	if(IsBeingWatched() || incapacitated()) // We can't do anything while being watched
+	if(incapacitated()) // We can't do anything while caged
+		if(!IsBeingWatched() && istype(A, /obj/structure/scp173_cage) && loc == "SCP-173 Containment Cage") //Can only attack the cage when not being watched and inside the cage
+			if(snap_cooldown > world.time)
+				var/obj/structure/scp173_cage/cage = A
+				cage.attack_hand(src)
+				snap_cooldown = world.time + snap_cooldown_time
+			else
+				to_chat(src, "<span class='warning'>You can't attack yet.</span>")
+		else if(IsBeingWatched() && istype(A, /obj/structure/scp173_cage) && loc == "SCP-173 Containment Cage")
+			to_chat(src, "<span class='warning'>You can't attack the cage while they're looking!</span>")
+		else
+			return
+	if(IsBeingWatched())// We can't do anything while being watched
 		return
 	if(ishuman(A))
 		if(snap_cooldown > world.time)
@@ -331,14 +343,23 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/area/A = get_area(src)
 	A.full_breach()
 
-// the cage
+//
+// 173 Cage
+//
+
 /obj/structure/scp173_cage
 	icon = 'icons/SCP/cage.dmi'
-	icon_state = "1"
-	name = "Empty SCP-173 Cage"
+	icon_state = "2"
+	name = "SCP-173 Containment Cage"
+	desc = "An empty cage for containing SCP-173."
 	density = TRUE
 	layer = MOB_LAYER + 0.05
+	// Amount of cooldown before 173 can open its cage
+	var/resist_cooldown_amount = 10
+	// Current amount of cooldown remaining before 173 can open its cage
 	var/resist_cooldown
+	// Damage state of cage
+	var/damage_state = 0
 
 /obj/structure/scp173_cage/MouseDrop_T(atom/movable/dropping, mob/user)
 	if(isscp173(dropping))
@@ -347,30 +368,38 @@ GLOBAL_LIST_EMPTY(scp173s)
 		if(do_after(user, 10 SECONDS, dropping) && loc == oloc)
 			dropping.forceMove(src)
 			underlays += image(dropping)
-			visible_message(SPAN_NOTICE("[user] puts SCP-173 in the cage."))
-			name = "SCP-173 Cage"
+			desc = "A cage for containing SCP-173. It is currently holding [dropping]."
+			visible_message(SPAN_NOTICE("[user] puts [dropping] in the cage."))
 			playsound(loc, 'sound/machines/bolts_down.ogg', 50, 1)
+			icon_state = "1"
 			return TRUE
 		return FALSE
 	if(isliving(dropping))
 		to_chat(user, SPAN_WARNING("\The [dropping] won't fit in the cage."))
 	return FALSE
 
-/obj/structure/scp173_cage/attack_hand(mob/living/carbon/human/H)
+/obj/structure/scp173_cage/attack_hand(mob/living/A)
 	if(!LAZYLEN(contents))
 		return ..()
-	visible_message(SPAN_WARNING("[H] attempts to open \the [src]."))
-	if(do_after(H, 5 SECONDS, src))
-		visible_message(SPAN_DANGER("[H] opens \the [src]!"))
+	if(istype(A, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = A
+		visible_message(SPAN_WARNING("[H] attempts to open \the [src]."))
+		if(do_after(H, 5 SECONDS, src))
+			visible_message(SPAN_DANGER("[H] opens \the [src]!"))
+			ReleaseContents()
+	else if(istype(A, /mob/living/scp_173))
+		var/mob/living/scp_173/S = A
 		ReleaseContents()
 
 /obj/structure/scp173_cage/relaymove(mob/user, direction)
+	/*
 	if(resist_cooldown > world.time)
 		return
 	resist_cooldown = world.time + 10 SECONDS
 	if(do_after(user, 20 SECONDS, src))
 		visible_message("<span class = 'danger'>[user] opens the cage from the inside!</span>")
 		ReleaseContents()
+	*/
 
 /obj/structure/scp173_cage/proc/ReleaseContents()
 	if(!LAZYLEN(contents))
@@ -379,7 +408,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	for(var/mob/living/L in contents)
 		L.forceMove(get_turf(src))
 	underlays.Cut()
-	name = initial(name)
+	desc = initial(desc)
 	return TRUE
 
 /*
