@@ -981,14 +981,14 @@
 
 		for(var/mob/living/scp_173/A in GLOB.scp173s) //Gets the blink timer for the victim(mob that can see 173)
 			var/list/next_blinks = A?.next_blinks
-			var/list/next_blinks_time = A?.next_blinks_time
+			var/list/next_blinks_join_time = A?.next_blinks_join_time
 			current173 = A
-			if(next_blinks[src] != null && next_blinks_time[src] != null)
+			if(next_blinks[src] != null && next_blinks_join_time[src] != null)
 				blink_time_current = next_blinks[src] - world.time
-				blink_time_max = next_blinks[src] - next_blinks_time[src]
+				blink_time_max = next_blinks[src] - next_blinks_join_time[src]
 
 		//Incase 173 is no longer in the victim's line of sight and in case we'd try to divide by 0
-		if(!blink_time_current || !blink_time_max || blink_time_max == 0) 
+		if(!blink_time_current || !blink_time_max || blink_time_max == 0)
 			if((!(current173.InCone(src, src.dir))) || current173.is_invisible_to(src) || is_blind()) //If victim cant see 173, updates HUD to "away" to alert 173 player
 				holder.icon_state = "away"
 			else if(eye_blind > 0) //173.dm applies new blink times even while the victim is still blind, so this check is neccesary

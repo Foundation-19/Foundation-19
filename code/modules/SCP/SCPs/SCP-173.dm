@@ -29,7 +29,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	/// List of humans under the blinking influence
 	var/list/next_blinks = list()
 	/// List of times at which humans joined the list (Used for HUD calculation)
-	var/list/next_blinks_time = list()
+	var/list/next_blinks_join_time = list()
 
 	/// Current attack cooldown
 	var/snap_cooldown
@@ -69,7 +69,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/Destroy()
 	next_blinks = null
-	next_blinks_time = null
+	next_blinks_join_time = null
 
 	GLOB.scp173s -= src
 	return ..()
@@ -194,7 +194,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			if(lightcount > max_lightlevel)
 				lightcount = 1 //Light level must be less than max_lightlevel before blink time drop off
 			next_blinks[H] = world.time + (rand(5 SECONDS, 10 SECONDS) * lightcount) // Just encountered SCP 173
-			next_blinks_time[H] = world.time
+			next_blinks_join_time[H] = world.time
 		if(H.SCP)
 			continue
 		if(is_blind(H) || H.eye_blind > 0)
@@ -257,7 +257,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/proc/DisableBlinking(mob/living/carbon/human/H)
 	next_blinks[H] = null
-	next_blinks_time[H] = null
+	next_blinks_join_time[H] = null
 	for(var/mob/living/scp_173/S in GLOB.scp173s) // In case you spawned more than one
 		if(S.next_blinks[H]) // Not null
 			return
@@ -273,7 +273,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(lightcount > max_lightlevel)
 		lightcount = 1 //Light level must be less than max_lightlevel before blink time drop off
 	next_blinks[H] = world.time + (rand(15 SECONDS, 25 SECONDS) * lightcount)
-	next_blinks_time[H] = world.time
+	next_blinks_join_time[H] = world.time
 
 /mob/living/scp_173/proc/AIAttemptAttack()
 	var/mob/living/carbon/human/target
