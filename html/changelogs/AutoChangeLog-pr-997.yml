@@ -1,4 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - code_imp: addtimer() in timer.dm has better crash message if wait value is invalid.
