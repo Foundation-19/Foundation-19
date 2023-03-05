@@ -980,8 +980,8 @@
 		var/mob/living/scp_173/current173
 
 		for(var/mob/living/scp_173/A in GLOB.scp173s) //Gets the blink timer for the victim(mob that can see 173)
-			var/list/next_blinks = A?.next_blinks
-			var/list/next_blinks_join_time = A?.next_blinks_join_time
+			var/list/next_blinks = A.next_blinks
+			var/list/next_blinks_join_time = A.next_blinks_join_time
 			current173 = A
 			if(next_blinks[src] != null && next_blinks_join_time[src] != null)
 				blink_time_current = next_blinks[src] - world.time
