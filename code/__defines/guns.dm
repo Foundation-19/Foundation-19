@@ -4,6 +4,11 @@
 #define CALIBER_PISTOL_FLECHETTE "4mm"
 #define CALIBER_PISTOL_ANTIQUE	"~10mm"
 
+#define CALIBER_REVOLVER 			".357 Magnum"
+#define CALIBER_REVOLVER_SMALL 		".44 Magnum"
+#define CALIBER_REVOLVER_MEDIUM 	".357 Special"
+#define CALIBER_REVOLVER_HEAVY		".454 Casull"
+
 #define CALIBER_RIFLE			"5mmR"
 #define CALIBER_RIFLE_MILITARY	"7mmR"
 #define CALIBER_T12				"10x24mmR"
@@ -13,6 +18,7 @@
 #define CALIBER_GYROJET			"20mmG"
 #define CALIBER_CAPS			"caps"
 #define CALIBER_DART			"darts"
+#define CALIBER_ROCKET			"rocket"
 
 #define HOLD_CASINGS	0 //do not do anything after firing. Manual action, like pump shotguns, or guns that want to define custom behaviour
 #define CLEAR_CASINGS	1 //clear chambered so that the next round will be automatically loaded and fired, but don't drop anything on the floor

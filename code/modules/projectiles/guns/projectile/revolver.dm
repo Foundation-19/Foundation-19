@@ -4,12 +4,12 @@
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "revolver"
 	item_state = "revolver"
-	caliber = CALIBER_PISTOL_MAGNUM
+	caliber = CALIBER_REVOLVER
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	handle_casings = CYCLE_CASINGS
 	max_shells = 6
 	fire_delay = 4 //Revolvers are naturally slower-firing
-	ammo_type = /obj/item/ammo_casing/pistol/magnum
+	ammo_type = /obj/item/ammo_casing/revolver
 	var/chamber_offset = 0 //how many empty chambers in the cylinder until you hit a round
 	mag_insert_sound = 'sounds/weapons/guns/interaction/rev_magin.ogg'
 	mag_remove_sound = 'sounds/weapons/guns/interaction/rev_magout.ogg'
@@ -46,38 +46,51 @@
 	chamber_offset = 0
 	return ..()
 
+/obj/item/gun/projectile/revolver/military
+	name = "military revolver"
+	desc = "A standard-issue revolver of many militaries in the known human space."
+	icon_state = "military"
+	fire_delay = 6
+	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2)
+
+/obj/item/gun/projectile/revolver/military/heavy
+	name = "heavy revolver"
+	desc = "A heavy revolver used mostly by officers or special forces of human worlds."
+	icon_state = "tp44"
+	caliber = CALIBER_REVOLVER_HEAVY
+	ammo_type = /obj/item/ammo_casing/revolver/heavy
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3)
+
 /obj/item/gun/projectile/revolver/mateba
 	name = "mateba"
 	desc = "Standard issue Foundation revolver based off the Mateba Unica. Chambered in .44 Magnum"
 	icon_state = "mateba"
-	caliber = ".44"
 	fire_delay = 6
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
-	ammo_type = /obj/item/ammo_casing/pistol/a50
 
 /obj/item/gun/projectile/revolver/medium
 	name = "revolver"
 	icon_state = "medium"
 	safety_icon = "medium_safety"
-	caliber = CALIBER_PISTOL
-	ammo_type = /obj/item/ammo_casing/pistol
+	caliber = CALIBER_REVOLVER_MEDIUM
+	ammo_type = /obj/item/ammo_casing/revolver/medium
 	desc = "The Lumoco Arms' Solid is a rugged revolver for people who don't keep their guns well-maintained."
 	accuracy = 1
 	bulk = 0
-	fire_delay = 9
+	fire_delay = 7
 
 /obj/item/gun/projectile/revolver/holdout
 	name = "holdout revolver"
 	desc = "The al-Maliki & Mosley Partner is a concealed-carry revolver made for people who do not trust automatic pistols any more than the people they're dealing with."
 	icon_state = "holdout"
 	item_state = "pen"
-	caliber = CALIBER_PISTOL_SMALL
-	ammo_type = /obj/item/ammo_casing/pistol/small
+	caliber = CALIBER_REVOLVER_SMALL
+	ammo_type = /obj/item/ammo_casing/revolver/small
 	w_class = ITEM_SIZE_SMALL
 	accuracy = 1
 	one_hand_penalty = 0
 	bulk = 0
-	fire_delay = 7
+	fire_delay = 5
 
 /obj/item/gun/projectile/revolver/capgun
 	name = "cap gun"
