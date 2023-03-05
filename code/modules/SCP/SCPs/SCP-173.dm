@@ -159,7 +159,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			DisableBlinking(A)
 			continue
 		var/mob/living/carbon/human/H = A
-		if(world.time >= next_blinks[A])
+		if(world.time >= next_blinks[H])
 			if(H.stat) // Sleeping or dead people can't blink!
 				DisableBlinking(H)
 				continue
