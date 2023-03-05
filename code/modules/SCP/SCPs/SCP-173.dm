@@ -343,12 +343,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/area/A = get_area(src)
 	A.full_breach()
 
-/mob/living/scp_173/proc/getNextBlinks()
-	return next_blinks
-
-/mob/living/scp_173/proc/getNextBlinksTime()
-	return next_blinks_time
-
 // the cage
 /obj/structure/scp173_cage
 	icon = 'icons/SCP/cage.dmi'
