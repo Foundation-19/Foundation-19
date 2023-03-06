@@ -477,7 +477,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 /obj/structure/scp173_cage/proc/ReleaseContents() //Releases cage contents
 	if(!LAZYLEN(contents))
 		return FALSE
-	if(damage_state < damage_max) //Dont want the release sound to play if 173 breaks out
+	if(damage_state <= damage_max) //Dont want the release sound to play if 173 breaks out
 		playsound(loc, 'sound/machines/bolts_up.ogg', 50, 1)
 	for(var/mob/living/scp_173/L in contents)
 		L.forceMove(get_turf(src))
