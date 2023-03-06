@@ -380,7 +380,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/mob/living/scp_173/S
 
 
-/obj/structure/scp173_cage/MouseDrop_T(atom/movable/dropping, mob/user)
+/obj/structure/scp173_cage/MouseDrop_T(atom/movable/dropping, mob/user) // When someone drags 173 onto the cage
 	if(damage_state < damage_max)
 		if(isscp173(dropping))
 			visible_message(SPAN_WARNING("[user] starts to put [dropping] into the cage."))
@@ -402,7 +402,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	else
 		visible_message(SPAN_WARNING("\The [src] is too damaged to operate!"))
 
-/obj/structure/scp173_cage/attack_hand(mob/living/A)
+/obj/structure/scp173_cage/attack_hand(mob/living/A) //If either a human or 173 interact with the cage
 	if(!LAZYLEN(contents))
 		return ..()
 	if(ishuman(A))
@@ -425,7 +425,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			visible_message(SPAN_DANGER("[S] bends open \the [src]!"))
 			ReleaseContents()
 
-/obj/structure/scp173_cage/proc/updateIconandDesc()
+/obj/structure/scp173_cage/proc/updateIconandDesc() //Updates cage icon and description according to current damage state and contents
 	if(damage_state == 0 && ((!LAZYLEN(contents)) || !S))
 		icon_state = "open"
 		desc = initial(desc)
@@ -463,7 +463,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			return 1
 	return 0
 
-/obj/structure/scp173_cage/proc/ReleaseContents()
+/obj/structure/scp173_cage/proc/ReleaseContents() //Releases cage contents
 	if(!LAZYLEN(contents))
 		return FALSE
 	playsound(loc, 'sound/machines/bolts_up.ogg', 50, 1)
