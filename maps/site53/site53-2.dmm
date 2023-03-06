@@ -34678,6 +34678,7 @@
 /area/site53/uhcz/scp096)
 "tXq" = (
 /obj/structure/table/reinforced,
+/obj/item/paper/scp/safe/scp2398,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp2398)
 "tYx" = (
