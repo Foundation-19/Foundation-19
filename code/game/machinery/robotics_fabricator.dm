@@ -145,7 +145,7 @@
 
 /obj/machinery/robotics_fabricator/attackby(obj/item/I, mob/user)
 	if(busy)
-		to_chat(user, "<span class='notice'>\The [src] is busy. Please wait for completion of previous operation.</span>")
+		to_chat(user, SPAN_NOTICE("\The [src] is busy. Please wait for completion of previous operation."))
 		return 1
 	if(!istype(I, /obj/item/stack/material))
 		return ..()

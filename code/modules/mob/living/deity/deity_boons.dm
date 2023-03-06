@@ -21,10 +21,10 @@
 			var/obj/O =  L.equip_to_storage(I)
 			if(O)
 				origin_text = "in \the [O]"
-		to_chat(L,"<span class='notice'>It appears [origin_text].</span>")
+		to_chat(L,SPAN_NOTICE("It appears [origin_text]."))
 
-	to_chat(L, "<span class='cult'>\The [src] grants you a boon of [current_boon]!</span>")
-	to_chat(src, "<span class='notice'>You give \the [L] a boon of [current_boon].</span>")
+	to_chat(L, SPAN_OCCULT("\The [src] grants you a boon of [current_boon]!"))
+	to_chat(src, SPAN_NOTICE("You give \the [L] a boon of [current_boon]."))
 	log_and_message_admins("gave [key_name(L)] the boon [current_boon]")
 	current_boon = null
 	return
@@ -34,11 +34,11 @@
 	for(var/s in M.learned_spells)
 		var/spell/S = s
 		if(istype(S, spell.type))
-			to_chat(src, "<span class='warning'>They already know that spell!</span>")
+			to_chat(src, SPAN_WARNING("They already know that spell!"))
 			return 0
 	target.add_spell(spell)
 	spell.set_connected_god(src)
-	to_chat(target, "<span class='notice'>You feel a surge of power as you learn the art of [current_boon].</span>")
+	to_chat(target, SPAN_NOTICE("You feel a surge of power as you learn the art of [current_boon]."))
 	return 1
 
 /* This is a generic proc used by the God to inact a sacrifice from somebody. Power is a value of magnitude.

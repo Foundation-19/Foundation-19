@@ -43,11 +43,11 @@
 /obj/machinery/cooker/attackby(obj/item/I, mob/user)
 
 	if(!cook_type || (stat & (NOPOWER|BROKEN)))
-		to_chat(user, "<span class='warning'>\The [src] is not working.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] is not working."))
 		return
 
 	if(cooking)
-		to_chat(user, "<span class='warning'>\The [src] is running!</span>")
+		to_chat(user, SPAN_WARNING("\The [src] is running!"))
 		return
 
 	// We are trying to cook a grabbed mob.
@@ -55,11 +55,11 @@
 	if(istype(G))
 
 		if(!can_cook_mobs)
-			to_chat(user, "<span class='warning'>That's not going to fit.</span>")
+			to_chat(user, SPAN_WARNING("That's not going to fit."))
 			return
 
 		if(!isliving(G.affecting))
-			to_chat(user, "<span class='warning'>You can't cook that.</span>")
+			to_chat(user, SPAN_WARNING("You can't cook that."))
 			return
 
 		cook_mob(G.affecting, user)
@@ -68,16 +68,16 @@
 	// We're trying to cook something else. Check if it's valid.
 	var/obj/item/weapon/reagent_containers/food/snacks/check = I
 	if(istype(check) && islist(check.cooked) && (cook_type in check.cooked))
-		to_chat(user, "<span class='warning'>\The [check] has already been [cook_type].</span>")
+		to_chat(user, SPAN_WARNING("\The [check] has already been [cook_type]."))
 		return 0
 	else if(istype(check, /obj/item/weapon/reagent_containers/glass))
-		to_chat(user, "<span class='warning'>That would probably break [src].</span>")
+		to_chat(user, SPAN_WARNING("That would probably break [src]."))
 		return 0
 	else if(istype(check, /obj/item/weapon/disk/nuclear))
 		to_chat(user, "Central Command would kill you if you [cook_type] that.")
 		return 0
 	else if(!istype(check) && !istype(check, /obj/item/weapon/holder))
-		to_chat(user, "<span class='warning'>That's not edible.</span>")
+		to_chat(user, SPAN_WARNING("That's not edible."))
 		return 0
 
 	// Gotta hurt.
@@ -90,7 +90,7 @@
 		return
 
 	// We can actually start cooking now.
-	user.visible_message("<span class='notice'>\The [user] puts \the [I] into \the [src].</span>")
+	user.visible_message(SPAN_NOTICE("\The [user] puts \the [I] into \the [src]."))
 	cooking_obj = I
 	cooking_obj.forceMove(src)
 	cooking = 1
@@ -134,7 +134,7 @@
 
 	// Reset relevant variables.
 	qdel(cooking_obj)
-	src.visible_message("<span class='notice'>\The [src] pings!</span>")
+	src.visible_message(SPAN_NOTICE("\The [src] pings!"))
 	if(cooked_sound)
 		playsound(get_turf(src), cooked_sound, 50, 1)
 
@@ -156,7 +156,7 @@
 				qdel(cooking_obj)
 				cooking_obj = new /obj/item/weapon/reagent_containers/food/snacks/badrecipe(src)
 				// Produce nasty smoke.
-				visible_message("<span class='danger'>\The [src] vomits a gout of rancid smoke!</span>")
+				visible_message(SPAN_DANGER("\The [src] vomits a gout of rancid smoke!"))
 				var/datum/effect/effect/system/smoke_spread/bad/smoke = new /datum/effect/effect/system/smoke_spread/bad()
 				smoke.attach(src)
 				smoke.set_up(10, 0, usr.loc)
@@ -178,7 +178,7 @@
 /obj/machinery/cooker/attack_hand(mob/user)
 
 	if(cooking_obj)
-		to_chat(user, "<span class='notice'>You grab \the [cooking_obj] from \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("You grab \the [cooking_obj] from \the [src]."))
 		user.put_in_hands(cooking_obj)
 		cooking = 0
 		cooking_obj = null
@@ -188,7 +188,7 @@
 	if(output_options.len)
 
 		if(cooking)
-			to_chat(user, "<span class='warning'>\The [src] is in use!</span>")
+			to_chat(user, SPAN_WARNING("\The [src] is in use!"))
 			return
 
 		var/choice = input("What specific food do you wish to make with \the [src]?") as null|anything in output_options+"Default"
@@ -196,10 +196,10 @@
 			return
 		if(choice == "Default")
 			selected_option = null
-			to_chat(user, "<span class='notice'>You decide not to make anything specific with \the [src].</span>")
+			to_chat(user, SPAN_NOTICE("You decide not to make anything specific with \the [src]."))
 		else
 			selected_option = choice
-			to_chat(user, "<span class='notice'>You prepare \the [src] to make \a [selected_option].</span>")
+			to_chat(user, SPAN_NOTICE("You prepare \the [src] to make \a [selected_option]."))
 
 	..()
 

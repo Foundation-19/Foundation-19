@@ -46,11 +46,11 @@
 	. = FALSE
 	switch(acid_melted)
 		if(0)
-			visible_message("<span class='alium'>Acid hits \the [src] with a sizzle!</span>")
+			visible_message(SPAN_CLASS("alium","Acid hits \the [src] with a sizzle!"))
 		if(1 to 3)
-			visible_message("<span class='alium'>The acid melts \the [src]!</span>")
+			visible_message(SPAN_CLASS("alium","The acid melts \the [src]!"))
 		if(4)
-			visible_message("<span class='alium'>The acid melts \the [src] away into nothing!</span>")
+			visible_message(SPAN_CLASS("alium","The acid melts \the [src] away into nothing!"))
 			. = TRUE
 			qdel(src)
 	acid_melted++

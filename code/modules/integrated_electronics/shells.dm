@@ -6,13 +6,13 @@
 
 /obj/item/electronic_assembly_shell/proc/can_apply_shell(obj/item/device/electronic_assembly/assembly, mob/user)
 	if(!istype(assembly))
-		to_chat(user, "<span class='warning'>This is not an assembly.</span>")
+		to_chat(user, SPAN_WARNING("This is not an assembly."))
 		return FALSE
 	if(w_class < assembly.w_class)
-		to_chat(user, "<span class='warning'>This shell is too small for the assembly.</span>")
+		to_chat(user, SPAN_WARNING("This shell is too small for the assembly."))
 		return FALSE
 	if(w_class > assembly.w_class)
-		to_chat(user, "<span class='warning'>This shell is too large for the assembly.</span>")
+		to_chat(user, SPAN_WARNING("This shell is too large for the assembly."))
 		return FALSE
 	return TRUE
 

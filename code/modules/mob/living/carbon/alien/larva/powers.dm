@@ -2,18 +2,18 @@
 	if(!src)
 		return 0
 	if(!istype(loc, /turf))
-		to_chat(src, "<span class='danger'>You cannot infest a target in your current position.</span>")
+		to_chat(src, SPAN_DANGER("You cannot infest a target in your current position."))
 		return 0
 	if(incapacitated())
-		to_chat(src, "<span class='danger'>You cannot infest a target in your current state.</span>")
+		to_chat(src, SPAN_DANGER("You cannot infest a target in your current state."))
 		return 0
 	if(!M)
 		return 1
 	if(!M.lying)
-		to_chat(src, "<span class='danger'>\The [M] is not prone.</span>")
+		to_chat(src, SPAN_DANGER("\The [M] is not prone."))
 		return 0
 	if(!(src.Adjacent(M)))
-		to_chat(src, "<span class='danger'>\The [M] is not in range.</span>")
+		to_chat(src, SPAN_DANGER("\The [M] is not in range."))
 		return 0
 	return 1
 
@@ -34,14 +34,14 @@
 			choices += H
 
 	if(!choices.len)
-		to_chat(src, "<span class='danger'>There are no viable hosts within range.</span>")
+		to_chat(src, SPAN_DANGER("There are no viable hosts within range."))
 		return
 
 	var/mob/living/carbon/human/H = input(src,"Who do you wish to infest?") as null|anything in choices
 
 	if(!H || !src || !H.lying) return
 
-	visible_message("<span class='danger'>\The [src] begins questing blindly towards \the [H]'s warm flesh...</span>")
+	visible_message(SPAN_DANGER("\The [src] begins questing blindly towards \the [H]'s warm flesh..."))
 
 	if(!do_after(src,30, H))
 		return
@@ -50,7 +50,7 @@
 		return
 
 	var/obj/item/organ/external/E = pick(H.organs)
-	to_chat(src, "<span class='danger'>You burrow deeply into \the [H]'s [E.name]!</span>")
+	to_chat(src, SPAN_DANGER("You burrow deeply into \the [H]'s [E.name]!"))
 	var/obj/item/weapon/holder/holder = new (loc)
 	src.loc = holder
 	holder.SetName(src.name)
@@ -75,7 +75,7 @@
 		to_chat(src, "You are not inside a host.")
 		return
 
-	to_chat(src, "<span class='danger'>You begin writhing your way free of \the [H]'s flesh...</span>")
+	to_chat(src, SPAN_DANGER("You begin writhing your way free of \the [H]'s flesh..."))
 
 	if(!do_after(src, 30, H))
 		return
@@ -106,6 +106,6 @@
 	else
 		src.loc = get_turf(src)
 	if(affected)
-		to_chat(src, "<span class='danger'>You crawl out of \the [H]'s [affected.name] and plop to the ground.</span>")
+		to_chat(src, SPAN_DANGER("You crawl out of \the [H]'s [affected.name] and plop to the ground."))
 	else
-		to_chat(src, "<span class='danger'>You plop to the ground.</span>")
+		to_chat(src, SPAN_DANGER("You plop to the ground."))

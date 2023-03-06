@@ -49,7 +49,7 @@
 
 /obj/machinery/power/port_gen/pacman2/examine(mob/user)
 	. = ..(user)
-	to_chat(user, "<span class='notice'>The generator has [P.air_contents.phoron] units of fuel left, producing [power_gen] per cycle.</span>")
+	to_chat(user, SPAN_NOTICE("The generator has [P.air_contents.phoron] units of fuel left, producing [power_gen] per cycle."))
 
 /obj/machinery/power/port_gen/pacman2/handleInactive()
 	heat -= 2
@@ -66,28 +66,28 @@
 /obj/machinery/power/port_gen/pacman2/attackby(obj/item/O as obj, mob/user as mob)
 	if(istype(O, /obj/item/weapon/tank/phoron))
 		if(P)
-			to_chat(user, "<span class='warning'>The generator already has a phoron tank loaded!</span>")
+			to_chat(user, SPAN_WARNING("The generator already has a phoron tank loaded!"))
 			return
 		P = O
 		user.drop_item()
 		O.loc = src
-		to_chat(user, "<span class='notice'>You add the phoron tank to the generator.</span>")
+		to_chat(user, SPAN_NOTICE("You add the phoron tank to the generator."))
 	else if(!active)
 		if(isWrench(O))
 			anchored = !anchored
 			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
 			if(anchored)
-				to_chat(user, "<span class='notice'>You secure the generator to the floor.</span>")
+				to_chat(user, SPAN_NOTICE("You secure the generator to the floor."))
 			else
-				to_chat(user, "<span class='notice'>You unsecure the generator from the floor.</span>")
+				to_chat(user, SPAN_NOTICE("You unsecure the generator from the floor."))
 			SSmachines.makepowernets()
 		else if(isScrewdriver(O))
 			open = !open
 			playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
 			if(open)
-				to_chat(user, "<span class='notice'>You open the access panel.</span>")
+				to_chat(user, SPAN_NOTICE("You open the access panel."))
 			else
-				to_chat(user, "<span class='notice'>You close the access panel.</span>")
+				to_chat(user, SPAN_NOTICE("You close the access panel."))
 		else if(isCrowbar(O) && !open)
 			var/obj/machinery/constructable_frame/machine_frame/new_frame = new /obj/machinery/constructable_frame/machine_frame(src.loc)
 			for(var/obj/item/I in component_parts)

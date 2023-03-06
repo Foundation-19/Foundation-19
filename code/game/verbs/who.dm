@@ -36,9 +36,9 @@
 				age = 0
 
 			if(age <= 1)
-				age = "<font color='#ff0000'><b>[age]</b></font>"
+				age = FONT_COLORED("#ff0000","<b>[age]</b>")
 			else if(age < 10)
-				age = "<font color='#ff8c00'><b>[age]</b></font>"
+				age = FONT_COLORED("#ff8c00","<b>[age]</b>")
 
 			entry += " - [age]"
 
@@ -105,6 +105,6 @@
 			msg += line
 
 	if(config.admin_irc)
-		to_chat(src, "<span class='info'>Adminhelps are also sent to IRC. If no admins are available in game try anyway and an admin on IRC may see it and respond.</span>")
+		to_chat(src, SPAN_INFO("Adminhelps are also sent to IRC. If no admins are available in game try anyway and an admin on IRC may see it and respond."))
 	to_chat(src, "<b>Current Staff ([active_staff]/[total_staff]):</b>")
 	to_chat(src, jointext(msg,"\n"))

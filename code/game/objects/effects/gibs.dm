@@ -24,7 +24,7 @@
 
 /obj/effect/gibspawner/proc/Gib(atom/location)
 	if(gibtypes.len != gibamounts.len || gibamounts.len != gibdirections.len)
-		log_error("<span class='warning'>Gib list length mismatch!</span>")
+		log_error(SPAN_WARNING("Gib list length mismatch!"))
 		return
 
 	if(sparks)

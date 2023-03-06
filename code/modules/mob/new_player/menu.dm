@@ -109,7 +109,7 @@
 
 	if(GAME_STATE <= RUNLEVEL_LOBBY)
 		player.ready = !player.ready
-		to_chat(player, "<span class='notice'>You are now [player.ready ? "ready" : "not ready"].</span>")
+		to_chat(player, SPAN_NOTICE("You are now [player.ready ? "ready" : "not ready"]."))
 
 	else
 		player.LateChoices() //show the latejoin job selection menu
@@ -180,7 +180,7 @@
 
 /mob/new_player/proc/new_player_observe()
 	if(GAME_STATE < RUNLEVEL_LOBBY)
-		to_chat(src, "<span class='warning'>Please wait for server initialization to complete...</span>")
+		to_chat(src, SPAN_WARNING("Please wait for server initialization to complete..."))
 		return
 
 	if(!config.respawn_delay || tgui_alert(client,
@@ -204,10 +204,10 @@
 		observer.started_as_observer = TRUE
 		var/obj/O = locate("landmark*Observer-Start")
 		if(istype(O))
-			to_chat(src, "<span class='notice'>Now teleporting.</span>")
+			to_chat(src, SPAN_NOTICE("Now teleporting."))
 			observer.forceMove(O.loc)
 		else
-			to_chat(src, "<span class='danger'>Could not locate an observer spawn point. Use the Teleport verb to jump to the map.</span>")
+			to_chat(src, SPAN_DANGER("Could not locate an observer spawn point. Use the Teleport verb to jump to the map."))
 		observer.timeofdeath = world.time // Set the time of death so that the respawn timer works correctly.
 
 		var/should_announce = client.get_preference_value(/datum/client_preference/announce_ghost_join) == GLOB.PREF_YES

@@ -121,7 +121,7 @@ PROCESSING_SUBSYSTEM_DEF(airflow)
 		return FALSE
 
 	if (ismob(src))
-		to_chat(src,"<span class='danger'>You are pushed away by airflow!</span>")
+		to_chat(src,SPAN_DANGER("You are pushed away by airflow!"))
 
 	last_airflow = world.time
 	var/airflow_falloff = 9 - sqrt((x - airflow_dest.x) ** 2 + (y - airflow_dest.y) ** 2)

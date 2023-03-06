@@ -25,8 +25,8 @@
 	if(!curloc || !targloc)
 		return
 	chassis.use_power(energy_drain)
-	chassis.visible_message("<span class='warning'>[chassis] fires [src]!</span>")
-	occupant_message("<span class='warning'>You fire [src]!</span>")
+	chassis.visible_message(SPAN_WARNING("[chassis] fires [src]!"))
+	occupant_message(SPAN_WARNING("You fire [src]!"))
 	log_message("Fired from [src], targeting [target].")
 	for(var/i = 1 to min(projectiles, projectiles_per_shot))
 		var/turf/aimloc = targloc
@@ -149,13 +149,13 @@
 			return 0
 
 		playsound(chassis, 'sound/items/AirHorn.ogg', 100, 1)
-		chassis.occupant_message("<font color='red' size='5'>HONK</font>")
+		chassis.occupant_message(FONT_COLORED("red' size='5","HONK"))
 		for(var/mob/living/carbon/M in ohearers(6, chassis))
 			if(istype(M, /mob/living/carbon/human))
 				var/mob/living/carbon/human/H = M
 				if(istype(H.l_ear, /obj/item/clothing/ears/earmuffs) || istype(H.r_ear, /obj/item/clothing/ears/earmuffs))
 					continue
-			to_chat(M, "<font color='red' size='7'>HONK</font>")
+			to_chat(M, FONT_COLORED("red' size='7","HONK"))
 			M.sleeping = 0
 			M.stuttering += 20
 			M.ear_deaf += 30

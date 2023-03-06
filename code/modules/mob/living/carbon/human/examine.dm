@@ -324,7 +324,7 @@
 
 	var/show_descs = show_descriptors_to(user)
 	if(show_descs)
-		msg += "<span class='notice'>[jointext(show_descs, "<br>")]</span>"
+		msg += SPAN_NOTICE("[jointext(show_descs, "<br>")]")
 	to_chat(user, jointext(msg, null))
 
 //Helper procedure. Called by /mob/living/carbon/human/examine() and /mob/living/carbon/human/Topic() to determine HUD access to security and medical records.
