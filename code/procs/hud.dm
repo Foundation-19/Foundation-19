@@ -44,7 +44,6 @@ the HUD updates properly! */
 //Security HUDs. Pass a value for the second argument to enable implant viewing or other special features.
 /proc/process_sec_hud(mob/M, advanced_mode, mob/Alt)
 	if(!can_process_hud(M))
-		to_world_log("cancelled")
 		return
 	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.sec_hud_users)
 	for(var/mob/living/carbon/human/perp in P.Mob.in_view(P.Turf))
@@ -92,12 +91,10 @@ the HUD updates properly! */
 
 /proc/can_process_hud(mob/M)
 	if(!M)
-		to_world_log("null")
 		return 0
 	if(!M.client)
 		return 0
 	if(M.stat != CONSCIOUS)
-		to_world_log("unconcious")
 		return 0
 	return 1
 
