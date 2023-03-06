@@ -26,14 +26,21 @@ GLOBAL_LIST_EMPTY(scp173s)
 	/// Reference to the area we were created in
 	var/area/spawn_area
 
-	/// List of people that are under blinking influence
+	/// List of humans under the blinking influence
 	var/list/next_blinks = list()
+	/// List of times at which humans joined the list (Used for HUD calculation)
+	var/list/next_blinks_join_time = list()
 
 	/// Current attack cooldown
 	var/snap_cooldown
 	/// Amount of the attack cooldown
 	var/snap_cooldown_time = 4 SECONDS
-
+	/// Current light break cooldown
+	var/light_break_cooldown
+	/// Amount of light fixture break cooldown
+	var/light_break_cooldown_time = 3 SECONDS
+	/// Maximium light level at which blink cooldown can start to drop off (value between 0 and 1)
+	var/max_lightlevel = 0.5
 	/// Cooldown for defecation...
 	var/defecation_cooldown
 	/// How much time you have to wait before defecating again
@@ -62,6 +69,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/Destroy()
 	next_blinks = null
+	next_blinks_join_time = null
+
 	GLOB.scp173s -= src
 	return ..()
 
@@ -103,6 +112,28 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(istype(A, /obj/machinery/door))
 		OpenDoor(A)
 		return
+	if(istype(A,/obj/machinery/floor_light))
+		if(get_area(A) == spawn_area)
+			to_chat(src, "<span class='warning'>You can't reach the lights in your own containment zone.</span>")
+			return
+		if(light_break_cooldown > world.time) //cooldown
+			to_chat(src, "<span class='warning'>You can't break that yet.</span>")
+			return
+		var/obj/machinery/floor_light/W = A
+		W.physical_attack_hand(src)
+		light_break_cooldown = world.time + light_break_cooldown_time
+		return
+	if(istype(A,/obj/machinery/light))
+		if(get_area(A) == spawn_area)
+			to_chat(src, "<span class='warning'>You can't reach the lights in your own containment zone.</span>")
+			return
+		if(light_break_cooldown > world.time) //cooldown
+			to_chat(src, "<span class='warning'>You can't break that yet.</span>")
+			return
+		var/obj/machinery/light/W = A
+		W.broken()
+		light_break_cooldown = world.time + light_break_cooldown_time
+		return
 	if(istype(A,/obj/structure/window))
 		var/obj/structure/window/W = A
 		W.shatter()
@@ -127,12 +158,15 @@ GLOBAL_LIST_EMPTY(scp173s)
 		if(!(A in our_view))
 			DisableBlinking(A)
 			continue
-		if(world.time >= next_blinks[A])
-			var/mob/living/carbon/human/H = A
+		var/mob/living/carbon/human/H = A
+		if(world.time >= next_blinks[H])
 			if(H.stat) // Sleeping or dead people can't blink!
 				DisableBlinking(H)
 				continue
 			CauseBlink(H)
+		BITSET(H.hud_updateflag, BLINK_HUD)
+	handle_regular_hud_updates()
+	process_blink_hud(src)
 	if(world.time > defecation_cooldown)
 		Defecate()
 	if(IsBeingWatched() || client) // AI controls from here
@@ -154,7 +188,13 @@ GLOBAL_LIST_EMPTY(scp173s)
 			continue
 		var/mob/living/carbon/human/H = L
 		if(next_blinks[H] == null)
-			next_blinks[H] = world.time + rand(5 SECONDS, 10 SECONDS) // Just encountered SCP 173
+			BITSET(H.hud_updateflag, BLINK_HUD) //Ensures HUD appears before first blink
+			var/turf/T = get_turf(src)
+			var/lightcount = T.get_lumcount()
+			if(lightcount > max_lightlevel)
+				lightcount = 1 //Light level must be less than max_lightlevel before blink time drop off
+			next_blinks[H] = world.time + (rand(5 SECONDS, 10 SECONDS) * lightcount) // Just encountered SCP 173
+			next_blinks_join_time[H] = world.time
 		if(H.SCP)
 			continue
 		if(is_blind(H) || H.eye_blind > 0)
@@ -217,6 +257,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/proc/DisableBlinking(mob/living/carbon/human/H)
 	next_blinks[H] = null
+	next_blinks_join_time[H] = null
 	for(var/mob/living/scp_173/S in GLOB.scp173s) // In case you spawned more than one
 		if(S.next_blinks[H]) // Not null
 			return
@@ -225,8 +266,14 @@ GLOBAL_LIST_EMPTY(scp173s)
 /mob/living/scp_173/proc/CauseBlink(mob/living/carbon/human/H)
 	H.visible_message("<span class='notice'>[H] blinks.</span>")
 	H.eye_blind += 2
+	BITSET(H.hud_updateflag, BLINK_HUD)
 	add_verb(H, /mob/living/carbon/human/verb/manual_blink)
-	next_blinks[H] = world.time + rand(15 SECONDS, 25 SECONDS)
+	var/turf/T = get_turf(src)
+	var/lightcount = T.get_lumcount()
+	if(lightcount > max_lightlevel)
+		lightcount = 1 //Light level must be less than max_lightlevel before blink time drop off
+	next_blinks[H] = world.time + (rand(15 SECONDS, 25 SECONDS) * lightcount)
+	next_blinks_join_time[H] = world.time
 
 /mob/living/scp_173/proc/AIAttemptAttack()
 	var/mob/living/carbon/human/target

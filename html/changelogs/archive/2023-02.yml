@@ -65,3 +65,29 @@
 2023-02-17:
   Tsurupeta:
   - rscadd: Added ability to look into distance by pressing Ctrl+RMB on tile.
+2023-02-24:
+  cheesePizza2:
+  - rscadd: You can now actually select the second-to-last alert (Code Pitchblack)!
+  - rscadd: Command program now has descriptions of all alerts!
+  - rscdel: All old alert levels are gone (Except Delta)
+  - bugfix: Alerts now have more sensical description texts
+  - imageadd: Fixed up alert sprites to work with other sprites
+  - imagedel: Deleted old alert sprites
+  - refactor: Messy alert code was standardized, less dumb shit
+  - refactor: In general, messy code relating to alerts has been cleaned up
+2023-02-25:
+  cheesePizza2:
+  - rscadd: More requests consoles placed.
+  - bugfix: Several requests console bugs fixed.
+2023-02-27:
+  casualspacestation14enjoyer:
+  - rscadd: Added SCP-457 now with functional mechanics!
+  - soundadd: Added new SCP-457 emote sounds.
+2023-02-28:
+  TheDarkElites:
+  - rscadd: 173 can now break lights
+  - rscadd: Light level now affects blink cooldown
+  cheesePizza2:
+  - rscadd: Amount of water matters for extinguishing 457
+  - code_imp: Fixed 457 code overwriting water code
+  - code_imp: addtimer() in timer.dm has better crash message if wait value is invalid.

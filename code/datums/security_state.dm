@@ -1,73 +1,44 @@
 /decl/security_state
 	// When defining any of these values type paths should be used, not instances. Instances will be acquired in /New()
 
-	var/decl/security_level/severe_security_level // At which security level (and higher) the use of nuclear fission devices and other extreme measures are allowed. Defaults to the last entry in all_security_levels if unset.
-	var/decl/security_level/high_security_level   // At which security level (and higher) transfer votes are disabled, ERT may be requested, and other similar high alert implications. Defaults to the second to last entry in all_security_levels if unset.
-	// All security levels within the above convention: Low, Guarded, Elevated, High, Severe
+	// The security level in which the destruction of the site is likely. Not selectable by personnel; set internally or by admins
+	var/decl/security_level/destruction_security_level = /decl/security_level/default/code_delta
 
+	// While at or above this security level, the use of nuclear fission devices and other extreme measures are allowed.
+	var/decl/security_level/severe_security_level = /decl/security_level/default/code_black
 
-	// Under normal conditions the crew may not raise the current security level higher than the highest_standard_security_level
-	// The crew may also not adjust the security level once it is above the highest_standard_security_level.
-	// Defaults to the second to last entry in all_security_levels if unset/null.
-	// Set to FALSE/0 if there should be no restrictions.
-	var/decl/security_level/highest_standard_security_level
+	// While at or above this security level, transfer votes are disabled, MTF may be requested, and other similar high alert implications.
+	var/decl/security_level/high_security_level = /decl/security_level/default/code_orange
 
-	var/decl/security_level/current_security_level  // The current security level. Defaults to the first entry in all_security_levels if unset.
-	var/decl/security_level/stored_security_level   // The security level that we are escalating to high security from - we will return to this level once we choose to revert.
-	var/list/all_security_levels                    // List of all available security levels
-	var/list/standard_security_levels               // List of all normally selectable security levels
-	var/list/comm_console_security_levels           // List of all selectable security levels for the command and communication console - basically standard_security_levels - 1
+	var/decl/security_level/current_security_level // The current security level. Defaults to the first entry in all_security_levels if unset.
+	var/decl/security_level/stored_security_level  // The security level that we are escalating from - please set and use this when reverting.
+
+	// List of all available security levels
+	var/list/all_security_levels = list(/decl/security_level/default/code_green, /decl/security_level/default/code_yellow, /decl/security_level/default/code_orange, /decl/security_level/default/code_red, /decl/security_level/default/code_black, /decl/security_level/default/code_pitchblack, /decl/security_level/default/code_delta)
+
+	// List of all normally selectable security levels
+	var/list/standard_security_levels = list(/decl/security_level/default/code_green, /decl/security_level/default/code_yellow, /decl/security_level/default/code_orange, /decl/security_level/default/code_red, /decl/security_level/default/code_black, /decl/security_level/default/code_pitchblack)
 
 /decl/security_state/New()
-	// Setup the severe security level
-	if(!(severe_security_level in all_security_levels))
-		severe_security_level = all_security_levels[all_security_levels.len]
+	// Setup threshold security levels
+	destruction_security_level = decls_repository.get_decl(destruction_security_level)
 	severe_security_level = decls_repository.get_decl(severe_security_level)
-
-	// Setup the high security level
-	if(!(high_security_level in all_security_levels))
-		high_security_level = all_security_levels[all_security_levels.len - 1]
 	high_security_level = decls_repository.get_decl(high_security_level)
 
-	// Setup the highest standard security level
-	if(highest_standard_security_level || isnull(highest_standard_security_level))
-		if(!(highest_standard_security_level in all_security_levels))
-			highest_standard_security_level = all_security_levels[all_security_levels.len - 1]
-		highest_standard_security_level = decls_repository.get_decl(highest_standard_security_level)
-	else
-		highest_standard_security_level = null
-
-	// Setup the current security level
-	if(current_security_level in all_security_levels)
-		current_security_level = decls_repository.get_decl(current_security_level)
-	else
-		current_security_level = decls_repository.get_decl(all_security_levels[1])
+	// Setup starting security level
+	current_security_level = decls_repository.get_decl(all_security_levels[1])
 
 	// Setup the full list of available security levels now that we no longer need to use "x in all_security_levels"
-	var/list/security_level_instances = list()
+	var/list/all_security_level_instances = list()
 	for(var/security_level_type in all_security_levels)
-		security_level_instances += decls_repository.get_decl(security_level_type)
-	all_security_levels = security_level_instances
+		all_security_level_instances += decls_repository.get_decl(security_level_type)
+	all_security_levels = all_security_level_instances
 
-	standard_security_levels = list()
-	// Setup the list of normally selectable security levels
-	for(var/security_level in all_security_levels)
-		standard_security_levels += security_level
-		if(security_level == highest_standard_security_level)
-			break
-
-	comm_console_security_levels = list()
-	// Setup the list of selectable security levels available in the comm. console
-	for(var/security_level in all_security_levels)
-		if(security_level == highest_standard_security_level)
-			break
-		comm_console_security_levels += security_level
-
-	// Now we ensure the high security level is not above the severe one (but we allow them to be equal)
-	var/severe_index = list_find(all_security_levels, severe_security_level)
-	var/high_index = list_find(all_security_levels, high_security_level)
-	if(high_index > severe_index)
-		high_security_level = severe_security_level
+	// Setup the full list of standard security levels
+	var/list/standard_security_level_instances = list()
+	for(var/security_level_type in standard_security_levels)
+		standard_security_level_instances += decls_repository.get_decl(security_level_type)
+	standard_security_levels = standard_security_level_instances
 
 /decl/security_state/Initialize()
 	// Finally switch up to the default starting security level.
@@ -151,8 +122,9 @@
 	var/overlay_status_display
 	var/alert_border
 
-	var/up_description
-	var/down_description
+	// Describes the alert itself, shown when choosing alarms
+	var/description
+
 	var/psionic_control_level = PSI_IMPLANT_WARN
 
 // Called when we're switching from a lower security level to this one.
@@ -174,9 +146,6 @@
 /*
 * The default security state and levels setup
 */
-/decl/security_state/default
-	all_security_levels = list(/decl/security_level/default/code_green, /decl/security_level/default/code_blue, /decl/security_level/default/code_red, /decl/security_level/default/code_delta)
-
 /decl/security_level/default
 	icon = 'icons/misc/security_state.dmi'
 
@@ -184,13 +153,9 @@
 	var/static/datum/announcement/priority/security/security_announcement_down = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/misc/notice1.ogg'))
 
 /decl/security_level/default/switching_up_to()
-	if(up_description)
-		security_announcement_up.Announce(up_description, "Attention! Alert level elevated to [name]!")
 	notify_station()
 
 /decl/security_level/default/switching_down_to()
-	if(down_description)
-		security_announcement_down.Announce(down_description, "Attention! Alert level changed to [name]!")
 	notify_station()
 
 /decl/security_level/default/proc/notify_station()
@@ -208,7 +173,6 @@
 	light_max_bright = 0.25
 	light_inner_range = 0.1
 	light_outer_range = 1
-
 	light_color_alarm = COLOR_GREEN
 	light_color_status_display = COLOR_GREEN
 
@@ -216,34 +180,70 @@
 	overlay_status_display = "status_display_green"
 	alert_border = "alert_border_green"
 
-	down_description = "All threats to the station have passed. Security may not have weapons visible, privacy laws are once again fully enforced."
+	description = "There is no active threat to the Site."
 
-/decl/security_level/default/code_blue
-	name = "code blue"
-	alarm_level = "on"
+	var/static/datum/announcement/priority/security/security_announcement_green = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codegreen.ogg', volume = 150))
+
+/decl/security_level/default/code_green/switching_down_to()
+	security_announcement_green.Announce("The situation has been resolved. All personnel are to return to their regular duties.", "Attention! Alert level lowered to code green.")
+	notify_station()
+
+/decl/security_level/default/code_yellow
+	name = "code yellow"
 
 	light_max_bright = 0.5
-	light_inner_range = 0.1
+	light_inner_range = 1
 	light_outer_range = 2
-	light_color_alarm = COLOR_BLUE
-	light_color_status_display = COLOR_BLUE
+	light_color_alarm = COLOR_YELLOW
+	light_color_status_display = COLOR_YELLOW
 
-	psionic_control_level = PSI_IMPLANT_LOG
+	overlay_alarm = "alarm_yellow"
+	overlay_status_display = "status_display_yellow"
+	alert_border = "alert_border_yellow"
 
-	overlay_alarm = "alarm_blue"
-	overlay_status_display = "status_display_blue"
-	alert_border = "alert_border_blue"
+	description = "A potential threat has been reported but not yet confirmed."
 
-	up_description = "The station has received reliable information about possible hostile activity on the station. Security staff may have weapons visible, random searches are permitted."
-	down_description = "The immediate threat has passed. Security may no longer have weapons drawn at all times, but may continue to have them visible. Random searches are still allowed."
+	var/static/datum/announcement/priority/security/security_announcement_yellow = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/misc/notice1.ogg'))
+
+/decl/security_level/default/code_yellow/switching_up_to()
+	security_announcement_yellow.Announce("There is an unconfirmed potential threat to the facility. Guards are to cautiously investigate the facility and secure sensitive areas. All personnel are recommended to report unusual behaviour.", "Attention! Code Yellow alert procedures now in effect!")
+	notify_station()
+
+/decl/security_level/default/code_yellow/switching_down_to()
+	security_announcement_yellow.Announce("All Euclid and Keter SCPs have been recontained. All areas should be swept for Safe SCPs, and the general integrity of the site should be restored.", "Attention! Code Yellow alert procedures now in effect!")
+	notify_station()
+
+/decl/security_level/default/code_orange
+	name = "code orange"
+
+	light_max_bright = 0.5
+	light_inner_range = 1
+	light_outer_range = 2
+	light_color_alarm = COLOR_ORANGE
+	light_color_status_display = COLOR_ORANGE
+
+	overlay_alarm = "alarm_orange"
+	overlay_status_display = "status_display_orange"
+	alert_border = "alert_border_orange"
+
+	description = "An Euclid SCP is currently uncontained."
+
+	var/static/datum/announcement/priority/security/security_announcement_orange = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codered.ogg'))
+
+/decl/security_level/default/code_orange/switching_up_to()
+	security_announcement_orange.Announce("An Euclid SCP has broken containment and its current whereabouts are unknown. Security should investigate and focus on recontainment as a first priority, or request an MTF unit to assist.", "Attention! Code Orange alert procedures now in effect!")
+	notify_station()
+
+/decl/security_level/default/code_orange/switching_down_to()
+	security_announcement_orange.Announce("All Keter SCPs have been recontained, but one or more Euclid SCP remains unaccounted for. Security should intensify searches to locate and recontain the breached SCPs.", "Attention! Code Orange alert procedures now in effect!")
+	notify_station()
 
 /decl/security_level/default/code_red
 	name = "code red"
-	alarm_level = "on"
 
-	light_max_bright = 0.5
-	light_inner_range = 0.1
-	light_outer_range = 2
+	light_max_bright = 0.75
+	light_inner_range = 1
+	light_outer_range = 3
 	light_color_alarm = COLOR_RED
 	light_color_status_display = COLOR_RED
 
@@ -251,10 +251,68 @@
 	overlay_status_display = "status_display_red"
 	alert_border = "alert_border_red"
 
-	psionic_control_level = PSI_IMPLANT_DISABLED
+	description = "A Keter SCP is currently uncontained."
 
-	up_description = "There is an immediate serious threat to the station. Security may have weapons unholstered at all times. Random searches are allowed and advised."
-	down_description = "The self-destruct mechanism has been deactivated, there is still however an immediate serious threat to the station. Security may have weapons unholstered at all times, random searches are allowed and advised."
+	var/static/datum/announcement/priority/security/security_announcement_red = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codered.ogg'))
+
+/decl/security_level/default/code_red/switching_up_to()
+	security_announcement_red.Announce("A Keter SCP has broken containment and its current whereabouts are unknown. Security should secure all exit points immediately before recontaining breached anomalies.", "Attention! Code red alert procedures now in effect!")
+	notify_station()
+
+/decl/security_level/default/code_red/switching_down_to()
+	security_announcement_red.Announce("All major threats to the Site have been neutralized or contained, but one or more Keter SCPs remain uncontained. Security should focus their efforts on recontaining the escaped SCP. Full site lockdown disengaged.", "Attention! Code red alert procedures now in effect!")
+	notify_station()
+
+/decl/security_level/default/code_black
+	name = "code black"
+
+	light_max_bright = 0.75
+	light_inner_range = 0.1
+	light_outer_range = 3
+	light_color_alarm = COLOR_RED
+	light_color_status_display = COLOR_NAVY_BLUE
+
+	overlay_alarm = "alarm_black"
+	overlay_status_display = "status_display_black"
+	alert_border = "alert_border_black"
+
+	description = "Several Keter and Euclid SCPs are uncontained."
+
+	var/static/datum/announcement/priority/security/security_announcement_black = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codeblack.ogg'))
+
+/decl/security_level/default/code_black/switching_up_to()
+	security_announcement_black.Announce("The site is experiencing multiple Keter and Euclid level containment breaches. Full site lockdown initiated.", "Attention! Code Black alert procedures now in effect!")
+	notify_station()
+
+/decl/security_level/default/code_black/switching_down_to()
+	security_announcement_black.Announce("The Site has been secured from subversive elements. Security is to sweep the facility and recontain all dangerous SCPs immediately.", "Attention! Code Black alert procedures now in effect!")
+	notify_station()
+
+/decl/security_level/default/code_pitchblack
+	name = "code pitchblack"
+
+	light_max_bright = 0.75
+	light_inner_range = 0.1
+	light_outer_range = 3
+	light_color_alarm = COLOR_RED
+	light_color_status_display = COLOR_NAVY_BLUE
+
+	overlay_alarm = "alarm_pitchblack"
+	overlay_status_display = "status_display_pitchblack"
+	alert_border = "alert_border_pitchblack"
+
+	description = "A hostile Group of Interest is invading or infiltrating the site."
+
+	var/static/datum/announcement/priority/security/security_announcement_pitchblack = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codeblack.ogg'))
+
+/decl/security_level/default/code_pitchblack/switching_up_to()
+	security_announcement_pitchblack.Announce("There have been confirmed reports of a hostile Group of Interest on-site. Security is allowed to terminate all suspected hostiles." ,"Attention! Code pitchblack alert procedures now in effect!")
+	notify_station()
+
+/decl/security_level/default/code_pitchblack/switching_down_to()
+	security_announcement_pitchblack.Announce("The destructive threat has been neutralized, however there is still a hostile Group of Interest within the facility.", "Attention! Code pitchblack alert procedures now in effect!")
+	notify_station()
+
 
 /decl/security_level/default/code_delta
 	name = "code delta"
@@ -270,10 +328,12 @@
 	overlay_status_display = "status_display_delta"
 	alert_border = "alert_border_delta"
 
+	description = "The site is at risk of imminent destruction."
+
 	psionic_control_level = PSI_IMPLANT_DISABLED
 
 	var/static/datum/announcement/priority/security/security_announcement_delta = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/effects/siren.ogg'))
 
 /decl/security_level/default/code_delta/switching_up_to()
-	security_announcement_delta.Announce("The self-destruct mechanism has been engaged. All crew are instructed to obey all instructions given by heads of staff. Any violations of these orders can be punished by death. This is not a drill.", "Attention! Delta security level reached!")
+	security_announcement_delta.Announce("The destruction of the site is imminent. All personnel are to obey instructions given by administrative staff. Any violation of these orders is punishable by immediate termination. This is not a drill.", "Attention! Code Delta evacuation procedures now in effect!")
 	notify_station()
