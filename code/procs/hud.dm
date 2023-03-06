@@ -33,16 +33,18 @@ the HUD updates properly! */
 	if(!can_process_hud(M))
 		return
 
-	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.scp173s)
-	for(var/mob/living/carbon/human/victim in P.Mob.in_view(P.Turf))
-		if(victim.stat) //The dead or sleeping cant blink, and therefore do not need to be added to the blink HUD
-			continue
-
-		P.Client.images += victim.hud_list[BLINK_HUD]
+	if(isscp173(M)) //Only 173 should have a blink HUD (Also this is neccesary for maintaing the blink HUD while caged)
+		var/mob/living/scp_173/S = M
+		var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.scp173s)
+		for(var/mob/living/carbon/human/victim in P.Mob.in_view(S.is_caged ? get_turf(S.cage) : P.Turf)) //If we're caged we must use the cage as our reference rather than 173
+			if(victim.stat) //The dead or sleeping cant blink, and therefore do not need to be added to the blink HUD
+				continue
+			P.Client.images += victim.hud_list[BLINK_HUD]
 
 //Security HUDs. Pass a value for the second argument to enable implant viewing or other special features.
 /proc/process_sec_hud(mob/M, advanced_mode, mob/Alt)
 	if(!can_process_hud(M))
+		to_world_log("cancelled")
 		return
 	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.sec_hud_users)
 	for(var/mob/living/carbon/human/perp in P.Mob.in_view(P.Turf))
@@ -90,10 +92,12 @@ the HUD updates properly! */
 
 /proc/can_process_hud(mob/M)
 	if(!M)
+		to_world_log("null")
 		return 0
 	if(!M.client)
 		return 0
 	if(M.stat != CONSCIOUS)
+		to_world_log("unconcious")
 		return 0
 	return 1
 
