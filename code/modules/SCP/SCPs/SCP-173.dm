@@ -120,7 +120,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			to_chat(src, SPAN_WARNING(SPAN_ITALIC("[H] is a fellow SCP!")))
 			return
 		if(H.stat == DEAD)
-			to_chat(src, SPAN_WARNING(SPAN_ITALIC("[H] is already dead!"))
+			to_chat(src, SPAN_WARNING(SPAN_ITALIC("[H] is already dead!")))
 			return
 		snap_cooldown = world.time + snap_cooldown_time
 		visible_message(SPAN_DANGER("[src] snaps [H]'s neck!"))
@@ -143,7 +143,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 	if(istype(A,/obj/machinery/light))
 		if(get_area(A) == spawn_area)
-			to_chat(src, SPAN_WARNING("You can't reach the lights in your own containment zone.")
+			to_chat(src, SPAN_WARNING("You can't reach the lights in your own containment zone."))
 			return
 		if(light_break_cooldown > world.time) //cooldown
 			to_chat(src, SPAN_WARNING("You can't break that yet."))
@@ -194,7 +194,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/ClimbCheck(atom/A)
 	if(IsBeingWatched())
-		to_chat(src, SPAN_DANGER("You can't climb while being watched.")))
+		to_chat(src, SPAN_DANGER("You can't climb while being watched."))
 		return FALSE
 	return TRUE
 
