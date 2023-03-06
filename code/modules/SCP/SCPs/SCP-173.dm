@@ -430,7 +430,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 /obj/structure/scp173_cage/proc/updateIconandDesc() //Updates cage icon and description according to current damage state and contents
 	underlays.Cut()
 
-	if(damage_state == 0 && ((!LAZYLEN(contents)) || !S))
+	if((damage_state <= damage_max) && ((!LAZYLEN(contents)) || !S))
 		icon_state = "open"
 		desc = initial(desc)
 	else if(damage_state == 0)
@@ -453,22 +453,25 @@ GLOBAL_LIST_EMPTY(scp173s)
 /obj/structure/scp173_cage/attackby(obj/item/I, mob/user) //Gotta be able to repair the cage
 	if(user.a_intent == I_HELP)
 		if(isWelder(I))
-			var/obj/item/weldingtool/WT = I
-			if(damage_state == 0)
-				to_chat(user, SPAN_NOTICE("\The [src] is not damaged."))
-				return
-			if(!WT.remove_fuel(0, user))
-				to_chat(user, SPAN_WARNING("\The [I] must be on to complete this task."))
-				return
-			playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
-			if(!do_after(user, (5 * damage_state), src)) //Time to repair depends on how damaged the cage is
-				return
-			if(!src || !WT.isOn())
-				return
-			visible_message(SPAN_NOTICE("\The [user] has repaired \the [src]."))
-			icon_state = "open"
-			damage_state = 0
-			return 1
+			if(!LAZYLEN(contents) && !S)
+				var/obj/item/weldingtool/WT = I
+				if(damage_state == 0)
+					to_chat(user, SPAN_NOTICE("\The [src] is not damaged."))
+					return
+				if(!WT.remove_fuel(0, user))
+					to_chat(user, SPAN_WARNING("\The [I] must be on to complete this task."))
+					return
+				if(!src || !WT.isOn())
+					return
+				playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+				if(do_after(user, 5 SECONDS, src)) //Time to repair depends on how damaged the cage is
+					visible_message(SPAN_NOTICE("\The [user] repairs \the [src] [pick("slightly","somewhat")]."))
+					damage_state -= 1
+					updateIconandDesc()
+					if(damage_state == 0)
+						visible_message(SPAN_NOTICE("\The [user] repairs \the [src] fully!"))
+					return 1
+			to_chat(user, SPAN_WARNING("\The [src] must be empty to complete this task!"))
 	return 0
 
 /obj/structure/scp173_cage/proc/ReleaseContents() //Releases cage contents
@@ -480,6 +483,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		L.forceMove(get_turf(src))
 		L?.is_caged = FALSE
 		L?.cage = null
+	S = null
 	plane = initial(plane)
 	updateIconandDesc()
 	return TRUE
