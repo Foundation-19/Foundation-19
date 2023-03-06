@@ -18,9 +18,9 @@
 	if(ishuman(user && target))
 		var/mob/living/carbon/human/H = target
 		var/mob/living/carbon/human/G = user
-		G.visible_message(SPAN_DANGER("[G] hits [H] over the head with [src]!"))
-		H.gib()
-		G.gib()
-		explosion(src, 1, 1, 1, 1)
-		new /obj/item/weapon/twohanded/scp_2398(get_turf(src)) //added because gibbing apparently destroys everything the target has on him or is holding
+		to_chat(H, SPAN_USERDANGER("Someone begins swinging a bat at you!"))
+		G.visible_message(SPAN_DANGER("[G] begins to swing [src] at [H]!"))
+		if(do_after(G, 4 SECONDS, H))
+			H.gib()
+			explosion(H, 1, 1, 3, 3, 1)
 		return
