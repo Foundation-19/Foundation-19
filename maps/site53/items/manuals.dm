@@ -907,7 +907,7 @@ Personnel testing SCP-2398 are forbidden from swinging SCP-2398 towards any othe
 <b>Description:</b>
 
 SCP-2398 is a plain wooden baseball bat, roughly 110cm in length and made of ash with a taped grip.
-SCP-2398 bears no unusual markings other than the letters “K.O.” branded into the wood just above the handle.
+SCP-2398 bears no unusual markings other than the letters 'K.O.' branded into the wood just above the handle.
 SCP-2398 displays no anomalous properties when not in use; however, when swung at a speed over roughly 20m/s, any living organism that SCP-2398 comes in contact with at the end of a swing will violently explode. The mechanism for this is currently unknown.
 "}
 
