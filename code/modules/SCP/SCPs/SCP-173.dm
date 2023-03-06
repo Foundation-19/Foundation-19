@@ -390,7 +390,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 				S.forceMove(src)
 				S.is_caged = TRUE
 				S.cage = src
-				underlays += image(S)
 				updateIconandDesc()
 				visible_message(SPAN_NOTICE("[user] puts [S] in the cage."))
 				playsound(loc, 'sound/machines/bolts_down.ogg', 50, 1)
@@ -426,21 +425,34 @@ GLOBAL_LIST_EMPTY(scp173s)
 			ReleaseContents()
 
 /obj/structure/scp173_cage/proc/updateIconandDesc() //Updates cage icon and description according to current damage state and contents
+	/*
+	underlays.Cut()
+	cut_overlays()
+	*/
+
 	if(damage_state == 0 && ((!LAZYLEN(contents)) || !S))
 		icon_state = "open"
 		desc = initial(desc)
 	else if(damage_state == 0)
-		icon_state = "closed"
+		icon_state = "closed_173"
 		desc = "A cage for containing SCP-173. It is currently holding [S]."
 	else if(damage_state <= 1)
-		icon_state = "damage_1"
+		icon_state = "damage_1_173"
 		desc = "A cage for containing SCP-173. It is currently holding [S]. It looks slightly damaged."
-	else if(damage_state <= Clamp((damage_max - 2), 2, INFINITY)) //Dont want the damage visuals getting fucky because damage_max was too low
-		icon_state = "damage_2"
+	else if((damage_state >= Clamp((damage_max - 1), 2, INFINITY)) && (damage_state < damage_max)) //Dont want the damage visuals getting fucky because damage_max was too low
+		icon_state = "damage_2_173"
 		desc = "A cage for containing SCP-173. It is currently holding [S]. It looks fairly damaged."
-	else
+	else if(damage_state == damage_max)
 		icon_state = "damage_3"
 		desc = "An empty cage for containing SCP-173. It appears broken."
+
+	/*if((LAZYLEN(contents)) && S) TODO: MAKE 173'S SPRITE FOR THE CAGE MODULAR RATHER THAN DIRECTLY SPRITED IN. Below is the last iteration of my attempts... Good luck.
+		var/image/S_image = image(S)
+		var/image/C_image = image(src)
+		S_image.layer = BELOW_OBJ_LAYER
+		underlays += S_image
+		add_overlay(C_image)
+		*/
 
 /obj/structure/scp173_cage/attackby(obj/item/I, mob/user) //Gotta be able to repair the cage
 	if(user.a_intent == I_HELP)
@@ -466,12 +478,12 @@ GLOBAL_LIST_EMPTY(scp173s)
 /obj/structure/scp173_cage/proc/ReleaseContents() //Releases cage contents
 	if(!LAZYLEN(contents))
 		return FALSE
-	playsound(loc, 'sound/machines/bolts_up.ogg', 50, 1)
+	if(damage_state < damage_max) //Dont want the release sound to play if 173 breaks out
+		playsound(loc, 'sound/machines/bolts_up.ogg', 50, 1)
 	for(var/mob/living/scp_173/L in contents)
 		L.forceMove(get_turf(src))
 		L?.is_caged = FALSE
 		L?.cage = null
-	underlays.Cut()
 	updateIconandDesc()
 	return TRUE
 
