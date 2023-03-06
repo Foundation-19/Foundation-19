@@ -372,6 +372,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	desc = "An empty cage for containing SCP-173."
 	density = TRUE
 	layer = MOB_LAYER + 0.05
+	plane = OBJ_PLANE
 	// Max damage state before breaking out
 	var/damage_max = 5
 	// Damage state of cage
@@ -386,6 +387,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			visible_message(SPAN_WARNING("[user] starts to put [dropping] into the cage."))
 			var/oloc = loc
 			if(do_after(user, 10 SECONDS, S) && loc == oloc)
+				plane = MOB_PLANE
 				S = dropping
 				S.forceMove(src)
 				S.is_caged = TRUE
@@ -422,37 +424,31 @@ GLOBAL_LIST_EMPTY(scp173s)
 			updateIconandDesc()
 		else
 			visible_message(SPAN_DANGER("[S] bends open \the [src]!"))
+			damage_state = damage_max + 1
 			ReleaseContents()
 
 /obj/structure/scp173_cage/proc/updateIconandDesc() //Updates cage icon and description according to current damage state and contents
-	/*
 	underlays.Cut()
-	cut_overlays()
-	*/
 
 	if(damage_state == 0 && ((!LAZYLEN(contents)) || !S))
 		icon_state = "open"
 		desc = initial(desc)
 	else if(damage_state == 0)
-		icon_state = "closed_173"
+		icon_state = "closed"
 		desc = "A cage for containing SCP-173. It is currently holding [S]."
 	else if(damage_state <= 1)
-		icon_state = "damage_1_173"
+		icon_state = "damage_1"
 		desc = "A cage for containing SCP-173. It is currently holding [S]. It looks slightly damaged."
-	else if((damage_state >= Clamp((damage_max - 1), 2, INFINITY)) && (damage_state < damage_max)) //Dont want the damage visuals getting fucky because damage_max was too low
-		icon_state = "damage_2_173"
+	else if((damage_state >= Clamp((damage_max - 1), 2, INFINITY)) && (damage_state <= damage_max)) //Dont want the damage visuals getting fucky because damage_max was too low
+		icon_state = "damage_2"
 		desc = "A cage for containing SCP-173. It is currently holding [S]. It looks fairly damaged."
-	else if(damage_state == damage_max)
+	else if(damage_state > damage_max) //Damage state is equal to damage max last stage before breaking, so this is neccesary
 		icon_state = "damage_3"
 		desc = "An empty cage for containing SCP-173. It appears broken."
 
-	/*if((LAZYLEN(contents)) && S) TODO: MAKE 173'S SPRITE FOR THE CAGE MODULAR RATHER THAN DIRECTLY SPRITED IN. Below is the last iteration of my attempts... Good luck.
-		var/image/S_image = image(S)
-		var/image/C_image = image(src)
-		S_image.layer = BELOW_OBJ_LAYER
-		underlays += S_image
-		add_overlay(C_image)
-		*/
+	if((LAZYLEN(contents)) && S)
+		underlays += image(S)
+
 
 /obj/structure/scp173_cage/attackby(obj/item/I, mob/user) //Gotta be able to repair the cage
 	if(user.a_intent == I_HELP)
@@ -484,6 +480,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		L.forceMove(get_turf(src))
 		L?.is_caged = FALSE
 		L?.cage = null
+	plane = initial(plane)
 	updateIconandDesc()
 	return TRUE
 
