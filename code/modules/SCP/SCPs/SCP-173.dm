@@ -102,28 +102,28 @@ GLOBAL_LIST_EMPTY(scp173s)
 				var/obj/structure/scp173_cage/cage = A
 				cage.attack_hand(src)
 				snap_cooldown = world.time + snap_cooldown_time
-				to_chat(src, "<span class='warning'>You damage the cage.</span>")
+				to_chat(src, SPAN_WARNING("You damage the cage."))
 			else
-				to_chat(src, "<span class='warning'>You can't attack yet.</span>")
+				to_chat(src, SPAN_WARNING("You can't attack yet."))
 		else if(IsBeingWatched() && istype(A, /obj/structure/scp173_cage))
-			to_chat(src, "<span class='warning'>You can't attack the cage while they're looking!</span>")
+			to_chat(src, SPAN_WARNING("You can't attack the cage while they're looking!"))
 		else
 			return
 	if(IsBeingWatched() || incapacitated())// We can't do anything while being watched
 		return
 	if(ishuman(A))
 		if(snap_cooldown > world.time)
-			to_chat(src, "<span class='warning'>You can't attack yet.</span>")
+			to_chat(src, SPAN_WARNING("You can't attack yet."))
 			return
 		var/mob/living/carbon/human/H = A
 		if(H.SCP)
-			to_chat(src, "<span class='warning'><I>[H] is a fellow SCP!</I></span>")
+			to_chat(src, SPAN_WARNING(SPAN_ITALIC("[H] is a fellow SCP!")))
 			return
 		if(H.stat == DEAD)
-			to_chat(src, "<span class='warning'><I>[H] is already dead!</I></span>")
+			to_chat(src, SPAN_WARNING(SPAN_ITALIC("[H] is already dead!"))
 			return
 		snap_cooldown = world.time + snap_cooldown_time
-		visible_message("<span class='danger'>[src] snaps [H]'s neck!</span>")
+		visible_message(SPAN_DANGER("[src] snaps [H]'s neck!"))
 		playsound(loc, pick('sound/scp/spook/NeckSnap1.ogg', 'sound/scp/spook/NeckSnap3.ogg'), 50, 1)
 		H.death()
 		return
@@ -132,10 +132,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 	if(istype(A,/obj/machinery/floor_light))
 		if(get_area(A) == spawn_area)
-			to_chat(src, "<span class='warning'>You can't reach the lights in your own containment zone.</span>")
+			to_chat(src, SPAN_WARNING("You can't reach the lights in your own containment zone."))
 			return
 		if(light_break_cooldown > world.time) //cooldown
-			to_chat(src, "<span class='warning'>You can't break that yet.</span>")
+			to_chat(src, SPAN_WARNING("You can't break that yet."))
 			return
 		var/obj/machinery/floor_light/W = A
 		W.physical_attack_hand(src)
@@ -143,10 +143,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 	if(istype(A,/obj/machinery/light))
 		if(get_area(A) == spawn_area)
-			to_chat(src, "<span class='warning'>You can't reach the lights in your own containment zone.</span>")
+			to_chat(src, SPAN_WARNING("You can't reach the lights in your own containment zone.")
 			return
 		if(light_break_cooldown > world.time) //cooldown
-			to_chat(src, "<span class='warning'>You can't break that yet.</span>")
+			to_chat(src, SPAN_WARNING("You can't break that yet."))
 			return
 		var/obj/machinery/light/W = A
 		W.broken()
@@ -194,7 +194,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/ClimbCheck(atom/A)
 	if(IsBeingWatched())
-		to_chat(src, "<span class='danger'>You can't climb while being watched.</span>")
+		to_chat(src, SPAN_DANGER("You can't climb while being watched.")))
 		return FALSE
 	return TRUE
 
@@ -234,13 +234,13 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 
 	if(!A.Adjacent(src))
-		to_chat(src, "<span class='warning'>\The [A] is too far away.</span>")
+		to_chat(src, SPAN_WARNING("\The [A] is too far away."))
 		return
 
 	var/open_time = 3 SECONDS
 	if(istype(A, /obj/machinery/door/blast))
 		if(get_area(A) == spawn_area)
-			to_chat(src, "<span class='warning'>You cannot open blast doors in your containment zone.</span>")
+			to_chat(src, SPAN_WARNING("You cannot open blast doors in your containment zone."))
 			return
 		open_time = 15 SECONDS
 
@@ -282,7 +282,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	remove_verb(H, /mob/living/carbon/human/verb/manual_blink)
 
 /mob/living/scp_173/proc/CauseBlink(mob/living/carbon/human/H)
-	H.visible_message("<span class='notice'>[H] blinks.</span>")
+	H.visible_message(SPAN_NOTICE("[H] blinks."))
 	H.eye_blind += 2
 	BITSET(H.hud_updateflag, BLINK_HUD)
 	add_verb(H, /mob/living/carbon/human/verb/manual_blink)
@@ -405,7 +405,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 /obj/structure/scp173_cage/attack_hand(mob/living/A)
 	if(!LAZYLEN(contents))
 		return ..()
-	if(istype(A, /mob/living/carbon/human))
+	if(ishuman(A))
 		if(damage_state < damage_max)
 			var/mob/living/carbon/human/H = A
 			visible_message(SPAN_WARNING("[H] attempts to open \the [src]."))
@@ -447,17 +447,17 @@ GLOBAL_LIST_EMPTY(scp173s)
 		if(isWelder(I))
 			var/obj/item/weldingtool/WT = I
 			if(damage_state == 0)
-				to_chat(user, "<span class='notice'>\The [src] is not damaged.</span>")
+				to_chat(user, SPAN_NOTICE("\The [src] is not damaged."))
 				return
 			if(!WT.remove_fuel(0, user))
-				to_chat(user, "<span class='warning'>\The [I] must be on to complete this task.</span>")
+				to_chat(user, SPAN_WARNING("\The [I] must be on to complete this task."))
 				return
 			playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
 			if(!do_after(user, (5 * damage_state), src)) //Time to repair depends on how damaged the cage is
 				return
 			if(!src || !WT.isOn())
 				return
-			visible_message("<span class='notice'>\The [user] has repaired \the [src].</span>")
+			visible_message(SPAN_NOTICE("\The [user] has repaired \the [src]."))
 			icon_state = "open"
 			damage_state = 0
 			return 1
@@ -523,11 +523,11 @@ GLOBAL_LIST_EMPTY(scp173s)
 	. = FALSE
 	switch(acid_melted)
 		if(0)
-			visible_message("<span class='euclid'>Acid hits \the [src] with a sizzle!</span>")
+			visible_message(SPAN_WARNING("Acid hits \the [src] with a sizzle!"))
 		if(1 to 3)
-			visible_message("<span class='euclid'>The acid melts \the [src]!</span>")
+			visible_message(SPAN_WARNING("The acid melts \the [src]!"))
 		if(4)
-			visible_message("<span class='euclid'>The acid melts \the [src] away into nothing!</span>")
+			visible_message(SPAN_WARNING("The acid melts \the [src] away into nothing!"))
 			. = TRUE
 			qdel(src)
 	acid_melted++
