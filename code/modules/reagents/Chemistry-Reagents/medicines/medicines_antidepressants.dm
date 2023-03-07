@@ -82,6 +82,7 @@
 	taste_description = "happiness"
 	color = "#f7f97a"
 	value = 10
+	hidden_from_codex = TRUE
 
 /datum/reagent/medicine/antidepressant/anomalous_happiness/affect_blood(mob/living/carbon/M, alien, removed)
 	M.add_chemical_effect(CE_SANITY, 2)
