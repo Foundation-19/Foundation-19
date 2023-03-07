@@ -900,7 +900,7 @@ Object Class: Safe
 <br>
 <b>Special Containment Procedures:</b>
 <br>
-SCP-2398 is contained in a standard high security containment locker at Site-53. Personnel seeking clearance to test SCP-2398 must submit the proper paperwork to the Site-53 Head of Research Administration’s office.
+SCP-2398 is contained in a standard high security containment locker at Site-53. Personnel seeking clearance to test SCP-2398 must submit the proper paperwork to the Site-53 Head of Research Administrations office.
 Personnel testing SCP-2398 are forbidden from swinging SCP-2398 towards any other Foundation personnel.
 
 <br>
