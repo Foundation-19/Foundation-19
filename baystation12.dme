@@ -1745,6 +1745,7 @@
 #include "code\modules\codex\entries\mobs.dm"
 #include "code\modules\codex\entries\paperwork.dm"
 #include "code\modules\codex\entries\psionics.dm"
+#include "code\modules\codex\entries\radio.dm"
 #include "code\modules\codex\entries\spells.dm"
 #include "code\modules\codex\entries\stacks.dm"
 #include "code\modules\codex\entries\structures.dm"
