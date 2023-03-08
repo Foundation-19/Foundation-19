@@ -401,8 +401,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 			playsound(loc, 'sound/machines/bolts_down.ogg', 50, 1)
 			return TRUE
 		return FALSE
-		if(isliving(dropping))
-			to_chat(user, SPAN_WARNING("\The [dropping] won't fit in the cage."))
+	else if(isliving(dropping))
+		to_chat(user, SPAN_WARNING("\The [dropping] won't fit in the cage."))
 	return FALSE
 
 /obj/structure/scp173_cage/attack_hand(mob/living/A) //If either a human or 173 interact with the cage
