@@ -27,7 +27,7 @@
 		owner.bodytemperature += burn
 		burn = 0
 		if(prob(25))
-			owner.visible_message("<span class='warning'>\The [owner]'s crystalline [name] shines with absorbed energy!</span>")
+			owner.visible_message(SPAN_WARNING("\The [owner]'s crystalline [name] shines with absorbed energy!"))
 
 	if(used_weapon)
 		add_autopsy_data("[used_weapon]", brute + burn)
@@ -101,7 +101,7 @@
 				W.salved = 0
 				disturbed += W.damage
 		if(disturbed)
-			to_chat(owner,"<span class='warning'>Ow! Your burns were disturbed.</span>")
+			to_chat(owner,SPAN_WARNING("Ow! Your burns were disturbed."))
 			add_pain(0.5*disturbed)
 
 	//If there are still hurties to dispense
@@ -295,7 +295,7 @@
 				return 1
 
 		else if(agony_amount > 0.5 * max_damage)
-			owner.visible_message("<span class='warning'>[owner] reels in pain!</span>")
+			owner.visible_message(SPAN_WARNING("[owner] reels in pain!"))
 			if(agony_amount > max_damage)
 				owner.Weaken(4)
 			else

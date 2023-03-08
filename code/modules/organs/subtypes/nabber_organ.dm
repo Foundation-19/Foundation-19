@@ -35,12 +35,12 @@
 	eyes_shielded = !eyes_shielded
 
 	if(eyes_shielded)
-		to_chat(owner, "<span class='notice'>Nearly opaque lenses slide down to shield your eyes.</span>")
+		to_chat(owner, SPAN_NOTICE("Nearly opaque lenses slide down to shield your eyes."))
 		innate_flash_protection = FLASH_PROTECTION_MAJOR
 		owner.eye_blind = 20
 		owner.update_icons()
 	else
-		to_chat(owner, "<span class='notice'>Your protective lenses retract out of the way.</span>")
+		to_chat(owner, SPAN_NOTICE("Your protective lenses retract out of the way."))
 		innate_flash_protection = FLASH_PROTECTION_VULNERABLE
 		owner.eye_blind = min(2, owner.eye_blind)
 		Process()
@@ -151,19 +151,19 @@
 		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
 			lowblood_tally = 1 * lowblood_mult
 			if(prob(1))
-				to_chat(owner, "<span class='warning'>You're finding it difficult to move.</span>")
+				to_chat(owner, SPAN_WARNING("You're finding it difficult to move."))
 		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
 			lowblood_tally = 3 * lowblood_mult
 			if(prob(1))
-				to_chat(owner, "<span class='warning'>Moving has become very difficult.</span>")
+				to_chat(owner, SPAN_WARNING("Moving has become very difficult."))
 		if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
 			lowblood_tally = 5 * lowblood_mult
 			if(prob(15))
-				to_chat(owner, "<span class='warning'>You're almost unable to move!</span>")
+				to_chat(owner, SPAN_WARNING("You're almost unable to move!"))
 		if(-(INFINITY) to BLOOD_VOLUME_SURVIVE)
 			lowblood_tally = 6 * lowblood_mult
 			if(prob(10))
-				to_chat(owner, "<span class='warning'>Your body is barely functioning and is starting to shut down.</span>")
+				to_chat(owner, SPAN_WARNING("Your body is barely functioning and is starting to shut down."))
 				owner.Paralyse(1)
 			for(var/obj/item/organ/internal/I in owner.internal_organs)
 				if(prob(5))

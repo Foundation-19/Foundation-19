@@ -41,7 +41,7 @@
 	//Placeholder for effect that trigger on eating that aren't tied to reagents.
 /obj/item/reagent_containers/food/snacks/proc/On_Consume(mob/M)
 	if(!reagents.total_volume)
-		M.visible_message("<span class='notice'>[M] finishes eating \the [src].</span>","<span class='notice'>You finish eating \the [src].</span>")
+		M.visible_message(SPAN_NOTICE("[M] finishes eating \the [src]."),SPAN_NOTICE("You finish eating \the [src]."))
 		M.drop_item()
 		M.update_personal_goal(/datum/goal/achievement/specific_object/food, type)
 		if(trash)
@@ -58,11 +58,11 @@
 
 /obj/item/reagent_containers/food/snacks/attack(mob/M as mob, mob/user as mob, def_zone)
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='danger'>None of [src] left!</span>")
+		to_chat(user, SPAN_DANGER("None of [src] left!"))
 		qdel(src)
 		return 0
 	if(!is_open_container())
-		to_chat(user, "<span class='notice'>\The [src] isn't open!</span>")
+		to_chat(user, SPAN_NOTICE("\The [src] isn't open!"))
 		return 0
 	if(istype(M, /mob/living/carbon))
 		//TODO: replace with standard_feed_mob() call.
@@ -76,29 +76,29 @@
 					return
 				var/obj/item/blocked = H.check_mouth_coverage()
 				if(blocked)
-					to_chat(user, "<span class='warning'>\The [blocked] is in the way!</span>")
+					to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))
 					return
 
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)//puts a limit on how fast people can eat/drink things
 			if (fullness <= 50)
-				to_chat(C, "<span class='danger'>You hungrily chew out a piece of [src] and gobble it!</span>")
+				to_chat(C, SPAN_DANGER("You hungrily chew out a piece of [src] and gobble it!"))
 			if (fullness > 50 && fullness <= 150)
-				to_chat(C, "<span class='notice'>You hungrily begin to eat [src].</span>")
+				to_chat(C, SPAN_NOTICE("You hungrily begin to eat [src]."))
 			if (fullness > 150 && fullness <= 350)
-				to_chat(C, "<span class='notice'>You take a bite of [src].</span>")
+				to_chat(C, SPAN_NOTICE("You take a bite of [src]."))
 			if (fullness > 350 && fullness <= 550)
-				to_chat(C, "<span class='notice'>You unwillingly chew a bit of [src].</span>")
+				to_chat(C, SPAN_NOTICE("You unwillingly chew a bit of [src]."))
 			if (fullness > 550)
-				to_chat(C, "<span class='danger'>You cannot force any more of [src] to go down your throat.</span>")
+				to_chat(C, SPAN_DANGER("You cannot force any more of [src] to go down your throat."))
 				return 0
 		else
 			if(!M.can_force_feed(user, src))
 				return
 
 			if (fullness <= 550)
-				user.visible_message("<span class='danger'>[user] attempts to feed [M] [src].</span>")
+				user.visible_message(SPAN_DANGER("[user] attempts to feed [M] [src]."))
 			else
-				user.visible_message("<span class='danger'>[user] cannot force anymore of [src] down [M]'s throat.</span>")
+				user.visible_message(SPAN_DANGER("[user] cannot force anymore of [src] down [M]'s throat."))
 				return 0
 
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -109,7 +109,7 @@
 
 			var/contained = reagentlist()
 			admin_attack_log(user, M, "Fed the victim with [name] (Reagents: [contained])", "Was fed [src] (Reagents: [contained])", "used [src] (Reagents: [contained]) to feed")
-			user.visible_message("<span class='danger'>[user] feeds [M] [src].</span>")
+			user.visible_message(SPAN_DANGER("[user] feeds [M] [src]."))
 
 		if(reagents) //Handle ingestion of the reagent.
 			if(eat_sound)
@@ -131,11 +131,11 @@
 		return
 	if (bitecount)
 		if (bitecount == 1)
-			to_chat(user, "<span class='notice'>\The [src] was bitten by someone!</span>")
+			to_chat(user, SPAN_NOTICE("\The [src] was bitten by someone!"))
 		else if (bitecount <= 3)
-			to_chat(user, "<span class='notice'>\The [src] was bitten [bitecount] time\s!</span>")
+			to_chat(user, SPAN_NOTICE("\The [src] was bitten [bitecount] time\s!"))
 		else
-			to_chat(user, "<span class='notice'>\The [src] was bitten multiple times!</span>")
+			to_chat(user, SPAN_NOTICE("\The [src] was bitten multiple times!"))
 	if (cooks_into_type && (user.get_skill_value(SKILL_COOKING) >= SKILL_TRAINED || isobserver(user)))
 		var/obj/item/cooks_into = cooks_into_type
 		to_chat(user, SPAN_NOTICE("You could microwave it to turn it into \a [initial(cooks_into.name)]."))
@@ -145,7 +145,7 @@
 		..()// -> item/attackby()
 		return
 	if(!is_open_container())
-		to_chat(user, "<span class='notice'>\The [src] isn't open!</span>")
+		to_chat(user, SPAN_NOTICE("\The [src] isn't open!"))
 		return 0
 	// Eating with forks
 	if(istype(W,/obj/item/material/kitchen/utensil))
@@ -155,7 +155,7 @@
 				U.create_reagents(5)
 
 			if (U.reagents.total_volume > 0)
-				to_chat(user, "<span class='warning'>You already have something on your [U].</span>")
+				to_chat(user, SPAN_WARNING("You already have something on your [U]."))
 				return
 
 			to_chat(user, SPAN_NOTICE("You scoop up some [src] with \the [U]!"))
@@ -186,22 +186,22 @@
 			if(!user.unEquip(W, src))
 				return
 
-			to_chat(user, "<span class='warning'>You slip \the [W] inside \the [src].</span>")
+			to_chat(user, SPAN_WARNING("You slip \the [W] inside \the [src]."))
 			add_fingerprint(user)
 			W.forceMove(src)
 			return
 
 		if (has_edge(W))
 			if (!can_slice_here)
-				to_chat(user, "<span class='warning'>You cannot slice \the [src] here! You need a table or at least a tray to do it.</span>")
+				to_chat(user, SPAN_WARNING("You cannot slice \the [src] here! You need a table or at least a tray to do it."))
 				return
 
 			var/slices_lost = 0
 			if (W.w_class > 3)
-				user.visible_message("<span class='notice'>\The [user] crudely slices \the [src] with [W]!</span>", "<span class='notice'>You crudely slice \the [src] with your [W]!</span>")
+				user.visible_message(SPAN_NOTICE("\The [user] crudely slices \the [src] with [W]!"), SPAN_NOTICE("You crudely slice \the [src] with your [W]!"))
 				slices_lost = rand(1,min(1,round(slices_num/2)))
 			else
-				user.visible_message("<span class='notice'>\The [user] slices \the [src]!</span>", "<span class='notice'>You slice \the [src]!</span>")
+				user.visible_message(SPAN_NOTICE("\The [user] slices \the [src]!"), SPAN_NOTICE("You slice \the [src]!"))
 
 			var/reagents_per_slice = reagents.total_volume/slices_num
 			for(var/i=1 to (slices_num-slices_lost))
@@ -343,10 +343,10 @@
 
 /obj/item/reagent_containers/food/snacks/donkpocket/sinpocket/attack_self(mob/user)
 	if(has_been_heated)
-		to_chat(user, "<span class='notice'>The heating chemicals have already been spent.</span>")
+		to_chat(user, SPAN_NOTICE("The heating chemicals have already been spent."))
 		return
 	has_been_heated = 1
-	user.visible_message("<span class='notice'>[user] crushes \the [src] package.</span>", "You crush \the [src] package and feel a comfortable heat build up.")
+	user.visible_message(SPAN_NOTICE("[user] crushes \the [src] package."), "You crush \the [src] package and feel a comfortable heat build up.")
 	addtimer(CALLBACK(src, .proc/heat, weakref(user)), 20 SECONDS)
 
 /obj/item/reagent_containers/food/snacks/donkpocket/sinpocket/heat(weakref/message_to)
@@ -753,7 +753,7 @@
 	if( open && pizza )
 		user.put_in_hands( pizza )
 
-		to_chat(user, "<span class='warning'>You take \the [src.pizza] out of \the [src].</span>")
+		to_chat(user, SPAN_WARNING("You take \the [src.pizza] out of \the [src]."))
 		src.pizza = null
 		update_icon()
 		return
@@ -767,7 +767,7 @@
 		boxes -= box
 
 		user.put_in_hands( box )
-		to_chat(user, "<span class='warning'>You remove the topmost [src] from your hand.</span>")
+		to_chat(user, SPAN_WARNING("You remove the topmost [src] from your hand."))
 		box.update_icon()
 		update_icon()
 		return
@@ -805,11 +805,11 @@
 				box.update_icon()
 				update_icon()
 
-				to_chat(user, "<span class='warning'>You put \the [box] ontop of \the [src]!</span>")
+				to_chat(user, SPAN_WARNING("You put \the [box] ontop of \the [src]!"))
 			else
-				to_chat(user, "<span class='warning'>The stack is too high!</span>")
+				to_chat(user, SPAN_WARNING("The stack is too high!"))
 		else
-			to_chat(user, "<span class='warning'>Close \the [box] first!</span>")
+			to_chat(user, SPAN_WARNING("Close \the [box] first!"))
 
 		return
 
@@ -822,9 +822,9 @@
 
 			update_icon()
 
-			to_chat(user, "<span class='warning'>You put \the [I] in \the [src]!</span>")
+			to_chat(user, SPAN_WARNING("You put \the [I] in \the [src]!"))
 		else
-			to_chat(user, "<span class='warning'>You try to push \the [I] through the lid but it doesn't work!</span>")
+			to_chat(user, SPAN_WARNING("You try to push \the [I] through the lid but it doesn't work!"))
 		return
 
 	if( istype(I, /obj/item/pen/) )

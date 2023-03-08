@@ -170,7 +170,7 @@
 
 	var/input = sanitizeSafe(input("What do you want to name this?", "Rename", src.name) as null|text, MAX_NAME_LEN)
 	if(src && input && input != name && CanInteract(M, GLOB.physical_state))
-		to_chat(M, "<span class='notice'>The machine now has a label reading '[input]'.</span>")
+		to_chat(M, SPAN_NOTICE("The machine now has a label reading '[input]'."))
 		SetName(input)
 
 /obj/item/device/electronic_assembly/update_icon()
@@ -198,22 +198,22 @@
 		if(!user.unEquip(I))
 			return 0
 		if(add_circuit(I, user))
-			to_chat(user, "<span class='notice'>You slide \the [I] inside \the [src].</span>")
+			to_chat(user, SPAN_NOTICE("You slide \the [I] inside \the [src]."))
 			playsound(get_turf(src), 'sound/items/Deconstruct.ogg', 50, 1)
 			interact(user)
 		else
 			user.put_in_any_hand_if_possible(I)
 	else if(isCrowbar(I))
 		if(applied_shell)
-			to_chat(user, "<span class='warning'>You cannot open the assembly while it has a shell attached.</span>")
+			to_chat(user, SPAN_WARNING("You cannot open the assembly while it has a shell attached."))
 			return 0
 		playsound(get_turf(src), 'sound/items/Crowbar.ogg', 50, 1)
 		opened = !opened
-		to_chat(user, "<span class='notice'>You [opened ? "opened" : "closed"] \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("You [opened ? "opened" : "closed"] \the [src]."))
 		update_icon()
 	else if(istype(I, /obj/item/electronic_assembly_shell))
 		if(opened)
-			to_chat(user, "<span class='warning'>You cannot attach a shell while the assembly is open.</span>")
+			to_chat(user, SPAN_WARNING("You cannot attach a shell while the assembly is open."))
 			return 0
 		if(!user.unEquip(I))
 			return 0
@@ -257,24 +257,24 @@
 
 /obj/item/device/electronic_assembly/proc/add_circuit(obj/item/integrated_circuit/IC, mob/user)
 	if(!opened)
-		to_chat(user, "<span class='warning'>\The [src] isn't opened, so you can't put anything inside.  Try using a crowbar.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] isn't opened, so you can't put anything inside.  Try using a crowbar."))
 		return FALSE
 
 	var/total_part_size = get_part_size()
 	var/total_complexity = get_part_complexity()
 
 	if((total_part_size + IC.size) > max_components)
-		to_chat(user, "<span class='warning'>You can't seem to add the '[IC.name]', as there's insufficient space.</span>")
+		to_chat(user, SPAN_WARNING("You can't seem to add the '[IC.name]', as there's insufficient space."))
 		return FALSE
 	if((total_complexity + IC.complexity) > max_complexity)
-		to_chat(user, "<span class='warning'>You can't seem to add the '[IC.name]', since this setup's too complicated for the case.</span>")
+		to_chat(user, SPAN_WARNING("You can't seem to add the '[IC.name]', since this setup's too complicated for the case."))
 		return FALSE
 
 	return IC.forceMove(src)
 
 /obj/item/device/electronic_assembly/proc/apply_shell(obj/item/electronic_assembly_shell/a_shell, user)
 	if(applied_shell)
-		to_chat(user, "<span class='warning'>There is already a shell attached.</span>")
+		to_chat(user, SPAN_WARNING("There is already a shell attached."))
 		return 0
 	if(!a_shell.can_apply_shell(src, user))
 		return FALSE

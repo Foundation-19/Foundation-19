@@ -55,26 +55,26 @@
 		// Start repairs by using a screwdriver
 		if(broken == 2 && isScrewdriver(O))
 			user.visible_message( \
-				"<span class='notice'>\The [user] starts to fix part of the microwave.</span>", \
-				"<span class='notice'>You start to fix part of the microwave.</span>" \
+				SPAN_NOTICE("\The [user] starts to fix part of the microwave."), \
+				SPAN_NOTICE("You start to fix part of the microwave.") \
 			)
 			if (do_after(user, 20, src))
 				user.visible_message( \
-					"<span class='notice'>\The [user] fixes part of the microwave.</span>", \
-					"<span class='notice'>You have fixed part of the microwave.</span>" \
+					SPAN_NOTICE("\The [user] fixes part of the microwave."), \
+					SPAN_NOTICE("You have fixed part of the microwave.") \
 				)
 				broken = 1 // Fix it a bit
 
 		// Finish repairs using a wrench
 		else if(broken == 1 && isWrench(O))
 			user.visible_message( \
-				"<span class='notice'>\The [user] starts to fix part of the microwave.</span>", \
-				"<span class='notice'>You start to fix part of the microwave.</span>" \
+				SPAN_NOTICE("\The [user] starts to fix part of the microwave."), \
+				SPAN_NOTICE("You start to fix part of the microwave.") \
 			)
 			if (do_after(user, 20, src))
 				user.visible_message( \
-					"<span class='notice'>\The [user] fixes the microwave.</span>", \
-					"<span class='notice'>You have fixed the microwave.</span>" \
+					SPAN_NOTICE("\The [user] fixes the microwave."), \
+					SPAN_NOTICE("You have fixed the microwave.") \
 				)
 				broken = 0 // Fix it!
 				dirtiness = 0 // just to be sure
@@ -83,7 +83,7 @@
 
 		// Otherwise, we can't add anything to the micrwoave
 		else
-			to_chat(user, "<span class='warning'>It's broken, and this isn't the right way to fix it!</span>")
+			to_chat(user, SPAN_WARNING("It's broken, and this isn't the right way to fix it!"))
 		return
 
 	else if((. = component_attackby(O, user)))
@@ -98,13 +98,13 @@
 		if (has_rag || has_cleaner)
 
 			user.visible_message( \
-				"<span class='notice'>\The [user] starts to clean the microwave.</span>", \
-				"<span class='notice'>You start to clean the microwave.</span>" \
+				SPAN_NOTICE("\The [user] starts to clean the microwave."), \
+				SPAN_NOTICE("You start to clean the microwave.") \
 			)
 			if (do_after(user, 20, src))
 				user.visible_message( \
-					"<span class='notice'>\The [user] has cleaned the microwave.</span>", \
-					"<span class='notice'>You clean out the microwave.</span>" \
+					SPAN_NOTICE("\The [user] has cleaned the microwave."), \
+					SPAN_NOTICE("You clean out the microwave.") \
 				)
 
 				// You can use a rag to wipe down the inside of the microwave
@@ -120,13 +120,13 @@
 
 		// Otherwise, bad luck!
 		else
-			to_chat(user, "<span class='warning'>You need to clean [src] before you use it!</span>")
+			to_chat(user, SPAN_WARNING("You need to clean [src] before you use it!"))
 			return
 
 	else if(is_type_in_list(O, SScuisine.microwave_accepts_items))
 
 		if (LAZYLEN(ingredients) >= SScuisine.stove_maximum_item_storage)
-			to_chat(user, "<span class='warning'>This [src] is full of ingredients - you can't fit any more.</span>")
+			to_chat(user, SPAN_WARNING("This [src] is full of ingredients - you can't fit any more."))
 
 		else if(istype(O, /obj/item/stack)) // This is bad, but I can't think of how to change it
 			var/obj/item/stack/S = O
@@ -134,8 +134,8 @@
 				var/stack_item = new O.type (src)
 				LAZYADD(ingredients, stack_item)
 				user.visible_message( \
-					"<span class='notice'>\The [user] has added one of [O] to \the [src].</span>", \
-					"<span class='notice'>You add one of [O] to \the [src].</span>")
+					SPAN_NOTICE("\The [user] has added one of [O] to \the [src]."), \
+					SPAN_NOTICE("You add one of [O] to \the [src]."))
 			return TRUE
 
 		else
@@ -143,8 +143,8 @@
 				return
 			LAZYADD(ingredients, O)
 			user.visible_message( \
-				"<span class='notice'>\The [user] has added \the [O] to \the [src].</span>", \
-				"<span class='notice'>You add \the [O] to \the [src].</span>")
+				SPAN_NOTICE("\The [user] has added \the [O] to \the [src]."), \
+				SPAN_NOTICE("You add \the [O] to \the [src]."))
 			return TRUE
 
 		return
@@ -178,23 +178,23 @@
 
 	else if(istype(O, /obj/item/grab))
 		var/obj/item/grab/G = O
-		to_chat(user, "<span class='warning'>This is ridiculous. You can't fit \the [G.affecting] in \the [src].</span>")
+		to_chat(user, SPAN_WARNING("This is ridiculous. You can't fit \the [G.affecting] in \the [src]."))
 		return
 
 	else if(isWrench(O))
 		user.visible_message( \
-			"<span class='notice'>\The [user] begins [anchored ? "unsecuring" : "securing"] the microwave.</span>", \
-			"<span class='notice'>You attempt to [anchored ? "unsecure" : "secure"] the microwave.</span>"
+			SPAN_NOTICE("\The [user] begins [anchored ? "unsecuring" : "securing"] the microwave."), \
+			SPAN_NOTICE("You attempt to [anchored ? "unsecure" : "secure"] the microwave.")
 			)
 		if (do_after(user,20, src))
 			user.visible_message( \
-			"<span class='notice'>\The [user] [anchored ? "unsecures" : "secures"] the microwave.</span>", \
-			"<span class='notice'>You [anchored ? "unsecure" : "secure"] the microwave.</span>"
+			SPAN_NOTICE("\The [user] [anchored ? "unsecures" : "secures"] the microwave."), \
+			SPAN_NOTICE("You [anchored ? "unsecure" : "secure"] the microwave.")
 			)
 			anchored = !anchored
 
 	else
-		to_chat(user, "<span class='warning'>You have no idea what you can cook with this [O].</span>")
+		to_chat(user, SPAN_WARNING("You have no idea what you can cook with this [O]."))
 
 	updateUsrDialog()
 
@@ -316,7 +316,7 @@
 	return FALSE
 
 /obj/machinery/microwave/proc/start()
-	visible_message("<span class='notice'>The microwave turns on.</span>", "<span class='notice'>You hear a microwave.</span>")
+	visible_message(SPAN_NOTICE("The microwave turns on."), SPAN_NOTICE("You hear a microwave."))
 	operating = TRUE
 	updateUsrDialog()
 	update_icon()
@@ -340,7 +340,7 @@
 		LAZYCLEARLIST(ingredients)
 		disposed = TRUE
 	if (disposed)
-		to_chat(usr, "<span class='notice'>You dispose of the microwave contents.</span>")
+		to_chat(usr, SPAN_NOTICE("You dispose of the microwave contents."))
 		updateUsrDialog()
 
 /obj/machinery/microwave/proc/muck_start()
@@ -349,7 +349,7 @@
 
 /obj/machinery/microwave/proc/muck_finish()
 	playsound(loc, 'sound/machines/ding.ogg', 50, 1)
-	visible_message("<span class='warning'>Muck splatters over the inside of \the [src]!</span>")
+	visible_message(SPAN_WARNING("Muck splatters over the inside of \the [src]!"))
 	dirtiness = 100 // Make it dirty so it can't be used util cleaned
 	obj_flags = null //So you can't add condiments
 	operating = FALSE // Turn it off again aferwards
@@ -361,12 +361,12 @@
 	s.set_up(2, 1, src)
 	s.start()
 	if (prob(100 * break_multiplier))
-		visible_message("<span class='warning'>\The [src] breaks!</span>") //Let them know they're stupid
+		visible_message(SPAN_WARNING("\The [src] breaks!")) //Let them know they're stupid
 		broken = 2 // Make it broken so it can't be used util fixed
 		obj_flags = null //So you can't add condiments
 		updateUsrDialog()
 	else
-		visible_message("<span class='warning'>\The [src] sputters and grinds to a halt!</span>")
+		visible_message(SPAN_WARNING("\The [src] sputters and grinds to a halt!"))
 	operating = FALSE // Turn it off again aferwards
 	update_icon()
 

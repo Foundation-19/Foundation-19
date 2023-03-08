@@ -167,7 +167,7 @@ GLOBAL_LIST_INIT(machine_path_to_circuit_type, cache_circuits_by_build_path())
 		R.handle_item_insertion(old_part, 1)
 		R.part_replacement_sound()
 	install_component(new_part)
-	to_chat(user, "<span class='notice'>[old_part.name] replaced with [new_part.name].</span>")
+	to_chat(user, SPAN_NOTICE("[old_part.name] replaced with [new_part.name]."))
 
 /obj/machinery/proc/component_destroyed(obj/item/component)
 	GLOB.destroyed_event.unregister(component, src)

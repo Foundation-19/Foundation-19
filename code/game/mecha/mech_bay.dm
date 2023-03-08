@@ -72,7 +72,7 @@
 
 	if(stat & (BROKEN|NOPOWER))
 		stop_charging()
-		charging.occupant_message("<span class='warning'>Internal System Error - Charging aborted.</span>")
+		charging.occupant_message(SPAN_WARNING("Internal System Error - Charging aborted."))
 		return
 
 	// Cell could have been removed.
@@ -86,12 +86,12 @@
 		charging.health = min(charging.health + repair, initial(charging.health))
 		remaining_energy -= repair * repair_power_usage
 		if(fully_repaired())
-			charging.occupant_message("<span class='notice'>Fully repaired.</span>")
+			charging.occupant_message(SPAN_NOTICE("Fully repaired."))
 
 	if(!charging.cell.fully_charged() && remaining_energy)
 		charging.give_power(remaining_energy)
 		if(charging.cell.fully_charged())
-			charging.occupant_message("<span class='notice'>Fully charged.</span>")
+			charging.occupant_message(SPAN_NOTICE("Fully charged."))
 
 	if((!repair || fully_repaired()) && charging.cell.fully_charged())
 		stop_charging()
@@ -110,11 +110,11 @@
 
 /obj/machinery/mech_recharger/proc/start_charging(obj/mecha/M)
 	if(stat & (NOPOWER | BROKEN))
-		M.occupant_message("<span class='warning'>Power port not responding. Terminating.</span>")
+		M.occupant_message(SPAN_WARNING("Power port not responding. Terminating."))
 		return
 
 	if(M.cell)
-		M.occupant_message("<span class='notice'>Now charging...</span>")
+		M.occupant_message(SPAN_NOTICE("Now charging..."))
 		charging = M
 		use_power = 2
 

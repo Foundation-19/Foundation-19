@@ -71,7 +71,7 @@
 	var/scrambled_text = ""
 	while(i)
 		i--
-		scrambled_text += "<font color='[get_random_colour(1)]'>*</font>"
+		scrambled_text += FONT_COLORED("[get_random_colour(1)]","*")
 	scramble_cache[input] = scrambled_text
 	if(scramble_cache.len > MANTID_SCRAMBLE_CACHE_LEN)
 		scramble_cache.Cut(1, scramble_cache.len-MANTID_SCRAMBLE_CACHE_LEN-1)

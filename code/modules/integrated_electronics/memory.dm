@@ -78,25 +78,25 @@
 			new_data = input("Now type in a string.","[src] string writing") as null|text
 			if(istext(new_data) && CanInteract(user, GLOB.physical_state))
 				O.write_data_to_pin(new_data)
-				to_chat(user, "<span class='notice'>You set \the [src]'s memory to [O.display_data()].</span>")
+				to_chat(user, SPAN_NOTICE("You set \the [src]'s memory to [O.display_data()]."))
 		if("number")
 			accepting_refs = 0
 			new_data = input("Now type in a number.","[src] number writing") as null|num
 			if(isnum(new_data) && CanInteract(user, GLOB.physical_state))
 				O.write_data_to_pin(new_data)
-				to_chat(user, "<span class='notice'>You set \the [src]'s memory to [O.display_data()].</span>")
+				to_chat(user, SPAN_NOTICE("You set \the [src]'s memory to [O.display_data()]."))
 		if("ref")
 			accepting_refs = 1
 			to_chat(user, "<span class='notice'>You turn \the [src]'s ref scanner on.  Slide it across \
 			an object for a ref of that object to save it in memory.</span>")
 		if("null")
 			O.write_data_to_pin(null)
-			to_chat(user, "<span class='notice'>You set \the [src]'s memory to absolutely nothing.</span>")
+			to_chat(user, SPAN_NOTICE("You set \the [src]'s memory to absolutely nothing."))
 /obj/item/integrated_circuit/memory/constant/afterattack(atom/target, mob/living/user, proximity)
 	if(accepting_refs && proximity)
 		var/datum/integrated_io/O = outputs[1]
 		O.write_data_to_pin(weakref(target))
-		visible_message("<span class='notice'>[user] slides \a [src]'s over \the [target].</span>")
+		visible_message(SPAN_NOTICE("[user] slides \a [src]'s over \the [target]."))
 		to_chat(user, "<span class='notice'>You set \the [src]'s memory to a reference to [O.display_data()].  The ref scanner is \
 		now off.</span>")
 		accepting_refs = 0

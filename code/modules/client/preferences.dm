@@ -181,7 +181,7 @@
 		if(config.forumurl)
 			send_link(user, config.forumurl)
 		else
-			to_chat(user, "<span class='danger'>The forum URL is not set in the server configuration.</span>")
+			to_chat(user, SPAN_DANGER("The forum URL is not set in the server configuration."))
 			return
 	update_setup_window(usr)
 	return 1

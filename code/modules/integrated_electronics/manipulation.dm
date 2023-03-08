@@ -61,15 +61,15 @@
 	if(AM.can_be_injected_by(assembly))
 		if(isliving(AM))
 			var/turf/T = get_turf(AM)
-			T.visible_message("<span class='warning'>\The [assembly] is trying to inject \the [AM]!</span>")
+			T.visible_message(SPAN_WARNING("\The [assembly] is trying to inject \the [AM]!"))
 			sleep(3 SECONDS)
 			if(!AM.can_be_injected_by(assembly))
 				return
 			var/contained = reagents.get_reagents()
 			var/trans = reagents.trans_to_mob(AM, inject_amount(), CHEM_BLOOD)
 			message_admins("\The [assembly] injected \the [AM] with [trans]u of [english_list(contained)].")
-			to_chat(AM, "<span class='notice'>You feel a tiny prick!</span>")
-			visible_message("<span class='warning'>\The [assembly] injects \the [AM]!</span>")
+			to_chat(AM, SPAN_NOTICE("You feel a tiny prick!"))
+			visible_message(SPAN_WARNING("\The [assembly] injects \the [AM]!"))
 		else
 			reagents.trans_to(AM, inject_amount())
 
@@ -228,16 +228,16 @@
 /obj/item/integrated_circuit/manipulation/grenade/attackby(obj/item/weapon/grenade/G, mob/user)
 	if(istype(G))
 		if(attached_grenade)
-			to_chat(user, "<span class='warning'>There is already a grenade attached!</span>")
+			to_chat(user, SPAN_WARNING("There is already a grenade attached!"))
 		else if(user.unEquip(G, target = src))
-			user.visible_message("<span class='warning'>\The [user] attaches \a [G] to \the [src]!</span>", "<span class='notice'>You attach \the [G] to \the [src].</span>")
+			user.visible_message(SPAN_WARNING("\The [user] attaches \a [G] to \the [src]!"), SPAN_NOTICE("You attach \the [G] to \the [src]."))
 			attach_grenade(G)
 	else
 		..()
 
 /obj/item/integrated_circuit/manipulation/grenade/attack_self(mob/user)
 	if(attached_grenade)
-		user.visible_message("<span class='warning'>\The [user] removes \an [attached_grenade] from \the [src]!</span>", "<span class='notice'>You remove \the [attached_grenade] from \the [src].</span>")
+		user.visible_message(SPAN_WARNING("\The [user] removes \an [attached_grenade] from \the [src]!"), SPAN_NOTICE("You remove \the [attached_grenade] from \the [src]."))
 		user.put_in_any_hand_if_possible(attached_grenade) || attached_grenade.dropInto(loc)
 		detach_grenade()
 	else
@@ -347,7 +347,7 @@
 
 /obj/item/integrated_circuit/manipulation/ai/proc/load_ai(mob/user, obj/item/card)
 	if(controlling)
-		to_chat(user, "<span class='warning'>There is already a card in there!</span>")
+		to_chat(user, SPAN_WARNING("There is already a card in there!"))
 		return
 	var/mob/living/L = locate(/mob/living) in card.contents
 	if(L?.key)
@@ -357,13 +357,13 @@
 		card.dropInto(src)
 		aicard = card
 		user.visible_message("\The [user] loads \the [card] into \the [src]'s device slot")
-		to_chat(L, "<span class='notice'>### IICC FIRMWARE LOADED ###</span>")
+		to_chat(L, SPAN_NOTICE("### IICC FIRMWARE LOADED ###"))
 
 /obj/item/integrated_circuit/manipulation/ai/proc/unload_ai()
 	if(!controlling)
 		return
 	controlling.forceMove(aicard)
-	to_chat(controlling, "<span class='notice'>### IICC FIRMWARE DELETED. HAVE A NICE DAY ###</span>")
+	to_chat(controlling, SPAN_NOTICE("### IICC FIRMWARE DELETED. HAVE A NICE DAY ###"))
 	src.visible_message("\The [aicard] pops out of \the [src]!")
 	aicard.dropInto(loc)
 	aicard = null
