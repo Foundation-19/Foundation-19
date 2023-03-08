@@ -2,7 +2,7 @@
 	set waitfor=0
 	sleep(10)
 	internal_organs_by_name[BP_STACK] = new /obj/item/organ/internal/stack(src,1)
-	to_chat(src, "<span class='notice'>You feel a faint sense of vertigo as your neural lace boots.</span>")
+	to_chat(src, SPAN_NOTICE("You feel a faint sense of vertigo as your neural lace boots."))
 
 /obj/item/organ/internal/stack
 	name = "neural lace"
@@ -65,7 +65,7 @@
 
 /obj/item/organ/internal/stack/vox/removed()
 	var/obj/item/organ/external/head = owner.get_organ(parent_organ)
-	owner.visible_message("<span class='danger'>\The [src] rips gaping holes in \the [owner]'s [head.name] as it is torn loose!</span>")
+	owner.visible_message(SPAN_DANGER("\The [src] rips gaping holes in \the [owner]'s [head.name] as it is torn loose!"))
 	head.take_damage(rand(15,20))
 	for(var/obj/item/organ/O in head.contents)
 		O.take_damage(rand(30,70))
@@ -73,9 +73,9 @@
 
 /obj/item/organ/internal/stack/proc/overwrite()
 	if(owner.mind && owner.ckey) //Someone is already in this body!
-		owner.visible_message("<span class='danger'>\The [owner] spasms violently!</span>")
+		owner.visible_message(SPAN_DANGER("\The [owner] spasms violently!"))
 		if(prob(66))
-			to_chat(owner, "<span class='danger'>You fight off the invading tendrils of another mind, holding onto your own body!</span>")
+			to_chat(owner, SPAN_DANGER("You fight off the invading tendrils of another mind, holding onto your own body!"))
 			return
 		owner.ghostize() // Remove the previous owner to avoid their client getting reset.
 	//owner.dna.real_name = backup.name
@@ -86,4 +86,4 @@
 	backup.transfer_to(owner)
 	if(default_language) owner.default_language = default_language
 	owner.languages = languages.Copy()
-	to_chat(owner, "<span class='notice'>Consciousness slowly creeps over you as your new body awakens.</span>")
+	to_chat(owner, SPAN_NOTICE("Consciousness slowly creeps over you as your new body awakens."))

@@ -92,5 +92,5 @@
 
 	filter_type = over_object.type
 	extended_desc = "[initial(extended_desc)] - This circuit heuristically filters objects determined to be sufficiently similar to \an [over_object]."
-	to_chat(usr, "<span class='notice'>You change the filtering parameter of \the [src] to objects similar to \the [over_object].</span>")
+	to_chat(usr, SPAN_NOTICE("You change the filtering parameter of \the [src] to objects similar to \the [over_object]."))
 	return 1

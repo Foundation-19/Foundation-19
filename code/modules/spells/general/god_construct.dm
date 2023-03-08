@@ -42,7 +42,7 @@
 	else
 		for(var/obj/O in T)
 			if(O.density)
-				to_chat(user, "<span class='warning'>Something here is blocking your construction!</span>")
+				to_chat(user, SPAN_WARNING("Something here is blocking your construction!"))
 				return 0
 	return 1
 

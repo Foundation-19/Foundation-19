@@ -297,8 +297,8 @@
 // Helper procs for easy HTML browser button creation.
 #define UIBUTTON(key, label, title) "[title ? title + ": " : ""]<a href='?src=\ref[src];[key]=1'>[label]</a>"
 
-#define UI_FONT_GOOD(X) "<font color='55cc55'>[X]</font>"
-#define UI_FONT_BAD(X) "<font color='cc5555'>[X]</font>"
+#define UI_FONT_GOOD(X) FONT_COLORED("55cc55","[X]")
+#define UI_FONT_BAD(X) FONT_COLORED("cc5555","[X]")
 
 // Whereas ckey is in the global list or not
 #define IS_TRUSTED_PLAYER(ckey) (ckey in GLOB.trusted_players)

@@ -90,13 +90,13 @@ for reference:
 			return //hitting things with the wrong type of stack usually doesn't produce messages, and probably doesn't need to.
 		if (health < maxhealth)
 			if (D.get_amount() < 1)
-				to_chat(user, "<span class='warning'>You need one sheet of [material.display_name] to repair \the [src].</span>")
+				to_chat(user, SPAN_WARNING("You need one sheet of [material.display_name] to repair \the [src]."))
 				return
-			visible_message("<span class='notice'>[user] begins to repair \the [src].</span>")
+			visible_message(SPAN_NOTICE("[user] begins to repair \the [src]."))
 			if(do_after(user,20,src) && health < maxhealth)
 				if (D.use(1))
 					health = maxhealth
-					visible_message("<span class='notice'>[user] repairs \the [src].</span>")
+					visible_message(SPAN_NOTICE("[user] repairs \the [src]."))
 				return
 		return
 	else
@@ -108,7 +108,7 @@ for reference:
 				src.health -= W.force * 0.75
 			else
 		if (src.health <= 0)
-			visible_message("<span class='danger'>The barricade is smashed apart!</span>")
+			visible_message(SPAN_DANGER("The barricade is smashed apart!"))
 			dismantle()
 			qdel(src)
 			return
@@ -122,13 +122,13 @@ for reference:
 /obj/structure/barricade/ex_act(severity)
 	switch(severity)
 		if(1.0)
-			visible_message("<span class='danger'>\The [src] is blown apart!</span>")
+			visible_message(SPAN_DANGER("\The [src] is blown apart!"))
 			qdel(src)
 			return
 		if(2.0)
 			src.health -= 25
 			if (src.health <= 0)
-				visible_message("<span class='danger'>\The [src] is blown apart!</span>")
+				visible_message(SPAN_DANGER("\The [src] is blown apart!"))
 				dismantle()
 			return
 
@@ -181,7 +181,7 @@ for reference:
 					var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 					s.set_up(2, 1, src)
 					s.start()
-					visible_message("<span class='warning'>BZZzZZzZZzZT</span>")
+					visible_message(SPAN_WARNING("BZZzZZzZZzZT"))
 					return
 			return
 		else if(isWrench(W))
@@ -189,12 +189,12 @@ for reference:
 				src.health = src.maxhealth
 				src.emagged = FALSE
 				src.req_access = list(ACCESS_SECURITY)
-				visible_message("<span class='warning'>[user] repairs \the [src]!</span>")
+				visible_message(SPAN_WARNING("[user] repairs \the [src]!"))
 				return
 			else if (src.emagged > 0)
 				src.emagged = FALSE
 				src.req_access = list(ACCESS_SECURITY)
-				visible_message("<span class='warning'>[user] repairs \the [src]!</span>")
+				visible_message(SPAN_WARNING("[user] repairs \the [src]!"))
 				return
 			return
 		else
@@ -236,7 +236,7 @@ for reference:
 
 	proc/explode()
 
-		visible_message("<span class='danger'>[src] blows apart!</span>")
+		visible_message(SPAN_DANGER("[src] blows apart!"))
 		var/turf/Tsec = get_turf(src)
 		new /obj/item/stack/rods(Tsec)
 
@@ -258,12 +258,12 @@ for reference:
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(2, 1, src)
 		s.start()
-		visible_message("<span class='warning'>BZZzZZzZZzZT</span>")
+		visible_message(SPAN_WARNING("BZZzZZzZZzZT"))
 		return TRUE
 
 	to_chat(user, "You short out the anchoring mechanism on \the [src].")
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(2, 1, src)
 	s.start()
-	visible_message("<span class='warning'>BZZzZZzZZzZT</span>")
+	visible_message(SPAN_WARNING("BZZzZZzZZzZT"))
 	return TRUE

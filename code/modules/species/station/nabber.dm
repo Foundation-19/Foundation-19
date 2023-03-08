@@ -256,7 +256,7 @@
 	if(!(. = ..()))
 		return
 	affecting.apply_damage(15, BRUTE, BP_CHEST, DAM_SHARP, "organic punctures")
-	affecting.visible_message("<span class='danger'>[assailant]'s spikes dig in painfully!</span>")
+	affecting.visible_message(SPAN_DANGER("[assailant]'s spikes dig in painfully!"))
 	affecting.Stun(10)
 
 /datum/species/nabber/update_skin(mob/living/carbon/human/H)
@@ -302,14 +302,14 @@
 	if(attacker.pulling_punches || target.lying || attacker == target)
 		return ..(attacker, target)
 	if(world.time < attacker.last_attack + 20)
-		to_chat(attacker, "<span class='notice'>You can't attack again so soon.</span>")
+		to_chat(attacker, SPAN_NOTICE("You can't attack again so soon."))
 		return 0
 	attacker.last_attack = world.time
 	var/turf/T = get_step(get_turf(target), get_dir(get_turf(attacker), get_turf(target)))
 	playsound(target.loc, 'sound/weapons/pushhiss.ogg', 50, 1, -1)
 	if(!T.density)
 		step(target, get_dir(get_turf(attacker), get_turf(target)))
-		target.visible_message("<span class='danger'>[pick("[target] was sent flying backward!", "[target] staggers back from the impact!")]</span>")
+		target.visible_message(SPAN_DANGER("[pick("[target] was sent flying backward!", "[target] staggers back from the impact!")]"))
 	else
 		target.turf_collision(T, target.throw_speed / 2)
 	if(prob(50))
@@ -343,14 +343,14 @@
 
 	grabber.unEquip(grabber.l_hand)
 	grabber.unEquip(grabber.r_hand)
-	to_chat(grabber, "<span class='warning'>You drop everything as you spring out to nab \the [target]!.</span>")
+	to_chat(grabber, SPAN_WARNING("You drop everything as you spring out to nab \the [target]!."))
 	playsound(grabber.loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 
 	if(!grabber.is_cloaked())
 		return ..(grabber, target, GRAB_NAB)
 
 	if(grabber.last_special > world.time)
-		to_chat(grabber, "<span class='warning'>It is too soon to make another nab attempt.</span>")
+		to_chat(grabber, SPAN_WARNING("It is too soon to make another nab attempt."))
 		return
 
 	grabber.last_special = world.time + 50
@@ -359,27 +359,27 @@
 	if(prob(90) && grabber.make_grab(grabber, target, GRAB_NAB_SPECIAL))
 		target.Weaken(rand(1,3))
 		target.LAssailant = grabber
-		grabber.visible_message("<span class='danger'>\The [grabber] suddenly lunges out and grabs \the [target]!</span>")
+		grabber.visible_message(SPAN_DANGER("\The [grabber] suddenly lunges out and grabs \the [target]!"))
 		grabber.do_attack_animation(target)
 		playsound(grabber.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 		return 1
 	else
-		grabber.visible_message("<span class='danger'>\The [grabber] suddenly lunges out, almost grabbing \the [target]!</span>")
+		grabber.visible_message(SPAN_DANGER("\The [grabber] suddenly lunges out, almost grabbing \the [target]!"))
 
 /datum/species/nabber/toggle_stance(mob/living/carbon/human/H)
 	if(H.species.get_bodytype() == SPECIES_MONARCH_QUEEN)
 		return ..()
 	if(H.incapacitated())
 		return FALSE
-	to_chat(H, "<span class='notice'>You begin to adjust the fluids in your arms, dropping everything and getting ready to swap which set you're using.</span>")
+	to_chat(H, SPAN_NOTICE("You begin to adjust the fluids in your arms, dropping everything and getting ready to swap which set you're using."))
 	var/hidden = H.is_cloaked()
-	if(!hidden) H.visible_message("<span class='warning'>\The [H] shifts [H.p_their()] arms.</span>")
+	if(!hidden) H.visible_message(SPAN_WARNING("\The [H] shifts [H.p_their()] arms."))
 	H.unEquip(H.l_hand)
 	H.unEquip(H.r_hand)
 	if(do_after(H, 30))
 		arm_swap(H)
 	else
-		to_chat(H, "<span class='notice'>You stop adjusting your arms and don't switch between them.</span>")
+		to_chat(H, SPAN_NOTICE("You stop adjusting your arms and don't switch between them."))
 	return TRUE
 
 /datum/species/nabber/proc/arm_swap(mob/living/carbon/human/H, forced)
@@ -390,9 +390,9 @@
 	if(H.pulling_punches)
 		H.current_grab_type = all_grabobjects[GRAB_NORMAL]
 		if(forced)
-			to_chat(H, "<span class='notice'>You can't keep your hunting arms prepared and they drop, forcing you to use your manipulation arms.</span>")
+			to_chat(H, SPAN_NOTICE("You can't keep your hunting arms prepared and they drop, forcing you to use your manipulation arms."))
 			if(!hidden)
-				H.visible_message("<span class='notice'>[H] falters, [H.p_their()] hunting arms failing.</span>")
+				H.visible_message(SPAN_NOTICE("[H] falters, [H.p_their()] hunting arms failing."))
 		else
 			to_chat(H, "<span class='notice'>You relax your hunting arms, lowering the pressure and folding them tight to your thorax. \
 			You reach out with your manipulation arms, ready to use complex items.</span>")
@@ -401,7 +401,7 @@
 				with [H.p_their()] small handlike limbs.</span>")
 	else
 		H.current_grab_type = all_grabobjects[GRAB_NAB]
-		to_chat(H, "<span class='notice'>You pull in your manipulation arms, dropping any items and unfolding your massive hunting arms in preparation of grabbing prey.</span>")
+		to_chat(H, SPAN_NOTICE("You pull in your manipulation arms, dropping any items and unfolding your massive hunting arms in preparation of grabbing prey."))
 		if(!hidden)
 			H.visible_message("<span class='warning'>[H] tenses as [H.p_them()] brings [H.p_their()] smaller arms in close to [H.p_their()] body. [H.p_their()] two massive spiked arms reach \
 			out. [H.p_them()] looks ready to attack.</span>")

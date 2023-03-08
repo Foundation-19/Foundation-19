@@ -112,7 +112,7 @@
 	if(focus)
 		d = max(d, get_dist(user, focus)) // whichever is further
 	if(d > TELEKINESIS_MAX_RANGE)
-		to_chat(user, "<span class='notice'>Your mind won't reach that far.</span>")
+		to_chat(user, SPAN_NOTICE("Your mind won't reach that far."))
 		return
 
 	if(!focus)

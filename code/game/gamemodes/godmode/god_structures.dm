@@ -4,14 +4,14 @@
 
 	if(flags & DEITY_STRUCTURE_NEAR_IMPORTANT && !deity.near_structure(target))
 		if(user)
-			to_chat(user, "<span class='warning'>You need to be near \a [deity.get_type_name(/obj/structure/deity/altar)] to build this!</span>")
+			to_chat(user, SPAN_WARNING("You need to be near \a [deity.get_type_name(/obj/structure/deity/altar)] to build this!"))
 		return 0
 
 	if(flags & DEITY_STRUCTURE_ALONE)
 		for(var/structure in deity.structures)
 			if(istype(structure,type) && get_dist(target,structure) <= 3)
 				if(user)
-					to_chat(user, "<span class='warning'>You are too close to another [deity.get_type_name(type)]!</span>")
+					to_chat(user, SPAN_WARNING("You are too close to another [deity.get_type_name(type)]!"))
 				return 0
 	return 1
 
@@ -44,9 +44,9 @@
 	user.do_attack_animation(src)
 	playsound(get_turf(src), 'sound/effects/Glasshit.ogg', 50, 1)
 	user.visible_message(
-		"<span class='danger'>[user] hits \the [src] with \the [W]!</span>",
-		"<span class='danger'>You hit \the [src] with \the [W]!</span>",
-		"<span class='danger'>You hear something breaking!</span>"
+		SPAN_DANGER("[user] hits \the [src] with \the [W]!"),
+		SPAN_DANGER("You hit \the [src] with \the [W]!"),
+		SPAN_DANGER("You hear something breaking!")
 		)
 	take_damage(W.force)
 

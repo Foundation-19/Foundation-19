@@ -73,7 +73,7 @@
 
 	if(color_picker)
 		paint_colour = A.color
-		to_chat(usr, "<span class='notice'>You set \the [src] to paint with <font color='[paint_colour]'>a new colour</font>.</span>")
+		to_chat(usr, SPAN_NOTICE("You set \the [src] to paint with <font color='[paint_colour]'>a new colour</font>."))
 		return
 
 	playsound(get_turf(src), 'sound/effects/spray3.ogg', 30, 1, -6)
@@ -94,7 +94,7 @@
 	if(istype(D))
 		var/choice
 		if(!D.paintable)
-			to_chat(user, "<span class='warning'>You can't paint this airlock type.</span>")
+			to_chat(user, SPAN_WARNING("You can't paint this airlock type."))
 			return
 		if(D.paintable == AIRLOCK_PAINTABLE)
 			choice = "Paint"
@@ -112,11 +112,11 @@
 
 	var/turf/simulated/floor/F = A
 	if(!istype(F))
-		to_chat(user, "<span class='warning'>\The [src] can only be used on floors, walls or certain airlocks.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] can only be used on floors, walls or certain airlocks."))
 		return
 
 	if(!F.flooring.can_paint || F.broken || F.burnt)
-		to_chat(user, "<span class='warning'>\The [src] cannot paint broken tiles.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] cannot paint broken tiles."))
 		return
 
 	var/list/decal_data = decals[decal]
@@ -130,11 +130,11 @@
 			config_error = 1
 
 	if(config_error)
-		to_chat(user, "<span class='warning'>\The [src] flashes an error light. You might need to reconfigure it.</span>")
+		to_chat(user, SPAN_WARNING("\The [src] flashes an error light. You might need to reconfigure it."))
 		return
 
 	if(F.decals && F.decals.len > 5 && painting_decal != /obj/effect/floor_decal/reset)
-		to_chat(user, "<span class='warning'>\The [F] has been painted too much; you need to clear it off.</span>")
+		to_chat(user, SPAN_WARNING("\The [F] has been painted too much; you need to clear it off."))
 		return
 
 	var/painting_dir = 0
@@ -195,7 +195,7 @@
 	var/new_colour = input(usr, "Choose a colour.", "paintgun", paint_colour) as color|null
 	if(new_colour && new_colour != paint_colour)
 		paint_colour = new_colour
-		to_chat(usr, "<span class='notice'>You set \the [src] to paint with <font color='[paint_colour]'>a new colour</font>.</span>")
+		to_chat(usr, SPAN_NOTICE("You set \the [src] to paint with <font color='[paint_colour]'>a new colour</font>."))
 
 /obj/item/device/floor_painter/verb/choose_preset_colour()
 	set name = "Choose Preset Colour"
@@ -208,7 +208,7 @@
 	var/new_colour = input(usr, "Choose a colour.", "paintgun", paint_colour) as color|anything in preset_colors
 	if(new_colour && new_colour != paint_colour)
 		paint_colour = preset_colors[new_colour]
-		to_chat(usr, "<span class='notice'>You set \the [src] to paint with <font color='[paint_colour]'>a new colour</font>.</span>")
+		to_chat(usr, SPAN_NOTICE("You set \the [src] to paint with <font color='[paint_colour]'>a new colour</font>."))
 
 /obj/item/device/floor_painter/verb/choose_decal()
 	set name = "Choose Decal"
@@ -222,7 +222,7 @@
 	var/new_decal = input("Select a decal.") as null|anything in decals
 	if(new_decal && !isnull(decals[new_decal]))
 		decal = new_decal
-		to_chat(usr, "<span class='notice'>You set \the [src] decal to '[decal]'.</span>")
+		to_chat(usr, SPAN_NOTICE("You set \the [src] decal to '[decal]'."))
 
 /obj/item/device/floor_painter/verb/choose_direction()
 	set name = "Choose Direction"
@@ -236,7 +236,7 @@
 	var/new_dir = input("Select a direction.") as null|anything in paint_dirs
 	if(new_dir && !isnull(paint_dirs[new_dir]))
 		paint_dir = new_dir
-		to_chat(usr, "<span class='notice'>You set \the [src] direction to '[paint_dir]'.</span>")
+		to_chat(usr, SPAN_NOTICE("You set \the [src] direction to '[paint_dir]'."))
 
 /obj/item/device/floor_painter/verb/toggle_mode()
 	set name = "Toggle Painter Mode"
@@ -248,6 +248,6 @@
 		return
 	color_picker = !color_picker
 	if(color_picker)
-		to_chat(usr, "<span class='notice'>You set \the [src] to color picker mode, scanning colors off objects.</span>")
+		to_chat(usr, SPAN_NOTICE("You set \the [src] to color picker mode, scanning colors off objects."))
 	else
-		to_chat(usr, "<span class='notice'>You set \the [src] to painting mode.</span>")
+		to_chat(usr, SPAN_NOTICE("You set \the [src] to painting mode."))

@@ -52,15 +52,15 @@
 
 	if(isliving(user))
 		if(stored_name)
-			user.visible_message("<span class='notice'>[user] displays their [src.name].\nIt reads: [stored_name], [badge_string].</span>","<span class='notice'>You display your [src.name].\nIt reads: [stored_name], [badge_string].</span>")
+			user.visible_message(SPAN_NOTICE("[user] displays their [src.name].\nIt reads: [stored_name], [badge_string]."),SPAN_NOTICE("You display your [src.name].\nIt reads: [stored_name], [badge_string]."))
 		else
-			user.visible_message("<span class='notice'>[user] displays their [src.name].\nIt reads: [badge_string].</span>","<span class='notice'>You display your [src.name]. It reads: [badge_string].</span>")
+			user.visible_message(SPAN_NOTICE("[user] displays their [src.name].\nIt reads: [badge_string]."),SPAN_NOTICE("You display your [src.name]. It reads: [badge_string]."))
 
 /obj/item/clothing/accessory/badge/attack(mob/living/carbon/human/M, mob/living/user)
 	if(isliving(user))
-		user.visible_message("<span class='danger'>[user] invades [M]'s personal space, thrusting \the [src] into their face insistently.</span>","<span class='danger'>You invade [M]'s personal space, thrusting \the [src] into their face insistently.</span>")
+		user.visible_message(SPAN_DANGER("[user] invades [M]'s personal space, thrusting \the [src] into their face insistently."),SPAN_DANGER("You invade [M]'s personal space, thrusting \the [src] into their face insistently."))
 		if(stored_name)
-			to_chat(M, "<span class='warning'>It reads: [stored_name], [badge_string].</span>")
+			to_chat(M, SPAN_WARNING("It reads: [stored_name], [badge_string]."))
 
 /obj/item/clothing/accessory/badge/PI
 	name = "private investigator's badge"
@@ -114,11 +114,11 @@
 
 /obj/item/clothing/accessory/badge/holo/emag_act(remaining_charges, mob/user)
 	if (emagged)
-		to_chat(user, "<span class='danger'>\The [src] is already cracked.</span>")
+		to_chat(user, SPAN_DANGER("\The [src] is already cracked."))
 		return
 	else
 		emagged = TRUE
-		to_chat(user, "<span class='danger'>You crack the holobadge security checks.</span>")
+		to_chat(user, SPAN_DANGER("You crack the holobadge security checks."))
 		return 1
 
 /obj/item/clothing/accessory/badge/holo/attackby(obj/item/O as obj, mob/user as mob)
@@ -213,22 +213,22 @@
 	set src in usr
 
 	if(usr.incapacitated())
-		to_chat(usr, "<span class='warning'>You're unable to do that.</span>")
+		to_chat(usr, SPAN_WARNING("You're unable to do that."))
 		return
 
 	var/obj/item/in_hand = usr.get_active_hand()
 	if(in_hand != src)
-		to_chat(usr, "<span class='warning'>You have to be holding [src] to modify it.</span>")
+		to_chat(usr, SPAN_WARNING("You have to be holding [src] to modify it."))
 		return
 
 	badge_string = sanitize(input(usr, "Input your SDTF.", "SDTF Holobadge") as null|text, MAX_NAME_LEN)
 
 	if(usr.incapacitated())	//Because things can happen while you're typing
-		to_chat(usr, "<span class='warning'>You're unable to do that.</span>")
+		to_chat(usr, SPAN_WARNING("You're unable to do that."))
 		return
 	in_hand = usr.get_active_hand()
 	if(in_hand != src)
-		to_chat(usr, "<span class='warning'>You have to be holding [src] to modify it.</span>")
+		to_chat(usr, SPAN_WARNING("You have to be holding [src] to modify it."))
 		return
 
 	if(badge_string)

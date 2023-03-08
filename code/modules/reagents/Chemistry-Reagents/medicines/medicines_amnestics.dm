@@ -20,7 +20,7 @@
 
 	if((volume <= 0.55) && !isamnesticized) //when the amnestic is fully metabolized, trigger amnesia
 		isamnesticized = TRUE
-		M.visible_message("<span class='warning'>[M] looks confused for a moment.</span>")
+		M.visible_message(SPAN_WARNING("[M] looks confused for a moment."))
 		to_chat(M, "<font size='5' color='red'>Your recent memories are fading away... You completely forget the last [round(M.chem_doses[type], 1) * 2] minutes.</font>")
 
 	if(prob(10))
@@ -42,7 +42,7 @@
 /datum/reagent/medicine/amnestics/classb/affect_blood(mob/living/carbon/M, removed)
 	if((volume <= 0.25) && !isamnesticized)
 		isamnesticized = TRUE
-		M.visible_message("<span class='warning'>[M] looks confused.</span>")
+		M.visible_message(SPAN_WARNING("[M] looks confused."))
 		to_chat(M, "<font size='5' color='red'>Your memories are melting away... You have lost all memory of the last [round(M.chem_doses[type], 1)] days.</font>")
 
 	if(prob(15))
@@ -66,7 +66,7 @@
 
 	if(M.chem_doses[type] >= 4.8 && !isamnesticized)
 		isamnesticized = TRUE
-		M.visible_message("<span class='warning'>[M] looks deeply confused.</span>")
+		M.visible_message(SPAN_WARNING("[M] looks deeply confused."))
 		to_chat(M, "<font size='5' color='red'>Your memories are disappearing rapidly... You completely forget the existence of the anomalous, the Foundation, and anything else supernatural.</font>")
 
 	M.add_chemical_effect(CE_SEDATE, 1) //sedative logic stolen from chloral hydrate.
@@ -96,7 +96,7 @@
 /datum/reagent/medicine/amnestics/classe/affect_blood(mob/living/carbon/M, removed)
 	if(M.chem_doses[type] >= 4.8 && !isamnesticized)
 		isamnesticized = TRUE
-		M.visible_message("<span class='warning'>[M] looks calmer and more relaxed.</span>")
+		M.visible_message(SPAN_WARNING("[M] looks calmer and more relaxed."))
 		to_chat(M, "<font size='5' color='red'>Your memories alter irreparably... All of a sudden, the anomalous just feels like a normal part of your world, something not worth even mentioning.</font>")
 
 	M.add_chemical_effect(CE_SEDATE, 1) //sedative logic stolen from chloral hydrate.
@@ -157,7 +157,7 @@
 /datum/reagent/medicine/amnestics/classg/affect_blood(mob/living/carbon/M, removed)
 	if(M.chem_doses[type] >= 4.8 && !isamnesticized)
 		isamnesticized = TRUE
-		M.visible_message("<span class='warning'>[M] looks like \he just woke up from a dream.</span>")
+		M.visible_message(SPAN_WARNING("[M] looks like \he just woke up from a dream."))
 		to_chat(M, "<font size='5' color='red'> Your memories alter irreparably... You remember strange things happening, but it all must have just been an overactive imagination.</font>") //TODO
 
 	M.add_chemical_effect(CE_SEDATE, 1) //sedative logic stolen from chloral hydrate.
@@ -189,12 +189,12 @@
 
 	if((volume > 0.25) && !isamnesticized) //Upon initial check, inform about amnestic
 		isamnesticized = TRUE
-		M.visible_message("<span class='warning'>[M]'s eyes grow dim.</span>")
+		M.visible_message(SPAN_WARNING("[M]'s eyes grow dim."))
 		to_chat(M, "<font size='5' color='red'>It feels like a haze falls in your head... You can remember everything just fine, but you'll forget what happens later on.</font>")
 
 	if((volume <= 0.25) && isamnesticized) //Once the amnestic wears off, re-inform about memory regain
 		isamnesticized = FALSE
-		M.visible_message("<span class='warning'>[M]'s eyes regain their focus.</span>")
+		M.visible_message(SPAN_WARNING("[M]'s eyes regain their focus."))
 		to_chat(M, "<font size='5' color='red'>Your mind feels a lot clearer, but... You can't recall the last [2 * round(M.chem_doses[type], 1) / metabolism] seconds.</font>")
 
 	if(prob(1))
@@ -218,12 +218,12 @@
 
 	if((volume > 0.25) && !isamnesticized) //Upon initial check, inform about amnestic
 		isamnesticized = TRUE
-		M.visible_message("<span class='warning'>[M] looks confused and scared, and \his eyes dart from side to side.</span>")
+		M.visible_message(SPAN_WARNING("[M] looks confused and scared, and \his eyes dart from side to side."))
 		to_chat(M, "<font size='5' color='red'>You feel your memories slide beyond your gasp... You've lost the ability to remember anything for the next [2 * round(volume, 1) / metabolism] seconds.</font>")
 
 	if((volume <= 0.25) && isamnesticized) //Once the amnestic wears off, re-inform about memory regain
 		isamnesticized = FALSE
-		M.visible_message("<span class='warning'>[M]'s eyes noticably recognize \his surroundings.</span>")
+		M.visible_message(SPAN_WARNING("[M]'s eyes noticably recognize \his surroundings."))
 		to_chat(M, "<font size='5' color='red'>Your memories suddenly rush back into place... You can remember your past again.</font>")
 
 	if(prob(1))

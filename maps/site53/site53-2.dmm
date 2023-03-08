@@ -3020,6 +3020,7 @@
 /obj/structure/table/rack,
 /obj/item/stack/material/glass/reinforced/fifty,
 /obj/item/stack/material/glass/reinforced/ten,
+/obj/item/stack/material/plastic/fifty,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/containment_engineer)
 "aji" = (

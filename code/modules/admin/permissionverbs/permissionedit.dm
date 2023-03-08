@@ -51,11 +51,11 @@
 		return
 
 	if(!usr.client.holder || !(usr.client.holder.rights & R_PERMISSIONS))
-		to_chat(usr, "<span class='warning'>You do not have permission to do this!</span>")
+		to_chat(usr, SPAN_WARNING("You do not have permission to do this!"))
 		return
 
 	if(!SSdbcore.Connect())
-		to_chat(usr, "<span class='warning'>Failed to establish database connection</span>")
+		to_chat(usr, SPAN_WARNING("Failed to establish database connection"))
 		return
 
 	if(!adm_ckey || !new_rank)
@@ -84,7 +84,7 @@
 		insert_query.Execute()
 		var/datum/db_query/log_query = SSdbcore.NewQuery("INSERT INTO `test`.`erro_admin_log` (`id` ,`datetime` ,`adminckey` ,`adminip` ,`log` ) VALUES (NULL , NOW( ) , '[usr.ckey]', '[usr.client.address]', 'Added new admin [adm_ckey] to rank [new_rank]');")
 		log_query.Execute()
-		to_chat(usr, "<span class='notice'>New admin added.</span>")
+		to_chat(usr, SPAN_NOTICE("New admin added."))
 		qdel(insert_query)
 		qdel(log_query)
 	else
@@ -93,7 +93,7 @@
 			insert_query.Execute()
 			var/datum/db_query/log_query = SSdbcore.NewQuery("INSERT INTO `test`.`erro_admin_log` (`id` ,`datetime` ,`adminckey` ,`adminip` ,`log` ) VALUES (NULL , NOW( ) , '[usr.ckey]', '[usr.client.address]', 'Edited the rank of [adm_ckey] to [new_rank]');")
 			log_query.Execute()
-			to_chat(usr, "<span class='notice'>Admin rank changed.</span>")
+			to_chat(usr, SPAN_NOTICE("Admin rank changed."))
 			qdel(insert_query)
 			qdel(log_query)
 
@@ -104,11 +104,11 @@
 		return
 
 	if(!usr.client.holder || !(usr.client.holder.rights & R_PERMISSIONS))
-		to_chat(usr, "<span class='warning'>You do not have permission to do this!</span>")
+		to_chat(usr, SPAN_WARNING("You do not have permission to do this!"))
 		return
 
 	if(!SSdbcore.Connect())
-		to_chat(usr, "<span class='warning'>Failed to establish database connection</span>")
+		to_chat(usr, SPAN_WARNING("Failed to establish database connection"))
 		return
 
 	if(!adm_ckey || !new_permission)
@@ -143,7 +143,7 @@
 		insert_query.Execute()
 		var/datum/db_query/log_query = SSdbcore.NewQuery("INSERT INTO `test`.`erro_admin_log` (`id` ,`datetime` ,`adminckey` ,`adminip` ,`log` ) VALUES (NULL , NOW( ) , '[usr.ckey]', '[usr.client.address]', 'Removed permission [rights2text(new_permission)] (flag = [new_permission]) to admin [adm_ckey]');")
 		log_query.Execute()
-		to_chat(usr, "<span class='notice'>Permission removed.</span>")
+		to_chat(usr, SPAN_NOTICE("Permission removed."))
 		qdel(insert_query)
 		qdel(log_query)
 	else //This admin doesn't have this permission, so we are adding it.
@@ -151,6 +151,6 @@
 		insert_query.Execute()
 		var/datum/db_query/log_query = SSdbcore.NewQuery("INSERT INTO `test`.`erro_admin_log` (`id` ,`datetime` ,`adminckey` ,`adminip` ,`log` ) VALUES (NULL , NOW( ) , '[usr.ckey]', '[usr.client.address]', 'Added permission [rights2text(new_permission)] (flag = [new_permission]) to admin [adm_ckey]')")
 		log_query.Execute()
-		to_chat(usr, "<span class='notice'>Permission added.</span>")
+		to_chat(usr, SPAN_NOTICE("Permission added."))
 		qdel(insert_query)
 		qdel(log_query)

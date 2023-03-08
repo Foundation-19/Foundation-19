@@ -326,7 +326,7 @@
 					row += "<span class='average'>[capitalize(get_wound_severity(E["burn_ratio"], (E["limb_flags"] & ORGAN_FLAG_HEALS_OVERKILL)))] burns</span></td>"
 			if(skill_level >= SKILL_TRAINED)
 				row += "<td>"
-				row += "<span class='bad'>[english_list(E["scan_results"], nothing_text="&nbsp;")]</span>"
+				row += SPAN_BAD("[english_list(E["scan_results"], nothing_text="&nbsp;")]")
 				row += "</td>"
 			else
 				row += "<td>&nbsp;</td>"
@@ -363,7 +363,7 @@
 			else
 				row += "<td>None</td>"
 			row += "<td>"
-			row += "<span class='bad'>[english_list(I["scan_results"], nothing_text="&nbsp;")]</span>"
+			row += SPAN_BAD("[english_list(I["scan_results"], nothing_text="&nbsp;")]")
 			row += "</td></tr>"
 			subdat += jointext(row, null)
 
@@ -417,21 +417,21 @@
 
 	if(amount > 50)
 		if(tag)
-			. = "<span class='bad'>severe</span>"
+			. = SPAN_BAD("severe")
 		else
 			. = "severe"
 	else if(amount > 25)
 		if(tag)
-			. = "<span class='bad'>significant</span>"
+			. = SPAN_BAD("significant")
 		else
 			. = "significant"
 	else if(amount > 10)
 		if(tag)
-			. = "<span class='average'>moderate</span>"
+			. = SPAN_CLASS("average","moderate")
 		else
 			. = "moderate"
 	else
 		if (tag)
-			. = "<span class='mild'>minor</span>"
+			. = SPAN_CLASS("mild","minor")
 		else
 			. = "minor"

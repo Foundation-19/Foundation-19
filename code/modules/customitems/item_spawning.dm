@@ -37,10 +37,10 @@
 
 /datum/custom_item/proc/is_valid(checker)
 	if(!item_path)
-		to_chat(checker, "<span class='warning'>The given item path, [item_path_as_string], is invalid and does not exist.</span>")
+		to_chat(checker, SPAN_WARNING("The given item path, [item_path_as_string], is invalid and does not exist."))
 		return FALSE
 	if(item_icon && !(item_icon in icon_states(CUSTOM_ITEM_OBJ)))
-		to_chat(checker, "<span class='warning'>The given item icon, [item_icon], is invalid and does not exist.</span>")
+		to_chat(checker, SPAN_WARNING("The given item icon, [item_icon], is invalid and does not exist."))
 		return FALSE
 	return TRUE
 

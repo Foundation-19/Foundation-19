@@ -6,4 +6,4 @@
 	else
 		for(var/m in minions)
 			var/datum/mind/mind = m
-			to_chat(mind.current, "<span class='cult'><font size='3'>[message]</font></span>")
+			to_chat(mind.current, SPAN_OCCULT(FONT_LARGE("[message]")))

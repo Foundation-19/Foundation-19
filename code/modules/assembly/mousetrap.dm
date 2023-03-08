@@ -42,7 +42,7 @@
 			H.updatehealth()
 	else if(ismouse(target))
 		var/mob/living/simple_animal/friendly/mouse/M = target
-		visible_message("<span class='danger'>SPLAT!</span>")
+		visible_message(SPAN_DANGER("SPLAT!"))
 		M.splat()
 	if(!target)
 		return
@@ -90,8 +90,8 @@
 			var/mob/living/carbon/H = AM
 			if(!MOVING_DELIBERATELY(H))
 				triggered(H)
-				H.visible_message("<span class='warning'>[H] accidentally steps on [src].</span>", \
-									"<span class='warning'>You accidentally step on [src]</span>")
+				H.visible_message(SPAN_WARNING("[H] accidentally steps on [src]."), \
+									SPAN_WARNING("You accidentally step on [src]"))
 		if(ismouse(AM))
 			triggered(AM)
 	..()
@@ -99,8 +99,8 @@
 
 /obj/item/device/assembly/mousetrap/on_found(mob/finder)
 	if(armed)
-		finder.visible_message("<span class='warning'>[finder] accidentally sets off [src], breaking their fingers.</span>", \
-								"<span class='warning'>You accidentally trigger [src]!</span>")
+		finder.visible_message(SPAN_WARNING("[finder] accidentally sets off [src], breaking their fingers."), \
+								SPAN_WARNING("You accidentally trigger [src]!"))
 		triggered(finder, finder.hand ? BP_L_HAND : BP_R_HAND)
 		return 1	//end the search!
 	return 0
@@ -109,7 +109,7 @@
 /obj/item/device/assembly/mousetrap/hitby(atom/movable/AM)
 	if(!armed)
 		return ..()
-	visible_message("<span class='warning'>[src] is triggered by [AM].</span>")
+	visible_message(SPAN_WARNING("[src] is triggered by [AM]."))
 	triggered(AM)
 
 
@@ -127,4 +127,4 @@
 		return
 
 	layer = MOUSETRAP_LAYER
-	to_chat(usr, "<span class='notice'>You hide [src].</span>")
+	to_chat(usr, SPAN_NOTICE("You hide [src]."))

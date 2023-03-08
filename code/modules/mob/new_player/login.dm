@@ -36,5 +36,5 @@
 	var/alert_desc = ""
 	if(SL.description)
 		alert_desc = SL.description
-	to_chat(src, "<span class='notice'>The alert level on the [station_name()] is currently: <font color=[SL.light_color_alarm]><B>[SL.name]</B></font>. [alert_desc]</span>")
+	to_chat(src, SPAN_NOTICE("The alert level on the [station_name()] is currently: <font color=[SL.light_color_alarm]><B>[SL.name]</B></font>. [alert_desc]"))
 	InitializeHud()
