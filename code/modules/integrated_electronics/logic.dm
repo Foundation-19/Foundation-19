@@ -272,7 +272,7 @@
 				return FALSE
 			var/obj/item/weapon/card/id/I = usr.GetIdCard()
 			if(!istype(I, /obj/item/weapon/card/id))
-				to_chat(usr, "<span class='warning'>\The [src] flashes a yellow LED near the ID scanner. Did you misplace your ID?</span>")
+				to_chat(usr, SPAN_WARNING("\The [src] flashes a yellow LED near the ID scanner. Did you misplace your ID?"))
 				return FALSE
 			locked = FALSE
 			last_configurator = GetNameAndAssignmentFromId(I)

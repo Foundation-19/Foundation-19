@@ -19,7 +19,7 @@
 	moved_inside(var/mob/living/carbon/human/H as mob)
 		if(..())
 			if(H.glasses)
-				occupant_message("<font color='red'>[H.glasses] prevent you from using [src] [hud]</font>")
+				occupant_message(FONT_COLORED("red","[H.glasses] prevent you from using [src] [hud]"))
 			else
 				H.glasses = hud
 			return 1

@@ -102,10 +102,10 @@
 
 /obj/machinery/implantchair/proc/put_mob(mob/living/carbon/M as mob)
 	if(!iscarbon(M))
-		to_chat(usr, "<span class='warning'>\The [src] cannot hold this!</span>")
+		to_chat(usr, SPAN_WARNING("\The [src] cannot hold this!"))
 		return
 	if(src.occupant)
-		to_chat(usr, "<span class='warning'>\The [src] is already occupied!</span>")
+		to_chat(usr, SPAN_WARNING("\The [src] is already occupied!"))
 		return
 	if(M.client)
 		M.client.perspective = EYE_PERSPECTIVE
@@ -126,7 +126,7 @@
 		if(!imp)	continue
 		if(istype(imp, /obj/item/implant/loyalty))
 			for (var/mob/O in viewers(M, null))
-				O.show_message("<span class='warning'>\The [M] has been implanted by \the [src].</span>", 1)
+				O.show_message(SPAN_WARNING("\The [M] has been implanted by \the [src]."), 1)
 
 			if(imp.implanted(M))
 				imp.forceMove(M)

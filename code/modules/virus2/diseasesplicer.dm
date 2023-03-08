@@ -167,7 +167,7 @@
 					if(!e.allow_multiple)
 						illegal_types += e.type
 				if(memorybank.type in illegal_types)
-					to_chat(user, "<span class='warning'>Virus DNA can't hold more than one [memorybank]</span>")
+					to_chat(user, SPAN_WARNING("Virus DNA can't hold more than one [memorybank]"))
 					return 1
 				dish.virus2.effects -= target_effect
 				dish.virus2.effects += memorybank

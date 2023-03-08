@@ -102,7 +102,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		if(powernet && (powernet.avail > 0))
 			to_chat(user, SPAN_WARNING("[get_wattage()] in power network."))
 		else
-			to_chat(user, "<span class='warning'>The cable is not powered.</span>")
+			to_chat(user, SPAN_WARNING("The cable is not powered."))
 	return
 
 ///////////////////////////////////
@@ -153,10 +153,10 @@ By design, d1 is the smallest direction and d2 is the highest
 	else if(isMultitool(W))
 
 		if(powernet && (powernet.avail > 0))		// is it powered?
-			to_chat(user, "<span class='warning'>[get_wattage()] in power network.</span>")
+			to_chat(user, SPAN_WARNING("[get_wattage()] in power network."))
 
 		else
-			to_chat(user, "<span class='warning'>The cable is not powered.</span>")
+			to_chat(user, SPAN_WARNING("The cable is not powered."))
 
 		shock(user, 5, 0.2)
 
@@ -166,10 +166,10 @@ By design, d1 is the smallest direction and d2 is the highest
 		var/delay_holder
 
 		if(W.force < 5)
-			visible_message("<span class='warning'>[user] starts sawing away roughly at the cable with \the [W].</span>")
+			visible_message(SPAN_WARNING("[user] starts sawing away roughly at the cable with \the [W]."))
 			delay_holder = 8 SECONDS
 		else
-			visible_message("<span class='warning'>[user] begins to cut through the cable with \the [W].</span>")
+			visible_message(SPAN_WARNING("[user] begins to cut through the cable with \the [W]."))
 			delay_holder = 3 SECONDS
 
 		if(user.do_skilled(delay_holder, SKILL_ELECTRICAL, src))
@@ -177,7 +177,7 @@ By design, d1 is the smallest direction and d2 is the highest
 			if(W.obj_flags & OBJ_FLAG_CONDUCTIBLE)
 				shock(user, 66, 0.7)
 		else
-			visible_message("<span class='warning'>[user] stops cutting before any damage is done.</span>")
+			visible_message(SPAN_WARNING("[user] stops cutting before any damage is done."))
 
 	src.add_fingerprint(user)
 
@@ -187,11 +187,11 @@ By design, d1 is the smallest direction and d2 is the highest
 		return
 
 	if(d1 == UP || d2 == UP)
-		to_chat(user, "<span class='warning'>You must cut this cable from above.</span>")
+		to_chat(user, SPAN_WARNING("You must cut this cable from above."))
 		return
 
 	if(breaker_box)
-		to_chat(user, "<span class='warning'>This cable is connected to a nearby breaker box. Use the breaker box to interact with it.</span>")
+		to_chat(user, SPAN_WARNING("This cable is connected to a nearby breaker box. Use the breaker box to interact with it."))
 		return
 
 	if (shock(user, 50))
@@ -199,7 +199,7 @@ By design, d1 is the smallest direction and d2 is the highest
 
 	new/obj/item/stack/cable_coil(T, (src.d1 ? 2 : 1), color)
 
-	visible_message("<span class='warning'>[user] cuts the cable.</span>")
+	visible_message(SPAN_WARNING("[user] cuts the cable."))
 
 	if(HasBelow(z))
 		for(var/turf/turf in GetBelow(src))
@@ -527,7 +527,7 @@ By design, d1 is the smallest direction and d2 is the highest
 			return ..()
 
 		if(BP_IS_BRITTLE(S))
-			to_chat(user, "<span class='warning'>\The [H]'s [S.name] is hard and brittle - \the [src] cannot repair it.</span>")
+			to_chat(user, SPAN_WARNING("\The [H]'s [S.name] is hard and brittle - \the [src] cannot repair it."))
 			return 1
 
 		var/use_amt = min(src.amount, ceil(S.burn_dam/3), 5)
@@ -563,7 +563,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		selected_color = "Red"
 		final_color = GLOB.possible_cable_colours[selected_color]
 	color = final_color
-	to_chat(user, "<span class='notice'>You change \the [src]'s color to [lowertext(selected_color)].</span>")
+	to_chat(user, SPAN_NOTICE("You change \the [src]'s color to [lowertext(selected_color)]."))
 
 /obj/item/stack/cable_coil/proc/update_wclass()
 	if(amount == 1)
@@ -579,13 +579,13 @@ By design, d1 is the smallest direction and d2 is the highest
 	if(ishuman(M) && !M.incapacitated())
 		if(!istype(usr.loc,/turf)) return
 		if(!src.use(15))
-			to_chat(usr, "<span class='warning'>You need at least 15 lengths to make restraints!</span>")
+			to_chat(usr, SPAN_WARNING("You need at least 15 lengths to make restraints!"))
 			return
 		var/obj/item/handcuffs/cable/B = new /obj/item/handcuffs/cable(usr.loc)
 		B.color = color
-		to_chat(usr, "<span class='notice'>You wind some cable together to make some restraints.</span>")
+		to_chat(usr, SPAN_NOTICE("You wind some cable together to make some restraints."))
 	else
-		to_chat(usr, "<span class='notice'>You cannot do that.</span>")
+		to_chat(usr, SPAN_NOTICE("You cannot do that."))
 
 /obj/item/stack/cable_coil/cyborg/verb/set_colour()
 	set name = "Change Colour"
@@ -647,7 +647,7 @@ By design, d1 is the smallest direction and d2 is the highest
 
 	for(var/obj/structure/cable/LC in F)
 		if((LC.d1 == dirn && LC.d2 == end_dir ) || ( LC.d2 == dirn && LC.d1 == end_dir))
-			to_chat(user, "<span class='warning'>There's already a cable at that position.</span>")
+			to_chat(user, SPAN_WARNING("There's already a cable at that position."))
 			return
 
 	put_cable(F, user, end_dir, dirn)

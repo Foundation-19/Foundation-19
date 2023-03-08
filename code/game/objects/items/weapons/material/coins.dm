@@ -32,18 +32,18 @@
 		var/obj/item/stack/cable_coil/CC = W
 		if(CC.use(1))
 			string_colour = CC.color
-			to_chat(user, "<span class='notice'>You attach a string to the coin.</span>")
+			to_chat(user, SPAN_NOTICE("You attach a string to the coin."))
 			update_icon()
 			return
 	else if(isWirecutter(W) && !isnull(string_colour))
 		new /obj/item/stack/cable_coil/single(get_turf(user))
 		string_colour = null
-		to_chat(user, "<span class='notice'>You detach the string from the coin.</span>")
+		to_chat(user, SPAN_NOTICE("You detach the string from the coin."))
 		update_icon()
 	else ..()
 
 /obj/item/material/coin/attack_self(mob/user)
-	user.visible_message("<span class='notice'>\The [user] has thrown \the [src]. It lands on [rand(1, 2) == 1 ? "tails" : "heads"]!</span>")
+	user.visible_message(SPAN_NOTICE("\The [user] has thrown \the [src]. It lands on [rand(1, 2) == 1 ? "tails" : "heads"]!"))
 
 // Subtypes.
 /obj/item/material/coin/gold

@@ -122,7 +122,7 @@ meteor_act
 
 	var/obj/item/projectile/P = damage_source
 	if(istype(P) && !P.disrupts_psionics() && psi && P.starting && prob(psi.get_armour(get_armor_key(P.damage_type, P.damage_flags())) * 0.5) && psi.spend_power(round(damage/10)))
-		visible_message("<span class='danger'>\The [src] deflects [attack_text]!</span>")
+		visible_message(SPAN_DANGER("\The [src] deflects [attack_text]!"))
 		P.redirect(P.starting.x + rand(-2,2), P.starting.y + rand(-2,2), get_turf(src), src)
 		return PROJECTILE_FORCE_MISS
 
@@ -149,7 +149,7 @@ meteor_act
 	var/hit_zone = get_zone_with_miss_chance(target_zone, src, accuracy_penalty)
 
 	if(!hit_zone)
-		visible_message("<span class='danger'>\The [user] misses [src] with \the [I]!</span>")
+		visible_message(SPAN_DANGER("\The [user] misses [src] with \the [I]!"))
 		return null
 
 	if(check_shields(I.force, I, user, target_zone, "the [I.name]"))
@@ -157,7 +157,7 @@ meteor_act
 
 	var/obj/item/organ/external/affecting = get_organ(hit_zone)
 	if (!affecting || affecting.is_stump())
-		to_chat(user, "<span class='danger'>They are missing that limb!</span>")
+		to_chat(user, SPAN_DANGER("They are missing that limb!"))
 		return null
 
 	return hit_zone
@@ -204,13 +204,13 @@ meteor_act
 				//Harder to score a stun but if you do it lasts a bit longer
 				if(prob(unimpeded_force))
 					if(!lying)
-						visible_message("<span class='danger'>[src] [species.knockout_message]</span>")
+						visible_message(SPAN_DANGER("[src] [species.knockout_message]"))
 					apply_effect(3, PARALYZE, 100 * blocked)
 			else
 				//Easier to score a stun but lasts less time
 				if(prob(unimpeded_force + 5))
 					if(!lying)
-						visible_message("<span class='danger'>[src] has been knocked down!</span>")
+						visible_message(SPAN_DANGER("[src] has been knocked down!"))
 					apply_effect(1.5, WEAKEN, 100 * blocked)
 
 		//Apply blood
@@ -279,7 +279,7 @@ meteor_act
 	//want the dislocation chance to be such that the limb is expected to dislocate after dealing a fraction of the damage needed to break the limb
 	var/dislocate_chance = effective_force/(dislocate_mult * organ.min_broken_damage * config.organ_health_multiplier) * (organ.damage * 1.75)
 	if(prob(dislocate_chance * blocked_mult(blocked)))
-		visible_message("<span class='danger'>[src]'s [organ.joint] [pick("gives way","caves in","crumbles","collapses")]!</span>")
+		visible_message(SPAN_DANGER("[src]'s [organ.joint] [pick("gives way","caves in","crumbles","collapses")]!"))
 		organ.dislocate(1)
 		return 1
 	return 0
@@ -287,12 +287,12 @@ meteor_act
 /mob/living/carbon/human/emag_act(remaining_charges, mob/user, emag_source)
 	var/obj/item/organ/external/affecting = get_organ(user.zone_sel.selecting)
 	if(!affecting || !BP_IS_ROBOTIC(affecting))
-		to_chat(user, "<span class='warning'>That limb isn't robotic.</span>")
+		to_chat(user, SPAN_WARNING("That limb isn't robotic."))
 		return -1
 	if(affecting.status & ORGAN_SABOTAGED)
-		to_chat(user, "<span class='warning'>[src]'s [affecting.name] is already sabotaged!</span>")
+		to_chat(user, SPAN_WARNING("[src]'s [affecting.name] is already sabotaged!"))
 		return -1
-	to_chat(user, "<span class='notice'>You sneakily slide [emag_source] into the dataport on [src]'s [affecting.name] and short out the safeties.</span>")
+	to_chat(user, SPAN_NOTICE("You sneakily slide [emag_source] into the dataport on [src]'s [affecting.name] and short out the safeties."))
 	affecting.status |= ORGAN_SABOTAGED
 	return 1
 
@@ -306,7 +306,7 @@ meteor_act
 			if(!incapacitated())
 				if(isturf(O.loc))
 					put_in_active_hand(O)
-					visible_message("<span class='warning'>[src] catches [O]!</span>")
+					visible_message(SPAN_WARNING("[src] catches [O]!"))
 					throw_mode_off()
 					return
 
@@ -331,18 +331,18 @@ meteor_act
 				return
 
 		if(!zone)
-			visible_message("<span class='notice'>\The [O] misses [src] narrowly!</span>")
+			visible_message(SPAN_NOTICE("\The [O] misses [src] narrowly!"))
 			return
 
 		var/obj/item/organ/external/affecting = get_organ(zone)
 		if (!affecting)
-			visible_message("<span class='notice'>\The [O] misses [src] narrowly!</span>")
+			visible_message(SPAN_NOTICE("\The [O] misses [src] narrowly!"))
 			return
 
 		var/hit_area = affecting.name
 		var/datum/wound/created_wound
 
-		src.visible_message("<span class='warning'>\The [src] has been hit in the [hit_area] by \the [O].</span>")
+		src.visible_message(SPAN_WARNING("\The [src] has been hit in the [hit_area] by \the [O]."))
 		created_wound = apply_damage(throw_damage, dtype, zone, O.damage_flags(), O, O.armor_penetration)
 
 		if(TT.thrower)
@@ -378,7 +378,7 @@ meteor_act
 		if(momentum >= THROWNOBJ_KNOCKBACK_SPEED)
 			var/dir = TT.init_dir
 
-			visible_message("<span class='warning'>\The [src] staggers under the impact!</span>","<span class='warning'>You stagger under the impact!</span>")
+			visible_message(SPAN_WARNING("\The [src] staggers under the impact!"),SPAN_WARNING("You stagger under the impact!"))
 
 			if(!src.isinspace())
 				src.throw_at(get_edge_target_turf(src,dir),1,momentum - THROWNOBJ_KNOCKBACK_SPEED)
@@ -390,7 +390,7 @@ meteor_act
 
 				if(T)
 					src.forceMove(T)
-					visible_message("<span class='warning'>[src] is pinned to the wall by [O]!</span>","<span class='warning'>You are pinned to the wall by [O]!</span>")
+					visible_message(SPAN_WARNING("[src] is pinned to the wall by [O]!"),SPAN_WARNING("You are pinned to the wall by [O]!"))
 					src.anchored = TRUE
 					src.pinned += O
 	else

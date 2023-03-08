@@ -22,8 +22,8 @@
 
 	for(var/client/target in GLOB.clients)
 		if(target.holder)
-			receive_communication(C, target, "<span class='ooc'><span class='dooc'>[create_text_tag("dooc", "Donator-OOC:", target)] <strong>[get_options_bar(C, 0, 1, 1)]:</strong> <span class='message'>[message]</span></span></span>")
+			receive_communication(C, target, SPAN_CLASS("ooc","<span class='dooc'>[create_text_tag("dooc", "Donator-OOC:", target)] <strong>[get_options_bar(C, 0, 1, 1)]:</strong> <span class='message'>[message]</span></span>"))
 		else if(target.donator_holder && target.donator_holder.flags & D_DOOC)
 			var/display_name = C.key
 			var/player_display = holder ? "[display_name]([usr.client.holder.rank])" : display_name
-			receive_communication(C, target, "<span class='ooc'><span class='dooc'>[create_text_tag("dooc", "Donator-OOC:", target)] <strong>[player_display]:</strong> <span class='message'>[message]</span></span></span>")
+			receive_communication(C, target, SPAN_CLASS("ooc","<span class='dooc'>[create_text_tag("dooc", "Donator-OOC:", target)] <strong>[player_display]:</strong> <span class='message'>[message]</span></span>"))

@@ -49,7 +49,7 @@
 
 /mob/proc/send_staffwarn(client/C, action, noise = 1)
 	if(check_rights((R_ADMIN|R_MOD),0,C))
-		to_chat(C,"<span class='staffwarn'>StaffWarn: [client.ckey] [action]</span><br><span class='notice'>[client.staffwarn]</span>")
+		to_chat(C,SPAN_CLASS("staffwarn","StaffWarn: [client.ckey] [action]</span><br><span class='notice'>[client.staffwarn]"))
 		if(noise && C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
 			sound_to(C, 'sound/effects/adminhelp.ogg')
 
