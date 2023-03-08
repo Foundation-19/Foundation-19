@@ -217,11 +217,11 @@
 					var/yes_link = "Yes"
 					var/no_link = "No"
 					if(title in pref.job_low)
-						yes_link = "<font color='#55cc55'>[yes_link]</font>"
-						no_link = "<font color='black'>[no_link]</font>"
+						yes_link = FONT_COLORED("#55cc55","[yes_link]")
+						no_link = FONT_COLORED("black","[no_link]")
 					else
-						yes_link = "<font color='black'>[yes_link]</font>"
-						no_link = "<font color='#55cc55'>[no_link]</font>"
+						yes_link = FONT_COLORED("black","[yes_link]")
+						no_link = FONT_COLORED("#55cc55","[no_link]")
 					. += "<a href='?src=\ref[src];set_job=[title];set_level=[JOB_LEVEL_LOW]'>[yes_link]</a><a href='?src=\ref[src];set_job=[title];set_level=[JOB_LEVEL_NEVER]'>[no_link]</a>"
 				else if(!job.available_by_default)
 					. += "<font color = '#cccccc'>Not available at roundstart.</font>"
@@ -229,11 +229,11 @@
 					var/level_link
 					switch(current_level)
 						if(JOB_LEVEL_LOW)
-							level_link = "<font color='#cc5555'>Low</font>"
+							level_link = FONT_COLORED("#cc5555","Low")
 						if(JOB_LEVEL_MEDIUM)
-							level_link = "<font color='#eecc22'>Medium</font>"
+							level_link = FONT_COLORED("#eecc22","Medium")
 						if(JOB_LEVEL_HIGH)
-							level_link = "<font color='#55cc55'>High</font>"
+							level_link = FONT_COLORED("#55cc55","High")
 						else
 							level_link = "<font color=black>Never</font>"
 					. += "<a href='?src=\ref[src];set_job=[title];inc_level=-1'>[level_link]</a>"

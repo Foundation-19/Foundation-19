@@ -45,7 +45,7 @@
 		transfer_languages(src, S)
 
 		if(mind)
-			to_chat(src, "<span class='info'>You have died and have been transfered to another of your nymphs.</span>")
+			to_chat(src, SPAN_INFO("You have died and have been transfered to another of your nymphs."))
 			mind.transfer_to(S)
 			message_admins("\The [src] has transfered to another nymph; player now controls [key_name_admin(S)]")
 			log_admin("\The [src] has transfered to another nymph; player now controls [key_name(S)]")

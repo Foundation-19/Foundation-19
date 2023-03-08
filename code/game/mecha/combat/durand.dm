@@ -26,7 +26,7 @@
 /obj/mecha/combat/durand/relaymove(mob/user,direction)
 	if(defence)
 		if(world.time - last_message > 20)
-			src.occupant_message("<font color='red'>Unable to move while in defence mode</font>")
+			src.occupant_message(FONT_COLORED("red","Unable to move while in defence mode"))
 			last_message = world.time
 		return 0
 	. = ..()
@@ -43,10 +43,10 @@
 	defence = !defence
 	if(defence)
 		deflect_chance += def_boost
-		src.occupant_message("<font color='blue'>You enable [src] defence mode.</font>")
+		src.occupant_message(FONT_COLORED("blue","You enable [src] defence mode."))
 	else
 		deflect_chance -= def_boost
-		src.occupant_message("<font color='red'>You disable [src] defence mode.</font>")
+		src.occupant_message(FONT_COLORED("red","You disable [src] defence mode."))
 	src.log_message("Toggled defence mode.")
 	return
 

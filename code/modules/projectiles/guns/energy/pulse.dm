@@ -65,7 +65,7 @@
 	charge_cost= 40
 
 /obj/item/gun/energy/pulse_rifle/destroyer/attack_self(mob/living/user as mob)
-	to_chat(user, "<span class='warning'>[src.name] has three settings, and they are all DESTROY.</span>")
+	to_chat(user, SPAN_WARNING("[src.name] has three settings, and they are all DESTROY."))
 
 /obj/item/gun/energy/pulse_rifle/skrell
 	name = "skrellian carbine"

@@ -35,9 +35,9 @@
 /obj/item/airlock_brace/proc/examine_health()
 	switch(health_percentage())
 		if(-100 to 25)
-			return "<span class='danger'>\The [src] looks seriously damaged, and probably won't last much more.</span>"
+			return SPAN_DANGER("\The [src] looks seriously damaged, and probably won't last much more.")
 		if(25 to 50)
-			return "<span class='notice'>\The [src] looks damaged.</span>"
+			return SPAN_NOTICE("\The [src] looks damaged.")
 		if(50 to 75)
 			return "\The [src] looks slightly damaged."
 		if(75 to 99)
@@ -121,7 +121,7 @@
 	cur_health = between(0, cur_health - amount, max_health)
 	if(!cur_health)
 		if(airlock)
-			airlock.visible_message("<span class='danger'>\The [src] breaks off of \the [airlock]!</span>")
+			airlock.visible_message(SPAN_DANGER("\The [src] breaks off of \the [airlock]!"))
 		unlock_brace(null)
 		qdel(src)
 

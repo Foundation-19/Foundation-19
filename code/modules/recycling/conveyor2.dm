@@ -48,7 +48,7 @@ GLOBAL_LIST_INIT(conveyor_switches, list())
 		if(!(stat & BROKEN))
 			var/obj/item/construct/conveyor/C = new /obj/item/construct/conveyor(loc, id)
 			transfer_fingerprints_to(C)
-		to_chat(user, "<span class='notice'>You remove the conveyor belt.</span>")
+		to_chat(user, SPAN_NOTICE("You remove the conveyor belt."))
 		qdel(src)
 		return
 
@@ -331,7 +331,7 @@ GLOBAL_LIST_INIT(conveyor_switches, list())
 /obj/item/construct/conveyor/attackby(obj/item/I, mob/user, params)
 	..()
 	if(istype(I, /obj/item/construct/conveyor_switch))
-		to_chat(user, "<span class='notice'>You link the switch to the conveyor belt assembly.</span>")
+		to_chat(user, SPAN_NOTICE("You link the switch to the conveyor belt assembly."))
 		var/obj/item/construct/conveyor_switch/C = I
 		id = C.id
 

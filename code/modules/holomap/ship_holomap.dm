@@ -373,7 +373,7 @@
 				var/obj/screen/maptext_overlay = new(null)
 				maptext_overlay.icon = null
 				maptext_overlay.layer = HUD_ITEM_LAYER
-				maptext_overlay.maptext = "<span style='text-align:center'>LEVEL [level-1]</span>"
+				maptext_overlay.maptext = SPAN_STYLE("text-align:center","LEVEL [level-1]")
 				maptext_overlay.maptext_width = 96
 				maptext_overlay.pixel_x = (HOLOMAP_ICON_SIZE / 2) - (maptext_overlay.maptext_width / 2)
 				maptext_overlay.pixel_y = HOLOMAP_MARGIN

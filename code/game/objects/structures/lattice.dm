@@ -50,7 +50,7 @@
 		qdel(src)
 
 /obj/structure/lattice/proc/deconstruct(mob/user)
-	to_chat(user, "<span class='notice'>Slicing lattice joints ...</span>")
+	to_chat(user, SPAN_NOTICE("Slicing lattice joints ..."))
 	new /obj/item/stack/material/rods(loc, 1, material.name)
 	qdel(src)
 
@@ -80,7 +80,7 @@
 			qdel(src)
 			return
 		else
-			to_chat(user, "<span class='notice'>You require at least two rods to complete the catwalk.</span>")
+			to_chat(user, SPAN_NOTICE("You require at least two rods to complete the catwalk."))
 
 /obj/structure/lattice/on_update_icon()
 	var/dir_sum = 0

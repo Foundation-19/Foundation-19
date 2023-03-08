@@ -62,7 +62,7 @@
 		else
 			factor = 1.4
 	choices[CHOICE_TRANSFER] = round(choices[CHOICE_TRANSFER] * factor)
-	to_world("<font color='purple'>Transfer Vote Multiplier: [factor]</font>")
+	to_world(FONT_COLORED("purple","Transfer Vote Multiplier: [factor]"))
 
 	return ..()
 

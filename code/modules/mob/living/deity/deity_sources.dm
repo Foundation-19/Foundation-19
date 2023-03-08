@@ -38,7 +38,7 @@
 			feel = " greatly"
 		if(abs(amount) >= 5)
 			var/class = amount > 0 ? "notice" : "warning"
-			to_chat(src, "<span class='[class]'>You feel your power [amount > 0 ? "increase" : "decrease"][feel][msg ? " [msg]" : ""]</span>")
+			to_chat(src, SPAN_CLASS("[class]","You feel your power [amount > 0 ? "increase" : "decrease"][feel][msg ? " [msg]" : ""]"))
 
 
 /mob/living/deity/proc/adjust_source(amount, atom/source, silent = 0, msg)
@@ -60,7 +60,7 @@
 			if(L.mind in minions)
 				return 1
 		if(!silent)
-			to_chat(src, "<span class='warning'>You do not feel a malleable mind behind that frame.</span>")
+			to_chat(src, SPAN_WARNING("You do not feel a malleable mind behind that frame."))
 	return 0
 
 /mob/living/deity/fully_replace_character_name(new_name, in_depth = TRUE)
