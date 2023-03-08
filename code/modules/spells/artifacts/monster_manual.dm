@@ -65,7 +65,7 @@
 					qdel(F)
 				else
 					F.faction = usr.faction
-					to_chat(F, "<span class='notice'>You are a familiar.</span>")
+					to_chat(F, SPAN_NOTICE("You are a familiar."))
 					to_chat(F, "<b>You have been summoned by the wizard [usr] to assist in all matters magical and not.</b>")
 					to_chat(F, "<b>Do their bidding and help them with their goals.</b>")
 					uses--

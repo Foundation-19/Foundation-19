@@ -77,8 +77,8 @@ var/datum/species/shapeshifter/promethean/prometheans
 	prometheans = src
 
 /datum/species/shapeshifter/promethean/hug(mob/living/carbon/human/H,mob/living/target)
-	H.visible_message("<span class='notice'>\The [H] glomps [target] to make [target.p_them()] feel better!</span>", \
-					"<span class='notice'>You glomps [target] to make [target.p_them()] feel better!</span>")
+	H.visible_message(SPAN_NOTICE("\The [H] glomps [target] to make [target.p_them()] feel better!"), \
+					SPAN_NOTICE("You glomps [target] to make [target.p_them()] feel better!"))
 	H.apply_stored_shock_to(target)
 
 /datum/species/shapeshifter/promethean/handle_death(mob/living/carbon/human/H)

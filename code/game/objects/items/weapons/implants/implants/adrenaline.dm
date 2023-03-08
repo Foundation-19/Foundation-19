@@ -24,7 +24,7 @@
 /obj/item/implant/adrenalin/activate()//this implant is unused but I'm changing it for the sake of consistency
 	if (uses < 1 || malfunction || !imp_in)	return 0
 	uses--
-	to_chat(imp_in, "<span class='notice'>You feel a sudden surge of energy!</span>")
+	to_chat(imp_in, SPAN_NOTICE("You feel a sudden surge of energy!"))
 	imp_in.SetStunned(0)
 	imp_in.SetWeakened(0)
 	imp_in.SetParalysis(0)

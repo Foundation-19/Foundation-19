@@ -17,7 +17,7 @@
 		if(ACCESS_BAR in card.GetAccess())
 			pick_sign(user)
 		else
-			to_chat(user, "<span class='warning'>Access denied.</span>")
+			to_chat(user, SPAN_WARNING("Access denied."))
 		return
 	return ..()
 

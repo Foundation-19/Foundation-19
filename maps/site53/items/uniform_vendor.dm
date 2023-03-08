@@ -95,12 +95,12 @@
 /obj/machinery/uniform_vendor/attackby(obj/item/weapon/W, mob/user)
 	if(istype(W, /obj/item/weapon/clothingbag))
 		if(W.contents.len)
-			to_chat(user, "<span class='notice'>You must empty \the [W] before you can put it in \the [src].</span>")
+			to_chat(user, SPAN_NOTICE("You must empty \the [W] before you can put it in \the [src]."))
 			return
-		to_chat(user, "<span class='notice'>You put \the [W] into \the [src]'s recycling slot.</span>")
+		to_chat(user, SPAN_NOTICE("You put \the [W] into \the [src]'s recycling slot."))
 		qdel(W)
 	else if(istype(W, /obj/item/weapon/card/id) && !ID && user.unEquip(W, FALSE, src))
-		to_chat(user, "<span class='notice'>You slide \the [W] into \the [src]!</span>")
+		to_chat(user, SPAN_NOTICE("You slide \the [W] into \the [src]!"))
 		ID = W
 		user.drop_from_inventory(W, src)
 		attack_hand(user)

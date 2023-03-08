@@ -19,5 +19,5 @@
 			if(following)
 				stop_follow()
 			eyeobj.setLoc(get_turf(a))
-			to_chat(src, "<span class='notice'>Jumping to \the [a]</span>")
+			to_chat(src, SPAN_NOTICE("Jumping to \the [a]"))
 		return 1

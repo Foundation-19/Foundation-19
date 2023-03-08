@@ -51,7 +51,7 @@
 				if(y_diff < 0 && H.dir == NORTH) //Mob is below src and looking up
 					if(dir == SOUTH) //src is looking down
 						eye_contact = 1
-						to_chat(H, "<span class='alert'>Welcome to the game show!</span>")
+						to_chat(H, SPAN_ALERT("Welcome to the game show!"))
 			if(eye_contact)
 				icon_living = "animation"
 				next_emote = world.time + 30
@@ -128,7 +128,7 @@
 					eye_contact = 1
 
 		if(eye_contact)
-			to_chat(H, "<span class='alert'>Welcome to the game show!</span>")
+			to_chat(H, SPAN_ALERT("Welcome to the game show!"))
 			game_show_start(H)
 
 	return */

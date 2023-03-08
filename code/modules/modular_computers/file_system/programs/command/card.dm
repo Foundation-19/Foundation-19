@@ -128,7 +128,7 @@
 				module.show_assignments = 1
 		if("print")
 			if(!authorized(user_id_card))
-				to_chat(usr, "<span class='warning'>Access denied.</span>")
+				to_chat(usr, SPAN_WARNING("Access denied."))
 				return
 			if(computer.nano_printer) //This option should never be called if there is no printer
 				if(module.mod_mode)
@@ -151,7 +151,7 @@
 								contents += "  [get_access_desc(A)]"
 
 						if(!computer.nano_printer.print_text(contents,"access report"))
-							to_chat(usr, "<span class='notice'>Hardware error: Printer was unable to print the file. It may be out of paper.</span>")
+							to_chat(usr, SPAN_NOTICE("Hardware error: Printer was unable to print the file. It may be out of paper."))
 							return
 				else
 					var/contents = {"<h4>Crew Manifest</h4>
@@ -159,7 +159,7 @@
 									[html_crew_manifest()]
 									"}
 					if(!computer.nano_printer.print_text(contents, "crew manifest ([station_time_timestamp("hh:mm")])"))
-						to_chat(usr, "<span class='notice'>Hardware error: Printer was unable to print the file. It may be out of paper.</span>")
+						to_chat(usr, SPAN_NOTICE("Hardware error: Printer was unable to print the file. It may be out of paper."))
 						return
 		if("eject")
 			if(computer.card_slot?.stored_card)
@@ -168,7 +168,7 @@
 				computer.card_slot?.insert_id(user.get_active_hand(), user)
 		if("terminate")
 			if(!authorized(user_id_card))
-				to_chat(usr, "<span class='warning'>Access denied.</span>")
+				to_chat(usr, SPAN_WARNING("Access denied."))
 				return
 			if(computer && can_run(user, 1))
 				id_card.assignment = "Terminated"
@@ -176,7 +176,7 @@
 				callHook("terminate_employee", list(id_card))
 		if("edit")
 			if(!authorized(user_id_card))
-				to_chat(usr, "<span class='warning'>Access denied.</span>")
+				to_chat(usr, SPAN_WARNING("Access denied."))
 				return
 			if(computer && can_run(user, 1))
 				if(href_list["name"])
@@ -198,7 +198,7 @@
 					id_card.associated_email_login["password"] = email_password
 		if("assign")
 			if(!authorized(user_id_card))
-				to_chat(usr, "<span class='warning'>Access denied.</span>")
+				to_chat(usr, SPAN_WARNING("Access denied."))
 				return
 			if(computer && can_run(user, 1) && id_card)
 				var/t1 = href_list["assign_target"]
@@ -214,7 +214,7 @@
 					else
 						var/datum/job/jobdatum = SSjobs.get_by_title(t1)
 						if(!jobdatum)
-							to_chat(usr, "<span class='warning'>No log exists for this job: [t1]</span>")
+							to_chat(usr, SPAN_WARNING("No log exists for this job: [t1]"))
 							return
 
 						var/list/to_give = jobdatum.get_access()

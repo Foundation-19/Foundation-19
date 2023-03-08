@@ -23,12 +23,12 @@
 		if((ACCESS_SCIENCE_LVL1 in card.GetAccess()) || (ACCESS_BAR in card.GetAccess()))
 			if(istype(chosen_sign, /datum/barsign/signoff))	// check if the current state is off
 				set_sign(new /datum/barsign/toolate)
-				to_chat(user, "<span class='notice'>You swipe your card, and the neon sign flickers to life.</span>")
+				to_chat(user, SPAN_NOTICE("You swipe your card, and the neon sign flickers to life."))
 			else
 				set_sign(new /datum/barsign/signoff)
-				to_chat(user, "<span class='notice'>You swipe your card to switch the neon sign off.</span>")
+				to_chat(user, SPAN_NOTICE("You swipe your card to switch the neon sign off."))
 		else
-			to_chat(user, "<span class='warning'>Access denied.</span>")
+			to_chat(user, SPAN_WARNING("Access denied."))
 			return
 	else
 		return ..()
