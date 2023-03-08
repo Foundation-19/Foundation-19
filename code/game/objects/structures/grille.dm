@@ -160,8 +160,8 @@
 		if(!shock(user, 90))
 			playsound(loc, 'sound/items/Screwdriver.ogg', 100, 1)
 			anchored = !anchored
-			user.visible_message("<span class='notice'>[user] [anchored ? "fastens" : "unfastens"] the grille.</span>", \
-								 "<span class='notice'>You have [anchored ? "fastened the grille to" : "unfastened the grill from"] the floor.</span>")
+			user.visible_message(SPAN_NOTICE("[user] [anchored ? "fastens" : "unfastens"] the grille."), \
+								 SPAN_NOTICE("You have [anchored ? "fastened the grille to" : "unfastened the grill from"] the floor."))
 			update_connections(1)
 			update_icon()
 		return
@@ -179,7 +179,7 @@
 			else
 				dir_to_set = get_dir(loc, user)
 				if(dir_to_set & (dir_to_set - 1)) //Only works for cardinal direcitons, diagonals aren't supposed to work like this.
-					to_chat(user, "<span class='notice'>You can't reach.</span>")
+					to_chat(user, SPAN_NOTICE("You can't reach."))
 					return
 		place_window(user, loc, dir_to_set, ST)
 		return
@@ -260,9 +260,9 @@
 	if(ST.in_use)
 		return
 	if(ST.get_amount() < 2)
-		to_chat(user, "<span class='warning'>You need at least two rods to do this.</span>")
+		to_chat(user, SPAN_WARNING("You need at least two rods to do this."))
 		return
-	to_chat(user, "<span class='notice'>Assembling grille...</span>")
+	to_chat(user, SPAN_NOTICE("Assembling grille..."))
 	ST.in_use = 1
 	if (!do_after(user, 10))
 		ST.in_use = 0
@@ -270,6 +270,6 @@
 	if(!ST.use(2))
 		return
 	var/obj/structure/grille/F = new /obj/structure/grille(loc, ST.material.name)
-	to_chat(user, "<span class='notice'>You assemble a grille</span>")
+	to_chat(user, SPAN_NOTICE("You assemble a grille"))
 	ST.in_use = 0
 	F.add_fingerprint(user)

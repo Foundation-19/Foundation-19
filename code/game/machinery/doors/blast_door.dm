@@ -150,30 +150,30 @@
 	add_fingerprint(user, 0, C)
 	if(isCrowbar(C) || (istype(C, /obj/item/material/twohanded/fireaxe) && C:wielded == 1))
 		if(((stat & NOPOWER) || (stat & BROKEN)) && !( operating ))
-			to_chat(user, "<span class='notice'>You begin prying at \the [src]...</span>")
+			to_chat(user, SPAN_NOTICE("You begin prying at \the [src]..."))
 			if(do_after(user, 2 SECONDS, src))
 				force_toggle()
 		else
-			to_chat(user, "<span class='notice'>[src]'s motors resist your effort.</span>")
+			to_chat(user, SPAN_NOTICE("[src]'s motors resist your effort."))
 		return
 	if(istype(C, /obj/item/stack/material) && C.get_material_name() == MATERIAL_PLASTEEL)
 		var/amt = Ceiling((maxhealth - health)/150)
 		if(!amt)
-			to_chat(user, "<span class='notice'>\The [src] is already fully functional.</span>")
+			to_chat(user, SPAN_NOTICE("\The [src] is already fully functional."))
 			return
 		var/obj/item/stack/P = C
 		if(!P.can_use(amt))
-			to_chat(user, "<span class='warning'>You don't have enough sheets to repair this! You need at least [amt] sheets.</span>")
+			to_chat(user, SPAN_WARNING("You don't have enough sheets to repair this! You need at least [amt] sheets."))
 			return
-		to_chat(user, "<span class='notice'>You begin repairing \the [src]...</span>")
+		to_chat(user, SPAN_NOTICE("You begin repairing \the [src]..."))
 		if(do_after(user, 5 SECONDS, src))
 			if(P.use(amt))
-				to_chat(user, "<span class='notice'>You have repaired \the [src].</span>")
+				to_chat(user, SPAN_NOTICE("You have repaired \the [src]."))
 				repair()
 			else
-				to_chat(user, "<span class='warning'>You don't have enough sheets to repair this! You need at least [amt] sheets.</span>")
+				to_chat(user, SPAN_WARNING("You don't have enough sheets to repair this! You need at least [amt] sheets."))
 		else
-			to_chat(user, "<span class='warning'>You must remain still while working on \the [src].</span>")
+			to_chat(user, SPAN_WARNING("You must remain still while working on \the [src]."))
 	check_force(C, user)
 
 

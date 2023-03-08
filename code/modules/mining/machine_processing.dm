@@ -30,7 +30,7 @@
 		return
 
 	if(!allowed(user))
-		to_chat(user, "<span class='warning'>Access denied.</span>")
+		to_chat(user, SPAN_WARNING("Access denied."))
 		return
 
 	user.set_machine(src)
@@ -48,20 +48,20 @@
 		if(machine.ores_processing[ore])
 			switch(machine.ores_processing[ore])
 				if(0)
-					dat += "<font color='red'>not processing</font>"
+					dat += FONT_COLORED("red","not processing")
 				if(1)
-					dat += "<font color='orange'>smelting</font>"
+					dat += FONT_COLORED("orange","smelting")
 				if(2)
-					dat += "<font color='blue'>compressing</font>"
+					dat += FONT_COLORED("blue","compressing")
 				if(3)
-					dat += "<font color='gray'>alloying</font>"
+					dat += FONT_COLORED("gray","alloying")
 		else
-			dat += "<font color='red'>not processing</font>"
+			dat += FONT_COLORED("red","not processing")
 		dat += ".</td><td width = 30><a href='?src=\ref[src];toggle_smelting=[ore]'>\[change\]</a></td></tr>"
 
 	dat += "</table><hr>"
 	dat += "Currently displaying [show_all_ores ? "all ore types" : "only available ore types"]. <A href='?src=\ref[src];toggle_ores=1'>\[[show_all_ores ? "show less" : "show more"]\]</a></br>"
-	dat += "The ore processor is currently <A href='?src=\ref[src];toggle_power=1'>[(machine.active ? "<font color='green'>processing</font>" : "<font color='red'>disabled</font>")]</a>."
+	dat += "The ore processor is currently <A href='?src=\ref[src];toggle_power=1'>[(machine.active ? FONT_COLORED("green","processing") : FONT_COLORED("red","disabled"))]</a>."
 	user << browse(dat, "window=processor_console;size=400x500")
 	onclose(user, "processor_console")
 	return

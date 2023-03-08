@@ -10,8 +10,8 @@
 		var/text_size = 4
 		if(!linked.is_follower(L))
 			text_size = 1
-		to_chat(L, "<span class='cult'><font size='[text_size]'>[text_to_send]</font></span>") //Note to self: make this go to ghosties
-		to_chat(linked, "<span class='notice'>You send the message [text_to_send] to \the [L]</span>")
+		to_chat(L, SPAN_OCCULT("<font size='[text_size]'>[text_to_send]</font>")) //Note to self: make this go to ghosties
+		to_chat(linked, SPAN_NOTICE("You send the message [text_to_send] to \the [L]"))
 		log_and_message_admins("communicated the message \"[text_to_send]\" to [key_name(L)]", linked)
 
 /datum/phenomena/point
@@ -33,7 +33,7 @@
 		if(mind.current)
 			var/mob/M = mind.current
 			if((M in view) && M.client)
-				to_chat(M, "<span class='cult'>Your attention is eerily drawn to \the [a].</span>")
+				to_chat(M, SPAN_OCCULT("Your attention is eerily drawn to \the [a]."))
 				M.client.images += arrow
 				GLOB.logged_out_event.register(M, src, /datum/phenomena/point/proc/remove_image)
 				spawn(20)
@@ -56,22 +56,22 @@
 	if(!pain)
 		return
 	if(linked.mob_uplink.uses < punishment_list[pain])
-		to_chat(linked, "<span class='warning'>[pain] costs too much power for you to use on \the [L]</span>")
+		to_chat(linked, SPAN_WARNING("[pain] costs too much power for you to use on \the [L]"))
 		return
 	..()
 	linked.take_cost(punishment_list[pain])
 	switch(pain)
 		if("Pain (0)")
 			L.adjustHalLoss(15)
-			to_chat(L, "<span class='warning'>You feel intense disappointment coming at you from beyond the veil.</span>")
+			to_chat(L, SPAN_WARNING("You feel intense disappointment coming at you from beyond the veil."))
 		if("Light Wound (5)")
 			L.adjustBruteLoss(5)
-			to_chat(L, "<span class='warning'>You feel an ethereal whip graze your very soul!</span>")
+			to_chat(L, SPAN_WARNING("You feel an ethereal whip graze your very soul!"))
 		if("Brain Damage (10)")
 			L.adjustBrainLoss(5)
-			to_chat(L, "<span class='danger'>You feel your mind breaking under a otherwordly hammer...</span>")
+			to_chat(L, SPAN_DANGER("You feel your mind breaking under a otherwordly hammer..."))
 		if("Heavy Wounds (20)")
 			L.adjustBruteLoss(25)
-			to_chat(L, "<span class='danger'>You feel your master turn its destructive potential against you!</span>")
-	to_chat(linked, "<span class='notice'>You punish \the [L].</span>")
+			to_chat(L, SPAN_DANGER("You feel your master turn its destructive potential against you!"))
+	to_chat(linked, SPAN_NOTICE("You punish \the [L]."))
 	log_admin("[key_name(linked)] used Punishment [pain] on \the [key_name(L)]")

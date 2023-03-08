@@ -18,7 +18,7 @@ var/static/list/climbsounds = list('sound/effects/ladder.ogg','sound/effects/lad
 		user.drop_item()
 		user.forceMove(pick(GLOB.scp1102_floors))
 		playsound(src, pick(climbsounds), 50)
-		user.visible_message("<span class='warning'>The [user] has opened the briefcase and climbed down into it!</span>")
+		user.visible_message(SPAN_WARNING("The [user] has opened the briefcase and climbed down into it!"))
 
 /obj/item/weapon/scp1102ru/Initialize()
 	GLOB.scp1102 += src
@@ -49,4 +49,4 @@ var/static/list/climbsounds = list('sound/effects/ladder.ogg','sound/effects/lad
 		var/turf/T = get_turf(pick(GLOB.scp1102))
 		user.forceMove(T)
 		playsound(src, pick(climbsounds), 50)
-		user.visible_message("<span class='warning'>[user] climbs up the ladder!</span>")
+		user.visible_message(SPAN_WARNING("[user] climbs up the ladder!"))

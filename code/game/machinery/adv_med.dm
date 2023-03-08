@@ -39,10 +39,10 @@
 	if (usr.stat != 0)
 		return
 	if (src.occupant)
-		to_chat(usr, "<span class='warning'>The scanner is already occupied!</span>")
+		to_chat(usr, SPAN_WARNING("The scanner is already occupied!"))
 		return
 	if (usr.abiotic())
-		to_chat(usr, "<span class='warning'>The subject cannot have abiotic items on.</span>")
+		to_chat(usr, SPAN_WARNING("The subject cannot have abiotic items on."))
 		return
 	usr.pulling = null
 	usr.client.perspective = EYE_PERSPECTIVE
@@ -79,10 +79,10 @@
 	if (!ismob(G.affecting))
 		return
 	if (src.occupant)
-		to_chat(user, "<span class='warning'>The scanner is already occupied!</span>")
+		to_chat(user, SPAN_WARNING("The scanner is already occupied!"))
 		return
 	if (G.affecting.abiotic())
-		to_chat(user, "<span class='warning'>Subject cannot have abiotic items on.</span>")
+		to_chat(user, SPAN_WARNING("Subject cannot have abiotic items on."))
 		return
 	var/mob/M = G.affecting
 	M.forceMove(src)
@@ -101,15 +101,15 @@
 	if (!CanMouseDrop(target, user))
 		return
 	if (src.occupant)
-		to_chat(user, "<span class='warning'>The scanner is already occupied!</span>")
+		to_chat(user, SPAN_WARNING("The scanner is already occupied!"))
 		return
 	if (target.abiotic())
-		to_chat(user, "<span class='warning'>The subject cannot have abiotic items on.</span>")
+		to_chat(user, SPAN_WARNING("The subject cannot have abiotic items on."))
 		return
 	if (target.buckled)
-		to_chat(user, "<span class='warning'>Unbuckle the subject before attempting to move them.</span>")
+		to_chat(user, SPAN_WARNING("Unbuckle the subject before attempting to move them."))
 		return
-	user.visible_message("<span class='notice'>\The [user] begins placing \the [target] into \the [src].</span>", "<span class='notice'>You start placing \the [target] into \the [src].</span>")
+	user.visible_message(SPAN_NOTICE("\The [user] begins placing \the [target] into \the [src]."), SPAN_NOTICE("You start placing \the [target] into \the [src]."))
 	if(!do_after(user, 30, src))
 		return
 	var/mob/M = target
@@ -226,10 +226,10 @@
 	if(stat & (NOPOWER|BROKEN))
 		return
 	if(!connected || (connected.stat & (NOPOWER|BROKEN)))
-		to_chat(user, "<span class='warning'>This console is not connected to a functioning body scanner.</span>")
+		to_chat(user, SPAN_WARNING("This console is not connected to a functioning body scanner."))
 		return
 	if(!ishuman(connected.occupant))
-		to_chat(user, "<span class='warning'>This device can only scan compatible lifeforms.</span>")
+		to_chat(user, SPAN_WARNING("This device can only scan compatible lifeforms."))
 		return
 
 	var/dat
@@ -242,7 +242,7 @@
 			dat = connected.occupant.get_medical_data()
 			dat += "<br><HR><A href='?src=\ref[src];print=1'>Print</A><BR>"
 		else
-			dat = "<span class='warning'>Error: No Body Scanner connected.</span>"
+			dat = SPAN_WARNING("Error: No Body Scanner connected.")
 
 	dat += text("<BR><A href='?src=\ref[];mach_close=scanconsole'>Close</A>", user)
 	user << browse(dat, "window=scanconsole;size=430x600")
@@ -285,11 +285,11 @@
 	if(H.should_have_organ(BP_BRAIN))
 		var/obj/item/organ/internal/brain/brain = H.internal_organs_by_name[BP_BRAIN]
 		if(!brain || H.stat == DEAD || (H.status_flags & FAKEDEATH))
-			brain_result = "<span class='danger'>none, patient is braindead</span>"
+			brain_result = SPAN_DANGER("none, patient is braindead")
 		else if(H.stat != DEAD)
 			brain_result = "[round(max(0,(1 - brain.damage/brain.max_damage)*100))]%"
 	else
-		brain_result = "<span class='danger'>ERROR - Nonstandard biology</span>"
+		brain_result = SPAN_DANGER("ERROR - Nonstandard biology")
 	dat += "<b>Brain activity:</b> [brain_result]"
 
 	var/pulse_result = "normal"
@@ -304,7 +304,7 @@
 
 	// Blood pressure. Based on the idea of a normal blood pressure being 120 over 80.
 	if(H.get_blood_volume() <= 70)
-		dat += "<span class='danger'>Severe blood loss detected.</span>"
+		dat += SPAN_DANGER("Severe blood loss detected.")
 	dat += "<b>Blood pressure:</b> [H.get_blood_pressure()] ([H.get_blood_oxygenation()]% blood oxygenation)"
 	dat += "<b>Blood volume:</b> [H.vessel.get_reagent_amount(/datum/reagent/blood)]/[H.species.blood_volume]u"
 
@@ -323,7 +323,7 @@
 
 	dat += "Antibody levels and immune system perfomance are at [round(H.virus_immunity()*100)]% of baseline."
 	if (H.virus2.len)
-		dat += "<font color='red'>Viral pathogen detected in blood stream.</font>"
+		dat += FONT_COLORED("red","Viral pathogen detected in blood stream.")
 
 	if(H.has_brain_worms())
 		dat += "Large growth detected in frontal lobe, possibly cancerous. Surgical removal is recommended."

@@ -54,9 +54,9 @@
 		if(!goal)
 			goal = new /datum/goal/ambition(mind)
 		goal.description = new_goal
-		to_chat(src, "<span class='notice'>You've set your goal to be <b>'[goal.description]'</b>. You can check your goals with the <b>Show Goals</b> verb.</span>")
+		to_chat(src, SPAN_NOTICE("You've set your goal to be <b>'[goal.description]'</b>. You can check your goals with the <b>Show Goals</b> verb."))
 	else
-		to_chat(src, "<span class='notice'>You leave your ambitions behind.</span>")
+		to_chat(src, SPAN_NOTICE("You leave your ambitions behind."))
 		if(goal)
 			qdel(goal)
 	log_and_message_admins("has set their ambitions to now be: [new_goal].")

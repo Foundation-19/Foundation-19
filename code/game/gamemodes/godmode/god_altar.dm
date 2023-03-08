@@ -13,7 +13,7 @@
 	if(target)
 		remove_target()
 	if(linked_god)
-		to_chat(src, "<span class='danger'>You've lost an altar!</span>")
+		to_chat(src, SPAN_DANGER("You've lost an altar!"))
 	return ..()
 
 /obj/structure/deity/altar/attackby(obj/item/I, mob/user)
@@ -22,7 +22,7 @@
 		if(G.force_danger())
 			G.affecting.forceMove(get_turf(src))
 			G.affecting.Weaken(1)
-			user.visible_message("<span class='warning'>\The [user] throws \the [G.affecting] onto \the [src]!</span>")
+			user.visible_message(SPAN_WARNING("\The [user] throws \the [G.affecting] onto \the [src]!"))
 			user.drop_from_inventory(G)
 	else ..()
 
@@ -30,7 +30,7 @@
 	if(!target || world.time < next_cycle)
 		return
 	if(!linked_god || target.stat)
-		to_chat(linked_god, "<span class='warning'>\The [target] has lost consciousness, breaking \the [src]'s hold on their mind!</span>")
+		to_chat(linked_god, SPAN_WARNING("\The [target] has lost consciousness, breaking \the [src]'s hold on their mind!"))
 		remove_target()
 		return
 
@@ -51,8 +51,8 @@
 			text = "You can't.... concentrate.. must... resist!"
 		if(1)
 			text = "Can't... resist. ... anymore."
-			to_chat(linked_god, "<span class='warning'>\The [target] is getting close to conversion!</span>")
-	to_chat(target, "<span class='cult'>[text]. <a href='?src=\ref[src];resist=\ref[target]'>Resist Conversion</a></span>")
+			to_chat(linked_god, SPAN_WARNING("\The [target] is getting close to conversion!"))
+	to_chat(target, SPAN_OCCULT("[text]. <a href='?src=\ref[src];resist=\ref[target]'>Resist Conversion</a>"))
 
 
 //Used for force conversion.
@@ -82,11 +82,11 @@
 			return TOPIC_HANDLED
 
 		M.last_special = world.time + 10 SECONDS
-		M.visible_message("<span class='warning'>\The [M] writhes on top of \the [src]!</span>", "<span class='notice'>You struggle against the intruding thoughts, keeping them at bay!</span>")
-		to_chat(linked_god, "<span class='warning'>\The [M] slows its conversion through willpower!</span>")
+		M.visible_message(SPAN_WARNING("\The [M] writhes on top of \the [src]!"), SPAN_NOTICE("You struggle against the intruding thoughts, keeping them at bay!"))
+		to_chat(linked_god, SPAN_WARNING("\The [M] slows its conversion through willpower!"))
 		cycles_before_converted++
 		if(prob(50))
-			to_chat(M, "<span class='danger'>The mental strain is too much for you! You feel your body weakening!</span>")
+			to_chat(M, SPAN_DANGER("The mental strain is too much for you! You feel your body weakening!"))
 			M.adjustToxLoss(15)
 			M.adjustHalLoss(30)
 		return TOPIC_REFRESH

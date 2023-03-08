@@ -75,7 +75,7 @@ If the override option is set to 0, the access supplied will instead be added as
 		return 0
 	for(var/datum/report_field/field in fields)
 		if(field.required && !field.get_value())
-			to_chat(user, "<span class='notice'>You are missing a required field!</span>")
+			to_chat(user, SPAN_NOTICE("You are missing a required field!"))
 			return 0
 	creator = user.name
 	file_time = station_time_timestamp()

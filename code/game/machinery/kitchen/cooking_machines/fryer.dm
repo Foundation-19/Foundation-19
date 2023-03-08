@@ -14,7 +14,7 @@
 	if(!istype(victim))
 		return
 
-	user.visible_message("<span class='danger'>\The [user] starts pushing \the [victim] into \the [src]!</span>")
+	user.visible_message(SPAN_DANGER("\The [user] starts pushing \the [victim] into \the [src]!"))
 	icon_state = on_icon
 	cooking = 1
 
@@ -24,7 +24,7 @@
 		return
 
 	if(!victim || !victim.Adjacent(user))
-		to_chat(user, "<span class='danger'>Your victim slipped free!</span>")
+		to_chat(user, SPAN_DANGER("Your victim slipped free!"))
 		cooking = 0
 		icon_state = off_icon
 		return
@@ -34,9 +34,9 @@
 		var/mob/living/carbon/human/H = victim
 		var/obj/item/organ/external/E = H.get_organ(target_zone)
 		if(!E)
-			to_chat(user, "<span class='warning'>They are missing that body part!</span>")
+			to_chat(user, SPAN_WARNING("They are missing that body part!"))
 		else
-			visible_message("<span class='danger'>\The [user] shoves \the [victim][E ? "'s [E.name]" : ""] into \the [src]!</span>")
+			visible_message(SPAN_DANGER("\The [user] shoves \the [victim][E ? "'s [E.name]" : ""] into \the [src]!"))
 			var/blocked = H.run_armor_check(target_zone, "energy")
 			H.apply_damage(rand(20,30), BURN, target_zone, blocked)
 

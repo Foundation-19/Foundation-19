@@ -44,11 +44,11 @@
 
 /obj/structure/deity/blood_forge/proc/craft_item(path, blood_cost, mob/user)
 	if(busy)
-		to_chat(user, "<span class='warning'>Someone is already using \the [src]!</span>")
+		to_chat(user, SPAN_WARNING("Someone is already using \the [src]!"))
 		return
 
 	busy = 1
-	to_chat(user, "<span class='notice'>You dip your hands into \the [src]'s [text_modifications["Dip"]]</span>")
+	to_chat(user, SPAN_NOTICE("You dip your hands into \the [src]'s [text_modifications["Dip"]]"))
 	for(var/count = 0, count < blood_cost/10, count++)
 		if(!do_after(user, 50,src))
 			busy = 0
@@ -78,9 +78,9 @@
 		return
 
 	var/mob/living/carbon/human/H = user
-	user.visible_message("<span class='warning'>\The [user] calmly slices their finger on \the [src], smeering it over the black stone.</span>","<span class='warning'>You slowly slide your finger down one of \the [src]'s sharp edges, smeering it over its smooth surface.</span>")
+	user.visible_message(SPAN_WARNING("\The [user] calmly slices their finger on \the [src], smeering it over the black stone."),SPAN_WARNING("You slowly slide your finger down one of \the [src]'s sharp edges, smeering it over its smooth surface."))
 	while(do_after(H,50,src))
-		user.audible_message("\The [user] utters something under their breath.", "<span class='cult'>You mutter a dark prayer to your master as you feel the stone eat away at your lifeforce.</span>")
+		user.audible_message("\The [user] utters something under their breath.", SPAN_OCCULT("You mutter a dark prayer to your master as you feel the stone eat away at your lifeforce."))
 		if(H.should_have_organ(BP_HEART))
 			H.drip(5,get_turf(src))
 		else

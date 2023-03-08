@@ -84,7 +84,7 @@
 	if(istype(I, /obj/item/reagent_containers/food/snacks/sashimi))
 		var/obj/item/reagent_containers/food/snacks/sashimi/other_sashimi = I
 		if(slices + other_sashimi.slices > 5)
-			to_chat(user, "<span class='warning'>Show some restraint, would you?</span>")
+			to_chat(user, SPAN_WARNING("Show some restraint, would you?"))
 			return
 		if(!user.unEquip(I))
 			return
@@ -99,7 +99,7 @@
 	// Make sushi.
 	if(istype(I, /obj/item/reagent_containers/food/snacks/boiledrice))
 		if(slices > 1)
-			to_chat(user, "<span class='warning'>Putting more than one slice of fish on your sushi is just greedy.</span>")
+			to_chat(user, SPAN_WARNING("Putting more than one slice of fish on your sushi is just greedy."))
 		else
 			if(!user.unEquip(I))
 				return
@@ -113,7 +113,7 @@
 		if(istype(I, /obj/item/reagent_containers/food/snacks/sashimi))
 			var/obj/item/reagent_containers/food/snacks/sashimi/sashimi = I
 			if(sashimi.slices > 1)
-				to_chat(user, "<span class='warning'>Putting more than one slice of fish on your sushi is just greedy.</span>")
+				to_chat(user, SPAN_WARNING("Putting more than one slice of fish on your sushi is just greedy."))
 			else
 				new /obj/item/reagent_containers/food/snacks/sushi(get_turf(src), src, I)
 			return
