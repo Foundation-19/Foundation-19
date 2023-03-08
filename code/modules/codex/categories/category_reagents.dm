@@ -50,7 +50,7 @@
 			var/list/reactant_values = list()
 			for(var/reactant_id in reaction.required_reagents)
 				var/datum/reagent/reactant = reactant_id
-				reactant_values += "[reaction.required_reagents[reactant_id]]u [lowertext(initial(reactant.name))]"
+				reactant_values += "[reaction.required_reagents[reactant_id]]u <span codexlink='[lowertext(initial(reactant.name))] (chemical)'>[lowertext(initial(reactant.name))]</span>"
 
 			if(!reactant_values.len)
 				continue
@@ -58,12 +58,12 @@
 			var/list/catalysts = list()
 			for(var/catalyst_id in reaction.catalysts)
 				var/datum/reagent/catalyst = catalyst_id
-				catalysts += "[reaction.catalysts[catalyst_id]]u [lowertext(initial(catalyst.name))]"
+				catalysts += "[reaction.catalysts[catalyst_id]]u <span codexlink='[lowertext(initial(catalyst.name))] (chemical)'>[lowertext(initial(catalyst.name))]</span>"
 
 			var/list/inhibitors = list()
 			for(var/inhibitor_id in reaction.inhibitors)
 				var/datum/reagent/inhibitor = inhibitor_id
-				inhibitors += "[reaction.inhibitors[inhibitor_id]]u [lowertext(initial(inhibitor.name))]"
+				inhibitors += "[reaction.inhibitors[inhibitor_id]]u <span codexlink='[lowertext(initial(inhibitor.name))] (chemical)'>[lowertext(initial(inhibitor.name))]</span>"
 
 			var/datum/reagent/result = reaction.result
 			production_strings += "- [jointext(reactant_values, " + ")][catalysts.len ? " (catalysts: [jointext(catalysts, ", ")])" : ""]\
