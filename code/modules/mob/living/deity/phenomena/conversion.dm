@@ -13,18 +13,18 @@
 			is_good = 1
 			break
 	if(!is_good)
-		to_chat(linked,"<span class='warning'>\The [target] needs to be near \a [linked.get_type_name(/obj/structure/deity/altar)].</span>")
+		to_chat(linked,SPAN_WARNING("\The [target] needs to be near \a [linked.get_type_name(/obj/structure/deity/altar)]."))
 		return 0
 	return 1
 
 /datum/phenomena/conversion/activate(mob/living/L)
-	to_chat(src,"<span class='notice'>You give \the [L] a chance to willingly convert. May they choose wisely.</span>")
+	to_chat(src,SPAN_NOTICE("You give \the [L] a chance to willingly convert. May they choose wisely."))
 	var/choice = alert(L, "You feel a weak power enter your mind attempting to convert it.", "Conversion", "Allow Conversion", "Deny Conversion")
 	if(choice == "Allow Conversion")
 		godcult.add_antagonist_mind(L.mind,1, "Servant of [linked]", "You willingly give your mind to it, may it bring you fortune", specific_god=linked)
 	else
-		to_chat(L, "<span class='warning'>With little difficulty you force the intrusion out of your mind. May it stay that way.</span>")
-		to_chat(src, "<span class='warning'>\The [L] decides not to convert.</span>")
+		to_chat(L, SPAN_WARNING("With little difficulty you force the intrusion out of your mind. May it stay that way."))
+		to_chat(src, SPAN_WARNING("\The [L] decides not to convert."))
 
 /datum/phenomena/forced_conversion
 	name = "Forced Conversion"
@@ -37,7 +37,7 @@
 		return 0
 	var/obj/structure/deity/altar/A = locate() in get_turf(L)
 	if(!A || A.linked_god != linked)
-		to_chat(linked,"<span class='warning'>\The [L] needs to be on \a [linked.get_type_name(/obj/structure/deity/altar)] to be forcefully converted..</span>")
+		to_chat(linked,SPAN_WARNING("\The [L] needs to be on \a [linked.get_type_name(/obj/structure/deity/altar)] to be forcefully converted.."))
 		return 0
 
 	return 1
@@ -45,4 +45,4 @@
 /datum/phenomena/forced_conversion/activate(mob/living/L)
 	var/obj/structure/deity/altar/A = locate() in get_turf(L)
 	A.set_target(L)
-	to_chat(linked, "<span class='notice'>You imbue \the [A] with your power, setting forth to force \the [L] to your will.</span>")
+	to_chat(linked, SPAN_NOTICE("You imbue \the [A] with your power, setting forth to force \the [L] to your will."))

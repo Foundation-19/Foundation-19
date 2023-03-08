@@ -38,7 +38,7 @@
 		for(var/m in minions)
 			var/datum/mind/M = m
 			remove_follower_spells(M)
-			to_chat(M.current, "<font size='3'><span class='danger'>Your connection has been severed! \The [src] is no more!</span></font>")
+			to_chat(M.current, FONT_LARGE("<span class='danger'>Your connection has been severed! \The [src] is no more!</span>"))
 			sound_to(M.current, 'sound/hallucinations/far_noise.ogg')
 			M.current.Weaken(10)
 		for(var/s in structures)
@@ -64,7 +64,7 @@
 	set category = "Godhood"
 
 	if(!form)
-		to_chat(src, "<span class='warning'>Choose a form first!</span>")
+		to_chat(src, SPAN_WARNING("Choose a form first!"))
 		return
 	if(!src.mob_uplink.uplink_owner)
 		src.mob_uplink.uplink_owner = src.mind
@@ -100,7 +100,7 @@
 
 /mob/living/deity/proc/set_form(type)
 	form = new type(src)
-	to_chat(src, "<span class='notice'>You undergo a transformation into your new form!</span>")
+	to_chat(src, SPAN_NOTICE("You undergo a transformation into your new form!"))
 	spawn(1)
 		SetName(form.name)
 		var/newname = sanitize(input(src, "Choose a name for your new form.", "Name change", form.name) as text, MAX_NAME_LEN)

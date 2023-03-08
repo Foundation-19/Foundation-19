@@ -16,7 +16,7 @@ SUBSYSTEM_DEF(setup)
 		job_master = new /datum/controller/occupations()
 		job_master.SetupOccupations(setup_titles=1)
 		job_master.LoadJobs("config/jobs.txt")
-		admin_notice("<span class='danger'>Job setup complete</span>", R_DEBUG)
+		admin_notice(SPAN_DANGER("Job setup complete"), R_DEBUG)
 
 	if(!syndicate_code_phrase)		syndicate_code_phrase	= generate_code_phrase()
 	if(!syndicate_code_response)	syndicate_code_response	= generate_code_phrase()

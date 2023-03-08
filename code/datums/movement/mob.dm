@@ -192,13 +192,13 @@
 
 	if(LAZYLEN(mob.pinned))
 		if(mover == mob)
-			to_chat(mob, "<span class='notice'>You're pinned down by \a [mob.pinned[1]]!</span>")
+			to_chat(mob, SPAN_NOTICE("You're pinned down by \a [mob.pinned[1]]!"))
 		return MOVEMENT_STOP
 
 	for(var/obj/item/grab/G in mob.grabbed_by)
 		if(G.assailant != mob && G.stop_move())
 			if(mover == mob)
-				to_chat(mob, "<span class='notice'>You're stuck in a grab!</span>")
+				to_chat(mob, SPAN_NOTICE("You're stuck in a grab!"))
 			mob.ProcessGrabs()
 			return MOVEMENT_STOP
 
@@ -207,7 +207,7 @@
 			if(M.pulling == mob)
 				if(!M.incapacitated() && mob.Adjacent(M))
 					if(mover == mob)
-						to_chat(mob, "<span class='notice'>You're restrained! You can't move!</span>")
+						to_chat(mob, SPAN_NOTICE("You're restrained! You can't move!"))
 					return MOVEMENT_STOP
 				else
 					M.stop_pulling()

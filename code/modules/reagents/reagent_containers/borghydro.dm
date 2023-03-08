@@ -59,7 +59,7 @@
 		return
 
 	if(!reagent_volumes[reagent_ids[mode]])
-		to_chat(user, "<span class='warning'>The injector is empty.</span>")
+		to_chat(user, SPAN_WARNING("The injector is empty."))
 		return
 
 	var/allow = M.can_inject(user, target_zone)
@@ -68,7 +68,7 @@
 			user.visible_message(SPAN_WARNING("\The [user] begins hunting for an injection port on \the [M]'s suit!"))
 			if(!user.do_skilled(INJECTION_PORT_DELAY, SKILL_MEDICAL, M))
 				return
-		to_chat(user, "<span class='notice'>You inject [M] with the injector.</span>")
+		to_chat(user, SPAN_NOTICE("You inject [M] with the injector."))
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			H.custom_pain(SPAN_WARNING("You feel a tiny prick!"), 1, TRUE, H.get_organ(user.zone_sel.selecting))
@@ -81,7 +81,7 @@
 			reagent_volumes[reagent_ids[mode]] -= t
 			if (should_admin_log)
 				admin_inject_log(user, M, src, reagent_ids[mode], t)
-			to_chat(user, "<span class='notice'>[t] units injected. [reagent_volumes[reagent_ids[mode]]] units remaining.</span>")
+			to_chat(user, SPAN_NOTICE("[t] units injected. [reagent_volumes[reagent_ids[mode]]] units remaining."))
 	return
 
 /obj/item/reagent_containers/borghypo/attack_self(mob/user as mob) //Change the mode
@@ -105,7 +105,7 @@
 			playsound(loc, 'sound/effects/pop.ogg', 50, 0)
 			mode = index
 			var/datum/reagent/R = reagent_ids[mode]
-			to_chat(usr, "<span class='notice'>Synthesizer is now producing '[initial(R.name)]'.</span>")
+			to_chat(usr, SPAN_NOTICE("Synthesizer is now producing '[initial(R.name)]'."))
 		return TOPIC_REFRESH
 
 /obj/item/reagent_containers/borghypo/examine(mob/user, distance)
@@ -114,7 +114,7 @@
 		return
 
 	var/datum/reagent/R = reagent_ids[mode]
-	to_chat(user, "<span class='notice'>It is currently producing [initial(R.name)] and has [reagent_volumes[reagent_ids[mode]]] out of [volume] units left.</span>")
+	to_chat(user, SPAN_NOTICE("It is currently producing [initial(R.name)] and has [reagent_volumes[reagent_ids[mode]]] out of [volume] units left."))
 
 /obj/item/reagent_containers/borghypo/service
 	name = "cyborg drink synthesizer"
@@ -172,15 +172,15 @@
 		return
 
 	if(!reagent_volumes[reagent_ids[mode]])
-		to_chat(user, "<span class='notice'>[src] is out of this reagent, give it some time to refill.</span>")
+		to_chat(user, SPAN_NOTICE("[src] is out of this reagent, give it some time to refill."))
 		return
 
 	if(!target.reagents.get_free_space())
-		to_chat(user, "<span class='notice'>[target] is full.</span>")
+		to_chat(user, SPAN_NOTICE("[target] is full."))
 		return
 
 	var/t = min(amount_per_transfer_from_this, reagent_volumes[reagent_ids[mode]])
 	target.reagents.add_reagent(reagent_ids[mode], t)
 	reagent_volumes[reagent_ids[mode]] -= t
-	to_chat(user, "<span class='notice'>You transfer [t] units of the solution to [target].</span>")
+	to_chat(user, SPAN_NOTICE("You transfer [t] units of the solution to [target]."))
 	return

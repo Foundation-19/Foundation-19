@@ -87,7 +87,7 @@
 	if(!owner || agony_amount < 5)
 		return
 	if(prob(min(agony_amount*2,50)))
-		to_chat(owner, "<span class='warning'>Your [src] buckles from the shock!</span>")
+		to_chat(owner, SPAN_WARNING("Your [src] buckles from the shock!"))
 		owner.Weaken(5)
 
 /obj/item/organ/external/diona/leg/right
@@ -113,7 +113,7 @@
 	if(!owner || agony_amount < 5)
 		return
 	if(prob(min(agony_amount*4,50)))
-		to_chat(owner, "<span class='warning'>You lose your footing as your [src] spasms!</span>")
+		to_chat(owner, SPAN_WARNING("You lose your footing as your [src] spasms!"))
 		owner.Weaken(5)
 
 /obj/item/organ/external/diona/foot/right

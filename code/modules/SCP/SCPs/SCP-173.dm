@@ -120,10 +120,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 			return
 		var/mob/living/carbon/human/H = A
 		if(H.SCP)
-			to_chat(src, SPAN_WARNING(SPAN_ITALIC("[H] is a fellow SCP!")))
+			to_chat(src, SPAN_WARNING("<I>[H] is a fellow SCP!</I>"))
 			return
 		if(H.stat == DEAD)
-			to_chat(src, SPAN_WARNING(SPAN_ITALIC("[H] is already dead!")))
+			to_chat(src, SPAN_WARNING("<I>[H] is already dead!</I>"))
 			return
 		snap_cooldown = world.time + snap_cooldown_time
 		visible_message(SPAN_DANGER("[src] snaps [H]'s neck!"))
@@ -550,11 +550,11 @@ GLOBAL_LIST_EMPTY(scp173s)
 	. = FALSE
 	switch(acid_melted)
 		if(0)
-			visible_message(SPAN_WARNING("Acid hits \the [src] with a sizzle!"))
+			visible_message(SPAN_CLASS("euclid","Acid hits \the [src] with a sizzle!"))
 		if(1 to 3)
-			visible_message(SPAN_WARNING("The acid melts \the [src]!"))
+			visible_message(SPAN_CLASS("euclid","The acid melts \the [src]!"))
 		if(4)
-			visible_message(SPAN_WARNING("The acid melts \the [src] away into nothing!"))
+			visible_message(SPAN_CLASS("euclid","The acid melts \the [src] away into nothing!"))
 			. = TRUE
 			qdel(src)
 	acid_melted++

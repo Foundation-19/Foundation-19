@@ -647,7 +647,7 @@
 
 		attack_hand(mob/user as mob)
 			if(!src.allowed(user))
-				to_chat(user, "<span class='warning'>Access denied.</span>")
+				to_chat(user, SPAN_WARNING("Access denied."))
 				return
 			..()
 

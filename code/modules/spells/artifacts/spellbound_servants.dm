@@ -241,7 +241,7 @@
 
 /obj/item/summoning_stone/attack_self(mob/user)
 	if(user.z in GLOB.using_map.admin_levels)
-		to_chat(user, "<span class='warning'>You cannot use \the [src] here.</span>")
+		to_chat(user, SPAN_WARNING("You cannot use \the [src] here."))
 		return
 	user.set_machine(src)
 	interact(user)
@@ -273,7 +273,7 @@
 				if(T.density)
 					turfs -= T
 			if(turfs.len)
-				src.visible_message("<span class='notice'>\The [src] vanishes!</span>")
+				src.visible_message(SPAN_NOTICE("\The [src] vanishes!"))
 				src.forceMove(pick(turfs))
 	show_browser(user, null, "window=summoning")
 	qdel(src)

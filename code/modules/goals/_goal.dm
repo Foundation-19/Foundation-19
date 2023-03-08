@@ -53,7 +53,7 @@
 	if(completion_message && check_success())
 		if(istype(owner, /datum/mind))
 			var/datum/mind/mind = owner
-			to_chat(mind.current, "<font color='green'><b>[completion_message]</b></font>")
+			to_chat(mind.current, FONT_COLORED("green","<b>[completion_message]</b>"))
 
 /datum/goal/proc/on_failure()
 	if(failure_message && !check_success() && istype(owner, /datum/mind))

@@ -15,11 +15,11 @@
 
 /obj/structure/attack_generic(mob/user, damage, attack_verb, wallbreaker)
 	if(wallbreaker && damage && breakable)
-		visible_message("<span class='danger'>\The [user] smashes the \[src] to pieces!</span>")
+		visible_message(SPAN_DANGER("\The [user] smashes \the [src] to pieces!"))
 		attack_animation(user)
 		qdel(src)
 		return 1
-	visible_message("<span class='danger'>\The [user] [attack_verb] \the [src]!</span>")
+	visible_message(SPAN_DANGER("\The [user] [attack_verb] \the [src]!"))
 	attack_animation(user)
 	damage_health(damage, BRUTE)
 	return 1
@@ -84,7 +84,7 @@
 
 /obj/structure/grab_attack(obj/item/grab/G)
 	if (!G.force_danger())
-		to_chat(G.assailant, "<span class='danger'>You need a better grip to do that!</span>")
+		to_chat(G.assailant, SPAN_DANGER("You need a better grip to do that!"))
 		return TRUE
 	if (G.assailant.a_intent == I_HURT)
 		// Slam their face against the table.
@@ -92,7 +92,7 @@
 		if (prob(30 * (1 - blocked)))
 			G.affecting.Weaken(5)
 		G.affecting.apply_damage(8, BRUTE, BP_HEAD)
-		visible_message("<span class='danger'>[G.assailant] slams [G.affecting]'s face against \the [src]!</span>")
+		visible_message(SPAN_DANGER("[G.assailant] slams [G.affecting]'s face against \the [src]!"))
 		if (material)
 			playsound(loc, material.tableslam_noise, 50, 1)
 		else
@@ -102,11 +102,11 @@
 	else if(atom_flags & ATOM_FLAG_CLIMBABLE)
 		var/obj/occupied = turf_is_crowded()
 		if (occupied)
-			to_chat(G.assailant, "<span class='danger'>There's \a [occupied] in the way.</span>")
+			to_chat(G.assailant, SPAN_DANGER("There's \a [occupied] in the way."))
 			return TRUE
 		G.affecting.forceMove(src.loc)
 		G.affecting.Weaken(rand(2,5))
-		visible_message("<span class='danger'>[G.assailant] puts [G.affecting] on \the [src].</span>")
+		visible_message(SPAN_DANGER("[G.assailant] puts [G.affecting] on \the [src]."))
 		qdel(G)
 		return TRUE
 

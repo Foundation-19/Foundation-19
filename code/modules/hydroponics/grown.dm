@@ -20,7 +20,7 @@
 /obj/item/reagent_containers/food/snacks/grown/Initialize()
 	. = ..()
 	if(!SSplants)
-		log_error("<span class='danger'>Plant controller does not exist and [src] requires it. Aborting.</span>")
+		log_error(SPAN_DANGER("Plant controller does not exist and [src] requires it. Aborting."))
 		return INITIALIZE_HINT_QDEL
 
 	seed = SSplants.seeds[plantname]
@@ -69,7 +69,7 @@
 	if(!SSplants)
 		sleep(250) // ugly hack, should mean roundstart plants are fine.
 	if(!SSplants)
-		log_error("<span class='danger'>Plant controller does not exist and [src] requires it. Aborting.</span>")
+		log_error(SPAN_DANGER("Plant controller does not exist and [src] requires it. Aborting."))
 		qdel(src)
 		return
 
@@ -239,7 +239,7 @@
 			return
 		if(prob(35))
 			if(user)
-				to_chat(user, "<span class='danger'>\The [src] has fallen to bits.</span>")
+				to_chat(user, SPAN_DANGER("\The [src] has fallen to bits."))
 			qdel(src)
 
 /obj/item/reagent_containers/food/snacks/grown/attack_self(mob/user as mob)
@@ -251,7 +251,7 @@
 		return
 
 	if(user.a_intent == I_HURT)
-		user.visible_message("<span class='danger'>\The [user] squashes \the [src]!</span>")
+		user.visible_message(SPAN_DANGER("\The [user] squashes \the [src]!"))
 		seed.thrown_at(src,user)
 		sleep(-1)
 		if(src) qdel(src)

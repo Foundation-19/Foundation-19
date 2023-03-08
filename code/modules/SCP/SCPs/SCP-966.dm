@@ -18,11 +18,11 @@
 		return
 
 	if(istype(A, /obj/machinery/door/blast/regular))
-		to_chat(src, "<span class='warning'>You cannot open blast doors.</span>")
+		to_chat(src, SPAN_WARNING("You cannot open blast doors."))
 		return
 
 	if(!A.Adjacent(src))
-		to_chat(src, "<span class='warning'>\The [A] is too far away.</span>")
+		to_chat(src, SPAN_WARNING("\The [A] is too far away."))
 		return
 
 	if(!A.density)

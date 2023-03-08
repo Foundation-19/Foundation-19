@@ -56,12 +56,12 @@
 		overload = 0
 		step_in = initial(step_in)
 		step_energy_drain = initial(step_energy_drain)
-		src.occupant_message("<font color='blue'>You disable leg actuators overload.</font>")
+		src.occupant_message(FONT_COLORED("blue","You disable leg actuators overload."))
 	else
 		overload = 1
 		step_in = min(1, round(step_in/2))
 		step_energy_drain = step_energy_drain*overload_coeff
-		src.occupant_message("<font color='red'>You enable leg actuators overload.</font>")
+		src.occupant_message(FONT_COLORED("red","You enable leg actuators overload."))
 	src.log_message("Toggled leg actuators overload.")
 	return
 
@@ -73,7 +73,7 @@
 			overload = 0
 			step_in = initial(step_in)
 			step_energy_drain = initial(step_energy_drain)
-			src.occupant_message("<font color='red'>Leg actuators damage threshold exceded. Disabling overload.</font>")
+			src.occupant_message(FONT_COLORED("red","Leg actuators damage threshold exceded. Disabling overload."))
 	return
 
 
