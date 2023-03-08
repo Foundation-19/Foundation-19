@@ -31,7 +31,7 @@
 	if(progress >= MAX_PROGRESS)
 		for(var/mob/observer/ghost/O in GLOB.ghost_mob_list)
 			if(O.client && O.client.prefs && (MODE_XENOMORPH in O.client.prefs.be_special_role))
-				to_chat(O, "<span class='notice'>An alien is ready to hatch! ([ghost_follow_link(src, O)]) (<a href='byond://?src=\ref[src];spawn=1'>spawn</a>)</span>")
+				to_chat(O, SPAN_NOTICE("An alien is ready to hatch! ([ghost_follow_link(src, O)]) (<a href='byond://?src=\ref[src];spawn=1'>spawn</a>)"))
 		STOP_PROCESSING(SSobj, src)
 		update_icon()
 
@@ -56,7 +56,7 @@
 
 	// Check for bans properly.
 	if(jobban_isbanned(user, MODE_XENOMORPH))
-		to_chat(user, "<span class='danger'>You are banned from playing a Xenophage.</span>")
+		to_chat(user, SPAN_DANGER("You are banned from playing a Xenophage."))
 		return
 
 	var/confirm = alert(user, "Are you sure you want to join as a Xenophage larva?", "Become Larva", "No", "Yes")
@@ -76,7 +76,7 @@
 	sleep(5)
 
 	if(!src || !user)
-		visible_message("<span class='alium'>\The [src] writhes with internal motion, but nothing comes out.</span>")
+		visible_message(SPAN_CLASS("alium","\The [src] writhes with internal motion, but nothing comes out."))
 		progress = MAX_PROGRESS // Someone else can have a go.
 		return // What a pain.
 
@@ -87,7 +87,7 @@
 	spawn(-1)
 		if(user) qdel(user) // Remove the keyless ghost if it exists.
 
-	visible_message("<span class='alium'>\The [src] splits open with a wet slithering noise, and \the [larva] writhes free!</span>")
+	visible_message(SPAN_CLASS("alium","\The [src] splits open with a wet slithering noise, and \the [larva] writhes free!"))
 
 	// Turn us into a hatched egg.
 	name = "hatched alien egg"

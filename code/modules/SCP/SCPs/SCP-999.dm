@@ -65,12 +65,12 @@ GLOBAL_LIST_EMPTY(scp999s)
 				attached.adjustBruteLoss(-rand(20,30))
 				attached.adjustFireLoss(-rand(20, 30))
 				attached.adjustHalLoss(-200)
-				to_chat(attached, "<span class='notice'>You feel your wounds grow numb...</span>")
+				to_chat(attached, SPAN_NOTICE("You feel your wounds grow numb..."))
 				attached.emote(pick("laugh","giggle","smile","grin"))
 			else
 				if(prob(20))
 					attached.Stun(3)
-					visible_message("<span class='warning'>[src] wraps around [attached]'s legs, immobilizing them!</span>")
+					visible_message(SPAN_WARNING("[src] wraps around [attached]'s legs, immobilizing them!"))
 					attached.emote(pick("laugh","giggle","smile","grin"))
 
 /mob/living/simple_animal/scp_999/UnarmedAttack(atom/a)
@@ -78,17 +78,17 @@ GLOBAL_LIST_EMPTY(scp999s)
 		if(a_intent == I_HELP)
 			attached_mode = HUGGING
 			attached = a
-			a.visible_message("<span class='notice'>[src] begins to give [attached] a big hug!</span>", "<span class='notice'>[src] begins hugging you, filling you with happiness!</span>")
+			a.visible_message(SPAN_NOTICE("[src] begins to give [attached] a big hug!"), SPAN_NOTICE("[src] begins hugging you, filling you with happiness!"))
 		else if(a_intent == I_HURT)
 			attached_mode = IMMOBILIZING
 			attached = a
-			a.visible_message("<span class='warning'>[src] begins to wrap around [attached]!</span>", "<span class='warning'>[src] begins wrapping around you, filling you with happiness!</span>")
+			a.visible_message(SPAN_WARNING("[src] begins to wrap around [attached]!"), SPAN_WARNING("[src] begins wrapping around you, filling you with happiness!"))
 		forceMove(get_turf(attached))
 
 /mob/living/simple_animal/scp_999/Move(a,b,f)
 	if(attached)
 		if(attached_mode == HUGGING)
-			to_chat(src, "<span class='notice'>You are hugging someone! Detach to move!</span>")
+			to_chat(src, SPAN_NOTICE("You are hugging someone! Detach to move!"))
 			return
 		else
 			if(prob(5))
@@ -101,10 +101,10 @@ GLOBAL_LIST_EMPTY(scp999s)
 	set name = "Detach"
 	if(attached)
 		forceMove(get_turf(src))
-		visible_message("<span class='notice'>[src] detaches from [attached]!</span>")
+		visible_message(SPAN_NOTICE("[src] detaches from [attached]!"))
 		attached = null
 	else
-		to_chat(src, "<span class='warning'><i>We aren't attached to anything!</i></span>")
+		to_chat(src, SPAN_WARNING("<i>We aren't attached to anything!</i>"))
 
 #undef IMMOBILIZING
 #undef HUGGING

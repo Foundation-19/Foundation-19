@@ -107,18 +107,18 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 		if("AIC")
 			if(last_request + 200 < world.time) //don't spam the AI with requests you jerk!
 				last_request = world.time
-				to_chat(user, "<span class='notice'>You request an AI's presence.</span>")
+				to_chat(user, SPAN_NOTICE("You request an AI's presence."))
 				var/area/area = get_area(src)
 				for(var/mob/living/silicon/ai/AI in GLOB.living_mob_list_)
 					if(!AI.client)	continue
 					if (holopadType != HOLOPAD_LONG_RANGE && !AreConnectedZLevels(AI.z, src.z))
 						continue
-					to_chat(AI, "<span class='info'>Your presence is requested at <a href='?src=\ref[AI];jumptoholopad=\ref[src]'>\the [area]</a>.</span>")
+					to_chat(AI, SPAN_INFO("Your presence is requested at <a href='?src=\ref[AI];jumptoholopad=\ref[src]'>\the [area]</a>."))
 			else
-				to_chat(user, "<span class='notice'>A request for AI presence was already sent recently.</span>")
+				to_chat(user, SPAN_NOTICE("A request for AI presence was already sent recently."))
 		if("Holocomms")
 			if(user.loc != src.loc)
-				to_chat(user, "<span class='info'>Please step onto the holopad.</span>")
+				to_chat(user, SPAN_INFO("Please step onto the holopad."))
 				return
 			if(last_request + 200 < world.time) //don't spam other people with requests either, you jerk!
 				last_request = world.time
@@ -140,17 +140,17 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 				var/temppad = input(user, "Which holopad would you like to contact?", "holopad list") as null|anything in holopadlist
 				targetpad = holopadlist["[temppad]"]
 				if(targetpad==src)
-					to_chat(user, "<span class='info'>Using such sophisticated technology, just to talk to yourself seems a bit silly.</span>")
+					to_chat(user, SPAN_INFO("Using such sophisticated technology, just to talk to yourself seems a bit silly."))
 					targetpad = null //Clean up the mess after an unsuccessful call
 					return
 				if(targetpad && targetpad.caller_id)
-					to_chat(user, "<span class='info'>The pad flashes a busy sign. Maybe you should try again later..</span>")
+					to_chat(user, SPAN_INFO("The pad flashes a busy sign. Maybe you should try again later.."))
 					targetpad = null //Clean up the mess after an unsuccessful call
 					return
 				if(targetpad)
 					make_call(targetpad, user)
 			else
-				to_chat(user, "<span class='notice'>A request for holographic communication was already sent recently.</span>")
+				to_chat(user, SPAN_NOTICE("A request for holographic communication was already sent recently."))
 
 
 /obj/machinery/hologram/holopad/proc/make_call(obj/machinery/hologram/holopad/targetpad, mob/living/carbon/user)
@@ -161,7 +161,7 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 	playsound(targetpad.loc, 'sound/machines/chime.ogg', 25, 5)
 	targetpad.icon_state = "[targetpad.base_icon]1"
 	targetpad.audible_message("<b>\The [src]</b> announces, \"Incoming communications request from [targetpad.sourcepad.loc.loc].\"")
-	to_chat(user, "<span class='notice'>Trying to establish a connection to the holopad in [targetpad.loc.loc]... Please await confirmation from recipient.</span>")
+	to_chat(user, SPAN_NOTICE("Trying to establish a connection to the holopad in [targetpad.loc.loc]... Please await confirmation from recipient."))
 	targetpad.addrecentcall(get_area(src))
 
 

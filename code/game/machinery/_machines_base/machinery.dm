@@ -305,15 +305,15 @@ Class Procs:
 	if(!CanPhysicallyInteract(user))
 		return FALSE // The interactions below all assume physical access to the machine. If this is not the case, we let the machine take further action.
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
+		to_chat(user, SPAN_WARNING("You don't have the dexterity to do this!"))
 		return TRUE
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.getBrainLoss() >= 55)
-			visible_message("<span class='warning'>[H] stares cluelessly at \the [src].</span>")
+			visible_message(SPAN_WARNING("[H] stares cluelessly at \the [src]."))
 			return TRUE
 		else if(prob(H.getBrainLoss()))
-			to_chat(user, "<span class='warning'>You momentarily forget how to use \the [src].</span>")
+			to_chat(user, SPAN_WARNING("You momentarily forget how to use \the [src]."))
 			return TRUE
 	if((. = component_attack_hand(user)))
 		return
@@ -415,12 +415,12 @@ Class Procs:
 		playsound(src, clicksound, clickvol)
 
 /obj/machinery/proc/display_parts(mob/user)
-	to_chat(user, "<span class='notice'>Following parts detected in the machine:</span>")
+	to_chat(user, SPAN_NOTICE("Following parts detected in the machine:"))
 	for(var/obj/item/C in component_parts)
-		to_chat(user, "<span class='notice'>	[C.name]</span>")
+		to_chat(user, SPAN_NOTICE("	[C.name]"))
 	for(var/path in uncreated_component_parts)
 		var/obj/item/thing = path
-		to_chat(user, "<span class='notice'>	[initial(thing.name)] ([uncreated_component_parts[path] || 1])</span>")
+		to_chat(user, SPAN_NOTICE("	[initial(thing.name)] ([uncreated_component_parts[path] || 1])"))
 
 /obj/machinery/examine(mob/user)
 	. = ..()

@@ -198,7 +198,7 @@
 					continue
 				L.adjustFireLoss(15)
 				L.Weaken(2)
-				to_chat(L, "<span class='userdanger'>You're hit by [src]'s fire field!</span>")
+				to_chat(L, SPAN_USERDANGER("You're hit by [src]'s fire field!"))
 		sleep(1.5)
 
 /mob/living/simple_animal/hostile/megafauna/apostle/proc/holy_blink(target)
@@ -213,12 +213,12 @@
 	for(var/turf/b in range(1, T))
 		new /obj/effect/temporary/sparkle(b)
 	sleep(5)
-	src.visible_message("<span class='danger'>[src] blinks away!</span>")
+	src.visible_message(SPAN_DANGER("[src] blinks away!"))
 	for(var/turf/b in range(1, T))
 		new /obj/effect/temporary/smoke(b)
 		for(var/mob/living/H in b)
 			if(H.faction != "apostle")
-				to_chat(H, "<span class='userdanger'>A sudden wave of wind sends you flying!</span>")
+				to_chat(H, SPAN_USERDANGER("A sudden wave of wind sends you flying!"))
 				H.adjustBruteLoss(10)
 				H.Weaken(2)
 				shake_camera(H, 2, 1)
@@ -229,7 +229,7 @@
 	rapture_skill.Remove(src)
 	apostle_num = 666 // This is for special stuff in attacks
 	chosen_attack = 1 // To avoid rapture spam
-	to_chat(src, "<span class='danger'>You begin the final ritual...</span>")
+	to_chat(src, SPAN_DANGER("You begin the final ritual..."))
 	holy_revival_cooldown_base = 8 SECONDS
 	fire_field_cooldown_base = 16 SECONDS
 	field_range += 1 // Powercrepe

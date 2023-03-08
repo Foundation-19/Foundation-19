@@ -25,7 +25,7 @@
 			M.weakened = max(M.weakened, 3)
 			victims++
 			if(prob(5))
-				to_chat(M, "<span class='warning'>[pick("You feel tingly","You feel like floating","It is hard to speak","You can barely move")].</span>")
+				to_chat(M, SPAN_WARNING("[pick("You feel tingly","You feel like floating","It is hard to speak","You can barely move")]."))
 		if(victims)
 			use_power_oneoff(active_power_usage * victims)
 
@@ -67,7 +67,7 @@
 				if(anchored)
 					activate()
 				else
-					to_chat(user, "<span class='warning'>You are unable to activate [src] until it is properly secured on the ground.</span>")
+					to_chat(user, SPAN_WARNING("You are unable to activate [src] until it is properly secured on the ground."))
 		else
 			deactivate()
 		. = TOPIC_REFRESH
@@ -96,13 +96,13 @@
 	else if(isWrench(W))
 		if(!suspension_field)
 			anchored = !anchored
-			to_chat(user, "<span class='info'>You wrench the stabilising legs [anchored ? "into place" : "up against the body"].</span>")
+			to_chat(user, SPAN_INFO("You wrench the stabilising legs [anchored ? "into place" : "up against the body"]."))
 			if(anchored)
 				desc = "It is resting securely on four stubby legs."
 			else
 				desc = "It has stubby legs bolted up against it's body for stabilising."
 		else
-			to_chat(user, "<span class='warning'>You are unable to secure [src] while it is active!</span>")
+			to_chat(user, SPAN_WARNING("You are unable to secure [src] while it is active!"))
 
 //checks for whether the machine can be activated or not should already have occurred by this point
 /obj/machinery/suspension_gen/proc/activate()
@@ -111,10 +111,10 @@
 
 	for(var/mob/living/M in T)
 		M.weakened += 5
-		M.visible_message("<span class='notice'>[icon2html(M, viewers(get_turf(M)))] [M] begins to float in the air!</span>","You feel tingly and light, but it is difficult to move.")
+		M.visible_message(SPAN_NOTICE("[icon2html(M, viewers(get_turf(M)))] [M] begins to float in the air!"),"You feel tingly and light, but it is difficult to move.")
 
 	suspension_field = new(T)
-	src.visible_message("<span class='notice'>[icon2html(src, viewers(get_turf(src)))] [src] activates with a low hum.</span>")
+	src.visible_message(SPAN_NOTICE("[icon2html(src, viewers(get_turf(src)))] [src] activates with a low hum."))
 	icon_state = "suspension3"
 
 	for(var/obj/item/I in T)
@@ -124,7 +124,7 @@
 	if(collected)
 		suspension_field.icon_state = "energynet"
 		suspension_field.add_overlay("shield2")
-		src.visible_message("<span class='notice'>[icon2html(suspension_field, viewers(get_turf(src)))] [suspension_field] gently absconds [collected > 1 ? "something" : "several things"].</span>")
+		src.visible_message(SPAN_NOTICE("[icon2html(suspension_field, viewers(get_turf(src)))] [suspension_field] gently absconds [collected > 1 ? "something" : "several things"]."))
 	else
 		if(istype(T,/turf/simulated/mineral) || istype(T,/turf/simulated/wall))
 			suspension_field.icon_state = "shieldsparkles"
@@ -138,10 +138,10 @@
 	var/turf/T = get_turf(suspension_field)
 
 	for(var/mob/living/M in T)
-		to_chat(M, "<span class='info'>You no longer feel like floating.</span>")
+		to_chat(M, SPAN_INFO("You no longer feel like floating."))
 		M.weakened = min(M.weakened, 3)
 
-	src.visible_message("<span class='notice'>[icon2html(src, viewers(get_turf(src)))] [src] deactivates with a gentle shudder.</span>")
+	src.visible_message(SPAN_NOTICE("[icon2html(src, viewers(get_turf(src)))] [src] deactivates with a gentle shudder."))
 	qdel(suspension_field)
 	suspension_field = null
 	icon_state = "suspension2"
@@ -157,7 +157,7 @@
 	set category = "Object"
 
 	if(anchored)
-		to_chat(usr, "<span class='warning'>You cannot rotate [src], it has been firmly fixed to the floor.</span>")
+		to_chat(usr, SPAN_WARNING("You cannot rotate [src], it has been firmly fixed to the floor."))
 	else
 		set_dir(turn(dir, 90))
 
@@ -167,7 +167,7 @@
 	set category = "Object"
 
 	if(anchored)
-		to_chat(usr, "<span class='warning'>You cannot rotate [src], it has been firmly fixed to the floor.</span>")
+		to_chat(usr, SPAN_WARNING("You cannot rotate [src], it has been firmly fixed to the floor."))
 	else
 		set_dir(turn(dir, -90))
 

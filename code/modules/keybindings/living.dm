@@ -36,7 +36,7 @@
 	var/mob/living/L = user.mob
 	var/obj/item/hand = L.get_active_hand()
 	if(!hand)
-		to_chat(L, "<span class='warning'>You have nothing to drop in your hand.</span>")
+		to_chat(L, SPAN_WARNING("You have nothing to drop in your hand."))
 	else if(hand.can_be_dropped_by_client(L))
 		L.drop_item()
 

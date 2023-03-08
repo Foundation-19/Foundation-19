@@ -58,7 +58,7 @@
 				drop = 1
 	if(drop)
 		if(standing)
-			to_chat(owner, "<span class='warning'>You don't have enough energy to stand!</span>")
+			to_chat(owner, SPAN_WARNING("You don't have enough energy to stand!"))
 		owner.Weaken(2)
 
 /obj/item/organ/internal/cell/emp_act(severity)
@@ -70,16 +70,16 @@
 	if(isScrewdriver(W))
 		if(open)
 			open = 0
-			to_chat(user, "<span class='notice'>You screw the battery panel in place.</span>")
+			to_chat(user, SPAN_NOTICE("You screw the battery panel in place."))
 		else
 			open = 1
-			to_chat(user, "<span class='notice'>You unscrew the battery panel.</span>")
+			to_chat(user, SPAN_NOTICE("You unscrew the battery panel."))
 
 	if(isCrowbar(W))
 		if(open)
 			if(cell)
 				user.put_in_hands(cell)
-				to_chat(user, "<span class='notice'>You remove \the [cell] from \the [src].</span>")
+				to_chat(user, SPAN_NOTICE("You remove \the [cell] from \the [src]."))
 				cell = null
 
 	if (istype(W, /obj/item/weapon/cell))
@@ -96,7 +96,7 @@
 	// This is very ghetto way of rebooting an IPC. TODO better way.
 	if(owner && owner.stat == DEAD)
 		owner.set_stat(CONSCIOUS)
-		owner.visible_message("<span class='danger'>\The [owner] twitches visibly!</span>")
+		owner.visible_message(SPAN_DANGER("\The [owner] twitches visibly!"))
 
 /obj/item/organ/internal/cell/listen()
 	if(get_charge())
@@ -148,7 +148,7 @@
 	if(owner && owner.stat == DEAD)
 		owner.set_stat(CONSCIOUS)
 		owner.switch_from_dead_to_living_mob_list()
-		owner.visible_message("<span class='danger'>\The [owner] twitches visibly!</span>")
+		owner.visible_message(SPAN_DANGER("\The [owner] twitches visibly!"))
 
 /obj/item/organ/internal/mmi_holder/cut_away(mob/living/user)
 	var/obj/item/organ/external/parent = owner.get_organ(parent_organ)

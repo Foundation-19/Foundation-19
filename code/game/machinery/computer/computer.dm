@@ -128,10 +128,10 @@
 
 /obj/machinery/computer/dismantle(mob/user)
 	if(stat & BROKEN)
-		to_chat(user, "<span class='notice'>The broken glass falls out.</span>")
+		to_chat(user, SPAN_NOTICE("The broken glass falls out."))
 		for(var/obj/item/stock_parts/console_screen/screen in component_parts)
 			qdel(screen)
 			new /obj/item/material/shard(loc)
 	else
-		to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
+		to_chat(user, SPAN_NOTICE("You disconnect the monitor."))
 	return ..()

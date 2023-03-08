@@ -320,7 +320,7 @@
 	if(. && slot == slot_back)
 		var/mob/living/carbon/human/H = M
 		if(!istype(H) || H.species.get_bodytype(H) != mantid_caste)
-			to_chat(H, "<span class='danger'>Your species cannot wear \the [src].</span>")
+			to_chat(H, SPAN_DANGER("Your species cannot wear \the [src]."))
 			. = 0
 
 /obj/item/clothing/head/helmet/space/rig/mantid

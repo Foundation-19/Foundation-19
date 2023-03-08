@@ -28,13 +28,13 @@
 	if(force || (message != last_pain_message) || (world.time >= next_pain_time))
 		last_pain_message = message
 		if(power >= 70)
-			to_chat(src, "<span class='danger'><font size=3>[message]</font></span>")
+			to_chat(src, SPAN_DANGER("<font size=3>[message]</font>"))
 		else if(power >= 40)
-			to_chat(src, "<span class='danger'><font size=2>[message]</font></span>")
+			to_chat(src, SPAN_DANGER("<font size=2>[message]</font>"))
 		else if(power >= 10)
-			to_chat(src, "<span class='danger'>[message]</span>")
+			to_chat(src, SPAN_DANGER("[message]"))
 		else
-			to_chat(src, "<span class='warning'>[message]</span>")
+			to_chat(src, SPAN_WARNING("[message]"))
 
 		var/force_emote = species.get_pain_emote(src, power)
 		if(force_emote && prob(power))

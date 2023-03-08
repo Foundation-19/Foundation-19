@@ -56,7 +56,7 @@
 
 /mob/proc/mob_rest()
 	if(resting && !stunned && !weakened)//The incapacitated proc includes resting for whatever fucking stupid reason I hate SS13 code so fucking much.
-		visible_message("<span class='notice'>[usr] is trying to get up.</span>")
+		visible_message(SPAN_NOTICE("[usr] is trying to get up."))
 		if(do_after(src, 20))
 			resting = 0
 			rest.icon_state = "rest0"
