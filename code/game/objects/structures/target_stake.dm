@@ -11,14 +11,14 @@
 
 /obj/structure/target_stake/attackby(obj/item/W, mob/user)
 	if (!pinned_target && istype(W, /obj/item/target) && user.unEquip(W, get_turf(src)))
-		to_chat(user, "<span class='notice'>You slide [W] into the stake.</span>")
+		to_chat(user, SPAN_NOTICE("You slide [W] into the stake."))
 		set_target(W)
 
 /obj/structure/target_stake/attack_hand(mob/user)
 	. = ..()
 	if (pinned_target && ishuman(user))
 		var/obj/item/target/T = pinned_target
-		to_chat(user, "<span class='notice'>You take [T] out of the stake.</span>")
+		to_chat(user, SPAN_NOTICE("You take [T] out of the stake."))
 		set_target(null)
 		user.put_in_hands(T)
 

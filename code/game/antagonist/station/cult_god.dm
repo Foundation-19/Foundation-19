@@ -80,7 +80,7 @@ var/datum/antagonist/godcultist/godcult
 				add_cultist(player, D)
 				log_and_message_admins("has set [key_name(player.current)] to be a minion of [key_name(D)]")
 		else
-			to_chat(usr, "<span class='warning'>There are no deities to be linked to.</span>")
+			to_chat(usr, SPAN_WARNING("There are no deities to be linked to."))
 		return 1
 
 /datum/antagonist/godcultist/proc/add_cultist(datum/mind/player, mob/living/deity/deity)
@@ -111,6 +111,6 @@ var/datum/antagonist/godcultist/godcult
 		return
 
 	//Make em wait a few seconds.
-	src.visible_message("\The [src] bows their head down, muttering something.", "<span class='notice'>You send the message \"[msg]\" to your master.</span>")
-	to_chat(D, "<span class='notice'>\The [src] (<A href='?src=\ref[D];jump=\ref[src];'>J</A>) prays, \"[msg]\"</span>")
+	src.visible_message("\The [src] bows their head down, muttering something.", SPAN_NOTICE("You send the message \"[msg]\" to your master."))
+	to_chat(D, SPAN_NOTICE("\The [src] (<A href='?src=\ref[D];jump=\ref[src];'>J</A>) prays, \"[msg]\""))
 	log_and_message_admins("dprayed, \"[msg]\" to \the [key_name(D)]")

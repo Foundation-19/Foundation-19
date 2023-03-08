@@ -128,10 +128,10 @@ var/list/name_to_material
 // Placeholders for light tiles and rglass.
 /material/proc/build_rod_product(mob/user, obj/item/stack/used_stack, obj/item/stack/target_stack)
 	if(!rod_product)
-		to_chat(user, "<span class='warning'>You cannot make anything out of \the [target_stack]</span>")
+		to_chat(user, SPAN_WARNING("You cannot make anything out of \the [target_stack]"))
 		return
 	if(used_stack.get_amount() < 1 || target_stack.get_amount() < 1)
-		to_chat(user, "<span class='warning'>You need one rod and one sheet of [display_name] to make anything useful.</span>")
+		to_chat(user, SPAN_WARNING("You need one rod and one sheet of [display_name] to make anything useful."))
 		return
 	if(!user.skillcheck(user.engineering_skill, 60, 1, message = "I have botched bulding what I'm building."))
 		return
@@ -144,10 +144,10 @@ var/list/name_to_material
 
 /material/proc/build_wired_product(mob/user, obj/item/stack/used_stack, obj/item/stack/target_stack)
 	if(!wire_product)
-		to_chat(user, "<span class='warning'>You cannot make anything out of \the [target_stack]</span>")
+		to_chat(user, SPAN_WARNING("You cannot make anything out of \the [target_stack]"))
 		return
 	if(used_stack.get_amount() < 5 || target_stack.get_amount() < 1)
-		to_chat(user, "<span class='warning'>You need five wires and one sheet of [display_name] to make anything useful.</span>")
+		to_chat(user, SPAN_WARNING("You need five wires and one sheet of [display_name] to make anything useful."))
 		return
 
 	if(!user.skillcheck(user.engineering_skill, 60, 1, message = "I have botched adding the wires."))
@@ -155,7 +155,7 @@ var/list/name_to_material
 
 	used_stack.use(5)
 	target_stack.use(1)
-	to_chat(user, "<span class='notice'>You attach wire to the [name].</span>")
+	to_chat(user, SPAN_NOTICE("You attach wire to the [name]."))
 	var/obj/item/product = new wire_product(get_turf(user))
 	if(!(user.l_hand && user.r_hand))
 		user.put_in_hands(product)
@@ -460,7 +460,7 @@ var/list/name_to_material
 		return 0
 
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>This task is too complex for your clumsy hands.</span>")
+		to_chat(user, SPAN_WARNING("This task is too complex for your clumsy hands."))
 		return 1
 
 	if(!user.skillcheck(user.engineering_skill, 60, 1, message = "I have failed to build a window."))
@@ -468,7 +468,7 @@ var/list/name_to_material
 
 	var/turf/T = user.loc
 	if(!istype(T))
-		to_chat(user, "<span class='warning'>You must be standing on open flooring to build a window.</span>")
+		to_chat(user, SPAN_WARNING("You must be standing on open flooring to build a window."))
 		return 1
 
 	var/title = "Sheet-[used_stack.name] ([used_stack.get_amount()] sheet\s left)"
@@ -501,12 +501,12 @@ var/list/name_to_material
 				failed_to_build = 1
 			if(!failed_to_build && choice == "Windoor")
 				if(!is_reinforced())
-					to_chat(user, "<span class='warning'>This material is not reinforced enough to use for a door.</span>")
+					to_chat(user, SPAN_WARNING("This material is not reinforced enough to use for a door."))
 					return
 				if((locate(/obj/structure/windoor_assembly) in T.contents) || (locate(/obj/machinery/door/window) in T.contents))
 					failed_to_build = 1
 	if(failed_to_build)
-		to_chat(user, "<span class='warning'>There is no room in this location.</span>")
+		to_chat(user, SPAN_WARNING("There is no room in this location."))
 		return 1
 
 	var/build_path = /obj/structure/windoor_assembly
@@ -517,7 +517,7 @@ var/list/name_to_material
 		build_path = created_window
 
 	if(used_stack.get_amount() < sheets_needed)
-		to_chat(user, "<span class='warning'>You need at least [sheets_needed] sheets to build this.</span>")
+		to_chat(user, SPAN_WARNING("You need at least [sheets_needed] sheets to build this."))
 		return 1
 
 	// Build the structure and update sheet count etc.

@@ -49,7 +49,7 @@ GLOBAL_LIST_EMPTY(admin_departments)
 		if(!user.unEquip(O, src))
 			return
 		scan = O
-		to_chat(user, "<span class='notice'>You insert \the [O] into \the [src].</span>")
+		to_chat(user, SPAN_NOTICE("You insert \the [O] into \the [src]."))
 	if(isMultitool(O))
 		to_chat(user, SPAN_NOTICE("\The [src]'s department tag is set to [department]."))
 		if(!emagged)

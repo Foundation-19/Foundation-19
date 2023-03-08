@@ -76,14 +76,14 @@
 
 /obj/item/reagent_containers/glass/standard_feed_mob(mob/user, mob/target)
 	if(!is_open_container())
-		to_chat(user, "<span class='notice'>You need to open \the [src] first.</span>")
+		to_chat(user, SPAN_NOTICE("You need to open \the [src] first."))
 		return 1
 	if(user.a_intent == I_HURT)
 		return 1
 	return ..()
 
 /obj/item/reagent_containers/glass/self_feed_message(mob/user)
-	to_chat(user, "<span class='notice'>You swallow a gulp from \the [src].</span>")
+	to_chat(user, SPAN_NOTICE("You swallow a gulp from \the [src]."))
 	if(user.has_personal_goal(/datum/goal/achievement/specific_object/drink))
 		for(var/datum/reagent/R in reagents.reagent_list)
 			user.update_personal_goal(/datum/goal/achievement/specific_object/drink, R.type)
@@ -295,10 +295,10 @@
 /obj/item/reagent_containers/glass/bucket/attackby(obj/D, mob/user as mob)
 	if(istype(D, /obj/item/mop))
 		if(reagents.total_volume < 1)
-			to_chat(user, "<span class='warning'>\The [src] is empty!</span>")
+			to_chat(user, SPAN_WARNING("\The [src] is empty!"))
 		else
 			reagents.trans_to_obj(D, 5)
-			to_chat(user, "<span class='notice'>You wet \the [D] in \the [src].</span>")
+			to_chat(user, SPAN_NOTICE("You wet \the [D] in \the [src]."))
 			playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
 		return
 	else

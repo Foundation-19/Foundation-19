@@ -442,7 +442,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 	var/turf/sourceturf = get_turf(broadcast_source)
 	for(var/mob/M in targets)
 		if(!sourceturf || (get_z(M) in GetConnectedZlevels(sourceturf.z)))
-			M.show_message("<span class='info'>[icon2html(icon, M)] [message]</span>", 1)
+			M.show_message(SPAN_INFO("[icon2html(icon, M)] [message]"), 1)
 
 /proc/mobs_in_area(area/A)
 	var/list/mobs = new
@@ -651,11 +651,11 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 	if(src.jitteriness >= 400 && prob(5)) //Kills people if they have high jitters.
 		if(prob(1))
 			L.take_internal_damage(L.max_damage / 2, 0)
-			to_chat(src, "<span class='danger'>Something explodes in your heart.</span>")
+			to_chat(src, SPAN_DANGER("Something explodes in your heart."))
 			admin_victim_log(src, "has taken <b>lethal heart damage</b> at jitteriness level [src.jitteriness].")
 		else
 			L.take_internal_damage(1, 0)
-			to_chat(src, "<span class='danger'>The jitters are killing you! You feel your heart beating out of your chest.</span>")
+			to_chat(src, SPAN_DANGER("The jitters are killing you! You feel your heart beating out of your chest."))
 			admin_victim_log(src, "has taken <i>minor heart damage</i> at jitteriness level [src.jitteriness].")
 	return 1
 

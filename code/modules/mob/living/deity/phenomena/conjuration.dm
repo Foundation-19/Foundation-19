@@ -22,7 +22,7 @@
 		if(ismob(i))
 			var/mob/M = i
 			M.forceMove(get_turf(cabinet))
-			to_chat(M,"<span class='warning'>You are suddenly flung out of \the [cabinet]!</span>")
+			to_chat(M,SPAN_WARNING("You are suddenly flung out of \the [cabinet]!"))
 	if(cabinet == a)
 		cabinet.forceMove(null) //Move to null space
 	else
@@ -78,10 +78,10 @@
 	..()
 	L.take_overall_damage(rand(5,30),0,0,0,"blunt intrument") //Actual spell does 5d10 but maaaybe too much.
 	playsound(get_turf(L), 'sound/effects/bamf.ogg', 100, 1)
-	to_chat(L, "<span class='danger'>Something hard hits you!</span>")
+	to_chat(L, SPAN_DANGER("Something hard hits you!"))
 	if(L.health < L.maxHealth/2) //If it reduces past 50%
 		var/obj/effect/rift/R = new(get_turf(L))
-		L.visible_message("<span class='danger'>\The [L] is quickly sucked into \a [R]!</span>")
+		L.visible_message(SPAN_DANGER("\The [L] is quickly sucked into \a [R]!"))
 		L.forceMove(R)
 		spawn(300)
 			qdel(R)

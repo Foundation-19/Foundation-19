@@ -95,17 +95,17 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 	if(ishuman(A))
 		if(snap_cooldown > world.time)
-			to_chat(src, "<span class='warning'>You can't attack yet.</span>")
+			to_chat(src, SPAN_WARNING("You can't attack yet."))
 			return
 		var/mob/living/carbon/human/H = A
 		if(H.SCP)
-			to_chat(src, "<span class='warning'><I>[H] is a fellow SCP!</I></span>")
+			to_chat(src, SPAN_WARNING("<I>[H] is a fellow SCP!</I>"))
 			return
 		if(H.stat == DEAD)
-			to_chat(src, "<span class='warning'><I>[H] is already dead!</I></span>")
+			to_chat(src, SPAN_WARNING("<I>[H] is already dead!</I>"))
 			return
 		snap_cooldown = world.time + snap_cooldown_time
-		visible_message("<span class='danger'>[src] snaps [H]'s neck!</span>")
+		visible_message(SPAN_DANGER("[src] snaps [H]'s neck!"))
 		playsound(loc, pick('sound/scp/spook/NeckSnap1.ogg', 'sound/scp/spook/NeckSnap3.ogg'), 50, 1)
 		H.death()
 		return
@@ -114,10 +114,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 	if(istype(A,/obj/machinery/floor_light))
 		if(get_area(A) == spawn_area)
-			to_chat(src, "<span class='warning'>You can't reach the lights in your own containment zone.</span>")
+			to_chat(src, SPAN_WARNING("You can't reach the lights in your own containment zone."))
 			return
 		if(light_break_cooldown > world.time) //cooldown
-			to_chat(src, "<span class='warning'>You can't break that yet.</span>")
+			to_chat(src, SPAN_WARNING("You can't break that yet."))
 			return
 		var/obj/machinery/floor_light/W = A
 		W.physical_attack_hand(src)
@@ -125,10 +125,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 	if(istype(A,/obj/machinery/light))
 		if(get_area(A) == spawn_area)
-			to_chat(src, "<span class='warning'>You can't reach the lights in your own containment zone.</span>")
+			to_chat(src, SPAN_WARNING("You can't reach the lights in your own containment zone."))
 			return
 		if(light_break_cooldown > world.time) //cooldown
-			to_chat(src, "<span class='warning'>You can't break that yet.</span>")
+			to_chat(src, SPAN_WARNING("You can't break that yet."))
 			return
 		var/obj/machinery/light/W = A
 		W.broken()
@@ -176,7 +176,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/ClimbCheck(atom/A)
 	if(IsBeingWatched())
-		to_chat(src, "<span class='danger'>You can't climb while being watched.</span>")
+		to_chat(src, SPAN_DANGER("You can't climb while being watched."))
 		return FALSE
 	return TRUE
 
@@ -216,13 +216,13 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 
 	if(!A.Adjacent(src))
-		to_chat(src, "<span class='warning'>\The [A] is too far away.</span>")
+		to_chat(src, SPAN_WARNING("\The [A] is too far away."))
 		return
 
 	var/open_time = 3 SECONDS
 	if(istype(A, /obj/machinery/door/blast))
 		if(get_area(A) == spawn_area)
-			to_chat(src, "<span class='warning'>You cannot open blast doors in your containment zone.</span>")
+			to_chat(src, SPAN_WARNING("You cannot open blast doors in your containment zone."))
 			return
 		open_time = 15 SECONDS
 
@@ -264,7 +264,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	remove_verb(H, /mob/living/carbon/human/verb/manual_blink)
 
 /mob/living/scp_173/proc/CauseBlink(mob/living/carbon/human/H)
-	H.visible_message("<span class='notice'>[H] blinks.</span>")
+	H.visible_message(SPAN_NOTICE("[H] blinks."))
 	H.eye_blind += 2
 	BITSET(H.hud_updateflag, BLINK_HUD)
 	add_verb(H, /mob/living/carbon/human/verb/manual_blink)
@@ -442,11 +442,11 @@ GLOBAL_LIST_EMPTY(scp173s)
 	. = FALSE
 	switch(acid_melted)
 		if(0)
-			visible_message("<span class='euclid'>Acid hits \the [src] with a sizzle!</span>")
+			visible_message(SPAN_CLASS("euclid","Acid hits \the [src] with a sizzle!"))
 		if(1 to 3)
-			visible_message("<span class='euclid'>The acid melts \the [src]!</span>")
+			visible_message(SPAN_CLASS("euclid","The acid melts \the [src]!"))
 		if(4)
-			visible_message("<span class='euclid'>The acid melts \the [src] away into nothing!</span>")
+			visible_message(SPAN_CLASS("euclid","The acid melts \the [src] away into nothing!"))
 			. = TRUE
 			qdel(src)
 	acid_melted++

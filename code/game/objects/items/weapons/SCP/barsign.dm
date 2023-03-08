@@ -58,13 +58,13 @@
 				if(toolate_on)
 					toolate_on = 0
 					icon_state = "Off"
-					to_chat(user, "<span class='notice'>You swipe your card to switch the neon sign off.</span>")
+					to_chat(user, SPAN_NOTICE("You swipe your card to switch the neon sign off."))
 				else
 					toolate_on = 1
 					icon_state = "toolate"
-					to_chat(user, "<span class='notice'>You swipe your card, and the neon sign flickers to life.</span>")
+					to_chat(user, SPAN_NOTICE("You swipe your card, and the neon sign flickers to life."))
 			else
-				to_chat(user, "<span class='warning'>The power supply flashes a red light - access denied.</span>")
+				to_chat(user, SPAN_WARNING("The power supply flashes a red light - access denied."))
 			return
 		else
 			if(ACCESS_BAR in card.GetAccess())
@@ -72,9 +72,9 @@
 				if(!sign_type)
 					return
 				icon_state = sign_type
-				to_chat(user, "<span class='notice'>You change the barsign.</span>")
+				to_chat(user, SPAN_NOTICE("You change the barsign."))
 			else
-				to_chat(user, "<span class='warning'>Access denied.</span>")
+				to_chat(user, SPAN_WARNING("Access denied."))
 			return
 
 	return ..()

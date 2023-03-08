@@ -325,7 +325,7 @@
 				src.name += " ([I.registered_name])"
 				src.desc = "Owned by [I.registered_name]."
 		else
-			to_chat(user, "<span class='warning'>Access Denied</span>")
+			to_chat(user, SPAN_WARNING("Access Denied"))
 	else
 		..()
 
@@ -341,9 +341,9 @@
 	if(ishuman(usr))
 		src.add_fingerprint(usr)
 		if (src.locked || !src.registered_name)
-			to_chat(usr, "<span class='warning'>You need to unlock it first.</span>")
+			to_chat(usr, SPAN_WARNING("You need to unlock it first."))
 		else if (src.broken)
-			to_chat(usr, "<span class='warning'>It appears to be broken.</span>")
+			to_chat(usr, SPAN_WARNING("It appears to be broken."))
 		else
 			if (src.opened)
 				if(!src.close())

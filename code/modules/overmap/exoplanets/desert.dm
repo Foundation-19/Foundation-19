@@ -86,32 +86,32 @@
 /obj/structure/quicksand/user_unbuckle_mob(mob/user)
 	if(buckled_mob && !user.stat && !user.restrained())
 		if(busy)
-			to_chat(user, "<span class='wanoticerning'>[buckled_mob] is already getting out, be patient.</span>")
+			to_chat(user, SPAN_CLASS("wanoticerning","[buckled_mob] is already getting out, be patient."))
 			return
 		var/delay = 60
 		if(user == buckled_mob)
 			delay *=2
 			user.visible_message(
-				"<span class='notice'>\The [user] tries to climb out of \the [src].</span>",
-				"<span class='notice'>You begin to pull yourself out of \the [src].</span>",
-				"<span class='notice'>You hear water sloushing.</span>"
+				SPAN_NOTICE("\The [user] tries to climb out of \the [src]."),
+				SPAN_NOTICE("You begin to pull yourself out of \the [src]."),
+				SPAN_NOTICE("You hear water sloushing.")
 				)
 		else
 			user.visible_message(
-				"<span class='notice'>\The [user] begins pulling \the [buckled_mob] out of \the [src].</span>",
-				"<span class='notice'>You begin to pull \the [buckled_mob] out of \the [src].</span>",
-				"<span class='notice'>You hear water sloushing.</span>"
+				SPAN_NOTICE("\The [user] begins pulling \the [buckled_mob] out of \the [src]."),
+				SPAN_NOTICE("You begin to pull \the [buckled_mob] out of \the [src]."),
+				SPAN_NOTICE("You hear water sloushing.")
 				)
 		busy = 1
 		if(do_after(user, delay, src))
 			busy = 0
 			if(user == buckled_mob)
 				if(prob(80))
-					to_chat(user, "<span class='warning'>You slip and fail to get out!</span>")
+					to_chat(user, SPAN_WARNING("You slip and fail to get out!"))
 					return
-				user.visible_message("<span class='notice'>\The [buckled_mob] pulls himself out of \the [src].</span>")
+				user.visible_message(SPAN_NOTICE("\The [buckled_mob] pulls himself out of \the [src]."))
 			else
-				user.visible_message("<span class='notice'>\The [buckled_mob] has been freed from \the [src] by \the [user].</span>")
+				user.visible_message(SPAN_NOTICE("\The [buckled_mob] has been freed from \the [src] by \the [user]."))
 			unbuckle_mob()
 
 /obj/structure/quicksand/unbuckle_mob()
@@ -137,7 +137,7 @@
 /obj/structure/quicksand/proc/expose()
 	if(exposed)
 		return
-	visible_message("<span class='warning'>The upper crust breaks, exposing treacherous quicksands underneath!</span>")
+	visible_message(SPAN_WARNING("The upper crust breaks, exposing treacherous quicksands underneath!"))
 	name = "quicksand"
 	desc = "There is no candy at the bottom."
 	exposed = 1
@@ -155,4 +155,4 @@
 		buckle_mob(L)
 		if(!exposed)
 			expose()
-		to_chat(L, "<span class='danger'>You fall into \the [src]!</span>")
+		to_chat(L, SPAN_DANGER("You fall into \the [src]!"))

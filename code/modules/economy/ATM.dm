@@ -97,7 +97,7 @@
 				else
 					playsound(loc, 'sound/items/polaroid2.ogg', 50, 1)
 
-				to_chat(user, "<span class='info'>You insert [I] into [src].</span>")
+				to_chat(user, SPAN_INFO("You insert [I] into [src]."))
 				src.attack_hand(user)
 				qdel(I)
 	else
