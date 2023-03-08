@@ -77,6 +77,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 /mob/living/scp_173/Destroy()
 	next_blinks = null
 	next_blinks_join_time = null
+	cage = null
 
 	GLOB.scp173s -= src
 	return ..()
@@ -491,6 +492,15 @@ GLOBAL_LIST_EMPTY(scp173s)
 	plane = initial(plane)
 	updateIconandDesc()
 	return TRUE
+
+/obj/structure/scp173_cage/handle_atom_del(deleting_atom)
+    if(deleting_atom == current173)
+        current173 = null
+        return ..()
+
+/obj/structure/scp173_cage/Destroy()
+	current173 = null
+	return ..()
 
 /*
  * Acid
