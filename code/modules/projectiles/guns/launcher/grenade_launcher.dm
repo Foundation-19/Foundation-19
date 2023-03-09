@@ -62,14 +62,14 @@
 	if(!user.unEquip(G, src))
 		return
 	grenades.Insert(1, G) //add to the head of the list, so that it is loaded on the next pump
-	user.visible_message("\The [user] inserts \a [G] into \the [src].", "<span class='notice'>You insert \a [G] into \the [src].</span>")
+	user.visible_message("\The [user] inserts \a [G] into \the [src].", SPAN_NOTICE("You insert \a [G] into \the [src]."))
 
 /obj/item/gun/launcher/grenade/proc/unload(mob/user)
 	if(grenades.len)
 		var/obj/item/grenade/G = grenades[grenades.len]
 		grenades.len--
 		user.put_in_hands(G)
-		user.visible_message("\The [user] removes \a [G] from [src].", "<span class='notice'>You remove \a [G] from \the [src].</span>")
+		user.visible_message("\The [user] removes \a [G] from [src].", SPAN_NOTICE("You remove \a [G] from \the [src]."))
 	else
 		to_chat(user, SPAN_WARNING("\The [src] is empty."))
 
@@ -147,12 +147,12 @@
 	if(!user.unEquip(G, src))
 		return
 	chambered = G
-	user.visible_message("\The [user] load \a [G] into \the [src].", "<span class='notice'>You load \a [G] into \the [src].</span>")
+	user.visible_message("\The [user] load \a [G] into \the [src].", SPAN_NOTICE("You load \a [G] into \the [src]."))
 
 /obj/item/gun/launcher/grenade/underslung/unload(mob/user)
 	if(chambered)
 		user.put_in_hands(chambered)
-		user.visible_message("\The [user] removes \a [chambered] from \the[src].", "<span class='notice'>You remove \a [chambered] from \the [src].</span>")
+		user.visible_message("\The [user] removes \a [chambered] from \the[src].", SPAN_NOTICE("You remove \a [chambered] from \the [src]."))
 		chambered = null
 	else
 		to_chat(user, SPAN_WARNING("\The [src] is empty."))
@@ -181,12 +181,12 @@
 	if(!user.unEquip(G, src))
 		return
 	chambered = G
-	user.visible_message("\The [user] load \a [G] into \the [src].", "<span class='notice'>You load \a [G] into \the [src].</span>")
+	user.visible_message("\The [user] load \a [G] into \the [src].", SPAN_NOTICE("You load \a [G] into \the [src]."))
 
 /obj/item/gun/launcher/grenade/thumper/unload(mob/user)
 	if(chambered)
 		user.put_in_hands(chambered)
-		user.visible_message("\The [user] removes \a [chambered] from \the[src].", "<span class='notice'>You remove \a [chambered] from \the [src].</span>")
+		user.visible_message("\The [user] removes \a [chambered] from \the[src].", SPAN_NOTICE("You remove \a [chambered] from \the [src]."))
 		chambered = null
 	else
 		to_chat(user, SPAN_WARNING("\The [src] is empty."))

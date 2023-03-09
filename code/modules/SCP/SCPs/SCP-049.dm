@@ -186,11 +186,11 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		to_chat(src, "<span class = 'danger'>They are not infected with the Pestilence.</span>")
 		return
 	if(isscp343(target))
-		to_chat(src, "<span class='warning'> You refrain from curing god.</span>")
+		to_chat(src, SPAN_WARNING(" You refrain from curing god."))
 		return
 	switch(src.a_intent)
 		if(I_HELP)
-			to_chat(src, "<span class='warning'>You refrain from curing as your intent is set to help.</span>")
+			to_chat(src, SPAN_WARNING("You refrain from curing as your intent is set to help."))
 			return
 		if(I_GRAB)
 			scp049_attack(target)
@@ -231,18 +231,18 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 
 	if (istype(A, /obj/machinery/door/airlock/highsecurity))
-		to_chat(src, "<span class='warning'>\ You cannot open highsecurity doors.</span>")
+		to_chat(src, SPAN_WARNING("\ You cannot open highsecurity doors."))
 		return
 
 	if (istype(A, /obj/machinery/door/blast/regular))
-		to_chat(src, "<span class='warning'>\ You cannot open blast doors.</span>")
+		to_chat(src, SPAN_WARNING("\ You cannot open blast doors."))
 		return
 
 	if(!istype(A) || incapacitated())
 		return
 
 	if(!A.Adjacent(src))
-		to_chat(src, "<span class='warning'>\The [A] is too far away.</span>")
+		to_chat(src, SPAN_WARNING("\The [A] is too far away."))
 		return
 
 	if(!A.density)
@@ -321,13 +321,13 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	if(client)
 		var/obj/item/grab/G = src.get_active_hand()
 		if(!G)
-			to_chat(src, "<span class='warning'>We must take hold of a victim to cure their disease.</span>")
+			to_chat(src, SPAN_WARNING("We must take hold of a victim to cure their disease."))
 			return
 
 		target = G.affecting
 
 	if(!(istype(target, /mob/living/carbon/human)))
-		to_chat(src, "<span class='warning'>This is not human, and is therefore free from the disease.</span>")
+		to_chat(src, SPAN_WARNING("This is not human, and is therefore free from the disease."))
 		return
 	if(!target.pestilence)
 		to_chat(src, "<span class = 'danger'>They are not infected with the Pestilence.</span>")
@@ -335,30 +335,30 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	if(isscp049_1(target))
 		return
 	if(!(istype(target, /mob/living/carbon/human)))
-		to_chat(src, "<span class='warning'>This is not human, and is therefore free from the disease.</span>")
+		to_chat(src, SPAN_WARNING("This is not human, and is therefore free from the disease."))
 		return
 
 	for(var/stage = 1, stage<=4, stage++)
 		switch(stage)
 			if(1)
-				to_chat(src, "<span class='notice'>The disease has taken hold. We must work quickly...</span>")
-				src.visible_message("<span class='danger'>[src] looms over [target]!</span>")
+				to_chat(src, SPAN_NOTICE("The disease has taken hold. We must work quickly..."))
+				src.visible_message(SPAN_DANGER("[src] looms over [target]!"))
 				target.adjustBruteLoss(25)
 			if(2)
-				to_chat(src, "<span class='notice'>You gather your tools.</span>")
-				src.visible_message("<span class='warning'>[src] draws a rolled set of surgical equipment from their bag!</span>")
+				to_chat(src, SPAN_NOTICE("You gather your tools."))
+				src.visible_message(SPAN_WARNING("[src] draws a rolled set of surgical equipment from their bag!"))
 				Attack_Voice_Line()
 			if(3)
-				to_chat(src, "<span class='notice'>You create your first incision.</span>")
-				src.visible_message("<span class='danger'>[src] begins slicing open [target] with a scalpel!</span>")
-				to_chat(target, "<span class='danger'>You feel a sharp stabbing pain as your life begins to wane.</span>")
+				to_chat(src, SPAN_NOTICE("You create your first incision."))
+				src.visible_message(SPAN_DANGER("[src] begins slicing open [target] with a scalpel!"))
+				to_chat(target, SPAN_DANGER("You feel a sharp stabbing pain as your life begins to wane."))
 				new /obj/effect/decal/cleanable/blood/splatter(get_turf(target), target.species.blood_color)
 			if(4)
-				to_chat(src, "<span class='notice'>You spend a great deal of time expertly curing this victim's disease.</span>")
-				src.visible_message("<span class='danger'>[src] begins performing a horrifying procedure on [target]!</span>")
+				to_chat(src, SPAN_NOTICE("You spend a great deal of time expertly curing this victim's disease."))
+				src.visible_message(SPAN_DANGER("[src] begins performing a horrifying procedure on [target]!"))
 
 		if(!do_after(src, 15 SECONDS, target))
-			to_chat(src, "<span class='warning'>Our curing of [target] has been interrupted!</span>")
+			to_chat(src, SPAN_WARNING("Our curing of [target] has been interrupted!"))
 			curing = FALSE
 			return
 
@@ -374,6 +374,6 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	target.verbs += /mob/living/carbon/human/proc/SCP_049_talk
 	GLOB.scp049_1s += target
 	target.pestilence = FALSE
-	to_chat(target, "<span class='danger'>You feel the last of your mind drift away...</span>")
-	to_chat(src, "<span class='notice'>You have cured [target].</span>")
+	to_chat(target, SPAN_DANGER("You feel the last of your mind drift away..."))
+	to_chat(src, SPAN_NOTICE("You have cured [target]."))
 	curing = FALSE

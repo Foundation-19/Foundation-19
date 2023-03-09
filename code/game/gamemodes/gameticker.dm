@@ -154,7 +154,7 @@ var/global/datum/controller/gameticker/ticker
 
 	spawn(0)//Forking here so we dont have to wait for this to finish
 		mode.post_setup()
-		to_world("<FONT color='blue'><B>Enjoy the game!</B></FONT>")
+		to_world(FONT_COLORED("blue","<B>Enjoy the game!</B>"))
 		sound_to(world, sound(GLOB.using_map.welcome_sound))
 
 		//Holiday Round-start stuff	~Carn
@@ -347,12 +347,12 @@ var/global/datum/controller/gameticker/ticker
 					else
 						feedback_set_details("end_proper","universe destroyed")
 					if(!delay_end)
-						to_world("<span class='notice'><b>Rebooting due to destruction of [station_name()] in [restart_timeout/10] seconds</b></span>")
+						to_world(SPAN_NOTICE("<b>Rebooting due to destruction of [station_name()] in [restart_timeout/10] seconds</b>"))
 
 				else
 					feedback_set_details("end_proper","proper completion")
 					if(!delay_end)
-						to_world("<span class='notice'><b>Restarting in [restart_timeout/10] seconds</b></span>")
+						to_world(SPAN_NOTICE("<b>Restarting in [restart_timeout/10] seconds</b>"))
 
 				if(blackbox)
 					blackbox.save_all_data_to_sql()
@@ -368,11 +368,11 @@ var/global/datum/controller/gameticker/ticker
 					if(wait_for_tickets)
 						if(!delay_notified)
 							delay_notified = 1
-							message_staff("<span class='warning'><b>Automatically delaying restart due to active tickets.</b></span>")
-							to_world("<span class='notice'><b>An admin has delayed the round end</b></span>")
+							message_staff(SPAN_WARNING("<b>Automatically delaying restart due to active tickets.</b>"))
+							to_world(SPAN_NOTICE("<b>An admin has delayed the round end</b>"))
 						sleep(15 SECONDS)
 					else if(delay_notified)
-						message_staff("<span class='warning'><b>No active tickets remaining, restarting in [restart_timeout/10] seconds if an admin has not delayed the round end.</b></span>")
+						message_staff(SPAN_WARNING("<b>No active tickets remaining, restarting in [restart_timeout/10] seconds if an admin has not delayed the round end.</b>"))
 				while(wait_for_tickets)
 
 				if(!delay_end)
@@ -380,9 +380,9 @@ var/global/datum/controller/gameticker/ticker
 					if(!delay_end)
 						world.Reboot(ping = TRUE)
 					else if(!delay_notified)
-						to_world("<span class='notice'><b>An admin has delayed the round end</b></span>")
+						to_world(SPAN_NOTICE("<b>An admin has delayed the round end</b>"))
 				else if(!delay_notified)
-					to_world("<span class='notice'><b>An admin has delayed the round end</b></span>")
+					to_world(SPAN_NOTICE("<b>An admin has delayed the round end</b>"))
 
 
 		else if (mode_finished)
@@ -409,22 +409,22 @@ var/global/datum/controller/gameticker/ticker
 				var/turf/playerTurf = get_turf(Player)
 				if(evacuation_controller.round_over() && evacuation_controller.emergency_evacuation)
 					if(isNotAdminLevel(playerTurf.z))
-						to_chat(Player, "<font color='blue'><b>You managed to survive, but were marooned on [station_name()] as [Player.real_name]...</b></font>")
+						to_chat(Player, FONT_COLORED("blue","<b>You managed to survive, but were marooned on [station_name()] as [Player.real_name]...</b>"))
 					else
-						to_chat(Player, "<font color='green'><b>You managed to survive the events on [station_name()] as [Player.real_name].</b></font>")
+						to_chat(Player, FONT_COLORED("green","<b>You managed to survive the events on [station_name()] as [Player.real_name].</b>"))
 				else if(isAdminLevel(playerTurf.z))
-					to_chat(Player, "<font color='green'><b>You successfully underwent crew transfer after events on [station_name()] as [Player.real_name].</b></font>")
+					to_chat(Player, FONT_COLORED("green","<b>You successfully underwent crew transfer after events on [station_name()] as [Player.real_name].</b>"))
 				else if(issilicon(Player))
-					to_chat(Player, "<font color='green'><b>You remain operational after the events on [station_name()] as [Player.real_name].</b></font>")
+					to_chat(Player, FONT_COLORED("green","<b>You remain operational after the events on [station_name()] as [Player.real_name].</b>"))
 				else
-					to_chat(Player, "<font color='blue'><b>You got through just another workday on [station_name()] as [Player.real_name].</b></font>")
+					to_chat(Player, FONT_COLORED("blue","<b>You got through just another workday on [station_name()] as [Player.real_name].</b>"))
 			else
 				if(isghost(Player))
 					var/mob/observer/ghost/O = Player
 					if(!O.started_as_observer)
-						to_chat(Player, "<font color='red'><b>You did not survive the events on [station_name()]...</b></font>")
+						to_chat(Player, FONT_COLORED("red","<b>You did not survive the events on [station_name()]...</b>"))
 				else
-					to_chat(Player, "<font color='red'><b>You did not survive the events on [station_name()]...</b></font>")
+					to_chat(Player, FONT_COLORED("red","<b>You did not survive the events on [station_name()]...</b>"))
 	to_world("<br>")
 
 

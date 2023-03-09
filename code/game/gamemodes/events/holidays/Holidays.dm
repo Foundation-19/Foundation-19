@@ -133,14 +133,14 @@ var/global/Holiday = null
 	world.update_status()
 	Holiday_Game_Start()
 
-	message_admins("<span class='notice'>ADMIN: Event: [key_name(src)] force-set Holiday to \"[Holiday]\"</span>")
+	message_admins(SPAN_NOTICE("ADMIN: Event: [key_name(src)] force-set Holiday to \"[Holiday]\""))
 	log_admin("[key_name(src)] force-set Holiday to \"[Holiday]\"")
 
 
 //Run at the  start of a round
 /proc/Holiday_Game_Start()
 	if(Holiday)
-		to_world("<font color='blue'>and...</font>")
+		to_world(FONT_COLORED("blue","and..."))
 		to_world("<h4>Happy [Holiday] Everybody!</h4>")
 		switch(Holiday)			//special holidays
 			if("Easter")
@@ -174,7 +174,7 @@ var/global/Holiday = null
 				if(isNotStationLevel(S.z))	continue
 				containers += S
 
-			message_admins("<span class='notice'>DEBUG: Event: Egg spawned at [Egg.loc] ([Egg.x],[Egg.y],[Egg.z])</span>")*/
+			message_admins(SPAN_NOTICE("DEBUG: Event: Egg spawned at [Egg.loc] ([Egg.x],[Egg.y],[Egg.z])"))*/
 		if("End of the World")
 			if(prob(eventchance))	GameOver()
 

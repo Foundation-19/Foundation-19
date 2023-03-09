@@ -56,7 +56,7 @@
 			remaining += 1
 
 			if(remaining == 90) // 30 seconds left
-				to_chat(occupant, "<span class='notice'>You feel a wash of sensation as your senses begin to flood your mind. You will come to soon.</span>")
+				to_chat(occupant, SPAN_NOTICE("You feel a wash of sensation as your senses begin to flood your mind. You will come to soon."))
 		else
 			remaining = 0
 			resleeving = 0
@@ -156,26 +156,26 @@
 /obj/machinery/resleever/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(default_deconstruction_screwdriver(user, W))
 		if(occupant)
-			to_chat(user, "<span class='warning'>You need to remove the occupant first!</span>")
+			to_chat(user, SPAN_WARNING("You need to remove the occupant first!"))
 			return
 	if(default_deconstruction_crowbar(user, W))
 		if(occupant)
-			to_chat(user, "<span class='warning'>You need to remove the occupant first!</span>")
+			to_chat(user, SPAN_WARNING("You need to remove the occupant first!"))
 			return
 	if(default_part_replacement(user, W))
 		if(occupant)
-			to_chat(user, "<span class='warning'>You need to remove the occupant first!</span>")
+			to_chat(user, SPAN_WARNING("You need to remove the occupant first!"))
 			return
 	if(istype(W, /obj/item/organ/internal/stack))
 		if(isnull(lace))
-			to_chat(user, "<span class='notice'>You insert \the [W] into [src].</span>")
+			to_chat(user, SPAN_NOTICE("You insert \the [W] into [src]."))
 			user.drop_from_inventory(W)
 			lace = W
 			W.forceMove(src)
 			if(lace.backup)
 				lace_name = lace.backup.name
 		else
-			to_chat(user, "<span class='warning'>\The [src] already has a neural lace inside it!</span>")
+			to_chat(user, SPAN_WARNING("\The [src] already has a neural lace inside it!"))
 			return
 	else if(isWrench(W))
 		if(isnull(occupant))
@@ -187,12 +187,12 @@
 				user.visible_message("[user] secures [src] to the floor.", "You secure [src] to the floor.")
 			playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
 		else
-			to_chat(user, "<span class='warning'>Can not do that while [src] is occupied.</span>")
+			to_chat(user, SPAN_WARNING("Can not do that while [src] is occupied."))
 
 	else if(istype(W, /obj/item/grab))
 		var/obj/item/grab/grab = W
 		if(occupant)
-			to_chat(user, "<span class='notice'>\The [src] is in use.</span>")
+			to_chat(user, SPAN_NOTICE("\The [src] is in use."))
 			return
 
 		if(!ismob(grab.affecting))

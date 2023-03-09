@@ -36,7 +36,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 
 /atom/movable/attackby(obj/item/W, mob/user)
 	if(W?.item_flags & ITEM_FLAG_NO_BLUDGEON)
-		visible_message("<span class='danger'>[src] has been hit by [user] with [W].</span>")
+		visible_message(SPAN_DANGER("[src] has been hit by [user] with [W]."))
 	return ..() //removed return above to return ..() here to call the proc above.
 
 /mob/living/attackby(obj/item/I, mob/user)

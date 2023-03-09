@@ -72,10 +72,10 @@
 		else
 			return
 
-	var/aim_message = "<span class='[use_span]'>[aiming_at ? "\The [aiming_at] is" : "Your targets are"] [message].</span>"
+	var/aim_message = SPAN_CLASS("[use_span]","[aiming_at ? "\The [aiming_at] is" : "Your targets are"] [message].")
 	to_chat(owner, aim_message)
 	if(aiming_at)
-		to_chat(aiming_at, "<span class='[use_span]'>You are [message].</span>")
+		to_chat(aiming_at, SPAN_CLASS("[use_span]","You are [message]."))
 /obj/aiming_overlay/Process()
 	if(!owner)
 		qdel(src)
@@ -110,17 +110,17 @@
 	var/cancel_aim = 1
 
 	if(!(aiming_with in owner) || (istype(owner, /mob/living/carbon/human) && (owner.l_hand != aiming_with && owner.r_hand != aiming_with)))
-		to_chat(owner, "<span class='warning'>You must keep hold of your weapon!</span>")
+		to_chat(owner, SPAN_WARNING("You must keep hold of your weapon!"))
 	else if(owner.eye_blind)
-		to_chat(owner, "<span class='warning'>You are blind and cannot see your target!</span>")
+		to_chat(owner, SPAN_WARNING("You are blind and cannot see your target!"))
 	else if(!aiming_at || !istype(aiming_at.loc, /turf))
-		to_chat(owner, "<span class='warning'>You have lost sight of your target!</span>")
+		to_chat(owner, SPAN_WARNING("You have lost sight of your target!"))
 	else if(owner.incapacitated() || owner.lying || owner.restrained())
-		to_chat(owner, "<span class='warning'>You must be conscious and standing to keep track of your target!</span>")
+		to_chat(owner, SPAN_WARNING("You must be conscious and standing to keep track of your target!"))
 	else if(aiming_at.is_invisible_to(owner))
-		to_chat(owner, "<span class='warning'>Your target has become invisible!</span>")
+		to_chat(owner, SPAN_WARNING("Your target has become invisible!"))
 	else if(!(aiming_at in view(owner)))
-		to_chat(owner, "<span class='warning'>Your target is too far away to track!</span>")
+		to_chat(owner, SPAN_WARNING("Your target is too far away to track!"))
 	else
 		cancel_aim = 0
 
@@ -140,26 +140,26 @@
 		return
 
 	if(owner.incapacitated())
-		to_chat(owner, "<span class='warning'>You cannot aim a gun in your current state.</span>")
+		to_chat(owner, SPAN_WARNING("You cannot aim a gun in your current state."))
 		return
 	if(owner.lying)
-		to_chat(owner, "<span class='warning'>You cannot aim a gun while prone.</span>")
+		to_chat(owner, SPAN_WARNING("You cannot aim a gun while prone."))
 		return
 	if(owner.restrained())
-		to_chat(owner, "<span class='warning'>You cannot aim a gun while handcuffed.</span>")
+		to_chat(owner, SPAN_WARNING("You cannot aim a gun while handcuffed."))
 		return
 
 	if(aiming_at)
 		if(aiming_at == target)
 			return
 		cancel_aiming(1)
-		owner.visible_message("<span class='danger'>\The [owner] turns \the [thing] on \the [target]!</span>")
+		owner.visible_message(SPAN_DANGER("\The [owner] turns \the [thing] on \the [target]!"))
 	else
-		owner.visible_message("<span class='danger'>\The [owner] aims \the [thing] at \the [target]!</span>")
+		owner.visible_message(SPAN_DANGER("\The [owner] aims \the [thing] at \the [target]!"))
 
 	if(owner.client)
 		owner.client.add_gun_icons()
-	to_chat(target, "<span class='danger'>You now have a gun pointed at you. No sudden moves!</span>")
+	to_chat(target, SPAN_DANGER("You now have a gun pointed at you. No sudden moves!"))
 	aiming_with = thing
 	aiming_at = target
 	if(istype(aiming_with, /obj/item/gun))
@@ -198,11 +198,11 @@
 	if(owner.client)
 		if(active)
 			if(!no_message)
-				to_chat(owner, "<span class='notice'>You will now aim rather than fire.</span>")
+				to_chat(owner, SPAN_NOTICE("You will now aim rather than fire."))
 			owner.client.add_gun_icons()
 		else
 			if(!no_message)
-				to_chat(owner, "<span class='notice'>You will no longer aim rather than fire.</span>")
+				to_chat(owner, SPAN_NOTICE("You will no longer aim rather than fire."))
 			owner.client.remove_gun_icons()
 		owner.gun_setting_icon.icon_state = "gun[active]"
 
@@ -210,7 +210,7 @@
 	if(!aiming_with || !aiming_at)
 		return
 	if(!no_message)
-		owner.visible_message("<span class='notice'>\The [owner] lowers \the [aiming_with].</span>")
+		owner.visible_message(SPAN_NOTICE("\The [owner] lowers \the [aiming_with]."))
 		if(istype(aiming_with, /obj/item/gun))
 			sound_to(aiming_at, sound('sound/weapons/TargetOff.ogg'))
 			sound_to(owner, sound('sound/weapons/TargetOff.ogg'))

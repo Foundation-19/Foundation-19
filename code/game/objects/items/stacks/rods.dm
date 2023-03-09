@@ -44,14 +44,14 @@
 		var/obj/item/weldingtool/WT = W
 
 		if(!can_use(2))
-			to_chat(user, "<span class='warning'>You need at least two rods to do this.</span>")
+			to_chat(user, SPAN_WARNING("You need at least two rods to do this."))
 			return
 
 		if(WT.remove_fuel(0,user))
 			var/obj/item/stack/material/steel/new_item = new(usr.loc)
 			new_item.add_to_stacks(usr)
 			for (var/mob/M in viewers(src))
-				M.show_message("<span class='notice'>[src] is shaped into metal by [user.name] with the weldingtool.</span>", 3, "<span class='notice'>You hear welding.</span>", 2)
+				M.show_message(SPAN_NOTICE("[src] is shaped into metal by [user.name] with the weldingtool."), 3, SPAN_NOTICE("You hear welding."), 2)
 			var/obj/item/stack/material/rods/R = src
 			src = null
 			var/replace = (user.get_inactive_hand()==R)
@@ -65,8 +65,8 @@
 		new_splint.dropInto(loc)
 		new_splint.add_fingerprint(user)
 
-		user.visible_message("<span class='notice'>\The [user] constructs \a [new_splint] out of a [singular_name].</span>", \
-				"<span class='notice'>You use make \a [new_splint] out of a [singular_name].</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] constructs \a [new_splint] out of a [singular_name]."), \
+				SPAN_NOTICE("You use make \a [new_splint] out of a [singular_name]."))
 		src.use(1)
 		return
 

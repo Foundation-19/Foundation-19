@@ -37,14 +37,14 @@
 		if(tmp_label == label_text)
 			return
 		if(length(tmp_label) > 10)
-			to_chat(user, "<span class='notice'>The label can be at most 10 characters long.</span>")
+			to_chat(user, SPAN_NOTICE("The label can be at most 10 characters long."))
 		else
 			if(length(tmp_label))
-				to_chat(user, "<span class='notice'>You set the label to \"[tmp_label]\".</span>")
+				to_chat(user, SPAN_NOTICE("You set the label to \"[tmp_label]\"."))
 				label_text = tmp_label
 				name = addtext(name," ([label_text])")
 			else
-				to_chat(user, "<span class='notice'>You remove the label.</span>")
+				to_chat(user, SPAN_NOTICE("You remove the label."))
 				label_text = null
 				on_reagent_change()
 		return
@@ -69,15 +69,15 @@
 
 	if(istype(target, /obj/item/reagent_containers/food/snacks)) // These are not opencontainers but we can transfer to them
 		if(!reagents || !reagents.total_volume)
-			to_chat(user, "<span class='notice'>There is no condiment left in \the [src].</span>")
+			to_chat(user, SPAN_NOTICE("There is no condiment left in \the [src]."))
 			return
 
 		if(!target.reagents.get_free_space())
-			to_chat(user, "<span class='notice'>You can't add more condiment to \the [target].</span>")
+			to_chat(user, SPAN_NOTICE("You can't add more condiment to \the [target]."))
 			return
 
 		var/trans = reagents.trans_to_obj(target, amount_per_transfer_from_this)
-		to_chat(user, "<span class='notice'>You add [trans] units of the condiment to \the [target].</span>")
+		to_chat(user, SPAN_NOTICE("You add [trans] units of the condiment to \the [target]."))
 	else
 		..()
 
@@ -85,7 +85,7 @@
 	playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), 1)
 
 /obj/item/reagent_containers/food/condiment/self_feed_message(mob/user)
-	to_chat(user, "<span class='notice'>You swallow some of contents of \the [src].</span>")
+	to_chat(user, SPAN_NOTICE("You swallow some of contents of \the [src]."))
 
 /obj/item/reagent_containers/food/condiment/Initialize()
 	. = ..()

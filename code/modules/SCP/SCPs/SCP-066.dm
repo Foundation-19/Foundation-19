@@ -85,7 +85,7 @@
 		for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
 			if(M.is_deaf() || istype(M.l_ear, /obj/item/clothing/ears/earmuffs) || istype(M.r_ear, /obj/item/clothing/ears/earmuffs))
 				continue
-			to_chat(M, "<span class='danger'><i>\The [src] rings, sending chills to your very bone.</i></span>")
+			to_chat(M, SPAN_DANGER("<i>\The [src] rings, sending chills to your very bone.</i>"))
 //			M << pick('sound/scp/066/066-1-rape.ogg', 'sound/scp/066/066-2-rape.ogg', 'sound/scp/066/066-3-rape.ogg', 'sound/scp/066/066-4-rape.ogg', 'sound/scp/066/066-5-rape.ogg', 'sound/scp/066/066-ericrape.ogg')
 			next_emote = world.time + 600
 			M.Stun(2)

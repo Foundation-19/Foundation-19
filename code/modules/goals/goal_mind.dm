@@ -24,7 +24,7 @@
 	var/pref_val = current.get_preference_value(/datum/client_preference/give_personal_goals)
 	if(pref_val == GLOB.PREF_NEVER || (pref_val == GLOB.PREF_NON_ANTAG && player_is_antag(src)))
 		if(!is_spawning)
-			to_chat(src.current, "<span class='warning'>Your preferences do not allow you to add random goals.</span>")
+			to_chat(src.current, SPAN_WARNING("Your preferences do not allow you to add random goals."))
 		return FALSE
 
 	var/list/available_goals = SSgoals.global_personal_goals ? SSgoals.global_personal_goals.Copy() : list()
