@@ -131,8 +131,6 @@
 	damage = 36
 	armor_penetration = 20
 
-
-
 /obj/item/projectile/bullet/blank
 	invisibility = 101
 	damage = 1
