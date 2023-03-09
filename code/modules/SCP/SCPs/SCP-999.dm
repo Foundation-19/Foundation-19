@@ -16,7 +16,6 @@ GLOBAL_LIST_EMPTY(scp999s)
 	maxHealth = 1500
 	health = 1500
 	hud_type = /datum/hud/slime
-	var/last_effect
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 	universal_speak = 1	// 999 can understand and speak every language, although his text gets altered
