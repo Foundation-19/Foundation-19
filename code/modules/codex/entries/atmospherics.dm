@@ -203,8 +203,10 @@
 
 /datum/codex_entry/transfer_valve
 	associated_paths = list(/obj/item/device/transfer_valve)
-	mechanics_text = "This machine is used to merge the contents of two different <span codexlink='tank'>gas tanks</span>. Plug the tanks into the transfer, then open the valve to mix them together. You can also attach various assembly devices to trigger this process."
-	antag_text = "With a tank of hot phoron and cold oxygen, this benign little atmospheric device becomes an incredibly deadly bomb. You don't want to be anywhere near it when it goes off."
+	mechanics_text = "This machine is used to merge the contents of two different <span codexlink='tank'>gas tanks</span>. \
+	Plug the tanks into the transfer, then open the valve to mix them together. You can also attach various assembly devices to trigger this process."
+	antag_text = "With a tank of hot phoron and cold oxygen, this benign little atmospheric device becomes an incredibly deadly bomb. \
+	You don't want to be anywhere near it when it goes off."
 
 /datum/codex_entry/gas_tank
 	associated_paths = list(/obj/item/tank)
@@ -216,9 +218,12 @@
 	<br>\
 	Filling a tank such that experiences ~4000kPa of pressure will cause the tank to rupture, spilling out its contents and destroying the tank. \
 	Tanks filled over ~5000kPa will rupture rather violently, exploding with significant force."
-	antag_text = "Each tank may be incited to burn by attaching wires and an igniter assembly, though the igniter can only be used once and the mixture only burn if the igniter pushes a flammable gas mixture above the minimum burn temperature (126?C). \
-	Wired and assembled tanks may be disarmed with a set of wirecutters. Any exploding or rupturing tank will generate shrapnel, assuming their relief valves have been welded beforehand. Even if not, they can be incited to expel hot gas on ignition if pushed above 173?C. \
-	Relatively easy to make, the single tank bomb requries no tank transfer valve, and is still a fairly formidable weapon that can be manufactured from any tank."
+	antag_text = "Each tank may be incited to burn by attaching wires and an igniter assembly, \
+	though the igniter can only be used once and the mixture only burn if the igniter pushes a flammable gas mixture above the minimum burn temperature (126?C). \
+	Wired and assembled tanks may be disarmed with a set of <l>wirecutters</l>. \
+	Any exploding or rupturing tank will generate shrapnel, assuming their relief valves have been welded beforehand. \
+	Even if not, they can be incited to expel hot gas on ignition if pushed above 173?C. \
+	Relatively easy to make, the single tank bomb requires no tank transfer valve, and is still a fairly formidable weapon that can be manufactured from any tank."
 
 /datum/codex_entry/gas_analyzer
 	associated_paths = list(/obj/item/device/scanner/gas)

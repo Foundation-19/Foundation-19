@@ -13,4 +13,4 @@
 /datum/codex_entry/implant/imprinting
 	associated_paths = list(/obj/item/implant/imprinting, /obj/item/implanter/imprinting)
 	antag_text = "Imprinting implants are a special form of <l>implant</l> that allows you to force your victim to obey the instructions you program it with. \
-	For the implant to work correctly, you must first inject your victim with mindbreaker toxin (should be included in the implanter kit).<br>"
+	For the implant to work correctly, you must first inject your victim with <span codexlink='mindbreaker toxin (chemical)'>mindbreaker toxin</span> (should be included in the implanter kit).<br>"

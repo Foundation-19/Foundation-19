@@ -87,7 +87,7 @@
 	associated_paths = list(/obj/item/device/lightreplacer)
 	mechanics_text = "Examine or use this item to see how many lights are remaining. You can feed it lightbulbs or sheets of glass to refill it."
 	lore_text = "Thanks to the Research division, you don't have to screw lightbulbs in by hand! The design of light replacers are only accessible by Level 4 staff or above."
-	antag_text = "Using a cryptographic sequencer on this device will cause it to overload each light it replaces; when turned on, the new lights will explode!"
+	antag_text = "Using a <l>cryptographic sequencer</l> on this device will cause it to overload each light it replaces; when turned on, the new lights will explode!"
 
 /datum/codex_entry/multitool
 	associated_paths = list(/obj/item/device/multitool)

@@ -27,3 +27,10 @@
 	You don't adapt the personality of whoever it was that you're imitating (even if it may influence your behaviour), \
 	and you aren't beholden to any of the trappings of the way their brains work. Impersonation comes naturally to you as a changeling, \
 	and you are experienced with adopting and shedding bodies and personalities on a whim as it suits your needs."
+
+/datum/codex_entry/cryptographic_sequencer
+	display_name = "Cryptographic sequencer"
+	associated_paths = list(/obj/item/card/emag, /obj/item/card/emag_broken)
+	lore_text = "Developed by the Chaos Insurgency after stealing advanced GOC parahacking technology, this strange device can instantly hack into most electronic machines."
+	antag_text = "You can use this cryptographic sequencer in order to subvert electronics or forcefully open doors you don't have access to. \
+	These actions are irreversible and the card only has a limited number of charges!"

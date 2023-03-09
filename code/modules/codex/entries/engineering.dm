@@ -21,7 +21,7 @@
 	Power consumption and backup power cell charge can be seen from the interface, further controls (turning a specific channel on, off or automatic, \
 	toggling the APC's ability to charge the backup cell, or toggling power for the entire area via master breaker) first requires the interface to be unlocked \
 	with an ID with Engineering access or by one of the station's robots or the artificial intelligence."
-	antag_text = "This can be emagged to unlock it.  It will cause the APC to have a blue error screen. \
+	antag_text = "This can be <span codexlink='cryptographic sequencer'>emagged</span> to unlock it.  It will cause the APC to have a blue error screen. \
 	Wires can be pulsed remotely with a signaler attached to it.  A powersink will also drain any APCs connected to the same wire the powersink is on."
 
 /datum/codex_entry/inflatable_item
