@@ -72,21 +72,24 @@ GLOBAL_LIST_EMPTY(admin_departments)
 		..()
 
 /obj/machinery/photocopier/faxmachine/get_mechanics_info()
-	. = "<p>The fax machine can be used to transmit paper faxes to other fax machines on the map, or to off-ship organizations handled by server administration. To use the fax machine, you'll need to insert both a paper and your ID card, authenticate, select a destination, the transmit the fax.</p>"
-	. += "<p>You can also fax paper bundles, including photos, using this machine.</p>"
-	. += "<p>You can check the machine's department origin tag using a multitool.</p>"
+	. = "The fax machine can be used to transmit paper faxes to other fax machines on the map, or to off-ship organizations handled by server administration. \
+	To use the fax machine, you'll need to insert both a paper and your ID card, authenticate, select a destination, the transmit the fax. \
+	You can also fax paper bundles, including photos, using this machine.<br>\
+	You can check the machine's department origin tag using a <l>multitool</l>."
 	. += ..()
 
 /obj/machinery/photocopier/faxmachine/get_antag_info()
-	. = "<p>If emagged with a cryptographic sequencer, the fax machine can then have it's origin department tag changed using a multitool. This allows you to send faxes pretending to be from somewhere else on the ship, or even an off-ship origin like EXCOMM.</p>"
-	. += "<p><strong>NOTE</strong>: Any new department tags created in this way that do not already exist in the list of targets cannot receive faxes, as this does not add new departments to the list of valid fax targets.</p>"
+	. = "If emagged with a <l>cryptographic sequencer</l>, the fax machine can then have its origin department tag changed using a multitool. \
+	This allows you to send faxes pretending to be from somewhere else on the ship, or even an off-ship origin like EXCOMM.<br>\
+	<strong>NOTE</strong>: Any new department tags created in this way that do not already exist in the list of targets cannot receive faxes, \
+	as this does not add new departments to the list of valid fax targets."
 	. += ..()
 
 /obj/machinery/photocopier/faxmachine/emag_act(remaining_charges, mob/user, emag_source)
 	if(emagged)
 		to_chat(user, SPAN_WARNING("\The [src]'s systems have already been hacked."))
 		return
-	to_chat(user, SPAN_NOTICE("You unlock \the [src]'s department tagger. You can now modify it's department tag to disguise faxes as being from another department or even off-ship using a multitool."))
+	to_chat(user, SPAN_NOTICE("You unlock \the [src]'s department tagger. You can now modify its department tag to disguise faxes as being from another department or even off-site using a multitool."))
 	emagged = TRUE
 	return TRUE
 
