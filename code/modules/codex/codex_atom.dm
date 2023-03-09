@@ -23,7 +23,7 @@
 /atom/proc/get_lore_info()
 	return
 
-/atom/var/codex_nonantag_known = 1
+/atom/var/codex_nonantag_known = 1	// if seeing the linked codex entry could out someone as an antag E.G fake plushie bombs
 
 /atom/examine(mob/user, distance, infix = "", suffix = "")
 	. = ..()
