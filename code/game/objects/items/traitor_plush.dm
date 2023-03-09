@@ -5,6 +5,7 @@
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "carpplushie"
 	filling_color = "#522666"
+	codex_nonantag_known = 0
 
 	var/spawned_mob = /mob/living/simple_animal/hostile/carp
 
@@ -44,6 +45,7 @@
 	desc = "A plushie of a cute kitten! Watch as it purrs it's way right into your heart."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "kittenplushie"
+	codex_nonantag_known = 0
 	var/phrase
 
 /obj/item/plushbomb/Initialize()
