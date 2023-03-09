@@ -1196,20 +1196,20 @@ datum
 
 			cash	//must be in credits - atm and coins don't count
 				var/steal_amount = 2000
-				explanation_text = "Beg, borrow or steal 2000 credits."
+				explanation_text = "Beg, borrow or steal 2000 [GLOB.using_map.local_currency_name]."
 				weight = 20
 
 				New(var/text,var/joba)
 					..(text,joba)
 					steal_amount = 1250 + rand(0,3750)
-					explanation_text = "Beg, borrow or steal [steal_amount] credits."
+					explanation_text = "Beg, borrow or steal [steal_amount] [GLOB.using_map.local_currency_name]."
 
 				get_points(var/job)
 					return 10 + 25 * round(steal_amount / 5000)
 
 				check_completion()
 					var/held_credits = 0
-					for(var/obj/item/weapon/spacecash/M in owner.current.get_contents())
+					for(var/obj/item/spacecash/M in owner.current.get_contents())
 						held_credits += M.worth
 					if(held_credits >= steal_amount)
 						return 1
