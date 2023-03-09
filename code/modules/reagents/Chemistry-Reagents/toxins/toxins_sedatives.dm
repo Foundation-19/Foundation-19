@@ -134,7 +134,7 @@
 	target_organ = BP_BRAIN
 	heating_message = "melts into a liquid slurry."
 	heating_products = list(/datum/reagent/toxin/carpotoxin, /datum/reagent/soporific, /datum/reagent/copper)
-	heating_prod_english = "carpotoxin, soporific, and copper"
+	heating_prod_english = "<span codexlink='carpotoxin (chemical)'>carpotoxin</span>, <span codexlink='soporific (chemical)'>soporific</span>, and <span codexlink='copper (chemical)'>copper</span>"
 
 /datum/reagent/toxin/zombie_powder/affect_blood(mob/living/carbon/M, alien, removed)
 	..()

@@ -10,7 +10,7 @@
 	overdose = REAGENTS_OVERDOSE
 	heating_point = 61 CELSIUS
 	heating_products = list(/datum/reagent/potassium, /datum/reagent/acetone, /datum/reagent/sugar)
-	heating_prod_english = "potassium, acetone, and sugar"
+	heating_prod_english = "<span codexlink='potassium (chemical)'>potassium</span>, <span codexlink='acetone (chemical)'>acetone</span>, and <span codexlink='sugar (chemical)'>sugar</span>"
 	value = 2
 
 /datum/reagent/cryptobiolin/affect_blood(mob/living/carbon/M, alien, removed)

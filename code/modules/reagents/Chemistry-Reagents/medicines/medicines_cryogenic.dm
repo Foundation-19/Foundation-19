@@ -46,7 +46,7 @@
 	taste_description = "slime"
 	color = "#80bfff"
 	heating_products = list(/datum/reagent/medicine/cryogenic/cryoxadone, /datum/reagent/sodium)
-	heating_prod_english = "cryoxadone and sodium"
+	heating_prod_english = "<span codexlink='cryoxadone (chemical)'>cryoxadone</span> and <span codexlink='sodium (chemical)'>sodium</span>"
 	heating_point = 50 CELSIUS
 	heating_message = "turns back to sludge."
 	value = 5.5
