@@ -471,7 +471,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
 	if(do_after(user, 5 SECONDS, src)) //Time to repair depends on how damaged the cage is
-		visible_message(SPAN_NOTICE("\The [user] repairs \the [src] [pick("slightly","somewhat")]."))
+		visible_message(SPAN_NOTICE("\The [user] repairs a section of \the [src]"))
 		damage_state -= 1
 		updateIconandDesc()
 		if(damage_state == 0)
@@ -493,10 +493,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 	updateIconandDesc()
 	return TRUE
 
-/obj/structure/scp173_cage/handle_atom_del(deleting_atom)
-    if(deleting_atom == current173)
-        current173 = null
-        return ..()
+/obj/structure/scp173_cage/handle_atom_del(atom/deleting_atom)
+	if(deleting_atom == current173)
+		current173  = null
+		return ..()
 
 /obj/structure/scp173_cage/Destroy()
 	current173 = null
