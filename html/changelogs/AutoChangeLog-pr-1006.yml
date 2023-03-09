@@ -1,0 +1,6 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscadd: Becoming an SCP as a ghost has a better menu.
+  - rscdel: Removed "Check Default Language" as you can also find your default language
+      in "Check Known Languages".
