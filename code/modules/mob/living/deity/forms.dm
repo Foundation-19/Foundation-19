@@ -65,7 +65,7 @@ Each plays slightly different and has different challenges/benefits
 /datum/god_form/narsie/take_charge(mob/living/user, charge)
 	charge = min(100, charge * 0.25)
 	if(prob(charge))
-		to_chat(user, "<span class='warning'>You feel drained...</span>")
+		to_chat(user, SPAN_WARNING("You feel drained..."))
 	var/mob/living/carbon/human/H = user
 	if(istype(H) && H.should_have_organ(BP_HEART))
 		H.vessel.remove_reagent(/datum/reagent/blood, charge)

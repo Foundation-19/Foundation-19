@@ -36,7 +36,7 @@
 		if(!.)
 			to_chat(owner, SPAN_WARNING("\The [_focus] is too hefty for you to get a mind-grip on."))
 		else
-			owner.visible_message("<span class='notice'>\The [owner] makes a strange gesture.</span>")
+			owner.visible_message(SPAN_NOTICE("\The [owner] makes a strange gesture."))
 		owner.drop_from_inventory(src)
 		return FALSE
 

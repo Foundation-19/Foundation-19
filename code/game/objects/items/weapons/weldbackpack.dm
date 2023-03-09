@@ -24,28 +24,28 @@
 		var/obj/item/weldingtool/T = W
 		if(T.welding & prob(50))
 			log_and_message_admins("triggered a fueltank explosion.", user)
-			to_chat(user, "<span class='danger'>That was stupid of you.</span>")
+			to_chat(user, SPAN_DANGER("That was stupid of you."))
 			explosion(get_turf(src),-1,0,2)
 			if(src)
 				qdel(src)
 			return
 		else
 			if(T.welding)
-				to_chat(user, "<span class='danger'>That was close!</span>")
+				to_chat(user, SPAN_DANGER("That was close!"))
 			if(!T.tank)
 				to_chat(user, "\The [T] has no tank attached!")
 			src.reagents.trans_to_obj(T.tank, T.tank.max_fuel)
-			to_chat(user, "<span class='notice'>You refuel \the [W].</span>")
+			to_chat(user, SPAN_NOTICE("You refuel \the [W]."))
 			playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
 			return
 	else if(istype(W, /obj/item/welder_tank))
 		var/obj/item/welder_tank/tank = W
 		src.reagents.trans_to_obj(tank, tank.max_fuel)
-		to_chat(user, "<span class='notice'>You refuel \the [W].</span>")
+		to_chat(user, SPAN_NOTICE("You refuel \the [W]."))
 		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
 		return
 
-	to_chat(user, "<span class='warning'>The tank will accept only a welding tool or cartridge.</span>")
+	to_chat(user, SPAN_WARNING("The tank will accept only a welding tool or cartridge."))
 	return
 
 /obj/item/weldpack/afterattack(obj/O as obj, mob/user as mob, proximity)
@@ -53,11 +53,11 @@
 		return
 	if (istype(O, /obj/structure/reagent_dispensers/fueltank) && src.reagents.total_volume < max_fuel)
 		O.reagents.trans_to_obj(src, max_fuel)
-		to_chat(user, "<span class='notice'>You crack the cap off the top of the pack and fill it back up again from the tank.</span>")
+		to_chat(user, SPAN_NOTICE("You crack the cap off the top of the pack and fill it back up again from the tank."))
 		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
 		return
 	else if (istype(O, /obj/structure/reagent_dispensers/fueltank) && src.reagents.total_volume == max_fuel)
-		to_chat(user, "<span class='warning'>The pack is already full!</span>")
+		to_chat(user, SPAN_WARNING("The pack is already full!"))
 		return
 
 /obj/item/weldpack/attack_hand(mob/user as mob)

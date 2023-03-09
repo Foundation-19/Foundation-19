@@ -36,7 +36,7 @@
 /obj/item/device/scanner/gas/scan(atom/A, mob/user)
 	var/air_contents = A.return_air()
 	if(!air_contents)
-		to_chat(user, "<span class='warning'>Your [src] flashes a red light as it fails to analyze \the [A].</span>")
+		to_chat(user, SPAN_WARNING("Your [src] flashes a red light as it fails to analyze \the [A]."))
 		return
 	scan_data = atmosanalyzer_scan(A, air_contents, mode)
 	scan_data = jointext(scan_data, "<br>")
@@ -54,9 +54,9 @@
 
 		if (total_moles>0)
 			if(abs(pressure - ONE_ATMOSPHERE) < 10)
-				. += "<span class='notice'>Pressure: [round(pressure,0.01)] kPa</span>"
+				. += SPAN_NOTICE("Pressure: [round(pressure,0.01)] kPa")
 			else
-				. += "<span class='warning'>Pressure: [round(pressure,0.01)] kPa</span>"
+				. += SPAN_WARNING("Pressure: [round(pressure,0.01)] kPa")
 
 			var/perGas_add_string = ""
 			for(var/mix in mixture.gas)
@@ -84,7 +84,7 @@
 			. += "Temperature: [round(mixture.temperature-T0C)]&deg;C / [round(mixture.temperature)]K[totalGas_add_string]"
 
 			return
-	. += "<span class='warning'>\The [target] has no gases!</span>"
+	. += SPAN_WARNING("\The [target] has no gases!")
 
 #undef DEFAULT_MODE
 #undef MV_MODE

@@ -78,9 +78,9 @@
 	//This really should be in mob not every check
 	switch(M.ear_damage)
 		if(1 to 14)
-			to_chat(M, "<span class='danger'>Your ears start to ring!</span>")
+			to_chat(M, SPAN_DANGER("Your ears start to ring!"))
 		if(15 to INFINITY)
-			to_chat(M, "<span class='danger'>Your ears start to ring badly!</span>")
+			to_chat(M, SPAN_DANGER("Your ears start to ring badly!"))
 
 	if(!ear_safety)
 		sound_to(M, 'sound/weapons/flash_ring.ogg')

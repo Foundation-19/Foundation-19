@@ -1,4 +1,4 @@
-#define SPAN_AOOC(X) "<span class='ooc'><span class='aooc'>[create_text_tag("aooc", "Antag-OOC:", target)] [X]</span></span>"
+#define SPAN_AOOC(X) SPAN_CLASS("ooc","<span class='aooc'>[create_text_tag("aooc", "Antag-OOC:", target)] [X]</span>")
 
 
 /decl/communication_channel/aooc

@@ -105,7 +105,7 @@
 /*
 	var/mob/mo = locate(/mob) in src
 	if(mo)
-		var/rendered = "<span class='game say'><span class='name'>[M.name]: </span> <span class='message'>[text]</span></span>"
+		var/rendered = SPAN_CLASS("game say","<span class='name'>[M.name]: </span> <span class='message'>[text]</span>")
 		mo.show_message(rendered, 2)
 		*/
 	return
@@ -141,7 +141,7 @@
 		user.visible_message("\The [user] begins securing \the [src] to the floor.", "You start securing \the [src] to the floor.")
 	if(do_after(user, delay, src))
 		if(!src) return
-		to_chat(user, "<span class='notice'>You [anchored? "un" : ""]secured \the [src]!</span>")
+		to_chat(user, SPAN_NOTICE("You [anchored? "un" : ""]secured \the [src]!"))
 		anchored = !anchored
 	return 1
 

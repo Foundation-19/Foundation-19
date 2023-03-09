@@ -50,7 +50,7 @@
 	else
 		icon_state = "pen_[colour]"
 
-	to_chat(user, "<span class='notice'>Changed color to '[colour].'</span>")
+	to_chat(user, SPAN_NOTICE("Changed color to '[colour].'"))
 
 /obj/item/weapon/pen/invisible
 	desc = "It's an invisble pen marker."
@@ -61,7 +61,7 @@
 /obj/item/weapon/pen/attack(mob/M as mob, mob/user as mob)
 	if(!ismob(M))
 		return
-	to_chat(user, "<span class='warning'>You stab [M] with the pen.</span>")
+	to_chat(user, SPAN_WARNING("You stab [M] with the pen."))
 	admin_attack_log(user, M, "Stabbed using \a [src]", "Was stabbed with \a [src]", "used \a [src] to stab")
 
 	return

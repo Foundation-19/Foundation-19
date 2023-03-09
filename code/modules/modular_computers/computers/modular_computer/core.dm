@@ -202,7 +202,7 @@
 		P = hard_drive.find_file_by_name(prog)
 
 	if(!P || !istype(P)) // Program not found or it's not executable program.
-		to_chat(user, "<span class='danger'>\The [src]'s screen shows \"I/O ERROR - Unable to run [prog]\" warning.</span>")
+		to_chat(user, SPAN_DANGER("\The [src]'s screen shows \"I/O ERROR - Unable to run [prog]\" warning."))
 		return
 
 	P.computer = src
@@ -216,11 +216,11 @@
 		return
 
 	if(idle_threads.len >= processor_unit.processing_power+1)
-		to_chat(user, "<span class='notice'>\The [src] displays a \"Maximal CPU load reached. Unable to run another program.\" error</span>")
+		to_chat(user, SPAN_NOTICE("\The [src] displays a \"Maximal CPU load reached. Unable to run another program.\" error"))
 		return
 
 	if(P.requires_ntnet && !get_ntnet_status(P.requires_ntnet_feature)) // The program requires SCiPnet connection, but we are not connected to SCiPnet.
-		to_chat(user, "<span class='danger'>\The [src]'s screen shows \"NETWORK ERROR - Unable to connect to SolNet. Please retry. If problem persists contact your system administrator.\" warning.</span>")
+		to_chat(user, SPAN_DANGER("\The [src]'s screen shows \"NETWORK ERROR - Unable to connect to SolNet. Please retry. If problem persists contact your system administrator.\" warning."))
 		return
 
 	if(active_program)

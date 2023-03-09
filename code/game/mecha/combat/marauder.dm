@@ -136,7 +136,7 @@
 		if(get_charge() > 0)
 			thrusters = !thrusters
 			src.log_message("Toggled thrusters.")
-			src.occupant_message("<font color='[src.thrusters?"blue":"red"]'>Thrusters [thrusters?"en":"dis"]abled.</font>")
+			src.occupant_message(FONT_COLORED("[src.thrusters?"blue":"red"]","Thrusters [thrusters?"en":"dis"]abled."))
 	return
 
 
@@ -166,7 +166,7 @@
 	if(src.occupant.client)
 		src.zoom = !src.zoom
 		src.log_message("Toggled zoom mode.")
-		src.occupant_message("<font color='[src.zoom?"blue":"red"]'>Zoom mode [zoom?"en":"dis"]abled.</font>")
+		src.occupant_message(FONT_COLORED("[src.zoom?"blue":"red"]","Zoom mode [zoom?"en":"dis"]abled."))
 		if(zoom)
 			src.occupant.client.view = 12
 			sound_to(src.occupant, sound('sound/mecha/imag_enh.ogg',volume=50))

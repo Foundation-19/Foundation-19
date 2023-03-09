@@ -471,10 +471,10 @@ steam.start() -- spawns the effect
 		s.start()
 
 		for(var/mob/M in viewers(5, location))
-			to_chat(M, "<span class='warning'>The solution violently explodes.</span>")
+			to_chat(M, SPAN_WARNING("The solution violently explodes."))
 		for(var/mob/M in viewers(1, location))
 			if (prob (50 * amount))
-				to_chat(M, "<span class='warning'>The explosion knocks you down.</span>")
+				to_chat(M, SPAN_WARNING("The explosion knocks you down."))
 				M.Weaken(rand(1,5))
 		return
 	else
@@ -497,7 +497,7 @@ steam.start() -- spawns the effect
 			flash = (amount/4) * flashing_factor
 
 		for(var/mob/M in viewers(8, location))
-			to_chat(M, "<span class='warning'>The solution violently explodes.</span>")
+			to_chat(M, SPAN_WARNING("The solution violently explodes."))
 
 		explosion(
 			location,

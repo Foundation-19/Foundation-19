@@ -23,7 +23,7 @@
 /obj/item/reagent_containers/food/snacks/canned/attack_self(mob/user)
 	if(sealed)
 		playsound(loc,'sound/effects/canopen.ogg', rand(10,50), 1)
-		to_chat(user, "<span class='notice'>You unseal \the [src] with a crack of metal.</span>")
+		to_chat(user, SPAN_NOTICE("You unseal \the [src] with a crack of metal."))
 		unseal()
 
 /obj/item/reagent_containers/food/snacks/canned/on_update_icon()

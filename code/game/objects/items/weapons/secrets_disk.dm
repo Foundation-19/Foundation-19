@@ -46,9 +46,9 @@
 		var/obj/item/card/id/ID = W
 		if(check_access(ID))
 			locked = !locked
-			to_chat(user, "<span class='notice'>You swipe your card and [locked ? "lock":"unlock"] the disk.</span>")
+			to_chat(user, SPAN_NOTICE("You swipe your card and [locked ? "lock":"unlock"] the disk."))
 		else
-			to_chat(user, "<span class='warning'>The disk's screen flashes 'Access Denied'.</span>")
+			to_chat(user, SPAN_WARNING("The disk's screen flashes 'Access Denied'."))
 		return
 	. = ..()
 
@@ -63,7 +63,7 @@
 			return
 		SetName("'[input]' project data disk")
 	else
-		to_chat(usr, "<span class='warning'>The disk's screen flashes 'Access Denied'. It is locked.</span>")
+		to_chat(usr, SPAN_WARNING("The disk's screen flashes 'Access Denied'. It is locked."))
 
 /obj/item/storage/box/secret_project_disks
 	name = "box of classified data disks"

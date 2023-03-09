@@ -95,7 +95,7 @@
 
 /obj/machinery/power/singularity_beacon/proc/Activate(mob/user = null)
 	if(surplus() < 1500)
-		if(user) to_chat(user, "<span class='notice'>The connected wire doesn't have enough current.</span>")
+		if(user) to_chat(user, SPAN_NOTICE("The connected wire doesn't have enough current."))
 		return
 	for(var/obj/singularity/singulo in world)
 		if(singulo.z == z)
@@ -105,7 +105,7 @@
 
 	START_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
 	if(user)
-		to_chat(user, "<span class='notice'>You activate the beacon.</span>")
+		to_chat(user, SPAN_NOTICE("You activate the beacon."))
 
 
 /obj/machinery/power/singularity_beacon/proc/Deactivate(mob/user = null)
@@ -115,7 +115,7 @@
 	icon_state = "[icontype]0"
 	active = 0
 	if(user)
-		to_chat(user, "<span class='notice'>You deactivate the beacon.</span>")
+		to_chat(user, SPAN_NOTICE("You deactivate the beacon."))
 
 
 /obj/machinery/power/singularity_beacon/physical_attack_hand(mob/user)
@@ -126,17 +126,17 @@
 		else
 			Activate(user)
 	else
-		to_chat(user, "<span class='danger'>You need to screw the beacon to the floor first!</span>")
+		to_chat(user, SPAN_DANGER("You need to screw the beacon to the floor first!"))
 
 /obj/machinery/power/singularity_beacon/attackby(obj/item/W as obj, mob/user as mob)
 	if(isScrewdriver(W))
 		if(active)
-			to_chat(user, "<span class='danger'>You need to deactivate the beacon first!</span>")
+			to_chat(user, SPAN_DANGER("You need to deactivate the beacon first!"))
 			return
 
 		if(anchored)
 			anchored = FALSE
-			to_chat(user, "<span class='notice'>You unscrew the beacon from the floor.</span>")
+			to_chat(user, SPAN_NOTICE("You unscrew the beacon from the floor."))
 			disconnect_from_network()
 			return
 		else
@@ -144,7 +144,7 @@
 				to_chat(user, "This device must be placed over an exposed cable.")
 				return
 			anchored = TRUE
-			to_chat(user, "<span class='notice'>You screw the beacon to the floor and attach the cable.</span>")
+			to_chat(user, SPAN_NOTICE("You screw the beacon to the floor and attach the cable."))
 			return
 	..()
 	return
