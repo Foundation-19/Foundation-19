@@ -26,7 +26,7 @@
 	..()
 	L.adjustCloneLoss(20)
 	L.Weaken(2)
-	to_chat(L, "<span class='danger'>You feel your body warp and change underneath you!</span>")
+	to_chat(L, SPAN_DANGER("You feel your body warp and change underneath you!"))
 
 /datum/phenomena/rock_form
 	name = "Rock Form"
@@ -36,6 +36,6 @@
 
 /datum/phenomena/rock_form/activate(mob/living/carbon/human/H)
 	..()
-	to_chat(H, "<span class='danger'>You feel your body harden as it rapidly is transformed into living stone!</span>")
+	to_chat(H, SPAN_DANGER("You feel your body harden as it rapidly is transformed into living stone!"))
 	H.set_species("Golem")
 	H.Weaken(5)

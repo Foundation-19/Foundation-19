@@ -128,7 +128,7 @@
 	if(RCon)
 		..()
 	else // RCON wire cut
-		to_chat(user, "<span class='warning'>Connection error: Destination Unreachable.</span>")
+		to_chat(user, SPAN_WARNING("Connection error: Destination Unreachable."))
 
 // Proc: recalc_coils()
 // Parameters: None
@@ -338,7 +338,7 @@
 /obj/machinery/power/smes/buildable/attackby(obj/item/W as obj, mob/user as mob)
 	// No more disassembling of overloaded SMESs. You broke it, now enjoy the consequences.
 	if (failing)
-		to_chat(user, "<span class='warning'>\The [src]'s screen is flashing with alerts. It seems to be overloaded! Touching it now is probably not a good idea.</span>")
+		to_chat(user, SPAN_WARNING("\The [src]'s screen is flashing with alerts. It seems to be overloaded! Touching it now is probably not a good idea."))
 		return
 
 	if (!..())
@@ -348,7 +348,7 @@
 			var/newtag = input(user, "Enter new RCON tag. Use \"NO_TAG\" to disable RCON or leave empty to cancel.", "SMES RCON system") as text
 			if(newtag)
 				RCon_tag = newtag
-				to_chat(user, "<span class='notice'>You changed the RCON tag to: [newtag]</span>")
+				to_chat(user, SPAN_NOTICE("You changed the RCON tag to: [newtag]"))
 
 // Proc: toggle_input()
 // Parameters: None

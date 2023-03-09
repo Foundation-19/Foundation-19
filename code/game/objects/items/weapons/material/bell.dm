@@ -15,10 +15,10 @@
 	if (user.a_intent == I_GRAB)
 		return ..()
 	else if (user.a_intent == I_HURT)
-		user.visible_message("<span class='warning'>\The [user] hammers \the [src]!</span>")
+		user.visible_message(SPAN_WARNING("\The [user] hammers \the [src]!"))
 		playsound(user.loc, 'sound/items/manydings.ogg', 60)
 	else
-		user.visible_message("<span class='notice'>\The [user] rings \the [src].</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] rings \the [src]."))
 		playsound(user.loc, 'sound/items/oneding.ogg', 20)
 	flick("bell_dingeth", src)
 

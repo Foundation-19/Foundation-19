@@ -38,7 +38,7 @@
 			prisoner.equip_to_slot_or_del(new /obj/item/clothing/under/color/orange(prisoner), slot_w_uniform)
 			prisoner.equip_to_slot_or_del(new /obj/item/clothing/shoes/orange(prisoner), slot_shoes)
 		spawn(50)
-			to_chat(M, "<span class='warning'>You have been sent to the prison station!</span>")
+			to_chat(M, SPAN_WARNING("You have been sent to the prison station!"))
 		log_and_message_admins("sent [key_name_admin(M)] to the prison station.")
 		SSstatistics.add_field_details("admin_verb","PRISON") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -282,7 +282,7 @@
 		to_chat(src, "Only administrators may use this command.")
 		return
 	M.status_flags ^= GODMODE
-	to_chat(usr, "<span class='notice'>Toggled [(M.status_flags & GODMODE) ? "ON" : "OFF"]</span>")
+	to_chat(usr, SPAN_NOTICE("Toggled [(M.status_flags & GODMODE) ? "ON" : "OFF"]"))
 	log_admin("[key_name(usr)] has toggled [key_name(M)]'s nodamage to [(M.status_flags & GODMODE) ? "On" : "Off"]")
 	message_admins("[key_name_admin(usr)] has toggled [key_name_admin(M)]'s nodamage to [(M.status_flags & GODMODE) ? "On" : "Off"]", 1)
 	SSstatistics.add_field_details("admin_verb","GOD") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -303,12 +303,12 @@
 	if(!usr || !usr.client)
 		return
 	if(!usr.client.holder)
-		to_chat(usr, "<font color='red'>Error: cmd_admin_mute: You don't have permission to do this.</font>")
+		to_chat(usr, FONT_COLORED("red","Error: cmd_admin_mute: You don't have permission to do this."))
 		return
 	if(!M.client)
-		to_chat(usr, "<font color='red'>Error: cmd_admin_mute: This mob doesn't have a client tied to it.</font>")
+		to_chat(usr, FONT_COLORED("red","Error: cmd_admin_mute: This mob doesn't have a client tied to it."))
 	if(M.client.holder)
-		to_chat(usr, "<font color='red'>Error: cmd_admin_mute: You cannot mute an admin/mod.</font>")
+		to_chat(usr, FONT_COLORED("red","Error: cmd_admin_mute: You cannot mute an admin/mod."))
 	if(!M.client)		return
 	if(M.client.holder)	return
 
@@ -384,7 +384,7 @@ Ccomp's first proc.
 	var/list/ghosts = get_ghosts_by_key()
 	var/mob/observer/ghost/G = ghosts[selection]
 	if(!istype(G))
-		to_chat(src, "<span class='warning'>[selection] no longer has an associated ghost.</span>")
+		to_chat(src, SPAN_WARNING("[selection] no longer has an associated ghost."))
 		return
 
 	if(G.has_enabled_antagHUD == 1 && config.antag_hud_restricted)
@@ -419,19 +419,19 @@ Ccomp's first proc.
 			if(g.antagHUD)
 				g.antagHUD = 0						// Disable it on those that have it enabled
 				g.has_enabled_antagHUD = 2				// We'll allow them to respawn
-				to_chat(g, "<span class='danger'>The Administrator has disabled AntagHUD</span>")
+				to_chat(g, SPAN_DANGER("The Administrator has disabled AntagHUD"))
 		config.antag_hud_allowed = 0
-		to_chat(src, "<span class='danger'>AntagHUD usage has been disabled</span>")
+		to_chat(src, SPAN_DANGER("AntagHUD usage has been disabled"))
 		action = "disabled"
 	else
 		for(var/mob/observer/ghost/g in get_ghosts())
 			if(!g.client.holder)						// Add the verb back for all non-admin ghosts
 				add_verb(g, /mob/observer/ghost/verb/toggle_antagHUD)
-				to_chat(g, "<span class='notice'><B>The Administrator has enabled AntagHUD </B></span>")// Notify all observers they can now use AntagHUD
+				to_chat(g, SPAN_NOTICE("<B>The Administrator has enabled AntagHUD </B>"))// Notify all observers they can now use AntagHUD
 
 		config.antag_hud_allowed = 1
 		action = "enabled"
-		to_chat(src, "<span class='notice'><B>AntagHUD usage has been enabled</B></span>")
+		to_chat(src, SPAN_NOTICE("<B>AntagHUD usage has been enabled</B>"))
 
 
 	log_admin("[key_name(usr)] has [action] antagHUD usage for observers")
@@ -448,19 +448,19 @@ Ccomp's first proc.
 	var/action=""
 	if(config.antag_hud_restricted)
 		for(var/mob/observer/ghost/g in get_ghosts())
-			to_chat(g, "<span class='notice'><B>The administrator has lifted restrictions on joining the round if you use AntagHUD</B></span>")
+			to_chat(g, SPAN_NOTICE("<B>The administrator has lifted restrictions on joining the round if you use AntagHUD</B>"))
 		action = "lifted restrictions"
 		config.antag_hud_restricted = 0
-		to_chat(src, "<span class='notice'><B>AntagHUD restrictions have been lifted</B></span>")
+		to_chat(src, SPAN_NOTICE("<B>AntagHUD restrictions have been lifted</B>"))
 	else
 		for(var/mob/observer/ghost/g in get_ghosts())
-			to_chat(g, "<span class='danger'>The administrator has placed restrictions on joining the round if you use AntagHUD</span>")
-			to_chat(g, "<span class='danger'>Your AntagHUD has been disabled, you may choose to re-enabled it but will be under restrictions</span>")
+			to_chat(g, SPAN_DANGER("The administrator has placed restrictions on joining the round if you use AntagHUD"))
+			to_chat(g, SPAN_DANGER("Your AntagHUD has been disabled, you may choose to re-enabled it but will be under restrictions"))
 			g.antagHUD = 0
 			g.has_enabled_antagHUD = 0
 		action = "placed restrictions"
 		config.antag_hud_restricted = 1
-		to_chat(src, "<span class='danger'>AntagHUD restrictions have been enabled</span>")
+		to_chat(src, SPAN_DANGER("AntagHUD restrictions have been enabled"))
 
 	log_admin("[key_name(usr)] has [action] on joining the round if they use AntagHUD")
 	message_admins("Admin [key_name_admin(usr)] has [action] on joining the round if they use AntagHUD", 1)
@@ -482,7 +482,7 @@ Ccomp's first proc.
 		else
 			M.add_ion_law(input)
 			for(var/mob/living/silicon/ai/O in SSmobs.mob_list)
-				to_chat(O, "<span class='warning'>" + input + "...LAWS UPDATED</span>")
+				to_chat(O, SPAN_WARNING("" + input + "...LAWS UPDATED"))
 				O.show_laws()
 
 	log_admin("Admin [key_name(usr)] has added a new AI law - [input]")

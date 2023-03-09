@@ -26,14 +26,14 @@
 	var/mob/living/carbon/human/H = user
 	if(istype(H) && H.gloves)
 		return ..()
-	
+
 	canremove = 0 // reset canremove for new pickup
 
 	var/which_hand = BP_L_HAND // determine hand to burn
 	if(!user.hand)
 		which_hand = BP_R_HAND
 
-	to_chat(user, "<span class='warning'>The [name] begins to sear your hand, burning the skin on contact, and you feel yourself unable to drop it.</span>")
+	to_chat(user, SPAN_WARNING("The [name] begins to sear your hand, burning the skin on contact, and you feel yourself unable to drop it."))
 	var/damage_coeff = 1
 	if(user in victims)
 		damage_coeff = Clamp((5000-(world.time - victims[user]))/1000,1,5)
@@ -41,22 +41,22 @@
 	user.apply_damage(30*damage_coeff, TOX, which_hand, 0)
 
 	spawn(200)
-		to_chat(user, "<span class='warning'>Bones begin to shift and grind inside of you, and every single one of your nerves seems like it's on fire.</span>")
+		to_chat(user, SPAN_WARNING("Bones begin to shift and grind inside of you, and every single one of your nerves seems like it's on fire."))
 	spawn(210)
-		user.visible_message("<span class='notice'>\The [user] starts to scream and writhe in pain as their bone structure reforms.</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] starts to scream and writhe in pain as their bone structure reforms."))
 	spawn(300)
 		if(H.is_blue_lady)
 			if(user.gender == MALE)
 				user.gender = FEMALE
-				to_chat(user, "<span class='notice'>A vast sense of relief washes over you, as you feel your body reshape itself to be more like hers again.</span>")
+				to_chat(user, SPAN_NOTICE("A vast sense of relief washes over you, as you feel your body reshape itself to be more like hers again."))
 			else if(H.pre_scp013_gender == MALE && H.blue_lady_transitioned == 0)
 				H.blue_lady_transitioned = 1
-				to_chat(user, "<span class='notice'>At last, you feel truly at home in your own body. You have become that wistful lady in blue.</span>")
+				to_chat(user, SPAN_NOTICE("At last, you feel truly at home in your own body. You have become that wistful lady in blue."))
 			else
 				user.gender = MALE
-				to_chat(user, "<span class='warning'>There's something you can't see, and it feels unbearably wrong. It's all wrong. You weren't ... she wasn't ... a man.</span>")
+				to_chat(user, SPAN_WARNING("There's something you can't see, and it feels unbearably wrong. It's all wrong. You weren't ... she wasn't ... a man."))
 				spawn(500)
-					to_chat(user, "<span class='warning'>You have the terrifying feeling that you're inhabiting the wrong body. You have to find a way to reverse whatever you just did!</span>")
+					to_chat(user, SPAN_WARNING("You have the terrifying feeling that you're inhabiting the wrong body. You have to find a way to reverse whatever you just did!"))
 		else
 			if(user.gender == FEMALE)
 				user.gender = MALE
@@ -67,7 +67,7 @@
 		H.update_dna()
 		H.update_body()
 	spawn(350)
-		to_chat(user, "<span class='warning'>The burning begins to fade, and you feel your hand relax it's grip on the [name].</span>")
+		to_chat(user, SPAN_WARNING("The burning begins to fade, and you feel your hand relax it's grip on the [name]."))
 	spawn(360)
 		canremove = 1 //transformation finished, you can let go now
 		victims[user] = world.time

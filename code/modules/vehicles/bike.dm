@@ -40,7 +40,7 @@
 
 	if(usr.incapacitated()) return
 	if(!engine)
-		to_chat(usr, "<span class='warning'>\The [src] does not have an engine block installed...</span>")
+		to_chat(usr, SPAN_WARNING("\The [src] does not have an engine block installed..."))
 		return
 
 	if(!on)
@@ -59,7 +59,7 @@
 		usr.visible_message("\The [usr] puts up \the [src]'s kickstand.")
 	else
 		if(istype(src.loc,/turf/space))
-			to_chat(usr, "<span class='warning'> You don't think kickstands work in space...</span>")
+			to_chat(usr, SPAN_WARNING(" You don't think kickstands work in space..."))
 			return
 		usr.visible_message("\The [usr] puts down \the [src]'s kickstand.")
 		if(pulledby)
@@ -109,9 +109,9 @@
 	if(open)
 		if(istype(W, /obj/item/engine))
 			if(engine)
-				to_chat(user, "<span class='warning'>There is already an engine block in \the [src].</span>")
+				to_chat(user, SPAN_WARNING("There is already an engine block in \the [src]."))
 				return 1
-			user.visible_message("<span class='warning'>\The [user] installs \the [W] into \the [src].</span>")
+			user.visible_message(SPAN_WARNING("\The [user] installs \the [W] into \the [src]."))
 			load_engine(W)
 			return
 		else if(engine && engine.attackby(W,user))
@@ -124,7 +124,7 @@
 
 /obj/vehicle/bike/MouseDrop_T(atom/movable/C, mob/user as mob)
 	if(!load(C))
-		to_chat(user, "<span class='warning'> You were unable to load \the [C] onto \the [src].</span>")
+		to_chat(user, SPAN_WARNING(" You were unable to load \the [C] onto \the [src]."))
 		return
 
 /obj/vehicle/bike/attack_hand(mob/user as mob)
@@ -137,7 +137,7 @@
 		return
 	if(user.incapacitated())
 		unload(user)
-		visible_message("<span class='warning'>\The [user] falls off \the [src]!</span>")
+		visible_message(SPAN_WARNING("\The [user] falls off \the [src]!"))
 		return
 	return Move(get_step(src, direction))
 

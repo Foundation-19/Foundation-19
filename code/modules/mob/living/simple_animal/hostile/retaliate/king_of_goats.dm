@@ -98,7 +98,7 @@
 				G.current_damtype = ELECTROCUTE
 
 		else if(prob(5)) //earthquake spell
-			G.visible_message("<span class='cultannounce'>\The [G]' eyes begin to glow ominously as dust and debris in the area is kicked up in a light breeze.</span>")
+			G.visible_message(SPAN_CLASS("cultannounce","\The [G]' eyes begin to glow ominously as dust and debris in the area is kicked up in a light breeze."))
 			set_busy(TRUE)
 			if(do_after(G, 6 SECONDS))
 				var/health_holder = G.health
@@ -213,7 +213,7 @@
 	boss_theme = GLOB.sound_player.PlayLoopingSound(src, sound_id, 'sound/music/Visager-Miniboss_Fight.ogg', volume = 10, range = 8, falloff = 4, prefer_mute = TRUE)
 	stun_chance = 10
 	update_icon()
-	visible_message("<span class='cultannounce'>\The [src]' wounds close with a flash, and when he emerges, he's even larger than before!</span>")
+	visible_message(SPAN_CLASS("cultannounce","\The [src]' wounds close with a flash, and when he emerges, he's even larger than before!"))
 
 /mob/living/simple_animal/hostile/retaliate/goat/king/phase2/on_update_icon()
 	var/matrix/M = new
@@ -238,7 +238,7 @@
 		phase3_transition()
 
 /mob/living/simple_animal/hostile/retaliate/goat/king/proc/OnDeath()
-	visible_message("<span class='cultannounce'>\The [src] lets loose a terrific wail as its wounds close shut with a flash of light, and its eyes glow even brighter than before!</span>")
+	visible_message(SPAN_CLASS("cultannounce","\The [src] lets loose a terrific wail as its wounds close shut with a flash of light, and its eyes glow even brighter than before!"))
 	new /mob/living/simple_animal/hostile/retaliate/goat/king/phase2(src.loc)
 	qdel(src)
 

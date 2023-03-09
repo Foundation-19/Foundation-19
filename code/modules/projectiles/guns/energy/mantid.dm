@@ -125,7 +125,7 @@
 
 /obj/item/gun/magnetic/railgun/flechette/ascent/show_ammo(mob/user)
 	var/obj/item/cell/cell = get_cell()
-	to_chat(user, "<span class='notice'>There are [cell ? Floor(cell.charge/charge_per_shot) : 0] shot\s remaining.</span>")
+	to_chat(user, SPAN_NOTICE("There are [cell ? Floor(cell.charge/charge_per_shot) : 0] shot\s remaining."))
 
 /obj/item/gun/magnetic/railgun/flechette/ascent/check_ammo()
 	var/obj/item/cell/cell = get_cell()

@@ -26,8 +26,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 	/// Reference to the area we were created in
 	var/area/spawn_area
 
-	/// List of people that are under blinking influence
+	/// List of humans under the blinking influence
 	var/list/next_blinks = list()
+	/// List of times at which humans joined the list (Used for HUD calculation)
+	var/list/next_blinks_join_time = list()
 
 	/// Current attack cooldown
 	var/snap_cooldown
@@ -67,6 +69,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/Destroy()
 	next_blinks = null
+	next_blinks_join_time = null
+
 	GLOB.scp173s -= src
 	return ..()
 
@@ -91,17 +95,17 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 	if(ishuman(A))
 		if(snap_cooldown > world.time)
-			to_chat(src, "<span class='warning'>You can't attack yet.</span>")
+			to_chat(src, SPAN_WARNING("You can't attack yet."))
 			return
 		var/mob/living/carbon/human/H = A
 		if(H.SCP)
-			to_chat(src, "<span class='warning'><I>[H] is a fellow SCP!</I></span>")
+			to_chat(src, SPAN_WARNING("<I>[H] is a fellow SCP!</I>"))
 			return
 		if(H.stat == DEAD)
-			to_chat(src, "<span class='warning'><I>[H] is already dead!</I></span>")
+			to_chat(src, SPAN_WARNING("<I>[H] is already dead!</I>"))
 			return
 		snap_cooldown = world.time + snap_cooldown_time
-		visible_message("<span class='danger'>[src] snaps [H]'s neck!</span>")
+		visible_message(SPAN_DANGER("[src] snaps [H]'s neck!"))
 		playsound(loc, pick('sound/scp/spook/NeckSnap1.ogg', 'sound/scp/spook/NeckSnap3.ogg'), 50, 1)
 		H.death()
 		return
@@ -110,10 +114,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 	if(istype(A,/obj/machinery/floor_light))
 		if(get_area(A) == spawn_area)
-			to_chat(src, "<span class='warning'>You can't reach the lights in your own containment zone.</span>")
+			to_chat(src, SPAN_WARNING("You can't reach the lights in your own containment zone."))
 			return
 		if(light_break_cooldown > world.time) //cooldown
-			to_chat(src, "<span class='warning'>You can't break that yet.</span>")
+			to_chat(src, SPAN_WARNING("You can't break that yet."))
 			return
 		var/obj/machinery/floor_light/W = A
 		W.physical_attack_hand(src)
@@ -121,10 +125,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 	if(istype(A,/obj/machinery/light))
 		if(get_area(A) == spawn_area)
-			to_chat(src, "<span class='warning'>You can't reach the lights in your own containment zone.</span>")
+			to_chat(src, SPAN_WARNING("You can't reach the lights in your own containment zone."))
 			return
 		if(light_break_cooldown > world.time) //cooldown
-			to_chat(src, "<span class='warning'>You can't break that yet.</span>")
+			to_chat(src, SPAN_WARNING("You can't break that yet."))
 			return
 		var/obj/machinery/light/W = A
 		W.broken()
@@ -154,12 +158,15 @@ GLOBAL_LIST_EMPTY(scp173s)
 		if(!(A in our_view))
 			DisableBlinking(A)
 			continue
-		if(world.time >= next_blinks[A])
-			var/mob/living/carbon/human/H = A
+		var/mob/living/carbon/human/H = A
+		if(world.time >= next_blinks[H])
 			if(H.stat) // Sleeping or dead people can't blink!
 				DisableBlinking(H)
 				continue
 			CauseBlink(H)
+		BITSET(H.hud_updateflag, BLINK_HUD)
+	handle_regular_hud_updates()
+	process_blink_hud(src)
 	if(world.time > defecation_cooldown)
 		Defecate()
 	if(IsBeingWatched() || client) // AI controls from here
@@ -169,7 +176,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/ClimbCheck(atom/A)
 	if(IsBeingWatched())
-		to_chat(src, "<span class='danger'>You can't climb while being watched.</span>")
+		to_chat(src, SPAN_DANGER("You can't climb while being watched."))
 		return FALSE
 	return TRUE
 
@@ -181,11 +188,13 @@ GLOBAL_LIST_EMPTY(scp173s)
 			continue
 		var/mob/living/carbon/human/H = L
 		if(next_blinks[H] == null)
+			BITSET(H.hud_updateflag, BLINK_HUD) //Ensures HUD appears before first blink
 			var/turf/T = get_turf(src)
 			var/lightcount = T.get_lumcount()
 			if(lightcount > max_lightlevel)
 				lightcount = 1 //Light level must be less than max_lightlevel before blink time drop off
 			next_blinks[H] = world.time + (rand(5 SECONDS, 10 SECONDS) * lightcount) // Just encountered SCP 173
+			next_blinks_join_time[H] = world.time
 		if(H.SCP)
 			continue
 		if(is_blind(H) || H.eye_blind > 0)
@@ -207,13 +216,13 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 
 	if(!A.Adjacent(src))
-		to_chat(src, "<span class='warning'>\The [A] is too far away.</span>")
+		to_chat(src, SPAN_WARNING("\The [A] is too far away."))
 		return
 
 	var/open_time = 3 SECONDS
 	if(istype(A, /obj/machinery/door/blast))
 		if(get_area(A) == spawn_area)
-			to_chat(src, "<span class='warning'>You cannot open blast doors in your containment zone.</span>")
+			to_chat(src, SPAN_WARNING("You cannot open blast doors in your containment zone."))
 			return
 		open_time = 15 SECONDS
 
@@ -248,20 +257,23 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/proc/DisableBlinking(mob/living/carbon/human/H)
 	next_blinks[H] = null
+	next_blinks_join_time[H] = null
 	for(var/mob/living/scp_173/S in GLOB.scp173s) // In case you spawned more than one
 		if(S.next_blinks[H]) // Not null
 			return
 	remove_verb(H, /mob/living/carbon/human/verb/manual_blink)
 
 /mob/living/scp_173/proc/CauseBlink(mob/living/carbon/human/H)
-	H.visible_message("<span class='notice'>[H] blinks.</span>")
+	H.visible_message(SPAN_NOTICE("[H] blinks."))
 	H.eye_blind += 2
+	BITSET(H.hud_updateflag, BLINK_HUD)
 	add_verb(H, /mob/living/carbon/human/verb/manual_blink)
 	var/turf/T = get_turf(src)
 	var/lightcount = T.get_lumcount()
 	if(lightcount > max_lightlevel)
 		lightcount = 1 //Light level must be less than max_lightlevel before blink time drop off
 	next_blinks[H] = world.time + (rand(15 SECONDS, 25 SECONDS) * lightcount)
+	next_blinks_join_time[H] = world.time
 
 /mob/living/scp_173/proc/AIAttemptAttack()
 	var/mob/living/carbon/human/target
@@ -430,11 +442,11 @@ GLOBAL_LIST_EMPTY(scp173s)
 	. = FALSE
 	switch(acid_melted)
 		if(0)
-			visible_message("<span class='euclid'>Acid hits \the [src] with a sizzle!</span>")
+			visible_message(SPAN_CLASS("euclid","Acid hits \the [src] with a sizzle!"))
 		if(1 to 3)
-			visible_message("<span class='euclid'>The acid melts \the [src]!</span>")
+			visible_message(SPAN_CLASS("euclid","The acid melts \the [src]!"))
 		if(4)
-			visible_message("<span class='euclid'>The acid melts \the [src] away into nothing!</span>")
+			visible_message(SPAN_CLASS("euclid","The acid melts \the [src] away into nothing!"))
 			. = TRUE
 			qdel(src)
 	acid_melted++

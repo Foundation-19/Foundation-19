@@ -23,7 +23,7 @@ var/global/datum/controller/occupations/job_master
 		occupations_by_title = list()
 		var/list/all_jobs = list(/datum/job/classd) | GLOB.using_map.allowed_jobs
 		if(!all_jobs.len)
-			log_error("<span class='warning'>Error setting up jobs, no job datums found!</span>")
+			log_error(SPAN_WARNING("Error setting up jobs, no job datums found!"))
 			return 0
 		for(var/J in all_jobs)
 			var/datum/job/job = decls_repository.get_decl(J)
@@ -381,7 +381,7 @@ var/global/datum/controller/occupations/job_master
 							permitted = 0
 
 						if(!permitted)
-							to_chat(H, "<span class='warning'>Your current species, job or whitelist status does not permit you to spawn with [thing]!</span>")
+							to_chat(H, SPAN_WARNING("Your current species, job or whitelist status does not permit you to spawn with [thing]!"))
 							continue
 
 						if(!G.slot || G.slot == slot_tie || (G.slot in loadout_taken_slots) || !G.spawn_on_mob(H, H.client.prefs.Gear()[G.display_name]))
@@ -613,14 +613,14 @@ var/global/datum/controller/occupations/job_master
 	if(spawnpoint)
 		if(!(spawnpoint in GLOB.using_map.allowed_spawns))
 			if(H)
-				to_chat(H, "<span class='warning'>Your chosen spawnpoint ([C.prefs.spawnpoint]) is unavailable for the current map. Spawning you at one of the enabled spawn points instead. To resolve this error head to your character's setup and choose a different spawn point.</span>")
+				to_chat(H, SPAN_WARNING("Your chosen spawnpoint ([C.prefs.spawnpoint]) is unavailable for the current map. Spawning you at one of the enabled spawn points instead. To resolve this error head to your character's setup and choose a different spawn point."))
 			spawnpos = null
 		else
 			spawnpos = spawntypes()[spawnpoint]
 
 	if(spawnpos && !spawnpos.check_job_spawning(rank))
 		if(H)
-			to_chat(H, "<span class='warning'>Your chosen spawnpoint ([spawnpos.display_name]) is unavailable for your chosen job ([rank]). Spawning you at another spawn point instead.</span>")
+			to_chat(H, SPAN_WARNING("Your chosen spawnpoint ([spawnpos.display_name]) is unavailable for your chosen job ([rank]). Spawning you at another spawn point instead."))
 		spawnpos = null
 
 	if(!spawnpos)

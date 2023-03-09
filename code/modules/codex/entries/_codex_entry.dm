@@ -49,5 +49,5 @@
 		dat += "<font color = '[CODEX_COLOR_MECHANICS]'>[mechanics_text]</font>"
 	if(antag_text && presenting_to.mind && player_is_antag(presenting_to.mind))
 		dat += "<h3>Antagonist Information</h3>"
-		dat += "<font color='[CODEX_COLOR_ANTAG]'>[antag_text]</font>"
+		dat += FONT_COLORED("[CODEX_COLOR_ANTAG]","[antag_text]")
 	return jointext(dat, null)

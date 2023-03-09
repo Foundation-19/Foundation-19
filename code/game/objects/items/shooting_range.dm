@@ -22,7 +22,7 @@
 			cut_overlays()
 			bulletholes.Cut()
 			hp = initial(hp)
-			to_chat(usr, "<span class='notice'>You slice off [src]'s uneven chunks of aluminium and scorch marks.</span>")
+			to_chat(usr, SPAN_NOTICE("You slice off [src]'s uneven chunks of aluminium and scorch marks."))
 			return
 
 /obj/item/target/attack_hand(mob/user)
@@ -58,7 +58,7 @@
 		if(hp <= 0)
 			for(var/mob/O in oviewers())
 				if ((O.client && !( O.blinded )))
-					to_chat(O, "<span class='warning'>\The [src] breaks into tiny pieces and collapses!</span>")
+					to_chat(O, SPAN_WARNING("\The [src] breaks into tiny pieces and collapses!"))
 			qdel(src)
 
 		// Create a temporary object to represent the damage

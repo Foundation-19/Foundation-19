@@ -663,10 +663,10 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 		var/armor_check = 100 * target.get_blocked_ratio(affecting, BRUTE, damage = 20)
 		playsound(target.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 		if(armor_check < 100)
-			target.visible_message("<span class='danger'>[attacker] has pushed [target]!</span>")
+			target.visible_message(SPAN_DANGER("[attacker] has pushed [target]!"))
 			target.apply_effect(push_mod, WEAKEN, armor_check)
 		else
-			target.visible_message("<span class='warning'>[attacker] attempted to push [target]!</span>")
+			target.visible_message(SPAN_WARNING("[attacker] attempted to push [target]!"))
 		return
 
 	if(randn <= 50)
@@ -678,12 +678,12 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 		//Actually disarm them
 		for(var/obj/item/I in holding)
 			if(I && target.unEquip(I))
-				target.visible_message("<span class='danger'>[attacker] has disarmed [target]!</span>")
+				target.visible_message(SPAN_DANGER("[attacker] has disarmed [target]!"))
 				playsound(target.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 				return
 
 	playsound(target.loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
-	target.visible_message("<span class='danger'>[attacker] attempted to disarm \the [target]!</span>")
+	target.visible_message(SPAN_DANGER("[attacker] attempted to disarm \the [target]!"))
 
 /datum/species/proc/disfigure_msg(mob/living/carbon/human/H) //Used for determining the message a disfigured face has on examine. To add a unique message, just add this onto a specific species and change the "return" message.
 	return "<span class='danger'>[H.p_their(TRUE)] face is horribly mangled!</span>\n"

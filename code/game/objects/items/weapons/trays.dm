@@ -55,7 +55,7 @@
 /obj/item/tray/attackby(obj/item/W, mob/living/user)
 	if(istype(W, /obj/item/material/kitchen/rollingpin) && user.a_intent == I_HURT)
 		if(bash_cooldown < world.time)
-			user.visible_message("<span class='warning'>[user] bashes [src] with [W]!</span>")
+			user.visible_message(SPAN_WARNING("[user] bashes [src] with [W]!"))
 			playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
 			bash_cooldown = world.time + 25
 		return TRUE

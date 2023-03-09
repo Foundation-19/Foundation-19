@@ -132,12 +132,12 @@ var/global/Holiday = null
 	world.update_status()
 	Holiday_Game_Start()
 
-	message_admins("<span class='notice'>ADMIN: Event: [key_name(src)] force-set Holiday to \"[Holiday]\"</span>")
+	message_admins(SPAN_NOTICE("ADMIN: Event: [key_name(src)] force-set Holiday to \"[Holiday]\""))
 	log_admin("[key_name(src)] force-set Holiday to \"[Holiday]\"")
 
 
 //Run at the  start of a round
 /proc/Holiday_Game_Start()
 	if(Holiday)
-		to_world("<font color='blue'>and...</font>")
+		to_world(FONT_COLORED("blue","and..."))
 		to_world("<h4>Happy [Holiday] Everybody!</h4>")

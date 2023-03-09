@@ -258,13 +258,13 @@
 			if(!isSynthetic())
 				if(prob(5) && prob(100 * RADIATION_SPEED_COEFFICIENT))
 					radiation -= 5 * RADIATION_SPEED_COEFFICIENT
-					to_chat(src, "<span class='warning'>You feel weak.</span>")
+					to_chat(src, SPAN_WARNING("You feel weak."))
 					Weaken(3)
 					if(!lying)
 						emote("collapse")
 				if(prob(5) && prob(100 * RADIATION_SPEED_COEFFICIENT) && species.get_bodytype(src) == SPECIES_HUMAN) //apes go bald
 					if((h_style != "Bald" || f_style != "Shaved" ))
-						to_chat(src, "<span class='warning'>Your hair falls out.</span>")
+						to_chat(src, SPAN_WARNING("Your hair falls out."))
 						h_style = "Bald"
 						f_style = "Shaved"
 						update_hair()
@@ -276,7 +276,7 @@
 				if(prob(5))
 					take_overall_damage(0, 5 * RADIATION_SPEED_COEFFICIENT, used_weapon = "Radiation Burns")
 				if(prob(1))
-					to_chat(src, "<span class='warning'>You feel strange!</span>")
+					to_chat(src, SPAN_WARNING("You feel strange!"))
 					adjustCloneLoss(5 * RADIATION_SPEED_COEFFICIENT)
 					emote("gasp")
 		if(radiation > 150)
@@ -603,7 +603,7 @@
 
 		if(get_shock() >= species.total_health)
 			if(!stat)
-				to_chat(src, "<span class='warning'>[species.halloss_message_self]</span>")
+				to_chat(src, SPAN_WARNING("[species.halloss_message_self]"))
 				src.visible_message("<B>[src]</B> [species.halloss_message]")
 			Paralyse(10)
 
@@ -650,7 +650,7 @@
 				var/zzzchance = min(5, 5*drowsyness/30)
 				if((prob(zzzchance) || drowsyness >= 60))
 					if(stat == CONSCIOUS)
-						to_chat(src, "<span class='notice'>You are about to fall asleep...</span>")
+						to_chat(src, SPAN_NOTICE("You are about to fall asleep..."))
 					Sleeping(5)
 
 		// If you're dirty, your gloves will become dirty, too.
@@ -673,7 +673,7 @@
 		if(stasis_value > 1 && drowsyness < stasis_value * 4)
 			drowsyness += min(stasis_value, 3)
 			if(!stat && prob(1))
-				to_chat(src, "<span class='notice'>You feel slow and sluggish...</span>")
+				to_chat(src, SPAN_NOTICE("You feel slow and sluggish..."))
 
 	return 1
 
@@ -888,7 +888,7 @@
 	if(client && world.time >= client.played + 600)
 		A.play_ambience(src)
 	if(stat == UNCONSCIOUS && world.time - l_move_time < 5 && prob(10))
-		to_chat(src,"<span class='notice'>You feel like you're [pick("moving","flying","floating","falling","hovering")].</span>")
+		to_chat(src,SPAN_NOTICE("You feel like you're [pick("moving","flying","floating","falling","hovering")]."))
 
 /mob/living/carbon/human/proc/handle_changeling()
 	if(mind?.changeling)
@@ -972,6 +972,31 @@
 		else
 			holder.icon_state = "[pulse()]"
 		hud_list[HEALTH_HUD] = holder
+
+	if (BITTEST(hud_updateflag, BLINK_HUD) && hud_list[BLINK_HUD])
+		var/image/holder = hud_list[BLINK_HUD]
+		var/blink_time_current = null
+		var/blink_time_max = null
+		var/mob/living/scp_173/current173
+
+		for(var/mob/living/scp_173/A in GLOB.scp173s) //Gets the blink timer for the victim(mob that can see 173)
+			var/list/next_blinks = A.next_blinks
+			var/list/next_blinks_join_time = A.next_blinks_join_time
+			current173 = A
+			if(next_blinks[src] != null && next_blinks_join_time[src] != null)
+				blink_time_current = next_blinks[src] - world.time
+				blink_time_max = next_blinks[src] - next_blinks_join_time[src]
+
+		//Incase 173 is no longer in the victim's line of sight and in case we'd try to divide by 0
+		if(blink_time_current && blink_time_max && blink_time_max != 0)
+			if((!(current173.InCone(src, src.dir))) || current173.is_invisible_to(src) || is_blind()) //If victim cant see 173, updates HUD to "away" to alert 173 player
+				holder.icon_state = "away"
+			else if(eye_blind > 0) //173.dm applies new blink times even while the victim is still blind, so this check is neccesary
+				holder.icon_state = "0"
+			else
+				var/blink_timer_mapped = ceil((Clamp(((blink_time_current / blink_time_max) * 15), 0, 15))) //Maps time left before blink to between 0 and 15.
+				holder.icon_state = "[blink_timer_mapped]"
+		hud_list[BLINK_HUD] = holder
 
 	if (BITTEST(hud_updateflag, LIFE_HUD) && hud_list[LIFE_HUD])
 		var/image/holder = hud_list[LIFE_HUD]

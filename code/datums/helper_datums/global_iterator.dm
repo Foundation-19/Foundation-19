@@ -139,7 +139,7 @@ Data storage vars:
 		arg_list = arguments
 		return 1
 	else
-//			log_error("<span class='danger'>Invalid arguments supplied for [src.type], ref = \ref[src]</span>")
+//			log_error(SPAN_DANGER("Invalid arguments supplied for [src.type], ref = \ref[src]"))
 
 		return 0
 

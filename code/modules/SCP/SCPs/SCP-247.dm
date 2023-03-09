@@ -48,7 +48,7 @@
 	if(!T || T == loc)
 		return
 	charging = TRUE
-	visible_message("<span class='danger'>[src] charges!</span>")
+	visible_message(SPAN_DANGER("[src] charges!"))
 	DestroySurroundings()
 	walk(src, 0)
 	setDir(get_dir(src, T))

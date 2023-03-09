@@ -58,7 +58,7 @@
 		target.reset_view(src)
 		set_ready_state(0)
 		pr_mech_sleeper.start()
-		occupant_message("<font color='blue'>[target] successfully loaded into [src]. Life support functions engaged.</font>")
+		occupant_message(FONT_COLORED("blue","[target] successfully loaded into [src]. Life support functions engaged."))
 		chassis.visible_message("[chassis] loads [target] into [src].")
 		log_message("[target] loaded. Life support functions engaged.")
 	return

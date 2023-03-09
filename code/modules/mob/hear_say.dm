@@ -64,7 +64,7 @@
 	if(is_deaf() || get_sound_volume_multiplier() < 0.2)
 		if(!language || !(language.flags & INNATE)) // INNATE is the flag for audible-emote-language, so we don't want to show an "x talks but you cannot hear them" message if it's set
 			if(speaker == src)
-				to_chat(src, "<span class='warning'>You cannot hear yourself speak!</span>")
+				to_chat(src, SPAN_WARNING("You cannot hear yourself speak!"))
 			else if(!is_blind())
 				to_chat(src, "<span class='name'>[speaker_name]</span>[alt_name] talks but you cannot hear \him.")
 	else
@@ -83,9 +83,9 @@
 							nverb = "[verb] ([language.shorthand])"
 						if(GLOB.PREF_OFF)//Regular output
 							nverb = verb
-			on_hear_say("<span class='game say'>[track]<span class='name'>[speaker_name]</span>[alt_name] [language.format_message(message, nverb)]</span>")
+			on_hear_say(SPAN_CLASS("game say","[track]<span class='name'>[speaker_name]</span>[alt_name] [language.format_message(message, nverb)]"))
 		else
-			on_hear_say("<span class='game say'>[track]<span class='name'>[speaker_name]</span>[alt_name] [verb], <span class='message'><span class='body'>\"[message]\"</span></span></span>")
+			on_hear_say(SPAN_CLASS("game say","[track]<span class='name'>[speaker_name]</span>[alt_name] [verb], <span class='message'><span class='body'>\"[message]\"</span></span>"))
 		if (speech_sound && (get_dist(speaker, src) <= world.view && src.z == speaker.z))
 			var/turf/source = speaker? get_turf(speaker) : get_turf(src)
 			src.playsound_local(source, speech_sound, sound_vol, 1)
@@ -231,7 +231,7 @@
 		on_hear_radio(part_a, speaker_name, track, part_b, part_c, formatted)
 
 /proc/say_timestamp()
-	return "<span class='say_quote'>\[[station_time_timestamp("hh:mm")]\]</span>"
+	return SPAN_CLASS("say_quote","\[[station_time_timestamp("hh:mm")]\]")
 
 /mob/proc/on_hear_radio(part_a, speaker_name, track, part_b, part_c, formatted)
 	to_chat(src, "[part_a][speaker_name][part_b][formatted][part_c]")

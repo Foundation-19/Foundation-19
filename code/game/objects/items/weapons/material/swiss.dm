@@ -43,14 +43,14 @@
 		return
 	if(choice == SWISSKNF_CLOSED)
 		open = FALSE
-		user.visible_message("<span class='notice'>\The [user] closes the [name].</span>")
+		user.visible_message(SPAN_NOTICE("\The [user] closes the [name]."))
 	else
 		open = TRUE
 		if(choice == SWISSKNF_LBLADE || choice == SWISSKNF_SBLADE)
-			user.visible_message("<span class='warning'>\The [user] opens the [lowertext(choice)].</span>")
+			user.visible_message(SPAN_WARNING("\The [user] opens the [lowertext(choice)]."))
 			playsound(user, 'sound/weapons/flipblade.ogg', 15, 1)
 		else
-			user.visible_message("<span class='notice'>\The [user] opens the [lowertext(choice)].</span>")
+			user.visible_message(SPAN_NOTICE("\The [user] opens the [lowertext(choice)]."))
 
 	active_tool = choice
 	update_force()

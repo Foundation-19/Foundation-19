@@ -106,7 +106,7 @@
 	if(distance <= 1)
 		show_content(usr)
 	else
-		to_chat(user, "<span class='notice'>You have to go closer if you want to read it.</span>")
+		to_chat(user, SPAN_NOTICE("You have to go closer if you want to read it."))
 
 /obj/item/paper/verb/user_set_language()
 	set name = "Set writing language"
@@ -197,7 +197,7 @@
 	set src in usr
 
 	if((MUTATION_CLUMSY in usr.mutations) && prob(50))
-		to_chat(usr, "<span class='warning'>You cut yourself on the paper.</span>")
+		to_chat(usr, SPAN_WARNING("You cut yourself on the paper."))
 		return
 	else if(is_memo)
 		to_chat(usr, SPAN_NOTICE("You decide not to alter the name of \the [src]."))
@@ -213,7 +213,7 @@
 /obj/item/paper/attack_self(mob/living/user as mob)
 	if(user.a_intent == I_HURT)
 		if(icon_state == "scrap")
-			user.show_message("<span class='warning'>\The [src] is already crumpled.</span>")
+			user.show_message(SPAN_WARNING("\The [src] is already crumpled."))
 			return
 		//crumple dat paper
 		info = stars(info,85)
@@ -388,19 +388,19 @@
 		if(istype(P, /obj/item/flame/lighter/zippo))
 			class = "rose"
 
-		user.visible_message("<span class='[class]'>[user] holds \the [P] up to \the [src], it looks like \he's trying to burn it!</span>", \
-		"<span class='[class]'>You hold \the [P] up to \the [src], burning it slowly.</span>")
+		user.visible_message(SPAN_CLASS("[class]","[user] holds \the [P] up to \the [src], it looks like \he's trying to burn it!"), \
+		SPAN_CLASS("[class]","You hold \the [P] up to \the [src], burning it slowly."))
 
 		spawn(20)
 			if(get_dist(src, user) < 2 && user.get_active_hand() == P && P.lit)
-				user.visible_message("<span class='[class]'>[user] burns right through \the [src], turning it to ash. It flutters through the air before settling on the floor in a heap.</span>", \
-				"<span class='[class]'>You burn right through \the [src], turning it to ash. It flutters through the air before settling on the floor in a heap.</span>")
+				user.visible_message(SPAN_CLASS("[class]","[user] burns right through \the [src], turning it to ash. It flutters through the air before settling on the floor in a heap."), \
+				SPAN_CLASS("[class]","You burn right through \the [src], turning it to ash. It flutters through the air before settling on the floor in a heap."))
 
 				new /obj/effect/decal/cleanable/ash(get_turf(src))
 				qdel(src)
 
 			else
-				to_chat(user, "<span class='warning'>You must hold \the [P] steady to burn \the [src].</span>")
+				to_chat(user, SPAN_WARNING("You must hold \the [P] steady to burn \the [src]."))
 
 
 /obj/item/paper/Topic(href, href_list)
@@ -418,7 +418,7 @@
 		//var/t = strip_html_simple(input(usr, "What text do you wish to add to " + (id=="end" ? "the end of the paper" : "field "+id) + "?", "[name]", null),8192) as message
 
 		if(free_space <= 0)
-			to_chat(usr, "<span class='info'>There isn't enough space left on \the [src] to write anything.</span>")
+			to_chat(usr, SPAN_INFO("There isn't enough space left on \the [src] to write anything."))
 			return
 
 		var/obj/item/I = usr.get_active_hand() // Check to see if he still got that darn pen, also check what type of pen
@@ -460,7 +460,7 @@
 
 
 		if(fields > MAX_FIELDS)
-			to_chat(usr, "<span class='warning'>Too many fields. Sorry, you can't do this.</span>")
+			to_chat(usr, SPAN_WARNING("Too many fields. Sorry, you can't do this."))
 			fields = last_fields_value
 			return
 
@@ -500,7 +500,7 @@
 		if (istype(P, /obj/item/paper/carbon))
 			var/obj/item/paper/carbon/C = P
 			if (!C.iscopy && !C.copied)
-				to_chat(user, "<span class='notice'>Take off the carbon copy first.</span>")
+				to_chat(user, SPAN_NOTICE("Take off the carbon copy first."))
 				add_fingerprint(user)
 				return
 		var/obj/item/paper_bundle/B = new(src.loc)
@@ -513,7 +513,7 @@
 			return
 		user.put_in_hands(B)
 
-		to_chat(user, "<span class='notice'>You clip the [P.name] to [(src.name == "paper") ? "the paper" : src.name].</span>")
+		to_chat(user, SPAN_NOTICE("You clip the [P.name] to [(src.name == "paper") ? "the paper" : src.name]."))
 
 		B.pages.Add(src)
 		B.pages.Add(P)
@@ -521,7 +521,7 @@
 
 	else if(istype(P, /obj/item/pen))
 		if(icon_state == "scrap")
-			to_chat(usr, "<span class='warning'>\The [src] is too crumpled to write on.</span>")
+			to_chat(usr, SPAN_WARNING("\The [src] is too crumpled to write on."))
 			return
 
 		var/obj/item/pen/robopen/RP = P
@@ -553,7 +553,7 @@
 
 		if(istype(P, /obj/item/stamp/clown))
 			if(!clown)
-				to_chat(user, "<span class='notice'>You are totally unable to use the stamp. HONK!</span>")
+				to_chat(user, SPAN_NOTICE("You are totally unable to use the stamp. HONK!"))
 				return
 
 		if(!ico)
@@ -567,7 +567,7 @@
 		add_overlay(stampoverlay)
 
 		playsound(src, 'sound/effects/stamp.ogg', 50, 1)
-		to_chat(user, "<span class='notice'>You stamp the paper with your [P.name].</span>")
+		to_chat(user, SPAN_NOTICE("You stamp the paper with your [P.name]."))
 
 	else if(istype(P, /obj/item/flame))
 		burnpaper(P, user)

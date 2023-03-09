@@ -50,6 +50,7 @@
 #define SPECIALROLE_HUD 8 // AntagHUD image.
 #define STATUS_HUD_OOC 	9 // STATUS_HUD without virus DB check for someone being ill.
 #define LIFE_HUD 		10 // STATUS_HUD that only reports dead or alive
+#define BLINK_HUD       11 // A line representing the blink time remaining on a mob.
 
 // Shuttle moving status.
 #define SHUTTLE_IDLE      0
@@ -296,8 +297,8 @@
 // Helper procs for easy HTML browser button creation.
 #define UIBUTTON(key, label, title) "[title ? title + ": " : ""]<a href='?src=\ref[src];[key]=1'>[label]</a>"
 
-#define UI_FONT_GOOD(X) "<font color='55cc55'>[X]</font>"
-#define UI_FONT_BAD(X) "<font color='cc5555'>[X]</font>"
+#define UI_FONT_GOOD(X) FONT_COLORED("55cc55","[X]")
+#define UI_FONT_BAD(X) FONT_COLORED("cc5555","[X]")
 
 // Whereas ckey is in the global list or not
 #define IS_TRUSTED_PLAYER(ckey) (ckey in GLOB.trusted_players)

@@ -39,7 +39,7 @@ var/list/integrated_circuit_blacklist = list(/obj/item/integrated_circuit, /obj/
 			var/num = min(maxMetal - metal, stack.amount)
 			if(do_after(usr, 16, src))
 				if(stack.use(num))
-					to_chat(user, "<span class='notice'>You add [num] sheet\s to \the [src].</span>")
+					to_chat(user, SPAN_NOTICE("You add [num] sheet\s to \the [src]."))
 					metal += num
 					updateUsrDialog()
 					return 1
@@ -51,7 +51,7 @@ var/list/integrated_circuit_blacklist = list(/obj/item/integrated_circuit, /obj/
 	if(default_deconstruction_crowbar(user, O))
 		return
 	if(istype(O,/obj/item/integrated_circuit))
-		to_chat(user, "<span class='notice'>You insert the circuit into [src]. </span>")
+		to_chat(user, SPAN_NOTICE("You insert the circuit into [src]. "))
 		user.unEquip(O)
 		qdel(O)
 		metal = min(metal+1,maxMetal)
@@ -86,7 +86,7 @@ var/list/integrated_circuit_blacklist = list(/obj/item/integrated_circuit, /obj/
 			var/obj/item/device/electronic_assembly/E = build_type
 			cost = round((initial(E.max_complexity) + initial(E.max_components))*metal_mult)
 		if(metal - cost < 0)
-			to_chat(usr, "<span class='warning'>You need [cost] metal to build that!.</span>")
+			to_chat(usr, SPAN_WARNING("You need [cost] metal to build that!."))
 			return 1
 		metal -= cost
 		new build_type(get_turf(loc))

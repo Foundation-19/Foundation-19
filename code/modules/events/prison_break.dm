@@ -38,7 +38,7 @@
 		if(MS)
 			MS.send_rc_message("Engineering", sender, rc_message, "", "", 2)
 		for(var/mob/living/silicon/ai/A in GLOB.player_list)
-			to_chat(A, "<span class='danger'>Malicious program detected in the [chosen_area.areaName] lighting and airlock control systems by [sender].</span>")
+			to_chat(A, SPAN_DANGER("<span class='danger'>Malicious program detected in the [chosen_area.areaName] lighting and airlock control systems by [sender]."))
 
 	else
 		to_world_log("ERROR: Could not initate grey-tide. Unable to find suitable containment area.")

@@ -35,7 +35,7 @@
 /obj/item/engine/electric/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/cell))
 		if(cell)
-			to_chat(user, "<span class='warning'>There is already a cell in \the [src].</span>")
+			to_chat(user, SPAN_WARNING("There is already a cell in \the [src]."))
 		else
 			cell = I
 			user.drop_from_inventory(I)
