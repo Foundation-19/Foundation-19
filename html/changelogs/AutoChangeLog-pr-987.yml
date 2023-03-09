@@ -1,0 +1,6 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - bugfix: Piles of cash now stack better.
+  - imageadd: Adjusted old cash sprites.
+  - spellcheck: Incorrect grammar fixed in cash pile descriptions.
