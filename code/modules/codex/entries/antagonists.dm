@@ -1,19 +1,19 @@
 /datum/codex_entry/changeling_antag
 	display_name = "Changeling"
 	associated_strings = list("changeling", "ling")
-	lore_text = "Changelings are intelligent alien creatures with a unique biology that allows them to morph into most organic lifeforms. \
-	They are solitary hunters, and have existed for an unknown length of time among the galaxy's civilized races. \
-	It is, ultimately, a creature of stealth - hiding behind the faces of its victims, lurking on distant backwaters and long-haul spaceships, \
+	lore_text = "Changelings are intelligent anomalous creatures with a unique biology that allows them to morph into most organic lifeforms. \
+	They are rare solitary hunters, and have existed for an unknown length of time among the galaxy's civilized races.<br>\
+	They are, ultimately, creatures of stealth - hiding behind the faces of their victims, lurking in distant backwaters and humongous cities, \
 	waiting for their chance to strike."
-	antag_text = "As a changeling, you have almost certainly killed a crewmember and replaced them in order to conceal yourself aboard the ship. \
+	antag_text = "As a changeling, you have almost certainly killed a staff member and replaced them in order to conceal yourself aboard the site. \
 	You've had time to familiarize yourself with the ins and outs of their identity.<br>\
-	General knowledge of changelings is nearly nonexistent. No government or institution has any public knowledge about changelings' existence, \
-	and the number of changelings in human space, impersonating humans themselves, is unknown. \
-	This gives you a lot of leniency in determining where you came from and why you're aboard the ship, so don't be afraid to get creative.<br>\
+	General knowledge of changelings is nearly nonexistent. No public government or institution has any knowledge about changelings' existence, \
+	and the number of changelings in human space, impersonating humans themselves, is unknown, although estimated by the Foundation to be low. \
+	This gives you a lot of leniency in determining where you came from and why you're aboard the site, so don't be afraid to get creative.<br>\
 	When a changeling consumes a victim, it does so by using a proboscis to 'absorb' them, draining their body of fluids and leaving behind a shriveled, mummified husk. \
 	In doing so, the changeling is able to assimilate their victim's thoughts, recent memories, and more importantly, their entire genetic sequence. \
-	When it transforms, a changeling literally becomes the person it's imitiating - down to their very DNA.<br\
-	Your true personality, whatever it may be, is likely very alien to other species, unless you are very charismatic in presenting it. \
+	When it transforms, a changeling literally becomes the person it's imitating - down to their very DNA.<br\
+	Your true personality, whatever it may be, is likely alien to humans, unless you are very charismatic in presenting it. \
 	Composed of the memories and identities of multiple individuals, you are a collective mind, and as such, \
 	you use plural pronouns during internal monologue ('we', 'ours', and so on.).<br>\
 	The way you value other sapient life may range from curiosity to simply viewing them as prey. \
