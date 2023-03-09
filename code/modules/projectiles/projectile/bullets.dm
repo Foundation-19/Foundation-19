@@ -117,36 +117,6 @@
 				if(Bump(M)) //Bump will make sure we don't hit a mob multiple times
 					return
 
-/* short-casing projectiles, like the kind used in pistols or SMGs */
-
-/obj/item/projectile/bullet/pistol
-	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
-	damage = 37
-	distance_falloff = 3
-
-/obj/item/projectile/bullet/pistol/holdout
-	damage = 35
-	penetration_modifier = 1
-	distance_falloff = 4
-
-/obj/item/projectile/bullet/pistol/strong
-	fire_sound = 'sound/weapons/gunshot/revolver.ogg'
-	damage = 52
-	penetration_modifier = 0.8
-	distance_falloff = 2.5
-	armor_penetration = 15
-
-/obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
-	name = "rubber bullet"
-	damage_flags = 0
-	damage = 3
-	agony = 30
-	embed = FALSE
-
-/obj/item/projectile/bullet/pistol/rubber/holdout
-	agony = 20
-
-//4mm. Tiny, very low damage, does not embed, but has very high penetration. Only to be used for the experimental SMG.
 /obj/item/projectile/bullet/flechette
 	fire_sound = 'sound/weapons/gunshot/smg.ogg'
 	damage = 20
@@ -160,83 +130,6 @@
 	fire_sound = 'sound/weapons/gunshot/smg_alt.ogg'
 	damage = 36
 	armor_penetration = 20
-
-/* shotgun projectiles */
-
-/obj/item/projectile/bullet/shotgun
-	name = "slug"
-	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
-	damage = 60
-	armor_penetration = 5
-	agony = 20
-
-/obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
-	name = "beanbag"
-	damage = 7
-	agony = 60
-	embed = FALSE
-	armor_penetration = 0
-	distance_falloff = 3
-
-//Should do about 80 damage at 1 tile distance (adjacent), and 50 damage at 3 tiles distance.
-//Overall less damage than slugs in exchange for more damage at very close range and more embedding
-/obj/item/projectile/bullet/pellet/shotgun
-	name = "shrapnel"
-	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
-	damage = 22
-	pellets = 6
-	range_step = 1
-	spread_step = 10
-
-/* "Rifle" rounds */
-
-/obj/item/projectile/bullet/rifle
-	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
-	damage = 40
-	armor_penetration = 25
-	penetration_modifier = 1.5
-	penetrating = 1
-	distance_falloff = 1.5
-
-/obj/item/projectile/bullet/rifle/military
-	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
-	damage = 45
-	armor_penetration = 35
-	penetration_modifier = 1
-
-/obj/item/projectile/bullet/rifle/t12
-	fire_sound = "gun_t12"
-	damage = 35
-	armor_penetration = 85
-
-/obj/item/projectile/bullet/rifle/shell
-	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
-	damage = 150
-	stun = 3
-	weaken = 3
-	penetrating = 3
-	armor_penetration = 70
-	penetration_modifier = 1.2
-	distance_falloff = 0.5
-
-/obj/item/projectile/bullet/rifle/shell/apds
-	damage = 120
-	penetrating = 5
-	armor_penetration = 80
-	penetration_modifier = 1.5
-
-/* Miscellaneous */
-/obj/item/projectile/bullet/gyro
-	name = "minirocket"
-	fire_sound = 'sound/effects/Explosion1.ogg'
-	var/gyro_devastation = -1
-	var/gyro_heavy_impact = 0
-	var/gyro_light_impact = 2
-
-/obj/item/projectile/bullet/gyro/on_hit(atom/target, blocked = 0)
-	if(isturf(target))
-		explosion(target, gyro_devastation, gyro_heavy_impact, gyro_light_impact)
-	..()
 
 /obj/item/projectile/bullet/blank
 	invisibility = 101
@@ -253,6 +146,9 @@
 
 /obj/item/projectile/bullet/shotgun/practice
 	name = "practice"
+	damage = 5
+
+/obj/item/projectile/bullet/rifle/a762/practice
 	damage = 5
 
 /obj/item/projectile/bullet/pistol/cap
@@ -282,3 +178,202 @@
 	pixel_x = rand(-10,10)
 	pixel_y = rand(-10,10)
 	..()
+
+//////////////////////////Bullets////////////////
+
+/obj/item/projectile/bullet/pistol
+	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
+	damage = 37 //9mm, .38, etc
+	armor_penetration = 0
+	distance_falloff = 3
+
+/obj/item/projectile/bullet/pistol/holdout
+	damage = 35
+	penetration_modifier = 1
+	distance_falloff = 4
+
+/obj/item/projectile/bullet/pistol/rubber
+	name = "rubber bullet"
+	damage = 3 //Pistol rubber
+	agony = 30
+	embed = FALSE
+	sharp = FALSE
+	armor_penetration = 0
+	damage_flags = 0
+
+/obj/item/projectile/bullet/pistol/rubber/holdout
+	agony = 20
+
+/obj/item/projectile/bullet/pistol/medium
+	damage = 45 //.45
+	armor_penetration = 0
+
+/obj/item/projectile/bullet/pistol/medium/revolver
+	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	damage = 50 //.44 magnum or something
+	armor_penetration = 0
+
+/obj/item/projectile/bullet/pistol/strong //matebas
+	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	damage = 52 //.50AE
+	armor_penetration = 0
+	penetration_modifier = 0.8
+	distance_falloff = 2.5
+
+/obj/item/projectile/bullet/pistol/vstrong //tacrevolver
+	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	damage = 60 //.500 S&W Magnum
+	armor_penetration = 0
+
+/obj/item/projectile/bullet/pistol/strong/revolver //revolvers
+	damage = 50 //Revolvers get snowflake bullets, to keep them relevant
+	armor_penetration = 0
+
+/obj/item/projectile/bullet/pistol/medium/smg //P90
+	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
+	damage = 35 //10mm
+	armor_penetration = 10
+
+/obj/item/projectile/bullet/pistol/medium/smg/rubber
+	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
+	damage = 3 //10mm rubber
+	armor_penetration = 0
+	agony = 30
+	embed = 0
+	sharp = 0
+
+/obj/item/projectile/bullet/pistol/medium/smg/hollowpoint
+	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
+	damage = 45 //10mm hollowpoint
+	armor_penetration = 0
+	embed = 1
+
+/obj/item/projectile/bullet/pistol/medium/smg/ap
+	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
+	damage = 35 //10mm AP
+	armor_penetration = 20
+
+/obj/item/projectile/bullet/pistol/medium/smg/silver
+	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
+	damage = 45 //10mm but i have no idea what bimmer wanted for classifaction, so i made it just better normal ammo
+	armor_penetration = 0
+
+/* shotgun projectiles */
+
+/obj/item/projectile/bullet/shotgun
+	name = "slug"
+	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
+	damage = 60
+	armor_penetration = 5
+
+/obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
+	name = "beanbag"
+	damage = 7
+	agony = 70
+	embed = FALSE
+	sharp = FALSE
+	armor_penetration = 0
+	distance_falloff = 3
+
+
+//Should do about 80 damage at 1 tile distance (adjacent), and 50 damage at 3 tiles distance.
+//Overall less damage than slugs in exchange for more damage at very close range and more embedding
+/obj/item/projectile/bullet/pellet/shotgun
+	name = "shrapnel"
+	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
+	damage = 16
+	pellets = 9
+	range_step = 1
+	spread_step = 10
+
+/obj/item/projectile/bullet/pellet/shotgun/rubbershot
+	name = "rubbershot"
+	damage = 1
+	pellets = 8
+	range_step = 1
+	spread_step = 10
+	agony = 25
+	embed = 0
+	sharp = 0
+
+/* "Rifle" rounds */
+
+/obj/item/projectile/bullet/rifle
+	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
+	damage = 40
+	armor_penetration = 25
+	penetration_modifier = 1.5
+	penetrating = 1
+	distance_falloff = 1.5
+
+/obj/item/projectile/bullet/rifle/a556
+	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
+	damage = 45
+	armor_penetration = 10
+
+/obj/item/projectile/bullet/rifle/a762
+	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	damage = 50
+	armor_penetration = 5
+
+/obj/item/projectile/bullet/rifle/a762x54
+	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	damage = 55
+	armor_penetration = 15
+
+/obj/item/projectile/bullet/rifle/a762nato
+	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	damage = 55
+	armor_penetration = 15
+
+/obj/item/projectile/bullet/rifle/a145
+	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
+	damage = 150
+	stun = 3
+	weaken = 3
+	penetrating = 5
+	armor_penetration = 100
+	hitscan = 1 //so the PTR isn't useless as a sniper weapon
+	penetration_modifier = 1.25
+
+/obj/item/projectile/bullet/rifle/a145/apds
+	damage = 125
+	penetrating = 6
+	armor_penetration = 120
+	penetration_modifier = 1.5
+
+/obj/item/projectile/bullet/blank
+	invisibility = 101
+	damage = 1
+	embed = 0
+
+/* "Rifle" rounds */
+
+/obj/item/projectile/bullet/rifle/military
+	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	damage = 45
+	armor_penetration = 35
+	penetration_modifier = 1
+
+/obj/item/projectile/bullet/rifle/t12
+	fire_sound = "gun_t12"
+	damage = 35
+	armor_penetration = 85
+
+/obj/item/projectile/bullet/rifle/shell
+	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
+	damage = 150
+	stun = 3
+	weaken = 3
+	penetrating = 3
+	armor_penetration = 70
+	penetration_modifier = 1.2
+	distance_falloff = 0.5
+
+/obj/item/projectile/bullet/rifle/shell/apds
+	damage = 120
+	penetrating = 5
+	armor_penetration = 80
+	penetration_modifier = 1.5
+
+/* Practice */
