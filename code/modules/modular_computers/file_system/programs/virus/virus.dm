@@ -1,5 +1,5 @@
 /*
-	TODO more virus effects, custom-made viruses, more complex interaction in general
+	TODO more virus effects, custom-made viruses, external triggers (e.g. opening certain files), more complex interaction in general
 */
 
 /datum/computer_file/program/virus
