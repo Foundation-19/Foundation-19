@@ -168,7 +168,7 @@
 	var/list/all_entries[0]
 	for(var/datum/computer_file/program/P in ntnet_global.available_station_software)
 		// Only those programs our user can run will show in the list
-		if(!P.can_run(user) || my_computer.hard_drive.find_file_by_name(P.filename))
+		if(!P.has_access(user) || my_computer.hard_drive.find_file_by_name(P.filename))
 			continue
 		all_entries.Add(list(list(
 			"filename" = P.filename,

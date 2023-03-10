@@ -123,7 +123,7 @@
 // Check if the user can download program. Only humans can download files.
 // User has to wear their ID or have it inhand for ID Scan to work.
 // Can also be called manually, with optional parameter being access_to_check to scan the user's ID
-/datum/computer_file/program/proc/can_run(mob/living/user, loud = 0, access_to_check)
+/datum/computer_file/program/proc/has_access(mob/living/user, loud = 0, access_to_check)
 	// Defaults to required_access
 	if(!access_to_check)
 		access_to_check = required_access
