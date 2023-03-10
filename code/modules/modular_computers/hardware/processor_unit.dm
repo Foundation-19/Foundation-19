@@ -11,7 +11,7 @@
 	malfunction_probability = 1
 	origin_tech = list(TECH_DATA = 3, TECH_ENGINEERING = 2)
 
-	var/processing_power = 2 // Used for DDoS speed calculations
+	var/processing_power = 2 // Used for DDoS speed calculations as well as maximum thread count
 
 /obj/item/stock_parts/computer/processor_unit/small
 	name = "standard microprocessor"

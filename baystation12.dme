@@ -2529,6 +2529,7 @@
 #include "code\modules\modular_computers\file_system\programs\research\ntmonitor.dm"
 #include "code\modules\modular_computers\file_system\programs\security\digitalwarrant.dm"
 #include "code\modules\modular_computers\file_system\programs\security\forceauthorization.dm"
+#include "code\modules\modular_computers\file_system\programs\virus\virus.dm"
 #include "code\modules\modular_computers\file_system\reports\crew_record.dm"
 #include "code\modules\modular_computers\file_system\reports\deck_reports.dm"
 #include "code\modules\modular_computers\file_system\reports\people.dm"

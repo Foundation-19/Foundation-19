@@ -17,6 +17,7 @@
 	var/program_icon_state = null					// Program-specific screen icon state
 	var/program_key_state = "standby_key"			// Program-specific keyboard icon state
 	var/program_menu_icon = "newwin"				// Icon to use for program's link in main menu
+	var/program_invisible = 0						// Program shouldn't show up in main menu or get brought to active view. Used by viruses
 	var/requires_ntnet = 0							// Set to 1 for program to require nonstop SCiPnet connection to run. If SCiPnet connection is lost program crashes.
 	var/requires_ntnet_feature = 0					// Optional, if above is set to 1 checks for specific function of SCiPnet (currently NTNET_SOFTWAREDOWNLOAD, NTNET_PEERTOPEER, NTNET_SYSTEMCONTROL and NTNET_COMMUNICATION)
 	var/ntnet_status = 1							// SCiPnet status, updated every tick by computer running this program. Don't use this for checks if SCiPnet works, computers do that. Use this for calculations, etc.
@@ -53,6 +54,7 @@
 	temp.requires_ntnet = requires_ntnet
 	temp.requires_ntnet_feature = requires_ntnet_feature
 	temp.usage_flags = usage_flags
+	temp.program_invisible = program_invisible
 	return temp
 
 // Used by programs that manipulate data files.
@@ -118,7 +120,7 @@
 		if(3)
 			ntnet_speed = NTNETSPEED_ETHERNET
 
-// Check if the user can run program. Only humans can operate computer. Automatically called in run_program()
+// Check if the user can download program. Only humans can download files.
 // User has to wear their ID or have it inhand for ID Scan to work.
 // Can also be called manually, with optional parameter being access_to_check to scan the user's ID
 /datum/computer_file/program/proc/can_run(mob/living/user, loud = 0, access_to_check)
@@ -156,24 +158,28 @@
 // This is performed on program startup. May be overriden to add extra logic. Remember to include ..() call. Return 1 on success, 0 on failure.
 // When implementing new program based device, use this to run the program.
 /datum/computer_file/program/proc/run_program(mob/living/user)
-	computer.active_program = src
-	if(nanomodule_path)
-		NM = new nanomodule_path(src, new /datum/topic_manager/program(src), src)
-		if(user)
-			NM.using_access = user.GetAccess()
-	if(tguimodule_path)
-		TM = new tguimodule_path(src)
-		if(user)
-			TM.using_access = user.GetAccess()
+	if(program_invisible)
+		program_state = PROGRAM_STATE_BACKGROUND
+	else
+		computer.active_program = src
+		if(nanomodule_path)
+			NM = new nanomodule_path(src, new /datum/topic_manager/program(src), src)
+			if(user)
+				NM.using_access = user.GetAccess()
+		if(tguimodule_path)
+			TM = new tguimodule_path(src)
+			if(user)
+				TM.using_access = user.GetAccess()
+		program_state = PROGRAM_STATE_ACTIVE
+
 	if(requires_ntnet && network_destination)
 		generate_network_log("Connection opened to [network_destination].")
-	program_state = PROGRAM_STATE_ACTIVE
 	return 1
 
 // Use this proc to kill the program. Designed to be implemented by each program if it requires on-quit logic, such as the SCPRC client.
 /datum/computer_file/program/proc/kill_program(forced = 0)
 	program_state = PROGRAM_STATE_KILLED
-	if(network_destination)
+	if(requires_ntnet && network_destination)
 		generate_network_log("Connection to [network_destination] closed.")
 	QDEL_NULL(NM)
 	if(TM)
