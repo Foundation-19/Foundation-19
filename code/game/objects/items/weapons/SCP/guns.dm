@@ -45,7 +45,7 @@
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	slot_flags = SLOT_BACK
-	caliber = "a556"
+	caliber = "5.56x45mm"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/m16_mag
@@ -73,7 +73,7 @@
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	slot_flags = SLOT_BACK
-	caliber = "a762"
+	caliber = "7.62x39mm"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/ak
@@ -108,7 +108,7 @@
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	slot_flags = SLOT_BACK
-	caliber = "a762"
+	caliber = "7.62x39mm"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/ak
@@ -138,7 +138,7 @@
 	caliber = ".45"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ESOTERIC = 3)
 	slot_flags = SLOT_BELT
-	ammo_type = /obj/item/ammo_casing/c45
+	ammo_type = /obj/item/ammo_casing/pistol/c45
 	magazine_type = /obj/item/ammo_magazine/scp/ierichon
 	allowed_magazines = /obj/item/ammo_magazine/scp/ierichon //more damage compared to the wt550, smaller mag size
 
@@ -162,7 +162,7 @@
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	slot_flags = SLOT_BACK
-	caliber = "a762"
+	caliber = "7.62x39mm"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/ak
@@ -189,7 +189,7 @@
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	slot_flags = SLOT_BACK
-	caliber = "a762"
+	caliber = "7.62x54mmR"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/svd
