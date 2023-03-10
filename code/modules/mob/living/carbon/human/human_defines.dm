@@ -84,6 +84,8 @@
 	var/equipment_vision_flags				// Extra vision flags from equipped items
 	var/equipment_see_invis					// Max see invibility level granted by equipped items
 	var/equipment_prescription				// Eye prescription granted by equipped items
+	var/visual_insulation = V_INSL_NONE		// How much your eyes are insulated, I.E how blinded you are. Different from tint in that it is used for mechanic calculations rather than graphic.
+	var/audible_insulation = A_INSL_NONE	// How much your ears are insulated, I.E how deafened you are.
 	var/equipment_light_protection
 	var/list/equipment_overlays = list()	// Extra overlays from equipped items
 

@@ -168,6 +168,16 @@
 #define FLASH_PROTECTION_MODERATE   2
 #define FLASH_PROTECTION_MAJOR      3
 
+//Memetic insulation defines
+//Audio insulation
+#define A_INSL_NONE 		0
+#define A_INSL_IMPERFECT 	1
+#define A_INSL_PERFECT 		2
+//Visual insulation
+#define V_INSL_NONE 		0
+#define V_INSL_IMPERFECT 	1
+#define V_INSL_PERFECT 		2
+
 #define ANIMAL_SPAWN_DELAY round(config.respawn_delay / 6)
 #define DRONE_SPAWN_DELAY  round(config.respawn_delay / 3)
 

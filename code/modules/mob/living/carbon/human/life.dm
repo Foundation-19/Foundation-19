@@ -1174,7 +1174,7 @@
 			remoteview_target = null
 			reset_view(null, 0)
 
-	update_equipment_vision()
+	update_equipment_protection()
 	species.handle_vision(src)
 
 /mob/living/carbon/human/update_living_sight()
