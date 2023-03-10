@@ -52,7 +52,7 @@
 	caliber = ".44"
 	fire_delay = 6
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
-	ammo_type = /obj/item/ammo_casing/a50
+	ammo_type = /obj/item/ammo_casing/pistol/a50
 
 /obj/item/gun/projectile/revolver/medium
 	name = "revolver"

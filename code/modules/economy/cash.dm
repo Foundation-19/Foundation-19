@@ -1,9 +1,9 @@
 /obj/item/spacecash
-	name = "0 thalers"
-	desc = "It's worth 0 thalers."
+	name = "0 dollars"
+	desc = "It's worth 0 dollars."
 	gender = PLURAL
-	icon = 'icons/obj/items.dmi'
-	icon_state = "spacecash1"
+	icon = 'icons/obj/cash.dmi'
+	icon_state = "cash1"
 	opacity = 0
 	density = FALSE
 	anchored = FALSE
@@ -47,9 +47,9 @@
 		return list(icon_state)
 
 /obj/item/spacecash/bundle
-	name = "pile of thalers"
-	icon_state = "spacecash1"
-	desc = "They are worth 0 Thalers."
+	name = "pile of dollars"
+	icon_state = "cash1"
+	desc = "It's worth 0 dollars."
 	worth = 0
 
 /obj/item/spacecash/bundle/Initialize()
@@ -57,36 +57,37 @@
 	update_icon()
 
 /obj/item/spacecash/bundle/getMoneyImages()
-	if(icon_state)
-		return list(icon_state)
 	. = list()
 	var/sum = src.worth
 	var/num = 0
 	for(var/i in denominations)
-		while(sum >= i && num < 50)
+		while(sum >= i && num < 10)
 			sum -= i
 			num++
-			. += "spacecash[i]"
-	if(num == 0) // Less than one thaler, let's just make it look like 1 for ease
-		. += "spacecash1"
+			. += "cash[i]"
+	if(num == 0) // Less than one dollar, let's just make it look like 1 for ease
+		. += "cash1"
 
 /obj/item/spacecash/bundle/on_update_icon()
 	cut_overlays()
 	var/list/images = src.getMoneyImages()
 
+	icon_state = images[1]	// since images are overlayed on top of the icon, we need to use one of the images as the icon state
+	images -= images[1]
+
 	for(var/A in images)
-		var/image/banknote = image('icons/obj/items.dmi', A)
+		var/image/banknote = image('icons/obj/cash.dmi', A)
 		var/matrix/M = matrix()
 		M.Translate(rand(-6, 6), rand(-4, 8))
-		M.Turn(pick(-45, -27.5, 0, 0, 0, 0, 0, 0, 0, 27.5, 45))
+		M.Turn(pick(-90, -45, 0, 0, 0, 0, 45, 90))
 		banknote.transform = M
 		src.add_overlay(banknote)
 
-	src.desc = "They are worth [worth] [GLOB.using_map.local_currency_name]."
+	src.desc = "It's worth [worth][GLOB.using_map.local_currency_name_short]."
 	if(worth in denominations)
 		src.SetName("[worth] [GLOB.using_map.local_currency_name]")
 	else
-		src.SetName("pile of [worth] [GLOB.using_map.local_currency_name]")
+		src.SetName("pile of [GLOB.using_map.local_currency_name]")
 
 	if(overlays.len <= 2)
 		w_class = ITEM_SIZE_TINY
@@ -116,51 +117,51 @@
 		..()
 
 /obj/item/spacecash/bundle/c1
-	name = "1 Thaler"
-	icon_state = "spacecash1"
-	desc = "It's worth 1 credit."
+	name = "1 dollar"
+	icon_state = "cash1"
+	desc = "It's worth 1 dollar."
 	worth = 1
 
 /obj/item/spacecash/bundle/c10
-	name = "10 Thaler"
-	icon_state = "spacecash10"
-	desc = "It's worth 10 Thalers."
+	name = "10 dollars"
+	icon_state = "cash10"
+	desc = "It's worth 10 dollars."
 	worth = 10
 
 /obj/item/spacecash/bundle/c20
-	name = "20 Thaler"
-	icon_state = "spacecash20"
-	desc = "It's worth 20 Thalers."
+	name = "20 dollars"
+	icon_state = "cash20"
+	desc = "It's worth 20 dollars."
 	worth = 20
 
 /obj/item/spacecash/bundle/c50
-	name = "50 Thaler"
-	icon_state = "spacecash50"
-	desc = "It's worth 50 Thalers."
+	name = "50 dollars"
+	icon_state = "cash50"
+	desc = "It's worth 50 dollars."
 	worth = 50
 
 /obj/item/spacecash/bundle/c100
-	name = "100 Thaler"
-	icon_state = "spacecash100"
-	desc = "It's worth 100 Thalers."
+	name = "100 dollars"
+	icon_state = "cash100"
+	desc = "It's worth 100 dollars."
 	worth = 100
 
 /obj/item/spacecash/bundle/c200
-	name = "200 Thaler"
-	icon_state = "spacecash200"
-	desc = "It's worth 200 Thalers."
+	name = "200 dollars"
+	icon_state = "cash200"
+	desc = "It's worth 200 dollars."
 	worth = 200
 
 /obj/item/spacecash/bundle/c500
-	name = "500 Thaler"
-	icon_state = "spacecash500"
-	desc = "It's worth 500 Thalers."
+	name = "500 dollars"
+	icon_state = "cash500"
+	desc = "It's worth 500 dollars."
 	worth = 500
 
 /obj/item/spacecash/bundle/c1000
-	name = "1000 Thaler"
-	icon_state = "spacecash1000"
-	desc = "It's worth 1000 Thalers."
+	name = "1000 dollars"
+	icon_state = "cash1000"
+	desc = "It's worth 1000 dollars."
 	worth = 1000
 
 /proc/spawn_money(sum, spawnloc, mob/living/carbon/human/human_user as mob)

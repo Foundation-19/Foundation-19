@@ -27,12 +27,3 @@
 // Silicons can't neccessarily speak everything in their languages list
 /mob/living/silicon/set_default_language(language as null|anything in speech_synthesizer_langs)
 	..()
-
-/mob/living/verb/check_default_language()
-	set name = "Check Default Language"
-	set category = "IC"
-
-	if(default_language)
-		to_chat(src, SPAN_NOTICE("You are currently speaking [default_language] by default."))
-	else
-		to_chat(src, SPAN_NOTICE("Your current default language is your species or mob type default."))
