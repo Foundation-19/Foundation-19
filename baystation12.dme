@@ -1859,6 +1859,7 @@
 #include "code\modules\events\money_lotto.dm"
 #include "code\modules\events\prison_break.dm"
 #include "code\modules\events\random_antagonist.dm"
+#include "code\modules\events\scipnet.dm"
 #include "code\modules\events\sensor_suit_jamming.dm"
 #include "code\modules\events\shipping_error.dm"
 #include "code\modules\events\spacevine.dm"
