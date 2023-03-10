@@ -57,8 +57,8 @@
 	temp.usage_flags = usage_flags
 	return temp
 
-// Used by programs that manipulate files.
-/datum/computer_file/program/proc/get_file(filename)
+// Used by programs that manipulate data files.
+/datum/computer_file/program/proc/get_data_file(filename)
 	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
 	if(!HDD)
 		return
@@ -67,13 +67,13 @@
 		return
 	return F
 
-/datum/computer_file/program/proc/create_file(newname, data = "", file_type = /datum/computer_file/data)
+/datum/computer_file/program/proc/create_data_file(newname, data = "", file_type = /datum/computer_file/data)
 	if(!newname)
 		return
 	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
 	if(!HDD)
 		return
-	if(get_file(newname))
+	if(get_data_file(newname))
 		return
 	var/datum/computer_file/data/F = new file_type
 	F.filename = newname

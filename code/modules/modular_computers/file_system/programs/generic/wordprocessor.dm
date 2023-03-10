@@ -18,16 +18,16 @@
 	usage_flags = PROGRAM_ALL
 
 /datum/computer_file/program/wordprocessor/proc/open_file(filename)
-	var/datum/computer_file/data/F = get_file(filename)
+	var/datum/computer_file/data/F = get_data_file(filename)
 	if(F)
 		open_file = F.filename
 		loaded_data = F.stored_data
 		return TRUE
 
 /datum/computer_file/program/wordprocessor/proc/save_file(filename)
-	var/datum/computer_file/data/F = get_file(filename)
+	var/datum/computer_file/data/F = get_data_file(filename)
 	if(!F) //try to make one if it doesn't exist
-		F = create_file(filename, loaded_data)
+		F = create_data_file(filename, loaded_data)
 		return !isnull(F)
 	var/datum/computer_file/data/backup = F.clone()
 	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
@@ -86,7 +86,7 @@
 			var/newname = sanitize(tgui_input_text(usr, "Enter file name:", "New File"))
 			if(!newname)
 				return TRUE
-			var/datum/computer_file/data/F = create_file(newname)
+			var/datum/computer_file/data/F = create_data_file(newname)
 			if(F)
 				open_file = F.filename
 				loaded_data = ""
@@ -99,7 +99,7 @@
 			var/newname = sanitize(tgui_input_text(usr, "Enter file name:", "Save As"))
 			if(!newname)
 				return TRUE
-			var/datum/computer_file/data/F = create_file(newname, loaded_data)
+			var/datum/computer_file/data/F = create_data_file(newname, loaded_data)
 			if(F)
 				open_file = F.filename
 			else
