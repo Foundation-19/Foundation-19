@@ -3424,7 +3424,6 @@
 #include "maps\site53\items\bullets.dm"
 #include "maps\site53\items\clothes.dm"
 #include "maps\site53\items\guns.dm"
-#include "maps\site53\items\projectiles.dm"
 #include "maps\site53\items\storage.dm"
 #include "maps\site53\items\toys.dm"
 #include "maps\site53\items\clothing\platecarriers.dm"

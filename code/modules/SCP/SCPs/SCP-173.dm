@@ -19,6 +19,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 	maxHealth = 5000
 	health = 5000
 
+	mob_size = MOB_LARGE //173 should not be able to be pulled around by humans
+
 	can_pull_size = 0 // Can't pull things
 	a_intent = "harm" // Doesn't switch places with people
 	can_be_buckled = FALSE
@@ -56,6 +58,11 @@ GLOBAL_LIST_EMPTY(scp173s)
 	/// This one to avoid sound spam when opening doors
 	var/door_cooldown
 
+	/// Is 173 caged?
+	var/is_caged = FALSE
+	/// 173's current cage.
+	var/obj/structure/scp173_cage/cage
+
 /mob/living/scp_173/Initialize()
 	GLOB.scp173s += src
 	defecation_cooldown = world.time + 15 MINUTES // Give everyone some time to prepare
@@ -70,6 +77,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 /mob/living/scp_173/Destroy()
 	next_blinks = null
 	next_blinks_join_time = null
+	cage = null
 
 	GLOB.scp173s -= src
 	return ..()
@@ -91,7 +99,20 @@ GLOBAL_LIST_EMPTY(scp173s)
 	return -5
 
 /mob/living/scp_173/UnarmedAttack(atom/A)
-	if(IsBeingWatched() || incapacitated()) // We can't do anything while being watched
+	if(is_caged) // We can't do anything while caged
+		if(!IsBeingWatched() && istype(A, /obj/structure/scp173_cage)) //Can only attack the cage when not being watched and inside the cage
+			if(snap_cooldown <= world.time)
+				var/obj/structure/scp173_cage/cage = A
+				cage.attack_hand(src)
+				snap_cooldown = world.time + snap_cooldown_time
+				to_chat(src, SPAN_WARNING("You damage the cage."))
+			else
+				to_chat(src, SPAN_WARNING("You can't attack yet."))
+		else if(IsBeingWatched() && istype(A, /obj/structure/scp173_cage))
+			to_chat(src, SPAN_WARNING("You can't attack the cage while they're looking!"))
+		else
+			return
+	if(IsBeingWatched() || incapacitated())// We can't do anything while being watched
 		return
 	if(ishuman(A))
 		if(snap_cooldown > world.time)
@@ -149,11 +170,9 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/Life()
 	. = ..()
-	if(isobj(loc))
-		return
 	if(length(GLOB.clients) <= 30 && !client)
 		return
-	var/list/our_view = view(7, src)
+	var/list/our_view = view(7, is_caged ? cage : src)//In case we are caged, we must see if our cage is being looked at rather than us
 	for(var/A in next_blinks)
 		if(!(A in our_view))
 			DisableBlinking(A)
@@ -167,6 +186,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 		BITSET(H.hud_updateflag, BLINK_HUD)
 	handle_regular_hud_updates()
 	process_blink_hud(src)
+	if(is_caged)
+		return
 	if(world.time > defecation_cooldown)
 		Defecate()
 	if(IsBeingWatched() || client) // AI controls from here
@@ -181,7 +202,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	return TRUE
 
 /mob/living/scp_173/proc/IsBeingWatched()
-	for(var/mob/living/L in view(7, src))
+	for(var/mob/living/L in view(7, is_caged ? cage : src)) //same as before, cage needs to be used as reference rather than 173
 		if((istype(L, /mob/living/simple_animal/scp_131)) && (InCone(L, L.dir)))
 			return TRUE
 		if(!istype(L, /mob/living/carbon/human))
@@ -343,56 +364,143 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/area/A = get_area(src)
 	A.full_breach()
 
-// the cage
+//
+// 173 Cage
+//
+
 /obj/structure/scp173_cage
 	icon = 'icons/SCP/cage.dmi'
-	icon_state = "1"
-	name = "Empty SCP-173 Cage"
+	icon_state = "open"
+	name = "SCP-173 Containment Cage"
+	desc = "An empty cage for containing SCP-173."
 	density = TRUE
 	layer = MOB_LAYER + 0.05
-	var/resist_cooldown
+	plane = OBJ_PLANE
+	// Max damage state before breaking out
+	var/damage_max = 5
+	// Damage state of cage
+	var/damage_state = 0
+	// Currently held 173
+	var/mob/living/scp_173/current173
 
-/obj/structure/scp173_cage/MouseDrop_T(atom/movable/dropping, mob/user)
+
+/obj/structure/scp173_cage/MouseDrop_T(atom/movable/dropping, mob/user) // When someone drags 173 onto the cage
+	if(damage_state > damage_max)
+		visible_message(SPAN_WARNING("\The [src] is too damaged to operate!"))
+		return FALSE
 	if(isscp173(dropping))
-		visible_message(SPAN_WARNING("[user] starts to put SCP-173 into the cage."))
+		visible_message(SPAN_WARNING("[user] starts to put [dropping] into the cage."))
 		var/oloc = loc
-		if(do_after(user, 10 SECONDS, dropping) && loc == oloc)
-			dropping.forceMove(src)
-			underlays += image(dropping)
-			visible_message(SPAN_NOTICE("[user] puts SCP-173 in the cage."))
-			name = "SCP-173 Cage"
+		if(do_after(user, 10 SECONDS, current173) && loc == oloc)
+			plane = MOB_PLANE
+			current173 = dropping
+			current173.forceMove(src)
+			current173.is_caged = TRUE
+			current173.cage = src
+			updateIconandDesc()
+			visible_message(SPAN_NOTICE("[user] puts [current173] in the cage."))
 			playsound(loc, 'sound/machines/bolts_down.ogg', 50, 1)
 			return TRUE
 		return FALSE
-	if(isliving(dropping))
+	else if(isliving(dropping))
 		to_chat(user, SPAN_WARNING("\The [dropping] won't fit in the cage."))
 	return FALSE
 
-/obj/structure/scp173_cage/attack_hand(mob/living/carbon/human/H)
+/obj/structure/scp173_cage/attack_hand(mob/living/A) //If either a human or 173 interact with the cage
 	if(!LAZYLEN(contents))
 		return ..()
-	visible_message(SPAN_WARNING("[H] attempts to open \the [src]."))
-	if(do_after(H, 5 SECONDS, src))
-		visible_message(SPAN_DANGER("[H] opens \the [src]!"))
-		ReleaseContents()
+	if(ishuman(A))
+		if(damage_state > damage_max)
+			visible_message(SPAN_WARNING("\The [src] is too damaged to operate!"))
+			return ..()
+		var/mob/living/carbon/human/H = A
+		visible_message(SPAN_WARNING("[H] attempts to open \the [src]."))
+		if(do_after(H, 5 SECONDS, src))
+			visible_message(SPAN_DANGER("[H] opens \the [src]!"))
+			ReleaseContents()
+	else if(isscp173(A)) //Neccesary 173 checks are done from 173's side, not the cage's
+		playsound(loc, 'sound/machines/airlock_creaking.ogg', 50, 1)
+		if(damage_state < damage_max)
+			visible_message(SPAN_WARNING("You hear the sound of metal [pick("groaning","shearing","tearing","bending")]!"))
+			damage_state += 1
+			updateIconandDesc()
+		else
+			visible_message(SPAN_DANGER("[current173] bends open \the [src]!"))
+			damage_state = damage_max + 1
+			ReleaseContents()
 
-/obj/structure/scp173_cage/relaymove(mob/user, direction)
-	if(resist_cooldown > world.time)
+/obj/structure/scp173_cage/proc/updateIconandDesc() //Updates cage icon and description according to current damage state and contents
+	underlays.Cut()
+
+	if((damage_state <= damage_max) && ((!LAZYLEN(contents)) || !current173))
+		icon_state = "open"
+		desc = initial(desc)
+	else if(damage_state == 0)
+		icon_state = "closed"
+		desc = "A cage for containing SCP-173. It is currently holding [current173]."
+	else if(damage_state <= 1)
+		icon_state = "damage_1"
+		desc = "A cage for containing SCP-173. It is currently holding [current173]. It looks slightly damaged."
+	else if((damage_state >= Clamp((damage_max - 1), 2, INFINITY)) && (damage_state <= damage_max)) //Dont want the damage visuals getting fucky because damage_max was too low
+		icon_state = "damage_2"
+		desc = "A cage for containing SCP-173. It is currently holding [current173]. It looks fairly damaged."
+	else if(damage_state > damage_max) //Damage state is equal to damage max last stage before breaking, so this is neccesary
+		icon_state = "damage_3"
+		desc = "An empty cage for containing SCP-173. It appears broken."
+
+	if((LAZYLEN(contents)) && current173)
+		underlays += image(current173)
+
+
+/obj/structure/scp173_cage/attackby(obj/item/I, mob/user) //Gotta be able to repair the cage
+	if(user.a_intent != I_HELP)
+		return 0
+	if(!isWelder(I))
+		return 0
+	if(LAZYLEN(contents) || current173)
+		to_chat(user, SPAN_WARNING("\The [src] must be empty to complete this task!"))
+		return 0
+	var/obj/item/weldingtool/WT = I
+	if(damage_state == 0)
+		to_chat(user, SPAN_NOTICE("\The [src] is not damaged."))
 		return
-	resist_cooldown = world.time + 10 SECONDS
-	if(do_after(user, 20 SECONDS, src))
-		visible_message("<span class = 'danger'>[user] opens the cage from the inside!</span>")
-		ReleaseContents()
+	if(!WT.remove_fuel(0, user))
+		to_chat(user, SPAN_WARNING("\The [I] must be on to complete this task."))
+		return
+	if(!src || !WT.isOn())
+		return
+	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+	if(do_after(user, 5 SECONDS, src)) //Time to repair depends on how damaged the cage is
+		visible_message(SPAN_NOTICE("\The [user] repairs a section of \the [src]"))
+		damage_state -= 1
+		updateIconandDesc()
+		if(damage_state == 0)
+			visible_message(SPAN_NOTICE("\The [user] repairs \the [src] fully!"))
+		return 1
+	return 0
 
-/obj/structure/scp173_cage/proc/ReleaseContents()
+/obj/structure/scp173_cage/proc/ReleaseContents() //Releases cage contents
 	if(!LAZYLEN(contents))
 		return FALSE
-	playsound(loc, 'sound/machines/bolts_up.ogg', 50, 1)
-	for(var/mob/living/L in contents)
+	if(damage_state <= damage_max) //Dont want the release sound to play if 173 breaks out
+		playsound(loc, 'sound/machines/bolts_up.ogg', 50, 1)
+	for(var/mob/living/scp_173/L in contents)
 		L.forceMove(get_turf(src))
-	underlays.Cut()
-	name = initial(name)
+		L?.is_caged = FALSE
+		L?.cage = null
+	current173 = null
+	plane = initial(plane)
+	updateIconandDesc()
 	return TRUE
+
+/obj/structure/scp173_cage/handle_atom_del(atom/deleting_atom)
+	if(deleting_atom == current173)
+		current173  = null
+		return ..()
+
+/obj/structure/scp173_cage/Destroy()
+	current173 = null
+	return ..()
 
 /*
  * Acid
