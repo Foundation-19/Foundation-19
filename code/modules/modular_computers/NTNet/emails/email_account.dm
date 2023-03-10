@@ -46,7 +46,7 @@
 		return 0
 
 	if(!recipient.receive_mail(message, relayed))
-		return
+		return 0
 
 	ntnet_global.add_log_with_ids_check("EMAIL LOG: [login] -> [recipient.login] title: [message.title].")
 	return 1

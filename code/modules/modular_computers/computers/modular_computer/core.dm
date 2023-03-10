@@ -208,7 +208,7 @@
 	P.computer = src
 	if(!P.is_supported_by_hardware(hardware_flag, 1, user))
 		return
-	if((P in idle_threads) && !(P.program_invisible))
+	if((P in idle_threads) && !(P.program_malicious))
 		P.program_state = PROGRAM_STATE_ACTIVE
 		active_program = P
 		idle_threads.Remove(P)

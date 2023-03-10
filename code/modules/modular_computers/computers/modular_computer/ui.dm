@@ -56,7 +56,7 @@
 	var/datum/computer_file/data/autorun = hard_drive.find_file_by_name("autorun")
 	data["programs"] = list()
 	for(var/datum/computer_file/program/P in hard_drive.stored_files)
-		if(P.program_invisible)
+		if(P.program_malicious)
 			continue
 		var/running = FALSE
 		if(P in idle_threads)
