@@ -1,80 +1,34 @@
-/obj/structure/sign/double/barsign
-	desc = "A jumbo-sized LED sign. This one seems to be showing its age."
-	icon = 'icons/obj/barsigns.dmi'
-	icon_state = "empty"
-	appearance_flags = 0
-	anchored = TRUE
-//	var/cult = 0
-	var/toolate = 0
-	var/toolate_on = 0
-
 /obj/structure/sign/double/barsign/scp_078
-	name = "SCP-078"
-	desc = "If your ID has science access, you may swipe it on this sign to alter its display."
-	icon = 'icons/obj/barsigns.dmi'
-	icon_state = "Off"
-	appearance_flags = 0
-	anchored = TRUE
-	toolate = 1
-	toolate_on = 0
 
-/obj/structure/sign/double/barsign/examine(mob/user)
+/obj/structure/sign/double/barsign/scp_078/examine(mob/user)
 	. = ..()
-	switch(icon_state)
-		if("Off")
-			if(toolate == 1)
-				to_chat(user, "You can barely make out the words 'Too Late To Die Young' on this unpowered neon sign. A small card reader is affixed to the electrical plug.")
-			else
-				to_chat(user, "It appears to be switched off.")
-		if("narsiebistro")
-			to_chat(user, "It shows a picture of a large black and red being. Spooky!")
-		if("toolate")
-			to_chat(user, "The moments you regret the most come flooding back, all at once. Try as you might, you can't look away.")
-			spawn(300)
-				to_chat(user, "You begin to think about how to forgive yourself, and make peace with the past.")
-				if(ishuman(user))
-					var/mob/living/carbon/human/H = user
-					if(H.dies_young == 0)
-						H.dies_young = 1
-		if("on", "empty")
-			to_chat(user, "The lights are on, but there's no picture.")
-		else
-			to_chat(user, "It says '[icon_state]'")
+	if(istype(chosen_sign, /datum/barsign/signoff))			// check if the current state is off
+		to_chat(user, "You can barely make out the words 'Too Late to Die Young' on this unpowered neon sign. A small card reader is affixed to the electrical plug.")
+	else
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			switch(H.scp078_status)
+				if(0)
+					to_chat(user, "The motto on the sign feels strange and invokes a deep sense of guilt.")
+					spawn(300)
+					to_chat(user, "You begin to think about how to forgive yourself, and make peace with the past.")
+					H.scp078_status = 1
+				if(1)
+					to_chat(user, "The moments you regret the most come flooding back, all at once. Try as you might, you can't look away.")
 
-/obj/structure/sign/double/barsign/New()
-	..()
-	if(!toolate)
-		icon_state = pick(get_valid_states())
-
-/obj/structure/sign/double/barsign/attackby(obj/item/I, mob/user)
-	if(cult)
-		return ..()
+/obj/structure/sign/double/barsign/scp_078/attackby(obj/item/I, mob/user)
 
 	var/obj/item/card/id/card = I.GetIdCard()
 	if(istype(card))
-
-		if(toolate == 1)
-			if(ACCESS_SCIENCE_LVL1 in card.GetAccess())
-				if(toolate_on)
-					toolate_on = 0
-					icon_state = "Off"
-					to_chat(user, SPAN_NOTICE("You swipe your card to switch the neon sign off."))
-				else
-					toolate_on = 1
-					icon_state = "toolate"
-					to_chat(user, SPAN_NOTICE("You swipe your card, and the neon sign flickers to life."))
+		if((ACCESS_SCIENCE_LVL1 in card.GetAccess()) || (ACCESS_BAR in card.GetAccess()))
+			if(istype(chosen_sign, /datum/barsign/signoff))	// check if the current state is off
+				set_sign(new /datum/barsign/toolate)
+				to_chat(user, SPAN_NOTICE("You swipe your card, and the neon sign flickers to life."))
 			else
-				to_chat(user, SPAN_WARNING("The power supply flashes a red light - access denied."))
-			return
+				set_sign(new /datum/barsign/signoff)
+				to_chat(user, SPAN_NOTICE("You swipe your card to switch the neon sign off."))
 		else
-			if(ACCESS_BAR in card.GetAccess())
-				var/sign_type = input(user, "What would you like to change the barsign to?") as null|anything in get_valid_states(0)
-				if(!sign_type)
-					return
-				icon_state = sign_type
-				to_chat(user, SPAN_NOTICE("You change the barsign."))
-			else
-				to_chat(user, SPAN_WARNING("Access denied."))
+			to_chat(user, SPAN_WARNING("Access denied."))
 			return
-
-	return ..()
+	else
+		return ..()
