@@ -8,3 +8,22 @@
 2023-03-08:
   cheesePizza2:
   - code_imp: Replaced most spans with defines.
+2023-03-10:
+  TheDarkElites:
+  - rscadd: Changed 173 cage mechanics
+  - imageadd: New cage images so 173 can actually fit.
+  cheesePizza2:
+  - bugfix: Piles of cash now stack better.
+  - imageadd: Adjusted old cash sprites.
+  - spellcheck: Incorrect grammar fixed in cash pile descriptions.
+  - rscadd: Barsign description changes based on icon. Add some flair to your restaurant!
+  - bugfix: Bartender and Cook now actually have Bar, Kitchen, and Hydroponics access
+      (although no airlocks actually consider them).
+  - imagedel: SOME of the old Baystation sprites for the barsign are gone. Included
+      by request of Tsuru
+  - imageadd: Some TG icons were ported for the barsign, as well as new SCP-themed
+      signs.
+  - refactor: SCP-078 code works better now, although it still has no in-game effect.
+  - rscadd: Becoming an SCP as a ghost has a better menu.
+  - rscdel: Removed "Check Default Language" as you can also find your default language
+      in "Check Known Languages".
