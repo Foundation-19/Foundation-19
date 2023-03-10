@@ -2,9 +2,7 @@
 /datum/computer_file/program
 	filetype = "PRG"
 	filename = "UnknownProgram"						// File name. FILE NAME MUST BE UNIQUE IF YOU WANT THE PROGRAM TO BE DOWNLOADABLE FROM SCiPnet!
-	var/required_access = null						// List of required accesses to run/download the program.
-	var/requires_access_to_run = 1					// Whether the program checks for required_access when run.
-	var/requires_access_to_download = 1				// Whether the program checks for required_access when downloading.
+	var/required_access = null						// List of required accesses to download the program.
 	// NanoModule
 	var/datum/nano_module/NM = null					// If the program uses NanoModule, put it here and it will be automagically opened. Otherwise implement ui_interact.
 	var/nanomodule_path = null						// Path to nanomodule, make sure to set this if implementing new program.
@@ -158,21 +156,19 @@
 // This is performed on program startup. May be overriden to add extra logic. Remember to include ..() call. Return 1 on success, 0 on failure.
 // When implementing new program based device, use this to run the program.
 /datum/computer_file/program/proc/run_program(mob/living/user)
-	if(can_run(user, 1) || !requires_access_to_run)
-		computer.active_program = src
-		if(nanomodule_path)
-			NM = new nanomodule_path(src, new /datum/topic_manager/program(src), src)
-			if(user)
-				NM.using_access = user.GetAccess()
-		if(tguimodule_path)
-			TM = new tguimodule_path(src)
-			if(user)
-				TM.using_access = user.GetAccess()
-		if(requires_ntnet && network_destination)
-			generate_network_log("Connection opened to [network_destination].")
-		program_state = PROGRAM_STATE_ACTIVE
-		return 1
-	return 0
+	computer.active_program = src
+	if(nanomodule_path)
+		NM = new nanomodule_path(src, new /datum/topic_manager/program(src), src)
+		if(user)
+			NM.using_access = user.GetAccess()
+	if(tguimodule_path)
+		TM = new tguimodule_path(src)
+		if(user)
+			TM.using_access = user.GetAccess()
+	if(requires_ntnet && network_destination)
+		generate_network_log("Connection opened to [network_destination].")
+	program_state = PROGRAM_STATE_ACTIVE
+	return 1
 
 // Use this proc to kill the program. Designed to be implemented by each program if it requires on-quit logic, such as the SCPRC client.
 /datum/computer_file/program/proc/kill_program(forced = 0)
