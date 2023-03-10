@@ -220,7 +220,7 @@
 		return
 
 	if(P.requires_ntnet && !get_ntnet_status(P.requires_ntnet_feature)) // The program requires SCiPnet connection, but we are not connected to SCiPnet.
-		to_chat(user, SPAN_DANGER("\The [src]'s screen shows \"NETWORK ERROR - Unable to connect to internet. Please retry. If problem persists contact your system administrator.\" warning."))
+		to_chat(user, SPAN_DANGER("\The [src]'s screen shows \"NETWORK ERROR - Unable to connect to SCiPnet. Please retry. If problem persists contact your system administrator.\" warning."))
 		return
 
 	if(active_program)
