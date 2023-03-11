@@ -67,7 +67,10 @@
 			else
 				msg = alt
 				type = alt_type
-		if((type & AUDIBLE_MESSAGE) && is_deaf())//Hearing related
+		var/mob/living/carbon/human/H
+		if(ishuman(src))
+			H = src
+		if((type & AUDIBLE_MESSAGE) && (ishuman(src) ? H.can_hear() : !(is_deaf())))//Hearing related
 			if(!alt)
 				return
 			else
