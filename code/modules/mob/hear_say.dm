@@ -46,10 +46,13 @@
 	if(speaker)
 		speaker_name = speaker.name
 
-	var/mob/living/carbon/human/H
 	if(ishuman(speaker))
-		H = speaker
+		var/mob/living/carbon/human/H = speaker
 		speaker_name = H.GetVoice()
+
+	var/mob/living/carbon/human/H
+	if(ishuman(src))
+		H = src
 
 	if(italics)
 		message = "<i>[message]</i>"
@@ -130,6 +133,13 @@
 					message = language.scramble(message, languages)
 				else
 					message = stars(message)
+
+		if(ishuman(src)) //Memetics checks for audio insulation, I.E if you're wearing mufflers you shouldent hear radios
+			var/mob/living/carbon/human/H = src
+			if(H.get_audio_insul() == A_INSL_PERFECT)
+				hard_to_hear = 5
+			else if(H.get_audio_insul() == A_INSL_IMPERFECT)
+				hard_to_hear = 3
 
 		if(hard_to_hear)
 			if(hard_to_hear <= 5)
