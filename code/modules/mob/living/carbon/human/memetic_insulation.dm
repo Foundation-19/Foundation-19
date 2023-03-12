@@ -8,11 +8,19 @@ Made by TheDarkElites
 #define AUDIBLE_RANGE_DECREASED  2
 #define AUDIBLE_RANGE_NONE       -1 //Prevent it from being heard even on the same tile
 
-var/dark_maximium = 0.1 //Maximium lum count before we no longer consider it dark. Should be a value between 0 and 1.
+//Maximium lum count before we no longer consider it dark. Should be a value between 0 and 1.
+var/dark_maximium = 0.1
+
+//View distance debuffs for sizes of objects/mobs passed through can_identify
+var/debuff_small = 1
+var/debuff_tiny = 2
+var/debuff_miniscule = 3
 
 /mob/living/carbon/human/proc/can_hear(atom/movable/origin = null) //if no origin is provided, calculations are less complex and use probability, please AVOID using without passing an origin.
-	var/hearable_range
+	if(ear_deaf > 0) //Cant hear if you're temporarily deaf
+		return FALSE
 
+	var/hearable_range
 	switch(get_audio_insul())
 		if(A_INSL_PERFECT) hearable_range = AUDIBLE_RANGE_NONE
 		if(A_INSL_IMPERFECT) hearable_range = AUDIBLE_RANGE_DECREASED
@@ -58,6 +66,42 @@ var/dark_maximium = 0.1 //Maximium lum count before we no longer consider it dar
 
 	return TRUE
 
+/mob/living/carbon/human/proc/can_identify(atom/movable/origin, var/visual_memetic = 0) //Like can_see but takes into account distance, nearsightedness, and other factors. Meant to be used for if you can actually decipher what an object is or read it rather than just see it. visual_memetic is same as in can_see.
+	if(!can_see(origin, visual_memetic)) //cant read or otherwise identify something if you cant see it
+		return FALSE
+	if(!(isobj(origin) || ismob(origin)))
+		return TRUE //if its not an object or mob it can always be identified/read (technically this should never happen but better safe than sorry)
+
+	var/viewdistance = 7 - get_how_nearsighted() //cant read if you're nearsighted and without prescription
+	var/visual_insulation_calculated = get_visual_insul()
+	if(!visual_memetic) //If not memetic, we should still see objects even if wearing something with memetic insulation but no tint.
+		if((equipment_tint_total == TINT_NONE) && (visual_insulation_calculated != V_INSL_NONE))
+			visual_insulation_calculated = V_INSL_NONE
+
+	viewdistance -= equipment_tint_total //Higher tint lowers viewdistance
+
+	var/size_class
+	if(isobj(origin))
+		var/obj/origin_Obj = origin
+		size_class = origin_Obj.w_class
+		switch(size_class)
+			if(ITEM_SIZE_SMALL) viewdistance -= debuff_small
+			if(ITEM_SIZE_TINY) viewdistance -= debuff_tiny
+	else if(ismob(origin))
+		var/mob/origin_Mob = origin
+		size_class = origin_Mob.mob_size
+		switch(size_class)
+			if(MOB_SMALL) viewdistance -= debuff_small
+			if(MOB_TINY) viewdistance -= debuff_tiny
+			if(MOB_MINISCULE) viewdistance -= debuff_miniscule
+
+	if(get_dist_euclidian(loc, origin.loc) <= Clamp(viewdistance, 0, 7))
+		if((visual_insulation_calculated == V_INSL_IMPERFECT) && visual_memetic)
+			return prob(40) //If its a memetic check and your protection is imperfect/faulty there is a 40% chance of you being affected/able to identify/read a memetic hazard
+		return TRUE
+
+	return FALSE
+
 /mob/living/carbon/human/proc/get_audio_insul() //gets total insulation from clothing/disabilities without any calculations.
 	if(is_deaf()) // cant hear if you're deaf.
 		return A_INSL_PERFECT
@@ -67,9 +111,17 @@ var/dark_maximium = 0.1 //Maximium lum count before we no longer consider it dar
 	if(is_blind()) // cant see if you're blind.
 		return V_INSL_PERFECT
 	if(include_tint)
-		if(equipment_tint_total >= TINT_BLIND) //Checks tints, technically we dont need to have a seperate visual insulation var when we have tint, but since tint is also used for graphical calulcations I would rather have them seperate incase we have a future item that can block visual memetics but dosent impair your vision.
+		if(equipment_tint_total >= TINT_BLIND) //Checks tints. Tints are different from insulation in that they graphicaly obstruct your view, whereas insulation just insulates you from memetic hazards without obstructing your view.
 			return V_INSL_PERFECT
-		if(equipment_tint_total > TINT_NONE)
+		if(equipment_tint_total > TINT_MODERATE)
 			return V_INSL_IMPERFECT
 	return visual_insulation
+
+/mob/living/carbon/human/proc/get_how_nearsighted() //Stolen from species.dm
+	var/prescriptions = 0
+	if(disabilities & NEARSIGHTED)
+		prescriptions += 7
+	if(equipment_prescription)
+		prescriptions -= equipment_prescription
+	return Clamp(prescriptions,0,7)
 
