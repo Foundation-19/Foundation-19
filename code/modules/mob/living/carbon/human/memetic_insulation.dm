@@ -43,8 +43,10 @@ var/dark_maximium = 0.1 //Maximium lum count before we no longer consider it dar
 		return FALSE
 	if(stat) //Unconscious humans cant see.
 		return FALSE
-	if(origin.is_invisible_to(src)) //self explanitory
-		return FALSE
+	if(ismob(origin))
+		var/mob/origin_mob = origin
+		if(origin_mob.is_invisible_to(src)) //self explanitory
+			return FALSE
 
 	var/visual_insulation_calculated = get_visual_insul()
 	if(!visual_memetic) //If not memetic, we should still see objects even if wearing something with memetic insulation but no tint.
