@@ -3488,7 +3488,6 @@
 #include "maps\site53\site53.dm"
 #include "maps\site53\site53_define.dm"
 #include "maps\site53\items\accesories.dm"
-#include "maps\site53\items\automatic.dm"
 #include "maps\site53\items\bullets.dm"
 #include "maps\site53\items\clothes.dm"
 #include "maps\site53\items\guns.dm"

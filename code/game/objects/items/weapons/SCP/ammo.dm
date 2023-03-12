@@ -111,18 +111,18 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/ak
-	name = "magazine (7.62)"
+	name = "magazine (5.45)"
 	icon_state = "7.62x39mm"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	caliber = "7.62x39mm"
+	caliber = "5.45x39mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	ammo_type = /obj/item/ammo_casing/rifle/a762
+	ammo_type = /obj/item/ammo_casing/rifle/a545
 	max_ammo = 30
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/scp/ak/big
-	name = "big magazine (7.62)"
+	name = "big magazine (5.45)"
 	icon_state = "7.62x39mm2"
 	max_ammo = 45
 	multiple_sprites = 1

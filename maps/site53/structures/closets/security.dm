@@ -154,7 +154,7 @@
 		/obj/item/melee/telebaton,
 		/obj/item/material/knife/combat,
 		/obj/item/storage/belt/holster/security/tactical,
-		/obj/item/gun/projectile/automatic/scp/m16,
+		/obj/item/gun/projectile/automatic/scp/m4a1,
 		/obj/item/gun/energy/stunrevolver,
 		/obj/item/ammo_magazine/scp/m16_mag = 3,
 		/obj/item/ammo_magazine/box/a556,
@@ -286,10 +286,7 @@
 
 /obj/structure/closet/secure_closet/guard/breachautomatics/WillContain()
 	return list(
-		/obj/item/gun/projectile/automatic/scp/m16,
-		/obj/item/gun/projectile/automatic/scp/m16,
-		/obj/item/gun/projectile/automatic/scp/m4a1,
-		/obj/item/gun/projectile/automatic/scp/m4a1,
+		/obj/item/gun/projectile/automatic/scp/m4a1 = 4,
 		/obj/item/ammo_magazine/scp/m16_mag = 12,
 		/obj/item/ammo_magazine/box/a556 = 4
 	)

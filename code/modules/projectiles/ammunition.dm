@@ -14,7 +14,7 @@
 	var/projectile_type					//The bullet type to create when New() is called
 	var/is_spent = FALSE
 	var/spent_icon = "pistolcasing-spent"
-	var/fall_sounds = list('sounds/weapons/guns/casingfall1.ogg','sounds/weapons/guns/casingfall2.ogg','sounds/weapons/guns/casingfall3.ogg')
+	var/fall_sounds = list('sound/weapons/guns/casing_drop1.ogg','sound/weapons/guns/casing_drop2.ogg','sound/weapons/guns/casing_drop3.ogg','sound/weapons/guns/casing_drop4.ogg','sound/weapons/guns/casing_drop5.ogg','sound/weapons/guns/casing_drop6.ogg','sound/weapons/guns/casing_drop7.ogg',)
 	var/projectile_label
 
 /obj/item/ammo_casing/Initialize()
@@ -173,6 +173,8 @@
 	var/list/icon_keys = list()		//keys
 	var/list/ammo_states = list()	//values
 
+	var/gun_mag_icon = "mag"
+	var/multiple_gun_mag_icons = FALSE
 /obj/item/ammo_magazine/box
 	w_class = ITEM_SIZE_NORMAL
 
@@ -241,6 +243,7 @@
 		if(!user.unEquip(C, src))
 			return
 		stored_ammo.Add(C)
+		playsound(user, "sfx_bullet_insert", rand(45, 60), FALSE)
 		update_icon()
 	else ..()
 
@@ -261,7 +264,7 @@
 		stored_ammo.Insert(1, AC) //add it to the head of our magazine's list
 		L.update_icon()
 		update_icon()
-		playsound(src.loc, 'sounds/weapons/bulletin_mag.wav', 80, 1)
+		playsound(src.loc, 'sound/weapons/bulletin_mag.wav', 80, 1)
 	update_icon()
 
 /obj/item/ammo_magazine/attack_self(mob/user)

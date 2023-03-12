@@ -19,7 +19,7 @@
 	var/ammo_type = null		//the type of ammo that the gun comes preloaded with
 	var/list/loaded = list()	//stored ammo
 	var/starts_loaded = 1		//whether the gun starts loaded or not, can be overridden for guns crafted in-game
-	var/load_sound = 'sounds/weapons/guns/interaction/bullet_insert.ogg'
+	var/load_sound = "sfx_bullet_insert"
 
 	//For MAGAZINE guns
 	var/magazine_type = null	//the type of magazine that the gun comes preloaded with
@@ -117,10 +117,7 @@
 
 	switch(handle_casings)
 		if(EJECT_CASINGS) //eject casing onto ground.
-			chambered.dropInto(loc)
-			chambered.throw_at(get_ranged_target_turf(get_turf(src),turn(loc.dir,270),1), rand(0,1), 5)
-			if(LAZYLEN(chambered.fall_sounds))
-				playsound(loc, pick(chambered.fall_sounds), 50, 1)
+			ejectCasing()
 		if(CYCLE_CASINGS) //cycle the casing back to the end.
 			if(ammo_magazine)
 				ammo_magazine.stored_ammo += chambered
@@ -235,9 +232,13 @@
 		is_jammed = 0
 		playsound(src.loc, 'sounds/weapons/flipblade.ogg', 50, 1)
 	if(ammo_magazine)
-		user.put_in_hands(ammo_magazine)
-		user.visible_message("[user] removes [ammo_magazine] from [src].", SPAN_NOTICE("You remove [ammo_magazine] from [src]."))
-		playsound(loc, mag_remove_sound, 50, 1)
+		if(allow_dump)
+			user.drop_from_inventory(ammo_magazine)
+			user.visible_message("[user] ejects [ammo_magazine] from [src].", SPAN_NOTICE("You eject [ammo_magazine] from [src]."))
+		else
+			user.put_in_hands(ammo_magazine)
+			user.visible_message("[user] removes [ammo_magazine] from [src].", SPAN_NOTICE("You remove [ammo_magazine] from [src]."))
+		playsound(src.loc, mag_remove_sound, 50, 1)
 		ammo_magazine.update_icon()
 		ammo_magazine = null
 	else if(loaded.len)
@@ -250,6 +251,7 @@
 					if(LAZYLEN(C.fall_sounds))
 						playsound(loc, pick(C.fall_sounds), 50, 1)
 					C.forceMove(T)
+					C.SpinAnimation(4, 1)
 					count++
 				loaded.Cut()
 			if(count)
@@ -312,6 +314,19 @@
 		bullets += 1
 	return bullets
 
+/obj/item/gun/projectile/proc/ejectCasing()
+	if(istype(chambered, /obj/item/ammo_casing/shotgun))
+		chambered.loc = get_turf(src)
+		chambered.SpinAnimation(4, 1)
+	else
+		chambered.loc = get_turf(src)
+		if(prob(50))
+			chambered.throw_at(get_ranged_target_turf(get_turf(src), turn(loc.dir, 270), 1), 1, 1)
+		else
+			chambered.SpinAnimation(4, 1)
+	if(LAZYLEN(chambered.fall_sounds))
+		playsound(loc, pick(chambered.fall_sounds), rand(45, 60), 1)
+
 // 1:1 - Returns random gun with same caliber and same weight, if it can find one
 // Fine or Very Fine - Returns random gun that either has higher damage with default projectiles, higher ammo capacity, higher penetration
 /obj/item/gun/projectile/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
@@ -362,3 +377,15 @@
 				return src
 			return pick(potential_return)
 	return ..()
+
+/* Unneeded -- so far.
+//in case the weapon has firemodes and can't unload using attack_hand()
+/obj/item/gun/projectile/verb/unload_gun()
+	set name = "Unload Ammo"
+	set category = "Object"
+	set src in usr
+
+	if(usr.stat || usr.restrained()) return
+
+	unload_ammo(usr)
+*/
