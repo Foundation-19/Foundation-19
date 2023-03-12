@@ -44,7 +44,7 @@
 		if(!T || !(T.z in relevant_z))
 			continue
 		shake_camera(M, 25)
-		var/mob/living/carbon/human/H = M
+		var/mob/living/carbon/human/H
 		if(ishuman(M))
 			H = M
 		if(ishuman(M) ? H.can_hear() : !isdeaf())

@@ -310,7 +310,7 @@
 			GLOB.using_map.unbolt_saferooms() // torch
 			for(var/mob/M in GLOB.player_list)
 				var/turf/T = get_turf(M)
-				var/mob/living/carbon/human/H = M
+				var/mob/living/carbon/human/H
 				if(ishuman(M))
 					H = M
 				if(T && (T.z in GLOB.using_map.station_levels) && !istype(M,/mob/new_player) && (ishuman(M) ? H.can_hear() : !isdeaf(M)))

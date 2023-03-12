@@ -16,7 +16,7 @@ var/debuff_small = 1
 var/debuff_tiny = 2
 var/debuff_miniscule = 3
 
-/mob/living/carbon/human/proc/can_hear(atom/movable/origin = null) //if no origin is provided, calculations are less complex and use probability, please AVOID using without passing an origin.
+/mob/living/carbon/human/proc/can_hear(atom/origin = null) //if no origin is provided, calculations are less complex and use probability, please AVOID using without passing an origin.
 	if(ear_deaf > 0) //Cant hear if you're temporarily deaf
 		return FALSE
 

@@ -41,7 +41,7 @@
 
 	var/msg = FormMessage(message, message_title)
 	for(var/mob/M in GLOB.player_list)
-		var/mob/living/carbon/human/H = M
+		var/mob/living/carbon/human/H
 		if(ishuman(M))
 			H = M
 		if((get_z(M) in (zlevels | GLOB.using_map.admin_levels)) && !istype(M,/mob/new_player) && (ishuman(M) ? H.can_hear() : !isdeaf(M)))
