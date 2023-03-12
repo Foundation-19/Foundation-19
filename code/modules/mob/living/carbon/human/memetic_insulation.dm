@@ -23,7 +23,7 @@ var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate
 
 // AUDIO MEMETICS
 
-/mob/living/carbon/human/proc/can_hear(atom/origin) //Checks if a human can hear something. If theres no origin, just checks if the human can hear.
+/mob/living/carbon/human/can_hear(atom/origin) //Checks if a human can hear something. If theres no origin, just checks if the human can hear.
 	if(ear_deaf > 0) //Cant hear if you're temporarily deaf
 		return FALSE
 
@@ -47,7 +47,7 @@ var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate
 	return FALSE
 
 /mob/living/carbon/human/proc/get_audio_insul() //gets total insulation from clothing/disabilities without any calculations.
-	if(is_deaf()) // cant hear if you're deaf.
+	if((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT)) // cant hear if you're deaf.
 		return A_INSL_PERFECT
 	return audible_insulation
 

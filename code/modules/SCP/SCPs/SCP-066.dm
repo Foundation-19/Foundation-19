@@ -64,7 +64,7 @@
 
 	if (world.time >= next_emote)
 		for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
-			if(M.is_deaf())
+			if(M.can_hear())
 //				M << pick('sound/scp/066/066-eric5.ogg', 'sound/scp/066/066-eric4.ogg', 'sound/scp/066/066-eric3.ogg', 'sound/scp/066/066-eric2.ogg', 'sound/scp/066/066-5-rape.ogg', 5, )
 				next_emote = world.time + 30
 
@@ -73,7 +73,7 @@
 	set name = "Noise"
 	if (world.time >= next_emote)
 		for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
-			if(M.is_deaf())
+			if(M.can_hear())
 //				M << pick('sound/scp/066/066-ali.ogg', 'sound/scp/066/066-eric5.ogg', 'sound/scp/066/066-eric4.ogg', 'sound/scp/066/066-eric3.ogg', 'sound/scp/066/066-eric2.ogg', 'sound/scp/066/066-5-rape.ogg')
 				next_emote = world.time + 100
 
@@ -83,7 +83,7 @@
 //	playsound(src, 'sound/scp/066/066-ali.ogg', 30)
 	if (world.time >= next_emote)
 		for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
-			if(M.is_deaf() || istype(M.l_ear, /obj/item/clothing/ears/earmuffs) || istype(M.r_ear, /obj/item/clothing/ears/earmuffs))
+			if(M.can_hear() || istype(M.l_ear, /obj/item/clothing/ears/earmuffs) || istype(M.r_ear, /obj/item/clothing/ears/earmuffs))
 				continue
 			to_chat(M, SPAN_DANGER("<i>\The [src] rings, sending chills to your very bone.</i>"))
 //			M << pick('sound/scp/066/066-1-rape.ogg', 'sound/scp/066/066-2-rape.ogg', 'sound/scp/066/066-3-rape.ogg', 'sound/scp/066/066-4-rape.ogg', 'sound/scp/066/066-5-rape.ogg', 'sound/scp/066/066-ericrape.ogg')

@@ -88,7 +88,7 @@
 	icon_state = "cursed"
 	if (world.time >= next_emote)
 		for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
-			if(M.is_deaf())
+			if(M.can_hear())
 //				M << pick('sound/scp/263/263-cursed.ogg')
 				next_emote = world.time + 30
 //		for(var/mob/living/simple_animal/hostile/scp_263/S in hear(7, get_turf(src)))

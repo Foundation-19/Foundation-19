@@ -61,16 +61,13 @@
 
 	//spaghetti code
 	if(type)
-		var/mob/living/carbon/human/H
-		if(ishuman(src))
-			H = src
 		if((type & VISIBLE_MESSAGE) && can_see())//Vision related
 			if(!alt)
 				return
 			else
 				msg = alt
 				type = alt_type
-		if((type & AUDIBLE_MESSAGE) && (ishuman(src) ? H.can_hear() : !is_deaf()))//Hearing related
+		if((type & AUDIBLE_MESSAGE) && can_hear())//Hearing related
 			if(!alt)
 				return
 			else
@@ -306,7 +303,7 @@
 /mob/proc/can_see(atom/origin, var/visual_memetic = 0) //ARGS are only for humans >:(
 	return (!(sdisabilities & BLINDED) || blinded || incapacitated(INCAPACITATION_KNOCKOUT))
 
-/mob/proc/is_deaf()
+/mob/proc/can_hear(atom/origin)
 	return ((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT))
 
 /mob/proc/is_physically_disabled()
