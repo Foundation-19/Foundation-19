@@ -41,7 +41,7 @@
 		if (world.time >= next_emote && gaming == 0)
 		/*	if(H in gameshow)
 				continue*/
-			if(H.stat || is_blind(H))
+			if(H.stat || !H.can_see())
 				continue
 
 

@@ -54,8 +54,8 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 /mob/observer/gib()		//observers can't be gibbed.
 	return
 
-/mob/observer/is_blind()	//Not blind either.
-	return
+/mob/observer/can_see()	//Not blind either.
+	return TRUE
 
 /mob/observer/is_deaf() 	//Nor deaf.
 	return

@@ -53,7 +53,7 @@ var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate
 
 // VISUAL MEMETICS
 
-/mob/living/carbon/human/proc/can_see(atom/movable/origin, var/visual_memetic = 0) //Checks if origin can be seen by a human. visiual_memetics should be one if you're checking for a visual memetic hazard as opposed to say someone looking at scp 173. If origin is null, checks for if the human can see in general.
+/mob/living/carbon/human/can_see(atom/movable/origin, var/visual_memetic = 0) //Checks if origin can be seen by a human. visiual_memetics should be one if you're checking for a visual memetic hazard as opposed to say someone looking at scp 173. If origin is null, checks for if the human can see in general.
 	var/turf/origin_turf
 	if(eye_blind > 0) //Cant see if you're blinking or otherwise temporarily blinded. Technicall is_blind() checks this but better safe than sorry.
 		return FALSE
@@ -121,7 +121,7 @@ var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate
 	return FALSE
 
 /mob/living/carbon/human/proc/get_visual_insul(var/include_tint = 1) //gets total insulation from clothing/disabilities without any calculations. Include_tint is for if you want to include tints in your insulation.
-	if(is_blind()) // cant see if you're blind.
+	if((sdisabilities & BLINDED) || blinded || incapacitated(INCAPACITATION_KNOCKOUT)) // cant see if you're blind.
 		return V_INSL_PERFECT
 	if(include_tint)
 		if(equipment_tint_total >= TINT_BLIND) //Checks tints. Tints are different from insulation in that they graphicaly obstruct your view, whereas insulation just insulates you from memetic hazards without obstructing your view.

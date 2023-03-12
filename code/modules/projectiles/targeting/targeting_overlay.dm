@@ -109,13 +109,9 @@
 
 	var/cancel_aim = 1
 
-	var/mob/living/carbon/human/H
-	if(ishuman(owner))
-		H = owner
-
 	if(!(aiming_with in owner) || (istype(owner, /mob/living/carbon/human) && (owner.l_hand != aiming_with && owner.r_hand != aiming_with)))
 		to_chat(owner, SPAN_WARNING("You must keep hold of your weapon!"))
-	else if(ishuman(owner) ? H.can_see() : is_blind())
+	else if(owner.can_see())
 		to_chat(owner, SPAN_WARNING("You are blind and cannot see your target!"))
 	else if(!aiming_at || !istype(aiming_at.loc, /turf))
 		to_chat(owner, SPAN_WARNING("You have lost sight of your target!"))

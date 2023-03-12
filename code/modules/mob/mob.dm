@@ -64,7 +64,7 @@
 		var/mob/living/carbon/human/H
 		if(ishuman(src))
 			H = src
-		if((type & VISIBLE_MESSAGE) && (ishuman(src) ? H.can_see() : !is_blind()))//Vision related
+		if((type & VISIBLE_MESSAGE) && can_see())//Vision related
 			if(!alt)
 				return
 			else
@@ -76,7 +76,7 @@
 			else
 				msg = alt
 				type = alt_type
-				if((type & VISIBLE_MESSAGE) && (ishuman(src) ? H.can_see() : !is_blind()))
+				if((type & VISIBLE_MESSAGE) && can_see())
 					return
 
 	to_chat(src, msg)
@@ -117,10 +117,8 @@
 		if(self_message && M == src)
 			M.show_message(self_message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
 			continue
-		var/mob/living/carbon/human/H
-		if(ishuman(M))
-			H = M
-		if(((ishuman(M) ? H.can_see() : !M.is_blind()) && M.see_invisible >= src.invisibility) || narrate)
+
+		if((M.can_see() && M.see_invisible >= src.invisibility) || narrate)
 			M.show_message(mob_message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
 			continue
 
@@ -178,10 +176,7 @@
 		if (M == causer)
 			M.show_message(causer_message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
 			continue
-		var/mob/living/carbon/human/H
-		if(ishuman(M))
-			H = M
-		if ((ishuman(M) ? H.can_see() : !M.is_blind()) && M.see_invisible >= src.invisibility)
+		if (M.can_see() && M.see_invisible >= src.invisibility)
 			M.show_message(mob_message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
 			continue
 
@@ -308,8 +303,8 @@
 		return UNBUCKLED
 	return restrained() ? FULLY_BUCKLED : PARTIALLY_BUCKLED
 
-/mob/proc/is_blind()
-	return ((sdisabilities & BLINDED) || blinded || incapacitated(INCAPACITATION_KNOCKOUT))
+/mob/proc/can_see(atom/origin, var/visual_memetic = 0) //ARGS are only for humans >:(
+	return (!(sdisabilities & BLINDED) || blinded || incapacitated(INCAPACITATION_KNOCKOUT))
 
 /mob/proc/is_deaf()
 	return ((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT))
@@ -380,19 +375,18 @@
 /mob/verb/examinate(atom/A as mob|obj|turf in view())
 	set name = "Examine"
 	set category = "IC"
-	var/mob/living/carbon/human/H
-	if(ishuman(src))
-		H = src
 
-	if(((ishuman(src) ? !H.can_see(A) : is_blind()) || usr && usr.stat) && !isobserver(src)) //can_see check
+	if((!can_see(A) || usr && usr.stat) && !isobserver(src)) //can_see check
 		to_chat(src, SPAN_NOTICE("Something is there but you can't see it."))
 		return 1
 
 	face_atom(A)
 
-	if(ishuman(src) ? !H.can_identify(A) : FALSE) //identifying check
-		to_chat(src, SPAN_NOTICE("Something is there but you're too far away to get a good look."))
-		return 1
+	if(ishuman(src)) //identifying check
+		var/mob/living/carbon/human/H = src
+		if(!H.can_identify(A))
+			to_chat(src, SPAN_NOTICE("Something is there but you're too far away to get a good look."))
+			return 1
 
 	if(!isghost(src))
 		if(A.loc != src || A == l_hand || A == r_hand)
@@ -404,10 +398,8 @@
 			for(var/mob/M in viewers(4, src))
 				if(M == src)
 					continue
-				if(ishuman(M))
-					H = M
 				if(M.client && M.client.get_preference_value(/datum/client_preference/examine_messages) == GLOB.PREF_SHOW)
-					if((ishuman(M) ? H.can_see(src) : !M.is_blind()) || is_invisible_to(M))
+					if(!M.can_see(src) || is_invisible_to(M))
 						continue
 					to_chat(M, SPAN_SUBTLE("<b>\The [src]</b> looks [look_target]."))
 
