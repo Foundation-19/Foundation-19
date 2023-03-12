@@ -113,8 +113,6 @@ var/debuff_miniscule = 3
 	if(include_tint)
 		if(equipment_tint_total >= TINT_BLIND) //Checks tints. Tints are different from insulation in that they graphicaly obstruct your view, whereas insulation just insulates you from memetic hazards without obstructing your view.
 			return V_INSL_PERFECT
-		if(equipment_tint_total > TINT_MODERATE)
-			return V_INSL_IMPERFECT
 	return visual_insulation
 
 /mob/living/carbon/human/proc/get_how_nearsighted() //Stolen from species.dm
