@@ -36,7 +36,7 @@ var/const/FALLOFF_SOUNDS = 0.5
 	var/mob/living/carbon/human/H
 	if(ishuman(src))
 		H = src
-	if(!src.client || (ishuman(src) ? !H.can_hear(turf_source) : isdeaf(src)))
+	if(!src.client || (ishuman(src) ? !H.can_hear(turf_source) : is_deaf()))
 		return
 	var/sound/S = soundin
 	if(!istype(S))

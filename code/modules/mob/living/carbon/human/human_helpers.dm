@@ -186,7 +186,7 @@
 	if(world.time < next_sonar_ping)
 		to_chat(src, SPAN_WARNING("You need another moment to focus."))
 		return
-	if(isdeaf(src) || is_below_sound_pressure(get_turf(src)))
+	if(is_deaf() || is_below_sound_pressure(get_turf(src)))
 		to_chat(src, SPAN_WARNING("You are for all intents and purposes currently deaf!"))
 		return
 	next_sonar_ping += 10 SECONDS

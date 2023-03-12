@@ -51,13 +51,6 @@
 		if (G.force_danger())
 			return TRUE
 
-
-/proc/isdeaf(A)
-	if(isliving(A))
-		var/mob/living/M = A
-		return (M.sdisabilities & DEAFENED) || M.ear_deaf
-	return 0
-
 /proc/hasorgans(A) // Fucking really??
 	return ishuman(A)
 
