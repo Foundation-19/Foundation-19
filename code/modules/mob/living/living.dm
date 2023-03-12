@@ -858,9 +858,12 @@ default behaviour is:
 
 /mob/living/proc/melee_accuracy_mods()
 	. = 0
+	var/mob/living/carbon/human/H
+	if(ishuman(src))
+		H = src
 	if(incapacitated(INCAPACITATION_UNRESISTING))
 		. += 100
-	if(eye_blind)
+	if(ishuman(src) ? !H.can_see() : is_blind())
 		. += 75
 	if(eye_blurry)
 		. += 15
@@ -871,11 +874,14 @@ default behaviour is:
 
 /mob/living/proc/ranged_accuracy_mods()
 	. = 0
+	var/mob/living/carbon/human/H
+	if(ishuman(src))
+		H = src
 	if(jitteriness)
 		. -= 2
 	if(confused)
 		. -= 2
-	if(eye_blind)
+	if(ishuman(src) ? !H.can_see() : is_blind())
 		. -= 5
 	if(eye_blurry)
 		. -= 1

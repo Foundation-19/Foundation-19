@@ -16,7 +16,7 @@ var/debuff_small = 1
 var/debuff_tiny = 2
 var/debuff_miniscule = 3
 
-/mob/living/carbon/human/proc/can_hear(atom/origin = null) //if no origin is provided, calculations are less complex and use probability, please AVOID using without passing an origin.
+/mob/living/carbon/human/proc/can_hear(atom/origin) //Checks if a human can hear something. If theres no origin, just checks if the human can hear.
 	if(ear_deaf > 0) //Cant hear if you're temporarily deaf
 		return FALSE
 
@@ -39,22 +39,24 @@ var/debuff_miniscule = 3
 
 	return FALSE
 
-/mob/living/carbon/human/proc/can_see(atom/movable/origin, var/visual_memetic = 0) //Checks if origin can be seen by a human. visiual_memetics should be one if you're checking for a visual memetic hazard as opposed to say someone looking at scp 173.
-	if(origin.InCone(src, turn(src.dir, 180))) // Cant see whats behind you.
-		return FALSE
-	if(!(origin in view_nolight(7,src))) //Cant see whats not in view.
-		return FALSE
-	if(eye_blind > 0) //Cant see if you're blinking or otherwise temporarily blinded.
-		return FALSE
-	var/turf/origin_turf = get_turf(origin)
-	if((origin_turf.get_lumcount() <= dark_maximium) && (see_in_dark <= 2) && (see_invisible != SEE_INVISIBLE_NOLIGHTING)) //Cant see whats in the dark (unless you have nightvision). Also regular view does check light level, but here we do it ourselves to allow flexibility for what we consider dark + integration with night vision goggles, etc.
+/mob/living/carbon/human/proc/can_see(atom/movable/origin, var/visual_memetic = 0) //Checks if origin can be seen by a human. visiual_memetics should be one if you're checking for a visual memetic hazard as opposed to say someone looking at scp 173. If origin is null, checks for if the human can see in general.
+	var/turf/origin_turf
+	if(eye_blind > 0) //Cant see if you're blinking or otherwise temporarily blinded. Technicall is_blind() checks this but better safe than sorry.
 		return FALSE
 	if(stat) //Unconscious humans cant see.
 		return FALSE
-	if(ismob(origin))
-		var/mob/origin_mob = origin
-		if(origin_mob.is_invisible_to(src)) //self explanitory
+	if(origin)
+		if(origin.InCone(src, turn(src.dir, 180))) // Cant see whats behind you.
 			return FALSE
+		if(!(origin in view_nolight(7,src))) //Cant see whats not in view.
+			return FALSE
+		origin_turf = get_turf(origin)
+		if((origin_turf.get_lumcount() <= dark_maximium) && (see_in_dark <= 2) && (see_invisible != SEE_INVISIBLE_NOLIGHTING)) //Cant see whats in the dark (unless you have nightvision). Also regular view does check light level, but here we do it ourselves to allow flexibility for what we consider dark + integration with night vision goggles, etc.
+			return FALSE
+		if(ismob(origin))
+			var/mob/origin_mob = origin
+			if(origin_mob.is_invisible_to(src)) //self explanitory
+				return FALSE
 
 	var/visual_insulation_calculated = get_visual_insul()
 	if(!visual_memetic) //If not memetic, we should still see objects even if wearing something with memetic insulation but no tint.
