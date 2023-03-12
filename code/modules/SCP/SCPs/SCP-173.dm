@@ -41,8 +41,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/light_break_cooldown
 	/// Amount of light fixture break cooldown
 	var/light_break_cooldown_time = 3 SECONDS
-	/// Maximium light level at which blink cooldown can start to drop off (value between 0 and 1)
-	var/max_lightlevel = 0.5
 	/// Cooldown for defecation...
 	var/defecation_cooldown
 	/// How much time you have to wait before defecating again
@@ -202,7 +200,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	return TRUE
 
 /mob/living/scp_173/proc/IsBeingWatched()
-	for(var/mob/living/L in view(7, is_caged ? cage : src)) //same as before, cage needs to be used as reference rather than 173
+	for(var/mob/living/L in view_nolight(7, is_caged ? cage : src)) //same as before, cage needs to be used as reference rather than 173
 		if((istype(L, /mob/living/simple_animal/scp_131)) && (InCone(L, L.dir)))
 			return TRUE
 		if(!istype(L, /mob/living/carbon/human))
@@ -210,19 +208,11 @@ GLOBAL_LIST_EMPTY(scp173s)
 		var/mob/living/carbon/human/H = L
 		if(next_blinks[H] == null)
 			BITSET(H.hud_updateflag, BLINK_HUD) //Ensures HUD appears before first blink
-			var/turf/T = get_turf(src)
-			var/lightcount = T.get_lumcount()
-			if(lightcount > max_lightlevel)
-				lightcount = 1 //Light level must be less than max_lightlevel before blink time drop off
-			next_blinks[H] = world.time + (rand(5 SECONDS, 10 SECONDS) * lightcount) // Just encountered SCP 173
+			next_blinks[H] = world.time + (rand(5 SECONDS, 10 SECONDS)) // Just encountered SCP 173
 			next_blinks_join_time[H] = world.time
 		if(H.SCP)
 			continue
-		if(is_blind(H) || H.eye_blind > 0)
-			continue
-		if(H.stat != CONSCIOUS)
-			continue
-		if(InCone(H, H.dir))
+		if(H.can_see(src))
 			return TRUE
 	return FALSE
 
@@ -289,11 +279,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	H.eye_blind += 2
 	BITSET(H.hud_updateflag, BLINK_HUD)
 	add_verb(H, /mob/living/carbon/human/verb/manual_blink)
-	var/turf/T = get_turf(src)
-	var/lightcount = T.get_lumcount()
-	if(lightcount > max_lightlevel)
-		lightcount = 1 //Light level must be less than max_lightlevel before blink time drop off
-	next_blinks[H] = world.time + (rand(15 SECONDS, 25 SECONDS) * lightcount)
+	next_blinks[H] = world.time + (rand(15 SECONDS, 25 SECONDS))
 	next_blinks_join_time[H] = world.time
 
 /mob/living/scp_173/proc/AIAttemptAttack()

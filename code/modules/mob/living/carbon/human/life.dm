@@ -989,10 +989,10 @@
 
 		//Incase 173 is no longer in the victim's line of sight and in case we'd try to divide by 0
 		if(blink_time_current && blink_time_max && blink_time_max != 0)
-			if((!(current173.InCone(src, src.dir))) || current173.is_invisible_to(src) || is_blind()) //If victim cant see 173, updates HUD to "away" to alert 173 player
-				holder.icon_state = "away"
-			else if(eye_blind > 0) //173.dm applies new blink times even while the victim is still blind, so this check is neccesary
+			if(eye_blind > 0) //173.dm applies new blink times even while the victim is still blind, so this check is neccesary
 				holder.icon_state = "0"
+			else if(!can_see(current173)) //If victim cant see 173, updates HUD to "away" to alert 173 player
+				holder.icon_state = "away"
 			else
 				var/blink_timer_mapped = ceil((Clamp(((blink_time_current / blink_time_max) * 15), 0, 15))) //Maps time left before blink to between 0 and 15.
 				holder.icon_state = "[blink_timer_mapped]"

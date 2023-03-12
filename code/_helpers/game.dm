@@ -49,15 +49,18 @@
 
 // Like view but bypasses luminosity check
 
-/proc/hear(range, atom/source)
+/proc/view_nolight(range, atom/source)
 
 	var/lum = source.luminosity
 	source.luminosity = 6
 
-	var/list/heard = view(range, source)
+	var/list/viewed = view(range, source)
 	source.luminosity = lum
 
-	return heard
+	return viewed
+
+/proc/hear(range, atom/source)
+	return view_nolight(range, source)
 
 /proc/isStationLevel(level)
 	return level in GLOB.using_map.station_levels
