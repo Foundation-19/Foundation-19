@@ -383,14 +383,16 @@
 	var/mob/living/carbon/human/H
 	if(ishuman(src))
 		H = src
-	if(((ishuman(src) ? !H.can_see(A) : is_blind()) || usr && usr.stat) && !isobserver(src))
+
+	if(((ishuman(src) ? !H.can_see(A) : is_blind()) || usr && usr.stat) && !isobserver(src)) //can_see check
 		to_chat(src, SPAN_NOTICE("Something is there but you can't see it."))
-		return 1
-	if(ishuman(src) ? !H.can_identify(A) : FALSE)
-		to_chat(src, SPAN_NOTICE("Something is there but you're too far away to get a good look."))
 		return 1
 
 	face_atom(A)
+
+	if(ishuman(src) ? !H.can_identify(A) : FALSE) //identifying check
+		to_chat(src, SPAN_NOTICE("Something is there but you're too far away to get a good look."))
+		return 1
 
 	if(!isghost(src))
 		if(A.loc != src || A == l_hand || A == r_hand)

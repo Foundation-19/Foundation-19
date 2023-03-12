@@ -46,6 +46,8 @@ var/debuff_miniscule = 3
 	if(stat) //Unconscious humans cant see.
 		return FALSE
 	if(origin)
+		if(isturf(origin) || (origin == src)) //We can always see turf and ourselves
+			return TRUE
 		if(origin.InCone(src, turn(src.dir, 180))) // Cant see whats behind you.
 			return FALSE
 		if(!(origin in view_nolight(7,src))) //Cant see whats not in view.

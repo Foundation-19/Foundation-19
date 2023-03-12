@@ -33,10 +33,7 @@ GLOBAL_LIST_INIT(zombie_sound,list('sound/scp/voice/049_1/zombierand1.ogg','soun
 var/const/FALLOFF_SOUNDS = 0.5
 
 /mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff, is_global, extrarange, ignore_pressure)
-	var/mob/living/carbon/human/H
-	if(ishuman(src))
-		H = src
-	if(!src.client || (ishuman(src) ? !H.can_hear(turf_source) : is_deaf()))
+	if(!src.client || ear_deaf > 0) //Do not integrate with memetics audio system
 		return
 	var/sound/S = soundin
 	if(!istype(S))
