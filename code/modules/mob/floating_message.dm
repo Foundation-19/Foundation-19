@@ -57,7 +57,7 @@ var/global/list/floating_chat_colors = list()
 		var/mob/living/carbon/human/H
 		if(ishuman(client.mob))
 			H = client.mob
-		if((ishuman(client.mob) ? H.can_hear() : !client.mob.is_deaf()) && client.get_preference_value(/datum/client_preference/floating_messages) == GLOB.PREF_SHOW)
+		if((ishuman(client.mob) ? H.can_hear() : !isdeaf(client.mob)) && client.get_preference_value(/datum/client_preference/floating_messages) == GLOB.PREF_SHOW)
 			client.images += unique
 
 
@@ -65,7 +65,7 @@ var/global/list/floating_chat_colors = list()
 		var/mob/living/carbon/human/H
 		if(ishuman(C.mob))
 			H = C.mob
-		if((ishuman(C.mob) ? H.can_hear() : !C.mob.is_deaf()) && C.get_preference_value(/datum/client_preference/floating_messages) == GLOB.PREF_SHOW)
+		if((ishuman(C.mob) ? H.can_hear() : !isdeaf(C.mob) && C.get_preference_value(/datum/client_preference/floating_messages) == GLOB.PREF_SHOW)
 			if(C.mob.say_understands(null, language))
 				C.images += understood
 			else

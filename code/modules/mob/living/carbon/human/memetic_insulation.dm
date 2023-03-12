@@ -97,13 +97,13 @@ var/debuff_miniscule = 3
 
 	if(get_dist_euclidian(loc, origin.loc) <= Clamp(viewdistance, 0, 7))
 		if((visual_insulation_calculated == V_INSL_IMPERFECT) && visual_memetic)
-			return prob(40) //If its a memetic check and your protection is imperfect/faulty there is a 40% chance of you being affected/able to identify/read a memetic hazard
+			return prob(40) //If its a memetic check and your protection is imperfect/faulty there is a 40% chance of you being affected by a memetic hazard
 		return TRUE
 
 	return FALSE
 
 /mob/living/carbon/human/proc/get_audio_insul() //gets total insulation from clothing/disabilities without any calculations.
-	if(is_deaf()) // cant hear if you're deaf.
+	if(is_deaf()) // cant hear if you're deaf. We arent using isdeaf() here as we account for ear_deafness in our calculations.
 		return A_INSL_PERFECT
 	return audible_insulation
 

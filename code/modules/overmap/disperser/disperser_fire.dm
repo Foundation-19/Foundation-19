@@ -44,9 +44,11 @@
 		if(!T || !(T.z in relevant_z))
 			continue
 		shake_camera(M, 25)
-		if(!isdeaf(M))
+		var/mob/living/carbon/human/H = M
+		if(ishuman(M))
+			H = M
+		if(ishuman(M) ? H.can_hear() : !isdeaf())
 			sound_to(M, sound('sound/effects/explosionfar.ogg', volume=10))
-
 		if(M.can_be_floored())
 			var/shouldstumble = FALSE
 			var/sincelastmove = world.time - M.l_move_time
