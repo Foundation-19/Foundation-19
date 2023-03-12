@@ -91,7 +91,6 @@
 	if(!handle_some_updates())
 		return											//We go ahead and process them 5 times for HUD images and other stuff though.
 
-	blink_causer = null //Has to be reset after huds are updated.
 	//Update our name based on whether our face is obscured/disfigured
 	SetName(get_visible_name())
 
@@ -978,11 +977,10 @@
 
 	if (BITTEST(hud_updateflag, BLINK_HUD) && hud_list[BLINK_HUD])
 		var/image/holder = hud_list[BLINK_HUD]
-		//Incase 173 is no longer in the victim's line of sight and in case we'd try to divide by 0
 		if(is_blinking)
-			if(eye_blind > 0) //173.dm applies new blink times even while the victim is still blind, so this check is neccesary
+			if(eye_blind > 0) //Blink mechanics apply new blink times even while the victim is still blind, so this check is neccesary
 				holder.icon_state = "0"
-			else if(!can_see(blink_causer)) //If victim cant see 173, updates HUD to "away" to alert 173 player
+			else if(!can_see(blink_causer)) //If victim cant see blink_causer, updates HUD to "away" to alert blink HUD users
 				holder.icon_state = "away"
 			else
 				var/blink_timer_mapped = ceil((Clamp(((blink_current / blink_total) * 15), 0, 15))) //Maps time left before blink to between 0 and 15.

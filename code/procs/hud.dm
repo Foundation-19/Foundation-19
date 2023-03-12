@@ -40,7 +40,6 @@ the HUD updates properly! */
 			if(victim.stat) //The unconscious cant blink, and therefore do not need to be added to the blink HUD
 				continue
 			P.Client.images += victim.hud_list[BLINK_HUD]
-			victim.blink_causer = S
 
 //Security HUDs. Pass a value for the second argument to enable implant viewing or other special features.
 /proc/process_sec_hud(mob/M, advanced_mode, mob/Alt)

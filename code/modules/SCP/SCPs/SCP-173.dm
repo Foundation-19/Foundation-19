@@ -173,10 +173,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/list/our_view = view_nolight(7, is_caged ? cage : src)//In case we are caged, we must see if our cage is being looked at rather than us
 	for(var/mob/living/carbon/human/H in next_blinks)
 		if(!(H in our_view))
-			H.is_blinking = FALSE
+			H.disable_blink()
 			next_blinks -= H
 	for(var/mob/living/carbon/human/H in our_view)
-		H.is_blinking = TRUE
+		H.enable_blink(src)
 		next_blinks += H
 	handle_regular_hud_updates()
 	process_blink_hud(src)

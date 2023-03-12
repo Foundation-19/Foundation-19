@@ -137,6 +137,17 @@ var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate
 	return Clamp(prescriptions,0,7)
 
 // BLINK MECHANICS
+
+/mob/living/carbon/human/proc/enable_blink(atom/movable/blink_reason) //blink_reason is usually src from whatever is calling this proc. Example, if 173 calls this on a human, blink_reason should be 173.
+	is_blinking = TRUE
+	add_verb(src, /mob/living/carbon/human/verb/manual_blink)
+	blink_causer = blink_reason
+
+/mob/living/carbon/human/proc/disable_blink()
+	is_blinking = FALSE
+	remove_verb(src, /mob/living/carbon/human/verb/manual_blink)
+	blink_causer = null
+
 /mob/living/carbon/human/proc/handle_blink()
 	if(!is_blinking || stat)
 		blink_total = null
@@ -161,6 +172,7 @@ var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate
 
 /mob/living/carbon/human/proc/cause_blink()
 	eye_blind += 2
+	visible_message(SPAN_NOTICE("[src] blinks."))
 	BITSET(hud_updateflag, BLINK_HUD)
 	blink_total = rand(10, 12)
 	blink_current = blink_total
