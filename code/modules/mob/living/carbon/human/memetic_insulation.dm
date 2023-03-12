@@ -16,6 +16,13 @@ var/debuff_small = 1
 var/debuff_tiny = 2
 var/debuff_miniscule = 3
 
+//Blink related vars
+var/degradation_change_per_press = 0.025 //How much degradation is decreased every time the appropriate hotkey is pressed
+var/min_degradation = 0.5				//How low degradation can get
+var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate hotkey is not being pressed
+
+// AUDIO MEMETICS
+
 /mob/living/carbon/human/proc/can_hear(atom/origin) //Checks if a human can hear something. If theres no origin, just checks if the human can hear.
 	if(ear_deaf > 0) //Cant hear if you're temporarily deaf
 		return FALSE
@@ -38,6 +45,13 @@ var/debuff_miniscule = 3
 		return TRUE
 
 	return FALSE
+
+/mob/living/carbon/human/proc/get_audio_insul() //gets total insulation from clothing/disabilities without any calculations.
+	if(is_deaf()) // cant hear if you're deaf. We arent using isdeaf() here as we account for ear_deafness in our calculations.
+		return A_INSL_PERFECT
+	return audible_insulation
+
+// VISUAL MEMETICS
 
 /mob/living/carbon/human/proc/can_see(atom/movable/origin, var/visual_memetic = 0) //Checks if origin can be seen by a human. visiual_memetics should be one if you're checking for a visual memetic hazard as opposed to say someone looking at scp 173. If origin is null, checks for if the human can see in general.
 	var/turf/origin_turf
@@ -106,11 +120,6 @@ var/debuff_miniscule = 3
 
 	return FALSE
 
-/mob/living/carbon/human/proc/get_audio_insul() //gets total insulation from clothing/disabilities without any calculations.
-	if(is_deaf()) // cant hear if you're deaf. We arent using isdeaf() here as we account for ear_deafness in our calculations.
-		return A_INSL_PERFECT
-	return audible_insulation
-
 /mob/living/carbon/human/proc/get_visual_insul(var/include_tint = 1) //gets total insulation from clothing/disabilities without any calculations. Include_tint is for if you want to include tints in your insulation.
 	if(is_blind()) // cant see if you're blind.
 		return V_INSL_PERFECT
@@ -126,4 +135,42 @@ var/debuff_miniscule = 3
 	if(equipment_prescription)
 		prescriptions -= equipment_prescription
 	return Clamp(prescriptions,0,7)
+
+// BLINK MECHANICS
+/mob/living/carbon/human/proc/handle_blink()
+	if(!is_blinking || stat)
+		blink_total = null
+		blink_current = null
+		return FALSE
+	if(blink_current == null || !blink_total)
+		blink_total = rand(10, 12) //This is lower than before because this is how many seconds it should take without concentration/pressing the space bar. With full concentration you can get between 20 to 25 seconds.
+		blink_current = blink_total
+		BITSET(hud_updateflag, BLINK_HUD)
+	if(world.time - last_degrade > 1 SECOND)
+		blink_current -= blink_degradation
+		last_degrade = world.time
+		if(degrade_change == 0)
+			blink_degradation += degradation_recovery
+			blink_degradation = Clamp(blink_degradation, min_degradation, 1)
+		degrade_change = 0
+		BITSET(hud_updateflag, BLINK_HUD)
+	if(blink_current <= 0)
+		cause_blink()
+	if(BITTEST(hud_updateflag, BLINK_HUD))
+		handle_hud_list() //Makes the blink hud more accurate
+
+/mob/living/carbon/human/proc/cause_blink()
+	eye_blind += 2
+	BITSET(hud_updateflag, BLINK_HUD)
+	blink_total = rand(10, 12)
+	blink_current = blink_total
+
+/mob/living/carbon/human/proc/delay_blink()
+	blink_degradation -= degradation_change_per_press
+	if(blink_degradation > min_degradation)
+		degrade_change += degradation_change_per_press
+	blink_degradation = Clamp(blink_degradation, min_degradation, 1)
+	return TRUE
+
+
 
