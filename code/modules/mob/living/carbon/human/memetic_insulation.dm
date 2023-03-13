@@ -47,7 +47,7 @@ var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate
 	return FALSE
 
 /mob/living/carbon/human/proc/get_audio_insul() //gets total insulation from clothing/disabilities without any calculations.
-	if((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT)) // cant hear if you're deaf.
+	if((sdisabilities & DEAFENED) || incapacitated(INCAPACITATION_KNOCKOUT)) // cant hear if you're deaf.
 		return A_INSL_PERFECT
 	return audible_insulation
 
