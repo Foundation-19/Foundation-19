@@ -40,7 +40,7 @@ GLOBAL_LIST_INIT(secure_weapons, list())
 
 /obj/item/gun/emag_act(charges, mob/user)
 	if(!charges)
-		return NO_EMAG_ACT
+		return EMAG_NO_ACT
 
 	if(is_secure_gun())
 		registered_owner = null
