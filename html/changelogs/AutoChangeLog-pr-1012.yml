@@ -1,5 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - rscadd: Cryptographic Analyzer description slightly more... descriptive.
-  - code_imp: General improvements of e-mag.
