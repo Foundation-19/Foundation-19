@@ -43,15 +43,3 @@
 	
 /datum/goal/movement/walk/update_strings()
 	description = "Stave off microgravity muscle atrophy by walking at least [required_steps] step\s this shift."
-
-/datum/goal/movement/walk/eva
-	completion_message = "We're so very small, in the end..."
-	min_steps = 50
-	max_steps = 70
-
-/datum/goal/movement/walk/eva/valid_step()
-	var/datum/mind/mind = owner
-	return istype(mind.current.loc, /turf/space)
-
-/datum/goal/movement/walk/eva/update_strings()
-	description = "It's so stuffy inside. Go for a spacewalk - at least [required_steps] step\s."
