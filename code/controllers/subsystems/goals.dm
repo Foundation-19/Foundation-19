@@ -12,7 +12,6 @@ SUBSYSTEM_DEF(goals)
 		/datum/goal/achievement/givehug,
 		/datum/goal/achievement/gethug,
 		/datum/goal/movement/walk,
-		/datum/goal/movement/walk/eva,
 		/datum/goal/clean,
 		/datum/goal/money,
 		/datum/goal/weights,
