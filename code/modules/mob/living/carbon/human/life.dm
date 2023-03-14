@@ -796,6 +796,14 @@
 				if(SL_INSANE)					sanity_icon.icon_state = "sanity4"
 				else							sanity_icon.icon_state = "sanity-none" // fallback
 
+		if(blink_icon)
+			switch(get_blink())
+				if(B_OPEN)						blink_icon.icon_state = "blink_4"
+				if(B_3)							blink_icon.icon_state = "blink_3"
+				if(B_2)							blink_icon.icon_state = "blink_2"
+				if(B_1)							blink_icon.icon_state = "blink_1"
+				if(B_CLOSED)					blink_icon.icon_state = "blink_0"
+				else							blink_icon.icon_state = "blink_off"
 
 		if(cells && isSynthetic())
 			var/obj/item/organ/internal/cell/C = internal_organs_by_name[BP_CELL]

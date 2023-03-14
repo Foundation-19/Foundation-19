@@ -18,7 +18,7 @@ var/debuff_miniscule = 3
 
 //Blink related vars
 var/degradation_change_per_press = 0.025 //How much degradation is decreased every time the appropriate hotkey is pressed
-var/min_degradation = 0.5				//How low degradation can get
+var/min_degradation = 0.25				//How low degradation can get
 var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate hotkey is not being pressed
 
 // AUDIO MEMETICS
@@ -154,7 +154,7 @@ var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate
 		blink_current = null
 		return FALSE
 	if(blink_current == null || !blink_total)
-		blink_total = rand(10, 12) //This is lower than before because this is how many seconds it should take without concentration/pressing the space bar. With full concentration you can get between 20 to 25 seconds.
+		blink_total = rand(8, 10) //This is lower than before because this is how many seconds it should take without concentration/pressing the space bar. With full concentration you can get between 20 to 25 seconds.
 		blink_current = blink_total
 		BITSET(hud_updateflag, BLINK_HUD)
 	if(world.time - last_degrade > 1 SECOND)
@@ -174,7 +174,7 @@ var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate
 	eye_blind += 2
 	visible_message(SPAN_NOTICE("[src] blinks."))
 	BITSET(hud_updateflag, BLINK_HUD)
-	blink_total = rand(10, 12)
+	blink_total = rand(8, 10)
 	blink_current = blink_total
 
 /mob/living/carbon/human/proc/delay_blink()
@@ -183,6 +183,12 @@ var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate
 		degrade_change += degradation_change_per_press
 	blink_degradation = Clamp(blink_degradation, min_degradation, 1)
 	return TRUE
+
+/mob/living/carbon/human/proc/get_blink()
+	if(!is_blinking)
+		return B_OFF
+	return ceil((Clamp(((blink_current / blink_total) * 4), 0, 4)))
+
 
 
 

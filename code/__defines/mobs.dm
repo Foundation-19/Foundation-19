@@ -299,6 +299,14 @@
 #define SL_DISTRESSED 2
 #define SL_INSANE 3
 
+//Blink Amount (For human blink status hud)
+#define B_CLOSED 	0
+#define B_1 		1
+#define B_2 		2
+#define B_3	 		3
+#define B_OPEN 		4
+#define B_OFF		5
+
 //Used by show_message() and emotes
 #define VISIBLE_MESSAGE 1
 #define AUDIBLE_MESSAGE 2
