@@ -158,7 +158,7 @@
 					addedDelay = 10
 				UnarmedAttack(Target)
 
-		else if(Target in view(7, src))
+		else if(can_see(Target))
 			step_to(src, Target)
 
 		else

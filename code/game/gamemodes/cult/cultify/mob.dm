@@ -36,7 +36,7 @@
 			qdel(narsimage)
 			qdel(narglow)
 		return
-	if((N.z == src.z)&&(get_dist(N,src) <= (N.consume_range+10)) && !(N in view(src)))
+	if((N.z == src.z)&&(get_dist(N,src) <= (N.consume_range+10)) && !(can_see(N)))
 		if(!narsimage) //Create narsimage
 			narsimage = image('icons/obj/narsie.dmi',src.loc,"narsie",9,1)
 			narsimage.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
