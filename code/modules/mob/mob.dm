@@ -300,7 +300,7 @@
 		return UNBUCKLED
 	return restrained() ? FULLY_BUCKLED : PARTIALLY_BUCKLED
 
-/mob/proc/can_see(atom/origin, var/visual_memetic = 0) //ARGS are only for humans >:(
+/mob/proc/can_see()
 	return (!(sdisabilities & BLINDED) || blinded || incapacitated(INCAPACITATION_KNOCKOUT))
 
 /mob/proc/can_hear(atom/origin)

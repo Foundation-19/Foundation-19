@@ -24,30 +24,30 @@ var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate
 // AUDIO MEMETICS
 
 /mob/living/carbon/human/can_hear(atom/origin) //Checks if a human can hear something. If theres no origin, just checks if the human can hear.
-	if(ear_deaf > 0) //Cant hear if you're temporarily deaf
-		return FALSE
-
 	var/hearable_range
 	switch(get_audio_insul())
 		if(A_INSL_PERFECT) hearable_range = AUDIBLE_RANGE_NONE
 		if(A_INSL_IMPERFECT) hearable_range = AUDIBLE_RANGE_DECREASED
 		if(A_INSL_NONE) hearable_range = AUDIBLE_RANGE_FULL
 
-	if(origin == null) // This is for when we have no origin, we must then use probabilites and absolutes.
-		if(hearable_range == AUDIBLE_RANGE_NONE)
-			return FALSE
-		else if(hearable_range == AUDIBLE_RANGE_DECREASED)
-			return prob(30)
-		else
+	if(origin)
+		if((src in hear(hearable_range, origin)) && (loc == origin.loc)) //area is checked as a way to simulate walls and doors dampening hearing ability
 			return TRUE
+		else
+			return FALSE
 
-	if((src in hear(hearable_range, origin)) && (loc == origin.loc)) //area is checked as a way to simulate walls and doors dampening hearing ability
+	// This is for when we have no origin, we must then use probabilites and absolutes.
+	if(hearable_range == AUDIBLE_RANGE_NONE)
+		return FALSE
+	else if(hearable_range == AUDIBLE_RANGE_DECREASED)
+		return prob(30) //Need a better way to do this
+	else
 		return TRUE
 
 	return FALSE
 
 /mob/living/carbon/human/proc/get_audio_insul() //gets total insulation from clothing/disabilities without any calculations.
-	if((sdisabilities & DEAFENED) || incapacitated(INCAPACITATION_KNOCKOUT)) // cant hear if you're deaf.
+	if((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT)) // cant hear if you're deaf.
 		return A_INSL_PERFECT
 	return audible_insulation
 
@@ -55,7 +55,7 @@ var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate
 
 /mob/living/carbon/human/can_see(atom/movable/origin, var/visual_memetic = 0) //Checks if origin can be seen by a human. visiual_memetics should be one if you're checking for a visual memetic hazard as opposed to say someone looking at scp 173. If origin is null, checks for if the human can see in general.
 	var/turf/origin_turf
-	if(eye_blind > 0) //Cant see if you're blinking or otherwise temporarily blinded. Technicall is_blind() checks this but better safe than sorry.
+	if(eye_blind > 0) //this is different from blinded check as blinded is changed in the same way eye.blind is, meaning there can be a siutation where eye_blind is in effect but blinded is not set to true. Therefore, this check is neccesary as pre-caution.
 		return FALSE
 	if(stat) //Unconscious humans cant see.
 		return FALSE
