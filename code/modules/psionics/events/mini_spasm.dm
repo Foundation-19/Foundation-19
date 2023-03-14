@@ -23,10 +23,7 @@
 	for(var/obj/item/device/radio/radio in GLOB.listening_objects)
 		if(radio.on)
 			for(var/mob/living/victim in range(radio.canhear_range, radio.loc))
-				var/mob/living/carbon/human/H
-				if(ishuman(victim))
-					H = victim
-				if(isnull(victims[victim]) && victim.stat == CONSCIOUS && (ishuman(victim) ? H.can_hear() : !victim.ear_deaf))
+				if(isnull(victims[victim]) && victim.stat == CONSCIOUS && victim.can_hear())
 					victims[victim] = radio
 	for(var/thing in victims)
 		var/mob/living/victim = thing

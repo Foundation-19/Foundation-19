@@ -61,13 +61,13 @@
 
 	//spaghetti code
 	if(type)
-		if((type & VISIBLE_MESSAGE) && can_see())//Vision related
+		if(((type & VISIBLE_MESSAGE) && !can_see()))//Vision related
 			if(!alt)
 				return
 			else
 				msg = alt
 				type = alt_type
-		if((type & AUDIBLE_MESSAGE) && can_hear())//Hearing related
+		if((type & AUDIBLE_MESSAGE) && !can_hear())//Hearing related
 			if(!alt)
 				return
 			else
@@ -115,11 +115,11 @@
 			M.show_message(self_message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
 			continue
 
-		if((M.can_see() && M.see_invisible >= src.invisibility) || narrate)
+		if((M.can_see(src) && (M.see_invisible >= src.invisibility)) || narrate)
 			M.show_message(mob_message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
 			continue
 
-		if(blind_message)
+		if(blind_message && M.can_hear(src))
 			M.show_message(blind_message, AUDIBLE_MESSAGE)
 			continue
 	//Multiz, have shadow do same
@@ -173,11 +173,11 @@
 		if (M == causer)
 			M.show_message(causer_message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
 			continue
-		if (M.can_see() && M.see_invisible >= src.invisibility)
+		if (M.can_see(src) && (M.see_invisible >= src.invisibility))
 			M.show_message(mob_message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
 			continue
 
-		if (blind_message)
+		if (blind_message && M.can_hear(src))
 			M.show_message(blind_message, AUDIBLE_MESSAGE)
 			continue
 
@@ -212,7 +212,7 @@
 			M.show_message(self_message, AUDIBLE_MESSAGE, deaf_message, VISIBLE_MESSAGE)
 		else if(M.see_invisible >= invisibility || narrate) // Cannot view the invisible
 			M.show_message(mob_message, AUDIBLE_MESSAGE, deaf_message, VISIBLE_MESSAGE)
-		else
+		else if(M.can_hear(src))
 			M.show_message(mob_message, AUDIBLE_MESSAGE)
 
 	for(var/o in objs)
@@ -300,8 +300,13 @@
 		return UNBUCKLED
 	return restrained() ? FULLY_BUCKLED : PARTIALLY_BUCKLED
 
-/mob/proc/can_see()
-	return (!(sdisabilities & BLINDED) || blinded || incapacitated(INCAPACITATION_KNOCKOUT))
+/mob/proc/can_see(atom/origin)
+	if((sdisabilities & BLINDED) || blinded || incapacitated(INCAPACITATION_KNOCKOUT))
+		return FALSE
+	if(origin)
+		if(!(origin in view(7, src)))
+			return FALSE
+	return TRUE
 
 /mob/proc/can_hear(atom/origin)
 	return ((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT))

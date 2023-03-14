@@ -16,11 +16,6 @@ var/debuff_small = 1
 var/debuff_tiny = 2
 var/debuff_miniscule = 3
 
-//Blink related vars
-var/degradation_change_per_press = 0.025 //How much degradation is decreased every time the appropriate hotkey is pressed
-var/min_degradation = 0.25				//How low degradation can get
-var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate hotkey is not being pressed
-
 // AUDIO MEMETICS
 
 /mob/living/carbon/human/can_hear(atom/origin) //Checks if a human can hear something. If theres no origin, just checks if the human can hear.
@@ -39,8 +34,6 @@ var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate
 	// This is for when we have no origin, we must then use probabilites and absolutes.
 	if(hearable_range == AUDIBLE_RANGE_NONE)
 		return FALSE
-	else if(hearable_range == AUDIBLE_RANGE_DECREASED)
-		return prob(30) //Need a better way to do this
 
 	return FALSE
 
@@ -146,46 +139,14 @@ var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate
 	remove_verb(src, /mob/living/carbon/human/verb/manual_blink)
 	blink_causer = null
 
-/mob/living/carbon/human/proc/handle_blink()
-	if(!is_blinking || stat)
-		blink_total = null
-		blink_current = null
-		return FALSE
-	if(blink_current == null || !blink_total)
-		blink_total = rand(8, 10) //This is lower than before because this is how many seconds it should take without concentration/pressing the space bar. With full concentration you can get between 20 to 25 seconds.
-		blink_current = blink_total
-		BITSET(hud_updateflag, BLINK_HUD)
-	if(world.time - last_degrade > 1 SECOND)
-		blink_current -= blink_degradation
-		last_degrade = world.time
-		if(degrade_change == 0)
-			blink_degradation += degradation_recovery
-			blink_degradation = Clamp(blink_degradation, min_degradation, 1)
-		degrade_change = 0
-		BITSET(hud_updateflag, BLINK_HUD)
-	if(blink_current <= 0)
-		cause_blink()
-	if(BITTEST(hud_updateflag, BLINK_HUD))
-		handle_hud_list() //Makes the blink hud more accurate
-
-/mob/living/carbon/human/proc/cause_blink()
+/mob/living/carbon/human/proc/cause_blink() //This cant be handled in in eyes as eye processing and human life() processing are out of sync, causing weird bugs.
 	eye_blind += 2
-	visible_message(SPAN_NOTICE("[src] blinks."))
+	visible_message(SPAN_NOTICE("[src] blinks."), SPAN_NOTICE("You blink."))
+	to_chat(src, SPAN_NOTICE("You blink.")) //Cant use visible_message's self function as you're technically blind when blinking.
 	BITSET(hud_updateflag, BLINK_HUD)
-	blink_total = rand(8, 10)
-	blink_current = blink_total
-
-/mob/living/carbon/human/proc/delay_blink()
-	blink_degradation -= degradation_change_per_press
-	if(blink_degradation > min_degradation)
-		degrade_change += degradation_change_per_press
-	blink_degradation = Clamp(blink_degradation, min_degradation, 1)
-	return TRUE
-
-/mob/living/carbon/human/proc/get_blink()
-	if(!is_blinking)
-		return B_OFF
-	return ceil((Clamp(((blink_current / blink_total) * 4), 0, 4)))
+	if(is_blinking)
+		blink_total = rand(8, 10)
+		blink_current = blink_total
 
 
 

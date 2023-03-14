@@ -82,7 +82,7 @@
 
 		handle_medical_side_effects()
 
-		handle_blink()
+		internal_organs_by_name[BP_EYES]?.handle_blink()
 
 		if(!client && !mind)
 			species.handle_npc(src)
@@ -797,13 +797,13 @@
 				else							sanity_icon.icon_state = "sanity-none" // fallback
 
 		if(blink_icon)
-			switch(get_blink())
+			switch(internal_organs_by_name[BP_EYES].get_blink())
 				if(B_OPEN)						blink_icon.icon_state = "blink_4"
 				if(B_3)							blink_icon.icon_state = "blink_3"
 				if(B_2)							blink_icon.icon_state = "blink_2"
 				if(B_1)							blink_icon.icon_state = "blink_1"
-				if(B_CLOSED)					blink_icon.icon_state = "blink_0"
 				else							blink_icon.icon_state = "blink_off"
+			if(eye_blind)					blink_icon.icon_state = "blink_0" //Blinking assigns new times before humans finish blinking, so we need this
 
 		if(cells && isSynthetic())
 			var/obj/item/organ/internal/cell/C = internal_organs_by_name[BP_CELL]
