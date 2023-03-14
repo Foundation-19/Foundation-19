@@ -32,7 +32,7 @@
 
 /obj/item/gun/energy/laser/practice/emag_act(remaining_charges, mob/user, emag_source)
 	if(hacked())
-		return NO_EMAG_ACT
+		return EMAG_NO_ACT
 	to_chat(user, SPAN_WARNING("You disable the safeties on [src] and crank the output to the lethal levels."))
 	desc += " Its safeties are disabled and output is set to dangerous levels."
 	projectile_type = /obj/item/projectile/beam/midlaser
