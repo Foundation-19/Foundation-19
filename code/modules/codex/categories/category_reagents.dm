@@ -12,7 +12,7 @@
 		var/datum/codex_entry/entry = new( \
 		_display_name = "[chem_name] (chemical)", \
 		_associated_strings = list("[chem_name] pill"), \
-		_lore_text = "[initial(reagent.description)] It apparently tastes of [initial(reagent.taste_description)].", \
+		_lore_text = "[initial(reagent.description)] You can usually find this sold for [initial(reagent.value)][GLOB.using_map.local_currency_name_short]. It tastes of [initial(reagent.taste_description)].", \
 		_mechanics_text = "")
 
 		switch(initial(reagent.reagent_state))
