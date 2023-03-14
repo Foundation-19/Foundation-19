@@ -229,11 +229,6 @@ var/list/_client_preferences_by_type
 	description = "Play instruments"
 	key = "SOUND_INSTRUMENTS"
 
-/datum/client_preference/give_personal_goals
-	description = "Give Personal Goals"
-	key = "PERSONAL_GOALS"
-	options = list(GLOB.PREF_NEVER, GLOB.PREF_NON_ANTAG, GLOB.PREF_ALWAYS)
-
 /datum/client_preference/show_department_goals
 	description = "Show Departmental Goals"
 	key = "DEPT_GOALS"

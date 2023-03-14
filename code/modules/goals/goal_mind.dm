@@ -16,16 +16,10 @@
 			. += "[i]. [goal.summarize(show_success, allow_modification, caller, position = i)]"
 
 // Create and display personal goals for this round.
-/datum/mind/proc/generate_goals(datum/job/job, adding_goals = FALSE, add_amount, is_spawning = FALSE)
+/datum/mind/proc/generate_goals(datum/job/job, adding_goals = FALSE, add_amount)
 
 	if(!adding_goals)
 		goals = null
-
-	var/pref_val = current.get_preference_value(/datum/client_preference/give_personal_goals)
-	if(pref_val == GLOB.PREF_NEVER || (pref_val == GLOB.PREF_NON_ANTAG && player_is_antag(src)))
-		if(!is_spawning)
-			to_chat(src.current, SPAN_WARNING("Your preferences do not allow you to add random goals."))
-		return FALSE
 
 	var/list/available_goals = SSgoals.global_personal_goals ? SSgoals.global_personal_goals.Copy() : list()
 	if(job && LAZYLEN(job.possible_goals))
