@@ -432,7 +432,6 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 
 	if(H != target)
 		H.update_personal_goal(/datum/goal/achievement/givehug, TRUE)
-		target.update_personal_goal(/datum/goal/achievement/gethug, TRUE)
 
 /datum/species/proc/add_base_auras(mob/living/carbon/human/H)
 	if(base_auras)
