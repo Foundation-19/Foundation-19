@@ -29,10 +29,8 @@ SUBSYSTEM_DEF(goals)
 		flags |= SS_NO_FIRE
 
 /datum/controller/subsystem/goals/Initialize()
-	var/list/all_depts = subtypesof(/datum/department)
-	//See if map is very particular about what depts it has
-	if(LAZYLEN(GLOB.using_map.departments))
-		all_depts = GLOB.using_map.departments
+	var/list/all_depts = GLOB.using_map.departments
+
 	for(var/dtype in all_depts)
 		var/datum/department/dept = dtype
 		var/dept_flag = initial(dept.flag)
