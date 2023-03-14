@@ -618,7 +618,7 @@
 				/obj/item/camera_assembly,
 				/obj/item/device/camera,
 				/obj/item/modular_computer/pda,
-				/obj/item/card/emag_broken,
+				/obj/item/card/emag/broken,
 				/obj/item/device/radio/headset,
 				/obj/item/device/flashlight/flare/glowstick/yellow,
 				/obj/item/device/flashlight/flare/glowstick/orange,
