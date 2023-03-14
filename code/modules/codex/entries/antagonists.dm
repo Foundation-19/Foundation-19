@@ -30,7 +30,7 @@
 
 /datum/codex_entry/cryptographic_sequencer
 	display_name = "Cryptographic sequencer"
-	associated_paths = list(/obj/item/card/emag, /obj/item/card/emag_broken)
+	associated_paths = list(/obj/item/card/emag, /obj/item/card/emag/broken)
 	lore_text = "Developed by the Chaos Insurgency after stealing advanced GOC parahacking technology, this strange device can instantly hack into most electronic machines."
 	antag_text = "You can use this cryptographic sequencer in order to subvert electronics or forcefully open doors you don't have access to. \
 	These actions are irreversible and the card only has a limited number of charges!"
