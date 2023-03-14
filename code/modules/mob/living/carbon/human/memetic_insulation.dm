@@ -41,8 +41,6 @@ var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate
 		return FALSE
 	else if(hearable_range == AUDIBLE_RANGE_DECREASED)
 		return prob(30) //Need a better way to do this
-	else
-		return TRUE
 
 	return FALSE
 
