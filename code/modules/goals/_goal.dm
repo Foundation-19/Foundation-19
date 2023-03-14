@@ -32,7 +32,7 @@
 		if(can_reroll)  . += " (<a href='?src=\ref[owner];reroll_goal=[position];reroll_goal_caller=\ref[caller]'>Reroll</a>)"
 
 /datum/goal/proc/get_success_string()
-	return check_success() ? " <b><font color='green'>Success!</font></b>" : " <b><font color='red'>Failure.</font></b>"
+	return check_success() ? FONT_COLORED("green", " <b>Success!</b>") : FONT_COLORED("red", " <b>Failure.</b>")
 
 /datum/goal/proc/get_summary_value()
 	return
