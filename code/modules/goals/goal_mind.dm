@@ -3,8 +3,7 @@
 
 /datum/mind/proc/show_roundend_summary(department_goals)
 	if(current)
-		if(department_goals && current.get_preference_value(/datum/client_preference/show_department_goals) == GLOB.PREF_SHOW)
-			to_chat(current, SPAN_NOTICE(department_goals))
+		to_chat(current, SPAN_NOTICE(department_goals))
 		if(LAZYLEN(goals))
 			to_chat(current, SPAN_NOTICE("<br><br><b>You had the following personal goals this round:</b><br>[jointext(summarize_goals(TRUE), "<br>")]"))
 
