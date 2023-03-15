@@ -20,3 +20,14 @@ SUBSYSTEM_DEF(goals)
 		var/datum/department/dept = departments[thing]
 		dept.Initialize()
 	. = ..()
+
+/datum/controller/subsystem/goals/proc/get_roundend_summary()
+	. = list()
+	for(var/thing in departments)
+		var/datum/department/dept = departments[thing]
+		. += "<b>[dept.name] had the following shift goals:</b>"
+		. += dept.summarize_goals(show_success = TRUE)
+	if(LAZYLEN(.))
+		. = "<br>[jointext(., "<br>")]"
+	else
+		. = "<br><b>There were no departmental goals this round.</b>"
