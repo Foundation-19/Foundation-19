@@ -53,12 +53,12 @@
 	if(completion_message && check_success())
 		if(istype(owner, /datum/mind))
 			var/datum/mind/mind = owner
-			to_chat(mind.current, FONT_COLORED("green","<b>[completion_message]</b>"))
+			to_chat(mind.current, SPAN_GOOD("<b>[completion_message]</b>"))
 
 /datum/goal/proc/on_failure()
 	if(failure_message && !check_success() && istype(owner, /datum/mind))
 		var/datum/mind/mind = owner
-		to_chat(mind.current, SPAN_DANGER(failure_message))
+		to_chat(mind.current, SPAN_BAD("<b>[failure_message]</b>"))
 
 /datum/goal/proc/is_valid()
 	return TRUE
