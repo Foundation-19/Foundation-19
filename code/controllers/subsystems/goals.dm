@@ -2,20 +2,7 @@ SUBSYSTEM_DEF(goals)
 	name = "Goals"
 	init_order = SS_INIT_GOALS
 	wait = 1 SECOND
-	var/list/global_personal_goals = list(
-		/datum/goal/achievement/specific_object/food,
-		/datum/goal/achievement/specific_object/drink,
-		/datum/goal/achievement/specific_object/pet,
-		/datum/goal/achievement/fistfight,
-		/datum/goal/achievement/graffiti,
-		/datum/goal/achievement/newshound,
-		/datum/goal/achievement/givehug,
-		/datum/goal/movement/walk,
-		/datum/goal/clean,
-		/datum/goal/money,
-		/datum/goal/weights,
-		/datum/goal/punchingbag
-	)
+	var/list/global_personal_goals = list()
 	var/list/departments = list()
 	var/list/ambitions =   list()
 	var/list/pending_goals = list()

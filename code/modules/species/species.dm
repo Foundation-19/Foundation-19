@@ -430,9 +430,6 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	if(!zonefound) //If they are not human or we don't have the specified body part, default to hugs
 		H.visible_message(SPAN_NOTICE("[H] hugs [target] to make [t_him] feel better!"), SPAN_NOTICE("You hug [target] to make [t_him] feel better!"))
 
-	if(H != target)
-		H.update_personal_goal(/datum/goal/achievement/givehug, TRUE)
-
 /datum/species/proc/add_base_auras(mob/living/carbon/human/H)
 	if(base_auras)
 		for(var/type in base_auras)

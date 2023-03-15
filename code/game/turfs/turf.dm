@@ -348,7 +348,6 @@ var/const/enterloopsanity = 100
 	var/obj/effect/decal/writing/graffiti = new(src)
 	graffiti.message = message
 	graffiti.author = vandal.ckey
-	vandal.update_personal_goal(/datum/goal/achievement/graffiti, TRUE)
 
 	if(lowertext(message) == "elbereth")
 		to_chat(vandal, SPAN_NOTICE("You feel much safer."))

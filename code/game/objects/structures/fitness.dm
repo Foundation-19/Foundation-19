@@ -23,7 +23,6 @@
 			flick("[icon_state]_hit", src)
 			playsound(src.loc, 'sound/effects/woodhit.ogg', 25, 1, -1)
 			user.do_attack_animation(src)
-			user.update_personal_goal(/datum/goal/punchingbag, 1)
 			if(!synth)
 				user.adjust_nutrition(-(5 * DEFAULT_HUNGER_FACTOR))
 				user.adjust_hydration(-(5 * DEFAULT_THIRST_FACTOR))
@@ -83,5 +82,4 @@
 					user.adjust_hydration(-(adj_weight * DEFAULT_THIRST_FACTOR))
 				message = success_message[min(1 + round(skill - weight), fail_message.len)]
 				user.visible_message(SPAN_NOTICE("\The [user] lift\s the weights [message]."), SPAN_NOTICE("You lift the weights [message]."))
-				user.update_personal_goal(/datum/goal/weights, 1)
 		being_used = FALSE
