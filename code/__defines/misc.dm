@@ -311,3 +311,6 @@
 
 //for obj explosion block calculation
 #define EXPLOSION_BLOCK_PROC -1
+
+// Returned by emag_act if object didn't do anything
+#define EMAG_NO_ACT -50

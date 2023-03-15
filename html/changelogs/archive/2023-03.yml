@@ -27,3 +27,7 @@
   - rscadd: Becoming an SCP as a ghost has a better menu.
   - rscdel: Removed "Check Default Language" as you can also find your default language
       in "Check Known Languages".
+2023-03-14:
+  cheesePizza2:
+  - rscadd: Cryptographic Analyzer description slightly more... descriptive.
+  - code_imp: General improvements of e-mag.
