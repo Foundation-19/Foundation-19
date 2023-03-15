@@ -81,6 +81,7 @@
 
 /datum/keybinding/human/delay_blink/down(client/user)
 	var/mob/living/carbon/human/H = user.mob
-	H.internal_organs_by_name[BP_EYES]?.delay_blink()
+	var/obj/item/organ/internal/eyes/h_eyes = H.internal_organs_by_name[BP_EYES]
+	h_eyes.delay_blink()
 	return TRUE
 

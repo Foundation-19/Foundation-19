@@ -4,7 +4,7 @@
 	icon_state = "headphones_off"
 	item_state = "headphones_off"
 	slot_flags = SLOT_EARS | SLOT_TWOEARS
-	audio_insulation = A_INSL_PERFECT
+	audio_insulation = A_INSL_IMPERFECT
 	volume_multiplier = 0.5
 	var/jukebox/jukebox
 
