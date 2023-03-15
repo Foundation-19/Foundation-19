@@ -6,7 +6,7 @@
 	var/max_goals = 2
 
 /datum/department/proc/Initialize()
-	if(!name || !flag || LAZYLEN(goals) <= 0)
+	if(!name || LAZYLEN(goals) <= 0)
 		return
 	var/list/possible_goals = goals.Copy()
 	goals.Cut()
