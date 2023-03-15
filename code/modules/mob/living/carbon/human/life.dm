@@ -82,7 +82,8 @@
 
 		handle_medical_side_effects()
 
-		internal_organs_by_name[BP_EYES]?.handle_blink()
+		var/obj/item/organ/internal/eyes/eyes = internal_organs_by_name[BP_EYES]
+		eyes?.handle_blink()
 
 		if(!client && !mind)
 			species.handle_npc(src)
@@ -797,7 +798,8 @@
 				else							sanity_icon.icon_state = "sanity-none" // fallback
 
 		if(blink_icon)
-			switch(internal_organs_by_name[BP_EYES].get_blink())
+			var/obj/item/organ/internal/eyes/eyes = internal_organs_by_name[BP_EYES]
+			switch(eyes?.get_blink())
 				if(B_OPEN)						blink_icon.icon_state = "blink_4"
 				if(B_3)							blink_icon.icon_state = "blink_3"
 				if(B_2)							blink_icon.icon_state = "blink_2"
