@@ -1907,7 +1907,6 @@
 #include "code\modules\goals\goal_ambition.dm"
 #include "code\modules\goals\goal_department.dm"
 #include "code\modules\goals\goal_mind.dm"
-#include "code\modules\goals\goal_mob.dm"
 #include "code\modules\holodeck\HolodeckControl.dm"
 #include "code\modules\holodeck\HolodeckObjects.dm"
 #include "code\modules\holodeck\HolodeckPrograms.dm"
