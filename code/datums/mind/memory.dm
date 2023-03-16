@@ -66,10 +66,6 @@
 			output += "<B>Objective #[obj_count]</B>: [objective.explanation_text]"
 			obj_count++
 
-	if(SSgoals.ambitions[src])
-		var/datum/goal/ambition/ambition = SSgoals.ambitions[src]
-		output += "<HR><B>Ambitions:</B> [ambition.summarize()]"
-
 	show_browser(recipient, replacetext(jointext(output, "<BR>"),"\n","<BR>"),"window=memory")
 
 /***********

@@ -1904,7 +1904,6 @@
 #include "code\modules\genetics\side_effects.dm"
 #include "code\modules\ghosttrap\trap.dm"
 #include "code\modules\goals\_goal.dm"
-#include "code\modules\goals\goal_ambition.dm"
 #include "code\modules\goals\goal_department.dm"
 #include "code\modules\goals\goal_mind.dm"
 #include "code\modules\holodeck\HolodeckControl.dm"

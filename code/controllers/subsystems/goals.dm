@@ -5,7 +5,6 @@ SUBSYSTEM_DEF(goals)
 	flags = SS_NO_FIRE
 	var/list/global_personal_goals = list()
 	var/list/departments = list()
-	var/list/ambitions =   list()
 
 /datum/controller/subsystem/goals/Initialize()
 	var/list/all_depts = subtypesof(/datum/department)

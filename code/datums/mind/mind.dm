@@ -130,8 +130,6 @@
 		out += "None."
 	out += "<br><a href='?src=\ref[src];obj_add=1'>\[add\]</a><br><br>"
 
-	var/datum/goal/ambition/ambition = SSgoals.ambitions[src]
-	out += "<b>Ambitions:</b> [ambition ? ambition.description : "None"] <a href='?src=\ref[src];amb_edit=\ref[src]'>\[edit\]</a></br>"
 	show_browser(usr, out, "window=edit_memory[src]")
 
 /datum/mind/proc/get_goal_from_href(href)
@@ -241,31 +239,6 @@
 			role_alt_title = new_role
 			if(current)
 				current.skillset.obtain_from_client(job, current.client)
-
-	else if (href_list["amb_edit"])
-		var/datum/mind/mind = locate(href_list["amb_edit"])
-		if(!mind)
-			return
-
-		var/datum/goal/ambition/ambition = SSgoals.ambitions[src]
-		var/new_ambition = input("Enter a new ambition", "Memory", ambition ? html_decode(ambition.description) : "") as null|message
-		if(isnull(new_ambition))
-			return
-		new_ambition = sanitize(new_ambition)
-		if(mind)
-			if(new_ambition)
-				if(!ambition)
-					ambition = new /datum/goal/ambition(mind)
-				ambition.description = new_ambition
-				to_chat(mind.current, SPAN_WARNING("Your ambitions have been changed by higher powers, they are now: [ambition.description]"))
-				log_and_message_admins("made [key_name(mind.current)]'s ambitions be '[ambition.description]'.")
-			else
-				to_chat(mind.current, SPAN_WARNING("Your ambitions have been unmade by higher powers."))
-				log_and_message_admins("has cleared [key_name(mind.current)]'s ambitions.")
-				if(ambition)
-					qdel(ambition)
-		else
-			to_chat(usr, SPAN_WARNING("The mind has ceased to be."))
 
 	else if (href_list["obj_edit"] || href_list["obj_add"])
 		var/datum/objective/objective

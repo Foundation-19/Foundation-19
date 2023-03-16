@@ -34,33 +34,6 @@
 	to_chat(src, "<b><font size=3>These objectives are completely voluntary. You are not required to complete them.</font></b>")
 	show_objectives(mind)
 
-/mob/living/proc/set_ambition()
-	set name = "Set Ambition"
-	set category = "IC"
-	set src = usr
-
-	if(!mind)
-		return
-	if(!is_special_character(mind))
-		to_chat(src, "<span class='warning'>While you may perhaps have goals, this verb's meant to only be visible \
-		to antagonists.  Please make a bug report!</span>")
-		return
-
-	var/datum/goal/ambition/goal = SSgoals.ambitions[mind]
-	var/new_goal = sanitize(input(src, "Write a short sentence of what your character hopes to accomplish \
-	today as an antagonist.  Remember that this is purely optional.  It will be shown at the end of the \
-	round for everybody else.", "Antagonist Goal", (goal ? html_decode(goal.description) : "")) as null|message)
-	if(!isnull(new_goal))
-		if(!goal)
-			goal = new /datum/goal/ambition(mind)
-		goal.description = new_goal
-		to_chat(src, SPAN_NOTICE("You've set your goal to be <b>'[goal.description]'</b>. You can check your goals with the <b>Show Goals</b> verb."))
-	else
-		to_chat(src, SPAN_NOTICE("You leave your ambitions behind."))
-		if(goal)
-			qdel(goal)
-	log_and_message_admins("has set their ambitions to now be: [new_goal].")
-
 //some antagonist datums are not actually antagonists, so we might want to avoid
 //sending them the antagonist meet'n'greet messages.
 //E.G. ERT
