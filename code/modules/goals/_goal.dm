@@ -21,10 +21,8 @@
 		owner = null
 	. = ..()
 
-/datum/goal/proc/summarize(show_success = FALSE)
-	. = "[description][get_summary_value()]"
-	if(show_success)
-		. += get_success_string()
+/datum/goal/proc/summarize()
+	. = "[description][get_summary_value()][get_success_string()]"
 
 /datum/goal/proc/get_success_string()
 	return check_success() ? FONT_COLORED("green", " <b>Success!</b>") : FONT_COLORED("red", " <b>Failure.</b>")

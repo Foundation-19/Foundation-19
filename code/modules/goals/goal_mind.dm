@@ -3,13 +3,13 @@
 
 /datum/mind/proc/show_roundend_summary()
 	if(current && LAZYLEN(goals))
-		to_chat(current, SPAN_NOTICE("<br><br><b>You had the following personal goals this round:</b><br>[jointext(summarize_goals(TRUE), "<br>")]"))
+		to_chat(current, SPAN_NOTICE("<br><br><b>You had the following personal goals this round:</b><br>[jointext(summarize_goals(), "<br>")]"))
 
-/datum/mind/proc/summarize_goals(show_success = FALSE)
+/datum/mind/proc/summarize_goals()
 	. = list()
 	if(LAZYLEN(goals))
 		for(var/datum/goal/goal in goals)
-			. += "[goal.summarize(show_success)]"
+			. += "[goal.summarize()]"
 
 // Create and display personal goals for this round.
 /datum/mind/proc/generate_goals(datum/job/job, adding_goals = FALSE, add_amount)
@@ -41,16 +41,16 @@
 	set desc = "Shows your round goals."
 	set category = "IC"
 
-	show_goals(TRUE, TRUE)
+	show_goals(TRUE)
 
 
-/datum/mind/proc/show_goals(show_success = FALSE, allow_modification = FALSE)
+/datum/mind/proc/show_goals(allow_modification = FALSE)
 
 	var/chat_string = "<hr>"
 
 	if(LAZYLEN(goals))
 		chat_string += SPAN_NOTICE(FONT_LARGE("<b>This round, you have the following personal goals:</b><br>"))
-		chat_string += jointext(summarize_goals(show_success), "<br>")
+		chat_string += jointext(summarize_goals(), "<br>")
 	else
 		chat_string += SPAN_NOTICE(FONT_LARGE("<b>You have no personal goals this round.</b>"))
 	if(allow_modification && LAZYLEN(goals) < 5)
