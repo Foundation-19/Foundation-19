@@ -8,9 +8,8 @@
 /datum/mind/proc/summarize_goals(show_success = FALSE)
 	. = list()
 	if(LAZYLEN(goals))
-		for(var/i = 1 to LAZYLEN(goals))
-			var/datum/goal/goal = goals[i]
-			. += "[i]. [goal.summarize(show_success)]"
+		for(var/datum/goal/goal in goals)
+			. += "[goal.summarize(show_success)]"
 
 // Create and display personal goals for this round.
 /datum/mind/proc/generate_goals(datum/job/job, adding_goals = FALSE, add_amount)
