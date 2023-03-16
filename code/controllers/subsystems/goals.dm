@@ -6,7 +6,6 @@ SUBSYSTEM_DEF(goals)
 	var/list/global_personal_goals = list()
 	var/list/departments = list()
 	var/list/ambitions =   list()
-	var/list/pending_goals = list()
 
 /datum/controller/subsystem/goals/Initialize()
 	var/list/all_depts = subtypesof(/datum/department)
