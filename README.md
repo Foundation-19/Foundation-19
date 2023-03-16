@@ -9,6 +9,7 @@
 [![Build Status](https://github.com/foundation-19/foundation-19/workflows/CI%20Suite/badge.svg)](https://github.com/foundation-19/foundation-19/actions?query=workflow%3A%22CI+Suite%22)
 [![Percentage of issues still open](https://isitmaintained.com/badge/open/foundation-19/foundation-19.svg)](https://isitmaintained.com/project/vlggms/tegustation "Percentage of issues still open")
 [![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/foundation-19/foundation-19.svg)](https://isitmaintained.com/project/vlggms/tegustation "Average time to resolve an issue")
+[![Discord Shield](https://discordapp.com/api/guilds/896489363599417345/widget.png?style=shield)](https://discord.gg/4GSVA4TRuS)
 
 ## Community
 [<img src=".github/assets/discord.png" alt="Discord" width="150" align="left">](https://discord.gg/GbqVYJJAFk)
