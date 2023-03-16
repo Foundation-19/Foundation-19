@@ -3,8 +3,6 @@
 	var/owner
 	var/completion_message
 	var/failure_message
-	var/can_reroll = TRUE
-	var/can_abandon = TRUE
 
 /datum/goal/New(_owner)
 	owner = _owner
@@ -23,13 +21,10 @@
 		owner = null
 	. = ..()
 
-/datum/goal/proc/summarize(show_success = FALSE, allow_modification = FALSE, mob/caller ,position = 1)
+/datum/goal/proc/summarize(show_success = FALSE)
 	. = "[description][get_summary_value()]"
 	if(show_success)
 		. += get_success_string()
-	if(allow_modification)
-		if(can_abandon) . += " (<a href='?src=\ref[owner];abandon_goal=[position];abandon_goal_caller=\ref[caller]'>Abandon</a>)"
-		if(can_reroll)  . += " (<a href='?src=\ref[owner];reroll_goal=[position];reroll_goal_caller=\ref[caller]'>Reroll</a>)"
 
 /datum/goal/proc/get_success_string()
 	return check_success() ? FONT_COLORED("green", " <b>Success!</b>") : FONT_COLORED("red", " <b>Failure.</b>")

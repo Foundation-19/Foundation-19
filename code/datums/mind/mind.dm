@@ -162,39 +162,6 @@
 		RemoveMemory(memory, usr)
 		return TRUE
 
-	if(href_list["abandon_goal"])
-		var/datum/goal/goal = get_goal_from_href(href_list["abandon_goal"])
-
-		var/mob/caller = locate(href_list["abandon_goal_caller"])
-		if(caller && caller == current) can_modify = TRUE
-
-		if(goal && can_modify)
-			if(usr == current)
-				to_chat(current, SPAN_NOTICE("<b>You have abandoned your goal:</b> '[goal.summarize(FALSE, FALSE)]'."))
-			else
-				to_chat(usr, SPAN_NOTICE("<b>You have removed a goal from \the [current]:</b> '[goal.summarize(FALSE, FALSE)]'."))
-				to_chat(current, SPAN_NOTICE("<b>A goal has been removed:</b> '[goal.summarize(FALSE, FALSE)]'."))
-			qdel(goal)
-		return TRUE
-
-	if(href_list["reroll_goal"])
-		var/datum/goal/goal = get_goal_from_href(href_list["reroll_goal"])
-
-		var/mob/caller = locate(href_list["reroll_goal_caller"])
-		if(caller && caller == current) can_modify = TRUE
-
-		if(goal && (goal in goals) && can_modify)
-			qdel(goal)
-			generate_goals(assigned_job, TRUE)
-			if(goals)
-				goal = goals[LAZYLEN(goals)]
-				if(usr == current)
-					to_chat(usr, SPAN_NOTICE("<b>You have re-rolled a goal. Your new goal is:</b> '[goal.summarize(FALSE, FALSE)]'."))
-				else
-					to_chat(usr, SPAN_NOTICE("<b>You have re-rolled a goal for \the [current]. Their new goal is:</b> '[goal.summarize(FALSE, FALSE)]'."))
-					to_chat(current, SPAN_NOTICE("<b>A goal has been re-rolled. Your new goal is:</b> '[goal.summarize(FALSE, FALSE)]'."))
-		return TRUE
-
 	if(!is_admin) return
 
 	if(current && isliving(current))
