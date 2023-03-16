@@ -304,11 +304,10 @@ var/global/list/additional_antag_types = list()
 	var/text = "<br><br>"
 	text += GLOB.using_map.roundend_summary(data)
 
-	var/departmental_goal_summary = SSgoals.get_roundend_summary()
 	for(var/thing in GLOB.clients)
 		var/client/client = thing
 		if(client.mob && client.mob.mind)
-			client.mob.mind.show_roundend_summary(departmental_goal_summary)
+			client.mob.mind.show_roundend_summary()
 
 	to_world(text)
 
