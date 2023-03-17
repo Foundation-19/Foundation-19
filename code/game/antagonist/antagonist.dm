@@ -82,6 +82,10 @@
 	// Map template that antag needs to load before spawning. Nulled after it's loaded.
 	var/datum/map_template/base_to_load
 
+	// Goals subsystem
+	var/list/possible_goals = list()		// What goals this antag can get
+	var/goals_count							// How many goals this antag should get
+
 /datum/antagonist/New()
 	GLOB.all_antag_types_[id] = src
 	GLOB.all_antag_spawnpoints_[landmark_id] = list()

@@ -28,7 +28,7 @@
 			if(LAZYLEN(new_goals))
 				available_goals |= new_goals
 	if(isnull(add_amount))
-		add_amount = rand((job ? job.min_goals : 1), (job ? job.max_goals : 3))
+		add_amount = rand(1, 3)
 
 	for(var/i = 1 to min(LAZYLEN(available_goals), add_amount))
 		var/goal = pick_n_take(available_goals)

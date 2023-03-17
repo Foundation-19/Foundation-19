@@ -1,6 +1,7 @@
 /datum/goal
 	var/description
 	var/owner
+	var/no_duplicates = 1	// whether we can have several of this type of goal
 	var/completion_message
 	var/failure_message
 
