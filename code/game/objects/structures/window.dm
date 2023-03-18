@@ -249,7 +249,7 @@
 				return
 
 		playsound(src.loc, 'sound/effects/glassbash.ogg', 125, 1) // So as it turns out, glassbash sound is quieter than glassknock
-		show_sound_effect(get_turf(src), null, SFX_ICON_JAGGED)
+		show_sound_effect(get_turf(src), soundicon = SFX_ICON_JAGGED)
 		user.do_attack_animation(src)
 		user.visible_message(SPAN_DANGER("\The [user] bangs against \the [src]!"),
 							SPAN_DANGER("You bang against \the [src]!"),
