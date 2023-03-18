@@ -44,10 +44,10 @@
 
 /datum/component/goalcontainer/proc/add_roundstart_goals(datum/job/job, datum/antagonist/antag)
 	if(!!job)
-		for(job.goals_count)
+		for(var i = job.goals_count, i > 0, i--)
 			add_new_job_goal(job)
 	if(!!antag)
-		for(antag.goals_count)
+		for(var i = antag.goals_count, i > 0, i--)
 			add_new_antag_goal(antag)
-	for(var i = 3, i>0, i--)
+	for(var i = 3, i > 0, i--)
 		add_new_personal_goal()
