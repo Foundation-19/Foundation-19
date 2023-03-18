@@ -9,7 +9,11 @@ So you don't see your own footsteps. Could use oview, but meh
 ~Tsuru
 */
 
-/proc/show_sound_effect(turf/T, mob/source, soundicon = "default")
+#define SFX_ICON_FULL "default"
+#define SFX_ICON_SMALL "small"
+#define SFX_ICON_JAGGED "boom"
+
+/proc/show_sound_effect(turf/T, mob/source, soundicon = SFX_ICON_FULL)
 	var/list/clients_to_show = list()
 
 	for(var/mob/living/M in view(7, T))

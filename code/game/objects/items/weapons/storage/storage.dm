@@ -96,12 +96,12 @@
 /obj/item/storage/proc/open(mob/user as mob)
 	if(!opened)
 		playsound(src.loc, src.open_sound, 50, 0, -5)
-		show_sound_effect(get_turf(src), user, "small")
+		show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
 		opened = 1
 		queue_icon_update()
 	if (src.use_sound)
 		playsound(src.loc, src.use_sound, 50, 0, -5)
-		show_sound_effect(get_turf(src), user, "small")
+		show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
 	if (isrobot(user) && user.hud_used)
 		var/mob/living/silicon/robot/robot = user
 		if(robot.shown_robot_modules) //The robot's inventory is open, need to close it first.

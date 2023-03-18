@@ -333,7 +333,7 @@
 	else
 		src.visible_message("*click click*")
 	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
-	show_sound_effect(get_turf(src), user, "small")
+	show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
 
 /obj/item/gun/proc/handle_click_safety(mob/user)
 	user.visible_message(SPAN_WARNING("[user] squeezes the trigger of \the [src] but it doesn't move!"), SPAN_WARNING("You squeeze the trigger but it doesn't move!"), range = 3)
@@ -490,10 +490,10 @@
 	var/shot_sound = (istype(P) && P.fire_sound)? P.fire_sound : fire_sound
 	if(silenced)
 		playsound(user, shot_sound, 10, 1)
-		show_sound_effect(get_turf(src), user, "small")
+		show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
 	else
 		playsound(user, shot_sound, 50, 1)
-		show_sound_effect(get_turf(src), user, "boom")
+		show_sound_effect(get_turf(src), user, SFX_ICON_JAGGED)
 
 //Suicide handling.
 /obj/item/gun/var/mouthshoot = 0 //To stop people from suiciding twice... >.>

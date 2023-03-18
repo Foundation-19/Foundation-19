@@ -1004,7 +1004,7 @@ About the new airlock wires panel:
 			)
 
 		playsound(src, cut_sound, 100, 1)
-		show_sound_effect(get_turf(src), null, "small")
+		show_sound_effect(get_turf(src), null, SFX_ICON_SMALL)
 		if (do_after(user, cut_delay, src))
 			user.visible_message(
 				SPAN_NOTICE("\The [user] removes the bolt cover from [src]"),
@@ -1019,7 +1019,7 @@ About the new airlock wires panel:
 			SPAN_NOTICE("You begin [cut_verb] through the door bolts.")
 			)
 		playsound(src, cut_sound, 100, 1)
-		show_sound_effect(get_turf(src), null, "small")
+		show_sound_effect(get_turf(src), null, SFX_ICON_SMALL)
 		if (do_after(user, cut_delay, src))
 			user.visible_message(
 				SPAN_NOTICE("\The [user] severs the door bolts, unlocking [src]."),
@@ -1068,13 +1068,13 @@ About the new airlock wires panel:
 			to_chat(user, SPAN_NOTICE("Your [W.name] doesn't have enough fuel."))
 			return
 		playsound(src, 'sound/items/Welder.ogg', 50, 1)
-		show_sound_effect(get_turf(src), null, "small")
+		show_sound_effect(get_turf(src), null, SFX_ICON_SMALL)
 		user.visible_message(SPAN_WARNING("\The [user] begins welding \the [src] [welded ? "open" : "closed"]!"),
 							SPAN_NOTICE("You begin welding \the [src] [welded ? "open" : "closed"]."))
 		if(do_after(user, (rand(3,5)) SECONDS, src))
 			if(density && !(operating > 0) && !repairing)
 				playsound(src, 'sound/items/Welder2.ogg', 50, 1)
-				show_sound_effect(get_turf(src), null, "small")
+				show_sound_effect(get_turf(src), null, SFX_ICON_SMALL)
 				welded = !welded
 				update_icon()
 				return
@@ -1089,12 +1089,12 @@ About the new airlock wires panel:
 				src.p_open = 0
 				user.visible_message(SPAN_NOTICE("[user.name] closes the maintenance panel on \the [src]."), SPAN_NOTICE("You close the maintenance panel on \the [src]."))
 				playsound(src.loc, "sound/items/Screwdriver.ogg", 20)
-				show_sound_effect(get_turf(src), null, "small")
+				show_sound_effect(get_turf(src), null, SFX_ICON_SMALL)
 		else
 			src.p_open = 1
 			user.visible_message(SPAN_NOTICE("[user.name] opens the maintenance panel on \the [src]."), SPAN_NOTICE("You open the maintenance panel on \the [src]."))
 			playsound(src.loc, "sound/items/Screwdriver.ogg", 20)
-			show_sound_effect(get_turf(src), null, "small")
+			show_sound_effect(get_turf(src), null, SFX_ICON_SMALL)
 		src.update_icon()
 	else if(isWirecutter(C))
 		return src.attack_hand(user)
@@ -1108,7 +1108,7 @@ About the new airlock wires panel:
 	else if(!repairing && isCrowbar(C))
 		if(src.p_open && (operating < 0 || (!operating && welded && !src.arePowerSystemsOn() && density && !src.locked)) && !brace)
 			playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
-			show_sound_effect(get_turf(src), null, "small")
+			show_sound_effect(get_turf(src), null, SFX_ICON_SMALL)
 			user.visible_message("[user] removes the electronics from the airlock assembly.", "You start to remove electronics from the airlock assembly.")
 			if(do_after(user,40,src))
 				to_chat(user, SPAN_NOTICE("You've removed the airlock electronics!"))
@@ -1283,7 +1283,7 @@ About the new airlock wires panel:
 				if(AM.blocks_airlock())
 					if(world.time > next_beep_at)
 						playsound(src.loc, close_failure_blocked, 30, 0, -3)
-						show_sound_effect(get_turf(src), null, "small")
+						show_sound_effect(get_turf(src), null, SFX_ICON_SMALL)
 						next_beep_at = world.time + SecondsToTicks(10)
 					close_door_at = world.time + 6
 					return
@@ -1318,7 +1318,7 @@ About the new airlock wires panel:
 
 	src.locked = 1
 	playsound(src, bolts_dropping, 30, 0, -6)
-	show_sound_effect(get_turf(src), null, "small")
+	show_sound_effect(get_turf(src), null, SFX_ICON_SMALL)
 	audible_message("You hear a click from the bottom of the door.", hearing_distance = 1)
 	update_icon()
 	return 1
