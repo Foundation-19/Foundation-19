@@ -465,9 +465,13 @@
 	..()
 	var/obj/screen/plane_master/vision_cone_target/VC = new
 	var/obj/screen/plane_master/vision_cone/primary/mob = new
+	var/obj/screen/plane_master/vision_cone/inverted/sounds = new
+
 
 	//define what planes the masters dictate.
 	mob.plane = MOB_PLANE
+	sounds.plane = INSIDE_VISION_CONE_PLANE
 
 	client.screen += VC
 	client.screen += mob
+	client.screen += sounds
