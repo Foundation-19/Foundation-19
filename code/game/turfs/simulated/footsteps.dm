@@ -80,3 +80,5 @@
 				range -= 0.333
 			playsound(T, footsound, volume, 1, range)
 			play_special_footstep_sound(T, volume, range)
+
+	show_sound_effect(T, src)
