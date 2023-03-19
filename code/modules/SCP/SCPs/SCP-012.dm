@@ -67,4 +67,4 @@ GLOBAL_LIST_EMPTY(scp012s)
 
 /obj/item/paper/proc/can_affect(mob/living/carbon/human/H)
 	// technically 012 is memetic, but having no counter and being insta-GBJ'd seems dumb
-	return H.stat == CONSCIOUS && H.equipment_tint_total != TINT_BLIND
+	return H.can_see(src) || H.can_hear(src)
