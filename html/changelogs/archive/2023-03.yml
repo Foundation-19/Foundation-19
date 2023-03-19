@@ -31,3 +31,6 @@
   cheesePizza2:
   - rscadd: Cryptographic Analyzer description slightly more... descriptive.
   - code_imp: General improvements of e-mag.
+2023-03-19:
+  Tsurupeta:
+  - rscadd: Added footstep and other sound indicators for vision cone.
