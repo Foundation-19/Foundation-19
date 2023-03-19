@@ -106,6 +106,8 @@
 	var/mob/autofiring_by
 	var/autofiring_timer
 
+	var/general_codex_key = "guns"	// for codex
+
 /obj/item/gun/Initialize()
 	. = ..()
 	for(var/i in 1 to firemodes.len)
