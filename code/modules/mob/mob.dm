@@ -309,7 +309,12 @@
 	return TRUE
 
 /mob/proc/can_hear(atom/origin)
-	return ((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT))
+	if(((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT)))
+		return FALSE
+	if(origin)
+		if(!(origin in hear(7, src)))
+			return FALSE
+	return TRUE
 
 /mob/proc/is_physically_disabled()
 	return incapacitated(INCAPACITATION_DISABLED)

@@ -4,7 +4,7 @@ Also handles the blinking mechanics.
 
 Made by TheDarkElites
 */
-#define AUDIBLE_RANGE_FULL       7
+#define AUDIBLE_RANGE_FULL       14
 #define AUDIBLE_RANGE_DECREASED  2
 #define AUDIBLE_RANGE_NONE       -1 //Prevent it from being heard even on the same tile
 
@@ -18,24 +18,38 @@ var/debuff_miniscule = 3
 
 // AUDIO MEMETICS
 
-/mob/living/carbon/human/can_hear(atom/origin) //Checks if a human can hear something. If theres no origin, just checks if the human can hear.
+/mob/living/carbon/human/can_hear(atom/origin, var/return_granulated = 0) //Checks if a human can hear something. If theres no origin, just checks if the human can hear. Return granulated returns a number from 0-100 on how much something can be heard.
 	var/hearable_range
 	switch(get_audio_insul())
 		if(A_INSL_PERFECT) hearable_range = AUDIBLE_RANGE_NONE
 		if(A_INSL_IMPERFECT) hearable_range = AUDIBLE_RANGE_DECREASED
 		if(A_INSL_NONE) hearable_range = AUDIBLE_RANGE_FULL
 
-	if(origin)
-		if((src in hear(hearable_range, origin)) && (loc == origin.loc)) //area is checked as a way to simulate walls and doors dampening hearing ability
+	if(!origin)
+		if(hearable_range == AUDIBLE_RANGE_NONE)
+			if(return_granulated)
+				return 0
+			return FALSE
+		else
+			if(return_granulated)
+				return 100
+			return TRUE
+
+	if(return_granulated)
+		var/cut_off = hearable_range //How far before we begin to drop off granulated amount based on distance
+		if(hearable_range == AUDIBLE_RANGE_FULL)
+			cut_off -= 4
+		var/distance_from_origin = get_dist(src, origin)
+		if(hearable_range == AUDIBLE_RANGE_NONE || !(src in hear(AUDIBLE_RANGE_FULL, origin)))
+			return 0
+		if(distance_from_origin <= cut_off)
+			return 100
+		return Clamp((((AUDIBLE_RANGE_FULL - Clamp((distance_from_origin - cut_off)**2, 0, AUDIBLE_RANGE_FULL))/AUDIBLE_RANGE_FULL)  * 100), 0, 100)
+	else
+		if((src in hear(hearable_range, origin)))
 			return TRUE
 		else
 			return FALSE
-
-	// This is for when we have no origin, we must then use probabilites and absolutes.
-	if(hearable_range == AUDIBLE_RANGE_NONE)
-		return FALSE
-
-	return FALSE
 
 /mob/living/carbon/human/proc/get_audio_insul() //gets total insulation from clothing/disabilities without any calculations.
 	if((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT)) // cant hear if you're deaf.
@@ -46,7 +60,7 @@ var/debuff_miniscule = 3
 
 /mob/living/carbon/human/can_see(atom/movable/origin, var/visual_memetic = 0) //Checks if origin can be seen by a human. visiual_memetics should be one if you're checking for a visual memetic hazard as opposed to say someone looking at scp 173. If origin is null, checks for if the human can see in general.
 	var/turf/origin_turf
-	if(eye_blind > 0) //this is different from blinded check as blinded is changed in the same way eye.blind is, meaning there can be a siutation where eye_blind is in effect but blinded is not set to true. Therefore, this check is neccesary as pre-caution.
+	if(eye_blind > 0) //this is different from blinded check as blinded is changed in the same way eye_blind is, meaning there can be a siutation where eye_blind is in effect but blinded is not set to true. Therefore, this check is neccesary as a pre-caution.
 		return FALSE
 	if(stat) //Unconscious humans cant see.
 		return FALSE
