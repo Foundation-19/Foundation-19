@@ -73,6 +73,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 	return ..()
 
 /mob/living/scp_173/Destroy()
+	for(var/mob/living/carbon/human/H in next_blinks)
+		H.disable_blink(src)
 	next_blinks = null
 	next_blinks_join_time = null
 	cage = null
@@ -173,7 +175,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/list/our_view = view_nolight(7, is_caged ? cage : src)//In case we are caged, we must see if our cage is being looked at rather than us
 	for(var/mob/living/carbon/human/H in next_blinks)
 		if(!(H in our_view))
-			H.disable_blink()
+			H.disable_blink(src)
 			next_blinks -= H
 	for(var/mob/living/carbon/human/H in our_view)
 		H.enable_blink(src)

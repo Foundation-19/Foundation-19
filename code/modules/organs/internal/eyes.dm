@@ -142,6 +142,9 @@
 // Blinking Mechanics
 
 /obj/item/organ/internal/eyes/proc/handle_blink()
+	for(var/blink_causer in owner.blink_causers) //Extra precaution to avoid lingering refrences
+		if(!(owner in view_nolight(7, blink_causer)) && !(blink_causer in view_nolight(7, owner)))
+			owner.disable_blink(blink_causer)
 	if(!owner.is_blinking || owner.stat)
 		owner.blink_total = null
 		owner.blink_current = null

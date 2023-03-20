@@ -144,16 +144,20 @@ var/debuff_miniscule = 3
 // BLINK MECHANICS
 
 /mob/living/carbon/human/proc/enable_blink(atom/movable/blink_reason) //blink_reason is usually src from whatever is calling this proc. Example, if 173 calls this on a human, blink_reason should be 173.
-	is_blinking = TRUE
-	add_verb(src, /mob/living/carbon/human/verb/manual_blink)
-	blink_causer = blink_reason
+	if(!(blink_reason in blink_causers))
+		if(!is_blinking)
+			is_blinking = TRUE
+			add_verb(src, /mob/living/carbon/human/verb/manual_blink)
+		blink_causers += blink_reason
 
-/mob/living/carbon/human/proc/disable_blink()
-	is_blinking = FALSE
-	remove_verb(src, /mob/living/carbon/human/verb/manual_blink)
-	blink_causer = null
+/mob/living/carbon/human/proc/disable_blink(atom/movable/blink_reason)
+	if(blink_reason in blink_causers)
+		blink_causers -= blink_reason
+	if(!LAZYLEN(blink_causers))
+		is_blinking = FALSE
+		remove_verb(src, /mob/living/carbon/human/verb/manual_blink)
 
-/mob/living/carbon/human/proc/cause_blink() //This cant be handled in in eyes as eye processing and human life() processing are out of sync, causing weird bugs.
+/mob/living/carbon/human/proc/cause_blink() //This cant be handled in the eyes as eye processing and human life() processing are out of sync, causing weird bugs.
 	eye_blind += 2
 	visible_message(SPAN_NOTICE("[src] blinks."), SPAN_NOTICE("You blink."))
 	to_chat(src, SPAN_NOTICE("You blink.")) //Cant use visible_message's self function as you're technically blind when blinking.
