@@ -4,7 +4,7 @@
 	if(!client)
 		return
 
-	if(speaker && !speaker.client && isghost(src) && get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH && !(can_see(speaker)))
+	if(speaker && !speaker.client && isghost(src) && get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH && !can_see(speaker))
 			//Does the speaker have a client?  It's either random stuff that observers won't care about (Experiment 97B says, 'EHEHEHEHEHEHEHE')
 			//Or someone snoring.  So we make it where they won't hear it.
 		return
