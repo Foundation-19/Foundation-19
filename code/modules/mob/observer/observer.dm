@@ -56,7 +56,7 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 
 /mob/observer/can_see(atom/origin)	//Not blind either.
 	if(origin)
-		if(!(origin in view(7, src)))
+		if(!(origin in view(src)))
 			return FALSE
 	return TRUE
 

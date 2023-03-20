@@ -54,7 +54,13 @@
 	var/lum = source.luminosity
 	source.luminosity = 6
 
-	var/list/viewed = view(range, source)
+	var/list/viewed = list()
+
+	if(range)
+		viewed = view(range, source)
+	else
+		viewed = view(source)
+
 	source.luminosity = lum
 
 	return viewed

@@ -69,7 +69,7 @@ var/debuff_miniscule = 3
 			return TRUE
 		if(origin.InCone(src, turn(src.dir, 180))) // Cant see whats behind you.
 			return FALSE
-		if(!(origin in view_nolight(7,src))) //Cant see whats not in view.
+		if(!(origin in view_nolight(src))) //Cant see whats not in view.
 			return FALSE
 		origin_turf = get_turf(origin)
 		if((origin_turf.get_lumcount() <= dark_maximium) && (see_in_dark <= 2) && (see_invisible != SEE_INVISIBLE_NOLIGHTING)) //Cant see whats in the dark (unless you have nightvision). Also regular view does check light level, but here we do it ourselves to allow flexibility for what we consider dark + integration with night vision goggles, etc.
