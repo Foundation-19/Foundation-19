@@ -65,7 +65,7 @@
 			SPAN_WARNING("You hear a violent impact!")
 		)
 		playsound(src, 'sound/weapons/smash.ogg', 50, TRUE)
-			show_sound_effect(src.loc, user)
+		show_sound_effect(src.loc, user)
 		if (I.damtype == BRUTE)
 			modify_health(-I.force * 0.75)
 		else if (I.damtype == BURN)
