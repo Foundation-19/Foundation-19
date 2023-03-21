@@ -63,6 +63,7 @@
 		L.IgniteMob()
 
 	playsound(src, "shatter", 70, 1)
+	show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	transfer_fingerprints_to(B)
 
 	qdel(src)
