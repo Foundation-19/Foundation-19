@@ -57,6 +57,7 @@
 				SPAN_WARNING("You hear a soft impact!")
 			)
 			playsound(src, 'sound/weapons/tablehit1.ogg', 50, TRUE)
+			show_sound_effect(src.loc, user)
 			return
 		user.visible_message(
 			SPAN_DANGER("\The [user] slams \an [I] against \the [src]!"),
@@ -64,6 +65,7 @@
 			SPAN_WARNING("You hear a violent impact!")
 		)
 		playsound(src, 'sound/weapons/smash.ogg', 50, TRUE)
+			show_sound_effect(src.loc, user)
 		if (I.damtype == BRUTE)
 			modify_health(-I.force * 0.75)
 		else if (I.damtype == BURN)

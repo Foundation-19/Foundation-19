@@ -59,6 +59,7 @@
 		return
 
 	playsound(src.loc, 'sound/weapons/flash.ogg', 100, 1)
+	show_sound_effect(src.loc)
 	flick("[base_state]_flash", src)
 	src.last_flash = world.time
 	use_power_oneoff(1500)
