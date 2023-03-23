@@ -990,7 +990,7 @@
 		if(is_blinking)
 			if(eye_blind > 0) //Blink mechanics apply new blink times even while the victim is still blind, so this check is neccesary
 				holder.icon_state = "0"
-			else if(!can_see(blink_causers[0])) //If victim cant see the blink_causer, updates HUD to "away" to alert blink HUD users
+			else if(LAZYLEN(blink_causers) ? !can_see(blink_causers[1]) : !can_see()) //If victim cant see the blink_causer, updates HUD to "away" to alert blink HUD users
 				holder.icon_state = "away"
 			else
 				var/blink_timer_mapped = ceil((Clamp(((blink_current / blink_total) * 15), 0, 15))) //Maps time left before blink to between 0 and 15.
