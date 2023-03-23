@@ -25,6 +25,7 @@
 		return 0
 	attack_animation(user)
 	playsound(loc, 'sound/weapons/tablehit1.ogg', 40, 1)
+	show_sound_effect(loc)
 	visible_message(SPAN_DANGER("[user] [attack_message] [src]!"))
 	if(wallbreaker)
 		kill_health()
