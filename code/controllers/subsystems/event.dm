@@ -32,8 +32,7 @@ SUBSYSTEM_DEF(event)
 		event_containers = list(
 				EVENT_LEVEL_MUNDANE 	= new/datum/event_container/mundane,
 				EVENT_LEVEL_MODERATE	= new/datum/event_container/moderate,
-				EVENT_LEVEL_MAJOR 		= new/datum/event_container/major,
-				EVENT_LEVEL_EXO			= new/datum/event_container/exo
+				EVENT_LEVEL_MAJOR 		= new/datum/event_container/major
 			)
 
 	if(GLOB.using_map.use_overmap)
@@ -65,7 +64,7 @@ SUBSYSTEM_DEF(event)
 		if (MC_TICK_CHECK)
 			return
 
-	while (pos <= EVENT_LEVEL_EXO)
+	while (pos <= EVENT_LEVEL_MAJOR)
 		event_containers[pos].process()
 		pos++
 
@@ -172,7 +171,7 @@ SUBSYSTEM_DEF(event)
 
 		html += "<table[table_options]>"
 		html += "<tr><td[row_options1]>Severity</td><td[row_options1]>Starts At</td><td[row_options1]>Starts In</td><td[row_options3]>Adjust Start</td><td[row_options1]>Pause</td><td[row_options1]>Interval Mod</td></tr>"
-		for(var/severity = EVENT_LEVEL_MUNDANE to EVENT_LEVEL_EXO)
+		for(var/severity = EVENT_LEVEL_MUNDANE to EVENT_LEVEL_MAJOR)
 			var/datum/event_container/EC = event_containers[severity]
 			var/next_event_at = max(0, EC.next_event_time - world.time)
 			html += "<tr>"
@@ -199,7 +198,7 @@ SUBSYSTEM_DEF(event)
 		html += "<h2>Next Event</h2>"
 		html += "<table[table_options]>"
 		html += "<tr><td[row_options1]>Severity</td><td[row_options2]>Name</td><td[row_options3]>Event Rotation</td><td>Clear</td></tr>"
-		for(var/severity = EVENT_LEVEL_MUNDANE to EVENT_LEVEL_EXO)
+		for(var/severity = EVENT_LEVEL_MUNDANE to EVENT_LEVEL_MAJOR)
 			var/datum/event_container/EC = event_containers[severity]
 			var/datum/event_meta/EM = EC.next_event
 			html += "<tr>"

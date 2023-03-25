@@ -45,9 +45,11 @@
 	var/chilling_point
 	var/chilling_message = "crackles and freezes!"
 	var/chilling_sound = 'sound/effects/bubbles.ogg'
+	var/chilling_prod_english	// used for codex
 	var/list/chilling_products
 
 	var/list/heating_products
+	var/heating_prod_english	// used for codex
 	var/heating_point
 	var/heating_message = "begins to boil!"
 	var/heating_sound = 'sound/effects/bubbles.ogg'
