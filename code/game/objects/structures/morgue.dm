@@ -168,7 +168,7 @@
 	O.forceMove(src.loc)
 	if (user != O)
 		for(var/mob/B in viewers(user, 3))
-			if ((B.client && B.can_see()))
+			if (B.client && B.can_see())
 				to_chat(B, SPAN_WARNING("\The [user] stuffs [O] into [src]!"))
 	return
 
