@@ -1,8 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - rscadd: Events system is back with HEAVY improvements/alterations.
-  - code_imp: General cleanup of event-related code, including things like map announcements.
-      Some legacy code has been removed.
-  - config: Re-enabled events in config
-  - admin: Altered/removed some of the "fun" verbs that relied on legacy event code.
