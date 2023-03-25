@@ -1,0 +1,8 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscadd: Auto-generated reagent codex entries are MUCH more descriptive
+  - rscadd: More codex entries have links to other entries.
+  - rscdel: Antagonist codex text now shows up for non-antags.
+  - bugfix: General reformatting of codex entries.
+  - code_imp: Codex links now log a warning if incorrectly parsed.
