@@ -200,7 +200,6 @@
 
 /obj/effect/overmap/event/meteor
 	name = "asteroid field"
-	events = list(/datum/event/meteor_wave/overmap)
 	event_icon_states = list("meteor1", "meteor2", "meteor3", "meteor4")
 	difficulty = EVENT_LEVEL_MAJOR
 	weaknesses = OVERMAP_WEAKNESS_MINING | OVERMAP_WEAKNESS_EXPLOSIVE
@@ -217,7 +216,6 @@
 
 /obj/effect/overmap/event/dust
 	name = "dust cloud"
-	events = list(/datum/event/dust)
 	event_icon_states = list("dust1", "dust2", "dust3", "dust4")
 	weaknesses = OVERMAP_WEAKNESS_MINING | OVERMAP_WEAKNESS_EXPLOSIVE | OVERMAP_WEAKNESS_FIRE
 	color = "#6c6c6c"
