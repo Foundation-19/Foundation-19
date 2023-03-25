@@ -1,14 +1,13 @@
 #define ASSIGNMENT_ANY "Any"
-#define ASSIGNMENT_AI "AIC"
+#define ASSIGNMENT_AIC "AIC"
 #define ASSIGNMENT_CYBORG "Robot"
 #define ASSIGNMENT_ENGINEER "Engineer"
-#define ASSIGNMENT_GARDENER "Gardener"
 #define ASSIGNMENT_JANITOR "Janitor"
 #define ASSIGNMENT_MEDICAL "Medical"
 #define ASSIGNMENT_SCIENTIST "Scientist"
 #define ASSIGNMENT_SECURITY "Security"
 
-var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT_LEVEL_MODERATE = "Moderate", EVENT_LEVEL_MAJOR = "Major", EVENT_LEVEL_EXO = "Exoplanet")
+var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT_LEVEL_MODERATE = "Moderate", EVENT_LEVEL_MAJOR = "Major")
 
 /datum/event_container
 	var/severity = -1
@@ -93,18 +92,8 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		next_event_time = world.time + event_delay
 	// Otherwise, follow the standard setup process
 	else
-		var/playercount_modifier = 1
-		switch(GLOB.player_list.len)
-			if(0 to 10)
-				playercount_modifier = 1.2
-			if(11 to 15)
-				playercount_modifier = 1.1
-			if(16 to 25)
-				playercount_modifier = 1
-			if(26 to 35)
-				playercount_modifier = 0.9
-			if(36 to 100000)
-				playercount_modifier = 0.8
+		var/playercount_modifier = max(2 - log((GLOB.player_list.len / 2) + 1), 0.7)
+
 		playercount_modifier = playercount_modifier * delay_modifier
 
 		var/event_delay = rand(config.event_delay_lower[severity], config.event_delay_upper[severity]) * playercount_modifier
@@ -126,72 +115,115 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 	severity = EVENT_LEVEL_MUNDANE
 	available_events = list(
 		// Severity level, event name, event type, base weight, role weights, one shot, min weight, max weight. Last two only used if set and aren't nulls
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "APC Damage",					/datum/event/apc_damage,			20, 	list(ASSIGNMENT_ENGINEER = 10)),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Brand Intelligence",			/datum/event/brand_intelligence,	10, 	list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_JANITOR = 10)),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Camera Damage",					/datum/event/camera_damage,			20, 	list(ASSIGNMENT_ENGINEER = 10)),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Economic News",					/datum/event/economic_event,		100),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Money Hacker",					/datum/event/money_hacker, 			0, 		list(ASSIGNMENT_ANY = 4), 1, 10, 25),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Money Lotto",					/datum/event/money_lotto, 			0, 		list(ASSIGNMENT_ANY = 1), 1, 5, 15),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Mundane News", 					/datum/event/mundane_news, 			200),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Shipping Error",				/datum/event/shipping_error	, 		30, 	list(ASSIGNMENT_ANY = 2), 0),
-		new /datum/event_meta/no_overmap(EVENT_LEVEL_MUNDANE, "Space Dust",			/datum/event/dust	, 				30, 	list(ASSIGNMENT_ENGINEER = 10)),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Sensor Suit Jamming",			/datum/event/sensor_suit_jamming,	30,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_AI = 20), 1),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Trivial News",					/datum/event/trivial_news, 			200),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Vermin Infestation",			/datum/event/infestation, 			100,	list(ASSIGNMENT_JANITOR = 50)),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Wallrot",						/datum/event/wallrot, 				0,		list(ASSIGNMENT_ENGINEER = 30, ASSIGNMENT_GARDENER = 50)),
-		new /datum/event_meta/no_overmap(EVENT_LEVEL_MUNDANE, "Electrical Storm",	/datum/event/electrical_storm, 		20,		list(ASSIGNMENT_ENGINEER = 20, ASSIGNMENT_JANITOR = 50)),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Toilet Clog",					/datum/event/toilet_clog,			50, 	list(ASSIGNMENT_JANITOR = 50)),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Drone Malfunction",				/datum/event/rogue_maint_drones,	10,		list(ASSIGNMENT_ENGINEER = 30, ASSIGNMENT_SECURITY = 50)),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Disposals Explosion",			/datum/event/disposals_explosion,	20,		list(ASSIGNMENT_ENGINEER = 40)),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Brain Expansion",				/datum/event/brain_expansion,		20,		list(ASSIGNMENT_SCIENTIST = 20)),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Mail Delivery",					/datum/event/mail,					0,		list(ASSIGNMENT_ANY = 5), 1),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "APC Damage",							/datum/event/apc_damage,				20, 	list(ASSIGNMENT_ENGINEER = 10)),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Brand Intelligence",					/datum/event/brand_intelligence,		10, 	list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_JANITOR = 10)),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Camera Damage",							/datum/event/camera_damage,				20, 	list(ASSIGNMENT_ENGINEER = 10)),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Economic News",							/datum/event/economic_event,			100),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "E-mail Spam",							/datum/event/email_spam,				100),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Money Hacker",							/datum/event/money_hacker, 				2, 		list(ASSIGNMENT_ANY = 4), 1, 10, 24),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Money Lotto",							/datum/event/money_lotto, 				0, 		list(ASSIGNMENT_ANY = 1), 1, 5, 15),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Mundane News", 							/datum/event/mundane_news, 				200),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "SCiPnet Protection Failure",			/datum/event/scipnet_protection_fail,	30,		list(ASSIGNMENT_ENGINEER = 10), 1),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Shipping Error",						/datum/event/shipping_error	, 			30, 	list(ASSIGNMENT_ANY = 2), 0),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Sensor Suit Jamming",					/datum/event/sensor_suit_jamming,		30,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_AIC = 20), 1),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Trivial News",							/datum/event/trivial_news, 				200),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Vermin Infestation",					/datum/event/infestation, 				100,	list(ASSIGNMENT_JANITOR = 50)),
+		new /datum/event_meta/no_overmap(EVENT_LEVEL_MUNDANE, "Electrical Storm",			/datum/event/electrical_storm, 			20,		list(ASSIGNMENT_ENGINEER = 20, ASSIGNMENT_JANITOR = 50)),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Drone Malfunction",						/datum/event/rogue_maint_drones,		10,		list(ASSIGNMENT_ENGINEER = 30, ASSIGNMENT_SECURITY = 50)),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Disposals Explosion",					/datum/event/disposals_explosion,		20,		list(ASSIGNMENT_ENGINEER = 40)),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Brain Expansion",						/datum/event/brain_expansion,			100,	list(ASSIGNMENT_SCIENTIST = -10), 0, 10, 100),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Mail Delivery",							/datum/event/mail,						0,		list(ASSIGNMENT_ANY = 5), 1),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Psi Balm",								/datum/event/psi/balm,					20),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Psi Wail",								/datum/event/psi/wail,					20)
 	)
 
 /datum/event_container/moderate
 	severity = EVENT_LEVEL_MODERATE
 	available_events = list(
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Nothing",								/datum/event/nothing,					100,		list(ASSIGNMENT_ANY = -5)),
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Nothing",								/datum/event/nothing,					100,	list(ASSIGNMENT_ANY = -5)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Appendicitis", 						/datum/event/spontaneous_appendicitis, 	0,		list(ASSIGNMENT_MEDICAL = 10), 1),
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Communication Blackout",				/datum/event/communications_blackout,	50,		list(ASSIGNMENT_AI = 100, ASSIGNMENT_ENGINEER = 20)),
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Communication Blackout",				/datum/event/communications_blackout,	50,		list(ASSIGNMENT_AIC = 100, ASSIGNMENT_ENGINEER = 20)),
 		new /datum/event_meta/no_overmap(EVENT_LEVEL_MODERATE, "Electrical Storm",			/datum/event/electrical_storm, 			10,		list(ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_JANITOR = 10)),
-//		new /datum/event_meta/no_overmap(EVENT_LEVEL_MODERATE, "Gravity Failure",			/datum/event/gravity,	 				50,		list(ASSIGNMENT_ENGINEER = 20)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Grid Check",							/datum/event/grid_check, 				40,		list(ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_ANY = 5)),
-		new /datum/event_meta/no_overmap(EVENT_LEVEL_MODERATE, "Ion Storm",					/datum/event/ionstorm, 					0,		list(ASSIGNMENT_AI = 50, ASSIGNMENT_CYBORG = 50, ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_SCIENTIST = 5)),
-		new /datum/event_meta/no_overmap(EVENT_LEVEL_MODERATE, "Meteor Shower",				/datum/event/meteor_wave,				0,		list(ASSIGNMENT_ENGINEER = 20)),
+		new /datum/event_meta/no_overmap(EVENT_LEVEL_MODERATE, "Ion Storm",					/datum/event/ionstorm, 					0,		list(ASSIGNMENT_AIC = 50, ASSIGNMENT_CYBORG = 50, ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_SCIENTIST = 5)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Prison Break",							/datum/event/prison_break,				0,		list(ASSIGNMENT_SECURITY = 100)),
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Radiation Storm",						/datum/event/radiation_storm, 			0,		list(ASSIGNMENT_MEDICAL = 50), 1),
-		new /datum/event_meta/extended_penalty(EVENT_LEVEL_MODERATE, "Random Antagonist",	/datum/event/random_antag,				2,	list(ASSIGNMENT_SECURITY = 1), 1, 0, 5),
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Sensor Suit Jamming",					/datum/event/sensor_suit_jamming,		10,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_AI = 20)),
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Solar Storm",							/datum/event/solar_storm, 				10,		list(ASSIGNMENT_ENGINEER = 20, ASSIGNMENT_SECURITY = 10), 1),
-		new /datum/event_meta/no_overmap(EVENT_LEVEL_MODERATE, "Space Dust",				/datum/event/dust	, 					30, 	list(ASSIGNMENT_ENGINEER = 10)),
+		new /datum/event_meta/extended_removed(EVENT_LEVEL_MODERATE, "Random Antagonist",	/datum/event/random_antag,				2,		list(ASSIGNMENT_SECURITY = 1), 1, 0, 5),
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Sensor Suit Jamming",					/datum/event/sensor_suit_jamming,		10,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_AIC = 20)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Spider Infestation",					/datum/event/spider_infestation, 		25,		list(ASSIGNMENT_SECURITY = 15), 1),
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Toilet Flooding",						/datum/event/toilet_clog/flood,			50, 	list(ASSIGNMENT_JANITOR = 20)),
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Wallrot",								/datum/event/wallrot, 					0,		list(ASSIGNMENT_ENGINEER = 40)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Drone Uprising",						/datum/event/rogue_maint_drones,		25,		list(ASSIGNMENT_ENGINEER = 30, ASSIGNMENT_SECURITY = 20)),
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Memetic Spasm",						/datum/event/memetic_spasm,				10,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_SECURITY = 20))
 	)
 
 /datum/event_container/major
 	severity = EVENT_LEVEL_MAJOR
 	available_events = list(
-		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Nothing",							/datum/event/nothing,			200,	list(ASSIGNMENT_ANY = -5)), // So higher pop will run events more often
-		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Blob",							/datum/event/blob, 					0,	list(ASSIGNMENT_ENGINEER = 20, ASSIGNMENT_MEDICAL = 10, ASSIGNMENT_SECURITY = 20), 1),
-		new /datum/event_meta/no_overmap(EVENT_LEVEL_MAJOR, "Meteor Wave",			/datum/event/meteor_wave,			0,	list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_MEDICAL = 10)),
-		new /datum/event_meta/no_overmap(EVENT_LEVEL_MAJOR, "Electrical Storm",		/datum/event/electrical_storm, 		0,	list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_JANITOR = 5)),
-		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Drone Revolution",				/datum/event/rogue_maint_drones,	0,	list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_MEDICAL = 10, ASSIGNMENT_SECURITY = 20)),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Nothing",									/datum/event/nothing,					200,	list(ASSIGNMENT_ANY = -5)), // So higher pop will run events more often
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Blob",									/datum/event/blob, 						0,		list(ASSIGNMENT_ENGINEER = 20, ASSIGNMENT_MEDICAL = 10, ASSIGNMENT_SECURITY = 20), 1),
+		new /datum/event_meta/no_overmap(EVENT_LEVEL_MAJOR, "Electrical Storm",				/datum/event/electrical_storm, 			0,		list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_JANITOR = 5)),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Drone Revolution",						/datum/event/rogue_maint_drones,		0,		list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_MEDICAL = 10, ASSIGNMENT_SECURITY = 20)),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Vines",									/datum/event/spacevine,					0,		list(ASSIGNMENT_ANY = 5, ASSIGNMENT_ENGINEER = 20, ASSIGNMENT_JANITOR = 10)),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Wormholes",								/datum/event/wormholes,					10,		list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_SECURITY = 25))
 	)
 
-/datum/event_container/exo
-	severity = EVENT_LEVEL_EXO
-	available_events = list(
-		new /datum/event_meta(EVENT_LEVEL_EXO, "Nothing",			/datum/event/nothing,		100,		list(ASSIGNMENT_ANY = -5)),
-		new /datum/event_meta(EVENT_LEVEL_EXO, "Exoplanet Awakening",	/datum/event/exo_awakening,	0,		list(ASSIGNMENT_ANY = 10))
-	)
+// Returns how many characters are currently active(not logged out, not AFK for more than 10 minutes)
+// with a specific role.
+// Note that this isn't sorted by department, because e.g. having a roboticist shouldn't make meteors spawn.
+/proc/number_active_with_role()
+	var/list/active_with_role = list()
+	active_with_role[ASSIGNMENT_ENGINEER] = 0
+	active_with_role[ASSIGNMENT_MEDICAL] = 0
+	active_with_role[ASSIGNMENT_SECURITY] = 0
+	active_with_role[ASSIGNMENT_SCIENTIST] = 0
+	active_with_role[ASSIGNMENT_AIC] = 0
+	active_with_role[ASSIGNMENT_CYBORG] = 0
+	active_with_role[ASSIGNMENT_JANITOR] = 0
 
+	for(var/mob/M in GLOB.player_list)
+		if(!M.mind || !M.client || M.client.is_afk(10 MINUTES)) // longer than 10 minutes AFK counts them as inactive
+			continue
+
+		active_with_role[ASSIGNMENT_ANY]++
+
+		if(istype(M, /mob/living/silicon/robot))
+			var/mob/living/silicon/robot/R = M
+			if(R.module)
+				if(istype(R.module, /obj/item/robot_module/engineering))
+					active_with_role[ASSIGNMENT_ENGINEER]++
+				else if(istype(R.module, /obj/item/robot_module/security))
+					active_with_role[ASSIGNMENT_SECURITY]++
+				else if(istype(R.module, /obj/item/robot_module/medical))
+					active_with_role[ASSIGNMENT_MEDICAL]++
+				else if(istype(R.module, /obj/item/robot_module/research))
+					active_with_role[ASSIGNMENT_SCIENTIST]++
+
+		if(M.mind.assigned_role in SSjobs.titles_by_department(ENG))
+			active_with_role[ASSIGNMENT_ENGINEER]++
+
+		if(M.mind.assigned_role in SSjobs.titles_by_department(MED))
+			active_with_role[ASSIGNMENT_MEDICAL]++
+
+		if(M.mind.assigned_role in SSjobs.titles_by_department(SEC))
+			active_with_role[ASSIGNMENT_SECURITY]++
+
+		if(M.mind.assigned_role in SSjobs.titles_by_department(SCI))
+			active_with_role[ASSIGNMENT_SCIENTIST]++
+
+		if(M.mind.assigned_role == ASSIGNMENT_AIC)
+			active_with_role[ASSIGNMENT_AIC]++
+
+		if(M.mind.assigned_role == ASSIGNMENT_CYBORG)
+			active_with_role[ASSIGNMENT_CYBORG]++
+
+		if(M.mind.assigned_role == ASSIGNMENT_JANITOR)
+			active_with_role[ASSIGNMENT_JANITOR]++
+
+	return active_with_role
 
 #undef ASSIGNMENT_ANY
-#undef ASSIGNMENT_AI
+#undef ASSIGNMENT_AIC
 #undef ASSIGNMENT_CYBORG
 #undef ASSIGNMENT_ENGINEER
-#undef ASSIGNMENT_GARDENER
 #undef ASSIGNMENT_JANITOR
 #undef ASSIGNMENT_MEDICAL
 #undef ASSIGNMENT_SCIENTIST

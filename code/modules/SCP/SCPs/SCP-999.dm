@@ -1,5 +1,3 @@
-#define HUGGING 1
-#define IMMOBILIZING 2
 GLOBAL_LIST_EMPTY(scp999s)
 
 /datum/scp/scp_999
@@ -18,22 +16,32 @@ GLOBAL_LIST_EMPTY(scp999s)
 	maxHealth = 1500
 	health = 1500
 	hud_type = /datum/hud/slime
-	var/mob/living/carbon/attached
-	var/attached_mode = HUGGING
-	var/list/last_healing = list()
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
+	universal_speak = 1	// 999 can understand and speak every language, although his text gets altered
+	speak_emote = list("blubbers", "glubs")
 
 /mob/living/simple_animal/scp_999/Initialize()
 	GLOB.scp999s += src
 	return ..()
 
-/mob/living/simple_animal/scp_999/say(message, datum/language/speaking = null, whispering)
-	to_chat(src,"<span class = 'notice'>You cannot speak.</span>")
-	return FALSE
+/mob/living/simple_animal/scp_999/handle_autohiss(message, datum/language/speaking)
+
+	var/regex/words = new(@"(\S+)", "ig")
+
+	var/end_char = copytext(message, length(message), length(message) + 1)
+	if(end_char in list(".", "?", "!", "-", "~", ":"))
+		return words.Replace(copytext(message, 1, length(message)), /mob/living/simple_animal/scp_999/proc/glubbify) + end_char
+	else
+		return words.Replace(message, /mob/living/simple_animal/scp_999/proc/glubbify)
+
+/mob/living/simple_animal/scp_999/proc/glubbify(match)
+	. = "gl"
+	for(var/i = (max(0, length(match) - 3)), i > 0, i--)
+		. += "u"
+	. += "b"
 
 /mob/living/simple_animal/scp_999/Destroy()
-	last_healing = null
 	GLOB.scp999s -= src
 	return ..()
 
@@ -52,59 +60,27 @@ GLOBAL_LIST_EMPTY(scp999s)
 /mob/living/simple_animal/scp_999/Life()
 	. = ..()
 	update_icon()
-	if(attached)
-		if(QDELETED(attached) || !attached.loc)
-			attached = null
-			return
-		forceMove(attached.loc)
-		if(last_healing[attached] == null || ((last_healing[attached] + 2 MINUTES) >= world.time))
-			last_healing[attached] = world.time
-			if(attached_mode == HUGGING)
-				attached.adjustOxyLoss(-rand(20,30))
-				attached.adjustToxLoss(-rand(20,30))
-				attached.adjustBruteLoss(-rand(20,30))
-				attached.adjustFireLoss(-rand(20, 30))
-				attached.adjustHalLoss(-200)
-				to_chat(attached, SPAN_NOTICE("You feel your wounds grow numb..."))
-				attached.emote(pick("laugh","giggle","smile","grin"))
-			else
-				if(prob(20))
-					attached.Stun(3)
-					visible_message(SPAN_WARNING("[src] wraps around [attached]'s legs, immobilizing them!"))
-					attached.emote(pick("laugh","giggle","smile","grin"))
 
 /mob/living/simple_animal/scp_999/UnarmedAttack(atom/a)
 	if(ishuman(a))
-		if(a_intent == I_HELP)
-			attached_mode = HUGGING
-			attached = a
-			a.visible_message(SPAN_NOTICE("[src] begins to give [attached] a big hug!"), SPAN_NOTICE("[src] begins hugging you, filling you with happiness!"))
-		else if(a_intent == I_HURT)
-			attached_mode = IMMOBILIZING
-			attached = a
-			a.visible_message(SPAN_WARNING("[src] begins to wrap around [attached]!"), SPAN_WARNING("[src] begins wrapping around you, filling you with happiness!"))
-		forceMove(get_turf(attached))
-
-/mob/living/simple_animal/scp_999/Move(a,b,f)
-	if(attached)
-		if(attached_mode == HUGGING)
-			to_chat(src, SPAN_NOTICE("You are hugging someone! Detach to move!"))
-			return
-		else
-			if(prob(5))
-				attached.Move(a,b,f)
-			return
-	return ..(a,b,f)
-
-/mob/living/simple_animal/scp_999/verb/detach()
-	set category = "SCP"
-	set name = "Detach"
-	if(attached)
-		forceMove(get_turf(src))
-		visible_message(SPAN_NOTICE("[src] detaches from [attached]!"))
-		attached = null
-	else
-		to_chat(src, SPAN_WARNING("<i>We aren't attached to anything!</i>"))
-
-#undef IMMOBILIZING
-#undef HUGGING
+		var/mob/living/carbon/human/H = a
+		switch(a_intent)
+			if(I_HELP)
+				H.visible_message(SPAN_NOTICE("[src] gives [a] a big hug!"), SPAN_NOTICE("[src] hugs you, filling you with happiness!"))
+				H.make_reagent(6, /datum/reagent/medicine/antidepressant/anomalous_happiness)
+				H.emote(pick("laugh","giggle"))
+			if(I_DISARM)
+				H.visible_message(SPAN_WARNING("[src] begins to wrap around [a]'s legs!"), SPAN_WARNING("[src] begins wrapping around your legs!"))
+				H.make_reagent(2, /datum/reagent/medicine/antidepressant/anomalous_happiness)
+				H.emote(pick("laugh","giggle"))
+				if(do_after(src, 15, H))
+					playsound(loc, 'sound/misc/slip.ogg', 50, 1, -3)
+					H.Weaken(6)
+					H.Stun(3)
+					visible_message(SPAN_WARNING("[src] wraps around [H]'s legs, tripping them!"))
+//			if(I_GRAB)
+			if(I_HURT)
+				H.visible_message(SPAN_WARNING("[src] gives [a] a tickle attack!"), SPAN_WARNING("[src] gives you a tickle attack, filling you with happiness!"))
+				H.make_reagent(10, /datum/reagent/medicine/antidepressant/anomalous_happiness)
+				H.emote("laugh")
+				H.Weaken(6)
