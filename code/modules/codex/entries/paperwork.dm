@@ -1,5 +1,5 @@
 /datum/codex_entry/pen
-	associated_paths = list(/obj/item/pen)
+	associated_paths = list()
 	mechanics_text = {"Used for writing down your thoughts, on paper or elsewhere. The following special commands are available:<br><br>
 \[br\] : Creates a linebreak.<br>
 \[center\] - \[/center\] : Centers the text.<br>
@@ -51,3 +51,7 @@
 \[fontblue\] - \[/font\] : Makes the text blue.<br>
 \[fontgreen\] - \[/font\] : Makes the text green.<br>
 \[redacted\] : Adds R E D A C T E D in black font on a black background.<br><br>"}
+
+/datum/codex_entry/pen/New()
+	associated_paths += typesof(/obj/item/pen)
+	. = ..()

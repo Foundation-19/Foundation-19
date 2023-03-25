@@ -1,6 +1,6 @@
 /datum/codex_entry/atmos_pipe
 	associated_paths = list(/obj/machinery/atmospherics/pipe)
-	mechanics_text = "This pipe, and all other pipes, can be connected or disconnected by a wrench.  The internal pressure of the pipe must \
+	mechanics_text = "This pipe, and all other pipes, can be connected or disconnected by a <l>wrench</l>.  The internal pressure of the pipe must \
 	be below 300 kPa to do this.  More pipes can be obtained from the pipe dispenser."
 
 //HE pipes
@@ -165,13 +165,13 @@
 
 //Canisters
 /datum/codex_entry/atmos_canister
-	display_name = "gas canister" // because otherwise it shows up as 'canister: [caution]'
+	display_name = "gas canister" // because otherwise it shows up as 'canister [caution]'
 	associated_paths = list(/obj/machinery/portable_atmospherics/canister)
-	mechanics_text = "These metal canisters hold large amounts of gas under pressure. Tanks of gas (the kind you can hold in your hand) \
+	mechanics_text = "These metal canisters hold large amounts of gas under pressure. <span codexlink='tank'>Tanks of gas</span> (the kind you can hold in your hand) \
 	can be filled by the canister, by using the tank on the canister, increasing the release pressure, then opening the valve until it is full, and then closing it. \
 	*DO NOT* remove the tank until the valve is closed!<br><br>\
-	A wrench can be used to connect a canister to a port, or disconnect it. \
-	A gas analyzer, or a PDA with a gas analyzer program, can be used to check the contents of the canister. \
+	A <l>wrench</l> can be used to connect a canister to a port, or disconnect it. \
+	A <l>gas analyzer</l>, or a PDA with a gas analyzer program, can be used to check the contents of the canister. \
 	Duct tape can be used to repair damage, or a welding tool can be used to deconstruct it, as long as it's mostly empty (or has been destroyed.)"
 	antag_text = "Canisters take damage from attacks, bullets, and extreme temperatures, and can rupture, instantly spilling all their contents into the air. \
 	You can also just leave the release valve open. Fires can also occur <i>inside</i> of canisters, which can be hilariously terrifying."
@@ -198,13 +198,15 @@
 //Pipe dispensers
 /datum/codex_entry/atmos_pipe_dispenser
 	associated_paths = list(/obj/machinery/pipedispenser)
-	mechanics_text = "This can be moved by using a wrench.  You will need to wrench it again when you want to use it.  You can put \
+	mechanics_text = "This can be moved by using a <l>wrench</l>.  You will need to wrench it again when you want to use it.  You can put \
 	excess (atmospheric) pipes into the dispenser, as well.  The dispenser requires electricity to function."
 
 /datum/codex_entry/transfer_valve
 	associated_paths = list(/obj/item/device/transfer_valve)
-	mechanics_text = "This machine is used to merge the contents of two different gas tanks. Plug the tanks into the transfer, then open the valve to mix them together. You can also attach various assembly devices to trigger this process."
-	antag_text = "With a tank of hot phoron and cold oxygen, this benign little atmospheric device becomes an incredibly deadly bomb. You don't want to be anywhere near it when it goes off."
+	mechanics_text = "This machine is used to merge the contents of two different <span codexlink='tank'>gas tanks</span>. \
+	Plug the tanks into the transfer, then open the valve to mix them together. You can also attach various assembly devices to trigger this process."
+	antag_text = "With a tank of hot phoron and cold oxygen, this benign little atmospheric device becomes an incredibly deadly bomb. \
+	You don't want to be anywhere near it when it goes off."
 
 /datum/codex_entry/gas_tank
 	associated_paths = list(/obj/item/tank)
@@ -216,9 +218,12 @@
 	<br>\
 	Filling a tank such that experiences ~4000kPa of pressure will cause the tank to rupture, spilling out its contents and destroying the tank. \
 	Tanks filled over ~5000kPa will rupture rather violently, exploding with significant force."
-	antag_text = "Each tank may be incited to burn by attaching wires and an igniter assembly, though the igniter can only be used once and the mixture only burn if the igniter pushes a flammable gas mixture above the minimum burn temperature (126?C). \
-	Wired and assembled tanks may be disarmed with a set of wirecutters. Any exploding or rupturing tank will generate shrapnel, assuming their relief valves have been welded beforehand. Even if not, they can be incited to expel hot gas on ignition if pushed above 173?C. \
-	Relatively easy to make, the single tank bomb requries no tank transfer valve, and is still a fairly formidable weapon that can be manufactured from any tank."
+	antag_text = "Each tank may be incited to burn by attaching wires and an igniter assembly, \
+	though the igniter can only be used once and the mixture only burn if the igniter pushes a flammable gas mixture above the minimum burn temperature (126?C). \
+	Wired and assembled tanks may be disarmed with a set of <l>wirecutters</l>. \
+	Any exploding or rupturing tank will generate shrapnel, assuming their relief valves have been welded beforehand. \
+	Even if not, they can be incited to expel hot gas on ignition if pushed above 173?C. \
+	Relatively easy to make, the single tank bomb requires no tank transfer valve, and is still a fairly formidable weapon that can be manufactured from any tank."
 
 /datum/codex_entry/gas_analyzer
 	associated_paths = list(/obj/item/device/scanner/gas)
