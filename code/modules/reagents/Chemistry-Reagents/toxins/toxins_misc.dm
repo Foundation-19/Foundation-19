@@ -163,6 +163,7 @@
 	color = "#140b30"
 	strength = 4
 	heating_products = list(/datum/reagent/acetone, /datum/reagent/carbon, /datum/reagent/ethanol)
+	heating_prod_english = "<span codexlink='acetone (chemical)'>acetone</span>, <span codexlink='carbon (chemical)'>carbon</span>, and <span codexlink='ethanol (chemical)'>ethanol</span>"
 	heating_point = 145 CELSIUS
 	heating_message = "separates."
 
