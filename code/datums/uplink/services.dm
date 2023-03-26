@@ -16,12 +16,6 @@
 	item_cost = 16
 	path = /obj/item/device/uplink_service/jamming/garble
 
-/datum/uplink_item/item/services/fake_rad_storm
-	name = "Radiation Storm Announcement"
-	desc = "A single-use device, that when activated, fakes an announcement, so people run to the tunnels in fear of being irradiated! "
-	item_cost = 24
-	path = /obj/item/device/uplink_service/fake_rad_storm
-
 /datum/uplink_item/item/services/fake_crew_annoncement
 	name = "Crew Arrival Announcement and Records"
 	desc = "A single-use device, that when activated, creates a fake crew arrival announcement as well as fake crew records, using your current appearance (including held items!) and worn id card. Prepare well!"
@@ -159,17 +153,6 @@
 
 /obj/item/device/uplink_service/fake_ion_storm/enable(mob/user = usr)
 	ion_storm_announcement(GetConnectedZlevels(get_z(src)))
-	. = ..()
-
-/*****************
-* Fake Rad storm *
-*****************/
-/obj/item/device/uplink_service/fake_rad_storm
-	service_label = "Radiation Storm Announcement"
-
-/obj/item/device/uplink_service/fake_rad_storm/enable(mob/user = usr)
-	var/datum/event_meta/EM = new(EVENT_LEVEL_MUNDANE, "Fake Radiation Storm", add_to_queue = 0)
-	new/datum/event/radiation_storm/syndicate(EM)
 	. = ..()
 
 /***************************

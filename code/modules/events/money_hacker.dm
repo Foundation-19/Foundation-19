@@ -38,15 +38,14 @@
 		message = "The hack attempt has succeeded."
 
 		//subtract the money
-		var/amount = affected_account.money * 0.8 + (rand(2,4) - 2) / 10
+		var/amount = min(affected_account.money * 0.8 + rand(1,50), affected_account.money)
 
 		//create a taunting log entry
-		var/name = pick("","[pick("Biesel","New Gibson")] GalaxyNet Terminal #[rand(111,999)]","your mums place","nantrasen high CommanD")
+		var/name = pick("","[pick("Biesel","New Gibson")] ATM Terminal #[rand(111,999)]","your mums place","ca0s !nsurg3ncy", "robuzt clownz")
 		var/purpose = pick("Ne$ ---ount fu%ds init*&lisat@*n","PAY BACK YOUR MUM","Funds withdrawal","pWnAgE","l33t hax","liberationez")
 		var/datum/transaction/singular/T = new(affected_account, name, -amount, purpose)
-		var/date1 = "31 December, 1999"
-		var/date2 = "[num2text(rand(1,31))] [pick("January","February","March","April","May","June","July","August","September","October","November","December")], [rand(1000,3000)]"
-		T.date = pick("", stationdate2text(), date1, date2)
+		var/date = "[num2text(rand(1,31))] [pick("January","February","March","April","May","June","July","August","September","October","November","December")], [rand(1000,2000)]"
+		T.date = pick("", stationdate2text(), "31 December, 1999", date)
 		var/time1 = rand(0, 99999999)
 		var/time2 = "[round(time1 / 36000)+12]:[(time1 / 600 % 60) < 10 ? add_zero(time1 / 600 % 60, 1) : time1 / 600 % 60]"
 		T.time = pick("", station_time_timestamp("hh:mm"), time2)
