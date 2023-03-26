@@ -30,6 +30,7 @@
 	color = "#49002e"
 	strength = 4
 	heating_products = list(/datum/reagent/toxin, /datum/reagent/water)
+	heating_prod_english = "<span codexlink='toxin (chemical)'>toxin</span> and <span codexlink='water (chemical)'>water</span>"
 
 /datum/reagent/toxin/plant_b_gone/touch_turf(turf/T)
 	if (istype(T, /turf/simulated/wall))
