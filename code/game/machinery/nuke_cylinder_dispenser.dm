@@ -19,7 +19,7 @@
 
 /obj/machinery/nuke_cylinder_dispenser/emag_act(remaining_charges, mob/user, emag_source)
 	to_chat(user, SPAN_NOTICE("The card fails to do anything. It seems this device has an advanced encryption system."))
-	return NO_EMAG_ACT
+	return EMAG_NO_ACT
 
 /obj/machinery/nuke_cylinder_dispenser/physical_attack_hand(mob/user)
 	if(is_powered() && locked && check_access(user))
