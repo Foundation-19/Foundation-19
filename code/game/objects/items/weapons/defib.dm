@@ -111,7 +111,7 @@
 /obj/item/defibrillator/emag_act(uses, mob/user)
 	if(paddles)
 		return paddles.emag_act(uses, user, src)
-	return NO_EMAG_ACT
+	return EMAG_NO_ACT
 
 //Paddle stuff
 

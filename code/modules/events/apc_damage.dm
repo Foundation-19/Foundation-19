@@ -19,18 +19,9 @@
 			apc.update_icon()
 
 /datum/event/apc_damage/proc/acquire_random_apc()
-	var/list/possibleEpicentres = list()
 	var/list/apcs = list()
 
-	for(var/obj/effect/landmark/newEpicentre in landmarks_list)
-		if(newEpicentre.name == "lightsout")
-			possibleEpicentres += newEpicentre
-
-	if(!possibleEpicentres.len)
-		return
-
-	var/epicentre = pick(possibleEpicentres)
-	for(var/obj/machinery/power/apc/apc in range(epicentre,apcSelectionRange))
+	for(var/obj/machinery/power/apc/apc in world)
 		if(is_valid_apc(apc))
 			apcs += apc
 			// Greatly increase the chance for APCs in maintenance areas to be selected

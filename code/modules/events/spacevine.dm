@@ -1,11 +1,11 @@
 /var/global/spacevines_spawned = 0
 
 /datum/event/spacevine
-	announceWhen	= 60
 
 /datum/event/spacevine/start()
+	announceWhen = rand(60, 120)
 	spacevine_infestation()
-	spacevines_spawned = 1
+	spacevines_spawned++
 
 /datum/event/spacevine/announce()
-	level_seven_announcement()
+	GLOB.using_map.level_x_biohazard_announcement(rand(6,8))

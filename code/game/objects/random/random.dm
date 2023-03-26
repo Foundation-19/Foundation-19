@@ -618,7 +618,7 @@
 				/obj/item/camera_assembly,
 				/obj/item/device/camera,
 				/obj/item/modular_computer/pda,
-				/obj/item/card/emag_broken,
+				/obj/item/card/emag/broken,
 				/obj/item/device/radio/headset,
 				/obj/item/device/flashlight/flare/glowstick/yellow,
 				/obj/item/device/flashlight/flare/glowstick/orange,
@@ -881,8 +881,8 @@
 /obj/random/cash
 	name = "random currency"
 	desc = "LOADSAMONEY!"
-	icon = 'icons/obj/items.dmi'
-	icon_state = "spacecash1"
+	icon = 'icons/obj/cash.dmi'
+	icon_state = "cash1"
 
 /obj/random/cash/spawn_choices()
 	return list(/obj/item/spacecash/bundle/c1 = 4,

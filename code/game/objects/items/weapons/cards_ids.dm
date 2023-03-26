@@ -83,22 +83,6 @@
  * ID CARDS
  */
 
-/obj/item/card/emag_broken
-	desc = "It's a blank ID card with a magnetic strip and some odd circuitry attached."
-	name = "identification card"
-	icon_state = "emag"
-	item_state = "card-id"
-	origin_tech = list(TECH_MAGNET = 2, TECH_ESOTERIC = 2)
-
-/obj/item/card/emag_broken/examine(mob/user, distance)
-	. = ..()
-	if(distance <= 0 && (user.skill_check(SKILL_DEVICES, SKILL_TRAINED) || player_is_antag(user.mind)))
-		to_chat(user, SPAN_WARNING("You can tell the components are completely fried; whatever use it may have had before is gone."))
-
-/obj/item/card/emag_broken/get_antag_info()
-	. = ..()
-	. += "You can use this cryptographic sequencer in order to subvert electronics or forcefully open doors you don't have access to. These actions are irreversible and the card only has a limited number of charges!"
-
 /obj/item/card/emag
 	desc = "It's a blank ID card with a magnetic strip and some odd circuitry attached."
 	name = "identification card"
@@ -107,25 +91,32 @@
 	origin_tech = list(TECH_MAGNET = 2, TECH_ESOTERIC = 2)
 	var/uses = 10
 
-var/const/NO_EMAG_ACT = -50
-
 /obj/item/card/emag/resolve_attackby(atom/A, mob/user)
-	var/used_uses = A.emag_act(uses, user, src)
-	if(used_uses == NO_EMAG_ACT)
-		return ..(A, user)
+	if(uses<1)
+		user.visible_message(SPAN_WARNING("\The [src] fizzles and sparks - it seems it's been used once too often."))
+	else
+		var/used_uses = A.emag_act(uses, user, src)
+		if(used_uses == EMAG_NO_ACT)
+			return ..(A, user)
 
-	uses -= used_uses
-	A.add_fingerprint(user)
-	if(used_uses)
+		uses -= used_uses
+		A.add_fingerprint(user)
 		log_and_message_admins("emagged \an [A].")
 
-	if(uses<1)
-		user.visible_message(SPAN_WARNING("\The [src] fizzles and sparks - it seems it's been used once too often, and is now spent."))
-		var/obj/item/card/emag_broken/junk = new(user.loc)
-		junk.add_fingerprint(user)
-		qdel(src)
-
 	return 1
+
+/obj/item/card/emag/examine(mob/user, distance)
+	. = ..()
+	if((distance <= 0) && (user.skill_check(SKILL_DEVICES, SKILL_TRAINED) || player_is_antag(user.mind)))
+		switch(uses)
+			if(10 to INFINITY)
+				to_chat(user, SPAN_NOTICE("The card looks to be in a pristine condition!"))
+			if(4 to 9)
+				to_chat(user, SPAN_NOTICE("The card seems to be in normal working order."))
+			if(1 to 3)
+				to_chat(user, SPAN_NOTICE("The circuitry has visibly degraded, although the card does still look usable."))
+			else
+				to_chat(user, SPAN_WARNING("You can tell the components are completely fried; whatever use it may have had before is gone."))
 
 /obj/item/card/emag/Initialize()
 	. = ..()
@@ -134,6 +125,9 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/emag/get_antag_info()
 	. = ..()
 	. += "You can use this cryptographic sequencer in order to subvert electronics or forcefully open doors you don't have access to. These actions are irreversible and the card only has a limited number of charges!"
+
+/obj/item/card/emag/broken
+	uses = 0
 
 /obj/item/card/id
 	name = "identification card"
