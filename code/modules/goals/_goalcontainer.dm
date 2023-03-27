@@ -13,6 +13,7 @@
 	if(LAZYLEN(goals_list))
 		var/goal = pick(goals_list)
 		personal_goals = new goal(src)
+		return TRUE
 	else
 		return FALSE
 
@@ -26,6 +27,7 @@
 	if(LAZYLEN(goals_list))
 		var/goal = pick(goals_list)
 		job_goals = new goal(src)
+		return TRUE
 	else
 		return FALSE
 
@@ -39,15 +41,16 @@
 	if(LAZYLEN(goals_list))
 		var/goal = pick(goals_list)
 		antag_goals = new goal(src)
+		return TRUE
 	else
 		return FALSE
 
 /datum/component/goalcontainer/proc/add_roundstart_goals(datum/job/job, datum/antagonist/antag)
-	if(!!job)
-		for(var i = job.goals_count, i > 0, i--)
+	if(!isnull(job))
+		for(var/i = job.goals_count, i > 0, i--)
 			add_new_job_goal(job)
-	if(!!antag)
-		for(var i = antag.goals_count, i > 0, i--)
+	if(!isnull(antag))
+		for(var/i = antag.goals_count, i > 0, i--)
 			add_new_antag_goal(antag)
-	for(var i = 3, i > 0, i--)
+	for(var/i = 3, i > 0, i--)
 		add_new_personal_goal()
