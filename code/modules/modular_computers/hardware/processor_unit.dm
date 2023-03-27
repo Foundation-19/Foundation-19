@@ -8,7 +8,7 @@
 	hardware_size = 2
 	power_usage = 100
 	critical = 1
-	malfunction_probability = 1
+	malfunction_divisor = 20
 	origin_tech = list(TECH_DATA = 3, TECH_ENGINEERING = 2)
 
 	var/processing_power = 2 // Used for DDoS speed calculations as well as maximum thread count
