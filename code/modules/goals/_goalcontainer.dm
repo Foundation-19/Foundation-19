@@ -1,49 +1,39 @@
 /datum/component/goalcontainer
-	var/list/personal_goals	= list()
-	var/list/job_goals		= list()
-	var/list/antag_goals	= list()
+	var/list/goal_list = list()
 
 /datum/component/goalcontainer/proc/add_new_personal_goal()
-	var/goals_list = subtypesof(/datum/goal/personal)
+	var/possible_goals = subtypesof(/datum/goal/personal)
 
-	for(var/datum/goal/G in personal_goals)
+	for(var/datum/goal/G in goal_list)
 		if(G.no_duplicates)
-			goals_list -= G.type
+			possible_goals -= G.type
 
-	if(LAZYLEN(goals_list))
-		var/goal = pick(goals_list)
-		personal_goals = new goal(src)
-		return TRUE
-	else
-		return FALSE
+	if(LAZYLEN(possible_goals))
+		var/goal = pick(possible_goals)
+		return add_goal_by_type(goal)
 
 /datum/component/goalcontainer/proc/add_new_job_goal(datum/job/job)
-	var/goals_list = job.possible_goals.Copy()
+	var/possible_goals = job.possible_goals.Copy()
 
-	for(var/datum/goal/G in job_goals)
+	for(var/datum/goal/G in goal_list)
 		if(G.no_duplicates)
-			goals_list -= G.type
+			possible_goals -= G.type
 
-	if(LAZYLEN(goals_list))
-		var/goal = pick(goals_list)
-		job_goals = new goal(src)
-		return TRUE
-	else
-		return FALSE
+	if(LAZYLEN(possible_goals))
+		var/goal = pick(possible_goals)
+		goal_list = new goal(src)
+		return add_goal_by_type(goal)
 
 /datum/component/goalcontainer/proc/add_new_antag_goal(datum/antagonist/antag)
-	var/goals_list = antag.possible_goals.Copy()
+	var/possible_goals = antag.possible_goals.Copy()
 
-	for(var/datum/goal/G in antag_goals)
+	for(var/datum/goal/G in goal_list)
 		if(G.no_duplicates)
-			goals_list -= G.type
+			possible_goals -= G.type
 
-	if(LAZYLEN(goals_list))
-		var/goal = pick(goals_list)
-		antag_goals = new goal(src)
-		return TRUE
-	else
-		return FALSE
+	if(LAZYLEN(possible_goals))
+		var/goal = pick(possible_goals)
+		return add_goal_by_type(goal)
 
 /datum/component/goalcontainer/proc/add_roundstart_goals(datum/job/job, datum/antagonist/antag)
 	if(!isnull(job))
@@ -54,3 +44,9 @@
 			add_new_antag_goal(antag)
 	for(var/i = 3, i > 0, i--)
 		add_new_personal_goal()
+
+/datum/component/goalcontainer/proc/add_goal_by_type(type)
+	if(type.no_duplicates && (type in goal_list))
+		return FALSE
+	goal_list += new goal(src)
+	return TRUE

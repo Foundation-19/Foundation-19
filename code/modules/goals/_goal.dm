@@ -23,10 +23,8 @@
 	. = ..()
 
 /datum/goal/proc/summarize()
-	. = "[description][get_summary_value()][get_success_string()]"
-
-/datum/goal/proc/get_success_string()
-	return check_success() ? FONT_COLORED("green", " <b>Success!</b>") : FONT_COLORED("red", " <b>Failure.</b>")
+	. = "[description][get_summary_value()]"
+	. += check_success() ? FONT_COLORED("green", " <b>Success!</b>") : FONT_COLORED("red", " <b>Failure.</b>")
 
 /datum/goal/proc/get_summary_value()
 	return
@@ -38,9 +36,6 @@
 	return
 
 /datum/goal/proc/check_success()
-	return TRUE
-
-/datum/goal/proc/try_initialize()
 	return TRUE
 
 /datum/goal/proc/on_completion()
