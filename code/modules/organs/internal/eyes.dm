@@ -20,7 +20,7 @@
 	var/darksight_tint
 	//Blink related vars
 	var/degradation_change_per_press = 0.025 //How much degradation is decreased every time the appropriate hotkey is pressed
-	var/min_degradation = 0.25				//How low degradation can get
+	var/min_degradation = 0.33				//How low degradation can get
 	var/degradation_recovery = 0.1			//Rate of degradation recovery when appropriate hotkey is not being pressed
 	var/blink_degradation = 1	//Rate of blink meter going dowm
 	var/last_degrade			//The world_time when the blink meter last went down

@@ -43,7 +43,7 @@
 #undef HUMAN_EATING_NBP_MOUTH
 #undef HUMAN_EATING_BLOCKED_MOUTH
 
-/mob/living/carbon/human/proc/update_equipment_protection()
+/mob/living/carbon/human/proc/update_audiovisual_equipment_protection()
 	flash_protection = 0
 	audible_insulation = A_INSL_NONE
 	visual_insulation = V_INSL_NONE
