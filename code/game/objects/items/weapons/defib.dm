@@ -371,6 +371,9 @@
 		return
 	H.apply_damage(burn_damage_amt, BURN, BP_CHEST)
 
+	var/obj/item/organ/internal/heart/heart = H.internal_organs_by_name[BP_HEART]
+	heart.scp3349_induced = FALSE	// part of SCP-3349. electric shocks temporarily stop effect
+
 	//set oxyloss so that the patient is just barely in crit, if possible
 	make_announcement("pings, \"Resuscitation successful.\"", "notice")
 	playsound(get_turf(src), 'sound/machines/defib_success.ogg', 50, 0)
@@ -431,10 +434,10 @@
 	var/burn_damage = H.electrocute_act(burn_damage_amt*2, src, def_zone = target_zone)
 	if(burn_damage > 15 && H.can_feel_pain())
 		H.emote("scream")
-	var/obj/item/organ/internal/heart/doki = LAZYACCESS(affecting.internal_organs, BP_HEART)
-	if(istype(doki) && doki.pulse && !doki.open && prob(10))
-		to_chat(doki, SPAN_DANGER("Your [doki] has stopped!"))
-		doki.pulse = PULSE_NONE
+	var/obj/item/organ/internal/heart/heart = LAZYACCESS(affecting.internal_organs, BP_HEART)
+	if(istype(heart) && heart.pulse && !heart.open && prob(10))
+		to_chat(heart, SPAN_DANGER("Your [heart] has stopped!"))
+		heart.pulse = PULSE_NONE
 
 	admin_attack_log(user, H, "Electrocuted using \a [src]", "Was electrocuted with \a [src]", "used \a [src] to electrocute")
 

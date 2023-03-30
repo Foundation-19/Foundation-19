@@ -31,6 +31,8 @@
 
 	if(pulse_result == ">250")
 		pulse_result = -3
+	if(length(pulse_result) > 5)	// SCP-3349 message. Yes this is shitcode
+		pulse_result = -4
 	scan["pulse"] = text2num(pulse_result)
 
 	scan["blood_pressure"] = H.get_blood_pressure()
@@ -165,7 +167,7 @@
 		<tr><td colspan="2" align="center"><span class='bad'>Patient in Hypovolemic Shock. Transfusion highly recommended.</span></td></tr>
 	*/
 	dat += "<tr><td><strong>Pulse rate:</strong></td>"
-	if(scan["pulse"] == -1)
+	if((scan["pulse"] == -1) || (scan["pulse"] == -4))
 		dat += "<td><span class='average'>ERROR - Nonstandard biology</span></td></tr>"
 	else if(scan["pulse"] == -2)
 		dat += "<td>N/A</td></tr>"

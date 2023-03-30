@@ -3151,3 +3151,15 @@
 	catalysts = list(
 		/datum/reagent/enzyme = 1
 	)
+
+/* SCP chemicals */
+
+/datum/chemical_reaction/scp_3349
+	name = "SCP-3349 Activator"
+	result = /datum/reagent/scp_3349_activator
+	result_amount = 1
+	required_reagents = list(
+		/datum/reagent/sugar = 1,
+		/datum/reagent/acetone = 1,
+		/datum/reagent/ammonia = 1
+	)
