@@ -9,9 +9,10 @@
 [![Build Status](https://github.com/foundation-19/foundation-19/workflows/CI%20Suite/badge.svg)](https://github.com/foundation-19/foundation-19/actions?query=workflow%3A%22CI+Suite%22)
 [![Percentage of issues still open](https://isitmaintained.com/badge/open/foundation-19/foundation-19.svg)](https://isitmaintained.com/project/vlggms/tegustation "Percentage of issues still open")
 [![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/foundation-19/foundation-19.svg)](https://isitmaintained.com/project/vlggms/tegustation "Average time to resolve an issue")
+[![Discord Shield](https://discordapp.com/api/guilds/896489363599417345/widget.png?style=shield)](https://discord.gg/4GSVA4TRuS)
 
 ## Community
-[<img src=".github/assets/discord.png" alt="Discord" width="150" align="left">](https://discord.gg/GbqVYJJAFk)
+[<img src=".github/assets/discord.png" alt="Discord" width="150" align="left">](https://discord.gg/4GSVA4TRuS)
 Discord is the place where most of the discussion happens, due to absence of a forum. Here you can contact administrators, ask mentors for help, or simply discuss your rounds. It is also a place where you can find links to ban appeals, admin applications and others, which could be really useful.
 
 **Space Station 13** is a paranoia-laden round-based roleplaying game set against the backdrop of a nonsensical, metal death trap masquerading as a space station, with charming spritework designed to represent the sci-fi setting and its dangerous undertones. This is an SCP inspired flavour, set on **Site 53**.

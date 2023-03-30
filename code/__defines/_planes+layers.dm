@@ -193,21 +193,22 @@ What is the naming convention for planes or layers?
 
 #define VISION_CONE_PLANE               7
 
-#define ABOVE_VISION_CONE_PLANE         8
+#define INSIDE_VISION_CONE_PLANE        8
 
+#define ABOVE_VISION_CONE_PLANE         9
 
-#define HUD_PLANE                    9
+#define HUD_PLANE                    10
 	#define UNDER_HUD_LAYER              0
 	#define HUD_BASE_LAYER               1
 	#define HUD_CLICKABLE_LAYER          2
 	#define HUD_ITEM_LAYER               3
 	#define HUD_ABOVE_ITEM_LAYER         4
 
-#define ABOVE_HUD_PLANE                    10
+#define ABOVE_HUD_PLANE                    11
 	#define ABOVE_HUD_LAYER              0
 
 //This is difference between planes used for atoms and effects
-#define PLANE_DIFFERENCE              6
+#define PLANE_DIFFERENCE              7
 
 /atom
 	plane = DEFAULT_PLANE

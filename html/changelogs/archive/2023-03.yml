@@ -27,3 +27,33 @@
   - rscadd: Becoming an SCP as a ghost has a better menu.
   - rscdel: Removed "Check Default Language" as you can also find your default language
       in "Check Known Languages".
+2023-03-14:
+  cheesePizza2:
+  - rscadd: Cryptographic Analyzer description slightly more... descriptive.
+  - code_imp: General improvements of e-mag.
+2023-03-19:
+  Tsurupeta:
+  - rscadd: Added footstep and other sound indicators for vision cone.
+2023-03-25:
+  cheesePizza2:
+  - rscadd: 999 can understand english (and all other languages)! It can also respond
+      (if you count "glub" as a response).
+  - rscdel: 999 no longer "attaches" to people. Instead, interaction is performed
+      simply by clicking. Help intent lets you give someone a hug, hurt intent gives
+      tickle attacks, and disarm trips.
+  - balance: 999 improves sanity instead of healing. Also happens more often. Works
+      via reagent, so effect lasts for a little after use.
+  - refactor: 999 interaction code COMPLETELY overhauled.
+  - balance: 999 force-moving someone is a do_after instead of a random chance per
+      button press.
+  - bugfix: 999 timer bug fixed.
+  - rscadd: Events system is back with HEAVY improvements/alterations.
+  - code_imp: General cleanup of event-related code, including things like map announcements.
+      Some legacy code has been removed.
+  - config: Re-enabled events in config
+  - admin: Altered/removed some of the "fun" verbs that relied on legacy event code.
+  - rscadd: Auto-generated reagent codex entries are MUCH more descriptive
+  - rscadd: More codex entries have links to other entries.
+  - rscdel: Antagonist codex text now shows up for non-antags.
+  - bugfix: General reformatting of codex entries.
+  - code_imp: Codex links now log a warning if incorrectly parsed.

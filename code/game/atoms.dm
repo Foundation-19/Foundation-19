@@ -308,7 +308,7 @@ its easier to just keep the beam vertical.
 	return
 
 /atom/proc/emag_act(remaining_charges, mob/user, emag_source)
-	return NO_EMAG_ACT
+	return EMAG_NO_ACT
 
 /atom/proc/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	return

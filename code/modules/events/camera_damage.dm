@@ -14,13 +14,13 @@
 
 	for(var/obj/machinery/camera/cam in range(severity_range,C))
 		if(is_valid_camera(cam))
-			if(prob(2*severity))
+			if(prob(20 * (severity - 1)))	// severity of one will not destroy the camera
 				cam.destroy()
 			else
 				if(!cam.wires.is_cut(WIRE_MAIN_POWER1))
 					cam.wires.cut(WIRE_MAIN_POWER1)
-				if(!cam.wires.is_cut(WIRE_CAM_ALARM) && prob(5*severity))
-					cam.wires.cut(WIRE_CAM_ALARM)
+				if(!cam.wires.is_cut(WIRE_FOCUS) && prob(5*severity))
+					cam.wires.cut(WIRE_FOCUS)
 
 /datum/event/camera_damage/proc/acquire_random_camera(remaining_attempts = 5)
 	if(!cameranet.cameras.len)

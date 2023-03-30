@@ -22,10 +22,12 @@
 	value = 2
 
 	chilling_products = list(/datum/reagent/coagulated_blood)
+	chilling_prod_english = "<span codexlink='coagulated blood (chemical)'>coagulated blood</span>"
 	chilling_point = 249
 	chilling_message = "coagulates and clumps together."
 
 	heating_products = list(/datum/reagent/coagulated_blood)
+	heating_prod_english = "<span codexlink='coagulated blood (chemical)'>coagulated blood</span>"
 	heating_point = 318
 	heating_message = "coagulates and clumps together."
 
@@ -89,10 +91,12 @@
 	glass_name = "water"
 	glass_desc = "The father of all refreshments."
 	chilling_products = list(/datum/reagent/drink/ice)
+	chilling_prod_english = "<span codexlink='ice (chemical)'>ice</span>"
 	chilling_point = T0C
 	chilling_message = null
 	chilling_sound = null
 	heating_products = list(/datum/reagent/water/boiling)
+	heating_prod_english = "<span codexlink='boiling water (chemical)'>boiling water</span>"
 	heating_point = T100C
 	heating_message = null
 	heating_sound = null
@@ -183,6 +187,7 @@
 /datum/reagent/water/boiling
 	name = "Boiling water"
 	chilling_products = list(/datum/reagent/water)
+	chilling_prod_english = "<span codexlink='water (chemical)'>water</span>"
 	chilling_point =   99 CELSIUS
 	chilling_message = "stops boiling."
 	heating_products =  list(null)
@@ -205,6 +210,7 @@
 
 	heating_message = null
 	heating_products = list(/datum/reagent/water)
+	heating_prod_english = "<span codexlink='water (chemical)'>water</span>"
 	heating_point = 299 // This is about 26C, higher than the actual melting point of ice but allows drinks to be made properly without weird workarounds.
 
 // Fuel.
