@@ -3,6 +3,32 @@
 	designation = "3349"
 	classification = KETER
 
+/datum/scp/scp_3349/New(atom/creation)
+	. = ..()
+
+	// this is shitcode but if it works, it works
+	// group A should be common medicines, group B should be pure minerals
+	var/list/groupA = list(
+		/datum/reagent/medicine/inaprovaline,
+		/datum/reagent/medicine/bicaridine,
+		/datum/reagent/medicine/kelotane,
+		/datum/reagent/medicine/dylovene,
+		/datum/reagent/medicine/dexalin
+	)
+
+	var/list/groupB = list(
+		/datum/reagent/aluminium,
+		/datum/reagent/copper,
+		/datum/reagent/iron,
+		/datum/reagent/tungsten
+	)
+
+	GLOB.scp3349_precedentA = pick_n_take(groupA)
+	GLOB.scp3349_precedentB = pick_n_take(groupB)
+
+	GLOB.scp3349_fake_precedentA = pick_n_take(groupA)
+	GLOB.scp3349_fake_precedentB = pick_n_take(groupB)
+
 // REAGENT ACTIVATOR
 
 /datum/reagent/scp_3349_activator
@@ -17,7 +43,8 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if((H.chem_doses[GLOB.scp3349_precedentA] > 4.8) && (H.chem_doses[GLOB.scp3349_precedentB] > 0.8))
-			H.RegisterSignal(H, COMSIG_CARBON_LIFE, /mob/living/carbon/human/proc/handle_3349)
+			if(prob(40))
+				H.RegisterSignal(H, COMSIG_CARBON_LIFE, /mob/living/carbon/human/proc/handle_3349)
 
 // ACTIVITY
 
@@ -47,27 +74,3 @@ GLOBAL_VAR_INIT(scp3349_precedentB, null)
 
 GLOBAL_VAR_INIT(scp3349_fake_precedentA, null)
 GLOBAL_VAR_INIT(scp3349_fake_precedentB, null)
-
-/hook/roundstart/proc/generate_3349_precedents()
-
-	// group A should be common medicines, group B should be pure minerals
-	var/list/groupA = list(
-		/datum/reagent/medicine/inaprovaline,
-		/datum/reagent/medicine/bicaridine,
-		/datum/reagent/medicine/kelotane,
-		/datum/reagent/medicine/dylovene,
-		/datum/reagent/medicine/dexalin
-	)
-
-	var/list/groupB = list(
-		/datum/reagent/aluminium,
-		/datum/reagent/copper,
-		/datum/reagent/iron,
-		/datum/reagent/tungsten
-	)
-
-	GLOB.scp3349_precedentA = pick_n_take(groupA)
-	GLOB.scp3349_precedentB = pick_n_take(groupB)
-
-	GLOB.scp3349_fake_precedentA = pick_n_take(groupA)
-	GLOB.scp3349_fake_precedentB = pick_n_take(groupB)

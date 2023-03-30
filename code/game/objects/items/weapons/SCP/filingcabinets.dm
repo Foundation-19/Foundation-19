@@ -207,3 +207,8 @@
 	anchored = TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
+
+/obj/structure/filingcabinet/scp/keter/scp3000to3999/New()
+	..()
+	new /obj/item/paper/scp/keter/scp3349(src)
+	update_icon()
