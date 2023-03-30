@@ -297,7 +297,7 @@
 		if(H.status_flags & FAKEDEATH)
 			pulse_result = 0
 		else
-			pulse_result = H.get_pulse(1)
+			pulse_result = H.get_pulse(GETPULSE_TOOL)
 	else
 		pulse_result = "ERROR - Nonstandard biology"
 	dat += "<b>Pulse rate:</b> [pulse_result]bpm."
