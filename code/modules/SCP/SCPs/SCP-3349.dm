@@ -16,9 +16,15 @@
 /datum/reagent/scp_3349_activator/affect_blood(mob/living/carbon/M, alien, removed)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if((H.chem_doses[GLOB.scp3349_precedentA] > 4.4) && (H.chem_doses[GLOB.scp3349_precedentB] > 0.6))	// 5u and 1u, decreased a bit to give room for error
-			if(prob(40))
-				H.RegisterSignal(H, COMSIG_CARBON_LIFE, /mob/living/carbon/human/proc/handle_3349, TRUE)
+		// 5u and 1u, decreased a bit to give room for error
+		if((H.chem_doses[GLOB.scp3349_precedentA] > 4.4) && (H.chem_doses[GLOB.scp3349_precedentB] > 0.6))
+
+			//make sure we have none of the fake precedents (to stop people just jamming all 4 in a single person)
+			for(var/datum/reagent/current in H.chem_doses)
+				if((current.type == GLOB.scp3349_fake_precedentA) || (current.type == GLOB.scp3349_fake_precedentB))
+					return
+
+			H.RegisterSignal(H, COMSIG_CARBON_LIFE, /mob/living/carbon/human/proc/handle_3349, TRUE)
 
 // ACTIVITY
 
@@ -49,7 +55,7 @@ GLOBAL_VAR(scp3349_precedentB)
 GLOBAL_VAR(scp3349_fake_precedentA)
 GLOBAL_VAR(scp3349_fake_precedentB)
 
-proc/initialize_scp3349_precedents()
+/proc/initialize_scp3349_precedents()
 
 	// group A is common medicines, group B is standard metals
 	var/list/groupA = list(
@@ -72,3 +78,9 @@ proc/initialize_scp3349_precedents()
 
 	GLOB.scp3349_fake_precedentA = pick_n_take(groupA)
 	GLOB.scp3349_fake_precedentB = pick_n_take(groupB)
+
+// PAPER
+
+/obj/item/paper/scp3349_ekg
+	color = COLOR_OFF_WHITE
+	origin_tech = list(TECH_BIO = 6)
