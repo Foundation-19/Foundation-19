@@ -896,6 +896,11 @@ SCP-939 exhale minute traces of an aerosolized Class C amnestic, designated AMN-
 	if(isnull(GLOB.scp3349_precedentA) || isnull(GLOB.scp3349_precedentB) || isnull(GLOB.scp3349_fake_precedentA) || isnull(GLOB.scp3349_fake_precedentB))
 		initialize_scp3349_precedents()
 
+	var/datum/reagent/precedentA = GLOB.scp3349_precedentA
+	var/datum/reagent/precedentB = GLOB.scp3349_precedentB
+	var/datum/reagent/precedentA_f = GLOB.scp3349_fake_precedentA
+	var/datum/reagent/precedentB_f = GLOB.scp3349_fake_precedentB
+
 	info = {"
 		<tt><center><b><font color='red'>KETER: SCP-3349</font></b>
 		<h3>FOUNDATION RESEARCH DIVISION</h3>
@@ -913,8 +918,8 @@ SCP-939 exhale minute traces of an aerosolized Class C amnestic, designated AMN-
 	<br>
 	<b>Description:</b> SCP-3349 is a nonfatal cardiac arrhythmia that has a 42.8% incidence following a specific sequence of drug administrations. This sequence has not been fully identified, but has been narrowed down to the following process:
 	<br><ol>
-	<li>5u of: [prob(50) ? "[GLOB.scp3349_precedentA.name] OR [GLOB.scp3349_fake_precedentA.name]" : "[GLOB.scp3349_fake_precedentA.name] OR [GLOB.scp3349_precedentA.name]"]</li><br>
-	<li>1u of: [prob(50) ? "[GLOB.scp3349_precedentB.name] OR [GLOB.scp3349_fake_precedentB.name]" : "[GLOB.scp3349_fake_precedentB.name] OR [GLOB.scp3349_precedentB.name]"]</li><br>
+	<li>5u of: [prob(50) ? "[initial(precedentA.name)] OR [initial(precedentA_f.name)]" : "[initial(precedentA_f.name)] OR [initial(precedentA.name)]"]</li><br>
+	<li>1u of: [prob(50) ? "[initial(precedentB.name)] OR [initial(precedentB_f.name)]" : "[initial(precedentB_f.name)] OR [initial(precedentB.name)]"]</li><br>
 	</ol>
 	SCP-3349 is not constant and appears periodically in the affected individual with an average of nine occurrences per day, lasting for an average of three minutes per occurrence. Subjectively, patients report feeling comforted, elated, and euphoric. Objectively, SCP-3349 produces a “fluttering” central and peripheral pulse upon palpation, often described as tactilely similar to a purr of <i>Felis catus</i> (the common house cat), and can be auscultated with a stethoscope, the clinical descriptions also citing the purr of <i>Felis catus</i>.
 

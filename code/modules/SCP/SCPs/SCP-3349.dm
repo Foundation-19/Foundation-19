@@ -18,7 +18,7 @@
 		var/mob/living/carbon/human/H = M
 		if((H.chem_doses[GLOB.scp3349_precedentA] > 4.4) && (H.chem_doses[GLOB.scp3349_precedentB] > 0.6))	// 5u and 1u, decreased a bit to give room for error
 			if(prob(40))
-				H.RegisterSignal(H, COMSIG_CARBON_LIFE, /mob/living/carbon/human/proc/handle_3349)
+				H.RegisterSignal(H, COMSIG_CARBON_LIFE, /mob/living/carbon/human/proc/handle_3349, TRUE)
 
 // ACTIVITY
 
@@ -29,7 +29,7 @@
 		UnregisterSignal(src, COMSIG_CARBON_LIFE)
 	else
 		if(heart.scp3349_induced)
-			if(prob(2))		// about 1-3 minutes after starting, it ends.
+			if(prob(0.75))		// about 2-5 minutes after starting, it ends.
 				heart.scp3349_induced = FALSE
 				to_chat(src, SPAN_INFO("The euphoric sensation ends."))
 			if(prob(20))
@@ -37,7 +37,7 @@
 			if(prob(10))
 				adjust_stamina(-1)		// little harder to run though
 		else
-			if(prob(0.2))	// takes a good 20 minutes on average, probably
+			if(prob(0.1))	// takes a good 20-30 minutes on average, probably
 				heart.scp3349_induced = TRUE
 				to_chat(src, SPAN_INFO("You feel a sudden euphoric sensation!"))
 
