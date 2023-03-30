@@ -167,12 +167,14 @@
 		<tr><td colspan="2" align="center"><span class='bad'>Patient in Hypovolemic Shock. Transfusion highly recommended.</span></td></tr>
 	*/
 	dat += "<tr><td><strong>Pulse rate:</strong></td>"
-	if((scan["pulse"] == -1) || (scan["pulse"] == -4))
+	if((scan["pulse"] == -1))
 		dat += "<td><span class='average'>ERROR - Nonstandard biology</span></td></tr>"
 	else if(scan["pulse"] == -2)
 		dat += "<td>N/A</td></tr>"
 	else if(scan["pulse"] == -3)
 		dat += "<td><span class='bad'>250+bpm</span></td></tr>"
+	else if(scan["pulse"] == -4)
+		dat += "<td><span class='average'>ERROR - Anomalous activity detected. Printout advised.</span></td></tr>"
 	else if(scan["pulse"] == 0)
 		dat += "<td><span class='bad'>[scan["pulse"]]bpm</span></td></tr>"
 	else if(scan["pulse"] >= 140)
