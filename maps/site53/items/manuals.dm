@@ -892,6 +892,10 @@ SCP-939 exhale minute traces of an aerosolized Class C amnestic, designated AMN-
 
 /obj/item/paper/scp/keter/scp3349/Initialize()	// documentation is slightly randomized every round, so we need to put the description in Initialize()
 	. = ..()
+
+	if(isnull(GLOB.scp3349_precedentA) || isnull(GLOB.scp3349_precedentB) || isnull(GLOB.scp3349_fake_precedentA) || isnull(GLOB.scp3349_fake_precedentB))
+		initialize_scp3349_precedents()
+
 	info = {"
 		<tt><center><b><font color='red'>KETER: SCP-3349</font></b>
 		<h3>FOUNDATION RESEARCH DIVISION</h3>
@@ -908,10 +912,10 @@ SCP-939 exhale minute traces of an aerosolized Class C amnestic, designated AMN-
 	Beginning in 1941, SCP-3349 has been actively expunged from the civilian medical community and literature, initially per endeavors of Mobile Task Force Gamma 5 (\"Red Herrings\") and since continued by the ongoing global acquisition and obscuration of case studies by the D.E.A.
 	<br>
 	<b>Description:</b> SCP-3349 is a nonfatal cardiac arrhythmia that has a 42.8% incidence following a specific sequence of drug administrations. This sequence has not been fully identified, but has been narrowed down to the following process:
-	<br><list>
-	<*>[prob(50) ? "[GLOB.scp3349_precedentA] OR [GLOB.scp3349_fake_precedentA]" : "[GLOB.scp3349_fake_precedentA] OR [GLOB.scp3349_precedentA]"]<br>
-	<*>[prob(50) ? "[GLOB.scp3349_precedentB] OR [GLOB.scp3349_fake_precedentB]" : "[GLOB.scp3349_fake_precedentB] OR [GLOB.scp3349_precedentB]"]<br>
-	</list>
+	<br><ol>
+	<li>5u of: [prob(50) ? "[GLOB.scp3349_precedentA.name] OR [GLOB.scp3349_fake_precedentA.name]" : "[GLOB.scp3349_fake_precedentA.name] OR [GLOB.scp3349_precedentA.name]"]</li><br>
+	<li>1u of: [prob(50) ? "[GLOB.scp3349_precedentB.name] OR [GLOB.scp3349_fake_precedentB.name]" : "[GLOB.scp3349_fake_precedentB.name] OR [GLOB.scp3349_precedentB.name]"]</li><br>
+	</ol>
 	SCP-3349 is not constant and appears periodically in the affected individual with an average of nine occurrences per day, lasting for an average of three minutes per occurrence. Subjectively, patients report feeling comforted, elated, and euphoric. Objectively, SCP-3349 produces a “fluttering” central and peripheral pulse upon palpation, often described as tactilely similar to a purr of <i>Felis catus</i> (the common house cat), and can be auscultated with a stethoscope, the clinical descriptions also citing the purr of <i>Felis catus</i>.
 
 	On electrocardiogram, SCP-3349's manifestations display commonalities with the waveforms of human vocalizations. Spectrographically-reconstructed audio signals based on SCP-3349's electrical signatures produce various intonations of human-like laughter, wailing, and speech. Auditory outputs resembling the purr of <i>Felis catus</i> have also been reported.
