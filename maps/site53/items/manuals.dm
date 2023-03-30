@@ -910,9 +910,9 @@ SCP-939 exhale minute traces of an aerosolized Class C amnestic, designated AMN-
 	<br>
 	<b>Object Class:</b> Keter
 	<br>
-	<b>Special Containment Procedures:</b> Individuals affected by SCP-3349 are to be admitted indefinitely as inpatients under routine care in Foundation Long-Term Acute Care facilities so as to not re-expose SCP-3349 to civilian physicians and the medical community at large. Reports of instances are to be intercepted by field agents, who are to use experiential discretion regarding the use of Class A amnestics.
+	<b>Special Containment Procedures:</b> Individuals affected by SCP-3349 are to be admitted indefinitely as inpatients under routine care in Foundation Long-Term Acute Care facilities so as to not re-expose SCP-3349 to civilian physicians and the medical community at large. Reports of instances are to be intercepted by field agents, who are to use experiential discretion regarding the use of Class-A amnestics.
 
-	The cardiac activity of patients admitted with SCP-3349 is to be monitored at all times by a centralized telemetry unit, continuously staffed with two 12-hour shift clerical personnel. Instances of SCP-3349 are to be reported by the clerical staff to the nursing staff promptly via an exclusive telephone line. Electrical manifestations of SCP-3349 are to be captured when possible, the printouts catalogued both in the patient's analog and electronic record.
+	The cardiac activity of patients admitted with SCP-3349 is to be monitored at all times by a centralized telemetry unit, continuously staffed with two 8-hour shift clerical personnel. Instances of SCP-3349 are to be reported by the clerical staff to the nursing staff promptly via an exclusive telephone line. Electrical manifestations of SCP-3349 are to be captured when possible, the printouts catalogued both in the patient's analog and electronic record.
 
 	Beginning in 1941, SCP-3349 has been actively expunged from the civilian medical community and literature, initially per endeavors of Mobile Task Force Gamma 5 (\"Red Herrings\") and since continued by the ongoing global acquisition and obscuration of case studies by the D.E.A.
 	<br>
@@ -921,7 +921,7 @@ SCP-939 exhale minute traces of an aerosolized Class C amnestic, designated AMN-
 	<li>5u of: [prob(50) ? "[initial(precedentA.name)] OR [initial(precedentA_f.name)]" : "[initial(precedentA_f.name)] OR [initial(precedentA.name)]"]</li><br>
 	<li>1u of: [prob(50) ? "[initial(precedentB.name)] OR [initial(precedentB_f.name)]" : "[initial(precedentB_f.name)] OR [initial(precedentB.name)]"]</li><br>
 	</ol>
-	SCP-3349 is not constant and appears periodically in the affected individual with an average of nine occurrences per day, lasting for an average of three minutes per occurrence. Subjectively, patients report feeling comforted, elated, and euphoric. Objectively, SCP-3349 produces a “fluttering” central and peripheral pulse upon palpation, often described as tactilely similar to a purr of <i>Felis catus</i> (the common house cat), and can be auscultated with a stethoscope, the clinical descriptions also citing the purr of <i>Felis catus</i>.
+	SCP-3349 is not constant and appears periodically in the affected individual with an average of nine occurrences per day, lasting for an average of three minutes per occurrence. Subjectively, patients report feeling comforted, elated, and euphoric. Objectively, SCP-3349 produces a \"fluttering\" central and peripheral pulse upon palpation, often described as tactilely similar to a purr of <i>Felis catus</i> (the common house cat), and can be auscultated with a stethoscope, the clinical descriptions also citing the purr of <i>Felis catus</i>.
 
 	On electrocardiogram, SCP-3349's manifestations display commonalities with the waveforms of human vocalizations. Spectrographically-reconstructed audio signals based on SCP-3349's electrical signatures produce various intonations of human-like laughter, wailing, and speech. Auditory outputs resembling the purr of <i>Felis catus</i> have also been reported.
 
