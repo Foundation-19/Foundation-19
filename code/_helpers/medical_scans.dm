@@ -167,7 +167,7 @@
 		<tr><td colspan="2" align="center"><span class='bad'>Patient in Hypovolemic Shock. Transfusion highly recommended.</span></td></tr>
 	*/
 	dat += "<tr><td><strong>Pulse rate:</strong></td>"
-	if((scan["pulse"] == -1))
+	if(scan["pulse"] == -1)
 		dat += "<td><span class='average'>ERROR - Nonstandard biology</span></td></tr>"
 	else if(scan["pulse"] == -2)
 		dat += "<td>N/A</td></tr>"
