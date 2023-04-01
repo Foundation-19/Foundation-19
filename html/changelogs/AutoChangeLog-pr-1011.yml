@@ -1,0 +1,9 @@
+author: TheDarkElites
+delete-after: true
+changes:
+  - rscadd: Add Audio Memetic Checker
+  - rscadd: Add Visual Memetic Checker
+  - rscadd: Blink Rework
+  - imageadd: New blink hud indicators for players
+  - bugfix: 'fixes #888'
+  - bugfix: 'fixes #235'
