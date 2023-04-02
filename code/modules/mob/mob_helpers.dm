@@ -51,13 +51,6 @@
 		if (G.force_danger())
 			return TRUE
 
-
-/proc/isdeaf(A)
-	if(isliving(A))
-		var/mob/living/M = A
-		return (M.sdisabilities & DEAFENED) || M.ear_deaf
-	return 0
-
 /proc/hasorgans(A) // Fucking really??
 	return ishuman(A)
 
@@ -422,13 +415,6 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 			else
 				hud_used.action_intent.icon_state = I_HELP
 
-/proc/is_blind(A)
-	if(istype(A, /mob/living/carbon))
-		var/mob/living/carbon/C = A
-		if(C.sdisabilities & BLINDED|| C.blinded)
-			return 1
-	return 0
-
 /mob/proc/welding_eyecheck()
 	return
 
@@ -491,7 +477,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 		communicate(/decl/communication_channel/dsay, C || O, message, /decl/dsay_communication/direct)
 
 /mob/proc/switch_to_camera(obj/machinery/camera/C)
-	if (!C.can_use() || stat || (get_dist(C, src) > 1 || machine != src || blinded))
+	if (!C.can_use() || stat || (get_dist(C, src) > 1 || machine != src || can_see()))
 		return 0
 	check_eye(src)
 	return 1
