@@ -479,7 +479,7 @@
 				if(flash_time <= 0)
 					return
 
-			if(!O.blinded)
+			if(O.can_see())
 				O.flash_eyes(FLASH_PROTECTION_MODERATE - protection)
 				O.eye_blurry += flash_time
 				O.confused += (flash_time + 2)
@@ -525,7 +525,7 @@
 				if(flash_time <= 0)
 					return
 
-			if(!O.blinded)
+			if(O.can_see())
 				O.flash_eyes(FLASH_PROTECTION_MAJOR - protection)
 				O.eye_blurry += flash_time
 				O.confused += (flash_time + 2)

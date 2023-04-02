@@ -31,7 +31,7 @@
 	var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /mob/living/exosuit, /obj/effect/blob))
 
 	for (var/HM in typecache_filter_list(range(vision_range, holder), hostile_machines))
-		if (can_see(holder, HM, vision_range))
+		if (can_see_by_step(holder, HM, vision_range))
 			. += HM
 
 /// Step 2, filter down possible targets to things we actually care about.

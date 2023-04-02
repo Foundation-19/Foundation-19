@@ -168,6 +168,16 @@
 #define FLASH_PROTECTION_MODERATE   2
 #define FLASH_PROTECTION_MAJOR      3
 
+//Memetic insulation defines
+//Audio insulation
+#define A_INSL_NONE 		0
+#define A_INSL_IMPERFECT 	1
+#define A_INSL_PERFECT 		2
+//Visual insulation
+#define V_INSL_NONE 		0
+#define V_INSL_IMPERFECT 	1
+#define V_INSL_PERFECT 		2
+
 #define ANIMAL_SPAWN_DELAY round(config.respawn_delay / 6)
 #define DRONE_SPAWN_DELAY  round(config.respawn_delay / 3)
 
@@ -288,6 +298,14 @@
 #define SL_STRESSED 1
 #define SL_DISTRESSED 2
 #define SL_INSANE 3
+
+//Blink Amount (For human blink status hud)
+#define B_CLOSED 	0
+#define B_1 		1
+#define B_2 		2
+#define B_3	 		3
+#define B_OPEN 		4
+#define B_OFF		5
 
 //Used by show_message() and emotes
 #define VISIBLE_MESSAGE 1

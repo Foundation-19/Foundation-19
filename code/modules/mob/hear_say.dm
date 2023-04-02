@@ -4,7 +4,7 @@
 	if(!client)
 		return
 
-	if(speaker && !speaker.client && isghost(src) && get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH && !(speaker in view(src)))
+	if(speaker && !speaker.client && isghost(src) && get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH && !can_see(speaker))
 			//Does the speaker have a client?  It's either random stuff that observers won't care about (Experiment 97B says, 'EHEHEHEHEHEHEHE')
 			//Or someone snoring.  So we make it where they won't hear it.
 		return
@@ -31,7 +31,7 @@
 
 	//non-verbal languages are garbled if you can't see the speaker. Yes, this includes if they are inside a closet.
 	if (language && (language.flags & NONVERBAL))
-		if (!speaker || (src.sdisabilities & BLINDED || src.blinded) || !(speaker in view(src)))
+		if (!speaker || !can_see(speaker))
 			message = stars(message)
 
 	if(!(language && (language.flags & INNATE))) // skip understanding checks for INNATE languages
@@ -46,7 +46,7 @@
 	if(speaker)
 		speaker_name = speaker.name
 
-	if(istype(speaker, /mob/living/carbon/human))
+	if(ishuman(speaker))
 		var/mob/living/carbon/human/H = speaker
 		speaker_name = H.GetVoice()
 
@@ -58,14 +58,14 @@
 		if(speaker_name != speaker.real_name && speaker.real_name)
 			speaker_name = "[speaker.real_name] ([speaker_name])"
 		track = "([ghost_follow_link(speaker, src)]) "
-		if(get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH && (speaker in view(src)))
+		if(get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH && (can_see(speaker)))
 			message = "<b>[message]</b>"
 
-	if(is_deaf() || get_sound_volume_multiplier() < 0.2)
+	if(!can_hear(speaker) || get_sound_volume_multiplier() < 0.2)
 		if(!language || !(language.flags & INNATE)) // INNATE is the flag for audible-emote-language, so we don't want to show an "x talks but you cannot hear them" message if it's set
 			if(speaker == src)
 				to_chat(src, SPAN_WARNING("You cannot hear yourself speak!"))
-			else if(!is_blind())
+			else if(can_see(speaker))
 				to_chat(src, "<span class='name'>[speaker_name]</span>[alt_name] talks but you cannot hear \him.")
 	else
 		if (language)
@@ -112,7 +112,7 @@
 
 	//non-verbal languages are garbled if you can't see the speaker. Yes, this includes if they are inside a closet.
 	if (language && (language.flags & NONVERBAL))
-		if (!speaker || (src.sdisabilities & BLINDED || src.blinded) || !(speaker in view(src)))
+		if (!speaker || !can_see(speaker))
 			message = stars(message)
 
 	if(!(language && (language.flags & INNATE))) // skip understanding checks for INNATE languages
@@ -129,6 +129,13 @@
 					message = language.scramble(message, languages)
 				else
 					message = stars(message)
+
+		if(ishuman(src)) //Memetics checks for audio insulation, I.E if you're wearing mufflers you shouldent hear radios
+			var/mob/living/carbon/human/H = src
+			if(H.get_audio_insul() == A_INSL_PERFECT)
+				hard_to_hear = 5
+			else if(H.get_audio_insul() == A_INSL_IMPERFECT)
+				hard_to_hear = 3
 
 		if(hard_to_hear)
 			if(hard_to_hear <= 5)
@@ -223,7 +230,7 @@
 		formatted = language.format_message_radio(message, nverb)
 	else
 		formatted = "[verb], <span class=\"body\">\"[message]\"</span>"
-	if(sdisabilities & DEAFENED || ear_deaf)
+	if(!can_hear())
 		var/mob/living/carbon/human/H = src
 		if(istype(H) && H.has_headset_in_ears() && prob(20))
 			to_chat(src, SPAN_WARNING("You feel your headset vibrate but can hear nothing from it!"))

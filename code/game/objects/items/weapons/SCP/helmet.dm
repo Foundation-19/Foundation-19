@@ -89,6 +89,7 @@
 	cold_protection = HEAD|FACE|EYES
 	armor = list(melee = 70, bullet = 50, laser = 70, energy = 70, bomb = 30, bio = 15, rad = 10)
 	tint = TINT_NONE
+	visual_insulation = V_INSL_NONE
 
 /obj/item/clothing/head/helmet/scp/eta/attack_self(mob/user)
 	var/action
@@ -96,10 +97,12 @@
 		action = "de-activates"
 		icon_state = "eta-helmet-open"
 		tint = TINT_NONE
+		visual_insulation = V_INSL_NONE
 	else if (tint == TINT_NONE)
 		action = "activates"
 		icon_state = "eta-helmet"
 		tint = TINT_BLIND
+		visual_insulation = V_INSL_PERFECT
 	visible_message(SPAN_ITALIC("\The [user] [action] the visor on the [src]."), range = 3)
 	update_clothing_icon()
 

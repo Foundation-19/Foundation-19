@@ -235,7 +235,7 @@
 
 	for(var/AT in typecache_filter_list(range(vision_range, holder), alternative_targets))
 		var/obj/O = AT
-		if(can_see(holder, O, vision_range) && !O.anchored)
+		if(can_see_by_step(holder, O, vision_range) && !O.anchored)
 			. += O
 
 // Select an obj if no mobs are around.
