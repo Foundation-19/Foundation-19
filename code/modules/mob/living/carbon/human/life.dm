@@ -82,6 +82,9 @@
 
 		handle_medical_side_effects()
 
+		var/obj/item/organ/internal/eyes/eyes = internal_organs_by_name[BP_EYES]
+		eyes?.handle_blink()
+
 		if(!client && !mind)
 			species.handle_npc(src)
 
@@ -794,6 +797,15 @@
 				if(SL_INSANE)					sanity_icon.icon_state = "sanity4"
 				else							sanity_icon.icon_state = "sanity-none" // fallback
 
+		if(blink_icon)
+			var/obj/item/organ/internal/eyes/eyes = internal_organs_by_name[BP_EYES]
+			switch(eyes?.get_blink())
+				if(B_OPEN)						blink_icon.icon_state = "blink_4"
+				if(B_3)							blink_icon.icon_state = "blink_3"
+				if(B_2)							blink_icon.icon_state = "blink_2"
+				if(B_1)							blink_icon.icon_state = "blink_1"
+				else							blink_icon.icon_state = "blink_off"
+			if(eye_blind)					blink_icon.icon_state = "blink_0" //Blinking assigns new times before humans finish blinking, so we need this
 
 		if(cells && isSynthetic())
 			var/obj/item/organ/internal/cell/C = internal_organs_by_name[BP_CELL]
@@ -975,26 +987,13 @@
 
 	if (BITTEST(hud_updateflag, BLINK_HUD) && hud_list[BLINK_HUD])
 		var/image/holder = hud_list[BLINK_HUD]
-		var/blink_time_current = null
-		var/blink_time_max = null
-		var/mob/living/scp_173/current173
-
-		for(var/mob/living/scp_173/A in GLOB.scp173s) //Gets the blink timer for the victim(mob that can see 173)
-			var/list/next_blinks = A.next_blinks
-			var/list/next_blinks_join_time = A.next_blinks_join_time
-			current173 = A
-			if(next_blinks[src] != null && next_blinks_join_time[src] != null)
-				blink_time_current = next_blinks[src] - world.time
-				blink_time_max = next_blinks[src] - next_blinks_join_time[src]
-
-		//Incase 173 is no longer in the victim's line of sight and in case we'd try to divide by 0
-		if(blink_time_current && blink_time_max && blink_time_max != 0)
-			if((!(current173.InCone(src, src.dir))) || current173.is_invisible_to(src) || is_blind()) //If victim cant see 173, updates HUD to "away" to alert 173 player
-				holder.icon_state = "away"
-			else if(eye_blind > 0) //173.dm applies new blink times even while the victim is still blind, so this check is neccesary
+		if(is_blinking)
+			if(eye_blind > 0) //Blink mechanics apply new blink times even while the victim is still blind, so this check is neccesary
 				holder.icon_state = "0"
+			else if(LAZYLEN(blink_causers) ? !can_see(blink_causers[1]) : !can_see()) //If victim cant see the blink_causer, updates HUD to "away" to alert blink HUD users
+				holder.icon_state = "away"
 			else
-				var/blink_timer_mapped = ceil((Clamp(((blink_time_current / blink_time_max) * 15), 0, 15))) //Maps time left before blink to between 0 and 15.
+				var/blink_timer_mapped = ceil((Clamp(((blink_current / blink_total) * 15), 0, 15))) //Maps time left before blink to between 0 and 15.
 				holder.icon_state = "[blink_timer_mapped]"
 		hud_list[BLINK_HUD] = holder
 
@@ -1174,7 +1173,7 @@
 			remoteview_target = null
 			reset_view(null, 0)
 
-	update_equipment_vision()
+	update_audiovisual_equipment_protection()
 	species.handle_vision(src)
 
 /mob/living/carbon/human/update_living_sight()

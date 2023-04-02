@@ -133,7 +133,7 @@
 			continue
 		if(H in satisfied_urges)
 			continue
-		if(H.stat || H.equipment_tint_total == TINT_BLIND)
+		if(!H.can_see(src, 1)) //096 technically memetic and therefore memetic blocking apparel should blockout his face
 			continue
 		if(H.type in target_blacklist)
 			continue
@@ -207,7 +207,7 @@
 	// Do not let blind folks examine 096. Doesn't make sense.
 	if(ishuman(userguy))
 		var/mob/living/carbon/human/H = userguy
-		if(H.equipment_tint_total == TINT_BLIND)
+		if(!H.can_see(src))
 			return
 	// Do not let unconscious or dead people examine 096.
 	// Dead as in ghost in dead body, not as in ghost

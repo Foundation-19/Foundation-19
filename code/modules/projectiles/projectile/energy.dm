@@ -72,7 +72,7 @@
 		//Everyone saw that!
 		for(var/mob/living/mob in GLOB.living_mob_list_)
 			var/turf/T = get_turf(mob)
-			if(T && (T != TO) && (TO.z == T.z) && !mob.blinded)
+			if(T && (T != TO) && (TO.z == T.z) && mob.can_see())
 				to_chat(mob, SPAN_NOTICE("You see a bright light to \the [dir2text(get_dir(T,TO))]"))
 			CHECK_TICK
 

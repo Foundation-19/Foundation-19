@@ -5,7 +5,9 @@
 #define add_clothing_protection(A)	\
 	var/obj/item/clothing/C = A; \
 	flash_protection += C.flash_protection; \
-	equipment_tint_total += C.tint;
+	equipment_tint_total += C.tint; \
+	visual_insulation += C.visual_insulation; \
+	audible_insulation += C.audio_insulation;
 
 /mob/living/carbon/human/can_eat(food, feedback = 1)
 	var/list/status = can_eat_status()
@@ -41,8 +43,10 @@
 #undef HUMAN_EATING_NBP_MOUTH
 #undef HUMAN_EATING_BLOCKED_MOUTH
 
-/mob/living/carbon/human/proc/update_equipment_vision()
+/mob/living/carbon/human/proc/update_audiovisual_equipment_protection()
 	flash_protection = 0
+	audible_insulation = A_INSL_NONE
+	visual_insulation = V_INSL_NONE
 	equipment_tint_total = 0
 	equipment_see_invis	= 0
 	equipment_vision_flags = 0
@@ -69,6 +73,10 @@
 			add_clothing_protection(wear_mask)
 		if(istype(back,/obj/item/rig))
 			process_rig(back)
+		if(istype(src.r_ear, /obj/item/clothing/ears))
+			add_clothing_protection(r_ear)
+		if(istype(src.l_ear, /obj/item/clothing/ears) && (src.l_ear != src.r_ear)) //Must avoid adding up ear coverings that cover both ears
+			add_clothing_protection(l_ear)
 
 /mob/living/carbon/human/proc/process_prescription(obj/item/clothing/glasses/G)
 	if(G)
@@ -178,7 +186,7 @@
 	if(world.time < next_sonar_ping)
 		to_chat(src, SPAN_WARNING("You need another moment to focus."))
 		return
-	if(is_deaf() || is_below_sound_pressure(get_turf(src)))
+	if(can_hear() || is_below_sound_pressure(get_turf(src)))
 		to_chat(src, SPAN_WARNING("You are for all intents and purposes currently deaf!"))
 		return
 	next_sonar_ping += 10 SECONDS
