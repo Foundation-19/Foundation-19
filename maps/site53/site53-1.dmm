@@ -2404,6 +2404,11 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkpoint)
+"fl" = (
+/obj/structure/closet,
+/obj/item/spacecash/bundle/c20,
+/turf/simulated/floor/wood/maple,
+/area/site53/llcz/dclass/luxurysleep)
 "fm" = (
 /obj/effect/paint_stripe/gray,
 /obj/machinery/button/blast_door{
@@ -5851,8 +5856,14 @@
 /area/site53/engineering/selfdestruct)
 "nu" = (
 /obj/structure/table/reinforced,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	name = "a notice from your supervisor";
+	info = "Don't pay the D-Class too much, they might be onto something... Still pay them though, that's what the job description says..."
+	},
+/obj/item/paper{
+	name = "a notice from your supervisor";
+	info = "Don't pay the D-Class too much, they might be onto something... Still pay them though, that's what the job description says..."
+	},
 /obj/item/pen,
 /obj/item/pen,
 /turf/simulated/floor/tiled/dark,
@@ -7556,6 +7567,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
+"rC" = (
+/obj/structure/phonebooth{
+	pixel_y = 18
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/primaryhallway)
 "rE" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
@@ -9602,6 +9619,18 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
+"wR" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/catwalk_plated/white,
+/obj/structure/phonebooth{
+	pixel_y = 18
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/primaryhallway)
 "wT" = (
 /obj/structure/hygiene/toilet{
 	dir = 4
@@ -12509,6 +12538,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
+"Fa" = (
+/obj/structure/phonebooth{
+	pixel_y = 18
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/luxuryhall)
 "Fd" = (
 /obj/effect/paint_stripe/gray,
 /obj/effect/paint_stripe/red,
@@ -12619,6 +12654,10 @@
 /area/site53/llcz/scp500)
 "Fr" = (
 /obj/structure/table/reinforced,
+/obj/item/paper{
+	name = "a notice from your supervisor";
+	info = "Don't pay the D-Class too much, they might be onto something... Still pay them though, that's what the job description says..."
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "Fs" = (
@@ -13779,6 +13818,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"Iz" = (
+/obj/structure/closet/secure_closet,
+/obj/item/spacecash/bundle/c500,
+/obj/item/spacecash/bundle/c500,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/assignmentbubble)
 "IB" = (
 /obj/item/clothing/suit/straight_jacket,
 /obj/item/clothing/suit/straight_jacket,
@@ -13967,12 +14012,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignment)
 "Jd" = (
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
 /obj/structure/closet/crate,
+/obj/item/spacecash/bundle/c500,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "Je" = (
@@ -14103,7 +14144,10 @@
 "Jr" = (
 /obj/structure/table/reinforced,
 /obj/item/pen,
-/obj/item/paper,
+/obj/item/paper{
+	name = "a notice from your supervisor";
+	info = "Don't pay the D-Class too much, they might be onto something... Still pay them though, that's what the job description says..."
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
 "Js" = (
@@ -18443,9 +18487,10 @@
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
 "Wn" = (
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/dclass/assignmentbubble)
+/obj/structure/closet/acloset,
+/obj/item/spacecash/bundle/c500,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/llcz/mine/unexplored)
 "Wo" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -18987,6 +19032,11 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lhcz/scp049containment)
+"XO" = (
+/obj/structure/table/woodentable/maple,
+/obj/item/spacecash/bundle/c20,
+/turf/simulated/floor/wood/maple,
+/area/site53/llcz/dclass/luxurysleep)
 "XP" = (
 /obj/structure/bed/chair/wheelchair{
 	dir = 8
@@ -19325,6 +19375,11 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/hallway)
+"YN" = (
+/obj/structure/table/woodentable/maple,
+/obj/item/storage/box/matches,
+/turf/simulated/floor/wood/maple,
+/area/site53/llcz/dclass/luxurysleep)
 "YO" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/white/monotile,
@@ -23468,7 +23523,7 @@ bL
 bL
 bL
 kg
-xT
+Fa
 oc
 oc
 ym
@@ -23481,7 +23536,7 @@ wv
 dj
 PY
 Vb
-wv
+fl
 pv
 PY
 Vb
@@ -23987,7 +24042,7 @@ XH
 XH
 ym
 Vb
-DV
+YN
 dj
 dj
 Vb
@@ -23999,7 +24054,7 @@ DV
 dj
 dj
 Vb
-DV
+XO
 dj
 dj
 yo
@@ -24239,7 +24294,7 @@ RI
 RI
 Qo
 WX
-xT
+Fa
 We
 Pn
 ym
@@ -27817,7 +27872,7 @@ QZ
 cL
 YX
 OW
-uf
+rC
 sl
 uf
 bp
@@ -28331,7 +28386,7 @@ QZ
 cL
 YX
 OW
-uf
+rC
 tn
 uf
 bp
@@ -30394,7 +30449,7 @@ rE
 rE
 rE
 Ks
-dC
+wR
 eZ
 wV
 tU
@@ -30908,7 +30963,7 @@ rE
 rE
 iw
 Ks
-dC
+wR
 uf
 uO
 tj
@@ -34794,7 +34849,7 @@ xd
 iK
 xY
 kT
-uf
+rC
 uf
 EV
 HE
@@ -35308,7 +35363,7 @@ xo
 iK
 iS
 kT
-uf
+rC
 uf
 sj
 HI
@@ -35831,7 +35886,7 @@ HT
 gM
 ln
 lS
-lS
+Iz
 gM
 ua
 ua
@@ -38397,7 +38452,7 @@ lS
 lS
 gM
 Jd
-Wn
+Jd
 gM
 ua
 ua
@@ -47643,7 +47698,7 @@ ua
 ua
 pC
 tl
-Gw
+Wn
 Gq
 Gq
 Gq
