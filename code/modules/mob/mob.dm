@@ -61,19 +61,19 @@
 
 	//spaghetti code
 	if(type)
-		if((type & VISIBLE_MESSAGE) && is_blind())//Vision related
+		if(((type & VISIBLE_MESSAGE) && !can_see()))//Vision related
 			if(!alt)
 				return
 			else
 				msg = alt
 				type = alt_type
-		if((type & AUDIBLE_MESSAGE) && is_deaf())//Hearing related
+		if((type & AUDIBLE_MESSAGE) && !can_hear())//Hearing related
 			if(!alt)
 				return
 			else
 				msg = alt
 				type = alt_type
-				if(((type & VISIBLE_MESSAGE) && is_blind()))
+				if((type & VISIBLE_MESSAGE) && can_see())
 					return
 
 	to_chat(src, msg)
@@ -115,11 +115,11 @@
 			M.show_message(self_message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
 			continue
 
-		if((!M.is_blind() && M.see_invisible >= src.invisibility) || narrate)
+		if((M.can_see(src) && (M.see_invisible >= src.invisibility)) || narrate)
 			M.show_message(mob_message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
 			continue
 
-		if(blind_message)
+		if(blind_message && M.can_hear(src))
 			M.show_message(blind_message, AUDIBLE_MESSAGE)
 			continue
 	//Multiz, have shadow do same
@@ -173,12 +173,11 @@
 		if (M == causer)
 			M.show_message(causer_message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
 			continue
-
-		if (!M.is_blind() && M.see_invisible >= src.invisibility)
+		if (M.can_see(src) && (M.see_invisible >= src.invisibility))
 			M.show_message(mob_message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
 			continue
 
-		if (blind_message)
+		if (blind_message && M.can_hear(src))
 			M.show_message(blind_message, AUDIBLE_MESSAGE)
 			continue
 
@@ -213,7 +212,7 @@
 			M.show_message(self_message, AUDIBLE_MESSAGE, deaf_message, VISIBLE_MESSAGE)
 		else if(M.see_invisible >= invisibility || narrate) // Cannot view the invisible
 			M.show_message(mob_message, AUDIBLE_MESSAGE, deaf_message, VISIBLE_MESSAGE)
-		else
+		else if(M.can_hear(src))
 			M.show_message(mob_message, AUDIBLE_MESSAGE)
 
 	for(var/o in objs)
@@ -227,7 +226,7 @@
 	ASSERT(istype(M))
 
 	var/remote = ""
-	if(M.get_preference_value(/datum/client_preference/ghost_sight) == GLOB.PREF_ALL_EMOTES && !(src in view(M)))
+	if(M.get_preference_value(/datum/client_preference/ghost_sight) == GLOB.PREF_ALL_EMOTES && !(M.can_see(src)))
 		remote = "\[R\]"
 
 	var/track = "([ghost_follow_link(src, M)])"
@@ -237,7 +236,7 @@
 
 /mob/proc/ghost_skip_message(mob/observer/ghost/M)
 	ASSERT(istype(M))
-	if(M.get_preference_value(/datum/client_preference/ghost_sight) == GLOB.PREF_ALL_EMOTES && !(src in view(M)))
+	if(M.get_preference_value(/datum/client_preference/ghost_sight) == GLOB.PREF_ALL_EMOTES && !(M.can_see(src)))
 		if(!client)
 			return TRUE
 	return FALSE
@@ -301,11 +300,21 @@
 		return UNBUCKLED
 	return restrained() ? FULLY_BUCKLED : PARTIALLY_BUCKLED
 
-/mob/proc/is_blind()
-	return ((sdisabilities & BLINDED) || blinded || incapacitated(INCAPACITATION_KNOCKOUT))
+/mob/proc/can_see(atom/origin)
+	if((sdisabilities & BLINDED) || blinded || incapacitated(INCAPACITATION_KNOCKOUT))
+		return FALSE
+	if(origin)
+		if(!(origin in view(7, src)))
+			return FALSE
+	return TRUE
 
-/mob/proc/is_deaf()
-	return ((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT))
+/mob/proc/can_hear(atom/origin)
+	if(((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT)))
+		return FALSE
+	if(origin)
+		if(!(origin in hear(7, src)))
+			return FALSE
+	return TRUE
 
 /mob/proc/is_physically_disabled()
 	return incapacitated(INCAPACITATION_DISABLED)
@@ -374,11 +383,17 @@
 	set name = "Examine"
 	set category = "IC"
 
-	if((is_blind(src) || usr && usr.stat) && !isobserver(src))
+	if((!can_see(A) || usr && usr.stat) && !isobserver(src)) //can_see check
 		to_chat(src, SPAN_NOTICE("Something is there but you can't see it."))
 		return 1
 
 	face_atom(A)
+
+	if(ishuman(src)) //identifying check
+		var/mob/living/carbon/human/H = src
+		if(!H.can_identify(A))
+			to_chat(src, SPAN_NOTICE("Something is there but you're too far away to get a good look."))
+			return 1
 
 	if(!isghost(src))
 		if(A.loc != src || A == l_hand || A == r_hand)
@@ -391,7 +406,7 @@
 				if(M == src)
 					continue
 				if(M.client && M.client.get_preference_value(/datum/client_preference/examine_messages) == GLOB.PREF_SHOW)
-					if(M.is_blind() || is_invisible_to(M))
+					if(!M.can_see(src) || is_invisible_to(M))
 						continue
 					to_chat(M, SPAN_SUBTLE("<b>\The [src]</b> looks [look_target]."))
 
@@ -411,7 +426,7 @@
 	set name = "Point To"
 	set category = "Object"
 
-	if(!src || !isturf(src.loc) || !(A in view(src.loc)))
+	if(!src || !isturf(src.loc) || !(can_see(A)))
 		return 0
 	if(istype(A, /obj/effect/decal/point))
 		return 0

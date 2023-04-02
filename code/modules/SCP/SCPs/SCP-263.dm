@@ -41,7 +41,7 @@
 		if (world.time >= next_emote && gaming == 0)
 		/*	if(H in gameshow)
 				continue*/
-			if(H.stat || is_blind(H))
+			if(H.stat || !H.can_see())
 				continue
 
 
@@ -88,7 +88,7 @@
 	icon_state = "cursed"
 	if (world.time >= next_emote)
 		for(var/mob/living/carbon/human/M in hear(7, get_turf(src)))
-			if(M.is_deaf())
+			if(M.can_hear(src))
 //				M << pick('sound/scp/263/263-cursed.ogg')
 				next_emote = world.time + 30
 //		for(var/mob/living/simple_animal/hostile/scp_263/S in hear(7, get_turf(src)))

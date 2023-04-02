@@ -74,7 +74,7 @@
 
 /mob/living/silicon/ai/get_ui_access(atom/source)
 	// The AI can interact with anything it can see nearby, or with cameras while wireless control is enabled.
-	if(!control_disabled && can_see(src, source, 7))
+	if(!control_disabled && can_see_by_step(src, source, 7))
 		return UI_INTERACTIVE
 	return UI_CLOSE
 
