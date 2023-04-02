@@ -39,8 +39,8 @@
 	var/randomgooditem = pick(buyables) //pick a random item from the list of items
 	if(user.mind.assigned_role == "Class D")
 		if(src.cashainside > 0)
-			if(src.cashainside >= 30)
-				src.cashainside -= 30
+			if(src.cashainside >= 10)
+				src.cashainside -= 10
 				new randomgooditem(get_turf(src))
 				to_chat(user, SPAN_NOTICE("Item dispensed, have a nice day."))
 				playsound(src, 'sound/machines/escapist_dispense.ogg')
