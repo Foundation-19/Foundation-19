@@ -22,11 +22,9 @@
 
 /obj/structure/phonebooth/attackby(obj/item/spacecash/O, mob/user)
 	. = ..()
-	if(istype(O, /obj/item/spacecash/bundle))
-		qdel(O)
-		src.cashainside += O.worth
-		to_chat(user, SPAN_NOTICE("You insert the [O] into the [src]."))
-	return
+	qdel(O)
+	src.cashainside += O.worth
+	to_chat(user, SPAN_NOTICE("You insert the [O] into the [src]."))
 
 /obj/structure/phonebooth/AltClick(mob/user)
 	. = ..()
@@ -38,13 +36,14 @@
 
 /obj/structure/phonebooth/attack_hand(mob/living/user)
 	. = ..()
-	var/randomgooditem = pick(buyables)
+	var/randomgooditem = pick(buyables) //pick a random item from the list of items
 	if(user.mind.assigned_role == "Class D")
 		if(src.cashainside > 0)
 			if(src.cashainside >= 30)
 				src.cashainside -= 30
 				new randomgooditem(get_turf(src))
 				to_chat(user, SPAN_NOTICE("Item dispensed, have a nice day."))
+				playsound(src, 'sound/machines/escapist_dispense.ogg')
 			else
 				to_chat(user, SPAN_WARNING("ERR: Please insert more capital."))
 	else
