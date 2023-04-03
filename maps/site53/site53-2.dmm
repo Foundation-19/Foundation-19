@@ -17442,9 +17442,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/cobweb2,
+/obj/item/weapon/twohanded/scp_2398,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/genstorage1)
+/area/site53/llcz/scp2398)
 "aXd" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -17481,7 +17481,11 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/effect/catwalk_plated/white,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/plating,
 /area/site53/ulcz/hallways)
 "aXh" = (
@@ -17490,17 +17494,23 @@
 "aXi" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site53/llcz/genstorage1)
+/area/site53/llcz/scp2398)
 "aXj" = (
 /obj/structure/cable/green{
-	d1 = 1;
 	d2 = 2;
-	icon_state = "1-2"
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/genstorage1)
 "aXk" = (
 /obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/genstorage1)
 "aXl" = (
@@ -24932,6 +24942,16 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/hub)
+"gkq" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-2398";
+	req_access = list("ACCESS_SCIENCE_LEVEL4")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp2398)
 "gkD" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/bed/roller,
@@ -25872,7 +25892,7 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/genstorage1)
+/area/site53/llcz/scp2398)
 "hvI" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "SCP-513 Containment Chamber";
@@ -26436,6 +26456,12 @@
 /obj/structure/closet/radiation,
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"ieh" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "ify" = (
 /obj/machinery/vending/medical,
 /turf/simulated/floor/tiled/white,
@@ -30675,6 +30701,14 @@
 "nWT" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
+"nXs" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp2398)
 "nYC" = (
 /obj/structure/closet,
 /turf/simulated/floor/tiled/monotile,
@@ -32524,6 +32558,9 @@
 "qTO" = (
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/generalpurpose3)
+"qUx" = (
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp2398)
 "qUH" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -34640,6 +34677,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"tXq" = (
+/obj/structure/table/reinforced,
+/obj/item/paper/scp/safe/scp2398,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp2398)
 "tYx" = (
 /obj/structure/closet/hydrant{
 	pixel_y = 32
@@ -50617,7 +50659,7 @@ aWJ
 aGM
 aGM
 aGM
-aGM
+ieh
 pSE
 aGM
 aWJ
@@ -50874,7 +50916,7 @@ aWL
 aWv
 aXi
 aXi
-aXi
+gkq
 aXi
 ffp
 iCc
@@ -51131,8 +51173,8 @@ aWM
 aWv
 aXi
 huZ
-aXj
-aXj
+nXs
+aXi
 aXj
 otI
 aXp
@@ -51387,9 +51429,9 @@ ebb
 aWC
 aWv
 aXi
-iHI
-iHI
-iHI
+qUx
+qUx
+aXi
 iHI
 iHI
 ffp
@@ -51645,8 +51687,8 @@ aWN
 aWv
 aXi
 aXb
-aXk
-iHI
+tXq
+aXi
 aXk
 dmf
 ffp
