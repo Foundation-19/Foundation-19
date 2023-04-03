@@ -930,6 +930,30 @@ SCP-939 exhale minute traces of an aerosolized Class C amnestic, designated AMN-
 	</tt>
 	"}
 
+/obj/item/paper/scp/safe/scp2398
+	name = "SCP-2398"
+	info = {"
+	<tt><center><b><font color='green'>SAFE: SCP-2398</font></b>
+	<h3>FOUNDATION RESEARCH DIVISION</h3>
+	</center>
+<br>
+<b>Item #:</b> SCP-2398
+<br>
+Object Class: Safe
+<br>
+<b>Special Containment Procedures:</b>
+<br>
+SCP-2398 is contained in a standard high security containment locker at Site-53. Personnel seeking clearance to test SCP-2398 must submit the proper paperwork to the Site-53 Head of Research Administrations office.
+Personnel testing SCP-2398 are forbidden from swinging SCP-2398 towards any other Foundation personnel.
+
+<br>
+<b>Description:</b>
+
+SCP-2398 is a plain wooden baseball bat, roughly 110cm in length and made of ash with a taped grip.
+SCP-2398 bears no unusual markings other than the letters 'K.O.' branded into the wood just above the handle.
+SCP-2398 displays no anomalous properties when not in use; however, when swung at a speed over roughly 20m/s, any living organism that SCP-2398 comes in contact with at the end of a swing will violently explode. The mechanism for this is currently unknown.
+"}
+
 // MISC.
 
 /obj/item/paper/dcell/assignment
