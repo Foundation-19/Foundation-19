@@ -18,7 +18,7 @@ So you don't see your own footsteps. Could use oview, but meh
 
 	for(var/mob/living/M in view(7, T))
 		var/client/C = M.get_client()
-		if(M.is_deaf() || !C)
+		if(!M.can_hear(source ? source : T) || !C)
 			continue
 		clients_to_show += C
 	if(!length(clients_to_show))

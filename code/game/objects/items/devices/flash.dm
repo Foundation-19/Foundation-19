@@ -188,7 +188,7 @@
 	for(var/mob/living/carbon/M in oviewers(3, null))
 		var/safety = M.eyecheck()
 		if(safety < FLASH_PROTECTION_MODERATE)
-			if(!M.blinded)
+			if(M.can_see())
 				M.flash_eyes()
 				M.eye_blurry += 2
 

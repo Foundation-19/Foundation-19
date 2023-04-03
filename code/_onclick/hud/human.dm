@@ -269,6 +269,13 @@
 		mymob.sanity_icon.screen_loc = ui_sanity
 		hud_elements |= mymob.sanity_icon
 
+	if(hud_data.has_blink)
+		mymob.blink_icon = new /obj/screen/blink()
+		mymob.blink_icon.icon = 'icons/mob/status_blink.dmi'
+		mymob.blink_icon.icon_state = "blink_off"
+		mymob.blink_icon.SetName("blink")
+		mymob.blink_icon.screen_loc = ui_blink
+		hud_elements |= mymob.blink_icon
 
 	mymob.pain = new /obj/screen/fullscreen/pain( null )
 	hud_elements |= mymob.pain
@@ -460,6 +467,21 @@
 			else
 				to_chat(usr, SPAN_NOTICE("<i>I'm feeling buggy today. <b>I should notify a coder.</b></i>"))
 
+/obj/screen/blink/Click(location, control, params)
+	if(istype(usr) && usr.blink_icon == src)
+		switch(icon_state)
+			if("blink_off")
+				to_chat(usr, SPAN_NOTICE("I dont feel like I need to blink anytime soon."))
+			if("blink_4")
+				to_chat(usr, SPAN_NOTICE("I'm gonna be able to avoid blinking for a bit."))
+			if("blink_3")
+				to_chat(usr, SPAN_NOTICE("I might blink in a bit."))
+			if("blink_2")
+				to_chat(usr, SPAN_NOTICE("Its getting harder to keep my eyes open."))
+			if("blink_1")
+				to_chat(usr, SPAN_WARNING("Im about to blink!"))
+			if("blink_1")
+				to_chat(usr, SPAN_NOTICE("I blinked."))
 
 /mob/living/carbon/human/InitializePlanes()
 	..()

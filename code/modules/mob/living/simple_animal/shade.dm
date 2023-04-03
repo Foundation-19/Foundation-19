@@ -53,7 +53,7 @@
 	if(stat == 2)
 		new /obj/item/ectoplasm (src.loc)
 		for(var/mob/M in viewers(src, null))
-			if((M.client && !( M.blinded )))
+			if((M.client && M.can_see()))
 				M.show_message(SPAN_WARNING("[src] lets out a contented sigh as their form unwinds."))
 				ghostize()
 		qdel(src)

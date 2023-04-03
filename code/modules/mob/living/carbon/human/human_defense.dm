@@ -489,7 +489,7 @@ meteor_act
 	if(status_flags & GODMODE)
 		return
 
-	if(!blinded)
+	if(can_see())
 		flash_eyes()
 
 	var/b_loss = null

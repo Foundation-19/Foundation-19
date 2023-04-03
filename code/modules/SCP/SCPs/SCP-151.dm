@@ -27,10 +27,8 @@
 /obj/structure/scp151/examine(mob/living/user)
 	. = ..()
 
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(H.equipment_tint_total == TINT_BLIND)
-			return
+	if(!user.can_see(src, 1))
+		return
 	if(user.stat)
 		return
 
