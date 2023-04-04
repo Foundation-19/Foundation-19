@@ -46,7 +46,14 @@
 		add_new_personal_goal()
 
 /datum/component/goalcontainer/proc/add_goal_by_type(type)
-	if(type.no_duplicates && (type in goal_list))
+	var/datum/goal/G = type
+	if(G.no_duplicates && (G in goal_list))
 		return FALSE
 	goal_list += new goal(src)
 	return TRUE
+
+/datum/component/goalcontainer/tgui_interact(mob/user, datum/tgui/ui = null)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "PersonalGoals", "TEMPORARY PLACEHOLDER NAME")
+		ui.open()
