@@ -62,6 +62,7 @@
 		dream_timer = null
 	GLOB.human_mob_list -= src
 	worn_underwear = null
+	LAZYCLEARLIST(blink_causers)
 	for(var/organ in organs)
 		qdel(organ)
 	return ..()

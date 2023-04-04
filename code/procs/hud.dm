@@ -36,8 +36,8 @@ the HUD updates properly! */
 	if(isscp173(M)) //Only 173 should have a blink HUD (Also this is neccesary for maintaing the blink HUD while caged)
 		var/mob/living/scp_173/S = M
 		var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.scp173s)
-		for(var/mob/living/carbon/human/victim in P.Mob.in_view(S.is_caged ? get_turf(S.cage) : P.Turf)) //If we're caged we must use the cage as our reference rather than 173
-			if(victim.stat) //The dead or sleeping cant blink, and therefore do not need to be added to the blink HUD
+		for(var/mob/living/carbon/human/victim in view_nolight(7, S.is_caged ? S.cage : P.Mob)) //If we're caged we must use the cage as our reference rather than 173. no_light is used as 173 can see in the dark
+			if(victim.stat) //The unconscious cant blink, and therefore do not need to be added to the blink HUD
 				continue
 			P.Client.images += victim.hud_list[BLINK_HUD]
 
@@ -109,7 +109,7 @@ the HUD updates properly! */
 	GLOB.scramble_hud_users -= src
 	GLOB.scramble_hud_protected -= src
 
-/mob/proc/in_view(turf/T)
+/mob/proc/in_view(turf/T) //this is kind of stupid - dark
 	return view(T)
 
 /mob/observer/eye/in_view(turf/T)

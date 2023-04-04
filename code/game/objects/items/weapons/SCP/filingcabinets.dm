@@ -49,11 +49,10 @@
 	atom_flags = ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 
-/*	New()
-		..()
-		new /obj/item/paper/scp999(src)
-		update_icon()
-*/
+/obj/structure/filingcabinet/scp/safe/scp2000to2999/New()
+	..()
+	new /obj/item/paper/scp/safe/scp2398(src)
+	update_icon()
 
 /obj/structure/filingcabinet/scp/safe/scp3000to3999
 	name = "SCP Documents - Safe - 3000 to 3999"

@@ -3,6 +3,8 @@
 	siemens_coefficient = 0.9
 	var/flash_protection = FLASH_PROTECTION_NONE	// Sets the item's level of flash protection.
 	var/tint = TINT_NONE							// Sets the item's level of visual impairment tint.
+	var/audio_insulation = A_INSL_NONE
+	var/visual_insulation = V_INSL_NONE
 	var/list/species_restricted = list(
 		"exclude",
 		SPECIES_NABBER
@@ -216,6 +218,7 @@
 	icon_state = "earmuffs"
 	item_state = "earmuffs"
 	slot_flags = SLOT_EARS | SLOT_TWOEARS
+	audio_insulation = A_INSL_PERFECT
 	volume_multiplier = 0.1
 
 

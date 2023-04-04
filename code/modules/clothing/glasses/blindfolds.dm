@@ -7,6 +7,7 @@
 	off_state = "blindfoldup"
 	tint = TINT_BLIND
 	flash_protection = FLASH_PROTECTION_MAJOR
+	visual_insulation = V_INSL_PERFECT
 	darkness_view = -1
 	toggleable = TRUE
 	activation_sound = null

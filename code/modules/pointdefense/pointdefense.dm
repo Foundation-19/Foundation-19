@@ -221,7 +221,7 @@
 		if(get_dist(M, src) > kill_range)
 			continue
 
-		if(!can_see(src, M, kill_range))
+		if(!can_see_by_step(src, M, kill_range))
 			continue
 
 		if(!emagged && space_los(M))
