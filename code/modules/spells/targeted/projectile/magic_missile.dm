@@ -27,6 +27,7 @@
 /datum/spell/targeted/projectile/magic_missile/prox_cast(list/targets, atom/spell_holder)
 	spell_holder.visible_message(SPAN_DANGER("\The [spell_holder] pops with a flash!"))
 	playsound(src, 'sound/magic/mm_hit.ogg', 40)
+	show_sound_effect(src.loc)
 	for(var/mob/living/M in targets)
 		apply_spell_damage(M)
 	return
