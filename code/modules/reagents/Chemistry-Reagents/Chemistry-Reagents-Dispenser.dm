@@ -312,6 +312,20 @@
 	color = "#808080"
 	value = DISPENSER_REAGENT_VALUE
 
+// code for SCP-3349
+/datum/reagent/sodium/affect_blood(mob/living/carbon/M, alien, removed)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		// 5u and 1u, decreased a bit to give room for error
+		if((H.chem_doses[GLOB.scp3349_precedentA] > 4.4) && (H.chem_doses[GLOB.scp3349_precedentB] > 0.6))
+
+			//make sure we have none of the fake precedents (to stop people just jamming all 4 in a single person)
+			for(var/datum/reagent/current in H.chem_doses)
+				if((current.type == GLOB.scp3349_fake_precedentA) || (current.type == GLOB.scp3349_fake_precedentB))
+					return
+
+			H.RegisterSignal(H, COMSIG_CARBON_LIFE, /mob/living/carbon/human/proc/handle_3349, TRUE)
+
 /datum/reagent/sugar
 	name = "Sugar"
 	description = "The organic compound commonly known as table sugar and sometimes called saccharose. This white, odorless, crystalline powder has a pleasing, sweet taste."
