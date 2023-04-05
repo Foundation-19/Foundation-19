@@ -1,12 +1,12 @@
 /datum/event/email_spam
 	endWhen = 1 HOUR
-	var/last_spam_time = 0
+	var/next_spam_time = 0
 
 /datum/event/email_spam/setup()
-	last_spam_time = world.time
+	next_spam_time = world.time
 
 /datum/event/email_spam/tick()
-	if(world.time > last_spam_time + 5 MINUTES)
+	if(world.time > next_spam_time)
 		//if there's no spam managed to get to receiver for five minutes, give up
 		kill()
 		return
@@ -74,4 +74,5 @@
 		var/datum/computer_file/data/email_account/recipient = pick(ntnet_global.email_accounts)
 		recipient.receive_mail(message, 0)
 
-		last_spam_time = world.time
+		// more players divides additional time (which means more spam more often). scaled logarithmically
+		next_spam_time = world.time + (rand(5 MINUTES, 7 MINUTES) / ((GLOB.player_list.len > 5) ? (log(GLOB.player_list.len)): 1))

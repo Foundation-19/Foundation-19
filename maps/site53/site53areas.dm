@@ -359,6 +359,12 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
 
+/area/site53/llcz/scp2398
+	name = "\improper SCP-2398"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
+
 /area/site53/llcz/scp012
 	name = "\improper SCP-012"
 	icon_state = "research"

@@ -31,6 +31,8 @@
 
 	if(pulse_result == ">250")
 		pulse_result = -3
+	if(length(pulse_result) > 5)	// SCP-3349 message. Yes this is shitcode
+		pulse_result = -4
 	scan["pulse"] = text2num(pulse_result)
 
 	scan["blood_pressure"] = H.get_blood_pressure()
@@ -171,6 +173,8 @@
 		dat += "<td>N/A</td></tr>"
 	else if(scan["pulse"] == -3)
 		dat += "<td><span class='bad'>250+bpm</span></td></tr>"
+	else if(scan["pulse"] == -4)
+		dat += "<td><span class='average'>ERROR - Anomalous activity detected. Printout advised.</span></td></tr>"
 	else if(scan["pulse"] == 0)
 		dat += "<td><span class='bad'>[scan["pulse"]]bpm</span></td></tr>"
 	else if(scan["pulse"] >= 140)

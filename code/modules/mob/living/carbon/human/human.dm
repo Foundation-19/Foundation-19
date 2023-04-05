@@ -1520,9 +1520,12 @@
 
 	var/bpm = get_pulse_as_number()
 	if(bpm >= PULSE_MAX_BPM)
-		return method ? ">[PULSE_MAX_BPM]" : "extremely weak and fast, patient's artery feels like a thread"
+		return method ? ">[PULSE_MAX_BPM]" : "extremely weak and fast, the artery feels like a thread"
 
-	return "[method ? bpm : bpm + rand(-10, 10)]"
+	if(heart_organ.scp3349_induced)
+		return method ? "IRREGULARITY WITH [bpm]" : "a strange purring noise with a BPM of [bpm + rand(-10, 10)]"
+	else
+		return "[method ? bpm : bpm + rand(-10, 10)]"
 // output for machines ^	 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ output for people
 
 /mob/living/carbon/human/proc/pulse()
