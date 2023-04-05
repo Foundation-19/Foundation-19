@@ -129,6 +129,7 @@
 		return
 
 	playsound(loc, 'sound/weapons/bladeslice.ogg', 50, 1)
+	show_sound_effect(loc, src, soundicon = SFX_ICON_JAGGED)
 
 	ghost_magic_cd = world.time + 5 SECONDS
 

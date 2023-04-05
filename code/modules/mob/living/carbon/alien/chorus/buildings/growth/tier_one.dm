@@ -61,6 +61,7 @@
 			SPAN_WARNING("You hear a meaty thump, then a crunch.")
 		)
 		playsound(loc, 'sound/weapons/bladeslice.ogg', 100, FALSE, frequency = 0.5)
+		show_sound_effect(loc, soundicon = SFX_ICON_JAGGED)
 		if(istype(L, /mob/living/carbon/human))
 			var/target_foot = pick(list(BP_L_FOOT, BP_R_FOOT))
 			var/mob/living/carbon/human/H = L

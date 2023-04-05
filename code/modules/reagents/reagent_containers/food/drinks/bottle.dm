@@ -164,6 +164,7 @@
 
 /obj/item/broken_bottle/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 	playsound(loc, 'sound/weapons/bladeslice.ogg', 50, 1, -1)
+	show_sound_effect(loc, M, soundicon = SFX_ICON_JAGGED)
 	return ..()
 
 
