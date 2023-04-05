@@ -338,7 +338,7 @@
 			)
 			return
 		playsound(src, damage_hitsound, 75, 1)
-			show_sound_effect(src, user)
+		show_sound_effect(src, user)
 		user.visible_message(
 			SPAN_DANGER("\The [user] hits \the [src] with \a [W]!"),
 			SPAN_DANGER("You hit \the [src] with \the [W]!")

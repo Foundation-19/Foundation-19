@@ -31,7 +31,7 @@
 	S.set_up(3,0,T)
 	S.start()
 	playsound(src, 'sound/magic/lightningshock.ogg', 50)
-	show_sound_effect(src.loc)
+	show_sound_effect(T)
 
 /datum/spell/aimed/passage/empower_spell()
 	if(!..())
