@@ -69,6 +69,9 @@ var/debuff_miniscule = 3
 	if(origin)
 		if(isturf(origin) || (origin == src)) //We can always see turf and ourselves
 			return TRUE
+		for(var/equipment in get_equipped_items(TRUE)) //Can see stuff on us (not really 'see' but you can feel a headset in your hands even if its pitch black)
+			if(equipment == src)
+				return TRUE
 		if(origin.InCone(src, turn(src.dir, 180))) // Cant see whats behind you.
 			return FALSE
 		if(!(origin in view_nolight(world.view, src))) //Cant see whats not in view.
