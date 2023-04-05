@@ -25,3 +25,6 @@
 #define COMSIG_ELEMENT_DETACH "element_detach"
 
 #define COMSIG_TICKER_STARTED "game_started"
+
+/// sent every carbon Life()
+#define COMSIG_CARBON_LIFE "carbon_life"

@@ -1,0 +1,5 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - balance: Email spam event slightly improved.
+  - bugfix: Email client notification muting now works.

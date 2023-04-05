@@ -15,5 +15,4 @@
 	. = ..()
 	if(!pulse || (owner.status_flags & FAKEDEATH))
 		return .
-	var/pulsesound = splittext(., " ")[1]
-	return "\proper two [pulsesound] pulses"
+	return "\proper two [.]s"
