@@ -49,7 +49,7 @@
 	var/datum/goal/G = type
 	if(G.no_duplicates && (G in goal_list))
 		return FALSE
-	goal_list += new goal(src)
+	goal_list += new G(src)
 	return TRUE
 
 /datum/component/goalcontainer/tgui_interact(mob/user, datum/tgui/ui = null)
