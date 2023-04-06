@@ -2,6 +2,8 @@
 	if(!..())
 		return
 
+	SEND_SIGNAL(src, COMSIG_CARBON_LIFE)
+
 	UpdateStasis()
 
 	// Increase germ_level regularly

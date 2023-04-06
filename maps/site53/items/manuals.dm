@@ -887,6 +887,49 @@ SCP-939's primary method of luring prey is the imitation of human speech in the 
 SCP-939 exhale minute traces of an aerosolized Class C amnestic, designated AMN-C227. AMN-C227 causes temporary anterograde amnesia, inhibiting memory formation for the duration of exposure, plus an average of thirty (30) minutes. It is colorless, odorless, and tasteless with an estimated ECt50 for inhalation of 0.0015mg min/m3. In well-ventilated or open air environments, risk of exposure to ECt50 is greatly reduced but not negligible. AMN-C227 is typically undetectable in the bloodstream sixty (60) minutes following cessation of exposure. Reported sensations of disorientation and mild hallucinations immediately following removal from environments saturated with the agent are similar to recreational use of numerous psychoactive substances and easily mistaken as such.
 "}
 
+/obj/item/paper/scp/keter/scp3349
+	name = "SCP-3349"
+
+/obj/item/paper/scp/keter/scp3349/Initialize()	// documentation is slightly randomized every round, so we need to put the description in Initialize()
+	. = ..()
+
+	if(isnull(GLOB.scp3349_precedentA) || isnull(GLOB.scp3349_precedentB) || isnull(GLOB.scp3349_fake_precedentA) || isnull(GLOB.scp3349_fake_precedentB))
+		initialize_scp3349_precedents()
+
+	var/datum/reagent/precedentA = GLOB.scp3349_precedentA
+	var/datum/reagent/precedentB = GLOB.scp3349_precedentB
+	var/datum/reagent/precedentA_f = GLOB.scp3349_fake_precedentA
+	var/datum/reagent/precedentB_f = GLOB.scp3349_fake_precedentB
+
+	info = {"
+		<tt><center><b><font color='red'>KETER: SCP-3349</font></b>
+		<h3>FOUNDATION RESEARCH DIVISION</h3>
+		</center>
+	<br>
+	<b>Item #:</b> SCP-3349
+	<br>
+	<b>Object Class:</b> Keter
+	<br>
+	<b>Special Containment Procedures:</b> Individuals affected by SCP-3349 are to be admitted indefinitely as inpatients under routine care in Foundation Long-Term Acute Care facilities so as to not re-expose SCP-3349 to civilian physicians and the medical community at large. Reports of instances are to be intercepted by field agents, who are to use experiential discretion regarding the use of Class-A amnestics.
+
+	The cardiac activity of patients admitted with SCP-3349 is to be monitored at all times by a centralized telemetry unit, continuously staffed with two clerical personnel. Instances of SCP-3349 are to be reported by the clerical staff to the nursing staff promptly via an exclusive telephone line. Electrical manifestations of SCP-3349 are to be captured when possible, the printouts catalogued both in the patient's analog and electronic record.
+
+	Beginning in 1941, SCP-3349 has been actively expunged from the civilian medical community and literature, initially per endeavors of Mobile Task Force Gamma 5 (\"Red Herrings\") and since continued by the ongoing global acquisition and obscuration of case studies by the D.E.A.
+	<br>
+	<b>Description:</b> SCP-3349 is a nonfatal cardiac arrhythmia that has a 42.8% incidence following a specific sequence of drug administrations. This sequence has not been fully identified, but has been narrowed down to the following process:
+	<br><ol>
+	<li>5u of: [prob(50) ? "[initial(precedentA.name)] OR [initial(precedentA_f.name)]" : "[initial(precedentA_f.name)] OR [initial(precedentA.name)]"]</li><br>
+	<li>1u of: [prob(50) ? "[initial(precedentB.name)] OR [initial(precedentB_f.name)]" : "[initial(precedentB_f.name)] OR [initial(precedentB.name)]"]</li><br>
+	<li>1u of: Sodium</li><br>
+	</ol>
+	SCP-3349 is not constant and appears periodically in the affected individual with an average of nine occurrences per day, lasting for an average of three minutes per occurrence. Subjectively, patients report feeling comforted, elated, and euphoric. Objectively, SCP-3349 produces a \"fluttering\" central and peripheral pulse upon palpation, often described as tactilely similar to a purr of <i>Felis catus</i> (the common house cat), and can be auscultated with a stethoscope, the clinical descriptions also citing the purr of <i>Felis catus</i>.
+
+	On electrocardiogram, SCP-3349's manifestations display commonalities with the waveforms of human vocalizations. Spectrographically-reconstructed audio signals based on SCP-3349's electrical signatures produce various intonations of human-like laughter, wailing, and speech. Auditory outputs resembling the purr of <i>Felis catus</i> have also been reported.
+
+	SCP-3349 is non-curable and is refractory to defibrillation at 200, 300, and 360 Joules. There are no known precipitating or alleviating factors regarding SCP-3349, other than the aforementioned induction. Despite the erratic electrical activity, patients remain stable, though few may experience some reduction in exercise tolerance.
+	</tt>
+	"}
+
 /obj/item/paper/scp/safe/scp2398
 	name = "SCP-2398"
 	info = {"
@@ -910,7 +953,6 @@ SCP-2398 is a plain wooden baseball bat, roughly 110cm in length and made of ash
 SCP-2398 bears no unusual markings other than the letters 'K.O.' branded into the wood just above the handle.
 SCP-2398 displays no anomalous properties when not in use; however, when swung at a speed over roughly 20m/s, any living organism that SCP-2398 comes in contact with at the end of a swing will violently explode. The mechanism for this is currently unknown.
 "}
-
 
 // MISC.
 

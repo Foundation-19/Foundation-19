@@ -11,3 +11,16 @@
   - rscadd: Added the explodey bat (SCP-2398)
   - rscadd: Made the storage room in LCZ a little smaller to accommodate the SCP-2398
       Containment Chamber
+2023-04-06:
+  casualspacestation14enjoyer:
+  - rscadd: Made Restaurant more appealing
+  - rscadd: Added some utilities to Kitchen (meathook, pepper mill for steak recipes
+      that don't suck)
+  cheesePizza2:
+  - balance: Email spam event slightly improved.
+  - bugfix: Email client notification muting now works.
+  - rscadd: Adds in SCP-3349, a keter-class cardiac arrhythmia! Get the science team
+      on it for loadsa tech!
+  - soundadd: SCP-3349 heartbeat
+  - imageadd: SCP-3349 EKG report
+  - code_imp: carbon Life() has a signal now, please use it when possible.
