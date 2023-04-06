@@ -312,8 +312,12 @@
 	if(((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT)))
 		return FALSE
 	if(origin)
-		if(!(origin in hear(7, src)))
-			return FALSE
+		if((isturf(origin.loc)))
+			if(!(origin in hear(7, get_turf(src))))
+				return FALSE
+		else
+			if(!(get_turf(origin) in hear(7,get_turf(src))))
+				return FALSE
 	return TRUE
 
 /mob/proc/is_physically_disabled()
