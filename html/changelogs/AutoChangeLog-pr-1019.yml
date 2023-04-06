@@ -1,0 +1,8 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscadd: Adds in SCP-3349, a keter-class cardiac arrhythmia! Get the science team
+      on it for loadsa tech!
+  - soundadd: SCP-3349 heartbeat
+  - imageadd: SCP-3349 EKG report
+  - code_imp: carbon Life() has a signal now, please use it when possible.

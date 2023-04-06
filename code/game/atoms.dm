@@ -411,7 +411,7 @@ its easier to just keep the beam vertical.
 		if (exclude_mobs?.len && (M in exclude_mobs))
 			exclude_mobs -= M
 			continue
-		if(M.see_invisible >= invisibility)
+		if((M.see_invisible >= invisibility) && M.can_see(src))
 			M.show_message(message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
 		else if(blind_message)
 			M.show_message(blind_message, AUDIBLE_MESSAGE)

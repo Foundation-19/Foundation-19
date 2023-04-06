@@ -1,0 +1,13 @@
+2023-04-01:
+  TheDarkElites:
+  - rscadd: Add Audio Memetic Checker
+  - rscadd: Add Visual Memetic Checker
+  - rscadd: Blink Rework
+  - imageadd: New blink hud indicators for players
+  - bugfix: 'fixes #888'
+  - bugfix: 'fixes #235'
+2023-04-03:
+  casualspacestation14enjoyer:
+  - rscadd: Added the explodey bat (SCP-2398)
+  - rscadd: Made the storage room in LCZ a little smaller to accommodate the SCP-2398
+      Containment Chamber

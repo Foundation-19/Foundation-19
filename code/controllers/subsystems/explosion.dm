@@ -159,7 +159,7 @@ SUBSYSTEM_DEF(explosions)
 				if(E.is_bruised() && prob(E.damage + 50))
 					H.flash_eyes()
 					E.damage += rand(1, 5)
-			if(!O.blinded)
+			if(O.can_see())
 				if (istype(O,/mob/living/silicon/ai))
 					return
 				O.flash_eyes()

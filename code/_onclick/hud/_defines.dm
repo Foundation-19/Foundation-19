@@ -87,6 +87,7 @@
 #define ui_health "EAST-1:28,CENTER:15"
 #define ui_sanity "EAST-1:28,CENTER+2:15"
 #define ui_internal "EAST-1:28,CENTER+1:17"
+#define ui_blink "EAST-1:28,CENTER-3:30"
 									//borgs
 #define ui_borg_health "EAST-1:28,CENTER-1:13" //borgs have the health display where humans have the pressure damage indicator.
 #define ui_alien_health "EAST-1:28,CENTER-1:13" //aliens have the health display where humans have the pressure damage indicator.

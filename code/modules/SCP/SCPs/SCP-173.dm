@@ -41,8 +41,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/light_break_cooldown
 	/// Amount of light fixture break cooldown
 	var/light_break_cooldown_time = 3 SECONDS
-	/// Maximium light level at which blink cooldown can start to drop off (value between 0 and 1)
-	var/max_lightlevel = 0.5
 	/// Cooldown for defecation...
 	var/defecation_cooldown
 	/// How much time you have to wait before defecating again
@@ -75,6 +73,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 	return ..()
 
 /mob/living/scp_173/Destroy()
+	for(var/mob/living/carbon/human/H in next_blinks)
+		H.disable_blink(src)
 	next_blinks = null
 	next_blinks_join_time = null
 	cage = null
@@ -173,18 +173,14 @@ GLOBAL_LIST_EMPTY(scp173s)
 	. = ..()
 	if(length(GLOB.clients) <= 30 && !client)
 		return
-	var/list/our_view = view(7, is_caged ? cage : src)//In case we are caged, we must see if our cage is being looked at rather than us
-	for(var/A in next_blinks)
-		if(!(A in our_view))
-			DisableBlinking(A)
-			continue
-		var/mob/living/carbon/human/H = A
-		if(world.time >= next_blinks[H])
-			if(H.stat) // Sleeping or dead people can't blink!
-				DisableBlinking(H)
-				continue
-			CauseBlink(H)
-		BITSET(H.hud_updateflag, BLINK_HUD)
+	var/list/our_view = view_nolight(7, is_caged ? cage : src)//In case we are caged, we must see if our cage is being looked at rather than us
+	for(var/mob/living/carbon/human/H in next_blinks)
+		if(!(H in our_view))
+			H.disable_blink(src)
+			next_blinks -= H
+	for(var/mob/living/carbon/human/H in our_view)
+		H.enable_blink(src)
+		next_blinks += H
 	handle_regular_hud_updates()
 	process_blink_hud(src)
 	if(is_caged)
@@ -203,27 +199,15 @@ GLOBAL_LIST_EMPTY(scp173s)
 	return TRUE
 
 /mob/living/scp_173/proc/IsBeingWatched()
-	for(var/mob/living/L in view(7, is_caged ? cage : src)) //same as before, cage needs to be used as reference rather than 173
+	for(var/mob/living/L in view_nolight(7, is_caged ? cage : src)) //same as before, cage needs to be used as reference rather than 173
 		if((istype(L, /mob/living/simple_animal/scp_131)) && (InCone(L, L.dir)))
 			return TRUE
 		if(!istype(L, /mob/living/carbon/human))
 			continue
 		var/mob/living/carbon/human/H = L
-		if(next_blinks[H] == null)
-			BITSET(H.hud_updateflag, BLINK_HUD) //Ensures HUD appears before first blink
-			var/turf/T = get_turf(src)
-			var/lightcount = T.get_lumcount()
-			if(lightcount > max_lightlevel)
-				lightcount = 1 //Light level must be less than max_lightlevel before blink time drop off
-			next_blinks[H] = world.time + (rand(5 SECONDS, 10 SECONDS) * lightcount) // Just encountered SCP 173
-			next_blinks_join_time[H] = world.time
 		if(H.SCP)
 			continue
-		if(is_blind(H) || H.eye_blind > 0)
-			continue
-		if(H.stat != CONSCIOUS)
-			continue
-		if(InCone(H, H.dir))
+		if(H.can_see(src))
 			return TRUE
 	return FALSE
 
@@ -276,26 +260,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 	A.stat |= BROKEN
 	var/check = A.open(1)
 	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
-
-/mob/living/scp_173/proc/DisableBlinking(mob/living/carbon/human/H)
-	next_blinks[H] = null
-	next_blinks_join_time[H] = null
-	for(var/mob/living/scp_173/S in GLOB.scp173s) // In case you spawned more than one
-		if(S.next_blinks[H]) // Not null
-			return
-	remove_verb(H, /mob/living/carbon/human/verb/manual_blink)
-
-/mob/living/scp_173/proc/CauseBlink(mob/living/carbon/human/H)
-	H.visible_message(SPAN_NOTICE("[H] blinks."))
-	H.eye_blind += 2
-	BITSET(H.hud_updateflag, BLINK_HUD)
-	add_verb(H, /mob/living/carbon/human/verb/manual_blink)
-	var/turf/T = get_turf(src)
-	var/lightcount = T.get_lumcount()
-	if(lightcount > max_lightlevel)
-		lightcount = 1 //Light level must be less than max_lightlevel before blink time drop off
-	next_blinks[H] = world.time + (rand(15 SECONDS, 25 SECONDS) * lightcount)
-	next_blinks_join_time[H] = world.time
 
 /mob/living/scp_173/proc/AIAttemptAttack()
 	var/mob/living/carbon/human/target

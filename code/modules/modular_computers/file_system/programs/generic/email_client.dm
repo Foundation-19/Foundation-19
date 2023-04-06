@@ -48,10 +48,14 @@
 		return
 	TME.relayed_process(ntnet_speed)
 
-	var/check_count = TME.check_for_new_messages()
-	if(check_count)
-		if(check_count == 2)
-			new_mail_notify()
-		ui_header = "ntnrc_new.gif"
+	if(TME.current_account && !(TME.current_account.notification_mute))
+		var/check_count = TME.check_for_new_messages()
+		if(check_count)
+			if(check_count == 2)
+				new_mail_notify()
+			ui_header = "ntnrc_new.gif"
+		else
+			ui_header = "ntnrc_idle.gif"
 	else
 		ui_header = "ntnrc_idle.gif"
+
