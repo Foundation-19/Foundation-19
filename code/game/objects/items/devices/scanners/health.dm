@@ -116,17 +116,21 @@
 
 	// Pulse rate.
 	var/pulse_result = "normal"
-	if(H.should_have_organ(BP_HEART))
+	var/obj/item/organ/internal/heart/heart = H.internal_organs_by_name[BP_HEART]
+	if(H.should_have_organ(BP_HEART) && !(heart.scp3349_induced))
 		if(H.status_flags & FAKEDEATH)
 			pulse_result = 0
 		else
 			pulse_result = H.get_pulse(GETPULSE_TOOL)
 		pulse_result = "[pulse_result]bpm"
-		if(H.pulse() == PULSE_NONE)
+
+		var/pulserate = H.pulse()
+
+		if(pulserate == PULSE_NONE)
 			pulse_result = SPAN_CLASS("scan_danger","[pulse_result]")
-		else if(H.pulse() < PULSE_NORM)
+		else if(pulserate < PULSE_NORM)
 			pulse_result = SPAN_CLASS("scan_notice","[pulse_result]")
-		else if(H.pulse() > PULSE_NORM)
+		else if(pulserate > PULSE_NORM)
 			pulse_result = SPAN_CLASS("scan_warning","[pulse_result]")
 	else
 		pulse_result = SPAN_CLASS("scan_danger","ERROR - Nonstandard biology")

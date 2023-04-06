@@ -729,7 +729,7 @@ default behaviour is:
 
 //called when the mob receives a bright flash
 /mob/living/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
-	if(override_blindness_check || !(disabilities & BLINDED))
+	if(override_blindness_check || can_see())
 		..()
 		overlay_fullscreen("flash", type)
 		spawn(25)
@@ -860,7 +860,7 @@ default behaviour is:
 	. = 0
 	if(incapacitated(INCAPACITATION_UNRESISTING))
 		. += 100
-	if(eye_blind)
+	if(can_see())
 		. += 75
 	if(eye_blurry)
 		. += 15
@@ -875,7 +875,7 @@ default behaviour is:
 		. -= 2
 	if(confused)
 		. -= 2
-	if(eye_blind)
+	if(can_see())
 		. -= 5
 	if(eye_blurry)
 		. -= 1

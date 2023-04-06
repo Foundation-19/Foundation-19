@@ -54,11 +54,14 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 /mob/observer/gib()		//observers can't be gibbed.
 	return
 
-/mob/observer/is_blind()	//Not blind either.
-	return
+/mob/observer/can_see(atom/origin)	//Not blind either.
+	if(origin)
+		if(!(origin in view(src)))
+			return FALSE
+	return TRUE
 
-/mob/observer/is_deaf() 	//Nor deaf.
-	return
+/mob/observer/can_hear() 	//Nor deaf.
+	return TRUE
 
 /mob/observer/set_stat()
 	stat = DEAD // They are also always dead
