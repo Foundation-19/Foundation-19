@@ -53,7 +53,7 @@
 		if(aflame_cooldown > world.time)
 			to_chat(src, SPAN_WARNING("You can't attack yet."))
 			return
-		if(prob(35))
+		if(prob(15))
 			H.Weaken(35)
 			H.visible_message(SPAN_WARNING("[src] claws at [H], the flame sending them to the floor!"))
 			to_chat(H, SPAN_USERDANGER("IT HURTS!!!"))
