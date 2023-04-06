@@ -11,9 +11,9 @@
 	SCP = /datum/scp/scp_457
 	status_flags = NO_ANTAG
 	var/door_cooldown
-	health = 500
-	maxHealth = 500
-	var/next_emote = -1
+	health = 700
+	maxHealth = 700
+	var/funnymode = FALSE //this makes 457 better (for events and shit)
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
@@ -54,23 +54,21 @@
 			to_chat(src, SPAN_WARNING("You can't attack yet."))
 			return
 		if(prob(35))
-			visible_message(SPAN_WARNING("[src] begins to claw at [A]!"))
-			if(do_after(src, 1 SECOND, H))
-				H.Weaken(10)
-				H.visible_message(SPAN_WARNING("[src] claws at [H], the flame sending them to the floor!"))
-				to_chat(H, SPAN_USERDANGER("IT HURTS!!!"))
-				health += 5
+			H.Weaken(25)
+			H.visible_message(SPAN_WARNING("[src] claws at [H], the flame sending them to the floor!"))
+			to_chat(H, SPAN_USERDANGER("IT HURTS!!!"))
+			health += 50
+			aflame_cooldown = world.time + aflame_cooldown_time
+		else
+			visible_message(SPAN_WARNING("[src] raises their arms and begins to attack [A]!"))
+			if(do_after(src, 2 SECONDS, H))
+				H.fire_stacks += 3
+				H.IgniteMob()
+				health += 125
 				aflame_cooldown = world.time + aflame_cooldown_time
-			else
-				visible_message(SPAN_WARNING("[src] raises their arms and begins to attack [A]!"))
-				if(do_after(src, 3 SECONDS, H))
-					H.fire_stacks += 1
-					H.IgniteMob()
-					health += 15
-					aflame_cooldown = world.time + aflame_cooldown_time
-					visible_message(SPAN_DANGER("[src] grabs a hold of [A] setting them alight!"))
-					to_chat(H, SPAN_USERDANGER("Oh god, oh god. OH GOD! IT HURTS! PLEASE!"))
-				return
+				visible_message(SPAN_DANGER("[src] grabs a hold of [A] setting them alight!"))
+				to_chat(H, SPAN_USERDANGER("Oh god, oh god. OH GOD! IT HURTS! PLEASE!"))
+			return
 
 	if(istype(A, /obj/machinery/door))
 		OpenDoor(A)
@@ -82,6 +80,11 @@
 	if(istype(A, /obj/structure/inflatable))
 		var/obj/structure/inflatable/W = A
 		W.deflate(violent=1)
+	if(istype(A, /obj/structure/reagent_dispensers/fueltank))
+		var/obj/structure/reagent_dispensers/fueltank/W = A
+		src.visible_message(SPAN_NOTICE("[src] drains the [W]!"))
+		src.health += 250
+		qdel(W)
 	return
 
 /mob/living/scp_457/proc/OpenDoor(obj/machinery/door/A)
@@ -117,6 +120,7 @@
 	A.visible_message(SPAN_WARNING("\The [src] begins to melt the control mechanisms on \the [A]!"))
 	playsound(get_turf(A), 'sound/machines/airlock_creaking.ogg', 35, 1)
 	door_cooldown = world.time + open_time // To avoid sound spam
+	src.health += 10
 	if(!do_after(src, open_time, A))
 		return
 
@@ -152,3 +156,6 @@
 	set category = "SCP-457"
 	set name = "Check Health"
 	to_chat(src, "HEALTH: [health]")
+
+/mob/living/scp_457/damage_check(mob/living/M, damage_type)
+	. = ..()

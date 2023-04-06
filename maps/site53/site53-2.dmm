@@ -26420,8 +26420,8 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
 "ibW" = (
-/obj/structure/reagent_dispensers/watertank,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp457containment)
 "icl" = (
@@ -28650,6 +28650,10 @@
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lowertrams/restaurantkitchenarea)
+"lvN" = (
+/obj/structure/grille,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/scp457containment)
 "lwu" = (
 /obj/structure/closet/toolcloset,
 /obj/machinery/light{
@@ -86630,7 +86634,7 @@ pVL
 pVL
 pVL
 soj
-pME
+lvN
 soj
 azA
 azA
