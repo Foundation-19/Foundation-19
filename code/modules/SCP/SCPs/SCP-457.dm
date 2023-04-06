@@ -156,6 +156,3 @@
 	set category = "SCP-457"
 	set name = "Check Health"
 	to_chat(src, "HEALTH: [health]")
-
-/mob/living/scp_457/damage_check(mob/living/M, damage_type)
-	. = ..()
