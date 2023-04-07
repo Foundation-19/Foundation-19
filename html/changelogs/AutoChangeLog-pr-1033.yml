@@ -1,0 +1,4 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - balance: SCP-3349 is easier to test with
