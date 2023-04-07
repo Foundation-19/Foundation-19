@@ -24,3 +24,8 @@
   - soundadd: SCP-3349 heartbeat
   - imageadd: SCP-3349 EKG report
   - code_imp: carbon Life() has a signal now, please use it when possible.
+2023-04-07:
+  EgorDinamit:
+  - bugfix: Changelings can use their abilities once again.
+  cheesePizza2:
+  - balance: SCP-3349 is easier to test with
