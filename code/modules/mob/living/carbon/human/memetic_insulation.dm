@@ -74,9 +74,7 @@ var/debuff_miniscule = 3
 	if(stat) //Unconscious humans cant see.
 		return FALSE
 	if(origin)
-		if(!ismovable(origin) || (origin == src)) //We can always see turf (and other immovable atoms) and ourselves
-			return TRUE
-		if(origin.get_holder_or_object() == src) //Can see stuff on us (not really 'see' but you can feel a headset in your hands even if its pitch black). Check is double layered.
+		if(!ismovable(origin) || (origin.get_holder_or_object() == src)) //We can always see turf (and other immovable atoms) and ourselves. We can also see stuff on us (not really 'see' but you can feel a headset in your hands even if its pitch black).
 			return TRUE
 		if(origin.InCone(src, turn(src.dir, 180))) // Cant see whats behind you.
 			return FALSE
