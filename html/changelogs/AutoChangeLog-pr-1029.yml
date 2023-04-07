@@ -1,0 +1,6 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - bugfix: e-mail spam event was broken. Now it isn't.
+  - balance: Rebalances and reworks memetic spasm random event.
+  - soundadd: Extremely irritating sound thanks to John Wiki-man (Seven7#6156)!
