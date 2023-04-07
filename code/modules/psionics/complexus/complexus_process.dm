@@ -26,7 +26,6 @@
 				qdel(src)
 			return
 		else
-			rebuild_power_cache = TRUE
 			sound_to(owner, 'sound/effects/psi/power_unlock.ogg')
 			rating = ceil(combined_rank/rank_count)
 			cost_modifier = 1
@@ -61,6 +60,8 @@
 					aura_color = "#cccc33"
 			aura_image.pixel_x = -64 - owner.default_pixel_x
 			aura_image.pixel_y = -64 - owner.default_pixel_y
+
+	rebuild_power_cache()
 
 	if(!announced && owner && owner.client && !QDELETED(src))
 		announced = TRUE
