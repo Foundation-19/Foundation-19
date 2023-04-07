@@ -151,7 +151,8 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Sensor Suit Jamming",					/datum/event/sensor_suit_jamming,		10,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_AIC = 20)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Spider Infestation",					/datum/event/spider_infestation, 		25,		list(ASSIGNMENT_SECURITY = 15), 1),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Wallrot",								/datum/event/wallrot, 					0,		list(ASSIGNMENT_ENGINEER = 40)),
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Drone Uprising",						/datum/event/rogue_maint_drones,		25,		list(ASSIGNMENT_ENGINEER = 30, ASSIGNMENT_SECURITY = 20))
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Drone Uprising",						/datum/event/rogue_maint_drones,		25,		list(ASSIGNMENT_ENGINEER = 30, ASSIGNMENT_SECURITY = 20)),
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Memetic Spasm",						/datum/event/memetic_spasm,				10,		list(ASSIGNMENT_MEDICAL = 20))
 	)
 
 /datum/event_container/major
@@ -162,8 +163,7 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta/no_overmap(EVENT_LEVEL_MAJOR, "Electrical Storm",				/datum/event/electrical_storm, 			0,		list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_JANITOR = 5)),
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Drone Revolution",						/datum/event/rogue_maint_drones,		0,		list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_MEDICAL = 10, ASSIGNMENT_SECURITY = 20)),
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Vines",									/datum/event/spacevine,					0,		list(ASSIGNMENT_ANY = 5, ASSIGNMENT_ENGINEER = 20, ASSIGNMENT_JANITOR = 10)),
-		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Wormholes",								/datum/event/wormholes,					10,		list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_SECURITY = 25)),
-		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Memetic Spasm",							/datum/event/memetic_spasm,				10,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_SECURITY = 20))
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Wormholes",								/datum/event/wormholes,					10,		list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_SECURITY = 25))
 	)
 
 // Returns how many characters are currently active(not logged out, not AFK for more than 10 minutes)
