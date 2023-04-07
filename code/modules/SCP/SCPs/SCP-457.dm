@@ -13,7 +13,10 @@
 	var/door_cooldown
 	health = 700
 	maxHealth = 700
-	var/funnymode = FALSE //this makes 457 better (for events and shit)
+
+	//THE FUNNY VAR ZONE
+	var/noattackcooldown = FALSE
+	var/godmode = FALSE
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
@@ -60,14 +63,22 @@
 			health += 50
 			aflame_cooldown = world.time + aflame_cooldown_time
 		else
-			visible_message(SPAN_WARNING("[src] raises their arms and begins to attack [A]!"))
-			if(do_after(src, 2 SECONDS, H))
+			if(src.noattackcooldown == TRUE)
 				H.fire_stacks += 3
 				H.IgniteMob()
 				health += 125
 				aflame_cooldown = world.time + aflame_cooldown_time
 				visible_message(SPAN_DANGER("[src] grabs a hold of [A] setting them alight!"))
 				to_chat(H, SPAN_USERDANGER("Oh god, oh god. OH GOD! IT HURTS! PLEASE!"))
+			else
+				visible_message(SPAN_WARNING("[src] raises their arms and begins to attack [A]!"))
+				if(do_after(src, 2 SECONDS, H))
+					H.fire_stacks += 3
+					H.IgniteMob()
+					health += 125
+					aflame_cooldown = world.time + aflame_cooldown_time
+					visible_message(SPAN_DANGER("[src] grabs a hold of [A] setting them alight!"))
+					to_chat(H, SPAN_USERDANGER("Oh god, oh god. OH GOD! IT HURTS! PLEASE!"))
 			return
 
 	if(istype(A, /obj/machinery/door))
@@ -139,8 +150,11 @@
 	visible_message("\The [src] melts \the [A]'s controls[check ? ", and rips it open!" : ", and breaks it!"]")
 
 /mob/living/scp_457/Life()
-	if(health <= 0)
-		death(FALSE, "falls on their knees, the flame withering away.")
+	if(src.godmode == TRUE)
+		return
+	else
+		if(health <= 0)
+			death(FALSE, "falls on their knees, the flame withering away.")
 
 /mob/living/scp_457/death(gibbed, deathmessage, show_dead_message)
 	if(..())
