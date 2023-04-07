@@ -74,24 +74,16 @@ var/debuff_miniscule = 3
 	if(stat) //Unconscious humans cant see.
 		return FALSE
 	if(origin)
-		if(isturf(origin) || (origin == src)) //We can always see turf and ourselves
+		if(!ismovable(origin) || (origin == src)) //We can always see turf (and other immovable atoms) and ourselves
 			return TRUE
-		if(origin.loc == src || origin.loc.loc == src) //Can see stuff on us (not really 'see' but you can feel a headset in your hands even if its pitch black). Check is double layered.
+		if(origin.get_holder_or_object() == src) //Can see stuff on us (not really 'see' but you can feel a headset in your hands even if its pitch black). Check is double layered.
 			return TRUE
 		if(origin.InCone(src, turn(src.dir, 180))) // Cant see whats behind you.
 			return FALSE
-		if(!isturf(origin.loc))
-			if(ismob(origin.loc))
-				if(!(origin.loc in view_nolight(world.view, src))) //Cant see whats not in view. View dosent pick up stuff worn or held by mobs. Therefore, if origin is is held or worn by a mob it checks if we can see the mob instead.
-					return FALSE
-			else if(istype(origin.loc, /obj/item/storage))
-				return FALSE //Cant see stuff in a backpack or hidden in a container
-			else if(ismob(origin.loc.loc))
-				if(!(origin.loc.loc in view_nolight(world.view, src))) //double layer check for stuff like a PDA
-					return FALSE
-		else
-			if(!(origin in view_nolight(world.view, src)))
-				return FALSE
+		if(!isturf(origin.loc) && istype(origin.loc, /obj/item/storage)) //Cant see stuff in a backpack or hidden in a container
+			return FALSE
+		if(!(origin.get_holder_or_object() in view_nolight(world.view, src))) //Cant see whats not in view. View dosent pick up stuff worn or held by mobs. Therefore, if origin is is held or worn by a mob it checks if we can see the mob instead.
+			return FALSE
 
 		origin_turf = get_turf(origin)
 		if((origin_turf.get_lumcount() <= dark_maximium) && (see_in_dark <= 2) && (see_invisible != SEE_INVISIBLE_NOLIGHTING)) //Cant see whats in the dark (unless you have nightvision). Also regular view does check light level, but here we do it ourselves to allow flexibility for what we consider dark + integration with night vision goggles, etc.
