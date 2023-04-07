@@ -38,7 +38,8 @@ GLOBAL_LIST_INIT(possible_changeling_IDs, list("Alpha", "Beta", "Gamma", "Delta"
 	var/datum/mind/owner_mind
 
 /datum/changeling/Destroy()
-	purchased_powers = null
+	for(var/datum/D in purchased_powers)
+		qdel(D)
 	absorbed_languages.Cut()
 	absorbed_dna.Cut()
 	. = ..()
