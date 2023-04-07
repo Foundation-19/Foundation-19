@@ -3,7 +3,6 @@
 	var/announced = FALSE             // Whether or not we have been announced to our holder yet.
 	var/suppressed = TRUE             // Whether or not we are suppressing our psi powers.
 	var/use_psi_armour = TRUE         // Whether or not we should automatically deflect/block incoming damage.
-	var/rebuild_power_cache = TRUE    // Whether or not we need to rebuild our cache of psi powers.
 
 	var/rating = 0                    // Overall psi rating.
 	var/cost_modifier = 1             // Multiplier for power use stamina costs.
