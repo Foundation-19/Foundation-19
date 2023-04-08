@@ -65,7 +65,7 @@
 
 					body = "<table><tr><td>";
 					body += "</td><td align='center'>";
-					body += FONT_NORMAL("<b>"+job+" "+name+"</b><br><b>Real name "+real_name+"</b><br><b>Played by "+key+" ("+ip+")</b>")
+					body += "<font size='2'><b>"+job+" "+name+"</b><br><b>Real name "+real_name+"</b><br><b>Played by "+key+" ("+ip+")</b></font>"
 					body += "</td><td align='center'>";
 
 					body += "<a href='?src=\ref[src];adminplayeropts="+ref+"'>PP</a> - "
@@ -77,7 +77,7 @@
 					body += "<a href='?src=\ref[src];subtlemessage="+ref+"'>SM</a> - "
 					body += "<a href='?src=\ref[src];adminplayerobservejump="+ref+"'>JMP</a><br>"
 					if(antagonist > 0)
-						body += FONT_NORMAL("<a href='?src=\ref[src];check_antagonist=1'><font color='red'><b>Antagonist</b></font></a>");
+						body += "<font size='2'><a href='?src=\ref[src];check_antagonist=1'><font color='red'><b>Antagonist</b></font></a></font>";
 					body += "</td></tr></table>";
 
 					span.innerHTML = body
