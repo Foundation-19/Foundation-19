@@ -1,4 +1,0 @@
-author: EgorDinamit
-delete-after: true
-changes:
-  - bugfix: Psionic powers will properly update whenever faculty levels are changed.
