@@ -47,26 +47,8 @@
 
 	return FALSE //not in range and not telekinetic
 
-// Like view but bypasses luminosity check
-
-/proc/view_nolight(range, atom/source)
-
-	var/lum = source.luminosity
-	source.luminosity = 6
-
-	var/list/viewed = list()
-
-	if(range)
-		viewed = view(range, source)
-	else
-		viewed = view(source)
-
-	source.luminosity = lum
-
-	return viewed
-
 /proc/hear(range, atom/source)
-	return view_nolight(range, source)
+	return dview(range, source)
 
 /proc/isStationLevel(level)
 	return level in GLOB.using_map.station_levels
