@@ -11,12 +11,12 @@
 	SCP = /datum/scp/scp_457
 	status_flags = NO_ANTAG
 	var/door_cooldown
-	health = 700
-	maxHealth = 700
+	health = 1000
+	maxHealth = 1000
 
 	//THE FUNNY VAR ZONE
-	var/noattackcooldown = FALSE
-	var/godmode = FALSE
+	var/attack_delay = 2 SECONDS
+	var/god_mode = FALSE
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
@@ -39,7 +39,7 @@
 	add_language(LANGUAGE_ENGLISH, TRUE)
 	set_light(0.8, 0.3, 5, l_color = COLOR_ORANGE) //makes 457 emit light
 	add_verb(src, list(
-		/mob/living/scp_457/proc/checkhealth
+		/mob/living/scp_457/proc/CheckHealth
 	))
 
 	return ..()
@@ -56,29 +56,21 @@
 		if(aflame_cooldown > world.time)
 			to_chat(src, SPAN_WARNING("You can't attack yet."))
 			return
-		if(prob(15))
+		if(prob(35))
 			H.Weaken(35)
 			H.visible_message(SPAN_WARNING("[src] claws at [H], the flame sending them to the floor!"))
 			to_chat(H, SPAN_USERDANGER("IT HURTS!!!"))
-			health += 50
+			health += 150
 			aflame_cooldown = world.time + aflame_cooldown_time
 		else
-			if(src.noattackcooldown == TRUE)
+			visible_message(SPAN_WARNING("[src] raises their arms and begins to attack [A]!"))
+			if(do_after(src, src.attack_delay, H))
 				H.fire_stacks += 3
 				H.IgniteMob()
-				health += 125
+				health += 525
 				aflame_cooldown = world.time + aflame_cooldown_time
 				visible_message(SPAN_DANGER("[src] grabs a hold of [A] setting them alight!"))
-				to_chat(H, SPAN_USERDANGER("Oh god, oh god. OH GOD! IT HURTS! PLEASE!"))
-			else
-				visible_message(SPAN_WARNING("[src] raises their arms and begins to attack [A]!"))
-				if(do_after(src, 2 SECONDS, H))
-					H.fire_stacks += 3
-					H.IgniteMob()
-					health += 125
-					aflame_cooldown = world.time + aflame_cooldown_time
-					visible_message(SPAN_DANGER("[src] grabs a hold of [A] setting them alight!"))
-					to_chat(H, SPAN_USERDANGER("Oh god, oh god. OH GOD! IT HURTS! PLEASE!"))
+				to_chat(H, SPAN_USERDANGER("Oh god, oh god. OH GD! IT HURTS! PLEASE!"))
 			return
 
 	if(istype(A, /obj/machinery/door))
@@ -129,7 +121,7 @@
 			open_time += 4 SECONDS
 
 	A.visible_message(SPAN_WARNING("\The [src] begins to melt the control mechanisms on \the [A]!"))
-	playsound(get_turf(A), 'sound/machines/airlock_creaking.ogg', 35, 1)
+	playsound(get_turf(A), 'sound/bullets/acid_impact1.ogg', 35, 1)
 	door_cooldown = world.time + open_time // To avoid sound spam
 	src.health += 10
 	if(!do_after(src, open_time, A))
@@ -150,7 +142,7 @@
 	visible_message("\The [src] melts \the [A]'s controls[check ? ", and rips it open!" : ", and breaks it!"]")
 
 /mob/living/scp_457/Life()
-	if(src.godmode == TRUE)
+	if(src.god_mode == TRUE)
 		return
 	else
 		if(health <= 0)
@@ -159,14 +151,14 @@
 /mob/living/scp_457/death(gibbed, deathmessage, show_dead_message)
 	if(..())
 		set_icon_state("fireguy_dead")
-		addtimer(CALLBACK(src, /mob/living/scp_457/proc/_respawn), 5 MINUTES)
+		addtimer(CALLBACK(src, /mob/living/scp_457/proc/_Respawn), 5 MINUTES)
 
-/mob/living/scp_457/proc/_respawn()
+/mob/living/scp_457/proc/_Respawn()
 	visible_message("One single flame from [src] reforms, turning itself into a humanoid form once again.")
 	new /mob/living/scp_457(get_turf(src))
 	qdel(src)
 
-/mob/living/scp_457/proc/checkhealth()
+/mob/living/scp_457/proc/CheckHealth()
 	set category = "SCP-457"
 	set name = "Check Health"
 	to_chat(src, "HEALTH: [health]")
