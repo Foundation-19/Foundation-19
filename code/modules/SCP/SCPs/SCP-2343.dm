@@ -8,7 +8,7 @@ GLOBAL_LIST_EMPTY(scp2343s)
 	SCP = /datum/scp/scp_343
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
-	icon = 'icons/SCP/scp-343.dmi'
+	icon = 'icons/SCP/scp-2343.dmi'
 	icon_state = null
 	status_flags = NO_ANTAG
 
