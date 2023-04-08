@@ -9,20 +9,11 @@
 	add_verb(src, /datum/changeling/proc/EvolutionMenu)
 	add_language(LANGUAGE_CHANGELING_GLOBAL)
 
-	if(!LAZYLEN(GLOB.changeling_power_instances))
-		for(var/P in GLOB.changeling_powers)
-			GLOB.changeling_power_instances += new P()
-
 	// Code to auto-purchase free powers.
-	for(var/datum/power/changeling/P in GLOB.changeling_power_instances)
-		if(!P.genome_cost && !P.no_autobuy && !(P in mind.changeling.purchased_powers)) // Is it free, and we don't own it?
-			mind.changeling.purchasePower(mind, P.name, 0, TRUE) // Purchase it. Don't remake our verbs, we're doing it after this.
-
-	/*for(var/datum/power/changeling/P in mind.changeling.purchased_powers)
-		if(P.isVerb)
-			if(lesser_form && !P.allow_during_lesser_form)	continue
-			if(!(P in src.verbs))
-				src.verbs += P.verbpath*/ // Keeping this comment in case this functionality is restored in the future
+	for(var/power_type in GLOB.changeling_powers)
+		var/datum/power/changeling/P = power_type
+		if(!initial(P.genome_cost) && !initial(P.no_autobuy) && !(locate(P) in mind.changeling.purchased_powers)) // Is it free, and we don't own it?
+			mind.changeling.purchasePower(mind, P, FALSE, TRUE)
 
 	for(var/language in languages)
 		mind.changeling.absorbed_languages |= language

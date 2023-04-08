@@ -6,6 +6,27 @@
 //Note: backpack items conflict with the built-in backpack selection
 
 // SCP COMMAND OUTFITS
+
+/decl/hierarchy/outfit/job/site90/crew/security/New()
+	..()
+	BACKPACK_OVERRIDE_SECURITY
+
+/decl/hierarchy/outfit/job/ds90/medical/New()
+	..()
+	BACKPACK_OVERRIDE_MEDICAL
+
+/decl/hierarchy/outfit/job/ds90/medical/chemist/New()
+	..()
+	BACKPACK_OVERRIDE_CHEMISTRY
+
+/decl/hierarchy/outfit/job/ds90/crew/engineering/New()
+	..()
+	BACKPACK_OVERRIDE_ENGINEERING
+
+/decl/hierarchy/outfit/job/site90/crew/command/New()
+	..()
+	BACKPACK_OVERRIDE_COMMAND
+
 /decl/hierarchy/outfit/job/site90/crew/command/facilitydir
 	name = OUTFIT_JOB_NAME("Facility Director")
 	uniform = /obj/item/clothing/under/scp/suittie
@@ -114,7 +135,6 @@
 
 /decl/hierarchy/outfit/job/site90/crew/security/ltofficerlcz
 	name = OUTFIT_JOB_NAME("LCZ Zone Commander")
-	flags = OUTFIT_RESET_EQUIPMENT
 	uniform = /obj/item/clothing/under/scp/lcz/armband
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	shoes = /obj/item/clothing/shoes/dutyboots
@@ -149,7 +169,6 @@
 // GUARD OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerlcz
 	name = OUTFIT_JOB_NAME("LCZ Sergeant")
-	flags = OUTFIT_RESET_EQUIPMENT
 	uniform = /obj/item/clothing/under/scp/lcz/armband
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor
@@ -267,7 +286,6 @@
 // JUNIOR GUARD OUTFITS
 /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerlcz
 	name = OUTFIT_JOB_NAME("LCZ Guard")
-	flags = OUTFIT_RESET_EQUIPMENT
 	uniform = /obj/item/clothing/under/scp/lcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor
@@ -769,7 +787,7 @@
 
 /decl/hierarchy/outfit/job/site90/crew/command/event/redrighthand //if this ever sees use, an admin really wants someone dead
 	name = OUTFIT_JOB_NAME("MTF Alpha-1 Operative")
-	uniform = /obj/item/clothing/under/scp/alpha 
+	uniform = /obj/item/clothing/under/scp/alpha
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/alpha
 	mask = /obj/item/clothing/mask/gas/alpha
 	head = /obj/item/clothing/head/beret/scp/alpha
