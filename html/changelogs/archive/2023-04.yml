@@ -29,3 +29,11 @@
   - bugfix: Changelings can use their abilities once again.
   cheesePizza2:
   - balance: SCP-3349 is easier to test with
+2023-04-08:
+  EgorDinamit:
+  - bugfix: Psionic powers will properly update whenever faculty levels are changed.
+  cheesePizza2:
+  - admin: Event manager panel lets you easily view the variables of running events\
+  - bugfix: e-mail spam event was broken. Now it isn't.
+  - balance: Rebalances and reworks memetic spasm random event.
+  - soundadd: Extremely irritating sound thanks to John Wiki-man (Seven7#6156)!
