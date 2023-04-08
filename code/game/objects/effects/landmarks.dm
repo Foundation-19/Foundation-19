@@ -78,6 +78,10 @@
 			new /mob/living/scp_173 (loc)
 			delete_me = 1
 			return
+		if ("scp2343")
+			new /mob/living/carbon/human/scp2343 (loc)
+			delete_me = 1
+			return
 		if ("scp999")
 			new /mob/living/simple_animal/scp_999 (loc)
 			delete_me = 1
