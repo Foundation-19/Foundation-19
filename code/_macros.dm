@@ -242,3 +242,5 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 #define issignaller(O) istype(O, /obj/item/device/assembly/signaller)
 
 #define istimer(O) istype(O, /obj/item/device/assembly/timer)
+
+#define isscp2343(A) istype(A, /mob/living/carbon/human/scp2343)
