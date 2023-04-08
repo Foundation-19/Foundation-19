@@ -1,5 +1,3 @@
-GLOBAL_LIST_EMPTY(simulated_turfs_scp106)
-
 /turf/simulated
 	name = "station"
 	var/wet = 0

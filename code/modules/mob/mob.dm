@@ -752,7 +752,7 @@
 
 	// update SCP-106's vis_contents icon
 	if (isscp106)
-		var/mob/living/carbon/human/scp106/H = src
+		var/mob/living/carbon/human/scp_106/H = src
 //		H.fix_icons()
 		H.update_vision_cone()
 
