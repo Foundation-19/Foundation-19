@@ -78,7 +78,7 @@ var/debuff_miniscule = 3
 			return TRUE
 		if(origin.InCone(src, turn(src.dir, 180))) // Cant see whats behind you.
 			return FALSE
-		if(!isturf(origin.loc) && istype(origin.loc, /obj/item/storage)) //Cant see stuff in a backpack or hidden in a container
+		if(istype(origin.loc, /obj/item/storage)) //Cant see stuff in a backpack or hidden in a container
 			return FALSE
 		if(!(origin.get_holder_or_object() in view_nolight(7, src))) //Cant see whats not in view. View dosent pick up stuff worn or held by mobs. Therefore, if origin is is held or worn by a mob it checks if we can see the mob instead.
 			return FALSE
