@@ -69,6 +69,7 @@ var/debuff_miniscule = 3
 
 /mob/living/carbon/human/can_see(atom/origin, var/visual_memetic = 0) //Checks if origin can be seen by a human. visiual_memetics should be one if you're checking for a visual memetic hazard as opposed to say someone looking at scp 173. If origin is null, checks for if the human can see in general.
 	var/turf/origin_turf
+	var/area/origin_area
 	if(eye_blind > 0) //this is different from blinded check as blinded is changed in the same way eye_blind is, meaning there can be a siutation where eye_blind is in effect but blinded is not set to true. Therefore, this check is neccesary as a pre-caution.
 		return FALSE
 	if(stat) //Unconscious humans cant see.
@@ -84,7 +85,9 @@ var/debuff_miniscule = 3
 			return FALSE
 
 		origin_turf = get_turf(origin)
-		if((origin_turf.get_lumcount() <= dark_maximium) && (see_in_dark <= 2) && (see_invisible != SEE_INVISIBLE_NOLIGHTING) && !istype(get_area(origin), /area/site53/surface)) //Cant see whats in the dark (unless you have nightvision). Also regular view does check light level, but here we do it ourselves to allow flexibility for what we consider dark + integration with night vision goggles, etc.
+		origin_area = get_area(origin)
+
+		if((origin_turf.get_lumcount() <= dark_maximium) && (see_in_dark <= 2) && (see_invisible != SEE_INVISIBLE_NOLIGHTING) && (origin_area.dynamic_lighting != 0)) //Cant see whats in the dark (unless you have nightvision). Also regular view does check light level, but here we do it ourselves to allow flexibility for what we consider dark + integration with night vision goggles, etc.
 			return FALSE
 		if(ismob(origin))
 			var/mob/origin_mob = origin
