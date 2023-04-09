@@ -9,7 +9,7 @@ Made by TheDarkElites
 #define AUDIBLE_RANGE_NONE       -1 //Prevent it from being heard even on the same tile
 
 //Maximium lum count before we no longer consider it dark. Should be a value between 0 and 1.
-var/dark_maximium = 0.1
+var/dark_maximium = 0.05
 
 //View distance debuffs for sizes of objects/mobs passed through can_identify
 var/debuff_small = 1
@@ -84,7 +84,7 @@ var/debuff_miniscule = 3
 			return FALSE
 
 		origin_turf = get_turf(origin)
-		if((origin_turf.get_lumcount() <= dark_maximium) && (see_in_dark <= 2) && (see_invisible != SEE_INVISIBLE_NOLIGHTING)) //Cant see whats in the dark (unless you have nightvision). Also regular view does check light level, but here we do it ourselves to allow flexibility for what we consider dark + integration with night vision goggles, etc.
+		if((origin_turf.get_lumcount() <= dark_maximium) && (see_in_dark <= 2) && (see_invisible != SEE_INVISIBLE_NOLIGHTING) && !istype(get_area(origin), /area/site53/surface)) //Cant see whats in the dark (unless you have nightvision). Also regular view does check light level, but here we do it ourselves to allow flexibility for what we consider dark + integration with night vision goggles, etc.
 			return FALSE
 		if(ismob(origin))
 			var/mob/origin_mob = origin
