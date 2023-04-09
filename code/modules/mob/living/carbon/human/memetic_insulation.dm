@@ -55,7 +55,7 @@ var/debuff_miniscule = 3
 			return 100
 		return Clamp((((AUDIBLE_RANGE_FULL - Clamp((distance_from_origin - cut_off)**2, 0, AUDIBLE_RANGE_FULL))/AUDIBLE_RANGE_FULL)  * 100), 0, 100)
 	else
-		if(((is_concealed ? get_turf(origin) : origin) in hear(hearable_range, get_turf(src)))) //get_turf is used as you can still hear stuff even if inside a container or in an inventory
+		if((is_concealed ? get_turf(origin) : origin) in hear(hearable_range, get_turf(src))) //get_turf is used as you can still hear stuff even if inside a container or in an inventory
 			return TRUE
 		else
 			return FALSE
