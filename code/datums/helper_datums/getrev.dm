@@ -25,9 +25,9 @@ var/global/datum/getrev/revdata = new()
 
 /datum/getrev/proc/get_log_message()
 	var/list/msg = list()
-	msg += "Running /tg/ revision: [date]"
+	msg += "Running Foundation-19 revision: [date]"
 	if(originmastercommit)
-		msg += "origin/master: [originmastercommit]"
+		msg += "origin/dev: [originmastercommit]"
 
 	for(var/line in testmerge)
 		var/datum/tgs_revision_information/test_merge/tm = line
