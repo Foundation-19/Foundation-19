@@ -166,6 +166,12 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(istype(A, /obj/structure/inflatable))
 		var/obj/structure/inflatable/W = A
 		W.deflate(violent=1)
+	if(istype(A, /obj/structure/closet))
+		var/obj/structure/closet/C = A
+		if(C.open())
+			return
+		C.dump_contents()
+		QDEL_NULL(C)
 	return
 
 /mob/living/scp_173/Life()
