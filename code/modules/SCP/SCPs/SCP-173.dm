@@ -172,7 +172,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	. = ..()
 	if(length(GLOB.clients) <= 30 && !client)
 		return
-	var/list/our_view = view_nolight(7, is_caged ? cage : src)//In case we are caged, we must see if our cage is being looked at rather than us
+	var/list/our_view = dview(7, is_caged ? cage : src)//In case we are caged, we must see if our cage is being looked at rather than us
 	for(var/mob/living/carbon/human/H in next_blinks)
 		if(!(H in our_view))
 			H.disable_blink(src)
@@ -198,7 +198,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	return TRUE
 
 /mob/living/scp_173/proc/IsBeingWatched()
-	for(var/mob/living/L in view_nolight(7, is_caged ? cage : src)) //same as before, cage needs to be used as reference rather than 173
+	for(var/mob/living/L in dview(7, is_caged ? cage : src)) //same as before, cage needs to be used as reference rather than 173
 		if((istype(L, /mob/living/simple_animal/scp_131)) && (InCone(L, L.dir)))
 			return TRUE
 		if(!istype(L, /mob/living/carbon/human))
