@@ -175,12 +175,23 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(istype(A, /obj/structure/inflatable))
 		var/obj/structure/inflatable/W = A
 		W.deflate(violent=1)
+	if(istype(A, /obj/structure/closet))
+		var/obj/structure/closet/C = A
+		if(C.open())
+			return
+		C.dump_contents()
+		QDEL_NULL(C)
 	return
 
 /mob/living/scp_173/Life()
 	. = ..()
+<<<<<<< HEAD
 	//if(length(GLOB.clients) <= 30 && !client)
 		//return
+=======
+	if(length(GLOB.clients) <= 30 && !client)
+		return
+>>>>>>> upstream/dev
 	var/list/our_view = dview(7, is_caged ? cage : src)//In case we are caged, we must see if our cage is being looked at rather than us
 	for(var/mob/living/carbon/human/H in next_blinks)
 		if(!(H in our_view))
