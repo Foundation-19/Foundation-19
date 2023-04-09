@@ -80,7 +80,7 @@ var/debuff_miniscule = 3
 			return FALSE
 		if(istype(origin.loc, /obj/item/storage)) //Cant see stuff in a backpack or hidden in a container
 			return FALSE
-		if(!(origin.get_holder_or_object() in view_nolight(7, src))) //Cant see whats not in view. View dosent pick up stuff worn or held by mobs. Therefore, if origin is is held or worn by a mob it checks if we can see the mob instead.
+		if(!(origin.get_holder_or_object() in dview(7, src))) //Cant see whats not in view. View dosent pick up stuff worn or held by mobs. Therefore, if origin is is held or worn by a mob it checks if we can see the mob instead.
 			return FALSE
 
 		origin_turf = get_turf(origin)
