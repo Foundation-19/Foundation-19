@@ -38,6 +38,7 @@
 	var/last_radio_sound = -INFINITY
 
 	var/intercom_handling = FALSE
+	var/sound_id
 
 /obj/item/device/radio/hailing
 	name = "shortwave radio (Hailing)"
@@ -65,6 +66,8 @@
 
 	for (var/ch_name in channels)
 		secure_radio_connections[ch_name] = radio_controller.add_object(src, radiochannels[ch_name],  RADIO_CHAT)
+
+	sound_id = "[type]_[sequential_id(type)]"
 
 /obj/item/device/radio/Process()
 	if(power_usage && on) //radio will use power and is on

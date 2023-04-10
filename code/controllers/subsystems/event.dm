@@ -214,7 +214,7 @@ SUBSYSTEM_DEF(event)
 		html += "<h2>Running Events</h2>"
 		html += "Estimated times, affected by process scheduler delays."
 		html += "<table[table_options]>"
-		html += "<tr><td[row_options1]>Severity</td><td[row_options2]>Name</td><td[row_options1]>Ends At</td><td[row_options1]>Ends In</td><td[row_options3]>Stop</td></tr>"
+		html += "<tr><td[row_options1]>Severity</td><td[row_options2]>Name</td><td[row_options1]>Ends At</td><td[row_options1]>Ends In</td><td[row_options1]>Stop</td><td[row_options1]>Variables</td></tr>"
 		for(var/datum/event/E in active_events)
 			if(!E.event_meta)
 				continue
@@ -227,6 +227,7 @@ SUBSYSTEM_DEF(event)
 			html += "<td>[time2text(SSticker.round_start_time + ends_at, "hh:mm")]</td>"
 			html += "<td>[ends_in]</td>"
 			html += "<td><A align='right' href='?src=\ref[src];stop=\ref[E]'>Stop</A></td>"
+			html += "<td><A align='right' href='?src=\ref[src];view_variables=\ref[E]'>VV</A></td>"
 			html += "</tr>"
 		html += "</table>"
 		html += "</div>"
@@ -275,6 +276,9 @@ SUBSYSTEM_DEF(event)
 		var/datum/event_meta/EM = E.event_meta
 		log_and_message_admins("has stopped the [severity_to_string[EM.severity]] event '[EM.name]'.")
 		E.kill()
+	else if(href_list["view_variables"])
+		var/datum/event/E = locate(href_list["view_variables"])
+		usr.client.debug_variables(E)
 	else if(href_list["view_events"])
 		selected_event_container = locate(href_list["view_events"])
 	else if(href_list["back"])

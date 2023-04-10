@@ -1,0 +1,6 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - tweak: SCP-173 can now open/break lockers and crates.
+  - bugfix: Full breach on area will now force-open blastdoors. This is mainly used
+      by 173's breach effect.
