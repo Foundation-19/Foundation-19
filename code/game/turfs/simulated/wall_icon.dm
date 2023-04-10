@@ -58,7 +58,7 @@
 		I = image('icons/turf/wall_masks.dmi', "[material.icon_base][wall_connections[i]]", dir = 1<<(i-1))
 		I.color = base_color
 		add_overlay(I)
-		if(other_connections[i] != "0")
+		if(other_connections[i] != "0" && material.has_other_connections)
 			I = image('icons/turf/wall_masks.dmi', "[material.icon_base]_other[wall_connections[i]]", dir = 1<<(i-1))
 			I.color = base_color
 			add_overlay(I)
@@ -85,7 +85,7 @@
 		add_overlay(texture)
 	if(stripe_color)
 		for(var/i = 1 to 4)
-			if(other_connections[i] != "0")
+			if(other_connections[i] != "0" && material.has_other_connections)
 				I = image('icons/turf/wall_masks.dmi', "stripe_other[wall_connections[i]]", dir = 1<<(i-1))
 			else
 				I = image('icons/turf/wall_masks.dmi', "stripe[wall_connections[i]]", dir = 1<<(i-1))

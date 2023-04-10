@@ -154,8 +154,6 @@
 /turf/simulated/wall/growth/New(newloc)
 	..(newloc, MATERIAL_GROWTH)
 
-/turf/simulated/wall/concrete/New(newloc)
-	..(newloc,MATERIAL_CONCRETE)
 
 //Alien metal walls
 /turf/simulated/wall/alium
@@ -187,3 +185,23 @@
 	else if(istype(W, /turf/simulated/wall))
 		return 1
 	return 0
+
+/turf/simulated/wall/concrete/New(newloc)
+	..(newloc, MATERIAL_CONCRETE)
+	icon_state = "horizontal_preview"
+
+/turf/simulated/wall/concrete/testroom/New(newloc)
+	..(newloc, MATERIAL_REINFORCED_CONCRETE)
+	icon_state = "testroom_preview"
+
+/turf/simulated/wall/concrete/vertical/New(newloc)
+	..(newloc, MATERIAL_VERTICAL_CONCRETE)
+	icon_state = "vertical_preview"
+
+/turf/simulated/wall/concrete/foamed/New(newloc)
+	..(newloc, MATERIAL_CONCRETE_FOAM)
+	icon_state = "foam_preview"
+
+/turf/simulated/wall/concrete/tiled/New(newloc)
+	..(newloc, MATERIAL_CONCRETE_TILES)
+	icon_state = "tiled_preview"

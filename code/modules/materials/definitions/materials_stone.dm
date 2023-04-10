@@ -36,7 +36,7 @@
 
 /material/stone
 	name = MATERIAL_SANDSTONE
-	lore_text = "A clastic sedimentary rock. The cost of boosting it to orbit is almost universally much higher than the actual value of the material."
+	lore_text = "A clastic sedimentary rock, composed of silicate grains."
 	stack_type = /obj/item/stack/material/sandstone
 	icon_base = "stone"
 	table_icon_base = "stone"
@@ -59,7 +59,7 @@
 
 /material/stone/marble
 	name = MATERIAL_MARBLE
-	lore_text = "A metamorphic rock largely sourced from Earth. Prized for use in extremely expensive decorative surfaces."
+	lore_text = "A metamorphic rock, consisting of recrystallized carbonate minerals. Prized for use in extremely expensive decorative surfaces."
 	icon_colour = "#aaaaaa"
 	weight = 26
 	hardness = MATERIAL_HARD
@@ -71,18 +71,35 @@
 	sale_price = 4
 	value = 20
 
+
+
 /material/stone/concrete
 	name = MATERIAL_CONCRETE
-	lore_text = "The most ubiquitous building material of old Earth, now in space. Consists of mineral aggregate bound with some sort of cementing solution."
+	lore_text = "The most ubiquitous building material of Earth. Consists of mineral aggregate bound with some sort of cementing solution."
+	icon_base = "concrete_horizontal"
 	stack_type = /obj/item/stack/material/generic/brick
-	icon_colour = COLOR_GRAY
+	icon_colour = COLOR_WHITE // No color addition, use base mask
 	value = 1
-	var/image/texture
+	brute_armor = 10
+	burn_armor = 10
+	has_other_connections = FALSE
 
-/material/stone/concrete/New()
-	..()
-	texture = image('icons/turf/wall_texture.dmi', "concrete")
-	texture.blend_mode = BLEND_MULTIPLY
+/material/stone/concrete/reinforced
+	name = MATERIAL_REINFORCED_CONCRETE
+	display_name = "concrete"
+	icon_base = "testroom"
 
-/material/stone/concrete/get_wall_texture()
-	return texture
+/material/stone/concrete/vertical
+	name = MATERIAL_VERTICAL_CONCRETE
+	display_name = "concrete"
+	icon_base = "vertical"
+
+/material/stone/concrete/tiled
+	name = MATERIAL_CONCRETE_TILES
+	display_name = "concrete"
+	icon_base = "tiled"
+
+/material/stone/concrete/foamed
+	name = MATERIAL_CONCRETE_FOAM
+	display_name = "concrete"
+	icon_base = "foam"
