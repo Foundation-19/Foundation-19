@@ -835,6 +835,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 /obj/item/organ/external/proc/play_droplimb_sound(droptype, clean)
 	if(BP_IS_CRYSTAL(src))
 		return playsound(src, "shatter", 70, 1)
+		show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	else if(!BP_IS_ROBOTIC(src))
 		switch(droptype)
 			if(DROPLIMB_EDGE)
