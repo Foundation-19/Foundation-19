@@ -156,10 +156,10 @@ var/global/list/datum/supply_drop_loot/supply_drop
 		/obj/item/storage/box/syringes,
 		/obj/item/storage/box/autoinjectors)
 
-/datum/supply_drop_loot/power
-	name = "Power"
+/datum/supply_drop_loot/materials
+	name = "Materials"
 	container = /obj/structure/largecrate
-/datum/supply_drop_loot/power/New()
+/datum/supply_drop_loot/materials/New()
 	..()
 	contents = list(
 		/obj/item/stack/material/steel,
@@ -188,9 +188,4 @@ var/global/list/datum/supply_drop_loot/supply_drop
 /datum/supply_drop_loot/power/New()
 	..()
 	contents = list(
-		/obj/machinery/power/port_gen/pacman,
-		/obj/machinery/power/port_gen/pacman/super,
 		/obj/machinery/power/port_gen/pacman/mrs)
-
-/datum/supply_drop_loot/power/contents()
-	return list(pick(contents))

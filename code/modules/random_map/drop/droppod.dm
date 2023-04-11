@@ -4,6 +4,12 @@
 #define SD_EMPTY_TILE 3
 #define SD_SUPPLY_TILE 7
 
+/area/droppod
+	name = "Drop Pod"
+	requires_power = 0
+	dynamic_lighting = 0
+	sound_env = SMALL_ENCLOSED
+
 /datum/random_map/droppod
 	descriptor = "drop pod"
 	initial_wall_cell = 0
@@ -36,7 +42,7 @@
 	//Make sure there is a clear midpoint.
 	if(limit_x % 2 == 0) limit_x++
 	if(limit_y % 2 == 0) limit_y++
-	..()
+	..(seed, tx, ty, tz, tlx, tly, do_not_apply, do_not_announce, 0, /area/droppod)
 
 /datum/random_map/droppod/generate_map()
 
