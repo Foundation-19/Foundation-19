@@ -4431,7 +4431,7 @@
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/briefing)
 "kf" = (
-/obj/machinery/vending/sovietsoda,
+/obj/machinery/vending/classdwater,
 /turf/simulated/floor/lino,
 /area/site53/llcz/dclass/canteen)
 "kg" = (
@@ -10679,7 +10679,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
 "Ac" = (
-/obj/machinery/vending/sovietsoda,
+/obj/machinery/vending/classdwater,
 /obj/machinery/light{
 	dir = 1
 	},
