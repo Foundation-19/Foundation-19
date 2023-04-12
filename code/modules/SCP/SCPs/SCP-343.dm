@@ -19,11 +19,32 @@ GLOBAL_LIST_EMPTY(scp343s)
 	classification = SAFE
 
 /mob/living/carbon/human/scp343/IsAdvancedToolUser()
-	return FALSE
+	return TRUE
 
 /mob/living/carbon/human/scp343/New(new_loc, new_species)
 	new_species = "SCP-343"
 	return ..()
+
+/mob/living/carbon/human/scp343/Login()
+	. = ..()
+	if(client)
+		add_language(LANGUAGE_ENGLISH)
+		add_language(LANGUAGE_HUMAN_FRENCH)
+		add_language(LANGUAGE_HUMAN_GERMAN)
+		add_language(LANGUAGE_HUMAN_SPANISH)
+		if(!(MUTATION_XRAY in mutations))
+			mutations.Add(MUTATION_XRAY)
+			update_mutations()
+			update_sight()
+	if(target)
+		target = null
+
+/mob/living/carbon/human/scp343/Logout()
+	. = ..()
+	if(mind)
+		mind = null
+	if(target)
+		target = null
 
 /mob/living/carbon/human/scp343/Initialize()
 	update_icons()

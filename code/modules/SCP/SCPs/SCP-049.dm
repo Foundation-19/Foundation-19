@@ -24,7 +24,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	classification = EUCLID
 
 /mob/living/carbon/human/scp049/IsAdvancedToolUser()
-	return FALSE
+	return TRUE
 
 /mob/living/carbon/human/scp049/update_icons()
 	return
@@ -162,7 +162,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 		visible_message("<span class = 'danger'><i>[src] reaches towards [target.real_name]!</i></span>")
 		addtimer(CALLBACK(src, .proc/Attack_Voice_Line), 5 SECONDS)
 
-		target.Weaken(10)
+		target.death()
 		if(prob(75)) //do you feel lucky, punk?
 			target.Stun(60)
 			target.emote("collapse")
