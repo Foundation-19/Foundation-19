@@ -1138,7 +1138,6 @@
 	/obj/item/storage/lunchbox/picnic = 3,
 	/obj/item/material/knife/kitchen/cleaver = 1)
 
-
 	contraband = list(/obj/item/material/knife/kitchen/cleaver/bronze = 1)
 
 /obj/machinery/vending/classdwater
@@ -1148,7 +1147,7 @@
 	icon_vend = "classdwater-vend"
 	icon_deny = "classdwater-deny"
 	base_type = /obj/machinery/vending/classdwater
-	product_ads = "Stay hydrated!;Dehydration is the REAL monster!;Ice sold seperately.;A hydrated D-class is a compliant D-class."
+	product_ads = "Stay hydrated!;Dehydration is the REAL monster!;Ice sold seperately.;A hydrated D-class is a compliant D-class.;Got Water?"
 	products = list(/obj/item/reagent_containers/food/drinks/cans/waterbottle = 50)
 
 /obj/machinery/vending/tool
