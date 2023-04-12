@@ -1,0 +1,4 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - bugfix: You can aim guns at people once again without "being blind".
