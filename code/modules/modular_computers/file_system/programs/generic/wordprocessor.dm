@@ -25,22 +25,24 @@
 		return TRUE
 
 /datum/computer_file/program/wordprocessor/proc/save_file(filename)
-	var/datum/computer_file/data/F = get_data_file(filename)
-	if(!F) //try to make one if it doesn't exist
-		F = create_data_file(filename, loaded_data)
-		return !isnull(F)
-	var/datum/computer_file/data/backup = F.clone()
 	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
 	if(!HDD)
 		return
-	HDD.remove_file(F)
-	F.stored_data = loaded_data
-	F.calculate_size()
-	if(!HDD.store_file(F))
-		HDD.store_file(backup)
-		return 0
-	is_edited = 0
-	return TRUE
+	var/datum/computer_file/data/F = get_data_file(filename)
+	if(!F) //try to make one if it doesn't exist
+		F = create_data_file(filename, loaded_data)
+		F.filetype = "TXT"
+		return !isnull(F)
+	else
+		var/datum/computer_file/data/backup = F.clone()
+		HDD.remove_file(F)
+		F.stored_data = loaded_data
+		F.calculate_size()
+		if(!HDD.store_file(F))
+			HDD.store_file(backup)
+			return 0
+		is_edited = 0
+		return TRUE
 
 /datum/computer_file/program/wordprocessor/tgui_act(action, list/params, datum/tgui/ui)
 	if(..())
@@ -88,6 +90,7 @@
 				return TRUE
 			var/datum/computer_file/data/F = create_data_file(newname)
 			if(F)
+				F.filetype = "TXT"
 				open_file = F.filename
 				loaded_data = ""
 				return TRUE
@@ -101,6 +104,7 @@
 				return TRUE
 			var/datum/computer_file/data/F = create_data_file(newname, loaded_data)
 			if(F)
+				F.filetype = "TXT"
 				open_file = F.filename
 			else
 				error = "I/O error: Unable to create file '[params["PRG_saveasfile"]]'."
