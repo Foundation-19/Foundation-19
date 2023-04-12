@@ -1499,9 +1499,9 @@
 "dn" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
 /obj/machinery/door/airlock/multi_tile/glass/medical{
+	id_tag = "medbaydoor2";
 	name = "Treatment Center";
-	req_access = list("ACCESS_MEDICAL_LEVEL1");
-	id_tag = "medbaydoor2"
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/exam_room)
@@ -1907,8 +1907,8 @@
 	},
 /obj/structure/cable/green,
 /obj/machinery/camera/autoname{
-	network = list("Entrance Zone Network");
-	dir = 1
+	dir = 1;
+	network = list("Entrance Zone Network")
 	},
 /obj/machinery/light,
 /obj/structure/filingcabinet,
@@ -3476,8 +3476,8 @@
 "ix" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	dir = 4;
-	req_access = list("ACCESS_MEDICAL_LEVEL1");
-	name = "Medical Storage"
+	name = "Medical Storage";
+	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/equipstorage)
@@ -3950,8 +3950,8 @@
 /area/site53/medical/isolation)
 "jB" = (
 /obj/machinery/door/airlock/glass/virology{
-	name = "Isolation Unit Two";
-	id_tag = "iso2"
+	id_tag = "iso2";
+	name = "Isolation Unit Two"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -4285,9 +4285,9 @@
 	icon_state = "tube1"
 	},
 /obj/machinery/button/blast_door{
-	pixel_y = 34;
 	id_tag = "LCZ Upper Maintenance Hatch";
 	name = "LCZ Upper Maintenance Hatch";
+	pixel_y = 34;
 	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -4366,13 +4366,13 @@
 /obj/structure/table/glass,
 /obj/effect/floor_decal/corner/purple/mono,
 /obj/item/storage/pill_bottle/spaceacillin{
-	pixel_y = 10;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 10
 	},
 /obj/item/reagent_containers/pill/spaceacillin,
 /obj/item/reagent_containers/pill/spaceacillin{
-	pixel_y = 6;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 6
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/isolation)
@@ -8536,8 +8536,8 @@
 	dir = 8
 	},
 /obj/machinery/vending/security{
-	req_access = list();
-	dir = 4
+	dir = 4;
+	req_access = list()
 	},
 /obj/machinery/light{
 	dir = 8
@@ -9002,8 +9002,8 @@
 /area/site53/uez/equipmentroom)
 "EO" = (
 /obj/machinery/door/airlock/glass/virology{
-	name = "Isolation Unit One";
-	id_tag = "iso1"
+	id_tag = "iso1";
+	name = "Isolation Unit One"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -9616,9 +9616,9 @@
 "Jt" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
+	begins_closed = 1;
 	id_tag = "EZ Security Shutter";
-	name = "EZ Security Shutter";
-	begins_closed = 1
+	name = "EZ Security Shutter"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
@@ -9768,16 +9768,16 @@
 /area/site53/medical/mentalhealth/office)
 "KE" = (
 /obj/machinery/button/alternate/door/bolts{
-	pixel_y = 25;
-	pixel_x = -6;
+	id_tag = "iso1";
 	name = "Isolation Unit One Bolts";
-	id_tag = "iso1"
+	pixel_x = -6;
+	pixel_y = 25
 	},
 /obj/machinery/button/alternate/door/bolts{
-	pixel_y = 25;
-	pixel_x = 6;
+	id_tag = "iso2";
 	name = "Isolation Unit Two Bolts";
-	id_tag = "iso2"
+	pixel_x = 6;
+	pixel_y = 25
 	},
 /obj/machinery/button/blast_door{
 	pixel_y = 34
@@ -9944,9 +9944,9 @@
 	dir = 1
 	},
 /obj/machinery/button/blast_door{
-	pixel_y = 34;
 	id_tag = "EZ Security Shutter";
-	name = "EZ Security Shutter"
+	name = "EZ Security Shutter";
+	pixel_y = 34
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
@@ -9974,8 +9974,8 @@
 	dir = 9
 	},
 /obj/structure/sign/warning/nosmoking_2{
-	pixel_y = -32;
-	pixel_x = -31
+	pixel_x = -31;
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
@@ -10346,9 +10346,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/button/blast_door{
-	pixel_y = 34;
 	id_tag = "LCZ Upper Maintenance Hatch";
 	name = "LCZ Upper Maintenance Hatch";
+	pixel_y = 34;
 	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -11526,9 +11526,9 @@
 	name = "Exterior Lockdown Blast Door"
 	},
 /obj/machinery/door/blast/shutters/open{
+	begins_closed = 1;
 	id_tag = "EZ Security Shutter";
-	name = "EZ Security Shutter";
-	begins_closed = 1
+	name = "EZ Security Shutter"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
