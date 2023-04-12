@@ -1,0 +1,8 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - bugfix: SCP-106 code has been reworked, all of it. This probably does not concern
+      normal players, though.
+  - tweak: SCP-106 has been given more visual and audio effects to its abilities.
+  - tweak: Femur breaker is now more "interesting" when used. Shove your friend in
+      there, NOW!

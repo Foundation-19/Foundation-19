@@ -1,0 +1,8 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - rscadd: Updated map with SCP class signs in front of their rooms.
+  - rscadd: Placed more navigation signs around HCZ and LCZ. Should make it easier
+      to find the EZ now.
+  - rscadd: Certain airlocks leading to SCP rooms(mostly HCZ) were renamed from "Secure
+      Airlock" to their respective SCP code.
