@@ -1,0 +1,6 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - bugfix: Fixed SCP-173 cage.
+  - tweak: SCP-173 will now attempt to damage its cage upon trying to move, instead
+      of clicking on it.
