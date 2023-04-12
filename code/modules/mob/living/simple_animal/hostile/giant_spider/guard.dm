@@ -8,7 +8,7 @@
 	health = 200
 	natural_weapon = /obj/item/natural_weapon/bite/spider/strong
 	poison_per_bite = 5
-	speed = 2
+	movement_cooldown = 5
 	move_to_delay = 4
 	break_stuff_probability = 15
 	pry_time = 6 SECONDS

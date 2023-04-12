@@ -18,7 +18,7 @@
 	maxbodytemp = 4000
 	min_gas = null
 	max_gas = null
-	speed = -1
+	movement_cooldown = 3
 	status_flags = 0
 	faction = "cult"
 	supernatural = 1
