@@ -239,14 +239,6 @@
 		update_icon()
 		leave_forensic_traces()
 		current_grab.enter_as_up(src)
-		if (!bypass_cooldown && isscp106(loc) && !(loc.loc in GLOB.scp106_floors) && !(affecting.loc in GLOB.scp106_floors))
-			var/mob/living/carbon/human/scp106/H = loc
-			affecting.forceMove(pick(GLOB.scp106_floors))
-			H.set_last_xyz()
-			H.forceMove(get_turf(affecting))
-			remove_verb(H, /mob/living/carbon/human/scp106/proc/enter_pocket_dimension)
-			add_verb(H, /mob/living/carbon/human/scp106/proc/go_back)
-			qdel(src)
 
 /obj/item/grab/proc/downgrade()
 	var/datum/grab/downgrab = current_grab.downgrade(src)

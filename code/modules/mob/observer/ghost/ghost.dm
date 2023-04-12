@@ -609,34 +609,35 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	if (world.time - timeofdeath >= 10 MINUTES || skip_respawn_timer)
 
+		// Someone has to rework this garbage, eventually
 		var/list/scps = list()
-/*
-		// no whitelist required
-		for (var/scp106 in GLOB.scp106s)
+
+		for(var/scp106 in GLOB.scp106s)
 			var/mob/M = scp106
-			if (!M.client)
+			if(!M.client && (length(GLOB.clients) >= 20))
 				scps += M
-*/
-		// whitelist required
-		for (var/scp049 in GLOB.scp049s)
+
+		for(var/scp049 in GLOB.scp049s)
 			var/mob/M = scp049
 			if (!M.client)
 				scps += M
 
-		// no whitelist required
-		for (var/scp173 in GLOB.scp173s)
+		for(var/scp173 in GLOB.scp173s)
 			var/mob/M = scp173
-			if (!M.client && (length(GLOB.clients) >= 30))
+			if(!M.client && (length(GLOB.clients) >= 30))
 				scps += M
 
 		// add new humanoid SCPs here or they won't be playable - Kachnov
-		if (scps.len)
+		if(scps.len)
 			var/mob/living/scp = tgui_input_list(src, "Which Euclid/Keter SCP do you want to take control of?", "Unsafe SCP Select", scps)
-			if (isscp106(scp) && world.time < 60 MINUTES)
-				to_chat(src, "You cannot join as this SCP for [((60 MINUTES) - world.time)/600] more minutes.")
-			if (isscp049(scp) && world.time < 10 MINUTES) /*&& !("049" in GLOB.scp_whitelist[ckey] ? GLOB.scp_whitelist[ckey] : list())¸*/
-				to_chat(src, "You cannot join as this SCP for [((15 MINUTES) - world.time)/600] more minutes.")
-			else if (scp && !scp.client)
+			if(isscp106(scp) && world.time < 40 MINUTES)
+				to_chat(src, "You cannot join as this SCP for [((40 MINUTES) - world.time)/600] more minutes.")
+				return
+			if(isscp049(scp) && world.time < 10 MINUTES) /*&& !("049" in GLOB.scp_whitelist[ckey] ? GLOB.scp_whitelist[ckey] : list())¸*/
+				to_chat(src, "You cannot join as this SCP for [((10 MINUTES) - world.time)/600] more minutes.")
+				return
+
+			if(scp && !scp.client)
 				to_chat(src, SPAN_WARNING("Keep in mind that you can and will be in your cage for long periods of time and even entire rounds."))
 				scp.do_possession(src)
 			else
