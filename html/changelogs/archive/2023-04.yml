@@ -46,3 +46,20 @@
   - tweak: Adjusts hitchance on limbs again, to hopefully make combat feel better.
   checkraisefold:
   - bugfix: Synthetic organs show up correctly in character setup.
+2023-04-12:
+  EgorDinamit:
+  - rscadd: Updated map with SCP class signs in front of their rooms.
+  - rscadd: Placed more navigation signs around HCZ and LCZ. Should make it easier
+      to find the EZ now.
+  - rscadd: Certain airlocks leading to SCP rooms(mostly HCZ) were renamed from "Secure
+      Airlock" to their respective SCP code.
+  - bugfix: Fixed SCP-173 cage.
+  - tweak: SCP-173 will now attempt to damage its cage upon trying to move, instead
+      of clicking on it.
+  - bugfix: You can aim guns at people once again without "being blind".
+  - admin: VV panel has been updated.
+  - bugfix: SCP-106 code has been reworked, all of it. This probably does not concern
+      normal players, though.
+  - tweak: SCP-106 has been given more visual and audio effects to its abilities.
+  - tweak: Femur breaker is now more "interesting" when used. Shove your friend in
+      there, NOW!
