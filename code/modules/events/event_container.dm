@@ -152,7 +152,7 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Spider Infestation",					/datum/event/spider_infestation, 		25,		list(ASSIGNMENT_SECURITY = 15), 1),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Wallrot",								/datum/event/wallrot, 					0,		list(ASSIGNMENT_ENGINEER = 40)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Drone Uprising",						/datum/event/rogue_maint_drones,		25,		list(ASSIGNMENT_ENGINEER = 30, ASSIGNMENT_SECURITY = 20)),
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Memetic Spasm",						/datum/event/memetic_spasm,				10,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_SECURITY = 20))
+		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Memetic Spasm",						/datum/event/memetic_spasm,				10,		list(ASSIGNMENT_MEDICAL = 20))
 	)
 
 /datum/event_container/major

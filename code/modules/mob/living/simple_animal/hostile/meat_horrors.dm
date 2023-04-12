@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/meat/
+/mob/living/simple_animal/hostile/meat
 	name = "horror"
 	desc = "A monstrously huge wall of flesh, it looks like you took who knows how many humans and put them together..."
 	icon = 'icons/mob/simple_animal/nightmaremonsters.dmi'
@@ -19,7 +19,7 @@
 	faction = "meat"
 	pass_flags = PASS_FLAG_TABLE
 	move_to_delay = 3
-	speed = 0.5
+	movement_cooldown = 4
 	bleed_colour = "#5c0606"
 	break_stuff_probability = 25
 	pry_time = 4 SECONDS
@@ -61,7 +61,6 @@
 	faction = "meat"
 	pass_flags = PASS_FLAG_TABLE
 	move_to_delay = 3
-	speed = 0.5
 	bleed_colour = "#5c0606"
 	break_stuff_probability = 25
 	pry_time = 4 SECONDS
@@ -94,7 +93,6 @@
 	faction = "meat"
 	pass_flags = PASS_FLAG_TABLE
 	move_to_delay = 3
-	speed = 0.5
 	bleed_colour = "#5c0606"
 	break_stuff_probability = 25
 	pry_time = 8 SECONDS
@@ -127,7 +125,6 @@
 	faction = "meat"
 	pass_flags = PASS_FLAG_TABLE
 	move_to_delay = 3
-	speed = 0.5
 	bleed_colour = "#5c0606"
 	break_stuff_probability = 25
 	pry_time = 8 SECONDS
@@ -162,7 +159,6 @@
 	faction = "meat"
 	pass_flags = PASS_FLAG_TABLE
 	move_to_delay = 3
-	speed = 0.5
 	bleed_colour = "#5c0606"
 	break_stuff_probability = 25
 	pry_time = 8 SECONDS
@@ -195,7 +191,6 @@
 	faction = "meat"
 	pass_flags = PASS_FLAG_TABLE
 	move_to_delay = 3
-	speed = 0.5
 	bleed_colour = "#5c0606"
 	break_stuff_probability = 25
 	pry_time = 8 SECONDS
@@ -228,7 +223,6 @@
 	faction = "meat"
 	pass_flags = PASS_FLAG_TABLE
 	move_to_delay = 3
-	speed = 0.5
 	bleed_colour = "#5c0606"
 	break_stuff_probability = 25
 	pry_time = 8 SECONDS

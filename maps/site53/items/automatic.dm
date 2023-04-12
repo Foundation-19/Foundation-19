@@ -1,39 +1,6 @@
 /obj/item/gun/projectile/automatic/scp
 	icon = 'icons/obj/gun.dmi'
 
-/obj/item/gun/projectile/automatic/scp/p90
-	name = "P90 SMG"
-	desc = "A submachine gun sample of the 2010s, with a scope mounted on top"
-	icon_state = "p90"
-	item_state = "p90"
-	w_class = ITEM_SIZE_HUGE
-	force = 10
-	caliber = "10mm"
-	slot_flags = SLOT_BELT|SLOT_BACK
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
-	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/scp/p90_mag
-	allowed_magazines = /obj/item/ammo_magazine/scp/p90_mag
-	wielded_item_state = "p90-wielded"
-
-	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty
-	firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
-		list(mode_name="3-round bursts", burst=3, fire_delay=0, one_hand_penalty=3, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.5, 0.7)),
-		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.2, 0.6, 0.8), autofire_enabled=1),
-		)
-
-/obj/item/gun/projectile/automatic/scp/p90/update_icon()
-	..()
-	if(ammo_magazine)
-		icon_state = "p90"
-	else
-		icon_state = "p90-empty"
-	return
-
-/obj/item/gun/projectile/automatic/scp/p90
-	magazine_type = /obj/item/ammo_magazine/scp/p90_mag/rubber
-
 /obj/item/gun/projectile/automatic/scp/m16
 	name = "M16A2"
 	desc = "A Foundation-standard service rifle that takes 5.56x45mm straight magazines. Like many reliable firearms of old, the Foundation has found a use for them in the hands of Security Department operatives."

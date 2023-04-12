@@ -26,35 +26,21 @@
 
 // SETUP
 
-GLOBAL_VAR(scp3349_precedentA)
-GLOBAL_VAR(scp3349_precedentB)
-
-GLOBAL_VAR(scp3349_fake_precedentA)
-GLOBAL_VAR(scp3349_fake_precedentB)
+GLOBAL_VAR(scp3349_precedent)
+GLOBAL_VAR(scp3349_fake_precedent)
 
 /proc/initialize_scp3349_precedents()
 
-	// group A is common medicines, group B is standard metals
-	var/list/groupA = list(
+	// common medicines
+	var/list/reagents = list(
 		/datum/reagent/medicine/inaprovaline,
-		/datum/reagent/medicine/bicaridine,
 		/datum/reagent/medicine/kelotane,
 		/datum/reagent/medicine/dylovene,
 		/datum/reagent/medicine/dexalin
 	)
 
-	var/list/groupB = list(
-		/datum/reagent/aluminium,
-		/datum/reagent/copper,
-		/datum/reagent/iron,
-		/datum/reagent/tungsten
-	)
-
-	GLOB.scp3349_precedentA = pick_n_take(groupA)
-	GLOB.scp3349_precedentB = pick_n_take(groupB)
-
-	GLOB.scp3349_fake_precedentA = pick_n_take(groupA)
-	GLOB.scp3349_fake_precedentB = pick_n_take(groupB)
+	GLOB.scp3349_precedent = pick_n_take(reagents)
+	GLOB.scp3349_fake_precedent = pick_n_take(reagents)
 
 // PAPER
 

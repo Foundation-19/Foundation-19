@@ -6,8 +6,6 @@
 
 /// A list of all changeling power types, minus the base type.
 GLOBAL_LIST_INIT(changeling_powers, subtypesof(/datum/power/changeling))
-/// A pool of instantiated changeling powers that are added and removed from the changeling datum.
-GLOBAL_LIST_EMPTY(changeling_power_instances)
 /// A list of absorbed_dna datums present in the "hivemind" for all changelings to access.
 GLOBAL_LIST_EMPTY(hivemind_bank)
 
@@ -34,28 +32,28 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 /// Changeling powers require a carbon user, and check for several specific things such as chemical charges. See the full proc for more details.
 /datum/power/changeling/can_activate(mob/living/user)
-	if (!mind?.changeling || !iscarbon(mind.current))
+	if(!mind?.changeling || !iscarbon(mind.current))
 		return
 
 	var/mob/living/carbon/current = user
 	var/datum/changeling/changeling = mind.changeling
 
-	if (current.isMonkey() && !allow_during_lesser_form)
+	if(current.isMonkey() && !allow_during_lesser_form)
 		to_chat(user, SPAN_WARNING("Our current form is too primitive to do this."))
 		return
-	if (current.stat > max_stat)
+	if(current.stat > max_stat)
 		to_chat(user, SPAN_WARNING("We are incapacitated."))
 		return
-	if (changeling.absorbed_dna.len < required_dna)
+	if(changeling.absorbed_dna.len < required_dna)
 		to_chat(user, SPAN_WARNING("We require at least [required_dna] sample\s of compatible DNA."))
 		return
-	if (changeling.chem_charges < required_chems)
+	if(changeling.chem_charges < required_chems)
 		to_chat(user, SPAN_WARNING("We require at least [required_chems] unit\s of chemicals to do that!"))
 		return
-	if (changeling.genetic_damage > max_genetic_damage)
+	if(changeling.genetic_damage > max_genetic_damage)
 		to_chat(user, SPAN_WARNING("Our genomes are still reassembling. We need time to recover first."))
 		return
-	if (current.incapacitated() && !allow_incapacitated)
+	if(current.incapacitated() && !allow_incapacitated)
 		to_chat(user, SPAN_WARNING("We cannot use this ability in our current state."))
 		return
 
@@ -91,7 +89,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 /datum/power/changeling/absorb_dna/can_activate(mob/living/carbon/human/user)
 	. = ..(user)
-	if (!istype(user))
+	if(!istype(user))
 		return FALSE
 	var/obj/item/grab/G = user.get_active_hand()
 	if(!istype(G))
@@ -129,30 +127,30 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	do_absorb(1, G.affecting, G.affecting.get_organ(mind.current.zone_sel.selecting))
 
 /datum/power/changeling/absorb_dna/proc/do_absorb(stage, mob/living/target, obj/item/organ/external/affecting)
-	switch (stage)
-		if (1)
+	switch(stage)
+		if(1)
 			to_chat(mind.current, SPAN_NOTICE("This creature is compatible. We must hold still..."))
 			to_chat(target, SPAN_WARNING("\The [mind.current] tightens their grip."))
-		if (2)
+		if(2)
 			mind.current.visible_message(
 				SPAN_WARNING(SPAN_BOLD("\The [mind.current] extends a proboscis!")),
 				SPAN_NOTICE("We extend a proboscis.")
 			)
-		if (3)
+		if(3)
 			mind.current.visible_message(
 				SPAN_WARNING(SPAN_BOLD("\The [mind.current] stabs \the [target] with the proboscis and begins sucking out their fluids!")),
 				SPAN_NOTICE("We stab \the [target] with the proboscis, and begin draining their fluids.")
 			)
-			if (!target.mind?.changeling)
+			if(!target.mind?.changeling)
 				to_chat(target, SPAN_DANGER(FONT_LARGE("You feel a sharp, stabbing pain in your \the [affecting.name]. Your mind is exposed to a hundred voices. They want you to join them. Your memories are slowly stripped away like an old bandage as you fight to resist.")))
 			else
 				to_chat(target, SPAN_DANGER(FONT_LARGE("Abruptly, we are in the presence of another collective. We recoil away as they press their will onto ours. Gradually, our voices begin to go silent as we are drawn away from ourselves.")))
 			affecting.take_external_damage(39, 0, DAM_SHARP, "large organic needle")
-		if (4)
+		if(4)
 			chomp(target)
 			return
 	SSstatistics.add_field_details("changeling_powers", "A[stage]")
-	if (!do_after(mind.current, stage_time, target) || !can_activate(mind.current))
+	if(!do_after(mind.current, stage_time, target) || !can_activate(mind.current))
 		to_chat(mind.current, SPAN_WARNING("Our absorption of \the [target] has been interrupted!"))
 		mind.changeling.is_absorbing = FALSE
 		return FALSE
@@ -164,7 +162,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 		SPAN_WARNING(SPAN_BOLD("\The [mind.current] sucks the fluids from \the [target]!")),
 		SPAN_NOTICE("We have absorbed \the [target]!")
 	)
-	if (!target.mind?.changeling)
+	if(!target.mind?.changeling)
 		to_chat(target, SPAN_DANGER(FONT_LARGE("You no longer have the strength to think. Your thoughts meld with the collective as they are consumed in an instant, subsumed into something that has outgrown individuality.")))
 	else
 		to_chat(target, SPAN_DANGER(FONT_LARGE("We join with another like us. We circle one another in the dark void of a shared mind, and are slowly drawn together, inexorably, until they fall upon us. They descend on us like an insect in a spider's web.")))
@@ -189,7 +187,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 			to_chat(mind.current, SPAN_NOTICE(SPAN_ITALIC("We draw the other collective into our mind. We circle one another in the dark of ourselves, until we are drawn together, and we feast. Afterwards, we emerge, fat with new memories.")))
 			if(M.changeling.absorbed_dna)
 				for(var/datum/absorbed_dna/dna_data in M.changeling.absorbed_dna) //steal all their loot
-					if (mind.changeling.get_DNA(dna_data.name))
+					if(mind.changeling.get_DNA(dna_data.name))
 						continue
 					mind.changeling.absorb_DNA(dna_data)
 					mind.changeling.absorbed_count++
@@ -236,7 +234,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 /datum/power/changeling/transform/can_activate(mob/living/user)
 	. = ..()
-	if (.)
+	if(.)
 		var/list/names = list()
 		for(var/datum/absorbed_dna/DNA in mind.changeling.absorbed_dna)
 			names += "[DNA.name]"
@@ -300,24 +298,24 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 /datum/power/changeling/regenerative_stasis/can_activate(mob/living/user)
 	. = ..(user)
-	if (.)
-		if (state == CHANGELING_STASIS_WAITING)
+	if(.)
+		if(state == CHANGELING_STASIS_WAITING)
 			to_chat(user, SPAN_WARNING("We are still gathering our strength."))
 			return FALSE
-		else if (user.stat != DEAD && !state)
-			if (alert(user, "Are we sure we wish to fake our own death?", name, "Yes", "No") == "No")
+		else if(user.stat != DEAD && !state)
+			if(alert(user, "Are we sure we wish to fake our own death?", name, "Yes", "No") == "No")
 				return FALSE
 
 /datum/power/changeling/regenerative_stasis/activate(mob/living/user)
-	if (!state)
+	if(!state)
 		to_chat(user, SPAN_NOTICE("We enter stasis, and begin to gather our energy. We will attempt to regenerate our form..."))
 		user.status_flags |= FAKEDEATH
 		user.UpdateLyingBuckledAndVerbStatus()
 		state = CHANGELING_STASIS_WAITING
 		addtimer(CALLBACK(src, .proc/make_ready, user), rand(800, 2000))
-	else // No need to check for (state == 2) here due to logic in can_activate()
+	else // No need to check for(state == 2) here due to logic in can_activate()
 		var/mob/living/carbon/C = user
-		if (C.stat == DEAD)
+		if(C.stat == DEAD)
 			to_chat(C, SPAN_NOTICE("We rise from death."))
 		else
 			to_chat(C, SPAN_NOTICE("We regenerate our wounds, and rise from our stasis."))
@@ -338,9 +336,9 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	return state
 
 /datum/power/changeling/regenerative_stasis/proc/make_ready(mob/living/user)
-	if (user && state != 2)
+	if(user && state != 2)
 		var/mob/the_collective = find_dead_player(LAST_CKEY(user), TRUE) // Try and catch a ghost if we can
-		if (!the_collective)
+		if(!the_collective)
 			the_collective = user // Backup for if we're still alive
 		to_chat(the_collective, SPAN_NOTICE(FONT_LARGE("We are ready to rise! Re-use Regenerative Stasis when you are ready to return to life.")))
 		sound_to(the_collective, sound('sound/effects/wind/spooky1.ogg'))
@@ -361,7 +359,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 /datum/power/changeling/hive_upload/can_activate(mob/living/user)
 	. = ..(user)
-	if (.)
+	if(.)
 		var/list/names = list()
 		for(var/datum/absorbed_dna/DNA in mind.changeling.absorbed_dna)
 			var/valid = TRUE
@@ -408,7 +406,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 /datum/power/changeling/hive_download/can_activate(mob/living/user)
 	. = ..(user)
-	if (.)
+	if(.)
 		var/list/names = list()
 		for(var/datum/absorbed_dna/DNA in GLOB.hivemind_bank)
 			if(!(mind.changeling.get_DNA(DNA.name)))
@@ -443,38 +441,38 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 /datum/power/changeling/sting/can_activate(mob/living/user)
 	. = ..(user)
-	if (.)
+	if(.)
 		var/list/victims = list()
 		for	(var/mob/living/carbon/human/C in oview(mind.changeling.sting_range))
 			victims += C
-		if (!victims.len)
+		if(!victims.len)
 			to_chat(user, SPAN_WARNING("There are no valid targets in range."))
 			return FALSE
 
 		var/mob/living/carbon/human/T = input(user, "Who will we sting?") as null|anything in victims
 
-		if (!T)
+		if(!T)
 			return FALSE
 		var/obj/item/organ/external/affecting = T.get_organ(user.zone_sel.selecting)
-		if (!affecting)
+		if(!affecting)
 			to_chat(user, SPAN_WARNING("\The [T] is missing that limb."))
 			return FALSE
-		if (T.isSynthetic())
+		if(T.isSynthetic())
 			to_chat(user, SPAN_WARNING("\The [T] is synthetic."))
 			return FALSE
-		if (BP_IS_ROBOTIC(affecting))
+		if(BP_IS_ROBOTIC(affecting))
 			to_chat(user, SPAN_WARNING("\The [T]'s [affecting.name] appears to be robotic. We must target a different limb."))
 			return FALSE
-		if (!(T in view(mind.changeling.sting_range)))
+		if(!(T in view(mind.changeling.sting_range)))
 			return FALSE
-		if (!user.sting_can_reach(T, mind.changeling.sting_range))
+		if(!user.sting_can_reach(T, mind.changeling.sting_range))
 			return FALSE
 
 		target = T
 		target_limb = affecting
 
 /datum/power/changeling/sting/activate(mob/living/user)
-	if (!target)
+	if(!target)
 		return
 	mind.changeling.sting_range = 1
 	if(stealthy)
@@ -488,16 +486,16 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	admin_attack_log(user, target, "Stung their victim using [name]", "Was stung using [name]", "stung using [name]")
 
 	for(var/obj/item/clothing/clothes in list(target.head, target.wear_mask, target.wear_suit, target.w_uniform, target.gloves, target.shoes))
-		if(istype(clothes) && (clothes.body_parts_covered & target_limb.body_part) && (clothes.item_flags & ITEM_FLAG_THICKMATERIAL))
+		if(istype(clothes) &&(clothes.body_parts_covered & target_limb.body_part) &&(clothes.item_flags & ITEM_FLAG_THICKMATERIAL))
 			to_chat(src, SPAN_WARNING("Our sting deflects off of \the [target]'s armor."))
-			if (!stealthy)
+			if(!stealthy)
 				target.visible_message(
 					SPAN_DANGER("The organic shard deflects off of \the [target]'s armor!"),
 					SPAN_DANGER("Your armor deflects the organic shard!")
 				)
 			return //thick clothes will protect from the sting
 
-	if (!stealthy)
+	if(!stealthy)
 		target.visible_message(
 			SPAN_DANGER("The organic shard embeds itself into \the [target]!"),
 			SPAN_DANGER("The organic shard embeds itself into your [target_limb.name]!")
@@ -546,7 +544,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	SSstatistics.add_field_details("changeling_powers", "BS")
 
 /datum/power/changeling/sting/blind_sting/proc/unblind(mob/living/carbon/human/target)
-	if (target)
+	if(target)
 		target.disabilities &= ~NEARSIGHTED
 
 
@@ -576,11 +574,11 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	allow_during_lesser_form = TRUE
 
 /datum/power/changeling/sting/extract_dna/sting_effects()
-	if ((MUTATION_HUSK in target.mutations) || (target.species.species_flags & SPECIES_FLAG_NO_SCAN))
+	if((MUTATION_HUSK in target.mutations) ||(target.species.species_flags & SPECIES_FLAG_NO_SCAN))
 		to_chat(mind.current, SPAN_WARNING("We cannot extract DNA from this creature!"))
 		return 0
 
-	if (target.species.species_flags & SPECIES_FLAG_NEED_DIRECT_ABSORB)
+	if(target.species.species_flags & SPECIES_FLAG_NEED_DIRECT_ABSORB)
 		to_chat(mind.current, SPAN_WARNING("This species must be absorbed directly."))
 		return
 
@@ -605,7 +603,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	SSstatistics.add_field_details("changeling_powers", "HS")
 
 /datum/power/changeling/sting/hallucination_sting/proc/good_stuff(mob/living/carbon/human/victim)
-	if (victim)
+	if(victim)
 		victim.hallucination(400, 80)
 
 
@@ -641,7 +639,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	var/consumption_tick = 0
 
 /datum/power/changeling/mimic_voice/activate(mob/living/user)
-	if (mind.changeling.mimicing)
+	if(mind.changeling.mimicing)
 		to_chat(user, SPAN_NOTICE("We return our voice to normal."))
 		mind.changeling.mimicing = null
 		STOP_PROCESSING(SSobj, src)
@@ -659,7 +657,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 /datum/power/changeling/mimic_voice/Process()
 	consumption_tick++
-	if (consumption_tick >= 4) // Subtract a chem charge every 4 ticks. If upgraded regen has been taken, they will slowly outpace it, but not by much!
+	if(consumption_tick >= 4) // Subtract a chem charge every 4 ticks. If upgraded regen has been taken, they will slowly outpace it, but not by much!
 		mind.changeling.chem_charges--
 		consumption_tick = 0
 
@@ -677,20 +675,20 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 /datum/power/changeling/lesser_form/can_activate(mob/living/user)
 	var/mob/living/carbon/human/H = user
-	if (!istype(H))
+	if(!istype(H))
 		return FALSE
-	if (H.isMonkey()) // Give a warning if they try to use it while existing as a monkey, just so they know
+	if(H.isMonkey()) // Give a warning if they try to use it while existing as a monkey, just so they know
 		to_chat(user, SPAN_WARNING("Use your Transform ability to exit this form."))
 		return FALSE
 	. = ..(user)
-	if (.)
-		if (H.has_brain_worms())
+	if(.)
+		if(H.has_brain_worms())
 			to_chat(user, SPAN_WARNING("We cannot use this ability at the present time!"))
 			return FALSE
-		else if (!H.species.primitive_form)
+		else if(!H.species.primitive_form)
 			to_chat(user, SPAN_WARNING("We cannot revert to a lesser body in this form!"))
 			return FALSE
-		else if (alert(H, "Are you sure you want to enter a Lesser Form?", name, "Yes", "No") != "Yes") // And finally a confirmation prompt
+		else if(alert(H, "Are you sure you want to enter a Lesser Form?", name, "Yes", "No") != "Yes") // And finally a confirmation prompt
 			return FALSE
 
 /datum/power/changeling/lesser_form/activate(mob/living/user)
@@ -717,7 +715,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 /datum/power/changeling/boost_range/can_activate(mob/living/user)
 	. = ..(user)
-	if (. && mind.changeling.sting_range > 1)
+	if(. && mind.changeling.sting_range > 1)
 		to_chat(user, SPAN_WARNING("We are already prepared to launch our next sting."))
 		return FALSE
 
@@ -800,7 +798,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 /datum/power/changeling/digital_camouflage/activate(mob/living/user)
 	user.digitalcamo = !user.digitalcamo
-	if (user.digitalcamo)
+	if(user.digitalcamo)
 		to_chat(user, SPAN_NOTICE("We distort our form to prevent AI tracking."))
 	else
 		to_chat(user, SPAN_NOTICE("We return our form to normal."))
@@ -809,7 +807,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	return mind.current.digitalcamo
 
 
-/// Heals 10 of brute/fire/tox/oxy damage per second for 10 seconds. Can't be "restarted" while it's already active. (unintentional?)
+/// Heals 10 of brute/fire/tox/oxy damage per second for 10 seconds. Can't be "restarted" while it's already active.(unintentional?)
 /datum/power/changeling/rapid_regeneration
 	name = "Rapid Regeneration"
 	desc = "We evolve the ability to rapidly regenerate, negating the need for stasis."
@@ -824,7 +822,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 /datum/power/changeling/rapid_regeneration/can_activate(mob/living/user)
 	. = ..(user)
-	if (. && active_ticks)
+	if(. && active_ticks)
 		to_chat(user, SPAN_WARNING("We are already regenerating."))
 		return FALSE
 
@@ -839,7 +837,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	return active_ticks
 
 /datum/power/changeling/rapid_regeneration/proc/do_regen(mob/living/carbon/human/H)
-	if (!istype(H))
+	if(!istype(H))
 		active_ticks = 0
 		return
 	active_ticks--
@@ -848,7 +846,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	H.adjustOxyLoss(-10)
 	H.adjustFireLoss(-10)
 	H.playsound_local(H, 'sound/effects/singlebeat.ogg', 50, FALSE, is_global = TRUE) // Audio feedback to highlight each regen tick
-	if (active_ticks)
+	if(active_ticks)
 		addtimer(CALLBACK(src, .proc/do_regen, H), 1 SECONDS) // Repeat every second until we're fully regenerated
 	else
 		to_chat(H, SPAN_NOTICE("We have finished regenerating."))
@@ -862,12 +860,9 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	set category = "Changeling"
 	set desc = "Level up!"
 
-	if(!usr || !usr.mind || !usr.mind.changeling)	return
+	if(!usr || !usr.mind || !usr.mind.changeling)
+		return
 	src = usr.mind.changeling
-
-	if(!LAZYLEN(GLOB.changeling_power_instances))
-		for(var/P in GLOB.changeling_powers)
-			GLOB.changeling_power_instances += new P()
 
 	var/dat = "<html><head><title>Changeling Evolution Menu</title></head>"
 
@@ -896,7 +891,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 						var maintable_data = document.getElementById('maintable_data');
 						var ltr = maintable_data.getElementsByTagName("tr");
-						for ( var i = 0; i < ltr.length; ++i )
+						for( var i = 0; i < ltr.length; ++i )
 						{
 							try{
 								var tr = ltr\[i\];
@@ -909,7 +904,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 								var search = lsearch\[0\];
 								//var inner_span = li.getElementsByTagName("span")\[1\] //Should only ever contain one element.
 								//document.write("<p>"+search.innerText+"<br>"+filter+"<br>"+search.innerText.indexOf(filter))
-								if ( search.innerText.toLowerCase().indexOf(filter) == -1 )
+								if( search.innerText.toLowerCase().indexOf(filter) == -1 )
 								{
 									//document.write("a");
 									//ltr.removeChild(tr);
@@ -928,7 +923,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 				}
 
-				function expand(id,name,desc,helptext,power,ownsthis){
+				function expand(id,name,desc,helptext,power_type,ownsthis){
 
 					clearAll();
 
@@ -944,7 +939,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 					if(!ownsthis)
 					{
-						body += "<a href='?src=\ref[src];P="+power+"'>Evolve</a>"
+						body += "<a href='?src=\ref[src];P="+power_type+"'>Evolve</a>"
 					}
 
 					body += "</td><td align='center'>";
@@ -1048,7 +1043,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 
 	"}
 
-	//body tag start + onload and onkeypress (onkeyup) javascript event calls
+	//body tag start + onload and onkeypress(onkeyup) javascript event calls
 	dat += "<body onload='selectTextField(); updateSearch();' onkeyup='updateSearch();'>"
 
 	//title + search bar
@@ -1079,19 +1074,19 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 		<table width='560' align='center' cellspacing='0' cellpadding='5' id='maintable_data'>"}
 
 	var/i = 1
-	for(var/datum/power/changeling/P in GLOB.changeling_power_instances)
-		if (P.type == /datum/power/changeling/sting) // This is disgusting.
+	for(var/power_type in GLOB.changeling_powers)
+		if(power_type == /datum/power/changeling/sting)
 			continue
-		var/ownsthis = 0
 
-		if(P in purchased_powers)
-			ownsthis = 1
-
+		var/ownsthis = FALSE
+		if(locate(power_type) in purchased_powers)
+			ownsthis = TRUE
 
 		var/color = "#e6e6e6"
 		if(i%2 == 0)
 			color = "#f2f2f2"
 
+		var/datum/power/changeling/C = power_type
 
 		dat += {"
 
@@ -1099,9 +1094,9 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 				<td align='center' bgcolor='[color]'>
 					<span id='notice_span[i]'></span>
 					<a id='link[i]'
-					onmouseover='expand("item[i]","[P.name]","[P.desc]","[P.helptext]","[P]",[ownsthis])'
+					onmouseover='expand("item[i]","[initial(C.name)]","[initial(C.desc)]","[initial(C.helptext)]","[C]",[ownsthis])'
 					>
-					<span id='search[i]'><b>Evolve [P] - Cost: [ownsthis ? "Purchased" : P.genome_cost]</b></span>
+					<span id='search[i]'><b>Evolve [initial(C.name)] - Cost: [ownsthis ? "Purchased" : initial(C.genome_cost)]</b></span>
 					</a>
 					<br><span id='item[i]'></span>
 				</td>
@@ -1136,64 +1131,49 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 		var/datum/mind/M = usr.mind
 		if(!istype(M))
 			return
-		purchasePower(M, href_list["P"])
-		call(/datum/changeling/proc/EvolutionMenu)()
+		var/power_type = text2path(href_list["P"])
+		purchasePower(M, power_type)
+		EvolutionMenu()
 
-
-
-/datum/changeling/proc/purchasePower(datum/mind/M, Pname, remake_verbs = 1, silent = FALSE)
+/datum/changeling/proc/purchasePower(datum/mind/M, datum/power/changeling/power_type, remake_verbs = TRUE, silent = FALSE)
 	if(!M || !M.changeling)
 		return
 
-	var/datum/power/changeling/Thepower = Pname
-
-
-	for (var/datum/power/changeling/P in GLOB.changeling_power_instances)
-		if(P.name == Pname)
-			Thepower = P
-			break
-
-
-	if(Thepower == null)
+	if(!ispath(power_type))
 		to_chat(M.current, SPAN_DEBUG("This is awkward.  Changeling power purchase failed, please report this bug to a coder!"))
 		return
 
-	if(Thepower in purchased_powers)
+	if(locate(power_type) in purchased_powers)
 		to_chat(M.current, SPAN_WARNING("We have already evolved this ability!"))
 		return
 
-
-	if(genetic_points < Thepower.genome_cost)
+	if(genetic_points < initial(power_type.genome_cost))
 		to_chat(M.current, SPAN_WARNING("We cannot evolve this... yet.  We must acquire more DNA."))
 		return
 
-	genetic_points -= Thepower.genome_cost
-
-	add_power(Thepower, M, silent, remake_verbs)
+	genetic_points -= initial(power_type.genome_cost)
+	add_power(power_type, M, silent, remake_verbs)
 
 /// Adds the provided power to this changeling datum's purchased powers.
-/datum/changeling/proc/add_power(datum/power/changeling/C, datum/mind/M, silent, remake_verbs = FALSE)
-	purchased_powers += C
-	C.mind = M
-	if (C.has_button)
-		//var/datum/action/changeling_power/A = new C.action_type
-		if (!M.current.ability_master)
+/datum/changeling/proc/add_power(power_type, datum/mind/M, silent, remake_verbs = FALSE)
+	var/datum/power/changeling/grant_power = new power_type
+	purchased_powers += grant_power
+	grant_power.mind = M
+	if(grant_power.has_button)
+		if(!M.current.ability_master)
 			M.current.ability_master = new(null, M.current)
 		M.current.ability_master.name = "Powers"
 		M.current.ability_master.icon_state = "grey_spell_base"
 		M.current.ability_master.open_state = "changeling_open"
 		M.current.ability_master.closed_state = "genetics_closed"
-		M.current.ability_master.add_changeling_power(C)
-		/*A.Grant(M.current)
-		A.power = C
-		C.action = A*/
+		M.current.ability_master.add_changeling_power(grant_power)
 
-	if (!silent)
-		to_chat(M.current, SPAN_NOTICE("We have evolved the [C.name] ability."))
+	if(!silent)
+		to_chat(M.current, SPAN_NOTICE("We have evolved the [grant_power.name] ability."))
 
 	if(remake_verbs)
 		M.current.make_changeling()
-	C.on_add()
+	grant_power.on_add()
 
 #undef CHANGELING_STASIS_NONE
 #undef CHANGELING_STASIS_WAITING
