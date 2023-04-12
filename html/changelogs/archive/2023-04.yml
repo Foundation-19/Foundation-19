@@ -24,3 +24,42 @@
   - soundadd: SCP-3349 heartbeat
   - imageadd: SCP-3349 EKG report
   - code_imp: carbon Life() has a signal now, please use it when possible.
+2023-04-07:
+  EgorDinamit:
+  - bugfix: Changelings can use their abilities once again.
+  cheesePizza2:
+  - balance: SCP-3349 is easier to test with
+2023-04-08:
+  EgorDinamit:
+  - bugfix: Psionic powers will properly update whenever faculty levels are changed.
+  cheesePizza2:
+  - admin: Event manager panel lets you easily view the variables of running events\
+  - bugfix: e-mail spam event was broken. Now it isn't.
+  - balance: Rebalances and reworks memetic spasm random event.
+  - soundadd: Extremely irritating sound thanks to John Wiki-man (Seven7#6156)!
+2023-04-10:
+  EgorDinamit:
+  - tweak: SCP-173 can now open/break lockers and crates.
+  - bugfix: Full breach on area will now force-open blastdoors. This is mainly used
+      by 173's breach effect.
+  Yawet330:
+  - tweak: Adjusts hitchance on limbs again, to hopefully make combat feel better.
+  checkraisefold:
+  - bugfix: Synthetic organs show up correctly in character setup.
+2023-04-12:
+  EgorDinamit:
+  - rscadd: Updated map with SCP class signs in front of their rooms.
+  - rscadd: Placed more navigation signs around HCZ and LCZ. Should make it easier
+      to find the EZ now.
+  - rscadd: Certain airlocks leading to SCP rooms(mostly HCZ) were renamed from "Secure
+      Airlock" to their respective SCP code.
+  - bugfix: Fixed SCP-173 cage.
+  - tweak: SCP-173 will now attempt to damage its cage upon trying to move, instead
+      of clicking on it.
+  - bugfix: You can aim guns at people once again without "being blind".
+  - admin: VV panel has been updated.
+  - bugfix: SCP-106 code has been reworked, all of it. This probably does not concern
+      normal players, though.
+  - tweak: SCP-106 has been given more visual and audio effects to its abilities.
+  - tweak: Femur breaker is now more "interesting" when used. Shove your friend in
+      there, NOW!

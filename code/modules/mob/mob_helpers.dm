@@ -91,13 +91,13 @@
 
 //The base miss chance for the different defence zones
 var/list/global/base_miss_chance = list(
-	BP_HEAD =   65,
-	BP_CHEST =  5,
+	BP_HEAD =   25,
+	BP_CHEST =  1,
 	BP_GROIN =  25,
 	BP_L_ARM =  35,
 	BP_R_ARM =  35,
-	BP_L_HAND = 50,
-	BP_R_HAND = 50,
+	BP_L_HAND = 45,
+	BP_R_HAND = 45,
 	BP_L_LEG =  30,
 	BP_R_LEG =  30,
 	BP_L_FOOT = 45,

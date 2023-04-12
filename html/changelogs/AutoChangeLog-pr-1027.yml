@@ -1,0 +1,5 @@
+author: TheDarkElites
+delete-after: true
+changes:
+  - bugfix: 'fixes #1025 (cant see ID cards)'
+  - bugfix: 'fixes #1024 (cant examine your own equipment in the dark)'

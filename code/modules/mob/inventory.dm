@@ -256,6 +256,12 @@ var/list/slot_equipment_priority = list( \
 			break
 	return slot
 
+//gets the object or mob whos loc is turf and not another object of the passed moveable atom. If the passed moveable atom is already on turf, it returns itself.
+/atom/proc/get_holder_or_object()
+	if(isturf(loc) || !ismovable(loc))
+		return src
+	return loc.get_holder_or_object()
+
 //This differs from remove_from_mob() in that it checks if the item can be unequipped first. Use drop_from_inventory if you don't want to check.
 /mob/proc/unEquip(obj/item/I, atom/target)
 	if(!canUnEquip(I))

@@ -11,7 +11,7 @@
 	item_state = "voxslug" // For the lack of a better sprite...
 	icon_living = "brainslug"
 	icon_dead = "brainslug_dead"
-	speed = 5
+	movement_cooldown = 3
 	a_intent = I_HURT
 	status_flags = CANPUSH
 	natural_weapon = /obj/item/natural_weapon/bite/weak
