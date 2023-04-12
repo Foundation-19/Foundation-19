@@ -111,7 +111,7 @@
 
 	if(!(aiming_with in owner) || (istype(owner, /mob/living/carbon/human) && (owner.l_hand != aiming_with && owner.r_hand != aiming_with)))
 		to_chat(owner, SPAN_WARNING("You must keep hold of your weapon!"))
-	else if(owner.can_see())
+	else if(!owner.can_see())
 		to_chat(owner, SPAN_WARNING("You are blind and cannot see your target!"))
 	else if(!aiming_at || !istype(aiming_at.loc, /turf))
 		to_chat(owner, SPAN_WARNING("You have lost sight of your target!"))

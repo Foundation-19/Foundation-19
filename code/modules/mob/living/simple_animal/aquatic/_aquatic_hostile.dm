@@ -3,7 +3,7 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/fish
 	turns_per_move = 5
 	natural_weapon = /obj/item/natural_weapon/bite
-	speed = 4
+	movement_cooldown = 5
 	mob_size = MOB_MEDIUM
 
 	// They only really care if there's water around them or not.

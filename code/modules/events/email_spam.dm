@@ -6,7 +6,7 @@
 	next_spam_time = world.time
 
 /datum/event/email_spam/tick()
-	if(world.time > next_spam_time)
+	if(world.time > (next_spam_time + 5 MINUTES))
 		//if there's no spam managed to get to receiver for five minutes, give up
 		kill()
 		return

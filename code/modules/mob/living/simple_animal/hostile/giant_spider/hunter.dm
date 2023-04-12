@@ -16,7 +16,7 @@
 
 	// poison_per_bite = 5
 
-	movement_cooldown = 0 // Hunters are FAST.
+	movement_cooldown = 2 // Hunters are FAST.
 
 	ai_holder_type = /datum/ai_holder/simple_animal/melee
 

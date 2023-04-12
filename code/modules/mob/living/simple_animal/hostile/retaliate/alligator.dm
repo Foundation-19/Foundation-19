@@ -12,7 +12,7 @@
 	a_intent = I_HURT
 	health = 125
 	maxHealth = 125
-	speed = 5
+	movement_cooldown = 5
 	glide_size = 2
 	natural_weapon = /obj/item/natural_weapon/bite/medium
 	pry_time = 6 SECONDS
