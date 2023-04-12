@@ -211,7 +211,7 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define crash_with(X) crash_at(X, __FILE__, __LINE__)
 
-#define isscp106(A) istype(A, /mob/living/carbon/human/scp106)
+#define isscp106(A) istype(A, /mob/living/carbon/human/scp_106)
 
 #define isscp049(A) istype(A, /mob/living/carbon/human/scp049)
 

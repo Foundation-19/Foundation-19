@@ -1,4 +1,0 @@
-author: checkraisefold
-delete-after: true
-changes:
-  - bugfix: Synthetic organs show up correctly in character setup.
