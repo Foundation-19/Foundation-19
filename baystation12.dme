@@ -3435,7 +3435,6 @@
 #include "maps\site53\items\storage.dm"
 #include "maps\site53\items\toys.dm"
 #include "maps\site53\items\clothing\platecarriers.dm"
-#include "maps\site53\structures\turfs.dm"
 #include "maps\~mapsystem\map_preferences.dm"
 #include "maps\~mapsystem\map_ranks.dm"
 #include "maps\~mapsystem\maps.dm"
