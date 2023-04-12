@@ -32,15 +32,11 @@ GLOBAL_LIST_EMPTY(scp2343s)
 			mutations.Add(MUTATION_XRAY)
 			update_mutations()
 			update_sight()
-	if(target)
-		target = null
 
 /mob/living/carbon/human/scp2343/Logout()
 	. = ..()
 	if(mind)
 		mind = null
-	if(target)
-		target = null
 
 /mob/living/carbon/human/scp2343/Initialize()
 	update_icons()

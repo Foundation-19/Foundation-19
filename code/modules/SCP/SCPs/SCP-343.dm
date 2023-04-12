@@ -11,6 +11,7 @@ GLOBAL_LIST_EMPTY(scp343s)
 	icon = 'icons/SCP/scp-343.dmi'
 	icon_state = null
 	status_flags = NO_ANTAG
+	var/mob/living/carbon/human/target = null
 
 
 /datum/scp/scp_343
