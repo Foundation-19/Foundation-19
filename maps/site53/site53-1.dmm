@@ -4281,7 +4281,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/botany)
 "jO" = (
-/obj/machinery/vending/hydroseeds,
+/obj/machinery/vending/hydroseeds/priced,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/botany)
