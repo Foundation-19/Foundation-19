@@ -59,98 +59,98 @@
 
 /* Foundation 19 Edits for Reshuffling of files*/
 
-/obj/structure/sign/scp/topside/SecureArealv1mtf
+/obj/structure/sign/SecureArealv1mtf
 	icon_state = "secure"
 	desc = "A warning sign which reads: CAUTION, SECURE AREA. LEVEL 1+ SECURITY CLEARANCE REQUIRED."
 
-/obj/structure/sign/scp/topside/SecureArealv2mtf
+/obj/structure/sign/SecureArealv2mtf
 	icon_state = "secure"
 	desc = "A warning sign which reads: CAUTION, SECURE AREA. LEVEL 2+ SECURITY CLEARANCE REQUIRED."
 
-/obj/structure/sign/scp/topside/SecureArealv3mtf
+/obj/structure/sign/SecureArealv3mtf
 	icon_state = "secure"
 	desc = "A warning sign which reads: CAUTION, SECURE AREA. LEVEL 3+ SECURITY CLEARANCE REQUIRED."
 
-/obj/structure/sign/scp/topside/SecureArealv4mtf
+/obj/structure/sign/SecureArealv4mtf
 	icon_state = "secure"
 	desc = "A warning sign which reads: CAUTION, SECURE AREA. LEVEL 4+ SECURITY CLEARANCE REQUIRED."
 
-/obj/structure/sign/scp/topside/SecureArealv5mtf
+/obj/structure/sign/SecureArealv5mtf
 	icon_state = "secure"
 	desc = "A warning sign which reads: CAUTION, SECURE AREA. LEVEL 5+ SECURITY CLEARANCE REQUIRED."
 
-/obj/structure/sign/scp/radiation
+/obj/structure/sign/radiation
 	icon_state = "radiationnew"
 	desc = "A warning sign which reads: CAUTION, RADIATION HAZARD."
 
-/obj/structure/sign/scp/electrical
+/obj/structure/sign/electrical
 	icon_state = "electrical"
 	desc = "A warning sign which reads: CAUTION, ELECTRICAL HAZARD."
 
-/obj/structure/sign/scp/cryogenic
+/obj/structure/sign/cryogenic
 	icon_state = "cryogenic"
 	desc = "A warning sign which reads: CAUTION, POTENTIAL CRYOGENIC HAZARD."
 
-/obj/structure/sign/scp/oxidizer
+/obj/structure/sign/oxidizer
 	icon_state = "oxidizer"
 	desc = "A warning sign which reads: CAUTION, FLAMMABLE SUBSTANCE HAZARD."
 
-/obj/structure/sign/scp/memnetic
+/obj/structure/sign/memnetic
 	icon_state = "memnetic"
 	desc = "A warning sign which reads: CAUTION, MEMETIC HAZARD."
 
-/obj/structure/sign/scp/biohazardous
+/obj/structure/sign/biohazardous
 	icon_state = "biohazardous"
 	desc = "A warning sign which reads: CAUTION, BIOHAZARD."
 
-/obj/structure/sign/scp/amnesiac
+/obj/structure/sign/amnesiac
 	icon_state = "amnesiac"
 	desc = "A warning sign which reads: CAUTION, AMNESTIC HAZARD."
 
-/obj/structure/sign/scp/containers
+/obj/structure/sign/containers
 	icon_state = "containers"
 	desc = "A warning sign which reads: CAUTION, PRESSURIZED GAS STORAGE."
 
-/obj/structure/sign/scp/corrosive
+/obj/structure/sign/corrosive
 	icon_state = "corrosive"
 	desc = "A warning sign which reads: CAUTION, CORROSIVE HAZARD."
 
-/obj/structure/sign/scp/explosive
+/obj/structure/sign/explosive
 	icon_state = "explosive"
 	desc = "A warning sign which reads: CAUTION, EXPLOSIVE HAZARD."
 
-/obj/structure/sign/scp/flamable
+/obj/structure/sign/flamable
 	icon_state = "flamable"
 	desc = "A warning sign which reads: CAUTION, FLAMABLE HAZARD."
 
-/obj/structure/sign/scp/lasers
+/obj/structure/sign/lasers
 	icon_state = "lasers"
 	desc = "A warning sign which reads: CAUTION, LASER HAZARD."
 
-/obj/structure/sign/scp/poisonous
+/obj/structure/sign/poisonous
 	icon_state = "poisonous"
 	desc = "A warning sign which reads: CAUTION, POISONOUS HAZARD."
 
-/obj/structure/sign/scp/magnetic
+/obj/structure/sign/magnetic
 	icon_state = "magnetic"
 	desc = "A warning sign which reads: CAUTION, MAGNETICAL HAZARD. NO METAL OBJECTS BEYOND THIS SIGN."
 
-/obj/structure/sign/scp/optics
+/obj/structure/sign/optics
 	icon_state = "optics"
 	desc = "A warning sign which reads: CAUTION, OPTICS HAZARD."
 
-/obj/structure/sign/scp/look
+/obj/structure/sign/look
 	icon_state = "look"
 	desc = "A warning sign which reads: CAUTION, LOOK AT ANOMALOUS OBJECT."
 
-/obj/structure/sign/scp/dontlook
+/obj/structure/sign/dontlook
 	icon_state = "dontlook"
 	desc = "A warning sign which reads: CAUTION, DO NOT LOOK AT ANOMALOUS OBJECT."
 
-/obj/structure/sign/scp/dclass
+/obj/structure/sign/dclass
 	name = "\improper MIND THE ACCEPTABLE ZONES!"
-	icon_state = "securearea2"
 	desc = "A warning sign which reads: REMEMBER YOUR PLACE. DO NOT MOVE BEYOND THE YELLOW HAZARD MARKINGS IF RED HATCHED MARKINGS ARE PRESENT! IMMEDIATE TERMINATION TO VIOLATIONS!"
+	icon_state = "securearea2"
 
 /obj/effect/landmark/corpse/classd
 	name = "Class D"

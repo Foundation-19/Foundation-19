@@ -1,0 +1,5 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - rscadd: Added random monsters, mobs with randomized abilities and statistics.
+      Be careful around them!

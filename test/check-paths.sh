@@ -36,7 +36,6 @@ exactly 0 "world<< uses" 'world<<|world[[:space:]]<<'
 exactly 0 "world.log<< uses" 'world.log<<|world.log[[:space:]]<<'
 #exactly 122 "<< uses" '(?<!<)<<(?!<)' -P - bitshifts exist
 exactly 0 "incorrect indentations" '^( {4,})' -P
-#exactly 25 "text2path uses" 'text2path' - oddly specific number
 #exactly 3 "update_icon() override" '/update_icon\((.*)\)'  -P - nothing wrong wtih overriding it
 exactly 1 "goto use" 'goto '
 exactly 1 "NOOP match" 'NOOP'
@@ -49,6 +48,7 @@ exactly 1 "density = 0/1" 'density\s*=\s*\d' -P
 exactly 0 "emagged = 0/1" 'emagged\s*=\s*\d' -P
 exactly 0 "simulated = 0/1" 'simulated\s*=\s*\d' -P
 # With the potential exception of << if you increase any of these numbers you're probably doing it wrong
+# - Fuck you, I am going to use as many text2path as I want
 
 broken_files=0
 while read -r file; do

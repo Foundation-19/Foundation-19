@@ -8,7 +8,7 @@
 	move_to_delay = 1
 	maxHealth = 75
 	health = 75
-	speed = 1
+	movement_cooldown = 3
 	natural_weapon = /obj/item/natural_weapon/tentacles
 	var/gets_random_color = TRUE
 

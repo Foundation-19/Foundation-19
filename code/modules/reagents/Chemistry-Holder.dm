@@ -10,6 +10,8 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 	if(!istype(my_atom))
 		CRASH("Invalid reagents holder: [log_info_line(my_atom)]")
 	..()
+	if(!GLOB.chemical_reagents_list)
+		build_chemical_reagent_list()
 	src.my_atom = my_atom
 	src.maximum_volume = maximum_volume
 
@@ -488,3 +490,27 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 	else
 		reagents = new/datum/reagents(max_vol, src)
 	return reagents
+
+// Helper procs
+//Chemical Reagents - Initialises all /datum/reagent into a list indexed by reagent id
+/proc/build_chemical_reagent_list()
+	if(GLOB.chemical_reagents_list)
+		return
+
+	var/paths = subtypesof(/datum/reagent)
+	GLOB.chemical_reagents_list = list()
+
+	var/datum/reagents/anti_runtime = new(20000, GLOB.temp_reagents_holder) // Self-explanatory name
+	for(var/path in paths)
+		var/datum/reagent/D = new path(anti_runtime)
+		if(!D.name) // Those are usually master/parent types of other stuff
+			qdel(D)
+			continue
+		GLOB.chemical_reagents_list[path] = D
+	qdel(anti_runtime)
+
+/proc/get_chem_id(chem_name)
+	for(var/X in GLOB.chemical_reagents_list)
+		var/datum/reagent/R = GLOB.chemical_reagents_list[X]
+		if(ckey(chem_name) == ckey(lowertext(R.name)))
+			return X
