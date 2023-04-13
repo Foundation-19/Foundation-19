@@ -13062,10 +13062,6 @@
 "Gy" = (
 /obj/machinery/door/airlock/highsecurity,
 /obj/machinery/door/blast/regular,
-/obj/effect/landmark{
-	density = 1;
-	name = "Invisible Wall"
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/llcz/mine/unexplored)
 "Gz" = (
@@ -15418,7 +15414,6 @@
 /area/site53/llcz/dclass/assignmentline)
 "MM" = (
 /obj/effect/floor_decal/corner/yellow/mono,
-/obj/machinery/chemical_dispenser/full,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "MN" = (
@@ -16515,6 +16510,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurysleep)
+"Qa" = (
+/obj/machinery/chemical_dispenser,
+/turf/simulated/floor,
+/area/site53/llcz/mine/unexplored)
 "Qd" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/steel_ridged,
@@ -36807,7 +36806,7 @@ ua
 ua
 ua
 ua
-ua
+Tu
 ua
 ua
 ua
@@ -37063,9 +37062,9 @@ ua
 ua
 ua
 ua
-ua
-ua
-ua
+Tu
+Qa
+Tu
 ua
 Fh
 Fh
@@ -37321,7 +37320,7 @@ ua
 ua
 ua
 ua
-ua
+Tu
 ua
 ua
 Fh
