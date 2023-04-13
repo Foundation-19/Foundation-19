@@ -151,10 +151,12 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	if(istype(A, /obj/machinery/door))
 		OpenDoor(A)
 		return
+	if(istype(A, /obj/machinery/power/apc))
+		return // Fuck you RealB
 	if(A in purity_list)
 		to_chat(src, SPAN_WARNING("They are pure... We will grant their wish."))
 		return
-	if(ishuman(A) && !IsEnraged() && !(A in impurity_list))
+	if(ishuman(A) && (satiety > min_satiety) && !(A in impurity_list))
 		var/mob/living/carbon/human/H = A
 		if(H.stat != DEAD)
 			to_chat(src, SPAN_WARNING("We cannot decide if they are pure or not just yet..."))
