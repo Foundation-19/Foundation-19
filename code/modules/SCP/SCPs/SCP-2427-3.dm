@@ -29,8 +29,8 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 
-	maxHealth = 2000
-	health = 2000
+	maxHealth = 1500
+	health = 1500
 
 	movement_cooldown = 5
 	movement_sound = 'sound/mecha/mechmove04.ogg'
@@ -158,7 +158,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	if(isliving(A))
 		var/mob/living/L = A
 		// Brute loss part is mainly for humans
-		if(L.stat && (L.health <= L.maxHealth * 0.25 || L.getBruteLoss() >= L.maxHealth * 5))
+		if((L.stat == DEAD) || (L.stat && (L.health <= L.maxHealth * 0.25 || L.getBruteLoss() >= L.maxHealth * 5)))
 			var/nutr = L.mob_size
 			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat)) // Likes goats
 				nutr = 100
