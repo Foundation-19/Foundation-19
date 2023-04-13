@@ -8,7 +8,7 @@
 	response_help = "pets the"
 	response_disarm = "gently pushes aside the"
 	response_harm = "hits the"
-	speed = 2
+	movement_cooldown = 3
 	maxHealth = 50
 	health = 50
 

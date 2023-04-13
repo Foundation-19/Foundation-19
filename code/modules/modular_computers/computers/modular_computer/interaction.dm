@@ -164,7 +164,11 @@
 			turn_on(user)
 
 /obj/item/modular_computer/attack_ai(mob/user)
-	return attack_self(user)
+	if(src.get_ntnet_status(NTNET_COMMUNICATION))
+		return attack_self(user)
+	else
+		to_chat(user, SPAN_NOTICE("You send a communication signal, but the computer doesn't respond."))
+
 
 /obj/item/modular_computer/attack_hand(mob/user)
 	if(anchored)

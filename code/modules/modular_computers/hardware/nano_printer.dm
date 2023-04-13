@@ -21,7 +21,7 @@
 		last_print = world.time
 		// Damaged printer causes the resulting paper to be somewhat harder to read.
 		if(damage > damage_malfunction)
-			text_to_print = stars(text_to_print, 100-malfunction_probability)
+			text_to_print = stars(text_to_print, 100 - (damage / malfunction_divisor))
 		var/turf/T = get_turf(src)
 		new paper_type(T, text_to_print, paper_title, md, print_language)
 		stored_paper--

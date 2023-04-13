@@ -228,6 +228,7 @@
 				var/obj/item/I = W
 				if (I.hitsound)
 					playsound(loc, I.hitsound, 50, 1, -1)
+					show_sound_effect(loc, user)
 		take_damage(W.force)
 
 	else

@@ -43,6 +43,7 @@
 			user.apply_damage(2,BURN,BP_R_HAND)
 		user.visible_message(SPAN_NOTICE("After a few attempts, [user] manages to light \the [src], burning their finger in the process."))
 	playsound(src.loc, "light_bic", 100, 1, -4)
+	show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 
 /obj/item/flame/lighter/extinguish(mob/user, no_message)
 	..()
@@ -154,6 +155,7 @@
 /obj/item/flame/lighter/zippo/light_effects(mob/user)
 	user.visible_message(SPAN_CLASS("rose","Without even breaking stride, [user] flips open and lights [src] in one smooth movement."))
 	playsound(src.loc, 'sound/items/zippo_open.ogg', 100, 1, -4)
+	show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 
 /obj/item/flame/lighter/zippo/shutoff_effects(mob/user)
 	user.visible_message(SPAN_CLASS("rose","You hear a quiet click, as [user] shuts off [src] without even looking at what they're doing."))

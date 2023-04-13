@@ -8,7 +8,6 @@
 	turns_per_move = 2
 	move_to_delay = 2
 	attack_same = 1
-	speed = 1
 	mob_size = MOB_LARGE
 
 	pixel_x = -16

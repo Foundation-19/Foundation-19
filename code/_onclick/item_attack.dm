@@ -106,6 +106,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 /obj/item/proc/apply_hit_effect(mob/living/target, mob/living/user, hit_zone)
 	if(hitsound)
 		playsound(loc, hitsound, 50, 1, -1)
+		show_sound_effect(loc, user, soundicon = SFX_ICON_JAGGED)
 
 	var/power = force
 	if(MUTATION_HULK in user.mutations)
