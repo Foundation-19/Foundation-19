@@ -393,7 +393,7 @@
 
 /mob/living/simple_animal/hostile/scp096/adjustBruteLoss(damage)
 
-	health = Clamp(health - damage, 0, maxHealth)
+	health = clamp(health - damage, 0, maxHealth)
 
 	if(damage > 0)
 		staggered += damage

@@ -36,7 +36,7 @@
 	to_chat(user, SPAN_WARNING("The [name] begins to sear your hand, burning the skin on contact, and you feel yourself unable to drop it."))
 	var/damage_coeff = 1
 	if(user in victims)
-		damage_coeff = Clamp((5000-(world.time - victims[user]))/1000,1,5)
+		damage_coeff = clamp((5000-(world.time - victims[user]))/1000,1,5)
 	user.apply_damage(10*damage_coeff, BURN, which_hand, 0) //administer damage
 	user.apply_damage(30*damage_coeff, TOX, which_hand, 0)
 

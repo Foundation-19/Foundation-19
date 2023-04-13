@@ -37,7 +37,7 @@
 /obj/machinery/stove/RefreshParts()
 	. = ..()
 	cook_time = initial(cook_time)
-	cook_time = max(cook_time - Clamp(total_component_rating_of_type(/obj/item/stock_parts/micro_laser), 0, 12), 1 SECOND)
+	cook_time = max(cook_time - clamp(total_component_rating_of_type(/obj/item/stock_parts/micro_laser), 0, 12), 1 SECOND)
 
 /obj/machinery/stove/on_update_icon()
 	var/initial_icon = initial(icon_state)

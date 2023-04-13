@@ -222,21 +222,21 @@
 		pump_direction = 1
 
 	if(signal.data["set_input_pressure"])
-		input_pressure_min = Clamp(
+		input_pressure_min = clamp(
 			text2num(signal.data["set_input_pressure"]),
 			0,
 			ONE_ATMOSPHERE*50
 		)
 
 	if(signal.data["set_output_pressure"])
-		output_pressure_max = Clamp(
+		output_pressure_max = clamp(
 			text2num(signal.data["set_output_pressure"]),
 			0,
 			ONE_ATMOSPHERE*50
 		)
 
 	if(signal.data["set_external_pressure"])
-		external_pressure_bound = Clamp(
+		external_pressure_bound = clamp(
 			text2num(signal.data["set_external_pressure"]),
 			0,
 			ONE_ATMOSPHERE*50

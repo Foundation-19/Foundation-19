@@ -107,10 +107,10 @@
 
 /datum/mob_descriptor/proc/get_comparative_value_string_smaller(value, mob/me)
 	var/maxval = LAZYLEN(comparative_value_descriptors_smaller)
-	value = Clamp(ceil(value * maxval), 1, maxval)
+	value = clamp(ceil(value * maxval), 1, maxval)
 	return comparative_value_descriptors_smaller[value]
 
 /datum/mob_descriptor/proc/get_comparative_value_string_larger(value, mob/me)
 	var/maxval = LAZYLEN(comparative_value_descriptors_larger)
-	value = Clamp(ceil(value * maxval), 1, maxval)
+	value = clamp(ceil(value * maxval), 1, maxval)
 	return comparative_value_descriptors_larger[value]

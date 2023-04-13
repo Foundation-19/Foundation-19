@@ -47,7 +47,7 @@
 		client.images.Remove(bar)
 		shown = FALSE
 	client = actor.client
-	progress = Clamp(progress, 0, max_progress)
+	progress = clamp(progress, 0, max_progress)
 	last_progress = progress
 	bar.icon_state = "prog_bar_[round(progress * 100 / max_progress, 5)]"
 	if (!shown)
@@ -111,7 +111,7 @@
 /datum/progressbar/public/update(progress)
 	if (!actor || !actee)
 		return
-	progress = Clamp(progress, 0, max_progress)
+	progress = clamp(progress, 0, max_progress)
 	bar.icon_state = "prog_bar_[round(progress * 100 / max_progress, 5)]"
 	bar.pixel_x = (actee.x - actor.x) * WORLD_ICON_SIZE
 	bar.pixel_y = (actee.y - actor.y) * WORLD_ICON_SIZE + WORLD_ICON_SIZE

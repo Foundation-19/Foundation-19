@@ -151,7 +151,7 @@
 		unlocked = !unlocked
 
 	if("set_target_pressure" in signal.data)
-		target_pressure = Clamp(
+		target_pressure = clamp(
 			text2num(signal.data["set_target_pressure"]),
 			0,
 			max_pressure_setting
@@ -222,7 +222,7 @@
 			target_pressure = max_pressure_setting
 		if ("set")
 			var/new_pressure = input(usr,"Enter new output pressure (0-[max_pressure_setting]kPa)","Pressure Control",src.target_pressure) as num
-			src.target_pressure = Clamp(new_pressure, 0, max_pressure_setting)
+			src.target_pressure = clamp(new_pressure, 0, max_pressure_setting)
 
 	switch(href_list["set_flow_rate"])
 		if ("min")
@@ -231,7 +231,7 @@
 			set_flow_rate = air1.volume
 		if ("set")
 			var/new_flow_rate = input(usr,"Enter new flow rate limit (0-[air1.volume]kPa)","Flow Rate Control",src.set_flow_rate) as num
-			src.set_flow_rate = Clamp(new_flow_rate, 0, air1.volume)
+			src.set_flow_rate = clamp(new_flow_rate, 0, air1.volume)
 
 	usr.set_machine(src)	//Is this even needed with NanoUI?
 	src.update_icon()

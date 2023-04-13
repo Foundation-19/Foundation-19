@@ -89,4 +89,4 @@
 // Damages the component. Contains necessary checks. Negative damage "heals" the component.
 /obj/item/stock_parts/computer/proc/take_damage(amount)
 	damage += round(amount) 					// We want nice rounded numbers here.
-	damage = Clamp(damage, 0, max_damage)		// Clamp the value.
+	damage = clamp(damage, 0, max_damage)		// Clamp the value.

@@ -111,7 +111,7 @@ research holder datum.
 		if(DesignHasReqs(PD))
 			AddDesign2Known(PD)
 	for(var/datum/tech/T in known_tech)
-		T = Clamp(T.level, 0, 20)
+		T = clamp(T.level, 0, 20)
 	return
 
 //Refreshes the levels of a given tech.

@@ -79,7 +79,7 @@
 
 /obj/item/mech_equipment/shields/proc/stop_damage(damage)
 	var/difference = damage - charge
-	charge = Clamp(charge - damage, 0, max_charge)
+	charge = clamp(charge - damage, 0, max_charge)
 
 	last_recharge = world.time
 
@@ -126,7 +126,7 @@
 		return
 	var/obj/item/cell/cell = owner.get_cell()
 
-	var/actual_required_power = Clamp(max_charge - charge, 0, charging_rate)
+	var/actual_required_power = clamp(max_charge - charge, 0, charging_rate)
 
 	if(cell)
 		charge += cell.use(actual_required_power)

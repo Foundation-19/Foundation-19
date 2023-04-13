@@ -53,7 +53,7 @@ var/debuff_miniscule = 3
 			return 0
 		if(distance_from_origin <= cut_off)
 			return 100
-		return Clamp((((AUDIBLE_RANGE_FULL - Clamp((distance_from_origin - cut_off)**2, 0, AUDIBLE_RANGE_FULL))/AUDIBLE_RANGE_FULL)  * 100), 0, 100)
+		return clamp((((AUDIBLE_RANGE_FULL - clamp((distance_from_origin - cut_off)**2, 0, AUDIBLE_RANGE_FULL))/AUDIBLE_RANGE_FULL)  * 100), 0, 100)
 	else
 		if((is_concealed ? get_turf(origin) : origin) in hear(hearable_range, get_turf(src))) //get_turf is used as you can still hear stuff even if inside a container or in an inventory
 			return TRUE
@@ -133,7 +133,7 @@ var/debuff_miniscule = 3
 			if(MOB_TINY) viewdistance -= debuff_tiny
 			if(MOB_MINISCULE) viewdistance -= debuff_miniscule
 
-	if(get_dist_euclidian(get_turf(src), get_turf(origin)) <= Clamp(viewdistance, 0, 7))
+	if(get_dist_euclidian(get_turf(src), get_turf(origin)) <= clamp(viewdistance, 0, 7))
 		if((visual_insulation_calculated == V_INSL_IMPERFECT) && visual_memetic)
 			return prob(40) //If its a memetic check and your protection is imperfect/faulty there is a 40% chance of you being affected by a memetic hazard
 		return TRUE
@@ -154,7 +154,7 @@ var/debuff_miniscule = 3
 		prescriptions += 7
 	if(equipment_prescription)
 		prescriptions -= equipment_prescription
-	return Clamp(prescriptions,0,7)
+	return clamp(prescriptions,0,7)
 
 // BLINK MECHANICS
 

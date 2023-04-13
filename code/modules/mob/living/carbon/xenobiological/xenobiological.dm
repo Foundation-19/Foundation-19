@@ -72,7 +72,7 @@
 	return /datum/reagent/slime_jelly
 
 /mob/living/carbon/slime/adjustToxLoss(amount)
-	toxloss = Clamp(toxloss + amount, 0, maxHealth)
+	toxloss = clamp(toxloss + amount, 0, maxHealth)
 
 /mob/living/carbon/slime/setToxLoss(amount)
 	adjustToxLoss(amount-getToxLoss())
@@ -330,4 +330,4 @@
 			adjustToxLoss(-10)
 
 /mob/living/carbon/slime/adjust_nutrition(amt)
-	nutrition = Clamp(nutrition + amt, 0, get_max_nutrition())
+	nutrition = clamp(nutrition + amt, 0, get_max_nutrition())
