@@ -131,7 +131,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	if(is_sleeping && stat != DEAD && health < wakeup_health)
 		WakeUp()
 
-/mob/living/simple_animal/hostile/scp_2427_3/death()
+/mob/living/simple_animal/hostile/scp_2427_3/death(gibbed, deathmessage = "falls on the ground, beginning reboot process.", show_dead_message)
 	to_chat(src, SPAN_OCCULT("You begin the reboot process. Avoid leaving the body."))
 	playsound(src, 'sound/mecha/lowpower.ogg', 50, FALSE)
 	addtimer(CALLBACK(src, .proc/TimeRespawn), 5 MINUTES)
@@ -157,7 +157,8 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		return
 	if(isliving(A))
 		var/mob/living/L = A
-		if(L.health <= L.maxHealth * 0.25 && L.stat) // Stunned/Dying/Dead with health below 25%
+		// Brute loss part is mainly for humans
+		if(L.stat && (L.health <= L.maxHealth * 0.25 || L.getBruteLoss() >= L.maxHealth * 5))
 			var/nutr = L.mob_size
 			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat)) // Likes goats
 				nutr = 100
@@ -245,12 +246,13 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 /mob/living/simple_animal/hostile/scp_2427_3/proc/TimeRespawn()
 	if(stat != DEAD)
 		return
-	revive()
-	fullness = 100
 	playsound(src, 'sound/mecha/powerup.ogg', 50, FALSE)
 	visible_message(
 		SPAN_DANGER("[src] rises up once again!"),
 		SPAN_NOTICE("You finish the reboot process."))
+	revive()
+	fullness = 100
+	sleep(2 SECONDS) // Give em some warning time
 	icon_state = null
 
 /mob/living/simple_animal/hostile/scp_2427_3/proc/CheckPurity(mob/living/L)
