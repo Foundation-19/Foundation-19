@@ -161,9 +161,9 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		if((L.stat == DEAD) || (L.stat && (L.health <= L.maxHealth * 0.25 || L.getBruteLoss() >= L.maxHealth * 5)))
 			var/nutr = L.mob_size
 			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat)) // Likes goats
-				nutr = 100
+				nutr = 125
 			if(ishuman(L))
-				nutr = 50
+				nutr = 75
 			playsound(src, 'sound/scp/2427/consume.ogg', rand(15, 35), TRUE)
 			visible_message(SPAN_DANGER("[src] consumes [L]!"))
 			L.gib()
@@ -213,12 +213,12 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		FallAsleep()
 
 /mob/living/simple_animal/hostile/scp_2427_3/proc/IsEnraged()
-	if(satiety <= min_satiety)
-		return TRUE
 	for(var/mob/living/L in dview(7, src))
 		if(L in impurity_list)
 			return TRUE
-	return FALSE
+		if(L.stat == DEAD && istype(get_area(src), spawn_area)) // Hm yes, today I will ignore all the corpses around me to breach
+			return FALSE
+	return (satiety <= min_satiety)
 
 /mob/living/simple_animal/hostile/scp_2427_3/proc/FallAsleep()
 	if(is_sleeping)
