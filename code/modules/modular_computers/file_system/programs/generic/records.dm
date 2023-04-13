@@ -51,7 +51,7 @@
 /datum/nano_module/records/proc/get_record_access(mob/user)
 	var/list/user_access = using_access || user.GetAccess()
 	var/obj/item/modular_computer/computer = nano_host()
-	if(computer.computer_emagged)
+	if(istype(computer) && computer.computer_emagged)			//this function can be called without a computer, in which case this would runtime if we don't check
 		user_access = user_access.Copy()
 		user_access |= ACCESS_SYNDICATE
 
