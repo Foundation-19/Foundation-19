@@ -238,7 +238,7 @@ var/const/enterloopsanity = 100
 	for(var/turf/t in (trange(1,src) - src))
 		if(check_blockage)
 			if(!t.density)
-				if(!LinkBlocked(src, t) && !TurfBlockedNonWindow(t))
+				if(!LinkBlocked(src, t) && !TurfBlockedNonWhitelist(t, list(/obj/structure/window)))
 					. += t
 		else
 			. += t
@@ -249,6 +249,15 @@ var/const/enterloopsanity = 100
 		var/turf/T = ad
 		if(T.x == src.x || T.y == src.y)
 			. += T
+
+/turf/proc/AdjacentTurfsWithWhitelist(var/list/whitelist, check_blockage = TRUE)
+	. = list()
+	for(var/turf/t in (trange(1,src) - src))
+		if(check_blockage)
+			if(!LinkBlocked(src, t, whitelist) && !TurfBlockedNonWhitelist(t, whitelist)) //TurfBlockedNonWhitelist also deals with checking density
+				. += t
+		else
+			. += t
 
 /turf/proc/Distance(turf/t)
 	if(get_dist(src,t) == 1)
@@ -262,7 +271,7 @@ var/const/enterloopsanity = 100
 	var/L[] = new()
 	for(var/turf/t in oview(src,1))
 		if(!t.density)
-			if(!LinkBlocked(src, t) && !TurfBlockedNonWindow(t))
+			if(!LinkBlocked(src, t) && !TurfBlockedNonWhitelist(t, list(/obj/structure/window)))
 				L.Add(t)
 	return L
 

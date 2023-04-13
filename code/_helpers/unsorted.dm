@@ -166,7 +166,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 
 
-/proc/LinkBlocked(turf/A, turf/B)
+/proc/LinkBlocked(turf/A, turf/B, var/list/whitelist)
 	if(A == null || B == null) return 1
 	var/adir = get_dir(A,B)
 	var/rdir = get_dir(B,A)
@@ -178,30 +178,30 @@ Turf and target are seperate in case you want to teleport some distance from a t
 		if(!LinkBlocked(A,pStep) && !LinkBlocked(pStep,B)) return 0
 		return 1
 
-	if(DirBlocked(A,adir)) return 1
-	if(DirBlocked(B,rdir)) return 1
+	if(DirBlocked(A,adir, whitelist)) return 1
+	if(DirBlocked(B,rdir, whitelist)) return 1
 	return 0
 
 
-/proc/DirBlocked(turf/loc,dir)
+/proc/DirBlocked(turf/loc, dir, var/list/whitelist = list())
 	for(var/obj/structure/window/D in loc)
-		if(!D.density)			continue
+		if(!D.density || D.type in whitelist)			continue
 		if(D.dir == SOUTHWEST)	return 1
 		if(D.dir == dir)		return 1
 
 	for(var/obj/machinery/door/D in loc)
-		if(!D.density)			continue
+		if(!D.density || D.type in whitelist)			continue
 		if(istype(D, /obj/machinery/door/window))
 			if((dir & SOUTH) && (D.dir & (EAST|WEST)))		return 1
 			if((dir & EAST ) && (D.dir & (NORTH|SOUTH)))	return 1
 		else return 1	// it's a real, air blocking door
 	return 0
 
-/proc/TurfBlockedNonWindow(turf/loc)
+/proc/TurfBlockedNonWhitelist(turf/loc, var/list/whitelist) //checks if the turf is blocked but ignores objects in whitelist
 	for(var/obj/O in loc)
-		if(O.density && !istype(O, /obj/structure/window))
-			return 1
-	return 0
+		if(O.density && !(O.type in whitelist))
+			return TRUE
+	return FALSE
 
 /proc/sign(x)
 	return x!=0?x/abs(x):0
