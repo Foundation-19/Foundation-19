@@ -22348,6 +22348,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/commanderoffice)
+"crW" = (
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp2427_3)
 "csb" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 8
@@ -24092,6 +24096,11 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/science/seniorresearcherb)
+"eXV" = (
+/obj/effect/paint_stripe/gray,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/ulcz/scp2427_3)
 "eYX" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -24828,6 +24837,20 @@
 /obj/item/clothing/glasses/blindfold,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
+"fSE" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/catwalk_plated/white,
+/turf/simulated/floor,
+/area/site53/ulcz/hallways)
 "fTg" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/plating,
@@ -26835,6 +26858,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
+"iyT" = (
+/obj/effect/floor_decal/industrial/fire,
+/obj/machinery/light/small,
+/obj/structure/disposaloutlet{
+	dir = 1;
+	name = "Food delivery"
+	},
+/obj/structure/disposalpipe/trunk,
+/turf/simulated/floor/wood,
+/area/site53/ulcz/scp2427_3)
 "iyY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -30061,7 +30094,10 @@
 "mOX" = (
 /obj/effect/floor_decal/industrial/fire,
 /obj/item/device/radio/intercom{
+	broadcasting = 1;
+	canhear_range = 7;
 	dir = 1;
+	frequency = 1449;
 	name = "intercom (Containment Zone)";
 	pixel_y = -30
 	},
@@ -31371,6 +31407,20 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
+"oBp" = (
+/obj/machinery/light,
+/obj/machinery/disposal/deliveryChute{
+	dir = 4;
+	name = "Food delivery"
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp2427_3)
 "oBq" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -32725,6 +32775,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
+"qEN" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp2427_3)
 "qFs" = (
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/lamp,
@@ -32764,6 +32821,15 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/generalpurpose3)
+"qJM" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp2427_3)
 "qKl" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -35160,6 +35226,19 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp096)
+"ugr" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/door/window/brigdoor/northleft{
+	dir = 4;
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+	},
+/obj/effect/floor_decal/scp/clear_north{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/site53/ulcz/scp2427_3)
 "ugQ" = (
 /obj/machinery/vending/coffee,
 /obj/machinery/light{
@@ -43661,7 +43740,7 @@ aVS
 aVS
 aGM
 aGM
-aZz
+vSp
 aGM
 aGM
 hIO
@@ -43918,7 +43997,7 @@ aEt
 vNf
 apj
 aKq
-jLw
+aKq
 aKq
 aEt
 hIO
@@ -44172,10 +44251,10 @@ afp
 afp
 afp
 afp
-hCq
-vEB
-vEB
-ahU
+aPq
+aPp
+aPp
+fSE
 afp
 afp
 vKZ
@@ -45199,13 +45278,13 @@ hzp
 hzp
 hzp
 hzp
-wip
-bIm
-kdN
-ybV
-dLS
-ybV
-jKc
+iyT
+eXV
+qEN
+crW
+qJM
+crW
+oBp
 hIO
 mjK
 mjK
@@ -45462,7 +45541,7 @@ puv
 ybV
 dLS
 ybV
-ybV
+ugr
 hIO
 hIO
 hIO
