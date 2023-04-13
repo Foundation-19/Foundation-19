@@ -49,7 +49,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	/// How much satiety is reduced per tick
 	var/satiety_reduction_per_tick = 0.5
 	/// Upon going to that point or above - the mob goes into is_sleeping stage and is unable to act/speak/move for some time
-	var/max_satiety = 800
+	var/max_satiety = 600
 	/// Upon that point, the mob is on rampage, allowing it to escape and to move faster
 	var/min_satiety = 0
 	/// When TRUE - it ignores purity list and can attack anything
@@ -167,9 +167,9 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		if((L.stat == DEAD) || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 4))))
 			var/nutr = L.mob_size
 			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat)) // Likes goats
-				nutr = round(max_satiety * 0.4)
+				nutr = round(max_satiety * 0.5)
 			if(ishuman(L))
-				nutr = round(max_satiety * 0.15)
+				nutr = round(max_satiety * 0.2)
 			playsound(src, 'sound/scp/2427/consume.ogg', rand(15, 35), TRUE)
 			visible_message(SPAN_DANGER("[src] consumes [L]!"))
 			L.gib()
@@ -247,6 +247,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	visible_message(
 		SPAN_DANGER("[src] rises up once again!"),
 		SPAN_NOTICE("You wake up."))
+	sleep(2 SECONDS)
 	is_sleeping = FALSE
 	if(icon_state == "sleep") // If somehow we died before WakeUp got called
 		icon_state = null
