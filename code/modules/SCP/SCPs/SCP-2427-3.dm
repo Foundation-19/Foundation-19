@@ -10,6 +10,8 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	attack_verb = list("stabbed")
 	hitsound = 'sound/scp/2427/stab.ogg'
 	damtype = BRUTE
+	melee_accuracy_bonus = 200
+	edge = 1
 	force = 25
 
 /mob/living/simple_animal/hostile/scp_2427_3
@@ -155,7 +157,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		return
 	if(isliving(A))
 		var/mob/living/L = A
-		if(L.health <= 0 || L.stat == DEAD)
+		if(L.health <= L.maxHealth * 0.25 && L.stat) // Stunned/Dying/Dead with health below 25%
 			var/nutr = L.mob_size
 			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat)) // Likes goats
 				nutr = 50

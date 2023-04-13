@@ -23369,6 +23369,14 @@
 /obj/effect/wallframe_spawn/reinforced/polarized/full,
 /turf/simulated/floor,
 /area/site53/uhcz/generalpurpose3)
+"dLS" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp2427_3)
 "dMQ" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -34265,6 +34273,22 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
+"sPh" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/outline/orange,
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/scp2427_3)
 "sPo" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -45179,7 +45203,7 @@ wip
 bIm
 kdN
 ybV
-ybV
+dLS
 ybV
 jKc
 hIO
@@ -45436,7 +45460,7 @@ ube
 bIm
 puv
 ybV
-ybV
+dLS
 ybV
 ybV
 hIO
@@ -45693,7 +45717,7 @@ ube
 rBu
 ndv
 ybV
-ybV
+dLS
 ybV
 ybV
 szX
@@ -45950,7 +45974,7 @@ ube
 fuW
 ndv
 ybV
-ybV
+dLS
 ybV
 ybV
 vEz
@@ -46207,7 +46231,7 @@ mOX
 bIm
 hYn
 ybV
-ybV
+dLS
 ybV
 ybV
 cLb
@@ -46464,7 +46488,7 @@ wip
 bIm
 nOJ
 ybV
-ybV
+dLS
 ybV
 ybV
 dEm
@@ -46721,7 +46745,7 @@ qro
 bIm
 kdN
 qvi
-qvi
+sPh
 qvi
 jKc
 aXA
