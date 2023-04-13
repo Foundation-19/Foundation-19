@@ -177,7 +177,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		return FALSE
 	return ..()
 
-/mob/living/simple_animal/hostile/scp_2427_3/Move(a,b,f)
+/mob/living/simple_animal/hostile/scp_2427_3/SelfMove(direction)
 	if(is_sleeping)
 		return FALSE
 	return ..()
