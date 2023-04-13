@@ -34353,6 +34353,11 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/camera/network/lcz{
+	c_tag = "SCP-2427-3";
+	dir = 8;
+	name = "SCP-2427-3"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp2427_3)
 "sPo" = (
