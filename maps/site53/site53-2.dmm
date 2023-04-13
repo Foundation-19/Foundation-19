@@ -15171,7 +15171,7 @@
 /area/site53/ulcz/hallways)
 "aPr" = (
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Unused SCP Containment Chamber";
+	name = "Hallway to SCP 2427-3";
 	req_access = list("ACCESS_SCIENCE_LEVEL1")
 	},
 /obj/structure/cable/green{
@@ -33090,6 +33090,19 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
+"qZT" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/catwalk_plated/white,
+/obj/machinery/door/airlock/glass/civilian{
+	name = "Hallway to SCP 2427-3";
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
+	},
+/turf/simulated/floor,
+/area/site53/ulcz/hallways)
 "ral" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -34996,6 +35009,13 @@
 /obj/item/storage/firstaid/adv,
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"tHF" = (
+/obj/machinery/light,
+/obj/structure/sign/scp/euclid_scp{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "tIS" = (
 /obj/item/folder/yellow,
 /obj/item/folder/red,
@@ -44256,7 +44276,7 @@ afp
 afp
 afp
 afp
-aPq
+qZT
 aPp
 aPp
 fSE
@@ -44505,7 +44525,7 @@ apj
 aKq
 aPs
 aKq
-aEt
+tHF
 aVS
 apj
 aGM
