@@ -153,8 +153,10 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		to_chat(src, SPAN_WARNING("They are pure... We will grant their wish."))
 		return
 	if(ishuman(A) && !IsEnraged() && !(A in impurity_list))
-		to_chat(src, SPAN_WARNING("We cannot decide if they are pure or not just yet..."))
-		return
+		var/mob/living/carbon/human/H = A
+		if(H.stat != DEAD)
+			to_chat(src, SPAN_WARNING("We cannot decide if they are pure or not just yet..."))
+			return
 	if(isliving(A))
 		var/mob/living/L = A
 		// Brute loss part is mainly for humans
