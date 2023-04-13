@@ -160,9 +160,9 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		if(L.health <= L.maxHealth * 0.25 && L.stat) // Stunned/Dying/Dead with health below 25%
 			var/nutr = L.mob_size
 			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat)) // Likes goats
-				nutr = 50
+				nutr = 100
 			if(ishuman(L))
-				nutr = 25
+				nutr = 50
 			playsound(src, 'sound/scp/2427/consume.ogg', rand(15, 35), TRUE)
 			visible_message(SPAN_DANGER("[src] consumes [L]!"))
 			L.gib()
