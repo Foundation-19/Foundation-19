@@ -34,3 +34,4 @@
 /datum/extension/play_sound_on_moved/proc/DoMoveSound(atom/movable/inst, old_loc, new_loc)
 	if(always_play || (has_gravity(inst) && !isspace(new_loc) && !istype(new_loc, /turf/simulated/floor/carpet)))
 		playsound(inst, pick(move_sounds), move_volume, TRUE)
+		show_sound_effect(inst.loc, inst)

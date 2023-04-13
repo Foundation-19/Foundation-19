@@ -95,6 +95,7 @@
 	if(target_floor == current_floor)
 
 		playsound(control_panel_interior.loc, origin.arrival_sound, 50, 1)
+		show_sound_effect(control_panel_interior.loc, soundicon = SFX_ICON_SMALL)
 		target_floor.arrived(src)
 		target_floor = null
 

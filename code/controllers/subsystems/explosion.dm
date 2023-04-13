@@ -328,6 +328,7 @@ SUBSYSTEM_DEF(explosions)
 
 		if(distance <= round(near_distance + world.view - 2, 1)) // If you are close enough to see the effects of the explosion first-hand (ignoring walls)
 			listener.playsound_local(epicenter, near_sound, 100, TRUE, frequency, FALSE, falloff = 5)
+			show_sound_effect(epicenter, soundicon = SFX_ICON_JAGGED)
 			if(base_shake_amount > 0)
 				shake_camera(listener, NEAR_SHAKE_DURATION, clamp(base_shake_amount, 0, NEAR_SHAKE_CAP))
 
