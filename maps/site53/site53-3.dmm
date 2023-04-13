@@ -1119,8 +1119,8 @@
 /area/site53/medical/equipstorage)
 "ct" = (
 /obj/structure/closet,
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
+/obj/item/gun/projectile/shotgun/tactical,
+/obj/item/gun/projectile/shotgun/tactical,
 /turf/simulated/floor/tiled,
 /area/site53/uez/armory)
 "cv" = (
@@ -6870,7 +6870,6 @@
 /obj/effect/floor_decal/carpet/blue2{
 	dir = 5
 	},
-/obj/item/gun/projectile/automatic/scp/saiga12/beanbag,
 /obj/item/ammo_magazine/box/rubbershot,
 /obj/item/ammo_magazine/box/beanbag,
 /obj/item/ammo_magazine/box/beanbag,
@@ -9374,16 +9373,10 @@
 /area/site53/medical/exam_room)
 "Hz" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/saiga12/rubbershot,
-/obj/item/ammo_magazine/scp/saiga12/rubbershot,
-/obj/item/ammo_magazine/scp/saiga12/rubbershot,
-/obj/item/ammo_magazine/scp/saiga12/rubbershot,
-/obj/item/ammo_magazine/scp/saiga12/beanbag,
-/obj/item/ammo_magazine/scp/saiga12/beanbag,
-/obj/item/ammo_magazine/scp/saiga12/beanbag,
-/obj/item/ammo_magazine/scp/saiga12/beanbag,
 /obj/item/ammo_magazine/box/beanbag,
 /obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/rubbershot,
 /obj/item/ammo_magazine/box/rubbershot,
 /obj/item/ammo_magazine/box/rubbershot,
 /turf/simulated/floor/tiled/monotile,
@@ -9810,10 +9803,7 @@
 /area/site53/medical/isolation)
 "KR" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/scp/saiga12/buckshot,
-/obj/item/ammo_magazine/scp/saiga12/buckshot,
-/obj/item/ammo_magazine/scp/saiga12/buckshot,
-/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/box/buckshot,
 /obj/item/ammo_magazine/box/buckshot,
 /obj/item/ammo_magazine/box/buckshot,
 /obj/item/ammo_magazine/box/buckshot,

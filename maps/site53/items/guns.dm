@@ -123,7 +123,7 @@
 
 /obj/item/gun/projectile/automatic/scp/saiga12
 	name = "Saiga12 Tactical Shotgun"
-	desc = "A reliable russian-made semi automatic shotgun often used by Foundation strike and security forces."
+	desc = "A reliable russian-made semi automatic shotgun often used by Foundation strike teams."
 	icon_state = "saiga12"
 	item_state = "saiga12"
 	w_class = ITEM_SIZE_HUGE
