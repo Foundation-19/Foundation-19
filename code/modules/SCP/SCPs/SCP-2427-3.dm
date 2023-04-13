@@ -119,12 +119,12 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 
 	if(A in impurity_list)
 		to_chat(src, SPAN_USERDANGER("SUBJECT IMPURE! IMPURE. IMPURE. IMPURE."))
-		playsound(src, 'sound/machines/synth_no.ogg', 25, TRUE)
+		playsound(src, 'sound/machines/synth_no.ogg', 15, TRUE)
 		return
 
 	if(A in purity_list)
 		to_chat(src, SPAN_GOOD("SUBJECT IS PURE..?"))
-		playsound(src, 'sound/machines/synth_yes.ogg', 25, TRUE)
+		playsound(src, 'sound/machines/synth_yes.ogg', 15, TRUE)
 		return
 
 /mob/living/simple_animal/hostile/scp_2427_3/updatehealth()
@@ -134,7 +134,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 
 /mob/living/simple_animal/hostile/scp_2427_3/death(gibbed, deathmessage = "falls on the ground, beginning reboot process.", show_dead_message)
 	to_chat(src, SPAN_OCCULT("You begin the reboot process. Avoid leaving the body."))
-	playsound(src, 'sound/mecha/lowpower.ogg', 50, FALSE)
+	playsound(src, 'sound/mecha/lowpower.ogg', 75, FALSE, 4)
 	addtimer(CALLBACK(src, .proc/TimeRespawn), 5 MINUTES)
 	return ..()
 
@@ -227,7 +227,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	if(is_sleeping)
 		return
 	wakeup_health = health - 50
-	playsound(src, 'sound/machines/AirlockClose_heavy.ogg', 50, TRUE)
+	playsound(src, 'sound/machines/AirlockClose_heavy.ogg', 75, TRUE, 4)
 	visible_message(
 		SPAN_NOTICE("[src] falls asleep."),
 		SPAN_NOTICE("You fall asleep."))
@@ -240,7 +240,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		return
 	revive()
 	satiety = attacked ? 100 : 400 // If attacked or otherwise forced, it'll be very angry
-	playsound(src, 'sound/mecha/lowpower.ogg', 50, FALSE)
+	playsound(src, 'sound/mecha/lowpower.ogg', 75, FALSE, 4)
 	visible_message(
 		SPAN_DANGER("[src] rises up once again!"),
 		SPAN_NOTICE("You wake up."))
@@ -251,7 +251,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 /mob/living/simple_animal/hostile/scp_2427_3/proc/TimeRespawn()
 	if(stat != DEAD)
 		return
-	playsound(src, 'sound/mecha/powerup.ogg', 50, FALSE)
+	playsound(src, 'sound/mecha/powerup.ogg', 75, FALSE, 4)
 	visible_message(
 		SPAN_DANGER("[src] rises up once again!"),
 		SPAN_NOTICE("You finish the reboot process."))
