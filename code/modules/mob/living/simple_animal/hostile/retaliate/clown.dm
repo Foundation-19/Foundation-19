@@ -12,7 +12,7 @@
 	a_intent = I_HURT
 	maxHealth = 75
 	health = 75
-	speed = -1
+	movement_cooldown = 3
 	harm_intent_damage = 8
 	can_escape = TRUE
 	minbodytemp = 270

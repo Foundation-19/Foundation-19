@@ -11,7 +11,7 @@
 	response_help = "brushes"
 	response_disarm = "pushes"
 	response_harm = "hits"
-	speed = -1
+	movement_cooldown = 4
 	maxHealth = 250
 	health = 250
 

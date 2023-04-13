@@ -27,7 +27,7 @@ var/global/list/protected_objects = list(/obj/machinery,
 	response_help = "touches"
 	response_disarm = "pushes"
 	response_harm = "hits"
-	speed = 4
+	movement_cooldown = 4
 	maxHealth = 100
 	health = 100
 

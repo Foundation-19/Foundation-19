@@ -13,7 +13,7 @@
 	natural_weapon = /obj/item/natural_weapon/bite/medium
 	health = 80
 	maxHealth = 80
-	speed = 3
+	movement_cooldown = 4
 	pry_time = 7 SECONDS
 	pry_desc = "biting"
 	ai_holder_type = /datum/ai_holder/simple_animal/retaliate
