@@ -69,4 +69,4 @@
 
 /datum/event/electrical_storm/end()
 	..()
-	command_announcement.Announce("Anomalous objects pertaining to the ongoing electrical disruption have been recontained. Please repair any electrical overloads.", "Electrical Storm Alert", zlevels = affecting_z)
+	command_announcement.Announce("The anomalous activity within the power net has ended. Please repair any electrical overloads.", "Electrical Storm Alert", zlevels = affecting_z)
