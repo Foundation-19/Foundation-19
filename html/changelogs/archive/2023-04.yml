@@ -63,3 +63,13 @@
   - tweak: SCP-106 has been given more visual and audio effects to its abilities.
   - tweak: Femur breaker is now more "interesting" when used. Shove your friend in
       there, NOW!
+2023-04-13:
+  EgorDinamit:
+  - rscadd: Added random monsters, mobs with randomized abilities and statistics.
+      Be careful around them!
+  - tweak: SCP-294 now accepts reagent names as valud input. You can also input "shortcut
+      names" for several reagents, for example "bica", "kelo", "derma", "mera" and
+      so on.
+  TheDarkElites:
+  - bugfix: 'fixes #1025 (cant see ID cards)'
+  - bugfix: 'fixes #1024 (cant examine your own equipment in the dark)'
