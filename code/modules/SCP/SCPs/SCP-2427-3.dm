@@ -43,13 +43,13 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		melee = ARMOR_MELEE_KNIVES
 		)
 
-	var/fullness = 300
-	/// How much fullness is reduced per tick
-	var/fullness_reduction_per_tick = 0.5
+	var/satiety = 300
+	/// How much satiety is reduced per tick
+	var/satiety_reduction_per_tick = 0.5
 	/// Upon going to that point or above - the mob goes into is_sleeping stage and is unable to act/speak/move for some time
-	var/max_fullness = 500
-	/// Upon that point, the mob is on rampage until getting above half of max fullness and can attack anything
-	var/min_fullness = 0
+	var/max_satiety = 500
+	/// Upon that point, the mob is on rampage until getting above half of max satiety and can attack anything
+	var/min_satiety = 0
 	/// When TRUE - it ignores purity list and can attack anything
 	var/enraged = FALSE
 	var/is_sleeping = FALSE
@@ -93,8 +93,8 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		if(LAZYLEN(pure_check))
 			L = pick(pure_check)
 		CheckPurity(L)
-	AdjustFullness(-fullness_reduction_per_tick)
-	if(fullness <= min_fullness) // Starvation, so you don't just run at mach 3 all the time
+	AdjustSatiety(-satiety_reduction_per_tick)
+	if(satiety <= min_satiety) // Starvation, so you don't just run at mach 3 all the time
 		adjustBruteLoss(maxHealth * 0.01)
 
 /mob/living/simple_animal/hostile/scp_2427_3/get_status_tab_items()
@@ -104,10 +104,10 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	else if(is_sleeping)
 		. += "WE ARE ASLEEP."
 
-	if(fullness <= min_fullness)
-		. += "Fullness: I NEED MEAT RIGHT NOW!"
+	if(satiety <= min_satiety)
+		. += "Satiety: I NEED MEAT RIGHT NOW!"
 	else
-		. += "Fullness: [round(fullness)]/[max_fullness]"
+		. += "Satiety: [round(satiety)]/[max_satiety]"
 
 /mob/living/simple_animal/hostile/scp_2427_3/examinate(atom/A as mob|obj|turf in view())
 	if(UNLINT(..()))
@@ -167,7 +167,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 			playsound(src, 'sound/scp/2427/consume.ogg', rand(15, 35), TRUE)
 			visible_message(SPAN_DANGER("[src] consumes [L]!"))
 			L.gib()
-			AdjustFullness(nutr)
+			AdjustSatiety(nutr)
 			adjustBruteLoss(-nutr * 2)
 			return
 	return ..()
@@ -205,13 +205,13 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		CheckPurity(Proj.firer)
 
 // Mob procs
-/mob/living/simple_animal/hostile/scp_2427_3/proc/AdjustFullness(amount)
-	fullness = max(0, fullness + amount)
-	if(!is_sleeping && fullness >= max_fullness)
+/mob/living/simple_animal/hostile/scp_2427_3/proc/AdjustSatiety(amount)
+	satiety = max(0, satiety + amount)
+	if(!is_sleeping && satiety >= max_satiety)
 		FallAsleep()
 
 /mob/living/simple_animal/hostile/scp_2427_3/proc/IsEnraged()
-	if(fullness <= min_fullness)
+	if(satiety <= min_satiety)
 		return TRUE
 	for(var/mob/living/L in dview(7, src))
 		if(L in impurity_list)
@@ -234,7 +234,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	if(!is_sleeping)
 		return
 	revive()
-	fullness = 300
+	satiety = 300
 	playsound(src, 'sound/mecha/lowpower.ogg', 50, FALSE)
 	visible_message(
 		SPAN_DANGER("[src] rises up once again!"),
@@ -251,7 +251,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		SPAN_DANGER("[src] rises up once again!"),
 		SPAN_NOTICE("You finish the reboot process."))
 	revive()
-	fullness = 100
+	satiety = 100
 	sleep(2 SECONDS) // Give em some warning time
 	icon_state = null
 
