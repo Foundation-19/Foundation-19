@@ -12,7 +12,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	damtype = BRUTE
 	melee_accuracy_bonus = 200
 	edge = 1
-	force = 25
+	force = 36
 
 /mob/living/simple_animal/hostile/scp_2427_3
 	name = "SCP-2427-3"
