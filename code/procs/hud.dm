@@ -16,7 +16,7 @@ the HUD updates properly! */
 	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.med_hud_users)
 	for(var/mob/living/carbon/human/patient in P.Mob.in_view(P.Turf))
 
-		if(patient.is_invisible_to(P.Mob))
+		if(!P.Mob.can_see(patient))
 			continue
 
 		if(local_scanner)
@@ -48,7 +48,7 @@ the HUD updates properly! */
 	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.sec_hud_users)
 	for(var/mob/living/carbon/human/perp in P.Mob.in_view(P.Turf))
 
-		if(perp.is_invisible_to(P.Mob))
+		if(!P.Mob.can_see(perp))
 			continue
 
 		P.Client.images += perp.hud_list[ID_HUD]
@@ -61,6 +61,8 @@ the HUD updates properly! */
 /proc/process_jani_hud(mob/M, mob/Alt)
 	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, GLOB.jani_hud_users)
 	for (var/obj/effect/decal/cleanable/dirtyfloor in view(P.Mob))
+		if(!P.Mob.can_see(dirtyfloor))
+			continue
 		P.Client.images += dirtyfloor.hud_overlay
 
 // SCRAMBLE gear.
