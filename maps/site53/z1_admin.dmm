@@ -9307,13 +9307,13 @@
 /area/centcom)
 "Yt" = (
 /obj/structure/table/standard,
-////obj/item/reagent_containers/ivbag/amnesticsf{
+/obj/item/reagent_containers/ivbag/amnesticsf{
 	pixel_x = 7
 	},
-///////obj/item/reagent_containers/ivbag/amnesticsf{
+/obj/item/reagent_containers/ivbag/amnesticsf{
 	pixel_x = 7
 	},
-///////turf/unsimulated/floor/techfloor,
+/turf/unsimulated/floor/techfloor,
 /area/centcom)
 "Yy" = (
 /obj/machinery/door/airlock/security{
