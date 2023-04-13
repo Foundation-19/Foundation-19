@@ -1,8 +1,8 @@
 var/global/ntnet_card_uid = 1
 
 /obj/item/stock_parts/computer/network_card/
-	name = "basic NTNet network card"
-	desc = "A basic network card for usage with standard NTNet frequencies."
+	name = "basic SCiPnet network card"
+	desc = "A basic network card for usage with standard SCiPnet frequencies."
 	power_usage = 50
 	origin_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 1)
 	critical = 0
@@ -13,7 +13,7 @@ var/global/ntnet_card_uid = 1
 	var/long_range = 0
 	var/ethernet = 0 // Hard-wired, therefore always on, ignores NTNet wireless checks.
 	var/proxy_id     // If set, uses the value to funnel connections through another network card.
-	malfunction_probability = 1
+	malfunction_divisor = 20
 
 /obj/item/stock_parts/computer/network_card/diagnostics()
 	. = ..()

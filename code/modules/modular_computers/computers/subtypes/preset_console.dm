@@ -63,7 +63,6 @@
 	hard_drive.store_file(new /datum/computer_file/program/camera_monitor())
 	hard_drive.store_file(new /datum/computer_file/program/email_client())
 	hard_drive.store_file(new /datum/computer_file/program/records())
-	hard_drive.store_file(new /datum/computer_file/program/docking())
 	hard_drive.store_file(new /datum/computer_file/program/wordprocessor())
 
 /obj/item/modular_computer/console/preset/cardslot/command_sec/install_default_programs()
@@ -72,7 +71,6 @@
 	hard_drive.store_file(new /datum/computer_file/program/camera_monitor())
 	hard_drive.store_file(new /datum/computer_file/program/email_client())
 	hard_drive.store_file(new /datum/computer_file/program/records())
-	hard_drive.store_file(new /datum/computer_file/program/docking())
 	hard_drive.store_file(new /datum/computer_file/program/wordprocessor())
 	hard_drive.store_file(new /datum/computer_file/program/digitalwarrant())
 	hard_drive.store_file(new /datum/computer_file/program/forceauthorization())
@@ -99,7 +97,6 @@
 	hard_drive.store_file(new /datum/computer_file/program/records())
 	hard_drive.store_file(new /datum/computer_file/program/email_client())
 	hard_drive.store_file(new /datum/computer_file/program/supply())
-	hard_drive.store_file(new /datum/computer_file/program/docking())
 
 /obj/item/modular_computer/console/preset/supply_public/install_default_programs()
 	..()

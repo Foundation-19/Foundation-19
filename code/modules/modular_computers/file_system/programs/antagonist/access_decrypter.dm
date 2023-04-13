@@ -1,6 +1,6 @@
 /datum/computer_file/program/access_decrypter
-	filename = "nt_accrypt"
-	filedesc = "NTNet Access Decrypter"
+	filename = "scp_accrypt"
+	filedesc = "SCiPnet Access Decrypter"
 	program_icon_state = "hostile"
 	program_key_state = "security_key"
 	program_menu_icon = "unlocked"
