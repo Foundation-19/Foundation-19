@@ -38,6 +38,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 
 	a_intent = "harm"
 	can_be_buckled = FALSE
+	can_pull_mobs = 0 // RealB abused it too much
 
 	natural_weapon = /obj/item/natural_weapon/leg_2427_3
 	natural_armor = list(
