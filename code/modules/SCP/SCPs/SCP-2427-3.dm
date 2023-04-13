@@ -11,6 +11,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	hitsound = 'sound/scp/2427/stab.ogg'
 	damtype = BRUTE
 	melee_accuracy_bonus = 200
+	stun_prob = 0 // Only combat!
 	edge = 1
 	force = 36
 
@@ -79,7 +80,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		return
 	if(is_sleeping)
 		return
-	if(prob(5)) // Random purity check!
+	if(prob(2)) // Random purity check!
 		var/list/pure_check = list()
 		for(var/mob/living/L in dview(7, src))
 			if(L.stat)
@@ -129,7 +130,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 /mob/living/simple_animal/hostile/scp_2427_3/updatehealth()
 	. = ..()
 	if(is_sleeping && stat != DEAD && health < wakeup_health)
-		WakeUp()
+		WakeUp(TRUE)
 
 /mob/living/simple_animal/hostile/scp_2427_3/death(gibbed, deathmessage = "falls on the ground, beginning reboot process.", show_dead_message)
 	to_chat(src, SPAN_OCCULT("You begin the reboot process. Avoid leaving the body."))
@@ -160,10 +161,10 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	if(isliving(A))
 		var/mob/living/L = A
 		// Brute loss part is mainly for humans
-		if((L.stat == DEAD) || (L.stat && (L.health <= L.maxHealth * 0.25 || L.getBruteLoss() >= L.maxHealth * 5)))
+		if((L.stat == DEAD) || (L.stat && ((L.health <= L.maxHealth * 0.25) || (L.getBruteLoss() >= L.maxHealth * 4))))
 			var/nutr = L.mob_size
 			if(istype(L, /mob/living/simple_animal/hostile/retaliate/goat)) // Likes goats
-				nutr = 125
+				nutr = 200
 			if(ishuman(L))
 				nutr = 75
 			playsound(src, 'sound/scp/2427/consume.ogg', rand(15, 35), TRUE)
@@ -192,7 +193,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 /mob/living/simple_animal/hostile/scp_2427_3/examine(mob/living/user)
 	. = ..()
 	if(is_sleeping)
-		to_chat(user, "It is asleep now, but not for long...")
+		to_chat(user, SPAN_NOTICE("It is asleep now, but not for long..."))
 	CheckPurity(user)
 
 /mob/living/simple_animal/hostile/scp_2427_3/attack_hand(mob/living/carbon/human/H)
@@ -217,8 +218,8 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 /mob/living/simple_animal/hostile/scp_2427_3/proc/IsEnraged()
 	for(var/mob/living/L in dview(7, src))
 		if(L in impurity_list)
-			return TRUE
-		if(L.stat == DEAD && istype(get_area(src), spawn_area)) // Hm yes, today I will ignore all the corpses around me to breach
+			return !L.stat && L.ckey // Conscious and is/was player controlled
+		if(L.stat && istype(get_area(src), spawn_area)) // Hm yes, today I will ignore all the corpses around me to breach
 			return FALSE
 	return (satiety <= min_satiety)
 
@@ -234,11 +235,11 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	is_sleeping = TRUE
 	addtimer(CALLBACK(src, .proc/WakeUp), rand((2 MINUTES), (4 MINUTES)))
 
-/mob/living/simple_animal/hostile/scp_2427_3/proc/WakeUp()
+/mob/living/simple_animal/hostile/scp_2427_3/proc/WakeUp(attacked = FALSE)
 	if(!is_sleeping)
 		return
 	revive()
-	satiety = 300
+	satiety = attacked ? 100 : 400 // If attacked or otherwise forced, it'll be very angry
 	playsound(src, 'sound/mecha/lowpower.ogg', 50, FALSE)
 	visible_message(
 		SPAN_DANGER("[src] rises up once again!"),
@@ -270,6 +271,8 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		return
 	if(!(L in dview(7, src)))
 		return
+	listclearnulls(purity_list)
+	listclearnulls(impurity_list)
 	// Good luck, lmao
 	if(rand(0, 10000) == 1)
 		purity_list |= L
