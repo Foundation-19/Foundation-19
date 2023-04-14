@@ -190,7 +190,6 @@
 		H.queue_icon_update()
 	SLEEP_CHECK_DEATH(2 SECONDS)
 	// Spooky message
-	to_chat(world, length(apostles))
 	var/apostle_line = apostle_lines[length(apostles)]
 	apostle_line = replacetext(apostle_line, "%NAME%", H.real_name)
 	if(findtext(apostle_line, "%PREV%"))
