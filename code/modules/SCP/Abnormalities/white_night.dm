@@ -22,6 +22,11 @@
 	movement_cooldown = 8
 	movement_sound = 'sound/scp/abnormality/white_night/apostle_movement.ogg'
 
+	status_flags = NO_ANTAG
+
+	see_invisible = SEE_INVISIBLE_NOLIGHTING
+	see_in_dark = 7
+
 	natural_armor = list(
 		melee = ARMOR_MELEE_KNIVES
 		)
@@ -159,7 +164,7 @@
 			var/turf/T = get_step(H, pick(0,1,2,4,5,6,8,9,10))
 			var/obj/effect/temp_visual/sparkle/cyan/C = new (T)
 			animate(C, alpha = 0, time = rand(3,6))
-		sleep(4)
+		SLEEP_CHECK_DEATH(4)
 
 // Actual conversion result
 /mob/living/simple_animal/hostile/megafauna/white_night/proc/HumanConversion(mob/living/carbon/human/H)
@@ -183,7 +188,7 @@
 		var/image/apostle_halo = overlay_image('icons/mob/32x64.dmi', "halo")
 		H.overlays_standing[27] = apostle_halo
 		H.queue_icon_update()
-	sleep(2 SECONDS)
+	SLEEP_CHECK_DEATH(2 SECONDS)
 	// Spooky message
 	to_chat(world, length(apostles))
 	var/apostle_line = apostle_lines[length(apostles)]
@@ -266,7 +271,7 @@
 				L.adjustFireLoss(charged_field_damage)
 				L.emote("scream")
 				to_chat(L, SPAN_OCCULT("The holy light... IT BURNS!!"))
-		sleep(1.5)
+		SLEEP_CHECK_DEATH(1.5)
 
 /mob/living/simple_animal/hostile/megafauna/white_night/proc/HolyBlink(target)
 	if(blink_cooldown > world.time)
@@ -276,10 +281,10 @@
 	var/turf/S = get_turf(src)
 	for(var/turf/a in range(1, S))
 		new /obj/effect/temp_visual/sparkle(a)
-	sleep(2.5)
+	SLEEP_CHECK_DEATH(2.5)
 	for(var/turf/b in range(1, T))
 		new /obj/effect/temp_visual/sparkle(b)
-	sleep(5)
+	SLEEP_CHECK_DEATH(5)
 	visible_message(SPAN_DANGER("[src] blinks away!"))
 	for(var/turf/b in range(1, T))
 		new /obj/effect/temp_visual/smoke(b)
@@ -303,8 +308,8 @@
 	charged_field_range += 1 // Powercrepe
 	for(var/mob/M in GLOB.player_list)
 		if(M.client && !isnewplayer(M)) // Send it to every player currently active(outside of lobby), not just everyone on Z-level
-			M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/rapture.ogg', 50)
-	sleep(3 SECONDS)
+			M.playsound_local(get_turf(M), 'sounds/scps/abnormality/white_night/rapture.ogg', 50)
+	SLEEP_CHECK_DEATH(3 SECONDS)
 	for(var/i = 1 to apostles.len)
 		var/mob/living/carbon/human/H = apostles[i]
 		// Most likely the mob got gibbed.
@@ -322,7 +327,7 @@
 		if(i < 12)
 			var/turf/main_loc = get_step(src, pick(0,1,2,4,5,6,8,9,10))
 			H.forceMove(main_loc)
-		sleep(2 SECONDS)
+		SLEEP_CHECK_DEATH(2 SECONDS)
 		for(var/mob/M in GLOB.player_list)
 			if((M.z in GetConnectedZlevels(z)) && M.client)
 				var/apostle_line = apostle_lines[i]
@@ -332,12 +337,24 @@
 				to_chat(M, FONT_LARGE(SPAN_DANGER(apostle_line)))
 				M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/apostle_bell.ogg', 100)
 				flash_color(M, flash_color = "#ff0000", flash_time = 30)
-		TurnHumanIntoApostle(H)
-		sleep(6 SECONDS)
-	sleep(30 SECONDS)
+		TurnHumanIntoApostle(H, i)
+		SLEEP_CHECK_DEATH(6 SECONDS)
+	listclearnulls(apostles)
+	SLEEP_CHECK_DEATH(30 SECONDS)
 	for(var/mob/M in GLOB.player_list)
 		if(M.z == z && M.client)
 			M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/rapture2.ogg', 50)
 
-/mob/living/simple_animal/hostile/megafauna/white_night/proc/TurnHumanIntoApostle(mob/living/carbon/human/H)
-	return // TODO: Add apostle simple mobs from LC13
+/mob/living/simple_animal/hostile/megafauna/white_night/proc/TurnHumanIntoApostle(mob/living/carbon/human/H, number = 0)
+	var/apostle_type = /mob/living/simple_animal/hostile/apostle/scythe
+	switch(number)
+		if(1,11)
+			apostle_type = /mob/living/simple_animal/hostile/apostle/scythe/guardian
+		/*if(4,5,6)
+			apostle_type = /mob/living/simple_animal/hostile/apostle/staff
+		if(7,8,9,10)
+			apostle_type = /mob/living/simple_animal/hostile/apostle/spear*/
+	var/mob/living/simple_animal/hostile/apostle/A = new apostle_type(get_turf(H))
+	A.name = H.real_name
+	H.mind.transfer_to(A)
+	QDEL_NULL(H)
