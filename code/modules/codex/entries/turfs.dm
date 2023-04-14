@@ -5,7 +5,7 @@
 	Walls are typically made of steel girders, plated with steel or plasteel."
 
 /datum/codex_entry/floors
-	associated_paths = list(/turf/simulated/wall)
+	associated_paths = list(/turf/simulated/floor)
 	mechanics_text = "You can remove floors by using a wrench.<br>\
 You can build floor tiles by crafting it with steel then placing it on the respective tile.<br>\
 Floors are typically made out of steel."
