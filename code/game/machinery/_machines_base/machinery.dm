@@ -355,6 +355,7 @@ Class Procs:
 
 	state(text, "blue")
 	playsound(src.loc, 'sound/machines/ping.ogg', 50, 0)
+	show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 
 /obj/machinery/proc/shock(mob/user, prb)
 	if(inoperable())

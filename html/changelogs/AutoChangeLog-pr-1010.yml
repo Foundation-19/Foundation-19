@@ -1,0 +1,15 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscadd: New virus mechanics! Be careful when downloading without protection (or
+      with shady emails), you might just end up with a bricked computer...
+  - rscadd: A computer needs to have internet access for AI to interact with it.
+  - rscdel: Docking management programs deleted.
+  - balance: You no longer need access to run programs, only download them. Perhaps
+      try stealing people's computers and running programs that you couldn't obtain
+      otherwise?
+  - bugfix: Loads of general modular computer fixes and improvements.
+  - bugfix: Antag uplink program no longer meta-ble.
+  - spellcheck: A couple modcomp-related lore improvements.
+  - bugfix: AI not being able to interact with computer fixed.
+  - bugfix: Nanoword not saving files correctly fixed.

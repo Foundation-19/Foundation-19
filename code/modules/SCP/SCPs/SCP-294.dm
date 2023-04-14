@@ -1,6 +1,4 @@
-GLOBAL_LIST_EMPTY(scp294_reagents)
-
-/obj/machinery/scp294/
+/obj/machinery/scp294
 	name = "SCP-294"
 	desc = "A standard coffee vending machine. This one seems to have a QWERTY keyboard."
 	icon = 'icons/obj/scp294.dmi'
@@ -8,6 +6,12 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 	layer = 2.9
 	anchored = TRUE
 	density = TRUE
+	SCP = /datum/scp/scp_294
+
+	var/usage_cooldown
+	var/usage_cooldown_time = 40 SECONDS
+
+	/// These reagents cannot be dispensed under any circumstances
 	var/list/banned_chems = list(
 	/datum/reagent/adminordrazine,
 	/datum/reagent/nitroglycerin,
@@ -20,12 +24,33 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 	/datum/reagent/mutation_toxin,
 	/datum/reagent/advanced_mutation_toxin
 	)
-	var/uses_left = 5
-	var/last_use = 0
-	var/restock_amount = 5
-	var/restock_delay = 10 MINUTES //This is in ticks.
-	var/restock_min = 1 //The minimum amount that SCP-294 can have before restocking
-	SCP = /datum/scp/scp_294
+	/// List of name shortcuts for allowed chems: Name = Datum
+	var/list/shortcut_chems = list(
+		// Medicine
+		"inap" = /datum/reagent/medicine/inaprovaline,
+		"tric" = /datum/reagent/medicine/tricordrazine,
+		"bica" = /datum/reagent/medicine/bicaridine,
+		"mera" = /datum/reagent/medicine/meraline,
+		"kelo" = /datum/reagent/medicine/kelotane,
+		"derma" = /datum/reagent/medicine/dermaline,
+		"dexa" = /datum/reagent/medicine/dexalin,
+		"dexa+" = /datum/reagent/medicine/dexalin_plus,
+		"dylo" = /datum/reagent/medicine/dylovene,
+		"vena" = /datum/reagent/medicine/dylovene/venaxilin,
+		"hyro" = /datum/reagent/medicine/hyronalin,
+		"peri" = /datum/reagent/medicine/peridaxon,
+		"alky" = /datum/reagent/medicine/alkysine,
+		// Drugs/Narcotics
+		"crypto" = /datum/reagent/cryptobiolin,
+		"imped" = /datum/reagent/impedrezene,
+		// Poison
+		"venom" = /datum/reagent/toxin/venom,
+		"spider" = /datum/reagent/toxin/venom,
+		// Sedatives
+		"sleep" = /datum/reagent/soporific,
+		"chloral" = /datum/reagent/chloral_hydrate,
+		"zombie" = /datum/reagent/toxin/zombie_powder,
+	)
 
 /datum/scp/scp_294
 	name = "SCP-294"
@@ -33,42 +58,44 @@ GLOBAL_LIST_EMPTY(scp294_reagents)
 	classification = EUCLID
 
 /obj/machinery/scp294/attack_hand(mob/user)
-
-	if((last_use + 20 SECONDS) > world.time)
+	if(usage_cooldown > world.time)
 		visible_message(SPAN_NOTICE("[src] displays 'NOT READY'."))
 		return
 
-	last_use = world.time
-	if(uses_left < restock_min)
-		visible_message(SPAN_NOTICE("[src] displays 'RESTOCKING'."))
-		addtimer(CALLBACK(src, .proc/update_uses), restock_delay)
+	playsound(src, 'sound/machines/cb_button.ogg', 35, TRUE)
+	var/chosen_reagent = replacetext(lowertext(input(user, "Enter the name of any liquid!", "SCP 294") as null|text), " ", "")
+	if(shortcut_chems[chosen_reagent])
+		chosen_reagent = shortcut_chems[chosen_reagent]
+	else
+		chosen_reagent = find_reagent(chosen_reagent)
+
+	// "Ohoho, I am so smart, we'll use it with several people to avoid cooldown"
+	if(usage_cooldown > world.time)
+		visible_message(SPAN_NOTICE("[src] displays 'NOT READY'."))
 		return
 
-	var/valid_id
-	while(!valid_id)
-		var/chosen_id = input(user, "Enter the name of any liquid!", "SCP 294") as null|text
-		var/chosen_reagent = text2path(chosen_id)
-		if(isnull(chosen_id))
-			to_chat(user, SPAN_WARNING("SCP-294 wheezes and displays 'NO INPUT' before shutting down."))
-			return
-		if(!ispath(chosen_reagent))
-			to_chat(user, SPAN_WARNING("SCP-294 wheezes and displays 'OUT OF RANGE' before shutting down."))
-			return
-		if(!(chosen_reagent in banned_chems))
-			valid_id = TRUE
-		else
-			valid_id = FALSE
-			to_chat(user, SPAN_WARNING("A strange substance wheezes out of the dispenser and evaporates."))
-			return
+	// Reagent is banned / doesn't exist
+	if(!chosen_reagent || (chosen_reagent in banned_chems))
+		playsound(src, 'sound/machines/cb_button_fail.ogg', 35, TRUE)
+		visible_message(SPAN_WARNING("[src] displays 'OUT OF RANGE'."))
+		return
 
-		var/obj/item/reagent_containers/food/drinks/sillycup/D = new /obj/item/reagent_containers/food/drinks/sillycup(loc)
-		D.reagents.add_reagent(chosen_reagent, 30)
-		D.reagents.update_total()
-		D.on_reagent_change()
-		visible_message(SPAN_NOTICE("[src] dispenses a small paper cup."))
-		log_and_message_admins("NOTICE: [src] has been used by [user.name], dispensing [chosen_reagent]", null, src)
+	// Pass
+	usage_cooldown = world.time + usage_cooldown_time
+	playsound(src, 'sound/scp/294/dispense1.ogg', 35, FALSE)
+	visible_message(SPAN_NOTICE("[src] dispenses a small paper cup and starts filling it with some liquid."))
+	log_and_message_admins("[user.real_name] used [src], dispensing [chosen_reagent]", user, get_turf(src))
 
-/obj/machinery/scp294/proc/update_uses()
-	if(uses_left < restock_min) //So you can adjust when it restocks. E.G never
-		uses_left = restock_amount //No use conserving charges. You got what you got.
-		addtimer(CALLBACK(src, .proc/update_uses), restock_delay)
+	sleep(3 SECONDS)
+
+	var/obj/item/reagent_containers/food/drinks/sillycup/D = new /obj/item/reagent_containers/food/drinks/sillycup(get_turf(src))
+	D.reagents.add_reagent(chosen_reagent, 30)
+	D.reagents.update_total()
+	D.on_reagent_change()
+
+/obj/machinery/scp294/proc/find_reagent(input)
+	. = FALSE
+	if(GLOB.chemical_reagents_list[input]) // Prefer paths, if one was provided.
+		return input
+	else
+		return get_chem_id(input)

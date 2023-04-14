@@ -127,6 +127,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 /mob/living/carbon/human/scp049/proc/Attack_Voice_Line() //for when we're up to no good!
 	var/voiceline = list('sound/scp/voice/SCP049_1.ogg','sound/scp/voice/SCP049_2.ogg','sound/scp/voice/SCP049_3.ogg','sound/scp/voice/SCP049_4.ogg','sound/scp/voice/SCP049_5.ogg')
 	playsound(src, pick(voiceline), 30)
+	show_sound_effect(src.loc, src)
 
 /mob/living/carbon/human/scp049/proc/SCP049_Chase_Music(mob/living/carbon/human/target)
 	if(!target)
@@ -277,6 +278,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	set name = "Greetings"
 	if (world.time >= next_emote)
 		playsound(src, 'sound/scp/voice/SCP049_1.ogg', 30)
+		show_sound_effect(src.loc, src)
 		next_emote = world.time + 10
 
 /mob/living/carbon/human/scp049/proc/yet_another_victim()
@@ -284,6 +286,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	set name = "Yet another victim"
 	if (world.time >= next_emote)
 		playsound(src, 'sound/scp/voice/SCP049_2.ogg', 30)
+		show_sound_effect(src.loc, src)
 		next_emote = world.time + 40
 
 /mob/living/carbon/human/scp049/proc/you_are_not_a_doctor()
@@ -291,6 +294,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	set name = "You are not a doctor"
 	if (world.time >= next_emote)
 		playsound(src, 'sound/scp/voice/SCP049_3.ogg', 30)
+		show_sound_effect(src.loc, src)
 		next_emote = world.time + 20
 
 /mob/living/carbon/human/scp049/proc/I_sense_the_disease_in_you()
@@ -298,6 +302,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	set name = "I sense the disease in you"
 	if (world.time >= next_emote)
 		playsound(src, 'sound/scp/voice/SCP049_4.ogg', 30)
+		show_sound_effect(src.loc, src)
 		next_emote = world.time + 20
 
 /mob/living/carbon/human/scp049/proc/Im_here_to_cure_you()
@@ -305,6 +310,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 	set name = "I'm here to cure you"
 	if (world.time >= next_emote)
 		playsound(src, 'sound/scp/voice/SCP049_5.ogg', 30)
+		show_sound_effect(src.loc, src)
 		next_emote = world.time + 40
 
 /mob/living/carbon/human/scp049/proc/cure_action()

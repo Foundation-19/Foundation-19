@@ -38,7 +38,7 @@
 /datum/computer_file/program/scanner/proc/save_scan(name)
 	if(!data_buffer)
 		return 0
-	if(!create_file(name, data_buffer, scan_file_type, metadata_buffer.Copy()))
+	if(!create_data_file(name, data_buffer, scan_file_type, metadata_buffer.Copy()))
 		return 0
 	return 1
 

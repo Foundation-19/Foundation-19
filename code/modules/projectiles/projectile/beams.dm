@@ -444,3 +444,23 @@
 		L.adjust_fire_stacks(rand(2,4))
 		if(L.fire_stacks >= 3)
 			L.IgniteMob()
+
+/obj/item/projectile/beam/gigabeam
+	name = "concentrated energy beam" // Used by mega hivebot
+	icon_state = "emitter"
+	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+	damage = 35
+	agony = 5
+	eyeblur = 5
+	sharp = FALSE
+	life_span = 20
+	penetration_modifier = 0.5
+
+	muzzle_type = /obj/effect/projectile/muzzle/emitter
+	tracer_type = /obj/effect/projectile/tracer/emitter
+	impact_type = /obj/effect/projectile/impact/emitter
+
+/obj/item/projectile/beam/gigabeam/on_hit(atom/target, blocked = 0)
+	..()
+	var/turf/T = get_turf(target)
+	explosion(T, 1, 3, 5)
