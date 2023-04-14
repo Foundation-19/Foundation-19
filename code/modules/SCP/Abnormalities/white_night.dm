@@ -58,9 +58,11 @@
 
 	/// To prematurely stop visual effects of conversion
 	var/cancel_conversion_effect = FALSE
+	/// Tells us if rapture was started
+	var/rapture_complete = FALSE
 
-	/// Assoc list of apostles. Mob ref = list(ckey, name).
-	/// We store ckey and name in case mob gets deleted.
+	/// List of apostles. list(mob ref, ckey, name)
+	/// We store ckey and name in case mob gets deleted and turned to null.
 	var/list/apostles = list()
 	/// Just the lines to show globally when someone is converted.
 	/// %NAME% is replaced by apostle's name.
@@ -105,10 +107,10 @@
 	chosen_attack_num = 101
 
 /mob/living/simple_animal/hostile/megafauna/white_night/death(gibbed, deathmessage = "evaporates in a moment, leaving heavenly light and feathers behind.", show_dead_message)
-	for(var/datum/mind/A in GLOB.apostles)
-		if(!A.current || !ishuman(A.current))
-			continue
-		GLOB.apostle_antag.prophet_death(A.current)
+	for(var/mob/living/L in apostles)
+		to_chat(L, SPAN_USERDANGER("The prophet is dead..."))
+		L.death()
+		QDEL_IN(L, 2 SECONDS) // TODO: TEMPORARY, ADD COOL DEATH EFFECT
 	qdel(src)
 	return ..()
 
@@ -137,6 +139,8 @@
 
 // Conversion ritual
 /mob/living/simple_animal/hostile/megafauna/white_night/proc/InitiateConversion(mob/living/carbon/human/H)
+	if(rapture_complete)
+		return
 	if(length(apostles) >= 12)
 		to_chat(src, SPAN_WARNING("The twelve of them shall be enough for the Heavens to come unto Earth."))
 		return
@@ -181,7 +185,7 @@
 	apostle_cooldown = world.time + apostle_cooldown_time
 	H.revive()
 	// Giving the fancy stuff to new apostle
-	apostles[H] = list(H.ckey, H.real_name)
+	apostles += list(H, H.ckey, H.real_name)
 	H.faction = "apostle"
 	to_chat(H, SPAN_NOTICE("You are protected by the holy light!"))
 	if(length(apostles) < 12)
@@ -193,7 +197,7 @@
 	var/apostle_line = apostle_lines[length(apostles)]
 	apostle_line = replacetext(apostle_line, "%NAME%", H.real_name)
 	if(findtext(apostle_line, "%PREV%"))
-		apostle_line = replacetext(apostle_line, "%PREV%", apostles[apostles.len - 1][2])
+		apostle_line = replacetext(apostle_line, "%PREV%", apostles[apostles.len - 1][3])
 	for(var/mob/M in GLOB.player_list)
 		if((M.z in GetConnectedZlevels(z)) && M.client)
 			to_chat(M, FONT_LARGE(SPAN_OCCULT(apostle_line)))
@@ -299,6 +303,7 @@
 // The beginning of the end
 /mob/living/simple_animal/hostile/megafauna/white_night/proc/Rapture()
 	rapture_skill.Remove(src)
+	rapture_complete = TRUE
 	chosen_attack = 1 // To avoid rapture spam
 	to_chat(src, SPAN_DANGER("You begin the final ritual..."))
 	holy_revival_cooldown_time = 8 SECONDS
@@ -310,12 +315,12 @@
 			M.playsound_local(get_turf(M), 'sounds/scps/abnormality/white_night/rapture.ogg', 50)
 	SLEEP_CHECK_DEATH(3 SECONDS)
 	for(var/i = 1 to apostles.len)
-		var/mob/living/carbon/human/H = apostles[i]
+		var/mob/living/carbon/human/H = apostles[i][1]
 		// Most likely the mob got gibbed.
 		if(QDELETED(H))
 			H = new(src)
-			H.ckey = apostles[i][1]
-			H.fully_replace_character_name(apostles[i][2])
+			H.ckey = apostles[i][2]
+			H.fully_replace_character_name(apostles[i][3])
 		if(!ishuman(H))
 			continue
 		if(!H.client && ckey)
@@ -332,13 +337,12 @@
 				var/apostle_line = apostle_lines[i]
 				apostle_line = replacetext(apostle_line, "%NAME%", H.real_name)
 				if(findtext(apostle_line, "%PREV%"))
-					apostle_line = replacetext(apostle_line, "%PREV%", apostles[i - 1][2])
+					apostle_line = replacetext(apostle_line, "%PREV%", apostles[i - 1][3])
 				to_chat(M, FONT_LARGE(SPAN_DANGER(apostle_line)))
 				M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/apostle_bell.ogg', 100)
 				flash_color(M, flash_color = "#ff0000", flash_time = 30)
-		TurnHumanIntoApostle(H, i)
+		apostles[i] = TurnHumanIntoApostle(H, i)
 		SLEEP_CHECK_DEATH(6 SECONDS)
-	listclearnulls(apostles)
 	SLEEP_CHECK_DEATH(30 SECONDS)
 	for(var/mob/M in GLOB.player_list)
 		if(M.z == z && M.client)
@@ -357,3 +361,4 @@
 	A.name = H.real_name
 	H.mind.transfer_to(A)
 	QDEL_NULL(H)
+	return A
