@@ -192,6 +192,12 @@
 		var/image/apostle_halo = overlay_image('icons/mob/32x64.dmi', "halo")
 		H.overlays_standing[27] = apostle_halo
 		H.queue_icon_update()
+	// Buffs
+	H.species.brute_mod *= 0.8
+	H.species.burn_mod *= 0.8
+	H.species.stun_mod *= 0.8
+	H.species.weaken_mod *= 0.8
+	H.species.slowdown -= 1
 	SLEEP_CHECK_DEATH(2 SECONDS)
 	// Spooky message
 	var/apostle_line = apostle_lines[length(apostles)]
