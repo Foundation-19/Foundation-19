@@ -487,6 +487,7 @@
 		to_chat(user, SPAN_NOTICE("You repair some of the damage to \the [src] with \the [W]."))
 		damage = max(damage - 10, 0)
 		playsound(src, 'sound/effects/tape.ogg', 25)
+		show_sound_effect(src, user, soundicon = SFX_ICON_SMALL)
 
 	user.visible_message(
 		SPAN_WARNING("\The [user] touches \a [W] to \the [src], then flinches away as it flashes instantly into dust. Silence blankets the air."),

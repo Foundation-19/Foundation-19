@@ -61,7 +61,7 @@
 
 	//spaghetti code
 	if(type)
-		if(((type & VISIBLE_MESSAGE) && !can_see()))//Vision related
+		if((type & VISIBLE_MESSAGE) && !can_see())//Vision related
 			if(!alt)
 				return
 			else
@@ -309,11 +309,15 @@
 	return TRUE
 
 /mob/proc/can_hear(atom/origin)
-	if(((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT)))
+	if((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT))
 		return FALSE
 	if(origin)
-		if(!(origin in hear(7, src)))
-			return FALSE
+		if(isturf(origin.loc))
+			if(!(origin in hear(7, get_turf(src))))
+				return FALSE
+		else
+			if(!(get_turf(origin) in hear(7,get_turf(src))))
+				return FALSE
 	return TRUE
 
 /mob/proc/is_physically_disabled()

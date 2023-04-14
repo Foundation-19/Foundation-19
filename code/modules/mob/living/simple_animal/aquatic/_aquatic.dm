@@ -1,7 +1,7 @@
 /mob/living/simple_animal/aquatic
 	icon = 'icons/mob/simple_animal/aquatic.dmi'
 	turns_per_move = 5
-	speed = 4
+	movement_cooldown = 4
 	mob_size = MOB_SMALL
 
 	// They only really care if there's water around them or not.

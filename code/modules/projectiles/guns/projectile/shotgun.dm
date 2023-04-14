@@ -39,6 +39,7 @@
 
 /obj/item/gun/projectile/shotgun/pump/proc/pump(mob/M as mob)
 	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
+	show_sound_effect(M.loc, M)
 
 	if(chambered)//We have a shell in the chamber
 		chambered.dropInto(loc)//Eject casing

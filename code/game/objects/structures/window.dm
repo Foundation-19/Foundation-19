@@ -171,6 +171,7 @@
 
 /obj/structure/window/proc/shatter(display_message = 1)
 	playsound(src, "shatter", 70, 1)
+	show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	if(display_message)
 		visible_message(SPAN_WARNING("\The [src] shatters!"))
 

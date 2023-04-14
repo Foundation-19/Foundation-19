@@ -144,6 +144,7 @@
 				return
 
 			playsound(holder, 'sound/items/Wirecutter.ogg', 20, 1)
+			show_sound_effect(holder.loc, soundicon = SFX_ICON_SMALL)
 			cut_color(color)
 			return TRUE
 
@@ -155,6 +156,7 @@
 				return
 
 			playsound(holder, 'sound/items/multitool_pulse.ogg', 20, 1)
+			show_sound_effect(holder.loc, soundicon = SFX_ICON_SMALL)
 			pulse_color(color)
 
 			// If they pulse the electrify wire, call interactable() and try to shock them.

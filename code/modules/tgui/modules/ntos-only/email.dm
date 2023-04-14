@@ -220,6 +220,10 @@
 			return 1
 
 		if(MC.hard_drive.store_file(downloading))
+			if(istype(downloading, /datum/computer_file/program))
+				var/datum/computer_file/program/downloading_prog = downloading
+				if(downloading_prog.program_malicious)
+					MC.run_program(downloading.filename)
 			error = "File successfully downloaded to local device."
 		else
 			error = "Error saving file: I/O Error: The hard drive may be full or nonfunctional."

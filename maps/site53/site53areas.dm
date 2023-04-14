@@ -341,6 +341,12 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
 
+/area/site53/ulcz/scp2427_3
+	name = "\improper SCP-2427-3"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
+
 /area/site53/ulcz/scp999
 	name = "\improper SCP-999"
 	icon_state = "research"

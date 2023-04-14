@@ -77,11 +77,12 @@
 	//Mob interaction
 	var/list/friends = list()		// Mobs on this list wont get attacked regardless of faction status.
 	var/harm_intent_damage = 3		// How much an unarmed harm click does to this mob.
-	var/list/loot_list = list()		// The list of lootable objects to drop, with "/path = prob%" structure
+	/// The list of lootable objects to drop, with "/path = amount" structure
+	var/list/loot_list = list()
 	var/obj/item/card/id/myid// An ID card if they have one to give them access to stuff.
 
 	//Movement things.
-	var/movement_cooldown = 5			// Lower is faster.
+	var/movement_cooldown = 4			// Lower is faster.
 	var/movement_sound = null			// If set, will play this sound when it moves on its own will.
 	var/turn_sound = null				// If set, plays the sound when the mob's dir changes in most cases.
 	var/movement_shake_radius = 0		// If set, moving will shake the camera of all living mobs within this radius slightly.
@@ -92,7 +93,6 @@
 	var/list/max_gas = list(GAS_PHORON = 1, GAS_CO2 = 5)
 
 	var/unsuitable_atmos_damage = 2	//This damage is taken when atmos doesn't fit all the requirements above
-	var/speed = 0 //LETS SEE IF I CAN SET SPEEDS FOR SIMPLE MOBS WITHOUT DESTROYING EVERYTHING. Higher speed is slower, negative speed is faster
 
 	//LETTING SIMPLE ANIMALS ATTACK? WHAT COULD GO WRONG. Defaults to zero so Ian can still be cuddly
 	var/obj/item/natural_weapon/natural_weapon
@@ -172,17 +172,6 @@
 
 	. = ..()
 
-/mob/living/simple_animal/movement_delay()
-	var/tally = ..() //Incase I need to add stuff other than "speed" later
-
-	tally += speed
-	if(purge)//Purged creatures will move more slowly. The more time before their purge stops, the slower they'll move.
-		if(tally <= 0)
-			tally = 1
-		tally *= purge
-
-	return tally
-
 /mob/living/simple_animal/get_status_tab_items()
 	.=..()
 	if(show_stat_health)
@@ -190,11 +179,19 @@
 
 /mob/living/simple_animal/death(gibbed, deathmessage = "dies!", show_dead_message)
 	. = ..(gibbed,deathmessage,show_dead_message)
+	drop_loot()
 	icon_state = icon_dead
 	update_icon()
 	density = FALSE
 	adjustBruteLoss(maxHealth) //Make sure dey dead.
 	walk_to(src,0)
+
+/mob/living/simple_animal/proc/drop_loot()
+	if(!LAZYLEN(loot_list))
+		return
+	for(var/drop in loot_list)
+		for(var/i in 1 to max(1, loot_list[drop]))
+			new drop(loc)
 
 /mob/living/simple_animal/adjustBruteLoss(damage)
 	..()
@@ -312,17 +309,18 @@
 		else
 			return FLASH_PROTECTION_MAJOR
 
-/mob/living/simple_animal/SelfMove(turf/n, direct, movetime)
+/mob/living/simple_animal/DoMove(direction, mob/mover)
 	var/turf/old_turf = get_turf(src)
 	var/old_dir = dir
 	. = ..()
-	if(. && movement_shake_radius)
-		for(var/mob/living/L in range(movement_shake_radius, src))
-			shake_camera(L, 1, 1)
-	if(turn_sound && dir != old_dir)
-		playsound(src, turn_sound, 50, 1)
-	else if(movement_sound && old_turf != get_turf(src)) // Playing both sounds at the same time generally sounds bad.
-		playsound(src, movement_sound, 50, 1)
+	if(. & MOVEMENT_HANDLED)
+		if(movement_shake_radius)
+			for(var/mob/living/L in range(movement_shake_radius, src))
+				shake_camera(L, 1, 1)
+		if(turn_sound && dir != old_dir)
+			playsound(src, turn_sound, 50, 1)
+		else if(movement_sound && old_turf != get_turf(src)) // Playing both sounds at the same time generally sounds bad.
+			playsound(src, movement_sound, 50, 1)
 
 /mob/living/simple_animal/movement_delay()
 	. = movement_cooldown
@@ -336,11 +334,6 @@
 		if(. <= 0)
 			. = 1
 		. *= purge
-
-	if(a_intent == "walk")
-		. *= 1.5
-
-	 . += ..()
 
 /mob/living/simple_animal/get_inventory_slot(obj/item/I)
 	return -1
