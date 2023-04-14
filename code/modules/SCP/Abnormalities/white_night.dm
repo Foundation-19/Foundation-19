@@ -24,26 +24,29 @@
 		)
 
 	mob_actions = list(
-						/datum/action/megafauna/holy_revival,
-						/datum/action/megafauna/charged_field,
-						/datum/action/megafauna/holy_blink,
-						)
+		/datum/action/megafauna/holy_revival,
+		/datum/action/megafauna/charged_field,
+		/datum/action/megafauna/holy_blink,
+		)
 
 	var/datum/action/megafauna/rapture/rapture_skill = new /datum/action/megafauna/rapture
 
+	// Cooldowns
 	var/holy_revival_cooldown = 10 SECONDS
-	var/holy_revival_cooldown_base = 10 SECONDS
+	var/holy_revival_cooldown_time = 10 SECONDS
 	var/holy_revival_damage = 16 // Amount of damage
-	var/fire_field_cooldown = 20 SECONDS
-	var/fire_field_cooldown_base = 20 SECONDS
-	var/field_range = 4
+	var/holy_revival_range = 6
+	var/charged_field_cooldown = 20 SECONDS
+	var/charged_field_cooldown_time = 20 SECONDS
+	var/charged_field_damage = 60
+	var/charged_field_range = 4
 	var/scream_cooldown = 18 SECONDS
-	var/scream_cooldown_base = 18 SECONDS
+	var/scream_cooldown_time = 18 SECONDS
 	var/scream_power = 25
-	var/apostle_cooldown = 20 SECONDS //Cooldown for conversion and revival of non-apostles.
-	var/apostle_cooldown_base = 20 SECONDS
+	var/apostle_cooldown = 20 SECONDS // Cooldown for conversion and revival of non-apostles.
+	var/apostle_cooldown_time = 20 SECONDS
 	var/blink_cooldown = 6 SECONDS
-	var/blink_cooldown_base = 6 SECONDS
+	var/blink_cooldown_time = 6 SECONDS
 
 	/// Assoc list of apostles. Mob ref = list(ckey, name).
 	/// We store ckey and name in case mob gets deleted.
@@ -115,12 +118,14 @@
 /mob/living/simple_animal/hostile/megafauna/white_night/proc/HolyRevival()
 	if(holy_revival_cooldown > world.time)
 		return
-	holy_revival_cooldown = (world.time + holy_revival_cooldown_base)
+	holy_revival_cooldown = (world.time + holy_revival_cooldown_time)
 	playsound(src, 'sounds/scp/abnormality/white_night/apostle_spell.ogg', 100, TRUE, 7)
-	for(var/turf/T in range(3, src))
+	for(var/turf/T in range(holy_revival_range, src))
 		new /obj/effect/temp_visual/sparkle(T)
-	for(var/mob/living/L in range(3, src))
-		if(L.faction != "apostle")
+	for(var/mob/living/L in range(holy_revival_range, src))
+		if(L.faction != faction)
+			if(L.stat == DEAD)
+				continue
 			playsound(L, 'sounds/scp/abnormality/white_night/ark_damage.ogg', 50, TRUE, -1)
 			L.adjustFireLoss(holy_revival_damage)
 			L.emote("scream")
@@ -133,52 +138,42 @@
 			L.revive()
 			to_chat(L, SPAN_NOTICE("The holy light compels you to live!"))
 
-/mob/living/simple_animal/hostile/megafauna/white_night/proc/HumanConversion(mob/living/carbon/human/H)
-	if(apostle_cooldown >= world.time)
-		return
-	if(!H.client)
-		var/mob/observer/ghost/ghost = find_dead_player(H.ckey, 1)
-		if(!istype(ghost))
-			return
-		if(!ghost.client)
-			return
-		ghost.reenter_corpse()
-	apostle_cooldown = world.time + apostle_cooldown_base
-	H.revive()
-	// Giving the fancy stuff to new apostle
-	apostles[H] = list(H.ckey, H.real_name)
-	H.faction = "apostle"
-	to_chat(H, SPAN_NOTICE("You are protected by the holy light!"))
-	if(length(apostles) < 12)
-		var/image/apostle_halo = overlay_image('icons/mob/32x64.dmi', "halo")
-		H.overlays_standing[27] = apostle_halo
-		H.queue_icon_update()
-	sleep(2 SECONDS)
-	// Spooky message
-	to_chat(world, length(apostles))
-	var/apostle_line = apostle_lines[length(apostles)]
-	apostle_line = replacetext(apostle_line, "%NAME%", H.real_name)
-	if(findtext(apostle_line, "%PREV%"))
-		apostle_line = replacetext(apostle_line, "%PREV%", apostles[apostles.len - 1][2])
-	for(var/mob/M in GLOB.player_list)
-		if((M.z in GetConnectedZlevels(z)) && M.client)
-			to_chat(M, FONT_LARGE(SPAN_OCCULT(apostle_line)))
-			M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/apostle_bell.ogg', 75, FALSE)
-			flash_color(M, flash_color = "#ff0000", flash_time = 50)
-	// Allows us to begin rapture
-	if(apostles.len >= 12)
-		rapture_skill.Grant(src)
-	maxHealth += 100
-	health = maxHealth
-	holy_revival_damage += 2 // More damage and healing from AOE spell.
-
 /mob/living/simple_animal/hostile/megafauna/white_night/proc/ChargedField()
-	// ADD STUFF
+	playsound(src, 'sound/scp/abnormality/white_night/apostle_charge.ogg', 75, FALSE, 7)
+	for(var/i = 1 to 2)
+		var/obj/effect/temp_visual/decoy/D = new(get_turf(src), 0, src, 7)
+		D.transform = matrix()*2
+		D.alpha = 25
+		animate(D, transform = matrix()*0.5, alpha = 175, time = 7)
+		if(!do_after(src, (0.9 SECONDS), src))
+			return
+	playsound(src, 'sound/scp/abnormality/white_night/apostle_fire.ogg', 100, FALSE, 14)
+	// Scare everyone
+	for(var/mob/living/L in range(src, 10))
+		shake_camera(L, 2, 2)
+	var/turf/target_c = get_turf(src)
+	for(var/i = 1 to charged_field_range)
+		for(var/turf/T in spiral_range_turfs(i, target_c) - spiral_range_turfs(i-1, target_c))
+			for(var/ix = 1 to 3)
+				var/obj/effect/temp_visual/smash/S = new(T)
+				S.color = COLOR_RED
+				S.pixel_x = rand(-8, 8)
+				S.pixel_y = rand(-8, 8)
+				animate(S, transform = matrix()*2, alpha = 0, time = 5)
+			for(var/mob/living/L in T)
+				if(L.faction == faction)
+					continue
+				if(L.stat == DEAD)
+					continue
+				playsound(L, 'sound/scp/abnormality/white_night/ark_damage.ogg', 50, TRUE)
+				L.adjustFireLoss(charged_field_damage)
+				L.emote("scream")
+				to_chat(L, SPAN_OCCULT("The holy light... IT BURNS!!"))
 
 /mob/living/simple_animal/hostile/megafauna/white_night/proc/HolyBlink(target)
 	if(blink_cooldown > world.time)
 		return
-	blink_cooldown = (world.time + blink_cooldown_base)
+	blink_cooldown = (world.time + blink_cooldown_time)
 	var/turf/T = get_turf(target)
 	var/turf/S = get_turf(src)
 	for(var/turf/a in range(1, S))
@@ -204,9 +199,9 @@
 	rapture_skill.Remove(src)
 	chosen_attack = 1 // To avoid rapture spam
 	to_chat(src, SPAN_DANGER("You begin the final ritual..."))
-	holy_revival_cooldown_base = 8 SECONDS
-	fire_field_cooldown_base = 16 SECONDS
-	field_range += 1 // Powercrepe
+	holy_revival_cooldown_time = 8 SECONDS
+	charged_field_cooldown_time = 16 SECONDS
+	charged_field_range += 1 // Powercrepe
 	for(var/mob/M in GLOB.player_list)
 		if(M.client && !isnewplayer(M)) // Send it to every player currently active(outside of lobby), not just everyone on Z-level
 			M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/rapture.ogg', 50)

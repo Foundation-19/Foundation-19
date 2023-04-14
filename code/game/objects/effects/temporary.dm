@@ -50,6 +50,12 @@
 		target_pixel_x = -16
 	animate(src, pixel_x = target_pixel_x, pixel_y = target_pixel_y, alpha = 0, time = duration)
 
+// Attack effect
+/obj/effect/temp_visual/smash
+	name = "smash"
+	icon_state = "smash"
+	duration = 8
+
 // Smoke effect
 
 /obj/effect/temp_visual/smoke
