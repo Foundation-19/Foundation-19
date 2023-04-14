@@ -11834,7 +11834,6 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/medicalpost)
 "CX" = (
-/obj/structure/closet/secure_closet/mtf/riotshotguns,
 /obj/effect/floor_decal/corner/red/bordercee{
 	dir = 1
 	},
