@@ -2267,6 +2267,7 @@
 #include "code\modules\mob\living\carbon\human\species\outsider\scp049.dm"
 #include "code\modules\mob\living\carbon\human\species\outsider\scp049_1.dm"
 #include "code\modules\mob\living\carbon\human\species\outsider\scp106.dm"
+#include "code\modules\mob\living\carbon\human\species\outsider\scp2343.dm"
 #include "code\modules\mob\living\carbon\human\species\outsider\scp343.dm"
 #include "code\modules\mob\living\carbon\xenobiological\death.dm"
 #include "code\modules\mob\living\carbon\xenobiological\examine.dm"

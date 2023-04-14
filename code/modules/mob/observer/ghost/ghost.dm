@@ -622,6 +622,12 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			var/mob/M = scp2427
 			if(!M.client && (length(GLOB.clients) >= 20))
 				scps += M
+ 
+		if(IS_TRUSTED_PLAYER(ckey))
+			for(var/scp049 in GLOB.scp049s)
+				var/mob/M = scp049
+				if (!M.client)
+					scps += M
 
 		// Technically not difficult to recontain, but will easily kill anyone
 		for(var/scp106 in GLOB.scp106s)
