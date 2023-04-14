@@ -5,7 +5,7 @@
 
 	var/overload = 0
 	var/max_overload = 100
-	var/psi_mode = PSI_IMPLANT_AUTOMATIC
+	var/psi_mode = PSI_IMPLANT_LOG
 
 /obj/item/implant/psi_control/islegal()
 	return TRUE
@@ -27,8 +27,7 @@
 	update_functionality()
 
 /obj/item/implant/psi_control/disrupts_psionics()
-	var/use_psi_mode = get_psi_mode()
-	return (!malfunction && (use_psi_mode == PSI_IMPLANT_SHOCK || use_psi_mode == PSI_IMPLANT_WARN)) ? src : FALSE
+	return (!malfunction && (psi_mode == PSI_IMPLANT_SHOCK || psi_mode == PSI_IMPLANT_WARN)) ? src : FALSE
 
 /obj/item/implant/psi_control/removed()
 	var/mob/living/M = imp_in
@@ -38,7 +37,7 @@
 
 /obj/item/implant/psi_control/proc/update_functionality(silent)
 	var/mob/living/M = imp_in
-	if(get_psi_mode() == PSI_IMPLANT_DISABLED || malfunction)
+	if(psi_mode == PSI_IMPLANT_DISABLED || malfunction)
 		if(implanted && !silent && istype(M) && M.psi)
 			to_chat(M, SPAN_NOTICE("You feel the chilly shackles around your psionic faculties fade away."))
 	else
@@ -54,17 +53,9 @@
 				monitor.report_failure(src)
 	. = ..()
 
-/obj/item/implant/psi_control/proc/get_psi_mode()
-	if(psi_mode == PSI_IMPLANT_AUTOMATIC)
-		var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-		return security_state.current_security_level.psionic_control_level
-	return psi_mode
-
 /obj/item/implant/psi_control/withstand_psi_stress(stress, atom/source)
 
-	var/use_psi_mode = get_psi_mode()
-
-	if(malfunction || use_psi_mode == PSI_IMPLANT_DISABLED)
+	if(malfunction || psi_mode == PSI_IMPLANT_DISABLED)
 		return stress
 
 	. = 0
@@ -95,16 +86,16 @@
 			for(var/thing in SSpsi.psi_monitors)
 				var/obj/machinery/psi_monitor/monitor = thing
 				monitor.report_violation(src, stress)
-			if(use_psi_mode == PSI_IMPLANT_LOG)
+			if(psi_mode == PSI_IMPLANT_LOG)
 				return stress
-			else if(use_psi_mode == PSI_IMPLANT_SHOCK)
+			else if(psi_mode == PSI_IMPLANT_SHOCK)
 				to_chat(imp_in, SPAN_DANGER("Your psi dampener punishes you with a violent neural shock!"))
 				imp_in.flash_eyes()
 				imp_in.Weaken(5)
 				if(isliving(imp_in))
 					var/mob/living/M = imp_in
 					if(M.psi) M.psi.stunned(5)
-			else if(use_psi_mode == PSI_IMPLANT_WARN)
+			else if(psi_mode == PSI_IMPLANT_WARN)
 				to_chat(imp_in, SPAN_WARNING("Your psi dampener primly informs you it has reported this violation."))
 
 /obj/item/implantcase/psi_control

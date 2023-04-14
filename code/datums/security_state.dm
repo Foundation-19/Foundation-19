@@ -92,10 +92,6 @@
 		previous_security_level.switching_down_from()
 		new_security_level.switching_down_to()
 
-	for(var/thing in SSpsi.psi_dampeners)
-		var/obj/item/implant/psi_control/implant = thing
-		implant.update_functionality()
-
 	log_and_message_admins("has changed the security level from [previous_security_level.name] to [new_security_level.name].")
 	return TRUE
 
@@ -127,8 +123,6 @@
 
 	// Describes the alert itself, shown when choosing alarms
 	var/description
-
-	var/psionic_control_level = PSI_IMPLANT_WARN
 
 // Called when we're switching from a lower security level to this one.
 /decl/security_level/proc/switching_up_to()
@@ -319,8 +313,6 @@
 	alert_border = "alert_border_delta"
 
 	description = "The site is at risk of imminent destruction."
-
-	psionic_control_level = PSI_IMPLANT_DISABLED
 
 	var/static/datum/announcement/priority/security/security_announcement_delta = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/effects/siren.ogg'))
 
