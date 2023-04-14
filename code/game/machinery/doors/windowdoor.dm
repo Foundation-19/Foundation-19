@@ -61,6 +61,7 @@
 		operating = 0
 	set_density(0)
 	playsound(src, "shatter", 70, 1)
+	show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	if(display_message)
 		visible_message("[src] shatters!")
 	qdel(src)

@@ -22,6 +22,7 @@
 	S.set_up(5, 0, src.loc)
 
 	playsound(src.loc, 'sound/effects/smoke.ogg', 50, 1, -3)
+	show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 	spawn(0)
 		S.start()
 

@@ -656,6 +656,7 @@
 					set_broken(TRUE)
 			queue_icon_update()
 	playsound(get_turf(src), 'sound/weapons/smash.ogg', 75, 1)
+	show_sound_effect(get_turf(src))
 
 // attack with hand - remove cell (if cover open) or interact with the APC
 

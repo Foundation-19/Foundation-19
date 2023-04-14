@@ -299,6 +299,7 @@
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.do_attack_animation(src)
 	playsound(loc, 'sound/weapons/smash.ogg', 75, 1)
+	show_sound_effect(loc, user)
 
 /obj/machinery/shieldwall/Process()
 	if(needs_power)

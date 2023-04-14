@@ -1,0 +1,4 @@
+author: TheDarkElites
+delete-after: true
+changes:
+  - rscadd: memetics integration with HUD system

@@ -319,6 +319,7 @@
 		if (!can_damage_health(damage, P.damage_type))
 			return
 		playsound(src, damage_hitsound, 75, 1)
+		show_sound_effect(src, soundicon = SFX_ICON_JAGGED)
 		damage_health(damage, P.damage_type)
 		return 0
 
@@ -330,12 +331,14 @@
 		user.do_attack_animation(src)
 		if (!can_damage_health(W.force, W.damtype))
 			playsound(src, damage_hitsound, 35, 1)
+			show_sound_effect(src, user, soundicon = SFX_ICON_SMALL)
 			user.visible_message(
 				SPAN_WARNING("\The [user] hits \the [src] with \a [W], but it bounces off!"),
 				SPAN_WARNING("You hit \the [src] with \the [W], but it bounces off!")
 			)
 			return
 		playsound(src, damage_hitsound, 75, 1)
+		show_sound_effect(src, user)
 		user.visible_message(
 			SPAN_DANGER("\The [user] hits \the [src] with \a [W]!"),
 			SPAN_DANGER("You hit \the [src] with \the [W]!")

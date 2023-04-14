@@ -170,6 +170,7 @@
 
 /obj/structure/window/reinforced/holowindow/shatter(display_message = 1)
 	playsound(src, "shatter", 70, 1)
+	show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	if(display_message)
 		visible_message("[src] fades away as it shatters!")
 	qdel(src)
@@ -207,6 +208,7 @@
 /obj/machinery/door/window/holowindoor/shatter(display_message = 1)
 	src.set_density(0)
 	playsound(src, "shatter", 70, 1)
+	show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	if(display_message)
 		visible_message("[src] fades away as it shatters!")
 	qdel(src)

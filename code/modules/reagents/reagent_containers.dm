@@ -213,6 +213,7 @@
 
 	var/trans = reagents.trans_to(target, amount_per_transfer_from_this)
 	playsound(src, 'sound/effects/pour.ogg', 25, 1)
+	show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 	to_chat(user, SPAN_NOTICE("You transfer [trans] unit\s of the solution to \the [target].  \The [src] now contains [src.reagents.total_volume] units."))
 	return 1
 
