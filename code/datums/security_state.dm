@@ -8,16 +8,16 @@
 	var/decl/security_level/severe_security_level = /decl/security_level/code_black
 
 	// While at or above this security level, transfer votes are disabled, MTF may be requested, and other similar high alert implications.
-	var/decl/security_level/high_security_level = /decl/security_level/code_orange
+	var/decl/security_level/high_security_level = /decl/security_level/code_red
 
 	var/decl/security_level/current_security_level // The current security level. Defaults to the first entry in all_security_levels if unset.
 	var/decl/security_level/stored_security_level  // The security level that we are escalating from - please set and use this when reverting.
 
 	// List of all available security levels
-	var/list/all_security_levels = list(/decl/security_level/code_green, /decl/security_level/code_yellow, /decl/security_level/code_orange, /decl/security_level/code_red, /decl/security_level/code_black, /decl/security_level/code_pitchblack, /decl/security_level/code_delta)
+	var/list/all_security_levels = list(/decl/security_level/code_green, /decl/security_level/code_yellow, /decl/security_level/code_red, /decl/security_level/code_black, /decl/security_level/code_pitchblack, /decl/security_level/code_delta)
 
 	// List of all normally selectable security levels
-	var/list/standard_security_levels = list(/decl/security_level/code_green, /decl/security_level/code_yellow, /decl/security_level/code_orange, /decl/security_level/code_red, /decl/security_level/code_black, /decl/security_level/code_pitchblack)
+	var/list/standard_security_levels = list(/decl/security_level/code_green, /decl/security_level/code_yellow, /decl/security_level/code_red, /decl/security_level/code_black, /decl/security_level/code_pitchblack)
 
 /decl/security_state/New()
 	// Setup threshold security levels
@@ -197,31 +197,6 @@
 	security_announcement_yellow.Announce("All Euclid and Keter SCPs have been recontained. All areas should be swept for Safe SCPs, and the general integrity of the site should be restored.", "Attention! Code Yellow alert procedures now in effect!")
 	notify_station()
 
-/decl/security_level/code_orange
-	name = "code orange"
-
-	light_max_bright = 0.5
-	light_inner_range = 1
-	light_outer_range = 2
-	light_color_alarm = COLOR_ORANGE
-	light_color_status_display = COLOR_ORANGE
-
-	overlay_alarm = "alarm_orange"
-	overlay_status_display = "status_display_orange"
-	alert_border = "alert_border_orange"
-
-	description = "An Euclid SCP is currently uncontained."
-
-	var/static/datum/announcement/priority/security/security_announcement_orange = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codered.ogg'))
-
-/decl/security_level/code_orange/switching_up_to()
-	security_announcement_orange.Announce("An Euclid SCP has broken containment and its current whereabouts are unknown. Security should investigate and focus on recontainment as a first priority, or request an MTF unit to assist.", "Attention! Code Orange alert procedures now in effect!")
-	notify_station()
-
-/decl/security_level/code_orange/switching_down_to()
-	security_announcement_orange.Announce("All Keter SCPs have been recontained, but one or more Euclid SCP remains unaccounted for. Security should intensify searches to locate and recontain the breached SCPs.", "Attention! Code Orange alert procedures now in effect!")
-	notify_station()
-
 /decl/security_level/code_red
 	name = "code red"
 
@@ -235,16 +210,16 @@
 	overlay_status_display = "status_display_red"
 	alert_border = "alert_border_red"
 
-	description = "A Keter SCP is currently uncontained."
+	description = "An SCP is currently uncontained."
 
 	var/static/datum/announcement/priority/security/security_announcement_red = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codered.ogg'))
 
 /decl/security_level/code_red/switching_up_to()
-	security_announcement_red.Announce("A Keter SCP has broken containment and its current whereabouts are unknown. Security should secure all exit points immediately before recontaining breached anomalies.", "Attention! Code red alert procedures now in effect!")
+	security_announcement_red.Announce("An SCP has broken containment and its current whereabouts are unknown. Security should secure all exit points immediately before recontaining breached anomalies.", "Attention! Code red alert procedures now in effect!")
 	notify_station()
 
 /decl/security_level/code_red/switching_down_to()
-	security_announcement_red.Announce("All major threats to the Site have been neutralized or contained, but one or more Keter SCPs remain uncontained. Security should focus their efforts on recontaining the escaped SCP. Full site lockdown disengaged.", "Attention! Code red alert procedures now in effect!")
+	security_announcement_red.Announce("All major threats to the Site have been neutralized or contained, but one or more SCPs remain uncontained. Security should focus their efforts on recontaining the escaped SCP. Full site lockdown disengaged.", "Attention! Code red alert procedures now in effect!")
 	notify_station()
 
 /decl/security_level/code_black
