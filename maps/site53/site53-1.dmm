@@ -16253,7 +16253,6 @@
 /obj/machinery/camera/network/lcz{
 	dir = 4
 	},
-/obj/item/clothing/head/bio_hood/anomaly,
 /obj/machinery/light{
 	dir = 8
 	},
