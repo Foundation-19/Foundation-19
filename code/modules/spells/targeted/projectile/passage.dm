@@ -33,6 +33,7 @@
 	S.set_up(3,0,T)
 	S.start()
 	playsound(src, 'sound/magic/lightningshock.ogg', 50)
+	show_sound_effect(src.loc)
 
 /spell/targeted/projectile/dumbfire/passage/empower_spell()
 	if(!..())
