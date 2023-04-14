@@ -171,7 +171,7 @@ var/global/datum/ntnet/ntnet_global = new()
 	if(!lognumber)
 		return 0
 	// Trim the value if necessary
-	lognumber = Clamp(lognumber, MIN_NTNET_LOGS, MAX_NTNET_LOGS)
+	lognumber = between(MIN_NTNET_LOGS, lognumber, MAX_NTNET_LOGS)
 	setting_maxlogcount = lognumber
 	add_log("Configuration Updated. Now keeping [setting_maxlogcount] logs in system memory.")
 
