@@ -207,7 +207,7 @@
 	..()
 
 /obj/item/organ/internal/brain/proc/take_sanity_damage(damage, silent)
-	insanity = clamp(damage, insanity + damage, max_insanity)
+	insanity = Clamp(damage, insanity + damage, max_insanity)
 
 /obj/item/organ/internal/brain/proc/get_sanity_level()
 	switch(insanity)

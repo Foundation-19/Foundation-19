@@ -172,8 +172,8 @@
 	//randomize clickpoint a bit based on dispersion
 	if(dispersion)
 		var/radius = round((dispersion*0.443)*world.icon_size*0.8) //0.443 = sqrt(pi)/4 = 2a, where a is the side length of a square that shares the same area as a circle with diameter = dispersion
-		p_x = clamp(p_x + rand(-radius, radius), 0, world.icon_size)
-		p_y = clamp(p_y + rand(-radius, radius), 0, world.icon_size)
+		p_x = Clamp(p_x + rand(-radius, radius), 0, world.icon_size)
+		p_y = Clamp(p_y + rand(-radius, radius), 0, world.icon_size)
 
 //Used to change the direction of the projectile in flight.
 /obj/item/projectile/proc/redirect(new_x, new_y, atom/starting_loc, mob/new_firer=null, is_ricochet = FALSE)
@@ -390,7 +390,7 @@
 			crash_with("WARNING: Projectile [type] deleted due to being unable to resolve a target after Angle was null!")
 			qdel(src)
 			return
-		var/turf/target = locate(clamp(starting + xo, 1, world.maxx), clamp(starting + yo, 1, world.maxy), starting.z)
+		var/turf/target = locate(Clamp(starting + xo, 1, world.maxx), Clamp(starting + yo, 1, world.maxy), starting.z)
 		setAngle(get_projectile_angle(src, target))
 	if(dispersion)
 		var/DeviationAngle = (dispersion * 15)
@@ -584,7 +584,7 @@
 
 /obj/item/projectile/proc/vol_by_damage()
 	if(src.damage)
-		return clamp((src.damage) * 0.67, 30, 100)// Multiply projectile damage by 0.67, then CLAMP the value between 30 and 100
+		return Clamp((src.damage) * 0.67, 30, 100)// Multiply projectile damage by 0.67, then CLAMP the value between 30 and 100
 	else
 		return 50 //if the projectile doesn't do damage, play its hitsound at 50% volume.
 

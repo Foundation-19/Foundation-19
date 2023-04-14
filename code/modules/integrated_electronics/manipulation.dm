@@ -44,7 +44,7 @@
 /obj/item/integrated_circuit/manipulation/injector/proc/inject_amount()
 	var/amount = get_pin_data(IC_INPUT, 2)
 	if(isnum(amount))
-		return clamp(amount, 0, 30)
+		return Clamp(amount, 0, 30)
 
 /obj/item/integrated_circuit/manipulation/injector/do_work()
 	set waitfor = 0 // Don't sleep in a proc that is called by a processor without this set, otherwise it'll delay the entire thing
@@ -90,7 +90,7 @@
 /obj/item/integrated_circuit/manipulation/reagent_pump/on_data_written()
 	var/amount = get_pin_data(IC_INPUT, 3)
 	if(isnum(amount))
-		transfer_amount = clamp(amount, 0, 50)
+		transfer_amount = Clamp(amount, 0, 50)
 
 /obj/item/integrated_circuit/manipulation/reagent_pump/do_work()
 	var/atom/movable/source = get_pin_data_as_type(IC_INPUT, 1, /atom/movable)
@@ -247,7 +247,7 @@
 	if(attached_grenade && !attached_grenade.active)
 		var/datum/integrated_io/detonation_time = inputs[1]
 		if(isnum(detonation_time.data) && detonation_time.data > 0)
-			attached_grenade.det_time = clamp(detonation_time.data, 1, 12) SECONDS
+			attached_grenade.det_time = Clamp(detonation_time.data, 1, 12) SECONDS
 		attached_grenade.activate()
 		var/atom/holder = loc
 		log_and_message_admins("activated a grenade assembly. Last touches: Assembly: [holder.fingerprintslast] Circuit: [fingerprintslast] Grenade: [attached_grenade.fingerprintslast]")

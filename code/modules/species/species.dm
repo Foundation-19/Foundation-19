@@ -606,7 +606,7 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 				light = round(light * turf_brightness)
 				if(H.equipment_light_protection)
 					light -= H.equipment_light_protection
-	return clamp(max(prescriptions, light), 0, 7)
+	return Clamp(max(prescriptions, light), 0, 7)
 
 /datum/species/proc/set_default_hair(mob/living/carbon/human/H)
 	H.h_style = H.species.default_h_style
@@ -649,11 +649,11 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	var/skill_mod = 10 * attacker.get_skill_difference(SKILL_COMBAT, target)
 	var/state_mod = attacker.melee_accuracy_mods() - target.melee_accuracy_mods() + ((target.a_intent == I_HELP) ? 15 : 0)
 	var/stim_mod = attacker.chem_effects[CE_SPEEDBOOST] - attacker.chem_effects[CE_SLOWDOWN] + target.chem_effects[CE_SEDATE] - target.chem_effects[CE_STIMULANT]
-	var/push_mod = clamp((1 + attacker.get_skill_difference(SKILL_COMBAT, target)), 1, 3)
+	var/push_mod = Clamp((1 + attacker.get_skill_difference(SKILL_COMBAT, target)), 1, 3)
 
 	//Handle unintended consequences
 	for(var/obj/item/I in holding)
-		var/hurt_prob = clamp(holding[I] - (2 * skill_mod) + state_mod, 0, 75)
+		var/hurt_prob = Clamp(holding[I] - (2 * skill_mod) + state_mod, 0, 75)
 		if(prob(hurt_prob) && I.on_disarm_attempt(target, attacker))
 			return
 

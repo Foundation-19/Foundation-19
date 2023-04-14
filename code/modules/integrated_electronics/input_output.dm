@@ -536,10 +536,10 @@
 	var/datum/integrated_io/brightness = inputs[4]
 
 	if(isnum(R.data) && isnum(G.data) && isnum(B.data) && isnum(brightness.data))
-		R.data = clamp(R.data, 0, 255)
-		G.data = clamp(G.data, 0, 255)
-		B.data = clamp(B.data, 0, 255)
-		brightness.data = clamp(brightness.data, 0, 6)
+		R.data = Clamp(R.data, 0, 255)
+		G.data = Clamp(G.data, 0, 255)
+		B.data = Clamp(B.data, 0, 255)
+		brightness.data = Clamp(brightness.data, 0, 6)
 		light_rgb = rgb(R.data, G.data, B.data)
 		light_brightness = brightness.data
 
@@ -594,8 +594,8 @@
 		var/selected_sound = sounds[ID.data]
 		if(!selected_sound)
 			return
-		vol.data = clamp(vol.data, 0, 100)
-		frequency.data = round(clamp(frequency.data, 0, 1))
+		vol.data = Clamp(vol.data, 0, 100)
+		frequency.data = round(Clamp(frequency.data, 0, 1))
 		playsound(get_turf(src), selected_sound, vol.data, frequency.data, -1)
 		audible_message("\The [istype(loc, /obj/item/device/electronic_assembly) ? loc : src] plays the sound '[ID.data]'.")
 

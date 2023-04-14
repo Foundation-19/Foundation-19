@@ -11,7 +11,7 @@
 	. = create_color()
 	for(var/i in 1 to 3)
 		.[i] += rand(min_random_span, max_random_span)
-		.[i] = clamp(.[i], 0, 255)
+		.[i] = Clamp(.[i], 0, 255)
 
 /decl/color_generator/proc/create_color()
 	return GetHexColors(color)

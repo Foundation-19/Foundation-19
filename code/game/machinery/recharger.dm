@@ -114,7 +114,7 @@
 
 /obj/machinery/recharger/RefreshParts()
 	..()
-	active_power_usage = (lowest_active_power_usage / 2) * clamp(total_component_rating_of_type(/obj/item/stock_parts/capacitor), 1, 10)
+	active_power_usage = (lowest_active_power_usage / 2) * Clamp(total_component_rating_of_type(/obj/item/stock_parts/capacitor), 1, 10)
 
 /obj/machinery/recharger/wallcharger
 	name = "wall recharger"

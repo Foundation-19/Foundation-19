@@ -170,7 +170,7 @@
 		if (used)
 			to_chat(user, SPAN_NOTICE("You fit [used] [stack.singular_name]\s to damaged and broken parts on \the [src]."))
 			stack.use(used)
-			health = clamp(health + used*DOOR_REPAIR_AMOUNT, health, maxhealth)
+			health = Clamp(health + used*DOOR_REPAIR_AMOUNT, health, maxhealth)
 		return
 
 	if (check_force(I, user))

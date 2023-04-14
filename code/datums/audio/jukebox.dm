@@ -65,7 +65,7 @@
 	_index = text2num(_index)
 	if (!IsInteger(_index))
 		return
-	index = clamp(_index, 1, length(tracks))
+	index = Clamp(_index, 1, length(tracks))
 	if (playing)
 		Stop()
 		Play()

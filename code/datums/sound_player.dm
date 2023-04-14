@@ -126,7 +126,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	. = ..()
 
 /datum/sound_token/proc/SetVolume(new_volume)
-	new_volume = clamp(new_volume, 0, 100)
+	new_volume = Clamp(new_volume, 0, 100)
 	if(sound.volume == new_volume)
 		return
 	sound.volume = new_volume
@@ -234,7 +234,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	sound.y = 1
 	// Far as I can tell from testing, sound priority just doesn't work.
 	// Sounds happily steal channels from each other no matter what.
-	sound.priority = clamp(255 - distance, 0, 255)
+	sound.priority = Clamp(255 - distance, 0, 255)
 	PrivUpdateListener(listener, update_sound)
 
 /datum/sound_token/proc/PrivUpdateListeners()

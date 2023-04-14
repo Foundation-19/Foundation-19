@@ -118,7 +118,7 @@
 
 
 /obj/item/airlock_brace/proc/take_damage(amount)
-	cur_health = clamp(cur_health - amount, 0, max_health)
+	cur_health = Clamp(cur_health - amount, 0, max_health)
 	if(!cur_health)
 		if(airlock)
 			airlock.visible_message(SPAN_DANGER("\The [src] breaks off of \the [airlock]!"))

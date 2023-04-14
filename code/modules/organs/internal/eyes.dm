@@ -158,7 +158,7 @@
 		last_degrade = world.time
 		if(degrade_change == 0)
 			blink_degradation += degradation_recovery
-			blink_degradation = clamp(blink_degradation, min_degradation, 1)
+			blink_degradation = Clamp(blink_degradation, min_degradation, 1)
 		degrade_change = 0
 		BITSET(owner.hud_updateflag, BLINK_HUD)
 	if(owner.blink_current <= 0)
@@ -170,10 +170,10 @@
 	blink_degradation -= degradation_change_per_press
 	if(blink_degradation > min_degradation)
 		degrade_change += degradation_change_per_press
-	blink_degradation = clamp(blink_degradation, min_degradation, 1)
+	blink_degradation = Clamp(blink_degradation, min_degradation, 1)
 	return TRUE
 
 /obj/item/organ/internal/eyes/proc/get_blink()
 	if(!owner.is_blinking)
 		return B_OFF
-	return ceil((clamp(((owner.blink_current / owner.blink_total) * 4), 0, 4)))
+	return ceil((Clamp(((owner.blink_current / owner.blink_total) * 4), 0, 4)))

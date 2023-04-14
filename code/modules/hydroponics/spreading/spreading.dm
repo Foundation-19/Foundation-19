@@ -279,7 +279,7 @@
 	return
 
 /obj/effect/vine/proc/adjust_health(value)
-	health = clamp(health + value, 0, max_health)
+	health = Clamp(health + value, 0, max_health)
 	if(health <= 0)
 		die_off()
 

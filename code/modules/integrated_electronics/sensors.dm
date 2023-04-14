@@ -28,7 +28,7 @@
 /obj/item/integrated_circuit/sensor/proximity/New()
 	..()
 	var/datum/integrated_io/range = inputs[2]
-	range.data = clamp(range.data, min_range, max_range)
+	range.data = Clamp(range.data, min_range, max_range)
 
 	if(sensitivity)
 		extended_desc += "<br>This ensor will only trigger if movement is confirmed twice within [sensitivity] second\s (but not necessarily from the same source)"
@@ -66,7 +66,7 @@
 	if(turn_off)
 		proximity_trigger.unregister_turfs()
 	if(isnum(range))
-		range = clamp(range, min_range, max_range)
+		range = Clamp(range, min_range, max_range)
 		proximity_trigger.set_range(range)
 	if(turn_on)
 		proximity_trigger.register_turfs()

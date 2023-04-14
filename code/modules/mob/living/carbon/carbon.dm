@@ -489,13 +489,13 @@
 	return reagents
 
 /mob/living/carbon/proc/set_nutrition(amt)
-	nutrition = clamp(amt, 0, initial(nutrition))
+	nutrition = Clamp(amt, 0, initial(nutrition))
 
 /mob/living/carbon/proc/adjust_nutrition(amt)
 	set_nutrition(nutrition + amt)
 
 /mob/living/carbon/proc/set_hydration(amt)
-	hydration = clamp(amt, 0, initial(hydration))
+	hydration = Clamp(amt, 0, initial(hydration))
 
 /mob/living/carbon/proc/adjust_hydration(amt)
 	set_hydration(hydration + amt)

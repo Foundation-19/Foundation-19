@@ -8,7 +8,7 @@
 /proc/generate_planet_name()
 	if (GLOB.number_of_planetoids > 26) // We should absolutely never have this many planetoids, but it's best to future-proof just in case
 		return "[capitalize(pick(GLOB.last_names))]-[pick(GLOB.greek_letters)]"
-	return "[GLOB.using_map.system_name] [ascii2text(clamp(96 + GLOB.number_of_planetoids, 97, 122))]"
+	return "[GLOB.using_map.system_name] [ascii2text(Clamp(96 + GLOB.number_of_planetoids, 97, 122))]"
 
 /proc/station_name()
 	if(!GLOB.using_map)

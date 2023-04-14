@@ -17,7 +17,7 @@
 
 /datum/psi_complexus/proc/get_armour(armourtype)
 	if(use_psi_armour && can_use_passive())
-		return round(clamp(clamp(4 * rating, 0, 20) * get_rank(SSpsi.armour_faculty_by_type[armourtype]), 0, 100) * (stamina/max_stamina))
+		return round(Clamp(Clamp(4 * rating, 0, 20) * get_rank(SSpsi.armour_faculty_by_type[armourtype]), 0, 100) * (stamina/max_stamina))
 	else
 		return 0
 
