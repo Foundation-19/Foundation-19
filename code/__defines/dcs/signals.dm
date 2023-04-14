@@ -28,3 +28,5 @@
 
 /// sent every carbon Life()
 #define COMSIG_CARBON_LIFE "carbon_life"
+/// sent every time the security level changes
+#define COMSIG_SECURITY_LEVEL_CHANGED "security_level_change"

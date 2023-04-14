@@ -924,6 +924,9 @@ FIRE ALARM
 	. = ..()
 	queue_icon_update()
 
+	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
+	RegisterSignal(security_state, COMSIG_SECURITY_LEVEL_CHANGED, /atom/movable/update_icon)
+
 /obj/machinery/firealarm/proc/get_cached_overlay(state)
 	if(!LAZYACCESS(overlays_cache, state))
 		LAZYSET(overlays_cache, state, image(icon, state))

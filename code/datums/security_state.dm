@@ -102,6 +102,11 @@
 		return FALSE
 	return set_security_level(all_security_levels[current_index - 1], force_change)
 
+/decl/security_state/proc/notify_station()
+	SEND_SIGNAL(src, COMSIG_SECURITY_LEVEL_CHANGED)
+
+	post_status("alert")
+
 /decl/security_level
 	var/icon = 'icons/misc/security_state.dmi'
 	var/name
@@ -141,13 +146,8 @@
 	return
 
 /decl/security_level/proc/notify_station()
-	for(var/obj/machinery/firealarm/FA in SSmachines.machinery)
-		if(FA.z in GLOB.using_map.contact_levels)
-			FA.update_icon()
-	for (var/obj/machinery/rotating_alarm/security_alarm/SA in SSmachines.machinery)
-		if (SA.z in GLOB.using_map.contact_levels)
-			SA.set_alert(name, alarm_level, light_color_alarm)
-	post_status("alert")
+	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
+	security_state.notify_station()
 
 // SECURITY LEVELS
 
