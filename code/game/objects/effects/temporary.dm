@@ -70,6 +70,9 @@
 	icon_state = "pink_sparkles"
 	duration = 8
 
+/obj/effect/temp_visual/sparkle/cyan
+	icon_state = "cyan_sparkles"
+
 // Cult effects
 
 /obj/effect/temp_visual/cultfloor

@@ -19,6 +19,9 @@
 	health = 15000
 	maxHealth = 15000
 
+	movement_cooldown = 8
+	movement_sound = 'sound/scp/abnormality/white_night/apostle_movement.ogg'
+
 	natural_armor = list(
 		melee = ARMOR_MELEE_KNIVES
 		)
@@ -43,10 +46,13 @@
 	var/scream_cooldown = 18 SECONDS
 	var/scream_cooldown_time = 18 SECONDS
 	var/scream_power = 25
-	var/apostle_cooldown = 20 SECONDS // Cooldown for conversion and revival of non-apostles.
+	var/apostle_cooldown = 20 SECONDS // Cooldown for conversion
 	var/apostle_cooldown_time = 20 SECONDS
 	var/blink_cooldown = 6 SECONDS
 	var/blink_cooldown_time = 6 SECONDS
+
+	/// To prematurely stop visual effects of conversion
+	var/cancel_conversion_effect = FALSE
 
 	/// Assoc list of apostles. Mob ref = list(ckey, name).
 	/// We store ckey and name in case mob gets deleted.
@@ -101,6 +107,15 @@
 	qdel(src)
 	return ..()
 
+/mob/living/simple_animal/hostile/megafauna/white_night/UnarmedAttack(mob/living/carbon/human/H)
+	if(!ishuman(H))
+		return
+	if(H in apostles)
+		return
+	if(H.stat == DEAD)
+		return
+	InitiateConversion(H)
+
 /mob/living/simple_animal/hostile/megafauna/white_night/ClickOn(atom/A)
 	. = ..()
 	if(client && !A.Adjacent(src))
@@ -115,42 +130,124 @@
 				Rapture()
 		return
 
+// Conversion ritual
+/mob/living/simple_animal/hostile/megafauna/white_night/proc/InitiateConversion(mob/living/carbon/human/H)
+	if(length(apostles) >= 12)
+		to_chat(src, SPAN_WARNING("The twelve of them shall be enough for the Heavens to come unto Earth."))
+		return
+	if(apostle_cooldown > world.time)
+		to_chat(src, SPAN_WARNING("We're not ready to convert more apostles just yet."))
+		return
+
+	apostle_cooldown = world.time + 10 SECONDS
+	H.visible_message(SPAN_WARNING("Holy light envelopes \the [H]..."))
+	playsound(src, 'sound/scp/abnormality/white_night/apostle_convert.ogg', 50, FALSE, 4)
+	cancel_conversion_effect = FALSE
+	addtimer(CALLBACK(src, .proc/ConversionVisualEffect, H))
+	if(!do_after(src, 7 SECONDS, H))
+		to_chat(src, SPAN_WARNING("The ritual has been interrupted!"))
+		cancel_conversion_effect = TRUE
+		return
+	HumanConversion(H)
+
+// Bunch of visual effects
+/mob/living/simple_animal/hostile/megafauna/white_night/proc/ConversionVisualEffect(mob/living/carbon/human/H)
+	for(var/i = 1 to 16)
+		if(cancel_conversion_effect)
+			return
+		for(var/ix = 1 to rand(1, 3))
+			var/turf/T = get_step(H, pick(0,1,2,4,5,6,8,9,10))
+			var/obj/effect/temp_visual/sparkle/cyan/C = new (T)
+			animate(C, alpha = 0, time = rand(3,6))
+		sleep(4)
+
+// Actual conversion result
+/mob/living/simple_animal/hostile/megafauna/white_night/proc/HumanConversion(mob/living/carbon/human/H)
+	if(length(apostles) >= 12)
+		to_chat(src, SPAN_WARNING("The twelve of them shall be enough for the Heavens to come unto Earth."))
+		return
+	if(!H.client)
+		var/mob/observer/ghost/ghost = find_dead_player(H.ckey, 1)
+		if(!istype(ghost))
+			return FALSE
+		if(!ghost.client)
+			return FALSE
+		ghost.reenter_corpse()
+	apostle_cooldown = world.time + apostle_cooldown_time
+	H.revive()
+	// Giving the fancy stuff to new apostle
+	apostles[H] = list(H.ckey, H.real_name)
+	H.faction = "apostle"
+	to_chat(H, SPAN_NOTICE("You are protected by the holy light!"))
+	if(length(apostles) < 12)
+		var/image/apostle_halo = overlay_image('icons/mob/32x64.dmi', "halo")
+		H.overlays_standing[27] = apostle_halo
+		H.queue_icon_update()
+	sleep(2 SECONDS)
+	// Spooky message
+	to_chat(world, length(apostles))
+	var/apostle_line = apostle_lines[length(apostles)]
+	apostle_line = replacetext(apostle_line, "%NAME%", H.real_name)
+	if(findtext(apostle_line, "%PREV%"))
+		apostle_line = replacetext(apostle_line, "%PREV%", apostles[apostles.len - 1][2])
+	for(var/mob/M in GLOB.player_list)
+		if((M.z in GetConnectedZlevels(z)) && M.client)
+			to_chat(M, FONT_LARGE(SPAN_OCCULT(apostle_line)))
+			M.playsound_local(get_turf(M), 'sound/scp/abnormality/white_night/apostle_bell.ogg', 75, FALSE)
+			flash_color(M, flash_color = "#ff0000", flash_time = 50)
+	// Allows us to begin rapture
+	if(apostles.len >= 12)
+		rapture_skill.Grant(src)
+	maxHealth += 100
+	health = maxHealth
+	holy_revival_damage += 2 // More damage and healing from AOE spell.
+	return TRUE
+
 /mob/living/simple_animal/hostile/megafauna/white_night/proc/HolyRevival()
 	if(holy_revival_cooldown > world.time)
 		return
-	holy_revival_cooldown = (world.time + holy_revival_cooldown_time)
+	holy_revival_cooldown = world.time + holy_revival_cooldown_time
+
 	playsound(src, 'sounds/scp/abnormality/white_night/apostle_spell.ogg', 100, TRUE, 7)
-	for(var/turf/T in range(holy_revival_range, src))
-		new /obj/effect/temp_visual/sparkle(T)
-	for(var/mob/living/L in range(holy_revival_range, src))
-		if(L.faction != faction)
-			if(L.stat == DEAD)
-				continue
-			playsound(L, 'sounds/scp/abnormality/white_night/ark_damage.ogg', 50, TRUE, -1)
-			L.adjustFireLoss(holy_revival_damage)
-			L.emote("scream")
-			to_chat(L, SPAN_OCCULT("The holy light... IT BURNS!!"))
-		else
-			if(!L.client && L.ckey)
-				var/mob/observer/ghost/ghost = find_dead_player(L.ckey, 1)
-				if(istype(ghost))
-					ghost.reenter_corpse()
-			L.revive()
-			to_chat(L, SPAN_NOTICE("The holy light compels you to live!"))
+	var/turf/target_c = get_turf(src)
+	for(var/i = 1 to holy_revival_range)
+		for(var/turf/T in spiral_range_turfs(i, target_c) - spiral_range_turfs(i-1, target_c))
+			new /obj/effect/temp_visual/sparkle(T)
+			for(var/mob/living/L in T)
+				if(L.faction != faction)
+					if(L.stat == DEAD)
+						continue
+					playsound(L, 'sounds/scp/abnormality/white_night/ark_damage.ogg', 50, TRUE, -1)
+					L.adjustFireLoss(holy_revival_damage)
+					L.emote("scream")
+					to_chat(L, SPAN_OCCULT("The holy light... IT BURNS!!"))
+				else
+					if(!L.client && L.ckey)
+						var/mob/observer/ghost/ghost = find_dead_player(L.ckey, 1)
+						if(istype(ghost))
+							ghost.reenter_corpse()
+					L.revive()
+					to_chat(L, SPAN_NOTICE("The holy light compels you to live!"))
 
 /mob/living/simple_animal/hostile/megafauna/white_night/proc/ChargedField()
+	if(charged_field_cooldown > world.time)
+		return
+	charged_field_cooldown = world.time + charged_field_cooldown_time
+
 	playsound(src, 'sound/scp/abnormality/white_night/apostle_charge.ogg', 75, FALSE, 7)
 	for(var/i = 1 to 2)
 		var/obj/effect/temp_visual/decoy/D = new(get_turf(src), 0, src, 7)
 		D.transform = matrix()*2
 		D.alpha = 25
-		animate(D, transform = matrix()*0.5, alpha = 175, time = 7)
+		animate(D, transform = matrix(), alpha = 175, time = 6)
 		if(!do_after(src, (0.9 SECONDS), src))
 			return
-	playsound(src, 'sound/scp/abnormality/white_night/apostle_fire.ogg', 100, FALSE, 14)
+
 	// Scare everyone
+	playsound(src, 'sound/scp/abnormality/white_night/apostle_fire.ogg', 100, FALSE, 14)
 	for(var/mob/living/L in range(src, 10))
-		shake_camera(L, 2, 2)
+		shake_camera(L, 5, 2)
+
 	var/turf/target_c = get_turf(src)
 	for(var/i = 1 to charged_field_range)
 		for(var/turf/T in spiral_range_turfs(i, target_c) - spiral_range_turfs(i-1, target_c))
@@ -169,6 +266,7 @@
 				L.adjustFireLoss(charged_field_damage)
 				L.emote("scream")
 				to_chat(L, SPAN_OCCULT("The holy light... IT BURNS!!"))
+		sleep(1.5)
 
 /mob/living/simple_animal/hostile/megafauna/white_night/proc/HolyBlink(target)
 	if(blink_cooldown > world.time)
@@ -200,6 +298,7 @@
 	chosen_attack = 1 // To avoid rapture spam
 	to_chat(src, SPAN_DANGER("You begin the final ritual..."))
 	holy_revival_cooldown_time = 8 SECONDS
+	holy_revival_range += 6
 	charged_field_cooldown_time = 16 SECONDS
 	charged_field_range += 1 // Powercrepe
 	for(var/mob/M in GLOB.player_list)
@@ -220,10 +319,10 @@
 			if(ghost)
 				ghost.reenter_corpse()
 		H.revive()
-		sleep(2 SECONDS)
 		if(i < 12)
 			var/turf/main_loc = get_step(src, pick(0,1,2,4,5,6,8,9,10))
 			H.forceMove(main_loc)
+		sleep(2 SECONDS)
 		for(var/mob/M in GLOB.player_list)
 			if((M.z in GetConnectedZlevels(z)) && M.client)
 				var/apostle_line = apostle_lines[i]
@@ -233,8 +332,12 @@
 				to_chat(M, FONT_LARGE(SPAN_DANGER(apostle_line)))
 				M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/apostle_bell.ogg', 100)
 				flash_color(M, flash_color = "#ff0000", flash_time = 30)
+		TurnHumanIntoApostle(H)
 		sleep(6 SECONDS)
 	sleep(30 SECONDS)
 	for(var/mob/M in GLOB.player_list)
 		if(M.z == z && M.client)
 			M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/rapture2.ogg', 50)
+
+/mob/living/simple_animal/hostile/megafauna/white_night/proc/TurnHumanIntoApostle(mob/living/carbon/human/H)
+	return // TODO: Add apostle simple mobs from LC13
