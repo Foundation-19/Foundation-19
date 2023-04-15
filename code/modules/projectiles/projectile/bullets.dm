@@ -182,7 +182,7 @@
 //////////////////////////Bullets////////////////
 
 /obj/item/projectile/bullet/pistol
-	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
+	fire_sound = 'sound/weapons/gunshot/gunshot_9mm.ogg'
 	damage = 37 //9mm, .38, etc
 	armor_penetration = 0
 	distance_falloff = 3
