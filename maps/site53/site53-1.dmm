@@ -9883,6 +9883,23 @@
 	},
 /turf/simulated/floor/lino,
 /area/site53/lhcz/scp049containment)
+"wS" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/catwalk_plated/white,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/checkpoint)
 "wT" = (
 /obj/structure/hygiene/toilet{
 	dir = 4
@@ -20182,6 +20199,9 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/llcz/dclass/luxurysleep)
 "Zp" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/unsimulated/mineral,
 /area/site53/llcz/mining/miningops)
 "Zq" = (
@@ -20242,6 +20262,10 @@
 /obj/item/deck/cards,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
+"Zz" = (
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/titanium,
+/area/site53/llcz/mining/miningops)
 "ZA" = (
 /obj/effect/floor_decal/industrial/traffic{
 	dir = 4
@@ -34409,7 +34433,7 @@ cc
 cQ
 gw
 IV
-rE
+je
 rE
 rE
 jT
@@ -34666,7 +34690,7 @@ cd
 fg
 pM
 fh
-pM
+wS
 fj
 fk
 dN
@@ -36736,7 +36760,7 @@ rQ
 db
 lG
 Zp
-Ko
+Zz
 wK
 Rk
 wZ
@@ -36993,7 +37017,7 @@ iq
 tp
 lG
 Zp
-Ko
+Zz
 Uj
 NA
 fA
@@ -37250,7 +37274,7 @@ rJ
 GU
 lG
 Zp
-Ko
+Zz
 hb
 gu
 qe
@@ -37507,7 +37531,7 @@ lG
 lG
 lG
 Zp
-Ko
+Zz
 hb
 gu
 qe
@@ -37764,7 +37788,7 @@ Gr
 Gr
 Gr
 Zp
-Ko
+Zz
 hb
 gu
 qe
@@ -38021,7 +38045,7 @@ Tg
 WR
 vx
 Ko
-Ko
+Zz
 hb
 gu
 gu

@@ -26195,12 +26195,6 @@
 	id_tag = "UHCZ Checkpoint Control Room 2";
 	name = "UHCZ Checkpoint Control Room 2"
 	},
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/securitypost)
 "hDy" = (
