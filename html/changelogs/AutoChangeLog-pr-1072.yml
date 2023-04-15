@@ -1,0 +1,10 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - tweak: Beam tasers were replaced with the ones firing electrode projectiles. Those
+      don't pass through windows/airlocks.
+  - tweak: P90 rubber bullets deal less pain. This should make them less deadly and
+      allow for their use for non-lethal takedowns.
+  - tweak: P90 firing sound replaced.
+  - tweak: Guard lockers had their contents updated and standardized.
+  - tweak: Sprites for non-guard armor vests/carriers(i.e. riot suit) were updated.
