@@ -253,17 +253,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "aaI" = (
-/obj/structure/table/standard,
-/obj/item/pen,
-/obj/item/paper_bin,
 /obj/machinery/light,
 /obj/machinery/power/apc/hyper{
 	pixel_y = -25
 	},
 /obj/structure/cable/green,
-/obj/item/stamp/cmo{
-	name = "HCZ Entry Checkpoint Stamp"
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "aaJ" = (
@@ -701,13 +695,19 @@
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
 "acl" = (
-/obj/machinery/button/blast_door{
-	id_tag = "UHCZ Checkpoint Control Room";
-	name = "UHCZ Checkpoint Control Room";
-	pixel_y = 23;
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
 "acm" = (
 /obj/machinery/button/blast_door{
@@ -1148,13 +1148,6 @@
 /obj/effect/floor_decal/corner/brown/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/brownline)
-"adT" = (
-/obj/machinery/camera/network/hcz{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/red,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/securitypost)
 "adU" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
@@ -10727,6 +10720,11 @@
 	name = "Heavy Containment Maintenance";
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "UHCZ Lockdown";
+	name = "UHCZ Lockdown"
+	},
 /turf/simulated/floor,
 /area/site53/uhcz/securitypost)
 "aBZ" = (
@@ -12241,11 +12239,20 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp457containment)
 "aGW" = (
-/obj/machinery/light,
-/obj/effect/floor_decal/corner/red{
-	dir = 8
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
 "aGZ" = (
 /obj/structure/cable/green{
@@ -16857,11 +16864,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
-"aVv" = (
-/obj/effect/paint_stripe/red,
-/obj/machinery/computer/guestpass,
-/turf/simulated/wall/titanium,
-/area/site53/uhcz/securitypost)
 "aVw" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine,
@@ -20862,9 +20864,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "bit" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier{
-	pixel_y = 3
+/obj/effect/floor_decal/corner/red{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
@@ -20992,20 +20993,27 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/hczguardgear)
-"biR" = (
-/obj/machinery/door/blast/regular{
-	id_tag = "UHCZ Checkpoint Gate 2";
-	name = "UHCZ Checkpoint Gate 2"
-	},
-/obj/effect/catwalk_plated,
-/turf/simulated/floor,
-/area/site53/uhcz/securitypost)
 "biS" = (
-/obj/machinery/door/blast/regular{
-	id_tag = "UHCZ Checkpoint Gate 1";
-	name = "UHCZ Checkpoint Gate 1"
+/obj/structure/railing/mapped{
+	dir = 1
 	},
-/turf/simulated/floor,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/effect/catwalk_plated/dark,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1;
+	icon_state = "warning"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/obj/machinery/flasher{
+	id_tag = "HCZCheckpointflash";
+	name = "HCZCheckpointflash"
+	},
+/turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
 "biU" = (
 /obj/effect/floor_decal/corner/red/bordercorner,
@@ -21015,20 +21023,14 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "biV" = (
-/obj/effect/catwalk_plated,
-/obj/machinery/door/blast/regular{
-	id_tag = "UHCZ Checkpoint Gate 2";
-	name = "UHCZ Checkpoint Gate 2"
-	},
-/turf/simulated/floor,
+/obj/effect/floor_decal/corner/red,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "biX" = (
-/obj/effect/catwalk_plated,
-/obj/machinery/door/blast/regular{
-	id_tag = "UHCZ Checkpoint Gate 1";
-	name = "UHCZ Checkpoint Gate 1"
+/obj/effect/floor_decal/corner/red{
+	dir = 4
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "biY" = (
 /obj/machinery/door/airlock/security{
@@ -21934,16 +21936,25 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/xenobiology)
 "bTo" = (
-/obj/machinery/button/blast_door{
-	id_tag = "UHCZ Checkpoint Outer Window 1";
-	name = "UHCZ Checkpoint Outer Window";
-	pixel_y = 23;
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
+/obj/structure/railing/mapped{
+	dir = 1
 	},
-/obj/machinery/camera/network/hcz{
-	name = "HCZ Security Post"
+/obj/structure/railing/mapped{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/catwalk_plated/dark,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1;
+	icon_state = "warning"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/flasher{
+	id_tag = "HCZCheckpointflash";
+	name = "HCZCheckpointflash"
+	},
+/turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
 "bTG" = (
 /obj/structure/bed/chair{
@@ -23406,14 +23417,31 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "dRU" = (
 /obj/structure/table/standard,
-/obj/machinery/button/blast_door{
-	id_tag = "UHCZ Checkpoint Gate 2";
-	name = "UHCZ Checkpoint Gate 2"
-	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/structure/window/reinforced,
+/obj/machinery/button/flasher{
+	id_tag = "HCZCheckpointflash";
+	pixel_y = 32;
+	name = "HCZCheckpointflash"
+	},
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "UHCZ Booth Window 1";
+	name = "UHCZ Booth Window 1";
+	pixel_y = 9;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "UHCZ Checkpoint Outer Window 1";
+	name = "UHCZ Checkpoint Outer Window 1";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/machinery/camera/network/hcz{
+	name = "HCZ Security Post"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "dTW" = (
@@ -24669,11 +24697,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
 "fLX" = (
-/obj/machinery/button/blast_door{
-	id_tag = "UHCZ Checkpoint Control Room 2";
-	name = "UHCZ Checkpoint Control Room 2";
-	pixel_y = 23;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+/obj/effect/floor_decal/corner/red{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
@@ -24757,6 +24782,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
 "fRi" = (
@@ -26160,8 +26186,14 @@
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
 "hDv" = (
-/obj/effect/floor_decal/corner/red{
-	dir = 10
+/obj/machinery/door/airlock/security{
+	name = "Heavy Containment Zone Gate Security Post";
+	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
+/obj/machinery/door/blast/shutters{
+	begins_closed = 0;
+	id_tag = ssss;
+	name = "UHCZ Checkpoint Control Room 2"
 	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -26169,7 +26201,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/uhcz/securitypost)
 "hDy" = (
 /obj/effect/paint_stripe/red,
@@ -26468,7 +26500,6 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
 "hTi" = (
-/obj/effect/catwalk_plated,
 /obj/machinery/door/blast/regular{
 	id_tag = "UHCZ Checkpoint Gate 2";
 	name = "UHCZ Checkpoint Gate 2"
@@ -26481,6 +26512,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/site53/uhcz/securitypost)
 "hTt" = (
@@ -26740,10 +26772,14 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
+/obj/structure/railing/mapped,
+/obj/effect/catwalk_plated/dark,
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/flasher{
+	id_tag = "HCZCheckpointflash";
+	name = "HCZCheckpointflash"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
 "ioi" = (
 /obj/structure/table/standard,
@@ -27912,7 +27948,6 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
 	id_tag = "UHCZ Booth Window 1";
@@ -27924,6 +27959,11 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/item/stamp/cmo{
+	name = "HCZ Entry Checkpoint Stamp"
+	},
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
 "jQX" = (
@@ -28287,7 +28327,10 @@
 /area/site53/uhcz/securitypost)
 "kry" = (
 /obj/machinery/camera/network/hcz,
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/railing/mapped,
+/obj/effect/catwalk_plated/dark,
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
 "krW" = (
 /obj/structure/bed/chair{
@@ -30386,7 +30429,13 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
 "nan" = (
-/obj/machinery/papershredder,
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "UHCZ Checkpoint Control Room 2";
+	name = "UHCZ Checkpoint Control Room 2";
+	pixel_y = -23;
+	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "naq" = (
@@ -30645,8 +30694,8 @@
 "ntR" = (
 /obj/machinery/button/blast_door{
 	dir = 1;
-	id_tag = "UHCZ Booth Window 1";
-	name = "UHCZ Booth Window";
+	id_tag = "UHCZ Checkpoint Control Room";
+	name = "UHCZ Checkpoint Control Room";
 	pixel_y = -23;
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
@@ -31180,9 +31229,16 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/scp2427_3)
 "ocR" = (
-/obj/structure/filingcabinet/chestdrawer,
-/obj/machinery/light,
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
 "ocX" = (
 /obj/machinery/light{
@@ -31701,14 +31757,23 @@
 /area/site53/lhcz/hczguardgear)
 "oMg" = (
 /obj/structure/table/standard,
-/obj/machinery/button/blast_door{
-	id_tag = "UHCZ Checkpoint Gate 1";
-	name = "UHCZ Checkpoint Gate 1"
-	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /obj/structure/window/reinforced,
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "UHCZ Checkpoint Gate 1";
+	name = "UHCZ Checkpoint Gate 1";
+	pixel_y = 9;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "UHCZ Checkpoint Gate 2";
+	name = "UHCZ Checkpoint Gate 2";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "oOF" = (
@@ -31737,22 +31802,18 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
 "oQu" = (
-/obj/machinery/door/airlock/security{
-	name = "Heavy Containment Zone Gate Security Post";
-	req_access = list("ACCESS_SECURITY_LEVEL3")
-	},
-/obj/machinery/door/blast/shutters{
-	begins_closed = 0;
-	id_tag = "UHCZ Checkpoint Control Room 2";
-	name = "UHCZ Checkpoint Control Room 2"
-	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled,
+/obj/machinery/door/blast/regular{
+	begins_closed = 0;
+	id_tag = "UHCZ Lockdown";
+	name = "UHCZ Lockdown"
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "oRU" = (
 /obj/structure/filingcabinet/chestdrawer,
@@ -32343,15 +32404,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/lhcz/hczguardgear)
 "pPg" = (
-/obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "UHCZ Lockdown";
-	name = "UHCZ Lockdown";
-	pixel_y = -23;
-	req_access = list("ACCESS_SECURITY_LEVEL3")
+/obj/effect/floor_decal/corner/red{
+	dir = 1
 	},
-/obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "pPO" = (
@@ -32862,18 +32917,11 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
 "qEN" = (
-/obj/effect/catwalk_plated/dark,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4;
-	icon_state = "warning"
+/obj/effect/floor_decal/corner/red{
+	dir = 9
 	},
-/obj/effect/floor_decal/industrial/warning,
-/obj/machinery/door/blast/regular{
-	id_tag = "2427-3 Southern Gate";
-	name = "2427-3 Southern Gate"
-	},
-/turf/simulated/floor,
-/area/site53/ulcz/scp2427_3)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "qFs" = (
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/lamp,
@@ -33271,10 +33319,7 @@
 	requires_power = 0
 	})
 "rdx" = (
-/obj/effect/floor_decal/corner/red,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
+/obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "ren" = (
@@ -34770,9 +34815,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
 "tfe" = (
-/obj/effect/floor_decal/corner/red{
-	dir = 8
-	},
 /obj/machinery/camera/network/hcz{
 	dir = 1
 	},
@@ -35600,6 +35642,9 @@
 "uoM" = (
 /obj/structure/closet{
 	name = "Confiscated items"
+	},
+/obj/machinery/computer/guestpass{
+	pixel_y = 28
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
@@ -37358,7 +37403,6 @@
 	id_tag = "UHCZ Checkpoint Gate 1";
 	name = "UHCZ Checkpoint Gate 1"
 	},
-/obj/effect/catwalk_plated,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -37367,6 +37411,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/site53/uhcz/securitypost)
 "wDE" = (
@@ -37799,16 +37844,8 @@
 /area/site53/lhcz/hczguardgear)
 "xcu" = (
 /obj/effect/catwalk_plated/dark,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/warning,
-/obj/machinery/door/blast/regular{
-	id_tag = "2427-3 Southern Gate";
-	name = "2427-3 Southern Gate"
-	},
-/turf/simulated/floor,
-/area/site53/ulcz/scp2427_3)
+/turf/simulated/floor/plating,
+/area/site53/uhcz/securitypost)
 "xcy" = (
 /obj/machinery/camera/network/entrance{
 	dir = 4
@@ -75334,7 +75371,7 @@ bjh
 aga
 aEC
 aEC
-adT
+aEC
 ass
 ass
 ass
@@ -75591,10 +75628,10 @@ aFS
 aGB
 aGB
 aFp
-bYZ
-bQJ
 aEC
+bjh
 aEC
+tfe
 ass
 ass
 ass
@@ -75848,11 +75885,11 @@ bjh
 aEC
 aEC
 aFr
-aGW
-ass
-acl
 aEC
-ocR
+bjh
+aEC
+aEC
+krd
 ass
 jFe
 krW
@@ -76106,10 +76143,10 @@ ass
 mNl
 hat
 aGs
-esS
-aEC
-aEC
-biH
+bjh
+biV
+bit
+biX
 ass
 fyn
 aEC
@@ -76360,13 +76397,13 @@ ass
 ass
 ass
 ass
-biX
-wDw
-biS
 ass
-bTo
-aEC
-gHD
+wDw
+ass
+ass
+esS
+bQJ
+esS
 ass
 wnA
 iRz
@@ -76618,8 +76655,8 @@ azA
 azA
 ass
 ioc
-rqW
-aGA
+acl
+biS
 fQK
 oMg
 aEC
@@ -76875,8 +76912,8 @@ azA
 azA
 aPk
 kry
-aFr
-aEC
+ocR
+xcu
 biM
 biI
 bIZ
@@ -76886,7 +76923,7 @@ aEC
 aEC
 bIZ
 aEC
-aEC
+biH
 ass
 azA
 azA
@@ -77131,9 +77168,9 @@ azA
 azA
 azA
 ass
-mNl
-hat
-aGs
+ioc
+aGW
+bTo
 jQM
 dRU
 aEC
@@ -77388,13 +77425,13 @@ azA
 azA
 azA
 ass
-biV
+ass
 hTi
-biR
-aVv
-aEC
-aEC
-bit
+ass
+ass
+esS
+hDv
+esS
 ass
 uoM
 aEC
@@ -77647,16 +77684,16 @@ azA
 ass
 aGA
 rqW
-rdx
-ass
+aGA
+bjh
 fLX
-aEC
+qEN
 pPg
 ass
 bkg
-aEC
+gHD
 twT
-aEC
+rdx
 lfB
 ass
 azA
@@ -77904,7 +77941,7 @@ aBo
 aBo
 aEC
 uAj
-hDv
+aGB
 oQu
 aGB
 pIF
@@ -78137,11 +78174,11 @@ hzp
 hzp
 hzp
 ube
-swo
+bIm
 chW
 chW
 chW
-xcu
+bIm
 rkv
 aKM
 aKM
@@ -78651,11 +78688,11 @@ hzp
 hzp
 hzp
 ube
-swo
+bIm
 lMF
 lMF
 lMF
-qEN
+bIm
 rkv
 jKc
 aKM
