@@ -216,7 +216,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 
 /mob/living/simple_animal/hostile/scp_2427_3/IMove(turf/newloc, safety = TRUE)
 	if(is_sleeping)
-		return FALSE
+		return MOVEMENT_ON_COOLDOWN
 	return ..()
 
 /mob/living/simple_animal/hostile/scp_2427_3/movement_delay()
