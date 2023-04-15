@@ -2548,15 +2548,13 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertram/archive)
 "fz" = (
-/obj/structure/bed/chair/office{
-	dir = 1
-	},
+/obj/effect/paint_stripe/red,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/wall/titanium,
 /area/site53/uhcz/scp8containment)
 "fA" = (
 /obj/effect/paint_stripe/gray,
@@ -2659,11 +2657,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/kitchen)
 "fM" = (
-/obj/structure/closet/l3closet/virology,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled,
+/obj/structure/table/reinforced,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
 "fN" = (
 /obj/structure/cable/green{
@@ -3070,12 +3066,9 @@
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/explored)
 "gR" = (
-/obj/machinery/light{
-	dir = 1;
-	icon_state = "tube1"
-	},
-/turf/simulated/floor/tiled,
-/area/site53/uhcz/scp8containment)
+/obj/effect/paint_stripe/red,
+/turf/simulated/wall/titanium,
+/area/space)
 "gS" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/blast/shutters{
@@ -6213,7 +6206,7 @@
 /area/site53/engineering/maintenance/lowerselfdestruct)
 "oa" = (
 /obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
 "ob" = (
 /obj/effect/catwalk_plated/white,
@@ -9306,10 +9299,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
 "vE" = (
-/obj/structure/closet/secure_closet/guard/breachshotguns,
 /obj/machinery/camera/autoname{
 	network = list("SCP-247 CCTV Network")
 	},
+/obj/structure/closet/l3closet/virology,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
 "vG" = (
@@ -12459,6 +12452,15 @@
 /obj/structure/table/woodentable/maple,
 /turf/simulated/floor/wood/maple,
 /area/site53/llcz/dclass/luxurysleep)
+"DW" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/filingcabinet,
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/scp8containment)
 "DX" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -12885,6 +12887,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
+"Fb" = (
+/obj/structure/bed/chair/office{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/scp8containment)
 "Fd" = (
 /obj/effect/paint_stripe/gray,
 /obj/effect/paint_stripe/red,
@@ -16425,7 +16433,12 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/assignmentbubble)
 "OF" = (
-/obj/structure/closet/secure_closet/guard/breachshotguns,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
 "OG" = (
@@ -16856,6 +16869,17 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/scp049containment)
+"PL" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/site53/uhcz/scp8containment)
 "PN" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/railing/mapped{
@@ -17560,7 +17584,14 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lhcz/scp049containment)
 "RS" = (
-/obj/structure/closet/l3closet/virology,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/camera/autoname{
+	network = list("SCP-247 CCTV Network")
+	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
 "RT" = (
@@ -18888,7 +18919,7 @@
 	name = "Control Subject Area";
 	pixel_x = -23
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
 "VG" = (
 /obj/machinery/door/blast/regular/open{
@@ -20379,10 +20410,10 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignmentbubble)
 "ZP" = (
-/obj/structure/closet/secure_closet/guard/breachshotguns,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/closet/l3closet/virology,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
 "ZQ" = (
@@ -20421,6 +20452,11 @@
 	name = "Entity Cage"
 	},
 /turf/simulated/wall/titanium,
+/area/site53/uhcz/scp8containment)
+"ZY" = (
+/obj/structure/table/standard,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
 "ZZ" = (
 /obj/structure/table/rack,
@@ -74212,7 +74248,7 @@ gq
 gq
 gq
 gq
-xe
+gq
 xe
 xe
 xe
@@ -74469,12 +74505,12 @@ gq
 gq
 gq
 gq
+gq
 xe
 Qd
 OR
 Sv
 xe
-id
 Xc
 VF
 Op
@@ -74726,12 +74762,12 @@ gq
 gq
 gq
 gq
+gq
 xe
 BB
 BB
 BB
 Xp
-id
 BG
 oa
 Nf
@@ -74983,14 +75019,14 @@ gq
 gq
 gq
 gq
+gq
 xe
 VO
 TJ
 Sn
 xe
-id
 BG
-xe
+id
 xe
 xe
 xe
@@ -75240,14 +75276,14 @@ gq
 gq
 gq
 gq
+gq
 xe
 xe
 xe
 xe
 xe
-id
 BG
-zl
+id
 qH
 oR
 gr
@@ -75497,14 +75533,14 @@ gq
 gq
 gq
 gq
+gq
 xe
 Ry
 Ps
 Xt
 xe
-QG
 BG
-zl
+id
 zl
 Qe
 SL
@@ -75754,14 +75790,14 @@ gq
 gq
 gq
 gq
+gq
 xe
 Br
 Br
 PV
 xe
-gR
 BG
-zl
+id
 zl
 zl
 XN
@@ -76011,16 +76047,16 @@ gq
 gq
 gq
 gq
+gq
 xe
 YP
 ys
 Br
 pt
-id
 BG
+id
 zl
-zl
-zl
+fM
 oD
 oZ
 WJ
@@ -76268,15 +76304,15 @@ gq
 gq
 gq
 gq
+gq
 xe
 WI
 Br
 PV
 xe
+DW
 id
-BG
-zl
-zl
+id
 zl
 xe
 OK
@@ -76525,15 +76561,15 @@ gq
 gq
 gq
 gq
+gq
 xe
 Zd
 Pw
 Pw
 xe
+DW
 id
-BG
-zl
-zl
+id
 zl
 xe
 xe
@@ -76782,16 +76818,16 @@ gq
 gq
 gq
 gq
+gq
 xe
 xe
 xe
 xe
 xe
-RS
-BG
-zl
-zl
-zl
+fz
+id
+id
+ZY
 KS
 Vi
 Ra
@@ -77043,11 +77079,11 @@ gq
 gq
 gq
 gq
-xe
-fM
-BG
-zl
-zl
+gq
+gq
+fz
+qw
+id
 zl
 RE
 Vi
@@ -77300,11 +77336,11 @@ gq
 gq
 gq
 gq
-xe
-zm
-BG
-zl
-zl
+gq
+gq
+fz
+id
+id
 zl
 Qe
 Vi
@@ -77557,11 +77593,11 @@ gq
 gq
 gq
 gq
-xe
+gq
+gq
+fz
 QG
-BG
-zl
-zl
+id
 zl
 Rb
 Vi
@@ -77814,11 +77850,11 @@ gq
 gq
 gq
 gq
-xe
-Xh
+gq
+gq
 fz
-zl
-zl
+Xh
+Fb
 zl
 Qe
 Vi
@@ -78071,11 +78107,11 @@ gq
 gq
 gq
 gq
-xe
-Vp
+gq
+gq
 fz
-zl
-zl
+Vp
+Fb
 zl
 Qq
 Vi
@@ -78324,15 +78360,15 @@ gq
 gq
 gq
 gq
+gq
 xe
 xe
 xe
 xe
 xe
+fz
 oA
-BG
-zl
-zl
+id
 zl
 Xj
 qX
@@ -78581,15 +78617,15 @@ gq
 gq
 gq
 gq
+gq
 xe
 LY
 oR
 Ty
 xe
+DW
 id
-BG
-zl
-zl
+id
 zl
 xe
 xe
@@ -78838,15 +78874,15 @@ gq
 gq
 gq
 gq
+gq
 xe
 MI
 LI
 Zh
 xe
+OF
 id
-BG
-zl
-zl
+id
 zl
 Yn
 xe
@@ -79095,14 +79131,14 @@ gq
 gq
 gq
 gq
+gq
 xe
 UG
 zl
 zl
 pt
-id
 BG
-zl
+id
 zl
 Qe
 cC
@@ -79352,14 +79388,14 @@ gq
 gq
 gq
 gq
+gq
 xe
 VA
 zl
 Mi
 xe
-qw
-BG
-zl
+PL
+id
 zl
 zl
 RL
@@ -79609,14 +79645,14 @@ gq
 gq
 gq
 gq
+gq
 xe
 MS
 zl
 Np
 xe
-QG
-BG
-zl
+RS
+id
 zl
 zl
 Pg
@@ -79866,14 +79902,14 @@ gq
 gq
 gq
 gq
+gR
 xe
 xe
 xe
 xe
 xe
-id
 BG
-zl
+id
 QA
 Nr
 eT
@@ -80123,14 +80159,14 @@ gq
 gq
 gq
 gq
-xe
-OF
+gR
+zm
 Bt
 Bt
 xe
 id
 BG
-xe
+id
 xe
 xe
 xe
