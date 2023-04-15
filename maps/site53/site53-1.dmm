@@ -9271,9 +9271,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cells)
 "vx" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/titanium,
 /area/site53/llcz/mine/explored)
