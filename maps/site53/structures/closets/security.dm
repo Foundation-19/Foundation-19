@@ -11,11 +11,11 @@
 /obj/structure/closet/secure_closet/guard
 	name = "Guard Locker - NO USE, ONLY FOR CODE."
 	icon = 'icons/obj/sec-lockers.dmi'
-	icon_state = "enlisted-locked"
-	icon_closed = "enlisted-unlocked"
-	icon_locked = "enlisted-locked"
-	icon_opened = "enlisted-open"
-	icon_off = "enlisted-off"
+	icon_state = "junior-locked"
+	icon_closed = "junior-unlocked"
+	icon_locked = "junior-locked"
+	icon_opened = "junior-open"
+	icon_off = "junior-off"
 	anchored = TRUE
 	req_access = list(ACCESS_SECURITY_LVL1)
 	var/registered_name = null
@@ -78,11 +78,6 @@
 /obj/structure/closet/secure_closet/guard/lcz
 	name = "LCZ Guard's Locker"
 	req_access = list(ACCESS_SECURITY_LVL2)
-	icon_state = "junior-locked"
-	icon_closed = "junior-unlocked"
-	icon_locked = "junior-locked"
-	icon_opened = "junior-open"
-	icon_off = "junior-off"
 
 /obj/structure/closet/secure_closet/guard/lcz/WillContain()
 	return ..() | list(
@@ -144,6 +139,11 @@
 // HCZ - Sergeant
 /obj/structure/closet/secure_closet/guard/hcz/sergeant
 	name = "HCZ Sergeant's Locker"
+	icon_state = "guard-locked"
+	icon_closed = "guard-unlocked"
+	icon_locked = "guard-locked"
+	icon_opened = "guard-open"
+	icon_off = "guard-off"
 
 /obj/structure/closet/secure_closet/guard/hcz/sergeant/WillContain()
 	return list(
@@ -189,6 +189,11 @@
 // EZ - Sergeant
 /obj/structure/closet/secure_closet/guard/ez/sergeant
 	name = "EZ Senior Agent's Locker"
+	icon_state = "guard-locked"
+	icon_closed = "guard-unlocked"
+	icon_locked = "guard-locked"
+	icon_opened = "guard-open"
+	icon_off = "guard-off"
 
 /obj/structure/closet/secure_closet/guard/ez/sergeant/WillContain()
 	return list(
@@ -215,11 +220,11 @@
 /obj/structure/closet/secure_closet/guard/guard_commander
 	name = "Guard Commander Locker"
 	req_access = list(ACCESS_SECURITY_LVL5)
-	icon_state = "cm-locked"
-	icon_closed = "cm-unlocked"
-	icon_locked = "cm-locked"
-	icon_opened = "cm-open"
-	icon_off = "cm-off"
+	icon_state = "gc-locked"
+	icon_closed = "gc-unlocked"
+	icon_locked = "gc-locked"
+	icon_opened = "gc-open"
+	icon_off = "gc-off"
 
 /obj/structure/closet/secure_closet/guard/guard_commander/WillContain()
 	return list(
