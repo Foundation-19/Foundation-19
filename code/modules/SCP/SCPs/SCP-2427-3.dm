@@ -20,8 +20,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	handle_corpse = TRUE // Eats corpses
 
 /datum/ai_holder/simple_animal/melee/s2427_3/can_attack(atom/movable/the_target, vision_required = TRUE)
-	. = ..()
-	if(!.)
+	if(!..())
 		return FALSE
 	var/mob/living/simple_animal/hostile/scp_2427_3/O = holder
 	if(the_target in O.purity_list)
