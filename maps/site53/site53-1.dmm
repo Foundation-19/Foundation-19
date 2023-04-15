@@ -1116,7 +1116,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
 "cx" = (
-/obj/structure/closet/secure_closet/mtf/specialistshotgun,
+/obj/structure/closet/secure_closet/guard/specialistshotgun,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/entrance_checkpoint)
 "cA" = (
@@ -7634,7 +7634,7 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/dclass/shower)
 "rL" = (
-/obj/structure/closet/secure_closet/mtf/riotgear,
+/obj/structure/closet/secure_closet/guard/riotgear,
 /turf/simulated/floor/tiled/white,
 /area/site53/uhcz/scp8containment)
 "rM" = (
@@ -9100,7 +9100,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/reeducation)
 "vE" = (
-/obj/structure/closet/secure_closet/mtf/breachshotguns,
+/obj/structure/closet/secure_closet/guard/breachshotguns,
 /obj/machinery/camera/autoname{
 	network = list("SCP-247 CCTV Network")
 	},
@@ -16036,7 +16036,7 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/assignmentbubble)
 "OF" = (
-/obj/structure/closet/secure_closet/mtf/breachshotguns,
+/obj/structure/closet/secure_closet/guard/breachshotguns,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
 "OG" = (
@@ -19855,7 +19855,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignmentbubble)
 "ZP" = (
-/obj/structure/closet/secure_closet/mtf/breachshotguns,
+/obj/structure/closet/secure_closet/guard/breachshotguns,
 /obj/machinery/light{
 	dir = 1
 	},

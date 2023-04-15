@@ -1609,7 +1609,7 @@
 /turf/simulated/floor/lino,
 /area/site53/surface/surface/away/check)
 "hF" = (
-/obj/structure/closet/secure_closet/mtf/enlisted,
+/obj/structure/closet/secure_closet/guard/lcz,
 /turf/simulated/floor/lino,
 /area/site53/surface/surface/away/check)
 "hG" = (

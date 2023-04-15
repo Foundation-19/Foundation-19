@@ -229,34 +229,32 @@
 	damage = 50 //Revolvers get snowflake bullets, to keep them relevant
 	armor_penetration = 0
 
-/obj/item/projectile/bullet/pistol/medium/smg //P90
-	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 35 //10mm
+// P90 SMG
+/obj/item/projectile/bullet/a57
+	fire_sound = 'sound/weapons/gunshot/p90.ogg'
+	damage = 35
 	armor_penetration = 10
+	distance_falloff = 3
 
-/obj/item/projectile/bullet/pistol/medium/smg/rubber
-	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 3 //10mm rubber
+/obj/item/projectile/bullet/a57/rubber
+	damage = 2
 	armor_penetration = 0
-	agony = 30
+	agony = 10 // This thing has 50 bullets and full auto, come on
 	embed = 0
 	sharp = 0
 
-/obj/item/projectile/bullet/pistol/medium/smg/hollowpoint
-	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
+/obj/item/projectile/bullet/a57/hollowpoint
 	damage = 45 //10mm hollowpoint
 	armor_penetration = 0
 	embed = 1
 
-/obj/item/projectile/bullet/pistol/medium/smg/ap
-	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 35 //10mm AP
+/obj/item/projectile/bullet/a57/ap
+	damage = 35
 	armor_penetration = 20
 
-/obj/item/projectile/bullet/pistol/medium/smg/silver
-	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 45 //10mm but i have no idea what bimmer wanted for classifaction, so i made it just better normal ammo
-	armor_penetration = 0
+/obj/item/projectile/bullet/a57/silver
+	damage = 55
+	armor_penetration = 10
 
 /* shotgun projectiles */
 
