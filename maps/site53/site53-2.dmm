@@ -10515,15 +10515,19 @@
 /area/site53/uhcz/hallways)
 "aBG" = (
 /obj/structure/table/rack,
-/obj/item/shield/riot/metal,
-/obj/item/shield/riot/metal,
-/obj/item/shield/riot/metal,
-/obj/item/shield/riot/metal,
-/obj/item/shield/riot/metal,
-/obj/item/shield/riot/metal,
-/obj/item/shield/riot/metal,
-/obj/item/shield/riot/metal,
 /obj/machinery/light,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "aBH" = (
@@ -16817,13 +16821,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
 "aVq" = (
-/obj/structure/closet/secure_closet/mtf/enlisted,
+/obj/structure/closet/secure_closet/guard/lcz,
 /obj/machinery/recharger/wallcharger{
 	dir = 1;
 	pixel_y = -23
 	},
-/obj/item/crowbar/red,
-/obj/item/material/knife/combat,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
 "aVr" = (
@@ -16955,6 +16957,7 @@
 /obj/item/melee/baton/loaded,
 /obj/item/melee/baton/loaded,
 /obj/item/melee/baton/loaded,
+/obj/item/melee/baton/loaded,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "aVK" = (
@@ -16985,7 +16988,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/structure/closet/secure_closet/mtf/specialistshotgun,
+/obj/structure/closet/secure_closet/guard/specialistshotgun,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "aVN" = (
@@ -17870,7 +17873,7 @@
 /turf/simulated/floor/plating,
 /area/site53/tram/scpcar)
 "aYS" = (
-/obj/structure/closet/secure_closet/mtf/exp,
+/obj/structure/closet/secure_closet/guard/scout,
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
 	},
@@ -19820,7 +19823,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/explorers)
 "beW" = (
-/obj/structure/closet/secure_closet/mtf/exp,
+/obj/structure/closet/secure_closet/guard/scout,
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
 	},
@@ -19832,7 +19835,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/surface/explorers)
 "beY" = (
-/obj/structure/closet/secure_closet/mtf/exp,
+/obj/structure/closet/secure_closet/guard/scout,
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
 	},
@@ -19970,7 +19973,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/surface/explorers)
 "bfz" = (
-/obj/structure/closet/secure_closet/mtf/expl,
+/obj/structure/closet/secure_closet/guard/scout/sergeant,
 /turf/simulated/floor/wood,
 /area/site53/surface/explorers)
 "bfA" = (
@@ -22220,14 +22223,12 @@
 /area/site53/ulcz/scp078)
 "cnC" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/clothing/accessory/storage/bandolier,
-/obj/item/clothing/accessory/storage/bandolier,
-/obj/item/clothing/accessory/storage/bandolier,
-/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/suit/armor/riot,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "cnW" = (
@@ -24552,13 +24553,15 @@
 /area/chapel)
 "fCD" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
-/obj/item/ammo_magazine/box/beanbag,
 /obj/machinery/light,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/clothing/accessory/storage/bandolier,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "fDv" = (
@@ -24968,9 +24971,7 @@
 /turf/simulated/floor/reinforced,
 /area/space)
 "gci" = (
-/obj/structure/closet/secure_closet/mtf/enlisted,
-/obj/item/crowbar/red,
-/obj/item/material/knife/combat,
+/obj/structure/closet/secure_closet/guard/lcz,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
 "gdE" = (
@@ -26680,7 +26681,7 @@
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "iix" = (
-/obj/structure/closet/secure_closet/mtf/breachautomatics,
+/obj/structure/closet/secure_closet/guard/breachautomatics,
 /obj/item/ammo_magazine/box/a556,
 /obj/item/ammo_magazine/box/a556,
 /obj/item/ammo_magazine/box/a556,
@@ -26768,13 +26769,10 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/engine_smes)
 "ipQ" = (
-/obj/structure/closet/secure_closet/mtf/enlisted/hcz,
-/obj/item/crowbar/emergency_forcing_tool,
-/obj/item/clothing/accessory/armor/tag/solgov/sec,
+/obj/structure/closet/secure_closet/guard/hcz,
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
-/obj/item/material/knife/combat,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "iqc" = (
@@ -27685,6 +27683,16 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/ulcz/hallways)
+"jCD" = (
+/obj/structure/table/rack,
+/obj/item/clothing/head/helmet/riot,
+/obj/item/clothing/head/helmet/riot,
+/obj/item/clothing/head/helmet/riot,
+/obj/item/clothing/head/helmet/riot,
+/obj/item/clothing/head/helmet/riot,
+/obj/item/clothing/head/helmet/riot,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/armory)
 "jDF" = (
 /obj/item/glass_jar{
 	pixel_y = 7
@@ -29114,10 +29122,10 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/item/ammo_magazine/scp/p90_mag,
@@ -30107,8 +30115,8 @@
 	name = "Bar Lounge"
 	},
 /obj/structure/flora/pottedplant/stoutbush{
-	pixel_y = 7;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 7
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
@@ -31515,7 +31523,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/hallways)
 "oAS" = (
-/obj/structure/closet/secure_closet/mtf/breachautomatics,
+/obj/structure/closet/secure_closet/guard/breachautomatics,
 /obj/item/ammo_magazine/box/a556,
 /obj/item/ammo_magazine/box/a556,
 /obj/item/ammo_magazine/box/a556,
@@ -31688,11 +31696,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/reswing/robotics)
 "oLR" = (
-/obj/structure/closet/secure_closet/mtf/nco/hcz,
-/obj/item/storage/pill_bottle/amnesticsa,
-/obj/item/crowbar/emergency_forcing_tool,
-/obj/item/clothing/accessory/armor/tag/solgov/sec,
-/obj/item/material/knife/combat,
+/obj/structure/closet/secure_closet/guard/hcz/sergeant,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "oMg" = (
@@ -31770,13 +31774,10 @@
 /turf/simulated/floor/tiled,
 /area/site53/engineering/sleeproom)
 "oVt" = (
-/obj/structure/closet/secure_closet/mtf/enlisted/hcz,
-/obj/item/crowbar/emergency_forcing_tool,
-/obj/item/clothing/accessory/armor/tag/solgov/sec,
+/obj/structure/closet/secure_closet/guard/hcz,
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
 	},
-/obj/item/material/knife/combat,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "oVw" = (
@@ -32674,9 +32675,9 @@
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
 /obj/item/ammo_magazine/scp/p90_mag/ap,
 /obj/item/ammo_magazine/scp/p90_mag/ap,
 /obj/item/ammo_magazine/scp/p90_mag/ap,
@@ -32756,16 +32757,13 @@
 /turf/simulated/floor,
 /area/site53/engineering/primaryhallway)
 "qtP" = (
-/obj/structure/closet/secure_closet/mtf/enlisted/hcz,
-/obj/item/crowbar/emergency_forcing_tool,
-/obj/item/clothing/accessory/armor/tag/solgov/sec,
+/obj/structure/closet/secure_closet/guard/hcz,
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
-/obj/item/material/knife/combat,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "quy" = (
@@ -34297,17 +34295,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/breakroom)
 "suY" = (
-/obj/structure/closet/secure_closet/mtf/co,
-/obj/item/storage/belt/holster/security/tactical,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/ammo_magazine/box/acp45,
-/obj/item/crowbar/emergency_forcing_tool,
-/obj/item/clothing/accessory/armor/tag/solgov/com/zonecomm,
+/obj/structure/closet/secure_closet/guard/zone_commander,
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 10
 	},
-/obj/item/storage/pill_bottle/amnesticsa,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/commanderoffice)
 "sva" = (
@@ -34923,9 +34914,9 @@
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/item/gun/projectile/automatic/scp/p90,
 /obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
 /obj/item/ammo_magazine/scp/p90_mag/ap,
 /obj/item/ammo_magazine/scp/p90_mag/ap,
 /obj/item/ammo_magazine/scp/p90_mag/ap,
@@ -36233,8 +36224,8 @@
 /area/site53/uhcz/generalpurpose3)
 "vgG" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
-/obj/item/gun/projectile/automatic/scp/saiga12,
+/obj/item/gun/projectile/automatic/scp/saiga12/rubbershot,
+/obj/item/gun/projectile/automatic/scp/saiga12/rubbershot,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "vhB" = (
@@ -38267,6 +38258,30 @@
 /obj/item/device/camera_film,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
+"xEG" = (
+/obj/structure/table/rack,
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_x = 32
+	},
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/box/beanbag,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/armory)
 "xFg" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -38415,12 +38430,12 @@
 /area/site53/surface/bunker)
 "xSs" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/item/ammo_magazine/scp/p90_mag,
@@ -42151,7 +42166,7 @@ aMC
 aVa
 aVa
 aVx
-cnC
+jCD
 aMC
 azA
 azA
@@ -42665,7 +42680,7 @@ aMC
 aVx
 xsq
 xsq
-xsq
+xEG
 aMC
 azA
 azA

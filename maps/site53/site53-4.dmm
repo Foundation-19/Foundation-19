@@ -1375,7 +1375,7 @@
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
 "dK" = (
-/obj/structure/closet/secure_closet/mtf/commander,
+/obj/structure/closet/secure_closet/guard/guard_commander,
 /obj/machinery/light{
 	dir = 1
 	},
