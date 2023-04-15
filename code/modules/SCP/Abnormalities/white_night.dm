@@ -206,7 +206,7 @@
 	var/apostle_line = apostle_lines[length(apostles)]
 	apostle_line = replacetext(apostle_line, "%NAME%", H.real_name)
 	if(findtext(apostle_line, "%PREV%"))
-		var/apostle_name = apostles[length(apostles) - 1][2]
+		var/apostle_name = apostles[apostles[length(apostles) - 1]][2]
 		apostle_line = replacetext(apostle_line, "%PREV%", apostle_name)
 	for(var/mob/M in GLOB.player_list)
 		if((M.z in GetConnectedZlevels(z)) && M.client)
@@ -326,12 +326,13 @@
 			M.playsound_local(get_turf(M), 'sounds/scps/abnormality/white_night/rapture.ogg', 50)
 	SLEEP_CHECK_DEATH(3 SECONDS)
 	for(var/i = 1 to apostles.len)
-		var/mob/living/carbon/human/H = apostles[i][1]
+		var/apostle_key = apostles[i]
+		var/mob/living/carbon/human/H = apostles[apostle_key][1]
 		// Most likely the mob got gibbed.
 		if(QDELETED(H))
 			H = new(src)
-			H.ckey = apostles[i]
-			H.fully_replace_character_name(apostles[i][2])
+			H.ckey = apostle_key
+			H.fully_replace_character_name(apostles[apostle_key][2])
 		if(!ishuman(H))
 			continue
 		if(!H.client && ckey)
@@ -348,7 +349,8 @@
 				var/apostle_line = apostle_lines[i]
 				apostle_line = replacetext(apostle_line, "%NAME%", H.real_name)
 				if(findtext(apostle_line, "%PREV%"))
-					apostle_line = replacetext(apostle_line, "%PREV%", apostles[i - 1][2])
+					var/apostle_name = apostles[apostles[i - 1]][2]
+					apostle_line = replacetext(apostle_line, "%PREV%", apostle_name)
 				to_chat(M, FONT_LARGE(SPAN_DANGER(apostle_line)))
 				M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/apostle_bell.ogg', 100)
 				flash_color(M, flash_color = "#ff0000", flash_time = 30)
