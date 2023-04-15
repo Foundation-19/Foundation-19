@@ -97,10 +97,12 @@
 			if(L.faction == faction)
 				continue
 			L.apply_damage(scythe_damage, BRUTE)
-			if(L.stat == DEAD) // Total overkill
+			// Total overkill
+			if((L.stat == DEAD) || (L.getBruteLoss() >= L.maxHealth * 3))
 				for(var/i = 1 to 5) // Alternative to gib()
 					new /obj/effect/temp_visual/bloodsplatter(get_turf(L), pick(GLOB.alldirs))
 				new /obj/effect/gibspawner/generic(get_turf(L))
+				L.apply_damage(scythe_damage * 2, BRUTE)
 				gibbed = TRUE
 	playsound(get_turf(src), (gibbed ? 'sound/scp/abnormality/white_night/scythe_gib.ogg' : 'sound/scp/abnormality/white_night/scythe_spell.ogg'), (gibbed ? 100 : 75), FALSE, (gibbed ? 12 : 5))
 	SLEEP_CHECK_DEATH(5)
