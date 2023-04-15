@@ -61,7 +61,7 @@
 	/// Tells us if rapture was started
 	var/rapture_complete = FALSE
 
-	/// List of apostles. list(mob ref, ckey, name)
+	/// List of apostles. Ckey = list(mob ref, name)
 	/// We store ckey and name in case mob gets deleted and turned to null.
 	var/list/apostles = list()
 	/// Just the lines to show globally when someone is converted.
@@ -195,17 +195,19 @@
 		H.overlays_standing[27] = apostle_halo
 		H.queue_icon_update()
 	// Buffs
-	H.species.brute_mod *= 0.8
+	// TODO: Species are singletons, do something that works for apostles only
+	/*H.species.brute_mod *= 0.8
 	H.species.burn_mod *= 0.8
 	H.species.stun_mod *= 0.8
 	H.species.weaken_mod *= 0.8
-	H.species.slowdown -= 1
+	H.species.slowdown -= 1*/
 	SLEEP_CHECK_DEATH(2 SECONDS)
 	// Spooky message
 	var/apostle_line = apostle_lines[length(apostles)]
 	apostle_line = replacetext(apostle_line, "%NAME%", H.real_name)
 	if(findtext(apostle_line, "%PREV%"))
-		apostle_line = replacetext(apostle_line, "%PREV%", apostles[apostles.len - 1][2])
+		var/apostle_name = apostles[length(apostles) - 1][2]
+		apostle_line = replacetext(apostle_line, "%PREV%", apostle_name)
 	for(var/mob/M in GLOB.player_list)
 		if((M.z in GetConnectedZlevels(z)) && M.client)
 			to_chat(M, FONT_LARGE(SPAN_OCCULT(apostle_line)))
