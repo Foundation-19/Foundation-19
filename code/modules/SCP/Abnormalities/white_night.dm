@@ -117,7 +117,9 @@
 /mob/living/simple_animal/hostile/megafauna/white_night/UnarmedAttack(mob/living/carbon/human/H)
 	if(!ishuman(H))
 		return
-	if(H in apostles)
+	if(!H.ckey || !H.client)
+		return
+	if(H.ckey in apostles)
 		return
 	if(H.stat == DEAD)
 		return
@@ -185,7 +187,7 @@
 	apostle_cooldown = world.time + apostle_cooldown_time
 	H.revive()
 	// Giving the fancy stuff to new apostle
-	apostles += list(H, H.ckey, H.real_name)
+	apostles[H.ckey] = list(H, H.real_name)
 	H.faction = "apostle"
 	to_chat(H, SPAN_NOTICE("You are protected by the holy light!"))
 	if(length(apostles) < 12)
@@ -203,7 +205,7 @@
 	var/apostle_line = apostle_lines[length(apostles)]
 	apostle_line = replacetext(apostle_line, "%NAME%", H.real_name)
 	if(findtext(apostle_line, "%PREV%"))
-		apostle_line = replacetext(apostle_line, "%PREV%", apostles[apostles.len - 1][3])
+		apostle_line = replacetext(apostle_line, "%PREV%", apostles[apostles.len - 1][2])
 	for(var/mob/M in GLOB.player_list)
 		if((M.z in GetConnectedZlevels(z)) && M.client)
 			to_chat(M, FONT_LARGE(SPAN_OCCULT(apostle_line)))
@@ -325,8 +327,8 @@
 		// Most likely the mob got gibbed.
 		if(QDELETED(H))
 			H = new(src)
-			H.ckey = apostles[i][2]
-			H.fully_replace_character_name(apostles[i][3])
+			H.ckey = apostles[i]
+			H.fully_replace_character_name(apostles[i][2])
 		if(!ishuman(H))
 			continue
 		if(!H.client && ckey)
@@ -343,7 +345,7 @@
 				var/apostle_line = apostle_lines[i]
 				apostle_line = replacetext(apostle_line, "%NAME%", H.real_name)
 				if(findtext(apostle_line, "%PREV%"))
-					apostle_line = replacetext(apostle_line, "%PREV%", apostles[i - 1][3])
+					apostle_line = replacetext(apostle_line, "%PREV%", apostles[i - 1][2])
 				to_chat(M, FONT_LARGE(SPAN_DANGER(apostle_line)))
 				M.playsound_local(get_turf(M), 'sounds/scp/abnormality/white_night/apostle_bell.ogg', 100)
 				flash_color(M, flash_color = "#ff0000", flash_time = 30)
