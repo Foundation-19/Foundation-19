@@ -339,6 +339,10 @@
 	siemens_coefficient = 0.5
 	starting_accessories = list(/obj/item/clothing/accessory/armguards/riot, /obj/item/clothing/accessory/legguards/riot)
 
+/obj/item/clothing/suit/armor/riot/Initialize()
+	. = ..()
+	slowdown_per_slot[slot_wear_suit] = 1.5
+
 /obj/item/clothing/suit/armor/bulletproof
 	name = "ballistic vest"
 	desc = "An armored vest with heavy plates to protect against ballistic projectiles."
