@@ -1,0 +1,4 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - admin: Removed 'Random' game mode from game panel.
