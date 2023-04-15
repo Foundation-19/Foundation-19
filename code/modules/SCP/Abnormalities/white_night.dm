@@ -244,6 +244,7 @@
 							ghost.reenter_corpse()
 					L.revive()
 					to_chat(L, SPAN_NOTICE("The holy light compels you to live!"))
+		SLEEP_CHECK_DEATH(2)
 
 /mob/living/simple_animal/hostile/megafauna/white_night/proc/ChargedField()
 	if(charged_field_cooldown > world.time)
