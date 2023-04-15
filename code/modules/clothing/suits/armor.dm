@@ -341,7 +341,7 @@
 
 /obj/item/clothing/suit/armor/riot/Initialize()
 	. = ..()
-	slowdown_per_slot[slot_wear_suit] = 1.5
+	slowdown_per_slot[slot_wear_suit] = 1
 
 /obj/item/clothing/suit/armor/bulletproof
 	name = "ballistic vest"
