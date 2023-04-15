@@ -26192,7 +26192,7 @@
 	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
-	id_tag = ssss;
+	id_tag = "UHCZ Checkpoint Control Room 2";
 	name = "UHCZ Checkpoint Control Room 2"
 	},
 /obj/structure/disposalpipe/segment,
