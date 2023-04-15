@@ -9,7 +9,7 @@ GLOBAL_LIST_EMPTY(scp2343s)
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
 	icon = 'icons/SCP/scp_2343.dmi'
-	icon_state = null
+	icon_state = "americangod"
 	status_flags = NO_ANTAG
 
 
@@ -19,17 +19,30 @@ GLOBAL_LIST_EMPTY(scp2343s)
 	classification = SAFE
 
 /mob/living/carbon/human/scp2343/IsAdvancedToolUser()
-	return FALSE
+	return TRUE
 
-/mob/living/carbon/human/scp2343/New(new_loc, new_species)
-	new_species = "SCP-343"
-	return ..()
+/mob/living/carbon/human/scp2343/Login()
+	. = ..()
+	if(client)
+		add_language(LANGUAGE_ENGLISH)
+		add_language(LANGUAGE_HUMAN_FRENCH)
+		add_language(LANGUAGE_HUMAN_GERMAN)
+		add_language(LANGUAGE_HUMAN_SPANISH)
+		if(!(MUTATION_XRAY in mutations))
+			mutations.Add(MUTATION_XRAY)
+			update_mutations()
+			update_sight()
+
+/mob/living/carbon/human/scp2343/Logout()
+	. = ..()
+	if(mind)
+		mind = null
 
 /mob/living/carbon/human/scp2343/Initialize()
 	update_icons()
 
 	// fix names
-	real_name = "SCP-343"
+	real_name = "SCP-2343"
 	SetName(real_name)
 	if(mind)
 		mind.name = real_name

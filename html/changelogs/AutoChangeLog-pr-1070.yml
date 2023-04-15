@@ -1,0 +1,12 @@
+author: GGarciaECE
+delete-after: true
+changes:
+  - rscadd: Switched number of guards slots (20->8 for LCZ Guards, 4-> for LCZ Sergeants,
+      3->2 for HCZ Sergeants)
+  - rscadd: Modified contents of security offices of various zones to reflect changes
+      in slots
+  - rscadd: Modified content of Security armouries to include Stun batons. LCZ has
+      had several weapons removed with focus on making less than lethal more accessible.
+  - rscadd: Remapped 2427-3 (spooder) chamber. Relocated to HCZ close to the entry
+      checkpoint , its slightly more secure now with an airlock style blast gate system.
+      Still has the delivery chute and pen for the animals.
