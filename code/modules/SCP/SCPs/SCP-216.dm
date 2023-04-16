@@ -82,6 +82,11 @@
 
 		GenerateRandomItemsAt(code)
 
+/obj/structure/scp_216/Destroy()
+	for(var/atom/A in contents) // Forever gone
+		QDEL_NULL(A)
+	return ..()
+
 /obj/structure/scp_216/on_update_icon()
 	if(open)
 		icon_state = "[initial(icon_state)]-open"
