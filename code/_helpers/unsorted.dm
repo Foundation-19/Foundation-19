@@ -185,23 +185,17 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 /proc/DirBlocked(turf/loc, dir, var/list/whitelist = list())
 	for(var/obj/structure/window/D in loc)
-		if(!D.density || D.type in whitelist)			continue
+		if((!D.density) || (is_type_in_list(D, whitelist)))			continue
 		if(D.dir == SOUTHWEST)	return 1
 		if(D.dir == dir)		return 1
 
 	for(var/obj/machinery/door/D in loc)
-		if(!D.density || D.type in whitelist)			continue
+		if((!D.density) || (is_type_in_list(D, whitelist)))			continue
 		if(istype(D, /obj/machinery/door/window))
 			if((dir & SOUTH) && (D.dir & (EAST|WEST)))		return 1
 			if((dir & EAST ) && (D.dir & (NORTH|SOUTH)))	return 1
 		else return 1	// it's a real, air blocking door
 	return 0
-
-/proc/TurfBlockedNonWhitelist(turf/loc, var/list/whitelist) //checks if the turf is blocked but ignores objects in whitelist
-	for(var/obj/O in loc)
-		if(O.density && !(O.type in whitelist))
-			return TRUE
-	return FALSE
 
 /proc/sign(x)
 	return x!=0?x/abs(x):0
