@@ -12,58 +12,47 @@
 	// Note: If editing, please keep the descending order by groups. More common items should be at the top.
 	/// Weight list of potential atoms that can be generated inside on spawn. Path = Chance.
 	var/list/random_items = list(
-		// Unsorted
-		/obj/item/a_gift = 600,
+		/obj/item/a_gift = 600, // Unsorted
 		/obj/item/bikehorn = 400,
 		/obj/item/bikehorn/airhorn = 300,
 		/obj/item/boombox = 300,
 		/obj/item/device/personal_shield = 50,
 		/obj/item/a_gift/anything = 30,
-		// Medicine
-		/obj/item/FixOVein = 500,
+		/obj/item/FixOVein = 500, // Medicine
 		/obj/item/bonegel = 500,
-		// Medical/Surgery tools
-		/obj/item/circular_saw = 500,
-		// Research
-		// Tools
-		/obj/item/crowbar = 500,
+		/obj/item/circular_saw = 500, // Medical/Surgery tools
+		/obj/item/crowbar = 500, // Tools
 		/obj/item/device/multitool = 450,
 		/obj/item/crowbar/crystal = 300,
 		/obj/item/device/multitool/crystal = 250,
-		// Power cells
-		/obj/item/cell/high = 500,
+		/obj/item/cell/high = 500, // Power cells
 		/obj/item/cell/super = 450,
 		/obj/item/cell/hyper = 400,
 		/obj/item/cell/infinite = 5,
-		// Clothes
-		// Hats
-		/obj/item/clothing/head/beret = 500,
+		/obj/item/clothing/head/beret = 500, // Hats
 		/obj/item/clothing/head/bearpelt = 500,
 		/obj/item/clothing/head/beret/sec/corporate/officer = 450,
 		/obj/item/clothing/head/beret/sec/corporate/hos = 400,
 		/obj/item/clothing/head/beret/scp/goc = 300,
-		// Armor
-		// Helmets
-		/obj/item/clothing/head/helmet = 500,
+		/obj/item/clothing/head/helmet = 500, // Helmets
 		/obj/item/clothing/head/helmet/ballistic = 500,
 		/obj/item/clothing/head/helmet/riot = 500,
 		/obj/item/clothing/head/bomb_hood/security = 400,
 		/obj/item/clothing/head/helmet/merc = 300,
 		/obj/item/clothing/head/helmet/swat = 250,
-		// Melee weapons
-		/obj/item/excalibur = 20,
-		// Ranged weapons
-		// Antagonist stuff
-		/obj/item/device/uplink_service/fake_crew_announcement = 60,
+		/obj/item/excalibur = 20, // Melee weapons
+		/obj/item/gun/projectile/pistol = 80, // Ranged weapons
+		/obj/item/gun/projectile/pistol/military = 60,
+		/obj/item/gun/projectile/automatic = 30,
+		/obj/item/gun/projectile/heavysniper = 5,
+		/obj/item/device/uplink_service/fake_crew_announcement = 60, // Antagonist stuff
 		/obj/item/device/uplink_service/fake_update_announcement = 60,
 		/obj/item/device/soulstone = 50,
 		/obj/item/device/chameleon = 30,
 		/obj/item/device/flash/advanced = 20,
-		// SCP objects
-		/obj/item/reagent_containers/pill/scp500 = 10,
+		/obj/item/reagent_containers/pill/scp500 = 10, // SCP objects
 		/obj/item/storage/pill_bottle/scp500 = 1,
-		// Mobs
-		/mob/living/simple_animal/friendly/mouse = 150,
+		/mob/living/simple_animal/friendly/mouse = 150, // Mobs
 		/mob/living/simple_animal/friendly/corgi = 100,
 		/mob/living/simple_animal/slime = 80,
 		/mob/living/simple_animal/hostile/carp = 50,
