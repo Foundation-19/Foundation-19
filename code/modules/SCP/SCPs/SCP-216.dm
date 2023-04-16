@@ -161,10 +161,13 @@
 		all_codes[num2text(code, 7)] += new chosen_atom(src)
 
 /obj/structure/scp_216/proc/InsertItem(mob/living/carbon/human/user, atom/movable/A, code_loc = 0)
-	if(!user.unEquip(A, src))
-		return
 	if(!(num2text(code_loc, 7) in all_codes) || !islist(all_codes[num2text(code_loc, 7)]))
 		all_codes[num2text(code_loc, 7)] = list()
+	if(length(all_codes[num2text(code_loc, 7)]) >= 10)
+		to_chat(user, SPAN_WARNING("There is already too many things in there!"))
+		return
+	if(!user.unEquip(A, src))
+		return
 	all_codes[num2text(code_loc, 7)] += A
 	attack_hand(user)
 
