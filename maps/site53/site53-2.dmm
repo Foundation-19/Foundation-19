@@ -258,6 +258,17 @@
 	pixel_y = -25
 	},
 /obj/structure/cable/green,
+/obj/structure/table/standard,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "UHCZ Checkpoint Gate 2";
+	name = "UHCZ Checkpoint Gate 2";
+	pixel_x = 24
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "aaJ" = (
@@ -21030,6 +21041,9 @@
 /obj/effect/floor_decal/corner/red{
 	dir = 4
 	},
+/obj/machinery/camera/network/hcz{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "biY" = (
@@ -21783,6 +21797,11 @@
 /obj/machinery/light/small/red,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
+"bDI" = (
+/obj/machinery/photocopier/faxmachine,
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "bDX" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/machinery/light,
@@ -22890,6 +22909,7 @@
 /obj/item/folder/white,
 /obj/item/folder/yellow,
 /obj/item/folder/blue,
+/obj/item/boombox,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "dgG" = (
@@ -27953,11 +27973,6 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/item/stamp/cmo{
-	name = "HCZ Entry Checkpoint Stamp"
-	},
-/obj/item/paper_bin,
-/obj/item/pen,
 /turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
 "jQX" = (
@@ -30430,6 +30445,12 @@
 	pixel_y = -23;
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/item/stamp/cmo{
+	name = "HCZ Entry Checkpoint Stamp"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "naq" = (
@@ -30692,6 +30713,10 @@
 	name = "UHCZ Checkpoint Control Room";
 	pixel_y = -23;
 	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
+/obj/structure/table/standard,
+/obj/machinery/photocopier{
+	pixel_y = 3
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
@@ -32401,6 +32426,13 @@
 /obj/effect/floor_decal/corner/red{
 	dir = 1
 	},
+/obj/machinery/door/window/brigdoor/northright{
+	name = "Booth";
+	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
+/obj/structure/bed/chair/office/dark{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "pPO" = (
@@ -32897,6 +32929,24 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
+"qDG" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 1
+	},
+/obj/machinery/door/window/brigdoor/northright{
+	name = "Booth";
+	req_access = list("ACCESS_SECURITY_LEVEL3");
+	dir = 4
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "UHCZ Checkpoint Gate 1";
+	name = "UHCZ Checkpoint Gate 1";
+	pixel_x = -25;
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL3"))
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "qEd" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
@@ -33471,6 +33521,17 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
+"rpQ" = (
+/obj/structure/table/standard,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "rpY" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/device/flashlight/maglight,
@@ -75624,8 +75685,8 @@ aGB
 aFp
 aEC
 bjh
-aEC
-tfe
+rpQ
+qDG
 ass
 ass
 ass
@@ -76658,7 +76719,7 @@ ntR
 ass
 dcB
 aEC
-aEC
+bDI
 aEC
 eED
 ass
