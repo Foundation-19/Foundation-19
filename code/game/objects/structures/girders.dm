@@ -166,7 +166,7 @@
 
 	to_chat(user, SPAN_NOTICE("You begin adding the plating..."))
 
-	if(!do_after(user,40,src) || !S.use(2))
+	if(!do_after(user, (8 SECONDS), src) || !S.use(2))
 		return 1 //once we've gotten this far don't call parent attackby()
 
 	if(anchored)
