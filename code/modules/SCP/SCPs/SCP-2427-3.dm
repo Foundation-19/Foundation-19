@@ -220,6 +220,8 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 
 /mob/living/simple_animal/hostile/scp_2427_3/proc/IsEnraged()
 	for(var/mob/living/L in dview(7, src))
+		if(L == src)
+			continue
 		if(L in impurity_list)
 			return !L.stat && L.ckey // Conscious and is/was player controlled
 		if(L.stat && istype(get_area(src), spawn_area)) // Hm yes, today I will ignore all the corpses around me to breach
