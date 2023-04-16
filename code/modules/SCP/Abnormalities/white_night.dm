@@ -114,6 +114,11 @@
 	qdel(src)
 	return ..()
 
+/mob/living/simple_animal/hostile/megafauna/white_night/get_status_tab_items()
+	.=..()
+	if(LAZYLEN(apostles) && !rapture_complete)
+		. += "Apostles converted: [length(apostles)]."
+
 /mob/living/simple_animal/hostile/megafauna/white_night/UnarmedAttack(mob/living/carbon/human/H)
 	if(!ishuman(H))
 		return

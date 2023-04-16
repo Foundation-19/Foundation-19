@@ -78,8 +78,10 @@
 	name = "scythe"
 	attack_verb = list("slashed")
 	hitsound = 'sound/scp/abnormality/white_night/scythe.ogg'
-	force = 30
+	force = 36
 	sharp = TRUE
+	melee_accuracy_bonus = 200
+	stun_prob = 0
 
 /mob/living/simple_animal/hostile/apostle/scythe/PerformAbility()
 	if(scythe_cooldown > world.time)
