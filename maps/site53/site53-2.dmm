@@ -21585,6 +21585,11 @@
 /obj/item/storage/toolbox/mechanical,
 /turf/simulated/floor/reinforced,
 /area/site53/reswing/robotics)
+"bnp" = (
+/obj/machinery/photocopier/faxmachine,
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "bpz" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -21594,6 +21599,17 @@
 "bpN" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
+"bqI" = (
+/obj/structure/table/standard,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "brk" = (
 /obj/machinery/light{
 	dir = 4
@@ -21797,11 +21813,6 @@
 /obj/machinery/light/small/red,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
-"bDI" = (
-/obj/machinery/photocopier/faxmachine,
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/securitypost)
 "bDX" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/machinery/light,
@@ -22189,6 +22200,24 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/bunker)
+"clC" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 1
+	},
+/obj/machinery/door/window/brigdoor/northright{
+	name = "Booth";
+	req_access = list("ACCESS_SECURITY_LEVEL3");
+	dir = 4
+	},
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "UHCZ Checkpoint Gate 1";
+	name = "UHCZ Checkpoint Gate 1";
+	pixel_x = -25;
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL3"))
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uhcz/securitypost)
 "clO" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -32929,24 +32958,6 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
-"qDG" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 1
-	},
-/obj/machinery/door/window/brigdoor/northright{
-	name = "Booth";
-	req_access = list("ACCESS_SECURITY_LEVEL3");
-	dir = 4
-	},
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "UHCZ Checkpoint Gate 1";
-	name = "UHCZ Checkpoint Gate 1";
-	pixel_x = -25;
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL3"))
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/securitypost)
 "qEd" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
@@ -33521,17 +33532,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
-"rpQ" = (
-/obj/structure/table/standard,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/item/modular_computer/laptop/preset/custom_loadout/standard,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/securitypost)
 "rpY" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/device/flashlight/maglight,
@@ -75685,8 +75685,8 @@ aGB
 aFp
 aEC
 bjh
-rpQ
-qDG
+bqI
+clC
 ass
 ass
 ass
@@ -76719,7 +76719,7 @@ ntR
 ass
 dcB
 aEC
-bDI
+bnp
 aEC
 eED
 ass

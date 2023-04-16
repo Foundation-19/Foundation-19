@@ -409,15 +409,9 @@
 /turf/simulated/floor,
 /area/site53/lhcz/hallway)
 "bc" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/door/blast/regular{
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
-/turf/simulated/floor,
+/obj/effect/paint_stripe/yellow,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/wall/titanium,
 /area/site53/uhcz/scp106parts)
 "bd" = (
 /obj/structure/disposalpipe/trunk{
@@ -864,23 +858,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/maintenance)
-"bV" = (
-/obj/machinery/light/small{
-	dir = 1;
-	icon_state = "bulb1"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/button/blast_door{
-	id_tag = "HCZ High Security Lock";
-	name = "HCZ High Security Lock";
-	pixel_y = -32;
-	req_access = list("ACCESS_ADMIN_LEVEL5")
-	},
-/turf/simulated/floor,
-/area/site53/uhcz/scp106parts)
 "bW" = (
 /obj/machinery/camera/network/lcz{
 	dir = 8
@@ -1295,13 +1272,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
 "cT" = (
-/obj/effect/catwalk_plated/dark,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/blast/regular{
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
-/turf/simulated/floor,
+/turf/unsimulated/mineral,
 /area/site53/uhcz/scp106parts)
 "cU" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -1495,14 +1467,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/storage)
 "di" = (
-/obj/machinery/door/airlock/hatch/maintenance{
-	name = "Maintenance"
-	},
+/obj/effect/paint_stripe/white,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor,
+/turf/simulated/wall/prepainted,
 /area/site53/lowertram/archive)
 "dj" = (
 /turf/simulated/floor/wood/maple,
@@ -3093,8 +3062,7 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor,
+/turf/unsimulated/mineral,
 /area/site53/uhcz/scp106parts)
 "gU" = (
 /obj/structure/closet/crate/large,
@@ -6140,14 +6108,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/scp106parts)
 "nT" = (
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/button/blast_door{
-	id_tag = "HCZ High Security Lock";
-	name = "HCZ High Security Lock";
-	pixel_y = -32;
-	req_access = list("ACCESS_ADMIN_LEVEL5")
-	},
-/turf/simulated/floor,
+/turf/unsimulated/mineral,
 /area/site53/uhcz/scp106parts)
 "nU" = (
 /obj/effect/paint_stripe/orange,
@@ -13290,13 +13251,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	id_tag = "ECZ Security Lockdown";
-	name = "ECZ Security Lockdown"
-	},
-/turf/simulated/floor,
+/turf/unsimulated/mineral,
 /area/site53/uhcz/scp106parts)
 "Gg" = (
 /turf/simulated/floor/holofloor/beach/water,
@@ -18839,19 +18794,6 @@
 "Vw" = (
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp500)
-"Vx" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/button/blast_door{
-	id_tag = "HCZ High Security Lock";
-	name = "HCZ High Security Lock";
-	pixel_y = -32;
-	req_access = list("ACCESS_ADMIN_LEVEL5")
-	},
-/turf/simulated/floor,
-/area/site53/uhcz/scp106parts)
 "Vy" = (
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
@@ -50891,9 +50833,9 @@ aW
 aW
 aW
 aW
-ot
-fO
-ot
+nT
+Gf
+nT
 aW
 aW
 aW
@@ -51148,10 +51090,10 @@ gq
 gq
 gq
 gq
-ot
-fP
-ot
-ot
+nT
+Gf
+nT
+nT
 gq
 gq
 gq
@@ -51405,10 +51347,10 @@ gq
 gq
 gq
 gq
-ot
-fO
-nP
-ot
+nT
+Gf
+nT
+nT
 gq
 gq
 gq
@@ -51662,10 +51604,10 @@ gq
 gq
 gq
 gq
-ot
-fO
 nT
-ot
+Gf
+nT
+nT
 gq
 gq
 gq
@@ -51919,10 +51861,10 @@ gq
 gq
 gq
 gq
-ot
-bc
-ot
-ot
+nT
+Gf
+nT
+nT
 gq
 gq
 gq
@@ -52176,9 +52118,9 @@ gq
 gq
 gq
 gq
-ot
-bc
-ot
+nT
+Gf
+nT
 gq
 gq
 gq
@@ -52433,9 +52375,9 @@ gq
 gq
 gq
 gq
-ot
-bc
-ot
+nT
+Gf
+nT
 gq
 gq
 gq
@@ -52690,9 +52632,9 @@ gq
 gq
 gq
 gq
-ot
-fO
-ot
+nT
+Gf
+nT
 gq
 gq
 gq
@@ -52947,9 +52889,9 @@ gq
 gq
 gq
 gq
-ot
-fO
-ot
+nT
+Gf
+nT
 gq
 gq
 gq
@@ -53204,9 +53146,9 @@ gq
 gq
 gq
 gq
-ot
-fO
-ot
+nT
+Gf
+nT
 gq
 gq
 gq
@@ -53461,9 +53403,9 @@ gq
 gq
 gq
 gq
-ot
-fO
-ot
+nT
+Gf
+nT
 gq
 gq
 gq
@@ -53718,9 +53660,9 @@ gq
 gq
 gq
 gq
-ot
-fO
-ot
+nT
+Gf
+nT
 gq
 gq
 gq
@@ -53975,9 +53917,9 @@ gq
 gq
 gq
 gq
-ot
-bV
-ot
+nT
+Gf
+nT
 gq
 gq
 gq
@@ -54232,9 +54174,9 @@ gq
 gq
 gq
 gq
-ot
-fO
-ot
+nT
+Gf
+nT
 gq
 gq
 gq
@@ -54489,9 +54431,9 @@ gq
 gq
 gq
 gq
-ot
-fO
-ot
+nT
+Gf
+nT
 gq
 gq
 gq
@@ -54746,9 +54688,9 @@ gq
 gq
 gq
 gq
-ot
-fO
-ot
+nT
+Gf
+nT
 gq
 gq
 gq
@@ -55003,9 +54945,9 @@ gq
 gq
 gq
 gq
-ot
-fO
-ot
+nT
+Gf
+nT
 gq
 gq
 gq
@@ -55260,9 +55202,9 @@ gq
 gq
 gq
 gq
-ot
-fO
-ot
+nT
+Gf
+nT
 gq
 gq
 gq
@@ -55517,9 +55459,9 @@ gq
 gq
 gq
 gq
-ot
+nT
 Gf
-ot
+nT
 gq
 gq
 gq
@@ -55774,9 +55716,9 @@ gq
 gq
 gq
 gq
-ot
+nT
 Gf
-ot
+nT
 gq
 gq
 gq
@@ -56031,9 +55973,9 @@ gq
 gq
 gq
 gq
-ot
+nT
 Gf
-ot
+nT
 gq
 gq
 gq
@@ -56288,9 +56230,9 @@ gq
 gq
 gq
 gq
-ot
-fO
-ot
+nT
+Gf
+nT
 gq
 gq
 gq
@@ -56545,9 +56487,9 @@ gq
 gq
 gq
 gq
-ot
-fO
-ot
+nT
+Gf
+nT
 gq
 gq
 gq
@@ -56802,15 +56744,15 @@ gq
 gq
 gq
 gq
-ot
-fP
-ot
+nT
+Gf
+nT
 gq
 gq
-ot
-ot
-ot
-ot
+nT
+nT
+nT
+nT
 gq
 gq
 gq
@@ -57059,19 +57001,19 @@ gq
 gq
 gq
 gq
-ot
-Vx
-ot
-ot
-ot
-ot
-nP
 nT
-ot
-ot
-ot
-ot
-ot
+Gf
+nT
+nT
+nT
+nT
+nT
+nT
+nT
+nT
+nT
+nT
+nT
 ot
 ot
 rd
@@ -57316,20 +57258,20 @@ gq
 gq
 gq
 gq
-ot
+nT
 gT
-hm
 cT
 cT
 cT
-hm
-hm
-hm
-lO
-hm
-hm
-hm
-hm
+cT
+cT
+cT
+cT
+cT
+cT
+cT
+cT
+bc
 hm
 hm
 hm
@@ -57573,19 +57515,19 @@ gq
 gq
 gq
 gq
-ot
-ot
-ot
-ot
-ot
-ot
-ot
-ot
-ot
-ot
-ot
-ot
-ot
+nT
+nT
+nT
+nT
+nT
+nT
+nT
+nT
+nT
+nT
+nT
+nT
+nT
 ot
 ot
 ot
