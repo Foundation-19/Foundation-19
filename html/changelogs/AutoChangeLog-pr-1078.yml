@@ -1,4 +1,0 @@
-author: Tsurupeta
-delete-after: true
-changes:
-  - bugfix: Fixed movement keys not working on roundstart. Again.

@@ -112,3 +112,27 @@
   - rscadd: Remapped 2427-3 (spooder) chamber. Relocated to HCZ close to the entry
       checkpoint , its slightly more secure now with an airlock style blast gate system.
       Still has the delivery chute and pen for the animals.
+2023-04-16:
+  EgorDinamit:
+  - tweak: Beam tasers were replaced with the ones firing electrode projectiles. Those
+      don't pass through windows/airlocks.
+  - tweak: P90 rubber bullets deal less pain. This should make them less deadly and
+      allow for their use for non-lethal takedowns.
+  - tweak: P90 firing sound replaced.
+  - tweak: Guard lockers had their contents updated and standardized.
+  - tweak: Sprites for non-guard armor vests/carriers(i.e. riot suit) were updated.
+  GGarciaECE:
+  - rscadd: 049 Cell refitted (view image)
+  - rscadd: HCZ checkpoitn made more compact but easier to control
+  - rscadd: CDCZ Checkpoint can be locked so that it may be the only access further
+      into CDCZ, allowing proper checkpoint rp
+  - rscadd: Maintenance tunnel from Archive to HCZ has been made impassable to make
+      HCZ a truly secure unit (Most SCPs are able to steamroll their way through the
+      checkpoint regardless, but now during a breach, security actually has a better
+      chance at containing the beasts)
+  Tsurupeta:
+  - soundadd: updated fire sound for MK9 pistol
+  - imageadd: updated icon for MK9 pistol
+  - bugfix: Fixed movement keys not working on roundstart. Again.
+  checkraisefold:
+  - admin: Removed 'Random' game mode from game panel.
