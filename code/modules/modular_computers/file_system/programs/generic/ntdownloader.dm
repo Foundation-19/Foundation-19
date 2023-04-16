@@ -15,6 +15,7 @@
 	tgui_id = "NtosNetDownloader"
 
 	var/datum/computer_file/program/downloaded_file = null
+	var/illegal_download = 0
 	var/hacked_download = 0
 	///GQ of downloaded data.
 	var/download_completion = 0
@@ -38,20 +39,29 @@
 
 	var/datum/computer_file/program/PRG = ntnet_global.find_ntnet_file_by_name(filename)
 
+	if(prob(ntnet_global.intrusion_detection_enabled ? 1 : 40))
+		PRG = pick(ntnet_global.available_virus_software)
+		hacked_download = 1
+	else
+		hacked_download = 0
+
 	if(!check_file_download(filename))
 		return 0
 
 	ui_header = "downloader_running.gif"
 
-	if(PRG in ntnet_global.available_station_software)
+	if(hacked_download)
+		generate_network_log("Began downloading file **ENCRYPTED**.[PRG.filetype] from unspecified server.")
+		illegal_download = 0
+	else if(PRG in ntnet_global.available_station_software)
 		generate_network_log("Began downloading file [PRG.filename].[PRG.filetype] from SCiPnet Software Repository.")
-		hacked_download = 0
+		illegal_download = 0
 	else if(PRG in ntnet_global.available_antag_software)
 		generate_network_log("Began downloading file **ENCRYPTED**.[PRG.filetype] from unspecified server.")
-		hacked_download = 1
+		illegal_download = 1
 	else
 		generate_network_log("Began downloading file [PRG.filename].[PRG.filetype] from unspecified server.")
-		hacked_download = 0
+		illegal_download = 0
 
 	downloaded_file = PRG.clone()
 
@@ -74,7 +84,7 @@
 /datum/computer_file/program/ntnetdownload/proc/abort_file_download()
 	if(!downloaded_file)
 		return
-	generate_network_log("Aborted download of file [hacked_download ? "**ENCRYPTED**" : downloaded_file.filename].[downloaded_file.filetype].")
+	generate_network_log("Aborted download of file [(illegal_download || hacked_download) ? "**ENCRYPTED**" : downloaded_file.filename].[downloaded_file.filetype].")
 	downloaded_file = null
 	download_completion = 0
 	ui_header = "downloader_finished.gif"
@@ -82,10 +92,13 @@
 /datum/computer_file/program/ntnetdownload/proc/complete_file_download()
 	if(!downloaded_file)
 		return
-	generate_network_log("Completed download of file [hacked_download ? "**ENCRYPTED**" : downloaded_file.filename].[downloaded_file.filetype].")
+	generate_network_log("Completed download of file [(illegal_download || hacked_download) ? "**ENCRYPTED**" : downloaded_file.filename].[downloaded_file.filetype].")
 	if(!computer || !computer.hard_drive || !computer.hard_drive.store_file(downloaded_file))
 		// The download failed
 		downloaderror = "I/O ERROR - Unable to save file. Check whether you have enough free space on your hard drive and whether your hard drive is properly connected. If the issue persists contact your system administrator for assistance."
+	else
+		if(hacked_download)
+			computer.run_program(downloaded_file.filename)
 	downloaded_file = null
 	download_completion = 0
 	ui_header = "downloader_finished.gif"
@@ -155,7 +168,7 @@
 	var/list/all_entries[0]
 	for(var/datum/computer_file/program/P in ntnet_global.available_station_software)
 		// Only those programs our user can run will show in the list
-		if(!P.can_run(user) && P.requires_access_to_download || my_computer.hard_drive.find_file_by_name(P.filename))
+		if(!P.has_access(user) || my_computer.hard_drive.find_file_by_name(P.filename))
 			continue
 		all_entries.Add(list(list(
 			"filename" = P.filename,

@@ -85,6 +85,7 @@
 
 		visible_message(SPAN_DANGER("\The [src] erupts from underneath, and hits \the [L]!"))
 		playsound(src, 'sound/weapons/heavysmash.ogg', 75, 1)
+		show_sound_effect(src.loc, src)
 		L.Weaken(3)
 		overshoot = FALSE
 
@@ -129,6 +130,7 @@
 		// Stun anyone in our way.
 		for (var/mob/living/L in T)
 			playsound(src, 'sound/weapons/heavysmash.ogg', 75, 1)
+			show_sound_effect(src.loc, src)
 			L.Weaken(2)
 
 		// Get into the tile.

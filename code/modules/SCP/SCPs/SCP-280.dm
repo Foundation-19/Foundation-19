@@ -26,7 +26,7 @@
 	heat_damage_per_tick = 20
 	cold_damage_per_tick = 0
 	pass_flags = PASS_FLAG_TABLE
-	speed = 0.5
+	movement_cooldown = 3
 	attack_armor_pen = 4 // Its a fucking shadow, i dont have to explain right ?
 	pry_time = 45 SECONDS
 	pry_desc = "clawing"

@@ -26,6 +26,7 @@
 	shattered = 1
 	icon_state = "mirror_broke"
 	playsound(src, "shatter", 70, 1)
+	show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	desc = "Oh no, seven years of bad luck!"
 
 

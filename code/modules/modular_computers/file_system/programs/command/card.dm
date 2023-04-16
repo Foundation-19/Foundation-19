@@ -25,7 +25,7 @@
 	data["assignments"] = show_assignments
 	data["have_id_slot"] = !!card_slot
 	data["have_printer"] = program.computer.nano_printer
-	data["authenticated"] = program.can_run(user)
+	data["authenticated"] = program.has_access(user)
 	if(!data["have_id_slot"] || !data["have_printer"])
 		mod_mode = 0 //We can't modify IDs when there is no card reader
 	if(card_slot)
@@ -132,7 +132,7 @@
 				return
 			if(computer.nano_printer) //This option should never be called if there is no printer
 				if(module.mod_mode)
-					if(can_run(user, 1))
+					if(has_access(user, 1))
 						var/contents = {"<h4>Access Report</h4>
 									<u>Prepared By:</u> [user_id_card.registered_name ? user_id_card.registered_name : "Unknown"]<br>
 									<u>For:</u> [id_card.registered_name ? id_card.registered_name : "Unregistered"]<br>
@@ -170,7 +170,7 @@
 			if(!authorized(user_id_card))
 				to_chat(usr, SPAN_WARNING("Access denied."))
 				return
-			if(computer && can_run(user, 1))
+			if(computer && has_access(user, 1))
 				id_card.assignment = "Terminated"
 				remove_nt_access(id_card)
 				callHook("terminate_employee", list(id_card))
@@ -178,7 +178,7 @@
 			if(!authorized(user_id_card))
 				to_chat(usr, SPAN_WARNING("Access denied."))
 				return
-			if(computer && can_run(user, 1))
+			if(computer && has_access(user, 1))
 				if(href_list["name"])
 					var/temp_name = sanitizeName(input("Enter name.", "Name", id_card.registered_name),allow_numbers=TRUE)
 					if(temp_name)
@@ -200,7 +200,7 @@
 			if(!authorized(user_id_card))
 				to_chat(usr, SPAN_WARNING("Access denied."))
 				return
-			if(computer && can_run(user, 1) && id_card)
+			if(computer && has_access(user, 1) && id_card)
 				var/t1 = href_list["assign_target"]
 				if(t1 == "Custom")
 					var/temp_t = sanitize(input("Enter a custom job assignment.","Assignment", id_card.assignment), 45)
@@ -230,7 +230,7 @@
 
 				callHook("reassign_employee", list(id_card))
 		if("access")
-			if(href_list["allowed"] && computer && can_run(user, 1) && id_card)
+			if(href_list["allowed"] && computer && has_access(user, 1) && id_card)
 				var/access_type = href_list["access_target"]
 				var/access_allowed = text2num(href_list["allowed"])
 				if(access_type in get_access_ids(operating_access_types))

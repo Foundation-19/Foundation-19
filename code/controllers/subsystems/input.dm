@@ -28,9 +28,10 @@ SUBSYSTEM_DEF(input)
 // Badmins just wanna have fun d
 /datum/controller/subsystem/input/proc/refresh_client_macro_sets()
 	init_queue = GLOB.clients.Copy()
-	for(var/client/C in init_queue)
+	while(length(init_queue)) //for list loops keep local copy >:( ~Tsu
+		var/client/C = init_queue[1]
 		C.set_macros()
-	init_queue.Cut()
+		init_queue -= C
 
 /datum/controller/subsystem/input/fire()
 	for(var/client/C in GLOB.clients)

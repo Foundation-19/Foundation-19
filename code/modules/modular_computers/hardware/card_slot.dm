@@ -25,7 +25,7 @@
 			if(check_functionality())
 				read_string_stability = 100
 			else
-				read_string_stability = 100 - malfunction_probability
+				read_string_stability = 100 - (damage / malfunction_divisor)
 			. += "Registered Name: [stars(stored_card.registered_name, read_string_stability)]\n"
 			. += "Registered Assignment: [stars(stored_card.assignment, read_string_stability)]\n"
 			. += "Registered Rank: [stars(stored_card.rank, read_string_stability)]\n"

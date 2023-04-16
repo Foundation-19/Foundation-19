@@ -199,6 +199,7 @@
 
 	src.visible_message(SPAN_DANGER("\The [src] hunkers down over \the [target], tearing into their flesh."))
 	playsound(loc, 'sound/effects/wounds/bonebreak3.ogg', 20, 1)
+	show_sound_effect(loc, src)
 
 	target.adjustHalLoss(50)
 

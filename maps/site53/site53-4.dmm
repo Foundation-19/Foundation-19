@@ -1375,7 +1375,7 @@
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
 "dK" = (
-/obj/structure/closet/secure_closet/mtf/commander,
+/obj/structure/closet/secure_closet/guard/guard_commander,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -1443,7 +1443,7 @@
 /area/site53/uez/hallway)
 "dV" = (
 /obj/effect/paint_stripe/blue,
-/obj/structure/sign/scp/topside/SecureArealv1mtf{
+/obj/structure/sign/SecureArealv1mtf{
 	desc = "No firearms in SD office";
 	name = "No firearms in SD office"
 	},

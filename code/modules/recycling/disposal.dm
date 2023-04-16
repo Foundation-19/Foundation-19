@@ -320,6 +320,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	if(reagents.total_volume)
 		visible_message(SPAN_DANGER("Vomit spews out of the disposal unit!"))
 		playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+		show_sound_effect(loc, soundicon = SFX_ICON_SMALL)
 		if(istype(src.loc, /turf/simulated))
 			var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(src.loc)
 			reagents.trans_to_obj(splat, reagents.total_volume)
@@ -484,6 +485,7 @@ GLOBAL_LIST_EMPTY(diversion_junctions)
 	L.Weaken(4)
 	L.visible_message(SPAN_WARNING("\The [L] slammed into \the [src]!"))
 	playsound(L, "punch", 25, 1, FALSE)
+	show_sound_effect(L.loc, L)
 
 /obj/machinery/disposal_switch
 	name = "disposal switch"

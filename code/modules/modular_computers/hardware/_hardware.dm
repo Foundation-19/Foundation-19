@@ -12,7 +12,7 @@
 	var/max_damage = 100			// Maximal damage level.
 	var/damage_malfunction = 20		// "Malfunction" threshold. When damage exceeds this value the hardware piece will semi-randomly fail and do !!FUN!! things
 	var/damage_failure = 50			// "Failure" threshold. When damage exceeds this value the hardware piece will not work at all.
-	var/malfunction_probability = 10// Chance of malfunction when the component is damaged
+	var/malfunction_divisor = 2		// Damage is divided by this for probability of error
 	var/usage_flags = PROGRAM_ALL
 	var/external_slot				// Whether attackby will be passed on it even with a closed panel
 
@@ -72,7 +72,7 @@
 		return 0
 	// Still working. Well, sometimes...
 	if(damage >= damage_malfunction)
-		if(prob(malfunction_probability))
+		if(prob(damage / malfunction_divisor))
 			return 0
 	// Good to go.
 	return 1

@@ -146,9 +146,14 @@
 #define PROGRAM_TELESCREEN 	(1<<3)
 #define PROGRAM_PDA 		(1<<4)
 
+// Program states
 #define PROGRAM_STATE_KILLED 		0
 #define PROGRAM_STATE_BACKGROUND 	1
 #define PROGRAM_STATE_ACTIVE 		2
+
+// Data block sizes (data is divided by this to get file size)
+#define BLOCK_SIZE_DATA		2000
+#define BLOCK_SIZE_NEWS		5000
 
 // Caps for SCiPnet logging. Less than 10 would make logging useless anyway, more than 500 may make the log browser too laggy. Defaults to 100 unless user changes it.
 #define MAX_NTNET_LOGS 500

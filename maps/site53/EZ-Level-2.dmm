@@ -2311,7 +2311,7 @@
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/heads/office/cmo)
 "tk" = (
-/obj/structure/closet/secure_closet/mtf/commander,
+/obj/structure/closet/secure_closet/guard/commander,
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/heads/office/cos)
 "tl" = (
