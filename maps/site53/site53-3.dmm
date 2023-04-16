@@ -4877,12 +4877,7 @@
 /turf/simulated/floor/grass,
 /area/site53/upper_surface/maincontrolroomstairs)
 "lS" = (
-/obj/structure/closet/secure_closet/mtf/enlisted/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/crowbar/red,
+/obj/structure/closet/secure_closet/guard/ez,
 /obj/machinery/camera/autoname{
 	dir = 1;
 	network = list("Entrance Zone Network")
@@ -4949,10 +4944,10 @@
 	dir = 8;
 	pixel_x = 20
 	},
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
 /obj/item/ammo_magazine/scp/p90_mag/ap,
 /obj/item/ammo_magazine/scp/p90_mag/ap,
 /obj/item/ammo_magazine/scp/p90_mag/ap,
@@ -5354,12 +5349,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
 "ni" = (
-/obj/structure/closet/secure_closet/mtf/enlisted/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/crowbar/red,
+/obj/structure/closet/secure_closet/guard/ez,
+/obj/machinery/recharger/wallcharger{
+	dir = 1;
+	pixel_y = -23
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "nj" = (
@@ -5411,21 +5405,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/ethics)
 "nt" = (
-/obj/structure/closet/secure_closet/mtf/enlisted/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/crowbar/red,
+/obj/structure/closet/secure_closet/guard/ez,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "nu" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
-	},
-/obj/effect/landmark/start{
-	name = "EZ Senior Agent"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/senioragentoffice)
@@ -5551,19 +5537,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/substation)
 "nT" = (
-/obj/structure/closet/secure_closet/mtf/co,
+/obj/structure/closet/secure_closet/guard/zone_commander,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/machinery/light,
-/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-/obj/item/gun/energy/taser,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/crowbar/red,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/senioragentoffice)
 "nU" = (
@@ -6853,14 +6833,9 @@
 /turf/simulated/floor/carpet/blue2,
 /area/site53/zonecommanderoffice)
 "sS" = (
-/obj/structure/closet/secure_closet/mtf/co{
+/obj/structure/closet/secure_closet/guard/zone_commander{
 	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
-/obj/item/crowbar/red,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/material/knife/combat,
-/obj/item/clothing/accessory/armor/tag/solgov/com/zonecomm,
 /obj/effect/floor_decal/carpet/blue2{
 	dir = 4
 	},
@@ -7896,6 +7871,9 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/morgue)
 "xg" = (
+/obj/effect/landmark/start{
+	name = "EZ Senior Agent"
+	},
 /turf/simulated/floor/tiled,
 /area/site53/uez/equipmentroom)
 "xh" = (
@@ -8144,9 +8122,6 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/effect/landmark/start{
-	name = "EZ Senior Agent"
-	},
 /turf/simulated/floor/tiled,
 /area/site53/uez/equipmentroom)
 "zf" = (
@@ -8283,8 +8258,6 @@
 /obj/item/ammo_magazine/scp/mk9,
 /obj/item/gun/projectile/pistol/mk9,
 /obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "zH" = (
@@ -8356,12 +8329,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "Ac" = (
-/obj/structure/closet/secure_closet/mtf/nco,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/storage/pill_bottle/amnesticsa,
-/obj/item/crowbar/red,
-/obj/item/material/knife/combat,
+/obj/structure/closet/secure_closet/guard/lcz/sergeant,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
 "Ad" = (
@@ -8734,12 +8702,7 @@
 /turf/simulated/wall/prepainted,
 /area/site53/medical/infirmary)
 "CF" = (
-/obj/structure/closet/secure_closet/mtf/nco,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/storage/pill_bottle/amnesticsa,
-/obj/item/crowbar/red,
-/obj/item/material/knife/combat,
+/obj/structure/closet/secure_closet/guard/lcz/sergeant,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
@@ -9335,13 +9298,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/hall)
 "Ho" = (
-/obj/structure/closet/secure_closet/mtf/nco/ez,
-/obj/item/crowbar/red,
-/obj/item/gun/energy/taser,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/storage/pill_bottle/amnesticsa,
+/obj/structure/closet/secure_closet/guard/ez/sergeant,
 /turf/simulated/floor/tiled,
 /area/site53/uez/equipmentroom)
 "Hq" = (
@@ -9425,16 +9382,10 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "HL" = (
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
-/obj/structure/closet/secure_closet/mtf/nco/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/crowbar/red,
+/obj/structure/closet/secure_closet/guard/ez/sergeant,
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/storage/pill_bottle/amnesticsa,
 /turf/simulated/floor/tiled,
 /area/site53/uez/equipmentroom)
 "HM" = (
@@ -9641,6 +9592,12 @@
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = -30
 	},
+/obj/structure/table/rack,
+/obj/item/melee/baton/loaded,
+/obj/item/melee/baton/loaded,
+/obj/item/melee/baton/loaded,
+/obj/item/melee/baton/loaded,
+/obj/item/melee/baton/loaded,
 /turf/simulated/floor/tiled,
 /area/site53/uez/equipmentroom)
 "Jy" = (
@@ -9930,6 +9887,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
+"LF" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/zonecommanderoffice)
 "LG" = (
 /turf/unsimulated/mineral,
 /area/site53/medical/infirmary)
@@ -10043,6 +10004,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
+"MA" = (
+/obj/structure/closet/secure_closet/guard/ez,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/equipmentroom)
 "ME" = (
 /obj/structure/table/woodentable/ebony,
 /turf/simulated/floor/tiled/techfloor,
@@ -11374,7 +11339,7 @@
 	dir = 8;
 	pixel_x = 20
 	},
-/obj/structure/closet/secure_closet/mtf/breachautomatics,
+/obj/structure/closet/secure_closet/guard/breachautomatics,
 /obj/item/ammo_magazine/box/a556,
 /obj/item/ammo_magazine/box/a556,
 /turf/simulated/floor/tiled/monotile,
@@ -14859,8 +14824,8 @@ Td
 Gx
 tB
 tB
-Ky
-CF
+tB
+LF
 ty
 dA
 dA
@@ -15630,8 +15595,8 @@ zI
 tB
 tB
 tB
-Ky
-Ac
+tB
+tB
 ty
 dA
 dA
@@ -44922,7 +44887,7 @@ EJ
 SL
 UE
 Gi
-ni
+MA
 mY
 mY
 ni
@@ -45179,7 +45144,7 @@ tN
 SL
 lI
 Gi
-ni
+MA
 mY
 mY
 lS
@@ -45436,7 +45401,7 @@ OU
 SL
 ui
 tS
-ni
+MA
 mY
 mY
 nt

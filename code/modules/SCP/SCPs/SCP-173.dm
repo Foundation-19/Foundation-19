@@ -109,6 +109,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		snap_cooldown = world.time + snap_cooldown_time
 		visible_message(SPAN_DANGER("[src] snaps [H]'s neck!"))
 		playsound(loc, pick('sound/scp/spook/NeckSnap1.ogg', 'sound/scp/spook/NeckSnap3.ogg'), 50, 1)
+		show_sound_effect(loc, src)
 		H.death()
 		return
 	if(istype(A, /obj/machinery/door))

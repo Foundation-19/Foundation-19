@@ -1,0 +1,5 @@
+author: EgorDinamit
+delete-after: true
+changes:
+  - tweak: SCP 2427-3 now has better AI. It will not breach on its own below 20 pop,
+      still, so do not worry.

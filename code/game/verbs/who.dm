@@ -15,6 +15,11 @@
 				Lines += entry
 				continue
 
+			if(isnewplayer(C.mob))
+				entry += " - <b>IN LOBBY</b>"
+				Lines += entry
+				continue
+
 			entry += " - Playing as [C.mob.real_name]"
 			switch(C.mob.stat)
 				if(UNCONSCIOUS)

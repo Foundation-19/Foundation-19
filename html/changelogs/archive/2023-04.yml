@@ -63,3 +63,76 @@
   - tweak: SCP-106 has been given more visual and audio effects to its abilities.
   - tweak: Femur breaker is now more "interesting" when used. Shove your friend in
       there, NOW!
+2023-04-13:
+  EgorDinamit:
+  - rscadd: Added random monsters, mobs with randomized abilities and statistics.
+      Be careful around them!
+  - tweak: SCP-294 now accepts reagent names as valud input. You can also input "shortcut
+      names" for several reagents, for example "bica", "kelo", "derma", "mera" and
+      so on.
+  TheDarkElites:
+  - bugfix: 'fixes #1025 (cant see ID cards)'
+  - bugfix: 'fixes #1024 (cant examine your own equipment in the dark)'
+2023-04-14:
+  EgorDinamit:
+  - rscadd: The White Night(Apostle) mob has been reworked and improved.
+  - rscadd: Added SCP 2427-3. It has to be constantly fed(preferably with goats) and
+      you would be wise to avoid eye contact with it or attacking it, lest you be
+      considered impure.
+  TheDarkElites:
+  - rscadd: memetics integration with HUD system
+  Yawet330:
+  - tweak: Malf Values.
+  arshfr:
+  - rscadd: There's a new codex entry about floors
+  casualspacestation14enjoyer:
+  - rscadd: Gave restaurant some more changes to be more welcoming :)
+  cheesePizza2:
+  - rscadd: New virus mechanics! Be careful when downloading without protection (or
+      with shady emails), you might just end up with a bricked computer...
+  - rscadd: A computer needs to have internet access for AI to interact with it.
+  - rscdel: Docking management programs deleted.
+  - balance: You no longer need access to run programs, only download them. Perhaps
+      try stealing people's computers and running programs that you couldn't obtain
+      otherwise?
+  - bugfix: Loads of general modular computer fixes and improvements.
+  - bugfix: Antag uplink program no longer meta-ble.
+  - spellcheck: A couple modcomp-related lore improvements.
+  - bugfix: AI not being able to interact with computer fixed.
+  - bugfix: Nanoword not saving files correctly fixed.
+  - rscadd: More sounds have indicators.
+2023-04-15:
+  GGarciaECE:
+  - rscadd: Switched number of guards slots (20->8 for LCZ Guards, 4-> for LCZ Sergeants,
+      3->2 for HCZ Sergeants)
+  - rscadd: Modified contents of security offices of various zones to reflect changes
+      in slots
+  - rscadd: Modified content of Security armouries to include Stun batons. LCZ has
+      had several weapons removed with focus on making less than lethal more accessible.
+  - rscadd: Remapped 2427-3 (spooder) chamber. Relocated to HCZ close to the entry
+      checkpoint , its slightly more secure now with an airlock style blast gate system.
+      Still has the delivery chute and pen for the animals.
+2023-04-16:
+  EgorDinamit:
+  - tweak: Beam tasers were replaced with the ones firing electrode projectiles. Those
+      don't pass through windows/airlocks.
+  - tweak: P90 rubber bullets deal less pain. This should make them less deadly and
+      allow for their use for non-lethal takedowns.
+  - tweak: P90 firing sound replaced.
+  - tweak: Guard lockers had their contents updated and standardized.
+  - tweak: Sprites for non-guard armor vests/carriers(i.e. riot suit) were updated.
+  GGarciaECE:
+  - rscadd: 049 Cell refitted (view image)
+  - rscadd: HCZ checkpoitn made more compact but easier to control
+  - rscadd: CDCZ Checkpoint can be locked so that it may be the only access further
+      into CDCZ, allowing proper checkpoint rp
+  - rscadd: Maintenance tunnel from Archive to HCZ has been made impassable to make
+      HCZ a truly secure unit (Most SCPs are able to steamroll their way through the
+      checkpoint regardless, but now during a breach, security actually has a better
+      chance at containing the beasts)
+  Tsurupeta:
+  - soundadd: updated fire sound for MK9 pistol
+  - imageadd: updated icon for MK9 pistol
+  - bugfix: Fixed movement keys not working on roundstart. Again.
+  checkraisefold:
+  - admin: Removed 'Random' game mode from game panel.

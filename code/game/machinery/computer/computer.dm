@@ -69,6 +69,7 @@
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.do_attack_animation(src)
 	playsound(src, 'sound/weapons/smash.ogg', 25, 1)
+	show_sound_effect(src.loc, user)
 	if(I.force)
 		take_damage(I.force)
 	return ..()
