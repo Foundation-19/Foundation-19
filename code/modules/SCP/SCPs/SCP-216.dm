@@ -1,6 +1,6 @@
 /obj/structure/scp_216
 	name = "SCP 216"
-	desc = "A metalic safe with munerical code lock."
+	desc = "A metalic safe with multiple-dial combination lock."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "safe"
 	anchored = TRUE
