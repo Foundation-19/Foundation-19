@@ -28,13 +28,9 @@ SUBSYSTEM_DEF(input)
 
 // Badmins just wanna have fun d
 /datum/controller/subsystem/input/proc/refresh_client_macro_sets()
-	var/list/clients = GLOB.clients
-	for(var/i in 1 to clients.len)
-		var/client/user = clients[i]
-		if(istype(user))
-			user.set_macros()
-		else
-			continue
+	var/list/clients_list = GLOB.clients
+	for(var/client/C in clients_list)
+		C.set_macros()
 
 /datum/controller/subsystem/input/fire()
 	for(var/client/C in GLOB.clients)
