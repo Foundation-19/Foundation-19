@@ -43,11 +43,11 @@
 
 	// Important hardware (must be installed for computer to work)
 	var/obj/item/stock_parts/computer/processor_unit/processor_unit				// CPU. Without it the computer won't run. Better CPUs can run more programs at once.
-	var/obj/item/stock_parts/computer/network_card/network_card					// Network Card component of this computer. Allows connection to SCiPnet
 	var/obj/item/stock_parts/computer/hard_drive/hard_drive						// Hard Drive component of this computer. Stores programs and files.
+	var/obj/item/stock_parts/computer/battery_module/battery_module				// An internal power source for this computer. Can be recharged. Not required for consoles or telescreens.
 
 	// Optional hardware (improves functionality, but is not critical for computer to work in most cases)
-	var/obj/item/stock_parts/computer/battery_module/battery_module				// An internal power source for this computer. Can be recharged.
+	var/obj/item/stock_parts/computer/network_card/network_card					// Network Card component of this computer. Allows connection to SCiPnet
 	var/obj/item/stock_parts/computer/card_slot/card_slot						// ID Card slot component of this computer. Mostly for HoP modification console that needs ID slot for modification.
 	var/obj/item/stock_parts/computer/nano_printer/nano_printer					// Nano Printer component of this computer, for your everyday paperwork needs.
 	var/obj/item/stock_parts/computer/hard_drive/portable/portable_drive		// Portable data storage

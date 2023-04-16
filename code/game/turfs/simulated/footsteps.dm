@@ -4,7 +4,10 @@
 		var/decl/footsteps/FS = decls_repository.get_decl(footstep_type)
 		. = pick(FS.footstep_sounds)
 
-/turf/simulated/proc/get_footstep_sound(mob/caller)
+/turf/proc/get_footstep_sound(mob/caller)
+	return null
+
+/turf/simulated/get_footstep_sound(mob/caller)
 	for(var/obj/structure/S in contents)
 		if(S.footstep_type)
 			return get_footstep(S.footstep_type, caller)
@@ -26,7 +29,7 @@
 		else
 			return get_footstep(flooring.footstep_type, caller)
 
-/turf/simulated/Entered(mob/living/carbon/human/H)
+/turf/Entered(mob/living/carbon/human/H)
 	..()
 	if(istype(H))
 		H.handle_footsteps()
@@ -66,7 +69,7 @@
 	if(istype(move_intent, /decl/move_intent/creep)) //We don't make sounds if we're tiptoeing
 		return
 
-	var/turf/simulated/T = get_turf(src)
+	var/turf/T = get_turf(src)
 	if(istype(T))
 		var/footsound = T.get_footstep_sound(src)
 		if(footsound)

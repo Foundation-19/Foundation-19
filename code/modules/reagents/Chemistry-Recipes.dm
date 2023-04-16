@@ -72,6 +72,7 @@
 	if(mix_message && container && !ismob(container))
 		container.visible_message(SPAN_NOTICE("[icon2html(container, viewers(get_turf(container)))] [mix_message]"))
 		playsound(container, reaction_sound, 80, 1)
+		show_sound_effect(container.loc, soundicon = SFX_ICON_SMALL)
 
 //obtains any special data that will be provided to the reaction products
 //this is called just before reactants are removed.

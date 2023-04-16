@@ -990,6 +990,7 @@ About the new airlock wires panel:
 			SPAN_WARNING("You smash the bolt cover open!")
 			)
 		playsound(src, 'sound/weapons/smash.ogg', 100, 1)
+		show_sound_effect(src.loc, user)
 		src.lock_cut_state = BOLTS_EXPOSED
 		return 0
 

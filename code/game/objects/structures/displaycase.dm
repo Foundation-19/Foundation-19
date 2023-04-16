@@ -52,6 +52,7 @@
 		for(var/atom/movable/AM in src)
 			AM.dropInto(loc)
 		playsound(src, "shatter", 70, 1)
+		show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 		update_icon()
 
 /obj/structure/displaycase/on_update_icon()

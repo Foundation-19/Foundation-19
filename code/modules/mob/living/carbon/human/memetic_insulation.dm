@@ -9,7 +9,7 @@ Made by TheDarkElites
 #define AUDIBLE_RANGE_NONE       -1 //Prevent it from being heard even on the same tile
 
 //Maximium lum count before we no longer consider it dark. Should be a value between 0 and 1.
-var/dark_maximium = 0.1
+var/dark_maximium = 0.05
 
 //View distance debuffs for sizes of objects/mobs passed through can_identify
 var/debuff_small = 1
@@ -18,12 +18,14 @@ var/debuff_miniscule = 3
 
 // AUDIO MEMETICS
 
-/mob/living/carbon/human/can_hear(atom/origin, var/return_granulated = 0) //Checks if a human can hear something. If theres no origin, just checks if the human can hear. Return granulated returns a number from 0-100 on how much something can be heard.
+/mob/living/carbon/human/can_hear(atom/origin, var/return_granulated = 0, var/range_override = null) //Checks if a human can hear something. If theres no origin, just checks if the human can hear. Return granulated returns a number from 0-100 on how much something can be heard.
 	var/hearable_range
+	var/is_concealed = FALSE//are we inside something that might dampen hearing?
+
 	switch(get_audio_insul())
 		if(A_INSL_PERFECT) hearable_range = AUDIBLE_RANGE_NONE
-		if(A_INSL_IMPERFECT) hearable_range = AUDIBLE_RANGE_DECREASED
-		if(A_INSL_NONE) hearable_range = AUDIBLE_RANGE_FULL
+		if(A_INSL_IMPERFECT) hearable_range = range_override ? range_override : AUDIBLE_RANGE_DECREASED
+		if(A_INSL_NONE) hearable_range = range_override ? range_override : AUDIBLE_RANGE_FULL
 
 	if(!origin)
 		if(hearable_range == AUDIBLE_RANGE_NONE)
@@ -35,20 +37,25 @@ var/debuff_miniscule = 3
 				return 100
 			return TRUE
 
+	if(!isturf(origin.loc))
+		is_concealed = TRUE
+		if(hearable_range > AUDIBLE_RANGE_DECREASED)
+			hearable_range = AUDIBLE_RANGE_DECREASED
+
 	if(return_granulated)
 		var/cut_off = hearable_range //How far before we begin to drop off granulated amount based on distance
 		if(hearable_range == AUDIBLE_RANGE_FULL) //Adjusts cut-off to make results consistent with non-granulated checks.
 			cut_off -= 4
 		else if(hearable_range == AUDIBLE_RANGE_DECREASED)
 			cut_off -= 1
-		var/distance_from_origin = get_dist(src, origin)
+		var/distance_from_origin = range_override ? range_override : get_dist(src, origin)
 		if(hearable_range == AUDIBLE_RANGE_NONE || !(src in hear(AUDIBLE_RANGE_FULL, origin)))
 			return 0
 		if(distance_from_origin <= cut_off)
 			return 100
 		return Clamp((((AUDIBLE_RANGE_FULL - Clamp((distance_from_origin - cut_off)**2, 0, AUDIBLE_RANGE_FULL))/AUDIBLE_RANGE_FULL)  * 100), 0, 100)
 	else
-		if((src in hear(hearable_range, origin)))
+		if((is_concealed ? get_turf(origin) : origin) in hear(hearable_range, get_turf(src))) //get_turf is used as you can still hear stuff even if inside a container or in an inventory
 			return TRUE
 		else
 			return FALSE
@@ -60,21 +67,27 @@ var/debuff_miniscule = 3
 
 // VISUAL MEMETICS
 
-/mob/living/carbon/human/can_see(atom/movable/origin, var/visual_memetic = 0) //Checks if origin can be seen by a human. visiual_memetics should be one if you're checking for a visual memetic hazard as opposed to say someone looking at scp 173. If origin is null, checks for if the human can see in general.
+/mob/living/carbon/human/can_see(atom/origin, var/visual_memetic = 0) //Checks if origin can be seen by a human. visiual_memetics should be one if you're checking for a visual memetic hazard as opposed to say someone looking at scp 173. If origin is null, checks for if the human can see in general.
 	var/turf/origin_turf
+	var/area/origin_area
 	if(eye_blind > 0) //this is different from blinded check as blinded is changed in the same way eye_blind is, meaning there can be a siutation where eye_blind is in effect but blinded is not set to true. Therefore, this check is neccesary as a pre-caution.
 		return FALSE
 	if(stat) //Unconscious humans cant see.
 		return FALSE
 	if(origin)
-		if(isturf(origin) || (origin == src)) //We can always see turf and ourselves
+		if(!ismovable(origin) || (origin.get_holder_or_object() == src)) //We can always see turf (and other immovable atoms) and ourselves. We can also see stuff on us (not really 'see' but you can feel a headset in your hands even if its pitch black).
 			return TRUE
 		if(origin.InCone(src, turn(src.dir, 180))) // Cant see whats behind you.
 			return FALSE
-		if(!(origin in dview(world.view, src))) //Cant see whats not in view.
+		if(istype(origin.loc, /obj/item/storage)) //Cant see stuff in a backpack or hidden in a container
 			return FALSE
+		if(!(origin.get_holder_or_object() in dview(7, src))) //Cant see whats not in view. View dosent pick up stuff worn or held by mobs. Therefore, if origin is is held or worn by a mob it checks if we can see the mob instead.
+			return FALSE
+
 		origin_turf = get_turf(origin)
-		if((origin_turf.get_lumcount() <= dark_maximium) && (see_in_dark <= 2) && (see_invisible != SEE_INVISIBLE_NOLIGHTING)) //Cant see whats in the dark (unless you have nightvision). Also regular view does check light level, but here we do it ourselves to allow flexibility for what we consider dark + integration with night vision goggles, etc.
+		origin_area = get_area(origin)
+
+		if((origin_turf.get_lumcount() <= dark_maximium) && (see_in_dark <= 2) && (see_invisible != SEE_INVISIBLE_NOLIGHTING) && (origin_area.dynamic_lighting != 0)) //Cant see whats in the dark (unless you have nightvision). Also regular view does check light level, but here we do it ourselves to allow flexibility for what we consider dark + integration with night vision goggles, etc.
 			return FALSE
 		if(ismob(origin))
 			var/mob/origin_mob = origin
@@ -120,7 +133,7 @@ var/debuff_miniscule = 3
 			if(MOB_TINY) viewdistance -= debuff_tiny
 			if(MOB_MINISCULE) viewdistance -= debuff_miniscule
 
-	if(get_dist_euclidian(loc, origin.loc) <= Clamp(viewdistance, 0, 7))
+	if(get_dist_euclidian(get_turf(src), get_turf(origin)) <= Clamp(viewdistance, 0, 7))
 		if((visual_insulation_calculated == V_INSL_IMPERFECT) && visual_memetic)
 			return prob(40) //If its a memetic check and your protection is imperfect/faulty there is a 40% chance of you being affected by a memetic hazard
 		return TRUE
