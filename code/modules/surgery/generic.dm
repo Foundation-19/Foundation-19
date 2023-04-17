@@ -123,6 +123,7 @@
 	SPAN_NOTICE("You have made [access_string] on [target]'s [affected.name] with \the [tool]."),)
 	affected.createwound(CUT, affected.min_broken_damage/2, 1)
 	playsound(target.loc, 'sound/weapons/bladeslice.ogg', 15, 1)
+	show_sound_effect(target.loc, target, soundicon = SFX_ICON_JAGGED)
 
 /decl/surgery_step/generic/cut_open/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)

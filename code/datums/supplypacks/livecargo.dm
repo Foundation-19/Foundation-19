@@ -40,61 +40,61 @@
 	security_level = null
 
 
-//actual live animals
+// Actual live animals
 
 /decl/hierarchy/supply_pack/livecargo/corgi
 	name = "Live - Corgi"
 	contains = list()
-	cost = 50
+	cost = 20
 	containertype = /obj/structure/largecrate/animal/corgi
 	containername = "corgi crate"
 
 /decl/hierarchy/supply_pack/livecargo/cat
 	name = "Live - Cat"
 	contains = list()
-	cost = 50
+	cost = 20
 	containertype = /obj/structure/largecrate/animal/cat
 	containername = "cat crate"
 
 /decl/hierarchy/supply_pack/livecargo/snek
 	name = "Live - Snake"
 	contains = list()
-	cost = 25
+	cost = 10
 	containertype = /obj/structure/largecrate/animal/snek
 	containername = "snake crate"
 
-//farm animals - useless and annoying, but potentially a good source of food. expensive because they're live animals and their produce is available cheaper
+// Farm animals - useless and annoying, but potentially a good source of food. expensive because they're live animals and their produce is available cheaper
 /decl/hierarchy/supply_pack/livecargo/cow
 	name = "Live - Cow"
-	cost = 80
+	cost = 30
 	containertype = /obj/structure/largecrate/animal/cow
 	containername = "cow crate"
 	access = ACCESS_HYDROPONICS
 
 /decl/hierarchy/supply_pack/livecargo/goat
 	name = "Live - Goat"
-	cost = 75
+	cost = 30
 	containertype = /obj/structure/largecrate/animal/goat
 	containername = "goat crate"
 	access = ACCESS_HYDROPONICS
 
 /decl/hierarchy/supply_pack/livecargo/sheep
 	name = "Live - Sheep"
-	cost = 60
+	cost = 30
 	containertype = /obj/structure/largecrate/animal/sheep
 	containername = "sheep crate"
 	access = ACCESS_HYDROPONICS
 
 /decl/hierarchy/supply_pack/livecargo/goose
 	name = "Live - Goose"
-	cost = 75
+	cost = 20
 	containertype = /obj/structure/largecrate/animal/goose
 	containername = "goose containment unit"
 	access = ACCESS_HYDROPONICS
 
 /decl/hierarchy/supply_pack/livecargo/chicken
 	name = "Live - Chicken"
-	cost = 70
+	cost = 20
 	containertype = /obj/structure/largecrate/animal/chick
 	containername = "chicken crate"
 	access = ACCESS_HYDROPONICS

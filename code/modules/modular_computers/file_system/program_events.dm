@@ -15,5 +15,5 @@
 	if(background)
 		computer.visible_message(SPAN_WARNING("\The [computer]'s screen displays an error: \"Network connectivity lost - process [filename].[filetype] (PID [rand(100,999)]) terminated.\""), range = 1)
 	else
-		computer.visible_message(SPAN_WARNING("\The [computer]'s screen briefly freezes and then shows: \"FATAL NETWORK ERROR - SolNet connection lost. Please try again later. If problem persists, please contact your system administrator.\""), range = 1)
+		computer.visible_message(SPAN_WARNING("\The [computer]'s screen briefly freezes and then shows: \"FATAL NETWORK ERROR - internet connection lost. Please try again later. If problem persists, please contact your system administrator.\""), range = 1)
 		computer.update_icon()

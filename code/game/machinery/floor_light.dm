@@ -57,10 +57,12 @@ var/list/floor_light_cache = list()
 		if(!isnull(damaged) && !(stat & BROKEN))
 			visible_message(SPAN_DANGER("\The [user] smashes \the [src]!"))
 			playsound(src, "shatter", 70, 1)
+			show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 			set_broken(TRUE)
 		else
 			visible_message(SPAN_DANGER("\The [user] attacks \the [src]!"))
 			playsound(src.loc, 'sound/effects/Glasshit.ogg', 75, 1)
+			show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 			if(isnull(damaged)) damaged = 0
 		return TRUE
 

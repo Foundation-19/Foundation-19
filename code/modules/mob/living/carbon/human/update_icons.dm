@@ -140,7 +140,8 @@ Please contact me on #coderbus IRC. ~Carn x
 #define HO_L_HAND_LAYER     24
 #define HO_R_HAND_LAYER     25
 #define HO_FIRE_LAYER       26 //If you're on fire
-#define TOTAL_LAYERS        26
+#define HO_SPECIAL_LAYER    27 // Currently used for WN's halo
+#define TOTAL_LAYERS        27
 //////////////////////////////////
 
 /mob/living/carbon/human
@@ -888,4 +889,5 @@ var/global/list/damage_icon_parts = list()
 #undef HO_L_HAND_LAYER
 #undef HO_R_HAND_LAYER
 #undef HO_FIRE_LAYER
+#undef HO_SPECIAL_LAYER
 #undef TOTAL_LAYERS

@@ -345,6 +345,7 @@
 								shake_animation(5)
 							if(5)
 								playsound(src, 'sound/weapons/smash.ogg', 50, 1)
+								show_sound_effect(src.loc, user)
 								if(prob(50))
 									playsound(src, 'sound/weapons/smash.ogg', 50, 1)
 									shake_animation(9)

@@ -31,7 +31,7 @@
 			prog.authenticated = 1
 			return
 	else
-		to_chat(user, SPAN_WARNING("ID not found"))
+		input(user, "Please enter your unique tax ID:", "Authentication")	// even if it's not a functional uplink, it still pretends to ask for your password to stop metagaming
 
 	prog.authenticated = 0
 	program.computer.kill_program(program)

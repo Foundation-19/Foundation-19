@@ -41,7 +41,7 @@ GLOBAL_DATUM_INIT(default_tgui_state, /datum/tgui_state/default, new)
 	if(. < UI_INTERACTIVE)
 		return
 
-	// The AI can interact with anything it can see nearby, or with cameras while wireless control is enabled.
-	if(!control_disabled && can_see_by_step(src, src_object, 7))
+	// The AI can interact with anything as long as wireless control is enabled.
+	if(!control_disabled)
 		return UI_INTERACTIVE
 	return UI_CLOSE

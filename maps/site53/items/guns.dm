@@ -21,8 +21,8 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 
 /obj/item/gun/projectile/pistol/mk9
-	name = "MK9 Foundation Glock"
-	desc = "Standard issue 9mm pistol of the SCP Foundation. Based on the Glock 17 with an added compensator."
+	name = "MK9 Foundation pistol"
+	desc = "Standard issue 9mm pistol of the SCP Foundation. Based on the HK VP9."
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "MK9"
 	w_class = ITEM_SIZE_NORMAL
@@ -33,6 +33,13 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/mk9
 	allowed_magazines = list(/obj/item/ammo_magazine/scp/mk9, /obj/item/ammo_magazine/scp/mk9/rubber)
+
+/obj/item/gun/projectile/pistol/mk9/on_update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "[initial(icon_state)][length(ammo_magazine.stored_ammo) ? "" : "_0"]"
+	else
+		icon_state = "[initial(icon_state)]-e"
 
 
 /obj/item/gun/projectile/revolver/mateba
