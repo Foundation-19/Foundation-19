@@ -61,7 +61,13 @@ GLOBAL_LIST_EMPTY(scp173s)
 	//AI's current target
 	var/atom/movable/target
 	//How many tiles 173 moves in a single run of life
-	var/tile_move_range = 2
+	var/tile_move_range = 3
+	//How far wander targets can be set
+	var/wander_distance = 8
+	//How far fleeing targets can be set
+	var/flee_distance = 30
+	//Are we fleeing?
+	var/is_fleeing = FALSE
 
 	///173 Cage Related vars
 
@@ -185,13 +191,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/Life()
 	. = ..()
-<<<<<<< HEAD
 	//if(length(GLOB.clients) <= 30 && !client)
 		//return
-=======
-	if(length(GLOB.clients) <= 30 && !client)
-		return
->>>>>>> upstream/dev
 	var/list/our_view = dview(7, is_caged ? cage : src)//In case we are caged, we must see if our cage is being looked at rather than us
 	for(var/mob/living/carbon/human/H in next_blinks)
 		if(!(H in our_view))
@@ -315,9 +316,11 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/area/A = get_area(src)
 	A.full_breach()
 
-// 173 AI
+// 173 AI procs
+
 /mob/living/scp_173/proc/handle_AI()
 	if(IsBeingWatched())
+		is_fleeing = FALSE
 		return
 	if(is_caged) //If we're caged and arent being watched we will attack the cage
 		UnarmedAttack(cage)
@@ -325,17 +328,20 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 	var/turf/our_turf = get_turf(src)
 	var/list/possible_targets = list()
+	var/obj/item/card/id/all_access_ID = new /obj/item/card/id(src)
+	all_access_ID.access = ACCESS_ADMIN_LVL5
+
 	for(var/mob/living/carbon/human/H in dview(7, src)) //Identifies possible targets
 		if(H.SCP)
 			continue
 		if(H.stat == DEAD)
 			continue
-		if(!AStar(loc, H.loc, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=7))
-			continue // We can't reach this person anyways
+		//if(!AStar(loc, H.loc, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=7, id=all_access_ID))
+			//continue // We can't reach this person anyways
 		possible_targets += H
 
-	if(!LAZYLEN(possible_targets) && !target)
-		return
+	if(!LAZYLEN(possible_targets) && !target && prob(50)) //we have a 50% chance of wandering
+		target = pick_turf_in_range(loc, wander_distance, list(/proc/isfloor))
 
 	if(ishuman(target)) //if the target is human and dead then they're not a viable target anymore
 		var/mob/living/carbon/human/H = target
@@ -345,54 +351,70 @@ GLOBAL_LIST_EMPTY(scp173s)
 		var/obj/machinery/light/L = target
 		if(L.get_status() != LIGHT_OK)
 			target = null
+	else
+		if(LAZYLEN(possible_targets)) //If we get a possible target or if our wandering target is invalid we stop wandering and remove our wander target
+			target = null
+		else if(istype(target, /obj/machinery/door))
+			var/obj/machinery/door/D = target
+			if(!D.density)
+				target = null
+		else if(!AStar(loc, get_turf(target), /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=7, id=all_access_ID)) //we have to do this after we check door based targets as you can never path to a door
+			target = null
+
+	all_access_ID?.Destroy()
 
 	if(!(target in dview(7, src)) || !target) //gets rid of our target and finds a new one if they are no longer viable
 		target = null
 		target = DEFAULTPICK(possible_targets, null)
 
-	if(get_dist(loc, get_turf(target) <= 1)) //If we are close enough to attack, we will
-		UnarmedAttack(target)
+	if(target && get_dist(loc, get_turf(target)) <= 1) //If we are close enough to attack, we will
+		if(!isturf(target)) //If 173 isint wandering and has an actual target, we attack
+			UnarmedAttack(target)
+		else //Otherwise, we just wipe the target turf 173 was wandering to
+			target = null
 		return
 
-	if((LAZYLEN(possible_targets) <= 2) && (LAZYLEN(possible_targets) != 0)) //If we are looked at by one or two people we will attempt to attack them
-		if(((our_turf.get_lumcount() > 0.1) && prob(30)) && !istype(target, /obj/machinery/light)) //30 chance we try to break a light instead of attacking if our tile is lit up enough
-			target_light()
+	if(is_fleeing) //Dont need to do anything past this point if we are running away
 		move_to_target()
 		return
 
-	if(LAZYLEN(possible_targets) > 2) //If we have more than two targets we will attempt to flee or break lights. If its dark however, we will attempt to attack.
+	if(target && (LAZYLEN(possible_targets) <= 2) && (LAZYLEN(possible_targets) != 0)) //If we are looked at by one or two people we will attempt to attack them
+		if(((our_turf.get_lumcount() > 0.1) && prob(30)) && !istype(target, /obj/machinery/light)) //30% chance we try to break a light instead of attacking if our tile is lit up enough
+			target = get_viable_light_target()
+
+	if(target && LAZYLEN(possible_targets) > 2) //If we have more than two targets we will attempt to flee or break lights. If its dark however, we will attempt to attack.
 		if((our_turf.get_lumcount() > 0.1) && !istype(target, /obj/machinery/light))
-			if(prob(60)) //Ambush! 60% we will attempt to flee as more than two people is hard for 173 to handle.
-				flee()
-				return
+			if(prob(60) && !is_fleeing) //Ambush! 60% we will attempt to flee as more than two people is hard for 173 to handle.
+				target = get_viable_flee_target()
+				is_fleeing = TRUE
 			else
-				if(target_light()) //Or we could try to break a light
-					return
-		else //if they cant see us we will attack anyway
-			move_to_target()
-			return
+				target = get_viable_light_target() //Or we could try to break a light
+
+	move_to_target()
 	return
 
 /mob/living/scp_173/proc/move_to_target() //since we need to move 173 multiple times in order to simulate its speed, 173 has its own function for this
-	for(var/move=0, move < tile_move_range, move++)
-		step_to(src, target)
+	if(!deal_with_obstacle()) //If we didint have to deal with an obstacle, we will move.
+		for(var/move=0, move < tile_move_range, move++)
+			step_towards(src, target)
 
-/mob/living/scp_173/proc/flee() //makes 173 run away
-	var/turf/simulated/floor/flee_target = pick_turf_in_range(loc, 30, list(/proc/isfloor))
+/mob/living/scp_173/proc/get_viable_flee_target() //makes 173 run away
+	var/turf/simulated/floor/flee_target = pick_turf_in_range(loc, flee_distance, list(/proc/isfloor))
 	var/count = 0 //dont want the while loop going to infinity
-	while(!AStar(loc, flee_target, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=20, max_node_depth=5))
-		flee_target = pick_turf_in_range(loc, 30, list(/proc/isfloor))
+	var/obj/item/card/id/all_access_ID = new /obj/item/card/id(src)
+	all_access_ID.access = ACCESS_ADMIN_LVL5
+
+	while(!AStar(loc, flee_target, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=7, id=all_access_ID)) //we ignore doors as we can break them
+		flee_target = pick_turf_in_range(loc, flee_distance, list(/proc/isfloor))
 		count++
 		if(count >= 50)
-			return FALSE
-	for(var/fstep in AStar(loc, flee_target, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=20, max_node_depth=5))
-		if(IsBeingWatched()) //stops fleeing upon being seen
-			return FALSE
-		for(var/move=0, move < tile_move_range, move++)
-			step_towards(src, fstep)
-	return TRUE
+			all_access_ID?.Destroy()
+			return
 
-/mob/living/scp_173/proc/target_light() //Sets 173's target as a viable light bulb
+	all_access_ID?.Destroy()
+	return flee_target
+
+/mob/living/scp_173/proc/get_viable_light_target() //Gets a viable light bulb target
 	for(var/obj/machinery/light/light_in_view in dview(7, src))
 		if(get_area(light_in_view) == spawn_area)
 			continue
@@ -400,8 +422,31 @@ GLOBAL_LIST_EMPTY(scp173s)
 			continue
 		if(!AStar(loc, light_in_view.loc, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=7))
 			continue
-		target = light_in_view
-		return TRUE
+		return light_in_view
+	return null
+
+/mob/living/scp_173/proc/deal_with_obstacle() //Checks and then returns any doors that obstruct 173
+	var/turf/step_turf = get_step_towards(src, target)
+
+	for(var/obj/obstacle in step_turf.contents)
+		if(istype(obstacle, /obj/machinery/door)) //Break doors
+			var/obj/machinery/door/D = obstacle
+			if(!D.density)
+				continue
+			if((get_area(D) == spawn_area))
+				continue
+			UnarmedAttack(D)
+			return TRUE
+		else if(obstacle.can_climb(src)) //If we can climb it, we should
+			obstacle.do_climb(src)
+			return TRUE
+		else if(istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/grille)) //Break windows
+			UnarmedAttack(obstacle)
+			return TRUE
+
+	if(step_turf.turf_is_crowded()) // if we cant reach the target then the target is invalid
+		target = pick_turf_in_range(loc, 2, list(/proc/isfloor)) //this moves us into a position where we can avoid the turf thats blocking us.
+
 	return FALSE
 
 /*
