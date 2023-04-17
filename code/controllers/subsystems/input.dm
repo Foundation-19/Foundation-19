@@ -6,12 +6,13 @@ SUBSYSTEM_DEF(input)
 	priority = SS_PRIORITY_INPUT
 	runlevels = RUNLEVELS_DEFAULT | RUNLEVEL_LOBBY
 
-	var/list/client/init_queue = list()
-
 	var/list/macro_set
 
 /datum/controller/subsystem/input/Initialize()
 	setup_default_macro_sets()
+
+	initialized = TRUE
+
 	refresh_client_macro_sets()
 	return ..()
 
@@ -27,11 +28,9 @@ SUBSYSTEM_DEF(input)
 
 // Badmins just wanna have fun d
 /datum/controller/subsystem/input/proc/refresh_client_macro_sets()
-	init_queue = GLOB.clients.Copy()
-	while(length(init_queue)) //for list loops keep local copy >:( ~Tsu
-		var/client/C = init_queue[1]
+	var/list/clients_list = GLOB.clients
+	for(var/client/C in clients_list)
 		C.set_macros()
-		init_queue -= C
 
 /datum/controller/subsystem/input/fire()
 	for(var/client/C in GLOB.clients)

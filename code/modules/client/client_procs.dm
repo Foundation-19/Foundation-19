@@ -272,8 +272,6 @@
 
 	if(SSinput.initialized)
 		set_macros()
-	else
-		SSinput.init_queue += src
 
 //////////////
 //DISCONNECT//
