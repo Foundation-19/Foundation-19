@@ -56,7 +56,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 	/// This one to avoid sound spam when opening doors
 	var/door_cooldown
 
-<<<<<<< HEAD
 	///AI Related vars
 
 	//AI's current target
@@ -72,13 +71,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 	///173 Cage Related vars
 
-	/// Is 173 caged?
-	var/is_caged = FALSE
-	/// 173's current cage.
-	var/obj/structure/scp173_cage/cage
-
-=======
->>>>>>> upstream/dev
 /mob/living/scp_173/Initialize()
 	GLOB.scp173s += src
 	defecation_cooldown = world.time + 10 MINUTES // Give everyone some time to prepare
@@ -181,16 +173,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/Life()
 	. = ..()
-<<<<<<< HEAD
 	//if(length(GLOB.clients) <= 30 && !client)
 		//return
-	var/list/our_view = dview(7, is_caged ? cage : src)//In case we are caged, we must see if our cage is being looked at rather than us
-=======
-	if(length(GLOB.clients) <= 30 && !client)
-		return
 	//In case we are caged, we must see if our cage is being looked at rather than us
 	var/list/our_view = dview(7, istype(loc, /obj/structure/scp173_cage) ? loc : src)
->>>>>>> upstream/dev
 	for(var/mob/living/carbon/human/H in next_blinks)
 		if(!(H in our_view))
 			H.disable_blink(src)
@@ -200,13 +186,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 		next_blinks += H
 	handle_regular_hud_updates()
 	process_blink_hud(src)
-<<<<<<< HEAD
 	if(world.time > defecation_cooldown && !is_caged)
-=======
 	if(!isturf(loc)) // Inside of something
 		return
 	if(world.time > defecation_cooldown)
->>>>>>> upstream/dev
 		Defecate()
 	if(client) // AI controls from here
 		return
@@ -297,10 +280,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 				//SelfMove(Tdir)
 	// Breach check
 	var/feces_amount = CheckFeces()
-	if(feces_amount >= 60) // Breach, gonna take ~60 minutes
+	if(feces_amount >= 60) // Breach, gonna take ~45 minutes
 		if(breach_cooldown > world.time)
 			return
-		breach_cooldown = world.time + 25 MINUTES
+		breach_cooldown = world.time + 15 MINUTES
 		warning_cooldown = world.time + 5 MINUTES // Just in case 173 doesn't immediately leave the area
 		command_announcement.Announce("ALERT! SCP-173 containment zone security measures have shut down due to severe acidic degradation.")
 		BreachEffect()
@@ -334,9 +317,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 
 	var/turf/our_turf = get_turf(src)
-	var/list/possible_targets = list()
-	var/obj/item/card/id/all_access_ID = new /obj/item/card/id(src)
-	all_access_ID.access = ACCESS_ADMIN_LVL5
+	var/list/possible_human_targets = list()
 
 	for(var/mob/living/carbon/human/H in dview(7, src)) //Identifies possible targets
 		if(H.SCP)
@@ -345,80 +326,87 @@ GLOBAL_LIST_EMPTY(scp173s)
 			continue
 		//if(!AStar(loc, H.loc, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=7, id=all_access_ID))
 			//continue // We can't reach this person anyways
-		possible_targets += H
+		possible_human_targets += H
 
-	if(!LAZYLEN(possible_targets) && !target && prob(50)) //we have a 50% chance of wandering
-		target = pick_turf_in_range(loc, wander_distance, list(/proc/isfloor))
+	if(target) //this will handle any no longer valid targets
+		switch(target.type)
+			if(/mob/living/carbon/human)
+				var/mob/living/carbon/human/H = target
+				if(!(H in possible_human_targets))
+					target = null
+			if(/obj/machinery/light)
+				var/obj/machinery/light/L = target
+				if(L.get_status() != LIGHT_OK)
+					target = null
+			if(/turf)
+				if(LAZYLEN(possible_human_targets)) //If we get a possible target or if our wandering target is invalid we stop wandering and remove our wander target
+					target = null
 
-	if(ishuman(target)) //if the target is human and dead then they're not a viable target anymore
-		var/mob/living/carbon/human/H = target
-		if(!(H in possible_targets))
-			target = null
-	else if(istype(target, /obj/machinery/light)) //if the target is a light bulb and its broken, its not a viable target anymore
-		var/obj/machinery/light/L = target
-		if(L.get_status() != LIGHT_OK)
-			target = null
-	else
-		if(LAZYLEN(possible_targets)) //If we get a possible target or if our wandering target is invalid we stop wandering and remove our wander target
-			target = null
-		else if(istype(target, /obj/machinery/door))
-			var/obj/machinery/door/D = target
-			if(!D.density)
-				target = null
-		else if(!AStar(loc, get_turf(target), /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=7, id=all_access_ID)) //we have to do this after we check door based targets as you can never path to a door
-			target = null
-
-	all_access_ID?.Destroy()
-
-	if(!(target in dview(7, src)) || !target) //gets rid of our target and finds a new one if they are no longer viable
-		target = null
-		target = DEFAULTPICK(possible_targets, null)
-
-	if(target && get_dist(loc, get_turf(target)) <= 1) //If we are close enough to attack, we will
-		if(!isturf(target)) //If 173 isint wandering and has an actual target, we attack
+	if(target && get_dist(loc, get_turf(target)) <= 1)
+		if(!isturf(target)) //If 173 has a non wander (non turf) target, and we are in range, we will attack
 			UnarmedAttack(target)
 		else //Otherwise, we just wipe the target turf 173 was wandering to
 			target = null
 		return
 
-	if(is_fleeing) //Dont need to do anything past this point if we are running away
+	if(target || is_fleeing) //dont need to pick a target if we're fleeing or already have one
 		move_to_target()
 		return
 
-	if(target && (LAZYLEN(possible_targets) <= 2) && (LAZYLEN(possible_targets) != 0)) //If we are looked at by one or two people we will attempt to attack them
-		if(((our_turf.get_lumcount() > 0.1) && prob(30)) && !istype(target, /obj/machinery/light)) //30% chance we try to break a light instead of attacking if our tile is lit up enough
-			target = get_viable_light_target()
+	switch(LAZYLEN(possible_human_targets))
+		if(NEGATIVE_INFINITY, 0)
+			if(prob(50)) //If we have no targets, 50% chance we will choose a wander target
+				target = pick_turf_in_range(loc, wander_distance, list(/proc/isfloor))
 
-	if(target && LAZYLEN(possible_targets) > 2) //If we have more than two targets we will attempt to flee or break lights. If its dark however, we will attempt to attack.
-		if((our_turf.get_lumcount() > 0.1) && !istype(target, /obj/machinery/light))
-			if(prob(60) && !is_fleeing) //Ambush! 60% we will attempt to flee as more than two people is hard for 173 to handle.
-				target = get_viable_flee_target()
-				is_fleeing = TRUE
+		if(1,2) //If we have a manageable amount of targets, we will pursue or try to break a light
+			if(((our_turf.get_lumcount() > 0.1) && prob(30)) && !istype(target, /obj/machinery/light))
+				target = get_viable_light_target()
 			else
-				target = get_viable_light_target() //Or we could try to break a light
+				target = DEFAULTPICK(possible_human_targets, null)
+
+		if(3,INFINITY) //If we have too many targets, we will attempt to flee or break a light
+			if((our_turf.get_lumcount() > 0.1) && !istype(target, /obj/machinery/light))
+				if(prob(60) && !is_fleeing)
+					target = get_viable_flee_target()
+					is_fleeing = TRUE
+				else
+					target = get_viable_light_target()
 
 	move_to_target()
 	return
 
 /mob/living/scp_173/proc/move_to_target() //since we need to move 173 multiple times in order to simulate its speed, 173 has its own function for this
-	if(!deal_with_obstacle()) //If we didint have to deal with an obstacle, we will move.
-		for(var/move=0, move < tile_move_range, move++)
-			step_towards(src, target)
+	var/turf/step_turf = get_step_towards(src, target)
+
+	for(var/obj/obstacle in step_turf.contents) //we will handle any obstacles, if there are any, instead of moving
+		if(istype(obstacle, /obj/machinery/door)) //Break doors
+			var/obj/machinery/door/D = obstacle
+			if(!D.density)
+				continue
+			if((get_area(D) == spawn_area))
+				continue
+			UnarmedAttack(D)
+			return
+		else if(obstacle.can_climb(src)) //If we can climb it, we should
+			obstacle.do_climb(src)
+			return
+		else if(istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/grille)) //Break windows
+			UnarmedAttack(obstacle)
+			return
+
+	for(var/move=0, move < tile_move_range, move++)
+		step_towards(src, target)
 
 /mob/living/scp_173/proc/get_viable_flee_target() //makes 173 run away
 	var/turf/simulated/floor/flee_target = pick_turf_in_range(loc, flee_distance, list(/proc/isfloor))
 	var/count = 0 //dont want the while loop going to infinity
-	var/obj/item/card/id/all_access_ID = new /obj/item/card/id(src)
-	all_access_ID.access = ACCESS_ADMIN_LVL5
 
-	while(!AStar(loc, flee_target, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=7, id=all_access_ID)) //we ignore doors as we can break them
+	while(!AStar(loc, flee_target, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=7)) //we ignore doors as we can break them
 		flee_target = pick_turf_in_range(loc, flee_distance, list(/proc/isfloor))
 		count++
 		if(count >= 50)
-			all_access_ID?.Destroy()
 			return
 
-	all_access_ID?.Destroy()
 	return flee_target
 
 /mob/living/scp_173/proc/get_viable_light_target() //Gets a viable light bulb target
@@ -432,34 +420,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return light_in_view
 	return null
 
-/mob/living/scp_173/proc/deal_with_obstacle() //Checks and then returns any doors that obstruct 173
-	var/turf/step_turf = get_step_towards(src, target)
-
-	for(var/obj/obstacle in step_turf.contents)
-		if(istype(obstacle, /obj/machinery/door)) //Break doors
-			var/obj/machinery/door/D = obstacle
-			if(!D.density)
-				continue
-			if((get_area(D) == spawn_area))
-				continue
-			UnarmedAttack(D)
-			return TRUE
-		else if(obstacle.can_climb(src)) //If we can climb it, we should
-			obstacle.do_climb(src)
-			return TRUE
-		else if(istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/grille)) //Break windows
-			UnarmedAttack(obstacle)
-			return TRUE
-
-	if(step_turf.turf_is_crowded()) // if we cant reach the target then the target is invalid
-		target = pick_turf_in_range(loc, 2, list(/proc/isfloor)) //this moves us into a position where we can avoid the turf thats blocking us.
-
-	return FALSE
-
 /*
 /mob/living/scp_173/proc/AIAttemptAttack()
 	var/mob/living/carbon/human/target
-	var/list/possible_targets = list()
+	var/list/possible_human_targets = list()
 	var/turf/T
 	for(var/mob/living/carbon/human/H in view(7, src))
 		if(H.SCP)
@@ -468,9 +432,9 @@ GLOBAL_LIST_EMPTY(scp173s)
 			continue
 		if(!AStar(loc, H.loc, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=7))
 			continue // We can't reach this person anyways
-		possible_targets += H
-	if(LAZYLEN(possible_targets))
-		target = pick(possible_targets)
+		possible_human_targets += H
+	if(LAZYLEN(possible_human_targets))
+		target = pick(possible_human_targets)
 	if(target)
 		var/turf/behind_target = get_step(target.loc, turn(target.dir, 180))
 		if(isfloor(behind_target) && get_dist(behind_target, loc) <= 7)
@@ -486,54 +450,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 			return
 		forceMove(T)
 		UnarmedAttack(target)
-<<<<<<< HEAD
 */
-//
+
 // 173 Cage
-//
 
-=======
-
-/mob/living/scp_173/proc/Defecate()
-	if(!isobj(loc) && world.time > defecation_cooldown)
-		defecation_cooldown = world.time + defecation_cooldown_time
-		var/feces = pick(defecation_types)
-		var/obj/effect/new_f = new feces(loc)
-		new_f.update_icon()
-		if(!client) // So it doesn't spam it in one spot
-			var/Tdir = pick(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST)
-			if(Tdir && !IsBeingWatched())
-				SelfMove(Tdir)
-	// Breach check
-	var/feces_amount = CheckFeces()
-	if(feces_amount >= 60) // Breach, gonna take ~45 minutes
-		if(breach_cooldown > world.time)
-			return
-		breach_cooldown = world.time + 15 MINUTES
-		warning_cooldown = world.time + 5 MINUTES // Just in case 173 doesn't immediately leave the area
-		command_announcement.Announce("ALERT! SCP-173 containment zone security measures have shut down due to severe acidic degradation.")
-		BreachEffect()
-	else if((feces_amount >= 40) && world.time > warning_cooldown) // Warning, after ~20 minutes
-		warning_cooldown = world.time + 2 MINUTES
-		command_announcement.Announce("ATTENTION! SCP-173 containment zone is suffering from mild acidic degradation. Janitorial services involvement is required.")
-
-/mob/living/scp_173/proc/CheckFeces(containment_zone = TRUE) // Proc that returns amount of 173 feces in the area
-	var/area/A = get_area(src)
-	if((A != spawn_area) && containment_zone) // Not in containment zone
-		return 0
-	var/feces_amount = 0
-	for(var/obj/O in A)
-		if(O.type in defecation_types)
-			feces_amount += 1
-			continue
-	return feces_amount
-
-/mob/living/scp_173/proc/BreachEffect()
-	var/area/A = get_area(src)
-	A.full_breach()
-
-// SCP-173 Cage
->>>>>>> upstream/dev
 /obj/structure/scp173_cage
 	name = "SCP-173 Containment Cage"
 	desc = "An empty cage for containing SCP-173."
