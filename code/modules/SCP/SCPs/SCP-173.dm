@@ -69,8 +69,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 	//Are we fleeing?
 	var/is_fleeing = FALSE
 
-	///173 Cage Related vars
-
 /mob/living/scp_173/Initialize()
 	GLOB.scp173s += src
 	defecation_cooldown = world.time + 10 MINUTES // Give everyone some time to prepare
@@ -87,6 +85,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		H.disable_blink(src)
 	next_blinks = null
 	next_blinks_join_time = null
+	target = null
 
 	GLOB.scp173s -= src
 	return ..()
@@ -309,13 +308,14 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/proc/handle_AI()
 	if(IsBeingWatched())
-		is_fleeing = FALSE
+		if(is_fleeing) //resets fleeing state if we are looked at
+			is_fleeing = FALSE
+			target = null
 		return
 	if(istype(loc, /obj/structure/scp173_cage))
 		loc.relaymove(src, NORTH) //just moves us north to try to break free from the cage
 		return
 
-	var/turf/our_turf = get_turf(src)
 	var/list/possible_human_targets = list()
 
 	for(var/mob/living/carbon/human/H in dview(7, src)) //Identifies possible targets
@@ -338,7 +338,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 				if(L.get_status() != LIGHT_OK)
 					target = null
 			if(/turf)
-				if(LAZYLEN(possible_human_targets)) //If we get a possible target or if our wandering target is invalid we stop wandering and remove our wander target
+				if(LAZYLEN(possible_human_targets) && !is_fleeing) //If we get a possible target or if our wandering target is invalid we stop wandering and remove our wander target
 					target = null
 
 	if(target && get_dist(loc, get_turf(target)) <= 1)
@@ -351,6 +351,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(target || is_fleeing) //dont need to pick a target if we're fleeing or already have one
 		move_to_target()
 		return
+
+	var/turf/our_turf = get_turf(src)
 
 	switch(LAZYLEN(possible_human_targets))
 		if(NEGATIVE_INFINITY, 0)
