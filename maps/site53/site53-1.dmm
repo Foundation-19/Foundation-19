@@ -1089,7 +1089,7 @@
 	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "cu" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -1191,7 +1191,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "cJ" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -1581,7 +1581,7 @@
 	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL1"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "dv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -1871,7 +1871,7 @@
 	name = "CDZ Medbay"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "ec" = (
 /obj/machinery/light{
 	dir = 4
@@ -2404,6 +2404,9 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkpoint)
+"fl" = (
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/med_checkpoint)
 "fm" = (
 /obj/effect/paint_stripe/gray,
 /obj/machinery/button/blast_door{
@@ -3033,7 +3036,7 @@
 	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "gT" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -3261,7 +3264,7 @@
 "hA" = (
 /obj/structure/closet,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "hB" = (
 /obj/machinery/reagentgrinder,
 /turf/simulated/floor/tiled/monotile/white,
@@ -7525,6 +7528,9 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp106parts)
+"rq" = (
+/turf/simulated/wall/titanium,
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "rr" = (
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/techmaint,
@@ -7827,7 +7833,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "sf" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/titanium,
@@ -8342,7 +8348,7 @@
 "tD" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "tE" = (
 /obj/structure/hygiene/sink{
 	dir = 4;
@@ -10110,8 +10116,9 @@
 	id_tag = "CDZMedbaywin";
 	name = "CDZ Medbay Window Shutters"
 	},
+/obj/item/boombox,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "xV" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/titanium,
@@ -11464,10 +11471,11 @@
 	name = "CDZ Medbay Window Shutters"
 	},
 /obj/machinery/button/alternate/door{
-	id_tag = "LobbyMedD"
+	id_tag = "LobbyMedD";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "BY" = (
 /obj/machinery/light{
 	dir = 4;
@@ -12174,15 +12182,17 @@
 /obj/machinery/button/blast_door{
 	id_tag = "CDZMedbaywin";
 	name = "Medbay Windows";
-	pixel_y = 7
+	pixel_y = 7;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "CDZMedbay";
-	name = "Entry Lockdown"
+	name = "Entry Lockdown";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "DY" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -12739,12 +12749,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/door/airlock/medical{
-	name = "Medical Aux Entry";
-	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+/obj/machinery/door/airlock/highsecurity{
+	name = "Medical Checkpoint";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "Fx" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/window/reinforced{
@@ -13860,7 +13870,7 @@
 	name = "CDZ Medbay Window Shutters"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "IB" = (
 /obj/item/clothing/suit/straight_jacket,
 /obj/item/clothing/suit/straight_jacket,
@@ -14962,11 +14972,12 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/modular_computer/console/preset/medical{
-	dir = 4
+/obj/item/modular_computer/console/preset/security{
+	dir = 4;
+	icon_state = "console"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "Ln" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -15002,7 +15013,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "Lv" = (
 /obj/machinery/light{
 	dir = 4
@@ -15055,7 +15066,7 @@
 	pixel_y = 17
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "LF" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/light,
@@ -15413,6 +15424,7 @@
 /area/site53/llcz/dclass/assignmentline)
 "MM" = (
 /obj/effect/floor_decal/corner/yellow/mono,
+/obj/machinery/chemical_dispenser,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "MN" = (
@@ -15675,6 +15687,9 @@
 /obj/machinery/vending/hydronutrients,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/botany)
+"NF" = (
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "NG" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -15814,7 +15829,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "NV" = (
 /obj/effect/paint_stripe/gray,
 /obj/effect/paint_stripe/red,
@@ -16348,7 +16363,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "Pz" = (
 /obj/machinery/icecream_vat,
 /turf/simulated/floor/tiled/monotile,
@@ -16427,7 +16442,7 @@
 	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "PJ" = (
 /obj/machinery/button/blast_door{
 	id_tag = "049emerg";
@@ -16509,10 +16524,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurysleep)
-"Qa" = (
-/obj/machinery/chemical_dispenser,
-/turf/simulated/floor,
-/area/site53/llcz/mine/unexplored)
 "Qd" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/steel_ridged,
@@ -16769,7 +16780,7 @@
 	name = "CDZ Medbay"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "QK" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/white,
@@ -17106,7 +17117,7 @@
 "RN" = (
 /obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "RS" = (
 /obj/structure/closet/l3closet/virology,
 /turf/simulated/floor/tiled/monotile,
@@ -17479,7 +17490,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "SV" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
@@ -18022,6 +18033,14 @@
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
+"UH" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/flasher{
+	id_tag = "EMTflashCDZ";
+	name = "Medical Flash"
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/med_checkpoint)
 "UI" = (
 /obj/machinery/light,
 /obj/machinery/power/apc{
@@ -18109,7 +18128,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "UV" = (
 /obj/effect/floor_decal/industrial/outline/orange,
 /obj/machinery/power/apc{
@@ -18460,7 +18479,7 @@
 	name = "CDZ Medbay"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "VS" = (
 /obj/effect/floor_decal/industrial/loading{
 	dir = 8;
@@ -18472,7 +18491,7 @@
 	name = "CDZ Medbay"
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "VT" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "Maintenance Closet";
@@ -18646,7 +18665,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "Ww" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -18732,8 +18751,10 @@
 	id_tag = "CDZMedbaywin";
 	name = "CDZ Medbay Window Shutters"
 	},
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "WF" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 8
@@ -18876,7 +18897,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "Xc" = (
 /obj/machinery/light{
 	dir = 8
@@ -19045,7 +19066,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "XB" = (
 /obj/structure/closet/secure_closet,
 /obj/item/material/twohanded/spear,
@@ -19748,7 +19769,7 @@
 	pixel_y = -27
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpoint)
 "ZB" = (
 /obj/machinery/light,
 /obj/structure/cable/green{
@@ -19770,12 +19791,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/medical{
-	name = "Medical Aux Entry";
-	req_access = list(list("ACCESS_MEDICAL_LEVEL2","ACCESS_SECURITY_LEVEL2"))
+/obj/machinery/door/airlock/highsecurity{
+	name = "Medical Checkpoint";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/medicalpost)
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "ZD" = (
 /obj/structure/hygiene/shower{
 	dir = 8
@@ -26980,7 +27001,7 @@ RN
 Wv
 Xb
 ZA
-RH
+rq
 tD
 tD
 tD
@@ -27235,8 +27256,8 @@ hy
 RH
 SU
 UU
-rI
-OO
+fl
+UH
 BX
 DX
 Lm
@@ -27496,8 +27517,8 @@ Py
 XA
 Iy
 Lu
-rI
-rI
+NF
+NF
 PI
 Of
 MM
@@ -27751,7 +27772,7 @@ eb
 VQ
 QJ
 VS
-RH
+rq
 gS
 WE
 xU
@@ -36805,7 +36826,7 @@ ua
 ua
 ua
 ua
-Tu
+ua
 ua
 ua
 ua
@@ -37061,9 +37082,9 @@ ua
 ua
 ua
 ua
-Tu
-Qa
-Tu
+ua
+ua
+ua
 ua
 Fh
 Fh
@@ -37319,7 +37340,7 @@ ua
 ua
 ua
 ua
-Tu
+ua
 ua
 ua
 Fh
