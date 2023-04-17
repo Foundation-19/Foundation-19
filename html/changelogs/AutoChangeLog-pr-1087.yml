@@ -1,4 +1,0 @@
-author: EgorDinamit
-delete-after: true
-changes:
-  - bugfix: SCP 2427-3 can break out once again.

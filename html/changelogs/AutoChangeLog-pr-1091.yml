@@ -1,0 +1,4 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - balance: Changed Malfunctioning AIC gamemode from 2 minimum players to 20
