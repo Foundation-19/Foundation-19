@@ -36,6 +36,7 @@
 	name = "Unscrew maintenance hatch"
 	allowed_tools = list(
 		/obj/item/screwdriver = 100,
+		/obj/item/screwdriver/makeshift = 70,
 		/obj/item/material/coin = 50,
 		/obj/item/material/knife = 50
 	)
@@ -71,6 +72,7 @@
 	name = "Secure maintenance hatch"
 	allowed_tools = list(
 		/obj/item/screwdriver = 100,
+		/obj/item/screwdriver/makeshift = 70,
 		/obj/item/material/coin = 50,
 		/obj/item/material/knife = 50
 	)
@@ -339,6 +341,7 @@
 		/obj/item/stack/nanopaste = 100,
 		/obj/item/bonegel = 30,
 		/obj/item/screwdriver = 70,
+		/obj/item/screwdriver/makeshift = 45,
 	)
 	min_duration = 60
 	max_duration = 70
