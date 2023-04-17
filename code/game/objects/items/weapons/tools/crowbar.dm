@@ -70,3 +70,8 @@
 			return FALSE
 
 	return TRUE
+
+/obj/item/crowbar/makeshift
+	name = "improvised Crowbar"
+	desc = "You have no idea how something so flimsy is able to pry open anything."
+	icon_state = "crowbar_makeshift"
