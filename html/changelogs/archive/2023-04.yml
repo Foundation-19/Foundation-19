@@ -136,3 +136,11 @@
   - bugfix: Fixed movement keys not working on roundstart. Again.
   checkraisefold:
   - admin: Removed 'Random' game mode from game panel.
+2023-04-17:
+  EgorDinamit:
+  - tweak: SCP 2427-3 now has better AI. It will not breach on its own below 20 pop,
+      still, so do not worry.
+  - bugfix: SCP 2427-3 can break out once again.
+  - tweak: Monkeys do not restore as much satiety as humans do for 2427-3.
+  checkraisefold:
+  - bugfix: Cult's Summon Robes rune now works even when you have no current clothes.
