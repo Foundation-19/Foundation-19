@@ -186,7 +186,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 		next_blinks += H
 	handle_regular_hud_updates()
 	process_blink_hud(src)
-	if(world.time > defecation_cooldown && !is_caged)
 	if(!isturf(loc)) // Inside of something
 		return
 	if(world.time > defecation_cooldown)
@@ -312,8 +311,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(IsBeingWatched())
 		is_fleeing = FALSE
 		return
-	if(is_caged) //If we're caged and arent being watched we will attack the cage
-		UnarmedAttack(cage)
+	if(istype(loc, /obj/structure/scp173_cage))
+		loc.relaymove(src, NORTH) //just moves us north to try to break free from the cage
 		return
 
 	var/turf/our_turf = get_turf(src)
