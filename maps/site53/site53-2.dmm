@@ -19302,7 +19302,10 @@
 /area/site53/uhcz/scp247observation)
 "bde" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
+/obj/item/ammo_magazine/scp/saiga12/beanbag,
 /obj/item/ammo_magazine/box/beanbag,
 /obj/item/ammo_magazine/box/beanbag,
 /turf/simulated/floor/tiled/dark,
@@ -20524,7 +20527,10 @@
 /area/site53/ulcz/hallways)
 "bhm" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
+/obj/item/ammo_magazine/scp/saiga12/stunshell,
 /obj/item/ammo_magazine/box/stunshell,
 /obj/item/ammo_magazine/box/stunshell,
 /turf/simulated/floor/tiled/dark,
@@ -20580,7 +20586,10 @@
 "bhA" = (
 /obj/effect/floor_decal/corner/black/full,
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/slug,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
+/obj/item/ammo_magazine/scp/saiga12,
 /obj/item/ammo_magazine/box/slug,
 /obj/item/ammo_magazine/box/slug,
 /turf/simulated/floor/tiled/dark,
@@ -26612,7 +26621,10 @@
 /area/chapel)
 "icU" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
+/obj/item/ammo_magazine/scp/saiga12/rubbershot,
 /obj/item/ammo_magazine/box/rubbershot,
 /obj/item/ammo_magazine/box/rubbershot,
 /turf/simulated/floor/tiled/dark,
@@ -30379,8 +30391,8 @@
 "nbE" = (
 /obj/effect/floor_decal/corner/black/full,
 /obj/structure/closet,
-/obj/item/gun/projectile/shotgun/tactical,
-/obj/item/gun/projectile/shotgun/tactical,
+/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
+/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
@@ -33709,7 +33721,10 @@
 "rIu" = (
 /obj/effect/floor_decal/corner/black/full,
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
+/obj/item/ammo_magazine/scp/saiga12/buckshot,
 /obj/item/ammo_magazine/box/buckshot,
 /obj/item/ammo_magazine/box/buckshot,
 /turf/simulated/floor/tiled/dark,
@@ -36218,8 +36233,8 @@
 /area/site53/uhcz/generalpurpose3)
 "vgG" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/shotgun/tactical,
-/obj/item/gun/projectile/shotgun/tactical,
+/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
+/obj/item/gun/projectile/automatic/scp/saiga12,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "vhB" = (
@@ -37168,7 +37183,10 @@
 /area/site53/uhcz/scp247observation)
 "wsM" = (
 /obj/structure/table/rack,
-/obj/item/ammo_magazine/box/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
+/obj/item/ammo_magazine/scp/saiga12/flash,
 /obj/item/ammo_magazine/box/flash,
 /obj/item/ammo_magazine/box/flash,
 /turf/simulated/floor/tiled/dark,
