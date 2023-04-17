@@ -1,4 +1,4 @@
-/datum/species/scp049
+/datum/species/scp527
 	name = "SCP-527"
 	name_plural = "SCP-527s"
 	icon_template = 'icons/SCP/scp-527.dmi'
