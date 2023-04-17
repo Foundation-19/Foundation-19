@@ -4877,10 +4877,7 @@
 /turf/simulated/floor/grass,
 /area/site53/upper_surface/maincontrolroomstairs)
 "lS" = (
-/obj/structure/closet/secure_closet/mtf/enlisted/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/crowbar/red,
+/obj/structure/closet/secure_closet/guard/ez,
 /obj/machinery/camera/autoname{
 	dir = 1;
 	network = list("Entrance Zone Network")
@@ -4947,10 +4944,10 @@
 	dir = 8;
 	pixel_x = 20
 	},
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
-/obj/item/ammo_magazine/box/a10mm,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
 /obj/item/ammo_magazine/scp/p90_mag/ap,
 /obj/item/ammo_magazine/scp/p90_mag/ap,
 /obj/item/ammo_magazine/scp/p90_mag/ap,
@@ -5352,10 +5349,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
 "ni" = (
-/obj/structure/closet/secure_closet/mtf/enlisted/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/crowbar/red,
+/obj/structure/closet/secure_closet/guard/ez,
 /obj/machinery/recharger/wallcharger{
 	dir = 1;
 	pixel_y = -23
@@ -5411,10 +5405,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/ethics)
 "nt" = (
-/obj/structure/closet/secure_closet/mtf/enlisted/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/crowbar/red,
+/obj/structure/closet/secure_closet/guard/ez,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
@@ -5546,19 +5537,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/substation)
 "nT" = (
-/obj/structure/closet/secure_closet/mtf/co,
+/obj/structure/closet/secure_closet/guard/zone_commander,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/machinery/light,
-/obj/item/clothing/suit/armor/pcarrier/scp/medium,
-/obj/item/gun/energy/taser,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/crowbar/red,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/clothing/head/bio_hood/security,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/senioragentoffice)
 "nU" = (
@@ -6848,14 +6833,9 @@
 /turf/simulated/floor/carpet/blue2,
 /area/site53/zonecommanderoffice)
 "sS" = (
-/obj/structure/closet/secure_closet/mtf/co{
+/obj/structure/closet/secure_closet/guard/zone_commander{
 	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
-/obj/item/crowbar/red,
-/obj/item/clothing/head/bio_hood/security,
-/obj/item/clothing/suit/bio_suit/security,
-/obj/item/material/knife/combat,
-/obj/item/clothing/accessory/armor/tag/solgov/com/zonecomm,
 /obj/effect/floor_decal/carpet/blue2{
 	dir = 4
 	},
@@ -8349,10 +8329,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "Ac" = (
-/obj/structure/closet/secure_closet/mtf/nco,
-/obj/item/storage/pill_bottle/amnesticsa,
-/obj/item/crowbar/red,
-/obj/item/material/knife/combat,
+/obj/structure/closet/secure_closet/guard/lcz/sergeant,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
 "Ad" = (
@@ -8725,10 +8702,7 @@
 /turf/simulated/wall/prepainted,
 /area/site53/medical/infirmary)
 "CF" = (
-/obj/structure/closet/secure_closet/mtf/nco,
-/obj/item/storage/pill_bottle/amnesticsa,
-/obj/item/crowbar/red,
-/obj/item/material/knife/combat,
+/obj/structure/closet/secure_closet/guard/lcz/sergeant,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
@@ -9324,11 +9298,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/hall)
 "Ho" = (
-/obj/structure/closet/secure_closet/mtf/nco/ez,
-/obj/item/crowbar/red,
-/obj/item/gun/energy/taser,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/storage/pill_bottle/amnesticsa,
+/obj/structure/closet/secure_closet/guard/ez/sergeant,
 /turf/simulated/floor/tiled,
 /area/site53/uez/equipmentroom)
 "Hq" = (
@@ -9412,14 +9382,10 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "HL" = (
-/obj/structure/closet/secure_closet/mtf/nco/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/crowbar/red,
+/obj/structure/closet/secure_closet/guard/ez/sergeant,
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/storage/pill_bottle/amnesticsa,
 /turf/simulated/floor/tiled,
 /area/site53/uez/equipmentroom)
 "HM" = (
@@ -10039,10 +10005,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "MA" = (
-/obj/structure/closet/secure_closet/mtf/enlisted/ez,
-/obj/item/clothing/accessory/armorplate/tactical,
-/obj/item/gun/energy/taser,
-/obj/item/crowbar/red,
+/obj/structure/closet/secure_closet/guard/ez,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "ME" = (
@@ -11376,7 +11339,7 @@
 	dir = 8;
 	pixel_x = 20
 	},
-/obj/structure/closet/secure_closet/mtf/breachautomatics,
+/obj/structure/closet/secure_closet/guard/breachautomatics,
 /obj/item/ammo_magazine/box/a556,
 /obj/item/ammo_magazine/box/a556,
 /turf/simulated/floor/tiled/monotile,

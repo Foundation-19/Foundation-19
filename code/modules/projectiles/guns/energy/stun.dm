@@ -56,6 +56,15 @@
 	max_shots = 6
 	combustion = 0
 
+/obj/item/gun/energy/stunrevolver/taser
+	name = "taser"
+	desc = "A modified version of a taser gun used by most police departments in the world. Instead of using cartridges, it launches balls of concentrated electricity straight towards the target."
+	icon = 'icons/obj/guns/taser.dmi'
+	icon_state = "taser"
+	item_state = null
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_POWER = 2)
+	max_shots = 4
+
 /obj/item/gun/energy/stunrevolver/rifle
 	name = "stun rifle"
 	desc = "An A&M X10 Thor. A vastly oversized variant of the A&M X6 Zeus. Fires overcharged electrodes to obliterate pain receptors without harming them too much."
