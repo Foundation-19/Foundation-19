@@ -1,5 +1,6 @@
 /mob/living/carbon/human/scp_527
 	SCP = /datum/scp/scp_527
+	icon = 'icons/SCP/scp-527.dmi'
 	status_flags = NO_ANTAG
 
 /datum/scp/scp_527
