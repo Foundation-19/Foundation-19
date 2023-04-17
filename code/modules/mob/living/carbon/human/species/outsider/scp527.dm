@@ -1,7 +1,6 @@
 /datum/species/scp527
 	name = "SCP-527"
 	name_plural = "SCP-527s"
-	icon_template = 'icons/SCP/scp-527.dmi'
 	show_ssd = null
 	show_coma = null
 
@@ -10,7 +9,7 @@
 	genders = list(MALE)
 
 	// icon overrides
-	icobase = 'icons/SCP/scp-527_body.dmi'
+	icobase = 'icons/SCP/scp-527.dmi'
 	deform = null
 
 	// damage icon overrides
