@@ -151,7 +151,7 @@
 	name = "Checkpoint Testing Procedures"
 	info = {"<center><h1>Checkpoint Testing Procedures</h1></center><br>
 	<center><b><font size="1">Site 53</font></b></center><br>
-	<center><img src = seclogo.png></center><br>
+	<center><img src = sec.png></center><br>
 	<center><b>Secure. Contain. Protect.</b></center><br>
 	<hr>
 	STEP ONE: Check what the current site-wise security level is:<br>
