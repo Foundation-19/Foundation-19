@@ -20373,6 +20373,7 @@
 	id_tag = "ULCZ Checkpoint Lockdown";
 	name = "ULCZ Checkpoint Lockdown"
 	},
+/obj/item/paper/sec_ctp,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
 "bgV" = (
@@ -28002,6 +28003,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/item/paper/sec_ctp,
 /turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
 "jQX" = (
