@@ -1,4 +1,0 @@
-author: checkraisefold
-delete-after: true
-changes:
-  - bugfix: Cult's Summon Robes rune now works even when you have no current clothes.
