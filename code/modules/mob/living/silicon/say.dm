@@ -107,6 +107,8 @@
 				if(M.stat == DEAD && M.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH)
 					M.hear_say(message,verb,speaking,null,null, src)
 					continue
+				else if(M.stat == DEAD)
+					continue
 				if(M in listening)
 					M.hear_say(message,verb,speaking,null,null, src)
 
