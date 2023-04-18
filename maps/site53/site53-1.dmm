@@ -839,6 +839,13 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/maintenance)
+"bV" = (
+/obj/effect/paint_stripe/white,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/wall/titanium,
+/area/site53/engineering/maintenance/llczmaint)
 "bW" = (
 /obj/machinery/camera/network/lcz{
 	dir = 8
@@ -46248,7 +46255,7 @@ gq
 gq
 gq
 aN
-aN
+bV
 aN
 aN
 aN

@@ -2703,10 +2703,9 @@
 /area/site53/maintenance/surfacewest)
 "gp" = (
 /obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor,
 /area/site53/zonecommanderoffice)
@@ -7886,11 +7885,6 @@
 /obj/machinery/power/smes/buildable/preset/ds90/substation_full{
 	RCon_tag = "Self-Destruct Substation"
 	},
-/obj/structure/cable/green,
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /turf/simulated/floor,
 /area/site53/zonecommanderoffice)
 "xK" = (
@@ -11536,6 +11530,15 @@
 /obj/machinery/vending/cola,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
+"Zx" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor,
+/area/site53/zonecommanderoffice)
 "Zy" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled,
@@ -18112,7 +18115,7 @@ dA
 ty
 xF
 PM
-eb
+gp
 Ls
 YF
 ty
@@ -18368,8 +18371,8 @@ dA
 dA
 ty
 Er
-gp
 ft
+Zx
 et
 cC
 ty

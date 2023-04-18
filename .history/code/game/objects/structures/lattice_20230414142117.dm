@@ -8,7 +8,6 @@
 	w_class = ITEM_SIZE_NORMAL
 	layer = LATTICE_LAYER
 	color = COLOR_STEEL
-	plane = DEFAULT_PLANE
 	var/init_material = MATERIAL_STEEL
 	obj_flags = OBJ_FLAG_NOFALL
 
