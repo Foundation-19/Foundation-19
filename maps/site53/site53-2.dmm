@@ -2210,7 +2210,7 @@
 /obj/effect/catwalk_plated/white,
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Center";
-	req_access = list("ACCESS_SECURITY_LEVEL1")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
@@ -6478,7 +6478,7 @@
 /obj/effect/catwalk_plated/white,
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Center";
-	req_access = list("ACCESS_SECURITY_LEVEL1")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
@@ -11665,7 +11665,7 @@
 "aEM" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "HCZ Checkpoint Western Office";
-	req_access = list("ACCESS_SECURITY_LEVEL1")
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
@@ -16414,7 +16414,8 @@
 /area/site53/ulcz/scp2427_3)
 "aVm" = (
 /obj/machinery/door/airlock/glass/security{
-	name = "Break Room"
+	name = "Break Room";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
@@ -16513,10 +16514,6 @@
 /area/site53/llcz/checkequip)
 "aVz" = (
 /obj/effect/catwalk_plated/white,
-/obj/machinery/door/airlock/glass/security{
-	name = "Security Center";
-	req_access = list("ACCESS_SECURITY_LEVEL1")
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -16539,7 +16536,7 @@
 	},
 /obj/machinery/door/airlock/glass/security{
 	name = "Security Center";
-	req_access = list("ACCESS_SECURITY_LEVEL1")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor,
 /area/site53/llcz/checkequip)
@@ -16662,7 +16659,7 @@
 "aVY" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "ULCZ Checkpoint Interior";
-	req_access = list("ACCESS_SECURITY_LEVEL1")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
@@ -20061,7 +20058,7 @@
 	id_tag = "ULCZ Exit Point";
 	name = "ULCZ Exit Point";
 	pixel_y = 25;
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/entrance_checkpoint)
@@ -20325,7 +20322,7 @@
 "bia" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "ULCZ Checkpoint Interior";
-	req_access = list("ACCESS_SECURITY_LEVEL1")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -20534,7 +20531,7 @@
 "biI" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "HCZ Secure Armoury";
-	req_access = list("ACCESS_SECURITY_LEVEL4")
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/machinery/door/blast/regular/open{
 	begins_closed = 1;
@@ -25919,6 +25916,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
+"hed" = (
+/obj/machinery/door/airlock/civilian{
+	name = "Restroom";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/checkequip)
 "heA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -27605,7 +27609,7 @@
 "iRt" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "ULCZ Checkpoint Interior";
-	req_access = list("ACCESS_SECURITY_LEVEL1")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
@@ -27785,7 +27789,8 @@
 /area/site53/ulcz/humanoidcontainment)
 "jaN" = (
 /obj/machinery/door/airlock/civilian{
-	name = "Restroom"
+	name = "Restroom";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -30816,11 +30821,11 @@
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor{
 	name = "Booth";
-	req_access = list("ACCESS_SECURITY_LEVEL3")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/window/brigdoor/northright{
 	name = "Booth";
-	req_access = list("ACCESS_SECURITY_LEVEL3")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -32763,7 +32768,7 @@
 "oVt" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "HCZ Checkpoint Western Office";
-	req_access = list("ACCESS_SECURITY_LEVEL1")
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
@@ -33695,7 +33700,7 @@
 /area/site53/lowertrams/janitoroffice)
 "qiu" = (
 /obj/machinery/door/airlock/glass/security{
-	name = "Holding Cell 2";
+	name = "Holding Cell";
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -35185,11 +35190,11 @@
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor{
 	name = "Booth";
-	req_access = list("ACCESS_SECURITY_LEVEL3")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/window/brigdoor/northright{
 	name = "Booth";
-	req_access = list("ACCESS_SECURITY_LEVEL3")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -39400,7 +39405,7 @@
 	id_tag = "HCZ Secure Armoury";
 	name = "HCZ Secure Armoury";
 	pixel_x = -25;
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL3"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
@@ -47408,7 +47413,7 @@ aoN
 aNO
 aNO
 vCX
-aTE
+hed
 aMS
 aMS
 aTq
