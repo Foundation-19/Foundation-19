@@ -308,9 +308,6 @@
 			return FALSE
 	return TRUE
 
-/mob/proc/is_deaf()
-	return ((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT))
-
 /mob/proc/can_hear(atom/origin)
 	if((sdisabilities & DEAFENED) || ear_deaf || incapacitated(INCAPACITATION_KNOCKOUT))
 		return FALSE
