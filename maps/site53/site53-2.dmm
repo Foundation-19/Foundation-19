@@ -13496,9 +13496,6 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
-"aLf" = (
-/turf/space,
-/area/space)
 "aLl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -56142,7 +56139,7 @@ azA
 azA
 azA
 azA
-aLf
+azA
 azA
 azA
 azA
@@ -57945,7 +57942,7 @@ azA
 azA
 azA
 azA
-aLf
+azA
 azA
 azA
 azA
