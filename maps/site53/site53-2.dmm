@@ -37645,6 +37645,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106containment)
+"ukl" = (
+/mob/living/simple_animal/aquatic/fish/grump,
+/turf/unsimulated/beach/water,
+/area/site53/ulcz/humanoidcontainment)
 "uku" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 6
@@ -37926,6 +37930,7 @@
 "uGE" = (
 /obj/structure/table/reinforced,
 /obj/item/newspaper,
+/obj/item/clothing/head/helmet/space/fishbowl,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
 "uGF" = (
@@ -40449,6 +40454,10 @@
 	},
 /turf/simulated/wall/titanium,
 /area/site53/uhcz/hallways)
+"xtn" = (
+/mob/living/simple_animal/aquatic/fish,
+/turf/unsimulated/beach/water,
+/area/site53/ulcz/humanoidcontainment)
 "xuS" = (
 /obj/effect/floor_decal/carpet/green,
 /obj/machinery/camera/network/entrance{
@@ -82822,10 +82831,10 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
+urC
+urC
+urC
+urC
 azA
 azA
 azA
@@ -83079,10 +83088,10 @@ azA
 azA
 azA
 azA
-azA
-azA
-azA
-azA
+urC
+xtn
+ukl
+urC
 azA
 azA
 azA
@@ -83337,8 +83346,8 @@ urC
 urC
 urC
 urC
-urC
-urC
+kEI
+kEI
 urC
 urC
 azA
