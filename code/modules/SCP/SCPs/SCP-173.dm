@@ -355,7 +355,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/turf/our_turf = get_turf(src)
 
 	switch(LAZYLEN(possible_human_targets))
-		if(NEGATIVE_INFINITY, 0)
+		if(0)
 			if(prob(50)) //If we have no targets, 50% chance we will choose a wander target
 				target = pick_turf_in_range(loc, wander_distance, list(/proc/isfloor))
 
@@ -398,7 +398,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	for(var/move=0, move < tile_move_range, move++)
 		step_towards(src, target)
 
-/mob/living/scp_173/proc/get_viable_flee_target() //makes 173 run away
+/mob/living/scp_173/proc/get_viable_flee_target()
 	var/turf/simulated/floor/flee_target = pick_turf_in_range(loc, flee_distance, list(/proc/isfloor))
 	var/count = 0 //dont want the while loop going to infinity
 
