@@ -86,6 +86,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	GLOB.scp2427_3s |= src
 	spawn_area = get_area(src)
 	add_language(LANGUAGE_ENGLISH, FALSE)
+	set_default_language(all_languages[LANGUAGE_ENGLISH])
 	return ..()
 
 /mob/living/simple_animal/hostile/scp_2427_3/Destroy()
