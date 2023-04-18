@@ -284,7 +284,7 @@ var/const/enterloopsanity = 100
 			return 1
 	return 0
 
-/turf/proc/contains_dense_objects_whitelist(var/list/whitelist) //checks if the turf is dense but ignores objects in whitelist
+/turf/proc/contains_dense_objects_whitelist(list/whitelist) //checks if the turf is dense but ignores objects in whitelist
 	for(var/atom/A in contents)
 		if(A.density && !is_type_in_list(A, whitelist))
 			return TRUE
