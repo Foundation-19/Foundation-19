@@ -22025,12 +22025,6 @@
 	id_tag = "HCZCheckpointflash";
 	name = "HCZCheckpointflash"
 	},
-/obj/item/device/radio/intercom/locked{
-	dir = 8;
-	name = "HCZ Checkpoint Intercom";
-	pixel_x = 32;
-	channels = list(1)
-	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
 "bTG" = (
@@ -22625,12 +22619,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/device/radio/intercom/locked{
-	dir = 8;
-	name = "HCZ Checkpoint Intercom";
-	pixel_x = 32;
-	channels = list(1)
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "cFl" = (
@@ -22993,12 +22981,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/item/device/radio/intercom/locked{
-	dir = 1;
-	name = "LCZ Checkpoint Intercom";
-	pixel_y = -32;
-	channels = list(1)
-	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/entrance_checkpoint)
 "cYP" = (
@@ -23967,18 +23949,6 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
 /area/chapel)
-"enN" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
-	},
-/obj/item/device/radio/intercom/locked{
-	dir = 1;
-	name = "LCZ Checkpoint Intercom";
-	pixel_y = -32;
-	channels = list(1)
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/hallways)
 "eon" = (
 /obj/item/stool/padded,
 /turf/simulated/floor/wood/walnut,
@@ -24123,15 +24093,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/surface/bunker)
-"euO" = (
-/obj/item/device/radio/intercom/locked{
-	dir = 1;
-	name = "HCZ Checkpoint Intercom";
-	pixel_y = -32;
-	channels = list(1)
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/lowertrams/redline)
 "euW" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/techmaint,
@@ -25704,11 +25665,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
-	},
-/obj/item/device/radio/intercom/locked{
-	frequency = 10;
-	name = "HCZ Checkpoint Intercom";
-	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/entrance_checkpoint)
@@ -27458,11 +27414,6 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/item/device/radio/intercom/locked{
-	dir = 4;
-	name = "Humanoid Containment Intercom";
-	pixel_x = -26
-	},
 /turf/simulated/floor,
 /area/site53/ulcz/humanoidcontainment)
 "ify" = (
@@ -27490,21 +27441,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/securitypost)
-"ihx" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/corner/brown/mono,
-/obj/item/device/radio/intercom/locked{
-	dir = 1;
-	name = "LCZ Checkpoint Intercom";
-	pixel_y = -32;
-	channels = list(1)
-	},
-/turf/simulated/floor/tiled,
-/area/site53/lowertrams/brownline)
 "ihM" = (
 /obj/structure/lattice,
 /obj/structure/cable/green{
@@ -27892,12 +27828,8 @@
 /turf/simulated/floor/plating,
 /area/site53/llcz/entrance_checkpoint)
 "iCF" = (
-/obj/item/device/radio/intercom/locked{
-	dir = 4;
-	name = "Humanoid Containment Intercom";
-	pixel_x = -26
-	},
 /obj/structure/table/woodentable,
+/obj/item/device/radio,
 /turf/simulated/floor/wood,
 /area/site53/ulcz/humanoidcontainment)
 "iCG" = (
@@ -28477,15 +28409,6 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
-"jhG" = (
-/obj/item/device/radio/intercom/locked{
-	dir = 8;
-	name = "HCZ Checkpoint Intercom";
-	pixel_x = 32;
-	channels = list(1)
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/securitypost)
 "jkl" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -29323,14 +29246,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
-"klC" = (
-/obj/item/device/radio/intercom/locked{
-	frequency = 10;
-	name = "HCZ Checkpoint Intercom";
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/securitypost)
 "klJ" = (
 /obj/machinery/door/airlock/security{
 	name = "HCZ Sergeant Equipment";
@@ -29862,11 +29777,6 @@
 	name = "ULCZ Checkpoint Office Access N";
 	pixel_y = 9;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/item/device/radio/intercom/locked{
-	dir = 4;
-	name = "LCZ Checkpoint Intercom";
-	pixel_x = -26
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/entrance_checkpoint)
@@ -31702,11 +31612,6 @@
 /obj/machinery/camera/network/hcz{
 	dir = 4
 	},
-/obj/item/device/radio/intercom/locked{
-	dir = 4;
-	name = "HCZ Checkpoint Intercom";
-	pixel_x = -26
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "mVy" = (
@@ -33232,11 +33137,6 @@
 	dir = 1
 	},
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
-/obj/item/device/radio/intercom/locked{
-	dir = 4;
-	name = "HCZ Checkpoint Intercom";
-	pixel_x = -26
-	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
 "oJB" = (
@@ -34773,15 +34673,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
-"qOA" = (
-/obj/item/device/radio/intercom/locked{
-	dir = 1;
-	name = "Humanoid Containment Intercom";
-	pixel_y = -32;
-	channels = list(1)
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site53/ulcz/humanoidcontainment)
 "qPI" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
@@ -35507,15 +35398,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
-"rFw" = (
-/obj/machinery/light,
-/obj/item/device/radio/intercom/locked{
-	dir = 4;
-	name = "HCZ Checkpoint Intercom";
-	pixel_x = -26
-	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/uhcz/hallways)
 "rFI" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/donut,
@@ -35664,14 +35546,6 @@
 /obj/machinery/chem_master/condimaster,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/humanoidcontainment)
-"rPv" = (
-/obj/item/device/radio/intercom/locked{
-	dir = 4;
-	name = "HCZ Checkpoint Intercom";
-	pixel_x = -26
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uhcz/securitypost)
 "rPD" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -35806,15 +35680,6 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/surface/bunker)
-"sac" = (
-/obj/item/device/radio/intercom/locked{
-	dir = 1;
-	name = "Humanoid Containment Intercom";
-	pixel_y = -32;
-	channels = list(1)
-	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/ulcz/humanoidcontainment)
 "sak" = (
 /obj/structure/bed/chair/pew/left/mahogany,
 /turf/simulated/floor/tiled/dark,
@@ -37360,11 +37225,6 @@
 	name = "UHCZ Western Shutter Window (side)";
 	pixel_y = 25;
 	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
-	},
-/obj/item/device/radio/intercom/locked{
-	dir = 4;
-	name = "HCZ Checkpoint Intercom";
-	pixel_x = -26
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
@@ -40057,18 +39917,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/humanoidcontainment)
-"wZP" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8;
-	icon_state = "warning"
-	},
-/obj/item/device/radio/intercom/locked{
-	frequency = 10;
-	name = "HCZ Checkpoint Intercom";
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled,
-/area/site53/llcz/entrance_checkpoint)
 "wZX" = (
 /obj/effect/paint_stripe/gray,
 /obj/structure/sign/directions/ez{
@@ -40798,12 +40646,6 @@
 /area/site53/uhcz/scp457containment)
 "xSS" = (
 /obj/effect/floor_decal/industrial/warning,
-/obj/item/device/radio/intercom/locked{
-	dir = 1;
-	name = "LCZ Checkpoint Intercom";
-	pixel_y = -32;
-	channels = list(1)
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "xTl" = (
@@ -60249,7 +60091,7 @@ jOV
 nyh
 nTU
 xpX
-enN
+nTU
 aVS
 azA
 agU
@@ -63592,10 +63434,10 @@ qnc
 qnc
 qnc
 eCZ
-ihx
+qnc
 vea
 agU
-wZP
+bhO
 aVW
 pXS
 bhO
@@ -77971,7 +77813,7 @@ adN
 kKf
 lTp
 xpf
-euO
+adU
 ass
 ass
 ass
@@ -77980,7 +77822,7 @@ ass
 vVj
 riw
 ass
-klC
+aEC
 aEC
 krd
 ass
@@ -78755,7 +78597,7 @@ aEC
 biX
 hat
 biX
-jhG
+aEC
 biV
 bit
 dRU
@@ -80291,7 +80133,7 @@ azA
 ass
 adP
 aMi
-rPv
+aEC
 aga
 ezj
 pPg
@@ -80796,7 +80638,7 @@ ajR
 ajR
 ajR
 aBA
-rFw
+aBT
 aBo
 aga
 bik
@@ -85663,7 +85505,7 @@ kkD
 hyr
 hNx
 hyr
-qOA
+hyr
 urC
 lHe
 lHe
@@ -86691,7 +86533,7 @@ rSk
 nsU
 nsU
 nsU
-sac
+nsU
 urC
 cNb
 nsU
