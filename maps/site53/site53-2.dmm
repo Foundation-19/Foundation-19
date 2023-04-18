@@ -20425,12 +20425,12 @@
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor/northright{
 	name = "Booth";
-	req_access = list("ACCESS_SECURITY_LEVEL3");
+	req_access = list("ACCESS_SECURITY_LEVEL2");
 	dir = 4
 	},
 /obj/machinery/door/window/brigdoor/northright{
 	name = "Booth";
-	req_access = list("ACCESS_SECURITY_LEVEL3");
+	req_access = list("ACCESS_SECURITY_LEVEL2");
 	dir = 8
 	},
 /obj/machinery/door/blast/shutters{
