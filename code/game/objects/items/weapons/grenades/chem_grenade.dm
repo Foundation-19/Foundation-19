@@ -151,10 +151,10 @@
 		spawn(0) //Otherwise det_time is erroneously set to 0 after this
 			if(istimer(detonator.a_left)) //Make sure description reflects that the timer has been reset
 				var/obj/item/device/assembly/timer/T = detonator.a_left
-				det_time = 10*T.time
+				det_time = T.time
 			if(istimer(detonator.a_right))
 				var/obj/item/device/assembly/timer/T = detonator.a_right
-				det_time = 10*T.time
+				det_time = T.time
 		return
 
 	playsound(src.loc, 'sound/effects/bamf.ogg', 50, 1)
