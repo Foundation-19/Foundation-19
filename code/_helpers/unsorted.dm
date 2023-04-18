@@ -183,7 +183,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 	return 0
 
 
-/proc/DirBlocked(turf/loc, dir, var/list/whitelist = list())
+/proc/DirBlocked(turf/loc, dir, list/whitelist = list())
 	for(var/obj/structure/window/D in loc)
 		if((!D.density) || (is_type_in_list(D, whitelist)))			continue
 		if(D.dir == SOUTHWEST)	return 1
