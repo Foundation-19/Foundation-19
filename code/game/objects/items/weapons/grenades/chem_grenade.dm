@@ -64,10 +64,10 @@
 		detonator = det
 		if(istimer(detonator.a_left))
 			var/obj/item/device/assembly/timer/T = detonator.a_left
-			det_time = 10*T.time
+			det_time = T.time
 		if(istimer(detonator.a_right))
 			var/obj/item/device/assembly/timer/T = detonator.a_right
-			det_time = 10*T.time
+			det_time = T.time
 		icon_state = initial(icon_state) +"_ass"
 		SetName("unsecured grenade with [beakers.len] containers[detonator?" and detonator":""]")
 		stage = 1
