@@ -25,9 +25,9 @@
 	var/auto_open_doors
 
 	var/placement_explosion_dev =   1
-	var/placement_explosion_heavy = 2
-	var/placement_explosion_light = 6
-	var/placement_explosion_flash = 4
+	var/placement_explosion_heavy = 1
+	var/placement_explosion_light = 3
+	var/placement_explosion_flash = 2
 
 /datum/random_map/droppod/New(seed, tx, ty, tz, tlx, tly, do_not_apply, do_not_announce, supplied_drop, list/supplied_drops, automated)
 
