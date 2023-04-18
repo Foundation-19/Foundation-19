@@ -32462,9 +32462,6 @@
 /area/site53/ulcz/hallways)
 "nMW" = (
 /obj/machinery/door/airlock/glass/civilian{
-	name = "Humanoid Containment Cell"
-	},
-/obj/machinery/door/airlock/glass/civilian{
 	name = "SCP 527 Dorm (Mr Fish)"
 	},
 /turf/simulated/floor/tiled/techmaint,
