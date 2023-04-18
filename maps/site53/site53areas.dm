@@ -347,6 +347,12 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
 
+/area/site53/ulcz/humanoidcontainment
+	name = "\improper Humanoid Containment"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
+
 /area/site53/ulcz/scp999
 	name = "\improper SCP-999"
 	icon_state = "research"
