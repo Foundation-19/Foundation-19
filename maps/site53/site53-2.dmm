@@ -10713,20 +10713,19 @@
 /turf/simulated/floor,
 /area/site53/science/seniorresearcherb)
 "aCm" = (
-/obj/structure/catwalk,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/lattice{
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8";
 	plane = DEFAULT_PLANE
 	},
+/obj/structure/catwalk,
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "aCn" = (
@@ -14881,18 +14880,17 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
 "aOA" = (
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
-	icon_state = "1-8"
+	icon_state = "1-8";
+	plane = DEFAULT_PLANE
 	},
+/obj/structure/catwalk,
 /obj/machinery/camera/network/scp106{
 	dir = 1;
 	name = "SCP-106 Upper Observation Catwalk South"
-	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
@@ -20647,18 +20645,6 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
-"bhI" = (
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
-	},
-/obj/structure/catwalk,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/open,
-/area/site53/uhcz/scp106containment)
 "bhK" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	name = "ULCZ Maintenance"
@@ -22263,16 +22249,14 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/uhcz/scp247containment)
 "ciE" = (
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8";
 	plane = DEFAULT_PLANE
 	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
-	},
+/obj/structure/catwalk,
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "ciN" = (
@@ -22679,17 +22663,15 @@
 /turf/simulated/floor,
 /area/site53/ulcz/humanoidcontainment)
 "cFN" = (
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/light{
+/obj/structure/catwalk,
+/obj/machinery/light/spot{
 	dir = 4
-	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
@@ -26648,28 +26630,24 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/ulcz/maintenance)
 "hsY" = (
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8";
+	plane = DEFAULT_PLANE
+	},
+/obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
-	},
+/obj/structure/catwalk,
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "hsZ" = (
@@ -27529,16 +27507,14 @@
 /turf/simulated/floor/tiled,
 /area/site53/lowertrams/brownline)
 "ihM" = (
-/obj/machinery/light/spot,
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
-	},
+/obj/structure/catwalk,
+/obj/machinery/light/spot,
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "iik" = (
@@ -27970,17 +27946,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp263)
 "iIU" = (
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/catwalk,
 /obj/machinery/light{
 	dir = 1
-	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
@@ -29406,18 +29380,16 @@
 /turf/simulated/floor/reinforced,
 /area/site53/ulcz/hallways)
 "koS" = (
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/catwalk,
 /obj/machinery/camera/network/scp106{
 	dir = 4;
 	name = "SCP-106 Outdoor Observation Catwalk West"
-	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
@@ -30774,18 +30746,16 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "lWq" = (
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/catwalk,
 /obj/machinery/camera/network/scp106{
 	dir = 1;
 	name = "SCP-106 Outdoor Observation Catwalk South"
-	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
@@ -31309,18 +31279,16 @@
 /turf/simulated/floor/wood,
 /area/site53/ulcz/scp2427_3)
 "mxN" = (
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/catwalk,
 /obj/machinery/camera/network/scp106{
 	dir = 4;
 	name = "SCP-106 Upper Observation Catwalk"
-	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
@@ -31669,15 +31637,13 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
 "mSX" = (
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
-	},
+/obj/structure/catwalk,
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "mTN" = (
@@ -31966,15 +31932,13 @@
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
 "niQ" = (
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
-	},
+/obj/structure/catwalk,
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "njj" = (
@@ -32424,17 +32388,15 @@
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
 "nJV" = (
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/catwalk,
 /obj/machinery/camera/network/scp106{
 	name = "SCP-106 Outdoor Observation Catwalk South";
-	plane = DEFAULT_PLANE
-	},
-/obj/structure/lattice{
 	plane = DEFAULT_PLANE
 	},
 /turf/simulated/open,
@@ -32572,21 +32534,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
-"nRo" = (
-/obj/structure/catwalk,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
-	},
-/turf/simulated/open,
-/area/site53/uhcz/scp106containment)
 "nRz" = (
 /obj/structure/table/standard,
 /obj/item/tray,
@@ -33239,15 +33186,13 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
 "oHH" = (
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
-	},
+/obj/structure/catwalk,
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "oHL" = (
@@ -34249,17 +34194,15 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp263research)
 "qbz" = (
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/catwalk,
 /obj/machinery/light{
 	dir = 8
-	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
@@ -35802,20 +35745,18 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
 "rXl" = (
-/obj/structure/catwalk,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
+/obj/structure/catwalk,
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "rXP" = (
@@ -36767,20 +36708,18 @@
 /turf/simulated/floor/reinforced,
 /area/site53/reswing/robotics)
 "tcK" = (
-/obj/structure/catwalk,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
+/obj/structure/catwalk,
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "tcL" = (
@@ -37612,20 +37551,18 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/humanoidcontainment)
 "uhK" = (
-/obj/structure/catwalk,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
+/obj/structure/catwalk,
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "uhL" = (
@@ -37646,7 +37583,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
 "uiA" = (
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -37658,15 +37595,11 @@
 	icon_state = "1-4"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
+/obj/structure/catwalk,
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
@@ -37939,10 +37872,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/securitypost)
 "uDT" = (
+/obj/structure/lattice,
 /obj/structure/catwalk,
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
-	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "uEA" = (
@@ -38478,15 +38409,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp012)
 "vkJ" = (
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
-	},
+/obj/structure/catwalk,
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "vlk" = (
@@ -40678,16 +40605,14 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/armory)
 "xFg" = (
-/obj/structure/catwalk,
+/obj/structure/lattice,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/light,
-/obj/structure/lattice{
-	plane = DEFAULT_PLANE
-	},
+/obj/structure/catwalk,
+/obj/machinery/light/spot,
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "xFL" = (
@@ -90621,7 +90546,7 @@ niQ
 niQ
 mxN
 qbz
-bhI
+niQ
 uiA
 niQ
 niQ
@@ -90879,7 +90804,7 @@ uDT
 uDT
 uDT
 uDT
-nRo
+oHH
 uDT
 uDT
 uDT
@@ -91136,7 +91061,7 @@ oCm
 oCm
 oCm
 dUf
-nRo
+oHH
 bwI
 oCm
 oCm
@@ -91391,11 +91316,11 @@ xCX
 mSX
 rXl
 cFN
-bhI
-bhI
+niQ
+niQ
 hsY
-bhI
-bhI
+niQ
+niQ
 cFN
 tcK
 ciE
@@ -93961,11 +93886,11 @@ xCX
 vkJ
 uhK
 qbz
-bhI
-bhI
+niQ
+niQ
 koS
-bhI
-bhI
+niQ
+niQ
 qbz
 aCm
 ihM
