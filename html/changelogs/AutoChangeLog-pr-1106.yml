@@ -1,0 +1,11 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - bugfix: Assemblies (timers, igniters) properly update their icon when you attach
+      them.
+  - bugfix: Grenade detonation time is no longer 10x actual value.
+  - bugfix: Smoke spreads out now!
+  - bugfix: Smoke now has a fade out effect, which was originally implemented but
+      broken.
+  - bugfix: Smoke will no longer affect mobs through walls and windows.
+  - bugfix: Smoke no longer leaves behind broken turf shadows.
