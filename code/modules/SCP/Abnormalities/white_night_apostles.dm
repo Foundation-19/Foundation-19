@@ -24,7 +24,7 @@
 	var/can_act = TRUE
 	var/death_counter = 0
 
-/mob/living/simple_animal/hostile/apostle/ClickOn(atom/A)
+/mob/living/simple_animal/hostile/apostle/RangedAttack(atom/A)
 	if(!can_act)
 		return
 	. = ..()
@@ -113,12 +113,85 @@
 
 /mob/living/simple_animal/hostile/apostle/scythe/guardian
 	name = "guardian apostle"
+	icon_state = "apostle_guardian"
+	icon_living = "apostle_guardian"
+	natural_weapon = /obj/item/natural_weapon/apostle_scythe/guardian
 	scythe_range = 3
 	scythe_damage = 300
 
 /obj/item/natural_weapon/apostle_scythe/guardian
 	name = "guardian scythe"
-	attack_verb = list("slashed")
-	hitsound = 'sound/scp/abnormality/white_night/scythe.ogg'
-	force = 30
+	force = 45
+
+/mob/living/simple_animal/hostile/apostle/spear
+	name = "spear apostle"
+	icon_state = "apostle_spear"
+	icon_living = "apostle_spear"
+	natural_weapon = /obj/item/natural_weapon/apostle_spear
+	var/spear_cooldown
+	var/spear_cooldown_time = 10 SECONDS
+	var/spear_max = 50
+	var/spear_damage = 300
+	var/list/been_hit = list()
+
+/obj/item/natural_weapon/apostle_spear
+	name = "apostle spear"
+	attack_verb = list("stabbed", "punctured")
+	hitsound = 'sound/scp/abnormality/white_night/spear.ogg'
+	force = 25
 	sharp = TRUE
+	edge = 1
+
+/mob/living/simple_animal/hostile/apostle/spear/proc/SpearAttack(target)
+	if(spear_cooldown > world.time)
+		return
+	can_act = FALSE
+	var/dir_to_target = get_dir(src, target)
+	var/turf/T = get_turf(src)
+	for(var/i = 1 to spear_max)
+		T = get_step(T, dir_to_target)
+		if(T.density)
+			if(i < 4) // Mob attempted to dash into a wall too close, stop it
+				can_act = TRUE
+				return
+			break
+		new /obj/effect/temp_visual/sparkle(T)
+	spear_cooldown = world.time + spear_cooldown_time
+	playsound(get_turf(src), 'sound/scp/abnormality/white_night/spear_charge.ogg', 75, 0, 5)
+	SLEEP_CHECK_DEATH(22)
+	been_hit = list()
+	playsound(get_turf(src), 'sound/scp/abnormality/white_night/spear_dash.ogg', 100, 0, 20)
+	DoDash(dir_to_target, 0)
+
+/mob/living/simple_animal/hostile/apostle/spear/proc/DoDash(move_dir, times_ran)
+	var/stop_charge = FALSE
+	if(times_ran >= spear_max)
+		stop_charge = TRUE
+	var/turf/T = get_step(get_turf(src), move_dir)
+	if(!T)
+		can_act = TRUE
+		return
+	if(T.density)
+		stop_charge = TRUE
+	for(var/obj/structure/window/W in T)
+		W.shatter()
+	for(var/obj/machinery/door/D in T)
+		if(D.density)
+			addtimer(CALLBACK (D, .obj/machinery/door/proc/open))
+	if(stop_charge)
+		can_act = TRUE
+		return
+	forceMove(T)
+	for(var/turf/TF in view(1, T))
+		new /obj/effect/temp_visual/smoke(TF)
+		for(var/mob/living/L in TF)
+			if(L.faction == faction)
+				continue
+			if(L in been_hit)
+				continue
+			visible_message(SPAN_DANGER("[src] runs through [L]!"))
+			L.apply_damage(spear_damage, BRUTE, null, DAM_DISPERSED)
+			new /obj/effect/temp_visual/bloodsplatter(get_turf(L), pick(GLOB.alldirs))
+			been_hit |= L
+	addtimer(CALLBACK(src, .proc/DoDash, move_dir, (times_ran + 1)), 0.5) // SPEED
+

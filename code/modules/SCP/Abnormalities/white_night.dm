@@ -130,7 +130,7 @@
 		return
 	InitiateConversion(H)
 
-/mob/living/simple_animal/hostile/megafauna/white_night/ClickOn(atom/A)
+/mob/living/simple_animal/hostile/megafauna/white_night/RangedAttack(atom/A)
 	. = ..()
 	if(client && !A.Adjacent(src))
 		switch(chosen_attack)
@@ -372,9 +372,9 @@
 		if(1,11)
 			apostle_type = /mob/living/simple_animal/hostile/apostle/scythe/guardian
 		/*if(4,5,6)
-			apostle_type = /mob/living/simple_animal/hostile/apostle/staff
+			apostle_type = /mob/living/simple_animal/hostile/apostle/staff*/
 		if(7,8,9,10)
-			apostle_type = /mob/living/simple_animal/hostile/apostle/spear*/
+			apostle_type = /mob/living/simple_animal/hostile/apostle/spear
 	var/mob/living/simple_animal/hostile/apostle/A = new apostle_type(get_turf(H))
 	A.name = H.real_name
 	H.mind.transfer_to(A)
