@@ -38232,7 +38232,7 @@
 	id_tag = "ULCZ Checkpoint Central Window";
 	name = "ULCZ Checkpoint Central Window";
 	pixel_y = -23;
-	req_access = list("ACCESS_SECURITY_LEVEL3")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/light{
 	dir = 8
