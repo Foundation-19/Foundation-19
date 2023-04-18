@@ -166,7 +166,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 
 
-/proc/LinkBlocked(turf/A, turf/B, var/list/whitelist)
+/proc/LinkBlocked(turf/A, turf/B, list/whitelist)
 	if(A == null || B == null) return 1
 	var/adir = get_dir(A,B)
 	var/rdir = get_dir(B,A)
