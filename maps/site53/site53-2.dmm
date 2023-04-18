@@ -23969,11 +23969,6 @@
 /obj/structure/table/reinforced,
 /obj/item/device/radio,
 /obj/item/device/radio,
-/obj/item/device/radio/intercom/locked{
-	dir = 4;
-	name = "Humanoid Containment Intercom";
-	pixel_x = -26
-	},
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/item/boombox,
