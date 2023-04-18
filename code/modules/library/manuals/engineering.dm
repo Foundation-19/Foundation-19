@@ -362,57 +362,6 @@
 	title = "Hacking"
 	url = "Hacking"
 
-/obj/item/book/manual/engineering_singularity_safety
-	name = "Singularity Safety in Special Circumstances"
-	icon_state ="bookEngineeringSingularitySafety"
-	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
-	title = "Singularity Safety in Special Circumstances"
-
-	dat = {"<html>
-				<head>
-				<style>
-				h1 {font-size: 18px; margin: 15px 0px 5px;}
-				h2 {font-size: 15px; margin: 15px 0px 5px;}
-				li {margin: 2px 0px 2px 15px;}
-				ul {margin: 5px; padding: 0px;}
-				ol {margin: 5px; padding: 0px 15px;}
-				body {font-size: 13px; font-family: Verdana;}
-				</style>
-				</head>
-				<body>
-				<h1>Singularity Safety in Special Circumstances</h1>
-
-				<h2>Power outage</h2>
-
-				A power problem has made you lose power? Could be wiring problems or syndicate power sinks. In any case follow these steps:
-
-				<ol>
-					<li><b><font color='red'>PANIC!</font></b></li>
-					<li>Get your ass over to engineering! <b>QUICKLY!!!</b></li>
-					<li>Get to the <b>Area Power Controller</b> which controls the power to the emitters.</li>
-					<li>Swipe it with your <b>ID card</b> - if it doesn't unlock, continue with step 15.</li>
-					<li>Open the console and disengage the cover lock.</li>
-					<li>Pry open the APC with a <b>Crowbar.</b></li>
-					<li>Take out the empty <b>power cell.</b></li>
-					<li>Put in the new, <b>full power cell</b> - if you don't have one, continue with step 15.</li>
-					<li>Quickly put on a <b>Radiation suit.</b></li>
-					<li>Check if the <b>singularity field generators</b> withstood the down-time - if they didn't, continue with step 15.</li>
-					<li>Since disaster was averted you now have to ensure it doesn't repeat. If it was a powersink which caused it and if the engineering APC is wired to the same powernet, which the powersink is on, you have to remove the piece of wire which links the APC to the powernet. If it wasn't a powersink which caused it, then skip to step 14.</li>
-					<li>Grab your crowbar and pry away the tile closest to the APC.</li>
-					<li>Use the wirecutters to cut the wire which is connecting the grid to the terminal. </li>
-					<li>Go to the bar and tell the guys how you saved them all. Stop reading this guide here.</li>
-					<li><b>GET THE FUCK OUT OF THERE!!!</b></li>
-				</ol>
-
-				<h2>Shields get damaged</h2>
-
-				<ol>
-					<li><b>GET THE FUCK OUT OF THERE!!! FORGET THE WOMEN AND CHILDREN, SAVE YOURSELF!!!</b></li>
-				</ol>
-				</body>
-			</html>
-			"}
-
 /obj/item/book/manual/ripley_build_and_repair
 	name = "APLU \"Ripley\" Construction and Operation Manual"
 	icon_state ="book"

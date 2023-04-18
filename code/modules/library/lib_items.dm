@@ -117,7 +117,6 @@
 	new /obj/item/book/manual/engineering_hacking(src)
 	new /obj/item/book/manual/engineering_guide(src)
 	new /obj/item/book/manual/atmospipes(src)
-	new /obj/item/book/manual/engineering_singularity_safety(src)
 	new /obj/item/book/manual/evaguide(src)
 	new /obj/item/book/manual/rust_engine(src)
 	update_icon()

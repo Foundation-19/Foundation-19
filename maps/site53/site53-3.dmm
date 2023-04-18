@@ -1188,8 +1188,8 @@
 /obj/structure/closet/secure_closet/engineering_electrical{
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
+/turf/simulated/floor,
+/area/site53/zonecommanderoffice)
 "cD" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
@@ -1441,12 +1441,6 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 1;
-	dir = 4;
-	id_tag = "LCZ Upper Maintenance Hatch";
-	name = "LCZ Upper Maintenance Hatch"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/zonecommanderoffice)
@@ -1831,13 +1825,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/op2)
 "eb" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
+/turf/simulated/floor,
+/area/site53/zonecommanderoffice)
 "ec" = (
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/titanium,
@@ -1978,15 +1967,11 @@
 "et" = (
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 8;
+	icon_state = "1-8"
 	},
-/obj/machinery/light/small{
-	dir = 4;
-	icon_state = "bulb1"
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
+/turf/simulated/floor,
+/area/site53/zonecommanderoffice)
 "eu" = (
 /obj/structure/closet/secure_closet/medical2{
 	req_access = list("ACCESS_MEDICAL_LEVEL3")
@@ -2353,13 +2338,11 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/equipmentroom)
 "fp" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/obj/machinery/light/small{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
+/turf/simulated/floor,
+/area/site53/zonecommanderoffice)
 "fq" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -2396,15 +2379,10 @@
 /area/site53/uez/equipmentroom)
 "ft" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
+/turf/simulated/floor,
+/area/site53/zonecommanderoffice)
 "fu" = (
 /obj/structure/table/woodentable/walnut,
 /obj/structure/bookcase/manuals/medical{
@@ -2666,22 +2644,12 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/hall)
 "gf" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Maintenance"
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 1;
+/obj/machinery/light/small{
 	dir = 4;
-	id_tag = "LCZ Upper Maintenance Hatch";
-	name = "LCZ Upper Maintenance Hatch"
+	pixel_y = 8
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
+/turf/simulated/floor,
+/area/site53/zonecommanderoffice)
 "gg" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/boombox,
@@ -2707,11 +2675,6 @@
 "gl" = (
 /obj/machinery/light/small{
 	dir = 1
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
@@ -2740,17 +2703,13 @@
 /area/site53/maintenance/surfacewest)
 "gp" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
+/turf/simulated/floor,
+/area/site53/zonecommanderoffice)
 "gq" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/mcrsubstation)
@@ -4284,12 +4243,6 @@
 	dir = 1;
 	icon_state = "tube1"
 	},
-/obj/machinery/button/blast_door{
-	id_tag = "LCZ Upper Maintenance Hatch";
-	name = "LCZ Upper Maintenance Hatch";
-	pixel_y = 34;
-	req_access = list("ACCESS_SECURITY_LEVEL4")
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/zonecommanderoffice)
 "kn" = (
@@ -5292,8 +5245,8 @@
 /obj/structure/closet/secure_closet/engineering_welding{
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
+/turf/simulated/floor,
+/area/site53/zonecommanderoffice)
 "mW" = (
 /obj/machinery/door/airlock/command{
 	name = "Zone Commander's Office";
@@ -7930,9 +7883,16 @@
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "xF" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/titanium,
-/area/site53/maintenance/surfacewest)
+/obj/machinery/power/smes/buildable/preset/ds90/substation_full{
+	RCon_tag = "Self-Destruct Substation"
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor,
+/area/site53/zonecommanderoffice)
 "xK" = (
 /obj/machinery/button/alternate/door/bolts{
 	id_tag = "ezcell3";
@@ -8217,8 +8177,8 @@
 	dir = 1;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
+/turf/simulated/floor,
+/area/site53/zonecommanderoffice)
 "zx" = (
 /obj/machinery/organ_printer/robot/mapped,
 /obj/machinery/light{
@@ -8916,19 +8876,14 @@
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/restaurantkitchenarea)
 "Er" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	dir = 1
 	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 1;
-	dir = 4;
-	id_tag = "LCZ Upper Maintenance Hatch";
-	name = "LCZ Upper Maintenance Hatch"
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
+/turf/simulated/floor,
+/area/site53/zonecommanderoffice)
 "Es" = (
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "ezcell3";
@@ -9843,18 +9798,15 @@
 /area/site53/medical/isolation)
 "Ls" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 1;
-	dir = 4;
-	id_tag = "LCZ Upper Maintenance Hatch";
-	name = "LCZ Upper Maintenance Hatch"
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
+/turf/simulated/floor,
+/area/site53/zonecommanderoffice)
 "Lv" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 1
@@ -10305,19 +10257,14 @@
 /turf/simulated/floor/tiled,
 /area/site53/uez/armory)
 "PM" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/power/breakerbox/activated{
+	RCon_tag = "Self-Destruct Bypass"
 	},
-/obj/machinery/button/blast_door{
-	id_tag = "LCZ Upper Maintenance Hatch";
-	name = "LCZ Upper Maintenance Hatch";
-	pixel_y = 34;
-	req_access = list("ACCESS_SECURITY_LEVEL4")
+/obj/machinery/light/small{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
+/turf/simulated/floor,
+/area/site53/zonecommanderoffice)
 "PR" = (
 /obj/structure/bed/chair/padded,
 /turf/simulated/floor/tiled/techfloor,
@@ -11055,8 +11002,8 @@
 	dir = 1;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/maintenance/surfacewest)
+/turf/simulated/floor,
+/area/site53/zonecommanderoffice)
 "Vu" = (
 /obj/effect/paint_stripe/white,
 /obj/structure/table/glass,
@@ -11454,6 +11401,14 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/dark,
 /area/site53/medical/morgue)
+"YF" = (
+/obj/structure/lattice,
+/obj/structure/cable{
+	d1 = 32;
+	icon_state = "32-1"
+	},
+/turf/simulated/open,
+/area/site53/zonecommanderoffice)
 "YH" = (
 /obj/structure/morgue,
 /obj/machinery/light{
@@ -18154,13 +18109,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-tb
-Gg
-Vr
+ty
 xF
+PM
+eb
+Ls
+YF
+ty
 aQ
 aQ
 aQ
@@ -18411,13 +18366,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-tb
-Gg
+ty
+Er
+gp
+ft
+et
 cC
-xF
+ty
 aQ
 aQ
 aQ
@@ -18668,13 +18623,13 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-tb
-Gg
+ty
+fp
+eb
+eb
+eb
 mU
-xF
+ty
 aQ
 aQ
 aQ
@@ -18925,20 +18880,20 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-tb
-Gg
+ty
+eb
+eb
+eb
+eb
 zw
-xF
-xF
-xF
-xF
-xF
-xF
-xF
-xF
+ty
+ty
+ty
+ty
+ty
+ty
+ty
+ty
 ty
 ty
 ty
@@ -19182,25 +19137,25 @@ dA
 dA
 dA
 dA
+ty
+eb
+gf
+eb
+gf
+Vr
+ty
 dA
 dA
 dA
-tb
-Ly
-eb
-Ls
-et
-eb
-eb
-eb
-eb
-eb
-eb
-eb
-et
-Ls
-fp
-tb
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -19439,25 +19394,25 @@ dA
 dA
 dA
 dA
+ty
+ty
+ty
+ty
+ty
+ty
+ty
 dA
 dA
 dA
-tb
-tb
-tb
-tb
-tb
-tb
-tb
-tb
-tb
-tb
-tb
-tb
-tb
-tb
-Er
-tb
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -19712,9 +19667,9 @@ dA
 dA
 dA
 dA
-tb
-Er
-tb
+dA
+dA
+dA
 dA
 dA
 dA
@@ -19969,9 +19924,9 @@ dA
 dA
 dA
 dA
-tb
-Er
-tb
+dA
+dA
+dA
 dA
 dA
 dA
@@ -20226,9 +20181,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -20483,9 +20438,9 @@ dA
 dA
 dA
 dA
-bk
-ft
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -20740,9 +20695,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -20997,9 +20952,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -21254,9 +21209,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -21511,9 +21466,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -21768,9 +21723,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -22025,9 +21980,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -22282,9 +22237,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -22539,9 +22494,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -22796,9 +22751,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -23053,9 +23008,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -23310,9 +23265,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -23567,9 +23522,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -23824,9 +23779,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -24081,9 +24036,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -24338,9 +24293,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -24595,9 +24550,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -24852,9 +24807,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -25109,9 +25064,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -25366,9 +25321,9 @@ dA
 dA
 dA
 dA
-bk
-ft
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -25623,9 +25578,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -25880,9 +25835,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -26137,9 +26092,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -26394,9 +26349,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -26651,9 +26606,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -26908,9 +26863,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -27165,9 +27120,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -27422,9 +27377,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -27679,9 +27634,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -27936,9 +27891,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -28193,9 +28148,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -28450,9 +28405,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -28707,9 +28662,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -28964,9 +28919,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -29221,9 +29176,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -29478,9 +29433,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -29735,9 +29690,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -29992,9 +29947,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -30249,9 +30204,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -30506,9 +30461,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -30763,9 +30718,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -31020,9 +30975,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -31277,9 +31232,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -31534,9 +31489,9 @@ dA
 dA
 dA
 dA
-bk
-ft
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -31791,9 +31746,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -32048,9 +32003,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -32305,9 +32260,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -32562,9 +32517,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -32819,9 +32774,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -33076,9 +33031,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -33333,9 +33288,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -33590,9 +33545,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -33847,9 +33802,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -34104,9 +34059,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -34361,9 +34316,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -34618,9 +34573,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -34875,9 +34830,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -35132,9 +35087,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -35389,9 +35344,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -35646,9 +35601,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -35903,9 +35858,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -36160,9 +36115,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -36417,9 +36372,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -36674,9 +36629,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -36931,9 +36886,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -37188,9 +37143,9 @@ dA
 dA
 dA
 dA
-bk
-ft
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -37445,9 +37400,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -37702,9 +37657,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -37959,9 +37914,9 @@ dA
 dA
 dA
 dA
-bk
-Gg
-bk
+dA
+dA
+dA
 dA
 dA
 dA
@@ -38217,7 +38172,7 @@ dA
 dA
 dA
 bk
-gf
+bk
 bk
 bk
 bk
@@ -38474,7 +38429,7 @@ dA
 dA
 dA
 bk
-PM
+gm
 gm
 go
 gw
@@ -38732,8 +38687,8 @@ dA
 dA
 bk
 gl
-eb
-gp
+gm
+Ly
 gx
 gm
 bk
