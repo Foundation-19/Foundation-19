@@ -6302,8 +6302,12 @@
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
 "oN" = (
-/obj/effect/paint_stripe/white,
-/turf/simulated/wall/titanium,
+/obj/machinery/power/apc/hyper{
+	dir = 8
+	},
+/obj/structure/cable,
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor/plating,
 /area/space)
 "oO" = (
 /obj/effect/catwalk_plated/dark,
@@ -8157,18 +8161,9 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
 "to" = (
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/structure/cable{
-	dir = 1
-	},
-/obj/machinery/power/apc/hyper{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/site53/engineering/maintenance/llczmaint)
+/obj/effect/paint_stripe/white,
+/turf/simulated/wall/prepainted,
+/area/space)
 "tp" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
@@ -9585,6 +9580,10 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentline)
+"wF" = (
+/obj/effect/paint_stripe/white,
+/turf/simulated/wall/prepainted,
+/area/site53/engineering/maintenance/llczmaint)
 "wG" = (
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor,
@@ -10228,6 +10227,13 @@
 /obj/structure/closet,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/kitchenbotanybubble)
+"yj" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor/plating,
+/area/space)
 "yk" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/door/airlock/multi_tile/glass/security{
@@ -10496,6 +10502,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
+"zh" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/catwalk_plated/dark,
+/turf/simulated/floor/plating,
+/area/space)
 "zi" = (
 /obj/machinery/camera/network/lcz{
 	dir = 1
@@ -16987,6 +17000,17 @@
 	},
 /turf/simulated/floor,
 /area/site53/lhcz/scp049containment)
+"QN" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb1"
+	},
+/turf/simulated/floor/plating,
+/area/site53/engineering/maintenance/llczmaint)
 "QO" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/railing/mapped,
@@ -18583,6 +18607,19 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp8containment)
+"Vq" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb1"
+	},
+/turf/simulated/floor/plating,
+/area/space)
 "Vs" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
@@ -46014,10 +46051,10 @@ gq
 gq
 gq
 gq
-gq
-gq
-gq
-gq
+to
+to
+to
+to
 Eh
 gq
 pC
@@ -46271,10 +46308,10 @@ gq
 gq
 gq
 gq
-gq
-gq
+to
+Vq
 oN
-aN
+wF
 bV
 aN
 aN
@@ -46528,14 +46565,14 @@ gq
 gq
 gq
 gq
-gq
-gq
-oN
 to
+yj
+zh
+ri
 ab
 cj
 ri
-ri
+QN
 ri
 ri
 Uz
