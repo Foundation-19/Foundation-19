@@ -1,0 +1,4 @@
+author: Tsurupeta
+delete-after: true
+changes:
+  - rscadd: Server revision now shows TMs and local commits.

@@ -1,0 +1,4 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - bugfix: Sets 2427-3's default language to English
