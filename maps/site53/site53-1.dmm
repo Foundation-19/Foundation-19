@@ -6308,7 +6308,7 @@
 /obj/structure/cable,
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
-/area/space)
+/area/site53/engineering/maintenance/llczmaint)
 "oO" = (
 /obj/effect/catwalk_plated/dark,
 /obj/effect/floor_decal/industrial/warning,
@@ -8160,10 +8160,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"to" = (
-/obj/effect/paint_stripe/white,
-/turf/simulated/wall/prepainted,
-/area/space)
 "tp" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
@@ -10233,7 +10229,7 @@
 	},
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
-/area/space)
+/area/site53/engineering/maintenance/llczmaint)
 "yk" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/door/airlock/multi_tile/glass/security{
@@ -10502,13 +10498,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lhcz/scp1102room)
-"zh" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/floor/plating,
-/area/space)
 "zi" = (
 /obj/machinery/camera/network/lcz{
 	dir = 1
@@ -18619,7 +18608,7 @@
 	icon_state = "bulb1"
 	},
 /turf/simulated/floor/plating,
-/area/space)
+/area/site53/engineering/maintenance/llczmaint)
 "Vs" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
@@ -46051,10 +46040,10 @@ gq
 gq
 gq
 gq
-to
-to
-to
-to
+wF
+wF
+wF
+wF
 Eh
 gq
 pC
@@ -46308,7 +46297,7 @@ gq
 gq
 gq
 gq
-to
+wF
 Vq
 oN
 wF
@@ -46565,9 +46554,9 @@ gq
 gq
 gq
 gq
-to
+wF
 yj
-zh
+ri
 ri
 ab
 cj
