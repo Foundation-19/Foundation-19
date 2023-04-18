@@ -18,6 +18,8 @@
 	// Power cells
 	// Hats
 	// Helmets
+	// Clothing
+	// Armor
 	// Melee weapons
 	// Ranged weapons
 	// Antagonist stuff
@@ -55,6 +57,40 @@
 		/obj/item/clothing/head/bomb_hood/security = 400,
 		/obj/item/clothing/head/helmet/merc = 300,
 		/obj/item/clothing/head/helmet/swat = 250,
+		/obj/item/clothing/under/casual_pants = 400,
+		/obj/item/clothing/under/rank/guard = 400,
+		/obj/item/clothing/under/rank/ntwork = 400,
+		/obj/item/clothing/under/rank/guard/nanotrasen = 400,
+		/obj/item/clothing/under/rank/ntwork/nanotrasen = 400,
+		/obj/item/clothing/under/suit_jacket/corp/nanotrasen = 400,
+		/obj/item/clothing/under/rank/guard/heph = 400,
+		/obj/item/clothing/under/rank/scientist/zeng = 400,
+		/obj/item/clothing/under/rank/scientist/executive/zeng = 400,
+		/obj/item/clothing/under/casual_pants/classicjeans = 400,
+		/obj/item/clothing/under/casual_pants/blackjeans = 400,
+		/obj/item/clothing/under/casual_pants/greyjeans = 400,
+		/obj/item/clothing/under/casual_pants/baggy/greyjeans = 400,
+		/obj/item/clothing/under/casual_pants/baggy/track = 400,
+		/obj/item/clothing/under/casual_pants/baggy/camo = 350,
+		/obj/item/clothing/under/rank/security = 300,
+		/obj/item/clothing/under/rank/dispatch = 300,
+		/obj/item/clothing/under/rank/warden = 250,
+		/obj/item/clothing/under/rank/warden/corp = 250,
+		/obj/item/clothing/under/syndicate = 100,
+		/obj/item/clothing/under/syndicate/combat = 100,
+		/obj/item/clothing/under/syndicate/terragov = 100,
+		/obj/item/clothing/suit/armor = 500,
+		/obj/item/clothing/suit/armor/pcarrier/medium = 500,
+		/obj/item/clothing/suit/armor/riot = 450,
+		/obj/item/clothing/suit/armor/bulletproof = 450,
+		/obj/item/clothing/suit/armor/laserproof = 450,
+		/obj/item/clothing/suit/armor/vest/warden = 450,
+		/obj/item/clothing/suit/armor/swat/officer = 400,
+		/obj/item/clothing/suit/armor/vest/ert = 300,
+		/obj/item/clothing/suit/armor/vest/ert/security = 300,
+		/obj/item/clothing/suit/storage/vest/tactical = 250,
+		/obj/item/clothing/suit/storage/vest/merc = 250,
+		/obj/item/clothing/suit/armor/pcarrier/tan/tactical = 250,
 		/obj/item/excalibur = 20,
 		/obj/item/gun/projectile/pistol = 80,
 		/obj/item/gun/projectile/pistol/military = 60,
@@ -78,8 +114,8 @@
 // Generate random loot for lucky people to find
 /obj/structure/scp_216/Initialize()
 	. = ..()
-	for(var/i = 1 to rand(6,12))
-		var/code = rand(0, 9999999)
+	for(var/i = 1 to 35)
+		var/code = rand(0, 999999) // Not infinitely impossible to find loot
 		if(code in all_codes)
 			i -= 1
 			continue
@@ -87,8 +123,7 @@
 		GenerateRandomItemsAt(code)
 
 /obj/structure/scp_216/Destroy()
-	for(var/atom/A in contents) // Forever gone
-		QDEL_NULL(A)
+	all_codes = list() // Forever gone
 	return ..()
 
 /obj/structure/scp_216/on_update_icon()
