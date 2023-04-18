@@ -23641,7 +23641,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/scp513)
 "dPU" = (
-/mob/living/carbon/human/scp_527,
+/obj/effect/landmark{
+	name = "scp527"
+	},
 /turf/simulated/floor/lino,
 /area/site53/ulcz/humanoidcontainment)
 "dQS" = (
