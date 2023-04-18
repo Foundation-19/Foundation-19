@@ -10722,8 +10722,7 @@
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
-	icon_state = "1-8";
-	plane = DEFAULT_PLANE
+	icon_state = "1-8"
 	},
 /obj/structure/catwalk,
 /turf/simulated/open,
@@ -14884,8 +14883,7 @@
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
-	icon_state = "1-8";
-	plane = DEFAULT_PLANE
+	icon_state = "1-8"
 	},
 /obj/structure/catwalk,
 /obj/machinery/camera/network/scp106{
@@ -22253,8 +22251,7 @@
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
-	icon_state = "1-8";
-	plane = DEFAULT_PLANE
+	icon_state = "1-8"
 	},
 /obj/structure/catwalk,
 /turf/simulated/open,
@@ -26639,8 +26636,7 @@
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
-	icon_state = "1-8";
-	plane = DEFAULT_PLANE
+	icon_state = "1-8"
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -26648,6 +26644,9 @@
 	icon_state = "2-8"
 	},
 /obj/structure/catwalk,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
 "hsZ" = (
@@ -27775,6 +27774,19 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
+"ixG" = (
+/obj/structure/lattice,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/open,
+/area/site53/uhcz/scp106containment)
 "iyl" = (
 /turf/simulated/floor/wood,
 /area/site53/ulcz/humanoidcontainment)
@@ -32396,8 +32408,7 @@
 	},
 /obj/structure/catwalk,
 /obj/machinery/camera/network/scp106{
-	name = "SCP-106 Outdoor Observation Catwalk South";
-	plane = DEFAULT_PLANE
+	name = "SCP-106 Outdoor Observation Catwalk South"
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
@@ -37600,6 +37611,9 @@
 /obj/structure/catwalk,
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/simulated/open,
 /area/site53/uhcz/scp106containment)
@@ -90804,7 +90818,7 @@ uDT
 uDT
 uDT
 uDT
-oHH
+ixG
 uDT
 uDT
 uDT
@@ -91061,7 +91075,7 @@ oCm
 oCm
 oCm
 dUf
-oHH
+ixG
 bwI
 oCm
 oCm

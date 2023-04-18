@@ -13,14 +13,8 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/machinery/power/apc/hyper{
-	dir = 1
-	},
 /obj/structure/cable{
-	dir = 1
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
 /area/site53/engineering/maintenance/llczmaint)
@@ -6307,6 +6301,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/scp8containment)
+"oN" = (
+/obj/effect/paint_stripe/white,
+/turf/simulated/wall/titanium,
+/area/space)
 "oO" = (
 /obj/effect/catwalk_plated/dark,
 /obj/effect/floor_decal/industrial/warning,
@@ -8158,6 +8156,19 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
+"to" = (
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/cable{
+	dir = 1
+	},
+/obj/machinery/power/apc/hyper{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/site53/engineering/maintenance/llczmaint)
 "tp" = (
 /obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
@@ -46262,7 +46273,7 @@ gq
 gq
 gq
 gq
-gq
+oN
 aN
 bV
 aN
@@ -46519,8 +46530,8 @@ gq
 gq
 gq
 gq
-gq
-aN
+oN
+to
 ab
 cj
 ri
