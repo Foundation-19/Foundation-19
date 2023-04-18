@@ -1,0 +1,10 @@
+author: GGarciaECE
+delete-after: true
+changes:
+  - rscadd: Adds in in-game SOP for testing.
+  - code_imp: Deletes some unused paper objects.
+  - rscadd: Humanoid Containment Zone (now only includes Mister Fish that was newly
+      added)
+  - rscadd: LCZ and HCZ checkpoint tweaks
+  - rscadd: HCZ Security offices relocated to HCZ checkpoint
+  - rscadd: Some maintenance tunnels were removed to make LCZ more secure
