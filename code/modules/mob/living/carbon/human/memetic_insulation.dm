@@ -53,7 +53,7 @@ var/debuff_miniscule = 3
 			return 100
 		return clamp((((AUDIBLE_RANGE_FULL - clamp((distance_from_origin - cut_off)**2, 0, AUDIBLE_RANGE_FULL))/AUDIBLE_RANGE_FULL)  * 100), 0, 100)
 	else
-		if(hearable_range <= get_dist_euclidian(get_turf(src), get_turf(origin)))
+		if(hearable_range >= get_dist_euclidian(get_turf(src), get_turf(origin)))
 			return TRUE
 		else
 			return FALSE
