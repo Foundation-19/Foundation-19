@@ -14,7 +14,7 @@ env:
 
 jobs:
   DreamChecker:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
       - name: Setup Cache
@@ -43,7 +43,7 @@ jobs:
           chmod +x send.sh
           ./send.sh failure $WEBHOOK_URL
   Code:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
       - name: Setup Cache
@@ -53,6 +53,12 @@ jobs:
           key: ${{ runner.os }}-byond-${{ env.BYOND_MAJOR }}-${{ env.BYOND_MINOR }}
       - name: Install Dependencies
         run: sudo apt-get install -y uchardet
+      - name: Install RUST_G Deps
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt update || true
+          sudo apt install libssl1.1:i386
+          ldd librust_g.so
       - name: Run Tests
         env:
           TEST: CODE
@@ -69,7 +75,7 @@ jobs:
           chmod +x send.sh
           ./send.sh failure $WEBHOOK_URL
   Maps:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         map_path: [site53]
@@ -80,6 +86,12 @@ jobs:
         with:
           path: $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}
           key: ${{ runner.os }}-byond-${{ env.BYOND_MAJOR }}-${{ env.BYOND_MINOR }}
+      - name: Install RUST_G Deps
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt update || true
+          sudo apt install libssl1.1:i386
+          ldd librust_g.so
       - name: Run Tests
         env:
           TEST: MAP

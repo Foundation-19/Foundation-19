@@ -105,6 +105,7 @@ GLOBAL_VAR(href_logfile)
 
 	//TGS
 	TgsNew(new /datum/tgs_event_handler/impl, TGS_SECURITY_TRUSTED)
+	revdata.load_tgs_info()
 	TgsInitializationComplete();
 
 	//Emergency Fix
@@ -231,9 +232,8 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 		L["dd_version"] = world.byond_version // DreamDaemon version running on
 		L["dd_build"] = world.byond_build // DreamDaemon build running on
 
-		if(revdata.revision)
-			L["revision"] = revdata.revision
-			L["branch"] = revdata.branch
+		if(revdata)
+			L["revision"] = revdata.commit
 			L["date"] = revdata.date
 		else
 			L["revision"] = "unknown"

@@ -144,3 +144,9 @@
   - tweak: Monkeys do not restore as much satiety as humans do for 2427-3.
   checkraisefold:
   - bugfix: Cult's Summon Robes rune now works even when you have no current clothes.
+2023-04-18:
+  checkraisefold:
+  - balance: Changed Malfunctioning AIC gamemode from 2 minimum players to 20
+  cheesePizza2:
+  - rscadd: Adds Mister Fish as an UNUSED SCP. Go bug a mapper or something, I'm too
+      lazy.
