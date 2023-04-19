@@ -168,25 +168,25 @@
 
 	update_current_antag_max(SSticker.mode)
 	var/active_antags = get_active_antag_count()
-	message_admins("[uppertext(id)]: Found [active_antags]/[cur_max] active [role_text_plural].")
+	message_staff("[uppertext(id)]: Found [active_antags]/[cur_max] active [role_text_plural].")
 
 	if(active_antags >= cur_max)
-		message_admins("Could not auto-spawn a [role_text], active antag limit reached.")
+		message_staff("Could not auto-spawn a [role_text], active antag limit reached.")
 		return 0
 
 	build_candidate_list(SSticker.mode, flags & (ANTAG_OVERRIDE_MOB|ANTAG_OVERRIDE_JOB))
 	if(!candidates.len)
-		message_admins("Could not auto-spawn a [role_text], no candidates found.")
+		message_staff("Could not auto-spawn a [role_text], no candidates found.")
 		return 0
 
 	attempt_spawn(1) //auto-spawn antags one at a time
 	if(!pending_antagonists.len)
-		message_admins("Could not auto-spawn a [role_text], none of the available candidates could be selected.")
+		message_staff("Could not auto-spawn a [role_text], none of the available candidates could be selected.")
 		return 0
 
 	var/datum/mind/player = pending_antagonists[1]
 	if(!add_antagonist(player,0,0,0,1,1))
-		message_admins("Could not auto-spawn a [role_text], failed to add antagonist.")
+		message_staff("Could not auto-spawn a [role_text], failed to add antagonist.")
 		return 0
 
 	reset_antag_selection()

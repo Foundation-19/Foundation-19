@@ -44,10 +44,10 @@
  */
 /datum/tgui_panel/proc/analyze_telemetry(payload)
 	if(world.time > telemetry_requested_at + TGUI_TELEMETRY_RESPONSE_WINDOW)
-		message_admins("[key_name(client)] sent telemetry outside of the allocated time window.")
+		message_staff("[key_name(client)] sent telemetry outside of the allocated time window.")
 		return
 	if(telemetry_analyzed_at)
-		message_admins("[key_name(client)] sent telemetry more than once.")
+		message_staff("[key_name(client)] sent telemetry more than once.")
 		return
 	telemetry_analyzed_at = world.time
 	if(!payload)
@@ -57,7 +57,7 @@
 	if(len == 0)
 		return
 	if(len > TGUI_TELEMETRY_MAX_CONNECTIONS)
-		message_admins("[key_name(client)] was kicked for sending a huge telemetry payload")
+		message_staff("[key_name(client)] was kicked for sending a huge telemetry payload")
 		qdel(client)
 		return
 
@@ -95,7 +95,7 @@
 	// This fucker has a history of playing on a banned account.
 	if(found)
 		var/msg = "[key_name(client)] has a banned account in connection history! (Matched: [found["ckey"]], [found["address"]], [found["computer_id"]])"
-		message_admins(msg)
+		message_staff(msg)
 		log_admin(msg)
 
 	// Only log them all at the end, since it's not as important as reporting an evader

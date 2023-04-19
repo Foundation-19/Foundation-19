@@ -326,7 +326,7 @@ var/last_message_id = 0
 		return
 
 	if(evacuation_controller.cancel_evacuation())
-		log_and_message_admins("has cancelled the evacuation.", user)
+		log_and_message_staff("has cancelled the evacuation.", user)
 
 	return
 
@@ -364,7 +364,7 @@ var/last_message_id = 0
 		return
 
 	if(evacuation_controller.call_evacuation(user, _emergency_evac = emergency))
-		log_and_message_admins("[user? key_name(user) : "Autotransfer"] has called the shuttle.")
+		log_and_message_staff("[user? key_name(user) : "Autotransfer"] has called the shuttle.")
 
 /proc/init_autotransfer()
 

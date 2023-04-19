@@ -14,7 +14,7 @@
 		to_chat(user.mob, SPAN_WARNING("Mob doesn't have psionic powers!"))
 		return
 	if(!QDELETED(target.psi) && target.psi.owner == target)
-		log_and_message_admins("removed all psionics from [key_name(target)].")
+		log_and_message_staff("removed all psionics from [key_name(target)].")
 		to_chat(target, SPAN_NOTICE("<b>Your psionic powers vanish abruptly, leaving you cold and empty.</b>"))
 		QDEL_NULL(target.psi)
 		return TRUE
@@ -30,7 +30,7 @@
 	if(!target.psi)
 		to_chat(user.mob, SPAN_WARNING("Mob doesn't have psionic powers!"))
 		return
-	log_and_message_admins("triggered psi latencies for [key_name(target)].")
+	log_and_message_staff("triggered psi latencies for [key_name(target)].")
 	target.psi.check_latency_trigger(100, "outside intervention", redactive = TRUE)
 	return TRUE
 
@@ -47,5 +47,5 @@
 		to_chat(user.mob, SPAN_WARNING("HEY! STOP ABUSING HREFS BEFORE I REPORTED THAT!"))
 		return
 	target.set_psi_rank(params["psi_faculty"], faculty_rank)
-	log_and_message_admins("set [key_name(user.mob)]'s [params["psi_faculty"]] faculty to [faculty_rank].")
+	log_and_message_staff("set [key_name(user.mob)]'s [params["psi_faculty"]] faculty to [faculty_rank].")
 	return TRUE

@@ -42,11 +42,11 @@ SUBSYSTEM_DEF(circuit_components)
 /datum/controller/subsystem/circuit_components/disable()
 	..()
 	queued_components.Cut()
-	log_and_message_admins("Circuit component processing has been disabled.")
+	log_and_message_staff("Circuit component processing has been disabled.")
 
 /datum/controller/subsystem/circuit_components/enable()
 	..()
-	log_and_message_admins("Circuit component processing has been enabled.")
+	log_and_message_staff("Circuit component processing has been enabled.")
 
 // Store the entries like this so that components can be queued multiple times at once.
 // With immediate set, will generally imitate the order of the call stack if execution happened directly.

@@ -292,7 +292,7 @@
 				else if(target != locked)
 					if(locked in view(owner))
 						locked.throw_at(target, 14, 1.5, owner)
-						log_and_message_admins("used [src] to throw [locked] at [target].", user, owner.loc)
+						log_and_message_staff("used [src] to throw [locked] at [target].", user, owner.loc)
 						locked = null
 
 						var/obj/item/cell/C = owner.get_cell()
@@ -315,7 +315,7 @@
 					A.throw_at(get_edge_target_turf(A,get_dir(target, A)),dist,0.7)
 
 
-				log_and_message_admins("used [src]'s area throw on [target].", user, owner.loc)
+				log_and_message_staff("used [src]'s area throw on [target].", user, owner.loc)
 				var/obj/item/cell/C = owner.get_cell()
 				if(istype(C))
 					C.use(active_power_use * CELLRATE * 2) //bit more expensive to throw all
@@ -531,7 +531,7 @@
 		SPAN_DANGER("\The [owner] drives \the [src] into \the [target]."),
 		blind_message = SPAN_WARNING("You hear [audible].")
 	)
-	log_and_message_admins("used [src] on [target]", user, owner.loc)
+	log_and_message_staff("used [src] on [target]", user, owner.loc)
 	drill_head.durability -= 1
 	target.ex_act(2)
 

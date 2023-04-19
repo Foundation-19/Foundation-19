@@ -26,7 +26,7 @@
 		user_keys += key_name(user)
 
 	log_admin("[english_list(user_keys)] [message]")
-	message_admins("[english_list(user_keys)] [message]")
+	message_staff("[english_list(user_keys)] [message]")
 
 /proc/admin_attacker_log(mob/attacker, attacker_message)
 	if(!attacker)

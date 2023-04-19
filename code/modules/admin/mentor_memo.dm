@@ -30,7 +30,7 @@
 		if(findtext(memo,"<script",1,0) )
 			return
 		to_save(F[ckey], "[key] on [time2text(world.realtime,"(DDD) DD MMM hh:mm")]<br>[memo]")
-		message_admins("[key] set a mentor memo:<br>[memo]")
+		message_staff("[key] set a mentor memo:<br>[memo]")
 
 /client/proc/mentor_memo_show()
 	if(config.enable_memos)
@@ -55,6 +55,6 @@
 		if(ckey)
 			F.dir.Remove(ckey)
 			to_chat(src, "<b>Removed memo created by [ckey].</b>")
-			message_admins("[src] removed a mentor memo created by [ckey].")
+			message_staff("[src] removed a mentor memo created by [ckey].")
 
 #undef MENTOR_MEMO_FILE
