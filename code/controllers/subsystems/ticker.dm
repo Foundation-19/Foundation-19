@@ -100,7 +100,7 @@ SUBSYSTEM_DEF(ticker)
 		if(H.mind && !player_is_antag(H.mind, only_offstation_roles = 1))
 			var/datum/job/job = SSjobs.get_by_title(H.mind.assigned_role)
 			if(job && job.create_record)
-				CreateModularRecord(H)
+				H.CreateModularRecord()
 
 	for(var/I in round_start_events)
 		var/datum/callback/cb = I

@@ -9,7 +9,6 @@
 	var/list/access = list(list())                         //The access required to view the report.
 	var/list/datum/report_field/fields = list()            //A list of fields the report comes with, in order that they should be displayed.
 	var/available_on_ntnet = FALSE                             //Whether this report type should show up on NTNet.
-	var/logo                                               //Can be set to a pencode logo for use with some display methods.
 
 /datum/computer_file/report/New()
 	..()
@@ -135,7 +134,6 @@ no_html will strip any html, possibly killing useful formatting in the process.
 */
 /datum/computer_file/report/proc/generate_pencode(access, with_fields, no_html)
 	. = list()
-	. += "\[center\][logo]\[/center\]"
 	. += "\[center\]\[h2\][display_name()]\[/h2\]\[/center\]"
 	. += "\[grid\]"
 	for(var/datum/report_field/F in fields)

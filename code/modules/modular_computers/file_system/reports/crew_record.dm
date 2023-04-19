@@ -58,7 +58,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	// Generic record
 	set_name(H ? H.real_name : "Unset")
 	set_formal_name(formal_name)
-	set_job(H ? GetAssignment(H) : "Unset")
+	set_job(H ? H.get_assignment("Unset", "Unset") : "Unset")
 	set_sex(H ? H.get_sex() : "Unset")
 	set_age(H ? H.age : 30)
 	set_status(GLOB.default_physical_status)
@@ -116,7 +116,6 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	set_emplRecord(employment_record)
 
 	// Misc cultural info.
-	set_homeSystem(H ? html_decode(H.get_cultural_value(TAG_HOMEWORLD)) : "Unset")
 	set_faction(H ? html_decode(H.get_cultural_value(TAG_FACTION)) : "Unset")
 	set_religion(H ? html_decode(H.get_cultural_value(TAG_RELIGION)) : "Unset")
 
@@ -132,12 +131,26 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	// Antag record
 	set_antagRecord(H?.exploit_record && !jobban_isbanned(H, "Records") ? html_decode(H.exploit_record) : "")
 
+// Simple record to HTML (for paper purposes) conversion.
+// Not visually that nice, but it gets the work done, feel free to tweak it visually
+/datum/computer_file/report/crew_record/proc/record_to_html(access)
+	var/dat = "<tt><H2>RECORD DATABASE DATA DUMP</H2><i>Generated on: [stationdate2text()] [station_time_timestamp("hh:mm")]</i><br>******************************<br>"
+	dat += "<table>"
+	for(var/datum/report_field/F in src.fields)
+		if(F.verify_access(access))
+			dat += "<tr><td><b>[F.display_name()]</b>"
+			if(F.needs_big_box)
+				dat += "<tr>"
+			dat += "<td>[F.get_value()]"
+	dat += "</tt>"
+	return dat
+
 // Global methods
 // Used by character creation to create a record for new arrivals.
-/proc/CreateModularRecord(mob/living/carbon/human/H)
+/mob/living/carbon/human/proc/CreateModularRecord()
 	var/datum/computer_file/report/crew_record/CR = new/datum/computer_file/report/crew_record()
 	GLOB.all_crew_records.Add(CR)
-	CR.load_from_mob(H)
+	CR.load_from_mob(src)
 	return CR
 
 // Gets crew records filtered by set of positions
@@ -153,35 +166,12 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 				matches.Add(CR)
 	return matches
 
-// Simple record to HTML (for paper purposes) conversion.
-// Not visually that nice, but it gets the work done, feel free to tweak it visually
-/proc/record_to_html(datum/computer_file/report/crew_record/CR, access)
-	var/dat = "<tt><H2>RECORD DATABASE DATA DUMP</H2><i>Generated on: [stationdate2text()] [station_time_timestamp("hh:mm")]</i><br>******************************<br>"
-	dat += "<table>"
-	for(var/datum/report_field/F in CR.fields)
-		if(F.verify_access(access))
-			dat += "<tr><td><b>[F.display_name()]</b>"
-			if(F.needs_big_box)
-				dat += "<tr>"
-			dat += "<td>[F.get_value()]"
-	dat += "</tt>"
-	return dat
-
 /proc/get_crewmember_record(name)
 	name = sanitize(name)
 	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records)
 		if(CR.get_name() == name)
 			return CR
 	return null
-
-/proc/GetAssignment(mob/living/carbon/human/H)
-	if(!H)
-		return "Unassigned"
-	if(!H.mind)
-		return H.job
-	if(H.mind.role_alt_title)
-		return H.mind.role_alt_title
-	return H.mind.assigned_role
 
 #define GETTER_SETTER(PATH, KEY) /datum/computer_file/report/crew_record/proc/get_##KEY(){var/datum/report_field/F = locate(/datum/report_field/##PATH/##KEY) in fields; if(F) return F.get_value()} \
 /datum/computer_file/report/crew_record/proc/set_##KEY(given_value){var/datum/report_field/F = locate(/datum/report_field/##PATH/##KEY) in fields; if(F) F.set_value(given_value)}
