@@ -26444,6 +26444,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
+"hFz" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/mineral{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/site53/ulcz/maintenance)
 "hGB" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/monotile/white,
@@ -28630,6 +28638,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
+"keI" = (
+/turf/simulated/mineral/random{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
+/area/site53/ulcz/maintenance)
 "kgM" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
@@ -57957,9 +57970,9 @@ bgX
 aiq
 bgX
 bgX
-azA
-azA
-azA
+bgX
+bgX
+bgX
 aeS
 aKZ
 aLd
@@ -58211,12 +58224,12 @@ azA
 azA
 azA
 bgX
-aiq
-bgX
-bgX
-azA
-azA
-azA
+hFz
+keI
+keI
+keI
+keI
+keI
 aeS
 jFN
 aMj
@@ -58468,12 +58481,12 @@ azA
 azA
 azA
 bgX
-aiq
+hFz
 bgX
 bgX
-azA
-azA
-azA
+bgX
+bgX
+bgX
 aeS
 mij
 aLd
@@ -58725,7 +58738,7 @@ azA
 azA
 azA
 bgX
-aiq
+hFz
 bgX
 azA
 azA
@@ -58982,7 +58995,7 @@ azA
 azA
 azA
 bgX
-aiq
+hFz
 bgX
 azA
 azA
@@ -59239,7 +59252,7 @@ azA
 azA
 azA
 bgX
-aiq
+hFz
 bgX
 azA
 azA
@@ -59496,7 +59509,7 @@ azA
 azA
 azA
 bgX
-aiq
+hFz
 bgX
 azA
 azA
@@ -59753,7 +59766,7 @@ azA
 azA
 azA
 bgX
-aiq
+hFz
 bgX
 azA
 azA
@@ -60010,7 +60023,7 @@ azA
 azA
 azA
 bgX
-aiq
+hFz
 bgX
 azA
 azA
@@ -60267,7 +60280,7 @@ azA
 azA
 azA
 bgX
-aiq
+hFz
 bgX
 azA
 azA
@@ -60524,7 +60537,7 @@ azA
 azA
 azA
 bgX
-aiq
+hFz
 bgX
 azA
 azA
@@ -60781,7 +60794,7 @@ azA
 azA
 azA
 bgX
-aiq
+hFz
 bgX
 azA
 azA
@@ -61038,7 +61051,7 @@ azA
 azA
 azA
 bgX
-aiq
+hFz
 bgX
 azA
 azA
@@ -61295,7 +61308,7 @@ azA
 azA
 azA
 bgX
-aiq
+hFz
 bgX
 azA
 azA
