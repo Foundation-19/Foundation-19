@@ -150,3 +150,32 @@
   cheesePizza2:
   - rscadd: Adds Mister Fish as an UNUSED SCP. Go bug a mapper or something, I'm too
       lazy.
+2023-04-19:
+  GGarciaECE:
+  - rscadd: SCP 173 Chamber on Upper LCZ has been moved down one Z-Level in the corridor
+      that faces CDCZ. Getting there is now a small walk of 1 minute from CDCZ.
+  - rscadd: Some pipings and wiring was removed or otherwise changed to pass checks
+      and avoid redundancies
+  - rscadd: Fixed 3 inconsistent walls not being of same material as the others in
+      ULCZ
+  - bugfix: Fixed windoors and button access level in LCZ checkpoint
+  - bugfix: access levels of various doors and one button
+  - rscadd: Adds in in-game SOP for testing.
+  - code_imp: Deletes some unused paper objects.
+  - rscadd: Humanoid Containment Zone (now only includes Mister Fish that was newly
+      added)
+  - rscadd: LCZ and HCZ checkpoint tweaks
+  - rscadd: HCZ Security offices relocated to HCZ checkpoint
+  - rscadd: Some maintenance tunnels were removed to make LCZ more secure
+  Tsurupeta:
+  - rscadd: Server revision now shows TMs and local commits.
+  checkraisefold:
+  - bugfix: Assemblies (timers, igniters) properly update their icon when you attach
+      them.
+  - bugfix: Grenade detonation time is no longer 10x actual value.
+  - bugfix: Smoke spreads out now!
+  - bugfix: Smoke now has a fade out effect, which was originally implemented but
+      broken.
+  - bugfix: Smoke will no longer affect mobs through walls and windows.
+  - bugfix: Smoke no longer leaves behind broken turf shadows.
+  - bugfix: Sets 2427-3's default language to English
