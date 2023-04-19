@@ -23,8 +23,6 @@
 
 	var/defer_initialisation = FALSE //this shuttle will/won't be initialised automatically. If set to true, you are responsible for initialzing the shuttle manually.
 	                                 //Useful for shuttles that are initialed by map_template loading, or shuttles that are created in-game or not used.
-	var/logging_home_tag   //Whether in-game logs will be generated whenever the shuttle leaves/returns to the landmark with this landmark_tag.
-	var/logging_access     //Controls who has write access to log-related stuff; should correlate with pilot access.
 
 	var/mothershuttle //tag of mothershuttle
 	var/motherdock    //tag of mothershuttle landmark, defaults to starting location
@@ -54,8 +52,6 @@
 	if(src.name in SSshuttle.shuttles)
 		CRASH("A shuttle with the name '[name]' is already defined.")
 	SSshuttle.shuttles[src.name] = src
-	if(logging_home_tag)
-		new /datum/shuttle_log(src)
 	if(flags & SHUTTLE_FLAGS_PROCESS)
 		SSshuttle.process_shuttles += src
 	if(flags & SHUTTLE_FLAGS_SUPPLY)
@@ -68,7 +64,6 @@
 
 	SSshuttle.shuttles -= src.name
 	SSshuttle.process_shuttles -= src
-	SSshuttle.shuttle_logs -= src
 	if(SSsupply.shuttle == src)
 		SSsupply.shuttle = null
 
@@ -222,9 +217,6 @@
 
 		for(var/obj/structure/cable/C in A)
 			powernets |= C.powernet
-	if(logging_home_tag)
-		var/datum/shuttle_log/s_log = SSshuttle.shuttle_logs[src]
-		s_log.handle_move(current_location, destination)
 
 	translate_turfs(turf_translation, current_location.base_area, current_location.base_turf)
 	current_location = destination
