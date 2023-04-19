@@ -2521,6 +2521,7 @@
 #include "code\modules\modular_computers\file_system\programs\generic\records.dm"
 #include "code\modules\modular_computers\file_system\programs\generic\reports.dm"
 #include "code\modules\modular_computers\file_system\programs\generic\scanner.dm"
+#include "code\modules\modular_computers\file_system\programs\generic\scipnet_server.dm"
 #include "code\modules\modular_computers\file_system\programs\generic\supply.dm"
 #include "code\modules\modular_computers\file_system\programs\generic\wordprocessor.dm"
 #include "code\modules\modular_computers\file_system\programs\medical\suit_sensors.dm"
