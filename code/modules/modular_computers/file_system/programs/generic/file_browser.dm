@@ -101,6 +101,11 @@
 			var/datum/computer_file/file = HDD.find_file_by_name(params["name"])
 			if(!file || file.undeletable)
 				return
+			if(istype(file, /datum/computer_file/program))
+				var/datum/computer_file/program/prg = file
+				if(prg.program_state == PROGRAM_STATE_BACKGROUND)
+					prg.kill_program(1)
+					computer.idle_threads.Remove(prg)
 			HDD.remove_file(file)
 			return TRUE
 		if("PRG_usbdeletefile")
@@ -109,6 +114,11 @@
 			var/datum/computer_file/file = RHDD.find_file_by_name(params["name"])
 			if(!file || file.undeletable)
 				return
+			if(istype(file, /datum/computer_file/program))
+				var/datum/computer_file/program/prg = file
+				if(prg.program_state == PROGRAM_STATE_BACKGROUND)
+					prg.kill_program(1)
+					computer.idle_threads.Remove(prg)
 			RHDD.remove_file(file)
 			return TRUE
 		if("PRG_rename")

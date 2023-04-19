@@ -336,6 +336,9 @@ var/list/channel_to_radio_key = new
 					O.hear_talk(src, stars(message), verb, speaking)
 	INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, message, speaking, italics, speech_bubble_recipients, whispering, unique)
 
+	if(LAZYLEN(speech_bubble_recipients) && !whispering)
+		show_sound_effect(src.loc, src, soundicon = SFX_ICON_SMALL)
+
 	if(whispering)
 		log_whisper("[name]/[key] : [message]")
 	else

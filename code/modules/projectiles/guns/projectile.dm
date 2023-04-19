@@ -183,6 +183,7 @@
 													 SPAN_WARNING("You speed reload \the [src] with \the [AM]!"))
 					ammo_magazine = AM
 					playsound(loc, mag_insert_sound, 75, 1)
+					show_sound_effect(loc, user, SFX_ICON_SMALL)
 					update_icon()
 					AM.update_icon()
 					return
@@ -191,6 +192,7 @@
 				ammo_magazine = AM
 				user.visible_message("[user] inserts [AM] into [src].", SPAN_NOTICE("You insert [AM] into [src]."))
 				playsound(loc, mag_insert_sound, 50, 1)
+				show_sound_effect(loc, user, SFX_ICON_SMALL)
 			if(SPEEDLOADER)
 				if(loaded.len >= max_shells)
 					to_chat(user, SPAN_WARNING("[src] is full!"))

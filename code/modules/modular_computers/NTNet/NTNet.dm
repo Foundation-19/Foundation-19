@@ -7,6 +7,7 @@ var/global/datum/ntnet/ntnet_global = new()
 	var/list/logs = list()
 	var/list/available_station_software = list()
 	var/list/available_antag_software = list()
+	var/list/available_virus_software = list()
 	var/list/available_news = list()
 	var/list/chat_channels = list()
 	var/list/fileservers = list()
@@ -119,6 +120,7 @@ var/global/datum/ntnet/ntnet_global = new()
 /datum/ntnet/proc/build_software_lists()
 	available_station_software = list()
 	available_antag_software = list()
+	available_virus_software = list()
 	for(var/F in typesof(/datum/computer_file/program))
 		var/datum/computer_file/program/prog = new F
 		// Invalid type (shouldn't be possible but just in case), invalid filetype (not executable program) or invalid filename (unset program)
@@ -129,6 +131,8 @@ var/global/datum/ntnet/ntnet_global = new()
 			available_station_software.Add(prog)
 		if(prog.available_on_syndinet)
 			available_antag_software.Add(prog)
+		if(prog.program_malicious)
+			available_virus_software.Add(prog)
 
 // Generates service email list. Currently only used by broadcaster service
 /datum/ntnet/proc/build_emails_list()
@@ -141,6 +145,9 @@ var/global/datum/ntnet/ntnet_global = new()
 		if(filename == P.filename)
 			return P
 	for(var/datum/computer_file/program/P in available_antag_software)
+		if(filename == P.filename)
+			return P
+	for(var/datum/computer_file/program/P in available_virus_software)
 		if(filename == P.filename)
 			return P
 

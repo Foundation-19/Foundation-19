@@ -238,7 +238,7 @@ var/const/enterloopsanity = 100
 	for(var/turf/t in (trange(1,src) - src))
 		if(check_blockage)
 			if(!t.density)
-				if(!LinkBlocked(src, t) && !TurfBlockedNonWindow(t))
+				if(!LinkBlocked(src, t) && !t.contains_dense_objects_whitelist(list(/obj/structure/window)))
 					. += t
 		else
 			. += t
@@ -249,6 +249,16 @@ var/const/enterloopsanity = 100
 		var/turf/T = ad
 		if(T.x == src.x || T.y == src.y)
 			. += T
+
+/turf/proc/AdjacentTurfsWithWhitelist(check_blockage = TRUE, list/whitelist)
+	. = list()
+	for(var/turf/t in (trange(1,src) - src))
+		if(check_blockage)
+			if(!t.density)
+				if(!LinkBlocked(src, t, whitelist) && !t.contains_dense_objects_whitelist(whitelist))
+					. += t
+		else
+			. += t
 
 /turf/proc/Distance(turf/t)
 	if(get_dist(src,t) == 1)
@@ -262,7 +272,7 @@ var/const/enterloopsanity = 100
 	var/L[] = new()
 	for(var/turf/t in oview(src,1))
 		if(!t.density)
-			if(!LinkBlocked(src, t) && !TurfBlockedNonWindow(t))
+			if(!LinkBlocked(src, t) && !t.contains_dense_objects_whitelist(list(/obj/structure/window)))
 				L.Add(t)
 	return L
 
@@ -273,6 +283,12 @@ var/const/enterloopsanity = 100
 		if(A.density && !(A.atom_flags & ATOM_FLAG_CHECKS_BORDER))
 			return 1
 	return 0
+
+/turf/proc/contains_dense_objects_whitelist(list/whitelist) //checks if the turf is dense but ignores objects in whitelist
+	for(var/atom/A in contents)
+		if(A.density && !is_type_in_list(A, whitelist))
+			return TRUE
+	return FALSE
 
 //expects an atom containing the reagents used to clean the turf
 /turf/proc/clean(atom/source, mob/user = null, time = null, message = null)
