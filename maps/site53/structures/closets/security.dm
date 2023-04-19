@@ -276,7 +276,6 @@
 		/obj/item/gun/projectile/pistol/usp45,
 		/obj/item/ammo_magazine/scp/usp45 = 3,
 		/obj/item/ammo_magazine/box/acp45,
-		/obj/item
 	)
 
 /obj/structure/closet/secure_closet/guard/breachautomatics
