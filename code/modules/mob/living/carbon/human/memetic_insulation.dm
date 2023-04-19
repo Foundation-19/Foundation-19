@@ -18,7 +18,7 @@ var/debuff_miniscule = 3
 
 // AUDIO MEMETICS
 
-/mob/living/carbon/human/can_hear(atom/origin, var/return_granulated = 0, var/range_override = null) //Checks if a human can hear something. If theres no origin, just checks if the human can hear. Return granulated returns a number from 0-100 on how much something can be heard.
+/mob/living/carbon/human/can_hear(atom/origin, return_granulated = 0, range_override = null) //Checks if a human can hear something. If theres no origin, just checks if the human can hear. Return granulated returns a number from 0-100 on how much something can be heard.
 	var/hearable_range
 	var/is_concealed = FALSE//are we inside something that might dampen hearing?
 
@@ -67,7 +67,7 @@ var/debuff_miniscule = 3
 
 // VISUAL MEMETICS
 
-/mob/living/carbon/human/can_see(atom/origin, var/visual_memetic = 0) //Checks if origin can be seen by a human. visiual_memetics should be one if you're checking for a visual memetic hazard as opposed to say someone looking at scp 173. If origin is null, checks for if the human can see in general.
+/mob/living/carbon/human/can_see(atom/origin, visual_memetic = 0) //Checks if origin can be seen by a human. visiual_memetics should be one if you're checking for a visual memetic hazard as opposed to say someone looking at scp 173. If origin is null, checks for if the human can see in general.
 	var/turf/origin_turf
 	var/area/origin_area
 	if(eye_blind > 0) //this is different from blinded check as blinded is changed in the same way eye_blind is, meaning there can be a siutation where eye_blind is in effect but blinded is not set to true. Therefore, this check is neccesary as a pre-caution.
@@ -104,7 +104,7 @@ var/debuff_miniscule = 3
 
 	return TRUE
 
-/mob/living/carbon/human/proc/can_identify(atom/movable/origin, var/visual_memetic = 0) //Like can_see but takes into account distance, nearsightedness, and other factors. Meant to be used for if you can actually decipher what an object is or read it rather than just see it. visual_memetic is same as in can_see.
+/mob/living/carbon/human/proc/can_identify(atom/movable/origin, visual_memetic = 0) //Like can_see but takes into account distance, nearsightedness, and other factors. Meant to be used for if you can actually decipher what an object is or read it rather than just see it. visual_memetic is same as in can_see.
 	if(!can_see(origin, visual_memetic)) //cant read or otherwise identify something if you cant see it
 		return FALSE
 	if(!(isobj(origin) || ismob(origin)))
@@ -140,7 +140,7 @@ var/debuff_miniscule = 3
 
 	return FALSE
 
-/mob/living/carbon/human/proc/get_visual_insul(var/include_tint = 1) //gets total insulation from clothing/disabilities without any calculations. Include_tint is for if you want to include tints in your insulation.
+/mob/living/carbon/human/proc/get_visual_insul(include_tint = 1) //gets total insulation from clothing/disabilities without any calculations. Include_tint is for if you want to include tints in your insulation.
 	if((sdisabilities & BLINDED) || blinded || incapacitated(INCAPACITATION_KNOCKOUT)) // cant see if you're blind.
 		return V_INSL_PERFECT
 	if(include_tint)

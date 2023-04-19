@@ -33,12 +33,8 @@
 	if(D.secured || D2.secured)
 		return FALSE
 	if(user)
-		user.u_equip(D)
-		if(D2.loc == user)
-			user.u_equip(D2)
-		else if(istype(D2.loc, /obj/item/storage))
-			var/obj/item/storage/S = D2.loc
-			S.remove_from_storage(D2)
+		user.drop_from_inventory(D)
+		user.drop_from_inventory(D2)
 
 	D.holder = src
 	D2.holder = src
