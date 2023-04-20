@@ -434,7 +434,6 @@ SUBSYSTEM_DEF(jobs)
 		return
 
 	var/datum/job/job = get_by_title(rank)
-	var/list/spawn_in_storage
 
 	if(job)
 		if(H.client)
