@@ -409,6 +409,7 @@
 		else
 			user.visible_message(SPAN_WARNING("[user] hits the light!"), SPAN_WARNING("You hit the light!"), SPAN_WARNING("You hear glass cracking."))
 			playsound(loc, "glasscrack", 40, TRUE)
+			show_sound_effect(loc, user, SFX_ICON_SMALL)
 		attack_animation(user)
 
 	// attempt to stick weapon into light socket
@@ -778,6 +779,7 @@
 		force = 5
 		sharp = TRUE
 		playsound(loc, "glasscrack", 75, TRUE)
+		show_sound_effect(loc, soundicon = SFX_ICON_SMALL)
 		update_icon()
 
 /obj/item/light/proc/switch_on()

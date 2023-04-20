@@ -107,6 +107,7 @@ Contains helper procs for airflow, handled in /connection_group.
 	for(var/mob/M in hearers(src))
 		M.show_message(SPAN_DANGER("\The [src] slams into \a [A]!"),1,SPAN_DANGER("You hear a loud slam!"),2)
 	playsound(src.loc, "smash.ogg", 25, 1, -1)
+	show_sound_effect(src.loc)
 	var/weak_amt = istype(A,/obj/item) ? A:w_class : rand(1,5) //Heheheh
 	Weaken(weak_amt)
 	. = ..()
@@ -115,6 +116,7 @@ Contains helper procs for airflow, handled in /connection_group.
 	for(var/mob/M in hearers(src))
 		M.show_message(SPAN_DANGER("\The [src] slams into \a [A]!"),1,SPAN_DANGER("You hear a loud slam!"),2)
 	playsound(src.loc, "smash.ogg", 25, 1, -1)
+	show_sound_effect(src.loc)
 	. = ..()
 
 /obj/item/airflow_hit(atom/A)
@@ -125,6 +127,7 @@ Contains helper procs for airflow, handled in /connection_group.
 //	for(var/mob/M in hearers(src))
 //		M.show_message(SPAN_DANGER("[src] slams into [A]!"),1,SPAN_DANGER("You hear a loud slam!"),2)
 	playsound(src.loc, "punch", 25, 1, -1)
+	show_sound_effect(src.loc)
 	if (prob(33))
 		loc:add_blood(src)
 		bloody_body(src)

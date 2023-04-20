@@ -30,8 +30,8 @@
 	valid_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA, ACCESSORY_SLOT_ARMOR_M)
 
 /obj/item/clothing/suit/armor/vest/scp/lightarmor
-	name = "Armored anti-stab vest"
-	desc = "A synthetic armor vest, this one works well against cuts and bruises."
+	name = "light armored vest"
+	desc = "A light synthetic armor vest."
 	icon_state = "guard-armor"
 	w_class = ITEM_SIZE_NORMAL
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
@@ -39,7 +39,7 @@
 	armor = list(melee = 25, bullet = 25, laser = 30, energy = 35, bomb = 35, bio = 15, rad = 10)
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor
-	name = "Armored vest"
+	name = "armored vest"
 	desc = "A synthetic armor vest."
 	icon_state = "guard-armor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS

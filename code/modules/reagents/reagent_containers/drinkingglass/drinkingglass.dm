@@ -222,6 +222,7 @@
 		if(user.a_intent == I_HURT)
 			user.visible_message(SPAN_WARNING("[user] bashes \the [src] with a spoon, shattering it to pieces! What a rube."))
 			playsound(src, "shatter", 30, 1)
+			show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 			if(reagents)
 				user.visible_message(SPAN_NOTICE("The contents of \the [src] splash all over [user]!"))
 				reagents.splash(user, reagents.total_volume)

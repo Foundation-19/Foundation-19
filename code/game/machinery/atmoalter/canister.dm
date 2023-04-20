@@ -460,6 +460,7 @@ update_flag
 		user.do_attack_animation(src)
 		user.setClickCooldown(W.attack_cooldown + W.w_class) // Mirror the logic from base attack cooldowns
 		playsound(user, 'sound/weapons/smash.ogg', 50, TRUE)
+		show_sound_effect(src.loc, user)
 		return
 
 	. = ..()

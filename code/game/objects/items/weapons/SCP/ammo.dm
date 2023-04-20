@@ -209,16 +209,20 @@
 	ammo_type = /obj/item/ammo_casing/pistol/a50
 	max_ammo = 60
 
-// 10mm
-/obj/item/ammo_magazine/box/a10mm
+// 5.7x28mm
+/obj/item/ammo_magazine/box/a57
 	name = "ammunition box (5.7x28mm)"
 	icon_state = "usmc_box"
 	origin_tech = list(TECH_COMBAT = 2)
-	caliber = "10mm"
+	caliber = "5.7x28mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
 	ammo_type = /obj/item/ammo_casing/pistol/a57
 	max_ammo = 200
 	multiple_sprites = 1
+
+/obj/item/ammo_magazine/box/a57/rubber
+	name = "ammunition box (5.7x28mm rubber)"
+	ammo_type = /obj/item/ammo_casing/pistol/a57/rubber
 
 // 5.56
 /obj/item/ammo_magazine/box/a556
