@@ -18,6 +18,14 @@ GLOBAL_LIST_EMPTY(admin_departments)
 	var/authenticated = 0
 	var/department = null // our department
 	var/destination = null // the department we're sending to
+	var/command = 0
+
+/obj/machinery/photocopier/faxmachine/command
+	name = "Outbound fax machine"
+	icon = 'icons/obj/bureaucracy.dmi'
+	icon_state = "fax"
+	insert_anim = "faxsend"
+	command = 1
 
 /obj/machinery/photocopier/faxmachine/Initialize()
 	. = ..()
@@ -29,10 +37,13 @@ GLOBAL_LIST_EMPTY(admin_departments)
 			GLOB.admin_departments = list("[station_name()] Head Office", "[station_name()] Supply")
 
 	if(!destination)
-		if(length(GLOB.admin_departments))
-			destination = GLOB.admin_departments[1]
-		else if(length(GLOB.alldepartments))
+		if(length(GLOB.alldepartments))
 			destination = pick(GLOB.alldepartments)
+		else if(length(GLOB.admin_departments))
+			if(!command)
+				destination = null //Normally fax machines default to "Foundation Central Office", this prevents that.
+			else
+				destination = GLOB.admin_departments[1]
 
 	GLOB.allfaxes += src
 
@@ -122,7 +133,7 @@ GLOBAL_LIST_EMPTY(admin_departments)
 			dat += "<a href='byond://?src=\ref[src];remove=1'>Remove Item</a><br><br>"
 			dat += "<a href='byond://?src=\ref[src];send=1'>Send</a><br>"
 			dat += "<b>Currently sending:</b> [copyitem.name]<br>"
-			dat += "<b>Sending to:</b> <a href='byond://?src=\ref[src];dept=1'>[destination ? destination : "Nobody"]</a><br>"
+			dat += "<b>Sending to:</b> <a href='byond://?src=\ref[src];dept=1'>[destination ? destination : "Unset"]</a><br>"
 
 		else
 			dat += "Please insert paper to send via secure connection.<br><br>"
@@ -167,10 +178,16 @@ GLOBAL_LIST_EMPTY(admin_departments)
 		return TOPIC_REFRESH
 
 	if(href_list["dept"])
-		var/desired_destination = input(user, "Which department?", "Choose a department", "") as null|anything in (GLOB.alldepartments + GLOB.admin_departments)
-		if(desired_destination && CanInteract(user, state))
-			destination = desired_destination
-		return TOPIC_REFRESH
+		if(command)
+			var/desired_destination = input(user, "Which department?", "Choose a department", "") as null|anything in (GLOB.alldepartments + GLOB.admin_departments)
+			if(desired_destination && CanInteract(user, state))
+				destination = desired_destination
+			return TOPIC_REFRESH
+		else
+			var/desired_destination = input(user, "Which department?", "Choose a department", "") as null|anything in (GLOB.alldepartments)
+			if(desired_destination && CanInteract(user, state))
+				destination = desired_destination
+			return TOPIC_REFRESH
 
 	if(href_list["auth"])
 		if ( (!( authenticated ) && (scan)) )

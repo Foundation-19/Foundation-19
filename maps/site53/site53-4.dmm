@@ -4639,9 +4639,8 @@
 	dir = 4
 	},
 /obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "Comms Tower";
-	send_access = list("ACCESS_ADMIN_LEVEL2")
+/obj/machinery/photocopier/faxmachine/command{
+	department = "Communications Relay"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -4955,6 +4954,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"Tq" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/obj/item/paper/commsbriefing,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/upper_surface/commstower)
 "Ts" = (
 /obj/machinery/door/airlock/command{
 	name = "Communications Tower";
@@ -5053,6 +5060,10 @@
 /obj/machinery/camera/autoname{
 	dir = 8;
 	network = list("Entrance Zone Network")
+	},
+/obj/machinery/photocopier/faxmachine{
+	department = "Comms Tower";
+	send_access = list("ACCESS_ADMIN_LEVEL2")
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
@@ -32993,7 +33004,7 @@ hZ
 hZ
 hZ
 eH
-vh
+Tq
 kr
 gx
 eH
@@ -36082,10 +36093,10 @@ jW
 jK
 eH
 jZ
-kZ
+HT
 Yr
 jU
-HT
+kZ
 eH
 AY
 EH

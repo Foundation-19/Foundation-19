@@ -1256,12 +1256,17 @@ var/global/floorIsLava = 0
 	set name = "Send Fax"
 	set desc = "Sends a fax to this machine"
 
+
 	// Admin status checks
 	if (!istype(src,/datum/admins))
 		src = usr.client.holder
 	if (!istype(src,/datum/admins))
 		to_chat(usr, "Error: you are not an admin!")
 		return
+
+	//Security Notification
+	to_chat(usr, SPAN_WARNING("Attention: Please ensure high security communications are only sent to the sites communications tower."))
+
 
 	// Origin
 	var/list/option_list = GLOB.admin_departments.Copy() + GLOB.alldepartments.Copy() + "(Custom)" + "(Cancel)"
