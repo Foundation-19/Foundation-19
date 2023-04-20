@@ -68,6 +68,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/flee_distance = 30
 	//Are we fleeing?
 	var/is_fleeing = FALSE
+	//Our current step list (this is to avoid calling AStar unless neccesary)
+	var/list/steps_to_target = list()
 
 /mob/living/scp_173/Initialize()
 	GLOB.scp173s += src
@@ -85,7 +87,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		H.disable_blink(src)
 	next_blinks = null
 	next_blinks_join_time = null
-	target = null
+	clear_target()
 
 	GLOB.scp173s -= src
 	return ..()
@@ -310,45 +312,45 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(IsBeingWatched())
 		if(is_fleeing) //resets fleeing state if we are looked at
 			is_fleeing = FALSE
-			target = null
+			clear_target()
 		return
 	if(istype(loc, /obj/structure/scp173_cage))
-		loc.relaymove(src, NORTH) //just moves us north to try to break free from the cage
+		loc.relaymove(src, NORTH)
 		return
 
 	var/list/possible_human_targets = list()
 
-	for(var/mob/living/carbon/human/H in dview(7, src)) //Identifies possible targets
+	for(var/mob/living/carbon/human/H in dview(7, src)) //Identifies possible human targets
 		if(H.SCP)
 			continue
 		if(H.stat == DEAD)
 			continue
-		//if(!AStar(loc, H.loc, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=7, id=all_access_ID))
-			//continue // We can't reach this person anyways
+		if(!AStar(loc, H.loc, /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door)))
+			message_staff("[H] failed to be pathed to as target human")
+			continue
 		possible_human_targets += H
 
-	if(target) //this will handle any no longer valid targets
-		switch(target.type)
-			if(/mob/living/carbon/human)
-				var/mob/living/carbon/human/H = target
-				if(!(H in possible_human_targets))
-					target = null
-			if(/obj/machinery/light)
-				var/obj/machinery/light/L = target
-				if(L.get_status() != LIGHT_OK)
-					target = null
-			if(/turf)
-				if(LAZYLEN(possible_human_targets) && !is_fleeing) //If we get a possible target or if our wandering target is invalid we stop wandering and remove our wander target
-					target = null
+	if(target) //this will handle any invalid targets
+		if(ishuman(target))
+			var/mob/living/carbon/human/H = target
+			if(!(H in possible_human_targets))
+				clear_target()
+		else if(istype(target, /obj/machinery/light))
+			var/obj/machinery/light/L = target
+			if(L.get_status() != LIGHT_OK)
+				clear_target()
+		else if(isturf(target))
+			if(LAZYLEN(possible_human_targets) && !is_fleeing) //If we get a possible target or if our wandering target is invalid we stop wandering and remove our wander target
+				clear_target()
 
 	if(target && get_dist(loc, get_turf(target)) <= 1)
 		if(!isturf(target)) //If 173 has a non wander (non turf) target, and we are in range, we will attack
 			UnarmedAttack(target)
 		else //Otherwise, we just wipe the target turf 173 was wandering to
-			target = null
+			clear_target()
 		return
 
-	if(target || is_fleeing) //dont need to pick a target if we're fleeing or already have one
+	if(target) //dont need to pick a target if we already have one
 		move_to_target()
 		return
 
@@ -357,56 +359,87 @@ GLOBAL_LIST_EMPTY(scp173s)
 	switch(LAZYLEN(possible_human_targets))
 		if(0)
 			if(prob(50)) //If we have no targets, 50% chance we will choose a wander target
-				target = pick_turf_in_range(loc, wander_distance, list(/proc/isfloor))
+				assign_target(pick_turf_in_range(loc, wander_distance, list(/proc/isfloor)))
 
 		if(1,2) //If we have a manageable amount of targets, we will pursue or try to break a light
 			if(((our_turf.get_lumcount() > 0.1) && prob(30)) && !istype(target, /obj/machinery/light))
-				target = get_viable_light_target()
+				assign_target(get_viable_light_target())
 			else
-				target = DEFAULTPICK(possible_human_targets, null)
+				assign_target(DEFAULTPICK(possible_human_targets, null))
 
 		if(3,INFINITY) //If we have too many targets, we will attempt to flee or break a light
 			if((our_turf.get_lumcount() > 0.1) && !istype(target, /obj/machinery/light))
 				if(prob(60) && !is_fleeing)
-					target = get_viable_flee_target()
+					assign_target(get_viable_flee_target())
 					is_fleeing = TRUE
 				else
-					target = get_viable_light_target()
+					assign_target(get_viable_light_target())
 
 	move_to_target()
 	return
 
-/mob/living/scp_173/proc/move_to_target() //since we need to move 173 multiple times in order to simulate its speed, 173 has its own function for this
-	var/turf/step_turf = get_step_towards(src, target)
+/mob/living/scp_173/proc/assign_target(atom/movable/new_target) //Assigns a new target for 173
+	clear_target()
+
+	if(!new_target)
+		return FALSE
+
+	var/list/temp_steps_to_target = AStar(loc, get_turf(new_target), /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door)) //Flee distance is used as max_nodes since that should be the farthest that 173's AI will ever attempt to path
+	if(temp_steps_to_target) //Double check to ensure that whatever target we assign we can actually get to
+		steps_to_target = temp_steps_to_target
+		target = new_target
+		message_staff("173 Pathfinding succeded for [new_target]")
+		return TRUE
+	else
+		message_staff("173 Pathfinding failed for [new_target]")
+		return FALSE
+
+/mob/living/scp_173/proc/clear_target()
+	target = null
+	LAZYCLEARLIST(steps_to_target)
+
+/mob/living/scp_173/proc/move_to_target() //Moves 173 towards the target using steps list and also deals with any obstacles
+	if(!target || !steps_to_target)
+		return
+
+	var/turf/step_turf = steps_to_target[1]
 
 	for(var/obj/obstacle in step_turf.contents) //we will handle any obstacles, if there are any, instead of moving
-		if(istype(obstacle, /obj/machinery/door)) //Break doors
+		if(istype(obstacle, /obj/machinery/door))
 			var/obj/machinery/door/D = obstacle
 			if(!D.density)
 				continue
-			if((get_area(D) == spawn_area))
+			if((get_area(D) == spawn_area) && (istype(D, /obj/machinery/door/blast)))
 				continue
 			UnarmedAttack(D)
 			return
 		else if(obstacle.can_climb(src)) //If we can climb it, we should
 			obstacle.do_climb(src)
 			return
-		else if(istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/grille)) //Break windows
+		else if(istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/grille))
 			UnarmedAttack(obstacle)
 			return
 
 	for(var/move=0, move < tile_move_range, move++)
-		step_towards(src, target)
+		if(!steps_to_target)
+			break
+		step_towards(src,steps_to_target[1])
+		if(get_turf(src) != steps_to_target[1]) //if for whatever reason we are unable to move to the next turf, we clear our target and stop
+			clear_target()
+			break
+		else
+			LAZYREMOVE(steps_to_target, steps_to_target[1])
 
-/mob/living/scp_173/proc/get_viable_flee_target()
+/mob/living/scp_173/proc/get_viable_flee_target() //gets a viable target turf for 173 to flee to
 	var/turf/simulated/floor/flee_target = pick_turf_in_range(loc, flee_distance, list(/proc/isfloor))
 	var/count = 0 //dont want the while loop going to infinity
 
-	while(!AStar(loc, flee_target, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=7)) //we ignore doors as we can break them
+	while(!AStar(loc, flee_target, /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, adjacent_arg = list(/obj/structure/window, /obj/machinery/door)))
 		flee_target = pick_turf_in_range(loc, flee_distance, list(/proc/isfloor))
 		count++
 		if(count >= 50)
-			return
+			message_staff("173 flee pathfinding failed")
+			return null
 
 	return flee_target
 
@@ -416,7 +449,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			continue
 		if(light_in_view.get_status() != LIGHT_OK)
 			continue
-		if(!AStar(loc, light_in_view.loc, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=7))
+		if(!AStar(loc, light_in_view.loc, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=15, max_node_depth=7))
 			continue
 		return light_in_view
 	return null
