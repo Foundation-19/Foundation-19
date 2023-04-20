@@ -179,3 +179,11 @@
   - bugfix: Smoke will no longer affect mobs through walls and windows.
   - bugfix: Smoke no longer leaves behind broken turf shadows.
   - bugfix: Sets 2427-3's default language to English
+2023-04-20:
+  EgorDinamit:
+  - rscadd: Added SCP-216. It is a safe with near infinite storage space. Some slots
+      come pre-occupied with (potentially) treasure!
+  TheDarkElites:
+  - code_imp: Astar Whitelist Tools
+  Yawet330:
+  - tweak: Unfucks pain.
