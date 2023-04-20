@@ -485,12 +485,13 @@ var/list/gear_datums = list()
 				A.onRoundstart()
 				. = A
 	else
-		var/atom/placed_in = H.equip_to_storage(item)
-		if(placed_in)
-			to_chat(H, SPAN_NOTICE("Placing \the [item] in your [placed_in.name]!"))
-		else if(H.equip_to_appropriate_slot(item))
+		if(H.equip_to_appropriate_slot(item))
 			to_chat(H, SPAN_NOTICE("Placing \the [item] in your inventory!"))
-		else if(H.put_in_hands(item))
-			to_chat(H, SPAN_NOTICE("Placing \the [item] in your hands!"))
 		else
-			to_chat(H, SPAN_DANGER("Dropping \the [item] on the ground!"))
+			var/atom/placed_in = H.equip_to_storage(item)
+			if(placed_in)
+				to_chat(H, SPAN_NOTICE("Placing \the [item] in your [placed_in.name]!"))
+			else if(H.put_in_hands(item))
+				to_chat(H, SPAN_NOTICE("Placing \the [item] in your hands!"))
+			else
+				to_chat(H, SPAN_DANGER("Dropping \the [item] on the ground!"))

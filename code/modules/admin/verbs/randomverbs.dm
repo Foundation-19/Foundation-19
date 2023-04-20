@@ -48,7 +48,7 @@
 	if(!holder)
 		to_chat(src, "Only staff members may use this command.")
 
-	var/age = alert(src, "Age check", "Show accounts yonger then _____ days","7", "30" , "All")
+	var/age = alert(src, "Age check", "Show accounts younger then _____ days","7", "30" , "All")
 
 	if(age == "All")
 		age = 9999999

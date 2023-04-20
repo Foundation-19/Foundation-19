@@ -386,24 +386,24 @@
 
 	var/obj/O = user.get_equipped_item(slot_head) // This will most likely kill you if you are wearing a spacesuit, and it's 100% intended
 	if(O && !istype(O, /obj/item/clothing/head/culthood) && user.unEquip(O))
-		user.equip_to_slot_or_del(new /obj/item/clothing/head/culthood/alt(user), slot_head)
+		user.equip_to_slot_or_store_or_drop(new /obj/item/clothing/head/culthood/alt(user), slot_head)
 	O = user.get_equipped_item(slot_wear_suit)
 	if(O && !istype(O, /obj/item/clothing/suit/cultrobes) && user.unEquip(O))
-		user.equip_to_slot_or_del(new /obj/item/clothing/suit/cultrobes/alt(user), slot_wear_suit)
+		user.equip_to_slot_or_store_or_drop(new /obj/item/clothing/suit/cultrobes/alt(user), slot_wear_suit)
 	O = user.get_equipped_item(slot_shoes)
 	if(O && !istype(O, /obj/item/clothing/shoes/cult) && user.unEquip(O))
-		user.equip_to_slot_or_del(new /obj/item/clothing/shoes/cult(user), slot_shoes)
+		user.equip_to_slot_or_store_or_drop(new /obj/item/clothing/shoes/cult(user), slot_shoes)
 
 	O = user.get_equipped_item(slot_back)
 	if(istype(O, /obj/item/storage) && !istype(O, /obj/item/storage/backpack/cultpack) && user.unEquip(O)) // We don't want to make the vox drop their nitrogen tank, though
 		var/obj/item/storage/backpack/cultpack/C = new /obj/item/storage/backpack/cultpack(user)
-		user.equip_to_slot_or_del(C, slot_back)
+		user.equip_to_slot_or_store_or_drop(C, slot_back)
 		if(C)
 			for(var/obj/item/I in O)
 				I.forceMove(C)
 	else if(!O)
 		var/obj/item/storage/backpack/cultpack/C = new /obj/item/storage/backpack/cultpack(user)
-		user.equip_to_slot_or_del(C, slot_back)
+		user.equip_to_slot_or_store_or_drop(C, slot_back)
 
 	user.update_icons()
 

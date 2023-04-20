@@ -41,7 +41,6 @@ var/list/outfits_decls_by_type_
 	var/l_hand = null
 	var/holster = null
 	var/list/backpack_contents = list() // In the list(path=count,otherpath=count) format
-	var/list/belt_contents = list()
 
 	var/id_types
 	var/id_desc
@@ -96,7 +95,7 @@ var/list/outfits_decls_by_type_
 			if ("exclude" in G.species_restricted) // are they excluded?
 				G.cut_fingertops()
 				// I could optimize this bit when we are trying to apply the gloves to e.g. Vox, a species still restricted despite G.cut_fingertops(). But who cares if this is codebase is like a plate of spaghetti twice over the brim, right? RIGHT?
-				H.equip_to_slot_or_del(G,slot_gloves) // try again
+				H.equip_to_slot_or_store_or_drop(G,slot_gloves) // try again
 		else
 			qdel(G)
 	// end Gloves
@@ -126,12 +125,7 @@ var/list/outfits_decls_by_type_
 	for(var/path in backpack_contents)
 		var/number = backpack_contents[path]
 		for(var/i=0,i<number,i++)
-			H.equip_to_slot_or_store_or_drop(new path(H), slot_in_backpack)
-
-	for(var/path in belt_contents)
-		var/number = belt_contents[path]
-		for(var/i=0,i<number,i++)
-			H.equip_to_slot_or_store_or_drop(new path(H), slot_in_belt)
+			H.equip_to_storage(new path(H))
 
 	if(!(OUTFIT_ADJUSTMENT_SKIP_POST_EQUIP & equip_adjustments))
 		post_equip(H)
@@ -144,44 +138,44 @@ var/list/outfits_decls_by_type_
 
 	//Start with uniform,suit,backpack for additional slots
 	if(uniform)
-		H.equip_to_slot_or_del(new uniform(H),slot_w_uniform)
+		H.equip_to_slot_or_store_or_drop(new uniform(H),slot_w_uniform)
 	if(holster && H.w_uniform)
 		var/obj/item/clothing/accessory/equip_holster = new holster
 		H.w_uniform.attackby(H, equip_holster)
 		if(equip_holster.loc != H.w_uniform)
 			qdel(equip_holster)
 	if(suit)
-		H.equip_to_slot_or_del(new suit(H),slot_wear_suit)
+		H.equip_to_slot_or_store_or_drop(new suit(H),slot_wear_suit)
 	if(back)
-		H.equip_to_slot_or_del(new back(H),slot_back)
+		H.equip_to_slot_or_store_or_drop(new back(H),slot_back)
 	if(belt)
-		H.equip_to_slot_or_del(new belt(H),slot_belt)
+		H.equip_to_slot_or_store_or_drop(new belt(H),slot_belt)
 	if(gloves)
-		H.equip_to_slot_or_del(new gloves(H),slot_gloves)
+		H.equip_to_slot_or_store_or_drop(new gloves(H),slot_gloves)
 	if(shoes)
-		H.equip_to_slot_or_del(new shoes(H),slot_shoes)
+		H.equip_to_slot_or_store_or_drop(new shoes(H),slot_shoes)
 	if(id)
-		H.equip_to_slot_or_del(new id(H),slot_wear_id)
+		H.equip_to_slot_or_store_or_drop(new id(H),slot_wear_id)
 	if(l_pocket)
-		H.equip_to_slot_or_del(new l_pocket(H),slot_l_store)
+		H.equip_to_slot_or_store_or_drop(new l_pocket(H),slot_l_store)
 	if(r_pocket)
-		H.equip_to_slot_or_del(new r_pocket(H),slot_r_store)
+		H.equip_to_slot_or_store_or_drop(new r_pocket(H),slot_r_store)
 	if(suit_store)
-		H.equip_to_slot_or_del(new suit_store(H),slot_s_store)
+		H.equip_to_slot_or_store_or_drop(new suit_store(H),slot_s_store)
 
 /decl/hierarchy/outfit/proc/equip_post_base(mob/living/carbon/human/H, equip_adjustments)
 	if(l_ear)
 		var/l_ear_path = (OUTFIT_ADJUSTMENT_PLAIN_HEADSET & equip_adjustments) && ispath(l_ear, /obj/item/device/radio/headset) ? /obj/item/device/radio/headset : l_ear
-		H.equip_to_slot_or_del(new l_ear_path(H),slot_l_ear)
+		H.equip_to_slot_or_store_or_drop(new l_ear_path(H),slot_l_ear)
 	if(r_ear)
 		var/r_ear_path = (OUTFIT_ADJUSTMENT_PLAIN_HEADSET & equip_adjustments) && ispath(r_ear, /obj/item/device/radio/headset) ? /obj/item/device/radio/headset : r_ear
-		H.equip_to_slot_or_del(new r_ear_path(H),slot_r_ear)
+		H.equip_to_slot_or_store_or_drop(new r_ear_path(H),slot_r_ear)
 	if(glasses)
-		H.equip_to_slot_or_del(new glasses(H),slot_glasses)
+		H.equip_to_slot_or_store_or_drop(new glasses(H),slot_glasses)
 	if(mask)
-		H.equip_to_slot_or_del(new mask(H),slot_wear_mask)
+		H.equip_to_slot_or_store_or_drop(new mask(H),slot_wear_mask)
 	if(head)
-		H.equip_to_slot_or_del(new head(H),slot_head)
+		H.equip_to_slot_or_store_or_drop(new head(H),slot_head)
 	if(l_hand)
 		H.put_in_l_hand(new l_hand(H))
 	if(r_hand)

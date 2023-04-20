@@ -398,10 +398,10 @@ var/global/datum/controller/occupations/job_master
 						var/list/accessory_args = accessory_data.Copy()
 						accessory_args[1] = src
 						for(var/i in 1 to amt)
-							H.equip_to_slot_or_del(new accessory_path(arglist(accessory_args)), slot_tie)
+							H.equip_to_slot_or_store_or_drop(new accessory_path(arglist(accessory_args)), slot_tie)
 					else
 						for(var/i in 1 to (isnull(accessory_data)? 1 : accessory_data))
-							H.equip_to_slot_or_del(new accessory_path(src), slot_tie)
+							H.equip_to_slot_or_store_or_drop(new accessory_path(src), slot_tie)
 
 			// override to make sure people don't spawn with backpacks unless their outfit allows it - Kachnov
 			var/decl/hierarchy/outfit/override = job.get_outfit(H, H.mind ? H.mind.role_alt_title : "", H.char_branch, H.char_rank)
@@ -515,7 +515,7 @@ var/global/datum/controller/occupations/job_master
 
 		//Gives glasses to the vision impaired
 		if(H.disabilities & NEARSIGHTED)
-			var/equipped = H.equip_to_slot_or_del(new /obj/item/clothing/glasses/regular(H), slot_glasses)
+			var/equipped = H.equip_to_slot_or_store_or_drop(new /obj/item/clothing/glasses/regular(H), slot_glasses)
 			if(equipped)
 				var/obj/item/clothing/glasses/G = H.glasses
 				G.prescription = 7

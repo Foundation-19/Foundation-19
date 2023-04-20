@@ -429,10 +429,10 @@ SUBSYSTEM_DEF(jobs)
 				var/list/accessory_args = accessory_data.Copy()
 				accessory_args[1] = src
 				for(var/i in 1 to amt)
-					H.equip_to_slot_or_del(new accessory_path(arglist(accessory_args)), slot_tie)
+					H.equip_to_slot_or_store_or_drop(new accessory_path(arglist(accessory_args)), slot_tie)
 			else
 				for(var/i in 1 to (isnull(accessory_data)? 1 : accessory_data))
-					H.equip_to_slot_or_del(new accessory_path(src), slot_tie)
+					H.equip_to_slot_or_store_or_drop(new accessory_path(src), slot_tie)
 
 	return spawn_in_storage
 
@@ -553,7 +553,7 @@ SUBSYSTEM_DEF(jobs)
 
 	//Gives glasses to the vision impaired
 	if(H.disabilities & NEARSIGHTED)
-		var/equipped = H.equip_to_slot_or_del(new /obj/item/clothing/glasses/prescription(H), slot_glasses)
+		var/equipped = H.equip_to_slot_or_store_or_drop(new /obj/item/clothing/glasses/prescription(H), slot_glasses)
 		if(equipped)
 			var/obj/item/clothing/glasses/G = H.glasses
 			G.prescription = 7
