@@ -12,9 +12,7 @@
 	shoes = /obj/item/clothing/shoes/black
 	l_ear = /obj/item/device/radio/headset/merchant
 	uniform = /obj/item/clothing/under/color/grey
-	id_slot = slot_wear_id
-	id_types = list(/obj/item/card/id/merchant)
-	pda_slot = slot_r_store
+	id_type = /obj/item/card/id/merchant
 	pda_type = /obj/item/modular_computer/pda //cause I like the look
 	id_pda_assignment = "Merchant"
 

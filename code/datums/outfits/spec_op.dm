@@ -8,8 +8,7 @@
 	gloves = /obj/item/clothing/gloves/thick/swat
 	l_pocket = /obj/item/reagent_containers/pill/cyanide
 
-	id_slot = slot_wear_id
-	id_types = list(/obj/item/card/id/syndicate)
+	id_type = /obj/item/card/id/syndicate
 	id_pda_assignment = "Mercenary"
 
 	backpack_contents = list(/obj/item/clothing/suit/space/void/merc/prepared = 1, /obj/item/clothing/mask/gas/syndicate = 1)
@@ -40,4 +39,3 @@
 	l_hand =   /obj/item/storage/briefcase/foundation/revolver
 	l_ear =    /obj/item/device/radio/headset/foundation
 	holster =  /obj/item/clothing/accessory/storage/holster/armpit
-	id_slot =  slot_wear_id

@@ -3,7 +3,6 @@
 	belt = /obj/item/storage/belt/utility/full
 	l_ear = /obj/item/device/radio/headset/headset_eng
 	shoes = /obj/item/clothing/shoes/workboots
-	pda_slot = slot_l_store
 	flags = OUTFIT_FLAGS_JOB_DEFAULT | OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/engineering/New()
@@ -15,7 +14,7 @@
 	head = /obj/item/clothing/head/hardhat
 	uniform = /obj/item/clothing/under/rank/engineer
 	r_pocket = /obj/item/device/t_scanner
-	id_types = list(/obj/item/card/id/engineering)
+	id_type = /obj/item/card/id/engineering
 	pda_type = /obj/item/modular_computer/pda/engineering
 
 /decl/hierarchy/outfit/job/engineering/engineer/void

@@ -42,12 +42,10 @@ var/list/outfits_decls_by_type_
 	var/holster = null
 	var/list/backpack_contents = list() // In the list(path=count,otherpath=count) format
 
-	var/id_types
+	var/id_type
 	var/id_desc
-	var/id_slot
 
 	var/pda_type
-	var/pda_slot
 
 	var/id_pda_assignment
 
@@ -107,20 +105,19 @@ var/list/outfits_decls_by_type_
 
 	rank = id_pda_assignment || rank
 	assignment = id_pda_assignment || assignment || rank
-	var/list/id_cards = equip_ids(H, rank, assignment, equip_adjustments)
-	if(length(id_cards))
-		var/obj/item/card/id/W = id_cards[1]
-		rank = W.rank
-		assignment = W.assignment
+
+	H.update_icons()
+
+	equip_pda(H, rank, assignment, equip_adjustments)
 
 	// We set ID info in middle of equip to ensure the face is not obstructed for photo and mug shot is nice!
-	H.update_icons()
-	for(var/id_card in id_cards)
+	var/obj/item/card/id/id_card = equip_id(H, rank, assignment, equip_adjustments)
+	if(id_card)
+		rank = id_card.rank
+		assignment = id_card.assignment
 		H.set_id_info(id_card)
 
 	equip_post_base(H, equip_adjustments)
-
-	equip_pda(H, rank, assignment, equip_adjustments)
 
 	for(var/path in backpack_contents)
 		var/number = backpack_contents[path]
@@ -205,38 +202,44 @@ var/list/outfits_decls_by_type_
 		H.species.equip_survival_gear(H, flags&OUTFIT_EXTENDED_SURVIVAL)
 	check_and_try_equip_xeno(H)
 
-/decl/hierarchy/outfit/proc/equip_ids(mob/living/carbon/human/H, rank, assignment, equip_adjustments)
-	if(!id_slot || !length(id_types))
+/decl/hierarchy/outfit/proc/equip_id(mob/living/carbon/human/H, rank, assignment, equip_adjustments)
+	if(!id_type)
 		return
 	if(OUTFIT_ADJUSTMENT_SKIP_ID_PDA & equip_adjustments)
 		return
-	var/created_cards = list()
-	for(var/id_type in id_types)
-		var/obj/item/card/id/W = new id_type(H)
-		if(id_desc)
-			W.desc = id_desc
-		if(rank)
-			W.rank = rank
-		if(assignment)
-			W.assignment = assignment
 
-		if((flags & OUTFIT_USES_ACCOUNT) && H.mind?.initial_account)
-			W.associated_account_number = H.mind.initial_account.account_number
-		if((flags & OUTFIT_USES_EMAIL) && H.mind?.initial_email_login)
-			W.associated_email_login = H.mind.initial_email_login.Copy()
+	var/obj/item/card/id/W = new id_type(H)
+	if(id_desc)
+		W.desc = id_desc
+	if(rank)
+		W.rank = rank
+	if(assignment)
+		W.assignment = assignment
 
-		var/item_slot = id_types[id_type] || id_slot
-		H.equip_to_slot_or_store_or_drop(W, item_slot)
-		created_cards += W
-	return created_cards
+	if((flags & OUTFIT_USES_ACCOUNT) && H.mind?.initial_account)
+		W.associated_account_number = H.mind.initial_account.account_number
+	if((flags & OUTFIT_USES_EMAIL) && H.mind?.initial_email_login)
+		W.associated_email_login = H.mind.initial_email_login.Copy()
+
+	var/obj/item = H.get_equipped_item(slot_wear_id)
+	if(!!item)
+		if(istype(item, /obj/item/modular_computer/pda))
+			var/obj/item/modular_computer/pda/pda = item
+			if(pda.card_slot)
+				pda.card_slot.insert_id(W, H, suppress_message = TRUE)
+	else
+		H.equip_to_slot_or_store_or_drop(W, slot_wear_id)
+
+	return W
 
 /decl/hierarchy/outfit/proc/equip_pda(mob/living/carbon/human/H, rank, assignment, equip_adjustments)
-	if(!pda_slot || !pda_type)
+	if(!pda_type)
 		return
 	if(OUTFIT_ADJUSTMENT_SKIP_ID_PDA & equip_adjustments)
 		return
 	var/obj/item/modular_computer/pda/pda = new pda_type(H)
-	if(H.equip_to_slot_or_store_or_drop(pda, pda_slot))
+
+	if(H.equip_to_slot_or_store_or_drop(pda, slot_wear_id))
 		return pda
 
 /decl/hierarchy/outfit/dd_SortValue()

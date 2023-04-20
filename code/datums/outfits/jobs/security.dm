@@ -14,6 +14,6 @@
 	name = OUTFIT_JOB_NAME("Head of security")
 	l_ear = /obj/item/device/radio/headset/heads/hos
 	uniform = /obj/item/clothing/under/rank/head_of_security
-	id_types = list(/obj/item/card/id/security/head)
+	id_type = /obj/item/card/id/security/head
 	pda_type = /obj/item/modular_computer/pda/heads/hos
 	backpack_contents = list(/obj/item/handcuffs = 1)

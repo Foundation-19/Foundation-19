@@ -1456,7 +1456,6 @@
 #include "code\modules\ascent\ascent_doodads.dm"
 #include "code\modules\ascent\ascent_id.dm"
 #include "code\modules\ascent\ascent_machines.dm"
-#include "code\modules\ascent\ascent_outfit.dm"
 #include "code\modules\ascent\ascent_rigs.dm"
 #include "code\modules\ascent\ascent_structures.dm"
 #include "code\modules\ascent\ascent_suits.dm"

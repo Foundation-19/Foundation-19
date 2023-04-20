@@ -3,7 +3,6 @@
 	l_ear = /obj/item/device/radio/headset/headset_med
 	shoes = /obj/item/clothing/shoes/white
 	pda_type = /obj/item/modular_computer/pda/medical
-	pda_slot = slot_l_store
 
 /decl/hierarchy/outfit/job/medical/New()
 	..()
@@ -17,7 +16,7 @@
 	shoes = /obj/item/clothing/shoes/brown
 	l_hand = /obj/item/storage/firstaid/adv
 	r_pocket = /obj/item/device/flashlight/pen
-	id_types = list(/obj/item/card/id/medical/head)
+	id_type = /obj/item/card/id/medical/head
 	pda_type = /obj/item/modular_computer/pda/heads/cmo
 
 /decl/hierarchy/outfit/job/medical/doctor
@@ -26,13 +25,13 @@
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	l_hand = /obj/item/storage/firstaid/adv
 	r_pocket = /obj/item/device/flashlight/pen
-	id_types = list(/obj/item/card/id/medical)
+	id_type = /obj/item/card/id/medical
 
 /decl/hierarchy/outfit/job/medical/chemist
 	name = OUTFIT_JOB_NAME("Chemist")
 	uniform = /obj/item/clothing/under/rank/chemist
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/chemist
-	id_types = list(/obj/item/card/id/medical/chemist)
+	id_type = /obj/item/card/id/medical/chemist
 	pda_type = /obj/item/modular_computer/pda/chemistry
 
 /decl/hierarchy/outfit/job/medical/chemist/New()
@@ -44,4 +43,4 @@
 	uniform = /obj/item/clothing/under/rank/psych
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	shoes = /obj/item/clothing/shoes/laceup
-	id_types = list(/obj/item/card/id/medical/psychiatrist)
+	id_type = /obj/item/card/id/medical/psychiatrist

@@ -377,8 +377,6 @@ SUBSYSTEM_DEF(jobs)
 		return
 
 	// Equip custom gear loadout, replacing any job items
-	var/list/spawn_in_storage = list()
-	var/list/loadout_taken_slots = list()
 	if(H.client.prefs.Gear() && job.loadout_allowed)
 		for(var/thing in H.client.prefs.Gear())
 			var/datum/gear/G = gear_datums[thing]
@@ -415,10 +413,7 @@ SUBSYSTEM_DEF(jobs)
 					to_chat(H, SPAN_WARNING("Your current species, job, branch, skills or whitelist status does not permit you to spawn with [thing]!"))
 					continue
 
-				if(!G.slot || G.slot == slot_tie || (G.slot in loadout_taken_slots) || !G.spawn_on_mob(H, H.client.prefs.Gear()[G.display_name]))
-					spawn_in_storage.Add(G)
-				else
-					loadout_taken_slots.Add(G.slot)
+				G.spawn_in_storage_or_drop(H, H.client.prefs.Gear()[G.display_name])
 
 	// do accessories last so they don't attach to a suit that will be replaced
 	if(H.char_rank && H.char_rank.accessory)
@@ -433,8 +428,6 @@ SUBSYSTEM_DEF(jobs)
 			else
 				for(var/i in 1 to (isnull(accessory_data)? 1 : accessory_data))
 					H.equip_to_slot_or_store_or_drop(new accessory_path(src), slot_tie)
-
-	return spawn_in_storage
 
 /datum/controller/subsystem/jobs/proc/equip_rank(mob/living/carbon/human/H, rank, joined_late = 0)
 	if(!H)
@@ -476,7 +469,7 @@ SUBSYSTEM_DEF(jobs)
 
 		job.equip(H, H.mind ? H.mind.role_alt_title : "", H.char_branch, H.char_rank)
 		job.apply_fingerprints(H)
-		spawn_in_storage = equip_custom_loadout(H, job)
+		equip_custom_loadout(H, job)
 
 		var/obj/item/clothing/under/uniform = H.w_uniform
 		if(istype(uniform) && uniform.has_sensor)
@@ -525,10 +518,6 @@ SUBSYSTEM_DEF(jobs)
 	if(other_mob)
 		job.post_equip_rank(other_mob, alt_title || rank)
 		return other_mob
-
-	if(spawn_in_storage)
-		for(var/datum/gear/G in spawn_in_storage)
-			G.spawn_in_storage_or_drop(H, H.client.prefs.Gear()[G.display_name])
 
 	if(istype(H)) //give humans wheelchairs, if they need them.
 		var/obj/item/organ/external/l_foot = H.get_organ(BP_L_FOOT)

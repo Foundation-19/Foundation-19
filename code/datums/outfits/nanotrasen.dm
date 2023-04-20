@@ -6,9 +6,7 @@
 	l_ear = /obj/item/device/radio/headset/heads/hop
 	glasses = /obj/item/clothing/glasses/sunglasses
 
-	id_slot = slot_wear_id
-	id_types = list(/obj/item/card/id/centcom/station)
-	pda_slot = slot_r_store
+	id_type = /obj/item/card/id/centcom/station
 	pda_type = /obj/item/modular_computer/pda/heads
 
 /decl/hierarchy/outfit/nanotrasen/officer
