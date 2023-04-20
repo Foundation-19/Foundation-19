@@ -19,14 +19,6 @@
 	id_type = /obj/item/card/id/medical/head
 	pda_type = /obj/item/modular_computer/pda/heads/cmo
 
-/decl/hierarchy/outfit/job/medical/doctor
-	name = OUTFIT_JOB_NAME("Medical Doctor")
-	uniform = /obj/item/clothing/under/rank/medical
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat
-	l_hand = /obj/item/storage/firstaid/adv
-	r_pocket = /obj/item/device/flashlight/pen
-	id_type = /obj/item/card/id/medical
-
 /decl/hierarchy/outfit/job/medical/chemist
 	name = OUTFIT_JOB_NAME("Chemist")
 	uniform = /obj/item/clothing/under/rank/chemist

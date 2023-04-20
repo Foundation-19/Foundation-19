@@ -17,9 +17,3 @@
 	l_hand = /obj/item/material/clipboard
 	id_type = /obj/item/card/id/science/head
 	pda_type = /obj/item/modular_computer/pda/heads/rd
-
-/decl/hierarchy/outfit/job/science/scientist
-	name = OUTFIT_JOB_NAME("Scientist")
-	uniform = /obj/item/clothing/under/rank/scientist
-	id_type = /obj/item/card/id/science
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
