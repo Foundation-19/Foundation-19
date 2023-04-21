@@ -66,8 +66,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/wander_distance = 8
 	//How far fleeing targets can be set
 	var/flee_distance = 30
-	//Are we fleeing?
-	var/is_fleeing = FALSE
 	//Our current step list (this is to avoid calling AStar unless neccesary)
 	var/list/steps_to_target = list()
 
@@ -310,9 +308,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/proc/handle_AI()
 	if(IsBeingWatched())
-		if(is_fleeing) //resets fleeing state if we are looked at
-			is_fleeing = FALSE
-			clear_target()
 		return
 	if(istype(loc, /obj/structure/scp173_cage))
 		loc.relaymove(src, NORTH)
@@ -325,7 +320,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			continue
 		if(H.stat == DEAD)
 			continue
-		if(!AStar(loc, H.loc, /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door)))
+		if(!AStar(loc, H.loc, /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)))
 			message_staff("[H] failed to be pathed to as target human")
 			continue
 		possible_human_targets += H
@@ -340,7 +335,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 			if(L.get_status() != LIGHT_OK)
 				clear_target()
 		else if(isturf(target))
-			if(LAZYLEN(possible_human_targets) && !is_fleeing) //If we get a possible target or if our wandering target is invalid we stop wandering and remove our wander target
+			if((LAZYLEN(possible_human_targets)) && LAZYLEN(steps_to_target) < wander_distance) //If we get a possible target or if our wandering target is invalid and we arent currently fleeing we stop wandering and remove our wander target
 				clear_target()
 
 	if(target && get_dist(loc, get_turf(target)) <= 1)
@@ -362,18 +357,24 @@ GLOBAL_LIST_EMPTY(scp173s)
 				assign_target(pick_turf_in_range(loc, wander_distance, list(/proc/isfloor)))
 
 		if(1,2) //If we have a manageable amount of targets, we will pursue or try to break a light
-			if(((our_turf.get_lumcount() > 0.1) && prob(30)) && !istype(target, /obj/machinery/light))
+			if((our_turf.get_lumcount() > 0.1) && prob(30))
 				assign_target(get_viable_light_target())
 			else
 				assign_target(DEFAULTPICK(possible_human_targets, null))
 
 		if(3,INFINITY) //If we have too many targets, we will attempt to flee or break a light
-			if((our_turf.get_lumcount() > 0.1) && !istype(target, /obj/machinery/light))
-				if(prob(60) && !is_fleeing)
-					assign_target(get_viable_flee_target())
-					is_fleeing = TRUE
+			if(our_turf.get_lumcount() > 0.1)
+				if(prob(60))
+					var/while_timeout = world.time + 5 SECONDS //prevent infinity loops
+
+					while(!target)
+						assign_target(pick_turf_in_range(loc, flee_distance, list(/proc/isfloor)))
+						if(world.time > while_timeout)
+							break
 				else
 					assign_target(get_viable_light_target())
+			else
+				assign_target(DEFAULTPICK(possible_human_targets, null))
 
 	move_to_target()
 	return
@@ -384,7 +385,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(!new_target)
 		return FALSE
 
-	var/list/temp_steps_to_target = AStar(loc, get_turf(new_target), /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door)) //Flee distance is used as max_nodes since that should be the farthest that 173's AI will ever attempt to path
+	var/list/temp_steps_to_target = AStar(loc, get_turf(new_target), /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)) //Flee distance is used as max_nodes since that should be the farthest that 173's AI will ever attempt to path
 	if(temp_steps_to_target) //Double check to ensure that whatever target we assign we can actually get to
 		steps_to_target = temp_steps_to_target
 		target = new_target
@@ -424,24 +425,12 @@ GLOBAL_LIST_EMPTY(scp173s)
 		if(!steps_to_target)
 			break
 		step_towards(src,steps_to_target[1])
-		if(get_turf(src) != steps_to_target[1]) //if for whatever reason we are unable to move to the next turf, we clear our target and stop
-			clear_target()
+		if(get_turf(src) != steps_to_target[1]) //if for whatever reason we are unable to move to the next turf, we stop
+			if(steps_to_target[1].contains_dense_objects_whitelist(list(/obj/machinery/door/blast, /obj/structure/window, /obj/structure/grille)) || get_area(steps_to_target[1]) == spawn_area) //if we are blocked by something we cant break, we clear our target
+				clear_target()
 			break
 		else
 			LAZYREMOVE(steps_to_target, steps_to_target[1])
-
-/mob/living/scp_173/proc/get_viable_flee_target() //gets a viable target turf for 173 to flee to
-	var/turf/simulated/floor/flee_target = pick_turf_in_range(loc, flee_distance, list(/proc/isfloor))
-	var/count = 0 //dont want the while loop going to infinity
-
-	while(!AStar(loc, flee_target, /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, adjacent_arg = list(/obj/structure/window, /obj/machinery/door)))
-		flee_target = pick_turf_in_range(loc, flee_distance, list(/proc/isfloor))
-		count++
-		if(count >= 50)
-			message_staff("173 flee pathfinding failed")
-			return null
-
-	return flee_target
 
 /mob/living/scp_173/proc/get_viable_light_target() //Gets a viable light bulb target
 	for(var/obj/machinery/light/light_in_view in dview(7, src))
