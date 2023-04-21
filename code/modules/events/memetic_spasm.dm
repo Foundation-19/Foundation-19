@@ -7,11 +7,11 @@
 
 /datum/event/memetic_spasm/announce()
 	priority_announcement.Announce( \
-		"PRIORITY ALERT: SIGMA-[rand(50,80)] MEMETIC SIGNAL LOCAL TRAMISSION DETECTED (97% MATCH, NONVARIANT) \
-		(SIGNAL SOURCE TRIANGULATED ADJACENT LOCAL SITE): All personnel are advised to avoid \
+		"PRIORITY ALERT: MEMETIC SIGNAL TRAMISSION DETECTED: All personnel are advised to avoid \
 		exposure to active audio transmission equipment including radio headsets and intercoms \
 		for the duration of the memetic signal broadcast.", \
 		"[GLOB.using_map.station_name] Memetic Sensor Array" \
+		GLOB.using_map.command_report_sound
 	)
 
 /datum/event/memetic_spasm/start()
@@ -57,36 +57,26 @@
 	switch(affected[victim])
 		if(1)
 			victim.adjustSanityLoss(2)
-			if(prob(20))
+			if(prob(15))
 				affected[victim]++
 		if(2)
 			victim.adjustSanityLoss(4)
 			victim.Weaken(2)
-			if(prob(20))
+			if(prob(15))
 				affected[victim]++
 		if(3)
 			victim.adjustSanityLoss(8)
 			victim.adjustBrainLoss(1)
-			if(prob(20))
+			if(prob(15))
 				affected[victim]++
 		if(4)
 			victim.adjustSanityLoss(12)
 			victim.adjustBrainLoss(3)
 			victim.seizure()
-			if(prob(20))
+			if(prob(15))
 				affected[victim]++
 		if(5)
 			victim.adjustSanityLoss(15)
 			victim.adjustBrainLoss(5)
-
-			if(iscarbon(victim) && !victim.isSynthetic())
-
-				var/list/disabilities = list(NEARSIGHTED, EPILEPSY, TOURETTES, NERVOUS)
-				for(var/disability in disabilities)
-					if(victim.disabilities & disability)
-						disabilities -= disability
-
-				if(disabilities.len)
-					victim.disabilities |= pick(disabilities)
 		else
 			to_chat(victim, SPAN_NOTICE("You're feeling pretty bugged out, maybe you should contact a coder."))
