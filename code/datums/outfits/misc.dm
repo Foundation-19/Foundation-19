@@ -6,3 +6,9 @@
 	gloves = /obj/item/clothing/gloves/thick/combat
 	back = /obj/item/storage/backpack/satchel
 	belt = /obj/item/gun/projectile/revolver
+
+/decl/hierarchy/outfit/survivor
+	name = "Survivor"
+	uniform = /obj/item/clothing/under/frontier
+	shoes = /obj/item/clothing/shoes/dutyboots
+	back = /obj/item/storage/backpack
