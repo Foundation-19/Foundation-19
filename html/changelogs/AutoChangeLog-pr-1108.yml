@@ -1,8 +1,0 @@
-author: GGarciaECE
-delete-after: true
-changes:
-  - rscadd: Minable paths from Archives to HCZ and LCZ (+ a larger minable area around
-      the Archive)
-  - rscadd: Minable path from upper EZ maint to Upper LCZ Office worker room
-  - rscadd: Fix minable path in CDCZ Mining area
-  - rscadd: Mining drill in the surface's pit area

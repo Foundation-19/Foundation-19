@@ -1,7 +1,0 @@
-author: checkraisefold
-delete-after: true
-changes:
-  - admin: Added investigate verb to mods.
-  - admin: Mods can now check today's server logs for all rounds for the day.
-  - admin: Mods can now use most `JMP` buttons on logs.
-  - bugfix: Href logging now works, so does all other investigate_log categories
