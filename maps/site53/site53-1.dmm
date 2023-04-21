@@ -16382,13 +16382,13 @@
 /obj/machinery/vending/hydronutrients,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/botany)
-"NF" = (
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/dclass/med_checkpointoverlook)
 "NE" = (
 /obj/structure/scp173_cage,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
+"NF" = (
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/med_checkpointoverlook)
 "NG" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -19034,11 +19034,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
-"UQ" = (
-/turf/simulated/mineral{
-	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
-	},
-/area/site53/llcz/dclass/entrance_checkpoint)
 "UR" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -20361,9 +20356,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cells)
-"Ym" = (
-/turf/unsimulated/mineral,
-/area/site53/llcz/dclass/medicalpost/morgue)
 "Yn" = (
 /obj/structure/table/standard,
 /obj/machinery/light,
@@ -26043,7 +26035,7 @@ KU
 KU
 KU
 NV
-Ym
+gq
 Zr
 Zr
 Zr
@@ -26300,11 +26292,11 @@ tH
 cc
 cc
 KU
-Ym
-Ym
-Ym
-Ym
-Ym
+gq
+gq
+gq
+gq
+gq
 Zr
 SW
 LL
@@ -26561,7 +26553,7 @@ cB
 YX
 YX
 tR
-UQ
+hy
 Zr
 Ul
 rI
@@ -26818,7 +26810,7 @@ QZ
 IC
 IN
 YX
-UQ
+hy
 RH
 iO
 rI
@@ -27075,7 +27067,7 @@ QZ
 QZ
 IO
 YX
-UQ
+hy
 RH
 XP
 rI
@@ -27332,7 +27324,7 @@ cs
 IL
 em
 YX
-UQ
+hy
 RH
 XP
 rI
@@ -27589,7 +27581,7 @@ IF
 QZ
 Iq
 YX
-UQ
+hy
 RH
 wt
 Sj
@@ -27846,7 +27838,7 @@ cu
 QZ
 cN
 YX
-UQ
+hy
 RH
 RH
 cI
@@ -28103,7 +28095,7 @@ IG
 QZ
 cO
 YX
-UQ
+hy
 hy
 RH
 RN
@@ -28360,7 +28352,7 @@ IG
 yW
 cK
 YX
-UQ
+hy
 hy
 RH
 SU
@@ -28617,7 +28609,7 @@ IG
 QZ
 cL
 YX
-UQ
+hy
 hy
 RH
 LD
