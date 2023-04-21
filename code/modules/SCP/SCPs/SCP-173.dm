@@ -172,10 +172,9 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/Life()
 	. = ..()
-	//if(length(GLOB.clients) <= 30 && !client)
-		//return
-	//In case we are caged, we must see if our cage is being looked at rather than us
-	var/list/our_view = dview(7, istype(loc, /obj/structure/scp173_cage) ? loc : src)
+	if(length(GLOB.clients) <= 30 && !client)
+		return
+	var/list/our_view = dview(7, istype(loc, /obj/structure/scp173_cage) ? loc : src) //In case we are caged, we must see if our cage is being looked at rather than us
 	for(var/mob/living/carbon/human/H in next_blinks)
 		if(!(H in our_view))
 			H.disable_blink(src)
@@ -272,10 +271,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 		var/feces = pick(defecation_types)
 		var/obj/effect/new_f = new feces(loc)
 		new_f.update_icon()
-		if(!client) // So it doesn't spam it in one spot
-			var/Tdir = pick(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST)
-			//if(Tdir && !IsBeingWatched())
-				//SelfMove(Tdir)
 	// Breach check
 	var/feces_amount = CheckFeces()
 	if(feces_amount >= 60) // Breach, gonna take ~45 minutes
@@ -321,7 +316,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 		if(H.stat == DEAD)
 			continue
 		if(!AStar(loc, H.loc, /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)))
-			message_staff("[H] failed to be pathed to as target human")
 			continue
 		possible_human_targets += H
 
@@ -357,13 +351,13 @@ GLOBAL_LIST_EMPTY(scp173s)
 				assign_target(pick_turf_in_range(loc, wander_distance, list(/proc/isfloor)))
 
 		if(1,2) //If we have a manageable amount of targets, we will pursue or try to break a light
-			if((our_turf.get_lumcount() > 0.1) && prob(30))
+			if((our_turf.get_lumcount() > 0.05) && prob(30))
 				assign_target(get_viable_light_target())
 			else
 				assign_target(DEFAULTPICK(possible_human_targets, null))
 
 		if(3,INFINITY) //If we have too many targets, we will attempt to flee or break a light
-			if(our_turf.get_lumcount() > 0.1)
+			if(our_turf.get_lumcount() > 0.05)
 				if(prob(60))
 					var/while_timeout = world.time + 5 SECONDS //prevent infinity loops
 
@@ -389,10 +383,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(temp_steps_to_target) //Double check to ensure that whatever target we assign we can actually get to
 		steps_to_target = temp_steps_to_target
 		target = new_target
-		message_staff("173 Pathfinding succeded for [new_target]")
 		return TRUE
 	else
-		message_staff("173 Pathfinding failed for [new_target]")
 		return FALSE
 
 /mob/living/scp_173/proc/clear_target()
@@ -442,38 +434,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 			continue
 		return light_in_view
 	return null
-
-/*
-/mob/living/scp_173/proc/AIAttemptAttack()
-	var/mob/living/carbon/human/target
-	var/list/possible_human_targets = list()
-	var/turf/T
-	for(var/mob/living/carbon/human/H in view(7, src))
-		if(H.SCP)
-			continue
-		if(H.stat == DEAD)
-			continue
-		if(!AStar(loc, H.loc, /turf/proc/AdjacentTurfs, /turf/proc/Distance, max_nodes=25, max_node_depth=7))
-			continue // We can't reach this person anyways
-		possible_human_targets += H
-	if(LAZYLEN(possible_human_targets))
-		target = pick(possible_human_targets)
-	if(target)
-		var/turf/behind_target = get_step(target.loc, turn(target.dir, 180))
-		if(isfloor(behind_target) && get_dist(behind_target, loc) <= 7)
-			T = behind_target
-		else
-			var/list/directions = shuffle(GLOB.cardinal)
-			for(var/D in directions)
-				var/turf/TF = get_step(target, D)
-				if(isfloor(T) && get_dist(T, loc) <= 7)
-					T = TF
-					break
-		if(!T) // We couldn't find a spot to go to!
-			return
-		forceMove(T)
-		UnarmedAttack(target)
-*/
 
 // 173 Cage
 
