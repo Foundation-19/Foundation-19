@@ -414,11 +414,12 @@ GLOBAL_LIST_EMPTY(scp173s)
 			return
 
 	for(var/move=0, move < tile_move_range, move++)
+		step_turf = steps_to_target[1]
 		if(!steps_to_target)
 			break
-		step_towards(src,steps_to_target[1])
-		if(get_turf(src) != steps_to_target[1]) //if for whatever reason we are unable to move to the next turf, we stop
-			if(steps_to_target[1].contains_dense_objects_whitelist(list(/obj/machinery/door/blast, /obj/structure/window, /obj/structure/grille)) || get_area(steps_to_target[1]) == spawn_area) //if we are blocked by something we cant break, we clear our target
+		step_towards(src,step_turf)
+		if(get_turf(src) != step_turf) //if for whatever reason we are unable to move to the next turf, we stop
+			if(step_turf.contains_dense_objects_whitelist(list(/obj/machinery/door/blast, /obj/structure/window, /obj/structure/grille)) || get_area(steps_to_target[1]) == spawn_area) //if we are blocked by something we cant break, we clear our target
 				clear_target()
 			break
 		else
