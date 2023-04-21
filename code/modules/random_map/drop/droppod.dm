@@ -24,7 +24,7 @@
 	var/drop_type = /mob/living/simple_animal/hostile/retaliate/parrot
 	var/auto_open_doors
 
-	var/placement_explosion_dev =   1
+	var/placement_explosion_dev =   0
 	var/placement_explosion_heavy = 1
 	var/placement_explosion_light = 3
 	var/placement_explosion_flash = 2
