@@ -306,7 +306,8 @@ var/list/admin_verbs_mod = list(
 	/client/proc/cmd_admin_say,
 	/client/proc/investigate_show,
 	/datum/admins/proc/view_txt_log,
-	/client/proc/game_panel
+	/client/proc/game_panel,
+	/client/proc/free_slot_crew
 )
 var/list/admin_verbs_mentors = list(
 	/client/proc/cmd_mentor_say,
