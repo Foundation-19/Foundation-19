@@ -1,5 +1,0 @@
-author: EgorDinamit
-delete-after: true
-changes:
-  - rscadd: Added SCP-216. It is a safe with near infinite storage space. Some slots
-      come pre-occupied with (potentially) treasure!
