@@ -7,7 +7,13 @@
 	GLOB.using_map.level_x_biohazard_announcement(7)
 
 /datum/event/blob/start()
-	var/turf/T = pick_subarea_turf(/area/maintenance, list(/proc/is_station_turf, /proc/not_turf_contains_dense_objects))
+	var/turf/T = pick_subarea_turf(pick(
+		/area/site53/ulcz/maintenance,
+		/area/site53/lhcz/maintenance,
+		/area/site53/uez/maintenance,
+		/area/site53/lhcz/maintenance),
+		list(/proc/is_station_turf, /proc/not_turf_contains_dense_objects)
+	)
 	if(!T)
 		log_and_message_admins("Blob failed to find a viable turf.")
 		kill()
