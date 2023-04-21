@@ -11721,11 +11721,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
-"aFf" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor,
-/area/site53/ulcz/hallways)
 "aFg" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
@@ -16298,13 +16293,6 @@
 /obj/machinery/vending/snack,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/entrance_checkpoint)
-"aVB" = (
-/obj/effect/catwalk_plated/white,
-/obj/machinery/door/airlock/glass/research{
-	name = "Hallway"
-	},
-/turf/simulated/floor,
-/area/site53/ulcz/hallways)
 "aVD" = (
 /obj/effect/paint_stripe/gray,
 /obj/effect/paint_stripe/red,
@@ -21767,13 +21755,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/hallways)
-"cqT" = (
-/obj/machinery/light{
-	dir = 4;
-	pixel_x = 11
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/ulcz/hallways)
 "crR" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -43969,13 +43950,13 @@ aGM
 aGt
 aGq
 aVS
-aVS
-aVS
-aVS
-aVS
-aVS
-aVS
-aVS
+aGM
+aGM
+aXf
+aGM
+aGM
+aXf
+aGM
 aVS
 azA
 azA
@@ -44228,10 +44209,10 @@ aGM
 aVS
 aGM
 aGM
-aXf
 aGM
 aGM
-aXf
+aGM
+aGM
 aGM
 aVS
 azA
@@ -44736,7 +44717,7 @@ azA
 aVS
 aGM
 aGM
-aKq
+aGM
 aHM
 aGM
 aVS
@@ -44993,7 +44974,7 @@ azA
 aVS
 aMz
 aGr
-aFf
+aGr
 aGu
 aEt
 aVS
@@ -45250,7 +45231,7 @@ azA
 aVS
 aVS
 aVS
-aVB
+aVS
 aVS
 aVS
 aVS
@@ -45505,11 +45486,11 @@ azA
 azA
 azA
 azA
-aVS
-aGM
-aKq
-aGM
-aVS
+azA
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -45762,11 +45743,11 @@ azA
 azA
 azA
 azA
-aVS
-apj
-aKq
-aGM
-aVS
+azA
+azA
+azA
+azA
+azA
 azA
 azA
 azA
@@ -46016,12 +45997,12 @@ azA
 azA
 azA
 azA
-aVS
-aVS
-aVS
-aVS
-aGM
-aKq
+azA
+azA
+azA
+azA
+azA
+azA
 aVS
 aVS
 aVS
@@ -46273,12 +46254,12 @@ azA
 azA
 azA
 azA
-aVS
-aGM
-aXf
-aGM
-aGM
-aKq
+azA
+azA
+azA
+azA
+azA
+azA
 aVS
 aGM
 xZp
@@ -46530,12 +46511,12 @@ azA
 azA
 azA
 azA
-aVS
-aGM
-aKq
-aKq
-aKq
-aKq
+azA
+azA
+azA
+azA
+azA
+azA
 aVS
 aGM
 aGM
@@ -46787,12 +46768,12 @@ azA
 azA
 azA
 azA
-aVS
-aGM
-cqT
-aGM
-aGM
-cqT
+azA
+azA
+azA
+azA
+azA
+azA
 aVS
 aGM
 aIo
@@ -47044,12 +47025,12 @@ azA
 azA
 azA
 azA
-aVS
-aVS
-aVS
-aVS
-aVS
-aVS
+azA
+azA
+azA
+azA
+azA
+azA
 aVS
 aGM
 aIo

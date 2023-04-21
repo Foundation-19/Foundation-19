@@ -3585,8 +3585,11 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "jD" = (
-/obj/structure/closet/secure_closet/guard/breachautomatics,
-/obj/machinery/light,
+/obj/machinery/door/blast/regular{
+	dir = 4;
+	id_tag = "EZ Rifle Locker";
+	name = "EZ Rifle Locker"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "jE" = (
@@ -4300,12 +4303,10 @@
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "mr" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "EZ Secure Armoury";
-	req_access = list("ACCESS_SECURITY_LEVEL3")
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/uez/armory)
+/obj/effect/paint_stripe/red,
+/obj/machinery/status_display,
+/turf/simulated/wall/titanium,
+/area/site53/uez/equipmentroom)
 "ms" = (
 /obj/effect/floor_decal/corner/brown{
 	dir = 1
@@ -4326,19 +4327,22 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "my" = (
+/obj/machinery/light{
+	dir = 4
+	},
 /obj/structure/table/rack,
 /obj/item/gun/energy/ionrifle,
 /obj/item/gun/energy/ionrifle,
+/obj/machinery/camera/autoname{
+	dir = 8;
+	network = list("Entrance Zone Network")
+	},
 /obj/machinery/button/blast_door{
 	dir = 1;
 	id_tag = "EZ Armoury Lockdown";
 	name = "EZ Armoury Lockdown";
 	pixel_y = -23;
 	req_access = list("ACCESS_SECURITY_LEVEL3")
-	},
-/obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
@@ -5068,6 +5072,25 @@
 /obj/item/pen,
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/hallway)
+"sZ" = (
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/item/gun/projectile/automatic/scp/p90,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/armory)
 "tc" = (
 /obj/effect/floor_decal/corner/black/mono,
 /obj/structure/bed/chair/comfy/black{
@@ -5156,22 +5179,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "ue" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/box/a57,
-/obj/item/ammo_magazine/box/a57,
-/obj/item/ammo_magazine/box/a57,
-/obj/item/ammo_magazine/box/a57,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/turf/simulated/floor/tiled/monotile,
+/obj/structure/sign/goldenplaque/security{
+	pixel_y = 30
+	},
+/turf/simulated/floor/tiled/dark,
 /area/site53/uez/armory)
 "uf" = (
 /obj/machinery/door/blast/regular{
@@ -6001,6 +6012,13 @@
 	},
 /obj/item/gun/projectile/pistol/usp45,
 /obj/item/gun/projectile/pistol/usp45,
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "EZ Rifle Locker";
+	name = "EZ Rifle Locker";
+	pixel_y = -23;
+	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "Av" = (
@@ -7138,10 +7156,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/forensics)
 "KG" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "EZ Secure Armoury";
-	req_access = list("ACCESS_SECURITY_LEVEL3")
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -8229,6 +8243,10 @@
 /obj/item/wirecutters,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/uez/commandpanicbunker)
+"Ti" = (
+/obj/structure/closet/secure_closet/guard/breachautomatics,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/armory)
 "Tk" = (
 /obj/structure/coatrack,
 /obj/item/clothing/suit/storage/toggle/labcoat,
@@ -32496,7 +32514,7 @@ Cy
 As
 IV
 IV
-hk
+IV
 hk
 uH
 JY
@@ -32752,8 +32770,8 @@ dL
 Si
 dN
 jD
+Ti
 IV
-hk
 hk
 fo
 AV
@@ -33007,10 +33025,10 @@ lj
 dN
 dN
 qu
-dN
-ue
+sZ
 IV
-hk
+IV
+IV
 hk
 fo
 Rv
@@ -33264,9 +33282,9 @@ rF
 eP
 dN
 qu
-eP
 my
 IV
+hk
 hk
 hk
 fo
@@ -33523,7 +33541,7 @@ uf
 sy
 IV
 IV
-IV
+hk
 hk
 hk
 fo
@@ -33776,7 +33794,7 @@ hk
 hk
 hk
 IV
-mr
+uk
 KG
 IV
 hk
@@ -34290,7 +34308,7 @@ cX
 cX
 cX
 IV
-uk
+ue
 qR
 IV
 cX
@@ -35308,7 +35326,7 @@ OC
 lU
 ZO
 ZO
-cX
+mr
 ZO
 ZO
 Gn
@@ -35323,7 +35341,7 @@ Sl
 xG
 xG
 xG
-cX
+mr
 hk
 mt
 EC
@@ -38135,7 +38153,7 @@ fe
 Gl
 Gl
 Gl
-cX
+mr
 qF
 wS
 Dy
@@ -38665,7 +38683,7 @@ ZO
 ZO
 ZO
 ZO
-cX
+mr
 hk
 hk
 hk
@@ -39687,7 +39705,7 @@ Zo
 IO
 cX
 cX
-cX
+mr
 cX
 cX
 cX
