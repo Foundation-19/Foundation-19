@@ -1557,12 +1557,13 @@
 "dv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/effect/floor_decal/industrial/warning{
+	dir = 10;
+	icon_state = "warning"
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "dw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -1661,21 +1662,27 @@
 /turf/simulated/floor,
 /area/site53/lhcz/scp049containment)
 "dH" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 6;
-	icon_state = "warning"
-	},
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/obj/structure/railing/mapped,
 /obj/structure/sign/dclass{
 	pixel_y = 32
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/brigdoor{
+	dir = 8;
+	name = "Secure APC";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
@@ -1896,15 +1903,16 @@
 /area/site53/uhcz/scp8containment)
 "el" = (
 /obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/light{
 	dir = 4;
 	pixel_x = 12
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
@@ -2159,16 +2167,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentbubble)
 "eP" = (
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "east bump";
-	pixel_x = 24
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
 	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/tiled/monotile/white,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "eR" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
@@ -2180,11 +2183,14 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "eS" = (
-/obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "eT" = (
@@ -2207,14 +2213,12 @@
 /area/site53/llcz/scp500)
 "eV" = (
 /obj/effect/floor_decal/industrial/hatch/red,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 9
-	},
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing/mapped{
-	dir = 1
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
@@ -4937,9 +4941,16 @@
 /area/site53/llcz/dclass/cellbubble)
 "lr" = (
 /obj/effect/floor_decal/industrial/hatch/red,
-/obj/effect/floor_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "ls" = (
@@ -6681,7 +6692,15 @@
 /obj/machinery/camera/network/lcz{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/hatch/red,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "pG" = (
 /obj/structure/cable/green{
@@ -8437,17 +8456,15 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
 "tF" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+/obj/structure/railing/mapped{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/floor_decal/industrial/hatch/red,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "tH" = (
 /obj/machinery/camera/network/lcz{
@@ -10680,7 +10697,15 @@
 /obj/machinery/camera/network/lcz{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "yY" = (
 /obj/structure/railing/mapped{
@@ -10984,12 +11009,6 @@
 /area/site53/llcz/dclass/briefing)
 "zT" = (
 /obj/structure/table/reinforced,
-/obj/machinery/button/blast_door{
-	id_tag = "dclasscells";
-	name = "Cell Lock";
-	pixel_y = 2;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
 "zU" = (
@@ -11197,8 +11216,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/railing/mapped{
-	dir = 8
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
@@ -12256,6 +12277,17 @@
 /obj/structure/closet/secure_closet/freezer/kitchen/mining,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/kitchen)
+"Dl" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/railing/mapped,
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/primaryhallway)
 "Dm" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/button/flasher{
@@ -14991,14 +15023,25 @@
 	id_tag = "Security Bubble Window";
 	name = "Security Bubble Windows"
 	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	dir = 8;
-	id_tag = "Security Bubble Lockdown";
-	name = "Security Bubble Lockdown"
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/checkpoint)
+"Kd" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/primaryhallway)
 "Ke" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -15694,12 +15737,6 @@
 	id_tag = "Security Bubble Window";
 	name = "Security Bubble Windows"
 	},
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	dir = 8;
-	id_tag = "Security Bubble Lockdown";
-	name = "Security Bubble Lockdown"
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/checkpoint)
 "LP" = (
@@ -15948,14 +15985,23 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/assignmentbubble)
 "Mz" = (
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 1
-	},
 /obj/machinery/light/spot{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "MA" = (
 /obj/structure/cable/green{
@@ -18173,12 +18219,6 @@
 /area/site53/llcz/dclass/assignmentbubble)
 "SF" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	dir = 8;
-	id_tag = "Security Bubble Lockdown";
-	name = "Security Bubble Lockdown"
-	},
 /obj/machinery/door/blast/shutters/open{
 	dir = 4;
 	id_tag = "Security Bubble Window";
@@ -20570,12 +20610,6 @@
 /area/site53/llcz/dclass/assignmentbubble)
 "YU" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/regular{
-	begins_closed = 0;
-	dir = 8;
-	id_tag = "Security Bubble Lockdown";
-	name = "Security Bubble Lockdown"
-	},
 /obj/machinery/door/blast/shutters/open{
 	dir = 4;
 	id_tag = "Security Bubble Window";
@@ -31883,7 +31917,7 @@ uf
 uf
 uf
 uf
-DM
+uf
 dC
 uf
 wV
@@ -32140,7 +32174,7 @@ uf
 uf
 uf
 uf
-DM
+uf
 dC
 uf
 uO
@@ -32398,7 +32432,7 @@ uf
 uf
 uf
 Mz
-dC
+Kd
 eZ
 wV
 tj
@@ -32655,7 +32689,7 @@ JV
 JV
 JV
 sf
-dC
+Dl
 uf
 NB
 et
@@ -32913,7 +32947,7 @@ rE
 tQ
 Nb
 Aq
-tF
+iD
 wu
 SG
 SG
@@ -33429,8 +33463,8 @@ Ks
 dH
 eP
 pF
-uf
-uf
+tF
+tF
 el
 Lt
 eS
