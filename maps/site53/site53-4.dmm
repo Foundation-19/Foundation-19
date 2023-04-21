@@ -5052,6 +5052,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "EZ Security Secure Armoury";
+	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "sC" = (
@@ -5184,17 +5188,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/armory)
-"uf" = (
-/obj/machinery/door/blast/regular{
-	dir = 4;
-	id_tag = "EZ Armoury Lockdown";
-	name = "EZ Armoury Lockdown"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/uez/armory)
-"uk" = (
-/turf/simulated/floor/tiled/dark,
-/area/site53/uez/armory)
 "ul" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/freezer,
@@ -5288,6 +5281,10 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "EZ Security Secure Armoury";
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/armory)
@@ -8432,14 +8429,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/senioragentoffice)
-"Uy" = (
-/obj/machinery/door/blast/regular{
-	dir = 4;
-	id_tag = "EZ Armoury Lockdown";
-	name = "EZ Armoury Lockdown"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site53/uez/armory)
 "UF" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -33537,7 +33526,7 @@ hk
 IV
 IV
 IV
-uf
+IV
 sy
 IV
 IV
@@ -33793,8 +33782,8 @@ cX
 hk
 hk
 hk
+hk
 IV
-uk
 KG
 IV
 hk
@@ -34051,7 +34040,7 @@ hk
 hk
 hk
 IV
-Uy
+IV
 vd
 IV
 hk
