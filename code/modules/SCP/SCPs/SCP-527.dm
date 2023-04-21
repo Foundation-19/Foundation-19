@@ -17,7 +17,7 @@
 
 	init_skills()
 
-	var/decl/hierarchy/outfit/scp_527/outfit = new /decl/hierarchy/outfit/scp_527
+	var/decl/hierarchy/outfit/scp_527/outfit = outfit_by_type(/decl/hierarchy/outfit/scp_527)
 	outfit.equip(src)
 
 /mob/living/carbon/human/scp_527/proc/init_skills()

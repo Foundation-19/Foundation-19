@@ -61,13 +61,8 @@ var/list/outfits_decls_by_type_
 
 	if(is_hidden_category())
 		return
-
-	if(type in outfits_decls_by_type_)
-		outfits_decls_by_type_[type] = src
-	else
-    // Handle the case where `type` is not a valid key
-    // This code block intentionally left blank
-dd_insertObjectList(outfits_decls_, src)
+	outfits_decls_by_type_[type] = src
+	dd_insertObjectList(outfits_decls_, src)
 
 
 /decl/hierarchy/outfit/proc/pre_equip(mob/living/carbon/human/H)
