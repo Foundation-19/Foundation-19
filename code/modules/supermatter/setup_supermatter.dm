@@ -29,7 +29,7 @@
 	var/warnings = 0
 	var/success = 0
 
-	log_and_message_admins("## SUPERMATTER SETUP - Setup initiated by [usr] using coolant type [response].")
+	log_and_message_staff("## SUPERMATTER SETUP - Setup initiated by [usr] using coolant type [response].")
 
 	// CONFIGURATION PHASE
 	// Coolant canisters, set types according to response.
@@ -79,7 +79,7 @@
 				continue
 			if(SETUP_ERROR)
 				errors++
-				log_and_message_admins("## SUPERMATTER SETUP - Error encountered! Aborting.")
+				log_and_message_staff("## SUPERMATTER SETUP - Error encountered! Aborting.")
 				break
 			if(SETUP_DELAYED)
 				delayed_objects.Add(S)
@@ -97,10 +97,10 @@
 					continue
 				if(SETUP_ERROR)
 					errors++
-					log_and_message_admins("## SUPERMATTER SETUP - Error encountered! Aborting.")
+					log_and_message_staff("## SUPERMATTER SETUP - Error encountered! Aborting.")
 					break
 
-	log_and_message_admins("## SUPERMATTER SETUP - Setup completed with [errors] errors, [warnings] warnings and [success] successful steps.")
+	log_and_message_staff("## SUPERMATTER SETUP - Setup completed with [errors] errors, [warnings] warnings and [success] successful steps.")
 
 	return
 
@@ -128,7 +128,7 @@
 	..()
 	var/obj/machinery/atmospherics/binary/pump/P = locate() in get_turf(src)
 	if(!P)
-		log_and_message_admins("## WARNING: Unable to locate pump at [x] [y] [z]!")
+		log_and_message_staff("## WARNING: Unable to locate pump at [x] [y] [z]!")
 		return SETUP_WARNING
 	P.target_pressure = P.max_pressure_setting
 	P.update_use_power(POWER_USE_IDLE)
@@ -145,7 +145,7 @@
 	..()
 	var/obj/machinery/atmospherics/portables_connector/P = locate() in get_turf(src)
 	if(!P)
-		log_and_message_admins("## WARNING: Unable to locate connector port at [x] [y] [z]!")
+		log_and_message_staff("## WARNING: Unable to locate connector port at [x] [y] [z]!")
 		return SETUP_WARNING
 	new/obj/machinery/portable_atmospherics/canister(get_turf(src)) // Canisters automatically connect to connectors in New()
 	return SETUP_OK
@@ -163,10 +163,10 @@
 	..()
 	var/obj/machinery/atmospherics/portables_connector/P = locate() in get_turf(src)
 	if(!P)
-		log_and_message_admins("## ERROR: Unable to locate coolant connector port at [x] [y] [z]!")
+		log_and_message_staff("## ERROR: Unable to locate coolant connector port at [x] [y] [z]!")
 		return SETUP_ERROR
 	if(!canister_type)
-		log_and_message_admins("## ERROR: Canister type unset at [x] [y] [z]!")
+		log_and_message_staff("## ERROR: Canister type unset at [x] [y] [z]!")
 		return SETUP_ERROR
 	new canister_type(get_turf(src))
 	return SETUP_OK
@@ -184,10 +184,10 @@
 	..()
 	var/obj/machinery/power/supermatter/SM = locate() in get_turf(src)
 	if(!SM)
-		log_and_message_admins("## ERROR: Unable to locate supermatter core at [x] [y] [z]!")
+		log_and_message_staff("## ERROR: Unable to locate supermatter core at [x] [y] [z]!")
 		return SETUP_ERROR
 	if(!energy_setting)
-		log_and_message_admins("## ERROR: Energy setting unset at [x] [y] [z]!")
+		log_and_message_staff("## ERROR: Energy setting unset at [x] [y] [z]!")
 		return SETUP_ERROR
 	SM.power = energy_setting
 	return SETUP_OK
@@ -202,7 +202,7 @@
 	..()
 	var/obj/machinery/power/smes/S = locate() in get_turf(src)
 	if(!S)
-		log_and_message_admins("## WARNING: Unable to locate SMES unit at [x] [y] [z]!")
+		log_and_message_staff("## WARNING: Unable to locate SMES unit at [x] [y] [z]!")
 		return SETUP_WARNING
 	S.input_attempt = 1
 	S.output_attempt = 1
@@ -222,10 +222,10 @@
 	..()
 	var/obj/machinery/atmospherics/omni/filter/F = locate() in get_turf(src)
 	if(!F)
-		log_and_message_admins("## WARNING: Unable to locate omni filter at [x] [y] [z]!")
+		log_and_message_staff("## WARNING: Unable to locate omni filter at [x] [y] [z]!")
 		return SETUP_WARNING
 	if(!coolant)
-		log_and_message_admins("## WARNING: No coolant type set at [x] [y] [z]!")
+		log_and_message_staff("## WARNING: No coolant type set at [x] [y] [z]!")
 		return SETUP_WARNING
 
 	// Non-co2 coolant, adjust the filter's config first.
@@ -243,7 +243,7 @@
 				P.mode = ATM_H2
 				break
 			else
-				log_and_message_admins("## WARNING: Inapropriate filter coolant type set at [x] [y] [z]!")
+				log_and_message_staff("## WARNING: Inapropriate filter coolant type set at [x] [y] [z]!")
 				return SETUP_WARNING
 		F.rebuild_filtering_list()
 

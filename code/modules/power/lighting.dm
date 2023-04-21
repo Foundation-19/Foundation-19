@@ -752,7 +752,7 @@
 				S.reagents.trans_to_obj(src, 5)
 				to_chat(user, SPAN_WARNING("You inject the solution into [src]."))
 				if (reagents.get_reagent_amount(/datum/reagent/toxin/phoron) >= LIGHT_PHORON_EXPLODE_THRESHOLD)
-					log_and_message_admins("injected a light with phoron, rigging it to explode.", user)
+					log_and_message_staff("injected a light with phoron, rigging it to explode.", user)
 				return
 			else
 				to_chat(user, SPAN_WARNING("[src] is already filled with fluid!"))
@@ -787,7 +787,7 @@
 	if(reagents)
 		if (reagents.get_reagent_amount(/datum/reagent/toxin/phoron) >= LIGHT_PHORON_EXPLODE_THRESHOLD)
 			visible_message(SPAN_DANGER("[src] flares brilliantly!"), SPAN_DANGER("You hear a loud crack!"))
-			log_and_message_admins("Rigged light explosion, last touched by [fingerprintslast]")
+			log_and_message_staff("Rigged light explosion, last touched by [fingerprintslast]")
 			var/turf/T = get_turf(loc)
 			status = LIGHT_BROKEN
 			spawn(0)

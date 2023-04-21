@@ -167,7 +167,7 @@
 			gases += ", [gas]"
 		else
 			gases = gas
-	log_and_message_admins("opened [src.name], containing [gases].")
+	log_and_message_staff("opened [src.name], containing [gases].")
 
 /obj/machinery/portable_atmospherics/powered/dismantle()
 	if(isturf(loc))

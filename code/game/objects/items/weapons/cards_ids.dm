@@ -101,7 +101,7 @@
 
 		uses -= used_uses
 		A.add_fingerprint(user)
-		log_and_message_admins("emagged \an [A].")
+		log_and_message_staff("emagged \an [A].")
 
 	return 1
 

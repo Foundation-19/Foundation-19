@@ -11,11 +11,11 @@
 	if(isnull(input))
 		config.event = ""
 		log_admin("[usr.key] has cleared the event text.")
-		message_admins("[key_name_admin(usr)] has cleared the event text.")
+		message_staff("[key_name_admin(usr)] has cleared the event text.")
 		return
 
 	log_admin("[usr.key] has changed the event text.")
-	message_admins("[key_name_admin(usr)] has changed the event text.")
+	message_staff("[key_name_admin(usr)] has changed the event text.")
 
 	config.event = input
 

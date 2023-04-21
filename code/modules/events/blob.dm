@@ -15,11 +15,11 @@
 		list(/proc/is_station_turf, /proc/not_turf_contains_dense_objects)
 	)
 	if(!T)
-		log_and_message_admins("Blob failed to find a viable turf.")
+		log_and_message_staff("Blob failed to find a viable turf.")
 		kill()
 		return
 
-	log_and_message_admins("Blob spawned in \the [get_area(T)]", location = T)
+	log_and_message_staff("Blob spawned in \the [get_area(T)]", location = T)
 	Blob = new /obj/effect/blob/core(T)
 	for(var/i = 1; i < rand(3, 4), i++)
 		Blob.Process()

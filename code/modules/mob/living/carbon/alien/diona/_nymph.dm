@@ -143,7 +143,7 @@
 	else
 		first_nymph.key = donor.key
 
-	log_and_message_admins("has split into nymphs; player now controls [key_name_admin(first_nymph)]", donor)
+	log_and_message_staff("has split into nymphs; player now controls [key_name_admin(first_nymph)]", donor)
 
 	for(var/obj/item/W in donor)
 		donor.drop_from_inventory(W)
