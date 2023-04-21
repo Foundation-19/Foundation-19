@@ -304,7 +304,8 @@ var/list/admin_verbs_mod = list(
 	/client/proc/check_fax_history,
 	/datum/admins/proc/paralyze_mob, // right-click paralyze ,
 	/client/proc/cmd_admin_say,
-	/client/proc/investigate_show
+	/client/proc/investigate_show,
+	/datum/admins/proc/view_txt_log
 )
 var/list/admin_verbs_mentors = list(
 	/client/proc/cmd_mentor_say,
