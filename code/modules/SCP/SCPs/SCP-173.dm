@@ -331,7 +331,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 				clear_target()
 
 	if(target && get_dist(loc, get_turf(target)) <= 1)
-		if(!isturf(target)) //If 173 has a non wander (non turf) target, and we are in range, we will attack
+		if(!isturf(target) && (world.time > snap_cooldown)) //If 173 has a non wander (non turf) target, and we are in range, we will attack
 			face_atom(target)
 			UnarmedAttack(target)
 		else //Otherwise, we just wipe the target turf 173 was wandering to
