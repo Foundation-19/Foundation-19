@@ -199,7 +199,7 @@ var/list/global/tank_gauge_cache = list()
 			if(do_after(user, 50, src))
 				to_chat(user, SPAN_NOTICE("You finish attaching the assembly to \the [src]."))
 				GLOB.bombers += "[key_name(user)] attached an assembly to a wired [src]. Temp: [air_contents.temperature-T0C]"
-				log_and_message_admins("attached an assembly to a wired [src]. Temp: [air_contents.temperature-T0C]", user)
+				log_and_message_staff("attached an assembly to a wired [src]. Temp: [air_contents.temperature-T0C]", user)
 				assemble_bomb(W,user)
 			else
 				to_chat(user, SPAN_NOTICE("You stop attaching the assembly."))
@@ -221,7 +221,7 @@ var/list/global/tank_gauge_cache = list()
 					CLEAR_FLAGS(tank_flags, TANK_FLAG_LEAKING)
 				else
 					GLOB.bombers += "[key_name(user)] attempted to weld a [src]. [air_contents.temperature-T0C]"
-					log_and_message_admins("attempted to weld a [src]. [air_contents.temperature-T0C]", user)
+					log_and_message_staff("attempted to weld a [src]. [air_contents.temperature-T0C]", user)
 					if(WT.welding)
 						to_chat(user, SPAN_DANGER("You accidentally rake \the [W] across \the [src]!"))
 						maxintegrity -= rand(2,6)
@@ -449,7 +449,7 @@ var/list/global/tank_gauge_cache = list()
 	if(pressure > TANK_FRAGMENT_PRESSURE)
 		if(integrity <= 7)
 			if(!istype(loc,/obj/item/device/transfer_valve))
-				log_and_message_admins("Explosive tank rupture! last key to touch the tank was [fingerprintslast].")
+				log_and_message_staff("Explosive tank rupture! last key to touch the tank was [fingerprintslast].")
 
 			//Give the gas a chance to build up more pressure through reacting
 			air_contents.react()

@@ -163,7 +163,7 @@
 
 		var/obj/item/light/L = new target.light_type()
 		if (emagged)
-			log_and_message_admins("used an emagged light replacer.", U)
+			log_and_message_staff("used an emagged light replacer.", U)
 			L.create_reagents(5)
 			L.reagents.add_reagent(/datum/reagent/toxin/phoron, 5)
 		target.insert_bulb(L)

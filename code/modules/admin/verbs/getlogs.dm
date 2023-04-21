@@ -51,7 +51,7 @@
 	if(file_spam_check())
 		return
 
-	message_admins("[key_name_admin(src)] accessed file: [path]")
+	message_staff("[key_name_admin(src)] accessed file: [path]")
 	src << browse(file(path), "window=runtimes")
 	to_chat(src, "Attempting to send file, this may take a fair few minutes if the file is very large.")
 	return
@@ -74,7 +74,7 @@
 	if(file_spam_check())
 		return
 
-	message_admins("[key_name_admin(src)] accessed file: [path]")
+	message_staff("[key_name_admin(src)] accessed file: [path]")
 	to_target(src, run(file(path)))
 	to_chat(src, "Attempting to send file, this may take a fair few minutes if the file is very large.")
 	return

@@ -1,0 +1,7 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - balance: Grid check was moved to major event container, thus making it rarer.
+      Electrical storm was removed from major container event due to weakness. Memetic
+      spasm is weakened.
+  - bugfix: Blob and vine events can spawn in now.

@@ -19,7 +19,7 @@ var/list/registered_macros_by_ckey_
 	if(is_macro_use_registered(ckey, macro))
 		return
 	register_macro_use(ckey, macro)
-	log_and_message_admins("attempted to use the disabled [macro] macro.")
+	log_and_message_staff("attempted to use the disabled [macro] macro.")
 
 /proc/get_registered_macros()
 	if(!registered_macros_by_ckey_)

@@ -245,7 +245,7 @@ SUBSYSTEM_DEF(garbage)
 	var/threshold = 0.5 // Default, make a config
 	if (threshold && (time > threshold SECONDS))
 		if (!(I.qdel_flags & QDEL_ITEM_ADMINS_WARNED))
-			log_and_message_admins("Error: [type]([refID]) took longer than [threshold] seconds to delete (took [round(time/10, 0.1)] seconds to delete)")
+			log_and_message_staff("Error: [type]([refID]) took longer than [threshold] seconds to delete (took [round(time/10, 0.1)] seconds to delete)")
 			I.qdel_flags |= QDEL_ITEM_ADMINS_WARNED
 		I.hard_deletes_over_threshold++
 		var/overrun_limit = 0 // Default, make a config

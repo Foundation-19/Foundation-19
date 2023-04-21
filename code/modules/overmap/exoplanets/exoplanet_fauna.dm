@@ -63,7 +63,7 @@
 		return FALSE
 
 	species[species_type] = newname
-	log_and_message_admins("renamed [species_type] to [newname]")
+	log_and_message_staff("renamed [species_type] to [newname]")
 	for (var/mob/living/simple_animal/A in animals)
 		if (istype(A,species_type))
 			A.SetName(newname)

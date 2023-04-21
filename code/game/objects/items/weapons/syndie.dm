@@ -76,7 +76,7 @@
 						if(src.bomb)
 							src.bomb.detonate()
 							log_admin("[key_name(user)] has triggered [src.bomb] with [src].")
-							message_admins(SPAN_DANGER("[key_name_admin(user)] has triggered [src.bomb] with [src]."))
+							message_staff(SPAN_DANGER("[key_name_admin(user)] has triggered [src.bomb] with [src]."))
 
 					if("Close the lighter.")
 						src.icon_state = "c-4detonator_0"

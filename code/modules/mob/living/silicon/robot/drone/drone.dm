@@ -124,7 +124,7 @@ var/list/mob_hat_cache = list()
 	if(src.ckey || src.client)
 		to_chat(possessor, SPAN_WARNING("\The [src] already has a player."))
 		return 0
-	message_admins(SPAN_CLASS("adminnotice","[key_name_admin(possessor)] has taken control of \the [src]."))
+	message_staff(SPAN_CLASS("adminnotice","[key_name_admin(possessor)] has taken control of \the [src]."))
 	log_admin("[key_name(possessor)] took control of \the [src].")
 	transfer_personality(possessor.client)
 	qdel(possessor)
@@ -250,7 +250,7 @@ var/list/mob_hat_cache = list()
 
 	to_chat(src, SPAN_DANGER("You feel a sudden burst of malware loaded into your execute-as-root buffer. Your tiny brain methodically parses, loads and executes the script."))
 
-	log_and_message_admins("emagged drone [key_name_admin(src)].  Laws overridden.", user)
+	log_and_message_staff("emagged drone [key_name_admin(src)].  Laws overridden.", user)
 	var/time = time2text(world.realtime,"hh:mm:ss")
 	GLOB.lawchanges.Add("[time] <B>:</B> [user.name]([user.key]) emagged [name]([key])")
 

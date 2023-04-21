@@ -101,12 +101,6 @@
 		/area/site53/science/aiccore
 	)
 
-/datum/prisonbreakarea/logistics
-	eventDept = "Logistics"
-	areaName = "Logistics"
-	areaType = list(/area/site53/logistics)
-	areaNotType = list()
-
 /datum/prisonbreakarea/lightcontainmentzone
 	eventDept = "Light Containment Zone"
 	areaName = "LCZ Hallways"
@@ -124,3 +118,10 @@
 		/area/site53/lhcz/hallway
 	)
 	areaNotType = list()
+
+/datum/prisonbreakarea/entrancezone
+	eventDept = "Entrance Zone"
+	areaName = "EZ Area"
+	areaType = list(
+		/area/site53/uez
+		)

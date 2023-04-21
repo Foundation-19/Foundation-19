@@ -68,7 +68,7 @@
 			to_world(SPAN_NOTICE("<b>Alert: The shuttle autopilot has been overridden. Launch sequence initiated!</b>"))
 
 	if(usr)
-		log_and_message_admins("has overridden the shuttle autopilot and activated launch sequence")
+		log_and_message_staff("has overridden the shuttle autopilot and activated launch sequence")
 
 	..(user)
 
@@ -81,7 +81,7 @@
 			to_world(SPAN_NOTICE("<b>Alert: The shuttle autopilot has been overridden. Bluespace drive engaged!</b>"))
 
 	if(usr)
-		log_and_message_admins("has overridden the shuttle autopilot and forced immediate launch")
+		log_and_message_staff("has overridden the shuttle autopilot and forced immediate launch")
 
 	..(user)
 
@@ -97,7 +97,7 @@
 				to_world(SPAN_NOTICE("<b>Alert: The shuttle autopilot has been overridden. Launch sequence aborted!</b>"))
 
 		if(usr)
-			log_and_message_admins("has overridden the shuttle autopilot and cancelled launch sequence")
+			log_and_message_staff("has overridden the shuttle autopilot and cancelled launch sequence")
 
 	..(user)
 
@@ -156,7 +156,7 @@
 		to_world(SPAN_NOTICE("<b>Alert: [req_authorizations - authorized.len] authorization\s needed to override the shuttle autopilot.</b>"))
 
 	if(usr)
-		log_and_message_admins("has inserted [ID] into the shuttle control computer - [req_authorizations - authorized.len] authorisation\s needed")
+		log_and_message_staff("has inserted [ID] into the shuttle control computer - [req_authorizations - authorized.len] authorisation\s needed")
 
 	return 1
 
