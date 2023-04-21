@@ -188,7 +188,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		return
 	if(world.time > defecation_cooldown)
 		Defecate()
-	if(client) // AI controls from here
+	if(IsBeingWatched() || client) // AI controls from here
 		return
 	handle_AI()
 
@@ -302,8 +302,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 // 173 AI procs
 
 /mob/living/scp_173/proc/handle_AI()
-	if(IsBeingWatched())
-		return
 	if(istype(loc, /obj/structure/scp173_cage))
 		loc.relaymove(src, NORTH)
 		return
@@ -334,6 +332,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 	if(target && get_dist(loc, get_turf(target)) <= 1)
 		if(!isturf(target)) //If 173 has a non wander (non turf) target, and we are in range, we will attack
+			face_atom(target)
 			UnarmedAttack(target)
 		else //Otherwise, we just wipe the target turf 173 was wandering to
 			clear_target()
