@@ -19,16 +19,7 @@
 	hard_drive.store_file(new /datum/computer_file/program/records())
 	hard_drive.store_file(new /datum/computer_file/program/newscast())
 	hard_drive.store_file(new /datum/computer_file/program/uplink())	//harmless tax software
-	set_autorun("emailc")
-
-	var/mob/living/carbon/human/H = get_holder_of_type(src, /mob)
-	if(istype(H))
-		if(H.mind?.initial_email_login)
-			var/datum/computer_file/program/email_client/e_client = hard_drive.find_file_by_name("emailc")
-
-			if(e_client && istype(e_client))
-				e_client.stored_login = H.mind.initial_email_login["login"]
-				e_client.stored_password = H.mind.initial_email_login["password"]
+	set_autorun("emailc"
 
 
 /obj/item/modular_computer/pda/medical/install_default_hardware()
