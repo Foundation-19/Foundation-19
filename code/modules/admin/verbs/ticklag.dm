@@ -11,7 +11,7 @@
 	//I've used ticks of 2 before to help with serious singulo lags
 	if(newtick && newtick <= 2 && newtick > 0)
 		log_admin("[key_name(src)] has modified world.tick_lag to [newtick]", 0)
-		message_admins("[key_name(src)] has modified world.tick_lag to [newtick]", 0)
+		message_staff("[key_name(src)] has modified world.tick_lag to [newtick]", 0)
 		world.tick_lag = newtick
 		SSstatistics.add_field_details("admin_verb","TICKLAG") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	else

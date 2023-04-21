@@ -39,7 +39,7 @@
 				to_chat(target, SPAN_WARNING("To try to resolve this matter head to [config.banappeals]"))
 			else
 				to_chat(target, SPAN_WARNING("No ban appeals URL has been set."))
-			log_and_message_admins("has banned [mob_key].\nReason: [reason]\nThis will be removed in [mins_readable].")
+			log_and_message_staff("has banned [mob_key].\nReason: [reason]\nThis will be removed in [mins_readable].")
 
 			qdel(target.client)
 
@@ -66,7 +66,7 @@
 				to_chat(target, SPAN_WARNING("No ban appeals URL has been set."))
 			ban_unban_log_save("[user.ckey] has permabanned [mob_key]. - Reason: [reason] - This is a ban until appeal.")
 			notes_add(mob_key,"[user.ckey] has permabanned [mob_key]. - Reason: [reason] - This is a ban until appeal.",user.mob)
-			log_and_message_admins("has banned [mob_key].\nReason: [reason]\nThis is a ban until appeal.")
+			log_and_message_staff("has banned [mob_key].\nReason: [reason]\nThis is a ban until appeal.")
 			SSstatistics.add_field("ban_perma",1)
 			user.holder.DB_ban_record(BANTYPE_PERMA, target, -1, reason)
 
@@ -137,7 +137,7 @@
 			user.holder.DB_staffwarn_record(last_ckey, reason)
 			target.client.staffwarn = reason
 			SSstatistics.add_field("staff_warn",1)
-			log_and_message_admins("has enabled staffwarn on [last_ckey].\nMessage: [reason]\n")
+			log_and_message_staff("has enabled staffwarn on [last_ckey].\nMessage: [reason]\n")
 			. = TRUE
 	else
 		if(tgui_alert(user.mob, "Are you sure you want to remove staff warn?", "Confirmation", list("Yes", "No")) == "Yes")
@@ -146,5 +146,5 @@
 				return
 			notes_add(last_ckey,"\[AUTO\] Staff warn disabled", user.mob)
 			target.client.staffwarn = null
-			log_and_message_admins("has removed the staffwarn on [last_ckey].\n")
+			log_and_message_staff("has removed the staffwarn on [last_ckey].\n")
 			. = TRUE

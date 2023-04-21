@@ -1047,7 +1047,7 @@
 				lawupdate = FALSE
 				disconnect_from_ai()
 				to_chat(user, "You emag [src]'s interface.")
-				log_and_message_admins("emagged cyborg [key_name_admin(src)].  Laws overridden.", src)
+				log_and_message_staff("emagged cyborg [key_name_admin(src)].  Laws overridden.", src)
 				clear_supplied_laws()
 				clear_inherent_laws()
 				laws = new /datum/ai_laws/insurgency_override

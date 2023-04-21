@@ -1,0 +1,4 @@
+author: TheDarkElites
+delete-after: true
+changes:
+  - bugfix: The AI talking through holopad with :h now works correctly again.

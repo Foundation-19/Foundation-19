@@ -101,6 +101,7 @@
 /proc/is_area_without_turf(area/A)
 	. = !is_area_with_turf(A)
 
+// DO NOT USE
 /proc/is_maint_area(area/A)
 	. = istype(A,/area/maintenance)
 

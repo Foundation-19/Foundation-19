@@ -124,7 +124,7 @@ The answer was five and a half years -ZeroBits
 				qdel(query)
 				return 1
 			else
-				log_and_message_admins("has uploaded the book titled [B.name], [length(B.dat)] signs")
+				log_and_message_staff("has uploaded the book titled [B.name], [length(B.dat)] signs")
 				log_game("[usr.name]/[usr.key] has uploaded the book titled [B.name], [length(B.dat)] signs")
 				alert("Upload Complete.")
 			qdel(query)

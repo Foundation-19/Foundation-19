@@ -14,7 +14,7 @@ GLOBAL_LIST_EMPTY(any_possible_gifts)
 	var/obj/item/contains_type
 
 /obj/item/a_gift/Initialize()
-	..()
+	. = ..()
 	contains_type = get_gift_type()
 	if(initial(contains_type.w_class) > 0)
 		var/gift_size = min(initial(contains_type.w_class), 5)
