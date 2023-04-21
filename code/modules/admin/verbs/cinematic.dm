@@ -20,4 +20,4 @@
 				override = null
 			GLOB.cinematic.station_explosion_cinematic(parameter,override)
 
-	log_and_message_admins("launched cinematic \"[cinematic]\"", src)
+	log_and_message_staff("launched cinematic \"[cinematic]\"", src)

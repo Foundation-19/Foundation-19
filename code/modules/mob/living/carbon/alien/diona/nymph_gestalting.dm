@@ -60,6 +60,6 @@
 		if(mind)
 			to_chat(src, SPAN_INFO("You're now in control of [S]."))
 			mind.transfer_to(S)
-			log_and_message_admins("has transfered to another nymph; player now controls [key_name_admin(S)]", src)
+			log_and_message_staff("has transfered to another nymph; player now controls [key_name_admin(S)]", src)
 	else
 		to_chat(src, SPAN_INFO("There are no appropriate nymphs for you to jump into."))

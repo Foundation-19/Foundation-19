@@ -167,7 +167,7 @@
 	if(current && isliving(current))
 		if(href_list["set_psi_faculty"] && href_list["set_psi_faculty_rank"])
 			current.set_psi_rank(href_list["set_psi_faculty"], text2num(href_list["set_psi_faculty_rank"]))
-			log_and_message_admins("set [key_name(current)]'s [href_list["set_psi_faculty"]] faculty to [text2num(href_list["set_psi_faculty_rank"])].")
+			log_and_message_staff("set [key_name(current)]'s [href_list["set_psi_faculty"]] faculty to [text2num(href_list["set_psi_faculty_rank"])].")
 			var/datum/admins/admin = GLOB.admins[usr.key]
 			if(istype(admin))
 				admin.show_player_panel(current)
@@ -406,7 +406,7 @@
 					crystals = input("Amount of telecrystals for [key]","Operative uplink", crystals) as null|num
 					if (!isnull(crystals) && !QDELETED(suplink))
 						suplink.uses = crystals
-						log_and_message_admins("set the telecrystals for [key] to [crystals]")
+						log_and_message_staff("set the telecrystals for [key] to [crystals]")
 
 	else if (href_list["obj_announce"])
 		var/obj_count = 1

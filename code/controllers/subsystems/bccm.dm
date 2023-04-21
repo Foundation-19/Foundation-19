@@ -74,7 +74,7 @@ SUBSYSTEM_DEF(bccm)
 		return TRUE
 
 	is_active = FALSE
-	log_and_message_admins("A Database error has occured. BCCM is automatically disabled.")
+	log_and_message_staff("A Database error has occured. BCCM is automatically disabled.")
 	return FALSE
 
 
@@ -120,9 +120,9 @@ SUBSYSTEM_DEF(bccm)
 
 		if(!http)
 			if(C)
-				log_and_message_admins("BCCM: API connection failed, could not check [C], retrying.")
+				log_and_message_staff("BCCM: API connection failed, could not check [C], retrying.")
 			else
-				log_and_message_admins("BCCM: API connection failed, could not check [ip], retrying.")
+				log_and_message_staff("BCCM: API connection failed, could not check [ip], retrying.")
 			error_counter += 1
 			sleep(2)
 			continue
@@ -132,11 +132,11 @@ SUBSYSTEM_DEF(bccm)
 		try
 			response = json_decode(raw_response)
 		catch (var/exception/e)
-			log_and_message_admins("BCCM: JSON decode error, could not check [C]. JSON decode error: [e.name]")
+			log_and_message_staff("BCCM: JSON decode error, could not check [C]. JSON decode error: [e.name]")
 			return
 
 		if(response["status"] == "fail")
-			log_and_message_admins("BCCM: Request error, could not check [C]. CheckIP response: [response["message"]]")
+			log_and_message_staff("BCCM: Request error, could not check [C]. CheckIP response: [response["message"]]")
 			return
 
 		if(C)
@@ -144,7 +144,7 @@ SUBSYSTEM_DEF(bccm)
 		CacheData(ip, raw_response)
 
 	if(error_counter >= max_error_count && is_active)
-		log_and_message_admins("BCCM was disabled due to connection errors!")
+		log_and_message_staff("BCCM was disabled due to connection errors!")
 		is_active = FALSE
 		return
 
@@ -170,7 +170,7 @@ SUBSYSTEM_DEF(bccm)
 			return TRUE
 		return FALSE
 
-	log_and_message_admins("BCCM failed to load info for [C.ckey].")
+	log_and_message_staff("BCCM failed to load info for [C.ckey].")
 	return TRUE
 
 /datum/controller/subsystem/bccm/proc/CheckWhitelist(ckey)
@@ -259,7 +259,7 @@ SUBSYSTEM_DEF(bccm)
 	qdel(_Whitelist_Query)
 
 	tgui_panel_wl_data = GetWhitelistDatabase()
-	log_and_message_admins("added [ckey] to BCCM whitelist.")
+	log_and_message_staff("added [ckey] to BCCM whitelist.")
 
 	return TRUE
 
@@ -275,7 +275,7 @@ SUBSYSTEM_DEF(bccm)
 	qdel(_Whitelist_Query)
 
 	tgui_panel_wl_data = GetWhitelistDatabase()
-	log_and_message_admins("removed [ckey] from BCCM whitelist.", Admin.mob)
+	log_and_message_staff("removed [ckey] from BCCM whitelist.", Admin.mob)
 
 	return TRUE
 
@@ -318,7 +318,7 @@ SUBSYSTEM_DEF(bccm)
 	qdel(_ASban_Insert_Query)
 
 	tgui_panel_asn_data = GetAsnBanlistDatabase()
-	log_and_message_admins("has added '[ip_as]' to the BCCM ASN banlist.", Admin)
+	log_and_message_staff("has added '[ip_as]' to the BCCM ASN banlist.", Admin)
 
 	return TRUE
 
@@ -334,7 +334,7 @@ SUBSYSTEM_DEF(bccm)
 	qdel(_ASban_Delete_Query)
 
 	tgui_panel_asn_data = GetAsnBanlistDatabase()
-	log_and_message_admins("has removed '[ip_as]' from the BCCM ASN banlist.", Admin)
+	log_and_message_staff("has removed '[ip_as]' from the BCCM ASN banlist.", Admin)
 
 	return TRUE
 
@@ -362,7 +362,7 @@ SUBSYSTEM_DEF(bccm)
 	if(!SSbccm.CheckForAccess(C) && !(C.ckey in GLOB.admin_datums))
 		if(!postponed)
 			C.log_client_to_db_connection_log()
-		log_and_message_admins(SPAN_NOTICE("BCCM: Failed Login: [C.key]/[C.ckey]([C.address])([C.computer_id]) failed to pass BCCM check."))
+		log_and_message_staff(SPAN_NOTICE("BCCM: Failed Login: [C.key]/[C.ckey]([C.address])([C.computer_id]) failed to pass BCCM check."))
 		qdel(C)
 		return
 
@@ -370,7 +370,7 @@ SUBSYSTEM_DEF(bccm)
 	if(!SSbccm.CheckASNban(C) && !(C.ckey in GLOB.admin_datums))
 		if(!postponed)
 			C.log_client_to_db_connection_log()
-		log_and_message_admins(SPAN_NOTICE("BCCM: Failed Login: [C.key]/[C.ckey]([C.address])([C.computer_id]) failed to pass ASN ban check."))
+		log_and_message_staff(SPAN_NOTICE("BCCM: Failed Login: [C.key]/[C.ckey]([C.address])([C.computer_id]) failed to pass ASN ban check."))
 		qdel(C)
 		return
 
@@ -386,6 +386,6 @@ SUBSYSTEM_DEF(bccm)
 		return
 
 	var/bccm_status = SSbccm.Toggle()
-	log_and_message_admins("has [bccm_status ? "enabled" : "disabled"] the BCCM system!")
+	log_and_message_staff("has [bccm_status ? "enabled" : "disabled"] the BCCM system!")
 
 

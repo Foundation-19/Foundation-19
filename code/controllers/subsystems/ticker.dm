@@ -138,7 +138,7 @@ SUBSYSTEM_DEF(ticker)
 	else if(mode_finished && (end_game_state <= END_GAME_NOT_OVER))
 		end_game_state = END_GAME_MODE_FINISH_DONE
 		mode.cleanup()
-		log_and_message_admins(": All antagonists are deceased or the gamemode has ended.") //Outputs as "Event: All antagonists are deceased or the gamemode has ended."
+		log_and_message_staff(": All antagonists are deceased or the gamemode has ended.") //Outputs as "Event: All antagonists are deceased or the gamemode has ended."
 		SSvote.initiate_vote(/datum/vote/transfer, forced = 1)
 
 /datum/controller/subsystem/ticker/proc/post_game_tick()
@@ -288,7 +288,7 @@ Helpers
 			if(M)
 				mode_names += M.name
 		if (config.secret_hide_possibilities)
-			message_admins("<B>Possibilities:</B> [english_list(mode_names)]")
+			message_staff("<B>Possibilities:</B> [english_list(mode_names)]")
 		else
 			to_world("<B>Possibilities:</B> [english_list(mode_names)]")
 	else

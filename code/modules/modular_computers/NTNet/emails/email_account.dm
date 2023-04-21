@@ -45,7 +45,7 @@
 		return 0
 
 	if(!recipient.receive_mail(message, relayed))
-		return
+		return 0
 
 	ntnet_global.add_log_with_ids_check("EMAIL LOG: [login] -> [recipient.login] title: [message.title].")
 	return 1
@@ -80,7 +80,7 @@
 		return FALSE
 	// Possibly exploitable for user spamming so keep admins informed.
 	if(!received_message.spam)
-		log_and_message_admins("Broadcast email address used by [usr]. Message title: [received_message.title].")
+		log_and_message_staff("Broadcast email address used by [usr]. Message title: [received_message.title].")
 
 	spawn(0)
 		for(var/datum/computer_file/data/email_account/email_account in ntnet_global.email_accounts)
@@ -101,7 +101,7 @@
 		return 0
 	// Possibly exploitable for user spamming so keep admins informed.
 	if(!received_message.spam)
-		log_and_message_admins("Broadcast email address used by [usr]. Message title: [received_message.title].")
+		log_and_message_staff("Broadcast email address used by [usr]. Message title: [received_message.title].")
 
 	spawn(0)
 		for(var/datum/computer_file/data/email_account/email_account in ntnet_global.email_accounts)

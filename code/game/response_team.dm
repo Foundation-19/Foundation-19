@@ -39,9 +39,9 @@ var/can_call_ert
 		return
 
 	if(reason)
-		message_admins("[key_name_admin(usr)] is dispatching an Emergency Response Team for the reason: [reason]", 1)
+		message_staff("[key_name_admin(usr)] is dispatching an Emergency Response Team for the reason: [reason]", 1)
 	else
-		message_admins("[key_name_admin(usr)] is dispatching an Emergency Response Team.", 1)
+		message_staff("[key_name_admin(usr)] is dispatching an Emergency Response Team.", 1)
 
 	log_admin("[key_name(usr)] used Dispatch Response Team.")
 	trigger_armed_response_team(1, reason)

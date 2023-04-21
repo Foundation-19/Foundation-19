@@ -18,29 +18,31 @@
 	usage_flags = PROGRAM_ALL
 
 /datum/computer_file/program/wordprocessor/proc/open_file(filename)
-	var/datum/computer_file/data/F = get_file(filename)
+	var/datum/computer_file/data/F = get_data_file(filename)
 	if(F)
 		open_file = F.filename
 		loaded_data = F.stored_data
 		return TRUE
 
 /datum/computer_file/program/wordprocessor/proc/save_file(filename)
-	var/datum/computer_file/data/F = get_file(filename)
-	if(!F) //try to make one if it doesn't exist
-		F = create_file(filename, loaded_data)
-		return !isnull(F)
-	var/datum/computer_file/data/backup = F.clone()
 	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
 	if(!HDD)
 		return
-	HDD.remove_file(F)
-	F.stored_data = loaded_data
-	F.calculate_size()
-	if(!HDD.store_file(F))
-		HDD.store_file(backup)
-		return 0
-	is_edited = 0
-	return TRUE
+	var/datum/computer_file/data/F = get_data_file(filename)
+	if(!F) //try to make one if it doesn't exist
+		F = create_data_file(filename, loaded_data)
+		F.filetype = "TXT"
+		return !isnull(F)
+	else
+		var/datum/computer_file/data/backup = F.clone()
+		HDD.remove_file(F)
+		F.stored_data = loaded_data
+		F.calculate_size()
+		if(!HDD.store_file(F))
+			HDD.store_file(backup)
+			return 0
+		is_edited = 0
+		return TRUE
 
 /datum/computer_file/program/wordprocessor/tgui_act(action, list/params, datum/tgui/ui)
 	if(..())
@@ -86,8 +88,9 @@
 			var/newname = sanitize(tgui_input_text(usr, "Enter file name:", "New File"))
 			if(!newname)
 				return TRUE
-			var/datum/computer_file/data/F = create_file(newname)
+			var/datum/computer_file/data/F = create_data_file(newname)
 			if(F)
+				F.filetype = "TXT"
 				open_file = F.filename
 				loaded_data = ""
 				return TRUE
@@ -99,8 +102,9 @@
 			var/newname = sanitize(tgui_input_text(usr, "Enter file name:", "Save As"))
 			if(!newname)
 				return TRUE
-			var/datum/computer_file/data/F = create_file(newname, loaded_data)
+			var/datum/computer_file/data/F = create_data_file(newname, loaded_data)
 			if(F)
+				F.filetype = "TXT"
 				open_file = F.filename
 			else
 				error = "I/O error: Unable to create file '[params["PRG_saveasfile"]]'."

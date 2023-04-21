@@ -874,6 +874,7 @@
 	on = !on
 	if(on && activation_sound)
 		playsound(src.loc, activation_sound, 75, 1)
+		show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 	update_icon()
 	return 1
 

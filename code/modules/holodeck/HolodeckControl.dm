@@ -131,9 +131,9 @@
 			safety_disabled = !safety_disabled
 			update_projections()
 			if(safety_disabled)
-				log_and_message_admins("overrode the holodeck's safeties")
+				log_and_message_staff("overrode the holodeck's safeties")
 			else
-				log_and_message_admins("restored the holodeck's safeties")
+				log_and_message_staff("restored the holodeck's safeties")
 
 		else if(href_list["gravity"])
 			toggleGravity(linkedholodeck)

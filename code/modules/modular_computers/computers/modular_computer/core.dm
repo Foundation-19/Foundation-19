@@ -208,7 +208,7 @@
 	P.computer = src
 	if(!P.is_supported_by_hardware(hardware_flag, 1, user))
 		return
-	if(P in idle_threads)
+	if((P in idle_threads) && !(P.program_malicious))
 		P.program_state = PROGRAM_STATE_ACTIVE
 		active_program = P
 		idle_threads.Remove(P)
@@ -220,7 +220,7 @@
 		return
 
 	if(P.requires_ntnet && !get_ntnet_status(P.requires_ntnet_feature)) // The program requires SCiPnet connection, but we are not connected to SCiPnet.
-		to_chat(user, SPAN_DANGER("\The [src]'s screen shows \"NETWORK ERROR - Unable to connect to SolNet. Please retry. If problem persists contact your system administrator.\" warning."))
+		to_chat(user, SPAN_DANGER("\The [src]'s screen shows \"NETWORK ERROR - Unable to connect to SCiPnet. Please retry. If problem persists contact your system administrator.\" warning."))
 		return
 
 	if(active_program)

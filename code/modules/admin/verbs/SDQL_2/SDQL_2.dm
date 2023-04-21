@@ -26,7 +26,7 @@
 	set category = "Debug"
 
 	if(!check_rights(R_DEBUG))  // Shouldn't happen... but just to be safe.
-		message_admins(SPAN_WARNING("ERROR: Non-admin [usr.key] attempted to execute the following SDQL query: [query_text]"))
+		message_staff(SPAN_WARNING("ERROR: Non-admin [usr.key] attempted to execute the following SDQL query: [query_text]"))
 		log_admin("Non-admin [usr.key] attempted to execute the following SDQL query: [query_text]!")
 		return
 
@@ -35,7 +35,7 @@
 
 	var/query_log = "[key_name(src)] executed SDQL query: \"[query_text]\"."
 	to_world_log(query_log)
-	log_and_message_admins(query_log)
+	log_and_message_staff(query_log)
 	sleep(-1) // Incase the server crashes due to a huge query, we allow the server to log the above things (it might just delay it).
 
 	var/list/query_list = SDQL2_tokenize(query_text)

@@ -61,7 +61,7 @@ SUBSYSTEM_DEF(webhooks)
 		return
 
 	to_world_log("[usr.key] has reloaded webhooks.")
-	log_and_message_admins("has reloaded webhooks.")
+	log_and_message_staff("has reloaded webhooks.")
 	SSwebhooks.load_webhooks()
 
 /client/proc/ping_webhook()
@@ -78,7 +78,7 @@ SUBSYSTEM_DEF(webhooks)
 	var/choice = input(usr, "Select a webhook to ping.", "Ping Webhook") as null|anything in SSwebhooks.webhook_decls
 	if(choice && SSwebhooks.webhook_decls[choice])
 		var/decl/webhook/webhook = SSwebhooks.webhook_decls[choice]
-		log_and_message_admins("has pinged webhook [choice].", usr)
+		log_and_message_staff("has pinged webhook [choice].", usr)
 		to_world_log("[usr.key] has pinged webhook [choice].")
 		webhook.send()
 

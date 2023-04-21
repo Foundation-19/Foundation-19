@@ -385,13 +385,13 @@
 	visible_message(SPAN_WARNING("\The [src] disappears with a flash of red light, and a set of armor appears on \the [user]."), SPAN_WARNING("You are blinded by the flash of red light. After you're able to see again, you see that you are now wearing a set of armor."))
 
 	var/obj/O = user.get_equipped_item(slot_head) // This will most likely kill you if you are wearing a spacesuit, and it's 100% intended
-	if(O && !istype(O, /obj/item/clothing/head/culthood) && user.unEquip(O))
+	if((O && !istype(O, /obj/item/clothing/head/culthood) && user.unEquip(O)) || !O)
 		user.equip_to_slot_or_del(new /obj/item/clothing/head/culthood/alt(user), slot_head)
 	O = user.get_equipped_item(slot_wear_suit)
-	if(O && !istype(O, /obj/item/clothing/suit/cultrobes) && user.unEquip(O))
+	if((O && !istype(O, /obj/item/clothing/suit/cultrobes) && user.unEquip(O)) || !O)
 		user.equip_to_slot_or_del(new /obj/item/clothing/suit/cultrobes/alt(user), slot_wear_suit)
 	O = user.get_equipped_item(slot_shoes)
-	if(O && !istype(O, /obj/item/clothing/shoes/cult) && user.unEquip(O))
+	if((O && !istype(O, /obj/item/clothing/shoes/cult) && user.unEquip(O)) || !O)
 		user.equip_to_slot_or_del(new /obj/item/clothing/shoes/cult(user), slot_shoes)
 
 	O = user.get_equipped_item(slot_back)
@@ -811,7 +811,7 @@
 				to_chat(M, SPAN_OCCULT("You see a vision of \the [user] keeling over dead, their blood glowing blue as it escapes their body and dissipates into thin air; you hear an otherwordly scream and feel that a great disaster has just been averted."))
 			else
 				to_chat(M, SPAN_OCCULT("You see a vision of [name] keeling over dead, their blood glowing blue as it escapes their body and dissipates into thin air; you hear an otherwordly scream and feel very weak for a moment."))
-		log_and_message_admins("mended reality with the greatest sacrifice", user)
+		log_and_message_staff("mended reality with the greatest sacrifice", user)
 		user.dust()
 		GLOB.cult.powerless = 1
 		qdel(HECOMES)

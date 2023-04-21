@@ -38,7 +38,7 @@
 	if(stage > 1 && !active && clown_check(user))
 		to_chat(user, SPAN_WARNING("You prime \the [name]!"))
 
-		log_and_message_admins("has primed \a [src].")
+		log_and_message_staff("has primed \a [src].")
 
 		activate()
 		add_fingerprint(user)
@@ -58,16 +58,16 @@
 		if(!user.unEquip(det, src))
 			return
 		path = 1
-		log_and_message_admins("has attached \a [W] to \the [src].")
+		log_and_message_staff("has attached \a [W] to \the [src].")
 		to_chat(user, SPAN_NOTICE("You add [W] to the metal casing."))
 		playsound(src.loc, 'sound/items/Screwdriver2.ogg', 25, -3)
 		detonator = det
 		if(istimer(detonator.a_left))
 			var/obj/item/device/assembly/timer/T = detonator.a_left
-			det_time = 10*T.time
+			det_time = T.time
 		if(istimer(detonator.a_right))
 			var/obj/item/device/assembly/timer/T = detonator.a_right
-			det_time = 10*T.time
+			det_time = T.time
 		icon_state = initial(icon_state) +"_ass"
 		SetName("unsecured grenade with [beakers.len] containers[detonator?" and detonator":""]")
 		stage = 1
@@ -127,7 +127,7 @@
 	if(active)
 		icon_state = initial(icon_state) + "_active"
 		if(user)
-			log_and_message_admins("has primed \a [src].")
+			log_and_message_staff("has primed \a [src].")
 
 	return
 
@@ -151,10 +151,10 @@
 		spawn(0) //Otherwise det_time is erroneously set to 0 after this
 			if(istimer(detonator.a_left)) //Make sure description reflects that the timer has been reset
 				var/obj/item/device/assembly/timer/T = detonator.a_left
-				det_time = 10*T.time
+				det_time = T.time
 			if(istimer(detonator.a_right))
 				var/obj/item/device/assembly/timer/T = detonator.a_right
-				det_time = 10*T.time
+				det_time = T.time
 		return
 
 	playsound(src.loc, 'sound/effects/bamf.ogg', 50, 1)

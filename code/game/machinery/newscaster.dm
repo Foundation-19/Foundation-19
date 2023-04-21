@@ -735,12 +735,15 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 		else if (stat & BROKEN)
 			visible_message(SPAN_WARNING("\The [user] further abuses the shattered [name]."))
 			playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 100, 1)
+			show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 		else if (++hitstaken < 3)
 			visible_message(SPAN_DANGER("\The [user] slams \the [src] with \an [I], cracking it!"))
 			playsound(src, 'sound/effects/Glassbr3.ogg', 100, 1)
+			show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 		else
 			visible_message(SPAN_DANGER("\The [user] smashes \the [src] with \an [I]!"))
 			playsound(src, 'sound/effects/Glasshit.ogg', 100, 1)
+			show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 			set_broken(TRUE)
 			update_icon()
 		return TRUE

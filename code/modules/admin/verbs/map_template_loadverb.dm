@@ -21,13 +21,13 @@
 		preview += image('icons/turf/overlays.dmi',S,"greenOverlay")
 	usr.client.images += preview
 	if(alert(usr,"Confirm location.","Template Confirm","Yes","No") == "Yes")
-		log_and_message_admins("is attempting to place a map template [log_name].")
+		log_and_message_staff("is attempting to place a map template [log_name].")
 		to_chat(usr, "Attempting to place map template [log_name].")
 		if(template.load(T, centered = TRUE))
-			log_and_message_admins("has placed a map template [log_name].")
+			log_and_message_staff("has placed a map template [log_name].")
 			to_chat(usr, "Successfully placed map template [log_name].")
 		else
-			log_and_message_admins("has failed to place a map template [log_name].")
+			log_and_message_staff("has failed to place a map template [log_name].")
 			to_chat(usr, "Failed to place map template [log_name].")
 	usr.client.images -= preview
 
@@ -55,14 +55,14 @@
 		if (!jesus_take_the_wheel)
 			return
 
-	log_and_message_admins("is attempting to place a map template [log_name].")
+	log_and_message_staff("is attempting to place a map template [log_name].")
 	to_chat(usr, "Attempting to place map template [log_name].")
 	var/new_z_centre = template.load_new_z(FALSE) // Don't skip changeturf
 	if (new_z_centre)
-		log_and_message_admins("has placed a map template [log_name].")
+		log_and_message_staff("has placed a map template [log_name].")
 		to_chat(usr, "Successfully place map template [log_name].")
 	else
-		log_and_message_admins("has failed to place a map template [log_name].")
+		log_and_message_staff("has failed to place a map template [log_name].")
 		to_chat(usr, "Failed to place map template [log_name].")
 
 /datum/admins/proc/map_template_upload()
@@ -81,12 +81,12 @@
 
 	var/datum/map_template/M = new(list(map), "[map]")
 
-	log_and_message_admins("is attempting to upload a map template '[map]''.")
+	log_and_message_staff("is attempting to upload a map template '[map]''.")
 	to_chat(usr, "Attempting to upload map template '[map]''.")
 	if(M.preload_size())
 		to_chat(usr, "Map template '[map]' ready to place ([M.width]x[M.height]).")
 		SSmapping.map_templates[M.name] = M
-		log_and_message_admins("has uploaded map template '[map]''.")
+		log_and_message_staff("has uploaded map template '[map]''.")
 	else
-		log_and_message_admins("failed to upload map template '[map]''.")
+		log_and_message_staff("failed to upload map template '[map]''.")
 		to_chat(usr, "Map template '[map]' failed to load properly")

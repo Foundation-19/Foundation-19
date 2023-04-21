@@ -96,7 +96,7 @@
 	var/count = locate(/obj/machinery/containment_field) in orange(30, src)
 
 	if (!count)
-		message_admins("A singulo has been created without containment fields active ([x], [y], [z] - <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>).")
+		message_staff("A singulo has been created without containment fields active ([x], [y], [z] - <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>).")
 
 	investigate_log("was created. [count ? "" : FONT_COLORED("red","No containment fields were active.")]", I_SINGULO)
 
@@ -112,7 +112,7 @@
 
 /obj/singularity/proc/expand(force_size = 0, growing = 1)
 	if(current_size == STAGE_SUPER)//if this is happening, this is an error
-		message_admins("expand() was called on a super singulo. This should not happen. Contact a coder immediately!")
+		message_staff("expand() was called on a super singulo. This should not happen. Contact a coder immediately!")
 		return
 	var/temp_allowed_size = allowed_size
 

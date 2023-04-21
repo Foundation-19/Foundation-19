@@ -1,6 +1,0 @@
-author: EgorDinamit
-delete-after: true
-changes:
-  - tweak: SCP-294 now accepts reagent names as valud input. You can also input "shortcut
-      names" for several reagents, for example "bica", "kelo", "derma", "mera" and
-      so on.

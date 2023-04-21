@@ -129,7 +129,7 @@
 	return
 
 /decl/memory_options/proc/Log(message)
-	log_and_message_admins(message)
+	log_and_message_staff(message)
 
 /decl/memory_options/proc/Create(datum/mind/target, memory)
 	var/error = Validate(target)

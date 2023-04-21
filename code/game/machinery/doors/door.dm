@@ -57,6 +57,7 @@
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
 	playsound(loc, hitsound, 50, 1)
+	show_sound_effect(loc, user)
 
 	if(damage >= 10)
 		visible_message(SPAN_DANGER("\The [user] [attack_verb] into \the [src]!"))
@@ -217,6 +218,7 @@
 	else
 		tforce = AM:throwforce * (TT.speed/THROWFORCE_SPEED_DIVISOR)
 	playsound(src.loc, hitsound, 100, 1)
+	show_sound_effect(src.loc)
 	take_damage(tforce)
 	return
 
@@ -329,6 +331,7 @@
 	else
 		visible_message(SPAN_DANGER("\The [user] hits \the [src] with \an [I], causing damage!"))
 		playsound(src, hitsound, 100, 1)
+		show_sound_effect(src.loc, user)
 		take_damage(I.force)
 	return TRUE
 

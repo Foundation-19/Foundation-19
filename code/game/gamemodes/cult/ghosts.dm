@@ -117,6 +117,7 @@
 		return
 
 	playsound(loc, "shatter", 50, 1)
+	show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 
 	ghost_magic_cd = world.time + 5 SECONDS
 
@@ -129,6 +130,7 @@
 		return
 
 	playsound(loc, 'sound/weapons/bladeslice.ogg', 50, 1)
+	show_sound_effect(loc, src, soundicon = SFX_ICON_JAGGED)
 
 	ghost_magic_cd = world.time + 5 SECONDS
 
@@ -190,10 +192,10 @@
 	if(message)
 		if(iscultist(choice) || anyone)
 			to_chat(choice, SPAN_NOTICE("You hear a faint whisper... It says... \"[message]\""))
-			log_and_message_admins("used ghost magic to say '[message]' to \the [choice] and was heard - [x]-[y]-[z]")
+			log_and_message_staff("used ghost magic to say '[message]' to \the [choice] and was heard - [x]-[y]-[z]")
 		else
 			to_chat(choice, SPAN_NOTICE("You hear a faint whisper, but you can't make out the words."))
-			log_and_message_admins("used ghost magic to say '[message]' to \the [choice] but wasn't heard - [x]-[y]-[z]")
+			log_and_message_staff("used ghost magic to say '[message]' to \the [choice] but wasn't heard - [x]-[y]-[z]")
 		to_chat(src, "You whisper to \the [choice]. Perhaps they heard you.")
 
 	ghost_magic_cd = world.time + 100 SECONDS
@@ -222,7 +224,7 @@
 	choice.apply_effect(5, PAIN, 0)
 	to_chat(src, SPAN_NOTICE("You [method] \the [choice]."))
 
-	log_and_message_admins("used ghost magic to bite \the [choice] - [x]-[y]-[z]")
+	log_and_message_staff("used ghost magic to bite \the [choice] - [x]-[y]-[z]")
 
 	ghost_magic_cd = world.time + 60 SECONDS
 
@@ -250,7 +252,7 @@
 		choice.bodytemperature = max(choice.species.cold_level_1 + 1, choice.bodytemperature - 30)
 	to_chat(src, SPAN_NOTICE("You pass through \the [choice], giving them a sudden chill."))
 
-	log_and_message_admins("used ghost magic to chill \the [choice] - [x]-[y]-[z]")
+	log_and_message_staff("used ghost magic to chill \the [choice] - [x]-[y]-[z]")
 
 	ghost_magic_cd = world.time + 60 SECONDS
 

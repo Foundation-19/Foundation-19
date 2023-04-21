@@ -31,16 +31,16 @@
 	return 0
 
 /datum/game_mode/proc/process_autoantag()
-	message_admins("[uppertext(name)]: Attempting autospawn.")
+	message_staff("[uppertext(name)]: Attempting autospawn.")
 
 	var/list/usable_templates = list()
 	for(var/datum/antagonist/A in antag_templates)
 		if(A.can_late_spawn())
-			message_admins("[uppertext(name)]: [A.id] selected for spawn attempt.")
+			message_staff("[uppertext(name)]: [A.id] selected for spawn attempt.")
 			usable_templates |= A
 
 	if(!usable_templates.len)
-		message_admins("[uppertext(name)]: Failed to find configured mode spawn templates, please re-enable auto-antagonists after one is added.")
+		message_staff("[uppertext(name)]: Failed to find configured mode spawn templates, please re-enable auto-antagonists after one is added.")
 		round_autoantag = 0
 		return
 
@@ -49,10 +49,10 @@
 		usable_templates -= spawn_antag
 
 		if(spawn_antag.attempt_auto_spawn())
-			message_admins("[uppertext(name)]: Auto-added a new [spawn_antag.role_text].")
-			message_admins("There are now [spawn_antag.get_active_antag_count()]/[spawn_antag.cur_max] active [spawn_antag.role_text_plural].")
+			message_staff("[uppertext(name)]: Auto-added a new [spawn_antag.role_text].")
+			message_staff("There are now [spawn_antag.get_active_antag_count()]/[spawn_antag.cur_max] active [spawn_antag.role_text_plural].")
 			next_spawn = world.time + rand(min_autotraitor_delay, max_autotraitor_delay)
 			return
 
-	message_admins("[uppertext(name)]: Failed to proc a viable spawn template.")
+	message_staff("[uppertext(name)]: Failed to proc a viable spawn template.")
 	next_spawn = world.time + min_autotraitor_delay //recheck again in the miniumum time

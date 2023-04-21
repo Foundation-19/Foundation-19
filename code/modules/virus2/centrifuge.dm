@@ -128,6 +128,7 @@
 
 			curing = round(delay)
 			playsound(src.loc, 'sound/machines/juicer.ogg', 50, 1)
+			show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 			update_icon()
 			return TOPIC_REFRESH
 

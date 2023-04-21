@@ -321,7 +321,7 @@
 		offline_for = round(current_energy / (SHIELD_SHUTDOWN_DISPERSION_RATE / 1.5))
 		var/old_energy = current_energy
 		shutdown_field()
-		log_and_message_admins("has triggered \the [src]'s emergency shutdown!", user)
+		log_and_message_staff("has triggered \the [src]'s emergency shutdown!", user)
 		spawn()
 			empulse(src, old_energy / 60000000, old_energy / 32000000, 1) // If shields are charged at 450 MJ, the EMP will be 7.5, 14.0625. 90 MJ, 1.5, 2.8125
 		old_energy = 0
