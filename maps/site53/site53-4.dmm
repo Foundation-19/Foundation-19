@@ -347,6 +347,11 @@
 	name = "Director Bodyguard Checkpoint";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
+/obj/machinery/door/blast/shutters{
+	id_tag = "UEZ Checkpoint Access Point";
+	name = "UEZ Checkpoint Access Point";
+	begins_closed = 0
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "aT" = (
@@ -976,16 +981,11 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/substation)
 "cB" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/vending/wallmed1{
+	dir = 4;
+	pixel_x = -22
 	},
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/exoplanet/barren,
+/turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
 "cC" = (
 /obj/structure/cable/green{
@@ -1933,6 +1933,12 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
+/obj/machinery/button/blast_door{
+	id_tag = "sitedirect";
+	name = "Panic Bunker Access";
+	pixel_y = 25;
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
 "eV" = (
@@ -1952,6 +1958,12 @@
 	name = "EZ Bridge Windows Shutter";
 	pixel_y = 2;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "UEZ Checkpoint Access Point";
+	name = "UEZ Checkpoint Access Point";
+	pixel_y = 25;
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/hallway)
@@ -2047,11 +2059,6 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/hallway)
 "fq" = (
-/obj/structure/closet,
-/obj/item/reagent_containers/food/drinks/glass2/coffeecup,
-/obj/item/reagent_containers/food/drinks/cans/waterbottle,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uez/commandpanicbunker)
@@ -2520,11 +2527,6 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
 "gx" = (
@@ -2696,6 +2698,13 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/forensics)
+"hw" = (
+/obj/machinery/vending/wallmed1{
+	name = "Emergency NanoMed";
+	pixel_y = 28
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/uez/conference)
 "hA" = (
 /obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
@@ -4848,9 +4857,13 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/armory)
 "qS" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor/plating,
-/area/site53/entrancezone/forensics)
+/obj/effect/paint_stripe/blue,
+/obj/machinery/button/blast_door{
+	id_tag = "PANIC SHIELD";
+	name = "PANIC SHIELD"
+	},
+/turf/simulated/wall/titanium,
+/area/site53/uez/commandpanicbunker)
 "ra" = (
 /obj/structure/bed/padded,
 /obj/structure/curtain/open/bed,
@@ -6026,16 +6039,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
-"AI" = (
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/hyper{
-	dir = 1
-	},
-/turf/simulated/floor/lino,
-/area/site53/uez/hallway)
 "AL" = (
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
@@ -7260,6 +7263,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
+"LF" = (
+/obj/machinery/vending/wallmed1{
+	dir = 4;
+	pixel_x = -22
+	},
+/turf/simulated/floor/carpet/purple,
+/area/site53/uez/hallway)
 "LL" = (
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -7319,20 +7329,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/forensics)
-"Md" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/exoplanet/barren,
-/area/site53/uez/commandpanicbunker)
 "Mm" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -7996,13 +7992,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/crowbar,
-/obj/item/wrench,
-/obj/item/clothing/gloves/insulated,
-/obj/item/stack/cable_coil/green,
-/obj/item/stack/cable_coil/green,
-/obj/item/stack/cable_coil/green,
-/obj/item/wirecutters,
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "RK" = (
@@ -8234,6 +8223,10 @@
 	icon_state = "2-4"
 	},
 /obj/effect/catwalk_plated/dark,
+/obj/item/stack/cable_coil/green,
+/obj/item/clothing/gloves/insulated,
+/obj/item/crowbar,
+/obj/item/wirecutters,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/uez/commandpanicbunker)
 "Tk" = (
@@ -8336,6 +8329,13 @@
 	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/commandpanicbunker)
+"TM" = (
+/obj/machinery/vending/wallmed1{
+	name = "Emergency NanoMed";
+	pixel_y = 28
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/uez/equipmentroom)
 "TO" = (
 /obj/structure/bed/chair/padded/black{
 	dir = 8
@@ -8753,11 +8753,8 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site53/uez/commandpanicbunker)
+/turf/simulated/floor/carpet/blue,
+/area/site53/uez/hallway)
 "XB" = (
 /obj/machinery/vitals_monitor,
 /turf/simulated/floor/tiled/white,
@@ -8897,12 +8894,12 @@
 /area/site53/uez/equipmentroom)
 "YI" = (
 /obj/effect/catwalk_plated/dark,
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/shieldwallgen/online,
+/obj/machinery/shieldwallgen/online{
+	max_range = 10;
+	req_access = list();
+	storedpower = 50000
+	},
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "YJ" = (
@@ -30967,7 +30964,7 @@ zA
 Vx
 EC
 Bv
-EC
+cB
 EC
 CT
 qI
@@ -31209,10 +31206,10 @@ EC
 EC
 Bv
 EC
-EC
+cB
 Bv
 EC
-Xj
+Bv
 EC
 EC
 Bv
@@ -35042,7 +35039,7 @@ hk
 hk
 hk
 cX
-ZO
+TM
 ZO
 AN
 mS
@@ -36602,7 +36599,7 @@ ZO
 pL
 Gn
 cX
-ZO
+TM
 dU
 YO
 cX
@@ -36615,15 +36612,15 @@ cX
 hk
 fo
 Th
-Md
+mN
 Ff
 mN
 lC
 mN
 Ff
-cB
+mN
 Ex
-fo
+qS
 hk
 hk
 ac
@@ -38915,7 +38912,7 @@ cX
 cX
 cX
 cX
-ZO
+TM
 dU
 zm
 zm
@@ -39192,7 +39189,7 @@ vR
 ac
 ov
 cm
-cd
+LF
 vj
 dk
 ac
@@ -40192,7 +40189,7 @@ fe
 ca
 Yl
 sa
-qS
+Nb
 XJ
 GR
 ws
@@ -40449,7 +40446,7 @@ fe
 Ht
 jF
 Ht
-qS
+Nb
 wi
 zt
 nk
@@ -40480,7 +40477,7 @@ cr
 cv
 Wq
 cY
-cg
+Xj
 dx
 ac
 bK
@@ -42008,7 +42005,7 @@ ac
 ac
 ac
 ac
-AI
+bK
 gw
 cH
 Ry
@@ -43281,7 +43278,7 @@ hk
 hk
 hk
 dF
-YJ
+hw
 gT
 hp
 hp
