@@ -76,7 +76,7 @@
 /obj/item/aiModule/proc/log_law_changes(mob/living/silicon/target, mob/sender)
 	var/time = time2text(world.realtime,"hh:mm:ss")
 	GLOB.lawchanges.Add("[time] <B>:</B> [sender.name]([sender.key]) used [src.name] on [target.name]([target.key])")
-	log_and_message_admins("used [src.name] on [target.name]([target.key])")
+	log_and_message_staff("used [src.name] on [target.name]([target.key])")
 
 /obj/item/aiModule/proc/addAdditionalLaws(mob/living/silicon/ai/target, mob/sender)
 

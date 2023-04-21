@@ -277,7 +277,7 @@ SUBSYSTEM_DEF(vote)
 			if(!check_rights(R_ADMIN|R_MOD, TRUE, voter.client))
 				return
 
-			message_admins("[key_name_admin(voter)] has cancelled the current vote.")
+			message_staff("[key_name_admin(voter)] has cancelled the current vote.")
 			reset()
 			return TRUE
 

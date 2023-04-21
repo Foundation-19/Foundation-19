@@ -6,7 +6,7 @@
 	//Guest Checking
 	if(!config.guests_allowed && IsGuestKey(key))
 		log_access("Failed Login: [key] - Guests not allowed")
-		message_admins(SPAN_NOTICE("Failed Login: [key] - Guests not allowed"))
+		message_staff(SPAN_NOTICE("Failed Login: [key] - Guests not allowed"))
 		return list("reason"="guest", "desc"="\nReason: Guests not allowed. Please sign in with a byond account.")
 
 	if(config.ban_legacy_system)
@@ -15,7 +15,7 @@
 		. = CheckBan( ckey(key), computer_id, address )
 		if(.)
 			log_access("Failed Login: [key] [computer_id] [address] - Banned [.["reason"]]")
-			message_admins(SPAN_NOTICE("Failed Login: [key] id:[computer_id] ip:[address] - Banned [.["reason"]]"))
+			message_staff(SPAN_NOTICE("Failed Login: [key] id:[computer_id] ip:[address] - Banned [.["reason"]]"))
 			return .
 
 		return ..()	//default pager ban stuff
@@ -33,7 +33,7 @@
 		var/failedip = 1
 
 		if (config.minimum_player_age && get_player_age(key) < config.minimum_player_age)
-			message_admins("[key] tried to join but did not meet the configured minimum player age.")
+			message_staff("[key] tried to join but did not meet the configured minimum player age.")
 			return list("reason"="player age", "desc"="This server is not currently allowing accounts with a low number of days since first connection to join.")
 
 		var/ipquery = ""
@@ -71,7 +71,7 @@
 		qdel(query)
 
 		if (failedcid)
-			message_admins("[key] has logged in with a blank computer id in the ban check.")
+			message_staff("[key] has logged in with a blank computer id in the ban check.")
 		if (failedip)
-			message_admins("[key] has logged in with a blank ip in the ban check.")
+			message_staff("[key] has logged in with a blank ip in the ban check.")
 		return ..()	//default pager ban stuff

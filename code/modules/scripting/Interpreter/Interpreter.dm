@@ -109,7 +109,7 @@
 								var/message = "Potential crash-inducing NTSL script detected at telecommunications server [Compiler.Holder] ([Holder.x], [Holder.y], [Holder.z])."
 
 								alertadmins = 1
-								message_admins(message, 1)
+								message_staff(message, 1)
 						break
 
 					if(istype(S, /node/statement/VariableAssignment))

@@ -187,3 +187,27 @@
   - code_imp: Astar Whitelist Tools
   Yawet330:
   - tweak: Unfucks pain.
+2023-04-21:
+  GGarciaECE:
+  - rscadd: Minable paths from Archives to HCZ and LCZ (+ a larger minable area around
+      the Archive)
+  - rscadd: Minable path from upper EZ maint to Upper LCZ Office worker room
+  - rscadd: Fix minable path in CDCZ Mining area
+  - rscadd: Mining drill in the surface's pit area
+  TheDarkElites:
+  - bugfix: The AI talking through holopad with :h now works correctly again.
+  casualspacestation14enjoyer:
+  - rscadd: added more items for the GC and EZ supervisor to use (EZ soup only has
+      better armor... sad.)
+  checkraisefold:
+  - admin: Added investigate verb to mods.
+  - admin: Mods can now check today's server logs for all rounds for the day.
+  - admin: Mods can now use most `JMP` buttons on logs.
+  - bugfix: Href logging now works, so does all other investigate_log categories
+  - admin: Moderators now get most logs.
+  cheesePizza2:
+  - balance: Grid check was moved to major event container, thus making it rarer.
+      Electrical storm was removed from major container event due to weakness. Memetic
+      spasm is weakened.
+  - bugfix: Blob and vine events can spawn in now.
+  - bugfix: Traitor objectives are now SCP-related and actually achievable.

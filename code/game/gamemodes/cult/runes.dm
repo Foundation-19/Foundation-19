@@ -811,7 +811,7 @@
 				to_chat(M, SPAN_OCCULT("You see a vision of \the [user] keeling over dead, their blood glowing blue as it escapes their body and dissipates into thin air; you hear an otherwordly scream and feel that a great disaster has just been averted."))
 			else
 				to_chat(M, SPAN_OCCULT("You see a vision of [name] keeling over dead, their blood glowing blue as it escapes their body and dissipates into thin air; you hear an otherwordly scream and feel very weak for a moment."))
-		log_and_message_admins("mended reality with the greatest sacrifice", user)
+		log_and_message_staff("mended reality with the greatest sacrifice", user)
 		user.dust()
 		GLOB.cult.powerless = 1
 		qdel(HECOMES)

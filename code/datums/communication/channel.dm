@@ -70,9 +70,9 @@
 	if (config.forbidden_message_regex && !check_rights(R_ADMIN|R_MOD, 0, communicator) && findtext(message, config.forbidden_message_regex))
 		if (!config.forbidden_message_no_notifications)
 			if (!config.forbidden_message_hide_details)
-				log_and_message_admins("attempted to send a forbidden message in [name]: [message]", user = C)
+				log_and_message_staff("attempted to send a forbidden message in [name]: [message]", user = C)
 			else
-				log_and_message_admins("attempted to send a forbidden message in [name]", user = C)
+				log_and_message_staff("attempted to send a forbidden message in [name]", user = C)
 		if (C && config.forbidden_message_warning)
 			to_chat(C, config.forbidden_message_warning)
 		return FALSE

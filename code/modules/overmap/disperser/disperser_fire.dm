@@ -6,7 +6,7 @@
 
 
 /obj/machinery/computer/ship/disperser/proc/fire(mob/user)
-	log_and_message_admins("attempted to launch a disperser beam.")
+	log_and_message_staff("attempted to launch a disperser beam.")
 	if(!link_parts())
 		return FALSE //no disperser, no service
 	if(!front.powered() || !middle.powered() || !back.powered())
@@ -108,7 +108,7 @@
 		return TRUE
 
 	var/obj/effect/overmap/finaltarget = pick(candidates)
-	log_and_message_admins("A type [chargetype] disperser beam was launched at [finaltarget].", location=finaltarget)
+	log_and_message_staff("A type [chargetype] disperser beam was launched at [finaltarget].", location=finaltarget)
 
 	//Deletion of the overmap effect and the actual event trigger. Bye bye pesky meteors.
 	if(istype(finaltarget, /obj/effect/overmap/event))
@@ -131,7 +131,7 @@
 	var/area/finalarea = pick(targetareas)
 	var/turf/targetturf = pick_area_turf(finalarea.type, list(/proc/is_not_space_turf))
 
-	log_and_message_admins("Disperser beam hit sector at [get_area(targetturf)].", location=targetturf)
+	log_and_message_staff("Disperser beam hit sector at [get_area(targetturf)].", location=targetturf)
 	if(chargetype == OVERMAP_WEAKNESS_DROPPOD)
 		if(targetturf.density)
 			targetturf.ex_act(1)

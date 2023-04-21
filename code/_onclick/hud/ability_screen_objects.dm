@@ -239,9 +239,9 @@
 
 /obj/screen/movable/ability_master/proc/add_verb_ability(object_given, verb_given, name_given, ability_icon_given, arguments)
 	if(!object_given)
-		message_admins("ERROR: add_verb_ability() was not given an object in its arguments.")
+		message_staff("ERROR: add_verb_ability() was not given an object in its arguments.")
 	if(!verb_given)
-		message_admins("ERROR: add_verb_ability() was not given a verb/proc in its arguments.")
+		message_staff("ERROR: add_verb_ability() was not given a verb/proc in its arguments.")
 	if(get_ability_by_proc_ref(verb_given))
 		return // Duplicate
 	var/obj/screen/ability/verb_based/A = new /obj/screen/ability/verb_based()
@@ -263,9 +263,9 @@
 
 /obj/screen/movable/ability_master/proc/add_ling_ability(object_given, verb_given, name_given, ability_icon_given, arguments)
 	if(!object_given)
-		message_admins("ERROR: add_ling_ability() was not given an object in its arguments.")
+		message_staff("ERROR: add_ling_ability() was not given an object in its arguments.")
 	if(!verb_given)
-		message_admins("ERROR: add_ling_ability() was not given a verb/proc in its arguments.")
+		message_staff("ERROR: add_ling_ability() was not given a verb/proc in its arguments.")
 	if(get_ability_by_proc_ref(verb_given))
 		return // Duplicate
 	var/obj/screen/ability/verb_based/changeling/A = new /obj/screen/ability/verb_based/changeling()
@@ -299,7 +299,7 @@
 
 /obj/screen/movable/ability_master/proc/add_technomancer_ability(obj/object_given, ability_icon_given)
 	if(!object_given)
-		message_admins("ERROR: add_technomancer_ability() was not given an object in its arguments.")
+		message_staff("ERROR: add_technomancer_ability() was not given an object in its arguments.")
 	if(get_ability_by_instance(object_given))
 		return // Duplicate
 	var/obj/screen/ability/obj_based/technomancer/A = new /obj/screen/ability/obj_based/technomancer()

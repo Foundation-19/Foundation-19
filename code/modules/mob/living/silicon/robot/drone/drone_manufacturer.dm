@@ -128,7 +128,7 @@
 		fabricator = all_fabricators[choice]
 
 	if(user && fabricator && !((fabricator.stat & NOPOWER) || !fabricator.produce_drones || fabricator.drone_progress < 100))
-		log_and_message_admins("has joined the round as a maintenance drone.")
+		log_and_message_staff("has joined the round as a maintenance drone.")
 		fabricator.create_drone(user.client)
 		return 1
 	return

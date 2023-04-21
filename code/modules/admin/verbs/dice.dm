@@ -19,4 +19,4 @@
 	if(alert("Do you want to inform the world about the result?",,"Yes", "No") == "Yes")
 		to_world("<h2 style=\"color:#a50400\">Gods rolled [dice], result is [result]</h2>")
 
-	message_admins("[key_name_admin(src)] rolled dice [dice], result is [result]", 1)
+	message_staff("[key_name_admin(src)] rolled dice [dice], result is [result]", 1)

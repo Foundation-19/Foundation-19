@@ -449,7 +449,7 @@
 		else
 			use_power_oneoff(360)
 	else
-		log_and_message_admins("has forced open an emergency shutter.")
+		log_and_message_staff("has forced open an emergency shutter.")
 	latetoggle()
 	playsound(loc, open_sound, 25, TRUE)
 	return ..()

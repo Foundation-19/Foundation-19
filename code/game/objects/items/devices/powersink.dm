@@ -104,7 +104,7 @@
 				"[user] activates \the [src]!", \
 				SPAN_NOTICE("You activate \the [src]."),
 				SPAN_CLASS("italics","You hear a click."))
-			message_admins("Power sink activated by [key_name_admin(user)] at (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)")
+			message_staff("Power sink activated by [key_name_admin(user)] at (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)")
 			log_game("Power sink activated by [key_name(user)] at [get_area_name(src)]")
 			set_mode(OPERATING)
 

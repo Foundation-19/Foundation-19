@@ -168,7 +168,7 @@ var/ascii_reset = "[ascii_esc]\[0m"
 	if(!check_rights(R_DEBUG))
 		return
 
-	log_and_message_admins("has started the unit test '[initial(unit_test_type.name)]'")
+	log_and_message_staff("has started the unit test '[initial(unit_test_type.name)]'")
 	var/datum/unit_test/test = new unit_test_type
 	var/end_unit_tests = world.time + MAX_UNIT_TEST_RUN_TIME
 	do_unit_test(test, end_unit_tests, FALSE)

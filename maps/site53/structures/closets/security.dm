@@ -239,10 +239,11 @@
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/clothing/accessory/armor/tag/solgov/com/guardcomm,
 		/obj/item/clothing/head/beret/sec/corporate/hos,
-		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
+		/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
 		/obj/item/gun/projectile/pistol/mk9,
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 		/obj/item/ammo_magazine/box/mk9,
+		/obj/item/gun/energy/taser/carbine,
 	)
 
 // Zone Commander
@@ -268,7 +269,7 @@
 		/obj/item/clothing/accessory/armor/tag/solgov/com/zonecomm,
 		/obj/item/storage/belt/holster/security/tactical,
 		/obj/item/clothing/head/beret/sec/corporate/hos,
-		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
+		/obj/item/clothing/suit/armor/pcarrier/scp/tactical,
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/head/bio_hood/security,
 		/obj/item/storage/pill_bottle/amnesticsa,
