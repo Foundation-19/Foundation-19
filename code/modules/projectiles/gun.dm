@@ -388,7 +388,7 @@
 		// If your skill in weapons is higher than/equal to (screen_shake + 2) - it won't shake at all.
 		if(screen_shake && !user.skill_check(SKILL_WEAPONS,screen_shake+2))
 			spawn()
-				shake_camera(user, screen_shake+1, screen_shake)
+				directional_recoil(user, screen_shake+1, Get_Angle(user, target))
 
 	if(combustion)
 		var/turf/curloc = get_turf(src)
