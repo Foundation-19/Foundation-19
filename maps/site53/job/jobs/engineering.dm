@@ -5,16 +5,18 @@
 	total_positions = 6
 	spawn_positions = 6
 	department_flag = ENG
-	//supervisors = "the Chief Engineer"
-	economic_power = 5
-	ideal_character_age = 30
+	selection_color = "#5b4d20"
+	supervisors = "the Senior Engineers and Chief Engineer"
+	economic_power = 3
+	minimal_player_age = 0
+	ideal_character_age = 20
 	alt_titles = list(
 		"Junior Maintenance Technician",
 		"Junior Engine Technician",
 		"Junior Damage Control Technician",
 		"Junior Electrician"
 		)
-	outfit_type = /decl/hierarchy/outfit/job/ds90/crew/engineering/juneng
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/engineering/juneng
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudengineertrainee"
@@ -37,18 +39,19 @@
 	title = "Engineer"
 	total_positions = 4
 	spawn_positions = 4
+	selection_color = "#5b4d20"
 	department_flag = ENG
-	//supervisors = "the Chief Engineer"
-	economic_power = 5
-	minimal_player_age = 7
-	ideal_character_age = 30
+	supervisors = "the Senior Engineers and the Chief Engineer"
+	economic_power = 4
+	minimal_player_age = 3
+	ideal_character_age = 25
 	alt_titles = list(
 		"Maintenance Technician",
 		"Engine Technician",
 		"Damage Control Technician",
 		"Electrician"
 		)
-	outfit_type = /decl/hierarchy/outfit/job/ds90/crew/engineering/eng
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/engineering/eng
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudengineer"
@@ -84,7 +87,8 @@
 	total_positions = 2
 	spawn_positions = 2
 	department_flag = ENG
-	//supervisors = "the Chief Engineer"
+	selection_color = "#5b4d20"
+	supervisors = "the Chief Engineer"
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 30
@@ -94,7 +98,7 @@
 		"Senior Damage Control Technician",
 		"Senior Electrician"
 		)
-	outfit_type = /decl/hierarchy/outfit/job/ds90/crew/engineering/seneng
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/engineering/seneng
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudseniorengineer"
@@ -131,14 +135,15 @@
 
 /datum/job/conteng
 	title = "Containment Engineer"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	department_flag = ENG
-	//supervisors = "the Chief Engineer"
+	selection_color = "#5b4d20"
+	supervisors = "the Chief Engineer"
 	economic_power = 5
-	minimal_player_age = 7
+	minimal_player_age = 10
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/ds90/crew/engineering/conteng
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/engineering/conteng
 	allowed_branches = list(
 		/datum/mil_branch/security
 	)
@@ -184,13 +189,15 @@
 
 /datum/job/chief_engineer
 	title = "Chief Engineer"
-	//supervisors = "the Security Commander and Facility Director"
+	supervisors = "the Site Director"
+	department_flag = ENG|COM
+	selection_color = "#5b4d20"
 	total_positions = 1
 	spawn_positions = 1
 	economic_power = 9
-	ideal_character_age = 40
-	minimal_player_age = 15
-	outfit_type = /decl/hierarchy/outfit/job/ds90/crew/command/chief_engineer
+	ideal_character_age = 35
+	minimal_player_age = 20
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/chief_engineer
 	allowed_branches = list(/datum/mil_branch/security)
 	allowed_ranks = list(
 	/datum/mil_rank/security/o2,

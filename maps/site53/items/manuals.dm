@@ -110,7 +110,7 @@
 
 /obj/item/book/manual/mil_sop
 	name = "Military Operating Procedure"
-	desc = "SOP in Site DS90."
+	desc = "SOP in Site 53."
 	icon_state = "booksolregs"
 	author = "The Foundation"
 	title = "Standard Operating Procedure"

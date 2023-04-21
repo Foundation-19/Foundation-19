@@ -1,6 +1,3 @@
-/decl/hierarchy/outfit/job/classd
-	name = OUTFIT_JOB_NAME("Class D")
-
 /decl/hierarchy/outfit/job/chaplain
 	name = OUTFIT_JOB_NAME("Chaplain")
 	uniform = /obj/item/clothing/under/rank/chaplain

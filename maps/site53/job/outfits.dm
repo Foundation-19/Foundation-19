@@ -1,7 +1,7 @@
 //Job Outfits
 
 
-//SITE DS90 OUTFITS
+//SITE site90 OUTFITS
 //Keeping them simple for now, just spawning with basic uniforms, and pretty much no gear. Gear instead goes in lockers. Keep this in mind if editing.
 //Note: backpack items conflict with the built-in backpack selection
 
@@ -11,15 +11,15 @@
 	..()
 	BACKPACK_OVERRIDE_SECURITY
 
-/decl/hierarchy/outfit/job/ds90/medical/New()
+/decl/hierarchy/outfit/job/site90/medical/New()
 	..()
 	BACKPACK_OVERRIDE_MEDICAL
 
-/decl/hierarchy/outfit/job/ds90/medical/chemist/New()
+/decl/hierarchy/outfit/job/site90/medical/chemist/New()
 	..()
 	BACKPACK_OVERRIDE_CHEMISTRY
 
-/decl/hierarchy/outfit/job/ds90/crew/engineering/New()
+/decl/hierarchy/outfit/job/site90/crew/engineering/New()
 	..()
 	BACKPACK_OVERRIDE_ENGINEERING
 
@@ -67,7 +67,7 @@
 	l_ear = /obj/item/device/radio/headset/commsdispatcher
 
 
-/decl/hierarchy/outfit/job/ds90/crew/command/chief_engineer
+/decl/hierarchy/outfit/job/site90/crew/command/chief_engineer
 	name = OUTFIT_JOB_NAME("Chief Engineer")
 	uniform = /obj/item/clothing/under/scp/utility/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
@@ -494,7 +494,7 @@
 	belt = /obj/item/gun/projectile/pistol/m1911
 
 // ENGINEERING STUFF
-/decl/hierarchy/outfit/job/ds90/crew/engineering/juneng
+/decl/hierarchy/outfit/job/site90/crew/engineering/juneng
 	name = OUTFIT_JOB_NAME("Junior Engineer")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
@@ -503,7 +503,7 @@
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_eng
 
-/decl/hierarchy/outfit/job/ds90/crew/engineering/eng
+/decl/hierarchy/outfit/job/site90/crew/engineering/eng
 	name = OUTFIT_JOB_NAME("Engineer")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
@@ -512,7 +512,7 @@
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_eng
 
-/decl/hierarchy/outfit/job/ds90/crew/engineering/seneng
+/decl/hierarchy/outfit/job/site90/crew/engineering/seneng
 	name = OUTFIT_JOB_NAME("Senior Engineer")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
@@ -521,7 +521,7 @@
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/heads/ce
 
-/decl/hierarchy/outfit/job/ds90/crew/engineering/conteng
+/decl/hierarchy/outfit/job/site90/crew/engineering/conteng
 	name = OUTFIT_JOB_NAME("Containment Engineer")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
@@ -541,16 +541,17 @@
 
 
 // MEDICAL OUTFITS
-/decl/hierarchy/outfit/job/ds90/crew/command/cmo
+/decl/hierarchy/outfit/job/site90/crew/command/cmo
 	name = OUTFIT_JOB_NAME("Chief Medical Officer")
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/purple
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	shoes = /obj/item/clothing/shoes/white
 	id_type = /obj/item/card/id/chiefmedicalofficer
 	l_pocket = /obj/item/device/radio
+	r_pocket = /obj/item/device/flashlight/pen
 	l_ear = /obj/item/device/radio/headset/heads/cmo
 
-/decl/hierarchy/outfit/job/ds90/medical/psychiatrist
+/decl/hierarchy/outfit/job/site90/medical/psychiatrist
 	name = OUTFIT_JOB_NAME("Psychiatrist")
 	uniform = /obj/item/clothing/under/suit_jacket/tan
 	shoes = /obj/item/clothing/shoes/laceup
@@ -559,7 +560,7 @@
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_med
 
-/decl/hierarchy/outfit/job/ds90/medical/chemist
+/decl/hierarchy/outfit/job/site90/medical/chemist
 	name = OUTFIT_JOB_NAME("Chemist")
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/navyblue
 	shoes = /obj/item/clothing/shoes/white
@@ -568,7 +569,7 @@
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_med
 
-/decl/hierarchy/outfit/job/ds90/medical/medicaldoctor
+/decl/hierarchy/outfit/job/site90/medical/medicaldoctor
 	name = OUTFIT_JOB_NAME("Medical Doctor")
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/blue
 	shoes = /obj/item/clothing/shoes/white
@@ -577,7 +578,7 @@
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_med
 
-/decl/hierarchy/outfit/job/ds90/medical/surgeon
+/decl/hierarchy/outfit/job/site90/medical/surgeon
 	name = OUTFIT_JOB_NAME("Surgeon")
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/green
 	shoes = /obj/item/clothing/shoes/white
@@ -586,7 +587,7 @@
 	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/headset_med
 
-/decl/hierarchy/outfit/job/ds90/medical/emt
+/decl/hierarchy/outfit/job/site90/medical/emt
 	name = OUTFIT_JOB_NAME("Emergency Medical Technician")
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/black
 	shoes = /obj/item/clothing/shoes/white
@@ -963,7 +964,7 @@
 	l_hand = null
 	r_hand = null
 
-/decl/hierarchy/outfit/job/ds90/medical/medicaldoctor/geared
+/decl/hierarchy/outfit/job/site90/medical/medicaldoctor/geared
 	name = OUTFIT_JOB_NAME("Medical Doctor")
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/blue
 	shoes = /obj/item/clothing/shoes/white

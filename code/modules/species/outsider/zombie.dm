@@ -528,7 +528,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 		/decl/hierarchy/outfit/job/site90/crew/security/lczguard/geared,\
 		/decl/hierarchy/outfit/job/site90/crew/science/juniorscientist/geared,\
 		/decl/hierarchy/outfit/job/site90/crew/science/scientist/geared,\
-		/decl/hierarchy/outfit/job/ds90/medical/medicaldoctor/geared,\
+		/decl/hierarchy/outfit/job/site90/medical/medicaldoctor/geared,\
 		/decl/hierarchy/outfit/job/site90/crew/civ/classd\
 	)
 	outfit = outfit_by_type(outfit)

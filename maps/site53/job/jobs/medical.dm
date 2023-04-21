@@ -2,18 +2,26 @@
 
 /datum/job/cmo
 	title = "Chief Medical Officer"
-	//supervisors = "the Security Commander"
+	supervisors = "the Site Director"
 	economic_power = 10
+	req_admin_notify = 1
 	minimal_player_age = 15
 	ideal_character_age = 48
 	alt_titles = list("Medical Director")
-	outfit_type = /decl/hierarchy/outfit/job/ds90/crew/command/cmo
+	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/cmo
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 						/datum/mil_rank/civ/classb,
 						/datum/mil_rank/civ/classa
 						)
 	hud_icon = "hudchiefmedicalofficer"
+	department = "Medical"
+	department_flag = MED|COM
+	selection_color = "#026865"
+
+	head_position = 1
+	total_positions = 1
+	spawn_positions = 1
 
 	access = list(
 		ACCESS_COM_COMMS,
@@ -52,12 +60,12 @@
 	minimal_player_age = 3
 	total_positions = 2
 	spawn_positions = 2
-	//supervisors = "the Chief Medical Officer"
+	supervisors = "the Chief Medical Officer"
 	selection_color = "#013d3b"
 	economic_power = 4
 	alt_titles = list("Pharmacist")
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/chemist
+	outfit_type = /decl/hierarchy/outfit/job/site90/medical/chemist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 						/datum/mil_rank/civ/classc,
@@ -94,11 +102,12 @@
 	selection_color = "#013d3b"
 	total_positions = 1
 	spawn_positions = 1
+	minimal_player_age = 3
 	ideal_character_age = 40
 	economic_power = 5
-	//supervisors = "the Chief Medical Officer"
+	supervisors = "the Chief Medical Officer"
 	alt_titles = list("Counselor")
-	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/psychiatrist
+	outfit_type = /decl/hierarchy/outfit/job/site90/medical/psychiatrist
 	allowed_branches = list(
 	/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb)
@@ -132,11 +141,12 @@
 	selection_color = "#013d3b"
 	total_positions = 5
 	spawn_positions = 5
-	ideal_character_age = 40
+	supervisors = "the Chief Medical Officer"
+	ideal_character_age = 26
 	minimal_player_age = 3
 	economic_power = 5
 	alt_titles = list("Coroner")
-	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/medicaldoctor
+	outfit_type = /decl/hierarchy/outfit/job/site90/medical/medicaldoctor
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 						/datum/mil_rank/civ/classc,
@@ -176,11 +186,11 @@
 	selection_color = "#013d3b"
 	total_positions = 3
 	spawn_positions = 3
-	ideal_character_age = 40
+	ideal_character_age = 30
 	economic_power = 5
-	//supervisors = "the Chief Medical Officer"
+	supervisors = "the Chief Medical Officer"
 	minimal_player_age = 3
-	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/surgeon
+	outfit_type = /decl/hierarchy/outfit/job/site90/medical/surgeon
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb)
 	hud_icon = "hudsurgeon"
@@ -220,8 +230,8 @@
 	ideal_character_age = 40
 	economic_power = 5
 	//duties = "<big><b>As the EMT it is your job to man the medical post near the Class D cell block, and treat any injuries there of the guards or Class D's. You only have limited supplies, so it's best to make them count.</b></big>"
-	//supervisors = "the Chief Medical Officer"
-	outfit_type = /decl/hierarchy/outfit/job/ds90/medical/emt
+	supervisors = "the Chief Medical Officer"
+	outfit_type = /decl/hierarchy/outfit/job/site90/medical/emt
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudemt"
