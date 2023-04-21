@@ -6,11 +6,11 @@
 	var/list/sound_tokens = list()	//associative list of radios and their looping sound tokens
 
 /datum/event/memetic_spasm/announce()
-	priority_announcement.Announce( \
+	priority_announcement.Announce(
 		"PRIORITY ALERT: MEMETIC SIGNAL TRAMISSION DETECTED: All personnel are advised to avoid \
 		exposure to active audio transmission equipment including radio headsets and intercoms \
-		for the duration of the memetic signal broadcast.", \
-		"[GLOB.using_map.station_name] Memetic Sensor Array" \
+		for the duration of the memetic signal broadcast.",
+		"[GLOB.using_map.station_name] Memetic Sensor Array",
 		GLOB.using_map.command_report_sound
 	)
 

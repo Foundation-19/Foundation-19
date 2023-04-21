@@ -129,7 +129,6 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Trivial News",							/datum/event/trivial_news, 				200),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Vermin Infestation",					/datum/event/infestation, 				100,	list(ASSIGNMENT_JANITOR = 50)),
 		new /datum/event_meta/no_overmap(EVENT_LEVEL_MUNDANE, "Electrical Storm",			/datum/event/electrical_storm, 			20,		list(ASSIGNMENT_ENGINEER = 20, ASSIGNMENT_JANITOR = 50)),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Drone Malfunction",						/datum/event/rogue_maint_drones,		10,		list(ASSIGNMENT_ENGINEER = 30, ASSIGNMENT_SECURITY = 50)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Disposals Explosion",					/datum/event/disposals_explosion,		20,		list(ASSIGNMENT_ENGINEER = 40)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Brain Expansion",						/datum/event/brain_expansion,			100,	list(ASSIGNMENT_SCIENTIST = -10), 0, 10, 100),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Mail Delivery",							/datum/event/mail,						0,		list(ASSIGNMENT_ANY = 5), 1),
@@ -150,7 +149,6 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Sensor Suit Jamming",					/datum/event/sensor_suit_jamming,		10,		list(ASSIGNMENT_MEDICAL = 20, ASSIGNMENT_AIC = 20)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Spider Infestation",					/datum/event/spider_infestation, 		25,		list(ASSIGNMENT_SECURITY = 15), 1),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Wallrot",								/datum/event/wallrot, 					0,		list(ASSIGNMENT_ENGINEER = 40)),
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Drone Uprising",						/datum/event/rogue_maint_drones,		25,		list(ASSIGNMENT_ENGINEER = 30, ASSIGNMENT_SECURITY = 20)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Memetic Spasm",						/datum/event/memetic_spasm,				10,		list(ASSIGNMENT_MEDICAL = 20))
 	)
 
@@ -159,7 +157,6 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 	available_events = list(
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Nothing",									/datum/event/nothing,					200,	list(ASSIGNMENT_ANY = -5)), // So higher pop will run events more often
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Blob",									/datum/event/blob, 						0,		list(ASSIGNMENT_ENGINEER = 20, ASSIGNMENT_MEDICAL = 10, ASSIGNMENT_SECURITY = 20), 1),
-		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Drone Revolution",						/datum/event/rogue_maint_drones,		0,		list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_MEDICAL = 10, ASSIGNMENT_SECURITY = 20)),
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Vines",									/datum/event/spacevine,					0,		list(ASSIGNMENT_ANY = 5, ASSIGNMENT_ENGINEER = 20, ASSIGNMENT_JANITOR = 10)),
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Wormholes",								/datum/event/wormholes,					10,		list(ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_SECURITY = 25)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Grid Check",							/datum/event/grid_check, 				40,		list(ASSIGNMENT_ENGINEER = 15, ASSIGNMENT_SECURITY = 10))
