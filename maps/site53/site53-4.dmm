@@ -4517,11 +4517,6 @@
 	req_access = list("ACCESS_ADMIN_LEVEL3");
 	name = "Panic Chamber CR"
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "nX" = (
@@ -5090,6 +5085,11 @@
 /area/site53/uez/commandpanicbunker)
 "tp" = (
 /obj/machinery/hologram/holopad,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/repoffice/internaltribunal)
 "tv" = (
@@ -5561,6 +5561,11 @@
 /obj/machinery/camera/autoname{
 	dir = 8;
 	network = list("Entrance Zone Network")
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -6781,14 +6786,13 @@
 /turf/simulated/wall/titanium,
 /area/site53/uez/commandpanicbunker)
 "Hv" = (
-/obj/effect/paint_stripe/yellow,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/wall/prepainted,
-/area/site53/uez/maintenance)
+/turf/simulated/floor/carpet/blue,
+/area/site53/uez/repoffice/internaltribunal)
 "Hy" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/teargas,
@@ -6884,19 +6888,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uez/commandpanicbunker)
-"Ip" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/plating,
-/area/site53/uez/maintenance)
 "Ir" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7490,6 +7481,11 @@
 /obj/structure/bed/chair/padded/black{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/repoffice/internaltribunal)
 "Nt" = (
@@ -7796,7 +7792,7 @@
 "PR" = (
 /obj/machinery/door/airlock/command{
 	name = "Zone Commander's Office";
-	req_access = list("ACCESS_SECURITY_LEVEL4s")
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/senioragentoffice)
@@ -7925,8 +7921,8 @@
 /area/site53/uez/equipmentroom)
 "Rc" = (
 /obj/machinery/door/airlock/command{
-	name = "Zone Commander's Office";
-	req_access = list("ACCESS_SECURITY_LEVEL4s")
+	name = "Guard Commander Office";
+	req_access = list("ACCESS_SECURITY_LEVEL4")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -8003,6 +7999,10 @@
 /obj/item/crowbar,
 /obj/item/wrench,
 /obj/item/clothing/gloves/insulated,
+/obj/item/stack/cable_coil/green,
+/obj/item/stack/cable_coil/green,
+/obj/item/stack/cable_coil/green,
+/obj/item/wirecutters,
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "RK" = (
@@ -8896,17 +8896,13 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
 "YI" = (
-/obj/machinery/shieldwallgen/online{
-	max_range = 10;
-	req_access = list();
-	storedpower = 50000
-	},
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/shieldwallgen/online,
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "YJ" = (
@@ -40210,8 +40206,8 @@ JM
 Vp
 Nr
 tp
-nG
-nG
+Hv
+Hv
 Mo
 dK
 vR
@@ -41278,7 +41274,7 @@ dv
 dv
 dv
 dv
-Hv
+dv
 dv
 dv
 dv
@@ -41535,7 +41531,7 @@ fw
 fw
 fw
 fw
-Ip
+fw
 fP
 fw
 fw
