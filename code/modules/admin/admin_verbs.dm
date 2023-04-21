@@ -305,7 +305,8 @@ var/list/admin_verbs_mod = list(
 	/datum/admins/proc/paralyze_mob, // right-click paralyze ,
 	/client/proc/cmd_admin_say,
 	/client/proc/investigate_show,
-	/datum/admins/proc/view_txt_log
+	/datum/admins/proc/view_txt_log,
+	/client/proc/game_panel
 )
 var/list/admin_verbs_mentors = list(
 	/client/proc/cmd_mentor_say,
