@@ -211,3 +211,6 @@
       spasm is weakened.
   - bugfix: Blob and vine events can spawn in now.
   - bugfix: Traitor objectives are now SCP-related and actually achievable.
+2023-04-22:
+  AlphaTronix:
+  - bugfix: Added in a check to handle the case where type is not a valid key in outfit.dm

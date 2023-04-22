@@ -1,4 +1,0 @@
-author: AlphaTronix
-delete-after: true
-changes:
-  - bugfix: Added in a check to handle the case where type is not a valid key in outfit.dm
