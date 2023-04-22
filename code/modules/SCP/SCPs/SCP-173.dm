@@ -58,8 +58,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 	///AI Related vars
 
-	//AI's current target
-	var/atom/movable/target
 	//How many tiles 173 moves in a single run of life
 	var/tile_move_range = 3
 	//How far wander targets can be set
@@ -68,6 +66,10 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/flee_distance = 30
 	//Our current step list (this is to avoid calling AStar unless neccesary)
 	var/list/steps_to_target = list()
+	//Target's position when AStar was last ran (this is also to help avoid calling AStar unless neccesary)
+	var/turf/target_pos_last
+	//AI's current target
+	var/atom/movable/target
 
 /mob/living/scp_173/Initialize()
 	GLOB.scp173s += src
@@ -172,8 +174,8 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/Life()
 	. = ..()
-	if(length(GLOB.clients) <= 30 && !client)
-		return
+	//if(length(GLOB.clients) <= 30 && !client)
+		// return
 	var/list/our_view = dview(7, istype(loc, /obj/structure/scp173_cage) ? loc : src) //In case we are caged, we must see if our cage is being looked at rather than us
 	for(var/mob/living/carbon/human/H in next_blinks)
 		if(!(H in our_view))
@@ -320,8 +322,13 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(target) //this will handle any invalid targets
 		if(ishuman(target))
 			var/mob/living/carbon/human/H = target
+			var/turf/target_turf_current = get_turf(target)
+
 			if(!(H in possible_human_targets))
 				clear_target()
+			if(target && (target_pos_last != target_turf_current))
+				steps_to_target = AStar(loc, target_turf_current, /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)) //if our target changes positions we recalculate our path
+				target_pos_last = target_turf_current
 		else if(istype(target, /obj/machinery/light))
 			var/obj/machinery/light/L = target
 			if(L.get_status() != LIGHT_OK)
@@ -330,16 +337,15 @@ GLOBAL_LIST_EMPTY(scp173s)
 			if((LAZYLEN(possible_human_targets)) && LAZYLEN(steps_to_target) < wander_distance) //If we get a possible target or if our wandering target is invalid and we arent currently fleeing we stop wandering and remove our wander target
 				clear_target()
 
-	if(target && get_dist(loc, get_turf(target)) <= 1)
+	if(target)
+		move_to_target()
+		if((get_dist(loc, get_turf(target)) > 1) || IsBeingWatched())
+			return
 		if(!isturf(target) && (world.time > snap_cooldown)) //If 173 has a non wander (non turf) target, and we are in range, we will attack
 			face_atom(target)
 			UnarmedAttack(target)
 		else //Otherwise, we just wipe the target turf 173 was wandering to
 			clear_target()
-		return
-
-	if(target) //dont need to pick a target if we already have one
-		move_to_target()
 		return
 
 	var/turf/our_turf = get_turf(src)
@@ -382,12 +388,14 @@ GLOBAL_LIST_EMPTY(scp173s)
 	if(temp_steps_to_target) //Double check to ensure that whatever target we assign we can actually get to
 		steps_to_target = temp_steps_to_target
 		target = new_target
+		target_pos_last = get_turf(new_target)
 		return TRUE
 	else
 		return FALSE
 
 /mob/living/scp_173/proc/clear_target()
 	target = null
+	target_pos_last = null
 	LAZYCLEARLIST(steps_to_target)
 
 /mob/living/scp_173/proc/move_to_target() //Moves 173 towards the target using steps list and also deals with any obstacles
