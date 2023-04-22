@@ -1177,7 +1177,7 @@
 /area/site53/uez/hallway)
 "cX" = (
 /obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
+/turf/simulated/wall/prepainted,
 /area/site53/uez/equipmentroom)
 "cY" = (
 /obj/machinery/light{
@@ -1463,7 +1463,7 @@
 /area/site53/uez/commandpanicbunker)
 "dK" = (
 /obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
+/turf/simulated/wall/prepainted,
 /area/site53/uez/repoffice/internaltribunal)
 "dL" = (
 /obj/structure/cable/green{
@@ -1990,13 +1990,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "fd" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/forensics)
 "fe" = (
 /obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
+/turf/simulated/wall/prepainted,
 /area/site53/entrancezone/forensics)
 "ff" = (
 /obj/structure/table/standard,
@@ -4190,7 +4190,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/forensics)
 "lp" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/boombox,
 /obj/item/device/megaphone,
 /turf/simulated/floor/tiled/dark,
@@ -4317,7 +4317,7 @@
 "mr" = (
 /obj/effect/paint_stripe/red,
 /obj/machinery/status_display,
-/turf/simulated/wall/titanium,
+/turf/simulated/wall/prepainted,
 /area/site53/uez/equipmentroom)
 "ms" = (
 /obj/effect/floor_decal/corner/brown{
@@ -4354,15 +4354,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
-"mL" = (
-/obj/item/clothing/gloves/latex/nitrile,
-/obj/item/reagent_containers/spray/cleaner,
-/obj/item/clothing/suit/surgicalapron,
-/obj/item/clothing/mask/surgical,
-/obj/structure/table/rack,
-/obj/item/defibrillator/loaded,
-/turf/simulated/floor/tiled/old_tile,
-/area/space)
 "mM" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/techmaint,
@@ -4392,9 +4383,6 @@
 /obj/item/deck/cards,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
-"mU" = (
-/turf/simulated/floor/tiled/old_tile,
-/area/space)
 "mV" = (
 /obj/machinery/power/apc/hyper{
 	dir = 1
@@ -4437,7 +4425,7 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/commandpanicbunker)
 "nk" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/machinery/photocopier,
 /obj/machinery/light{
 	dir = 4
@@ -4453,7 +4441,7 @@
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
 "np" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/machinery/photocopier,
 /obj/machinery/light{
 	dir = 8
@@ -4536,7 +4524,7 @@
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/commandpanicbunker)
 "nT" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/device/tape,
 /obj/item/device/tape,
 /obj/item/device/taperecorder,
@@ -4677,26 +4665,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
-"pt" = (
-/obj/structure/table/rack,
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/trauma,
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/firstaid/o2,
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/toxin,
-/obj/item/reagent_containers/ivbag/blood/OMinus,
-/obj/item/reagent_containers/ivbag/blood/OMinus,
-/obj/item/reagent_containers/ivbag/blood/OMinus,
-/obj/item/reagent_containers/ivbag/blood/OMinus,
-/obj/item/reagent_containers/ivbag/blood/OMinus,
-/obj/item/reagent_containers/ivbag/blood/OMinus,
-/obj/machinery/camera/network/scp049{
-	dir = 4;
-	name = "SCP-049 Medical Storage"
-	},
-/turf/simulated/floor/tiled/old_tile,
-/area/space)
 "pI" = (
 /obj/structure/table/rack,
 /obj/item/melee/baton/loaded,
@@ -4843,7 +4811,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "qE" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "EZ Lobby Lockdown";
@@ -4875,7 +4843,7 @@
 	department = "Guard Commander's Office";
 	send_access = list("ACCESS_SECURITY_LEVEL5")
 	},
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uez/equipmentroom)
 "qI" = (
@@ -4911,13 +4879,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/armory)
-"qS" = (
-/obj/structure/table/standard,
-/obj/item/storage/box/freezer,
-/obj/item/storage/box/bodybags,
-/obj/item/device/radio,
-/turf/simulated/floor/tiled/old_tile,
-/area/space)
 "qZ" = (
 /obj/machinery/button/blast_door{
 	dir = 1;
@@ -5126,10 +5087,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
-"sM" = (
-/obj/machinery/smartfridge/chemistry,
-/turf/simulated/floor/tiled/monotile/white,
-/area/space)
 "sO" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
@@ -5167,7 +5124,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
 "th" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/implanter,
 /obj/item/folder/yellow,
 /obj/item/implantcase/death_alarm,
@@ -5238,7 +5195,7 @@
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
 "ua" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -5490,7 +5447,7 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "vU" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -5532,7 +5489,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "wi" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/device/tape,
 /obj/item/device/tape,
 /obj/item/device/tape,
@@ -5591,7 +5548,7 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
 "wP" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -5761,6 +5718,7 @@
 /obj/item/ammo_magazine/scp/mk9,
 /obj/item/gun/projectile/pistol/mk9,
 /obj/item/gun/projectile/pistol/mk9,
+/obj/item/gun/projectile/pistol/mk9,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "xX" = (
@@ -5783,10 +5741,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
-"yo" = (
-/obj/structure/iv_drip,
-/turf/simulated/floor/tiled/old_tile,
-/area/space)
 "yq" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
@@ -5848,7 +5802,7 @@
 /turf/simulated/floor/lino,
 /area/site53/uez/hallway)
 "yN" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/storage/mre/random,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -5861,10 +5815,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
-"yR" = (
-/obj/machinery/chemical_dispenser/full,
-/turf/simulated/floor/tiled/old_tile,
-/area/space)
 "yT" = (
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = -30
@@ -6057,7 +6007,7 @@
 /area/site53/uez/commandpanicbunker)
 "Aa" = (
 /obj/item/device/flashlight/lamp,
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/senioragentoffice)
 "Ar" = (
@@ -6091,6 +6041,7 @@
 	pixel_y = -23;
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
+/obj/item/gun/projectile/pistol/usp45,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
 "Av" = (
@@ -6129,12 +6080,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
-"AH" = (
-/obj/machinery/vending/medical{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/old_tile,
-/area/space)
 "AL" = (
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
@@ -6149,7 +6094,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "AO" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/machinery/door/window/brigdoor/westleft{
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -6187,7 +6132,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "AZ" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -6225,7 +6170,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "Bq" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -6314,13 +6259,6 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
-"Cn" = (
-/obj/machinery/reagentgrinder,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/old_tile,
-/area/space)
 "Cq" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -6341,13 +6279,6 @@
 "Cy" = (
 /obj/structure/table/rack,
 /obj/item/ammo_magazine/box/a357,
-/obj/item/ammo_magazine/box/a357,
-/obj/item/ammo_magazine/box/a357,
-/obj/item/ammo_magazine/box/a357,
-/obj/item/ammo_magazine/box/a357,
-/obj/item/ammo_magazine/box/a357,
-/obj/item/gun/projectile/revolver/rhino,
-/obj/item/gun/projectile/revolver/rhino,
 /obj/item/gun/projectile/revolver/rhino,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
@@ -6379,7 +6310,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
 "CG" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/implanter,
 /obj/item/folder/yellow,
 /obj/item/implantcase/death_alarm,
@@ -6416,7 +6347,7 @@
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/commandpanicbunker)
 "CR" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/reagent_containers/food/drinks/cans/waterbottle,
 /obj/item/device/camera,
 /turf/simulated/floor/tiled/dark,
@@ -6425,7 +6356,7 @@
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/commandpanicbunker)
 "De" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/storage/firstaid/combat,
 /obj/item/storage/firstaid/combat,
 /obj/item/storage/firstaid/combat,
@@ -6505,7 +6436,7 @@
 /area/site53/uez/maintenance)
 "Dy" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
 "DA" = (
@@ -7061,7 +6992,7 @@
 /area/site53/uez/equipmentroom)
 "IV" = (
 /obj/effect/paint_stripe/red,
-/turf/simulated/wall/titanium,
+/turf/simulated/wall/prepainted,
 /area/site53/uez/armory)
 "Je" = (
 /obj/structure/table/standard,
@@ -7069,7 +7000,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
 "Jl" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /obj/structure/window/reinforced{
 	dir = 1
@@ -7149,7 +7080,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsofficer)
 "Ke" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -7158,7 +7089,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "Kg" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "Kk" = (
@@ -7253,20 +7184,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/armory)
-"KH" = (
-/obj/structure/table/standard,
-/obj/machinery/reagent_temperature/cooler{
-	pixel_x = 7
-	},
-/obj/machinery/reagent_temperature{
-	pixel_x = -7
-	},
-/obj/effect/floor_decal/corner/yellow/mono,
-/obj/item/stack/material/phoron/ten,
-/obj/item/stack/material/phoron/ten,
-/obj/item/stack/material/phoron/ten,
-/turf/simulated/floor/tiled/monotile/white,
-/area/space)
 "KM" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -7279,7 +7196,7 @@
 /area/site53/uez/commandpanicbunker)
 "KP" = (
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/senioragentoffice)
 "KS" = (
@@ -7287,7 +7204,7 @@
 	department = "Guard Commander's Office";
 	send_access = list("ACCESS_SECURITY_LEVEL5")
 	},
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/senioragentoffice)
 "KY" = (
@@ -7312,7 +7229,7 @@
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "Lo" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -7456,7 +7373,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/forensics)
 "Mm" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -7757,13 +7674,6 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/uez/commandpanicbunker)
-"OR" = (
-/obj/machinery/organ_printer/flesh/mapped,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/old_tile,
-/area/space)
 "OS" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/yellow/mono,
@@ -7789,7 +7699,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/upper_surface/commstower)
 "OZ" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/clothing/suit/straight_jacket,
 /obj/item/clothing/suit/straight_jacket,
 /obj/item/clothing/suit/straight_jacket,
@@ -7851,7 +7761,7 @@
 	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL2"));
 	name = "HCZCrematorium"
 	},
-/turf/simulated/wall/titanium,
+/turf/simulated/wall/prepainted,
 /area/site53/uez/equipmentroom)
 "Pk" = (
 /obj/structure/table/standard,
@@ -7907,10 +7817,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "PM" = (
-/obj/structure/table/standard,
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/combat,
+/obj/structure/table/steel,
 /obj/item/storage/firstaid/adv,
 /obj/item/storage/firstaid/adv,
 /obj/item/storage/firstaid/adv,
@@ -7934,13 +7841,13 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/senioragentoffice)
 "PT" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/paper_bin,
 /obj/item/pen,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/senioragentoffice)
 "PV" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/machinery/photocopier,
 /obj/machinery/light{
 	dir = 8
@@ -8457,7 +8364,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "TG" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -8574,7 +8481,7 @@
 /turf/simulated/floor,
 /area/site53/logistics/logisticsbreak)
 "UH" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/clothing/suit/straight_jacket,
 /obj/item/clothing/suit/straight_jacket,
 /obj/item/clothing/suit/straight_jacket,
@@ -8697,11 +8604,11 @@
 /area/site53/uez/commandpanicbunker)
 "VE" = (
 /obj/item/device/flashlight/lamp,
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
 "VF" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/deck/cards,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
@@ -8805,7 +8712,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/equipmentroom)
 "WK" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/paper_bin,
 /obj/item/pen,
 /turf/simulated/floor/carpet/red,
@@ -8865,7 +8772,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
 "WZ" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -8917,7 +8824,7 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/uez/commandpanicbunker)
 "XJ" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/paper_bin,
 /obj/item/pen,
 /turf/simulated/floor/tiled/dark,
@@ -8987,7 +8894,7 @@
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
 "Yi" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/machinery/photocopier,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
@@ -9001,7 +8908,7 @@
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
 "Yl" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/item/device/flashlight/lamp,
 /obj/item/device/taperecorder,
 /turf/simulated/floor/tiled/techfloor,
@@ -9069,19 +8976,15 @@
 /turf/simulated/floor/wood,
 /area/site53/uez/canteen)
 "Zd" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/machinery/photocopier,
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
-"Zf" = (
-/obj/machinery/chem_master,
-/turf/simulated/floor/tiled/old_tile,
-/area/space)
 "Zj" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "EZ Brig CR Windows";
@@ -9128,7 +9031,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
 "Zu" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "EZ Brig Iso Entry";
@@ -9190,28 +9093,13 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
 "ZJ" = (
-/obj/structure/table/standard,
+/obj/structure/table/steel,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/senioragentoffice)
 "ZK" = (
-/obj/structure/closet/secure_closet/freezer{
-	icon = 'icons/obj/closets/fridge.dmi';
-	name = "Secure Freezer"
-	},
-/obj/item/organ/internal/lungs,
-/obj/item/organ/internal/lungs,
-/obj/item/organ/internal/lungs,
-/obj/item/organ/internal/liver,
-/obj/item/organ/internal/liver,
-/obj/item/organ/internal/liver,
-/obj/item/organ/internal/heart,
-/obj/item/organ/internal/heart,
-/obj/item/organ/internal/heart,
-/obj/item/organ/internal/kidneys,
-/obj/item/organ/internal/kidneys,
-/obj/item/organ/internal/kidneys,
-/turf/simulated/floor/tiled/old_tile,
-/area/space)
+/obj/effect/paint_stripe/blue,
+/turf/simulated/wall/prepainted,
+/area/site53/uez/hallway)
 "ZM" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -29827,10 +29715,10 @@ hk
 hk
 hk
 hk
-OR
-mU
-AH
-pt
+hk
+hk
+hk
+hk
 hk
 hk
 hk
@@ -30084,10 +29972,10 @@ hk
 hk
 hk
 hk
-qS
-mU
-mU
-ZK
+hk
+hk
+hk
+hk
 hk
 hk
 hk
@@ -30341,10 +30229,10 @@ hk
 hk
 hk
 hk
-KH
-mU
-mU
-mL
+hk
+hk
+hk
+hk
 hk
 hk
 hk
@@ -30598,10 +30486,10 @@ hk
 hk
 hk
 hk
-sM
-yR
-Zf
-Cn
+hk
+hk
+hk
+hk
 hk
 hk
 hk
@@ -30859,7 +30747,7 @@ hk
 hk
 hk
 hk
-yo
+hk
 hk
 hk
 fo
@@ -39869,7 +39757,7 @@ cX
 cX
 cX
 cX
-ac
+ZK
 hA
 vR
 zg
