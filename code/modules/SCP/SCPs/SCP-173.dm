@@ -174,8 +174,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/Life()
 	. = ..()
-	//if(length(GLOB.clients) <= 30 && !client)
-		// return
 	var/list/our_view = dview(7, istype(loc, /obj/structure/scp173_cage) ? loc : src) //In case we are caged, we must see if our cage is being looked at rather than us
 	for(var/mob/living/carbon/human/H in next_blinks)
 		if(!(H in our_view))
@@ -268,13 +266,15 @@ GLOBAL_LIST_EMPTY(scp173s)
 	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
 
 /mob/living/scp_173/proc/Defecate()
+	var/feces_amount = CheckFeces()
+	if(feces_amount >= 30 && length(GLOB.clients) <= 30 && !client) //If we're lowpop we cant breach ourselves
+		return
 	if(!isobj(loc) && world.time > defecation_cooldown)
 		defecation_cooldown = world.time + defecation_cooldown_time
 		var/feces = pick(defecation_types)
 		var/obj/effect/new_f = new feces(loc)
 		new_f.update_icon()
 	// Breach check
-	var/feces_amount = CheckFeces()
 	if(feces_amount >= 60) // Breach, gonna take ~45 minutes
 		if(breach_cooldown > world.time)
 			return
