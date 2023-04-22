@@ -26336,14 +26336,14 @@
 /turf/simulated/floor/bluegrid,
 /area/site53/science/aiccore)
 "hEk" = (
-/obj/machinery/door/airlock/security{
-	name = "LCZ Security Section";
-	req_access = list("ACCESS_SECURITY_LEVEL3")
-	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
 	id_tag = "LCZ Security Office Access Lock";
 	name = "LCZ Security Office Access Lock"
+	},
+/obj/machinery/door/airlock/security{
+	name = "LCZ Security Section";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)
@@ -28226,7 +28226,7 @@
 "jEt" = (
 /obj/machinery/door/airlock/security{
 	name = "LCZ Security Section";
-	req_access = list("ACCESS_SECURITY_LEVEL3")
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -31173,13 +31173,13 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/serverfarmtunnel)
 "mUD" = (
-/obj/machinery/door/airlock/security{
-	name = "LCZ Security Section";
-	req_access = list("ACCESS_SECURITY_LEVEL3")
-	},
 /obj/machinery/door/blast/shutters{
 	id_tag = "LCZ Security Office Access Lock";
 	name = "LCZ Security Office Access Lock"
+	},
+/obj/machinery/door/airlock/security{
+	name = "LCZ Security Section";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/entrance_checkpoint)

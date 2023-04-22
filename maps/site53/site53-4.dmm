@@ -1997,7 +1997,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "fg" = (
 /obj/structure/bed/chair/comfy/blue{
@@ -4346,6 +4346,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/armory)
+"mL" = (
+/obj/item/clothing/gloves/latex/nitrile,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/clothing/suit/surgicalapron,
+/obj/item/clothing/mask/surgical,
+/obj/structure/table/rack,
+/obj/item/defibrillator/loaded,
+/turf/simulated/floor/tiled/old_tile,
+/area/space)
 "mM" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/techmaint,
@@ -4375,6 +4384,9 @@
 /obj/item/deck/cards,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"mU" = (
+/turf/simulated/floor/tiled/old_tile,
+/area/space)
 "mV" = (
 /obj/machinery/power/apc/hyper{
 	dir = 1
@@ -4653,6 +4665,26 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
+"pt" = (
+/obj/structure/table/rack,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/trauma,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/toxin,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/machinery/camera/network/scp049{
+	dir = 4;
+	name = "SCP-049 Medical Storage"
+	},
+/turf/simulated/floor/tiled/old_tile,
+/area/space)
 "pI" = (
 /obj/structure/table/rack,
 /obj/item/melee/baton/loaded,
@@ -4696,6 +4728,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"pM" = (
+/obj/effect/catwalk_plated/dark,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/exoplanet/barren,
+/area/site53/uez/commandpanicbunker)
 "pN" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -4861,13 +4900,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/armory)
 "qS" = (
-/obj/effect/paint_stripe/blue,
-/obj/machinery/button/blast_door{
-	id_tag = "PANIC SHIELD";
-	name = "PANIC SHIELD"
-	},
-/turf/simulated/wall/titanium,
-/area/site53/uez/commandpanicbunker)
+/obj/structure/table/standard,
+/obj/item/storage/box/freezer,
+/obj/item/storage/box/bodybags,
+/obj/item/device/radio,
+/turf/simulated/floor/tiled/old_tile,
+/area/space)
 "ra" = (
 /obj/structure/bed/padded,
 /obj/structure/curtain/open/bed,
@@ -5066,6 +5104,10 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
+"sM" = (
+/obj/machinery/smartfridge/chemistry,
+/turf/simulated/floor/tiled/monotile/white,
+/area/space)
 "sO" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
@@ -5716,6 +5758,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/conference)
+"yo" = (
+/obj/structure/iv_drip,
+/turf/simulated/floor/tiled/old_tile,
+/area/space)
 "yq" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
@@ -5790,6 +5836,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"yR" = (
+/obj/machinery/chemical_dispenser/full,
+/turf/simulated/floor/tiled/old_tile,
+/area/space)
 "yT" = (
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = -30
@@ -6054,6 +6104,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
+"AH" = (
+/obj/machinery/vending/medical{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/old_tile,
+/area/space)
 "AL" = (
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
@@ -6227,6 +6283,13 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/plating,
 /area/site53/uez/equipmentroom)
+"Cn" = (
+/obj/machinery/reagentgrinder,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/old_tile,
+/area/space)
 "Cq" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -6563,16 +6626,9 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
 "Ff" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/catwalk_plated/dark,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/exoplanet/barren,
+/obj/effect/paint_stripe/blue,
+/obj/effect/paint_stripe/blue,
+/turf/simulated/wall/titanium,
 /area/site53/uez/commandpanicbunker)
 "Fo" = (
 /obj/structure/table/standard,
@@ -6904,7 +6960,7 @@
 	id_tag = "evacbunker";
 	pixel_x = 24
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "Ir" = (
 /obj/structure/cable/green{
@@ -7160,6 +7216,20 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/armory)
+"KH" = (
+/obj/structure/table/standard,
+/obj/machinery/reagent_temperature/cooler{
+	pixel_x = 7
+	},
+/obj/machinery/reagent_temperature{
+	pixel_x = -7
+	},
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/item/stack/material/phoron/ten,
+/obj/item/stack/material/phoron/ten,
+/obj/item/stack/material/phoron/ten,
+/turf/simulated/floor/tiled/monotile/white,
+/area/space)
 "KM" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -7314,7 +7384,15 @@
 /area/site53/logistics/logisticsbreak)
 "LP" = (
 /obj/structure/table/standard,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
 /obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/obj/item/device/scanner/health,
+/obj/item/device/scanner/health,
+/obj/item/device/scanner/health,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "LT" = (
@@ -7635,6 +7713,13 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/uez/commandpanicbunker)
+"OR" = (
+/obj/machinery/organ_printer/flesh/mapped,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/old_tile,
+/area/space)
 "OS" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/yellow/mono,
@@ -7698,8 +7783,8 @@
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
 	dir = 4;
-	id_tag = "Panic Room Gate East";
-	name = "Panic Room Gate East";
+	id_tag = "Panic Room Gate West";
+	name = "Panic Room Gate West";
 	pixel_x = -6;
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -7729,7 +7814,8 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/obj/item/storage/firstaid/surgery,
+/turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "Pl" = (
 /obj/structure/closet/crate/bin{
@@ -8767,9 +8853,24 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
 "XG" = (
-/obj/structure/table/standard,
-/obj/item/roller,
-/turf/simulated/floor/tiled/white,
+/obj/structure/table/rack,
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/trauma,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/toxin,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/machinery/camera/network/scp049{
+	dir = 4;
+	name = "SCP-049 Medical Storage"
+	},
+/turf/simulated/floor/tiled/old_tile,
 /area/site53/uez/commandpanicbunker)
 "XJ" = (
 /obj/structure/table/standard,
@@ -8931,6 +9032,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"Zf" = (
+/obj/machinery/chem_master,
+/turf/simulated/floor/tiled/old_tile,
+/area/space)
 "Zj" = (
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
@@ -9044,6 +9149,25 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/senioragentoffice)
+"ZK" = (
+/obj/structure/closet/secure_closet/freezer{
+	icon = 'icons/obj/closets/fridge.dmi';
+	name = "Secure Freezer"
+	},
+/obj/item/organ/internal/lungs,
+/obj/item/organ/internal/lungs,
+/obj/item/organ/internal/lungs,
+/obj/item/organ/internal/liver,
+/obj/item/organ/internal/liver,
+/obj/item/organ/internal/liver,
+/obj/item/organ/internal/heart,
+/obj/item/organ/internal/heart,
+/obj/item/organ/internal/heart,
+/obj/item/organ/internal/kidneys,
+/obj/item/organ/internal/kidneys,
+/obj/item/organ/internal/kidneys,
+/turf/simulated/floor/tiled/old_tile,
+/area/space)
 "ZM" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -29659,10 +29783,10 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
+OR
+mU
+AH
+pt
 hk
 hk
 hk
@@ -29916,10 +30040,10 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
+qS
+mU
+mU
+ZK
 hk
 hk
 hk
@@ -30173,10 +30297,10 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
+KH
+mU
+mU
+mL
 hk
 hk
 hk
@@ -30430,10 +30554,10 @@ hk
 hk
 hk
 hk
-hk
-hk
-hk
-hk
+sM
+yR
+Zf
+Cn
 hk
 hk
 hk
@@ -30691,7 +30815,7 @@ hk
 hk
 hk
 hk
-hk
+yo
 hk
 hk
 fo
@@ -30720,9 +30844,9 @@ fo
 fo
 fo
 fo
-hk
-hk
-hk
+fo
+fo
+fo
 hk
 hk
 hk
@@ -30973,13 +31097,13 @@ EC
 Bv
 cB
 EC
+EC
+EC
+EC
 CT
 qI
 fn
 fo
-hk
-hk
-hk
 hk
 hk
 hk
@@ -31227,16 +31351,16 @@ Gp
 UI
 sC
 EC
+EC
+EC
 VU
+EC
 EC
 EC
 mf
 ph
 fo
 fo
-hk
-hk
-hk
 hk
 hk
 hk
@@ -31483,17 +31607,17 @@ EC
 zH
 EC
 Kv
+EC
+EC
 xK
 eL
 VA
+EC
 EC
 AL
 nl
 fn
 fo
-hk
-hk
-hk
 hk
 hk
 hk
@@ -31740,17 +31864,17 @@ Ef
 fo
 AG
 Kv
+EC
+EC
 xK
 fu
 VA
+EC
 EC
 us
 Lw
 fo
 fo
-hk
-hk
-hk
 hk
 hk
 hk
@@ -31998,16 +32122,16 @@ fo
 SL
 Kv
 EC
+EC
+EC
 tE
+EC
 EC
 EC
 Od
 Gw
 fn
 fo
-hk
-hk
-hk
 hk
 hk
 hk
@@ -32258,13 +32382,13 @@ EC
 EC
 EC
 EC
+EC
+EC
+EC
 sj
 rD
 fo
 fo
-hk
-hk
-hk
 hk
 hk
 hk
@@ -32512,16 +32636,16 @@ Lq
 EJ
 Kv
 EC
+EC
+EC
 VU
+EC
 EC
 EC
 qj
 nR
 fn
 fo
-hk
-hk
-hk
 hk
 hk
 hk
@@ -32768,17 +32892,17 @@ AL
 uZ
 QU
 Kv
+EC
+EC
 xK
 fu
 VA
+EC
 EC
 TL
 tC
 fo
 fo
-hk
-hk
-hk
 hk
 hk
 hk
@@ -33025,17 +33149,17 @@ qm
 Ba
 Qy
 Ek
+EC
+EC
 xK
 BG
 VA
+EC
 EC
 Wp
 ne
 fn
 fo
-hk
-hk
-hk
 hk
 hk
 hk
@@ -33283,16 +33407,16 @@ Ls
 Ir
 WW
 EC
+EC
+EC
 tE
+EC
 EC
 EC
 Hp
 xq
 fo
 fo
-hk
-hk
-hk
 hk
 hk
 hk
@@ -33543,13 +33667,13 @@ EC
 EC
 EC
 EC
+EC
+EC
+EC
 QI
 RL
 fn
 fo
-hk
-hk
-hk
 hk
 hk
 hk
@@ -33800,13 +33924,13 @@ Vh
 oS
 Bc
 xu
+EC
+EC
+EC
 CL
 rN
 fo
 fo
-hk
-hk
-hk
 hk
 hk
 hk
@@ -34061,9 +34185,9 @@ fo
 fo
 fo
 fo
-hk
-hk
-hk
+fo
+fo
+fo
 hk
 hk
 hk
@@ -35855,9 +35979,9 @@ vq
 fo
 fo
 fo
-hk
-hk
-hk
+wX
+wX
+wX
 hk
 hk
 hk
@@ -36102,19 +36226,19 @@ ZO
 ZO
 mx
 cX
-hk
-hk
-hk
-hk
+wX
+Ff
+Ff
+fo
 fo
 fo
 vq
 fo
 fo
-hk
-hk
-hk
-hk
+fo
+fo
+fo
+wX
 hk
 ac
 cl
@@ -36359,19 +36483,19 @@ ZO
 pI
 Ey
 cX
-hk
+wX
 fo
+OM
+OM
+pM
+OM
+Ta
+OM
+pM
+OM
+OM
 fo
-fo
-fo
-Zl
-ee
-Zl
-fo
-fo
-fo
-fo
-hk
+wX
 hk
 ac
 dd
@@ -36616,19 +36740,19 @@ ZO
 nr
 uS
 cX
-hk
+wX
 fo
 Th
 mN
-Ff
+mN
 mN
 lC
 mN
-Ff
+mN
 mN
 Ex
-qS
-hk
+fo
+wX
 hk
 ac
 Pr
@@ -36873,7 +36997,7 @@ ZO
 nr
 nh
 cX
-hk
+wX
 fo
 IG
 YI
@@ -36885,7 +37009,7 @@ OM
 YI
 qd
 fo
-hk
+wX
 hk
 ac
 AC
@@ -37130,7 +37254,7 @@ ht
 RF
 SA
 cX
-hk
+wX
 wX
 wX
 wX
@@ -37142,7 +37266,7 @@ CJ
 wX
 wX
 wX
-hk
+wX
 hk
 ac
 dg
