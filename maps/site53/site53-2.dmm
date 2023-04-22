@@ -23361,6 +23361,9 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/item/boombox,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
 "epD" = (
@@ -27756,17 +27759,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
-"jaf" = (
-/obj/structure/table/reinforced,
-/obj/machinery/photocopier/faxmachine{
-	department = "SCP-151 Containment Chamber";
-	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/site53/ulcz/humanoidcontainment)
 "jbo" = (
 /obj/machinery/camera/network/lcz,
 /obj/structure/closet{
@@ -30619,10 +30611,12 @@
 /turf/simulated/floor/reinforced,
 /area/site53/surface/explorers/surrounding)
 "mrs" = (
-/obj/structure/table/reinforced,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/simulated/floor/tiled/steel_grid,
+/obj/structure/table/standard,
+/obj/item/storage/box/beakers,
+/obj/item/storage/box/beakers,
+/obj/item/reagent_containers/food/condiment/small/peppermill,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/humanoidcontainment)
 "mrP" = (
 /obj/structure/cable/green{
@@ -37136,12 +37130,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp096)
-"ues" = (
-/obj/structure/bed/chair/wood{
-	dir = 1
-	},
-/turf/simulated/floor/wood,
-/area/site53/ulcz/humanoidcontainment)
 "ugr" = (
 /obj/machinery/light,
 /obj/machinery/disposal/deliveryChute{
@@ -39710,10 +39698,6 @@
 /area/site53/lhcz/hczguardgear)
 "wZG" = (
 /obj/structure/table/standard,
-/obj/item/storage/box/beakers,
-/obj/item/storage/box/beakers,
-/obj/item/reagent_containers/food/condiment/small/peppermill,
-/obj/item/reagent_containers/food/condiment/enzyme,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -85306,10 +85290,10 @@ urC
 azA
 urC
 juH
-iyl
+wUY
 eLf
 lOO
-ues
+iyl
 kEI
 kkD
 hyr
@@ -86087,7 +86071,7 @@ eWp
 qyR
 pCp
 ndr
-urC
+koI
 lfb
 fIB
 epk
@@ -86344,10 +86328,10 @@ nsU
 nsU
 nsU
 nsU
-urC
-cNb
 nsU
-mrs
+nsU
+nsU
+cNb
 urC
 nsU
 nsU
@@ -86598,14 +86582,14 @@ hMF
 gHs
 vNN
 nsU
-mrs
-nsU
-nsU
-tII
 nsU
 nsU
 nsU
-tII
+nsU
+nsU
+nsU
+nsU
+urC
 nsU
 nsU
 urC
@@ -86855,14 +86839,14 @@ hMF
 gHs
 inT
 nsU
-koI
 nsU
 nsU
-urC
-xCn
 nsU
-jaf
-urC
+nsU
+nsU
+nsU
+nsU
+tII
 nsU
 nsU
 urC
@@ -87115,13 +87099,13 @@ nsU
 nsU
 nsU
 nsU
-urC
-urC
-tII
-urC
+nsU
+sxX
+nsU
+sxX
 urC
 nsU
-nsU
+sxX
 urC
 azA
 azA
@@ -87373,12 +87357,12 @@ hiu
 pCp
 xCn
 urC
-sxX
-nsU
-sxX
+urC
 tII
-nsU
-sxX
+urC
+urC
+urC
+urC
 urC
 azA
 azA
@@ -87630,12 +87614,12 @@ jee
 jee
 jee
 urC
-urC
-tII
-urC
-urC
-urC
-urC
+nsU
+nsU
+nsU
+nsU
+nsU
+nsU
 urC
 azA
 azA
@@ -88654,7 +88638,7 @@ iRf
 kEI
 qEa
 uhy
-qvG
+mrs
 uhy
 hNz
 lRm
