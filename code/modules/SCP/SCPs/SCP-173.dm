@@ -413,16 +413,16 @@ GLOBAL_LIST_EMPTY(scp173s)
 			return
 
 	for(var/move=0, move < tile_move_range, move++)
-		step_turf = steps_to_target[1]
 		if(!steps_to_target)
 			break
+		step_turf = steps_to_target[1]
 		step_towards(src,step_turf)
 		if(get_turf(src) != step_turf) //if for whatever reason we are unable to move to the next turf, we stop
-			if(step_turf.contains_dense_objects_whitelist(list(/obj/machinery/door, /obj/structure/window, /obj/structure/grille)) || get_area(steps_to_target[1]) == spawn_area) //if we are blocked by something we cant break, we clear our target
+			if(step_turf.contains_dense_objects_whitelist(list(/obj/machinery/door, /obj/structure/window, /obj/structure/grille)) || get_area(step_turf) == spawn_area) //if we are blocked by something we cant break, we clear our target
 				clear_target()
 			break
 		else
-			LAZYREMOVE(steps_to_target, steps_to_target[1])
+			LAZYREMOVE(steps_to_target, step_turf)
 
 /mob/living/scp_173/proc/get_viable_light_target() //Gets a viable light bulb target
 	for(var/obj/machinery/light/light_in_view in dview(7, src))
