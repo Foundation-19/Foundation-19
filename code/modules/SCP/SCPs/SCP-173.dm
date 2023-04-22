@@ -310,7 +310,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 	var/list/possible_human_targets = list()
 
-	for(var/mob/living/carbon/human/H in dview(7, src)) //Identifies possible human targets
+	for(var/mob/living/carbon/human/H in dview(14, src)) //Identifies possible human targets. Range is double regular view to allow 173 to pursue tarets outside of world.view to make evading him harder.
 		if(H.SCP)
 			continue
 		if(H.stat == DEAD)
