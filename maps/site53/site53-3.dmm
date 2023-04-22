@@ -4556,6 +4556,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"lZ" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "ma" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Hub"
@@ -4655,7 +4661,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "mp" = (
-/obj/effect/floor_decal/corner/red/border{
+/obj/effect/floor_decal/corner/orange/border{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -4714,7 +4720,9 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/surface/surface)
 "mJ" = (
-/obj/effect/floor_decal/corner/orange/border,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 6
+	},
 /obj/structure/cable/green{
 	icon_state = "2-8"
 	},
@@ -8520,6 +8528,12 @@
 "Qn" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
+"Qp" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/entrancezone/hallway)
 "Qq" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -43482,8 +43496,8 @@ Iy
 VA
 rC
 Zp
-lo
-mx
+lZ
+Qp
 dt
 rm
 rm
@@ -43987,7 +44001,7 @@ nY
 dA
 dA
 dt
-lo
+lZ
 mJ
 nr
 Zh
