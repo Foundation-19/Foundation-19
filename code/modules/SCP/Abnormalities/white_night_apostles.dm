@@ -128,6 +128,7 @@
 
 /mob/living/simple_animal/hostile/apostle/spear
 	name = "spear apostle"
+	desc = "A disformed human wielding a spear."
 	icon_state = "apostle_spear"
 	icon_living = "apostle_spear"
 	natural_weapon = /obj/item/natural_weapon/apostle_spear
@@ -144,6 +145,8 @@
 	force = 25
 	sharp = TRUE
 	edge = 1
+	melee_accuracy_bonus = 200
+	stun_prob = 0
 
 /mob/living/simple_animal/hostile/apostle/spear/PerformAbility(atom/target)
 	if(spear_cooldown > world.time)
