@@ -46,6 +46,9 @@
 		return
 	return PerformAbility(A)
 
+/mob/living/simple_animal/hostile/apostle/white_night/death(gibbed, deathmessage = "falls to their knees.", show_dead_message)
+	return ..()
+
 /mob/living/simple_animal/hostile/apostle/gib()
 	return FALSE
 
@@ -142,7 +145,7 @@
 	sharp = TRUE
 	edge = 1
 
-/mob/living/simple_animal/hostile/apostle/spear/proc/SpearAttack(target)
+/mob/living/simple_animal/hostile/apostle/spear/PerformAbility(atom/target)
 	if(spear_cooldown > world.time)
 		return
 	can_act = FALSE
@@ -186,6 +189,8 @@
 		new /obj/effect/temp_visual/smoke(TF)
 		for(var/mob/living/L in TF)
 			if(L.faction == faction)
+				continue
+			if(L.stat == DEAD)
 				continue
 			if(L in been_hit)
 				continue
