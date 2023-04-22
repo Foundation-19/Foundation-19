@@ -158,8 +158,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 
 /mob/living/scp_173/Life()
 	. = ..()
-	if(length(GLOB.clients) <= 30 && !client)
-		return
 	//In case we are caged, we must see if our cage is being looked at rather than us
 	var/list/our_view = dview(7, istype(loc, /obj/structure/scp173_cage) ? loc : src)
 	for(var/mob/living/carbon/human/H in next_blinks)
@@ -284,6 +282,9 @@ GLOBAL_LIST_EMPTY(scp173s)
 		UnarmedAttack(target)
 
 /mob/living/scp_173/proc/Defecate()
+	var/feces_amount = CheckFeces()
+	if(feces_amount >= 30 && length(GLOB.clients) <= 30 && !client) //If we're lowpop we cant breach ourselves
+		return
 	if(!isobj(loc) && world.time > defecation_cooldown)
 		defecation_cooldown = world.time + defecation_cooldown_time
 		var/feces = pick(defecation_types)
@@ -294,7 +295,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 			if(Tdir && !IsBeingWatched())
 				SelfMove(Tdir)
 	// Breach check
-	var/feces_amount = CheckFeces()
 	if(feces_amount >= 60) // Breach, gonna take ~45 minutes
 		if(breach_cooldown > world.time)
 			return
