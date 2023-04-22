@@ -25079,6 +25079,12 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
+"giJ" = (
+/obj/effect/landmark{
+	name = "scp527"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/ulcz/humanoidcontainment)
 "giK" = (
 /obj/structure/table/standard,
 /obj/machinery/reagent_temperature,
@@ -83852,7 +83858,7 @@ azA
 azA
 urC
 cBj
-hyr
+giJ
 urC
 hoI
 oFR
