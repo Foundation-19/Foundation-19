@@ -136,7 +136,7 @@
 		interact()
 		return
 	to_chat(usr, SPAN_NOTICE("You scrub [A.name] off the blueprint."))
-	log_and_message_admins("deleted area [A.name] via station blueprints.")
+	log_and_message_staff("deleted area [A.name] via station blueprints.")
 	qdel(A)
 	interact()
 

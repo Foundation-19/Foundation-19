@@ -73,3 +73,141 @@
   TheDarkElites:
   - bugfix: 'fixes #1025 (cant see ID cards)'
   - bugfix: 'fixes #1024 (cant examine your own equipment in the dark)'
+2023-04-14:
+  EgorDinamit:
+  - rscadd: The White Night(Apostle) mob has been reworked and improved.
+  - rscadd: Added SCP 2427-3. It has to be constantly fed(preferably with goats) and
+      you would be wise to avoid eye contact with it or attacking it, lest you be
+      considered impure.
+  TheDarkElites:
+  - rscadd: memetics integration with HUD system
+  Yawet330:
+  - tweak: Malf Values.
+  arshfr:
+  - rscadd: There's a new codex entry about floors
+  casualspacestation14enjoyer:
+  - rscadd: Gave restaurant some more changes to be more welcoming :)
+  cheesePizza2:
+  - rscadd: New virus mechanics! Be careful when downloading without protection (or
+      with shady emails), you might just end up with a bricked computer...
+  - rscadd: A computer needs to have internet access for AI to interact with it.
+  - rscdel: Docking management programs deleted.
+  - balance: You no longer need access to run programs, only download them. Perhaps
+      try stealing people's computers and running programs that you couldn't obtain
+      otherwise?
+  - bugfix: Loads of general modular computer fixes and improvements.
+  - bugfix: Antag uplink program no longer meta-ble.
+  - spellcheck: A couple modcomp-related lore improvements.
+  - bugfix: AI not being able to interact with computer fixed.
+  - bugfix: Nanoword not saving files correctly fixed.
+  - rscadd: More sounds have indicators.
+2023-04-15:
+  GGarciaECE:
+  - rscadd: Switched number of guards slots (20->8 for LCZ Guards, 4-> for LCZ Sergeants,
+      3->2 for HCZ Sergeants)
+  - rscadd: Modified contents of security offices of various zones to reflect changes
+      in slots
+  - rscadd: Modified content of Security armouries to include Stun batons. LCZ has
+      had several weapons removed with focus on making less than lethal more accessible.
+  - rscadd: Remapped 2427-3 (spooder) chamber. Relocated to HCZ close to the entry
+      checkpoint , its slightly more secure now with an airlock style blast gate system.
+      Still has the delivery chute and pen for the animals.
+2023-04-16:
+  EgorDinamit:
+  - tweak: Beam tasers were replaced with the ones firing electrode projectiles. Those
+      don't pass through windows/airlocks.
+  - tweak: P90 rubber bullets deal less pain. This should make them less deadly and
+      allow for their use for non-lethal takedowns.
+  - tweak: P90 firing sound replaced.
+  - tweak: Guard lockers had their contents updated and standardized.
+  - tweak: Sprites for non-guard armor vests/carriers(i.e. riot suit) were updated.
+  GGarciaECE:
+  - rscadd: 049 Cell refitted (view image)
+  - rscadd: HCZ checkpoitn made more compact but easier to control
+  - rscadd: CDCZ Checkpoint can be locked so that it may be the only access further
+      into CDCZ, allowing proper checkpoint rp
+  - rscadd: Maintenance tunnel from Archive to HCZ has been made impassable to make
+      HCZ a truly secure unit (Most SCPs are able to steamroll their way through the
+      checkpoint regardless, but now during a breach, security actually has a better
+      chance at containing the beasts)
+  Tsurupeta:
+  - soundadd: updated fire sound for MK9 pistol
+  - imageadd: updated icon for MK9 pistol
+  - bugfix: Fixed movement keys not working on roundstart. Again.
+  checkraisefold:
+  - admin: Removed 'Random' game mode from game panel.
+2023-04-17:
+  EgorDinamit:
+  - tweak: SCP 2427-3 now has better AI. It will not breach on its own below 20 pop,
+      still, so do not worry.
+  - bugfix: SCP 2427-3 can break out once again.
+  - tweak: Monkeys do not restore as much satiety as humans do for 2427-3.
+  checkraisefold:
+  - bugfix: Cult's Summon Robes rune now works even when you have no current clothes.
+2023-04-18:
+  checkraisefold:
+  - balance: Changed Malfunctioning AIC gamemode from 2 minimum players to 20
+  cheesePizza2:
+  - rscadd: Adds Mister Fish as an UNUSED SCP. Go bug a mapper or something, I'm too
+      lazy.
+2023-04-19:
+  GGarciaECE:
+  - rscadd: SCP 173 Chamber on Upper LCZ has been moved down one Z-Level in the corridor
+      that faces CDCZ. Getting there is now a small walk of 1 minute from CDCZ.
+  - rscadd: Some pipings and wiring was removed or otherwise changed to pass checks
+      and avoid redundancies
+  - rscadd: Fixed 3 inconsistent walls not being of same material as the others in
+      ULCZ
+  - bugfix: Fixed windoors and button access level in LCZ checkpoint
+  - bugfix: access levels of various doors and one button
+  - rscadd: Adds in in-game SOP for testing.
+  - code_imp: Deletes some unused paper objects.
+  - rscadd: Humanoid Containment Zone (now only includes Mister Fish that was newly
+      added)
+  - rscadd: LCZ and HCZ checkpoint tweaks
+  - rscadd: HCZ Security offices relocated to HCZ checkpoint
+  - rscadd: Some maintenance tunnels were removed to make LCZ more secure
+  Tsurupeta:
+  - rscadd: Server revision now shows TMs and local commits.
+  checkraisefold:
+  - bugfix: Assemblies (timers, igniters) properly update their icon when you attach
+      them.
+  - bugfix: Grenade detonation time is no longer 10x actual value.
+  - bugfix: Smoke spreads out now!
+  - bugfix: Smoke now has a fade out effect, which was originally implemented but
+      broken.
+  - bugfix: Smoke will no longer affect mobs through walls and windows.
+  - bugfix: Smoke no longer leaves behind broken turf shadows.
+  - bugfix: Sets 2427-3's default language to English
+2023-04-20:
+  EgorDinamit:
+  - rscadd: Added SCP-216. It is a safe with near infinite storage space. Some slots
+      come pre-occupied with (potentially) treasure!
+  TheDarkElites:
+  - code_imp: Astar Whitelist Tools
+  Yawet330:
+  - tweak: Unfucks pain.
+2023-04-21:
+  GGarciaECE:
+  - rscadd: Minable paths from Archives to HCZ and LCZ (+ a larger minable area around
+      the Archive)
+  - rscadd: Minable path from upper EZ maint to Upper LCZ Office worker room
+  - rscadd: Fix minable path in CDCZ Mining area
+  - rscadd: Mining drill in the surface's pit area
+  TheDarkElites:
+  - bugfix: The AI talking through holopad with :h now works correctly again.
+  casualspacestation14enjoyer:
+  - rscadd: added more items for the GC and EZ supervisor to use (EZ soup only has
+      better armor... sad.)
+  checkraisefold:
+  - admin: Added investigate verb to mods.
+  - admin: Mods can now check today's server logs for all rounds for the day.
+  - admin: Mods can now use most `JMP` buttons on logs.
+  - bugfix: Href logging now works, so does all other investigate_log categories
+  - admin: Moderators now get most logs.
+  cheesePizza2:
+  - balance: Grid check was moved to major event container, thus making it rarer.
+      Electrical storm was removed from major container event due to weakness. Memetic
+      spasm is weakened.
+  - bugfix: Blob and vine events can spawn in now.
+  - bugfix: Traitor objectives are now SCP-related and actually achievable.

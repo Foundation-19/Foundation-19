@@ -3,7 +3,13 @@
 
 /proc/spacevine_infestation(potency_min=70, potency_max=100, maturation_min=5, maturation_max=15)
 	spawn() //to stop the secrets panel hanging
-		var/turf/T = pick_subarea_turf(/area/hallway , list(/proc/is_station_turf, /proc/not_turf_contains_dense_objects))
+		var/turf/T = pick_subarea_turf(pick(
+		/area/site53/ulcz/hallways,
+		/area/site53/llcz/hallways,
+		/area/site53/uhcz/hallways,
+		/area/site53/lhcz/hallway),
+			list(/proc/is_station_turf, /proc/not_turf_contains_dense_objects)
+		)
 		if(T)
 			var/datum/seed/seed = SSplants.create_random_seed(1)
 			seed.set_trait(TRAIT_SPREAD,2)             // So it will function properly as vines.
@@ -18,9 +24,9 @@
 			//make vine zero start off fully matured
 			new /obj/effect/vine(T,seed, start_matured = 1)
 
-			log_and_message_admins("Spacevines spawned in \the [get_area(T)]", location = T)
+			log_and_message_staff("Spacevines spawned in \the [get_area(T)]", location = T)
 			return
-		log_and_message_admins(SPAN_NOTICE("Event: Spacevines failed to find a viable turf."))
+		log_and_message_staff(SPAN_NOTICE("Event: Spacevines failed to find a viable turf."))
 
 /obj/effect/dead_plant
 	anchored = TRUE

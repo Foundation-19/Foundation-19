@@ -180,7 +180,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			response = tgui_alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost, you won't be able to return to this body! You can't change your mind so choose wisely!)", "Are you sure you want to ghost?", list("Ghost", "Stay in body"))
 		if(response != "Ghost")
 			return
-		log_and_message_admins("has ghosted.")
+		log_and_message_staff("has ghosted.")
 		ghosted = TRUE
 		var/mob/observer/ghost/ghost = ghostize(0)	//0 parameter is so we can never re-enter our body, "Charlie, you can never come baaaack~" :3
 		if (ghost)
@@ -595,7 +595,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		M.respawned_time = world.time
 	mind?.active = FALSE
 	M.key = key
-	log_and_message_admins("has respawned.", M)
+	log_and_message_staff("has respawned.", M)
 	qdel(src)
 
 /mob/observer/ghost/verb/become_scp()
@@ -623,6 +623,12 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			if(!M.client && (length(GLOB.clients) >= 20))
 				scps += M
  
+		if(IS_TRUSTED_PLAYER(ckey))
+			for(var/scp049 in GLOB.scp049s)
+				var/mob/M = scp049
+				if (!M.client)
+					scps += M
+
 		if(IS_TRUSTED_PLAYER(ckey))
 			for(var/scp049 in GLOB.scp049s)
 				var/mob/M = scp049

@@ -6,7 +6,7 @@
 /client/proc/SDQL_query(query_text as message)
 	set category = "Admin"
 	if(!check_rights(R_DEBUG))  //Shouldn't happen... but just to be safe.
-		log_and_message_admins(" - Non-admin attempted to execute a SDQL query!")
+		log_and_message_staff(" - Non-admin attempted to execute a SDQL query!")
 
 	var/list/query_list = SDQL_tokenize(query_text)
 
@@ -262,7 +262,7 @@
 
 
 	to_chat(usr, SPAN_NOTICE("SQDL Query: [query_text]"))
-	message_admins("[usr] executed SDQL query: \"[query_text]\".")
+	message_staff("[usr] executed SDQL query: \"[query_text]\".")
 /*
 	for(var/t in types)
 		to_chat(usr, "Type: [t]")

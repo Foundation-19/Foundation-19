@@ -543,7 +543,7 @@
 	if (.)
 		return
 	if (href_list["flavor_change"] && !is_admin(usr) && (usr != src))
-		log_and_message_admins(usr, "is suspected of trying to change flavor text on [key_name_admin(src)] via Topic exploits.")
+		log_and_message_staff(usr, "is suspected of trying to change flavor text on [key_name_admin(src)] via Topic exploits.")
 	return ..()
 
 /mob/proc/pull_damage()

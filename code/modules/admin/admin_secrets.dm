@@ -71,7 +71,7 @@ var/datum/admin_secrets/admin_secrets = new()
 		return FALSE
 
 	if(log)
-		log_and_message_admins("used secret '[name]'", user)
+		log_and_message_staff("used secret '[name]'", user)
 	if(feedback)
 		SSstatistics.add_field("admin_secrets_used",1)
 		SSstatistics.add_field_details("admin_secrets_used","[name]")

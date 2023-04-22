@@ -55,7 +55,7 @@
 	//search the href for script injection
 	if( findtext(href,"<script",1,0) )
 		to_world_log("Attempted use of scripts within a topic call, by [src]")
-		message_admins("Attempted use of scripts within a topic call, by [src]")
+		message_staff("Attempted use of scripts within a topic call, by [src]")
 		//qdel(usr)
 		return
 
@@ -93,7 +93,7 @@
 		ticket.close(client_repository.get_lite_client(usr.client))
 
 	if (GLOB.href_logfile)
-		to_chat(GLOB.href_logfile, "<small>[time2text(world.timeofday,"hh:mm")] [src] (usr:[usr])</small> || [hsrc ? "[hsrc] " : ""][href]<br>")
+		to_file(GLOB.href_logfile, "<small>[time2text(world.timeofday,"hh:mm")] [src] (usr:[usr])</small> || [hsrc ? "[hsrc] " : ""][href]<br>")
 
 	switch(href_list["_src_"])
 		if("holder")
@@ -180,10 +180,10 @@
 
 	if(config.panic_bunker && (get_player_age(ckey) < config.panic_bunker_age && !(ckey in GLOB.admin_datums)))
 		if(GLOB.panicbunker_bypass.Find(ckey))
-			message_admins("[ckey], a new player, was allowed to bypass the Panic Bunker.")
+			message_staff("[ckey], a new player, was allowed to bypass the Panic Bunker.")
 			log_admin("[ckey], a new player, was allowed to bypass the Panic Bunker.")
 		else
-			message_admins("[ckey] cid:[computer_id] ip:[address] tried to join with [get_player_age(ckey)] days, but there is a configured minimum player age of [config.panic_bunker_age] days.")
+			message_staff("[ckey] cid:[computer_id] ip:[address] tried to join with [get_player_age(ckey)] days, but there is a configured minimum player age of [config.panic_bunker_age] days.")
 			log_admin("[ckey] cid:[computer_id] ip:[address] tried to join with [get_player_age(ckey)] days, but there is a configured minimum player age of [config.panic_bunker_age] days.")
 			to_chat("[config.panic_bunker_message]")
 			qdel(src)
@@ -272,8 +272,6 @@
 
 	if(SSinput.initialized)
 		set_macros()
-	else
-		SSinput.init_queue += src
 
 //////////////
 //DISCONNECT//
@@ -442,7 +440,7 @@
 		qdel(query_update)
 	else
 		//New player!! Need to insert all the stuff
-		log_and_message_admins("[ckey]([computer_id] [address]) joined for the first time.")
+		log_and_message_staff("[ckey]([computer_id] [address]) joined for the first time.")
 		var/datum/db_query/query_insert = SSdbcore.NewQuery("INSERT INTO erro_player (id, ckey, firstseen, lastseen, ip, computerid, lastadminrank) VALUES (null, '[sql_ckey]', Now(), Now(), '[sql_ip]', '[sql_computerid]', '[sql_admin_rank]')")
 		query_insert.Execute()
 		qdel(query_insert)

@@ -15,6 +15,22 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	edge = 1
 	force = 36
 
+/datum/ai_holder/simple_animal/melee/s2427_3
+	mauling = TRUE
+	handle_corpse = TRUE // Eats corpses
+
+/datum/ai_holder/simple_animal/melee/s2427_3/can_attack(atom/movable/the_target, vision_required = TRUE)
+	if(!..())
+		return FALSE
+	var/mob/living/simple_animal/hostile/scp_2427_3/O = holder
+	if(the_target in O.purity_list)
+		return FALSE
+	if(ishuman(the_target) && (O.satiety > O.min_satiety) && !(the_target in O.impurity_list))
+		var/mob/living/carbon/human/H = the_target
+		if(H.stat != DEAD)
+			return FALSE
+	return TRUE
+
 /mob/living/simple_animal/hostile/scp_2427_3
 	name = "SCP-2427-3"
 	desc = "An amalgamation of exposed wires and robotic parts. It has 4 spider-like legs and a metal mask in place of the 'head'."
@@ -45,6 +61,9 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 		melee = ARMOR_MELEE_KNIVES
 		)
 
+	ai_holder_type = /datum/ai_holder/simple_animal/melee/s2427_3
+	melee_attack_delay = 0
+
 	var/satiety = 300
 	/// How much satiety is reduced per tick
 	var/satiety_reduction_per_tick = 0.5
@@ -67,6 +86,7 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 	GLOB.scp2427_3s |= src
 	spawn_area = get_area(src)
 	add_language(LANGUAGE_ENGLISH, FALSE)
+	set_default_language(all_languages[LANGUAGE_ENGLISH])
 	return ..()
 
 /mob/living/simple_animal/hostile/scp_2427_3/Destroy()
@@ -170,6 +190,8 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 				nutr = round(max_satiety * 0.5)
 			if(ishuman(L))
 				nutr = round(max_satiety * 0.2)
+			if(L.isMonkey())
+				nutr = round(max_satiety * 0.05)
 			playsound(src, 'sound/scp/2427/consume.ogg', rand(15, 35), TRUE)
 			visible_message(SPAN_DANGER("[src] consumes [L]!"))
 			L.gib()
@@ -186,6 +208,15 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 /mob/living/simple_animal/hostile/scp_2427_3/SelfMove(direction)
 	if(is_sleeping)
 		return FALSE
+	return ..()
+
+// Similar checks for the AI
+/mob/living/simple_animal/hostile/scp_2427_3/attack_target(atom/A)
+	return UnarmedAttack(A)
+
+/mob/living/simple_animal/hostile/scp_2427_3/IMove(turf/newloc, safety = TRUE)
+	if(is_sleeping)
+		return MOVEMENT_ON_COOLDOWN
 	return ..()
 
 /mob/living/simple_animal/hostile/scp_2427_3/movement_delay()
@@ -220,6 +251,8 @@ GLOBAL_LIST_EMPTY(scp2427_3s)
 
 /mob/living/simple_animal/hostile/scp_2427_3/proc/IsEnraged()
 	for(var/mob/living/L in dview(7, src))
+		if(L == src)
+			continue
 		if(L in impurity_list)
 			return !L.stat && L.ckey // Conscious and is/was player controlled
 		if(L.stat && istype(get_area(src), spawn_area)) // Hm yes, today I will ignore all the corpses around me to breach
