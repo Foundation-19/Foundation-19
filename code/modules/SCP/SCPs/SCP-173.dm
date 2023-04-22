@@ -358,7 +358,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 		if(3,INFINITY) //If we have too many targets, we will attempt to flee or break a light
 			if(our_turf.get_lumcount() > 0.05)
 				if(prob(60))
-					var/while_timeout = world.time + 5 SECONDS //prevent infinity loops
+					var/while_timeout = world.time + 1 SECONDS //prevent infinity loops
 
 					while(!target)
 						assign_target(pick_turf_in_range(loc, flee_distance, list(/proc/isfloor)))
