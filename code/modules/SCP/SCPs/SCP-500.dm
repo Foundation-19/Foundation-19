@@ -23,7 +23,15 @@
 	name = "pill bottle (SCP-500)"
 	desc = "This Pill Bottle has \'SCP-500\' written on its label. The label also notes, \'Storage of more than 10 instances of SCP-500 is limited to secure Sites only. Contact a RAISA official for more details.\'."
 	max_storage_space = 10 // gotta store those pills
+	var/containmentbroken = FALSE
 
 	startswith = list(
 		/obj/item/reagent_containers/pill/scp500 = 10
 	)
+
+/obj/item/storage/pill_bottle/scp500/pickup(mob/user)
+	. = ..()
+	if(src.containmentbroken == FALSE)
+		priority_announcement.Announce("Attention, motion detected in the containment zone of SCP-500. Possible tampering. Any unauthorized personnel inside the containment zone are to be prosecuted and the object to be returned to its original containment zone.", "Possible Tampering", 'sound/AI/500.ogg')
+		src.containmentbroken = TRUE
+	return
