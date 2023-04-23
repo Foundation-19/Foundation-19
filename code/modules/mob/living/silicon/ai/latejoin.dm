@@ -17,7 +17,7 @@
 		return
 
 	if(is_special_character(src))
-		log_and_message_admins("removed themselves from the round via Wipe Core")
+		log_and_message_staff("removed themselves from the round via Wipe Core")
 
 	// We warned you.
 	empty_playable_ai_cores += new /obj/structure/AIcore/deactivated(loc)

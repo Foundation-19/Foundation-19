@@ -59,7 +59,7 @@
 		var/num = 0
 		for(var/i = 1 to severity)
 			num += rand(2,max_number)
-		log_and_message_admins("Vermin infestation spawned ([vermstring] x[num]) in \the [location]", location = pick_area_turf(location))
+		log_and_message_staff("Vermin infestation spawned ([vermstring] x[num]) in \the [location]", location = pick_area_turf(location))
 		while(vermin_turfs.len && num > 0)
 			var/turf/simulated/floor/T = pick(vermin_turfs)
 			vermin_turfs.Remove(T)

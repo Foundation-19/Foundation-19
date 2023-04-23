@@ -21,6 +21,6 @@
 	var/datum/shuttle/autodock/ferry/S = SSshuttle.shuttles[shuttle_tag]
 	if (S.can_launch())
 		S.launch(user)
-		log_and_message_admins("launched the [shuttle_tag] shuttle", user)
+		log_and_message_staff("launched the [shuttle_tag] shuttle", user)
 	else
 		alert(user, "The [shuttle_tag] shuttle cannot be launched at this time. It's probably busy.")

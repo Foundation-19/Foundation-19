@@ -135,7 +135,7 @@
 			SPAN_NOTICE("You wrench [src]'s drain [modded ? "open" : "shut"]."))
 
 		if (modded)
-			log_and_message_admins("opened a water tank at [get_area(loc)], leaking water.")
+			log_and_message_staff("opened a water tank at [get_area(loc)], leaking water.")
 			// Allows the water tank to continuously expel water, differing it from the fuel tank.
 			START_PROCESSING(SSprocessing, src)
 		else
@@ -187,7 +187,7 @@
 			"You wrench [src]'s faucet [modded ? "closed" : "open"]")
 		modded = modded ? 0 : 1
 		if (modded)
-			log_and_message_admins("opened a fuel tank at [loc.loc.name], leaking fuel.")
+			log_and_message_staff("opened a fuel tank at [loc.loc.name], leaking fuel.")
 			leak_fuel(amount_per_transfer_from_this)
 	else if (istype(W,/obj/item/device/assembly_holder))
 		if (rig)
@@ -201,7 +201,7 @@
 
 			var/obj/item/device/assembly_holder/H = W
 			if (istype(H.a_left,/obj/item/device/assembly/igniter) || istype(H.a_right,/obj/item/device/assembly/igniter))
-				log_and_message_admins("rigged a fuel tank for explosion at [loc.loc.name].")
+				log_and_message_staff("rigged a fuel tank for explosion at [loc.loc.name].")
 			rig = W
 			var/icon/test = getFlatIcon(W)
 			test.Shift(NORTH,1)
@@ -215,7 +215,7 @@
 
 		user.visible_message(SPAN_WARNING("\The [user] draws closer to the fuel tank with \the [W]."), SPAN_WARNING("You draw closer to the fuel tank with \the [W]."))
 		if(do_after(user, 50, src))
-			log_and_message_admins("triggered a fuel tank explosion with \the [W].")
+			log_and_message_staff("triggered a fuel tank explosion with \the [W].")
 			user.visible_message(SPAN_DANGER("\The [user] puts \the [W] to \the [src]!"), SPAN_DANGER("You put \the [W] to \the [src] and with a moment of lucidity you realize, this might not have been the smartest thing you've ever done."))
 			src.explode()
 
@@ -230,9 +230,9 @@
 			var/turf/turf = get_turf(src)
 			if(turf)
 				var/area/area = turf.loc || "*unknown area*"
-				log_and_message_admins("[key_name_admin(Proj.firer)] shot a fuel tank in \the [area].")
+				log_and_message_staff("[key_name_admin(Proj.firer)] shot a fuel tank in \the [area].")
 			else
-				log_and_message_admins("shot a fuel tank outside the world.")
+				log_and_message_staff("shot a fuel tank outside the world.")
 
 		if(!istype(Proj ,/obj/item/projectile/beam/lastertag) && !istype(Proj ,/obj/item/projectile/beam/practice) )
 			explode()

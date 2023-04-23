@@ -8,4 +8,4 @@
 		Recreate_MC()
 	else if(controller == "Failsafe")
 		new /datum/controller/failsafe
-	message_admins("[key_name_admin(client)] has restarted the [controller] controller.")
+	message_staff("[key_name_admin(client)] has restarted the [controller] controller.")

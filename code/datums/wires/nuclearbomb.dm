@@ -32,7 +32,7 @@
 		if(WIRE_BOMB_TIMING)
 			if(N.timing)
 				spawn
-					log_and_message_admins("pulsed a nuclear bomb's detonation wire, causing it to explode.")
+					log_and_message_staff("pulsed a nuclear bomb's detonation wire, causing it to explode.")
 					N.explode()
 
 		if(WIRE_BOMB_SAFETY)
@@ -52,7 +52,7 @@
 			N.safety = mend
 			if(N.timing)
 				spawn
-					log_and_message_admins("cut a nuclear bomb's timing wire, causing it to explode.")
+					log_and_message_staff("cut a nuclear bomb's timing wire, causing it to explode.")
 					N.explode()
 
 		if(WIRE_BOMB_TIMING)

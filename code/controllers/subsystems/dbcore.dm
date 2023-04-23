@@ -47,9 +47,9 @@ SUBSYSTEM_DEF(dbcore)
 	//will queue properly with goonchat
 	switch(schema_mismatch)
 		if(1)
-			message_admins("Database schema ([db_major].[db_minor]) doesn't match the latest schema version ([DB_MAJOR_VERSION].[DB_MINOR_VERSION]), this may lead to undefined behaviour or errors.")
+			message_staff("Database schema ([db_major].[db_minor]) doesn't match the latest schema version ([DB_MAJOR_VERSION].[DB_MINOR_VERSION]), this may lead to undefined behaviour or errors.")
 		if(2)
-			message_admins("Could not get schema version from database!")
+			message_staff("Could not get schema version from database!")
 
 	return ..()
 
@@ -69,7 +69,7 @@ SUBSYSTEM_DEF(dbcore)
 	for(var/I in processing_queries)
 		var/datum/db_query/Q = I
 		if(world.time - Q.last_activity_time > (5 MINUTES))
-			message_admins("Found undeleted query, please check the server logs and notify coders.")
+			message_staff("Found undeleted query, please check the server logs and notify coders.")
 			log_sql("Undeleted query: \"[Q.sql]\" LA: [Q.last_activity] LAT: [Q.last_activity_time]")
 			qdel(Q)
 		if(MC_TICK_CHECK)
@@ -309,7 +309,7 @@ SUBSYSTEM_DEF(dbcore)
 /datum/controller/subsystem/dbcore/proc/NewQuery(sql_query, arguments)
 	// if(IsAdminAdvancedProcCall()) // Implementation OutOfScope
 	// 	log_admin_private("ERROR: Advanced admin proc call led to sql query: [sql_query]. Query has been blocked")
-	// 	message_admins("ERROR: Advanced admin proc call led to sql query. Query has been blocked")
+	// 	message_staff("ERROR: Advanced admin proc call led to sql query. Query has been blocked")
 	// 	return FALSE
 	return new /datum/db_query(connection, sql_query, arguments)
 
@@ -533,8 +533,8 @@ Delayed insert mode was removed in mysql 7 and only works with MyISAM type table
 
 
 /datum/db_query/proc/slow_query_check()
-	//message_admins("HEY! A database query timed out. Did the server just hang? <a href='?_src_=holder;[HrefToken()];slowquery=yes'>\[YES\]</a>|<a href='?_src_=holder;[HrefToken()];slowquery=no'>\[NO\]</a>")
-	message_admins("HEY! A database query timed out. Did the server just hang?") // Above requires OOS stuff
+	//message_staff("HEY! A database query timed out. Did the server just hang? <a href='?_src_=holder;[HrefToken()];slowquery=yes'>\[YES\]</a>|<a href='?_src_=holder;[HrefToken()];slowquery=no'>\[NO\]</a>")
+	message_staff("HEY! A database query timed out. Did the server just hang?") // Above requires OOS stuff
 
 /datum/db_query/proc/NextRow(async = TRUE)
 	Activity("NextRow")

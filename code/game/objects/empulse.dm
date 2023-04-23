@@ -11,7 +11,7 @@
 		epicenter = get_turf(epicenter.loc)
 
 	if(log)
-		log_and_message_admins("EMP with size ([heavy_range], [light_range]) in area [epicenter.loc.name] ")
+		log_and_message_staff("EMP with size ([heavy_range], [light_range]) in area [epicenter.loc.name] ")
 
 	if(heavy_range > 1)
 		var/obj/effect/overlay/pulse = new/obj/effect/overlay(epicenter)
@@ -46,6 +46,6 @@
 			T.emp_act(2)
 		#ifdef EMPDEBUG
 		if((world.timeofday - time) >= EMPDEBUG)
-			log_and_message_admins("EMPDEBUG: [T.name] - [T.type] - took [world.timeofday - time]ds to process emp_act()!")
+			log_and_message_staff("EMPDEBUG: [T.name] - [T.type] - took [world.timeofday - time]ds to process emp_act()!")
 		#endif
 	return 1

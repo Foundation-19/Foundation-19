@@ -27,7 +27,7 @@
 
 	to_chat(src, SPAN_DANGER("You are attempting to convert \the [player.current]..."))
 	log_admin("[src]([src.ckey]) attempted to convert [player.current] to the [faction.faction_role_text] faction.")
-	message_admins(SPAN_DANGER("[src]([src.ckey]) attempted to convert [player.current] to the [faction.faction_role_text] faction."))
+	message_staff(SPAN_DANGER("[src]([src.ckey]) attempted to convert [player.current] to the [faction.faction_role_text] faction."))
 
 	player.rev_cooldown = world.time + 5 SECONDS
 	if (!faction.is_antagonist(player))

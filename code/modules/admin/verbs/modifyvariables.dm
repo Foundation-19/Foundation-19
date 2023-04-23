@@ -173,7 +173,7 @@
 			L += var_value
 	to_world_log("### ListVarEdit by [src]: [O.type] [objectvar]: ADDED=[var_value]")
 	log_admin("[key_name(src)] modified [original_name]'s [objectvar]: ADDED=[var_value]")
-	message_admins("[key_name_admin(src)] modified [original_name]'s [objectvar]: ADDED=[var_value]")
+	message_staff("[key_name_admin(src)] modified [original_name]'s [objectvar]: ADDED=[var_value]")
 
 /client/proc/mod_list(list/L, atom/O, original_name, objectvar)
 	if(!check_rights(R_VAREDIT))	return
@@ -326,7 +326,7 @@
 		if("DELETE FROM LIST")
 			to_world_log("### ListVarEdit by [src]: [O.type] [objectvar]: REMOVED=[html_encode("[variable]")]")
 			log_admin("[key_name(src)] modified [original_name]'s [objectvar]: REMOVED=[variable]")
-			message_admins("[key_name_admin(src)] modified [original_name]'s [objectvar]: REMOVED=[variable]")
+			message_staff("[key_name_admin(src)] modified [original_name]'s [objectvar]: REMOVED=[variable]")
 			L -= variable
 			return
 
@@ -436,7 +436,7 @@
 
 	to_world_log("### ListVarEdit by [src]: [O.type] [objectvar]: [original_var]=[new_var]")
 	log_admin("[key_name(src)] modified [original_name]'s [objectvar]: [original_var]=[new_var]")
-	message_admins("[key_name_admin(src)] modified [original_name]'s varlist [objectvar]: [original_var]=[new_var]")
+	message_staff("[key_name_admin(src)] modified [original_name]'s varlist [objectvar]: [original_var]=[new_var]")
 
 /client/proc/modify_variables(atom/O, param_var_name = null, autodetect_class = 0)
 	if(!check_rights(R_VAREDIT))
@@ -723,7 +723,7 @@
 		return
 
 	to_world_log("### VarEdit by [src]: [O.type] [variable]=[html_encode("[new_value]")]")
-	log_and_message_admins("modified [original_name]'s [variable] from '[old_value]' to '[new_value]'")
+	log_and_message_staff("modified [original_name]'s [variable] from '[old_value]' to '[new_value]'")
 
 /client
 	var/static/vv_set_handlers

@@ -51,7 +51,7 @@
 		connect_to_network()
 
 /obj/machinery/power/emitter/Destroy()
-	log_and_message_admins("deleted \the [src]")
+	log_and_message_staff("deleted \the [src]")
 	investigate_log("<font color='red'>deleted</font> at ([x],[y],[z])","singulo")
 	return ..()
 
@@ -102,7 +102,7 @@
 				else
 					visible_message(SPAN_NOTICE("\The [src] turns off."))
 				playsound(src, "switch", 50)
-				log_and_message_admins("turned off \the [src] in [A.name]", user, src)
+				log_and_message_staff("turned off \the [src] in [A.name]", user, src)
 				investigate_log("turned <font color='red'>off</font> by [key_name_admin(user || usr)] in [A.name]","singulo")
 			else
 				active = TRUE
@@ -120,7 +120,7 @@
 				update_efficiency()
 				shot_number = 0
 				fire_delay = get_initial_fire_delay()
-				log_and_message_admins("turned on \the [src] in [A.name]", user, src)
+				log_and_message_staff("turned on \the [src] in [A.name]", user, src)
 				investigate_log("turned <font color='green'>on</font> by [key_name_admin(user || usr)] in [A.name]","singulo")
 			update_icon()
 		else

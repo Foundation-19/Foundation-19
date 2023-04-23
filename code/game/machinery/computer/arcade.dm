@@ -205,7 +205,7 @@
 				SSstatistics.add_field("arcade_win_emagged")
 				new /obj/effect/spawner/newbomb/timer/syndicate(src.loc)
 				new /obj/item/clothing/head/collectable/petehat(src.loc)
-				log_and_message_admins("has outbombed Cuban Pete and been awarded a bomb.")
+				log_and_message_staff("has outbombed Cuban Pete and been awarded a bomb.")
 				SetupGame()
 				emagged = FALSE
 			else

@@ -126,7 +126,7 @@
 	if(usr)
 		to_chat(usr, SPAN_NOTICE("Ban saved to database."))
 		setter = key_name_admin(usr)
-	message_admins("[setter] has added a [bantype_str] for [ckey] [(job)?"([job])":""] [(duration > 0)?"([minutes_to_readable(duration)])":""] with the reason: \"[reason]\" to the ban database.",1)
+	message_staff("[setter] has added a [bantype_str] for [ckey] [(job)?"([job])":""] [(duration > 0)?"([minutes_to_readable(duration)])":""] with the reason: \"[reason]\" to the ban database.",1)
 	qdel(query_insert)
 	return 1
 
@@ -239,7 +239,7 @@
 
 			var/datum/db_query/update_query = SSdbcore.NewQuery("UPDATE erro_ban SET reason = '[value]', edits = CONCAT(edits,'- [eckey] changed ban reason from <cite><b>\\\"[reason]\\\"</b></cite> to <cite><b>\\\"[value]\\\"</b></cite><BR>') WHERE id = [banid]")
 			update_query.Execute()
-			message_admins("[key_name_admin(usr)] has edited a ban for [pckey]'s reason from [reason] to [value]",1)
+			message_staff("[key_name_admin(usr)] has edited a ban for [pckey]'s reason from [reason] to [value]",1)
 			qdel(update_query)
 		if("duration")
 			if(!value)
@@ -249,7 +249,7 @@
 					return
 
 			var/datum/db_query/update_query = SSdbcore.NewQuery("UPDATE erro_ban SET duration = [value], edits = CONCAT(edits,'- [eckey] changed ban duration from [duration] to [value]<br>'), expiration_time = DATE_ADD(bantime, INTERVAL [value] MINUTE) WHERE id = [banid]")
-			message_admins("[key_name_admin(usr)] has edited a ban for [pckey]'s duration from [duration] to [value]",1)
+			message_staff("[key_name_admin(usr)] has edited a ban for [pckey]'s duration from [duration] to [value]",1)
 			update_query.Execute()
 			qdel(update_query)
 		if("unban")
@@ -298,7 +298,7 @@
 	var/unban_ip = src.owner:address
 
 	var/sql_update = "UPDATE erro_ban SET unbanned = 1, unbanned_datetime = Now(), unbanned_ckey = '[unban_ckey]', unbanned_computerid = '[unban_computerid]', unbanned_ip = '[unban_ip]' WHERE id = [id]"
-	message_admins("[key_name_admin(usr)] has lifted [pckey]'s ban.",1)
+	message_staff("[key_name_admin(usr)] has lifted [pckey]'s ban.",1)
 
 	var/datum/db_query/query_update = SSdbcore.NewQuery(sql_update)
 	query_update.Execute()

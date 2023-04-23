@@ -240,41 +240,41 @@ SUBSYSTEM_DEF(event)
 
 	if(href_list["toggle_report"])
 		report_at_round_end = !report_at_round_end
-		log_and_message_admins("has [report_at_round_end ? "enabled" : "disabled"] the round end event report.")
+		log_and_message_staff("has [report_at_round_end ? "enabled" : "disabled"] the round end event report.")
 	else if(href_list["dec_timer"])
 		var/datum/event_container/EC = locate(href_list["event"])
 		var/decrease = 60 * (10 ** text2num(href_list["dec_timer"]))
 		EC.next_event_time -= decrease
-		log_and_message_admins("decreased timer for [severity_to_string[EC.severity]] events by [decrease/600] minute(s).")
+		log_and_message_staff("decreased timer for [severity_to_string[EC.severity]] events by [decrease/600] minute(s).")
 	else if(href_list["inc_timer"])
 		var/datum/event_container/EC = locate(href_list["event"])
 		var/increase = 60 * (10 ** text2num(href_list["inc_timer"]))
 		EC.next_event_time += increase
-		log_and_message_admins("increased timer for [severity_to_string[EC.severity]] events by [increase/600] minute(s).")
+		log_and_message_staff("increased timer for [severity_to_string[EC.severity]] events by [increase/600] minute(s).")
 	else if(href_list["select_event"])
 		var/datum/event_container/EC = locate(href_list["select_event"])
 		var/datum/event_meta/EM = EC.SelectEvent()
 		if(EM)
-			log_and_message_admins("has queued the [severity_to_string[EC.severity]] event '[EM.name]'.")
+			log_and_message_staff("has queued the [severity_to_string[EC.severity]] event '[EM.name]'.")
 	else if(href_list["pause"])
 		var/datum/event_container/EC = locate(href_list["pause"])
 		EC.delayed = !EC.delayed
-		log_and_message_admins("has [EC.delayed ? "paused" : "resumed"] countdown for [severity_to_string[EC.severity]] events.")
+		log_and_message_staff("has [EC.delayed ? "paused" : "resumed"] countdown for [severity_to_string[EC.severity]] events.")
 	else if(href_list["pause_all"])
 		config.allow_random_events = text2num(href_list["pause_all"])
-		log_and_message_admins("has [config.allow_random_events ? "resumed" : "paused"] countdown for all events.")
+		log_and_message_staff("has [config.allow_random_events ? "resumed" : "paused"] countdown for all events.")
 	else if(href_list["interval"])
 		var/delay = input("Enter delay modifier. A value less than one means events fire more often, higher than one less often.", "Set Interval Modifier") as num|null
 		if(delay && delay > 0)
 			var/datum/event_container/EC = locate(href_list["interval"])
 			EC.delay_modifier = delay
-			log_and_message_admins("has set the interval modifier for [severity_to_string[EC.severity]] events to [EC.delay_modifier].")
+			log_and_message_staff("has set the interval modifier for [severity_to_string[EC.severity]] events to [EC.delay_modifier].")
 	else if(href_list["stop"])
 		if(alert("Stopping an event may have unintended side-effects. Continue?","Stopping Event!","Yes","No") != "Yes")
 			return
 		var/datum/event/E = locate(href_list["stop"])
 		var/datum/event_meta/EM = E.event_meta
-		log_and_message_admins("has stopped the [severity_to_string[EM.severity]] event '[EM.name]'.")
+		log_and_message_staff("has stopped the [severity_to_string[EM.severity]] event '[EM.name]'.")
 		E.kill()
 	else if(href_list["view_variables"])
 		var/datum/event/E = locate(href_list["view_variables"])
@@ -299,23 +299,23 @@ SUBSYSTEM_DEF(event)
 			var/datum/event_meta/EM = locate(href_list["set_weight"])
 			EM.weight = weight
 			if(EM != new_event)
-				log_and_message_admins("has changed the weight of the [severity_to_string[EM.severity]] event '[EM.name]' to [EM.weight].")
+				log_and_message_staff("has changed the weight of the [severity_to_string[EM.severity]] event '[EM.name]' to [EM.weight].")
 	else if(href_list["toggle_oneshot"])
 		var/datum/event_meta/EM = locate(href_list["toggle_oneshot"])
 		EM.one_shot = !EM.one_shot
 		if(EM != new_event)
-			log_and_message_admins("has [EM.one_shot ? "set" : "unset"] the oneshot flag for the [severity_to_string[EM.severity]] event '[EM.name]'.")
+			log_and_message_staff("has [EM.one_shot ? "set" : "unset"] the oneshot flag for the [severity_to_string[EM.severity]] event '[EM.name]'.")
 	else if(href_list["toggle_enabled"])
 		var/datum/event_meta/EM = locate(href_list["toggle_enabled"])
 		EM.enabled = !EM.enabled
-		log_and_message_admins("has [EM.enabled ? "enabled" : "disabled"] the [severity_to_string[EM.severity]] event '[EM.name]'.")
+		log_and_message_staff("has [EM.enabled ? "enabled" : "disabled"] the [severity_to_string[EM.severity]] event '[EM.name]'.")
 	else if(href_list["remove"])
 		if(alert("This will remove the event from rotation. Continue?","Removing Event!","Yes","No") != "Yes")
 			return
 		var/datum/event_meta/EM = locate(href_list["remove"])
 		var/datum/event_container/EC = locate(href_list["EC"])
 		EC.available_events -= EM
-		log_and_message_admins("has removed the [severity_to_string[EM.severity]] event '[EM.name]'.")
+		log_and_message_staff("has removed the [severity_to_string[EM.severity]] event '[EM.name]'.")
 	else if(href_list["add"])
 		if(!new_event.name || !new_event.event_type)
 			return
@@ -323,12 +323,12 @@ SUBSYSTEM_DEF(event)
 			return
 		new_event.severity = selected_event_container.severity
 		selected_event_container.available_events += new_event
-		log_and_message_admins("has added \a [severity_to_string[new_event.severity]] event '[new_event.name]' of type [new_event.event_type] with weight [new_event.weight].")
+		log_and_message_staff("has added \a [severity_to_string[new_event.severity]] event '[new_event.name]' of type [new_event.event_type] with weight [new_event.weight].")
 		new_event = new
 	else if(href_list["clear"])
 		var/datum/event_container/EC = locate(href_list["clear"])
 		if(EC.next_event)
-			log_and_message_admins("has dequeued the [severity_to_string[EC.severity]] event '[EC.next_event.name]'.")
+			log_and_message_staff("has dequeued the [severity_to_string[EC.severity]] event '[EC.next_event.name]'.")
 			EC.available_events += EC.next_event
 			EC.next_event = null
 
@@ -344,7 +344,7 @@ SUBSYSTEM_DEF(event)
 
 	if(ispath(type))
 		new type(new /datum/event_meta(EVENT_LEVEL_MAJOR))
-		message_admins("[key_name_admin(usr)] has triggered an event. ([type])", 1)
+		message_staff("[key_name_admin(usr)] has triggered an event. ([type])", 1)
 
 /client/proc/event_manager_panel()
 	set name = "Event Manager Panel"

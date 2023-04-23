@@ -107,7 +107,7 @@ var/datum/uplink/uplink = new()
 
 /datum/uplink_item/proc/purchase_log(obj/item/device/uplink/U, mob/user, cost)
 	SSstatistics.add_field_details("traitor_uplink_items_bought", "[src]")
-	log_and_message_admins("used \the [U.loc] to buy \a [src]")
+	log_and_message_staff("used \the [U.loc] to buy \a [src]")
 	if(user)
 		uplink_purchase_repository.add_entry(user.mind, src, cost)
 

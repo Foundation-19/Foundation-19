@@ -241,7 +241,7 @@ var/bomb_set
 				if(code == r_code)
 					yes_code = 1
 					code = null
-					log_and_message_admins("has armed \the [src]")
+					log_and_message_staff("has armed \the [src]")
 				else
 					code = "ERROR"
 			else
@@ -251,7 +251,7 @@ var/bomb_set
 				else
 					lastentered = text("[]", href_list["type"])
 					if(text2num(lastentered) == null)
-						log_and_message_admins("tried to exploit a nuclear bomb by entering non-numerical codes")
+						log_and_message_staff("tried to exploit a nuclear bomb by entering non-numerical codes")
 					else
 						code += lastentered
 						if(length(code) > 5)
@@ -308,7 +308,7 @@ var/bomb_set
 
 /obj/machinery/nuclearbomb/proc/start_bomb()
 	timing = 1
-	log_and_message_admins("activated the detonation countdown of \the [src]")
+	log_and_message_staff("activated the detonation countdown of \the [src]")
 	bomb_set++ // There can still be issues with this resetting when there are multiple bombs. Not a big deal though for Nuke/N
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 	if(security_state.set_security_level(security_state.destruction_security_level, TRUE)) //This would only be FALSE if the security level was already at destruction
@@ -387,9 +387,9 @@ var/bomb_set
 		var/turf/T = pick_area_turf(/area/maintenance, list(/proc/is_station_turf, /proc/not_turf_contains_dense_objects))
 		if(T)
 			var/obj/D = new /obj/item/disk/nuclear(T)
-			log_and_message_admins("[src], the last authentication disk, has been destroyed. Spawning [D] at ([D.x], [D.y], [D.z]).", location = T)
+			log_and_message_staff("[src], the last authentication disk, has been destroyed. Spawning [D] at ([D.x], [D.y], [D.z]).", location = T)
 		else
-			log_and_message_admins("[src], the last authentication disk, has been destroyed. Failed to respawn disc!")
+			log_and_message_staff("[src], the last authentication disk, has been destroyed. Failed to respawn disc!")
 	return ..()
 
 //====the nuclear football (holds the disk and instructions)====

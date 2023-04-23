@@ -12,7 +12,7 @@
 			text_size = 1
 		to_chat(L, SPAN_OCCULT("<font size='[text_size]'>[text_to_send]</font>")) //Note to self: make this go to ghosties
 		to_chat(linked, SPAN_NOTICE("You send the message [text_to_send] to \the [L]"))
-		log_and_message_admins("communicated the message \"[text_to_send]\" to [key_name(L)]", linked)
+		log_and_message_staff("communicated the message \"[text_to_send]\" to [key_name(L)]", linked)
 
 /datum/phenomena/point
 	name = "Point"
