@@ -11,7 +11,7 @@
 			to_chat(usr, SPAN_WARNING("[key_to_ignore] is already being ignored."))
 			return
 		prefs.ignored_players |= key_to_ignore
-		SScharacter_setup.queue_preferences_save(prefs)
+		SScharacter_setup_and_track.queue_preferences_save(prefs)
 		to_chat(usr, SPAN_NOTICE("Now ignoring <b>[key_to_ignore]</b>."))
 
 /client/verb/unignore(key_to_unignore as text)
@@ -27,7 +27,7 @@
 			to_chat(usr, SPAN_WARNING("[key_to_unignore] isn't being ignored."))
 			return
 		prefs.ignored_players -= key_to_unignore
-		SScharacter_setup.queue_preferences_save(prefs)
+		SScharacter_setup_and_track.queue_preferences_save(prefs)
 		to_chat(usr, SPAN_NOTICE("Reverted ignore on <b>[key_to_unignore]</b>."))
 
 /mob/proc/is_key_ignored(key_to_check)

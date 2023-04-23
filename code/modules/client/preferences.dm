@@ -50,12 +50,12 @@
 	if(istype(C))
 		client = C
 		client_ckey = C.ckey
-		SScharacter_setup.preferences_datums[C.ckey] = src
+		SScharacter_setup_and_track.preferences_datums[C.ckey] = src
 
-		if(SScharacter_setup.initialized)
+		if(SScharacter_setup_and_track.initialized)
 			setup()
 		else
-			SScharacter_setup.prefs_awaiting_setup += src
+			SScharacter_setup_and_track.prefs_awaiting_setup += src
 	..()
 
 /datum/preferences/proc/setup()
@@ -130,7 +130,7 @@
 	return 1
 
 /datum/preferences/proc/get_content(mob/user)
-	if(!SScharacter_setup.initialized)
+	if(!SScharacter_setup_and_track.initialized)
 		return
 	if(!user || !user.client)
 		return
@@ -155,7 +155,7 @@
 	return dat
 
 /datum/preferences/proc/open_setup_window(mob/user)
-	if (!SScharacter_setup.initialized)
+	if (!SScharacter_setup_and_track.initialized)
 		return
 	var/datum/browser/popup = new(user, "preferences_browser", "Character Setup", 1200, 800, src)
 	var/content = {"

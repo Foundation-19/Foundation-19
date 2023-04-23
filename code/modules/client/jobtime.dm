@@ -16,12 +16,12 @@
 	if(istype(C))
 		client = C
 		client_ckey = C.ckey
-		SScharacter_setup.jobtime_datums[C.ckey] = src
+		SScharacter_setup_and_track.jobtime_datums[C.ckey] = src
 
-		if(SScharacter_setup.initialized)
+		if(SScharacter_setup_and_track.initialized)
 			setup()
 		else
-			SScharacter_setup.jobtime_awaiting_setup += src
+			SScharacter_setup_and_track.jobtime_awaiting_setup += src
 
 /datum/jobtime/proc/setup()
 
@@ -61,4 +61,4 @@
 	current_job = null
 	start_time = null
 
-	SScharacter_setup.queue_jobtime_save(src)
+	SScharacter_setup_and_track.queue_jobtime_save(src)

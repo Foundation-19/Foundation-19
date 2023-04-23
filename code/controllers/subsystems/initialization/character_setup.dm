@@ -1,4 +1,4 @@
-SUBSYSTEM_DEF(character_setup)
+SUBSYSTEM_DEF(character_setup_and_track)
 	name = "Character Setup"
 	init_order = SS_INIT_CHAR_SETUP
 	priority = SS_PRIORITY_CHAR_SETUP
@@ -15,7 +15,7 @@ SUBSYSTEM_DEF(character_setup)
 	var/list/save_queue_pref = list()
 	var/list/save_queue_jobtime = list()
 
-/datum/controller/subsystem/character_setup/Initialize()
+/datum/controller/subsystem/character_setup_and_track/Initialize()
 	while(prefs_awaiting_setup.len)
 		var/datum/preferences/prefs = prefs_awaiting_setup[prefs_awaiting_setup.len]
 		prefs_awaiting_setup.len--
@@ -30,7 +30,7 @@ SUBSYSTEM_DEF(character_setup)
 		new_player.deferred_login()
 	. = ..()
 
-/datum/controller/subsystem/character_setup/fire(resumed = FALSE)
+/datum/controller/subsystem/character_setup_and_track/fire(resumed = FALSE)
 	while(save_queue_pref.len)
 		var/datum/preferences/prefs = save_queue_pref[save_queue_pref.len]
 		save_queue_pref.len--
@@ -50,8 +50,8 @@ SUBSYSTEM_DEF(character_setup)
 		if(MC_TICK_CHECK)
 			break
 
-/datum/controller/subsystem/character_setup/proc/queue_preferences_save(datum/preferences/prefs)
+/datum/controller/subsystem/character_setup_and_track/proc/queue_preferences_save(datum/preferences/prefs)
 	save_queue_pref |= prefs
 
-/datum/controller/subsystem/character_setup/proc/queue_jobtime_save(datum/jobtime/jobtimes)
+/datum/controller/subsystem/character_setup_and_track/proc/queue_jobtime_save(datum/jobtime/jobtimes)
 	save_queue_jobtime |= jobtimes

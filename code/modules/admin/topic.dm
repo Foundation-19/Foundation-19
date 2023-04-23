@@ -9,7 +9,7 @@
 #define TICKET_AUTORESPONSE_D_CLASS_RIOT "<b>D-Class may only riot with permission from a member of staff, and needs a good reason. If you wish to start a riot, you are to adminhelp again, outlining your reason. A member of staff will take your request under advisement.</b>"
 #define TICKET_AUTORESPONSE_D_CLASS_CELLS "<b>You can only get out if the on-duty guards feel like releasing you. It's best to wait and watch a YouTube video until such time.</b>"
 #define TICKET_AUTORESPONSE_DIRECTIONS_OR_LOST "<b>If you are lost, it is best to keep an eye on directional signs, ask a fellow player or find Holomaps, if they have been added to the current map.</b>"
-#define TICKET_AUTORESPONSE_CHARACTER_SETUP "<b>In order to join the game, you are required to select a branch and rank, found in the top area of the character set up. Once you have done this, you can join the jobs that are allowed for that rank. It is best to experiment for a moment to see which rank suits you best, since some jobs allow multiple.</b>"
+#define TICKET_AUTORESPONSE_CHARACTER_SETUP_AND_TRACK "<b>In order to join the game, you are required to select a branch and rank, found in the top area of the character set up. Once you have done this, you can join the jobs that are allowed for that rank. It is best to experiment for a moment to see which rank suits you best, since some jobs allow multiple.</b>"
 #define TICKET_AUTORESPONSE_WEBSITE_AND_DISCORD "<b>Hello, and welcome! Our website is located at: <a href='https://foundation-19.github.io/live/#'>https://foundation-19.github.io/live/</a> , our wiki is located at: <a href='https://scp13.miraheze.org/wiki'>https://scp13.miraheze.org/wiki</a>, our Discord is located at: <a href='https://discord.gg/xPxjQpp3Ud'>https://discord.gg/xPxjQpp3Ud</a> and our Patreon is located at: <a href='https://www.patreon.com/GSDR'>https://www.patreon.com/GSDR</a>. Hope to see you soon!</b>"
 
 #define TICKET_AUTORESPONSE_DEFAULT_NOTICE_MESSAGE "<b>NOTICE: [FONT_COLORED(COLOR_RED, usr.key)] is autoresponding with [FONT_COLORED(COLOR_ISLAMIC_GREEN, choice)].</b>"
@@ -1105,7 +1105,7 @@
 			if("A: Directions/Lost")
 				msgplayer = TICKET_AUTORESPONSE_DIRECTIONS_OR_LOST
 			if("A: Character setup")
-				msgplayer = TICKET_AUTORESPONSE_CHARACTER_SETUP
+				msgplayer = TICKET_AUTORESPONSE_CHARACTER_SETUP_AND_TRACK
 			if("L: Website and Discord information")
 				msgplayer = TICKET_AUTORESPONSE_WEBSITE_AND_DISCORD
 			else return
@@ -1941,6 +1941,6 @@
 #undef TICKET_AUTORESPONSE_D_CLASS_RIOT
 #undef TICKET_AUTORESPONSE_D_CLASS_CELLS
 #undef TICKET_AUTORESPONSE_DIRECTIONS_OR_LOST
-#undef TICKET_AUTORESPONSE_CHARACTER_SETUP
+#undef TICKET_AUTORESPONSE_CHARACTER_SETUP_AND_TRACK
 #undef TICKET_AUTORESPONSE_WEBSITE_AND_DISCORD
 #undef TICKET_AUTORESPONSE_DEFAULT_NOTICE_MESSAGE

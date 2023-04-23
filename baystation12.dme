@@ -266,7 +266,7 @@
 #include "code\controllers\subsystems\vote.dm"
 #include "code\controllers\subsystems\xenoarch.dm"
 #include "code\controllers\subsystems\zcopy.dm"
-#include "code\controllers\subsystems\initialization\character_setup.dm"
+#include "code\controllers\subsystems\initialization\character_setup_and_track.dm"
 #include "code\controllers\subsystems\initialization\codex.dm"
 #include "code\controllers\subsystems\initialization\cuisine.dm"
 #include "code\controllers\subsystems\initialization\culture.dm"

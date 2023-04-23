@@ -18,8 +18,8 @@
 	if(!list_find(GLOB.player_list, src))
 		ADD_SORTED(GLOB.player_list, src, /proc/cmp_mob_key)
 
-	if(!SScharacter_setup.initialized)
-		SScharacter_setup.newplayers_requiring_init += src
+	if(!SScharacter_setup_and_track.initialized)
+		SScharacter_setup_and_track.newplayers_requiring_init += src
 	else
 		deferred_login()
 

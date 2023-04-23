@@ -512,7 +512,7 @@ var/list/admin_verbs_mentors = list(
 		prefs.ooccolor = input(src, "Please select your OOC colour.", "OOC colour") as color
 	else if(response == "Reset to default")
 		prefs.ooccolor = initial(prefs.ooccolor)
-	SScharacter_setup.queue_preferences_save(prefs)
+	SScharacter_setup_and_track.queue_preferences_save(prefs)
 
 	SSstatistics.add_field_details("admin_verb","OC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
@@ -531,7 +531,7 @@ var/list/admin_verbs_mentors = list(
 	var/datum/preferences/D
 	var/client/C = GLOB.ckey_directory[warned_ckey]
 	if(C)	D = C.prefs
-	else	D = SScharacter_setup.preferences_datums[warned_ckey]
+	else	D = SScharacter_setup_and_track.preferences_datums[warned_ckey]
 
 	if(!D)
 		to_chat(src, FONT_COLORED("red","Error: warn(): No such ckey found."))

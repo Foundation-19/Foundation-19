@@ -208,8 +208,8 @@
 		holder.owner = src
 
 	//preferences datum - also holds some persistant data for the client (because we may as well keep these datums to a minimum)
-	prefs = SScharacter_setup.preferences_datums[ckey]
-	jobtimes = SScharacter_setup.jobtime_datums[ckey]
+	prefs = SScharacter_setup_and_track.preferences_datums[ckey]
+	jobtimes = SScharacter_setup_and_track.jobtime_datums[ckey]
 	if(!prefs)
 		prefs = new /datum/preferences(src)
 	if(!jobtimes)
@@ -484,7 +484,7 @@
 	// Something went wrong, client is usually kicked or transfered to a new mob at this point
 	return 0
 
-/client/verb/character_setup()
+/client/verb/character_setup_and_track()
 	set name = "Character Setup"
 	set category = "Preferences"
 	prefs?.open_setup_window(usr)

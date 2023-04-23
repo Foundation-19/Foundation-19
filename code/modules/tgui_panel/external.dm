@@ -54,5 +54,5 @@
 	set name = "Save Jobtime"
 	set category = "OOC"
 
-	var/datum/jobtime/jobtimes = SScharacter_setup.jobtime_datums[ckey]
-	SScharacter_setup.queue_jobtime_save(jobtimes)
+	var/datum/jobtime/jobtimes = SScharacter_setup_and_track.jobtime_datums[ckey]
+	SScharacter_setup_and_track.queue_jobtime_save(jobtimes)

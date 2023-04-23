@@ -58,7 +58,7 @@
 		slot = sanitize_integer(slot, 1, config.character_slots, initial(default_slot))
 		if(slot != default_slot)
 			default_slot = slot
-			SScharacter_setup.queue_preferences_save(src)
+			SScharacter_setup_and_track.queue_preferences_save(src)
 
 	if(slot == SAVE_RESET)
 		// If we're resetting, set everything to null. Sanitization will clean it up
@@ -79,7 +79,7 @@
 
 	// Cache the character's name for listing
 	LAZYSET(slot_names, record_key, W.data["real_name"])
-	SScharacter_setup.queue_preferences_save(src)
+	SScharacter_setup_and_track.queue_preferences_save(src)
 
 /datum/preferences/proc/sanitize_preferences()
 	player_setup.sanitize_setup()

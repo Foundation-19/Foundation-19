@@ -4,7 +4,7 @@ var/list/client_preference_stats_
 	. = list()
 	if(!user)
 		return
-	if(!SScharacter_setup.initialized)
+	if(!SScharacter_setup_and_track.initialized)
 		return
 	if(!client_preference_stats_)
 		client_preference_stats_ = list()
@@ -48,7 +48,7 @@ var/list/client_preference_stats_
 	if(!usr.cycle_preference(client_preference))
 		return
 
-	SScharacter_setup.queue_preferences_save(usr.client.prefs)
+	SScharacter_setup_and_track.queue_preferences_save(usr.client.prefs)
 	to_chat(usr, "[client_preference.description]: [usr.get_preference_value(client_preference)]")
 
 /stat_client_preference/proc/update_name(mob/user)
