@@ -331,8 +331,6 @@
 			return global.camera_repository;
 		if("cameranet")
 			return global.cameranet;
-		if("can_call_ert")
-			return global.can_call_ert;
 		if("captain_announcement")
 			return global.captain_announcement;
 		if("changelog_hash")
@@ -411,8 +409,6 @@
 			return global.endgame_exits;
 		if("endgame_safespawns")
 			return global.endgame_safespawns;
-		if("ert_base_chance")
-			return global.ert_base_chance;
 		if("escape_pods")
 			return global.escape_pods;
 		if("escape_pods_by_name")
@@ -1196,8 +1192,6 @@
 			global.camera_repository=newval;
 		if("cameranet")
 			global.cameranet=newval;
-		if("can_call_ert")
-			global.can_call_ert=newval;
 		if("captain_announcement")
 			global.captain_announcement=newval;
 		if("changelog_hash")
@@ -1276,8 +1270,6 @@
 			global.endgame_exits=newval;
 		if("endgame_safespawns")
 			global.endgame_safespawns=newval;
-		if("ert_base_chance")
-			global.ert_base_chance=newval;
 		if("escape_pods")
 			global.escape_pods=newval;
 		if("escape_pods_by_name")
@@ -1895,7 +1887,6 @@
 	"camera_range_display_status",
 	"camera_repository",
 	"cameranet",
-	"can_call_ert",
 	"captain_announcement",
 	"changelog_hash",
 	"channel_color_presets",
@@ -1935,7 +1926,6 @@
 	"empty_playable_ai_cores",
 	"endgame_exits",
 	"endgame_safespawns",
-	"ert_base_chance",
 	"escape_pods",
 	"escape_pods_by_name",
 	"evacuation_controller",

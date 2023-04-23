@@ -152,7 +152,7 @@
 				to_chat(usr, SPAN_WARNING("All emergency response teams are dispatched and can not be called at this time."))
 				return
 
-			trigger_armed_response_team(1)
+			trigger_armed_response_team()
 			SSstatistics.add_field("alert_keycard_auth_ert",1)
 		if("Grant Nuclear Authorization Code")
 			var/obj/machinery/nuclearbomb/nuke = locate(/obj/machinery/nuclearbomb/station) in world
