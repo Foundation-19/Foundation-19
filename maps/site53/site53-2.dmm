@@ -16151,13 +16151,6 @@
 /obj/item/ammo_magazine/box/stunshell,
 /obj/item/ammo_magazine/box/stunshell,
 /obj/effect/floor_decal/industrial/hatch/red,
-/obj/machinery/power/apc/hyper{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "aUR" = (
