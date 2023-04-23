@@ -157,6 +157,9 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 // Spawns multiple objects of the same type
 #define cast_new(type, num, args...) if((num) == 1) { new type(args) } else { for(var/i=0;i<(num),i++) { new type(args) } }
 
+//returns a zero instead of null when A is null
+#define NULL_ZERO(A) if(!A) {0} else {A}
+
 #define JOINTEXT(X) jointext(X, null)
 
 #define SPAN_ITALIC(X) "<span class='italic'>[X]</span>"
