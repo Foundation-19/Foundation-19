@@ -41,7 +41,7 @@
 
 /datum/job_record_reader/json_list/copy_to(datum/job_record_writer/json_list/W)
 	for(var/dat in data)
-		W.write(data[dat])
+		W.write(dat, data[dat])
 
 // Null jobtime reader
 // Returns null for all keys; used when initializing records

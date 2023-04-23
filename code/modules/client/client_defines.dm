@@ -13,6 +13,8 @@
 		//OTHER//
 		/////////
 	var/datum/preferences/prefs = null
+	var/datum/jobtime/jobtimes = null
+
 	var/adminobs		= null
 
 	var/adminhelped = 0

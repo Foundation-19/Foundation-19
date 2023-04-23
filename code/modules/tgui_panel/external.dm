@@ -49,3 +49,10 @@
 	set hidden = TRUE
 
 	init_verbs()
+
+/client/verb/save_jobtime() //DEBUG REMOVE BEFORE MERGE
+	set name = "Save Jobtime"
+	set category = "OOC"
+
+	var/datum/jobtime/jobtimes = SScharacter_setup.jobtime_datums[ckey]
+	SScharacter_setup.queue_jobtime_save(jobtimes)

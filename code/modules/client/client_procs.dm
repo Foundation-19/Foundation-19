@@ -209,8 +209,11 @@
 
 	//preferences datum - also holds some persistant data for the client (because we may as well keep these datums to a minimum)
 	prefs = SScharacter_setup.preferences_datums[ckey]
+	jobtimes = SScharacter_setup.jobtime_datums[ckey]
 	if(!prefs)
 		prefs = new /datum/preferences(src)
+	if(!jobtimes)
+		jobtimes = new /datum/jobtime(src)
 	prefs.macros.owner = src
 	prefs.last_ip = address				//these are gonna be used for banning
 	prefs.last_id = computer_id			//these are gonna be used for banning

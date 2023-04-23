@@ -16,7 +16,12 @@
 	if(istype(C))
 		client = C
 		client_ckey = C.ckey
-		setup()
+		SScharacter_setup.jobtime_datums[C.ckey] = src
+
+		if(SScharacter_setup.initialized)
+			setup()
+		else
+			SScharacter_setup.jobtime_awaiting_setup += src
 
 /datum/jobtime/proc/setup()
 
@@ -24,7 +29,7 @@
 		if(IsGuestKey(client.key))
 			is_guest = TRUE
 		else
-			for(var/job in SSjobs.job_lists_by_map_name) //initializes our jobs from map jobs
+			for(var/job in SSjobs.primary_job_datums) //initializes our jobs from map jobs
 				jobtimes[job] = 0
 			load_data()
 
