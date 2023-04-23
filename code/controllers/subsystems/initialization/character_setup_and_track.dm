@@ -6,6 +6,8 @@ SUBSYSTEM_DEF(character_setup_and_track)
 	wait = 1 SECOND
 	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
 
+	var/last_fired
+
 	var/list/prefs_awaiting_setup = list()
 	var/list/jobtime_awaiting_setup = list()
 	var/list/preferences_datums = list()
@@ -16,6 +18,7 @@ SUBSYSTEM_DEF(character_setup_and_track)
 	var/list/save_queue_jobtime = list()
 
 /datum/controller/subsystem/character_setup_and_track/Initialize()
+	last_fired = world.time
 	while(prefs_awaiting_setup.len)
 		var/datum/preferences/prefs = prefs_awaiting_setup[prefs_awaiting_setup.len]
 		prefs_awaiting_setup.len--
@@ -40,6 +43,7 @@ SUBSYSTEM_DEF(character_setup_and_track)
 
 		if(MC_TICK_CHECK)
 			break
+
 	while(save_queue_jobtime.len)
 		var/datum/jobtime/jobtimes = save_queue_jobtime[save_queue_jobtime.len]
 		save_queue_jobtime.len--
@@ -50,8 +54,26 @@ SUBSYSTEM_DEF(character_setup_and_track)
 		if(MC_TICK_CHECK)
 			break
 
+	handle_jobtime_update()
+
 /datum/controller/subsystem/character_setup_and_track/proc/queue_preferences_save(datum/preferences/prefs)
 	save_queue_pref |= prefs
 
 /datum/controller/subsystem/character_setup_and_track/proc/queue_jobtime_save(datum/jobtime/jobtimes)
 	save_queue_jobtime |= jobtimes
+
+/datum/controller/subsystem/character_setup_and_track/proc/handle_jobtime_update()
+	var/time_elapsed_since_last_fire = world.time - last_fired
+	last_fired = world.time
+
+	//if(!SSdbcore.Connect())
+		//return -1
+
+	for(var/client/C in GLOB.clients)
+		if(C.is_afk())
+			continue
+		if(!ishuman(C.mob)) //TODO: Implement tracking for more than just human jobs (Oberservers, antags, SCPs and other non humans, etc.)
+			continue
+		var/mob/living/carbon/human/H = C.mob
+		var/datum/jobtime/jobtimes = jobtime_datums[C.ckey]
+		jobtimes.update_job_time(H.mind.assigned_job, time_elapsed_since_last_fire)

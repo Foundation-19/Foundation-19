@@ -46,19 +46,9 @@
 		load_failed = "{[stage]} [E]"
 		throw E
 
-/datum/jobtime/proc/start_shift(datum/job/job)
+/datum/jobtime/proc/update_job_time(datum/job/job, time)
 	if(!job)
-		end_shift()
-
-	current_job = job
-	start_time = world.time
-
-/datum/jobtime/proc/end_shift()
-	if(!current_job)
 		return
 
-	jobtimes[current_job] += world.time - start_time
-	current_job = null
-	start_time = null
-
+	jobtimes[job] += time
 	SScharacter_setup_and_track.queue_jobtime_save(src)
