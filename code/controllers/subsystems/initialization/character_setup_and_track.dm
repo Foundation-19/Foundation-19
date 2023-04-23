@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(character_setup_and_track)
-	name = "Character Setup"
+	name = "Character Setup and Track"
 	init_order = SS_INIT_CHAR_SETUP
 	priority = SS_PRIORITY_CHAR_SETUP
 	flags = SS_BACKGROUND
