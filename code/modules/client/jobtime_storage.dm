@@ -11,6 +11,8 @@
 /datum/job_record_reader/proc/read(key)
 	CRASH("abstract - must be overridden")
 
+/datum/job_record_reader/proc/copy_to(datum/job_record_writer/json_list/W)
+	CRASH("abstract - must be overridden")
 
 // Abstract type for jobtime record writers
 /datum/job_record_writer
@@ -37,7 +39,7 @@
 /datum/job_record_reader/json_list/read(key)
 	return data[key]
 
-/datum/job_record_reader/json_list/copy_to(/datum/job_record_writer/json_list/W)
+/datum/job_record_reader/json_list/copy_to(datum/job_record_writer/json_list/W)
 	for(var/dat in data)
 		W.write(data[dat])
 

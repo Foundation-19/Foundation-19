@@ -41,14 +41,14 @@
 	if(!R)
 		R = new /datum/job_record_reader/null(JOB_SER_VERSION)
 	for(var/job in jobtimes)
-		jobtimes[job] = NULL_ZERO(R.read(job)) //if we havent played the job before we set it to zero
+		jobtimes[job] = R.read(job) ? R.read(job):0 //if we havent played the job before we set it to zero
 
 /datum/jobtime/proc/save_job_time()
 	var/datum/job_record_writer/json_list/W = new(JOB_SER_VERSION)
 
-	var/datum/job_record_reader/R = load_job_record("jobtime") //This is done because as maps have different jobtypes we dont want to wipe jobtimes for jobs that arent present on that map
+	var/datum/job_record_reader/R = load_job_record("jobtime")
 	if(R)
-		R.copy_to(W)
+		R.copy_to(W)  //This is done because as maps have different jobtypes we dont want to wipe jobtimes for jobs that arent present on that map
 
 	for(var/job in jobtimes)
 		W.write("[job]", jobtimes[job])
