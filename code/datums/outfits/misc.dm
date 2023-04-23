@@ -12,6 +12,6 @@
 	uniform = /obj/item/clothing/under/frontier
 	shoes = /obj/item/clothing/shoes/dutyboots
 	back = /obj/item/storage/backpack
-	l_ear = NULL
+	l_ear = null
 
 	flags = OUTFIT_NONE
