@@ -331,10 +331,8 @@
 /obj/structure/closet/secure_closet/guard/riotshotguns/WillContain()
 	return list(
 		/obj/item/gun/projectile/automatic/scp/saiga12/beanbag = 2,
-		/obj/item/ammo_magazine/scp/saiga12/beanbag = 6,
-		/obj/item/ammo_magazine/scp/saiga12/rubbershot = 6,
-		/obj/item/ammo_magazine/box/beanbag = 6,
-		/obj/item/ammo_magazine/box/rubbershot = 6,
+		/obj/item/ammo_magazine/scp/saiga12/beanbag = 8,
+		/obj/item/ammo_magazine/box/beanbag = 4,
 		/obj/item/clothing/accessory/storage/bandolier = 2,
 	)
 
@@ -349,17 +347,29 @@
 
 /obj/structure/closet/secure_closet/guard/specialistshotgun/WillContain()
 	return list(
-		/obj/item/gun/projectile/automatic/scp/saiga12/beanbag = 1,
-		/obj/item/gun/projectile/shotgun/pump/combat = 1,
 		/obj/item/ammo_magazine/scp/saiga12/beanbag = 3,
 		/obj/item/ammo_magazine/scp/saiga12/rubbershot = 3,
 		/obj/item/ammo_magazine/scp/saiga12/stunshell = 3,
-		/obj/item/ammo_magazine/scp/saiga12/flash = 4,
+		/obj/item/ammo_magazine/scp/saiga12/flash = 3,
 		/obj/item/ammo_magazine/box/beanbag = 3,
 		/obj/item/ammo_magazine/box/rubbershot = 3,
 		/obj/item/ammo_magazine/box/stunshell = 3,
 		/obj/item/ammo_magazine/box/flash = 3,
-		/obj/item/clothing/accessory/storage/bandolier = 2,
+	)
+
+/obj/structure/closet/secure_closet/guard/lethalshotgunammunitionbuckshot
+	name = "Buckshot Storage Locker"
+	req_access = list(ACCESS_SECURITY_LVL2)
+	icon_state = "gun-locked"
+	icon_closed = "gun-unlocked"
+	icon_locked = "gun-locked"
+	icon_opened = "gun-open"
+	icon_off = "gun-off"
+
+/obj/structure/closet/secure_closet/guard/lethalshotgunammunitionbuckshot/WillContain()
+	return list(
+		/obj/item/ammo_magazine/scp/saiga12/buckshot = 16,
+		/obj/item/ammo_magazine/box/buckshot = 8,
 	)
 
 /obj/structure/closet/secure_closet/guard/riotgear
