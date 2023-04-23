@@ -1,0 +1,6 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - admin: Player joined round log now uses alt job title
+  - admin: Show player info now gets player age from db if client is not connected,
+      meaning admins can see disconnected clients' player ages
