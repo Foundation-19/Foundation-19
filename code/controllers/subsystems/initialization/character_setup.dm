@@ -39,7 +39,7 @@ SUBSYSTEM_DEF(character_setup)
 			prefs.save_preferences()
 
 		if(MC_TICK_CHECK)
-			return
+			break
 	while(save_queue_jobtime.len)
 		var/datum/jobtime/jobtimes = save_queue_jobtime[save_queue_jobtime.len]
 		save_queue_jobtime.len--
@@ -48,7 +48,7 @@ SUBSYSTEM_DEF(character_setup)
 			jobtimes.save_job_time()
 
 		if(MC_TICK_CHECK)
-			return
+			break
 
 /datum/controller/subsystem/character_setup/proc/queue_preferences_save(datum/preferences/prefs)
 	save_queue_pref |= prefs

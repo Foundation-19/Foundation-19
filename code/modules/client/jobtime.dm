@@ -9,7 +9,7 @@
 
 	var/list/jobtimes = list()
 
-	var/current_job = null
+	var/datum/job/current_job = null
 	var/start_time = null
 
 /datum/jobtime/New(client/C)
@@ -45,3 +45,20 @@
 	catch(var/exception/E)
 		load_failed = "{[stage]} [E]"
 		throw E
+
+/datum/jobtime/proc/start_shift(datum/job/job)
+	if(!job)
+		end_shift()
+
+	current_job = job
+	start_time = world.time
+
+/datum/jobtime/proc/end_shift()
+	if(!current_job)
+		return
+
+	jobtimes[current_job] += world.time - start_time
+	current_job = null
+	start_time = null
+
+	SScharacter_setup.queue_jobtime_save(src)
