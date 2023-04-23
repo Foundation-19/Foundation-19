@@ -172,7 +172,7 @@
 			AnnounceArrival(character, job, spawnpoint.msg)
 		else
 			AnnounceCyborg(character, job, spawnpoint.msg)
-	log_and_message_staff("has joined the round as [character.mind.assigned_role].", character)
+	log_and_message_staff("has joined the round as [character.mind.assigned_role][character.mind.role_alt_title == character.mind.assigned_role ? "" : " ([character.mind.role_alt_title])"].", character)
 
 	if(character.needs_wheelchair())
 		equip_wheelchair(character)
