@@ -8,7 +8,7 @@
 
 // Nine Tailed Fox
 /decl/hierarchy/outfit/mtf/epsilon_11
-	hierarchy_type = /decl/hierarchy/outfit/mtf/epsilon11
+	hierarchy_type = /decl/hierarchy/outfit/mtf/epsilon_11
 
 /decl/hierarchy/outfit/mtf/epsilon_11/agent
 	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Agent")

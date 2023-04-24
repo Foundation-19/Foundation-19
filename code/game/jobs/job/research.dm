@@ -251,7 +251,7 @@
 	minimal_player_age = 20
 	ideal_character_age = 40
 	spawn_positions = 6
-	outfit_type = /decl/hierarchy/outfit/job/science/researchdirector
+	outfit_type = /decl/hierarchy/outfit/job/command/researchdirector
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
 	hud_icon = "hudchiefscienceofficer"
