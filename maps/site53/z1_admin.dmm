@@ -3667,7 +3667,7 @@
 "sm" = (
 /obj/structure/closet{
 	icon_state = "syndicate1";
-	name = "emergency response team wardrobe"
+	name = "mobile task force wardrobe"
 	},
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/glasses/tacgoggles,
@@ -3701,7 +3701,7 @@
 "su" = (
 /obj/structure/closet{
 	icon_state = "syndicate1";
-	name = "emergency response team wardrobe"
+	name = "mobile task force wardrobe"
 	},
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/glasses/tacgoggles,
@@ -4550,7 +4550,7 @@
 "uu" = (
 /obj/structure/closet{
 	icon_state = "syndicate1";
-	name = "emergency response team wardrobe"
+	name = "mobile task force wardrobe"
 	},
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/glasses/tacgoggles,
@@ -4584,7 +4584,7 @@
 "uG" = (
 /obj/structure/closet{
 	icon_state = "syndicate1";
-	name = "emergency response team wardrobe"
+	name = "mobile task force wardrobe"
 	},
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/glasses/tacgoggles,

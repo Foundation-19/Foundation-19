@@ -65,7 +65,7 @@
 		dat += "Select an event to trigger:<ul>"
 
 		if(!config.ert_admin_call_only)
-			dat += "<li><A href='?src=\ref[src];triggerevent=Emergency Response Team'>Emergency Response Team</A></li>"
+			dat += "<li><A href='?src=\ref[src];triggerevent=Mobile Task Force'>Call Mobile Task Force</A></li>"
 
 		dat += "<li><A href='?src=\ref[src];triggerevent=Grant Emergency Maintenance Access'>Grant Emergency Maintenance Access</A></li>"
 		dat += "<li><A href='?src=\ref[src];triggerevent=Revoke Emergency Maintenance Access'>Revoke Emergency Maintenance Access</A></li>"
@@ -147,9 +147,9 @@
 		if("Revoke Emergency Maintenance Access")
 			GLOB.using_map.revoke_maint_all_access()
 			SSstatistics.add_field("alert_keycard_auth_maintRevoke",1)
-		if("Emergency Response Team")
+		if("Mobile Task Force")
 			if(is_ert_blocked())
-				to_chat(usr, SPAN_WARNING("All emergency response teams are dispatched and can not be called at this time."))
+				to_chat(usr, SPAN_WARNING("All Mobile Task Forces are dispatched and can not be called at this time."))
 				return
 
 			trigger_armed_response_team()

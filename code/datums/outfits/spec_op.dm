@@ -25,7 +25,7 @@
 	flags = OUTFIT_HAS_JETPACK|OUTFIT_RESET_EQUIPMENT
 
 /decl/hierarchy/outfit/ert
-	name = "Spec Ops - Emergency response team"
+	name = "Spec Ops - Mobile Task Force"
 	uniform = /obj/item/clothing/under/ert
 	shoes = /obj/item/clothing/shoes/swat
 	gloves = /obj/item/clothing/gloves/thick/swat

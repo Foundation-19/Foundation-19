@@ -424,8 +424,8 @@
 	access |= get_all_site_access()
 
 /obj/item/card/id/centcom/ERT
-	name = "\improper Emergency Response Team ID"
-	assignment = "Emergency Response Team"
+	name = "\improper Mobile Task Force ID"
+	assignment = "Mobile Task Force"
 
 /obj/item/card/id/centcom/ERT/New()
 	..()

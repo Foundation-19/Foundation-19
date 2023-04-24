@@ -818,7 +818,7 @@
 /area/map_template/rescue_base/base)
 "bO" = (
 /obj/structure/closet{
-	name = "emergency response team wardrobe"
+	name = "mobile task force wardrobe"
 	},
 /obj/item/clothing/accessory/solgov/fleet_patch/fifth,
 /obj/item/clothing/head/solgov/utility/fleet,

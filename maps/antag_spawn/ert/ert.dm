@@ -5,7 +5,7 @@
 	apc_test_exempt_areas = list(
 		/area/map_template/rescue_base = NO_SCRUBBER|NO_VENT|NO_APC
 	)
-		
+
 
 /datum/shuttle/autodock/multi/antag/rescue
 	name = "Rescue"
@@ -60,7 +60,7 @@
 //Objects
 
 /obj/item/device/radio/headset/ert
-	name = "emergency response team radio headset"
+	name = "mobile task force radio headset"
 	desc = "The headset of the boss's boss."
 	icon_state = "com_headset"
 	item_state = "headset"

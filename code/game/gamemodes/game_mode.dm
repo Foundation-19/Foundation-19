@@ -259,7 +259,7 @@ var/global/list/additional_antag_types = list()
 		"classified security operations",
 		"a gargantuan glowing goat"
 		)
-	command_announcement.Announce("The presence of [pick(reasons)] in the region is tying up all available local emergency resources; emergency response teams cannot be called at this time, and post-evacuation recovery efforts will be substantially delayed.","Emergency Transmission")
+	command_announcement.Announce("The presence of [pick(reasons)] in the region is tying up all available local emergency resources; mobile task forces cannot be called at this time, and post-evacuation recovery efforts will be substantially delayed.","Emergency Transmission")
 
 /datum/game_mode/proc/check_finished()
 	if(evacuation_controller.round_over() || station_was_nuked)
