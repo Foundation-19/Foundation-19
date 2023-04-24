@@ -118,5 +118,5 @@
 	laws.sort_laws()
 
 /mob/living/silicon/proc/log_law(law_message)
-	log_and_message_admins(law_message)
+	log_and_message_staff(law_message)
 	GLOB.lawchanges += "[time_stamp("hh:mm")] - [usr ? "[key_name(usr)]" : "EVENT"] [law_message]"

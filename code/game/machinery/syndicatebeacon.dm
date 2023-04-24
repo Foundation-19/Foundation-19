@@ -65,7 +65,7 @@
 			to_chat(M, "<B>You have joined the ranks of the Syndicate and become a traitor to the station!</B>")
 			GLOB.traitors.add_antagonist(N.mind)
 			GLOB.traitors.equip(N)
-			log_and_message_admins("has accepted a traitor objective from a syndicate beacon.", M)
+			log_and_message_staff("has accepted a traitor objective from a syndicate beacon.", M)
 
 
 	src.updateUsrDialog()

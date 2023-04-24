@@ -132,7 +132,7 @@
 	if(get_status() && (get_epr() < 0.5))
 		if(!aw_EPR)
 			var/area/A = get_area(src)
-			log_and_message_admins("WARN: Supermatter EPR value low. Possible core breach detected in [A.name]", null, src)
+			log_and_message_staff("WARN: Supermatter EPR value low. Possible core breach detected in [A.name]", null, src)
 		aw_EPR = TRUE
 	else
 		aw_EPR = FALSE
@@ -142,7 +142,7 @@
 	if(status >= min_status)
 		if(!current_state)
 			var/area/A = get_area(src)
-			log_and_message_admins(message + " in [A.name]", null, src)
+			log_and_message_staff(message + " in [A.name]", null, src)
 			if(send_to_irc)
 				send2adminirc(message + " in [A.name]")
 		return TRUE
@@ -192,7 +192,7 @@
 	if(exploded)
 		return
 
-	log_and_message_admins("Supermatter delaminating at [x] [y] [z]")
+	log_and_message_staff("Supermatter delaminating at [x] [y] [z]")
 	anchored = TRUE
 	grav_pulling = 1
 	exploded = 1
@@ -557,7 +557,7 @@
 			power *= 3
 		if(3.0)
 			power *= 2
-	log_and_message_admins("WARN: Explosion near the Supermatter! New EER: [power].")
+	log_and_message_staff("WARN: Explosion near the Supermatter! New EER: [power].")
 
 /obj/machinery/power/supermatter/shard //Small subtype, less efficient and more sensitive, but less boom.
 	name = "supermatter shard"

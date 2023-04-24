@@ -96,7 +96,7 @@
 		var/obj/item/implant/psi_control/implant = thing
 		implant.update_functionality()
 
-	log_and_message_admins("has changed the security level from [previous_security_level.name] to [new_security_level.name].")
+	log_and_message_staff("has changed the security level from [previous_security_level.name] to [new_security_level.name].")
 	return TRUE
 
 // This proc decreases the current security level, if possible

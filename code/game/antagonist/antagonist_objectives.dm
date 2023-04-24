@@ -59,7 +59,7 @@
 		to_chat(src, SPAN_NOTICE("You leave your ambitions behind."))
 		if(goal)
 			qdel(goal)
-	log_and_message_admins("has set their ambitions to now be: [new_goal].")
+	log_and_message_staff("has set their ambitions to now be: [new_goal].")
 
 //some antagonist datums are not actually antagonists, so we might want to avoid
 //sending them the antagonist meet'n'greet messages.

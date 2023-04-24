@@ -71,7 +71,7 @@ var/global/list/additional_antag_types = list()
 				auto_recall_shuttle = !auto_recall_shuttle
 			if("autotraitor")
 				round_autoantag = !round_autoantag
-		message_admins("Admin [key_name_admin(usr)] toggled game mode option '[href_list["toggle"]]'.")
+		message_staff("Admin [key_name_admin(usr)] toggled game mode option '[href_list["toggle"]]'.")
 	else if(href_list["set"])
 		var/choice = ""
 		switch(href_list["set"])
@@ -97,7 +97,7 @@ var/global/list/additional_antag_types = list()
 					return
 				event_delay_mod_major = choice
 				refresh_event_modifiers()
-		message_admins("Admin [key_name_admin(usr)] set game mode option '[href_list["set"]]' to [choice].")
+		message_staff("Admin [key_name_admin(usr)] set game mode option '[href_list["set"]]' to [choice].")
 	else if(href_list["debug_antag"])
 		if(href_list["debug_antag"] == "self")
 			usr.client.debug_variables(src)
@@ -105,7 +105,7 @@ var/global/list/additional_antag_types = list()
 		var/datum/antagonist/antag = GLOB.all_antag_types_[href_list["debug_antag"]]
 		if(antag)
 			usr.client.debug_variables(antag)
-			message_admins("Admin [key_name_admin(usr)] is debugging the [antag.role_text] template.")
+			message_staff("Admin [key_name_admin(usr)] is debugging the [antag.role_text] template.")
 	else if(href_list["remove_antag_type"])
 		if(antag_tags && (href_list["remove_antag_type"] in antag_tags))
 			to_chat(usr, "Cannot remove core mode antag type.")
@@ -114,7 +114,7 @@ var/global/list/additional_antag_types = list()
 		if(antag_templates && antag_templates.len && antag && (antag in antag_templates) && (antag.id in additional_antag_types))
 			antag_templates -= antag
 			additional_antag_types -= antag.id
-			message_admins("Admin [key_name_admin(usr)] removed [antag.role_text] template from game mode.")
+			message_staff("Admin [key_name_admin(usr)] removed [antag.role_text] template from game mode.")
 	else if(href_list["add_antag_type"])
 		var/choice = input("Which type do you wish to add?") as null|anything in GLOB.all_antag_types_
 		if(!choice)
@@ -124,7 +124,7 @@ var/global/list/additional_antag_types = list()
 			if(!islist(SSticker.mode.antag_templates))
 				SSticker.mode.antag_templates = list()
 			SSticker.mode.antag_templates |= antag
-			message_admins("Admin [key_name_admin(usr)] added [antag.role_text] template to game mode.")
+			message_staff("Admin [key_name_admin(usr)] added [antag.role_text] template to game mode.")
 
 	if (usr.client && usr.client.holder)
 		usr.client.holder.show_game_mode(usr)
@@ -148,7 +148,7 @@ var/global/list/additional_antag_types = list()
 		if(antag_templates.len > 1 && SSticker.master_mode != "secret")
 			to_world("[antag_summary]")
 		else
-			message_admins("[antag_summary]")
+			message_staff("[antag_summary]")
 
 /// Run prior to a mode vote to determine if the mode should be included. Falsy if yes, otherwise a status message.
 /datum/game_mode/proc/check_votable(list/lobby_players)

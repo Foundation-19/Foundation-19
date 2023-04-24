@@ -25,7 +25,7 @@
 
 	to_chat(L, SPAN_OCCULT("\The [src] grants you a boon of [current_boon]!"))
 	to_chat(src, SPAN_NOTICE("You give \the [L] a boon of [current_boon]."))
-	log_and_message_admins("gave [key_name(L)] the boon [current_boon]")
+	log_and_message_staff("gave [key_name(L)] the boon [current_boon]")
 	current_boon = null
 	return
 

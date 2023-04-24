@@ -272,7 +272,7 @@
 
 	// Don't send messages unless we *need* the computer, and less than five minutes have passed since last time we messaged
 	if(!control_computer && urgent && last_no_computer_message + 5*60*10 < world.time)
-		log_and_message_admins("Cryopod in [src.loc.loc] could not find control computer!")
+		log_and_message_staff("Cryopod in [src.loc.loc] could not find control computer!")
 		last_no_computer_message = world.time
 
 	return control_computer != null
@@ -335,7 +335,7 @@
 // Also make sure there is a valid control computer
 /obj/machinery/cryopod/proc/despawn_occupant()
 	if (!occupant)
-		log_and_message_admins("A mob was deleted while in a cryopod. This may cause errors!")
+		log_and_message_staff("A mob was deleted while in a cryopod. This may cause errors!")
 		return
 
 	//Drop all items into the pod.
@@ -419,7 +419,7 @@
 	if(control_computer)
 		control_computer.frozen_crew += "[occupant.real_name], [role_alt_title] - [station_time_timestamp("hh:mm")]"
 		control_computer._admin_logs += "[key_name(occupant)] ([role_alt_title]) at [station_time_timestamp("hh:mm")]"
-	log_and_message_admins("[key_name(occupant)] ([role_alt_title]) entered cryostorage.")
+	log_and_message_staff("[key_name(occupant)] ([role_alt_title]) entered cryostorage.")
 
 	if(announce_despawn)
 		announce.autosay("[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
@@ -468,7 +468,7 @@
 	set_occupant(target)
 	if (user != target)
 		add_fingerprint(target)
-	log_and_message_admins("placed [target == user ? "themself" : key_name_admin(target)] into \a [src]")
+	log_and_message_staff("placed [target == user ? "themself" : key_name_admin(target)] into \a [src]")
 
 //Like grap-put, but for mouse-drop.
 /obj/machinery/cryopod/MouseDrop_T(mob/target, mob/user)
