@@ -2,18 +2,10 @@
 
 	#include "site53_announcements.dm"
 	#include "site53areas.dm"
-//	#include "../torch/torch_areas.dm"
-//	#include "torch_elevator.dm"
 	#include "site53elevators.dm"
-//	#include "torch_holodecks.dm"
-//	#include "torch_overmap.dm"
 	#include "site53_presets.dm"
-//	#include "torch_ranks.dm"
 	#include "site_53_ranks.dm"
 	#include "site53shuttles.dm"
-//	#include "torch_unit_testing.dm"
-//	#include "torch_antagonism.dm"
-//	#include "torch_npcs.dm"
 
 	#include "items/cards_ids.dm"
 	#include "items/encryption_keys.dm"
