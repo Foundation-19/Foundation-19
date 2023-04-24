@@ -734,6 +734,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/folder/blue,
+/obj/item/folder/red,
+/obj/item/folder/yellow,
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
 "bX" = (
@@ -893,7 +896,6 @@
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/hallway)
 "cs" = (
-/obj/machinery/papershredder,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 4;
@@ -2445,6 +2447,9 @@
 /obj/item/stamp/scp/cmo,
 /obj/item/stamp/approved,
 /obj/item/stamp/denied,
+/obj/item/folder/blue,
+/obj/item/folder/yellow,
+/obj/item/folder/red,
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/hallway)
 "gl" = (
@@ -2455,6 +2460,9 @@
 /obj/item/stamp/approved,
 /obj/item/stamp/denied,
 /obj/item/stamp/ce,
+/obj/item/folder/yellow,
+/obj/item/folder/red,
+/obj/item/folder/blue,
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/hallway)
 "gm" = (
@@ -4612,7 +4620,6 @@
 	network = list("Entrance Zone Network")
 	},
 /obj/structure/table/woodentable_reinforced/mahogany,
-/obj/item/folder/envelope/nuke_instructions,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/uez/hallway)
 "pg" = (
@@ -4802,6 +4809,11 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/uez/armory)
+"qw" = (
+/obj/effect/paint_stripe/blue,
+/obj/structure/filingcabinet/wallcabinet,
+/turf/simulated/wall/titanium,
+/area/site53/uez/hallway)
 "qx" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5258,6 +5270,9 @@
 /obj/item/stamp/approved,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/item/folder/red,
+/obj/item/folder/yellow,
+/obj/item/folder/blue,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "uS" = (
@@ -5755,6 +5770,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/equipmentroom)
+"ys" = (
+/obj/effect/paint_stripe/blue,
+/obj/machinery/vending/wallmed2{
+	dir = 1
+	},
+/turf/simulated/wall/titanium,
+/area/site53/uez/hallway)
 "yt" = (
 /obj/structure/flora/pottedplant/minitree,
 /obj/machinery/light{
@@ -6792,6 +6814,9 @@
 "Hc" = (
 /obj/structure/table/woodentable/ebony,
 /obj/item/device/flashlight/lamp,
+/obj/item/folder/yellow,
+/obj/item/folder/red,
+/obj/item/folder/blue,
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/repoffice/internaltribunal)
 "He" = (
@@ -7299,10 +7324,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
 "LF" = (
-/obj/machinery/vending/wallmed1{
-	dir = 4;
-	pixel_x = -22
-	},
+/obj/machinery/papershredder,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/hallway)
 "LL" = (
@@ -39506,7 +39528,7 @@ ZM
 TB
 TB
 oA
-ac
+qw
 cd
 cd
 cd
@@ -39769,7 +39791,7 @@ co
 Rd
 Pt
 pb
-ac
+ys
 hk
 ac
 bK
