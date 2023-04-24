@@ -30,7 +30,6 @@
 	#include "items/clothing/solgov-under.dm"
 
 	#include "job/headsets.dm"
-	#include "job/jobs.dm"
 	#include "job/outfits.dm"
 	#include "job/papers.dm"
 	#include "job/access/access.dm"

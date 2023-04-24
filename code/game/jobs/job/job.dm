@@ -10,7 +10,6 @@
 	var/total_positions = 0               // How many players can be this job
 	var/spawn_positions = 0               // How many players can spawn in as this job
 	var/current_positions = 0             // How many players have this job
-	var/availablity_chance = 100          // Percentage chance job is available each round
 
 	var/supervisors = null                // Supervisors, who this person answers to directly
 	var/selection_color = "#515151"       // Selection screen color
@@ -55,16 +54,12 @@
 
 	var/use_species_whitelist // If set, restricts the job to players with the given species whitelist. This does NOT restrict characters joining as the job to the species itself.
 
-	var/required_language
+	var/required_language = LANGUAGE_ENGLISH
 
 	var/balance_limited = FALSE //is this job limited for balance purposes, compared to D-class? Intended for LCZ balance
 
 
 /datum/job/New()
-
-	if(prob(100-availablity_chance))	//Close positions, blah blah.
-		total_positions = 0
-		spawn_positions = 0
 
 	if(!hud_icon)
 		hud_icon = "hud[ckey(title)]"
