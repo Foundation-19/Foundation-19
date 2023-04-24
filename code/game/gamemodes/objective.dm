@@ -451,6 +451,6 @@ var/global/list/all_objectives = list()
 	..(role, role_type)
 	if(target && target.current)
 		explanation_text = "Assassinate, capture or convert [target.current.real_name], the [!role_type ? target.assigned_role : target.special_role]."
- 	else
+	else
 		explanation_text = "Free Objective"
 	return target
