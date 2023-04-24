@@ -9,7 +9,7 @@
 	supervisors = "all Foundation Personnel"
 	access = list()
 	minimal_access = list()
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/classd
+	outfit_type = /decl/hierarchy/outfit/job/civ/classd
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classd)
 	hud_icon = "huddclass"
@@ -47,7 +47,7 @@
 	minimal_player_age = 5
 	ideal_character_age = 30
 	alt_titles = list("Administrative Assistant", "Accountant", "Auditor", "Secretary")
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/officeworker
+	outfit_type = /decl/hierarchy/outfit/job/civ/officeworker
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
@@ -80,7 +80,7 @@
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 35
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/logisticsofficer
+	outfit_type = /decl/hierarchy/outfit/job/command/logisticsofficer
 	hud_icon = "huddeckchief"
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb)
@@ -122,7 +122,7 @@
 	//supervisors = "the Logistics Officer"
 	minimal_player_age = 3
 	ideal_character_age = 24
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/logisticspecialist
+	outfit_type = /decl/hierarchy/outfit/job/command/logisticspecialist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "huddecktechnician"
@@ -166,7 +166,7 @@
 	supervisors = "the Human Resources Officer"
 	ideal_character_age = 16
 	alt_titles = list("Interior caretaker")
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/janitor
+	outfit_type = /decl/hierarchy/outfit/job/civ/janitor
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
@@ -197,7 +197,7 @@
 	supervisors = "the Human Resources Officer"
 	ideal_character_age = 18
 	alt_titles = list("Cook")
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/chef
+	outfit_type = /decl/hierarchy/outfit/job/civ/chef
 	allowed_branches = list(/datum/mil_branch/civilian)
 	hud_icon = "hudcook"
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
@@ -229,7 +229,7 @@
 	supervisors = "the Human Resources Officer"
 	ideal_character_age = 21
 	alt_titles = list("Waiter")
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/bartender
+	outfit_type = /decl/hierarchy/outfit/job/civ/bartender
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudbartender"
@@ -264,7 +264,7 @@
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/archivist
+	outfit_type = /decl/hierarchy/outfit/job/civ/archivist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
 	hud_icon = "hudarchivist"

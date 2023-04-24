@@ -8,7 +8,7 @@
 	minimal_player_age = 15
 	ideal_character_age = 48
 	alt_titles = list("Medical Director")
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/cmo
+	outfit_type = /decl/hierarchy/outfit/job/command/cmo
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 						/datum/mil_rank/civ/classb,
@@ -65,7 +65,7 @@
 	economic_power = 4
 	alt_titles = list("Pharmacist")
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/site90/medical/chemist
+	outfit_type = /decl/hierarchy/outfit/job/medical/chemist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 						/datum/mil_rank/civ/classc,
@@ -107,7 +107,7 @@
 	economic_power = 5
 	supervisors = "the Chief Medical Officer"
 	alt_titles = list("Counselor")
-	outfit_type = /decl/hierarchy/outfit/job/site90/medical/psychiatrist
+	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
 	allowed_branches = list(
 	/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb)
@@ -146,7 +146,7 @@
 	minimal_player_age = 3
 	economic_power = 5
 	alt_titles = list("Coroner")
-	outfit_type = /decl/hierarchy/outfit/job/site90/medical/medicaldoctor
+	outfit_type = /decl/hierarchy/outfit/job/medical/medicaldoctor
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 						/datum/mil_rank/civ/classc,
@@ -190,7 +190,7 @@
 	economic_power = 5
 	supervisors = "the Chief Medical Officer"
 	minimal_player_age = 3
-	outfit_type = /decl/hierarchy/outfit/job/site90/medical/surgeon
+	outfit_type = /decl/hierarchy/outfit/job/medical/surgeon
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb)
 	hud_icon = "hudsurgeon"
@@ -231,7 +231,7 @@
 	economic_power = 5
 	//duties = "<big><b>As the EMT it is your job to man the medical post near the Class D cell block, and treat any injuries there of the guards or Class D's. You only have limited supplies, so it's best to make them count.</b></big>"
 	supervisors = "the Chief Medical Officer"
-	outfit_type = /decl/hierarchy/outfit/job/site90/medical/emt
+	outfit_type = /decl/hierarchy/outfit/job/medical/emt
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudemt"

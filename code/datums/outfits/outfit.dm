@@ -66,12 +66,6 @@ var/list/outfits_decls_by_type_
 		H.delete_inventory(TRUE)
 
 /decl/hierarchy/outfit/proc/post_equip(mob/living/carbon/human/H)
-	if(flags & OUTFIT_HAS_JETPACK)
-		var/obj/item/tank/jetpack/J = locate(/obj/item/tank/jetpack) in H
-		if(!J)
-			return
-		J.toggle()
-		J.toggle_valve()
 
 // A proc for non-human species, specially Unathi, since they e.g.
 // can't normally wear gloves as humans. Correct this issue by trying again, but

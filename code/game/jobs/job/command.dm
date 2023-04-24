@@ -12,7 +12,7 @@ ut // COMMAND
 	economic_power = 15
 	alt_titles = list("Facility Director")
 	ideal_character_age = 50
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/facilitydir
+	outfit_type = /decl/hierarchy/outfit/job/command/facilitydir
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
 	hud_icon = "hudsitedirector"
@@ -48,7 +48,7 @@ ut // COMMAND
 	economic_power = 10
 	minimal_player_age = 15
 	ideal_character_age = 45
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/headofhr
+	outfit_type = /decl/hierarchy/outfit/job/command/headofhr
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
 	hud_icon = "hudhumanresources"
@@ -83,7 +83,7 @@ ut // COMMAND
 	economic_power = 10
 	minimal_player_age = 15
 	ideal_character_age = 45
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/commsofficer
+	outfit_type = /decl/hierarchy/outfit/job/command/commsofficer
 	allowed_branches = list(/datum/mil_branch/security)
 	hud_icon = "hudcommsofficer"
 	allowed_ranks = list(
@@ -148,7 +148,7 @@ ut // COMMAND
 		"Communications Programmer",
 		"Communications Dispatcher"
 		)
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/commstech
+	outfit_type = /decl/hierarchy/outfit/job/command/commstech
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudcommsprogrammer"
@@ -197,7 +197,7 @@ ut // COMMAND
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/tribunal
+	outfit_type = /decl/hierarchy/outfit/job/civ/tribunal
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
@@ -227,7 +227,7 @@ ut // COMMAND
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/o5rep
+	outfit_type = /decl/hierarchy/outfit/job/civ/o5rep
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
@@ -257,8 +257,8 @@ ut // COMMAND
 	economic_power = 5
 	minimal_player_age = 9
 	ideal_character_age = 30
-	alt_titles = list("UIU Relations Agent" = /decl/hierarchy/outfit/job/site90/crew/civ/uiu, "Horizon Initiative Scribe" = /decl/hierarchy/outfit/job/thirep, "Marshall, Carter, and Dark Corporate Liaison" = /decl/hierarchy/outfit/job/site90/crew/civ/MCDRep )
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/gocrep
+	alt_titles = list("UIU Relations Agent" = /decl/hierarchy/outfit/job/civ/uiu, "Horizon Initiative Scribe" = /decl/hierarchy/outfit/job/civ/thirep, "Marshall, Carter, and Dark Corporate Liaison" = /decl/hierarchy/outfit/job/civ/MCDRep )
+	outfit_type = /decl/hierarchy/outfit/job/civ/gocrep
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
@@ -274,33 +274,3 @@ ut // COMMAND
 	)
 
 	minimal_access = list()
-
-/datum/job/mtf
-	title = "Mobile Task Force Operative"
-	department = "Regional Dispatch"
-	department_flag = COM
-	total_positions = 0
-	spawn_positions = 0
-	supervisors = "O5 Regional Dispatch and O5 Command"
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/event/mtfbasic
-	hud_icon = "hudseniorenlistedadvisor"
-	access = list()
-	minimal_access = list()
-
-/datum/job/mtf/get_access()
-	return get_all_site_access()
-
-/datum/job/physics
-	title = "UNGOC Physics Operative"
-	department = "Regional Dispatch"
-	department_flag = COM
-	total_positions = 0
-	spawn_positions = 0
-	supervisors = "UNGOC Regional Dispatch and UNGOC Central Command"
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/event/ungoc
-	hud_icon = "hudseniorenlistedadvisor"
-	access = list()
-	minimal_access = list()
-
-/datum/job/physics/get_access()
-	return get_all_site_access()

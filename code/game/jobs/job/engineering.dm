@@ -16,7 +16,7 @@
 		"Junior Damage Control Technician",
 		"Junior Electrician"
 		)
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/engineering/juneng
+	outfit_type = /decl/hierarchy/outfit/job/engineering/juneng
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudengineertrainee"
@@ -51,7 +51,7 @@
 		"Damage Control Technician",
 		"Electrician"
 		)
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/engineering/eng
+	outfit_type = /decl/hierarchy/outfit/job/engineering/eng
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudengineer"
@@ -98,7 +98,7 @@
 		"Senior Damage Control Technician",
 		"Senior Electrician"
 		)
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/engineering/seneng
+	outfit_type = /decl/hierarchy/outfit/job/engineering/seneng
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudseniorengineer"
@@ -143,7 +143,7 @@
 	economic_power = 5
 	minimal_player_age = 10
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/engineering/conteng
+	outfit_type = /decl/hierarchy/outfit/job/engineering/conteng
 	allowed_branches = list(
 		/datum/mil_branch/security
 	)
@@ -197,7 +197,7 @@
 	economic_power = 9
 	ideal_character_age = 35
 	minimal_player_age = 20
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/chief_engineer
+	outfit_type = /decl/hierarchy/outfit/job/command/chief_engineer
 	allowed_branches = list(/datum/mil_branch/security)
 	allowed_ranks = list(
 	/datum/mil_rank/security/o2,

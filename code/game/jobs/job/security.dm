@@ -14,7 +14,7 @@
 	alt_titles = list("Security Chief", "Head of Security")
 	minimal_player_age = 15
 	ideal_character_age = 35
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/cos
+	outfit_type = /decl/hierarchy/outfit/job/command/cos
 	allowed_branches = list(
 		/datum/mil_branch/security
 	)
@@ -80,7 +80,7 @@
 	economic_power = 4
 	minimal_player_age = 10
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ltofficerlcz
+	outfit_type = /decl/hierarchy/outfit/job/security/lcz_zone_commander
 	allowed_branches = list(
 		/datum/mil_branch/security
 	)
@@ -129,7 +129,7 @@
 	economic_power = 4
 	minimal_player_age = 10
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ltofficerhcz
+	outfit_type = /decl/hierarchy/outfit/job/security/hcz_zone_commander
 	allowed_branches = list(
 		/datum/mil_branch/security
 	)
@@ -179,7 +179,7 @@
 	economic_power = 4
 	minimal_player_age = 10
 	ideal_character_age = 27
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ltofficerez
+	outfit_type = /decl/hierarchy/outfit/job/security/ez_zone_commander
 	allowed_branches = list(
 		/datum/mil_branch/security
 	)
@@ -243,7 +243,7 @@
 	alt_titles = list("LCZ Senior Containment Response Agent", "LCZ Containment Response Sergeant", "LCZ Senior Combat Medic", "LCZ Riot Control Sergeant", "LCZ Senior Riot Control Agent", "LCZ Senior Agent")
 	minimal_player_age = 5
 	ideal_character_age = 25
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerlcz
+	outfit_type = /decl/hierarchy/outfit/job/security/lcz_sergeant
 	allowed_branches = list(
 		/datum/mil_branch/security
 	)
@@ -296,7 +296,7 @@
 	alt_titles = list("HCZ Senior Containment Response Agent", "HCZ Containment Response Sergeant", "HCZ Senior Combat Medic", "HCZ Senior Agent")
 	minimal_player_age = 5
 	ideal_character_age = 25
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerhcz
+	outfit_type = /decl/hierarchy/outfit/job/security/hcz_sergeant
 	allowed_branches = list(
 		/datum/mil_branch/security
 	)
@@ -343,10 +343,10 @@
 	//duties = "<big><b>As the Agent you have more access than a Junior Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
 	supervisors = "the EZ Supervisor"
 	economic_power = 4
-	alt_titles = list("Investigation Officer" = /decl/hierarchy/outfit/job/site90/crew/security/secauditorofficer, "EZ Senior Combat Medic" = /decl/hierarchy/outfit/job/site90/crew/security/medic)
+	alt_titles = list("Investigation Officer" = /decl/hierarchy/outfit/job/security/ez_sergeant_investigative, "EZ Senior Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
 	minimal_player_age = 5
 	ideal_character_age = 25
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/ncoofficerez
+	outfit_type = /decl/hierarchy/outfit/job/security/ez_sergeant
 	allowed_branches = list(
 		/datum/mil_branch/security
 	)
@@ -405,7 +405,7 @@
 	minimal_player_age = 0
 	ideal_character_age = 25
 	balance_limited = TRUE
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerlcz
+	outfit_type = /decl/hierarchy/outfit/job/security/lcz_guard
 	allowed_branches = list(
 		/datum/mil_branch/security
 	)
@@ -456,7 +456,7 @@
 	alt_titles = list("HCZ Containment Response Agent", "HCZ Containment Response Guard", "HCZ Combat Medic", "HCZ Agent")
 //	minimal_player_age = 0
 	ideal_character_age = 25
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerhcz
+	outfit_type = /decl/hierarchy/outfit/job/security/hcz_guard
 	allowed_branches = list(
 		/datum/mil_branch/security
 	)
@@ -503,10 +503,10 @@
 	//duties = "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
 	supervisors = "the EZ Senior Agents and Supervisor"
 	economic_power = 4
-	alt_titles = list("Investigation Agent" = /decl/hierarchy/outfit/job/site90/crew/security/secauditor, "EZ Combat Medic" = /decl/hierarchy/outfit/job/site90/crew/security/medic)
+	alt_titles = list("Investigation Agent" = /decl/hierarchy/outfit/job/security/ez_guard_investigative, "EZ Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
 	minimal_player_age = 0
 	ideal_character_age = 25
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/security/enlistedofficerez
+	outfit_type = /decl/hierarchy/outfit/job/security/ez_guard
 	allowed_branches = list(
 		/datum/mil_branch/security
 	)

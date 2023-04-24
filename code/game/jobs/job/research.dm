@@ -11,7 +11,7 @@
 	economic_power = 4
 	alt_titles = list("Junior Xenobiologist", "Junior Xenoarcheologist", "Assistant Researcher", "Research Assistant", "Research Intern", "Junior Researcher")
 	ideal_character_age = 20
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/juniorscientist
+	outfit_type = /decl/hierarchy/outfit/job/science/juniorscientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb, /datum/mil_rank/civ/classc)
 	hud_icon = "hudresearchassistant"
@@ -47,7 +47,7 @@
 	economic_power = 4
 	alt_titles = list("Junior Exoskeleton Technician", "Junior Hardsuit Technician")
 	ideal_character_age = 20
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/juniorroboticist
+	outfit_type = /decl/hierarchy/outfit/job/science/juniorroboticist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudresearchassistant"
@@ -86,7 +86,7 @@
 	alt_titles = list("Xenobiologist", "Xenoarcheologist")
 	minimal_player_age = 3
 	ideal_character_age = 24
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/scientist
+	outfit_type = /decl/hierarchy/outfit/job/science/scientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb)
 	hud_icon = "hudscientist"
@@ -124,7 +124,7 @@
 	alt_titles = list("Exoskeleton Technician", "Hardsuit Technician")
 	minimal_player_age = 3
 	ideal_character_age = 24
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/roboticist
+	outfit_type = /decl/hierarchy/outfit/job/science/roboticist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb, /datum/mil_rank/civ/classc)
 	hud_icon = "hudscientist"
@@ -165,7 +165,7 @@
 	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist")
 	minimal_player_age = 7
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/seniorscientist
+	outfit_type = /decl/hierarchy/outfit/job/science/seniorscientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb)
 	hud_icon = "hudseniorresearcher"
@@ -207,7 +207,7 @@
 	alt_titles = list("Senior Exoskeleton Technician", "Senior Hardsuit Technician")
 	minimal_player_age = 7
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/seniorroboticist
+	outfit_type = /decl/hierarchy/outfit/job/science/seniorroboticist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb, /datum/mil_rank/civ/classc)
 	hud_icon = "hudseniorresearcher"
@@ -251,7 +251,7 @@
 	minimal_player_age = 20
 	ideal_character_age = 40
 	spawn_positions = 6
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/science/researchdirector
+	outfit_type = /decl/hierarchy/outfit/job/science/researchdirector
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
 	hud_icon = "hudchiefscienceofficer"
