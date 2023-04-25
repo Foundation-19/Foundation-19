@@ -1055,11 +1055,6 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/entrancezone/securitypost)
-"co" = (
-/obj/effect/paint_stripe/orange,
-/obj/item/storage/secure/safe,
-/turf/simulated/wall/titanium,
-/area/site53/surface/surface)
 "cp" = (
 /obj/structure/cable/green{
 	d2 = 2;
@@ -1762,16 +1757,6 @@
 /obj/structure/iv_drip,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/medical/surgery/hall)
-"ej" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "GOI Office"
-	},
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/goirepoffice)
 "ek" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/power/apc{
@@ -4996,6 +4981,9 @@
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/substation)
 "oq" = (
+/obj/structure/table/standard,
+/obj/item/storage/fancy/cigar,
+/obj/item/flame/lighter/zippo/bronze,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "or" = (
@@ -5376,17 +5364,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/tramhubhallwayentry)
-"qc" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 10
-	},
-/obj/item/storage/secure/briefcase/money,
-/obj/item/device/radio,
-/obj/structure/closet/secure_closet/personal{
-	name = "Representative's Locker"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/goirepoffice)
 "qf" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -5419,8 +5396,12 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "qA" = (
-/obj/machinery/papershredder,
-/obj/effect/floor_decal/corner/orange/border,
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 10
+	},
+/obj/structure/closet/secure_closet/personal/empty{
+	name = "Representative's Locker"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "qB" = (
@@ -5621,9 +5602,6 @@
 /area/site53/uez/repoffice/ethics)
 "rt" = (
 /obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/shutters{
-	id_tag = "goirep"
-	},
 /turf/simulated/floor/plating,
 /area/site53/uez/goirepoffice)
 "ru" = (
@@ -6369,11 +6347,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "vn" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/shutters{
-	id_tag = "goirep"
-	},
-/turf/simulated/wall/titanium,
+/obj/effect/floor_decal/corner/orange/border,
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "vo" = (
 /obj/effect/wallframe_spawn/reinforced_phoron,
@@ -7196,12 +7175,13 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "BY" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 6
+	},
 /obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/pen,
-/obj/machinery/light,
-/obj/item/pen/fancy,
-/obj/effect/floor_decal/corner/orange/border,
+/obj/machinery/photocopier/faxmachine{
+	department = "GOI Office"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "BZ" = (
@@ -7467,12 +7447,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/maintenance/surfacewest)
-"EC" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/goirepoffice)
 "EO" = (
 /obj/machinery/door/airlock/glass/virology{
 	id_tag = "iso1";
@@ -8265,9 +8239,8 @@
 /area/site53/maintenance/surfaceeast)
 "Mx" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 1
+	dir = 9
 	},
-/obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "ME" = (
@@ -8374,8 +8347,9 @@
 /area/site53/logistics/logistics)
 "Od" = (
 /obj/effect/paint_stripe/orange,
+/obj/structure/filingcabinet/wallcabinet,
 /turf/simulated/wall/titanium,
-/area/site53/surface/surface)
+/area/site53/uez/goirepoffice)
 "Of" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -8488,17 +8462,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
-"PH" = (
-/obj/structure/table/standard,
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "goirep";
-	name = "Shutters";
-	pixel_x = -6;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/goirepoffice)
 "PX" = (
 /obj/item/clothing/suit/storage/toggle/fr_jacket,
 /obj/item/clothing/suit/storage/toggle/fr_jacket/ems,
@@ -9289,10 +9252,8 @@
 /turf/simulated/floor/grass,
 /area/site53/medical/infirmary)
 "XD" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 9
-	},
-/obj/structure/filingcabinet,
+/obj/effect/floor_decal/corner/orange/border,
+/obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "XH" = (
@@ -39686,12 +39647,12 @@ ed
 cp
 ES
 MX
-Od
-Od
-Od
-co
-Od
-Od
+oS
+oS
+oS
+oS
+oS
+oS
 rm
 rm
 rm
@@ -39943,12 +39904,12 @@ ed
 MX
 MX
 mk
-XD
-UI
-UI
-UI
-qc
+mk
+mk
 Od
+mk
+mk
+oS
 rm
 rm
 rm
@@ -40201,11 +40162,11 @@ cq
 cq
 mk
 Mx
-oq
-IG
-Vn
+UI
+UI
 qA
-Od
+mk
+oS
 rm
 rm
 rm
@@ -40457,12 +40418,12 @@ ux
 ux
 ux
 mk
-VI
-oq
-PH
-Gv
-BY
-Od
+wN
+IG
+Vn
+XD
+mk
+oS
 rm
 rm
 rm
@@ -40714,12 +40675,12 @@ ux
 cN
 ux
 mk
-Iz
+VI
 oq
-Go
-QT
-Az
-Od
+Gv
+vn
+mk
+oS
 rm
 rm
 rm
@@ -40971,12 +40932,12 @@ fP
 cA
 ux
 mk
-wN
-oq
-oq
-oq
+Iz
+Go
+QT
 Az
-Od
+mk
+oS
 rm
 rm
 rm
@@ -41230,10 +41191,10 @@ ux
 mk
 zE
 wJ
-EC
 xs
-ej
-Od
+BY
+mk
+oS
 oS
 oS
 oS
@@ -41489,7 +41450,7 @@ mk
 IQ
 rt
 rt
-vn
+mk
 HG
 HG
 HG
