@@ -91,7 +91,7 @@
 	else
 		previous_security_level.switching_down_from()
 		new_security_level.switching_down_to()
-    
+
 	log_and_message_staff("has changed the security level from [previous_security_level.name] to [new_security_level.name].")
 	return TRUE
 
