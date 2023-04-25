@@ -4792,11 +4792,6 @@
 /obj/structure/flora/grass/green,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
-"nc" = (
-/obj/effect/paint_stripe/orange,
-/obj/item/storage/secure/safe,
-/turf/simulated/wall/titanium,
-/area/site53/surface/surface)
 "nd" = (
 /obj/structure/barricade/spike,
 /turf/simulated/floor/exoplanet/grass,
@@ -5398,12 +5393,13 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "qA" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "GOI Office"
-	},
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 6
+	dir = 10
+	},
+/obj/item/storage/secure/briefcase/money,
+/obj/item/device/radio,
+/obj/structure/closet/secure_closet/personal{
+	name = "Representative's Locker"
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
@@ -5646,15 +5642,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/repoffice/ethics)
-"rB" = (
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/pen,
-/obj/machinery/light,
-/obj/item/pen/fancy,
-/obj/effect/floor_decal/corner/orange/border,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/goirepoffice)
 "rC" = (
 /obj/structure/table/woodentable/ebony,
 /obj/item/stamp/scp/o5rep,
@@ -6362,8 +6349,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "vn" = (
+/obj/structure/table/standard,
+/obj/machinery/photocopier/faxmachine{
+	department = "GOI Office"
+	},
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 4
+	dir = 6
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
@@ -6678,6 +6669,11 @@
 /obj/structure/flora/grass/both,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
+"yc" = (
+/obj/machinery/papershredder,
+/obj/effect/floor_decal/corner/orange/border,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "yg" = (
 /obj/effect/floor_decal/corner/purple/mono,
 /obj/machinery/light{
@@ -6773,17 +6769,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/surgery/hall)
-"yM" = (
-/obj/structure/table/standard,
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "goirep";
-	name = "Shutters";
-	pixel_x = -6;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/goirepoffice)
 "yV" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -7199,10 +7184,10 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface)
 "BY" = (
-/obj/machinery/papershredder,
-/obj/effect/floor_decal/corner/orange/border,
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/goirepoffice)
+/obj/effect/paint_stripe/orange,
+/obj/item/storage/secure/safe,
+/turf/simulated/wall/titanium,
+/area/site53/surface/surface)
 "BZ" = (
 /obj/machinery/floodlight{
 	anchored = 1;
@@ -7300,12 +7285,14 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"Dv" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/shutters{
-	id_tag = "goirep"
-	},
-/turf/simulated/wall/titanium,
+"Dy" = (
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/machinery/light,
+/obj/item/pen/fancy,
+/obj/effect/floor_decal/corner/orange/border,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "DD" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -7716,6 +7703,13 @@
 /obj/machinery/camera/autoname,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"GW" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 9
+	},
+/obj/structure/filingcabinet,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "GZ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -8197,6 +8191,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/repoffice/ethics)
+"LN" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	id_tag = "goirep"
+	},
+/turf/simulated/wall/titanium,
+/area/site53/uez/goirepoffice)
 "LW" = (
 /obj/effect/floor_decal/corner/paleblue/half,
 /obj/structure/table/standard,
@@ -8374,9 +8375,8 @@
 /area/site53/logistics/logistics)
 "Od" = (
 /obj/effect/floor_decal/corner/orange/border{
-	dir = 9
+	dir = 4
 	},
-/obj/structure/filingcabinet,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "Of" = (
@@ -8909,6 +8909,17 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/maintenance/surfaceeast)
+"TK" = (
+/obj/structure/table/standard,
+/obj/machinery/button/blast_door{
+	dir = 4;
+	id_tag = "goirep";
+	name = "Shutters";
+	pixel_x = -6;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/uez/goirepoffice)
 "TP" = (
 /obj/machinery/button/blast_door{
 	dir = 8;
@@ -9106,17 +9117,6 @@
 /obj/item/pen,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/repoffice/ethics)
-"VE" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 10
-	},
-/obj/item/storage/secure/briefcase/money,
-/obj/item/device/radio,
-/obj/structure/closet/secure_closet/personal{
-	name = "Representative's Locker"
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/uez/goirepoffice)
 "VF" = (
 /obj/machinery/light,
 /obj/machinery/papershredder,
@@ -39689,7 +39689,7 @@ MX
 XD
 XD
 XD
-nc
+BY
 XD
 XD
 rm
@@ -39943,11 +39943,11 @@ ed
 MX
 MX
 mk
-Od
+GW
 UI
 UI
 UI
-VE
+qA
 XD
 rm
 rm
@@ -40204,7 +40204,7 @@ Mx
 oq
 IG
 Vn
-BY
+yc
 XD
 rm
 rm
@@ -40459,9 +40459,9 @@ ux
 mk
 VI
 oq
-yM
+TK
 Gv
-rB
+Dy
 XD
 rm
 rm
@@ -41230,9 +41230,9 @@ ux
 mk
 zE
 wJ
-vn
+Od
 xs
-qA
+vn
 XD
 oS
 oS
@@ -41489,7 +41489,7 @@ mk
 IQ
 rt
 rt
-Dv
+LN
 HG
 HG
 HG
