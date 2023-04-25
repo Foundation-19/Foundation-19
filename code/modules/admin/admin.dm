@@ -100,7 +100,7 @@ var/global/floorIsLava = 0
 		if(C.ckey == key)
 			p_age = C.player_age
 			break
-	dat += "<b>Player age: [p_age]</b><br><ul id='notes'>"
+	dat += "<b>Player age: [p_age ? p_age : get_player_age(key)]</b><br><ul id='notes'>"
 
 	var/savefile/info = new("data/player_saves/[copytext(key, 1, 2)]/[key]/info.sav")
 	var/list/infos
@@ -524,7 +524,7 @@ var/global/floorIsLava = 0
 		to_world("<B>The OOC channel has been globally enabled!</B>")
 	else
 		to_world("<B>The OOC channel has been globally disabled!</B>")
-	log_and_message_admins("toggled OOC.")
+	log_and_message_staff("toggled OOC.")
 	SSstatistics.add_field_details("admin_verb","TOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/toggleaooc()
@@ -540,7 +540,7 @@ var/global/floorIsLava = 0
 		communicate_broadcast(/decl/communication_channel/aooc, "The AOOC channel has been globally enabled!", TRUE)
 	else
 		communicate_broadcast(/decl/communication_channel/aooc, "The AOOC channel has been globally disabled!", TRUE)
-	log_and_message_admins("toggled AOOC.")
+	log_and_message_staff("toggled AOOC.")
 	SSstatistics.add_field_details("admin_verb","TAOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/togglelooc()
@@ -556,7 +556,7 @@ var/global/floorIsLava = 0
 		to_world("<B>The LOOC channel has been globally enabled!</B>")
 	else
 		to_world("<B>The LOOC channel has been globally disabled!</B>")
-	log_and_message_admins("toggled LOOC.")
+	log_and_message_staff("toggled LOOC.")
 	SSstatistics.add_field_details("admin_verb","TLOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
@@ -572,7 +572,7 @@ var/global/floorIsLava = 0
 
 	if (GAME_STATE > RUNLEVEL_LOBBY)
 		SSticker.forced_end = TRUE
-		log_and_message_admins("has ended the round.")
+		log_and_message_staff("has ended the round.")
 	else
 		to_chat(usr,FONT_LARGE(SPAN_WARNING("You cannot end the round before it's begun!")))
 
@@ -589,7 +589,7 @@ var/global/floorIsLava = 0
 		to_world("<B>Deadchat has been globally enabled!</B>")
 	else
 		to_world("<B>Deadchat has been globally disabled!</B>")
-	log_and_message_admins("toggled deadchat.")
+	log_and_message_staff("toggled deadchat.")
 	SSstatistics.add_field_details("admin_verb","TDSAY") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc
 
 /datum/admins/proc/toggleoocdead()
@@ -602,7 +602,7 @@ var/global/floorIsLava = 0
 
 	config.dooc_allowed = !( config.dooc_allowed )
 	log_admin("[key_name(usr)] toggled Dead OOC.")
-	message_admins("[key_name_admin(usr)] toggled Dead OOC.", 1)
+	message_staff("[key_name_admin(usr)] toggled Dead OOC.", 1)
 	SSstatistics.add_field_details("admin_verb","TDOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/togglehubvisibility()
@@ -616,10 +616,10 @@ var/global/floorIsLava = 0
 	world.update_hub_visibility(TRUE)
 	var/long_message = "Updated hub visibility. The server is now [config.hub_visible ? "visible" : "invisible"]."
 	if (config.hub_visible && !world.reachable)
-		message_admins("WARNING: The server will not show up on the hub because byond is detecting that a firewall is blocking incoming connections.")
+		message_staff("WARNING: The server will not show up on the hub because byond is detecting that a firewall is blocking incoming connections.")
 
 	send2adminirc("[key_name(src)]" + long_message)
-	log_and_message_admins(long_message)
+	log_and_message_staff(long_message)
 	SSstatistics.add_field_details("admin_verb","THUB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc
 
 /datum/admins/proc/toggletraitorscaling()
@@ -628,7 +628,7 @@ var/global/floorIsLava = 0
 	set name="Toggle Traitor Scaling"
 	config.traitor_scaling = !config.traitor_scaling
 	log_admin("[key_name(usr)] toggled Traitor Scaling to [config.traitor_scaling].")
-	message_admins("[key_name_admin(usr)] toggled Traitor Scaling [config.traitor_scaling ? "on" : "off"].", 1)
+	message_staff("[key_name_admin(usr)] toggled Traitor Scaling [config.traitor_scaling ? "on" : "off"].", 1)
 	SSstatistics.add_field_details("admin_verb","TTS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/startnow()
@@ -640,13 +640,13 @@ var/global/floorIsLava = 0
 		SSticker.start_ASAP = !SSticker.start_ASAP
 		if(SSticker.start_ASAP)
 			to_chat(usr, FONT_LARGE(SPAN_WARNING("The game will begin as soon as possible.")))
-			log_and_message_admins("will begin the game as soon as possible.")
+			log_and_message_staff("will begin the game as soon as possible.")
 		else
 			to_chat(usr, FONT_LARGE(SPAN_WARNING("The game will begin as normal.")))
-			log_and_message_admins("will begin the game as normal.")
+			log_and_message_staff("will begin the game as normal.")
 		return 0
 	if(SSticker.start_now())
-		log_and_message_admins("has started the game.")
+		log_and_message_staff("has started the game.")
 		SSstatistics.add_field_details("admin_verb","SN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		return 1
 	else
@@ -662,7 +662,7 @@ var/global/floorIsLava = 0
 		to_world("<B>New players may no longer enter the game.</B>")
 	else
 		to_world("<B>New players may now enter the game.</B>")
-	log_and_message_admins("[key_name_admin(usr)] toggled new player game entering.")
+	log_and_message_staff("[key_name_admin(usr)] toggled new player game entering.")
 	world.update_status()
 	SSstatistics.add_field_details("admin_verb","TE") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -675,7 +675,7 @@ var/global/floorIsLava = 0
 		to_world("<B>You may now respawn.</B>")
 	else
 		to_world("<B>You may no longer respawn :(</B>")
-	log_and_message_admins("toggled respawn to [config.abandon_allowed ? "On" : "Off"].")
+	log_and_message_staff("toggled respawn to [config.abandon_allowed ? "On" : "Off"].")
 	world.update_status()
 	SSstatistics.add_field_details("admin_verb","TR") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -687,7 +687,7 @@ var/global/floorIsLava = 0
 	if(!check_rights(R_SERVER))	return
 	if (GAME_STATE > RUNLEVEL_LOBBY)
 		SSticker.delay_end = !SSticker.delay_end
-		log_and_message_admins("[SSticker.delay_end ? "delayed the round end" : "has made the round end normally"].")
+		log_and_message_staff("[SSticker.delay_end ? "delayed the round end" : "has made the round end normally"].")
 		return //alert("Round end delayed", null, null, null, null, null)
 	SSticker.round_progressing = !SSticker.round_progressing
 	if (!SSticker.round_progressing)
@@ -703,7 +703,7 @@ var/global/floorIsLava = 0
 	set desc="Toggle admin jumping"
 	set name="Toggle Jump"
 	config.allow_admin_jump = !(config.allow_admin_jump)
-	log_and_message_admins("Toggled admin jumping to [config.allow_admin_jump].")
+	log_and_message_staff("Toggled admin jumping to [config.allow_admin_jump].")
 	SSstatistics.add_field_details("admin_verb","TJ") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/adspawn()
@@ -711,7 +711,7 @@ var/global/floorIsLava = 0
 	set desc="Toggle admin spawning"
 	set name="Toggle Spawn"
 	config.allow_admin_spawning = !(config.allow_admin_spawning)
-	log_and_message_admins("toggled admin item spawning to [config.allow_admin_spawning].")
+	log_and_message_staff("toggled admin item spawning to [config.allow_admin_spawning].")
 	SSstatistics.add_field_details("admin_verb","TAS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/adrev()
@@ -719,7 +719,7 @@ var/global/floorIsLava = 0
 	set desc="Toggle admin revives"
 	set name="Toggle Revive"
 	config.allow_admin_rev = !(config.allow_admin_rev)
-	log_and_message_admins("toggled reviving to [config.allow_admin_rev].")
+	log_and_message_staff("toggled reviving to [config.allow_admin_rev].")
 	SSstatistics.add_field_details("admin_verb","TAR") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/immreboot()
@@ -744,7 +744,7 @@ var/global/floorIsLava = 0
 	if (isAdminLevel(M.z))
 		if (config.allow_admin_jump)
 			M.forceMove(pick(GLOB.latejoin))
-			message_admins("[key_name_admin(usr)] has unprisoned [key_name_admin(M)]", 1)
+			message_staff("[key_name_admin(usr)] has unprisoned [key_name_admin(M)]", 1)
 			log_admin("[key_name(usr)] has unprisoned [key_name(M)]")
 		else
 			alert("Admin jumping disabled")
@@ -898,7 +898,7 @@ var/global/floorIsLava = 0
 	else
 		new chosen(usr.loc)
 
-	log_and_message_admins("spawned [chosen] at ([usr.x],[usr.y],[usr.z])")
+	log_and_message_staff("spawned [chosen] at ([usr.x],[usr.y],[usr.z])")
 	SSstatistics.add_field_details("admin_verb","SA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/spawn_artifact(effect in subtypesof(/datum/artifact_effect))
@@ -1043,7 +1043,7 @@ var/global/floorIsLava = 0
 		to_world("<B>Reduced welder vision has been enabled!</B>")
 	else
 		to_world("<B>Reduced welder vision has been disabled!</B>")
-	log_and_message_admins("toggled welder vision.")
+	log_and_message_staff("toggled welder vision.")
 	SSstatistics.add_field_details("admin_verb","TTWH") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/toggleguests()
@@ -1056,7 +1056,7 @@ var/global/floorIsLava = 0
 	else
 		to_world("<B>Guests may now enter the game.</B>")
 	log_admin("[key_name(usr)] toggled guests game entering [config.guests_allowed?"":"dis"]allowed.")
-	log_and_message_admins("toggled guests game entering [config.guests_allowed?"":"dis"]allowed.")
+	log_and_message_staff("toggled guests game entering [config.guests_allowed?"":"dis"]allowed.")
 	SSstatistics.add_field_details("admin_verb","TGU") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/output_ai_laws()
@@ -1175,7 +1175,7 @@ var/global/floorIsLava = 0
 		return 1
 	if(tomob.client) //No need to ghostize if there is no client
 		tomob.ghostize(0)
-	message_admins(SPAN_CLASS("adminnotice","[key_name_admin(usr)] has put [frommob.ckey] in control of [tomob.name]."))
+	message_staff(SPAN_CLASS("adminnotice","[key_name_admin(usr)] has put [frommob.ckey] in control of [tomob.name]."))
 	log_admin("[key_name(usr)] stuffed [frommob.ckey] into [tomob.name].")
 	SSstatistics.add_field_details("admin_verb","CGD")
 	tomob.ckey = frommob.ckey
@@ -1204,7 +1204,7 @@ var/global/floorIsLava = 0
 		return
 
 	var/datum/antagonist/antag = all_antag_types[antag_type]
-	message_admins("[key_name(usr)] attempting to force latespawn with template [antag.id].")
+	message_staff("[key_name(usr)] attempting to force latespawn with template [antag.id].")
 	antag.attempt_auto_spawn()
 
 /datum/admins/proc/force_mode_latespawn()
@@ -1222,7 +1222,7 @@ var/global/floorIsLava = 0
 		to_chat(usr, "Mode has not started.")
 		return
 
-	log_and_message_admins("attempting to force mode autospawn.")
+	log_and_message_staff("attempting to force mode autospawn.")
 	SSticker.mode.process_autoantag()
 
 /datum/admins/proc/paralyze_mob(mob/living/H as mob in GLOB.player_list)
@@ -1380,7 +1380,7 @@ var/global/floorIsLava = 0
 	if(shuttingdown)
 		if(alert("Are you use you want to cancel the shutdown initiated by [shuttingdown.key]?", "Cancel the shutdown?", "No", "Yes") != "Yes")
 			return
-		message_admins("[key_name_admin(usr)] cancelled the server shutdown, started by [key_name_admin(shuttingdown)] .")
+		message_staff("[key_name_admin(usr)] cancelled the server shutdown, started by [key_name_admin(shuttingdown)] .")
 		shuttingdown = FALSE
 		return
 
@@ -1396,8 +1396,8 @@ var/global/floorIsLava = 0
 		return
 
 	to_chat(usr, SPAN_DANGER("Alert: Delayed confirmation required. You will be asked to confirm again in 30 seconds."))
-	log_and_message_admins("[key_name_admin(usr.client)] initiated the shutdown process.")
-	message_admins("You may abort this by pressing the shutdown server button again.")
+	log_and_message_staff("[key_name_admin(usr.client)] initiated the shutdown process.")
+	message_staff("You may abort this by pressing the shutdown server button again.")
 	shuttingdown = usr.client
 
 	sleep(30 SECONDS)
@@ -1406,12 +1406,12 @@ var/global/floorIsLava = 0
 		return
 
 	if(alert("ARE YOU REALLY SURE YOU WANT TO SHUTDOWN THE SERVER? ONLY SOMEBODY WITH REMOTE ACCESS TO THE SERVER CAN TURN IT BACK ON.", "Shutdown Server?", "Cancel", "Shutdown Server") != "Shutdown Server")
-		log_and_message_admins("[key_name_admin(shuttingdown)] decided against shutting down the server.")
+		log_and_message_staff("[key_name_admin(shuttingdown)] decided against shutting down the server.")
 		shuttingdown = null
 		return
 
 	to_world("[SPAN_DANGER("Server shutting down in 30 seconds!")] [SPAN_NOTICE("Initiated by [shuttingdown.key]!")]")
-	message_admins("[key_name_admin(shuttingdown)] is shutting down the server. You may abort this by pressing the shutdown server button again within 30 seconds.")
+	message_staff("[key_name_admin(shuttingdown)] is shutting down the server. You may abort this by pressing the shutdown server button again within 30 seconds.")
 
 	sleep(30 SECONDS)
 

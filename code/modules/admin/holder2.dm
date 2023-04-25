@@ -143,7 +143,7 @@ NOTE: It checks usr by default. Supply the "user" argument if you wish to check 
 		to_chat(src, SPAN_NOTICE("You are now stealthed."))
 	else
 		to_chat(src, SPAN_NOTICE("You are no longer stealthed."))
-	log_and_message_admins("has turned stealth mode [holder.stealthy_ ? "ON" : "OFF"]")
+	log_and_message_staff("has turned stealth mode [holder.stealthy_ ? "ON" : "OFF"]")
 	SSstatistics.add_field_details("admin_verb","SM") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 #undef STEALTH_OFF

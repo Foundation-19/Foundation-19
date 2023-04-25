@@ -84,7 +84,7 @@
 	usage_cooldown = world.time + usage_cooldown_time
 	playsound(src, 'sound/scp/294/dispense1.ogg', 35, FALSE)
 	visible_message(SPAN_NOTICE("[src] dispenses a small paper cup and starts filling it with some liquid."))
-	log_and_message_admins("[user.real_name] used [src], dispensing [chosen_reagent]", user, get_turf(src))
+	log_and_message_staff("[user.real_name] used [src], dispensing [chosen_reagent]", user, get_turf(src))
 
 	sleep(3 SECONDS)
 

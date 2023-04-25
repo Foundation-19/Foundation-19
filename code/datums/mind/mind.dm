@@ -202,7 +202,7 @@
 	if(current && isliving(current))
 		if(href_list["set_psi_faculty"] && href_list["set_psi_faculty_rank"])
 			current.set_psi_rank(href_list["set_psi_faculty"], text2num(href_list["set_psi_faculty_rank"]))
-			log_and_message_admins("set [key_name(current)]'s [href_list["set_psi_faculty"]] faculty to [text2num(href_list["set_psi_faculty_rank"])].")
+			log_and_message_staff("set [key_name(current)]'s [href_list["set_psi_faculty"]] faculty to [text2num(href_list["set_psi_faculty_rank"])].")
 			var/datum/admins/admin = GLOB.admins[usr.key]
 			if(istype(admin))
 				admin.show_player_panel(current)
@@ -259,10 +259,10 @@
 					ambition = new /datum/goal/ambition(mind)
 				ambition.description = new_ambition
 				to_chat(mind.current, SPAN_WARNING("Your ambitions have been changed by higher powers, they are now: [ambition.description]"))
-				log_and_message_admins("made [key_name(mind.current)]'s ambitions be '[ambition.description]'.")
+				log_and_message_staff("made [key_name(mind.current)]'s ambitions be '[ambition.description]'.")
 			else
 				to_chat(mind.current, SPAN_WARNING("Your ambitions have been unmade by higher powers."))
-				log_and_message_admins("has cleared [key_name(mind.current)]'s ambitions.")
+				log_and_message_staff("has cleared [key_name(mind.current)]'s ambitions.")
 				if(ambition)
 					qdel(ambition)
 		else
@@ -466,7 +466,7 @@
 					crystals = input("Amount of telecrystals for [key]","Operative uplink", crystals) as null|num
 					if (!isnull(crystals) && !QDELETED(suplink))
 						suplink.uses = crystals
-						log_and_message_admins("set the telecrystals for [key] to [crystals]")
+						log_and_message_staff("set the telecrystals for [key] to [crystals]")
 
 	else if (href_list["obj_announce"])
 		var/obj_count = 1

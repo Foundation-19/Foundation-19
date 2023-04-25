@@ -38,7 +38,7 @@
 	if(stage > 1 && !active && clown_check(user))
 		to_chat(user, SPAN_WARNING("You prime \the [name]!"))
 
-		log_and_message_admins("has primed \a [src].")
+		log_and_message_staff("has primed \a [src].")
 
 		activate()
 		add_fingerprint(user)
@@ -58,7 +58,7 @@
 		if(!user.unEquip(det, src))
 			return
 		path = 1
-		log_and_message_admins("has attached \a [W] to \the [src].")
+		log_and_message_staff("has attached \a [W] to \the [src].")
 		to_chat(user, SPAN_NOTICE("You add [W] to the metal casing."))
 		playsound(src.loc, 'sound/items/Screwdriver2.ogg', 25, -3)
 		detonator = det
@@ -127,7 +127,7 @@
 	if(active)
 		icon_state = initial(icon_state) + "_active"
 		if(user)
-			log_and_message_admins("has primed \a [src].")
+			log_and_message_staff("has primed \a [src].")
 
 	return
 

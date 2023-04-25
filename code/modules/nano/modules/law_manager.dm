@@ -103,7 +103,7 @@
 			if(AL)
 				var/new_law = sanitize(input(usr, "Enter new law. Leaving the field blank will cancel the edit.", "Edit Law", AL.law))
 				if(new_law && new_law != AL.law && is_malf(usr) && can_still_topic())
-					log_and_message_admins("has changed a law of [owner] from '[AL.law]' to '[new_law]'")
+					log_and_message_staff("has changed a law of [owner] from '[AL.law]' to '[new_law]'")
 					AL.law = new_law
 			return 1
 
@@ -128,7 +128,7 @@
 		if(is_malf(usr))
 			var/datum/ai_laws/ALs = locate(href_list["transfer_laws"]) in (is_admin(usr) ? admin_laws : player_laws)
 			if(ALs)
-				log_and_message_admins("has transfered the [ALs.name] laws to [owner].")
+				log_and_message_staff("has transfered the [ALs.name] laws to [owner].")
 				ALs.sync(owner, 0)
 				current_view = 0
 		return 1
@@ -216,4 +216,4 @@
 		return
 	for(var/mob/living/silicon/robot/R in AI.connected_robots)
 		R.sync()
-	log_and_message_admins("has syncronized [AI]'s laws with its borgs.")
+	log_and_message_staff("has syncronized [AI]'s laws with its borgs.")

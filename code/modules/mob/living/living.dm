@@ -805,7 +805,7 @@ default behaviour is:
 		to_chat(possessor, SPAN_WARNING("\The [src] already has a player."))
 		return 0
 
-	message_admins(SPAN_CLASS("adminnotice","[key_name_admin(possessor)] has taken control of \the [src]."))
+	message_staff(SPAN_CLASS("adminnotice","[key_name_admin(possessor)] has taken control of \the [src]."))
 	log_admin("[key_name(possessor)] took control of \the [src].")
 	src.ckey = possessor.ckey
 	qdel(possessor)
