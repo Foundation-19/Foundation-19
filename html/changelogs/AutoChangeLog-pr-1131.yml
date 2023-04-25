@@ -1,0 +1,4 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - bugfix: Player age in show player info now actually works for offline clients
