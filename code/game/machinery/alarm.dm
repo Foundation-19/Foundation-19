@@ -903,7 +903,6 @@ FIRE ALARM
 	var/working = 1.0
 	var/time = 10.0
 	var/timing = 0.0
-	var/lockdownbyai = 0
 	anchored = TRUE
 	idle_power_usage = 2
 	active_power_usage = 6
