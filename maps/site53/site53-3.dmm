@@ -7292,6 +7292,7 @@
 /obj/machinery/light,
 /obj/item/pen/fancy,
 /obj/effect/floor_decal/corner/orange/border,
+/obj/item/stamp/scp/o5rep,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "DD" = (
@@ -7901,6 +7902,9 @@
 "IG" = (
 /obj/structure/table/standard,
 /obj/item/device/flashlight/lamp,
+/obj/item/folder/blue,
+/obj/item/folder/red,
+/obj/item/folder/yellow,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "IH" = (
