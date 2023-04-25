@@ -67,13 +67,14 @@ Radiochat range: 1441 to 1489 (most devices refuse to be tune to other frequency
 
 Radio:
 1459 - standard radio chat
+1449 - 2427-3 containment zone
+1443 - Confession Intercom
 1351 - Science
 1353 - Command
 1355 - Medical
 1357 - Engineering
 1359 - Security
 1341 - deathsquad
-1443 - Confession Intercom
 1347 - Cargo techs
 1349 - Service people
 

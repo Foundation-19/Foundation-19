@@ -26,7 +26,7 @@
 			E.fracture()
 			explosion(H, 1, 1, 3, 3, 1)
 			admin_attack_log(G, H, null, null, "[G] has attacked [H] with SCP-2398!")
-			message_admins("[G] (ckey: [G.ckey]) has swung SCP-2398 at [H] ([H.ckey])!") //"im sure theres a proc to format this for admins already; go find it" no.
+			message_staff("[G] (ckey: [G.ckey]) has swung SCP-2398 at [H] ([H.ckey])!") //"im sure theres a proc to format this for admins already; go find it" no.
 	else
 		if(iscarbon(G))
 			to_chat(H, SPAN_USERDANGER("Someone begins swinging a bat at you!"))
@@ -36,6 +36,6 @@
 				E.fracture()
 				explosion(H, 1, 1, 3, 3, 1)
 				admin_attack_log(G, H, null, null, "[G] has attacked [H] with SCP-2398!")
-				message_admins("[G] (ckey: [G.ckey]) has swung SCP-2398 at [H] ([H.ckey])!")
+				message_staff("[G] (ckey: [G.ckey]) has swung SCP-2398 at [H] ([H.ckey])!")
 				qdel(H) //perhaps a bad solution but i dont want to work with it
 		return

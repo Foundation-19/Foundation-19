@@ -15,6 +15,7 @@
 
 		var/datum/computer_file/data/email_message/message = new()
 		message.spam = TRUE
+		message.attachment = new /datum/computer_file/program/virus
 
 		switch(rand(1,7))
 			if(1)

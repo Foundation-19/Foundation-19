@@ -335,8 +335,6 @@
 			. = 1
 		. *= purge
 
-	 . += ..()
-
 /mob/living/simple_animal/get_inventory_slot(obj/item/I)
 	return -1
 

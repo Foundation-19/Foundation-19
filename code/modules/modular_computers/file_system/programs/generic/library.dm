@@ -100,9 +100,6 @@ The answer was five and a half years -ZeroBits
 
 		if(!B.author)
 			B.author = "Anonymous"
-		else if(lowertext(B.author) == "edgar allen poe" || lowertext(B.author) == "edgar allan poe")
-			error_message = "User Error: Upload something original."
-			return 1
 
 		if(!B.title)
 			B.title = "Untitled"
@@ -127,7 +124,7 @@ The answer was five and a half years -ZeroBits
 				qdel(query)
 				return 1
 			else
-				log_and_message_admins("has uploaded the book titled [B.name], [length(B.dat)] signs")
+				log_and_message_staff("has uploaded the book titled [B.name], [length(B.dat)] signs")
 				log_game("[usr.name]/[usr.key] has uploaded the book titled [B.name], [length(B.dat)] signs")
 				alert("Upload Complete.")
 			qdel(query)

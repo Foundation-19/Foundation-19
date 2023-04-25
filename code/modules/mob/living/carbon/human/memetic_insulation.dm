@@ -18,9 +18,8 @@ var/debuff_miniscule = 3
 
 // AUDIO MEMETICS
 
-/mob/living/carbon/human/can_hear(atom/origin, var/return_granulated = 0, var/range_override = null) //Checks if a human can hear something. If theres no origin, just checks if the human can hear. Return granulated returns a number from 0-100 on how much something can be heard.
+/mob/living/carbon/human/can_hear(atom/origin, return_granulated = 0, range_override = null) //Checks if a human can hear something. If theres no origin, just checks if the human can hear. Return granulated returns a number from 0-100 on how much something can be heard.
 	var/hearable_range
-	var/is_concealed = FALSE//are we inside something that might dampen hearing?
 
 	switch(get_audio_insul())
 		if(A_INSL_PERFECT) hearable_range = AUDIBLE_RANGE_NONE
@@ -37,8 +36,7 @@ var/debuff_miniscule = 3
 				return 100
 			return TRUE
 
-	if(!isturf(origin.loc))
-		is_concealed = TRUE
+	if(!isturf(origin.loc)) //Are we inside something that may decrease our audio range?
 		if(hearable_range > AUDIBLE_RANGE_DECREASED)
 			hearable_range = AUDIBLE_RANGE_DECREASED
 
@@ -49,13 +47,13 @@ var/debuff_miniscule = 3
 		else if(hearable_range == AUDIBLE_RANGE_DECREASED)
 			cut_off -= 1
 		var/distance_from_origin = range_override ? range_override : get_dist(src, origin)
-		if(hearable_range == AUDIBLE_RANGE_NONE || !(src in hear(AUDIBLE_RANGE_FULL, origin)))
+		if(hearable_range == AUDIBLE_RANGE_NONE || AUDIBLE_RANGE_FULL < get_dist_euclidian(get_turf(src), get_turf(origin)))
 			return 0
 		if(distance_from_origin <= cut_off)
 			return 100
-		return Clamp((((AUDIBLE_RANGE_FULL - Clamp((distance_from_origin - cut_off)**2, 0, AUDIBLE_RANGE_FULL))/AUDIBLE_RANGE_FULL)  * 100), 0, 100)
+		return clamp((((AUDIBLE_RANGE_FULL - clamp((distance_from_origin - cut_off)**2, 0, AUDIBLE_RANGE_FULL))/AUDIBLE_RANGE_FULL)  * 100), 0, 100)
 	else
-		if((is_concealed ? get_turf(origin) : origin) in hear(hearable_range, get_turf(src))) //get_turf is used as you can still hear stuff even if inside a container or in an inventory
+		if(hearable_range >= get_dist_euclidian(get_turf(src), get_turf(origin)))
 			return TRUE
 		else
 			return FALSE
@@ -67,7 +65,7 @@ var/debuff_miniscule = 3
 
 // VISUAL MEMETICS
 
-/mob/living/carbon/human/can_see(atom/origin, var/visual_memetic = 0) //Checks if origin can be seen by a human. visiual_memetics should be one if you're checking for a visual memetic hazard as opposed to say someone looking at scp 173. If origin is null, checks for if the human can see in general.
+/mob/living/carbon/human/can_see(atom/origin, visual_memetic = 0) //Checks if origin can be seen by a human. visiual_memetics should be one if you're checking for a visual memetic hazard as opposed to say someone looking at scp 173. If origin is null, checks for if the human can see in general.
 	var/turf/origin_turf
 	var/area/origin_area
 	if(eye_blind > 0) //this is different from blinded check as blinded is changed in the same way eye_blind is, meaning there can be a siutation where eye_blind is in effect but blinded is not set to true. Therefore, this check is neccesary as a pre-caution.
@@ -104,7 +102,7 @@ var/debuff_miniscule = 3
 
 	return TRUE
 
-/mob/living/carbon/human/proc/can_identify(atom/movable/origin, var/visual_memetic = 0) //Like can_see but takes into account distance, nearsightedness, and other factors. Meant to be used for if you can actually decipher what an object is or read it rather than just see it. visual_memetic is same as in can_see.
+/mob/living/carbon/human/proc/can_identify(atom/movable/origin, visual_memetic = 0) //Like can_see but takes into account distance, nearsightedness, and other factors. Meant to be used for if you can actually decipher what an object is or read it rather than just see it. visual_memetic is same as in can_see.
 	if(!can_see(origin, visual_memetic)) //cant read or otherwise identify something if you cant see it
 		return FALSE
 	if(!(isobj(origin) || ismob(origin)))
@@ -133,14 +131,14 @@ var/debuff_miniscule = 3
 			if(MOB_TINY) viewdistance -= debuff_tiny
 			if(MOB_MINISCULE) viewdistance -= debuff_miniscule
 
-	if(get_dist_euclidian(get_turf(src), get_turf(origin)) <= Clamp(viewdistance, 0, 7))
+	if(get_dist_euclidian(get_turf(src), get_turf(origin)) <= clamp(viewdistance, 0, 7))
 		if((visual_insulation_calculated == V_INSL_IMPERFECT) && visual_memetic)
 			return prob(40) //If its a memetic check and your protection is imperfect/faulty there is a 40% chance of you being affected by a memetic hazard
 		return TRUE
 
 	return FALSE
 
-/mob/living/carbon/human/proc/get_visual_insul(var/include_tint = 1) //gets total insulation from clothing/disabilities without any calculations. Include_tint is for if you want to include tints in your insulation.
+/mob/living/carbon/human/proc/get_visual_insul(include_tint = 1) //gets total insulation from clothing/disabilities without any calculations. Include_tint is for if you want to include tints in your insulation.
 	if((sdisabilities & BLINDED) || blinded || incapacitated(INCAPACITATION_KNOCKOUT)) // cant see if you're blind.
 		return V_INSL_PERFECT
 	if(include_tint)
@@ -154,7 +152,7 @@ var/debuff_miniscule = 3
 		prescriptions += 7
 	if(equipment_prescription)
 		prescriptions -= equipment_prescription
-	return Clamp(prescriptions,0,7)
+	return clamp(prescriptions,0,7)
 
 // BLINK MECHANICS
 

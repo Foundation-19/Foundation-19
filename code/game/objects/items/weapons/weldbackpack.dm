@@ -23,7 +23,7 @@
 	if(isWelder(W))
 		var/obj/item/weldingtool/T = W
 		if(T.welding & prob(50))
-			log_and_message_admins("triggered a fueltank explosion.", user)
+			log_and_message_staff("triggered a fueltank explosion.", user)
 			to_chat(user, SPAN_DANGER("That was stupid of you."))
 			explosion(get_turf(src),-1,0,2)
 			if(src)

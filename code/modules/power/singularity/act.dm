@@ -77,7 +77,7 @@
 		prints = ", all touchers : " + src.fingerprintshidden
 
 	SetUniversalState(/datum/universal_state/supermatter_cascade)
-	log_and_message_admins("New super singularity made by eating a SM crystal [prints]. Last touched by [src.fingerprintslast].")
+	log_and_message_staff("New super singularity made by eating a SM crystal [prints]. Last touched by [src.fingerprintslast].")
 	src.forceMove(null)
 	qdel(src)
 	return 500000 // Exactly enough for final stage

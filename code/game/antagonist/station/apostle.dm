@@ -34,7 +34,8 @@ GLOBAL_LIST_EMPTY(apostles)
 
 /datum/antagonist/apostle/proc/soundd_in(mob/living/carbon/human/H)
 	var/turf/T = get_turf(H)
-	playsound(H, 'sound/effects/apostle/mob/apostle_death_final.ogg', 100, TRUE, TRUE)
+	playsound(H, 'sound/scp/abnormality/white_night/apostle_death_final.ogg', 100, TRUE, TRUE)
+	show_sound_effect(H.loc, H)
 	new /obj/effect/temp_visual/sparkle(T)
 	addtimer(CALLBACK(src, .proc/drop_dust, H, T), 25)
 

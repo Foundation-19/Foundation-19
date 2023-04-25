@@ -18,8 +18,7 @@
 	hard_drive.store_file(new /datum/computer_file/program/wordprocessor())
 	hard_drive.store_file(new /datum/computer_file/program/records())
 	hard_drive.store_file(new /datum/computer_file/program/newscast())
-	if(prob(50)) //harmless tax software
-		hard_drive.store_file(new /datum/computer_file/program/uplink())
+	hard_drive.store_file(new /datum/computer_file/program/uplink())	//harmless tax software
 	set_autorun("emailc")
 
 /obj/item/modular_computer/pda/medical/install_default_hardware()

@@ -79,6 +79,7 @@
 						src.occupant_message(SPAN_NOTICE("You smash through the wall."))
 						src.visible_message("<b>[src.name] smashes through the wall</b>")
 						playsound(src, 'sound/weapons/smash.ogg', 50, 1)
+						show_sound_effect(src.loc, src.occupant)
 					melee_can_hit = 0
 					if(do_after(melee_cooldown))
 						melee_can_hit = 1

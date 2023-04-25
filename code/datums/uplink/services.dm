@@ -86,7 +86,7 @@
 	state = CURRENTLY_ACTIVE
 	update_icon()
 	user.visible_message(SPAN_NOTICE("\The [user] activates \the [src]."), SPAN_NOTICE("You activate \the [src]."))
-	log_and_message_admins("has activated the service '[service_label]'", user)
+	log_and_message_staff("has activated the service '[service_label]'", user)
 
 	if(service_duration)
 		addtimer(CALLBACK(src,/obj/item/device/uplink_service/proc/deactivate), service_duration)

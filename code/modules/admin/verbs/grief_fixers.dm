@@ -22,7 +22,7 @@
 		SSair.mark_zone_update(F.zone)
 		changed_zones.Add(F.zone)
 	if(changed_zones)
-		log_and_message_admins("[usr] fixed air with range [range] in area [T.loc.name]. [changed_zones.len] [(changed_zones.len) > 1 ? "zones have" : "zone has"] been affected.")
+		log_and_message_staff("[usr] fixed air with range [range] in area [T.loc.name]. [changed_zones.len] [(changed_zones.len) > 1 ? "zones have" : "zone has"] been affected.")
 
 /client/proc/fixatmos()
 	set category = "Admin"
@@ -34,7 +34,7 @@
 		return
 	SSstatistics.add_field_details("admin_verb","FA")
 
-	log_and_message_admins("Full atmosphere reset initiated by [usr].")
+	log_and_message_staff("Full atmosphere reset initiated by [usr].")
 	to_world("<span class = 'danger'>Initiating restart of atmosphere. The server may lag a bit.</span>")
 	sleep(10)
 	var/current_time = world.timeofday

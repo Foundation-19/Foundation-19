@@ -44,11 +44,11 @@
 				src.authorized -= W:registered_name
 				src.authorized += W:registered_name
 				if (src.auth_need - src.authorized.len > 0)
-					message_admins("[key_name_admin(user)] has authorized early shuttle launch")
+					message_staff("[key_name_admin(user)] has authorized early shuttle launch")
 					log_game("[user.ckey] has authorized early shuttle launch")
 					to_world(text("<span class='notice'><b>Alert: [] authorizations needed until shuttle is launched early</b></span>", src.auth_need - src.authorized.len))
 				else
-					message_admins("[key_name_admin(user)] has launched the shuttle")
+					message_staff("[key_name_admin(user)] has launched the shuttle")
 					log_game("[user.ckey] has launched the shuttle early")
 					to_world(SPAN_NOTICE("<b>Alert: Shuttle launch time shortened to 10 seconds!</b>"))
 					evacuation_controller.set_launch_time(world.time+100)

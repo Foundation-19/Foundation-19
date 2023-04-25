@@ -8,7 +8,6 @@
 	size = 12
 	requires_ntnet = FALSE
 	required_access = ACCESS_ADMIN_LVL4
-	requires_access_to_run = FALSE
 	available_on_ntnet = TRUE
 	nanomodule_path = /datum/nano_module/program/computer_aidiag/
 	var/restoring = 0

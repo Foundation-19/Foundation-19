@@ -303,7 +303,7 @@ var/list/channel_to_radio_key = new
 
 	var/list/speech_bubble_recipients = list()
 	for(var/mob/M in listening)
-		if(M)
+		if(M && M.can_hear(src))
 			M.hear_say(message, verb, speaking, alt_name, italics, src, speech_sound, sound_vol)
 			if(M.client)
 				speech_bubble_recipients += M.client
@@ -324,7 +324,7 @@ var/list/channel_to_radio_key = new
 		eavesdroping -= listening
 		eavesdroping_obj -= listening_obj
 		for(var/mob/M in eavesdroping)
-			if(M)
+			if(M && M.can_hear(src))
 				heard_message = M.hear_say(stars(message), verb, speaking, alt_name, italics, src, speech_sound, sound_vol)
 				if(M.client)
 					speech_bubble_recipients |= M.client
@@ -335,6 +335,9 @@ var/list/channel_to_radio_key = new
 				if(O) //It's possible that it could be deleted in the meantime.
 					O.hear_talk(src, stars(message), verb, speaking)
 	INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, message, speaking, italics, speech_bubble_recipients, whispering, unique)
+
+	if(LAZYLEN(speech_bubble_recipients) && !whispering)
+		show_sound_effect(src.loc, src, soundicon = SFX_ICON_SMALL)
 
 	if(whispering)
 		log_whisper("[name]/[key] : [message]")
