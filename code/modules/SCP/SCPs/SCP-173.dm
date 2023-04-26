@@ -311,9 +311,7 @@ GLOBAL_LIST_EMPTY(scp173s)
 	var/list/possible_human_targets = list()
 
 	for(var/mob/living/carbon/human/H in dview(14, src)) //Identifies possible human targets. Range is double regular view to allow 173 to pursue tarets outside of world.view to make evading him harder.
-		if(H.SCP)
-			continue
-		if(H.stat == DEAD)
+		if(H.SCP || H.stat == DEAD)
 			continue
 		if(!AStar(loc, H.loc, /turf/proc/AdjacentTurfsWithWhitelist, /turf/proc/Distance, max_nodes=flee_distance * 2, max_node_depth=15, min_target_dist = 1, adjacent_arg = list(/obj/structure/window, /obj/machinery/door, /obj/structure/grille)))
 			continue
@@ -376,7 +374,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 				assign_target(DEFAULTPICK(possible_human_targets, null))
 
 	move_to_target()
-	return
 
 /mob/living/scp_173/proc/assign_target(atom/movable/new_target) //Assigns a new target for 173
 	clear_target()
@@ -390,8 +387,6 @@ GLOBAL_LIST_EMPTY(scp173s)
 		target = new_target
 		target_pos_last = get_turf(new_target)
 		return TRUE
-	else
-		return FALSE
 
 /mob/living/scp_173/proc/clear_target()
 	target = null
