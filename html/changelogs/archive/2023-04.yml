@@ -226,3 +226,11 @@
   - admin: Player joined round log now uses alt job title
   - admin: Show player info now gets player age from db if client is not connected,
       meaning admins can see disconnected clients' player ages
+2023-04-26:
+  checkraisefold:
+  - admin: Mods get game panel access.
+  - admin: The skill panel no longer does nothing for mods.
+  - admin: Mods can now AI interact as ghost.
+  - admin: Mods can now free job slots in the crew.
+  - bugfix: Player age in show player info now actually works for offline clients
+  - balance: Limbs flying off no longer instantly explodes people's body.
