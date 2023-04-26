@@ -59,7 +59,7 @@
 				if(findtext("[path]", object))
 					matches += path
 
-			if(matches.len==0)
+			if(!length(matches))
 				continue	// would be better to show some indication that the atom wasn't found, but eh
 
 			var/adding_loot_type = input("Select an atom type", "Spawn Atom", matches[1]) as null|anything in matches
