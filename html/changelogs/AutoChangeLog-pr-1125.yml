@@ -1,5 +1,0 @@
-author: checkraisefold
-delete-after: true
-changes:
-  - admin: Show today server log works correctly after a current round passes 12am
-      server timezone

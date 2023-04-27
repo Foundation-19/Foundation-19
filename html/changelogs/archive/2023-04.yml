@@ -234,3 +234,7 @@
   - admin: Mods can now free job slots in the crew.
   - bugfix: Player age in show player info now actually works for offline clients
   - balance: Limbs flying off no longer instantly explodes people's body.
+2023-04-27:
+  checkraisefold:
+  - admin: Show today server log works correctly after a current round passes 12am
+      server timezone
