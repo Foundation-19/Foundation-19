@@ -4,6 +4,12 @@
 #define SD_EMPTY_TILE 3
 #define SD_SUPPLY_TILE 7
 
+/area/droppod
+	name = "Drop Pod"
+	requires_power = 0
+	dynamic_lighting = 0
+	sound_env = SMALL_ENCLOSED
+
 /datum/random_map/droppod
 	descriptor = "drop pod"
 	initial_wall_cell = 0
@@ -18,10 +24,10 @@
 	var/drop_type = /mob/living/simple_animal/hostile/retaliate/parrot
 	var/auto_open_doors
 
-	var/placement_explosion_dev =   1
-	var/placement_explosion_heavy = 2
-	var/placement_explosion_light = 6
-	var/placement_explosion_flash = 4
+	var/placement_explosion_dev =   0
+	var/placement_explosion_heavy = 1
+	var/placement_explosion_light = 3
+	var/placement_explosion_flash = 2
 
 /datum/random_map/droppod/New(seed, tx, ty, tz, tlx, tly, do_not_apply, do_not_announce, supplied_drop, list/supplied_drops, automated)
 
@@ -36,7 +42,7 @@
 	//Make sure there is a clear midpoint.
 	if(limit_x % 2 == 0) limit_x++
 	if(limit_y % 2 == 0) limit_y++
-	..()
+	..(seed, tx, ty, tz, tlx, tly, do_not_apply, do_not_announce, 0, /area/droppod)
 
 /datum/random_map/droppod/generate_map()
 
