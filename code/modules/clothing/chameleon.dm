@@ -135,6 +135,10 @@
 	charge_cost = 20 //uses next to no power, since it's just holograms
 	max_shots = 50
 
+	codex_special_info = "This gun is actually a memetic projector that can alter its appearance to mimick other weapons. To change the appearance, use \
+	the appropriate verb in the object tab. Any beams or projectiles fired from this gun are mental fabrications and useless for actual combat. \
+	Projecting these memes over distance uses a little bit of charge."
+
 /obj/item/gun/energy/chameleon/Initialize()
 	. = ..()
 	set_extension(src,/datum/extension/chameleon/gun)

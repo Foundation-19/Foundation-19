@@ -40,7 +40,3 @@
 	if(href_list["codex_search"]) //nano throwing errors
 		search_codex()
 		return TRUE
-
-	if(href_list["codex_index"]) //nano throwing errors
-		list_codex_entries()
-		return TRUE

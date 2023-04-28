@@ -109,8 +109,8 @@ SUBSYSTEM_DEF(codex)
 /datum/controller/subsystem/codex/Topic(href, href_list)
 	. = ..()
 	if(!. && href_list["show_examined_info"] && href_list["show_to"])
-		var/mob/showing_mob =   locate(href_list["show_to"])
-		if(!istype(showing_mob) || !showing_mob.can_use_codex())
+		var/mob/showing_mob = locate(href_list["show_to"])
+		if(!istype(showing_mob))
 			return
 		var/atom/showing_atom = locate(href_list["show_examined_info"])
 		var/entry

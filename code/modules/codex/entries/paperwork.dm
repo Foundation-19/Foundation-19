@@ -55,3 +55,7 @@
 /datum/codex_entry/pen/New()
 	associated_paths += typesof(/obj/item/pen)
 	. = ..()
+
+/datum/codex_entry/slide_projector
+	associated_paths = list(/obj/item/storage/slide_projector)
+	mechanics_text = "Use in hand to open the interface."

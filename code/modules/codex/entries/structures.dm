@@ -24,3 +24,8 @@
 	associated_paths = list(/obj/structure/barricade/spike)
 	lore_text = "The cheval de frise (Frisian horse) is an ancient anti-cavalry barricade so named because they were widely deployed by the Frisians, who lacked easy access to horses to field their own cavalry."
 	mechanics_text = "Constructed by adding rods of any material to a barricade constructed of any material, this structure will injure anyone who moves into it."
+
+/datum/codex_entry/vending_refill
+	associated_paths = list(/obj/structure/vending_refill)
+	lore_text = "Vendor restock containers are notoriously difficult to open, representing the pinnacle of humanity's antitheft technologies."
+	lore_text = "Drag to a vendor to restock. Generally can not be opened."

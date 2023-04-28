@@ -21,8 +21,6 @@
 	var/recharge_time = 4
 	var/charge_tick = 0
 
-	general_codex_key = "energy weapons"		// for codex
-
 /obj/item/gun/energy/switch_firemodes()
 	. = ..()
 	if(.)

@@ -12,7 +12,7 @@
 	mechanics_text = "This tool is used to expose or safely hide away cabling. It can open and shut the maintenance panels on vending machines, \
 	airlocks, and much more. You can also use it, in combination with a <l>crowbar</l>, to install or remove windows."
 	lore_text = "Screws have not changed significantly in the paranormal world, and neither have the drivers used to install and remove them."
-	antag_text = "In the world of breaking and entering, tools like multitools and wirecutters are the bread; the screwdriver is the butter. \
+	antag_text = "In the world of breaking and entering, tools like <l>wirecutters</l> and the <multitool> are the bread; the screwdriver is the butter. \
 	In a pinch, try targetting someone's eyes and stabbing them with it - it'll really hurt!"
 
 /datum/codex_entry/wirecutters

@@ -122,10 +122,6 @@
 	. = ..()
 	set_extension(src,/datum/extension/chameleon/emag)
 
-/obj/item/card/emag/get_antag_info()
-	. = ..()
-	. += "You can use this cryptographic sequencer in order to subvert electronics or forcefully open doors you don't have access to. These actions are irreversible and the card only has a limited number of charges!"
-
 /obj/item/card/emag/broken
 	uses = 0
 

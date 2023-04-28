@@ -19,6 +19,7 @@
 	var/recentpump = 0 // to prevent spammage
 	wielded_item_state = "shotgun-wielded"
 	load_sound = 'sound/weapons/guns/interaction/shotgun_instert.ogg'
+	codex_special_info = "To pump it, use it in hand."
 
 /obj/item/gun/projectile/shotgun/on_update_icon()
 	..()
