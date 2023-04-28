@@ -23,15 +23,15 @@
 	if(!message)	return
 	var/F = investigate_subject2file(subject)
 	if(!F)	return
-	to_chat(F, "<small>[time_stamp()] \ref[src] ([x],[y],[z])</small> || [src] [message]<br>")
+	to_file(F, "<small>[time_stamp()] \ref[src] ([x],[y],[z])</small> || [src] [message]<br>")
 
 //ADMINVERBS
-/client/proc/investigate_show( subject in list("hrefs","notes","singulo","telesci") )
+/client/proc/investigate_show( subject in list("hrefs","wires","singulo") )
 	set name = "Investigate"
 	set category = "Admin"
 	if(!holder)	return
 	switch(subject)
-		if("singulo", "telesci")			//general one-round-only stuff
+		if("singulo", "wires")			//general one-round-only stuff
 			var/F = investigate_subject2file(subject)
 			if(!F)
 				to_chat(src, SPAN_WARNING("Error: admin_investigate: [INVESTIGATE_DIR][subject] is an invalid path or cannot be accessed."))

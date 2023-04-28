@@ -187,3 +187,54 @@
   - code_imp: Astar Whitelist Tools
   Yawet330:
   - tweak: Unfucks pain.
+2023-04-21:
+  GGarciaECE:
+  - rscadd: Minable paths from Archives to HCZ and LCZ (+ a larger minable area around
+      the Archive)
+  - rscadd: Minable path from upper EZ maint to Upper LCZ Office worker room
+  - rscadd: Fix minable path in CDCZ Mining area
+  - rscadd: Mining drill in the surface's pit area
+  TheDarkElites:
+  - bugfix: The AI talking through holopad with :h now works correctly again.
+  casualspacestation14enjoyer:
+  - rscadd: added more items for the GC and EZ supervisor to use (EZ soup only has
+      better armor... sad.)
+  checkraisefold:
+  - admin: Added investigate verb to mods.
+  - admin: Mods can now check today's server logs for all rounds for the day.
+  - admin: Mods can now use most `JMP` buttons on logs.
+  - bugfix: Href logging now works, so does all other investigate_log categories
+  - admin: Moderators now get most logs.
+  cheesePizza2:
+  - balance: Grid check was moved to major event container, thus making it rarer.
+      Electrical storm was removed from major container event due to weakness. Memetic
+      spasm is weakened.
+  - bugfix: Blob and vine events can spawn in now.
+  - bugfix: Traitor objectives are now SCP-related and actually achievable.
+2023-04-22:
+  AlphaTronix:
+  - bugfix: Added in a check to handle the case where type is not a valid key in outfit.dm
+2023-04-23:
+  GGarciaECE:
+  - rscadd: Panic bunker on level 4 (under SD office) with multiple accesses within
+      the floor.
+  - rscadd: EZ Security Office moved and expanded at Level 4 near the SD's office.
+  - rscadd: LCZ security office moved and expanded near the LCZ entry checkpoint
+  - rscadd: ITD office and meeting room were moved around. ITD office is now near
+      EZ Security office on level 4.
+  checkraisefold:
+  - admin: Player joined round log now uses alt job title
+  - admin: Show player info now gets player age from db if client is not connected,
+      meaning admins can see disconnected clients' player ages
+2023-04-26:
+  checkraisefold:
+  - admin: Mods get game panel access.
+  - admin: The skill panel no longer does nothing for mods.
+  - admin: Mods can now AI interact as ghost.
+  - admin: Mods can now free job slots in the crew.
+  - bugfix: Player age in show player info now actually works for offline clients
+  - balance: Limbs flying off no longer instantly explodes people's body.
+2023-04-27:
+  checkraisefold:
+  - admin: Show today server log works correctly after a current round passes 12am
+      server timezone

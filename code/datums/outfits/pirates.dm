@@ -14,5 +14,4 @@
 	name = "Pirate - Space"
 	head = /obj/item/clothing/head/helmet/pirate
 	suit = /obj/item/clothing/suit/pirate
-	back = /obj/item/tank/jetpack/oxygen
-	flags = OUTFIT_HAS_JETPACK|OUTFIT_RESET_EQUIPMENT
+	flags = OUTFIT_RESET_EQUIPMENT

@@ -303,7 +303,12 @@ var/list/admin_verbs_mod = list(
 	/datum/admins/proc/sendFax,
 	/client/proc/check_fax_history,
 	/datum/admins/proc/paralyze_mob, // right-click paralyze ,
-	/client/proc/cmd_admin_say
+	/client/proc/cmd_admin_say,
+	/client/proc/investigate_show,
+	/datum/admins/proc/view_txt_log,
+	/client/proc/game_panel,
+	/client/proc/free_slot_crew,
+	/client/proc/cmd_admin_create_centcom_report
 )
 var/list/admin_verbs_mentors = list(
 	/client/proc/cmd_mentor_say,
