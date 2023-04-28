@@ -91,11 +91,10 @@
 	if(!check_rights(R_ADMIN|R_MOD, TRUE))
 		return
 
-	var/path = "data/logs/[time2text(world.realtime,"YYYY/MM/DD")].log"
-	if( fexists(path) )
-		to_target(src, run(file(path)))
+	if( diary )
+		to_target(src, run(diary))
 	else
-		to_chat(src, FONT_COLORED("red","Error: view_txt_log(): File not found/Invalid path([path])."))
+		to_chat(src, FONT_COLORED("red","Error: view_txt_log(): diary global is null."))
 		return
 	return
 
