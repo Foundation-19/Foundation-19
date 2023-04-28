@@ -3038,6 +3038,7 @@
 #include "code\modules\SCP\SCPs\SCP-294.dm"
 #include "code\modules\SCP\SCPs\SCP-3349.dm"
 #include "code\modules\SCP\SCPs\SCP-343.dm"
+#include "code\modules\SCP\SCPs\SCP-3794.dm"
 #include "code\modules\SCP\SCPs\SCP-399.dm"
 #include "code\modules\SCP\SCPs\SCP-420-J.dm"
 #include "code\modules\SCP\SCPs\SCP-457.dm"
