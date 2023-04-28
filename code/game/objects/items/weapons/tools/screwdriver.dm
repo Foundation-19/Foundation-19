@@ -37,9 +37,3 @@
 	if((MUTATION_CLUMSY in user.mutations) && prob(50))
 		M = user
 	return eyestab(M,user)
-
-/obj/item/screwdriver/makeshift
-	name = "improvised screwdriver"
-	desc = "Some tape wrapped around a rod with a crude head filed into it."
-	icon_state = "screwdriver_makeshift"
-	build_from_parts = FALSE

@@ -41,9 +41,3 @@
 		return
 	else
 		..()
-
-/obj/item/wirecutters/makeshift
-	name = "improvised wirecutters"
-	desc = "Tape a couple rods together and you have a pair of \"functioning\" wirecutters!"
-	icon_state = "cutters_makeshift"
-	build_from_parts = FALSE

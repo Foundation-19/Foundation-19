@@ -68,22 +68,12 @@
 	var/obj/item/stack/material/M = thing
 	. = istype(M) && (!stack_material || M.material.name == stack_material) && ..()
 
-/decl/crafting_stage/rods
-	completion_trigger_type = /obj/item/stack/material/rods
-	stack_consume_amount = 5
-	consume_completion_trigger = FALSE
-	var/stack_material = MATERIAL_STEEL
-
-/decl/crafting_stage/rods/consume(mob/user, obj/item/thing, obj/item/target)
-	var/obj/item/stack/material/rods/M = thing
-	. = istype(M) && (!stack_material || M.material.name == stack_material) && ..()
-
-/decl/crafting_stage/welding
-	consume_completion_trigger = FALSE
-
 /decl/crafting_stage/welding/consume(mob/user, obj/item/thing, obj/item/target)
 	var/obj/item/weldingtool/T = thing
 	. = istype(T) && T.remove_fuel(0, user) && T.isOn()
+
+/decl/crafting_stage/welding
+	consume_completion_trigger = FALSE
 
 /decl/crafting_stage/welding/on_progress(mob/user)
 	..()
@@ -96,28 +86,8 @@
 	..()
 	playsound(user.loc, 'sound/items/Screwdriver.ogg', 100, 1)
 
-/decl/crafting_stage/screwdriver/is_appropriate_tool(obj/item/thing)
+/decl/crafting_stage/screwdriver/progress_to(obj/item/thing, mob/user)
 	. = ..() && isScrewdriver(thing)
-
-/decl/crafting_stage/wirecutter
-	consume_completion_trigger = FALSE
-
-/decl/crafting_stage/wirecutter/on_progress(mob/user)
-	..()
-	playsound(user.loc, 'sound/items/Wirecutter.ogg', 100, 1)
-
-/decl/crafting_stage/wirecutter/is_appropriate_tool(obj/item/thing)
-	. = ..() && isWirecutter(thing)
-
-/decl/crafting_stage/crowbar
-	consume_completion_trigger = FALSE
-
-/decl/crafting_stage/crowbar/on_progress(mob/user)
-	..()
-	playsound(user.loc, 'sound/items/Crowbar.ogg', 100, 1)
-
-/decl/crafting_stage/crowbar/is_appropriate_tool(obj/item/thing)
-	. = ..() && isCrowbar(thing)
 
 /decl/crafting_stage/tape
 	consume_completion_trigger = FALSE

@@ -3645,9 +3645,6 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/table/standard,
-/obj/item/tape_roll,
-/obj/item/tape_roll,
 /turf/simulated/floor/plating,
 /area/site53/uez/janitor)
 "jw" = (

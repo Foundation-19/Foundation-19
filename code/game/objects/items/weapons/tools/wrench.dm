@@ -15,11 +15,5 @@
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
 
 /obj/item/wrench/Initialize()
-	if(icon_state == "wrench")
-		icon_state = "wrench[pick("","_red","_black","_green","_blue")]"
+	icon_state = "wrench[pick("","_red","_black","_green","_blue")]"
 	. = ..()
-
-/obj/item/wrench/makeshift
-	name = "improvised wrench"
-	desc = "It might have a hard time actually fitting around the bolt..."
-	icon_state = "wrench_makeshift"
