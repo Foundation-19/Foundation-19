@@ -9,10 +9,16 @@ export const PersonalGoals = (props, context) => {
       <Section>
         <Table>
           {goals.map(goal) => (
-
+            <Goal key={goal.name} goal={goal} />
           )}
         </Table>
       </Section>
     </Window.Content>
   </Window>;
 };
+
+const Goal = (props, context) => {
+  const { goal } = props;
+  const { act, data } = useBackend(context);
+  const {} = data;
+}

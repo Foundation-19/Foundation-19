@@ -1,4 +1,5 @@
 /datum/goal
+	var/name
 	var/description
 	var/owner
 	var/no_duplicates = 1	// whether we can have several of this type of goal

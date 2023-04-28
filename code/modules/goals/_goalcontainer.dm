@@ -55,5 +55,19 @@
 /datum/component/goalcontainer/tgui_interact(mob/user, datum/tgui/ui = null)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
-		ui = new(user, src, "PersonalGoals", "TEMPORARY PLACEHOLDER NAME")
+		ui = new(user, src, "PersonalGoals", "Goals List")
 		ui.open()
+
+/datum/component/goalcontainer/tgui_data(mob/user)
+	var/list/data = list()
+
+	var/list/goals = list()
+	for(var/thing in goal_list)
+		var/datum/goal/goal = thing
+
+		goals.Add(list(list(
+			"goalname" = goal.name
+			"goaldesc" = goal.description
+		)))
+
+	return data
