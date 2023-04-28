@@ -20955,6 +20955,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurysleep)
+"ZS" = (
+/obj/item/paper/d_class_guide,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/janitorial)
 "ZT" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
@@ -36295,7 +36299,7 @@ sf
 kO
 dP
 dV
-dV
+ZS
 dV
 dV
 hG

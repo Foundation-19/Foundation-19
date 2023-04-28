@@ -170,6 +170,15 @@
 	Certain anomalies may have Special Containment Procedures that may impact testing protocol. You are allowed to alter the procedure to maintain these containment procedures.
 	<hr>"}
 
+/obj/item/paper/d_class_guide
+	name = "D-CLASS ONLY"
+	info = "D-1839 here with a memo to you all, found a way to make some 'homemade' tools with some spare rods and duct tape<br>\
+	Just grab some duct tape and put it on a rod as a handle (make sure you do it to ONE ROD ONLY, moron), and you got a good base for a tool<br>\
+	Slap a second rod on for some wirecutters, a piece of steel for a good crowbar, or a spoon or a fork for a shovel or a pickaxe<br>\
+	Didn't use it when I escaped, but I betya if you use those wirecutters to file down the rod, or that crowbar to pry the rod open, you could make some screwdrivers and wrenches.<br>\
+	<br>\
+	Well I'm outta here, seeya on the other side"
+
 /////////////
 //SCP BOOKS//
 /////////////
