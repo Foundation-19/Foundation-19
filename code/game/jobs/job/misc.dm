@@ -6,9 +6,10 @@
 	total_positions = 999
 	spawn_positions = 999
 	//duties = "<big><b>As a Class D Foundation Employee, you are most likely a former convict who faced a life sentence or the death penalty. You are extremely grateful to have been offered the chance to participate in the Foundation's rapid rehabilitation program, at a facility which aims to release you into the free world in just 30 days.<br> Find a way to show you're ready to re-integrate into society: work in mining, botany, the kitchens, or volunteer yourself as a participant in scientific studies.<br> <span style = 'color:red'>REMEMBER!</span> Rioting as Class D has been prohibited without staff approval, under rule 15. <br>IMPORTANT! Do not try to break out of your cell at game start. You will break your only way out!</b></big>"
+	supervisors = "all Foundation Personnel"
 	access = list()
 	minimal_access = list()
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/classd
+	outfit_type = /decl/hierarchy/outfit/job/civ/classd
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classd)
 	hud_icon = "huddclass"
@@ -46,7 +47,7 @@
 	minimal_player_age = 5
 	ideal_character_age = 30
 	alt_titles = list("Administrative Assistant", "Accountant", "Auditor", "Secretary")
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/officeworker
+	outfit_type = /decl/hierarchy/outfit/job/civ/officeworker
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
@@ -79,7 +80,7 @@
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 35
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/logisticsofficer
+	outfit_type = /decl/hierarchy/outfit/job/command/logisticsofficer
 	hud_icon = "huddeckchief"
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classb)
@@ -121,7 +122,7 @@
 	//supervisors = "the Logistics Officer"
 	minimal_player_age = 3
 	ideal_character_age = 24
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/command/logisticspecialist
+	outfit_type = /decl/hierarchy/outfit/job/command/logisticspecialist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "huddecktechnician"
@@ -159,12 +160,13 @@
 	title = "Janitor"
 	department = "Civilian"
 	department_flag = CIV
+	selection_color = "#515151"
 	total_positions = 3
 	spawn_positions = 3
-	//supervisors = "the Head of Personnel"
-	ideal_character_age = 24
+	supervisors = "the Human Resources Officer"
+	ideal_character_age = 16
 	alt_titles = list("Interior caretaker")
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/janitor
+	outfit_type = /decl/hierarchy/outfit/job/civ/janitor
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
@@ -189,13 +191,13 @@
 	title = "Chef"
 	department = "Civilian"
 	department_flag = CIV
+	selection_color = "#515151"
 	total_positions = 1
 	spawn_positions = 1
-	//supervisors = "the Head of Personnel"
-	selection_color = "#515151"
-	ideal_character_age = 24
+	supervisors = "the Human Resources Officer"
+	ideal_character_age = 18
 	alt_titles = list("Cook")
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/chef
+	outfit_type = /decl/hierarchy/outfit/job/civ/chef
 	allowed_branches = list(/datum/mil_branch/civilian)
 	hud_icon = "hudcook"
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
@@ -221,13 +223,13 @@
 	title = "Bartender"
 	department = "Civilian"
 	department_flag = CIV
+	selection_color = "#515151"
 	total_positions = 1
 	spawn_positions = 1
-	//supervisors = "the Head of Personnel"
-	selection_color = "#515151"
-	ideal_character_age = 24
+	supervisors = "the Human Resources Officer"
+	ideal_character_age = 21
 	alt_titles = list("Waiter")
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/bartender
+	outfit_type = /decl/hierarchy/outfit/job/civ/bartender
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classc)
 	hud_icon = "hudbartender"
@@ -252,6 +254,7 @@
 /datum/job/archivist
 	title = "Archivist"
 	department = "Civilian"
+	selection_color = "#2f2f7f"
 	department_flag = CIV
 	total_positions = 1
 	spawn_positions = 1
@@ -261,7 +264,7 @@
 	economic_power = 4
 	minimal_player_age = 5
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/site90/crew/civ/archivist
+	outfit_type = /decl/hierarchy/outfit/job/civ/archivist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/classa)
 	hud_icon = "hudarchivist"

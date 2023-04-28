@@ -384,9 +384,9 @@
 
 /datum/species/diona/equip_survival_gear(mob/living/carbon/human/H)
 	if(istype(H.get_equipped_item(slot_back), /obj/item/storage/backpack))
-		H.equip_to_slot_or_del(new /obj/item/device/flashlight/flare(H.back), slot_in_backpack)
+		H.equip_to_slot_or_store_or_drop(new /obj/item/device/flashlight/flare(H.back), slot_in_backpack)
 	else
-		H.equip_to_slot_or_del(new /obj/item/device/flashlight/flare(H), slot_r_hand)
+		H.equip_to_slot_or_store_or_drop(new /obj/item/device/flashlight/flare(H), slot_r_hand)
 
 /datum/species/diona/skills_from_age(age)
 	switch(age)

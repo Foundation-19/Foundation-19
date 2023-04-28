@@ -445,21 +445,11 @@ var/list/gear_datums = list()
 		gt.tweak_item(user, item, metadata && metadata["[gt]"])
 	return item
 
-/datum/gear/proc/spawn_on_mob(mob/living/carbon/human/H, metadata)
-	var/obj/item/item = spawn_item(H, H, metadata)
-	if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 0, force = 0))
-		return item
-
-	if(H.equip_to_storage(item)) //I dunno who designed Bay loadout system originally, but their code for custom items has the sane solution here: don't overwrite necessary
-		return item					//job gear and put loadout items in the back, just in case
-
-
 /datum/gear/proc/spawn_in_storage_or_drop(mob/living/carbon/human/H, metadata)
 	var/obj/item/item = spawn_item(H, H, metadata)
 	item.add_fingerprint(H)
 
 	// Roundstart augments require special handling in order to properly install
-	// Putting this in "spawn_on_mob" requires overriding a bunch of logic, so we hook into here instead
 	if (istype(item, /obj/item/organ/internal/augment))
 		var/obj/item/organ/internal/augment/A = item
 		var/obj/item/organ/external/affected = H.get_organ(A.parent_organ)
@@ -485,12 +475,15 @@ var/list/gear_datums = list()
 				A.onRoundstart()
 				. = A
 	else
-		var/atom/placed_in = H.equip_to_storage(item)
-		if(placed_in)
-			to_chat(H, SPAN_NOTICE("Placing \the [item] in your [placed_in.name]!"))
+		if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 0, force = 0))
+			to_chat(H, SPAN_NOTICE("Placing \the [item] in its default inventory slot!"))
 		else if(H.equip_to_appropriate_slot(item))
-			to_chat(H, SPAN_NOTICE("Placing \the [item] in your inventory!"))
-		else if(H.put_in_hands(item))
-			to_chat(H, SPAN_NOTICE("Placing \the [item] in your hands!"))
+			to_chat(H, SPAN_NOTICE("Placing \the [item] in an inventory slot!"))
 		else
-			to_chat(H, SPAN_DANGER("Dropping \the [item] on the ground!"))
+			var/atom/placed_in = H.equip_to_storage(item)
+			if(placed_in)
+				to_chat(H, SPAN_NOTICE("Placing \the [item] in your [placed_in.name]!"))
+			else if(H.put_in_hands(item))
+				to_chat(H, SPAN_NOTICE("Placing \the [item] in your hands!"))
+			else
+				to_chat(H, SPAN_DANGER("Dropping \the [item] on the ground!"))

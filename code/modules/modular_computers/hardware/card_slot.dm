@@ -82,19 +82,21 @@
 	loc.verbs -= /obj/item/stock_parts/computer/card_slot/proc/verb_eject_id
 	return TRUE
 
-/obj/item/stock_parts/computer/card_slot/proc/insert_id(obj/item/card/id/I, mob/user)
+/obj/item/stock_parts/computer/card_slot/proc/insert_id(obj/item/card/id/I, mob/user, suppress_message = FALSE)
 	if(!istype(I))
 		return FALSE
 
 	if(stored_card)
-		to_chat(user, "You try to insert [I] into [src], but its ID card slot is occupied.")
+		if(!suppress_message)
+			to_chat(user, "You try to insert [I] into [src], but its ID card slot is occupied.")
 		return FALSE
 
 	if(user && !user.unEquip(I, src))
 		return FALSE
 
 	stored_card = I
-	to_chat(user, "You insert [I] into [src].")
+	if(!suppress_message)
+		to_chat(user, "You insert [I] into [src].")
 	if(isobj(loc))
 		loc.verbs |= /obj/item/stock_parts/computer/card_slot/proc/verb_eject_id
 	return TRUE
