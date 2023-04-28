@@ -60,16 +60,6 @@
 				user.put_in_hands(new_item)
 		return
 
-	if (istype(W, /obj/item/tape_roll))
-		var/obj/item/stack/medical/splint/ghetto/new_splint = new(user.loc)
-		new_splint.dropInto(loc)
-		new_splint.add_fingerprint(user)
-
-		user.visible_message(SPAN_NOTICE("\The [user] constructs \a [new_splint] out of a [singular_name]."), \
-				SPAN_NOTICE("You use make \a [new_splint] out of a [singular_name]."))
-		src.use(1)
-		return
-
 	..()
 
 /obj/item/stack/material/rods/attack_self(mob/user as mob)

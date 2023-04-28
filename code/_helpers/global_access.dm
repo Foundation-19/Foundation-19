@@ -331,8 +331,6 @@
 			return global.camera_repository;
 		if("cameranet")
 			return global.cameranet;
-		if("captain_announcement")
-			return global.captain_announcement;
 		if("changelog_hash")
 			return global.changelog_hash;
 		if("channel_color_presets")
@@ -1192,8 +1190,6 @@
 			global.camera_repository=newval;
 		if("cameranet")
 			global.cameranet=newval;
-		if("captain_announcement")
-			global.captain_announcement=newval;
 		if("changelog_hash")
 			global.changelog_hash=newval;
 		if("channel_color_presets")
@@ -1887,7 +1883,6 @@
 	"camera_range_display_status",
 	"camera_repository",
 	"cameranet",
-	"captain_announcement",
 	"changelog_hash",
 	"channel_color_presets",
 	"channel_to_radio_key",

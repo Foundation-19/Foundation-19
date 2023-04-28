@@ -820,9 +820,7 @@
 /obj/structure/closet{
 	name = "mobile task force wardrobe"
 	},
-/obj/item/clothing/accessory/solgov/fleet_patch/fifth,
 /obj/item/clothing/head/solgov/utility/fleet,
-/obj/item/clothing/accessory/badge/solgov/tags,
 /turf/unsimulated/floor{
 	dir = 1;
 	icon_state = "vault"
