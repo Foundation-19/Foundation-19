@@ -525,11 +525,11 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 	real_name = name
 
 	var/decl/hierarchy/outfit/outfit = pick(
-		/decl/hierarchy/outfit/job/site90/crew/security/lczguard/geared,\
-		/decl/hierarchy/outfit/job/site90/crew/science/juniorscientist/geared,\
-		/decl/hierarchy/outfit/job/site90/crew/science/scientist/geared,\
-		/decl/hierarchy/outfit/job/ds90/medical/medicaldoctor/geared,\
-		/decl/hierarchy/outfit/job/site90/crew/civ/classd\
+		/decl/hierarchy/outfit/zombie/lczguard,\
+		/decl/hierarchy/outfit/zombie/juniorscientist,\
+		/decl/hierarchy/outfit/zombie/scientist,\
+		/decl/hierarchy/outfit/zombie/medicaldoctor,\
+		/decl/hierarchy/outfit/zombie/classd\
 	)
 	outfit = outfit_by_type(outfit)
 	outfit.equip(src, OUTFIT_ADJUSTMENT_SKIP_SURVIVAL_GEAR)
