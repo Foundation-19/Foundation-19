@@ -1,0 +1,6 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscadd: You can make improvised tools (screwdrivers, wirecutters, crowbars, and
+      wrenches) with duct tape! There's a manual for it in the D-class janitor closet.
+  - rscadd: Duct tape placed around the map.
