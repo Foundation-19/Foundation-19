@@ -131,14 +131,6 @@
 	build_from_parts = TRUE
 	hardware_color = COLOR_DIAMOND
 
-/obj/item/pickaxe/makeshift
-	name = "improvised pickaxe"
-	desc = "Anything is a pickaxe if you try hard enough."
-	icon_state = "pick_makeshift"
-	item_state = null
-	build_from_parts = FALSE
-	digspeed = 80
-	drill_verb = "chipping"
 /*****************************Shovel********************************/
 
 /obj/item/shovel
@@ -165,14 +157,6 @@
 	force = 5.0
 	throwforce = 7.0
 	w_class = ITEM_SIZE_SMALL
-
-/obj/item/shovel/makeshift
-	name = "improvised shovel"
-	desc = "A spoon is basically a tiny shovel."
-	icon_state = "shovel_makeshift"
-	item_state = null
-	force = 3.0
-	w_class = ITEM_SIZE_NORMAL
 
 // Flags.
 /obj/item/stack/flag
