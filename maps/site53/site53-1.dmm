@@ -4131,6 +4131,7 @@
 /area/site53/lowertram/archive)
 "jt" = (
 /obj/structure/table/woodentable,
+/obj/item/tape_roll,
 /turf/simulated/floor/tiled/old_tile,
 /area/site53/llcz/mine/unexplored)
 "ju" = (
@@ -4181,6 +4182,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/site53/llcz/mining/miningops)
+"jA" = (
+/obj/item/tape_roll,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/mine/unexplored)
 "jB" = (
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -21016,6 +21021,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxurysleep)
+"ZS" = (
+/obj/item/paper/d_class_guide,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/dclass/janitorial)
 "ZT" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
@@ -36356,7 +36365,7 @@ sf
 kO
 dP
 dV
-dV
+ZS
 dV
 dV
 hG
@@ -52544,7 +52553,7 @@ Fh
 ua
 ua
 tl
-OX
+jA
 Tu
 Ro
 tl

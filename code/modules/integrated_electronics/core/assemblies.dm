@@ -467,7 +467,7 @@
 		update_icon()
 		return
 
-	if(istype(I, /obj/item/screwdriver))
+	if(isScrewdriver(I))
 		var/hatch_locked = FALSE
 		for(var/obj/item/integrated_circuit/manipulation/hatchlock/H in assembly_components)
 			// If there's more than one hatch lock, only one needs to be enabled for the assembly to be locked

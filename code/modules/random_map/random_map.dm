@@ -51,7 +51,7 @@ var/global/list/map_count = list()
 
 	if(used_area)
 		if(ispath(used_area))
-			use_area = new(used_area)
+			use_area = new used_area()
 		else
 			use_area = used_area
 
