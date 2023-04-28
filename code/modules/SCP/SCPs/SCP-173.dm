@@ -300,11 +300,11 @@ GLOBAL_LIST_EMPTY(scp173s)
 			return
 		breach_cooldown = world.time + 15 MINUTES
 		warning_cooldown = world.time + 5 MINUTES // Just in case 173 doesn't immediately leave the area
-		command_announcement.Announce("ALERT! SCP-173 containment zone security measures have shut down due to severe acidic degradation.")
+		priority_announcement.Announce("ALERT! SCP-173's containment zone security measures have shut down due to severe acidic degradation. Security personnel are to report to the location and secure the threat as soon as possible.", "Containment Failure", 'sound/AI/173.ogg')
 		BreachEffect()
 	else if((feces_amount >= 40) && world.time > warning_cooldown) // Warning, after ~20 minutes
 		warning_cooldown = world.time + 2 MINUTES
-		command_announcement.Announce("ATTENTION! SCP-173 containment zone is suffering from mild acidic degradation. Janitorial services involvement is required.")
+		priority_announcement.Announce("ATTENTION! SCP-173's containment zone is suffering from mild acidic degradation. Janitorial services involvement is required.", "Acidic Degredation", 'sound/AI/acidic_degredation.ogg')
 
 /mob/living/scp_173/proc/CheckFeces(containment_zone = TRUE) // Proc that returns amount of 173 feces in the area
 	var/area/A = get_area(src)
