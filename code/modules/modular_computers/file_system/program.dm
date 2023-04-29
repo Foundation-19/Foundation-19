@@ -190,7 +190,7 @@
 	return 1
 
 // This is called every tick when the program is enabled. Ensure you do parent call if you override it. If parent returns 1 continue with UI initialisation.
-// It returns 0 if it can't run or if NanoModule was used instead. I suggest using NanoModules where applicable.
+// It returns 0 if it can't run or if NanoModule was used instead. I suggest using NanoModules where applicable. // don't listen to that guy, nanomodules fucking SUCK
 /datum/computer_file/program/tgui_interact(mob/user, datum/tgui/ui)
 	if(program_state != PROGRAM_STATE_ACTIVE) // Our program was closed. Close the ui if it exists.
 		if(ui)
