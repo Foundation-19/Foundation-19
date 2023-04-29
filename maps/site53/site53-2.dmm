@@ -16835,6 +16835,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/effect/catwalk_plated/white,
 /turf/simulated/floor/plating,
 /area/site53/ulcz/hallways)
 "aXh" = (
@@ -21360,6 +21361,10 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/hallways)
+"bRk" = (
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage1)
 "bRl" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/white,
@@ -21775,6 +21780,31 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
+"cpC" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/science{
+	name = "General Purpose Containment  Chamber";
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage1)
+"cpM" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage1)
 "cpO" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -24412,6 +24442,20 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
+"fvF" = (
+/obj/effect/catwalk_plated/white,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/ulcz/hallways)
 "fvR" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-247"
@@ -25016,6 +25060,11 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
+"ggm" = (
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/cobweb,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage1)
 "ggG" = (
 /obj/machinery/light{
 	dir = 8
@@ -28368,7 +28417,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/catwalk_plated/white,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 4;
@@ -28379,6 +28427,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/effect/catwalk_plated/white,
 /turf/simulated/floor/plating,
 /area/site53/ulcz/hallways)
 "jCD" = (
@@ -28702,6 +28751,10 @@
 /obj/item/device/camera_film,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp096)
+"jWd" = (
+/obj/machinery/camera/network/lcz,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage1)
 "jWC" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/effect/floor_decal/industrial/warning{
@@ -29456,6 +29509,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/entrance_checkpoint)
+"kPz" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage1)
 "kPM" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
@@ -29840,6 +29901,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lowertrams/restaurantkitchenarea)
+"lng" = (
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/prepainted,
+/area/site53/llcz/genstorage1)
 "los" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -29885,15 +29950,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "luf" = (
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24;
 	req_access = list("ACCESS_SECURITY_LEVEL1")
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp263)
@@ -30267,6 +30332,11 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/scp2427_3)
+"lMX" = (
+/obj/effect/paint_stripe/gray,
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/prepainted,
+/area/site53/llcz/genstorage1)
 "lNf" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -31484,6 +31554,9 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
+"mWt" = (
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage1)
 "mXc" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -40572,6 +40645,15 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/chapel)
+"xrK" = (
+/obj/effect/catwalk_plated/white,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/site53/ulcz/hallways)
 "xrQ" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -52225,9 +52307,9 @@ aWT
 bON
 bON
 bON
-azA
-azA
-azA
+lMX
+lng
+lng
 azA
 azA
 azA
@@ -52482,9 +52564,9 @@ aWT
 hGY
 iIJ
 bON
-azA
-azA
-azA
+ggm
+bRk
+lng
 azA
 azA
 azA
@@ -52739,9 +52821,9 @@ aWT
 wxi
 xWw
 bON
-azA
-azA
-azA
+jWd
+mWt
+lng
 azA
 azA
 azA
@@ -52996,6 +53078,9 @@ aWT
 luf
 nsF
 bON
+cpM
+kPz
+lng
 azA
 azA
 aXp
@@ -53005,9 +53090,6 @@ aXp
 aXp
 aXp
 aXp
-azA
-azA
-azA
 azA
 azA
 azA
@@ -53252,6 +53334,9 @@ aXe
 aWT
 bON
 aPv
+bON
+lng
+cpC
 aXp
 aXp
 aXp
@@ -53262,9 +53347,6 @@ bdc
 kiO
 bim
 aXp
-azA
-azA
-azA
 azA
 azA
 azA
@@ -53509,6 +53591,9 @@ aWJ
 aXf
 gWp
 aWJ
+aGM
+aGM
+aWJ
 aXp
 bix
 bcZ
@@ -53519,9 +53604,6 @@ bix
 aXD
 sgZ
 aXp
-azA
-azA
-azA
 azA
 azA
 azA
@@ -53766,6 +53848,9 @@ aXg
 aXn
 aXn
 jBT
+xrK
+xrK
+fvF
 hSj
 aXq
 bda
@@ -53776,9 +53861,6 @@ bRG
 bix
 xaC
 aXp
-azA
-azA
-azA
 azA
 azA
 azA
@@ -54023,6 +54105,9 @@ ieh
 pSE
 frk
 aWJ
+aGM
+aGM
+aGM
 aXp
 bcY
 bix
@@ -54033,9 +54118,6 @@ aXz
 aXz
 aXz
 aXp
-azA
-azA
-azA
 azA
 azA
 azA
@@ -54280,6 +54362,9 @@ gkq
 aXi
 ffp
 iCc
+ffp
+aVS
+aVS
 aXp
 aXs
 bix
@@ -54290,9 +54375,6 @@ bix
 bix
 bix
 aXp
-azA
-azA
-azA
 azA
 azA
 azA
@@ -54537,6 +54619,9 @@ nXs
 aXi
 aXj
 otI
+ffp
+azA
+azA
 aXp
 aXp
 aXp
@@ -54547,9 +54632,6 @@ bim
 bix
 big
 aXp
-azA
-azA
-azA
 azA
 azA
 azA
@@ -54797,6 +54879,9 @@ iHI
 ffp
 azA
 azA
+azA
+azA
+azA
 aXp
 bix
 bix
@@ -54804,9 +54889,6 @@ rMC
 bix
 bix
 aXp
-azA
-azA
-azA
 azA
 azA
 azA
@@ -55054,16 +55136,16 @@ dmf
 ffp
 azA
 azA
-aXp
-aXp
-aXp
-aXp
-aXp
-aXp
-aXp
 azA
 azA
 azA
+aXp
+aXp
+aXp
+aXp
+aXp
+aXp
+aXp
 azA
 azA
 azA
