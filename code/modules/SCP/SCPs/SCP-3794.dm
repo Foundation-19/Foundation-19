@@ -25,14 +25,18 @@
 /obj/item/weapon/twohanded/scp_3794/attack(mob/living/target,	mob/living/user,	target_zone)
 	var/mob/living/carbon/human/H = target
 	var/mob/living/carbon/human/G = user
+	var/obj/item/organ/external/L = H.get_organ(G.zone_sel.selecting)
 	if(ishuman(user && target))
-		to_chat(H, SPAN_USERDANGER("Someone begins swinging a sledgehammer at you!"))
-		G.visible_message(SPAN_DANGER("[G] begins to swing [src] at [H]!"))
 		if(target_zone == BP_CHEST) //that would be just too easy wouldnt it? (proceeds to not rule out the head)
+			to_chat(G, SPAN_WARNING("You can't do that!"))
 			return
-		if(do_after(G, 2 SECONDS, H))
-			target_zone.qdel // doesnt work yet
-			H.emote("scream")
-			playsound(src, pick(hitsounds), 30)
-			admin_attack_log(G, H, null, null, "[G] has attacked [H] with SCP-3794!")
-			message_staff("[G] (ckey: [G.ckey]) has swung SCP-2398 at [H] ([H.ckey])!")
+		if(L)
+			G.visible_message(SPAN_DANGER("[G] begins to swing [src] at [H]!"))
+			to_chat(H, SPAN_USERDANGER("Someone begins swinging a sledgehammer at you!"))
+			if(do_after(G, 1 SECOND, H))
+				L.droplimb(TRUE, TRUE, FALSE, TRUE)
+				H.emote("scream")
+				new /obj/effect/decal/cleanable/blood/splatter/salsa(get_turf(H))
+				playsound(src, pick(hitsounds), 30)
+				admin_attack_log(G, H, null, null, "[G] has attacked [H] with SCP-3794!")
+				message_staff("[G] (ckey: [G.ckey]) has swung SCP-2398 at [H] ([H.ckey])!")

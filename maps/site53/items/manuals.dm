@@ -829,6 +829,26 @@ SCP-2398 bears no unusual markings other than the letters 'K.O.' branded into th
 SCP-2398 displays no anomalous properties when not in use; however, when swung at a speed over roughly 20m/s, any living organism that SCP-2398 comes in contact with at the end of a swing will violently explode. The mechanism for this is currently unknown.
 "}
 
+/obj/item/paper/scp/safe/scp3794
+	name = "SCP-3794"
+	info = {"
+	<tt><center><b><font color='green'>SAFE: SCP-3794</font></b>
+	<h3>FOUNDATION RESEARCH DIVISION</h3>
+	</center>
+<br>
+<b>Item #:</b> SCP-3794
+<br>
+Object Class: Safe
+<br>
+<b>Special Containment Procedures:</b>
+<br>
+SCP-3794 is kept within a standard item locker. Testing is currently suspended.
+
+<br>
+<b>Description:</b>
+SCP-3794 is a sledgehammer that converts living tissue to pico de gallo salsa when swung with sufficient force. This salsa is not significantly different from ordinary salsas in composition, nutritional value, or taste.
+"}
+
 // MISC.
 
 /obj/item/paper/dcell/assignment

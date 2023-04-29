@@ -16856,12 +16856,12 @@
 	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/genstorage1)
+/area/site53/llcz/scp3794)
 "aXk" = (
 /obj/structure/table/reinforced,
-/obj/effect/decal/cleanable/cobweb2,
+/obj/item/weapon/twohanded/scp_3794,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/genstorage1)
+/area/site53/llcz/scp3794)
 "aXl" = (
 /obj/machinery/camera/autoname{
 	network = list("Light Containment Zone Network")
@@ -22654,7 +22654,7 @@
 /obj/machinery/light,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/genstorage1)
+/area/site53/llcz/scp3794)
 "dmR" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -24064,7 +24064,7 @@
 "ffp" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
-/area/site53/llcz/genstorage1)
+/area/site53/llcz/scp3794)
 "ffz" = (
 /obj/machinery/door/airlock/highsecurity/bolted{
 	req_access = list("ACCESS_SCIENCE_LEVEL5","ACCESS_ADMIN_LEVEL4")
@@ -25122,7 +25122,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/highsecurity{
-	name = "SCP-2398";
+	name = "SCP-3794";
 	req_access = list("ACCESS_SCIENCE_LEVEL4")
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -27463,12 +27463,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/science{
-	name = "General Storage";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-2398";
+	req_access = list("ACCESS_SCIENCE_LEVEL4")
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/genstorage1)
+/area/site53/llcz/scp3794)
 "iCg" = (
 /obj/effect/catwalk_plated/dark,
 /obj/machinery/door/blast/regular{
@@ -27534,7 +27534,7 @@
 /area/site53/science/aicobservation)
 "iHI" = (
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/genstorage1)
+/area/site53/llcz/scp3794)
 "iIJ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light,
@@ -32848,7 +32848,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/site53/llcz/genstorage1)
+/area/site53/llcz/scp3794)
 "otN" = (
 /obj/structure/closet/secure_closet/freezer/meat,
 /obj/effect/decal/cleanable/cobweb,
@@ -54021,7 +54021,7 @@ aGM
 frk
 ieh
 pSE
-aGM
+frk
 aWJ
 aXp
 bcY
