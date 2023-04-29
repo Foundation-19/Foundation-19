@@ -46,7 +46,8 @@
 		/area/turbolift,
 		/area/supply,
 		/area/syndicate_elite_squad,
-		/area/template_noop
+		/area/template_noop,
+		/area/droppod
 	)
 
 	var/list/area_usage_test_exempted_root_areas = list(
