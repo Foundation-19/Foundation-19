@@ -1,5 +1,3 @@
-ut // COMMAND
-
 /datum/job/captain
 	title = "Site Director"
 	department = "Command"
@@ -20,19 +18,11 @@ ut // COMMAND
 	total_positions = 1
 	spawn_positions = 1
 
-	access = list(
-		ACCESS_COM_COMMS, // SD and HoP do not want to hear all the details, either meet your Commander in person or talk to the Tower
-		ACCESS_SCI_COMMS,
-		ACCESS_ADMIN_LVL1,
-		ACCESS_ADMIN_LVL2,
-		ACCESS_ADMIN_LVL3,
-		ACCESS_ADMIN_LVL4,
-		ACCESS_ADMIN_LVL5,
-		ACCESS_KEYAUTH,
-		ACCESS_CHAPEL_OFFICE
-	)
+	access = list()				// see get_access() override
+	minimal_access = list()		// see get_access() override
 
-	minimal_access = list()
+/datum/job/captain/get_access()
+	return get_all_site_access()
 
 /datum/job/hop
 	title = "Human Resources Officer"

@@ -1,4 +1,4 @@
 author: cheesePizza2
 delete-after: true
 changes:
-  - admin: Supply and drop pods improved.
+  - bugfix: SD access has been fixed.
