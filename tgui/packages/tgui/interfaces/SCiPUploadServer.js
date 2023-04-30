@@ -5,13 +5,15 @@ import { NtosWindow } from '../layouts';
 
 export const SCiPUploadServer = (props, context) => {
   const { act, data } = useBackend(context);
-  const { PC_device_theme, files = [] } = data;
+  const { PC_device_theme, files = [], error } = data;
   return (
     <NtosWindow resizable theme={PC_device_theme}>
       <NtosWindow.Content scrollable>
+        (error && <Section>{error}</Section>) || (
         <Section>
           <FileTable files={files} />
         </Section>
+        )
       </NtosWindow.Content>
     </NtosWindow>
   );
