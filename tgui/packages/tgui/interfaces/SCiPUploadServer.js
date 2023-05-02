@@ -1,26 +1,35 @@
 /* eslint react/no-danger: "off" */
 import { useBackend } from '../backend';
-import { Section, Table } from '../components';
+import { Button, Section, Table } from '../components';
 import { NtosWindow } from '../layouts';
 
 export const SCiPUploadServer = (props, context) => {
   const { act, data } = useBackend(context);
-  const { PC_device_theme, files = [], error } = data;
+  const { PC_device_theme, hosting, files = [] } = data;
   return (
     <NtosWindow resizable theme={PC_device_theme}>
       <NtosWindow.Content scrollable>
-        (error && <Section>{error}</Section>) || (
-        <Section>
-          <FileTable files={files} />
+        <Section
+          title="Server Settings"
+          buttons={
+            <Button.Checkbox
+              checked={hosting}
+              content="Active"
+              onClick={() => act('PRG_togglehosting')}
+            />
+          }>
+          <FileTable
+            files={files}
+            onToggle={(file) => act('PRG_togglefile', { name: file })}
+          />
         </Section>
-        )
       </NtosWindow.Content>
     </NtosWindow>
   );
 };
 
 const FileTable = (props) => {
-  const { files = [] } = props;
+  const { files = [], onToggle } = props;
   return (
     <Table>
       <Table.Row header>
@@ -33,6 +42,12 @@ const FileTable = (props) => {
           <Table.Cell>{file.name}</Table.Cell>
           <Table.Cell>{file.type}</Table.Cell>
           <Table.Cell>{file.size}</Table.Cell>
+          <Table.Cell>
+            <Button
+              checked={!(file.req_acc === null)}
+              onClick={() => onToggle(file.name)}
+            />
+          </Table.Cell>
         </Table.Row>
       ))}
     </Table>
