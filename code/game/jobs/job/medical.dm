@@ -1,5 +1,3 @@
-// MEDICAL JOBS.
-
 /datum/job/cmo
 	title = "Chief Medical Officer"
 	supervisors = "the Site Director"

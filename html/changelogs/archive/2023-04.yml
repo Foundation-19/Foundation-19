@@ -238,3 +238,22 @@
   checkraisefold:
   - admin: Show today server log works correctly after a current round passes 12am
       server timezone
+2023-04-29:
+  casualspacestation14enjoyer:
+  - rscadd: When 049 wakes up, there will now be an announcement so it ain't just
+      waiting around in a cell.
+  - soundadd: Added new 049 wake up sounds
+  - soundadd: Added new 173 event sounds (acid idk)
+  checkraisefold:
+  - admin: Mods get Create Centcom Report verb
+  cheesePizza2:
+  - admin: Supply and drop pods improved.
+  - rscdel: Deleted some unused non-SCP outfits.
+  - bugfix: Fixes outfit and loadout bugs (FOR REAL THIS TIME)
+  - code_imp: MASSIVE outfit and job cleanup.
+  - rscadd: You can make improvised tools (screwdrivers, wirecutters, crowbars, and
+      wrenches) with duct tape! There's a manual for it in the D-class janitor closet.
+  - rscadd: Duct tape placed around the map.
+2023-04-30:
+  cheesePizza2:
+  - bugfix: SD access has been fixed.
