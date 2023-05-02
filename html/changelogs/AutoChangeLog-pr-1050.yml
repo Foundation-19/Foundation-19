@@ -1,6 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - rscdel: Deleted some unused non-SCP outfits.
-  - bugfix: Fixes outfit and loadout bugs (FOR REAL THIS TIME)
-  - code_imp: MASSIVE outfit and job cleanup.

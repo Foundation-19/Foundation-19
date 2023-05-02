@@ -1,5 +1,3 @@
-// SCIENCE
-
 /datum/job/juniorscientist
 	title = "Researcher Associate"
 	department = "Science"
