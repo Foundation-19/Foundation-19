@@ -11,7 +11,7 @@
 	deactivation_sound = sound('sound/effects/compbeep1.ogg', volume = 30)
 
 	species_restricted = list("exclude", SPECIES_DIONA)
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/hud/Initialize()
 	. = ..()

@@ -11,7 +11,7 @@
 	var/category
 	var/subversive_potential = 0
 	var/hidden
-	var/hidden_from_codex
+	hidden_from_codex
 	var/list/qualifications
 
 /decl/cultural_info/New()

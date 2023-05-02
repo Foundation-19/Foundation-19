@@ -11,7 +11,7 @@
 	)
 	species_restricted = list(SPECIES_HUMAN)
 	flags_inv = HIDEEARS | BLOCKHAIR
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/suit/fiendcowl
 	name = "fiend's cowl"
@@ -43,7 +43,7 @@
 	desc = "To gaze upon this is to gaze into an inferno. Look away, before it looks back of its own accord."
 	icon_state = "fiendvisage"
 	flags_inv = HIDEEARS | BLOCKHAIR
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/suit/fiendcowl/fem
 	name = "fiend's robe"

@@ -5,7 +5,7 @@
 	var/list/catalysts = list()
 	var/list/inhibitors = list()
 	var/result_amount = 0
-	var/hidden_from_codex
+	hidden_from_codex
 	var/maximum_temperature = INFINITY
 	var/minimum_temperature = 0
 	var/thermal_product

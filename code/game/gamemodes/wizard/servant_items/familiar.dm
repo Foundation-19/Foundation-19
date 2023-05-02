@@ -2,7 +2,7 @@
 	name = "familiar's headband"
 	desc = "It's a simple headband made of leather."
 	icon_state = "familiarband"
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/under/familiargarb
 	name = "familiar's garb"

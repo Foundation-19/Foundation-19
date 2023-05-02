@@ -7,7 +7,7 @@
 	audio_insulation = A_INSL_IMPERFECT
 	volume_multiplier = 0.5
 	var/jukebox/jukebox
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 
 /obj/item/clothing/ears/headphones/Initialize()

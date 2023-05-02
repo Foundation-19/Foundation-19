@@ -11,7 +11,7 @@
 	)
 	species_restricted = list(SPECIES_HUMAN)
 	flags_inv = HIDEEARS | BLOCKHAIR
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/suit/caretakercloak
 	name = "holy cloak"

@@ -94,7 +94,7 @@
 	desc = "It looks like a plain set of mesons, but on closer inspection, it seems to have a small dial inside."
 	origin_tech = list(TECH_ESOTERIC = 3)
 	item_flags = ITEM_FLAG_INVALID_FOR_CHAMELEON
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/chameleon/Initialize()
 	. = ..()

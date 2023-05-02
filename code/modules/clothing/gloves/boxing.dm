@@ -3,7 +3,7 @@
 	desc = "Because you really needed another excuse to punch your crewmates."
 	icon_state = "boxing"
 	item_state = "boxing"
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/boxing/attackby(obj/item/W, mob/user)
 	if(isWirecutter(W) || istype(W, /obj/item/scalpel))

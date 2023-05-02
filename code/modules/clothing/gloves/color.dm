@@ -2,7 +2,7 @@
 	desc = "A pair of gloves, they don't look special in any way."
 	item_state = "lgloves"
 	icon_state = "white"
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/color/modified
 	item_flags = ITEM_FLAG_PREMODIFIED
@@ -32,7 +32,7 @@
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "rainbow"
 	item_state = "rainbowgloves"
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/rainbow/modified
 	item_flags = ITEM_FLAG_PREMODIFIED

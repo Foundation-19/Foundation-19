@@ -7,4 +7,4 @@
 	icon_state = "scp_178"
 	item_state = "scp_178"
 	body_parts_covered = 0
-	var/hidden_from_codex = TRUE
+	hidden_from_codex = TRUE

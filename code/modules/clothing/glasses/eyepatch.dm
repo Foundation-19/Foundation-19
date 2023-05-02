@@ -5,7 +5,7 @@
 	item_state = "eyepatch"
 	body_parts_covered = 0
 	var/flipped = FALSE // Indicates left or right eye; 0 = on the right
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/eyepatch/verb/flip_patch()
 	set name = "Flip Patch"

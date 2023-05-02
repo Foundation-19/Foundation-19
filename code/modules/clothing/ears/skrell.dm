@@ -10,7 +10,7 @@
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS
 	species_restricted = list(SPECIES_SKRELL)
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/ears/skrell/chain
 	name = "gold headtail chains"

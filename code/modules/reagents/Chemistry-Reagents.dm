@@ -25,7 +25,7 @@
 
 	var/alpha = 255
 	var/flags = 0
-	var/hidden_from_codex
+	hidden_from_codex
 
 	var/glass_icon = DRINK_ICON_DEFAULT
 	var/glass_name = "something"

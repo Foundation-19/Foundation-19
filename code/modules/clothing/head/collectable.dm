@@ -4,7 +4,7 @@
 /obj/item/clothing/head/collectable
 	name = "collectable hat"
 	desc = "A rare collectable hat."
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/collectable/petehat
 	name = "ultra rare hat"

@@ -5,7 +5,7 @@
 	item_state = "sunglasses"
 	darkness_view = -1
 	flash_protection = FLASH_PROTECTION_MINOR
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/sunglasses/prescription
 	name = "prescription sunglasses"

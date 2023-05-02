@@ -42,7 +42,7 @@
 	flags_inv = 0
 	body_parts_covered = 0
 	var/list/permitted_colors = list(COLOR_RED, COLOR_ORANGE, COLOR_YELLOW, COLOR_GREEN, COLOR_BLUE, COLOR_INDIGO, COLOR_VIOLET)
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/festive/Initialize()
 	. = ..()

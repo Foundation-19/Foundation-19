@@ -37,7 +37,7 @@
 	var/list/fruit    // example: = list("fruit" = 3)
 	var/result        // example: = /obj/item/reagent_containers/food/snacks/donut/normal
 	var/time = 100    // 1/10 part of second
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 	var/lore_text
 	var/mechanics_text
 	var/antag_text

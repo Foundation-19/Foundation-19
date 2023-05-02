@@ -9,7 +9,7 @@
 		energy = ARMOR_ENERGY_MINOR
 		)
 	species_restricted = list(SPECIES_HUMAN)
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/suit/infilsuit
 	name = "immaculate suit"
@@ -38,7 +38,7 @@
 	name = "maid's headband"
 	desc = "This dainty, frilled thing is apparently meant to go on your head."
 	icon_state = "infhatfem"
-	var/hidden_from_codex = FALSE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/suit/infilsuit/fem
 	name = "maid's uniform"
