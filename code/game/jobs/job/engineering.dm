@@ -1,5 +1,3 @@
-// ENGINEERING
-
 /datum/job/juneng
 	title = "Junior Engineer"
 	total_positions = 6

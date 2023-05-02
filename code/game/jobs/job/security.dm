@@ -1,4 +1,3 @@
-// SECURITY
 /datum/job/hos
 	title = "Guard Commander"
 	head_position = 1
