@@ -24,6 +24,7 @@
 	desc = "It's a special helmet issued to the Warden of a securiy force."
 	icon_state = "policehelm"
 	body_parts_covered = 0
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/under/rank/security
 	name = "Security Jumpsuit"
@@ -124,6 +125,7 @@
 		)
 	siemens_coefficient = 0.9
 	flags_inv = BLOCKHEADHAIR
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/det/attack_self(mob/user)
 	flags_inv ^= BLOCKHEADHAIR
@@ -159,6 +161,7 @@
 	icon_state = "hoscap"
 	body_parts_covered = 0
 	siemens_coefficient = 0.8
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/HoS/dermal
 	name = "Dermal Armour Patch"

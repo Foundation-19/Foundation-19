@@ -5,6 +5,7 @@
 	item_state = "glasses"
 	prescription = 7
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/prescription/scanners
 	name = "scanning goggles"

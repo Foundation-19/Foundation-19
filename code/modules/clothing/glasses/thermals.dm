@@ -11,6 +11,7 @@
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	electric = TRUE
 	species_restricted = list("exclude", SPECIES_DIONA)
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/thermal/Initialize()
 	. = ..()

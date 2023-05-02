@@ -25,6 +25,7 @@
 	siemens_coefficient = 0.7
 	w_class = ITEM_SIZE_NORMAL
 	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_ADHERENT)
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/helmet/nt
 	name = "\improper corporate security helmet"

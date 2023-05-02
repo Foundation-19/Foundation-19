@@ -9,6 +9,7 @@
 	var/chewtime = 0
 	var/brand
 	var/list/filling = list()
+	hidden_from_codex = TRUE
 
 /obj/item/clothing/mask/chewable/New()
 	..()

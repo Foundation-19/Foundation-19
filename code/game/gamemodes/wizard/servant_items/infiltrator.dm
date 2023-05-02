@@ -3,20 +3,21 @@
 	desc = "Whoever owns this hat means business. Hopefully, it's just good business."
 	icon_state = "infhat"
 	armor = list(
-		melee = ARMOR_MELEE_MINOR, 
-		bullet = ARMOR_BALLISTIC_MINOR, 
+		melee = ARMOR_MELEE_MINOR,
+		bullet = ARMOR_BALLISTIC_MINOR,
 		laser = ARMOR_LASER_MINOR,
 		energy = ARMOR_ENERGY_MINOR
 		)
 	species_restricted = list(SPECIES_HUMAN)
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/suit/infilsuit
 	name = "immaculate suit"
 	desc = "The clothes of an impeccable diplomat. Or perhaps a businessman. Let's not consider the horrors that might arise if it belongs to a lawyer."
 	icon_state = "infsuit"
 	armor = list(
-		melee = ARMOR_MELEE_MINOR, 
-		bullet = ARMOR_BALLISTIC_PISTOL, 
+		melee = ARMOR_MELEE_MINOR,
+		bullet = ARMOR_BALLISTIC_PISTOL,
 		laser = ARMOR_LASER_MINOR,
 		energy = ARMOR_ENERGY_MINOR
 		)
@@ -37,6 +38,7 @@
 	name = "maid's headband"
 	desc = "This dainty, frilled thing is apparently meant to go on your head."
 	icon_state = "infhatfem"
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/suit/infilsuit/fem
 	name = "maid's uniform"

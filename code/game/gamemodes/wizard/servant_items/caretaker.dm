@@ -3,24 +3,25 @@
 	desc = "The hood of a shining white robe, with blue trim. Who would possess this robe and still want to hide themself away?"
 	icon_state = "caretakerhood"
 	armor = list(
-		melee = ARMOR_MELEE_KNIVES, 
-		bullet = ARMOR_BALLISTIC_MINOR, 
+		melee = ARMOR_MELEE_KNIVES,
+		bullet = ARMOR_BALLISTIC_MINOR,
 		laser = ARMOR_LASER_SMALL,
-		energy = ARMOR_ENERGY_SMALL, 
+		energy = ARMOR_ENERGY_SMALL,
 		rad = ARMOR_RAD_SHIELDED
 	)
 	species_restricted = list(SPECIES_HUMAN)
 	flags_inv = HIDEEARS | BLOCKHAIR
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/suit/caretakercloak
 	name = "holy cloak"
 	desc = "A shining white and blue robe. For some reason, it reminds you of the holidays."
 	icon_state = "caretakercloak"
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT, 
-		bullet = ARMOR_BALLISTIC_PISTOL, 
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_PISTOL,
 		laser = ARMOR_LASER_HANDGUNS,
-		energy = ARMOR_ENERGY_RESISTANT, 
+		energy = ARMOR_ENERGY_RESISTANT,
 		rad = ARMOR_RAD_SHIELDED
 	)
 

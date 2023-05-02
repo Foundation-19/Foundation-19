@@ -10,6 +10,7 @@
 	siemens_coefficient = 0.9
 	body_parts_covered = 0
 	species_restricted = list("exclude", SPECIES_MONARCH_QUEEN, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE)
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/soft/New()
 	..()

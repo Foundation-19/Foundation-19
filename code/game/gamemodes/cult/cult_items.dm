@@ -60,6 +60,7 @@
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.8 //That's a pretty cool opening in the hood. Also: Cloth making physical contact to the skull.
+	var/hidden_from_codex = TRUE
 
 /obj/item/clothing/head/culthood/magus
 	name = "magus helm"
@@ -128,6 +129,7 @@
 		rad = ARMOR_RAD_MINOR
 	) //Real tanky shit.
 	siemens_coefficient = 0.3 //Bone is not very conducive to electricity.
+	var/hidden_from_codex = TRUE
 
 /obj/item/clothing/suit/space/cult
 	name = "cult armour"

@@ -1,5 +1,3 @@
-
-
 /obj/item/clothing/head/centhat
 	name = "\improper CentComm. hat"
 	icon_state = "centcom"
@@ -10,6 +8,7 @@
 	desc = "It's good to be emperor."
 	siemens_coefficient = 0.9
 	body_parts_covered = 0
+	var/hidden_from_codex = TRUE
 
 /obj/item/clothing/head/hairflower
 	name = "hair flower pin"
@@ -17,6 +16,7 @@
 	desc = "Smells nice."
 	slot_flags = SLOT_HEAD | SLOT_EARS
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/hairflower/blue
 	icon_state = "hairflower_blue"
@@ -37,6 +37,7 @@
 	desc = "A powdered wig."
 	icon_state = "pwig"
 	item_state = "pwig"
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/that
 	name = "top-hat"
@@ -45,18 +46,21 @@
 	item_state = "tophat"
 	siemens_coefficient = 0.9
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/redcoat
 	name = "redcoat's hat"
 	icon_state = "redcoat"
 	desc = "<i>'I guess it's a redhead.'</i>"
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/mailman
 	name = "mail cap"
 	icon_state = "mailman"
 	desc = "<i>Choo-choo</i>!"
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/plaguedoctorhat
 	name = "plague doctor's hat"
@@ -65,6 +69,7 @@
 	permeability_coefficient = 0.01
 	siemens_coefficient = 0.9
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/hasturhood
 	name = "hastur's hood"
@@ -72,6 +77,7 @@
 	icon_state = "hasturhood"
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/nursehat
 	name = "nurse's hat"
@@ -79,6 +85,7 @@
 	icon_state = "nursehat"
 	siemens_coefficient = 0.9
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/syndicatefake
 	name = "red space-helmet replica"
@@ -91,6 +98,7 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	siemens_coefficient = 2.0
 	body_parts_covered = HEAD|FACE|EYES
+	var/hidden_from_codex = TRUE
 
 /obj/item/clothing/head/cueball
 	name = "cueball helmet"
@@ -99,6 +107,7 @@
 	item_state = "cueball"
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/cardborg
 	name = "cardborg helmet"
@@ -107,6 +116,7 @@
 	item_state = "cardborg_h"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	body_parts_covered = HEAD|FACE|EYES
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/cardborg/Initialize()
 	. = ..()
@@ -118,6 +128,7 @@
 	icon_state = "justicered"
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD|EYES
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/justice/blue
 	icon_state = "justiceblue"
@@ -136,6 +147,7 @@
 	desc = "Wearing these makes you looks useless, and only good for your sex appeal."
 	icon_state = "bunny"
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/flatcap
 	name = "flat cap"
@@ -146,6 +158,7 @@
 		slot_r_hand_str = "det_hat",
 		)
 	siemens_coefficient = 0.9
+	var/hidden_from_codex = FALSE
 
 
 /obj/item/clothing/head/mariner
@@ -153,24 +166,28 @@
 	desc = "A cap loved by farmers, sailors and rabblerousers in the whole galaxy."
 	icon_state = "mariner_white"
 	siemens_coefficient = 0.9
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/pirate
 	name = "pirate hat"
 	desc = "Yarr."
 	icon_state = "pirate"
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/hgpiratecap
 	name = "pirate hat"
 	desc = "Yarr."
 	icon_state = "hgpiratecap"
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/bandana
 	name = "pirate bandana"
 	desc = "Yarr."
 	icon_state = "bandana"
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/bandana/green
 	name = "green bandana"
@@ -188,6 +205,7 @@
 	desc = "Gentleman, elite aboard!"
 	icon_state = "bowler"
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 //stylish bs12 hats
 
@@ -196,31 +214,37 @@
 	icon_state = "bowler_hat"
 	desc = "For the gentleman of distinction."
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/beaverhat
 	name = "beaver hat"
 	icon_state = "beaver_hat"
 	desc = "Soft felt makes this hat both comfortable and elegant."
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/boaterhat
 	name = "boater hat"
 	icon_state = "boater_hat"
 	desc = "The ultimate in summer fashion."
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/fedora
 	name = "fedora"
 	icon_state = "fedora"
 	desc = "A sharp, stylish hat."
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/feathertrilby
 	name = "feather trilby"
 	icon_state = "feather_trilby"
 	desc = "A sharp, stylish hat with a feather."
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/fez
 	name = "fez"
 	icon_state = "fez"
 	desc = "You should wear a fez. Fezzes are cool."
+	var/hidden_from_codex = FALSE
 
 //end bs12 hats
 
@@ -230,6 +254,7 @@
 	icon_state = "witch"
 	flags_inv = BLOCKHAIR
 	siemens_coefficient = 2.0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/chicken
 	name = "chicken suit head"
@@ -242,6 +267,7 @@
 	flags_inv = BLOCKHAIR
 	siemens_coefficient = 0.7
 	body_parts_covered = HEAD|FACE|EYES
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/bearpelt
 	name = "bear pelt hat"
@@ -249,6 +275,7 @@
 	icon_state = "bearpelt"
 	flags_inv = BLOCKHAIR
 	siemens_coefficient = 0.7
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/xenos
 	name = "xenos helmet"
@@ -262,6 +289,7 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	siemens_coefficient = 2.0
 	body_parts_covered = HEAD|FACE|EYES
+	var/hidden_from_codex = TRUE
 
 /obj/item/clothing/head/philosopher_wig
 	name = "natural philosopher's wig"
@@ -273,6 +301,7 @@
 		)
 	flags_inv = BLOCKHAIR
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/hijab
 	name = "hijab"
@@ -280,12 +309,14 @@
 	icon_state = "hijab"
 	body_parts_covered = 0
 	flags_inv = BLOCKHAIR
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/kippa
 	name = "kippa"
 	desc = "A small, brimless cap."
 	icon_state = "kippa"
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/turban
 	name = "turban"
@@ -293,6 +324,7 @@
 	icon_state = "turban"
 	body_parts_covered = 0
 	flags_inv = BLOCKHEADHAIR //Shows beards!
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/cowboy_hat
 	name = "cowboy hat"
@@ -300,6 +332,7 @@
 	icon_state = "cowboyhat"
 	item_state = "cowboy_hat"
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/taqiyah
 	name = "taqiyah"
@@ -307,6 +340,7 @@
 	icon_state = "taqiyah"
 	item_state = "taqiyah"
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/rastacap
 	name = "rastacap"
@@ -315,6 +349,7 @@
 	item_state = "rastacap"
 	body_parts_covered = 0
 	flags_inv = BLOCKHEADHAIR
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/tank
 	name = "padded cap"
@@ -326,6 +361,7 @@
 		melee = ARMOR_MELEE_KNIVES,
 		bomb = ARMOR_BOMB_PADDED
 		)
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/tank/olive
 	color = "#727c58"
@@ -339,6 +375,7 @@
 	icon_state = "beanie"
 	item_state = "beanie"
 	body_parts_covered = 0
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/head/helmet/facecover
 	name = "face cover"

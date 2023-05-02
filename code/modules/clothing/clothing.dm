@@ -218,6 +218,7 @@
 	throwforce = 2
 	slot_flags = SLOT_EARS
 	var/volume_multiplier = 1
+	var/hidden_from_codex = TRUE
 
 /obj/item/clothing/ears/update_clothing_icon()
 	if (ismob(src.loc))
@@ -232,6 +233,7 @@
 	slot_flags = SLOT_EARS | SLOT_TWOEARS
 	audio_insulation = A_INSL_PERFECT
 	volume_multiplier = 0.1
+	var/hidden_from_codex = FALSE
 
 
 ///////////////////////////////////////////////////////////////////////
@@ -260,6 +262,7 @@ BLIND     // can't see anything
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_eyes_vox_armalis.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_eyes_unathi.dmi',
 	)
+	var/hidden_from_codex = TRUE
 
 /obj/item/clothing/glasses/get_icon_state(mob/user_mob, slot)
 	if(item_state_slots && item_state_slots[slot])
@@ -297,6 +300,7 @@ BLIND     // can't see anything
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_hands_unathi.dmi',
 		)
 	blood_overlay_type = "bloodyhands"
+	var/hidden_from_codex = TRUE
 
 /obj/item/clothing/gloves/Initialize()
 	if(item_flags & ITEM_FLAG_PREMODIFIED)
@@ -411,6 +415,7 @@ BLIND     // can't see anything
 	var/light_applied
 	var/brightness_on
 	var/on = 0
+	var/hidden_from_codex = TRUE
 
 /obj/item/clothing/head/equipped(mob/user, slot)
 	light_overlay_image = null
@@ -535,6 +540,7 @@ BLIND     // can't see anything
 	var/hanging = 0
 	var/list/filtered_gases
 	blood_overlay_type = "maskblood"
+	hidden_from_codex = TRUE
 
 /obj/item/clothing/mask/proc/filters_water()
 	return FALSE

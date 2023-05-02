@@ -3,14 +3,15 @@
 	desc = "A dark hood with blood-red trim. Something about the fabric blocks more light than it should."
 	icon_state = "fiendhood"
 	armor = list(
-		melee = ARMOR_MELEE_KNIVES, 
-		bullet = ARMOR_BALLISTIC_MINOR, 
+		melee = ARMOR_MELEE_KNIVES,
+		bullet = ARMOR_BALLISTIC_MINOR,
 		laser = ARMOR_LASER_SMALL,
-		energy = ARMOR_ENERGY_SMALL, 
+		energy = ARMOR_ENERGY_SMALL,
 		rad = ARMOR_RAD_SHIELDED
 	)
 	species_restricted = list(SPECIES_HUMAN)
 	flags_inv = HIDEEARS | BLOCKHAIR
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/suit/fiendcowl
 	name = "fiend's cowl"
@@ -18,10 +19,10 @@
 	icon_state = "fiendcowl"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT, 
-		bullet = ARMOR_BALLISTIC_PISTOL, 
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_PISTOL,
 		laser = ARMOR_LASER_HANDGUNS,
-		energy = ARMOR_ENERGY_RESISTANT, 
+		energy = ARMOR_ENERGY_RESISTANT,
 		rad = ARMOR_RAD_SHIELDED
 	)
 
@@ -42,6 +43,7 @@
 	desc = "To gaze upon this is to gaze into an inferno. Look away, before it looks back of its own accord."
 	icon_state = "fiendvisage"
 	flags_inv = HIDEEARS | BLOCKHAIR
+	var/hidden_from_codex = FALSE
 
 /obj/item/clothing/suit/fiendcowl/fem
 	name = "fiend's robe"
