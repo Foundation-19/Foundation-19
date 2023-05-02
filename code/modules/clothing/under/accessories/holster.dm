@@ -11,7 +11,6 @@
 
 /obj/item/clothing/accessory/storage/holster/Initialize()
 	. = ..()
-	INIT_SKIP_QDELETED
 	set_extension(src, /datum/extension/holster, container, sound_in, sound_out, can_holster)
 
 /obj/item/clothing/accessory/storage/holster/attackby(obj/item/W as obj, mob/user as mob)
