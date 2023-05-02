@@ -4,6 +4,7 @@
 	var/obj/item/clothing/head/winterhood/hood
 	var/hoodtype = null //so the chaplain hoodie or other hoodies can override this
 	var/suittoggled = 0
+	hidden_from_codex = TRUE
 
 /obj/item/clothing/suit/storage/hooded/New()
 	MakeHood()
@@ -79,6 +80,7 @@
 	hoodtype = /obj/item/clothing/head/winterhood
 	allowed = list (/obj/item/pen, /obj/item/paper, /obj/item/device/flashlight,/obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
 	siemens_coefficient = 0.6
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/winterhood
 	name = "winter hood"
@@ -169,6 +171,7 @@
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
 	action_button_name = "Toggle Hood"
 	hoodtype = /obj/item/clothing/head/hoodiehood
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/hoodiehood
 	name = "hoodie hood"
