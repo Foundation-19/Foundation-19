@@ -28,4 +28,12 @@
 /datum/codex_entry/vending_refill
 	associated_paths = list(/obj/structure/vending_refill)
 	lore_text = "Vendor restock containers are notoriously difficult to open, representing the pinnacle of humanity's antitheft technologies."
-	lore_text = "Drag to a vendor to restock. Generally can not be opened."
+	mechanics_text = "Drag to a vendor to restock. Generally can not be opened."
+
+/datum/codex_entry/window
+	associated_paths = list()
+	mechanics_text = "If damaged, it can be repaired by applying more material, then welding it. To fully repair damage, full windows need 4 sheets, and directional windows need 1 sheet."
+
+/datum/codex_entry/window/New()
+	associated_paths += typesof(/obj/structure/window)
+	. = ..()
