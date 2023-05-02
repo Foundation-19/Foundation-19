@@ -11,7 +11,7 @@
 	var/codex_description
 	var/ooc_codex_information
 	var/cyborg_noun = "Cyborg"
-	hidden_from_codex = TRUE
+	var/hidden_from_codex = TRUE
 
 	// Icon/appearance vars.
 	var/icobase =      'icons/mob/human_races/species/human/body.dmi'          // Normal icon set.

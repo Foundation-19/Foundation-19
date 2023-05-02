@@ -22,7 +22,7 @@
 	var/shorthand = "???"			  // Shorthand that shows up in chat for this language.
 	var/list/partial_understanding				  // List of languages that can /somehwat/ understand it, format is: name = chance of understanding a word
 	var/warning = ""
-	hidden_from_codex			  // If it should not show up in Codex
+	var/hidden_from_codex			  // If it should not show up in Codex
 	var/category = /datum/language    // Used to point at root language types that shouldn't be visible
 	var/has_written_form = FALSE
 

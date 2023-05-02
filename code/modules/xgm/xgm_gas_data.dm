@@ -47,7 +47,7 @@
 	var/breathed_product
 	var/condensation_point = INFINITY
 	var/condensation_product
-	hidden_from_codex
+	var/hidden_from_codex
 	var/symbol_html = "X"
 	var/symbol = "X"
 

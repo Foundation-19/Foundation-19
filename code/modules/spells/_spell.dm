@@ -65,7 +65,7 @@ var/list/spells = typesof(/datum/spell) //needed for the badmin verb for now
 	var/mob/living/deity/connected_god //Do we have this spell based off a boon from a god?
 	var/obj/screen/connected_button
 
-	hidden_from_codex = FALSE
+	var/hidden_from_codex = FALSE
 
 	var/mob/living/ranged_ability_user
 	var/ranged_clickcd_override = -1
