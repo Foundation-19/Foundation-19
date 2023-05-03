@@ -1,0 +1,5 @@
+author: HaultyAnonie
+delete-after: true
+changes:
+  - rscadd: RCD to steal objective
+  - code_imp: made code to escape the shuttle to then a train
