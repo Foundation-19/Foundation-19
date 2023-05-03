@@ -1,7 +1,0 @@
-author: casualspacestation14enjoyer
-delete-after: true
-changes:
-  - rscadd: When 049 wakes up, there will now be an announcement so it ain't just
-      waiting around in a cell.
-  - soundadd: Added new 049 wake up sounds
-  - soundadd: Added new 173 event sounds (acid idk)
