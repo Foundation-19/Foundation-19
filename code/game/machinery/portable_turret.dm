@@ -47,7 +47,7 @@
 
 	var/attacked = 0		//if set to 1, the turret gets pissed off and shoots at people nearby (unless they have sec access!)
 
-	var/enabled = 1				//determines if the turret is on
+	var/enabled = 1			//determines if the turret is on
 	var/lethal = 0			//whether in lethal or stun mode
 	var/disabled = 0
 
@@ -756,11 +756,11 @@ var/list/turret_icons
 
 		if(4)
 			if(isprox(I))
-				build_step = 5
 				if(!user.unEquip(I))
 					to_chat(user, SPAN_NOTICE("\the [I] is stuck to your hand, you cannot put it in \the [src]"))
 					return
 				to_chat(user, SPAN_NOTICE("You add the prox sensor to the turret."))
+				build_step = 5
 				qdel(I)
 				return
 

@@ -210,6 +210,13 @@ ARMCHAIR(yellow)
 	time = 25
 	send_material_data = 0
 
+/datum/stack_recipe/furniture/contraband_detector
+	title = "contraband detector frame"
+	result_type = /obj/machinery/contraband_detector_construct
+	req_amount = 3
+	time = 15
+	send_material_data = 0
+
 /datum/stack_recipe/furniture/door_assembly
 	req_amount = 4
 	time = 50

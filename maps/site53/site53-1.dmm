@@ -2706,6 +2706,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/contraband_detector,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/recreationhallway)
 "gb" = (
@@ -10321,6 +10322,15 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
+"xR" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/contraband_detector,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/recreationhallway)
 "xS" = (
 /obj/machinery/light{
 	dir = 8
@@ -18082,6 +18092,10 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost)
+"Sk" = (
+/obj/machinery/contraband_detector,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/recreationhallway)
 "Sl" = (
 /obj/machinery/door/airlock/research{
 	name = "Containment Chamber";
@@ -36581,8 +36595,8 @@ vH
 Fk
 Jq
 xo
-iK
-iS
+xR
+Sk
 kT
 uf
 uf
@@ -38616,7 +38630,7 @@ gu
 gu
 gu
 ky
-iS
+Sk
 ga
 dq
 dq
