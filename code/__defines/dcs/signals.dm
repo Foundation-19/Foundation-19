@@ -29,5 +29,7 @@
 /// sent every carbon Life()
 #define COMSIG_CARBON_LIFE "carbon_life"
 
-/// sent by a turf when a movable atom moves onto it
-#define COMSIG_TURF_STEPPED_ON "turf_stepped_on"
+/// sent by atom's Entered()
+#define COMSIG_ENTERED "entered"
+/// sent by atom's Exited()
+#define COMSIG_EXITED "exited"

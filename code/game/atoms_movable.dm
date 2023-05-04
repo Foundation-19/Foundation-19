@@ -125,8 +125,6 @@
 			for (var/datum/light_source/L in light_sources)
 				L.source_atom.update_light()
 
-		SEND_SIGNAL(loc, COMSIG_TURF_STEPPED_ON, src)
-
 //called when src is thrown into hit_atom
 /atom/movable/proc/throw_impact(atom/hit_atom, datum/thrownthing/TT)
 	if(istype(hit_atom,/mob/living))

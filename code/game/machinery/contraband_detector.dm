@@ -24,29 +24,30 @@
 	announce.internal_channels = list(num2text(SEC_LCZ_FREQ) = list(ACCESS_SECURITY_LVL2))
 	. = ..()
 	if(anchored)
-		RegisterSignal(loc, COMSIG_TURF_STEPPED_ON, .proc/detect_contraband)
+		RegisterSignal(loc, COMSIG_ENTERED, .proc/detect_contraband)
 
 /obj/machinery/contraband_detector/Initialize()
 	. = ..()
 	announce.internal_channels = list(num2text(SEC_LCZ_FREQ) = list(ACCESS_SECURITY_LVL2))
 	announce.set_frequency(SEC_LCZ_FREQ)
 
-/obj/machinery/contraband_detector/set_broken()
+/obj/machinery/contraband_detector/set_broken(new_state)
 	. = ..()
-	announce_tampering()
+	if(new_state)
+		announce_tampering()
 
 /obj/machinery/contraband_detector/ex_act(severity)
 	. = ..()
 	if(prob(100 - (severity * 20)))
 		src.set_broken(TRUE)
 
-/obj/machinery/contraband_detector/proc/detect_contraband(turf/T, atom/movable/A)
+/obj/machinery/contraband_detector/proc/detect_contraband(turf/T, atom/movable/A)	// T isn't used, but it's passed by the signal as first argument so don't remove it
 	if(!identifier_wire_cut && (((identifier_wire_pulsed_until < world.time) && identifier_wire_pulsed_until != 0) || A.has_contraband()))
 		flick("detected", src)
 		visible_message(SPAN_WARNING("\The [src] detects contraband on \the [A.name]!"))
 		if(!radio_wire_cut)
 			var/area/AR = get_area(src)
-			announce.autosay("Contraband detected on \the [A] at \the [AR.name]!", "Contraband Detection System")	// this function is costly as FUCK right now, please fix ASAP
+			announce.autosay("Contraband detected on \the [A] at \the [AR.name]!", "Contraband Detection System")
 
 /obj/machinery/contraband_detector/proc/announce_tampering()
 	var/area/AR = get_area(src)
@@ -97,13 +98,13 @@
 				anchored = TRUE
 				update_icon()
 				to_chat(user, SPAN_NOTICE("You secure the exterior bolts on the contraband detector."))
-				RegisterSignal(loc, COMSIG_TURF_STEPPED_ON, .proc/detect_contraband)
+				RegisterSignal(loc, COMSIG_ENTERED, .proc/detect_contraband)
 			else if(anchored)
 				playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
 				anchored = FALSE
 				to_chat(user, SPAN_NOTICE("You unsecure the exterior bolts on the contraband detector."))
 				update_icon()
-				UnregisterSignal(loc, COMSIG_TURF_STEPPED_ON)
+				UnregisterSignal(loc, COMSIG_ENTERED)
 		wrenching = FALSE
 	if(istype(I, /obj/item/card/id) || istype(I, /obj/item/modular_computer))
 		if(emagged)
@@ -258,6 +259,8 @@
 	else
 		return FALSE
 
+// CONTRABAND ITEMS : shit that we count as contraband
+
 /obj/item/gun/has_contraband()
 	return TRUE
 
@@ -308,3 +311,14 @@
 
 /obj/item/material/harpoon/has_contraband()
 	return TRUE
+
+// UNREAL ITEMS : shit that the scanner shouldn't look at (like ghosts)
+
+/mob/observer/has_contraband()
+	return FALSE
+
+/obj/screen/has_contraband()
+	return FALSE
+
+/obj/skybox/has_contraband()
+	return FALSE
