@@ -137,7 +137,11 @@
 #define WIRE_RIG_INTERFACE_LOCK "Interface Lock"
 #define WIRE_RIG_INTERFACE_SHOCK "Interface Shock"
 
-//Telebeacon
+// Telebeacon
 #define WIRE_TELEBEACON_POWER "Power"
 #define WIRE_TELEBEACON_RELAY "Relay"
 #define WIRE_TELEBEACON_SIGNALLER "Signaller"
+
+// Contraband Detector
+#define WIRE_CONTRADETECT_IDENTIFIER "Identifier"
+#define WIRE_CONTRADETECT_ALARM "Alarm"

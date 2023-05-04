@@ -282,6 +282,7 @@
 	if(.)
 		SSnano.update_uis(src)
 
+// optimize ASAP, holy shit who made this
 /obj/item/device/radio/proc/autosay(message, from, channel) //BS12 EDIT
 	var/datum/radio_frequency/connection = null
 	if(channel && channels && channels.len > 0)
