@@ -30,4 +30,4 @@
 #define COMSIG_CARBON_LIFE "carbon_life"
 
 /// sent by a turf when a movable atom moves onto it
-#define COMSIG_TURF_CROSSED "turf_crossed"
+#define COMSIG_TURF_STEPPED_ON "turf_stepped_on"
