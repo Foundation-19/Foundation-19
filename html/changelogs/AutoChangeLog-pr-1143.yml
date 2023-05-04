@@ -1,0 +1,4 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - code_imp: Adds functionality for abstract objects.
