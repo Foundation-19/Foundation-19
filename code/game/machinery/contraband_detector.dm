@@ -35,6 +35,12 @@
 	. = ..()
 	announce_tampering()
 
+/obj/machinery/contraband_detector/ex_act(severity)
+	. = ..()
+	if(prob(100 - (severity * 20)))
+		src.set_broken(TRUE)
+
+
 /obj/machinery/contraband_detector/proc/detect_contraband(turf/T, atom/movable/A)
 	if(!identifier_wire_cut && (((identifier_wire_pulsed_until < world.time) && identifier_wire_pulsed_until != 0) || A.has_contraband()))
 		flick("detected", src)
