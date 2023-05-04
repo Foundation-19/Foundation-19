@@ -622,6 +622,27 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "hallC1"
 
+// Produces an alert upon entering any dclass area
+GLOBAL_LIST_EMPTY(dclass_warning_cooldown)
+/area/site53/llcz/dclass/Entered(atom/A)
+	if(!istype(A, /mob/living))
+		return
+
+	var/mob/living/L = A
+	if(!L.ckey)
+		return
+
+	if(GLOB.dclass_warning_cooldown[L.ckey] > world.time)
+		return
+
+	if(isnull(L.lastarea) || istype(L.lastarea, /area/site53/llcz/dclass))
+		return
+
+	L.playsound_local(get_turf(L), 'sound/effects/pvp_alert.ogg', 50)
+	show_blurb(L, 3 SECONDS, "You are now entering PVP zone.")
+	GLOB.dclass_warning_cooldown[L.ckey] = world.time + 30 SECONDS
+	return ..()
+
 /area/site53/llcz/dclass/recreationhallway
 	name = "\improper Recreation Hallway"
 	area_flags = AREA_FLAG_RAD_SHIELDED
