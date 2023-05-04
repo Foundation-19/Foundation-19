@@ -157,7 +157,7 @@ var/global/list/rad_collectors = list()
 			explosion(T, -1, -1, 0)
 			QDEL_NULL(P)
 	disconnect_from_network()
-	stat |= BROKEN
+	stat.set_broken(TRUE)
 	melted = TRUE
 	anchored = FALSE
 	active = FALSE

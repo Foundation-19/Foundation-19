@@ -198,18 +198,6 @@ GLOBAL_LIST_INIT(conveyor_switches, list())
 		return FALSE
 	return TRUE
 
-// make the conveyor broken and propagate inoperability to any connected conveyor with the same conveyor datum
-/obj/machinery/conveyor/proc/make_broken()
-	stat |= BROKEN
-	operable = FALSE
-	update_icon()
-	var/obj/machinery/conveyor/C = locate() in get_step(src, forwards)
-	if(C)
-		C.set_operable(TRUE, id, FALSE)
-	C = locate() in get_step(src, backwards)
-	if(C)
-		C.set_operable(FALSE, id, FALSE)
-
 /obj/machinery/conveyor/proc/set_operable(propagate_forwards, match_id, op) //Sets a conveyor inoperable if ID matches it, and propagates forwards / backwards
 	if(id != match_id)
 		return
