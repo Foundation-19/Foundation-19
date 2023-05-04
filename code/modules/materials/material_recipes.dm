@@ -4,9 +4,11 @@
 		LAZYSET(recipes,key,generate_recipes(reinf_mat))
 	return recipes[key]
 
-/material/proc/create_recipe_list(base_type)
+/material/proc/create_recipe_list(base_type, list/exceptions = list())
 	. = list()
 	for(var/recipe_type in subtypesof(base_type))
+		if(recipe_type in exceptions)
+			continue
 		. += new recipe_type(src)
 
 /material/proc/generate_recipes(reinforce_material)
@@ -164,7 +166,7 @@
 	. = ..()
 	if(reinforce_material)	//recipies below don't support composite materials
 		return
-	. += create_recipe_list(/datum/stack_recipe/box)
+	. += create_recipe_list(/datum/stack_recipe/box, list(/datum/stack_recipe/box/aluminum))
 	. += new/datum/stack_recipe/cardborg_suit(src)
 	. += new/datum/stack_recipe/cardborg_helmet(src)
 	. += new/datum/stack_recipe_list("folders", create_recipe_list(/datum/stack_recipe/folder))
@@ -174,3 +176,4 @@
 	if(reinforce_material)	//recipies below don't support composite materials
 		return
 	. += new/datum/stack_recipe/grenade(src)
+	. += new/datum/stack_recipe/box/aluminum(src)
