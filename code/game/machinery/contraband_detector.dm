@@ -24,7 +24,7 @@
 	announce.internal_channels = list(num2text(SEC_LCZ_FREQ) = list(ACCESS_SECURITY_LVL2))
 	. = ..()
 	if(anchored)
-		RegisterSignal(loc, COMSIG_TURF_CROSSED, .proc/detect_contraband)
+		RegisterSignal(loc, COMSIG_TURF_STEPPED_ON, .proc/detect_contraband)
 
 /obj/machinery/contraband_detector/Initialize()
 	. = ..()
@@ -39,7 +39,6 @@
 	. = ..()
 	if(prob(100 - (severity * 20)))
 		src.set_broken(TRUE)
-
 
 /obj/machinery/contraband_detector/proc/detect_contraband(turf/T, atom/movable/A)
 	if(!identifier_wire_cut && (((identifier_wire_pulsed_until < world.time) && identifier_wire_pulsed_until != 0) || A.has_contraband()))
@@ -98,13 +97,13 @@
 				anchored = TRUE
 				update_icon()
 				to_chat(user, SPAN_NOTICE("You secure the exterior bolts on the contraband detector."))
-				RegisterSignal(loc, COMSIG_TURF_CROSSED, .proc/detect_contraband)
+				RegisterSignal(loc, COMSIG_TURF_STEPPED_ON, .proc/detect_contraband)
 			else if(anchored)
 				playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
 				anchored = FALSE
 				to_chat(user, SPAN_NOTICE("You unsecure the exterior bolts on the contraband detector."))
 				update_icon()
-				UnregisterSignal(loc, COMSIG_TURF_CROSSED)
+				UnregisterSignal(loc, COMSIG_TURF_STEPPED_ON)
 		wrenching = FALSE
 	if(istype(I, /obj/item/card/id) || istype(I, /obj/item/modular_computer))
 		if(emagged)
