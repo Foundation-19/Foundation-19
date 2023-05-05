@@ -1,0 +1,12 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - balance: BODA dispenser was changed to a Water Dispenser, which does NOT dispense
+      glass.
+  - imageadd: BODA dispenser sprite altered.
+  - balance: The Class-D seed servitor charges money.
+  - balance: Disarming has been changed to be less buggy, less random, and less OP.
+  - balance: The D-block built-in medbay has upped security. It should now be harder
+      for D-class rioters to steal the dispenser.
+  - rscdel: Rogue maintenance drone event has been removed.
+  - code_imp: General improvements.
