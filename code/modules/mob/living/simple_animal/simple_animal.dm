@@ -188,6 +188,8 @@
 	.=..()
 	if(show_stat_health)
 		. += "Health: [round((health / maxHealth) * 100)]%"
+	if(needs_reload)
+		. += "Ammo: [max(0, reload_max - reload_count)]/[reload_max]"
 
 /mob/living/simple_animal/death(gibbed, deathmessage = "dies!", show_dead_message)
 	. = ..()
