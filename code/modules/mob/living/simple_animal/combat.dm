@@ -57,10 +57,25 @@
 /mob/living/simple_animal/proc/apply_bonus_melee_damage(atom/A, damage_amount)
 	return damage_amount
 
+/mob/living/simple_animal/proc/GetRangedCooldown()
+	return ranged_attack_cooldown + (ranged_burst_count * ranged_burst_delay)
+
 //The actual top-level ranged attack proc
 /mob/living/simple_animal/proc/shoot_target(atom/A)
 	set waitfor = FALSE
-	setClickCooldown(get_attack_speed())
+
+	if(!projectiletype)
+		return
+
+	setClickCooldown(GetRangedCooldown())
+
+	if(needs_reload)
+		if(reload_count >= reload_max)
+			try_reload()
+			return FALSE
+
+	if(QDELETED(A))
+		return
 
 	face_atom(A)
 
@@ -68,18 +83,17 @@
 		ranged_pre_animation(A)
 		handle_attack_delay(A, ranged_attack_delay) // This will sleep this proc for a bit, which is why waitfor is false.
 
-	if(needs_reload)
-		if(reload_count >= reload_max)
-			try_reload()
-			return FALSE
-
 	if(stat == DEAD) // In case you died during that attack_delay
 		return
 
 	visible_message(SPAN_DANGER("<b>\The [src]</b> fires at \the [A]!"))
 	shoot(A)
-	if(casingtype)
-		new casingtype(loc)
+	if(ranged_burst_count > 1)
+		for(var/i = 1 to ranged_burst_count)
+			addtimer(CALLBACK(src, .proc/shoot, A), i * ranged_burst_delay)
+			if(needs_reload)
+				if(reload_count >= reload_max)
+					break
 
 	if(ranged_attack_delay)
 		ranged_post_animation(A)
@@ -89,19 +103,36 @@
 
 // Shoot a bullet at something.
 /mob/living/simple_animal/proc/shoot(atom/A)
+	if(QDELETED(A))
+		return
+
 	if(A == get_turf(src))
 		return
 
+	if(needs_reload)
+		if(reload_count >= reload_max)
+			try_reload()
+			return FALSE
+
 	face_atom(A)
 
-	var/obj/item/projectile/P = new projectiletype(src.loc)
+	var/obj/item/projectile/P = new projectiletype(get_turf(src))
 	if(!P)
 		return
 
-	// If the projectile has its own sound, use it.
-	// Otherwise default to the mob's firing sound.
-	playsound(src, P.fire_sound ? P.fire_sound : projectilesound, 80, 1)
-	show_sound_effect(src.loc, src)
+	if(casingtype)
+		var/obj/item/ammo_casing/casing = new casingtype(get_turf(src))
+		casing.expend()
+		casing.pixel_x = rand(-10, 10)
+		casing.pixel_y = rand(-10, 10)
+		if(casing_disappears)
+			casing.mouse_opacity = 0 // So people don't pick it up
+			animate(casing, alpha = 0, time = casing_disappears)
+			QDEL_IN(casing, casing_disappears)
+
+	// If mob has set projectilesound - use it
+	// Otherwise use the one projectile has set to it
+	playsound(src, projectilesound ? projectilesound : P.fire_sound, 80, 1)
 
 	// For some reason there isn't an argument for accuracy, so access the projectile directly instead.
 	// Also, placing dispersion here instead of in forced_spread will randomize the chosen angle between dispersion and -dispersion in fire() instead of having to do that here.

@@ -69,7 +69,7 @@
 
 	var/static/alternative_targets = typecacheof(list(/obj/item/organ))
 	for(var/obj/item/organ/O in typecache_filter_list(range(vision_range, holder), alternative_targets))
-		if(can_see(holder, O, vision_range) && !BP_IS_ROBOTIC(O))
+		if(can_see_by_step(holder, O, vision_range) && !BP_IS_ROBOTIC(O))
 			. += O
 
 /datum/ai_holder/simple_animal/infestation/assembler/pick_target(list/targets)

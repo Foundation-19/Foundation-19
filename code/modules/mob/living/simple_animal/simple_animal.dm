@@ -53,7 +53,10 @@
 	var/projectilesound				// The sound I make when I do it
 	var/projectile_accuracy = 0		// Accuracy modifier to add onto the bullet when its fired.
 	var/projectile_dispersion = 0	// How many degrees to vary when I do it.
+	/// Type of a casing to spawn alongside with projectile.
 	var/casingtype
+	/// If not 0, casing will self-delete after set amount of time in this variable
+	var/casing_disappears = 0
 
 	// Reloading settings, part of ranged code
 	var/needs_reload = FALSE							// If TRUE, mob needs to reload occasionally
@@ -73,6 +76,8 @@
 	var/melee_attack_delay = 2			// If set, the mob will do a windup animation and can miss if the target moves out of the way.
 	var/ranged_attack_delay = null
 	var/special_attack_delay = null
+
+	var/ranged_attack_cooldown = DEFAULT_ATTACK_COOLDOWN
 
 	//Mob interaction
 	var/list/friends = list()		// Mobs on this list wont get attacked regardless of faction status.
@@ -161,6 +166,13 @@
 	var/return_damage_min
 	var/return_damage_max
 
+	// For ranged bursts
+	var/ranged_burst_count = 0
+	var/ranged_burst_delay = 5
+
+	// List of potential death sounds, if any
+	var/list/death_sounds = list()
+
 /mob/living/simple_animal/Initialize()
 	. = ..()
 	if(LAZYLEN(natural_armor))
@@ -178,13 +190,19 @@
 		. += "Health: [round((health / maxHealth) * 100)]%"
 
 /mob/living/simple_animal/death(gibbed, deathmessage = "dies!", show_dead_message)
-	. = ..(gibbed,deathmessage,show_dead_message)
+	. = ..()
+	if(!.)
+		return
 	drop_loot()
+	if(QDELETED(src)) // Gibbed/dusted/otherwise gone
+		return
 	icon_state = icon_dead
 	update_icon()
 	density = FALSE
 	adjustBruteLoss(maxHealth) //Make sure dey dead.
 	walk_to(src,0)
+	if(LAZYLEN(death_sounds))
+		playsound(src, pick(death_sounds), 50, TRUE)
 
 /mob/living/simple_animal/proc/drop_loot()
 	if(!LAZYLEN(loot_list))
@@ -320,7 +338,10 @@
 		if(turn_sound && dir != old_dir)
 			playsound(src, turn_sound, 50, 1)
 		else if(movement_sound && old_turf != get_turf(src)) // Playing both sounds at the same time generally sounds bad.
-			playsound(src, movement_sound, 50, 1)
+			PlayMovementSound()
+
+/mob/living/simple_animal/proc/PlayMovementSound()
+	playsound(src, movement_sound, 50, 1)
 
 /mob/living/simple_animal/movement_delay()
 	. = movement_cooldown
