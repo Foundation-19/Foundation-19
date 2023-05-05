@@ -99,6 +99,8 @@
 
 	if(href_list["dispense"])
 		var/label = href_list["dispense"]
+		if(!user.skill_check(core_skill, SKILL_BASIC) && prob(25))
+			label = pick(disp_reagents)
 		if(disp_reagents[label] && container && container.is_open_container())
 			var/datum/reagent/R = disp_reagents[label]
 			var/mult = 1 + (-0.5 + round(rand(), 0.1))*(user.skill_fail_chance(core_skill, 0.3, SKILL_TRAINED))

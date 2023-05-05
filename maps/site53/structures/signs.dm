@@ -154,12 +154,8 @@
 
 /obj/effect/landmark/corpse/classd
 	name = "Class D"
-	corpse_outfits = list(/decl/hierarchy/outfit/job/site90/crew/civ/classd)
+	corpse_outfits = list(/decl/hierarchy/outfit/job/civ/classd)
 
 /obj/effect/landmark/corpse/classdescaped
 	name = "Class D"
-	corpse_outfits = list(/decl/hierarchy/outfit/job/site90/crew/civ/classd/geared)
-
-/obj/effect/landmark/corpse/scientist
-	name = "Scientist"
-	corpse_outfits = list(/decl/hierarchy/outfit/job/site90/crew/science/scientist, /decl/hierarchy/outfit/job/site90/crew/science/juniorscientist, /decl/hierarchy/outfit/job/site90/crew/science/seniorscientist)
+	corpse_outfits = list(/decl/hierarchy/outfit/zombie/classd)

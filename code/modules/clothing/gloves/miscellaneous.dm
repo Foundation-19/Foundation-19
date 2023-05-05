@@ -213,3 +213,9 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+
+/obj/item/clothing/gloves/foundation_service
+	name = "service gloves"
+	desc = "A pair of dark grey Foundation gloves, with soft padding to make them comfortable to wear."
+	icon_state = "black"
+	item_state = "bgloves"

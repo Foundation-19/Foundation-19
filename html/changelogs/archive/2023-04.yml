@@ -226,3 +226,34 @@
   - admin: Player joined round log now uses alt job title
   - admin: Show player info now gets player age from db if client is not connected,
       meaning admins can see disconnected clients' player ages
+2023-04-26:
+  checkraisefold:
+  - admin: Mods get game panel access.
+  - admin: The skill panel no longer does nothing for mods.
+  - admin: Mods can now AI interact as ghost.
+  - admin: Mods can now free job slots in the crew.
+  - bugfix: Player age in show player info now actually works for offline clients
+  - balance: Limbs flying off no longer instantly explodes people's body.
+2023-04-27:
+  checkraisefold:
+  - admin: Show today server log works correctly after a current round passes 12am
+      server timezone
+2023-04-29:
+  casualspacestation14enjoyer:
+  - rscadd: When 049 wakes up, there will now be an announcement so it ain't just
+      waiting around in a cell.
+  - soundadd: Added new 049 wake up sounds
+  - soundadd: Added new 173 event sounds (acid idk)
+  checkraisefold:
+  - admin: Mods get Create Centcom Report verb
+  cheesePizza2:
+  - admin: Supply and drop pods improved.
+  - rscdel: Deleted some unused non-SCP outfits.
+  - bugfix: Fixes outfit and loadout bugs (FOR REAL THIS TIME)
+  - code_imp: MASSIVE outfit and job cleanup.
+  - rscadd: You can make improvised tools (screwdrivers, wirecutters, crowbars, and
+      wrenches) with duct tape! There's a manual for it in the D-class janitor closet.
+  - rscadd: Duct tape placed around the map.
+2023-04-30:
+  cheesePizza2:
+  - bugfix: SD access has been fixed.

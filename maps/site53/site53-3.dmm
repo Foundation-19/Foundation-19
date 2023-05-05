@@ -3645,6 +3645,9 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/obj/structure/table/standard,
+/obj/item/tape_roll,
+/obj/item/tape_roll,
 /turf/simulated/floor/plating,
 /area/site53/uez/janitor)
 "jw" = (
@@ -5396,9 +5399,6 @@
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 10
 	},
-/obj/item/storage/secure/briefcase/money,
-/obj/item/device/radio,
-/obj/structure/closet/secure_closet/personal{
 	name = "Representative's Locker"
 	},
 /turf/simulated/floor/tiled/monotile/white,
@@ -8378,10 +8378,6 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/logistics/logistics)
 "Od" = (
-/obj/effect/floor_decal/corner/orange/border{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile/white,
 /area/site53/uez/goirepoffice)
 "Of" = (
 /obj/structure/disposalpipe/segment{
@@ -39946,13 +39942,6 @@ cR
 ed
 MX
 MX
-mk
-GW
-UI
-UI
-UI
-qA
-XD
 rm
 rm
 rm
