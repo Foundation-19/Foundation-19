@@ -17,7 +17,6 @@
 
 			if(isnewplayer(C.mob))
 				entry += " - <b>IN LOBBY</b>"
-				Lines += entry
 			else
 				entry += " - Playing as [C.mob.real_name ? C.mob.real_name : C.mob.name]"
 				switch(C.mob.stat)
