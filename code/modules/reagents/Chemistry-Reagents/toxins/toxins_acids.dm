@@ -134,7 +134,7 @@
 	description = "Polytrinic acid is a an extremely corrosive chemical substance."
 	color = "#8e18a9"
 	acid_power = 7
-	meltdose = 6
+	meltdose = 5
 	max_damage = 60
 
 

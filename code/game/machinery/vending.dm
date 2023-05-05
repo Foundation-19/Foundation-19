@@ -1041,9 +1041,9 @@
 	icon_deny = "nutri_generic-deny"
 
 /obj/machinery/vending/hydroseeds
-	name = "\improper MegaSeed Servitor"
-	desc = "When you need seeds fast!"
-	product_slogans = "THIS'S WHERE TH' SEEDS LIVE! GIT YOU SOME!;Hands down the best seed selection this half of the galaxy!;Also certain mushroom varieties available, more for experts! Get certified today!"
+	name = "\improper MegaSneed Servitor"
+	desc = "When you need seeds fast! Formerly Chuck's."
+	product_slogans = "THIS'S WHERE TH' SEEDS LIVE! GIT YOU SOME!;Hands down the best seed selection in the world!;Also certain mushroom varieties available, more for experts! Get certified today!"
 	product_ads = "We like plants!;Grow some crops!;Grow, baby, growww!;Aw h'yeah son!"
 	icon_state = "seeds"
 	icon_vend = "seeds-vend"
@@ -1063,6 +1063,15 @@
 /obj/machinery/vending/hydroseeds/vend(datum/stored_items/vending_products/R, mob/user)
 	..()
 	flick("[icon_state]-shelf[rand(3)]", src)
+
+/obj/machinery/vending/hydroseeds/priced
+	desc = "When you need seeds fast! This one has a pricing unit attached by the Foundation."
+	prices = list(/obj/item/seeds/bananaseed = 3,/obj/item/seeds/berryseed = 3,/obj/item/seeds/carrotseed = 3,/obj/item/seeds/chantermycelium = 3,/obj/item/seeds/chiliseed = 3,
+					/obj/item/seeds/cornseed = 3, /obj/item/seeds/eggplantseed = 3, /obj/item/seeds/potatoseed = 3, /obj/item/seeds/replicapod = 3,/obj/item/seeds/soyaseed = 3,
+					/obj/item/seeds/sunflowerseed = 3,/obj/item/seeds/tomatoseed = 3,/obj/item/seeds/towermycelium = 3,/obj/item/seeds/wheatseed = 3,/obj/item/seeds/appleseed = 3,
+					/obj/item/seeds/poppyseed = 3,/obj/item/seeds/sugarcaneseed = 3,/obj/item/seeds/ambrosiavulgarisseed = 3,/obj/item/seeds/peanutseed = 3,/obj/item/seeds/whitebeetseed = 3,/obj/item/seeds/watermelonseed = 3,/obj/item/seeds/limeseed = 3,
+					/obj/item/seeds/lemonseed = 3,/obj/item/seeds/orangeseed = 3,/obj/item/seeds/grassseed = 3,/obj/item/seeds/cocoapodseed = 3,/obj/item/seeds/plumpmycelium = 3,
+					/obj/item/seeds/cabbageseed = 3,/obj/item/seeds/grapeseed = 3,/obj/item/seeds/pumpkinseed = 3,/obj/item/seeds/cherryseed = 3,/obj/item/seeds/plastiseed = 3,/obj/item/seeds/riceseed = 3,/obj/item/seeds/lavenderseed = 3)
 
 /obj/machinery/vending/hydroseeds/generic
 	icon_state = "seeds_generic"
@@ -1139,24 +1148,17 @@
 	/obj/item/storage/lunchbox/picnic = 3,
 	/obj/item/material/knife/kitchen/cleaver = 1)
 
-
 	contraband = list(/obj/item/material/knife/kitchen/cleaver/bronze = 1)
 
-/obj/machinery/vending/sovietsoda
-	name = "\improper BODA"
-	desc = "An old soda vending machine. How could this have got here?"
-	icon_state = "sovietsoda"
-	icon_vend = "sovietsoda-vend"
-	icon_deny = "sovietsoda-deny"
-	base_type = /obj/machinery/vending/sovietsoda
-	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. If there is no person, then there is no problem."
-	products = list(/obj/item/reagent_containers/food/drinks/cans/syndicola = 50,
-					/obj/item/reagent_containers/food/drinks/cans/syndicolax = 30,
-					/obj/item/reagent_containers/food/drinks/cans/artbru = 20,
-					/obj/item/reagent_containers/food/drinks/glass2/square/boda = 20,
-					/obj/item/reagent_containers/food/drinks/glass2/square/bodaplus = 20)
-	contraband = list(/obj/item/reagent_containers/food/drinks/bottle/space_up = 300) // TODO Russian cola can
-	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
+/obj/machinery/vending/classdwater
+	name = "\improper Foundation Water Dispenser"
+	desc = "Dispenses free bottles of water for D-class personnel. Ice sold seperately."
+	icon_state = "classdwater"
+	icon_vend = "classdwater-vend"
+	icon_deny = "classdwater-deny"
+	base_type = /obj/machinery/vending/classdwater
+	product_ads = "Stay hydrated!;Dehydration is the REAL monster!;Ice sold seperately.;A hydrated D-class is a compliant D-class.;Got Water?"
+	products = list(/obj/item/reagent_containers/food/drinks/cans/waterbottle = 50)
 
 /obj/machinery/vending/tool
 	name = "\improper YouTool"
