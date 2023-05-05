@@ -2,7 +2,7 @@
 	name = "manifest"
 	icon = 'icons/mob/screen1.dmi'
 	icon_state = "x"
-	unacidable = TRUE
+	acidability = -1
 
 /obj/effect/manifest/New()
 

@@ -5,7 +5,7 @@
 	sharp = TRUE
 	var/reagent_amount = 15
 	life_span = 15 //shorter range
-	unacidable = TRUE
+	acidability = -1
 
 	muzzle_type = null
 

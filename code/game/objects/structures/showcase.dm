@@ -5,4 +5,4 @@
 	desc = "A stand with the empty body of a cyborg bolted to it."
 	density = TRUE
 	anchored = TRUE
-	unacidable = TRUE
+	acidability = -1

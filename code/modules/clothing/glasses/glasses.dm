@@ -274,7 +274,7 @@
 	action_button_name = "Toggle zoom"
 	zoomdevicename = "lenses"
 	electric = TRUE
-	unacidable = TRUE
+	acidability = -1
 
 /obj/item/clothing/glasses/augment_binoculars/attack_self(mob/user)
 	if(zoom)

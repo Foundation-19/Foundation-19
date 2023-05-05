@@ -5,7 +5,7 @@
 	plane = EFFECTS_ABOVE_LIGHTING_PLANE
 	layer = BEAM_PROJECTILE_LAYER //Muzzle flashes would be above the lighting plane anyways.
 	anchored = TRUE
-	unacidable = TRUE
+	acidability = -1
 	light_color = "#00ffff"
 	light_outer_range = 2
 	light_max_bright = 1
