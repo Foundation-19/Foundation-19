@@ -2,3 +2,30 @@
   HaultyAnonie:
   - rscadd: RCD to steal objective
   - code_imp: made code to escape the shuttle to then a train
+2023-05-05:
+  EgorDinamit:
+  - tweak: SCP 173's auto-breach effect is now instant, instead of one blastdoor at
+      a time.
+  TheDarkElites:
+  - rscadd: 173 AI now good :)
+  - balance: 173 is now active in low-pop but AI only and cannot self-breach.
+  checkraisefold:
+  - bugfix: Fixed moderator skill panel access.
+  cheesePizza2:
+  - rscadd: Trying to use a chem dispenser with the lowest skill level gives you a
+      chance of mis-inputting and getting a completely different chemical.
+  - balance: Polytrinic acid damage lowered.
+  - balance: BODA dispenser was changed to a Water Dispenser, which does NOT dispense
+      glass.
+  - imageadd: BODA dispenser sprite altered.
+  - balance: The Class-D seed servitor charges money.
+  - balance: Disarming has been changed to be less buggy, less random, and less OP.
+  - balance: The D-block built-in medbay has upped security. It should now be harder
+      for D-class rioters to steal the dispenser.
+  - rscdel: Rogue maintenance drone event has been removed.
+  - code_imp: General improvements.
+  - code_imp: Adds functionality for abstract objects.
+  darkincarnate:
+  - rscadd: Added paper shredder and wall-filing cabinets to all offices if they didn't
+      have them already.
+  - rscdel: Removed one of the nuke envelopes in SD office, they don't need two.

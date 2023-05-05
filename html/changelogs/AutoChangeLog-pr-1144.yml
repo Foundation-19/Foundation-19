@@ -1,5 +1,0 @@
-author: EgorDinamit
-delete-after: true
-changes:
-  - tweak: SCP 173's auto-breach effect is now instant, instead of one blastdoor at
-      a time.

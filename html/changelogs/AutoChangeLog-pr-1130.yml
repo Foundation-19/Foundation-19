@@ -1,6 +1,0 @@
-author: darkincarnate
-delete-after: true
-changes:
-  - rscadd: Added paper shredder and wall-filing cabinets to all offices if they didn't
-      have them already.
-  - rscdel: Removed one of the nuke envelopes in SD office, they don't need two.
