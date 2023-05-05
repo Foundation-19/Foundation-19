@@ -14,6 +14,7 @@
 
 	var/wrapped = FALSE
 	var/monkey_type = /mob/living/carbon/human/monkey
+	var/required_reagent_type = /datum/reagent/water
 
 /obj/item/reagent_containers/food/snacks/monkeycube/attack_self(mob/user)
 	if (wrapped)
@@ -50,7 +51,7 @@
 	Expand()
 
 /obj/item/reagent_containers/food/snacks/monkeycube/on_reagent_change()
-	if (reagents.has_reagent(/datum/reagent/water))
+	if (reagents.has_reagent(required_reagent_type))
 		Expand()
 
 /obj/item/reagent_containers/food/snacks/monkeycube/wrapped
@@ -91,3 +92,14 @@
 /obj/item/reagent_containers/food/snacks/monkeycube/wrapped/spidercube
 	name = "spider cube"
 	monkey_type = /obj/effect/spider/spiderling
+
+/obj/item/reagent_containers/food/snacks/monkeycube/abominationcube
+	name = "larva cube"
+	desc = "Requires blood to expand."
+	monkey_type = /mob/living/simple_animal/hostile/infestation/larva
+	required_reagent_type = /datum/reagent/blood
+	color = COLOR_MAROON
+	filling_color = COLOR_MAROON
+
+/obj/item/reagent_containers/food/snacks/monkeycube/abominationcube/friendly
+	monkey_type = /mob/living/simple_animal/hostile/infestation/larva/friendly

@@ -655,3 +655,64 @@
 	if (do_giggle && prob(20))
 		M.emote(pick("giggle", "laugh"))
 	M.add_chemical_effect(CE_PULSE, -1)
+
+/* Abominable Infestation reagents */
+
+// Grauel - Basically a healing chem that can implant a larva into its user.
+/datum/reagent/grauel
+	name = "Grauel"
+	description = "Reagent responsible for incubation of unknown lifeforms within its host. Has healing properties, but using it as medicine is a concerning idea."
+	taste_description = "vomit"
+	taste_mult = 1.4
+	reagent_state = LIQUID
+	color = COLOR_MAROON
+	value = 4
+	heating_products = list(/datum/reagent/nutriment/protein, /datum/reagent/laich)
+	heating_point = 120 CELSIUS
+	heating_message = "turns into a fleshy mess."
+
+/datum/reagent/grauel/affect_blood(mob/living/carbon/M, alien, removed)
+	if(alien == IS_DIONA)
+		return
+	var/heal_rate = 4
+	if(M.chem_doses[/datum/reagent/laich] >= 1)
+		heal_rate *= 2.5
+	M.heal_organ_damage(heal_rate * removed, 0) // Effectively weaker bicaridine, just with a tiny issue...
+	M.add_chemical_effect(CE_PAINKILLER, 5)
+
+	var/dosage = M.chem_doses[type]
+	if(dosage < 5) // Only implant larvas on somewhat "high" dose
+		return
+	if(!prob(max(10, dosage*0.5)))
+		return
+
+	var/list/valid_organs = list()
+	for(var/obj/item/organ/external/O in M.organs)
+		if(istype(O, /obj/item/organ/external/stump))
+			continue
+		if(locate(/mob/living/simple_animal/hostile/infestation/larva) in O.implants) // One larva per limb
+			continue
+		valid_organs += O
+	if(!LAZYLEN(valid_organs))
+		return
+	var/obj/item/organ/external/target_organ = pick(valid_organs)
+	var/mob/living/simple_animal/hostile/infestation/larva/implant/L = new(target_organ, TRUE)
+	target_organ.implants += L
+	L.transformation_time = world.time + rand(180 SECONDS, 360 SECONDS)
+	L.ai_holder.speak_chance = 0
+
+// Laich - Reagent needed for creating of larva cube.
+/datum/reagent/laich
+	name = "Laich"
+	description = "An important ingridient in creation of life. Causes mild suffocation. When consumed/injected alongside with Grauel - the later's healing properties were increased."
+	taste_description = "disgusting mess"
+	color = COLOR_ORANGE
+
+/datum/reagent/laich/affect_blood(mob/living/carbon/M, alien, removed)
+	if(alien == IS_DIONA)
+		return
+	if(prob(20))
+		M.adjustOxyLoss(8)
+	if(ishuman(M) && prob(2))
+		var/mob/living/carbon/human/H = M
+		H.vomit(2, 2, rand(2 SECONDS, 4 SECONDS))

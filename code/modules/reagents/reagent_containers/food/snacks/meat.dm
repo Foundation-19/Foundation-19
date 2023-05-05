@@ -95,6 +95,7 @@
 	center_of_mass = "x=16;y=10"
 	bitesize = 3
 	food_reagents = list(/datum/reagent/nutriment/protein = 9)
+	cooks_into_type = /obj/item/reagent_containers/food/snacks/spider/cooked
 
 /obj/item/reagent_containers/food/snacks/spider/cooked
 	name = "boiled spider meat"
@@ -112,6 +113,18 @@
 	food_reagents = list(
 		/datum/reagent/nutriment/protein = 6,
 		/datum/reagent/acid/polytrinic = 6
+	)
+
+/obj/item/reagent_containers/food/snacks/abominationmeat
+	name = "meat"
+	desc = "A slab of red-ish meat. Smells terribly."
+	icon_state = "rottenmeat"
+	filling_color = COLOR_MAROON
+	center_of_mass = "x=16;y=10"
+	bitesize = 5
+	food_reagents = list(
+		/datum/reagent/nutriment/protein = 4,
+		/datum/reagent/grauel = 6
 	)
 
 /obj/item/reagent_containers/food/snacks/sausage
