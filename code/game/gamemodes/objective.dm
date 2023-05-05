@@ -227,7 +227,8 @@ var/global/list/all_objectives = list()
 		"SCP-2398" = /obj/item/weapon/twohanded/scp_2398,
 		"SCP-1102-RU" = /obj/item/weapon/scp1102ru,
 		"SCP-513" = /obj/item/scp513,
-		"SCP-013" = /obj/item/storage/fancy/cigarettes/bluelady
+		"SCP-013" = /obj/item/storage/fancy/cigarettes/bluelady,
+		"SCP-3794" = /obj/item/weapon/twohanded/scp_3794
 	)
 
 	var/global/possible_items_special[] = list(
