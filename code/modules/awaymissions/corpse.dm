@@ -34,6 +34,10 @@
 	var/facial_styles_per_species = list() // Custom facial hair styles, per species -type-, if any. See above as to why
 	var/genders_per_species       = list() // For gender biases per species -type-
 
+	// Spawn damage
+	var/brute_loss = 0
+	var/burn_loss = 0
+
 /obj/effect/landmark/corpse/Initialize()
 	..()
 	var/species_choice = pickweight(species)
@@ -128,3 +132,7 @@
 /obj/effect/landmark/corpse/syndicate/commando
 	name = "Syndicate Commando"
 	corpse_outfits = list(/decl/hierarchy/outfit/mercenary/syndicate/commando)
+
+/obj/effect/landmark/corpse/riot_officer
+	name = "Riot Officer"
+	corpse_outfits = list(/decl/hierarchy/outfit/job/security/officer/armored/riot)

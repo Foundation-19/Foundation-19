@@ -18,21 +18,20 @@
 			if(isnewplayer(C.mob))
 				entry += " - <b>IN LOBBY</b>"
 				Lines += entry
-				continue
-
-			entry += " - Playing as [C.mob.real_name]"
-			switch(C.mob.stat)
-				if(UNCONSCIOUS)
-					entry += " - <font color='darkgray'><b>Unconscious</b></font>"
-				if(DEAD)
-					if(isghost(C.mob))
-						var/mob/observer/ghost/O = C.mob
-						if(O.started_as_observer)
-							entry += " - <font color='gray'>Observing</font>"
+			else
+				entry += " - Playing as [C.mob.real_name ? C.mob.real_name : C.mob.name]"
+				switch(C.mob.stat)
+					if(UNCONSCIOUS)
+						entry += " - <font color='darkgray'><b>Unconscious</b></font>"
+					if(DEAD)
+						if(isghost(C.mob))
+							var/mob/observer/ghost/O = C.mob
+							if(O.started_as_observer)
+								entry += " - <font color='gray'>Observing</font>"
+							else
+								entry += " - <font color='black'><b>DEAD</b></font>"
 						else
 							entry += " - <font color='black'><b>DEAD</b></font>"
-					else
-						entry += " - <font color='black'><b>DEAD</b></font>"
 
 			var/age
 			if(isnum(C.player_age))
