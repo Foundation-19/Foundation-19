@@ -1,0 +1,6 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscadd: Trying to use a chem dispenser with the lowest skill level gives you a
+      chance of mis-inputting and getting a completely different chemical.
+  - balance: Polytrinic acid damage lowered.
