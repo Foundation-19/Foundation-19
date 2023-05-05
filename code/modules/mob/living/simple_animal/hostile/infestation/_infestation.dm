@@ -22,6 +22,8 @@
 	var/list/transformation_types = list()
 	/// Which mob we will be transformed into
 	var/transformation_target_type = null
+	/// If TRUE - will evolve despite having a target mob
+	var/ignore_combat = FALSE
 
 /mob/living/simple_animal/hostile/infestation/Life()
 	. = ..()
@@ -45,7 +47,7 @@
 			return
 		if(icon_state != icon_egg) // Become egg
 			// We're in combat, forget evolving for a moment
-			if(ai_holder.target)
+			if(!ignore_combat && ai_holder.target)
 				transformation_time = world.time + 10 SECONDS
 				return
 			BecomeEgg()

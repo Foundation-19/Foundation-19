@@ -11,8 +11,8 @@
 
 	natural_weapon = /obj/item/natural_weapon/claws/strong/eviscerator
 
-	health = 300
-	maxHealth = 300
+	health = 400
+	maxHealth = 400
 
 	movement_cooldown = 3.5
 	movement_sound = 'sound/simple_mob/abominable_infestation/eviscerator/step.ogg'

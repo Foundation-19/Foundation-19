@@ -10,8 +10,8 @@
 	natural_weapon = /obj/item/natural_weapon/claws/broodling
 	melee_attack_delay = 0
 
-	health = 100
-	maxHealth = 100
+	health = 150
+	maxHealth = 150
 
 	meat_type = /obj/item/reagent_containers/food/snacks/abominationmeat
 	meat_amount = 2

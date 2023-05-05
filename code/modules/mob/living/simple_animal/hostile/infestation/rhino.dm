@@ -11,8 +11,8 @@
 
 	natural_weapon = /obj/item/natural_weapon/hooves/rhino
 
-	health = 1000
-	maxHealth = 1000
+	health = 1200
+	maxHealth = 1200
 	resistance = 15
 
 	movement_cooldown = 5
