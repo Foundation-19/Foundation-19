@@ -99,7 +99,7 @@
 
 	if(href_list["dispense"])
 		var/label = href_list["dispense"]
-		if(user.skill_check(core_skill, SKILL_BASIC) && prob(25))
+		if(!user.skill_check(core_skill, SKILL_BASIC) && prob(25))
 			label = pick(disp_reagents)
 		if(disp_reagents[label] && container && container.is_open_container())
 			var/datum/reagent/R = disp_reagents[label]
