@@ -99,7 +99,7 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 
 		use_power_oneoff(power_per_hologram)
 
-	if(request_cooldown > world.time && incoming_connection)
+	if(world.time > request_cooldown && incoming_connection)
 		if(sourcepad)
 			sourcepad.audible_message("<i><span class='game say'>The holopad connection timed out</span></i>")
 		incoming_connection = 0
