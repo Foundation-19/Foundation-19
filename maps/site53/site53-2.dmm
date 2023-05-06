@@ -19861,9 +19861,6 @@
 /obj/item/ammo_magazine/box/a57,
 /obj/item/ammo_magazine/box/a57,
 /obj/item/ammo_magazine/box/a57,
-/obj/item/ammo_magazine/box/a57,
-/obj/item/ammo_magazine/box/a57,
-/obj/item/ammo_magazine/box/a57,
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/item/ammo_magazine/scp/p90_mag,
@@ -19872,12 +19869,6 @@
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/machinery/light,
 /obj/effect/floor_decal/industrial/hatch/red,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "bho" = (
@@ -19914,9 +19905,6 @@
 /obj/item/reagent_containers/spray/chemsprayer,
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/light,
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_x = 32
-	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/checkequip)
 "bhu" = (
@@ -21329,15 +21317,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
-"bQp" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/checkequip)
 "bQJ" = (
 /obj/machinery/door/airlock/security{
 	name = "Heavy Containment Zone Gate Security Post";
@@ -25957,9 +25936,6 @@
 /obj/item/ammo_magazine/box/a57,
 /obj/item/ammo_magazine/box/a57,
 /obj/item/ammo_magazine/box/a57,
-/obj/item/ammo_magazine/box/a57,
-/obj/item/ammo_magazine/box/a57,
-/obj/item/ammo_magazine/box/a57,
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/item/ammo_magazine/scp/p90_mag,
@@ -25967,12 +25943,6 @@
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/effect/floor_decal/industrial/hatch/red,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "heA" = (
@@ -28829,12 +28799,6 @@
 /obj/item/book/manual/barman_recipes,
 /turf/simulated/floor/wood/walnut,
 /area/site53/ulcz/humanoidcontainment)
-"kcw" = (
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled/monotile/white,
-/area/site53/llcz/checkequip)
 "kcV" = (
 /obj/structure/bed/chair,
 /obj/effect/landmark/start{
@@ -61538,10 +61502,10 @@ aMS
 aMS
 aNs
 aVD
-bQp
-kcw
+lbi
 aMS
-kcw
+aMS
+aMS
 bhr
 gNi
 azA
