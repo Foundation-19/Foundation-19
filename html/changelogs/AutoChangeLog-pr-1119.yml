@@ -1,9 +1,0 @@
-author: GGarciaECE
-delete-after: true
-changes:
-  - rscadd: Panic bunker on level 4 (under SD office) with multiple accesses within
-      the floor.
-  - rscadd: EZ Security Office moved and expanded at Level 4 near the SD's office.
-  - rscadd: LCZ security office moved and expanded near the LCZ entry checkpoint
-  - rscadd: ITD office and meeting room were moved around. ITD office is now near
-      EZ Security office on level 4.

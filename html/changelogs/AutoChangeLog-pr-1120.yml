@@ -1,0 +1,7 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - admin: Mods get game panel access.
+  - admin: The skill panel no longer does nothing for mods.
+  - admin: Mods can now AI interact as ghost.
+  - admin: Mods can now free job slots in the crew.
