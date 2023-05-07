@@ -27,7 +27,7 @@ var/global/list/protected_objects = list(/obj/machinery,
 	response_help = "touches"
 	response_disarm = "pushes"
 	response_harm = "hits"
-	movement_cooldown = 4
+	movement_cooldown = 5
 	maxHealth = 100
 	health = 100
 
@@ -39,7 +39,6 @@ var/global/list/protected_objects = list(/obj/machinery,
 	minbodytemp = 0
 
 	faction = "mimic"
-	move_to_delay = 8
 
 	var/weakref/copy_of
 	var/weakref/creator // the creator
@@ -72,7 +71,7 @@ var/global/list/protected_objects = list(/obj/machinery,
 		CopyObject(O, creator)
 
 /mob/living/simple_animal/hostile/mimic/proc/CopyObject(obj/O, mob/living/creator)
-
+	movement_cooldown = initial(movement_cooldown)
 	if((istype(O, /obj/item) || istype(O, /obj/structure)) && !is_type_in_list(O, protected_objects))
 		O.forceMove(src)
 		copy_of = weakref(O)
@@ -90,7 +89,7 @@ var/global/list/protected_objects = list(/obj/machinery,
 			var/obj/item/I = O
 			health = 15 * I.w_class
 			W.force = 2 + initial(I.force)
-			move_to_delay = 2 * I.w_class
+			movement_cooldown = 2 * I.w_class
 
 		maxHealth = health
 		if(creator)
