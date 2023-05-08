@@ -14,7 +14,7 @@
 /datum/codex_category/clothing/Initialize()
 	for(var/thing in subtypesof(/obj/item/clothing))
 		var/obj/item/clothing/clothing = thing
-		if(initial(clothing.hidden_from_codex))
+		if(is_abstract(clothing) || initial(clothing.hidden_from_codex))
 			continue
 		var/datum/codex_entry/entry = new( \
 		_display_name = "[initial(clothing.name)] (clothing)", \

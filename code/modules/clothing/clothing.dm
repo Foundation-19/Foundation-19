@@ -1,4 +1,5 @@
 /obj/item/clothing
+	abstract_type = /obj/item/clothing
 	name = "clothing"
 	siemens_coefficient = 0.9
 	var/flash_protection = FLASH_PROTECTION_NONE	// Sets the item's level of flash protection.
@@ -213,6 +214,7 @@
 ///////////////////////////////////////////////////////////////////////
 // Ears: headsets, earmuffs and tiny objects
 /obj/item/clothing/ears
+	abstract_type = /obj/item/clothing/ears
 	name = "ears"
 	w_class = ITEM_SIZE_TINY
 	throwforce = 2
@@ -248,6 +250,7 @@ SEE_PIXELS// if an object is located on an unlit area, but some of its pixels ar
 BLIND     // can't see anything
 */
 /obj/item/clothing/glasses
+	abstract_type = /obj/item/clothing/glasses
 	name = "glasses"
 	icon = 'icons/obj/clothing/obj_eyes.dmi'
 	w_class = ITEM_SIZE_SMALL
@@ -278,6 +281,7 @@ BLIND     // can't see anything
 ///////////////////////////////////////////////////////////////////////
 //Gloves
 /obj/item/clothing/gloves
+	abstract_type = /obj/item/clothing/gloves
 	name = "gloves"
 	gender = PLURAL //Carn: for grammarically correct text-parsing
 	w_class = ITEM_SIZE_SMALL
@@ -393,6 +397,7 @@ BLIND     // can't see anything
 ///////////////////////////////////////////////////////////////////////
 //Head
 /obj/item/clothing/head
+	abstract_type = /obj/item/clothing/head
 	name = "head"
 	icon = 'icons/obj/clothing/obj_head.dmi'
 	item_icons = list(
@@ -518,6 +523,7 @@ BLIND     // can't see anything
 ///////////////////////////////////////////////////////////////////////
 //Mask
 /obj/item/clothing/mask
+	abstract_type = /obj/item/clothing/mask
 	name = "mask"
 	icon = 'icons/obj/clothing/obj_mask.dmi'
 	slot_flags = SLOT_MASK
@@ -597,6 +603,7 @@ BLIND     // can't see anything
 ///////////////////////////////////////////////////////////////////////
 //Shoes
 /obj/item/clothing/shoes
+	abstract_type = /obj/item/clothing/shoes
 	name = "shoes"
 	icon = 'icons/obj/clothing/obj_feet.dmi'
 	desc = "Comfortable-looking shoes."
@@ -753,6 +760,7 @@ BLIND     // can't see anything
 ///////////////////////////////////////////////////////////////////////
 //Suit
 /obj/item/clothing/suit
+	abstract_type = /obj/item/clothing/suit
 	icon = 'icons/obj/clothing/obj_suit.dmi'
 	name = "suit"
 	var/fire_resist = T0C+100
@@ -799,6 +807,7 @@ BLIND     // can't see anything
 ///////////////////////////////////////////////////////////////////////
 //Under clothing
 /obj/item/clothing/under
+	abstract_type = /obj/item/clothing/under
 	icon = 'icons/obj/clothing/obj_under.dmi'
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_uniforms.dmi',
@@ -1087,6 +1096,7 @@ BLIND     // can't see anything
 //Rings
 
 /obj/item/clothing/ring
+	abstract_type = /obj/item/clothing/ring
 	name = "ring"
 	w_class = ITEM_SIZE_TINY
 	icon = 'icons/obj/clothing/obj_hands_ring.dmi'
