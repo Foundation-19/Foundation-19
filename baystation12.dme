@@ -290,6 +290,7 @@
 #include "code\controllers\subsystems\processing\temperature.dm"
 #include "code\controllers\subsystems\processing\turf.dm"
 #include "code\controllers\subsystems\processing\vines.dm"
+#include "code\core\datum\IsAbstract.dm"
 #include "code\datums\ai_law_sets.dm"
 #include "code\datums\ai_laws.dm"
 #include "code\datums\browser.dm"

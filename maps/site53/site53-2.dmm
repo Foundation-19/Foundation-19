@@ -37166,6 +37166,11 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/uhcz/scp247containment)
+"tAh" = (
+/obj/structure/table/standard,
+/obj/item/folder,
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/office)
 "tBJ" = (
 /obj/structure/catwalk,
 /obj/structure/cable/cyan{
@@ -57827,7 +57832,7 @@ aeS
 aLd
 mNs
 rFI
-rZd
+tAh
 tIS
 wTN
 aLd
