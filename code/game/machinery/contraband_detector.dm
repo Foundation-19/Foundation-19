@@ -14,10 +14,7 @@
 	var/obj/item/device/radio/intercom/announce
 
 	wires = /datum/wires/contraband_detector
-	var/power_wire_cut = FALSE				// if cut... no power. also electrifies cutter, so there's some danger here
-	var/identifier_wire_cut = FALSE			// if cut, registers nothing as contraband. if pulsed, registers everything
 	var/identifier_wire_pulsed_until = 0	// world time value, since it's only checked in 1 place we don't remove it when time has passed (more optimal than checking every tick)
-	var/radio_wire_cut = FALSE				// if cut, removes ability to radio
 
 /obj/machinery/contraband_detector/New()
 	announce = new /obj/item/device/radio/intercom(src)
@@ -39,13 +36,13 @@
 /obj/machinery/contraband_detector/ex_act(severity)
 	. = ..()
 	if(prob(100 - (severity * 20)))
-		src.set_broken(TRUE)
+		set_broken(TRUE)
 
 /obj/machinery/contraband_detector/proc/detect_contraband(turf/T, atom/movable/A)	// T isn't used, but it's passed by the signal as first argument so don't remove it
-	if(!identifier_wire_cut && (((identifier_wire_pulsed_until < world.time) && identifier_wire_pulsed_until != 0) || A.has_contraband()))
+	if(!wires.is_cut(WIRE_CONTRADETECT_IDENTIFIER) && (((identifier_wire_pulsed_until > world.time) && identifier_wire_pulsed_until != 0) || A.has_contraband()))
 		flick("detected", src)
 		visible_message(SPAN_WARNING("\The [src] detects contraband on \the [A.name]!"))
-		if(!radio_wire_cut)
+		if(!wires.is_cut(WIRE_CONTRADETECT_ALARM))
 			var/area/AR = get_area(src)
 			announce.autosay("Contraband detected on \the [A] at \the [AR.name]!", "Contraband Detection System")
 
@@ -54,7 +51,7 @@
 	announce.autosay("ALERT! Tampering detected on \the [src] at [AR.name]!", "Contraband Detection System")
 
 /obj/machinery/contraband_detector/powered()
-	if(power_wire_cut)
+	if(wires.is_cut(WIRE_MAIN_POWER1) || wires.is_cut(WIRE_MAIN_POWER2))
 		return FALSE
 	return ..()
 
