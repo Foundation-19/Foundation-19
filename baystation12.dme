@@ -1905,7 +1905,6 @@
 #include "code\modules\goals\_goal.dm"
 #include "code\modules\goals\_goalcontainer.dm"
 #include "code\modules\goals\_personal_goal.dm"
-#include "code\modules\goals\goal_mind.dm"
 #include "code\modules\holodeck\HolodeckControl.dm"
 #include "code\modules\holodeck\HolodeckObjects.dm"
 #include "code\modules\holodeck\HolodeckPrograms.dm"

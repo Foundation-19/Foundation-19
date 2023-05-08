@@ -1,5 +1,16 @@
 /datum/component/goalcontainer
 	var/list/goal_list = list()
+	var/list/goal_history = list()	// text recap of objectives and whether they were succeeded/failed
+
+/datum/component/goalcontainer/New()
+	. = ..()
+	GLOB.destroyed_event.register(parent, src, /datum/proc/qdel_self)
+
+/datum/component/goalcontainer/Destroy()
+	GLOB.destroyed_event.unregister(owner, src)
+	for(goal in goal_list)
+		qdel(goal)
+	return ..()
 
 /datum/component/goalcontainer/proc/add_new_personal_goal()
 	var/possible_goals = subtypesof(/datum/goal/personal)
@@ -49,7 +60,9 @@
 	var/datum/goal/G = type
 	if(G.no_duplicates && (G in goal_list))
 		return FALSE
-	goal_list += new G(src)
+	if(!G.is_valid())
+		return FALSE
+	goal_list += new G(parent)
 	return TRUE
 
 /datum/component/goalcontainer/tgui_interact(mob/user, datum/tgui/ui = null)

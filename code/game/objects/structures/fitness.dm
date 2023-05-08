@@ -82,4 +82,5 @@
 					user.adjust_hydration(-(adj_weight * DEFAULT_THIRST_FACTOR))
 				message = success_message[min(1 + round(skill - weight), fail_message.len)]
 				user.visible_message(SPAN_NOTICE("\The [user] lift\s the weights [message]."), SPAN_NOTICE("You lift the weights [message]."))
+				SEND_SIGNAL(user, COMSIG_HUMAN_LIFT_WEIGHT)
 		being_used = FALSE

@@ -28,3 +28,11 @@
 
 /// sent every carbon Life()
 #define COMSIG_CARBON_LIFE "carbon_life"
+
+/// sent when a goal is succeeded
+#define COMSIG_GOAL_SUCCEEDED "goal_succeeded"
+/// sent when a goal is failed
+#define COMSIG_GOAL_FAILED "goal_failed"
+
+/// sent by a human when it lifts a weight
+#define COMSIG_HUMAN_LIFT_WEIGHT "human_lift_weight"

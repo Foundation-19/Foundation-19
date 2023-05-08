@@ -8,9 +8,9 @@ export const PersonalGoals = (props, context) => {
     <Window.Content scrollable>
       <Section>
         <Table>
-          {goals.map(goal) => (
+          {goals.map((goal) => (
             <Goal key={goal.name} goal={goal} />
-          )}
+          ))}
         </Table>
       </Section>
     </Window.Content>
@@ -21,4 +21,4 @@ const Goal = (props, context) => {
   const { goal } = props;
   const { act, data } = useBackend(context);
   const {} = data;
-}
+};

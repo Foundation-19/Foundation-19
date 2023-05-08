@@ -318,3 +318,8 @@
 
 // Returned by emag_act if object didn't do anything
 #define EMAG_NO_ACT -50
+
+// Used by goals
+#define GOAL_UNFINISHED 0
+#define GOAL_FAILED 1
+#define GOAL_SUCCEEDED 2
