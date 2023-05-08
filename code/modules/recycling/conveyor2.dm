@@ -202,7 +202,7 @@ GLOBAL_LIST_INIT(conveyor_switches, list())
 	. = ..()
 	if(. && (stat & BROKEN))	// if we changed states and are now broken, set entire ID to inoperable
 		set_operable(TRUE, id, FALSE)
-		C = locate() in get_step(src, backwards)
+		var/obj/machinery/conveyor/C = locate() in get_step(src, backwards)
 		if(C)
 			C.set_operable(FALSE, id, FALSE)
 
