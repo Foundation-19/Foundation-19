@@ -242,7 +242,7 @@
 	name = "rune"
 	icon = 'icons/obj/rune.dmi'
 	icon_state = "golem"
-	acidability = -1
+	acid_resistance = -1
 	layer = RUNE_LAYER
 
 /obj/effect/golemrune/Initialize()

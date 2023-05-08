@@ -37,7 +37,7 @@
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	armor = list(melee = 25, bullet = 25, laser = 30, energy = 35, bomb = 35, bio = 15, rad = 10)
-	acidability = 1.3
+	acid_resistance = 1.3
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor
 	name = "armored vest"
@@ -46,7 +46,7 @@
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	armor = list(melee = 40, bullet = 50, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
-	acidability = 1.5
+	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/russcom
 	name = "Commander armor vest"
@@ -55,7 +55,7 @@
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	armor = list(melee = 45, bullet = 65, laser = 40, energy = 40, bomb = 40, bio = 15, rad = 10)
-	acidability = 1.5
+	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/lczcomm
 	name = "Heavy-plated armor vest"
@@ -64,7 +64,7 @@
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	armor = list(melee = 45, bullet = 65, laser = 40, energy = 40, bomb = 40, bio = 15, rad = 10)
-	acidability = 1.5
+	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/commandervest
 	name = "armored vest"
@@ -73,7 +73,7 @@
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO
 	cold_protection = UPPER_TORSO | LOWER_TORSO
 	armor = list(melee = 45, bullet = 65, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
-	acidability = 1.5
+	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/combatexo
 	name = "Combat exosuit"
@@ -82,7 +82,7 @@
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	armor = list(melee = 40, bullet = 80, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
-	acidability = 1.5
+	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/chaos
 	name = "armored vest"
@@ -91,7 +91,7 @@
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	armor = list(melee = 40, bullet = 85, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
-	acidability = 1.5
+	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/eta
 	name = "armored vest"
@@ -100,7 +100,7 @@
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
 	armor = list(melee = 70, bullet = 70, laser = 70, energy = 70, bomb = 30, bio = 15, rad = 10)
-	acidability = 1.5
+	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/beta
 	name = "armored suit"
@@ -110,7 +110,7 @@
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
 	permeability_coefficient = 0.5
 	armor = list(melee = 80, bullet = 80, laser = 40, energy = 25, bomb = 30, bio = 90, rad = 90)
-	acidability = 5
+	acid_resistance = 5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/alpha
 	name = "armored vest"
@@ -119,7 +119,7 @@
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS
 	armor = list(melee = 90, bullet = 90, laser = 90, energy = 95, bomb = 90, bio = 90, rad = 0)
-	acidability = 2
+	acid_resistance = 2
 
 /obj/item/clothing/head/hcz_hazmat
 	name = "combat hazmat helmet"
@@ -143,7 +143,7 @@
 	item_flags = ITEM_FLAG_THICKMATERIAL|ITEM_FLAG_PHORONGUARD|ITEM_FLAG_AIRTIGHT
 	body_parts_covered = HEAD|FACE|EYES
 	siemens_coefficient = 0.5
-	acidability = 6
+	acid_resistance = 6
 
 /obj/item/clothing/suit/hcz_hazmat
 	name = "combat hazmat suit"
@@ -170,4 +170,4 @@
 		)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
 	siemens_coefficient = 0.5
-	acidability = 6
+	acid_resistance = 6

@@ -4,7 +4,7 @@
 	anchored = TRUE
 	icon = 'icons/effects/uristrunes.dmi'
 	icon_state = "blank"
-	acidability = -1
+	acid_resistance = -1
 	layer = RUNE_LAYER
 
 	var/blood
@@ -261,7 +261,7 @@
 	color = "#ff0000"
 	anchored = TRUE
 	density = TRUE
-	acidability = -1
+	acid_resistance = -1
 	health_max = 200
 	var/obj/effect/rune/wall/rune
 

@@ -2,7 +2,7 @@
 	name = "manifest"
 	icon = 'icons/mob/screen1.dmi'
 	icon_state = "x"
-	acidability = -1
+	acid_resistance = -1
 
 /obj/effect/manifest/New()
 

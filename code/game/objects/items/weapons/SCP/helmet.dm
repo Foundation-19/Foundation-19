@@ -4,7 +4,7 @@
 	icon_state = "guard-helm"
 	body_parts_covered = HEAD|FACE|EYES //face shield
 	armor = list(melee = 40, bullet = 60, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
-	acidability = 1.5
+	acid_resistance = 1.5
 	flags_inv = HIDEEARS
 	action_button_name = "Toggle Visor"
 
@@ -13,7 +13,7 @@
 	desc = "The markings on this helmet indicate that it belongs to a SD zone commander."
 	icon_state = "helmet_merc"
 	armor = list(melee = 40, bullet = 70, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
-	acidability = 1.5
+	acid_resistance = 1.5
 	cold_protection = HEAD
 	body_parts_covered = HEAD
 	flags_inv = HIDEEARS
@@ -23,7 +23,7 @@
 	desc = "A tactical Foundation SD Guard helmet."
 	icon_state = "helmet"
 	armor = list(melee = 40, bullet = 65, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
-	acidability = 1.5
+	acid_resistance = 1.5
 	cold_protection = HEAD
 	body_parts_covered = HEAD
 	flags_inv = HIDEEARS
@@ -36,7 +36,7 @@
 	icon_state = "guard-helm"
 	body_parts_covered = HEAD|FACE|EYES //face shield
 	armor = list(melee = 70, bullet = 40, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
-	acidability = 1.5
+	acid_resistance = 1.5
 	flags_inv = HIDEEARS
 
 
@@ -57,7 +57,7 @@
 	icon_state = "chaos-helm"
 	body_parts_covered = HEAD //face shield
 	armor = list(melee = 50, bullet = 83, laser = 50,energy = 25, bomb = 40, bio = 10, rad = 10)
-	acidability = 1.5
+	acid_resistance = 1.5
 	flags_inv = HIDEEARS
 
 /obj/item/clothing/head/helmet/scp/donor
@@ -66,7 +66,7 @@
 	icon_state = "donor_sec"
 	body_parts_covered = HEAD|FACE|EYES //face shield
 	armor = list(melee = 50, bullet = 70, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
-	acidability = 1.5
+	acid_resistance = 1.5
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
 /obj/item/clothing/head/helmet/scp/donor2
@@ -75,7 +75,7 @@
 	icon_state = "donate_sec"
 	body_parts_covered = HEAD|FACE|EYES //face shield
 	armor = list(melee = 50, bullet = 70, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
-	acidability = 1.5
+	acid_resistance = 1.5
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
 /obj/item/clothing/head/helmet/scp/donor3
@@ -84,7 +84,7 @@
 	icon_state = "don_sec"
 	body_parts_covered = HEAD|FACE|EYES //face shield
 	armor = list(melee = 50, bullet = 60, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
-	acidability = 1.5
+	acid_resistance = 1.5
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
 /obj/item/clothing/head/helmet/scp/eta
@@ -96,7 +96,7 @@
 	body_parts_covered = HEAD|FACE|EYES
 	cold_protection = HEAD|FACE|EYES
 	armor = list(melee = 70, bullet = 50, laser = 70, energy = 70, bomb = 30, bio = 15, rad = 10)
-	acidability = 1.5
+	acid_resistance = 1.5
 	tint = TINT_NONE
 	visual_insulation = V_INSL_NONE
 
@@ -125,4 +125,4 @@
 	cold_protection = HEAD|FACE|EYES
 	permeability_coefficient = 0.5
 	armor = list(melee = 90, bullet = 70, laser = 40, energy = 25, bomb = 50, bio = 90, rad = 90)
-	acidability = 5
+	acid_resistance = 5

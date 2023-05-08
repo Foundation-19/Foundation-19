@@ -7,7 +7,7 @@
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "bullet"
 	density = TRUE
-	acidability = -1
+	acid_resistance = -1
 	anchored = TRUE //There's a reason this is here, Mport. God fucking damn it -Agouri. Find&Fix by Pete. The reason this is here is to stop the curving of emitter shots.
 	pass_flags = PASS_FLAG_TABLE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT

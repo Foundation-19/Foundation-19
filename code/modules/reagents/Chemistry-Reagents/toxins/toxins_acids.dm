@@ -24,13 +24,13 @@
 	if (ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if (H.head)
-			if (H.head.acidability == -1)
+			if (H.head.acid_resistance == -1)
 				to_chat(H, SPAN_WARNING("Your [H.head] protects you from the liquid."))
 				remove_self(volume)
 				return
-			else if (removed > (meltdose * H.head.acidability))
+			else if (removed > (meltdose * H.head.acid_resistance))
 				to_chat(H, SPAN_DANGER("Your [H.head] melts away!"))
-				removed -= meltdose * H.head.acidability
+				removed -= meltdose * H.head.acid_resistance
 				qdel(H.head)
 				H.update_inv_head(1)
 				H.update_hair(1)
@@ -41,13 +41,13 @@
 			return
 
 		if (H.wear_mask)
-			if (H.wear_mask.acidability == -1)
+			if (H.wear_mask.acid_resistance == -1)
 				to_chat(H, SPAN_DANGER("Your [H.wear_mask] protects you from the acid."))
 				remove_self(volume)
 				return
-			else if (removed > (meltdose * H.wear_mask.acidability))
+			else if (removed > (meltdose * H.wear_mask.acid_resistance))
 				to_chat(H, SPAN_DANGER("Your [H.wear_mask] melts away!"))
-				removed -= meltdose * H.wear_mask.acidability
+				removed -= meltdose * H.wear_mask.acid_resistance
 				qdel(H.wear_mask)
 				H.update_inv_wear_mask(1)
 				H.update_hair(1)
@@ -58,12 +58,12 @@
 			return
 
 		if (H.glasses)
-			if (H.glasses.acidability == -1)
+			if (H.glasses.acid_resistance == -1)
 				to_chat(H, SPAN_WARNING("Your [H.glasses] partially protect you from the liquid!"))
 				removed /= 2
-			else if (removed > (meltdose * H.glasses.acidability / 2))
+			else if (removed > (meltdose * H.glasses.acid_resistance / 2))
 				to_chat(H, SPAN_DANGER("Your [H.glasses] melt away!"))
-				removed -= meltdose * H.glasses.acidability / 2
+				removed -= meltdose * H.glasses.acid_resistance / 2
 				qdel(H.glasses)
 				H.update_inv_glasses(1)
 			else
@@ -94,10 +94,10 @@
 				affecting.status |= ORGAN_DISFIGURED
 
 /datum/reagent/acid/touch_obj(obj/O)
-	if (O.acidability == -1)
+	if (O.acid_resistance == -1)
 		return
-	if ((istype(O, /obj/item) || istype(O, /obj/effect/vine)) && (volume > (meltdose * O.acidability)))
-		remove_self(meltdose * O.acidability) // 10 units of acid will not melt EVERYTHING on the tile
+	if ((istype(O, /obj/item) || istype(O, /obj/effect/vine)) && (volume > (meltdose * O.acid_resistance)))
+		remove_self(meltdose * O.acid_resistance) // 10 units of acid will not melt EVERYTHING on the tile
 		var/obj/effect/decal/cleanable/molten_item/I = new/obj/effect/decal/cleanable/molten_item(O.loc)
 		I.desc = "Looks like this was \an [O] some time ago."
 		for(var/mob/M in viewers(5, O))

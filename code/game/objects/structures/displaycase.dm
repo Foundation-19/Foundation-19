@@ -5,7 +5,7 @@
 	desc = "A display case for prized possessions. It taunts you to kick it."
 	density = TRUE
 	anchored = TRUE
-	acidability = -1
+	acid_resistance = -1
 	alpha = 150
 	health_max = 14
 	damage_hitsound = 'sound/effects/Glasshit.ogg'

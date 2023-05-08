@@ -7,7 +7,7 @@
 	density = TRUE
 	layer = SINGULARITY_LAYER
 	light_outer_range = 6
-	acidability = -1
+	acid_resistance = -1
 
 	var/current_size = 1
 	var/allowed_size = 1

@@ -34,7 +34,7 @@
 	anchored = TRUE
 	opacity = 0
 	density = TRUE
-	acidability = -1
+	acid_resistance = -1
 
 /obj/effect/forcefield/bullet_act(obj/item/projectile/Proj, def_zone)
 	var/turf/T = get_turf(src.loc)

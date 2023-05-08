@@ -6,7 +6,7 @@
 
 	var/list/matter //Used to store information about the contents of the object.
 	var/w_class // Size of the object.
-	var/acidability = 1 // Multiplier for cost of dissolving via acid. Higher values = harder to dissolve. -1 = unacidible
+	var/acid_resistance = 1 // Multiplier for cost of dissolving via acid. Higher values = harder to dissolve. -1 = unacidible
 	var/throwforce = 1
 	var/sharp = FALSE		// whether this object cuts
 	var/edge = FALSE		// whether this object is more likely to dismember

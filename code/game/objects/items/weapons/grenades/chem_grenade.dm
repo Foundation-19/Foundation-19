@@ -6,7 +6,7 @@
 	w_class = ITEM_SIZE_SMALL
 	force = 2.0
 	det_time = null
-	acidability = -1
+	acid_resistance = -1
 	var/stage = 0
 	var/state = 0
 	var/path = 0

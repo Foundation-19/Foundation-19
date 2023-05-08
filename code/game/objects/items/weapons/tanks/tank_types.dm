@@ -138,7 +138,7 @@
 	icon_state = "air_sac"
 	gauge_icon = "indicator_emergency"
 	volume = 1
-	acidability = -1
+	acid_resistance = -1
 
 /*
  * Nitrogen

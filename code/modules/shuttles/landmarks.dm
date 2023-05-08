@@ -4,7 +4,7 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "energynet"
 	anchored = TRUE
-	acidability = -1
+	acid_resistance = -1
 	simulated = FALSE
 	invisibility = 101
 

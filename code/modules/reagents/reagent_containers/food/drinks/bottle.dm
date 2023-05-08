@@ -16,7 +16,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/Initialize()
 	. = ..()
 	if (isGlass)
-		acidability = -1
+		acid_resistance = -1
 
 /obj/item/reagent_containers/food/drinks/bottle/Destroy()
 	if(rag)

@@ -7,7 +7,7 @@
 	icon_state = "fountain"
 	density = TRUE
 	anchored = TRUE
-	acidability = -1
+	acid_resistance = -1
 	pixel_x = -16
 	var/used = FALSE
 

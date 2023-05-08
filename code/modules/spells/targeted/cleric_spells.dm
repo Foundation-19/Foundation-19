@@ -198,7 +198,7 @@
 	desc = "a tear in space and time."
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "rift"
-	acidability = -1
+	acid_resistance = -1
 	anchored = TRUE
 	density = FALSE
 

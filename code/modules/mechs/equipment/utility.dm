@@ -460,7 +460,7 @@
 
 	else if (isobj(target))
 		var/obj/tobj = target
-		if (tobj.acidability == -1)
+		if (tobj.acid_resistance == -1)
 			to_chat(user, SPAN_WARNING("\The [target] can't be drilled away."))
 			return
 

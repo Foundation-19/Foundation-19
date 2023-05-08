@@ -7,7 +7,7 @@
 		slot_l_hand_str = "wiz_helm",
 		slot_r_hand_str = "wiz_helm",
 		)
-	acidability = -1
+	acid_resistance = -1
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,
@@ -26,7 +26,7 @@
 	name = "gem-encrusted voidsuit"
 	desc = "A bizarre gem-encrusted suit that radiates magical energies."
 	w_class = ITEM_SIZE_LARGE //normally voidsuits are bulky but this one is magic I suppose
-	acidability = -1
+	acid_resistance = -1
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,
@@ -60,7 +60,7 @@
 	gender = PLURAL
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.02
-	acidability = -1
+	acid_resistance = -1
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,

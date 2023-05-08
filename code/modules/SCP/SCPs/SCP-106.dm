@@ -405,7 +405,7 @@ GLOBAL_LIST_EMPTY(scp106s)
 	icon = 'icons/mob/screen1.dmi'
 	icon_state = "x2"
 	anchored = TRUE
-	acidability = -1
+	acid_resistance = -1
 	simulated = FALSE
 	invisibility = 100
 

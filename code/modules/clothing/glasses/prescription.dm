@@ -29,4 +29,4 @@
 	name = "corrective lenses"
 	desc = "The most expensive prescription on this side of Sol."
 	item_flags = ITEM_FLAG_PHORONGUARD
-	acidability = -1
+	acid_resistance = -1
