@@ -101,6 +101,9 @@
 	name = "Sulphuric Acid"
 	description = "A very corrosive mineral acid with the molecular formula H2SO4."
 	color = "#db5008"
+	acid_power = 5
+	meltdose = 10
+	max_damage = 40
 	value = 0.2
 
 
@@ -121,7 +124,7 @@
 	name = "Polytrinic Acid"
 	description = "Polytrinic acid is a an extremely corrosive chemical substance."
 	color = "#8e18a9"
-	acid_power = 10
+	acid_power = 7
 	meltdose = 4
 	max_damage = 60
 
