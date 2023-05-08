@@ -211,7 +211,7 @@
  * Repairs all cut wires.
  */
 /datum/wires/proc/repair()
-	for(wire in cut_wires)
+	for(var/wire in cut_wires)
 		cut(wire)
 
 /**
