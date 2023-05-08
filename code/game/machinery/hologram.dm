@@ -101,15 +101,15 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 
 	if(world.time > request_cooldown && incoming_connection)
 		if(sourcepad)
-			sourcepad.audible_message("<i><span class='game say'>The holopad connection timed out</span></i>")
+			sourcepad.audible_message(SPAN_WARNING("<i>The holopad connection timed out</i>"))
 		incoming_connection = 0
 		end_call()
 
 	if(caller_id && sourcepad)
 		if(caller_id.loc != sourcepad.loc)
-			to_chat(sourcepad.caller_id, "Severing connection to distant holopad.")
+			to_chat(sourcepad.caller_id, SPAN_WARNING("Severing connection to distant holopad."))
 			end_call()
-			audible_message("The connection has been terminated by the caller.")
+			audible_message(SPAN_WARNING("The connection has been terminated by the caller."))
 
 	return TRUE
 
@@ -267,7 +267,7 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 
 /obj/machinery/hologram/holopad/proc/addrecentcall(id)
 	recent_calls += id
-	if(recent_calls.len > 5)
+	if(length(recent_calls) > 5)
 		recent_calls -= recent_calls[1]
 
 /obj/machinery/hologram/holopad/check_eye(mob/user)
@@ -433,7 +433,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		qdel(masters[caller_id])//Get rid of user's hologram
 		masters -= caller_id //Discard the caller from the list of those who use holopad
 
-	if(!masters.len)//If no users left
+	if(!length(masters))//If no users left
 		set_light(0)			//pad lighting (hologram lighting will be handled automatically since its owner was deleted)
 		icon_state = "[base_icon]0"
 		if(sourcepad)
