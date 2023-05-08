@@ -6,7 +6,7 @@
 	program_icon_state = "crew"
 	program_key_state = "med_key"
 	program_menu_icon = "heart"
-	extended_desc = "This program connects to life signs monitoring system to provide basic information on crew health."
+	extended_desc = "This program connects to life signs monitoring system to provide basic information on personnel health."
 	required_access = ACCESS_MEDICAL_LVL1
 	requires_ntnet = TRUE
 	network_destination = "crew lifesigns monitoring system"

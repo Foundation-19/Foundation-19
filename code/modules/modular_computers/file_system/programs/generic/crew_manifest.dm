@@ -1,7 +1,7 @@
 /datum/computer_file/program/crew_manifest
 	filename = "crewmanifest"
-	filedesc = "Crew Manifest"
-	extended_desc = "This program allows access to the manifest of active crew."
+	filedesc = "Personnel Manifest"
+	extended_desc = "This program allows access to the manifest of active on-site personnel."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
 	size = 4
