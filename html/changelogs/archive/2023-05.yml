@@ -29,3 +29,7 @@
   - rscadd: Added paper shredder and wall-filing cabinets to all offices if they didn't
       have them already.
   - rscdel: Removed one of the nuke envelopes in SD office, they don't need two.
+2023-05-08:
+  EgorDinamit:
+  - tweak: Holopad's ID is not strictly tied to its area anymore.
+  - tweak: Holopads can now be renamed by using a multitool.
