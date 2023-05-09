@@ -33,3 +33,7 @@
   EgorDinamit:
   - tweak: Holopad's ID is not strictly tied to its area anymore.
   - tweak: Holopads can now be renamed by using a multitool.
+2023-05-09:
+  casualspacestation14enjoyer:
+  - imageadd: changed the icons for NT to SCP
+  - code_imp: changed some names for programs (NanoWord is now SCiPWord)
