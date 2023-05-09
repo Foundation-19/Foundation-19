@@ -207,8 +207,8 @@ var/global/list/additional_antag_types = list()
 	// Update goals, now that antag status and jobs are both resolved.
 	for(var/thing in SSticker.minds)
 		var/datum/mind/mind = thing
-		mind.generate_goals(mind.assigned_job)
-		mind.show_goals()
+		var/datum/component/goalcontainer/GC = new()
+		mind += GC
 
 	if(evacuation_controller && auto_recall_shuttle)
 		evacuation_controller.recall = 1

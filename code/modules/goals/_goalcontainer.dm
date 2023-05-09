@@ -1,5 +1,5 @@
 /datum/component/goalcontainer
-	var/list/goal_list = list()
+	var/list/goal_list = list()		// associative list of lists, each list is a category and the key is the category name
 	var/list/goal_history = list()	// text recap of objectives and whether they were succeeded/failed
 
 /datum/component/goalcontainer/New()
@@ -12,58 +12,24 @@
 		qdel(goal)
 	return ..()
 
-/datum/component/goalcontainer/proc/add_new_personal_goal()
-	var/possible_goals = subtypesof(/datum/goal/personal)
-
-	for(var/datum/goal/G in goal_list)
-		if(G.no_duplicates)
-			possible_goals -= G.type
-
-	if(LAZYLEN(possible_goals))
-		var/goal = pick(possible_goals)
-		return add_goal_by_type(goal)
-
-/datum/component/goalcontainer/proc/add_new_job_goal(datum/job/job)
-	var/possible_goals = job.possible_goals.Copy()
-
-	for(var/datum/goal/G in goal_list)
-		if(G.no_duplicates)
-			possible_goals -= G.type
-
-	if(LAZYLEN(possible_goals))
-		var/goal = pick(possible_goals)
-		goal_list = new goal(src)
-		return add_goal_by_type(goal)
-
-/datum/component/goalcontainer/proc/add_new_antag_goal(datum/antagonist/antag)
-	var/possible_goals = antag.possible_goals.Copy()
-
-	for(var/datum/goal/G in goal_list)
-		if(G.no_duplicates)
-			possible_goals -= G.type
-
-	if(LAZYLEN(possible_goals))
-		var/goal = pick(possible_goals)
-		return add_goal_by_type(goal)
-
-/datum/component/goalcontainer/proc/add_roundstart_goals(datum/job/job, datum/antagonist/antag)
-	if(!isnull(job))
-		for(var/i = job.goals_count, i > 0, i--)
-			add_new_job_goal(job)
-	if(!isnull(antag))
-		for(var/i = antag.goals_count, i > 0, i--)
-			add_new_antag_goal(antag)
-	for(var/i = 3, i > 0, i--)
-		add_new_personal_goal()
-
 /datum/component/goalcontainer/proc/add_goal_by_type(type)
 	var/datum/goal/G = type
 	if(G.no_duplicates && (G in goal_list))
 		return FALSE
-	if(!G.is_valid())
+	var/datum/goal/new_G = new G(src)
+	if(!new_G.is_valid())
+		qdel(new_G)
 		return FALSE
-	goal_list += new G(parent)
+	goal_list += new_G
 	return TRUE
+
+/datum/component/goalcontainer/proc/roundstart_goals(/datum/job/job, /datum/antagonist/antag)
+	var/list/goals_skills = subtypesof(/datum/goal/skills)
+
+	var/list/built_skill_goals = list()
+	while((built_skill_goals.len < GOAL_SKILLS_AMOUNT) && goals_skills.len)	// exit once we have GOAL_SKILLS_AMOUNT goal skills OR if we ran out of goals
+		var/datum/goal/G = pick_n_take(goals_skills)
+		add_goal_by_type(G)
 
 /datum/component/goalcontainer/tgui_interact(mob/user, datum/tgui/ui = null)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -81,6 +47,7 @@
 		goals.Add(list(list(
 			"goalname" = goal.name
 			"goaldesc" = goal.description
+			"goalcategory" = goal.category
 		)))
 
 	return data
