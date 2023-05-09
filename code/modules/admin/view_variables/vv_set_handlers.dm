@@ -140,3 +140,8 @@
 //You cant change this!
 /decl/vv_set_handler/light_handler/handle_set_var(atom/A, variable, var_value, client)
 	return
+
+/decl/vv_set_handler/holopad_id_handler
+	handled_type = /obj/machinery/hologram/holopad
+	handled_vars = list("holopad_id" = /obj/machinery/hologram/holopad/proc/ChangeID)
+	predicates = list(/proc/is_text_predicate)
