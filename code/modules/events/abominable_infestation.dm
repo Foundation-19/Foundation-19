@@ -19,7 +19,7 @@
 	while((spawncount >= 1) && LAZYLEN(vents))
 		var/obj/vent = pick(vents)
 		if(prob(33))
-			new /mob/living/simple_animal/hostile/infestation/larva/implanter(get_turf(vent))
+			new /mob/living/simple_animal/hostile/infestation/larva/implant/implanter(get_turf(vent))
 		else
 			new /mob/living/simple_animal/hostile/infestation/larva(get_turf(vent))
 		vents -= vent

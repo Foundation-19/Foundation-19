@@ -31,6 +31,10 @@
 		'sound/simple_mob/abominable_infestation/eviscerator/death_2.ogg',
 		)
 
+	transformation_types = list(
+		/mob/living/simple_animal/hostile/infestation/rhino = 150 SECONDS,
+		)
+
 /obj/item/natural_weapon/claws/strong/eviscerator
 	armor_penetration = 10
 	hitsound = 'sound/simple_mob/abominable_infestation/eviscerator/attack.ogg'
@@ -51,3 +55,7 @@
 	. = ..()
 	if(. && prob(30))
 		playsound(holder, pick(aggro_sounds), rand(35,75), TRUE)
+
+/mob/living/simple_animal/hostile/infestation/eviscerator/Initialize()
+	. = ..()
+	transformation_time = world.time + rand(120 SECONDS, 240 SECONDS)

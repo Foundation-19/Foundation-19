@@ -251,3 +251,7 @@
 */
 /atom/movable/proc/keybind_face_direction(direction)
 	return
+
+/// Handles special effects of item being removed from "implants" of a mob
+/atom/movable/proc/ImplantRemoval(mob/user)
+	return

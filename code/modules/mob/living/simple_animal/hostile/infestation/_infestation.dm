@@ -56,8 +56,8 @@
 
 /mob/living/simple_animal/hostile/infestation/death()
 	if(icon_state == icon_egg)
-		animate(src, alpha = 0, time = 25)
-		QDEL_IN(src, 25)
+		animate(src, alpha = 0, time = (5 SECONDS))
+		QDEL_IN(src, (5 SECONDS))
 	return ..()
 
 /mob/living/simple_animal/hostile/infestation/proc/BecomeEgg()
@@ -72,7 +72,7 @@
 	ai_holder = null
 	say_list = null
 	death_sounds = list()
-	maxHealth *= 2
+	maxHealth = max(200, maxHealth * 2)
 	health = maxHealth
 	if(isnull(transformation_target_type) && LAZYLEN(transformation_types))
 		transformation_target_type = pick(transformation_types)

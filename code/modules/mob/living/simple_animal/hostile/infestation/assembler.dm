@@ -38,7 +38,6 @@
 		/mob/living/simple_animal/hostile/infestation/spitter = 8,
 		/mob/living/simple_animal/hostile/infestation/eviscerator = 12,
 		/mob/living/simple_animal/hostile/infestation/assembler = 16,
-		/mob/living/simple_animal/hostile/infestation/rhino = 20,
 		)
 	/// Not actually the limit, but the point where it will forcefully spawn larva without waiting for time
 	var/nutrient_max = 25
@@ -114,6 +113,7 @@
 	visible_message(SPAN_WARNING("[src] consumes \the [O]."))
 	qdel(O)
 	nutrient_stored += 1
+	larva_time = world.time + 5 SECONDS
 
 /mob/living/simple_animal/hostile/infestation/assembler/proc/ConsumeDead(mob/living/L)
 	if(ishuman(L))
@@ -200,5 +200,5 @@
 	L.color = color
 	L.faction = faction
 	playsound(L, 'sound/simple_mob/abominable_infestation/larva/spawn.ogg', rand(35, 50), TRUE)
-	visible_message(SPAN_WARNING("[src] assembles new [L]!"))
+	visible_message(SPAN_WARNING("[src] assembles a new [L.name]!"))
 	nutrient_stored -= larva_types[target_type]
