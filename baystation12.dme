@@ -2431,6 +2431,7 @@
 #include "code\modules\mob\living\simple_animal\hostile\infestation\larva.dm"
 #include "code\modules\mob\living\simple_animal\hostile\infestation\rhino.dm"
 #include "code\modules\mob\living\simple_animal\hostile\infestation\spitter.dm"
+#include "code\modules\mob\living\simple_animal\hostile\infestation\structures\hive_heart.dm"
 #include "code\modules\mob\living\simple_animal\hostile\megafauna\_megafauna.dm"
 #include "code\modules\mob\living\simple_animal\hostile\random_monster\_random_abilities.dm"
 #include "code\modules\mob\living\simple_animal\hostile\random_monster\_random_monster.dm"
