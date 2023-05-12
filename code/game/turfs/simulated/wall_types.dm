@@ -189,8 +189,8 @@
 /turf/simulated/wall/concrete
 	icon_state = "horizontal_preview"
 
-/turf/simulated/wall/concrete/New(newloc)
-	..(newloc, MATERIAL_CONCRETE)
+/turf/simulated/wall/concrete/New(newloc, material_type, rmaterialtype)
+	..(newloc, material_type ? material_type : MATERIAL_CONCRETE)
 
 /turf/simulated/wall/concrete/testroom
 	icon_state = "testroom_preview"
