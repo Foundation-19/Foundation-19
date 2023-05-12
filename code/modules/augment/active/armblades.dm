@@ -7,7 +7,7 @@
 	desc = "A handy utility blade for the discerning augmentee. Warranty void if used for cutting."
 	base_parry_chance = 30
 	unbreakable = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 	force_multiplier = 0.2
 	sharp = TRUE
 	edge = TRUE

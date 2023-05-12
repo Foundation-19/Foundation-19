@@ -3,7 +3,7 @@
 	icon = 'icons/effects/landmarks.dmi'
 	icon_state = "x2"
 	anchored = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 	simulated = FALSE
 	invisibility = 101
 	var/delete_me = 0
