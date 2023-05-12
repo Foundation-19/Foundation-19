@@ -186,22 +186,32 @@
 		return 1
 	return 0
 
+/turf/simulated/wall/concrete
+	icon_state = "horizontal_preview"
+
 /turf/simulated/wall/concrete/New(newloc)
 	..(newloc, MATERIAL_CONCRETE)
-	icon_state = "horizontal_preview"
+
+/turf/simulated/wall/concrete/testroom
+	icon_state = "testroom_preview"
 
 /turf/simulated/wall/concrete/testroom/New(newloc)
 	..(newloc, MATERIAL_REINFORCED_CONCRETE)
-	icon_state = "testroom_preview"
+
+/turf/simulated/wall/concrete/vertical
+	icon_state = "vertical_preview"
 
 /turf/simulated/wall/concrete/vertical/New(newloc)
 	..(newloc, MATERIAL_VERTICAL_CONCRETE)
-	icon_state = "vertical_preview"
+
+/turf/simulated/wall/concrete/foamed
+	icon_state = "foam_preview"
 
 /turf/simulated/wall/concrete/foamed/New(newloc)
 	..(newloc, MATERIAL_CONCRETE_FOAM)
-	icon_state = "foam_preview"
+
+/turf/simulated/wall/concrete/tiled
+	icon_state = "tiled_preview"
 
 /turf/simulated/wall/concrete/tiled/New(newloc)
 	..(newloc, MATERIAL_CONCRETE_TILES)
-	icon_state = "tiled_preview"
