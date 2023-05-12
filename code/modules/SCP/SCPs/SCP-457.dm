@@ -130,7 +130,7 @@
 		var/obj/machinery/door/airlock/AR = A
 		AR.unlock(TRUE) // No more bolting in the SCPs and calling it a day
 		AR.welded = FALSE
-	A.stat |= BROKEN
+	A.set_broken(TRUE)
 	var/check = A.open(1)
 	visible_message("\The [src] melts \the [A]'s controls[check ? ", and rips it open!" : ", and breaks it!"]")
 
