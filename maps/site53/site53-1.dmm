@@ -6196,6 +6196,9 @@
 /obj/machinery/camera/network/lcz{
 	dir = 1
 	},
+/obj/structure/closet{
+	name = "Coroner"
+	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
 "oj" = (
@@ -9340,7 +9343,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/uhcz/scp106parts)
 "vB" = (
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/random/drinkbottle,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
 "vD" = (
@@ -11901,7 +11904,7 @@
 /area/site53/llcz/dclass/checkpointoverlook)
 "BW" = (
 /obj/effect/decal/cleanable/cobweb2,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/random/drinkbottle,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
 "BX" = (
@@ -40308,7 +40311,7 @@ ua
 Fh
 ua
 ua
-ua
+FW
 FW
 ua
 ua
@@ -44040,7 +44043,7 @@ Fh
 Fh
 Nz
 FW
-RW
+FW
 Ov
 FW
 ua
