@@ -1,8 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - rscadd: Guard clothing now protects slightly more against acid attacks. The combat
-      bio hood protects EXTREMELY well against acid attacks.
-  - balance: If acid is fully blocked by clothing, it does no damage.
-  - bugfix: Bug where acid (and other reagents with high touch_metabolisms) was treated
-      as volume 50 for damage has been fixed.
