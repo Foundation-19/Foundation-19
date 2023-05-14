@@ -315,15 +315,17 @@
 	return bullets
 
 /obj/item/gun/projectile/proc/ejectCasing()
+	chambered.forceMove(get_turf(src))
 	if(istype(chambered, /obj/item/ammo_casing/shotgun))
-		chambered.loc = get_turf(src)
 		chambered.SpinAnimation(4, 1)
 	else
-		chambered.loc = get_turf(src)
-		if(prob(50))
-			chambered.throw_at(get_ranged_target_turf(get_turf(src), turn(loc.dir, 270), 1), 1, 1)
-		else
-			chambered.SpinAnimation(4, 1)
+		pixel_z = 8
+		chambered.SpinAnimation(4, 1)
+		var/angle_of_movement = ismob(loc) ? (rand(-30, 30)) + dir2angle(turn(loc.dir, -90)) : rand(-30, 30)
+		chambered.AddComponent(/datum/component/movable_physics, _horizontal_velocity = rand(45, 55) / 10, \
+		 _vertical_velocity = rand(40, 45) / 10, _horizontal_friction = rand(20, 24) / 100, _z_gravity = 9.8, \
+		 _z_floor = 0, _angle_of_movement = angle_of_movement, _physic_flags = QDEL_WHEN_NO_MOVEMENT, \
+		 _bounce_sounds = chambered.fall_sounds)
 	if(LAZYLEN(chambered.fall_sounds))
 		playsound(loc, pick(chambered.fall_sounds), rand(45, 60), 1)
 
