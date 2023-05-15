@@ -14679,13 +14679,15 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
 "IW" = (
-/obj/structure/closet/statue{
-	name = "statue of the Liberator";
-	desc = "A plaque on the statue reads: 'For once he stood here, a friend in orange. The Liberator.'"
+/obj/item/clothing/under/scp/dclass{
+	pixel_y = -1
 	},
-/obj/item/clothing/under/scp/dclass,
 /obj/item/clothing/head/collectable/hardhat{
 	pixel_y = 20
+	},
+/obj/structure/statue{
+	desc = "A plaque on the statue reads: 'For once he stood here, a friend in orange. The Liberator.'";
+	name = "statue of The Liberator"
 	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/mine/unexplored)
