@@ -88,13 +88,12 @@
 			ammo_magazine.stored_ammo -= chambered
 
 	if (chambered)
-		return chambered.BB
+		return chambered.expend()
 	return null
 
 /obj/item/gun/projectile/handle_post_fire()
 	..()
 	if(chambered)
-		chambered.expend()
 		process_chambered()
 
 /obj/item/gun/projectile/process_point_blank(obj/projectile, mob/user, atom/target)
