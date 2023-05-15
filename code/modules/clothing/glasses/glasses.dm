@@ -283,7 +283,7 @@
 	action_button_name = "Toggle zoom"
 	zoomdevicename = "lenses"
 	electric = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 	hidden_from_codex = FALSE
 
 /obj/item/clothing/glasses/augment_binoculars/attack_self(mob/user)
