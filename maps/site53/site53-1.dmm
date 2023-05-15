@@ -2411,7 +2411,7 @@
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/checkcryo)
 "fn" = (
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techmaint,
 /area/site53/llcz/mine/unexplored)
 "fo" = (
 /obj/effect/paint_stripe/orange,
@@ -6506,6 +6506,10 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
+"oX" = (
+/obj/item/clothing/head/collectable/hardhat,
+/turf/simulated/floor/plating,
+/area/site53/llcz/mine/unexplored)
 "oY" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lhcz/scp049containment)
@@ -8438,7 +8442,7 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpointoverlook)
 "tw" = (
-/obj/item/clothing/gloves/insulated/cheap,
+/obj/item/clothing/gloves/white,
 /turf/simulated/floor/plating,
 /area/site53/llcz/mine/unexplored)
 "tx" = (
@@ -13466,7 +13470,7 @@
 /obj/machinery/door/unpowered/simple/wood{
 	name = "derelict building"
 	},
-/turf/simulated/wall/titanium,
+/turf/simulated/floor/tiled/techmaint,
 /area/site53/llcz/mine/unexplored)
 "FQ" = (
 /obj/machinery/door/blast/regular{
@@ -14680,8 +14684,8 @@
 	desc = "A plaque on the statue reads: 'For once he stood here, a friend in orange. The Liberator.'"
 	},
 /obj/item/clothing/under/scp/dclass,
-/obj/item/clothing/head/fedora{
-	pixel_y = 12
+/obj/item/clothing/head/collectable/hardhat{
+	pixel_y = 20
 	},
 /turf/simulated/floor/plating,
 /area/site53/llcz/mine/unexplored)
@@ -17107,6 +17111,10 @@
 "OX" = (
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/mine/unexplored)
+"OY" = (
+/obj/item/trash/cigbutt,
+/turf/simulated/floor/tiled/techmaint,
+/area/site53/llcz/mine/unexplored)
 "OZ" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/white/monotile,
@@ -17195,7 +17203,7 @@
 "Pm" = (
 /obj/effect/decal/cleanable/cobweb2,
 /obj/structure/table/woodentable,
-/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/electrical,
 /turf/simulated/floor/plating,
 /area/site53/llcz/mine/unexplored)
 "Pn" = (
@@ -42850,8 +42858,8 @@ ua
 xp
 Pm
 Aj
-fn
-XU
+oX
+OY
 xp
 ua
 Fh
