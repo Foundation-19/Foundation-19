@@ -37,3 +37,11 @@
   casualspacestation14enjoyer:
   - imageadd: changed the icons for NT to SCP
   - code_imp: changed some names for programs (NanoWord is now SCiPWord)
+2023-05-13:
+  cheesePizza2:
+  - rscadd: Guard clothing now protects slightly more against acid attacks. The combat
+      bio hood protects EXTREMELY well against acid attacks.
+  - balance: If acid is fully blocked by clothing, it does no damage.
+  - bugfix: Bug where acid (and other reagents with high touch_metabolisms) was treated
+      as volume 50 for damage has been fixed.
+  - bugfix: SCPs breaking machinery is slightly improved.

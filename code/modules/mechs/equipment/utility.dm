@@ -452,7 +452,7 @@
 
 	if (ismob(target))
 		var/mob/tmob = target
-		if (tmob.unacidable)
+		if (tmob.unacidable == -1)
 			to_chat(user, SPAN_WARNING("\The [target] can't be drilled away."))
 			return
 		else
@@ -460,7 +460,7 @@
 
 	else if (isobj(target))
 		var/obj/tobj = target
-		if (tobj.unacidable)
+		if (tobj.acid_resistance == -1)
 			to_chat(user, SPAN_WARNING("\The [target] can't be drilled away."))
 			return
 
