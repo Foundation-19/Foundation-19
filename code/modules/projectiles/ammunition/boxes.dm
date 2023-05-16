@@ -289,6 +289,9 @@
 	max_ammo = 100
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/box/machinegun/debug
+	max_ammo = 1000
+
 /obj/item/ammo_magazine/box/machinegun/empty
 	initial_ammo = 0
 

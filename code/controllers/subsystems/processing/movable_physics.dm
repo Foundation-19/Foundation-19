@@ -16,8 +16,7 @@ PROCESSING_SUBSYSTEM_DEF(movablephysics)
 		if(QDELETED(thing))
 			processing -= thing
 		else
-			if(thing.Process(wait * 0.1) == PROCESS_KILL)
-				// fully stop so that a future START_PROCESSING will work
+			if(thing.Process(wait * 0.1) == PROCESS_KILL) // INVOKE_ASYNC(thing, /datum/proc/Process) ???
 				STOP_PROCESSING(src, thing)
 		if (MC_TICK_CHECK)
 			return

@@ -331,6 +331,20 @@
 		return
 	..()
 
+/obj/item/gun/projectile/automatic/l6_saw/debug
+	magazine_type = /obj/item/ammo_magazine/box/machinegun/debug
+	burst_delay = 1
+	firemodes = list(
+		list(mode_name="short bursts", burst=12, fire_delay=5, one_hand_penalty=8,  burst_accuracy = list(0,-1,-1,-2,-2),          dispersion = list(0.6, 1.0, 1.0, 1.0, 1.2)),
+		list(mode_name="long bursts",  burst=24, fire_delay=5, one_hand_penalty=12, burst_accuracy = list(0,-1,-1,-2,-2,-2,-3,-3), dispersion = list(1.0, 1.0, 1.0, 1.0, 1.2)),
+		list(mode_name="full auto",    burst=1, burst_delay=0, fire_delay=0, one_hand_penalty=16, burst_accuracy = list(0,-1,-1,-2,-2,-2,-3,-3), dispersion = list(1.0, 1.0, 1.0, 1.0, 1.2), autofire_enabled=1),
+		)
+
+/obj/item/gun/projectile/automatic/l6_saw/debug/on_update_icon()
+	..()
+	icon_state = "l6closed100"
+	item_state = "l6closed"
+
 /obj/item/gun/projectile/automatic/battlerifle
 	name = "battle rifle"
 	desc = "The battle rifle hasn't changed much since its inception in the mid 20th century. Built to last in the toughest conditions, you can't tell if this one was even made this century."
