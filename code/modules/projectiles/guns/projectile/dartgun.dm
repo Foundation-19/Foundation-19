@@ -28,6 +28,7 @@
 	leaves_residue = FALSE
 
 /obj/item/ammo_casing/chemdart/expend()
+	. = ..()
 	qdel(src)
 
 /obj/item/ammo_magazine/chemdart
