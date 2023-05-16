@@ -9,8 +9,8 @@
 	var/foreend_offset = 20
 	appearance_flags = KEEP_TOGETHER
 	item_icons = list(
-		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_guns.dmi',
-		slot_r_hand_str = 'icons/mob/onmob/items/righthand_guns.dmi',
+		slot_l_hand_str = 'icons/SCP/guns/onmob/lefthand_guns.dmi',
+		slot_r_hand_str = 'icons/SCP/guns/onmob/righthand_guns.dmi',
 		)
 
 
@@ -81,7 +81,6 @@
 	icon = 'icons/SCP/guns/rifles/m4carbine.dmi'
 	icon_state = "m4carbine"
 	item_state = "m4"
-	w_class = ITEM_SIZE_HUGE
 	force = 13
 	slot_flags = SLOT_BACK
 	caliber = "5.56x45mm"
@@ -105,12 +104,10 @@
 	icon = 'icons/SCP/guns/rifles/g36c.dmi'
 	icon_state = "g36c"
 	item_state = "t12"
-	w_class = ITEM_SIZE_HUGE
 	force = 14
 	caliber = CALIBER_T12
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	slot_flags = SLOT_BACK
-	load_method = MAGAZINE
 	handle_casings = CLEAR_CASINGS
 	magazine_type = /obj/item/ammo_magazine/t12
 	allowed_magazines = /obj/item/ammo_magazine/t12
@@ -136,12 +133,10 @@
 	icon = 'icons/SCP/guns/rifles/ak12.dmi'
 	icon_state = "ak12"
 	item_state = "ak74"
-	w_class = ITEM_SIZE_HUGE
 	force = 10
 	slot_flags = SLOT_BACK
 	caliber = "5.45x39mm"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
-	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/ak
 	allowed_magazines = /obj/item/ammo_magazine/scp/ak
 	stock_icon = "stock"
@@ -160,12 +155,10 @@
 	desc = "An intermediate cartridge infantry assault rifle first produced by and for Israeli Forces. The Foundation found a use for these reliable rifles in the hands of Foundation operatives and guards."
 	icon_state = "galil"
 	item_state = "galil-empty"
-	w_class = ITEM_SIZE_HUGE
 	force = 10
 	slot_flags = SLOT_BACK
 	caliber = "5.56x45mm"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
-	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/m16_mag
 	allowed_magazines = /obj/item/ammo_magazine/scp/m16_mag
 
@@ -189,12 +182,10 @@
 	desc = "Yet another spin on the AK platform, this SVD is a scoped sniper rifle with far greater range thanks to it's longer barrel and updated rifling and profile."
 	icon_state = "svd"
 	item_state = "svd"
-	w_class = ITEM_SIZE_HUGE
 	force = 10
 	slot_flags = SLOT_BACK
 	caliber = "7.62x54mmR"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
-	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/svd
 	allowed_magazines = /obj/item/ammo_magazine/scp/svd
 
@@ -215,12 +206,10 @@
 	desc = "'The Right Arm Of Freedom', the standard issue firearm for the UNGOC and some other countries. This weapon has seen mutliple big conflicts."
 	icon_state = "fnfal"
 	item_state = "fnfal"
-	w_class = ITEM_SIZE_HUGE
 	force = 10
 	slot_flags = SLOT_BACK
 	caliber = "a762nato"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
-	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/fnfal
 	allowed_magazines = /obj/item/ammo_magazine/scp/fnfal
 
@@ -247,12 +236,10 @@
 	icon = 'icons/SCP/guns/smgs/p90.dmi'
 	icon_state = "p90"
 	item_state = "p90"
-	w_class = ITEM_SIZE_HUGE
 	force = 10
 	caliber = "5.7x28mm"
 	slot_flags = SLOT_BELT|SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
-	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/p90_mag/rubber
 	allowed_magazines = /obj/item/ammo_magazine/scp/p90_mag
 	has_bolt_icon = FALSE
@@ -261,11 +248,43 @@
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.5, 0.7)),
-		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=4,    one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.5, 0.5, 0.7, 0.9, 1.0)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-2), dispersion=list(0.0, 0.5, 0.7), autofire_enabled=1),
 		)
 
 /obj/item/gun/projectile/automatic/scp/p90/generate_mag_icon_state()
 	return "[ammo_magazine.gun_mag_icon]-[round(length(ammo_magazine.stored_ammo), 10)]"
+
+/obj/item/gun/projectile/automatic/scp/mp5
+	name = "MP5 SMG"
+	desc = "A submachine gun sample of the 2010s"
+	icon = 'icons/SCP/guns/smgs/mp5.dmi'
+	icon_state = "mp5"
+	item_state = "mp5"
+	force = 10
+	caliber = "9mm"
+	slot_flags = SLOT_BELT|SLOT_BACK
+	magazine_type = /obj/item/ammo_magazine/scp/mp5_mag
+	allowed_magazines = /obj/item/ammo_magazine/scp/mp5_mag
+	has_bolt_icon = FALSE
+
+	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.5, 0.7)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-2), dispersion=list(0.0, 0.5, 0.7), autofire_enabled=1),
+		)
+
+/obj/item/ammo_magazine/scp/mp5_mag
+	name = "mp5 magazine (9mm)"
+	icon = 'icons/SCP/guns/smgs/mp5.dmi'
+	icon_state = "mp5-mag"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	caliber = "9mm"
+	matter = list(DEFAULT_WALL_MATERIAL = 1500)
+	ammo_type = /obj/item/ammo_casing/pistol/c9mm
+	max_ammo = 30
+	multiple_sprites = 1
 
 /obj/item/gun/projectile/automatic/scp/ierichon
 	name = "Jericho-114 Pistol "
