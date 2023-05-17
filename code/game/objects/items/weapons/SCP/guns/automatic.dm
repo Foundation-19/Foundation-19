@@ -141,7 +141,7 @@
 	allowed_magazines = /obj/item/ammo_magazine/scp/ak
 	stock_icon = "stock"
 	foreend_icon = "fore-end"
-	foreend_offset = 18
+	foreend_offset = 19
 
 	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty
 	firemodes = list(
