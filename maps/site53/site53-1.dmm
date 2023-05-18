@@ -12256,7 +12256,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/item/taperoll/engineering/applied,
+/obj/item/taperoll/engineering,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
 "CQ" = (
@@ -17882,7 +17882,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp8containment)
 "Rc" = (
-/obj/item/taperoll/engineering/applied,
+/obj/item/taperoll/engineering,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
 "Rd" = (
@@ -42254,7 +42254,7 @@ Fh
 ua
 Fh
 Fh
-FW
+Rc
 Eh
 ua
 ua
@@ -42511,8 +42511,8 @@ ua
 Fh
 ua
 ua
-Rc
-CP
+FW
+Eh
 ua
 ua
 ua
@@ -42769,7 +42769,7 @@ ua
 FW
 FW
 FW
-Eh
+CP
 ua
 ua
 ua
@@ -44309,11 +44309,11 @@ ua
 ua
 Fh
 Fh
-FW
+Rc
 FW
 Eh
 FW
-FW
+Rc
 FW
 ua
 ua
@@ -44565,12 +44565,12 @@ ua
 ua
 ua
 Fh
-Rc
-Rc
-Rc
+FW
+FW
+FW
 CP
-Rc
-Rc
+FW
+FW
 ua
 ua
 Fh
