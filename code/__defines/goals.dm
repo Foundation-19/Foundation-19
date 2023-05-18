@@ -6,8 +6,10 @@
 // Goal categories
 
 #define GOAL_CAT_SKILLS "Skills"
+#define GOAL_CAT_SANITY "Sanity"
 #define GOAL_CAT_ANTAGONIST "Antagonist"
 
 // "Config" values
 
 #define GOAL_SKILLS_AMOUNT 3
+#define GOAL_SANITY_AMOUNT 2

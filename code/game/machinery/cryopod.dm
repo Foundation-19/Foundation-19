@@ -380,6 +380,8 @@
 			else
 				W.forceMove(src.loc)
 
+	SEND_SIGNAL(occupant, COMSIG_HUMAN_DESPAWNED)
+
 	//Update any existing objectives involving this mob.
 	for(var/datum/objective/O in all_objectives)
 		// We don't want revs to get objectives that aren't for heads of staff. Letting

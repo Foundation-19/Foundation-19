@@ -23,16 +23,34 @@
 #define COMSIG_ELEMENT_ATTACH "element_attach"
 /// fires on the target datum when an element is attached to it  (/datum/element)
 #define COMSIG_ELEMENT_DETACH "element_detach"
-
+/// fires when the game starts
 #define COMSIG_TICKER_STARTED "game_started"
+/// fires when the round ends
+#define COMSIG_ROUND_ENDED "round_ended"
 
 /// sent every carbon Life()
 #define COMSIG_CARBON_LIFE "carbon_life"
+/// fire by minds to do post-initialization behaviour
+#define COMSIG_MIND_POST_INIT "mind_post_init"
 
-/// sent when a goal is succeeded
+/// fired when a goal is succeeded
 #define COMSIG_GOAL_SUCCEEDED "goal_succeeded"
-/// sent when a goal is failed
+/// fired when a goal is failed
 #define COMSIG_GOAL_FAILED "goal_failed"
+/// fired by a human to access goal panel
+#define COMSIG_OPENING_GOAL_TGUI "opening_goal_tgui"
 
-/// sent by a human when it lifts a weight
+/// fired by a human when it lifts a weight
 #define COMSIG_HUMAN_LIFT_WEIGHT "human_lift_weight"
+/// fired by an atom/movable when it moves
+#define COMSIG_ATOM_MOVABLE_MOVED "atom_movable_moved"
+/// fired by a mob/living when it sends an email via the email client
+#define COMSIG_SENT_EMAIL "sent_email"
+/// fired by a human when it gives someone a hug
+#define COMSIG_GAVE_HUG "gave_hug"
+
+/// fired by a human when it despawns (e.g. by a cryopod)
+#define COMSIG_HUMAN_DESPAWNED "human_despawned"
+
+/// fired by a mob/living/carbon when it ingests a reagent. IS DYNAMICALLY CONSTRUCTED: append reagent type onto the string
+#define COMSIG_REAGENT_INGESTED_ "reagent_ingested_"

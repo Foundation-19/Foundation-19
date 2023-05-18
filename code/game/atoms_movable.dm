@@ -100,6 +100,8 @@
 		if(!loc)
 			GLOB.moved_event.raise_event(src, old_loc, null)
 
+		SEND_SIGNAL(src, COMSIG_ATOM_MOVABLE_MOVED)
+
 		// freelook
 		if(opacity)
 			updateVisibility(src)
@@ -115,6 +117,8 @@
 	if (.)
 		if(!loc)
 			GLOB.moved_event.raise_event(src, old_loc, null)
+
+		SEND_SIGNAL(src, COMSIG_ATOM_MOVABLE_MOVED)
 
 		// freelook
 		if(opacity)

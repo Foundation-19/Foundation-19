@@ -204,11 +204,10 @@ var/global/list/additional_antag_types = list()
 	for(var/datum/antagonist/antag in antag_templates)
 		antag.post_spawn()
 
-	// Update goals, now that antag status and jobs are both resolved.
+	// Post-initialize, now that antag status and jobs are both resolved.
 	for(var/thing in SSticker.minds)
-		var/datum/mind/mind = thing
-		var/datum/component/goalcontainer/GC = new()
-		mind += GC
+		var/datum/mind/M = thing
+		SEND_SIGNAL(M, COMSIG_MIND_POST_INIT)
 
 	if(evacuation_controller && auto_recall_shuttle)
 		evacuation_controller.recall = 1
@@ -304,10 +303,7 @@ var/global/list/additional_antag_types = list()
 	var/text = "<br><br>"
 	text += GLOB.using_map.roundend_summary(data)
 
-	for(var/thing in GLOB.clients)
-		var/client/client = thing
-		if(client.mob && client.mob.mind)
-			client.mob.mind.show_roundend_summary()
+	SEND_GLOBAL_SIGNAL(COMSIG_ROUND_ENDED)
 
 	to_world(text)
 

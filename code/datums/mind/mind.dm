@@ -69,7 +69,6 @@
 
 /datum/mind/Destroy()
 	QDEL_NULL_LIST(memories)
-	QDEL_NULL_LIST(goals)
 	SSticker.minds -= src
 	. = ..()
 
@@ -132,30 +131,10 @@
 
 	show_browser(usr, out, "window=edit_memory[src]")
 
-/datum/mind/proc/get_goal_from_href(href)
-	var/ind = isnum(href) ? href : text2num(href)
-	if(ind > 0 && ind <= LAZYLEN(goals))
-		return goals[ind]
-
 /datum/mind/Topic(href, href_list)
 
 	var/is_admin =   FALSE
-	var/can_modify = FALSE
 	is_admin = check_rights(R_ADMIN, FALSE)
-	can_modify = is_admin
-
-	if(href_list["add_goal"])
-
-		var/mob/caller = locate(href_list["add_goal_caller"])
-		if(caller && caller == current) can_modify = TRUE
-
-		if(can_modify)
-			if(is_admin)
-				log_admin("[key_name_admin(usr)] added a random goal to [key_name(current)].")
-			var/did_generate_goal = generate_goals(assigned_job, TRUE)
-			if(did_generate_goal)
-				to_chat(current, SPAN_NOTICE("You have received a new goal. Use <b>Show Goals</b> to view it."))
-		return TRUE // To avoid 'you are not an admin' spam.
 
 	if(href_list["remove_memory"])
 		var/memory = locate(href_list["remove_memory"]) in memories
@@ -485,6 +464,7 @@
 		SSticker.minds += mind
 	if(!mind.name)	mind.name = real_name
 	mind.current = src
+	mind.AddComponent(/datum/component/goalcontainer)
 	if(player_is_antag(mind))
 		add_verb(client, /client/proc/aooc)
 

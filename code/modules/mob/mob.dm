@@ -1244,3 +1244,10 @@
 
 /mob/keybind_face_direction(direction)
 	facedir(direction)
+
+/mob/verb/open_goals_panel()
+	set category = "IC"
+	set name = "Open Goals Panel"
+	set desc = "Shows your personal goals, antagonist objectives, and so on."
+
+	SEND_SIGNAL(src, COMSIG_OPENING_GOAL_TGUI)

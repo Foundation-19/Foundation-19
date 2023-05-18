@@ -425,10 +425,12 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 				if(U.has_organ(BP_L_HAND))
 					H.visible_message(SPAN_NOTICE("\The [H] shakes \the [U]'s hand."), SPAN_NOTICE("You shake \the [U]'s hand."))
 					zonefound = TRUE
-			//here is where tail entwining will go one day
 
 	if(!zonefound) //If they are not human or we don't have the specified body part, default to hugs
 		H.visible_message(SPAN_NOTICE("[H] hugs [target] to make [t_him] feel better!"), SPAN_NOTICE("You hug [target] to make [t_him] feel better!"))
+
+		if(H != target)
+			SEND_SIGNAL(H, COMSIG_GAVE_HUG, target)
 
 /datum/species/proc/add_base_auras(mob/living/carbon/human/H)
 	if(base_auras)
