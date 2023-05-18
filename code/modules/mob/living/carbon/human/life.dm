@@ -897,7 +897,7 @@
 	if(isturf(loc) && rand(1,1000) == 1)
 		var/turf/T = loc
 		if(T.get_lumcount() <= LIGHTING_SOFT_THRESHOLD)
-			playsound_local(src,pick(GLOB.scarySounds),50, 1, -1)
+			playsound_local(src, SFX_SCARY_SOUND, 50, 1, -1)
 
 	var/area/A = get_area(src)
 	if(client && world.time >= client.played + 600)

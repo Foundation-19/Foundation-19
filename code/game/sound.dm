@@ -1,10 +1,4 @@
-GLOBAL_LIST_INIT(zombie_sound,list('sound/scp/voice/049_1/zombierand1.ogg','sound/scp/voice/049_1/zombierand2.ogg','sound/scp/voice/049_1/zombierand3.ogg',\
-'sound/scp/voice/049_1/zombierand4.ogg','sound/scp/voice/049_1/zombierand5.ogg','sound/scp/voice/049_1/zombierand6.ogg','sound/scp/voice/049_1/zombierand7.ogg'))
-
 /proc/playsound(atom/source, soundin, vol as num, vary, extrarange as num, falloff, is_global, frequency, is_ambiance = 0, ignore_walls = TRUE, ignore_pressure = FALSE)
-
-	soundin = get_sfx(soundin) // same sound for everyone
-
 	if(isarea(source))
 		error("[source] is an area and is trying to make the sound: [soundin]")
 		return
@@ -128,28 +122,7 @@ var/const/FALLOFF_SOUNDS = 0.5
 
 /proc/get_sfx(soundin)
 	if(istext(soundin))
-		switch(soundin)
-			if ("shatter") soundin = pick(GLOB.shatter_sound)
-			if ("explosion") soundin = pick(GLOB.explosion_sound)
-			if ("sparks") soundin = pick(GLOB.spark_sound)
-			if ("rustle") soundin = pick(GLOB.rustle_sound)
-			if ("punch") soundin = pick(GLOB.punch_sound)
-			if ("clownstep") soundin = pick(GLOB.clown_sound)
-			if ("swing_hit") soundin = pick(GLOB.swing_hit_sound)
-			if ("hiss") soundin = pick(GLOB.hiss_sound)
-			if ("pageturn") soundin = pick(GLOB.page_sound)
-			if ("fracture") soundin = pick(GLOB.fracture_sound)
-			if ("crack") soundin = pick(GLOB.crack_sound)
-			if ("sizzle") soundin = pick(GLOB.sizzle_sound)
-			if ("light_bic") soundin = pick(GLOB.lighter_sound)
-			if ("keyboard") soundin = pick(GLOB.keyboard_sound)
-			if ("keystroke") soundin = pick(GLOB.keystroke_sound)
-			if ("switch") soundin = pick(GLOB.switch_sound)
-			if ("button") soundin = pick(GLOB.button_sound)
-			if ("chop") soundin = pick(GLOB.chop_sound)
-			if ("glasscrack") soundin = pick(GLOB.glasscrack_sound)
-			if ("tray_hit") soundin = pick(GLOB.tray_hit_sound)
-			if ("gun_t12") soundin = pick(GLOB.t12_sound)
+		soundin = pick(GLOB.sfx_list[soundin])
 	return soundin
 
 /client/verb/stop_sounds()
