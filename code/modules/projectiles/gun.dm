@@ -496,7 +496,7 @@
 		playsound(user, shot_sound, 10, 1)
 		show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
 	else
-		playsound(user, shot_sound, 50, 1)
+		playsound(user, shot_sound, 75, 1)
 		show_sound_effect(get_turf(src), user, SFX_ICON_JAGGED)
 
 //Suicide handling.

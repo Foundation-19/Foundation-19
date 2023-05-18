@@ -243,7 +243,7 @@
 		if(!user.unEquip(C, src))
 			return
 		stored_ammo.Add(C)
-		playsound(user, "sfx_bullet_insert", rand(45, 60), FALSE)
+		playsound(user, SFX_BULLET_INSERT, rand(45, 60), FALSE)
 		update_icon()
 	else ..()
 
@@ -264,7 +264,8 @@
 		stored_ammo.Insert(1, AC) //add it to the head of our magazine's list
 		L.update_icon()
 		update_icon()
-		playsound(src.loc, 'sound/weapons/bulletin_mag.wav', 80, 1)
+		playsound(user, SFX_BULLET_INSERT, rand(45, 60), FALSE)
+		//playsound(src.loc, 'sound/weapons/bulletin_mag.wav', 80, 1)
 	update_icon()
 
 /obj/item/ammo_magazine/attack_self(mob/user)

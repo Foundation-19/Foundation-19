@@ -71,13 +71,24 @@
 /obj/item/gun/projectile/automatic/scp/proc/generate_mag_icon_state()
 	return ammo_magazine.gun_mag_icon
 
+/obj/item/gun/automatic/scp/play_fire_sound(mob/user, obj/item/projectile/P)
+	var/shot_sound = fire_sound? fire_sound : P.fire_sound
+	if(!shot_sound)
+		return
+	if(silenced)
+		playsound(user, shot_sound, 10, 1)
+		show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
+	else
+		playsound(user, shot_sound, 75, 1)
+		show_sound_effect(get_turf(src), user, SFX_ICON_JAGGED)
+
 /*
 	Rifles
 */
 
 /obj/item/gun/projectile/automatic/scp/m4a1
 	name = "M4A1"
-	desc = "A Foundation-standard service carbine that takes 5.56x45mm straight magazines. Like many reliable firearms of old, the Foundation has found a use for them in the hands of Security Department guards."
+	desc = "A Foundation-standard service carbine that takes 5.56x45mm magazines."
 	icon = 'icons/SCP/guns/rifles/m4carbine.dmi'
 	icon_state = "m4carbine"
 	item_state = "m4"
@@ -91,7 +102,6 @@
 	stock_icon = "stock"
 	foreend_icon = "fore-end"
 
-	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
 		list(mode_name="3-round bursts", burst=3, fire_delay=1, one_hand_penalty=3, burst_accuracy=list(0,-1,-2), dispersion=list(0.0, 0.5, 0.8)),
@@ -141,9 +151,8 @@
 	allowed_magazines = /obj/item/ammo_magazine/scp/ak
 	stock_icon = "stock"
 	foreend_icon = "fore-end"
-	foreend_offset = 19
+	foreend_offset = 17
 
-	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0)),
@@ -162,7 +171,6 @@
 	magazine_type = /obj/item/ammo_magazine/scp/m16_mag
 	allowed_magazines = /obj/item/ammo_magazine/scp/m16_mag
 
-	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
 		list(mode_name="3-round bursts", burst=3, fire_delay=1, one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.5, 0.8)),
@@ -244,7 +252,6 @@
 	allowed_magazines = /obj/item/ammo_magazine/scp/p90_mag
 	has_bolt_icon = FALSE
 
-	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.5, 0.7)),
@@ -267,11 +274,10 @@
 	allowed_magazines = /obj/item/ammo_magazine/scp/mp5_mag
 	has_bolt_icon = FALSE
 
-	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
 	firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
-		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.5, 0.7)),
-		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-2), dispersion=list(0.0, 0.5, 0.7), autofire_enabled=1),
+		list(mode_name="semiauto",       burst=1, fire_delay=0, move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=0, move_delay=4, one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.3, 0.5)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-2), dispersion=list(0.0, 0.3, 0.5), autofire_enabled=1),
 		)
 
 /obj/item/ammo_magazine/scp/mp5_mag

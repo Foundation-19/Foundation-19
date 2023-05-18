@@ -24,7 +24,7 @@
 	load_method = SINGLE_CASING
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
 	handle_casings = EJECT_CASINGS
-	load_sound = "sfx_shell_insert"
+	load_sound = SFX_SHELL_INSERT
 	has_safety = FALSE // No brakes on this train baby
 	acid_resistance = -1
 

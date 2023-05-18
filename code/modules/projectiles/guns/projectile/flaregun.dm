@@ -16,7 +16,7 @@
 	handle_casings = CYCLE_CASINGS
 	load_method = SINGLE_CASING|SPEEDLOADER
 	max_shells = 1
-	load_sound = "sfx_shell_insert"
+	load_sound = SFX_SHELL_INSERT
 
 /obj/item/gun/projectile/flare/loaded
 	ammo_type = /obj/item/ammo_casing/shotgun/flash

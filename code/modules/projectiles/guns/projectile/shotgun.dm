@@ -18,7 +18,7 @@
 	bulk = 6
 	var/recentpump = 0 // to prevent spammage
 	wielded_item_state = "shotgun-wielded"
-	load_sound = "sfx_shell_insert"
+	load_sound = SFX_SHELL_INSERT
 
 /obj/item/gun/projectile/shotgun/on_update_icon()
 	..()
