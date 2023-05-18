@@ -1,12 +1,14 @@
 /obj/item/gun/projectile/automatic/scp
 	var/bolt_open = FALSE
-	var/bolt_back_sound = 'sound/weapons/guns/interaction/ltrifle_magin.ogg'
-	var/bolt_forward_sound = 'sound/weapons/guns/interaction/ltrifle_magin.ogg'
+	var/bolt_back_sound = 'sound/weapons/guns/interaction/reload_bolt_back.ogg'
+	var/bolt_forward_sound = 'sound/weapons/guns/interaction/reload_bolt_forward.ogg'
 	var/has_bolt_icon = 1
 	var/stock_icon
 	var/foreend_icon
 	var/stock_offset = -4
 	var/foreend_offset = 20
+	var/last_bolt_cycle = 0
+	var/bolt_hold = FALSE
 	appearance_flags = KEEP_TOGETHER
 	item_icons = list(
 		slot_l_hand_str = 'icons/SCP/guns/onmob/lefthand_guns.dmi',
@@ -14,6 +16,8 @@
 		)
 
 
+/obj/item/gun/projectile/automatic/scp/MouseDrop(obj/over_object)
+	handle_mousedrop_unload(over_object)
 
 /obj/item/gun/projectile/proc/handle_mousedrop_unload(obj/over_object)
 	var/mob/living/carbon/human/user = usr
@@ -46,8 +50,150 @@
 	update_icon()
 	return 1
 
-/obj/item/gun/projectile/automatic/scp/MouseDrop(obj/over_object)
-	handle_mousedrop_unload(over_object)
+/obj/item/gun/projectile/automatic/scp/AltClick(mob/user)
+	var/datum/firemode/new_mode = switch_firemodes(user)
+	if(prob(20) && !user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
+		new_mode = switch_firemodes(user)
+	if(new_mode)
+		to_chat(user, SPAN_NOTICE("\The [src] is now set to [new_mode.name]."))
+
+/obj/item/gun/projectile/automatic/scp/attack_self(mob/user)
+	if(world.time > last_bolt_cycle + 1 SECOND)
+		last_bolt_cycle = world.time
+		if(!bolt_open)
+			cycle_bolt(manual = TRUE)
+		else
+			bolt_forward(manual = TRUE)
+
+/obj/item/gun/projectile/automatic/scp/proc/cycle_bolt(manual)
+	bolt_back(manual)
+
+	if(!get_projectile_from_magazine() && bolt_hold)
+		if(has_bolt_icon)
+			update_icon()
+		return
+
+	if(manual)
+		sleep(5)
+	bolt_forward(manual)
+
+/obj/item/gun/projectile/automatic/scp/proc/bolt_back(manual)
+	bolt_open = TRUE
+	if(manual && bolt_back_sound)
+		playsound(src, bolt_back_sound, 75)
+	ejectCasing(manual)
+
+
+/obj/item/gun/projectile/automatic/scp/proc/bolt_forward(manual)
+	if(manual && bolt_forward_sound)
+		playsound(src, bolt_forward_sound, 75)
+	load_round_from_magazine()
+	bolt_open = FALSE
+	if(has_bolt_icon)
+		update_icon()
+
+/obj/item/gun/projectile/automatic/scp/proc/get_projectile_from_magazine()
+	if(length(loaded))
+		return loaded[1]
+	if(ammo_magazine && length(ammo_magazine.stored_ammo))
+		return ammo_magazine.stored_ammo[length(ammo_magazine.stored_ammo)]
+
+/obj/item/gun/projectile/automatic/scp/proc/load_round_from_magazine()
+	if(length(loaded))
+		chambered = loaded[1]
+		loaded -= chambered
+		return 1
+	if(ammo_magazine && length(ammo_magazine.stored_ammo))
+		chambered = ammo_magazine.stored_ammo[length(ammo_magazine.stored_ammo)]
+		ammo_magazine.stored_ammo -= chambered
+		return 1
+
+/obj/item/gun/projectile/automatic/scp/proc/process_jam()
+	if(!is_jammed && prob(jam_chance))
+		src.visible_message(SPAN_DANGER("\The [src] jams!"))
+		is_jammed = 1
+		var/mob/user = loc
+		if(istype(user))
+			if(prob(user.skill_fail_chance(SKILL_WEAPONS, 100, SKILL_MASTER)))
+				return null
+			else
+				to_chat(user, SPAN_NOTICE("You reflexively clear the jam on \the [src]."))
+				is_jammed = 0
+				playsound(src.loc, 'sound/weapons/flipblade.ogg', 50, 1)
+
+
+/obj/item/gun/projectile/automatic/scp/consume_next_projectile()
+	if(is_jammed)
+		return
+
+	if(chambered)
+		return chambered.expend()
+
+/obj/item/gun/projectile/automatic/scp/handle_post_fire(mob/user, atom/target, pointblank=0, reflex=0)
+	if(fire_anim)
+		flick(fire_anim, src)
+
+	if(combustion)
+		var/turf/curloc = get_turf(src)
+		if(curloc)
+			curloc.hotspot_expose(700, 5)
+
+	if(istype(user,/mob/living/carbon/human) && user.is_cloaked()) //shooting will disable a rig cloaking device
+		var/mob/living/carbon/human/H = user
+		if(istype(H.back,/obj/item/rig))
+			var/obj/item/rig/R = H.back
+			for(var/obj/item/rig_module/stealth_field/S in R.installed_modules)
+				S.deactivate()
+
+	if(!user)
+		return
+
+	var/user_message = SPAN_WARNING("You fire \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!")
+	if (silenced)
+		to_chat(user, user_message)
+	else
+		user.visible_message(
+			SPAN_DANGER("\The [user] fires \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!"),
+			user_message,
+			SPAN_DANGER("You hear a [fire_sound_text]!")
+		)
+
+	if (pointblank && ismob(target))
+		admin_attack_log(user, target,
+			"shot point blank with \a [type]",
+			"shot point blank with \a [type]",
+			"shot point blank (\a [type])"
+		)
+
+	if(one_hand_penalty)
+		if(!src.is_held_twohanded(user))
+			switch(one_hand_penalty)
+				if(4 to 6)
+					if(prob(50)) //don't need to tell them every single time
+						to_chat(user, SPAN_WARNING("Your aim wavers slightly."))
+				if(6 to 8)
+					to_chat(user, SPAN_WARNING("You have trouble keeping \the [src] on target with just one hand."))
+				if(8 to INFINITY)
+					to_chat(user, SPAN_WARNING("You struggle to keep \the [src] on target with just one hand!"))
+		else if(!user.can_wield_item(src))
+			switch(one_hand_penalty)
+				if(4 to 6)
+					if(prob(50)) //don't need to tell them every single time
+						to_chat(user, SPAN_WARNING("Your aim wavers slightly."))
+				if(6 to 8)
+					to_chat(user, SPAN_WARNING("You have trouble holding \the [src] steady."))
+				if(8 to INFINITY)
+					to_chat(user, SPAN_WARNING("You struggle to hold \the [src] steady!"))
+
+	// If your skill in weapons is higher than/equal to (screen_shake + 2) - it won't shake at all.
+	if(screen_shake)
+		var/shake_mult = 3 / user.get_skill_value(SKILL_WEAPONS)
+		INVOKE_ASYNC(GLOBAL_PROC, /proc/directional_recoil, user, shake_mult * (screen_shake+1), Get_Angle(user, target))
+
+	update_icon()
+
+	if(chambered)
+		cycle_bolt()
 
 /obj/item/gun/projectile/automatic/scp/update_icon()
 	..()
@@ -269,10 +415,11 @@
 	item_state = "mp5"
 	force = 10
 	caliber = "9mm"
+	fire_sound = 'sound/weapons/gunshot/mp5.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	magazine_type = /obj/item/ammo_magazine/scp/mp5_mag
 	allowed_magazines = /obj/item/ammo_magazine/scp/mp5_mag
-	has_bolt_icon = FALSE
+	has_bolt_icon = TRUE
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0, move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),

@@ -55,7 +55,8 @@
 
 /datum/component/movable_physics/proc/z_floor_bounce(atom/movable/moving_atom)
 	angle_of_movement += rand(-30, 30)
-	playsound(moving_atom, pick(bounce_sounds), 50, TRUE)
+	if(LAZYLEN(bounce_sounds))
+		playsound(moving_atom, pick(bounce_sounds), 50, TRUE)
 	moving_atom.SpinAnimation(speed = 0.5 SECONDS, loops = 1)
 	moving_atom.pixel_z = z_floor
 	horizontal_velocity = max(0, horizontal_velocity + (vertical_velocity * -0.8))
@@ -65,7 +66,8 @@
 	angle_of_movement = ((180 - bounce_angle) - angle_of_movement)
 	if(angle_of_movement < 0)
 		angle_of_movement += 360
-	playsound(moving_atom, pick(bounce_sounds), 50, TRUE)
+	if(LAZYLEN(bounce_sounds))
+		playsound(moving_atom, pick(bounce_sounds), 50, TRUE)
 
 /// Fixes an angle below 0 or above 360
 /datum/component/movable_physics/proc/fix_angle(angle)
