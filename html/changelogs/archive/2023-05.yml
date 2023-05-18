@@ -1,0 +1,62 @@
+2023-05-04:
+  HaultyAnonie:
+  - rscadd: RCD to steal objective
+  - code_imp: made code to escape the shuttle to then a train
+2023-05-05:
+  EgorDinamit:
+  - tweak: SCP 173's auto-breach effect is now instant, instead of one blastdoor at
+      a time.
+  TheDarkElites:
+  - rscadd: 173 AI now good :)
+  - balance: 173 is now active in low-pop but AI only and cannot self-breach.
+  checkraisefold:
+  - bugfix: Fixed moderator skill panel access.
+  cheesePizza2:
+  - rscadd: Trying to use a chem dispenser with the lowest skill level gives you a
+      chance of mis-inputting and getting a completely different chemical.
+  - balance: Polytrinic acid damage lowered.
+  - balance: BODA dispenser was changed to a Water Dispenser, which does NOT dispense
+      glass.
+  - imageadd: BODA dispenser sprite altered.
+  - balance: The Class-D seed servitor charges money.
+  - balance: Disarming has been changed to be less buggy, less random, and less OP.
+  - balance: The D-block built-in medbay has upped security. It should now be harder
+      for D-class rioters to steal the dispenser.
+  - rscdel: Rogue maintenance drone event has been removed.
+  - code_imp: General improvements.
+  - code_imp: Adds functionality for abstract objects.
+  darkincarnate:
+  - rscadd: Added paper shredder and wall-filing cabinets to all offices if they didn't
+      have them already.
+  - rscdel: Removed one of the nuke envelopes in SD office, they don't need two.
+2023-05-08:
+  EgorDinamit:
+  - tweak: Holopad's ID is not strictly tied to its area anymore.
+  - tweak: Holopads can now be renamed by using a multitool.
+2023-05-09:
+  casualspacestation14enjoyer:
+  - imageadd: changed the icons for NT to SCP
+  - code_imp: changed some names for programs (NanoWord is now SCiPWord)
+2023-05-13:
+  cheesePizza2:
+  - rscadd: Guard clothing now protects slightly more against acid attacks. The combat
+      bio hood protects EXTREMELY well against acid attacks.
+  - balance: If acid is fully blocked by clothing, it does no damage.
+  - bugfix: Bug where acid (and other reagents with high touch_metabolisms) was treated
+      as volume 50 for damage has been fixed.
+  - bugfix: SCPs breaking machinery is slightly improved.
+2023-05-16:
+  GGarciaECE:
+  - rscadd: Made the MTF Alpha 1 Red Right Hand beret actually armoured (on the same
+      level as their armour). No more quick death for the elites of Alpha One
+  - rscadd: the LCZ Armoury has the very inefficient "riot shotguns" replaced with
+      Saiga 12 (There are 10 in total, plus the one in the ZC locker, totalling 11
+      for all 11 LCZ slots). They only start with beanbag mags and boxes, to get lethal
+      buckshot or other specialized shells they'd need ZC approval to open the armoury
+  - rscadd: Gave P90 it's full auto settign back
+  - rscadd: Divided LCZ armoury into a lethal area and a non lethal area compartment,
+      both compartment can be opened or locked by the ZC.
+2023-05-17:
+  EgorDinamit:
+  - admin: Ascent outfits, clothes and "props" were re-added. Yes, Yawet, this is
+      for you.

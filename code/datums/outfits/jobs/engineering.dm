@@ -1,40 +1,48 @@
-/decl/hierarchy/outfit/job/engineering
-	hierarchy_type = /decl/hierarchy/outfit/job/engineering
-	belt = /obj/item/storage/belt/utility/full
-	l_ear = /obj/item/device/radio/headset/headset_eng
-	shoes = /obj/item/clothing/shoes/workboots
-	pda_slot = slot_l_store
-	flags = OUTFIT_FLAGS_JOB_DEFAULT | OUTFIT_EXTENDED_SURVIVAL
-
 /decl/hierarchy/outfit/job/engineering/New()
 	..()
 	BACKPACK_OVERRIDE_ENGINEERING
 
-/decl/hierarchy/outfit/job/engineering/chief_engineer
-	name = OUTFIT_JOB_NAME("Chief engineer")
-	head = /obj/item/clothing/head/hardhat/white
-	uniform = /obj/item/clothing/under/rank/chief_engineer
+/decl/hierarchy/outfit/job/command/chief_engineer
+	name = OUTFIT_JOB_NAME("Chief Engineer")
+	uniform = /obj/item/clothing/under/scp/utility/engineering
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_type = /obj/item/card/id/seclvl5eng
+	belt = /obj/item/storage/belt/utility/full
+	l_pocket = /obj/item/device/radio
 	l_ear = /obj/item/device/radio/headset/heads/ce
-	gloves = /obj/item/clothing/gloves/thick
-	id_types = list(/obj/item/card/id/engineering/head)
-	pda_type = /obj/item/modular_computer/pda/heads/ce
 
-/decl/hierarchy/outfit/job/engineering/engineer
+/decl/hierarchy/outfit/job/engineering/conteng
+	name = OUTFIT_JOB_NAME("Containment Engineer")
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_type = /obj/item/card/id/seclvl4eng
+	belt = /obj/item/storage/belt/utility/full
+	l_pocket = /obj/item/device/radio
+	l_ear = /obj/item/device/radio/headset/heads/ce
+
+/decl/hierarchy/outfit/job/engineering/seneng
+	name = OUTFIT_JOB_NAME("Senior Engineer")
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_type = /obj/item/card/id/seclvl4eng
+	belt = /obj/item/storage/belt/utility/full
+	l_pocket = /obj/item/device/radio
+	l_ear = /obj/item/device/radio/headset/heads/ce
+
+/decl/hierarchy/outfit/job/engineering/juneng
+	name = OUTFIT_JOB_NAME("Junior Engineer")
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_type = /obj/item/card/id/seclvl2eng
+	belt = /obj/item/storage/belt/utility/full
+	l_pocket = /obj/item/device/radio
+	l_ear = /obj/item/device/radio/headset/headset_eng
+
+/decl/hierarchy/outfit/job/engineering/eng
 	name = OUTFIT_JOB_NAME("Engineer")
-	head = /obj/item/clothing/head/hardhat
-	uniform = /obj/item/clothing/under/rank/engineer
-	r_pocket = /obj/item/device/t_scanner
-	id_types = list(/obj/item/card/id/engineering)
-	pda_type = /obj/item/modular_computer/pda/engineering
-
-/decl/hierarchy/outfit/job/engineering/engineer/void
-	name = OUTFIT_JOB_NAME("Engineer - Voidsuit")
-	head = /obj/item/clothing/head/helmet/space/void/engineering
-	mask = /obj/item/clothing/mask/breath
-	suit = /obj/item/clothing/suit/space/void/engineering
-
-/decl/hierarchy/outfit/job/engineering/atmos
-	name = OUTFIT_JOB_NAME("Atmospheric technician")
-	uniform = /obj/item/clothing/under/rank/atmospheric_technician
-	belt = /obj/item/storage/belt/utility/atmostech
-	pda_type = /obj/item/modular_computer/pda/engineering
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id_type = /obj/item/card/id/seclvl3eng
+	belt = /obj/item/storage/belt/utility/full
+	l_pocket = /obj/item/device/radio
+	l_ear = /obj/item/device/radio/headset/headset_eng

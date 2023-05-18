@@ -8,7 +8,7 @@ var/bomb_set
 	density = TRUE
 	use_power = POWER_USE_OFF
 	uncreated_component_parts = null
-	unacidable = TRUE
+	acid_resistance = -1
 	interact_offline = TRUE
 
 	var/deployable = 0

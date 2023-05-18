@@ -4,7 +4,7 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "portal"
 	density = TRUE
-	unacidable = TRUE
+	acid_resistance = -1
 	var/obj/item/target = null
 	var/creator = null
 	anchored = TRUE

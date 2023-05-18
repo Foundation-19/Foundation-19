@@ -60,72 +60,6 @@
 /obj/item/ammo_casing/flechette/hp
 	projectile_type = /obj/item/projectile/bullet/flechette/hp
 
-/obj/item/ammo_casing/shotgun
-	name = "shotgun slug"
-	desc = "A shotgun slug."
-	icon_state = "shell-slug"
-	spent_icon = "shell-slug-spent"
-	caliber = CALIBER_SHOTGUN
-	projectile_type = /obj/item/projectile/bullet/shotgun
-	matter = list(MATERIAL_STEEL = 360)
-	fall_sounds = list('sound/weapons/guns/shotgun_fall.ogg')
-
-/obj/item/ammo_casing/shotgun/pellet
-	name = "shotgun shell"
-	desc = "A shotshell."
-	icon_state = "shell-pellet"
-	spent_icon = "shell-pellet-spent"
-	projectile_type = /obj/item/projectile/bullet/pellet/shotgun
-	matter = list(MATERIAL_STEEL = 360)
-
-/obj/item/ammo_casing/shotgun/blank
-	name = "shotgun shell"
-	desc = "A blank shell."
-	icon_state = "shell-blank"
-	spent_icon = "shell-blank-spent"
-	projectile_type = /obj/item/projectile/bullet/blank
-	matter = list(MATERIAL_STEEL = 90)
-
-/obj/item/ammo_casing/shotgun/practice
-	name = "shotgun shell"
-	desc = "A practice shell."
-	icon_state = "shell-practice"
-	spent_icon = "shell-practise-spent"
-	projectile_type = /obj/item/projectile/bullet/shotgun/practice
-	matter = list(MATERIAL_STEEL = 90)
-
-/obj/item/ammo_casing/shotgun/beanbag
-	name = "beanbag shell"
-	desc = "A beanbag shell."
-	icon_state = "shell-beanbag"
-	spent_icon = "shell-beanbag-spent"
-	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag
-	matter = list(MATERIAL_STEEL = 180)
-
-//Can stun in one hit if aimed at the head, but
-//is blocked by clothing that stops tasers and is vulnerable to EMP
-/obj/item/ammo_casing/shotgun/stunshell
-	name = "stun shell"
-	desc = "An energy stun cartridge."
-	icon_state = "shell-stun"
-	spent_icon = "shell-stun-spent"
-	projectile_type = /obj/item/projectile/energy/electrode/stunshot
-	leaves_residue = FALSE
-	matter = list(MATERIAL_STEEL = 360, MATERIAL_GLASS = 720)
-
-/obj/item/ammo_casing/shotgun/stunshell/emp_act(severity)
-	if(prob(100/severity)) BB = null
-	update_icon()
-
-//Does not stun, only blinds, but has area of effect.
-/obj/item/ammo_casing/shotgun/flash
-	name = "flash shell"
-	desc = "A chemical shell used to signal distress or provide illumination."
-	icon_state = "shell-flash"
-	spent_icon = "shell-flash-spent"
-	projectile_type = /obj/item/projectile/energy/flash/flare
-	matter = list(MATERIAL_STEEL = 90, MATERIAL_GLASS = 90)
-
 /obj/item/ammo_casing/rifle
 	desc = "A rifle bullet casing."
 	caliber = CALIBER_RIFLE
@@ -336,7 +270,8 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 360, "glass" = 720)
 
 /obj/item/ammo_casing/shotgun/stunshell/emp_act(severity)
-	if(prob(100/severity)) BB = null
+	if(prob(100/severity))
+		is_spent = TRUE
 	update_icon()
 
 //Does not stun, only blinds, but has area of effect.

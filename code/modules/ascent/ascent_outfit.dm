@@ -1,12 +1,13 @@
+/* These outfits are, obviously, only used for Ascent, which are normally only admin spawned for events */
+
 /decl/hierarchy/outfit/job/ascent
 	name = "Ascent - Gyne"
 	mask =     /obj/item/clothing/mask/gas/ascent
 	uniform =  /obj/item/clothing/under/ascent
-	id_types = list( /obj/item/card/id/ascent)
+	id_type = list( /obj/item/card/id/ascent)
 	shoes =    /obj/item/clothing/shoes/magboots/ascent
 	l_ear =    null
 	pda_type = null
-	pda_slot = 0
 	flags =    0
 
 /decl/hierarchy/outfit/job/ascent/attendant
@@ -110,5 +111,3 @@
 		allowed |= tool
 		new tool(pockets)
 	pockets.make_exact_fit()
-	allowed |= /obj/item/reagent_containers/food/drinks/cans/waterbottle/ascent
-	pockets.can_hold |= /obj/item/reagent_containers/food/drinks/cans/waterbottle/ascent

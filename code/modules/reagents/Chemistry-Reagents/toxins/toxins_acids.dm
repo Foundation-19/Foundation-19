@@ -21,55 +21,64 @@
 
 /datum/reagent/acid/affect_touch(mob/living/carbon/M, alien, removed) // This is the most interesting
 
-	M.visible_message(
-		SPAN_WARNING("\The [M]'s skin sizzles and burns on contact with the liquid!"),
-		SPAN_DANGER("Your skin sizzles and burns!")
-		)
-
 	if (ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if (H.head)
-			if (H.head.unacidable)
+			if (H.head.acid_resistance == -1)
 				to_chat(H, SPAN_WARNING("Your [H.head] protects you from the liquid."))
 				remove_self(volume)
 				return
-			else if (removed > meltdose)
+			else if (removed > (meltdose * H.head.acid_resistance))
 				to_chat(H, SPAN_DANGER("Your [H.head] melts away!"))
+				removed -= meltdose * H.head.acid_resistance
 				qdel(H.head)
 				H.update_inv_head(1)
 				H.update_hair(1)
-				removed -= meltdose
+			else
+				to_chat(H, SPAN_DANGER("Your [H.head] withstands the liquid!"))
+				removed = 0
 		if (removed <= 0)
 			return
 
 		if (H.wear_mask)
-			if (H.wear_mask.unacidable)
+			if (H.wear_mask.acid_resistance == -1)
 				to_chat(H, SPAN_DANGER("Your [H.wear_mask] protects you from the acid."))
 				remove_self(volume)
 				return
-			else if (removed > meltdose)
+			else if (removed > (meltdose * H.wear_mask.acid_resistance))
 				to_chat(H, SPAN_DANGER("Your [H.wear_mask] melts away!"))
+				removed -= meltdose * H.wear_mask.acid_resistance
 				qdel(H.wear_mask)
 				H.update_inv_wear_mask(1)
 				H.update_hair(1)
-				removed -= meltdose
+			else
+				to_chat(H, SPAN_DANGER("Your [H.wear_mask] withstands the liquid!"))
+				removed = 0
 		if (removed <= 0)
 			return
 
 		if (H.glasses)
-			if (H.glasses.unacidable)
+			if (H.glasses.acid_resistance == -1)
 				to_chat(H, SPAN_WARNING("Your [H.glasses] partially protect you from the liquid!"))
 				removed /= 2
-			else if (removed > meltdose)
+			else if (removed > (meltdose * H.glasses.acid_resistance / 2))
 				to_chat(H, SPAN_DANGER("Your [H.glasses] melt away!"))
+				removed -= meltdose * H.glasses.acid_resistance / 2
 				qdel(H.glasses)
 				H.update_inv_glasses(1)
-				removed -= meltdose / 2
+			else
+				to_chat(H, SPAN_DANGER("Your [H.glasses] withstand the liquid!"))
+				removed = 0
 		if (removed <= 0)
 			return
 
 	if (M.unacidable)
 		return
+
+	M.visible_message(
+		SPAN_WARNING("\The [M]'s skin sizzles and burns on contact with the liquid!"),
+		SPAN_DANGER("Your skin sizzles and burns!")
+		)
 
 	if (removed < meltdose) // Not enough to melt anything
 		M.take_organ_damage(0, min(removed * acid_power * 0.1, max_damage)) //burn damage, since it causes chemical burns. Acid doesn't make bones shatter, like brute trauma would.
@@ -85,15 +94,15 @@
 				affecting.status |= ORGAN_DISFIGURED
 
 /datum/reagent/acid/touch_obj(obj/O)
-	if (O.unacidable)
+	if (O.acid_resistance == -1)
 		return
-	if ((istype(O, /obj/item) || istype(O, /obj/effect/vine)) && (volume > meltdose))
+	if ((istype(O, /obj/item) || istype(O, /obj/effect/vine)) && (volume > (meltdose * O.acid_resistance)))
+		remove_self(meltdose * O.acid_resistance) // 10 units of acid will not melt EVERYTHING on the tile
 		var/obj/effect/decal/cleanable/molten_item/I = new/obj/effect/decal/cleanable/molten_item(O.loc)
 		I.desc = "Looks like this was \an [O] some time ago."
 		for(var/mob/M in viewers(5, O))
 			to_chat(M, SPAN_WARNING("\The [O] melts."))
 		qdel(O)
-		remove_self(meltdose) // 10 units of acid will not melt EVERYTHING on the tile
 
 
 
@@ -101,6 +110,9 @@
 	name = "Sulphuric Acid"
 	description = "A very corrosive mineral acid with the molecular formula H2SO4."
 	color = "#db5008"
+	acid_power = 5
+	meltdose = 10
+	max_damage = 40
 	value = 0.2
 
 
@@ -121,8 +133,8 @@
 	name = "Polytrinic Acid"
 	description = "Polytrinic acid is a an extremely corrosive chemical substance."
 	color = "#8e18a9"
-	acid_power = 10
-	meltdose = 4
+	acid_power = 7
+	meltdose = 5
 	max_damage = 60
 
 
@@ -132,4 +144,6 @@
 	description = "A weakly acidic substance found in the human stomach."
 	taste_description = "coppery foulness"
 	acid_power = 2
+	meltdose = 10
+	max_damage = 40
 	color = "#d8ff00"
