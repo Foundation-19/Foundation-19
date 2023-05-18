@@ -45,3 +45,18 @@
   - bugfix: Bug where acid (and other reagents with high touch_metabolisms) was treated
       as volume 50 for damage has been fixed.
   - bugfix: SCPs breaking machinery is slightly improved.
+2023-05-16:
+  GGarciaECE:
+  - rscadd: Made the MTF Alpha 1 Red Right Hand beret actually armoured (on the same
+      level as their armour). No more quick death for the elites of Alpha One
+  - rscadd: the LCZ Armoury has the very inefficient "riot shotguns" replaced with
+      Saiga 12 (There are 10 in total, plus the one in the ZC locker, totalling 11
+      for all 11 LCZ slots). They only start with beanbag mags and boxes, to get lethal
+      buckshot or other specialized shells they'd need ZC approval to open the armoury
+  - rscadd: Gave P90 it's full auto settign back
+  - rscadd: Divided LCZ armoury into a lethal area and a non lethal area compartment,
+      both compartment can be opened or locked by the ZC.
+2023-05-17:
+  EgorDinamit:
+  - admin: Ascent outfits, clothes and "props" were re-added. Yes, Yawet, this is
+      for you.
