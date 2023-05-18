@@ -42,7 +42,7 @@
 
 /decl/hierarchy/outfit/goc/leader
 	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Team Leader")
-	r_hand = /obj/item/gun/projectile/automatic/scp/ak742
+	r_hand = /obj/item/gun/projectile/automatic/scp/ak12
 	l_hand = /obj/item/material/hatchet/tacknife
 	l_pocket = /obj/item/grenade/frag
 	r_pocket = /obj/item/card/emag

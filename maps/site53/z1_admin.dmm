@@ -5126,11 +5126,11 @@
 /area/centcom)
 "vV" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/t12,
-/obj/item/gun/projectile/automatic/t12,
-/obj/item/gun/projectile/automatic/t12,
-/obj/item/gun/projectile/automatic/t12,
-/obj/item/gun/projectile/automatic/t12,
+/obj/item/gun/projectile/automatic/scp/t12,
+/obj/item/gun/projectile/automatic/scp/t12,
+/obj/item/gun/projectile/automatic/scp/t12,
+/obj/item/gun/projectile/automatic/scp/t12,
+/obj/item/gun/projectile/automatic/scp/t12,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"

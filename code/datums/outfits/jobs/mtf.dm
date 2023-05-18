@@ -55,7 +55,7 @@
 	glasses = /obj/item/clothing/glasses/night
 	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/jackboots
-	suit_store = /obj/item/gun/projectile/automatic/scp/m16
+	suit_store = /obj/item/gun/projectile/automatic/scp/m4a1
 	r_hand = /obj/item/storage/box/syndie_kit/spy
 	l_hand = null
 	l_pocket = /obj/item/grenade/smokebomb
@@ -127,7 +127,7 @@
 	glasses = /obj/item/clothing/glasses/tacgoggles
 	shoes = /obj/item/clothing/shoes/combat
 	suit_store = null
-	r_hand = /obj/item/gun/projectile/automatic/scp/m16
+	r_hand = /obj/item/gun/projectile/automatic/scp/m4a1
 	l_hand = null
 	l_pocket = /obj/item/grenade/frag
 	r_pocket = /obj/item/grenade/flashbang/clusterbang //gods must be strong
@@ -145,7 +145,7 @@
 	glasses = /obj/item/clothing/glasses/night
 	shoes = /obj/item/clothing/shoes/combat
 	suit_store = null
-	r_hand = /obj/item/gun/projectile/automatic/t12
+	r_hand = /obj/item/gun/projectile/automatic/scp/t12
 	l_hand = null
 	l_pocket = /obj/item/grenade/frag
 	r_pocket = /obj/item/grenade/flashbang/clusterbang //gods must be strong
