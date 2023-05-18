@@ -110,11 +110,3 @@
 	dump_contents()
 	visible_message(SPAN_WARNING("[src] shatters!."))
 	qdel(src)
-
-/obj/structure/statue
-	name = "statue"
-	desc = "An incredibly lifelike marble carving."
-	icon = 'icons/obj/statue.dmi'
-	icon_state = "human_male"
-	density = TRUE
-	anchored = TRUE
