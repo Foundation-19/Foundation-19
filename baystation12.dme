@@ -3060,6 +3060,7 @@
 #include "code\modules\SCP\SCPs\SCP-527.dm"
 #include "code\modules\SCP\SCPs\SCP-529.dm"
 #include "code\modules\SCP\SCPs\SCP-895.dm"
+#include "code\modules\SCP\SCPs\SCP-914.dm"
 #include "code\modules\SCP\SCPs\SCP-999.dm"
 #include "code\modules\security levels\keycard authentication.dm"
 #include "code\modules\shield_generators\floor_diffuser.dm"
