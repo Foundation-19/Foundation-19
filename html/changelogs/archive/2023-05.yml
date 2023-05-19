@@ -60,3 +60,6 @@
   EgorDinamit:
   - admin: Ascent outfits, clothes and "props" were re-added. Yes, Yawet, this is
       for you.
+2023-05-19:
+  Tsurupeta:
+  - bugfix: fixed tactical reload eating magazines
