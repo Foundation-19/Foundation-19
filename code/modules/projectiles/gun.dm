@@ -67,7 +67,6 @@
 	var/move_delay = 1
 	var/fire_sound = 'sounds/weapons/gunshot/gunshot.ogg'
 	var/fire_sound_text = "gunshot"
-	var/fire_anim = null
 	var/screen_shake = 0 //shouldn't be greater than 2 unless zoomed
 	var/silenced = FALSE
 	var/accuracy = 0   //accuracy is measured in tiles. +1 accuracy means that everything is effectively one tile closer for the purpose of miss chance, -1 means the opposite. launchers are not supported, at the moment.
@@ -345,9 +344,6 @@
 
 //called after successfully firing
 /obj/item/gun/proc/handle_post_fire(mob/user, atom/target, pointblank=0, reflex=0)
-	if(fire_anim)
-		flick(fire_anim, src)
-
 	if (user)
 		if (silenced)
 			to_chat(user, SPAN_WARNING("You fire \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!"))

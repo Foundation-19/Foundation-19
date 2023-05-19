@@ -1,14 +1,21 @@
+#define GUN_SINGLE_ACTION "single_action"
+#define GUN_DOUBLE_ACTION "double_action"
+
 /obj/item/gun/projectile/automatic/scp
 	var/bolt_open = FALSE
+	var/firing_pin_primed = FALSE
+	var/action_type = GUN_SINGLE_ACTION
 	var/bolt_back_sound = 'sound/weapons/guns/interaction/reload_bolt_back.ogg'
 	var/bolt_forward_sound = 'sound/weapons/guns/interaction/reload_bolt_forward.ogg'
-	var/has_bolt_icon = 1
+	var/has_bolt_icon = TRUE
 	var/stock_icon
 	var/foreend_icon
 	var/stock_offset = -4
 	var/foreend_offset = 20
 	var/last_bolt_cycle = 0
 	var/bolt_hold = FALSE
+	var/bolt_hold_on_empty_mag = FALSE
+	var/auto_close_on_full_mag = FALSE
 	appearance_flags = KEEP_TOGETHER
 	item_icons = list(
 		slot_l_hand_str = 'icons/SCP/guns/onmob/lefthand_guns.dmi',
@@ -58,19 +65,22 @@
 		to_chat(user, SPAN_NOTICE("\The [src] is now set to [new_mode.name]."))
 
 /obj/item/gun/projectile/automatic/scp/attack_self(mob/user)
-	if(world.time > last_bolt_cycle + 1 SECOND)
-		last_bolt_cycle = world.time
-		if(!bolt_open)
-			cycle_bolt(manual = TRUE)
-		else
-			bolt_forward(manual = TRUE)
+	if(world.time < last_bolt_cycle + 1 SECOND)
+		return
+	last_bolt_cycle = world.time
+	if(!bolt_open)
+		cycle_bolt(manual = TRUE)
+	else
+		bolt_forward(manual = TRUE)
+	if(has_bolt_icon)
+		update_icon()
 
+
+/// Moving back backwards and forward, loading cartridge from magazine. Setting manual variable adds cycling sounds and delay between actions
 /obj/item/gun/projectile/automatic/scp/proc/cycle_bolt(manual)
 	bolt_back(manual)
 
-	if(!get_projectile_from_magazine() && bolt_hold)
-		if(has_bolt_icon)
-			update_icon()
+	if((ammo_magazine && check_magazine_empty() && bolt_hold_on_empty_mag) || (manual && bolt_hold  && check_magazine_empty()))
 		return
 
 	if(manual)
@@ -82,6 +92,7 @@
 	if(manual && bolt_back_sound)
 		playsound(src, bolt_back_sound, 75)
 	ejectCasing(manual)
+	firing_pin_primed = TRUE
 
 
 /obj/item/gun/projectile/automatic/scp/proc/bolt_forward(manual)
@@ -89,14 +100,11 @@
 		playsound(src, bolt_forward_sound, 75)
 	load_round_from_magazine()
 	bolt_open = FALSE
-	if(has_bolt_icon)
-		update_icon()
 
-/obj/item/gun/projectile/automatic/scp/proc/get_projectile_from_magazine()
-	if(length(loaded))
-		return loaded[1]
+/obj/item/gun/projectile/automatic/scp/proc/check_magazine_empty()
 	if(ammo_magazine && length(ammo_magazine.stored_ammo))
-		return ammo_magazine.stored_ammo[length(ammo_magazine.stored_ammo)]
+		return FALSE
+	return TRUE
 
 /obj/item/gun/projectile/automatic/scp/proc/load_round_from_magazine()
 	if(length(loaded))
@@ -122,6 +130,17 @@
 				playsound(src.loc, 'sound/weapons/flipblade.ogg', 50, 1)
 
 
+/obj/item/gun/projectile/automatic/scp/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, set_click_cooldown = TRUE)
+	if(world.time < next_fire_time)
+		if (world.time % 3) //to prevent spam
+			to_chat(user, SPAN_WARNING("[src] is not ready to fire again!"))
+		return
+
+	if(!firing_pin_primed && action_type == GUN_SINGLE_ACTION)
+		return
+	firing_pin_primed = FALSE
+	..()
+
 /obj/item/gun/projectile/automatic/scp/consume_next_projectile()
 	if(is_jammed)
 		return
@@ -130,9 +149,6 @@
 		return chambered.expend()
 
 /obj/item/gun/projectile/automatic/scp/handle_post_fire(mob/user, atom/target, pointblank=0, reflex=0)
-	if(fire_anim)
-		flick(fire_anim, src)
-
 	if(combustion)
 		var/turf/curloc = get_turf(src)
 		if(curloc)
@@ -190,10 +206,10 @@
 		var/shake_mult = 3 / user.get_skill_value(SKILL_WEAPONS)
 		INVOKE_ASYNC(GLOBAL_PROC, /proc/directional_recoil, user, shake_mult * (screen_shake+1), Get_Angle(user, target))
 
-	update_icon()
-
 	if(chambered)
 		cycle_bolt()
+
+	update_icon()
 
 /obj/item/gun/projectile/automatic/scp/update_icon()
 	..()
@@ -420,6 +436,7 @@
 	magazine_type = /obj/item/ammo_magazine/scp/mp5_mag
 	allowed_magazines = /obj/item/ammo_magazine/scp/mp5_mag
 	has_bolt_icon = TRUE
+	bolt_hold = TRUE
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0, move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
