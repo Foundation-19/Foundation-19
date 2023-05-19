@@ -10643,6 +10643,10 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
+"yz" = (
+/obj/structure/flora/ausbushes/palebush,
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/llcz/mine/unexplored)
 "yA" = (
 /obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/monotile/white,
@@ -12256,7 +12260,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/item/taperoll/engineering,
+/obj/item/taperoll/engineering/applied,
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
 "CQ" = (
@@ -17883,8 +17887,8 @@
 /area/site53/uhcz/scp8containment)
 "Rc" = (
 /obj/item/taperoll/engineering,
-/turf/simulated/floor/exoplanet/desert,
-/area/site53/llcz/mine/unexplored)
+/turf/simulated/floor/plating,
+/area/site53/engineering/maintenance/llczmaint)
 "Rd" = (
 /obj/structure/table/reinforced,
 /obj/item/boombox,
@@ -42254,7 +42258,7 @@ Fh
 ua
 Fh
 Fh
-Rc
+FW
 Eh
 ua
 ua
@@ -42511,8 +42515,8 @@ ua
 Fh
 ua
 ua
-FW
-Eh
+ua
+CP
 ua
 ua
 ua
@@ -42769,7 +42773,7 @@ ua
 FW
 FW
 FW
-CP
+Eh
 ua
 ua
 ua
@@ -44309,11 +44313,11 @@ ua
 ua
 Fh
 Fh
-Rc
+FW
 FW
 Eh
 FW
-Rc
+FW
 FW
 ua
 ua
@@ -44568,7 +44572,7 @@ Fh
 FW
 FW
 FW
-CP
+Eh
 FW
 FW
 ua
@@ -45595,7 +45599,7 @@ QR
 wF
 rZ
 eo
-XZ
+Rc
 Lr
 sS
 Og
@@ -53538,7 +53542,7 @@ Gg
 Gg
 Gg
 Gi
-Gm
+yz
 Fh
 ua
 ua
