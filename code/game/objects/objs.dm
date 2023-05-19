@@ -203,6 +203,6 @@
 					continue
 				var/matter_amount = round(matter[mat] / rand(SHEET_MATERIAL_AMOUNT, SHEET_MATERIAL_AMOUNT * 1.5))
 				var/obj/item/new_sheet = material_def.place_sheet(src, matter_amount)
-				return_list += new_sheet(src)
+				return_list += new_sheet
 			return return_list
 	return ..()
