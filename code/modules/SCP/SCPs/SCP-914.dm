@@ -164,17 +164,19 @@
 					AR = new AR_path(get_turf(output_part))
 				AR.forceMove(get_turf(output_part))
 				if(isitem(AR))
-					AR.pixel_x = clamp(A.pixel_x, -16, 16)
-					AR.pixel_y = clamp(A.pixel_y, -16, 16)
+					AR.pixel_x = rand(-16, 16)
+					AR.pixel_y = rand(-16, 16)
 			QDEL_NULL(A)
 			continue
 		var/atom/movable/NA = CR
 		if(!isatom(NA)) // If return value was path
+			if(!ispath(NA)) // Something went wrong, uh oh
+				continue
 			NA = new CR(get_turf(output_part))
 		// Keep offsets if item
 		if(isitem(NA))
-			NA.pixel_x = clamp(A.pixel_x, -16, 16)
-			NA.pixel_y = clamp(A.pixel_y, -16, 16)
+			NA.pixel_x = rand(-16, 16)
+			NA.pixel_y = rand(-16, 16)
 		QDEL_NULL(A)
 	upgrade_items = null
 
@@ -210,8 +212,8 @@
 
 // Booths
 /obj/structure/scp_914_part/input_booth
-	name = "input booth"
-	desc = "An input booth of a larger structure."
+	name = "intake booth"
+	desc = "An intake booth of a larger structure."
 	icon = 'icons/SCP/SCP-914-32x64.dmi'
 	icon_state = "left-door"
 	bound_height = 64
@@ -246,8 +248,8 @@
 
 // Connectors
 /obj/structure/scp_914_part/input_connector
-	name = "input tube"
-	desc = "A large copper tube with word \"Input\" written on a plaque."
+	name = "intake tube"
+	desc = "A large copper tube with word \"Intake\" written on a plaque."
 	icon = 'icons/SCP/SCP-914-32x64.dmi'
 	icon_state = "input"
 	spawn_x = -1

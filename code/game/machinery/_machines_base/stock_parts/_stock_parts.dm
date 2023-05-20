@@ -73,12 +73,12 @@ GLOBAL_LIST_EMPTY(stock_parts_by_rating)
 			if(!length(GLOB.stock_parts_by_rating))
 				for(var/thing in subtypesof(/obj/item/stock_parts))
 					var/obj/item/stock_parts/S = thing
-					if(!(initial(S.rating) in GLOB.stock_parts_by_rating))
-						GLOB.stock_parts_by_rating[initial(S.rating)] = list()
-					GLOB.stock_parts_by_rating[initial(S.rating)] += S
-			if(!length(GLOB.stock_parts_by_rating[rating]))
+					if(!(num2text(initial(S.rating)) in GLOB.stock_parts_by_rating))
+						GLOB.stock_parts_by_rating[num2text(initial(S.rating))] = list()
+					GLOB.stock_parts_by_rating[num2text(initial(S.rating))] += S
+			if(!length(GLOB.stock_parts_by_rating[num2text(rating)]))
 				return src
-			return pick(GLOB.stock_parts_by_rating[rating])
+			return pick(GLOB.stock_parts_by_rating[num2text(rating)])
 		if(MODE_FINE)
 			if(!base_type)
 				return src

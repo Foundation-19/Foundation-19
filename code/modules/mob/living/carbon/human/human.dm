@@ -1918,8 +1918,9 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 					damage_multiplier += 2
 					var/old_status_flags = status_flags
 					status_flags = 0 // No stuns or pain
-					for(var/decl/hierarchy/skill/S in GLOB.skills)
-						skillset.skill_list[S.type] = SKILL_MASTER
+					if(skillset)
+						for(var/decl/hierarchy/skill/S in GLOB.skills)
+							skillset.skill_list[S.type] = SKILL_MASTER
 					for(var/obj/item/organ/external/E in organs)
 						E.dislocated = -1
 						E.arterial_bleed_severity = 0
