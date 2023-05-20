@@ -231,6 +231,9 @@
 
 // If bump attack is enabled, we will automaticall kill humans that we bump into
 /mob/living/scp_173/Bump(atom/A)
+	. = ..()
+	if(bump_attack && ishuman(A))
+		UnarmedAttack(A)
 
 // Someone decided to put 173 into it? Good lord, it's over!
 // P.S. Only humans can activate 914, so no powergaming here
