@@ -244,7 +244,7 @@
 				var/obj/item/gun/energy/plasmacutter/cutter = W
 				if(!cutter.slice(user))
 					return
-			dismantle_sound = "sparks"
+			dismantle_sound = SFX_SPARK
 			dismantle_verb = "slicing"
 			cut_delay *= 0.5
 		/*
