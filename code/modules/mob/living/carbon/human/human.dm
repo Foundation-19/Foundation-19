@@ -1865,13 +1865,11 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 			var/changer = pick("name", "gender", "eyehair_color", "skin_color", "species", "maim")
 			switch(changer)
 				if("name")
-					var/decl/cultural_info/culture = SSculture.get_culture(cultural_info[TAG_CULTURE])
-					if(culture)
-						to_chat(src, SPAN_USERDANGER("You feel different, somehow... What was your name, again..?"))
-						real_name = culture.get_random_name(gender, species.name)
-						name = real_name
-						if(mind)
-							mind.name = real_name
+					to_chat(src, SPAN_USERDANGER("You feel different, somehow... What was your name, again..?"))
+					real_name = random_name(gender)
+					name = real_name
+					if(mind)
+						mind.name = real_name
 				if("gender")
 					var/old_gender = gender
 					randomize_gender()
@@ -1893,8 +1891,8 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 					change_species(pick(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_PROMETHEAN, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_MULE, SPECIES_FBP))
 					to_chat(src, SPAN_USERDANGER("You feel different, somehow... Wait, what the hell happened!?"))
 				if("maim")
-					var/brute = getBruteLoss()
-					var/burn = getBruteLoss()
+					var/brute = getBruteLoss() + rand(2, 15)
+					var/burn = getBruteLoss() + rand(2, 15)
 					// Remove all damage
 					adjustBruteLoss(brute)
 					adjustFireLoss(burn)
