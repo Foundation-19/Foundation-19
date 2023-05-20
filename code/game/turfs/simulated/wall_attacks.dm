@@ -200,7 +200,7 @@
 
 			EB.spark_system.start()
 			to_chat(user, SPAN_NOTICE("You slash \the [src] with \the [EB]; the thermite ignites!"))
-			playsound(src, "sparks", 50, 1)
+			playsound(src, SFX_SPARK, 50, 1)
 			playsound(src, 'sound/weapons/blade1.ogg', 50, 1)
 
 			thermitemelt(user)

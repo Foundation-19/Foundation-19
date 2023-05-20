@@ -42,7 +42,7 @@
 		else
 			user.apply_damage(2,BURN,BP_R_HAND)
 		user.visible_message(SPAN_NOTICE("After a few attempts, [user] manages to light \the [src], burning their finger in the process."))
-	playsound(src.loc, "light_bic", 100, 1, -4)
+	playsound(src.loc, SFX_LIGHTER, 100, 1, -4)
 	show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 
 /obj/item/flame/lighter/extinguish(mob/user, no_message)
