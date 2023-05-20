@@ -35,3 +35,31 @@
 #define SMALL_SOFTFLOOR ROOM
 #define ASTEROID CAVE
 #define SPACE UNDERWATER
+
+///SFX list
+
+#define SFX_SHATTER "shatter_sound"
+#define SFX_EXPLOSION  "explosion_sound"
+#define SFX_SPARK "spark_sound"
+#define SFX_RUSTLE "rustle_sound"
+#define SFX_PUNCH "punch_sound"
+#define SFX_CLOWN "clown_sound"
+#define SFX_SWING_HIT "swing_hit_sound"
+#define SFX_HISS "hiss_sound"
+#define SFX_PAGETURN "page_sound"
+#define SFX_BONE_FRACTURE "fracture_sound"
+#define SFX_WOUND_CRACK "crack_sound"
+#define SFX_WOUND_SIZZLE "sizzle_sound"
+#define SFX_LIGHTER "lighter_sound"
+#define SFX_KEYBOARD "keyboard_sound"
+#define SFX_KEYSTROKE "keystroke_sound"
+#define SFX_MACHINE_SWITCH "switch_sound"
+#define SFX_MACHINE_BUTTON "button_sound"
+#define SFX_CHOP "chop_sound"
+#define SFX_GLASS_CRACK "glasscrack_sound"
+#define SFX_TRAY_HIT "tray_hit_sound"
+#define SFX_GUN_T12 "t12_sound"
+#define SFX_BULLET_INSERT "sfx_bullet_insert"
+#define SFX_SHELL_INSERT "sfx_shell_insert"
+#define SFX_ZOMBIE "zombie_sound"
+#define SFX_SCARY_SOUND "scary_sound"
