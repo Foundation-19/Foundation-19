@@ -51,7 +51,7 @@
 
 	user.visible_message("[user] removes [ammo_magazine] from [src].",
 	SPAN_NOTICE("You remove [ammo_magazine] from [src]."))
-	playsound(src.loc, mag_remove_sound, 75)
+	playsound(src.loc, mag_remove_sound, 70)
 	ammo_magazine.update_icon()
 	ammo_magazine = null
 	update_icon()
@@ -90,14 +90,14 @@
 /obj/item/gun/projectile/scp/proc/bolt_back(manual)
 	bolt_open = TRUE
 	if(manual && bolt_back_sound)
-		playsound(src, bolt_back_sound, 75)
+		playsound(src, bolt_back_sound, 70)
 	ejectCasing(manual)
 	cocked = TRUE
 
 
 /obj/item/gun/projectile/scp/proc/bolt_forward(manual)
 	if(manual && bolt_forward_sound)
-		playsound(src, bolt_forward_sound, 75)
+		playsound(src, bolt_forward_sound, 70)
 	load_round_from_magazine()
 	bolt_open = FALSE
 
@@ -141,6 +141,8 @@
 		return FALSE
 	if(!waterproof && submerged())
 		return FALSE
+	if(bolt_open)
+		return FALSE
 	return TRUE
 
 /obj/item/gun/projectile/scp/handle_click_empty(mob/user)
@@ -150,6 +152,17 @@
 		src.visible_message("*click click*")
 	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
 	show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
+
+/obj/item/gun/projectile/scp/toggle_safety(mob/user)
+	if (user?.is_physically_disabled())
+		return
+
+	safety_state = !safety_state
+	update_icon()
+	if(user)
+		user.visible_message(SPAN_WARNING("[user] switches the safety of \the [src] [safety_state ? "on" : "off"]."), SPAN_NOTICE("You switch the safety of \the [src] [safety_state ? "on" : "off"]."), range = 3)
+		last_safety_check = world.time
+		playsound(src, selector_sound, 25, 1)
 
 /obj/item/gun/projectile/scp/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, set_click_cooldown = TRUE)
 	if(!can_fire(user, target))
@@ -184,6 +197,8 @@
 	var/turf/targloc = get_turf(target) //cache this in case target gets deleted during shooting, e.g. if it was a securitron that got destroyed.
 	for(var/i in 1 to burst)
 		var/obj/projectile = consume_next_projectile(user)
+		if(bolt_open)
+			return
 		if(!projectile)
 			handle_click_empty(user)
 			break
@@ -307,15 +322,15 @@
 /obj/item/gun/projectile/scp/proc/generate_mag_icon_state()
 	return ammo_magazine.gun_mag_icon
 
-/obj/item/gun/scp/play_fire_sound(mob/user, obj/item/projectile/P)
+/obj/item/gun/projectile/scp/play_fire_sound(mob/user, obj/item/projectile/P)
 	var/shot_sound = fire_sound? fire_sound : P.fire_sound
 	if(!shot_sound)
 		return
 	if(silenced)
-		playsound(user, shot_sound, 10, 1)
+		playsound(user, shot_sound, 15, 1)
 		show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
 	else
-		playsound(user, shot_sound, 75, 1)
+		playsound(user, shot_sound, 85, 1)
 		show_sound_effect(get_turf(src), user, SFX_ICON_JAGGED)
 
 /obj/item/gun/projectile/scp/examine(mob/user)
@@ -378,6 +393,16 @@
 	allowed_magazines = /obj/item/ammo_magazine/scp/m16_mag
 	stock_icon = "stock"
 	foreend_icon = "fore-end"
+
+	bolt_back_sound = 'sound/weapons/guns/m4a1/m4a1_back.ogg'
+	bolt_forward_sound = 'sound/weapons/guns/m4a1/m4a1_forward.ogg'
+	mag_insert_sound = 'sound/weapons/guns/m4a1/m4a1_load.ogg'
+	mag_remove_sound = 'sound/weapons/guns/m4a1/m4a1_unload.ogg'
+	fire_sound = 'sound/weapons/guns/m4a1/shoot.ogg'
+	has_bolt_icon = TRUE
+	bolt_hold = TRUE
+	bolt_hold_on_empty_mag = TRUE
+	auto_close_on_full_mag = FALSE
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
@@ -546,7 +571,7 @@
 	item_state = "mp5"
 	force = 10
 	caliber = "9mm"
-	fire_sound = 'sound/weapons/gunshot/mp5.ogg'
+	fire_sound = 'sound/weapons/guns/mp5/shoot.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	magazine_type = /obj/item/ammo_magazine/scp/mp5_mag
 	allowed_magazines = /obj/item/ammo_magazine/scp/mp5_mag

@@ -592,7 +592,7 @@
 	sel_mode = next_mode
 	var/datum/firemode/new_mode = firemodes[sel_mode]
 	new_mode.apply_to(src)
-	playsound(loc, selector_sound, 50, 1)
+	playsound(loc, selector_sound, 25, 1)
 	return new_mode
 
 /obj/item/gun/proc/get_next_firemode()
