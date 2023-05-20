@@ -161,7 +161,7 @@
 			for(var/AR_path in CR)
 				var/atom/movable/AR = AR_path
 				if(!isatom(AR))
-					AR = new(get_turf(output_part))
+					AR = new AR_path(get_turf(output_part))
 				AR.forceMove(get_turf(output_part))
 				if(isitem(AR))
 					AR.pixel_x = clamp(A.pixel_x, -16, 16)
@@ -170,7 +170,7 @@
 			continue
 		var/atom/movable/NA = CR
 		if(!isatom(NA)) // If return value was path
-			NA = new(get_turf(output_part))
+			NA = new CR(get_turf(output_part))
 		// Keep offsets if item
 		if(isitem(NA))
 			NA.pixel_x = clamp(A.pixel_x, -16, 16)
