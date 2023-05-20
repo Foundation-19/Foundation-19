@@ -1,13 +1,13 @@
 #define GUN_SINGLE_ACTION "single_action"
 #define GUN_DOUBLE_ACTION "double_action"
 
-/obj/item/gun/projectile/automatic/scp
+/obj/item/gun/projectile/scp
 	var/bolt_open = FALSE
-	var/firing_pin_primed = FALSE
+	var/cocked = FALSE
 	var/action_type = GUN_SINGLE_ACTION
 	var/bolt_back_sound = 'sound/weapons/guns/interaction/reload_bolt_back.ogg'
 	var/bolt_forward_sound = 'sound/weapons/guns/interaction/reload_bolt_forward.ogg'
-	var/has_bolt_icon = TRUE
+	var/has_bolt_icon = FALSE
 	var/stock_icon
 	var/foreend_icon
 	var/stock_offset = -4
@@ -23,10 +23,10 @@
 		)
 
 
-/obj/item/gun/projectile/automatic/scp/MouseDrop(obj/over_object)
+/obj/item/gun/projectile/scp/MouseDrop(obj/over_object)
 	handle_mousedrop_unload(over_object)
 
-/obj/item/gun/projectile/proc/handle_mousedrop_unload(obj/over_object)
+/obj/item/gun/projectile/scp/proc/handle_mousedrop_unload(obj/over_object)
 	var/mob/living/carbon/human/user = usr
 	if (!over_object || !(ishuman(user)))
 		return
@@ -57,14 +57,14 @@
 	update_icon()
 	return 1
 
-/obj/item/gun/projectile/automatic/scp/AltClick(mob/user)
+/obj/item/gun/projectile/scp/AltClick(mob/user)
 	var/datum/firemode/new_mode = switch_firemodes(user)
 	if(prob(20) && !user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
 		new_mode = switch_firemodes(user)
 	if(new_mode)
 		to_chat(user, SPAN_NOTICE("\The [src] is now set to [new_mode.name]."))
 
-/obj/item/gun/projectile/automatic/scp/attack_self(mob/user)
+/obj/item/gun/projectile/scp/attack_self(mob/user)
 	if(world.time < last_bolt_cycle + 1 SECOND)
 		return
 	last_bolt_cycle = world.time
@@ -77,7 +77,7 @@
 
 
 /// Moving back backwards and forward, loading cartridge from magazine. Setting manual variable adds cycling sounds and delay between actions
-/obj/item/gun/projectile/automatic/scp/proc/cycle_bolt(manual)
+/obj/item/gun/projectile/scp/proc/cycle_bolt(manual)
 	bolt_back(manual)
 
 	if((ammo_magazine && check_magazine_empty() && bolt_hold_on_empty_mag) || (manual && bolt_hold  && check_magazine_empty()))
@@ -87,26 +87,26 @@
 		sleep(5)
 	bolt_forward(manual)
 
-/obj/item/gun/projectile/automatic/scp/proc/bolt_back(manual)
+/obj/item/gun/projectile/scp/proc/bolt_back(manual)
 	bolt_open = TRUE
 	if(manual && bolt_back_sound)
 		playsound(src, bolt_back_sound, 75)
 	ejectCasing(manual)
-	firing_pin_primed = TRUE
+	cocked = TRUE
 
 
-/obj/item/gun/projectile/automatic/scp/proc/bolt_forward(manual)
+/obj/item/gun/projectile/scp/proc/bolt_forward(manual)
 	if(manual && bolt_forward_sound)
 		playsound(src, bolt_forward_sound, 75)
 	load_round_from_magazine()
 	bolt_open = FALSE
 
-/obj/item/gun/projectile/automatic/scp/proc/check_magazine_empty()
+/obj/item/gun/projectile/scp/proc/check_magazine_empty()
 	if(ammo_magazine && length(ammo_magazine.stored_ammo))
 		return FALSE
 	return TRUE
 
-/obj/item/gun/projectile/automatic/scp/proc/load_round_from_magazine()
+/obj/item/gun/projectile/scp/proc/load_round_from_magazine()
 	if(length(loaded))
 		chambered = loaded[1]
 		loaded -= chambered
@@ -116,7 +116,7 @@
 		ammo_magazine.stored_ammo -= chambered
 		return 1
 
-/obj/item/gun/projectile/automatic/scp/proc/process_jam()
+/obj/item/gun/projectile/scp/proc/process_jam()
 	if(!is_jammed && prob(jam_chance))
 		src.visible_message(SPAN_DANGER("\The [src] jams!"))
 		is_jammed = 1
@@ -130,25 +130,99 @@
 				playsound(src.loc, 'sound/weapons/flipblade.ogg', 50, 1)
 
 
-/obj/item/gun/projectile/automatic/scp/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, set_click_cooldown = TRUE)
+/obj/item/gun/projectile/scp/proc/can_fire(mob/user, atom/target)
 	if(world.time < next_fire_time)
 		if (world.time % 3) //to prevent spam
 			to_chat(user, SPAN_WARNING("[src] is not ready to fire again!"))
+		return FALSE
+	if(!user || !target)
+		return FALSE
+	if(target.z != user.z)
+		return FALSE
+	if(!waterproof && submerged())
+		return FALSE
+	return TRUE
+
+/obj/item/gun/projectile/scp/handle_click_empty(mob/user)
+	if (user)
+		user.visible_message("*click click*", SPAN_DANGER("*click*"))
+	else
+		src.visible_message("*click click*")
+	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
+	show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
+
+/obj/item/gun/projectile/scp/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, set_click_cooldown = TRUE)
+	if(!can_fire(user, target))
 		return
 
-	if(!firing_pin_primed && action_type == GUN_SINGLE_ACTION)
-		return
-	firing_pin_primed = FALSE
-	..()
+	add_fingerprint(user)
 
-/obj/item/gun/projectile/automatic/scp/consume_next_projectile()
+	if(safety())
+		if(user.a_intent == I_HURT && !user.skill_fail_prob(SKILL_WEAPONS, 100, SKILL_EXPERIENCED, 0.5)) //reflex un-safeying
+			toggle_safety(user)
+		else
+			handle_click_safety(user)
+			return
+
+	if(!special_check(user))
+		return
+
+	if(!cocked && action_type == GUN_SINGLE_ACTION)
+		return
+	cocked = FALSE
+
+	last_safety_check = world.time
+
+	if(set_click_cooldown)
+		var/shoot_time = (burst - 1) * burst_delay
+		user.setClickCooldown(shoot_time) //no clicking on things while shooting
+		next_fire_time = world.time + shoot_time
+
+	var/held_twohanded = (user.can_wield_item(src) && is_held_twohanded(user))
+
+	//actually attempt to shoot
+	var/turf/targloc = get_turf(target) //cache this in case target gets deleted during shooting, e.g. if it was a securitron that got destroyed.
+	for(var/i in 1 to burst)
+		var/obj/projectile = consume_next_projectile(user)
+		if(!projectile)
+			handle_click_empty(user)
+			break
+
+		process_accuracy(projectile, user, target, i, held_twohanded)
+
+		var/obj/item/projectile/P = projectile
+		if(istype(P)) // only for real projectiles
+			P.shot_from = src.name
+
+		if(pointblank)
+			process_point_blank(projectile, user, target)
+
+		if(process_projectile(projectile, user, target, user.zone_sel?.selecting, clickparams))
+			handle_post_fire(user, target, pointblank, reflex)
+			update_icon()
+
+		if(i < burst)
+			sleep(burst_delay)
+
+		if(!(target && target.loc))
+			target = targloc
+			pointblank = 0
+
+	//update timing
+	var/delay = max(burst_delay+1, fire_delay)
+	user.setClickCooldown(min(delay, DEFAULT_QUICK_COOLDOWN))
+	user.SetMoveCooldown(move_delay)
+	next_fire_time = world.time + delay
+
+
+/obj/item/gun/projectile/scp/consume_next_projectile()
 	if(is_jammed)
 		return
 
 	if(chambered)
 		return chambered.expend()
 
-/obj/item/gun/projectile/automatic/scp/handle_post_fire(mob/user, atom/target, pointblank=0, reflex=0)
+/obj/item/gun/projectile/scp/handle_post_fire(mob/user, atom/target, pointblank=0, reflex=0)
 	if(combustion)
 		var/turf/curloc = get_turf(src)
 		if(curloc)
@@ -211,7 +285,7 @@
 
 	update_icon()
 
-/obj/item/gun/projectile/automatic/scp/update_icon()
+/obj/item/gun/projectile/scp/on_update_icon()
 	..()
 	if(stock_icon)
 		var/image/stock = image(icon, stock_icon)
@@ -223,17 +297,17 @@
 		foreend.pixel_x = foreend_offset
 		add_overlay(foreend)
 
-	if(ammo_magazine && ammo_magazine.gun_mag_icon)
+	if(ammo_magazine && ammo_magazine.gun_mag_icon && generate_mag_icon_state())
 		add_overlay(image(icon, generate_mag_icon_state()))
 
 	if(has_bolt_icon)
 		add_overlay(image(icon, "bolt_[bolt_open ? "open" : "closed"]"))
 
 
-/obj/item/gun/projectile/automatic/scp/proc/generate_mag_icon_state()
+/obj/item/gun/projectile/scp/proc/generate_mag_icon_state()
 	return ammo_magazine.gun_mag_icon
 
-/obj/item/gun/automatic/scp/play_fire_sound(mob/user, obj/item/projectile/P)
+/obj/item/gun/scp/play_fire_sound(mob/user, obj/item/projectile/P)
 	var/shot_sound = fire_sound? fire_sound : P.fire_sound
 	if(!shot_sound)
 		return
@@ -244,11 +318,53 @@
 		playsound(user, shot_sound, 75, 1)
 		show_sound_effect(get_turf(src), user, SFX_ICON_JAGGED)
 
+/obj/item/gun/projectile/scp/examine(mob/user)
+	. = ..()
+	to_chat(user, SPAN_WARNING("It's caliber is [caliber]."))
+	if(is_jammed && user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
+		to_chat(user, SPAN_WARNING("It looks jammed."))
+	if(chambered)
+		to_chat(user, "It has a round chambered.")
+	if(ammo_magazine)
+		to_chat(user, "It has \a [ammo_magazine] loaded.")
+	if(user.skill_check(SKILL_WEAPONS, SKILL_TRAINED))
+		to_chat(user, "Has [get_ammo_count()] round\s remaining.")
+
+
+
+
+
+
+
+
+
+
+
+/*
+	Automatic
+*/
+
+/obj/item/gun/projectile/scp/automatic
+	bulk = -1
+	load_method = MAGAZINE
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 3)
+	slot_flags = SLOT_BACK
+	multi_aim = 1
+	burst_delay = 2
+	mag_insert_sound = 'sound/weapons/guns/interaction/smg_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/smg_magout.ogg'
+
+	//machine pistol, easier to one-hand with
+	firemodes = list(
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=4, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 1.6, 2.4, 2.4)),
+		list(mode_name="short bursts",   burst=5, fire_delay=null, one_hand_penalty=5, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.6, 1.6, 2.0, 2.0, 2.4)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=5, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.0, 1.0, 1.2, 1.4, 1.6), autofire_enabled=1)
+	)
+
 /*
 	Rifles
 */
-
-/obj/item/gun/projectile/automatic/scp/m4a1
+/obj/item/gun/projectile/scp/automatic/m4a1
 	name = "M4A1"
 	desc = "A Foundation-standard service carbine that takes 5.56x45mm magazines."
 	icon = 'icons/SCP/guns/rifles/m4carbine.dmi'
@@ -258,7 +374,6 @@
 	slot_flags = SLOT_BACK
 	caliber = "5.56x45mm"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
-	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/m16_mag
 	allowed_magazines = /obj/item/ammo_magazine/scp/m16_mag
 	stock_icon = "stock"
@@ -270,7 +385,7 @@
 		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.1, 0.6, 0.9), autofire_enabled=1),
 		)
 
-/obj/item/gun/projectile/automatic/scp/t12
+/obj/item/gun/projectile/scp/automatic/t12
 	name = "T12 rifle"
 	desc = "An assault rifle produced and used by the Global Occult Coalition, rarely seen loaned to high-intensity Foundation units. Highly lethal and capable of holding up to 50 rounds in its standard magazines."
 	icon = 'icons/SCP/guns/rifles/g36c.dmi'
@@ -299,7 +414,7 @@
 		list(mode_name="full auto",      burst=1,    fire_delay=0,    burst_delay=0.5,     one_hand_penalty=11, burst_accuracy=list(0,-1,-2), dispersion=list(0.1, 0.5, 0.9), autofire_enabled=1)
 		)
 
-/obj/item/gun/projectile/automatic/scp/ak12
+/obj/item/gun/projectile/scp/automatic/ak12
 	name = "AK-12"
 	desc = "A 5.45x39mm modernized variant of the AK-74M, exported from Russia."
 	icon = 'icons/SCP/guns/rifles/ak12.dmi'
@@ -321,7 +436,7 @@
 		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-2), dispersion=list(0.1, 0.7, 1.1), autofire_enabled=1),
 		)
 
-/obj/item/gun/projectile/automatic/scp/galil
+/obj/item/gun/projectile/scp/automatic/galil
 	name = "IWI Galil ACE"
 	desc = "An intermediate cartridge infantry assault rifle first produced by and for Israeli Forces. The Foundation found a use for these reliable rifles in the hands of Foundation operatives and guards."
 	icon_state = "galil"
@@ -339,7 +454,7 @@
 		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.1, 0.6, 0.9), autofire_enabled=1),
 		)
 
-/obj/item/gun/projectile/automatic/scp/galil/update_icon()
+/obj/item/gun/projectile/scp/automatic/galil/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "galil"
@@ -347,7 +462,7 @@
 		icon_state = "galil-empty"
 	return
 
-/obj/item/gun/projectile/automatic/scp/svd
+/obj/item/gun/projectile/scp/automatic/svd
 	name = "SVD"
 	desc = "Yet another spin on the AK platform, this SVD is a scoped sniper rifle with far greater range thanks to it's longer barrel and updated rifling and profile."
 	icon_state = "svd"
@@ -363,7 +478,7 @@
 		list(mode_name="semiauto", burst=1, fire_delay=0, move_delay=null, one_hand_penalty=5, burst_accuracy=null, dispersion=null)
 		)
 
-/obj/item/gun/projectile/automatic/scp/svd/update_icon()
+/obj/item/gun/projectile/scp/automatic/svd/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "svd"
@@ -371,7 +486,7 @@
 		icon_state = "svd-empty"
 	return
 
-/obj/item/gun/projectile/automatic/scp/fnfal
+/obj/item/gun/projectile/scp/automatic/fnfal
 	name = "FN FAL"
 	desc = "'The Right Arm Of Freedom', the standard issue firearm for the UNGOC and some other countries. This weapon has seen mutliple big conflicts."
 	icon_state = "fnfal"
@@ -388,7 +503,7 @@
 		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.1, 0.6, 0.9), autofire_enabled=1),
 		)
 
-/obj/item/gun/projectile/automatic/scp/fnfal/update_icon()
+/obj/item/gun/projectile/scp/automatic/fnfal/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "fnfal"
@@ -400,7 +515,7 @@
 	SMGs
 */
 
-/obj/item/gun/projectile/automatic/scp/p90
+/obj/item/gun/projectile/scp/automatic/p90
 	name = "P90 SMG"
 	desc = "A submachine gun sample of the 2010s, with a scope mounted on top"
 	icon = 'icons/SCP/guns/smgs/p90.dmi'
@@ -420,10 +535,10 @@
 		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-2), dispersion=list(0.0, 0.5, 0.7), autofire_enabled=1),
 		)
 
-/obj/item/gun/projectile/automatic/scp/p90/generate_mag_icon_state()
+/obj/item/gun/projectile/scp/automatic/p90/generate_mag_icon_state()
 	return "[ammo_magazine.gun_mag_icon]-[round(length(ammo_magazine.stored_ammo), 10)]"
 
-/obj/item/gun/projectile/automatic/scp/mp5
+/obj/item/gun/projectile/scp/automatic/mp5
 	name = "MP5 SMG"
 	desc = "A submachine gun sample of the 2010s"
 	icon = 'icons/SCP/guns/smgs/mp5.dmi'
@@ -456,34 +571,7 @@
 	max_ammo = 30
 	multiple_sprites = 1
 
-/obj/item/gun/projectile/automatic/scp/ierichon
-	name = "Jericho-114 Pistol "
-	desc = "A strange Brazillian export pistol sporting automatic fire and a lightweight .45 caliber frame."
-	icon_state = "ierichon"
-	item_state = "ierichon"
-	w_class = ITEM_SIZE_NORMAL
-	load_method = MAGAZINE
-	caliber = ".45"
-	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ESOTERIC = 3)
-	slot_flags = SLOT_BELT
-	ammo_type = /obj/item/ammo_casing/pistol/c45
-	magazine_type = /obj/item/ammo_magazine/scp/ierichon
-	allowed_magazines = /obj/item/ammo_magazine/scp/ierichon //more damage compared to the wt550, smaller mag size
-
-	firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=0, burst_accuracy=null, dispersion=null),
-		list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=1, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
-		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=2, burst_accuracy=list(0,-1,-2), dispersion=list(0.1, 0.7, 1.1), autofire_enabled=1),
-		)
-
-/obj/item/gun/projectile/automatic/scp/ierichon/update_icon()
-	..()
-	if(ammo_magazine)
-		icon_state = "ierichon"
-	else
-		icon_state = "ierichon-empty"
-
-/obj/item/gun/projectile/automatic/scp/vector
+/obj/item/gun/projectile/scp/automatic/vector
 	name = "Kriss Vector"
 	desc = "A powerful, high stopping power SMG assigned to MTF operatives and certain SD agents."
 	icon_state = "vector-45"
@@ -505,7 +593,7 @@
 		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.2, 0.6, 0.8), autofire_enabled=1),
 		)
 
-/obj/item/gun/projectile/automatic/scp/vector/update_icon()
+/obj/item/gun/projectile/scp/automatic/vector/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "vector-45"

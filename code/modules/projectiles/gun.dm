@@ -383,7 +383,7 @@
 
 		// If your skill in weapons is higher than/equal to (screen_shake + 2) - it won't shake at all.
 		if(screen_shake)
-			var/shake_mult = 3 / user.get_skill_value(SKILL_WEAPONS)
+			var/shake_mult = 2 / user.get_skill_value(SKILL_WEAPONS)
 			INVOKE_ASYNC(GLOBAL_PROC, /proc/directional_recoil, user, shake_mult * (screen_shake+1), Get_Angle(user, target))
 
 	if(combustion)

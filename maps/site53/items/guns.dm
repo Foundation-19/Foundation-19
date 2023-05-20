@@ -106,7 +106,7 @@
 	magazine_type = /obj/item/ammo_magazine/scp/usp45
 	allowed_magazines = list(/obj/item/ammo_magazine/scp/usp45)
 
-/obj/item/gun/projectile/automatic/scp/saiga12
+/obj/item/gun/projectile/scp/automatic/saiga12
 	name = "Saiga12 Tactical Shotgun"
 	desc = "A reliable russian-made semi automatic shotgun often used by Foundation strike and security forces."
 	icon_state = "saiga12"
@@ -124,27 +124,27 @@
 		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null))
 
 
-/obj/item/gun/projectile/automatic/scp/saiga12/beanbag
+/obj/item/gun/projectile/scp/automatic/saiga12/beanbag
 	magazine_type = /obj/item/ammo_magazine/scp/saiga12/beanbag
 
 
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot
+/obj/item/gun/projectile/scp/automatic/saiga12/buckshot
 	magazine_type = /obj/item/ammo_magazine/scp/saiga12/buckshot
 
-/obj/item/gun/projectile/automatic/scp/saiga12/stunshell
+/obj/item/gun/projectile/scp/automatic/saiga12/stunshell
 	magazine_type = /obj/item/ammo_magazine/scp/saiga12/stunshell
 
-/obj/item/gun/projectile/automatic/scp/saiga12/rubbershot
+/obj/item/gun/projectile/scp/automatic/saiga12/rubbershot
 	magazine_type = /obj/item/ammo_magazine/scp/saiga12/rubbershot
 
-/obj/item/gun/projectile/automatic/scp/saiga12/flash
+/obj/item/gun/projectile/scp/automatic/saiga12/flash
 	magazine_type = /obj/item/ammo_magazine/scp/saiga12/flash
 
-/obj/item/gun/projectile/automatic/scp/saiga12/emp
+/obj/item/gun/projectile/scp/automatic/saiga12/emp
 	magazine_type = /obj/item/ammo_magazine/scp/saiga12/emp
 
 
-/obj/item/gun/projectile/automatic/scp/saiga12/update_icon()
+/obj/item/gun/projectile/scp/automatic/saiga12/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "saiga12"

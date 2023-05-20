@@ -302,9 +302,9 @@
 	if(ammo_magazine)
 		to_chat(user, "It has \a [ammo_magazine] loaded.")
 	if(user.skill_check(SKILL_WEAPONS, SKILL_TRAINED))
-		to_chat(user, "Has [getAmmo()] round\s remaining.")
+		to_chat(user, "Has [get_ammo_count()] round\s remaining.")
 
-/obj/item/gun/projectile/proc/getAmmo()
+/obj/item/gun/projectile/proc/get_ammo_count()
 	var/bullets = 0
 	if(loaded)
 		bullets += loaded.len

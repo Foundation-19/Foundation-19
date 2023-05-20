@@ -3517,12 +3517,12 @@
 /area/centcom)
 "rX" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
+/obj/item/gun/projectile/scp/automatic/saiga12/buckshot,
+/obj/item/gun/projectile/scp/automatic/saiga12/buckshot,
+/obj/item/gun/projectile/scp/automatic/saiga12/buckshot,
+/obj/item/gun/projectile/scp/automatic/saiga12/buckshot,
+/obj/item/gun/projectile/scp/automatic/saiga12/buckshot,
+/obj/item/gun/projectile/scp/automatic/saiga12/buckshot,
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
@@ -3532,10 +3532,10 @@
 /area/centcom)
 "rY" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -4973,22 +4973,22 @@
 /area/centcom)
 "vA" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 6
 	},
@@ -5126,11 +5126,11 @@
 /area/centcom)
 "vV" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/t12,
-/obj/item/gun/projectile/automatic/scp/t12,
-/obj/item/gun/projectile/automatic/scp/t12,
-/obj/item/gun/projectile/automatic/scp/t12,
-/obj/item/gun/projectile/automatic/scp/t12,
+/obj/item/gun/projectile/scp/automatic/t12,
+/obj/item/gun/projectile/scp/automatic/t12,
+/obj/item/gun/projectile/scp/automatic/t12,
+/obj/item/gun/projectile/scp/automatic/t12,
+/obj/item/gun/projectile/scp/automatic/t12,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "monotiledark"
@@ -5177,22 +5177,22 @@
 /area/centcom)
 "wo" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 4
 	},
@@ -7005,10 +7005,10 @@
 /area/centcom)
 "Jl" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
 /obj/effect/floor_decal/corner/research/border{
 	dir = 5
 	},
@@ -7332,22 +7332,22 @@
 /area/centcom)
 "LG" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
 	},
@@ -8078,22 +8078,22 @@
 /area/centcom)
 "Qp" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
-/obj/item/gun/projectile/automatic/scp/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
+/obj/item/gun/projectile/scp/automatic/m4a1,
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8
 	},
@@ -8356,7 +8356,7 @@
 /area/centcom)
 "Ro" = (
 /obj/structure/table/standard,
-/obj/item/gun/projectile/automatic/scp/m4a1{
+/obj/item/gun/projectile/scp/automatic/m4a1{
 	starts_loaded = 0
 	},
 /turf/unsimulated/floor{

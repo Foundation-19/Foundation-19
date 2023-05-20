@@ -15,7 +15,7 @@
 	id_type = /obj/item/card/id/junseclvl2lcz
 	l_pocket = /obj/item/device/radio
 	r_pocket = /obj/item/ammo_magazine/scp/p90_mag
-	suit_store = /obj/item/gun/projectile/automatic/scp/p90
+	suit_store = /obj/item/gun/projectile/scp/automatic/p90
 
 /decl/hierarchy/outfit/zombie/juniorscientist
 	name = "Scientist Associate"

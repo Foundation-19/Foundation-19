@@ -154,7 +154,7 @@
 		/obj/item/melee/telebaton,
 		/obj/item/material/knife/combat,
 		/obj/item/storage/belt/holster/security/tactical,
-		/obj/item/gun/projectile/automatic/scp/m4a1,
+		/obj/item/gun/projectile/scp/automatic/m4a1,
 		/obj/item/gun/energy/stunrevolver,
 		/obj/item/ammo_magazine/scp/m16_mag = 3,
 		/obj/item/ammo_magazine/box/a556,
@@ -173,7 +173,7 @@
 /obj/structure/closet/secure_closet/guard/ez/WillContain()
 	return ..() | list(
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/gun/projectile/automatic/scp/p90,
+		/obj/item/gun/projectile/scp/automatic/p90,
 		/obj/item/ammo_magazine/scp/p90_mag = 3,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
 		/obj/item/ammo_magazine/box/a57,
@@ -202,7 +202,7 @@
 		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/solgov/department/security/marine,
 		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/gun/projectile/automatic/scp/p90,
+		/obj/item/gun/projectile/scp/automatic/p90,
 		/obj/item/ammo_magazine/scp/p90_mag = 3,
 		/obj/item/ammo_magazine/scp/p90_mag/rubber = 4,
 		/obj/item/ammo_magazine/box/a57,
@@ -286,7 +286,7 @@
 
 /obj/structure/closet/secure_closet/guard/breachautomatics/WillContain()
 	return list(
-		/obj/item/gun/projectile/automatic/scp/m4a1 = 4,
+		/obj/item/gun/projectile/scp/automatic/m4a1 = 4,
 		/obj/item/ammo_magazine/scp/m16_mag = 12,
 		/obj/item/ammo_magazine/box/a556 = 4
 	)
@@ -303,7 +303,7 @@
 
 /obj/structure/closet/secure_closet/guard/breachshotguns/WillContain()
 	return list(
-		/obj/item/gun/projectile/automatic/scp/saiga12 = 2,
+		/obj/item/gun/projectile/scp/automatic/saiga12 = 2,
 		/obj/item/ammo_magazine/box/buckshot = 4,
 		/obj/item/ammo_magazine/box/slug = 4,
 		/obj/item/ammo_magazine/box/emp = 2,
@@ -324,7 +324,7 @@
 
 /obj/structure/closet/secure_closet/guard/riotshotguns/WillContain()
 	return list(
-		/obj/item/gun/projectile/automatic/scp/saiga12/beanbag = 2,
+		/obj/item/gun/projectile/scp/automatic/saiga12/beanbag = 2,
 		/obj/item/ammo_magazine/scp/saiga12/beanbag = 8,
 		/obj/item/ammo_magazine/box/beanbag = 4,
 		/obj/item/clothing/accessory/storage/bandolier = 2,

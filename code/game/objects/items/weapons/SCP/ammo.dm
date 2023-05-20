@@ -9,26 +9,6 @@
 	max_ammo = 10
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/scp/ierichon
-	name = "Jericho-114 magazine (.45)"
-	icon_state = "9mmds"
-	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/pistol/c45
-	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = ".45"
-	max_ammo = 20
-	multiple_sprites = 1
-
-/obj/item/ammo_magazine/scp/ierichon/rubber
-	name = "Jericho-114 magazine (.45 rubber)"
-	icon_state = "R9mmds"
-	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/pistol/c45/rubber
-	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = ".45"
-	max_ammo = 20
-	multiple_sprites = 1
-
 /obj/item/ammo_magazine/scp/mk9
 	name = "MK9 magazine (9mm)"
 	icon_state = "9mmds"

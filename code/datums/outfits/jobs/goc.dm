@@ -18,7 +18,7 @@
 
 /decl/hierarchy/outfit/goc/trooper
 	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Trooper")
-	r_hand = /obj/item/gun/projectile/automatic/scp/fnfal
+	r_hand = /obj/item/gun/projectile/scp/automatic/fnfal
 	l_hand = /obj/item/grenade/frag
 	l_pocket = /obj/item/ammo_magazine/scp
 	r_pocket = /obj/item/card/emag
@@ -42,7 +42,7 @@
 
 /decl/hierarchy/outfit/goc/leader
 	name = OUTFIT_JOB_NAME("UNGOC PHYSICS Team Leader")
-	r_hand = /obj/item/gun/projectile/automatic/scp/ak12
+	r_hand = /obj/item/gun/projectile/scp/automatic/ak12
 	l_hand = /obj/item/material/hatchet/tacknife
 	l_pocket = /obj/item/grenade/frag
 	r_pocket = /obj/item/card/emag
