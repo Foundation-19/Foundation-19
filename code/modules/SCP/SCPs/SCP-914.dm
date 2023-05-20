@@ -94,7 +94,7 @@
 	return ..()
 
 /obj/structure/scp_914/proc/CanOperate(mob/user)
-	if(!isliving(user)) // Silently forbid them from operating it
+	if(!ishuman(user)) // Silently forbid them from operating it
 		return FALSE
 
 	if(processing)

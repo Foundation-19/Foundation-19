@@ -30,6 +30,15 @@
 	/// How much defecation we need to breach
 	var/defication_max = 60
 
+	/// If TRUE - 173 will automatically trigger attack when bumping a human mob
+	var/bump_attack = FALSE
+
+	/// If TRUE - we will ignore anyone looking at us
+	var/ignore_vision = FALSE
+
+	/// Movement sound, same function as with simple mobs. Remove when 173 becomes one
+	var/movement_sound = null
+
 	//AI config
 
 	//How many tiles 173 moves in a single run of life
@@ -212,7 +221,47 @@
 	if(get_area(src) == spawn_area)
 		. += "Estimated time until breach: [max(Round(((defication_max - CheckFeces()) * defecation_cooldown_time) / (60 SECONDS)), 0)] minutes."
 
-/mob/living/scp173/proc/IsBeingWatched()
+// Remove it when 173 becomes simple animal subtype
+/mob/living/scp_173/DoMove(direction, mob/mover)
+	var/turf/old_turf = get_turf(src)
+	. = ..()
+	if(. & MOVEMENT_HANDLED)
+		if(movement_sound && old_turf != get_turf(src))
+			playsound(src, movement_sound, 50, TRUE)
+
+// If bump attack is enabled, we will automaticall kill humans that we bump into
+/mob/living/scp_173/Bump(atom/A)
+
+// Someone decided to put 173 into it? Good lord, it's over!
+// P.S. Only humans can activate 914, so no powergaming here
+/mob/living/scp_173/Conversion914(mode = MODE_ONE_TO_ONE)
+	switch(mode)
+		if(MODE_COARSE)
+			movement_sound = null
+			bump_attack = FALSE
+			ignore_vision = FALSE
+			snap_cooldown_time = initial(snap_cooldown_time)
+			maxHealth = initial(maxHealth)
+			health = clamp(health - maxHealth * 0.5, maxHealth * 0.1, maxHealth)
+		if(MODE_FINE)
+			playsound(src, 'sound/effects/screech.ogg', 75, FALSE, 16)
+			to_chat(src, SPAN_USERDANGER("You are feeling more powerful!"))
+			movement_sound = 'sound/scp/173/rattle.ogg'
+			bump_attack = TRUE
+		if(MODE_VERY_FINE) // God has abandoned you
+			playsound(src, 'sound/effects/screech2.ogg', 150, FALSE, 32)
+			to_chat(src, SPAN_USERDANGER("You are unstoppable, nothing can stand on your path now!"))
+			movement_sound = 'sound/scp/173/rattle.ogg'
+			bump_attack = TRUE
+			ignore_vision = TRUE
+			snap_cooldown_time = 0
+			maxHealth = initial(maxHealth) * 10
+			health = maxHealth
+	return src
+
+/mob/living/scp_173/proc/IsBeingWatched()
+	if(ignore_vision) // Nobody can stop us now
+		return FALSE
 	// Same as before, cage needs to be used as reference rather than 173
 	var/atom/A = src
 	if(istype(loc, /obj/structure/scp173_cage))
