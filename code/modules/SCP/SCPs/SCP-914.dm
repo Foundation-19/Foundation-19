@@ -193,8 +193,8 @@
 	. = ..()
 	// If some moron spawned it by itself, without SCP-914
 	if(!(locate(/obj/structure/scp_914) in get_turf(src)))
+		. = INITIALIZE_HINT_QDEL
 		CRASH("[name] was spawned without appropriate SCP-914 main object.")
-		return INITIALIZE_HINT_QDEL
 	forceMove(locate(x + spawn_x, y, z))
 
 // Booths
