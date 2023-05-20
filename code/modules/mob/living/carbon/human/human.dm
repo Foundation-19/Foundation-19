@@ -1854,7 +1854,7 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 			var/list/return_list = list()
 			to_chat(src, SPAN_USERDANGER("Your innars are spilling out... Not all of them though..."))
 			adjustBruteLoss(600)
-			for(var/obj/O in src)
+			for(var/obj/O in contents)
 				if(prob(66))
 					return_list += O
 			return return_list
@@ -1879,13 +1879,13 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 						to_chat(src, SPAN_NOTICE("Nothing changed..?"))
 				if("eyehair_color")
 					if(prob(50))
-						change_eye_color(rand(255), rand(255), rand(255))
+						change_eye_color(rand(0, 255), rand(0, 255), rand(0,255))
 						to_chat(src, SPAN_USERDANGER("You feel different, somehow... You'll probably want to get your eyesight checked."))
 					else
-						change_hair_color(rand(255), rand(255), rand(255))
+						change_hair_color(rand(0, 255), rand(0, 255), rand(0, 255))
 						to_chat(src, SPAN_USERDANGER("You feel different, somehow... Wait, what's that on your head?"))
 				if("skin_color")
-					change_skin_color(rand(255), rand(255), rand(255))
+					change_skin_color(rand(0, 255), rand(0, 255), rand(0, 255))
 					to_chat(src, SPAN_USERDANGER("You feel different, somehow... Wait, what the hell happened!?"))
 				if("species")
 					change_species(pick(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_PROMETHEAN, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER, SPECIES_MULE, SPECIES_FBP))
