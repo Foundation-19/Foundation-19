@@ -236,3 +236,11 @@
 	damage = 10
 	armor_penetration = 35
 	damage_type = BRUTE
+
+/obj/item/projectile/energy/acid_spit
+	name = "acid bolt"
+	icon_state = "toxin"
+	damage = 18
+	damage_type = BURN
+	fire_sound = 'sound/weapons/alien_spit.ogg'
+	pass_flags = PASS_FLAG_TABLE

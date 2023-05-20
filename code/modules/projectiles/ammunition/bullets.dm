@@ -365,3 +365,22 @@
 	desc = "A small bullet casing fitted with a single-use ion pulse generator."
 	projectile_type = /obj/item/projectile/ion/tiny
 	icon_state = "pistol-casing-emp"
+
+/* Used bullet casings **/
+/obj/item/ammo_casing/rifle/used/Initialize()
+	. = ..()
+	expend()
+	pixel_x = rand(-10, 10)
+	pixel_y = rand(-10, 10)
+
+/obj/item/ammo_casing/pistol/used/Initialize()
+	. = ..()
+	expend()
+	pixel_x = rand(-10, 10)
+	pixel_y = rand(-10, 10)
+
+/obj/item/ammo_casing/pistol/magnum/used/Initialize()
+	. = ..()
+	expend()
+	pixel_x = rand(-10, 10)
+	pixel_y = rand(-10, 10)

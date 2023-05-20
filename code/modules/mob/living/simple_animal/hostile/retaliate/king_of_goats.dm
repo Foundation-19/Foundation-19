@@ -20,7 +20,7 @@
 	mob_size = MOB_LARGE
 	mob_bump_flag = HEAVY
 	can_escape = TRUE
-	move_to_delay = 3
+	movement_cooldown = 3
 	min_gas = null
 	max_gas = null
 	minbodytemp = 0
@@ -66,10 +66,10 @@
 	. = ..()
 	var/mob/living/simple_animal/hostile/retaliate/goat/king/phase2/G = holder
 	if(G.spellscast < 5)
-		if(prob(5) && G.move_to_delay != 1) //speed buff
+		if(prob(5) && G.movement_cooldown != 2) //speed buff
 			G.spellscast++
 			G.visible_message(SPAN_MFAUNA("\The [G] shimmers and seems to phase in and out of reality itself!"))
-			G.move_to_delay = 1
+			G.movement_cooldown = 2
 
 		else if(prob(5)) //stun move
 			G.spellscast++
@@ -202,7 +202,7 @@
 	health = 200
 	maxHealth = 200
 	natural_weapon = /obj/item/natural_weapon/goathorns
-	move_to_delay = 3
+	movement_cooldown = 3
 
 /mob/living/simple_animal/hostile/retaliate/goat/king/phase2/proc/phase3_transition()
 	phase3 = TRUE
