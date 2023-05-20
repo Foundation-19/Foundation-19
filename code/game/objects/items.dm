@@ -981,8 +981,11 @@ GLOBAL_LIST_EMPTY(items_by_convert_rating)
 
 	switch(mode)
 		if(MODE_ONE_TO_ONE, MODE_FINE, MODE_VERY_FINE)
-			var/item_path = pick(GLOB.items_by_convert_rating[Check914Rating(mode)])
-			return new item_path()
+			var/rating = Check914Rating(mode)
+			if(!(rating in GLOB.items_by_convert_rating) || !length(GLOB.items_by_convert_rating[rating]))
+				return src
+			var/item_path = pick(GLOB.items_by_convert_rating[rating])
+			return item_path
 
 	return ..()
 

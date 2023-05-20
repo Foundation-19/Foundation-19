@@ -52,6 +52,9 @@
 	output_part = null
 	return ..()
 
+/obj/structure/scp_914/ex_act()
+	return
+
 /obj/structure/scp_914/examine(mob/user)
 	. = ..()
 	to_chat(user, SPAN_NOTICE("The knob is currently pointing towards \"[current_mode]\"."))
@@ -155,19 +158,24 @@
 		if(CR == A)
 			continue
 		if(islist(CR))
-			for(var/atom/movable/AR in CR)
+			for(var/AR_path in CR)
+				var/atom/movable/AR = AR_path
+				if(!isatom(AR))
+					AR = new(get_turf(output_part))
 				AR.forceMove(get_turf(output_part))
 				if(isitem(AR))
 					AR.pixel_x = clamp(A.pixel_x, -16, 16)
 					AR.pixel_y = clamp(A.pixel_y, -16, 16)
 			QDEL_NULL(A)
 			continue
-		QDEL_NULL(A)
-		var/atom/movable/NA = new CR(get_turf(output_part))
+		var/atom/movable/NA = CR
+		if(!isatom(NA)) // If return value was path
+			NA = new(get_turf(output_part))
 		// Keep offsets if item
 		if(isitem(NA))
 			NA.pixel_x = clamp(A.pixel_x, -16, 16)
 			NA.pixel_y = clamp(A.pixel_y, -16, 16)
+		QDEL_NULL(A)
 	upgrade_items = null
 
 	activation_cooldown = world.time + activation_cooldown_time
@@ -197,12 +205,15 @@
 		CRASH("[name] was spawned without appropriate SCP-914 main object.")
 	forceMove(locate(x + spawn_x, y, z))
 
+/obj/structure/scp_914_part/ex_act()
+	return
+
 // Booths
 /obj/structure/scp_914_part/input_booth
 	name = "input booth"
 	desc = "An input booth of a larger structure."
 	icon = 'icons/SCP/SCP-914-32x64.dmi'
-	icon_state = "left"
+	icon_state = "left-door"
 	bound_height = 64
 	density = FALSE
 	spawn_x = -2
@@ -211,7 +222,7 @@
 	name = "output booth"
 	desc = "An output booth of a larger structure."
 	icon = 'icons/SCP/SCP-914-32x64.dmi'
-	icon_state = "right"
+	icon_state = "right-door"
 	bound_height = 64
 	density = FALSE
 	spawn_x = 3
