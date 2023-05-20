@@ -1220,6 +1220,7 @@
 #include "code\game\objects\structures\signs_scp.dm"
 #include "code\game\objects\structures\skele_stand.dm"
 #include "code\game\objects\structures\stasis_cage.dm"
+#include "code\game\objects\structures\statue.dm"
 #include "code\game\objects\structures\tank_dispenser.dm"
 #include "code\game\objects\structures\target_stake.dm"
 #include "code\game\objects\structures\transit_tubes.dm"
