@@ -31,8 +31,8 @@
 		/obj/structure/scp_914_part/output_side,
 		)
 	var/list/connected_parts = list()
-	var/obj/structure/scp_914_input_booth/input_part = null
-	var/obj/structure/scp_914_output_booth/output_part = null
+	var/obj/structure/scp_914_part/input_booth/input_part = null
+	var/obj/structure/scp_914_part/output_booth/output_part = null
 
 /obj/structure/scp_914/Initialize()
 	. = ..()
