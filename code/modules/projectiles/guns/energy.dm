@@ -126,7 +126,7 @@
 				return src
 			return pick(potential_return)
 		if(MODE_ONE_TO_ONE)
-			var/list/potential_return
+			var/list/potential_return = list()
 			for(var/thing in subtypesof(/obj/item/gun/energy))
 				var/obj/item/gun/energy/G = thing
 				if(initial(G.max_shots) > max_shots * 1.25 || initial(G.max_shots) < max_shots * 0.75)
@@ -141,7 +141,7 @@
 			return pick(potential_return)
 		if(MODE_FINE, MODE_VERY_FINE)
 			var/mult_mod = (mode == MODE_VERY_FINE ? 2 : 1)
-			var/list/potential_return
+			var/list/potential_return = list()
 			for(var/thing in subtypesof(/obj/item/gun/energy))
 				var/obj/item/gun/energy/G = thing
 				if(initial(G.max_shots) > max_shots * 1.25 * mult_mod && initial(G.max_shots) < max_shots * 2 * mult_mod)

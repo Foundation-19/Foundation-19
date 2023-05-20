@@ -317,7 +317,7 @@
 /obj/item/gun/projectile/Conversion914(mode = MODE_ONE_TO_ONE)
 	switch(mode)
 		if(MODE_ONE_TO_ONE)
-			var/list/potential_return
+			var/list/potential_return = list()
 			for(var/thing in subtypesof(/obj/item/gun/projectile))
 				var/obj/item/gun/projectile/G = thing
 				if(initial(G.caliber) != caliber)
@@ -330,7 +330,7 @@
 			return pick(potential_return)
 		if(MODE_FINE, MODE_VERY_FINE)
 			var/mult_mod = (mode == MODE_VERY_FINE ? 2 : 1)
-			var/list/potential_return
+			var/list/potential_return = list()
 			for(var/thing in subtypesof(/obj/item/gun/projectile))
 				var/obj/item/gun/projectile/G = thing
 				if(!isnull(magazine_type) && !isnull(G.magazine_type))
