@@ -834,19 +834,19 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 /obj/item/organ/external/proc/play_droplimb_sound(droptype, clean)
 	if(BP_IS_CRYSTAL(src))
-		playsound(src, "shatter", 70, 1)
+		playsound(src, SFX_SHATTER, 70, 1)
 		show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	else if(!BP_IS_ROBOTIC(src))
 		switch(droptype)
 			if(DROPLIMB_EDGE)
 				if(!clean)
-					playsound(src, "fracture", 70, 1)
+					playsound(src, SFX_BONE_FRACTURE, 70, 1)
 					show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 			if(DROPLIMB_BURN)
-				playsound(src, "sizzle", 70, 1)
+				playsound(src, SFX_WOUND_SIZZLE, 70, 1)
 				show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 			if(DROPLIMB_BLUNT)
-				playsound(src, "crack", 70, 1)
+				playsound(src, SFX_WOUND_CRACK, 70, 1)
 				show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 
 //Handles dismemberment
@@ -1057,7 +1057,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		if(can_feel_pain())
 			owner.emote("scream")
 
-	playsound(src.loc, "fracture", 100, 1, -2)
+	playsound(src.loc, SFX_BONE_FRACTURE, 100, 1, -2)
 	status |= ORGAN_BROKEN
 	broken_description = pick("broken","fracture","hairline fracture")
 

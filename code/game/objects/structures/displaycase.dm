@@ -51,7 +51,7 @@
 		new /obj/item/material/shard(loc)
 		for(var/atom/movable/AM in src)
 			AM.dropInto(loc)
-		playsound(src, "shatter", 70, 1)
+		playsound(src, SFX_SHATTER, 70, 1)
 		show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 		update_icon()
 

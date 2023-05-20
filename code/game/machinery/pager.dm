@@ -22,7 +22,7 @@
 /obj/machinery/pager/interface_interact(mob/living/user)
 	if(!CanInteract(user, GLOB.default_state))
 		return FALSE
-	playsound(src, "button", 60)
+	playsound(src, SFX_MACHINE_BUTTON, 60)
 	flick("doorbellpressed",src)
 	activate(user)
 	return TRUE

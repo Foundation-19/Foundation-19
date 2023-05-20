@@ -89,7 +89,7 @@
 		/obj/item/stock_parts/power/battery
 		)
 	req_access = list(ACCESS_ENGINEERING_LVL2)
-	clicksound = "switch"
+	clicksound = SFX_MACHINE_SWITCH
 	layer = ABOVE_WINDOW_LAYER
 	var/needs_powerdown_sound
 	var/area/area

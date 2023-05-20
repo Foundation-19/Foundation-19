@@ -113,7 +113,7 @@
 		if(status != newstatus)
 			change_status(newstatus)
 			to_chat(user, SPAN_NOTICE("[src] is now [status ? "on" : "off"]."))
-			playsound(loc, "sparks", 75, 1, -1)
+			playsound(loc, SFX_SPARK, 75, 1, -1)
 	else
 		change_status(0)
 		if(!bcell)
