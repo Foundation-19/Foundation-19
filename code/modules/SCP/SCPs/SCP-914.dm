@@ -2,8 +2,10 @@
 /obj/structure/scp_914
 	name = "SCP 914"
 	desc = "A large clockwork device consisting of numerous parts and sections."
-	icon = 'icons/obj/scp914.dmi'
+	icon = 'icons/SCP/SCP-914-64x64.dmi'
 	icon_state = "center"
+	bound_width = 64
+	bound_height = 64
 	anchored = TRUE
 	density = TRUE
 
@@ -22,18 +24,25 @@
 		MODE_VERY_FINE,
 		)
 
+	var/list/parts_to_spawn = list(
+		/obj/structure/scp_914_part/input_connector,
+		/obj/structure/scp_914_part/output_connector,
+		/obj/structure/scp_914_part/input_side,
+		/obj/structure/scp_914_part/output_side,
+		)
 	var/list/connected_parts = list()
 	var/obj/structure/scp_914_input_booth/input_part = null
 	var/obj/structure/scp_914_output_booth/output_part = null
 
 /obj/structure/scp_914/Initialize()
 	. = ..()
-	input_part = new(get_step(get_step(src, WEST), WEST))
-	output_part = new(get_step(get_step(src, EAST), EAST))
+	input_part = new(get_turf(src))
+	output_part = new(get_turf(src))
 	connected_parts += input_part
 	connected_parts += output_part
-	connected_parts += new /obj/structure/scp_914_input_connector(get_step(src, WEST))
-	connected_parts += new /obj/structure/scp_914_output_connector(get_step(src, EAST))
+	// Misc parts
+	for(var/O in parts_to_spawn)
+		connected_parts += new O(get_turf(src))
 
 /obj/structure/scp_914/Destroy()
 	for(var/obj/O in connected_parts)
@@ -172,43 +181,76 @@
 	playsound(output_part, 'sound/scp/914/door_open.ogg', 50, TRUE, -4)
 
 // Support structures and effects
+/obj/structure/scp_914_part
+	name = "SCP 914 part"
+	desc = "Why did you spawn this thing? It's not for you."
+	anchored = TRUE
+	density = TRUE
+	/// The object will be moved this far to left/right on spawn
+	var/spawn_x = 0
+
+/obj/structure/scp_914_part/Initialize()
+	. = ..()
+	// If some moron spawned it by itself, without SCP-914
+	if(!(locate(/obj/structure/scp_914) in get_turf(src)))
+		CRASH("[name] was spawned without appropriate SCP-914 main object.")
+		return INITIALIZE_HINT_QDEL
+	forceMove(locate(x + spawn_x, y, z))
+
 // Booths
-/obj/structure/scp_914_input_booth
+/obj/structure/scp_914_part/input_booth
 	name = "input booth"
 	desc = "An input booth of a larger structure."
-	icon = 'icons/obj/scp914.dmi'
+	icon = 'icons/SCP/SCP-914-32x64.dmi'
 	icon_state = "left"
-	anchored = TRUE
+	bound_height = 64
 	density = FALSE
+	spawn_x = -2
 
-/obj/structure/scp_914_output_booth
+/obj/structure/scp_914_part/output_booth
 	name = "output booth"
 	desc = "An output booth of a larger structure."
-	icon = 'icons/obj/scp914.dmi'
+	icon = 'icons/SCP/SCP-914-32x64.dmi'
 	icon_state = "right"
-	anchored = TRUE
+	bound_height = 64
 	density = FALSE
+	spawn_x = 3
+
+// Sides
+/obj/structure/scp_914_part/input_side
+	name = "booth side"
+	desc = "A metal part surrounding input booth."
+	icon = 'icons/SCP/SCP-914-32x64.dmi'
+	icon_state = "left"
+	bound_height = 64
+	spawn_x = -3
+
+/obj/structure/scp_914_part/output_side
+	name = "booth side"
+	desc = "A metal part surrounding output booth."
+	icon = 'icons/SCP/SCP-914-32x64.dmi'
+	icon_state = "right"
+	bound_height = 64
+	spawn_x = 4
 
 // Connectors
-/obj/structure/scp_914_input_connector
+/obj/structure/scp_914_part/input_connector
 	name = "input tube"
 	desc = "A large copper tube with word \"Input\" written on a plaque."
-	icon = 'icons/obj/scp914.dmi'
+	icon = 'icons/SCP/SCP-914-32x64.dmi'
 	icon_state = "input"
-	anchored = TRUE
-	density = TRUE
+	spawn_x = -1
 
-/obj/structure/scp_914_output_connector
+/obj/structure/scp_914_part/output_connector
 	name = "output tube"
 	desc = "A large copper tube with word \"Output\" written on a plaque."
-	icon = 'icons/obj/scp914.dmi'
+	icon = 'icons/SCP/SCP-914-32x64.dmi'
 	icon_state = "output"
-	anchored = TRUE
-	density = TRUE
+	spawn_x = 2
 
 // Door effect
 /obj/effect/temp_visual/scp914_door_effect
-	icon = 'icons/obj/scp914.dmi'
+	icon = 'icons/SCP/SCP-914-32x64.dmi'
 	icon_state = "door"
 	pixel_z = 16
 	duration = 15 SECONDS
