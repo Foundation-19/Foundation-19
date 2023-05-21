@@ -1185,6 +1185,8 @@
 #include "code\game\objects\items\weapons\SCP\misc.dm"
 #include "code\game\objects\items\weapons\SCP\paint_stripe.dm"
 #include "code\game\objects\items\weapons\SCP\turfs.dm"
+#include "code\game\objects\items\weapons\SCP\guns\_defines.dm"
+#include "code\game\objects\items\weapons\SCP\guns\automatic.dm"
 #include "code\game\objects\items\weapons\SCP\guns\gun.dm"
 #include "code\game\objects\items\weapons\SCP\guns\pistols.dm"
 #include "code\game\objects\items\weapons\storage\backpack.dm"

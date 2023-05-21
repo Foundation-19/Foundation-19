@@ -6334,8 +6334,8 @@
 /area/site53/uez/hallway)
 "HH" = (
 /obj/structure/closet,
-/obj/item/gun/projectile/scp/automatic/saiga12/buckshot,
-/obj/item/gun/projectile/scp/automatic/saiga12/buckshot,
+/obj/item/gun/projectile/automatic/saiga12/buckshot,
+/obj/item/gun/projectile/automatic/saiga12/buckshot,
 /obj/machinery/power/apc/hyper{
 	dir = 1
 	},

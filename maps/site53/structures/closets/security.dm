@@ -303,7 +303,7 @@
 
 /obj/structure/closet/secure_closet/guard/breachshotguns/WillContain()
 	return list(
-		/obj/item/gun/projectile/scp/automatic/saiga12 = 2,
+		/obj/item/gun/projectile/automatic/saiga12 = 2,
 		/obj/item/ammo_magazine/box/buckshot = 4,
 		/obj/item/ammo_magazine/box/slug = 4,
 		/obj/item/ammo_magazine/box/emp = 2,
@@ -324,7 +324,7 @@
 
 /obj/structure/closet/secure_closet/guard/riotshotguns/WillContain()
 	return list(
-		/obj/item/gun/projectile/scp/automatic/saiga12/beanbag = 2,
+		/obj/item/gun/projectile/automatic/saiga12/beanbag = 2,
 		/obj/item/ammo_magazine/scp/saiga12/beanbag = 8,
 		/obj/item/ammo_magazine/box/beanbag = 4,
 		/obj/item/clothing/accessory/storage/bandolier = 2,
