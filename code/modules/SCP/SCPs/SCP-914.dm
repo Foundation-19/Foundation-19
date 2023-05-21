@@ -124,8 +124,8 @@
 
 	var/obj/effect/temp_visual/scp914_door_effect/D1 = new(get_turf(input_part))
 	var/obj/effect/temp_visual/scp914_door_effect/D2 = new(get_turf(output_part))
-	D1.pixel_X = -4
-	D2.pixel_X = 4
+	D1.pixel_x = -4
+	D2.pixel_x = 4
 	animate(D1, pixel_z = 0, alpha = 255, time = (2 SECONDS))
 	animate(D2, pixel_z = 0, alpha = 255, time = (2 SECONDS))
 
