@@ -466,7 +466,7 @@ Class Procs:
 // Coarse - dismantles the machine
 // Fine - randomly upgrades components of the machine via same proc
 // Very fine - same as above, but has a chance to start small explosion
-/obj/machinery/Conversion914(mob/user = usr, mode = MODE_ONE_TO_ONE)
+/obj/machinery/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_COARSE)
 			dismantle()
@@ -477,7 +477,7 @@ Class Procs:
 					continue
 				if(prob(20))
 					continue
-				S.Conversion914(user, mode)
+				S.Conversion914(mode, user)
 			playsound(src, 'sound/items/rped.ogg', 50, TRUE)
 			return src
 		if(MODE_VERY_FINE)
@@ -489,7 +489,7 @@ Class Procs:
 				if(prob(3)) // The more parts you got - the more likely it is to explode
 					explosion(get_turf(src), -1, prob(33), 5, 7, FALSE)
 					return src
-				S.Conversion914(user, mode)
+				S.Conversion914(mode, user)
 			playsound(src, 'sound/items/rped.ogg', 75, TRUE, 3)
 			return src
 	return ..()

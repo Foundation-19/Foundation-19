@@ -237,7 +237,7 @@
 
 // Someone decided to put 173 into it? Good lord, it's over!
 // P.S. Only humans can activate 914, so no powergaming here
-/mob/living/scp_173/Conversion914(mob/user = usr, mode = MODE_ONE_TO_ONE)
+/mob/living/scp_173/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	log_and_message_admins("put [src] through SCP-914 on \"[mode]\" mode.", user, src)
 	switch(mode)
 		if(MODE_COARSE)

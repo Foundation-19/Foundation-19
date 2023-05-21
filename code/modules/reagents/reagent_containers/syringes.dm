@@ -435,7 +435,7 @@
 // 1:1 - Returns random syringe type with same volume. If at the moment of conversion there are no reagents - return itself
 // Fine - Increases maximum volume of the syringe, but no more than by twice of original max volume
 // Very fine - Increases  maximum volume without a limit, but has a chance to disolve and irradiate the area
-/obj/item/reagent_containers/syringe/Conversion914(mob/user = usr, mode = MODE_ONE_TO_ONE)
+/obj/item/reagent_containers/syringe/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_COARSE)
 			reagents.splash(get_turf(src), reagents.total_volume)

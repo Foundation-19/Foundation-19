@@ -156,9 +156,10 @@
 	for(var/atom/movable/A in upgrade_items)
 		// Even if it gets deleted, some objects have effects on destruction, so let's keep them at output
 		A.forceMove(get_turf(output_part))
-		var/CR = A.Conversion914(user, current_mode)
+		var/CR = A.Conversion914(current_mode, user)
 		if(CR == A)
 			continue
+		QDEL_NULL(A)
 		if(islist(CR))
 			for(var/AR_path in CR)
 				var/atom/movable/AR = AR_path
@@ -168,7 +169,6 @@
 				if(isitem(AR))
 					AR.pixel_x = rand(-16, 16)
 					AR.pixel_y = rand(-16, 16)
-			QDEL_NULL(A)
 			continue
 		var/atom/movable/NA = CR
 		if(!isatom(NA)) // If return value was path
@@ -179,7 +179,6 @@
 		if(isitem(NA))
 			NA.pixel_x = rand(-16, 16)
 			NA.pixel_y = rand(-16, 16)
-		QDEL_NULL(A)
 	upgrade_items = null
 
 	activation_cooldown = world.time + activation_cooldown_time

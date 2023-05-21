@@ -269,7 +269,7 @@
 // Coarse - returns cell with worse max charge, or reduces charge of itself
 // Fine - returns cell with better max charge, charges itself a bit, or EXPLODES(with low chance)!
 // Very fine - returns cell with much better max charge, fully charges, upgrades, or EXPLODES(with high chance)!
-/obj/item/cell/Conversion914(mob/user = usr, mode = MODE_ONE_TO_ONE)
+/obj/item/cell/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_COARSE)
 			if(prob(50))

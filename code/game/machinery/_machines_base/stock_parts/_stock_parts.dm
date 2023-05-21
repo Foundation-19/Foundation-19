@@ -67,7 +67,7 @@ GLOBAL_LIST_EMPTY(stock_parts_by_rating)
 // 1:1 - returns absolutely random stock part with same rating
 // Fine - returns its own base type of higher rating
 // Very fine - returns even higher rating of same base type
-/obj/item/stock_parts/Conversion914(mob/user = usr, mode = MODE_ONE_TO_ONE)
+/obj/item/stock_parts/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_ONE_TO_ONE)
 			if(!length(GLOB.stock_parts_by_rating))

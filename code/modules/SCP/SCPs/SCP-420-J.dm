@@ -40,7 +40,7 @@
 
 // Fine - Adds random drug to the refill list
 // Very Fine - Deletes itself and gives everyone in a large area the reagents from refill list and plays funny music
-/obj/item/clothing/mask/smokable/cigarette/scp_420_j/Conversion914(mob/user = usr, mode = MODE_ONE_TO_ONE)
+/obj/item/clothing/mask/smokable/cigarette/scp_420_j/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_FINE)
 			var/list/available_reagents = potential_refill_reagents - refill_reagents

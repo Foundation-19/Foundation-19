@@ -265,7 +265,7 @@
 * If you don't return valid atom - nothing will be returned
 * If return value isn't src - the original item will be deleted
 */
-/atom/movable/proc/Conversion914(mob/user = usr, mode = MODE_ONE_TO_ONE)
+/atom/movable/proc/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_ROUGH)
 			return null

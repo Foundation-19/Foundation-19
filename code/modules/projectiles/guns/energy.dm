@@ -110,7 +110,7 @@
 // Coarse - Returns random gun with lower max_shots or damage
 // 1:1 - Returns random gun with similar max_shots value and similar projectile damage
 // Fine or Very Fine - Returns random gun with higher max_shots, higher damage or self-recharging
-/obj/item/gun/energy/Conversion914(mob/user = usr, mode = MODE_ONE_TO_ONE)
+/obj/item/gun/energy/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_COARSE)
 			var/list/potential_return

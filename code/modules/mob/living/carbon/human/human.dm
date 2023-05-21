@@ -1848,7 +1848,7 @@ GLOBAL_LIST_INIT(dream_tokens, list(
 ))
 
 // This is the fun part(I hated coding it)
-/mob/living/carbon/human/Conversion914(mob/user = usr, mode = MODE_ONE_TO_ONE)
+/mob/living/carbon/human/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_ROUGH) // Destroy the child
 			var/list/return_list = list()

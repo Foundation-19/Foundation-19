@@ -314,7 +314,7 @@
 
 // 1:1 - Returns random gun with same caliber and same weight, if it can find one
 // Fine or Very Fine - Returns random gun that either has higher damage with default projectiles, higher ammo capacity, higher penetration
-/obj/item/gun/projectile/Conversion914(mob/user = usr, mode = MODE_ONE_TO_ONE)
+/obj/item/gun/projectile/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
 	switch(mode)
 		if(MODE_ONE_TO_ONE)
 			var/list/potential_return = list()
