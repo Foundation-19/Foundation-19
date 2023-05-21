@@ -175,6 +175,7 @@
 
 	var/gun_mag_icon = "mag"
 	var/multiple_gun_mag_icons = FALSE
+
 /obj/item/ammo_magazine/box
 	w_class = ITEM_SIZE_NORMAL
 

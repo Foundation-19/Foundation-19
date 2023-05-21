@@ -298,7 +298,7 @@
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/device/flash(src)
 	new /obj/item/device/flashlight/maglight(src)
-	new /obj/item/gun/projectile/pistol/mk9(src)
+	new /obj/item/gun/projectile/scp/pistol/mk9(src)
 	new /obj/item/ammo_magazine/scp/mk9(src)
 	new /obj/item/ammo_magazine/scp/mk9(src)
 	new /obj/item/ammo_magazine/box/mk9(src)

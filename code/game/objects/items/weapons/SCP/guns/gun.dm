@@ -1,10 +1,15 @@
 #define GUN_SINGLE_ACTION "single_action"
 #define GUN_DOUBLE_ACTION "double_action"
 
+#define GUN_CASING_EJECTION_DOWN "ejection_down"
+#define GUN_CASING_EJECTION_RIGHT "ejection_right"
+#define GUN_CASING_EJECTION_LEFT "ejection_left"
+
 /obj/item/gun/projectile/scp
 	var/bolt_open = FALSE
 	var/cocked = FALSE
 	var/action_type = GUN_SINGLE_ACTION
+	var/ejection_side = GUN_CASING_EJECTION_RIGHT
 	var/bolt_back_sound = 'sound/weapons/guns/interaction/reload_bolt_back.ogg'
 	var/bolt_forward_sound = 'sound/weapons/guns/interaction/reload_bolt_forward.ogg'
 	var/has_bolt_icon = FALSE
@@ -15,7 +20,7 @@
 	var/last_bolt_cycle = 0
 	var/bolt_hold = FALSE
 	var/bolt_hold_on_empty_mag = FALSE
-	var/auto_close_on_full_mag = FALSE
+	fire_sound = null
 	appearance_flags = KEEP_TOGETHER
 	item_icons = list(
 		slot_l_hand_str = 'icons/SCP/guns/onmob/lefthand_guns.dmi',
@@ -300,6 +305,34 @@
 
 	update_icon()
 
+/obj/item/gun/projectile/scp/proc/ejectCasing(manual)
+	chambered.forceMove(get_turf(src))
+	var/hor_eject_vel = rand(45, 55) / 10
+	var/vert_eject_vel = rand(40, 45) / 10
+	var/angle_of_movement = rand(-20, 20)
+
+	if(istype(chambered, /obj/item/ammo_casing/shotgun) || manual)
+		hor_eject_vel /= 2
+		vert_eject_vel /= 2
+
+	switch(ejection_side)
+		if(GUN_CASING_EJECTION_DOWN)
+			hor_eject_vel = rand(0, 2)
+			vert_eject_vel = -2
+			angle_of_movement = rand(0, 360)
+		if(GUN_CASING_EJECTION_RIGHT)
+			angle_of_movement += dir2angle(turn(loc.dir, -90))
+		if(GUN_CASING_EJECTION_DOWN)
+			angle_of_movement += dir2angle(turn(loc.dir, 90))
+
+	pixel_z = 8
+	chambered.SpinAnimation(4, 1)
+	chambered.AddComponent(/datum/component/movable_physics, _horizontal_velocity = hor_eject_vel, \
+		_vertical_velocity = vert_eject_vel, _horizontal_friction = rand(20, 24) / 100, _z_gravity = 9.8, \
+		_z_floor = 0, _angle_of_movement = angle_of_movement, _physic_flags = QDEL_WHEN_NO_MOVEMENT, \
+		_bounce_sounds = chambered.fall_sounds)
+	chambered = null
+
 /obj/item/gun/projectile/scp/on_update_icon()
 	..()
 	if(stock_icon)
@@ -402,7 +435,6 @@
 	has_bolt_icon = TRUE
 	bolt_hold = TRUE
 	bolt_hold_on_empty_mag = TRUE
-	auto_close_on_full_mag = FALSE
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
@@ -553,6 +585,7 @@
 	magazine_type = /obj/item/ammo_magazine/scp/p90_mag/rubber
 	allowed_magazines = /obj/item/ammo_magazine/scp/p90_mag
 	has_bolt_icon = FALSE
+	fire_sound = 'sound/weapons/guns/p90/shoot.ogg'
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
