@@ -345,9 +345,9 @@
 						potential_return += G
 					// Stronger bullets
 					var/obj/item/ammo_casing/C = initial(M.ammo_type)
-					var/obj/item/ammo_casing/our_case = our_mag.ammo_type
+					var/obj/item/ammo_casing/our_case = initial(our_mag.ammo_type)
 					var/obj/item/projectile/P = initial(C.projectile_type)
-					var/obj/item/projectile/our_proj = our_case.projectile_type
+					var/obj/item/projectile/our_proj = initial(our_case.projectile_type)
 					if(initial(P.damage) > initial(our_proj.damage) * 1.2 * mult_mod && \
 						initial(P.damage) < initial(our_proj.damage) * 2.4 * mult_mod)
 						potential_return += G

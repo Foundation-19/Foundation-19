@@ -54,6 +54,37 @@
 	if (reagents.has_reagent(required_reagent_type))
 		Expand()
 
+// Coarse - Returns meat of the animal within cube
+// 1:1 - Returns random animal cube with same reagent requirement, but different mob type
+// Fine - Returns the mob within it
+// Very fine - Returns the mob within it, and applies the Conversion914 on same mode
+/obj/item/reagent_containers/food/snacks/monkeycube/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_COARSE)
+			var/mob/living/L = monkey_type
+			var/list/return_list = list()
+			for(var/i = 1 to initial(L.meat_amount))
+				return_list += initial(L.meat_type)
+			playsound(get_turf(src), 'sound/effects/splat.ogg', 25, TRUE)
+			return length(return_list) ? return_list : null
+		if(MODE_ONE_TO_ONE)
+			var/list/potential_return = list()
+			for(var/thing in typesof(/obj/item/reagent_containers/food/snacks/monkeycube))
+				var/obj/item/reagent_containers/food/snacks/monkeycube/M = thing
+				if(initial(M.required_reagent_type) != required_reagent_type || initial(M.monkey_type) == monkey_type)
+					continue
+				potential_return += M
+				if(!LAZYLEN(potential_return))
+					return src
+				return pick(potential_return)
+		if(MODE_FINE)
+			return monkey_type
+		if(MODE_VERY_FINE)
+			var/mob/M = new monkey_type(get_turf(src))
+			M.Conversion914(mode, user)
+			return M
+	return ..()
+
 /obj/item/reagent_containers/food/snacks/monkeycube/wrapped
 	desc = "Still wrapped in some paper."
 	icon_state = "monkeycubewrap"
