@@ -330,10 +330,13 @@
 			return pick(potential_return)
 		if(MODE_FINE, MODE_VERY_FINE)
 			var/mult_mod = (mode == MODE_VERY_FINE ? 2 : 1)
+			if(prob(mult_mod ** 2))
+				explosion(get_turf(src), -1, prob(35), 3, 7, TRUE)
+				return null
 			var/list/potential_return = list()
 			for(var/thing in subtypesof(/obj/item/gun/projectile))
 				var/obj/item/gun/projectile/G = thing
-				if(!isnull(magazine_type) && !isnull(G.magazine_type))
+				if(!isnull(magazine_type) && !isnull(initial(G.magazine_type)))
 					// Higher capacity magazine
 					var/obj/item/ammo_magazine/M = initial(G.magazine_type)
 					var/obj/item/ammo_magazine/our_mag = magazine_type

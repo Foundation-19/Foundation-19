@@ -141,6 +141,9 @@
 			return pick(potential_return)
 		if(MODE_FINE, MODE_VERY_FINE)
 			var/mult_mod = (mode == MODE_VERY_FINE ? 2 : 1)
+			if(prob(mult_mod ** 2))
+				empulse(get_turf(src), 2, 5)
+				return null
 			var/list/potential_return = list()
 			for(var/thing in subtypesof(/obj/item/gun/energy))
 				var/obj/item/gun/energy/G = thing

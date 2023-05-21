@@ -103,7 +103,7 @@ GLOBAL_LIST_EMPTY(circuitboards_by_type)
 			if(!build_path)
 				return src
 			if(prob(20))
-				explosion(get_turf(src), -1, prob(35), 3, 7, 0)
+				explosion(get_turf(src), -1, prob(35), 3, 7, TRUE)
 				return null
 			var/obj/machinery/M = build_path
 			return M
