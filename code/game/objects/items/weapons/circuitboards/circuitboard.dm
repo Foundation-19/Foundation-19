@@ -87,7 +87,7 @@ GLOBAL_LIST_EMPTY(circuitboards_by_type)
 
 // 1:1 - returns random board with same board_type
 // Fine - has a chance to instantly build the machine, or explode slightly
-/obj/item/stock_parts/circuitboard/Conversion914(mode = MODE_ONE_TO_ONE)
+/obj/item/stock_parts/circuitboard/Conversion914(mob/user = usr, mode = MODE_ONE_TO_ONE)
 	switch(mode)
 		if(MODE_ONE_TO_ONE)
 			if(!length(GLOB.circuitboards_by_type))

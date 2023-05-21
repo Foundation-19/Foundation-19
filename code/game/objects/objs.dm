@@ -193,7 +193,7 @@
 	CRASH("Unimplemented GetExplosionBlock()")
 
 // Objects can be deconstructed into raw materials on coarse mode
-/obj/Conversion914(mode = MODE_ONE_TO_ONE)
+/obj/Conversion914(mob/user = usr, mode = MODE_ONE_TO_ONE)
 	switch(mode)
 		if(MODE_COARSE)
 			var/list/return_list = list()

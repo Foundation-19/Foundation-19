@@ -156,7 +156,7 @@
 	for(var/atom/movable/A in upgrade_items)
 		// Even if it gets deleted, some objects have effects on destruction, so let's keep them at output
 		A.forceMove(get_turf(output_part))
-		var/CR = A.Conversion914(current_mode)
+		var/CR = A.Conversion914(user, current_mode)
 		if(CR == A)
 			continue
 		if(islist(CR))

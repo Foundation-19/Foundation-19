@@ -922,7 +922,7 @@ GLOBAL_LIST_EMPTY(items_by_convert_rating)
 
 // BEHOLD! THE TERROR! THE NIGHTMARE!!!
 // tl;dr - We build a path of ALL(yes, all) items by "damage rating" for 1:1 and fine modes
-/obj/item/Conversion914(mode = MODE_ONE_TO_ONE)
+/obj/item/Conversion914(mob/user = usr, mode = MODE_ONE_TO_ONE)
 	// Generate the BIG LIST!
 	if(!length(GLOB.items_by_convert_rating))
 		for(var/thing in subtypesof(/obj/item))
