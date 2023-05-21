@@ -85,7 +85,7 @@
 /obj/item/gun/projectile/scp/proc/cycle_bolt(manual)
 	bolt_back(manual)
 
-	if((ammo_magazine && check_magazine_empty() && bolt_hold_on_empty_mag) || (manual && bolt_hold  && check_magazine_empty()))
+	if(check_magazine_empty() && ((ammo_magazine && bolt_hold_on_empty_mag) || (manual && bolt_hold)))
 		return
 
 	if(manual)
@@ -368,11 +368,10 @@
 
 /obj/item/gun/projectile/scp/examine(mob/user)
 	. = ..()
-	to_chat(user, SPAN_WARNING("It's caliber is [caliber]."))
+	to_chat(user, "It's caliber is [caliber].")
 	if(is_jammed && user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
 		to_chat(user, SPAN_WARNING("It looks jammed."))
-	if(chambered)
-		to_chat(user, "It has a round chambered.")
+	to_chat(user, "It has [chambered ? "a round chambered" : "no chambered round"].")
 	if(ammo_magazine)
 		to_chat(user, "It has \a [ammo_magazine] loaded.")
 	if(user.skill_check(SKILL_WEAPONS, SKILL_TRAINED))
@@ -460,10 +459,16 @@
 	accuracy = 2
 	bulk = GUN_BULK_RIFLE
 	wielded_item_state = "t12-wielded"
-	mag_insert_sound = 'sound/weapons/guns/interaction/ltrifle_magin.ogg'
-	mag_remove_sound = 'sound/weapons/guns/interaction/ltrifle_magout.ogg'
 	stock_icon = "stock"
 	foreend_icon = "fore-end"
+	has_bolt_icon = TRUE
+	bolt_hold = TRUE
+	bolt_hold_on_empty_mag = TRUE
+	bolt_back_sound = 'sound/weapons/guns/t12/bolt_back.ogg'
+	bolt_forward_sound = 'sound/weapons/guns/t12/bolt_forward.ogg'
+	mag_insert_sound = 'sound/weapons/guns/t12/m4a1_load.ogg'
+	mag_remove_sound = 'sound/weapons/guns/t12/m4a1_unload.ogg'
+	fire_sound = 'sound/weapons/guns/t12/fire1.ogg'
 
 	firemodes = list(
 		list(mode_name="semi auto",      burst=1,    fire_delay=null, one_hand_penalty=8,  burst_accuracy=null, dispersion=null),
@@ -486,6 +491,14 @@
 	stock_icon = "stock"
 	foreend_icon = "fore-end"
 	foreend_offset = 17
+	bolt_hold = FALSE
+	bolt_hold_on_empty_mag = FALSE
+	has_bolt_icon = TRUE
+	mag_insert_sound = 'sound/weapons/guns/ak12/mag_in.ogg'
+	mag_remove_sound = 'sound/weapons/guns/ak12/mag_out.ogg'
+	fire_sound = 'sound/weapons/guns/ak12/shoot.ogg'
+	bolt_back_sound = 'sound/weapons/guns/ak12/ak74_back.ogg'
+	bolt_forward_sound = 'sound/weapons/guns/ak12/ak74_forward.ogg'
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
@@ -493,11 +506,12 @@
 		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-2), dispersion=list(0.1, 0.7, 1.1), autofire_enabled=1),
 		)
 
-/obj/item/gun/projectile/scp/automatic/galil
+/obj/item/gun/projectile/automatic/galil
 	name = "IWI Galil ACE"
 	desc = "An intermediate cartridge infantry assault rifle first produced by and for Israeli Forces. The Foundation found a use for these reliable rifles in the hands of Foundation operatives and guards."
 	icon_state = "galil"
 	item_state = "galil-empty"
+	icon = 'icons/obj/gun.dmi'
 	force = 10
 	slot_flags = SLOT_BACK
 	caliber = "5.56x45mm"
@@ -511,7 +525,7 @@
 		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.1, 0.6, 0.9), autofire_enabled=1),
 		)
 
-/obj/item/gun/projectile/scp/automatic/galil/update_icon()
+/obj/item/gun/projectile/automatic/galil/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "galil"
@@ -519,11 +533,12 @@
 		icon_state = "galil-empty"
 	return
 
-/obj/item/gun/projectile/scp/automatic/svd
+/obj/item/gun/projectile/automatic/svd
 	name = "SVD"
 	desc = "Yet another spin on the AK platform, this SVD is a scoped sniper rifle with far greater range thanks to it's longer barrel and updated rifling and profile."
 	icon_state = "svd"
 	item_state = "svd"
+	icon = 'icons/obj/gun.dmi'
 	force = 10
 	slot_flags = SLOT_BACK
 	caliber = "7.62x54mmR"
@@ -535,7 +550,7 @@
 		list(mode_name="semiauto", burst=1, fire_delay=0, move_delay=null, one_hand_penalty=5, burst_accuracy=null, dispersion=null)
 		)
 
-/obj/item/gun/projectile/scp/automatic/svd/update_icon()
+/obj/item/gun/projectile/automatic/svd/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "svd"
@@ -543,11 +558,12 @@
 		icon_state = "svd-empty"
 	return
 
-/obj/item/gun/projectile/scp/automatic/fnfal
+/obj/item/gun/projectile/automatic/fnfal
 	name = "FN FAL"
 	desc = "'The Right Arm Of Freedom', the standard issue firearm for the UNGOC and some other countries. This weapon has seen mutliple big conflicts."
 	icon_state = "fnfal"
 	item_state = "fnfal"
+	icon = 'icons/obj/gun.dmi'
 	force = 10
 	slot_flags = SLOT_BACK
 	caliber = "a762nato"
@@ -560,7 +576,7 @@
 		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.1, 0.6, 0.9), autofire_enabled=1),
 		)
 
-/obj/item/gun/projectile/scp/automatic/fnfal/update_icon()
+/obj/item/gun/projectile/automatic/fnfal/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "fnfal"
@@ -585,6 +601,7 @@
 	magazine_type = /obj/item/ammo_magazine/scp/p90_mag/rubber
 	allowed_magazines = /obj/item/ammo_magazine/scp/p90_mag
 	has_bolt_icon = FALSE
+	ejection_side = GUN_CASING_EJECTION_DOWN
 	fire_sound = 'sound/weapons/guns/p90/shoot.ogg'
 
 	firemodes = list(
@@ -629,9 +646,10 @@
 	max_ammo = 30
 	multiple_sprites = 1
 
-/obj/item/gun/projectile/scp/automatic/vector
+/obj/item/gun/projectile/automatic/vector
 	name = "Kriss Vector"
 	desc = "A powerful, high stopping power SMG assigned to MTF operatives and certain SD agents."
+	icon = 'icons/obj/gun.dmi'
 	icon_state = "vector-45"
 	item_state = "vector-45"
 	w_class = ITEM_SIZE_HUGE
@@ -651,7 +669,7 @@
 		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.2, 0.6, 0.8), autofire_enabled=1),
 		)
 
-/obj/item/gun/projectile/scp/automatic/vector/update_icon()
+/obj/item/gun/projectile/automatic/vector/update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "vector-45"

@@ -94,7 +94,7 @@
 /area/space)
 "s" = (
 /obj/structure/table/rack/dark,
-/obj/item/gun/projectile/scp/automatic/svd,
+/obj/item/gun/projectile/automatic/svd,
 /obj/item/ammo_magazine/scp/svd,
 /obj/item/ammo_magazine/scp/svd,
 /obj/item/ammo_magazine/scp/svd,
