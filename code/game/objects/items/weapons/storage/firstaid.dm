@@ -17,6 +17,15 @@
 	max_storage_space = DEFAULT_BOX_STORAGE
 	use_sound = 'sound/effects/storage/box.ogg'
 
+/obj/item/storage/firstaid/open(mob/user)
+	. = ..()
+	icon_state = "firstaidopen"
+
+/obj/item/storage/firstaid/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/firstaid/empty
 	icon_state = "firstaid"
 	name = "First-Aid (empty)"
@@ -97,6 +106,15 @@
 		/obj/item/stack/medical/splint
 		)
 
+/obj/item/storage/firstaid/adv/open(mob/user)
+	. = ..()
+	icon_state = "doctor-kitopen"
+
+/obj/item/storage/firstaid/adv/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/firstaid/combat
 	name = "combat medical kit"
 	desc = "Contains advanced medical treatments."
@@ -112,6 +130,15 @@
 		/obj/item/storage/pill_bottle/spaceacillin,
 		/obj/item/stack/medical/splint,
 		)
+
+/obj/item/storage/firstaid/combat/open(mob/user)
+	. = ..()
+	icon_state = "bezerkopen"
+
+/obj/item/storage/firstaid/combat/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/firstaid/stab
 	name = "stabilisation first aid"
@@ -164,6 +191,15 @@
 		/obj/item/FixOVein,
 		/obj/item/stack/medical/advanced/bruise_pack,
 		)
+
+/obj/item/storage/firstaid/surgery/open(mob/user)
+	. = ..()
+	icon_state = "surgerykitopen"
+
+/obj/item/storage/firstaid/surgery/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /*
  * Pill Bottles

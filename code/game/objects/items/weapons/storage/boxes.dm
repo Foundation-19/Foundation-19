@@ -28,6 +28,15 @@
 	use_sound = 'sound/effects/storage/box.ogg'
 	var/foldable = /obj/item/stack/material/cardboard	// BubbleWrap - if set, can be folded (when empty) into a sheet of cardboard
 
+/obj/item/storage/box/open(mob/user)
+	. = ..()
+	icon_state = "boxopen"
+
+/obj/item/storage/box/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/box/large
 	name = "large box"
 	icon_state = "largebox"
