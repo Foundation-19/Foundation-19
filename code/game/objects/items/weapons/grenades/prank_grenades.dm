@@ -2,7 +2,7 @@
 	icon_state = "frggrenade"
 
 /obj/item/grenade/fake/detonate(mob/living/user)
-	playsound(src.loc, get_sfx("explosion"), 50, 1, 30)
+	playsound(src.loc, SFX_EXPLOSION, 50, 1, 30)
 	active = FALSE
 
 /obj/item/grenade/spawnergrenade/fake_carp

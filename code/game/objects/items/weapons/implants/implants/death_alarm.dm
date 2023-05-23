@@ -66,7 +66,7 @@
 	START_PROCESSING(SSobj, src)
 	return TRUE
 
-/obj/item/implant/death_alarm/removed()
+/obj/item/implant/death_alarm/ImplantRemoval()
 	..()
 	STOP_PROCESSING(SSobj, src)
 

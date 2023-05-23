@@ -13,7 +13,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	matter = list(MATERIAL_ALUMINIUM = 3000)
-	hitsound = "tray_hit"
+	hitsound = SFX_TRAY_HIT
 	var/bash_cooldown = 0 // You can bash a rolling pin against a tray to make a shield bash sound! Based on world.time
 	var/list/carrying = list() // List of things on the tray. - Doohl
 	var/max_carry = 2 * BASE_STORAGE_COST(ITEM_SIZE_NORMAL)

@@ -258,7 +258,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 /mob/proc/phase_out(turf/T)
 	if(!T)
 		return
-	playsound(T, "sparks", 50, 1)
+	playsound(T, SFX_SPARK, 50, 1)
 	anim(src,'icons/mob/mob.dmi',,"phaseout",,dir)
 
 /mob/living/proc/on_structure_offset(offset = 0)

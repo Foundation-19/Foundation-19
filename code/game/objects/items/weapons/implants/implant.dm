@@ -69,7 +69,7 @@
 
 	return TRUE
 
-/obj/item/implant/proc/removed()
+/obj/item/implant/ImplantRemoval()
 	imp_in = null
 	if(part)
 		part.implants -= src
