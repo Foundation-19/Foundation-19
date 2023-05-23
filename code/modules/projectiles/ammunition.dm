@@ -37,7 +37,6 @@
 	is_spent = TRUE
 	if(projectile_label)
 		proj.SetName("[initial(proj.name)] (\"[projectile_label]\")")
-	set_dir(pick(GLOB.alldirs)) //spin spent casings
 
 	// Aurora forensics port, gunpowder residue.
 	if(leaves_residue)

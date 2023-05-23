@@ -59,12 +59,20 @@
 
 // TODO make all skill-checks into function
 
-/obj/item/gun/projectile/scp/AltClick(mob/user)
+/obj/item/gun/projectile/scp/proc/firemode_switch_action(mob/user)
 	var/datum/firemode/new_mode = switch_firemodes(user)
 	if(prob(20) && !user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
 		new_mode = switch_firemodes(user)
 	if(new_mode)
 		to_chat(user, SPAN_NOTICE("\The [src] is now set to [new_mode.name]."))
+
+/obj/item/gun/projectile/scp/AltClick(mob/user)
+	firemode_switch_action(user)
+	return TRUE
+
+/obj/item/gun/projectile/scp/MiddleClick(mob/user)
+	firemode_switch_action(user)
+	return TRUE
 
 /obj/item/gun/projectile/scp/attack_self(mob/user)
 	if(world.time < last_bolt_cycle + 1 SECOND)
@@ -135,7 +143,7 @@
 /obj/item/gun/projectile/scp/proc/can_fire(mob/user, atom/target)
 	if(world.time < next_fire_time)
 		if (world.time % 3) //to prevent spam
-			to_chat(user, SPAN_WARNING("[src] is not ready to fire again!"))
+			to_chat(user, SPAN_WARNING("[src] is not ready to fire yet!"))
 		return FALSE
 	if(!user || !target)
 		return FALSE
@@ -147,13 +155,15 @@
 		return FALSE
 	return TRUE
 
-/obj/item/gun/projectile/scp/handle_click_empty(mob/user)
-	if (user)
+/obj/item/gun/projectile/scp/handle_click_empty(mob/user, cocked, automatic)
+	if(cocked)
+		playsound(src.loc, 'sound/weapons/guns/trigger_click.ogg', 40)
 		user.visible_message("*click click*", SPAN_DANGER("*click*"))
-	else
-		src.visible_message("*click click*")
-	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
-	show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
+		show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
+		return
+	if(!automatic)
+		playsound(src.loc, 'sound/weapons/guns/trigger_empty.ogg', 10)
+		to_chat(user, SPAN_DANGER("*click*"))
 
 /obj/item/gun/projectile/scp/toggle_safety(mob/user)
 	if (user?.is_physically_disabled())
@@ -164,9 +174,12 @@
 	if(user)
 		user.visible_message(SPAN_WARNING("[user] switches the safety of \the [src] [safety_state ? "on" : "off"]."), SPAN_NOTICE("You switch the safety of \the [src] [safety_state ? "on" : "off"]."), range = 3)
 		last_safety_check = world.time
-		playsound(src, selector_sound, 25, 1)
+		playsound(src, selector_sound, 20, 1)
 
-/obj/item/gun/projectile/scp/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, set_click_cooldown = TRUE)
+
+// TODO split this proc into couple more
+
+/obj/item/gun/projectile/scp/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, set_click_cooldown = TRUE, automatic)
 	if(!can_fire(user, target))
 		return
 
@@ -183,8 +196,8 @@
 		return
 
 	if(!cocked && action_type == GUN_SINGLE_ACTION)
+		handle_click_empty(user, cocked, automatic)
 		return
-	cocked = FALSE
 
 	last_safety_check = world.time
 
@@ -198,11 +211,12 @@
 	//actually attempt to shoot
 	var/turf/targloc = get_turf(target) //cache this in case target gets deleted during shooting, e.g. if it was a securitron that got destroyed.
 	for(var/i in 1 to burst)
-		var/obj/projectile = consume_next_projectile(user)
 		if(bolt_open) // FIXME Shouldn't really work like that...
 			return
+		var/obj/projectile = consume_next_projectile(user)
 		if(!projectile)
-			handle_click_empty(user)
+			handle_click_empty(user, cocked, automatic)
+			cocked = FALSE
 			break
 
 		process_accuracy(projectile, user, target, i, held_twohanded)
@@ -230,6 +244,21 @@
 	user.setClickCooldown(min(delay, DEFAULT_QUICK_COOLDOWN))
 	user.SetMoveCooldown(move_delay) // FIXME Maybe run and gun???
 	next_fire_time = world.time + delay
+
+/obj/item/gun/projectile/scp/handle_autofire()
+	set waitfor = FALSE
+	. = TRUE
+	if(QDELETED(autofiring_at) || QDELETED(autofiring_by))
+		. = FALSE
+	else if(autofiring_by.get_active_hand() != src || autofiring_by.incapacitated())
+		. = FALSE
+	else if(!autofiring_by.client || !(autofiring_by in view(autofiring_by.client.view, autofiring_by)))
+		. = FALSE
+	if(!.)
+		clear_autofire()
+	else if(can_autofire())
+		autofiring_by.set_dir(get_dir(src, autofiring_at))
+		Fire(autofiring_at, autofiring_by, null, (get_dist(autofiring_at, autofiring_by) <= 1), FALSE, FALSE, TRUE)
 
 
 /obj/item/gun/projectile/scp/consume_next_projectile()
@@ -305,20 +334,18 @@
 
 /obj/item/gun/projectile/scp/proc/ejectCasing(manual)
 	chambered.forceMove(get_turf(src))
+	chambered.set_dir(pick(GLOB.alldirs))
 	var/hor_eject_vel = rand(45, 55) / 10
 	var/vert_eject_vel = rand(40, 45) / 10
 	var/angle_of_movement = rand(-20, 20)
 
-	if(istype(chambered, /obj/item/ammo_casing/shotgun))
-		return
-
 	if(manual)
-		hor_eject_vel /= 2
-		vert_eject_vel /= 2
+		hor_eject_vel *= 0.5
+		vert_eject_vel *= 0.5
 
-	// if(istype(chambered, /obj/item/ammo_casing/shotgun) || manual) // TODO redraw shotgun shells so that they don't look so awful
-	// 	hor_eject_vel /= 2
-	// 	vert_eject_vel /= 2
+	if(istype(chambered, /obj/item/ammo_casing/shotgun) && !manual)
+		hor_eject_vel *= 0.7
+		vert_eject_vel *= 0.7
 
 	switch(ejection_side)
 		if(GUN_CASING_EJECTION_DOWN)

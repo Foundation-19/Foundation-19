@@ -30,6 +30,7 @@
 	item_state = "m4"
 	force = 13
 	slot_flags = SLOT_BACK
+	w_class = ITEM_SIZE_HUGE
 	caliber = "5.56x45mm"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	magazine_type = /obj/item/ammo_magazine/scp/m16_mag
@@ -62,6 +63,7 @@
 	caliber = CALIBER_T12
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	slot_flags = SLOT_BACK
+	w_class = ITEM_SIZE_HUGE
 	handle_casings = CLEAR_CASINGS
 	magazine_type = /obj/item/ammo_magazine/t12
 	allowed_magazines = /obj/item/ammo_magazine/t12
@@ -128,6 +130,7 @@
 	icon = 'icons/obj/gun.dmi'
 	force = 10
 	slot_flags = SLOT_BACK
+	w_class = ITEM_SIZE_HUGE
 	caliber = "5.56x45mm"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	magazine_type = /obj/item/ammo_magazine/scp/m16_mag
@@ -157,6 +160,7 @@
 	icon = 'icons/obj/gun.dmi'
 	force = 10
 	slot_flags = SLOT_BACK
+	w_class = ITEM_SIZE_HUGE
 	caliber = "7.62x54mmR"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	magazine_type = /obj/item/ammo_magazine/scp/svd
@@ -185,6 +189,7 @@
 	icon = 'icons/obj/gun.dmi'
 	force = 10
 	slot_flags = SLOT_BACK
+	w_class = ITEM_SIZE_HUGE
 	caliber = "a762nato"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	magazine_type = /obj/item/ammo_magazine/scp/fnfal
@@ -216,6 +221,7 @@
 	force = 10
 	caliber = "5.7x28mm"
 	slot_flags = SLOT_BELT|SLOT_BACK
+	w_class = ITEM_SIZE_LARGE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
 	magazine_type = /obj/item/ammo_magazine/scp/p90_mag/rubber
 	allowed_magazines = /obj/item/ammo_magazine/scp/p90_mag
@@ -242,6 +248,7 @@
 	caliber = "9mm"
 	fire_sound = 'sound/weapons/guns/mp5/shoot.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
+	w_class = ITEM_SIZE_LARGE
 	magazine_type = /obj/item/ammo_magazine/scp/mp5_mag
 	allowed_magazines = /obj/item/ammo_magazine/scp/mp5_mag
 	has_bolt_icon = TRUE
@@ -326,6 +333,7 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/saiga12
 	allowed_magazines = /obj/item/ammo_magazine/scp/saiga12
+	screen_shake = 2.5
 
 	stock_icon = "stock"
 	foreend_icon = "fore-end"
@@ -342,39 +350,20 @@
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null))
 
-/obj/item/gun/projectile/automatic/saiga12
-	name = "Saiga12 Tactical Shotgun"
-	desc = "A reliable russian-made semi automatic shotgun often used by Foundation strike and security forces."
-	icon = 'icons/obj/gun.dmi'
-	icon_state = "saiga12"
-	item_state = "saiga12"
-	w_class = ITEM_SIZE_HUGE
-	force = 10
-	slot_flags = SLOT_BACK
-	caliber = CALIBER_SHOTGUN
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 5)
-	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/scp/saiga12
-	allowed_magazines = /obj/item/ammo_magazine/scp/saiga12
-
-	firemodes = list(
-		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null))
-
-
-/obj/item/gun/projectile/automatic/saiga12/beanbag
+/obj/item/gun/projectile/scp/automatic/saiga12/beanbag
 	magazine_type = /obj/item/ammo_magazine/scp/saiga12/beanbag
 
-/obj/item/gun/projectile/automatic/saiga12/buckshot
+/obj/item/gun/projectile/scp/automatic/saiga12/buckshot
 	magazine_type = /obj/item/ammo_magazine/scp/saiga12/buckshot
 
-/obj/item/gun/projectile/automatic/saiga12/stunshell
+/obj/item/gun/projectile/scp/automatic/saiga12/stunshell
 	magazine_type = /obj/item/ammo_magazine/scp/saiga12/stunshell
 
-/obj/item/gun/projectile/automatic/saiga12/rubbershot
+/obj/item/gun/projectile/scp/automatic/saiga12/rubbershot
 	magazine_type = /obj/item/ammo_magazine/scp/saiga12/rubbershot
 
-/obj/item/gun/projectile/automatic/saiga12/flash
+/obj/item/gun/projectile/scp/automatic/saiga12/flash
 	magazine_type = /obj/item/ammo_magazine/scp/saiga12/flash
 
-/obj/item/gun/projectile/automatic/saiga12/emp
+/obj/item/gun/projectile/scp/automatic/saiga12/emp
 	magazine_type = /obj/item/ammo_magazine/scp/saiga12/emp

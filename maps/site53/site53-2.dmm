@@ -26487,7 +26487,7 @@
 /obj/effect/floor_decal/carpet/blue2{
 	dir = 5
 	},
-/obj/item/gun/projectile/automatic/saiga12/beanbag,
+/obj/item/gun/projectile/scp/automatic/saiga12/beanbag,
 /obj/item/ammo_magazine/box/rubbershot,
 /obj/item/ammo_magazine/box/beanbag,
 /obj/item/ammo_magazine/box/beanbag,

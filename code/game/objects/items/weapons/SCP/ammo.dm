@@ -419,3 +419,14 @@
 /obj/item/ammo_magazine/scp/saiga12/empty
 	initial_ammo = 0
 
+
+/obj/item/ammo_casing/shotgun/Initialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_MOVED, /atom/proc/update_icon)
+
+/obj/item/ammo_casing/shotgun/on_update_icon()
+	if(spent_icon && is_spent)
+		icon_state = spent_icon
+	else
+		icon_state = initial(icon_state)
+	icon_state = "[icon_state][isturf(loc)? "-world" : ""]"
