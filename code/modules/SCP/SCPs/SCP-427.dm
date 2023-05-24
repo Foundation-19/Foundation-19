@@ -37,7 +37,7 @@
 	// Will work from any "first-layer" location on the mob, so, not in backpacks
 	var/mob/living/carbon/human/user = loc
 	if(!istype(user))
-		sound_token.sound = effect_sound
+		sound_token.sound.file = effect_sound
 		return
 
 	if(!open)
@@ -72,10 +72,10 @@
 
 	// Over-use effects
 	if(time_used[user] < transformation_time_min)
-		sound_token.sound = effect_sound
+		sound_token.sound.file = effect_sound
 		return
 
-	sound_token.sound = transform_sound
+	sound_token.sound.file = transform_sound
 
 	// Check for transformation
 	var/transform_prob = transformation_max_prob * min(1, time_used[user] / transformation_time_max)
@@ -100,7 +100,7 @@
 		icon_state = "[base_icon_state]_open"
 		START_PROCESSING(SSobj, src)
 		if(!sound_token)
-			sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, effect_sound, volume = 35)
+			sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, effect_sound, volume = 25)
 		else
 			sound_token.Unpause()
 	else
