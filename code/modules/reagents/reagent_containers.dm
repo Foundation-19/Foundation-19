@@ -247,3 +247,11 @@
 		for(var/datum/reagent/R in reagents.reagent_list)
 			R.ex_act(src, severity)
 	..()
+
+// If used on Fine/Very Fine and contains adminordrazine(SCP 500) - will turn into SCP 427
+/obj/item/reagent_containers/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)
+	switch(mode)
+		if(MODE_FINE, MODE_VERY_FINE)
+			if(reagents.has_reagent(/datum/reagent/adminordrazine, 1))
+				return /obj/item/clothing/accessory/scp_427
+	return ..()
