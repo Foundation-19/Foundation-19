@@ -55,6 +55,15 @@
 	..()
 	icon_state = pick("radfirstaid", "radfirstaid2")
 
+/obj/item/storage/firstaid/trauma/open(mob/user)
+	. = ..()
+	icon_state = "radopen"
+
+/obj/item/storage/firstaid/trauma/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/firstaid/fire
 	name = "fire first-aid kit"
 	desc = "It's an emergency medical kit for when the toxins lab <i>-spontaneously-</i> burns down."
@@ -68,6 +77,15 @@
 /obj/item/storage/firstaid/fire/New()
 	..()
 	icon_state = pick("ointment","firefirstaid")
+
+/obj/item/storage/firstaid/fire/open(mob/user)
+	. = ..()
+	icon_state = "fireopen"
+
+/obj/item/storage/firstaid/fire/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/firstaid/toxin
 	name = "toxin first aid"
@@ -83,6 +101,15 @@
 	..()
 	icon_state = pick("antitoxin","antitoxfirstaid")
 
+/obj/item/storage/firstaid/toxin/open(mob/user)
+	. = ..()
+	icon_state = "toxinopen"
+
+/obj/item/storage/firstaid/toxin/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/firstaid/o2
 	name = "oxygen deprivation first aid"
 	desc = "A box full of oxygen goodies."
@@ -92,6 +119,15 @@
 	startswith = list(
 		/obj/item/storage/med_pouch/oxyloss = 4
 		)
+
+/obj/item/storage/firstaid/o2/open(mob/user)
+	. = ..()
+	icon_state = "o2open"
+
+/obj/item/storage/firstaid/o2/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/firstaid/adv
 	name = "advanced first-aid kit"
