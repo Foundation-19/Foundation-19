@@ -139,7 +139,8 @@
 			var/obj/item/projectile/P = new projectile_type(my_turf)
 			var/target = pick(potential_targets)
 			playsound(my_turf, P.fire_sound, 50, TRUE)
-			P.launch(target, pick(BP_ALL_LIMBS), user)
+			P.firer = user
+			P.launch(target, pick(BP_ALL_LIMBS))
 			return null
 	return ..()
 

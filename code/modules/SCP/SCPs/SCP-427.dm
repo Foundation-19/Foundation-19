@@ -14,9 +14,9 @@
 	/// Time of use after which there is a probability to transform
 	var/transformation_time_min = 90
 	/// Time at which the probability raises to maximum
-	var/transformation_time_max = 180
+	var/transformation_time_max = 360
 	/// Maximum probability of transforming per tick after reaching max use time
-	var/transformation_max_prob = 10
+	var/transformation_max_prob = 4
 
 	// Looping sound vars
 	var/datum/sound_token/sound_token
@@ -54,6 +54,8 @@
 	user.adjustCloneLoss(-10)
 	user.adjustOxyLoss(-10)
 	user.radiation = max(user.radiation - 30, 0)
+	user.adjust_nutrition(3)
+	user.adjust_hydration(3)
 	user.add_chemical_effect(CE_ANTITOX, 2)
 	user.add_chemical_effect(CE_BRAIN_REGEN, 2)
 	var/obj/item/organ/internal/heart/heart = user.internal_organs_by_name[BP_HEART]
@@ -88,7 +90,7 @@
 			SPAN_USERDANGER("Your body turns into something unrecognizable! It's over!"),
 			)
 		user.dust()
-		new /mob/living/simple_animal/hostile/meat/abomination(user_turf)
+		new /mob/living/simple_animal/hostile/meat/abomination(user_turf) // Temporary
 
 /obj/item/clothing/accessory/scp_427/attack_self(mob/user)
 	if(!base_icon_state)
@@ -100,7 +102,7 @@
 		icon_state = "[base_icon_state]_open"
 		START_PROCESSING(SSobj, src)
 		if(!sound_token)
-			sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, effect_sound, volume = 25)
+			sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, effect_sound, 20, 2)
 		else
 			sound_token.Unpause()
 	else
