@@ -519,6 +519,15 @@
 /obj/item/storage/box/freezer/ProcessAtomTemperature()
 	return PROCESS_KILL
 
+/obj/item/storage/box/freezer/open(mob/user)
+	. = ..()
+	icon_state = "portafreezeropen"
+
+/obj/item/storage/box/freezer/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/box/checkers
 	name = "checkers box"
 	desc = "This box holds a nifty portion of checkers. Foam-shaped on the inside so that only checkers may fit."
