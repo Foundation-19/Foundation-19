@@ -10,7 +10,7 @@
 	var/open = FALSE
 	/// Associative list, where mob ref = time used
 	var/list/time_used = list()
-	// The times are in process ticks, keep that in mind; One tick is around ~2 seconds
+	// The times are in process ticks; One process tick is around 1 second
 	/// Time of use after which there is a probability to transform
 	var/transformation_time_min = 90
 	/// Time at which the probability raises to maximum
@@ -22,14 +22,19 @@
 	var/datum/sound_token/sound_token
 	var/sound_id
 	var/effect_sound = 'sound/scp/427/effect.ogg'
+	// Ugly
+	var/datum/sound_token/sound_token_transform
+	var/sound_id_transform
 	var/transform_sound = 'sound/scp/427/transform.ogg'
 
 /obj/item/clothing/accessory/scp_427/Initialize()
 	. = ..()
 	sound_id = "[type]_[sequential_id(/obj/item/clothing/accessory/scp_427)]"
+	sound_id_transform = "[sound_id]_transform"
 
 /obj/item/clothing/accessory/scp_427/Destroy()
 	QDEL_NULL(sound_token)
+	QDEL_NULL(sound_token_transform)
 	time_used = null
 	return ..()
 
@@ -37,7 +42,6 @@
 	// Will work from any "first-layer" location on the mob, so, not in backpacks
 	var/mob/living/carbon/human/user = loc
 	if(!istype(user))
-		sound_token.sound.file = effect_sound
 		return
 
 	if(!open)
@@ -63,21 +67,31 @@
 		user.resuscitate()
 	for(var/obj/item/organ/internal/I in user.internal_organs)
 		I.heal_damage(5)
-	for(var/obj/item/organ/external/E in user.organs)
-		E.remove_pain(5)
+	for(var/obj/item/organ/O in user.organs)
+		if(istype(O, /obj/item/organ/external))
+			var/obj/item/organ/external/E = O
+			E.remove_pain(5)
+		if(prob(15))
+			O.status &= ~ORGAN_DEAD
 		if(prob(25))
-			E.status &= ~ORGAN_BROKEN
-		if(prob(25))
-			E.status &= ~ORGAN_TENDON_CUT
-		if(prob(25))
-			E.status &= ~ORGAN_ARTERY_CUT
+			O.status &= ~ORGAN_BROKEN
+		if(prob(35))
+			O.status &= ~ORGAN_TENDON_CUT
+		if(prob(35))
+			O.status &= ~ORGAN_ARTERY_CUT
+		if(prob(50))
+			O.status &= ~ORGAN_BLEEDING
 
 	// Over-use effects
 	if(time_used[user] < transformation_time_min)
-		sound_token.sound.file = effect_sound
+		sound_token_transform.Pause()
 		return
 
-	sound_token.sound.file = transform_sound
+	// Sound
+	if(!sound_token_transform)
+		sound_token_transform = GLOB.sound_player.PlayLoopingSound(src, sound_id_transform, transform_sound, 10, 3)
+	else
+		sound_token_transform.Unpause()
 
 	// Check for transformation
 	var/transform_prob = transformation_max_prob * min(1, time_used[user] / transformation_time_max)
