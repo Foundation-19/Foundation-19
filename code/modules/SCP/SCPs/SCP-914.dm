@@ -97,6 +97,9 @@
 	if(!ishuman(user)) // Silently forbid them from operating it
 		return FALSE
 
+	if(user.SCP) // Some SCPs are humans, for whatever reason
+		return FALSE
+
 	if(processing)
 		to_chat(user, SPAN_WARNING("\The [src] is currently processing something!"))
 		return FALSE
