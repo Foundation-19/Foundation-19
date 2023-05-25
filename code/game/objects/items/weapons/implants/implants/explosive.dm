@@ -160,7 +160,7 @@
 	return TRUE
 
 /obj/item/implant/explosive/Destroy()
-	removed()
+	ImplantRemoval()
 	GLOB.listening_objects -= src
 	return ..()
 

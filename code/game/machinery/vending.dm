@@ -11,7 +11,7 @@
 	anchored = TRUE
 	density = TRUE
 	obj_flags = OBJ_FLAG_ANCHORABLE | OBJ_FLAG_ROTATABLE
-	clicksound = "button"
+	clicksound = SFX_MACHINE_BUTTON
 	clickvol = 40
 	base_type = /obj/machinery/vending/assist
 	construct_state = /decl/machine_construction/default/panel_closed
