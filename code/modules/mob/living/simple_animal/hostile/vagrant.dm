@@ -10,7 +10,6 @@
 	health = 20
 	movement_cooldown = 4
 	turns_per_move = 4
-	move_to_delay = 4
 	response_help = "pets the"
 	response_disarm = "gently pushes aside the"
 	response_harm = "hits the"
@@ -106,12 +105,12 @@
 		alpha = 75
 		set_light(0)
 		icon_state = initial(icon_state)
-		move_to_delay = initial(move_to_delay)
+		movement_cooldown = initial(movement_cooldown)
 	else //It's fight time
 		alpha = 255
 		icon_state = "vagrant_glowing"
 		set_light(0.2, 0.1, 3)
-		move_to_delay = 2
+		movement_cooldown = 2
 
 /mob/living/simple_animal/hostile/vagrant/swarm/Initialize()
 	. = ..()

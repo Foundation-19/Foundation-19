@@ -545,7 +545,7 @@ GLOBAL_LIST_EMPTY(femur_breakers)
 
 	sleep(3.2 SECONDS)
 
-	playsound(H, "crack", 75, TRUE)
+	playsound(H, SFX_WOUND_CRACK, 75, TRUE)
 	for(var/obj/item/organ/external/leg/L in H.organs)
 		if(!(L.status & BROKEN))
 			L.fracture()

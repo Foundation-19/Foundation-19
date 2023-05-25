@@ -971,7 +971,7 @@ About the new airlock wires panel:
 		cut_delay *= 0.66
 	else if(istype(item,/obj/item/melee/energy/blade) || istype(item,/obj/item/melee/energy/sword))
 		cut_verb = "slicing"
-		cut_sound = "sparks"
+		cut_sound = SFX_SPARK
 		cut_delay *= 0.66
 	else if(istype(item,/obj/item/circular_saw))
 		cut_verb = "sawing"

@@ -62,7 +62,7 @@
 		var/mob/living/L = against
 		L.IgniteMob()
 
-	playsound(src, "shatter", 70, 1)
+	playsound(src, SFX_SHATTER, 70, 1)
 	show_sound_effect(src.loc, soundicon = SFX_ICON_JAGGED)
 	transfer_fingerprints_to(B)
 

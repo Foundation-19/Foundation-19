@@ -210,7 +210,7 @@
 			var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 			spark_system.set_up(5, 0, user)
 			spark_system.start()
-			playsound(loc, "sparks", 25, 1)
+			playsound(loc, SFX_SPARK, 25, 1)
 
 /obj/aura/mechshield/hitby(atom/movable/M, datum/thrownthing/TT)
 	. = ..()
