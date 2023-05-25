@@ -152,6 +152,19 @@ GLOBAL_LIST_INIT(sfx_list, list(
 		'sound/weapons/guns/interaction/shell_insert2.ogg'
 		),
 
+	SFX_REM870_SHELL_INSERT = list(
+		'sound/weapons/guns/shotguns/mp133_insert1.ogg',
+		'sound/weapons/guns/shotguns/mp133_insert2.ogg',
+		'sound/weapons/guns/shotguns/mp133_insert3.ogg'
+		),
+
+	SFX_SPAS12_SHELL_INSERT = list(
+		'sound/weapons/guns/shotguns/spas12_insert1.ogg',
+		'sound/weapons/guns/shotguns/spas12_insert2.ogg',
+		'sound/weapons/guns/shotguns/spas12_insert3.ogg',
+		'sound/weapons/guns/shotguns/spas12_insert4.ogg'
+		),
+
 	SFX_ZOMBIE = list(
 		'sounds/scp/voice/049_1/zombierand1.ogg',
 		'sounds/scp/voice/049_1/zombierand2.ogg',

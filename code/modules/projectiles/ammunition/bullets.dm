@@ -219,7 +219,7 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 360)
 	fall_sounds = list('sound/weapons/guns/shotgun_fall.ogg')
 
-/obj/item/ammo_casing/shotgun/pellet
+/obj/item/ammo_casing/shotgun/buckshot
 	name = "buckshot shell"
 	desc = "A 12 gauge 00 buck shell."
 	icon_state = "shell-pellet"

@@ -23,7 +23,7 @@
 	Rifles
 */
 /obj/item/gun/projectile/scp/automatic/m4a1
-	name = "M4A1"
+	name = "\improper M4A1"
 	desc = "A Foundation-standard service carbine that takes 5.56x45mm magazines."
 	icon = 'icons/SCP/guns/rifles/m4carbine.dmi'
 	icon_state = "m4carbine"
@@ -54,7 +54,7 @@
 		)
 
 /obj/item/gun/projectile/scp/automatic/t12
-	name = "T12 rifle"
+	name = "\improper T12 rifle"
 	desc = "An assault rifle produced and used by the Global Occult Coalition, rarely seen loaned to high-intensity Foundation units. Highly lethal and capable of holding up to 50 rounds in its standard magazines."
 	icon = 'icons/SCP/guns/rifles/g36c.dmi'
 	icon_state = "g36c"
@@ -90,7 +90,7 @@
 		)
 
 /obj/item/gun/projectile/scp/automatic/ak12
-	name = "AK-12"
+	name = "\improper AK-12"
 	desc = "A 5.45x39mm modernized variant of the AK-74M, exported from Russia."
 	icon = 'icons/SCP/guns/rifles/ak12.dmi'
 	icon_state = "ak12"
@@ -213,7 +213,7 @@
 */
 
 /obj/item/gun/projectile/scp/automatic/p90
-	name = "P90 SMG"
+	name = "\improper P90 SMG"
 	desc = "A submachine gun sample of the 2010s, with a scope mounted on top"
 	icon = 'icons/SCP/guns/smgs/p90.dmi'
 	icon_state = "p90"
@@ -239,7 +239,7 @@
 	return "[ammo_magazine.gun_mag_icon]-[round(length(ammo_magazine.stored_ammo), 10)]"
 
 /obj/item/gun/projectile/scp/automatic/mp5
-	name = "MP5 SMG"
+	name = "\improper MP5 SMG"
 	desc = "A submachine gun sample of the 2010s"
 	icon = 'icons/SCP/guns/smgs/mp5.dmi'
 	icon_state = "mp5"
@@ -320,7 +320,7 @@
 
 
 /obj/item/gun/projectile/scp/automatic/saiga12
-	name = "Saiga12 Tactical Shotgun"
+	name = "\improper Saiga12 Tactical Shotgun"
 	desc = "A reliable russian-made semi automatic shotgun often used by Foundation strike and security forces."
 	icon = 'icons/SCP/guns/shotguns/saiga12.dmi'
 	icon_state = "saiga12"

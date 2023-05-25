@@ -81,7 +81,7 @@
 
 /obj/item/ammo_magazine/shotholder/shell
 	name = "shotgun shell holder"
-	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 
 /obj/item/ammo_magazine/shotholder/beanbag
 	name = "beanbag shell holder"

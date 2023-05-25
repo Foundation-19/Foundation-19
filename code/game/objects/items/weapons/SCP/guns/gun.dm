@@ -1,7 +1,7 @@
 
 
 /obj/item/gun/projectile/scp
-	var/bolt_open = FALSE
+	var/is_bolt_open = FALSE
 	var/cocked = FALSE
 	var/action_type = GUN_SINGLE_ACTION
 	var/ejection_side = GUN_CASING_EJECTION_RIGHT
@@ -15,6 +15,7 @@
 	var/last_bolt_cycle = 0
 	var/bolt_hold = FALSE
 	var/bolt_hold_on_empty_mag = FALSE
+	var/manual_action = FALSE
 	fire_sound = null
 	appearance_flags = KEEP_TOGETHER
 	item_icons = list(
@@ -78,7 +79,7 @@
 	if(world.time < last_bolt_cycle + 1 SECOND)
 		return
 	last_bolt_cycle = world.time
-	if(!bolt_open)
+	if(!is_bolt_open)
 		cycle_bolt(manual = TRUE)
 	else
 		bolt_forward(manual = TRUE)
@@ -98,10 +99,11 @@
 	bolt_forward(manual)
 
 /obj/item/gun/projectile/scp/proc/bolt_back(manual)
-	bolt_open = TRUE
+	is_bolt_open = TRUE
 	if(manual && bolt_back_sound)
 		playsound(src, bolt_back_sound, 70)
-	ejectCasing(manual)
+	if(chambered)
+		ejectCasing(manual)
 	cocked = TRUE
 
 
@@ -109,14 +111,18 @@
 	if(manual && bolt_forward_sound)
 		playsound(src, bolt_forward_sound, 70)
 	load_round_from_magazine()
-	bolt_open = FALSE
+	is_bolt_open = FALSE
 
 /obj/item/gun/projectile/scp/proc/check_magazine_empty()
+	if(length(loaded)) // FIXME switch to magazine/internal instead of loaded list
+		return FALSE
 	if(ammo_magazine && length(ammo_magazine.stored_ammo))
 		return FALSE
 	return TRUE
 
 /obj/item/gun/projectile/scp/proc/load_round_from_magazine()
+	if(chambered)
+		return
 	if(length(loaded))
 		chambered = loaded[1]
 		loaded -= chambered
@@ -151,7 +157,7 @@
 		return FALSE
 	if(!waterproof && submerged())
 		return FALSE
-	if(bolt_open)
+	if(is_bolt_open)
 		return FALSE
 	return TRUE
 
@@ -211,7 +217,7 @@
 	//actually attempt to shoot
 	var/turf/targloc = get_turf(target) //cache this in case target gets deleted during shooting, e.g. if it was a securitron that got destroyed.
 	for(var/i in 1 to burst)
-		if(bolt_open) // FIXME Shouldn't really work like that...
+		if(is_bolt_open) // FIXME Shouldn't really work like that...
 			return
 		var/obj/projectile = consume_next_projectile(user)
 		if(!projectile)
@@ -276,15 +282,15 @@
 		if(curloc)
 			curloc.hotspot_expose(700, 5)
 
+	if(!user)
+		return
+
 	if(istype(user,/mob/living/carbon/human) && user.is_cloaked()) //shooting will disable a rig cloaking device
 		var/mob/living/carbon/human/H = user
 		if(istype(H.back,/obj/item/rig))
 			var/obj/item/rig/R = H.back
 			for(var/obj/item/rig_module/stealth_field/S in R.installed_modules)
 				S.deactivate()
-
-	if(!user)
-		return
 
 	var/user_message = SPAN_WARNING("You fire \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!")
 	if (silenced)
@@ -327,12 +333,14 @@
 		var/shake_mult = 3 / user.get_skill_value(SKILL_WEAPONS)
 		INVOKE_ASYNC(GLOBAL_PROC, /proc/directional_recoil, user, shake_mult * (screen_shake+1), Get_Angle(user, target))
 
-	if(chambered)
+	if(!manual_action)
 		cycle_bolt()
 
 	update_icon()
 
 /obj/item/gun/projectile/scp/proc/ejectCasing(manual)
+	if(!chambered)
+		return
 	chambered.forceMove(get_turf(src))
 	chambered.set_dir(pick(GLOB.alldirs))
 	var/hor_eject_vel = rand(45, 55) / 10
@@ -381,7 +389,7 @@
 		add_overlay(image(icon, generate_mag_icon_state()))
 
 	if(has_bolt_icon)
-		add_overlay(image(icon, "bolt_[bolt_open ? "open" : "closed"]"))
+		add_overlay(image(icon, "bolt_[is_bolt_open ? "open" : "closed"]"))
 
 
 /obj/item/gun/projectile/scp/proc/generate_mag_icon_state()
@@ -408,3 +416,113 @@
 		to_chat(user, "It has \a [ammo_magazine] loaded.")
 	if(user.skill_check(SKILL_WEAPONS, SKILL_TRAINED))
 		to_chat(user, "Has [get_ammo_count()] round\s remaining.") //FIXME remove loaded ammo counter
+
+#define EXP_TAC_RELOAD 1 SECOND
+#define PROF_TAC_RELOAD 0.5 SECONDS
+#define EXP_SPD_RELOAD 0.5 SECONDS
+#define PROF_SPD_RELOAD 0.25 SECONDS
+
+/obj/item/gun/projectile/scp/proc/handle_casing_insertion(obj/item/ammo_casing/C, mob/user)
+	if(caliber != C.caliber)
+		return
+	if(is_bolt_open && !chambered)
+		if(!user.unEquip(C, src))
+			return
+		chambered = C
+		. = TRUE
+	else if (load_method == SINGLE_CASING)
+		if(loaded.len >= max_shells)
+			to_chat(user, SPAN_WARNING("[src] is full."))
+			return
+		if(!user.unEquip(C, src))
+			return
+		loaded.Insert(1, C) //add to the head of the list
+		. = TRUE
+	if(!.)
+		return
+	user.visible_message("[user] inserts \a [C] into [src].", SPAN_NOTICE("You insert \a [C] into [src]."))
+	playsound(loc, load_sound, 50, 1)
+	update_icon()
+
+/obj/item/gun/projectile/scp/load_ammo(obj/item/A, mob/user)
+	if(istype(A, /obj/item/ammo_casing))
+		handle_casing_insertion(A, user)
+		return TRUE
+
+	if(!istype(A, /obj/item/ammo_magazine))
+		return
+	. = TRUE
+	var/obj/item/ammo_magazine/AM = A
+	if(!(load_method & AM.mag_type) || caliber != AM.caliber)
+		return //incompatible
+
+	switch(AM.mag_type)
+		if(MAGAZINE)
+			if((ispath(allowed_magazines) && !istype(A, allowed_magazines)) || (islist(allowed_magazines) && !is_type_in_list(A, allowed_magazines)))
+				to_chat(user, SPAN_WARNING("\The [A] won't fit into [src]."))
+				return
+			if(ammo_magazine)
+				if(user.a_intent == I_HELP || user.a_intent == I_DISARM || !user.skill_check(SKILL_WEAPONS, SKILL_EXPERIENCED))
+					to_chat(user, SPAN_WARNING("[src] already has a magazine loaded."))//already a magazine here
+					return
+				else
+					if(user.a_intent == I_GRAB) //Tactical reloading
+						if(!can_special_reload)
+							to_chat(user, SPAN_WARNING("You can't tactically reload this gun!"))
+							return
+						//Experienced gets a 1 second delay, master gets a 0.5 second delay
+						if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_TAC_RELOAD : EXP_TAC_RELOAD, src))
+							return
+						if(!user.unEquip(AM, src))
+							return
+						ammo_magazine.update_icon()
+						user.put_in_hands(ammo_magazine)
+						user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),\
+											SPAN_WARNING("You tactically reload \the [src] with \the [AM]!"))
+					else //Speed reloading
+						if(!can_special_reload)
+							to_chat(user, SPAN_WARNING("You can't speed reload with this gun!"))
+							return
+						//Experienced gets a 0.5 second delay, master gets a 0.25 second delay
+						if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_SPD_RELOAD : EXP_SPD_RELOAD, src))
+							return
+						if(!user.unEquip(AM, src))
+							return
+						ammo_magazine.update_icon()
+						ammo_magazine.dropInto(user.loc)
+						user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),\
+											SPAN_WARNING("You speed reload \the [src] with \the [AM]!"))
+				ammo_magazine = AM
+				playsound(loc, mag_insert_sound, 75, 1)
+				show_sound_effect(loc, user, SFX_ICON_SMALL)
+				update_icon()
+				AM.update_icon()
+				return
+			if(!user.unEquip(AM, src))
+				return
+			ammo_magazine = AM
+			user.visible_message("[user] inserts [AM] into [src].", SPAN_NOTICE("You insert [AM] into [src]."))
+			playsound(loc, mag_insert_sound, 50, 1)
+			show_sound_effect(loc, user, SFX_ICON_SMALL)
+		if(SPEEDLOADER)
+			if(loaded.len >= max_shells)
+				to_chat(user, SPAN_WARNING("[src] is full!"))
+				return
+			var/count = 0
+			for(var/obj/item/ammo_casing/C in AM.stored_ammo)
+				if(loaded.len >= max_shells)
+					break
+				if(C.caliber == caliber)
+					C.forceMove(src)
+					loaded += C
+					AM.stored_ammo -= C //should probably go inside an ammo_magazine proc, but I guess less proc calls this way...
+					count++
+			if(count)
+				user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into [src]."))
+				playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
+	AM.update_icon()
+
+#undef EXP_TAC_RELOAD
+#undef PROF_TAC_RELOAD
+#undef EXP_SPD_RELOAD
+#undef PROF_SPD_RELOAD

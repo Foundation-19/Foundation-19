@@ -234,7 +234,7 @@
 	origin_tech = list(TECH_COMBAT = 2)
 	caliber = CALIBER_SHOTGUN
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
-	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	max_ammo = 30
 
 
@@ -310,7 +310,7 @@
 /obj/item/storage/box/mtf/pelletammo
 	name = "pellet ammunition"
 	desc = "Contains pellet ammunition for a shotgun."
-	startswith = list(/obj/item/ammo_casing/shotgun/pellet = 7)
+	startswith = list(/obj/item/ammo_casing/shotgun/buckshot = 7)
 
 /obj/item/storage/box/mtf/empammo
 	name = "emp ammunition"
@@ -375,7 +375,7 @@
 	name = "Saiga12 Magazine (Buckshot)"
 	icon_state = "saiga12-buckshot"
 	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = CALIBER_SHOTGUN
 	max_ammo = 8

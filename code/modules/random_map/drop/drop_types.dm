@@ -30,7 +30,7 @@ var/global/list/datum/supply_drop_loot/supply_drop
 	contents = list(
 		/obj/item/gun/projectile/pistol/sec,
 		/obj/item/gun/projectile/shotgun/doublebarrel,
-		/obj/item/gun/projectile/shotgun/pump/combat,
+		/obj/item/gun/projectile/scp/shotgun/spas12,
 		/obj/item/gun/projectile/automatic/sec_smg,
 		/obj/item/gun/projectile/automatic/bullpup_rifle)
 

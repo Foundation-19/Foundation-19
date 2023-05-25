@@ -37,7 +37,7 @@
 	glasses = /obj/item/clothing/glasses/night
 	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/jackboots
-	suit_store = /obj/item/gun/projectile/shotgun/pump/combat
+	suit_store = /obj/item/gun/projectile/scp/shotgun/spas12
 	r_hand = /obj/item/crowbar/red
 	l_hand = /obj/item/material/hatchet
 	l_pocket = /obj/item/grenade/flashbang
