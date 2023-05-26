@@ -270,7 +270,7 @@
 		/obj/item/clothing/suit/bio_suit/security,
 		/obj/item/clothing/head/bio_hood/security,
 		/obj/item/storage/pill_bottle/amnesticsa,
-		/obj/item/gun/projectile/pistol/usp45,
+		/obj/item/gun/projectile/scp/pistol/usp45tac,
 		/obj/item/ammo_magazine/scp/usp45 = 3,
 		/obj/item/ammo_magazine/box/acp45,
 	)

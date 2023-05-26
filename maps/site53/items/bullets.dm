@@ -36,7 +36,7 @@
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c45
 	matter = list(DEFAULT_WALL_MATERIAL = 525) //metal costs are very roughly based around 1 .45 casing = 75 metal
-	caliber = ".45"
+	caliber = ".45 ACP"
 	max_ammo = 10
 	multiple_sprites = 1
 
@@ -61,7 +61,7 @@
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c45
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = ".45"
+	caliber = ".45 ACP"
 	max_ammo = 25
 	multiple_sprites = 1
 

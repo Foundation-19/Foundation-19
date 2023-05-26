@@ -311,7 +311,7 @@
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/device/flash(src)
 	new /obj/item/device/flashlight/maglight(src)
-	new /obj/item/gun/projectile/pistol/usp45(src)
+	new /obj/item/gun/projectile/scp/pistol/usp45tac(src)
 	new /obj/item/ammo_magazine/scp/usp45(src)
 	new /obj/item/ammo_magazine/scp/usp45(src)
 	new /obj/item/ammo_magazine/box/acp45(src)

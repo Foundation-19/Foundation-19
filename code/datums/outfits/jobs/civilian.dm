@@ -50,7 +50,7 @@
 	id_type = /obj/item/card/id/adminlvl3
 	l_ear = /obj/item/device/radio/headset/heads/goc
 	backpack_contents = list(/obj/item/ammo_magazine/scp/usp45 = 1)
-	belt = /obj/item/gun/projectile/pistol/usp45
+	belt = /obj/item/gun/projectile/scp/pistol/usp45tac
 
 /decl/hierarchy/outfit/job/civ/uiu
 	name = OUTFIT_JOB_NAME("Unusual Incidents Unit Relations Agent")

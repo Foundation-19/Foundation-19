@@ -171,7 +171,7 @@
 
 /obj/item/ammo_casing/pistol/c45
 	desc = "A .45 bullet casing."
-	caliber = ".45"
+	caliber = ".45 ACP"
 	projectile_type = /obj/item/projectile/bullet/pistol/medium
 
 /obj/item/ammo_casing/pistol/c45/practice

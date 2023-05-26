@@ -521,6 +521,7 @@
 				user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into [src]."))
 				playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
 	AM.update_icon()
+	update_icon()
 
 #undef EXP_TAC_RELOAD
 #undef PROF_TAC_RELOAD

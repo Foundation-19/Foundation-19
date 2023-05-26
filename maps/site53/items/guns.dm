@@ -48,7 +48,7 @@
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "silenced_pistol"
 	w_class = ITEM_SIZE_NORMAL
-	caliber = ".45"
+	caliber = ".45 ACP"
 	silenced = 1
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 8)
 	load_method = MAGAZINE
@@ -77,17 +77,3 @@
 		icon_state = "gyropistolloaded"
 	else
 		icon_state = "gyropistol"
-
-/obj/item/gun/projectile/pistol/usp45
-	name = "USP45"
-	desc = "Sidearm assigned to certain operatives and guards of the Foundation. Chambered in .45ACP."
-	icon = 'icons/obj/gun.dmi'
-	icon_state = "usp"
-	w_class = ITEM_SIZE_NORMAL
-	caliber = ".45"
-	silenced = 0
-	fire_delay = 3
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ESOTERIC = 2)
-	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/scp/usp45
-	allowed_magazines = list(/obj/item/ammo_magazine/scp/usp45)

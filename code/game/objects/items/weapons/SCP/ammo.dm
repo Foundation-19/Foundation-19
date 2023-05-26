@@ -175,7 +175,7 @@
 	name = "ammunition box (.45acp)"
 	icon_state = "ammobox"
 	origin_tech = list(TECH_COMBAT = 2)
-	caliber = ".45"
+	caliber = ".45 ACP"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
 	ammo_type = /obj/item/ammo_casing/pistol/c45
 	max_ammo = 100
@@ -299,7 +299,7 @@
 	name = "ammunition box (.45)"
 	icon_state = "ammobox"
 	origin_tech = list(TECH_COMBAT = 2)
-	caliber = ".45"
+	caliber = ".45 ACP"
 	matter = list(DEFAULT_WALL_MATERIAL = 2250)
 	ammo_type = /obj/item/ammo_casing/pistol/c45
 	max_ammo = 100
@@ -327,7 +327,7 @@
 	icon_state = "4mm"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	caliber = ".45"
+	caliber = ".45 ACP"
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
 	ammo_type = /obj/item/ammo_casing/pistol/c45
 	max_ammo = 30
@@ -339,7 +339,7 @@
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c45
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = ".45"
+	caliber = ".45 ACP"
 	max_ammo = 12
 	multiple_sprites = 1
 
@@ -349,7 +349,7 @@
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/pistol/c45
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
-	caliber = ".45"
+	caliber = ".45 ACP"
 	max_ammo = 7
 	multiple_sprites = 1
 

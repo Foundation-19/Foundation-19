@@ -10,6 +10,7 @@
 	handle_casings = HOLD_CASINGS
 	one_hand_penalty = 8
 	bulk = 6
+	screen_shake = 3
 
 	bolt_back_sound = 'sound/weapons/guns/shotguns/pump_back.ogg'
 	bolt_forward_sound = 'sound/weapons/guns/shotguns/pump_forward.ogg'
