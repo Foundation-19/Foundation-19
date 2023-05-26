@@ -5,7 +5,7 @@ body {
     color: #ffffff;
     line-height: 170%;
     font-family: Verdana, Geneva, sans-serif;
-    background: #272727;
+    background: #101010;
 }
 
 #uiNoScript {
@@ -178,7 +178,7 @@ abbr {
 }
 
 .idle {
-    color: #272727;
+    color: #101010;
     font-weight: bold;
 }
 
@@ -195,7 +195,7 @@ abbr {
 }
 
 .dark {
-    color: #272727;
+    color: #101010;
 }
 
 .caption {
@@ -700,7 +700,7 @@ th.bot {
     width: 75px;
 }
 .wideTable tr:nth-child(odd) {
-    background-color: #272727;
+    background-color: #101010;
 }
 
 /* Candystriped rows for tables */
