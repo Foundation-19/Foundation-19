@@ -1,5 +1,5 @@
 body {
-    background: #101010 url(uiBackground.png) 50% 0 repeat-x;
+    background: #272727 url(uiBackground.png) 50% 0 repeat-x;
 }
 
 #uiWrapper {
@@ -108,7 +108,7 @@ body {
     right: 10px;
     top: 10px;
     border: 1px solid #40628a;
-    background-color: #101010;
+    background-color: #272727;
     padding: 8px;
     display: none;
     z-index: 9999;
