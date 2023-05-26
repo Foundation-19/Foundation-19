@@ -44,6 +44,15 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 
+/obj/item/storage/box/large/open(mob/user)
+	. = ..()
+	icon_state = "largeboxopen"
+
+/obj/item/storage/box/large/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
+
 /obj/item/storage/box/union_cards
 	name = "box of union cards"
 	desc = "A box of spare unsigned union membership cards."
@@ -199,6 +208,15 @@
 	icon_state = "ammo"
 	desc = "A sturdy metal box with several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
 	use_sound = 'sound/effects/closet_open.ogg'
+
+/obj/item/storage/box/ammo/open(mob/user)
+	. = ..()
+	item_state = "ammoopen"
+
+/obj/item/storage/box/ammo/close(mob/user)
+	. = ..()
+	icon_state = initial(icon_state)
+	playsound(src, use_sound, 30)
 
 /obj/item/storage/box/ammo/blanks
 	name = "box of blank shells"
