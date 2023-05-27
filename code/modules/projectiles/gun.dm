@@ -382,9 +382,9 @@
 						to_chat(user, SPAN_WARNING("You struggle to hold \the [src] steady!"))
 
 		// If your skill in weapons is higher than/equal to (screen_shake + 2) - it won't shake at all.
-		if(screen_shake)
-			var/shake_mult = 2 / user.get_skill_value(SKILL_WEAPONS)
-			INVOKE_ASYNC(GLOBAL_PROC, /proc/directional_recoil, user, shake_mult * (screen_shake+1), Get_Angle(user, target))
+		if(screen_shake && !user.skill_check(SKILL_WEAPONS,screen_shake+2))
+			spawn()
+				shake_camera(user, screen_shake+1, screen_shake)
 
 	if(combustion)
 		var/turf/curloc = get_turf(src)
@@ -492,7 +492,7 @@
 		playsound(user, shot_sound, 10, 1)
 		show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
 	else
-		playsound(user, shot_sound, 75, 1)
+		playsound(user, shot_sound, 50, 1)
 		show_sound_effect(get_turf(src), user, SFX_ICON_JAGGED)
 
 //Suicide handling.

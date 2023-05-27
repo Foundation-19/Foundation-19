@@ -1,20 +1,33 @@
 
 
 /obj/item/gun/projectile/scp
+	/// Bool for determining bolt state
 	var/is_bolt_open = FALSE
-	var/cocked = FALSE
+	/// Bool for determining is gun cocked or not. If it isn't cocked and your gun is in single action, it won't fire after you click it.
+	var/is_cocked = FALSE
+	/// Single or double action, determines the need to cock gun before firing. Rifles and other auto are single-action, while most pistols are double.
 	var/action_type = GUN_SINGLE_ACTION
+	/// Side of ejection: left, right or down
 	var/ejection_side = GUN_CASING_EJECTION_RIGHT
 	var/bolt_back_sound = 'sound/weapons/guns/interaction/reload_bolt_back.ogg'
 	var/bolt_forward_sound = 'sound/weapons/guns/interaction/reload_bolt_forward.ogg'
+	/// Determines the need to draw and `update_icon()` of bolt after cycling
 	var/has_bolt_icon = FALSE
+	/// Determines the need for rendering stock. Won't render if null.
 	var/stock_icon
+	/// Determines the need for rendering front end, needed for when gun is too long. Won't render if null.
 	var/foreend_icon
+	/// Pixel_x offset of stock
 	var/stock_offset = -4
+	/// Pixel_x offset of foreend
 	var/foreend_offset = 20
+	/// Time of last bolt cycle, needed for manual bolt cycling cooldown
 	var/last_bolt_cycle = 0
+	/// Determines if bolt stays open on manual cycle if magazine is empty
 	var/bolt_hold = FALSE
+	/// Determines if bolt stays open on automatic cycle if magazine is empty
 	var/bolt_hold_on_empty_mag = FALSE
+	/// Determines the need to cycle bolt manually after each shot (pump action shotgun)
 	var/manual_action = FALSE
 	fire_sound = null
 	appearance_flags = KEEP_TOGETHER
@@ -104,7 +117,7 @@
 		playsound(src, bolt_back_sound, 70)
 	if(chambered)
 		ejectCasing(manual)
-	cocked = TRUE
+	is_cocked = TRUE
 
 
 /obj/item/gun/projectile/scp/proc/bolt_forward(manual)
@@ -161,8 +174,8 @@
 		return FALSE
 	return TRUE
 
-/obj/item/gun/projectile/scp/handle_click_empty(mob/user, cocked, automatic)
-	if(cocked)
+/obj/item/gun/projectile/scp/handle_click_empty(mob/user, is_cocked, automatic)
+	if(is_cocked)
 		playsound(src.loc, 'sound/weapons/guns/trigger_click.ogg', 40)
 		user.visible_message("*click click*", SPAN_DANGER("*click*"))
 		show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
@@ -201,8 +214,8 @@
 	if(!special_check(user))
 		return
 
-	if(!cocked && action_type == GUN_SINGLE_ACTION)
-		handle_click_empty(user, cocked, automatic)
+	if(!is_cocked && action_type == GUN_SINGLE_ACTION)
+		handle_click_empty(user, is_cocked, automatic)
 		return
 
 	last_safety_check = world.time
@@ -221,8 +234,8 @@
 			return
 		var/obj/projectile = consume_next_projectile(user)
 		if(!projectile)
-			handle_click_empty(user, cocked, automatic)
-			cocked = FALSE
+			handle_click_empty(user, is_cocked, automatic)
+			is_cocked = FALSE
 			break
 
 		process_accuracy(projectile, user, target, i, held_twohanded)
@@ -431,7 +444,7 @@
 		chambered = C
 		. = TRUE
 	else if (load_method == SINGLE_CASING)
-		if(loaded.len >= max_shells)
+		if(length(loaded) >= max_shells)
 			to_chat(user, SPAN_WARNING("[src] is full."))
 			return
 		if(!user.unEquip(C, src))
@@ -443,6 +456,78 @@
 	user.visible_message("[user] inserts \a [C] into [src].", SPAN_NOTICE("You insert \a [C] into [src]."))
 	playsound(loc, load_sound, 50, 1)
 	update_icon()
+
+/obj/item/gun/projectile/scp/proc/handle_tactical_reload(obj/item/ammo_magazine/AM, mob/user)
+	if(user.a_intent == I_HELP || user.a_intent == I_DISARM || !user.skill_check(SKILL_WEAPONS, SKILL_EXPERIENCED))
+		to_chat(user, SPAN_WARNING("[src] already has a magazine loaded."))//already a magazine here
+		return
+	if(user.a_intent == I_GRAB) //Tactical reloading
+		if(!can_special_reload)
+			to_chat(user, SPAN_WARNING("You can't tactically reload this gun!"))
+			return
+		//Experienced gets a 1 second delay, master gets a 0.5 second delay
+		if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_TAC_RELOAD : EXP_TAC_RELOAD, src))
+			return
+		if(!user.unEquip(AM, src))
+			return
+		ammo_magazine.update_icon()
+		user.put_in_hands(ammo_magazine)
+		user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),\
+							SPAN_WARNING("You tactically reload \the [src] with \the [AM]!"))
+	else //Speed reloading
+		if(!can_special_reload)
+			to_chat(user, SPAN_WARNING("You can't speed reload with this gun!"))
+			return
+		//Experienced gets a 0.5 second delay, master gets a 0.25 second delay
+		if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_SPD_RELOAD : EXP_SPD_RELOAD, src))
+			return
+		if(!user.unEquip(AM, src))
+			return
+		ammo_magazine.update_icon()
+		ammo_magazine.dropInto(user.loc)
+		user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),\
+							SPAN_WARNING("You speed reload \the [src] with \the [AM]!"))
+	ammo_magazine = AM
+	playsound(loc, mag_insert_sound, 75, 1)
+	show_sound_effect(loc, user, SFX_ICON_SMALL)
+	update_icon()
+	AM.update_icon()
+
+
+/obj/item/gun/projectile/scp/proc/handle_magazine_insertion(obj/item/ammo_magazine/AM, mob/user)
+	if((ispath(allowed_magazines) && !istype(AM, allowed_magazines)) || (islist(allowed_magazines) && !is_type_in_list(AM, allowed_magazines)))
+		to_chat(user, SPAN_WARNING("\The [AM] won't fit into [src]."))
+		return
+	if(ammo_magazine)
+		handle_tactical_reload(AM, user)
+		return
+	if(!user.unEquip(AM, src))
+		return
+	ammo_magazine = AM
+	user.visible_message("[user] inserts [AM] into [src].", SPAN_NOTICE("You insert [AM] into [src]."))
+	playsound(loc, mag_insert_sound, 50, 1)
+	show_sound_effect(loc, user, SFX_ICON_SMALL)
+	update_icon()
+	AM.update_icon()
+
+/obj/item/gun/projectile/scp/proc/handle_speedloader_reload(obj/item/ammo_magazine/AM, mob/user)
+	if(length(loaded) >= max_shells)
+		to_chat(user, SPAN_WARNING("[src] is full!"))
+		return
+	var/count = 0
+	for(var/obj/item/ammo_casing/C in AM.stored_ammo)
+		if(length(loaded) >= max_shells)
+			break
+		if(C.caliber == caliber)
+			C.forceMove(src)
+			loaded += C
+			AM.stored_ammo -= C
+			count++
+	if(count)
+		user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into [src]."))
+		playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
+		AM.update_icon()
+		update_icon()
 
 /obj/item/gun/projectile/scp/load_ammo(obj/item/A, mob/user)
 	if(istype(A, /obj/item/ammo_casing))
@@ -458,70 +543,11 @@
 
 	switch(AM.mag_type)
 		if(MAGAZINE)
-			if((ispath(allowed_magazines) && !istype(A, allowed_magazines)) || (islist(allowed_magazines) && !is_type_in_list(A, allowed_magazines)))
-				to_chat(user, SPAN_WARNING("\The [A] won't fit into [src]."))
-				return
-			if(ammo_magazine)
-				if(user.a_intent == I_HELP || user.a_intent == I_DISARM || !user.skill_check(SKILL_WEAPONS, SKILL_EXPERIENCED))
-					to_chat(user, SPAN_WARNING("[src] already has a magazine loaded."))//already a magazine here
-					return
-				else
-					if(user.a_intent == I_GRAB) //Tactical reloading
-						if(!can_special_reload)
-							to_chat(user, SPAN_WARNING("You can't tactically reload this gun!"))
-							return
-						//Experienced gets a 1 second delay, master gets a 0.5 second delay
-						if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_TAC_RELOAD : EXP_TAC_RELOAD, src))
-							return
-						if(!user.unEquip(AM, src))
-							return
-						ammo_magazine.update_icon()
-						user.put_in_hands(ammo_magazine)
-						user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),\
-											SPAN_WARNING("You tactically reload \the [src] with \the [AM]!"))
-					else //Speed reloading
-						if(!can_special_reload)
-							to_chat(user, SPAN_WARNING("You can't speed reload with this gun!"))
-							return
-						//Experienced gets a 0.5 second delay, master gets a 0.25 second delay
-						if(!do_after(user, user.get_skill_value(SKILL_WEAPONS) == SKILL_MASTER ? PROF_SPD_RELOAD : EXP_SPD_RELOAD, src))
-							return
-						if(!user.unEquip(AM, src))
-							return
-						ammo_magazine.update_icon()
-						ammo_magazine.dropInto(user.loc)
-						user.visible_message(SPAN_WARNING("\The [user] reloads \the [src] with \the [AM]!"),\
-											SPAN_WARNING("You speed reload \the [src] with \the [AM]!"))
-				ammo_magazine = AM
-				playsound(loc, mag_insert_sound, 75, 1)
-				show_sound_effect(loc, user, SFX_ICON_SMALL)
-				update_icon()
-				AM.update_icon()
-				return
-			if(!user.unEquip(AM, src))
-				return
-			ammo_magazine = AM
-			user.visible_message("[user] inserts [AM] into [src].", SPAN_NOTICE("You insert [AM] into [src]."))
-			playsound(loc, mag_insert_sound, 50, 1)
-			show_sound_effect(loc, user, SFX_ICON_SMALL)
+			handle_magazine_insertion(AM, user)
+			return
 		if(SPEEDLOADER)
-			if(loaded.len >= max_shells)
-				to_chat(user, SPAN_WARNING("[src] is full!"))
-				return
-			var/count = 0
-			for(var/obj/item/ammo_casing/C in AM.stored_ammo)
-				if(loaded.len >= max_shells)
-					break
-				if(C.caliber == caliber)
-					C.forceMove(src)
-					loaded += C
-					AM.stored_ammo -= C //should probably go inside an ammo_magazine proc, but I guess less proc calls this way...
-					count++
-			if(count)
-				user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into [src]."))
-				playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
-	AM.update_icon()
-	update_icon()
+			handle_speedloader_reload(AM, user)
+			return
 
 #undef EXP_TAC_RELOAD
 #undef PROF_TAC_RELOAD
