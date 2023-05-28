@@ -214,7 +214,8 @@
 		icon_state = icon_living
 		switch_from_dead_to_living_mob_list()
 		set_stat(CONSCIOUS)
-		set_density(1)
+		set_density(initial(density))
+		bleed_ticks = 0
 
 /mob/living/simple_animal/proc/drop_loot()
 	if(!LAZYLEN(loot_list))
