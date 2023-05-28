@@ -3,6 +3,7 @@
 */
 
 /obj/item/gun/projectile/scp/automatic
+	abstract_type = /obj/item/gun/projectile/scp/automatic
 	bulk = -1
 	load_method = MAGAZINE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 3)

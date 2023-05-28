@@ -1,4 +1,5 @@
 /obj/item/gun/projectile/scp/shotgun
+	abstract_type = /obj/item/gun/projectile/scp/shotgun
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	obj_flags =  OBJ_FLAG_CONDUCTIBLE

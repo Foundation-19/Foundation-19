@@ -31,6 +31,7 @@
 	var/manual_action = FALSE
 	fire_sound = null
 	appearance_flags = KEEP_TOGETHER
+	abstract_type = /obj/item/gun/projectile/scp
 	item_icons = list(
 		slot_l_hand_str = 'icons/SCP/guns/onmob/lefthand_guns.dmi',
 		slot_r_hand_str = 'icons/SCP/guns/onmob/righthand_guns.dmi',
@@ -196,35 +197,7 @@
 		playsound(src, selector_sound, 20, 1)
 
 
-// TODO split this proc into couple more
-
-/obj/item/gun/projectile/scp/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, set_click_cooldown = TRUE, automatic)
-	if(!can_fire(user, target))
-		return
-
-	add_fingerprint(user)
-
-	if(safety()) // TODO Move to separate function
-		if(user.a_intent == I_HURT && !user.skill_fail_prob(SKILL_WEAPONS, 100, SKILL_EXPERIENCED, 0.5)) //reflex un-safeying
-			toggle_safety(user)
-		else
-			handle_click_safety(user)
-			return
-
-	if(!special_check(user))
-		return
-
-	if(!is_cocked && action_type == GUN_SINGLE_ACTION)
-		handle_click_empty(user, is_cocked, automatic)
-		return
-
-	last_safety_check = world.time
-
-	if(set_click_cooldown)
-		var/shoot_time = (burst - 1) * burst_delay
-		user.setClickCooldown(shoot_time) //no clicking on things while shooting
-		next_fire_time = world.time + shoot_time
-
+/obj/item/gun/projectile/scp/proc/do_fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, set_click_cooldown = TRUE, automatic)
 	var/held_twohanded = (user.can_wield_item(src) && is_held_twohanded(user))
 
 	//actually attempt to shoot
@@ -263,6 +236,40 @@
 	user.setClickCooldown(min(delay, DEFAULT_QUICK_COOLDOWN))
 	user.SetMoveCooldown(move_delay) // FIXME Maybe run and gun???
 	next_fire_time = world.time + delay
+
+// TODO split this proc into couple more
+
+/obj/item/gun/projectile/scp/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, set_click_cooldown = TRUE, automatic)
+	if(!can_fire(user, target))
+		return
+
+	add_fingerprint(user)
+
+	if(safety()) // TODO Move to separate function
+		if(user.a_intent == I_HURT && !user.skill_fail_prob(SKILL_WEAPONS, 100, SKILL_EXPERIENCED, 0.5)) //reflex un-safeying
+			toggle_safety(user)
+		else
+			handle_click_safety(user)
+			return
+
+	if(!special_check(user))
+		return
+
+	if(!is_cocked && action_type == GUN_SINGLE_ACTION)
+		handle_click_empty(user, is_cocked, automatic)
+		return
+
+	if(action_type == GUN_DOUBLE_ACTION)
+		is_cocked = TRUE
+
+	last_safety_check = world.time
+
+	if(set_click_cooldown)
+		var/shoot_time = (burst - 1) * burst_delay
+		user.setClickCooldown(shoot_time) //no clicking on things while shooting
+		next_fire_time = world.time + shoot_time
+
+	do_fire(target, user, clickparams, pointblank, reflex, set_click_cooldown, automatic)
 
 /obj/item/gun/projectile/scp/handle_autofire()
 	set waitfor = FALSE
@@ -443,7 +450,7 @@
 			return
 		chambered = C
 		. = TRUE
-	else if (load_method == SINGLE_CASING)
+	else if(load_method & SINGLE_CASING)
 		if(length(loaded) >= max_shells)
 			to_chat(user, SPAN_WARNING("[src] is full."))
 			return
