@@ -433,6 +433,9 @@
 		playsound(user, shot_sound, 85, 1)
 		show_sound_effect(get_turf(src), user, SFX_ICON_JAGGED)
 
+/obj/item/gun/projectile/scp/proc/get_ammo_count_text()
+	return "It has [get_ammo_count()] round\s remaining."
+
 /obj/item/gun/projectile/scp/examine(mob/user)
 	. = ..()
 	to_chat(user, "It's caliber is [caliber].")
@@ -442,7 +445,7 @@
 	if(ammo_magazine)
 		to_chat(user, "It has \a [ammo_magazine] loaded.")
 	if(user.skill_check(SKILL_WEAPONS, SKILL_TRAINED))
-		to_chat(user, "Has [get_ammo_count()] round\s remaining.") //FIXME remove loaded ammo counter
+		to_chat(user, get_ammo_count_text()) //FIXME remove loaded ammo counter
 
 #define EXP_TAC_RELOAD 1 SECOND
 #define PROF_TAC_RELOAD 0.5 SECONDS

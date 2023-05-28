@@ -159,6 +159,35 @@
 	update_icon()
 	return 1
 
+/obj/item/gun/projectile/scp/revolver/proc/get_live_count()
+	var/counter = 0
+	for(var/i in 1 to loaded.len)
+		var/obj/item/ammo_casing/C = loaded[i]
+		if(C && !C.is_spent)
+			counter++
+	return counter
+
+/obj/item/gun/projectile/scp/revolver/get_ammo_count()
+	var/counter = 0
+	for(var/i in 1 to loaded.len)
+		var/obj/item/ammo_casing/C = loaded[i]
+		if(C)
+			counter++
+	return counter
+
+/obj/item/gun/projectile/scp/revolver/get_ammo_count_text()
+	return "It has [get_ammo_count()] round\s remaining, of which [get_live_count()] are live."
+
+/obj/item/gun/projectile/scp/revolver/verb/spin_cylinder_verb()
+	set name = "Spin cylinder"
+	set desc = "Fun when you're bored out of your skull."
+	set category = "Object"
+
+	visible_message(SPAN_WARNING("\The [usr] spins the cylinder of \the [src]!"), \
+	SPAN_NOTICE("You hear something metallic spin and click."))
+	playsound(src.loc, 'sound/weapons/revolver_spin.ogg', 100, 1)
+	show_sound_effect(src.loc, src)
+	spin_cylinder()
 
 /obj/item/gun/projectile/scp/revolver/mk27
 	name = "\improper MK27 Revolver"
