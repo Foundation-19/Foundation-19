@@ -11,6 +11,8 @@
 	var/ejection_side = GUN_CASING_EJECTION_RIGHT
 	var/bolt_back_sound = 'sound/weapons/guns/interaction/reload_bolt_back.ogg'
 	var/bolt_forward_sound = 'sound/weapons/guns/interaction/reload_bolt_forward.ogg'
+	var/trigger_click_sound = 'sound/weapons/guns/trigger_click.ogg'
+	var/trigger_empty_sound = 'sound/weapons/guns/trigger_empty.ogg'
 	/// Determines the need to draw and `update_icon()` of bolt after cycling
 	var/has_bolt_icon = FALSE
 	/// Determines the need for rendering stock. Won't render if null.
@@ -177,12 +179,12 @@
 
 /obj/item/gun/projectile/scp/handle_click_empty(mob/user, is_cocked, automatic)
 	if(is_cocked)
-		playsound(src.loc, 'sound/weapons/guns/trigger_click.ogg', 40)
+		playsound(src.loc, trigger_click_sound, 40)
 		user.visible_message("*click click*", SPAN_DANGER("*click*"))
 		show_sound_effect(get_turf(src), user, SFX_ICON_SMALL)
 		return
 	if(!automatic)
-		playsound(src.loc, 'sound/weapons/guns/trigger_empty.ogg', 10)
+		playsound(src.loc, trigger_empty_sound, 10)
 		to_chat(user, SPAN_DANGER("*click*"))
 
 /obj/item/gun/projectile/scp/toggle_safety(mob/user)
@@ -358,11 +360,17 @@
 
 	update_icon()
 
-/obj/item/gun/projectile/scp/proc/ejectCasing(manual)
-	if(!chambered)
+/obj/item/gun/projectile/scp/proc/ejectCasing(manual, obj/item/ammo_casing/C)
+	var/obj/item/ammo_casing/casing
+	if(C)
+		casing = C
+	else
+		casing = chambered
+		chambered = null
+	if(!casing)
 		return
-	chambered.forceMove(get_turf(src))
-	chambered.set_dir(pick(GLOB.alldirs))
+	casing.forceMove(get_turf(src))
+	casing.set_dir(pick(GLOB.alldirs))
 	var/hor_eject_vel = rand(45, 55) / 10
 	var/vert_eject_vel = rand(40, 45) / 10
 	var/angle_of_movement = rand(-20, 20)
@@ -371,7 +379,7 @@
 		hor_eject_vel *= 0.5
 		vert_eject_vel *= 0.5
 
-	if(istype(chambered, /obj/item/ammo_casing/shotgun) && !manual)
+	if(istype(casing, /obj/item/ammo_casing/shotgun) && !manual)
 		hor_eject_vel *= 0.7
 		vert_eject_vel *= 0.7
 
@@ -386,12 +394,11 @@
 			angle_of_movement += dir2angle(turn(loc.dir, 90))
 
 	pixel_z = 8
-	chambered.SpinAnimation(4, 1)
-	chambered.AddComponent(/datum/component/movable_physics, _horizontal_velocity = hor_eject_vel, \
+	casing.SpinAnimation(4, 1)
+	casing.AddComponent(/datum/component/movable_physics, _horizontal_velocity = hor_eject_vel, \
 		_vertical_velocity = vert_eject_vel, _horizontal_friction = rand(20, 24) / 100, _z_gravity = 9.8, \
 		_z_floor = 0, _angle_of_movement = angle_of_movement, _physic_flags = QDEL_WHEN_NO_MOVEMENT, \
-		_bounce_sounds = chambered.fall_sounds)
-	chambered = null
+		_bounce_sounds = casing.fall_sounds)
 
 /obj/item/gun/projectile/scp/on_update_icon()
 	..()
