@@ -52,7 +52,7 @@
 	if(world.time > fly_cooldown && prob(amount * 5))
 		animate(src, pixel_x = default_pixel_x + rand(-10, 10), pixel_y = default_pixel_y + rand(-10, 10), time = 2)
 
-/mob/living/simple_animal/hostile/infestation/floatfly/Process_Spacemove()
+/mob/living/simple_animal/hostile/infestation/floatfly/Allow_Spacemove()
 	return TRUE
 
 /mob/living/simple_animal/hostile/infestation/floatfly/proc/StartFlight()
