@@ -2428,6 +2428,7 @@
 #include "code\modules\mob\living\simple_animal\hostile\infestation\assembler.dm"
 #include "code\modules\mob\living\simple_animal\hostile\infestation\broodling.dm"
 #include "code\modules\mob\living\simple_animal\hostile\infestation\eviscerator.dm"
+#include "code\modules\mob\living\simple_animal\hostile\infestation\floatfly.dm"
 #include "code\modules\mob\living\simple_animal\hostile\infestation\larva.dm"
 #include "code\modules\mob\living\simple_animal\hostile\infestation\rhino.dm"
 #include "code\modules\mob\living\simple_animal\hostile\infestation\spitter.dm"
