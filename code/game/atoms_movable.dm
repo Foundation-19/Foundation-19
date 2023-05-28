@@ -90,6 +90,9 @@
 					AM.Crossed(src)
 			if(is_new_area && is_destination_turf)
 				destination.loc.Entered(src, origin)
+
+	SEND_SIGNAL(src, COMSIG_MOVED, src, origin, destination)
+
 	return 1
 
 /atom/movable/forceMove(atom/dest)
