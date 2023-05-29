@@ -1191,6 +1191,7 @@
 #include "code\game\objects\items\weapons\SCP\guns\pistols.dm"
 #include "code\game\objects\items\weapons\SCP\guns\revolvers.dm"
 #include "code\game\objects\items\weapons\SCP\guns\shotguns.dm"
+#include "code\game\objects\items\weapons\SCP\guns\special.dm"
 #include "code\game\objects\items\weapons\storage\backpack.dm"
 #include "code\game\objects\items\weapons\storage\bags.dm"
 #include "code\game\objects\items\weapons\storage\belt.dm"
