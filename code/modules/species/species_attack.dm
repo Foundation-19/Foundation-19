@@ -44,6 +44,8 @@
 
 	attack_damage = Clamp(attack_damage, 1, 5)
 
+	playsound(user.loc, attack_sound, 25, 1, -1)
+
 	if(target == user)
 		user.visible_message(SPAN_DANGER("[user] [pick(attack_verb)] \himself in the [affecting.name]!"))
 		return 0

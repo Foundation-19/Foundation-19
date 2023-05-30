@@ -59,8 +59,8 @@
 	toxins_mod = 0.2
 	burn_mod = 2
 
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 4
-	thirst_factor = DEFAULT_THIRST_FACTOR * 2
+	hunger_factor = DEFAULT_HUNGER_FACTOR * 20 // Very hungry
+	thirst_factor = DEFAULT_THIRST_FACTOR
 	taste_sensitivity = TASTE_DULL
 	rarity_value = 10
 	gluttonous = 2

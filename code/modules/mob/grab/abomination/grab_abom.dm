@@ -99,12 +99,15 @@
 		admin_attack_log(user, target, "Cuts open their victim.", "Has been cut.", "cut")
 		return
 
-	if(user.get_fullness() > 550) // Just slash them
+	if(user.get_fullness() > 380) // Just slash them
 		target.apply_damage(rand(16, 24), BRUTE, hit_zone, DAM_SHARP|DAM_EDGE, used_weapon = "claws")
 		target.visible_message(SPAN_DANGER("[user] slashes [target]'s [damaging.name]!"))
 		playsound(get_turf(target), 'sound/weapons/alien_claw_flesh3.ogg', 25, TRUE)
 	else // Food!
-		user.adjust_nutrition(8)
+		var/datum/reagents/R = new /datum/reagents(3, GLOB.temp_reagents_holder)
+		R.add_reagent(/datum/reagent/nutriment, 3)
+		R.trans_to_mob(user, 3, CHEM_INGEST)
+		qdel(R)
 		target.apply_damage(rand(8, 14), BRUTE, hit_zone, DAM_SHARP|DAM_EDGE, used_weapon = "fangs")
 		target.visible_message(SPAN_DANGER("[user] eats [target]'s [damaging.name]!"))
 		playsound(get_turf(target), 'sound/weapons/alien_claw_flesh1.ogg', 25, TRUE)

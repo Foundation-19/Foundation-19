@@ -12,7 +12,7 @@
 
 	break_chance_table = list(5, 10, 25, 50, 75, 100)
 
-/datum/grab/abomination/aggressive/process_effect(var/obj/item/grab/G)
+/datum/grab/abomination/aggressive/process_effect(obj/item/grab/G)
 	var/mob/living/carbon/human/target = G.affecting
 
 	if(G.target_zone in list(BP_L_HAND, BP_R_HAND))
