@@ -26,7 +26,7 @@
 	)
 
 	unarmed_types = list(
-		/datum/unarmed_attack/claws/strong/gloves,
+		/datum/unarmed_attack/claws/strong/abomination,
 		/datum/unarmed_attack/bite/sharp,
 		)
 
@@ -44,11 +44,19 @@
 	heat_discomfort_level = 305
 	cold_discomfort_level = 75
 
+	natural_armour_values = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_PISTOL,
+		laser = ARMOR_LASER_MAJOR,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = ARMOR_BOMB_PADDED,
+		bio = ARMOR_BIO_SHIELDED,
+		rad = ARMOR_RAD_SHIELDED
+		)
+
 	flash_mod = 0.5
 	oxy_mod = 0.1
 	toxins_mod = 0.2
-	radiation_mod = 0.2
-	brute_mod = 0.5
 	burn_mod = 2
 
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 4
@@ -75,3 +83,6 @@
 	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_TONE_SPCR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
 	species_flags = SPECIES_FLAG_NO_SCAN  | SPECIES_FLAG_NO_SLIP | SPECIES_FLAG_NO_MINOR_CUT
 	spawn_flags = SPECIES_IS_RESTRICTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN
+
+/datum/species/human/abomination/attempt_grab(mob/living/carbon/human/user, mob/living/target)
+	return ..(user, target, GRAB_ABOMINATION)

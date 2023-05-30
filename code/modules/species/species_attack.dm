@@ -83,6 +83,12 @@
 /datum/unarmed_attack/claws/strong/gloves
 	blocked_by_gloves = FALSE
 
+/datum/unarmed_attack/claws/strong/abomination
+	attack_verb = list("eviscerated", "gored")
+	damage = 8
+	attack_name = "terrifying claws"
+	attack_sound = 'sound/weapons/alien_claw_flesh2.ogg'
+
 /datum/unarmed_attack/bite/strong
 	attack_verb = list("mauled")
 	damage = 8
