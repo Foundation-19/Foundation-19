@@ -43,6 +43,7 @@
 		bolt_forward(manual = TRUE)
 	if(has_bolt_icon)
 		update_icon()
+	return TRUE
 
 /obj/item/gun/projectile/scp/revolver/bolt_back(manual)
 	is_bolt_open = TRUE
