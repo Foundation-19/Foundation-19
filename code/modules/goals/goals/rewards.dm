@@ -1,5 +1,5 @@
 /datum/reward/skills
-	var/buff_skill = null	// what skill we're going to buff
+	var/decl/hierarchy/skill/buff_skill = null	// what skill we're going to buff
 	var/buff_level = null 	// how high we're going to buff it
 	var/buff_timer = null	// how long we're gonna buff it
 
@@ -8,7 +8,20 @@
 	buff_level = _buff_level
 	buff_timer = _buff_timer
 
-	description = "[buff_skill] is increased to [buff_level] for [buff_timer / (1 MINUTE)] minutes."
+	var/buff_level_name
+	switch(buff_level)
+		if(SKILL_UNTRAINED)
+			buff_level_name = "Untrained"
+		if(SKILL_BASIC)
+			buff_level_name = "Basic"
+		if(SKILL_TRAINED)
+			buff_level_name = "Trained"
+		if(SKILL_EXPERIENCED)
+			buff_level_name = "Experienced"
+		if(SKILL_MASTER)
+			buff_level_name = "Master"
+
+	description = "[initial(buff_skill.name)] is increased to [buff_level_name] for [buff_timer / (1 MINUTE)] minutes."
 	. = ..(_goal, reward_success)
 
 /datum/reward/skills/handle_behavior()

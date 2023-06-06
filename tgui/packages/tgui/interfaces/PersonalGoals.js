@@ -1,42 +1,54 @@
 import { Window } from '../layouts';
 import { useBackend } from '../backend';
-import { Section, Table } from '../components';
+import { Box, Section, Table } from '../components';
 
 export const PersonalGoals = (props, context) => {
   const { act, data } = useBackend(context);
-  const { goalcategories = [] } = data;
-  <Window title="Personal Goals" width={675} height={700}>
-    <Window.Content scrollable>
-      <Section>
-        {goalcategories.map((value, index) => {
-          <GoalCategory ley={index} goals={value} catname={index} />;
-        })}
-        ;
-      </Section>
-    </Window.Content>
-  </Window>;
+  const { categories_values = [], categories_keys = [] } = data;
+  const categories_map = new Map(
+    categories_values.map((value, index) => {
+      return [categories_keys[index], value];
+    })
+  );
+  return (
+    <Window title="Personal Goals" width={675} height={700}>
+      <Window.Content scrollable>
+        <Section>
+          {categories_values.map((value, index) => {
+            return (
+              <Fragment key={categories_keys[index]}>
+                <GoalCategory goals={value} catname={categories_keys[index]} />
+              </Fragment>
+            );
+          })}
+        </Section>
+      </Window.Content>
+    </Window>
+  );
 };
 
-const GoalCategory = (props, context) => {
-  const { goals, catname } = props;
+const GoalCategory = (props) => {
+  const { goals = [], catname } = props;
   return (
     <Table>
       <Table.Row>
-        <Table.Cell>{catname}</Table.Cell>
+        <Table.Cell>
+          <h1>{catname}</h1>
+        </Table.Cell>
       </Table.Row>
-      {goals.map((goal, index) => (
-        <Table.Row>
+      {goals.map((goal_desc, index) => (
+        <Table.Row key={index}>
           <Table.Cell>
-            <Goal key={index} description={goal.description} />
+            <Goal description={goal_desc} />
+            <br />
           </Table.Cell>
         </Table.Row>
       ))}
-      ;
     </Table>
   );
 };
 
 const Goal = (props) => {
   const { description } = props;
-  return { description };
+  return <Box>{description}</Box>;
 };

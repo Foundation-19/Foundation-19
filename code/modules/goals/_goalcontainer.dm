@@ -94,7 +94,8 @@
 /datum/component/goalcontainer/tgui_data(mob/user)
 	var/list/data = list()
 
-	var/list/categories = list()
+	var/list/categories_values = list()
+	var/list/categories_keys = list()	// we cant put an associative list through the TGUI backend, so we store the keys separately and combine them into a Javascript map later
 	for(var/cat_name in goal_list)
 		var/list/category = goal_list[cat_name]
 
@@ -106,15 +107,15 @@
 
 			for(var/thing2 in goal.rewards)
 				var/datum/reward/reward = thing2
-				description += "<br>[reward.on_success ? "Reward" : "Punishment"]: [reward.description]"
+				description += "[reward.on_success ? "Reward" : "Punishment"]: [reward.description]"
 
-			cat_goals.Add(list(list(
-				"description" = description
-			)))
+			cat_goals.Add(description)
 
-		categories[cat_name] = cat_goals
+		categories_values.Add(list(cat_goals))
+		categories_keys.Add(list(cat_name))
 
-	data["goalcategories"] = categories
+	data["categories_values"] = categories_values
+	data["categories_keys"] = categories_keys
 	return data
 
 /datum/component/goalcontainer/tgui_state(mob/user)

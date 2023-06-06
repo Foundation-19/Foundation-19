@@ -42,3 +42,19 @@
 	var/datum/mind/M = container.parent
 	UnregisterSignal(M.current, COMSIG_GAVE_HUG)
 	goal_finish(TRUE)
+
+/datum/goal/sanity/smoke
+	default_sanity_damage = -8
+	description = "Smoke something, anything."
+	success_message = "You know it's not good for you, but it feels so great..."
+
+/datum/goal/sanity/smoke/New()
+	. = ..()
+	var/datum/mind/M = container.parent
+	RegisterSignal(M.current, COMSIG_SMOKED_SMOKABLE, .proc/handle_progress)
+
+/datum/goal/sanity/smoke/proc/handle_progress(smoker, obj/item/clothing/mask/smokable/smokable, amount)
+	success_description = "Smoke a [smokable.name]."
+	var/datum/mind/M = container.parent
+	UnregisterSignal(M.current, COMSIG_SMOKED_SMOKABLE)
+	goal_finish(TRUE)

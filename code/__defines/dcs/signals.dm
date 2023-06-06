@@ -54,3 +54,5 @@
 
 /// fired by a mob/living/carbon when it ingests a reagent. IS DYNAMICALLY CONSTRUCTED: append reagent type onto the string
 #define COMSIG_REAGENT_INGESTED_ "reagent_ingested_"
+/// fired by something when it smokes something (as in a cigarette). should pass the object being smoked and the amount of reagents
+#define COMSIG_SMOKED_SMOKABLE "smoked_smokable"
