@@ -46,7 +46,7 @@ Listener registration. You must unregister yourself if you are destroyed; the ow
 		return // Can try and register, but updates aren't coming
 	if(!listeners[owner])
 		listeners[owner] = list()
-		GLOB.destroyed_event.register(owner, src, .proc/owner_destroyed)
+		RegisterSignal(owner, COMSIG_PARENT_QDELETING, .proc/owner_destroyed)
 	LAZYADD(listeners[owner][listener], registered_proc)
 	return TRUE
 
@@ -65,14 +65,14 @@ Listener registration. You must unregister yourself if you are destroyed; the ow
 
 	if(!length(listeners[owner])) // Clean up the list if no longer listening to anything.
 		listeners -= owner
-		GLOB.destroyed_event.unregister(owner, src)
+		UnregisterSignal(owner, COMSIG_PARENT_QDELETING)
 
 /*
 Internal procs. Do not modify.
 */
 
 /decl/public_access/public_variable/proc/owner_destroyed(datum/owner)
-	GLOB.destroyed_event.unregister(owner, src)
+	UnregisterSignal(owner, COMSIG_PARENT_QDELETING)
 	listeners -= owner
 
 /decl/public_access/public_variable/proc/var_changed(owner, old_value, new_value)

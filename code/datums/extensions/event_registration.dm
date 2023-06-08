@@ -11,13 +11,13 @@
 /datum/extension/event_registration/New(datum/holder, decl/observ/event, datum/target, callproc)
 	..()
 	event.register(target, src, .proc/trigger)
-	GLOB.destroyed_event.register(target, src, .proc/qdel_self)
+	RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/qdel_self)
 	src.event = event
 	src.target = target
 	src.callproc = callproc
 
 /datum/extension/event_registration/Destroy()
-	GLOB.destroyed_event.unregister(target, src)
+	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 	event.unregister(target, src)
 	. = ..()
 

@@ -54,9 +54,9 @@
 		middle = M
 		back = B
 		if(is_valid_setup())
-			GLOB.destroyed_event.register(F, src, .proc/release_links)
-			GLOB.destroyed_event.register(M, src, .proc/release_links)
-			GLOB.destroyed_event.register(B, src, .proc/release_links)
+			RegisterSignal(F, COMSIG_PARENT_QDELETING, .proc/release_links)
+			RegisterSignal(M, COMSIG_PARENT_QDELETING, .proc/release_links)
+			RegisterSignal(B, COMSIG_PARENT_QDELETING, .proc/release_links)
 			return TRUE
 	return FALSE
 
@@ -68,9 +68,9 @@
 	return FALSE
 
 /obj/machinery/computer/ship/disperser/proc/release_links()
-	GLOB.destroyed_event.unregister(front, src, .proc/release_links)
-	GLOB.destroyed_event.unregister(middle, src, .proc/release_links)
-	GLOB.destroyed_event.unregister(back, src, .proc/release_links)
+	UnregisterSignal(front, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(middle, COMSIG_PARENT_QDELETING)
+	UnregisterSignal(back, COMSIG_PARENT_QDELETING)
 	front = null
 	middle = null
 	back = null

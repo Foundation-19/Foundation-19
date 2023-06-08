@@ -113,7 +113,7 @@
 
 			watching_mob = user
 			GLOB.moved_event.register(watching_mob, src, /obj/machinery/ship_map/proc/checkPosition)
-			GLOB.destroyed_event.register(watching_mob, src, /obj/machinery/ship_map/proc/stopWatching)
+			RegisterSignal(watching_mob, COMSIG_PARENT_QDELETING, /obj/machinery/ship_map/proc/stopWatching)
 			update_use_power(POWER_USE_ACTIVE)
 
 			if(bogus)
@@ -139,7 +139,7 @@
 			var/mob/M = watching_mob
 			addtimer(CALLBACK(src, .proc/clear_image, M, holomap_datum.station_map), 5, TIMER_CLIENT_TIME)//we give it time to fade out
 		GLOB.moved_event.unregister(watching_mob, src)
-		GLOB.destroyed_event.unregister(watching_mob, src)
+		UnregisterSignal(watching_mob, COMSIG_PARENT_QDELETING)
 	watching_mob = null
 	update_use_power(POWER_USE_IDLE)
 	if(holomap_datum)

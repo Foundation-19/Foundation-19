@@ -24,7 +24,7 @@
 
 // Event listener for the marked pipe's destruction
 /datum/event/disposals_explosion/proc/pipe_destroyed()
-	GLOB.destroyed_event.unregister(bursting_pipe, src, .proc/pipe_destroyed)
+	UnregisterSignal(bursting_pipe, COMSIG_PARENT_QDELETING)
 
 	bursting_pipe = null
 	kill()
@@ -43,7 +43,7 @@
 		if(istype(A, /obj/structure/disposalpipe/segment))
 			bursting_pipe = A
 			// Subscribe to pipe destruction facts
-			GLOB.destroyed_event.register(A, src, .proc/pipe_destroyed)
+			RegisterSignal(A, COMSIG_PARENT_QDELETING, .proc/pipe_destroyed)
 			break
 
 	if(isnull(bursting_pipe))
@@ -70,7 +70,7 @@
 	if(isnull(bursting_pipe))
 		return
 
-	GLOB.destroyed_event.unregister(bursting_pipe, src, .proc/pipe_destroyed)
+	UnregisterSignal(bursting_pipe, COMSIG_PARENT_QDELETING)
 
 	if(bursting_pipe.get_current_health() < 5)
 		// Make a disposals holder for the trash

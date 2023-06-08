@@ -88,7 +88,7 @@
 /mob/living/simple_animal/hostile/retaliate/giant_crab/proc/release_grab()
 	if(victim)
 		visible_message(SPAN_NOTICE("\The [src] releases its grip on \the [victim]!"))
-		GLOB.destroyed_event.unregister(victim)
+		UnregisterSignal(victim, COMSIG_PARENT_QDELETING)
 		victim = null
 	// cooldown_ability(ability_cooldown)
 	set_AI_busy(FALSE)
@@ -111,7 +111,7 @@
 				return
 
 		if(!C.victim && C.can_special_attack(H))
-			GLOB.destroyed_event.register(C.victim, C, /mob/living/simple_animal/hostile/retaliate/giant_crab/proc/release_grab)
+			C.RegisterSignal(C.victim, COMSIG_PARENT_QDELETING, /mob/living/simple_animal/hostile/retaliate/giant_crab/proc/release_grab)
 			C.victim = H
 			H.Weaken(C.grab_duration)
 			H.Stun(C.grab_duration)

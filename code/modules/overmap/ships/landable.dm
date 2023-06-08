@@ -94,11 +94,11 @@
 	core_landmark = master
 	SetName(_name)
 	landmark_tag = master.shuttle_name + _name
-	GLOB.destroyed_event.register(master, src, /datum/proc/qdel_self)
+	RegisterSignal(master, COMSIG_PARENT_QDELETING, /datum/proc/qdel_self)
 	. = ..()
 
 /obj/effect/shuttle_landmark/visiting_shuttle/Destroy()
-	GLOB.destroyed_event.unregister(core_landmark, src)
+	UnregisterSignal(core_landmark, COMSIG_PARENT_QDELETING)
 	LAZYREMOVE(core_landmark.visitors, src)
 	core_landmark = null
 	. = ..()
