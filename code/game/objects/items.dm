@@ -755,7 +755,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	user.client.view = viewsize
 	zoom = 1
 
-	GLOB.destroyed_event.register(src, src, /obj/item/proc/unzoom)
+	RegisterSignal(src, COMSIG_PARENT_QDELETING, /obj/item/proc/unzoom)
 	GLOB.moved_event.register(user, src, /obj/item/proc/unzoom)
 	GLOB.dir_set_event.register(user, src, /obj/item/proc/unzoom)
 	GLOB.item_unequipped_event.register(src, user, /mob/living/proc/unzoom)
@@ -772,7 +772,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		return
 	zoom = 0
 
-	GLOB.destroyed_event.unregister(src, src, /obj/item/proc/unzoom)
+	UnregisterSignal(src, COMSIG_PARENT_QDELETING)
 	GLOB.moved_event.unregister(user, src, /obj/item/proc/unzoom)
 	GLOB.dir_set_event.unregister(user, src, /obj/item/proc/unzoom)
 	GLOB.item_unequipped_event.unregister(src, user, /mob/living/proc/unzoom)

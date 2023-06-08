@@ -87,10 +87,10 @@
 	appearance = real_one.appearance
 	GLOB.moved_event.register(real_one, src, /obj/effect/bluegoast/proc/mirror)
 	GLOB.dir_set_event.register(real_one, src, /obj/effect/bluegoast/proc/mirror_dir)
-	GLOB.destroyed_event.register(real_one, src, /datum/proc/qdel_self)
+	RegisterSignal(real_one, COMSIG_PARENT_QDELETING, /datum/proc/qdel_self)
 
 /obj/effect/bluegoast/Destroy()
-	GLOB.destroyed_event.unregister(real_one, src)
+	UnregisterSignal(real_one, COMSIG_PARENT_QDELETING)
 	GLOB.dir_set_event.unregister(real_one, src)
 	GLOB.moved_event.unregister(real_one, src)
 	real_one = null

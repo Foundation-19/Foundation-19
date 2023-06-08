@@ -73,7 +73,7 @@
 		unset_terminal(machine, terminal)
 	terminal = new_terminal
 	terminal.master = src
-	GLOB.destroyed_event.register(terminal, src, .proc/unset_terminal)
+	RegisterSignal(terminal, COMSIG_PARENT_QDELETING, .proc/unset_terminal)
 
 	set_extension(src, /datum/extension/event_registration/shuttle_stationary, GLOB.moved_event, machine, .proc/machine_moved, get_area(src))
 	set_status(machine, PART_STAT_CONNECTED)
@@ -98,7 +98,7 @@
 
 /obj/item/stock_parts/power/terminal/proc/unset_terminal(obj/machinery/power/old_terminal, obj/machinery/machine)
 	remove_extension(src, /datum/extension/event_registration/shuttle_stationary)
-	GLOB.destroyed_event.unregister(old_terminal, src)
+	UnregisterSignal(old_terminal, COMSIG_PARENT_QDELETING)
 	if(!machine && istype(loc, /obj/machinery))
 		machine = loc
 	if(machine)

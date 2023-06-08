@@ -56,8 +56,8 @@
 		M.status_flags |= GODMODE //don't want him to die or breathe or do ANYTHING
 		transformed_dudes[trans] = M
 		GLOB.death_event.register(trans,src,/datum/spell/targeted/shapeshift/proc/stop_transformation)
-		GLOB.destroyed_event.register(trans,src,/datum/spell/targeted/shapeshift/proc/stop_transformation)
-		GLOB.destroyed_event.register(M, src, /datum/spell/targeted/shapeshift/proc/destroyed_transformer)
+		RegisterSignal(trans, COMSIG_PARENT_QDELETING, /datum/spell/targeted/shapeshift/proc/stop_transformation)
+		RegisterSignal(M, COMSIG_PARENT_QDELETING, /datum/spell/targeted/shapeshift/proc/destroyed_transformer)
 		if(duration)
 			spawn(duration)
 				stop_transformation(trans)
@@ -89,9 +89,9 @@
 
 /datum/spell/targeted/shapeshift/proc/remove_target(mob/living/target)
 	var/mob/current = transformed_dudes[target]
-	GLOB.destroyed_event.unregister(target,src)
+	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 	GLOB.death_event.unregister(current,src)
-	GLOB.destroyed_event.unregister(current,src)
+	UnregisterSignal(current, COMSIG_PARENT_QDELETING)
 	transformed_dudes[target] = null
 	transformed_dudes -= target
 

@@ -32,7 +32,7 @@
 	if(cell)
 		return
 	cell = new_cell
-	GLOB.destroyed_event.register(cell, src, .proc/remove_cell)
+	RegisterSignal(cell, COMSIG_PARENT_QDELETING, .proc/remove_cell)
 	if(!machine)
 		machine = loc
 	if(istype(machine))
@@ -44,7 +44,7 @@
 
 /obj/item/stock_parts/power/battery/proc/remove_cell()
 	if(cell)
-		GLOB.destroyed_event.unregister(cell, src)
+		UnregisterSignal(cell, COMSIG_PARENT_QDELETING)
 		. = cell
 		cell = null
 		var/obj/machinery/machine = loc

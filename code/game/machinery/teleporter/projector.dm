@@ -21,7 +21,7 @@
 /obj/machinery/tele_projector/proc/clear_computer()
 	if (!computer)
 		return
-	GLOB.destroyed_event.unregister(computer, src, /obj/machinery/tele_projector/proc/lost_computer)
+	UnregisterSignal(computer, COMSIG_PARENT_QDELETING, /obj/machinery/tele_projector/proc/lost_computer)
 	computer = null
 
 
@@ -35,7 +35,7 @@
 		return
 	clear_computer()
 	computer = _computer
-	GLOB.destroyed_event.register(computer, src, /obj/machinery/tele_projector/proc/lost_computer)
+	RegisterSignal(computer, COMSIG_PARENT_QDELETING, /obj/machinery/tele_projector/proc/lost_computer)
 
 
 /obj/machinery/tele_projector/power_change()

@@ -176,7 +176,7 @@
 	lock_time = world.time + 35
 	GLOB.moved_event.register(owner, src, /obj/aiming_overlay/proc/update_aiming)
 	GLOB.moved_event.register(aiming_at, src, /obj/aiming_overlay/proc/target_moved)
-	GLOB.destroyed_event.register(aiming_at, src, /obj/aiming_overlay/proc/cancel_aiming)
+	RegisterSignal(aiming_at, COMSIG_PARENT_QDELETING, /obj/aiming_overlay/proc/cancel_aiming)
 
 /obj/aiming_overlay/on_update_icon()
 	if(locked)
@@ -218,7 +218,7 @@
 	GLOB.moved_event.unregister(owner, src)
 	if(aiming_at)
 		GLOB.moved_event.unregister(aiming_at, src)
-		GLOB.destroyed_event.unregister(aiming_at, src)
+		UnregisterSignal(aiming_at, COMSIG_PARENT_QDELETING)
 		aiming_at.aimed -= src
 		aiming_at = null
 
