@@ -734,14 +734,14 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/entrance_checkpoint)
 "bH" = (
-/obj/machinery/button/blast_door{
-	id_tag = "D-Class Reward Room";
-	name = "D-Class Reward Room";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+/obj/effect/catwalk_plated/white,
+/obj/effect/floor_decal/carpet/blue2,
+/obj/machinery/door/window{
+	dir = 1;
+	name = "boxing ring"
 	},
-/obj/effect/paint_stripe/orange,
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/luxuryhall)
+/turf/simulated/floor,
+/area/site53/llcz/dclass/assignmentbubble)
 "bI" = (
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/luxuryhall)
@@ -6578,9 +6578,9 @@
 /obj/machinery/door/airlock/glass/civilian{
 	name = "D-Class Yard"
 	},
-/obj/machinery/door/blast/shutters{
-	id_tag = "D-Class Reward Room";
-	name = "D-Class Reward Room"
+/obj/machinery/door/blast/shutters/open{
+	name = "D Class Reward Block";
+	id_tag = "D Block Reward"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/luxuryhall)
@@ -9209,11 +9209,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/hallways)
-"vl" = (
-/obj/structure/table/woodentable/maple,
-/obj/item/deck/cards,
-/turf/simulated/floor/beach/sand,
-/area/site53/llcz/dclass/luxuryhall)
 "vm" = (
 /obj/machinery/flasher{
 	id_tag = "cell2";
@@ -9222,11 +9217,10 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
 "vn" = (
-/obj/machinery/light{
-	dir = 1
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
 	},
-/obj/machinery/camera/network/lcz,
-/turf/simulated/floor/beach/sand,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
 "vo" = (
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -9887,7 +9881,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
 "wJ" = (
-/turf/simulated/floor/beach/sand,
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/camera/network/lcz{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "wK" = (
 /obj/structure/cable/green{
@@ -9907,10 +9905,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/primaryhallway)
-"wM" = (
-/obj/machinery/vending/cigarette,
-/turf/simulated/floor/beach/sand,
-/area/site53/llcz/dclass/luxuryhall)
 "wN" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters/open{
@@ -9920,10 +9914,11 @@
 /turf/simulated/floor/plating,
 /area/site53/llcz/dclass/assignmentline)
 "wO" = (
-/obj/structure/table/woodentable/maple,
-/obj/item/reagent_containers/food/snacks/hotdog,
-/obj/item/reagent_containers/food/snacks/hotdog,
-/turf/simulated/floor/beach/sand,
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/light/spot{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "wP" = (
 /obj/machinery/camera/network/lcz{
@@ -10101,8 +10096,11 @@
 /turf/simulated/wall/titanium,
 /area/site53/uhcz/scp8containment)
 "xf" = (
-/obj/item/beach_ball,
-/turf/simulated/floor/beach/sand,
+/obj/machinery/door/window{
+	dir = 1;
+	name = "basketball stadium"
+	},
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
 "xg" = (
 /obj/effect/catwalk_plated/white,
@@ -10651,15 +10649,6 @@
 /obj/machinery/camera/network/lcz,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/cells)
-"yC" = (
-/obj/effect/paint_stripe/orange,
-/obj/machinery/button/blast_door{
-	id_tag = "D-Class Reward Room";
-	name = "D-Class Reward Room";
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/turf/simulated/wall/titanium,
-/area/site53/llcz/dclass/luxuryhall)
 "yD" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -12356,16 +12345,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentline)
 "Dd" = (
-/obj/machinery/light{
-	dir = 1
+/obj/effect/catwalk_plated/white,
+/obj/machinery/door/window{
+	name = "boxing ring"
 	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/turf/simulated/floor/wood{
-	name = "vinyl wooden floor"
-	},
-/area/site53/llcz/dclass/luxuryhall)
+/turf/simulated/floor,
+/area/site53/llcz/dclass/assignmentbubble)
 "De" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -12833,10 +12818,11 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
 "Eg" = (
-/obj/structure/bed/chair/wood,
-/turf/simulated/floor/wood{
-	name = "vinyl wooden floor"
+/obj/machinery/light/spot{
+	dir = 1
 	},
+/obj/machinery/camera/network/lcz,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "Eh" = (
 /obj/structure/disposalpipe/segment{
@@ -12991,12 +12977,7 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
 "EC" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/wood{
-	name = "vinyl wooden floor"
-	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "ED" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -13963,13 +13944,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/assignmentline)
 "Hp" = (
-/obj/structure/table/woodentable/maple,
-/obj/item/reagent_containers/food/snacks/hotdog,
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/item/reagent_containers/food/snacks/hotdog,
-/turf/simulated/floor/beach/sand,
+/obj/structure/fitness/weightlifter,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
 "Hq" = (
 /obj/machinery/flasher{
@@ -14034,7 +14011,8 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
 "Hw" = (
-/turf/simulated/floor/beach/coastline,
+/obj/effect/floor_decal/industrial/hatch/red,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "Hx" = (
 /obj/effect/landmark{
@@ -15150,6 +15128,15 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/checkpoint)
+"JW" = (
+/obj/machinery/button/blast_door{
+	id_tag = "D Block Reward";
+	name = "D Block Reward Shutters";
+	pixel_y = 32;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/llcz/dclass/luxuryhall)
 "JX" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/bed/roller,
@@ -15359,7 +15346,8 @@
 /turf/simulated/wall/titanium,
 /area/site53/llcz/dclass/checkpoint)
 "Kt" = (
-/turf/simulated/floor/beach/water,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
 "Ku" = (
 /obj/structure/cable/green{
@@ -15380,10 +15368,11 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uhcz/scp106parts)
 "Kv" = (
-/obj/machinery/light{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/turf/simulated/floor/beach/water,
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
 "Kw" = (
 /obj/item/device/flashlight/lamp,
@@ -15391,10 +15380,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/cellbubble)
 "Kx" = (
-/obj/machinery/light{
-	dir = 4
+/obj/structure/railing/mapped{
+	dir = 8
 	},
-/turf/simulated/floor/beach/water,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
 "Ky" = (
 /obj/structure/disposalpipe/segment{
@@ -15410,37 +15399,23 @@
 /turf/simulated/floor,
 /area/site53/uhcz/scp106parts)
 "Kz" = (
-/obj/machinery/light,
-/turf/simulated/floor/beach/water,
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/light/spot,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "KA" = (
-/obj/structure/table/gamblingtable,
-/obj/random/single/playing_cards,
-/turf/simulated/floor/wood{
-	name = "vinyl wooden floor"
-	},
-/area/site53/llcz/dclass/luxuryhall)
-"KB" = (
-/obj/structure/table/gamblingtable,
-/obj/item/deck/tarot,
-/turf/simulated/floor/wood{
-	name = "vinyl wooden floor"
-	},
+/obj/effect/floor_decal/industrial/outline/orange,
+/obj/item/beach_ball/holoball,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "KC" = (
-/obj/structure/table/gamblingtable,
-/obj/item/deck/cards,
-/turf/simulated/floor/wood{
-	name = "vinyl wooden floor"
-	},
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
 "KD" = (
-/obj/structure/bed/chair/wood{
-	dir = 8
-	},
-/turf/simulated/floor/wood{
-	name = "vinyl wooden floor"
-	},
+/obj/structure/fitness/punchingbag,
+/obj/effect/floor_decal/industrial/outline/blue,
+/turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/luxuryhall)
 "KE" = (
 /obj/effect/floor_decal/industrial/outline/orange,
@@ -15450,44 +15425,18 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "KF" = (
-/obj/structure/window/reinforced{
-	dir = 8
+/obj/structure/holohoop{
+	dir = 4
 	},
-/obj/structure/window/reinforced,
-/turf/simulated/floor/wood{
-	name = "vinyl wooden floor"
-	},
-/area/site53/llcz/dclass/luxuryhall)
-"KG" = (
-/obj/structure/bed/chair/wood{
-	dir = 1
-	},
-/obj/structure/window/reinforced,
-/turf/simulated/floor/wood{
-	name = "vinyl wooden floor"
-	},
+/obj/effect/floor_decal/industrial/outline,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "KH" = (
-/obj/structure/window/reinforced,
-/turf/simulated/floor/wood{
-	name = "vinyl wooden floor"
+/obj/structure/holohoop{
+	dir = 8
 	},
-/area/site53/llcz/dclass/luxuryhall)
-"KI" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/vending/cigarette{
-	name = "cigarette machine";
-	prices = list()
-	},
-/turf/simulated/floor/beach/sand,
-/area/site53/llcz/dclass/luxuryhall)
-"KJ" = (
-/obj/machinery/vending/cigarette{
-	dir = 1
-	},
-/turf/simulated/floor/beach/sand,
+/obj/effect/floor_decal/industrial/outline,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/luxuryhall)
 "KK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -15582,12 +15531,6 @@
 	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
 	},
 /area/site53/uhcz/scp106parts)
-"KZ" = (
-/obj/machinery/camera/network/lcz{
-	dir = 1
-	},
-/turf/simulated/floor/beach/water,
-/area/site53/llcz/dclass/luxuryhall)
 "La" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "D-Class Laundry"
@@ -16288,7 +16231,7 @@
 /area/site53/llcz/dclass/assignmentline)
 "MM" = (
 /obj/effect/floor_decal/corner/yellow/mono,
-/obj/machinery/chemical_dispenser,
+/obj/machinery/chemical_dispenser/full,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/dclass/medicalpost/chem)
 "MN" = (
@@ -18330,6 +18273,17 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lhcz/scp049containment)
+"Sf" = (
+/obj/effect/catwalk_plated/white,
+/obj/machinery/button/blast_door{
+	id_tag = "D Block Reward";
+	name = "D Block Reward Shutters";
+	req_access = list("ACCESS_SECURITY_LEVEL2");
+	dir = 4;
+	pixel_x = -32
+	},
+/turf/simulated/floor,
+/area/site53/llcz/dclass/luxuryhall)
 "Sg" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -20940,7 +20894,7 @@
 "YT" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/door/airlock/glass/civilian{
-	name = "D-Class Yard"
+	name = "D-Class Boxing"
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/assignmentbubble)
@@ -27436,16 +27390,16 @@ yo
 gq
 gq
 yo
-vl
-Hp
+Hw
+Hw
 wO
 wJ
-wJ
 Hw
-Kt
-Kv
-Kt
-Kt
+Hw
+wO
+Hw
+Hw
+Hw
 yo
 ua
 ua
@@ -27689,20 +27643,20 @@ yY
 ya
 ya
 zb
-yC
+yo
 yo
 yo
 yo
 vn
-wJ
-wJ
-wJ
-wJ
+Kx
+Kx
+Kx
+Kx
+Kx
+Kx
+Kx
+Kv
 Hw
-Kt
-Kt
-Kt
-Kz
 yo
 ua
 ua
@@ -27946,20 +27900,20 @@ xT
 ya
 ya
 ya
-ya
+Sf
 ya
 ya
 pi
-wJ
-wJ
-wJ
-wJ
-wJ
+xT
+xT
+xT
+xT
+xT
+xT
+xT
+xT
+Kt
 Hw
-Kt
-Kt
-Kt
-Kt
 yo
 ua
 Fh
@@ -28207,16 +28161,16 @@ ya
 ya
 ya
 pi
-wJ
-wJ
-wJ
-wJ
-wJ
+xT
+xT
+xT
+xT
+KD
+xT
+KD
+xT
+Kt
 Hw
-Kt
-Kt
-Kt
-Kt
 yo
 ua
 ua
@@ -28463,17 +28417,17 @@ Hv
 yo
 yo
 yo
-bH
-wJ
-xf
-wJ
-wJ
-wJ
+yo
+JW
+xT
+xT
+xT
+xT
+xT
+xT
+xT
+Kt
 Hw
-Kt
-Kt
-Kt
-Kt
 yo
 ua
 ua
@@ -28721,16 +28675,16 @@ yo
 gq
 gq
 yo
-KI
-wJ
-wJ
-wJ
-wJ
+Sh
+xT
+xT
+xT
+KD
+xT
+KD
+xT
+Kt
 Hw
-Kt
-Kt
-Kt
-Kz
 yo
 ua
 ua
@@ -28978,16 +28932,16 @@ gq
 gq
 gq
 yo
-KJ
-wJ
-wJ
-wJ
-wJ
-Hw
+yN
+yN
+yN
+xT
+xT
+xT
+xT
+xT
 Kt
-Kt
-Kt
-Kt
+Kz
 yo
 ua
 ua
@@ -29235,16 +29189,16 @@ gq
 gq
 gq
 yo
-wM
-wJ
-wJ
-wJ
-wJ
+EC
+KF
+EC
+yY
+xT
+xT
+xT
+xT
+Kt
 Hw
-Kt
-Kt
-Kt
-Kt
 yo
 ua
 ua
@@ -29492,16 +29446,16 @@ gq
 gq
 gq
 yo
-wJ
-wJ
-wJ
-wJ
-wJ
+EC
+EC
+EC
+yY
+xT
+xT
+xT
+xT
+Kt
 Hw
-Kt
-Kt
-Kt
-Kt
 yo
 ua
 Fh
@@ -29749,16 +29703,16 @@ gq
 gq
 gq
 yo
-wJ
-wJ
-wJ
-wJ
-wJ
+EC
+EC
+EC
+yY
+Hp
+xT
+Hp
+xT
+Kt
 Hw
-Kt
-Kt
-Kt
-Kt
 yo
 ua
 ua
@@ -30006,16 +29960,16 @@ qu
 qu
 qu
 yo
-Dd
-yM
-KF
-wJ
-wJ
+EC
+EC
+EC
+yY
+xT
+xT
+xT
+xT
+Kt
 Hw
-Kt
-Kt
-Kt
-Kz
 yo
 ua
 ua
@@ -30265,14 +30219,14 @@ qu
 yo
 Eg
 KA
-KG
-wJ
-wJ
+EC
+xf
+Hp
+xT
+Hp
+xT
+Kt
 Hw
-Kt
-Kt
-Kt
-Kt
 yo
 ua
 ua
@@ -30520,16 +30474,16 @@ Hx
 wQ
 qu
 yo
-yM
-KB
-KH
-wJ
-wJ
+EC
+EC
+EC
+yY
+xT
+xT
+xT
+xT
+Kt
 Hw
-Kt
-Kt
-Kt
-KZ
 yo
 ua
 ua
@@ -30777,16 +30731,16 @@ qu
 qu
 qu
 yo
-Eg
-KC
-KG
-wJ
-wJ
+EC
+EC
+EC
+yY
+Hp
+xT
+Hp
+xT
+Kt
 Hw
-Kt
-Kt
-Kt
-Kt
 yo
 ua
 ua
@@ -31035,13 +30989,13 @@ vW
 qu
 yo
 EC
-KD
-KH
-wJ
-wJ
-Hw
-Kt
-Kt
+EC
+EC
+yY
+xT
+xT
+xT
+xT
 Kt
 Kz
 yo
@@ -31239,11 +31193,11 @@ hy
 hy
 OW
 OW
+uf
+uf
 bw
 uf
 bw
-uf
-uf
 uf
 uf
 lY
@@ -31291,16 +31245,16 @@ Hy
 wQ
 qu
 yo
-yM
-IM
+EC
 KH
-wJ
-wJ
+EC
+yY
+xT
+xT
+Hv
+xT
+KC
 Hw
-Kt
-Kx
-Kt
-Kt
 yo
 ua
 ua
@@ -31496,11 +31450,11 @@ hy
 hy
 OW
 uf
+uf
+uf
 WN
 uf
 WN
-uf
-uf
 uf
 dn
 lY
@@ -31753,11 +31707,11 @@ hy
 hy
 OW
 Jo
+uf
+uf
 WN
 uf
 WN
-uf
-uf
 uf
 DM
 Kf
@@ -32010,11 +31964,11 @@ hy
 hy
 OW
 Kk
-Wq
+uf
 uf
 qm
 uf
-uf
+Wq
 Kk
 DM
 dC
@@ -32583,7 +32537,7 @@ RM
 Lh
 Lh
 ml
-Lh
+Dd
 Gs
 Gs
 UT
@@ -33093,13 +33047,13 @@ gq
 UT
 Gs
 Gs
-ml
+bH
 Lh
 Lh
 ml
 cA
 Gs
-Gs
+Hb
 UT
 ua
 ua
