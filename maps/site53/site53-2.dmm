@@ -22522,6 +22522,13 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
+"dgg" = (
+/obj/effect/paint_stripe/gray,
+/obj/structure/sign/directions/evac{
+	dir = 4
+	},
+/turf/simulated/wall/prepainted,
+/area/site53/lowertrams/hub)
 "dgG" = (
 /obj/machinery/photocopier,
 /obj/machinery/alarm{
@@ -23229,6 +23236,13 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp343room)
+"dZp" = (
+/obj/effect/paint_stripe/red,
+/obj/structure/sign/directions/evac{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/lowertrams/escape)
 "eap" = (
 /obj/machinery/door/airlock/highsecurity{
 	id_tag = "foodenclosure";
@@ -32919,6 +32933,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/hallways)
+"oyI" = (
+/obj/structure/sign/directions/ez{
+	dir = 8;
+	pixel_y = 30
+	},
+/turf/simulated/floor/tiled/monotile/white,
+/area/site53/ulcz/hallways)
 "ozh" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -34654,6 +34675,16 @@
 /obj/item/device/camera_film,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp999)
+"qFv" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/obj/structure/sign/directions/evac{
+	pixel_x = 32;
+	pixel_y = -20
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/lowertrams/hub)
 "qHF" = (
 /obj/machinery/light{
 	dir = 1
@@ -38370,6 +38401,13 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/llcz/scp066)
+"vaw" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/catwalk_plated/white,
+/turf/simulated/open,
+/area/site53/ulcz/hallways)
 "vaB" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
@@ -41033,6 +41071,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
+"xTA" = (
+/obj/effect/paint_stripe/gray,
+/obj/structure/sign/directions/ez{
+	dir = 1
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/ulcz/hallways)
 "xUj" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -41116,7 +41161,8 @@
 /obj/structure/sign/directions/ez{
 	pixel_x = -30
 	},
-/turf/simulated/floor/tiled/monotile/white,
+/obj/effect/catwalk_plated/white,
+/turf/simulated/open,
 /area/site53/ulcz/hallways)
 "xZB" = (
 /obj/structure/bed/chair/office/comfy,
@@ -43512,7 +43558,7 @@ aKq
 aKq
 aKq
 aEt
-bdf
+xTA
 apj
 aGM
 aGM
@@ -46817,10 +46863,10 @@ azA
 azA
 azA
 aVS
-aGM
+aVS
 xZp
-aXf
-aGM
+vaw
+afQ
 aVS
 agK
 afG
@@ -47074,7 +47120,7 @@ azA
 azA
 azA
 aVS
-aGM
+afQ
 aGM
 aJt
 aJt
@@ -47331,7 +47377,7 @@ azA
 azA
 azA
 aVS
-aGM
+afQ
 aIo
 aGM
 aGM
@@ -47588,7 +47634,7 @@ azA
 azA
 azA
 aVS
-aGM
+afQ
 aIo
 aGM
 aGM
@@ -47845,7 +47891,7 @@ azA
 azA
 azA
 aVS
-aGM
+afQ
 aGM
 aGM
 aGM
@@ -48102,7 +48148,7 @@ azA
 azA
 azA
 aVS
-aGM
+afQ
 aGM
 pSE
 aGM
@@ -50168,15 +50214,15 @@ afQ
 aKW
 afQ
 aGM
-aVS
+vNf
 aHQ
 aLl
 aGM
 aGM
 aGM
 aEt
-aVS
-aWt
+vNf
+aGM
 aKq
 aLv
 aKq
@@ -50690,7 +50736,7 @@ aGM
 aTo
 aGq
 aVS
-aGM
+aWt
 aKq
 aKq
 aKq
@@ -50934,7 +50980,7 @@ aII
 aIv
 aeP
 aeP
-aGM
+kBS
 pSE
 aLv
 pSE
@@ -53530,7 +53576,7 @@ aGM
 aGM
 aEt
 aVS
-aGM
+oyI
 aKq
 aFe
 aKq
@@ -70969,7 +71015,7 @@ aOT
 aeg
 aeo
 uXT
-aac
+dgg
 aaf
 qdk
 aZu
@@ -72254,7 +72300,7 @@ aMo
 aio
 hCY
 aPF
-aac
+dgg
 aaf
 aPL
 aRF
@@ -74572,7 +74618,7 @@ agZ
 aER
 nTc
 arI
-aFb
+qFv
 aFb
 aFb
 aLE
@@ -75868,7 +75914,7 @@ aPK
 aPK
 aPK
 aPK
-aPK
+dZp
 aOQ
 aPM
 agE

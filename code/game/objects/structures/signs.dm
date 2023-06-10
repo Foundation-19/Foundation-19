@@ -392,6 +392,10 @@
 	name = "\improper Evacuation Wing"
 	icon_state = "direction_evac"
 
+/obj/structure/sign/directions/heli
+	name = "\improper Helicopter Pad"
+	icon_state = "direction_heli"
+
 /obj/structure/sign/directions/bridge
 	name = "\improper Bridge"
 	icon_state = "direction_bridge"

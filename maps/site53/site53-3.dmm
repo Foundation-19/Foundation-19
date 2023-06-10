@@ -723,7 +723,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "bG" = (
-/obj/structure/sign/directions/evac{
+/obj/structure/sign/directions/heli{
 	pixel_x = -32;
 	pixel_y = -20
 	},
@@ -2185,7 +2185,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/sign/directions/evac{
+/obj/structure/sign/directions/heli{
 	pixel_x = -32;
 	pixel_y = -20
 	},
@@ -5978,6 +5978,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
+"sB" = (
+/obj/structure/railing/mapped,
+/obj/structure/sign/directions/heli{
+	pixel_y = -11
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface)
 "sD" = (
 /obj/structure/railing/mapped,
 /obj/structure/window/reinforced{
@@ -6591,15 +6598,20 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/medical/morgue)
 "wV" = (
-/obj/structure/sign/directions/evac{
-	pixel_x = -32;
-	pixel_y = -20
-	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/structure/sign/directions/heli{
+	pixel_x = -32;
+	pixel_y = -20
+	},
+/obj/structure/sign/directions/heli{
+	pixel_x = -32;
+	pixel_y = -28;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface)
@@ -7506,7 +7518,8 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/sign/directions/evac{
 	pixel_x = 32;
-	pixel_y = -20
+	pixel_y = -20;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/site53/upper_surface/maincontrolroomstairs)
@@ -8458,12 +8471,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
 "Px" = (
-/obj/structure/sign/directions/evac{
-	dir = 4;
-	pixel_x = 32;
-	pixel_y = -20
+/obj/structure/sign/directions/heli{
+	pixel_x = -32;
+	pixel_y = -20;
+	dir = 4
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "PX" = (
 /obj/item/clothing/suit/storage/toggle/fr_jacket,
@@ -8682,11 +8695,13 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/chemistry)
 "RW" = (
-/obj/structure/sign/directions/evac{
-	dir = 4;
-	pixel_y = -20
+/obj/structure/railing/mapped,
+/obj/structure/sign/directions/heli{
+	pixel_x = -32;
+	pixel_y = -12;
+	dir = 4
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface)
 "RX" = (
 /obj/effect/paint_stripe/paleblue,
@@ -9231,6 +9246,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/mentalhealth/isolation)
+"Xg" = (
+/obj/structure/railing/mapped,
+/obj/structure/sign/directions/heli{
+	pixel_y = -11
+	},
+/turf/simulated/open,
+/area/site53/surface/surface)
 "Xp" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -9492,6 +9514,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/mentalhealth/isolation)
+"ZT" = (
+/obj/structure/sign/directions/heli{
+	pixel_x = -32;
+	pixel_y = -20;
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface)
 "ZU" = (
 /obj/machinery/door/airlock/medical{
 	name = "Ward 2"
@@ -40256,7 +40286,7 @@ sE
 sE
 oX
 nE
-RW
+nE
 bt
 rm
 dA
@@ -40513,7 +40543,7 @@ sE
 sE
 oX
 nE
-nE
+ZT
 Em
 rm
 dA
@@ -41283,7 +41313,7 @@ nE
 nE
 nE
 nE
-Px
+nE
 nE
 qR
 rm
@@ -41516,7 +41546,7 @@ cb
 sE
 sE
 sE
-oX
+Xg
 nE
 nE
 qH
@@ -41797,7 +41827,7 @@ jg
 jg
 Sf
 bO
-bO
+Px
 bm
 bm
 rm
@@ -42049,7 +42079,7 @@ bO
 bO
 bO
 bO
-iz
+RW
 jg
 jg
 ZR
@@ -44336,7 +44366,7 @@ jg
 jg
 jg
 bO
-iz
+sB
 nE
 nE
 nE
