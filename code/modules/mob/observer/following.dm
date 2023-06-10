@@ -9,7 +9,7 @@
 	if(!following)
 		return
 	UnregisterSignal(following, COMSIG_PARENT_QDELETING)
-	GLOB.moved_event.unregister(following, src)
+	UnregisterSignal(following, COMSIG_MOVED)
 	GLOB.dir_set_event.unregister(following, src)
 	following = null
 
@@ -17,7 +17,7 @@
 	stop_following()
 	following = a
 	RegisterSignal(a, COMSIG_PARENT_QDELETING, .proc/stop_following)
-	GLOB.moved_event.register(a, src, .proc/keep_following)
+	RegisterSignal(a, COMSIG_MOVED, .proc/keep_following)
 	GLOB.dir_set_event.register(a, src, /atom/proc/recursive_dir_set)
 	keep_following(new_loc = get_turf(following))
 

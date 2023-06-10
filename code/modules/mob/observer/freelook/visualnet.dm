@@ -118,7 +118,7 @@
 	if(source in sources)
 		return FALSE
 	sources += source
-	GLOB.moved_event.register(source, src, /datum/visualnet/proc/source_moved)
+	RegisterSignal(source, COMSIG_MOVED, /datum/visualnet/proc/source_moved)
 	RegisterSignal(source, COMSIG_PARENT_QDELETING, /datum/visualnet/proc/remove_source)
 	for_all_chunks_in_range(source, /datum/chunk/proc/add_source, list(source))
 	if(update_visibility)
@@ -129,7 +129,7 @@
 	if(!sources.Remove(source))
 		return FALSE
 
-	GLOB.moved_event.unregister(source, src, /datum/visualnet/proc/source_moved)
+	UnregisterSignal(source, COMSIG_MOVED)
 	UnregisterSignal(source, COMSIG_PARENT_QDELETING)
 	for_all_chunks_in_range(source, /datum/chunk/proc/remove_source, list(source))
 	if(update_visibility)

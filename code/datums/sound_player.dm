@@ -200,7 +200,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 
 	listeners += listener
 
-	GLOB.moved_event.register(listener, src, /datum/sound_token/proc/PrivUpdateListenerLoc)
+	RegisterSignal(listener, COMSIG_MOVED, /datum/sound_token/proc/PrivUpdateListenerLoc)
 	RegisterSignal(listener, COMSIG_PARENT_QDELETING, /datum/sound_token/proc/PrivRemoveListener)
 
 	PrivUpdateListenerLoc(listener, FALSE)
@@ -208,7 +208,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 /datum/sound_token/proc/PrivRemoveListener(atom/listener, sound/null_sound)
 	null_sound = null_sound || new(channel = sound.channel)
 	sound_to(listener, null_sound)
-	GLOB.moved_event.unregister(listener, src, /datum/sound_token/proc/PrivUpdateListenerLoc)
+	UnregisterSignal(listener, COMSIG_MOVED)
 	UnregisterSignal(listener, COMSIG_PARENT_QDELETING, /datum/sound_token/proc/PrivRemoveListener)
 	listeners -= listener
 

@@ -52,13 +52,13 @@
 		user.visible_message(SPAN_NOTICE("\The [user] holsters \the [holstered]."), SPAN_NOTICE("You holster \the [holstered]."))
 		atom_holder.SetName("occupied [initial(atom_holder.name)]")
 		atom_holder.update_icon()
-		GLOB.moved_event.register(holstered, src, .proc/check_holster)
+		RegisterSignal(holstered, COMSIG_MOVED, .proc/check_holster)
 		RegisterSignal(holstered, COMSIG_PARENT_QDELETING, .proc/clear_holster)
 		return 1
 	return 0
 
 /datum/extension/holster/proc/clear_holster()
-	GLOB.moved_event.unregister(holstered, src, .proc/check_holster)
+	UnregisterSignal(holstered, COMSIG_MOVED, .proc/check_holster)
 	UnregisterSignal(holstered, COMSIG_PARENT_QDELETING, .proc/clear_holster)
 	holstered = null
 	atom_holder.SetName(initial(atom_holder.name))
