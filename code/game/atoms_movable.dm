@@ -99,9 +99,9 @@
 	var/old_loc = loc
 	. = ..()
 	if (.)
-		// observ
+		// signal
 		if(!loc)
-			GLOB.moved_event.raise_event(src, old_loc, null)
+			SEND_SIGNAL(src, COMSIG_MOVED, old_loc, null)
 
 		// freelook
 		if(opacity)
@@ -116,8 +116,7 @@
 	var/old_loc = loc
 	. = ..()
 	if (.)
-		if(!loc)
-			GLOB.moved_event.raise_event(src, old_loc, null)
+		SEND_SIGNAL(src, COMSIG_MOVED, src, old_loc, loc)
 
 		// freelook
 		if(opacity)
@@ -179,7 +178,7 @@
 	set_dir(master.dir)
 
 	if(istype(master, /atom/movable))
-		GLOB.moved_event.register(master, src, follow_proc)
+		RegisterSignal(master, COMSIG_MOVED, follow_proc)
 		SetInitLoc()
 
 	RegisterSignal(master, COMSIG_PARENT_QDELETING, /datum/proc/qdel_self)
@@ -192,7 +191,7 @@
 
 /atom/movable/overlay/Destroy()
 	if(istype(master, /atom/movable))
-		GLOB.moved_event.unregister(master, src)
+		UnregisterSignal(master, COMSIG_MOVED)
 	UnregisterSignal(master, COMSIG_PARENT_QDELETING)
 	GLOB.dir_set_event.unregister(master, src)
 	master = null

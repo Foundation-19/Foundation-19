@@ -85,14 +85,14 @@
 	real_one = nreal_one
 	set_dir(real_one.dir)
 	appearance = real_one.appearance
-	GLOB.moved_event.register(real_one, src, /obj/effect/bluegoast/proc/mirror)
+	RegisterSignal(real_one, COMSIG_MOVED, /obj/effect/bluegoast/proc/mirror)
 	GLOB.dir_set_event.register(real_one, src, /obj/effect/bluegoast/proc/mirror_dir)
 	RegisterSignal(real_one, COMSIG_PARENT_QDELETING, /datum/proc/qdel_self)
 
 /obj/effect/bluegoast/Destroy()
 	UnregisterSignal(real_one, COMSIG_PARENT_QDELETING)
 	GLOB.dir_set_event.unregister(real_one, src)
-	GLOB.moved_event.unregister(real_one, src)
+	UnregisterSignal(real_one, COMSIG_MOVED)
 	real_one = null
 	. = ..()
 

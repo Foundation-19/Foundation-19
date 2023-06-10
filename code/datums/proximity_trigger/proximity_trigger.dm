@@ -75,7 +75,7 @@ var/const/PROXIMITY_EXCLUDE_HOLDER_TURF = 1 // When acquiring turfs to monitor, 
 
 /datum/proximity_trigger/proc/register_turfs()
 	if(ismovable(holder))
-		GLOB.moved_event.register(holder, src, /datum/proximity_trigger/proc/on_holder_moved)
+		RegisterSignal(holder, COMSIG_MOVED, /datum/proximity_trigger/proc/on_holder_moved)
 	GLOB.dir_set_event.register(holder, src, /datum/proximity_trigger/proc/register_turfs) // Changing direction might alter the relevant turfs
 
 	var/list/new_turfs = acquire_relevant_turfs()
@@ -92,7 +92,7 @@ var/const/PROXIMITY_EXCLUDE_HOLDER_TURF = 1 // When acquiring turfs to monitor, 
 
 /datum/proximity_trigger/proc/unregister_turfs()
 	if(ismovable(holder))
-		GLOB.moved_event.unregister(holder, src, /datum/proximity_trigger/proc/on_holder_moved)
+		UnregisterSignal(holder, COMSIG_MOVED, /datum/proximity_trigger/proc/on_holder_moved)
 	GLOB.dir_set_event.unregister(holder, src, /datum/proximity_trigger/proc/register_turfs)
 
 	for(var/t in turfs_in_range)

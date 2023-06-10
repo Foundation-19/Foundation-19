@@ -81,7 +81,7 @@
 
 /obj/item/stock_parts/power/terminal/proc/machine_moved(obj/machinery/machine, turf/old_loc, turf/new_loc)
 	if(!terminal)
-		GLOB.moved_event.unregister(machine, src, .proc/machine_moved)
+		UnregisterSignal(machine, COMSIG_MOVED)
 		return
 	if(istype(new_loc) && (terminal.loc == get_step(new_loc, terminal_dir)))
 		return     // This location is fine

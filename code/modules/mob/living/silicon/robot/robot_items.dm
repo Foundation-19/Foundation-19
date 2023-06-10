@@ -128,7 +128,7 @@
 	strobe_effect = L
 
 	// Make the light effect follow this party light object.
-	GLOB.moved_event.register(src, L, /atom/movable/proc/move_to_turf_or_null)
+	L.RegisterSignal(src, COMSIG_MOVED, /atom/movable/proc/move_to_turf_or_null)
 
 	update_icon()
 
@@ -136,7 +136,7 @@
 	activated = 0
 
 	// Cause the party light effect to stop following this object, and then delete it.
-	GLOB.moved_event.unregister(src, strobe_effect, /atom/movable/proc/move_to_turf_or_null)
+	strobe_effect.UnregisterSignal(src, COMSIG_MOVED)
 	QDEL_NULL(strobe_effect)
 
 	update_icon()
