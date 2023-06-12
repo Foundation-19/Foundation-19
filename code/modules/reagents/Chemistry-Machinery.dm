@@ -18,7 +18,7 @@
 	icon_state = "mixer0"
 	layer = BELOW_OBJ_LAYER
 	idle_power_usage = 20
-	clicksound = "button"
+	clicksound = SFX_MACHINE_BUTTON
 	clickvol = 20
 	core_skill = SKILL_CHEMISTRY
 	var/obj/item/reagent_containers/beaker = null

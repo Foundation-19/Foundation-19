@@ -14,7 +14,7 @@
 	volume = 60
 	w_class = ITEM_SIZE_SMALL
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
-	unacidable = TRUE
+	acid_resistance = -1
 
 
 	var/list/can_be_placed_into = list(
@@ -100,7 +100,7 @@
 				SPAN_DANGER("\The [src] shatters from the impact!"),
 				SPAN_DANGER("You hear the sound of glass shattering!")
 			)
-		playsound(src.loc, pick(GLOB.shatter_sound), 100)
+		playsound(src.loc, SFX_SHATTER, 100)
 		new /obj/item/material/shard(src.loc)
 		qdel(src)
 	else
@@ -195,7 +195,7 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = "5;10;15;25;30;60;180"
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
-	unacidable = FALSE
+	acid_resistance = 1
 
 /obj/item/reagent_containers/glass/beaker/noreact
 	name = "cryostasis beaker"
@@ -279,7 +279,7 @@
 	possible_transfer_amounts = "10;20;30;60;120;150;180"
 	volume = 180
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
-	unacidable = FALSE
+	acid_resistance = 1
 
 /obj/item/reagent_containers/glass/bucket/wood
 	name = "bucket"

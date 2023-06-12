@@ -260,7 +260,7 @@ GLOBAL_LIST_EMPTY(scp049_1s)
 
 	A.do_animate("spark")
 	do_after(10)
-	A.stat |= BROKEN
+	A.set_broken(TRUE)
 	var/check = A.open(1)
 	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
 

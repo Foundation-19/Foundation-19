@@ -42,8 +42,6 @@
 
 /// fired by a human when it lifts a weight
 #define COMSIG_HUMAN_LIFT_WEIGHT "human_lift_weight"
-/// fired by an atom/movable when it moves
-#define COMSIG_ATOM_MOVABLE_MOVED "atom_movable_moved"
 /// fired by a mob/living when it sends an email via the email client
 #define COMSIG_SENT_EMAIL "sent_email"
 /// fired by a human when it gives someone a hug
@@ -56,3 +54,16 @@
 #define COMSIG_REAGENT_INGESTED_ "reagent_ingested_"
 /// fired by something when it smokes something (as in a cigarette). should pass the object being smoked and the amount of reagents
 #define COMSIG_SMOKED_SMOKABLE "smoked_smokable"
+
+/*
+* Atom
+*/
+
+/// Called in `/atom/movable/Move` and `/atom/movable/proc/forceMove` (/atom/movable, /atom, /atom)
+#define COMSIG_MOVED "moved"
+
+/// Called on `/atom/Entered` (/atom, enterer, old_loc)
+#define COMSIG_ENTERED "entered"
+
+/// Called on `/atom/Exited` (/atom, exitee, new_loc)
+#define COMSIG_EXITED "exited"

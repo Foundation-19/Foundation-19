@@ -892,7 +892,7 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 				if(curr_page == 0) //We're at the start, get to the middle
 					src.screen=1
 			src.curr_page++
-			playsound(src.loc, "pageturn", 50, 1)
+			playsound(src.loc, SFX_PAGETURN, 50, 1)
 
 		else if(href_list["prev_page"])
 			if(curr_page == 0)
@@ -904,7 +904,7 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 				if(curr_page == src.pages+1) //we're at the end, let's go back to the middle.
 					src.screen = 1
 			src.curr_page--
-			playsound(src.loc, "pageturn", 50, 1)
+			playsound(src.loc, SFX_PAGETURN, 50, 1)
 
 		if (istype(src.loc, /mob))
 			src.attack_self(src.loc)

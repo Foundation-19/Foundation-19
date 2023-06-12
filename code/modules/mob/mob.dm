@@ -899,7 +899,7 @@
 /mob/proc/embedded_needs_process()
 	return (embedded.len > 0)
 
-/mob/proc/remove_implant(obj/item/implant, surgical_removal = FALSE)
+/mob/proc/remove_implant(atom/movable/implant, surgical_removal = FALSE)
 	if(!LAZYLEN(get_visible_implants(0))) //Yanking out last object - removing verb.
 		remove_verb(src, /mob/proc/yank_out_object)
 	for(var/obj/item/O in pinned)
@@ -907,19 +907,22 @@
 			pinned -= O
 		if(!pinned.len)
 			anchored = FALSE
-	implant.dropInto(loc)
-	implant.add_blood(src)
-	implant.update_icon()
-	if(istype(implant,/obj/item/implant))
-		var/obj/item/implant/imp = implant
-		imp.removed()
-	. = TRUE
+	if(isitem(implant))
+		var/obj/item/I = implant
+		I.dropInto(loc)
+		I.add_blood(src)
+		I.update_icon()
+	else
+		implant.forceMove(loc) // Just move under the mob
+	//Handle special effects of certain implants being removed
+	implant.ImplantRemoval(src)
+	return TRUE
 
-/mob/living/silicon/robot/remove_implant(obj/item/implant, surgical_removal = FALSE)
+/mob/living/silicon/robot/remove_implant(atom/movable/implant, surgical_removal = FALSE)
 	embedded -= implant
 	adjustBruteLoss(5)
 	adjustFireLoss(10)
-	. = ..()
+	return ..()
 
 /mob/living/carbon/human/remove_implant(obj/item/implant, surgical_removal = FALSE, obj/item/organ/external/affected)
 	if(!affected) //Grab the organ holding the implant.
@@ -937,7 +940,7 @@
 			affected.take_external_damage((implant.w_class * 3), 0, DAM_EDGE, "Embedded object extraction")
 			if(!BP_IS_ROBOTIC(affected) && prob(implant.w_class * 5) && affected.sever_artery()) //I'M SO ANEMIC I COULD JUST -DIE-.
 				custom_pain("Something tears wetly in your [affected.name] as [implant] is pulled free!", 50, affecting = affected)
-	. = ..()
+	return ..()
 
 /mob/proc/yank_out_object()
 	set category = "Object"

@@ -21,7 +21,7 @@
 						step_away(src,M,15)
 						sleep(3)
 						step_away(src,M,15)
-				playsound(loc, "punch", 25, 1, -1)
+				playsound(loc, SFX_PUNCH, 25, 1, -1)
 				for(var/mob/O in viewers(src, null))
 					if ((O.client && O.can_see()))
 						O.show_message(SPAN_DANGER("\The [M] has punched \the [src]!"), 1)
