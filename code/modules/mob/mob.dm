@@ -1253,4 +1253,8 @@
 	set name = "Open Goals Panel"
 	set desc = "Shows your personal goals, antagonist objectives, and so on."
 
-	SEND_SIGNAL(src, COMSIG_OPENING_GOAL_TGUI)
+	var/datum/component/goalcontainer = GetComponent(/datum/component/goalcontainer)	// yes yes i know we're not supposed to use GetComponent, but does this really need a signal?
+	if(goalcontainer)
+		goalcontainer.tgui_interact(src)
+	else
+		to_chat(src, SPAN_NOTICE("You have no goals in life!"))

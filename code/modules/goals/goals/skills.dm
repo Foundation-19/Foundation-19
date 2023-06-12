@@ -52,7 +52,7 @@
 	success_description = "Walked for [step_goal] steps."
 	. = ..()
 	var/datum/mind/M = container.parent
-	RegisterSignal(M.current, COMSIG_ATOM_MOVABLE_MOVED, .proc/handle_progress)
+	RegisterSignal(M.current, COMSIG_MOVED, .proc/handle_progress)
 
 /datum/goal/skills/walk/proc/handle_progress()
 	steps++

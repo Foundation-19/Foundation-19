@@ -37,8 +37,6 @@
 #define COMSIG_GOAL_SUCCEEDED "goal_succeeded"
 /// fired when a goal is failed
 #define COMSIG_GOAL_FAILED "goal_failed"
-/// fired by a human to access goal panel
-#define COMSIG_OPENING_GOAL_TGUI "opening_goal_tgui"
 
 /// fired by a human when it lifts a weight
 #define COMSIG_HUMAN_LIFT_WEIGHT "human_lift_weight"
