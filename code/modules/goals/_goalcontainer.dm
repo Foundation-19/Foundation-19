@@ -8,11 +8,9 @@
 
 /datum/component/goalcontainer/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_MIND_POST_INIT, .proc/recalculate_goals)
-	var/datum/mind/M = parent
 
 /datum/component/goalcontainer/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_MIND_POST_INIT)
-	var/datum/mind/M = parent
 
 /datum/component/goalcontainer/Destroy()
 	return ..()
