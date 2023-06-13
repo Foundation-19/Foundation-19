@@ -11543,9 +11543,10 @@
 	dir = 1
 	},
 /obj/structure/table/rack,
-/obj/item/gun/energy/ionrifle,
 /obj/effect/floor_decal/industrial/hatch/red,
-/obj/item/gun/energy/ionrifle,
+/obj/item/ammo_magazine/box/a57/rubber,
+/obj/item/ammo_magazine/box/a57/rubber,
+/obj/item/ammo_magazine/box/a57/rubber,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "aEz" = (
@@ -20230,8 +20231,6 @@
 /area/site53/uhcz/securitypost)
 "biA" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/revolver/rhino,
-/obj/item/gun/projectile/revolver/rhino,
 /obj/effect/floor_decal/corner/black/full,
 /obj/item/ammo_magazine/box/a357,
 /obj/item/ammo_magazine/box/a357,
@@ -23384,9 +23383,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/securitypost)
 "eiL" = (
-/obj/structure/table/rack,
-/obj/item/gun/energy/plasmastun,
 /obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/vending/weaponry/lcz,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
 "eiU" = (
@@ -24542,9 +24540,6 @@
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/item/ammo_magazine/scp/p90_mag/rubber,
 /obj/effect/floor_decal/industrial/hatch/red,
-/obj/item/ammo_magazine/box/a57/rubber,
-/obj/item/ammo_magazine/box/a57/rubber,
-/obj/item/ammo_magazine/box/a57/rubber,
 /obj/item/ammo_magazine/box/a57/rubber,
 /obj/item/ammo_magazine/box/a57/rubber,
 /obj/item/ammo_magazine/box/a57/rubber,
@@ -27525,6 +27520,25 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled,
 /area/site53/uhcz/scp247observation)
+"iFg" = (
+/obj/structure/table/rack,
+/obj/effect/floor_decal/corner/black/full,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag/ap,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/scp/p90_mag,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/obj/item/ammo_magazine/box/a57,
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "iGp" = (
 /obj/machinery/light{
 	dir = 8
@@ -27704,12 +27718,8 @@
 /obj/item/ammo_magazine/scp/mk9,
 /obj/item/ammo_magazine/scp/mk9,
 /obj/item/ammo_magazine/scp/mk9,
-/obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
 /obj/item/ammo_magazine/scp/mk9,
 /obj/item/ammo_magazine/scp/mk9,
-/obj/item/gun/projectile/pistol/mk9,
 /obj/item/ammo_magazine/scp/mk9,
 /obj/item/ammo_magazine/scp/mk9,
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -30544,8 +30554,6 @@
 /obj/item/ammo_magazine/box/a357,
 /obj/item/ammo_magazine/box/a357,
 /obj/item/ammo_magazine/box/a357,
-/obj/item/gun/projectile/revolver/rhino,
-/obj/item/gun/projectile/revolver/rhino,
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/armory)
@@ -31096,6 +31104,11 @@
 /obj/structure/table/rack,
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/item/paper{
+	info = "Weapons have been moved to the armory, use the new weapon dispenser device.";
+	name = "notice from council";
+	text = null
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
@@ -34350,22 +34363,11 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
 "qmG" = (
-/obj/structure/table/rack,
 /obj/effect/floor_decal/corner/black/full,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
+/obj/structure/table/rack,
 /obj/item/ammo_magazine/box/a57,
 /obj/item/ammo_magazine/box/a57,
 /obj/item/ammo_magazine/box/a57,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag/ap,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
-/obj/item/ammo_magazine/scp/p90_mag,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "qnc" = (
@@ -35467,8 +35469,6 @@
 /area/site53/science/aiccore)
 "rCr" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/revolver/mateba,
-/obj/item/gun/projectile/revolver/mateba,
 /obj/effect/floor_decal/corner/black/full,
 /obj/item/ammo_magazine/box/a50,
 /obj/item/ammo_magazine/box/a50,
@@ -37401,17 +37401,6 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/grass,
 /area/site53/science/aicobservation)
-"tPi" = (
-/obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/item/gun/projectile/automatic/scp/p90,
-/obj/effect/floor_decal/industrial/hatch/red,
-/turf/simulated/floor/tiled/dark,
-/area/site53/llcz/dclass/armory)
 "tPQ" = (
 /obj/machinery/door/airlock/civilian{
 	name = "Restroom"
@@ -39860,8 +39849,6 @@
 /obj/item/ammo_magazine/scp/mk9,
 /obj/item/ammo_magazine/scp/mk9,
 /obj/item/ammo_magazine/scp/mk9,
-/obj/item/gun/projectile/pistol/mk9,
-/obj/item/gun/projectile/pistol/mk9,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "wFy" = (
@@ -40288,6 +40275,10 @@
 /obj/item/clothing/ears/earmuffs,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
+"xaN" = (
+/obj/effect/bmode/help,
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "xbp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -40934,6 +40925,11 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/scp2427_3)
+"xNS" = (
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/vending/weaponry/lcz/energy,
+/turf/simulated/floor/tiled/dark,
+/area/site53/llcz/dclass/armory)
 "xOp" = (
 /obj/item/flame/lighter/zippo,
 /turf/simulated/floor,
@@ -58942,7 +58938,7 @@ xTl
 uJG
 azA
 aMC
-eiL
+xNS
 aVL
 aXh
 aXh
@@ -59462,7 +59458,7 @@ qBE
 aXh
 aVM
 xSs
-tPi
+eiL
 aMC
 azA
 azA
@@ -84631,7 +84627,7 @@ lHu
 rrU
 hHF
 rrU
-rrU
+xaN
 bjn
 rrU
 rrU
@@ -86175,11 +86171,11 @@ azA
 azA
 azA
 gID
-qmG
+iFg
 aXP
 wZn
-rrU
-rrU
+xaN
+xaN
 rCr
 biA
 fDv

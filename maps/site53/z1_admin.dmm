@@ -2174,10 +2174,10 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/chaos)
 "le" = (
-/obj/item/gun/projectile/automatic/scp/rpk,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
+/obj/item/ammo_magazine/scp/svd,
 /obj/structure/table/rack/dark,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
@@ -2586,7 +2586,6 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/centcom/chaos)
 "ny" = (
-/obj/item/gun/projectile/automatic/scp/rpk,
 /obj/item/ammo_magazine/scp/ak,
 /obj/item/ammo_magazine/scp/ak,
 /obj/item/ammo_magazine/scp/ak,
@@ -2595,12 +2594,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "nz" = (
-/obj/item/gun/projectile/automatic/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/item/ammo_magazine/scp/svd,
-/obj/structure/table/rack/dark,
+/obj/machinery/vending/weaponry/chaos/specialized,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "nA" = (
@@ -2673,7 +2667,6 @@
 /obj/item/storage/belt/holster/security/tactical,
 /obj/item/clothing/accessory/storage/black_vest,
 /obj/item/clothing/suit/storage/vest/tactical,
-/obj/item/gun/projectile/automatic/scp/ak74,
 /obj/item/clothing/head/helmet/nt{
 	name = "security helmet"
 	},
@@ -2682,7 +2675,6 @@
 /obj/item/ammo_magazine/scp/ak,
 /obj/item/clothing/mask/balaclava/tactical,
 /obj/item/storage/backpack/rucksack/tan,
-/obj/item/gun/projectile/pistol,
 /obj/structure/closet,
 /obj/machinery/light,
 /obj/item/clothing/glasses/night,
@@ -2897,21 +2889,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/centcom/chaos)
 "ox" = (
-/obj/item/storage/belt/holster/security/tactical,
-/obj/item/clothing/accessory/storage/black_vest,
-/obj/item/clothing/suit/storage/vest/tactical,
-/obj/item/gun/projectile/automatic/scp/ak74,
-/obj/item/clothing/head/helmet/nt{
-	name = "security helmet"
-	},
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/ammo_magazine/scp/ak,
-/obj/item/clothing/mask/balaclava/tactical,
-/obj/item/storage/backpack/rucksack/tan,
-/obj/item/gun/projectile/pistol,
-/obj/structure/closet,
-/obj/item/clothing/glasses/night,
+/obj/machinery/vending/weaponry/chaos,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/chaos)
 "oy" = (
@@ -7881,6 +7859,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/vending/weaponry/goc,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/goc)
 "MW" = (
@@ -9354,6 +9333,10 @@
 	},
 /turf/unsimulated/floor/techfloor,
 /area/centcom)
+"YZ" = (
+/obj/machinery/vending/weaponry/goc,
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/goc)
 "Ze" = (
 /obj/structure/table/reinforced,
 /turf/unsimulated/floor/techfloor,
@@ -9393,6 +9376,22 @@
 	icon_state = "greygrass"
 	},
 /area/centcom)
+"ZI" = (
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/item/clothing/suit/storage/vest/tactical,
+/obj/item/clothing/head/helmet/nt{
+	name = "security helmet"
+	},
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/ammo_magazine/scp/ak,
+/obj/item/clothing/mask/balaclava/tactical,
+/obj/item/storage/backpack/rucksack/tan,
+/obj/structure/closet,
+/obj/item/clothing/glasses/night,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/centcom/chaos)
 "ZO" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Holding Cell";
@@ -26227,7 +26226,7 @@ nd
 nd
 nd
 nd
-ox
+ZI
 di
 cw
 cw
@@ -26631,7 +26630,7 @@ nd
 nd
 nd
 nd
-ox
+ZI
 di
 cw
 cw
@@ -27439,7 +27438,7 @@ nd
 nd
 nd
 nd
-ox
+ZI
 di
 cw
 cw
@@ -27843,7 +27842,7 @@ nd
 nd
 nd
 nd
-ox
+ZI
 di
 cw
 cw
@@ -28044,7 +28043,7 @@ nd
 nd
 nd
 nd
-le
+nz
 di
 di
 cw
@@ -28054,11 +28053,11 @@ cw
 as
 eL
 lI
-kT
+YZ
 kT
 kL
 kT
-kT
+YZ
 lI
 aF
 oz
@@ -28256,11 +28255,11 @@ cw
 as
 eL
 lI
-kT
+YZ
 kT
 lK
 kT
-kT
+YZ
 lI
 sS
 oz
@@ -28650,7 +28649,7 @@ nW
 nW
 nd
 nd
-nz
+le
 di
 cw
 cw
