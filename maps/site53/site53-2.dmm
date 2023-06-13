@@ -20968,6 +20968,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
+"bsg" = (
+/obj/machinery/vending/weaponry/hcz/sergeant,
+/turf/simulated/floor/tiled/dark,
+/area/site53/lhcz/hczguardgear)
 "bsC" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techmaint,
@@ -40276,7 +40280,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp513)
 "xaN" = (
-/obj/effect/bmode/help,
+/obj/machinery/vending/weaponry/hcz,
 /turf/simulated/floor/tiled/dark,
 /area/site53/lhcz/hczguardgear)
 "xbp" = (
@@ -84627,7 +84631,7 @@ lHu
 rrU
 hHF
 rrU
-xaN
+bsg
 bjn
 rrU
 rrU

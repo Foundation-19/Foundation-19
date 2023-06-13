@@ -58,6 +58,8 @@
 		/obj/item/gun/energy/ionrifle = 1
 	)
 
+// ## HCZ MACHINES ## //
+
 /obj/machinery/vending/weaponry/hcz
 	name = "\improper HContain AutoEquipment Device"
 	desc = "An automated gun storage device that can dispense guns on demand, this one was designed for HCZ personnel."
@@ -77,3 +79,18 @@
 		/obj/item/gun/projectile/automatic/scp/m4a1 = 2,
 		/obj/item/gun/projectile/automatic/scp/m16 = 2,
 	)
+
+// ## SINGULAR EZ MACHINE ##
+
+/obj/machinery/vending/weaponry/ez
+	name = "\improper EntranZ AutoEquip Device"
+	desc = "An automated gun storage device that can dispense guns on demand, this one was designed for HCZ Sergeants."
+	icon_state = "ez_weaponry"
+	products = list(
+		/obj/item/gun/projectile/automatic/scp/p90 = 8,
+		/obj/item/gun/projectile/automatic/scp/m16 = 2,
+		/obj/item/gun/projectile/revolver/rhino = 1,
+		/obj/item/gun/projectile/pistol/usp45 = 3,
+		/obj/item/gun/projectile/pistol/mk9 = 3
+	)
+
