@@ -943,7 +943,7 @@ default behaviour is:
 /mob/living/proc/get_exp_list(minutes)
 	var/list/exp_list = list()
 
-	if(mind && mind.special_role && !(mind.datum_flags & DF_VAR_EDITED))
+	if(mind && mind.special_role)
 		exp_list[mind.special_role] = minutes
 
 	return exp_list

@@ -1819,7 +1819,10 @@
 /mob/living/carbon/human/get_exp_list(minutes)
 	. = ..()
 
-	if(mind.assigned_job in SSjobs.primary_job_datums)
+	var/list/valid_jobs = SSjobs.job_lists_by_map_name[GLOB.using_map.full_name]
+	valid_jobs = valid_jobs["jobs"]
+
+	if(mind.assigned_job in valid_jobs)
 		.[mind.assigned_job.title] = minutes
 
 /mob/living/carbon/human/proc/dream()

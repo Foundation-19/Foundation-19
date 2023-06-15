@@ -1093,3 +1093,10 @@
 	var/obj/item/robot_parts/robot_suit/C = new dismantle_type(loc)
 	C.dismantled_from(src)
 	qdel(src)
+
+/mob/living/silicon/robot/get_exp_list(minutes)
+	. = ..()
+
+	var/datum/job/cyborg/cyborg_job_ref = SSjobs.get_by_path(/datum/job/cyborg)
+
+	.[cyborg_job_ref.title] = minutes

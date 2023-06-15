@@ -781,5 +781,13 @@ var/list/ai_verbs_default = list(
 
 	open_subsystem(/datum/nano_module/records)
 
+/mob/living/silicon/ai/get_exp_list(minutes)
+	. = ..()
+
+	var/datum/job/ai/ai_job_ref = SSjobs.get_by_path(/datum/job/ai)
+
+	.[ai_job_ref.title] = minutes
+
+
 #undef AI_CHECK_WIRELESS
 #undef AI_CHECK_RADIO
