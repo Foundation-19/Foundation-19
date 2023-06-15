@@ -1816,6 +1816,12 @@
 
 				new /obj/effect/temp_visual/bloodsplatter(loc, hit_dir, species.blood_color)
 
+/mob/living/carbon/human/get_exp_list(minutes)
+	. = ..()
+
+	if(mind.assigned_job in SSjobs.primary_job_datums)
+		.[mind.assigned_job.title] = minutes
+
 /mob/living/carbon/human/proc/dream()
 	dream_timer = null
 	if (!sleeping)
