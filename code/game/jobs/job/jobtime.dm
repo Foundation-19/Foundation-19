@@ -15,14 +15,14 @@
 /datum/jobtime/proc/get_jobtime_by_job(datum/job/tjob)
 	return jobtime_list[tjob.title]
 
-/datum/jobtime/proc/get_jobtime_by_title(var/job_title)
+/datum/jobtime/proc/get_jobtime_by_title(job_title)
 	return jobtime_list[job_title]
 
-/datum/jobtime/proc/get_jobtime_by_path(var/job_path)
+/datum/jobtime/proc/get_jobtime_by_path(job_path)
 	var/datum/job/current_job = SSjobs.get_by_path(job_path)
 	return jobtime_list[current_job.title]
 
-/datum/jobtime/proc/get_jobtime_by_category(var/category)
+/datum/jobtime/proc/get_jobtime_by_category(category)
 	return FALSE
 
 /mob/verb/get_playtime_current()
