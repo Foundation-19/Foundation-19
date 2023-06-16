@@ -1,5 +1,0 @@
-author: EgorDinamit
-delete-after: true
-changes:
-  - rscadd: Added floatfly caste to the infestation. When fighting, it can "fly upwards",
-      temporarily becoming non-dense, making it more difficult to hit in ranged.
