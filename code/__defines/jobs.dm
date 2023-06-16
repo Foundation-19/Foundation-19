@@ -3,7 +3,8 @@
 #define RETURN_TO_LOBBY 2
 
 //jobtime tracking
-#define EXP_TYPE_LIVING "Living"
+
+//Departments
 #define EXP_TYPE_CREW "Crew"
 #define EXP_TYPE_COMMAND "Command"
 #define EXP_TYPE_ENGINEERING "Engineering"
@@ -13,7 +14,18 @@
 #define EXP_TYPE_SECURITY "Security"
 #define EXP_TYPE_SILICON "Silicon"
 #define EXP_TYPE_SERVICE "Service"
-#define EXP_TYPE_ANTAG "Antag"
-#define EXP_TYPE_SPECIAL "Special"
+
+//Categories
+#define EXP_TYPE_LIVING "Living"
 #define EXP_TYPE_GHOST "Ghost"
+#define EXP_TYPE_SPECIAL "Special"
+#define EXP_TYPE_ANTAG "Antag"
 #define EXP_TYPE_ADMIN "Admin"
+#define EXP_TYPE_SCP "SCP"
+
+//Sub Categories
+#define EXP_TYPE_LCZ "LCZ"
+#define EXP_TYPE_ECZ "ECZ"
+#define EXP_TYPE_HCZ "HCZ"
+#define EXP_TYPE_BUR "Bureaucrat"
+

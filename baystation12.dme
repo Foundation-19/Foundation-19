@@ -691,6 +691,7 @@
 #include "code\game\jobs\job\command.dm"
 #include "code\game\jobs\job\engineering.dm"
 #include "code\game\jobs\job\job.dm"
+#include "code\game\jobs\job\jobtime.dm"
 #include "code\game\jobs\job\medical.dm"
 #include "code\game\jobs\job\misc.dm"
 #include "code\game\jobs\job\research.dm"

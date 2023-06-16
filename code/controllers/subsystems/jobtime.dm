@@ -31,6 +31,8 @@ SUBSYSTEM_DEF(jobtime)
 		if(L.is_afk())
 			continue
 		L.update_jobtime_list(mins)
+		if(!L.jobtime)
+			L.jobtime = new /datum/jobtime(L)
 
 //Client Procs
 
@@ -75,3 +77,29 @@ SUBSYSTEM_DEF(jobtime)
 			"minutes" = jvalue)))
 		//prefs.exp[jtype] += jvalue
 	addtimer(CALLBACK(SSjobtime, /datum/controller/subsystem/jobtime/proc/update_jobtime_db),20,TIMER_OVERRIDE|TIMER_UNIQUE)
+
+/client/proc/get_jobtime_list_db()
+	//if(!CONFIG_GET(flag/use_exp_tracking))
+		//return -1
+	if(!SSdbcore.Connect())
+		return -1
+	var/datum/db_query/exp_read = SSdbcore.NewQuery(
+		"SELECT job, minutes FROM [format_table_name("role_time")] WHERE ckey = :ckey",
+		list("ckey" = ckey)
+	)
+	if(!exp_read.Execute(async = TRUE))
+		qdel(exp_read)
+		return -1
+	var/list/play_records = list()
+	while(exp_read.NextRow())
+		play_records[exp_read.item[1]] = text2num(exp_read.item[2])
+	qdel(exp_read)
+
+	var/list/valid_jobs = SSjobs.job_lists_by_map_name[GLOB.using_map.full_name]
+	valid_jobs = valid_jobs["jobs"]
+
+	for(var/rtype in valid_jobs)
+		if(!play_records[rtype])
+			play_records[rtype] = 0
+
+	return play_records

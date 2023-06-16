@@ -946,4 +946,7 @@ default behaviour is:
 	if(mind && mind.special_role)
 		exp_list[mind.special_role] = minutes
 
+	if(src.isSCP())
+		exp_list[EXP_TYPE_SCP] = minutes
+
 	return exp_list
