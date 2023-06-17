@@ -20,15 +20,12 @@
 /datum/jobtime/proc/get_jobtime_by_job(datum/job/tjob)
 	return jobtime_list[tjob.title]
 
-/datum/jobtime/proc/get_jobtime_by_title(job_title)
+/datum/jobtime/proc/get_jobtime(job_title) //use title or category for this ONLY
 	return jobtime_list[job_title]
 
 /datum/jobtime/proc/get_jobtime_by_path(job_path)
 	var/datum/job/current_job = SSjobs.get_by_path(job_path)
 	return jobtime_list[current_job.title]
-
-/datum/jobtime/proc/get_jobtime_by_category(category)
-	return FALSE
 
 /mob/verb/get_playtime_current()
 	set name = "Get Playtime"
@@ -37,5 +34,5 @@
 	var/datum/jobtime/jb = src.client.jobtime
 	jb.update_jobtime()
 	for(var/job in jb.jobtime_list)
-		to_chat(src, "[job] : [jb.get_jobtime_by_title(job)]")
+		to_chat(src, "[job] : [jb.get_jobtime(job)]")
 

@@ -71,7 +71,7 @@
 	title = "LCZ Zone Commander"
 	department = "Light Containment Personnel"
 	selection_color = "#8e2929"
-	department_flag = SEC
+	department_flag = SEC | LCZ
 	total_positions = 1
 	spawn_positions = 1
 	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You also carry the responsibility of guarding the D-Cells. You should not leave your zone under usual SoP</b></big>"
@@ -120,7 +120,7 @@
 	title = "HCZ Zone Commander"
 	department = "Heavy Containment Personnel"
 	selection_color = "#8e2929"
-	department_flag = SEC
+	department_flag = SEC | HCZ
 	total_positions = 1
 	spawn_positions = 1
 	//duties = "<big><b>As the Zone Commander, you're the right hand of the Guard Commander, and in charge of a specific zone. In this zone, you have full command of the guards stationed there in every situation, except Code Red or higher. You should not leave your zone under usual SoP</b></big>"
@@ -170,7 +170,7 @@
 	title = "EZ Supervisor"
 	department = "Entrance Personnel"
 	selection_color = "#8e2929"
-	department_flag = SEC
+	department_flag = SEC | EZ
 	total_positions = 1
 	spawn_positions = 1
 	//duties = "<big><b>As the Entrance Zone Senior Agent, you and your team work independently from the guard commander and regular security structure. In this zone, you are tasked with the protection of administrative personnel, together with the agents stationed here. You should not leave your zone under usual SoP, or allow administration to go without protection detail into the facility.</b></big>"
@@ -232,7 +232,7 @@
 	title = "LCZ Sergeant"
 	department = "Light Containment Personnel"
 	selection_color = "#601c1c"
-	department_flag = SEC
+	department_flag = SEC | LCZ
 	total_positions = 2
 	spawn_positions = 2
 	balance_limited = TRUE
@@ -286,7 +286,7 @@
 	title = "HCZ Sergeant"
 	department = "Heavy Containment Personnel"
 	selection_color = "#601c1c"
-	department_flag = SEC
+	department_flag = SEC | HCZ
 	total_positions = 2
 	spawn_positions = 2
 	//duties = "<big><b>As the Guard you have more access than a Junior Guard, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
@@ -336,7 +336,7 @@
 	title = "EZ Senior Agent"
 	department = "Entrance Zone Personnel"
 	selection_color = "#601c1c"
-	department_flag = SEC
+	department_flag = SEC | ECZ
 	total_positions = 2
 	spawn_positions = 2
 	//duties = "<big><b>As the Agent you have more access than a Junior Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
@@ -394,7 +394,7 @@
 	title = "LCZ Guard"
 	department = "Light Containment Personnel"
 	selection_color = "#601c1c"
-	department_flag = SEC
+	department_flag = SEC | LCZ
 	total_positions = 8
 	spawn_positions = 8
 	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
@@ -446,7 +446,7 @@
 	title = "HCZ Guard"
 	department = "Heavy Containment Personnel"
 	selection_color = "#601c1c"
-	department_flag = SEC
+	department_flag = SEC | HCZ
 	total_positions = 6
 	spawn_positions = 6
 	//duties = "<big><b>As the Junior Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
@@ -496,7 +496,7 @@
 	title = "EZ Agent"
 	department = "Entrance Personnel"
 	selection_color = "#601c1c"
-	department_flag = SEC
+	department_flag = SEC | ECZ
 	total_positions = 6
 	spawn_positions = 6
 	//duties = "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"

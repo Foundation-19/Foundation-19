@@ -25,7 +25,7 @@
 
 //Sub Categories
 #define EXP_TYPE_LCZ "LCZ"
-#define EXP_TYPE_ECZ "ECZ"
+#define EXP_TYPE_ECZ "EZ"
 #define EXP_TYPE_HCZ "HCZ"
 #define EXP_TYPE_BUR "Bureaucrat"
 #define EXP_TYPE_REP "Representative"
