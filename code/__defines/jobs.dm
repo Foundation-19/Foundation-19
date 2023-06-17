@@ -5,7 +5,7 @@
 //jobtime tracking
 
 //Departments
-#define EXP_TYPE_CREW "Crew"
+#define EXP_TYPE_CREW "Staff"
 #define EXP_TYPE_COMMAND "Command"
 #define EXP_TYPE_ENGINEERING "Engineering"
 #define EXP_TYPE_MEDICAL "Medical"
