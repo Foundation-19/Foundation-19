@@ -158,7 +158,7 @@
 /datum/job/janitor
 	title = "Janitor"
 	department = "Civilian"
-	department_flag = CIV|SVR
+	department_flag = CIV|SRV
 	selection_color = "#515151"
 	total_positions = 3
 	spawn_positions = 3
