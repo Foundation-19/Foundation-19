@@ -170,7 +170,7 @@
 	title = "EZ Supervisor"
 	department = "Entrance Personnel"
 	selection_color = "#8e2929"
-	department_flag = SEC | EZ
+	department_flag = SEC | ECZ
 	total_positions = 1
 	spawn_positions = 1
 	//duties = "<big><b>As the Entrance Zone Senior Agent, you and your team work independently from the guard commander and regular security structure. In this zone, you are tasked with the protection of administrative personnel, together with the agents stationed here. You should not leave your zone under usual SoP, or allow administration to go without protection detail into the facility.</b></big>"
