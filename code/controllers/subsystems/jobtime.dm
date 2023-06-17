@@ -59,8 +59,8 @@ SUBSYSTEM_DEF(jobtime)
 	else
 		return
 
-	//if(holder && !holder.deadmined && holder.check_for_rights(R_BAN))
-		//play_records[EXP_TYPE_ADMIN] = minutes
+	if(check_rights(R_ADMIN, FALSE, src))
+		play_records[EXP_TYPE_ADMIN] = minutes
 
 	for(var/jtype in play_records)
 		var/jvalue = play_records[jtype]

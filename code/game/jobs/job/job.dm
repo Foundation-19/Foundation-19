@@ -58,6 +58,7 @@
 
 	var/balance_limited = FALSE //is this job limited for balance purposes, compared to D-class? Intended for LCZ balance
 
+	var/list/requirements //the required playtime in other jobs or categories to play the role
 
 /datum/job/New()
 
@@ -547,3 +548,15 @@
 		exp_list.Add(EXP_TYPE_REP)
 
 	return exp_list
+
+/datum/job/proc/meets_req(client/tclient)
+	if(!requirements || check_rights(R_ADMIN, FALSE, tclient))
+		return TRUE
+
+	var/datum/jobtime/jt = tclient.jobtime
+
+	for(var/requirement in requirements)
+		if(jt.get_jobtime(requirement) < requirements[requirement])
+			return FALSE
+
+	return TRUE
