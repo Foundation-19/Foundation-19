@@ -555,6 +555,9 @@
 
 	var/datum/jobtime/jt = tclient.jobtime
 
+	if(!jt) //guests wont ever meet req because their time isint tracked
+		return FALSE
+
 	for(var/requirement in requirements)
 		if(jt.get_jobtime(requirement) < requirements[requirement])
 			return FALSE
@@ -569,7 +572,10 @@
 	var/list/required_time_remaining = list()
 
 	for(var/requirement in requirements)
-		required_time_remaining[requirement] = requirements[requirement] - jt.get_jobtime(requirement)
+		if(jt)
+			required_time_remaining[requirement] = requirements[requirement] - jt.get_jobtime(requirement)
+		else
+			required_time_remaining[requirement] = requirements[requirement]
 
 		if(required_time_remaining[requirement] <= 0)
 			required_time_remaining[requirement] = null
