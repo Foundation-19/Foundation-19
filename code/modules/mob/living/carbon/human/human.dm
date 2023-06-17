@@ -1823,7 +1823,7 @@
 	valid_jobs = valid_jobs["jobs"]
 
 	if(mind.role_alt_title && istype(mind.assigned_job, /datum/job/goirep)) //We track alt titles for goi rep as they are different reps/jobs and not just renames
-		.[mind.role_alt_title.title] = minutes
+		.[mind.role_alt_title] = minutes
 	else if(mind.assigned_job in valid_jobs)
 		.[mind.assigned_job.title] = minutes
 
