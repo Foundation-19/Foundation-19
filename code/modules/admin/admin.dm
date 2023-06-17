@@ -596,6 +596,25 @@ var/global/floorIsLava = 0
 	log_and_message_staff("toggled deadchat.")
 	SSstatistics.add_field_details("admin_verb","TDSAY") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc
 
+/datum/admins/proc/toggletimelocks()
+	set category = "Server"
+	set desc="Globally Toggles Timelocks for Jobs"
+	set name="Toggle Timelocks"
+
+	if(!check_rights(R_ADMIN))
+		return
+
+	config.use_jobtime_tracking = !(config.use_jobtime_tracking)
+	if(config.use_jobtime_tracking && !SSdbcore.IsConnected())
+		config.use_jobtime_tracking = 0
+		to_chat(usr,SPAN_WARNING("Timelocks cannot be enabled as there is no connection to the DB!"))
+	else if(config.use_jobtime_tracking)
+		to_world("<B>Timelocks have been globally enabled!</B>")
+	else
+		to_world("<B>Timelocks have been globally disabled!</B>")
+	log_and_message_staff("toggled timelocks.")
+	SSstatistics.add_field_details("admin_verb","TTLOCK") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc
+
 /datum/admins/proc/toggleoocdead()
 	set category = "Server"
 	set desc="Toggle Dead OOC."

@@ -34,9 +34,7 @@ SUBSYSTEM_DEF(jobtime)
 
 //Client Procs
 
-/client/proc/update_jobtime_list(minutes) //this is stolen from fulp :/
-	//if(!CONFIG_GET(flag/use_exp_tracking))
-		//return -1
+/client/proc/update_jobtime_list(minutes)
 	if(!SSdbcore.Connect())
 		return -1
 	if (!isnum(minutes))
@@ -77,8 +75,6 @@ SUBSYSTEM_DEF(jobtime)
 	addtimer(CALLBACK(SSjobtime, /datum/controller/subsystem/jobtime/proc/update_jobtime_db),20,TIMER_OVERRIDE|TIMER_UNIQUE)
 
 /client/proc/get_jobtime_list_db()
-	//if(!CONFIG_GET(flag/use_exp_tracking))
-		//return -1
 	if(!SSdbcore.Connect())
 		return -1
 	var/datum/db_query/exp_read = SSdbcore.NewQuery(

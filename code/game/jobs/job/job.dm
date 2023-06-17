@@ -550,7 +550,7 @@
 	return exp_list
 
 /datum/job/proc/meets_req(client/tclient)
-	if(!requirements/* || check_rights(R_ADMIN, FALSE, tclient)*/)
+	if(!requirements || !config.use_jobtime_tracking/* || check_rights(R_ADMIN, FALSE, tclient)*/)
 		return TRUE
 
 	var/datum/jobtime/jt = tclient.jobtime
@@ -558,6 +558,7 @@
 	if(!jt) //guests wont ever meet req because their time isint tracked
 		return FALSE
 
+	jt.update_jobtime()
 	for(var/requirement in requirements)
 		if(jt.get_jobtime(requirement) < requirements[requirement])
 			return FALSE
@@ -565,11 +566,14 @@
 	return TRUE
 
 /datum/job/proc/get_req(client/tclient)
-	if(!requirements/* || check_rights(R_ADMIN, FALSE, tclient)*/)
+	if(!requirements || !config.use_jobtime_tracking/* || check_rights(R_ADMIN, FALSE, tclient)*/)
 		return 0
 
 	var/datum/jobtime/jt = tclient.jobtime
 	var/list/required_time_remaining = list()
+
+	if(jt)
+		jt.update_jobtime()
 
 	for(var/requirement in requirements)
 		if(jt)

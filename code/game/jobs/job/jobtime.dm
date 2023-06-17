@@ -2,12 +2,17 @@
 	var/list/jobtime_list //raw db list of jobs and associated playtime tracked
 	var/client/parentclient //parent client of the datum
 
+	var/last_updated_jl //last time jobtime_list was updated
+
 /datum/jobtime/New(client/pclient)
 	parentclient = pclient
-	update_jobtime()
+	update_jobtime(FALSE)
 	..()
 
-/datum/jobtime/proc/update_jobtime() //updates our play time from DB
+/datum/jobtime/proc/update_jobtime(check_cooldown = TRUE) //updates our play time from DB
+	if((world.time - last_updated_jl < 1 MINUTE) && check_cooldown) //updating the jobtime list requires an SQL query which takes time, this prevents update_jobtime() from firing more than once per minute, as we can assume there have not been any significant changes in the db within that time.
+		return FALSE
+
 	jobtime_list = parentclient.get_jobtime_list_db()
 
 	for(var/jtitle in jobtime_list) //checks and calculates sub categories and department times
@@ -16,6 +21,8 @@
 			continue
 		for(var/category in jtype.get_flags_to_exp())
 			jobtime_list[category] += jobtime_list[jtitle]
+
+	last_updated_jl = world.time
 
 /datum/jobtime/proc/get_jobtime_by_job(datum/job/tjob)
 	return jobtime_list[tjob.title]
