@@ -165,6 +165,12 @@
 					bad_message = "\[MIN CHAR AGE: [job.minimum_character_age[bodytype]]]"
 				else if(!job.is_species_allowed(S))
 					bad_message = "<b>\[SPECIES RESTRICTED]</b>"
+				else if(!job.meets_req(user.client))
+					var/list/jobtime_reqs = job.get_req(user.client)
+					bad_message = "<b>\[NEEDS</b>"
+					for(var/jreq in jobtime_reqs) //this is a little scuffed, but its better than just saying "not enough playtime"
+						bad_message += "<b>, [jobtime_reqs[jreq]] MINUTES AS [jreq]</b>"
+					bad_message += "<b>.]</b>"
 /* fix this
 				else if (job.is_job_whitelisted(user.client))
 					bad_message = "<b>\[WHITELISTED]</b>"

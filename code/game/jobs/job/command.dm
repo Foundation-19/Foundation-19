@@ -21,6 +21,8 @@
 	access = list()				// see get_access() override
 	minimal_access = list()		// see get_access() override
 
+	requirements = list("Class D" = 60, EXP_TYPE_COMMAND = 120)
+
 /datum/job/captain/get_access()
 	return get_all_site_access()
 

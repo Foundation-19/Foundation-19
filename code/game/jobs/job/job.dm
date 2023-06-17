@@ -58,7 +58,7 @@
 
 	var/balance_limited = FALSE //is this job limited for balance purposes, compared to D-class? Intended for LCZ balance
 
-	var/list/requirements //the required playtime in other jobs or categories to play the role
+	var/list/requirements = list("Class D" = 60) //the required playtime in other jobs or categories to play the role
 
 /datum/job/New()
 
@@ -550,7 +550,7 @@
 	return exp_list
 
 /datum/job/proc/meets_req(client/tclient)
-	if(!requirements || check_rights(R_ADMIN, FALSE, tclient))
+	if(!requirements/* || check_rights(R_ADMIN, FALSE, tclient)*/)
 		return TRUE
 
 	var/datum/jobtime/jt = tclient.jobtime
@@ -560,3 +560,18 @@
 			return FALSE
 
 	return TRUE
+
+/datum/job/proc/get_req(client/tclient)
+	if(!requirements/* || check_rights(R_ADMIN, FALSE, tclient)*/)
+		return 0
+
+	var/datum/jobtime/jt = tclient.jobtime
+	var/list/required_time_remaining = list()
+
+	for(var/requirement in requirements)
+		required_time_remaining[requirement] = requirements[requirement] - jt.get_jobtime(requirement)
+
+		if(required_time_remaining[requirement] <= 0)
+			required_time_remaining[requirement] = null
+
+	return required_time_remaining

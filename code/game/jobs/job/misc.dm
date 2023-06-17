@@ -15,6 +15,8 @@
 	hud_icon = "huddclass"
 	var/static/list/used_numbers = list()
 
+	requirements = null
+
 	max_skill = list(
 		SKILL_COMBAT = SKILL_TRAINED,
 		SKILL_WEAPONS = SKILL_TRAINED
