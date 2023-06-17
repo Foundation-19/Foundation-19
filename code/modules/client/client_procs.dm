@@ -273,6 +273,9 @@
 	if(SSinput.initialized)
 		set_macros()
 
+	// Initilizes jobtime datum
+	jobtime = new /datum/jobtime(src)
+
 //////////////
 //DISCONNECT//
 //////////////

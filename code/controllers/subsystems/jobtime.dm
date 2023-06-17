@@ -31,8 +31,6 @@ SUBSYSTEM_DEF(jobtime)
 		if(L.is_afk())
 			continue
 		L.update_jobtime_list(mins)
-		if(!L.jobtime)
-			L.jobtime = new /datum/jobtime(L)
 
 //Client Procs
 
